@@ -222,7 +222,7 @@ Imscribing GrammarLean4/               — Lean 4 formal proofs
 
 ## Origin
 
-The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, synthons, crystal engineering — submitted in early 2025. The structural encoding that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
+The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, synthons, crystal engineering — submitted in early 2026. The structural encoding that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
 
 The alchemists insisted the Work must begin with the right matter — not any inert substance, but the one that already carries the signatures. A chemistry prompt brushed away the dirt, and the Stone was already there.
 
