@@ -1,4 +1,4 @@
--- SynthOmnicon/Primitives/BSD_2adic.lean
+-- ImscribingGrammar/Primitives/BSD_2adic.lean
 -- BSD and OPN are the same constraint structure in different substrates.
 -- This file is INDEPENDENT of Core.lean.
 -- Every `sorry` is an honest marker of a genuine open problem or missing Mathlib API.

@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/PrimitiveBridge.lean
+-- ImscribingGrammar/Millennium/PrimitiveBridge.lean
 -- Formal bridge between Millennium Problem sorry boundaries
 -- and missing primitive certificates in the SynthOmnicon constraint grammar.
 --

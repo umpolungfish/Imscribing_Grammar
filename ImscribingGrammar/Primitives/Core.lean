@@ -1,4 +1,4 @@
--- SynthOmnicon/Primitives/Core.lean
+-- ImscribingGrammar/Primitives/Core.lean
 -- Canonical 12-primitive grammar (v0.5.69).
 -- All names, value counts, and ordinal orderings match space_search/primitives.py.
 -- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 structural types.
@@ -9,7 +9,7 @@
 import Mathlib.Order.Lattice
 import Mathlib.Order.BoundedOrder.Basic
 
-namespace SynthOmnicon.Primitives
+namespace ImscribingGrammar.Primitives
 
 -- ============================================================
 -- 𝓕₄ PRIMITIVES — 4 values each

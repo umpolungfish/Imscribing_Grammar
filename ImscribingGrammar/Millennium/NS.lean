@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/NS.lean
+-- ImscribingGrammar/Millennium/NS.lean
 -- Navier-Stokes Existence and Smoothness — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. No sorry is dischargeable from current Mathlib.
 

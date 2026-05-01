@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/BSD.lean
+-- ImscribingGrammar/Millennium/BSD.lean
 -- Birch and Swinnerton-Dyer Conjecture — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. Two layers are MathlibGap; one is OpenProblem.
 

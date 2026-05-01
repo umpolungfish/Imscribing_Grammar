@@ -354,7 +354,7 @@ The Imscribing Grammar framework is organized into several key directories:
 *   `imscrbgrmr/`: Contains the core Python modules for the Unified Synthonicon, including primitive definitions, the Synthon dataclass, catalog, constraints engine, and thermodynamics calculations.
 *   `imscrbgrmr/domains/`: Houses domain-specific agents (molecular, supramolecular, temporal, hybrid) that leverage the core framework for specialized analyses.
 *   `framework/`: Includes components of the underlying AjintK multi-agent framework, providing utilities for agent orchestration and communication.
-*   `examples/`: Demonstrative scripts showing how to use various parts of Imscribing Grammar.
+*   `examples/`: Demonstrative scripts showing how to use various parts of the Imscribing Grammar
 *   `QUANTIG.md`: The foundational theoretical document detailing the Unified Synthonicon.
 *   `README.md`: General project information and quick start guide.
 *   `requirements.txt`: Lists all Python dependencies.

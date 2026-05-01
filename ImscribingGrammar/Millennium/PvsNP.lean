@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/PvsNP.lean
+-- ImscribingGrammar/Millennium/PvsNP.lean
 -- P versus NP — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. No sorry is dischargeable from current Mathlib.
 

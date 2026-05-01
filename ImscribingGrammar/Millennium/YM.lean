@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/YM.lean
+-- ImscribingGrammar/Millennium/YM.lean
 -- Yang-Mills Existence and Mass Gap — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. The key sorries are MissingFoundation, not just OpenProblem.
 

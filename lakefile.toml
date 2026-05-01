@@ -1,7 +1,7 @@
 name = "imscrbgrmr-lean"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["SynthomniconLean"]
+defaultTargets = ["ImscribingGrammar"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -15,29 +15,29 @@ scope = "leanprover-community"
 rev = "v4.28.0"
 
 [[lean_lib]]
-name = "SynthomniconLean"
+name = "ImscribingGrammar"
 
 [[lean_lib]]
-name = "Imscribing Grammar"
+name = "Primitives"
 globs = [
-  "Imscribing Grammar.Primitives.Core",
-  "Imscribing Grammar.Primitives.OPN_2adic",
-  "Imscribing Grammar.Primitives.BSD_2adic",
-  "Imscribing Grammar.Primitives.Synthon",
-  "Imscribing Grammar.Primitives.TierCrossing"
+  "ImscribingGrammar.Primitives.Core",
+  "ImscribingGrammar.Primitives.OPN_2adic",
+  "ImscribingGrammar.Primitives.BSD_2adic",
+  "ImscribingGrammar.Primitives.Synthon",
+  "ImscribingGrammar.Primitives.TierCrossing"
 ]
 
 [[lean_lib]]
 name = "Millennium"
 globs = [
-  "Imscribing Grammar.Millennium.RH",
-  "Imscribing Grammar.Millennium.YM",
-  "Imscribing Grammar.Millennium.Hodge",
-  "Imscribing Grammar.Millennium.NS",
-  "Imscribing Grammar.Millennium.PvsNP",
-  "Imscribing Grammar.Millennium.OPN",
-  "Imscribing Grammar.Millennium.BSD",
-  "Imscribing Grammar.Millennium.Barriers",
-  "Imscribing Grammar.Millennium.PrimitiveBridge",
-  "Imscribing Grammar.Millennium.FrobeniusStructure"
+  "ImscribingGrammar.Millennium.RH",
+  "ImscribingGrammar.Millennium.YM",
+  "ImscribingGrammar.Millennium.Hodge",
+  "ImscribingGrammar.Millennium.NS",
+  "ImscribingGrammar.Millennium.PvsNP",
+  "ImscribingGrammar.Millennium.OPN",
+  "ImscribingGrammar.Millennium.BSD",
+  "ImscribingGrammar.Millennium.Barriers",
+  "ImscribingGrammar.Millennium.PrimitiveBridge",
+  "ImscribingGrammar.Millennium.FrobeniusStructure"
 ]

@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/Hodge.lean
+-- ImscribingGrammar/Millennium/Hodge.lean
 -- Hodge Conjecture — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. No sorry is dischargeable from current Mathlib.
 

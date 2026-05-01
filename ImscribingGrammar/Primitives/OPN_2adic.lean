@@ -1,4 +1,4 @@
--- SynthOmnicon/Classical/OPN_2adic.lean
+-- ImscribingGrammar/Classical/OPN_2adic.lean
 -- Track 2, File 1: Classical number theory — 2-adic valuation for OPN.
 -- This file is INDEPENDENT of the Synthonicon type system.
 -- It uses Mathlib directly. Every sorry is an honest open problem marker.
@@ -15,7 +15,7 @@ import Mathlib.Data.Nat.Multiplicity         -- emultiplicity / v₂ lemmas
 
 open Nat ArithmeticFunction
 
-namespace SynthOmnicon.Classical.OPN
+namespace ImscribingGrammar.Classical.OPN
 
 -- ============================================================
 -- DEFINITIONS (must precede helper lemmas that reference them)

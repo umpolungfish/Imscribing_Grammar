@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/FrobeniusStructure.lean
+-- ImscribingGrammar/Millennium/FrobeniusStructure.lean
 -- The π₃ Frobenius Structure
 --
 -- π₃ — the ouroborotic projection — is not characterised by a primitive

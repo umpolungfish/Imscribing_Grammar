@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/OPN.lean
+-- ImscribingGrammar/Millennium/OPN.lean
 -- Odd Perfect Numbers — Three-Layer Barrier Analysis
 -- Every sorry is an honest marker. Layer 1 sorry is MathlibGap; Layer 2 is OpenProblem.
 

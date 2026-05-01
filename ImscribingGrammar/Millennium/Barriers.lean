@@ -1,4 +1,4 @@
--- SynthOmnicon/Millennium/Barriers.lean
+-- ImscribingGrammar/Millennium/Barriers.lean
 -- Cross-problem barrier taxonomy for all 7 Millennium Prize Problems.
 -- The central theorem: a formal classification of why each problem is hard.
 
