@@ -85,7 +85,7 @@ class ProviderConfig:
                 },
             },
             "cli": {
-                "default_provider": "anthropic",
+                "default_provider": None,
                 "max_tokens": 4000,
                 "temperature": 0.3,
             },
@@ -132,7 +132,7 @@ class ProviderConfig:
     def get_cli_defaults(self) -> Dict[str, Any]:
         """Get CLI-level default settings, with env-var overrides."""
         defaults = dict(self._config.get("cli", {}))
-        env_provider = os.environ.get("IG_DEFAULT_PROVIDER")
+        env_provider = os.environ.get("IG_PROVIDER") or os.environ.get("IG_DEFAULT_PROVIDER")
         if env_provider:
             defaults["default_provider"] = env_provider
         return defaults
