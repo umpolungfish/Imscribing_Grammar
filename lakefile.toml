@@ -1,0 +1,43 @@
+name = "imscrbgrmr-lean"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["SynthomniconLean"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.28.0"
+
+[[lean_lib]]
+name = "SynthomniconLean"
+
+[[lean_lib]]
+name = "Imscribing Grammar"
+globs = [
+  "Imscribing Grammar.Primitives.Core",
+  "Imscribing Grammar.Primitives.OPN_2adic",
+  "Imscribing Grammar.Primitives.BSD_2adic",
+  "Imscribing Grammar.Primitives.Synthon",
+  "Imscribing Grammar.Primitives.TierCrossing"
+]
+
+[[lean_lib]]
+name = "Millennium"
+globs = [
+  "Imscribing Grammar.Millennium.RH",
+  "Imscribing Grammar.Millennium.YM",
+  "Imscribing Grammar.Millennium.Hodge",
+  "Imscribing Grammar.Millennium.NS",
+  "Imscribing Grammar.Millennium.PvsNP",
+  "Imscribing Grammar.Millennium.OPN",
+  "Imscribing Grammar.Millennium.BSD",
+  "Imscribing Grammar.Millennium.Barriers",
+  "Imscribing Grammar.Millennium.PrimitiveBridge",
+  "Imscribing Grammar.Millennium.FrobeniusStructure"
+]

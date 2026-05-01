@@ -1,0 +1,206 @@
+\documentclass[8pt,a4paper,landscape]{article}
+\usepackage[margin=0.3in,top=0.28in,bottom=0.2in]{geometry}
+\usepackage{tikz,amsmath,amssymb,booktabs,multicol,xcolor,enumitem,array}
+\usepackage{titlesec}
+\titleformat{\section}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{5pt plus 1pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\tiny Imscribing Grammar v0.4.64}
+\lhead{\tiny $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega\rangle$}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\definecolor{catblue}{RGB}{30,100,180}
+\definecolor{ordgreen}{RGB}{40,140,60}
+\definecolor{specpurple}{RGB}{120,40,160}
+\definecolor{confred}{RGB}{200,50,50}
+
+\newcommand{\cat}[1]{\textcolor{catblue}{#1}}
+\newcommand{\ord}[1]{\textcolor{ordgreen}{#1}}
+\newcommand{\spec}[1]{\textcolor{specpurple}{#1}}
+\newcommand{\conf}{\textcolor{confred}{\textbf{CONFLICT}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\begin{center}
+\LARGE\textbf{The Imscribing Grammar - A Holographic Type Theory}\\
+\normalsize Operations \& Algebra Reference Sheet
+\end{center}
+\vspace{-0.3em}
+
+\begin{multicols}{3}
+
+%=== COLUMN 1 ===
+\section*{The 12 Primitives}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}llp{3.8cm}@{}}
+\toprule
+\textbf{Sym} & \textbf{Name} & \textbf{Values} \\
+\midrule
+\cat{$D$} & Dimensionality & $D_\wedge,D_\triangle,D_\infty,D_{\text{holo}}$ \\
+\cat{$T$} & Topology & $T_{\text{net}},T_{\text{in}},T_\bowtie,T_{\text{box}},T_{\text{holo}}$ \\
+\cat{$R$} & Recognition & $R_{\text{super}},R_{\text{cat}},R_\dagger,R_{lr}$ \\
+\cat{$P$} & Polarity & $P_{\text{asym}},P_\psi,P_\pm,P_{\text{sym}},P_\pm^{\text{sym}}$ \\
+\cat{$\Gamma$} & Int. Grammar & $\Gamma_{\text{and}},\Gamma_{\text{or}},\Gamma_{\text{seq}},\Gamma_{\text{broad}}$ \\
+\cat{$S$} & Stoichiometry & $1{:}1,n{:}n,n{:}m$ \\
+\midrule
+\ord{$F$} & Fidelity & $F_\ell<F_{\text{eth}}<F_\hbar$ \\
+\ord{$K$} & Kinetic Char. & $K_{\text{fast}}<K_{\text{mod}}<K_{\text{slow}}<K_{\text{trap}}$ \\
+\ord{$G$} & Granularity & $G_\beth<G_\gimel<G_\aleph$ \\
+\ord{$H$} & Chirality & $H_0<H_1<H_2<H_\infty$ \\
+\ord{$\Omega$} & Top. Protection & $\Omega_0<\Omega_{Z_2}<\Omega_Z$ \\
+\midrule
+\spec{$\Phi$} & Criticality & $\Phi_{\text{sub}}<\spec{\Phi_c}<\Phi_c^{\text{cx}}<\Phi_{\text{EP}}<\Phi_{\text{super}}$ \\
+\bottomrule
+\end{tabular}
+\renewcommand{\arraystretch}{1.0}
+
+\vspace{0.6em}
+\textit{Classes:} \cat{categorical (6)} | \ord{ordered (5)} | \spec{special ($\Phi_c$ absorbing)}
+
+\section*{Distance Metric (\S26.1)}
+\footnotesize
+\textbf{Diagonal weighted Euclidean:}
+$$d(A,B)=\sqrt{\sum_{i=1}^{12}w_i(\xi_i^A-\xi_i^B)^2}$$
+$\mathbf{w}=(1.0^{\times 9},\,w_H{=}0.8,\,1.0,\,w_\Omega{=}0.7)$
+
+\vspace{0.5em}
+\textbf{Riemannian} (\S26.2): $d_g=\sqrt{(\boldsymbol{\xi}^A-\boldsymbol{\xi}^B)^\top\Sigma^{-1}(\boldsymbol{\xi}^A-\boldsymbol{\xi}^B)}$
+
+\textit{Directed:} $d^\to(A\to B)_j = w_j\cdot\max(0,\xi_j^A-\xi_j^B)$ (upward free)
+
+\section*{Core Operations}
+\footnotesize
+\textbf{Meet $\sqcap$ (GLB)}
+\begin{itemize}[leftmargin=*,nosep,label={},topsep=4pt,itemsep=2pt]
+\item Categorical: $A_i=B_i\to A_i$, else \conf
+\item Ordered: $\min(A_i,B_i)$
+\item \spec{$\Phi_c\sqcap x=\Phi_c$}
+\end{itemize}
+
+\textbf{Join $\sqcup$ (LUB)}
+\begin{itemize}[leftmargin=*,nosep,label={},topsep=4pt,itemsep=2pt]
+\item Categorical: $A_i=B_i\to A_i$, else \conf
+\item Ordered: $\max(A_i,B_i)$
+\end{itemize}
+
+\textbf{Tensor $\otimes$} = Join with precondition:
+$$A\otimes B = \begin{cases} A\sqcup B & \text{if no cat. conflicts} \\ \text{undefined} & \text{otherwise} \end{cases}$$
+\textit{Physical:} co-assembly requires categorical compatibility.
+
+%=== COLUMN 2 ===
+\section*{Algebraic Properties}
+\footnotesize
+\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
+\item \textbf{Commutative}: $A\star B = B\star A$ for $\star\in\{\sqcap,\sqcup,\otimes\}$
+\item \textbf{Associative}: $(A\star B)\star C = A\star(B\star C)$ (when def.)
+\item \textbf{Idempotent}: $A\star A = A$
+\item \textbf{$\Phi_c$ meet-absorption}: $\Phi_c\sqcap x=\Phi_c$ for all $x$
+\item \textbf{Distance}: $d(A\otimes B, A)^2 \leq d(A,B)^2$
+\item \textbf{Path-dep.}: $(A\otimes B)\otimes C$ may exist when $B\otimes C$ undefined
+\end{itemize}
+
+\section*{Cross-Primitive Axioms (Machine-Checked)}
+\footnotesize
+\begin{enumerate}[leftmargin=*,label=\textbf{A\arabic*}.]
+\item $H_\infty \Rightarrow K\le K_{\text{trap}}$ \hfill(irrev. $\to$ trap)
+\item $\Omega\ge\Omega_Z \Rightarrow H\ge H_2$ \hfill(strong top. $\to$ chirality)
+\item $D_{\text{holo}} \Leftrightarrow T_{\text{holo}}$ \hfill(holo dim. $\leftrightarrow$ top.)
+\item $\Omega_Z \Rightarrow D_{\text{holo}}$ \hfill($\mathbb{Z}$-protection $\to$ holo)
+\end{enumerate}
+
+\section*{Path-Dependence Theorem}
+\footnotesize
+$(A\otimes B)\otimes C$ defined even when $B\otimes C$ undefined, iff $\exists$ ordered primitive $i$:
+\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
+\item $C_i > B_i$ (C needs more than B)
+\item $A_i = C_i$ (A supplies what C needs)
+\item No categorical conflict between $(A\otimes B)$ and $C$
+\end{itemize}
+\textit{Interpretation:} Catalysis, scope promotion, chirality templating unified as ``context $A$ enables $B\to C$''.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Mechanism} & \textbf{Blocking} & \textbf{$A$ provides} \\
+\hline
+Catalysis & $\Phi_c$ required & $A_\Phi = \Phi_c$ \\
+Scope promotion & $G_\aleph$ required & $A_G = G_\aleph$ \\
+Chirality templating & $H_2$ required & $A_H = H_\infty$ \\
+\hline
+\end{tabular}
+\end{center}
+
+%=== COLUMN 3 ===
+\section*{Primitive Semantics (Quick Ref.)}
+\footnotesize
+\begin{tabular}{@{}p{2.6cm}p{2.6cm}p{2.6cm}@{}}
+\cat{Categorical:} & \ord{Ordered:} & \spec{$\Phi_c$:} \\
+exact match or \conf & $\min$/$\max$ resolution & absorbing element \\
+\end{tabular}
+
+\section*{Structural Universality}
+\footnotesize
+\textbf{Synthon:} $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega\rangle$
+
+\textbf{Validity:} Must satisfy axioms A1–A4.
+
+\textbf{Thesis:} $d(\mathbf{x},\mathbf{y})=0 \Rightarrow$ constraint-identical, substrate-independent.
+
+\textbf{Conflict Distance:} $d_c(S)=\sqrt{|\text{Conf}(S)|}$ measures encoding reliability.
+
+\textbf{Dual Encoding:}
+\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
+\item Holistic $\mathcal{E}_H(S)$: top-down from behavior
+\item Compositional $\mathcal{E}_C(S)$: bottom-up from $\bigotimes S_i$
+\item $\text{Conf}(S) = \{p : \mathcal{E}_H(S)[p] \neq \mathcal{E}_C(S)[p]\}$
+\end{itemize}
+
+\section*{Tensor Product Properties}
+\footnotesize
+When $A\otimes B$ defined:
+\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
+\item $(A\otimes B)_F = \max(F_A, F_B)$
+\item $(A\otimes B)_K = \max(K_A, K_B)$
+\item $(A\otimes B)_j = \max(A_j, B_j)$ for all ordered $j$
+\item Categorical: must agree (precondition)
+\item $\Phi_c$ absorption: if $A_\Phi=\Phi_c$ or $B_\Phi=\Phi_c$, then $(A\otimes B)_\Phi=\Phi_c$
+\end{itemize}
+
+\textbf{Translation Cost:} $\delta_A=d(A,A\otimes B)$, $\delta_B=d(B,A\otimes B)$; smaller $\delta$ is dominant.
+
+\section*{Ouroboricity}
+\footnotesize
+\textbf{Scalar:} $\mathcal{O}(\mathbf{x})=[\Phi{=}\Phi_c]\cdot(1+[\Omega{\neq}\Omega_0]+[H{\ge}H_1]+[G{=}G_\aleph])$
+
+\textbf{Tiers} (priority R1$\succ$R5):
+\begin{itemize}[leftmargin=*,nosep,topsep=2pt,itemsep=1pt]
+\item \textbf{R1} $\Phi_c+P_\pm^{\text{sym}}$ $\to O_\infty$ (special Frobenius)
+\item \textbf{R2} $\Phi\in\{\Phi_{\text{sub}},\Phi_{\text{super}},\Phi_{\text{EP}}\}$ $\to O_0$
+\item \textbf{R3} $\Phi_c+\Omega_0$ $\to O_1$
+\item \textbf{R4} $\Phi_c+\Omega{\neq}\Omega_0+D\in\{D_\wedge,D_{\text{holo}},D_\triangle\}$ $\to O_2$
+\item \textbf{R5} $\Phi_c+\Omega{\neq}\Omega_0+D_\infty$ $\to O_2^\dagger$
+\end{itemize}
+\textit{Note:} $\mathcal{O}$ cannot detect $O_\infty$ (no $P$ term); $O_\infty$ absorbed by $\Phi_{\text{EP}}$ under $\otimes$.
+
+\end{multicols}
+
+\vfill
+\noindent\hrule
+\vspace{0.1em}
+\noindent\footnotesize
+\textit{Impl.:} \texttt{imscrbgrmr/algebra.py} \quad
+\textit{Verif.:} \texttt{Synthon.lean}, \texttt{Core.lean} (Lean 4) \quad
+\textit{Lic.:} \texttt{Lando Mills} \texttt{CC-BY 4.0} \quad
+\textit{Gen.:} \texttt{March 31, 2026} \quad
+
+\end{document}

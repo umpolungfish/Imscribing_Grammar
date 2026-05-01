@@ -1,0 +1,59 @@
+# ── Lean ──────────────────────────────────────────────────────────────────────
+/.lake
+
+# ── Large model artifacts ──────────────────────────────────────────────────────
+INFERRED/
+
+# ── Private session outputs ────────────────────────────────────────────────────
+syncon_outputs/
+.gemini/
+
+# ── IUG paper (under review) ──────────────────────────────────────────────────
+submission/
+IUG_NON_TRANSMISSIBILITY.tex
+IUG_NON_TRANSMISSIBILITY.md
+IUG_SUPPLEMENT.tex
+IUG_SUPPLEMENT.md
+title_page.tex
+reports/IUG_*
+SYNT-S-26-01443-1.pdf
+SYNT-D-26-01213-1.pdf
+122A3EAC-E00B-11F0-83A5-939FB6FA6432.pdf
+
+# ── IUT reference PDFs (copyrighted) ─────────────────────────────────────────
+Inter-universal Teichmuller Theory*.pdf
+Panoramic Overview*.pdf
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+*.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# ── Windows zone identifiers ──────────────────────────────────────────────────
+*:Zone.Identifier
+
+# ── Compiled LaTeX ────────────────────────────────────────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+space_search/data/nanograv_15yr.tar.gz

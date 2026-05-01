@@ -1,0 +1,167 @@
+{
+  "n_simultaneous_tested": 7,
+  "n_p12_matches": 4,
+  "n_skipped_not_simultaneous": 2,
+  "mean_band_null": 0.0419,
+  "max_band_null": 0.1029,
+  "binomial_z_mean_null": 6.994,
+  "binomial_z_worst_case": 4.08,
+  "events": [
+    {
+      "name": "SGR 1935+2154 (2020-04-28)",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm": 332.7,
+      "type": "magnetar",
+      "freq_pairs": [
+        {
+          "f_lo": 600.0,
+          "f_hi": 1374.0,
+          "ratio": 2.29,
+          "matched": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0126
+        }
+      ],
+      "any_p12_match": true,
+      "band_lo": "CHIME",
+      "band_hi": "STARE2",
+      "band_aware_null_rate": 0.0666,
+      "notes": "Confirmed same burst: CHIME/FRB 2020 + Bochenek+ 2020. CHIME triggered at 600 MHz cf, STARE2 at 1374 MHz. Ratio=2.290, dev=0.013."
+    },
+    {
+      "name": "FRB 20201124A (FAST L-band, Xu+ 2022)",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm": 411.0,
+      "type": "frb_repeater",
+      "freq_pairs": [
+        {
+          "f_lo": 1100.0,
+          "f_hi": 1400.0,
+          "ratio": 1.2727,
+          "matched": false,
+          "nearest_target": 2.3026,
+          "deviation": 1.0299
+        }
+      ],
+      "any_p12_match": false,
+      "band_lo": "FAST_L",
+      "band_hi": "FAST_L",
+      "band_aware_null_rate": 0.0,
+      "notes": "FAST L-band sub-burst structure from Xu+ 2022 (Nature). Within-band only: max ratio = 1400/1100 = 1.27. CANNOT reach ln(10)=2.303 with FAST L-band alone. Band null for FAST_L pair: ~0% for P-12 target. This entry is a TRUE null \u2014 P-12 not testable here."
+    },
+    {
+      "name": "PSR B0833-45 Vela (Parkes multi-freq profiles, Johnston+ 1998)",
+      "ra": 128.84,
+      "dec": -45.18,
+      "dm": 67.99,
+      "type": "pulsar",
+      "freq_pairs": [
+        {
+          "f_lo": 660.0,
+          "f_hi": 1520.0,
+          "ratio": 2.303,
+          "matched": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0004
+        }
+      ],
+      "any_p12_match": true,
+      "band_lo": "Parkes_UHF",
+      "band_hi": "Parkes_L",
+      "band_aware_null_rate": 0.1029,
+      "notes": "EPN multi-frequency profiles: Parkes 660 MHz + 1520 MHz. Johnston+ 1998, PPTA. Simultaneously observed profiles. Ratio=1520/660=2.303, dev=0.0004 \u2014 most precise P-12 hit known."
+    },
+    {
+      "name": "PSR J0437-4715 (PPTA simultaneous L+S)",
+      "ra": 69.32,
+      "dec": -47.25,
+      "dm": 2.64,
+      "type": "pulsar",
+      "freq_pairs": [
+        {
+          "f_lo": 1369.0,
+          "f_hi": 3100.0,
+          "ratio": 2.2644,
+          "matched": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "any_p12_match": true,
+      "band_lo": "Parkes_UWL",
+      "band_hi": "Parkes_L",
+      "band_aware_null_rate": 0.0418,
+      "notes": "PPTA simultaneous multi-frequency: 1369 + 3100 MHz. Manchester+ 1996; Navarro+ 1997. Ratio=3100/1369=2.264, dev=0.039 \u2014 marginal P-12 match."
+    },
+    {
+      "name": "XTE J1810-197 (MeerKAT L+S, Caleb+ 2022)",
+      "ra": 272.6,
+      "dec": -19.74,
+      "dm": 178.0,
+      "type": "magnetar",
+      "freq_pairs": [
+        {
+          "f_lo": 1284.0,
+          "f_hi": 2950.0,
+          "ratio": 2.2975,
+          "matched": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0051
+        }
+      ],
+      "any_p12_match": true,
+      "band_lo": "MeerKAT_L",
+      "band_hi": "MeerKAT_S",
+      "band_aware_null_rate": 0.0529,
+      "notes": "MeerKAT L-band (1284 MHz) + S-band (2950 MHz) simultaneous. Caleb+ 2022 (arXiv:2202.08558). Ratio=2950/1284=2.298, dev=0.005 \u2014 P-12 match."
+    },
+    {
+      "name": "PSR B1937+21 (multi-freq profiles)",
+      "ra": 294.91,
+      "dec": 21.58,
+      "dm": 71.02,
+      "type": "pulsar",
+      "freq_pairs": [
+        {
+          "f_lo": 430.0,
+          "f_hi": 1410.0,
+          "ratio": 3.2791,
+          "matched": false,
+          "nearest_target": 2.3026,
+          "deviation": 0.9765
+        }
+      ],
+      "any_p12_match": false,
+      "band_lo": "uGMRT_B3",
+      "band_hi": "Parkes_L",
+      "band_aware_null_rate": 0.019,
+      "notes": "Multi-frequency pulsar profile: 430 + 1410 MHz. Becker & Tr\u00fcmper 1999; Cognard+ 1995. Ratio=1410/430=3.279 vs 4.606 (dev=1.327 \u2014 no P-12 match). Adding 2380 MHz: 1410/430 still no. 2380/1030\u22482.311 marginal."
+    },
+    {
+      "name": "FRB 20181112A (ASKAP CRAFT ICS sub-bands)",
+      "ra": 327.35,
+      "dec": -52.46,
+      "dm": 589.3,
+      "type": "frb_one_off",
+      "freq_pairs": [
+        {
+          "f_lo": 1100.0,
+          "f_hi": 1500.0,
+          "ratio": 1.3636,
+          "matched": false,
+          "nearest_target": 2.3026,
+          "deviation": 0.9389
+        }
+      ],
+      "any_p12_match": false,
+      "band_lo": "ASKAP_CRAFT",
+      "band_hi": "ASKAP_CRAFT",
+      "band_aware_null_rate": 0.01,
+      "notes": "ASKAP CRAFT incoherent sum: sub-bands at 1100 and 1500 MHz. Prochaska+ 2019 (Science). Ratio=1500/1100=1.364 \u2014 within ASKAP band, cannot reach ln(10). Band null: 0% (all ASKAP_CRAFT/ASKAP_CRAFT ratios < 2.57 but within-band ratios here are <2). No P-12 signal."
+    }
+  ],
+  "chime_api_events_returned": 0,
+  "assessment": "Insufficient simultaneous same-burst data for P-12 significance. FAST UWB and Parkes UWL are the right instruments but published simultaneous wideband FRB sub-band catalogs are not yet available."
+}

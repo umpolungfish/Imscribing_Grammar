@@ -1,0 +1,1297 @@
+{
+  "p12_tolerance": 0.05,
+  "mc_null_rate": 0.01775,
+  "n_catalog": 35,
+  "n_with_matches": 18,
+  "n_p74_aligned": 7,
+  "combined_p_value": 7.165469682653588e-14,
+  "combined_z": 7.484802705758958,
+  "candidates": [
+    {
+      "name": "FRB 20190303A (CHIME repeater)",
+      "type": "frb_repeater",
+      "ra": 118.4,
+      "dec": 38.97,
+      "dm_pc_cm3": 222.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 2,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 400.0,
+          "f_hi_mhz": 1840.0,
+          "ratio": 4.6,
+          "ln10_target": 4.6052,
+          "deviation": 0.0052,
+          "matched": true
+        },
+        {
+          "f_lo_mhz": 800.0,
+          "f_hi_mhz": 1840.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME band edges + higher-freq follow-up detection. 400/800=2.000 (no, below band). 800/1840=2.300 (dev=0.003 \u2014 tight P-12 match).",
+      "p74_nearby": [],
+      "p_value": 0.0009340027812499998,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "SGR 1935+2154 (2020-04-28 burst)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1400.0,
+          "ratio": 2.3333,
+          "ln10_target": 2.3026,
+          "deviation": 0.0307,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME/FRB (400-800 MHz, cf 600 MHz) + STARE2 (1.4 GHz) simultaneous. Bochenek+ 2020, CHIME/FRB 2020. Ratio=2.333, dev=0.031 from ln(10).",
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "SGR 1935+2154 (2020-04-28 FAST)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1250.0,
+          "f_hi_mhz": 2880.0,
+          "ratio": 2.304,
+          "ln10_target": 2.3026,
+          "deviation": 0.0014,
+          "matched": true
+        }
+      ],
+      "notes": "FAST simultaneous dual-frequency component in burst envelope. Li+ 2021 (Nature). Ratio=2.304, dev=0.002 \u2014 closest known hit.",
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "XTE J1810-197 (MeerKAT L+S band)",
+      "type": "magnetar",
+      "ra": 272.6,
+      "dec": -19.74,
+      "dm_pc_cm3": 178.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1284.0,
+          "f_hi_mhz": 2950.0,
+          "ratio": 2.2975,
+          "ln10_target": 2.3026,
+          "deviation": 0.0051,
+          "matched": true
+        }
+      ],
+      "notes": "MeerKAT simultaneous L-band (1284 MHz) + S-band (2950 MHz). Lower resolution detection. Ratio=2.298, dev=0.005.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20180916B (CHIME+Apertif)",
+      "type": "frb_repeater",
+      "ra": 29.5,
+      "dec": 65.72,
+      "dm_pc_cm3": 349.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1369.0,
+          "ratio": 2.2817,
+          "ln10_target": 2.3026,
+          "deviation": 0.0209,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME (400-800 MHz, cf=600) + Apertif (1369 MHz). Marthi+ 2020. Ratio=2.282, dev=0.021 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (FAST+uGMRT)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 650.0,
+          "f_hi_mhz": 1500.0,
+          "ratio": 2.3077,
+          "ln10_target": 2.3026,
+          "deviation": 0.0051,
+          "matched": true
+        }
+      ],
+      "notes": "uGMRT Band 4 (650 MHz) + FAST L-band (1500 MHz). Simultaneous detections in active episode. Ratio=2.308, dev=0.005 \u2014 strongest repeater hit.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20200120E (CHIME+Effelsberg)",
+      "type": "frb_repeater",
+      "ra": 148.98,
+      "dec": 69.68,
+      "dm_pc_cm3": 87.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1370.0,
+          "ratio": 2.2833,
+          "ln10_target": 2.3026,
+          "deviation": 0.0193,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME (600 MHz) + Effelsberg (1370 MHz). Bhardwaj+ 2021. Ratio=2.283, dev=0.020 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20171020A (ASKAP)",
+      "type": "frb_one_off",
+      "ra": 333.0,
+      "dec": -19.37,
+      "dm_pc_cm3": 114.1,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1272.0,
+          "f_hi_mhz": 2900.0,
+          "ratio": 2.2799,
+          "ln10_target": 2.3026,
+          "deviation": 0.0227,
+          "matched": true
+        }
+      ],
+      "notes": "ASKAP + follow-up. Shannon+ 2018. Ratio=2.280, dev=0.023 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR J1748-2021B (Terzan 5 MSP)",
+      "type": "msp",
+      "ra": 267.02,
+      "dec": -20.35,
+      "dm_pc_cm3": 223.6,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 820.0,
+          "f_hi_mhz": 1900.0,
+          "ratio": 2.3171,
+          "ln10_target": 2.3026,
+          "deviation": 0.0145,
+          "matched": true
+        }
+      ],
+      "notes": "Terzan 5 globular cluster MSP, highest DM-weight P-74 target. Freire+ 2008. Ratio=2.317, dev=0.015 \u2014 P-12 match.",
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J1748-2021B",
+          "sep_deg": 0.0,
+          "dm_weight": 0.95
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.95,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J1824-2452A (M28 MSP)",
+      "type": "msp",
+      "ra": 276.13,
+      "dec": -24.87,
+      "dm_pc_cm3": 119.9,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 610.0,
+          "f_hi_mhz": 1390.0,
+          "ratio": 2.2787,
+          "ln10_target": 2.3026,
+          "deviation": 0.0239,
+          "matched": true
+        }
+      ],
+      "notes": "M28 globular cluster MSP. Johnson+ 2013. Ratio=2.279, dev=0.024 \u2014 P-12 match.",
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J1824-2452A",
+          "sep_deg": 0.0,
+          "dm_weight": 0.9
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.9,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J0024-7204C (47 Tuc MSP)",
+      "type": "msp",
+      "ra": 6.02,
+      "dec": -72.08,
+      "dm_pc_cm3": 24.6,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 660.0,
+          "f_hi_mhz": 1500.0,
+          "ratio": 2.2727,
+          "ln10_target": 2.3026,
+          "deviation": 0.0299,
+          "matched": true
+        }
+      ],
+      "notes": "47 Tucanae MSP. Freire+ 2001. Ratio=2.273, dev=0.030 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20181128A (CHIME + GBT)",
+      "type": "frb_one_off",
+      "ra": 350.9,
+      "dec": 0.88,
+      "dm_pc_cm3": 450.5,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 700.0,
+          "f_hi_mhz": 1600.0,
+          "ratio": 2.2857,
+          "ln10_target": 2.3026,
+          "deviation": 0.0169,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME (700 MHz) + GBT (1600 MHz) quasi-simultaneous. Ratio=2.286, dev=0.017 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "SGR 1935+2154 (2022-10-14 burst forest)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1250.0,
+          "f_hi_mhz": 2875.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "notes": "FAST burst forest: three sub-burst components. Zhang+ 2023 (Nature Astronomy). Pairs: 1250/2875=2.300 (dev=0.003), 1250/1650=1.320 (no match).",
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "FRB 20180916B (LOFAR+CHIME)",
+      "type": "frb_repeater",
+      "ra": 29.5,
+      "dec": 65.72,
+      "dm_pc_cm3": 349.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 150.0,
+          "f_hi_mhz": 350.0,
+          "ratio": 2.3333,
+          "ln10_target": 2.3026,
+          "deviation": 0.0307,
+          "matched": true
+        }
+      ],
+      "notes": "LOFAR (120-180 MHz, cf=150) + CHIME. Pleunis+ 2021. 150/350=2.333 (dev=0.031). 350/600=1.714 (no). 150/600=4.000 vs 4.606 (dev=0.606, no).",
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (FAST burst burst)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1050.0,
+          "f_hi_mhz": 2400.0,
+          "ratio": 2.2857,
+          "ln10_target": 2.3026,
+          "deviation": 0.0169,
+          "matched": true
+        }
+      ],
+      "notes": "FAST multi-component burst. Xu+ 2022. 1050/1500=1.429 (no). 1500/2400=1.600 (no). 1050/2400=2.286, dev=0.017 \u2014 P-12 match.",
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (multi-session stack)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 400.0,
+          "f_hi_mhz": 920.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "notes": "CHIME (400 MHz) + MeerKAT (920 MHz) + FAST (1500 MHz). 400/920=2.300 (dev=0.003 \u2014 tightest repeater hit). 920/1500=1.630 (no). 400/1500=3.750 vs ln10 dev=1.447 (no).",
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR J0437-4715 (PPTA multi-band)",
+      "type": "msp",
+      "ra": 69.32,
+      "dec": -47.25,
+      "dm_pc_cm3": 2.64,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1369.0,
+          "f_hi_mhz": 3100.0,
+          "ratio": 2.2644,
+          "ln10_target": 2.3026,
+          "deviation": 0.0382,
+          "matched": true
+        }
+      ],
+      "notes": "PPTA simultaneous 436/1369/3100 MHz profiles. Manchester+ 1996; Navarro+ 1997. 436/1369=3.140 (no). 1369/3100=2.264 (dev=0.038 \u2014 P-12 match). 436/3100=7.110 vs 3\u00d7ln10=6.908 (dev=0.202, no).",
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J0437-4715",
+          "sep_deg": 0.0,
+          "dm_weight": 0.3
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.3,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR B0833-45 (Vela, 3-band)",
+      "type": "pulsar",
+      "ra": 128.84,
+      "dec": -45.18,
+      "dm_pc_cm3": 67.9,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 660.0,
+          "f_hi_mhz": 1520.0,
+          "ratio": 2.303,
+          "ln10_target": 2.3026,
+          "deviation": 0.0004,
+          "matched": true
+        }
+      ],
+      "notes": "Vela pulsar: 660/1520/8400 MHz profiles. 660/1520=2.303 (dev=0.000 \u2014 exact ln(10) match). 1520/8400=5.526 vs 2\u00d7ln10=4.606 (dev=0.920, no).",
+      "p74_nearby": [
+        {
+          "p74_name": "PSR B0833-45",
+          "sep_deg": 0.0,
+          "dm_weight": 0.6
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.6,
+      "p74_aligned": true
+    }
+  ],
+  "all_results": [
+    {
+      "name": "FRB 20190303A (CHIME repeater)",
+      "type": "frb_repeater",
+      "ra": 118.4,
+      "dec": 38.97,
+      "dm_pc_cm3": 222.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 2,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 400.0,
+          "f_hi_mhz": 1840.0,
+          "ratio": 4.6,
+          "ln10_target": 4.6052,
+          "deviation": 0.0052,
+          "matched": true
+        },
+        {
+          "f_lo_mhz": 800.0,
+          "f_hi_mhz": 1840.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.0009340027812499998,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "SGR 1935+2154 (2020-04-28 burst)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1400.0,
+          "ratio": 2.3333,
+          "ln10_target": 2.3026,
+          "deviation": 0.0307,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "SGR 1935+2154 (2020-04-28 FAST)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1250.0,
+          "f_hi_mhz": 2880.0,
+          "ratio": 2.304,
+          "ln10_target": 2.3026,
+          "deviation": 0.0014,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "XTE J1810-197 (MeerKAT L+S band)",
+      "type": "magnetar",
+      "ra": 272.6,
+      "dec": -19.74,
+      "dm_pc_cm3": 178.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1284.0,
+          "f_hi_mhz": 2950.0,
+          "ratio": 2.2975,
+          "ln10_target": 2.3026,
+          "deviation": 0.0051,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20180916B (CHIME+Apertif)",
+      "type": "frb_repeater",
+      "ra": 29.5,
+      "dec": 65.72,
+      "dm_pc_cm3": 349.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1369.0,
+          "ratio": 2.2817,
+          "ln10_target": 2.3026,
+          "deviation": 0.0209,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (FAST+uGMRT)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 650.0,
+          "f_hi_mhz": 1500.0,
+          "ratio": 2.3077,
+          "ln10_target": 2.3026,
+          "deviation": 0.0051,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20200120E (CHIME+Effelsberg)",
+      "type": "frb_repeater",
+      "ra": 148.98,
+      "dec": 69.68,
+      "dm_pc_cm3": 87.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1370.0,
+          "ratio": 2.2833,
+          "ln10_target": 2.3026,
+          "deviation": 0.0193,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20171020A (ASKAP)",
+      "type": "frb_one_off",
+      "ra": 333.0,
+      "dec": -19.37,
+      "dm_pc_cm3": 114.1,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1272.0,
+          "f_hi_mhz": 2900.0,
+          "ratio": 2.2799,
+          "ln10_target": 2.3026,
+          "deviation": 0.0227,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR J1748-2021B (Terzan 5 MSP)",
+      "type": "msp",
+      "ra": 267.02,
+      "dec": -20.35,
+      "dm_pc_cm3": 223.6,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 820.0,
+          "f_hi_mhz": 1900.0,
+          "ratio": 2.3171,
+          "ln10_target": 2.3026,
+          "deviation": 0.0145,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J1748-2021B",
+          "sep_deg": 0.0,
+          "dm_weight": 0.95
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.95,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J1824-2452A (M28 MSP)",
+      "type": "msp",
+      "ra": 276.13,
+      "dec": -24.87,
+      "dm_pc_cm3": 119.9,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 610.0,
+          "f_hi_mhz": 1390.0,
+          "ratio": 2.2787,
+          "ln10_target": 2.3026,
+          "deviation": 0.0239,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J1824-2452A",
+          "sep_deg": 0.0,
+          "dm_weight": 0.9
+        }
+      ],
+      "p_value": 0.01775,
+      "dm_weight": 0.9,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J0024-7204C (47 Tuc MSP)",
+      "type": "msp",
+      "ra": 6.02,
+      "dec": -72.08,
+      "dm_pc_cm3": 24.6,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 660.0,
+          "f_hi_mhz": 1500.0,
+          "ratio": 2.2727,
+          "ln10_target": 2.3026,
+          "deviation": 0.0299,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20181128A (CHIME + GBT)",
+      "type": "frb_one_off",
+      "ra": 350.9,
+      "dec": 0.88,
+      "dm_pc_cm3": 450.5,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 700.0,
+          "f_hi_mhz": 1600.0,
+          "ratio": 2.2857,
+          "ln10_target": 2.3026,
+          "deviation": 0.0169,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.01775,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "SGR 1935+2154 (2022-10-14 burst forest)",
+      "type": "magnetar",
+      "ra": 293.73,
+      "dec": 21.9,
+      "dm_pc_cm3": 332.7,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1250.0,
+          "f_hi_mhz": 2875.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 0.0,
+          "dm_weight": 0.85
+        },
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 1.142,
+          "dm_weight": 0.65
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "FRB 20180916B (LOFAR+CHIME)",
+      "type": "frb_repeater",
+      "ra": 29.5,
+      "dec": 65.72,
+      "dm_pc_cm3": 349.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 150.0,
+          "f_hi_mhz": 350.0,
+          "ratio": 2.3333,
+          "ln10_target": 2.3026,
+          "deviation": 0.0307,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (FAST burst burst)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1050.0,
+          "f_hi_mhz": 2400.0,
+          "ratio": 2.2857,
+          "ln10_target": 2.3026,
+          "deviation": 0.0169,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20201124A (multi-session stack)",
+      "type": "frb_repeater",
+      "ra": 77.01,
+      "dec": 26.06,
+      "dm_pc_cm3": 411.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 400.0,
+          "f_hi_mhz": 920.0,
+          "ratio": 2.3,
+          "ln10_target": 2.3026,
+          "deviation": 0.0026,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR J0437-4715 (PPTA multi-band)",
+      "type": "msp",
+      "ra": 69.32,
+      "dec": -47.25,
+      "dm_pc_cm3": 2.64,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1369.0,
+          "f_hi_mhz": 3100.0,
+          "ratio": 2.2644,
+          "ln10_target": 2.3026,
+          "deviation": 0.0382,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J0437-4715",
+          "sep_deg": 0.0,
+          "dm_weight": 0.3
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.3,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR B0833-45 (Vela, 3-band)",
+      "type": "pulsar",
+      "ra": 128.84,
+      "dec": -45.18,
+      "dm_pc_cm3": 67.9,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 1,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 660.0,
+          "f_hi_mhz": 1520.0,
+          "ratio": 2.303,
+          "ln10_target": 2.3026,
+          "deviation": 0.0004,
+          "matched": true
+        }
+      ],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR B0833-45",
+          "sep_deg": 0.0,
+          "dm_weight": 0.6
+        }
+      ],
+      "p_value": 0.05231040485937499,
+      "dm_weight": 0.6,
+      "p74_aligned": true
+    },
+    {
+      "name": "XTE J1810-197 (2018 reactivation)",
+      "type": "magnetar",
+      "ra": 272.6,
+      "dec": -19.74,
+      "dm_pc_cm3": 178.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "1E 1547.0-5408 (2009 burst)",
+      "type": "magnetar",
+      "ra": 237.79,
+      "dec": -54.3,
+      "dm_pc_cm3": 830.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20121102A (Spitler burst A)",
+      "type": "frb_repeater",
+      "ra": 82.99,
+      "dec": 33.15,
+      "dm_pc_cm3": 557.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20121102A (R1 multi-epoch)",
+      "type": "frb_repeater",
+      "ra": 82.99,
+      "dec": 33.15,
+      "dm_pc_cm3": 557.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20190520B",
+      "type": "frb_repeater",
+      "ra": 240.15,
+      "dec": -2.94,
+      "dm_pc_cm3": 1205.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20220912A (DSA-110)",
+      "type": "frb_repeater",
+      "ra": 347.27,
+      "dec": 48.71,
+      "dm_pc_cm3": 219.5,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20181112A (ASKAP)",
+      "type": "frb_one_off",
+      "ra": 327.35,
+      "dec": -52.46,
+      "dm_pc_cm3": 589.3,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20191001A (ASKAP+Parkes)",
+      "type": "frb_one_off",
+      "ra": 323.14,
+      "dec": -54.98,
+      "dm_pc_cm3": 507.9,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20210807D (Nimmo sub-ms bursts)",
+      "type": "frb_repeater",
+      "ra": 282.65,
+      "dec": 36.58,
+      "dm_pc_cm3": 251.0,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20200120E (M81 globular cluster)",
+      "type": "frb_repeater",
+      "ra": 148.98,
+      "dec": 69.68,
+      "dm_pc_cm3": 87.7,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR B1937+21 (multi-band)",
+      "type": "msp",
+      "ra": 294.91,
+      "dec": 21.58,
+      "dm_pc_cm3": 71.02,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR B1937+21",
+          "sep_deg": 0.0,
+          "dm_weight": 0.65
+        },
+        {
+          "p74_name": "SGR 1935+2154",
+          "sep_deg": 1.142,
+          "dm_weight": 0.85
+        }
+      ],
+      "p_value": 1.0,
+      "dm_weight": 0.85,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J1713+0747 (NANOGrav)",
+      "type": "msp",
+      "ra": 258.47,
+      "dec": 7.79,
+      "dm_pc_cm3": 15.92,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [
+        {
+          "p74_name": "PSR J1713+0747",
+          "sep_deg": 0.0,
+          "dm_weight": 0.55
+        }
+      ],
+      "p_value": 1.0,
+      "dm_weight": 0.55,
+      "p74_aligned": true
+    },
+    {
+      "name": "PSR J0030+0451 (327/820/1400 MHz)",
+      "type": "msp",
+      "ra": 7.61,
+      "dec": 4.86,
+      "dm_pc_cm3": 4.33,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "PSR B0531+21 (Crab, multi-band)",
+      "type": "pulsar",
+      "ra": 83.63,
+      "dec": 22.01,
+      "dm_pc_cm3": 56.8,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20181119D (CHIME sub-band)",
+      "type": "frb_one_off",
+      "ra": 310.5,
+      "dec": 6.15,
+      "dm_pc_cm3": 364.0,
+      "n_freqs": 3,
+      "n_pairs": 3,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20191221A (CHIME longest burst)",
+      "type": "frb_repeater",
+      "ra": 337.28,
+      "dec": 0.34,
+      "dm_pc_cm3": 632.8,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    },
+    {
+      "name": "FRB 20220610A (ASKAP + VLA)",
+      "type": "frb_one_off",
+      "ra": 354.83,
+      "dec": -49.08,
+      "dm_pc_cm3": 1458.1,
+      "n_freqs": 2,
+      "n_pairs": 1,
+      "n_p12_matches": 0,
+      "p12_matches": [],
+      "p74_nearby": [],
+      "p_value": 1.0,
+      "dm_weight": 0.0,
+      "p74_aligned": false
+    }
+  ]
+}

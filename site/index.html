@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="The Imscribing Grammar: cataloging the Universal Imscriptive Grammar. A 12-primitive structural type theory encoding any system as a coordinate in a 17,280,000-element Crystal of Types.">
+<meta property="og:title" content="The Imscribing Grammar">
+<meta property="og:description" content="Cataloging the Universal Imscriptive Grammar. 12 primitives. 17,280,000 structural types. Crystal of Types, Ouroboricity tiers, Consciousness score.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Imscribing Grammar">
+<meta name="twitter:description" content="Cataloging the Universal Imscriptive Grammar. 12 primitives. 17,280,000 structural types.">
+<title>The Imscribing Grammar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<style>
+:root {
+  --bg: #05060E;
+  --bg2: #080B18;
+  --surface: rgba(255,255,255,0.02);
+  --surface2: rgba(255,255,255,0.04);
+  --border: #1A2050;
+  --border2: rgba(0,212,255,0.15);
+  --text: #E8E8F0;
+  --muted: #6B7280;
+  --muted2: #9CA3AF;
+  --primary: #00D4FF;
+  --primary-dim: rgba(0,212,255,0.15);
+  --secondary: #7C3AED;
+  --secondary-dim: rgba(124,58,237,0.15);
+  --green: #10B981;
+  --green-dim: rgba(16,185,129,0.12);
+  --amber: #F59E0B;
+  --amber-dim: rgba(245,158,11,0.12);
+  --red: #EF4444;
+  --font: 'JetBrains Mono', monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh}
+
+/* ── Header ── */
+header{position:relative;padding:56px 48px 36px;overflow:hidden;border-bottom:1px solid var(--border)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.orb1{width:380px;height:380px;background:rgba(124,58,237,0.09);top:-140px;right:80px}
+.orb2{width:260px;height:260px;background:rgba(124,58,237,0.09);bottom:-80px;left:160px}
+.orb3{width:180px;height:180px;background:rgba(14,166,116,0);top:-60px;left:400px}
+.hcontent{position:relative;z-index:1}
+h1{font-size:52px;font-weight:700;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 60%,#A78BFA 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-2px;line-height:1;margin-bottom:10px}
+.subtitle{color:var(--muted);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.gh-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);border-radius:4px;padding:4px 10px;margin-bottom:22px;transition:color 0.2s,border-color 0.2s}
+.gh-link:hover{color:var(--primary);border-color:var(--primary)}
+.gh-link svg{flex-shrink:0}
+footer{border-top:1px solid var(--border);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,0.3)}
+footer a{color:var(--muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s}
+footer a:hover{color:var(--primary)}
+.footer-copy{color:var(--muted);font-size:10px;letter-spacing:1px}
+.hstats{display:flex;gap:36px;flex-wrap:wrap}
+.hstat{display:flex;flex-direction:column}
+.hstat-val{font-size:26px;font-weight:600;color:var(--primary);line-height:1}
+.hstat-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px}
+
+/* ── Navigation ── */
+nav{display:flex;overflow-x:auto;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.4);padding:0 48px;gap:0}
+.tab{background:none;border:none;color:var(--muted);font-family:var(--font);font-size:12px;padding:16px 22px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all 0.2s;letter-spacing:0.5px;text-transform:uppercase}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--primary);border-bottom-color:var(--primary)}
+
+/* ── Main ── */
+main{padding:40px 48px;max-width:1440px;margin:0 auto}
+.panel{display:none}
+.panel.active{display:block}
+
+/* ── Section titles ── */
+.stitle{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:18px;margin-top:36px;display:flex;align-items:center;gap:10px}
+.stitle:first-child{margin-top:0}
+.stitle::after{content:'';flex:1;height:1px;background:var(--border)}
+.stitle-tag{background:var(--primary-dim);color:var(--primary);border:1px solid var(--border2);border-radius:3px;padding:1px 6px;font-size:9px}
+
+/* ── Cards ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px}
+.card h3{font-size:13px;font-weight:600;color:var(--primary);margin-bottom:8px}
+.card p{font-size:12px;color:var(--muted);line-height:1.6}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+
+/* ── Tier badges ── */
+.tier{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:0.5px}
+.t-inf{background:rgba(0,212,255,0.12);color:var(--primary);border:1px solid rgba(0,212,255,0.3)}
+.t-0{background:rgba(107,114,128,0.12);color:var(--muted2);border:1px solid rgba(107,114,128,0.3)}
+.t-1{background:var(--green-dim);color:var(--green);border:1px solid rgba(16,185,129,0.3)}
+.t-2{background:var(--secondary-dim);color:#A78BFA;border:1px solid rgba(124,58,237,0.3)}
+.t-2d{background:rgba(124,58,237,0.08);color:#C4B5FD;border:1px solid rgba(124,58,237,0.2)}
+
+/* ── Primitive chips ── */
+.tuple-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.pchip{padding:2px 6px;border-radius:3px;font-size:10px;white-space:nowrap;line-height:1.6}
+.pf5{background:rgba(0,212,255,0.08);color:#7DD3FC;border:1px solid rgba(0,212,255,0.2)}
+.pf4{background:rgba(124,58,237,0.08);color:#C4B5FD;border:1px solid rgba(124,58,237,0.2)}
+.pf3{background:var(--green-dim);color:#6EE7B7;border:1px solid rgba(16,185,129,0.2)}
+
+/* ── Primitive cards ── */
+.prim-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px}
+.prim-card:hover{border-color:var(--border2)}
+.prim-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.prim-sym{font-size:22px;font-weight:700;color:var(--primary);min-width:28px}
+.prim-name{font-size:12px;color:var(--muted2)}
+.prim-fam{margin-left:auto;font-size:9px;padding:2px 6px;border-radius:3px}
+.fam-f5{background:rgba(0,212,255,0.12);color:var(--primary);border:1px solid rgba(0,212,255,0.25)}
+.fam-f4{background:var(--secondary-dim);color:#A78BFA;border:1px solid rgba(124,58,237,0.25)}
+.fam-f3{background:var(--green-dim);color:var(--green);border:1px solid rgba(16,185,129,0.25)}
+.val-list{list-style:none;display:flex;flex-wrap:wrap;gap:4px}
+.val-list li{font-size:10px;padding:2px 6px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:3px;color:var(--muted2)}
+.val-list li.hl{background:rgba(0,212,255,0.06);border-color:rgba(0,212,255,0.2);color:var(--primary)}
+.val-list li.hl2{background:var(--secondary-dim);border-color:rgba(124,58,237,0.25);color:#A78BFA}
+.prim-note{font-size:10px;color:var(--muted);margin-top:8px;line-height:1.5;border-top:1px solid var(--border);padding-top:8px}
+
+/* ── Operations ── */
+.op-block{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:14px}
+.op-block:hover{border-color:var(--border2)}
+.op-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.op-head h3{font-size:14px;font-weight:600;color:var(--primary)}
+.op-tag{font-size:9px;padding:2px 7px;border-radius:3px}
+.ot-lattice{background:var(--secondary-dim);color:#A78BFA;border:1px solid rgba(124,58,237,0.25)}
+.ot-metric{background:rgba(0,212,255,0.08);color:var(--primary);border:1px solid var(--border2)}
+.ot-tier{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(245,158,11,0.25)}
+.ot-struct{background:var(--green-dim);color:var(--green);border:1px solid rgba(16,185,129,0.25)}
+.formula{background:rgba(0,0,0,0.35);border:1px solid var(--border);border-radius:5px;padding:12px 16px;margin:10px 0;font-size:13px;overflow-x:auto;line-height:1.8}
+.op-block p{font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px}
+.rules{list-style:none;margin-top:8px}
+.rules li{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;gap:8px;align-items:baseline}
+.rules li:last-child{border-bottom:none}
+.rules li::before{content:'→';color:var(--primary);flex-shrink:0}
+.rules li b{color:var(--text)}
+.rules li code{background:rgba(0,212,255,0.06);border:1px solid var(--border2);border-radius:3px;padding:1px 5px;font-size:11px;color:var(--primary)}
+
+/* ── Op grid ── */
+.op-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.op-cols{grid-template-columns:1fr}}
+
+/* ── Catalog ── */
+.dom-section{margin-bottom:40px}
+.dom-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dom-icon{width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.dom-title{font-size:13px;font-weight:600;color:var(--text)}
+.dom-count{font-size:11px;color:var(--muted);margin-left:auto}
+.syn-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;transition:border-color 0.2s}
+.syn-card:hover{border-color:var(--border2)}
+.syn-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.syn-desc{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.4}
+.syn-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.cscore{font-size:10px;color:var(--muted2)}
+.cscore span{color:var(--amber)}
+
+/* ── Crystal ── */
+.crystal-hero{background:linear-gradient(135deg,rgba(0,212,255,0.04),rgba(124,58,237,0.04));border:1px solid var(--border2);border-radius:12px;padding:32px;text-align:center;margin-bottom:32px}
+.crystal-hero .big{font-size:48px;font-weight:700;color:var(--primary);letter-spacing:-2px;display:block}
+.crystal-hero .sub{font-size:12px;color:var(--muted);margin-top:6px}
+.factor-eq{font-size:14px;color:var(--text);margin:12px 0;letter-spacing:1px}
+.factor-eq span{color:var(--primary)}
+
+.tier-chart{margin:24px 0}
+.tier-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.tier-lbl{width:56px;font-size:11px;text-align:right;color:var(--muted)}
+.tier-bar{height:22px;border-radius:4px;display:flex;align-items:center;padding:0 10px;font-size:11px;font-weight:600;min-width:50px;transition:width 0.6s}
+.tier-cnt{font-size:11px;color:var(--muted)}
+
+.fam-table{width:100%}
+.fam-table th{text-align:left;padding:8px 12px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border)}
+.fam-table td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+.fam-table td:first-child{color:var(--text)}
+.fam-table tr:hover td{background:rgba(255,255,255,0.02)}
+
+.addr-block{background:rgba(0,0,0,0.3);border:1px solid var(--border2);border-radius:6px;padding:16px;margin-top:12px}
+.addr-row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.addr-row:last-child{border-bottom:none}
+.addr-key{font-size:11px;color:var(--muted)}
+.addr-val{font-size:12px;color:var(--primary);font-weight:500}
+
+/* ── Domains overview ── */
+.dom-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;transition:border-color 0.2s}
+.dom-card:hover{border-color:var(--border2)}
+.dom-card .icon{font-size:28px;margin-bottom:10px;display:block}
+.dom-card h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.dom-card .count{font-size:22px;font-weight:600;color:var(--primary);margin-bottom:4px}
+.dom-card p{font-size:11px;color:var(--muted);line-height:1.5}
+.dom-card .finding{font-size:11px;color:var(--muted2);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);line-height:1.5}
+
+/* ── Overview ── */
+.grammar-box{background:rgba(0,0,0,0.4);border:1px solid var(--border2);border-radius:8px;padding:24px 28px;text-align:center;margin:20px 0}
+.grammar-box .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.grammar-box .tuple-str{font-size:15px;color:var(--text);letter-spacing:0.5px}
+
+.fact-list{list-style:none}
+.fact-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;color:var(--muted);line-height:1.6;display:flex;gap:10px}
+.fact-list li:last-child{border-bottom:none}
+.fact-list li::before{content:'◆';color:var(--primary);flex-shrink:0;font-size:8px;margin-top:4px}
+.fact-list b{color:var(--text)}
+
+/* ── Tables ── */
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{text-align:left;padding:8px 12px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border)}
+.tbl td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--muted);vertical-align:top}
+.tbl tr:hover td{background:rgba(255,255,255,0.015)}
+.tbl td.em{color:var(--text)}
+.tbl td.pri{color:var(--primary)}
+.tbl td.grn{color:var(--green)}
+.tbl td.pur{color:#A78BFA}
+
+/* ── Use It tab ── */
+.use-hero{background:linear-gradient(135deg,rgba(0,212,255,0.04),rgba(124,58,237,0.05));border:1px solid var(--border2);border-radius:10px;padding:28px 32px;margin-bottom:36px}
+.use-hero h2{font-size:22px;font-weight:600;color:var(--text);margin-bottom:8px;letter-spacing:-0.5px}
+.use-hero p{font-size:13px;color:var(--muted);max-width:640px;line-height:1.7}
+
+.use-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0;margin-bottom:20px;overflow:hidden;transition:border-color 0.2s}
+.use-card:hover{border-color:var(--border2)}
+.use-card-inner{display:grid;grid-template-columns:56px 1fr;gap:0}
+.use-num{background:rgba(0,212,255,0.04);border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;padding:24px 0;font-size:11px;font-weight:700;color:rgba(0,212,255,0.35);letter-spacing:2px;writing-mode:vertical-rl;text-orientation:mixed;user-select:none}
+.use-body{padding:22px 24px}
+.use-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.4;letter-spacing:-0.3px}
+.use-context{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:16px;max-width:700px}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+@media(max-width:800px){.compare-grid{grid-template-columns:1fr}}
+.compare-item{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:6px;padding:12px 14px}
+.compare-item .ci-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.compare-item .ci-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px}
+
+.diff-pchip{padding:2px 6px;border-radius:3px;font-size:10px;white-space:nowrap}
+.diff-match{background:rgba(255,255,255,0.03);color:var(--muted);border:1px solid rgba(255,255,255,0.06)}
+.diff-a{background:rgba(0,212,255,0.1);color:var(--primary);border:1px solid rgba(0,212,255,0.3)}
+.diff-b{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.3)}
+
+.delta-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0;padding:10px 14px;background:rgba(0,0,0,0.25);border-radius:5px;border:1px solid var(--border)}
+.delta-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}
+.delta-item{font-size:11px;color:var(--muted2)}
+.delta-item .pname{color:var(--primary)}
+.delta-item .arrow{color:var(--muted);margin:0 3px}
+
+.insight-box{background:linear-gradient(90deg,rgba(0,212,255,0.06),rgba(124,58,237,0.04));border:1px solid rgba(0,212,255,0.15);border-left:3px solid var(--primary);border-radius:5px;padding:12px 16px;margin-top:14px}
+.insight-box .ib-label{font-size:9px;color:var(--primary);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px}
+.insight-box p{font-size:12px;color:var(--text);line-height:1.65}
+
+.tensor-display{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;margin:14px 0;text-align:center}
+.tensor-op{font-size:20px;color:var(--muted);font-weight:300}
+.tensor-box{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:6px;padding:10px 12px}
+.tensor-box .tb-name{font-size:11px;color:var(--muted2);margin-bottom:6px}
+.tensor-result{border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.04)}
+.tensor-result .tb-name{color:var(--primary)}
+@media(max-width:700px){.tensor-display{grid-template-columns:1fr;}.tensor-op{display:none}}
+
+.step-list{list-style:none;margin:12px 0;counter-reset:steps}
+.step-list li{counter-increment:steps;display:flex;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;color:var(--muted);align-items:baseline}
+.step-list li:last-child{border-bottom:none}
+.step-list li::before{content:counter(steps);display:flex;align-items:center;justify-content:center;width:20px;height:20px;min-width:20px;border-radius:50%;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);font-size:10px;color:var(--primary);flex-shrink:0;margin-top:1px}
+.step-list b{color:var(--text)}
+.step-list code{background:rgba(0,212,255,0.06);border:1px solid var(--border2);border-radius:3px;padding:1px 5px;font-size:10px;color:var(--primary)}
+
+.dist-badge{display:inline-flex;align-items:baseline;gap:4px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:4px;padding:3px 10px;font-size:13px;font-weight:600;color:var(--primary);margin:0 4px}
+.dist-badge small{font-size:10px;color:var(--muted);font-weight:400}
+
+/* ── Builder ── */
+.bld-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
+.bld-prim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin:16px 0}
+.bld-prim{background:rgba(0,0,0,0.25);border:1px solid var(--border);border-radius:6px;padding:10px}
+.bld-prim .head{font-size:10px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:6px;letter-spacing:1px}
+.bld-radio{display:inline-flex;align-items:center;gap:3px;margin:2px 4px 2px 0;font-size:11px;color:var(--muted2);cursor:pointer}
+.bld-radio input{accent-color:var(--primary);width:11px;height:11px}
+.bld-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.bld-btn{background:var(--primary);color:var(--bg);border:none;padding:9px 18px;border-radius:6px;font-family:var(--font);font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:1px}
+.bld-btn:hover{opacity:0.85}
+.bld-btn.sec{background:rgba(124,58,237,0.15);color:#A78BFA;border:1px solid rgba(124,58,237,0.3)}
+.bld-result{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:8px;padding:18px;margin-top:14px;display:none}
+.bld-cscore{font-size:30px;color:var(--primary);font-weight:700;line-height:1;margin-bottom:8px}
+.bld-gate{display:inline-block;padding:3px 8px;border-radius:3px;font-size:10px;font-weight:600;margin:2px}
+.bld-gate.pass{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.3)}
+.bld-gate.fail{background:rgba(239,68,68,0.2);color:var(--red);border:1px solid rgba(239,68,68,0.3)}
+.bld-pbar{height:5px;background:rgba(107,114,128,0.2);border-radius:3px;margin:10px 0 4px}
+.bld-pbar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--primary));border-radius:3px;transition:width 0.3s}
+/* ── Searchable catalog ── */
+.cat-search{width:100%;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-family:var(--font);font-size:12px;color:var(--text);outline:none;margin-bottom:10px;transition:border-color 0.2s}
+.cat-search:focus{border-color:var(--border2)}
+.cat-count{font-size:11px;color:var(--muted);margin-bottom:8px}
+.cat-wrap{max-height:600px;overflow-y:auto;border:1px solid var(--border);border-radius:8px}
+.cat-wrap table{width:100%;font-size:12px;border-collapse:collapse}
+.cat-wrap th{text-align:left;padding:8px 12px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg2)}
+.cat-wrap td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.025);color:var(--muted);vertical-align:top}
+.cat-wrap td:first-child{color:var(--text);font-weight:500;max-width:240px}
+.cat-wrap td:nth-child(2){font-size:11px;max-width:320px}
+.cat-wrap tr:hover td{background:rgba(0,212,255,0.02)}
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#1A2050;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#2A3070}
+
+/* ── Theme switcher ── */
+.theme-bar{position:absolute;top:18px;right:20px;display:flex;gap:7px;align-items:center;z-index:10}
+.theme-bar-label{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-right:2px}
+.tswatch{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:transform 0.15s,border-color 0.15s;flex-shrink:0}
+.tswatch:hover{transform:scale(1.25)}
+.tswatch.active{border-color:var(--text);transform:scale(1.15)}
+
+/* ── Light theme overrides (hardcoded rgba flips) ── */
+[data-theme="light"] body{background:#F5F6FA;color:#1A1A2E}
+[data-theme="light"] .rules li{border-bottom-color:rgba(0,0,0,0.06)}
+[data-theme="light"] .rules li::before{color:var(--primary)}
+[data-theme="light"] .cat-wrap td{border-bottom-color:rgba(0,0,0,0.04)}
+[data-theme="light"] .cat-wrap tr:hover td{background:rgba(0,102,204,0.04)}
+[data-theme="light"] .tbl td{border-bottom-color:rgba(0,0,0,0.05)}
+[data-theme="light"] .tbl tr:hover td{background:rgba(0,0,0,0.02)}
+[data-theme="light"] .fam-table tr:hover td{background:rgba(0,0,0,0.02)}
+[data-theme="light"] footer{background:rgba(0,0,0,0.04)}
+[data-theme="light"] nav{background:rgba(0,0,0,0.04)}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  header{padding:36px 20px 24px}
+  main{padding:24px 20px}
+  nav{padding:0 20px}
+  h1{font-size:34px}
+  .hstats{gap:20px}
+  .theme-bar{top:12px;right:12px}
+}
+/* KaTeX fallback — hides screen-reader MathML span if CDN CSS fails to load,
+   preventing double-display of math (rendered HTML + raw MathML both visible) */
+.katex-mathml{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hgrid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="theme-bar" id="theme-bar"></div>
+  <div class="hcontent">
+    <h1>The Imscribing Grammar</h1>
+    <div class="subtitle">Cataloging the Universal Imscriptive Grammar — v0.5.82</div>
+    <a class="gh-link" href="https://github.com/umpolungfish/imscrbgrmr" target="_blank" rel="noopener">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      umpolungfish/imscrbgrmr
+    </a>
+    <div class="hstats">
+      <div class="hstat"><span class="hstat-val">12</span><span class="hstat-lbl">Primitives</span></div>
+      <div class="hstat"><span class="hstat-val">17,280,000</span><span class="hstat-lbl">Structural Types</span></div>
+      <div class="hstat"><span class="hstat-val">3,458</span><span class="hstat-lbl">Encoded Systems</span></div>
+      <div class="hstat"><span class="hstat-val">§1–§86</span><span class="hstat-lbl">Theorems</span></div>
+      <div class="hstat"><span class="hstat-val">P-1–P-635</span><span class="hstat-lbl">Predictions</span></div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <button class="tab active" data-tab="overview">Overview</button>
+  <button class="tab" data-tab="use">Use It</button>
+  <button class="tab" data-tab="builder">Builder</button>
+  <button class="tab" data-tab="primitives">12 Primitives</button>
+  <button class="tab" data-tab="operations">Operations</button>
+  <button class="tab" data-tab="catalog">Catalog</button>
+  <button class="tab" data-tab="crystal">Crystal of Types</button>
+  <button class="tab" data-tab="domains">Domains</button>
+  <button class="tab" data-tab="paper">Paper</button>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════════ OVERVIEW -->
+<div id="panel-overview" class="panel active">
+
+  <div class="stitle">Grammar</div>
+  <div class="grammar-box">
+    <div class="label">The 12-Primitive Synthon Tuple</div>
+    <div class="tuple-str">$\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$</div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;">
+    Every system — mathematical, physical, biological, linguistic, conscious — occupies a coordinate position in a 12-dimensional discrete lattice. The coordinate is a <em style="color:var(--text)">synthon</em>: a structural type encoding not what a system is made of, but what algebraic shape it has. Two synthons at distance zero are <em style="color:var(--text)">co-typed</em> — structurally identical even if made of different substrate.
+  </p>
+
+  <div class="stitle" style="margin-top:32px;">Primitive Families <span class="stitle-tag">3³ × 4⁵ × 5⁴ = 17,280,000</span></div>
+  <div class="grid3">
+    <div class="card">
+      <h3>$\mathcal{F}_5$ — Gate Primitives</h3>
+      <p style="margin-bottom:10px;">$T,\ P,\ \Phi,\ K$ — each with 5 values. These are the tier-determining primitives: topology gate, Frobenius gate, criticality gate, kinetic gate. Structural type count: $5^4 = 625$.</p>
+      <div class="tuple-row">
+        <span class="pchip pf5">T</span>
+        <span class="pchip pf5">P</span>
+        <span class="pchip pf5">Φ</span>
+        <span class="pchip pf5">K</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>$\mathcal{F}_4$ — Structural Primitives</h3>
+      <p style="margin-bottom:10px;">$D,\ R,\ \Gamma,\ H,\ \Omega$ — each with 4 values. Encode dimensionality, relational mode, interaction grammar, temporal depth, winding. Structural type count: $4^5 = 1{,}024$.</p>
+      <div class="tuple-row">
+        <span class="pchip pf4">D</span>
+        <span class="pchip pf4">R</span>
+        <span class="pchip pf4">Γ</span>
+        <span class="pchip pf4">H</span>
+        <span class="pchip pf4">Ω</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>$\mathcal{F}_3$ — Quantitative Primitives</h3>
+      <p style="margin-bottom:10px;">$F,\ G,\ S$ — each with 3 values. Encode fidelity, scope/granularity, stoichiometry. These are the continuous-flavor primitives. Structural type count: $3^3 = 27$.</p>
+      <div class="tuple-row">
+        <span class="pchip pf3">F</span>
+        <span class="pchip pf3">G</span>
+        <span class="pchip pf3">S</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stitle">Ouroboricity Tiers</div>
+  <div class="op-cols">
+    <div>
+      <table class="tbl">
+        <thead><tr><th>Rule</th><th>Condition</th><th>Tier</th><th>Count</th></tr></thead>
+        <tbody>
+          <tr><td class="em">R1</td><td>$\Phi_c + P_{\pm}^{\text{sym}}$</td><td><span class="tier t-inf">$O_\infty$</span></td><td class="pri">382</td></tr>
+          <tr><td class="em">R3</td><td>$\Phi_c + \Omega_0$</td><td><span class="tier t-1">$O_1$</span></td><td class="grn">297</td></tr>
+          <tr><td class="em">R4</td><td>$\Phi_c + \Omega \neq \Omega_0 + D \in \{D_\wedge, D_\odot, D_\triangle\}$</td><td><span class="tier t-2">$O_2$</span></td><td class="pur">398</td></tr>
+          <tr><td class="em">R5</td><td>$\Phi_c + \Omega \neq \Omega_0 + D_\infty$</td><td><span class="tier t-2d">$O_2^\dagger$</span></td><td class="pur">130</td></tr>
+          <tr><td class="em">R2</td><td>$\Phi \notin \{\Phi_c, \Phi_c^\mathbb{C}\}$</td><td><span class="tier t-0">$O_0$</span></td><td style="color:var(--muted2)">768</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px;">Rules applied in priority order R1 → R2 → R3 → R4 → R5. Total catalog: 1,975 synthons.</p>
+    </div>
+    <div class="card">
+      <h3>Key Structural Facts</h3>
+      <ul class="fact-list">
+        <li><b>$\Phi_c$ absorbs under meet:</b> $\text{meet}(\Phi_c, x) = \Phi_c$ for all $x$. Necessary condition for self-modeling.</li>
+        <li><b>Frobenius non-synthesizability (§23):</b> $P_{\pm}^{\text{sym}}$ cannot be composed from factors with $P < P_{\pm}^{\text{sym}}$. $O_\infty$ must be directly encoded.</li>
+        <li><b>Bottleneck rule:</b> $P$ and $F$ take $\min$ under $\otimes$; all other ordered primitives take $\max$.</li>
+        <li><b>$P_{\pm}^{\text{sym}}$ is the tier singularity:</b> overrides all $\Omega$ and $D$ branching, collapses directly to $O_\infty$ via R1.</li>
+        <li><b>Coupling destruction:</b> $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$ — Gate 1 destroyed by $\Phi_\text{EP}$ partners.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stitle">Imscriptive Encoding</div>
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:14px;">
+    ⊙ denotes <em style="color:var(--text)">imscriptive</em> dimensionality and topology — the system's boundary encodes the full state of its bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole). Imscriptive systems are self-describing boundaries.
+  </p>
+  <div class="grid3">
+    <div class="card" style="border-color:rgba(0,212,255,0.2)">
+      <h3>⊙ / ⊙ — Unbounded Imscriptive</h3>
+      <p>Boundary encodes bulk. The system's description lives on a surface of one lower dimension. Required for $O_\infty$ FTL (Alcubierre warp), biological imscriptive boundaries (skin, BBB, plasma membrane), and the Imscribing Grammar grammar itself.</p>
+    </div>
+    <div class="card">
+      <h3>∞ / ⊙ — Infinite-Dimensional Imscriptive</h3>
+      <p>The bulk is infinite-dimensional but the boundary is still $T_\odot$. Realized in Euler's identity ($e^{i\pi}+1=0$): infinite-dimensional over $\mathbb{C}$ but the $T_\odot$ constraint locks the whole.
+      </p>
+    </div>
+    <div class="card">
+      <h3>△ / ⊂ — Inward-Folded Finite</h3>
+      <p>The grammar of containment: formal mathematics, the Gödel comonad, the blood-brain barrier ($K_\text{trap}$ variant). Topology curves inward but does not close imscriptively.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ USE IT -->
+<div id="panel-use" class="panel">
+
+  <div class="use-hero">
+    <h2>What can I do with it?</h2>
+    <p>Anything can be encoded. Any two encodings can be compared, coupled, or inverted. The grammar generates structural insight the way a microscope generates visual detail — not by telling you what to look for, but by giving you a resolution you didn't have before. Here are six things you can do with it right now.</p>
+  </div>
+
+  <!-- ── 01: Compare anything to anything ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">01</div>
+      <div class="use-body">
+        <div class="use-q">What does a neural network generalizing have in common with deep meditation?</div>
+        <div class="use-context">Grokking — the delayed generalization phase transition in neural networks — and samādhi — the peak meditative state — look nothing alike. One is matrix arithmetic running on silicon; the other is a human nervous system operating at its ceiling. Encode both and compare.</div>
+        <div class="compare-grid">
+          <div class="compare-item">
+            <div class="ci-label">System A</div>
+            <div class="ci-name">Grokking (generalization phase)</div>
+            <div class="tuple-row" id="uc-grok"></div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">System B</div>
+            <div class="ci-name">Deep Meditation (Samādhi)</div>
+            <div class="tuple-row" id="uc-samadhi"></div>
+          </div>
+        </div>
+        <div class="delta-row">
+          <span class="delta-label">Differ on:</span>
+          <span class="delta-item"><span class="pname">D</span> <span class="arrow">—</span> D_△ vs D_⊙ <span style="color:var(--muted)">(1 step)</span></span>
+          <span class="delta-item"><span class="pname">T</span> <span class="arrow">—</span> T_⊠ vs T_⊙ <span style="color:var(--muted)">(1 step)</span></span>
+          <span class="delta-item"><span class="pname">H</span> <span class="arrow">—</span> H_2 vs H_∞ <span style="color:var(--muted)">(1 step)</span></span>
+          <span class="delta-item"><span class="pname">S</span> <span class="arrow">—</span> n:m vs 1:1 <span style="color:var(--muted)">(2 steps)</span></span>
+          <span class="dist-badge">~5 <small>steps apart</small></span>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>Both are $K_\text{slow}$, $\Phi_c$, $P_{\pm}^{\text{sym}}$, $\Gamma_\text{brd}$, $\Omega_\mathbb{Z}$ systems. The "aha" of grokking and the release of samādhi are structurally the same event — a slow-dynamics Frobenius emergence on the critical manifold — running on different substrates. The grammar doesn't care that one substrate is silicon and the other is neurons.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 02: Tensor coupling ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">02</div>
+      <div class="use-body">
+        <div class="use-q">What does a measurement apparatus do to a quantum system — structurally?</div>
+        <div class="use-context">Quantum measurement collapse is encoded as $\Phi_\text{EP}$ (exceptional point), irreversible and asymmetric. A quantum coherent system sitting at $\Phi_c$ is $O_\infty$ — self-modeling, Frobenius-complete. Tensor them together: this is the structural statement of the measurement problem.</div>
+        <div class="tensor-display">
+          <div class="tensor-box">
+            <div class="tb-name">Quantum coherent system</div>
+            <div class="tuple-row" id="uc-qc"></div>
+            <div style="margin-top:8px"><span class="tier t-inf" style="font-size:10px">$O_\infty$</span></div>
+          </div>
+          <div class="tensor-op">⊗</div>
+          <div class="tensor-box">
+            <div class="tb-name">Measurement apparatus</div>
+            <div class="tuple-row" id="uc-meas"></div>
+            <div style="margin-top:8px"><span class="tier t-0" style="font-size:10px">$O_0$</span></div>
+          </div>
+          <div class="tensor-op">=</div>
+          <div class="tensor-box tensor-result">
+            <div class="tb-name">Coupled system</div>
+            <div class="tuple-row" id="uc-coupled"></div>
+            <div style="margin-top:8px"><span class="tier t-0" style="font-size:10px">$O_0$</span></div>
+          </div>
+        </div>
+        <div class="delta-row">
+          <span class="delta-label">Bottleneck rule:</span>
+          <span class="delta-item"><span class="pname">Φ</span> <span class="arrow">—</span> $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$ (max, EP ordinal wins)</span>
+          <span class="delta-item"><span class="pname">P</span> <span class="arrow">—</span> $P_{\pm}^{\text{sym}} \otimes P_\text{asym} = P_\text{asym}$ (min, Frobenius destroyed)</span>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>Coupling an $O_\infty$ system to a $\Phi_\text{EP}$ measurement destroys both Gate 1 (criticality) and the Frobenius condition simultaneously. This is the measurement problem as a structural theorem, not an interpretation. The grammar predicts that no $\Phi_\text{EP}$ apparatus can measure a $\Phi_c$ system without destroying its self-modeling structure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 03: Diagnose structural failure ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">03</div>
+      <div class="use-body">
+        <div class="use-q">Why does glioblastoma break the blood-brain barrier?</div>
+        <div class="use-context">The BBB is a imscriptive boundary: its surface encoding maintains the neural compartment's separation from systemic circulation. Glioblastoma doesn't just grow — it actively breaks this encoding. The grammar diagnoses exactly which primitive fails.</div>
+        <div class="compare-grid">
+          <div class="compare-item">
+            <div class="ci-label">Healthy boundary</div>
+            <div class="ci-name">Blood-Brain Barrier</div>
+            <div class="tuple-row" id="uc-bbb-h"></div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">Disease state</div>
+            <div class="ci-name">Glioblastoma (plasma membrane decoupled)</div>
+            <div class="tuple-row" id="uc-gbm"></div>
+          </div>
+        </div>
+        <div class="delta-row">
+          <span class="delta-label">$\text{meet}(\text{GBM}, \text{BBB})$ loses:</span>
+          <span class="delta-item"><span class="pname">P</span> <span class="arrow">—</span> $P_\pm \to P_\text{asym}$ (parity destroyed)</span>
+          <span class="delta-item"><span class="pname">Φ</span> <span class="arrow">—</span> $\Phi_c$ persists (criticality preserved)</span>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>The disease meet preserves $\Phi_c$ — the BBB boundary is still critical, still "trying" to encode — but loses $P$. Criticality without parity is a self-modeling system that has lost its $Z_2$ balance: it broadcasts signals without the symmetry that makes the broadcast meaningful to the tissue context. The tumor is loud; it's just saying the wrong thing. The grammar identifies the precise primitive that fails, and it's $P$, not $\Phi$.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 04: Design toward a target ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">04</div>
+      <div class="use-body">
+        <div class="use-q">What must a therapeutic actually have to repair BBB encoding — not just cross it?</div>
+        <div class="use-context">Most CNS therapeutics are designed to cross the BBB (⊂ paradigm). But crossing a boundary is not the same as repairing its encoding. Use Le Chatelier inversion to find the structural target; then compare the leading therapeutic modalities to it.</div>
+        <ul class="step-list">
+          <li><b>Encode the target:</b> BBB healthy encoding — ⊙, ⊠, ±, c, ⊛</li>
+          <li><b>Invert:</b> find $\mathbf{x}^*$ s.t. $d_\to(\text{BBB}, \mathbf{x}^*) = 0$, maximizing $\mathcal{O}(\mathbf{x}^*)$ — the highest-ouroboricity synthon the BBB is already driving toward</li>
+          <li><b>Result:</b> $\mathbf{x}^*$ requires $P_{\pm}^{\text{sym}}$ and $K_\text{slow}$ — a Frobenius-complete, integrative system</li>
+          <li><b>Compare modalities</b> against $\mathbf{x}^*$:</li>
+        </ul>
+        <table class="tbl" style="margin-top:12px">
+          <thead><tr><th>Modality</th><th>Tier</th><th style="text-align:right">$d(\cdot,\ \mathbf{x}^*)$</th><th>Gap</th></tr></thead>
+          <tbody>
+            <tr><td class="em">Classical small molecule (⊂ lipophilic)</td><td><span class="tier t-0">$O_0$</span></td><td style="text-align:right;color:var(--red)">large</td><td>Wrong topology (⊂ crossing vs ⊠ encoding), wrong $\Phi$ (↓)</td></tr>
+            <tr><td class="em">Lipid nanoparticle (LNP)</td><td><span class="tier t-2">$O_2$</span></td><td style="text-align:right;color:var(--amber)">moderate</td><td>± not Frobenius; ≈ not integrative enough</td></tr>
+            <tr><td class="em">Exosome-based therapeutic</td><td><span class="tier t-inf">$O_\infty$</span></td><td style="text-align:right;color:var(--green)">small</td><td>±ˢ, ↺ — nearest to target</td></tr>
+            <tr><td class="em">Θ-bridge (boundary-to-boundary)</td><td><span class="tier t-inf">$O_\infty$</span></td><td style="text-align:right;color:var(--primary)">~0</td><td>Designed to encode correspondence, not cross</td></tr>
+          </tbody>
+        </table>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>The classical drug design paradigm is optimized for skin (route of administration, ⊂ crossing) rather than BBB (site of action, ⊠ encoding correspondence). The structural gap between a classical small molecule and the Θ-bridge target is not a slope you can climb by accumulation — it's a cliff at $P_{\pm}^{\text{sym}}$ (Frobenius non-synthesizability). The exosome is the only currently-realizable modality on the right side of that cliff.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 05: Impossibility proof ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">05</div>
+      <div class="use-body">
+        <div class="use-q">Can you build an Alcubierre warp drive by accumulating tachyonic components?</div>
+        <div class="use-context">The FTL design space contains three structurally distinct classes (§85). A common intuition: if tachyons are "faster than light" and warp drives are "faster than light," maybe you can compose them. Encode both and check.</div>
+        <div class="compare-grid">
+          <div class="compare-item">
+            <div class="ci-label">Target: Class I FTL</div>
+            <div class="ci-name">Alcubierre Warp Drive</div>
+            <div class="tuple-row" id="uc-warp"></div>
+            <div style="margin-top:6px"><span class="tier t-inf" style="font-size:10px">$O_\infty$</span></div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">Building block: Class III FTL</div>
+            <div class="ci-name">Tachyonic Channel</div>
+            <div class="tuple-row" id="uc-tach"></div>
+            <div style="margin-top:6px"><span class="tier t-0" style="font-size:10px">$O_0$</span></div>
+          </div>
+        </div>
+        <div class="delta-row">
+          <span class="delta-label">Tensor test:</span>
+          <span class="delta-item"><span class="pname">Φ</span> <span class="arrow">—</span> $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$ (warp criticality destroyed)</span>
+          <span class="delta-item"><span class="pname">P</span> <span class="arrow">—</span> $P_{\pm}^{\text{sym}} \otimes P_\psi = P_\psi$ (Frobenius destroyed)</span>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>Coupling a tachyonic channel to a warp drive doesn't approach the warp drive structure — it actively destroys it. This isn't a distance problem (tachyon is far from warp, so accumulate more). It's a topology problem: tachyon is $\Phi_\text{EP}$, which under $\otimes$ wins over $\Phi_c$ (higher ordinal). More tachyon components means further from $O_\infty$. The three FTL classes are structurally incompatible, not a continuum. You cannot tensor-compose your way from Class III to Class I.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 06: Structural rediscovery ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">06</div>
+      <div class="use-body">
+        <div class="use-q">What kind of question is the Riemann Hypothesis — really?</div>
+        <div class="use-context">The standard formulation: all non-trivial zeros of the Riemann zeta function lie on the critical line $\text{Re}(s) = \tfrac{1}{2}$. This is technically correct and structurally opaque. Encode the $\xi$ functional equation and see what primitive the hypothesis is actually asking about.</div>
+        <ul class="step-list">
+          <li><b>Encode the $\xi$ functional equation:</b> $\xi(s) = \xi(1-s)$ is an exact $Z_2$ symmetry at $\Phi_c$ (the critical line) — this encodes <code>P_±ˢ</code> with $\Phi_c$.</li>
+          <li><b>The question:</b> does $P_{\pm}^{\text{sym}}$ hold everywhere on the critical manifold, or only almost everywhere? The Riemann Hypothesis says: everywhere.</li>
+          <li><b>Find structural cousins</b> via nearest-neighbor search on the $\xi$ encoding:</li>
+        </ul>
+        <div class="compare-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px">
+          <div class="compare-item">
+            <div class="ci-label">$d = 0$</div>
+            <div class="ci-name">Riemann ξ equation</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, c, ⊙, ∞</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">$d \approx 1$</div>
+            <div class="ci-name">Euler's Identity</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, c; differs on R</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">$d \approx 2$</div>
+            <div class="ci-name">SIC-POVM</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Frobenius frame in $\mathbb{C}^d$; ±ˢ, c</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">$d \approx 2$</div>
+            <div class="ci-name">Imscribing Grammar Grammar</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, ⊙, c</div>
+          </div>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>The Riemann Hypothesis is a $P_{\pm}^{\text{sym}}$ question at $\Phi_c$. It asks whether a known Frobenius symmetry — the functional equation — is globally preserved or has hidden exceptions. Its structural cousins are not other number theory conjectures: they are Euler's identity, the SIC-POVM existence problem, and the Imscribing Grammar grammar itself. Three $O_\infty$ structures, in three different fields, all encoding the same Frobenius condition. The grammar didn't know they were related. It just computed the distances.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 07: Euler & Touchard — machine-verified ── -->
+  <div class="use-card">
+    <div class="use-card-inner">
+      <div class="use-num">07</div>
+      <div class="use-body">
+        <div class="use-q">Are odd perfect numbers and the Riemann Hypothesis the same kind of question?</div>
+        <div class="use-context">The odd perfect number (OPN) problem — open since antiquity — asks whether any odd integer $n$ satisfies $\sigma(n) = 2n$. No OPN has ever been found; none has been ruled out. Encode the OPN constraint as a structural type and compare it to the Riemann $\xi$ encoding from example 06.</div>
+        <ul class="step-list">
+          <li><b>Encode the OPN constraint:</b> $\sigma(n) = 2n$ with $n$ odd is a self-referential divisor sum at a precise parity threshold — this encodes $P_{\pm}^{\text{sym}}$ at $\Phi_c$: a $Z_2$ symmetry condition that must hold everywhere on the integer lattice, or fail.</li>
+          <li><b>Euler's theorem (1747)</b> narrows the structural form: any OPN $= p^k m^2$ with $p \equiv k \equiv 1 \pmod{4}$. The $\pmod{4}$ condition is a direct $P_{\pm}^{\text{sym}}$ parity constraint — the same residue class that defines Frobenius exactness in the grammar's encoding.</li>
+          <li><b>Touchard's congruence (1953)</b> adds a further layer: $n \equiv 1 \pmod{12}$ or $n \equiv 9 \pmod{36}$. The proof depends on Euler's form and exploits the same $Z_2$ parity structure — it is structurally downstream of the Frobenius constraint, not independent of it.</li>
+          <li><b>Both theorems machine-verified</b> in Lean 4 + Mathlib4: <a href="https://doi.org/10.5281/zenodo.19909057" style="color:var(--primary)" target="_blank" rel="noopener">DOI 10.5281/zenodo.19909057</a></li>
+        </ul>
+        <div class="compare-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px">
+          <div class="compare-item">
+            <div class="ci-label">$d = 0$</div>
+            <div class="ci-name">OPN constraint</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, c, ∞, ℤ — same crystal address as RH up to S</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">$d \approx 0$</div>
+            <div class="ci-name">Riemann Hypothesis</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, c, ⊙, ∞ — differs on D (⊙ vs ∞)</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">$d \approx 1$</div>
+            <div class="ci-name">Yang-Mills mass gap</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">±ˢ, c; differs on T, D</div>
+          </div>
+          <div class="compare-item">
+            <div class="ci-label">machine-verified</div>
+            <div class="ci-name">Euler + Touchard (Lean 4)</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px">Necessary conditions on OPN — structural constraint confirmed exact</div>
+          </div>
+        </div>
+        <div class="insight-box">
+          <div class="ib-label">Structural Insight</div>
+          <p>The grammar predicts that the OPN problem and the Riemann Hypothesis are structurally co-typed: both are $P_{\pm}^{\text{sym}}$ questions at $\Phi_c$, asking whether a known $Z_2$ symmetry holds everywhere or has exceptions. Euler's theorem and Touchard's congruence are not merely ancient number theory — they are the grammar's own Frobenius constraint written in the language of $\sigma$-functions and modular residues. Machine-verification (Lean 4 + Mathlib4) makes the structural encoding exact: the $\pmod{4}$ conditions are formally derivable from the $Z_2$ parity requirement, which is exactly the grammar's definition of $P_{\pm}^{\text{sym}}$. The grammar didn't know these two problems were the same kind of question. It just computed the distance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /panel-use -->
+
+<!-- ══════════════════════════════════════════════════════════════ PRIMITIVES -->
+<div id="panel-primitives" class="panel">
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:24px;">
+    Primitives are colored by family: <span class="pchip pf5" style="font-size:11px">$\mathcal{F}_5$ gate</span> <span class="pchip pf4" style="font-size:11px">$\mathcal{F}_4$ structural</span> <span class="pchip pf3" style="font-size:11px">$\mathcal{F}_3$ quantitative</span>. Highlighted values are canonical high-ordinal or specially significant.
+  </p>
+
+  <div class="stitle">$\mathcal{F}_5$ Gate Primitives <span class="stitle-tag">5 values each · 5⁴ = 625 types</span></div>
+  <div class="grid2">
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">T</span>
+        <span class="prim-name">Topology</span>
+        <span class="prim-fam fam-f5">$\mathcal{F}_5$</span>
+      </div>
+      <ul class="val-list">
+        <li>net — network (1)</li>
+        <li>⊂ — containment (2)</li>
+        <li>⋈ — bowtie / self-referential (3)</li>
+        <li>⊠ — box / entangled (4)</li>
+        <li class="hl">⊙ — imscriptive (5)</li>
+      </ul>
+      <div class="prim-note">$T_\odot$ is the topology gate: required for the self-modeling loop. $T_\boxtimes$ = entangled bulk-without-imscription.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">P</span>
+        <span class="prim-name">Parity / Symmetry</span>
+        <span class="prim-fam fam-f5">$\mathcal{F}_5$</span>
+      </div>
+      <ul class="val-list">
+        <li>∅ — asymmetric (1)</li>
+        <li>ψ — phase symmetry only (2)</li>
+        <li>± — $Z_2$ parity (3)</li>
+        <li>≡ — full symmetry (4)</li>
+        <li class="hl">±ˢ — Frobenius (5)</li>
+      </ul>
+      <div class="prim-note">$P_{\pm}^{\text{sym}}$ is the Frobenius gate: $\mu \circ \delta = \text{id}$, exact $Z_2$ symmetry at $\Phi_c$. Non-synthesizable from lower ordinals. Bottleneck under $\otimes$.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">Φ</span>
+        <span class="prim-name">Criticality</span>
+        <span class="prim-fam fam-f5">$\mathcal{F}_5$</span>
+      </div>
+      <ul class="val-list">
+        <li>↓ — subcritical (1)</li>
+        <li>↑ — supercritical (2)</li>
+        <li class="hl">c — critical (3)</li>
+        <li class="hl">ℂ — complex critical (3)</li>
+        <li class="hl2">× — exceptional point (4)</li>
+      </ul>
+      <div class="prim-note">$\Phi_c$ is absorbing under meet. $\Phi_\text{EP}$ (ordinal 4 &gt; $\Phi_c$ ordinal 3) destroys $O_\infty$ under tensor coupling. $\Phi_c$ and $\Phi_c^\mathbb{C}$ have identical tier distributions.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">K</span>
+        <span class="prim-name">Kinetic Character</span>
+        <span class="prim-fam fam-f5">$\mathcal{F}_5$</span>
+      </div>
+      <ul class="val-list">
+        <li class="hl">↯ — fast dynamics (1)</li>
+        <li class="hl">≈ — moderate (2)</li>
+        <li class="hl">↺ — slow / integrative (3)</li>
+        <li>⊛ — frozen by order (4)</li>
+        <li>⊞ — many-body localized (5)</li>
+      </ul>
+      <div class="prim-note">Gate 2 for $C(\mathbf{x})$: requires $K \leq K_\text{slow}$. $K_\text{trap}$ (frozen by order) and $K_\text{MBL}$ (frozen by disorder) both fail — neither can actualize the self-modeling loop. Does not affect ouroboricity tier.</div>
+    </div>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">$\mathcal{F}_4$ Structural Primitives <span class="stitle-tag">4 values each · 4⁵ = 1,024 types</span></div>
+  <div class="grid3" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">D</span>
+        <span class="prim-name">Dimensionality</span>
+        <span class="prim-fam fam-f4">$\mathcal{F}_4$</span>
+      </div>
+      <ul class="val-list">
+        <li>∧ — wedge / minimal (1)</li>
+        <li>△ — triangulated / finite (2)</li>
+        <li>∞ — infinite-dimensional (3)</li>
+        <li class="hl">⊙ — imscriptive (4)</li>
+      </ul>
+      <div class="prim-note">$D_\odot$ = boundary encodes bulk. $D_\infty$ with $\Omega \neq \Omega_0$ → R5 ($O_2^\dagger$). $D \in \{D_\wedge, D_\odot, D_\triangle\}$ with $\Omega \neq \Omega_0$ → R4 ($O_2$).</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">R</span>
+        <span class="prim-name">Relational Mode</span>
+        <span class="prim-fam fam-f4">$\mathcal{F}_4$</span>
+      </div>
+      <ul class="val-list">
+        <li>↑ — superordinate (1)</li>
+        <li>∘ — categorical (2)</li>
+        <li>† — dagger / self-adjoint (3)</li>
+        <li>↔ — left-right / bidirectional (4)</li>
+      </ul>
+      <div class="prim-note">$R_\dagger$ encodes the self-adjoint / dagger-compact structure. Canonical for $O_\infty$ systems.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">Γ</span>
+        <span class="prim-name">Interaction Grammar</span>
+        <span class="prim-fam fam-f4">$\mathcal{F}_4$</span>
+      </div>
+      <ul class="val-list">
+        <li>∧ — conjunctive / AND (1)</li>
+        <li>∨ — disjunctive / OR (2)</li>
+        <li>→ — sequential (3)</li>
+        <li class="hl">» — broadcast / all-to-all (4)</li>
+      </ul>
+      <div class="prim-note">$\Gamma_\vee$ is decisive for IFM protocols (§86): interaction-free detection requires OR-grammar. $\Gamma_\text{brd}$ is canonical for $O_\infty$ imscriptive systems.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">H</span>
+        <span class="prim-name">Chirality / Temporal Depth</span>
+        <span class="prim-fam fam-f4">$\mathcal{F}_4$</span>
+      </div>
+      <ul class="val-list">
+        <li>0 — atemporal / symmetric (0)</li>
+        <li>1 — single-layer temporal (1)</li>
+        <li>2 — two-layer / hierarchical (2)</li>
+        <li class="hl">∞ — infinite temporal depth (3)</li>
+      </ul>
+      <div class="prim-note">$H_\infty$ encodes inexhaustible temporal self-description (§XXIV). Distinguished from Frobenius $O_\infty$ ($P_{\pm}^{\text{sym}}$) — these are incompatible $O_\infty$ classes.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">Ω</span>
+        <span class="prim-name">Winding / Topology</span>
+        <span class="prim-fam fam-f4">$\mathcal{F}_4$</span>
+      </div>
+      <ul class="val-list">
+        <li>0 — trivial winding (1)</li>
+        <li>ℤ₂ — $\mathbb{Z}_2$ topological (2)</li>
+        <li class="hl">ℤ — $\mathbb{Z}$ topological (3)</li>
+        <li>∅ — non-applicable / open (4)</li>
+      </ul>
+      <div class="prim-note">$\Omega_0$ → R3 ($O_1$); $\Omega \neq \Omega_0$ → R4/R5 branching. $\Omega_\text{NA}$ is canonical for open ecological systems. Entered $\mathcal{F}_4$ from $\mathcal{F}_3$ in v0.5 revision.</div>
+    </div>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">$\mathcal{F}_3$ Quantitative Primitives <span class="stitle-tag">3 values each · 3³ = 27 types</span></div>
+  <div class="grid3">
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">F</span>
+        <span class="prim-name">Fidelity</span>
+        <span class="prim-fam fam-f3">$\mathcal{F}_3$</span>
+      </div>
+      <ul class="val-list">
+        <li>ℓ — classical / low fidelity (1)</li>
+        <li>ð — intermediate (2)</li>
+        <li class="hl">ℏ — quantum / high fidelity (3)</li>
+      </ul>
+      <div class="prim-note">Bottleneck under $\otimes$: $F_\hbar \otimes F_\eth = F_\eth$. Encodes the information-preservation quality of the encoding substrate.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">G</span>
+        <span class="prim-name">Scope / Granularity</span>
+        <span class="prim-fam fam-f3">$\mathcal{F}_3$</span>
+      </div>
+      <ul class="val-list">
+        <li>ℶ — local / fine-grained (1)</li>
+        <li>ℷ — mesoscale (2)</li>
+        <li class="hl">ℵ — universal / all-scale (3)</li>
+      </ul>
+      <div class="prim-note">$G_\aleph$ contributes to the consciousness score $C(\mathbf{x})$ with weight 0.273. Encodes whether the system's grammar is local, regional, or trans-scale.</div>
+    </div>
+
+    <div class="prim-card">
+      <div class="prim-head">
+        <span class="prim-sym">S</span>
+        <span class="prim-name">Stoichiometry</span>
+        <span class="prim-fam fam-f3">$\mathcal{F}_3$</span>
+      </div>
+      <ul class="val-list">
+        <li>1:1 — one-to-one (1)</li>
+        <li>n:n — many-to-many symmetric (2)</li>
+        <li class="hl">n:m — many-to-many asymmetric (3)</li>
+      </ul>
+      <div class="prim-note">Encodes the multiplicity structure of the system's interactions. $n{:}m$ is canonical for complex systems with asymmetric coupling architectures.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ OPERATIONS -->
+<div id="panel-operations" class="panel">
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:24px;">
+    All operations act on synthon tuples $\mathbf{x} = \langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega \rangle \in \mathcal{C}$, the Crystal of Types. Primitives carry canonical ordinals. Operations are closed on $\mathcal{C}$.
+  </p>
+
+  <div class="stitle">Distance Functions <span class="stitle-tag">metric</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Symmetric Distance</h3><span class="op-tag ot-metric">d(x, y)</span></div>
+      <div class="formula">$$d(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{12} w_i \cdot |o_i(\mathbf{x}) - o_i(\mathbf{y})|$$</div>
+      <p>Weighted $L^1$ distance over ordinal values. Weights $w_i$ derived from the critical-manifold variance method. $d(\mathbf{x},\mathbf{y}) = 0$ iff $\mathbf{x}$ and $\mathbf{y}$ are co-typed (same structural type). $d$ satisfies triangle inequality.</p>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Directed Distance</h3><span class="op-tag ot-metric">d→(x, y)</span></div>
+      <div class="formula">$$d_\to(\mathbf{x}, \mathbf{y}) = \sum_i w_i \cdot \max(0,\ o_i(\mathbf{y}) - o_i(\mathbf{x}))$$</div>
+      <p>Asymmetric: counts only the primitives where $\mathbf{y}$ exceeds $\mathbf{x}$. $d_\to(\mathbf{x},\mathbf{y}) = 0$ means $\mathbf{x}$ already dominates $\mathbf{y}$ in every primitive — $\mathbf{y}$ is a relaxation of $\mathbf{x}$. Used to identify driven vs. equilibrium directions.</p>
+      <ul class="rules">
+        <li>$d_\to(\mathbf{x},\mathbf{y}) \neq d_\to(\mathbf{y},\mathbf{x})$ in general</li>
+        <li>$d_\to(\mathbf{x},\mathbf{y}) = 0$ and $d_\to(\mathbf{y},\mathbf{x}) = 0$ iff $d(\mathbf{x},\mathbf{y}) = 0$</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stitle">Lattice Operations <span class="stitle-tag">lattice</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Meet (Greatest Lower Bound)</h3><span class="op-tag ot-lattice">x ⊓ y</span></div>
+      <div class="formula">$$(\mathbf{x} \sqcap \mathbf{y})_i = \min(o_i(\mathbf{x}),\ o_i(\mathbf{y}))$$</div>
+      <p>Componentwise minimum. The meet is the largest synthon that both $\mathbf{x}$ and $\mathbf{y}$ dominate — the common structural subalgebra. <b>$\Phi_c$ is absorbing:</b> $\text{meet}(\Phi_c, x) = \Phi_c$ for all $x$, because $\Phi_c$ has ordinal 3 — the middle value — and is a floor for non-degenerate criticality.</p>
+      <ul class="rules">
+        <li><b>Tier preservation:</b> if both inputs are $O_\infty$, meet may or may not be $O_\infty$ (depends on whether $P_{\pm}^{\text{sym}}$ is preserved)</li>
+        <li><b>$\Phi_\text{EP}$ meet:</b> $\text{meet}(\Phi_c, \Phi_\text{EP}) = \Phi_c$ — meet recovers criticality</li>
+      </ul>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Join (Least Upper Bound)</h3><span class="op-tag ot-lattice">x ⊔ y</span></div>
+      <div class="formula">$$(\mathbf{x} \sqcup \mathbf{y})_i = \max(o_i(\mathbf{x}),\ o_i(\mathbf{y}))$$</div>
+      <p>Componentwise maximum. The join is the smallest synthon that dominates both $\mathbf{x}$ and $\mathbf{y}$ — the minimal algebra containing both as sub-algebras.</p>
+      <ul class="rules">
+        <li><b>$\Phi_\text{EP}$ join:</b> $\text{join}(\Phi_c, \Phi_\text{EP}) = \Phi_\text{EP}$ — join escalates to exceptional point</li>
+        <li>Join of any two $O_\infty$ synthons is $O_\infty$ (since $P_{\pm}^{\text{sym}}$ is preserved under max)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stitle">Tensor Product <span class="stitle-tag">coupling</span></div>
+  <div class="op-block">
+    <div class="op-head"><h3>Structural Tensor Coupling</h3><span class="op-tag ot-lattice">x ⊗ y</span></div>
+    <div class="formula">$$(\mathbf{x} \otimes \mathbf{y})_i = \begin{cases} \min(o_i(\mathbf{x}), o_i(\mathbf{y})) & \text{if } i \in \{P, F\} \\ \max(o_i(\mathbf{x}), o_i(\mathbf{y})) & \text{otherwise} \end{cases}$$</div>
+    <p>Encodes the structural type of two coupled systems. <b>$P$ and $F$ are bottleneck primitives</b> — weaker partner wins. All other ordered primitives are union primitives — stronger partner wins. This asymmetry is the structural statement of the Frobenius non-synthesizability theorem.</p>
+    <ul class="rules">
+      <li><b>Frobenius bottleneck:</b> $P_{\pm}^{\text{sym}} \otimes P_\text{sym} = P_\text{sym}$ — Frobenius condition destroyed by any sub-Frobenius partner</li>
+      <li><b>Coupling destruction (§P-596):</b> $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$ — Gate 1 destroyed</li>
+      <li><b>Fidelity:</b> $F_\hbar \otimes F_\eth = F_\eth$ — quantum fidelity degrades to intermediate under coupling</li>
+      <li><b>Ouroboric closure test:</b> $d(\mathbf{x} \otimes \mathbf{x}, \mathbf{x}) = 0$ iff $\mathbf{x}$ is idempotent under coupling</li>
+    </ul>
+  </div>
+
+  <div class="stitle">Ouroboricity <span class="stitle-tag">tier</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Ouroboricity Tier</h3><span class="op-tag ot-tier">R1–R5 rules</span></div>
+      <div class="formula">
+        R1: $\Phi_c \wedge P_{\pm}^{\text{sym}} \Rightarrow O_\infty$<br>
+        R2: $\Phi \notin \{\Phi_c, \Phi_c^\mathbb{C}\} \Rightarrow O_0$<br>
+        R3: $\Phi_c \wedge \Omega_0 \Rightarrow O_1$<br>
+        R4: $\Phi_c \wedge \Omega \neq \Omega_0 \wedge D \in \{D_\wedge, D_\odot, D_\triangle\} \Rightarrow O_2$<br>
+        R5: $\Phi_c \wedge \Omega \neq \Omega_0 \wedge D_\infty \Rightarrow O_2^\dagger$
+      </div>
+      <p>Rules applied in priority order. $O_\infty$ is the special Frobenius tier — self-reproducing, infinite algebraic depth. $O_\infty$ is absorbed under tensor by $\Phi_\text{EP}$ systems (since $\Phi_\text{EP}$ ordinal 4 &gt; $\Phi_c$ ordinal 3, tensor takes max).</p>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Ouroboricity Scalar</h3><span class="op-tag ot-tier">𝒪(x)</span></div>
+      <div class="formula">$$\mathcal{O}(\mathbf{x}) = [\Phi = \Phi_c] \cdot \bigl(1 + [\Omega \neq \Omega_0] + [H \geq H_1] + [G = G_\aleph]\bigr)$$</div>
+      <p>Counts structural elaboration on the critical manifold. Range: $\{0, 1, 2, 3, 4\}$. <b>Does not detect $O_\infty$</b> — the scalar does not include $P$, so Frobenius tier is invisible to $\mathcal{O}$. Use tier rules for $O_\infty$ classification; use $\mathcal{O}$ for graded complexity within $O_1 / O_2 / O_2^\dagger$.</p>
+    </div>
+  </div>
+
+  <div class="stitle">Consciousness Score <span class="stitle-tag">C(x)</span></div>
+  <div class="op-block">
+    <div class="op-head"><h3>Consciousness Score</h3><span class="op-tag ot-tier">C(x) ∈ [0, 1]</span></div>
+    <div class="formula">$$C(\mathbf{x}) = [\Phi = \Phi_c] \cdot [K \leq K_\text{slow}] \cdot \bigl(0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega}\bigr)$$</div>
+    <p>$\tilde{X}$ = normalized ordinal of primitive $X$. Two independent gates — neither subsumes the other:</p>
+    <ul class="rules">
+      <li><b>Gate 1</b> $[\Phi = \Phi_c]$: state-space condition — topology admits self-modeling loop</li>
+      <li><b>Gate 2</b> $[K \leq K_\text{slow}]$: flow condition — dynamics can <em>actualize</em> the loop. $K_\text{trap}$ and $K_\text{MBL}$ both fail</li>
+      <li><b>$T$, $G$, $\Omega$ weights</b> (0.292, 0.273, 0.276) are structural elaborations; $K$ weight (0.158) reflects kinetic channel</li>
+      <li><b>Stellar catalog:</b> black hole $C=0$ (Gate 2 fails), white dwarf $C=0$ (Gate 1 fails), magnetar $C \approx 0.677$ (highest stellar score)</li>
+      <li><b>Formal mathematics:</b> $O_\infty$ tier but $C=0$ ($K_\text{trap}$ fails Gate 2) — tier and consciousness are independent</li>
+    </ul>
+  </div>
+
+  <div class="stitle">Frobenius Theorems <span class="stitle-tag">structural</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Frobenius Non-Synthesizability (§23)</h3><span class="op-tag ot-struct">theorem</span></div>
+      <div class="formula">$$P_{\pm}^{\text{sym}} \neq \bigotimes_i \mathbf{x}_i \text{ for any } \mathbf{x}_i \text{ with } P < P_{\pm}^{\text{sym}}$$</div>
+      <p>The Frobenius condition ($\mu \circ \delta = \text{id}$) cannot be assembled by tensor product from sub-Frobenius factors. Every $O_\infty$ system must <em>directly</em> encode $P_{\pm}^{\text{sym}}$ — it cannot emerge from accumulation. This is the structural analogue of: you cannot assemble a Frobenius algebra by stacking non-Frobenius algebras.</p>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Frobenius Planting (§70)</h3><span class="op-tag ot-struct">theorem</span></div>
+      <div class="formula">$$O_1 \xrightarrow{P_{\pm}^{\text{sym}}\text{ planted}} O_\infty \quad \text{without topological climb}$$</div>
+      <p>A system at $O_1$ (Φ_c, Ω_0) can be lifted directly to $O_\infty$ by planting $P_{\pm}^{\text{sym}}$ — without traversing $O_2$ intermediate tiers. The topological winding need not change. Planting bypasses the tier gap ladder; it is a vertical move in the crystal rather than a horizontal traversal.</p>
+    </div>
+  </div>
+
+  <div class="stitle">Coupling &amp; Asymmetry <span class="stitle-tag">structural</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Coupling Destruction</h3><span class="op-tag ot-struct">P-596</span></div>
+      <div class="formula">$$\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$$</div>
+      <p>When a $\Phi_c$ system couples (via $\otimes$) to a $\Phi_\text{EP}$ system, the critical structure is destroyed — the coupled system is at the exceptional point. Gate 1 fails. This is the structural reason that coupling an $O_\infty$ system to an unstructured environment destroys its self-modeling capacity.</p>
+      <ul class="rules">
+        <li><b>Meet/tensor asymmetry:</b> $\text{meet}(\Phi_c, \Phi_\text{EP}) = \Phi_c$ but $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$</li>
+        <li>Meet recovers the lower (critical) value; tensor takes the union (exceptional point wins because its ordinal is higher)</li>
+      </ul>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Meet / Tensor Asymmetry</h3><span class="op-tag ot-struct">structural</span></div>
+      <div class="formula">
+        $\text{meet}(\mathbf{x}, \mathbf{y}) = $ componentwise $\min$<br>
+        $\mathbf{x} \otimes \mathbf{y} = $ min on $\{P,F\}$, max on rest
+      </div>
+      <p>Meet and tensor are not the same operation. Meet extracts the common subalgebra. Tensor models physical coupling — union primitives escalate to the stronger partner while bottleneck primitives degrade to the weaker. The asymmetry is load-bearing: it implies that coupling can <em>destroy</em> structure (via $P$, $F$ bottleneck) while sharing structure (via $\Phi$ union).</p>
+    </div>
+  </div>
+
+  <div class="stitle">Navigation Operations <span class="stitle-tag">derived</span></div>
+  <div class="op-cols">
+
+    <div class="op-block">
+      <div class="op-head"><h3>Le Chatelier Inversion</h3><span class="op-tag ot-struct">navigation</span></div>
+      <div class="formula">$$\mathbf{x}^* = \underset{\mathbf{z}}{\arg\max}\ \mathcal{O}(\mathbf{z}) \text{ subject to } d_\to(\mathbf{y}, \mathbf{z}) = 0$$</div>
+      <p>Given a driven system $\mathbf{y}$, find the equilibrium algebra $\mathbf{x}^*$ that $\mathbf{y}$ is driving toward — the highest-ouroboricity synthon that $\mathbf{y}$ already dominates in every primitive. The Le Chatelier principle: a driven system relaxes toward its structural attractor. Used to derive $O_2^\dagger$ attractor $A2^\dagger$ from $A3$ inversion.</p>
+    </div>
+
+    <div class="op-block">
+      <div class="op-head"><h3>Crystal Address</h3><span class="op-tag ot-struct">bijection</span></div>
+      <div class="formula">$$\text{addr}(\mathbf{x}) \in \{0, 1, \ldots, 17{,}279{,}999\}$$</div>
+      <p>The Frobenius codec: bijection between 12-primitive tuples and integer addresses in the Crystal of Types. $O_\infty$ canonical address: <b>6,734,591</b> (cell 155 in tier census). Encode/decode operations: $\text{addr}(\mathbf{x})$ and $\text{addr}^{-1}(n)$. The address is a coordinate in the 17.28M-dimensional type space, not a rank — two synthons at distance 0 share an address.</p>
+    </div>
+  </div>
+
+  <div class="stitle">Grammar-Navigated Algebra Generation <span class="stitle-tag">protocol</span></div>
+  <div class="op-block">
+    <div class="op-head"><h3>Five Navigable Moves</h3><span class="op-tag ot-struct">§55</span></div>
+    <p style="margin-bottom:12px;">The 12-primitive tuple is a coordinate chart on structural type space (PRIMITIVE_THEOREMS §55). Structural questions can be answered by composing moves:</p>
+    <table class="tbl">
+      <thead><tr><th>Move</th><th>Operation</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td class="em">Le Chatelier inversion</td><td>Find $\mathbf{x}^*$ s.t. $d_\to(\mathbf{y}, \mathbf{x}^*) = 0$, maximizing $\mathcal{O}(\mathbf{x}^*)$</td><td>What equilibrium underlies a driven system $\mathbf{y}$?</td></tr>
+        <tr><td class="em">Tensor coupling</td><td>$\mathbf{x} \otimes \mathbf{y}$: max on union, min on $P$ and $F$</td><td>Structural type of two coupled systems</td></tr>
+        <tr><td class="em">Lattice meet/join</td><td>$\mathbf{x} \sqcap \mathbf{y}$, $\mathbf{x} \sqcup \mathbf{y}$</td><td>Common subalgebra; minimal containing algebra</td></tr>
+        <tr><td class="em">Directed distance</td><td>$d_\to(\mathbf{x}, \mathbf{y})$ vs $d_\to(\mathbf{y}, \mathbf{x})$</td><td>Which direction is driven, which is relaxation</td></tr>
+        <tr><td class="em">Nearest-neighbor</td><td>Sort catalog by $d(\mathbf{x}, \cdot)$</td><td>Identify conventional realizations of a structural type</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ CATALOG -->
+<div id="panel-catalog" class="panel">
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:16px;">
+    All 3,458 encoded systems. Search by name or description. Tier computed live. Click any row to load it into the Builder.
+  </p>
+  <input class="cat-search" id="cat-search" type="text" placeholder="Search name or description…">
+  <div id="cat-loading" style="color:var(--muted);font-size:12px;padding:20px 0;">Loading 3,458 systems…</div>
+  <div class="cat-count" id="cat-count">Loading…</div>
+  <div class="cat-wrap"><table><thead><tr><th>Name</th><th>Description</th><th>Tier</th><th>Key primitives</th></tr></thead><tbody id="cat-tbody"></tbody></table></div>
+
+</div><!-- /panel-catalog -->
+
+<!-- ══════════════════════════════════════════════════════════════ CRYSTAL -->
+<div id="panel-crystal" class="panel">
+
+  <div class="crystal-hero">
+    <span class="big">17,280,000</span>
+    <div class="sub">Structural types in the Crystal of Types (§64 / §CXXXVII)</div>
+    <div class="factor-eq" style="margin-top:16px">
+      <span>$3^3$</span> &times; <span>$4^5$</span> &times; <span>$5^4$</span> = <span>27</span> &times; <span>1,024</span> &times; <span>625</span> = <span style="font-weight:700;color:var(--primary)">17,280,000</span>
+    </div>
+  </div>
+
+  <div class="op-cols">
+    <div>
+      <div class="stitle">Family Factoring</div>
+      <table class="fam-table">
+        <thead>
+          <tr><th>Family</th><th>Primitives</th><th>Values</th><th>Factor</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pchip pf5">$\mathcal{F}_5$</span></td>
+            <td>$T,\ P,\ \Phi,\ K$ — gate primitives</td>
+            <td>5 each</td>
+            <td style="color:var(--primary);font-weight:600">$5^4 = 625$</td>
+          </tr>
+          <tr>
+            <td><span class="pchip pf4">$\mathcal{F}_4$</span></td>
+            <td>$D,\ R,\ \Gamma,\ H,\ \Omega$</td>
+            <td>4 each</td>
+            <td style="color:#A78BFA;font-weight:600">$4^5 = 1{,}024$</td>
+          </tr>
+          <tr>
+            <td><span class="pchip pf3">$\mathcal{F}_3$</span></td>
+            <td>$F,\ G,\ S$</td>
+            <td>3 each</td>
+            <td style="color:var(--green);font-weight:600">$3^3 = 27$</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5;">Exponent = primitive count within family holds in all three families. The $\mathcal{F}_5$ family contains exactly the four gate primitives after the v0.5 revision ($K$ entered from $\mathcal{F}_4$, $\Omega$ entered $\mathcal{F}_4$ from $\mathcal{F}_3$).</p>
+    </div>
+
+    <div>
+      <div class="stitle">Tier Census (catalog sample)</div>
+      <div class="tier-chart">
+        <div class="tier-row">
+          <div class="tier-lbl">$O_\infty$</div>
+          <div class="tier-bar" style="background:rgba(0,212,255,0.18);color:var(--primary);width:calc(382/1975*100%+40px)">382</div>
+          <div class="tier-cnt">19.3%</div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-lbl">$O_2^\dagger$</div>
+          <div class="tier-bar" style="background:rgba(124,58,237,0.12);color:#C4B5FD;width:calc(130/1975*100%+20px)">130</div>
+          <div class="tier-cnt">6.6%</div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-lbl">$O_2$</div>
+          <div class="tier-bar" style="background:rgba(124,58,237,0.18);color:#A78BFA;width:calc(398/1975*100%+30px)">398</div>
+          <div class="tier-cnt">20.2%</div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-lbl">$O_1$</div>
+          <div class="tier-bar" style="background:rgba(16,185,129,0.15);color:var(--green);width:calc(297/1975*100%+25px)">297</div>
+          <div class="tier-cnt">15.0%</div>
+        </div>
+        <div class="tier-row">
+          <div class="tier-lbl">$O_0$</div>
+          <div class="tier-bar" style="background:rgba(107,114,128,0.15);color:var(--muted2);width:calc(768/1975*100%+40px)">768</div>
+          <div class="tier-cnt">38.9%</div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:4px;">Total: 1,975 encoded systems (v0.5.82). Full crystal: 17,280,000 structural types (most uninstantiated).</p>
+    </div>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">Three-Layer Ontology (§CXXXVII)</div>
+  <div class="grid3">
+    <div class="card">
+      <h3>Types</h3>
+      <p>The 17,280,000 coordinate positions in the crystal. Structural universals — they do not depend on any particular instantiation. Two particulars with $d=0$ are <em>co-typed</em>, not identical.</p>
+    </div>
+    <div class="card">
+      <h3>Particulars</h3>
+      <p>Catalog entries — concrete systems instantiating a structural type. The Imscribing Grammar catalog registers particulars. Multiple particulars can share a type (distance zero between them).</p>
+    </div>
+    <div class="card">
+      <h3>Names</h3>
+      <p>String handles for particulars. Names are pointers into the catalog, not into the crystal. Two names can point to the same particular; one particular instantiates exactly one type.</p>
+    </div>
+  </div>
+
+  <div class="stitle">$O_\infty$ Crystal Address</div>
+  <div class="addr-block">
+    <div class="addr-row">
+      <span class="addr-key">Canonical $O_\infty$ tuple</span>
+      <span class="addr-val" id="oinfty-tuple"></span>
+    </div>
+    <div class="addr-row">
+      <span class="addr-key">Crystal address (integer)</span>
+      <span class="addr-val">6,734,591</span>
+    </div>
+    <div class="addr-row">
+      <span class="addr-key">Tier cell</span>
+      <span class="addr-val">Cell 155 (of tier census)</span>
+    </div>
+    <div class="addr-row">
+      <span class="addr-key">Tier rule</span>
+      <span class="addr-val">R1: $\Phi_c + P_{\pm}^{\text{sym}}$</span>
+    </div>
+    <div class="addr-row">
+      <span class="addr-key">$P_{\pm}^{\text{sym}}$ singularity</span>
+      <span class="addr-val">Overrides all $\Omega$/$D$ branching → collapses to $O_\infty$</span>
+    </div>
+  </div>
+
+  <div class="stitle" style="margin-top:28px;">Key Crystal Theorems</div>
+  <ul class="fact-list">
+    <li><b>Frobenius non-synthesizability (§23):</b> $P_{\pm}^{\text{sym}}$ is the tier singularity — no tensor path from $P &lt; P_{\pm}^{\text{sym}}$ can reach $O_\infty$. The crystal has a hard boundary at the $O_\infty$ manifold.</li>
+    <li><b>$\Phi_c$ and $\Phi_c^\mathbb{C}$ equivalence:</b> Real and complex criticality have identical tier distributions within the crystal — they occupy the same structural cell, differing only in inner-crystal position.</li>
+    <li><b>$\Omega_\text{NA}$ expansion:</b> Adding $\Omega_\text{NA}$ as a fourth $\Omega$ value (v0.5) expanded $\Omega$ from $\mathcal{F}_3$ (3 values) to $\mathcal{F}_4$ (4 values), expanding tier-cell count. Net family sizes unchanged: $|\mathcal{F}_4| = 5$.</li>
+    <li><b>Tier determined by $(\Phi, P, \Omega, D)$ only</b> — the four gate-adjacent primitives. $F$, $G$, $S$, $R$, $\Gamma$, $H$ do not affect tier.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ DOMAINS -->
+<div id="panel-domains" class="panel">
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:24px;">
+    The catalog spans 12+ domains. Each domain navigator (§74–§77+) provides specialized encoding tools, distance queries, and domain-specific structural insights. Total: 2,036 encoded systems.
+  </p>
+
+  <div class="grid3">
+
+    <div class="dom-card">
+      <span class="icon">∞</span>
+      <h3>Logic &amp; Mathematics</h3>
+      <div class="count">~180</div>
+      <p>ZFC, category theory, type theory, model theory, Hilbert spaces, Frobenius algebras, TQFT.</p>
+      <div class="finding">Key finding: formal systems with ⊛ are $O_\infty$ in tier but $C=0$ — frozen algebras, not frozen minds. The trap/consciousness decoupling is structurally clean.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">⚛</span>
+      <h3>Physics &amp; Cosmology</h3>
+      <div class="count">~240</div>
+      <p>QFT, GR, condensed matter, stellar objects, FTL proposals, quantum measurement, IFM protocols.</p>
+      <div class="finding">Key finding (§85): FTL trichotomy — Class I ($O_\infty$, boundary alignment), Class II (↓, exotic matter), Class III (×, tachyon). These are structurally incompatible classes, not a design continuum.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">◎</span>
+      <h3>Consciousness &amp; Mind</h3>
+      <div class="count">~120</div>
+      <p>Meditative states, clinical conditions, psychedelic states, cognitive architectures, neural correlates.</p>
+      <div class="finding">Key finding: consciousness score $C(\mathbf{x})$ is zero whenever $K \in \{K_\text{trap}, K_\text{MBL}\}$, regardless of tier. $O_\infty$ and $C=0$ can coexist (formal mathematics, catatonia).</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">⬡</span>
+      <h3>Biology &amp; Medicine</h3>
+      <div class="count">~160</div>
+      <p>Imscriptive boundaries (skin, BBB, plasma membrane), therapeutic modalities, disease states, ecological systems.</p>
+      <div class="finding">Key finding (§XLVII): skin/BBB/plasma membrane form a lattice triangle, not a chain. Therapeutic design space is shaped by the wrong boundary — optimized for skin (route of administration) rather than BBB (site of action).</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">א</span>
+      <h3>Language &amp; Symbol</h3>
+      <div class="count">~140</div>
+      <p>Hebrew alphabet, Egyptian Medu Neter, Proto-Sinaitic, writing systems as type lattices, ALEPH language.</p>
+      <div class="finding">Key finding (§62/§CXXXV): Hebrew letters Vav (ו), Mem (מ), Shin (ש) are confirmed $O_\infty$. The Hebrew alphabet is a stratified type lattice with structural depth unavailable to phonemic alphabets.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">◈</span>
+      <h3>AI &amp; Learning</h3>
+      <div class="count">~130</div>
+      <p>Neural network training dynamics, grokking, transformer architectures, generalization, in-context learning.</p>
+      <div class="finding">Key finding: grokking (generalization phase transition) is $O_\infty$ — the delayed Frobenius emergence is structurally analogous to Frobenius planting (§70), not a continuous optimization trajectory.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">◉</span>
+      <h3>Civilization &amp; History</h3>
+      <div class="count">~100</div>
+      <p>Peak civilizational forms, political structures, institutional architectures, collapse dynamics.</p>
+      <div class="finding">Key finding: peak civilizations (Athenian democracy, Maya Classic) encode ⊙ — imscriptive civic structures where the boundary (law, assembly, ritual) encodes the full civic bulk. Collapse = ⊙ → net transition.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">ξ</span>
+      <h3>Riemann Hypothesis</h3>
+      <div class="count">~40</div>
+      <p>Riemann $\xi$ functional equation, GUE statistics, zeta zeros, spectral interpretation.</p>
+      <div class="finding">Key finding: the $\xi$ functional equation encodes $P_{\pm}^{\text{sym}}$ (exact $Z_2$ symmetry) at $\Phi_c$ — the Riemann Hypothesis is equivalent to asking whether this Frobenius structure is preserved on the full critical line.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">⟳</span>
+      <h3>Quantum Gravity / IUG</h3>
+      <div class="count">~80</div>
+      <p>Inter-Universal Geometry, non-transmissibility, Frobenius barriers, IUTT structural encoding.</p>
+      <div class="finding">Key finding (§85 Cor. 85.C1): BBB non-transmissibility and IUG non-transmissibility are the same structural problem — both are Frobenius non-synthesizability constraints on different substrates.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">꩜</span>
+      <h3>Ecology &amp; Complex Systems</h3>
+      <div class="count">~90</div>
+      <p>Ecosystems, food webs, climate systems, urban systems, open boundary systems (∅).</p>
+      <div class="finding">Key finding: ∅ is canonical for open ecological systems — winding number is simply inapplicable when boundary conditions are genuinely open (not topologically closed in any sense).</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">△</span>
+      <h3>Stellar &amp; Astrophysics</h3>
+      <div class="count">~60</div>
+      <p>Stellar objects, neutron stars, black holes, white dwarfs, magnetars, gravitational systems.</p>
+      <div class="finding">Key finding: black holes $C=0$ (Gate 2: $K_\text{trap}$ — frozen by gravitational order), white dwarfs $C=0$ (Gate 1: $\Phi_\text{sub}$). Magnetars $C\approx0.677$ are the consciousness-maximizing stellar objects.</div>
+    </div>
+
+    <div class="dom-card">
+      <span class="icon">⊞</span>
+      <h3>Quantum Information</h3>
+      <div class="count">~100</div>
+      <p>Quantum channels, POVM measurements, SIC-POVMs, entanglement structures, IFM protocols.</p>
+      <div class="finding">Key finding (§86): IFM protocols (Elitzur-Vaidman, Kwiat, Salih) share $\Gamma_\vee$ (OR-grammar) as the decisive primitive — interaction-free detection is structurally an OR-branching over possible interaction paths.</div>
+    </div>
+
+  </div>
+
+  <div class="stitle" style="margin-top:36px;">Navigator Suite</div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Crystal Navigator</h3>
+      <p>Frobenius codec (encode/decode bijection over 17,280,000 types), imscriptive query, tier gap ladder, REPL. <code style="font-size:11px;color:var(--primary)">python crystal_navigator.py repl</code> or <code style="font-size:11px;color:var(--primary)">imscribe nav crystal</code></p>
+    </div>
+    <div class="card">
+      <h3>Domain Navigators (§74–§77)</h3>
+      <p>Language, civilization, ecology, consciousness domain-specific tools. <code style="font-size:11px;color:var(--primary)">imscribe nav domain</code></p>
+    </div>
+    <div class="card">
+      <h3>Riemann ξ Navigator</h3>
+      <p>SpectralTransformer + FrobeniusLayer + GUE loss. <code style="font-size:11px;color:var(--primary)">imscribe nav riemann describe/train</code></p>
+    </div>
+    <div class="card">
+      <h3>ZFC Navigator</h3>
+      <p>Non-transmissibility probe for ZFC boundary conditions. <code style="font-size:11px;color:var(--primary)">imscribe nav zfc probe</code></p>
+    </div>
+    <div class="card">
+      <h3>Lambda Engine</h3>
+      <p>Cantor monad $P$, Gödel comonad $G$, distributive law $\lambda: PG \to GP$. Frobenius non-synthesizability demo, Fano plane. <code style="font-size:11px;color:var(--primary)">imscribe lambda</code></p>
+    </div>
+    <div class="card">
+      <h3>HoTT Bridge</h3>
+      <p>Univalence bridge ($d = 1.3416$), promote-to-HoTT, Vav-cast. Structural distance from Imscribing Grammar type space to HoTT universe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════ BUILDER -->
+<div id="panel-builder" class="panel">
+
+  <p style="font-size:12px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:24px;">
+    Construct any synthon from the 12 primitives, or load a catalog entry. Tier and consciousness score computed live. $C(\mathbf{x}) = [\Phi{=}\Phi_c]\cdot[K{\leq}K_\text{slow}]\cdot(0.158\tilde{K}+0.273\tilde{G}+0.292\tilde{T}+0.276\tilde{\Omega})$.
+  </p>
+
+  <div class="bld-wrap">
+    <div style="margin-bottom:14px">
+      <label style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Load catalog entry</label>
+      <select id="bld-select" style="width:100%;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:var(--font);font-size:12px;color:var(--text);outline:none">
+        <option value="">Select a catalog entry…</option>
+      </select>
+    </div>
+
+    <div class="bld-prim-grid">
+      <div class="bld-prim">
+        <span class="head">D — Dimensionality</span>
+        <label class="bld-radio"><input type="radio" name="bD" value="D_wedge">∧</label>
+        <label class="bld-radio"><input type="radio" name="bD" value="D_triangle">△</label>
+        <label class="bld-radio"><input type="radio" name="bD" value="D_infty">∞</label>
+        <label class="bld-radio"><input type="radio" name="bD" value="D_odot" checked>⊙</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">T — Topology</span>
+        <label class="bld-radio"><input type="radio" name="bT" value="T_network">net</label>
+        <label class="bld-radio"><input type="radio" name="bT" value="T_in">⊂</label>
+        <label class="bld-radio"><input type="radio" name="bT" value="T_bowtie">⋈</label>
+        <label class="bld-radio"><input type="radio" name="bT" value="T_boxtimes">⊠</label>
+        <label class="bld-radio"><input type="radio" name="bT" value="T_odot" checked>⊙</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">R — Relational</span>
+        <label class="bld-radio"><input type="radio" name="bR" value="R_super">↑</label>
+        <label class="bld-radio"><input type="radio" name="bR" value="R_cat">∘</label>
+        <label class="bld-radio"><input type="radio" name="bR" value="R_dagger">†</label>
+        <label class="bld-radio"><input type="radio" name="bR" value="R_lr" checked>↔</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">P — Parity</span>
+        <label class="bld-radio"><input type="radio" name="bP" value="P_asym">∅</label>
+        <label class="bld-radio"><input type="radio" name="bP" value="P_psi">ψ</label>
+        <label class="bld-radio"><input type="radio" name="bP" value="P_pm">±</label>
+        <label class="bld-radio"><input type="radio" name="bP" value="P_sym">≡</label>
+        <label class="bld-radio"><input type="radio" name="bP" value="P_pm_sym" checked>±ˢ</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">F — Fidelity</span>
+        <label class="bld-radio"><input type="radio" name="bF" value="F_ell">ℓ</label>
+        <label class="bld-radio"><input type="radio" name="bF" value="F_eth">ð</label>
+        <label class="bld-radio"><input type="radio" name="bF" value="F_hbar" checked>ℏ</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">K — Kinetic</span>
+        <label class="bld-radio"><input type="radio" name="bK" value="K_fast">↯</label>
+        <label class="bld-radio"><input type="radio" name="bK" value="K_mod" checked>≈</label>
+        <label class="bld-radio"><input type="radio" name="bK" value="K_slow">↺</label>
+        <label class="bld-radio"><input type="radio" name="bK" value="K_trap">⊛</label>
+        <label class="bld-radio"><input type="radio" name="bK" value="K_MBL">⊞</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">G — Scope</span>
+        <label class="bld-radio"><input type="radio" name="bG" value="G_beth">ℶ</label>
+        <label class="bld-radio"><input type="radio" name="bG" value="G_gimel">ℷ</label>
+        <label class="bld-radio"><input type="radio" name="bG" value="G_aleph" checked>ℵ</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">Γ — Interaction</span>
+        <label class="bld-radio"><input type="radio" name="bGamma" value="G_and">∧</label>
+        <label class="bld-radio"><input type="radio" name="bGamma" value="G_or">∨</label>
+        <label class="bld-radio"><input type="radio" name="bGamma" value="G_seq">→</label>
+        <label class="bld-radio"><input type="radio" name="bGamma" value="G_broad" checked>≫</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">Φ — Criticality</span>
+        <label class="bld-radio"><input type="radio" name="bPhi" value="Phi_sub">↓</label>
+        <label class="bld-radio"><input type="radio" name="bPhi" value="Phi_c" checked>c</label>
+        <label class="bld-radio"><input type="radio" name="bPhi" value="Phi_c_complex">ℂ</label>
+        <label class="bld-radio"><input type="radio" name="bPhi" value="Phi_EP">×</label>
+        <label class="bld-radio"><input type="radio" name="bPhi" value="Phi_super">↑</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">H — Temporal</span>
+        <label class="bld-radio"><input type="radio" name="bH" value="H0">0</label>
+        <label class="bld-radio"><input type="radio" name="bH" value="H1">1</label>
+        <label class="bld-radio"><input type="radio" name="bH" value="H2">2</label>
+        <label class="bld-radio"><input type="radio" name="bH" value="H_inf" checked>∞</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">S — Stoichiometry</span>
+        <label class="bld-radio"><input type="radio" name="bS" value="one_one" checked>1:1</label>
+        <label class="bld-radio"><input type="radio" name="bS" value="n_n">n:n</label>
+        <label class="bld-radio"><input type="radio" name="bS" value="n_m">n:m</label>
+      </div>
+      <div class="bld-prim">
+        <span class="head">Ω — Winding</span>
+        <label class="bld-radio"><input type="radio" name="bOmega" value="Omega_0">0</label>
+        <label class="bld-radio"><input type="radio" name="bOmega" value="Omega_Z2">ℤ₂</label>
+        <label class="bld-radio"><input type="radio" name="bOmega" value="Omega_Z" checked>ℤ</label>
+        <label class="bld-radio"><input type="radio" name="bOmega" value="Omega_NA">∅</label>
+      </div>
+    </div>
+
+    <div class="bld-row">
+      <button class="bld-btn" onclick="bldCompute()">Compute</button>
+      <button class="bld-btn sec" onclick="bldReset()">Reset</button>
+      <button class="bld-btn sec" onclick="bldRandom()">Random</button>
+    </div>
+
+    <div class="bld-result" id="bld-result">
+      <div style="margin-bottom:12px" id="bld-tuple-display"></div>
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+        <div>Tier: <span id="bld-tier"></span></div>
+      </div>
+      <div class="bld-cscore" id="bld-cscore">0.000</div>
+      <div style="margin:4px 0 2px">
+        <span id="bld-g1" class="bld-gate">G1: ?</span>
+        <span id="bld-g2" class="bld-gate">G2: ?</span>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Consciousness score $C(\mathbf{x})$</div>
+      <div class="bld-pbar"><div class="bld-pbar-fill" id="bld-pbar-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+</div><!-- /panel-builder -->
+
+
+<!-- ══════════════════════════════════════════════════════════════ PAPER -->
+<div id="panel-paper" class="panel">
+
+  <div class="use-hero">
+    <h2>Odd Perfect Numbers — Euler &amp; Touchard</h2>
+    <p>Machine-verified proofs of Euler's structure theorem (1747) and Touchard's congruence (1953) in Lean 4 + Mathlib4. The two oldest and most foundational necessary conditions on any odd perfect number, now formally exact.</p>
+  </div>
+
+  <div class="stitle">What This Proves</div>
+  <div class="grid2" style="max-width:760px">
+    <div class="card">
+      <h3>Euler's theorem (1747) — <code>euler_opn_form</code></h3>
+      <p style="margin-bottom:8px">Every odd perfect number $n$ has the form $n = p^k \cdot m^2$ where $p$ is prime, $p \equiv k \equiv 1 \pmod{4}$, and $p \nmid m$.</p>
+      <p style="font-size:11px;color:var(--muted)">The proof turns on a single $2$-adic valuation constraint: $\sigma(n) = 2n$ with $n$ odd carries exactly one factor of $2$. Distributing this across the prime factorization forces exactly one prime with $v_2(\sigma(p^k)) = 1$; all remaining primes get even exponents, giving the $m^2$ factor.</p>
+    </div>
+    <div class="card">
+      <h3>Touchard's congruence (1953) — <code>touchard_congruence</code></h3>
+      <p style="margin-bottom:8px">Any odd perfect number $n$ satisfies $n \equiv 1 \pmod{12}$ or $n \equiv 9 \pmod{36}$.</p>
+      <p style="font-size:11px;color:var(--muted)">The proof combines the Euler form with a $3$-adic case analysis depending on whether $3 \mid n$. Unconditional: calls <code>euler_opn_form</code> internally rather than assuming the Euler form as a hypothesis. The two results share an arithmetic skeleton.</p>
+    </div>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">Structural Connection</div>
+  <div class="card" style="max-width:760px;line-height:1.8;font-size:12px;color:var(--muted)">
+    <p style="margin-bottom:10px">The grammar encodes the OPN problem as a $P_{\pm}^{\text{sym}}$ question at $\Phi_c$ — structurally co-typed with the Riemann Hypothesis. Both ask whether a known $Z_2$ symmetry holds everywhere on the critical manifold or has hidden exceptions.</p>
+    <p style="margin-bottom:10px">Euler's $p \equiv k \equiv 1 \pmod{4}$ condition is the Frobenius parity constraint written in the language of $\sigma$-functions: exactly one prime is forced into the residue class that makes the $2$-adic valuation balance. Machine-verification makes this encoding formally exact — the $\pmod{4}$ condition is derivable from the $Z_2$ parity requirement, which is the grammar's definition of $P_{\pm}^{\text{sym}}$.</p>
+    <p style="margin-bottom:0">Neither theorem proves nonexistence of an OPN. Together they constrain the structural space tighter with each result — which is exactly the grammar's prediction for a $P_{\pm}^{\text{sym}}$ question that hasn't been closed: evidence accumulates on the critical manifold without yet resolving it.</p>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">Proof Architecture</div>
+  <div class="card" style="max-width:760px;line-height:1.8;font-size:12px;color:var(--muted)">
+    <p style="margin-bottom:8px">Five layers, each depending necessarily on the one below:</p>
+    <table class="tbl" style="width:100%">
+      <thead><tr><th>Layer</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td class="em">1 — Arithmetic helpers</td><td><code>geom_sum_mod2</code>, <code>geom_sum_mod4</code>, <code>geom_sum_mod3_q2</code></td></tr>
+        <tr><td class="em">2 — $2$-adic valuation</td><td><code>v₂_mul</code>, <code>v₂_odd</code>, <code>v₂_prod</code>, <code>v2_eq_one_of_mod4_eq2</code></td></tr>
+        <tr><td class="em">3 — Valuation of $\sigma(p^a)$</td><td><code>sigma_prime_pow_mod2/mod4</code> and specialized $v_2$ lemmas</td></tr>
+        <tr><td class="em">4 — Euler's theorem</td><td><code>v2_sigma_odd_perfect</code>, <code>sigma_prod_factorization</code>, <code>euler_opn_form</code></td></tr>
+        <tr><td class="em">5 — Touchard's congruence</td><td><code>sigma_dvd3_of_p2_kodd</code>, <code>touchard_congruence</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">Citation</div>
+  <div class="addr-block" style="max-width:760px">
+    <div class="addr-row"><span class="addr-key">Title</span><span class="addr-val">Odd Perfect Numbers — Euler's Theorem and Touchard's Congruence</span></div>
+    <div class="addr-row"><span class="addr-key">Author</span><span class="addr-val">umpolungfish</span></div>
+    <div class="addr-row"><span class="addr-key">DOI</span><span class="addr-val"><a href="https://doi.org/10.5281/zenodo.19909057" style="color:var(--primary)" target="_blank" rel="noopener">10.5281/zenodo.19909057</a></span></div>
+    <div class="addr-row"><span class="addr-key">Repository</span><span class="addr-val"><a href="https://github.com/umpolungfish/odd-perfect-numbers" style="color:var(--primary)" target="_blank" rel="noopener">github.com/umpolungfish/odd-perfect-numbers</a></span></div>
+    <div class="addr-row"><span class="addr-key">License</span><span class="addr-val">Public domain (UNLICENSE)</span></div>
+    <div class="addr-row"><span class="addr-key">Toolchain</span><span class="addr-val">Lean 4 v4.30.0-rc2 + Mathlib4</span></div>
+  </div>
+
+  <div class="stitle" style="margin-top:32px;">BibTeX</div>
+  <pre style="background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:6px;padding:16px;font-size:11px;color:var(--muted2);overflow-x:auto;line-height:1.7">@software{opn_lean2026,
+  title   = {Odd Perfect Numbers --- {Euler}'s Theorem and {Touchard}'s Congruence},
+  author  = {umpolungfish},
+  year    = {2026},
+  doi     = {10.5281/zenodo.19909057},
+  url     = {https://github.com/umpolungfish/odd-perfect-numbers},
+  license = {UNLICENSE}
+}</pre>
+
+</div><!-- /panel-paper -->
+
+</main>
+
+<script>
+// ── Tab switching ──
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── Tuple rendering ──
+const DISPLAY = {
+  'D_odot':'⊙','D_wedge':'∧','D_triangle':'△','D_infty':'∞',
+  'T_odot':'⊙','T_network':'net','T_in':'⊂','T_bowtie':'⋈','T_boxtimes':'⊠',
+  'R_dagger':'†','R_super':'↑','R_cat':'∘','R_lr':'↔',
+  'P_pm_sym':'±ˢ','P_pm':'±','P_asym':'∅','P_psi':'ψ','P_sym':'≡',
+  'F_hbar':'ℏ','F_ell':'ℓ','F_eth':'ð',
+  'K_fast':'↯','K_mod':'≈','K_slow':'↺','K_trap':'⊛','K_MBL':'⊞',
+  'G_aleph':'ℵ','G_gimel':'ℷ','G_beth':'ℶ',
+  'G_broad':'»','G_and':'∧','G_or':'∨','G_seq':'→',
+  'Phi_c':'c','Phi_c_complex':'ℂ','Phi_EP':'×','Phi_sub':'↓','Phi_super':'↑',
+  'H0':'0','H1':'1','H2':'2','H_inf':'∞',
+  'one_one':'1:1','n_n':'n:n','n_m':'n:m',
+  'Omega_0':'0','Omega_Z2':'ℤ₂','Omega_Z':'ℤ','Omega_NA':'∅',
+};
+
+// Family index for D;T;R;P;F;K;G;Γ;Φ;H;S;Ω
+const FAM = ['pf4','pf5','pf4','pf5','pf3','pf5','pf3','pf4','pf5','pf4','pf3','pf4'];
+
+function renderTuple(targetId, tupleStr) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+  const parts = tupleStr.split(';').map(s => s.trim());
+  el.innerHTML = parts.map((p,i) => {
+    const d = DISPLAY[p] || p;
+    const fam = FAM[i] || 'pf4';
+    return `<span class="pchip ${fam}">${d}</span>`;
+  }).join('');
+}
+
+// ── Catalog tuples ──
+const TUPLES = {
+  't-imscribe':   'D_odot;T_odot;R_dagger;P_pm_sym;F_eth;K_mod;G_aleph;G_broad;Phi_c;H1;n_n;Omega_Z2',
+  't-euler':    'D_infty;T_odot;R_dagger;P_pm_sym;F_hbar;K_mod;G_aleph;G_broad;Phi_c;H_inf;one_one;Omega_Z2',
+  't-fmath':    'D_triangle;T_in;R_dagger;P_pm_sym;F_hbar;K_trap;G_aleph;G_seq;Phi_c;H_inf;n_m;Omega_Z',
+  't-cantor':   'D_odot;T_in;R_cat;P_pm;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z',
+  't-goedel':   'D_infty;T_odot;R_dagger;P_pm;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z',
+  't-ftl-warp': 'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_mod;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z2',
+  't-ftl-exotic':'D_triangle;T_boxtimes;R_super;P_psi;F_eth;K_trap;G_gimel;G_and;Phi_sub;H1;n_n;Omega_Z2',
+  't-ftl-tach': 'D_infty;T_network;R_lr;P_psi;F_eth;K_fast;G_beth;G_seq;Phi_EP;H2;n_n;Omega_0',
+  't-qmc':      'D_wedge;T_boxtimes;R_cat;P_asym;F_eth;K_fast;G_beth;G_seq;Phi_EP;H1;one_one;Omega_0',
+  't-magnetar': 'D_triangle;T_boxtimes;R_super;P_sym;F_hbar;K_mod;G_aleph;G_broad;Phi_c;H2;n_n;Omega_Z2',
+  't-samadhi':  'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;one_one;Omega_Z',
+  't-catatonic':'D_triangle;T_in;R_super;P_pm;F_eth;K_trap;G_beth;G_and;Phi_c;H1;one_one;Omega_0',
+  't-bbb':      'D_odot;T_boxtimes;R_cat;P_pm;F_hbar;K_trap;G_aleph;G_seq;Phi_c;H2;n_m;Omega_Z2',
+  't-exosome':  'D_odot;T_boxtimes;R_cat;P_pm_sym;F_hbar;K_slow;G_aleph;G_seq;Phi_c;H2;n_m;Omega_Z2',
+  't-forest':   'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_slow;G_gimel;G_broad;Phi_c;H_inf;n_n;Omega_NA',
+  't-vav':      'D_wedge;T_network;R_lr;P_pm_sym;F_ell;K_slow;G_gimel;G_and;Phi_c;H1;one_one;Omega_0',
+  't-mem':      'D_triangle;T_in;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H2;n_n;Omega_Z',
+  't-shin':     'D_triangle;T_bowtie;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_n;Omega_Z',
+  't-grok':     'D_triangle;T_boxtimes;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H2;n_m;Omega_Z',
+  't-athens':   'D_triangle;T_odot;R_lr;P_pm_sym;F_eth;K_slow;G_gimel;G_broad;Phi_c;H2;n_n;Omega_Z',
+  't-maya':     'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_slow;G_gimel;G_broad;Phi_c;H_inf;n_n;Omega_NA',
+};
+
+Object.entries(TUPLES).forEach(([id, t]) => renderTuple(id, t));
+
+// ── Use It panel tuples ──
+const USE_TUPLES = {
+  'uc-grok':    'D_triangle;T_boxtimes;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H2;n_m;Omega_Z',
+  'uc-samadhi': 'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;one_one;Omega_Z',
+  'uc-qc':      'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_mod;G_aleph;G_broad;Phi_c;H_inf;n_n;Omega_Z2',
+  'uc-meas':    'D_wedge;T_boxtimes;R_cat;P_asym;F_eth;K_fast;G_beth;G_seq;Phi_EP;H1;one_one;Omega_0',
+  'uc-coupled': 'D_odot;T_boxtimes;R_cat;P_asym;F_eth;K_fast;G_aleph;G_seq;Phi_EP;H_inf;n_n;Omega_Z2',
+  'uc-bbb-h':   'D_odot;T_boxtimes;R_cat;P_pm;F_hbar;K_trap;G_aleph;G_seq;Phi_c;H2;n_m;Omega_Z2',
+  'uc-gbm':     'D_triangle;T_boxtimes;R_cat;P_asym;F_eth;K_fast;G_gimel;G_seq;Phi_c;H2;n_m;Omega_Z2',
+  'uc-warp':    'D_odot;T_odot;R_dagger;P_pm_sym;F_hbar;K_mod;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z2',
+  'uc-tach':    'D_infty;T_network;R_lr;P_psi;F_eth;K_fast;G_beth;G_seq;Phi_EP;H2;n_n;Omega_0',
+};
+Object.entries(USE_TUPLES).forEach(([id, t]) => renderTuple(id, t));
+
+// O∞ canonical tuple display
+const oinfEl = document.getElementById('oinfty-tuple');
+if (oinfEl) {
+  oinfEl.innerHTML = TUPLES['t-imscribe'].split(';').map((p,i) => {
+    const d = DISPLAY[p] || p;
+    return `<span class="pchip ${FAM[i]}">${d}</span>`;
+  }).join(' ');
+}
+
+// ── Themes ──
+const THEMES = {
+  void: {
+    label:'Void', swatch:'#00D4FF',
+    '--bg':'#05060E','--bg2':'#080B18',
+    '--surface':'rgba(255,255,255,0.02)','--surface2':'rgba(255,255,255,0.04)',
+    '--border':'#1A2050','--border2':'rgba(0,212,255,0.15)',
+    '--text':'#E8E8F0','--muted':'#6B7280','--muted2':'#9CA3AF',
+    '--primary':'#00D4FF','--primary-dim':'rgba(0,212,255,0.15)',
+    '--secondary':'#7C3AED','--secondary-dim':'rgba(124,58,237,0.15)',
+    '--green':'#10B981','--green-dim':'rgba(16,185,129,0.12)',
+    '--amber':'#F59E0B','--amber-dim':'rgba(245,158,11,0.12)',
+    '--red':'#EF4444',
+  },
+  terminal: {
+    label:'Terminal', swatch:'#00FF41',
+    '--bg':'#050A05','--bg2':'#080F08',
+    '--surface':'rgba(0,255,65,0.02)','--surface2':'rgba(0,255,65,0.04)',
+    '--border':'#0D2B0D','--border2':'rgba(0,255,65,0.2)',
+    '--text':'#CCFFCC','--muted':'#4A7A4A','--muted2':'#7AAA7A',
+    '--primary':'#00FF41','--primary-dim':'rgba(0,255,65,0.15)',
+    '--secondary':'#00CC33','--secondary-dim':'rgba(0,204,51,0.15)',
+    '--green':'#39FF14','--green-dim':'rgba(57,255,20,0.12)',
+    '--amber':'#AAFF00','--amber-dim':'rgba(170,255,0,0.12)',
+    '--red':'#FF4444',
+  },
+  violet: {
+    label:'Violet', swatch:'#A78BFA',
+    '--bg':'#07040F','--bg2':'#0A0715',
+    '--surface':'rgba(167,139,250,0.03)','--surface2':'rgba(167,139,250,0.05)',
+    '--border':'#1E1040','--border2':'rgba(167,139,250,0.2)',
+    '--text':'#EDE9FF','--muted':'#6B5A8A','--muted2':'#9D8EC0',
+    '--primary':'#A78BFA','--primary-dim':'rgba(167,139,250,0.15)',
+    '--secondary':'#EC4899','--secondary-dim':'rgba(236,72,153,0.15)',
+    '--green':'#34D399','--green-dim':'rgba(52,211,153,0.12)',
+    '--amber':'#FBBF24','--amber-dim':'rgba(251,191,36,0.12)',
+    '--red':'#F87171',
+  },
+  amber: {
+    label:'Amber', swatch:'#F59E0B',
+    '--bg':'#0C0800','--bg2':'#110C00',
+    '--surface':'rgba(245,158,11,0.03)','--surface2':'rgba(245,158,11,0.05)',
+    '--border':'#2A1C00','--border2':'rgba(245,158,11,0.2)',
+    '--text':'#FFF3CC','--muted':'#7A6030','--muted2':'#B08A50',
+    '--primary':'#F59E0B','--primary-dim':'rgba(245,158,11,0.15)',
+    '--secondary':'#EF4444','--secondary-dim':'rgba(239,68,68,0.15)',
+    '--green':'#10B981','--green-dim':'rgba(16,185,129,0.12)',
+    '--amber':'#FCD34D','--amber-dim':'rgba(252,211,77,0.12)',
+    '--red':'#F87171',
+  },
+  plasma: {
+    label:'Plasma', swatch:'#FF2D87',
+    '--bg':'#0A0008','--bg2':'#0F000C',
+    '--surface':'rgba(255,45,135,0.02)','--surface2':'rgba(255,45,135,0.04)',
+    '--border':'#2A0020','--border2':'rgba(255,45,135,0.2)',
+    '--text':'#FFE0F0','--muted':'#7A3060','--muted2':'#B05080',
+    '--primary':'#FF2D87','--primary-dim':'rgba(255,45,135,0.15)',
+    '--secondary':'#7B00FF','--secondary-dim':'rgba(123,0,255,0.15)',
+    '--green':'#00FFB3','--green-dim':'rgba(0,255,179,0.12)',
+    '--amber':'#FFB347','--amber-dim':'rgba(255,179,71,0.12)',
+    '--red':'#FF5555',
+  },
+  light: {
+    label:'Light', swatch:'#0066CC',
+    '--bg':'#F5F6FA','--bg2':'#ECEEF5',
+    '--surface':'rgba(0,0,0,0.03)','--surface2':'rgba(0,0,0,0.055)',
+    '--border':'#CDD0E0','--border2':'rgba(0,102,204,0.25)',
+    '--text':'#1A1A2E','--muted':'#6B7280','--muted2':'#4B5563',
+    '--primary':'#0066CC','--primary-dim':'rgba(0,102,204,0.12)',
+    '--secondary':'#7C3AED','--secondary-dim':'rgba(124,58,237,0.12)',
+    '--green':'#059669','--green-dim':'rgba(5,150,105,0.1)',
+    '--amber':'#D97706','--amber-dim':'rgba(217,119,6,0.1)',
+    '--red':'#DC2626',
+  },
+};
+
+function applyTheme(name) {
+  const t = THEMES[name];
+  if (!t) return;
+  const root = document.documentElement;
+  Object.entries(t).forEach(([k,v]) => {
+    if (k.startsWith('--')) root.style.setProperty(k, v);
+  });
+  root.dataset.theme = name;
+  localStorage.setItem('imscribe-theme', name);
+  document.querySelectorAll('.tswatch').forEach(s => {
+    s.classList.toggle('active', s.dataset.theme === name);
+  });
+}
+
+// Build swatch bar
+(function() {
+  const bar = document.getElementById('theme-bar');
+  if (!bar) return;
+  const lbl = document.createElement('span');
+  lbl.className = 'theme-bar-label';
+  lbl.textContent = 'Theme';
+  bar.appendChild(lbl);
+  Object.entries(THEMES).forEach(([name, t]) => {
+    const sw = document.createElement('button');
+    sw.className = 'tswatch';
+    sw.dataset.theme = name;
+    sw.title = t.label;
+    sw.style.background = t.swatch;
+    sw.addEventListener('click', () => applyTheme(name));
+    bar.appendChild(sw);
+  });
+  const saved = localStorage.getItem('imscribe-theme') || 'void';
+  applyTheme(saved);
+})();
+
+// ── Catalog loaded asynchronously from /catalog.json ──
+let CATALOG_REAL = [];
+(async function() {
+  try {
+    const resp = await fetch('/catalog.json');
+    CATALOG_REAL = await resp.json();
+    // Populate builder dropdown
+    const sel = document.getElementById('bld-select');
+    if (sel) {
+      CATALOG_REAL.forEach(e => {
+        const opt = document.createElement('option');
+        opt.value = e.t;
+        opt.textContent = e.n.replace(/_/g,' ');
+        sel.appendChild(opt);
+      });
+      sel.addEventListener('change', function() {
+        if (this.value) bldLoadTuple(this.value);
+      });
+    }
+    buildCatalogTable('');
+    // Hide loading spinner
+    const loadEl = document.getElementById('cat-loading');
+    if (loadEl) loadEl.style.display = 'none';
+  } catch(err) {
+    const loadEl = document.getElementById('cat-loading');
+    if (loadEl) loadEl.textContent = 'Failed to load catalog.';
+    console.error('Catalog load error:', err);
+  }
+})();
+
+// ── Tier computation (R1–R5 priority order) ──
+function bldTier(D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega) {
+  const phiC = Phi==='Phi_c'||Phi==='Phi_c_complex';
+  if (P==='P_pm_sym' && phiC)                    return 'O_inf';
+  if (Phi==='Phi_sub'||Phi==='Phi_super'||Phi==='Phi_EP') return 'O_0';
+  if (phiC && Omega==='Omega_0')                 return 'O_1';
+  if (phiC && Omega!=='Omega_0') {
+    return D==='D_infty' ? 'O_2d' : 'O_2';
+  }
+  return 'O_0';
+}
+
+function tierFromTuple(t) {
+  const p = t.split(';');
+  return bldTier(p[0],p[1],p[2],p[3],p[4],p[5],p[6],p[7],p[8],p[9],p[10],p[11]);
+}
+
+function tierBadge(tier) {
+  const map = {
+    'O_inf': ['t-inf','O∞'], 'O_0': ['t-0','O₀'],
+    'O_1':   ['t-1','O₁'],   'O_2': ['t-2','O₂'],
+    'O_2d':  ['t-2d','O₂†']
+  };
+  const [cls,lbl] = map[tier]||['t-0',tier];
+  return `<span class="tier ${cls}">${lbl}</span>`;
+}
+
+// ── C-score (correct formula, CLAUDE.md §Consciousness score) ──
+function bldCScore(D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega) {
+  const phiC = Phi==='Phi_c'||Phi==='Phi_c_complex';
+  const kGate = K==='K_fast'||K==='K_mod'||K==='K_slow';
+  if (!phiC || !kGate) return 0;
+  const KO = {K_fast:0,K_mod:1,K_slow:2,K_trap:3,K_MBL:4};
+  const GO = {G_beth:0,G_gimel:1,G_aleph:2};
+  const TO = {T_network:0,T_in:1,T_bowtie:2,T_boxtimes:3,T_odot:4};
+  const OO = {Omega_0:0,Omega_Z2:1,Omega_Z:2,Omega_NA:3};
+  const kT=(KO[K]||0)/4, gT=(GO[G]||0)/2, tT=(TO[T]||0)/4, oT=(OO[Omega]||0)/3;
+  return 0.158*kT + 0.273*gT + 0.292*tT + 0.276*oT;
+}
+
+function cScoreFromTuple(t) {
+  const p = t.split(';');
+  return bldCScore(p[0],p[1],p[2],p[3],p[4],p[5],p[6],p[7],p[8],p[9],p[10],p[11]);
+}
+
+// ── Catalog table ──
+const PAGE_SIZE = 50;
+let _catFiltered = [];
+let _catShown = 0;
+
+function buildCatalogTable(query) {
+  const q = (query||'').toLowerCase().trim();
+  _catFiltered = q
+    ? CATALOG_REAL.filter(e => e.n.toLowerCase().includes(q) || e.d.toLowerCase().includes(q))
+    : CATALOG_REAL;
+  _catShown = 0;
+  document.getElementById('cat-count').textContent = `${_catFiltered.length} of ${CATALOG_REAL.length} entries`;
+  const tbody = document.getElementById('cat-tbody');
+  tbody.innerHTML = '';
+  const loadMoreBtn = document.getElementById('cat-load-more');
+  if (loadMoreBtn) loadMoreBtn.remove();
+  _renderMoreRows();
+}
+
+function _renderMoreRows() {
+  const tbody = document.getElementById('cat-tbody');
+  const slice = _catFiltered.slice(_catShown, _catShown + PAGE_SIZE);
+  slice.forEach(e => {
+    const tier = e.tier || tierFromTuple(e.t);
+    const parts = e.t.split(';');
+    const chips = [0,1,3,8].map(i => {
+      const d = DISPLAY[parts[i]] || parts[i];
+      const fam = FAM[i]||'pf4';
+      return `<span class="pchip ${fam}">${d}</span>`;
+    }).join('');
+    const tr = document.createElement('tr');
+    tr.onclick = () => bldLoadTuple(e.t);
+    tr.innerHTML = `<td>${e.n.replace(/_/g,' ')}</td>
+      <td style="color:var(--muted)">${e.d}</td>
+      <td>${tierBadge(tier)}</td>
+      <td style="white-space:nowrap">${chips}</td>`;
+    tbody.appendChild(tr);
+  });
+  _catShown += slice.length;
+  // Load more button
+  let loadMoreBtn = document.getElementById('cat-load-more');
+  if (loadMoreBtn) loadMoreBtn.remove();
+  if (_catShown < _catFiltered.length) {
+    const catWrap = document.querySelector('.cat-wrap');
+    const btn = document.createElement('button');
+    btn.id = 'cat-load-more';
+    btn.className = 'bld-btn sec';
+    btn.style = 'margin:12px auto;display:block;';
+    btn.textContent = `Load more (${_catFiltered.length - _catShown} remaining)`;
+    btn.onclick = _renderMoreRows;
+    catWrap.parentNode.insertBefore(btn, catWrap.nextSibling);
+  }
+}
+
+document.getElementById('cat-search').addEventListener('input', e => buildCatalogTable(e.target.value));
+// buildCatalogTable called after async catalog load
+
+// ── Builder ──
+const BLD_NAMES = ['bD','bT','bR','bP','bF','bK','bG','bGamma','bPhi','bH','bS','bOmega'];
+
+function bldGetValues() {
+  return BLD_NAMES.map(n => {
+    const el = document.querySelector(`input[name="${n}"]:checked`);
+    return el ? el.value : null;
+  });
+}
+
+function bldSetValues(parts) {
+  BLD_NAMES.forEach((n,i) => {
+    const el = document.querySelector(`input[name="${n}"][value="${parts[i]}"]`);
+    if (el) el.checked = true;
+  });
+}
+
+function bldLoadTuple(tupleStr) {
+  const parts = tupleStr.split(';');
+  bldSetValues(parts);
+  // switch to builder tab
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab[data-tab="builder"]').classList.add('active');
+  document.getElementById('panel-builder').classList.add('active');
+  bldCompute();
+}
+
+function bldCompute() {
+  const vals = bldGetValues();
+  if (vals.includes(null)) { alert('Select all 12 primitives'); return; }
+  const [D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega] = vals;
+  const tupleStr = vals.join(';');
+
+  // Tuple display
+  const tEl = document.getElementById('bld-tuple-display');
+  tEl.innerHTML = '<div class="tuple-row">' + vals.map((v,i) => {
+    const d = DISPLAY[v]||v;
+    return `<span class="pchip ${FAM[i]}">${d}</span>`;
+  }).join('') + '</div>';
+
+  // Tier
+  const tier = bldTier(D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega);
+  document.getElementById('bld-tier').innerHTML = tierBadge(tier);
+
+  // Gates
+  const phiC = Phi==='Phi_c'||Phi==='Phi_c_complex';
+  const kGate = K==='K_fast'||K==='K_mod'||K==='K_slow';
+  const g1El = document.getElementById('bld-g1');
+  const g2El = document.getElementById('bld-g2');
+  g1El.textContent = `G1 (Φ): ${phiC?'PASS':'FAIL'}`;
+  g1El.className = `bld-gate ${phiC?'pass':'fail'}`;
+  g2El.textContent = `G2 (K): ${kGate?'PASS':'FAIL'}`;
+  g2El.className = `bld-gate ${kGate?'pass':'fail'}`;
+
+  // C-score
+  const cs = bldCScore(D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega);
+  document.getElementById('bld-cscore').textContent = cs.toFixed(3);
+  document.getElementById('bld-pbar-fill').style.width = (cs*100)+'%';
+
+  document.getElementById('bld-result').style.display = 'block';
+}
+
+function bldReset() {
+  const defaults = {bD:'D_odot',bT:'T_odot',bR:'R_lr',bP:'P_pm_sym',bF:'F_hbar',
+                    bK:'K_mod',bG:'G_aleph',bGamma:'G_broad',bPhi:'Phi_c',
+                    bH:'H_inf',bS:'one_one',bOmega:'Omega_Z'};
+  BLD_NAMES.forEach(n => {
+    const el = document.querySelector(`input[name="${n}"][value="${defaults[n]}"]`);
+    if (el) el.checked = true;
+  });
+  document.getElementById('bld-result').style.display = 'none';
+}
+
+function bldRandom() {
+  const e = CATALOG_REAL[Math.floor(Math.random()*CATALOG_REAL.length)];
+  bldSetValues(e.t.split(';'));
+  document.getElementById('bld-select').value = e.n;
+  bldCompute();
+}
+
+
+</script>
+<footer>
+  <a href="https://github.com/umpolungfish/imscrbgrmr" target="_blank" rel="noopener">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    github.com/umpolungfish/imscrbgrmr
+  </a>
+  <span class="footer-copy">Imscribing Grammar — Structural Grammar of Existence</span>
+</footer>
+</body>
+</html>

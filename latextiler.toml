@@ -1,0 +1,24 @@
+# LaTeX Tiler Configuration
+
+[document]
+class = "article"
+paper = "a4paper"
+font_size = 12
+language = "english"
+
+[metadata]
+# title = "Document Title"
+# authors = [{ name = "Author Name", affiliation = "Institution" }]
+
+[features]
+toc = false
+index = false
+lof = false
+lot = false
+
+[features.highlighting]
+backend = "listings"
+line_numbers = true
+
+[output]
+# directory = "build"

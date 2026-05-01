@@ -1,0 +1,187 @@
+# Provider Defaults Configuration
+# Centralized configuration for LLM provider settings
+# Used by CLI and framework for provider-specific defaults
+
+providers:
+  anthropic:
+    default_model: "claude-sonnet-4-5-20250929"
+    base_url: "https://api.anthropic.com"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "claude-sonnet-4-5-20250929"
+        description: "Claude Sonnet 4.5 - Balanced performance"
+        max_tokens: 8192
+        use_cases: ["general", "analysis", "reasoning"]
+      - name: "claude-3-5-sonnet-20241022"
+        description: "Claude 3.5 Sonnet - Previous generation"
+        max_tokens: 8192
+        use_cases: ["general", "coding"]
+      - name: "claude-3-opus-20240229"
+        description: "Claude 3 Opus - Most powerful"
+        max_tokens: 4096
+        use_cases: ["complex-reasoning", "analysis"]
+
+  deepseek:
+    default_model: "deepseek-chat"
+    base_url: "https://api.deepseek.com/chat/completions"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "deepseek-chat"
+        description: "DeepSeek Chat - General purpose"
+        max_tokens: 4096
+        use_cases: ["general", "coding", "analysis"]
+      - name: "deepseek-coder"
+        description: "DeepSeek Coder - Code specialization"
+        max_tokens: 4096
+        use_cases: ["coding", "code-generation"]
+
+  qwen:
+    default_model: "qwen3-max"
+    base_url: "https://api.mulerouter.ai/vendors/openai/v1/chat/completions"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "qwen3-max"
+        description: "Qwen 3 Max - Most capable"
+        max_tokens: 8192
+        use_cases: ["general", "coding", "reasoning"]
+      - name: "qwen3-plus"
+        description: "Qwen 3 Plus - Balanced"
+        max_tokens: 8192
+        use_cases: ["general", "analysis"]
+
+  mistral:
+    default_model: "codestral-2508"
+    base_url: "https://api.mistral.ai"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "codestral-2508"
+        description: "Codestral - Code specialization"
+        max_tokens: 8192
+        use_cases: ["coding", "code-generation"]
+      - name: "mistral-large-latest"
+        description: "Mistral Large - General purpose"
+        max_tokens: 8192
+        use_cases: ["general", "reasoning", "analysis"]
+      - name: "mistral-small-latest"
+        description: "Mistral Small - Fast and efficient"
+        max_tokens: 8192
+        use_cases: ["general", "quick-tasks"]
+
+  google:
+    default_model: "gemini-2.0-flash-exp"
+    base_url: "https://generativelanguage.googleapis.com"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "gemini-2.0-flash-exp"
+        description: "Gemini 2.0 Flash - Fast and capable"
+        max_tokens: 8192
+        use_cases: ["general", "analysis", "multimodal"]
+      - name: "gemini-1.5-pro"
+        description: "Gemini 1.5 Pro - Previous generation"
+        max_tokens: 8192
+        use_cases: ["general", "long-context"]
+
+  aider:
+    default_model: "nvidia/nemotron-3-nano-30b-a3b:free"  # Free NVIDIA model - reliable and efficient
+    base_url: "https://openrouter.ai/api/v1"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    note: "OpenRouter FREE MODELS require FREE API key (no credits needed) - get at https://openrouter.ai/keys"
+    openrouter_api_key_required: true  # Free API key required (no credits)
+    api_key_env: "OPENROUTER_API_KEY"
+    models:
+      # Recommended Free Models (FREE API key required - no credits)
+      - name: "nvidia/nemotron-3-nano-30b-a3b:free"
+        description: "Nemotron 3 Nano 30B - Efficient small MoE model (RECOMMENDED)"
+        max_tokens: 256000
+        use_cases: ["coding", "efficient", "specialized", "general"]
+      
+      # OpenRouter Native Models
+      - name: "openrouter/hunter-alpha"
+        description: "Hunter Alpha - 1T parameter model with 1M+ token context"
+        max_tokens: 1048576
+        use_cases: ["long-context", "agentic", "reasoning", "planning"]
+      - name: "openrouter/healer-alpha"
+        description: "Healer Alpha - Frontier omni-modal with vision/hearing/reasoning"
+        max_tokens: 262144
+        use_cases: ["multimodal", "reasoning", "agentic"]
+      
+      # NVIDIA Free Models
+      - name: "nvidia/nemotron-3-super-120b-a12b:free"
+        description: "Nemotron 3 Super 120B - Hybrid MoE with 1M token context"
+        max_tokens: 262144
+        use_cases: ["coding", "agentic", "long-context"]
+      
+      # LiquidAI Free Models
+      - name: "liquid/lfm-2.5-1.2b-thinking:free"
+        description: "LFM2.5 1.2B Thinking - Lightweight reasoning for edge devices"
+        max_tokens: 32768
+        use_cases: ["reasoning", "rag", "edge"]
+      - name: "liquid/lfm-2.5-1.2b-instruct:free"
+        description: "LFM2.5 1.2B Instruct - Fast on-device AI with chat quality"
+        max_tokens: 32768
+        use_cases: ["chat", "instruct", "edge"]
+      
+      # Arcee AI Free Models
+      - name: "arcee-ai/trinity-large-preview:free"
+        description: "Trinity Large 400B MoE - Creative writing and agentic workflows"
+        max_tokens: 131000
+        use_cases: ["creative", "agentic", "roleplay"]
+      - name: "arcee-ai/trinity-mini:free"
+        description: "Trinity Mini 26B MoE - Efficient reasoning and multi-step agents"
+        max_tokens: 131072
+        use_cases: ["reasoning", "agentic", "efficient"]
+      
+      # StepFun Free Models
+      - name: "stepfun/step-3.5-flash:free"
+        description: "Step 3.5 Flash 196B MoE - Speed-efficient reasoning at long contexts"
+        max_tokens: 256000
+        use_cases: ["reasoning", "long-context", "fast"]
+      
+      # Premium Models (require OpenRouter API key with credits)
+      - name: "claude-sonnet-4-5-20250929"
+        description: "Claude Sonnet 4.5 via OpenRouter - Balanced performance"
+        max_tokens: 8192
+        use_cases: ["coding", "refactor", "git-operations"]
+        requires_credits: true
+      - name: "deepseek-chat"
+        description: "DeepSeek Chat via OpenRouter - Code specialization"
+        max_tokens: 4096
+        use_cases: ["coding", "analysis"]
+        requires_credits: true
+
+# Task-based routing recommendations
+task_routing:
+  coding:
+    preferred: ["aider", "qwen", "mistral", "deepseek", "anthropic"]
+    default_provider: "aider"
+  refactor:
+    preferred: ["aider", "anthropic", "qwen", "deepseek"]
+    default_provider: "aider"
+  reasoning:
+    preferred: ["anthropic", "qwen", "deepseek", "mistral"]
+    default_provider: "anthropic"
+  creative:
+    preferred: ["anthropic", "qwen", "deepseek", "mistral"]
+    default_provider: "anthropic"
+  analysis:
+    preferred: ["anthropic", "qwen", "deepseek", "mistral"]
+    default_provider: "anthropic"
+  general:
+    preferred: ["qwen", "anthropic", "mistral", "deepseek"]
+    default_provider: "qwen"
+  synthon_generation:
+    preferred: ["anthropic", "qwen", "deepseek"]
+    default_provider: "anthropic"
+
+# CLI defaults
+cli:
+  default_provider: "anthropic"
+  # No hardcoded model - uses provider's default_model from above
+  max_tokens: 4000
+  temperature: 0.3  # Lower for deterministic synthon generation

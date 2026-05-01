@@ -1,0 +1,158 @@
+{
+  "uwl_null_rate": 0.0298,
+  "n_events_checked": 11,
+  "n_confirmed_subband_hits": 0,
+  "confirmed_hits": [],
+  "catalog": [
+    {
+      "name": "FRB 20181112A",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1300.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20190611B",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1632.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "SGR 1935+2154 (Parkes UWL 2020-04-28)",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1300.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20201124A",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1250.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20210807D",
+      "status": "ADJACENT",
+      "peak_freqs_mhz": [
+        1400.0,
+        1600.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20220912A",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1300.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20121102A (R1)",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1370.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20190520B (2024 FAST+UWL)",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        1632.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20240114A",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        2250.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20180916B",
+      "status": "SINGLE_BAND",
+      "peak_freqs_mhz": [
+        600.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    },
+    {
+      "name": "FRB 20201124A (Zhang+ 2022 sub-burst)",
+      "status": "ADJACENT",
+      "peak_freqs_mhz": [
+        1100.0,
+        1350.0
+      ],
+      "p12_match": false,
+      "ratio": null,
+      "deviation": null
+    }
+  ],
+  "ideal_targets": [
+    {
+      "f_lo": 800.0,
+      "f_hi": 1842.0,
+      "ratio": 2.3025,
+      "dev": 8.509299404568793e-05,
+      "note": "Low UWL sub-band + mid-band, ratio = ln(10)"
+    },
+    {
+      "f_lo": 1000.0,
+      "f_hi": 2303.0,
+      "ratio": 2.303,
+      "dev": 0.00041490700595403496,
+      "note": "1 GHz + 2.3 GHz within UWL, perfect ln(10)"
+    },
+    {
+      "f_lo": 1300.0,
+      "f_hi": 2994.0,
+      "ratio": 2.3030769230769232,
+      "dev": 0.0004918300828773425,
+      "note": "1.3 + 3.0 GHz within UWL"
+    },
+    {
+      "f_lo": 1520.0,
+      "f_hi": 3500.0,
+      "ratio": 2.3026315789473686,
+      "dev": 4.648595332268357e-05,
+      "note": "Parkes L-band center + 3.5 GHz (Vela gap-analysis target)"
+    },
+    {
+      "f_lo": 704.0,
+      "f_hi": 3244.0,
+      "ratio": 4.607954545454546,
+      "dev": 0.002784359466454056,
+      "note": "n=2 target: UWL low edge + 3.2 GHz"
+    }
+  ],
+  "verdict": "No confirmed simultaneous dual-sub-band P-12 hit in published Parkes UWL FRB data as of 2026-03. Most bursts are narrowband. Archival analysis of full dynamic spectra is the recommended path."
+}

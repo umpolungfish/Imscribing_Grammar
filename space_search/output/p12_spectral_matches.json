@@ -1,0 +1,93 @@
+{
+  "ln10": 2.302585092994046,
+  "tolerance": 0.05,
+  "n_events_tested": 14,
+  "n_matches": 5,
+  "matches": [
+    {
+      "event_name": "SGR 1935+2154 (2020-04-28)",
+      "dm_pc_cm3": 332.7,
+      "ra": 293.73,
+      "dec": 21.9,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 600.0,
+          "f_hi_mhz": 1400.0,
+          "ratio": 2.3333,
+          "nearest_p12_target": 2.3026,
+          "deviation": 0.0307
+        }
+      ],
+      "n_matches": 1,
+      "max_significance": 0.386
+    },
+    {
+      "event_name": "PSR J0437-4715",
+      "dm_pc_cm3": 2.65,
+      "ra": 69.32,
+      "dec": -47.25,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 1369.0,
+          "f_hi_mhz": 3100.0,
+          "ratio": 2.2644,
+          "nearest_p12_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "n_matches": 1,
+      "max_significance": 0.2360000000000001
+    },
+    {
+      "event_name": "PSR J1748-2021B",
+      "dm_pc_cm3": 223.6,
+      "ra": 267.02,
+      "dec": -20.35,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 820.0,
+          "f_hi_mhz": 1900.0,
+          "ratio": 2.3171,
+          "nearest_p12_target": 2.3026,
+          "deviation": 0.0145
+        }
+      ],
+      "n_matches": 1,
+      "max_significance": 0.71
+    },
+    {
+      "event_name": "PSR J1824-2452A",
+      "dm_pc_cm3": 119.9,
+      "ra": 276.13,
+      "dec": -24.87,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 610.0,
+          "f_hi_mhz": 1390.0,
+          "ratio": 2.2787,
+          "nearest_p12_target": 2.3026,
+          "deviation": 0.0239
+        }
+      ],
+      "n_matches": 1,
+      "max_significance": 0.522
+    },
+    {
+      "event_name": "PSR B0833-45",
+      "dm_pc_cm3": 67.9,
+      "ra": 128.84,
+      "dec": -45.18,
+      "p12_matches": [
+        {
+          "f_lo_mhz": 660.0,
+          "f_hi_mhz": 1520.0,
+          "ratio": 2.303,
+          "nearest_p12_target": 2.3026,
+          "deviation": 0.0004
+        }
+      ],
+      "n_matches": 1,
+      "max_significance": 0.992
+    }
+  ]
+}

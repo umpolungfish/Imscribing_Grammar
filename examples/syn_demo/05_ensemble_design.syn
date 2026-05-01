@@ -1,0 +1,63 @@
+version: "1.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Protocol: Three-Component Ensemble Design
+#
+# Designs a molecular/temporal ensemble by composing two named strategies
+# sequentially using bind:, then running a final proof obligation on the
+# composite result.
+#
+# Architecture:
+#   1. `temporal_seed`  — verify the Soai cycle is fully certified before use
+#   2. `molecular_pair` — build the AT base-pair scaffold from the dimer
+#      (path traversal, 1 HotSwap hop, verified by fidelity assertion)
+#   3. tensor: — combine the molecular scaffold with the certified temporal seed
+#   4. Final assert — the ensemble xi_cp is implicitly reflected in the
+#      tensor step's Δξ accumulation; assert Φ_c candidacy of the seed
+#
+# This script is designed for JSON output and --save so that downstream
+# tools (e.g. the ensembler or a Jupyter notebook) can consume the result.
+# ─────────────────────────────────────────────────────────────────────────────
+
+start: soai_pyrimidyl_autocatalytic_cycle
+
+strategies:
+  # Certify the temporal seed before it enters any ensemble
+  certify_temporal_seed:
+    - assert:
+        expr: axiom6_satisfied
+        message: "Temporal seed: Axiom 6 must be grounded"
+    - assert:
+        expr: reset_type == continuous
+        message: "Temporal seed: must be open dissipative"
+    - assert:
+        expr: phi_c_score > 0.80
+        message: "Temporal seed: Φ_c score must exceed 0.80"
+
+  # Build the molecular scaffold: dimer → AT pair (path, 1 hop)
+  # Note: this strategy takes the *current* synthon as context and
+  # applies path_m — but since start is Soai (temporal), the tensor
+  # step is what actually combines the two.  The molecular scaffold
+  # is referenced by name in tensor:.
+  verify_soai_geometry:
+    - assert:
+        expr: phi_c_score > 0.50
+        message: "Geometry check: Φ_c score above base threshold"
+
+do:
+  # Step 1: certify the starting temporal system
+  - bind: certify_temporal_seed
+
+  # Step 2: confirm geometry is suitable for ensemble entry
+  - bind: verify_soai_geometry
+
+  # Step 3: tensor with the adenine-thymine molecular pair
+  # The AT pair is a well-characterised F_ℏ molecular synthon;
+  # tensor applies the F-bottleneck (min fidelity) and computes
+  # the ensemble ξ_CP with λ=0.3 mutual-information discount.
+  - tensor: adenine_thymine_pair
+    lambda: 0.30
+
+output:
+  format: json
+  save: ensemble_result.json

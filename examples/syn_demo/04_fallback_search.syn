@@ -1,0 +1,45 @@
+version: "1.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Protocol: Fallback Design Search  (or: / mplus semantics)
+#
+# Demonstrates the `or:` step — the SynthonM mplus operator expressed in
+# the .syn grammar.  The pipeline tries each branch in order; the first
+# branch that succeeds wins.  Both attempts are recorded in the step trace.
+#
+# Design goal:
+#   Extend the CB7·ferrocene host-guest system to a larger scaffold.
+#
+#   Branch A — join adenine_thymine_pair
+#     BLOCKS: P conflict (D_wedge/F_hbar/SELECTIVE matches, but polarity
+#             pm_pseudo vs directional is incompatible)
+#     The type system correctly prevents this join without an adapter.
+#
+#   Branch B — join CB7_adamantane_ammonium_complex  (fallback)
+#     PASSES: both are D_wedge, T_bowtie, F_hbar, G_beth, SELECTIVE.
+#     The join succeeds; execution continues to the assert + tensor steps.
+#
+# The `or:` block compiles to strategy_or(branch_A, branch_B), which uses
+# mplus — not exception handling.  Both branch logs are preserved.
+# ─────────────────────────────────────────────────────────────────────────────
+
+start: CB7_ferrocene_ammonium_complex
+
+do:
+  # Try AT base pair first (polarity conflict — blocked)
+  # Fall back to CB7·adamantane (compatible — succeeds)
+  - or:
+      - join: adenine_thymine_pair
+      - join: CB7_adamantane_ammonium_complex
+
+  # After the successful join, verify fidelity was preserved
+  - assert:
+      expr: fidelity == F_hbar
+      message: "Joined scaffold must maintain F_ℏ (high fidelity)"
+
+  # Tensor the joined scaffold with the Soai temporal cycle
+  - tensor: soai_pyrimidyl_autocatalytic_cycle
+    lambda: 0.35
+
+output:
+  format: text

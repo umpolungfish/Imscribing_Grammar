@@ -1,0 +1,42 @@
+version: "1.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Protocol: Strategy Composition with Named Sub-Pipelines
+#
+# Demonstrates the `strategies:` block — reusable typed sub-pipelines that
+# can be referenced by name with `bind:`.
+#
+# Design goal:
+#   Start from the carboxylic acid dimer (a high-fidelity molecular synthon)
+#   and reach the adenine-thymine base-pair synthon via a HotSwap path, then
+#   tensor-product it with the Soai cycle to probe the composite ensemble.
+#
+# The `molecular_hbond_upgrade` strategy is defined once and could be reused
+# across multiple .syn programs by copying just the strategies: block.
+# ─────────────────────────────────────────────────────────────────────────────
+
+start: carboxylic_acid_dimer
+
+strategies:
+  # Reusable: traverse to the adenine-thymine pair via HotSwap path (1 hop)
+  # and verify the destination is high-fidelity
+  molecular_hbond_upgrade:
+    - path: adenine_thymine_pair
+      xi_tolerance: 2.0
+      max_hops: 3
+    - assert:
+        expr: fidelity == F_hbar
+        message: "Destination must be F_ℏ (high fidelity)"
+
+do:
+  # Step 1: apply the reusable upgrade strategy
+  - bind: molecular_hbond_upgrade
+
+  # Step 2: tensor the upgraded molecular synthon with the Soai temporal cycle
+  # This probes whether the two systems can form a productive ensemble
+  # (tensor always succeeds — F-bottleneck applies)
+  - tensor: soai_pyrimidyl_autocatalytic_cycle
+    lambda: 0.35
+
+output:
+  format: text

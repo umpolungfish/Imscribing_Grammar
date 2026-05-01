@@ -1,0 +1,188 @@
+{
+  "mode": "real",
+  "injected_signal": 0.0,
+  "n_fields": 10,
+  "n_omega_z2_candidates": 1,
+  "fields": [
+    {
+      "pulsar_seed": "PSR J0437-4715",
+      "ra": 69.316,
+      "dec": -47.252,
+      "notes": "MSP, nearest, best-timed",
+      "max_B_snr": 3.519,
+      "max_E_snr": 5.37,
+      "b_e_ratio": 0.6554,
+      "parity_test": {
+        "anti_correlation": 0.922,
+        "B_sum_mean": 0.010208,
+        "t_stat": 14.179,
+        "p_value": 0.0,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": true,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR B1937+21",
+      "ra": 294.91,
+      "dec": 21.583,
+      "notes": "First MSP discovered",
+      "max_B_snr": 1.706,
+      "max_E_snr": 5.284,
+      "b_e_ratio": 0.3228,
+      "parity_test": {
+        "anti_correlation": 0.9386,
+        "B_sum_mean": 0.00315,
+        "t_stat": 3.6013,
+        "p_value": 0.0019,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J1614-2230",
+      "ra": 243.501,
+      "dec": -22.508,
+      "notes": "Massive MSP, gravity well",
+      "max_B_snr": 1.355,
+      "max_E_snr": 3.614,
+      "b_e_ratio": 0.375,
+      "parity_test": {
+        "anti_correlation": 0.6886,
+        "B_sum_mean": 0.004933,
+        "t_stat": 6.268,
+        "p_value": 0.0,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J0030+0451",
+      "ra": 7.605,
+      "dec": 4.858,
+      "notes": "NICER mass/radius MSP",
+      "max_B_snr": 2.117,
+      "max_E_snr": 5.926,
+      "b_e_ratio": 0.3573,
+      "parity_test": {
+        "anti_correlation": 0.4894,
+        "B_sum_mean": 0.009384,
+        "t_stat": 9.4574,
+        "p_value": 0.0,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J1748-2021B",
+      "ra": 267.022,
+      "dec": -20.355,
+      "notes": "Terzan 5 GC \u2014 high DM density",
+      "max_B_snr": 1.81,
+      "max_E_snr": 6.257,
+      "b_e_ratio": 0.2893,
+      "parity_test": {
+        "anti_correlation": -0.4164,
+        "B_sum_mean": 0.00376,
+        "t_stat": 2.089,
+        "p_value": 0.0504,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J1824-2452A",
+      "ra": 276.133,
+      "dec": -24.87,
+      "notes": "M28 GC \u2014 high DM density",
+      "max_B_snr": 1.113,
+      "max_E_snr": 6.351,
+      "b_e_ratio": 0.1752,
+      "parity_test": {
+        "anti_correlation": 0.1309,
+        "B_sum_mean": 0.008101,
+        "t_stat": 5.8885,
+        "p_value": 0.0,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J0218+4232",
+      "ra": 34.529,
+      "dec": 42.543,
+      "notes": "MSP, gamma-ray bright",
+      "max_B_snr": 1.582,
+      "max_E_snr": 6.415,
+      "b_e_ratio": 0.2467,
+      "parity_test": {
+        "anti_correlation": 0.1501,
+        "B_sum_mean": 0.006192,
+        "t_stat": 3.7901,
+        "p_value": 0.0012,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR J2124-3358",
+      "ra": 321.137,
+      "dec": -33.975,
+      "notes": "MSP, isolated",
+      "max_B_snr": 1.167,
+      "max_E_snr": 5.879,
+      "b_e_ratio": 0.1984,
+      "parity_test": {
+        "anti_correlation": -0.7045,
+        "B_sum_mean": 0.004901,
+        "t_stat": 3.0515,
+        "p_value": 0.0066,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "SGR 1935+2154",
+      "ra": 293.73,
+      "dec": 21.896,
+      "notes": "Magnetar FRB \u2014 top P-12 hit, P-74 aligned",
+      "max_B_snr": 1.763,
+      "max_E_snr": 8.039,
+      "b_e_ratio": 0.2193,
+      "parity_test": {
+        "anti_correlation": -0.6449,
+        "B_sum_mean": 0.006661,
+        "t_stat": 3.1885,
+        "p_value": 0.0048,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    },
+    {
+      "pulsar_seed": "PSR B0833-45",
+      "ra": 128.836,
+      "dec": -45.176,
+      "notes": "Vela MSP \u2014 dev=0.0004 exact ln(10) at 660/1520 MHz",
+      "max_B_snr": 2.451,
+      "max_E_snr": 5.504,
+      "b_e_ratio": 0.4453,
+      "parity_test": {
+        "anti_correlation": -0.1331,
+        "B_sum_mean": 0.004814,
+        "t_stat": 2.7976,
+        "p_value": 0.0115,
+        "omega_z2_candidate": false
+      },
+      "omega_z2_candidate": false,
+      "n_scale_bins": 20
+    }
+  ]
+}

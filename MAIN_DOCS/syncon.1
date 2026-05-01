@@ -1,0 +1,713 @@
+.\" syncon.1 — SynthOmnicon CLI man page
+.\" Generated 2026-03-19.  Format: groff -man  |  man -l syncon.1
+.\"
+.TH SYNCON 1 "2026\-03\-19" "SynthOmnicon 0.4.4" "SynthOmnicon User Commands"
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH NAME
+syncon \- SynthOmnicon unified command\-line interface for synthonic system analysis
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH SYNOPSIS
+.B syncon
+[\fIOPTIONS\fR]
+.I COMMAND
+[\fIARGS\fR]...
+.br
+.B synthomnicon
+[\fIOPTIONS\fR]
+.I COMMAND
+[\fIARGS\fR]...
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH DESCRIPTION
+.B syncon
+(alias
+.BR synthomnicon )
+is the command\-line interface to the SynthOmnicon framework — a formal
+algebra for encoding, analysing, and designing self\-organising systems across
+molecular, supramolecular, temporal, quantum, and cross\-domain scales.
+.PP
+Every system is represented as a
+.I synthon tuple
+over ten primitives:
+.PP
+.RS 4
+\fB⟨D\fR; \fBT\fR; \fBR\fR; \fBP\fR; \fBF\fR; \fBK\fR; \fBG\fR; \fBΓ\fR; \fBΦ\fR; \fBΩ⟩\fR
+.RE
+.PP
+where
+.B D
+= dimensionality,
+.B T
+= topology,
+.B R
+= recognition mode,
+.B P
+= polarity,
+.B F
+= fidelity,
+.B K
+= kinetic character,
+.B G
+= granularity,
+.B Γ
+= interaction grammar,
+.B Φ
+= criticality phase, and
+.B Ω
+= topological protection index (optional).
+.PP
+The catalog ships with 223+ curated synthons spanning chemistry, protein
+biology, condensed matter, gravity theories, and programmable matter.
+User-defined synthons can be registered interactively or via
+.BR generate (1)
+and
+.BR run (1).
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH OPTIONS
+.TP
+.B \-\-version
+Print the framework version and exit.
+.TP
+.B \-\-help
+Show a brief usage summary and exit.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH COMMANDS
+Commands are grouped by function below.
+All commands accept
+.B \-\-help
+for detailed usage.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Catalog Management
+.TP
+.B syncon catalog list
+List all registered synthons (name, domain, fidelity, Φ_c flag).
+.TP
+.B syncon catalog repair
+Batch\-repair systematic misassignments in the catalog.
+.TP
+.B syncon catalog auto\-stoichiometry
+Backfill stoichiometry on T⋈ entries that have none.
+.TP
+.B syncon catalog rebuild\-index
+Rebuild the analogy engine index from live catalog state.
+.TP
+.BI "syncon export " "[\-f json|csv|yaml]  [\-o FILE]  [\-d DOMAIN]"
+Export the catalog to a file in the specified format.
+.TP
+.BI "syncon remove " NAME " [NAME ...]"
+Remove one or more synthons from the catalog by name.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Inspection and Comparison
+.TP
+.BI "syncon analyze " IDENTIFIER
+Display all primitive fields, axiom status, Φ_c score, and grounding
+metadata for a synthon.
+.I IDENTIFIER
+may be a catalog name or a raw notation string
+.IR ⟨D_wedge;\ ...⟩ .
+Supports
+.BR \-f " text|json|notation."
+.TP
+.BI "syncon compare " "SYNTHON [SYNTHON ...] [\-g ΔG ...] [\-\-include\-thermo]"
+Display a side-by-side primitive table for two or more synthons.
+Optional ΔG values enable thermodynamic comparison.
+.TP
+.BI "syncon check " "SYNTHON_A SYNTHON_B"
+Check compatibility (D/T/R/P match, F\-floor ordering, ξ_CP delta) between
+two synthons.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Lattice Algebra
+.TP
+.BI "syncon meet " "SYNTHON_A SYNTHON_B"
+Lattice MEET (⊓) — greatest lower bound of two synthons.
+Ordered primitives (F, K, G) take the minimum; categorical conflicts are
+flagged.
+Useful for identifying the minimal common precursor motif.
+.TP
+.BI "syncon join " "SYNTHON_A SYNTHON_B"
+Lattice JOIN (⊔) — least upper bound of two synthons.
+Ordered primitives take the maximum; categorical conflicts are flagged.
+Returns the specification a scaffold must satisfy to host both components.
+.TP
+.BI "syncon tensor " "SYNTHON_A SYNTHON_B [\-\-lambda FLOAT]"
+Tensor product s₁ ⊗ s₂ — predicts the primitive profile of the combined
+assembly.
+D takes the union; T is topology-promoted; F/K take the minimum (bottleneck);
+G takes the maximum.
+.B \-\-lambda
+controls mutual\-information discounting (default 0.3).
+.TP
+.BI "syncon lift " "SYNTHON TARGET"
+Apply a natural transformation (dimensional lift) to a synthon.
+.I TARGET
+is one of
+.BR temporal ", " spatial ", " critical ", or " molecular .
+The
+.B critical
+lift injects Φ_c and requires F ≥ F_ℏ.
+.TP
+.BI "syncon distance " "SYNTHON_A SYNTHON_B [\-\-directed]"
+Compute the weighted quasi\-metric tuple distance.
+Default is symmetric (Hamming\-like over all ten primitives).
+.B \-\-directed
+mode penalises downward F/K moves (HotSwap floor semantics).
+.TP
+.BI "syncon path " "SOURCE DESTINATION [\-\-max\-hops N] [\-\-xi\-tol FLOAT]"
+Find the shortest valid HotSwap path from
+.I SOURCE
+to
+.I DESTINATION
+through the catalog.
+Path edges are restricted to synthons sharing D and T.
+Edge weight = |ΔξCP| per hop; BFS minimises hop count.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Decomposition Algebra
+The decomposition module implements the
+.I inverse
+of the build\-up operations, enabling retrosynthetic analysis of any synthon.
+.TP
+.BI "syncon project " "SYNTHON PRIM [PRIM ...]"
+Project a synthon onto a named subset of primitives, zeroing all others.
+.I PRIM
+tokens are field names from the set
+.BR F ", " K ", " G ", " D ", " T ", " R ", " P ", " Phi ", " Omega ", " Gamma .
+.TP
+.BI "syncon peel " "SYNTHON PRIM [\-\-strict]"
+Descend one tier on a single primitive.
+Returns the resulting synthon and the peel cost in nats.
+.B \-\-strict
+blocks the peel if it would destroy Φ_c (phase protection).
+Phi removal costs 3.0 nats; ordinal peel of F/K/G costs 0 unless Φ_c is
+thereby destroyed.
+.TP
+.BI "syncon factor " "SYNTHON [\-\-prefer PRIM]"
+Find the strongest meet\-irreducible factor of a synthon — the sub\-synthon
+that best characterises its dominant structure.
+.B \-\-prefer
+biases the factoring toward a named primitive.
+.TP
+.BI "syncon principal\-decomp " SYNTHON
+Recursively factor a synthon down to its join\-irreducible atoms.
+The principal decomposition reveals the minimal building blocks whose lattice
+join reproduces the full synthon.
+Quantum gravity decomposes into 8 atoms; the standard model into 3.
+.TP
+.BI "syncon cofactor " "COMPOSITE FACTOR_A"
+Compute the cofactor residual B such that FACTOR_A ⊗ B ≈ COMPOSITE.
+Per\-primitive roles are reported: CONTRIBUTOR (B must supply), BOTTLENECK
+(A is the limiting floor), CONFLICT (irreconcilable mismatch), EXPLAINED
+(fully covered by A), or PASSTHROUGH (categorical difference, forwarded).
+A D\-CONFLICT in
+.B cofactor(QG, GR)
+is the algebraic form of the background\-dependence problem.
+.TP
+.BI "syncon retrosyn " "TARGET [\-\-top N] [\-\-max\-factors N]"
+Retrosynthetic search: find catalog entries (or pairs) whose tensor product
+most closely approaches
+.IR TARGET .
+Results are ranked by tuple distance.
+The fractional quantum Hall state
+.RB ( fqh_moore_read )
+is the closest single\-synthon approximation to quantum gravity in the
+current catalog (d = 3.1).
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS HotSwap and Design Validation
+.TP
+.BI "syncon hotswap " "TARGET CANDIDATE [\-g ΔG] [\-\-allow\-defect\-fraction FLOAT]"
+Validate a synthon hot\-swap using the full HotSwap protocol.
+Enforces D/T/S exact match, F_new ≥ F_old, |Δξ_CP| < 1.0 nat, K
+accessibility, and grounding status.
+Runs the Varma QXY probe automatically when Φ_c is suspected.
+.TP
+.BI "syncon transition " "SRC DST [\-\-max\-hops N] [\-\-xi\-tolerance FLOAT]"
+Classify the phase transition between two catalog synthons.
+Reports whether the transition is 2nd\-order (continuous HotSwap path through
+Φ_c intermediates) or 1st\-order (no valid path due to structural conflict).
+Forward/reverse costs and irreversibility asymmetry are displayed.
+.TP
+.BI "syncon pipeline " "START_SYNTHON \-\-step OP:ARG [...]"
+Chain algebra operations into a composable design pipeline.
+Implements Writer + Maybe monad semantics: each step threads ξ_CP deltas and
+warnings; the pipeline short\-circuits on the first blocking failure.
+Step operators:
+.B meet:SYNTHON\fR,
+.B join:SYNTHON\fR,
+.B tensor:SYNTHON[:lambda=0.3]\fR,
+.B lift:TARGET\fR,
+.B path:TARGET[:max_hops=6,xi_tol=1.0]\fR.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Analysis and Probes
+.TP
+.BI "syncon thermo " "IDENTIFIER [\-g ΔG] [\-t TEMP]"
+Calculate thermodynamic efficiency metrics ηCP and ξCP for a synthon.
+ΔG defaults to reference values from the catalog where available.
+.TP
+.BI "syncon criticality " "[SYNTHON_NAME | \-\-all] [\-\-min\-confidence FLOAT]"
+Analyse synthon criticality via G\-D degeneracy scoring.
+.B \-\-all
+scans the full catalog and returns a ranked candidate list.
+.TP
+.BI "syncon criticality\-probe " "[ENTRY_NAME] [\-\-batch] [\-\-xi\-r FLOAT] [\-\-xi\-tau FLOAT]"
+Probe a catalog entry for Φ_c candidacy using four checks: G/D degeneracy
+independence score, Varma QXY scaling (requires \-\-xi\-r / \-\-xi\-tau),
+recursive tuple potential, and Φ_c likelihood score (0–1).
+.TP
+.BI "syncon info\-bits " "[ENTRY_NAME] [\-\-solvent] [\-\-calibrate]"
+Compute rigorous I(bits) via degree\-of\-freedom counting.
+Decomposes information content into I_recognition, I_orientation, and
+I_net = I_recognition − 0.3 × I_orientation.
+Default range: 6–18 bits (domain\-dependent).
+.TP
+.BI "syncon perturb sweep " "SYNTHON [\-g ΔG]"
+Compute the Primitive Jacobian ∂ξ_CP/∂p over all ten primitives (one tier
+perturbation each).
+Identifies the design lever with the largest distance impact.
+.TP
+.BI "syncon perturb fault\-injection " SYNTHON
+Identify single points of failure (SPOF) — primitives whose one\-tier
+downgrade causes the largest increase in ξ_CP or loss of Φ_c.
+.TP
+.BI "syncon phase\-diagram " "[NAME ...] [\-\-output FILE]"
+Compute and render a tuple\-space phase diagram.
+Detects phase boundaries as large jumps in pairwise tuple distance.
+Renders a Ward dendrogram + MDS 2‑D phase map.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Ensemble and Multi-Synthon
+.TP
+.BI "syncon ensemble check " "SYNTHON [SYNTHON ...]"
+Check pairwise compatibility of ensemble components: D/T overlap, F/K
+bottleneck propagation, and Φ_c join\-dominance.
+.TP
+.BI "syncon ensemble probe " "SYNTHON [SYNTHON ...]"
+Scan for emergent properties arising only in composition — properties present
+in the ensemble that are absent in every constituent.
+.TP
+.BI "syncon ensemble thermo " "SYNTHON [SYNTHON ...] [\-g ΔG ...]"
+Compute system\-level ηCP / ξCP for the full assembly event.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Retrodesign
+.TP
+.BI "syncon retrodesign " "TARGET [\-d DEPTH] [\-p AXIOMS] [\-\-strict\-grounding] [\-\-allow\-ktrap]"
+Constraint\-directed retrosynthetic decomposition of a target notation.
+Axiom\-pruned decomposition with LLM route ranking.
+.I TARGET
+is a catalog name or raw
+.IR ⟨...⟩ " notation string."
+.B \-p
+accepts comma\-separated axiom numbers to enforce (default: 1,2,4,6).
+Distinct from
+.BR retrosyn :
+.B retrodesign
+performs axiom\-guided tree decomposition of the notation;
+.B retrosyn
+searches the catalog for tensor\-product pairs.
+.TP
+.BI "syncon trajectory validate " "CYCLE_FILE [\-\-strict]"
+Validate continuity and Axiom 6 compliance for a D_∞ temporal cycle.
+.TP
+.BI "syncon trajectory criticality " CYCLE_FILE
+Compute G/D degeneracy score per step to determine the per\-step Φ_c
+contribution of a temporal pathway.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Validation and Reasoning
+.TP
+.BI "syncon validate " SYNTHON_NAME
+Validate a synthon against all composition axioms using the symbolic
+reasoning engine.
+Reports axiom pass/fail, G\-D independence analysis, criticality detection,
+and predictive rule generation.
+.TP
+.BI "syncon analogies " "SYNTHON_NAME [\-\-critical\-only] [\-\-exclude\-flagged]"
+Find formal cross\-domain analogies to a synthon using primitive similarity
+metrics.
+The framework encodes GR and the Standard Model as synthon tuples; this
+command reveals which known systems share the same structural algebra.
+.TP
+.BI "syncon rules " "[\-\-min\-support N] [\-\-min\-confidence FLOAT]"
+Discover inductive predictive rules from the catalog.
+Returns IF\-THEN rules of the form: IF (T = T_bowtie AND P = P_±) THEN
+(F ≥ F_ℏ).
+.TP
+.BI "syncon audit " "[\-\-fix] [\-\-limit N]"
+Audit catalog entries for grounding issues.
+Reports primitives lacking mechanistic justification.
+.B \-\-fix
+attempts automatic repair.
+.TP
+.BI "syncon reconstruct " "[OPTIONS]"
+Back\-fill catalog reasoning from discovery history.
+Useful after batch import or catalog migration.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS AI-Assisted Generation and Design
+.TP
+.BI "syncon generate " "DESCRIPTION [\-n NAME] [\-g ΔG] [\-s SMILES] [\-\-axiom\-guided] [\-\-require\-grounding] [\-\-strict\-grounding]"
+Generate a synthon from a natural language description using an LLM.
+With
+.B \-\-axiom\-guided,
+the agent iteratively refines until all five composition axioms are satisfied.
+With
+.B \-\-require\-grounding,
+all primitive assignments must have mechanistic justifications.
+.TP
+.BI "syncon generate\-smiles " "SMILES [\-n NAME] [\-f GROUPS] [\-\-provider PROVIDER]"
+Generate a synthon from a SMILES string.
+RDKit estimates ΔG when available.
+.TP
+.BI "syncon design " "GOAL [\-\-target SYNTHON] [\-\-phi\-c\-min FLOAT] [\-\-xi\-cp\-max FLOAT]"
+Autonomous relational design agent (LLM\-in\-the\-loop).
+The agent proposes encodings, validates them against the axiom set, probes
+Φ_c and ξ_CP, finds cross\-domain analogues, and self\-corrects until
+convergence criteria are met (Φ_c score ≥
+.B \-\-phi\-c\-min
+AND ξ_CP ≤
+.B \-\-xi\-cp\-max\fR).
+With
+.B \-\-target,
+a HotSwap path to that catalog entry is also required.
+.TP
+.BI "syncon tool " "{validate|criticality|path|analogies|distance|meet|generate} [\-\-name SYNTHON] [...]"
+Single\-shot SynthonTool dispatch — the LLM tool layer exposed directly on
+the command line.
+Every operation returns a structured result; axiom violations include a
+precise primitive trace.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS DSL Runner
+.TP
+.BI "syncon run " SCRIPT
+Evaluate a
+.IR .syn
+YAML design script as a typed SynthonM pipeline.
+Step operations supported in the
+.B do:
+block:
+.BR join , " meet" , " tensor" , " lift" , " path" , " assert" , " bind .
+The monad threads ξ_CP deltas and short-circuits on axiom violations.
+.\"
+.\" ──────────────────────────────────────────────────────────
+.SS Cache Management
+.TP
+.B syncon cache
+Manage framework caches (LLM response cache, analogy index, phase diagram
+data).
+Subcommands:
+.BR clear ", " status ", " rebuild .
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH PRIMITIVES
+The ten primitives and their principal values:
+.PP
+.TS
+l l .
+\fBD\fR (Dimensionality)	MOLECULAR · SUPRAMOLECULAR · TEMPORAL · HOLOGRAPHIC
+\fBT\fR (Topology)	LINEAR · CYCLIC · NETWORK · BRAID · BOWL · HUB · BOWTIE · CAGE
+\fBR\fR (Recognition Mode)	NON_COVALENT · DYNAMIC_CATALYTIC · MECHANICAL · COVALENT_REVERSIBLE
+\fBP\fR (Polarity)	SELF_COMPLEMENTARY_SYM · SELF_COMPLEMENTARY_PSEUDO · DONOR_ACCEPTOR
+\fBF\fR (Fidelity)	HIGH (F_ℏ) · MEDIUM (F_eth) · LOW (F_ℓ)
+\fBK\fR (Kinetic Character)	FAST · MODERATE · SLOW · TRAP · MBL
+\fBG\fR (Granularity)	LOCAL (G_beth) · MESOSCALE (G_gimel) · GLOBAL (G_aleph)
+\fBΓ\fR (Interaction Grammar)	SELECTIVE_AND · BROAD_OR · QUANTUM_AND · CATEGORICAL
+\fBΦ\fR (Criticality Phase)	SUBCRITICAL · CRITICAL
+\fBΩ\fR (Topological Index)	None · Z2_CLASS · CHERN · NON_ABELIAN (optional)
+.TE
+.PP
+.B Ordinal primitives
+(F, K, G) support inequality comparisons; the ordering from weakest to
+strongest is LOW < MEDIUM < HIGH for F, FAST < MODERATE < SLOW < TRAP < MBL
+for K, and LOCAL < MESOSCALE < GLOBAL for G.
+.B Categorical primitives
+(D, T, R, P, Γ) require exact match for compatibility; mismatches in
+.B meet
+and
+.B cofactor
+are reported as CONFLICT.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH NOTATION FORMAT
+Synthon tuples are written in angle brackets:
+.PP
+.RS 4
+.B ⟨D_wedge; T_bowtie; R_superset; P_pm_sym; F_hbar; K_mod; G_gimel; Gamma_and(SELECTIVE); Phi_c; Omega_Z2⟩
+.RE
+.PP
+The symbols map to:
+.B D_wedge
+= SUPRAMOLECULAR,
+.B T_bowtie
+= BOWTIE,
+.B R_superset
+= NON_COVALENT,
+.B P_pm_sym
+= SELF_COMPLEMENTARY_SYM,
+.B F_hbar
+= HIGH,
+.B F_eth
+= MEDIUM,
+.B F_ell
+= LOW,
+.B K_mod
+= MODERATE,
+.B K_trap
+= TRAP,
+.B G_beth
+= LOCAL,
+.B G_gimel
+= MESOSCALE,
+.B G_aleph
+= GLOBAL,
+.B Phi_c
+= CRITICAL,
+.B Phi_sub
+= SUBCRITICAL.
+.PP
+Notation strings can be passed directly as the
+.I IDENTIFIER
+argument to
+.B analyze
+without prior catalog registration.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH AXIOMS
+The framework enforces seven composition axioms at registration and
+.B validate
+time:
+.TP
+.BR "Axiom 1" " (G\-D compatibility)"
+G and D must be mutually consistent: G_aleph requires D ≠ MOLECULAR.
+.TP
+.BR "Axiom 2" " (F\-floor ratchet)"
+HotSwap paths may only increase F or hold it constant; F degradation is
+blocked.
+.TP
+.BR "Axiom 3" " (K\-accessibility)"
+K_trap may only be reached from K_slow; direct FAST → TRAP transitions are
+blocked.
+.TP
+.BR "Axiom 4" " (Topology\-recognition compatibility)"
+T_braid requires R ≠ COVALENT; T_cage requires F ≥ F_eth.
+.TP
+.BR "Axiom 5" " (G\-D degeneracy / Φ_c condition)"
+Φ_c is valid when G and D span orthogonal scale classes — G/D degeneracy
+signals a critical phase.
+Extended Axiom 5: R degeneracy at G_aleph (ER=EPR condition).
+.TP
+.BR "Axiom 6" " (Grounding)"
+Every primitive assignment in a registered synthon must carry a mechanistic
+justification (for non\-discovery synthons).
+.TP
+.BR "Axiom 7" " (Stoichiometry consistency)"
+T_bowtie (self\-complementary topology) requires P = SELF_COMPLEMENTARY_SYM
+or SELF_COMPLEMENTARY_PSEUDO; stoichiometry ratio must match topology valency.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH EXAMPLES
+.\"
+.B Look up a synthon:
+.RS 4
+.B syncon analyze allosteric_domain
+.RE
+.PP
+.B Compute the meet and tensor product of two synthons:
+.RS 4
+.B syncon meet carboxylic_acid_dimer adenine_thymine_pair
+.br
+.B syncon tensor standard_model general_relativity
+.RE
+.PP
+.B Find the quantization residual B such that GR ⊗ B ≈ QG:
+.RS 4
+.B syncon cofactor quantum_gravity general_relativity
+.RE
+.PP
+.B Decompose quantum gravity into join-irreducible atoms:
+.RS 4
+.B syncon principal\-decomp quantum_gravity
+.RE
+.PP
+.B Find what AdS/CFT adds above GR (holography as a cofactor):
+.RS 4
+.B syncon cofactor ads_cft_boundary general_relativity
+.RE
+.PP
+.B Retrosynthetic search for catalog pairs approaching quantum gravity:
+.RS 4
+.B syncon retrosyn quantum_gravity \-\-top 5
+.RE
+.PP
+.B GNF-2 drug gap analysis (what does GNF-2 still lack vs. the allosteric domain?):
+.RS 4
+.B syncon cofactor allosteric_domain gnf_2
+.RE
+.PP
+.B Peel the criticality phase layer from a condensate (strict mode):
+.RS 4
+.B syncon peel allosteric_domain Phi \-\-strict
+.RE
+.PP
+.B Validate a proposed hot-swap candidate:
+.RS 4
+.B syncon hotswap proline_aldol_cycle allene_crown_catalyst
+.RE
+.PP
+.B Identify the most impactful primitive lever (Jacobian sweep):
+.RS 4
+.B syncon perturb sweep allosteric_domain \-g \-45.0
+.RE
+.PP
+.B Find the shortest HotSwap path between two protein domain synthons:
+.RS 4
+.B syncon path allosteric_domain active_site
+.RE
+.PP
+.B Run a .syn design script:
+.RS 4
+.B syncon run my_design.syn
+.RE
+.PP
+.B Classify the phase transition between condensate liquid and gel:
+.RS 4
+.B syncon transition condensate_liquid condensate_gel
+.RE
+.PP
+.B Generate a synthon from a SMILES string:
+.RS 4
+.B syncon generate\-smiles "CC(=O)O" \-\-name acetic_acid
+.RE
+.PP
+.B Launch the autonomous design agent:
+.RS 4
+.B syncon design "bivalent allosteric ABL inhibitor" \-\-target allosteric_domain \-\-phi\-c\-min 0.70
+.RE
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH OUTPUT FORMATS
+Most commands support
+.B \-f text|json
+(or
+.B \-f text|json|notation
+for
+.BR analyze ).
+JSON output is suitable for piping into
+.BR jq (1)
+or scripting.
+.PP
+.RS 4
+.B syncon cofactor quantum_gravity general_relativity \-f json | jq '.dimensions[] | select(.role == "CONTRIBUTOR")'
+.RE
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH FILES
+.TP
+.I synthomnicon/catalog.json
+Default catalog storage path (relative to the project root, or as configured
+via
+.BR SYNTHONICON_CATALOG_PATH ).
+.TP
+.I *.syn
+SynthonM design scripts.
+YAML format evaluated by
+.BR "syncon run" .
+.TP
+.I provider_defaults.yaml
+LLM provider configuration for
+.BR generate ", " design ", and " tool .
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH ENVIRONMENT
+.TP
+.B SYNTHONICON_CATALOG_PATH
+Override the default catalog file path.
+.TP
+.B ANTHROPIC_API_KEY
+Required for
+.BR generate ", " design ", and " tool
+when using the Anthropic provider.
+.TP
+.B OPENAI_API_KEY
+Required when using the OpenAI provider.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+General error (synthon not found, axiom violation, blocked HotSwap path,
+parse error).
+.TP
+.B 2
+Usage error (missing required argument, unrecognised option).
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH NOTES
+The
+.B syncon
+and
+.B synthomnicon
+entry points are identical aliases.
+Both are registered at package install time via
+.B pyproject.toml
+console_scripts.
+.PP
+Φ_c (CRITICAL phase) is a
+.I categorical
+field, not derived from the ordinal primitives F, K, or G.
+A synthon with F=LOW, K=FAST, G=LOCAL can carry Φ_c — see Prediction P\-49
+in
+.IR PRIMITIVE_PREDICTIONS.md .
+.PP
+The
+.B cofactor
+command implements the algebraic inverse of tensor.
+.B cofactor(QG, GR)
+reveals the background\-dependence problem as a D\-CONFLICT (P\-51).
+.B cofactor(AdS/CFT, GR)
+encodes holographic duality as the two-primitive operation
+⟨G_GLOBAL ⊗ Φ_c⟩ (P\-54).
+.PP
+For the full theoretical derivation and axiom set, see
+.I SYNTHONICON.md
+in the project repository.
+For all registered predictions, see
+.IR PRIMITIVE_PREDICTIONS.md .
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH SEE ALSO
+.BR jq (1),
+.BR python (1),
+.BR pip (1)
+.PP
+Project repository and documentation:
+.I https://github.com/anthropics/synthomnicon
+.br
+Theoretical framework:
+.I SYNTHONICON.md
+.br
+Prediction register:
+.I PRIMITIVE_PREDICTIONS.md
+.br
+Metaphysics extension:
+.I METAPHYSICS.md
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH AUTHORS
+SynthOmnicon Contributors.
+.\"
+.\" ──────────────────────────────────────────────────────────────────────────
+.SH VERSION
+SynthOmnicon 0.4.4

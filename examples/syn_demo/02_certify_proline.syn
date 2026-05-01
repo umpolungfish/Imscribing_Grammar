@@ -1,0 +1,38 @@
+version: "1.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Protocol: Proline Aldol Φ_c Certification
+#
+# Same certification chain as 01_certify_soai.syn — but applied to the proline
+# aldol cycle.  This demonstrates the type system in action:
+#
+#   - Axiom 6 passes  (discrete reset, stoichiometric cycle, fully grounded)
+#   - reset_type == continuous  FAILS  (it is discrete, not continuous)
+#   - Pipeline short-circuits at step 2; steps 3–4 are never reached
+#
+# The pipeline correctly blocks proline from the continuous-dissipative
+# admission gate — not because it is ungrounded, but because it belongs to
+# a different reset class.  This is a type-level distinction, not an error.
+# ─────────────────────────────────────────────────────────────────────────────
+
+start: proline_aldol_cycle
+
+do:
+  - assert:
+      expr: axiom6_satisfied
+      message: "Axiom 6: D_∞ must have closed-cycle grounding"
+
+  - assert:
+      expr: reset_type == continuous
+      message: "Reset: must be open dissipative (continuous driving gradient)"
+
+  - assert:
+      expr: phi_c_score > 0.50
+      message: "Φ_c probe: score must exceed 0.50"
+
+  - assert:
+      expr: phi_c_score > 0.80
+      message: "Φ_c probe: score must exceed 0.80 (ensemble admission threshold)"
+
+output:
+  format: text

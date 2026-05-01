@@ -1,0 +1,283 @@
+{
+  "n_gaia_candidates": 4038,
+  "n_p12_phase2_matches": 5,
+  "n_p12_phase3_matches": 18,
+  "conjunctions": [
+    {
+      "p74_target": "PSR J1748-2021B",
+      "p74_ra": 267.02,
+      "p74_dec": -20.35,
+      "p74_dm_weight": 0.95,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "4118983798585440128",
+        "ra": 266.99379631985573,
+        "dec": -20.442239552158824,
+        "phot_g_mean_mag": "12.873386",
+        "pmra": -2.3065945544609763,
+        "pmdec": -4.1299063115287735,
+        "pmra_error": "0.07490825",
+        "pmdec_error": "0.051647823",
+        "ruwe": "2.8813293",
+        "astrometric_excess_noise": "0.49916002",
+        "astrometric_excess_noise_sig": "173.0282",
+        "primitive_flags": [
+          "F_compliant",
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "PSR J1748-2021B",
+        "seed_notes": "Terzan 5 GC"
+      },
+      "p12_phase2_events": [
+        "PSR J1748-2021B"
+      ],
+      "p12_phase3_best": {
+        "event": "PSR J1748-2021B (Terzan 5 MSP)",
+        "ratio": 2.3171,
+        "dev": 0.0145,
+        "f_lo": 820.0,
+        "f_hi": 1900.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    },
+    {
+      "p74_target": "PSR J1824-2452A",
+      "p74_ra": 276.13,
+      "p74_dec": -24.87,
+      "p74_dm_weight": 0.9,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "4077190124608767872",
+        "ra": 276.15783912845745,
+        "dec": -24.86719524815754,
+        "phot_g_mean_mag": "14.226137",
+        "pmra": 0.14957209569300378,
+        "pmdec": -9.321078500141919,
+        "pmra_error": "0.06966337",
+        "pmdec_error": "0.052281447",
+        "ruwe": "2.2291672",
+        "astrometric_excess_noise": "0.35794452",
+        "astrometric_excess_noise_sig": "31.202015",
+        "primitive_flags": [
+          "F_compliant",
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "PSR J1824-2452A",
+        "seed_notes": "M28 GC"
+      },
+      "p12_phase2_events": [
+        "PSR J1824-2452A"
+      ],
+      "p12_phase3_best": {
+        "event": "PSR J1824-2452A (M28 MSP)",
+        "ratio": 2.2787,
+        "dev": 0.0239,
+        "f_lo": 610.0,
+        "f_hi": 1390.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    },
+    {
+      "p74_target": "SGR 1935+2154",
+      "p74_ra": 293.73,
+      "p74_dec": 21.9,
+      "p74_dm_weight": 0.85,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "2018315564599332224",
+        "ra": 293.8201162231636,
+        "dec": 21.943661255274623,
+        "phot_g_mean_mag": "16.97764",
+        "pmra": 1.347398704998324,
+        "pmdec": -7.431767705927999,
+        "pmra_error": "0.25620475",
+        "pmdec_error": "0.30371758",
+        "ruwe": "4.4085016",
+        "astrometric_excess_noise": "2.647295",
+        "astrometric_excess_noise_sig": "287.15082",
+        "primitive_flags": [
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate",
+          "D_temporal"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "SGR 1935+2154",
+        "seed_notes": "Magnetar FRB P-12"
+      },
+      "p12_phase2_events": [
+        "SGR 1935+2154 (2020-04-28)"
+      ],
+      "p12_phase3_best": {
+        "event": "SGR 1935+2154 (2020-04-28 FAST)",
+        "ratio": 2.304,
+        "dev": 0.0014,
+        "f_lo": 1250.0,
+        "f_hi": 2880.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    },
+    {
+      "p74_target": "PSR B1937+21",
+      "p74_ra": 294.91,
+      "p74_dec": 21.58,
+      "p74_dm_weight": 0.65,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "2018315564599332224",
+        "ra": 293.8201162231636,
+        "dec": 21.943661255274623,
+        "phot_g_mean_mag": "16.97764",
+        "pmra": 1.347398704998324,
+        "pmdec": -7.431767705927999,
+        "pmra_error": "0.25620475",
+        "pmdec_error": "0.30371758",
+        "ruwe": "4.4085016",
+        "astrometric_excess_noise": "2.647295",
+        "astrometric_excess_noise_sig": "287.15082",
+        "primitive_flags": [
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate",
+          "D_temporal"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "SGR 1935+2154",
+        "seed_notes": "Magnetar FRB P-12"
+      },
+      "p12_phase2_events": [
+        "SGR 1935+2154 (2020-04-28)"
+      ],
+      "p12_phase3_best": {
+        "event": "SGR 1935+2154 (2020-04-28 FAST)",
+        "ratio": 2.304,
+        "dev": 0.0014,
+        "f_lo": 1250.0,
+        "f_hi": 2880.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    },
+    {
+      "p74_target": "PSR B0833-45",
+      "p74_ra": 128.84,
+      "p74_dec": -45.18,
+      "p74_dm_weight": 0.6,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "5521973829677335168",
+        "ra": 128.88010436630137,
+        "dec": -45.10888476859224,
+        "phot_g_mean_mag": "16.595785",
+        "pmra": -2.01330891311171,
+        "pmdec": -0.2175146884607544,
+        "pmra_error": "0.22480705",
+        "pmdec_error": "0.24710678",
+        "ruwe": "5.115971",
+        "astrometric_excess_noise": "2.2301633",
+        "astrometric_excess_noise_sig": "283.8636",
+        "primitive_flags": [
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate",
+          "D_temporal"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "PSR B0833-45",
+        "seed_notes": "Vela"
+      },
+      "p12_phase2_events": [
+        "PSR B0833-45"
+      ],
+      "p12_phase3_best": {
+        "event": "PSR B0833-45 (Vela, 3-band)",
+        "ratio": 2.303,
+        "dev": 0.0004,
+        "f_lo": 660.0,
+        "f_hi": 1520.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    },
+    {
+      "p74_target": "PSR J0437-4715",
+      "p74_ra": 69.32,
+      "p74_dec": -47.25,
+      "p74_dm_weight": 0.3,
+      "conjunction_score": 3,
+      "criteria_met": {
+        "gaia_critical": true,
+        "p12_phase2": true,
+        "p12_phase3": true
+      },
+      "gaia_top": {
+        "source_id": "4789702658977985536",
+        "ra": 69.8750236782593,
+        "dec": -47.06861616761801,
+        "phot_g_mean_mag": "13.628813",
+        "pmra": 9.701629474748307,
+        "pmdec": 8.374447022458146,
+        "pmra_error": "0.03389581",
+        "pmdec_error": "0.03590425",
+        "ruwe": "2.674043",
+        "astrometric_excess_noise": "0.32718968",
+        "astrometric_excess_noise_sig": "78.249954",
+        "primitive_flags": [
+          "F_compliant",
+          "T_network",
+          "Phi_critical",
+          "Omega_candidate"
+        ],
+        "anomaly_score": 10,
+        "priority": "Critical",
+        "seed_pulsar": "PSR J0437-4715",
+        "seed_notes": "MSP, nearest, best-timed"
+      },
+      "p12_phase2_events": [
+        "PSR J0437-4715"
+      ],
+      "p12_phase3_best": {
+        "event": "PSR J0437-4715 (PPTA multi-band)",
+        "ratio": 2.2644,
+        "dev": 0.0382,
+        "f_lo": 1369.0,
+        "f_hi": 3100.0
+      },
+      "estimated_d_effective": 2.4999999999999996
+    }
+  ]
+}

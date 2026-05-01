@@ -1,0 +1,142 @@
+[
+  {
+    "id": "80117d568169",
+    "promoted_primitives": [
+      "D",
+      "F",
+      "H",
+      "T"
+    ],
+    "behavior": "Superfluidity / zero-viscosity coherent flow",
+    "example": "helium_superfluid",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "e4186ea895a6",
+    "promoted_primitives": [
+      "Phi",
+      "R",
+      "T"
+    ],
+    "behavior": "Anomalous diamagnetism and directional anisotropy on solidification",
+    "example": "bismuth_unusual",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "8a98a03d736e",
+    "promoted_primitives": [
+      "P",
+      "T"
+    ],
+    "behavior": "Low melting point and expansion upon solidification",
+    "example": "gallium_unusual",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "7b4862d008f5",
+    "promoted_primitives": [
+      "G",
+      "Gamma",
+      "Omega",
+      "P"
+    ],
+    "behavior": "Extreme thermal conductivity coexisting with electrical insulation",
+    "example": "diamond_unusual",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "684e3dfcd247",
+    "promoted_primitives": [
+      "T"
+    ],
+    "behavior": "Liquid metal at room temperature; metallic droplet formation",
+    "example": "elemental_mercury",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "672dcd95251d",
+    "promoted_primitives": [
+      "D",
+      "Gamma",
+      "K",
+      "Omega",
+      "T"
+    ],
+    "behavior": "Multiple coexisting solid allotropes with complex density-anomalous phase diagram",
+    "example": "plutonium_unusual",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "62dda717bf7b",
+    "promoted_primitives": [
+      "G",
+      "Gamma",
+      "Phi",
+      "T"
+    ],
+    "behavior": "Explosive cascade reactivity / violent perturbation response with global propagation",
+    "example": "",
+    "session_seed": "elements session 2026-03-28",
+    "timestamp": "2026-03-28T06:29:15"
+  },
+  {
+    "id": "6cb2e28cac92",
+    "promoted_primitives": [
+      "Gamma",
+      "H"
+    ],
+    "behavior": "High-temperature superconductivity: enhanced Tc via broadcast correlation grammar and chiral order parameter",
+    "example": "cuprate_highTc",
+    "session_seed": "use the grammar and primitives-first constructions to explore high-temperature superconductivity",
+    "timestamp": "2026-04-03T07:49:02"
+  },
+  {
+    "id": "b726dc78f7da",
+    "promoted_primitives": [
+      "D",
+      "F",
+      "Omega",
+      "P"
+    ],
+    "behavior": "Holographic Frobenius scrying — boundary encodes bulk visions with exact Z2 self-duality, quantum-coherent fidelity, and integer topological protection against perceptual decoherence",
+    "example": "scrying_critical_mirror",
+    "session_seed": "use the grammar and primtives to suggest optimized scrying methodologies. justify with extensive tensor operations and lattice navigation. try to use all tools if possible",
+    "timestamp": "2026-04-13T18:16:25"
+  },
+  {
+    "id": "416e0da70e0b",
+    "promoted_primitives": [
+      "F",
+      "H",
+      "K",
+      "Omega",
+      "P",
+      "R",
+      "T"
+    ],
+    "behavior": "Holographic Frobenius remote-viewing: O_inf scrying with exact Z2 self-duality, quantum-coherent fidelity, integer topological protection, maximal temporal depth",
+    "example": "remote_viewing_optimized",
+    "session_seed": "use the grammar and primtives to suggest optimized remote-viewing and astral-projection methodologies. justify with extensive tensor operations and lattice navigation. try to use all tools if possible",
+    "timestamp": "2026-04-13T20:06:07"
+  },
+  {
+    "id": "d7bf1e4443fa",
+    "promoted_primitives": [
+      "D",
+      "Gamma",
+      "Omega",
+      "P",
+      "T"
+    ],
+    "behavior": "Holographic Frobenius astral projection: O_inf consciousness extension with exact Z2 self-duality, holographic boundary topology, broadcast causation, integer topological protection",
+    "example": "astral_projection_optimized",
+    "session_seed": "use the grammar and primtives to suggest optimized remote-viewing and astral-projection methodologies. justify with extensive tensor operations and lattice navigation. try to use all tools if possible",
+    "timestamp": "2026-04-13T20:06:07"
+  }
+]

@@ -1,0 +1,1821 @@
+{
+  "n_pulsars": 55,
+  "n_pulsars_with_p12": 43,
+  "total_freq_pairs": 749,
+  "p12_pair_count": 74,
+  "discrete_null_rate": 0.0238,
+  "binomial_z": 13.462,
+  "binomial_p": 3.123213801575744e-24,
+  "grid_p12_pairs": [
+    [
+      327.0,
+      1520.0,
+      4.6483,
+      4.6052,
+      0.0431
+    ],
+    [
+      408.0,
+      925.0,
+      2.2672,
+      2.3026,
+      0.0354
+    ],
+    [
+      430.0,
+      2950.0,
+      6.8605,
+      6.9078,
+      0.0473
+    ],
+    [
+      610.0,
+      1400.0,
+      2.2951,
+      2.3026,
+      0.0075
+    ],
+    [
+      610.0,
+      1408.0,
+      2.3082,
+      2.3026,
+      0.0056
+    ],
+    [
+      660.0,
+      1520.0,
+      2.303,
+      2.3026,
+      0.0004
+    ],
+    [
+      820.0,
+      1900.0,
+      2.3171,
+      2.3026,
+      0.0145
+    ],
+    [
+      1284.0,
+      2950.0,
+      2.2975,
+      2.3026,
+      0.0051
+    ],
+    [
+      1369.0,
+      3100.0,
+      2.2644,
+      2.3026,
+      0.0382
+    ]
+  ],
+  "pulsar_results": [
+    {
+      "name": "PSR J0437-4715",
+      "dm": 2.64,
+      "ra": 69.32,
+      "dec": -47.25,
+      "n_freqs": 4,
+      "frequencies": [
+        436,
+        660,
+        1369,
+        3100
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Manchester+ 1996; Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR B1937+21",
+      "dm": 71.02,
+      "ra": 294.91,
+      "dec": 21.58,
+      "n_freqs": 3,
+      "frequencies": [
+        430,
+        1400,
+        2380
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Backer+ 1982; multi-freq profile atlas"
+      ]
+    },
+    {
+      "name": "PSR J1024-0719",
+      "dm": 6.49,
+      "ra": 156.1,
+      "dec": -7.32,
+      "n_freqs": 2,
+      "frequencies": [
+        436,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1045-4509",
+      "dm": 58.17,
+      "ra": 161.41,
+      "dec": -45.15,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1600-3053",
+      "dm": 52.33,
+      "ra": 240.01,
+      "dec": -30.89,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1643-1224",
+      "dm": 62.41,
+      "ra": 251.03,
+      "dec": -12.41,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1713+0747",
+      "dm": 15.99,
+      "ra": 258.47,
+      "dec": 7.79,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA; Arzoumanian+ 2018"
+      ]
+    },
+    {
+      "name": "PSR J1730-2304",
+      "dm": 9.61,
+      "ra": 262.76,
+      "dec": -23.08,
+      "n_freqs": 2,
+      "frequencies": [
+        436,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1744-1134",
+      "dm": 3.14,
+      "ra": 266.14,
+      "dec": -11.58,
+      "n_freqs": 2,
+      "frequencies": [
+        436,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1824-2452A",
+      "dm": 119.9,
+      "ra": 276.13,
+      "dec": -24.87,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        610,
+        1369
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Freire+ 2008 Terzan 5; Cognard+ 1996"
+      ]
+    },
+    {
+      "name": "PSR J1857+0943",
+      "dm": 13.31,
+      "ra": 284.42,
+      "dec": 9.73,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1909-3744",
+      "dm": 10.39,
+      "ra": 287.33,
+      "dec": -37.74,
+      "n_freqs": 2,
+      "frequencies": [
+        436,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR J2145-0750",
+      "dm": 9.0,
+      "ra": 326.47,
+      "dec": -7.84,
+      "n_freqs": 3,
+      "frequencies": [
+        436,
+        1369,
+        3100
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 2008 PPTA"
+      ]
+    },
+    {
+      "name": "PSR B0833-45",
+      "dm": 67.99,
+      "ra": 128.84,
+      "dec": -45.18,
+      "n_freqs": 11,
+      "frequencies": [
+        243,
+        327,
+        408,
+        436,
+        610,
+        660,
+        800,
+        1369,
+        1520,
+        2295,
+        3100
+      ],
+      "n_pairs": 55,
+      "n_p12_pairs": 3,
+      "p12_pairs": [
+        {
+          "f_lo": 327,
+          "f_hi": 1520,
+          "ratio": 4.6483,
+          "p12_match": true,
+          "nearest_target": 4.6052,
+          "deviation": 0.0431
+        },
+        {
+          "f_lo": 660,
+          "f_hi": 1520,
+          "ratio": 2.303,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0004
+        },
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Johnston+ 1995; EPN database; PPTA",
+        "Johnston+ 1998 Parkes UHF/L simultaneous"
+      ]
+    },
+    {
+      "name": "PSR B0329+54",
+      "dm": 26.78,
+      "ra": 52.17,
+      "dec": 54.58,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993; Xilouris+ 1998"
+      ]
+    },
+    {
+      "name": "PSR B0355+54",
+      "dm": 57.14,
+      "ra": 59.73,
+      "dec": 54.22,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        240,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0525+21",
+      "dm": 50.9,
+      "ra": 82.52,
+      "dec": 21.58,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0531+21 (Crab)",
+      "dm": 56.77,
+      "ra": 83.63,
+      "dec": 22.01,
+      "n_freqs": 7,
+      "frequencies": [
+        110,
+        325,
+        408,
+        610,
+        1400,
+        4850,
+        8400
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Moffett & Hankins 1996; Xilouris+ 1998"
+      ]
+    },
+    {
+      "name": "PSR B0628-28",
+      "dm": 34.49,
+      "ra": 97.75,
+      "dec": -28.51,
+      "n_freqs": 7,
+      "frequencies": [
+        150,
+        325,
+        408,
+        610,
+        925,
+        1369,
+        1408
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993; Gould & Lyne 1998",
+        "Noutsos+ 2015; Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0736-40",
+      "dm": 160.9,
+      "ra": 114.84,
+      "dec": -40.58,
+      "n_freqs": 3,
+      "frequencies": [
+        408,
+        610,
+        1400
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Gould & Lyne 1998"
+      ]
+    },
+    {
+      "name": "PSR B0740-28",
+      "dm": 73.78,
+      "ra": 115.57,
+      "dec": -28.01,
+      "n_freqs": 7,
+      "frequencies": [
+        150,
+        408,
+        610,
+        925,
+        1369,
+        1400,
+        3100
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 3,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        },
+        {
+          "f_lo": 1369,
+          "f_hi": 3100,
+          "ratio": 2.2644,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0382
+        }
+      ],
+      "sources": [
+        "Rankin 1993; Gould & Lyne 1998",
+        "Noutsos+ 2015"
+      ]
+    },
+    {
+      "name": "PSR B0818-13",
+      "dm": 40.94,
+      "ra": 125.18,
+      "dec": -13.49,
+      "n_freqs": 4,
+      "frequencies": [
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0823+26",
+      "dm": 19.45,
+      "ra": 126.67,
+      "dec": 26.25,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0950+08",
+      "dm": 2.97,
+      "ra": 148.29,
+      "dec": 7.63,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1133+16",
+      "dm": 4.85,
+      "ra": 174.01,
+      "dec": 16.0,
+      "n_freqs": 10,
+      "frequencies": [
+        102,
+        150,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1369,
+        1408,
+        4750
+      ],
+      "n_pairs": 45,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993",
+        "Noutsos+ 2015; Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1237+25",
+      "dm": 9.27,
+      "ra": 189.79,
+      "dec": 24.83,
+      "n_freqs": 10,
+      "frequencies": [
+        102,
+        150,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1369,
+        1408,
+        4750
+      ],
+      "n_pairs": 45,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993",
+        "Noutsos+ 2015; Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1508+55",
+      "dm": 19.62,
+      "ra": 227.2,
+      "dec": 55.0,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1541+09",
+      "dm": 34.97,
+      "ra": 236.37,
+      "dec": 9.23,
+      "n_freqs": 5,
+      "frequencies": [
+        325,
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 10,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1604-00",
+      "dm": 10.68,
+      "ra": 241.96,
+      "dec": -0.44,
+      "n_freqs": 4,
+      "frequencies": [
+        408,
+        610,
+        925,
+        1400
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Gould & Lyne 1998"
+      ]
+    },
+    {
+      "name": "PSR B1641-45",
+      "dm": 478.8,
+      "ra": 251.24,
+      "dec": -44.89,
+      "n_freqs": 4,
+      "frequencies": [
+        408,
+        610,
+        1400,
+        3100
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Johnston+ 1995; Gould & Lyne 1998"
+      ]
+    },
+    {
+      "name": "PSR B1642-03",
+      "dm": 35.73,
+      "ra": 251.6,
+      "dec": -3.29,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1706-16",
+      "dm": 24.88,
+      "ra": 257.28,
+      "dec": -16.16,
+      "n_freqs": 4,
+      "frequencies": [
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993; Gould & Lyne 1998"
+      ]
+    },
+    {
+      "name": "PSR B1821-24A",
+      "dm": 119.9,
+      "ra": 275.82,
+      "dec": -24.87,
+      "n_freqs": 3,
+      "frequencies": [
+        430,
+        610,
+        1400
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Foster+ 1991; Cognard+ 1996"
+      ]
+    },
+    {
+      "name": "PSR B1822-09",
+      "dm": 19.38,
+      "ra": 276.15,
+      "dec": -9.39,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1855+09",
+      "dm": 13.29,
+      "ra": 284.42,
+      "dec": 9.73,
+      "n_freqs": 3,
+      "frequencies": [
+        430,
+        610,
+        1400
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 610,
+          "f_hi": 1400,
+          "ratio": 2.2951,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0075
+        }
+      ],
+      "sources": [
+        "Segelstein+ 1986; Stinebring+ 1992"
+      ]
+    },
+    {
+      "name": "PSR B1900+01",
+      "dm": 245.2,
+      "ra": 285.76,
+      "dec": 1.1,
+      "n_freqs": 5,
+      "frequencies": [
+        325,
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 10,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1919+21",
+      "dm": 12.44,
+      "ra": 290.0,
+      "dec": 21.91,
+      "n_freqs": 10,
+      "frequencies": [
+        102,
+        150,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1369,
+        1408,
+        4750
+      ],
+      "n_pairs": 45,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993",
+        "Noutsos+ 2015; Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1929+10",
+      "dm": 3.18,
+      "ra": 292.98,
+      "dec": 10.98,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B1933+16",
+      "dm": 158.52,
+      "ra": 294.08,
+      "dec": 16.0,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2002+31",
+      "dm": 234.8,
+      "ra": 301.42,
+      "dec": 31.86,
+      "n_freqs": 4,
+      "frequencies": [
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2020+28",
+      "dm": 24.63,
+      "ra": 305.87,
+      "dec": 28.94,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2021+51",
+      "dm": 22.57,
+      "ra": 305.85,
+      "dec": 51.38,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2110+27",
+      "dm": 25.11,
+      "ra": 318.34,
+      "dec": 27.66,
+      "n_freqs": 5,
+      "frequencies": [
+        325,
+        408,
+        610,
+        925,
+        1408
+      ],
+      "n_pairs": 10,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2111+46",
+      "dm": 141.26,
+      "ra": 318.6,
+      "dec": 46.56,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2217+47",
+      "dm": 43.49,
+      "ra": 334.9,
+      "dec": 47.89,
+      "n_freqs": 8,
+      "frequencies": [
+        102,
+        240,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 28,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2303+30",
+      "dm": 49.91,
+      "ra": 346.18,
+      "dec": 31.1,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B2319+60",
+      "dm": 94.59,
+      "ra": 350.22,
+      "dec": 60.74,
+      "n_freqs": 7,
+      "frequencies": [
+        102,
+        325,
+        408,
+        610,
+        925,
+        1408,
+        4750
+      ],
+      "n_pairs": 21,
+      "n_p12_pairs": 2,
+      "p12_pairs": [
+        {
+          "f_lo": 408,
+          "f_hi": 925,
+          "ratio": 2.2672,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0354
+        },
+        {
+          "f_lo": 610,
+          "f_hi": 1408,
+          "ratio": 2.3082,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0056
+        }
+      ],
+      "sources": [
+        "Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0136+57",
+      "dm": 73.81,
+      "ra": 24.9,
+      "dec": 58.24,
+      "n_freqs": 2,
+      "frequencies": [
+        150,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Noutsos+ 2015"
+      ]
+    },
+    {
+      "name": "PSR B0148-06",
+      "dm": 25.66,
+      "ra": 28.05,
+      "dec": -6.2,
+      "n_freqs": 2,
+      "frequencies": [
+        150,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Noutsos+ 2015"
+      ]
+    },
+    {
+      "name": "PSR B0301+19",
+      "dm": 15.74,
+      "ra": 46.25,
+      "dec": 19.6,
+      "n_freqs": 2,
+      "frequencies": [
+        150,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Noutsos+ 2015"
+      ]
+    },
+    {
+      "name": "PSR B0450+55",
+      "dm": 14.49,
+      "ra": 73.75,
+      "dec": 56.03,
+      "n_freqs": 4,
+      "frequencies": [
+        150,
+        408,
+        610,
+        1369
+      ],
+      "n_pairs": 6,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Noutsos+ 2015; Rankin 1993"
+      ]
+    },
+    {
+      "name": "PSR B0609+37",
+      "dm": 38.02,
+      "ra": 93.18,
+      "dec": 37.52,
+      "n_freqs": 2,
+      "frequencies": [
+        150,
+        1369
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Noutsos+ 2015"
+      ]
+    },
+    {
+      "name": "XTE J1810-197",
+      "dm": 178.0,
+      "ra": 272.6,
+      "dec": -19.74,
+      "n_freqs": 2,
+      "frequencies": [
+        1284,
+        2950
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 1284,
+          "f_hi": 2950,
+          "ratio": 2.2975,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0051
+        }
+      ],
+      "sources": [
+        "MeerKAT L+S simultaneous; Caleb+ 2022"
+      ]
+    },
+    {
+      "name": "PSR J0030+0451",
+      "dm": 4.33,
+      "ra": 7.61,
+      "dec": 4.86,
+      "n_freqs": 3,
+      "frequencies": [
+        327,
+        820,
+        1400
+      ],
+      "n_pairs": 3,
+      "n_p12_pairs": 0,
+      "p12_pairs": [],
+      "sources": [
+        "Guillemot+ 2016; PPTA"
+      ]
+    },
+    {
+      "name": "PSR J1748-2021B",
+      "dm": 223.6,
+      "ra": 267.02,
+      "dec": -20.35,
+      "n_freqs": 2,
+      "frequencies": [
+        820,
+        1900
+      ],
+      "n_pairs": 1,
+      "n_p12_pairs": 1,
+      "p12_pairs": [
+        {
+          "f_lo": 820,
+          "f_hi": 1900,
+          "ratio": 2.3171,
+          "p12_match": true,
+          "nearest_target": 2.3026,
+          "deviation": 0.0145
+        }
+      ],
+      "sources": [
+        "Freire+ 2008; Hessels+ 2006"
+      ]
+    }
+  ]
+}

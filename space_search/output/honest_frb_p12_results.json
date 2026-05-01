@@ -1,0 +1,53 @@
+{
+  "prior_p_values": [
+    {
+      "label": "XTE J1810-197 MeerKAT L+S (1284/2950)",
+      "p": 0.05287
+    },
+    {
+      "label": "Vela 1369/3100 MHz PPTA sim. (dev=0.038)",
+      "p": 0.1451
+    }
+  ],
+  "new_confirmed_events": [
+    {
+      "name": "SGR 1935+2154 (2020-04-28) CHIME+STARE2",
+      "f_lo": 600.0,
+      "f_hi": 1400.0,
+      "ratio": 2.3333,
+      "p12_match": true,
+      "deviation": 0.0307,
+      "band_null": 0.066,
+      "simultaneity": "CONFIRMED",
+      "p_value": 0.066004
+    }
+  ],
+  "excluded_events": [
+    {
+      "name": "FRB 20201124A FAST+uGMRT",
+      "reason": "Xu+ 2022 is FAST L-band only. Coordinated uGMRT+FAST same-burst detections not confirmed in peer-reviewed literature as of 2026-03."
+    },
+    {
+      "name": "FRB 20180916B CHIME+Apertif",
+      "reason": "Pastor-Marazuela+ 2021 explicitly shows chromatic sub-period: high-freq (Apertif) and low-freq (CHIME) are active at different sub-phases of the 16.35-day cycle. Not the same burst."
+    },
+    {
+      "name": "SGR 1935+2154 FAST L-band (Li+ 2021)",
+      "reason": "Li+ 2021 FAST detections are L-band only (1.0-1.5 GHz). No confirmed simultaneous high-frequency counterpart."
+    },
+    {
+      "name": "FRB 20190303A (CHIME repeater)",
+      "reason": "Multi-frequency detections from different epochs in CHIME band only."
+    },
+    {
+      "name": "PSR J0437-4715, B1937+21, Terzan 5 MSPs, M28 MSPs",
+      "reason": "Multi-frequency profiles from different observing sessions (not simultaneous)."
+    }
+  ],
+  "fisher_p_combined": 0.018926878545082713,
+  "fisher_z_combined": 2.3469680329814224,
+  "fisher_chi2": 15.176582521116703,
+  "fisher_df": 6,
+  "verdict": "Marginal (Z=2.3)",
+  "n_confirmed_total": 3
+}

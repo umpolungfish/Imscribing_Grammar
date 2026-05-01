@@ -1,0 +1,82 @@
+# Imscribing Grammar Configuration Template
+# Copy this to config.yaml and customize for your project
+#
+# Provider-specific defaults are managed in provider_defaults.yaml
+# This file contains project-level overrides and agent configuration
+
+# =============================================================================
+# LLM Provider Configuration
+# =============================================================================
+# Note: Provider-specific model defaults are defined in provider_defaults.yaml
+# Override here only if you need project-specific defaults
+
+provider:
+  # Default provider for CLI commands (anthropic, deepseek, qwen, mistral, google)
+  default: "anthropic"
+  
+  # Optional: Override default model for a specific provider
+  # If not specified, uses provider_defaults.yaml settings
+  # models:
+  #   anthropic: "claude-sonnet-4-5-20250929"
+  #   deepseek: "deepseek-chat"
+  #   qwen: "qwen3-max"
+  #   mistral: "codestral-2508"
+  #   google: "gemini-2.0-flash-exp"
+
+# =============================================================================
+# Agent Configuration
+# =============================================================================
+# Define settings for individual agents here
+
+agents:
+  # Example agent configuration
+  # my_agent:
+  #   enabled: true
+  #   provider: "anthropic"  # Override default provider
+  #   model: "claude-3-5-sonnet-20241022"  # Override default model
+  #   max_tokens: 4000
+  #   temperature: 0.7
+
+# =============================================================================
+# Orchestration Settings
+# =============================================================================
+orchestration:
+  # Maximum number of agents to run concurrently in swarm mode
+  max_concurrent_agents: 5
+
+  # Default timeout for agent execution (seconds)
+  timeout: 300
+
+# =============================================================================
+# Storage Configuration
+# =============================================================================
+storage:
+  # Directory for agent memory files
+  memory_dir: ".agent_memory"
+
+  # Directory for inter-agent messages
+  messages_dir: ".agent_messages"
+
+  # Directory for agent artifacts
+  artifacts_dir: "./artifacts"
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "agent_framework.log"
+  console: true
+
+# =============================================================================
+# CLI Configuration (imscrbgrmr commands)
+# =============================================================================
+cli:
+  # Default provider for synthon generation commands
+  default_provider: "anthropic"
+  
+  # Default max tokens for generation
+  max_tokens: 4000
+  
+  # Default temperature for synthon generation (lower = more deterministic)
+  temperature: 0.3

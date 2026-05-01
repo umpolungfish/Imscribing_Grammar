@@ -1,0 +1,136 @@
+<svg width="100%" viewBox="0 0 680 620">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Title -->
+<text class="th" x="340" y="36" text-anchor="middle" font-size="16">Unified Synthonicon — the seven-primitive notation</text>
+
+<!-- Central notation template box -->
+<g class="c-purple">
+<rect x="140" y="56" width="400" height="52" rx="8" stroke-width="0.5"/>
+<text class="th" x="340" y="76" text-anchor="middle" font-size="13">⟨ D ; T ; R ; P ; F ; G ; Γ ⟩</text>
+<text class="ts" x="340" y="96" text-anchor="middle">minimal notation for any synthon</text>
+</g>
+
+<!-- Row 1 of primitives: D, T, R, R_new -->
+<!-- D -->
+<g class="c-teal">
+<rect x="40" y="140" width="130" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="105" y="162" text-anchor="middle">D — dimensionality</text>
+<text class="ts" x="105" y="180" text-anchor="middle">D∧ molecular</text>
+<text class="ts" x="105" y="196" text-anchor="middle">D△ supramolec. · D∞ temporal</text>
+</g>
+
+<!-- T -->
+<g class="c-teal">
+<rect x="190" y="140" width="130" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="255" y="162" text-anchor="middle">T — topology</text>
+<text class="ts" x="255" y="180" text-anchor="middle">⊠ cyclic · ⋙ chain</text>
+<text class="ts" x="255" y="196" text-anchor="middle">□ hub/node</text>
+</g>
+
+<!-- R -->
+<g class="c-teal">
+<rect x="340" y="140" width="130" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="405" y="162" text-anchor="middle">R — recognition</text>
+<text class="ts" x="405" y="180" text-anchor="middle">⊆ covalent · ⊇ non-cov.</text>
+<text class="ts" x="405" y="196" text-anchor="middle">‡ catalytic</text>
+</g>
+
+<!-- R new mode highlight -->
+<g class="c-coral">
+<rect x="490" y="140" width="150" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="565" y="162" text-anchor="middle">R⇔ — mechanical</text>
+<text class="ts" x="565" y="180" text-anchor="middle">new mode: interlocked</text>
+<text class="ts" x="565" y="196" text-anchor="middle">topology-controlled F</text>
+</g>
+
+<!-- Connectors from central box to row 1 -->
+<line x1="270" y1="108" x2="105" y2="140" class="arr" stroke-opacity="0.4" marker-end="url(#arrow)"/>
+<line x1="310" y1="108" x2="255" y2="140" class="arr" stroke-opacity="0.4" marker-end="url(#arrow)"/>
+<line x1="370" y1="108" x2="405" y2="140" class="arr" stroke-opacity="0.4" marker-end="url(#arrow)"/>
+<line x1="430" y1="108" x2="565" y2="140" class="arr" stroke-opacity="0.4" marker-end="url(#arrow)"/>
+
+<!-- Row 2: P, F, G, Gamma -->
+<!-- P -->
+<g class="c-purple">
+<rect x="40" y="260" width="140" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="110" y="282" text-anchor="middle">P — polarity</text>
+<text class="ts" x="110" y="300" text-anchor="middle">P+ acceptor · P− donor</text>
+<text class="ts" x="110" y="316" text-anchor="middle">P± self-complementary</text>
+</g>
+
+<!-- F -->
+<g class="c-purple">
+<rect x="200" y="260" width="140" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="270" y="282" text-anchor="middle">F — fidelity</text>
+<text class="ts" x="270" y="300" text-anchor="middle">Fℏ high · Fð medium</text>
+<text class="ts" x="270" y="316" text-anchor="middle">Fℓ low (probabilistic)</text>
+</g>
+
+<!-- G -->
+<g class="c-purple">
+<rect x="360" y="260" width="140" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="430" y="282" text-anchor="middle">G — granularity</text>
+<text class="ts" x="430" y="300" text-anchor="middle">Gℶ local · Gℷ mesoscale</text>
+<text class="ts" x="430" y="316" text-anchor="middle">Gℵ global/network</text>
+</g>
+
+<!-- Gamma -->
+<g class="c-purple">
+<rect x="520" y="260" width="140" height="72" rx="8" stroke-width="0.5"/>
+<text class="th" x="590" y="282" text-anchor="middle">Γ — grammar</text>
+<text class="ts" x="590" y="300" text-anchor="middle">Γ⊗ one partner</text>
+<text class="ts" x="590" y="316" text-anchor="middle">Γ⊙ few · Γ○ many</text>
+</g>
+
+<!-- Divider -->
+<line x1="40" y1="370" x2="640" y2="370" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+
+<!-- Domain examples row -->
+<text class="ts" x="340" y="392" text-anchor="middle" font-style="italic">example encodings</text>
+
+<!-- Molecular example -->
+<g class="c-teal">
+<rect x="40" y="406" width="180" height="88" rx="8" stroke-width="0.5"/>
+<text class="th" x="130" y="426" text-anchor="middle">molecular synthon</text>
+<text class="ts" x="130" y="444" text-anchor="middle">carboxylic acid dimer</text>
+<text class="ts" x="130" y="460" text-anchor="middle">⟨ D∧,D△ ; T⊠ ; R⊇ ;</text>
+<text class="ts" x="130" y="476" text-anchor="middle">P± ; Fℏ ; Gℷ ; Γ⊗ ⟩</text>
+</g>
+
+<!-- Supramolecular example (LEAVE SPACE for ChemDraw structure) -->
+<g class="c-gray">
+<rect x="250" y="406" width="180" height="88" rx="8" stroke-width="0.5"/>
+<text class="th" x="340" y="426" text-anchor="middle">supramolecular synthon</text>
+<text class="ts" x="340" y="446" text-anchor="middle">MOF node</text>
+<text class="ts" x="340" y="462" text-anchor="middle">⟨ D△ ; T□ ; R⊇ ;</text>
+<text class="ts" x="340" y="478" text-anchor="middle">P+ ; Fℏ ; Gℵ ; Γ⊙ ⟩</text>
+</g>
+
+<!-- Temporal example -->
+<g class="c-amber">
+<rect x="460" y="406" width="180" height="88" rx="8" stroke-width="0.5"/>
+<text class="th" x="550" y="426" text-anchor="middle">temporal synthon</text>
+<text class="ts" x="550" y="444" text-anchor="middle">proline aldol cycle</text>
+<text class="ts" x="550" y="460" text-anchor="middle">⟨ D∞ ; T⊠ ; R‡ ;</text>
+<text class="ts" x="550" y="476" text-anchor="middle">P± ; Fð ; Gℷ ; Γ⊙ ⟩</text>
+</g>
+
+<!-- Bottom note -->
+<text class="ts" x="340" y="524" text-anchor="middle" font-style="italic">set notation allows hybrid systems: D = {D△, D∞} for MOF-catalyst architectures</text>
+
+<!-- Chemical structure placeholders -->
+<rect x="40" y="530" width="180" height="72" rx="4" fill="none" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="ts" x="130" y="568" text-anchor="middle" font-style="italic" opacity="0.5">ChemDraw: R₂²(8) motif</text>
+
+<rect x="250" y="530" width="180" height="72" rx="4" fill="none" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="ts" x="340" y="568" text-anchor="middle" font-style="italic" opacity="0.5">ChemDraw: Zn–bpy node</text>
+
+<rect x="460" y="530" width="180" height="72" rx="4" fill="none" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text class="ts" x="550" y="568" text-anchor="middle" font-style="italic" opacity="0.5">ChemDraw: proline cycle</text>
+
+</svg>

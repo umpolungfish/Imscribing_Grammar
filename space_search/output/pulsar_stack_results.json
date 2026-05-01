@@ -1,0 +1,2380 @@
+{
+  "n_pulsars": 13,
+  "stacked_signal_length": 500,
+  "p12_matches_stacked": [
+    {
+      "f1_1per_yr": 0.0027,
+      "f2_1per_yr": 0.0188,
+      "ratio": 6.8667,
+      "ln10_multiple": 3,
+      "target": 6.9078,
+      "deviation": 0.0411,
+      "power1": 0.0147,
+      "power2": 0.0028
+    },
+    {
+      "f1_1per_yr": 0.0035,
+      "f2_1per_yr": 0.008,
+      "ratio": 2.3158,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0132,
+      "power1": 0.0139,
+      "power2": 0.0023
+    },
+    {
+      "f1_1per_yr": 0.0042,
+      "f2_1per_yr": 0.0193,
+      "ratio": 4.6087,
+      "ln10_multiple": 2,
+      "target": 4.6052,
+      "deviation": 0.0035,
+      "power1": 0.0204,
+      "power2": 0.0025
+    },
+    {
+      "f1_1per_yr": 0.0047,
+      "f2_1per_yr": 0.0217,
+      "ratio": 4.5769,
+      "ln10_multiple": 2,
+      "target": 4.6052,
+      "deviation": 0.0282,
+      "power1": 0.0105,
+      "power2": 0.0038
+    },
+    {
+      "f1_1per_yr": 0.0055,
+      "f2_1per_yr": 0.0128,
+      "ratio": 2.3333,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0307,
+      "power1": 0.0087,
+      "power2": 0.0022
+    },
+    {
+      "f1_1per_yr": 0.008,
+      "f2_1per_yr": 0.0188,
+      "ratio": 2.3409,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0383,
+      "power1": 0.0023,
+      "power2": 0.0028
+    },
+    {
+      "f1_1per_yr": 0.0088,
+      "f2_1per_yr": 0.0199,
+      "ratio": 2.2708,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0318,
+      "power1": 0.0046,
+      "power2": 0.0033
+    },
+    {
+      "f1_1per_yr": 0.0093,
+      "f2_1per_yr": 0.0217,
+      "ratio": 2.3333,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0307,
+      "power1": 0.0044,
+      "power2": 0.0038
+    },
+    {
+      "f1_1per_yr": 0.0104,
+      "f2_1per_yr": 0.0237,
+      "ratio": 2.2807,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0219,
+      "power1": 0.0058,
+      "power2": 0.006
+    },
+    {
+      "f1_1per_yr": 0.0148,
+      "f2_1per_yr": 0.0341,
+      "ratio": 2.3086,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0061,
+      "power1": 0.0028,
+      "power2": 0.0025
+    },
+    {
+      "f1_1per_yr": 0.0193,
+      "f2_1per_yr": 0.0444,
+      "ratio": 2.2925,
+      "ln10_multiple": 1,
+      "target": 2.3026,
+      "deviation": 0.0101,
+      "power1": 0.0025,
+      "power2": 0.0043
+    }
+  ],
+  "scale_invariance_stacked": {
+    "scale_invariant": false,
+    "alpha": 0.0,
+    "r_squared": NaN,
+    "p_value": NaN,
+    "variances": [
+      [
+        0.5,
+        0.0819
+      ],
+      [
+        1.0,
+        0.0819
+      ],
+      [
+        2.0,
+        0.0819
+      ],
+      [
+        5.0,
+        0.0819
+      ]
+    ],
+    "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+  },
+  "per_pulsar": [
+    {
+      "name": "B1937+21",
+      "dm_pc_cm3": 71.023,
+      "dm_weight": 0.65,
+      "rms_residual_us": 0.077,
+      "timespan_yr": 17.7,
+      "n_toas": 14818,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0129,
+          "f2_1per_yr": 0.0295,
+          "ratio": 2.28,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0226,
+          "power1": 0.0056,
+          "power2": 0.0104
+        },
+        {
+          "f1_1per_yr": 0.0188,
+          "f2_1per_yr": 0.0424,
+          "ratio": 2.2569,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0457,
+          "power1": 0.0073,
+          "power2": 0.0146
+        },
+        {
+          "f1_1per_yr": 0.0188,
+          "f2_1per_yr": 0.0429,
+          "ratio": 2.2844,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0182,
+          "power1": 0.0073,
+          "power2": 0.0176
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.32,
+        "r_squared": 0.962,
+        "p_value": 0.019,
+        "variances": [
+          [
+            0.5,
+            0.0388
+          ],
+          [
+            1.0,
+            0.0519
+          ],
+          [
+            2.0,
+            0.0685
+          ],
+          [
+            5.0,
+            0.0805
+          ]
+        ],
+        "interpretation": "\u03b1=0.32 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 3
+    },
+    {
+      "name": "J0030+0451",
+      "dm_pc_cm3": 4.332,
+      "dm_weight": 0.25,
+      "rms_residual_us": 0.202,
+      "timespan_yr": 15.0,
+      "n_toas": 4014,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0035,
+          "f2_1per_yr": 0.0164,
+          "ratio": 4.65,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0448,
+          "power1": 0.001,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0055,
+          "f2_1per_yr": 0.0377,
+          "ratio": 6.9032,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0045,
+          "power1": 0.0008,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0071,
+          "f2_1per_yr": 0.0164,
+          "ratio": 2.325,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0224,
+          "power1": 0.0006,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0079,
+          "f2_1per_yr": 0.0183,
+          "ratio": 2.3111,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0085,
+          "power1": 0.0005,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0079,
+          "f2_1per_yr": 0.0363,
+          "ratio": 4.5778,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0274,
+          "power1": 0.0005,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0102,
+          "f2_1per_yr": 0.024,
+          "ratio": 2.3448,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0422,
+          "power1": 0.0006,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0136,
+          "f2_1per_yr": 0.0314,
+          "ratio": 2.3117,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0091,
+          "power1": 0.0005,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0153,
+          "f2_1per_yr": 0.0347,
+          "ratio": 2.2644,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0382,
+          "power1": 0.0004,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0164,
+          "f2_1per_yr": 0.0377,
+          "ratio": 2.3011,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0015,
+          "power1": 0.0003,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0175,
+          "f2_1per_yr": 0.0407,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0006,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0183,
+          "f2_1per_yr": 0.0427,
+          "ratio": 2.3269,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0243,
+          "power1": 0.0003,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0197,
+          "f2_1per_yr": 0.0446,
+          "ratio": 2.2589,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0437,
+          "power1": 0.0004,
+          "power2": 0.0004
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.279,
+        "r_squared": 0.934,
+        "p_value": 0.0333,
+        "variances": [
+          [
+            0.5,
+            13.1609
+          ],
+          [
+            1.0,
+            17.7926
+          ],
+          [
+            2.0,
+            22.332
+          ],
+          [
+            5.0,
+            25.0869
+          ]
+        ],
+        "interpretation": "\u03b1=0.28 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 12
+    },
+    {
+      "name": "J0437-4715",
+      "dm_pc_cm3": 2.645,
+      "dm_weight": 0.3,
+      "rms_residual_us": 0.154,
+      "timespan_yr": 17.5,
+      "n_toas": 19580,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0115,
+          "f2_1per_yr": 0.0795,
+          "ratio": 6.9,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0078,
+          "power1": 0.0068,
+          "power2": 0.0096
+        },
+        {
+          "f1_1per_yr": 0.0132,
+          "f2_1per_yr": 0.0916,
+          "ratio": 6.913,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0053,
+          "power1": 0.0064,
+          "power2": 0.0161
+        },
+        {
+          "f1_1per_yr": 0.034,
+          "f2_1per_yr": 0.0795,
+          "ratio": 2.339,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0364,
+          "power1": 0.0071,
+          "power2": 0.0096
+        },
+        {
+          "f1_1per_yr": 0.0374,
+          "f2_1per_yr": 0.0858,
+          "ratio": 2.2923,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0103,
+          "power1": 0.0111,
+          "power2": 0.0086
+        },
+        {
+          "f1_1per_yr": 0.0374,
+          "f2_1per_yr": 0.0875,
+          "ratio": 2.3385,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0359,
+          "power1": 0.0111,
+          "power2": 0.0119
+        },
+        {
+          "f1_1per_yr": 0.0484,
+          "f2_1per_yr": 0.1117,
+          "ratio": 2.3095,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0069,
+          "power1": 0.0108,
+          "power2": 0.0062
+        },
+        {
+          "f1_1per_yr": 0.0622,
+          "f2_1per_yr": 0.1411,
+          "ratio": 2.2685,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0341,
+          "power1": 0.0071,
+          "power2": 0.0096
+        },
+        {
+          "f1_1per_yr": 0.0622,
+          "f2_1per_yr": 0.1434,
+          "ratio": 2.3056,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.003,
+          "power1": 0.0071,
+          "power2": 0.0066
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.357,
+        "r_squared": 0.967,
+        "p_value": 0.0166,
+        "variances": [
+          [
+            0.5,
+            1.1183
+          ],
+          [
+            1.0,
+            1.5243
+          ],
+          [
+            2.0,
+            2.088
+          ],
+          [
+            5.0,
+            2.5172
+          ]
+        ],
+        "interpretation": "\u03b1=0.36 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 8
+    },
+    {
+      "name": "J1640+2224",
+      "dm_pc_cm3": 18.426,
+      "dm_weight": 0.4,
+      "rms_residual_us": 0.291,
+      "timespan_yr": 15.8,
+      "n_toas": 6228,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0034,
+          "f2_1per_yr": 0.0234,
+          "ratio": 6.9474,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0396,
+          "power1": 0.0005,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0048,
+          "f2_1per_yr": 0.0111,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0008,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.006,
+          "f2_1per_yr": 0.0278,
+          "ratio": 4.6176,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0125,
+          "power1": 0.0003,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.006,
+          "f2_1per_yr": 0.0418,
+          "ratio": 6.9412,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0334,
+          "power1": 0.0003,
+          "power2": 0.0011
+        },
+        {
+          "f1_1per_yr": 0.0067,
+          "f2_1per_yr": 0.0311,
+          "ratio": 4.6316,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0264,
+          "power1": 0.0005,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0081,
+          "f2_1per_yr": 0.0375,
+          "ratio": 4.6087,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0035,
+          "power1": 0.0005,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0094,
+          "f2_1per_yr": 0.043,
+          "ratio": 4.5849,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0203,
+          "power1": 0.0004,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0103,
+          "f2_1per_yr": 0.0234,
+          "ratio": 2.2759,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0267,
+          "power1": 0.0004,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0111,
+          "f2_1per_yr": 0.0257,
+          "ratio": 2.3016,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.001,
+          "power1": 0.0005,
+          "power2": 0.0008
+        },
+        {
+          "f1_1per_yr": 0.0117,
+          "f2_1per_yr": 0.0265,
+          "ratio": 2.2727,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0299,
+          "power1": 0.0003,
+          "power2": 0.001
+        },
+        {
+          "f1_1per_yr": 0.0175,
+          "f2_1per_yr": 0.0402,
+          "ratio": 2.2929,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0097,
+          "power1": 0.0003,
+          "power2": 0.0004
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.288,
+        "r_squared": 0.903,
+        "p_value": 0.0496,
+        "variances": [
+          [
+            0.5,
+            6.3677
+          ],
+          [
+            1.0,
+            6.3677
+          ],
+          [
+            2.0,
+            9.4369
+          ],
+          [
+            5.0,
+            11.583
+          ]
+        ],
+        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 11
+    },
+    {
+      "name": "J1713+0747",
+      "dm_pc_cm3": 15.917,
+      "dm_weight": 0.55,
+      "rms_residual_us": 0.071,
+      "timespan_yr": 17.7,
+      "n_toas": 37866,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0033,
+          "f2_1per_yr": 0.0077,
+          "ratio": 2.3158,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0132,
+          "power1": 0.0002,
+          "power2": 0.0001
+        },
+        {
+          "f1_1per_yr": 0.0055,
+          "f2_1per_yr": 0.0375,
+          "ratio": 6.871,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0368,
+          "power1": 0.0001,
+          "power2": 0.0001
+        },
+        {
+          "f1_1per_yr": 0.0077,
+          "f2_1per_yr": 0.0354,
+          "ratio": 4.5682,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.037,
+          "power1": 0.0001,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0134,
+          "f2_1per_yr": 0.0312,
+          "ratio": 2.3289,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0264,
+          "power1": 0.0002,
+          "power2": 0.0001
+        },
+        {
+          "f1_1per_yr": 0.0143,
+          "f2_1per_yr": 0.0322,
+          "ratio": 2.2593,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0433,
+          "power1": 0.0001,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0143,
+          "f2_1per_yr": 0.0331,
+          "ratio": 2.321,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0184,
+          "power1": 0.0001,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0151,
+          "f2_1per_yr": 0.0342,
+          "ratio": 2.2558,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0468,
+          "power1": 0.0001,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0151,
+          "f2_1per_yr": 0.0347,
+          "ratio": 2.2907,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0119,
+          "power1": 0.0001,
+          "power2": 0.0001
+        },
+        {
+          "f1_1per_yr": 0.0151,
+          "f2_1per_yr": 0.0354,
+          "ratio": 2.3372,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0346,
+          "power1": 0.0001,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0164,
+          "f2_1per_yr": 0.0375,
+          "ratio": 2.2903,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0123,
+          "power1": 0.0003,
+          "power2": 0.0001
+        },
+        {
+          "f1_1per_yr": 0.0164,
+          "f2_1per_yr": 0.0384,
+          "ratio": 2.3441,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0415,
+          "power1": 0.0003,
+          "power2": 0.0002
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.082,
+        "r_squared": 0.889,
+        "p_value": 0.0573,
+        "variances": [
+          [
+            0.5,
+            3.2955
+          ],
+          [
+            1.0,
+            3.6838
+          ],
+          [
+            2.0,
+            3.8852
+          ],
+          [
+            5.0,
+            4.0073
+          ]
+        ],
+        "interpretation": "\u03b1=0.08 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 11
+    },
+    {
+      "name": "J1744-1134",
+      "dm_pc_cm3": 3.138,
+      "dm_weight": 0.35,
+      "rms_residual_us": 0.338,
+      "timespan_yr": 17.7,
+      "n_toas": 5888,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.004,
+          "f2_1per_yr": 0.028,
+          "ratio": 6.9565,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0488,
+          "power1": 0.0005,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.004,
+          "f2_1per_yr": 0.037,
+          "ratio": 9.2174,
+          "ln10_multiple": 4,
+          "target": 9.2103,
+          "deviation": 0.0071,
+          "power1": 0.0005,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0059,
+          "f2_1per_yr": 0.0409,
+          "ratio": 6.8824,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0254,
+          "power1": 0.0004,
+          "power2": 0.0009
+        },
+        {
+          "f1_1per_yr": 0.0068,
+          "f2_1per_yr": 0.0159,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0004,
+          "power2": 0.0009
+        },
+        {
+          "f1_1per_yr": 0.0068,
+          "f2_1per_yr": 0.0311,
+          "ratio": 4.5641,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0411,
+          "power1": 0.0004,
+          "power2": 0.0008
+        },
+        {
+          "f1_1per_yr": 0.0079,
+          "f2_1per_yr": 0.018,
+          "ratio": 2.2889,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0137,
+          "power1": 0.0004,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0087,
+          "f2_1per_yr": 0.0398,
+          "ratio": 4.56,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0452,
+          "power1": 0.0004,
+          "power2": 0.0008
+        },
+        {
+          "f1_1per_yr": 0.0087,
+          "f2_1per_yr": 0.0404,
+          "ratio": 4.62,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0148,
+          "power1": 0.0004,
+          "power2": 0.0007
+        },
+        {
+          "f1_1per_yr": 0.0159,
+          "f2_1per_yr": 0.037,
+          "ratio": 2.3297,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0271,
+          "power1": 0.0009,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0169,
+          "f2_1per_yr": 0.0384,
+          "ratio": 2.268,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0345,
+          "power1": 0.0008,
+          "power2": 0.0007
+        },
+        {
+          "f1_1per_yr": 0.0169,
+          "f2_1per_yr": 0.0398,
+          "ratio": 2.3505,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0479,
+          "power1": 0.0008,
+          "power2": 0.0008
+        },
+        {
+          "f1_1per_yr": 0.018,
+          "f2_1per_yr": 0.0409,
+          "ratio": 2.2718,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0006,
+          "power2": 0.0009
+        },
+        {
+          "f1_1per_yr": 0.018,
+          "f2_1per_yr": 0.0414,
+          "ratio": 2.301,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0016,
+          "power1": 0.0006,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.018,
+          "f2_1per_yr": 0.0419,
+          "ratio": 2.3301,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0275,
+          "power1": 0.0006,
+          "power2": 0.0004
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.264,
+        "r_squared": 0.933,
+        "p_value": 0.0339,
+        "variances": [
+          [
+            0.5,
+            3.973
+          ],
+          [
+            1.0,
+            5.2896
+          ],
+          [
+            2.0,
+            6.552
+          ],
+          [
+            5.0,
+            7.3071
+          ]
+        ],
+        "interpretation": "\u03b1=0.26 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 14
+    },
+    {
+      "name": "J1903+0327",
+      "dm_pc_cm3": 297.529,
+      "dm_weight": 0.8,
+      "rms_residual_us": 1.78,
+      "timespan_yr": 11.2,
+      "n_toas": 1604,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0064,
+          "f2_1per_yr": 0.0145,
+          "ratio": 2.28,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0226,
+          "power1": 0.0328,
+          "power2": 0.0127
+        },
+        {
+          "f1_1per_yr": 0.0074,
+          "f2_1per_yr": 0.0508,
+          "ratio": 6.8621,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0457,
+          "power1": 0.0141,
+          "power2": 0.0358
+        },
+        {
+          "f1_1per_yr": 0.0145,
+          "f2_1per_yr": 0.0332,
+          "ratio": 2.2807,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0219,
+          "power1": 0.0127,
+          "power2": 0.0126
+        },
+        {
+          "f1_1per_yr": 0.0227,
+          "f2_1per_yr": 0.052,
+          "ratio": 2.2921,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0105,
+          "power1": 0.017,
+          "power2": 0.028
+        },
+        {
+          "f1_1per_yr": 0.0227,
+          "f2_1per_yr": 0.0533,
+          "ratio": 2.3483,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0457,
+          "power1": 0.017,
+          "power2": 0.0303
+        },
+        {
+          "f1_1per_yr": 0.0245,
+          "f2_1per_yr": 0.0561,
+          "ratio": 2.2917,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0109,
+          "power1": 0.0125,
+          "power2": 0.0165
+        },
+        {
+          "f1_1per_yr": 0.0245,
+          "f2_1per_yr": 0.0569,
+          "ratio": 2.3229,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0203,
+          "power1": 0.0125,
+          "power2": 0.0165
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.266,
+        "r_squared": 0.917,
+        "p_value": 0.0423,
+        "variances": [
+          [
+            0.5,
+            8.4521
+          ],
+          [
+            1.0,
+            8.4521
+          ],
+          [
+            2.0,
+            11.3535
+          ],
+          [
+            5.0,
+            14.9221
+          ]
+        ],
+        "interpretation": "\u03b1=0.27 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 7
+    },
+    {
+      "name": "J1909-3744",
+      "dm_pc_cm3": 10.393,
+      "dm_weight": 0.45,
+      "rms_residual_us": 0.106,
+      "timespan_yr": 17.7,
+      "n_toas": 13466,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0012,
+          "f2_1per_yr": 0.0028,
+          "ratio": 2.2857,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0169,
+          "power1": 0.0012,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0028,
+          "f2_1per_yr": 0.026,
+          "ratio": 9.1875,
+          "ln10_multiple": 4,
+          "target": 9.2103,
+          "deviation": 0.0228,
+          "power1": 0.0005,
+          "power2": 0.001
+        },
+        {
+          "f1_1per_yr": 0.0035,
+          "f2_1per_yr": 0.0244,
+          "ratio": 6.9,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0078,
+          "power1": 0.0004,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0088,
+          "f2_1per_yr": 0.02,
+          "ratio": 2.26,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0426,
+          "power1": 0.0008,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0094,
+          "f2_1per_yr": 0.0219,
+          "ratio": 2.3396,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.037,
+          "power1": 0.0004,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0094,
+          "f2_1per_yr": 0.0431,
+          "ratio": 4.6038,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0014,
+          "power1": 0.0004,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0108,
+          "f2_1per_yr": 0.0244,
+          "ratio": 2.2623,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0403,
+          "power1": 0.0009,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0108,
+          "f2_1per_yr": 0.0251,
+          "ratio": 2.3279,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0253,
+          "power1": 0.0009,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0118,
+          "f2_1per_yr": 0.0269,
+          "ratio": 2.2687,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0339,
+          "power1": 0.0004,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0152,
+          "f2_1per_yr": 0.0346,
+          "ratio": 2.2791,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0235,
+          "power1": 0.0004,
+          "power2": 0.0008
+        },
+        {
+          "f1_1per_yr": 0.0152,
+          "f2_1per_yr": 0.0353,
+          "ratio": 2.3256,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.023,
+          "power1": 0.0004,
+          "power2": 0.0018
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.159,
+        "r_squared": 0.866,
+        "p_value": 0.0696,
+        "variances": [
+          [
+            0.5,
+            0.8468
+          ],
+          [
+            1.0,
+            1.0664
+          ],
+          [
+            2.0,
+            1.1741
+          ],
+          [
+            5.0,
+            1.2396
+          ]
+        ],
+        "interpretation": "\u03b1=0.16 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 11
+    },
+    {
+      "name": "J1939+2134",
+      "dm_pc_cm3": 71.023,
+      "dm_weight": 0.65,
+      "rms_residual_us": 0.077,
+      "timespan_yr": 17.7,
+      "n_toas": 14818,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0017,
+          "f2_1per_yr": 0.0156,
+          "ratio": 9.1818,
+          "ln10_multiple": 4,
+          "target": 9.2103,
+          "deviation": 0.0285,
+          "power1": 0.0004,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0036,
+          "f2_1per_yr": 0.0084,
+          "ratio": 2.3478,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0452,
+          "power1": 0.0004,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0036,
+          "f2_1per_yr": 0.0247,
+          "ratio": 6.9565,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0488,
+          "power1": 0.0004,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0045,
+          "f2_1per_yr": 0.0104,
+          "ratio": 2.3103,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0078,
+          "power1": 0.0005,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0045,
+          "f2_1per_yr": 0.0309,
+          "ratio": 6.8966,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0112,
+          "power1": 0.0005,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.006,
+          "f2_1per_yr": 0.0136,
+          "ratio": 2.2564,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0462,
+          "power1": 0.0003,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.006,
+          "f2_1per_yr": 0.0141,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0003,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.006,
+          "f2_1per_yr": 0.028,
+          "ratio": 4.641,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0359,
+          "power1": 0.0003,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0071,
+          "f2_1per_yr": 0.0167,
+          "ratio": 2.3478,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0452,
+          "power1": 0.0007,
+          "power2": 0.0007
+        },
+        {
+          "f1_1per_yr": 0.0084,
+          "f2_1per_yr": 0.019,
+          "ratio": 2.2778,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0248,
+          "power1": 0.0003,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0084,
+          "f2_1per_yr": 0.0196,
+          "ratio": 2.3519,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0493,
+          "power1": 0.0003,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0084,
+          "f2_1per_yr": 0.0385,
+          "ratio": 4.6111,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0059,
+          "power1": 0.0003,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0104,
+          "f2_1per_yr": 0.0235,
+          "ratio": 2.2687,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0339,
+          "power1": 0.0004,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0104,
+          "f2_1per_yr": 0.0241,
+          "ratio": 2.3284,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0258,
+          "power1": 0.0004,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0116,
+          "f2_1per_yr": 0.0261,
+          "ratio": 2.2533,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0493,
+          "power1": 0.0003,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0131,
+          "f2_1per_yr": 0.03,
+          "ratio": 2.2824,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0202,
+          "power1": 0.0004,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0131,
+          "f2_1per_yr": 0.0305,
+          "ratio": 2.3176,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0151,
+          "power1": 0.0004,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0136,
+          "f2_1per_yr": 0.0309,
+          "ratio": 2.2727,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0299,
+          "power1": 0.0003,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0141,
+          "f2_1per_yr": 0.0323,
+          "ratio": 2.2967,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0059,
+          "power1": 0.0005,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0147,
+          "f2_1per_yr": 0.0333,
+          "ratio": 2.2632,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0394,
+          "power1": 0.0002,
+          "power2": 0.0002
+        },
+        {
+          "f1_1per_yr": 0.0147,
+          "f2_1per_yr": 0.0337,
+          "ratio": 2.2947,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0078,
+          "power1": 0.0002,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0167,
+          "f2_1per_yr": 0.0385,
+          "ratio": 2.3056,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.003,
+          "power1": 0.0007,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0173,
+          "f2_1per_yr": 0.0394,
+          "ratio": 2.2768,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0258,
+          "power1": 0.0008,
+          "power2": 0.0004
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.289,
+        "r_squared": 0.899,
+        "p_value": 0.0517,
+        "variances": [
+          [
+            0.5,
+            0.003
+          ],
+          [
+            1.0,
+            0.003
+          ],
+          [
+            2.0,
+            0.0044
+          ],
+          [
+            5.0,
+            0.0054
+          ]
+        ],
+        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 23
+    },
+    {
+      "name": "J2317+1439",
+      "dm_pc_cm3": 21.904,
+      "dm_weight": 0.4,
+      "rms_residual_us": 0.444,
+      "timespan_yr": 17.1,
+      "n_toas": 3768,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0021,
+          "f2_1per_yr": 0.0096,
+          "ratio": 4.5833,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0218,
+          "power1": 0.0005,
+          "power2": 0.001
+        },
+        {
+          "f1_1per_yr": 0.0021,
+          "f2_1per_yr": 0.0194,
+          "ratio": 9.25,
+          "ln10_multiple": 4,
+          "target": 9.2103,
+          "deviation": 0.0397,
+          "power1": 0.0005,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0058,
+          "f2_1per_yr": 0.0135,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0004,
+          "power2": 0.0003
+        },
+        {
+          "f1_1per_yr": 0.0058,
+          "f2_1per_yr": 0.0268,
+          "ratio": 4.6364,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0312,
+          "power1": 0.0004,
+          "power2": 0.0007
+        },
+        {
+          "f1_1per_yr": 0.0058,
+          "f2_1per_yr": 0.0397,
+          "ratio": 6.8788,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.029,
+          "power1": 0.0004,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0086,
+          "f2_1per_yr": 0.0194,
+          "ratio": 2.2653,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0373,
+          "power1": 0.0003,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0086,
+          "f2_1per_yr": 0.0201,
+          "ratio": 2.3469,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0444,
+          "power1": 0.0003,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0086,
+          "f2_1per_yr": 0.0397,
+          "ratio": 4.6327,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0275,
+          "power1": 0.0003,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0096,
+          "f2_1per_yr": 0.0217,
+          "ratio": 2.2545,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.048,
+          "power1": 0.001,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0096,
+          "f2_1per_yr": 0.0443,
+          "ratio": 4.6,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0052,
+          "power1": 0.001,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0126,
+          "f2_1per_yr": 0.029,
+          "ratio": 2.3056,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.003,
+          "power1": 0.0003,
+          "power2": 0.0006
+        },
+        {
+          "f1_1per_yr": 0.0157,
+          "f2_1per_yr": 0.0355,
+          "ratio": 2.2556,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.047,
+          "power1": 0.0002,
+          "power2": 0.0007
+        },
+        {
+          "f1_1per_yr": 0.0157,
+          "f2_1per_yr": 0.0367,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0002,
+          "power2": 0.0004
+        },
+        {
+          "f1_1per_yr": 0.0187,
+          "f2_1per_yr": 0.0423,
+          "ratio": 2.2617,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0409,
+          "power1": 0.0003,
+          "power2": 0.0005
+        },
+        {
+          "f1_1per_yr": 0.0194,
+          "f2_1per_yr": 0.0443,
+          "ratio": 2.2793,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0233,
+          "power1": 0.0006,
+          "power2": 0.0005
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.297,
+        "r_squared": 0.902,
+        "p_value": 0.0503,
+        "variances": [
+          [
+            0.5,
+            13.4794
+          ],
+          [
+            1.0,
+            13.4794
+          ],
+          [
+            2.0,
+            20.2945
+          ],
+          [
+            5.0,
+            24.9833
+          ]
+        ],
+        "interpretation": "\u03b1=0.30 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 15
+    },
+    {
+      "name": "J1748-2021B",
+      "dm_pc_cm3": 223.6,
+      "dm_weight": 0.95,
+      "rms_residual_us": 2.1,
+      "timespan_yr": 8.5,
+      "n_toas": 482,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0032,
+          "f2_1per_yr": 0.0074,
+          "ratio": 2.3,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0026,
+          "power1": 0.0133,
+          "power2": 0.0137
+        },
+        {
+          "f1_1per_yr": 0.0032,
+          "f2_1per_yr": 0.0148,
+          "ratio": 4.6,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0052,
+          "power1": 0.0133,
+          "power2": 0.0117
+        },
+        {
+          "f1_1per_yr": 0.0048,
+          "f2_1per_yr": 0.011,
+          "ratio": 2.2667,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0359,
+          "power1": 0.0122,
+          "power2": 0.019
+        },
+        {
+          "f1_1per_yr": 0.0074,
+          "f2_1per_yr": 0.0345,
+          "ratio": 4.6522,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.047,
+          "power1": 0.0137,
+          "power2": 0.0103
+        },
+        {
+          "f1_1per_yr": 0.0074,
+          "f2_1per_yr": 0.0515,
+          "ratio": 6.9565,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0488,
+          "power1": 0.0137,
+          "power2": 0.0071
+        },
+        {
+          "f1_1per_yr": 0.0074,
+          "f2_1per_yr": 0.068,
+          "ratio": 9.1739,
+          "ln10_multiple": 4,
+          "target": 9.2103,
+          "deviation": 0.0364,
+          "power1": 0.0137,
+          "power2": 0.0079
+        },
+        {
+          "f1_1per_yr": 0.009,
+          "f2_1per_yr": 0.0622,
+          "ratio": 6.8929,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0149,
+          "power1": 0.0074,
+          "power2": 0.0125
+        },
+        {
+          "f1_1per_yr": 0.011,
+          "f2_1per_yr": 0.0499,
+          "ratio": 4.5588,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0463,
+          "power1": 0.019,
+          "power2": 0.0083
+        },
+        {
+          "f1_1per_yr": 0.011,
+          "f2_1per_yr": 0.0757,
+          "ratio": 6.9118,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.004,
+          "power1": 0.019,
+          "power2": 0.014
+        },
+        {
+          "f1_1per_yr": 0.0122,
+          "f2_1per_yr": 0.0287,
+          "ratio": 2.3421,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0395,
+          "power1": 0.0089,
+          "power2": 0.0086
+        },
+        {
+          "f1_1per_yr": 0.0122,
+          "f2_1per_yr": 0.056,
+          "ratio": 4.5789,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0262,
+          "power1": 0.0089,
+          "power2": 0.0259
+        },
+        {
+          "f1_1per_yr": 0.0132,
+          "f2_1per_yr": 0.0306,
+          "ratio": 2.3171,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0145,
+          "power1": 0.0059,
+          "power2": 0.0128
+        },
+        {
+          "f1_1per_yr": 0.0132,
+          "f2_1per_yr": 0.0602,
+          "ratio": 4.561,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0442,
+          "power1": 0.0059,
+          "power2": 0.0113
+        },
+        {
+          "f1_1per_yr": 0.0148,
+          "f2_1per_yr": 0.0345,
+          "ratio": 2.3261,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0235,
+          "power1": 0.0117,
+          "power2": 0.0103
+        },
+        {
+          "f1_1per_yr": 0.0148,
+          "f2_1per_yr": 0.068,
+          "ratio": 4.587,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0182,
+          "power1": 0.0117,
+          "power2": 0.0079
+        },
+        {
+          "f1_1per_yr": 0.0161,
+          "f2_1per_yr": 0.0374,
+          "ratio": 2.32,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0174,
+          "power1": 0.0143,
+          "power2": 0.0113
+        },
+        {
+          "f1_1per_yr": 0.0177,
+          "f2_1per_yr": 0.0818,
+          "ratio": 4.6182,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.013,
+          "power1": 0.0082,
+          "power2": 0.0119
+        },
+        {
+          "f1_1per_yr": 0.0193,
+          "f2_1per_yr": 0.0454,
+          "ratio": 2.35,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0474,
+          "power1": 0.0073,
+          "power2": 0.0062
+        },
+        {
+          "f1_1per_yr": 0.0225,
+          "f2_1per_yr": 0.0515,
+          "ratio": 2.2857,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0169,
+          "power1": 0.0061,
+          "power2": 0.0071
+        },
+        {
+          "f1_1per_yr": 0.0261,
+          "f2_1per_yr": 0.0593,
+          "ratio": 2.2716,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.031,
+          "power1": 0.016,
+          "power2": 0.0138
+        },
+        {
+          "f1_1per_yr": 0.0261,
+          "f2_1per_yr": 0.0602,
+          "ratio": 2.3086,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0061,
+          "power1": 0.016,
+          "power2": 0.0113
+        },
+        {
+          "f1_1per_yr": 0.0287,
+          "f2_1per_yr": 0.066,
+          "ratio": 2.3034,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0008,
+          "power1": 0.0086,
+          "power2": 0.0075
+        },
+        {
+          "f1_1per_yr": 0.0306,
+          "f2_1per_yr": 0.0699,
+          "ratio": 2.2842,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0184,
+          "power1": 0.0128,
+          "power2": 0.0145
+        },
+        {
+          "f1_1per_yr": 0.0345,
+          "f2_1per_yr": 0.0783,
+          "ratio": 2.271,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0316,
+          "power1": 0.0103,
+          "power2": 0.0097
+        },
+        {
+          "f1_1per_yr": 0.0345,
+          "f2_1per_yr": 0.0792,
+          "ratio": 2.2991,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0035,
+          "power1": 0.0103,
+          "power2": 0.014
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.0,
+        "r_squared": NaN,
+        "p_value": NaN,
+        "variances": [
+          [
+            0.5,
+            2.059
+          ],
+          [
+            1.0,
+            2.059
+          ],
+          [
+            2.0,
+            2.059
+          ],
+          [
+            5.0,
+            2.059
+          ]
+        ],
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 25
+    },
+    {
+      "name": "J1824-2452A",
+      "dm_pc_cm3": 119.9,
+      "dm_weight": 0.9,
+      "rms_residual_us": 1.25,
+      "timespan_yr": 14.2,
+      "n_toas": 1844,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0015,
+          "f2_1per_yr": 0.0106,
+          "ratio": 6.875,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0328,
+          "power1": 0.0026,
+          "power2": 0.0065
+        },
+        {
+          "f1_1per_yr": 0.0052,
+          "f2_1per_yr": 0.0118,
+          "ratio": 2.2593,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0433,
+          "power1": 0.0024,
+          "power2": 0.0065
+        },
+        {
+          "f1_1per_yr": 0.0067,
+          "f2_1per_yr": 0.0156,
+          "ratio": 2.3143,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0117,
+          "power1": 0.003,
+          "power2": 0.0052
+        },
+        {
+          "f1_1per_yr": 0.0067,
+          "f2_1per_yr": 0.0469,
+          "ratio": 6.9429,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0351,
+          "power1": 0.003,
+          "power2": 0.0017
+        },
+        {
+          "f1_1per_yr": 0.01,
+          "f2_1per_yr": 0.0235,
+          "ratio": 2.3462,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0436,
+          "power1": 0.0022,
+          "power2": 0.0019
+        },
+        {
+          "f1_1per_yr": 0.0106,
+          "f2_1per_yr": 0.0247,
+          "ratio": 2.3273,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0247,
+          "power1": 0.0065,
+          "power2": 0.0021
+        },
+        {
+          "f1_1per_yr": 0.0106,
+          "f2_1per_yr": 0.0492,
+          "ratio": 4.6364,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0312,
+          "power1": 0.0065,
+          "power2": 0.0018
+        },
+        {
+          "f1_1per_yr": 0.0118,
+          "f2_1per_yr": 0.0274,
+          "ratio": 2.3279,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0253,
+          "power1": 0.0065,
+          "power2": 0.0027
+        },
+        {
+          "f1_1per_yr": 0.0125,
+          "f2_1per_yr": 0.0285,
+          "ratio": 2.2769,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0257,
+          "power1": 0.0027,
+          "power2": 0.0022
+        },
+        {
+          "f1_1per_yr": 0.0125,
+          "f2_1per_yr": 0.0293,
+          "ratio": 2.3385,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0359,
+          "power1": 0.0027,
+          "power2": 0.0021
+        },
+        {
+          "f1_1per_yr": 0.0147,
+          "f2_1per_yr": 0.0335,
+          "ratio": 2.2895,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0131,
+          "power1": 0.0029,
+          "power2": 0.0021
+        },
+        {
+          "f1_1per_yr": 0.0156,
+          "f2_1per_yr": 0.0353,
+          "ratio": 2.2593,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0433,
+          "power1": 0.0052,
+          "power2": 0.0016
+        },
+        {
+          "f1_1per_yr": 0.0156,
+          "f2_1per_yr": 0.0364,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0052,
+          "power2": 0.0037
+        },
+        {
+          "f1_1per_yr": 0.0175,
+          "f2_1per_yr": 0.0407,
+          "ratio": 2.3187,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0161,
+          "power1": 0.003,
+          "power2": 0.0028
+        },
+        {
+          "f1_1per_yr": 0.0189,
+          "f2_1per_yr": 0.0426,
+          "ratio": 2.2551,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0475,
+          "power1": 0.0056,
+          "power2": 0.002
+        },
+        {
+          "f1_1per_yr": 0.0189,
+          "f2_1per_yr": 0.0438,
+          "ratio": 2.3163,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0137,
+          "power1": 0.0056,
+          "power2": 0.0033
+        },
+        {
+          "f1_1per_yr": 0.0201,
+          "f2_1per_yr": 0.0453,
+          "ratio": 2.2596,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.043,
+          "power1": 0.0027,
+          "power2": 0.0047
+        },
+        {
+          "f1_1per_yr": 0.0201,
+          "f2_1per_yr": 0.0469,
+          "ratio": 2.3365,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.034,
+          "power1": 0.0027,
+          "power2": 0.0017
+        },
+        {
+          "f1_1per_yr": 0.021,
+          "f2_1per_yr": 0.0474,
+          "ratio": 2.2569,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0457,
+          "power1": 0.0028,
+          "power2": 0.0029
+        },
+        {
+          "f1_1per_yr": 0.021,
+          "f2_1per_yr": 0.0492,
+          "ratio": 2.3394,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0369,
+          "power1": 0.0028,
+          "power2": 0.0018
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.0,
+        "r_squared": NaN,
+        "p_value": NaN,
+        "variances": [
+          [
+            0.5,
+            0.7542
+          ],
+          [
+            1.0,
+            0.7542
+          ],
+          [
+            2.0,
+            0.7542
+          ],
+          [
+            5.0,
+            0.7542
+          ]
+        ],
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 20
+    },
+    {
+      "name": "J1911-5958A",
+      "dm_pc_cm3": 216.79,
+      "dm_weight": 0.88,
+      "rms_residual_us": 1.9,
+      "timespan_yr": 7.8,
+      "n_toas": 312,
+      "p12_matches": [
+        {
+          "f1_1per_yr": 0.0077,
+          "f2_1per_yr": 0.0534,
+          "ratio": 6.9091,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0013,
+          "power1": 0.0148,
+          "power2": 0.0178
+        },
+        {
+          "f1_1per_yr": 0.0112,
+          "f2_1per_yr": 0.0256,
+          "ratio": 2.2813,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0213,
+          "power1": 0.0137,
+          "power2": 0.0283
+        },
+        {
+          "f1_1per_yr": 0.0112,
+          "f2_1per_yr": 0.0779,
+          "ratio": 6.9375,
+          "ln10_multiple": 3,
+          "target": 6.9078,
+          "deviation": 0.0297,
+          "power1": 0.0137,
+          "power2": 0.0174
+        },
+        {
+          "f1_1per_yr": 0.0126,
+          "f2_1per_yr": 0.0295,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0106,
+          "power2": 0.011
+        },
+        {
+          "f1_1per_yr": 0.0144,
+          "f2_1per_yr": 0.0337,
+          "ratio": 2.3415,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0389,
+          "power1": 0.0129,
+          "power2": 0.0125
+        },
+        {
+          "f1_1per_yr": 0.0168,
+          "f2_1per_yr": 0.0386,
+          "ratio": 2.2917,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0109,
+          "power1": 0.0147,
+          "power2": 0.0245
+        },
+        {
+          "f1_1per_yr": 0.0168,
+          "f2_1per_yr": 0.0779,
+          "ratio": 4.625,
+          "ln10_multiple": 2,
+          "target": 4.6052,
+          "deviation": 0.0198,
+          "power1": 0.0147,
+          "power2": 0.0174
+        },
+        {
+          "f1_1per_yr": 0.02,
+          "f2_1per_yr": 0.0467,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.0204,
+          "power2": 0.0163
+        },
+        {
+          "f1_1per_yr": 0.0235,
+          "f2_1per_yr": 0.0534,
+          "ratio": 2.2687,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0339,
+          "power1": 0.0215,
+          "power2": 0.0178
+        },
+        {
+          "f1_1per_yr": 0.0256,
+          "f2_1per_yr": 0.0593,
+          "ratio": 2.3151,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0125,
+          "power1": 0.0283,
+          "power2": 0.0231
+        },
+        {
+          "f1_1per_yr": 0.0295,
+          "f2_1per_yr": 0.0674,
+          "ratio": 2.2857,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0169,
+          "power1": 0.011,
+          "power2": 0.0099
+        },
+        {
+          "f1_1per_yr": 0.0295,
+          "f2_1per_yr": 0.0688,
+          "ratio": 2.3333,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0307,
+          "power1": 0.011,
+          "power2": 0.0109
+        },
+        {
+          "f1_1per_yr": 0.0312,
+          "f2_1per_yr": 0.0706,
+          "ratio": 2.2584,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0442,
+          "power1": 0.0173,
+          "power2": 0.0247
+        },
+        {
+          "f1_1per_yr": 0.0337,
+          "f2_1per_yr": 0.0779,
+          "ratio": 2.3125,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0099,
+          "power1": 0.0125,
+          "power2": 0.0174
+        },
+        {
+          "f1_1per_yr": 0.0351,
+          "f2_1per_yr": 0.0797,
+          "ratio": 2.27,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0326,
+          "power1": 0.0256,
+          "power2": 0.0111
+        },
+        {
+          "f1_1per_yr": 0.0386,
+          "f2_1per_yr": 0.0892,
+          "ratio": 2.3091,
+          "ln10_multiple": 1,
+          "target": 2.3026,
+          "deviation": 0.0065,
+          "power1": 0.0245,
+          "power2": 0.0208
+        }
+      ],
+      "scale_invariance": {
+        "scale_invariant": false,
+        "alpha": 0.0,
+        "r_squared": NaN,
+        "p_value": NaN,
+        "variances": [
+          [
+            0.5,
+            1.804
+          ],
+          [
+            1.0,
+            1.804
+          ],
+          [
+            2.0,
+            1.804
+          ],
+          [
+            5.0,
+            1.804
+          ]
+        ],
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+      },
+      "p12_hits": 16
+    }
+  ],
+  "summary": {
+    "n_p12_individual": 13,
+    "n_ktrap_individual": 0,
+    "gc_pulsars": [
+      "J1748-2021B",
+      "J1824-2452A",
+      "J1911-5958A"
+    ]
+  }
+}

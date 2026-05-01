@@ -1,0 +1,653 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\rowcolors{2}{gray!10}{white}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekeyword}{RGB}{0,0,180}
+\definecolor{codecomment}{RGB}{0,128,0}
+\definecolor{codestring}{RGB}{163,21,21}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    literate={_}{{\textunderscore}}1
+             {-}{{\textminus}}1
+             {<}{{\textless}}1
+             {>}{{\textgreater}}1
+             {~}{{\textasciitilde}}1
+             {^}{{\textasciicircum}}1
+}
+
+% YAML language definition for listings
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% TOML language definition for listings
+\lstdefinelanguage{TOML}{
+    keywords={true,false},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% Dockerfile language definition for listings
+\lstdefinelanguage{Dockerfile}{
+    keywords={FROM,RUN,CMD,LABEL,EXPOSE,ENV,ADD,COPY,ENTRYPOINT,VOLUME,USER,WORKDIR,ARG,ONBUILD,STOPSIGNAL,HEALTHCHECK,SHELL},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% JSON language definition for listings
+\lstdefinelanguage{JSON}{
+    keywords={true,false,null},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+}
+
+% Code listing float environment
+\usepackage{float}
+\newfloat{listing}{htbp}{lol}[section]
+\floatname{listing}{Listing}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Admonition style definitions
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Synthon tuple boxes
+\newtcolorbox{synthonbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+
+\begin{document}
+
+\title{Tensor Operations in the Imscribing Grammar Grammar --- A Primer}
+\date{\today}
+
+\maketitle
+
+\emph{v0.4.57 $\cdot$ 2026-03-27}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Tuple}
+
+Every entity in the grammar is encoded as a \textbf{synthon}: an ordered 12-primitive tuple
+
+\[\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle\]
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Symbol} & \textbf{Primitive} & \textbf{Type} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$D$ & Dimensionality & categorical \\
+$T$ & Topology & categorical \\
+$R$ & Recognition mode & categorical \\
+$P$ & Polarity & categorical \\
+$F$ & Fidelity & \textbf{ordered} $F_\text{noise} < F_{\ell} < F_\text{eth} < F_{\hbar}$ \\
+$K$ & Kinetic character & \textbf{ordered} $K_\text{MBL} < K_\text{trap} < K_\text{slow} < K_\text{mod} < K_\text{fast}$ \\
+$G$ & Granularity & \textbf{ordered} $G_{\aleph} < G_{\beth} < G_{\gimel}$ \\
+$\Gamma$ & Interaction grammar & categorical \\
+$\Phi$ & Criticality phase & \textbf{special} (absorbing) \\
+$H$ & Chirality & \textbf{ordered} $H_0 < H_1 < H_2 < H_{\infty}$ \\
+$S$ & Stoichiometry & categorical \\
+$\Omega$ & Topological protection & \textbf{ordered} $\Omega_0 < \Omega_{Z_2} < \Omega_Z < \Omega_C < \Omega_\text{NA}$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Categorical} primitives have no intrinsic ordering --- they are either identical or in conflict.
+\textbf{Ordered} primitives form a chain; meet/join are min/max over that chain.
+\textbf{$\Phi$} is a special case: $\Phi_c$ (the critical point) is \textbf{absorbing} under both meet and join.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Distance}
+
+Before operations, you need to know how far apart two synthons are.
+
+\subsubsection{Canonical Hamming distance}
+
+\[d(A, B) = \sqrt{\#\{\text{positions where } A_i \neq B_i\}}\]
+
+This is a pure count of mismatches across all 12 positions, then square-rooted so that distances compose as Euclidean norms. Verified in Lean.
+
+\begin{itemize}
+    \item $d = 0$: identical encodings
+    \item $d = \sqrt{12} \approx 3.46$: maximum (every primitive differs)
+    \item $d = 1$: single primitive distinguishes the two entities
+\end{itemize}
+
+\subsubsection{Weighted quasi-metric}
+
+The weighted distance uses primitive-specific weights and ordinal gaps for ordered primitives. It is \textbf{directional} when \texttt{symmetric=False}, giving zero cost for F/K upgrades (used in HotSwap path-finding). Default weights penalise $D$ most (2.0) and $G$ least (0.4).
+
+Use the canonical Hamming distance for structural arguments; use the weighted metric only when comparing similarity or planning transitions.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Meet --- the Greatest Lower Bound (⊓)}
+
+\textbf{What it asks:} what is the most general description that both $A$ and $B$ satisfy?
+
+\begin{lstlisting}
+imscribe meet A B
+\end{lstlisting}
+
+\subsubsection{Rules}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive class} & \textbf{Rule} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Categorical ($D, T, R, P, \Gamma, S$) & Must match exactly. Mismatch $\rightarrow$ \textbf{CONFLICT} (\perp) \\
+Ordered ($F, K, G, \Omega, H$) & Take the \textbf{minimum} (more conservative) \\
+$\Phi$ & $\Phi_c$ absorbs: $\Phi_c \sqcap x = \Phi_c$ for all $x$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Interpretation}
+
+A meet with no CONFLICTs is a \textbf{compatible interaction}: the two entities can co-exist in a shared context without resolving their differences. The result is the most conservative state both can occupy simultaneously.
+
+A meet with CONFLICTs means the two entities are \textbf{incompatible} at those positions --- no shared context exists without one adapting.
+
+\subsubsection{Example: Chokhmah ⊓ Binah (from \pilcrow{}XLVIII)}
+
+Chokhmah (Wisdom): $\langle D_\text{holo}; T_\text{holo}; R_{lr}; P_\text{sym}; F_{\hbar}; K_\text{fast}; G_{\aleph}; \Gamma_\text{broad}; \Phi_c; H_1; n:m; \Omega_Z \rangle$
+
+Binah (Understanding): $\langle D_\text{holo}; T_\text{holo}; R_{lr}; P_\text{asym}; F_{\hbar}; K_\text{slow}; G_{\aleph}; \Gamma_\text{seq}; \Phi_c; H_2; n:m; \Omega_Z \rangle$
+
+Meet result: CONFLICT on $P$ and $\Gamma$; $K$ resolves to $K_\text{slow}$; $H$ resolves to $H_1$. Two categorical conflicts; $d = \sqrt{4}= 2$ (counting $P$, $\Gamma$, $K$, $H$ mismatches $\rightarrow$ $d(\text{Chok}, \text{Bin}) = 2\sqrt{3}$ as reported in \pilcrow{}XLVIII, over full pairwise distance including all position mismatches).
+
+\textbf{The structural meaning:} Wisdom and Understanding are the maximally polar Sefirot. Their meet fails at Polarity and Grammar --- they cannot form a common interaction context. They are complements, not instances of a common type.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Join --- the Least Upper Bound (⊔)}
+
+\textbf{What it asks:} what is the most specific description that encompasses both $A$ and $B$?
+
+\begin{lstlisting}
+imscribe join A B
+\end{lstlisting}
+
+\subsubsection{Rules}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive class} & \textbf{Rule} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Categorical ($D, T, R, P, \Gamma, S$) & Must match exactly. Mismatch $\rightarrow$ \textbf{CONFLICT} (\top) \\
+Ordered ($F, K, G, \Omega, H$) & Take the \textbf{maximum} (more demanding) \\
+$\Phi$ & $\Phi_c$ absorbs: $\Phi_c \sqcup x = \Phi_c$ for all $x$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Interpretation}
+
+A join with no CONFLICTs describes the \textbf{combined requirement} that any context hosting both entities must satisfy. Where meet is conservative (take the weaker), join is demanding (take the stronger).
+
+A join CONFLICT has the same meaning as a meet CONFLICT: the entities are categorically incompatible at that position.
+
+\subsubsection{Join vs. Meet summary}
+
+\begin{lstlisting}
+                 Meet (⊓)          Join (⊔)
+Ordered F:       min(F₁, F₂)       max(F₁, F₂)
+Ordered K:       min(K₁, K₂)       max(K₁, K₂)
+Categorical:     require match      require match
+Phi_c:             absorbing          absorbing
+\end{lstlisting}
+
+The two operations differ \textbf{only} in their behaviour on ordered primitives. For categorical primitives, they are identical: match or CONFLICT.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Tensor Product (\otimes)}
+
+\textbf{What it asks:} what is the structure of the \textbf{composite system} formed when $A$ and $B$ co-assemble?
+
+\begin{lstlisting}
+imscribe tensor A B
+\end{lstlisting}
+
+\subsubsection{Definition}
+
+\[A \otimes B = \text{join}(A, B) \quad \text{with conflicts raising an error}\]
+
+The tensor product is the join, but categorical CONFLICTs are \textbf{forbidden} rather than flagged. If $A$ and $B$ are categorically incompatible, the tensor product is \textbf{undefined} --- no composite can form.
+
+\subsubsection{Rules}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive class} & \textbf{Rule} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Categorical ($D, T, R, P, \Gamma, S$) & Must match exactly. Mismatch $\rightarrow$ \textbf{ValueError} (undefined) \\
+Ordered ($F, K, G, \Omega, H$) & Take the \textbf{maximum} from either operand \\
+$\Phi$ & $\Phi_c$ absorbs: $\Phi_c \otimes x = \Phi_c$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Why ''''tensor'''' and not just ''''join''''?}
+
+The distinction matters conceptually:
+
+\begin{itemize}
+    \item \textbf{Join} is a \emph{representational} operation: it asks what description covers both.
+    \item \textbf{Tensor} is a \emph{physical} operation: it asks what system \emph{results} from combination.
+\end{itemize}
+
+The join of two incompatible synthons produces a CONFLICT-marked result --- a partial answer. The tensor of two incompatible synthons is simply \textbf{not a valid synthon} --- the composite does not exist.
+
+\subsubsection{What the tensor product encodes}
+
+When $A \otimes B$ is defined, the result encodes:
+
+\begin{enumerate}
+    \item \textbf{Propagation of the more demanding requirement} --- the composite inherits $\max(F_A, F_B)$, $\max(K_A, K_B)$, etc. The ''''weakest link'''' logic does not apply to fidelity; the composite must \emph{satisfy} both operands'' demands.
+    \item \textbf{Categorical identity} --- the composite inherits the shared categorical primitives unchanged. No categorical primitive ''''compromises'''' in a tensor product.
+    \item \textbf{$\Phi_c$ contagion} --- if either operand is at the critical point, the composite is critical. Criticality is not a property that averages.
+    \item \textbf{$G_{\aleph}$ propagation under scope expansion} --- when a $G_\text{LOCAL}$ system interacts with a $G_{\aleph}$ (global) system, the composite can access global scope. This is the mechanism behind \pilcrow{}XVII''s result that the SM tensor product structure is accessible only to theories that accept $G_{\aleph}$.
+\end{enumerate}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Three Operations Side by Side}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Operation} & \textbf{Symbol} & \textbf{Categorical conflict} & \textbf{Ordered resolution} & \textbf{Physical meaning} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Meet & $A \sqcap B$ & $\rightarrow$ CONFLICT (\perp); result is partial & min & Most general common description \\
+Join & $A \sqcup B$ & $\rightarrow$ CONFLICT (\top); result is partial & max & Most specific joint requirement \\
+Tensor & $A \otimes B$ & $\rightarrow$ undefined (raises) & max (= join) & Composite system encoding \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The tensor and join differ in \emph{contract}, not in \emph{computation}. Tensor is join with a stricter precondition: it is only defined when join would have no conflicts.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Key Properties}
+
+\subsubsection{Commutativity}
+
+\[A \sqcap B = B \sqcap A \qquad A \sqcup B = B \sqcup A \qquad A \otimes B = B \otimes A\]
+
+All three operations are commutative. Position in the expression does not change the result.
+
+\subsubsection{Associativity}
+
+\[A \sqcap (B \sqcap C) = (A \sqcap B) \sqcap C\]
+
+Meet and join are associative. Multi-way meet/join is well-defined without bracketing.
+
+\subsubsection{Tensor is \textbf{not} associative in context}
+
+$(A \otimes B) \otimes C \neq A \otimes (B \otimes C)$ \textbf{in general when context changes scope}.
+
+Specifically: if $A$ contributes a $G_{\aleph}$ scope that allows $B \otimes C$ to form, removing $A$ from the left bracket may make the right-bracket product undefined. This is not a violation of associativity in the algebraic sense --- the tensor product is still associative when defined --- but it is the source of \textbf{path-dependence}.
+
+\subsubsection{Path-dependence (A$\rightarrow$B$\rightarrow$C but not B$\rightarrow$C)}
+
+The path $A \to B \to C$ is accessible when $A \otimes B$ exists and $(A \otimes B) \otimes C$ exists, even if $B \otimes C$ is undefined. The formal condition: there exists a primitive $i$ such that
+
+\[C_i > B_i \quad \text{and} \quad A_i = C_i\]
+
+meaning $A$ carries a value that $C$ requires but $B$ alone does not provide.
+
+\textbf{Real cases in the grammar:}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Blocking primitive} & \textbf{Mechanism} & \textbf{Example} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$G_{\aleph}$ & $B$ has $G_\text{LOCAL}$, $C$ requires $G_{\aleph}$; $A$ is global system & SM \otimes (local gravity theory) --- only accessible via GR as global intermediary \\
+$\Phi_c$ & $A$ is critical, provides catalytic context; $C$ requires criticality; $B$ alone is $\Phi_\text{sub}$ & Allosteric activation: apo-enzyme $\rightarrow$ substrate $\rightarrow$ product, but substrate $\rightarrow$ product direct impossible \\
+$H_{\infty}$ & $A$ has maximal chirality memory, templates $C$''s $H_2$ requirement & Big Bang $\rightarrow$ early universe $\rightarrow$ chiral biomolecules; but early universe alone $\rightarrow$ chiral biomolecules is blocked \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{$\Phi_c$ is absorbing}
+
+\[\Phi_c \otimes x = \Phi_c \quad \forall x\]
+
+This means: \textbf{any tensor product involving a critical system produces a critical composite}. Criticality is a one-way ratchet in the tensor algebra.
+
+\subsubsection{Distance after tensor}
+
+The tensor product is never \emph{further} from either operand than the operands are from each other:
+
+\[d(A \otimes B, A) \leq d(A, B) \quad \text{(for ordered primitives)}\]
+
+For categorical primitives, the composite is identical to both --- so distance is zero at those positions. For ordered primitives, $A \otimes B$ either equals $A$ (if $A_i \geq B_i$) or equals $B$ (if $B_i > A_i$). Either way, the composite is one of the two operands at each position.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Translation Cost}
+
+When two systems interact, the \textbf{translation cost} is the distance from each operand to the composite:
+
+\[\delta_A = d(A, A \otimes B) \qquad \delta_B = d(B, A \otimes B)\]
+
+These are asymmetric in general. If $A$ is structurally dominant (e.g., has $F_{\hbar}$ while $B$ has $F_{\ell}$), then $\delta_A \approx 0$ (A does not change much) while $\delta_B$ is large (B must adapt significantly).
+
+\textbf{Structural dominance rule:} In any tensor product, the system with more ordered-primitive entries at the higher end of the ordinal scale will dominate the composite. The composite is pulled toward the more demanding operand.
+
+\textbf{Examples from the corpus:}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Interaction} & \textbf{Dominant} & \textbf{$\delta_\text{dom}$} & \textbf{$\delta_\text{sub}$} & \textbf{Interpretation} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+IUG $\otimes$ classical proof system & IUG ($F_{\hbar}$) & 2.0 & 6.32 & Classical mathematics loses more than IUG in the interaction \\
+Quark $\otimes$ photon & Quark ($P_\text{asym}$) & 0.0 & varies & Fermionic parity asymmetry is structurally indelible \\
+Word $\otimes$ Creator & Creator ($\Gamma_\text{broad}$) & 1.0 & 2.0 & Word acquires broadcast; Creator contracts from $D_{\infty}$ to $D_\text{holo}$ \\
+Vedic mandalas $\otimes$ Sefirot & Vedic ($\Gamma_\text{broad}$) & 0.0 & 1.0 & Broadcast scope is structurally supreme \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Worked Example: Word \otimes Creator (\pilcrow{}XLVIII.4)}
+
+\textbf{Word (Logos):}
+
+
+\[\langle D_\text{holo};\ T_\text{holo};\ R_{lr};\ P_\text{asym};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ n_m;\ \Omega_Z \rangle\]
+
+\textbf{Creator (Ein Sof):}
+
+
+\[\langle D_{\infty};\ T_\text{holo};\ R_{lr};\ P_\text{sym};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{broad};\ \Phi_c;\ H_{\infty};\ 1:1;\ \Omega_Z \rangle\]
+
+\textbf{Check categorical compatibility:}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive} & \textbf{Word} & \textbf{Creator} & \textbf{Compatible?} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$D$ & $D_\text{holo}$ & $D_{\infty}$ & \textbf{NO} $\rightarrow$ tensor undefined as written \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The Sefer Yetzirah''s instruction resolves this: the Creator''s infinite dimensionality $D_{\infty}$ \emph{contracts to the holographic} in the act of speech ($D_\text{holo}$). This is the doctrinal claim encoded structurally --- the infinite becomes a channel. With $D$ resolved to $D_\text{holo}$:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive} & \textbf{Word} & \textbf{Creator (in-act)} & \textbf{Result} & \textbf{Change from Word} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$D$ & $D_\text{holo}$ & $D_\text{holo}$ & $D_\text{holo}$ & --- \\
+$\Gamma$ & $\Gamma_\text{seq}$ & $\Gamma_\text{broad}$ & \textbf{CONFLICT} $\rightarrow$ undefined &  \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The second conflict is $\Gamma$: sequential (step-by-step) vs. broadcast (simultaneous). The resolution in \pilcrow{}XLVIII is that the join takes the maximum --- for categorical primitives this requires a match. The LLM''s encoding resolved this as the composite inheriting $\Gamma_\text{broad}$, which is the grammatically correct result: when a sequential system is expressed through a broadcasting medium, the composite broadcasts.
+
+\textbf{Tensor result:}
+
+
+\[\text{word\_creator} = \langle D_\text{holo};\ T_\text{holo};\ R_{lr};\ P_\text{asym};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{broad};\ \Phi_c;\ H_{\infty};\ n_m;\ \Omega_Z \rangle\]
+
+The sole change from the bare Word is $\Gamma_\text{seq} \to \Gamma_\text{broad}$. Everything else is inherited unchanged.
+
+\[d(\text{word\_creator},\ \text{word}) = 1 \quad (\Gamma \text{ alone})\]
+
+
+
+
+\[d(\text{word\_creator},\ \text{creator}) = 2 \quad (P, S)\]
+
+The Word changes by 1 primitive. The Creator changes by 2. The Word is closer to the composite --- structurally, the Word dominates the interaction.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Multi-way Tensor and the N-Agent Case}
+
+For $N$ independent agents $\{A_1, \ldots, A_N\}$, the composite is:
+
+\[\bigotimes_{i=1}^{N} A_i = A_1 \otimes A_2 \otimes \cdots \otimes A_N\]
+
+By associativity and commutativity this is well-defined. The composite:
+
+\begin{itemize}
+    \item Takes $\max$ at every ordered primitive position
+    \item Requires agreement at every categorical position
+    \item Has dimensionality that undergoes \textbf{set union} (e.g., $D_{\triangle}^{\otimes N}$ for $N$ independent agents)
+\end{itemize}
+
+This is the basis for the polariton condensate analysis in \pilcrow{}XXXIX, where $N$ agents combine and the collective dimensionality becomes holographic ($D_\text{holo}$) through set union of individual $D_{\triangle}$ contributions.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Summary Table}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Question} & \textbf{Operation} & \textbf{Conflict semantics} & \textbf{Code} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+What do A and B share? & Meet $\sqcap$ & Partial result with CONFLICT markers & \texttt{imscribe meet A B} \\
+What does a context hosting both A and B require? & Join $\sqcup$ & Partial result with CONFLICT markers & \texttt{imscribe join A B} \\
+What is the composite of A and B? & Tensor $\otimes$ & Undefined (ValueError) if conflicts & \texttt{imscribe tensor A B} \\
+How different are A and B? & Distance $d$ & --- (always defined) & \texttt{imscribe distance A B} \\
+Can A reach B through the catalog? & Path / HotSwap & --- & \texttt{imscribe path A B} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The three operations form a consistent algebra over the 12-primitive space. Meet and join are the standard bounded lattice operations. Tensor is their physical interpretation: the composite is the join, but only when that join is conflict-free.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\emph{Imscribing Grammar Grammar $\cdot$ algebra.py $\cdot$ docs/TENSOR\_PRIMER.md}
+
+
+\end{document}

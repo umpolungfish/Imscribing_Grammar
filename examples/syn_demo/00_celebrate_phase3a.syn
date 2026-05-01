@@ -1,0 +1,53 @@
+version: "1.0"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase 3a Victory Run
+#
+# A design program that would have required ~40 lines of Python scripting
+# before Phase 3a — now expressed in 20 lines of YAML.
+#
+# Pipeline:
+#   1. Certify the Soai cycle as a Φ_c candidate (Axiom 6 + reset class + score)
+#   2. Lift the Φ_c field to Phi_c (from Phi_sub) — typed state transition
+#   3. Tensor with the db24c8 rotaxane system to form a temporal/mechanical ensemble
+#   4. Post-hoc: assert ensemble Δξ_CP is within tolerance (evalRWS-style)
+#   5. Post-hoc: assert the pipeline ran in ≤ 10 steps
+#
+# The output.assert block demonstrates the distinction between:
+#   - Mid-pipeline assertions (do: assert:) — proof obligations on the SYNTHON
+#   - Post-hoc assertions (output: assert:) — proof obligations on the RESULT
+#     (cost, step count, context flags) — requires MonadWriter read-out
+# ─────────────────────────────────────────────────────────────────────────────
+
+start: soai_pyrimidyl_autocatalytic_cycle
+
+strategies:
+  certify_soai:
+    - assert:
+        expr: axiom6_satisfied
+        message: "Axiom 6: closed-cycle grounding required"
+    - assert:
+        expr: reset_type == continuous
+        message: "Must be open dissipative (continuous driving)"
+    - assert:
+        expr: phi_c_score > 0.80
+        message: "Φ_c probe: score must exceed 0.80"
+
+do:
+  # Step 1: certification gate
+  - bind: certify_soai
+
+  # Step 2: promote Φ_c field from Phi_sub → Phi_c
+  - lift: critical
+
+  # Step 3: tensor with the db24c8 mechanical interlocked system
+  # Forms a temporal/mechanical ensemble with F-bottleneck at F_ℏ
+  - tensor: db24c8_dialkylammonium_pseudorotaxane
+    lambda: 0.30
+
+output:
+  format: text
+  assert:
+    - total_delta_xi < 20.0
+    - total_delta_xi >= 10.0
+    - steps <= 10

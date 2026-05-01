@@ -1,0 +1,115 @@
+{
+  "xte_j1810": [
+    {
+      "campaign": "Caleb+ 2022 MeerKAT L+S",
+      "f_lo": 1284.0,
+      "f_hi": 2950.0,
+      "ratio": 2.2975,
+      "p12_match": true,
+      "deviation": 0.0051,
+      "band_null": 0.0529,
+      "n_pulses": 44,
+      "n_independent": 1,
+      "p_value": 0.052865,
+      "z": 4.233
+    },
+    {
+      "campaign": "Pearlman+ 2023 Parkes+Effelsberg",
+      "f_lo": 2100.0,
+      "f_hi": 3100.0,
+      "ratio": 1.4762,
+      "p12_match": false,
+      "deviation": 0.8264,
+      "band_null": 0.0,
+      "n_pulses": 12,
+      "n_independent": 1,
+      "p_value": 1.0,
+      "z": -0.001
+    },
+    {
+      "campaign": "Maan+ 2022 uGMRT B3+B4",
+      "f_lo": 300.0,
+      "f_hi": 650.0,
+      "ratio": 2.1667,
+      "p12_match": false,
+      "deviation": 0.1359,
+      "band_null": 0.0202,
+      "n_pulses": 8,
+      "n_independent": 1,
+      "p_value": 1.0,
+      "z": -0.144
+    }
+  ],
+  "vela": [
+    {
+      "f_lo": 327.0,
+      "f_hi": 1520.0,
+      "ratio": 4.6483,
+      "deviation": 0.0431,
+      "simultaneous": false,
+      "band_lo": "Arecibo_L",
+      "band_hi": "Parkes_L",
+      "band_null": 0.0,
+      "p_value": 1e-06,
+      "z": 999.999
+    },
+    {
+      "f_lo": 408.0,
+      "f_hi": 950.0,
+      "ratio": 2.3284,
+      "deviation": 0.0258,
+      "simultaneous": false,
+      "band_lo": "Parkes_UHF",
+      "band_hi": "Parkes_L",
+      "band_null": 0.1023,
+      "p_value": 0.102335,
+      "z": 2.962
+    },
+    {
+      "f_lo": 610.0,
+      "f_hi": 1413.0,
+      "ratio": 2.3164,
+      "deviation": 0.0138,
+      "simultaneous": false,
+      "band_lo": "Parkes_UHF",
+      "band_hi": "Parkes_L",
+      "band_null": 0.1032,
+      "p_value": 0.10319,
+      "z": 2.948
+    },
+    {
+      "f_lo": 660.0,
+      "f_hi": 1520.0,
+      "ratio": 2.303,
+      "deviation": 0.0004,
+      "simultaneous": false,
+      "band_lo": "PPTA_UHF",
+      "band_hi": "Parkes_L",
+      "band_null": 0.1029,
+      "p_value": 0.102885,
+      "z": 2.953
+    },
+    {
+      "f_lo": 1369.0,
+      "f_hi": 3100.0,
+      "ratio": 2.2644,
+      "deviation": 0.0382,
+      "simultaneous": true,
+      "band_lo": "Parkes_L",
+      "band_hi": "PPTA_10cm",
+      "band_null": 0.1451,
+      "p_value": 0.145085,
+      "z": 2.427
+    }
+  ],
+  "fisher_p_combined": 0.045025867730411916,
+  "fisher_z_combined": 2.0044127212094773,
+  "deviation_compression": {
+    "n_simultaneous_pairs": 2,
+    "mean_dev": 0.0216,
+    "expected_dev_null": 0.025,
+    "ttest_t": -0.202,
+    "ttest_p": 0.4364
+  },
+  "verdict": "Marginal (Z=2.0)"
+}
