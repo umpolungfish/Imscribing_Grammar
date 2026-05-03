@@ -53,7 +53,7 @@ ROOT = Path(__file__).parent
 # Value sets in ordinal order (index = ordinal - 1)
 VALUES: dict[str, list[str]] = {
     "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
-    "T":     ["T_network", "T_in", "T_bowtie", "T_box", "T_odot"],
+    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
     "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
     "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
     "F":     ["F_ell", "F_eth", "F_hbar"],

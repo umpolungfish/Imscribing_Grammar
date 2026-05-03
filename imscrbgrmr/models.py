@@ -17,8 +17,8 @@ Ordering conventions (match Lean Core.lean):
 
 Cross-primitive axioms (enforced in Synthon.__post_init__; mirroring Core.lean):
   B: prot >= Omega_Z → chir >= H2
-  C: D_holo ↔ T_holo
-  D: Omega_NA → D_holo
+  C: D_odot ↔ T_odot
+  D: Omega_NA → D_odot
 """
 from __future__ import annotations
 
@@ -85,14 +85,18 @@ class Dimensionality(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Dimensionality":
-        return {
+        _map = {
             "D_point": cls.D_point,
             "D_line": cls.D_line,
             "D_wedge": cls.D_wedge,    "D_∧": cls.D_wedge,     "D_triangle": cls.D_cube,
             "D_cube": cls.D_cube,      "D_△": cls.D_cube,
             "D_infty": cls.D_infty,    "D_∞": cls.D_infty,     "D_infinity": cls.D_infty,
             "D_holo": cls.D_holo,      "D_odot": cls.D_holo,   "D_⊙": cls.D_holo,
-        }.get(s, cls.D_wedge)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Dimensionality symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -139,7 +143,7 @@ class Topology(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Topology":
-        return {
+        _map = {
             "T_linear": cls.T_linear,       "T_chains": cls.T_linear,
             "T_branched": cls.T_branched,
             "T_network": cls.T_network,     "T_∈": cls.T_bowl,      "T_in": cls.T_bowl,
@@ -154,7 +158,11 @@ class Topology(Enum):
             "T_⊠": cls.T_cage,
             "T_bowl": cls.T_bowl,
             "T_braid": cls.T_braid,         "T_square": cls.T_network,
-        }.get(s, cls.T_network)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Topology symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -184,7 +192,7 @@ class Recognition(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Recognition":
-        return {
+        _map = {
             # canonical names
             "R_super":   cls.R_superset,
             "R_cat":     cls.R_subset,
@@ -198,7 +206,11 @@ class Recognition(Enum):
             "R_allosteric": cls.R_allosteric,
             "R_mechanical": cls.R_mechanical, "R_⇔": cls.R_mechanical,
             "R_covalent_dynamic": cls.R_covalent_dynamic,
-        }.get(s, cls.R_superset)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Recognition symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -232,7 +244,7 @@ class Polarity(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Polarity":
-        return {
+        _map = {
             # canonical names
             "P_asym":    cls.P_neutral,
             "P_psi":     cls.P_plus,
@@ -245,7 +257,11 @@ class Polarity(Enum):
             "P_minus":       cls.P_minus,       "P-": cls.P_minus,
             "P_pm_pseudo":   cls.P_pm_pseudo,   "P_±^ψ": cls.P_pm_pseudo,
             "P_directional": cls.P_directional,
-        }.get(s, cls.P_neutral)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Polarity symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -289,7 +305,7 @@ class Grammar(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Grammar":
-        return {
+        _map = {
             "G_and": cls.G_and,   "Gamma_and": cls.G_and,   "Γ_∧": cls.G_and,
             "Gamma_otimes": cls.G_and,   "Γ_⊗": cls.G_and,   # old prompt symbol → G_and (specific)
             "Gamma_odot": cls.G_and,     "Γ_⊙": cls.G_and,   # old prompt symbol → G_and (selective)
@@ -299,7 +315,12 @@ class Grammar(Enum):
             "G_xor": cls.G_xor,
             "G_impl": cls.G_impl,
             "G_dissipative": cls.G_dissipative, "Gamma_dissipative": cls.G_dissipative,
-        }.get(s, cls.G_and)
+            "G_broad": cls.G_dissipative,  # canonical external name → internal G_dissipative
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Grammar symbol: {s!r}") from None
 
     @property
     def partner_logic(self) -> str:
@@ -338,12 +359,16 @@ class Fidelity(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Fidelity":
-        return {
+        _map = {
             "F_noise": cls.F_noise,
             "F_ell": cls.F_ell,   "F_ℓ": cls.F_ell,   "LOW": cls.F_ell,
             "F_eth": cls.F_eth,   "F_ℇ": cls.F_eth,   "MEDIUM": cls.F_eth,
             "F_hbar": cls.F_hbar, "F_ℏ": cls.F_hbar,  "HIGH": cls.F_hbar,
-        }.get(s, cls.F_ell)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Fidelity symbol: {s!r}") from None
 
     @property
     def numeric_value(self) -> float:
@@ -379,13 +404,17 @@ class KineticChar(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "KineticChar":
-        return {
+        _map = {
             "K_fast": cls.K_fast, "FAST": cls.K_fast,
             "K_mod":  cls.K_mod,  "MODERATE": cls.K_mod,
             "K_slow": cls.K_slow, "SLOW": cls.K_slow,
             "K_trap": cls.K_trap, "TRAP": cls.K_trap,
             "K_MBL":  cls.K_MBL,  "MBL": cls.K_MBL,
-        }.get(s, cls.K_mod)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown KineticChar symbol: {s!r}") from None
 
     @property
     def numeric_value(self) -> float:
@@ -427,11 +456,15 @@ class Granularity(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Granularity":
-        return {
+        _map = {
             "G_aleph": cls.G_aleph, "G_א": cls.G_aleph,
             "G_beth":  cls.G_beth,  "G_ב": cls.G_beth,
             "G_gimel": cls.G_gimel, "G_ג": cls.G_gimel,
-        }.get(s, cls.G_beth)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Granularity symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -462,13 +495,17 @@ class Criticality(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
-        return {
+        _map = {
             "Phi_sub":       cls.Phi_sub,       "Φ_sub":   cls.Phi_sub,
             "Phi_c":         cls.Phi_c,         "Φ_c":     cls.Phi_c,
             "Phi_c_complex": cls.Phi_c_complex, "Φ_c_ℂ":  cls.Phi_c_complex,
             "Phi_EP":        cls.Phi_EP,        "Φ_EP":    cls.Phi_EP,
             "Phi_sup":       cls.Phi_sup,       "Phi_super": cls.Phi_sup,  "Φ_sup": cls.Phi_sup,
-        }.get(s, cls.Phi_sub)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Criticality symbol: {s!r}") from None
 
     @property
     def is_degenerate(self) -> bool:
@@ -505,13 +542,17 @@ class Protection(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Protection":
-        return {
+        _map = {
             "Omega_0":  cls.Omega_0,  "Ω_0":  cls.Omega_0,  "TRIVIAL":     cls.Omega_0,
             "Omega_Z2": cls.Omega_Z2, "Ω_Z2": cls.Omega_Z2, "Z2_CLASS":    cls.Omega_Z2,
             "Omega_Z":  cls.Omega_Z,  "Ω_Z":  cls.Omega_Z,  "Z_CLASS":     cls.Omega_Z,
             "Omega_C":  cls.Omega_C,  "Ω_C":  cls.Omega_C,  "CHERN":       cls.Omega_C,
             "Omega_NA": cls.Omega_NA, "Ω_NA": cls.Omega_NA, "NON_ABELIAN": cls.Omega_NA,
-        }.get(s, cls.Omega_0)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Protection (Winding) symbol: {s!r}") from None
 
     @property
     def protection_strength(self) -> int:
@@ -547,12 +588,16 @@ class Stoichiometry(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Stoichiometry":
-        return {
+        _map = {
             "1:1": cls.one_one,  "one_one": cls.one_one,
             "1:n": cls.one_n,    "one_n":   cls.one_n,
             "n:m": cls.n_m,      "n_m":     cls.n_m,    "n:n": cls.n_m,
             "cat": cls.cat,
-        }.get(s, cls.n_m)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Stoichiometry symbol: {s!r}") from None
 
 
 # =============================================================================
@@ -578,12 +623,16 @@ class Chirality(Enum):
 
     @classmethod
     def from_symbol(cls, s: str) -> "Chirality":
-        return {
+        _map = {
             "H0": cls.H0,     "H_0":   cls.H0,
             "H1": cls.H1,     "H_1":   cls.H1,
             "H2": cls.H2,     "H_2":   cls.H2,
             "H_inf": cls.H_inf, "Hinf": cls.H_inf, "H_∞": cls.H_inf,
-        }.get(s, cls.H0)
+        }
+        try:
+            return _map[s]
+        except KeyError:
+            raise ValueError(f"Unknown Chirality symbol: {s!r}") from None
 
     @property
     def memory_depth(self) -> str:

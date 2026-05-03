@@ -3,6 +3,10 @@
 
 # ── Large model artifacts ──────────────────────────────────────────────────────
 INFERRED/
+*.pt
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+imscrbgrmr/
 
 # ── Private session outputs ────────────────────────────────────────────────────
 syncon_outputs/

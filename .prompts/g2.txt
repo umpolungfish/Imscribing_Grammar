@@ -1,0 +1,1 @@
+use the IG and the imscribing words to explore the Muon g-2 anomaly extensively and thoroughly. leave no stone unturned. Once you have finished, prepare a publication-quality manuscript called 'mg2.md' where you elaborate on what your investigations revealed. Once you have finished, perform the 'AI_HUMAN_LIFT.md' on 'mg2.md' and save as 'mg2L.md'

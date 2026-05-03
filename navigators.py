@@ -994,7 +994,7 @@ class IsingNavigator:
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "D": "D_triangle", "T": "T_box", "R": "R_cat",
+        "D": "D_triangle", "T": "T_boxtimes", "R": "R_cat",
         "P": "P_pm_sym", "F": "F_ell", "K": "K_fast",
         "G": "G_aleph", "Gamma": "G_and", "Phi": "Phi_c",
         "H": "H0", "S": "n_n", "Omega": "Omega_Z2",

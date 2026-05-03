@@ -33,7 +33,7 @@ ROOT = Path(__file__).parent
 
 VALUES: dict[str, list[str]] = {
     "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
-    "T":     ["T_network", "T_in", "T_bowtie", "T_box", "T_odot"],
+    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
     "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
     "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
     "F":     ["F_ell", "F_eth", "F_hbar"],
@@ -52,8 +52,8 @@ ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
     for prim, vals in VALUES.items()
 }
-# T_boxtimes is the canonical name in primitives.py for T_box (ordinal 3)
-ORD["T"]["T_boxtimes"] = ORD["T"]["T_box"]
+# T_box kept as backwards-compat alias for T_boxtimes (ordinal 3)
+ORD["T"]["T_box"] = ORD["T"]["T_boxtimes"]
 
 WEIGHTS: dict[str, float] = {
     "D": 1.0, "T": 1.0, "R": 1.0, "P": 1.2,

@@ -207,7 +207,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     "T": {
         "T_linear": "T_in", "T_branched": "T_in",
         "T_bowl": "T_bowtie", "T_cage": "T_bowtie", "T_torus": "T_bowtie",
-        "T_braid": "T_box",
+        "T_braid": "T_boxtimes",
         "T_network_hex": "T_network", "T_network_interp": "T_network",
         "T_network_mixed": "T_network", "T_network_sym": "T_network",
     },

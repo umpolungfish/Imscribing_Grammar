@@ -1,0 +1,86 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds}
+\begin{document}
+\begin{tikzpicture}[
+  primnode/.style={rectangle,draw,thick,rounded corners,fill=#1!12,inner sep=6pt,align=center,minimum width=1.6cm,font=\small\bfseries},
+  opnode/.style={rectangle,draw,rounded corners,fill=yellow!10,inner sep=4pt,font=\footnotesize,align=center},
+  maps/.style={=>,>=stealth,thick,blue!55},
+  mapsboth/.style={<->,>=stealth,thick,red!65},
+  group/.style={rectangle,draw,rounded corners,dashed,fill=#1!5,inner sep=8pt},
+  label/.style={font=\footnotesize\itshape,text=gray},
+]
+
+% ==== OPERATIONS (left column) ====
+\node[group=blue,minimum width=4.2cm,minimum height=7.5cm] (ops) at (-4.5,0) {};
+\node[font=\bfseries\small,above=0pt of ops.north] {15 Operations};
+
+\node[opnode] (L12) at (-4.5,3.0) {L1--L2:\\Adjunction, Dagger};
+\node[opnode] (I14) at (-4.5,1.4) {I1--I4:\\Colimit, Iteration,\\Classifying, Yoneda};
+\node[opnode] (A15) at (-4.5,-0.6) {A1--A5:\\Monoidal, Monad,\\Dagger-compact, Enrich,\\Arithmetic code};
+\node[opnode] (L36) at (-4.5,-2.8) {L3--L6:\\Cart. closure, Lawvere,\\Frobenius, Paraconsistent};
+
+% ==== PRIMITIVES (right column) ====
+\node[group=green!50!black,minimum width=9cm,minimum height=7.5cm] (prims) at (2,0) {};
+\node[font=\bfseries\small,above=0pt of prims.north] {12 Primitives};
+
+% Gate primitives (top row)
+\node[primnode=purple] (D) at (-1.0,2.2) {$D$\\I4, S2};
+\node[primnode=purple] (Om) at (0.6,2.2) {$\Omega$\\I3, S2};
+\node[primnode=purple] (Phi) at (2.2,2.2) {$\Phi$\\L4, S4};
+\node[primnode=purple] (P) at (3.8,2.2) {$P$\\A1+L5};
+
+% Shape primitives (middle row)
+\node[primnode=green!60!black] (R) at (-1.6,0.2) {$R$\\L1--L2, S1};
+\node[primnode=green!60!black] (Gam) at (0,0.2) {$\Gamma$\\A4, S3};
+\node[primnode=green!60!black] (H) at (1.6,0.2) {$H$\\I2, S2};
+
+% Remaining primitives (bottom)
+\node[primnode=orange] (F) at (-2.0,-2.0) {$F$\\A3, S3};
+\node[primnode=orange] (G) at (-0.3,-2.0) {$G$\\A1+I4};
+\node[primnode=orange] (S) at (1.4,-2.0) {$S$\\A1, S3};
+\node[primnode=purple] (K) at (3.1,-2.0) {$K$\\A2, S3};
+\node[primnode=purple] (T) at (4.8,-2.0) {$T$\\L3, S4};
+
+% Map arrows from operations to primitives
+\draw[maps] (L12.east) -- (R.west);
+\draw[maps] (I14.east) -- (D.west|-I14);
+\draw[maps] (I14.east|-D) -- (D.west);
+\draw[maps] (I14.east|-Om) -- (Om.west);
+\draw[maps] (I14.east|-H) -- (H.west);
+\draw[maps] (A15.east|-F) -- (F.west);
+\draw[maps] (A15.east|-G) -- (G.west);
+\draw[maps] (A15.east|-S) -- (S.west);
+\draw[maps] (A15.east|-K) -- (K.west);
+\draw[maps] (A15.east|-Gam) -- (Gam.west);
+\draw[maps] (A15.east|-P) -- (P.west|-A15);
+\draw[maps] (L36.east|-T) -- (T.west);
+\draw[maps] (L36.east|-Phi) -- (Phi.west);
+\draw[maps] (L36.east|-P) -- (P.west|-L36);
+
+% Special: P gets contributions from A1 and L5
+\draw[maps,red!65] (A15.east|-P) to[bend left=8] (P.west);
+
+% 15→12 reduction annotation
+\node[label,anchor=north] at ($(prims.south)+(0,-0.4)$) {15 operations converge to 12 primitives: L1+L2→$R$; L5→promotes $P$; A5→no new primitive};
+
+% ===== BOTTOM: Tier structure =====
+\node[group=orange,minimum width=14cm,minimum height=1.6cm] (tiers) at (0,-5.2) {};
+\node[font=\bfseries,above=0pt of tiers.north] {Ouroboricity Tiers — determined by 4 gate primitives};
+
+\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O_0$\\$\Phi_\text{sub}$};
+\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O_1$\\$\Phi_c$};
+\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O_2$\\$\Phi_c,\Omega\neq\Omega_0$};
+\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries] (O2dt) at (2.6,-5.2) {$O_2^\dagger$\\$\Phi_c,\Omega\neq\Omega_0,D_\infty$};
+\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries] (Oifnt) at (5.2,-5.2) {$O_\infty$\\$\Phi_c,P_{\pm}^{\text{sym}}$};
+
+\draw[->,>=stealth,thick] (O0t.east) -- (O1t.west);
+\draw[->,>=stealth,thick] (O1t.east) -- (O2t.west);
+\draw[->,>=stealth,thick] (O2t.east) -- (O2dt.west);
+\draw[->,>=stealth,ultra thick,red!70] (O2dt.east) -- node[above,font=\tiny] {$\Delta=4.38$} (Oifnt.west);
+
+% Annotation
+\node[label,below=0.3cm of O2t] {4 gate primitives ($D,\Omega,\Phi,P$) drive tier boundaries; 8 shape primitives describe internal architecture};
+
+\end{tikzpicture}
+\end{document}

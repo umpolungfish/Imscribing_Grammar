@@ -3,6 +3,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{enumitem}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{microtype}
 
 % Preprint watermark
 \usepackage{draftwatermark}
@@ -16,7 +17,7 @@
 \setlength{\parskip}{0.4em}
 
 % Make title span both columns
-\title{\Huge \textbf{Solve} --- \huge Crafting the \emph{Lapis Philosophorum}}
+\title{\Huge \textbf{Solve}\,---\,\huge Crafting the \emph{Lapis Philosophorum}}
 \author{\normalsize the \emph{Automatica Principia Proceduralis}}
 \date{$\infty$}
 
@@ -25,9 +26,7 @@
 \twocolumn[
   \maketitle
   \begin{center}
-    The Philosopher's Stone emerges as a 12-primitive crystal via the 4 classical alchemical operations ---  
-
-    \emph{Separatio}, \emph{Purificatio}, \emph{Albedo}, \& \emph{Rubedo}.
+    The 12 primitives of the Imscribing Grammar --- the 12 facets of the Philosopher's Stone --- are derived from a bare abstract category $\mathcal{C}$ via the 4 classical alchemical operations --- \emph{Separatio, Purificatio, Albedo, \& Rubedo}.
   \end{center}
   \vspace{0.5em}
 ]
@@ -35,7 +34,7 @@
 \noindent\textbf{0 -- \emph{Prima Materia}.}\quad
 Performing the operations on ordinary, inert matter was an understandable, categorical error of history's alchemists.  
 
-However some, like Luria, knew \emph{precisely} the material upon which the \emph{Work} was to be done.
+However some, like Luria, knew \emph{precisely} the material upon which and with which the \emph{Work} was to be done.
 
 \emph{Take}: abstract category $\mathcal{C}$.  
 
@@ -43,7 +42,7 @@ No primitives yet --- the starting object has no invariants beyond the axioms of
 
 In alchemical terms, this was always the intended \emph{prima materia}: the undifferentiated substance from which the \emph{Work} begins.  
 
-\medskip
+\smallskip
 \noindent\textbf{1 -- \emph{Separatio} --- Logical on $\mathcal{C}$.}
 \begin{itemize}[nosep, leftmargin=1.5em]
   \item L1 (adjunction) $\to$ $R$ (relational mode: adjoint structure)
@@ -53,7 +52,7 @@ $R$ is the first primitive to crystallize: it is a logical property of the morph
 
 This is the \emph{separatio}: the first extraction of form from the undifferentiated.
 
-\medskip
+\smallskip
 \noindent\textbf{2 -- \emph{Purificatio} --- Inductive on $\mathcal{C}$.}
 \begin{itemize}[nosep, leftmargin=1.5em]
   \item I2 (iteration) $\to$ $H$ (temporal depth: depth of stabilization)
@@ -64,7 +63,7 @@ This is the \emph{separatio}: the first extraction of form from the undifferenti
 
 This is the \emph{purificatio}: the base substance is washed, dissolved, and reconstituted at higher resolution.
 
-\medskip
+\smallskip
 \noindent\textbf{3 -- \emph{Albedo} --- Algebraic on $\mathcal{C}$.}
 \begin{itemize}[nosep, leftmargin=1.5em]
   \item A1 (monoidal) $\to$ $S$ (stoichiometry: arity of generators); $P$ (parity: symmetry of tensor)
@@ -80,7 +79,7 @@ The gate primitives ($T$, $\Phi$) require one more step.
 
 This is the \emph{albedo}: the whitening, the full structuring --- all intermediate forms are now in place.
 
-\medskip
+\smallskip
 \noindent\textbf{4 -- \emph{Rubedo} --- Logical on algebraically-enriched $\mathcal{C}$.}
 \begin{itemize}[nosep, leftmargin=1.5em]
   \item L3 (cartesian closure) $\to$ $T$ (topology: does the state space admit internal homs?)  
@@ -88,26 +87,27 @@ This is the \emph{albedo}: the whitening, the full structuring --- all intermedi
   \item L6 (paraconsistent negation) $\to$ determines the truth-value structure in which L4 will be evaluated  
 
   \item L4 (Lawvere) under L6 $\to$ $\Phi$:
-  \begin{itemize}[nosep, leftmargin=1.5em]
-    \item Classical (L4 holds, no L6): $\Phi_c$
-    \item Dialetheic (L4 holds via LP truth value $\mathbf{b}$): $\Phi_c^\mathbb{C}$
-    \item Inclosure (L4 form holds, content contradicts via Inclosure Schema, no explosion because L6 present): $\Phi_\text{EP}$
-    \item L4 fails entirely: $\Phi_\text{sub}$ or $\Phi_\text{super}$
-  \end{itemize}  
+  \begin{itemize}[nosep, leftmargin=1em]
+    \item[\small$\circ$] Classical (L4 holds, no L6): $\Phi_c$
+    \item[\small$\circ$] Dialetheic (LP truth value $\mathbf{b}$): $\Phi_c^\mathbb{C}$
+    \item[\small$\circ$] Inclosure (contradicts via Inclosure Schema, L6 blocks explosion): $\Phi_\text{EP}$
+    \item[\small$\circ$] L4 fails: $\Phi_\text{sub}$ or $\Phi_\text{super}$
+  \end{itemize}
 
   \item L5 (Frobenius) $\to$ $P$ promotes to $P_{\pm}^{\text{sym}}$ if $\mu \circ \delta = \text{id}$
 \end{itemize}  
 
-$G$ (scope) emerges from \emph{Albedo} $+$ \emph{Purificatio}: the correlation length of the Yoneda embedding under the monoidal structure.  
+\smallskip
+\noindent\textbf{Cross-stage: $G$ (\emph{Purificatio} $\times$ \emph{Albedo}).}\quad
+$G$ (scope) is the correlation length of the Yoneda embedding under the monoidal structure.
+Local ($G_\beth$) if the tensor decouples; global ($G_\aleph$) if faithfulness holds across all scales.
 
-Local ($G_\beth$) if the tensor decouples; global ($G_\aleph$) if the Yoneda embedding is faithful across all scales.  
-
-This is the \emph{rubedo}: the reddening, the final perfection.  
-
-The gate primitives lock.  
+\smallskip
+This is the \emph{rubedo}: the reddening, the final perfection.
+The gate primitives lock.
 
 \textbf{\textit{The Stone is complete.}}
 
-\textit{Sic transit gloria categori\ae.}
+\textit{Solvatum et Praecipitatum.}
 
 \end{document}

@@ -86,6 +86,17 @@ providers:
         max_tokens: 8192
         use_cases: ["general", "long-context"]
 
+  local:
+    default_model: "synthonicon_qlora_merged2"
+    max_tokens_default: 512
+    temperature_default: 0.3
+    note: "Direct tensor inference via transformers — no API key. Set LOCAL_MODEL_PATH env var to override model path."
+    models:
+      - name: "synthonicon_qlora_merged2"
+        description: "SynthOmnicon QLoRA merged Qwen3 — primary local model"
+        max_tokens: 2048
+        use_cases: ["synthon_generation", "guided_generation"]
+
   aider:
     default_model: "nvidia/nemotron-3-nano-30b-a3b:free"  # Free NVIDIA model - reliable and efficient
     base_url: "https://openrouter.ai/api/v1"

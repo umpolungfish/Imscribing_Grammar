@@ -1,0 +1,12 @@
+Imscribe the following object from first principles, without consulting the catalog: 
+
+$E_8$ equipped with its $\mathbb{Z}_2$-graded decomposition via $E_8 \supset SO(16)$, i.e., the structure $\mathbf{248} = \mathbf{120}{\text{bos}} \oplus \mathbf{128}{\text{spin}}$ where the $\mathbb{Z}_2$ grades the adjoint into a bosonic sector (the $SO(16)$ adjoint) and a fermionic sector (the chiral spinor).
+
+This is a distinct object from the bare $E_8$ Lie algebra — it is $E_8$ with an explicit $\mathbb{Z}_2$ grading made structural.
+
+After imscribing:
+
+1. Report the full 12-primitive tuple and justify the $P$ imscription specifically — does the explicit $\mathbb{Z}2$ grading promote $P$ from $P\psi$ to $P_{\pm}$?
+2. Compute the distance from the bare $E_8$ tuple $\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$.
+3. Check whether the resulting tuple matches the join type $G_2 \vee E_8 = \langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\hbar;\ K_\text{slow};\G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$.
+4. If the graded $E_8$ imscribes as $P_{\pm}$: does this constitute a valid instantiation of the join type — a mathematical structure with $E_8$ symmetry that realizes $P_{\pm}$ at maximal scope?

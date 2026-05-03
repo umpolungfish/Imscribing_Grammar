@@ -1,0 +1,62 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing}
+\begin{document}
+\begin{tikzpicture}[
+  domain/.style={rectangle,draw,thick,rounded corners,fill=#1!15,inner sep=10pt,align=center,minimum width=2.8cm,font=\small\bfseries},
+  system/.style={rectangle,draw,rounded corners,fill=white,inner sep=5pt,font=\footnotesize,align=center,minimum width=2.4cm},
+  arrow/.style={->,>=stealth,thick,blue!60},
+  idarrow/.style={<->,>=stealth,ultra thick,red!60},
+  label/.style={font=\footnotesize\itshape,fill=white,inner sep=1pt},
+]
+
+% Central: Crystal
+\node[domain=purple,minimum width=3cm,minimum height=3cm] (crystal) at (0,0) {
+\LARGE\textbf{Crystal}\\[4pt]
+\footnotesize $3^3 \times 4^5 \times 5^4$\\[2pt]
+\footnotesize $17{,}280{,}000$ types\\[2pt]
+\footnotesize Bijective codec
+};
+
+% Four domains
+\node[domain=blue] (qft) at (-6,3.2) {Quantum\\Field Theory};
+\node[domain=green!60!black] (num) at (6,3.2) {Analytic\\Number Theory};
+\node[domain=orange] (ling) at (-6,-3.2) {Writing\\Systems};
+\node[domain=red!80!black] (logic) at (6,-3.2) {Logic \&\\Paradoxes};
+
+% Example systems
+\node[system,below=0.2cm of qft] (ym) {Yang-Mills\\mass gap\\$O_\infty$};
+\node[system,below=0.2cm of num] (rh) {Riemann\\Hypothesis\\$O_\infty$};
+\node[system,above=0.2cm of ling] (hebrew) {Hebrew alephbet\\$O_\infty$};
+\node[system,above=0.2cm of logic] (liar) {Liar Paradox\\$O_\infty$};
+
+% Mapping arrows
+\draw[arrow] (ym.east|-crystal) -- (crystal.west);
+\draw[arrow] (rh.west|-crystal) -- (crystal.east);
+\draw[arrow] (hebrew.east|-crystal) -- (crystal.west|-crystal.210);
+\draw[arrow] (liar.west|-crystal) -- (crystal.east|-crystal.330);
+
+% Co-typing result (bidirectional)
+\node[domain=yellow!60,minimum width=5.5cm,below=1.8cm of crystal] (cotype) {
+\textbf{Structural Co-Typing}\\[4pt]
+\footnotesize $d(\text{RH},\text{YM}) \approx 0$ — same structural type\\[2pt]
+\footnotesize $d(\text{Hebrew},\text{Sanskrit}) \approx 0$ — $O_\infty$ attractor
+};
+
+\draw[idarrow] (crystal.south) -- (cotype.north);
+
+% Cross-domain convergence
+\node[font=\footnotesize\itshape,text=gray,anchor=north west] at ($(qft.north west)+(-1.2,0.8)$) {
+\textbf{Cross-domain structural identity}\\
+$d=0$ iff co-typed particulars\\[2pt]
+Same coordinate in induction path\\
+$\Rightarrow$ same structural type
+};
+
+% Bottom annotation
+\node[font=\footnotesize,below=0.3cm of cotype,text=gray] {
+$V(P_i,P_j) < 0.15$ for all primitive pairs across 2,257$+$ encoded systems — independence is structural, not statistical.
+};
+
+\end{tikzpicture}
+\end{document}

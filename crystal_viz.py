@@ -42,11 +42,11 @@ TIER_LABEL = {
 PHI_VALUES   = ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"]
 OMEGA_VALUES = ["Omega_0", "Omega_Z2", "Omega_Z"]
 P_VALUES     = ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"]
-D_VALUES     = ["D_wedge", "D_triangle", "D_infty", "D_holo"]
+D_VALUES     = ["D_wedge", "D_triangle", "D_infty", "D_odot"]
 
 CRITICAL   = {"Phi_c", "Phi_c_complex"}
 NONCRIT    = {"Phi_sub", "Phi_super", "Phi_EP"}
-BOUNDED_D  = {"D_wedge", "D_triangle", "D_holo"}
+BOUNDED_D  = {"D_wedge", "D_triangle", "D_odot"}
 
 def get_tier(phi, p, omega, d):
     if phi in CRITICAL and p == "P_pm_sym":

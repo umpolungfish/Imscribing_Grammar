@@ -49,7 +49,7 @@ PRIMITIVES = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omeg
 
 ORDINALS: Dict[str, Dict[str, float]] = {
     "D":     {"D_wedge": 0, "D_triangle": 1, "D_infty": 2, "D_odot": 3},
-    "T":     {"T_network": 0, "T_in": 1, "T_bowtie": 2, "T_box": 3, "T_odot": 4},
+    "T":     {"T_network": 0, "T_in": 1, "T_bowtie": 2, "T_boxtimes": 3, "T_odot": 4},
     "R":     {"R_super": 0, "R_cat": 1, "R_dagger": 2, "R_lr": 3},
     "P":     {"P_asym": 0, "P_psi": 1, "P_pm": 2, "P_sym": 3, "P_pm_sym": 4},
     "F":     {"F_ell": 0, "F_eth": 1, "F_hbar": 2},
@@ -84,7 +84,7 @@ _PRIM_ALIASES: Dict[str, Dict[str, str]] = {
         "T_⋈":   "T_bowtie",
         "T_holo": "T_odot",
         "T_torus": "T_bowtie",  # compact cyclic → bowtie approximation
-        "T_cage":     "T_box",
+        "T_cage":     "T_boxtimes",
         "T_boxtimes": "T_box",    # canonical catalog name → ZFC navigator name
         "T_bowl":     "T_in",
         "T_linear": "T_network",
@@ -253,7 +253,7 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
                        "UNION", "VY", "VZ", "EQ", "VX", "AND",
                        "SINGLETON", "VY", "EQ", "SINGLETON", "VZ", "RPAREN"],
         # Closed, periodic — power-set closure
-        "T_box":      ["FORALL", "VZ", "LPAREN",
+        "T_boxtimes":      ["FORALL", "VZ", "LPAREN",
                        "VZ", "IN", "VX", "IFF", "REPL", "VF", "VZ", "RPAREN"],
         # ⚠ PARTIAL COLLAPSE: T_odot (imscriptive) → approximated by REFL.
         # Reflection principle is the closest ZFC construct, but it does not

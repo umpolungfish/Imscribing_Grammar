@@ -587,6 +587,54 @@ def search_synthons(fidelity: Optional[str], topology: Optional[str]):
 
 
 # =============================================================================
+# Subcommand: catalog delete
+# =============================================================================
+
+@catalog.command(name="delete")
+@click.argument("names", nargs=-1, required=True)
+@click.option("--yes", "-y", is_flag=True, help="Skip confirmation prompt.")
+def delete_synthons(names: tuple, yes: bool):
+    """Delete one or more synthons from IG_catalog.json by name."""
+    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+    if not catalog_path.exists():
+        console.print("[red]IG_catalog.json not found.[/red]")
+        raise SystemExit(1)
+
+    with open(catalog_path, "r", encoding="utf-8") as f:
+        entries: list = json.load(f)
+
+    disk: Dict[str, Dict] = {e["name"]: e for e in entries if "name" in e}
+
+    found = [n for n in names if n in disk]
+    missing = [n for n in names if n not in disk]
+
+    if missing:
+        for n in missing:
+            console.print(f"[yellow]Not found in catalog: '{n}'[/yellow]")
+
+    if not found:
+        console.print("[red]No matching entries to delete.[/red]")
+        raise SystemExit(1)
+
+    console.print(f"[bold]Will delete:[/bold] {', '.join(found)}")
+    if not yes:
+        click.confirm("Proceed?", abort=True)
+
+    for n in found:
+        del disk[n]
+        global_catalog.remove(n)
+
+    try:
+        with open(catalog_path, "w", encoding="utf-8") as f:
+            json.dump(list(disk.values()), f, indent=2, ensure_ascii=False)
+        for n in found:
+            console.print(f"[green]✓ Deleted '{n}' from IG_catalog.json[/green]")
+    except OSError as e:
+        console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
+        raise SystemExit(1)
+
+
+# =============================================================================
 # Subcommand: thermo
 # =============================================================================
 
@@ -796,12 +844,12 @@ def _register_to_json_catalog(
             )
 
     if existing_tuple and existing_tuple != proposed:
-        # Conflict detected — delegate resolution to the agentic harness.
+        # Conflict detected
         differing = [p for p in _PRIMITIVE_ORDER if existing_tuple.get(p) != proposed.get(p)]
 
         console.print(Panel(
             f"[bold yellow]Conflict:[/bold yellow] '{name}' already exists with a different tuple.\n"
-            f"Differing: {differing}\nSpawning conflict-resolution agent...",
+            f"Differing: {differing}",
             title="Encoding Conflict"
         ))
 
@@ -816,6 +864,23 @@ def _register_to_json_catalog(
             diff_table.add_row(f"[{style}]{p}[/{style}]" if style else p, old_v, new_v)
         console.print(diff_table)
 
+        # Local provider cannot route through the OpenRouter-backed agentic harness.
+        # Accept proposed (guided) encoding — it supersedes any previous unguided run.
+        if model.lower() == "local":
+            console.print("[cyan]Local provider: accepting guided encoding (supersedes prior unguided run).[/cyan]")
+            existing_desc = existing_entry.get("description", "") if existing_entry else ""
+            new_entry: Dict = {"name": name, "description": existing_desc or description}
+            new_entry.update(proposed)
+            disk_entries[name] = new_entry
+            try:
+                with open(catalog_path, "w", encoding="utf-8") as f:
+                    json.dump(list(disk_entries.values()), f, indent=2, ensure_ascii=False)
+                console.print(f"[green]✓ '{name}' updated in IG_catalog.json[/green]")
+            except OSError as e:
+                console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
+            return
+
+        console.print("[cyan]Spawning conflict-resolution agent...[/cyan]")
         existing_desc = existing_entry.get("description", "") if existing_entry else ""
         _agent_resolve_conflict(
             name, description, existing_tuple, proposed, differing,
@@ -857,6 +922,7 @@ def _register_to_json_catalog(
 @click.option("--override-grounding", is_flag=True, help="Allow registration despite grounding failures (requires --override-reason).")
 @click.option("--override-reason", default=None, help="Justification for overriding grounding failure (required with --override-grounding).")
 @click.option("--speculative", is_flag=True, help="Register synthon in the 'speculative' domain (non-canonical or hypothetical systems).")
+@click.option("--guided", is_flag=True, help="Step-by-step guided generation: assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values.")
 def generate(
     description: str,
     name: Optional[str],
@@ -875,6 +941,7 @@ def generate(
     override_grounding: bool,
     override_reason: Optional[str],
     speculative: bool,
+    guided: bool,
 ):
     """
     Encode any self-organizing system as a 12-primitive structural coordinate.
@@ -887,6 +954,7 @@ def generate(
     ROLE in its native domain — not from chemical templates.
 
     Options:
+        --guided          One primitive at a time; numbered canonical choices eliminate hallucinated values.
         --axiom-guided    Validates assignments against the 4 cross-primitive axioms.
         --require-grounding  Require structural justification for all primitives.
         --strict-grounding   Block catalog registration on grounding failure.
@@ -947,7 +1015,7 @@ def generate(
         agent_config = build_agent_config(
             provider=provider,
             model=model,
-            max_tokens=4000,
+            max_tokens=8000,
         )
 
         agent = AgentClass(agent_config)
@@ -1020,6 +1088,19 @@ def generate(
             else:
                 console.print(Panel(f"[bold yellow]Axiom-Guided Generation PARTIAL[/bold yellow]\n{result.axiom_report.get('violations', 0)} axiom violation(s) after {result.iterations} iteration(s)",
                                     title="Generation Result"))
+        elif guided:
+            # Guided generation: one primitive at a time, numbered canonical choices
+            result = asyncio.run(
+                agent.generate_guided(
+                    description,
+                    name=name,
+                    delta_g=delta_g,
+                    auto_register=agent_auto_register,
+                )
+            )
+
+            console.print(Panel(f"[bold green]Guided Synthon Generation Complete![/bold green]",
+                                title="Generation Result"))
         else:
             # Standard generation
             result = asyncio.run(

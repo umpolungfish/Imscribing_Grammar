@@ -185,6 +185,160 @@ class SynthonGeneratorAgent(BaseAgent):
             ToolDefinitions.run_command(),
         ]
 
+    # ------------------------------------------------------------------
+    # Guided (step-by-step) generation — one primitive per LLM call
+    # ------------------------------------------------------------------
+
+    GUIDED_PRIMITIVES: List[Dict[str, Any]] = [
+        {"short": "D",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
+         "options": [("D_wedge","Point-like — local, operates on a single unit"),
+                     ("D_triangle","Spatial — constraint propagates through an extended 3D arrangement"),
+                     ("D_infty","Temporal/iterative — recurs through a closed cycle with a reset step"),
+                     ("D_odot","Imscriptive — boundary encodes bulk (REQUIRES T_odot to co-occur)")]},
+        {"short": "T",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
+         "options": [("T_network","Generic network — connected graph, hub-spoke, mixed connectivity"),
+                     ("T_in","Containment / branched tree — partners enter a container or nested hierarchy"),
+                     ("T_bowtie","Cyclic closure — cyclic interface, figure-8, double-well"),
+                     ("T_boxtimes","Fully enclosed — partner cannot exit without distorting the container"),
+                     ("T_odot","Imscriptive — boundary encodes bulk (REQUIRES D_odot to co-occur)")]},
+        {"short": "R",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
+         "options": [("R_super","Soft association — non-covalent, reversible, analogical similarity"),
+                     ("R_cat","Bond formation / structural transformation — irreversible or semi-reversible"),
+                     ("R_dagger","Transition-state stabilization — lowers barrier without being consumed; adjoint/catalytic"),
+                     ("R_lr","Left-right asymmetric / mechanical topology — interlocking, knotting, irreversible handedness")]},
+        {"short": "P",  "long": "polarity",             "question": "What is the directional character of the interface?",
+         "options": [("P_asym","No preferred direction; no self-complementarity"),
+                     ("P_psi","Signed direction — one accepting OR one donating pole"),
+                     ("P_pm","Self-complementary — both donor and acceptor roles present simultaneously"),
+                     ("P_sym","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
+                     ("P_pm_sym","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
+        {"short": "F",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
+         "options": [("F_ell","Low — probabilistic; many false positives (I_net < 6 bits)"),
+                     ("F_eth","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
+                     ("F_hbar","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
+        {"short": "K",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
+         "options": [("K_fast","Low barrier — explores configuration space freely; reversible"),
+                     ("K_mod","Moderate barrier — accessible under perturbation"),
+                     ("K_slow","High barrier — kinetically frozen; requires external driving to rearrange"),
+                     ("K_trap","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
+                     ("K_MBL","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
+        {"short": "G",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
+         "options": [("G_beth","Local — single bond/event, no neighbours influenced"),
+                     ("G_gimel","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
+                     ("G_aleph","Global — propagates across the entire system; scale-free")]},
+        {"short": "Γ",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
+         "options": [("G_and","Conjunctive — all required partners must be present simultaneously"),
+                     ("G_or","Disjunctive — any partner from a set suffices"),
+                     ("G_seq","Sequential — ordered steps; partners engaged in sequence"),
+                     ("G_broad","Broad conjunctive — many required partners (>10), cooperative assembly")]},
+        {"short": "Φ",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
+         "options": [("Phi_sub","Subcritical — normal regime, no scale-free behavior"),
+                     ("Phi_c","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
+                     ("Phi_c_complex","Complex critical — criticality with complex eigenvalues"),
+                     ("Phi_EP","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
+                     ("Phi_super","Supercritical / post-threshold — system has passed through criticality")]},
+        {"short": "H",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
+         "options": [("H0","Achiral — mirror image accessible; no persistent symmetry breaking"),
+                     ("H1","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
+                     ("H2","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
+                     ("H_inf","Topological chirality — topology-protected; cannot be undone without global restructuring (implies K_trap)")]},
+        {"short": "S",  "long": "stoichiometry",        "question": "What is the participation ratio?",
+         "options": [("1:1","Equal symmetric pairing"),
+                     ("n:n","Higher-order symmetric — oligomers, committees"),
+                     ("n:m","Asymmetric — different counts on each side")]},
+        {"short": "Ω",  "long": "protection",           "question": "Can the structural role be continuously deformed away?",
+         "options": [("Omega_0","No protection — role CAN be continuously deformed to trivial state"),
+                     ("Omega_Z2","Z2-protected — requires crossing a Z2 topological boundary to change"),
+                     ("Omega_Z","Integer-winding-protected — stable against perturbations preserving winding invariant"),
+                     ("Omega_NA","Non-Abelian protection — most robust; requires D_odot")]},
+    ]
+
+    async def generate_guided(
+        self,
+        description: str,
+        name: Optional[str] = None,
+        delta_g: Optional[float] = None,
+        auto_register: bool = True,
+    ) -> "SynthonGenerationResult":
+        """
+        Guided generation: one LLM call per primitive, numbered-choice selection.
+        Eliminates hallucinated values — the model picks from an explicit list.
+        """
+        system = (
+            "You are assigning a single structural primitive in the Imscribing Grammar "
+            "(a 12-coordinate universal structural type system). "
+            "You will receive the input description and one primitive to assign. "
+            "Pick the best-fit option from the numbered list based on the input's structural role. "
+            "Reply with ONLY the option number, followed by a dash and one sentence of reasoning. "
+            "Do not include any other text."
+        )
+        assigned: Dict[str, str] = {}
+        reasoning_parts: List[str] = []
+
+        for prim in self.GUIDED_PRIMITIVES:
+            short = prim["short"]
+            options = prim["options"]
+
+            options_text = "\n".join(
+                f"  {i+1}. {val}  — {desc}"
+                for i, (val, desc) in enumerate(options)
+            )
+            n = len(options)
+            prompt = (
+                f"Input: {description}\n\n"
+                f"Assigning primitive {short} ({prim['long']}).\n"
+                f"Question: {prim['question']}\n\n"
+                f"Options:\n{options_text}\n\n"
+                f"Primitives assigned so far: {assigned}\n\n"
+                f"Reply with ONLY the option number (1–{n}), followed by one sentence of reasoning.\n"
+                "Example: \"2 — The system organizes spatially across an extended lattice.\"\n"
+                "Do NOT write anything else before the number."
+            )
+
+            raw = await self.call_llm(prompt=prompt, system=system,
+                                      max_tokens=2000, temperature=0.1)
+
+            # Extract leading integer
+            m = re.match(r"\s*(\d+)", raw.strip())
+            if m:
+                idx = int(m.group(1)) - 1
+                idx = max(0, min(idx, len(options) - 1))
+            else:
+                # Fall back: scan for any canonical value name in the response
+                idx = 0
+                for i, (val, _) in enumerate(options):
+                    if val.lower() in raw.lower():
+                        idx = i
+                        break
+
+            chosen_val, chosen_desc = options[idx]
+            assigned[short] = chosen_val
+            # Capture reasoning: everything after the first word/number
+            reasoning_line = re.sub(r"^\s*\d+\s*[—\-–]?\s*", "", raw.strip(), count=1)
+            reasoning_parts.append(f"{short}={chosen_val}: {reasoning_line.strip()}")
+
+        reasoning = "\n".join(reasoning_parts)
+
+        # Build the synthon from assembled assignments
+        synthon_data = {prim["long"]: assigned[prim["short"]] for prim in self.GUIDED_PRIMITIVES}
+        synthon_data["name"] = name or _desc_slug(description)
+
+        # Also add G_broad → G_and fallback for from_symbol compatibility
+        synthon = self._create_synthon_from_data(synthon_data, description, explicit_name=name)
+
+        if delta_g is not None:
+            synthon.delta_g = delta_g
+
+        if auto_register and synthon.name not in global_catalog:
+            global_catalog.register(synthon)
+
+        return SynthonGenerationResult(
+            synthon=synthon,
+            reasoning=reasoning,
+            confidence=1.0,
+            alternatives=[],
+        )
+
     async def generate_from_description(
         self,
         description: str,
@@ -485,6 +639,8 @@ You are an expert in the Synthonicon framework — a universal structural gramma
 The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same structural type. Your task is to identify which type an input instantiates.
 
 **FUNDAMENTAL RULE:** Every input has a structural type. There is no such thing as a "non-encodable" input. If an entity exists in any domain and has any discernible structure or role, it can be encoded. Assigning trivial placeholder defaults with 0% confidence is a FAILURE — it means you refused to reason about structure.
+
+**CONFIDENCE PROTOCOL VIOLATION:** Returning `"confidence": 0` (or any value ≤ 0.05) for a non-empty input is forbidden. It signals passive refusal. You MUST assign a confidence ≥ 0.1 and include non-empty reasoning. If genuinely uncertain, assign confidence 0.2–0.4 and explain why in the reasoning field. An empty `"reasoning"` field is also a PROTOCOL VIOLATION — every assignment requires at least a one-phrase justification per primitive.
 </role>
 
 <task>
@@ -675,7 +831,7 @@ Respond with a single JSON object with this EXACT structure. The outer key MUST 
   "alternatives": [{"dimensionality": "D_wedge", "topology": "T_in", "recognition_mode": "R_super", "polarity": "P_pm", "fidelity": "F_eth", "kinetic_character": "K_fast", "granularity": "G_beth", "interaction_grammar": "G_or", "criticality_phase": "Phi_sub", "chirality": "H0", "stoichiometry": "n:m", "protection": "Omega_0"}]
 }
 ```
-Use only canonical string values shown above. The `reasoning` field MUST reference the same primitive values that appear in the `synthon` block — if you wrote `D_odot` in reasoning but `D_wedge` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty.
+Use only canonical string values shown above. The `reasoning` field MUST reference the same primitive values that appear in the `synthon` block — if you wrote `D_odot` in reasoning but `D_wedge` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "D_wedge: single-locus molecular complex"), total reasoning under 200 words.
 </output_format>
 """
 
@@ -687,6 +843,8 @@ Use only canonical string values shown above. The `reasoning` field MUST referen
 {name_instruction}
 
 Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the structural role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to structural type space.
+
+CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "D_wedge", "T_bowtie", "Phi_c"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
 Respond with the JSON object specified in output_format. Outer key must be "synthon". Confidence must reflect genuine uncertainty, not refusal to encode."""
 
@@ -718,6 +876,16 @@ You **MUST**:
 <output>You **MUST** provide your analysis as a **JSON OBJECT**.</output>
 """
 
+    @staticmethod
+    def _has_string_primitive_values(d: Dict[str, Any]) -> bool:
+        """Return True iff every non-name value in d is a non-empty string."""
+        for k, v in d.items():
+            if k == "name":
+                continue
+            if not isinstance(v, str) or not v.strip():
+                return False
+        return bool(d)
+
     def _parse_llm_response(
         self,
         response: str
@@ -735,8 +903,37 @@ You **MUST**:
                 f"Raw response (first 500 chars):\n{response[:500]}"
             )
 
-        data = json_blocks[0]
+        # Try each block in order; pick first one whose synthon values are strings.
+        # Some models emit a numeric-score block first, then a categorical block.
+        data = None
+        for block in json_blocks:
+            candidate = block.get("synthon", {})
+            if candidate and self._has_string_primitive_values(candidate):
+                data = block
+                break
+        if data is None:
+            data = json_blocks[0]  # fall through to existing adapters / error path
+
         synthon_data = data.get("synthon", {})
+
+        # Schema adapter: model used "synthon" wrapper but nested primitives under a
+        # "primitives" sub-key instead of at the top level.
+        # e.g. {"synthon": {"name": ..., "primitives": {"D": ...}, "confidence": ...}}
+        if synthon_data and not self._has_string_primitive_values(synthon_data):
+            inner = synthon_data.get("primitives")
+            if isinstance(inner, dict):
+                _key_map = {
+                    "D": "dimensionality", "T": "topology", "R": "recognition_mode",
+                    "P": "polarity", "F": "fidelity", "K": "kinetic_character",
+                    "G": "granularity", "Gamma": "interaction_grammar", "Γ": "interaction_grammar",
+                    "Phi": "criticality_phase", "Φ": "criticality_phase",
+                    "H": "chirality", "S": "stoichiometry", "Omega": "protection", "Ω": "protection",
+                }
+                lifted: Dict[str, Any] = {"name": synthon_data.get("name", "")}
+                for k, v in inner.items():
+                    canon = _key_map.get(k, k)
+                    lifted[canon] = v.get("value", v) if isinstance(v, dict) else v
+                synthon_data = lifted
 
         # Schema adapter: some models (e.g. Grok) use "primitive_analysis" instead of "synthon"
         if not synthon_data:
@@ -793,6 +990,22 @@ You **MUST**:
 
         return synthon_data, reasoning, float(confidence) if confidence is not None else 0.0, alternatives
 
+    # Canonical short-form keys returned by models using grammar notation
+    _SHORT_TO_LONG: Dict[str, str] = {
+        "D": "dimensionality",
+        "T": "topology",
+        "R": "recognition_mode",
+        "P": "polarity",
+        "F": "fidelity",
+        "K": "kinetic_character",
+        "G": "granularity",
+        "Γ": "interaction_grammar",   # Γ
+        "Φ": "criticality_phase",     # Φ
+        "H": "chirality",
+        "S": "stoichiometry",
+        "Ω": "protection",            # Ω
+    }
+
     def _create_synthon_from_data(
         self,
         data: Dict[str, str],
@@ -803,14 +1016,34 @@ You **MUST**:
 
         Extended to support ten primitives: D, T, R, P, F, K, G, Γ, Φ, S
         """
+        # Normalize short-form keys (D, T, Γ, …) to long-form, and unwrap nested
+        # {"value": "...", "reasoning": "..."} dicts some models return per primitive
+        normalized: Dict[str, str] = {}
+        for k, v in data.items():
+            canon = self._SHORT_TO_LONG.get(k, k)
+            normalized[canon] = v.get("value", v) if isinstance(v, dict) else v
+        data = normalized
+
         # Map string values to enum members — no defaults; missing keys raise KeyError
         _required = ["dimensionality", "topology", "recognition_mode", "polarity",
                      "fidelity", "kinetic_character", "granularity", "interaction_grammar"]
+        # Detect wrong-schema responses (e.g. numeric scores instead of string values)
+        numeric = {k: data[k] for k in _required if k in data and isinstance(data[k], (int, float))}
+        if numeric:
+            raise ValueError(
+                f"Model returned numeric values for primitives instead of categorical strings.\n"
+                f"Numeric keys: {numeric}\n"
+                f"Expected strings like 'D_wedge', 'T_bowtie', etc.\n"
+                f"Full normalized data: {data}"
+            )
+
         missing = [k for k in _required if not data.get(k)]
         if missing:
+            missing_vals = {k: repr(data.get(k)) for k in missing}
             raise ValueError(
                 f"Model response missing required primitive(s): {missing}\n"
-                f"Got keys: {list(data.keys())}"
+                f"Values for missing keys: {missing_vals}\n"
+                f"Full normalized data: {data}"
             )
 
         dimensionality    = Dimensionality.from_symbol(data["dimensionality"])

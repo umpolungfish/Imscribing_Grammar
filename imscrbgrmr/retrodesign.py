@@ -39,7 +39,7 @@ _DIM_DOMAINS: Dict[str, frozenset] = {
     "D_wedge": frozenset({"molecular"}),
     "D_cube":  frozenset({"supramolecular"}),
     "D_infty": frozenset({"temporal"}),
-    "D_holo":  frozenset({"holographic"}),
+    "D_odot":  frozenset({"holographic", "imscriptive"}),
 }
 
 

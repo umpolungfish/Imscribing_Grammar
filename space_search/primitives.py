@@ -24,8 +24,8 @@ import numpy as np
 
 # Ordinal mappings for each primitive tier
 ORDINALS = {
-    "D": {"D_wedge": 1, "D_triangle": 2, "D_infty": 3, "D_holo": 4},
-    "T": {"T_network": 1, "T_in": 2, "T_bowtie": 3, "T_box": 4, "T_holo": 5},
+    "D": {"D_wedge": 1, "D_triangle": 2, "D_infty": 3, "D_odot": 4},
+    "T": {"T_network": 1, "T_in": 2, "T_bowtie": 3, "T_boxtimes": 4, "T_odot": 5},
     "R": {"R_super": 1, "R_cat": 2, "R_dagger": 3, "R_lr": 4},
     "P": {"P_asym": 1, "P_psi": 2, "P_pm": 3, "P_sym": 4, "P_pm_sym": 5},
     "F": {"F_ell": 1, "F_eth": 2, "F_hbar": 3},

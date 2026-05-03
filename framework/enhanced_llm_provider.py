@@ -257,6 +257,190 @@ class OpenRouterProvider(HttpProvider):
         super().__init__(api_key, model, "https://openrouter.ai/api/v1/chat/completions", "openrouter")
 
 
+class LocalProvider(LLMProvider):
+    """Direct tensor inference — no API key.
+
+    Loads a merged Qwen3 model once (class-level singleton) and keeps it
+    in GPU memory for the lifetime of the process.  Suitable for guided
+    generation where 12 sequential calls would otherwise each hit a remote
+    API with a thinking-token overhead.
+
+    Model path resolution order:
+      1. `model_path` constructor arg
+      2. LOCAL_MODEL_PATH env var
+      3. Default INFERRED merged-model path
+    """
+
+    DEFAULT_MODEL_PATH = (
+        "/home/mrnob0dy666/synthomniconP/INFERRED/output"
+        "/synthonicon_qlora/merged2/merged_model"
+    )
+
+    # Class-level singleton state
+    _model = None
+    _tokenizer = None
+    _loaded_path: Optional[str] = None
+    _load_lock = None  # threading.Lock, created on first use
+
+    def __init__(self, model_path: Optional[str] = None):
+        super().__init__()
+        raw = model_path or os.getenv("LOCAL_MODEL_PATH") or self.DEFAULT_MODEL_PATH
+        self.model_path = str(Path(raw).expanduser())
+
+    def _ensure_loaded(self) -> None:
+        import threading
+        if LocalProvider._load_lock is None:
+            LocalProvider._load_lock = threading.Lock()
+        if LocalProvider._loaded_path == self.model_path:
+            return
+        with LocalProvider._load_lock:
+            if LocalProvider._loaded_path == self.model_path:
+                return
+            import os, torch
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+            os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+            logger.info(f"Loading local model from {self.model_path} ...")
+            tok = AutoTokenizer.from_pretrained(
+                self.model_path, trust_remote_code=True
+            )
+            # Merged QLoRA models often lose chat_template from tokenizer_config.json.
+            # Try to recover it from the base model recorded in config.json /
+            # adapter_config.json.
+            if tok.chat_template is None:
+                import json as _j
+                _base_name: Optional[str] = None
+                for _cfg_name in ("config.json", "adapter_config.json"):
+                    _cfg_p = Path(self.model_path) / _cfg_name
+                    if _cfg_p.exists():
+                        with open(_cfg_p) as _f:
+                            _d = _j.load(_f)
+                        _base_name = _d.get("_name_or_path") or _d.get("base_model_name_or_path")
+                        if _base_name:
+                            break
+                if _base_name:
+                    try:
+                        _btok = AutoTokenizer.from_pretrained(
+                            _base_name, trust_remote_code=True, local_files_only=True
+                        )
+                        if _btok.chat_template:
+                            tok.chat_template = _btok.chat_template
+                            logger.info(f"Recovered chat_template from base model: {_base_name}")
+                    except Exception as _e:
+                        logger.warning(
+                            f"Could not recover chat_template from '{_base_name}' ({_e}). "
+                            f"Fix: from the base tokenizer run "
+                            f"tok.save_pretrained('{self.model_path}')."
+                        )
+                else:
+                    logger.warning(
+                        "tokenizer.chat_template is None and no base model name found in "
+                        "config.json / adapter_config.json. apply_chat_template will fail."
+                    )
+            # Pick the GPU with the most free memory; fall back to CPU if none available
+            # or if the chosen GPU is in a bad post-crash state.
+            device_map: Any = "cpu"
+            if torch.cuda.is_available():
+                best_gpu = max(
+                    range(torch.cuda.device_count()),
+                    key=lambda i: torch.cuda.mem_get_info(i)[0],
+                )
+                free_bytes = torch.cuda.mem_get_info(best_gpu)[0]
+                if free_bytes > 2 * 1024 ** 3:  # require at least 2 GB free
+                    device_map = {"": best_gpu}
+                    logger.info(f"Selected GPU {best_gpu} ({free_bytes // 1024**3} GB free).")
+                else:
+                    logger.warning("No GPU has >2 GB free; loading on CPU.")
+            try:
+                mdl = AutoModelForCausalLM.from_pretrained(
+                    self.model_path,
+                    device_map=device_map,
+                    trust_remote_code=True,
+                    attn_implementation="eager",
+                )
+                logger.info(f"Local model loaded (device_map={device_map}).")
+            except Exception as e:
+                logger.warning(f"Load failed ({e}); retrying on CPU.")
+                mdl = AutoModelForCausalLM.from_pretrained(
+                    self.model_path,
+                    device_map="cpu",
+                    trust_remote_code=True,
+                    attn_implementation="eager",
+                    torch_dtype=torch.float32,
+                )
+                logger.info("Local model loaded on CPU.")
+            mdl.eval()
+            LocalProvider._tokenizer = tok
+            LocalProvider._model = mdl
+            LocalProvider._loaded_path = self.model_path
+            logger.info("Local model ready.")
+
+    def _sync_generate(
+        self,
+        prompt: str,
+        system: Optional[str],
+        temperature: float,
+        max_new_tokens: int,
+    ) -> str:
+        import torch
+
+        self._ensure_loaded()
+        tok = LocalProvider._tokenizer
+        mdl = LocalProvider._model
+
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+
+        # enable_thinking=False: no CoT overhead for single-answer guided calls
+        text = tok.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True,
+            enable_thinking=False,
+        )
+        inputs = tok(text, return_tensors="pt").to(mdl.device)
+
+        with torch.no_grad():
+            # Clear max_length from generation config so max_new_tokens is unambiguous
+            if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
+                mdl.generation_config.max_length = None
+            outputs = mdl.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=temperature if temperature > 0 else None,
+                do_sample=temperature > 0,
+                pad_token_id=tok.eos_token_id,
+            )
+
+        new_tokens = outputs[0][inputs.input_ids.shape[1]:]
+        response = tok.decode(new_tokens, skip_special_tokens=True).strip()
+        # Strip any stray thinking blocks
+        response = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+        return response
+
+    async def query(self, prompt: str, **kwargs) -> str:
+        system = kwargs.get("system")
+        temperature = float(kwargs.get("temperature", 0.3))
+        max_tokens = int(kwargs.get("max_tokens", 512))
+
+        cached = await self.get_cached_response(
+            prompt, model=self.model_path, temperature=temperature, max_tokens=max_tokens
+        )
+        if cached:
+            return cached
+
+        loop = asyncio.get_event_loop()
+        result = await loop.run_in_executor(
+            None, self._sync_generate, prompt, system, temperature, max_tokens
+        )
+
+        await self.cache_response(
+            prompt, result, model=self.model_path, temperature=temperature, max_tokens=max_tokens
+        )
+        return result
+
+
 class MistralProvider(LLMProvider):
     """LLM Provider for Mistral (Async)."""
     def __init__(self, api_key: str, model: Optional[str] = None):
@@ -355,12 +539,16 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
         ValueError: If provider not supported or API key missing
     """
     provider_name = provider_name.lower()
-    
+
+    # Local provider — no API key required
+    if provider_name == 'local':
+        return LocalProvider(model_path=kwargs.get("model_path"))
+
     # Special case: aider doesn't require API key (uses underlying LLM's keys)
     if provider_name == 'aider':
         from .aider_provider import AiderLLMProvider
         return AiderLLMProvider(**kwargs)
-    
+
     # Canonical API key env var overrides (providers that don't follow {NAME}_API_KEY)
     _api_key_env_overrides = {
         "google": "GOOGLE_API_KEY",

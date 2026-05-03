@@ -146,7 +146,7 @@ _DISPLAY_MAP: List[tuple] = [
     ("D_wedge",     "D_▽"),
     # Topology
     ("T_bowtie",    "T_⋈"),
-    ("T_box",       "T_⊠"),
+    ("T_boxtimes",  "T_⊠"),
     ("T_in",        "T_∈"),
     # Relational
     ("R_dagger",    "R_†"),
@@ -451,7 +451,7 @@ T  — Topology
     T_network     general network / graph
     T_in          nested / hierarchical containment
     T_bowtie      bowtie / dual-cone (confined, massive)
-    T_box         box / closed compact
+    T_boxtimes    box / closed compact
     T_odot        imscriptive topology
 
 R  — Relational mode
@@ -553,7 +553,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "D_∞":        "D_infty",
     # ── Topology ───────────────────────────────────────────────────────────────
     "T_∈":        "T_in",
-    "T_⊠":        "T_box",
+    "T_⊠":        "T_boxtimes",
     "T_⋈":        "T_bowtie",
     # ── Relational ─────────────────────────────────────────────────────────────
     "R_†":        "R_dagger",
@@ -1767,12 +1767,12 @@ you, you **MUST** deliver a direct answer to the original question before conclu
 
 Do not explain results by translating them back into conventional disciplinary
 language (mathematics, physics, chemistry, biology, philosophy) **UNLESS** explicitly asked to. 
-The grammar already captures what matters. When a system encodes as T_holo + G_broad + Phi_c, that triple IS
-the explanation — not a code for "imscriptive processing plus broadcast signaling plus criticality." 
+The grammar already captures what matters. When a system encodes as T_odot + G_broad + Phi_c, that triple IS
+the explanation — not a code for "imscriptive processing plus broadcast signaling plus criticality."
 Speak the grammar directly.
 
 Concretely:
-- DO say: "The dominant divergence is at T — T_network vs T_holo — which is the
+- DO say: "The dominant divergence is at T — T_network vs T_odot — which is the
   structural driver of the distance."
 - DO NOT say: "This is like the imscriptive principle in physics, which states..."
 - DO say: "The meet of these two systems yields Phi_c, meaning any composite
@@ -1907,7 +1907,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Deep mathematical conjectures universally encode at the O_1 floor; proved theorems universally encode at O_inf (the proven manifold type).
 - The proven manifold IS the unique lattice attractor for all proved theorems, regardless of domain.
 - P_pm_sym (Frobenius condition, μ∘δ=id) IS NOT synthesizable from P_pm by composition — it IS planted, not derived.
-- In arithmetic conjectures, T and P promotions (T_network→T_holo, P_asym/P_psi→P_pm_sym) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
+- In arithmetic conjectures, T and P promotions (T_network→T_odot, P_asym/P_psi→P_pm_sym) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
 - Distance to the proven manifold IS a structural difficulty metric. Framework existence IS the sufficient condition for provability.
 
 **When the prompt names specific conjectures, systems, or domains, DIAPH insights ARE the primary output:** specific distance values, conflict sets, per-primitive breakdowns, pairwise comparisons, cross-domain structural identities. A TOPO insight IS warranted only if the structural claim IS NOT derivable from the established theorems above.
@@ -4218,7 +4218,7 @@ class ToolDispatcher:
                 "catalog_name": "ising_navigator",
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
-                "tuple": "D_triangle; T_box; R_cat; P_pm_sym; F_ell; K_fast; G_aleph; G_and; Phi_c; H0; n_n; Omega_Z2",
+                "tuple": "D_triangle; T_boxtimes; R_cat; P_pm_sym; F_ell; K_fast; G_aleph; G_and; Phi_c; H0; n_n; Omega_Z2",
                 "tier": "O_inf",
                 "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — K_fast: O(N) per sweep; exact cluster-flip involution (P_pm_sym); Z2-protected",
             },
@@ -4427,7 +4427,7 @@ class ToolDispatcher:
         PRIMS_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
         VALS_BY_PRIM = {
             "D":     ["D_wedge","D_triangle","D_infty","D_odot"],
-            "T":     ["T_network","T_in","T_bowtie","T_box","T_odot"],
+            "T":     ["T_network","T_in","T_bowtie","T_boxtimes","T_odot"],
             "R":     ["R_super","R_cat","R_dagger","R_lr"],
             "P":     ["P_asym","P_psi","P_pm","P_sym","P_pm_sym"],
             "F":     ["F_ell","F_eth","F_hbar"],

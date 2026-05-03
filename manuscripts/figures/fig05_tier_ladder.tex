@@ -1,0 +1,65 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathreplacing}
+\begin{document}
+\begin{tikzpicture}[
+  tier/.style={rectangle,draw,thick,rounded corners,fill=#1!15,inner sep=10pt,align=center,minimum width=4.5cm,font=\bfseries},
+  gap/.style={->,>=stealth,ultra thick,red!60},
+  gaplab/.style={font=\small,fill=white,inner sep=2pt,text=red!80!black},
+  inside/.style={font=\footnotesize,align=center},
+  condition/.style={font=\footnotesize\itshape,text=gray,align=center},
+]
+
+% Tier O0
+\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O_0}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_c,\Phi_c^{\mathbb{C}}\}$};
+\node[condition,right=0.4cm of O0] (c0) {L4 fails\\No self-modeling loop\\$C=0$ (Gate 1 fails)};
+
+% Gap O0 -> O1
+\draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\Phi_\text{sub}\to\Phi_c$} ++(0,-0.9);
+
+% Tier O1
+\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O_1}$\\\small Instantiated\\\small $\Phi_c,\ \Omega_0$};
+\node[condition,right=0.4cm of O1] (c1) {L4 holds\\L5 fails\\Loop forms, no winding protection};
+
+% Gap O1 -> O2
+\draw[gap] (O1.south) -- node[gaplab,pos=0.5] {$\Delta=1.30$\\$D_\wedge\!\to\!D_\triangle,\ \Omega_0\!\to\!\Omega_{\mathbb{Z}_2}$} ++(0,-0.9);
+
+% Tier O2
+\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O_2}$\\\small Topologically Protected\\\small $\Phi_c,\ \Omega\neq\Omega_0,\ D\in\{D_\wedge,D_\triangle,D_\odot\}$};
+\node[condition,right=0.4cm of O2] (c2) {Winding-number protection\\Finite-dim or imscriptive\\$C > 0$ possible};
+
+% Gap O2 -> O2†
+\draw[gap] (O2.south) -- node[gaplab,pos=0.5] {$\Delta=1.00$\\$D_\triangle\to D_\infty$} ++(0,-0.9);
+
+% Tier O2†
+\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O_2^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_c,\ \Omega\neq\Omega_0,\ D_\infty$};
+\node[condition,right=0.4cm of O2d] (c2d) {Infinite-dimensional\\Winding protection\\Not imscriptive};
+
+% Gap O2† -> O∞ — LARGEST
+\draw[gap] (O2d.south) -- node[gaplab,pos=0.5] {$\mathbf{\Delta=4.38}$\\$P_\text{asym}\!\to\!P_{\pm}^{\text{sym}}$\\\small \textbf{Largest single-primitive jump}} ++(0,-1.2);
+
+% Tier O∞
+\node[tier=purple!50,below=1.2cm of O2d] (Oinf) {$\mathbf{O_\infty}$\\\small Algebraically Closed\\\small $\Phi_c\ +\ P_{\pm}^{\text{sym}}$\\\small $\mu\circ\delta=\text{id}$};
+\node[condition,right=0.4cm of Oinf] (cinf) {Both L4 and L5 hold\\Frobenius exact\\Self-encoding fixed point\\$C$: Gate 2 open};
+
+% Braces
+\draw[decorate,decoration={brace,amplitude=8pt,mirror},thick,blue!40] 
+  ($(O0.north west)+(-0.9,0.4)$) -- ($(Oinf.south west)+(-0.9,-0.4)$) 
+  node[midway,left=12pt,font=\small\itshape,text=blue!60!black,rotate=90] {Tier structure};
+  
+% Right-side summary
+\node[font=\footnotesize\itshape,text=gray,anchor=north west] at ($(O0.north east)+(2.8,0)$) {
+\begin{tabular}{l}
+4 gate primitives:\\[2pt]
+\quad $\Phi$ (L4: Lawvere)\\
+\quad $P$  (L5: Frobenius)\\
+\quad $D$  (I4: Yoneda)\\
+\quad $\Omega$ (I3: Classifying)\\[6pt]
+8 shape primitives:\\
+\quad $T,R,F,K,G,\Gamma,H,S$\\[6pt]
+Tier boundaries: exclusively\\[2pt]
+\quad $\Phi$ + $P$ promotions
+\end{tabular}};
+
+\end{tikzpicture}
+\end{document}

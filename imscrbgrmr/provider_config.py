@@ -83,6 +83,11 @@ class ProviderConfig:
                     "max_tokens_default": 4000,
                     "temperature_default": 0.7,
                 },
+                "local": {
+                    "default_model": "synthonicon_qlora_merged2",
+                    "max_tokens_default": 512,
+                    "temperature_default": 0.3,
+                },
             },
             "cli": {
                 "default_provider": None,

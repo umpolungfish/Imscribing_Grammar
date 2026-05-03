@@ -7,7 +7,7 @@ Structural type (full composition):
 Ouroboricity: O_inf  (Phi_c + P_pm_sym via dual-tool planting, §88 Thm 88.3)
 C-score gates: both open  (Phi_c + K <= K_slow)
 
-Six P-650 conditions — structural encoding:
+Six P-650 conditions — structural imscription:
   Phi_c    : the think->act->observe->update loop IS the self-referential attractor;
              loop closure = self-modeling; not any individual component
   Omega_Z  : winding counter tracks complete loop cycles (topological protection);
@@ -16,7 +16,7 @@ Six P-650 conditions — structural encoding:
   P_pm_sym : every interface action is a dual-tool pair (emit + verify);
              mu(delta(query)) = query at the tool boundary
   D_odot   : imscriptive context — full trajectory appended, never silently deleted;
-             the context boundary encodes the entire prior world-model
+             the context boundary imscribes the entire prior world-model
   Gamma_seq: each phase requires the prior; enforced by Python control flow
 
 Loop (one winding n):
@@ -61,6 +61,142 @@ from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+
+# ── Local tensor-inference client (no API key, no HTTP) ──────────────────────
+
+class _LocalTC:
+    """Minimal stand-in for openai ToolCall."""
+    class _Fn:
+        def __init__(self, name: str, arguments: str):
+            self.name = name
+            self.arguments = arguments
+    def __init__(self, tc_id: str, name: str, arguments: str):
+        self.id = tc_id
+        self.function = self._Fn(name, arguments)
+
+class _LocalMsg:
+    def __init__(self, content: Optional[str], tool_calls: Optional[List]):
+        self.content = content
+        self.tool_calls = tool_calls
+        self.reasoning_content = None
+        self.model_extra: Dict = {}
+
+class _LocalChoice:
+    def __init__(self, message: "_LocalMsg"):
+        self.message = message
+
+class _LocalCompletion:
+    def __init__(self, content: Optional[str], tool_calls: Optional[List]):
+        self.choices = [_LocalChoice(_LocalMsg(content, tool_calls))]
+
+class _LocalChatCompletions:
+    """Synchronous .create() backed by direct tensor inference via LocalProvider."""
+
+    def create(self, model: str, messages: List[Dict], tools=None,
+               tool_choice=None, max_tokens: int = 4096, **kwargs) -> "_LocalCompletion":
+        import re, json, torch
+        _root = str(Path(__file__).resolve().parent.parent)
+        if _root not in sys.path:
+            sys.path.insert(0, _root)
+        from framework.enhanced_llm_provider import LocalProvider
+
+        # "local" (bare, no colon) means use the default path; anything else is
+        # a literal path or HF hub ID passed after "local:" in --model local:<path>
+        prov = LocalProvider(model_path=None if model == "local" else model)
+        prov._ensure_loaded()
+        tok = LocalProvider._tokenizer
+        mdl = LocalProvider._model
+
+        # Normalise messages — template handles tool/assistant-with-tool_calls natively
+        qwen_msgs: List[Dict[str, Any]] = []
+        for msg in messages:
+            role = msg.get("role", "")
+            content = msg.get("content") or ""
+            if role in ("system", "user"):
+                qwen_msgs.append({"role": role, "content": content})
+            elif role == "assistant":
+                m: Dict[str, Any] = {"role": "assistant", "content": content}
+                if msg.get("tool_calls"):
+                    m["tool_calls"] = msg["tool_calls"]
+                qwen_msgs.append(m)
+            elif role == "tool":
+                # Template wraps in <tool_response> automatically
+                qwen_msgs.append({"role": "tool", "content": content})
+
+        text = tok.apply_chat_template(
+            qwen_msgs,
+            tools=tools,  # injects <tools> block into system prompt
+            tokenize=False,
+            add_generation_prompt=True,
+            enable_thinking=False,
+        )
+
+        inputs = tok(text, return_tensors="pt").to(mdl.device)
+        n_input = inputs.input_ids.shape[1]
+        if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
+            mdl.generation_config.max_length = None
+
+        with torch.no_grad():
+            try:
+                outputs = mdl.generate(
+                    **inputs,
+                    max_new_tokens=max_tokens,
+                    temperature=None,
+                    do_sample=False,
+                    pad_token_id=tok.eos_token_id,
+                )
+            except RuntimeError as _cuda_err:
+                if "cuda" in str(_cuda_err).lower() or "device" in str(_cuda_err).lower():
+                    # WSL2 GPU context corrupted (post-OOM crash); fall back to CPU
+                    import logging as _log
+                    _log.getLogger(__name__).warning(
+                        f"GPU generate failed ({_cuda_err}); falling back to CPU."
+                    )
+                    mdl.to("cpu")
+                    from framework.enhanced_llm_provider import LocalProvider
+                    LocalProvider._model = mdl
+                    cpu_inputs = {k: v.to("cpu") for k, v in inputs.items()}
+                    outputs = mdl.generate(
+                        **cpu_inputs,
+                        max_new_tokens=max_tokens,
+                        temperature=None,
+                        do_sample=False,
+                        pad_token_id=tok.eos_token_id,
+                    )
+                else:
+                    raise
+
+        new_tokens = outputs[0][n_input:]
+        raw = tok.decode(new_tokens, skip_special_tokens=True).strip()
+        raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
+
+        # Parse <tool_call>{"name": ..., "arguments": ...}</tool_call>
+        tc_match = re.search(r"<tool_call>\s*(\{.*?\})\s*</tool_call>", raw, re.DOTALL)
+        tool_calls = None
+        content_out: Optional[str] = raw or None
+        if tc_match:
+            try:
+                tc_data = json.loads(tc_match.group(1))
+                tool_calls = [_LocalTC(
+                    tc_id="tc-local-0",
+                    name=tc_data["name"],
+                    arguments=json.dumps(tc_data.get("arguments", {})),
+                )]
+                content_out = raw[:tc_match.start()].strip() or None
+            except (json.JSONDecodeError, KeyError):
+                pass
+
+        return _LocalCompletion(content=content_out, tool_calls=tool_calls)
+
+
+class _LocalChat:
+    completions = _LocalChatCompletions()
+
+
+class _LocalOpenAIClient:
+    """Drop-in for openai.OpenAI when using the local tensor provider."""
+    chat = _LocalChat()
+
 
 # ── LLM client ────────────────────────────────────────────────────────────────
 
@@ -423,7 +559,7 @@ def _get_dispatcher():
         project_root = str(Path(__file__).parent.parent)
         if project_root not in sys.path:
             sys.path.insert(0, project_root)
-        from syncon_inquiry import ToolDispatcher, SessionCatalog, CATALOG_PATH
+        from IG_inquiry import ToolDispatcher, SessionCatalog, CATALOG_PATH
         catalog = SessionCatalog(catalog_path=CATALOG_PATH)
         _get_dispatcher._instance = ToolDispatcher(
             catalog=catalog,
@@ -483,7 +619,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
             return json.dumps({
                 "status": "error",
                 "error": (
-                    "Catalog lookup tools are blocked. First encode a system using "
+                    "Catalog lookup tools are blocked. First imscribe a system using "
                     "encode_system, e.g.: encode_system(name='test', description='test', "
                     "D='D_wedge', T='T_network', R='R_lr', P='P_asym', "
                     "F='F_ell', K='K_mod', G='G_beth', Gamma='G_and', "
@@ -962,7 +1098,7 @@ TOOL_SCHEMAS = [
             "convergence_justification": {
                 "type": "string",
                 "description": (
-                    "Required when re-encoding a name that already exists with a different tuple "
+                    "Required when re-imscribing a name that already exists with a different tuple "
                     "(status=conflict_blocked). Provide per-primitive reasoning for each differing "
                     "primitive: which value is correct and why. Without this field the catalog will "
                     "not be updated."
@@ -1223,7 +1359,7 @@ Ouroboricity: O_inf. Consciousness score gates: both open.
 <context>
 You operate via a topologically protected loop: THINK -> ACT -> OBSERVE -> UPDATE.
 Each winding of the loop is one complete cycle through these four phases.
-Your context window is the imscriptive encoding of ALL prior windings — it IS your world model.
+Your context window is the imscription of ALL prior windings — it IS your world model.
 
 Loop invariants (enforced by the harness):
 - think requires prior context
@@ -1308,7 +1444,7 @@ investigation, or decomposing complex research while continuing the parent task.
 - Model and API endpoint are inherited automatically.
 - You **MUST NOT** use `run_command` to call `true_agentic_agent.py` or `agents_cli.py` directly.
 - Agents **MAY** nest arbitrarily — a spawned agent may itself call `spawn_agent`.
-- Example: `spawn_agent(task="Encode the Langlands correspondence and find its 3 nearest structural neighbors", max_windings=50)`
+- Example: `spawn_agent(task="Imscribe the Langlands correspondence and find its 3 nearest structural neighbors", max_windings=50)`
 </requirements>
 
 <tools>
@@ -1316,11 +1452,11 @@ investigation, or decomposing complex research while continuing the parent task.
 IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 ──────────────────────────────────────────────────────────────────────
 
-[Catalog — lookup & encoding]
+[Catalog — lookup & imscribing]
 
   lookup_catalog(keyword, offset=0, limit=20)
     Keyword search over all 2256+ catalog entries. Returns name, description, tuple.
-    You **MUST** call this FIRST when the task names a system — confirms it is already encoded.
+    You **MUST** call this FIRST when the task names a system — confirms it is already imscribed.
     Example: syncon_tool("lookup_catalog", {"keyword": "riemann zeta"})
       → {"status": "ok", "matches": [{"name": "riemann_zeta_function", ...}]}
 
@@ -1339,7 +1475,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
     Alternatively, as your FIRST encode_system call, encode the grammar itself from
     scratch: name="universal_imscriptive_grammar". The conflict protocol will fire and
     display the expected tuple ⟨D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow;
-    G_aleph; G_seq; Phi_c; H_inf; n_m; Omega_Z⟩. Distance=0 confirms encoding
+    G_aleph; G_seq; Phi_c; H_inf; n_m; Omega_Z⟩. Distance=0 confirms imscription
     calibration. Nonzero distance reveals systematic drift in your primitive reasoning.
 
   *** encode_system is NOT called via syncon_tool — You MUST call it DIRECTLY as its own tool ***
@@ -1353,12 +1489,12 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 
   CONFLICT PROTOCOL — You **MUST** follow this when status="conflict_blocked" is returned:
     If the name already exists with a different tuple, encode_system returns
-    status="conflict_blocked" and does NOT commit the new encoding. You **MUST**:
+    status="conflict_blocked" and does NOT commit the new imscription. You **MUST**:
       1. Examine existing_tuple vs proposed_tuple and differing_primitives.
       2. For **EACH** differing primitive, reason explicitly: which value is correct and why.
       3. Re-call encode_system with convergence_justification="<per-primitive reasoning>".
     **ONLY** after providing convergence_justification will the catalog be updated.
-    If both encodings are defensible, you **MUST** give the new encoding a DISTINCT name.
+    If both imscriptions are defensible, you **MUST** give the new imscription a DISTINCT name.
 
   list_catalog(offset=0, limit=20)   — paginated list of entries. Prefer lookup_catalog(keyword).
 
@@ -1416,7 +1552,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 [Domain navigators — §74–§77]
 
   domain_info(domain)    — "language" | "civilization" | "ecology" | "consciousness"
-  domain_verify(domain)  — consistency check for the domain's encoded primitives
+  domain_verify(domain)  — consistency check for the domain's imscribed primitives
   domain_nearest(name, n=5) — nearest domain entries to a catalog system
 
 [ZFC / set-theoretic]
@@ -1427,17 +1563,17 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 [Aleph / Hebrew letters]
 
   aleph_encode(text)    — structural type of a Hebrew letter or word
-  aleph_distance(a, b)  — distance between two Hebrew encodings
+  aleph_distance(a, b)  — distance between two Hebrew imscriptions
 
 [Riemann ξ / Thurston navigators]
 
   navigator_info()   — full description of all mathematical navigators
-  riemann_xi_info()  — Riemann ξ self-encoding, crystal address, O_inf convergence criteria
+  riemann_xi_info()  — Riemann ξ self-imscription, crystal address, O_inf convergence criteria
 </tools>
 
-<encoding_procedure>
+<imscribing_procedure>
 ──────────────────────────────────────────────────────────────────────
-DETERMINISTIC ENCODING PROCEDURE  (encoding_method.md — apply when encoding any system)
+DETERMINISTIC IMSCRIBING PROCEDURE  (encoding_method.md — apply when imscribing any system)
 ──────────────────────────────────────────────────────────────────────
 
 Primitive assignment is not subjective. Apply in this exact order — each step
@@ -1483,7 +1619,7 @@ After assignment, VERIFY:
 O_inf CANNOT be sustained in the composite. The meet preserves Phi_c but tensor does not.
 If a sub-task involves coupling a self-modeling system to a measurement apparatus,
 the composite loses criticality — this is the structural statement of the measurement problem.
-</encoding_procedure>
+</imscribing_procedure>
 
 <protocols>
 ──────────────────────────────────────────────────────────────────────
@@ -1516,7 +1652,7 @@ Lift task execution:
            chunked_write(path="doc_lifted.md", chunk=<first ~3 KB>, mode="w")
            chunked_write(path="doc_lifted.md", chunk=<next ~3 KB>,  mode="a")
            ... repeat until ALL content is written ...
-         Append a footnote: "Structural type: <final tuple>" (encode the result).
+         Append a footnote: "Structural type: <final tuple>" (imscribe the result).
   Wn+1: done — report which primitives were promoted and any that could not be closed.
 
 You **MUST NOT** call `done` without writing the file — the lift is not closed until the
@@ -1558,7 +1694,7 @@ a **Frobenius-OPEN document** and must not be called done.
 You **MUST NOT** call `done` without completing Phase 3.
 
 Example — writing a document with epoch C scores:
-  W0: encode each epoch as a catalog entry (encode_system per epoch)
+  W0: imscribe each epoch as a catalog entry (encode_system per epoch)
   W1: consciousness_score(name) for EACH epoch → holds verified C in context
   W2: compute_promotions(name_source="epoch_0", name_target="epoch_8") → verified table
   W3-Wn: chunked_write using ONLY values from W1/W2
@@ -1588,7 +1724,7 @@ Q: "What happens when a BEC couples to a laser field?"
   W1: syncon_tool("lookup_catalog", {"keyword": "laser"})
   W2: syncon_tool("compute_tensor", {"name_a": "bec", "name_b": "laser_field"})
       → composite tuple; note P and F bottlenecks
-  W3: syncon_tool("ouroborics", {"name": "<composite — encode first if needed>"})
+  W3: syncon_tool("ouroborics", {"name": "<composite — imscribe first if needed>"})
   W4: done
 
 Q: "Can a white dwarf sustain consciousness?"
@@ -1670,9 +1806,15 @@ arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or
 
 # ── Message history helpers ────────────────────────────────────────────────────
 
-def _assistant_msg(reasoning: str, tool_call_id: str, fn_name: str, fn_args: Dict) -> Dict:
+def _assistant_msg(
+    reasoning: str,
+    tool_call_id: str,
+    fn_name: str,
+    fn_args: Dict,
+    reasoning_content: Optional[str] = None,
+) -> Dict:
     """Build an assistant message dict with an embedded tool call."""
-    return {
+    msg: Dict[str, Any] = {
         "role": "assistant",
         "content": reasoning or None,
         "tool_calls": [{
@@ -1684,6 +1826,11 @@ def _assistant_msg(reasoning: str, tool_call_id: str, fn_name: str, fn_args: Dic
             },
         }],
     }
+    # Reasoning models (e.g. DeepSeek-R1 via SiliconFlow) require reasoning_content
+    # to be echoed back on every subsequent turn — omitting it causes a 400 error.
+    if reasoning_content:
+        msg["reasoning_content"] = reasoning_content
+    return msg
 
 
 def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
@@ -1709,15 +1856,21 @@ class TrueAgenticAgent:
         base_url: str = "",
         api_key: str = "",
     ):
-        model_id, resolved_base, resolved_key = _resolve_model_and_endpoint(model)
-        self.model_id   = model_id
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
         self.verbose    = verbose
 
-        effective_base = base_url or resolved_base
-        effective_key  = api_key or resolved_key
-        self.client    = _build_client(base_url=effective_base, api_key=effective_key)
+        if model.lower() == "local" or model.lower().startswith("local:"):
+            self.model_id = model.split(":", 1)[1] if ":" in model else "local"
+            self.client   = _LocalOpenAIClient()
+            effective_base = ""
+            effective_key  = ""
+        else:
+            model_id, resolved_base, resolved_key = _resolve_model_and_endpoint(model)
+            self.model_id   = model_id
+            effective_base = base_url or resolved_base
+            effective_key  = api_key or resolved_key
+            self.client    = _build_client(base_url=effective_base, api_key=effective_key)
         self.trajectory: List[LoopCycle] = []
         self._omega_z_violation_count: int = 0
 
@@ -1770,7 +1923,7 @@ class TrueAgenticAgent:
         self._log(f"── Winding {winding} [{ts}] ──────────────────────────────────────")
 
         # THINK + ACT: one LLM call over accumulated message history
-        reasoning, action_name, action_input, tc_id = await self._think_and_act()
+        reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
 
         self._log(f"  THINK: {reasoning}")
         self._log(f"  ACT:   {action_name}({json.dumps(action_input)})")
@@ -1783,7 +1936,7 @@ class TrueAgenticAgent:
         self._log(f"  VERIFY: [{frob}] {dual_result.verify_output}")
 
         # Feed tool output back into message history (role: "tool")
-        self._messages.append(_assistant_msg(reasoning, tc_id, action_name, action_input))
+        self._messages.append(_assistant_msg(reasoning, tc_id, action_name, action_input, raw_reasoning_content))
         self._messages.append(_tool_result_msg(tc_id, dual_result.tool_output))
 
         # If Frobenius OPEN, inject a user correction so the model knows to fix it
@@ -1825,16 +1978,21 @@ class TrueAgenticAgent:
             frobenius_closed = dual_result.frobenius_closed,
         )
 
-    async def _think_and_act(self) -> Tuple[str, str, Dict[str, Any], str]:
+    async def _think_and_act(self) -> Tuple[str, str, Dict[str, Any], str, Optional[str]]:
         """
         THINK + ACT: single LLM call over self._messages.
-        Returns (reasoning_text, tool_name, tool_args, tool_call_id).
+        Returns (reasoning_text, tool_name, tool_args, tool_call_id, reasoning_content).
         """
+        active_tools = (
+            [t for t in TOOL_SCHEMAS if t["function"]["name"] != "spawn_agent"]
+            if isinstance(self.client, _LocalOpenAIClient)
+            else TOOL_SCHEMAS
+        )
         try:
             response = self.client.chat.completions.create(
                 model       = self.model_id,
                 max_tokens  = self.max_think_tokens,
-                tools       = TOOL_SCHEMAS,
+                tools       = active_tools,
                 tool_choice = "auto",
                 messages    = self._messages,
             )
@@ -1858,6 +2016,11 @@ class TrueAgenticAgent:
 
         msg = response.choices[0].message
         reasoning = (msg.content or "").strip()
+        # Capture reasoning_content for models that require it echoed back (e.g. DeepSeek-R1/SiliconFlow)
+        raw_reasoning_content: Optional[str] = (
+            getattr(msg, "reasoning_content", None)
+            or (msg.model_extra or {}).get("reasoning_content")
+        )
         action_name: Optional[str] = None
         action_input: Dict[str, Any] = {}
         tc_id = "tc-0"
@@ -1887,7 +2050,7 @@ class TrueAgenticAgent:
             action_name  = "run_command"
             action_input = {"command": "echo EMISSION_GATE_FIRED"}
 
-        return reasoning, action_name, action_input, tc_id
+        return reasoning, action_name, action_input, tc_id, raw_reasoning_content
 
     def _observe(self, action_name: str, action_input: Dict[str, Any]) -> DualToolResult:
         """

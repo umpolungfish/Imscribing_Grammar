@@ -1,0 +1,58 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing}
+\begin{document}
+\begin{tikzpicture}[
+  space/.style={rectangle,draw,thick,rounded corners,fill=#1!8,inner sep=10pt,align=center,minimum width=2.8cm,font=\small\bfseries},
+  map/.style={->,>=stealth,ultra thick,blue!60},
+  invmap/.style={->,>=stealth,ultra thick,red!60},
+  compose/.style={->,>=stealth,ultra thick,purple!80!black,bend right=35},
+  label/.style={font=\footnotesize,fill=white,inner sep=2pt},
+  boxeq/.style={rectangle,draw,thick,fill=yellow!10,rounded corners,inner sep=6pt,font=\small\bfseries},
+]
+
+% === LEFT: System space ===
+\node[space=blue] (system) at (0,0) {
+System $S$\\[4pt]
+\footnotesize (quantum field,\\N-body problem,\\writing system,\\logical paradox)
+};
+
+% === RIGHT: Crystal type ===
+\node[space=green!60!black] (type) at (7,0) {
+$\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega \rangle$\\[4pt]
+\footnotesize 12-primitive tuple\\[2pt]
+\footnotesize Crystal address $a \in [0, 17{,}279{,}999]$
+};
+
+% === ENCODE arrow (δ) ===
+\draw[map] (system.east) -- node[label,above] {\textbf{encode} $\delta$\\\footnotesize 12-step protocol\\\footnotesize mixed-radix codec} (type.west);
+
+% === DECODE arrow (μ) ===
+\draw[invmap] (type.west) to[bend right=30] node[label,below] {\textbf{decode} $\mu$\\\footnotesize $O(1)$ divisions\\\footnotesize \& remainders} (system.east);
+
+% === COMPOSITION at the center ===
+\node[boxeq] at (3.5,-2.0) {\LARGE $\mu \circ \delta = \text{id}$\\[4pt]\footnotesize Frobenius condition\\\footnotesize $P_{\pm}^{\text{sym}}$};
+\draw[compose] (3.5,-0.7) -- (3.5,-1.5);
+
+% === Right-side: counterpoint ===
+\node[space=red!40,right=2.5cm of type,minimum width=2.2cm] (godel) at (9.5,0) {
+\textbf{G\"odel}\\Arithmetization\\[2pt]
+\footnotesize $\Sigma_1$ partial\\encode only\\[2pt]
+\footnotesize No $O(1)$ decode
+};
+
+\draw[->,>=stealth,thick,densely dashed,gray] (type.east) -- node[label,pos=0.5,above] {\footnotesize vs.} (godel.west);
+
+% === Bottom annotation ===
+\node[font=\footnotesize\itshape,text=gray,below=0.4cm of compose,align=center] {
+Bijectivity forces $\mu\circ\delta = \text{id}$: the crystal codec is the Frobenius fixed-point.\\
+$P_{\pm}^{\text{sym}}$ is not a design choice — it is forced by the existence of an $O(1)$ inverse.
+};
+
+% === Background cycle ===
+\begin{scope}[on background layer]
+\draw[blue!20,line width=8pt,->,>=stealth] (system.east) -- (type.west) to[bend right=30] (system.east);
+\end{scope}
+
+\end{tikzpicture}
+\end{document}
