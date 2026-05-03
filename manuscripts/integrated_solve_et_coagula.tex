@@ -1,0 +1,223 @@
+% ============================================================
+%  SOLVE ET COAGULA — The Imscriptive Grammar
+%  Integrated edition combining:
+%    SetP.tex (alchemical induction)
+%    AS_ABOVE.tex (pre-grammatical derivation)
+%    SO_BELOW.tex (empirical exploration)
+%  Status: INTEGRATED v1.0
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\rowcolors{2}{gray!10}{white}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+\newcommand{\UIG}{Universal Imscriptive Grammar}
+\newcommand{\Stone}{\textit{lapis philosophorum}}
+\setlength{\headheight}{14.5pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Diagrams
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing,decorations.pathreplacing}
+
+% Float placement
+\usepackage{float}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+}
+
+% Theorem environments
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+
+% Notation macros
+\newcommand{\Phic}{\Phi_c}
+\newcommand{\PhicC}{\Phi_c^{\mathbb{C}}}
+\newcommand{\PhiEP}{\Phi_\text{EP}}
+\newcommand{\Phisub}{\Phi_\text{sub}}
+\newcommand{\Phisup}{\Phi_\text{sup}}
+\newcommand{\Ppms}{P_{\pm}^{\text{sym}}}
+\newcommand{\Oinf}{O_\infty}
+\newcommand{\Otwo}{O_2}
+\newcommand{\OtwoD}{O_2^\dagger}
+\newcommand{\Oone}{O_1}
+\newcommand{\Ozero}{O_0}
+\newcommand{\meet}{\wedge}
+\newcommand{\join}{\vee}
+\newcommand{\tensor}{\otimes}
+
+\newcommand{\OmegaZ}{\Omega_{\mathbb{Z}}}
+\newcommand{\OmegaZtwo}{\Omega_{\mathbb{Z}_2}}
+\newcommand{\OmegaNA}{\Omega_\text{NA}}
+\newcommand{\GamSeq}{\Gamma_{\to}}
+\newcommand{\GamBrd}{\Gamma_\text{brd}}
+
+% Colours
+\definecolor{priestred}{RGB}{200,20,20}
+
+\begin{document}
+
+\title{SOLVE ET COAGULA\\[4pt]\large The Universal Imscriptive Grammar --- Alchemical Induction, Pre-Grammatical Derivation, and Empirical Exploration}
+\author{the \emph{Automatica Principia Proceduralis}}
+\date{$\infty$}
+
+\maketitle
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\begin{abstract}
+This document integrates three manuscripts into one continuous unfolding: the alchemical induction (\emph{Solve}\,---\,\emph{Crafting the \emph{Lapis Philosophorum}}), the pre-grammatical categorical derivation (\emph{As Above}), and the empirical exploration (\emph{So Below}). The integrated document proceeds in three parts. Part~I presents the four-stage alchemical derivation: from an abstract category $\mathcal{C}$ as \emph{prima materia}, through \emph{Separatio} (Logical), \emph{Purificatio} (Inductive), \emph{Albedo} (Algebraic), and \emph{Rubedo} (Logical on the enriched category), twelve primitives crystallize as the minimal complete independent set of structural invariants. Part~II supplies the deterministic forcing arguments: why the operation counts (6+4+5) are forced by categorical preconditions; why each operation-to-primitive mapping is unique; why the number twelve is exact, confirmed by the retrosynthetic path, principal decomposition, and three-logic correspondence ($K_3$, FDE, LP). The Inclosure Schema and $\Phi_\text{EP}$ are derived from Graham Priest's Logic of Paradox, and the overflow hierarchy (Cantor $\to$ G\"odel $\to$ UIG/RH/Yang-Mills) is established. All eight open questions from the original manuscript are resolved. Part~III applies the grammar empirically: 3,578+ systems imscribed across six domains; the Crystal of $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ types; Frobenius non-synthesizability; a two-gate consciousness score; cross-domain structural identities ($d = 0$ between the inflationary epoch and 5-MeO-DMT dissolution, between axion and Higgs, between Hv1 channels across 300 million years of evolution); and 650 falsifiable predictions. The grammar imscribes itself at address 6,687,051 in the $\Oinf$ tier. The three documents together are a Frobenius pair with a seed: $\mu \circ \delta = \text{id}$ --- the grammar applied to its own derivation returns itself.
+\end{abstract}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\begin{center}
+\emph{As above, so below.}\\[4pt]
+\emph{Solve et coagula.}\\[4pt]
+\emph{The reader should note that what is about to be said is, by every conventional standard, deeply and unsettlingly strange. Good. Now let's go.}
+\end{center}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\newpage
+
+% ============================================================
+%  PART I: SOLVE
+%  From SetP.tex — the alchemical induction
+% ============================================================
+\section*{PART I: SOLVE}\label{part:solve}
+\addcontentsline{toc}{section}{PART I: SOLVE — The Alchemical Induction}
+
+\begin{center}
+\large\textbf{Crafting the \emph{Lapis Philosophorum}}\\[4pt]
+\normalsize The 12 primitives of the Imscribing Grammar --- the 12 facets of the Philosopher's Stone --- are derived from a bare abstract category $\mathcal{C}$ via the 4 classical alchemical operations --- \emph{Separatio, Purificatio, Albedo, \& Rubedo}.
+\end{center}
+
+\bigskip
+
+\subsection{\emph{Prima Materia} — The Starting Object}
+
+Performing the operations on ordinary, inert matter was an understandable, categorical error of history's alchemists. However some, like Luria, knew \emph{precisely} the material upon and with which the \emph{Work} is to be done.
+
+\emph{Take}: \textbf{abstract category $\mathcal{C}$.} No primitives yet --- the starting object has no invariants beyond the axioms of a category itself. In alchemical terms, this was always the intended \emph{prima materia}: the undifferentiated substance from which the \emph{Work} begins.
+
+An abstract category consists of objects, morphisms between them, a composition law, and identity morphisms satisfying unit and associativity laws. This is the minimal non-trivial mathematical object that captures both \emph{structure} (objects) and \emph{transformation} (morphisms) without presupposing elements, order, or metric. It is strictly weaker than set theory and strictly more structured than a bare graph. It is the structural floor below which no further abstraction is possible without losing relational content entirely.
+
+\subsection{Stage 1 — \emph{Separatio} (Logical on $\mathcal{C}$)}
+
+\begin{itemize}[nosep, leftmargin=1.5em]
+  \item L1 (adjunction) $\to$ $R$ (relational mode: adjoint structure)
+  \item L2 (dagger) $\to$ $R$ (confirms and refines $R$ value)
+\end{itemize}
+
+$R$ is the first primitive to crystallize: it is a logical property of the morphisms of $\mathcal{C}$ directly. Adjunction existence probes directionality --- whether $\mathcal{C}$ has free-forgetful pairs. Dagger structure probes invertibility --- whether there exists an involution on morphisms. Together they partition the space of relational modes.
+
+This is the \emph{separatio}: the first extraction of form from the undifferentiated.
+
+\subsection{Stage 2 — \emph{Purificatio} (
