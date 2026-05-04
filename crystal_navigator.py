@@ -232,6 +232,95 @@ def tensor(a: dict, b: dict) -> dict:
     return result
 
 
+# ── Imscription predicate (§89) ───────────────────────────────────────────────
+
+def imscription_check(boundary: dict, bulk: dict) -> dict:
+    """
+    Test whether `boundary` imscribes `bulk` (§89).
+
+    Two conditions:
+      (1) Floor: meet(boundary, bulk) == boundary  [boundary ≤ bulk component-wise]
+      (2) Tensor: tensor(boundary, bulk) == bulk   [boundary absorbed, no residue]
+
+    Types:
+      exact      — (1)+(2) + boundary tier = O_inf
+      faithful   — (1)+(2), boundary tier ≠ O_inf
+      partial    — (1) only: floor holds, tensor modifies bulk
+      asymmetric — (2) only: absorbed but boundary overreaches bulk somewhere
+      none       — neither condition holds
+    """
+    m = meet(boundary, bulk)
+    t = tensor(boundary, bulk)
+    floor_ok  = m == boundary
+    tensor_ok = t == bulk
+    tier      = compute_tier(boundary["Phi"], boundary["P"], boundary["Omega"], boundary["D"])
+    d_fwd     = directed_distance(boundary, bulk)   # upward steps boundary → bulk
+    d_rev     = directed_distance(bulk, boundary)   # upward steps bulk → boundary
+
+    meet_mm   = sum(1 for p in PRIMS if m[p] != boundary[p])
+    tensor_mm = sum(1 for p in PRIMS if t[p] != bulk[p])
+
+    if floor_ok and tensor_ok and tier == "O_inf":
+        kind = "exact"
+        stmt = "boundary exactly imscribes bulk — Frobenius self-encoding boundary absorbed into bulk with no residue"
+    elif floor_ok and tensor_ok:
+        kind = "faithful"
+        stmt = "boundary faithfully imscribes bulk — absorbed into bulk with no residue"
+    elif floor_ok:
+        kind = "partial"
+        stmt = f"boundary partially imscribes bulk — floor holds but tensor modifies bulk at {tensor_mm} primitive(s)"
+    elif tensor_ok:
+        kind = "asymmetric"
+        stmt = f"boundary absorbed by bulk but overreaches at {meet_mm} primitive(s) — not true imscription"
+    else:
+        kind = "none"
+        stmt = "boundary does not imscribe bulk — neither floor condition nor tensor absorption holds"
+
+    per_primitive = [
+        {
+            "primitive": p,
+            "boundary": boundary[p],
+            "bulk": bulk[p],
+            "meet": m[p],
+            "tensor": t[p],
+            "floor_ok": ORD[p][boundary[p]] <= ORD[p][bulk[p]],
+            "tensor_ok": t[p] == bulk[p],
+        }
+        for p in PRIMS
+    ]
+
+    return {
+        "imscription_type": kind,
+        "statement": stmt,
+        "floor_condition": floor_ok,
+        "tensor_condition": tensor_ok,
+        "boundary_tier": tier,
+        "d_boundary_to_bulk": round(d_fwd, 4),
+        "d_bulk_to_boundary": round(d_rev, 4),
+        "meet_mismatches_vs_boundary": meet_mm,
+        "tensor_mismatches_vs_bulk": tensor_mm,
+        "per_primitive": per_primitive,
+    }
+
+
+def imscription_statement(boundary_name: str, bulk_name: str, result: dict) -> str:
+    """Generate a canonical imscription sentence from imscription_check output."""
+    kind = result["imscription_type"]
+    if kind == "exact":
+        return f"{boundary_name} exactly imscribes {bulk_name}."
+    if kind == "faithful":
+        return f"{boundary_name} faithfully imscribes {bulk_name}."
+    if kind == "partial":
+        mm = result["tensor_mismatches_vs_bulk"]
+        return (f"{boundary_name} partially imscribes {bulk_name} "
+                f"(floor holds; tensor diverges at {mm} primitive(s)).")
+    if kind == "asymmetric":
+        mm = result["meet_mismatches_vs_boundary"]
+        return (f"{boundary_name} is absorbed by {bulk_name} but overreaches "
+                f"at {mm} primitive(s) — not imscription.")
+    return f"{boundary_name} does not imscribe {bulk_name}."
+
+
 # ── Tier cell index ────────────────────────────────────────────────────────────
 
 @dataclass

@@ -114,8 +114,8 @@
     morecomment=[s]{/*}{*/},
     commentstyle=\color{gray}\ttfamily,
     stringstyle=\color{red}\ttfamily,
-    morestring=[b]",
-    morestring=[b]",
+    morestring=[b]'',
+    morestring=[b]'',
 }
 
 % TOML language definition for listings
@@ -126,8 +126,8 @@
     comment=[l]{\#},
     commentstyle=\color{gray}\ttfamily,
     stringstyle=\color{red}\ttfamily,
-    morestring=[b]",
-    morestring=[b]",
+    morestring=[b]'',
+    morestring=[b]'',
 }
 
 % Dockerfile language definition for listings
@@ -138,8 +138,8 @@
     comment=[l]{\#},
     commentstyle=\color{gray}\ttfamily,
     stringstyle=\color{red}\ttfamily,
-    morestring=[b]",
-    morestring=[b]",
+    morestring=[b]'',
+    morestring=[b]'',
 }
 
 % JSON language definition for listings
@@ -149,7 +149,7 @@
     sensitive=true,
     commentstyle=\color{gray}\ttfamily,
     stringstyle=\color{red}\ttfamily,
-    morestring=[b]",
+    morestring=[b]'',
 }
 
 % Code listing float environment
@@ -363,7 +363,7 @@ The preconditions form a Directed Acyclic Graph:
 
 The graph shows that L1 and L2 have no preconditions --- they are Stage 1 questions. L3, L5, and L6 require A1 --- they become askable only after Stage 3. L4 requires L3 --- it is the final question. The total of 6 is the size of a maximal set of logically independent propositions about $\mathcal{C}$ under these preconditions.
 
-\textbf{Could there be a sixth logical operation?} No. The six operations correspond to the six independent Yes/No questions about a category's structure that are not functions of each other. A "seventh" would have to be a category-theoretic property that is (i) logically independent of L1--L6, (ii) has a finite truth-value space, and (iii) is not already expressible as a product of the existing 12 primitives. The crystal census, which enumerates all $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ types, contains no seventh logical degree of freedom. Every property of a category expressible as a finite-valued question about its structure is a function of the six logical questions (L1--L6) under the constraint of the 12 primitives. The crystal is the logical closure; no missing value space exists.
+\textbf{Could there be a sixth logical operation?} No. The six operations correspond to the six independent Yes/No questions about a category's structure that are not functions of each other. A ``seventh'' would have to be a category-theoretic property that is (i) logically independent of L1--L6, (ii) has a finite truth-value space, and (iii) is not already expressible as a product of the existing 12 primitives. The crystal census, which enumerates all $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ types, contains no seventh logical degree of freedom. Every property of a category expressible as a finite-valued question about its structure is a function of the six logical questions (L1--L6) under the constraint of the 12 primitives. The crystal is the logical closure; no missing value space exists.
 
 \paragraph{Inductive operations (4: I1--I4).}
 An inductive operation freely extends $\mathcal{C}$ by iterating a construction to a fixed point. There are exactly four fundamental inductive constructions on a category: taking colimits (I1), iterating an endofunctor (I2), forming the classifying space (I3), and applying the Yoneda embedding (I4). These correspond to the four universal constructions in category theory: the free cocompletion, the initial algebra, the geometric realization, and the presheaf embedding. Every other inductive construction (free monoid, Kleene star, sheafification, Cauchy completion) is a composite of these four.
@@ -377,7 +377,7 @@ An algebraic operation equips $\mathcal{C}$ with an additional structural layer.
 
 The total count $(6 + 4 + 5) = 15$ operations, applied across 4 stages with Stage 4 re-asking logical questions on the algebraically-enriched $\mathcal{C}$, yields the 12 primitives --- the reduction from 15 to 12 occurs because some operations contribute to the same primitive (L1 and L2 both contribute to $R$; L5 promotes $P$ rather than creating a new primitive). This reduction is forced, not chosen, as shown below.\subsubsection{II.2 Why These Mappings from Operations to Primitives Are Unique}
 
-The original derivation listed associations like ``I1 (colimit) $\to$ $G$", ``I2 (iteration) $\to$ $H$", ``I3 (classifying space) $\to$ $\Omega$" and so on. The question arises: could an operation map to a different primitive, or a primitive be the result of a different operation? The answer is forced by the categorical nature of each operation's output --- the invariant each operation produces is the \emph{only} natural categorical invariant it can produce, and the assignment is unique.
+The original derivation listed associations like ``I1 (colimit) $\to$ $G$'', ``I2 (iteration) $\to$ $H$'', ``I3 (classifying space) $\to$ $\Omega$'' and so on. The question arises: could an operation map to a different primitive, or a primitive be the result of a different operation? The answer is forced by the categorical nature of each operation's output --- the invariant each operation produces is the \emph{only} natural categorical invariant it can produce, and the assignment is unique.
 
 \paragraph{Why I1 (colimit) maps to $G$, and cannot map elsewhere.}
 The colimit operation takes a diagram $D: J \to \mathcal{C}$ and produces the universal cocone. The free cocompletion $\hat{\mathcal{C}}$ generated by all finite colimits has a size relative to $\mathcal{C}$ that measures the \emph{scope} of the category's connectivity. If $\hat{\mathcal{C}}$ is not much larger than $\mathcal{C}$, the category is local ($G_\beth$). If $\hat{\mathcal{C}}$ grows polynomially, it is mesoscopic ($G_\gimel$). If $\hat{\mathcal{C}}$ is drastically larger (e.g., $\mathbf{Set}$ over a finite category), it is global ($G_\aleph$). This is the natural invariant of the colimit operation --- the growth rate of the free cocompletion. No other primitive measures the scope of categorical connectivity. $G$ cannot be produced by any other operation because $D$ (from I4), $H$ (from I2), and $\Omega$ (from I3) measure different features: dimensionality, temporal depth, and winding.
@@ -646,7 +646,7 @@ Three truth-value regimes of L4 are possible under non-classical logic (see \pil
 
 \textbf{L6 --- Paraconsistent negation} (requires monoidal structure from A1): Does $\mathcal{C}$ admit a negation $\neg: A \to A$ such that $\neg\neg A \not\cong A$ in general, and $A \wedge \neg A \not\cong \bot$ (no explosion, i.e., the conjunction of $A$ with its negation does not collapse to the initial object)? This is the logical operation that distinguishes classical from paraconsistent structure. Its presence or absence does not generate a 13th primitive --- it determines the \emph{truth-value structure} in which L4 and L5 are evaluated, and thereby explains which $\Phi$ and $P$ values are achievable. A system admitting L6 can realize $\Phi_\text{EP}$ or $\Phi_c^\mathbb{C}$ without inconsistency; a system without L6 is confined to $\Phi_c$ or $\Phi \notin \{\Phi_c, \Phi_c^\mathbb{C}\}$.
 
-Note that L4, L5, and L6 can only be asked \emph{after} the algebraic operations below have been applied. The "Critical" step in the induction path is not a new operation type --- it is what emerges when logical questions (now including paraconsistent ones) are asked of the fully algebraically-enriched category. This is why $\Phi_c$ and $P_{\pm}^{\text{sym}}$ are the two gate primitives that determine the highest tiers: they are the last questions the procedure can ask.
+Note that L4, L5, and L6 can only be asked \emph{after} the algebraic operations below have been applied. The ``Critical'' step in the induction path is not a new operation type --- it is what emerges when logical questions (now including paraconsistent ones) are asked of the fully algebraically-enriched category. This is why $\Phi_c$ and $P_{\pm}^{\text{sym}}$ are the two gate primitives that determine the highest tiers: they are the last questions the procedure can ask.
 
 \textbf{Why exactly six logical operations?} Consider what would be required for a seventh. It would need to be a proposition about $\mathcal{C}$ that: (i) has a finite truth-value space, (ii) is logically independent of L1--L6, and (iii) is not already expressible as a function of the 12 primitives. But the 12 primitives already cover all categorical invariants produced by any finite-valued proposition about a category. L1 covers adjoint structure, L2 covers involution, L3 covers exponentials, L4 covers self-reference, L5 covers Frobenius identity, L6 covers paraconsistency. A seventh logical operation would have to be a category-theoretic proposition about none of these --- and there is no dimension of categorical structure that is not covered by adjoints, involutions, exponentials, self-reference, Frobenius, or paraconsistency. The six are exhaustive by the structure of categorical logic itself.
 
@@ -692,7 +692,7 @@ Algebraic operations add new structure to $\mathcal{C}$ by equipping it with a t
 
 This is the \textbf{arithmetic Yoneda}: where I4 embeds $\mathcal{C}$ into $\hat{\mathcal{C}}$ preserving all structure, A5 embeds $\mathcal{C}$ into $\mathbb{N}$ preserving only the primitive-recursive structure. A5 does not generate a new primitive. It is the bridge between Stage 3 and Stage 4: it installs the internal self-awareness that makes L4 and L6 non-trivial when asked of the enriched $\mathcal{C}$.
 
-\textbf{Why exactly five algebraic operations?} The five operations correspond to the five independent enrichment layers of a category recognized by enriched category theory. A1 (monoidal product) adds a binary operation on objects. A2 (monad) adds an endofunctor with algebraic theory. A3 (dagger-compact structure) adds duals. A4 (enrichment) changes the fundamental nature of morphism sets. A5 (arithmetic coding) adds self-awareness. No sixth enrichment exists that is not a composite of these five: for instance, a traced monoidal structure is a special case of A1+A3; a closed monoidal structure is A1+A4; a star-autonomous structure is A1+A3+A4. The five are algebraically independent: one can have a monoidal category without a monad (A1 without A2), a dagger category without a monoidal product (A3 without A1), and so on. Any category can be enriched (A4) over any monoidal category, independently of A1--A3. The arithmetic coding (A5) is independent of all except A2 (it requires a monad to make sense of "code of a morphism"). The five are thus the basis of the enrichment lattice, not an arbitrary enumeration.
+\textbf{Why exactly five algebraic operations?} The five operations correspond to the five independent enrichment layers of a category recognized by enriched category theory. A1 (monoidal product) adds a binary operation on objects. A2 (monad) adds an endofunctor with algebraic theory. A3 (dagger-compact structure) adds duals. A4 (enrichment) changes the fundamental nature of morphism sets. A5 (arithmetic coding) adds self-awareness. No sixth enrichment exists that is not a composite of these five: for instance, a traced monoidal structure is a special case of A1+A3; a closed monoidal structure is A1+A4; a star-autonomous structure is A1+A3+A4. The five are algebraically independent: one can have a monoidal category without a monad (A1 without A2), a dagger category without a monoidal product (A3 without A1), and so on. Any category can be enriched (A4) over any monoidal category, independently of A1--A3. The arithmetic coding (A5) is independent of all except A2 (it requires a monad to make sense of ``code of a morphism"). The five are thus the basis of the enrichment lattice, not an arbitrary enumeration.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -998,7 +998,7 @@ Now consider the alternative. If the correct number of primitives were 13, then 
 
 If the correct number were 11, then one of the 12 primitives would be redundant. The retrosynthetic path would then have only 11 steps, because peeling the redundant primitive would also peel its dependent. The path has exactly 12 steps. There is no evidence in the catalog, the crystal, or the operations of any fusion or redundancy.
 
-The answer to "Why twelve?" is therefore: because the induction produces exactly 12 independent invariants, each from a distinct operation (or operation pair), and the algebraic closure of these invariants under $\otimes$, $\wedge$, $\vee$ generates exactly the $3^3 \times 4^5 \times 5^4$ crystal --- no missing dimensions, no redundant ones. The number 12 is not a choice; it is the cardinality of the maximal independent set of categorical invariants under the four-stage induction.
+The answer to ``Why twelve?'' is therefore: because the induction produces exactly 12 independent invariants, each from a distinct operation (or operation pair), and the algebraic closure of these invariants under $\otimes$, $\wedge$, $\vee$ generates exactly the $3^3 \times 4^5 \times 5^4$ crystal --- no missing dimensions, no redundant ones. The number 12 is not a choice; it is the cardinality of the maximal independent set of categorical invariants under the four-stage induction.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -1164,7 +1164,7 @@ The four transitions correspond to four of the 12 primitives ($\Phi$, $D$, $\Ome
 
 The consequence extends beyond the grammar's structural type. Every execution of the 12-step imscribing protocol --- assigning coordinates to any system in any domain --- is itself an $O_\infty$ process, because the bijection forces $\mu \circ \delta = \text{id}$ at each invocation. This is processual imscription: the boundary procedure (the 12-step codec) fully imscribes the bulk theory it generates; the bulk theory fully imscribes the boundary procedure that produces it. The imscription is dynamic, not merely static --- it holds not as a property of the type but as a consequence of every execution of the protocol. The Solve et Coagula structure already operative in the four stages --- Prima Materia dissolved across Stages 1--3, reconstituted in Stage 4 --- closes here: the reconstituted form imscribes the dissolution that produced it, and every application of the procedure re-enacts the closure. The imscription is imscribed by what it imscribes.
 
-Three independent structural convergences confirm the depth of the result. The symbol $\odot$ was chosen for $D_\odot$ and $T_\odot$ because a contained point imscribes its containing circle --- boundary imscribes bulk, imscriptive. In alchemical emblemata, $\odot$ is the sign of the \Stone{} itself: the \textit{rebis}, the completed work, the unity of opposites. The same symbol was chosen for the same structural reason independently; the convergence is structural, not symbolic. ``Crystal of Types" was named because in crystallography the unit cell (boundary) imscribes the full bulk structure --- the same imscriptive relation defining $D_\odot$; the alchemical literature calls the Stone's material form a crystal for the same structural reason. This paper's title is the Hermetic maxim of the Emerald Tablet: \emph{as above, so below}. The Frobenius condition is $\mu \circ \delta = \text{id}$: this paper is the $\delta$-half (AS\_ABOVE, pre-grammatical derivation), its companion SO\_BELOW is the $\mu$-half (empirical applications), and the Hermetic maxim names the condition that the two halves compose to the identity. The grammar is not an instrument of alchemy. It is what the alchemists were describing.
+Three independent structural convergences confirm the depth of the result. The symbol $\odot$ was chosen for $D_\odot$ and $T_\odot$ because a contained point imscribes its containing circle --- boundary imscribes bulk, imscriptive. In alchemical emblemata, $\odot$ is the sign of the \Stone{} itself: the \textit{rebis}, the completed work, the unity of opposites. The same symbol was chosen for the same structural reason independently; the convergence is structural, not symbolic. ``Crystal of Types'' was named because in crystallography the unit cell (boundary) imscribes the full bulk structure --- the same imscriptive relation defining $D_\odot$; the alchemical literature calls the Stone's material form a crystal for the same structural reason. This paper's title is the Hermetic maxim of the Emerald Tablet: \emph{as above, so below}. The Frobenius condition is $\mu \circ \delta = \text{id}$: this paper is the $\delta$-half (AS\_ABOVE, pre-grammatical derivation), its companion SO\_BELOW is the $\mu$-half (empirical applications), and the Hermetic maxim names the condition that the two halves compose to the identity. The grammar is not an instrument of alchemy. It is what the alchemists were describing.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -1310,7 +1310,7 @@ Each $\mathcal{F}_3$ primitive is a Kleene-evaluable condition: the question has
 \end{itemize}
 
 \paragraph{$\mathcal{F}_4$ --- Belnap-Dunn FDE ($\{\mathbf{n}, \mathbf{f}, \mathbf{t}, \mathbf{b}\}$).}
-The FDE mapping is structurally exact for every $\mathcal{F}_4$ primitive. The $\mathbf{b}$ (both) value --- ``simultaneously true and false" --- corresponds in every case to a dual-aspect regime: the system presents both a finite and infinite face ($D_\odot$), maps both ways ($R_\text{lr}$), broadcasts to all while sequencing locally ($\Gamma_\text{brd}$), remembers everything past and present ($H_\infty$), has non-commuting winding where order matters ($\Omega_\text{NA}$). Each $\mathbf{b}$ value is a genuine paraconsistent structural position, not a degenerate case.
+The FDE mapping is structurally exact for every $\mathcal{F}_4$ primitive. The $\mathbf{b}$ (both) value --- ``simultaneously true and false'' --- corresponds in every case to a dual-aspect regime: the system presents both a finite and infinite face ($D_\odot$), maps both ways ($R_\text{lr}$), broadcasts to all while sequencing locally ($\Gamma_\text{brd}$), remembers everything past and present ($H_\infty$), has non-commuting winding where order matters ($\Omega_\text{NA}$). Each $\mathbf{b}$ value is a genuine paraconsistent structural position, not a degenerate case.
 
 \paragraph{$\mathcal{F}_5$ --- Priest LP (FDE + dialetheic completion).}
 The 5th value is the LP dialetheic completion in each case: the system simultaneously satisfies and violates the defining condition.
@@ -1662,7 +1662,7 @@ $\Gamma$ & $\Gamma_\text{and}$ (conjunctive) & $\Gamma_\text{or}$ (disjunctive) 
 \end{tabularx}
 \end{table}
 
-The correspondence is not merely aesthetic. $\Omega_\text{NA}$ (non-Abelian braiding) genuinely corresponds to $\mathbf{b}$: the winding number is ``both $+n$ and $-n$" in the sense that the order of braiding operations determines an inequivalent outcome. The anyon's topological charge is not a single winding number but a non-commutative combination. Similarly $D_{\odot}$ is $\mathbf{b}$: the system is simultaneously finite (its boundary is finite) and infinite (its bulk is fully reconstructible from that boundary) --- the imscriptive property is precisely the co-presence of two contradictory scale statements.
+The correspondence is not merely aesthetic. $\Omega_\text{NA}$ (non-Abelian braiding) genuinely corresponds to $\mathbf{b}$: the winding number is ``both $+n$ and $-n$'' in the sense that the order of braiding operations determines an inequivalent outcome. The anyon's topological charge is not a single winding number but a non-commutative combination. Similarly $D_{\odot}$ is $\mathbf{b}$: the system is simultaneously finite (its boundary is finite) and infinite (its bulk is fully reconstructible from that boundary) --- the imscriptive property is precisely the co-presence of two contradictory scale statements.
 
 N\={a}g\={a}rjuna's structuralism --- that entities lack inherent existence and exist only relationally --- maps to the grammar's pre-grammatical basis: objects are positions in categorical structure (\pilcrow{}I), and the grammar's primitives are relational invariants, not intrinsic properties. This is not coincidence. Both proceed from the same starting observation: the identity of a thing is determined by its morphisms, not its substrate.
 
@@ -1676,14 +1676,14 @@ Each $\mathcal{F}_5$ primitive has five values. The conjecture --- now confirmed
 
 \textbf{Criticality $\Phi$ (5 values):}
 
-The defining question of $\Phi$ is L4 (Lawvere): ``does the system have a self-modeling loop?" The four FDE-evaluable cases:
+The defining question of $\Phi$ is L4 (Lawvere): ``does the system have a self-modeling loop?'' The four FDE-evaluable cases:
 \begin{itemize}
     \item $\mathbf{n}$ (neither): no fixed point and no candidate --- $\Phi_\text{sub}$ or $\Phi_\text{super}$ (system clearly away from criticality in either direction)
     \item $\mathbf{f}$ (false): the RG flow has no fixed point in the real parameter space --- $\Phi_\text{sub}$
     \item $\mathbf{t}$ (true): fixed point exists and is consistent --- $\Phi_c$
     \item $\mathbf{b}$ (both): fixed point exists with complex parameters --- the system is at a fixed point (real part) while simultaneously flowing away (imaginary part) --- $\Phi_c^\mathbb{C}$
 \end{itemize}
-The fifth (dialetheic completion): $\Phi_\text{EP}$: the system satisfies the \emph{form} of L4 but the map is degenerate: two eigenvalues coalesce and their eigenvectors collapse. The system is both ``at" its fixed point (the eigenvalue exists) and ``not at" it (the eigenvector does not). This is the Inclosure (\pilcrow{}IX.4).
+The fifth (dialetheic completion): $\Phi_\text{EP}$: the system satisfies the \emph{form} of L4 but the map is degenerate: two eigenvalues coalesce and their eigenvectors collapse. The system is both ``at'' its fixed point (the eigenvalue exists) and ``not at'' it (the eigenvector does not). This is the Inclosure (\pilcrow{}IX.4).
 
 \textbf{Topology $T$ (5 values):}
 
@@ -1691,11 +1691,11 @@ The fifth value is $T_{\odot}$ (imscriptive/recurrent): the output re-enters as 
 
 \textbf{Parity $P$ (5 values):}
 
-The fifth value is $P_{\pm}^{\text{sym}}$ (Frobenius special): $\mu \circ \delta = \text{id}$. This is simultaneously the ``highest symmetry" (imscription is perfect, $\mathbf{t}$) and the ``constraint violated at every order" (the Frobenius identity is a non-trivial relation between $\mu$ and $\delta$ that no sub-Frobenius system can satisfy). From the perspective of the system's own self-description, $P_{\pm}^{\text{sym}}$ says: ``I can imscribe myself exactly and I am exactly my own imscription." Under LP, this is the dialetheic completion of the symmetry question --- the system that is both the imscription and the imscribed.
+The fifth value is $P_{\pm}^{\text{sym}}$ (Frobenius special): $\mu \circ \delta = \text{id}$. This is simultaneously the ``highest symmetry'' (imscription is perfect, $\mathbf{t}$) and the ``constraint violated at every order'' (the Frobenius identity is a non-trivial relation between $\mu$ and $\delta$ that no sub-Frobenius system can satisfy). From the perspective of the system's own self-description, $P_{\pm}^{\text{sym}}$ says: ``I can imscribe myself exactly and I am exactly my own imscription.'' Under LP, this is the dialetheic completion of the symmetry question --- the system that is both the imscription and the imscribed.
 
 \textbf{Kinetics $K$ (5 values):}
 
-$K_\text{trap}$ and $K_\text{MBL}$ both arrest dynamics: $K_\text{trap}$ by order (many-body gap in ground state only), $K_\text{MBL}$ by disorder (many-body localization across all eigenstates). $K_\text{trap}$ is the $\mathbf{b}$ value (the system is both ``gapped" and ``not gapped" in the sense that the gap produces no coherent dynamics). $K_\text{MBL}$ is the LP-completion: the system is simultaneously localized everywhere and nowhere --- MBL is a simultaneous arrest of all eigenstates, which is both the maximal and the null form of localization.
+$K_\text{trap}$ and $K_\text{MBL}$ both arrest dynamics: $K_\text{trap}$ by order (many-body gap in ground state only), $K_\text{MBL}$ by disorder (many-body localization across all eigenstates). $K_\text{trap}$ is the $\mathbf{b}$ value (the system is both ``gapped'' and ``not gapped'' in the sense that the gap produces no coherent dynamics). $K_\text{MBL}$ is the LP-completion: the system is simultaneously localized everywhere and nowhere --- MBL is a simultaneous arrest of all eigenstates, which is both the maximal and the null form of localization.
 
 \textbf{Crystal confirmation:} The crystal tier census shows exactly 5 tiers ($O_0, O_1, O_2, O_2^\dagger, O_\infty$) determined by $\Phi$ and $P$ alone. LP exhaustiveness confirmed: no sixth value exists for any $\mathcal{F}_5$ primitive in the crystal.
 
@@ -1750,7 +1750,7 @@ Lawvere (1969) proved that Cantor's theorem is a direct consequence of the fixed
 
 The pre-grammatical reading: $\mathbf{Set}$ with its standard morphism structure fails L4 --- there is no self-modeling loop at the level of pure sets. The category is $\Phi_\text{sub}$ in the set-theoretic register.
 
-The ``overflow" is the Cantor diagonal element $d \in \mathbb{N}^{\mathbb{N}}$ constructed for any proposed enumeration $f: \mathbb{N} \to \mathbb{N}^{\mathbb{N}}$:
+The ``overflow'' is the Cantor diagonal element $d \in \mathbb{N}^{\mathbb{N}}$ constructed for any proposed enumeration $f: \mathbb{N} \to \mathbb{N}^{\mathbb{N}}$:
 \[d(n) = f(n)(n) + 1 \quad \text{for all } n \in \mathbb{N}\]
 This $d$ is simultaneously:
 \begin{itemize}
@@ -1795,12 +1795,12 @@ The \textbf{overflow} is the gap between the $\Sigma_1$-complete coding and the 
 The G\"odel sentence $G$ (the fixed point of $\neg\text{Prov}(\ulcorner \cdot \urcorner)$ in PA) is the arithmetic instance of the Inclosure Schema:
 
 \begin{itemize}
-    \item \textbf{$\Omega$} = the set of all provable sentences of PA (the ``totality" of what PA can assert)
+    \item \textbf{$\Omega$} = the set of all provable sentences of PA (the ``totality'' of what PA can assert)
     \item \textbf{$\delta$($y$)} = the diagonal sentence constructed from $y \subseteq \Omega$ (the diagonalizer)
     \item \textbf{$\phi$($y$)}: $y$ is a proper sub-theory of $\Omega$
 \end{itemize}
 
-Applying the schema: $\delta(\Omega) \notin \Omega$ (transcendence: $G$ is unprovable in PA) and $\delta(\Omega) \in \Omega$ (closure: $G$ is true in the standard model, hence ``in" the totality of mathematical truths).
+Applying the schema: $\delta(\Omega) \notin \Omega$ (transcendence: $G$ is unprovable in PA) and $\delta(\Omega) \in \Omega$ (closure: $G$ is true in the standard model, hence ``in'' the totality of mathematical truths).
 
 Under classical logic, transcendence wins and incompleteness is a defect of the formal system. Under LP, both are simultaneously true: $G$ has value $\mathbf{b}$ (both provable and unprovable), and PA is at $\Phi_\text{EP}$ in the arithmetic register. The logic does not collapse. The incompleteness is absorbed.
 

@@ -1,0 +1,9 @@
+review circularity_circularity_paper.tex and circlecycle.tex. the prompts that generated these were(simplified):
+
+'use the IG to find a cyclical argument for circularity that provides a circular argument for cyclicality'
+
+&
+
+'use the IG to find a cyclical argument for circularity, which itself provides a circular argument for cyclicality'
+
+Once you have finished reading and exploring them, prepare a publication-quality write-up of the results of your research

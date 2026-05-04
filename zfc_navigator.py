@@ -554,13 +554,24 @@ def load_catalog(path: str = None) -> List[dict]:
     except ImportError:
         # Fallback for isolated runs without the package installed
         import glob as _glob
-        _DEFAULT_CATALOG_GLOB = "syncon_catalog*.json"
+        _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        _DEFAULT_CANDIDATES = [
+            os.path.join(_SCRIPT_DIR, "IG_catalog.json"),
+            "IG_catalog.json",
+            "syncon_catalog*.json",
+        ]
         if path is None:
-            paths = sorted(_glob.glob(_DEFAULT_CATALOG_GLOB))
+            paths = []
+            for _cand in _DEFAULT_CANDIDATES:
+                if "*" in _cand or "?" in _cand:
+                    paths.extend(sorted(_glob.glob(_cand)))
+                elif os.path.isfile(_cand):
+                    paths.append(_cand)
+                if paths:
+                    break
             if not paths:
                 raise FileNotFoundError(
-                    f"No files matching '{_DEFAULT_CATALOG_GLOB}' found. "
-                    "Pass --catalog to specify a path."
+                    "IG_catalog.json not found. Pass --catalog to specify a path."
                 )
         elif "*" in str(path) or "?" in str(path):
             paths = sorted(_glob.glob(path))

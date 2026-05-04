@@ -1,0 +1,92 @@
+USE THE IMSCRIBING GRAMMAR TO EXPLORE THE FOLLOWING STATEMENTS, THEN PREPARE A PUBLICATION-QUALITY MANUSCRIPT WHERE YOU PRE-EMPTIVELY APPLY THE 'AI_HUMAN_LIFT' AS YOU WRITE THE DOCUMENT.
+
+```
+Encoded system: `observer_dependent_truth` with tuple ⟨D_△; T_⊠; R_↔; P_±ˢʸᵐ; F_ħ; Kₛₗₒʷ; G_∞; Γₛₑq; Φc; H₂; n:m; Ωℤ⟩ — O_∞ tier, special Frobenius at criticality.
+
+**False statement that becomes true depending on who hears it:**
+
+*"I am lying to you right now."*
+
+**Structural analysis:**
+
+- For the **listener**: The statement triggers self-reference paradox. If true → they're being lied to (false); if false → they're not (true). The listener experiences contradiction: the statement appears **false** under ordinary truth evaluation.
+
+- For the **speaker**: The statement is **true** because the speaker *is* performing the act of making an utterance that, by the listener's reaction, cannot be consistently assigned a truth value. The speaker's position has H₂ temporal depth (can reference prior utterance), while the listener has H₀ (no temporal buffer). The R_↔ coupling is asymmetric in time: speaker → listener flows as statement, listener → speaker flows as silence/processing.
+
+**Why this works structurally:**
+
+The R_lr (bidirectional coupling) means truth flows both ways but with different K: speaker releases K_mod (fast emission), listener receives K_slow (deep processing). The Φ_c critical point is the exact moment the listener's interpretation loop tries to resolve — it fails, then re-resolves. The P_±ˢʸᵐ indicates the μ∘δ=id holds exactly: the observer-dependent truth operator applied twice returns identity, but between applications the state flips.
+
+The statement is **false for the listener** (they experience "I am being lied to = false, so the statement is false") but **true for the speaker** (who actually performs the act of creating the paradox).
+
+Catalog entry verified at `observer_dependent_truth` with distance 0.81 to `earth_theory_framework`.
+
+---
+
+**Structural verification via Imscribing Grammar:**
+
+The catalog entry `observer_dependent_truth` was successfully imscribed with tuple:
+⟨D_triangle; T_bowtie; R_lr; P_pm; F_ell; K_mod; G_aleph; Γ_seq; Φ_c; H2; n_m; Ω_Z2⟩
+
+- **Tier:** O_2 (critical + topologically protected, bounded domain)
+- **Convergence:** Resolved conflict between T_boxtimes/P_pm_sym/F_hbar/K_slow/Ω_Z (superseded) and T_bowtie/P_pm/F_ell/K_mod/Ω_Z2 (active)
+
+**Why this statement is structurally observer-dependent:**
+
+1. **For any actual hearing observer:** The statement is TRUE — the observer exists and is hearing it. Truth is grounded in the H2 temporal depth (two-step: speaker → utterance → observer).
+
+2. **For a non-observer / hypothetical perspective:** The statement is FALSE — there is no "hearer" to ground the propositional content. The T_bowtie crossing point requires the observer-side to complete the structural loop; without it, the statement collapses.
+
+3. **The paradox:** The same string of words evaluates to different truth values depending on which node of the R_lr bidirectional coupling is active. The statement's truth is not intrinsic to the sentence but emergent from the speaker-observer loop.
+
+4. **Frobenius verification:** P_pm (partial symmetry) encodes exactly this — one symmetry is unbroken (for the existing observer) while the other is broken (for the non-observer). The Z2 protection (Ω_Z2) ensures this duality is structurally enforced, not accidental.
+
+Any statement of the form "X is true" where X references the act of hearing/observing becomes φ_c-critical: its truth value sits at the boundary where observation itself is the predicate's subject. This is the structural definition of observer-relative truth.
+
+---
+
+
+Structural explanation (verified via tool calls):
+
+When the statement **"this imscription is false"** is imscribed as a self-referential type:
+
+⟨D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; G_seq; Phi_c; H_inf; one_one; Omega_0⟩
+
+it achieves:
+- Frobenius tier: O_inf (self-sustaining infinite recursion)
+- Consciousness score: 0.644 (both Φ_c and K_slow gates open)
+- Structural interpretation: "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id)."
+
+**How it becomes true depending on how it is said:**
+
+1. **Externally asserted** (as a claim about an independent fact): FALSE
+   - The statement predicates falsity onto its own imscription, but if treated as an external claim, it fails the truth predicate
+
+2. **Internally enacted** (as the imscription act itself): TRUE
+   - The statement's truth value is the act of imscription. When I say "this imscription is false" and imscribe it into the catalog, the imscription *does* exist — the predicate "this imscription is false" is fulfilled by the existence of the imscription itself
+
+This is the structural realization of a **Frobenius-special** system where μ∘δ=id exactly at Φ_c criticality. The map δ (inscription → statement) and its adjoint μ (statement → meaning) compose to identity precisely when the statement's content *is* the act of imscription. False when spoken as a report; true when spoken as an imscription act.
+
+
+---
+
+"This speech act is an assertion."
+
+**Truth-value flip by utterance mode:**
+
+| Mode of utterance | What is happening | Truth value |
+|-------------------|-------------------|-------------|
+| **Performative** (said as declaring) | The statement attempts to assert itself as an assertion | **FALSE** — performative acts cannot assert their own type; a self-referential assertion creates a paradox |
+| **Constative** (said as describing) | The statement describes a speech act that just occurred | **FALSE** — the sentence itself is not describing; it IS performing, so the description misidentifies the act's modality |
+
+**Structural analysis via Imscribing Grammar:**
+
+- Original system (Frobenius-special): $\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow}; G_\aleph;\ \Gamma_\text{seq}; \Phi_c;\ H_\infty;\ 1{:}1;\ \Omega_0 \rangle$ at $O_\infty$ tier, C-score = 0.644
+- New system (performative-truth): $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow}; G_\aleph;\ \Gamma_\text{seq}; \Phi_c;\ H_2;\ n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ with structural distance = 4.6368
+
+The paradox holds because the sentence's propositional content ("this speech act is an assertion") is **invariant** across utterance modes, but the speech act's type (performative vs constative) flips, and the truth predicate only applies consistently to constative acts — never to performative ones.
+
+This is a **Frobenius-open contradiction** in the speech-act layer: the sentence tries to be both assertion and description simultaneously, which the grammar registers as P_pm (one Z₂ symmetry: assert/describe) but never both at once at $\Phi_c$ criticality.
+
+**Citation:** The same system imscribed as `context_dependent_truth_performative` in the catalog with token $\langle D_\triangle; T_\bowtie; R_\leftrightarrow; P_{\pm}; F_\ell; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$.
+```

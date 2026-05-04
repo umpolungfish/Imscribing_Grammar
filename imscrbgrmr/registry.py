@@ -818,3 +818,48 @@ def register_synthon(
     synthon = notation.to_synthon(name, description, **metadata)
     global_catalog.register(synthon)
     return synthon
+
+
+def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
+    """
+    Load catalog entries as plain dicts for navigator scripts.
+
+    Searches (first-occurrence-wins deduplication):
+      1. extra_path if provided
+      2. IG_catalog.json next to the imscrbgrmr package (canonical catalog)
+      3. IG_catalog.json in the current working directory
+    """
+    import glob as _glob
+
+    _PACKAGE_DIR = Path(__file__).resolve().parent
+    _CANDIDATES = [
+        str(_PACKAGE_DIR.parent / "IG_catalog.json"),
+        "IG_catalog.json",
+    ]
+    if extra_path:
+        _CANDIDATES.insert(0, extra_path)
+
+    paths: List[str] = []
+    for candidate in _CANDIDATES:
+        if "*" in candidate or "?" in candidate:
+            paths.extend(sorted(_glob.glob(candidate)))
+        elif os.path.isfile(candidate):
+            paths.append(candidate)
+
+    if not paths:
+        raise FileNotFoundError(
+            "IG_catalog.json not found. Pass --catalog to specify a path."
+        )
+
+    seen_names: set = set()
+    merged: List[dict] = []
+    for p in paths:
+        with open(p) as f:
+            raw = json.load(f)
+        entries = raw if isinstance(raw, list) else list(raw.values())
+        for entry in entries:
+            name = entry.get("name", "")
+            if name and name not in seen_names:
+                seen_names.add(name)
+                merged.append(entry)
+    return merged

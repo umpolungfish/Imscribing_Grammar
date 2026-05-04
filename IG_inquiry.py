@@ -932,6 +932,37 @@ _TOOLS_OPENAI = [
     {
         "type": "function",
         "function": {
+            "name": "check_imscription",
+            "description": (
+                "Test whether one system structurally imscribes another — whether the boundary system "
+                "encodes/generates the bulk system's structure (§89). "
+                "Two conditions: (1) Floor: meet(boundary, bulk) = boundary [boundary ≤ bulk component-wise]. "
+                "(2) Tensor: tensor(boundary, bulk) = bulk [boundary absorbed, no residue]. "
+                "Types: exact (both + Frobenius boundary, O_inf tier), faithful (both, non-Frobenius), "
+                "partial (floor only), asymmetric (tensor only, boundary overreaches), none. "
+                "Returns per-primitive breakdown, directed distances both ways, and canonical statement. "
+                "Use to generate 'X imscribes Y' statements, verify Axiom C (T_odot → D_odot), "
+                "and test boundary/bulk pairs against the imscription predicate."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "name_boundary": {
+                        "type": "string",
+                        "description": "Name of the candidate boundary system (the imscriber)",
+                    },
+                    "name_bulk": {
+                        "type": "string",
+                        "description": "Name of the candidate bulk system (the imscribed)",
+                    },
+                },
+                "required": ["name_boundary", "name_bulk"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "find_analogies",
             "description": (
                 "Find the most structurally similar systems in the catalog to the named system. "
@@ -2139,7 +2170,7 @@ def _build_tool_roster() -> str:
     current_tools: list[str] = []
     section_markers = {
         "encode_system":        "Core — encoding & catalog",
-        "compute_meet":         "Algebra — lattice & tensor operations",
+        "compute_meet":         "Algebra — lattice, tensor & imscription operations",
         "phi_c_probe":          "Probes — structural diagnostics",
         "project":              "Decomposition — path & retrosynthesis",
         "compute_conflict_distance": "Veracity & conflict distance",
@@ -2827,6 +2858,8 @@ class ToolDispatcher:
             return self._compute_join(**args)
         elif name == "compute_tensor":
             return self._compute_tensor(**args)
+        elif name == "check_imscription":
+            return self._check_imscription(**args)
         elif name == "find_analogies":
             return self._find_analogies(**args)
         # ── Probes ───────────────────────────────────────────────────────────
@@ -3237,6 +3270,43 @@ class ToolDispatcher:
                 f"Distance from A: {dist_from_a}, from B: {dist_from_b}. "
                 "Bottlenecks show where the weaker partner limits the composite; "
                 "unions show where the combined scope exceeds either component."
+            ),
+        }
+
+    def _check_imscription(self, name_boundary: str, name_bulk: str) -> Dict[str, Any]:
+        """Test whether name_boundary imscribes name_bulk (§89)."""
+        synthons, err = self._resolve([name_boundary, name_bulk])
+        if err:
+            return err
+        s_bnd, s_blk = synthons
+        from crystal_navigator import (  # type: ignore
+            imscription_check as _imscription_check,
+            imscription_statement as _imscription_statement,
+        )
+        result = _imscription_check(s_bnd, s_blk)
+        stmt = _imscription_statement(name_boundary, name_bulk, result)
+        return {
+            "status": "ok",
+            "boundary": name_boundary,
+            "bulk": name_bulk,
+            "imscription_type": result["imscription_type"],
+            "statement": stmt,
+            "floor_condition": result["floor_condition"],
+            "tensor_condition": result["tensor_condition"],
+            "boundary_tier": result["boundary_tier"],
+            "d_boundary_to_bulk": result["d_boundary_to_bulk"],
+            "d_bulk_to_boundary": result["d_bulk_to_boundary"],
+            "tensor_mismatches_vs_bulk": result["tensor_mismatches_vs_bulk"],
+            "meet_mismatches_vs_boundary": result["meet_mismatches_vs_boundary"],
+            "per_primitive": result["per_primitive"],
+            "interpretation": (
+                f"Imscription check ({name_boundary} → {name_bulk}): "
+                f"type={result['imscription_type']}, "
+                f"boundary_tier={result['boundary_tier']}, "
+                f"floor={'✓' if result['floor_condition'] else '✗'}, "
+                f"tensor={'✓' if result['tensor_condition'] else '✗'}, "
+                f"d→bulk={result['d_boundary_to_bulk']}, "
+                f"d→boundary={result['d_bulk_to_boundary']}."
             ),
         }
 

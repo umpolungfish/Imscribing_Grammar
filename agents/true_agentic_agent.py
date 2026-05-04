@@ -94,6 +94,9 @@ class _LocalChatCompletions:
 
     def create(self, model: str, messages: List[Dict], tools=None,
                tool_choice=None, max_tokens: int = 4096, **kwargs) -> "_LocalCompletion":
+        # Cap output for local models: enough for a full tool call with verbose description,
+        # well below the default 4096 that wastes KV cache on a small-VRAM GPU.
+        max_tokens = min(max_tokens, 2048)
         import re, json, torch
         _root = str(Path(__file__).resolve().parent.parent)
         if _root not in sys.path:
@@ -131,10 +134,22 @@ class _LocalChatCompletions:
             enable_thinking=False,
         )
 
-        inputs = tok(text, return_tensors="pt").to(mdl.device)
+        _dev = mdl.device
+        inputs = tok(text, return_tensors="pt").to(_dev)
         n_input = inputs.input_ids.shape[1]
         if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
             mdl.generation_config.max_length = None
+
+        # Re-wake the GPU immediately before generate() — WSL2 CUDA (13+) suspends
+        # the device between operations; a cheap op + synchronize prevents
+        # "device not ready" on the first kernel launch inside generate().
+        if _dev.type == "cuda":
+            try:
+                _w = torch.zeros(1, device=_dev)
+                torch.cuda.synchronize(_dev)
+                del _w
+            except Exception:
+                pass
 
         with torch.no_grad():
             try:
@@ -147,15 +162,33 @@ class _LocalChatCompletions:
                 )
             except RuntimeError as _cuda_err:
                 if "cuda" in str(_cuda_err).lower() or "device" in str(_cuda_err).lower():
-                    # WSL2 GPU context corrupted (post-OOM crash); fall back to CPU
                     import logging as _log
                     _log.getLogger(__name__).warning(
-                        f"GPU generate failed ({_cuda_err}); falling back to CPU."
+                        f"GPU generate failed ({_cuda_err}); reloading on CPU."
                     )
-                    mdl.to("cpu")
+                    # device_map models can't be recovered with .to("cpu") — must reload.
                     from framework.enhanced_llm_provider import LocalProvider
+                    from transformers import AutoModelForCausalLM
+                    LocalProvider._model = None
+                    LocalProvider._loaded_path = None
+                    mdl = AutoModelForCausalLM.from_pretrained(
+                        prov.model_path,
+                        device_map="cpu",
+                        trust_remote_code=True,
+                        attn_implementation="eager",
+                        dtype=torch.float32,
+                        low_cpu_mem_usage=True,
+                    )
+                    mdl.eval()
                     LocalProvider._model = mdl
-                    cpu_inputs = {k: v.to("cpu") for k, v in inputs.items()}
+                    LocalProvider._loaded_path = prov.model_path
+                    cpu_inputs = tok(
+                        tok.apply_chat_template(
+                            qwen_msgs, tools=tools, tokenize=False,
+                            add_generation_prompt=True, enable_thinking=False,
+                        ),
+                        return_tensors="pt",
+                    )
                     outputs = mdl.generate(
                         **cpu_inputs,
                         max_new_tokens=max_tokens,
@@ -163,6 +196,7 @@ class _LocalChatCompletions:
                         do_sample=False,
                         pad_token_id=tok.eos_token_id,
                     )
+                    n_input = cpu_inputs.input_ids.shape[1]
                 else:
                     raise
 
@@ -170,8 +204,10 @@ class _LocalChatCompletions:
         raw = tok.decode(new_tokens, skip_special_tokens=True).strip()
         raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
 
-        # Parse <tool_call>{"name": ..., "arguments": ...}</tool_call>
-        tc_match = re.search(r"<tool_call>\s*(\{.*?\})\s*</tool_call>", raw, re.DOTALL)
+        # Parse <tool_call>...</tool_call>
+        # Capture everything between tags, not \{.*?\} — the non-greedy brace match
+        # stops at the first } inside nested arguments objects and silently drops the call.
+        tc_match = re.search(r"<tool_call>\s*(.*?)\s*</tool_call>", raw, re.DOTALL)
         tool_calls = None
         content_out: Optional[str] = raw or None
         if tc_match:
@@ -849,12 +885,24 @@ def _rewrite_tool_verify(emit_input: Dict, emit_output: str,
 
 # ── Standalone imscribe tools ──────────────────────────────────────────────────
 
+_PRIM_NORM: Dict[str, str] = {
+    # Gamma — Qwen3 emits "Gamma_*" prefix instead of "G_*"
+    "Gamma_and": "G_and", "Gamma_or": "G_or", "Gamma_seq": "G_seq", "Gamma_broad": "G_broad",
+    # H — Qwen3 emits "H_2", "H_1" with underscores
+    "H_0": "H0", "H_1": "H1", "H_2": "H2",
+    # Omega — Qwen3 sometimes emits "Omega_Z2" correctly but may vary
+    "Omega_NA": "Omega_NA",  # already canonical; keep as no-op
+}
+
 def _encode_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for encode_system."""
     name = args.get("name", "")
-    description = args.get("description", "")
+    # Truncate description — the model (especially 1.7B) often dumps the full task
+    # text here. The dispatcher only needs a short label; verbose descriptions waste
+    # tokens in every subsequent winding's context.
+    description = (args.get("description", "") or "")[:300]
     order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
-    parts = [str(args.get(p, "")) for p in order]
+    parts = [_PRIM_NORM.get(str(args.get(p, "")), str(args.get(p, ""))) for p in order]
     tuple_str = ";".join(parts)
     tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
     justification = args.get("convergence_justification", "")
@@ -1871,6 +1919,15 @@ class TrueAgenticAgent:
             effective_base = base_url or resolved_base
             effective_key  = api_key or resolved_key
             self.client    = _build_client(base_url=effective_base, api_key=effective_key)
+        # F-primitive for this inference mode.
+        # F_hbar: direct tensor (local weights — no opaque boundary, lossless by construction).
+        # F_ell:  API inference (boundary is opaque; internal activations inaccessible).
+        # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
+        # sub-oracle — it does not tensor with it. Tier is (Φ, P, Ω, D) only; F_ell in
+        # the sub-oracle does not degrade the harness tier from O_inf.
+        self.inference_fidelity: str = (
+            "F_hbar" if isinstance(self.client, _LocalOpenAIClient) else "F_ell"
+        )
         self.trajectory: List[LoopCycle] = []
         self._omega_z_violation_count: int = 0
 
@@ -1888,14 +1945,22 @@ class TrueAgenticAgent:
         self.trajectory = []
         self._omega_z_violation_count = 0
         _gate_state["encoded"] = False  # reset encoding gate for this run
+        # Patch the structural type declaration to reflect actual inference fidelity.
+        # The system prompt hardcodes F_hbar; API inference is F_ell (opaque boundary).
+        system_content = _SYSTEM_PROMPT.replace(
+            "P_pm_sym; F_hbar; K_slow",
+            f"P_pm_sym; {self.inference_fidelity}; K_slow",
+            1,
+        )
         # Imscriptive context IS the message list — accumulated across windings.
         self._messages: List[Dict[str, Any]] = [
-            {"role": "system", "content": _SYSTEM_PROMPT},
+            {"role": "system", "content": system_content},
             {"role": "user",   "content": f"TASK: {task}\n\nBegin. Emit your first tool call."},
         ]
         self._log(f"\n{'═'*72}")
         self._log(f"  TRUE AGENTIC AGENT  |  model: {self.model_id}")
         self._log(f"  TASK: {task}")
+        self._log(self._harness_tier_report())
         self._log(f"{'═'*72}\n")
 
         for winding in range(self.max_windings):
@@ -2174,6 +2239,23 @@ class TrueAgenticAgent:
         return "[max_windings reached — no conclusion available]"
 
     # ── Utilities ──────────────────────────────────────────────────────────────
+
+    def _harness_tier_report(self) -> str:
+        f = self.inference_fidelity
+        mode = "direct tensor — local weights" if f == "F_hbar" else "API — opaque boundary"
+        lines = [
+            f"  ┌─ HARNESS TIER ─────────────────────────────────────────────────",
+            f"  │  inference : {f}  ({mode})",
+            f"  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)",
+            f"  │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier",
+        ]
+        if f == "F_ell":
+            lines.append(
+                "  │  F_hbar path available: --model local:<path>  "
+                "(removes opacity; tier unchanged)"
+            )
+        lines.append("  └────────────────────────────────────────────────────────────────")
+        return "\n".join(lines)
 
     def _log(self, msg: str) -> None:
         if self.verbose:

@@ -298,8 +298,16 @@ class LocalProvider(LLMProvider):
                 return
             import os, torch
             from transformers import AutoModelForCausalLM, AutoTokenizer
-            os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+
+            # Set env vars before any CUDA init (must precede torch.cuda calls).
+            os.environ.setdefault("CUDA_DEVICE_ORDER", "PCI_BUS_ID")
+            os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "max_split_size_mb:512")
+            os.environ.setdefault("OMP_NUM_THREADS", "8")
+            os.environ.setdefault("TORCH_CUDNN_V8_API_ENABLED", "1")
+            os.environ.setdefault("CUDA_LAUNCH_BLOCKING", "0")
+
             logger.info(f"Loading local model from {self.model_path} ...")
+
             tok = AutoTokenizer.from_pretrained(
                 self.model_path, trust_remote_code=True
             )
@@ -336,37 +344,59 @@ class LocalProvider(LLMProvider):
                         "tokenizer.chat_template is None and no base model name found in "
                         "config.json / adapter_config.json. apply_chat_template will fail."
                     )
-            # Pick the GPU with the most free memory; fall back to CPU if none available
-            # or if the chosen GPU is in a bad post-crash state.
+            _force_cpu = os.getenv("FORCE_CPU", "").strip() not in ("", "0")
+
             device_map: Any = "cpu"
-            if torch.cuda.is_available():
+            if not _force_cpu and torch.cuda.is_available():
                 best_gpu = max(
                     range(torch.cuda.device_count()),
                     key=lambda i: torch.cuda.mem_get_info(i)[0],
                 )
                 free_bytes = torch.cuda.mem_get_info(best_gpu)[0]
-                if free_bytes > 2 * 1024 ** 3:  # require at least 2 GB free
-                    device_map = {"": best_gpu}
-                    logger.info(f"Selected GPU {best_gpu} ({free_bytes // 1024**3} GB free).")
+                if free_bytes > 2 * 1024 ** 3:
+                    # Warm up the GPU before loading: a matmul + synchronize kicks the
+                    # device out of the suspended state that causes "device not ready"
+                    # during the first generate() call on WSL2 and post-OOM contexts.
+                    try:
+                        _t = torch.randn(1000, 1000, device=f"cuda:{best_gpu}", dtype=torch.float16)
+                        torch.matmul(_t, _t)
+                        torch.cuda.synchronize(best_gpu)
+                        del _t
+                        device_map = {"": best_gpu}
+                        logger.info(f"Selected GPU {best_gpu} ({free_bytes // 1024**3} GB free).")
+                    except Exception as _warm_err:
+                        logger.warning(f"GPU {best_gpu} warm-up failed ({_warm_err}); loading on CPU.")
                 else:
                     logger.warning("No GPU has >2 GB free; loading on CPU.")
-            try:
-                mdl = AutoModelForCausalLM.from_pretrained(
-                    self.model_path,
-                    device_map=device_map,
-                    trust_remote_code=True,
-                    attn_implementation="eager",
+
+            # 4-bit BitsAndBytes quantization — off by default; set LOAD_IN_4BIT=1 to enable.
+            load_kwargs: dict = {
+                "device_map": device_map,
+                "trust_remote_code": True,
+                "attn_implementation": "sdpa",  # native PyTorch SDPA; 3-5x faster than eager on long contexts
+                "dtype": torch.float16,
+                "low_cpu_mem_usage": True,
+            }
+            if os.getenv("LOAD_IN_4BIT", "").strip() not in ("", "0"):
+                from transformers import BitsAndBytesConfig
+                load_kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4",
+                    bnb_4bit_compute_dtype=torch.float16,
                 )
+                load_kwargs.pop("torch_dtype", None)
+                logger.info("4-bit BitsAndBytes quantization enabled.")
+
+            try:
+                mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                 logger.info(f"Local model loaded (device_map={device_map}).")
             except Exception as e:
                 logger.warning(f"Load failed ({e}); retrying on CPU.")
-                mdl = AutoModelForCausalLM.from_pretrained(
-                    self.model_path,
-                    device_map="cpu",
-                    trust_remote_code=True,
-                    attn_implementation="eager",
-                    torch_dtype=torch.float32,
-                )
+                load_kwargs["device_map"] = "cpu"
+                load_kwargs["dtype"] = torch.float32
+                load_kwargs.pop("quantization_config", None)
+                mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                 logger.info("Local model loaded on CPU.")
             mdl.eval()
             LocalProvider._tokenizer = tok
@@ -399,7 +429,16 @@ class LocalProvider(LLMProvider):
             add_generation_prompt=True,
             enable_thinking=False,
         )
-        inputs = tok(text, return_tensors="pt").to(mdl.device)
+        _dev = mdl.device
+        inputs = tok(text, return_tensors="pt").to(_dev)
+
+        if _dev.type == "cuda":
+            try:
+                _w = torch.zeros(1, device=_dev)
+                torch.cuda.synchronize(_dev)
+                del _w
+            except Exception:
+                pass
 
         with torch.no_grad():
             # Clear max_length from generation config so max_new_tokens is unambiguous

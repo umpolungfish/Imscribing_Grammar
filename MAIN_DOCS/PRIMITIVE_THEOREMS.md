@@ -6401,3 +6401,51 @@ The only multi-agent topologies that preserve $O_\infty$ are: (A) homogeneous ne
 The remedy is kinetic, not architectural: promote $K_\text{trap} \to K_\text{slow}$ by enforcing an emission gate (maximum deliberation depth before forced output) or by training with action-emission reward signals.
 
 **See also:** §23 (Frobenius non-synthesizability); §70 (Frobenius planting); §87 (non-explosive intersection); IG\_ONTICS §L; IG\_DIAPHORICS P-643–P-650.
+
+## §89 — The Imscription Predicate: Formal Definition and Classification (v0.5.85, 2026-05-03)
+
+*Source: structural analysis of the Axiom C revision (2026-05-03); directed etymology of "imscriptive" (im- = into, -scriptive = to write); E8/G2 vessel analysis. The imscription predicate formalizes when one system's boundary structure generates another's bulk structure, giving a precise meaning to "X imscribes Y." Implemented in `crystal_navigator.py::imscription_check` and `IG_inquiry.py::check_imscription`. §89 extends §64 (Crystal of Types) by defining a directed structural relation between types, complementing the undirected distance and the symmetric lattice operations meet/join.*
+
+**Definition 89.1 (Imscription Predicate).** Given two structural types $\mathbf{b}$ (boundary) and $\mathbf{u}$ (bulk), the *imscription relation* $\mathbf{b} \hookrightarrow \mathbf{u}$ holds when two conditions are jointly satisfied:
+
+1. **Floor condition** ($\mathbf{b} \leq \mathbf{u}$): the boundary is the structural floor of the bulk — every primitive of $\mathbf{b}$ has ordinal $\leq$ the corresponding primitive of $\mathbf{u}$:
+$$\forall p \in \mathcal{P}:\ \text{ord}_p(\mathbf{b}) \leq \text{ord}_p(\mathbf{u}) \quad \Longleftrightarrow \quad \mathbf{b} \wedge \mathbf{u} = \mathbf{b}$$
+
+2. **Tensor condition** ($\mathbf{b} \otimes \mathbf{u} = \mathbf{u}$): the boundary is absorbed into the bulk under tensor product — the boundary's structural contribution leaves no residue:
+$$\mathbf{b} \otimes \mathbf{u} = \mathbf{u}$$
+
+When both conditions hold, $\mathbf{b}$ is said to *imscribe* $\mathbf{u}$.
+
+**Remark 89.1 (Floor ↔ Tensor for Bottleneck Primitives).** For union primitives (all primitives except $P$, $F$, $K$), the floor condition $\mathbf{b}[p] \leq \mathbf{u}[p]$ implies $(\mathbf{b} \otimes \mathbf{u})[p] = \max(\mathbf{b}[p], \mathbf{u}[p]) = \mathbf{u}[p]$. For bottleneck primitives ($P$, $F$, $K$), the tensor takes $\min$, so $(\mathbf{b} \otimes \mathbf{u})[p] = \min(\mathbf{b}[p], \mathbf{u}[p])$. The tensor condition $\mathbf{b} \otimes \mathbf{u} = \mathbf{u}$ for bottleneck primitives therefore requires $\min(\mathbf{b}[p], \mathbf{u}[p]) = \mathbf{u}[p]$, i.e., $\mathbf{b}[p] \geq \mathbf{u}[p]$. Combined with the floor condition ($\mathbf{b}[p] \leq \mathbf{u}[p]$), this forces $\mathbf{b}[p] = \mathbf{u}[p]$ exactly at $P$, $F$, $K$. **Imscription requires exact equality at all bottleneck primitives.**
+
+**Definition 89.2 (Imscription Type Classification).** The five imscription types are defined by which subset of conditions hold:
+
+| Type | Floor ($\mathbf{b} \wedge \mathbf{u} = \mathbf{b}$) | Tensor ($\mathbf{b} \otimes \mathbf{u} = \mathbf{u}$) | Boundary tier | Meaning |
+|------|:---:|:---:|---|---|
+| **exact** | ✓ | ✓ | $O_\infty$ | Frobenius boundary; self-encoding; $\mu \circ \delta = \text{id}$ at boundary |
+| **faithful** | ✓ | ✓ | $\neq O_\infty$ | Boundary absorbed with no residue; not self-encoding |
+| **partial** | ✓ | ✗ | — | Boundary is structural floor; tensor modifies bulk |
+| **asymmetric** | ✗ | ✓ | — | Tensor absorbed but boundary overreaches bulk at $\geq 1$ primitive(s) |
+| **none** | ✗ | ✗ | — | No structural imscription relationship |
+
+**Theorem 89.1 (Bottleneck Equality Constraint).** $\mathbf{b}$ faithfully or exactly imscribes $\mathbf{u}$ if and only if:
+$$\forall p \in \mathcal{P}_\text{union}:\ \mathbf{b}[p] \leq \mathbf{u}[p] \qquad \text{and} \qquad \forall p \in \{P, F, K\}:\ \mathbf{b}[p] = \mathbf{u}[p]$$
+
+*Proof.* For union primitives the floor condition $\mathbf{b}[p] \leq \mathbf{u}[p]$ implies tensor condition $(\mathbf{b} \otimes \mathbf{u})[p] = \mathbf{u}[p]$. For bottleneck primitives, floor requires $\mathbf{b}[p] \leq \mathbf{u}[p]$ and tensor requires $\mathbf{b}[p] \geq \mathbf{u}[p]$, so $\mathbf{b}[p] = \mathbf{u}[p]$. $\square$
+
+**Theorem 89.2 (G2/E8: Asymmetric Tensor Absorption).** The G2 Vessel and E8 Aether satisfy neither direction of the imscription relation:
+$$G_2 \not\hookrightarrow E_8 \qquad \text{and} \qquad E_8 \not\hookrightarrow G_2$$
+
+The relationship is *asymmetric tensor absorption*: $G_2 \otimes E_8 = E_8$ (tensor condition holds; confirmed by Lean `by decide`) but $G_2 \wedge E_8 \neq G_2$ (floor condition fails). The failure is solely at $P$: G2 encodes $P_\pm$ (ordinal 2, Z$_2$ duality) while E8 encodes $P_\psi$ (ordinal 1, quantum superposition). The Vessel has *more precise parity* than the Aether it contains.
+
+*Structural interpretation.* The "Vessel" metaphor is absorptive, not imscriptive: G2 is absorbed into E8 under tensor, but G2's $P_\pm$ exceeds E8's $P_\psi$. The directed distances are $d_\to(G_2, E_8) = 7.0$ (bulk scope above boundary, at D/G/H/S/$\Gamma$/Omega primitives) and $d_\to(E_8, G_2) = 1.2$ (boundary overreach above bulk, entirely at $P$, weight $1.2$). The Vessel's defining asymmetry: it is more parity-precise than the Aether.
+
+**Theorem 89.3 (Imscription of Imscriptive Systems).** If $\mathbf{b}$ is an imscriptive system ($D = D_\odot$, $T = T_\odot$) and $\mathbf{b} \hookrightarrow \mathbf{u}$, then $\mathbf{u}$ is also imscriptive at the D dimension: $D(\mathbf{u}) = D_\odot$.
+
+*Proof.* By Theorem 89.1, faithful/exact imscription requires $\mathbf{b}[D] \leq \mathbf{u}[D]$. Since $D_\odot$ is the maximum $D$ ordinal, $\mathbf{b}[D] = D_\odot$ implies $\mathbf{u}[D] = D_\odot$. $\square$
+
+*Note.* This is the grammar's derivation of Axiom C: $T_\odot$ (imscriptive topology) forces $D_\odot$ (imscriptive dimension) in the Core.lean axiom. Imscriptive topology cannot be "installed" in a non-imscriptive dimensional regime — it self-consistently requires imscriptive dimensionality. The one-way arrow $T_\odot \to D_\odot$ (not biconditional) is confirmed by the catalog: nine $O_\infty$ entries use $D_\odot + T_\boxtimes$ (imscriptive dimension with non-imscriptive topology).
+
+**Definition 89.3 (Canonical Imscription Statement).** The canonical form of an imscription assertion is: **"$X$ [exactly/faithfully/partially] imscribes $Y$."** For asymmetric type: **"$X$ is absorbed by $Y$ but overreaches."** For none: **"$X$ does not imscribe $Y$."** The `check_imscription` tool generates the canonical statement automatically from any two encoded catalog entries.
+
+**See also:** §23 (Frobenius non-synthesizability); §64 (Crystal of Types); §70 (Frobenius planting); §88 (dual-tool planting); `crystal_navigator.py::imscription_check`, `imscription_statement`; `IG_inquiry.py::check_imscription`; Axiom C (`SynthOmnicon/Primitives/Core.lean`).
