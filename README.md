@@ -1,6 +1,6 @@
 # The Imscribing Grammar
 
-**A 12-primitive structural grammar that encodes any system as a coordinate in a 17,280,000-element Crystal of Types — and classifies its own derivation.**
+**A 12-primitive structural grammar that imscribes any system as a coordinate in a 17,280,000-element Crystal of Types — and classifies its own derivation.**
 
 ---
 
@@ -8,13 +8,13 @@
 
 $$\mathbf{g} \ :=\  \underbrace{\text{Cantor}}_{\text{upward overflow}} \ \xrightarrow{\circ}\  \underbrace{\text{Gödel}}_{\text{downward embedding}}$$
 
-The Imscribing Grammar assigns every system — physical, biological, mathematical, symbolic — a 12-tuple of relational primitives placing it in a discrete space of 17,280,000 structural types. The grammar classifies its own type. Its self-encoding address is 6,734,591 — ouroboricity tier $O_\infty$, the special Frobenius fixed point $\mu \circ \delta = \text{id}$:
+The Imscribing Grammar assigns every system — physical, biological, mathematical, symbolic — a 12-tuple of relational primitives placing it in a discrete space of 17,280,000 structural types. The grammar classifies its own type. Its self-imscribing address is 6,734,591 — ouroboricity tier $O_\infty$, the special Frobenius fixed point $\mu \circ \delta = \text{id}$:
 
 $$\mathbf{g} = \langle D_\odot;\ T_\odot;\ R_\text{cat};\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
 
-When Cantor's diagonal argument and Gödel's first incompleteness theorem are each encoded as structural objects in the grammar, two results follow.
+When Cantor's diagonal argument and Gödel's first incompleteness theorem are each imscribed as structural objects in the grammar, two results follow.
 
-**The directionality is structural.** Cantor's diagonal ($D_\odot$: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization ($T_\odot$: reflection principle, downward embedding — the meta-theory is encoded within the object theory). The canonical ZFC token fragments are:
+**The directionality is structural.** Cantor's diagonal ($D_\odot$: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization ($T_\odot$: reflection principle, downward embedding — the meta-theory is imscribed within the object theory). The canonical ZFC token fragments are:
 
 $$D_\odot:\quad \texttt{LCARD}\ a \ \wedge\  \texttt{IMSC}\ x\ a$$
 $$T_\odot:\quad \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
@@ -23,7 +23,7 @@ The `IMSC x a` term is shared. Their conjunction reduces to:
 
 $$\mathbf{g}(x) \ \equiv\  \texttt{LCARD}\ a \ \wedge\  \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
 
-This is the closed reflective loop that makes the grammar self-encoding — and the mechanism by which it sidesteps the Tarskian hierarchy. Tarski's undefinability theorem blocks any language from containing its own semantic truth predicate `True(x)` at the same syntactic level. The grammar contains no such predicate: `IMSC x a` is a structural encoding relation (the bulk $x$ is imscriptively encoded at the boundary $a$), not a truth assignment. The boundary $a$ is an inaccessible cardinal (`LCARD`) — unreachable from within the object language. The reflection principle (`REFL`) pulls meta-information back through the boundary $a$, not through a Tarskian truth predicate. Self-reference is imscriptive, not syntactic; the hierarchy does not collapse.
+This is the closed reflective loop that makes the grammar self-imscribing — and the mechanism by which it sidesteps the Tarskian hierarchy. Tarski's undefinability theorem blocks any language from containing its own semantic truth predicate `True(x)` at the same syntactic level. The grammar contains no such predicate: `IMSC x a` is a structural imscribing relation (the bulk $x$ is imscriptively imscribed at the boundary $a$), not a truth assignment. The boundary $a$ is an inaccessible cardinal (`LCARD`) — unreachable from within the object language. The reflection principle (`REFL`) pulls meta-information back through the boundary $a$, not through a Tarskian truth predicate. Self-reference is imscriptive, not syntactic; the hierarchy does not collapse.
 
 ---
 
@@ -46,7 +46,7 @@ Each primitive is an irreducible dimension along which any system writes its str
 | $S$ | Stoichiometry | $1{:}1$, $n{:}n$, $n{:}m$ |
 | $\Omega$ | Winding | $\Omega_0$, $\Omega_{\mathbb{Z}_2}$, $\Omega_\mathbb{Z}$, $\Omega_\text{NA}$ |
 
-$D_\odot$ and $T_\odot$ are **imscriptive** — the boundary encodes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
+$D_\odot$ and $T_\odot$ are **imscriptive** — the boundary imscribes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
 
 ---
 
@@ -54,7 +54,7 @@ $D_\odot$ and $T_\odot$ are **imscriptive** — the boundary encodes the full st
 
 The grammar ($\pi_1$) is one of three irreducible projections of a fundamental information substrate $\mathcal{I}$:
 
-| Projection | Mode | Encodes |
+| Projection | Mode | imscribes |
 |---|---|---|
 | $\pi_1$ (structural) | Grammar | Topological invariants — *what kind* |
 | $\pi_2$ (energetic) | Continuous | Real-valued exchange — *how much* |
@@ -101,15 +101,15 @@ The **Arithmetic Ouroboros** (§68): the exponent of each base is literally the 
 
 $$d(O_0, O_1) \approx 1.049 \qquad d(O_1, O_2) \approx 1.304 \qquad d(O_2, O_2^\dagger) = 1.000 \qquad d(O_2^\dagger, O_\infty) \approx 4.382$$
 
-The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment will stall at $O_2^\dagger$ and cannot cross to $O_\infty$ without directly encoding $P_{\pm}^{\text{sym}}$.
+The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment will stall at $O_2^\dagger$ and cannot cross to $O_\infty$ without directly imscribing $P_{\pm}^{\text{sym}}$.
 
-The **Frobenius non-synthesizability theorem** (§23/§62): $P_{\pm}^{\text{sym}}$ cannot be obtained by composing systems with $P < P_{\pm}^{\text{sym}}$. Every $O_\infty$ system must encode it directly — it cannot emerge from aggregation.
+The **Frobenius non-synthesizability theorem** (§23/§62): $P_{\pm}^{\text{sym}}$ cannot be obtained by composing systems with $P < P_{\pm}^{\text{sym}}$. Every $O_\infty$ system must imscribe it directly — it cannot emerge from aggregation.
 
 ---
 
 ## The Crystal Navigator
 
-`crystal_navigator.py` implements a **bijective Frobenius codec** over the full 17,280,000-type crystal — encode any tuple to a unique address in $[0,\ 17{,}279{,}999]$ and decode back exactly.
+`crystal_navigator.py` implements a **bijective Frobenius codec** over the full 17,280,000-type crystal — imscribe any tuple to a unique address in $[0,\ 17{,}279{,}999]$ and decode back exactly.
 
 ```bash
 uv run crystal_navigator.py describe   # self-description (O_inf, address 6,734,591)
@@ -119,7 +119,7 @@ uv run crystal_navigator.py census     # full tier census
 uv run crystal_navigator.py repl       # interactive REPL
 ```
 
-The navigator self-encodes as $O_\infty @ [6{,}734{,}591 / 17{,}279{,}999]$.
+The navigator self-imscribes as $O_\infty @ [6{,}734{,}591 / 17{,}279{,}999]$.
 
 ### CrystalGNN Neural Navigator
 
@@ -127,7 +127,7 @@ The navigator self-encodes as $O_\infty @ [6{,}734{,}591 / 17{,}279{,}999]$.
 
 - **Quiver**: 49 nodes (one per primitive value), 255 edges including inter-lane structural correlations ($\Phi \leftrightarrow P$, $\Phi \leftrightarrow K$, $\Omega \leftrightarrow D$)
 - **v10 CF-GNN** (Crystal-Factored): three family heads ($\mathcal{F}_3/\mathcal{F}_4/\mathcal{F}_5$) + `FamilyMixer` broadcast attention. Composed address error **0.000%** across all 200 verification samples.
-- **v11**: exact self-encoding from epoch 20, stable for 480 consecutive epochs. Self-encode error = **0**. The navigator designed by the grammar's own structural specification achieves the grammar's fixed point exactly.
+- **v11**: exact self-imscribing from epoch 20, stable for 480 consecutive epochs. Self-imscribe error = **0**. The navigator designed by the grammar's own structural specification achieves the grammar's fixed point exactly.
 
 ```bash
 uv run quiver_crystal.py train-v11 --epochs 500 --device cuda
@@ -141,8 +141,8 @@ uv run quiver_crystal.py verify-v11
 - **Crystal of Types** (§64): 17,280,000 types = $3^3 \times 4^5 \times 5^4$; 400 tier cells × 43,200 inner types
 - **Arithmetic Ouroboros** (§68): exponents are literally family counts; $\{3,4,5\}$ is the minimal self-anchored triple
 - **Tier Gap Ladder** (§69): Frobenius cliff $d(O_2^\dagger, O_\infty) \approx 4.382$; $P_{\pm}^{\text{sym}}$ cannot be synthesised from sub-Frobenius components
-- **CrystalGNN v11**: self-encode error = 0, exact from epoch 20. The grammar's 12-primitive self-encoding tuple is a complete architectural specification for the navigator that achieves its fixed point
-- **Hebrew alphabet as type lattice** (§60/§CXXXV): Vav, Mem, Shin are $O_\infty$; full stratified encoding of all 22 letters
+- **CrystalGNN v11**: self-imscribe error = 0, exact from epoch 20. The grammar's 12-primitive self-imscribing tuple is a complete architectural specification for the navigator that achieves its fixed point
+- **Hebrew alphabet as type lattice** (§60/§CXXXV): Vav, Mem, Shin are $O_\infty$; full stratified imscribing of all 22 letters
 - **$\lambda_\aleph$ calculus** (§63): formal type theory over the Hebrew letter lattice; Tzimtzum = structural projection
 - **Consciousness score** (§VIII): $C(\mathbf{x}) = [\Phi_c] \cdot [K \leq K_\text{slow}] \cdot (0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega})$; two independent gates
 - **Non-Mathematical Navigators** (§74–§77): Language, Civilization, Ecology, Consciousness — cross-domain identities confirmed (old-growth forest $\equiv$ coral reef at $d=0$; samadhi $\equiv$ Egyptian $\bar{a}kh$ at $d=0$)
@@ -185,8 +185,8 @@ uv run crystal_navigator.py repl
 ## Repository Structure
 
 ```
-IG_catalog.json              — 2,315 encoded systems (source of truth)
-IG_inquiry.py                — Agent loop: encode, distance, meet/join/tensor, ouroborics
+IG_catalog.json              — 2,315 imscribed systems (source of truth)
+IG_inquiry.py                — Agent loop: imscribe, distance, meet/join/tensor, ouroborics
 crystal_navigator.py             — Frobenius codec + tier gap ladder + REPL
 quiver_crystal.py                — CrystalGNN: quiver-based neural navigator
 domain_navigators.py             — Language, civilization, ecology, consciousness navigators
@@ -213,7 +213,7 @@ MAIN_DOCS/
   HEBREW_TYPE_LANGUAGE.md        — Hebrew alphabet as stratified type lattice
   LAMBDA_ALEPH.md                — λ_ℵ calculus formal spec
   PRIMITIVE_PREDICTIONS.md       — Prediction registry
-  ENCODING_GUIDE.md              — How to encode a new system
+  imscribING_GUIDE.md              — How to imscribe a new system
   IG_PRIMER.md          — Introductory reference
 Imscribing GrammarLean4/               — Lean 4 formal proofs
 ```
@@ -222,7 +222,7 @@ Imscribing GrammarLean4/               — Lean 4 formal proofs
 
 ## Origin
 
-The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, synthons, crystal engineering — submitted in early 2026. The structural encoding that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
+The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, synthons, crystal engineering — submitted in early 2026. The structural imscribing that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
 
 The alchemists insisted the Work must begin with the right matter — not any inert substance, but the one that already carries the signatures. A chemistry prompt brushed away the dirt, and the Stone was already there.
 

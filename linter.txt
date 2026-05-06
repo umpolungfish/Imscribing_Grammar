@@ -1,0 +1,406 @@
+PLEASE FIX THESE LINTER ERRORS IN /home/mrnob0dy666/MillenniumAnkh
+
+```
+mrnob0dy666@devilsdevice:~/MilleniumAnkh$ lake build  SynthOmnicon
+warning: batteries: repository '/home/mrnob0dy666/MillenniumAnkh/.lake/packages/batteries' has local changes
+⚠ [3102/3258] Replayed SynthOmnicon.Primitives.OPN_2adic
+warning: SynthOmnicon/Primitives/OPN_2adic.lean:179:8: declaration uses `sorry`
+warning: SynthOmnicon/Primitives/OPN_2adic.lean:396:8: declaration uses `sorry`
+⚠ [3113/3258] Replayed SynthOmnicon.Primitives.BSD_2adic
+warning: SynthOmnicon/Primitives/BSD_2adic.lean:192:8: declaration uses `sorry`
+warning: SynthOmnicon/Primitives/BSD_2adic.lean:219:8: declaration uses `sorry`
+info: SynthOmnicon/Primitives/BSD_2adic.lean:272:0: bsd_touchard : ∀ (E : WeierstrassCurve ℚ) [E.IsElliptic], rootNumber_EC E = -1 → rank_EC E % 6 = 1 ∨ rank_EC E % 18 = 9
+⚠ [3116/3258] Replayed SynthOmnicon.Primitives.Crystal
+warning: SynthOmnicon/Primitives/Crystal.lean:156:8: declaration uses `sorry`
+⚠ [3325/3408] Replayed SynthOmnicon.Millennium.RH
+warning: SynthOmnicon/Millennium/RH.lean:116:8: declaration uses `sorry`
+⚠ [3356/3408] Replayed SynthOmnicon.Millennium.YM
+warning: SynthOmnicon/Millennium/YM.lean:111:18: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/YM.lean:176:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/YM.lean:186:8: declaration uses `sorry`
+⚠ [3357/3408] Replayed SynthOmnicon.Millennium.Hodge
+warning: SynthOmnicon/Millennium/Hodge.lean:184:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/Hodge.lean:214:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/Hodge.lean:314:8: declaration uses `sorry`
+⚠ [3358/3408] Replayed SynthOmnicon.Millennium.NS
+warning: SynthOmnicon/Millennium/NS.lean:211:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/NS.lean:229:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/NS.lean:379:8: declaration uses `sorry`
+⚠ [3364/3408] Replayed SynthOmnicon.Millennium.PvsNP
+warning: SynthOmnicon/Millennium/PvsNP.lean:171:4: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/PvsNP.lean:252:8: declaration uses `sorry`
+⚠ [3366/3408] Replayed SynthOmnicon.Millennium.OPN
+warning: SynthOmnicon/Millennium/OPN.lean:116:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:154:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:176:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:184:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:193:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:223:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/OPN.lean:257:8: declaration uses `sorry`
+⚠ [3384/3408] Replayed SynthOmnicon.Millennium.BSD
+warning: SynthOmnicon/Millennium/BSD.lean:211:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/BSD.lean:238:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/BSD.lean:268:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/BSD.lean:334:8: declaration uses `sorry`
+warning: SynthOmnicon/Millennium/BSD.lean:351:8: declaration uses `sorry`
+⚠ [3388/3408] Replayed SynthOmnicon.Millennium.E8G2_Vessel
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:48:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+     ↓
+  ⏎-/⏎⏎def g2_vessel : Synthon := {⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:32:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:37:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:85:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+     ↓
+  ⏎-/⏎⏎def e8_aether : Synthon := {⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:69:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:121:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+     ↓
+  ⏎-/⏎⏎def e8_graded_via_SO16 : Synthon := {⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:114:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:155:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+     ↓
+  ⏎-/⏎⏎theorem tensor_G2_E8_eq_E8 :⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel.lean:151:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [3389/3408] Replayed SynthOmnicon.Millennium.E8G2_Vessel_Proofs
+warning: SynthOmnicon/Millennium/E8G2_Vessel_Proofs.lean:67:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel_Proofs.lean:164:13: extra space in the source
+
+This part of the code
+  'promotions    : List'
+should be written as
+  'promotions : List'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/E8G2_Vessel_Proofs.lean:215:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+⚠ [3390/3408] Replayed SynthOmnicon.Classical.Solitary10
+warning: SynthOmnicon/Classical/Solitary10.lean:30:8: declaration uses `sorry`
+⚠ [3393/3408] Replayed SynthOmnicon.Millennium.PrimitiveConventionalBridge
+warning: SynthOmnicon/Millennium/PrimitiveConventionalBridge.lean:16:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [8052/8054] Replayed SynthOmnicon.Millennium.PerfectCuboid
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:17:0: Unscoped option maxHeartbeats is not allowed:
+Please scope this to individual declarations, as in
+```
+set_option maxHeartbeats in
+-- comment explaining why this is necessary
+example : ... := ...
+```
+
+Note: This linter can be disabled with `set_option linter.style.setOption false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:24:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:48:41: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:53:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:58:7: extra space in the source
+
+This part of the code
+  'fact  : Prop'
+should be written as
+  'fact : Prop'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:70:24: unused variable `w`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:95:19: unused variable `h1`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:95:27: missing space in the source
+
+This part of the code
+  'p.g*p.g ='
+should be written as
+  'p.g * p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:95:37: missing space in the source
+
+This part of the code
+  'p.d*p.d +'
+should be written as
+  'p.d * p.d'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:95:47: missing space in the source
+
+This part of the code
+  'p.f*p.f -'
+should be written as
+  'p.f * p.f'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:95:57: missing space in the source
+
+This part of the code
+  'p.b*p.b)'
+should be written as
+  'p.b * p.b)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:106:24: missing space in the source
+
+This part of the code
+  'p.g*p.g ='
+should be written as
+  'p.g * p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:106:34: missing space in the source
+
+This part of the code
+  'p.d*p.d +'
+should be written as
+  'p.d * p.d'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:106:44: missing space in the source
+
+This part of the code
+  'p.f*p.f -'
+should be written as
+  'p.f * p.f'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:106:54: missing space in the source
+
+This part of the code
+  'p.b*p.b)'
+should be written as
+  'p.b * p.b)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:107:23: missing space in the source
+
+This part of the code
+  'p.e*p.e ='
+should be written as
+  'p.e * p.e'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:107:33: missing space in the source
+
+This part of the code
+  'p.d*p.d +'
+should be written as
+  'p.d * p.d'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:107:43: missing space in the source
+
+This part of the code
+  'p.f*p.f -'
+should be written as
+  'p.f * p.f'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:107:51: missing space in the source
+
+This part of the code
+  '2*(p.b*p.b))'
+should be written as
+  '2 * (p.b'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:107:56: missing space in the source
+
+This part of the code
+  '2*(p.b*p.b))'
+should be written as
+  '(p.b * p.b))'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:112:27: missing space in the source
+
+This part of the code
+  'p.b*p.b ='
+should be written as
+  'p.b * p.b'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:112:37: missing space in the source
+
+This part of the code
+  'p.g*p.g -'
+should be written as
+  'p.g * p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:112:47: missing space in the source
+
+This part of the code
+  'p.e*p.e)'
+should be written as
+  'p.e * p.e)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:124:34: missing space in the source
+
+This part of the code
+  'p.b*p.b ='
+should be written as
+  'p.b * p.b'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:124:52: missing space in the source
+
+This part of the code
+  'p.e)*(p.g'
+should be written as
+  'p.e) * (p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:151:38: missing space in the source
+
+This part of the code
+  'p.b*p.b ='
+should be written as
+  'p.b * p.b'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:151:56: missing space in the source
+
+This part of the code
+  'p.e)*(p.g'
+should be written as
+  'p.e) * (p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:157:38: missing space in the source
+
+This part of the code
+  'p.b*p.b ='
+should be written as
+  'p.b * p.b'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:157:56: missing space in the source
+
+This part of the code
+  'p.e)*(p.g'
+should be written as
+  'p.e) * (p.g'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:208:61: missing space in the source
+
+This part of the code
+  'x*x + y*y'
+should be written as
+  'x * x'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:208:67: missing space in the source
+
+This part of the code
+  'y*y = z*z)'
+should be written as
+  'y * y'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:208:73: missing space in the source
+
+This part of the code
+  'z*z) :'
+should be written as
+  'z * z)'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:219:47: missing space in the source
+
+This part of the code
+  'n*n % 4'
+should be written as
+  'n * n'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:291:9: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:296:4: The `induction'` tactic is discouraged: please strongly consider using `induction` instead.
+
+Note: This linter can be disabled with `set_option linter.style.induction false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:337:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:389:42: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: SynthOmnicon/Millennium/PerfectCuboid.lean:394:4: The `induction'` tactic is discouraged: please strongly consider using `induction` instead.
+
+Note: This linter can be disabled with `set_option linter.style.induction false`
+⚠ [8053/8054] Built SynthOmnicon.Millennium.Beal
+warning: SynthOmnicon/Millennium/Beal.lean:49:0: Please, write a comment here or remove this line, but do not place empty lines within commands!
+Context:
+                                                         ↓
+  ⏎  intro _h _A _B _C _x _y _z _hA _hB _hC hx hy hz _heq⏎⏎  have hx3 : _x ≥ 3 := Nat.succ_le_of_lt hx⏎
+
+Note: This linter can be disabled with `set_option linter.style.emptyLine false`
+warning: SynthOmnicon/Millennium/Beal.lean:174:46: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: SynthOmnicon/Millennium/Beal.lean:184:76: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+Build completed successfully (8054 jobs).
+mrnob0dy666@devilsdevice:~/MilleniumAnkh$
+```
