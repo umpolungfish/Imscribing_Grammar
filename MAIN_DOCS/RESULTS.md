@@ -4,7 +4,7 @@ Sure. I'll go through each one in depth — what was tested, what happened, why 
   The Setup: What These Tests Were
 
   The grammar is a 12-primitive coordinate system for algebraic structure. Each system you can think of — a neural network, a mathematical proof, a physical field theory — gets assigned a tuple $\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\
-  \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$. The grammar also encodes itself as a tuple (at $d = 0$ from holographic type theory, $O_\infty$). The distance between any two systems is a concrete number.
+  \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$. The grammar also encodes itself as a tuple (at $d = 0$ from imscriptive type theory, $O_\infty$). The distance between any two systems is a concrete number.
 
   The three tests all come from the same question: can the grammar correctly diagnose why a machine learning navigator is failing, and tell you what to change to fix it? That's a strong claim. It means the grammar isn't just a labeling
   tool — it's a predictive instrument. You measure distance, read off which primitives conflict, and the grammar tells you exactly where the bottleneck is.
@@ -129,7 +129,7 @@ Sure. I'll go through each one in depth — what was tested, what happened, why 
   - $T_\text{in}$: boundary-interior distinction (the manifold has an "inside" and "outside")
   - $T_\text{bowtie}$: two connected components meeting at a point
   - $T_\text{box}$: closed, periodic topology
-  - $T_\odot$: holographic — boundary encodes bulk; the point in the circle (monad)
+  - $T_\odot$: imscriptive — boundary encodes bulk; the point in the circle (monad)
 
   $T_\odot$ and $T_\text{in}$ are adjacent in the ordering but structurally very different. $T_\odot$ has no preferred direction and no boundary-interior split; the whole bulk is encoded in the boundary. $T_\text{in}$ explicitly
   distinguishes boundary from interior — products like H2×R have exactly this structure (the H2 factor sweeps out the "boundary" and the $\mathbb{R}$ factor is the "interior").

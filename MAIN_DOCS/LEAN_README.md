@@ -154,8 +154,8 @@ plus explicit `LE` instances and four cross-primitive axioms:
 |-------|---------|
 | A | `H_inf → K_trap` (topological chirality implies kinetic trapping) |
 | B | `Ω ≥ Ω_Z → H ≥ H2` (integer winding number requires persistent chirality) |
-| C | `D_holo ↔ T_holo` (holographic dimensionality iff holographic topology) |
-| D | `Ω_NA → D_holo` (non-Abelian anyonic protection requires holographic substrate) |
+| C | `D_odot ↔ T_odot` (imscriptive dimensionality iff imscriptive topology) |
+| D | `Ω_NA → D_odot` (non-Abelian anyonic protection requires imscriptive substrate) |
 
 ---
 
@@ -233,7 +233,7 @@ planned for Lean.
 The four `axiom` declarations are **foundational postulates** of the Imscribing Grammar framework,
 not goals to be derived from the inductive type definitions. Within the current Lean
 representation — where each primitive is just a finite inductive type with `Ord` — there is
-no path to deriving, say, `D_holo_iff_T_holo` from first principles, because the types carry
+no path to deriving, say, `D_odot_iff_T_odot` from first principles, because the types carry
 no algebraic structure that encodes the physical relationship between dimensionality and topology.
 Deriving such equivalences would require an external interpretation: a functor from the primitive
 lattice into a category where boundary/bulk duality has an intrinsic meaning (e.g., a
@@ -451,7 +451,7 @@ structure BarrierPrimitiveCertificate (p : MillenniumProblem) where
 
 Concrete instances: `ym_certificate`, `opn_certificate`, `ns_certificate`.
 
-**The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `G_beth → G_aleph` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`G_aleph`) description of gauge field space. The quantum YM target stays at `D_cube` (local, 4D), not `D_holo` (holographic/QG). This is formally distinct from quantum gravity.
+**The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `G_beth → G_aleph` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`G_aleph`) description of gauge field space. The quantum YM target stays at `D_cube` (local, 4D), not `D_odot` (imscriptive/QG). This is formally distinct from quantum gravity.
 
 **`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (Phi_c + K_trap, OpenProblem), NS (Phi_sub boundary, OpenProblem), RH (Phi_c locus, OpenProblem).
 

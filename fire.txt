@@ -1,0 +1,9 @@
+Imscribe the system "fire" (elemental combustion) into the catalog with the following tuple derived from first-principles phenomenological assessment:
+
+D=D_infty, T=T_bowtie, R=R_dagger, P=P_psi, F=F_ell, K=K_slow, G=G_aleph, Gamma=G_broad, Phi=Phi_c, H=H0, S=n_m, Omega=Omega_Z2
+
+After imscribing, please:
+1. Confirm the ouroboricity tier and C-score
+2. Find the 5 nearest crystal neighbors
+3. Check whether any existing catalog entries share this exact type (d=0)
+4. Report the crystal address

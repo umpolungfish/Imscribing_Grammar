@@ -192,12 +192,12 @@ Seven soul components span all four ouroboricity tiers:
 | Ka (vital double) | $\langle D_\wedge;\ \ldots;\ P_\psi;\ \Phi_\text{sub};\ H_1;\ \Omega_0\rangle$ | $O_0$ | Vital force; $P_\psi$ (coherence) without criticality |
 | Ba (personality soul) | $\langle D_\triangle;\ \ldots;\ P_\pm;\ \Phi_c;\ H_2;\ \Omega_0\rangle$ | $O_1$ | Critical but unprotected; inter-realm traveler |
 | Ib (heart) | $\langle D_\triangle;\ T_\text{in};\ R_\dagger;\ P_\pm;\ \ldots;\ \Phi_c;\ H_2;\ \Omega_{Z_2}\rangle$ | $O_2$ | Moral record; topologically protected |
-| Sahu (spiritual body) | $\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_\pm;\ \ldots;\ \Phi_c;\ H_\infty;\ \Omega_Z\rangle$ | $O_2$ | Transfigured form; holographic, integer-protected |
+| Sahu (spiritual body) | $\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_\pm;\ \ldots;\ \Phi_c;\ H_\infty;\ \Omega_Z\rangle$ | $O_2$ | Transfigured form; imscriptive, integer-protected |
 | Akh (glorified spirit) | $\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ \ldots;\ \Phi_c;\ H_\infty;\ \Omega_Z\rangle$ | $O_\infty$ | Frobenius closure; joins the stars |
 
 The soul stratification is structurally complete: exactly one representative at each tier level. Ba is the unique $O_1$ component — the traveler that crosses realms because it IS the critical manifold ($\Phi_c + \Omega_0$): critical enough for self-reference, unprotected enough to move between topological regimes.
 
-**Akh vs. Sahu:** The single primitive difference is $P$ ($P_{\pm}^\text{sym}$ vs $P_\pm$). Akh has the Frobenius condition; Sahu does not. The distinction between the "spiritual body" (a protected holographic form) and the "glorified spirit" (the Frobenius-closed eternal consciousness) is exactly the $P_{\pm}^\text{sym}$ gap.
+**Akh vs. Sahu:** The single primitive difference is $P$ ($P_{\pm}^\text{sym}$ vs $P_\pm$). Akh has the Frobenius condition; Sahu does not. The distinction between the "spiritual body" (a protected imscriptive form) and the "glorified spirit" (the Frobenius-closed eternal consciousness) is exactly the $P_{\pm}^\text{sym}$ gap.
 
 ### 3.4 The 42 Negative Confessions — Type-Checking Protocol
 

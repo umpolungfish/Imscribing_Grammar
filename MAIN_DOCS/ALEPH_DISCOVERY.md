@@ -129,7 +129,7 @@ Computation revealed 4 equivalence collapses:
 | Dalet/Tzadi | $\{\hebm{ד}, \hebm{צ}\}$ | Identical |
 | Zayin/Nun | $\{\hebm{ז}, \hebm{נ}\}$ | Identical |
 
-**22 boundary letters collapse to 18 bulk equivalence classes.** The overdetermination is structural, not noise — it is the holographic signature of a system whose boundary encodes more than its bulk strictly requires.
+**22 boundary letters collapse to 18 bulk equivalence classes.** The overdetermination is structural, not noise — it is the imscriptive signature of a system whose boundary encodes more than its bulk strictly requires.
 
 ---
 
@@ -157,7 +157,7 @@ Mediation preserves proximity to $O_\infty$ better than tensor, and never loses 
 
 ### 4. The Holographic Structure
 
-22 boundary symbols collapse to 18 bulk types. The 4 redundant dimensions are not noise: removing any one of the 22 letters would break the interaction structure. The boundary overdetermination is the necessary signature of holographic encoding: boundary degrees of freedom exceed bulk degrees of freedom, and the excess encodes coherence.
+22 boundary symbols collapse to 18 bulk types. The 4 redundant dimensions are not noise: removing any one of the 22 letters would break the interaction structure. The boundary overdetermination is the necessary signature of imscriptive encoding: boundary degrees of freedom exceed bulk degrees of freedom, and the excess encodes coherence.
 
 ### 5. Aleph Path-Memory: Case 2
 

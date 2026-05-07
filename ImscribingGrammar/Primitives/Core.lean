@@ -17,13 +17,13 @@ namespace ImscribingGrammar.Primitives
 
 -- 1. Dimensionality (D)  [𝓕₄]
 -- Ordered: D_wedge < D_triangle < D_infty < D_odot
--- D_odot = holographic (boundary encodes bulk); the monad symbol ⊙.
+-- D_odot = imscriptive (boundary encodes bulk); the monad symbol ⊙.
 -- Replaces the non-canonical D_holo naming everywhere (v0.5.x).
 inductive Dimensionality : Type where
   | D_wedge     -- wedge/local: flat 2D sheet, no recursive nesting
   | D_triangle  -- triangulated: simplicial / stratified, finite depth
   | D_infty     -- infinite-dimensional: unbounded temporal/spatial generation
-  | D_odot      -- holographic: boundary encodes bulk (⊙ = monad inside circle)
+  | D_odot      -- imscriptive: boundary encodes bulk (⊙ = monad inside circle)
   deriving DecidableEq, Repr, Ord
 
 -- 2. Relational Mode (R)  [𝓕₄]
@@ -76,14 +76,14 @@ inductive Protection : Type where
 
 -- 6. Topology (T)  [𝓕₅]
 -- Ordered: T_network < T_in < T_bowtie < T_box < T_odot
--- T_odot = holographic topology: non-local boundary-bulk correspondence.
+-- T_odot = imscriptive topology: non-local boundary-bulk correspondence.
 -- T_odot co-occurs with D_odot (see Axiom C below).
 inductive Topology : Type where
   | T_network  -- general graph: heterogeneous, locally connected
   | T_in       -- inclusion / nested: hierarchical containment
   | T_bowtie   -- bowtie / figure-8: two-cycle closure, bifurcation point
   | T_box      -- box / lattice: regular grid or torus
-  | T_odot     -- holographic: boundary fully encodes bulk (⊙)
+  | T_odot     -- imscriptive: boundary fully encodes bulk (⊙)
   deriving DecidableEq, Repr, Ord
 
 -- 7. Parity / Symmetry (P)  [𝓕₅]
@@ -216,7 +216,7 @@ theorem ouroboros_successor_cycle :
 -- CROSS-PRIMITIVE AXIOMS
 -- ============================================================
 
--- Axiom C: Holographic dimensionality iff holographic topology.
+-- Axiom C: Imscriptive dimensionality iff imscriptive topology.
 -- D_odot and T_odot are structurally co-required: bulk-boundary duality
 -- needs both the right dimensionality split and the right topology.
 -- (AdS/CFT, holographic error-correcting codes, Hawaiian sacred languages.)
@@ -283,7 +283,12 @@ theorem o_inf_requires_P_pm_sym (phi : Criticality) (pol : Polarity)
     (prot : Protection) (dim : Dimensionality)
     (h : ouroboricityTier phi pol prot dim = .O_inf) :
     pol = .P_pm_sym := by
-  cases phi <;> cases pol <;> simp [ouroboricityTier] at h
+  cases pol
+  . all_goals (cases phi <;> cases prot <;> cases dim <;> simp [ouroboricityTier] at h <;> contradiction)
+  . all_goals (cases phi <;> cases prot <;> cases dim <;> simp [ouroboricityTier] at h <;> contradiction)
+  . all_goals (cases phi <;> cases prot <;> cases dim <;> simp [ouroboricityTier] at h <;> contradiction)
+  . all_goals (cases phi <;> cases prot <;> cases dim <;> simp [ouroboricityTier] at h <;> contradiction)
+  . rfl
 
 -- The Frobenius non-synthesizability statement (§23):
 -- P_pm_sym cannot be reached by the Polarity min (tensor bottleneck rule).
@@ -299,7 +304,7 @@ theorem frobenius_not_synthesizable (a b : Polarity)
   · intro heq
     -- If b wins (a ≥ b), then result = b. But a ≠ P_pm_sym and result = P_pm_sym
     -- means b = P_pm_sym and a ≥ P_pm_sym, i.e. a = P_pm_sym — contradiction.
-    cases a <;> cases b <;> simp_all [compare, Ord.compare]
+    cases a <;> cases b <;> simp_all (config := {decide := true})
 
 -- ============================================================
 -- DECIDABILITY INSTANCES (needed for proof automation)
@@ -318,4 +323,4 @@ instance : DecidableEq Protection      := inferInstance
 instance : DecidableEq Stoichiometry   := inferInstance
 instance : DecidableEq Chirality       := inferInstance
 
-end SynthOmnicon.Primitives
+end ImscribingGrammar.Primitives

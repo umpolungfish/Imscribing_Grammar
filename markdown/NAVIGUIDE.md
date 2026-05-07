@@ -165,7 +165,7 @@ d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
 ### Holographic query and navigation
 
 ```python
-nav.holographic_query("Phi_c", "P_pm_sym")   # → all 32 O_inf tier cells
+nav.imscriptive_query("Phi_c", "P_pm_sym")   # → all 32 O_inf tier cells
 nav.navigate(D="D_odot", Phi="Phi_c")        # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)           # k-NN in catalog by distance
 nav.tier_census()                            # full distribution over 17.28M types

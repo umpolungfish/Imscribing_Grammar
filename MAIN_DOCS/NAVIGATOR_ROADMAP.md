@@ -64,7 +64,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | Primitive | Encoding principle |
 |-----------|-------------------|
 | $D$ | Morphological complexity: agglutinative/fusional ($D_\infty$), isolating ($D_\wedge$), polysynthetic ($D_\odot$) |
-| $T$ | Syntactic topology: strict word-order ($T_\text{in}$), free word-order ($T_\text{bowtie}$), holographic (topic-comment, null-subject) ($T_\odot$) |
+| $T$ | Syntactic topology: strict word-order ($T_\text{in}$), free word-order ($T_\text{bowtie}$), imscriptive (topic-comment, null-subject) ($T_\odot$) |
 | $R$ | Directionality of information flow: head-final/final ($R_\text{cat}$), head-initial ($R_\text{super}$), catalytic/evidential ($R_\dagger$) |
 | $P$ | Grammatical agreement exactness: no agreement ($P_\text{asym}$), partial ($P_\pm$), full agreement across all categories ($P_{\pm}^\text{sym}$) |
 | $F$ | Lexical fidelity: highly context-dependent ($F_\ell$), moderate polysemy ($F_\eth$), maximally compositional/precise ($F_\hbar$) |
@@ -101,8 +101,8 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 | Primitive | Encoding principle |
 |-----------|-------------------|
-| $D$ | Administrative scale: city-state ($D_\wedge$), regional empire ($D_\triangle$), transcontinental ($D_\infty$), truly holographic (claims to encode all humanity) ($D_\odot$) |
-| $T$ | Social topology: flat tribal ($T_\text{network}$), hierarchical $T_\text{in}$, caste/guild dual-lobe ($T_\text{bowtie}$), bureaucratic box ($T_\boxtimes$), genuinely decentralized/holographic ($T_\odot$) |
+| $D$ | Administrative scale: city-state ($D_\wedge$), regional empire ($D_\triangle$), transcontinental ($D_\infty$), truly imscriptive (claims to encode all humanity) ($D_\odot$) |
+| $T$ | Social topology: flat tribal ($T_\text{network}$), hierarchical $T_\text{in}$, caste/guild dual-lobe ($T_\text{bowtie}$), bureaucratic box ($T_\boxtimes$), genuinely decentralized/imscriptive ($T_\odot$) |
 | $R$ | Institutional mode: conquest/extraction ($R_\text{super}$), categorical codification ($R_\text{cat}$), transformative/catalytic ($R_\dagger$), bidirectional learning ($R_\text{lr}$) |
 | $P$ | Constitutional symmetry: no rule of law ($P_\text{asym}$), partial ($P_\pm$), symmetric formal law ($P_{\pm}^\text{sym}$) |
 | $F$ | Epistemic fidelity: oral tradition ($F_\ell$), written records ($F_\eth$), systematic science ($F_\hbar$) |
@@ -139,7 +139,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 | Primitive | Encoding principle |
 |-----------|-------------------|
-| $D$ | Trophic dimensionality: simple chain ($D_\wedge$), web ($D_\triangle$), unbounded food web ($D_\infty$), holographic keystone-organized ($D_\odot$) |
+| $D$ | Trophic dimensionality: simple chain ($D_\wedge$), web ($D_\triangle$), unbounded food web ($D_\infty$), imscriptive keystone-organized ($D_\odot$) |
 | $T$ | Network topology: linear chain ($T_\text{in}$), closed loop ($T_\text{bowtie}$), full web ($T_\text{network}$), hub-organized ($T_\odot$) |
 | $R$ | Flow type: top-down predation ($R_\text{super}$), bottom-up nutrient cycling ($R_\text{cat}$), mutualistic/catalytic ($R_\dagger$), bidirectional coevolution ($R_\text{lr}$) |
 | $P$ | Trophic symmetry: asymmetric extraction ($P_\text{asym}$), balanced ($P_\pm$), closed nutrient loop ($P_{\pm}^\text{sym}$) |
@@ -176,7 +176,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | Primitive | Encoding principle |
 |-----------|-------------------|
 | $D$ | Self-model complexity: simple reflex ($D_\wedge$), narrative self ($D_\triangle$), unbounded self-model ($D_\infty$), non-dual (boundary-dissolved) ($D_\odot$) |
-| $T$ | State topology: bounded/sequential ($T_\text{in}$), dual-process ($T_\text{bowtie}$), global workspace ($T_\boxtimes$), holographic/non-dual ($T_\odot$) |
+| $T$ | State topology: bounded/sequential ($T_\text{in}$), dual-process ($T_\text{bowtie}$), global workspace ($T_\boxtimes$), imscriptive/non-dual ($T_\odot$) |
 | $R$ | Attention mode: passive reception ($R_\text{super}$), categorical perception ($R_\text{cat}$), catalytic/transformative ($R_\dagger$), bidirectional self-observation ($R_\text{lr}$) |
 | $P$ | Symmetry of self-other boundary: fully asymmetric ego ($P_\text{asym}$), soft boundary ($P_\pm$), dissolved boundary ($P_{\pm}^\text{sym}$) |
 | $F$ | Signal fidelity: noise-dominated ($F_\ell$), normal waking ($F_\eth$), hyper-coherent/quantum-like ($F_\hbar$) |

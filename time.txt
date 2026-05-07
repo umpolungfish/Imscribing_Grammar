@@ -1,0 +1,27 @@
+TIME.md established that "time" is a coincidence of five independently-variable primitives at crystal address 3,928,019. The leverage question is: what can be built by selectively combining fewer than five?
+
+Compute the five "partial temporal types" — each is time with exactly one of the five temporal primitives peeled to its baseline value. Encode each, compute its tier and C-score, find its two nearest catalog
+neighbors:
+
+1. Time without $\Gamma_\text{seq}$: replace $\Gamma_\text{seq} \to \Gamma_\wedge$ (all-simultaneous)
+2. Time without $H_\infty$: replace $H_\infty \to H_0$ (Markovian)
+3. Time without $\Omega_\mathbb{Z}$: replace $\Omega_\mathbb{Z} \to \Omega_0$ (topologically trivial)
+4. Time without $P_\text{asym}$: replace $P_\text{asym} \to P_\text{sym}$ (no arrow)
+5. Time without $K_\text{slow}$: replace $K_\text{slow} \to K_\text{fast}$ (no grain)
+
+For each partial type, report: tier, C-score, distance from time proper, two nearest catalog neighbors.
+
+Then test three conjectures:
+
+- C1 (CLU-temporal link): CLUPrimitives.lean established CLU = ln(10) as the K-tier crossing cost. $K_\text{slow}$ is primitive 5 in the temporal decomposition. Does the distance from time to partial-type-5 (no
+grain) equal exactly 1 CLU in the Euclidean metric, or is it incommensurable? Report the raw K-dimension contribution to the distance.
+- C2 (atemporal richness): TIME.md reports 2,160 types with $\Phi_c + \Omega_\mathbb{Z} + K_\text{slow}$ but $\Gamma_\wedge$. Are any of these in the catalog? If so, name them. These are systems that are
+critically self-modeling, topologically protected, and slow-kinetic, but interact all-simultaneously rather than sequentially. What is their nearest temporal neighbor?
+- C3 (Frobenius ceiling theorem): TIME.md says the $O_2^\dagger \to O_\infty$ promotion requires $P_\text{asym} \to P_{\pm}^{\text{sym}}$, which may destroy the arrow. Tensor time with itself: time $\otimes$
+time. Since P and F are bottleneck primitives and K, $\Omega$ are union primitives, the result should be identical to time. Verify. Then tensor partial-type-4 (no arrow, $P_\text{sym}$) with time: does
+restoring $P_\text{asym}$ via the tensor recover full time, or is something lost?
+
+Flag any results for PRIMITIVE_THEOREMS if they establish a structural fact about which temporal primitive is hardest/cheapest to acquire. Flag for DIAPHORICS if any partial-type neighbor yields a falsifiable
+physical prediction.
+
+---

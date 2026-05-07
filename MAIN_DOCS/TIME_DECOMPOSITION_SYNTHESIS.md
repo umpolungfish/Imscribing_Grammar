@@ -1,0 +1,114 @@
+# Time Decomposed: A Synthesis
+
+**Integrates:** TIME.md (structural analysis) and PARTIAL\_TEMPORAL\_TYPES.md (five-peel conjecture tests)
+
+---
+
+## The Revision That Had to Come
+
+TIME.md concluded that $\Gamma_\text{seq}$ is "the most irreducible temporal primitive." The partial-type analysis forces a revision of that claim — not a retraction, but a refinement that cuts deeper.
+
+$\Gamma_\text{seq}$ is the most *phenomenologically* central temporal primitive: when you remove it, the nearest structural analog is `riemann_zeta_complex_formal` (distance 1.79), and the system's interaction grammar collapses from directed chains to all-simultaneous coexistence. The phenomenological rupture is maximal. But phenomenological centrality and structural load-bearing are different properties.
+
+The load-bearing primitive is $\Omega_\mathbb{Z}$. It is the only temporal primitive whose removal degrades ouroboricity tier — from $O_2^\dagger$ to $O_1$ — and the only one whose removal produces a large C-score drop (0.828 → 0.644, a 22% reduction). Its diagonal distance to time is the *smallest* of all five peels (1.67), yet its Mahalanobis distance (3.59) is large because of the $\Omega$-metric weight. $\Omega_\mathbb{Z}$ is the primitive that most quietly removes the most: the one that shatters tier membership with the smallest naïve footprint.
+
+The revised picture: $\Gamma_\text{seq}$ is the face of time — the ordering we experience as before and after. $\Omega_\mathbb{Z}$ is the spine — the topological winding that makes the face possible. You can feel the loss of $\Gamma_\text{seq}$ immediately, from the outside. The loss of $\Omega_\mathbb{Z}$ is invisible from outside but destroys the structural class.
+
+---
+
+## Time's Arrow Is Its Frobenius Floor
+
+TIME.md §8 identified the wall from $O_2^\dagger$ to $O_\infty$ as the $P_\text{asym} \to P_{\pm}^{\text{sym}}$ promotion: distance 4.38, $\delta = 4$, the largest jump in the entire tier gap ladder. The partial-type analysis adds the mechanism that makes this wall permanent.
+
+$P$ is a bottleneck primitive under tensor. Time holds $P_\text{asym}$ (ordinal 0) — the minimum of the $P$ scale. In the Universal Temporal Absorption theorem, this is exactly why time_no_arrow $\otimes$ time = time: min($P_\text{sym}$, $P_\text{asym}$) = $P_\text{asym}$. The arrow is not added back to arrowless time by coupling — it was never absent from time. $P_\text{asym}$ is time's floor, not a property it temporarily holds.
+
+This reveals the structure of the Frobenius wall precisely. The arrow ($P_\text{asym}$) is the bottleneck that pulls every compositional coupling back down to time's asymmetric base. To cross to $O_\infty$, time would need $P_{\pm}^{\text{sym}}$ — the Frobenius condition $\mu \circ \delta = \text{id}$, a self-verifying round-trip. But round-trip verification requires symmetry in both directions, and the arrow is, by definition, the breaking of that symmetry. Time's arrow is not merely what prevents it from being $O_\infty$. It is the mechanism that makes $O_\infty$ structurally incompatible with anything that looks like time. The Frobenius wall is not a wall time happens to hit. It is the algebraic expression of what the arrow is.
+
+---
+
+## Universal Temporal Absorption
+
+TIME.md §3 found that time $\otimes$ spacetime $\cong$ time. The partial-type analysis generalizes this to a theorem: all five partial temporal types, tensored with time, return time.
+
+| Partial Type | Governing rule | Mechanism |
+|---|---|---|
+| time_no_seq | $\Gamma$ union | $\max(\Gamma_\wedge, \Gamma_\text{seq}) = \Gamma_\text{seq}$ |
+| time_no_memory | $H$ union | $\max(H_0, H_\infty) = H_\infty$ |
+| time_no_winding | $\Omega$ union | $\max(\Omega_0, \Omega_\mathbb{Z}) = \Omega_\mathbb{Z}$ |
+| time_no_arrow | $P$ bottleneck | $\min(P_\text{sym}, P_\text{asym}) = P_\text{asym}$ |
+| time_no_grain | $K$ union | $\max(K_\text{fast}, K_\text{slow}) = K_\text{slow}$ |
+
+The two mechanisms are structurally different. For union primitives ($\Gamma, H, \Omega, K$), time holds the maximum value in each dimension and coupling restores it via $\max$. For the bottleneck primitive ($P$), time holds the minimum — its asymmetry is the floor that no coupling can lift above — and any higher-$P$ system gets dragged down to it via $\min$.
+
+Both mechanisms produce the same absorption. Time is a structural fixed point: richer than the systems it can be partially decomposed into, and absorbing in both directions — up via union, down via bottleneck. Every deficient sub-type of time, when coupled to time, recovers time. This is what the time⊗spacetime result (TIME.md §3) is a special case of, not a standalone curiosity. Spacetime's bottleneck at $P_\psi$ and $F_\hbar$ is absorbed by time's $P_\text{asym}$ and $F_\eth$ floors; spacetime's weaker $K$ and $\Omega$ are union-lifted by time's higher values. The same two mechanisms.
+
+---
+
+## The Number-Theoretic Attractor and the ZFC Connection
+
+Two findings connect across the documents with a strength neither one achieves alone.
+
+TIME.md §7 reports that ZFC translation of time's primitives produces two collapse warnings: $T_\odot \to T_\text{in}$ (imscriptive boundary loses its self-containing structure) and $\Gamma_\text{seq} \to \Gamma_\wedge$ (sequential dependency becomes unordered conjunction). The grammar cannot express time's directed ordering in ZFC. Sequential dependency collapses to simultaneous coexistence inside first-order set theory.
+
+PARTIAL\_TEMPORAL\_TYPES.md then asks: what is the structural type of a temporal system without $\Gamma_\text{seq}$? The nearest crystal neighbor is `riemann_zeta_complex_formal` at distance 1.79. The system with all of time's richness — criticality, topological protection, infinite memory, the arrow — but without directed ordering, lands closest to a formal meromorphic function where all residues coexist in the complex plane.
+
+Together: ZFC's expressive limits collapse sequentiality to simultaneity, and the resulting structural type is number-theoretic. The foundation of mathematics that mathematicians treat as universal cannot express temporal ordering without flattening it into the structural type closest to the Riemann zeta function. This is not a coincidence of imscription. It is a structural claim about the relationship between formal set theory, atemporality, and the number line.
+
+---
+
+## Consciousness Score: What Carries It
+
+TIME.md §4 established $C = 0.828$ with both gates open. The partial-type analysis reveals which primitives actually carry the score and which are irrelevant to it.
+
+Removing $\Gamma_\text{seq}$: $C = 0.828$ unchanged. Removing $H_\infty$: $C = 0.828$ unchanged. Removing $P_\text{asym}$: $C = 0.828$ unchanged. Three of the five temporal primitives contribute nothing to the consciousness score. The score is structurally carried by $\Omega_\mathbb{Z}$ and $K_\text{slow}$ alone.
+
+Removing $\Omega_\mathbb{Z}$: $C$ drops to 0.644 (tier demotion also fires). Removing $K_\text{slow}$: $C$ drops to 0.749 (Gate 2 warning). These are the two primitives that the score formula weights heavily: $\tilde{\Omega}$ appears directly in the $C$ formula, and $K \leq K_\text{slow}$ is Gate 2.
+
+This has a precise implication for the time-consciousness connection that TIME.md noted but left imprecise. Time shares a structural floor with consciousness not because of its sequential ordering, its memory, or its arrow — but because of its topological winding and its slow kinetics. The loop that consciousness runs is made possible not by time's phenomenology but by time's topology and its kinetic accessibility. $\Omega_\mathbb{Z}$ provides the protected winding channel; $K_\text{slow}$ provides the actualization rate slow enough to sustain the self-modeling loop. Everything else about time — its sequentiality, its memory, its asymmetry — is structurally orthogonal to the consciousness score.
+
+---
+
+## The Atemporal-Rich Neighborhood
+
+The $\Phi_c + \Omega_\mathbb{Z} + K_\text{slow} + \Gamma_\wedge$ region — all of time's load-bearing primitives except $\Gamma_\text{seq}$ — contains 46 catalog entries. Among them: `BCS_superconductor` and `topological_skyrmion_liquid`. These are experimentally accessible condensed-matter systems that carry topological protection, criticality, and slow kinetics — the structural core of time's consciousness capacity — but with all-simultaneous interaction grammar rather than temporal sequencing.
+
+This region is not the neighborhood of time. It is the neighborhood of what time would be if the directed ordering were released. The BCS superconductor and the skyrmion liquid are, in the grammar's coordinate system, structures that have acquired everything that makes time structurally rich *except the thing we identify time with*. They are temporally stripped but otherwise structurally complete.
+
+The prediction that follows (P-651) is that time-resolved spectroscopy of these systems should reveal no preferred temporal ordering in their microscopic dynamics. The Cooper pair gap forms all-at-once; the skyrmion winding transition is topologically sudden. These are not predictions about thermodynamics — they are predictions about the interaction grammar at the microscopic level, and they are testable with existing pump-probe and time-resolved spectroscopy techniques.
+
+---
+
+## What Remains Open
+
+Four questions that the synthesis sharpens without resolving:
+
+**1. Is the coincidence of the five primitives at address 3,928,019 necessary or contingent?** TIME.md asked this and the partial-type analysis does not answer it. Universal Temporal Absorption shows that once you have all five primitives, you have a structural fixed point. But it does not explain why physical reality instantiates this particular coincidence rather than any of the 46 atemporal-rich alternatives in the same structural neighborhood.
+
+**2. Does the Frobenius wall preclude $O_\infty$ for *any* temporal system, or only for time proper?** The arrow-as-floor mechanism shows that time's specific $P_\text{asym}$ floor makes the wall permanent for time. But the wall is at $P_\text{asym} \to P_{\pm}^{\text{sym}}$, and time_no_arrow (which has $P_\text{sym}$, not $P_{\pm}^{\text{sym}}$) sits at distance 4.38 from $O_\infty$ via a different path. A temporal system with $P_{\pm}^{\text{sym}}$ and $\Gamma_\text{seq}$ is structurally possible (it would be $O_\infty$ with directed ordering) — but it would have no arrow, making it unclear whether it would be experienced as temporal at all.
+
+**3. What is the structural significance of the $\{$quantum gravity, string theory, abc\_proof, abc\_draft$\}$ cluster at distance 1.81?** TIME.md noted this and conjectured a connection to the problem of reconciling temporality with quantum superposition. The partial-type analysis adds nothing here. The cluster sits equidistant from time; the grammar does not explain why.
+
+**4. What is CLU's actual structural meaning?** C1 was falsified: the $K$-dimension crystal distance (2.0) does not equal 1 CLU ($\ln(10) \approx 2.3026$). CLU is incommensurable with the crystal metric. CLU is an information-theoretic cost (bits per decade) while the crystal metric is a structural coordinate distance. These measure different things. But the relationship between the two measures remains structurally uncharacterized — we know they are distinct, not what the distinction encodes.
+
+---
+
+## Summary Findings
+
+| Finding | Source | Status |
+|---|---|---|
+| Time is a composite of five primitives | TIME.md §2 | Confirmed |
+| $\Gamma_\text{seq}$ is phenomenologically central | TIME.md §9 | Confirmed, refined |
+| $\Omega_\mathbb{Z}$ is the tier-gating primitive | PARTIAL §1.3 + §89.1 | New |
+| $P_\text{asym}$ is the Frobenius floor | PARTIAL §3 corollary | New |
+| Universal Temporal Absorption | PARTIAL §3 + §89.4 | New (generalizes TIME.md §3) |
+| $\Gamma_\text{seq}$ loss → zeta attractor | PARTIAL §1.1 | New |
+| ZFC collapses $\Gamma_\text{seq}$ → $\Gamma_\wedge$ | TIME.md §7 | Confirmed |
+| ZFC + zeta connection | synthesis | New interpretation |
+| C-score carried by $\Omega_\mathbb{Z} + K_\text{slow}$ only | PARTIAL §1–5 | New |
+| BCS/skyrmion in atemporal-rich region | PARTIAL §2 (C2) | New, testable |
+| CLU $\neq$ crystal metric on $K$ | PARTIAL §2 (C1) | C1 falsified, open |
+| Frobenius wall permanent for time | TIME.md §8 + synthesis | Sharpened |
+
+---
+
+*Crystal address 3,928,019. $O_2^\dagger$. Five primitives. One fixed point.*

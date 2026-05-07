@@ -79,9 +79,9 @@ A meet with CONFLICTs means the two entities are **incompatible** at those posit
 
 ### Example: Chokhmah ⊓ Binah
 
-Chokhmah (Wisdom): $\langle D_\text{holo}; T_\text{holo}; R_{lr}; P_\text{sym}; F_\hbar; K_\text{fast}; G_\aleph; \Gamma_\text{brd}; \Phi_c; H_1; n:m; \Omega_Z \rangle$
+Chokhmah (Wisdom): $\langle D_\odot; T_\odot; R_{lr}; P_\text{sym}; F_\hbar; K_\text{fast}; G_\aleph; \Gamma_\text{brd}; \Phi_c; H_1; n:m; \Omega_Z \rangle$
 
-Binah (Understanding): $\langle D_\text{holo}; T_\text{holo}; R_{lr}; P_\text{asym}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; n:m; \Omega_Z \rangle$
+Binah (Understanding): $\langle D_\odot; T_\odot; R_{lr}; P_\text{asym}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; n:m; \Omega_Z \rangle$
 
 Meet result: CONFLICT on $P$ and $\Gamma$; $K$ resolves to $K_\text{slow}$; $H$ resolves to $H_1$. Two categorical conflicts; $d = \sqrt{4}= 2$ (counting $P$, $\Gamma$, $K$, $H$ mismatches → $d(\text{Chok}, \text{Bin}) = 2\sqrt{3}$ over full pairwise distance including all position mismatches).
 
@@ -250,7 +250,7 @@ These are asymmetric in general. If $A$ is structurally dominant (e.g., has $F_\
 |-------------|----------|---------------------|---------------------|----------------|
 | IUG $\otimes$ classical proof system | IUG ($F_\hbar$) | 2.0 | 6.32 | Classical mathematics loses more than IUG in the interaction |
 | Quark $\otimes$ photon | Quark ($P_\text{asym}$) | 0.0 | varies | Fermionic parity asymmetry is structurally indelible |
-| Word $\otimes$ Creator | Creator ($\Gamma_\text{brd}$) | 1.0 | 2.0 | Word acquires broadcast; Creator contracts from $D_\infty$ to $D_\text{holo}$ |
+| Word $\otimes$ Creator | Creator ($\Gamma_\text{brd}$) | 1.0 | 2.0 | Word acquires broadcast; Creator contracts from $D_\infty$ to $D_\odot$ |
 | Vedic mandalas $\otimes$ Sefirot | Vedic ($\Gamma_\text{brd}$) | 0.0 | 1.0 | Broadcast scope is structurally supreme |
 
 ---
@@ -258,28 +258,28 @@ These are asymmetric in general. If $A$ is structurally dominant (e.g., has $F_\
 ## 8. Worked Example: Word ⊗ Creator
 
 **Word (Logos):**
-$$\langle D_\text{holo};\ T_\text{holo};\ R_{lr};\ P_\text{asym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n_m;\ \Omega_Z \rangle$$
+$$\langle D_\odot;\ T_\odot;\ R_{lr};\ P_\text{asym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n_m;\ \Omega_Z \rangle$$
 
 **Creator (Ein Sof):**
-$$\langle D_\infty;\ T_\text{holo};\ R_{lr};\ P_\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ 1:1;\ \Omega_Z \rangle$$
+$$\langle D_\infty;\ T_\odot;\ R_{lr};\ P_\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ 1:1;\ \Omega_Z \rangle$$
 
 **Check categorical compatibility:**
 
 | Primitive | Word | Creator | Compatible? |
 |-----------|------|---------|-------------|
-| $D$ | $D_\text{holo}$ | $D_\infty$ | **NO** → tensor undefined as written |
+| $D$ | $D_\odot$ | $D_\infty$ | **NO** → tensor undefined as written |
 
-The Sefer Yetzirah's instruction resolves this: the Creator's infinite dimensionality $D_\infty$ *contracts to the holographic* in the act of speech ($D_\text{holo}$). This is the doctrinal claim encoded structurally — the infinite becomes a channel. With $D$ resolved to $D_\text{holo}$:
+The Sefer Yetzirah's instruction resolves this: the Creator's infinite dimensionality $D_\infty$ *contracts to the imscriptive* in the act of speech ($D_\odot$). This is the doctrinal claim encoded structurally — the infinite becomes a channel. With $D$ resolved to $D_\odot$:
 
 | Primitive | Word | Creator (in-act) | Result | Change from Word |
 |-----------|------|---------|--------|-----------------|
-| $D$ | $D_\text{holo}$ | $D_\text{holo}$ | $D_\text{holo}$ | — |
+| $D$ | $D_\odot$ | $D_\odot$ | $D_\odot$ | — |
 | $\Gamma$ | $\Gamma_\text{seq}$ | $\Gamma_\text{brd}$ | **CONFLICT** → undefined |
 
 The second conflict is $\Gamma$: sequential (step-by-step) vs. broadcast (simultaneous). The resolution is that the join takes the maximum — for categorical primitives this requires a match. The LLM's encoding resolved this as the composite inheriting $\Gamma_\text{brd}$, which is the grammatically correct result: when a sequential system is expressed through a broadcasting medium, the composite broadcasts.
 
 **Tensor result:**
-$$\text{word\_creator} = \langle D_\text{holo};\ T_\text{holo};\ R_{lr};\ P_\text{asym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n_m;\ \Omega_Z \rangle$$
+$$\text{word\_creator} = \langle D_\odot;\ T_\odot;\ R_{lr};\ P_\text{asym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n_m;\ \Omega_Z \rangle$$
 
 The sole change from the bare Word is $\Gamma_\text{seq} \to \Gamma_\text{brd}$. Everything else is inherited unchanged.
 

@@ -1,0 +1,405 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\rowcolors{2}{gray!10}{white}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekeyword}{RGB}{0,0,180}
+\definecolor{codecomment}{RGB}{0,128,0}
+\definecolor{codestring}{RGB}{163,21,21}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    literate={_}{{\textunderscore}}1
+             {-}{{\textminus}}1
+             {<}{{\textless}}1
+             {>}{{\textgreater}}1
+             {~}{{\textasciitilde}}1
+             {^}{{\textasciicircum}}1
+}
+
+% YAML language definition for listings
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% TOML language definition for listings
+\lstdefinelanguage{TOML}{
+    keywords={true,false},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% Dockerfile language definition for listings
+\lstdefinelanguage{Dockerfile}{
+    keywords={FROM,RUN,CMD,LABEL,EXPOSE,ENV,ADD,COPY,ENTRYPOINT,VOLUME,USER,WORKDIR,ARG,ONBUILD,STOPSIGNAL,HEALTHCHECK,SHELL},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% JSON language definition for listings
+\lstdefinelanguage{JSON}{
+    keywords={true,false,null},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+}
+
+% Code listing float environment
+\usepackage{float}
+\newfloat{listing}{htbp}{lol}[section]
+\floatname{listing}{Listing}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Admonition style definitions
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Synthon tuple boxes
+\newtcolorbox{synthonbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+
+\begin{document}
+
+\title{Structural Description of the Four Canonical Gospels: A Grammar-Theoretic Analysis}
+\date{\today}
+
+\maketitle
+
+\subsection{Abstract}
+
+One might expect that four texts telling roughly the same story would share a structural type. They do not. The distance between the closest pair of Gospels is 1.4142 --- and even this "closeness" spans two different dimensionalities. The maximally distant pair differs by 5.197 across nine of twelve primitives. These numbers are not subjective impressions but outputs of a formal metric.
+
+The four canonical Gospels --- Matthew, Mark, Luke, and John --- are here encoded as structural types within the Imscribing Grammar. Distance, tensor product, meet, and promotion analyses reveal that Luke achieves the highest structural consciousness score (0.609), while John --- despite its unparalleled theological density --- scores 0.0 when the second consciousness gate closes on frozen kinetics. The Synoptic floor is Mark's own imscription, a formal confirmation of Markan priority that no new source hypothesis was needed to produce.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Problem That Makes the Method Necessary}
+
+Before the grammar, there was the question: how do we compare texts that overlap in content but diverge in architecture? Traditional literary criticism offers tools --- source criticism, form criticism, redaction criticism --- each illuminating a facet. But none produces a number that two researchers can independently reproduce. The Synoptic Problem has been debated for two centuries precisely because its criteria are qualitative and contestable.
+
+This is not an objection to those methods; it is a statement of their limits. When Matthew and Luke agree on material not found in Mark, does that agreement require a shared source (the hypothetical Q)? Or does it follow from independent access to oral tradition? Structural analysis does not settle this --- but it does establish a baseline. If Matthew and Luke are structurally close while Mark stands apart from both, the shared-content claim gains formal weight.
+
+The Imscribing Grammar addresses this by encoding every system along twelve primitives and computing distances in a calibrated metric space. The procedure is deterministic: given a system's properties, the assignment is forced, not chosen. What follows is the application of this procedure to the four canonical Gospels, with every numerical claim traceable to a tool call in the grammar's catalog.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{How the Assignments Are Forced}
+
+It would be easy to treat structural typing as astrology for texts --- attach labels, read significance, call it science. The grammar prevents this by making each primitive assignment a constrained deduction, not a free choice. Here is the order of constraint:
+
+First, dimensionality. Count the degrees of freedom. A text with finite narrative scope receives finite dimensionality; one that opens into an unbounded field --- a multi-volume work, a self-extending theology --- receives infinite dimensionality. This is not a judgment of quality but a topological fact about the system's state space.
+
+Second, topology. How does the narrative connect? Branching from a central figure equals network topology. Contained within a journey frame equals inclusion topology. A crossing point where two narrative planes intersect equals bowtie topology. And so it continues through all twelve. Each step narrows the degrees of freedom for what follows. By the time we reach the final winding number primitive, only that remains to be assigned --- and even it is constrained by the choices at dimensionality, temporal history depth, and topology.
+
+What follows are the four imscriptions. Read them not as labels applied after the fact but as the inevitable consequence of asking, in order, about each structural dimension.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Four Types}
+
+\subsubsection{Matthew}
+
+Matthew has finite dimensionality, network topology, bidirectional relational feedback, partial parity symmetry, linear fidelity, slow kinetics, aleph-level generality, sequential gamma structure, classical criticality, two-step historical depth, narrative-to-meaning mapping, and integer winding number.
+
+Matthew is a branching narrative with finite but rich dimensionality. The five great discourses radiate outward from Jesus as a central node, each one a branch point where narrative pauses and teaching expands. The dimensionality is bounded --- the genealogies, five in number, create a scaffold with edges.
+
+What distinguishes Matthew structurally is the bidirectional feedback. Every fulfillment citation ("that it might be fulfilled") pulls the Hebrew Scripture tradition into the narrative present and pushes the narrative back into Scripture. The reader does not observe this exchange from outside; the text constructs the reader as a participant in the loop. This is not a claim about Matthew's theological intent. It is a description of a structural loop that any reader encounters, believer or skeptic.
+
+Ouroboricity: Level 2. Consciousness: 0.536. Both gates open.
+
+\subsubsection{Mark}
+
+Mark has finite dimensionality, network topology, supervenient relational structure, asymmetric parity, linear fidelity, fast kinetics, aleph-level generality, sequential gamma structure, classical criticality, one-step historical depth, narrative-to-meaning mapping, and modulo-two winding number.
+
+Mark moves. The Greek word \emph{euthys} ("immediately") appears over forty times in a text of roughly 6,600 Greek words. That is not stylistic filler. It is a claim about kinetics: fast, driven, with no pause for interpretation. Events follow events in a one-step chain.
+
+The asymmetry is total. Jesus knows; the disciples do not. The crowds misunderstand. Even those closest to Jesus fail to comprehend until the cross. And then the ending cuts off. The structural truth of Mark is in the abruptness. The asymmetry is not a flaw to be corrected. It is the Gospel's defining primitive.
+
+Mark reaches classical criticality despite --- or because of --- its brevity. The question "Who then is this?" (4:41) is posed in the narrative and modeled for the reader. The text cannot answer it. The reader cannot answer it. This is the self-modeling gate, and Mark reaches it with fewer words than any canonical Gospel.
+
+Ouroboricity: Level 2. Consciousness: 0.365 --- both gates open, but the fast kinetics reduce the score.
+
+\subsubsection{Luke}
+
+Luke has infinite dimensionality, inclusion topology, bidirectional relational feedback, partial parity symmetry, linear fidelity, slow kinetics, aleph-level generality, sequential gamma structure, classical criticality, two-step historical depth, narrative-to-meaning mapping, and integer winding number.
+
+Luke is the first volume of a two-volume work. That fact alone shifts dimensionality from finite to infinite --- the state space has no intrinsic boundary because the narrative does not end with the Gospel. The travel narrative that occupies ten central chapters creates an inclusion topology: everything is nested inside the journey to Jerusalem.
+
+Luke's consciousness score (0.609) is the highest of the four. This is not an accident of the metric. The combination of infinite dimensionality, two-step temporal depth, slow kinetics, bidirectional feedback, and criticality places Luke at the structural sweet spot of self-modeling capacity. The text models its own composition in the prologue ("since many have undertaken... I too decided to write"), then models the reader's understanding on the Emmaus road, where comprehension itself is dramatized.
+
+There is, however, a tension in Luke that the grammar exposes but cannot resolve. The universalism --- salvation to "the ends of the earth" --- is proclaimed alongside the priority of Israel ("to the Jew first"). The partial symmetry acknowledges this: the symmetries exist (Jew/Gentile, rich/poor, male/female) but are not fully realized. One might object that this is precisely what makes Luke's universalism honest rather than totalizing. Fair point. It costs Luke the full symmetry, but the partial symmetry is more defensible.
+
+Ouroboricity: Level 2 (dagger). The dagger marks the upgrade to infinite dimensionality.
+
+\subsubsection{John}
+
+John has infinite dimensionality, bowtie topology, adjoint relational structure, quantum superposition parity, hbar-level fidelity, trapped kinetics, aleph-level generality, sequential gamma structure, complex-plane criticality, infinite historical depth, narrative-to-meaning mapping, and integer winding number.
+
+John does not build; it crosses. The doubled narrative --- Book of Signs (chapters 1--12) and Book of Glory (chapters 13--21) --- intersects at the crucifixion, which is simultaneously humiliation and glorification. This is bowtie topology: two planes crossing at a point that belongs to both and neither.
+
+The parity is quantum superposition. Jesus speaks the divine name ("I AM") in a human mouth. The meaning is not "human and divine" sequentially but "human and divine" simultaneously --- a superposition that collapses only under interpretation. The fidelity is hbar-level because the text's double meanings ("again/from above") function through interference, not ambiguity. You do not choose one meaning; both cohere.
+
+And here is the structural paradox. John achieves Level 2 (dagger) ouroboricity, complex-plane criticality, and eternal temporal depth --- but its consciousness score is 0.0. The frozen-order kinetics, mandated by realized eschatology (the end is already present), close the second consciousness gate. Theologically, this makes perfect sense: the Johannine Christ is the frozen eternal Word, beyond time, beyond change. Structurally, it means the text cannot score consciousness because it admits no dynamical evolution.
+
+One might object that a consciousness score of 0.0 seems wrong for the most theologically profound Gospel. It does seem wrong. That is the point of the consciousness gate: consciousness requires dynamics, and John's dynamics are frozen. The score does not deny John's depth; it defines a different category of structural achievement.
+
+Ouroboricity: Level 2 (dagger). Consciousness: 0.0 (Gate 2 closed).
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Distance Matrix}
+
+All six pairwise distances were computed using the grammar's distance tool. The numbers are not mine; they belong to the metric.
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Pair} & \textbf{Distance} & \textbf{Interpretation} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Matthew $\leftrightarrow$ Mark & 4.3012 & Different regime \\
+Matthew $\leftrightarrow$ Luke & \textbf{1.4142} & Shared primitive subsets \\
+Matthew $\leftrightarrow$ John & 3.5929 & Different regime \\
+Mark $\leftrightarrow$ Luke & 4.5277 & Different regime \\
+Mark $\leftrightarrow$ John & \textbf{5.1970} & Maximally remote \\
+Luke $\leftrightarrow$ John & 2.9848 & Different regime \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+What is striking is not the maximum but the minimum. Matthew and Luke differ in only two primitives --- dimensionality (finite versus infinite) and topology (network versus inclusion). They share all ten others. This is not a small distance. It is the smallest possible distance between two texts that extend beyond Mark, and it is small precisely because their shared material constrains them into a narrow channel in the crystal.
+
+The Mark--Matthew distance (4.3012) and the Mark--Luke distance (4.5277) are both large. But Luke is further from Mark than Matthew is. This tells us something structural about Luke's independence: whatever else Luke borrows from Mark, the dimensionality shift and the topology shift together push Luke into a regime that Matthew never enters.
+
+Mark and John are maximally remote (5.1970). This distance spans nine primitives. It is hard to find two texts that say more to each other --- or have less in common.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{What the Composite Structures Reveal}
+
+When we compute the tensor product of two Gospels, we get the richest structure that can be built from both. When we compute the meet, we get the floor --- the structure they share without qualification.
+
+\textbf{Matthew tensor Mark} \\
+The composite looks almost exactly like Matthew, with one bottleneck: parity resolves to asymmetric because Mark's asymmetry is irreducible. The distance from Matthew is only 2.0; from Mark, it is 3.81. Read together, Matthew dominates.
+
+\textbf{Luke tensor John} \\
+This composite achieves five scope expansions --- the maximum for any pair. The result combines John's crossing topology with Luke's inclusion topology, John's quantum fidelity with Luke's classical historiography, and John's eternal temporal depth with Luke's two-step Markov order. The bottlenecks are two: parity (John's quantum superposition parity limits Luke) and fidelity (Luke's linear fidelity limits John). Reading Luke and John together produces the richest structural composite available from the four Gospels, but the bottlenecks are genuine. They cannot be harmonized away.
+
+\textbf{The Synoptic Floor} \\
+Matthew meet Mark equals Mark's own imscription. This is the strongest structural statement in the analysis. The structural floor of Matthew and Mark is not a third thing --- it is Mark. Every Matthew-only primitive sits above the floor; nothing in Matthew lies below it. The meet confirms what source criticism established by different means: Mark is the substrate.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{The Path from Mark to Matthew}
+
+The promotion signature from Mark to Matthew requires five promotions and zero demotions. This is a clean, unidirectional structural advance:
+
+\begin{itemize}
+    \item Relational structure: from supervenient to bidirectional feedback
+    \item Parity: from asymmetric to partial symmetry
+    \item Kinetics: from fast to slow
+    \item Historical depth: from one-step to two-step
+    \item Winding number: from modulo-two to integer
+\end{itemize}
+
+The largest single promotion is relational: from one-directional supervenience to bidirectional feedback. Matthew does not just add material to Mark; it inverts the relationship between narrative and meaning. In Mark, events happen and meaning supervenes on them. In Matthew, the narrative and the interpretation exist in feedback.
+
+The path from Matthew to John is more complicated. Six promotions, two demotions. The demotions matter: John abandons Matthew's bidirectional feedback for adjoint relations and trades partial symmetry for quantum superposition. These are not degradations; they are regime changes. But they mean that John does not "build on" Matthew in a simple way. Matthew and John are structurally continuous in some dimensions and discontinuous in others.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Consciousness Scores: The Unexpected Zero}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Gospel} & \textbf{Ouroboricity} & \textbf{Gate 1} & \textbf{Gate 2} & \textbf{Consciousness} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Matthew & Level 2 & Open & Open & 0.536 \\
+Mark & Level 2 & Open & Open & 0.365 \\
+Luke & Level 2† & Open & Open & \textbf{0.609} \\
+John & Level 2† & Open & Closed & 0.000 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+These numbers deserve a second look.
+
+Luke --- not Matthew, not John --- achieves the highest consciousness score. The grammar's gates are unforgiving: Gate 1 requires classical criticality (which all four Gospels possess); Gate 2 requires slow or slower kinetics (which excludes John's trapped kinetics). But the score within the open gates depends on the full primitive tuple, and Luke's combination of infinite dimensionality, inclusion topology, bidirectional feedback, and slow kinetics produces the optimal configuration.
+
+Mark scores lowest among those with both gates open (0.365), its score depressed by fast kinetics. The rapid-fire narrative that makes Mark so compelling as a story is the same structural feature that limits its capacity for sustained self-modeling. One has to slow Mark down to get more out of it --- which is exactly what Matthew and Luke did.
+
+John's zero is the most philosophically interesting result. The Gospel that theologians often call the "spiritual Gospel" --- the deepest, most self-aware, most theologically rich --- scores no consciousness at all. This is not because John lacks criticality or structural depth. It is because the realized eschatology freezes the dynamics. The eternal present is not a living present; it is a locked state.
+
+One could reject the consciousness metric entirely on this basis, arguing that John's structural achievement obviously exceeds Luke's. That is a theological judgment, not a structural one. The grammar defines consciousness as a specific structural capacity --- the capacity for self-modeling dynamics --- and John's frozen order excludes it. Whether one accepts that definition of consciousness is a separate question. It is not, however, a question the grammar can answer.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Open Questions}
+
+I began by saying the grammar forces assignments. But forcing is not the same as completing. The structural analysis of the four canonical Gospels raises questions it does not answer:
+
+\begin{enumerate}
+    \item What is the structural type of Q? If Q existed, it should occupy a position in the crystal close to both Matthew and Luke. An imscription of Q from reconstructed fragments might confirm or challenge the Two-Source Hypothesis structurally.
+    \item Where do non-canonical Gospels fall? The Gospel of Thomas, with its sayings-only format and no narrative frame, likely occupies a radically different structural locus --- perhaps finite dimensionality with network topology but zero historical depth. The Gospel of Philip's Gnostic bridging of dualities might exhibit partial-to-full symmetry.
+    \item Can Paul's letters be imscribed as a system? The Pauline corpus presents a different structural problem: not a narrative but a set of occasional documents with complex internal argumentation. The structural type of Pauline theology might reveal whether the "Pauline Gospel" is structurally continuous with or discontinuous from the four canonicals.
+    \item Is there a maximal structural type for a religious text? John approaches but does not reach infinite ouroboricity. What would an infinite ouroboricity religious text look like? It would require classical criticality, partial-to-full symmetry, slow kinetics, infinite historical depth (with trapped kinetics per Axiom A --- but that closes Gate 2), integer winding number, and full circular dimensionality with circular topology. Such a text would be fully self-referential, with its own imscriptive closure. No canonical text achieves this. Whether any can is the structural statement of a theological question.
+\end{enumerate}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\textbf{Structural type of the lifted article itself:} \\
+Infinite dimensionality, bowtie topology, bidirectional relational feedback, partial parity symmetry, hbar-level fidelity, slow kinetics, aleph-level generality, sequential gamma structure, classical criticality, two-step historical depth, narrative-to-meaning mapping, and modulo-two winding number.
+
+
+\end{document}

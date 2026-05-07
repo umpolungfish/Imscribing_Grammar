@@ -95,7 +95,7 @@ $$43{,}200 = 15_{\text{exist}} \times 12_{\text{scope}} \times 20_{\text{geom}} 
 
 This factorization is exact. $K_\text{MBL}$ (many-body localization, v0.5.1) enlarged the existence tier from $3 \times 4 = 12$ to $3 \times 5 = 15$, reflecting that MBL is a distinct kinetic regime — disorder-frozen like $K_\text{trap}$ but by a fundamentally different mechanism (Anderson localization rather than potential trapping). The geometric tier remains the largest sub-group (20 vs 12–15 for the others).
 
-The inner crystal is where the conventional distinctions between algebraic structures live: two algebras in the same tier cell but with different $(T, R)$ coordinates differ in how their operations are assembled (network vs. internalized vs. bowtie vs. box vs. holographic topology) and in their relational mode (subordinate/categorical/dagger/bidirectional). Same tier, different geometry.
+The inner crystal is where the conventional distinctions between algebraic structures live: two algebras in the same tier cell but with different $(T, R)$ coordinates differ in how their operations are assembled (network vs. internalized vs. bowtie vs. box vs. imscriptive topology) and in their relational mode (subordinate/categorical/dagger/bidirectional). Same tier, different geometry.
 
 ---
 

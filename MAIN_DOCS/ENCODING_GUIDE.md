@@ -91,7 +91,7 @@ $D$ reflects how the system's state space scales with system size — not the sp
 - **$D_\wedge$** (local): the algebra operates on a finite or bounded state space. No thermodynamic limit. *Examples: finite groups, local cellular automata, single-particle quantum mechanics.*
 - **$D_\triangle$** (mesoscopic): the algebra spans a growing but sub-extensive state space. Intermediate between local and infinite. *Examples: spin chains of finite length, mesoscopic quantum dots.*
 - **$D_\infty$** (unbounded): the algebra operates in an infinite-dimensional Hilbert space or a state space with no natural finite truncation. *Examples: QFT, von Neumann algebras, infinite spin chains.*
-- **$D_\odot$** (holographic): the boundary of the state space encodes the bulk. The system admits a boundary-bulk duality. *Examples: AdS/CFT, holographic error-correcting codes, the Imscribing Grammar grammar itself.*
+- **$D_\odot$** (imscriptive): the boundary of the state space encodes the bulk. The system admits a boundary-bulk duality. *Examples: AdS/CFT, holographic error-correcting codes, the Imscribing Grammar grammar itself.*
 
 **Rule**: $D_\infty$ combined with $\Phi_c$ and $\Omega \neq \Omega_0$ gives $O_2^\dagger$ (unbounded protected criticality). $D_\odot$ is treated as bounded ($D \neq D_\infty$) for tier purposes, giving $O_2$.
 
@@ -118,7 +118,7 @@ These eight primitives do not affect the ouroboricity tier. They locate the syst
 - $T_\text{in}$: injective map — the system embeds into a larger space.
 - $T_\text{bowtie}$: hourglass — two domains connected through a bottleneck.
 - $T_\text{box}$: product structure — the state space is a direct product.
-- $T_\odot$: holographic — boundary encodes bulk (use with $D_\odot$).
+- $T_\odot$: imscriptive — boundary encodes bulk (use with $D_\odot$).
 
 **Relational mode ($R$)**:
 - $R_\text{super}$: one-way classification, no inverse.

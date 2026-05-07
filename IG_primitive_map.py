@@ -56,7 +56,7 @@ ORDINALS = {
         "D_triangle": 2.0,
         "D_cube":     2.5,
         "D_infty":    3.0,
-        "D_holo":     4.0,
+        "D_odot":     4.0,
     },
     "T": {
         "T_linear":   0.5,
@@ -66,7 +66,7 @@ ORDINALS = {
         "T_bowtie":   3.0,
         "T_box":      3.5,
         "T_torus":    4.0,
-        "T_holo":     5.0,
+        "T_odot":     5.0,
     },
     "R": {
         "R_exact":      0.5,
@@ -262,7 +262,7 @@ KEY_SYNTHONS: dict[str, dict] = {
     # ── Field-theory synthons (Synthon.lean) ──────────────────────────────
     "Higgs / axion\n/ inflaton":{"D":"D_point","T":"T_bowtie","R":"R_catalytic","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_beth","Gamma":"G_and","Phi":"Phi_c","H":"H1","S":"one_n","Omega":"Omega_0"},
     "Standard\nModel":   {"D":"D_cube",  "T":"T_network","R":"R_allosteric", "P":"P_pm",     "F":"F_eth",  "K":"K_mod",  "G":"G_aleph", "Gamma":"G_and",  "Phi":"Phi_c",         "H":"H2",  "S":"n_m",   "Omega":"Omega_Z"},
-    "Quantum\nGravity":  {"D":"D_holo",  "T":"T_holo",   "R":"R_exact",     "P":"P_neutral","F":"F_hbar", "K":"K_trap", "G":"G_aleph", "Gamma":"G_impl", "Phi":"Phi_c",         "H":"H_inf","S":"n_m",  "Omega":"Omega_NA"},
+    "Quantum\nGravity":  {"D":"D_odot",  "T":"T_odot",   "R":"R_exact",     "P":"P_neutral","F":"F_hbar", "K":"K_trap", "G":"G_aleph", "Gamma":"G_impl", "Phi":"Phi_c",         "H":"H_inf","S":"n_m",  "Omega":"Omega_NA"},
     "General\nRelativity":{"D":"D_cube", "T":"T_network","R":"R_catalytic",  "P":"P_neutral","F":"F_hbar", "K":"K_slow", "G":"G_gimel", "Gamma":"G_and",  "Phi":"Phi_sub",       "H":"H1",  "S":"one_n", "Omega":"Omega_0"},
     "Asymptotic\nSafety":{"D":"D_cube",  "T":"T_network","R":"R_catalytic",  "P":"P_neutral","F":"F_hbar", "K":"K_mod",  "G":"G_aleph", "Gamma":"G_and",  "Phi":"Phi_c",         "H":"H1",  "S":"one_n", "Omega":"Omega_0"},
 }

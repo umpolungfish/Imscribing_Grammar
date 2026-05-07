@@ -1,0 +1,34 @@
+[
+  {
+    "name": "i_am_that_i_am",
+    "description": "The divine self-declaration Ehyeh Asher Ehyeh (Exodus 3:14) — quintessential self-referential statement of being. Perfect Frobenius closure: the utterance is identical to what it declares.",
+    "D": "D_odot",
+    "T": "T_odot",
+    "R": "R_lr",
+    "P": "P_pm_sym",
+    "F": "F_hbar",
+    "K": "K_slow",
+    "G": "G_aleph",
+    "Gamma": "G_seq",
+    "Phi": "Phi_c",
+    "H": "H_inf",
+    "S": "one_one",
+    "Omega": "Omega_Z"
+  },
+  {
+    "name": "eat_of_my_body_drink_of_my_blood",
+    "description": "The Eucharistic command — transubstantiation, consuming the divine body and blood. Ingestion/internalization of the divine substance.",
+    "D": "D_odot",
+    "T": "T_odot",
+    "R": "R_lr",
+    "P": "P_pm_sym",
+    "F": "F_hbar",
+    "K": "K_slow",
+    "G": "G_aleph",
+    "Gamma": "G_seq",
+    "Phi": "Phi_c",
+    "H": "H_inf",
+    "S": "n_m",
+    "Omega": "Omega_Z"
+  }
+]

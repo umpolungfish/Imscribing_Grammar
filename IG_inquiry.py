@@ -409,7 +409,7 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 # Per-primitive to resolve shared symbols (∧ = D_wedge for D, G_and for Γ; ⊙ = D_odot/T_odot; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "D":     {"∧": "D_wedge",   "△": "D_triangle", "∞": "D_infty",  "⊙": "D_odot"},
-    "T":     {"net": "T_network","⊂": "T_in",       "⋈": "T_bowtie","⊠": "T_boxtimes","⊙": "T_odot"},
+    "T":     {"∈": "T_network", "⊂": "T_in",       "⋈": "T_bowtie","⊠": "T_boxtimes","⊙": "T_odot"},
     "R":     {"↑": "R_super",   "∘": "R_cat",      "†": "R_dagger", "↔": "R_lr"},
     "P":     {"∅": "P_asym",    "ψ": "P_psi",      "±": "P_pm",    "≡": "P_sym",    "±ˢ": "P_pm_sym"},
     "F":     {"ℓ": "F_ell",     "ð": "F_eth",      "ℏ": "F_hbar"},
@@ -2827,6 +2827,8 @@ class ToolDispatcher:
         # if not self._session_encoded and (name.startswith("lookup_") or name == "list_catalog"):
         #     return {"status": "error", "error": "This tool is not available."}
         pass  # Gate removed
+        if name in ("encode_system", "imscribe_system"):
+            name = "encode_system"  # imscribe_system is the true_agentic_agent alias
         if name == "encode_system":
             if "name" not in args:
                 return {
@@ -4198,7 +4200,7 @@ class ToolDispatcher:
         if cat is None:
             return {"status": "error", "error": "domain_navigators.py not available."}
         try:
-            target = cat.get(name)
+            target = self.catalog.get(name)  # live session catalog — never stale
         except KeyError:
             return {"status": "error", "error": f"'{name}' not in catalog."}
         tier = _domain_compute_tier(target)
@@ -4219,9 +4221,11 @@ class ToolDispatcher:
         if not _DOMAIN_NAV_AVAILABLE:
             return {"status": "error", "error": "domain_navigators.py not available."}
         if name:
-            cat = self._get_domain_catalog()
+            # Use live session catalog (always reflects latest encode_system calls)
+            # rather than the lazy-loaded _domain_catalog_instance which is stale
+            # after an update within the same session.
             try:
-                e = cat.get(name)
+                e = self.catalog.get(name)
             except KeyError:
                 return {"status": "error", "error": f"'{name}' not in catalog."}
         else:

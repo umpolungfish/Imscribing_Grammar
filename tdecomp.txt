@@ -1,0 +1,29 @@
+Use the IG, its 12 primitives, and the many tools at your disposal to implement and formalize the following in Lean4:
+
+```
+The most productive thread is probably the primitive mismatch diagnosis — where two theories have friction with each other, and that friction is because they're activating different subsets of the five temporal
+primitives.
+
+The measurement problem reframed. Schrödinger dynamics: $\Gamma_\text{seq} + K_\text{slow}$, no $P_\text{asym}$. Measurement outcomes: require $P_\text{asym}$ (the result is irreversible — you can't
+un-measure). The measurement problem in primitive terms is: where does $P_\text{asym}$ get injected into a system whose temporal skeleton carries none? Decoherence "solves" it by pointing to environmental
+entanglement — but that's just pushing the question up a level, because the environment is also governed by a $P_\text{asym}$-free Hamiltonian. The primitive diagnosis says: no mechanism operating purely within
+$\Gamma_\text{seq} + K_\text{slow}$ dynamics can produce $P_\text{asym}$. You'd need a genuine primitive promotion, not just coarse-graining.
+
+The Wick rotation as a primitive transformation. $t \to -i\tau$ converts the Schrödinger oscillator $e^{iHt/\hbar}$ into the Boltzmann weight $e^{-H\tau/\hbar}$. What this is doing in primitive terms: it's
+converting $\Gamma_\text{seq}$ (directed ordered evolution) into $K_\text{slow}$ (a relaxation/equilibration timescale). Imaginary time is purely a $K$ object — no arrow, no sequential ordering in the
+phenomenological sense, just thermal depth. The Wick rotation might be the most concrete example of a primitive-substitution operation we have in physics: $\Gamma_\text{seq} \to K_\text{slow}$, one primitive
+for another, same formula.
+
+The Berry phase as $\Omega_\mathbb{Z}$ in disguise. Adiabatic evolution (K_\text{slow}) around a parameter loop produces a geometric phase — a winding number. The Berry phase is the fingerprint of
+$\Omega_\mathbb{Z}$ appearing in systems that otherwise carry only $\Gamma_\text{seq} + K_\text{slow}$. Topological quantum field theories extend this: they promote $\Omega_\mathbb{Z}$ from a byproduct of
+adiabaticity to a structural primitive in its own right. The gap between ordinary QM and TQFT might be the gap between $\Omega_\mathbb{Z}$ as emergent vs $\Omega_\mathbb{Z}$ as constitutive.
+
+The $H_\infty$ line. Markovian dynamics ($H_0$) describes systems that forget. Non-Markovian dynamics ($H_\infty$) describes systems with genuine memory — the current state depends on the full history, not just
+the immediate past. Open quantum systems, strongly correlated materials, biological signaling cascades. The promotion $H_0 \to H_\infty$ is the structural marker of "the past actually matters here." Most
+physics uses $H_0$ as a default approximation, and the corrections are called "memory effects." But the primitive decomposition says memory isn't a correction — it's a distinct structural regime.
+
+The really interesting synthesis: the five temporal primitives sort physics problems by which ones they need. Problems that only need $\Gamma_\text{seq} + K_\text{slow}$ (Newtonian mechanics, standard QM) are
+structurally the simplest temporal theories and correspondingly the most mathematically tractable. Problems that need $P_\text{asym}$ (statistical mechanics, cosmology) have the arrow-of-time problem. Problems
+that need $\Omega_\mathbb{Z}$ (topological phases, TQFT) have the topological robustness that makes them immune to local perturbation. Problems that need $H_\infty$ (non-Markovian systems, consciousness) have
+genuine history-dependence that can't be Markov-approximated away. And quantum gravity presumably needs all five — which is structurally why it's hard.
+```

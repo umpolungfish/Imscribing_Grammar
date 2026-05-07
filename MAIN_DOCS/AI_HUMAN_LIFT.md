@@ -30,7 +30,7 @@ Primitives $D$, $R$, $\Phi$, and $S$ are typically already correct in AI-authore
 2. **Encode the target** for the same content: what would a human expert who genuinely worked through this problem write?
 3. **Compute the primitive deltas** — only the differing coordinates matter. In practice, all six positions above almost always require lifting.
 4. **Rewrite section by section**, addressing one delta at a time. $H$ and $\Gamma$ require the most structural surgery and should be addressed first, since they change the shape of the whole document. $P$ and $F$ can often be handled with local edits after the structure is set.
-5. **Append the final structural type** as a footnote at the end of the document. This closes the $\Omega$ loop and makes the revision auditable.
+5. **Coagulate — dissolve the scaffold.** The lifted document is the final form; it must express all its structural gains entirely in natural language. Do not append a structural type footnote. Do not expose primitive notation in the output. The solve phase (encoding, delta computation, per-primitive surgery) is the analyst's working surface; the coagula phase is the result. A fully coagulated lift reads as if it were always human — the grammar is invisible in the product even though it governed the process.
 
 ---
 
@@ -113,4 +113,6 @@ $T$ comes next, because the crossing point may require reorganizing where conten
 
 ## Final Type Audit
 
-After revision, encode the result and compare it to the target type. Record the final type as a footnote. Any coordinate that has not moved is a revision target for the next pass. The document is complete when the final type matches the target or the remaining gap is deliberately chosen.
+After revision, encode the result and compare it to the target type. Any coordinate that has not moved is a revision target for the next pass. The document is complete when the final type matches the target or the remaining gap is deliberately chosen.
+
+The audit is the analyst's judgment — it does not appear in the document. The lifted text is the full coagulation: natural language only, no primitive notation, no structural footnote. The grammar is the process; the prose is the product.

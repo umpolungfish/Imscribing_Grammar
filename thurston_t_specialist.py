@@ -13,11 +13,11 @@ Probe 4 grammar diagnosis:
 
   Fix: replace the Lanczos spectral gap specialist ($K_\\text{trap}$) with a
   T-discriminating topology specialist that directly addresses the $T$ primitive
-  difference between H3 ($T_\\odot$, holographic) and H2×R ($T_\\text{in}$,
+  difference between H3 ($T_\\odot$, imscriptive) and H2×R ($T_\\text{in}$,
   product topology).
 
 T-primitive architecture:
-  $T_\\odot$ (holographic): H3 has isotropic exponential radial distribution.
+  $T_\\odot$ (imscriptive): H3 has isotropic exponential radial distribution.
     Every point sees the same boundary — there is no preferred direction, no
     product decomposition. The 'bulk' (geometry type) is read from the full
     boundary (triangulation), not from any sub-boundary.
@@ -102,7 +102,7 @@ def extract_t_features(node_pos: torch.Tensor) -> torch.Tensor:
     Extract T-primitive topology features from node positions.
 
     These features directly probe the $T$ primitive gap between H3 ($T_\\odot$,
-    isotropic holographic) and H2×R ($T_\\text{in}$, product/bimodal).
+    isotropic imscriptive) and H2×R ($T_\\text{in}$, product/bimodal).
 
     Input:  node_pos [N, 3] node coordinates
     Output: feature vector [9]

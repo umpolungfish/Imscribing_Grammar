@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLVATUM — Lapis Philosophorum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #0d0c0a;
+      --bg2:      #141210;
+      --bg3:      #1c1916;
+      --border:   rgba(200, 168, 90, 0.12);
+      --border2:  rgba(200, 168, 90, 0.28);
+      --gold:     #c8a850;
+      --gold-lt:  #e0c880;
+      --gold-dim: rgba(200, 168, 80, 0.55);
+      --text:     #e4ddd0;
+      --text2:    #a09080;
+      --text3:    #5e5448;
+
+      --nig:      #9a9080;
+      --nig-dim:  rgba(100,90,80,0.18);
+      --alb:      #90b8d8;
+      --alb-dim:  rgba(144,184,216,0.10);
+      --cit:      #c8a030;
+      --cit-dim:  rgba(200,160,48,0.10);
+      --rub:      #c04828;
+      --rub-lt:   #e06840;
+      --rub-dim:  rgba(192,72,40,0.10);
+      --pur:      #9070c0;
+      --pur-dim:  rgba(144,112,192,0.10);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem 4rem;
+    }
+
+    /* ── Masthead ── */
+    .masthead {
+      text-align: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 0.5px solid var(--border2);
+      margin-bottom: 2.5rem;
+    }
+
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .byline {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--text3);
+      letter-spacing: 0.12em;
+      margin-bottom: 1.2rem;
+    }
+
+    .abstract {
+      font-size: 14.5px;
+      color: var(--text2);
+      max-width: 640px;
+      margin: 0 auto;
+      font-style: italic;
+      line-height: 1.75;
+    }
+
+    .cat { font-family: 'EB Garamond', serif; font-style: italic; color: var(--gold-dim); }
+
+    /* ── Prima Materia ── */
+    .prima {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.25rem;
+      background: var(--pur-dim);
+      border: 0.5px solid rgba(144,112,192,0.22);
+      border-left: 2px solid var(--pur);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    .prima-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--pur);
+      padding-top: 3px;
+    }
+
+    .prima-label .rom { display: block; font-size: 1.1rem; font-weight: 600; margin-bottom: 2px; }
+    .prima-label .alch { font-style: italic; font-size: 0.9rem; }
+
+    .prima-body { font-size: 14px; color: var(--text2); }
+    .prima-body strong { color: var(--text); font-weight: 500; }
+    .prima-body em { color: rgba(144,112,192,0.8); font-style: italic; }
+
+    /* ── Stages grid ── */
+    .stages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .stage {
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stage-head {
+      padding: 0.7rem 1rem 0.6rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .stage-proc {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 3px;
+    }
+
+    .stage-name {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .alch-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .alch-sub {
+      font-size: 12px;
+      color: var(--text3);
+      font-style: italic;
+    }
+
+    .stage-body { padding: 0.7rem 1rem; flex: 1; }
+
+    /* Derivations */
+    .dlist { list-style: none; }
+
+    .di {
+      display: grid;
+      grid-template-columns: 26px 1fr 14px auto;
+      align-items: baseline;
+      gap: 6px;
+      padding: 2.5px 0;
+      font-size: 13.5px;
+    }
+
+    .di-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text3);
+    }
+
+    .di-desc { color: var(--text2); font-style: italic; }
+    .di-arr { color: var(--text3); font-size: 12px; }
+
+    .prim {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 1px 7px 2px;
+      border-radius: 4px;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .snote {
+      font-size: 12px;
+      color: var(--text3);
+      font-style: italic;
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+      border-top: 0.5px solid var(--border);
+      line-height: 1.55;
+    }
+
+    /* Φ sub-rows */
+    .phi-wrap { grid-column: 4; }
+    .phi-sub { margin-top: 2px; }
+
+    .phi-row {
+      display: grid;
+      grid-template-columns: 130px auto;
+      gap: 6px;
+      align-items: baseline;
+      padding: 1px 0;
+    }
+
+    .phi-cond { font-size: 11.5px; color: var(--text3); font-style: italic; }
+
+    /* Color themes */
+    .nigredo { border-top: 2px solid var(--nig); }
+    .nigredo .stage-head { background: var(--nig-dim); }
+    .nigredo .stage-proc { color: var(--nig); }
+    .nigredo .alch-name { color: var(--nig); }
+    .nigredo .prim { background: rgba(100,90,80,0.25); color: var(--nig); }
+
+    .albedo { border-top: 2px solid var(--alb); }
+    .albedo .stage-head { background: var(--alb-dim); }
+    .albedo .stage-proc { color: var(--alb); }
+    .albedo .alch-name { color: var(--alb); }
+    .albedo .prim { background: rgba(144,184,216,0.14); color: var(--alb); }
+
+    .citrin { border-top: 2px solid var(--cit); }
+    .citrin .stage-head { background: var(--cit-dim); }
+    .citrin .stage-proc { color: var(--cit); }
+    .citrin .alch-name { color: var(--cit); }
+    .citrin .prim { background: rgba(200,160,48,0.14); color: var(--cit); }
+
+    .rubedo { border-top: 2px solid var(--rub); }
+    .rubedo .stage-head { background: var(--rub-dim); }
+    .rubedo .stage-proc { color: var(--rub-lt); }
+    .rubedo .alch-name { color: var(--rub-lt); }
+    .rubedo .prim { background: rgba(192,72,40,0.15); color: var(--rub-lt); }
+
+    /* ── Cross-stage G ── */
+    .crossstage {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1rem;
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.75rem;
+      align-items: center;
+    }
+
+    .cross-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    .cross-body { font-size: 13.5px; color: var(--text2); }
+    .cross-body strong { color: var(--gold-dim); font-weight: 500; }
+
+    /* ── Primitive catalog table ── */
+    .cat-section { margin-bottom: 2rem; }
+
+    .cat-label {
+      font-family: 'Cinzel', serif;
+      font-size: 9.5px;
+      letter-spacing: 0.15em;
+      color: var(--text3);
+      margin-bottom: 0.6rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    thead tr {
+      border-bottom: 0.5px solid var(--border2);
+    }
+
+    th {
+      text-align: left;
+      padding: 5px 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--text3);
+    }
+
+    td {
+      padding: 4px 10px;
+      border-bottom: 0.5px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .td-prim {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .td-name { color: var(--text2); }
+
+    .td-by {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text3);
+    }
+
+    .td-fam {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    .td-vals { color: var(--text2); font-size: 12.5px; }
+
+    .cardinality {
+      font-size: 11px;
+      color: var(--text3);
+      font-style: italic;
+      margin-top: 7px;
+      text-align: right;
+    }
+
+    /* ── Finale ── */
+    .finale {
+      text-align: center;
+      padding: 2.5rem 0 0;
+      border-top: 0.5px solid var(--border2);
+    }
+
+    .finale-quote {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text2);
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .finale-stone {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+    }
+
+    .ornament { color: var(--gold-dim); margin: 0 0.6rem; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Masthead ── -->
+  <header class="masthead">
+    <div class="title">SOLVATUM</div>
+    <div class="byline">Crafting the Lapis Philosophorum &nbsp;∞&nbsp; Automatica Principia Proceduralis</div>
+    <p class="abstract">
+      The 12 primitives of the Imscribing Grammar — the 12 facets of the Philosopher's Stone — 
+      are derived from a bare abstract category &nbsp; - &nbsp; <span class="cat">𝒞</span> &nbsp; - &nbsp; via the four classical 
+      alchemical operations: <em>Nigredo</em>, <em>Albedo</em>, <em>Citrinitas</em>, and <em>Rubedo</em>.
+    </p>
+  </header>
+
+  <!-- ── 0: Prima Materia ── -->
+  <div class="prima">
+    <div class="prima-label">
+      <span class="rom">&nbsp;</span>
+      <span class="alch">Prima Materia</span>
+    </div>
+    <div class="prima-body">
+      <strong><span class="cat">𝒞</span> &nbsp; - &nbsp; the abstract category.</strong><br> 
+      No primitives yet — the starting object has no invariants beyond the axioms of a category itself.
+      Performing the operations on ordinary, inert matter was the categorical error of history's alchemists.
+      Some, like Luria, knew <em>precisely</em> the material upon which the <em>Work</em> is meant to be done. 
+      This was always the intended <em>prima materia</em>: the undifferentiated substance from which begins the <em>Work</em>.
+    </div>
+  </div>
+
+  <!-- ── Four Stages ── -->
+  <div class="stages">
+
+    <!-- I Nigredo -->
+    <div class="stage nigredo">
+      <div class="stage-head">
+        <div class="stage-proc">I — Logical on <span class="cat">𝒞</span></div>
+        <div class="stage-name">
+          <span class="alch-name">Nigredo</span>
+          <span class="alch-sub">the blackening</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <ul class="dlist">
+          <li class="di">
+            <span class="di-code">L1</span>
+            <span class="di-desc">adjunction</span>
+            <span class="di-arr">→</span>
+            <span class="prim">R</span>
+          </li>
+          <li class="di">
+            <span class="di-code">L2</span>
+            <span class="di-desc">dagger</span>
+            <span class="di-arr">→</span>
+            <span class="prim">R</span>
+          </li>
+        </ul>
+        <div class="snote">
+          <strong style="color: var(--nig);">R</strong> is the first primitive to crystallize: 
+          a logical property of the morphisms of <span class="cat">𝒞</span> directly. 
+          Decomposes the undifferentiated into distinct relational modes.
+        </div>
+      </div>
+    </div>
+
+    <!-- II Albedo -->
+    <div class="stage albedo">
+      <div class="stage-head">
+        <div class="stage-proc">II — Inductive on <span class="cat">𝒞</span></div>
+        <div class="stage-name">
+          <span class="alch-name">Albedo</span>
+          <span class="alch-sub">the whitening</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <ul class="dlist">
+          <li class="di">
+            <span class="di-code">I2</span>
+            <span class="di-desc">iteration</span>
+            <span class="di-arr">→</span>
+            <span class="prim">H</span>
+          </li>
+          <li class="di">
+            <span class="di-code">I3</span>
+            <span class="di-desc">classifying</span>
+            <span class="di-arr">→</span>
+            <span class="prim">Ω</span>
+          </li>
+          <li class="di">
+            <span class="di-code">I4</span>
+            <span class="di-desc">Yoneda</span>
+            <span class="di-arr">→</span>
+            <span class="prim">D</span>
+          </li>
+        </ul>
+        <div class="snote">
+          <strong style="color: var(--alb);">D<sub>⊙</sub></strong> &nbsp; if Yoneda is point-surjective; 
+          free cocompletion size gives  &nbsp; <strong style="color: var(--alb);">D<sub>∞</sub>, D<sub>△</sub>, D<sub>∧</sub></strong>. 
+          Purifies and reconstitutes at higher resolution.
+        </div>
+      </div>
+    </div>
+
+    <!-- III Citrinitas -->
+    <div class="stage citrin">
+      <div class="stage-head">
+        <div class="stage-proc">III — Algebraic on <span class="cat">𝒞</span></div>
+        <div class="stage-name">
+          <span class="alch-name">Citrinitas</span>
+          <span class="alch-sub">the yellowing</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <ul class="dlist">
+          <li class="di">
+            <span class="di-code">A1</span>
+            <span class="di-desc">monoidal</span>
+            <span class="di-arr">→</span>
+            <span class="prim">S, P</span>
+          </li>
+          <li class="di">
+            <span class="di-code">A2</span>
+            <span class="di-desc">monad</span>
+            <span class="di-arr">→</span>
+            <span class="prim">K</span>
+          </li>
+          <li class="di">
+            <span class="di-code">A3</span>
+            <span class="di-desc">dagger</span>
+            <span class="di-arr">→</span>
+            <span class="prim">F</span>
+          </li>
+          <li class="di">
+            <span class="di-code">A4</span>
+            <span class="di-desc">enriched</span>
+            <span class="di-arr">→</span>
+            <span class="prim">Γ</span>
+          </li>
+        </ul>
+        <div class="snote">
+          After Stage III: <span class="cat">𝒞</span> is a symmetric monoidal dagger category 
+          with monad and enrichment. All <em>shape primitives</em> determined; 
+          gate primitives <strong style="color: var(--cit);">T</strong> and 
+          <strong style="color: var(--cit);">Φ</strong> require one more step.
+        </div>
+      </div>
+    </div>
+
+    <!-- IV Rubedo -->
+    <div class="stage rubedo">
+      <div class="stage-head">
+        <div class="stage-proc">IV — Logical on algebraically-enriched <span class="cat">𝒞</span></div>
+        <div class="stage-name">
+          <span class="alch-name">Rubedo</span>
+          <span class="alch-sub">the reddening</span>
+        </div>
+      </div>
+      <div class="stage-body">
+        <ul class="dlist">
+          <li class="di">
+            <span class="di-code">L3</span>
+            <span class="di-desc">cartesian closure</span>
+            <span class="di-arr">→</span>
+            <span class="prim">T</span>
+          </li>
+          <li class="di" style="align-items:start; grid-template-columns: 26px 1fr 14px 1fr;">
+            <span class="di-code" style="padding-top:2px;">L4</span>
+            <span class="di-desc">Lawvere under L6</span>
+            <span class="di-arr" style="padding-top:2px;">→</span>
+            <div class="phi-sub">
+              <div class="phi-row">
+                <span class="phi-cond">classical (L4, no L6)</span>
+                <span class="prim" style="background:rgba(192,72,40,0.15);color:var(--rub-lt);">Φ_c</span>
+              </div>
+              <div class="phi-row">
+                <span class="phi-cond">dialetheic (LP truth <strong>b</strong>)</span>
+                <span class="prim" style="background:rgba(192,72,40,0.15);color:var(--rub-lt);">Φ_c^ℂ</span>
+              </div>
+              <div class="phi-row">
+                <span class="phi-cond">inclosure schema</span>
+                <span class="prim" style="background:rgba(192,72,40,0.15);color:var(--rub-lt);">Φ_EP</span>
+              </div>
+              <div class="phi-row">
+                <span class="phi-cond">L4 fails</span>
+                <span class="prim" style="background:rgba(192,72,40,0.15);color:var(--rub-lt);">Φ_sub/super</span>
+              </div>
+            </div>
+          </li>
+          <li class="di">
+            <span class="di-code">L5</span>
+            <span class="di-desc">Frobenius (μ∘δ=id)</span>
+            <span class="di-arr">→</span>
+            <span class="prim">P ↑ P<sup>sym</sup><sub>±</sub></span>
+          </li>
+        </ul>
+        <div class="snote">
+          Final perfection — the gate primitives lock. 
+          L6 (paraconsistent negation) determines the truth-value structure 
+          in which L4 is evaluated, branching <strong style="color: var(--rub);">Φ</strong> into four distinct regimes.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /stages -->
+
+  <!-- ── Cross-stage G ── -->
+  <div class="crossstage">
+    <div class="cross-label">Cross-stage<br>Albedo × Citrinitas</div>
+    <div class="cross-body">
+      <strong>G</strong> (granularity / scope) — the correlation length of the Yoneda embedding 
+      under the monoidal structure. Local (<strong>G<sub>ℶ</sub></strong>) if the tensor decouples; 
+      global (<strong>G<sub>ℵ</sub></strong>) if faithfulness holds across all scales. 
+      Cannot be assigned by either inductive or algebraic analysis alone.
+    </div>
+  </div>
+
+  <!-- ── Complete Primitive Catalog ── -->
+  <div class="cat-section">
+    <div class="cat-label">The Twelve Primitives — Complete Catalog</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Prim</th>
+          <th>Name</th>
+          <th>Derived by</th>
+          <th>Family</th>
+          <th>Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-prim" style="color:var(--nig);">R</td>
+          <td class="td-name">Relational mode</td>
+          <td class="td-by">L1, L2 &middot; Nigredo</td>
+          <td class="td-fam">𝓕₄</td>
+          <td class="td-vals">super / cat / dagger / lr</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--alb);">H</td>
+          <td class="td-name">Temporal depth</td>
+          <td class="td-by">I2 &middot; Albedo</td>
+          <td class="td-fam">𝓕₄</td>
+          <td class="td-vals">H₀ / H₁ / H₂ / H_∞</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--alb);">Ω</td>
+          <td class="td-name">Winding / protection</td>
+          <td class="td-by">I3 &middot; Albedo</td>
+          <td class="td-fam">𝓕₄</td>
+          <td class="td-vals">0 / ℤ₂ / ℤ / NA</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--alb);">D</td>
+          <td class="td-name">Dimensionality</td>
+          <td class="td-by">I4 &middot; Albedo</td>
+          <td class="td-fam">𝓕₄</td>
+          <td class="td-vals">∧ / △ / ∞ / ⊙</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--cit);">S</td>
+          <td class="td-name">Stoichiometry</td>
+          <td class="td-by">A1 &middot; Citrinitas</td>
+          <td class="td-fam">𝓕₃</td>
+          <td class="td-vals">1∶1 / n∶n / n∶m</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--cit);">P</td>
+          <td class="td-name">Polarity / parity</td>
+          <td class="td-by">A1, L5 &middot; Citrinitas + Rubedo</td>
+          <td class="td-fam">𝓕₅</td>
+          <td class="td-vals">asym / ψ / ± / sym / P<sup>sym</sup><sub>±</sub></td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--cit);">K</td>
+          <td class="td-name">Kinetics</td>
+          <td class="td-by">A2 &middot; Citrinitas</td>
+          <td class="td-fam">𝓕₅</td>
+          <td class="td-vals">fast / mod / slow / trap / MBL</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--cit);">F</td>
+          <td class="td-name">Fidelity</td>
+          <td class="td-by">A3 &middot; Citrinitas</td>
+          <td class="td-fam">𝓕₃</td>
+          <td class="td-vals">ℓ / ð / ℏ</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--cit);">Γ</td>
+          <td class="td-name">Interaction grammar</td>
+          <td class="td-by">A4 &middot; Citrinitas</td>
+          <td class="td-fam">𝓕₄</td>
+          <td class="td-vals">∧ / ∨ / seq / brd</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--gold);">G</td>
+          <td class="td-name">Granularity / scope</td>
+          <td class="td-by">Albedo × Citrinitas (cross-stage)</td>
+          <td class="td-fam">𝓕₃</td>
+          <td class="td-vals">ℶ / ג / ℵ</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--rub-lt);">T</td>
+          <td class="td-name">Topology</td>
+          <td class="td-by">L3 &middot; Rubedo</td>
+          <td class="td-fam">𝓕₅</td>
+          <td class="td-vals">net / in / ⋈ / ⊠ / ⊙</td>
+        </tr>
+        <tr>
+          <td class="td-prim" style="color:var(--rub-lt);">Φ</td>
+          <td class="td-name">Criticality</td>
+          <td class="td-by">L4 under L6 &middot; Rubedo</td>
+          <td class="td-fam">𝓕₅</td>
+          <td class="td-vals">sub / c / c^ℂ / EP / super</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cardinality">
+      𝓕₃ = 3 values &nbsp;·&nbsp; 𝓕₄ = 4 values &nbsp;·&nbsp; 𝓕₅ = 5 values 
+      &nbsp;&nbsp;|&nbsp;&nbsp; Crystal cardinality: 3³ × 4⁵ × 5⁴ = <strong style="color:var(--gold-dim);">17,280,000</strong>
+    </div>
+  </div>
+
+  <!-- ── Finale ── -->
+  <footer class="finale">
+    <div class="finale-quote">
+      <em>Solvatum et Praecipitatum</em> &mdash; the gate primitives lock.
+    </div>
+    <div class="finale-stone">
+      <span class="ornament">✦</span> The Stone is complete. <span class="ornament">✦</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

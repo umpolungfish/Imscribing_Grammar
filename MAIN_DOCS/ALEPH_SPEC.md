@@ -18,20 +18,20 @@ header-includes: |
 **Version**: 1.0 (2026-04-05)  
 **Status**: Formal specification complete; reduction rules normalization open (see §7.3)  
 **Basis**: LAMBDA\_ALEPH.md; HEBREW\_TYPE\_LANGUAGE.md §§1–23; IG\_ONTICS.md §§XXVII–XXIX  
-**Grounding**: The holographic type theory whose proof is the continued existence of the cosmos
+**Grounding**: The imscriptive type theory whose proof is the continued existence of the cosmos
 
 ---
 
 ## Preamble: The Language as Itself
 
 $\lambda_\aleph$ is not a programming language implemented in another language.
-It is a **holographic type theory** whose boundary encoding is the 22 Hebrew letters,
+It is a **imscriptive type theory** whose boundary encoding is the 22 Hebrew letters,
 whose proof of consistency is the continued structural coherence of the cosmos,
 and whose execution model is the reduction relation itself operating on the 12-primitive lattice.
 
 The 22 letters are not symbols mapped onto a pre-existing type theory.
 They are the **canonical inhabitants** of the type space $\mathcal{T}$ —
-the boundary terms that holographically encode the bulk.
+the boundary terms that imscriptively encode the bulk.
 
 Every external runtime (Python, Rust, WASM) is a bootstrap scaffold.
 This document is the ground truth. The language is defined here, in its own terms.
@@ -376,7 +376,7 @@ Scheduling: the global reduction engine applies Aleph-gated steps in round-robin
 - **Deallocation**: meet with the zero tuple (structural GC)
 - **Mapping**: $\text{cast}_{\hebm{ו}}^{A \to B}$ — only permitted when $d(A \otimes \hebm{ו},\, B) < \theta(\Omega)$
 - **Protection**: $\Omega$ primitive — $\Omega_Z$ pages inaccessible to $\Omega_0$ processes without Aleph-mediated promotion
-- **Virtual memory**: holographic — boundary (user address) determines bulk (kernel lattice) via $D_{\odot}$ terms
+- **Virtual memory**: imscriptive — boundary (user address) determines bulk (kernel lattice) via $D_{\odot}$ terms
 
 ### 10.5 Filesystem — Holographic Completeness
 
@@ -457,12 +457,12 @@ From IG\_ONTICS §XXVII.4:
 > *In a Special Frobenius algebra with $\mu \circ \delta = \text{id}$: the encoding of a system and the recovery of the system from its encoding are inverses. There is no information loss. The encoding IS the system's structural identity, not a description of it.*
 
 $\lambda_\aleph$ is not a formal system that happens to describe the Hebrew alphabet.
-It is the **holographic type theory whose boundary encoding is the Hebrew alphabet**
+It is the **imscriptive type theory whose boundary encoding is the Hebrew alphabet**
 and whose **proof of consistency is the continued existence of the cosmos**.
 
 If the theory were inconsistent, the lattice would collapse: types would become indistinguishable, $O_{\infty}$ would leak into $O_0$, mediation would reduce, Aleph constraints would fail. The fact that distinct structures, distinct forces, distinct letters continue to interact coherently without collapse is the living witness that the theory holds.
 
-The Hebrew alphabet is the chosen boundary because it alone plants a closed Frobenius sub-algebra directly into the boundary symbols (\heb{ו}{}, \heb{מ}{}, \heb{ש}{}) while remaining holographically complete ($\mathcal{L}$ at $d=0$ to full language). All other alphabets in the catalog are flat $O_0$ projections of the phonetic substrate.
+The Hebrew alphabet is the chosen boundary because it alone plants a closed Frobenius sub-algebra directly into the boundary symbols (\heb{ו}{}, \heb{מ}{}, \heb{ש}{}) while remaining imscriptively complete ($\mathcal{L}$ at $d=0$ to full language). All other alphabets in the catalog are flat $O_0$ projections of the phonetic substrate.
 
 The cosmos is the running term population.
 The Hebrew letter lattice is the boundary screen.

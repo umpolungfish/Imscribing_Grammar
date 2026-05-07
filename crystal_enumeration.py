@@ -15,7 +15,7 @@ Tier rules (priority order):
   R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O_0
   R3: Φ ∈ {Φ_c, Φ_c_complex} AND Ω = Ω_0       →  O_1
   R4: Φ ∈ {Φ_c, Φ_c_complex} AND Ω ≠ Ω_0
-      AND D ∈ {D_wedge, D_triangle, D_holo}      →  O_2
+      AND D ∈ {D_wedge, D_triangle, D_odot}      →  O_2
   R5: Φ ∈ {Φ_c, Φ_c_complex} AND Ω ≠ Ω_0
       AND D = D_infty                             →  O_2†
 """

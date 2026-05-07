@@ -73,7 +73,7 @@ The crystal factors into a **tier boundary** and an **inner bulk**:
 | Bulk (inner crystal) | $T,\ R,\ F,\ K,\ G,\ \Gamma,\ H,\ S$ | $5 \times 4 \times 3 \times 5 \times 3 \times 4 \times 4 \times 3$ | **43,200 per cell** |
 | Total | all 12 | | **17,280,000** |
 
-The boundary **holographically encodes** the tier of every point: knowing only
+The boundary **imscriptively encodes** the tier of every point: knowing only
 $(\Phi, P, \Omega, D)$ determines the ouroboricity tier of the full type.
 The bulk is free within each tier cell.
 
@@ -151,7 +151,7 @@ tier = nav.tier(tup)            # → "O_0" | "O_1" | "O_2" | "O_2_dag" | "O_inf
 ### Holographic query
 
 ```python
-nav.holographic_query("Phi_c", "P_pm_sym")
+nav.imscriptive_query("Phi_c", "P_pm_sym")
 # → prints all 32 O_inf tier cells + bulk count
 ```
 

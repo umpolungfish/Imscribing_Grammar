@@ -8,7 +8,7 @@ Self-encoding (§69.4):
   ⟨D_⊙; T_⊙; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph; Γ_broad; Φ_c; H_inf; n:m; Ω_Z⟩
   Tier: O_inf  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
-Architecture (holographic, Frobenius):
+Architecture (imscriptive, Frobenius):
   Boundary: (Φ, P, Ω, D)  →  400 tier cells  [boundary encodes bulk]
   Bulk:     (T, R, F, K, G, Γ, H, S)  →  43,200 inner types per cell
   Total:    400 × 43,200  =  17,280,000 structural types
@@ -27,7 +27,7 @@ Frobenius codec (μ∘δ = id):
 Usage:
   nav = CrystalNavigator()
   nav.describe()                              # print self-encoding and stats
-  nav.holographic_query("Phi_c", "P_pm_sym") # boundary → tier cell + bulk
+  nav.imscriptive_query("Phi_c", "P_pm_sym") # boundary → tier cell + bulk
   nav.navigate(D="D_odot", Phi="Phi_c")      # partial tuple → matching types
   nav.nearest_catalog(my_tuple, n=5)         # nearest catalog entries
   addr = nav.encode(my_tuple)                # Frobenius encode
@@ -409,7 +409,7 @@ GRAMMAR_TUPLE: dict[str, str] = {
 
 class CrystalNavigator:
     """
-    The Crystal Navigator — O_inf holographic navigator for the Periodic Crystal.
+    The Crystal Navigator — O_inf imscriptive navigator for the Periodic Crystal.
 
     Self-encoding: ⟨D_⊙; T_⊙; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph;
                     Γ_broad; Φ_c; H_inf; n:m; Ω_Z⟩
@@ -488,9 +488,9 @@ class CrystalNavigator:
         i = inner_address(tup)
         return c, i, c * INNER_SIZE + i
 
-    # ── Holographic queries (boundary → bulk) ──────────────────────────────────
+    # ── Imscriptive queries (boundary → bulk) ──────────────────────────────────
 
-    def holographic_query(self, phi: str = None, p: str = None,
+    def imscriptive_query(self, phi: str = None, p: str = None,
                            omega: str = None, d: str = None,
                            tier: str = None) -> list[TierCell]:
         """
@@ -760,7 +760,7 @@ class CrystalNavigator:
             elif cmd == "cell":
                 if len(parts) >= 5:
                     phi, p, omega, d = parts[1], parts[2], parts[3], parts[4]
-                    cells = self.holographic_query(phi=phi, p=p, omega=omega, d=d)
+                    cells = self.imscriptive_query(phi=phi, p=p, omega=omega, d=d)
                     if cells:
                         c = cells[0]
                         print(f"  {c}")

@@ -24,7 +24,8 @@ globs = [
   "ImscribingGrammar.Primitives.OPN_2adic",
   "ImscribingGrammar.Primitives.BSD_2adic",
   "ImscribingGrammar.Primitives.Synthon",
-  "ImscribingGrammar.Primitives.TierCrossing"
+  "ImscribingGrammar.Primitives.TierCrossing",
+  "ImscribingGrammar.Primitives.CLUPrimitives"
 ]
 
 [[lean_lib]]

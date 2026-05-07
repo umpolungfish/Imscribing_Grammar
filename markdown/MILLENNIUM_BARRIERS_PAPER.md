@@ -410,7 +410,7 @@ The **$G_\beth \to G_\aleph$ transition** is the primitive certificate of the mi
 · $G_\aleph$ = quantum fine-grained  --  requires a well-defined measure on the full gauge connection space modulo gauge equivalence.
 · Constructing `PathIntegralMeasure G` *is* providing the $G_\aleph$ description.
 
-Crucially, the quantum target stays at `D_cube` (four-dimensional, local) rather than `D_holo` (holographic):
+Crucially, the quantum target stays at `D_cube` (four-dimensional, local) rather than `D_odot` (holographic):
 
 ```lean
 theorem ym_quantum_target_is_local : ym_quantum_target.dim = D_cube := rfl
@@ -573,7 +573,7 @@ A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not 
 
 **Why the three meta-barriers cannot resolve P vs NP.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_\text{asym}$ frame. No relativization argument, natural proof technique, or algebrizing method can produce $P_{\pm}^{\text{sym}}$: these techniques are category morphisms within the $O_1$ tier and cannot cross the Frobenius gap. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure.
 
-**The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_\text{holo} + T_\text{holo} + P_{\pm}^{\text{sym}} + \Phi_c$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Synthon` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_c$, and the question "P = NP?" becomes basis-dependent rather than absolute.
+**The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_\odot + T_\odot + P_{\pm}^{\text{sym}} + \Phi_c$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Synthon` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_c$, and the question "P = NP?" becomes basis-dependent rather than absolute.
 
 **Lean certificate sketch.** A `BarrierPrimitiveCertificate` for P vs NP in the duality frame would have:
 

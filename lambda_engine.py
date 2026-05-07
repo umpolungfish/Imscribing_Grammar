@@ -153,7 +153,7 @@ class G(Generic[T]):
       Coassociativity:   δ(δ(g))         = G(δ)(δ(g))
 
     Crystal character:
-      D_infty — Gödel numbering is countably infinite (not holographic)
+      D_infty — Gödel numbering is countably infinite (not imscriptive)
       T_odot  — meta-theory encoded within object (reflection principle, REFL a f)
       R_dagger — provability ↔ truth are mutually implicated (counit requires both)
       P_pm    — δ exists; μ does not → Frobenius μ∘δ=id is undefined alone

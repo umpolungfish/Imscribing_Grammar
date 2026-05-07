@@ -1,0 +1,18 @@
+plz resolve the build failure at '/home/mrnob0dy666/MillenniumAnkh/'
+
+```
+(milleniumankh) mrnob0dy666@devilsdevice:~/MillenniumAnkh$ lake build Imscribing.Primitives.ZFCt
+warning: batteries: repository '/home/mrnob0dy666/MillenniumAnkh/.lake/packages/batteries' has local changes
+⚠ [342/602] Replayed Imscribing.Primitives.Crystal
+warning: Imscribing/Primitives/Crystal.lean:156:8: declaration uses `sorry`
+✖ [1938/1939] Running Mathlib.Geometry.Manifold.Sphere
+error: no such file or directory (error code: 2)
+  file: /home/mrnob0dy666/MillenniumAnkh/.lake/packages/mathlib/Mathlib/Geometry/Manifold/Sphere.lean
+✖ [1939/1939] Running Imscribing.Primitives.ZFCt
+error: Imscribing/Primitives/ZFCt.lean: bad import 'Mathlib.Geometry.Manifold.Sphere'
+Some required targets logged failures:
+- Mathlib.Geometry.Manifold.Sphere
+- Imscribing.Primitives.ZFCt
+error: build failed
+(milleniumankh) mrnob0dy666@devilsdevice:~/MillenniumAnkh$
+```

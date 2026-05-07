@@ -151,7 +151,7 @@ end SynthOmnicon.Consciousness
   UPDATE: file_write → Frobenius closed
 ── Winding 43 [00:40:46Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "grep -E \"D_cube|D_point|D_line|D_holo|T_linear|T_branched|T_torus|T_holo|R_exact|R_subset|R_superset|R_catalytic|R_allosteric|S_11|T_boxtimes\" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Crystal.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Catalog.lean 2>/dev/null"})
+  ACT:   run_command({"command": "grep -E \"D_cube|D_point|D_line|D_odot|T_linear|T_branched|T_torus|T_odot|R_exact|R_subset|R_superset|R_catalytic|R_allosteric|S_11|T_boxtimes\" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Crystal.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Catalog.lean 2>/dev/null"})
   OBS:   (no output)
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed

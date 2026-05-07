@@ -66,7 +66,7 @@ def ym_classical : Synthon := {
     Crucially: dim stays D_infty (NOT D_odot). YM remains a 4D local theory.
     The gap from ym_classical is 4 primitives. -/
 def ym_quantum_target : Synthon := {
-  dim  := D_infty,   -- stays 4D local — NOT holographic, NOT QG
+  dim  := D_infty,   -- stays 4D local — NOT imscriptive, NOT QG
   top  := T_network,
   rel  := R_cat,
   pol  := P_pm,
@@ -231,12 +231,12 @@ theorem ym_massgap_is_Phi_c :
     ym_classical.crit ≠ ym_quantum_target.crit := by decide
 
 /-- The quantum YM target stays in 4D local spacetime (D_infty),
-    NOT in holographic spacetime (D_odot). YM is NOT a quantum gravity problem. -/
+    NOT in imscriptive spacetime (D_odot). YM is NOT a quantum gravity problem. -/
 theorem ym_quantum_target_is_local :
     ym_quantum_target.dim = D_infty := rfl
 
 /-- Quantum YM and QG differ in dimensionality: D_infty vs D_odot.
-    The quantum lift of YM does not require holographic substrate. -/
+    The quantum lift of YM does not require imscriptive substrate. -/
 theorem ym_qg_dim_differ :
     ym_quantum_target.dim ≠ quantum_gravity.dim := by decide
 

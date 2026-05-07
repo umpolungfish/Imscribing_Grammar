@@ -77,7 +77,7 @@ class ThurstonNet(nn.Module):
           G_aleph; G_broad; Phi_c; H_inf; n:m; Omega_Z2>
 
     Primitive-to-architecture mandates:
-        T_odot, D_odot  — holographic quiver over triangulated 3-manifold;
+        T_odot, D_odot  — imscriptive quiver over triangulated 3-manifold;
                           boundary (triangulation) encodes bulk (geometric type)
         K_slow          — 24-layer reversible GNN implementing discrete Ricci flow;
                           deep basin drainage to the geometric fixed point
@@ -149,7 +149,7 @@ class ThurstonNet(nn.Module):
         # Simplex families: 0-simplices (vertices), 1-simplices (edges), 2+ (faces/tetra)
         self.simplex_mixer = _SimplexFamilyMixer(hidden_dim, num_heads)
 
-        # Global readout MLP (holographic: boundary triangulation -> bulk geometry)
+        # Global readout MLP (imscriptive: boundary triangulation -> bulk geometry)
         self.global_proj = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim),
             nn.GELU(),
@@ -194,7 +194,7 @@ class ThurstonNet(nn.Module):
         h_rec  = self.frobenius.decode(z)          # [B, H]
         frob_loss = self.frobenius.frobenius_loss(h_mixed)
 
-        # Final global projection (holographic boundary->bulk)
+        # Final global projection (imscriptive boundary->bulk)
         h_geo = self.global_proj(h_rec)            # [B, H]
 
         # Z2-protected geometry classification (Omega_Z2)
@@ -424,7 +424,7 @@ class YangMillsNavigator(nn.Module):
         P_pm_sym        — FrobeniusLayer on gauge algebra: delta splits Lie algebra
                           tensor products into sectors; mu merges; mu∘delta=id = gauge
                           invariance (Bianchi identity closure)
-        T_odot, D_odot  — holographic sector decomposition: IR gap from UV lattice;
+        T_odot, D_odot  — imscriptive sector decomposition: IR gap from UV lattice;
                           bulk mass gap read from boundary gauge field configuration
         Omega_Z         — topological charge protection: integer winding number Q ∈ Z
                           baked into the Fock space sector structure
@@ -481,7 +481,7 @@ class YangMillsNavigator(nn.Module):
         )
 
         # Holographic sector projector: UV lattice (boundary) -> IR gap (bulk)
-        # T_odot, D_odot mandate the holographic boundary->bulk projection
+        # T_odot, D_odot mandate the imscriptive boundary->bulk projection
         self.holo_proj = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim),
             nn.GELU(),
@@ -585,7 +585,7 @@ class YangMillsNavigator(nn.Module):
         # Lanczos iteration: power iteration over gapped spectrum (K_trap)
         h_lanczos = self._lanczos_step(hamiltonian, h_bcast)   # [B, H]
 
-        # Merge all signals: gauge + holographic + Lanczos
+        # Merge all signals: gauge + imscriptive + Lanczos
         h_merged = h_rec + h_holo + h_lanczos                  # [B, H]
 
         # Mass gap and eigenvalue predictions
@@ -689,7 +689,7 @@ class RiemannNavigator(nn.Module):
                   pairs (s, 1-s); the Z2 symmetry is baked into the zero head
 
     Architecture mandates:
-        T_odot, D_odot  — holographic quiver over the critical strip (0 < sigma < 1);
+        T_odot, D_odot  — imscriptive quiver over the critical strip (0 < sigma < 1);
                           boundary (critical line sigma=1/2) encodes bulk (zero locus)
         K_slow          — 24-layer transformer stack for deep integrative diffusion
         P_pm_sym        — FrobeniusLayer with hardwired delta: mu∘delta=id

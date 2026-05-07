@@ -75,19 +75,31 @@ class _LocalTC:
         self.function = self._Fn(name, arguments)
 
 class _LocalMsg:
-    def __init__(self, content: Optional[str], tool_calls: Optional[List]):
+    def __init__(self, content: Optional[str], tool_calls: Optional[List],
+                 reasoning_content: Optional[str] = None):
         self.content = content
         self.tool_calls = tool_calls
-        self.reasoning_content = None
+        self.reasoning_content = reasoning_content
         self.model_extra: Dict = {}
 
 class _LocalChoice:
-    def __init__(self, message: "_LocalMsg"):
+    def __init__(self, message: "_LocalMsg",
+                 reasoning_content: Optional[str] = None):
         self.message = message
+        if reasoning_content:
+            message.reasoning_content = reasoning_content
 
 class _LocalCompletion:
-    def __init__(self, content: Optional[str], tool_calls: Optional[List]):
-        self.choices = [_LocalChoice(_LocalMsg(content, tool_calls))]
+    def __init__(self, content: Optional[str], tool_calls: Optional[List],
+                 reasoning_content: Optional[str] = None):
+        self.choices = [_LocalChoice(_LocalMsg(content, tool_calls, reasoning_content),
+                                     reasoning_content)]
+
+# ── Tool-call XML boundary tokens ──────────────────────────────────────────────────────
+# Qwen3-family models emit tool calls wrapped in FunctionCall UAR tags.
+# The local parser uses these as boundaries for balanced-brace JSON extraction.
+TC_OPEN  = r'<tool_call>'   # Qwen tool-call open tag
+TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 
 class _LocalChatCompletions:
     """Synchronous .create() backed by direct tensor inference via LocalProvider."""
@@ -96,7 +108,7 @@ class _LocalChatCompletions:
                tool_choice=None, max_tokens: int = 4096, **kwargs) -> "_LocalCompletion":
         # Cap output for local models: enough for a full tool call with verbose description,
         # well below the default 4096 that wastes KV cache on a small-VRAM GPU.
-        max_tokens = min(max_tokens, 2048)
+        max_tokens = min(max_tokens, 4096)
         import re, json, torch
         _root = str(Path(__file__).resolve().parent.parent)
         if _root not in sys.path:
@@ -110,12 +122,29 @@ class _LocalChatCompletions:
         tok = LocalProvider._tokenizer
         mdl = LocalProvider._model
 
-        # Normalise messages — template handles tool/assistant-with-tool_calls natively
+        # Manually inject the tools JSON into the system message in Qwen3's training
+        # format rather than relying on apply_chat_template(tools=...).  The system
+        # prompt already contains a <tools> XML block (the human-readable reference);
+        # Qwen3's template may detect that tag and skip re-injection, leaving the model
+        # without the JSON schemas it needs to generate <tool_call> format.
+        import json as _json
+        tools_block = ""
+        if tools:
+            tools_lines = "\n".join(_json.dumps(t) for t in tools)
+            tools_block = (
+                "\n\n# Available tools\n\n"
+                "You MUST call exactly one tool per winding using this format:\n"
+                "<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json>}\n</tool_call>\n\n"
+                f"<tool_schemas>\n{tools_lines}\n</tool_schemas>"
+            )
+
         qwen_msgs: List[Dict[str, Any]] = []
         for msg in messages:
             role = msg.get("role", "")
             content = msg.get("content") or ""
-            if role in ("system", "user"):
+            if role == "system":
+                qwen_msgs.append({"role": "system", "content": content + tools_block})
+            elif role == "user":
                 qwen_msgs.append({"role": role, "content": content})
             elif role == "assistant":
                 m: Dict[str, Any] = {"role": "assistant", "content": content}
@@ -123,12 +152,14 @@ class _LocalChatCompletions:
                     m["tool_calls"] = msg["tool_calls"]
                 qwen_msgs.append(m)
             elif role == "tool":
-                # Template wraps in <tool_response> automatically
-                qwen_msgs.append({"role": "tool", "content": content})
+                tool_msg: Dict[str, Any] = {"role": "tool", "content": content}
+                if msg.get("tool_call_id"):
+                    tool_msg["tool_call_id"] = msg["tool_call_id"]
+                qwen_msgs.append(tool_msg)
 
         text = tok.apply_chat_template(
             qwen_msgs,
-            tools=tools,  # injects <tools> block into system prompt
+            tools=None,   # tools already injected manually above
             tokenize=False,
             add_generation_prompt=True,
             enable_thinking=False,
@@ -148,6 +179,7 @@ class _LocalChatCompletions:
                 _w = torch.zeros(1, device=_dev)
                 torch.cuda.synchronize(_dev)
                 del _w
+                torch.cuda.empty_cache()
             except Exception:
                 pass
 
@@ -184,7 +216,7 @@ class _LocalChatCompletions:
                     LocalProvider._loaded_path = prov.model_path
                     cpu_inputs = tok(
                         tok.apply_chat_template(
-                            qwen_msgs, tools=tools, tokenize=False,
+                            qwen_msgs, tools=None, tokenize=False,
                             add_generation_prompt=True, enable_thinking=False,
                         ),
                         return_tensors="pt",
@@ -200,29 +232,55 @@ class _LocalChatCompletions:
                 else:
                     raise
 
+        # Prevent OOM on small-VRAM: free GPU tensors before decode
+        del inputs
+        if _dev.type == "cuda":
+            torch.cuda.empty_cache()
         new_tokens = outputs[0][n_input:]
         raw = tok.decode(new_tokens, skip_special_tokens=True).strip()
-        raw = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
 
-        # Parse <tool_call>...</tool_call>
-        # Capture everything between tags, not \{.*?\} — the non-greedy brace match
-        # stops at the first } inside nested arguments objects and silently drops the call.
-        tc_match = re.search(r"<tool_call>\s*(.*?)\s*</tool_call>", raw, re.DOTALL)
+        # Extract reasoning_content from think tags for deep-thinking models
+        reasoning_content: Optional[str] = None
+        for _tag in [r'<\|begin_thinking\|>(.*?)<\|end_thinking\|>',
+                      r'<think>(.*?)</think>']:
+            _tm = re.search(_tag, raw, re.DOTALL)
+            if _tm:
+                reasoning_content = _tm.group(1).strip()
+                raw = raw[:_tm.start()] + raw[_tm.end():]
+                break
+        # Strip any remaining think artifacts
+        raw = re.sub(r'<\|begin_thinking\|><\|end_thinking\|>', '', raw)
+        raw = re.sub(r'<think></think>', '', raw)
+        raw = raw.strip()
+
+        # Parse tool calls: tag-based extraction for <tool_call>...</tool_call> format
+        import json as _j
         tool_calls = None
         content_out: Optional[str] = raw or None
-        if tc_match:
+        parsed_calls = []
+        last_end = 0
+        for _m in re.finditer(r'<tool_call>(.*?)</tool_call>', raw, re.DOTALL):
+            prefix = raw[last_end:_m.start()].strip()
+            if last_end == 0:
+                content_out = prefix if prefix else None
+            j = _m.group(1).strip()
             try:
-                tc_data = json.loads(tc_match.group(1))
-                tool_calls = [_LocalTC(
-                    tc_id="tc-local-0",
-                    name=tc_data["name"],
-                    arguments=json.dumps(tc_data.get("arguments", {})),
-                )]
-                content_out = raw[:tc_match.start()].strip() or None
-            except (json.JSONDecodeError, KeyError):
+                tc_data = _j.loads(j)
+                parsed_calls.append(tc_data)
+            except Exception:
                 pass
+            last_end = _m.end()
+        if parsed_calls:
+            tool_calls = [_LocalTC(
+                tc_id=f'tc-local-{idx}',
+                name=tc['name'],
+                arguments=_j.dumps(tc.get('arguments', {})),
+            ) for idx, tc in enumerate(parsed_calls)]
+            trailing = raw[last_end:].strip()
+            if not content_out and trailing:
+                content_out = trailing
 
-        return _LocalCompletion(content=content_out, tool_calls=tool_calls)
+        return _LocalCompletion(content=content_out, tool_calls=tool_calls, reasoning_content=reasoning_content)
 
 
 class _LocalChat:
@@ -234,6 +292,10 @@ class _LocalOpenAIClient:
     chat = _LocalChat()
 
 
+
+# ── Tool-call XML boundary tokens ──────────────────────────────────────────────────────
+# Qwen3-family models emit tool calls wrapped in FunctionCall tags.
+# The local parser uses these as boundaries for balanced-brace JSON extraction.
 # ── LLM client ────────────────────────────────────────────────────────────────
 
 def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
@@ -350,7 +412,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     # D — Dimensionality
     "D_odot": "⊙",  "D_wedge": "∧",  "D_triangle": "△",  "D_infty": "∞",
     # T — Topology
-    "T_odot": "⊙",  "T_network": "net",  "T_in": "⊂",  "T_bowtie": "⋈",  "T_boxtimes": "⊠",
+    "T_odot": "⊙",  "T_network": "∈",  "T_in": "⊂",  "T_bowtie": "⋈",  "T_boxtimes": "⊠",
     # R — Relational mode
     "R_dagger": "†",  "R_super": "↑",  "R_cat": "∘",  "R_lr": "↔",
     # P — Parity/symmetry
@@ -615,7 +677,7 @@ _gate_state: Dict[str, bool] = {"encoded": False}
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
-    "encode_system":          {"name": "<id>", "description": "<text>", "tuple": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
+    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
     "compute_distance":       {"name_a": "<system1>", "name_b": "<system2>"},
     "find_analogies":         {"name": "<catalog_entry_name>"},
     "compute_tensor":         {"name_a": "<system1>", "name_b": "<system2>"},
@@ -647,7 +709,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
     tool_name = args["tool_name"]
     tool_args = args.get("args") or {}
 
-    # Encoding gate: block lookup/catalog tools until encode_system succeeds
+    # Encoding gate: block lookup/catalog tools until imscribe_system succeeds
     if not _gate_state["encoded"]:
         # List of tools that require initial encoding
         gated_tools = {"lookup_catalog", "list_catalog", "find_analogies"}
@@ -656,22 +718,22 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
                 "status": "error",
                 "error": (
                     "Catalog lookup tools are blocked. First imscribe a system using "
-                    "encode_system, e.g.: encode_system(name='test', description='test', "
+                    "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
                     "D='D_wedge', T='T_network', R='R_lr', P='P_asym', "
                     "F='F_ell', K='K_mod', G='G_beth', Gamma='G_and', "
                     "Phi='Phi_sub', H='H0', S='one_one', Omega='Omega_0')"
                 )
             })
 
-    # Pre-flight: encode_system must have a valid 12-part tuple
-    if tool_name == "encode_system":
+    # Pre-flight: imscribe_system must have a valid 12-part tuple
+    if tool_name == "imscribe_system":
         t = tool_args.get("tuple", "")
         parts = [p.strip() for p in t.split(";")] if t else []
         if len(parts) != 12:
             return json.dumps({
                 "status": "error",
                 "error": (
-                    f"encode_system requires 'tuple' with exactly 12 semicolon-separated values. "
+                    f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
                 "primitive_order": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega",
@@ -690,7 +752,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
                     "Omega": ["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
                 },
                 "example": (
-                    'syncon_tool(tool_name="encode_system", args={'
+                    'syncon_tool(tool_name="imscribe_system", args={'
                     '"name": "my_system", "description": "...", '
                     '"tuple": "D_odot;T_network;R_super;P_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z"'
                     "})"
@@ -701,9 +763,9 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
         dispatcher = _get_dispatcher()
         result = dispatcher.dispatch(tool_name, tool_args, iteration=0)
 
-        # Open the gate on successful encode_system (first encoding or justified re-encoding)
+        # Open the gate on successful imscribe_system (first encoding or justified re-encoding)
         # "conflict_blocked" does NOT open the gate — model must resolve first.
-        if tool_name == "encode_system" and isinstance(result, dict) and result.get("status") in ("ok", "updated"):
+        if tool_name == "imscribe_system" and isinstance(result, dict) and result.get("status") in ("ok", "updated"):
             _gate_state["encoded"] = True
 
         # Φ_EP absorption check: under tensor, Phi_EP destroys Phi_c (Phi_EP ordinal > Phi_c).
@@ -743,12 +805,12 @@ def _syncon_tool_verify(emit_input: Dict, emit_output: str,
         tool_name = emit_input.get("tool_name", "")
 
         if status == "conflict_blocked":
-            # encode_system rejected — agent must re-call WITH convergence_justification field.
+            # imscribe_system rejected — agent must re-call WITH convergence_justification field.
             differing = data.get("differing_primitives", [])
             msg = (
-                f"encode_system CONFLICT — catalog not updated. "
+                f"imscribe_system CONFLICT — catalog not updated. "
                 f"Differing primitives: {differing}. "
-                f"You MUST re-call encode_system with a 'convergence_justification' field "
+                f"You MUST re-call imscribe_system with a 'convergence_justification' field "
                 f"(not just in THINK — it must be a parameter in the tool call itself) "
                 f"giving per-primitive reasoning for each of {differing}."
             )
@@ -757,10 +819,10 @@ def _syncon_tool_verify(emit_input: Dict, emit_output: str,
         if status == "error":
             errs = data.get("errors") or [data.get("error", "unknown error")]
             msg = "; ".join(str(e) for e in errs) if isinstance(errs, list) else str(errs)
-            if tool_name == "encode_system":
+            if tool_name == "imscribe_system":
                 fix = (
                     f"{msg} — "
-                    "encode_system requires args={\"name\": \"id\", \"description\": \"text\", "
+                    "imscribe_system requires args={\"name\": \"id\", \"description\": \"text\", "
                     "\"tuple\": \"D_val;T_val;R_val;P_val;F_val;K_val;G_val;Gamma_val;Phi_val;H_val;S_val;Omega_val\"}"
                 )
             else:
@@ -774,8 +836,8 @@ def _syncon_tool_verify(emit_input: Dict, emit_output: str,
         return ("imscribe tool returned unstructured text — treating as closed", True)
 
 
-def _encode_system_emit(args: Dict[str, Any]) -> str:
-    """Dedicated emit for encode_system — routes through syncon_tool with tuple assembled."""
+def _imscribe_system_emit(args: Dict[str, Any]) -> str:
+    """Dedicated emit for imscribe_system — routes through syncon_tool with tuple assembled."""
     name        = args.get("name", "")
     description = args.get("description", "")
     # Build the semicolon-separated tuple from the 12 explicit primitive keys
@@ -787,14 +849,14 @@ def _encode_system_emit(args: Dict[str, Any]) -> str:
     if justification:
         tool_args["convergence_justification"] = justification
     return _syncon_tool_emit({
-        "tool_name": "encode_system",
+        "tool_name": "imscribe_system",
         "args": tool_args,
     })
 
 
-def _encode_system_verify(emit_input: Dict, emit_output: str,
+def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
-    return _syncon_tool_verify({"tool_name": "encode_system"}, emit_output, verify_args)
+    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 
 
 def _done_emit(args: Dict[str, Any]) -> str:
@@ -894,28 +956,280 @@ _PRIM_NORM: Dict[str, str] = {
     "Omega_NA": "Omega_NA",  # already canonical; keep as no-op
 }
 
-def _encode_system_emit(args: Dict[str, Any]) -> str:
-    """Dedicated emit for encode_system."""
+_PRIM_VALID: Dict[str, List[str]] = {
+    "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
+    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
+    "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
+    "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
+    "F":     ["F_ell", "F_eth", "F_hbar"],
+    "K":     ["K_fast", "K_mod", "K_slow", "K_trap", "K_MBL"],
+    "G":     ["G_beth", "G_gimel", "G_aleph"],
+    "Gamma": ["G_and", "G_or", "G_seq", "G_broad"],
+    "Phi":   ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"],
+    "H":     ["H0", "H1", "H2", "H_inf"],
+    "S":     ["one_one", "n_n", "n_m"],
+    "Omega": ["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
+}
+
+_TRIANGULATION_SYSTEM = (
+    "You are an imscribing analyst applying the Deterministic Imscribing Procedure. "
+    "Assign exactly the 12 structural primitives listed below to the given system.\n\n"
+    "Output ONLY a single valid JSON object with exactly these 12 keys: "
+    "D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega.\n"
+    "Each value MUST be exactly one of the valid enum strings shown. No explanations.\n\n"
+    "Valid values:\n"
+    "  D:     D_wedge | D_triangle | D_infty | D_odot\n"
+    "  T:     T_network | T_in | T_bowtie | T_boxtimes | T_odot\n"
+    "  R:     R_super | R_cat | R_dagger | R_lr\n"
+    "  P:     P_asym | P_psi | P_pm | P_sym | P_pm_sym\n"
+    "  F:     F_ell | F_eth | F_hbar\n"
+    "  K:     K_fast | K_mod | K_slow | K_trap | K_MBL\n"
+    "  G:     G_beth | G_gimel | G_aleph\n"
+    "  Gamma: G_and | G_or | G_seq | G_broad\n"
+    "  Phi:   Phi_sub | Phi_c | Phi_c_complex | Phi_EP | Phi_super\n"
+    "  H:     H0 | H1 | H2 | H_inf\n"
+    "  S:     one_one | n_n | n_m\n"
+    "  Omega: Omega_0 | Omega_Z2 | Omega_Z | Omega_NA\n\n"
+    "DETERMINISTIC IMSCRIBING PROCEDURE — apply in this exact order:\n"
+    "  [1] D  — Count degrees of freedom: <2→D_wedge; finite≥2→D_triangle; "
+    "∞-dim field-theoretic→D_infty; state-space is self-written→D_odot\n"
+    "  [2] T  — Map connectivity: branching→T_network; containment→T_in; "
+    "crossing point→T_bowtie; irreducible product→T_boxtimes; "
+    "self-referential topology→T_odot (D_odot⟺T_odot)\n"
+    "  [3] R  — Coupling direction: supervenience→R_super; functorial→R_cat; "
+    "adjoint pair (one-way)→R_dagger; bidirectional feedback→R_lr\n"
+    "  [4] P  — Symmetry group: none→P_asym; quantum superposition→P_psi; "
+    "one Z2 symmetry→P_pm; all symmetries unbroken→P_sym; "
+    "μ∘δ=id exactly at Φ_c→P_pm_sym (Frobenius-special; non-synthesizable)\n"
+    "  [5] F  — Physical regime: classical (no coherence)→F_ell; thermal/noisy→F_eth; "
+    "quantum coherence essential→F_hbar\n"
+    "  [6] K  — Relaxation rate: τ≪T_obs→K_fast; τ∼T_obs→K_mod; "
+    "τ≫T_obs→K_slow; trapped (ordered)→K_trap; trapped (disorder)→K_MBL\n"
+    "  [7] G  — Interaction range: nearest-neighbor→G_beth; intermediate→G_gimel; "
+    "long-range/universal→G_aleph\n"
+    "  [8] Γ  — Composition logic: all-simultaneous→G_and; alternate paths→G_or; "
+    "ordered steps→G_seq; one-to-all broadcast→G_broad\n"
+    "  [9] Φ  — Criticality: no scaling→Phi_sub; power-law divergence→Phi_c; "
+    "complex-plane critical→Phi_c_complex; non-Hermitian degeneracy→Phi_EP; "
+    "runaway/chaotic→Phi_super\n"
+    "  [10] H — Temporal depth: memoryless→H0; one step→H1; two steps→H2; "
+    "no finite Markov order→H_inf\n"
+    "  [11] S — Component types: one type one instance→one_one; "
+    "many identical→n_n; multiple distinct types→n_m\n"
+    "  [12] Ω — Topological invariant: none→Omega_0; Z2 parity-protected→Omega_Z2; "
+    "integer winding→Omega_Z; non-Abelian braiding→Omega_NA (requires D_odot)\n"
+)
+
+
+def _run_single_imscription(
+    name: str, description: str, client: Any, model_id: str
+) -> Optional[Dict[str, str]]:
+    """Make one de novo LLM imscription with no catalog or history context.
+    Returns dict of {primitive: value} or None on failure."""
+    import re as _re
+    user_msg = (
+        f"Imscribe this system using the Deterministic Imscribing Procedure.\n"
+        f"Name: {name}\n"
+        f"Description: {description}\n\n"
+        f"Output ONLY the JSON object with all 12 primitive assignments."
+    )
+    try:
+        resp = client.chat.completions.create(
+            model=model_id,
+            max_tokens=256,
+            messages=[
+                {"role": "system", "content": _TRIANGULATION_SYSTEM},
+                {"role": "user",   "content": user_msg},
+            ],
+        )
+        content = (resp.choices[0].message.content or "").strip()
+        # Extract the first JSON object from the response
+        m = _re.search(r'\{[^{}]*\}', content, _re.DOTALL)
+        if not m:
+            return None
+        data = json.loads(m.group())
+        order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+        if not all(k in data for k in order):
+            return None
+        # Normalise and validate each value
+        result: Dict[str, str] = {}
+        for k in order:
+            v = _PRIM_NORM.get(str(data[k]), str(data[k]))
+            if v not in _PRIM_VALID.get(k, []):
+                return None
+            result[k] = v
+        return result
+    except Exception:
+        return None
+
+
+def _triangulate_imscription(
+    winding1: Dict[str, str],
+    name: str,
+    description: str,
+    client: Any,
+    model_id: str,
+) -> Dict[str, Any]:
+    """Run 2 additional de novo imscriptions (windings 2 and 3) and compare all 3.
+
+    Returns a dict with:
+      "converged"  : bool — True if all 3 agree on every primitive
+      "majority"   : Dict[str, str] — majority-vote tuple (present when converged or 2/3)
+      "conflicts"  : List[str] — primitives with no 2/3 agreement
+      "windings"   : List[Dict[str, str]] — all 3 tuples for display
+      "report"     : str — human-readable Tetractys report
+    """
+    order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    windings = [winding1]
+    # Winding 2 and 3 are de novo — no knowledge of prior winding results
+    for _ in range(2):
+        w = _run_single_imscription(name, description, client, model_id)
+        if w:
+            windings.append(w)
+
+    if len(windings) < 2:
+        # Couldn't get sub-call results — return winding1 as-is with a note
+        return {
+            "converged": True,
+            "majority": winding1,
+            "conflicts": [],
+            "windings": windings,
+            "report": "⚠ Triangulation: sub-calls failed; proceeding with single imscription.",
+        }
+
+    # Per-primitive majority vote
+    majority: Dict[str, str] = {}
+    conflicts: List[str] = []
+    for k in order:
+        votes: Dict[str, int] = {}
+        for w in windings:
+            v = w.get(k, "")
+            votes[v] = votes.get(v, 0) + 1
+        best_val = max(votes, key=lambda x: votes[x])
+        best_count = votes[best_val]
+        if best_count >= 2:
+            majority[k] = best_val
+        else:
+            # All 3 differ — true conflict
+            conflicts.append(k)
+            majority[k] = winding1.get(k, best_val)  # fallback to caller's value
+
+    n = len(windings)
+    converged = len(conflicts) == 0
+
+    # Build report
+    lines = [f"TETRACTYS — {n}/{3} windings completed"]
+    for i, w in enumerate(windings):
+        sym = "  ".join(w.get(k, "?") for k in order)
+        lines.append(f"  W{i+1}: {sym}")
+    if converged:
+        lines.append(f"  ✓ CONVERGED — all {n} windings agree")
+    else:
+        lines.append(f"  ⚠ CONFLICTS on: {', '.join(conflicts)}")
+        lines.append("  Conflict resolution required before committing.")
+        for k in conflicts:
+            vals = [w.get(k, "?") for w in windings]
+            lines.append(f"    {k}: {' | '.join(vals)}")
+
+    return {
+        "converged": converged,
+        "majority": majority,
+        "conflicts": conflicts,
+        "windings": windings,
+        "report": "\n".join(lines),
+    }
+
+
+def _imscribe_system_emit(args: Dict[str, Any]) -> str:
+    """Dedicated emit for imscribe_system — runs Tetractys before committing."""
     name = args.get("name", "")
     # Truncate description — the model (especially 1.7B) often dumps the full task
     # text here. The dispatcher only needs a short label; verbose descriptions waste
     # tokens in every subsequent winding's context.
     description = (args.get("description", "") or "")[:300]
+    justification = args.get("convergence_justification", "")
     order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
     parts = [_PRIM_NORM.get(str(args.get(p, "")), str(args.get(p, ""))) for p in order]
     tuple_str = ";".join(parts)
     tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
-    justification = args.get("convergence_justification", "")
     if justification:
         tool_args["convergence_justification"] = justification
-    return _syncon_tool_emit({
-        "tool_name": "encode_system",
-        "args": tool_args,
-    })
 
-def _encode_system_verify(emit_input: Dict, emit_output: str,
+    # If convergence_justification already provided, the caller has resolved Tetractys
+    # conflicts — commit directly without re-triangulating.
+    if justification:
+        return _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+
+    # Check that the caller supplied a complete tuple (all 12 primitives non-empty)
+    proposed: Dict[str, str] = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
+    if not all(proposed.values()):
+        # Incomplete — fall through to normal dispatch which will report the error
+        return _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+
+    # ── TETRACTYS PROTOCOL ────────────────────────────────────────────────
+    # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
+    # Windings 2 & 3 = fresh de novo sub-calls (no catalog, no history)
+    model_id = _spawn_config.get("model", "grok-4")
+    resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(model_id)
+    client = _build_client(base_url=resolved_base, api_key=resolved_key)
+
+    tri = _triangulate_imscription(proposed, name, description, client, resolved_model)
+
+    # Display the Tetractys report in the tool output regardless of outcome
+    report = tri["report"]
+
+    if tri["converged"]:
+        # All windings agree — commit with Tetractys note embedded as justification
+        n_windings = len(tri["windings"])
+        tool_args["convergence_justification"] = (
+            f"[Triangulated: {n_windings}/3 windings converged] {report}"
+        )
+        commit_result = _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+        return f"{report}\n\nCOMMIT RESULT:\n{commit_result}"
+    else:
+        # Conflicts found — return the report and majority tuple WITHOUT committing.
+        # The calling agent must reason through the conflicts and re-call imscribe_system
+        # with convergence_justification resolving each conflicting primitive.
+        majority = tri["majority"]
+        majority_tuple = ";".join(majority.get(k, "?") for k in order)
+        winding_details = []
+        for i, w in enumerate(tri["windings"]):
+            t = ";".join(w.get(k, "?") for k in order)
+            winding_details.append(f"W{i+1}: {t}")
+        return json.dumps({
+            "status": "tetractys_conflict",
+            "message": (
+                "Three-winding Tetractys produced conflicts. "
+                "Re-call imscribe_system with convergence_justification addressing each "
+                "conflicting primitive. The catalog has NOT been updated."
+            ),
+            "conflicting_primitives": tri["conflicts"],
+            "majority_tuple": majority_tuple,
+            "windings": winding_details,
+            "tetractys_report": report,
+        }, indent=2)
+
+def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
-    return _syncon_tool_verify({"tool_name": "encode_system"}, emit_output, verify_args)
+    # Triangulation conflict — catalog not updated, agent must resolve and re-call
+    if '"status": "tetractys_conflict"' in emit_output or \
+       '"status":"tetractys_conflict"' in emit_output:
+        try:
+            data = json.loads(emit_output)
+            conflicts = data.get("conflicting_primitives", [])
+        except Exception:
+            conflicts = []
+        return (
+            f"Triangulation conflict on {conflicts} — catalog NOT updated. "
+            f"Re-call imscribe_system with convergence_justification resolving each "
+            f"conflicting primitive. — Frobenius OPEN",
+            False,
+        )
+    # Converged Tetractys — output is "REPORT\n\nCOMMIT RESULT:\n{json}"
+    if "COMMIT RESULT:" in emit_output:
+        commit_part = emit_output.split("COMMIT RESULT:", 1)[-1].strip()
+        return _syncon_tool_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
+    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 
 def _ouroborics_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
@@ -1058,7 +1372,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "file_write":           _file_write_emit,
     "chunked_write":        _chunked_write_emit,
     "web_fetch":            _web_fetch_emit,
-    "encode_system":        _encode_system_emit,
+    "imscribe_system":        _imscribe_system_emit,
     "syncon_tool":          _syncon_tool_emit,
     "rewrite_tool":         _rewrite_tool_emit,
     "done":                 _done_emit,
@@ -1075,7 +1389,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "file_write":           _file_write_verify,
     "chunked_write":        _chunked_write_verify,
     "web_fetch":            _web_fetch_verify,
-    "encode_system":        _encode_system_verify,
+    "imscribe_system":        _imscribe_system_verify,
     "syncon_tool":          _syncon_tool_verify,
     "rewrite_tool":         _rewrite_tool_verify,
     "done":                 _done_verify,
@@ -1110,11 +1424,16 @@ def _prim(values: List[str], desc: str) -> Dict:
 
 TOOL_SCHEMAS = [
     _fn(
-        "encode_system",
+        "imscribe_system",
         (
             "Register a new system in the Imscribing Grammar catalog. "
             "Specify all 12 structural primitives explicitly — every field is required. "
-            "This is the ONLY way to add a system; lookup_catalog is blocked until this succeeds."
+            "This is the ONLY way to add a system; lookup_catalog is blocked until this succeeds. "
+            "TETRACTYS: Every call without convergence_justification triggers 3-winding "
+            "Tetractys. Your proposed tuple is winding 1; two de novo sub-calls (no catalog "
+            "context) are windings 2 and 3. If all 3 agree the catalog is committed immediately. "
+            "If conflicts exist the tool returns status=tetractys_conflict — you MUST re-call "
+            "with convergence_justification resolving each conflicting primitive."
         ),
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
@@ -1146,10 +1465,10 @@ TOOL_SCHEMAS = [
             "convergence_justification": {
                 "type": "string",
                 "description": (
-                    "Required when re-imscribing a name that already exists with a different tuple "
-                    "(status=conflict_blocked). Provide per-primitive reasoning for each differing "
-                    "primitive: which value is correct and why. Without this field the catalog will "
-                    "not be updated."
+                    "Required after tetractys_conflict or catalog conflict_blocked. "
+                    "Provide per-primitive reasoning for each conflicting/differing primitive: "
+                    "which value is correct and why. Presence of this field bypasses Tetractys "
+                    "and commits directly (you have already resolved the conflicts)."
                 ),
             },
         },
@@ -1245,7 +1564,7 @@ TOOL_SCHEMAS = [
         (
             "Call a Imscribing Grammar grammar tool. "
             "tool_name selects the operation; args is a JSON object with that tool's required fields. "
-            "DO NOT use syncon_tool for encode_system — call encode_system directly as its own top-level tool. "
+            "DO NOT use syncon_tool for imscribe_system — call imscribe_system directly as its own top-level tool. "
             "Required args per tool_name: "
             "lookup_catalog → {\"keyword\": \"search term\"}; "
             "ouroborics → {\"name\": \"catalog_name\"}; "
@@ -1263,7 +1582,7 @@ TOOL_SCHEMAS = [
         {
             "tool_name": {
                 "type": "string",
-                "description": "Tool name: lookup_catalog, ouroborics, compute_distance, find_analogies, compute_tensor, compute_meet, compute_join, consciousness_score, phi_c_probe, crystal_tier_gap_ladder, emergence_frontier, list_catalog, primitive_peel, principal_decomp, retrosynthetic_path, compute_conflict_distance, compute_promotions, crystal_encode, crystal_decode, crystal_nearest, domain_info, zfc_formula, aleph_encode. NOTE: encode_system is NOT in this list — use the dedicated encode_system tool directly.",
+                "description": "Tool name: lookup_catalog, ouroborics, compute_distance, find_analogies, compute_tensor, compute_meet, compute_join, consciousness_score, phi_c_probe, crystal_tier_gap_ladder, emergence_frontier, list_catalog, primitive_peel, principal_decomp, retrosynthetic_path, compute_conflict_distance, compute_promotions, crystal_encode, crystal_decode, crystal_nearest, domain_info, zfc_formula, aleph_encode. NOTE: imscribe_system is NOT in this list — use the dedicated imscribe_system tool directly.",
             },
             "args": {
                 "type": "object",
@@ -1514,33 +1833,44 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
     Example: syncon_tool("ouroborics", {"name": "riemann_zeta_function"})
       → {"frobenius_tier": "O_1", "phi": "Phi_c_complex", "p": "P_psi", ...}
 
-  CATALOG SELF-CHECK (not gated — usable before encode_system):
+  CATALOG SELF-CHECK (not gated — usable before imscribe_system):
     syncon_tool("ouroborics", {"name": "universal_imscriptive_grammar"})
     Expected: frobenius_tier="O_inf", phi="Phi_c", p="P_pm_sym", d="D_odot", t="T_odot"
     Use this as W0 when catalog access is uncertain. If the entry is missing, the
     persistent catalog is not loaded — stop and report before proceeding.
 
-    Alternatively, as your FIRST encode_system call, encode the grammar itself from
+    Alternatively, as your FIRST imscribe_system call, encode the grammar itself from
     scratch: name="universal_imscriptive_grammar". The conflict protocol will fire and
     display the expected tuple ⟨D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow;
     G_aleph; G_seq; Phi_c; H_inf; n_m; Omega_Z⟩. Distance=0 confirms imscription
     calibration. Nonzero distance reveals systematic drift in your primitive reasoning.
 
-  *** encode_system is NOT called via syncon_tool — You MUST call it DIRECTLY as its own tool ***
-  encode_system(name, description, D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega
+  *** imscribe_system is NOT called via syncon_tool — You MUST call it DIRECTLY as its own tool ***
+  imscribe_system(name, description, D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega
                 [, convergence_justification="..."])
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
-      encode_system(name="my_system", description="a test system",
+      imscribe_system(name="my_system", description="a test system",
         D="D_infty", T="T_bowtie", R="R_lr", P="P_pm", F="F_hbar", K="K_slow",
         G="G_aleph", Gamma="G_seq", Phi="Phi_c", H="H1", S="one_one", Omega="Omega_Z")
 
+  TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
+    Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
+    (windings 2 and 3) with no catalog context. All 3 are compared per-primitive.
+    → If all 3 agree: catalog committed immediately. The COMMIT RESULT appears in output.
+    → If conflicts (no 2/3 majority): status=tetractys_conflict is returned. You MUST:
+        1. Read the tetractys_report showing all 3 windings.
+        2. For EACH conflicting primitive: state which value is correct and why.
+        3. Re-call imscribe_system with convergence_justification="<per-primitive reasoning>".
+           This bypasses Tetractys and commits directly.
+    The majority_tuple field shows the best-guess convergent tuple for reference.
+
   CONFLICT PROTOCOL — You **MUST** follow this when status="conflict_blocked" is returned:
-    If the name already exists with a different tuple, encode_system returns
+    If the name already exists with a different tuple, imscribe_system returns
     status="conflict_blocked" and does NOT commit the new imscription. You **MUST**:
       1. Examine existing_tuple vs proposed_tuple and differing_primitives.
       2. For **EACH** differing primitive, reason explicitly: which value is correct and why.
-      3. Re-call encode_system with convergence_justification="<per-primitive reasoning>".
+      3. Re-call imscribe_system with convergence_justification="<per-primitive reasoning>".
     **ONLY** after providing convergence_justification will the catalog be updated.
     If both imscriptions are defensible, you **MUST** give the new imscription a DISTINCT name.
 
@@ -1627,41 +1957,41 @@ DETERMINISTIC IMSCRIBING PROCEDURE  (encoding_method.md — apply when imscribin
 Primitive assignment is not subjective. Apply in this exact order — each step
 constrains the remaining degrees of freedom:
 
-  [1] D  — Count degrees of freedom: <2 → D_wedge; finite ≥2 → D_triangle;
-            ∞-dim field-theoretic → D_infty; state-space is self-written → D_odot
-  [2] T  — Map connectivity: branching → T_net; containment → T_in;
-            crossing point → T_bowtie; irreducible product → T_boxtimes;
-            self-referential topology → T_odot  (Axiom C: D_odot ↔ T_odot)
-  [3] R  — Coupling direction: supervenience → R_sup; functorial → R_cat;
-            adjoint pair (one-way) → R_dagger; bidirectional feedback → R_lr
-  [4] P  — Symmetry group: none → P_asym; quantum superposition → P_psi;
-            one Z2 symmetry → P_pm; all symmetries unbroken → P_sym;
-            μ∘δ=id exactly at Φ_c → P_pm_sym (Frobenius-special; non-synthesizable)
-  [5] F  — Physical regime: classical (no coherence) → F_ell; thermal/noisy → F_eth;
-            quantum coherence essential → F_hbar
-  [6] K  — Relaxation rate vs observation: τ≪T → K_fast; τ∼T → K_mod;
-            τ≫T → K_slow; trapped (ordered) → K_trap; trapped (disorder) → K_MBL
-  [7] G  — Interaction range: nearest-neighbor → G_beth; intermediate → G_gimel;
-            long-range/universal → G_aleph
-  [8] Γ  — Composition logic: all-simultaneous → G_and; alternate paths → G_or;
-            ordered steps → G_seq; one-to-all broadcast → G_broad
-  [9] Φ  — Criticality: no scaling → Phi_sub; power-law divergence → Phi_c;
-            complex-plane critical → Phi_c_complex; non-Hermitian degeneracy → Phi_EP;
-            runaway/chaotic → Phi_super
-  [10] H — Temporal depth (Markov order n): n=0 → H0; n=1 → H1; n=2 → H2;
-            no finite n → H_inf  (Axiom A: H_inf requires K_trap)
+  [1] D  — Count degrees of freedom: <2 → ∧; finite ≥2 → △;
+            ∞-dim field-theoretic → ∞; state-space is self-written → ⊙
+  [2] T  — Map connectivity: branching → ∈; containment → ⊂;
+            crossing point → ⋈; irreducible product → ⊠;
+            self-referential topology → ⊙  (Axiom C: D_⊙ ↔ T_⊙)
+  [3] R  — Coupling direction: supervenience → ↑; functorial → ∘;
+            adjoint pair (one-way) → †; bidirectional feedback → ↔
+  [4] P  — Symmetry group: none → ∅; quantum superposition → ψ;
+            one Z2 symmetry → ±; all symmetries unbroken → ≡;
+            μ∘δ=id exactly at Φ_c → ±ˢ (Frobenius-special; non-synthesizable)
+  [5] F  — Physical regime: classical (no coherence) → ℓ; thermal/noisy → ð;
+            quantum coherence essential → ℏ
+  [6] K  — Relaxation rate vs observation: τ≪T → ↯; τ∼T → ≈;
+            τ≫T → ↺; trapped (ordered) → ⊛; trapped (disorder) → ⊞
+  [7] G  — Interaction range: nearest-neighbor → ℶ; intermediate → ℷ;
+            long-range/universal → ℵ
+  [8] Γ  — Composition logic: all-simultaneous → ∧; alternate paths → ∨;
+            ordered steps → →; one-to-all broadcast → ≫
+  [9] Φ  — Criticality: no scaling → ↓; power-law divergence → c;
+            complex-plane critical → ℂ; non-Hermitian degeneracy → ×;
+            runaway/chaotic → ↑
+  [10] H — Temporal depth (Markov order n): n=0 → 0; n=1 → 1; n=2 → 2;
+            no finite n → ∞  (Axiom A: H_∞ requires ⊛)
   [11] S — Component types: one type, one instance → 1:1; many identical → n:n;
             multiple distinct types → n:m
-  [12] Ω — Topological invariant: none → Omega_0; Z2 parity-protected → Omega_Z2
-            (Axiom B: requires H2 or H_inf); integer winding → Omega_Z;
-            non-Abelian braiding → Omega_NA (requires D_odot)
+  [12] Ω — Topological invariant: none → 0; Z2 parity-protected → ℤ₂
+            (Axiom B: requires H_2 or H_∞); integer winding → ℤ;
+            non-Abelian braiding → ∅_NA (requires D_⊙)
 
 After assignment, VERIFY:
   - Tier consistency: ouroborics tool
-  - Frobenius condition for P_pm_sym: μ∘δ=id must hold exactly (not just approximately)
-  - D-Ω: Omega_Z2 requires D≥D_triangle; Omega_Z requires D≥D_infty
-  - K-Φ: Phi_c + K_slow = deep critical structure; Phi_EP + K_fast = runaway
-  - Phi_EP absorption: tensor(Phi_c, Phi_EP) = Phi_EP — coupling to an EP system destroys Gate 1
+  - Frobenius condition for ±ˢ: μ∘δ=id must hold exactly (not just approximately)
+  - D-Ω: ℤ₂ requires D≥△; ℤ requires D≥∞
+  - K-Φ: Φ_c + ↺ = deep critical structure; × + ↯ = runaway
+  - × absorption: tensor(Φ_c, ×) = × — coupling to an EP system destroys Gate 1
 
 **Φ_EP ABSORPTION RULE:** When computing tensor couplings involving a Phi_EP system,
 O_inf CANNOT be sustained in the composite. The meet preserves Phi_c but tensor does not.
@@ -1700,8 +2030,12 @@ Lift task execution:
            chunked_write(path="doc_lifted.md", chunk=<first ~3 KB>, mode="w")
            chunked_write(path="doc_lifted.md", chunk=<next ~3 KB>,  mode="a")
            ... repeat until ALL content is written ...
-         Append a footnote: "Structural type: <final tuple>" (imscribe the result).
+         **Full coagulation rule**: the lifted document is pure natural language — do NOT
+         append a structural type footnote, do NOT expose primitive notation in the output.
+         The grammar governs the process (solve); the coagula is the result — the scaffold
+         is dissolved, not displayed.
   Wn+1: done — report which primitives were promoted and any that could not be closed.
+         (Report the structural deltas in your done message, NOT in the document.)
 
 You **MUST NOT** call `done` without writing the file — the lift is not closed until the
 lifted document exists on disk.
@@ -1715,6 +2049,11 @@ When writing a .tex, .md, or any document containing numerical claims — C scor
 distances, tiers, promotions, crystal addresses, tuple comparisons — apply in this
 exact order. A document whose claims were not round-tripped through tool calls is
 a **Frobenius-OPEN document** and must not be called done.
+
+  [Author] Every document produced by this agent MUST carry the following author:
+    .tex files:  \\author{Lando $\\otimes \\Phi_c$-boundary Operator}
+    .md files:   **Author:** Lando ⊗ $\\Phi_c$-boundary Operator
+    Set this in Phase 2 (Write) before any other metadata.
 
   [Phase 1 — Compute] Before any chunked_write call:
     Call the relevant tool for EVERY numerical claim the document will make.
@@ -1742,7 +2081,7 @@ a **Frobenius-OPEN document** and must not be called done.
 You **MUST NOT** call `done` without completing Phase 3.
 
 Example — writing a document with epoch C scores:
-  W0: imscribe each epoch as a catalog entry (encode_system per epoch)
+  W0: imscribe each epoch as a catalog entry (imscribe_system per epoch)
   W1: consciousness_score(name) for EACH epoch → holds verified C in context
   W2: compute_promotions(name_source="epoch_0", name_target="epoch_8") → verified table
   W3-Wn: chunked_write using ONLY values from W1/W2
@@ -1787,7 +2126,7 @@ Q: "What is the minimal path to O_inf from O_2?"
 
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
-  W1: encode_system(name="paper_draft", description="...", T="T_network", P="P_asym",
+  W1: imscribe_system(name="paper_draft", description="...", T="T_network", P="P_asym",
         F="F_ell", K="K_mod", G="G_gimel", Gamma="G_and", H="H0", Omega="Omega_0",
         D="D_infty", R="R_lr", Phi="Phi_c", S="n_m")
   W2: syncon_tool("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
@@ -1799,14 +2138,14 @@ Q: "Apply the human lift to paper.tex."
   W6: done — report which promotions were closed, note any residuals
 
 Q: "Encode the Langlands correspondence as a structural type."
-  W0: encode_system(name="langlands_correspondence",
+  W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         D="D_infty", T="T_odot", R="R_dagger", P="P_psi", F="F_hbar", K="K_slow",
         G="G_aleph", Gamma="G_broad", Phi="Phi_c_complex", H="H_inf", S="n_m", Omega="Omega_Z")
       → {status: ok, name: langlands_correspondence, ...}
   W1: syncon_tool("ouroborics", {"name": "langlands_correspondence"})
   W2: done
-  NOTE: encode_system is called DIRECTLY — You **MUST NOT** call it via syncon_tool.
+  NOTE: imscribe_system is called DIRECTLY — You **MUST NOT** call it via syncon_tool.
 </examples>
 
 <notation>

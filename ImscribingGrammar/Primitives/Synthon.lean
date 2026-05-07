@@ -3,7 +3,7 @@
 -- Proves P-70 (Higgs = axion = inflaton) by rfl.
 -- All primitive names are canonical (v0.5.69).
 
-import SynthOmnicon.Primitives.Core
+import ImscribingGrammar.Primitives.Core
 
 namespace ImscribingGrammar.Primitives
 
@@ -135,7 +135,7 @@ def synthonTier (s : Synthon) : OuroboricityTier :=
 -- SSB relaxation (K_slow), symmetric potential (P_pm_sym at Phi_c).
 -- They differ in energy scale only — not in primitive structure.
 def scalarField_Kslow : Synthon := {
-  dim  := D_triangle   -- local simplicial field (no holographic substrate)
+  dim  := D_triangle   -- local simplicial field (not imscriptive)
   top  := T_bowtie     -- double-well / figure-8 potential landscape
   rel  := R_dagger     -- field ↔ vacuum bidirectional (SSB is reciprocal)
   pol  := P_pm_sym     -- exact Z_2 symmetry at Phi_c (μ ∘ δ = id)
@@ -186,8 +186,8 @@ def standard_model : Synthon := {
 -- ── Quantum Gravity ─────────────────────────────────────────
 -- D_odot and T_odot are co-required (Axiom C).
 def quantum_gravity : Synthon := {
-  dim  := D_odot       -- holographic: boundary encodes bulk
-  top  := T_odot       -- holographic topology (co-required with D_odot)
+  dim  := D_odot       -- imscriptive: boundary encodes bulk
+  top  := T_odot       -- imscriptive topology (co-required with D_odot)
   rel  := R_dagger     -- bulk ↔ boundary reciprocal
   pol  := P_pm_sym     -- diffeomorphism invariance at criticality: Special Frobenius
   fid  := F_hbar       -- quantum
@@ -200,12 +200,12 @@ def quantum_gravity : Synthon := {
   prot := Omega_NA     -- non-Abelian topological protection
 }
 
-/-- Quantum gravity is O_inf (holographic Frobenius). -/
+/-- Quantum gravity is O_inf (imscriptive Frobenius). -/
 theorem qg_is_O_inf : synthonTier quantum_gravity = .O_inf := by decide
 
 -- ── General Relativity ──────────────────────────────────────
 def general_relativity : Synthon := {
-  dim  := D_infty      -- 4D spacetime (not holographic — classical GR is local)
+  dim  := D_infty      -- 4D spacetime (not imscriptive — classical GR is local)
   top  := T_network    -- causal structure: general graph of events
   rel  := R_dagger     -- metric ↔ matter bidirectional (Einstein equations)
   pol  := P_sym        -- full diffeomorphism invariance
@@ -299,7 +299,11 @@ theorem higgs_is_O_inf : synthonTier higgs = .O_inf := by decide
 theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Synthon)
     (h_inf : s_inf.pol = .P_pm_sym) (h_two : s_two.pol = .P_sym) :
     (tensorProduct s_inf s_two).pol = .P_sym := by
-  simp [tensorProduct, h_inf, h_two, compare, Ord.compare,
-        compareOfLessAndEq, instOrdPolarity]
+  simp [tensorProduct, h_inf, h_two]
+  -- Need to prove ¬compare P_pm_sym P_sym = .lt
+  intro h
+  -- compare is Ord.compare; for Polarity derived Ord, P_pm_sym (idx 4) vs P_sym (idx 3)
+  have : Ord.compare P_pm_sym P_sym = .gt := by decide
+  simp [this] at h
 
-end SynthOmnicon.Primitives
+end ImscribingGrammar.Primitives

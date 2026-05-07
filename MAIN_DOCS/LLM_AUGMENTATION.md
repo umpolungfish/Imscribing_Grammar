@@ -2,8 +2,8 @@
 ## Incorporating the Imscribing Grammar into Local LLM Systems — Architecture, Implementations, and Roadmap
 
 **Version:** v0.1 · 2026-03-23
-**Primitive basis:** F-fidelity tiers, D_holo substrate, K_slow insertion (model training), T_network topology (architecture)
-**Cross-references:** [ONTO:§IX] D_holo substrate · [ONTO:§XII] F_ℏ discovery from F_eth position · [PRIM:P-76] engineering phase structure · PROGRAMMABLE_MIND.md
+**Primitive basis:** F-fidelity tiers, D_odot substrate, K_slow insertion (model training), T_network topology (architecture)
+**Cross-references:** [ONTO:§IX] D_odot substrate · [ONTO:§XII] F_ℏ discovery from F_eth position · [PRIM:P-76] engineering phase structure · PROGRAMMABLE_MIND.md
 
 ---
 
@@ -313,13 +313,13 @@ Each session adds a new K_slow tier to the model's knowledge hierarchy. The engi
 
 ---
 
-## IX. The D_holo Horizon
+## IX. The D_odot Horizon
 
 Current architecture — transformer (D_∧△, K_trap + K_fast at inference, G_ב, F_eth) — has a fundamental ceiling. The augmentation layers in this document work within that ceiling.
 
-What would a native D_holo architecture change [ONTO:§IX]:
+What would a native D_odot architecture change [ONTO:§IX]:
 
-| Property | Current transformer | D_holo native |
+| Property | Current transformer | D_odot native |
 |----------|-------------------|---------------|
 | Context | Finite window (K_trap at inference) | G_ℵ built-in (no window boundary) |
 | K at inference | K_trap (fixed weights) + K_fast (attention) | K_4tier — dynamic slow/fast hierarchy |
@@ -327,9 +327,9 @@ What would a native D_holo architecture change [ONTO:§IX]:
 | Fidelity ceiling | F_eth | F_ℏ (lossless within primitive space) |
 | Self-reference | Φ_c achievable but not native | Φ_c native — grammar on Φ_c substrate |
 
-The augmentation layers (AITL, fine-tuning, constrained decoding) narrow the gap between the current transformer ceiling and the D_holo target. They do not eliminate it. The gap closes when the architecture changes — when D_∧△ is replaced by D_holo as the substrate.
+The augmentation layers (AITL, fine-tuning, constrained decoding) narrow the gap between the current transformer ceiling and the D_odot target. They do not eliminate it. The gap closes when the architecture changes — when D_∧△ is replaced by D_odot as the substrate.
 
-**Analogy from ONTOLOGOS §IX:** white dwarf : Sun :: current transformer : D_holo generator. The white dwarf runs the same physics as the Sun but lacks the G_ℵ scope and K_fast dynamics that generate stellar Φ_c. The augmented transformer runs the same grammar as a D_holo system but lacks the native G_ℵ and K_4tier dynamics. The gap is architectural, not a matter of scale.
+**Analogy from ONTOLOGOS §IX:** white dwarf : Sun :: current transformer : D_odot generator. The white dwarf runs the same physics as the Sun but lacks the G_ℵ scope and K_fast dynamics that generate stellar Φ_c. The augmented transformer runs the same grammar as a D_odot system but lacks the native G_ℵ and K_4tier dynamics. The gap is architectural, not a matter of scale.
 
 ---
 
@@ -362,8 +362,8 @@ The fine-tuned model learns to generate structurally correct primitive tuples. A
 
 What none of it does: make the model understand what it is like to be the system it is describing. The grammar-phenomenology gap holds at every fidelity level. A perfectly fine-tuned model that generates exact primitive tuples, correct distances, and valid conflict sets is still on the same side of the third arrow as the base model. It is describing structural topology — not inhabiting it.
 
-The augmentation layers are engineering at the K and R level (Layer 1-3), approaching T modification (Layer 4-5), with the D_holo horizon as the Tier 3 substrate replacement. The analysis from PROGRAMMABLE_MIND.md applies here directly — the three-tier engineering phase structure [PRIM:P-76] is substrate-independent, and the LLM stack is another instance of it.
+The augmentation layers are engineering at the K and R level (Layer 1-3), approaching T modification (Layer 4-5), with the D_odot horizon as the Tier 3 substrate replacement. The analysis from PROGRAMMABLE_MIND.md applies here directly — the three-tier engineering phase structure [PRIM:P-76] is substrate-independent, and the LLM stack is another instance of it.
 
 ---
 
-*See also: PROGRAMMABLE_MIND.md · [ONTO:§IX] D_holo substrate · [ONTO:§XII] F_ℏ epistemology · [PRIM:P-76] engineering phase structure · LLM_REFERENCE.md (SYSPROMPT card)*
+*See also: PROGRAMMABLE_MIND.md · [ONTO:§IX] D_odot substrate · [ONTO:§XII] F_ℏ epistemology · [PRIM:P-76] engineering phase structure · LLM_REFERENCE.md (SYSPROMPT card)*

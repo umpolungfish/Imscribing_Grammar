@@ -23,7 +23,7 @@ This is not a claim that all ordinary elements have identical encodings. It is a
 | Gallium (anomalous) | $\{T, P\}$ | Low melting + expansion via $T_\box$ + $P_\psi$ |
 | Diamond | $\{P, \Gamma, \Omega, G\}$ | Thermal/electrical split via $P_\text{sym}$ + $\Gamma_\text{seq}$ + $\Omega_Z$ + $G_\aleph$ |
 | Mercury (liquid) | $\{T\}$ | Metallic droplet formation via $T_\box$ alone |
-| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_\text{holo}$ + $\Gamma_\text{seq}$ + $\Omega_Z$ + $K_\text{slow}$ |
+| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_\odot$ + $\Gamma_\text{seq}$ + $\Omega_Z$ + $K_\text{slow}$ |
 | Explosive cascade | $\{T, G, \Gamma, \Phi\}$ | Cascade reactivity via T_bowtie + $G_\aleph$ + $\Gamma_\text{seq}$ + $\Phi_\text{sup}$ |
 
 **Observation**: $T$ (Topology) appears in 6 of 7 signatures. The grammar identifies topology as the primary driver of elemental anomaly — a result that is not visible in conventional periodic-table analysis.
