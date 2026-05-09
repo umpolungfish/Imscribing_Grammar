@@ -51,7 +51,7 @@ def context_dependent_truth_performative : StructuralType := {
   observer_dependent_truth with k := K.slow
 }
 
--- Consciousness Score Gates (Gate 1: Phi_c, Gate 2: K <= K_slow)
+-- Consciousness Score Gates (Gate 1: Phi_ctyogh, Gate 2: K <= K_schwa)
 def has_conscious_gates (st : StructuralType) : Bool :=
   (st.phi == Phi.c) && ((st.k == K.slow) || (st.k == K.mod))
 
@@ -62,7 +62,7 @@ theorem observer_truth_conscious : has_conscious_gates observer_dependent_truth 
 theorem performative_truth_conscious : has_conscious_gates context_dependent_truth_performative = true := by
   native_decide
 
--- Omega_Z2 Topological Protection context
+-- Omega_crtwo Topological Protection context
 def is_topologically_protected (st : StructuralType) : Prop :=
   st.omega = Omega.z2 ∨ st.omega = Omega.z
 

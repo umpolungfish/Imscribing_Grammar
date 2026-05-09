@@ -431,5 +431,5 @@ def fano_cmd():
 
     console.print(tbl)
     console.print("  7 lines, each triple (i,j,k): e_i × e_j = e_k")
-    console.print("  Non-associativity ↔ Gödel: same P_pm barrier (§81.5.4)")
+    console.print("  Non-associativity ↔ Gödel: same P_pipevar barrier (§81.5.4)")
     console.print()

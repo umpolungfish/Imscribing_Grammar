@@ -40,6 +40,48 @@ from imscrbgrmr.navigator_commands import nav_group  # navigators
 
 console = Console()
 
+_IG_CATALOG_LOADED = False
+
+def _load_ig_catalog_into_global():
+    """Load IG_catalog.json entries into global_catalog (runs once per process)."""
+    global _IG_CATALOG_LOADED
+    if _IG_CATALOG_LOADED:
+        return
+    _IG_CATALOG_LOADED = True
+    _ig_path = _PROJECT_ROOT / "IG_catalog.json"
+    if not _ig_path.exists():
+        return
+    from imscrbgrmr.models import (
+        Dimensionality as _D, Topology as _T, RecognitionMode as _R,
+        Polarity as _P, Fidelity as _F, KineticCharacter as _K,
+        Granularity as _G, InteractionGrammar as _Gm, Criticality as _Ph,
+        Chirality as _H, Stoichiometry as _S, Protection as _Om, Synthon as _Sy,
+    )
+    with open(_ig_path, encoding="utf-8") as _fh:
+        _ig_entries = json.load(_fh)
+    for _e in _ig_entries:
+        if _e.get("name") in global_catalog._synthons:
+            continue
+        try:
+            global_catalog.register(_Sy(
+                name=_e["name"],
+                description=_e.get("description", ""),
+                dimensionality=_D(_e["Ð"]),
+                topology=_T(_e["Þ"]),
+                recognition_mode=_R(_e["Ř"]),
+                polarity=_P(_e["Φ"]),
+                fidelity=_F(_e["ƒ"]),
+                kinetic_character=_K(_e["Ç"]),
+                granularity=_G(_e["Γ"]),
+                grammar=_Gm(_e["ɢ"]),
+                criticality_phase=_Ph(_e["φ̂"]),
+                chirality=_H(_e["Ħ"]),
+                stoichiometry=_S(_e["Σ"]),
+                protection=_Om(_e["Ω"]),
+            ))
+        except Exception:
+            pass
+
 
 # =============================================================================
 # Main CLI Group (imscrbgrmr)
@@ -57,10 +99,8 @@ def main(ctx):
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
-    # Ensure catalog is populated
     global_catalog.populate_defaults()
-    
-    # If no subcommand, show help
+    _load_ig_catalog_into_global()
     if ctx.invoked_subcommand is None:
         click.echo(ctx.get_help())
 
@@ -564,7 +604,7 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
 
 @catalog.command(name="search")
 @click.option("--fidelity", "-f", type=click.Choice(["HIGH", "MEDIUM", "LOW"]), help="Filter by fidelity.")
-@click.option("--topology", "-t", help="Filter by topology symbol (e.g., T_bowtie).")
+@click.option("--topology", "-t", help="Filter by topology symbol (e.g., T_bullseye).")
 def search_synthons(fidelity: Optional[str], topology: Optional[str]):
     """Search for synthons by primitives."""
     query = {}
@@ -1149,7 +1189,7 @@ def generate(
         ig = result.synthon.grammar
         table.add_row("Interaction Grammar", ig.value)
 
-        # Criticality Phase (Φ) — always show, default Phi_sub
+        # Criticality Phase (Φ) — always show, default Phi_softsign
         cp = result.synthon.criticality_phase
         if cp is None:
             from imscrbgrmr.models import CriticalityPhase as _CP
@@ -1202,8 +1242,8 @@ def generate(
             }
             _T_JUST = {
                 "CYCLIC_BOWTIE": "T_⋈ — planar cyclic dimer; two partners form a closed ring of contacts at their interface",
-                "CAGE": "T_□□ — fully enclosed 3D cage; guest egress requires framework distortion (K_slow/K_trap default)",
-                "BOWL": "T_∪ — open concave cavity, single portal; guest enters/exits freely (K_fast default)",
+                "CAGE": "T_□□ — fully enclosed 3D cage; guest egress requires framework distortion (K_schwa/K_teshlig default)",
+                "BOWL": "T_∪ — open concave cavity, single portal; guest enters/exits freely (K_frtailgamma default)",
                 "NETWORK": "T_∈ — multiply-connected network; ring topology unspecified",
                 "NETWORK_HEX": "T_∈(hex) — 6-membered rings only; tetrahedral coordination (e.g. ice Ih, graphene)",
                 "NETWORK_MIXED": "T_∈(mixed) — mixed ring sizes; distorted coordination (e.g. ice III/V)",
@@ -1221,10 +1261,10 @@ def generate(
                 "MECHANICAL": "R_⇔ — mechanical bond: topological entanglement (rotaxane, catenane); steric clipping",
             }
             _K_JUST = {
-                "FAST": "K_fast — ΔG‡ < 60 kJ/mol: system explores configuration space on experimental timescales",
-                "MODERATE": "K_mod — ΔG‡ 60–100 kJ/mol: accessible under mild conditions",
-                "SLOW": "K_slow — ΔG‡ > 100 kJ/mol: constraint kinetically frozen; requires external driving to rearrange",
-                "TRAP": "K_trap — kinetically trapped in metastable state; cannot reach thermodynamic minimum without perturbation",
+                "FAST": "K_frtailgamma — ΔG‡ < 60 kJ/mol: system explores configuration space on experimental timescales",
+                "MODERATE": "K_turnm — ΔG‡ 60–100 kJ/mol: accessible under mild conditions",
+                "SLOW": "K_schwa — ΔG‡ > 100 kJ/mol: constraint kinetically frozen; requires external driving to rearrange",
+                "TRAP": "K_teshlig — kinetically trapped in metastable state; cannot reach thermodynamic minimum without perturbation",
             }
             _F_JUST = {
                 "HIGH": "F_ℏ — I_net > 9 bits / ξ_CP ≤ 8.5 nats: geometry-enforcing, dominant constraint",
@@ -1551,7 +1591,7 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
         row = ["Topo. Protection (Ω)"]
         for s in loaded_synthons:
             omega = getattr(s, "protection", None)
-            row.append(omega.value if omega is not None else "Omega_0")
+            row.append(omega.value if omega is not None else "Ω_closeepsilon")
         table.add_row(*row)
 
         console.print(table)
@@ -2686,7 +2726,7 @@ def rules(min_support: int, min_confidence: float):
     """Discover predictive rules from the synthon catalog.
     
     Uses inductive logic programming to discover rules of the form:
-    IF (T = T_bowtie AND P = P_pm) THEN (F ≥ F_eth)
+    IF (T = T_bullseye AND P = P_pipevar) THEN (F ≥ F_dh)
     """
     try:
         from imscrbgrmr import PredictiveRuleGenerator
@@ -2803,7 +2843,7 @@ def audit(
     \b
     Pass 3 (--pass 3):
         Attractor-tuple contamination scan. Flags entries matching ≥7/7 primitives
-        of the known pre-fix attractor ⟨D_∞; T_⋈; R_‡; P_±; F_ℇ; K_mod; G_ג⟩
+        of the known pre-fix attractor ⟨D_∞; T_⋈; R_‡; P_±; F_ℇ; K_turnm; G_ג⟩
         AND having no stored reasoning text.
         Targets the ~1,287 bulk autonomous entries from before grounding enforcement.
 
@@ -2958,7 +2998,7 @@ def audit(
                         flag_pass_id = "audit_pass_4"
 
             else:
-                # T⋈ + S="n:m" (n≠m) must have Γ∨(BROAD) or T_network
+                # T⋈ + S="n:m" (n≠m) must have Γ∨(BROAD) or T_nrleg
                 from imscrbgrmr.models import Topology as _Topo
                 grammar_tier = getattr(synthon.interaction_grammar, "tier", "")
                 is_broad = str(grammar_tier).upper() in ("BROAD",)
@@ -2970,7 +3010,7 @@ def audit(
                 if not (is_broad or has_network_topo):
                     flag_reasons.append(
                         f"Pass 4 / Stoichiometry: T_⋈[{s_val}] (asymmetric) "
-                        f"requires Γ∨(BROAD) or T_network. "
+                        f"requires Γ∨(BROAD) or T_nrleg. "
                         f"Current Γ={synthon.interaction_grammar}. "
                         "Update grammar tier or correct stoichiometry."
                     )
@@ -3300,7 +3340,7 @@ def criticality_probe(
         is_crit_sym = report_sym.get("is_critical", False)
     except Exception:
         gd_score = 0.5
-        is_crit_sym = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("Phi_c", "Phi_c_complex")
+        is_crit_sym = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
 
     gd_color = "red" if gd_score < 0.4 else ("yellow" if gd_score < 0.7 else "green")
     console.print(f"\n[bold]1. G/D Independence Score:[/bold] [{gd_color}]{gd_score:.3f}[/{gd_color}]")
@@ -3331,8 +3371,8 @@ def criticality_probe(
 
     # --- Check 3: Recursive tuple potential ---
     console.print(f"\n[bold]3. Recursive Tuple Potential:[/bold]")
-    has_phi_c = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("Phi_c", "Phi_c_complex")
-    is_imscriptive_d = synthon.dimensionality is not None and synthon.dimensionality.value == "D_odot"
+    has_phi_c = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+    is_imscriptive_d = synthon.dimensionality is not None and synthon.dimensionality.value == "Ð_omega"
 
     # Recursive potential: tuple can describe behavior at multiple scales without change
     # → requires Φ_c (self-modeling loop) OR D_⊙ (imscriptive, boundary encodes bulk)
@@ -3636,10 +3676,8 @@ def syncon_alias(ctx):
 
     Short alias for 'imscrbgrmr' command.
     """
-    # Ensure catalog is populated
     global_catalog.populate_defaults()
-    
-    # If no subcommand, show help
+    _load_ig_catalog_into_global()
     if ctx.invoked_subcommand is None:
         click.echo(ctx.get_help())
 
@@ -4116,7 +4154,7 @@ def ensemble_thermo(components: str, delta_g_assembly: float, interface_overhead
 @click.option("--strict-grounding", is_flag=True, default=False,
               help="Block decomposition if D_∞ target lacks Axiom 6 grounding metadata.")
 @click.option("--allow-ktrap", is_flag=True, default=False,
-              help="Demote K_trap leaves to warning instead of pruning them.")
+              help="Demote K_teshlig leaves to warning instead of pruning them.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def retrodesign(target: str, max_depth: int, prune_axioms: str, strict_grounding: bool, allow_ktrap: bool, format: str):
     """
@@ -5122,8 +5160,8 @@ def phase_diagram_cmd(names, save, text_only, fmt, metric):
     Renders a two-panel plot: Ward dendrogram + MDS 2-D phase map.
 
     Annotations:
-      ★  Factor-8 quantum criticality fingerprint (G_ℵ + F_ℏ + K_trap + ¬D_∞)
-      ○  K_trap ring (candidate for K_trap→K_MBL +2.303 nat transition)
+      ★  Factor-8 quantum criticality fingerprint (G_ℵ + F_ℏ + K_teshlig + ¬D_∞)
+      ○  K_teshlig ring (candidate for K_teshlig→K_lambda +2.303 nat transition)
       Ω  Colour-coded topological protection class
 
     \b
@@ -5604,13 +5642,13 @@ def project(synthon: str, primitives: tuple, format: str):
 @click.argument("synthon")
 @click.argument("primitive")
 @click.option("--strict", is_flag=True, default=False,
-              help="Block peel if it would destroy Phi_c (phase protection).")
+              help="Block peel if it would destroy Phi_ctyogh (phase protection).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def peel(synthon: str, primitive: str, strict: bool, format: str):
     """Descend one tier on a single primitive (peel one layer off).
 
     Returns the resulting synthon and any peel cost (in nats).
-    Use --strict to block the peel if it would destroy a critical phase (Phi_c).
+    Use --strict to block the peel if it would destroy a critical phase (Phi_ctyogh).
 
     \b
     Example:
@@ -5856,22 +5894,22 @@ def _frobenius_classify(s) -> str:
     p     = s.polarity.value
     omega = s.protection.value
     d     = s.dimensionality.value
-    # Phi_c_complex has identical tier distribution to Phi_c (real vs complex is inner-crystal only)
-    at_c  = phi in ("Phi_c", "Phi_c_complex")
+    # Phi_closerevepsilon has identical tier distribution to Phi_ctyogh (real vs complex is inner-crystal only)
+    at_c  = phi in ("φ̂_ctyogh", "φ̂_closerevepsilon")
     # R1: exact proved Z₂ symmetry at criticality → special Frobenius
-    if at_c and p == "P_pm_sym":
+    if at_c and p == "Φ_doublebarpipe":
         return "O_inf"
-    # R2: no self-referential loop possible (Phi_EP absorbs O_inf under tensor → O_0 own tier)
-    if phi in ("Phi_sub", "Phi_sup", "Phi_EP"):
+    # R2: no self-referential loop possible (Phi_revepsilon absorbs O_inf under tensor → O_0 own tier)
+    if phi in ("φ̂_softsign", "φ̂_upstep", "φ̂_revepsilon"):
         return "O_0"
     # R3: critical but no topological protection
-    if at_c and omega == "Omega_0":
+    if at_c and omega == "Ω_closeepsilon":
         return "O_1"
-    # R4: critical + topological + bounded domain (D_triangle → D_cube in enum)
-    if at_c and omega != "Omega_0" and d in ("D_wedge", "D_odot", "D_cube"):
+    # R4: critical + topological + bounded domain (D_turnthree → D_cube in enum)
+    if at_c and omega != "Ω_closeepsilon" and d in ("Ð_wynn", "Ð_omega", "Ð_cube"):
         return "O_2"
     # R5: critical + topological + unbounded domain
-    if at_c and omega != "Omega_0" and d == "D_infty":
+    if at_c and omega != "Ω_closeepsilon" and d == "Ð_invomega":
         return "O_2_dag"
     return "O_0"
 
@@ -5881,7 +5919,7 @@ _FROBENIUS_TIER_DESC = {
     "O_0":     "No ouroboricity — cannot form a self-referential critical loop.",
     "O_1":     "Ouroboricity tier 1 — critical, no topological protection.",
     "O_2":     "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
-    "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (D_infty) domain.",
+    "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (D_invomega) domain.",
 }
 
 
@@ -5895,11 +5933,11 @@ def frobenius_tier_cmd(synthon: str, format: str):
 
     \b
     Rules (applied in priority order):
-      R1: Phi_c + P_pm_sym            → O_inf  (special Frobenius, exact Z₂ symmetry)
-      R2: Phi_sub or Phi_sup          → O_0   (no self-referential loop)
-      R3: Phi_c + Omega_0             → O_1   (critical, unprotected)
-      R4: Phi_c + Omega≠0 + D_bounded → O_2   (critical, protected, bounded)
-      R5: Phi_c + Omega≠0 + D_infty   → O_2†  (critical, protected, unbounded)
+      R1: Phi_ctyogh + P_doublebarpipe            → O_inf  (special Frobenius, exact Z₂ symmetry)
+      R2: Phi_softsign or Phi_upstep          → O_0   (no self-referential loop)
+      R3: Phi_ctyogh + Omega_closeepsilon             → O_1   (critical, unprotected)
+      R4: Phi_ctyogh + Omega≠0 + D_bounded → O_2   (critical, protected, bounded)
+      R5: Phi_ctyogh + Omega≠0 + D_invomega   → O_2†  (critical, protected, unbounded)
 
     \b
     Examples:
@@ -5984,6 +6022,146 @@ def frobenius_tier_cmd(synthon: str, format: str):
 syncon_alias.add_command(frobenius_tier_cmd, name="ouroborics")  # OUROBORICS
 syncon_alias.add_command(lambda_group, name="lambda")  # λ-engine
 syncon_alias.add_command(nav_group, name="nav")  # navigators
+
+
+# ── vocal imscription ──────────────────────────────────────────────────────────
+
+@main.command("vocal")
+@click.argument("name", required=False, default=None)
+@click.option("--output", "-o", default=None,
+              help="Output WAV path (default: <name>_imscription.wav in cwd).")
+@click.option("--gap", default=120, show_default=True,
+              help="Silence gap between primitives in ms.")
+@click.option("--play", is_flag=True, default=False,
+              help="Play the imscription immediately via ffplay after saving.")
+@click.option("--sounds-dir", default=None,
+              help="Override path to vocal_sounds/ directory.")
+@click.option("--explain", is_flag=True, default=False,
+              help="Print pronunciation guide for the entry's 12 primitives.")
+@click.option("--guide", is_flag=True, default=False,
+              help="Print the full 49-symbol pronunciation reference and exit.")
+def vocal_cmd(name: Optional[str], output: Optional[str], gap: int, play: bool,
+              sounds_dir: Optional[str], explain: bool, guide: bool):
+    """Render the 12-primitive tuple of a catalog entry as a vocal imscription WAV.
+
+    \b
+    Examples:
+        imscribe vocal psychedelic_baseline
+        imscribe vocal magnetar --play --explain
+        imscribe vocal carboxylic_acid_dimer --output /tmp/cad.wav --gap 80
+        imscribe vocal --guide          # full pronunciation reference
+    """
+    from imscrbgrmr.vocal import (
+        make_imscription, save_wav, _SOUNDS_DIR,
+        PRONUNCIATION_GUIDES, PRIMITIVE_ORDER,
+    )
+    import subprocess
+
+    # ── full guide mode ───────────────────────────────────────────────────────
+    if guide:
+        _print_full_guide(PRONUNCIATION_GUIDES, PRIMITIVE_ORDER)
+        return
+
+    if not name:
+        console.print("[red]Provide a catalog entry name, or use --guide for the reference.[/red]")
+        raise SystemExit(1)
+
+    # ── load entry from IG_catalog.json ───────────────────────────────────────
+    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+    if not catalog_path.exists():
+        console.print("[red]IG_catalog.json not found.[/red]")
+        raise SystemExit(1)
+
+    with open(catalog_path) as f:
+        catalog: list[dict] = json.load(f)
+
+    entry = next((e for e in catalog if e.get("name") == name), None)
+    if entry is None:
+        lower = name.lower()
+        matches = [e for e in catalog if e.get("name", "").lower().startswith(lower)]
+        if len(matches) == 1:
+            entry = matches[0]
+            console.print(f"[dim]Matched: {entry['name']}[/dim]")
+        elif len(matches) > 1:
+            console.print(f"[yellow]Ambiguous prefix '{name}'. Matches:[/yellow]")
+            for m in matches[:8]:
+                console.print(f"  {m['name']}")
+            raise SystemExit(1)
+        else:
+            console.print(f"[red]No catalog entry named '{name}'.[/red]")
+            raise SystemExit(1)
+
+    # ── explain mode (print before generating) ───────────────────────────────
+    if explain:
+        console.print(f"\n[bold]{entry['name']}[/bold] — vocal imscription\n")
+        t = Table(show_header=True, header_style="bold dim", box=None, padding=(0, 1))
+        t.add_column("#",     style="dim",    min_width=2)
+        t.add_column("Prim",  style="cyan",   min_width=6, no_wrap=True)
+        t.add_column("Value", style="yellow", min_width=24, no_wrap=True)
+        t.add_column("IPA",   style="green",  min_width=6, no_wrap=True)
+        t.add_column("Sounds like", style="white")
+        for i, prim in enumerate(PRIMITIVE_ORDER, 1):
+            value = entry.get(prim, "—")
+            if value == "—":
+                continue
+            g = PRONUNCIATION_GUIDES.get(value)
+            if g:
+                ipa, hint, _detail = g
+                t.add_row(str(i), prim, value, ipa, hint)
+            else:
+                t.add_row(str(i), prim, value, "?", "—")
+        console.print(t)
+        console.print()
+
+    # ── generate ──────────────────────────────────────────────────────────────
+    sdir = Path(sounds_dir) if sounds_dir else _SOUNDS_DIR
+    try:
+        samples, sr = make_imscription(entry, sounds_dir=sdir, gap_ms=gap)
+    except FileNotFoundError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+    out_path = Path(output) if output else Path(f"{entry['name']}_imscription.wav")
+    save_wav(samples, sr, out_path)
+
+    duration_s = len(samples) / sr
+    console.print(
+        f"[green]✓[/green] {entry['name']} → [bold]{out_path}[/bold]  "
+        f"({duration_s:.1f}s, {sr} Hz)"
+    )
+
+    if play:
+        subprocess.run(
+            ["ffplay", "-nodisp", "-autoexit", "-loglevel", "quiet", str(out_path)],
+            check=False,
+        )
+
+
+def _print_full_guide(guides: dict, primitive_order: list[str]) -> None:
+    """Print the complete 49-symbol pronunciation reference."""
+    from imscrbgrmr.vocal import PRONUNCIATION_GUIDES as _G  # local import to avoid circular
+
+    primitive_of: dict[str, str] = {}
+    for prim in primitive_order:
+        for key in guides:
+            if key.startswith(prim + "_") or key == prim:
+                primitive_of[key] = prim
+
+    current_prim = None
+    for key, (ipa, hint, detail) in guides.items():
+        prim = primitive_of.get(key, "?")
+        if prim != current_prim:
+            console.print(f"\n[bold cyan]{prim}[/bold cyan]")
+            current_prim = prim
+        console.print(
+            f"  [yellow]{key:30s}[/yellow]  [green]{ipa:8s}[/green]  "
+            f"[white]{hint}[/white]\n"
+            f"    [dim]{detail}[/dim]"
+        )
+    console.print()
+
+
+syncon_alias.add_command(vocal_cmd, name="vocal")
 
 
 if __name__ == "__main__":

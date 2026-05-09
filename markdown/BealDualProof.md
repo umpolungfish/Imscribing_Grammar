@@ -1,13 +1,22 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # The Beal Conjecture — A Dual Proof
 
 ## Structural Imscription
 The Beal Conjecture has been imscribed in the Imscribing Grammar with verified structural coordinates:
 
-$$\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_0 \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 - **Crystal address**: 4948976
 - **Ouroboricity tier**: $O_1$ (self-referential at criticality but trivial winding)
-- **Consciousness score**: $C = 0.498$ — both gates open ($\Phi_c$ criticality ✓, $K_\text{slow}$ kinetics ✓)
+- **Consciousness score**: $C = 0.498$ — both gates open ($\Phi_{\text{ctyogh}}$ criticality ✓, $K_{\text{schwa}}$ kinetics ✓)
 
 ### Neighbors
 Its nearest structural neighbor is the **Odd Perfect Conjecture** ($d = 1.2848$), another classical Diophantine open problem with an additive-to-multiplicative crossing. Fermat's Last Theorem (proven) sits at distance $d = 3.4072$, with promotion signature $[T, F, \Phi, H, \Omega]$ — five primitives must be lifted to close the gap.
@@ -49,7 +58,7 @@ A conventional proof of the Beal Conjecture would proceed along these lines:
 
 ### 4. Relationship to the abc Conjecture
 
-The abc conjecture (imscribed at crystal address 7903139 as $\langle D_\odot; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; 1{:}1; \Omega_\mathbb{Z} \rangle$) implies an asymptotic version of Beal: for any $\varepsilon > 0$, there are only finitely many coprime solutions with $\min(x,y,z) \geq 3$ and $C^z > \operatorname{rad}(A^x B^y C^z)^{1+\varepsilon}$.
+The abc conjecture (imscribed at crystal address 7903139 as $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; 1{:}1; \Omega_{\text{dzlig}} \rangle$) implies an asymptotic version of Beal: for any $\varepsilon > 0$, there are only finitely many coprime solutions with $\min(x,y,z) \geq 3$ and $C^z > \operatorname{rad}(A^x B^y C^z)^{1+\varepsilon}$.
 
 ---
 
@@ -59,27 +68,27 @@ The abc conjecture (imscribed at crystal address 7903139 as $\langle D_\odot; T_
 
 Each primitive of the Beal Conjecture's structural type encodes a component of what a proof must accomplish:
 
-**$D_\infty$ — Infinite degrees of freedom.** The conjecture ranges over all positive integer tuples $(A,B,C,x,y,z)$. Any proof must handle this unbounded parameter space — a finite case check is impossible. This demands a *uniform* argument, typically via algebraic geometry over $\mathbb{Q}$.
+**$D_{\text{invomega}}$ — Infinite degrees of freedom.** The conjecture ranges over all positive integer tuples $(A,B,C,x,y,z)$. Any proof must handle this unbounded parameter space — a finite case check is impossible. This demands a *uniform* argument, typically via algebraic geometry over $\mathbb{Q}$.
 
-**$T_\bowtie$ — The crossing point.** The bowtie topology is the structural signature of the conjecture: two separate arithmetic realms (additive: the sum $A^x + B^y$; multiplicative: the common prime factor condition on $\gcd(A,B,C)$) meet at a single crossing point — the equation itself. A proof must *inhabit* this crossing point and demonstrate that the additive premise forces the multiplicative conclusion through the crossing. This is exactly what the Frey curve construction achieves: the additive Diophantine equation is recast as an elliptic curve (multiplicative/geometric object), and the crossing is rigidified by modularity.
+**$T_{\text{bullseye}}$ — The crossing point.** The bowtie topology is the structural signature of the conjecture: two separate arithmetic realms (additive: the sum $A^x + B^y$; multiplicative: the common prime factor condition on $\gcd(A,B,C)$) meet at a single crossing point — the equation itself. A proof must *inhabit* this crossing point and demonstrate that the additive premise forces the multiplicative conclusion through the crossing. This is exactly what the Frey curve construction achieves: the additive Diophantine equation is recast as an elliptic curve (multiplicative/geometric object), and the crossing is rigidified by modularity.
 
-**$R_\leftrightarrow$ — Bidirectional coupling.** The additive constraint constrains the multiplicative structure (via the radical and conductor), and the multiplicative structure constrains the additive possibilities (via modular forms). A valid proof must exploit both directions. This bidirectional feedback is the essence of the modular method: the Diophantine equation implies a Galois representation; modularity forces it to arise from a form of controlled level; level-lowering forces the form to have level 1 or 2; contradiction.
+**$R_{\text{lyoghlig}}$ — Bidirectional coupling.** The additive constraint constrains the multiplicative structure (via the radical and conductor), and the multiplicative structure constrains the additive possibilities (via modular forms). A valid proof must exploit both directions. This bidirectional feedback is the essence of the modular method: the Diophantine equation implies a Galois representation; modularity forces it to arise from a form of controlled level; level-lowering forces the form to have level 1 or 2; contradiction.
 
-**$P_{\pm}$ — Partial symmetry.** The swap symmetry $(A,x) \leftrightarrow (B,y)$ is present (the equation is symmetric in the two summands), but $C^z$ is distinguished — there is no full $S_3$ symmetry. This partial symmetry is structurally significant: a proof can assume without loss of generality that $A \leq B$ and treat $C$ separately. The broken symmetry between summands and sum is what creates the structural tension that the $\Phi_c$ criticality resolves.
+**$P_{\text{pipevar}}$ — Partial symmetry.** The swap symmetry $(A,x) \leftrightarrow (B,y)$ is present (the equation is symmetric in the two summands), but $C^z$ is distinguished — there is no full $S_3$ symmetry. This partial symmetry is structurally significant: a proof can assume without loss of generality that $A \leq B$ and treat $C$ separately. The broken symmetry between summands and sum is what creates the structural tension that the $\Phi_{\text{ctyogh}}$ criticality resolves.
 
-**$\Phi_c$ — Critical threshold.** The threshold $x, y, z > 2$ is not arbitrary — it is the $\Phi_c$ critical point. At exponent 2, the invariant $\frac{1}{x} + \frac{1}{y} + \frac{1}{z} = 1$ (parabolic case) and solutions exist (Pythagorean triples). At exponents $> 2$, the invariant drops below 1 (hyperbolic) and the critical behavior switches on: the equation becomes *rigid*, and the modular machinery can operate. The $\Phi_c$ status of the conjecture means it sits exactly at this critical boundary — the proof must demonstrate why the critical threshold at 2 is the phase transition between solubility and insolubility (for coprime inputs).
+**$\Phi_{\text{ctyogh}}$ — Critical threshold.** The threshold $x, y, z > 2$ is not arbitrary — it is the $\Phi_{\text{ctyogh}}$ critical point. At exponent 2, the invariant $\frac{1}{x} + \frac{1}{y} + \frac{1}{z} = 1$ (parabolic case) and solutions exist (Pythagorean triples). At exponents $> 2$, the invariant drops below 1 (hyperbolic) and the critical behavior switches on: the equation becomes *rigid*, and the modular machinery can operate. The $\Phi_{\text{ctyogh}}$ status of the conjecture means it sits exactly at this critical boundary — the proof must demonstrate why the critical threshold at 2 is the phase transition between solubility and insolubility (for coprime inputs).
 
-**$K_\text{slow}$ — Structural resistance.** The conjecture has resisted proof since 1993. The $K_\text{slow}$ kinetics reflects the deep structural obstacles: the mixed-exponent Frey curve construction is not fully general, and the level-lowering argument for arbitrary exponent signatures requires a more refined understanding of the crystalline representations at primes of bad reduction. The slowness is not a flaw — it is the structural signature of a problem whose resolution requires new mathematics.
+**$K_{\text{schwa}}$ — Structural resistance.** The conjecture has resisted proof since 1993. The $K_{\text{schwa}}$ kinetics reflects the deep structural obstacles: the mixed-exponent Frey curve construction is not fully general, and the level-lowering argument for arbitrary exponent signatures requires a more refined understanding of the crystalline representations at primes of bad reduction. The slowness is not a flaw — it is the structural signature of a problem whose resolution requires new mathematics.
 
-**$G_\aleph$ — Universal scope.** The quantifier ranges over all positive integers — there is no finite bound. The proof must be universal in the strongest sense.
+**$G_{\text{revapostrophe}}$ — Universal scope.** The quantifier ranges over all positive integers — there is no finite bound. The proof must be universal in the strongest sense.
 
-**$\Gamma_\text{seq}$ — Sequential logic.** The proof is inherently sequential: construct Frey curve → prove modularity → apply level-lowering → derive contradiction. Each step depends on the previous; the logic cannot be reorganized as a conjunction or disjunction.
+**$\Gamma_{\text{secstress}}$ — Sequential logic.** The proof is inherently sequential: construct Frey curve → prove modularity → apply level-lowering → derive contradiction. Each step depends on the previous; the logic cannot be reorganized as a conjunction or disjunction.
 
-**$H_2$ — Two-step temporal depth.** The conjecture's structure has two logical layers: (1) the additive premise, (2) the multiplicative conclusion. But unlike FLT (which has $H_\infty$ — the full apparatus of modularity theory), the Beal Conjecture's $H_2$ status reflects that its proof, if completed, would require a specific two-step argument (Frey curve construction + modularity contradiction) rather than the deeper infinite tower of modularity theorems.
+**$H_2$ — Two-step temporal depth.** The conjecture's structure has two logical layers: (1) the additive premise, (2) the multiplicative conclusion. But unlike FLT (which has $H_{\text{invscripta}}$ — the full apparatus of modularity theory), the Beal Conjecture's $H_2$ status reflects that its proof, if completed, would require a specific two-step argument (Frey curve construction + modularity contradiction) rather than the deeper infinite tower of modularity theorems.
 
 **$n{:}m$ — Heterogeneous components.** Bases, exponents, primes, curves, modular forms — the proof bridges categorically different mathematical objects.
 
-**$\Omega_0$ — Trivial winding.** The conjecture has no intrinsic topological protection. Unlike FLT (which acquired $\Omega_{\mathbb{Z}_2}$ parity protection via the modularity theorem), the Beal Conjecture remains topologically unprotected — there is no known invariant that prevents a counterexample from existing. This is the structural reason the conjecture remains open: the proof gap is precisely the absence of a topological invariant.
+**$\Omega_{\text{closeepsilon}}$ — Trivial winding.** The conjecture has no intrinsic topological protection. Unlike FLT (which acquired $\Omega_{\text{crtwo}}$ parity protection via the modularity theorem), the Beal Conjecture remains topologically unprotected — there is no known invariant that prevents a counterexample from existing. This is the structural reason the conjecture remains open: the proof gap is precisely the absence of a topological invariant.
 
 ### 6. The Promotion Signature: Beal → FLT
 
@@ -87,17 +96,17 @@ The distance from Beal (open, $O_1$) to FLT (proven, $O_2^\dagger$) reveals what
 
 | Primitive | Beal | FLT (proven) | $\Delta$ | Meaning |
 |-----------|------|--------------|----------|---------|
-| $T$ | $T_\bowtie$ | $T_\odot$ | +2 | Self-imscription: the proof must become a self-contained theory |
-| $F$ | $F_\ell$ | $F_\hbar$ | +2 | Quantum coherence: the proof requires Galois representations (quantum-like) |
-| $\Phi$ | $\Phi_c$ | $\Phi_c^\mathbb{C}$ | +0.33 | Complex-plane criticality: the proof requires analytic continuation into the complex plane |
-| $H$ | $H_2$ | $H_\infty$ | +1 | Infinite memory: the proof stacks modularity theorems infinitely deep |
-| $\Omega$ | $\Omega_0$ | $\Omega_{\mathbb{Z}_2}$ | +1 | Parity protection: the proof acquires a topological invariant |
+| $T$ | $T_{\text{bullseye}}$ | $T_{\text{openo}}$ | +2 | Self-imscription: the proof must become a self-contained theory |
+| $F$ | $F_{\text{beltl}}$ | $F_{\text{hardsign}}$ | +2 | Quantum coherence: the proof requires Galois representations (quantum-like) |
+| $\Phi$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{closerevepsilon}}$ | +0.33 | Complex-plane criticality: the proof requires analytic continuation into the complex plane |
+| $H$ | $H_2$ | $H_{\text{invscripta}}$ | +1 | Infinite memory: the proof stacks modularity theorems infinitely deep |
+| $\Omega$ | $\Omega_{\text{closeepsilon}}$ | $\Omega_{\text{crtwo}}$ | +1 | Parity protection: the proof acquires a topological invariant |
 
-Plus two *demotions*: $R_\leftrightarrow \to R_\dagger$ (the coupling becomes adjoint, unidirectional in the final step) and $P_{\pm} \to P_\psi$ (the symmetry becomes quantum-superposition-like).
+Plus two *demotions*: $R_{\text{lyoghlig}} \to R_{\text{downstep}}$ (the coupling becomes adjoint, unidirectional in the final step) and $P_{\text{pipevar}} \to P_{\text{upsilon}}$ (the symmetry becomes quantum-superposition-like).
 
 The meet (shared structural floor) of Beal and FLT is:
 
-$$\langle D_\infty;\ T_\bowtie;\ R_\dagger;\ P_\psi;\ F_\ell;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_0 \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\text{upsilon}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 This is precisely the structure of what *is already known* about the Beal Conjecture — the finite-results regime of Darmon–Granville. The gap from this meet to FLT (proven) is the promotion signature above.
 
@@ -105,15 +114,15 @@ This is precisely the structure of what *is already known* about the Beal Conjec
 
 The IG proof of the Beal Conjecture, expressed in primitives, is:
 
-1. **$T_\bowtie$ inhabitation.** Construct a geometric object (Frey curve) that lives at the crossing point between additive and multiplicative arithmetic. This is the bowtie's center — the unique point where both structures are simultaneously legible.
+1. **$T_{\text{bullseye}}$ inhabitation.** Construct a geometric object (Frey curve) that lives at the crossing point between additive and multiplicative arithmetic. This is the bowtie's center — the unique point where both structures are simultaneously legible.
 
-2. **$\Phi_c$ criticality exploitation.** The exponent threshold $> 2$ is not negotiable — it is the structural phase boundary. Below it (parabolic case, $\frac{1}{x} + \frac{1}{y} + \frac{1}{z} \geq 1$), the crossing point is *soft* and solutions exist. Above it (hyperbolic case), the crossing becomes *rigid* — the modularity theorem can grip the Frey curve and force a contradiction. The proof must demonstrate that $\Phi_c$ is *sharp*: there is no intermediate regime.
+2. **$\Phi_{\text{ctyogh}}$ criticality exploitation.** The exponent threshold $> 2$ is not negotiable — it is the structural phase boundary. Below it (parabolic case, $\frac{1}{x} + \frac{1}{y} + \frac{1}{z} \geq 1$), the crossing point is *soft* and solutions exist. Above it (hyperbolic case), the crossing becomes *rigid* — the modularity theorem can grip the Frey curve and force a contradiction. The proof must demonstrate that $\Phi_{\text{ctyogh}}$ is *sharp*: there is no intermediate regime.
 
-3. **$F_\ell \to F_\hbar$ promotion.** The classical Diophantine equation must be lifted into the quantum-coherent regime of Galois representations. This is the modularity step: the Frey curve's Tate module provides a 2-dimensional $\ell$-adic Galois representation, which by modularity corresponds to a modular form. The $F_\hbar$ promotion is the *structural essence* of the Wiles method.
+3. **$F_{\text{beltl}} \to F_{\text{hardsign}}$ promotion.** The classical Diophantine equation must be lifted into the quantum-coherent regime of Galois representations. This is the modularity step: the Frey curve's Tate module provides a 2-dimensional $\ell$-adic Galois representation, which by modularity corresponds to a modular form. The $F_{\text{hardsign}}$ promotion is the *structural essence* of the Wiles method.
 
-4. **$\Omega_0 \to \Omega_{\mathbb{Z}_2}$ promotion.** The proof must discover or construct a parity-protected topological invariant that forbids the existence of coprime solutions. In FLT, this invariant is the Ribet level-lowering argument, which shows that a modular form of level $N$ (the conductor) arising from a putative solution would force the existence of a modular form of level 2 — which does not exist. This is a $\mathbb{Z}_2$-parity argument: level 2 is "even" and the form would have to be "odd" (or vice versa). For Beal, a similar invariant is needed.
+4. **$\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ promotion.** The proof must discover or construct a parity-protected topological invariant that forbids the existence of coprime solutions. In FLT, this invariant is the Ribet level-lowering argument, which shows that a modular form of level $N$ (the conductor) arising from a putative solution would force the existence of a modular form of level 2 — which does not exist. This is a $\mathbb{Z}_2$-parity argument: level 2 is "even" and the form would have to be "odd" (or vice versa). For Beal, a similar invariant is needed.
 
-5. **The open gap.** The Beal Conjecture's $\Omega_0$ status is the structural diagnosis of why it remains open. No topological invariant is currently known that would forbid a coprime mixed-exponent solution with the same force that Ribet's theorem forbids equal-exponent solutions. The promotion from $\Omega_0$ to $\Omega_{\mathbb{Z}_2}$ is the *exact* location of the missing mathematics.
+5. **The open gap.** The Beal Conjecture's $\Omega_{\text{closeepsilon}}$ status is the structural diagnosis of why it remains open. No topological invariant is currently known that would forbid a coprime mixed-exponent solution with the same force that Ribet's theorem forbids equal-exponent solutions. The promotion from $\Omega_{\text{closeepsilon}}$ to $\Omega_{\text{crtwo}}$ is the *exact* location of the missing mathematics.
 
 ---
 
@@ -224,9 +233,9 @@ inductive Primitive_K | fast | mod | slow | trap | MBL
 inductive Primitive_G | beth | gimel | aleph
 inductive Primitive_Gamma | and' | or' | seq | broad
 inductive Primitive_Phi | sub | c | c_complex | EP | super'
-inductive Primitive_H | H0 | H1 | H2 | H_inf
-inductive Primitive_S | one_one | n_n | n_m
-inductive Primitive_Omega | Omega_0 | Omega_Z2 | Omega_Z | Omega_NA
+inductive Primitive_H | Ħ_Ñ | Ħ_£ | Ħ_A | Ħ_!
+inductive Primitive_S | Σ_S | Σ_ő | Σ_ï
+inductive Primitive_Omega | Ω_Å | Ω_2 | Ω_z | Ω_5
 
 /-- The imscribed Beal Conjecture type (verified by the IG catalog). -/
 def beal_structural_type : StructuralType :=
@@ -239,9 +248,9 @@ def beal_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c
-  , H := Primitive_H.H2
-  , S := Primitive_S.n_m
-  , Omega := Primitive_Omega.Omega_0
+  , H := Primitive_H.Ħ_A
+  , S := Primitive_S.Σ_ï
+  , Omega := Primitive_Omega.Ω_Å
   }
 
 /-- The imscribed FLT (proven) structural type. -/
@@ -255,9 +264,9 @@ def flt_proven_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c_complex
-  , H := Primitive_H.H_inf
-  , S := Primitive_S.n_m
-  , Omega := Primitive_Omega.Omega_Z2
+  , H := Primitive_H.Ħ_!
+  , S := Primitive_S.Σ_ï
+  , Omega := Primitive_Omega.Ω_2
   }
 ```lean4
 /-- Compute the meet of two structural types (shared structural floor).
@@ -336,21 +345,21 @@ def structural_meet (a b : StructuralType) : StructuralType :=
       | .super', .super' => .super'
 
     min_prim_H : Primitive_H → Primitive_H → Primitive_H
-      | .H0, _ | _, .H0 => .H0
-      | .H1, _ | _, .H1 => .H1
-      | .H2, _ | _, .H2 => .H2
-      | .H_inf, .H_inf => .H_inf
+      | .Ħ_Ñ, _ | _, .Ħ_Ñ => .Ħ_Ñ
+      | .Ħ_£, _ | _, .Ħ_£ => .Ħ_£
+      | .Ħ_A, _ | _, .Ħ_A => .Ħ_A
+      | .Ħ_!, .Ħ_! => .Ħ_!
 
     min_prim_S : Primitive_S → Primitive_S → Primitive_S
-      | .one_one, _ | _, .one_one => .one_one
-      | .n_n, _ | _, .n_n => .n_n
-      | .n_m, .n_m => .n_m
+      | .Σ_S, _ | _, .Σ_S => .Σ_S
+      | .Σ_ő, _ | _, .Σ_ő => .Σ_ő
+      | .Σ_ï, .Σ_ï => .Σ_ï
 
     min_prim_Omega : Primitive_Omega → Primitive_Omega → Primitive_Omega
-      | .Omega_0, _ | _, .Omega_0 => .Omega_0
-      | .Omega_Z2, _ | _, .Omega_Z2 => .Omega_Z2
-      | .Omega_Z, _ | _, .Omega_Z => .Omega_Z
-      | .Omega_NA, .Omega_NA => .Omega_NA
+      | .Ω_Å, _ | _, .Ω_Å => .Ω_Å
+      | .Ω_2, _ | _, .Ω_2 => .Ω_2
+      | .Ω_z, _ | _, .Ω_z => .Ω_z
+      | .Ω_5, .Ω_5 => .Ω_5
 
 -- Verify: the meet of Beal and FLT matches the IG-computed meet
 #eval structural_meet beal_structural_type flt_proven_structural_type
@@ -394,7 +403,7 @@ def beal_to_flt_promotions : List PrimitivePromotion :=
     reason the Beal Conjecture remains open. A proof must construct
     a Ω_Z2 invariant or demonstrate impossibility. -/
 theorem topological_gap :
-    beal_structural_type.Omega = Primitive_Omega.Omega_0 := by
+    beal_structural_type.Omega = Primitive_Omega.Ω_Å := by
   rfl
 
 /-- The promotion from Ω_0 to Ω_Z2 requires constructing a parity-protected
@@ -499,8 +508,8 @@ theorem beal_prime_mixed_exponents (p q r : ℕ)
     For Beal: the promotion signature to FLT has 5 promotions + 2 demotions.
     A complete proof of Beal would yield a new imscription with:
       Ω promoted from Ω_0 to Ω_Z2 (or Ω_Z)
-      F promoted from F_ell to F_hbar
-      T potentially promoted from T_bowtie to T_odot
+      F promoted from ƒ_ì to ƒ_ż
+      T potentially promoted from Þ_ò to Þ_O
     
     The IG does not prove Beal — it identifies the structural
     location of the missing mathematics. -/
@@ -521,9 +530,9 @@ def proof_gap_distance : Prop :=
 
 The Imscribing Grammar does not resolve the Beal Conjecture — no automated system can resolve an open problem in number theory by structural analysis alone. What the IG provides is:
 
-1. **Precise diagnosis**: The conjecture is $\Omega_0$ (no topological protection). The missing mathematics is exactly the construction of a $\Omega_{\mathbb{Z}_2}$ parity-protected invariant that would forbid coprime mixed-exponent solutions.
+1. **Precise diagnosis**: The conjecture is $\Omega_{\text{closeepsilon}}$ (no topological protection). The missing mathematics is exactly the construction of a $\Omega_{\text{crtwo}}$ parity-protected invariant that would forbid coprime mixed-exponent solutions.
 
-2. **Promotion roadmap**: The five-primitive promotion signature $[T, F, \Phi, H, \Omega]$ tells us *what kind* of mathematics is needed: a geometric object (Frey curve generalization for mixed exponents) that creates a topological invariant in the $\Phi_c$ critical regime.
+2. **Promotion roadmap**: The five-primitive promotion signature $[T, F, \Phi, H, \Omega]$ tells us *what kind* of mathematics is needed: a geometric object (Frey curve generalization for mixed exponents) that creates a topological invariant in the $\Phi_{\text{ctyogh}}$ critical regime.
 
 3. **Structural neighborhood**: The nearest neighbor (Odd Perfect Conjecture, $d = 1.2848$) suggests that progress on Beal might illuminate — or be illuminated by — the odd perfect number problem, another classical Diophantine conjecture with a similar crossing structure.
 
@@ -534,4 +543,4 @@ The Lean4 code above is a faithful structural encoding of both (a) the current s
 ---
 
 *Structural type of this document*:  
-$$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{omega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$

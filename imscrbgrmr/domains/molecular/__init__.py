@@ -43,14 +43,14 @@ class MolecularSynthonAgent:
     """
     Agent for analyzing molecular synthons in retrosynthetic contexts.
     
-    Molecular synthons operate with D_wedge (point-like reactivity)
+    Molecular synthons operate with D_wynn (point-like reactivity)
     and typically involve R_subset (covalent) or R_covalent_dynamic
     recognition modes.
     
     Capabilities:
     - Reaction center identification
     - Bond disconnection feasibility analysis
-    - Synthon polarity assignment (P+, P-, P_pm)
+    - Synthon polarity assignment (P+, P-, P_pipevar)
     - Bond dissociation energy estimation
     """
     
@@ -165,7 +165,7 @@ class MolecularSynthonAgent:
         List known molecular synthons, optionally filtered by reaction type.
         
         Args:
-            reaction_type: Optional filter (e.g., "S_N2", "Diels-Alder")
+            reaction_type: Optional filter (e.g., "Σ_N2", "Diels-Alder")
         
         Returns:
             List of Synthon objects
@@ -362,9 +362,9 @@ def register_molecular_synthons() -> list:
         # amide_dimer
         # Self-complementary N–H···O=C hydrogen-bonded dimer.
         # Similar topology to carboxylic_acid_dimer (both T_⋈) but lower
-        # fidelity (F_eth): amide NH is a weaker H-bond donor than OH.
-        # meet(carboxylic_acid_dimer [F_ℏ], amide_dimer [F_eth]) → F_eth ✓
-        # join(amide_dimer [F_eth], carboxylic_acid_dimer [F_ℏ]) → F_ℏ ✓
+        # fidelity (F_dh): amide NH is a weaker H-bond donor than OH.
+        # meet(carboxylic_acid_dimer [F_ℏ], amide_dimer [F_dh]) → F_dh ✓
+        # join(amide_dimer [F_dh], carboxylic_acid_dimer [F_ℏ]) → F_ℏ ✓
         # ------------------------------------------------------------------
         Synthon(
             name="amide_dimer",
@@ -380,7 +380,7 @@ def register_molecular_synthons() -> list:
             stoichiometry="1:1",
             description=(
                 "Amide N–H···O=C hydrogen-bonded dimer (R₂²(8) motif). "
-                "F_eth: weaker H-bond donor than carboxylic acid. "
+                "F_dh: weaker H-bond donor than carboxylic acid. "
                 "T_⋈: closed self-complementary loop."
             ),
             metadata={"domain": "molecular", "class": "H-bond_dimer"},
@@ -391,7 +391,7 @@ def register_molecular_synthons() -> list:
         # Deep-cavity cavitand host with anion–π recognition.
         # D_△ (supramolecular), T_cage (closed three-dimensional enclosure),
         # R_mechanical (shape-selective mechanical capture), F_ℏ (rigid cavity,
-        # high fidelity), K_slow (slow guest exchange kinetics).
+        # high fidelity), K_schwa (slow guest exchange kinetics).
         # ------------------------------------------------------------------
         Synthon(
             name="nitroso_radical_anion_π_cavitand_cage_synthon",
@@ -408,7 +408,7 @@ def register_molecular_synthons() -> list:
             description=(
                 "Cavitand cage with nitroso-radical anion–π recognition motif. "
                 "Deep-cavity enclosure (T_cage), high rigidity (F_ℏ), slow guest "
-                "exchange (K_slow), shape-selective (R_mechanical)."
+                "exchange (K_schwa), shape-selective (R_mechanical)."
             ),
             metadata={"domain": "supramolecular", "class": "anion_pi_cage"},
         ),
@@ -442,10 +442,10 @@ def register_molecular_synthons() -> list:
 
         # ------------------------------------------------------------------
         # nitroso_radical_crown_ether_host_guest_synthon
-        # Crown ether host–guest complex. F_eth (lower than rigid cage
+        # Crown ether host–guest complex. F_dh (lower than rigid cage
         # systems): crown ether binding is enthalpy-driven but the flexible
         # macrocycle has conformational entropy cost that limits fidelity.
-        # Tensor with cucurbituril gives F_eth (min bottleneck) — used to
+        # Tensor with cucurbituril gives F_dh (min bottleneck) — used to
         # demonstrate thermodynamic efficiency tuning in design 12.
         # ------------------------------------------------------------------
         Synthon(
@@ -462,8 +462,8 @@ def register_molecular_synthons() -> list:
             stoichiometry="1:1",
             description=(
                 "Crown ether host–guest complex with nitroso-radical recognition. "
-                "F_eth: flexible macrocycle conformational entropy limits fidelity "
-                "vs rigid cage systems. K_mod: fast host–guest exchange."
+                "F_dh: flexible macrocycle conformational entropy limits fidelity "
+                "vs rigid cage systems. K_turnm: fast host–guest exchange."
             ),
             metadata={"domain": "supramolecular", "class": "crown_ether"},
         ),
@@ -490,7 +490,7 @@ def register_molecular_synthons() -> list:
             description=(
                 "Cryptand cage host with nitroso-radical anion–π recognition. "
                 "3D bicyclic preorganisation → F_ℏ (high binding affinity). "
-                "K_slow: slow guest decomplexation kinetics."
+                "K_schwa: slow guest decomplexation kinetics."
             ),
             metadata={"domain": "supramolecular", "class": "cryptand_cage"},
         ),
@@ -499,7 +499,7 @@ def register_molecular_synthons() -> list:
         # nitroso_radical_cucurbituril_anion_rotaxane_synthon
         # Cucurbit[n]uril barrel — high-fidelity mechanical cage.
         # Used as a tensor partner in both design 12 (with crown ether,
-        # giving F_eth via bottleneck) and design 16 (with cryptand,
+        # giving F_dh via bottleneck) and design 16 (with cryptand,
         # giving F_ℏ). The cucurbituril itself is F_ℏ in both cases.
         # ------------------------------------------------------------------
         Synthon(
@@ -517,7 +517,7 @@ def register_molecular_synthons() -> list:
             description=(
                 "Cucurbit[n]uril barrel encapsulating nitroso-radical anion via "
                 "ion–dipole and hydrophobic interactions. High rigidity (F_ℏ), "
-                "slow rotaxane dethreading kinetics (K_slow)."
+                "slow rotaxane dethreading kinetics (K_schwa)."
             ),
             metadata={"domain": "supramolecular", "class": "cucurbituril_rotaxane"},
         ),
@@ -527,7 +527,7 @@ def register_molecular_synthons() -> list:
         # Carbanion (methyl anion) — the archetypal anionic nucleophile.
         # D_∧ (point reactant), T_| (linear: one reactive site), R_subset
         # (forms one covalent bond), P_minus (donates electron pair),
-        # F_eth, K_mod. Used in retrodesign/path searches within the D_∧/T_|
+        # F_dh, K_turnm. Used in retrodesign/path searches within the D_∧/T_|
         # cluster of molecular synthons.
         # ------------------------------------------------------------------
         Synthon(

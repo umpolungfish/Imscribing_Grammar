@@ -2,22 +2,22 @@
 Homotopy Type Theory Navigator - Imscribing Grammar
 
 Domain: Homotopy type theory, univalent foundations, higher topos theory
-Structural type: <D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_inf; n_m; Omega_Z2>
+Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_2>
 Tier: O_inf
 
 Architecture: Univalence-preserving GNN with univalence axiom enforcement.
-  - D_odot: Imscriptive encoding of types and paths
-  - T_odot: Imscriptive topology (n-types, (n+1)-types, ...)
-  - R_dagger: Adjoint/unnivalence relations (paths ↔ equivalences)
-  - P_pm_sym: Self-dual with uncertainty on higher identities
-  - F_hbar: Exactly preserves univalence principle
-  - K_slow: Slow evolution through higher homotopies
-  - G_aleph: Arbitrary universe levels possible
-  - Gamma_seq: Sequential higher composition (path concatenation)
-  - Phi_c: Self-modeling (type is equivalent to its univalence)
-  - H_inf: Eternal (paths compose indefinitely)
-  - n_m: Many heterogeneous types and paths
-  - Omega_Z2: Binary winding (type equivalence ↔ path equality)
+  - Ð_ω: Imscriptive encoding of types and paths
+  - Þ_O: Imscriptive topology (n-types, (n+1)-types, ...)
+  - Ř_Ť: Adjoint/unnivalence relations (paths ↔ equivalences)
+  - Φ_}: Self-dual with uncertainty on higher identities
+  - ƒ_ż: Exactly preserves univalence principle
+  - Ç_@: Slow evolution through higher homotopies
+  - Γ_ʔ: Arbitrary universe levels possible
+  - ɢ_ˌ: Sequential higher composition (path concatenation)
+  - φ̂_ÿ: Self-modeling (type is equivalent to its univalence)
+  - Ħ_!: Eternal (paths compose indefinitely)
+  - Σ_ï: Many heterogeneous types and paths
+  - Ω_2: Binary winding (type equivalence ↔ path equality)
 
 Purpose: Navigate homotopy types, verify univalence applications,
   compute higher groupoids, detect equivalences, enforce univalence.
@@ -38,7 +38,7 @@ class HTTConfig:
             "computes higher groupoids, detects type equivalences."
         )
         self.domain = "Homotopy type theory, univalent foundations, higher topos theory"
-        self.tuple = "D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_inf; n_m; Omega_Z2"
+        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_2"
         self.tier = "O_inf"
         self.architecture = (
             "Univalence-preserving GNN - types communicate via path channels; "
@@ -47,18 +47,18 @@ class HTTConfig:
         )
         
         # Primitives
-        self.D = "D_odot"
-        self.T = "T_odot"
-        self.R = "R_dagger"
-        self.P = "P_pm_sym"
-        self.F = "F_hbar"
-        self.K = "K_slow"
-        self.G = "G_aleph"
-        self.Gamma = "G_seq"
-        self.Phi = "Phi_c"
-        self.H = "H_inf"
-        self.S = "n_m"
-        self.Omega = "Omega_Z2"
+        self.D = "Ð_ω"
+        self.T = "Þ_O"
+        self.R = "Ř_Ť"
+        self.P = "Φ_}"
+        self.F = "ƒ_ż"
+        self.K = "Ç_@"
+        self.G = "Γ_ʔ"
+        self.Gamma = "ɢ_ˌ"
+        self.Phi = "φ̂_ÿ"
+        self.H = "Ħ_!"
+        self.S = "Σ_ï"
+        self.Omega = "Ω_2"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -281,9 +281,9 @@ def cmd_univalence_check(type_name):
         print(f"    ua_β : transport (ua e) x = e x  [computation rule]")
         print()
         print(f"  Grammar encoding:")
-        print(f"    R_dagger: paths ↔ equivalences (the adjoint pair ua ⊣ idtoequiv)")
-        print(f"    Omega_Z2: equivalence ↔ identity (the binary flip)")
-        print(f"    H_inf: infinite homotopy depth (all higher paths present)")
+        print(f"    Ř_Ť: paths ↔ equivalences (the adjoint pair ua ⊣ idtoequiv)")
+        print(f"    Ω_2: equivalence ↔ identity (the binary flip)")
+        print(f"    Ħ_!: infinite homotopy depth (all higher paths present)")
     else:
         print(f"  Type '{type_name}' not in table.")
         print(f"  Known: Type_0, Bool, Nat, S1, S2, Prop, Set")
@@ -295,7 +295,7 @@ def cmd_univalence_check(type_name):
 
     print()
     print("─" * 55)
-    print("Grammar: P_pm_sym + R_dagger + Omega_Z2 encode univalence structure")
+    print("Grammar: Φ_} + Ř_Ť + Ω_2 encode univalence structure")
 
 
 def main():

@@ -74,8 +74,8 @@ is surjective for every p.
 
 **SynthOmnicon structural note:**
 
-  Hodge is the ONLY Millennium Problem with both D_odot and T_odot simultaneously.
-  All other MPPs with D_odot (RH, BSD, OPN) have T_network or T_bowtie, not T_odot.
+  Hodge is the ONLY Millennium Problem with both D_omega and T_openo simultaneously.
+  All other MPPs with D_omega (RH, BSD, OPN) have T_nrleg or T_bullseye, not T_openo.
   The double-holomorphic structure (complex variety + Hodge decomposition) is the
   primitive signature of the problem.
 

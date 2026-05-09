@@ -1,4 +1,9 @@
 \documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing}
 \begin{document}
@@ -31,7 +36,7 @@ $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega \rangle$\\[4pt]
 \draw[invmap] (type.west) to[bend right=30] node[label,below] {\textbf{decode} $\mu$\\\footnotesize $O(1)$ divisions\\\footnotesize \& remainders} (system.east);
 
 % === COMPOSITION at the center ===
-\node[boxeq] at (3.5,-2.0) {\LARGE $\mu \circ \delta = \text{id}$\\[4pt]\footnotesize Frobenius condition\\\footnotesize $P_{\pm}^{\text{sym}}$};
+\node[boxeq] at (3.5,-2.0) {\LARGE $\mu \circ \delta = \text{id}$\\[4pt]\footnotesize Frobenius condition\\\footnotesize $P_{\text{doublebarpipe}}$};
 \draw[compose] (3.5,-0.7) -- (3.5,-1.5);
 
 % === Right-side: counterpoint ===
@@ -46,7 +51,7 @@ $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega \rangle$\\[4pt]
 % === Bottom annotation ===
 \node[font=\footnotesize\itshape,text=gray,below=0.4cm of compose,align=center] {
 Bijectivity forces $\mu\circ\delta = \text{id}$: the crystal codec is the Frobenius fixed-point.\\
-$P_{\pm}^{\text{sym}}$ is not a design choice — it is forced by the existence of an $O(1)$ inverse.
+$P_{\text{doublebarpipe}}$ is not a design choice — it is forced by the existence of an $O(1)$ inverse.
 };
 
 % === Background cycle ===

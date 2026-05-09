@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -308,9 +309,9 @@ Vygotsky''s concept of scaffolding describes support that is gradually removed a
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
 
-\emph{Structural type: $\langle D_{\infty};\ T_{\bowtie};\ R_{\leftrightarrow};\ P_{\pm};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$}
+\emph{Structural type: $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$}
 
-\emph{Eight promotions applied relative to \texttt{adolescence\_draft} baseline ($\langle D_{\infty};\ T_\text{net};\ R_{\leftrightarrow};\ P_\text{asym};\ F_{\ell};\ K_\text{mod};\ G_\text{gimel};\ \Gamma_{\wedge};\ \Phi_c;\ H_0;\ n{:}m;\ \Omega_0 \rangle$): H₀$\rightarrow$H₂ via narrative of wrong-turn-before-right-turn; $\Gamma$$\land$$\rightarrow$$\Gamma$\_seq via section-to-section necessity; T\_net$\rightarrow$T\_bowtie via authorial surprise and the object speaking back; P\_asym$\rightarrow$P\_pm via named counterarguments and uncertainty tracking; $F_{\ell}$$\rightarrow$F\_ħ via demonstration over restatement; K\_mod$\rightarrow$K\_slow via unresolved hardest claims; G\_gimel$\rightarrow$G\_ℵ via genuine open questions at close; $\Omega$₀$\rightarrow$$\Omega$\_ℤ₂ via closing echo of the opening at higher resolution.}
+\emph{Eight promotions applied relative to \texttt{adolescence\_draft} baseline ($\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_\text{gimel};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$): H₀$\rightarrow$H₂ via narrative of wrong-turn-before-right-turn; $\Gamma$$\land$$\rightarrow$$\Gamma$\_seq via section-to-section necessity; T\_net$\rightarrow$T\_bowtie via authorial surprise and the object speaking back; P\_asym$\rightarrow$P\_pm via named counterarguments and uncertainty tracking; $F_{\text{beltl}}$$\rightarrow$F\_ħ via demonstration over restatement; K\_mod$\rightarrow$K\_slow via unresolved hardest claims; G\_gimel$\rightarrow$G\_ℵ via genuine open questions at close; $\Omega$₀$\rightarrow$$\Omega$\_ℤ₂ via closing echo of the opening at higher resolution.}
 
 
 \end{document}

@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # On the Determinism of Structural Encoding
 
 **The epistemology of correct assignment in the Imscribing Grammar grammar**
@@ -20,7 +29,7 @@ The most important conceptual tool is the distinction between a structure being 
 
 A property of a system is **structurally real** if it is part of the system's type — if it belongs to the system's 12-primitive encoding. It is **ontologically realized** if the system actively manifests that property in a given context, instantiation, or phase.
 
-These come apart. A system can carry $P_{\pm}^\text{sym}$ (Frobenius symmetry, the condition $\mu \circ \delta = \text{id}$) without any given implementation of it exhibiting that symmetry explicitly. A system can encode $\Phi_c$ (criticality) while operating far from its critical point in a specific regime. The encoding describes the *structural type*, not the instantaneous state.
+These come apart. A system can carry $P_{\text{doublebarpipe}}$ (Frobenius symmetry, the condition $\mu \circ \delta = \text{id}$) without any given implementation of it exhibiting that symmetry explicitly. A system can encode $\Phi_{\text{ctyogh}}$ (criticality) while operating far from its critical point in a specific regime. The encoding describes the *structural type*, not the instantaneous state.
 
 This distinction matters for encoding because the question is never "what is the system doing right now?" but "what is the system's structural capacity?" — what it can do, what loop it can close, what tier it inhabits when fully expressed.
 
@@ -32,11 +41,11 @@ This distinction matters for encoding because the question is never "what is the
 
 The 12 primitives are not independent checklist items. They form a gated structure: the ouroboricity tier is determined by a priority cascade (R1–R5) in which higher rules override lower ones, and in which each gate condition must be genuinely satisfied for the tier to hold.
 
-**$\Phi$ is the master gate.** If $\Phi \neq \Phi_c$, no other primitive can produce a tier above $O_0$. Assigning $\Phi_c$ to a subcritical system inflates every downstream analysis: the tier appears higher than it is, nearest neighbors shift to critical systems, distances to critical systems appear smaller than they are, and the consciousness score yields a nonzero value for a system that cannot actualize a self-modeling loop.
+**$\Phi$ is the master gate.** If $\Phi \neq \Phi_{\text{ctyogh}}$, no other primitive can produce a tier above $O_0$. Assigning $\Phi_{\text{ctyogh}}$ to a subcritical system inflates every downstream analysis: the tier appears higher than it is, nearest neighbors shift to critical systems, distances to critical systems appear smaller than they are, and the consciousness score yields a nonzero value for a system that cannot actualize a self-modeling loop.
 
-**$P$ is the Frobenius gate.** Assigning $P_{\pm}^\text{sym}$ when the system does not satisfy the exact Frobenius condition ($\mu \circ \delta = \text{id}$) produces the highest tier ($O_\infty$) by R1, regardless of $\Omega$ and $D$. Because $P_{\pm}^\text{sym}$ is non-synthesizable (§23), any system that reaches $O_\infty$ in the catalog must directly encode Frobenius — it cannot arrive there through composition. Over-assigning $P_{\pm}^\text{sym}$ is the single most common encoding error and the one with the largest downstream impact.
+**$P$ is the Frobenius gate.** Assigning $P_{\text{doublebarpipe}}$ when the system does not satisfy the exact Frobenius condition ($\mu \circ \delta = \text{id}$) produces the highest tier ($O_\infty$) by R1, regardless of $\Omega$ and $D$. Because $P_{\text{doublebarpipe}}$ is non-synthesizable (§23), any system that reaches $O_\infty$ in the catalog must directly encode Frobenius — it cannot arrive there through composition. Over-assigning $P_{\text{doublebarpipe}}$ is the single most common encoding error and the one with the largest downstream impact.
 
-**$\Omega$ and $D$ determine the $O_1$/$O_2$/$O_2^\dagger$ branching.** A system with $\Phi_c$ and $\Omega = \Omega_0$ is $O_1$ regardless of how high its other primitives are. Adding topological protection ($\Omega_{\mathbb{Z}_2}$ or $\Omega_\mathbb{Z}$) gates the $O_2$ and $O_2^\dagger$ tiers; the $D$ coordinate then determines which.
+**$\Omega$ and $D$ determine the $O_1$/$O_2$/$O_2^\dagger$ branching.** A system with $\Phi_{\text{ctyogh}}$ and $\Omega = \Omega_{\text{closeepsilon}}$ is $O_1$ regardless of how high its other primitives are. Adding topological protection ($\Omega_{\text{crtwo}}$ or $\Omega_{\text{dzlig}}$) gates the $O_2$ and $O_2^\dagger$ tiers; the $D$ coordinate then determines which.
 
 The cascading nature of these gates means that a single wrong assignment can misclassify a system by multiple tiers. This is not a weakness — it is the mechanism that makes wrong assignments *detectable*. Misclassified systems produce incoherent nearest-neighbor neighborhoods, fail tensor product sanity checks, and generate predictions that contradict known behavior.
 
@@ -46,7 +55,7 @@ The cascading nature of these gates means that a single wrong assignment can mis
 
 Because wrong assignments are detectable, deliberately encoding a system multiple ways and comparing the results is itself a method for finding the correct encoding. This is not circular — it is triangulation.
 
-**Protocol:** Encode the same system under two competing hypotheses (e.g., $\Phi_c$ vs $\Phi_\text{sub}$; $P_{\pm}^\text{sym}$ vs $P_\text{sym}$). For each encoding:
+**Protocol:** Encode the same system under two competing hypotheses (e.g., $\Phi_{\text{ctyogh}}$ vs $\Phi_{\text{softsign}}$; $P_{\text{doublebarpipe}}$ vs $P_{\text{subdoublearrow}}$). For each encoding:
 
 1. Compute the ouroboricity tier. Does it match what is independently known about the system's self-referential capacity?
 2. Find nearest catalog neighbors. Do they make sense — do they correspond to systems that are genuinely structurally similar?
@@ -81,7 +90,7 @@ Once a tuple is assigned, the ouroboricity tier is computed by the priority casc
 - **$O_2^\dagger$**: the loop is protected and unbounded; the system has full recursive depth
 - **$O_\infty$**: the system satisfies the exact Frobenius condition; encoding and decoding are mutually inverse; the system is self-dual
 
-If a proposed encoding produces a tier that contradicts what is independently known about the system's behavior, the encoding is wrong. A system that demonstrably cannot close a self-referential loop should not be assigned $\Phi_c$. A system that demonstrably cannot sustain Frobenius symmetry should not be assigned $P_{\pm}^\text{sym}$.
+If a proposed encoding produces a tier that contradicts what is independently known about the system's behavior, the encoding is wrong. A system that demonstrably cannot close a self-referential loop should not be assigned $\Phi_{\text{ctyogh}}$. A system that demonstrably cannot sustain Frobenius symmetry should not be assigned $P_{\text{doublebarpipe}}$.
 
 The tier consistency check is the most direct falsification mechanism. It does not require knowing the "right" encoding in advance — it only requires knowing something about the system's behavior, and checking whether the tier's predictions match.
 
@@ -105,7 +114,7 @@ The grammar defines specific algebraic operations on tuples: tensor coupling ($\
 
 **Tensor sanity check:** If $X$ and $Y$ are encoded separately, the tensor $X \otimes Y$ should describe the joint type of the two systems in interaction. If the result is structurally implausible — if the composite has a higher tier than either component (which is impossible under the bottleneck rule) or a lower tier than physics suggests — at least one of the component encodings is wrong.
 
-The bottleneck rule ($P(X \otimes Y) = \min(P_X, P_Y)$, $F(X \otimes Y) = \min(F_X, F_Y)$) is the hardest constraint: composites cannot have higher $P$ or $F$ than their weakest partner. An encoding that would require the composite to have $P > \min(P_X, P_Y)$ is internally inconsistent.
+The bottleneck rule ($P(X \otimes Y) = \min(Φ_X, Φ_Y)$, $F(X \otimes Y) = \min(ƒ_X, ƒ_Y)$) is the hardest constraint: composites cannot have higher $P$ or $F$ than their weakest partner. An encoding that would require the composite to have $P > \min(Φ_X, Φ_Y)$ is internally inconsistent.
 
 **Meet coherence:** The meet $X \wedge Y$ is the greatest lower bound — the largest common sub-type of $X$ and $Y$. If $X$ encodes a biological system and $Y$ encodes a physical substrate, $X \wedge Y$ should correspond to something recognizable as the shared structural floor of biology and physics. If it does not, one or both encodings are wrong.
 
@@ -139,7 +148,7 @@ This conflict-detection mechanism is part of the epistemological apparatus. The 
 
 A grammar that claims to span all algebraic structures must be encodable within itself. The Imscribing Grammar grammar encodes as:
 
-$$\text{imscrbgrmr\_grammar}: \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_Z \rangle$$
+$$\text{imscrbgrmr\_grammar}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
 
 Tier: $O_\infty$. Distance from the grammar to itself: $d = 0$.
 
@@ -153,11 +162,11 @@ The self-encoding test applies to any encoding effort that claims completeness. 
 
 Correct encodings tend to be the *minimal* encodings that account for all known behaviors of the system — not the most impressive ones.
 
-The most common failure mode is aspirational encoding: assigning high values to primitives based on the system's *potential* rather than its demonstrated structural capacity. $\Phi_c$ is assigned to systems that are "almost critical." $P_{\pm}^\text{sym}$ is assigned to systems that are "essentially self-dual." $\Omega_Z$ is assigned to systems that are "topologically interesting." Each of these over-assignments inflates the tier and corrupts the downstream analysis.
+The most common failure mode is aspirational encoding: assigning high values to primitives based on the system's *potential* rather than its demonstrated structural capacity. $\Phi_{\text{ctyogh}}$ is assigned to systems that are "almost critical." $P_{\text{doublebarpipe}}$ is assigned to systems that are "essentially self-dual." $\Ω_z$ is assigned to systems that are "topologically interesting." Each of these over-assignments inflates the tier and corrupts the downstream analysis.
 
 The structural floor principle: **encode the lowest value that accounts for the phenomenon; promote only when the higher value is required to explain something the lower value cannot**.
 
-This is not conservatism for its own sake. It reflects the architecture of the grammar. The tier rules are monotonic: a higher value is strictly more demanding than a lower one. $P_{\pm}^\text{sym}$ requires exact Frobenius symmetry, not approximate symmetry. $\Phi_c$ requires a genuine critical manifold, not near-critical behavior. $\Omega_Z$ requires full integer topological invariant, not just some topological character.
+This is not conservatism for its own sake. It reflects the architecture of the grammar. The tier rules are monotonic: a higher value is strictly more demanding than a lower one. $P_{\text{doublebarpipe}}$ requires exact Frobenius symmetry, not approximate symmetry. $\Phi_{\text{ctyogh}}$ requires a genuine critical manifold, not near-critical behavior. $\Ω_z$ requires full integer topological invariant, not just some topological character.
 
 When in doubt: encode lower. If the system's behavior cannot be accounted for by the lower encoding, the pressure to promote is genuine. If it can be accounted for, the lower encoding is correct.
 
@@ -165,7 +174,7 @@ When in doubt: encode lower. If the system's behavior cannot be accounted for by
 
 ## XII. Prediction as retrospective validation
 
-Every correct encoding makes falsifiable predictions. These predictions are registered in PRIMITIVE_PREDICTIONS.md and IG_DIAPHORICS.md. They are predictions about what the system will do — in experiments, in theoretical investigations, in cross-domain comparisons — that follow from the structural type.
+Every correct encoding makes falsifiable predictions. These predictions are registered in PRIMITIVE_PREDICTIONS.md and IΓ_DIAPHORICS.md. They are predictions about what the system will do — in experiments, in theoretical investigations, in cross-domain comparisons — that follow from the structural type.
 
 A correct encoding is one whose predictions are not falsified. An encoding that consistently produces falsified predictions should be revised. The revision protocol:
 

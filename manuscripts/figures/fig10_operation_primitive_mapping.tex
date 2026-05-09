@@ -1,4 +1,9 @@
 \documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds}
 \begin{document}
@@ -68,11 +73,11 @@
 \node[group=orange,minimum width=14cm,minimum height=1.6cm] (tiers) at (0,-5.2) {};
 \node[font=\bfseries,above=0pt of tiers.north] {Ouroboricity Tiers — determined by 4 gate primitives};
 
-\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O_0$\\$\Phi_\text{sub}$};
-\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O_1$\\$\Phi_c$};
-\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O_2$\\$\Phi_c,\Omega\neq\Omega_0$};
-\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries] (O2dt) at (2.6,-5.2) {$O_2^\dagger$\\$\Phi_c,\Omega\neq\Omega_0,D_\infty$};
-\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries] (Oifnt) at (5.2,-5.2) {$O_\infty$\\$\Phi_c,P_{\pm}^{\text{sym}}$};
+\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O_0$\\$\Phi_{\text{softsign}}$};
+\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O_1$\\$\Phi_{\text{ctyogh}}$};
+\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O_2$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}}$};
+\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries] (O2dt) at (2.6,-5.2) {$O_2^\dagger$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}},D_{\text{invomega}}$};
+\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries] (Oifnt) at (5.2,-5.2) {$O_\infty$\\$\Phi_{\text{ctyogh}},P_{\text{doublebarpipe}}$};
 
 \draw[->,>=stealth,thick] (O0t.east) -- (O1t.west);
 \draw[->,>=stealth,thick] (O1t.east) -- (O2t.west);

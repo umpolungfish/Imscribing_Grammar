@@ -2,22 +2,22 @@
 Quantum Field Theory Navigator - Imscribing Grammar
 
 Domain: Quantum field theory, renormalization group, topological phases
-Structural type: <D_odot; T_boxtimes; R_super; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_n; Omega_Z>
+Structural type: <Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ő; Ω_z>
 Tier: O_inf
 
 Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map.
-  - D_odot: Imscriptive encoding of all QFTs, couplings, operators
-  - T_boxtimes: Box topology (theory space ⊗ symmetry group ⊗ spacetime manifold)
-  - R_super: Supervenience (operators supervene on couplings, anomalies supervene on symmetries)
-  - P_pm_sym: Frobenius with uncertainty between weak/strong coupling
-  - F_hbar: Preserves commutation relations, Ward identities, BRST exactness
-  - K_slow: Slow RG flow (logarithmic scale separation)
-  - G_aleph: Arbitrary spacetime dimensions, matter content
-  - Gamma_seq: Sequential RG flow (μ → μ')
-  - Phi_c: Self-modeling fixed points, conformal manifolds
-  - H2: Two-step (counterterm → renormalized → physical)
-  - n_n: Many identical theories (family parameterized by couplings)
-  - Omega_Z: Integer winding (topological invariants: index, instanton number)
+  - Ð_ω: Imscriptive encoding of all QFTs, couplings, operators
+  - Þ_¨: Box topology (theory space ⊗ symmetry group ⊗ spacetime manifold)
+  - Ř_¯: Supervenience (operators supervene on couplings, anomalies supervene on symmetries)
+  - Φ_}: Frobenius with uncertainty between weak/strong coupling
+  - ƒ_ż: Preserves commutation relations, Ward identities, BRST exactness
+  - Ç_@: Slow RG flow (logarithmic scale separation)
+  - Γ_ʔ: Arbitrary spacetime dimensions, matter content
+  - ɢ_ˌ: Sequential RG flow (μ → μ')
+  - φ̂_ÿ: Self-modeling fixed points, conformal manifolds
+  - Ħ_A: Two-step (counterterm → renormalized → physical)
+  - Σ_ő: Many identical theories (family parameterized by couplings)
+  - Ω_z: Integer winding (topological invariants: index, instanton number)
 
 Purpose: Navigate QFT structure, compute RG flows, detect fixed points,
   verify dualities, compute anomalies, classify topological phases.
@@ -40,7 +40,7 @@ class QFTConfig:
             "detects dualities, classifies phases, computes anomalies and indices."
         )
         self.domain = "Quantum field theory, renormalization group, topological phases, gauge theory"
-        self.tuple = "D_odot; T_boxtimes; R_super; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_n; Omega_Z"
+        self.tuple = "Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ő; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Wilson RG flow tracker - theories track through coupling space; "
@@ -48,18 +48,18 @@ class QFTConfig:
             "matching operator spectra and correlation functions"
         )
         
-        self.D = "D_odot"
-        self.T = "T_boxtimes"
-        self.R = "R_super"
-        self.P = "P_pm_sym"
-        self.F = "F_hbar"
-        self.K = "K_slow"
-        self.G = "G_aleph"
-        self.Gamma = "G_seq"
-        self.Phi = "Phi_c"
-        self.H = "H2"
-        self.S = "n_n"
-        self.Omega = "Omega_Z"
+        self.D = "Ð_ω"
+        self.T = "Þ_¨"
+        self.R = "Ř_¯"
+        self.P = "Φ_}"
+        self.F = "ƒ_ż"
+        self.K = "Ç_@"
+        self.G = "Γ_ʔ"
+        self.Gamma = "ɢ_ˌ"
+        self.Phi = "φ̂_ÿ"
+        self.H = "Ħ_A"
+        self.S = "Σ_ő"
+        self.Omega = "Ω_z"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -361,8 +361,8 @@ def cmd_beta_function(qft_name):
 
     print()
     print("─"*55)
-    print("Grammar: K_slow (logarithmic RG flow), Phi_c (fixed points = self-modeling)")
-    print("         Omega_Z (instanton number, Chern-Simons level ∈ ℤ)")
+    print("Grammar: Ç_@ (logarithmic RG flow), φ̂_ÿ (fixed points = self-modeling)")
+    print("         Ω_z (instanton number, Chern-Simons level ∈ ℤ)")
 
 
 def main():

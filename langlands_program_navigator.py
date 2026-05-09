@@ -2,22 +2,22 @@
 Langlands Program Navigator - Imscribing Grammar
 
 Domain: Langlands program, automorphic forms, arithmetic geometry
-Structural type: <D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_broad; Phi_c; H_inf; n_m; Omega_Z>
+Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: Automorphic-Galois bridge with functoriality enforcement.
-  - D_odot: Imscriptive encoding of all number fields, groups, representations
-  - T_odot: Imscriptive topology (Galois reps ↔ automorphic forms ↔ L-functions)
-  - R_dagger: Adjoint functoriality (base change, lift, descent)
-  - P_pm_sym: Frobenius with uncertainty between global/local and archimedean/non-archimedean
-  - F_hbar: Preserves L-function identities, functional equations, period relations
-  - K_slow: Slow exploration through moduli of automorphic representations
-  - G_aleph: Arbitrary number fields, reductive groups, representations
-  - Gamma_broad: Broad correspondence (not sequential, global-to-global)
-  - Phi_c: Self-modeling (Langlands duality as self-duality of L-group)
-  - H_inf: Eternal (infinite descent, infinite extensions)
-  - n_m: Many heterogeneous objects (GL_n, PGL_n, tori, torus shells)
-  - Omega_Z: Integer winding (motivic weight, conductor exponent, L-function order)
+  - Ð_ω: Imscriptive encoding of all number fields, groups, representations
+  - Þ_O: Imscriptive topology (Galois reps ↔ automorphic forms ↔ L-functions)
+  - Ř_Ť: Adjoint functoriality (base change, lift, descent)
+  - Φ_}: Frobenius with uncertainty between global/local and archimedean/non-archimedean
+  - ƒ_ż: Preserves L-function identities, functional equations, period relations
+  - Ç_@: Slow exploration through moduli of automorphic representations
+  - Γ_ʔ: Arbitrary number fields, reductive groups, representations
+  - ɢ_Ş: Broad correspondence (not sequential, global-to-global)
+  - φ̂_ÿ: Self-modeling (Langlands duality as self-duality of L-group)
+  - Ħ_!: Eternal (infinite descent, infinite extensions)
+  - Σ_ï: Many heterogeneous objects (GL_n, PGL_n, tori, torus shells)
+  - Ω_z: Integer winding (motivic weight, conductor exponent, L-function order)
 
 Purpose: Navigate Langlands correspondences, verify functoriality, compute L-functions,
   match Galois representations with automorphic forms, detect base change.
@@ -40,7 +40,7 @@ class LanglandsConfig:
             "matches Galois-automorphic pairs, implements base change and descent."
         )
         self.domain = "Langlands program, automorphic forms, arithmetic geometry, Galois theory"
-        self.tuple = "D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_broad; Phi_c; H_inf; n_m; Omega_Z"
+        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Galois-automorphic bridge - Galois reps and automorphic forms communicate "
@@ -48,18 +48,18 @@ class LanglandsConfig:
             "base change verified by matching Satake parameters"
         )
         
-        self.D = "D_odot"
-        self.T = "T_odot"
-        self.R = "R_dagger"
-        self.P = "P_pm_sym"
-        self.F = "F_hbar"
-        self.K = "K_slow"
-        self.G = "G_aleph"
-        self.Gamma = "G_broad"
-        self.Phi = "Phi_c"
-        self.H = "H_inf"
-        self.S = "n_m"
-        self.Omega = "Omega_Z"
+        self.D = "Ð_ω"
+        self.T = "Þ_O"
+        self.R = "Ř_Ť"
+        self.P = "Φ_}"
+        self.F = "ƒ_ż"
+        self.K = "Ç_@"
+        self.G = "Γ_ʔ"
+        self.Gamma = "ɢ_Ş"
+        self.Phi = "φ̂_ÿ"
+        self.H = "Ħ_!"
+        self.S = "Σ_ï"
+        self.Omega = "Ω_z"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -393,8 +393,8 @@ def cmd_l_function(rep_name, s_value):
 
     print()
     print("─" * 55)
-    print("Grammar: Omega_Z (order of zero/pole ∈ ℤ), F_hbar (functional eq = exact)")
-    print("         Phi_c (self-modeling: L-group encodes its own dual)")
+    print("Grammar: Ω_z (order of zero/pole ∈ ℤ), ƒ_ż (functional eq = exact)")
+    print("         φ̂_ÿ (self-modeling: L-group encodes its own dual)")
 
 
 def main():

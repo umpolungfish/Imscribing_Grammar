@@ -5,7 +5,7 @@ Encodes D_∞ systems as sequences of step-tuples rather than steady-state
 snapshots. Validates:
   1. Axiom Continuity — consecutive steps satisfy axioms relative to prior step
   2. Axiom 6 Compliance — the full sequence contains a legitimate reset
-  3. Kinetic Traps — steps where K_new = K_trap relative to prior state
+  3. Kinetic Traps — steps where K_new = K_teshlig relative to prior state
 
 See IG_TRAJECTORY.md for protocol specification.
 """
@@ -47,7 +47,7 @@ class ContinuityCheckResult:
     step_b: str
     mass_balance_ok: bool     # S primitive consistency
     axiom4_ok: bool           # Sequential grammar: D_∞ or R_‡ present
-    kinetic_accessible: bool  # No K_trap without noted bypass
+    kinetic_accessible: bool  # No K_teshlig without noted bypass
     issues: List[str] = field(default_factory=list)
 
     @property
@@ -90,7 +90,7 @@ class TrajectoryValidationResult:
     continuity_results: List[ContinuityCheckResult]
     reset_verified: bool
     reset_step: Optional[str]
-    kinetic_traps: List[str]           # step names with K_trap or barrier > 100 kJ/mol
+    kinetic_traps: List[str]           # step names with K_teshlig or barrier > 100 kJ/mol
     criticality_per_step: List[StepCriticalityResult]
     axiom6_satisfied: bool
     overall_valid: bool
@@ -183,7 +183,7 @@ class TemporalSynthonAgent:
         Per IG_TRAJECTORY.md §3.2:
           1. Mass Balance — S primitive must be consistent across steps
           2. Axiom 4 — every step must have D_∞ or R_‡ (sequential grammar)
-          3. Kinetic Accessibility — K_trap or ΔG‡ > 100 kJ/mol flagged
+          3. Kinetic Accessibility — K_teshlig or ΔG‡ > 100 kJ/mol flagged
         """
         results: List[ContinuityCheckResult] = []
         for i in range(len(self._steps) - 1):
@@ -219,14 +219,14 @@ class TemporalSynthonAgent:
             if b.synthon.kinetic_character == KineticCharacter.TRAP:
                 kinetic_accessible = False
                 issues.append(
-                    f"K_trap at '{b.step_name}': pathway multiplicity — "
+                    f"K_teshlig at '{b.step_name}': pathway multiplicity — "
                     "run K-compatibility check (IG_HOTSWAP.md §2.2)"
                 )
             elif b.delta_g_ddagger is not None and b.delta_g_ddagger > 100.0:
                 kinetic_accessible = False
                 issues.append(
                     f"Barrier spike at '{b.step_name}': "
-                    f"ΔG‡ = {b.delta_g_ddagger:.1f} kJ/mol > 100 → K_slow flag"
+                    f"ΔG‡ = {b.delta_g_ddagger:.1f} kJ/mol > 100 → K_schwa flag"
                 )
             else:
                 kinetic_accessible = True

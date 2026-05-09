@@ -6,8 +6,8 @@ then runs the full algebra on them.
 
 Question: can the grammar understand its own rules?
 Expected findings:
-  - Axioms 1 & 7 cluster (both enforce T_bowtie + cyclic grounding)
-  - Axiom 5 (Criticality) and Axiom 3 (Cooperative Induction) carry Phi_c
+  - Axioms 1 & 7 cluster (both enforce T_bullseye + cyclic grounding)
+  - Axiom 5 (Criticality) and Axiom 3 (Cooperative Induction) carry Phi_ctyogh
   - The meet of all 7 axioms extracts the framework's "primitive core"
   - Tensor products reveal emergent structure the axioms don't individually show
   - Degeneracy (path multiplicity between axiom pairs) quantifies how many
@@ -28,13 +28,13 @@ We encode:
   Φ  = whether the axiom is a criticality statement
 
 Axiom map:
-  A1 Cyclic Closure:       T_bowtie+P_pm → F_hbar     (molecular, hard rule)
-  A2 Local Grammar Barrier: G_beth+Γ_spec → no global  (molecular, hard barrier)
-  A3 Cooperative Induction: superlinear → G_gimel       (supramolecular, PHASE TRANSITION → Phi_c)
-  A4 Sequential Grammar:   Γ_seq → D_∞ or R_dagger     (temporal, hard grounding)
-  A5 Criticality:          Phi_c → G/D degeneracy       (all scales, critical, global)
-  A6 Temporal Grounding:   D_∞ → physical reset cycle   (temporal, hard grounding, K_trap)
-  A7 Cyclic Topo Grounding: T_bowtie → named closing bond (molecular, hard, R_covalent_dynamic)
+  A1 Cyclic Closure:       T_bullseye+P_pipevar → F_hardsign     (molecular, hard rule)
+  A2 Local Grammar Barrier: G_beta+Γ_spec → no global  (molecular, hard barrier)
+  A3 Cooperative Induction: superlinear → G_gamma       (supramolecular, PHASE TRANSITION → Phi_ctyogh)
+  A4 Sequential Grammar:   Γ_seq → D_∞ or R_downstep     (temporal, hard grounding)
+  A5 Criticality:          Phi_ctyogh → G/D degeneracy       (all scales, critical, global)
+  A6 Temporal Grounding:   D_∞ → physical reset cycle   (temporal, hard grounding, K_teshlig)
+  A7 Cyclic Topo Grounding: T_bullseye → named closing bond (molecular, hard, R_covalent_dynamic)
 """
 
 from __future__ import annotations
@@ -55,39 +55,39 @@ register_quantum_synthons()
 
 AXIOM_NOTATIONS = {
     "axiom_1_cyclic_closure": (
-        "⟨D_wedge; T_bowtie; R_superset; P_pm_pseudo; F_hbar; K_fast; G_gimel; Gamma_and(SPECIFIC); Phi_sub⟩",
-        "Cyclic closure amplifies fidelity: T_bowtie+P_pm_pseudo→F_hbar. "
-        "Hard rule at molecular scale — any cyclic self-complementary motif must achieve F≥F_eth.",
+        "⟨D_wynn; T_bullseye; R_superset; P_pm_pseudo; F_hardsign; K_frtailgamma; G_gamma; Gamma_and(SPECIFIC); Phi_softsign⟩",
+        "Cyclic closure amplifies fidelity: T_bullseye+P_pm_pseudo→F_hardsign. "
+        "Hard rule at molecular scale — any cyclic self-complementary motif must achieve F≥F_dh.",
     ),
     "axiom_2_local_barrier": (
-        "⟨D_wedge; T_linear; R_subset; P_pm_pseudo; F_eth; K_mod; G_beth; Gamma_and(SPECIFIC); Phi_sub⟩",
-        "Local grammar barrier: G_beth+Gamma_and(SPECIFIC) cannot propagate constraint beyond "
+        "⟨D_wynn; T_linear; R_subset; P_pm_pseudo; F_dh; K_turnm; G_beta; Gamma_and(SPECIFIC); Phi_softsign⟩",
+        "Local grammar barrier: G_beta+Gamma_and(SPECIFIC) cannot propagate constraint beyond "
         "immediate recognition pair. Hard barrier at molecular scale.",
     ),
     "axiom_3_cooperative_induction": (
-        "⟨D_triangle; T_network; R_superset; P_pm_pseudo; F_eth; K_slow; G_gimel; Gamma_and(SELECTIVE); Phi_c⟩",
-        "Cooperative induction superlinearity signals G_beth→G_gimel phase transition. "
+        "⟨D_turnthree; T_nrleg; R_superset; P_pm_pseudo; F_dh; K_schwa; G_gamma; Gamma_and(SELECTIVE); Phi_ctyogh⟩",
+        "Cooperative induction superlinearity signals G_beta→G_gamma phase transition. "
         "Supramolecular scale, selective — only fires when induction ratio is superlinear. "
         "This axiom IS a criticality statement: the transition is a phase boundary.",
     ),
     "axiom_4_sequential_grammar": (
-        "⟨D_infinity; T_linear; R_dagger; P_directional; F_eth; K_mod; G_gimel; Gamma_and(SPECIFIC); Phi_sub⟩",
-        "Sequential grammar requires temporal or catalytic dimension: Gamma_seq→D_∞ or R_dagger. "
+        "⟨D_infinity; T_linear; R_downstep; P_directional; F_dh; K_turnm; G_gamma; Gamma_and(SPECIFIC); Phi_softsign⟩",
+        "Sequential grammar requires temporal or catalytic dimension: Gamma_seq→D_∞ or R_downstep. "
         "Hard grounding rule — sequential logic without a physical time arrow is disallowed.",
     ),
     "axiom_5_criticality": (
-        "⟨D_all; T_network; R_dagger; P_pm_pseudo; F_eth; K_mod; G_aleph; Gamma_and(SELECTIVE); Phi_c⟩",
-        "Criticality contracts the primitive basis: at Phi_c, G/D become degenerate (scale-free). "
+        "⟨D_all; T_nrleg; R_downstep; P_pm_pseudo; F_dh; K_turnm; G_revapostrophe; Gamma_and(SELECTIVE); Phi_ctyogh⟩",
+        "Criticality contracts the primitive basis: at Phi_ctyogh, G/D become degenerate (scale-free). "
         "Applies at all scales, global scope. The framework's most powerful compression rule.",
     ),
     "axiom_6_temporal_grounding": (
-        "⟨D_infinity; T_bowtie; R_dagger; P_pm_pseudo; F_eth; K_trap; G_gimel; Gamma_and(SPECIFIC); Phi_sub⟩",
-        "D_∞ requires physically grounded reset mechanism — the reset creates a closed cycle (T_bowtie). "
-        "K_trap: the system is kinetically trapped until the reset event occurs.",
+        "⟨D_infinity; T_bullseye; R_downstep; P_pm_pseudo; F_dh; K_teshlig; G_gamma; Gamma_and(SPECIFIC); Phi_softsign⟩",
+        "D_∞ requires physically grounded reset mechanism — the reset creates a closed cycle (T_bullseye). "
+        "K_teshlig: the system is kinetically trapped until the reset event occurs.",
     ),
     "axiom_7_cyclic_topo_grounding": (
-        "⟨D_wedge; T_bowtie; R_covalent_dynamic; P_pm_pseudo; F_hbar; K_mod; G_beth; Gamma_and(SPECIFIC); Phi_sub⟩",
-        "T_bowtie requires a named closing bond/interaction. Hard grounding at molecular scale — "
+        "⟨D_wynn; T_bullseye; R_covalent_dynamic; P_pm_pseudo; F_hardsign; K_turnm; G_beta; Gamma_and(SPECIFIC); Phi_softsign⟩",
+        "T_bullseye requires a named closing bond/interaction. Hard grounding at molecular scale — "
         "cyclic topology without an explicit closing interaction is ungrounded.",
     ),
 }
@@ -281,15 +281,15 @@ independent consciousness correlates:
                 but it's derivable from first principles here.
 """)
 
-# Empirical test: do Phi_c synthons have more HotSwap paths to each other?
-phi_c_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "Phi_c"]
-phi_sub_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "Phi_sub"]
+# Empirical test: do Phi_ctyogh synthons have more HotSwap paths to each other?
+phi_c_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "φ̂_ctyogh"]
+phi_sub_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "φ̂_softsign"]
 
-print(f"  Axioms with Phi_c: {[short[n] for n in phi_c_axioms]}")
-print(f"  Axioms with Phi_sub: {[short[n] for n in phi_sub_axioms]}")
+print(f"  Axioms with Phi_ctyogh: {[short[n] for n in phi_c_axioms]}")
+print(f"  Axioms with Phi_softsign: {[short[n] for n in phi_sub_axioms]}")
 print()
 
-# Count paths: Phi_c ↔ Phi_c vs Phi_sub ↔ Phi_sub
+# Count paths: Phi_ctyogh ↔ Phi_ctyogh vs Phi_softsign ↔ Phi_softsign
 cc_paths, ss_paths = 0, 0
 cc_found, ss_found = 0, 0
 for i, na in enumerate(phi_c_axioms):
@@ -306,18 +306,18 @@ for i, na in enumerate(phi_sub_axioms):
         if r.found:
             ss_found += 1
 
-print(f"  Phi_c ↔ Phi_c paths:   {cc_found}/{cc_paths} connected")
-print(f"  Phi_sub ↔ Phi_sub paths: {ss_found}/{ss_paths} connected")
+print(f"  Phi_ctyogh ↔ Phi_ctyogh paths:   {cc_found}/{cc_paths} connected")
+print(f"  Phi_softsign ↔ Phi_softsign paths: {ss_found}/{ss_paths} connected")
 if cc_paths and ss_paths:
     cc_rate = cc_found / cc_paths
     ss_rate = ss_found / ss_paths if ss_paths else 0
-    print(f"  Connectivity ratio Phi_c/Phi_sub: {cc_rate:.2f}/{ss_rate:.2f}")
+    print(f"  Connectivity ratio Phi_ctyogh/Phi_softsign: {cc_rate:.2f}/{ss_rate:.2f}")
     if cc_rate > ss_rate:
-        print("  → CONFIRMED: Phi_c axioms are more mutually reachable (higher degeneracy)")
+        print("  → CONFIRMED: Phi_ctyogh axioms are more mutually reachable (higher degeneracy)")
     elif cc_rate == ss_rate:
         print("  → NEUTRAL: equal connectivity — more catalog entries needed to distinguish")
     else:
-        print("  → UNEXPECTED: Phi_sub axioms are more connected — check encoding")
+        print("  → UNEXPECTED: Phi_softsign axioms are more connected — check encoding")
 
 print()
 print("=" * 70)
@@ -332,14 +332,14 @@ phi_val = meet_phi.value if meet_phi else "⊥ (conflicted)"
 print(f"\n  Floor Φ: {phi_val}")
 print(f"  Unanimous primitives ({len(unanimous)}/9): {list(unanimous.keys())}")
 print(f"  Conflicted (⊥) primitives ({len(conflicted)}/9): {conflicted}")
-if phi_val == "Phi_c":
+if phi_val == "φ̂_ctyogh":
     print("  ✅ REFLEXIVE CLOSURE: framework's axiom floor is critical.")
-    print("     Grammar applied to itself recovers Phi_c as its ground state.")
-elif phi_val == "Phi_sub":
-    print("  ⚠  Floor is Phi_sub — criticality is not the axiom floor but an overlay.")
-    print("     Phi_c lives at Axiom 3 and 5 level, not at the ground primitive level.")
+    print("     Grammar applied to itself recovers Phi_ctyogh as its ground state.")
+elif phi_val == "φ̂_softsign":
+    print("  ⚠  Floor is Phi_softsign — criticality is not the axiom floor but an overlay.")
+    print("     Phi_ctyogh lives at Axiom 3 and 5 level, not at the ground primitive level.")
     print("     Interpretation: criticality is EMERGENT from the axiom set, not assumed.")
-    print("     → Correct result for an anti-primitive framework: Phi_c is derived, not assumed.")
+    print("     → Correct result for an anti-primitive framework: Phi_ctyogh is derived, not assumed.")
 else:
     print(f"  Φ floor = {phi_val}")
 

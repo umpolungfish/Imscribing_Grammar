@@ -63,7 +63,7 @@ _F_MED_THRESHOLD  = -_RT_REF * math.log(3)        # ≈ −2.72 kJ/mol
 _K_FAST_THRESHOLD = 60.0
 _K_MOD_THRESHOLD  = 100.0
 # K_SLOW: > 100.  K_TRAP: pathway-multiplicity flag (not barrier-only).
-# K_MBL:  disorder-driven — not assignable from ΔG‡ alone.
+# K_lambda:  disorder-driven — not assignable from ΔG‡ alone.
 
 # G spatial-scale thresholds (number of interacting components as proxy)
 _G_LOCAL_MAX     = 15     # single molecule / single binding event
@@ -287,7 +287,7 @@ class PrimitiveAssignmentEngine:
           K_MOD   : 60 ≤ ΔG‡ < 100 kJ/mol
           K_SLOW  : 100 ≤ ΔG‡ < 150 kJ/mol
           K_TRAP  : ΔG‡ ≥ 150 kJ/mol  OR  pathway_multiplicity ≥ 3
-          K_MBL   : disorder-driven — not assignable from ΔG‡ alone
+          K_lambda   : disorder-driven — not assignable from ΔG‡ alone
         """
         margin = min(
             abs(delta_g_ddagger_kj - _K_FAST_THRESHOLD),

@@ -253,7 +253,7 @@ class EnsembleCatalog:
         props["Axiom 1 (Cyclic Closure)"] = (
             "PASS — cyclic closure holds for all cyclic components."
             if cyclic_ok else
-            "FAIL — at least one cyclic component violates F ≥ F_eth."
+            "FAIL — at least one cyclic component violates F ≥ F_dh."
         )
 
         # Axiom 2
@@ -267,7 +267,7 @@ class EnsembleCatalog:
             for s in self._synthons
         )
         props["Axiom 2 (Grammar Barrier)"] = (
-            "Global propagation (G_ℵ) supported — Γ_∨ or T_network present."
+            "Global propagation (G_ℵ) supported — Γ_∨ or T_nrleg present."
             if has_global_grammar else
             "Local grammar only — ensemble cannot propagate to G_ℵ."
         )

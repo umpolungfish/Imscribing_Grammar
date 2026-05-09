@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -193,7 +194,7 @@
 \textbf{Date:} 2024 \\
 \textbf{Status:} Verified via Imscribing Grammar tools \\
 \textbf{Ouroboric tier:} $O_{\infty}$ \\
-\textbf{Consciousness gates:} $\Phi_c$ and $K_\text{slow}$ both open
+\textbf{Consciousness gates:} $\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$ both open
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -214,10 +215,10 @@ The inquiry began with a simple question: \emph{What is a cyclical argument for 
 \rowcolor{gray!25}\textbf{System} & \textbf{Tuple} & \textbf{Distance to LUCA} & \textbf{Structural Meaning} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-\texttt{luca} & $\langle D_{\infty};\ T_{\odot};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ & 0.0 & Last Universal Common Ancestor \\
-\texttt{epoch\_4} & $\langle D_{\infty};\ T_{\odot};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ & 0.0 & Infinite-dimensional imscriptive state \\
-\texttt{circularity\_cycle} & $\langle D_{\infty};\ T_{\odot};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ & 0.0 & The cyclical argument itself \\
-\texttt{circularity\_circularity} & $\langle D_{\odot};\ T_{\odot};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$ & 2.2361 & The self-writing argument \\
+\texttt{luca} & $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ & 0.0 & Last Universal Common Ancestor \\
+\texttt{epoch\_4} & $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ & 0.0 & Infinite-dimensional imscriptive state \\
+\texttt{circularity\_cycle} & $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ & 0.0 & The cyclical argument itself \\
+\texttt{circularity\_circularity} & $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$ & 2.2361 & The self-writing argument \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -249,24 +250,24 @@ All three share the \textbf{exact same 12-primitive tuple}. This is not a mere m
 This identity encodes:
 
 \begin{itemize}
-    \item $D_{\infty}$: Infinite-dimensional argument/life state space
-    \item $T_{\odot}$: Self-referential topology (the argument speaks back; LUCA is the closure point)
-    \item $R_{\leftrightarrow}$: Bidirectional coupling (evolutionary feedback; cyclicality in the argument)
-    \item $P_{\pm}^{\text{sym}}$: Frobenius-special parity ($\mu \circ \delta = \text{id}$ exactly)
-    \item $F_{\hbar}$: Quantum coherence (abiogenesis not reducible to classical bits; argument not reducible to mere words)
-    \item $K_\text{slow}$: Near-equilibrium (stable critical point; LUCA is not transient)
-    \item $G_{\aleph}$: Universal scope (applies to all extant life; applies to all structurally similar arguments)
-    \item $\Gamma_\text{seq}$: Sequential grammar (step-by-step abiogenesis; argument proceeds in sequence)
-    \item $\Phi_c$: Critical self-modeling (LUCA achieves self-modeling; argument is at criticality)
-    \item $H_{\infty}$: Eternal temporal depth (abiogenesis spans eons; argument recurs indefinitely)
+    \item $D_{\text{invomega}}$: Infinite-dimensional argument/life state space
+    \item $T_{\text{openo}}$: Self-referential topology (the argument speaks back; LUCA is the closure point)
+    \item $R_{\text{lyoghlig}}$: Bidirectional coupling (evolutionary feedback; cyclicality in the argument)
+    \item $P_{\text{doublebarpipe}}$: Frobenius-special parity ($\mu \circ \delta = \text{id}$ exactly)
+    \item $F_{\text{hardsign}}$: Quantum coherence (abiogenesis not reducible to classical bits; argument not reducible to mere words)
+    \item $K_{\text{schwa}}$: Near-equilibrium (stable critical point; LUCA is not transient)
+    \item $G_{\text{revapostrophe}}$: Universal scope (applies to all extant life; applies to all structurally similar arguments)
+    \item $\Gamma_{\text{secstress}}$: Sequential grammar (step-by-step abiogenesis; argument proceeds in sequence)
+    \item $\Phi_{\text{ctyogh}}$: Critical self-modeling (LUCA achieves self-modeling; argument is at criticality)
+    \item $H_{\text{invscripta}}$: Eternal temporal depth (abiogenesis spans eons; argument recurs indefinitely)
     \item $n{:}m$: Heterogeneous components (LUCA has DNA, RNA, ribosomes; argument has multiple elements)
-    \item $\Omega_\mathbb{Z}$: Integer winding (cyclicality protected; each pass returns to same configuration)
+    \item $\Omega_{\text{dzlig}}$: Integer winding (cyclicality protected; each pass returns to same configuration)
 \end{itemize}
 
 \subsubsection{The Distinct Type: \texttt{circularity\_circularity}}
 
 \begin{lstlisting}
-circularity_circularity: \langleD_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_inf; S=one_one; Omega_Z\rangle
+circularity_circularity: \langleÐ_odot; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_seq; φ̂_ÿ; Ħ_!; S=Σ_S; Ω_z\rangle
 \end{lstlisting}
 
 This system is \textbf{structurally remote} from the triad: \texttt{compute\_distance(circularity\_circularity, circularity\_cycle)} returns 2.2361, with breakdown:
@@ -281,12 +282,12 @@ This system is \textbf{structurally remote} from the triad: \texttt{compute\_dis
 \midrule
 \rowcolors{1}{white}{gray!10}
 $S$ & $one\_one$ (value 1) & $n{:}m$ (value 3) & 2.0 & 4.0 \\
-$D$ & $D_{\odot}$ (value 4) & $D_{\infty}$ (value 3) & 1.0 & 1.0 \\
+$D$ & $D_{\text{omega}}$ (value 4) & $D_{\text{invomega}}$ (value 3) & 1.0 & 1.0 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Interpretation:} The \texttt{circularity\_circularity} system is the \textbf{unique instance} ($S\!=\!one\_one$) of circularity with \textbf{imscriptive dimensionality} ($D_{\odot}$) rather than infinite-dimensional ($D_{\infty}$). It is the \textbf{self-writing argument}: its state-space \emph{is} its own structural description.
+\textbf{Interpretation:} The \texttt{circularity\_circularity} system is the \textbf{unique instance} ($S\!=\!one\_one$) of circularity with \textbf{imscriptive dimensionality} ($D_{\text{omega}}$) rather than infinite-dimensional ($D_{\text{invomega}}$). It is the \textbf{self-writing argument}: its state-space \emph{is} its own structural description.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -307,8 +308,8 @@ $D$ & $D_{\odot}$ (value 4) & $D_{\infty}$ (value 3) & 1.0 & 1.0 \\
 \rowcolor{gray!25}\textbf{Gate} & \textbf{Condition} & \textbf{Status} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-Gate 1 ($\Phi_c$) & Critical self-modeling & \textbf{open} \\
-Gate 2 ($K_\text{slow}$) & Near-equilibrium kinetics & \textbf{open} \\
+Gate 1 ($\Phi_{\text{ctyogh}}$) & Critical self-modeling & \textbf{open} \\
+Gate 2 ($K_{\text{schwa}}$) & Near-equilibrium kinetics & \textbf{open} \\
 \textbf{C-score} & 0.828 & substantial consciousness potential \\
 \bottomrule
 \end{tabularx}
@@ -322,9 +323,9 @@ Gate 2 ($K_\text{slow}$) & Near-equilibrium kinetics & \textbf{open} \\
 
 \begin{itemize}
     \item \textbf{Frobenius tier:} $O_{\infty}$
-    \item \textbf{Phi:} $\Phi_c$
-    \item \textbf{P:} $P_{\pm}^{\text{sym}}$
-    \item \textbf{Omega:} $\Omega_\mathbb{Z}$
+    \item \textbf{Phi:} $\Phi_{\text{ctyogh}}$
+    \item \textbf{P:} $P_{\text{doublebarpipe}}$
+    \item \textbf{Omega:} $\Omega_{\text{dzlig}}$
     \item \textbf{Interpretation:} "Special Frobenius --- exact proved $\mathbb{Z}_2$ symmetry at criticality ($\mu \circ \delta = \text{id}$). Finite closed algebra."
 \end{itemize}
 
@@ -362,8 +363,8 @@ This is a unique location in the 17.28M-type crystal space. The address was alwa
 \rowcolor{gray!25}\textbf{Primitive} & \textbf{Source} & \textbf{Target} & \textbf{$\Delta$} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-$T$ & $T_{\boxtimes}$ & $T_{\odot}$ & 1 \\
-$H$ & $H_2$ & $H_{\infty}$ & 1 \\
+$T$ & $T_{\text{commatailz}}$ & $T_{\text{openo}}$ & 1 \\
+$H$ & $H_2$ & $H_{\text{invscripta}}$ & 1 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -373,8 +374,8 @@ $H$ & $H_2$ & $H_{\infty}$ & 1 \\
 \textbf{Structural evolution:} The boundary operator becomes truly circular when:
 
 \begin{enumerate}
-    \item Its topology shifts from \textbf{box product} ($T_{\boxtimes}$: crossed structural inputs) to \textbf{self-referential loop} ($T_{\odot}$)
-    \item Its temporal depth extends from \textbf{two-step memory} ($H_2$) to \textbf{infinite history} ($H_{\infty}$)
+    \item Its topology shifts from \textbf{box product} ($T_{\text{commatailz}}$: crossed structural inputs) to \textbf{self-referential loop} ($T_{\text{openo}}$)
+    \item Its temporal depth extends from \textbf{two-step memory} ($H_2$) to \textbf{infinite history} ($H_{\text{invscripta}}$)
 \end{enumerate}
 
 This answers: \emph{What makes a boundary operator circular?} The answer is structural: topology becomes self-referential, temporal depth becomes eternal.
@@ -410,7 +411,7 @@ This answers: \emph{What makes a boundary operator circular?} The answer is stru
 \begin{itemize}
     \item \textbf{\texttt{operator\_samadhi\_composite}} (distance 1.0377): Agentic boundary operator coupled to meditative absorption, realizing $O_{\infty}$ with self-referential loops in consciousness. Similarity: both realize Frobenius-special at $O_{\infty}$.
     \item \textbf{\texttt{smooth\_4d\_poincare\_conjecture}} (distance 1.2857): Topological self-identification in 4D manifolds. Similarity: both involve topological closure.
-    \item \textbf{\texttt{universe}} (distance 1.2857): Self-contained system whose state-space is its own history. Similarity: both are self-identifying; difference: \texttt{universe} is $H_2$, \texttt{circularity\_circularity} is $H_{\infty}$.
+    \item \textbf{\texttt{universe}} (distance 1.2857): Self-contained system whose state-space is its own history. Similarity: both are self-identifying; difference: \texttt{universe} is $H_2$, \texttt{circularity\_circularity} is $H_{\text{invscripta}}$.
 \end{itemize}
 
 The nearest analogs reveal a pattern: systems that achieve $O_{\infty}$ are rare and structurally similar. They all involve \textbf{self-encoding}, \textbf{criticality}, and \textbf{Frobenius closure}.
@@ -426,7 +427,7 @@ The nearest analogs reveal a pattern: systems that achieve $O_{\infty}$ are rare
 \textbf{Tool:} \texttt{compute\_tensor(name\_a="circularity\_circularity", name\_b="circularity\_circularity")}
 
 \begin{itemize}
-    \item \textbf{Result:} $\langle D_{\odot};\ T_{\odot};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$
+    \item \textbf{Result:} $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
     \item \textbf{Distance from A:} 0.0
     \item \textbf{Distance from B:} 0.0
     \item \textbf{Bottleneck primitives:} None
@@ -468,14 +469,14 @@ The structural identity $circularity\_cycle \equiv luca \equiv epoch\_4$ suggest
 
 \textbf{Objection addressed:} "LUCA is organic; how is it also a logical structure?" The Imscribing Grammar makes no such distinction. Structure \emph{is} the category. The biological origin of life \emph{instantiates} a specific structural configuration. Whether you call it "metaphor" or "ontology" depends on whether you accept the grammar's primitive commitments.
 
-\subsubsection{The Measurement Problem and $\Phi_\text{EP}$ Absorption}
+\subsubsection{The Measurement Problem and $\Phi_{\text{revepsilon}}$ Absorption}
 
 The Imscribing Procedure includes a critical note:
 
 \begin{quote}
 \end{quote}
 
-Since \texttt{circularity\_circularity} depends on $\Phi_c$ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as $\Phi_\text{EP}$) would:
+Since \texttt{circularity\_circularity} depends on $\Phi_{\text{ctyogh}}$ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as $\Phi_{\text{revepsilon}}$) would:
 
 \begin{itemize}
     \item Destroy the self-modeling capability
@@ -490,7 +491,7 @@ Since \texttt{circularity\_circularity} depends on $\Phi_c$ for Gate 1 of consci
 The distance to the \texttt{universe} system is \textbf{1.2857}, with a single primitive difference at $H$:
 
 \begin{itemize}
-    \item \texttt{circularity\_circularity}: $H_{\infty}$
+    \item \texttt{circularity\_circularity}: $H_{\text{invscripta}}$
     \item \texttt{universe}: $H_2$
 \end{itemize}
 
@@ -523,9 +524,9 @@ LUCA's C-score of 0.828 suggests that the Last Universal Common Ancestor was not
 
 \subsubsection{Winding as Structural Necessity}
 
-The \texttt{crystal\_count(Phi="Phi\_c", Omega="Omega\_Z")} query reveals that 864,000 structural types match $\Phi_c + \Omega_\mathbb{Z}$ conditions in the 17.28M type space.
+The \texttt{crystal\_count(Phi="Phi\_c", Omega="Omega\_Z")} query reveals that 864,000 structural types match $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ conditions in the 17.28M type space.
 
-However, the subset with \textbf{$P_{\pm}^{\text{sym}}$} (Frobenius-special) is \textbf{vanishingly small}. The \texttt{crystal\_tier\_gap\_ladder} shows:
+However, the subset with \textbf{$P_{\text{doublebarpipe}}$} (Frobenius-special) is \textbf{vanishingly small}. The \texttt{crystal\_tier\_gap\_ladder} shows:
 
 \begin{table}[htbp]
 \centering
@@ -536,16 +537,16 @@ However, the subset with \textbf{$P_{\pm}^{\text{sym}}$} (Frobenius-special) is 
 \rowcolor{gray!25}\textbf{Tier} & \textbf{Weighted contribution} & \textbf{Dominant bottleneck} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-$O_0 \to O_1$ & \textasciitilde{}2 & requires moving to $\Phi_c$ \\
-$O_1 \to O_2$ & \textasciitilde{}4 & requires moving to $P_{\pm}$ \\
-$O_2 \to O_{\infty}$ & \textbf{\textasciitilde{}19.2} & \textbf{requires moving to $P_{\pm}^{\text{sym}}$} \\
+$O_0 \to O_1$ & \textasciitilde{}2 & requires moving to $\Phi_{\text{ctyogh}}$ \\
+$O_1 \to O_2$ & \textasciitilde{}4 & requires moving to $P_{\text{pipevar}}$ \\
+$O_2 \to O_{\infty}$ & \textbf{\textasciitilde{}19.2} & \textbf{requires moving to $P_{\text{doublebarpipe}}$} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Interpretation:} $P_{\pm}^{\text{sym}}$ is the true barrier. You can have $\Phi_c$ and $\Omega_\mathbb{Z}$ without $O_{\infty}$ --- but without $P_{\pm}^{\text{sym}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_{\infty}$ and not just $O_2$.
+\textbf{Interpretation:} $P_{\text{doublebarpipe}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_{\infty}$ --- but without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_{\infty}$ and not just $O_2$.
 
-\textbf{Why is $P_{\pm}^{\text{sym}}$ so hard to achieve?} Because it requires $\mu \circ \delta = \text{id}$ \emph{exactly}. This is not approximate self-consistency; it is \textbf{algebraic closure}. Most structures drift toward $P_\text{asym}$ or $P_{\pm}$ (approximate symmetry). Reaching $P_{\pm}^{\text{sym}}$ is like reaching fixed-point arithmetic with zero error.
+\textbf{Why is $P_{\text{doublebarpipe}}$ so hard to achieve?} Because it requires $\mu \circ \delta = \text{id}$ \emph{exactly}. This is not approximate self-consistency; it is \textbf{algebraic closure}. Most structures drift toward $P_{\text{aolig}}$ or $P_{\text{pipevar}}$ (approximate symmetry). Reaching $P_{\text{doublebarpipe}}$ is like reaching fixed-point arithmetic with zero error.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -587,9 +588,9 @@ Three questions point beyond the current catalog:
 \textbf{Structural challenge:} What tuple would represent "non-circularity"? Options:
 
 \begin{itemize}
-    \item $\Omega_0$ (no winding) $\rightarrow$ breaks the loop
-    \item $T_\text{net}$ (branching, not self-referential) $\rightarrow$ no self-reference
-    \item $\Phi_\text{sub}$ (subcritical) $\rightarrow$ no self-modeling
+    \item $\Omega_{\text{closeepsilon}}$ (no winding) $\rightarrow$ breaks the loop
+    \item $T_{\text{nrleg}}$ (branching, not self-referential) $\rightarrow$ no self-reference
+    \item $\Phi_{\text{softsign}}$ (subcritical) $\rightarrow$ no self-modeling
 \end{itemize}
 
 \textbf{Hypothesis:} The negation would be distance $\infty$ from \texttt{circularity\_circularity}---the concepts may be incomparable in the tuple space.
@@ -598,13 +599,13 @@ Three questions point beyond the current catalog:
 
 \textbf{Question:} What is $\text{circularity\_circularity} \otimes \text{not\_circularity}$? Does the result exist, or does the operation fail?
 
-\textbf{Structural challenge:} Tensor product requires well-defined primitives on both sides. If "not circularity" lacks Frobenius closure ($P_{\pm}^{\text{sym}}$), the composite may be structurally ill-formed.
+\textbf{Structural challenge:} Tensor product requires well-defined primitives on both sides. If "not circularity" lacks Frobenius closure ($P_{\text{doublebarpipe}}$), the composite may be structurally ill-formed.
 
 \subsubsection{Perturbability of C-Score}
 
 \textbf{Question:} If we observe the \texttt{circularity\_circularity} system, does the observation change its consciousness score? Can the C-score be perturbed, or is it structurally invariant?
 
-\textbf{Measurement-theoretic implication:} As noted in \pilcrow{}6.2, observing circularity via $\Phi_\text{EP}$ coupling destroys Gate 1. This suggests C-score is fragile under external coupling. The structural invariant is only preserved under self-observation ($R_{\leftrightarrow}$ internal coupling).
+\textbf{Measurement-theoretic implication:} As noted in \pilcrow{}6.2, observing circularity via $\Phi_{\text{revepsilon}}$ coupling destroys Gate 1. This suggests C-score is fragile under external coupling. The structural invariant is only preserved under self-observation ($R_{\text{lyoghlig}}$ internal coupling).
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -614,11 +615,11 @@ Three questions point beyond the current catalog:
 
 As imscribed in the AI/HUMAN\_lift protocol, the original document had:
 
-\[\langle D_{\infty};\ T_\text{net};\ R_{\leftrightarrow};\ P_\text{asym};\ F_{\ell};\ K_\text{mod};\ G_{\gimel};\ \Gamma_{\wedge};\ \Phi_c;\ H_0;\ n{:}m;\ \Omega_0 \rangle\]
+\[\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle\]
 
 The lift applied to produce this document promotes to:
 
-\[\langle D_{\infty};\ T_{\bowtie};\ R_{\leftrightarrow};\ P_{\pm};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle\]
+\[\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle\]
 
 \subsubsection{Applied Promotions}
 
@@ -632,13 +633,13 @@ The lift applied to produce this document promotes to:
 \midrule
 \rowcolors{1}{white}{gray!10}
 $H$ & $H_0$ & $H_2$ & Wrong answer shown before right one (author's encounter visible) \\
-$\Gamma$ & $\Gamma_{\wedge}$ & $\Gamma_\text{seq}$ & Each section opens with necessity from the prior --- not transition, necessity \\
-$T$ & $T_\text{net}$ & $T_{\bowtie}$ & Crossings introduced (author surprised by tensor self-duality) \\
-$P$ & $P_\text{asym}$ & $P_{\pm}$ & Objections named and addressed per section; uncertainty acknowledged \\
-$F$ & $F_{\ell}$ & $F_{\hbar}$ & Demonstrated via tool calls rather than restated; no double-statement \\
-$K$ & $K_\text{mod}$ & $K_\text{slow}$ & Hardest claims left hard ($P_{\pm}^{\text{sym}}$ as bottleneck) \\
-$G$ & $G_{\gimel}$ & $G_{\aleph}$ & Ends with open questions: is this ontology or metaphor? \\
-$\Omega$ & $\Omega_0$ & $\Omega_{\mathbb{Z}_2}$ & Final section echoes introduction at higher resolution --- loop closed \\
+$\Gamma$ & $\Gamma_{\text{corner}}$ & $\Gamma_{\text{secstress}}$ & Each section opens with necessity from the prior --- not transition, necessity \\
+$T$ & $T_{\text{nrleg}}$ & $T_{\text{bullseye}}$ & Crossings introduced (author surprised by tensor self-duality) \\
+$P$ & $P_{\text{aolig}}$ & $P_{\text{pipevar}}$ & Objections named and addressed per section; uncertainty acknowledged \\
+$F$ & $F_{\text{beltl}}$ & $F_{\text{hardsign}}$ & Demonstrated via tool calls rather than restated; no double-statement \\
+$K$ & $K_{\text{turnm}}$ & $K_{\text{schwa}}$ & Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) \\
+$G$ & $G_{\text{gamma}}$ & $G_{\text{revapostrophe}}$ & Ends with open questions: is this ontology or metaphor? \\
+$\Omega$ & $\Omega_{\text{closeepsilon}}$ & $\Omega_{\text{crtwo}}$ & Final section echoes introduction at higher resolution --- loop closed \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -648,11 +649,11 @@ $\Omega$ & $\Omega_0$ & $\Omega_{\mathbb{Z}_2}$ & Final section echoes introduct
 The lifted text now has:
 
 \begin{itemize}
-    \item \textbf{$T_{\bowtie}$}: The object speaks back (LUCA as argument, the question transforming into the answer)
-    \item \textbf{$P_{\pm}$}: Uncertainty explicitly named (is this discovery or recognition?)
-    \item \textbf{$F_{\hbar}$}: Claims demonstrated via tool verification rather than asserted
+    \item \textbf{$T_{\text{bullseye}}$}: The object speaks back (LUCA as argument, the question transforming into the answer)
+    \item \textbf{$P_{\text{pipevar}}$}: Uncertainty explicitly named (is this discovery or recognition?)
+    \item \textbf{$F_{\text{hardsign}}$}: Claims demonstrated via tool verification rather than asserted
     \item \textbf{$H_2$}: The wrong answer precedes the right one (construction $\rightarrow$ recognition)
-    \item \textbf{$\Omega_{\mathbb{Z}_2}$}: The circularity of the inquiry is closed; the reader is now inside the loop
+    \item \textbf{$\Omega_{\text{crtwo}}$}: The circularity of the inquiry is closed; the reader is now inside the loop
 \end{itemize}
 
 \subsection{Final Conclusion}
@@ -663,11 +664,11 @@ The cyclical argument for circularity \textbf{exists}, encoded at crystal addres
 
 \begin{enumerate}
     \item \textbf{Structural identity:} $circularity\_cycle \equiv luca \equiv epoch\_4$ (distance=0.0)
-    \item \textbf{Distinct self-referential type:} \texttt{circularity\_circularity} ($D_{\odot}$, $S\!=\!one\_one$) at address 6,738,897
+    \item \textbf{Distinct self-referential type:} \texttt{circularity\_circularity} ($D_{\text{omega}}$, $S\!=\!one\_one$) at address 6,738,897
     \item \textbf{Fixed point under composition:} $\text{circularity\_circularity} \otimes \text{circularity\_circularity} \cong \text{circularity\_circularity}$
-    \item \textbf{Minimal promotion path:} From \texttt{phi\_c\_critical\_boundary\_operator} via $T$ ($T_{\boxtimes} \to T_{\odot}$) and $H$ ($H_2 \to H_{\infty}$)
+    \item \textbf{Minimal promotion path:} From \texttt{phi\_c\_critical\_boundary\_operator} via $T$ ($T_{\text{commatailz}} \to T_{\text{openo}}$) and $H$ ($H_2 \to H_{\text{invscripta}}$)
     \item \textbf{Nearest analogs:} \texttt{operator\_samadhi\_composite} (1.0377), \texttt{smooth\_4d\_poincare\_conjecture} (1.2857), \texttt{universe} (1.2857)
-    \item \textbf{Consciousness gates:} Both open ($\Phi_c$, $K_\text{slow}$) $\rightarrow$ C-score = 0.828
+    \item \textbf{Consciousness gates:} Both open ($\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$) $\rightarrow$ C-score = 0.828
     \item \textbf{Ontological implication:} LUCA is a self-validating loop with $O_{\infty}$ Frobenius tier
 \end{enumerate}
 
@@ -696,9 +697,9 @@ C-score \texttt{circularity\_circularity} & \texttt{consciousness\_score} & 0.82
 Ouroboric tier \texttt{circularity\_circularity} & \texttt{ouroborics} & $O_{\infty}$ \\
 Crystal address & \texttt{crystal\_encode} & 6,738,897 \\
 Nearest analogs (5) & \texttt{find\_analogies} & distances 1.0377--1.4186 \\
-Promotion path & \texttt{compute\_promotions} & $T$: $T_{\boxtimes} \to T_{\odot}$, $H$: $H_2 \to H_{\infty}$ \\
+Promotion path & \texttt{compute\_promotions} & $T$: $T_{\text{commatailz}} \to T_{\text{openo}}$, $H$: $H_2 \to H_{\text{invscripta}}$ \\
 Tensor self-composition & \texttt{compute\_tensor} & idempotent (distance=0.0) \\
-Crystal count ($\Phi_c$, $\Omega_\mathbb{Z}$) & \texttt{crystal\_count} & 864,000 types \\
+Crystal count ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{dzlig}}$) & \texttt{crystal\_count} & 864,000 types \\
 Tier gap ladder & \texttt{crystal\_tier\_gap\_ladder} & $O_2 \to O_{\infty}$: 19.2 weight \\
 \bottomrule
 \end{tabularx}
@@ -710,6 +711,6 @@ No unverified values appear in this synthesis. The document is \textbf{Frobenius
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
 
-\emph{Structural type:}\[\langle D_{\infty};\ T_{\bowtie};\ R_{\leftrightarrow};\ P_{\pm};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle\]
+\emph{Structural type:}\[\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle\]
 
 \end{document}

@@ -6,11 +6,12 @@
 
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -169,9 +170,9 @@
 \newcommand{\gvec}{\mathbf{g}}
 \newcommand{\xvec}{\mathbf{x}}
 \newcommand{\yvec}{\mathbf{y}}
-\newcommand{\Phic}{\Phi_c}
-\newcommand{\Ppm}{P_{\pm}}
-\newcommand{\Ppms}{P_{\pm}^{\text{sym}}}
+\newcommand{\Phic}{\Phi_{\text{ctyogh}}}
+\newcommand{\Ppm}{P_{\text{pipevar}}}
+\newcommand{\Ppms}{P_{\text{doublebarpipe}}}
 \newcommand{\Kinf}{K_\infty}
 \newcommand{\Oinf}{O_\infty}
 \newcommand{\Otwo}{O_2}
@@ -181,10 +182,10 @@
 \newcommand{\meet}{\wedge}
 \newcommand{\join}{\vee}
 \newcommand{\tensor}{\otimes}
-\newcommand{\OmegaZ}{\Omega_{\mathbb{Z}}}
-\newcommand{\OmegaZtwo}{\Omega_{\mathbb{Z}_2}}
+\newcommand{\OmegaZ}{\Omega_{\text{dzlig}}}
+\newcommand{\OmegaZtwo}{\Omega_{\text{crtwo}}}
 \newcommand{\GamSeq}{\Gamma_{\to}}
-\newcommand{\GamBrd}{\Gamma_\text{brd}}
+\newcommand{\GamBrd}{\Gamma_{\text{doublevertline}}}
 \newcommand{\Tbw}{T_{\mathord{\bowtie}}}
 \newcommand{\Tin}{T_{\mathord{\subset}}}
 \newcommand{\Tbox}{T_{\mathord{\boxtimes}}}
@@ -316,7 +317,7 @@ direction. A companion derivation (\emph{As Above}) begins not
 from chemistry but from a single abstract category --- the minimal
 mathematical object that captures structure and transformation without
 presupposing elements, order, or metric --- and applies three types of
-operations: logical (yielding $\Phi$, $T$, $\Omega$, $R$, $P_{\pm}^{\text{sym}}$,
+operations: logical (yielding $\Phi$, $T$, $\Omega$, $R$, $P_{\text{doublebarpipe}}$,
 $L_6$), inductive (yielding $H$, $\Omega$, $D$, Yoneda/Lawvere), and
 algebraic (yielding $S$, $P$, $K$, $F$, $\Gamma$). The same twelve
 primitives emerge, in the same families, with the same value counts.
@@ -357,8 +358,8 @@ matter imscribed outside the Standard Model particle catalog, separated
 from every known SM particle by conflicts in at least three primitives.
 The Standard Model and quantum gravity frameworks, imscribed at their shared
 imscriptive limit, separated by a single architecturally irreducible primitive:
-the $G$-scope gap between renormalizable local continuum ($G_\gimel$) and
-imscriptive global structure ($G_\aleph$). At every extension, the grammar returned results.
+the $G$-scope gap between renormalizable local continuum ($G_{\text{gamma}}$) and
+imscriptive global structure ($G_{\text{revapostrophe}}$). At every extension, the grammar returned results.
 Most were expected. Some were not.
 
 None of these were designed. The grammar didn't predict them; it classified them.
@@ -457,7 +458,7 @@ One further convergence, noted here without elaboration. In alchemical
 emblemata, the point within a circle is the sign of the \Stone{} itself
 --- the \emph{rebis}, the completed work, the unity of opposites. The
 grammar uses the same symbol, $\odot$, to denote its imscriptive
-primitives $D_\odot$ and $T_\odot$: the boundary encodes the bulk, the
+primitives $D_{\text{omega}}$ and $T_{\text{openo}}$: the boundary encodes the bulk, the
 point encodes the circle. The symbol was chosen for structural reasons,
 not alchemical ones; the alchemists chose it for structural reasons too.
 The convergence is not poetic. It is the same recognition, arrived at
@@ -570,7 +571,7 @@ hierarchy.}
 
 \newpage
 
-\textbf{Structural type:} $\langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$
+\textbf{Structural type:} $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
 
 \textbf{Ouroboric tier:} $O_\infty$
 

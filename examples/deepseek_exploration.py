@@ -9,11 +9,11 @@ Run:
     python examples/deepseek_exploration.py
 
 Sections:
-  1. Chelate effect — G_beth → G_gimel amplification, ξ_CP vs H-bond cooperativity
+  1. Chelate effect — G_beta → G_gamma amplification, ξ_CP vs H-bond cooperativity
   2. Water criticality — Varma probe with empirical ξ_r / ξ_τ data
   3. Formose reaction — Factor 7 check, why it is NOT a Φ_c candidate
   4. Cross-domain efficiency table — all known entries side by side
-  5. Axiom 1 forbidden-pair scan — T_⋈ + P_± + F_ell in the live catalog
+  5. Axiom 1 forbidden-pair scan — T_⋈ + P_± + F_beltl in the live catalog
   6. Mechanical bond I_angle estimate — DB24C8 steric cliff information content
 """
 
@@ -57,8 +57,8 @@ def fidelity_tier(r) -> str:
     """Map a ConstraintPropagationEfficiency result's fidelity float to a tier label."""
     f = r.fidelity
     if f >= 0.85:   return "HIGH (F_ℏ)"
-    elif f >= 0.55: return "MEDIUM (F_eth)"
-    else:            return "LOW (F_ell)"
+    elif f >= 0.55: return "MEDIUM (F_dh)"
+    else:            return "LOW (F_beltl)"
 
 def fidelity_tier_name(r) -> str:
     f = r.fidelity
@@ -86,7 +86,7 @@ def make_synthon(
 # Section 1 — Chelate Effect
 # =============================================================================
 
-header("1 · Chelate Effect: G_beth → G_gimel Amplification")
+header("1 · Chelate Effect: G_beta → G_gamma Amplification")
 
 info("Monodentate: [Zn(py)₂Cl₂] — two independent pyridine ligands")
 zn_mono = make_synthon(
@@ -166,7 +166,7 @@ else:
 header("2 · Water's Hydrogen Bond Network: Varma Probe")
 
 info("Encoding bulk liquid water as a supramolecular network synthon:")
-info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_fast, G_aleph, Γ_∨(BROAD), Φ_sub, n:m")
+info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, Γ_∨(BROAD), Φ_sub, n:m")
 info("  ΔG per H-bond ≈ -18 kJ/mol (gas-phase benchmark)")
 
 water = make_synthon(
@@ -248,7 +248,7 @@ bold("Testable: supercooled water or high pressure should show diverging ξ_r ma
 header("3 · Formose Reaction: Factor 7 Check")
 
 info("Encoding the formose aldol autocatalytic cycle:")
-info("  D_∞, T_⋈, R_‡, P_±^ψ, F_eth, K_mod, G_ג, Γ_→(SELECTIVE), Φ_sub, 1:1")
+info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), Φ_sub, 1:1")
 
 formose = make_synthon(
     name="formose_aldol_autocatalytic_cycle",
@@ -265,7 +265,7 @@ formose = make_synthon(
         "Formose reaction autocatalytic cycle: glycolaldehyde acts as autocatalyst for "
         "formaldehyde condensation. State: glycolaldehyde. Work: C-C bond formation via aldol "
         "addition. Reset: net consumption of formaldehyde, regeneration of glycolaldehyde. "
-        "Cycle: glycolaldehyde + 2 HCHO → 2 glycolaldehyde. F_eth: fidelity limited by "
+        "Cycle: glycolaldehyde + 2 HCHO → 2 glycolaldehyde. F_dh: fidelity limited by "
         "competing side reactions (many sugar isomers formed)."
     ),
 )
@@ -281,8 +281,8 @@ f7_conditions = {
         else [formose.dimensionality]
     ) or formose.dimensionality == Dimensionality.TEMPORAL,
     "T_⋈ present":   formose.topology == Topology.CYCLIC_BOWTIE,
-    "P_directional": formose.polarity == Polarity.DONOR_ACCEPTOR,
-    "F_hbar":        formose.fidelity == Fidelity.HIGH,
+    "Φ_directional": formose.polarity == Polarity.DONOR_ACCEPTOR,
+    "ƒ_hardsign":        formose.fidelity == Fidelity.HIGH,
 }
 
 if Table and console:
@@ -295,9 +295,9 @@ if Table and console:
     soai_vals = {
         "D_∞ present":   "✓",
         "T_⋈ present":   "✓",
-        "P_directional": "✓",
-        "F_hbar":        "✓",
-    } if soai else {"D_∞ present": "✓", "T_⋈ present": "✓", "P_directional": "✓", "F_hbar": "✓"}
+        "Φ_directional": "✓",
+        "ƒ_hardsign":        "✓",
+    } if soai else {"D_∞ present": "✓", "T_⋈ present": "✓", "Φ_directional": "✓", "ƒ_hardsign": "✓"}
     for cond, val in f7_conditions.items():
         f7t.add_row(cond, "✓" if val else "✗", soai_vals.get(cond, "?"), "ALL four required")
     console.print(f7t)
@@ -311,9 +311,9 @@ if f7_fires:
 else:
     missing = [k for k, v in f7_conditions.items() if not v]
     result(f"Factor 7 does NOT fire. Missing: {', '.join(missing)}")
-    result("Formose fails because F=F_eth (medium fidelity) — too many side reactions for sharp bifurcation.")
+    result("Formose fails because F=F_dh (medium fidelity) — too many side reactions for sharp bifurcation.")
     bold("Prediction: formose lacks the high-fidelity step needed for chiral amplification.")
-    bold("Intervention: introduce a metal template to enforce F_hbar → could enable chiral formose.")
+    bold("Intervention: introduce a metal template to enforce F_hardsign → could enable chiral formose.")
 
 
 # =============================================================================
@@ -356,15 +356,15 @@ if Table and console:
     for label, dg, xi, f_tier in rows:
         tier_note = ""
         if xi <= 8.5:  tier_note = "F_ℏ (HIGH)"
-        elif xi <= 11.0: tier_note = "F_eth (MED)"
-        else:            tier_note = "F_ell (LOW)"
+        elif xi <= 11.0: tier_note = "F_dh (MED)"
+        else:            tier_note = "F_beltl (LOW)"
         et.add_row(label, f"{dg:.1f}", f"{xi:.2f}", f_tier, tier_note)
     console.print(et)
 else:
     for label, dg, xi, f_tier in rows:
         print(f"  {xi:.2f} nats  {label}")
 
-result("Temporal synthons (proline, formose) sit in F_eth — not catastrophically worse than static assemblies.")
+result("Temporal synthons (proline, formose) sit in F_dh — not catastrophically worse than static assemblies.")
 result("Chelate and acid dimer share the same ξ_CP tier — DeepSeek's cross-domain prediction confirmed.")
 
 
@@ -372,7 +372,7 @@ result("Chelate and acid dimer share the same ξ_CP tier — DeepSeek's cross-do
 # Section 5 — Axiom 1 Forbidden-Pair Scan
 # =============================================================================
 
-header("5 · Axiom 1 Forbidden-Pair Scan: T_⋈ + P_± + F_ell in Catalog")
+header("5 · Axiom 1 Forbidden-Pair Scan: T_⋈ + P_± + F_beltl in Catalog")
 
 violations = []
 for s in global_catalog:
@@ -383,7 +383,7 @@ for s in global_catalog:
         violations.append(s)
 
 if violations:
-    warn(f"Found {len(violations)} Axiom 1 violation(s) — T_⋈ + P_± + F_ell:")
+    warn(f"Found {len(violations)} Axiom 1 violation(s) — T_⋈ + P_± + F_beltl:")
     if Table and console:
         vt = Table(title="Axiom 1 Violations")
         vt.add_column("Synthon", style="red")
@@ -399,7 +399,7 @@ if violations:
     bold("Each violation is either: (a) a misassignment that should be corrected, "
          "or (b) a genuine falsification of Axiom 1 requiring experimental verification.")
 else:
-    result("No Axiom 1 violations found in catalog — T_⋈ + P_± + F_ell is absent.")
+    result("No Axiom 1 violations found in catalog — T_⋈ + P_± + F_beltl is absent.")
     result("The axiom is not yet falsified by any registered entry.")
 
 
@@ -411,7 +411,7 @@ header("6 · Mechanical Bond Information Content (DB24C8 Steric Cliff)")
 
 info("DB24C8 pseudorotaxane: steric cliff → angular window σ_steric → I_angle")
 info("Framework encoding:")
-info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_mod, G_ב, Γ_∧(SPECIFIC), Φ_sub, 1:1")
+info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_turnm, G_ב, Γ_∧(SPECIFIC), Φ_sub, 1:1")
 
 # I_angle uses the solid-angle (3D cone) formula:
 #   I = log₂( 2 / (1 - cos(σ)) )
@@ -509,10 +509,10 @@ header("Summary of DeepSeek Predictions vs Framework Results")
 summary = [
     ("Chelate ≈ triple H-bond efficiency",  "ξ_CP within same F tier",                     "✓ Confirmed"),
     ("Water is Φ_c candidate",              "Varma probe > 0.40 (approaching)",             "✓ Approaching"),
-    ("Formose Factor 7 does not fire",       "F=F_eth blocks classical bifurcation gate",   "✓ Confirmed"),
-    ("Temporal ≈ spatial efficiency",        "Both in F_eth tier (not orders of magnitude)", "✓ Confirmed"),
+    ("Formose Factor 7 does not fire",       "F=F_dh blocks classical bifurcation gate",   "✓ Confirmed"),
+    ("Temporal ≈ spatial efficiency",        "Both in F_dh tier (not orders of magnitude)", "✓ Confirmed"),
     ("Mechanical bonds > H-bonds in I_bits", f"DB24C8 {I_db:.1f} bits vs H-bond {I_hbond:.1f} bits (solid-angle formula)", "✓ Confirmed"),
-    ("Axiom 1 not yet falsified",            "No T_⋈+P_±+F_ell entry in catalog",           "✓ Intact"),
+    ("Axiom 1 not yet falsified",            "No T_⋈+P_±+F_beltl entry in catalog",           "✓ Intact"),
 ]
 
 if Table and console:

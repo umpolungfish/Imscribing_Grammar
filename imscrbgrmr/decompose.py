@@ -759,7 +759,7 @@ def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> Compl
 
         # Condition 1: x ⊓ ctx = ⊥ → for meet-dominant (F, K) and G (join)
         # For G (join): meet is min → min(x, ctx) = 0 → x = 0 (LOCAL) always satisfies if ctx > 0
-        # For F, K: meet is min → min(x, ctx) = 0 → x = 0 (F_LOW or K_MBL)
+        # For F, K: meet is min → min(x, ctx) = 0 → x = 0 (F_LOW or K_lambda)
         if prim == "G":
             # Condition 1: for G (join), meet = min. min(x_g, ctx_g) = 0 → x_g = 0 = LOCAL if ctx_g > 0
             # But we want the MAXIMAL x that satisfies this: x_g < ctx_g (strictly less to get min = x_g... no)

@@ -13,7 +13,7 @@ synthons and ΔG values from QUANTIG.md Section VI:
 Reference values used throughout:
   carboxylic_acid_dimer  ΔG(298K, gas) = -12.0 kJ/mol  → ξ_CP ≈ 6.66 nats [HIGH]
   proline_aldol_cycle    ΔG(298K, gas) = -48.0 kJ/mol  → ξ_CP ≈ 9.21 nats [MEDIUM]
-                         ΔG‡(C–C bond formation)       = 97.0 kJ/mol (K_mod range)
+                         ΔG‡(C–C bond formation)       = 97.0 kJ/mol (K_turnm range)
 """
 
 import json
@@ -138,9 +138,9 @@ def demo_trajectory() -> None:
 
     # Build the three mechanistic steps of the proline aldol cycle
     # Reference: QUANTIG.md §VIII, proline_aldol_cycle entry
-    #   Step 1 — enamine formation  (K_fast,  ΔG ≈ -15 kJ/mol)
-    #   Step 2 — C–C bond formation (K_mod,   ΔG‡ = 97 kJ/mol — rate-determining)
-    #   Step 3 — hydrolysis/reset   (K_fast,  ΔG ≈ -25 kJ/mol, is_reset=True)
+    #   Step 1 — enamine formation  (K_frtailgamma,  ΔG ≈ -15 kJ/mol)
+    #   Step 2 — C–C bond formation (K_turnm,   ΔG‡ = 97 kJ/mol — rate-determining)
+    #   Step 3 — hydrolysis/reset   (K_frtailgamma,  ΔG ≈ -25 kJ/mol, is_reset=True)
 
     _base = dict(
         dimensionality=Dimensionality.TEMPORAL,
@@ -304,8 +304,8 @@ def demo_retrodesign() -> None:
     # --- 4b. Notation string decomposition (9-primitive format) ---
     subsection("4b. Decompose a hybrid D‐type notation string (depth=2)")
     notation = (
-        "⟨{D_triangle, D_infinity}; T_cage; R_superset+ddagger; "
-        "P_pm; F_eth; K_mod; G_gimel; Gamma_and(SELECTIVE); Phi_sub⟩"
+        "⟨{D_turnthree, D_infinity}; T_cage; R_superset+ddagger; "
+        "P_pipevar; F_dh; K_turnm; G_gamma; Gamma_and(SELECTIVE); Phi_softsign⟩"
     )
     tree2 = engine.decompose(notation, max_depth=2, prune_axioms=[1, 4, 6])
     print(f"  Notation            : {notation[:65]}…")

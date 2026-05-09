@@ -175,13 +175,13 @@ class CriticalityHuntingAgent(BaseAgent):
             target_xi_cp: Target ξ_CP (nats) for perturbation pathfinding.
                          Lower values correspond to more efficient, critical-like systems.
             top_n: Maximum number of candidates to analyse in depth.
-            optimize_primitives: Primitives to vary in pathfinding (default: ["F","G","T","Φ"]).
+            optimize_primitives: Primitives to vary in pathfinding (default: ["ƒ","Γ","Þ","Φ"]).
             include_already_critical: If True, include Φ_c entries in output.
 
         Returns:
             CriticalityHuntReport.
         """
-        optimize_primitives = optimize_primitives or ["F", "G", "T", "Φ"]
+        optimize_primitives = optimize_primitives or ["ƒ", "Γ", "Þ", "Φ"]
 
         # 1. Scan catalog
         approaching, already_critical, stats = self._scan_catalog(delta_g)
@@ -357,7 +357,7 @@ Key upgrade levers:
 - F HIGH + T_⋈ → tighter cyclic constraint → lower ξ_CP → approach criticality
 - G_ג (mesoscale) with cooperative induction → Axiom 3 G/D coupling
 - Φ_c explicit assignment via upgrade from Φ_sub
-- T_network topology enables scale-free propagation
+- Þ_6 topology enables scale-free propagation
 </background>
 
 <instructions>

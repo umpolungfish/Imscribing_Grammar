@@ -652,10 +652,10 @@ class SynthonCatalog:
                 kinetic_character=KineticCharacter.FAST,
                 granularity=Granularity.LOCAL,
                 grammar=InteractionGrammar.SELECTIVE_AND,
-                criticality_phase=Criticality.Phi_sub,
-                protection=Protection.Omega_0,
-                stoichiometry=Stoichiometry.one_one,
-                chirality=Chirality.H0,
+                criticality_phase=Criticality.Phi_softsign,
+                protection=Protection.Omega_closeepsilon,
+                stoichiometry=Stoichiometry.S_doublebaresh,
+                chirality=Chirality.H_closeomega,
                 description="Classic R₂²(8) hydrogen-bonded dimer",
             ),
             Synthon(
@@ -668,10 +668,10 @@ class SynthonCatalog:
                 kinetic_character=KineticCharacter.FAST,
                 granularity=Granularity.MESOSCALE,
                 grammar=InteractionGrammar.SPECIFIC_AND,
-                criticality_phase=Criticality.Phi_sub,
-                protection=Protection.Omega_0,
-                stoichiometry=Stoichiometry.one_one,
-                chirality=Chirality.H0,
+                criticality_phase=Criticality.Phi_softsign,
+                protection=Protection.Omega_closeepsilon,
+                stoichiometry=Stoichiometry.S_doublebaresh,
+                chirality=Chirality.H_closeomega,
                 description="Canonical DNA A-T base pair",
             ),
             Synthon(
@@ -684,10 +684,10 @@ class SynthonCatalog:
                 kinetic_character=KineticCharacter.MODERATE,
                 granularity=Granularity.MESOSCALE,
                 grammar=InteractionGrammar.SELECTIVE_SEQ,
-                criticality_phase=Criticality.Phi_sub,
-                protection=Protection.Omega_0,
+                criticality_phase=Criticality.Phi_softsign,
+                protection=Protection.Omega_closeepsilon,
                 stoichiometry=Stoichiometry.cat,
-                chirality=Chirality.H1,
+                chirality=Chirality.H_toneletterstem,
                 description="Proline-catalyzed aldol reaction cycle",
             ),
             Synthon(
@@ -700,10 +700,10 @@ class SynthonCatalog:
                 kinetic_character=KineticCharacter.MODERATE,
                 granularity=Granularity.LOCAL,
                 grammar=InteractionGrammar.SELECTIVE_AND,
-                criticality_phase=Criticality.Phi_sub,
-                protection=Protection.Omega_0,
-                stoichiometry=Stoichiometry.one_one,
-                chirality=Chirality.H0,
+                criticality_phase=Criticality.Phi_softsign,
+                protection=Protection.Omega_closeepsilon,
+                stoichiometry=Stoichiometry.S_doublebaresh,
+                chirality=Chirality.H_closeomega,
                 description="Nucleophilic enolate fragment",
             ),
             Synthon(
@@ -716,10 +716,10 @@ class SynthonCatalog:
                 kinetic_character=KineticCharacter.MODERATE,
                 granularity=Granularity.LOCAL,
                 grammar=InteractionGrammar.SELECTIVE_AND,
-                criticality_phase=Criticality.Phi_sub,
-                protection=Protection.Omega_0,
-                stoichiometry=Stoichiometry.one_one,
-                chirality=Chirality.H0,
+                criticality_phase=Criticality.Phi_softsign,
+                protection=Protection.Omega_closeepsilon,
+                stoichiometry=Stoichiometry.S_doublebaresh,
+                chirality=Chirality.H_closeomega,
                 description="Electrophilic carbonyl fragment",
             ),
         ]
@@ -776,7 +776,7 @@ def register_synthon(
     fidelity: str,
     granularity: str,
     interaction_grammar: str,
-    kinetic_character: str = "K_mod",  # NEW parameter
+    kinetic_character: str = "Ç_turnm",  # NEW parameter
     criticality_phase: Optional[str] = None,  # NEW parameter
     description: str = "",
     **metadata,
@@ -789,14 +789,14 @@ def register_synthon(
     Example:
         >>> register_synthon(
         ...     name="carboxylic_acid_dimer",
-        ...     dimensionality="D_wedge",
-        ...     topology="T_bowtie",
-        ...     recognition_mode="R_superset",
-        ...     polarity="P_pm_pseudo",
-        ...     fidelity="F_hbar",
-        ...     granularity="G_beth",
+        ...     dimensionality="Ð_wynn",
+        ...     topology="Þ_bullseye",
+        ...     recognition_mode="Ř_superset",
+        ...     polarity="Φ_pm_pseudo",
+        ...     fidelity="ƒ_hardsign",
+        ...     granularity="Γ_beta",
         ...     interaction_grammar="Gamma_and(SELECTIVE)",
-        ...     kinetic_character="K_fast",
+        ...     kinetic_character="Ç_frtailgamma",
         ...     description="Classic R₂²(8) hydrogen-bonded dimer",
         ... )
     """
@@ -811,8 +811,8 @@ def register_synthon(
     if criticality_phase:
         notation_str += f"; {criticality_phase}⟩"
     else:
-        # Use Phi_sub as default for backward compatibility
-        notation_str += "; Phi_sub⟩"
+        # Use Phi_softsign as default for backward compatibility
+        notation_str += "; Phi_softsign⟩"
     
     notation = SynthonNotation.parse(notation_str)
     synthon = notation.to_synthon(name, description, **metadata)

@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -313,7 +314,7 @@ As established in \pilcrow{}3.2, $G_2$ embeds in $E_8$ via the chain $G_2 \subse
 
 The exceptional Lie algebras are exactly $G_2$, $F_4$, $E_6$, $E_7$, and $E_8$. Among these, $G_2$ is the unique smallest, with dimension 14 and rank 2. No classical Lie algebra can substitute for $G_2$ in the exceptional chain because classical algebras lack the capacity to encode octonionic non-associativity. The non-associativity of $\mathbb{O}$ is the defining structural requirement for the entire exceptional series, and $G_2$ is the unique minimal symmetry group that stabilizes this non-associativity.
 
-To see this more formally: suppose there existed a group $H \subset E_8$ with $\dim(H) < 14$ that could serve as a vessel. Then $H$ would necessarily be of classical type ($A_n$, $B_n$, $C_n$, $D_n$). But classical Lie algebras are defined over associative composition algebras ($\mathbb{R}, \mathbb{C}, \mathbb{H}$) and cannot encode the non-associative structure of $\mathbb{O}$ that is essential to the definition of $E_8$. The root system of $E_8$ contains subsystems of type $G_2$ that cannot be reduced to any classical root system. Therefore $H$ cannot exist, and $G_2$ is minimal.
+To see this more formally: suppose there existed a group $H \subset E_8$ with $\dim(H) < 14$ that could serve as a vessel. Then $H$ would necessarily be of classical type ($A_n$, $B_n$, $C_n$, $Ð_n$). But classical Lie algebras are defined over associative composition algebras ($\mathbb{R}, \mathbb{C}, \mathbb{H}$) and cannot encode the non-associative structure of $\mathbb{O}$ that is essential to the definition of $E_8$. The root system of $E_8$ contains subsystems of type $G_2$ that cannot be reduced to any classical root system. Therefore $H$ cannot exist, and $G_2$ is minimal.
 
 \subsubsection{Necessity: $E_8$ Cannot Be Defined Without $G_2$}
 

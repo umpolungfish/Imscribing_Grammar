@@ -13,14 +13,14 @@ Lattice operations: meet(a, b), join(a, b) -> LatticeResult
   Ordered primitives (F, K, G, Omega, H): take min/max over ordinal.
   Categorical primitives (D, T, R, P, Gamma, Phi, S): require exact match
   or emit CONFLICT.
-  Special: Phi_c is absorbing under both meet and join.
+  Special: Phi_ctyogh is absorbing under both meet and join.
 
 Ordinal conventions match Lean Core.lean and the corrected models.py:
-  F: F_noise(0) < F_ell(1) < F_eth(2) < F_hbar(3)
-  K: K_MBL(0) < K_trap(1) < K_slow(2) < K_mod(3) < K_fast(4)
-  G: G_aleph(0) < G_beth(1) < G_gimel(2)   [aleph = finest, gimel = coarsest]
-  Omega: Omega_0(0) < Omega_Z2(1) < Omega_Z(2) < Omega_C(3) < Omega_NA(4)
-  H: H0(0) < H1(1) < H2(2) < H_inf(3)
+  F: F_noise(0) < F_beltl(1) < F_dh(2) < F_hardsign(3)
+  K: K_lambda(0) < K_teshlig(1) < K_schwa(2) < K_turnm(3) < K_frtailgamma(4)
+  G: G_revapostrophe(0) < G_beta(1) < G_gamma(2)   [aleph = finest, gimel = coarsest]
+  Omega: Omega_closeepsilon(0) < Omega_crtwo(1) < Omega_dzlig(2) < Omega_C(3) < Omega_turna(4)
+  H: H_closeomega(0) < H_toneletterstem(1) < H_turntwo(2) < H_invscripta(3)
 """
 from __future__ import annotations
 
@@ -50,43 +50,43 @@ from .models import (
 
 _F_ORD: Dict[Fidelity, int] = {
     Fidelity.F_noise: 0,
-    Fidelity.F_ell:   1,
-    Fidelity.F_eth:   2,
-    Fidelity.F_hbar:  3,
+    Fidelity.F_beltl:   1,
+    Fidelity.F_dh:   2,
+    Fidelity.F_hardsign:  3,
 }
 _F_BY_ORD = {v: k for k, v in _F_ORD.items()}
 
 _K_ORD: Dict[KineticChar, int] = {
-    KineticChar.K_MBL:  0,
-    KineticChar.K_trap: 1,
-    KineticChar.K_slow: 2,
-    KineticChar.K_mod:  3,
-    KineticChar.K_fast: 4,
+    KineticChar.K_lambda:  0,
+    KineticChar.K_teshlig: 1,
+    KineticChar.K_schwa: 2,
+    KineticChar.K_turnm:  3,
+    KineticChar.K_frtailgamma: 4,
 }
 _K_BY_ORD = {v: k for k, v in _K_ORD.items()}
 
-# FIXED: G_aleph = finest (0), G_gimel = coarsest (2) — matches ℵ < ℶ < ℷ and Core.lean
+# FIXED: G_revapostrophe = finest (0), G_gamma = coarsest (2) — matches ℵ < ℶ < ℷ and Core.lean
 _G_ORD: Dict[Granularity, int] = {
-    Granularity.G_aleph: 0,
-    Granularity.G_beth:  1,
-    Granularity.G_gimel: 2,
+    Granularity.G_revapostrophe: 0,
+    Granularity.G_beta:  1,
+    Granularity.G_gamma: 2,
 }
 _G_BY_ORD = {v: k for k, v in _G_ORD.items()}
 
 _PROT_ORD: Dict[Protection, int] = {
-    Protection.Omega_0:  0,
-    Protection.Omega_Z2: 1,
-    Protection.Omega_Z:  2,
+    Protection.Omega_closeepsilon:  0,
+    Protection.Omega_crtwo: 1,
+    Protection.Omega_dzlig:  2,
     Protection.Omega_C:  3,
-    Protection.Omega_NA: 4,
+    Protection.Omega_turna: 4,
 }
 _PROT_BY_ORD = {v: k for k, v in _PROT_ORD.items()}
 
 _CHIR_ORD: Dict[Chirality, int] = {
-    Chirality.H0:    0,
-    Chirality.H1:    1,
-    Chirality.H2:    2,
-    Chirality.H_inf: 3,
+    Chirality.H_closeomega:    0,
+    Chirality.H_toneletterstem:    1,
+    Chirality.H_turntwo:    2,
+    Chirality.H_invscripta: 3,
 }
 _CHIR_BY_ORD = {v: k for k, v in _CHIR_ORD.items()}
 
@@ -203,29 +203,29 @@ def tuple_distance(
 _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     # Values present in models.py but not in primitives.py ORDINALS.
     # Mapped to the nearest canonical primitives.py value.
-    "D": {"D_point": "D_wedge", "D_line": "D_wedge", "D_cube": "D_triangle"},
+    "D": {"Ð_point": "Ð_wynn", "Ð_line": "Ð_wynn", "Ð_cube": "Ð_turnthree"},
     "T": {
-        "T_linear": "T_in", "T_branched": "T_in",
-        "T_bowl": "T_bowtie", "T_cage": "T_bowtie", "T_torus": "T_bowtie",
-        "T_braid": "T_boxtimes",
-        "T_network_hex": "T_network", "T_network_interp": "T_network",
-        "T_network_mixed": "T_network", "T_network_sym": "T_network",
+        "Þ_linear": "Þ_invscr", "Þ_branched": "Þ_invscr",
+        "Þ_bowl": "Þ_bullseye", "Þ_cage": "Þ_bullseye", "Þ_torus": "Þ_bullseye",
+        "Þ_braid": "Þ_commatailz",
+        "Þ_network_hex": "Þ_nrleg", "Þ_network_interp": "Þ_nrleg",
+        "Þ_network_mixed": "Þ_nrleg", "Þ_network_sym": "Þ_nrleg",
     },
     "R": {
-        "R_exact": "R_cat", "R_subset": "R_super", "R_superset": "R_super",
-        "R_catalytic": "R_dagger", "R_allosteric": "R_dagger",
-        "R_mechanical": "R_dagger", "R_covalent_dynamic": "R_lr",
+        "Ř_exact": "Ř_ctz", "Ř_subset": "Ř_subrightarrow", "Ř_superset": "Ř_subrightarrow",
+        "Ř_catalytic": "Ř_downstep", "Ř_allosteric": "Ř_downstep",
+        "Ř_mechanical": "Ř_downstep", "Ř_covalent_dynamic": "Ř_lyoghlig",
     },
     "P": {
-        "P_directional": "P_asym", "P_minus": "P_psi", "P_plus": "P_psi",
-        "P_neutral": "P_sym", "P_pm_pseudo": "P_pm",
+        "Φ_directional": "Φ_aolig", "Φ_minus": "Φ_upsilon", "Φ_plus": "Φ_upsilon",
+        "Φ_neutral": "Φ_subdoublearrow", "Φ_pm_pseudo": "Φ_pipevar",
     },
-    "F": {"F_noise": "F_ell"},
-    "K": {"K_MBL": "K_trap"},
-    "Gamma": {"G_dissipative": "G_broad", "G_impl": "G_and", "G_xor": "G_or"},
-    "Phi": {"Phi_sup": "Phi_super"},
-    "S": {"1:1": "one_one", "1:n": "n_n", "n:m": "n_m", "cat": "n_m"},
-    "Omega": {"Omega_C": "Omega_Z", "Omega_NA": "Omega_Z"},
+    "F": {"ƒ_noise": "ƒ_beltl"},
+    "K": {"Ç_lambda": "Ç_teshlig"},
+    "Gamma": {"Γ_dissipative": "ɢ_doublevertline", "Γ_impl": "ɢ_corner", "Γ_xor": "ɢ_spleftarrow"},
+    "Phi": {"φ̂_upstep": "φ̂_upstep"},
+    "S": {"1:1": "Σ_doublebaresh", "1:n": "Σ_ctn", "n:m": "Σ_ltailm", "cat": "Σ_ltailm"},
+    "Omega": {"Ω_C": "Ω_dzlig", "Ω_turna": "Ω_dzlig"},
 }
 
 
@@ -358,7 +358,7 @@ class LatticeResult:
 
 
 def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str) -> Criticality:
-    """Phi_c is absorbing under both meet and join."""
+    """Phi_ctyogh is absorbing under both meet and join."""
     if p1 == p2:
         return p1
     if p1.is_degenerate:
@@ -368,10 +368,10 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str) -> 
         notes.append(f"\u03a6: {p1.value} {op} {p2.value} \u2192 {p2.value} (\u03a6_c absorbing)")
         return p2
     # Neither critical — meet takes lower, join takes higher in the linear order
-    phi_ord = {Criticality.Phi_sub: 0, Criticality.Phi_c: 1, Criticality.Phi_sup: 2}
+    phi_ord = {Criticality.Phi_softsign: 0, Criticality.Phi_ctyogh: 1, Criticality.Phi_upstep: 2}
     result = min if op == "\u2293" else max
     idx = result(phi_ord[p1], phi_ord[p2])
-    return [Criticality.Phi_sub, Criticality.Phi_c, Criticality.Phi_sup][idx]
+    return [Criticality.Phi_softsign, Criticality.Phi_ctyogh, Criticality.Phi_upstep][idx]
 
 
 def meet(s1: Synthon, s2: Synthon) -> LatticeResult:
@@ -380,7 +380,7 @@ def meet(s1: Synthon, s2: Synthon) -> LatticeResult:
 
     Ordered primitives (F, K, G, Omega, H): take minimum (more conservative).
     Categorical (D, T, R, P, Gamma, S): exact match required; mismatch -> CONFLICT.
-    Phi_c is absorbing: meet(Phi_c, x) = Phi_c for all x.
+    Phi_ctyogh is absorbing: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """
     conflicts: List[str] = []
     notes: List[str] = []
@@ -423,7 +423,7 @@ def join(s1: Synthon, s2: Synthon) -> LatticeResult:
 
     Ordered primitives: take maximum (more permissive / demanding).
     Categorical: exact match or CONFLICT.
-    Phi_c is absorbing: join(Phi_c, x) = Phi_c for all x.
+    Phi_ctyogh is absorbing: join(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """
     conflicts: List[str] = []
     notes: List[str] = []
@@ -556,7 +556,7 @@ def tensor(s1: Synthon, s2: Synthon, name: Optional[str] = None) -> Synthon:
 
     Uses join for ordered primitives (F, K, G, Omega, H — take the more demanding)
     and requires exact match for categorical primitives (conflict raises ValueError).
-    Phi_c absorbs in both operands.
+    Phi_ctyogh absorbs in both operands.
     """
     import imscrbgrmr.models as _m
     result = join(s1, s2)
@@ -602,31 +602,31 @@ class LiftResult:
 
 
 def _lift_temporal(s: Synthon) -> LiftResult:
-    """D_* → D_infty: inject temporal/iterative dimension."""
+    """D_* → D_invomega: inject temporal/iterative dimension."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality == Dimensionality.D_infty:
-        return LiftResult(True, s, notes=["Already D_infty — no change"])
+    if s.dimensionality == Dimensionality.D_invomega:
+        return LiftResult(True, s, notes=["Already D_invomega — no change"])
     if s.dimensionality == Dimensionality.D_holo:
-        return LiftResult(False, None, notes=["D_odot subsumes D_infty; lift not applicable"])
+        return LiftResult(False, None, notes=["D_omega subsumes D_invomega; lift not applicable"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, dimensionality=Dimensionality.D_infty,
+        result = replace(s, dimensionality=Dimensionality.D_invomega,
                          name=f"{s.name}[+temporal]")
     finally:
         _m._ENFORCE_AXIOMS = old
-    return LiftResult(True, result, notes=[f"D {s.dimensionality.value} → D_infty"])
+    return LiftResult(True, result, notes=[f"D {s.dimensionality.value} → D_invomega"])
 
 
 def _lift_spatial(s: Synthon) -> LiftResult:
-    """D_wedge → D_cube: molecular → supramolecular spatial array."""
+    """D_wynn → D_cube: molecular → supramolecular spatial array."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality not in (Dimensionality.D_wedge, Dimensionality.D_point, Dimensionality.D_line):
+    if s.dimensionality not in (Dimensionality.D_wynn, Dimensionality.D_point, Dimensionality.D_line):
         return LiftResult(False, None,
-                          notes=[f"Spatial lift requires D_wedge or lower; got {s.dimensionality.value}"])
+                          notes=[f"Spatial lift requires D_wynn or lower; got {s.dimensionality.value}"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
@@ -639,43 +639,43 @@ def _lift_spatial(s: Synthon) -> LiftResult:
 
 
 def _lift_critical(s: Synthon, strength: float = 1.0) -> LiftResult:
-    """Φ_sub → Φ_c: inject criticality. Requires F ≥ F_hbar."""
+    """Φ_sub → Φ_c: inject criticality. Requires F ≥ F_hardsign."""
     import imscrbgrmr.models as _m
     from .models import Criticality, Fidelity
     warnings = []
-    if s.fidelity not in (Fidelity.F_hbar,):
-        warnings.append(f"F={s.fidelity.value} < F_hbar — criticality injection is fragile")
-    if s.criticality_phase == Criticality.Phi_c:
-        return LiftResult(True, s, notes=["Already Phi_c — no change"])
+    if s.fidelity not in (Fidelity.F_hardsign,):
+        warnings.append(f"F={s.fidelity.value} < F_hardsign — criticality injection is fragile")
+    if s.criticality_phase == Criticality.Phi_ctyogh:
+        return LiftResult(True, s, notes=["Already Phi_ctyogh — no change"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, criticality_phase=Criticality.Phi_c,
+        result = replace(s, criticality_phase=Criticality.Phi_ctyogh,
                          name=f"{s.name}[+critical]")
     finally:
         _m._ENFORCE_AXIOMS = old
     return LiftResult(True, result,
-                      notes=[f"Φ {s.criticality_phase.value} → Phi_c (strength={strength:.2f})"],
+                      notes=[f"Φ {s.criticality_phase.value} → Phi_ctyogh (strength={strength:.2f})"],
                       warnings=warnings)
 
 
 def _lift_molecular(s: Synthon) -> LiftResult:
-    """Forgetful projection → D_wedge (loses spatial/temporal)."""
+    """Forgetful projection → D_wynn (loses spatial/temporal)."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality == Dimensionality.D_wedge:
-        return LiftResult(True, s, notes=["Already D_wedge — no change"])
+    if s.dimensionality == Dimensionality.D_wynn:
+        return LiftResult(True, s, notes=["Already D_wynn — no change"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, dimensionality=Dimensionality.D_wedge,
+        result = replace(s, dimensionality=Dimensionality.D_wynn,
                          name=f"{s.name}[->molecular]")
     finally:
         _m._ENFORCE_AXIOMS = old
     return LiftResult(True, result,
-                      notes=[f"D {s.dimensionality.value} → D_wedge (forgetful)"],
+                      notes=[f"D {s.dimensionality.value} → D_wynn (forgetful)"],
                       warnings=["Forgetful projection — spatial/temporal structure lost"])
 
 

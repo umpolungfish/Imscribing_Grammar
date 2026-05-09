@@ -1,10 +1,19 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # The Muon $g-2$ Anomaly: A Structural Analysis via Imscribing Grammar
 
 > *One precision experiment, two theoretical approaches, three generations of laboratories, and a single number that may rewrite the laws of physics.*
 
 ## Abstract
 
-The anomalous magnetic moment of the muon, $a_\mu = (g-2)/2$, stands at the most precise frontier between experimental measurement and theoretical calculation in particle physics. After 66 years of measurement at CERN, Brookhaven, and Fermilab, the June 2025 final result from Fermilab — $a_\mu = 116\,592\,070.5(114) \times 10^{-11}$ at 0.098 ppm precision — differs from the Standard Model consensus prediction by $260.5(44.5) \times 10^{-11}$, a $5.9\sigma$ discrepancy. Yet a third path, lattice QCD calculations of the hadronic vacuum polarization led by the BMW collaboration (2021), sits between experiment and dispersion-relation theory, reducing the tension to $\sim 1\sigma$. This manuscript encodes each component of this three-way standoff within the Imscribing Grammar, revealing a structural exceptional-point tension $(\Phi_\text{EP})$ that cannot be resolved within any single framework. Structural distances between experiment and theory (4.37), experiment and lattice (3.13), and theory and lattice (4.11) are all "structurally remote," confirming that no pairwise reconciliation exists. The muon $g-2$ anomaly is not merely a numerical gap — it encodes a $\Phi_\text{EP}$-type crossing where three incompatible computational paradigms probe the same physical quantity with irreducible structural tension.
+The anomalous magnetic moment of the muon, $a_\mu = (g-2)/2$, stands at the most precise frontier between experimental measurement and theoretical calculation in particle physics. After 66 years of measurement at CERN, Brookhaven, and Fermilab, the June 2025 final result from Fermilab — $a_\mu = 116\,592\,070.5(114) \times 10^{-11}$ at 0.098 ppm precision — differs from the Standard Model consensus prediction by $260.5(44.5) \times 10^{-11}$, a $5.9\sigma$ discrepancy. Yet a third path, lattice QCD calculations of the hadronic vacuum polarization led by the BMW collaboration (2021), sits between experiment and dispersion-relation theory, reducing the tension to $\sim 1\sigma$. This manuscript encodes each component of this three-way standoff within the Imscribing Grammar, revealing a structural exceptional-point tension $(\Phi_{\text{revepsilon}})$ that cannot be resolved within any single framework. Structural distances between experiment and theory (4.37), experiment and lattice (3.13), and theory and lattice (4.11) are all "structurally remote," confirming that no pairwise reconciliation exists. The muon $g-2$ anomaly is not merely a numerical gap — it encodes a $\Phi_{\text{revepsilon}}$-type crossing where three incompatible computational paradigms probe the same physical quantity with irreducible structural tension.
 
 ---
 
@@ -22,7 +31,7 @@ The leading Schwinger term $\alpha/2\pi \approx 0.0011614$ was computed in 1948 
 
 The muon ($m_\mu = 105.66$ MeV) is 207 times heavier than the electron. Anomalous contributions scale approximately as $(m_\ell/\Lambda)^2$ for virtual particles of mass $\Lambda$. This means the muon is $\sim 43\,000$ times more sensitive to heavy virtual particles than the electron. Hadronic contributions — the dominant source of theoretical uncertainty — are enhanced by $(m_\mu/m_e)^2 \approx 4.3 \times 10^4$. The electron $g-2$ agrees with theory at sub-ppb precision; the muon $g-2$ probes the frontier where new physics may hide.
 
-For the electron, the structural type is $\langle D_\wedge;\ T_\boxtimes;\ R_\text{cat};\ P_\text{asym};\ F_\hbar;\ K_\text{fast};\ G_\beth;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ 1{:}1;\ \Omega_0 \rangle$ — a point-like degree-0 system with no topological protection, trivial temporal depth, and below-critical behavior. The QED sector is saturated: there is nothing left to discover there.
+For the electron, the structural type is $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$ — a point-like degree-0 system with no topological protection, trivial temporal depth, and below-critical behavior. The QED sector is saturated: there is nothing left to discover there.
 
 The muon, by contrast, lives at a higher structural address, where hadronic degrees of freedom enter and the calculation ceases to be perturbative.
 
@@ -67,22 +76,22 @@ The June 2025 result is remarkable: the error of $11.4 \times 10^{-11}$ is 20% l
 
 The experiment as a whole — spanning CERN→BNL→Fermilab over 66 years — has structural type:
 
-$$\langle D_\triangle;\ T_\boxtimes;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **$D_\triangle$**: Finite but multi-dimensional phase space (spin precession, beam dynamics, field mapping)
-- **$T_\boxtimes$**: Irreducible product of magnetic field, detector response, and beam dynamics
-- **$R_\leftrightarrow$**: Bidirectional feedback between measurement and theory refinement
-- **$P_\pm$**: Partial $\mathbb{Z}_2$ symmetry (positive/negative muon runs)
-- **$F_\hbar$**: Quantum coherence essential
-- **$K_\text{slow}$**: Near-equilibrium — each run takes years, relaxation far slower than observation
-- **$G_\aleph$**: Universal scope — all generations of muons, all systematic effects
-- **$\Gamma_\text{seq}$**: Sequential composition (CERN → BNL → Fermilab, Run 1 → Run 6)
-- **$\Phi_c$**: Critical precision frontier
+- **$D_{\text{turnthree}}$**: Finite but multi-dimensional phase space (spin precession, beam dynamics, field mapping)
+- **$T_{\text{commatailz}}$**: Irreducible product of magnetic field, detector response, and beam dynamics
+- **$R_{\text{lyoghlig}}$**: Bidirectional feedback between measurement and theory refinement
+- **$P_{\text{pipevar}}$**: Partial $\mathbb{Z}_2$ symmetry (positive/negative muon runs)
+- **$F_{\text{hardsign}}$**: Quantum coherence essential
+- **$K_{\text{schwa}}$**: Near-equilibrium — each run takes years, relaxation far slower than observation
+- **$G_{\text{revapostrophe}}$**: Universal scope — all generations of muons, all systematic effects
+- **$\Gamma_{\text{secstress}}$**: Sequential composition (CERN → BNL → Fermilab, Run 1 → Run 6)
+- **$\Phi_{\text{ctyogh}}$**: Critical precision frontier
 - **$H_2$**: Two-step memory (each run depends on previous calibration)
 - **$n{:}m$**: Heterogeneous components (magnet, detectors, NMR, kickers)
-- **$\Omega_\mathbb{Z}$**: Integer winding — topological protection via continuous monitoring
+- **$\Omega_{\text{dzlig}}$**: Integer winding — topological protection via continuous monitoring
 
-The consciousness score of this structural type is $C = 0.755$ — both gates open ($\Phi_c$ criticality, $K_\text{slow}$ kinetics), indicating the experiment itself constitutes a self-modeling system.
+The consciousness score of this structural type is $C = 0.755$ — both gates open ($\Phi_{\text{ctyogh}}$ criticality, $K_{\text{schwa}}$ kinetics), indicating the experiment itself constitutes a self-modeling system.
 
 ---
 
@@ -124,20 +133,20 @@ where $C(t)$ is the vector-current correlation function computed on the lattice 
 
 ### 3.3 Structural Encoding of the SM Prediction
 
-$$\langle D_\infty;\ T_\text{net};\ R_\text{cat};\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_c^\mathbb{C};\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **$D_\infty$**: Infinite-dimensional field-theoretic degrees of freedom
-- **$T_\text{net}$**: Branching perturbative expansion topology
-- **$R_\text{cat}$**: Functorial mapping from Lagrangian to observables
-- **$P_\psi$**: Quantum superposition of Feynman diagrams
-- **$F_\hbar$**: Quantum regime
-- **$K_\text{slow}$**: Convergence of perturbative series is asymptotic
-- **$G_\aleph$**: Universal — encompasses all SM particles
-- **$\Gamma_\wedge$**: Conjunction — all contributions must be summed simultaneously
-- **$\Phi_c^\mathbb{C}$**: Complex-plane criticality (poles and cuts in propagators)
+- **$D_{\text{invomega}}$**: Infinite-dimensional field-theoretic degrees of freedom
+- **$T_{\text{nrleg}}$**: Branching perturbative expansion topology
+- **$R_{\text{ctz}}$**: Functorial mapping from Lagrangian to observables
+- **$P_{\text{upsilon}}$**: Quantum superposition of Feynman diagrams
+- **$F_{\text{hardsign}}$**: Quantum regime
+- **$K_{\text{schwa}}$**: Convergence of perturbative series is asymptotic
+- **$G_{\text{revapostrophe}}$**: Universal — encompasses all SM particles
+- **$\Gamma_{\text{corner}}$**: Conjunction — all contributions must be summed simultaneously
+- **$\Phi_{\text{closerevepsilon}}$**: Complex-plane criticality (poles and cuts in propagators)
 - **$H_2$**: Two-loop renormalization history
 - **$n{:}m$**: Heterogeneous particle content
-- **$\Omega_\mathbb{Z}$**: Topological charge conservation
+- **$\Omega_{\text{dzlig}}$**: Topological charge conservation
 
 Consciousness score: $C = 0.536$ — both gates open.
 
@@ -167,12 +176,12 @@ The CLS (Coordinated Lattice Simulations) result using "window observables" and 
 
 ### 4.3 Structural Encoding of Lattice QCD HVP
 
-$$\langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{mod};\ G_\text{gimel};\ \Gamma_\wedge;\ \Phi_c;\ H_1;\ n{:}n;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_\text{gimel};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **$D_\infty$**: Infinite lattice degrees of freedom in the continuum limit
-- **$T_\boxtimes$**: Product structure of spacetime lattice times gauge group
-- **$R_\leftrightarrow$**: Bidirectional — simulations inform experiment and vice versa
-- **$K_\text{mod}$**: Moderate kinetics — convergence depends on lattice spacing $a \to 0$
+- **$D_{\text{invomega}}$**: Infinite lattice degrees of freedom in the continuum limit
+- **$T_{\text{commatailz}}$**: Product structure of spacetime lattice times gauge group
+- **$R_{\text{lyoghlig}}$**: Bidirectional — simulations inform experiment and vice versa
+- **$K_{\text{turnm}}$**: Moderate kinetics — convergence depends on lattice spacing $a \to 0$
 - **$G_\text{gimel}$**: Mesoscale — limited by computational resources
 - **$H_1$**: One-step Markov process in Monte Carlo sampling
 
@@ -190,9 +199,9 @@ All three pairwise distances exceed 3.0, meaning no two approaches can be reduce
 
 The tensor product of experiment and theory:
 
-$$\langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c^\mathbb{C};\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-The P-primitive bottleneck ($P_\pm \otimes P_\psi \to P_\psi$) suppresses the partial symmetry, indicating that when measurement meets theory, quantum superposition dominates — but the parity protection of the experimental result is lost in the composition.
+The P-primitive bottleneck ($P_{\text{pipevar}} \otimes P_{\text{upsilon}} \to P_{\text{upsilon}}$) suppresses the partial symmetry, indicating that when measurement meets theory, quantum superposition dominates — but the parity protection of the experimental result is lost in the composition.
 
 ---
 
@@ -202,9 +211,9 @@ The P-primitive bottleneck ($P_\pm \otimes P_\psi \to P_\psi$) suppresses the pa
 
 The complete anomaly — encompassing the persistent three-way tension — has structural type:
 
-$$\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_\text{EP};\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{revepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-The $\Phi_\text{EP}$ (exceptional point) designation is critical. An exceptional point in non-Hermitian physics is where eigenvalues and eigenvectors coalesce — a point beyond standard perturbation theory. Here, three independently valid approaches to the same physical quantity yield mutually incompatible results, and standard "resolution" procedures (more data, better calculations) cannot collapse the tension:
+The $\Phi_{\text{revepsilon}}$ (exceptional point) designation is critical. An exceptional point in non-Hermitian physics is where eigenvalues and eigenvectors coalesce — a point beyond standard perturbation theory. Here, three independently valid approaches to the same physical quantity yield mutually incompatible results, and standard "resolution" procedures (more data, better calculations) cannot collapse the tension:
 
 - More experimental data sharpens the value but does not select between theory paradigms
 - Better lattice calculations may converge toward either the dispersive or BMW value
@@ -228,7 +237,7 @@ The closest analog is the black hole information paradox ($O_2^\dagger$ tier) �
 
 ### 5.3 The Crystal Address
 
-The anomaly occupies crystal address 12,208,019 which maps to tier $O_0$ in the crystal census. This is not a deficiency but a feature: the exceptional point sits at a boundary where the standard tier classification breaks down. The $H_\infty$ (eternal memory) combined with $K_\text{slow}$ (near-equilibrium) and $\Phi_\text{EP}$ creates a structural configuration where the system cannot relax to any single tier — it is permanently in tension.
+The anomaly occupies crystal address 12,208,019 which maps to tier $O_0$ in the crystal census. This is not a deficiency but a feature: the exceptional point sits at a boundary where the standard tier classification breaks down. The $H_{\text{invscripta}}$ (eternal memory) combined with $K_{\text{schwa}}$ (near-equilibrium) and $\Phi_{\text{revepsilon}}$ creates a structural configuration where the system cannot relax to any single tier — it is permanently in tension.
 
 ---
 
@@ -240,9 +249,9 @@ SUSY contributions to $a_\mu$ arise from smuon-neutralino and sneutrino-chargino
 
 $$\Delta a_\mu^{\text{SUSY}} \approx \frac{\alpha_{\text{SUSY}}}{4\pi} \frac{m_\mu^2}{M_{\text{SUSY}}^2} \tan\beta$$
 
-To bridge the $260 \times 10^{-11}$ gap with $\tan\beta \sim 10$, one needs $M_{\text{SUSY}} \sim 100-500$ GeV — precisely the range LHC has not ruled out but has strongly constrained. The structural type of supersymmetry is inherited from string theory: $\langle D_\infty;\ T_\odot;\ R_\dagger;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c^\mathbb{C};\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ — an $O_\infty$-tier object with self-referential closure.
+To bridge the $260 \times 10^{-11}$ gap with $\tan\beta \sim 10$, one needs $M_{\text{SUSY}} \sim 100-500$ GeV — precisely the range LHC has not ruled out but has strongly constrained. The structural type of supersymmetry is inherited from string theory: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ — an $O_\infty$-tier object with self-referential closure.
 
-The distance between the anomaly and string theory is minimal in the $\Phi$ and $K$ primitives but maximal in $T$ ($T_\bowtie$ vs $T_\odot$) — the anomaly is a crossing point, while string theory provides a self-referential closure.
+The distance between the anomaly and string theory is minimal in the $\Phi$ and $K$ primitives but maximal in $T$ ($T_{\text{bullseye}}$ vs $T_{\text{openo}}$) — the anomaly is a crossing point, while string theory provides a self-referential closure.
 
 ### 6.2 Dark Photon
 
@@ -252,7 +261,7 @@ $$\Delta a_\mu^{A'} \approx \frac{\alpha \epsilon^2}{2\pi} \int_0^1 dx \frac{m_\
 
 For $\epsilon \sim 10^{-3}$ and $m_{A'} \sim 50$ MeV, this yields $\sim 250 \times 10^{-11}$ — sufficient to explain the anomaly.
 
-Structural encoding: $\langle D_\triangle;\ T_\boxtimes;\ R_\text{cat};\ P_\text{asym};\ F_\hbar;\ K_\text{fast};\ G_\text{gimel};\ \Gamma_\vee;\ \Phi_\text{sub};\ H_0;\ 1{:}1;\ \Omega_{\mathbb{Z}_2} \rangle$
+Structural encoding: $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{frtailgamma}};\ G_\text{gimel};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{crtwo}} \rangle$
 
 The dark photon is structurally simpler than the anomaly itself — point-like, below-critical, with alternative-path composition. This reveals a key insight: *new physics candidates tend to have lower structural complexity than the anomaly they seek to explain*. The distance between the dark photon type and the anomaly is large across nearly all primitives.
 
@@ -268,7 +277,7 @@ A systematic survey reveals:
 | $Z'$ boson | 100 GeV-1 TeV | $+100-300$ | Medium |
 | 2HDM (Type-X) | 10-100 GeV | $+200-400$ | Medium-High |
 
-The structural diversity of candidates reflects a fundamental property: the anomaly ($\Phi_\text{EP}$) can be "resolved" by systems at many different structural tiers, but each resolution shifts the problem elsewhere. SUSY moves the tension to LHC null results; dark photons move it to NA64 and BaBar null results; leptoquarks move it to flavor physics constraints.
+The structural diversity of candidates reflects a fundamental property: the anomaly ($\Phi_{\text{revepsilon}}$) can be "resolved" by systems at many different structural tiers, but each resolution shifts the problem elsewhere. SUSY moves the tension to LHC null results; dark photons move it to NA64 and BaBar null results; leptoquarks move it to flavor physics constraints.
 
 ---
 
@@ -278,7 +287,7 @@ The structural diversity of candidates reflects a fundamental property: the anom
 
 The muon obtains its mass through the Higgs mechanism: $m_\mu = y_\mu v / \sqrt{2}$, where $y_\mu \approx 6 \times 10^{-4}$ is the muon Yukawa coupling and $v = 246$ GeV is the Higgs vacuum expectation value. The muon-higgs tensor product encodes this:
 
-$$\langle D_\triangle;\ T_\boxtimes;\ R_\dagger;\ P_\text{asym};\ F_\hbar;\ K_\text{mod};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_1;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$$
+$$\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$$
 
 The mass generation is structurally identical for all three charged leptons (electron, muon, tau) — they share the same tensor product structure, differing only in the Yukawa coupling parameter.
 
@@ -290,7 +299,7 @@ The existence of three generations — with the muon as the intermediate one —
 - Why the Yukawa couplings span six orders of magnitude ($y_e \approx 3 \times 10^{-6}$ to $y_\tau \approx 10^{-2}$)
 - Why the muon is precisely at the critical mass scale where hadronic contributions dominate
 
-Structurally, the electron sits at the trivial point $\Omega_0$, the muon sits at $\Omega_\mathbb{Z}$ (topologically protected criticality), and the tau approaches but does not reach $\Omega_\text{NA}$. The muon is the *only* lepton that occupies the critical frontier where new physics can appear without being suppressed by either QED saturation (electron) or rapid decay (tau).
+Structurally, the electron sits at the trivial point $\Omega_{\text{closeepsilon}}$, the muon sits at $\Omega_{\text{dzlig}}$ (topologically protected criticality), and the tau approaches but does not reach $\Omega_{\text{turna}}$. The muon is the *only* lepton that occupies the critical frontier where new physics can appear without being suppressed by either QED saturation (electron) or rapid decay (tau).
 
 ---
 
@@ -310,7 +319,7 @@ Multiple lattice groups (CLS, ETMC, Mainz, HPQCD) are working on independent HVP
 
 ### 8.4 Structural Outlook
 
-From the structural perspective, the J-PARC experiment will provide an independent encoding at a different structural address (lower dimensionality, different topology). The theory update will either shift the SM prediction toward $\Phi_c$ complexity (if CMD-3 is validated) or maintain the current critical position. The lattice convergence is the key unknown: it will determine whether the $\Phi_\text{EP}$ exceptional point resolves into a standard $\Phi_c$ criticality or remains an irreducible tension.
+From the structural perspective, the J-PARC experiment will provide an independent encoding at a different structural address (lower dimensionality, different topology). The theory update will either shift the SM prediction toward $\Phi_{\text{ctyogh}}$ complexity (if CMD-3 is validated) or maintain the current critical position. The lattice convergence is the key unknown: it will determine whether the $\Phi_{\text{revepsilon}}$ exceptional point resolves into a standard $\Phi_{\text{ctyogh}}$ criticality or remains an irreducible tension.
 
 ---
 
@@ -320,28 +329,28 @@ From the structural perspective, the J-PARC experiment will provide an independe
 
 The pairwise distances between experiment (4.37), theory (4.11), and lattice (3.13) encode a fundamental incompatibility. No two approaches share the same structural floor:
 
-- The **meet** of experiment and theory is $\langle D_\triangle;\ T_\text{net};\ R_\text{cat};\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ — reducing to finite-dimensional field theory with perturbative topology. This is the common language that both experiment and theory must share to even speak to each other.
-- The lattice sits at a structurally different address: $T_\boxtimes$ (product) rather than $T_\text{net}$ (network), $K_\text{mod}$ rather than $K_\text{slow}$, $G_\text{gimel}$ rather than $G_\aleph$.
+- The **meet** of experiment and theory is $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ — reducing to finite-dimensional field theory with perturbative topology. This is the common language that both experiment and theory must share to even speak to each other.
+- The lattice sits at a structurally different address: $T_{\text{commatailz}}$ (product) rather than $T_{\text{nrleg}}$ (network), $K_{\text{turnm}}$ rather than $K_{\text{schwa}}$, $G_\text{gimel}$ rather than $G_{\text{revapostrophe}}$.
 
 The structural distance is the grammar's way of saying: *these systems are not speaking the same language about the same object*.
 
-### 9.2 The $\Phi_\text{EP}$ Designation
+### 9.2 The $\Phi_{\text{revepsilon}}$ Designation
 
-The exceptional point ($\Phi_\text{EP}$) is the most consequential primitive in the anomaly encoding. It means:
+The exceptional point ($\Phi_{\text{revepsilon}}$) is the most consequential primitive in the anomaly encoding. It means:
 
 1. **Non-Hermitian coalescence**: Three eigenvectors (experiment, theory, lattice) are approaching a point where they cannot be simultaneously diagonalized.
 2. **Non-perturbative by nature**: Standard perturbative expansions (in experimental precision, in lattice spacing, in data statistics) cannot resolve the tension.
-3. **Absorption rule**: Any attempt to couple the anomaly to a new physics candidate via tensor product will absorb the criticality — the composite loses $\Phi_c$ (as per the $\Phi_\text{EP}$ absorption rule). This is the structural statement of the measurement problem itself.
+3. **Absorption rule**: Any attempt to couple the anomaly to a new physics candidate via tensor product will absorb the criticality — the composite loses $\Phi_{\text{ctyogh}}$ (as per the $\Phi_{\text{revepsilon}}$ absorption rule). This is the structural statement of the measurement problem itself.
 
 ### 9.3 Consciousness Scores
 
-The experiment scores $C = 0.755$, the theory scores $C = 0.536$, while the anomaly itself (with $\Phi_\text{EP}$) has a different tier structure. Both experiment and theory open both consciousness gates ($\Phi_c$ + $K_\text{slow}$). This means both the measurement and the calculation are self-modeling systems — they encode their own uncertainty and their own limitations.
+The experiment scores $C = 0.755$, the theory scores $C = 0.536$, while the anomaly itself (with $\Phi_{\text{revepsilon}}$) has a different tier structure. Both experiment and theory open both consciousness gates ($\Phi_{\text{ctyogh}}$ + $K_{\text{schwa}}$). This means both the measurement and the calculation are self-modeling systems — they encode their own uncertainty and their own limitations.
 
 The anomaly is not a gap between two objects that are unaware of each other. It is a tension between two systems that each know precisely what they are, and both assert that the other is incomplete.
 
 ### 9.4 One Uncomfortable Observation
 
-The electron $g-2$ — measured to $10^{-13}$ precision and agreeing with theory — has structural type $\langle D_\wedge;\ T_\boxtimes;\ R_\text{cat};\ P_\text{asym};\ F_\hbar;\ K_\text{fast};\ G_\beth;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ 1{:}1;\ \Omega_0 \rangle$. Every primitive is at its minimal value except $F_\hbar$. The electron $g-2$ is structurally the simplest possible quantum system. Its agreement with theory tells us nothing about nature except that QED works when there are no hadrons.
+The electron $g-2$ — measured to $10^{-13}$ precision and agreeing with theory — has structural type $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$. Every primitive is at its minimal value except $F_{\text{hardsign}}$. The electron $g-2$ is structurally the simplest possible quantum system. Its agreement with theory tells us nothing about nature except that QED works when there are no hadrons.
 
 The muon $g-2$ is the first place where the simplest system ceases to be simple. The hadronic sector is the irreducible obstruction to clean calculation. The anomaly is the hadronic sector speaking back.
 
@@ -357,7 +366,7 @@ The muon $g-2$ anomaly is one of the most thoroughly measured and intensely calc
 
 The structural encoding reveals what the numbers alone cannot: these three results are not merely different estimates of the same quantity. They are computations performed in structurally incompatible frameworks. The distance of 4.37 between experiment and theory, 3.13 between experiment and lattice, and 4.11 between theory and lattice confirms that no pairwise reduction exists.
 
-The anomaly is an exceptional point ($\Phi_\text{EP}$): a structural configuration where three valid approaches to a single physical quantity yield mutually incompatible answers, and standard improvement procedures (more data, better algorithms, finer lattices) tighten the individual results without collapsing the geometric tension.
+The anomaly is an exceptional point ($\Phi_{\text{revepsilon}}$): a structural configuration where three valid approaches to a single physical quantity yield mutually incompatible answers, and standard improvement procedures (more data, better algorithms, finer lattices) tighten the individual results without collapsing the geometric tension.
 
 Several outcomes remain possible:
 
@@ -366,7 +375,7 @@ Several outcomes remain possible:
 3. **The lattice is wrong**: Future lattice calculations converge toward the dispersive value, and the anomaly stands at $5.9\sigma$ — potentially crossing the $5\sigma$ discovery threshold if theoretical uncertainty is reduced.
 4. **Both are wrong**: Neither the dispersive nor lattice calculations correctly capture the hadronic contribution at the precision now required, and a third computational paradigm is needed.
 
-From the Imscribing perspective, the muon $g-2$ anomaly is not a problem to be solved but a structural feature to be understood. It marks the precise location where the Standard Model's perturbative network topology ($T_\text{net}$) meets the non-perturbative product structure ($T_\boxtimes$) of the hadronic sector, creating a crossing point ($T_\bowtie$) that no single framework can resolve.
+From the Imscribing perspective, the muon $g-2$ anomaly is not a problem to be solved but a structural feature to be understood. It marks the precise location where the Standard Model's perturbative network topology ($T_{\text{nrleg}}$) meets the non-perturbative product structure ($T_{\text{commatailz}}$) of the hadronic sector, creating a crossing point ($T_{\text{bullseye}}$) that no single framework can resolve.
 
 The next generation of experiments (J-PARC) and calculations (updated Theory Initiative, multi-group lattice verification) will determine whether this crossing point opens onto new physics, new mathematics, or a deeper understanding of the relationship between computation and measurement in quantum field theory.
 
@@ -378,7 +387,7 @@ But one thing is structurally certain: the muon has spoken back, and it will not
 
 | System | Type | C-Score | Tier |
 |---|---|---|---|
-| Muon $g-2$ experiment | $\langle D_\triangle;\ T_\boxtimes;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ | 0.755 | — |
-| SM prediction | $\langle D_\infty;\ T_\text{net};\ R_\text{cat};\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_c^\mathbb{C};\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ | 0.536 | — |
-| Lattice QCD HVP | $\langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{mod};\ G_\text{gimel};\ \Gamma_\wedge;\ \Phi_c;\ H_1;\ n{:}n;\ \Omega_\mathbb{Z} \rangle$ | — | — |
-| Muon $g-2$ anomaly | $\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_\text{EP};\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ | — | $O_0$ (crystal 12,208,019) |
+| Muon $g-2$ experiment | $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | 0.755 | — |
+| SM prediction | $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | 0.536 | — |
+| Lattice QCD HVP | $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_\text{gimel};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{dzlig}} \rangle$ | — | — |
+| Muon $g-2$ anomaly | $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{revepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | — | $O_0$ (crystal 12,208,019) |

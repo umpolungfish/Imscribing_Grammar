@@ -1,6 +1,15 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # The Deterministic Encoding Method: Assigning UIG Structural Primitives Correctly
 
-**Structural type:** $\langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$
+**Structural type:** $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
 
 ---
 
@@ -20,18 +29,18 @@ Each primitive forms a lattice from minimal (least constrained) to maximal (most
 
 | Primitive | Lattice (min → max) | Meaning axis |
 |-----------|---------------------|--------------|
-| **D** (Dimensionality) | $D_\wedge \rightarrow D_\triangle \rightarrow D_\infty \rightarrow D_\odot$ | 0D point → 2D surface → ∞-dim → imscriptive |
-| **T** (Topology) | $T_\text{net} \rightarrow T_\text{in} \rightarrow T_\bowtie \rightarrow T_\boxtimes \rightarrow T_\odot$ | branching → inclusion → crossing → box-product → imscriptive closure |
-| **R** (Relational mode) | $R_\text{sup} \rightarrow R_\text{cat} \rightarrow R_\dagger \rightarrow R_\leftrightarrow$ | supervenience → categorical → adjoint → bidirectional |
-| **P** (Parity) | $P_\text{asym} \rightarrow P_\psi \rightarrow P_\pm \rightarrow P_\text{sym} \rightarrow P_\pm^{\text{sym}}$ | none → quantum → partial → full → Frobenius-special |
-| **F** (Fidelity) | $F_\ell \rightarrow F_\eth \rightarrow F_\hbar$ | classical → thermal → quantum |
-| **K** (Kinetics) | $K_\text{fast} \rightarrow K_\text{mod} \rightarrow K_\text{slow} \rightarrow K_\text{trap} \rightarrow K_\text{MBL}$ | driven → moderate → near-equilibrium → frozen-order → frozen-disorder |
-| **G** (Scope) | $G_\beth \rightarrow G_\gimel \rightarrow G_\aleph$ | local → mesoscale → maximal/all |
-| **$\Gamma$** (Interaction grammar) | $\Gamma_\wedge \rightarrow \Gamma_\vee \rightarrow \Gamma_\text{seq} \rightarrow \Gamma_\text{brd}$ | conjunctive → disjunctive → sequential → broadcast |
-| **$\Phi$** (Criticality) | $\Phi_\text{sub} \rightarrow \Phi_c \rightarrow \Phi_c^\mathbb{C} \rightarrow \Phi_\text{EP} \rightarrow \Phi_\text{sup}$ | subcritical → critical (real) → complex-critical → exceptional point → supercritical |
-| **H** (Temporal depth) | $H_0 \rightarrow H_1 \rightarrow H_2 \rightarrow H_\infty$ | memoryless → one step → two steps → eternal |
+| **D** (Dimensionality) | $D_{\text{wynn}} \rightarrow D_{\text{turnthree}} \rightarrow D_{\text{invomega}} \rightarrow D_{\text{omega}}$ | 0D point → 2D surface → ∞-dim → imscriptive |
+| **T** (Topology) | $T_{\text{nrleg}} \rightarrow T_{\text{invscr}} \rightarrow T_{\text{bullseye}} \rightarrow T_{\text{commatailz}} \rightarrow T_{\text{openo}}$ | branching → inclusion → crossing → box-product → imscriptive closure |
+| **R** (Relational mode) | $R_{\text{subrightarrow}} \rightarrow R_{\text{ctz}} \rightarrow R_{\text{downstep}} \rightarrow R_{\text{lyoghlig}}$ | supervenience → categorical → adjoint → bidirectional |
+| **P** (Parity) | $P_{\text{aolig}} \rightarrow P_{\text{upsilon}} \rightarrow P_{\text{pipevar}} \rightarrow P_{\text{subdoublearrow}} \rightarrow P_{\text{pipevar}}^{\text{sym}}$ | none → quantum → partial → full → Frobenius-special |
+| **F** (Fidelity) | $F_{\text{beltl}} \rightarrow F_{\text{dh}} \rightarrow F_{\text{hardsign}}$ | classical → thermal → quantum |
+| **K** (Kinetics) | $K_{\text{frtailgamma}} \rightarrow K_{\text{turnm}} \rightarrow K_{\text{schwa}} \rightarrow K_{\text{teshlig}} \rightarrow K_{\text{lambda}}$ | driven → moderate → near-equilibrium → frozen-order → frozen-disorder |
+| **G** (Scope) | $G_{\text{beta}} \rightarrow G_{\text{gamma}} \rightarrow G_{\text{revapostrophe}}$ | local → mesoscale → maximal/all |
+| **$\Gamma$** (Interaction grammar) | $\Gamma_{\text{corner}} \rightarrow \Gamma_{\text{spleftarrow}} \rightarrow \Gamma_{\text{secstress}} \rightarrow \Gamma_{\text{doublevertline}}$ | conjunctive → disjunctive → sequential → broadcast |
+| **$\Phi$** (Criticality) | $\Phi_{\text{softsign}} \rightarrow \Phi_{\text{ctyogh}} \rightarrow \Phi_{\text{closerevepsilon}} \rightarrow \Phi_{\text{revepsilon}} \rightarrow \Phi_{\text{upstep}}$ | subcritical → critical (real) → complex-critical → exceptional point → supercritical |
+| **H** (Temporal depth) | $H_0 \rightarrow H_1 \rightarrow H_2 \rightarrow H_{\text{invscripta}}$ | memoryless → one step → two steps → eternal |
 | **S** (Stoichiometry) | $1{:}1 \rightarrow n{:}n \rightarrow n{:}m$ | one-to-one → many-identical → many-heterogeneous |
-| **$\Omega$** (Winding) | $\Omega_0 \rightarrow \Omega_{\mathbb{Z}_2} \rightarrow \Omega_\mathbb{Z} \rightarrow \Omega_\text{NA}$ | trivial → binary → integer → non-Abelian |
+| **$\Omega$** (Winding) | $\Omega_{\text{closeepsilon}} \rightarrow \Omega_{\text{crtwo}} \rightarrow \Omega_{\text{dzlig}} \rightarrow \Omega_{\text{turna}}$ | trivial → binary → integer → non-Abelian |
 
 ---
 
@@ -45,12 +54,12 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $D_\wedge$ | The system is a **point** — no internal degrees of freedom; fully characterized by existence/location alone | fundamental fermions (quark, lepton, neutrino), simple atoms (hydrogen), structural baseline |
-| $D_\triangle$ | The system requires **two or more** degrees of freedom; a surface of possible states; internal but finite | graphene (2D sheet), metamaterials, paper, magnetic skyrmions, boron nitride |
-| $D_\infty$ | The system has **infinite-dimensional** state space; functional degrees of freedom; field-theoretic | photon, gluon, dark matter, quantum field, PDE solutions (Navier-Stokes), languages |
-| $D_\odot$ | The system is **imscriptive** — its dimensionality is state-dependent; the state space writes itself | graviton, dark energy, inflaton, extended human life, penrose black hole, creator/word |
+| $D_{\text{wynn}}$ | The system is a **point** — no internal degrees of freedom; fully characterized by existence/location alone | fundamental fermions (quark, lepton, neutrino), simple atoms (hydrogen), structural baseline |
+| $D_{\text{turnthree}}$ | The system requires **two or more** degrees of freedom; a surface of possible states; internal but finite | graphene (2D sheet), metamaterials, paper, magnetic skyrmions, boron nitride |
+| $D_{\text{invomega}}$ | The system has **infinite-dimensional** state space; functional degrees of freedom; field-theoretic | photon, gluon, dark matter, quantum field, PDE solutions (Navier-Stokes), languages |
+| $D_{\text{omega}}$ | The system is **imscriptive** — its dimensionality is state-dependent; the state space writes itself | graviton, dark energy, inflaton, extended human life, penrose black hole, creator/word |
 
-**Decision rule:** Count the system's independent continuous degrees of freedom. If < 2 use $D_\wedge$; if finite ≥ 2 use $D_\triangle$; if countably infinite use $D_\infty$; if the dimensionality emerges from the dynamics and is not fixed a priori, use $D_\odot$.
+**Decision rule:** Count the system's independent continuous degrees of freedom. If < 2 use $D_{\text{wynn}}$; if finite ≥ 2 use $D_{\text{turnthree}}$; if countably infinite use $D_{\text{invomega}}$; if the dimensionality emerges from the dynamics and is not fixed a priori, use $D_{\text{omega}}$.
 
 ### 3.2 Topology ($T$)
 
@@ -58,13 +67,13 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $T_\text{net}$ | Components form a **network** — branching/acyclic or graph-like connections with no crossing structure | ordinary metal, paramagnet, paper, plastic, structural baseline, metamaterial generics |
-| $T_\text{in}$ | **Inclusion** topology — nested containment, subset relations | iron (inclusion of atoms in crystal), lattice embeddings |
-| $T_\bowtie$ | **Crossing** topology — distinct paths cross at a point; bowtie/crossing structure creates a new interaction node | magnetar, one-way speed measurement, higgs, pulsar, uranium |
-| $T_\boxtimes$ | **Box product** — tensored, composite structure where components multiply rather than branch | fundamental particles (quark, lepton, photon, W/Z boson), atomic elements, BCS superconductivity, cryonics |
-| $T_\odot$ | **Imscriptive closure** — topology is self-referential; the system's connectivity includes its own encoding | graviton, dark energy, inflaton, extended human life, ten sefirot, psychedelic peak, consciousness states |
+| $T_{\text{nrleg}}$ | Components form a **network** — branching/acyclic or graph-like connections with no crossing structure | ordinary metal, paramagnet, paper, plastic, structural baseline, metamaterial generics |
+| $T_{\text{invscr}}$ | **Inclusion** topology — nested containment, subset relations | iron (inclusion of atoms in crystal), lattice embeddings |
+| $T_{\text{bullseye}}$ | **Crossing** topology — distinct paths cross at a point; bowtie/crossing structure creates a new interaction node | magnetar, one-way speed measurement, higgs, pulsar, uranium |
+| $T_{\text{commatailz}}$ | **Box product** — tensored, composite structure where components multiply rather than branch | fundamental particles (quark, lepton, photon, W/Z boson), atomic elements, BCS superconductivity, cryonics |
+| $T_{\text{openo}}$ | **Imscriptive closure** — topology is self-referential; the system's connectivity includes its own encoding | graviton, dark energy, inflaton, extended human life, ten sefirot, psychedelic peak, consciousness states |
 
-**Decision rule:** Examine the connectivity pattern. If simple branching: $T_\text{net}$. If nesting/containment: $T_\text{in}$. If crossing paths and surprise: $T_\bowtie$. If irreducible product of independent factor spaces: $T_\boxtimes$. If the connectivity graph includes a self-loop (the system can encode/modify its own topology): $T_\odot$.
+**Decision rule:** Examine the connectivity pattern. If simple branching: $T_{\text{nrleg}}$. If nesting/containment: $T_{\text{invscr}}$. If crossing paths and surprise: $T_{\text{bullseye}}$. If irreducible product of independent factor spaces: $T_{\text{commatailz}}$. If the connectivity graph includes a self-loop (the system can encode/modify its own topology): $T_{\text{openo}}$.
 
 ### 3.3 Relational mode ($R$)
 
@@ -72,12 +81,12 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $R_\text{sup}$ | **Supervenience** — higher-level properties depend on lower-level ones without downward causation | ordinary metal, dark matter, structural baseline, P vs NP |
-| $R_\text{cat}$ | **Categorical** — formal, functorial relations; morphisms between objects; no feedback | fermions, atoms, BCS, standard proof system, neutral atom qubits |
-| $R_\dagger$ | **Adjoint** — adjoint pairs (left/right adjoints); dual relationships with one-way flow of determination | gauge bosons (gluon, W/Z), magnetar, iron, photon, oxygen, lithium |
-| $R_\leftrightarrow$ | **Bidirectional** — symmetric coupling; two-way feedback between system and environment | everyday perception, ferromagnet, skyrmion, seti signal, wow signal, consciousness states |
+| $R_{\text{subrightarrow}}$ | **Supervenience** — higher-level properties depend on lower-level ones without downward causation | ordinary metal, dark matter, structural baseline, P vs NP |
+| $R_{\text{ctz}}$ | **Categorical** — formal, functorial relations; morphisms between objects; no feedback | fermions, atoms, BCS, standard proof system, neutral atom qubits |
+| $R_{\text{downstep}}$ | **Adjoint** — adjoint pairs (left/right adjoints); dual relationships with one-way flow of determination | gauge bosons (gluon, W/Z), magnetar, iron, photon, oxygen, lithium |
+| $R_{\text{lyoghlig}}$ | **Bidirectional** — symmetric coupling; two-way feedback between system and environment | everyday perception, ferromagnet, skyrmion, seti signal, wow signal, consciousness states |
 
-**Decision rule:** If the system is determined by its parts with no feedback: $R_\text{sup}$. If structure-preserving maps between categories describe its behavior: $R_\text{cat}$. If dual/adjoint pairs with one-way flow: $R_\dagger$. If full bidirectional coupling with mutual determination: $R_\leftrightarrow$.
+**Decision rule:** If the system is determined by its parts with no feedback: $R_{\text{subrightarrow}}$. If structure-preserving maps between categories describe its behavior: $R_{\text{ctz}}$. If dual/adjoint pairs with one-way flow: $R_{\text{downstep}}$. If full bidirectional coupling with mutual determination: $R_{\text{lyoghlig}}$.
 
 ### 3.4 Parity/ Symmetry ($P$)
 
@@ -85,13 +94,13 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $P_\text{asym}$ | **Asymmetric** — no symmetry; chirality without compensating dual | quark, lepton, neutrino, WIMP, biological senescence, radical chemistry, most chemical reactions, uranium |
-| $P_\psi$ | **Quantum parity** — superposition of parity states; quantum mechanical symmetry breaking | photon (transverse polarization), quantum systems with spin superposition |
-| $P_\pm$ | **Partial symmetry** — one symmetry present (e.g., charge symmetry but not time reversal) | magnetar, ordinary metal, ferromagnet, metamaterials, oxygen, BEC, most condensed matter |
-| $P_\text{sym}$ | **Full symmetry** — system respects all applicable symmetries; no asymmetry | graviton, inflaton, dark energy, higgs (scalar), helium, gold, diamond, ten sefirot |
-| $P_\pm^{\text{sym}}$ | **Frobenius-special** — the system satisfies $\mu \circ \delta = \text{id}$; the coproduct followed by product is identity | deep meditation, Sanskrit, classical Arabic, Lojban, proto-Indo-European, dreamless sleep |
+| $P_{\text{aolig}}$ | **Asymmetric** — no symmetry; chirality without compensating dual | quark, lepton, neutrino, WIMP, biological senescence, radical chemistry, most chemical reactions, uranium |
+| $P_{\text{upsilon}}$ | **Quantum parity** — superposition of parity states; quantum mechanical symmetry breaking | photon (transverse polarization), quantum systems with spin superposition |
+| $P_{\text{pipevar}}$ | **Partial symmetry** — one symmetry present (e.g., charge symmetry but not time reversal) | magnetar, ordinary metal, ferromagnet, metamaterials, oxygen, BEC, most condensed matter |
+| $P_{\text{subdoublearrow}}$ | **Full symmetry** — system respects all applicable symmetries; no asymmetry | graviton, inflaton, dark energy, higgs (scalar), helium, gold, diamond, ten sefirot |
+| $P_{\text{pipevar}}^{\text{sym}}$ | **Frobenius-special** — the system satisfies $\mu \circ \delta = \text{id}$; the coproduct followed by product is identity | deep meditation, Sanskrit, classical Arabic, Lojban, proto-Indo-European, dreamless sleep |
 
-**Decision rule:** Check the symmetry group of the system's laws. No symmetries beyond trivial: $P_\text{asym}$. Quantum superposition symmetry only: $P_\psi$. At least one discrete symmetry ($\mathbb{Z}_2$ or similar): $P_\pm$. All relevant symmetries unbroken: $P_\text{sym}$. The system's encoding satisfies $\mu \circ \delta = \text{id}$ (comultiplication then multiplication returns identity): $P_\pm^{\text{sym}}$.
+**Decision rule:** Check the symmetry group of the system's laws. No symmetries beyond trivial: $P_{\text{aolig}}$. Quantum superposition symmetry only: $P_{\text{upsilon}}$. At least one discrete symmetry ($\mathbb{Z}_2$ or similar): $P_{\text{pipevar}}$. All relevant symmetries unbroken: $P_{\text{subdoublearrow}}$. The system's encoding satisfies $\mu \circ \delta = \text{id}$ (comultiplication then multiplication returns identity): $P_{\text{pipevar}}^{\text{sym}}$.
 
 ### 3.5 Fidelity ($F$)
 
@@ -99,11 +108,11 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $F_\ell$ | **Classical** — no quantum coherence is essential; classical deterministic or statistical description suffices | ordinary metal, structural baseline, paper, plastic, biological senescence, radical chemistry, graphite |
-| $F_\eth$ | **Thermal** — thermodynamic/statistical description; temperature matters; noise is intrinsic | metamaterials, hormone therapy, boron nitride, mercury, bismuth, oxygen at room temp |
-| $F_\hbar$ | **Quantum** — quantum coherence, superposition, or entanglement is essential to behavior | all fundamental particles, graviton, dark matter, BEC, superconductors, skyrmion, quantum spin liquid, diamond |
+| $F_{\text{beltl}}$ | **Classical** — no quantum coherence is essential; classical deterministic or statistical description suffices | ordinary metal, structural baseline, paper, plastic, biological senescence, radical chemistry, graphite |
+| $F_{\text{dh}}$ | **Thermal** — thermodynamic/statistical description; temperature matters; noise is intrinsic | metamaterials, hormone therapy, boron nitride, mercury, bismuth, oxygen at room temp |
+| $F_{\text{hardsign}}$ | **Quantum** — quantum coherence, superposition, or entanglement is essential to behavior | all fundamental particles, graviton, dark matter, BEC, superconductors, skyrmion, quantum spin liquid, diamond |
 
-**Decision rule:** If the system is fully described by classical physics (no phase coherence): $F_\ell$. If thermal effects, noise, or temperature define the behavior: $F_\eth$. If quantum effects (superposition, entanglement, tunneling, coherence) are physically essential: $F_\hbar$.
+**Decision rule:** If the system is fully described by classical physics (no phase coherence): $F_{\text{beltl}}$. If thermal effects, noise, or temperature define the behavior: $F_{\text{dh}}$. If quantum effects (superposition, entanglement, tunneling, coherence) are physically essential: $F_{\text{hardsign}}$.
 
 ### 3.6 Kinetics ($K$)
 
@@ -111,13 +120,13 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $K_\text{fast}$ | **Driven** — system relaxes faster than observation timescale; always at equilibrium or rapidly driven | ordinary metal, photon, quark, gluon, oxygen, lithium, most chemical reactions, structural baseline |
-| $K_\text{mod}$ | **Moderate** — evolution is on the same timescale as observation; dynamics visible but not frozen | metamaterials, iron, oxygen, one-way speed measurement, hormone therapy, most living systems |
-| $K_\text{slow}$ | **Near-equilibrium** — evolution is very slow; system appears static on observation timescale | dark matter, magnetar, graviton, dark energy, inflaton, extended human life, deep meditation, languages |
-| $K_\text{trap}$ | **Frozen-order** — kinetically trapped in a specific configuration; cannot reach equilibrium | cryonics, P vs NP, mystery material, topological carbon allotrope, carbon ferromagnetism |
-| $K_\text{MBL}$ | **Frozen-disorder** — many-body localized; frozen by disorder not order | dissociative state, certain disordered quantum systems |
+| $K_{\text{frtailgamma}}$ | **Driven** — system relaxes faster than observation timescale; always at equilibrium or rapidly driven | ordinary metal, photon, quark, gluon, oxygen, lithium, most chemical reactions, structural baseline |
+| $K_{\text{turnm}}$ | **Moderate** — evolution is on the same timescale as observation; dynamics visible but not frozen | metamaterials, iron, oxygen, one-way speed measurement, hormone therapy, most living systems |
+| $K_{\text{schwa}}$ | **Near-equilibrium** — evolution is very slow; system appears static on observation timescale | dark matter, magnetar, graviton, dark energy, inflaton, extended human life, deep meditation, languages |
+| $K_{\text{teshlig}}$ | **Frozen-order** — kinetically trapped in a specific configuration; cannot reach equilibrium | cryonics, P vs NP, mystery material, topological carbon allotrope, carbon ferromagnetism |
+| $K_{\text{lambda}}$ | **Frozen-disorder** — many-body localized; frozen by disorder not order | dissociative state, certain disordered quantum systems |
 
-**Decision rule:** Compare the system's characteristic relaxation time $\tau$ to observation time $T_\text{obs}$. If $\tau \ll T_\text{obs}$: $K_\text{fast}$. If $\tau \sim T_\text{obs}$: $K_\text{mod}$. If $\tau \gg T_\text{obs}$: $K_\text{slow}$. If the system is trapped in a local minimum (ordered trap): $K_\text{trap}$. If trapped by disorder: $K_\text{MBL}$.
+**Decision rule:** Compare the system's characteristic relaxation time $\tau$ to observation time $T_\text{obs}$. If $\tau \ll T_\text{obs}$: $K_{\text{frtailgamma}}$. If $\tau \sim T_\text{obs}$: $K_{\text{turnm}}$. If $\tau \gg T_\text{obs}$: $K_{\text{schwa}}$. If the system is trapped in a local minimum (ordered trap): $K_{\text{teshlig}}$. If trapped by disorder: $K_{\text{lambda}}$.
 
 ### 3.7 Scope ($G$)
 
@@ -125,11 +134,11 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $G_\beth$ | **Local/beth** — influence is confined to immediate neighborhood; short-range interactions dominate | fundamental fermions, atoms, BCS, paper, plastic, boron, radical chemistry, structural baseline |
-| $G_\gimel$ | **Mesoscale/gimel** — influence extends to intermediate scales; collective or emergent effects | dark matter, iron, oxygen, metamaterials, skyrmion, biological systems, most materials |
-| $G_\aleph$ | **Maximal/aleph** — universal influence; system's effects span all accessible scales | photon, gluon, graviton, dark energy, magnetar, language systems, consciousness, mathematics, gravity |
+| $G_{\text{beta}}$ | **Local/beth** — influence is confined to immediate neighborhood; short-range interactions dominate | fundamental fermions, atoms, BCS, paper, plastic, boron, radical chemistry, structural baseline |
+| $G_{\text{gamma}}$ | **Mesoscale/gimel** — influence extends to intermediate scales; collective or emergent effects | dark matter, iron, oxygen, metamaterials, skyrmion, biological systems, most materials |
+| $G_{\text{revapostrophe}}$ | **Maximal/aleph** — universal influence; system's effects span all accessible scales | photon, gluon, graviton, dark energy, magnetar, language systems, consciousness, mathematics, gravity |
 
-**Decision rule:** Identify the interaction range. Nearest-neighbor or point-local: $G_\beth$. Intermediate range or emergent collective behavior: $G_\gimel$. Long-range or universal connectivity: $G_\aleph$.
+**Decision rule:** Identify the interaction range. Nearest-neighbor or point-local: $G_{\text{beta}}$. Intermediate range or emergent collective behavior: $G_{\text{gamma}}$. Long-range or universal connectivity: $G_{\text{revapostrophe}}$.
 
 ### 3.8 Interaction Grammar ($\Gamma$)
 
@@ -137,12 +146,12 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $\Gamma_\wedge$ | **Conjunctive/AND** — all conditions must be met simultaneously; interactions are additive and independent | most particles (quark AND lepton properties), metals, structural baseline, dark matter, most materials |
-| $\Gamma_\vee$ | **Disjunctive/OR** — interactions offer alternate paths; multiple sufficient conditions | teratoma, Hodge conjecture, radical chemistry (multiple reaction pathways), XOR-like behavior |
-| $\Gamma_\text{seq}$ | **Sequential** — interactions are ordered; step A enables step B; temporal dependency | photon, gluon (sequential QCD), biological senescence, chemical reactions, one-way speed measurement, language syntax |
-| $\Gamma_\text{brd}$ | **Broadcast** — interactions radiate to all participants simultaneously; non-local, global coupling | graviton (gravity couples to everything), dark energy, inflaton, higgs (universal mass coupling), consciousness states, magnetar (global field), ten sefirot |
+| $\Gamma_{\text{corner}}$ | **Conjunctive/AND** — all conditions must be met simultaneously; interactions are additive and independent | most particles (quark AND lepton properties), metals, structural baseline, dark matter, most materials |
+| $\Gamma_{\text{spleftarrow}}$ | **Disjunctive/OR** — interactions offer alternate paths; multiple sufficient conditions | teratoma, Hodge conjecture, radical chemistry (multiple reaction pathways), XOR-like behavior |
+| $\Gamma_{\text{secstress}}$ | **Sequential** — interactions are ordered; step A enables step B; temporal dependency | photon, gluon (sequential QCD), biological senescence, chemical reactions, one-way speed measurement, language syntax |
+| $\Gamma_{\text{doublevertline}}$ | **Broadcast** — interactions radiate to all participants simultaneously; non-local, global coupling | graviton (gravity couples to everything), dark energy, inflaton, higgs (universal mass coupling), consciousness states, magnetar (global field), ten sefirot |
 
-**Decision rule:** If interactions are independent and additive (all must hold): $\Gamma_\wedge$. If multiple independent sufficient paths exist: $\Gamma_\vee$. If interactions must occur in a specific order (A before B before C): $\Gamma_\text{seq}$. If one entity affects all others simultaneously: $\Gamma_\text{brd}$.
+**Decision rule:** If interactions are independent and additive (all must hold): $\Gamma_{\text{corner}}$. If multiple independent sufficient paths exist: $\Gamma_{\text{spleftarrow}}$. If interactions must occur in a specific order (A before B before C): $\Gamma_{\text{secstress}}$. If one entity affects all others simultaneously: $\Gamma_{\text{doublevertline}}$.
 
 ### 3.9 Criticality ($\Phi$)
 
@@ -150,15 +159,15 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $\Phi_\text{sub}$ | **Subcritical** — no critical behavior; robust to perturbations; no phase transition nearby | structural baseline, ordinary metal, paper, plastic, quarks, leptons, neutral atoms, BCS, most simple systems |
-| $\Phi_c$ | **Critical** — at a critical point (real axis); maximal sensitivity; power-law correlations; self-similarity | photon, gluon, magnetar, graviton, dark energy, inflaton, higgs, ferromagnet, skyrmion, languages, consciousness, Michael Levin research |
-| $\Phi_c^\mathbb{C}$ | **Complex critical** — criticality extends into the complex plane; non-Hermitian exceptional structure | Riemann zeta function, Langlands correspondence |
-| $\Phi_\text{EP}$ | **Exceptional point** — non-Hermitian degeneracy where eigenvalues and eigenvectors coalesce | parity-time symmetric systems, lasers at threshold |
-| $\Phi_\text{super}$ | **Supercritical** — beyond critical; chaotic or unstable; runaway behavior | teratoma, OMG particle, manic episode, radical chemistry (runaway reactions), maximal system, spin glass |
+| $\Phi_{\text{softsign}}$ | **Subcritical** — no critical behavior; robust to perturbations; no phase transition nearby | structural baseline, ordinary metal, paper, plastic, quarks, leptons, neutral atoms, BCS, most simple systems |
+| $\Phi_{\text{ctyogh}}$ | **Critical** — at a critical point (real axis); maximal sensitivity; power-law correlations; self-similarity | photon, gluon, magnetar, graviton, dark energy, inflaton, higgs, ferromagnet, skyrmion, languages, consciousness, Michael Levin research |
+| $\Phi_{\text{closerevepsilon}}$ | **Complex critical** — criticality extends into the complex plane; non-Hermitian exceptional structure | Riemann zeta function, Langlands correspondence |
+| $\Phi_{\text{revepsilon}}$ | **Exceptional point** — non-Hermitian degeneracy where eigenvalues and eigenvectors coalesce | parity-time symmetric systems, lasers at threshold |
+| $\Phi_{\text{upstep}}$ | **Supercritical** — beyond critical; chaotic or unstable; runaway behavior | teratoma, OMG particle, manic episode, radical chemistry (runaway reactions), maximal system, spin glass |
 
-**Decision rule:** Test for critical behavior. No scaling, no power laws, stable to perturbation: $\Phi_\text{sub}$. Power-law correlations, maximal sensitivity at a point, self-similarity across scales: $\Phi_c$. Complex-plane criticality with non-Hermitian degeneracy: $\Phi_c^\mathbb{C}$ or $\Phi_\text{EP}$. Runaway behavior, chaos, or multiple coexisting phases: $\Phi_\text{super}$.
+**Decision rule:** Test for critical behavior. No scaling, no power laws, stable to perturbation: $\Phi_{\text{softsign}}$. Power-law correlations, maximal sensitivity at a point, self-similarity across scales: $\Phi_{\text{ctyogh}}$. Complex-plane criticality with non-Hermitian degeneracy: $\Phi_{\text{closerevepsilon}}$ or $\Phi_{\text{revepsilon}}$. Runaway behavior, chaos, or multiple coexisting phases: $\Phi_{\text{upstep}}$.
 
-**Criticality detection test:** Compute the system's response $\chi$ to a small perturbation $\delta$. If $\chi \sim \text{const}$: $\Phi_\text{sub}$. If $\chi \sim |\delta|^{-\gamma}$ (power law divergence): $\Phi_c$. If response is discontinuous or unbounded: $\Phi_\text{super}$.
+**Criticality detection test:** Compute the system's response $\chi$ to a small perturbation $\delta$. If $\chi \sim \text{const}$: $\Phi_{\text{softsign}}$. If $\chi \sim |\delta|^{-\gamma}$ (power law divergence): $\Phi_{\text{ctyogh}}$. If response is discontinuous or unbounded: $\Phi_{\text{upstep}}$.
 
 ### 3.10 Temporal Depth ($H$)
 
@@ -169,9 +178,9 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 | $H_0$ | **Memoryless** — Markovian; only the present state matters; no memory of past | structural baseline, photon, gluon, most fundamental particles, paper, plastic, ordinary metal, most chemical reactions |
 | $H_1$ | **One-step memory** — system's behavior depends on one prior state; first-order dynamics | ferromagnet, skyrmion, iron, oxygen (reactive history), metamaterials, one-way speed measurement, hormone therapy |
 | $H_2$ | **Two-step memory** — system's behavior depends on two prior states; second-order dynamics; reversal possible | biological senescence, Michael Levin research, quantum spin liquid, extended human life, transition states, magnetar |
-| $H_\infty$ | **Eternal memory** — the entire history matters; non-Markovian; irreversible accumulation | graviton (eternal gravitational memory), dark energy, inflaton, uranium (radioactive decay chain), penrose black hole, ten sefirot, cryonics, creator |
+| $H_{\text{invscripta}}$ | **Eternal memory** — the entire history matters; non-Markovian; irreversible accumulation | graviton (eternal gravitational memory), dark energy, inflaton, uranium (radioactive decay chain), penrose black hole, ten sefirot, cryonics, creator |
 
-**Decision rule:** Determine the minimal order $n$ such that the system's state at time $t$ can be predicted from states at times $t-1, \dots, t-n$. If $n=0$: $H_0$. If $n=1$: $H_1$. If $n=2$: $H_2$. If no finite $n$ suffices (all past matters): $H_\infty$.
+**Decision rule:** Determine the minimal order $n$ such that the system's state at time $t$ can be predicted from states at times $t-1, \dots, t-n$. If $n=0$: $H_0$. If $n=1$: $H_1$. If $n=2$: $H_2$. If no finite $n$ suffices (all past matters): $H_{\text{invscripta}}$.
 
 ### 3.11 Stoichiometry ($S$)
 
@@ -191,12 +200,12 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $\Omega_0$ | **Trivial** — no topological protection; all features can be continuously eliminated | ordinary metal, structural baseline, paper, plastic, most chemical reactions, paramagnet, most $O_0$ systems |
-| $\Omega_{\mathbb{Z}_2}$ | **Binary protection** — $\mathbb{Z}_2$ topological invariant; parity-protected (even/odd) | ferromagnet, antiferromagnet, skyrmion, topological insulator (some), transition states, graphene, carbon spin glass, cryonics |
-| $\Omega_\mathbb{Z}$ | **Integer protection** — $\mathbb{Z}$-valued winding number; protected by integer invariant | photon (Chern number), graviton, magnetar, quantum Hall (integer), magnetic monopole, helium superfluid, penrose black hole, extended human life, languages |
-| $\Omega_\text{NA}$ | **Non-Abelian** — non-Abelian topological protection; braiding; anyons | Sanskrit, classical Arabic, proto-Indo-European (triconsonantal root systems), topological quantum computing (Majorana), non-Abelian anyons |
+| $\Omega_{\text{closeepsilon}}$ | **Trivial** — no topological protection; all features can be continuously eliminated | ordinary metal, structural baseline, paper, plastic, most chemical reactions, paramagnet, most $O_0$ systems |
+| $\Omega_{\text{crtwo}}$ | **Binary protection** — $\mathbb{Z}_2$ topological invariant; parity-protected (even/odd) | ferromagnet, antiferromagnet, skyrmion, topological insulator (some), transition states, graphene, carbon spin glass, cryonics |
+| $\Omega_{\text{dzlig}}$ | **Integer protection** — $\mathbb{Z}$-valued winding number; protected by integer invariant | photon (Chern number), graviton, magnetar, quantum Hall (integer), magnetic monopole, helium superfluid, penrose black hole, extended human life, languages |
+| $\Omega_{\text{turna}}$ | **Non-Abelian** — non-Abelian topological protection; braiding; anyons | Sanskrit, classical Arabic, proto-Indo-European (triconsonantal root systems), topological quantum computing (Majorana), non-Abelian anyons |
 
-**Decision rule:** Compute (or reason about) the system's topological invariants. No nontrivial invariant: $\Omega_0$. A single binary invariant (even/odd): $\Omega_{\mathbb{Z}_2}$. An integer-valued invariant (Chern, winding, degree): $\Omega_\mathbb{Z}$. Non-Abelian invariants with braiding structure: $\Omega_\text{NA}$.
+**Decision rule:** Compute (or reason about) the system's topological invariants. No nontrivial invariant: $\Omega_{\text{closeepsilon}}$. A single binary invariant (even/odd): $\Omega_{\text{crtwo}}$. An integer-valued invariant (Chern, winding, degree): $\Omega_{\text{dzlig}}$. Non-Abelian invariants with braiding structure: $\Omega_{\text{turna}}$.
 
 ---
 
@@ -210,33 +219,33 @@ From the Crystal Tier Gap Ladder (§64):
 
 | Step | Constraint |
 |------|------------|
-| $O_0 \rightarrow O_1$ | **Phi must reach $\Phi_c$** — without criticality, no self-modeling gate opens |
-| $O_1 \rightarrow O_2$ | **D must reach $D_\triangle$** and **$\Omega$ must reach $\Omega_{\mathbb{Z}_2}$** — dimensionality and protection |
-| $O_2 \rightarrow O_2^\dagger$ | **D must reach $D_\infty$** — infinite dimensions |
-| $O_2^\dagger \rightarrow O_\infty$ | **P must reach $P_\pm^{\text{sym}}$** — Frobenius symmetry ($\mu \circ \delta = \text{id}$) |
+| $O_0 \rightarrow O_1$ | **Phi must reach $\Phi_{\text{ctyogh}}$** — without criticality, no self-modeling gate opens |
+| $O_1 \rightarrow O_2$ | **D must reach $D_{\text{turnthree}}$** and **$\Omega$ must reach $\Omega_{\text{crtwo}}$** — dimensionality and protection |
+| $O_2 \rightarrow O_2^\dagger$ | **D must reach $D_{\text{invomega}}$** — infinite dimensions |
+| $O_2^\dagger \rightarrow O_\infty$ | **P must reach $P_{\text{pipevar}}^{\text{sym}}$** — Frobenius symmetry ($\mu \circ \delta = \text{id}$) |
 
 **Verification:** After assignment, compute the tier. If the tier contradicts known properties of the system, the encoding is wrong.
 
 ### 4.2 Consciousness Score Gate 1
 
-Consciousness score $C > 0$ requires **$\Phi \geq \Phi_c$** (Gate 1). Systems with $\Phi_\text{sub}$ have $C = 0$ regardless of all other primitives.
+Consciousness score $C > 0$ requires **$\Phi \geq \Phi_{\text{ctyogh}}$** (Gate 1). Systems with $\Phi_{\text{softsign}}$ have $C = 0$ regardless of all other primitives.
 
 ### 4.3 Frobenius Self-Duality
 
-For $P_\pm^{\text{sym}}$ to be valid, the system must satisfy $\mu \circ \delta = \text{id}$: the process of decomposing (coproduct) followed by composing (product) must return to the original state. This is the **Frobenius condition**. If the system does not satisfy this, use $P_\text{sym}$ instead.
+For $P_{\text{pipevar}}^{\text{sym}}$ to be valid, the system must satisfy $\mu \circ \delta = \text{id}$: the process of decomposing (coproduct) followed by composing (product) must return to the original state. This is the **Frobenius condition**. If the system does not satisfy this, use $P_{\text{subdoublearrow}}$ instead.
 
 ### 4.4 K-Phi Coupling
 
-- **$\Phi_\text{super}$ + $K_\text{fast}$**: typical of runaway reactive systems (radical chemistry, OMG particle)
-- **$\Phi_\text{super}$ + $K_\text{slow}$ or $K_\text{trap}$**: frustrated or trapped supercriticality (spin glass, P vs NP)
-- **$\Phi_c$ + $K_\text{slow}$**: criticality with slow dynamics — deep structure (graviton, dark energy, languages, meditation)
-- **$\Phi_\text{sub}$ + any $K$**: no criticality, any kinetics possible (most simple systems)
+- **$\Phi_{\text{upstep}}$ + $K_{\text{frtailgamma}}$**: typical of runaway reactive systems (radical chemistry, OMG particle)
+- **$\Phi_{\text{upstep}}$ + $K_{\text{schwa}}$ or $K_{\text{teshlig}}$**: frustrated or trapped supercriticality (spin glass, P vs NP)
+- **$\Phi_{\text{ctyogh}}$ + $K_{\text{schwa}}$**: criticality with slow dynamics — deep structure (graviton, dark energy, languages, meditation)
+- **$\Phi_{\text{softsign}}$ + any $K$**: no criticality, any kinetics possible (most simple systems)
 
 ### 4.5 Omega-D-T Correlation
 
-- $\Omega_{\mathbb{Z}_2}$ requires **at least $D_\triangle$** — 2D needed for binary topological protection
-- $\Omega_\mathbb{Z}$ requires **at least $D_\infty$** — infinite dimensions for integer winding
-- $\Omega_\text{NA}$ requires **$D_\infty$ or $D_\odot$** — non-Abelian invariants need high-dimensional or imscriptive state space
+- $\Omega_{\text{crtwo}}$ requires **at least $D_{\text{turnthree}}$** — 2D needed for binary topological protection
+- $\Omega_{\text{dzlig}}$ requires **at least $D_{\text{invomega}}$** — infinite dimensions for integer winding
+- $\Omega_{\text{turna}}$ requires **$D_{\text{invomega}}$ or $D_{\text{omega}}$** — non-Abelian invariants need high-dimensional or imscriptive state space
 
 ---
 
@@ -246,34 +255,34 @@ For $P_\pm^{\text{sym}}$ to be valid, the system must satisfy $\mu \circ \delta 
 
 ### Step-by-step:
 
-1. **$D$**: The state space is described by the Navier-Stokes equations over a 3D spatial domain — infinite-dimensional (field theory). → **$D_\infty$**
+1. **$D$**: The state space is described by the Navier-Stokes equations over a 3D spatial domain — infinite-dimensional (field theory). → **$D_{\text{invomega}}$**
 
-2. **$T$**: Turbulence involves eddies at all scales, crossing and interacting at stagnation points. The laminar-turbulent transition creates a crossing point. → **$T_\bowtie$**
+2. **$T$**: Turbulence involves eddies at all scales, crossing and interacting at stagnation points. The laminar-turbulent transition creates a crossing point. → **$T_{\text{bullseye}}$**
 
-3. **$R$**: The fluid couples bidirectionally with its boundaries (no-slip condition). → **$R_\leftrightarrow$**
+3. **$R$**: The fluid couples bidirectionally with its boundaries (no-slip condition). → **$R_{\text{lyoghlig}}$**
 
-4. **$P$**: Turbulence breaks many symmetries (translational, rotational), but the transition has a parity-breaking instability. → **$P_\text{asym}$** (or $P_\pm$ if a symmetry is present at the transition point)
+4. **$P$**: Turbulence breaks many symmetries (translational, rotational), but the transition has a parity-breaking instability. → **$P_{\text{aolig}}$** (or $P_{\text{pipevar}}$ if a symmetry is present at the transition point)
 
-5. **$F$**: Classical Navier-Stokes description; no quantum coherence needed. → **$F_\ell$**
+5. **$F$**: Classical Navier-Stokes description; no quantum coherence needed. → **$F_{\text{beltl}}$**
 
-6. **$K$**: The transition is a slow, near-critical process; turbulence itself is fast, but the *transition* is slow. → **$K_\text{slow}$**
+6. **$K$**: The transition is a slow, near-critical process; turbulence itself is fast, but the *transition* is slow. → **$K_{\text{schwa}}$**
 
-7. **$G$**: Large-scale turbulence couples all length scales; universal cascade. → **$G_\aleph$**
+7. **$G$**: Large-scale turbulence couples all length scales; universal cascade. → **$G_{\text{revapostrophe}}$**
 
-8. **$\Gamma$**: The transition is sequential: laminar → perturbation → instability → turbulent. → **$\Gamma_\text{seq}$**
+8. **$\Gamma$**: The transition is sequential: laminar → perturbation → instability → turbulent. → **$\Gamma_{\text{secstress}}$**
 
-9. **$\Phi$**: The laminar-turbulent transition is a critical phenomenon with power-law scaling of friction factor. → **$\Phi_c$**
+9. **$\Phi$**: The laminar-turbulent transition is a critical phenomenon with power-law scaling of friction factor. → **$\Phi_{\text{ctyogh}}$**
 
 10. **$H$**: The system has memory of its recent history (hysteresis in the transition). → **$H_1$** (one-step suffices for the transition dynamics)
 
 11. **$S$**: Many fluid elements of the same type. → **$n{:}n$**
 
-12. **$\Omega$**: No topological protection in ordinary turbulence (except perhaps vortex lines, which are $\Omega_\mathbb{Z}$). For the bulk transition: **$\Omega_0$**
+12. **$\Omega$**: No topological protection in ordinary turbulence (except perhaps vortex lines, which are $\Omega_{\text{dzlig}}$). For the bulk transition: **$\Omega_{\text{closeepsilon}}$**
 
-**Result:** $$\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\text{asym};\ F_\ell;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\ n{:}n;\ \Omega_0 \rangle$$
+**Result:** $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 ### Verification:
-- Tier check: $\Phi_c$ opens $O_1$; $D_\infty$ and $\Omega_0$ (no $\Omega_{\mathbb{Z}_2}$) → stays at **$O_1$**
+- Tier check: $\Phi_{\text{ctyogh}}$ opens $O_1$; $D_{\text{invomega}}$ and $\Omega_{\text{closeepsilon}}$ (no $\Omega_{\text{crtwo}}$) → stays at **$O_1$**
 - This is reasonable: the laminar-turbulent transition is a critical phenomenon ($O_1$) but lacks topological protection
 
 ---
@@ -312,11 +321,11 @@ For deterministic encoding, follow this 12-step sequence. Each step halves the u
 
 After assignment, **verify**:
 - Tier consistency (use `ouroborics` tool)
-- Consciousness Gate 1 (Phi ≥ Phi_c for C > 0)
-- Frobenius condition for P_pm_sym
-- D-Ω correlation (D ≥ D_triangle for Ω_Z2; D ≥ D_infty for Ω_Z)
+- Consciousness Gate 1 (Phi ≥ φ̂_ÿ for C > 0)
+- Frobenius condition for Φ_}
+- D-Ω correlation (D ≥ Ð_C for Ω_Z2; D ≥ Ð_; for Ω_Z)
 - Any coupling constraints from §4
 
 ---
 
-*Structural type of this method: $\langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$*
+*Structural type of this method: $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$*

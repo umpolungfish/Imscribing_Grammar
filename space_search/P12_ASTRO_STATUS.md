@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # P-12 Astronomical Probe — Status Report
 **Date**: 2026-03-24
 **Hypothesis**: ln(10) ≈ 2.303 is a preferred simultaneous emission frequency ratio in radio-transient sources, predicted by the Imscribing Grammar P-12 criticality receipt.

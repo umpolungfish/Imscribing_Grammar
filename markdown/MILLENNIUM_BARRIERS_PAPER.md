@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Imscribing Grammar: Millennium Barriers
 ## *A Formal Barrier Taxonomy for the Millennium Prize Problems in Lean 4*
 
@@ -61,7 +70,7 @@ Both Yang-Mills and BSD have `sorryDepth = 2`. The structural difference is enco
 
 **C7  --  PrimitiveBridge.lean:** Formal connection between sorry boundaries and primitive field transitions in the Imscribing Grammar grammar; `BarrierPrimitiveCertificate` structure; `primitive_bridge_master` theorem.
 
-**C8  --  RH–Lee-Yang structural correspondence (v0.1.2):** Machine-checked theorem that the Riemann $\zeta$ zeros and Lee-Yang partition-function zeros share the same Criticality assignment `Phi_c_complex`. Structural distance 7 (machine-checked; corrected from v0.1.1 which stated 5) identifies the polarity primitive $P$ ($P_{\pm}^{\text{sym}}$ vs $P_\text{neutral}$) as the essential structural gap; remaining 6 mismatches (T, F, K, gran, stoi, chir) are background differences. Enabled by the $\Phi$ primitive expansion: `Phi_c` → `Phi_c` / `Phi_c_complex` / `Phi_EP`.
+**C8  --  RH–Lee-Yang structural correspondence (v0.1.2):** Machine-checked theorem that the Riemann $\zeta$ zeros and Lee-Yang partition-function zeros share the same Criticality assignment `φ̂_Æ`. Structural distance 7 (machine-checked; corrected from v0.1.1 which stated 5) identifies the polarity primitive $P$ ($P_{\text{doublebarpipe}}$ vs $P_\text{neutral}$) as the essential structural gap; remaining 6 mismatches (T, F, K, gran, stoi, chir) are background differences. Enabled by the $\Phi$ primitive expansion: `φ̂_ÿ` → `φ̂_ÿ` / `φ̂_Æ` / `φ̂_3`.
 
 ---
 
@@ -92,7 +101,7 @@ This is intentional. An `axiom` is explicit about its foundational status  --  i
 
 ### II.3 The Imscribing Grammar primitive grammar
 
-The Imscribing Grammar framework encodes physical and mathematical systems as 12-tuples $\langle D; T; R; P; F; K; G; \Gamma; \Phi_c; H; S; \Omega \rangle$ over a constraint algebra. The twelve primitives and their Lean types:
+The Imscribing Grammar framework encodes physical and mathematical systems as 12-tuples $\langle D; T; R; P; F; K; G; \Gamma; \Phi_{\text{ctyogh}}; H; S; \Omega \rangle$ over a constraint algebra. The twelve primitives and their Lean types:
 
 | Primitive | Lean type | Role |
 | :--- | :--- | :--- |
@@ -104,8 +113,8 @@ The Imscribing Grammar framework encodes physical and mathematical systems as 12
 | **$F$ (Fidelity)** | `Fidelity` | Information reliability: noise / $\ell$ / $\eta$ / $\hbar$ |
 | **$K$ (Kinetic character)** | `KineticChar` | Rate / trapping: fast / mod / slow / trap / MBL |
 | **$G$ (Granularity)** | `Granularity` | Description scale: $\aleph$ / $\beth$ / $\gimel$ |
-| **$\Phi$ (Criticality)** | `Criticality` | Phase position: sub / $\Phi_c$ (real-axis) / $\Phi_c^\mathbb{C}$ (complex-axis) / $\Phi_\text{EP}$ (exceptional point) / super |
-| **$H$ (Chirality)** | `Chirality` | Temporal asymmetry depth: $H_0$ / $H_1$ / $H_2$ / $H_\infty$ |
+| **$\Phi$ (Criticality)** | `Criticality` | Phase position: sub / $\Phi_{\text{ctyogh}}$ (real-axis) / $\Phi_{\text{closerevepsilon}}$ (complex-axis) / $\Phi_{\text{revepsilon}}$ (exceptional point) / super |
+| **$H$ (Chirality)** | `Chirality` | Temporal asymmetry depth: $H_0$ / $H_1$ / $H_2$ / $H_{\text{invscripta}}$ |
 | **$S$ (Stoichiometry)** | `Stoichiometry` | Ratio: 1:1 / 1:$n$ / $n$:$m$ / catalytic |
 | **$\Omega$ (Protection)** | `Protection` | Topological protection: $0$ / $Z_2$ / $Z$ / $C$ / NA |
 
@@ -199,7 +208,7 @@ YM and BSD share `sorryDepth = 2` but for different structural reasons: in YM, s
 
 The file introduces abstract types `RiemannZeta`, `CriticalStrip`, and `ZeroFreeStrip` to provide typed scaffolding. The sorry boundary is the statement that $\zeta(s) \neq 0$ for all $s$ with $0 < \text{Re}(s) < 1$, $\text{Re}(s) \neq \frac{1}{2}$.
 
-The primitive encoding of RH assigns `crit = Phi_c_complex`: the nontrivial zeros of $\zeta$ are located at *complex* values of $s$ (not at a real critical parameter). This distinguishes them from standard Hermitian critical points (`Phi_c`) and connects them structurally to the Lee-Yang edge singularity (§V.6). The functional equation $\zeta(s) = \zeta(1-s)$ (proved in Mathlib) encodes a pseudo-symmetry analogous to Lee-Yang's $h \mapsto -h$; the critical line $\text{Re}(s) = \frac{1}{2}$ is the fixed locus of $s \mapsto 1-s$, exactly as the imaginary axis is the fixed locus of $h \mapsto -h$.
+The primitive encoding of RH assigns `crit = φ̂_Æ`: the nontrivial zeros of $\zeta$ are located at *complex* values of $s$ (not at a real critical parameter). This distinguishes them from standard Hermitian critical points (`φ̂_ÿ`) and connects them structurally to the Lee-Yang edge singularity (§V.6). The functional equation $\zeta(s) = \zeta(1-s)$ (proved in Mathlib) encodes a pseudo-symmetry analogous to Lee-Yang's $h \mapsto -h$; the critical line $\text{Re}(s) = \frac{1}{2}$ is the fixed locus of $s \mapsto 1-s$, exactly as the imaginary axis is the fixed locus of $h \mapsto -h$.
 
 ```lean
 axiom rh_sorry_boundary : Millennium.RH.RiemannHypothesis
@@ -209,7 +218,7 @@ theorem rh_barrier : RiemannHypothesis <-> ZeroFreeStrip 0
 
 The barrier theorem isolates `ZeroFreeStrip 0` as the exact missing type: the sorry is tight  --  RH is equivalent to inhabiting that type and nothing else.
 
-*2026-03-31 update (v0.1.3):* The grammar now provides Corollary 29.2 (PRIMITIVE_THEOREMS §29.2): RH is the statement that no non-trivial zero breaks the $P_{\pm}^{\text{sym}}$ condition imposed by the functional equation. The functional equation $\xi(s) = \xi(1-s)$ is the $\mathbb{Z}_2$ symmetry encoded by $P_{\pm}^{\text{sym}}$; a zero off the critical line would encode as $P_\text{asym}$, reducing the system from $O_\infty$ to $O_1$. This strengthens the V.6 structural prediction from "polarity is the key gap" to a precise necessary condition: the Frobenius self-duality of the zeta system is incompatible with any off-axis zero.
+*2026-03-31 update (v0.1.3):* The grammar now provides Corollary 29.2 (PRIMITIVE_THEOREMS §29.2): RH is the statement that no non-trivial zero breaks the $P_{\text{doublebarpipe}}$ condition imposed by the functional equation. The functional equation $\xi(s) = \xi(1-s)$ is the $\mathbb{Z}_2$ symmetry encoded by $P_{\text{doublebarpipe}}$; a zero off the critical line would encode as $P_{\text{aolig}}$, reducing the system from $O_\infty$ to $O_1$. This strengthens the V.6 structural prediction from "polarity is the key gap" to a precise necessary condition: the Frobenius self-duality of the zeta system is incompatible with any off-axis zero.
 
 ### IV.2 Yang-Mills Existence and Mass Gap
 
@@ -294,7 +303,7 @@ theorem aaronson_wigderson_algebrization_barrier : True := trivial
 
 The `trivial` bodies are honest: these are theorems *about* proof techniques, not the conjecture itself. They are documented constraints on the proof search space.
 
-*2026-03-31 update (v0.1.3):* The grammar now provides a structural explanation of why all three meta-barriers exist and why none can resolve the conjecture (Theorem 30.1, PRIMITIVE_THEOREMS §30; IG_DIAPHORICS §LX). The Boolean P vs NP formulation encodes as $P_\text{asym}$, $O_1$. Baker-Gill-Solovay relativization, Razborov-Rudich natural proofs, and Aaronson-Wigderson algebrization are all proof techniques that operate within the $P_\text{asym}$ frame — they cannot produce $P_{\pm}^{\text{sym}}$, which is the minimal structural upgrade needed to reach the $O_\infty$-complete formulation. This is a structural explanation, not merely a technical observation: the meta-barriers are not contingent obstacles but consequences of operating below the Frobenius tier. See §V.8 for the duality formulation that reaches $O_\infty$.
+*2026-03-31 update (v0.1.3):* The grammar now provides a structural explanation of why all three meta-barriers exist and why none can resolve the conjecture (Theorem 30.1, PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX). The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O_1$. Baker-Gill-Solovay relativization, Razborov-Rudich natural proofs, and Aaronson-Wigderson algebrization are all proof techniques that operate within the $P_{\text{aolig}}$ frame — they cannot produce $P_{\text{doublebarpipe}}$, which is the minimal structural upgrade needed to reach the $O_\infty$-complete formulation. This is a structural explanation, not merely a technical observation: the meta-barriers are not contingent obstacles but consequences of operating below the Frobenius tier. See §V.8 for the duality formulation that reaches $O_\infty$.
 
 ### IV.6 Odd Perfect Number
 
@@ -376,7 +385,7 @@ The `barrier_correct` field is a proof obligation, not documentation. For each c
 ```lean
 def ym_certificate : BarrierPrimitiveCertificate .YM where
   encoding     := ym_quantum_target
-  blockedField := 'gran: G_beth → G_aleph (PathIntegralMeasure G missing)'
+  blockedField := 'gran: Γ_β → Γ_ʔ (PathIntegralMeasure G missing)'
   barrier      := .MissingFoundation
   barrier_correct := rfl   -- Lean verifies: .MissingFoundation = millenniumBarrier .YM (ok)
 
@@ -395,25 +404,25 @@ The Yang-Mills quantum lift is encoded as the transition from `ym_classical` (fo
 
 | Field | Classical YM | Quantum target | Interpretation |
 | :--- | :--- | :--- | :--- |
-| **$F$ (Fidelity)** | $F_\eta$ | $F_\hbar$ | Classical → quantum coherence |
-| **$K$ (Kinetic)** | $K_\text{mod}$ | $K_\text{trap}$ | Perturbative → confinement |
-| **$G$ (Granularity)** | $G_\beth$ | $G_\aleph$ | Mesoscale local → quantum fine-grained |
-| **$\Phi_c$ (Criticality)** | $\Phi_\text{sub}$ | $\Phi_c$ | No gap → mass gap (critical phenomenon) |
+| **$F$ (Fidelity)** | $F_\eta$ | $F_{\text{hardsign}}$ | Classical → quantum coherence |
+| **$K$ (Kinetic)** | $K_{\text{turnm}}$ | $K_{\text{teshlig}}$ | Perturbative → confinement |
+| **$G$ (Granularity)** | $G_{\text{beta}}$ | $G_{\text{revapostrophe}}$ | Mesoscale local → quantum fine-grained |
+| **$\Phi_{\text{ctyogh}}$ (Criticality)** | $\Phi_{\text{softsign}}$ | $\Phi_{\text{ctyogh}}$ | No gap → mass gap (critical phenomenon) |
 
 ```lean
 theorem ym_classical_to_quantum_cost :
     primitiveMismatches ym_classical ym_quantum_target = 4 := by decide
 ```
 
-The **$G_\beth \to G_\aleph$ transition** is the primitive certificate of the missing `PathIntegralMeasure`:
-· $G_\beth$ = mesoscale local description  --  classical gauge field theory describable without integration over all gauge connections.
-· $G_\aleph$ = quantum fine-grained  --  requires a well-defined measure on the full gauge connection space modulo gauge equivalence.
-· Constructing `PathIntegralMeasure G` *is* providing the $G_\aleph$ description.
+The **$G_{\text{beta}} \to G_{\text{revapostrophe}}$ transition** is the primitive certificate of the missing `PathIntegralMeasure`:
+· $G_{\text{beta}}$ = mesoscale local description  --  classical gauge field theory describable without integration over all gauge connections.
+· $G_{\text{revapostrophe}}$ = quantum fine-grained  --  requires a well-defined measure on the full gauge connection space modulo gauge equivalence.
+· Constructing `PathIntegralMeasure G` *is* providing the $G_{\text{revapostrophe}}$ description.
 
-Crucially, the quantum target stays at `D_cube` (four-dimensional, local) rather than `D_odot` (holographic):
+Crucially, the quantum target stays at `Ð_cube` (four-dimensional, local) rather than `Ð_ω` (holographic):
 
 ```lean
-theorem ym_quantum_target_is_local : ym_quantum_target.dim = D_cube := rfl
+theorem ym_quantum_target_is_local : ym_quantum_target.dim = Ð_cube := rfl
 theorem ym_qg_dim_differ : ym_quantum_target.dim ≠ quantum_gravity.dim := by decide
 ```
 
@@ -423,11 +432,11 @@ The full certificate:
 
 ```lean
 theorem ym_primitive_barrier_certificate :
-    ym_quantum_target.gran = G_aleph ∧     -- needs quantum-level granularity
-    ym_quantum_target.crit = Phi_c ∧       -- needs mass gap (critical)
-    ym_quantum_target.fid  = F_hbar ∧      -- needs quantum fidelity
-    ym_quantum_target.kin  = K_trap ∧      -- needs confinement
-    ym_quantum_target.dim  = D_cube ∧      -- stays 4D local (NOT QG)
+    ym_quantum_target.gran = Γ_ʔ ∧     -- needs quantum-level granularity
+    ym_quantum_target.crit = φ̂_ÿ ∧       -- needs mass gap (critical)
+    ym_quantum_target.fid  = ƒ_ż ∧      -- needs quantum fidelity
+    ym_quantum_target.kin  = Ç_Ù ∧      -- needs confinement
+    ym_quantum_target.dim  = Ð_cube ∧      -- stays 4D local (NOT QG)
     ym_quantum_target.dim  ≠ quantum_gravity.dim ∧
     Barriers.millenniumBarrier .YM = .MissingFoundation := by
   exact ⟨rfl, rfl, rfl, rfl, rfl, by decide, rfl⟩
@@ -435,25 +444,25 @@ theorem ym_primitive_barrier_certificate :
 
 ### V.4 Other primitive certificates
 
-The OPN, NS, and RH certificates connect to the $\Phi_c$ criticality primitive:
+The OPN, NS, and RH certificates connect to the $\Phi_{\text{ctyogh}}$ criticality primitive:
 
 | Problem | Encoding field | Value | Structural meaning |
 | :--- | :--- | :--- | :--- |
-| **OPN** | `crit` + `kin` | $\Phi_c$ + $K_\text{trap}$ | $\sigma(n) = 2n$ is exact criticality; overdetermined constraint system has no relaxation path |
-| **NS** | `crit` | $\Phi_\text{sub}$ | Smooth solutions stay subcritical; the sorry proves they never cross to $\Phi_c$ (blow-up threshold) |
-| **RH** | `crit` | $\Phi_c^\mathbb{C}$ | The nontrivial zeros of $\zeta$ are at *complex* $s$ values; RH claims they lie on the symmetry axis $\text{Re}(s)=\frac{1}{2}$ of the functional equation $s \mapsto 1-s$ |
+| **OPN** | `crit` + `kin` | $\Phi_{\text{ctyogh}}$ + $K_{\text{teshlig}}$ | $\sigma(n) = 2n$ is exact criticality; overdetermined constraint system has no relaxation path |
+| **NS** | `crit` | $\Phi_{\text{softsign}}$ | Smooth solutions stay subcritical; the sorry proves they never cross to $\Phi_{\text{ctyogh}}$ (blow-up threshold) |
+| **RH** | `crit` | $\Phi_{\text{closerevepsilon}}$ | The nontrivial zeros of $\zeta$ are at *complex* $s$ values; RH claims they lie on the symmetry axis $\text{Re}(s)=\frac{1}{2}$ of the functional equation $s \mapsto 1-s$ |
 
 ```lean
 theorem opn_primitive_certificate :
-    opn_encoding.crit = Phi_c ∧ opn_encoding.kin = K_trap ∧
+    opn_encoding.crit = φ̂_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
     Barriers.millenniumBarrier .OPN = .OpenProblem := ⟨rfl, rfl, rfl⟩
 
 theorem ns_primitive_certificate :
-    ns_encoding.crit = Phi_sub ∧
+    ns_encoding.crit = φ̂_ž ∧
     Barriers.millenniumBarrier .NS = .OpenProblem := ⟨rfl, rfl⟩
 
 theorem rh_primitive_certificate :
-    rh_encoding.crit = Phi_c_complex ∧
+    rh_encoding.crit = φ̂_Æ ∧
     Barriers.millenniumBarrier .RH = .OpenProblem := ⟨rfl, rfl⟩
 ```
 
@@ -463,11 +472,11 @@ theorem rh_primitive_certificate :
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 ∧
     Barriers.millenniumBarrier .YM = .MissingFoundation ∧
-    opn_encoding.crit = Phi_c ∧ opn_encoding.kin = K_trap ∧
+    opn_encoding.crit = φ̂_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
     Barriers.millenniumBarrier .OPN = .OpenProblem ∧
-    ns_encoding.crit = Phi_sub ∧
+    ns_encoding.crit = φ̂_ž ∧
     Barriers.millenniumBarrier .NS = .OpenProblem ∧
-    rh_encoding.crit = Phi_c_complex ∧
+    rh_encoding.crit = φ̂_Æ ∧
     Barriers.millenniumBarrier .RH = .OpenProblem :=
   ⟨by decide, rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
 ```
@@ -480,36 +489,36 @@ This theorem machine-checks four barrier certificates simultaneously. The `by de
 
 The Phi expansion (§II.3) enables a new theorem that connects RH to a *proved* result by the same structural mechanism.
 
-**Lee-Yang theorem (1952)**: For the Ising ferromagnet, all zeros of the partition function $Z(z)$ as a function of complex $z = e^{-2\beta h}$ lie on the unit circle $|z| = 1$, i.e. on the imaginary $h$ axis. The proof uses the $h \mapsto -h$ symmetry ($P_{\pm}^{\text{sym}}$) of the Hamiltonian — a Z₂ symmetric-bipolar action.
+**Lee-Yang theorem (1952)**: For the Ising ferromagnet, all zeros of the partition function $Z(z)$ as a function of complex $z = e^{-2\beta h}$ lie on the unit circle $|z| = 1$, i.e. on the imaginary $h$ axis. The proof uses the $h \mapsto -h$ symmetry ($P_{\text{doublebarpipe}}$) of the Hamiltonian — a Z₂ symmetric-bipolar action.
 
-**The grammar identification**: both systems encode `crit = Phi_c_complex`. This is machine-checked:
+**The grammar identification**: both systems encode `crit = φ̂_Æ`. This is machine-checked:
 
 ```lean
 theorem rh_leyang_structural_correspondence :
-    rh_encoding.crit = Phi_c_complex ∧
-    lee_yang_encoding.crit = Phi_c_complex ∧
+    rh_encoding.crit = φ̂_Æ ∧
+    lee_yang_encoding.crit = φ̂_Æ ∧
     rh_encoding.crit = lee_yang_encoding.crit := ⟨rfl, rfl, rfl⟩
 ```
 
-The structural distance between the two encodings is 7 (machine-checked by `decide`; theorem `rh_leyang_distance`). The 7 mismatches are: $T$ (network vs bowtie), $P$ (neutral vs pm\_sym), $F$ ($\hbar$ vs $\ell$), $K$ (slow vs mod), gran ($\aleph$ vs $\gimel$), stoi (one\_n vs n\_m), chir (H0 vs H1). Notably:
+The structural distance between the two encodings is 7 (machine-checked by `decide`; theorem `rh_leyang_distance`). The 7 mismatches are: $T$ (network vs bowtie), $P$ (neutral vs pm\_sym), $F$ ($\hbar$ vs $\ell$), $K$ (slow vs mod), gran ($\aleph$ vs $\gimel$), stoi (one\_n vs n\_m), chir (Ħ_Ñ vs Ħ_£). Notably:
 
-- **$P$ is the essential mismatch**: Lee-Yang encodes $P_{\pm}^{\text{sym}}$ (explicit Z₂ $h \mapsto -h$ symmetry). The RH encoding has $P_\text{neutral}$. This is the grammar's way of saying: the Lee-Yang theorem succeeds because the symmetry is manifest in the primitive structure; in RH, the analogous symmetry $s \mapsto 1-s$ (the functional equation) is proved in Mathlib (`riemannZeta_one_sub`) but does not automatically constrain the zero locus without additional analytic input. The remaining 6 mismatches are background differences — $P$ is the sole essential gap (PRIMITIVE_THEOREMS §22.6).
+- **$P$ is the essential mismatch**: Lee-Yang encodes $P_{\text{doublebarpipe}}$ (explicit Z₂ $h \mapsto -h$ symmetry). The RH encoding has $P_\text{neutral}$. This is the grammar's way of saying: the Lee-Yang theorem succeeds because the symmetry is manifest in the primitive structure; in RH, the analogous symmetry $s \mapsto 1-s$ (the functional equation) is proved in Mathlib (`riemannZeta_one_sub`) but does not automatically constrain the zero locus without additional analytic input. The remaining 6 mismatches are background differences — $P$ is the sole essential gap (PRIMITIVE_THEOREMS §22.6).
 
-- **$G$ is the accessibility mismatch**: $G_\gimel$ (Lee-Yang, formally inaccessible at real $h$) vs $G_\aleph$ (RH, $\zeta$ globally accessible at all complex $s$). The Lee-Yang zeros are only reached by analytic continuation; $\zeta$ zeros are not computationally inaccessible, just unprovably located.
+- **$G$ is the accessibility mismatch**: $G_{\text{gamma}}$ (Lee-Yang, formally inaccessible at real $h$) vs $G_{\text{revapostrophe}}$ (RH, $\zeta$ globally accessible at all complex $s$). The Lee-Yang zeros are only reached by analytic continuation; $\zeta$ zeros are not computationally inaccessible, just unprovably located.
 
-**The grammar structural prediction for RH**: Any `Phi_c_complex` system with $P_{\pm}^{\text{sym}}$ (explicit Z₂ symmetry) has its critical manifold constrained to the symmetry axis. RH would follow if the functional equation symmetry $s \mapsto 1-s$ can be promoted from $P_\text{neutral}$ (implicit) to $P_{\pm}^{\text{sym}}$ strength. The grammar does not prove this — but it locates exactly where the analogy breaks down and what additional structure would be needed.
+**The grammar structural prediction for RH**: Any `φ̂_Æ` system with $P_{\text{doublebarpipe}}$ (explicit Z₂ symmetry) has its critical manifold constrained to the symmetry axis. RH would follow if the functional equation symmetry $s \mapsto 1-s$ can be promoted from $P_\text{neutral}$ (implicit) to $P_{\text{doublebarpipe}}$ strength. The grammar does not prove this — but it locates exactly where the analogy breaks down and what additional structure would be needed.
 
 This is C8 — a new contribution enabled by the Phi expansion:
 
-**C8 — RH–Lee-Yang structural correspondence:** Machine-checked theorem that $\zeta$ zeros and Lee-Yang zeros share `Phi_c_complex` assignment. Structural distance 7 (1 essential: $P$) identifies polarity as the key gap between proved Lee-Yang and open RH.
+**C8 — RH–Lee-Yang structural correspondence:** Machine-checked theorem that $\zeta$ zeros and Lee-Yang zeros share `φ̂_Æ` assignment. Structural distance 7 (1 essential: $P$) identifies polarity as the key gap between proved Lee-Yang and open RH.
 
-*2026-03-31 update (v0.1.3):* The `lee_yang_edge` catalog entry is now confirmed $O_\infty$ by direct inquiry (2026-03-31; 22-iteration session, 378 systems; see `MATH.txt`): `lee_yang_edge` encodes $\Phi_c^\mathbb{C} + P_{\pm}^{\text{sym}} \to O_\infty$ (Theorem 29.1, PRIMITIVE_THEOREMS §29). This upgrades C8 from a structural distance argument to a Frobenius identity: Lee-Yang is confirmed $O_\infty$, and RH would attain $O_\infty$ if and only if the functional equation symmetry can be promoted from $P_\text{neutral}$ to $P_{\pm}^{\text{sym}}$ strength — exactly as Corollary 29.2 states. The tensor product `lee_yang_edge` $\otimes$ `ising_3d` preserves $O_\infty$ (both $\Phi_c^\mathbb{C}/\Phi_c$ with $P_{\pm}^{\text{sym}}$), while `lee_yang_edge` $\otimes$ `exceptional_point_nh` destroys it (Theorem 29.2: $\Phi_\text{EP}$ absorbs $O_\infty$). The structural prediction for RH is now: the critical line $\mathrm{Re}(s) = \tfrac{1}{2}$ is the $P_{\pm}^{\text{sym}}$ symmetry axis; zeros off it would break Frobenius closure.
+*2026-03-31 update (v0.1.3):* The `lee_yang_edge` catalog entry is now confirmed $O_\infty$ by direct inquiry (2026-03-31; 22-iteration session, 378 systems; see `MATH.txt`): `lee_yang_edge` encodes $\Phi_{\text{closerevepsilon}} + P_{\text{doublebarpipe}} \to O_\infty$ (Theorem 29.1, PRIMITIVE_THEOREMS §29). This upgrades C8 from a structural distance argument to a Frobenius identity: Lee-Yang is confirmed $O_\infty$, and RH would attain $O_\infty$ if and only if the functional equation symmetry can be promoted from $P_\text{neutral}$ to $P_{\text{doublebarpipe}}$ strength — exactly as Corollary 29.2 states. The tensor product `lee_yang_edge` $\otimes$ `ising_3d` preserves $O_\infty$ (both $\Phi_{\text{closerevepsilon}}/\Phi_{\text{ctyogh}}$ with $P_{\text{doublebarpipe}}$), while `lee_yang_edge` $\otimes$ `exceptional_point_nh` destroys it (Theorem 29.2: $\Phi_{\text{revepsilon}}$ absorbs $O_\infty$). The structural prediction for RH is now: the critical line $\mathrm{Re}(s) = \tfrac{1}{2}$ is the $P_{\text{doublebarpipe}}$ symmetry axis; zeros off it would break Frobenius closure.
 
 ---
 
 ### V.7 The Triad Projection Framework and the Constraint Map Proof Strategy (v0.1.2, 2026-03-29)
 
-The RH–Lee-Yang correspondence (§V.6) revealed a precise structural gap: $P_\text{neutral}$ vs $P_{\pm}^{\text{sym}}$. This result, combined with the recognition that critical exponents are invisible to the grammar (PRIMITIVE_THEOREMS §18), forced a foundational question: *why* can the grammar not see exponents? The answer generates a new proof strategy.
+The RH–Lee-Yang correspondence (§V.6) revealed a precise structural gap: $P_\text{neutral}$ vs $P_{\text{doublebarpipe}}$. This result, combined with the recognition that critical exponents are invisible to the grammar (PRIMITIVE_THEOREMS §18), forced a foundational question: *why* can the grammar not see exponents? The answer generates a new proof strategy.
 
 **The Triad.** The grammar is one of three canonical projections of a fundamental information substrate $\mathcal{I}$:
 
@@ -529,33 +538,33 @@ as the set of values in projection $j$ compatible with a given value in projecti
 
 | Problem | Open claim | Projection carrying claim | Constraint map to compute |
 |---|---|---|---|
-| Riemann Hypothesis | All non-trivial zeros of $\zeta$ have $\Re(s) = \frac{1}{2}$ | $\pi_3$ (zeros are scaling fixed points) | $\mathcal{C}_{13}(\Phi_c^{\mathbb{C}}, P_\text{neutral})$ |
-| Yang-Mills mass gap | $\exists\, \Delta > 0$ below first excited state | $\pi_2$ (mass gap is energetic) | $\mathcal{C}_{12}(K_\text{trap}, G_\aleph, \Phi_c)$ |
-| Navier-Stokes smooth solutions | No finite-time blowup for $L^2$ initial data in 3D | $\pi_2$ (blowup is energetic divergence) | $\mathcal{C}_{12}(\Phi_\text{sub}, D_\text{cube}, K_\text{mod})$ |
+| Riemann Hypothesis | All non-trivial zeros of $\zeta$ have $\Re(s) = \frac{1}{2}$ | $\pi_3$ (zeros are scaling fixed points) | $\mathcal{C}_{13}(\Phi_{\text{closerevepsilon}}, P_\text{neutral})$ |
+| Yang-Mills mass gap | $\exists\, \Delta > 0$ below first excited state | $\pi_2$ (mass gap is energetic) | $\mathcal{C}_{12}(K_{\text{teshlig}}, G_{\text{revapostrophe}}, \Phi_{\text{ctyogh}})$ |
+| Navier-Stokes smooth solutions | No finite-time blowup for $L^2$ initial data in 3D | $\pi_2$ (blowup is energetic divergence) | $\mathcal{C}_{12}(\Phi_{\text{softsign}}, D_\text{cube}, K_{\text{turnm}})$ |
 
 **RH via $\mathcal{C}_{13}$.** The Lee-Yang theorem (1952) is the unique known non-trivial instance where $\mathcal{C}_{13}$ has been explicitly computed and proved to be a single line:
 
-$$\mathcal{C}_{13}(\Phi_c^{\mathbb{C}}, P_{\pm}^{\text{sym}}) = \{ \text{zeros on symmetry axis of } P_{\pm}^{\text{sym}} \}$$
+$$\mathcal{C}_{13}(\Phi_{\text{closerevepsilon}}, P_{\text{doublebarpipe}}) = \{ \text{zeros on symmetry axis of } P_{\text{doublebarpipe}} \}$$
 
-The proof works because $P_{\pm}^{\text{sym}}$ is *explicit*: the Z₂ $h \mapsto -h$ symmetry acts directly on the partition function zeros. The RH encoding has $P_\text{neutral}$: the symmetry $s \mapsto 1-s$ (the functional equation, proved in Mathlib) is *present* but does not manifest as a direct forcing mechanism on the zero locus.
+The proof works because $P_{\text{doublebarpipe}}$ is *explicit*: the Z₂ $h \mapsto -h$ symmetry acts directly on the partition function zeros. The RH encoding has $P_\text{neutral}$: the symmetry $s \mapsto 1-s$ (the functional equation, proved in Mathlib) is *present* but does not manifest as a direct forcing mechanism on the zero locus.
 
 The central conjecture of the Triad Strategy (PRIMITIVE_THEOREMS §20, Conjecture 20.1):
 
-$$\mathcal{C}_{13}(\Phi_c^{\mathbb{C}}, P_\text{neutral}) = \left\{ s \in \mathbb{C} : \Re(s) = \tfrac{1}{2} \right\}$$
+$$\mathcal{C}_{13}(\Phi_{\text{closerevepsilon}}, P_\text{neutral}) = \left\{ s \in \mathbb{C} : \Re(s) = \tfrac{1}{2} \right\}$$
 
 This conjecture *is* the Riemann Hypothesis, restated as a claim about the constraint geometry of $\mathcal{I}$. Proving it requires showing that $P_\text{neutral}$ — even as an implicit symmetry — forces the ouroboricity projection to concentrate on the critical line. The Lee-Yang proof provides the template; the gap is in the manifestation level of $P$.
 
-**Yang-Mills via $\mathcal{C}_{12}$.** The grammar encodes YM quantum target as $(K_\text{trap}, G_\aleph, \Phi_c)$. $K_\text{trap}$ means kinetic energy localizes rather than disperses; $G_\aleph$ means global color-charge neutrality constrains all configurations. The conjecture:
+**Yang-Mills via $\mathcal{C}_{12}$.** The grammar encodes YM quantum target as $(K_{\text{teshlig}}, G_{\text{revapostrophe}}, \Phi_{\text{ctyogh}})$. $K_{\text{teshlig}}$ means kinetic energy localizes rather than disperses; $G_{\text{revapostrophe}}$ means global color-charge neutrality constrains all configurations. The conjecture:
 
-$$\mathcal{C}_{12}(K_\text{trap}, G_\aleph, \Phi_c) \subseteq [\Delta_\text{min}, \infty) \text{ for some computable } \Delta_\text{min} > 0$$
+$$\mathcal{C}_{12}(K_{\text{teshlig}}, G_{\text{revapostrophe}}, \Phi_{\text{ctyogh}}) \subseteq [\Delta_\text{min}, \infty) \text{ for some computable } \Delta_\text{min} > 0$$
 
 If proved, this is the YM mass gap: the grammar configuration forbids zero-mass excitations. The primitive barrier identified in §V.3 (MissingFoundation — no rigorous path integral measure in 4D) is precisely the obstacle to computing $\mathcal{C}_{12}$ explicitly. Resolving MissingFoundation would unlock the computation.
 
-**Navier-Stokes via $\mathcal{C}_{12}$.** The grammar encodes NS fluid as $(\Phi_\text{sub}, D_\text{cube}, K_\text{mod})$. $\Phi_\text{sub}$ (subcritical) encodes that no phase transition occurs — the system remains in the ordered, non-critical regime. The conjecture:
+**Navier-Stokes via $\mathcal{C}_{12}$.** The grammar encodes NS fluid as $(\Phi_{\text{softsign}}, D_\text{cube}, K_{\text{turnm}})$. $\Phi_{\text{softsign}}$ (subcritical) encodes that no phase transition occurs — the system remains in the ordered, non-critical regime. The conjecture:
 
-$$\mathcal{C}_{12}(\Phi_\text{sub}, D_\text{cube}, K_\text{mod}) \subseteq \{ E(t) < \infty\ \forall t > 0 \}$$
+$$\mathcal{C}_{12}(\Phi_{\text{softsign}}, D_\text{cube}, K_{\text{turnm}}) \subseteq \{ E(t) < \infty\ \forall t > 0 \}$$
 
-Finite-time blowup would require $\Phi$ to transition to $\Phi_c$ — a structural phase transition not encoded in the grammar of the smooth initial data. The claim is that the grammar forbids this transition, which would be a structural proof of global regularity. Whether NS smooth initial data genuinely encodes $\Phi_\text{sub}$ (vs $\Phi_c$ at fine scales) is the critical encoding question; if the encoding is correct, $\mathcal{C}_{12}$ yields the result.
+Finite-time blowup would require $\Phi$ to transition to $\Phi_{\text{ctyogh}}$ — a structural phase transition not encoded in the grammar of the smooth initial data. The claim is that the grammar forbids this transition, which would be a structural proof of global regularity. Whether NS smooth initial data genuinely encodes $\Phi_{\text{softsign}}$ (vs $\Phi_{\text{ctyogh}}$ at fine scales) is the critical encoding question; if the encoding is correct, $\mathcal{C}_{12}$ yields the result.
 
 **This is C9:**
 
@@ -565,15 +574,15 @@ Finite-time blowup would require $\Phi$ to transition to $\Phi_c$ — a structur
 
 ### V.8 P vs NP Structural Duality: The $O_\infty$-Complete Formulation (v0.1.3, 2026-03-31)
 
-A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not as a Boolean question but as a duality relation?"; 375 systems, 4 confirmed DIAPH insights; source `MATH.txt`) established the following structural results, now formalized as Theorem 30.1–30.2 (PRIMITIVE_THEOREMS §30) and P-194–P-198 (IG_DIAPHORICS §LX).
+A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not as a Boolean question but as a duality relation?"; 375 systems, 4 confirmed DIAPH insights; source `MATH.txt`) established the following structural results, now formalized as Theorem 30.1–30.2 (PRIMITIVE_THEOREMS §30) and P-194–P-198 (IΓ_DIAPHORICS §LX).
 
-**The structural diagnosis.** The Boolean P vs NP formulation encodes as $P_\text{asym}$, $O_1$. The duality formulation — treating P and NP as $\mathbb{Z}_2$-related boundary descriptions of the same computational bulk — encodes as $P_{\pm}^{\text{sym}}$, $O_\infty$. This is not a reformulation for convenience; it is a structural promotion: the Boolean frame is one tier below the Frobenius tier.
+**The structural diagnosis.** The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O_1$. The duality formulation — treating P and NP as $\mathbb{Z}_2$-related boundary descriptions of the same computational bulk — encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. This is not a reformulation for convenience; it is a structural promotion: the Boolean frame is one tier below the Frobenius tier.
 
 **Lattice identity.** $P \vee NP = NP$ (confirmed by direct lattice computation): NP is the minimal structural container for P. Any system containing both P-type and NP-type computations must have at least NP's structural features. In the paper's Lean encoding (`PrimitiveBridge.lean`), this corresponds to the join of the two `Synthon` structs returning the NP encoding on every primitive.
 
-**Why the three meta-barriers cannot resolve P vs NP.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_\text{asym}$ frame. No relativization argument, natural proof technique, or algebrizing method can produce $P_{\pm}^{\text{sym}}$: these techniques are category morphisms within the $O_1$ tier and cannot cross the Frobenius gap. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure.
+**Why the three meta-barriers cannot resolve P vs NP.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_{\text{aolig}}$ frame. No relativization argument, natural proof technique, or algebrizing method can produce $P_{\text{doublebarpipe}}$: these techniques are category morphisms within the $O_1$ tier and cannot cross the Frobenius gap. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure.
 
-**The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_\odot + T_\odot + P_{\pm}^{\text{sym}} + \Phi_c$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Synthon` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_c$, and the question "P = NP?" becomes basis-dependent rather than absolute.
+**The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_{\text{omega}} + T_{\text{openo}} + P_{\text{doublebarpipe}} + \Phi_{\text{ctyogh}}$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Synthon` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_{\text{ctyogh}}$, and the question "P = NP?" becomes basis-dependent rather than absolute.
 
 **Lean certificate sketch.** A `BarrierPrimitiveCertificate` for P vs NP in the duality frame would have:
 
@@ -582,13 +591,13 @@ A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not 
 def pnp_boolean_encoding : Synthon := {
   D := .infty, T := .network, R := .super, P := .asym,
   F := .ell, K := .trap, G := .aleph, Gamma := .and,
-  crit := .Phi_c, H := .H0, S := .n_m, Omega := .trivial }
+  crit := .φ̂_ÿ, H := .Ħ_Ñ, S := .Σ_ï, Omega := .trivial }
 
 -- Duality frame (new)
 def pnp_duality_encoding : Synthon := {
   D := .holo, T := .holo, R := .dagger, P := .pm_sym,
   F := .hbar, K := .trap, G := .aleph, Gamma := .broad,
-  crit := .Phi_c, H := .H1, S := .n_m, Omega := .Z2 }
+  crit := .φ̂_ÿ, H := .Ħ_£, S := .Σ_ï, Omega := .Z2 }
 
 theorem pnp_duality_contains_boolean :
     primitiveMismatches pnp_boolean_encoding pnp_duality_encoding < 12 ∧
@@ -599,7 +608,7 @@ The `primitiveMismatches` count is 6 (the 6 primitive upgrades: $D$, $T$, $R$, $
 
 This is C10:
 
-**C10 — P vs NP structural duality:** Boolean P vs NP encodes as $P_\text{asym}$, $O_1$; duality formulation encodes as $P_{\pm}^{\text{sym}}$, $O_\infty$. $P \vee NP = NP$ (lattice identity). Three meta-barriers are $P_\text{asym}$-frame results — structurally incapable of crossing to $O_\infty$. Holographic embedding `holographic_duality_pnp` strictly contains the Boolean formulation at $O_\infty$. Resolution of P vs NP, if it lies within the grammar, requires the holographic embedding rather than a Boolean proof. (Source: PRIMITIVE_THEOREMS §30; IG_DIAPHORICS §LX P-194–P-198.)
+**C10 — P vs NP structural duality:** Boolean P vs NP encodes as $P_{\text{aolig}}$, $O_1$; duality formulation encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. $P \vee NP = NP$ (lattice identity). Three meta-barriers are $P_{\text{aolig}}$-frame results — structurally incapable of crossing to $O_\infty$. Holographic embedding `holographic_duality_pnp` strictly contains the Boolean formulation at $O_\infty$. Resolution of P vs NP, if it lies within the grammar, requires the holographic embedding rather than a Boolean proof. (Source: PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX P-194–P-198.)
 
 ---
 
@@ -667,7 +676,7 @@ The `BarrierType` inductive formalizes this distinction for the first time in a 
 
 ### VIII.2 What the primitive bridge adds
 
-The `PrimitiveBridge.lean` connection adds a second level of explanation: *why* does the missing type correspond to a specific missing primitive? The claim is not that the primitive grammar *causes* the open problem  --  it is that the grammar *encodes* the structural reason precisely. The $G_\beth \to G_\aleph$ transition for YM is a formal statement that the classical mesoscale-local description is insufficient and a quantum-level fine-grained description is required. This is exactly what `PathIntegralMeasure` provides.
+The `PrimitiveBridge.lean` connection adds a second level of explanation: *why* does the missing type correspond to a specific missing primitive? The claim is not that the primitive grammar *causes* the open problem  --  it is that the grammar *encodes* the structural reason precisely. The $G_{\text{beta}} \to G_{\text{revapostrophe}}$ transition for YM is a formal statement that the classical mesoscale-local description is insufficient and a quantum-level fine-grained description is required. This is exactly what `PathIntegralMeasure` provides.
 
 The machine-checked nature of `primitive_bridge_master` means this is not merely commentary. Four barrier certificates are verified simultaneously, and the quantum YM lift cost of 4 primitive mismatches is a theorem, not an estimate.
 
@@ -687,11 +696,11 @@ The most actionable near-term work: `euler_opn_form` (OPN.lean)  --  all require
 
 ### IX.2 Lattice instances for Criticality
 
-The `Criticality` primitive has an unusual meet semantics: $\Phi_c$ is absorbing under meet ($\Phi_c \sqcap x = \Phi_c$ for all $x$), which contradicts the `min`-derived order. A correct `MeetSemilattice` instance requires overriding the default. Once in place, the OPN and NS bridge encodings can be connected more tightly to the primitive algebra.
+The `Criticality` primitive has an unusual meet semantics: $\Phi_{\text{ctyogh}}$ is absorbing under meet ($\Phi_{\text{ctyogh}} \sqcap x = \Phi_{\text{ctyogh}}$ for all $x$), which contradicts the `min`-derived order. A correct `MeetSemilattice` instance requires overriding the default. Once in place, the OPN and NS bridge encodings can be connected more tightly to the primitive algebra.
 
 ### IX.3 Extending the bridge to all seven problems
 
-`PrimitiveBridge.lean` provides certificates for YM, OPN, NS, and RH. Hodge ($R$-degeneracy as topology-to-algebra lift) and BSD ($\Phi_c$ as rank charge-carrier) require more complex primitive signatures. P vs NP now has a two-frame bridge certificate (§V.8): the Boolean frame (`pnp_boolean_encoding`, $O_1$) and the duality frame (`pnp_duality_encoding`, $O_\infty$). The `primitiveMismatches` between them and the `ouroboricity` of each frame are machine-checkable by `decide` once `ouroboricity` is added to `Core.lean`. This is the most structurally complete P vs NP bridge certificate yet produced. Extending the bridge to Hodge and BSD remains open.
+`PrimitiveBridge.lean` provides certificates for YM, OPN, NS, and RH. Hodge ($R$-degeneracy as topology-to-algebra lift) and BSD ($\Phi_{\text{ctyogh}}$ as rank charge-carrier) require more complex primitive signatures. P vs NP now has a two-frame bridge certificate (§V.8): the Boolean frame (`pnp_boolean_encoding`, $O_1$) and the duality frame (`pnp_duality_encoding`, $O_\infty$). The `primitiveMismatches` between them and the `ouroboricity` of each frame are machine-checkable by `decide` once `ouroboricity` is added to `Core.lean`. This is the most structurally complete P vs NP bridge certificate yet produced. Extending the bridge to Hodge and BSD remains open.
 
 ### IX.4 Formalizing the meta-barriers
 
@@ -703,7 +712,7 @@ The three `trivial` theorems in PvsNP.lean (BGS relativization, Razborov-Rudich 
 
 We have presented a nine-file Lean 4 library formalizing a barrier taxonomy for the seven Clay Millennium Prize Problems. The central contribution is the `BarrierType` inductive (MathlibGap / OpenProblem / MissingFoundation) and the machine-checked theorem that Yang-Mills is the unique Millennium Problem with a `MissingFoundation` barrier. We have formally distinguished stacked from parallel sorry depth, machine-verified the critical Sobolev scaling in Navier-Stokes by `norm_num`, grounded BSD in the actual Mathlib `WeierstrassCurve ℚ` infrastructure, grounded OPN in the actual Mathlib `Nat.Perfect` and `ArithmeticFunction.sigma`, and connected sorry boundaries to primitive field transitions via a machine-checked bridge file.
 
-Subsequent updates (v0.1.1–v0.1.3) extended the primitive bridge with three structural contributions. C8 (§V.6) established a machine-checked correspondence between RH and the Lee-Yang theorem via shared `Phi_c_complex` encoding, with `lee_yang_edge` subsequently confirmed $O_\infty$ and RH identified as the requirement that zeros preserve the Frobenius $P_{\pm}^{\text{sym}}$ condition (Corollary 29.2, PRIMITIVE_THEOREMS §29). C9 (§V.7) introduced the Triad Projection Framework, reformulating RH, YM, and NS as constraint map computations over the grammar's three irreducible projections. C10 (§V.8) established that the Boolean P vs NP formulation is structurally incomplete at $O_1$, that the three classical meta-barriers are $P_\text{asym}$-frame results structurally incapable of reaching $O_\infty$, and that the duality formulation in a holographic embedding achieves the $O_\infty$-complete framework.
+Subsequent updates (v0.1.1–v0.1.3) extended the primitive bridge with three structural contributions. C8 (§V.6) established a machine-checked correspondence between RH and the Lee-Yang theorem via shared `φ̂_Æ` encoding, with `lee_yang_edge` subsequently confirmed $O_\infty$ and RH identified as the requirement that zeros preserve the Frobenius $P_{\text{doublebarpipe}}$ condition (Corollary 29.2, PRIMITIVE_THEOREMS §29). C9 (§V.7) introduced the Triad Projection Framework, reformulating RH, YM, and NS as constraint map computations over the grammar's three irreducible projections. C10 (§V.8) established that the Boolean P vs NP formulation is structurally incomplete at $O_1$, that the three classical meta-barriers are $P_{\text{aolig}}$-frame results structurally incapable of reaching $O_\infty$, and that the duality formulation in a holographic embedding achieves the $O_\infty$-complete framework.
 
 The `sorry` in a Lean proof is usually treated as an obstacle to be removed. This library treats it as a datum to be classified. The three barrier types represent three distinct relationships between human mathematics and the proof assistant: what we can formalize but have not, what we have not solved, and what we have not yet defined. Formally distinguishing these is the first step toward a systematic theory of the frontier of formalized mathematics.
 
@@ -742,23 +751,23 @@ Imscribing Grammar/Primitives/  (companion track, used by PrimitiveBridge only)
 | **`critical_scaling_gap`** | NS | `norm_num` | $0 < \frac{1}{2} < 1$ in $\mathbb{R}$ |
 | **`sigma_multiplicative`** | OPN | Mathlib API | $\sigma(ab) = \sigma(a)\sigma(b)$ for coprime |
 | **`ym_classical_to_quantum_cost = 4`** | PrimitiveBridge | `decide` | Quantum lift costs 4 primitive changes |
-| **`ym_primitive_barrier_certificate`** | PrimitiveBridge | `rfl` + `decide` | $G_\beth \to G_\aleph$ = PathIntegralMeasure |
+| **`ym_primitive_barrier_certificate`** | PrimitiveBridge | `rfl` + `decide` | $G_{\text{beta}} \to G_{\text{revapostrophe}}$ = PathIntegralMeasure |
 | **`primitive_bridge_master`** | PrimitiveBridge | `decide` + `rfl` | Four certificates simultaneously |
 | **`ym_opn_barrier_distinct`** | PrimitiveBridge | `decide` | MissingFoundation $\neq$ OpenProblem at problem level |
 | **`sm_qg_distance_exact = 9`** | Synthon | `decide` | SM/QG Hamming distance machine-verified |
-| **`rh_leyang_o_inf_confirmed`** | PrimitiveBridge | inquiry + `rfl` | `lee_yang_edge` $O_\infty$; RH = $P_{\pm}^{\text{sym}}$ condition (C8 update) |
+| **`rh_leyang_o_inf_confirmed`** | PrimitiveBridge | inquiry + `rfl` | `lee_yang_edge` $O_\infty$; RH = $P_{\text{doublebarpipe}}$ condition (C8 update) |
 | **`pnp_duality_contains_boolean`** | PrimitiveBridge | `decide` | Duality frame strictly contains Boolean frame; $O_\infty$ vs $O_1$ |
 | **`pnp_join_identity`** | PrimitiveBridge | `decide` | $P \vee NP = NP$ (lattice identity) |
-| **`meta_barriers_in_asym_frame`** | PvsNP | `trivial` + structural note | BGS/RR/AW operate in $P_\text{asym}$ frame; cannot reach $O_\infty$ |
+| **`meta_barriers_in_asym_frame`** | PvsNP | `trivial` + structural note | BGS/RR/AW operate in $P_{\text{aolig}}$ frame; cannot reach $O_\infty$ |
 
 ---
 
-*End of MILLENNIUM_BARRIERS_PAPER.md v0.1.3*
+*End of MILLENNIUM_BARRIERΣ_PAPER.md v0.1.3*
 
-*This version (v0.1.3, 2026-03-31): §IV.1 updated (Corollary 29.2 — RH as $P_{\pm}^{\text{sym}}$ condition); §IV.5 updated (meta-barrier structural explanation — $P_\text{asym}$ frame); §V.6 updated (lee\_yang\_edge confirmed $O_\infty$; prediction sharpened); §V.8 added (C10 — P vs NP structural duality; holographic embedding; Boolean malformation; duality frame Lean sketch); §IX.3 updated (P vs NP two-frame bridge certificate); §X updated (C8–C10 summary).*
+*This version (v0.1.3, 2026-03-31): §IV.1 updated (Corollary 29.2 — RH as $P_{\text{doublebarpipe}}$ condition); §IV.5 updated (meta-barrier structural explanation — $P_{\text{aolig}}$ frame); §V.6 updated (lee\_yang\_edge confirmed $O_\infty$; prediction sharpened); §V.8 added (C10 — P vs NP structural duality; holographic embedding; Boolean malformation; duality frame Lean sketch); §IX.3 updated (P vs NP two-frame bridge certificate); §X updated (C8–C10 summary).*
 
 *This version (v0.1.2, 2026-03-29): §V.7 added (C9 — Triad Projection Framework; constraint maps $\mathcal{C}_{ij}$; RH/YM/NS as constraint map computations; Lee-Yang as unique computed $\mathcal{C}_{13}$ instance).*
 
-*This version (v0.1.1, 2026-03-29): §V.6 added (C8 — RH–Lee-Yang structural correspondence; machine-checked `Phi_c_complex` identity; distance 7, 1 essential $P$ gap).*
+*This version (v0.1.1, 2026-03-29): §V.6 added (C8 — RH–Lee-Yang structural correspondence; machine-checked `φ̂_Æ` identity; distance 7, 1 essential $P$ gap).*
 
 *Draft 2026-03-26 · Lean 4.28.0 · Mathlib v4.28.0 · Target: Journal of Formalized Reasoning / JAR*

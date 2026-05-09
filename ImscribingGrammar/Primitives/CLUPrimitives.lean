@@ -62,11 +62,11 @@ inductive KTier : Type where
   deriving DecidableEq, Repr, Ord
 
 def kineticCharToKTier : KineticChar → KTier
-  | .K_fast => .fast
-  | .K_mod  => .mod
-  | .K_slow => .slow
-  | .K_trap => .trap
-  | .K_MBL  => .MBL
+  | .K_frtailgamma => .fast
+  | .K_turnm  => .mod
+  | .K_schwa => .slow
+  | .K_teshlig => .trap
+  | .K_lambda  => .MBL
 
 def kTierLevel : KTier → ℕ
   | .fast => 0

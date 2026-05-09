@@ -12,7 +12,7 @@ Translation Protocol v0.4 (implemented valid components)
 2. F_ℏ threshold (Kleisli guard):
        I(s₁; s₂) ≥ ln(19) ≈ 2.944 nats  (= log₂(19) / log₂(e) ≈ 4.248 bits)
    Below this mutual-information floor, constraint propagation cannot be
-   maintained at quantum fidelity — F_hbar degrades to F_eth.
+   maintained at quantum fidelity — F_hardsign degrades to F_dh.
    Derivation: ln(19) is the information threshold for 19+ distinguishable
    constraint configurations — the minimum resolution for high-fidelity
    retrosynthetic path inference.
@@ -92,17 +92,17 @@ LOGISTIC_BIFURCATION_1: float = 3.0  # NOT "λ_c = 3 is chaos onset" — that is
 LOGISTIC_MARGINAL_LAMBDA: float = 1.0
 
 # Translation cost coefficients (nats per unit of structural loss)
-# Coherence loss: F_hbar → F_eth loses ~25% of constraint propagation
+# Coherence loss: F_hardsign → F_dh loses ~25% of constraint propagation
 COHERENCE_LOSS_FHBAR_TO_FETH: float = -math.log(0.75)   # ≈ 0.288 nats
-# F_eth → F_ell loses another ~40%
+# F_dh → F_beltl loses another ~40%
 COHERENCE_LOSS_FETH_TO_FELL: float = -math.log(0.60)    # ≈ 0.511 nats
 
-# Criticality loss: Phi_c → Phi_sub = ln(10) nats (one order of magnitude in correlation length)
+# Criticality loss: Phi_ctyogh → Phi_softsign = ln(10) nats (one order of magnitude in correlation length)
 CRITICALITY_LIFT_NATS: float = math.log(10)              # ≈ 2.303 nats  (PHI_LIFT_NATS from v0.4)
 
 # F-tier ordering for dominance comparisons
 _F_ORDER = {Fidelity.LOW: 0, Fidelity.MEDIUM: 1, Fidelity.HIGH: 2}
-_F_NAME = {Fidelity.LOW: "F_ell", Fidelity.MEDIUM: "F_eth", Fidelity.HIGH: "F_hbar"}
+_F_NAME = {Fidelity.LOW: "ƒ_beltl", Fidelity.MEDIUM: "ƒ_dh", Fidelity.HIGH: "ƒ_hardsign"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -118,7 +118,7 @@ class TranslationCost:
     Total cost = coherence_loss + criticality_loss + interaction_cost.
     """
     coherence_loss: float = 0.0    # cost of F-tier downgrade (quantum → classical)
-    criticality_loss: float = 0.0  # cost of Φ_c → Phi_sub (criticality → sub-critical)
+    criticality_loss: float = 0.0  # cost of Φ_c → Phi_softsign (criticality → sub-critical)
     interaction_cost: float = 0.0  # cost of grammar mismatch (Γ constraint loosening)
 
     @property
@@ -151,7 +151,7 @@ def fhbar_satisfied(mutual_info_nats: float) -> bool:
     Check whether the F_ℏ threshold is met.
 
     Returns True iff I(s₁; s₂) ≥ ln(19) ≈ 2.944 nats.
-    Below this, constraint propagation degrades from F_hbar to F_eth.
+    Below this, constraint propagation degrades from F_hardsign to F_dh.
     """
     return mutual_info_nats >= FHBAR_THRESHOLD_NATS
 
@@ -226,11 +226,11 @@ def translate_fidelity(
     mutual_info_nats: Optional[float] = None,
 ) -> SynthonM[Synthon]:
     """
-    Translate F_hbar → F_eth when mutual information falls below the F_ℏ threshold.
+    Translate F_hardsign → F_dh when mutual information falls below the F_ℏ threshold.
 
     If mutual_info_nats is provided and < ln(19), the fidelity is downgraded
     and coherence_loss = ln(19) - I is recorded as Δξ cost.
-    If mutual_info_nats is None, checks whether synthon already has F_hbar
+    If mutual_info_nats is None, checks whether synthon already has F_hardsign
     and warns; no automatic downgrade without data.
 
     Cost annotation: delta_xi = coherence_loss (nats) in the Writer log.
@@ -263,7 +263,7 @@ def translate_fidelity(
         loss = COHERENCE_LOSS_FHBAR_TO_FETH
         msg = (
             f"I={mutual_info_nats:.4f} nat < ln(19)={FHBAR_THRESHOLD_NATS:.4f}  "
-            f"deficit={deficit:.4f} nat — F_hbar→F_eth  "
+            f"deficit={deficit:.4f} nat — F_hardsign→F_dh  "
             f"coherence_loss={loss:.4f} nat"
         )
     elif fidelity == Fidelity.MEDIUM:
@@ -271,7 +271,7 @@ def translate_fidelity(
         loss = COHERENCE_LOSS_FETH_TO_FELL
         msg = (
             f"I={mutual_info_nats:.4f} nat < ln(19)={FHBAR_THRESHOLD_NATS:.4f}  "
-            f"deficit={deficit:.4f} nat — F_eth→F_ell  "
+            f"deficit={deficit:.4f} nat — F_dh→F_beltl  "
             f"coherence_loss={loss:.4f} nat"
         )
     else:
@@ -279,7 +279,7 @@ def translate_fidelity(
         loss = deficit
         msg = (
             f"I={mutual_info_nats:.4f} nat < ln(19)={FHBAR_THRESHOLD_NATS:.4f}  "
-            f"deficit={deficit:.4f} nat — already at F_ell floor; deficit charged"
+            f"deficit={deficit:.4f} nat — already at F_beltl floor; deficit charged"
         )
 
     rec = StepRecord("translate_fidelity", s.name, "PASS", loss, msg)
@@ -290,7 +290,7 @@ def translate_fidelity(
 
 def translate_criticality(s: Synthon) -> SynthonM[Synthon]:
     """
-    Translate Φ_c → Phi_sub when mapping to classical dynamics.
+    Translate Φ_c → Phi_softsign when mapping to classical dynamics.
 
     Criticality cannot be preserved in a classical linearized description.
     Cost = CRITICALITY_LIFT_NATS = ln(10) ≈ 2.303 nats — one decade of
@@ -313,7 +313,7 @@ def translate_criticality(s: Synthon) -> SynthonM[Synthon]:
     new_s.criticality_phase = CriticalityPhase.SUBCRITICAL
 
     msg = (
-        f"Φ_c → Phi_sub  "
+        f"Φ_c → Phi_softsign  "
         f"(∂f/∂x|_{{λ_c}}=1 boundary; classical λ∈(1,3) window)  "
         f"criticality_loss={CRITICALITY_LIFT_NATS:.4f} nat = ln(10)"
     )
@@ -420,7 +420,7 @@ def full_translation(
 
     Applies in order:
       1. translate_fidelity   — F_ℏ threshold check; degrade if needed
-      2. translate_criticality — Φ_c → Phi_sub if present
+      2. translate_criticality — Φ_c → Phi_softsign if present
       3. translate_grammar    — convert non-classical grammars
 
     Total Δξ_CP = Σ costs across all three steps.

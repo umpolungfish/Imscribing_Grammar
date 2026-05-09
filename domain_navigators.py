@@ -32,43 +32,43 @@ ROOT = Path(__file__).parent
 # ── Canonical primitive definitions ───────────────────────────────────────────
 
 VALUES: dict[str, list[str]] = {
-    "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
-    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
-    "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
-    "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
-    "F":     ["F_ell", "F_eth", "F_hbar"],
-    "K":     ["K_fast", "K_mod", "K_slow", "K_trap", "K_MBL"],
-    "G":     ["G_beth", "G_gimel", "G_aleph"],
-    "Gamma": ["G_and", "G_or", "G_seq", "G_broad"],
-    "Phi":   ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"],
-    "H":     ["H0", "H1", "H2", "H_inf"],
-    "S":     ["one_one", "n_n", "n_m"],
-    "Omega": ["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
+    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
+    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
+    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
+    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
+    "ƒ":     ["ƒ_ì", "ƒ_ð", "ƒ_ż"],
+    "Ç":     ["Ç_-", "Ç_W", "Ç_@", "Ç_Ù", "Ç_λ"],
+    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
+    "ɢ": ["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
+    "φ̂":   ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
+    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
+    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
+    "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
 }
 
-PRIMS = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
 
 ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
     for prim, vals in VALUES.items()
 }
-# T_box kept as backwards-compat alias for T_boxtimes (ordinal 3)
-ORD["T"]["T_box"] = ORD["T"]["T_boxtimes"]
+# T_box kept as backwards-compat alias for Þ_¨ (ordinal 3)
+ORD["Þ"]["Þ_box"] = ORD["Þ"]["Þ_¨"]
 
 WEIGHTS: dict[str, float] = {
-    "D": 1.0, "T": 1.0, "R": 1.0, "P": 1.2,
-    "F": 0.9, "K": 1.0, "G": 1.0, "Gamma": 1.0,
-    "Phi": 1.1, "H": 0.8, "S": 1.0, "Omega": 0.7,
+    "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.2,
+    "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
+    "φ̂": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
 }
 
 # Consciousness C-score weights (critical manifold, variance method — §VIII v2)
-C_WEIGHTS = {"K": 0.158, "G": 0.273, "T": 0.292, "Omega": 0.276}
-C_MAXORD  = {"K": 4, "G": 2, "T": 4, "Omega": 3}  # max ordinal for normalization
+C_WEIGHTS = {"Ç": 0.158, "Γ": 0.273, "Þ": 0.292, "Ω": 0.276}
+C_MAXORD  = {"Ç": 4, "Γ": 2, "Þ": 4, "Ω": 3}  # max ordinal for normalization
 
-CRITICAL    = {"Phi_c", "Phi_c_complex"}
-NONCRITICAL = {"Phi_sub", "Phi_super", "Phi_EP"}
-BOUNDED_D   = {"D_wedge", "D_triangle", "D_odot"}
-SLOW_K      = {"K_fast", "K_mod", "K_slow"}   # Gate 2: K ≤ K_slow
+CRITICAL    = {"φ̂_ÿ", "φ̂_Æ"}
+NONCRITICAL = {"φ̂_ž", "φ̂_Ţ", "φ̂_3"}
+BOUNDED_D   = {"Ð_ß", "Ð_C", "Ð_ω"}
+SLOW_K      = {"Ç_-", "Ç_W", "Ç_@"}   # Gate 2: K ≤ Ç_@
 
 # ── Domain catalog subsets ─────────────────────────────────────────────────────
 
@@ -123,12 +123,12 @@ def mismatches(a: dict, b: dict) -> int:
 
 def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
-    phi, p, omega, d = e["Phi"], e["P"], e["Omega"], e["D"]
-    if phi in CRITICAL and p == "P_pm_sym":
+    phi, p, omega, d = e["φ̂"], e["Φ"], e["Ω"], e["Ð"]
+    if phi in CRITICAL and p == "Φ_}":
         return "O_inf"
     if phi in NONCRITICAL:
         return "O_0"
-    if omega == "Omega_0":
+    if omega == "Ω_Å":
         return "O_1"
     if d in BOUNDED_D:
         return "O_2"
@@ -137,13 +137,13 @@ def compute_tier(e: dict) -> str:
 def consciousness_score(e: dict) -> float:
     """
     C-score (§VIII v2):
-      C = [Phi=Phi_c] · [K ≤ K_slow] · Σ w_i * x̃_i
-    Gate 1: Phi_c (state-space condition)
-    Gate 2: K ≤ K_slow (flow condition; K_trap and K_MBL both fail)
+      C = [Phi=φ̂_ÿ] · [K ≤ Ç_@] · Σ w_i * x̃_i
+    Gate 1: φ̂_ÿ (state-space condition)
+    Gate 2: K ≤ Ç_@ (flow condition; Ç_Ù and Ç_λ both fail)
     """
-    if e["Phi"] not in CRITICAL:
+    if e["φ̂"] not in CRITICAL:
         return 0.0
-    if e["K"] not in SLOW_K:
+    if e["Ç"] not in SLOW_K:
         return 0.0
     score = 0.0
     for prim, w in C_WEIGHTS.items():
@@ -152,12 +152,12 @@ def consciousness_score(e: dict) -> float:
 
 def k_phase(e: dict) -> str:
     """K-phase label for collapse/disorder analysis."""
-    k = e["K"]
-    if k == "K_trap":  return "K_trap (order-frozen)"
-    if k == "K_MBL":   return "K_MBL (disorder-frozen)"
-    if k == "K_fast":  return "K_fast (overdamped)"
-    if k == "K_mod":   return "K_mod (moderate)"
-    if k == "K_slow":  return "K_slow (critical)"
+    k = e["Ç"]
+    if k == "Ç_Ù":  return "Ç_Ù (order-frozen)"
+    if k == "Ç_λ":   return "Ç_λ (disorder-frozen)"
+    if k == "Ç_-":  return "Ç_- (overdamped)"
+    if k == "Ç_W":   return "Ç_W (moderate)"
+    if k == "Ç_@":  return "Ç_@ (critical)"
     return k
 
 def breakdown(a: dict, b: dict) -> list[dict]:
@@ -233,22 +233,22 @@ def language_probes(cat: Catalog) -> list[str]:
             for row in breakdown(entries["sanskrit_classical"], entries["arabic_classical"]):
                 lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 74.3 — Lojban O_inf despite Omega_0
+    # Thm 74.3 — Lojban O_inf despite Ω_Å
     if "lojban" in entries:
         e = entries["lojban"]
         tier = compute_tier(e)
         lines.append(f"  Thm 74.3  lojban: Omega={e['Omega']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
-        lines.append(f"            (P is the tier gate; Omega_0 only blocks O_2→O_inf step, not R1)")
+        lines.append(f"            (P is the tier gate; Ω_Å only blocks O_2→O_inf step, not R1)")
 
     # Thm 74.4 — Planned-language Frobenius ceiling
     if "esperanto" in entries:
         tier = compute_tier(entries["esperanto"])
         lines.append(f"  Thm 74.4  esperanto: tier={tier} (planned-language Frobenius ceiling)")
 
-    # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → P_pm (min rule)
+    # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → Φ_F (min rule)
     if "haitian_creole" in entries and "sanskrit_classical" in entries:
-        p_tensor = min(ORD["P"]["P_pm"], ORD["P"]["P_pm_sym"])
-        tensor_p = VALUES["P"][p_tensor]
+        p_tensor = min(ORD["Φ"]["Φ_F"], ORD["Φ"]["Φ_}"])
+        tensor_p = VALUES["Φ"][p_tensor]
         lines.append(f"  Thm 74.9  creole⊗Sanskrit: P_tensor={tensor_p} (min rule destroys Frobenius)")
 
     # Thm 74.10 — d(Lojban, Esperanto)
@@ -294,16 +294,16 @@ def civilization_probes(cat: Catalog) -> list[str]:
         for row in breakdown(entries["western_roman_collapse"], entries["soviet_union_collapse"]):
             lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 75.4 — Weimar O_0 (Phi_EP)
+    # Thm 75.4 — Weimar O_0 (φ̂_3)
     if "weimar_republic_collapse" in entries:
         e = entries["weimar_republic_collapse"]
         tier = compute_tier(e)
         lines.append(f"  Thm 75.4  weimar: Phi={e['Phi']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
 
-    # Thm 75.5 — Athenian Democracy T_odot (lateral governance)
+    # Thm 75.5 — Athenian Democracy Þ_O (lateral governance)
     if "athenian_democracy_peak" in entries:
         e = entries["athenian_democracy_peak"]
-        lines.append(f"  Thm 75.5  athenian_democracy: T={e['T']} ({'✓' if e['T']=='T_odot' else '✗'})")
+        lines.append(f"  Thm 75.5  athenian_democracy: T={e['T']} ({'✓' if e['T']=='Þ_O' else '✗'})")
 
     # Thm 75.7 — Han → Ming distance = 6.5955
     if "han_dynasty_peak" in entries and "ming_dynasty_collapse" in entries:
@@ -341,10 +341,10 @@ def ecology_probes(cat: Catalog) -> list[str]:
             tier = compute_tier(entries[n])
             lines.append(f"  Thm 76.2  {n}: tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
 
-    # Thm 76.3 — Corn monoculture K_trap; fragmented habitat K_MBL
-    for n, expected_k in [("corn_monoculture", "K_trap"), ("fragmented_habitat", "K_MBL")]:
+    # Thm 76.3 — Corn monoculture Ç_Ù; fragmented habitat Ç_λ
+    for n, expected_k in [("corn_monoculture", "Ç_Ù"), ("fragmented_habitat", "Ç_λ")]:
         if n in entries:
-            k = entries[n]["K"]
+            k = entries[n]["Ç"]
             lines.append(f"  Thm 76.3  {n}: K={k} ({'✓' if k==expected_k else '✗'})")
 
     # Thm 76.4 — Early-successional forest O_0
@@ -359,8 +359,8 @@ def ecology_probes(cat: Catalog) -> list[str]:
         bd = breakdown(entries["coral_reef_healthy"], entries["coral_reef_bleached"])
         lines.append(f"  Thm 76.5  d(coral healthy, coral bleached) = {d:.4f} (tipping point)")
         # Verify P-dominant
-        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "P")
-        phi_wsq = sum(r["wsq"] for r in bd if r["prim"] == "Phi")
+        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "Φ")
+        phi_wsq = sum(r["wsq"] for r in bd if r["prim"] == "φ̂")
         lines.append(f"            P contribution: {p_wsq:.1f} wsq; Phi contribution: {phi_wsq:.1f} wsq (P-dominant)")
 
     # Thm 76.6 — d(corn monoculture, fragmented habitat) = 3.63
@@ -370,11 +370,11 @@ def ecology_probes(cat: Catalog) -> list[str]:
 
     # Thm 76.8 — Restoration asymmetry
     lines.append(f"  Thm 76.8  Restoration asymmetry:")
-    lines.append(f"            corn_monoculture (K_trap): requires diversification (inject disorder)")
-    lines.append(f"            fragmented_habitat (K_MBL): requires reconnection (restore ergodicity)")
+    lines.append(f"            corn_monoculture (Ç_Ù): requires diversification (inject disorder)")
+    lines.append(f"            fragmented_habitat (Ç_λ): requires reconnection (restore ergodicity)")
 
     # Cor 76.C1
-    lines.append(f"  Cor 76.C1 K_trap and K_MBL restoration paths are structurally incompatible")
+    lines.append(f"  Cor 76.C1 Ç_Ù and Ç_λ restoration paths are structurally incompatible")
 
     return lines
 
@@ -390,29 +390,29 @@ def consciousness_probes(cat: Catalog) -> list[str]:
         akh = None
 
     # Thm 77.1 — Two-gate formula verified across 10 states
-    lines.append(f"  Thm 77.1  Two-gate C-scores (Gate1=Phi_c, Gate2=K≤K_slow):")
+    lines.append(f"  Thm 77.1  Two-gate C-scores (Gate1=φ̂_ÿ, Gate2=K≤Ç_@):")
     for n in CONSCIOUSNESS_NAMES:
         if n in entries:
             e = entries[n]
-            g1 = e["Phi"] in CRITICAL
-            g2 = e["K"] in SLOW_K
+            g1 = e["φ̂"] in CRITICAL
+            g2 = e["Ç"] in SLOW_K
             c  = consciousness_score(e)
             gate = ("✓✓" if (g1 and g2) else ("✓✗" if g1 else "✗✓" if g2 else "✗✗"))
             lines.append(f"            {n:32s}  G1={int(g1)} G2={int(g2)} [{gate}]  C={c:.4f}")
 
-    # Thm 77.2 — Catatonic: Phi_c + K_trap → C=0
+    # Thm 77.2 — Catatonic: φ̂_ÿ + Ç_Ù → C=0
     if "catatonic_state" in entries:
         e = entries["catatonic_state"]
         c = consciousness_score(e)
         lines.append(f"  Thm 77.2  catatonic: Phi={e['Phi']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
 
-    # Thm 77.3 — Dissociative: Phi_c + K_MBL → C=0
+    # Thm 77.3 — Dissociative: φ̂_ÿ + Ç_λ → C=0
     if "dissociative_state" in entries:
         e = entries["dissociative_state"]
         c = consciousness_score(e)
         lines.append(f"  Thm 77.3  dissociative: Phi={e['Phi']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
 
-    # Thm 77.4 — Manic: Phi_super → C=0
+    # Thm 77.4 — Manic: φ̂_Ţ → C=0
     if "manic_episode" in entries:
         e = entries["manic_episode"]
         c = consciousness_score(e)
@@ -573,8 +573,8 @@ class DomainNavigator:
                 try:
                     e = self.cat.get(parts[1])
                     c = consciousness_score(e)
-                    g1 = e["Phi"] in CRITICAL
-                    g2 = e["K"] in SLOW_K
+                    g1 = e["φ̂"] in CRITICAL
+                    g2 = e["Ç"] in SLOW_K
                     print(f"  {parts[1]}: C={c:.4f}  Gate1={'✓' if g1 else '✗'}  Gate2={'✓' if g2 else '✗'}")
                 except KeyError as ex:
                     print(f"  Not found: {ex}")

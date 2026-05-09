@@ -73,9 +73,9 @@ class SymbolicExpression:
     Represents a symbolic expression in the Synthonicon algebra.
     
     Examples:
-        - Primitive assertion: Primitive("F", "F_hbar")
-        - Boolean combination: And(Primitive("T", "T_bowtie"), Primitive("P", "P_pm"))
-        - Implication: Implies(Primitive("T", "T_bowtie"), Primitive("F", "F_eth"))
+        - Primitive assertion: Primitive("F", "ƒ_hardsign")
+        - Boolean combination: And(Primitive("T", "Þ_bullseye"), Primitive("P", "Φ_pipevar"))
+        - Implication: Implies(Primitive("T", "Þ_bullseye"), Primitive("F", "ƒ_dh"))
     """
     operator: SymbolicOperator
     operands: List[Any]
@@ -123,7 +123,7 @@ def _evaluate_expression(expr: SymbolicExpression, synthon: Synthon) -> bool:
     op = expr.operator
     
     if op == SymbolicOperator.EQ:
-        # Primitive assertion: F = F_hbar
+        # Primitive assertion: F = F_hardsign
         primitive_name = expr.operands[0]
         expected_value = expr.operands[1]
         actual_value = _get_primitive_value(synthon, primitive_name)
@@ -157,7 +157,7 @@ def _get_primitive_value(synthon: Synthon, name: str) -> str:
         "K": synthon.kinetic_character.value,
         "G": synthon.granularity.value,
         "Γ": f"{synthon.interaction_grammar.operator.value}({synthon.interaction_grammar.tier})",
-        "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "Phi_sub",
+        "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "φ̂_softsign",
     }
     return mapping.get(name, "")
 
@@ -437,26 +437,26 @@ class AxiomTheoremProver:
         statements = {
             "axiom1": SymbolicExpression.Implies(
                 SymbolicExpression.And(
-                    SymbolicExpression.primitive("T", "T_bowtie"),
-                    SymbolicExpression.primitive("P", "P_pm_sym"),
+                    SymbolicExpression.primitive("T", "Þ_bullseye"),
+                    SymbolicExpression.primitive("P", "Φ_doublebarpipe"),
                 ),
                 SymbolicExpression.Or(
-                    SymbolicExpression.primitive("F", "F_hbar"),
-                    SymbolicExpression.primitive("F", "F_eth"),
+                    SymbolicExpression.primitive("F", "ƒ_hardsign"),
+                    SymbolicExpression.primitive("F", "ƒ_dh"),
                 ),
             ),
             "axiom2": SymbolicExpression.Not(
                 SymbolicExpression.And(
-                    SymbolicExpression.primitive("G", "G_beth"),
+                    SymbolicExpression.primitive("G", "Γ_beta"),
                     SymbolicExpression.primitive("Γ", "Gamma_and(SPECIFIC)"),
-                    SymbolicExpression.primitive("G", "G_aleph"),  # Can propagate to global
+                    SymbolicExpression.primitive("G", "Γ_revapostrophe"),  # Can propagate to global
                 ),
             ),
             "axiom4": SymbolicExpression.Implies(
                 SymbolicExpression.primitive("Γ", "Gamma_seq(SELECTIVE)"),
                 SymbolicExpression.Or(
-                    SymbolicExpression.primitive("D", "D_infinity"),
-                    SymbolicExpression.primitive("R", "R_dagger"),
+                    SymbolicExpression.primitive("D", "Ð_infinity"),
+                    SymbolicExpression.primitive("R", "Ř_downstep"),
                 ),
             ),
         }
@@ -630,7 +630,8 @@ class CrossDomainAnalogyDetector:
             if prim_name == "S":
                 # Stoichiometry uses a graded similarity rather than exact match
                 s_sim = self._stoichiometry_similarity(
-                    synthon_a.stoichiometry, synthon_b.stoichiometry
+                    synthon_a.stoichiometry.value if synthon_a.stoichiometry else None,
+                    synthon_b.stoichiometry.value if synthon_b.stoichiometry else None,
                 )
                 weighted_similarity += weight * s_sim
                 if s_sim >= 0.95:
@@ -676,9 +677,9 @@ class CrossDomainAnalogyDetector:
             "F": synthon.fidelity.value,
             "K": synthon.kinetic_character.value,
             "G": synthon.granularity.value,
-            "Γ": f"{synthon.interaction_grammar.operator.value}({synthon.interaction_grammar.tier})",
-            "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "Phi_sub",
-            "S": synthon.stoichiometry or "unset",  # stub: "unset" == "unset" matches
+            "Γ": synthon.interaction_grammar.value,
+            "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "φ̂_softsign",
+            "S": synthon.stoichiometry.value if synthon.stoichiometry else "unset",
         }
 
     @staticmethod
@@ -704,22 +705,24 @@ class CrossDomainAnalogyDetector:
             return 0.5
         if s1 == s2:
             return 1.0
+        # Phonetic stoichiometry names — ordinal similarity (1:1 < n:n < n:m)
+        _PHONETIC_ORD = {"Σ_doublebaresh": 0, "Σ_ctn": 1, "Σ_ltailm": 2}
+        if s1 in _PHONETIC_ORD and s2 in _PHONETIC_ORD:
+            diff = abs(_PHONETIC_ORD[s1] - _PHONETIC_ORD[s2])
+            return 0.9 if diff == 1 else 0.7
         try:
             a1, b1 = (int(x) for x in s1.split(":"))
             a2, b2 = (int(x) for x in s2.split(":"))
             r1 = a1 / b1 if b1 != 0 else 0.0
             r2 = a2 / b2 if b2 != 0 else 0.0
-            sym1 = (a1 == b1)   # symmetric: n:n
+            sym1 = (a1 == b1)
             sym2 = (a2 == b2)
             if sym1 == sym2:
-                # Same category (both symmetric or both asymmetric)
                 return 0.9
             else:
-                # Category mismatch (one sym, one asym) → ratio-based fallback
                 diff = abs(r1 - r2)
                 if diff < 0.5:
                     return 0.7
-                # Linear drop from 0.7 at diff=0.5 to 0.2 at diff=2.0
                 score = 0.7 - (diff - 0.5) / 1.5 * 0.5
                 return max(0.2, round(score, 4))
         except (ValueError, ZeroDivisionError):
@@ -840,7 +843,7 @@ class PredictiveRuleGenerator:
     Generates predictive rules from synthon data.
     
     Uses inductive logic programming to discover rules of the form:
-    IF (T = T_bowtie AND P = P_pm) THEN (F ≥ F_eth)
+    IF (T = T_bullseye AND P = P_pipevar) THEN (F ≥ F_dh)
     """
     
     def __init__(self):
@@ -894,15 +897,15 @@ class PredictiveRuleGenerator:
         candidates = []
 
         # ── Axiom 1 (T_⋈ closure amplifies fidelity) ──────────────────────────
-        # Symmetric self-complementary cyclic motifs → F ≥ F_eth
+        # Symmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "T_bowtie"), P("P", "P_pm_sym")),
-            Or(P("F", "F_hbar"), P("F", "F_eth")),
+            And(P("T", "Þ_bullseye"), P("P", "Φ_doublebarpipe")),
+            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
-        # Pseudosymmetric self-complementary cyclic motifs → F ≥ F_eth
+        # Pseudosymmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "T_bowtie"), P("P", "P_pm_pseudo")),
-            Or(P("F", "F_hbar"), P("F", "F_eth")),
+            And(P("T", "Þ_bullseye"), P("P", "Φ_pm_pseudo")),
+            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 
         # ── Axiom 4 (Γ_→ requires D_∞ or R_‡) ────────────────────────────────
@@ -914,103 +917,103 @@ class PredictiveRuleGenerator:
                 P("Γ", "Gamma_seq(BROAD)"),
             ),
             Or(
-                P("D", "D_infinity"),
-                P("D", "D_wedge_infinity"),
-                P("D", "D_triangle_infinity"),
-                P("D", "D_all"),
-                P("R", "R_dagger"),
+                P("D", "Ð_infinity"),
+                P("D", "Ð_wedge_infinity"),
+                P("D", "Ð_triangle_infinity"),
+                P("D", "Ð_all"),
+                P("R", "Ř_downstep"),
             ),
         ))
 
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
-            And(P("F", "F_hbar"), P("K", "K_fast")),
-            P("Φ", "Phi_sub"),
+            And(P("F", "ƒ_hardsign"), P("K", "Ç_frtailgamma")),
+            P("Φ", "φ̂_softsign"),
         ))
 
         # ── R → F coupling ─────────────────────────────────────────────────────
         # Covalent recognition → high fidelity (bond-energy argument)
         candidates.append((
-            P("R", "R_subset"),
-            P("F", "F_hbar"),
+            P("R", "Ř_subset"),
+            P("F", "ƒ_hardsign"),
         ))
-        # Dynamic covalent → F_hbar or F_eth (imine, disulfide: reversible but reliable)
+        # Dynamic covalent → F_hardsign or F_dh (imine, disulfide: reversible but reliable)
         candidates.append((
-            P("R", "R_covalent_dynamic"),
-            Or(P("F", "F_hbar"), P("F", "F_eth")),
+            P("R", "Ř_covalent_dynamic"),
+            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 
         # ── R_⇔ → T_⋈ (mechanical bond requires cyclic wheel topology) ─────────
         candidates.append((
-            P("R", "R_mechanical"),
-            P("T", "T_bowtie"),
+            P("R", "Ř_mechanical"),
+            P("T", "Þ_bullseye"),
         ))
 
-        # ── T_⋈ ∧ R_⇔ → K_mod ∨ K_slow (dethreading barrier) ─────────────────
+        # ── T_⋈ ∧ R_⇔ → K_turnm ∨ K_schwa (dethreading barrier) ─────────────────
         candidates.append((
-            And(P("T", "T_bowtie"), P("R", "R_mechanical")),
-            Or(P("K", "K_mod"), P("K", "K_slow")),
+            And(P("T", "Þ_bullseye"), P("R", "Ř_mechanical")),
+            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
 
         # ── Scale-topology coupling ─────────────────────────────────────────────
         # Global-scale control requires hub, network, or cage topology
         candidates.append((
-            P("G", "G_aleph"),
-            Or(P("T", "T_square"), P("T", "T_network"), P("T", "T_cage")),
+            P("G", "Γ_revapostrophe"),
+            Or(P("T", "Þ_square"), P("T", "Þ_nrleg"), P("T", "Þ_cage")),
         ))
         # Molecular dimensionality → not global scale
         candidates.append((
-            P("D", "D_wedge"),
-            Or(P("G", "G_beth"), P("G", "G_gimel")),
+            P("D", "Ð_wynn"),
+            Or(P("G", "Γ_beta"), P("G", "Γ_gamma")),
         ))
 
         # ── Fidelity-granularity coupling ───────────────────────────────────────
         # Global propagation requires at least medium fidelity
         candidates.append((
-            P("G", "G_aleph"),
-            Or(P("F", "F_hbar"), P("F", "F_eth")),
+            P("G", "Γ_revapostrophe"),
+            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 
         # ── Temporal dimension → kinetic accessibility ──────────────────────────
-        # Catalytic cycles have turnover rates; K_fast is unphysical for D_∞
+        # Catalytic cycles have turnover rates; K_frtailgamma is unphysical for D_∞
         candidates.append((
-            P("D", "D_infinity"),
-            Or(P("K", "K_mod"), P("K", "K_slow")),
+            P("D", "Ð_infinity"),
+            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
         # Catalytic recognition mode → temporal or hybrid temporal dimension
         candidates.append((
-            P("R", "R_dagger"),
+            P("R", "Ř_downstep"),
             Or(
-                P("D", "D_infinity"),
-                P("D", "D_wedge_infinity"),
-                P("D", "D_triangle_infinity"),
-                P("D", "D_all"),
+                P("D", "Ð_infinity"),
+                P("D", "Ð_wedge_infinity"),
+                P("D", "Ð_triangle_infinity"),
+                P("D", "Ð_all"),
             ),
         ))
 
         # ── Hub-node granularity amplification ─────────────────────────────────
         candidates.append((
-            And(P("T", "T_square"), P("R", "R_superset")),
-            Or(P("G", "G_gimel"), P("G", "G_aleph")),
+            And(P("T", "Þ_square"), P("R", "Ř_superset")),
+            Or(P("G", "Γ_gamma"), P("G", "Γ_revapostrophe")),
         ))
 
-        # ── Φ_c indicator: K_trap in a cyclic system (Axiom 5 / Groppi anchor) ─
+        # ── Φ_c indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
-            And(P("T", "T_bowtie"), P("K", "K_trap")),
-            P("Φ", "Phi_c"),
+            And(P("T", "Þ_bullseye"), P("K", "Ç_teshlig")),
+            P("Φ", "φ̂_ctyogh"),
         ))
 
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────
-        # T_□□ with non-covalent recognition → F ≥ F_eth
+        # T_□□ with non-covalent recognition → F ≥ F_dh
         candidates.append((
-            And(P("T", "T_cage"), P("R", "R_superset")),
-            Or(P("F", "F_hbar"), P("F", "F_eth")),
+            And(P("T", "Þ_cage"), P("R", "Ř_superset")),
+            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
-        # T_□□ → K_mod or K_slow (enclosed cage always has exchange barrier)
+        # T_□□ → K_turnm or K_schwa (enclosed cage always has exchange barrier)
         candidates.append((
-            P("T", "T_cage"),
-            Or(P("K", "K_mod"), P("K", "K_slow")),
+            P("T", "Þ_cage"),
+            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
 
         return candidates

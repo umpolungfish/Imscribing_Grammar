@@ -1,0 +1,127 @@
+Table 15: tipa Phonetic Symbols
+È \textbabygamma P \textglotstop ï \textrtailn
+b \textbarb ; \texthalflength ó \textrtailr
+c \textbarc ż \texthardsign ù \textrtails
+d \textbard # \texthooktop ú \textrtailt
+é \textbardotlessj á \texthtb ü \textrtailz
+g \textbarg ê \texthtbardotlessj $ \textrthook
+Ü \textbarglotstop Á \texthtc À \textsca
+1 \textbari â \texthtd à \textscb
+ł \textbarl ä \texthtg ď \textsce
+8 \textbaro H \texthth å \textscg
+Ý \textbarrevglotstop Ê \texththeng Ë \textsch
+0 \textbaru Î \texthtk @ \textschwa
+ì \textbeltl Ò \texthtp I \textsci
+β \textbeta Ó \texthtq ĺ \textscj
+ò \textbullseye č \texthtrtaild Ï \textscl
+\textceltpal É \texthtscg ð \textscn
+χ \textchi Ö \texthtt Œ \textscoelig
+Å \textcloseepsilon ß \texthvlig ś \textscomega
+Ñ \textcloseomega Û \textinvglotstop ö \textscr
+Æ \textcloserevepsilon K \textinvscr A \textscripta
+Þ \textcommatailz ι \textiota g \textscriptg
+^ \textcorner λ \textlambda V \textscriptv
+ă \textcrb : \textlengthmark Ú \textscu
+ą \textcrd ş \textlhookt Y \textscy
+g \textcrg ę \textlhtlongi ­ \textsecstress
+è \textcrh ű \textlhtlongy ž \textsoftsign
+Û \textcrinvglotstop Ô \textlonglegr Â \textstretchc
+ň \textcrlambda ¡ \textlptr tC \texttctclig
+2 \textcrtwo M \textltailm Ù \textteshlig
+C \textctc ñ \textltailn θ \texttheta
+ć \textctd ë \textltilde þ \textthorn
+ćý \textctdctzlig Ð \textlyoghlig £ \texttoneletterstem
+š \textctesh Í \textObardotlessj ţ \texttslig
+J \textctj ŋ \textOlyoghlig 5 \textturna
+ő \textctn ω \textomega ŕ \textturncelig
+ť \textctt _ \textopencorner 4 \textturnh
+ťC \textcttctclig O \textopeno ľ \textturnk
+ÿ \textctyogh % \textpalhook Õ \textturnlonglegr
+ý \textctz φ \textphi W \textturnm
+dý \textdctzlig | \textpipe î \textturnmrleg
+S \textdoublebaresh " \textprimstress ô \textturnr
+} \textdoublebarpipe ĳ \textraiseglotstop õ \textturnrrtail
+=/ \textdoublebarslash ğ \textraisevibyi 6 \textturnscripta
+{ \textdoublepipe 7 \textramshorns Ø \textturnt
+Ş \textdoublevertline \ \textrevapostrophe 2 \textturnv
+Ť \textdownstep 9 \textreve û \textturnw
+Ã \textdyoghlig 3 \textrevepsilon L \textturny
+dz \textdzlig Q \textrevglotstop υ \textupsilon
+ε \textepsilon ź \textrevyogh Ţ \textupstep
+S \textesh Ç \textrhookrevepsilon Š \textvertline
+R \textfishhookr Ä \textrhookschwa ğ \textvibyi
+ě \textg ~ \textrhoticity ů \textvibyy
+γ \textgamma ¿ \textrptr ß \textwynn
+Ů \textglobfall ã \textrtaild Z \textyogh
+Ű \textglobrise í \textrtaill
+Table 17: tipx Phonetic Symbols
+" \textaolig 3 \texthtbardotlessjvar ´ \textrthooklong
+B \textbenttailyogh ; \textinvomega q \textscaolig
+. \textbktailgamma p \textinvsca r \textscdelta
+D \textctinvglotstop ! \textinvscripta s \textscf
+2 \textctjvar I \textlfishhookrlig t \textsck
+% \textctstretchc # \textlhookfour w \textscm
+& \textctstretchcvar < \textlhookp x \textscp
+@ \textctturnt 1 \textlhti y \textscq
+) \textdblig > \textlooptoprevesh ˝ \textspleftarrow
+H \textdoublebarpipevar 6 \textnrleg $ \textstretchcvar
+G \textdoublepipevar 9 \textObullseye ˙ \textsubdoublearrow
+ˇ \textdownfullarrow ˆ \textpalhooklong ¯ \textsubrightarrow
+7 \textfemale ˜ \textpalhookvar P \textthornvari
+5 \textfrbarn F \textpipevar Q \textthornvarii
+’ \textfrhookd = \textqplig R \textthornvariii
+( \textfrhookdvar ¨ \textrectangle S \textthornvariv
+? \textfrhookt ˚ \textretractingvar E \textturnglotstop
+- \textfrtailgamma v \textrevscl u \textturnsck
+T \textglotstopvari z \textrevscr { \textturnscu
+U \textglotstopvarii ␣ \textrhooka C \textturnthree
+V \textglotstopvariii * \textrhooke A \textturntwo
+, \textgrgamma + \textrhookepsilon 8 \textuncrfemale
+0 \textheng : \textrhookopeno ˘ \textupfullarrow
+4 \texthmlig / \textrtailhthChapter 2. Body-text symbols 30
+Table 19: wsuipa Phonetic Symbols
+! \babygamma 8 \eng 4 \labdentalnas  \schwa
+ \barb  \er / \latfric * \sci
+ \bard M \esh 6 \legm : \scn
+' \bari  \eth E \legr J \scr
+. \barl D \flapr 1 \lz  \scripta
+< \baro b \glotstop  \nialpha  \scriptg
+A \barp  \hookb \nibeta Y \scriptv
++ \barsci  \hookd [ \nichi W \scu
+X \barscu  \hookg  \niepsilon ] \scy
+T \baru $ \hookh  \nigamma  \slashb
+; \clickb % \hookheng ) \niiota \slashc
+\clickc  \hookrevepsilon 2 \nilambda  \slashd
+R \clickt " \hv > \niomega U \slashu
+? \closedniomega  \inva C \niphi  \taild
+ \closedrevepsilon , \invf O \nisigma H \tailinvr
+ \crossb d \invglotstop S \nitheta 0 \taill
+\crossd & \invh V \niupsilon 9 \tailn
+# \crossh I \invlegr 7 \nj F \tailr
+3 \crossnilambda 5 \invm @ \oo L \tails
+ \curlyc G \invr = \openo P \tailt
+N \curlyesh K \invscr  \reve _ \tailz
+a \curlyyogh  \invscripta f \reveject Q \tesh
+^ \curlyz  \invv  \revepsilon B \thorn
+( \dlbari Z \invw c \revglotstop - \tildel
+ \dz \ \invy  \scd ` \yogh
+e \ejective \ipagamma  \scg
+Table 21: wasysym Phonetic Symbols
+ð \dh U \inve O \roundz þ \thorn
+Ð \DH l \openo Þ \ThornChapter 2. Body-text symbols 31
+Table 22: phonetic Phonetic Symbols
+j \barj f \flap ¯i \ibar A \rotvara i \vari
+ \barlambda ? \glottal c \openo w \rotw  \varomega
+M \emgma B \hausaB ¯h \planck y \roty C \varopeno
+n \engma b \hausab U \pwedge e \schwa v‌ \vod
+N \enya D \hausad  \revD p \thorn h \voicedh
+" \epsi T \hausaD  \riota u \ubar x \yogh
+s \esh k \hausak m \rotm u \udesc
+d \eth K \hausaK \rotOmega a \vara
+F \fj D \hookd r \rotr G \varg
+Table 23: t4phonet Phonetic Symbols
+ \textcrd ¡ \texthtd | \textpipe
+§ \textcrh ¨ \texthtk ð \textrtaild
+¢ \textepsilon ± \texthtp » \textrtailt
+¬ \textesh º \texthtt ¡ \textschwa
+ \textfjlig à \textio

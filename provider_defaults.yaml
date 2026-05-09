@@ -104,7 +104,7 @@ providers:
     temperature_default: 0.7
     note: "OpenRouter FREE MODELS require FREE API key (no credits needed) - get at https://openrouter.ai/keys"
     openrouter_api_key_required: true  # Free API key required (no credits)
-    api_key_env: "OPENROUTER_API_KEY"
+    api_key_env: "OPENROUTEŘ_API_KEY"
     models:
       # Recommended Free Models (FREE API key required - no credits)
       - name: "nvidia/nemotron-3-nano-30b-a3b:free"

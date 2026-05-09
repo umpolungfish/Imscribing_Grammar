@@ -32,9 +32,9 @@ Predicate grammar for assert.expr (no eval — safe dispatch only)
 ────────────────────────────────────────────────────────────────
   phi_c_score > N
   phi_c_score >= N
-  fidelity == F_hbar | F_eth | F_ell | LOW | MEDIUM | HIGH
-  topology == T_bowtie | T_cyclic | ...
-  criticality_phase == Phi_c | Phi_sub | Phi_n
+  fidelity == F_hardsign | F_dh | F_beltl | LOW | MEDIUM | HIGH
+  topology == T_bullseye | T_cyclic | ...
+  criticality_phase == Phi_ctyogh | Phi_softsign | Phi_n
   axiom6_satisfied
   gd_degeneracy == <type_string>
   reset_type == discrete | continuous

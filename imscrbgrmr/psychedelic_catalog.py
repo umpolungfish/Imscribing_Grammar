@@ -19,9 +19,9 @@ target system, via different receptor grammars and with different kinetic profil
 They are primitive-convergent: structurally diverse, topologically equivalent in output.
 
 **The key divergence:**
-  K_fast (DMT, 5-MeO-DMT, Salvinorin A): rapid onset, brief window, extreme depth
+  K_frtailgamma (DMT, 5-MeO-DMT, Salvinorin A): rapid onset, brief window, extreme depth
   K_moderate (Psilocin): gradual onset, sustained window, integrative
-  K_slow (LSD, Mescaline): slow onset, long sustained window, broad
+  K_schwa (LSD, Mescaline): slow onset, long sustained window, broad
 
 **Receptor grammar divergence:**
   Serotonergic (5-HT2A dominant): LSD, DMT, 5-MeO-DMT, Psilocin, Mescaline
@@ -120,20 +120,20 @@ def _lsd_molecular() -> Synthon:
     LSD as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_+-; F_ℏ; K_slow; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
 
     Key assignments:
-        T_network — tetracyclic ergoline scaffold makes 4+ simultaneous contacts
+        T_nrleg — tetracyclic ergoline scaffold makes 4+ simultaneous contacts
             with the 5-HT2A extracellular loops and transmembrane helices;
             β-arrestin biased agonism creates a second downstream network cascade.
         F_HIGH — active at 25-75 μg; Ki(5-HT2A) ≈ 2 nM; extreme receptor complementarity.
-        K_slow — 8-12 hr duration; β-arrestin kinetic trap extends receptor residence
+        K_schwa — 8-12 hr duration; β-arrestin kinetic trap extends receptor residence
             time far beyond non-biased agonists. The slowest K in the psychedelic group.
         G_GLOBAL — directly reorganises large-scale brain networks;
             default mode network suppression, thalamic gating disruption, global
             connectivity increase measured at effective doses.
         Γ_BROAD — promiscuous binding across 5-HT subtypes (2A, 1A, 6, 7), D2, D3,
-            α2-adrenergic, H1; more off-target than any other psychedelic.
+            α2-adrenergic, H_toneletterstem; more off-target than any other psychedelic.
         Φ_c — fMRI Lempel-Ziv complexity and BOLD entropy increase confirmed;
             neural criticality measures (avalanche size distribution power-law) positive.
     """
@@ -152,9 +152,9 @@ def _lsd_molecular() -> Synthon:
         description=(
             "LSD (lysergic acid diethylamide) as receptor ligand. Tetracyclic ergoline "
             "scaffold with β-arrestin-biased 5-HT2A agonism. Extreme potency (25-75 μg), "
-            "8-12 hr duration (K_slow), broad receptor promiscuity (Γ_BROAD), confirmed "
+            "8-12 hr duration (K_schwa), broad receptor promiscuity (Γ_BROAD), confirmed "
             "neural criticality induction (Φ_c). The reference entry for the serotonergic "
-            "K_slow psychedelic class."
+            "K_schwa psychedelic class."
         ),
         metadata={
             "domain_category": "psychedelic_molecular",
@@ -162,13 +162,13 @@ def _lsd_molecular() -> Synthon:
             "scaffold": "ergoline_tetracyclic",
             "primary_receptor": "5-HT2A",
             "receptor_profile": ["5-HT2A", "5-HT1A", "5-HT6", "5-HT7", "D2", "D3",
-                                  "alpha2-adrenergic", "H1"],
+                                  "alpha2-adrenergic", "Ħ_toneletterstem"],
             "ki_primary_nm": 2.0,
             "active_dose_ug": "25-75",
             "duration_hr": "8-12",
             "mechanism_notes": (
                 "Beta-arrestin biased agonism at 5-HT2A is responsible for the extended "
-                "K_slow kinetics — the receptor-arrestin complex persists long after initial "
+                "K_schwa kinetics — the receptor-arrestin complex persists long after initial "
                 "activation, creating a kinetic trap at the signalling level. "
                 "Ergoline rigidity enforces precise binding geometry → F_HIGH."
             ),
@@ -192,21 +192,21 @@ def _lsd_brain_state() -> Synthon:
     encodes the whole-brain constraint-propagation structure during peak LSD state.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_slow; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_schwa; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
 
     Key assignments:
         D_temporal — the altered state has a temporal structure: onset, plateau,
             offset. D_∞ captures that the plateau cycles (breath-like oscillations
             in depth are common).
-        T_network — default mode, executive, sensory networks all become coupled;
+        T_nrleg — default mode, executive, sensory networks all become coupled;
             cross-network functional connectivity increases dramatically.
         R_dynamic_catalytic — the drug catalyzes the state transition without being
             consumed in the process (the drug molecule is not metabolised into the
             brain-state encoding; it enables it).
-        K_slow — the brain-state duration mirrors molecular K.
+        K_schwa — the brain-state duration mirrors molecular K.
         Γ_AND(SELECTIVE) — frequency-specific coupling enhancement; gamma oscillations
             (40 Hz) are selectively amplified; the grammar is not broadband.
-        Ω_1 — the Φ_c state is sustained by the molecular K_trap but is not
+        Ω_1 — the Φ_c state is sustained by the molecular K_teshlig but is not
             intrinsically topologically protected; it will collapse when the molecule
             is cleared. (This is what §XIX T_braid engineering aims to make permanent.)
     """
@@ -223,11 +223,11 @@ def _lsd_brain_state() -> Synthon:
         criticality_phase=CriticalityPhase.CRITICAL,
         stoichiometry="n:m",
         description=(
-            "Whole-brain constraint-propagation state induced by LSD. T_network: "
+            "Whole-brain constraint-propagation state induced by LSD. T_nrleg: "
             "default mode, executive, and sensory networks globally coupled. "
-            "K_slow: state persists 8-12 hr (mirrors molecular K). Φ_c: confirmed "
+            "K_schwa: state persists 8-12 hr (mirrors molecular K). Φ_c: confirmed "
             "by fMRI LZc/entropy increases. Γ_SELECTIVE: frequency-specific gamma "
-            "enhancement, not broadband noise. Ω_1: sustained by molecular K_trap, "
+            "enhancement, not broadband noise. Ω_1: sustained by molecular K_teshlig, "
             "not intrinsically topologically protected."
         ),
         metadata={
@@ -257,16 +257,16 @@ def _dmt_molecular() -> Synthon:
     DMT as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_fast; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
 
     Key assignments:
-        T_network — bicyclic indole (benzene fused with pyrrole) core acts as a
+        T_nrleg — bicyclic indole (benzene fused with pyrrole) core acts as a
             network recognition unit: indole NH, the aromatic system, and the
             dimethylaminoethyl chain each make separate simultaneous contacts with
             5-HT2A. Three independent contact points = network topology.
         F_HIGH — endogenous molecule; Ki(5-HT2A) ≈ 100-500 nM but produced in situ;
             the endogenous context implies perfect grammar match at the systems level.
-        K_fast — smoked/IV: 5-15 min total duration. The fastest-acting of the group.
+        K_frtailgamma — smoked/IV: 5-15 min total duration. The fastest-acting of the group.
             Also the fastest G_local → G_ℵ transition: no gradual onset.
         Γ_SELECTIVE — primarily 5-HT2A + sigma-1 receptor; tighter profile than LSD.
             Sigma-1 engagement is uniquely important: sigma-1 is an endoplasmic
@@ -291,10 +291,10 @@ def _dmt_molecular() -> Synthon:
         stoichiometry="1:1",
         description=(
             "DMT (N,N-dimethyltryptamine) as receptor ligand. Simple tryptamine with "
-            "bicyclic indole core. Endogenous mammalian compound. K_fast: 5-15 min "
+            "bicyclic indole core. Endogenous mammalian compound. K_frtailgamma: 5-15 min "
             "duration (smoked). Selective 5-HT2A + sigma-1 binding. Most rapid "
             "G_local → G_ℵ transition of any psychedelic. Φ_c induction confirmed. "
-            "The endogenous reference for the serotonergic K_fast psychedelic class."
+            "The endogenous reference for the serotonergic K_frtailgamma psychedelic class."
         ),
         metadata={
             "domain_category": "psychedelic_molecular",
@@ -323,7 +323,7 @@ def _dmt_molecular() -> Synthon:
             "sigma1_note": (
                 "Sigma-1 receptor engagement is unique to DMT within the psychedelic group. "
                 "Sigma-1 is an ER chaperone / inter-organelle signalling hub — DMT's grammar "
-                "extends from synaptic (G_beth) to intracellular (G_aleph within the cell). "
+                "extends from synaptic (G_beta) to intracellular (G_revapostrophe within the cell). "
                 "This may explain the unusual cellular protection effects of DMT."
             ),
             "nitrogen_present": True,
@@ -338,13 +338,13 @@ def _dmt_brain_state() -> Synthon:
     The CNS network state induced by DMT.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_fast; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
 
     The DMT brain-state is structurally identical in primitive terms to the LSD
-    brain-state, with one critical difference: K_fast. The same Φ_c destination
+    brain-state, with one critical difference: K_frtailgamma. The same Φ_c destination
     is reached in minutes rather than hours, and the window closes as fast.
     This makes DMT the probe of choice for the Φ_c induction threshold question:
-    what is the minimum time required to achieve the G_ℵ / T_network / Φ_c state?
+    what is the minimum time required to achieve the G_ℵ / T_nrleg / Φ_c state?
     Empirically: approximately 3-5 minutes post-inhalation.
     """
     return Synthon(
@@ -361,8 +361,8 @@ def _dmt_brain_state() -> Synthon:
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by DMT. Primitive-identical to LSD brain-state "
-            "except K_fast (5-15 min total window vs 8-12 hr). Most rapid known Φ_c "
-            "induction. Demonstrates that the G_ℵ/T_network/Φ_c state is achievable "
+            "except K_frtailgamma (5-15 min total window vs 8-12 hr). Most rapid known Φ_c "
+            "induction. Demonstrates that the G_ℵ/T_nrleg/Φ_c state is achievable "
             "in <5 min — the minimum induction time constraint. EEG shows broadband "
             "power increase with selective gamma-band coherence amplification."
         ),
@@ -400,7 +400,7 @@ def _five_meo_dmt_molecular() -> Synthon:
     5-MeO-DMT as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_fast; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
 
     Key assignments:
         **THE GRAMMAR SHIFT:** The 5-methoxy group (OMe at position 5 of the indole)
@@ -435,7 +435,7 @@ def _five_meo_dmt_molecular() -> Synthon:
         description=(
             "5-MeO-DMT as receptor ligand. Tryptamine with 5-methoxy substitution. "
             "The OMe group shifts receptor grammar from 5-HT2A (excitatory, DMT) "
-            "toward 5-HT1A (inhibitory). Same K_fast profile as DMT but phenomenologically "
+            "toward 5-HT1A (inhibitory). Same K_frtailgamma profile as DMT but phenomenologically "
             "distinct: inhibitory Γ → dissolution/'white-out' vs DMT's excitatory "
             "Γ → structured visual/narrative content. Endogenous. Φ_c via suppression "
             "rather than excitation — same destination, different grammar path."
@@ -475,13 +475,13 @@ def _five_meo_dmt_brain_state() -> Synthon:
     The CNS network state induced by 5-MeO-DMT.
 
     Formal tuple:
-        ⟨D_∞; T_∈(sym); R_†; P_±^sym; F_ℏ; K_fast; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
 
     **The key difference from DMT brain-state:** P_SELF_COMPLEMENTARY_SYM rather
     than PSEUDO. The "white-out" phenomenology corresponds to the system reaching
     a state where all directional asymmetry collapses — P becomes truly symmetric.
     There is no "observer" and "observed", no foreground and background, no narrative
-    vector. This is the P_sym signature: the system has become its own perfect mirror.
+    vector. This is the P_subdoublearrow signature: the system has become its own perfect mirror.
 
     T_NETWORK_SYM (centrosymmetric network): the brain network reorganisation is
     globally symmetric rather than directionally asymmetric. The default mode
@@ -504,22 +504,22 @@ def _five_meo_dmt_brain_state() -> Synthon:
         criticality_phase=CriticalityPhase.CRITICAL,
         stoichiometry="n:m",
         description=(
-            "Whole-brain state induced by 5-MeO-DMT. T_network_sym + P_sym: "
+            "Whole-brain state induced by 5-MeO-DMT. T_network_sym + P_subdoublearrow: "
             "directional asymmetry collapses ('white-out', content dissolution). "
             "Inhibitory 5-HT1A dominant grammar → suppressive path to Φ_c. "
             "G/D degeneracy condition most fully approached of any known compound — "
             "the closest pharmacological approximation to scale-and-time collapse. "
-            "Same K_fast profile as DMT brain-state."
+            "Same K_frtailgamma profile as DMT brain-state."
         ),
         metadata={
             "domain_category": "psychedelic_brain_state",
             "duration_min": "3-10",
             "phenomenology": "content dissolution, white-out, ego loss without imagery",
             "p_sym_note": (
-                "P_sym (vs PSEUDO for other psychedelics) encodes the 'no observer / "
+                "P_subdoublearrow (vs PSEUDO for other psychedelics) encodes the 'no observer / "
                 "no observed' condition. The brain-state has no directional asymmetry — "
                 "no narrative vector, no foreground/background distinction. "
-                "This is the P_sym signature at the network level."
+                "This is the P_subdoublearrow signature at the network level."
             ),
             "gd_degeneracy_note": (
                 "The 5-MeO-DMT state is the closest known pharmacological approach to "
@@ -547,16 +547,16 @@ def _psilocin_molecular() -> Synthon:
     Psilocin (active form of psilocybin) as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℇ; K_mod; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
 
     Key assignments:
-        F_MEDIUM (F_eth) — active at mg doses (10-40 mg psilocybin); significantly
+        F_MEDIUM (F_dh) — active at mg doses (10-40 mg psilocybin); significantly
             less potent than LSD (μg) or DMT. Ki(5-HT2A) ≈ 100-200 nM. The 4-OH
             group adds a hydrogen bond donor but the overall receptor affinity is
             lower than LSD's ergoline preorganization.
         K_MODERATE — 4-6 hr duration. The prodrug dephosphorylation step (alkaline
             phosphatase converts psilocybin → psilocin) adds a ~30-60 min kinetic
-            delay at onset. This is functionally K_mod rather than K_fast despite
+            delay at onset. This is functionally K_turnm rather than K_frtailgamma despite
             being a simple tryptamine structurally. The prodrug layer is a kinetic
             modifier that the structure alone does not predict.
         Γ_SELECTIVE — most receptor-selective of the tryptamine psychedelics.
@@ -581,7 +581,7 @@ def _psilocin_molecular() -> Synthon:
         description=(
             "Psilocin (4-OH-DMT, active form of psilocybin) as receptor ligand. "
             "Most selective tryptamine for 5-HT2A. F_MEDIUM: active at mg doses. "
-            "K_mod: 4-6 hr duration, shaped by prodrug dephosphorylation kinetics. "
+            "K_turnm: 4-6 hr duration, shaped by prodrug dephosphorylation kinetics. "
             "Φ_c induction confirmed (fMRI, MEG); considered the most 'integrative' "
             "psychedelic — sustained window without extremity of DMT or length of LSD."
         ),
@@ -599,7 +599,7 @@ def _psilocin_molecular() -> Synthon:
                 "Psilocybin (4-phosphoryloxy-DMT) is the naturally occurring form. "
                 "Alkaline phosphatase (gut, blood, brain) cleaves the phosphate → psilocin. "
                 "The phosphate group adds ~30-60 min onset delay (kinetic gate). "
-                "Psilocybin is K_slow at onset, K_mod at steady-state. "
+                "Psilocybin is K_schwa at onset, K_turnm at steady-state. "
                 "Encoding: psilocybin_molecular = psilocin_molecular with K_mod_gate "
                 "in the prodrug position."
             ),
@@ -608,7 +608,7 @@ def _psilocin_molecular() -> Synthon:
             "brain_state_synthon": "psilocin_brain_state",
             "clinical_note": (
                 "Most studied psychedelic in clinical trials (depression, addiction). "
-                "The K_mod window (sustained, not overwhelming) is a clinical asset — "
+                "The K_turnm window (sustained, not overwhelming) is a clinical asset — "
                 "long enough for therapeutic processing, short enough for controllability."
             ),
             "validation_tier": "primary",
@@ -621,14 +621,14 @@ def _psilocin_brain_state() -> Synthon:
     The CNS network state induced by psilocin/psilocybin.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_mod; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
 
     F_MEDIUM at the brain-state level: the Φ_c state achieved by psilocin is
     less extreme than LSD or DMT. fMRI studies show robust criticality measures
     but lower LZc increases than LSD at equivalent subjective intensity ratings.
-    The 4-6 hr K_mod window is the therapeutic sweet spot — long enough for
-    memory reconsolidation processes (K_slow memory encoding requires ~4 hr),
-    short enough to avoid the fatigue of LSD's 12-hr K_slow.
+    The 4-6 hr K_turnm window is the therapeutic sweet spot — long enough for
+    memory reconsolidation processes (K_schwa memory encoding requires ~4 hr),
+    short enough to avoid the fatigue of LSD's 12-hr K_schwa.
     """
     return Synthon(
         name="psilocin_brain_state",
@@ -644,7 +644,7 @@ def _psilocin_brain_state() -> Synthon:
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by psilocin. Primitive-identical to LSD brain-state "
-            "except F_MEDIUM and K_mod. The 4-6 hr moderate-kinetics window is the "
+            "except F_MEDIUM and K_turnm. The 4-6 hr moderate-kinetics window is the "
             "therapeutic sweet spot for memory reconsolidation. Confirmed by fMRI "
             "default mode suppression, increased entropy, maintained global integration. "
             "The reference state for psychedelic-assisted therapy research."
@@ -659,11 +659,11 @@ def _psilocin_brain_state() -> Synthon:
                 "Neural avalanche exponent shift toward critical point",
             ],
             "therapeutic_window_note": (
-                "K_mod window aligns with memory reconsolidation timescale (~4 hr). "
+                "K_turnm window aligns with memory reconsolidation timescale (~4 hr). "
                 "This is the framework basis for the clinical efficacy of psilocybin: "
                 "the Φ_c state coincides with a kinetically accessible window for "
-                "re-encoding long-term memory traces (K_slow memory = K_trap → K_slow "
-                "requires prior K_mod unlocking). The drug opens the window; the therapy "
+                "re-encoding long-term memory traces (K_schwa memory = K_teshlig → K_schwa "
+                "requires prior K_turnm unlocking). The drug opens the window; the therapy "
                 "determines what is written into it."
             ),
             "molecular_synthon": "psilocin_molecular",
@@ -684,7 +684,7 @@ def _mescaline_molecular() -> Synthon:
     Mescaline as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_|; R_nc; P_±^ψ; F_ℇ; K_slow; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
+        ⟨D_∧; T_|; R_nc; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
 
     Key assignments:
         T_LINEAR — phenethylamine scaffold: a phenyl ring with a flexible ethylamine
@@ -696,7 +696,7 @@ def _mescaline_molecular() -> Synthon:
             The simple phenethylamine scaffold lacks the preorganised binding
             geometry of the ergoline or the indole NH contact — lower fidelity
             of receptor fit, compensated by higher dose.
-        K_slow — 8-12 hr duration. This is surprising for such a simple scaffold
+        K_schwa — 8-12 hr duration. This is surprising for such a simple scaffold
             and suggests MAO-mediated slow clearance (the methoxy groups protect
             against rapid MAO-A deamination).
         Γ_BROAD — phenethylamine scaffold hits 5-HT2A but also catecholamine
@@ -721,9 +721,9 @@ def _mescaline_molecular() -> Synthon:
         stoichiometry="1:1",
         description=(
             "Mescaline (3,4,5-trimethoxyphenethylamine) as receptor ligand. "
-            "Phenethylamine scaffold — T_linear (vs tryptamines' T_network). "
+            "Phenethylamine scaffold — T_linear (vs tryptamines' T_nrleg). "
             "F_MEDIUM: active at 200-500 mg (100-1000x less potent than LSD). "
-            "K_slow: 8-12 hr (methoxy groups protect against MAO deamination). "
+            "K_schwa: 8-12 hr (methoxy groups protect against MAO deamination). "
             "Γ_BROAD: 5-HT2A + catecholamine/TAAR receptors. "
             "Scaffold-diverse but Φ_c-convergent with tryptamines — different "
             "molecular grammar, same brain-state destination."
@@ -740,7 +740,7 @@ def _mescaline_molecular() -> Synthon:
             "endogenous": False,
             "scaffold_convergence_note": (
                 "Mescaline demonstrates scaffold-independent convergence on Φ_c: "
-                "phenethylamine T_linear → same Φ_c as tryptamine T_network. "
+                "phenethylamine T_linear → same Φ_c as tryptamine T_nrleg. "
                 "The molecular topology differs fundamentally but the receptor-level "
                 "Γ overlap (5-HT2A) is sufficient to drive the same brain-state. "
                 "This is the framework's prediction for grammar-convergent systems: "
@@ -767,7 +767,7 @@ def _mescaline_brain_state() -> Synthon:
     The CNS network state induced by mescaline.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_slow; G_ℵ; Γ_∨(BROAD); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; n:m⟩
 
     Γ_BROAD is preserved into the brain-state: mescaline's broader receptor grammar
     produces a qualitatively different Φ_c state compared to the tryptamines.
@@ -794,7 +794,7 @@ def _mescaline_brain_state() -> Synthon:
             "Whole-brain state induced by mescaline. Γ_BROAD preserved from molecular "
             "level — broader receptor grammar → more simultaneous constraint-propagation "
             "channels → richer visual/sensory content, less dissociation than tryptamines. "
-            "K_slow: 8-12 hr. F_MEDIUM: less extreme depth than LSD. "
+            "K_schwa: 8-12 hr. F_MEDIUM: less extreme depth than LSD. "
             "Framework interpretation: broader Γ = wider content-space within Φ_c "
             "rather than deeper access to the G/D degeneracy condition."
         ),
@@ -831,7 +831,7 @@ def _salvinorin_a_molecular() -> Synthon:
     Salvinorin A as a molecular receptor-binding synthon.
 
     Formal tuple:
-        ⟨D_∧; T_⋈; R_nc; P_+-; F_ℏ; K_fast; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
+        ⟨D_∧; T_⋈; R_nc; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
 
     **THE OUTLIER.** Salvinorin A is structurally and mechanistically orthogonal
     to every other psychedelic in this catalog:
@@ -882,7 +882,7 @@ def _salvinorin_a_molecular() -> Synthon:
             "completely orthogonal grammar to all serotonergic psychedelics. "
             "T_cyclic_bowtie: bicyclic two-directional ester binding geometry. "
             "F_HIGH: Ki(KOR) ≈ 1.9 nM, extremely potent. "
-            "K_fast: 3-8 min (smoked). Γ_SPECIFIC: essentially no off-target binding. "
+            "K_frtailgamma: 3-8 min (smoked). Γ_SPECIFIC: essentially no off-target binding. "
             "Proves Φ_c is grammar-independent — accessible via KOR pathway."
         ),
         metadata={
@@ -929,9 +929,9 @@ def _salvinorin_a_brain_state() -> Synthon:
     The CNS network state induced by Salvinorin A.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_fast; G_ℵ; Γ_∧(SPECIFIC); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; n:m⟩
 
-    The KOR-mediated brain state converges on the same T_network / G_ℵ / Φ_c
+    The KOR-mediated brain state converges on the same T_nrleg / G_ℵ / Φ_c
     primitive signature as the serotonergic states, but with Γ_SPECIFIC preserved
     into the brain-state. The phenomenology reflects this: the Salvinorin A state
     is qualitatively unlike serotonergic psychedelics — less visual geometry,
@@ -957,8 +957,8 @@ def _salvinorin_a_brain_state() -> Synthon:
             "Whole-brain state induced by Salvinorin A (KOR). Γ_SPECIFIC preserved: "
             "single high-precision constraint-propagation channel (vs serotonergic "
             "multi-channel). Phenomenology: reality distortion, dimensional folding, "
-            "'being pulled through' rather than 'expanding within'. K_fast: 3-8 min. "
-            "Same T_network/G_ℵ/Φ_c as serotonergic states — grammar-convergent. "
+            "'being pulled through' rather than 'expanding within'. K_frtailgamma: 3-8 min. "
+            "Same T_nrleg/G_ℵ/Φ_c as serotonergic states — grammar-convergent. "
             "Demonstrates Φ_c is a topological attractor accessible from orthogonal grammar."
         ),
         metadata={

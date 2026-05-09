@@ -124,7 +124,7 @@ For each primitive, answer the specific question:
 
 **K (Kinetic Character):**
 - Estimate the activation barrier ΔG‡:
-  K_fast: < 60 kJ/mol, K_mod: 60–100, K_slow: > 100, K_trap: high pathway multiplicity
+  K_frtailgamma: < 60 kJ/mol, K_turnm: 60–100, K_schwa: > 100, K_teshlig: high pathway multiplicity
 </requirements>
 
 <output_format>
@@ -479,10 +479,10 @@ def _create_placeholder_synthon() -> Synthon:
         kinetic_character=KineticCharacter.FAST,
         granularity=Granularity.LOCAL,
         grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=Criticality.Phi_sub,
-        protection=Protection.Omega_0,
-        stoichiometry=Stoichiometry.one_one,
-        chirality=Chirality.H0,
+        criticality_phase=Criticality.Phi_softsign,
+        protection=Protection.Omega_closeepsilon,
+        stoichiometry=Stoichiometry.S_doublebaresh,
+        chirality=Chirality.H_closeomega,
     )
 
 

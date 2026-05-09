@@ -26,7 +26,7 @@ class SupramolecularSynthonAgent:
     """
     Agent for analyzing supramolecular synthons in crystal packing contexts.
     
-    Supramolecular synthons operate with D_triangle (3D packing)
+    Supramolecular synthons operate with D_turnthree (3D packing)
     and typically involve R_superset (non-covalent) recognition modes.
     
     Capabilities:
@@ -64,8 +64,8 @@ class SupramolecularSynthonAgent:
             "motif": motif,
             "occurrences": 1,
             "geometry": {
-                "D_H": 1.8,  # Å
-                "D_A": 2.8,  # Å
+                "Ð_H": 1.8,  # Å
+                "Ð_A": 2.8,  # Å
                 "angle_DHA": 165,  # degrees
             },
             "estimated_energy": -52.0,  # kJ/mol (for AA homodimer)

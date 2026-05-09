@@ -44,10 +44,10 @@ from imscrbgrmr.provider_config import build_agent_config
 @dataclass
 class Intervention:
     """A single recommended experimental intervention."""
-    primitive: str          # "F", "G", "T", …
+    primitive: str          # "ƒ", "Γ", "Þ", …
     primitive_name: str     # human-readable
     current_value: str
-    suggested_change: str   # e.g. "upgrade F_eth → F_hbar"
+    suggested_change: str   # e.g. "upgrade ƒ_ð → ƒ_ż"
     expected_delta_xi: float   # nats (negative = improvement)
     strategy: str           # chemical strategy text from LLM
     feasibility: str        # "HIGH" / "MEDIUM" / "LOW"
@@ -306,10 +306,10 @@ Return ONLY a JSON object:
   "summary": "<2–3 sentence overview of what drives ξ_CP for this system>",
   "recommendations": [
     {{
-      "primitive": "F",
+      "primitive": "ƒ",
       "primitive_name": "Fidelity",
       "current_value": "MEDIUM",
-      "suggested_change": "upgrade F_eth → F_hbar via electron-withdrawing substituents",
+      "suggested_change": "upgrade ƒ_ð → ƒ_ż via electron-withdrawing substituents",
       "expected_delta_xi_nats": -1.2,
       "strategy": "<specific chemical modification>",
       "feasibility": "HIGH",
@@ -357,13 +357,13 @@ Return ONLY a JSON object:
     def _fallback_recommendations(self, jacobian: PrimitiveJacobian, fault_report: Dict):
         """Generate rule-based fallback when LLM is unavailable."""
         STRATEGIES = {
-            "F": "Strengthen H-bond donors/acceptors; add electron-withdrawing substituents to raise fidelity.",
-            "G": "Use template-directed assembly or concentration effects to tune mesoscale ordering.",
-            "T": "Explore macrocyclisation or ring-closing conditions to alter topology.",
-            "K": "Adjust temperature or add competing kinetic pathways to modify barrier heights.",
-            "R": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
-            "D": "Vary solvent system or co-crystal partner to shift domain character.",
-            "P": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
+            "ƒ": "Strengthen H-bond donors/acceptors; add electron-withdrawing substituents to raise fidelity.",
+            "Γ": "Use template-directed assembly or concentration effects to tune mesoscale ordering.",
+            "Þ": "Explore macrocyclisation or ring-closing conditions to alter topology.",
+            "Ç": "Adjust temperature or add competing kinetic pathways to modify barrier heights.",
+            "Ř": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
+            "Ð": "Vary solvent system or co-crystal partner to shift domain character.",
+            "Φ": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
             "Φ": "Tune proximity to critical point via concentration or temperature ramp.",
         }
         recs = []

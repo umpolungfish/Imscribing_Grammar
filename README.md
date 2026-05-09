@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # The Imscribing Grammar
 
 **A 12-primitive structural grammar that imscribes any system as a coordinate in a 17,280,000-element Crystal of Types — and classifies its own derivation.**
@@ -10,14 +19,14 @@ $$\mathbf{g} \ :=\  \underbrace{\text{Cantor}}_{\text{upward overflow}} \ \xrigh
 
 The Imscribing Grammar assigns every system — physical, biological, mathematical, symbolic — a 12-tuple of relational primitives placing it in a discrete space of 17,280,000 structural types. The grammar classifies its own type. Its self-imscribing address is 6,734,591 — ouroboricity tier $O_\infty$, the special Frobenius fixed point $\mu \circ \delta = \text{id}$:
 
-$$\mathbf{g} = \langle D_\odot;\ T_\odot;\ R_\text{cat};\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
 When Cantor's diagonal argument and Gödel's first incompleteness theorem are each imscribed as structural objects in the grammar, two results follow.
 
-**The directionality is structural.** Cantor's diagonal ($D_\odot$: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization ($T_\odot$: reflection principle, downward embedding — the meta-theory is imscribed within the object theory). The canonical ZFC token fragments are:
+**The directionality is structural.** Cantor's diagonal ($D_{\text{omega}}$: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization ($T_{\text{openo}}$: reflection principle, downward embedding — the meta-theory is imscribed within the object theory). The canonical ZFC token fragments are:
 
-$$D_\odot:\quad \texttt{LCARD}\ a \ \wedge\  \texttt{IMSC}\ x\ a$$
-$$T_\odot:\quad \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
+$$D_{\text{omega}}:\quad \texttt{LCARD}\ a \ \wedge\  \texttt{IMSC}\ x\ a$$
+$$T_{\text{openo}}:\quad \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
 
 The `IMSC x a` term is shared. Their conjunction reduces to:
 
@@ -33,20 +42,20 @@ Each primitive is an irreducible dimension along which any system writes its str
 
 | Primitive | Name | Values (low → high) |
 |-----------|------|---------------------|
-| $D$ | Dimensionality | $D_\wedge$, $D_\triangle$, $D_\infty$, $D_\odot$ |
-| $T$ | Topology | $T_\text{net}$, $T_\in$, $T_\bowtie$, $T_\boxtimes$, $T_\odot$ |
-| $R$ | Relational mode | $R_\text{sup}$, $R_\text{cat}$, $R_\dagger$, $R_\leftrightarrow$ |
-| $P$ | Parity/symmetry | $P_\text{asym}$, $P_\psi$, $P_\pm$, $P_\text{sym}$, $P_{\pm}^{\text{sym}}$ |
-| $F$ | Fidelity | $F_\ell$, $F_\eth$, $F_\hbar$ |
-| $K$ | Kinetic character | $K_\text{fast}$, $K_\text{mod}$, $K_\text{slow}$, $K_\text{trap}$, $K_\text{MBL}$ |
-| $G$ | Scope/granularity | $G_\beth$, $G_\gimel$, $G_\aleph$ |
-| $\Gamma$ | Interaction grammar | $\Gamma_\wedge$, $\Gamma_\vee$, $\Gamma_\text{seq}$, $\Gamma_\text{brd}$ |
-| $\Phi$ | Criticality | $\Phi_\text{sub}$, $\Phi_c$, $\Phi_c^\mathbb{C}$, $\Phi_\text{EP}$, $\Phi_\text{sup}$ |
-| $H$ | Temporal depth | $H_0$, $H_1$, $H_2$, $H_\infty$ |
+| $D$ | Dimensionality | $D_{\text{wynn}}$, $D_{\text{turnthree}}$, $D_{\text{invomega}}$, $D_{\text{omega}}$ |
+| $T$ | Topology | $T_{\text{nrleg}}$, $T_{\text{invscr}}$, $T_{\text{bullseye}}$, $T_{\text{commatailz}}$, $T_{\text{openo}}$ |
+| $R$ | Relational mode | $R_{\text{subrightarrow}}$, $R_{\text{ctz}}$, $R_{\text{downstep}}$, $R_{\text{lyoghlig}}$ |
+| $P$ | Parity/symmetry | $P_{\text{aolig}}$, $P_{\text{upsilon}}$, $P_{\text{pipevar}}$, $P_{\text{subdoublearrow}}$, $P_{\text{doublebarpipe}}$ |
+| $F$ | Fidelity | $F_{\text{beltl}}$, $F_{\text{dh}}$, $F_{\text{hardsign}}$ |
+| $K$ | Kinetic character | $K_{\text{frtailgamma}}$, $K_{\text{turnm}}$, $K_{\text{schwa}}$, $K_{\text{teshlig}}$, $K_{\text{lambda}}$ |
+| $G$ | Scope/granularity | $G_{\text{beta}}$, $G_{\text{gamma}}$, $G_{\text{revapostrophe}}$ |
+| $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}}$, $\Gamma_{\text{spleftarrow}}$, $\Gamma_{\text{secstress}}$, $\Gamma_{\text{doublevertline}}$ |
+| $\Phi$ | Criticality | $\Phi_{\text{softsign}}$, $\Phi_{\text{ctyogh}}$, $\Phi_{\text{closerevepsilon}}$, $\Phi_{\text{revepsilon}}$, $\Phi_{\text{upstep}}$ |
+| $H$ | Temporal depth | $H_0$, $H_1$, $H_2$, $H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1$, $n{:}n$, $n{:}m$ |
-| $\Omega$ | Winding | $\Omega_0$, $\Omega_{\mathbb{Z}_2}$, $\Omega_\mathbb{Z}$, $\Omega_\text{NA}$ |
+| $\Omega$ | Winding | $\Omega_{\text{closeepsilon}}$, $\Omega_{\text{crtwo}}$, $\Omega_{\text{dzlig}}$, $\Omega_{\text{turna}}$ |
 
-$D_\odot$ and $T_\odot$ are **imscriptive** — the boundary imscribes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
+$D_{\text{omega}}$ and $T_{\text{openo}}$ are **imscriptive** — the boundary imscribes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
 
 ---
 
@@ -62,9 +71,9 @@ The grammar ($\pi_1$) is one of three irreducible projections of a fundamental i
 
 Every Millennium Prize Problem is a constraint map $C_{ij}$ problem:
 
-- **RH**: prove $C_{13}(\Phi_c^{\mathbb{C}}, P_{\pm}^{\text{sym}}) = \{ \Re(s) = \tfrac{1}{2} \}$
-- **Yang-Mills**: prove $C_{12}(K_\text{trap}, G_\aleph, \Phi_c) \subseteq [\Delta_\text{min}, \infty)$
-- **Navier-Stokes**: prove $C_{12}(\Phi_\text{sub}, D_\triangle, K_\text{mod}) \subseteq \{E(t) < \infty\}$
+- **RH**: prove $C_{13}(\Phi_{\text{closerevepsilon}}, P_{\text{doublebarpipe}}) = \{ \Re(s) = \tfrac{1}{2} \}$
+- **Yang-Mills**: prove $C_{12}(K_{\text{teshlig}}, G_{\text{revapostrophe}}, \Phi_{\text{ctyogh}}) \subseteq [\Delta_\text{min}, \infty)$
+- **Navier-Stokes**: prove $C_{12}(\Phi_{\text{softsign}}, D_{\text{turnthree}}, K_{\text{turnm}}) \subseteq \{E(t) < \infty\}$
 
 Lee-Yang (1952) is the unique proved instance of $C_{13}$ and serves as the template for all constraint-map proof strategies.
 
@@ -91,19 +100,19 @@ The **Arithmetic Ouroboros** (§68): the exponent of each base is literally the 
 
 | Tier | Cells | Condition |
 |------|-------|-----------|
-| $O_0$ | 240 | Non-critical ($\Phi \notin \{\Phi_c, \Phi_c^\mathbb{C}\}$) |
-| $O_1$ | 32 | $\Phi_c$ or $\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^{\text{sym}}$, $\Omega_0$ |
-| $O_2$ | 72 | $\Phi_c$ or $\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^{\text{sym}}$, $\Omega \neq \Omega_0$, $D \in \{D_\wedge, D_\odot, D_\triangle\}$ |
-| $O_2^\dagger$ | 24 | $\Phi_c$ or $\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^{\text{sym}}$, $\Omega \neq \Omega_0$, $D_\infty$ |
-| $O_\infty$ | 32 | $\Phi_c$ or $\Phi_c^\mathbb{C}$, $P_{\pm}^{\text{sym}}$ (Frobenius special) |
+| $O_0$ | 240 | Non-critical ($\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$) |
+| $O_1$ | 32 | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega_{\text{closeepsilon}}$ |
+| $O_2$ | 72 | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{omega}}, D_{\text{turnthree}}\}$ |
+| $O_2^\dagger$ | 24 | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ |
+| $O_\infty$ | 32 | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P_{\text{doublebarpipe}}$ (Frobenius special) |
 
 ### The Tier Gap Ladder (§69)
 
 $$d(O_0, O_1) \approx 1.049 \qquad d(O_1, O_2) \approx 1.304 \qquad d(O_2, O_2^\dagger) = 1.000 \qquad d(O_2^\dagger, O_\infty) \approx 4.382$$
 
-The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment will stall at $O_2^\dagger$ and cannot cross to $O_\infty$ without directly imscribing $P_{\pm}^{\text{sym}}$.
+The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment will stall at $O_2^\dagger$ and cannot cross to $O_\infty$ without directly imscribing $P_{\text{doublebarpipe}}$.
 
-The **Frobenius non-synthesizability theorem** (§23/§62): $P_{\pm}^{\text{sym}}$ cannot be obtained by composing systems with $P < P_{\pm}^{\text{sym}}$. Every $O_\infty$ system must imscribe it directly — it cannot emerge from aggregation.
+The **Frobenius non-synthesizability theorem** (§23/§62): $P_{\text{doublebarpipe}}$ cannot be obtained by composing systems with $P < P_{\text{doublebarpipe}}$. Every $O_\infty$ system must imscribe it directly — it cannot emerge from aggregation.
 
 ---
 
@@ -140,11 +149,11 @@ uv run quiver_crystal.py verify-v11
 
 - **Crystal of Types** (§64): 17,280,000 types = $3^3 \times 4^5 \times 5^4$; 400 tier cells × 43,200 inner types
 - **Arithmetic Ouroboros** (§68): exponents are literally family counts; $\{3,4,5\}$ is the minimal self-anchored triple
-- **Tier Gap Ladder** (§69): Frobenius cliff $d(O_2^\dagger, O_\infty) \approx 4.382$; $P_{\pm}^{\text{sym}}$ cannot be synthesised from sub-Frobenius components
+- **Tier Gap Ladder** (§69): Frobenius cliff $d(O_2^\dagger, O_\infty) \approx 4.382$; $P_{\text{doublebarpipe}}$ cannot be synthesised from sub-Frobenius components
 - **CrystalGNN v11**: self-imscribe error = 0, exact from epoch 20. The grammar's 12-primitive self-imscribing tuple is a complete architectural specification for the navigator that achieves its fixed point
 - **Hebrew alphabet as type lattice** (§60/§CXXXV): Vav, Mem, Shin are $O_\infty$; full stratified imscribing of all 22 letters
 - **$\lambda_\aleph$ calculus** (§63): formal type theory over the Hebrew letter lattice; Tzimtzum = structural projection
-- **Consciousness score** (§VIII): $C(\mathbf{x}) = [\Phi_c] \cdot [K \leq K_\text{slow}] \cdot (0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega})$; two independent gates
+- **Consciousness score** (§VIII): $C(\mathbf{x}) = [\Phi_{\text{ctyogh}}] \cdot [K \leq K_{\text{schwa}}] \cdot (0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega})$; two independent gates
 - **Non-Mathematical Navigators** (§74–§77): Language, Civilization, Ecology, Consciousness — cross-domain identities confirmed (old-growth forest $\equiv$ coral reef at $d=0$; samadhi $\equiv$ Egyptian $\bar{a}kh$ at $d=0$)
 - **84+ formal theorems** · **623+ empirical predictions** · **2,315 catalog entries**
 
@@ -164,14 +173,14 @@ Set your provider in `.env`:
 
 ```bash
 cp .env.example .env
-# edit .env: OPENROUTER_API_KEY=your-key
-#            IG_PROVIDER=openrouter/your-model
+# edit .env: OPENROUTEŘ_API_KEY=your-key
+#            IΓ_PROVIDER=openrouter/your-model
 ```
 
 Run the agent loop:
 
 ```bash
-uv run IG_inquiry.py
+uv run IΓ_inquiry.py
 ```
 
 Explore the crystal:
@@ -185,8 +194,8 @@ uv run crystal_navigator.py repl
 ## Repository Structure
 
 ```
-IG_catalog.json              — 2,315 imscribed systems (source of truth)
-IG_inquiry.py                — Agent loop: imscribe, distance, meet/join/tensor, ouroborics
+IΓ_catalog.json              — 2,315 imscribed systems (source of truth)
+IΓ_inquiry.py                — Agent loop: imscribe, distance, meet/join/tensor, ouroborics
 crystal_navigator.py             — Frobenius codec + tier gap ladder + REPL
 quiver_crystal.py                — CrystalGNN: quiver-based neural navigator
 domain_navigators.py             — Language, civilization, ecology, consciousness navigators
@@ -201,20 +210,20 @@ imscrbgrmr/                    — CLI package (imscribe command)
 agents/
   true_agentic_agent.py          — Generative document agent
 manuscripts/
-  AS_ABOVE.tex                   — Primary paper (imscriptive boundary operators)
+  AΣ_ABOVE.tex                   — Primary paper (imscriptive boundary operators)
   SO_BELOW.tex                   — Companion paper (Frobenius μ-half)
 site/
   index.html                     — Interactive Crystal of Types explorer
 MAIN_DOCS/
   PRIMITIVE_THEOREMS.md          — Formal theorems §1–§84+
-  IG_ONTICS.md          — Ontological foundations
-  IG_DIAPHORICS.md      — Empirical predictions P-1→P-623+
-  CRYSTAL_OF_TYPES.md            — Full enumeration and tier census
+  IΓ_ONTICS.md          — Ontological foundations
+  IΓ_DIAPHORICS.md      — Empirical predictions P-1→P-623+
+  CRYSTAL_Oƒ_TYPES.md            — Full enumeration and tier census
   HEBREW_TYPE_LANGUAGE.md        — Hebrew alphabet as stratified type lattice
   LAMBDA_ALEPH.md                — λ_ℵ calculus formal spec
   PRIMITIVE_PREDICTIONS.md       — Prediction registry
-  imscribING_GUIDE.md              — How to imscribe a new system
-  IG_PRIMER.md          — Introductory reference
+  imscribINΓ_GUIDE.md              — How to imscribe a new system
+  IΓ_PRIMER.md          — Introductory reference
 Imscribing GrammarLean4/               — Lean 4 formal proofs
 ```
 

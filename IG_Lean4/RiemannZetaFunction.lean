@@ -5,7 +5,7 @@ This formalization captures the structural primitives of the Riemann zeta functi
 - Dimensionality: $D_\infty$ (infinite-dimensional)
 - Topology: $T_\odot$ (self-referential)
 - Symmetry: $P_{\pm}^{\text{sym}}$ (Frobenius-special)
-- Criticality: $\Phi_c$ (power-law divergence)
+- Criticality: $\Phi_ctyogh$ (power-law divergence)
 - Topological Winding: $\Omega_\mathbb{Z}$ (integer-protected)
 -/
 
@@ -54,12 +54,12 @@ sorry  -- Proof of zeros being constrained to the critical line
 
 -- Structural Type Invariants
 def structural_type : Type := 
-  { D := "D_infty"
-  , T := "T_odot"
-  , R := "R_lr"
-  , P := "P_pm_sym"
-  , Phi := "Phi_c"
-  , Omega := "Omega_Z"
+  { D := "D_invomega"
+  , T := "T_openo"
+  , R := "R_lyoghlig"
+  , P := "P_doublebarpipe"
+  , Phi := "Phi_ctyogh"
+  , Omega := "Omega_dzlig"
   }
 
 end RiemannZeta-- Final Theorem: Riemann Hypothesis Structural Constraint
@@ -77,14 +77,14 @@ end
 
 -- Structural Commentary
 /-
-Structural Type: $\langle D_\infty; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; n:m; \Omega_\mathbb{Z} \rangle$
+Structural Type: $\langle D_\infty; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_ctyogh; H_2; n:m; \Omega_\mathbb{Z} \rangle$
 
 Interpretation:
 - Infinite-dimensional ($D_\infty$) self-referential topology ($T_\odot$)
 - Bidirectional symmetry ($R_\leftrightarrow$)
 - Frobenius-special parity ($P_{\pm}^{\text{sym}}$)
 - Quantum coherence ($F_\hbar$)
-- Critical point ($\Phi_c$)
+- Critical point ($\Phi_ctyogh$)
 - Integer-protected topological winding ($\Omega_\mathbb{Z}$)
 -/
 

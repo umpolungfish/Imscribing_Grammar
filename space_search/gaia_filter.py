@@ -105,8 +105,8 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
 
     Scoring:
       +1  F_compliant: pmra_error < 0.1 and pmdec_error < 0.1 mas/yr
-      +2  T_network: spatially correlated proper motions (|r| > 0.3 with ≥5 neighbors)
-      +3  Phi_critical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
+      +2  Þ_6: spatially correlated proper motions (|r| > 0.3 with ≥5 neighbors)
+      +3  φ̂_ÿritical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
       +4  Omega_candidate: RUWE > 1.4 + excess noise > 0.2 mas + high-DM region
       +1  D_temporal: ipd_gof_harmonic_amplitude > 0.1 (proxy for long-term drift signal)
 
@@ -120,7 +120,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
     pmdec_err = row.get("pmdec_error", 999)
     if pmra_err < 0.1 and pmdec_err < 0.1:
         score += 1
-        flags.append("F_compliant")
+        flags.append("ƒ_compliant")
 
     # T-TOPOLOGY FILTER: correlated proper motions with neighbors
     if neighbors_pmra is not None and len(neighbors_pmra) >= 5:
@@ -137,14 +137,14 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
         # Low z-score = source moves WITH neighbors = network topology
         if z_ra < 1.0 and z_dec < 1.0:
             score += 2
-            flags.append("T_network")
+            flags.append("Þ_6")
 
     # PHI-CRITICALITY FILTER: structured excess noise (scale invariance proxy)
     excess_noise = row.get("astrometric_excess_noise", 0) or 0
     excess_noise_sig = row.get("astrometric_excess_noise_sig", 0) or 0
     if excess_noise > 0 and excess_noise_sig > 2.0:
         score += 3
-        flags.append("Phi_critical")
+        flags.append("φ̂_critical")
 
     # OMEGA_Z2 CANDIDATE FILTER: high RUWE + structured noise + high DM region
     ruwe = row.get("ruwe", 1.0) or 1.0
@@ -154,13 +154,13 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
             and dm_density_relative > 0.6   # above 60th percentile DM density
             and ipd_multi < 0.1):           # not explained by double star
         score += 4
-        flags.append("Omega_candidate")
+        flags.append("Ω_candidate")
 
     # D-TEMPORAL FILTER: harmonic variation proxy (ipd_gof_harmonic_amplitude)
     harmonic = row.get("ipd_gof_harmonic_amplitude", 0) or 0
     if harmonic > 0.1:
         score += 1
-        flags.append("D_temporal")
+        flags.append("Ð_temporal")
 
     priority = (
         "Critical" if score >= 7 else

@@ -76,7 +76,7 @@ AXIOM_7_INVALID_TOPO_KEYWORDS = [
 
 # Axiom 7 extension: T_∪ bowl topology — open concave cavity, single portal
 # Mechanistic distinguisher from T_□□: guest exchanges through the open face
-# without framework distortion; K_trap is exceptional not default.
+# without framework distortion; K_teshlig is exceptional not default.
 # Network ring topology sub-labels (T_∈ sub-types)
 # Used by catalog repair to upgrade generic T_∈ entries
 NETWORK_HEX_KEYWORDS = [
@@ -496,7 +496,7 @@ class FidelityPropagator:
     Based on the cooperativity principles from QUANTIG.md:
     - Triple H-bond arrays show superlinear induction growth
     - Many-body polarization amplifies effective fidelity
-    - Granularity transitions (G_beth → G_gimel) couple with F_ell → F_hbar
+    - Granularity transitions (G_beta → G_gamma) couple with F_beltl → F_hardsign
     """
     
     # Cooperativity factors based on topology
@@ -653,10 +653,10 @@ class AxiomValidator:
         """
         Axiom 1: Cyclic closure amplifies fidelity (T_⋈–F rule).
         
-        A synthon with T_⋈ and P_± necessarily achieves F ≥ F_eth,
+        A synthon with T_⋈ and P_± necessarily achieves F ≥ F_dh,
         provided R_⊇ or R_⊆.
         
-        Prediction: no T_⋈/P_± synthon will be assigned F_ell.
+        Prediction: no T_⋈/P_± synthon will be assigned F_beltl.
         Falsified by: cyclic self-complementary motif with xi_CP > 10.5 nats.
         """
         is_cyclic = synthon.topology == Topology.CYCLIC_BOWTIE
@@ -711,7 +711,7 @@ class AxiomValidator:
         """
         is_local = synthon.granularity == Granularity.LOCAL
         is_specific = (
-            synthon.grammar == Grammar.G_and and
+            synthon.grammar == Grammar.Gamma_corner and
             synthon.fidelity == Fidelity.HIGH
         )
         
@@ -807,7 +807,7 @@ class AxiomValidator:
         Prediction: all documented allosteric systems with ordered binding
         will contain either a conformational change (R_‡-like) or temporal component.
         """
-        is_sequential = synthon.grammar == Grammar.G_seq
+        is_sequential = synthon.grammar == Grammar.Gamma_secstress
         
         if not is_sequential:
             return {
@@ -816,7 +816,7 @@ class AxiomValidator:
                 "reason": "Not a sequential grammar",
             }
         
-        has_temporal = synthon.dimensionality in (Dimensionality.D_infty, Dimensionality.TEMPORAL)
+        has_temporal = synthon.dimensionality in (Dimensionality.D_invomega, Dimensionality.TEMPORAL)
         has_catalytic = synthon.recognition_mode in {
             RecognitionMode.DYNAMIC_CATALYTIC,
             RecognitionMode.COVALENT_DYNAMIC,
@@ -1245,20 +1245,20 @@ class CoreAxioms:
     This class provides a soft-check path (returns violations rather than raising)
     useful for auditing existing catalog entries.
 
-    Axiom A: H_inf -> K_trap
+    Axiom A: H_invscripta -> K_teshlig
         Topological chirality implies kinetic trapping. A topology-protected
         chiral object cannot exchange without breaking a topological bond,
         so it is by definition kinetically trapped.
 
-    Axiom B: prot >= Omega_Z -> chir >= H2
+    Axiom B: prot >= Omega_dzlig -> chir >= H_turntwo
         Integer winding number (or stronger) requires persistent chirality.
-        Omega_Z2 does NOT require H2; only Omega_Z and above do.
+        Omega_crtwo does NOT require H_turntwo; only Omega_dzlig and above do.
 
-    Axiom C: D_odot <-> T_odot
+    Axiom C: D_omega <-> T_openo
         Imscriptive dimensionality and imscriptive topology are co-required.
         You cannot have one without the other (AdS/CFT, imscriptive error codes).
 
-    Axiom D: Omega_NA -> D_odot
+    Axiom D: Omega_turna -> D_omega
         Non-Abelian anyonic protection requires a imscriptive substrate.
         Anyonic braiding statistics are only topologically protected in a
         bulk-boundary encoded system.
@@ -1274,20 +1274,20 @@ class CoreAxioms:
         name = synthon.name
 
         # Axiom A
-        if synthon.chirality == Chirality.H_inf and synthon.kinetic_character != KineticChar.K_trap:
+        if synthon.chirality == Chirality.H_invscripta and synthon.kinetic_character != KineticChar.K_teshlig:
             v.append(AxiomViolation(
                 axiom="A",
-                message=(f"H_inf requires K_trap (got {synthon.kinetic_character.value})"),
+                message=(f"H_invscripta requires K_teshlig (got {synthon.kinetic_character.value})"),
                 synthon=name,
             ))
 
         # Axiom B
-        if _prot_ord(synthon.protection) >= _prot_ord(Protection.Omega_Z) \
-                and _chir_ord(synthon.chirality) < _chir_ord(Chirality.H2):
+        if _prot_ord(synthon.protection) >= _prot_ord(Protection.Omega_dzlig) \
+                and _chir_ord(synthon.chirality) < _chir_ord(Chirality.H_turntwo):
             v.append(AxiomViolation(
                 axiom="B",
                 message=(
-                    f"protection {synthon.protection.value} requires chirality >= H2 "
+                    f"protection {synthon.protection.value} requires chirality >= H_turntwo "
                     f"(got {synthon.chirality.value})"
                 ),
                 synthon=name,
@@ -1299,22 +1299,22 @@ class CoreAxioms:
         if d_holo and not t_holo:
             v.append(AxiomViolation(
                 axiom="C",
-                message=f"D_odot requires T_odot (got {synthon.topology.value})",
+                message=f"D_omega requires T_openo (got {synthon.topology.value})",
                 synthon=name,
             ))
         elif t_holo and not d_holo:
             v.append(AxiomViolation(
                 axiom="C",
-                message=f"T_odot requires D_odot (got {synthon.dimensionality.value})",
+                message=f"T_openo requires D_omega (got {synthon.dimensionality.value})",
                 synthon=name,
             ))
 
         # Axiom D
-        if synthon.protection == Protection.Omega_NA \
+        if synthon.protection == Protection.Omega_turna \
                 and synthon.dimensionality != Dimensionality.D_holo:
             v.append(AxiomViolation(
                 axiom="D",
-                message=f"Omega_NA requires D_odot (got {synthon.dimensionality.value})",
+                message=f"Omega_turna requires D_omega (got {synthon.dimensionality.value})",
                 synthon=name,
             ))
 

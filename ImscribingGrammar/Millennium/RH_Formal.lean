@@ -1,6 +1,6 @@
 -- ImscribingGrammar/Millennium/RH_Formal.lean
 -- Formalization of the Riemann Hypothesis via Imscriptive Grammar
--- Structural Type: ⟨D=D_infty; T=T_odot; R=R_lr; P=P_psi; F=F_hbar; K=K_slow; G=G_aleph; Gamma=G_seq; Phi=Phi_c_complex; H=H_inf; S=n_m; Omega=Omega_Z⟩
+-- Structural Type: ⟨D=D_invomega; T=T_openo; R=R_lyoghlig; P=P_upsilon; F=F_hardsign; K=K_schwa; G=G_revapostrophe; Gamma=Gamma_secstress; Phi=Phi_closerevepsilon; H=H_invscripta; S=S_ltailm; Omega=Omega_dzlig⟩
 
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import Mathlib.Tactic
@@ -11,7 +11,7 @@ import Mathlib.Tactic
 This file implements the five-point structural argument:
 1. Functional Equation Symmetry (Re(s) = 1/2 fixed point)
 2. Critical Strip Constraint (Boundary containment)
-3. Topological Protection (Omega_Z invariant)
+3. Topological Protection (Omega_dzlig invariant)
 4. Frobenius Closure (mu o delta = id duality)
 5. Conclusion (Constraint to the critical line)
 -/
@@ -42,7 +42,7 @@ theorem critical_strip_containment (s : ℂ) :
   -- This maintains the symmetry across the critical line.
   sorry
 
-/-- 3. Topological Protection: Omega_Z.
+/-- 3. Topological Protection: Omega_dzlig.
     The zero-count stability is protected by the argument principle. -/
 def Omega_Z_Protection (s : ℂ) : Prop :=
   -- The winding number of zeta around a contour in the critical strip is an integer.
@@ -56,7 +56,7 @@ theorem topological_stability : ∀ s, Omega_Z_Protection s := by
 structure FrobeniusClosure :=
   (mu_delta_id : ∀ x, (mu ∘ delta) x = x)
 
--- In the IG, P_pm_sym implies this duality exactly at Phi_c.
+-- In the IG, P_doublebarpipe implies this duality exactly at Phi_ctyogh.
 axiom ig_frobenius_closure : FrobeniusClosure
 
 theorem symmetry_preservation (s : ℂ) :
@@ -66,13 +66,13 @@ theorem symmetry_preservation (s : ℂ) :
   constructor <;> intro heq <;> linarith
 
 /-- 5. Conclusion:
-    Combining Omega_Z protection and the fixed point of the symmetry Re(s) -> 1 - Re(s). -/
+    Combining Omega_dzlig protection and the fixed point of the symmetry Re(s) -> 1 - Re(s). -/
 theorem riemann_hypothesis_closure :
     ∀ s : ℂ, IsNontrivialZero s → s.re = 1/2 := by
   intro s ⟨hz, hpos, hlt⟩
   -- [Argument]:
   -- 1. The functional equation forces zeros to come in pairs (s, 1-s).
-  -- 2. Omega_Z protects the winding; any deviation from Re(s)=1/2
+  -- 2. Omega_dzlig protects the winding; any deviation from Re(s)=1/2
   --    would break the Z2 symmetry and the Frobenius duality.
   -- 3. Therefore, the only stable position is the fixed point s = 1-s.
   sorry

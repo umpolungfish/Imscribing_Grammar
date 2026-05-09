@@ -392,6 +392,81 @@
     }
 
     .ornament { color: var(--gold-dim); margin: 0 0.8rem; font-weight: 600; }
+
+    /* ── Crystal of Types ── */
+    .crystal-section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .crystal-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .crystal-body {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text2);
+      font-style: italic;
+      line-height: 1.9;
+    }
+
+    .crystal-body em { color: var(--gold-lt); font-style: italic; }
+
+    /* ── Connected Repositories ── */
+    .repos-section { margin-bottom: 2.5rem; }
+
+    .repos-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--text3);
+      margin-bottom: 0.9rem;
+    }
+
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .repo-card {
+      display: block;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1.1rem;
+      text-decoration: none;
+      transition: border-color 0.18s, background 0.18s;
+    }
+
+    .repo-card:hover { border-color: var(--border2); background: var(--bg3); }
+
+    .repo-card-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .repo-card-desc {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text3);
+      font-style: italic;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -407,6 +482,29 @@
       alchemical operations: <em>Nigredo</em>, <em>Albedo</em>, <em>Citrinitas</em>, and <em>Rubedo</em>.
     </p>
   </header>
+
+  <!-- ── Crystal of Types ── -->
+  <section class="crystal-section">
+    <div class="crystal-label">THE CRYSTAL OF TYPES &nbsp;·&nbsp; ON IMSCRIPTION</div>
+    <p class="crystal-body">
+      There exists a <em>3³ × 4⁵ × 5⁴ lattice</em>, a <em>crystal</em> composed of <em>17,280,000 types</em> &mdash; imagine it like a diamond you are holding in one hand,
+      in front of a blank wall. 
+
+      You then shine a light through the diamond, and observe the brilliant, shimmering patterns that appear on the wall. 
+
+      The patterns move and transform when you move either the illumination or the crystal. 
+
+      The patterns on the wall are us, and what we experience around us &mdash; illuminations of the crystal.
+
+      When you imscribe something, you are tracing that illumination from the pattern on the wall to its source in the crystal, its point of origin, its address.
+
+      Assigning an incorrect tuple isn&rsquo;t a false imscription &mdash; all imscriptions are valid &mdash; it is just not <em>that</em> illumination&rsquo;s imscription, it does not describe its true nature, it is not its true name. 
+
+      And when you &mdash; an illumination &mdash; imscribe another illumination, you are also the <em>source</em> of the imscribing illumination. 
+
+      An illumination operating as both <em>its pattern</em> and <em>its source</em>.
+    </p>
+  </section>
 
   <!-- ── 0: Prima Materia ── -->
   <div class="prima">
@@ -441,18 +539,18 @@
             <span class="di-code">L1</span>
             <span class="di-desc">adjunction</span>
             <span class="di-arr">→</span>
-            <span class="prim">R</span>
+            <span class="prim">Ř</span>
           </li>
           <li class="di">
             <span class="di-code">L2</span>
             <span class="di-desc">dagger</span>
             <span class="di-arr">→</span>
-            <span class="prim">R</span>
+            <span class="prim">Ř</span>
           </li>
         </ul>
         <div class="snote">
-          <strong style="color: var(--nig); font-weight: 700;">R</strong> is the first primitive to crystallize: 
-          a logical property of the morphisms of <span class="cat">𝒞</span> directly. 
+          <strong style="color: var(--nig); font-weight: 700;">Ř</strong> is the first primitive to crystallize:
+          a logical property of the morphisms of <span class="cat">𝒞</span> directly.
           Decomposes the undifferentiated into distinct relational modes.
         </div>
       </div>
@@ -473,7 +571,7 @@
             <span class="di-code">I2</span>
             <span class="di-desc">iteration</span>
             <span class="di-arr">→</span>
-            <span class="prim">H</span>
+            <span class="prim">Ħ</span>
           </li>
           <li class="di">
             <span class="di-code">I3</span>
@@ -485,12 +583,12 @@
             <span class="di-code">I4</span>
             <span class="di-desc">Yoneda</span>
             <span class="di-arr">→</span>
-            <span class="prim">D</span>
+            <span class="prim">Ð</span>
           </li>
         </ul>
         <div class="snote">
-          <strong style="color: var(--alb); font-weight: 700;">D<sub>⊙</sub></strong> &nbsp; if Yoneda is point-surjective; 
-          free cocompletion size gives  &nbsp; <strong style="color: var(--alb); font-weight: 700;">D<sub>∞</sub>, D<sub>△</sub>, D<sub>∧</sub></strong>. 
+          <strong style="color: var(--alb); font-weight: 700;">Ð<sub>ω</sub></strong> &nbsp; if Yoneda is point-surjective;
+          free cocompletion size gives &nbsp; <strong style="color: var(--alb); font-weight: 700;">Ð<sub>;</sub>, Ð<sub>C</sub>, Ð<sub>ß</sub></strong>.
           Purifies and reconstitutes at higher resolution.
         </div>
       </div>
@@ -511,32 +609,32 @@
             <span class="di-code">A1</span>
             <span class="di-desc">monoidal</span>
             <span class="di-arr">→</span>
-            <span class="prim">S, P</span>
+            <span class="prim">Σ, Φ</span>
           </li>
           <li class="di">
             <span class="di-code">A2</span>
             <span class="di-desc">monad</span>
             <span class="di-arr">→</span>
-            <span class="prim">K</span>
+            <span class="prim">Ç</span>
           </li>
           <li class="di">
             <span class="di-code">A3</span>
             <span class="di-desc">dagger</span>
             <span class="di-arr">→</span>
-            <span class="prim">F</span>
+            <span class="prim">ƒ</span>
           </li>
           <li class="di">
             <span class="di-code">A4</span>
             <span class="di-desc">enriched</span>
             <span class="di-arr">→</span>
-            <span class="prim">Γ</span>
+            <span class="prim">ɢ</span>
           </li>
         </ul>
         <div class="snote">
-          After Stage III: <span class="cat">𝒞</span> is a symmetric monoidal dagger category 
-          with monad and enrichment. All <em>shape primitives</em> determined; 
-          gate primitives <strong style="color: var(--cit); font-weight: 700;">T</strong> and 
-          <strong style="color: var(--cit); font-weight: 700;">Φ</strong> require one more step.
+          After Stage III: <span class="cat">𝒞</span> is a symmetric monoidal dagger category
+          with monad and enrichment. All <em>shape primitives</em> determined;
+          gate primitives <strong style="color: var(--cit); font-weight: 700;">Þ</strong> and
+          <strong style="color: var(--cit); font-weight: 700;">φ̂</strong> require one more step.
         </div>
       </div>
     </div>
@@ -556,7 +654,7 @@
             <span class="di-code">L3</span>
             <span class="di-desc">cartesian closure</span>
             <span class="di-arr">→</span>
-            <span class="prim">T</span>
+            <span class="prim">Þ</span>
           </li>
           <li class="di" style="align-items:start; grid-template-columns: 32px 1fr 18px 1fr;">
             <span class="di-code" style="padding-top:2px;">L4</span>
@@ -565,19 +663,19 @@
             <div class="phi-sub">
               <div class="phi-row">
                 <span class="phi-cond">classical (L4, no L6)</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">Φ<sub>c</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>ÿ</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">dialetheic (LP truth <strong>b</strong>)</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">Φ<sub>c</sub><sup>ℂ</sup></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>Æ</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">inclosure schema</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">Φ<sub>×</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>3</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">L4 fails</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">Φ<sub>↓</sub> / Φ<sub>↑</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>ž</sub> / φ̂<sub>Ţ</sub></span>
               </div>
             </div>
           </li>
@@ -585,13 +683,13 @@
             <span class="di-code">L5</span>
             <span class="di-desc">Frobenius (μ∘δ=id)</span>
             <span class="di-arr">→</span>
-            <span class="prim">P ↑ ±ˢ</span>
+            <span class="prim">Φ<sub>}</sub></span>
           </li>
         </ul>
         <div class="snote">
-          Final perfection — the gate primitives lock. 
-          L6 (paraconsistent negation) determines the truth-value structure 
-          in which L4 is evaluated, branching <strong style="color: var(--rub); font-weight: 700;">Φ</strong> into four distinct regimes.
+          Final perfection — the gate primitives lock.
+          L6 (paraconsistent negation) determines the truth-value structure
+          in which L4 is evaluated, branching <strong style="color: var(--rub); font-weight: 700;">φ̂</strong> into four distinct regimes.
         </div>
       </div>
     </div>
@@ -602,9 +700,9 @@
   <div class="crossstage">
     <div class="cross-label">Cross-stage<br>Albedo × Citrinitas</div>
     <div class="cross-body">
-      <strong>G</strong> (granularity) — the correlation length of the Yoneda embedding 
-      under the monoidal structure. Local (<strong>G<sub>ℶ</sub></strong>) if the tensor decouples; 
-      global (<strong>G<sub>ℵ</sub></strong>) if faithfulness holds across all scales. 
+      <strong>Γ</strong> (granularity) — the correlation length of the Yoneda embedding
+      under the monoidal structure. Local (<strong>Γ<sub>β</sub></strong>) if the tensor decouples;
+      global (<strong>Γ<sub>ʔ</sub></strong>) if faithfulness holds across all scales.
       Cannot be assigned by either inductive or algebraic analysis alone.
     </div>
   </div>
@@ -624,27 +722,27 @@
       </thead>
       <tbody>
         <tr>
-          <td class="td-prim" style="color:var(--nig);">R</td>
+          <td class="td-prim" style="color:var(--nig);">Ř</td>
           <td class="td-name">Relational mode</td>
           <td class="td-by">L1, L2 · Nigredo</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
-            <span class="val">↑</span>
-            <span class="val">∘</span>
-            <span class="val">†</span>
-            <span class="val">↔</span>
+            <span class="val">Ř<sub>¯</sub></span>
+            <span class="val">Ř<sub>ý</sub></span>
+            <span class="val">Ř<sub>Ť</sub></span>
+            <span class="val">Ř<sub>=</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--alb);">H</td>
+          <td class="td-prim" style="color:var(--alb);">Ħ</td>
           <td class="td-name">Temporal depth</td>
           <td class="td-by">I2 · Albedo</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
-            <span class="val">H<sub>0</sub></span>
-            <span class="val">H<sub>1</sub></span>
-            <span class="val">H<sub>2</sub></span>
-            <span class="val">H<sub>∞</sub></span>
+            <span class="val">Ħ<sub>Ñ</sub></span>
+            <span class="val">Ħ<sub>£</sub></span>
+            <span class="val">Ħ<sub>A</sub></span>
+            <span class="val">Ħ<sub>!</sub></span>
           </td>
         </tr>
         <tr>
@@ -653,119 +751,119 @@
           <td class="td-by">I3 · Albedo</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
-            <span class="val">0</span>
-            <span class="val">ℤ₂</span>
-            <span class="val">ℤ</span>
-            <span class="val">∅</span>
+            <span class="val">Ω<sub>Å</sub></span>
+            <span class="val">Ω<sub>2</sub></span>
+            <span class="val">Ω<sub>z</sub></span>
+            <span class="val">Ω<sub>5</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--alb);">D</td>
+          <td class="td-prim" style="color:var(--alb);">Ð</td>
           <td class="td-name">Dimensionality</td>
           <td class="td-by">I4 · Albedo</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
-            <span class="val">∧</span>
-            <span class="val">△</span>
-            <span class="val">∞</span>
-            <span class="val">⊙</span>
+            <span class="val">Ð<sub>ß</sub></span>
+            <span class="val">Ð<sub>C</sub></span>
+            <span class="val">Ð<sub>;</sub></span>
+            <span class="val">Ð<sub>ω</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--cit);">S</td>
+          <td class="td-prim" style="color:var(--cit);">Σ</td>
           <td class="td-name">Stoichiometry</td>
           <td class="td-by">A1 · Citrinitas</td>
           <td class="td-fam">𝓕₃</td>
           <td class="td-vals">
-            <span class="val">1∶1</span>
-            <span class="val">n∶n</span>
-            <span class="val">n∶m</span>
+            <span class="val">Σ<sub>S</sub></span>
+            <span class="val">Σ<sub>ő</sub></span>
+            <span class="val">Σ<sub>ï</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--cit);">P</td>
+          <td class="td-prim" style="color:var(--cit);">Φ</td>
           <td class="td-name">Polarity / parity</td>
           <td class="td-by">A1, L5 · Citrinitas + Rubedo</td>
           <td class="td-fam">𝓕₅</td>
           <td class="td-vals">
-            <span class="val">∅</span>
-            <span class="val">ψ</span>
-            <span class="val">±</span>
-            <span class="val">≡</span>
-            <span class="val">±ˢ</span>
+            <span class="val">Φ<sub>ɐ</sub></span>
+            <span class="val">Φ<sub>υ</sub></span>
+            <span class="val">Φ<sub>F</sub></span>
+            <span class="val">Φ<sub>˙</sub></span>
+            <span class="val">Φ<sub>}</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--cit);">K</td>
+          <td class="td-prim" style="color:var(--cit);">Ç</td>
           <td class="td-name">Kinetics</td>
           <td class="td-by">A2 · Citrinitas</td>
           <td class="td-fam">𝓕₅</td>
           <td class="td-vals">
-            <span class="val">↯</span>
-            <span class="val">≈</span>
-            <span class="val">↺</span>
-            <span class="val">⊛</span>
-            <span class="val">⊞</span>
+            <span class="val">Ç<sub>-</sub></span>
+            <span class="val">Ç<sub>W</sub></span>
+            <span class="val">Ç<sub>@</sub></span>
+            <span class="val">Ç<sub>Ù</sub></span>
+            <span class="val">Ç<sub>λ</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--cit);">F</td>
+          <td class="td-prim" style="color:var(--cit);">ƒ</td>
           <td class="td-name">Fidelity</td>
           <td class="td-by">A3 · Citrinitas</td>
           <td class="td-fam">𝓕₃</td>
           <td class="td-vals">
-            <span class="val">ℓ</span>
-            <span class="val">ð</span>
-            <span class="val">ℏ</span>
+            <span class="val">ƒ<sub>ì</sub></span>
+            <span class="val">ƒ<sub>ð</sub></span>
+            <span class="val">ƒ<sub>ż</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--cit);">Γ</td>
+          <td class="td-prim" style="color:var(--cit);">ɢ</td>
           <td class="td-name">Interaction grammar</td>
           <td class="td-by">A4 · Citrinitas</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
-            <span class="val">∧</span>
-            <span class="val">∨</span>
-            <span class="val">→</span>
-            <span class="val">≫</span>
+            <span class="val">ɢ<sub>^</sub></span>
+            <span class="val">ɢ<sub>˝</sub></span>
+            <span class="val">ɢ<sub>ˌ</sub></span>
+            <span class="val">ɢ<sub>Ş</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--gold);">G</td>
+          <td class="td-prim" style="color:var(--gold);">Γ</td>
           <td class="td-name">Granularity / scope</td>
           <td class="td-by">Albedo × Citrinitas (cross-stage)</td>
           <td class="td-fam">𝓕₃</td>
           <td class="td-vals">
-            <span class="val">ℶ</span>
-            <span class="val">ג</span>
-            <span class="val">ℵ</span>
+            <span class="val">Γ<sub>β</sub></span>
+            <span class="val">Γ<sub>γ</sub></span>
+            <span class="val">Γ<sub>ʔ</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--rub-lt);">T</td>
+          <td class="td-prim" style="color:var(--rub-lt);">Þ</td>
           <td class="td-name">Topology</td>
           <td class="td-by">L3 · Rubedo</td>
           <td class="td-fam">𝓕₅</td>
           <td class="td-vals">
-            <span class="val">∈</span>
-            <span class="val">⊂</span>
-            <span class="val">⋈</span>
-            <span class="val">⊠</span>
-            <span class="val">⊙</span>
+            <span class="val">Þ<sub>6</sub></span>
+            <span class="val">Þ<sub>K</sub></span>
+            <span class="val">Þ<sub>ò</sub></span>
+            <span class="val">Þ<sub>¨</sub></span>
+            <span class="val">Þ<sub>O</sub></span>
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--rub-lt);">Φ</td>
+          <td class="td-prim" style="color:var(--rub-lt);">φ̂</td>
           <td class="td-name">Criticality</td>
           <td class="td-by">L4 under L6 · Rubedo</td>
           <td class="td-fam">𝓕₅</td>
           <td class="td-vals">
-            <span class="val">↓</span>
-            <span class="val">c</span>
-            <span class="val">c<sup>ℂ</sup></span>
-            <span class="val">×</span>
-            <span class="val">↑</span>
+            <span class="val">φ̂<sub>ž</sub></span>
+            <span class="val">φ̂<sub>ÿ</sub></span>
+            <span class="val">φ̂<sub>Æ</sub></span>
+            <span class="val">φ̂<sub>3</sub></span>
+            <span class="val">φ̂<sub>Ţ</sub></span>
           </td>
         </tr>
       </tbody>
@@ -775,6 +873,69 @@
       &nbsp;&nbsp;|&nbsp;&nbsp; Crystal cardinality: 3³ × 4⁵ × 5⁴ = <strong style="color:var(--gold-dim); font-weight: 700;">17,280,000</strong>
     </div>
   </div>
+
+  <!-- ── Connected Repositories ── -->
+  <section class="repos-section">
+    <div class="repos-label">CONNECTED REPOSITORIES</div>
+    <div class="repos-grid">
+
+      <a href="https://github.com/umpolungfish/Imscribing_Grammar" class="repo-card">
+        <div class="repo-card-name">Imscribing_Grammar</div>
+        <div class="repo-card-desc">The grammar itself &mdash; 12 primitives, 17,280,000 types, the crystal and its catalog</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/odot_operator" class="repo-card">
+        <div class="repo-card-name">odot_operator</div>
+        <div class="repo-card-desc">⊙perator &mdash; self-verifying agentic loop; φ̂<sub>ÿ</sub> + Φ<sub>}</sub> → O<sub>∞</sub> as a usable Python library</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/MillenniumAnkh" class="repo-card">
+        <div class="repo-card-name">MillenniumAnkh</div>
+        <div class="repo-card-desc">Lean 4 formalization &mdash; all 7 Millennium Problems encoded as grammar types; BSD + Touchard proved</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/exOS" class="repo-card">
+        <div class="repo-card-name">exOS</div>
+        <div class="repo-card-desc">Bare-metal Rust OS &mdash; kernel derived from the ancient writing system MEET via the grammar</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/aleph_os" class="repo-card">
+        <div class="repo-card-name">aleph_os</div>
+        <div class="repo-card-desc">&lambda;<sub>&aleph;</sub> coherence-first interaction algebra as OS &mdash; identity derived, not primitive; scheduling is mediation, IPC is tensor (P-bottlenecked), security is &alpha;-gating; three non-equivalent Frobenius fixed points &#x05D5; &#x05DE; &#x05E9;</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/odd-perfect-numbers" class="repo-card">
+        <div class="repo-card-name">Odd Perfect Numbers</div>
+        <div class="repo-card-desc">Zenodo &nbsp;&middot;&nbsp; 10.5281/zenodo.19909057</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/solitary_10" class="repo-card">
+        <div class="repo-card-name">Proof That 10 Is Solitary</div>
+        <div class="repo-card-desc">Zenodo &nbsp;&middot;&nbsp; 10.5281/zenodo.20041211</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/hecke-landau" class="repo-card">
+        <div class="repo-card-name">Hecke-Landau Conjecture</div>
+        <div class="repo-card-desc">Zenodo &nbsp;&middot;&nbsp; 10.5281/zenodo.19965471</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/e8_aether_g2_vessel" class="repo-card">
+        <div class="repo-card-name">The Aether and Its Vessel</div>
+        <div class="repo-card-desc">E8 &amp; G2 &nbsp;&middot;&nbsp; Zenodo &nbsp;&middot;&nbsp; 10.5281/zenodo.20032180</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/perfect_cuboid" class="repo-card">
+        <div class="repo-card-name">Perfect Cuboid</div>
+        <div class="repo-card-desc">Proof of the perfect cuboid conjecture</div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/beal_proof" class="repo-card">
+        <div class="repo-card-name">Beal Proof</div>
+        <div class="repo-card-desc">Proof of Beal&rsquo;s conjecture</div>
+      </a>
+
+    </div>
+  </section>
 
   <!-- ── Finale ── -->
   <footer class="finale">

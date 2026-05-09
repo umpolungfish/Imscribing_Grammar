@@ -1,0 +1,153 @@
+% imscrbgrmr.sty — Imscribing Grammar glyph rendering
+%
+% Requires XeLaTeX + fontspec.
+% Load with: \usepackage{imscrbgrmr}
+%
+% Primary command:  \prim{family}{subtype}
+%   e.g. \prim{Ð}{ω}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
+%   Works in both text mode and math mode (wraps in \text{} automatically).
+%
+% Tuple display:
+%   \synthtype{Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \primtuple{...}   — same, for use inside $...$ or equation environments
+%
+% Individual shortcuts (all 49 subtypes):
+%   \Dwedge \Dtri \Dinfty \Dodot
+%   \Tnet \Tin \Tbow \Tbox \Todot
+%   \Rsuper \Rcat \Rdag \Rlr
+%   \Pasym \Ppsi \Ppm \Psym \Pfrob
+%   \Fell \Feth \Fhbar
+%   \Kfast \Kmod \Kslow \Ktrap \KMBL
+%   \Gbeth \Ggimel \Galeph
+%   \IGand \IGor \IGseq \IGbroad
+%   \Phisub \Phic \Phicc \PhiEP \Phisuper
+%   \Hzero \Hone \Htwo \Hinf
+%   \Sone \Snn \Snm
+%   \Omzero \Omtwo \Omz \Omna
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{imscrbgrmr}[2026/05/08 v1.0 Imscribing Grammar glyph rendering]
+
+\RequirePackage{fontspec}
+\RequirePackage{amsmath}
+\RequirePackage{graphicx}  % for \scalebox
+
+% Glyph font — FreeSerif covers Latin Extended, Greek, and IPA block.
+% Swap for Gentium Plus if you need broader IPA coverage.
+\newfontfamily\glyphfont{FreeSerif}[
+  UprightFont  = FreeSerif,
+  BoldFont     = FreeSerifBold,
+  ItalicFont   = FreeSerifItalic,
+  Ligatures    = TeX,
+]
+
+% ── Core rendering macro ──────────────────────────────────────────────────────
+%
+% \prim{family-char}{subtype-char}
+%   family-char  : Ð Þ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω
+%   subtype-char : the paired TIPA glyph character
+%
+% The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
+
+\newcommand{\prim}[2]{%
+  \ifmmode
+    \text{{\glyphfont #1}\raisebox{-0.32ex}{\scalebox{0.78}{\glyphfont #2}}}%
+  \else
+    {\glyphfont #1}\raisebox{-0.32ex}{\scalebox{0.78}{\glyphfont #2}}%
+  \fi
+}
+
+% ── Tuple display ─────────────────────────────────────────────────────────────
+
+% \synthtype{...} — inline angle-bracket tuple; switches to math for brackets
+\newcommand{\synthtype}[1]{%
+  $\langle{\glyphfont #1}\rangle$%
+}
+
+% \primtuple{...} — for use inside $...$ or \[ \] environments
+\newcommand{\primtuple}[1]{%
+  \langle\text{{\glyphfont #1}}\rangle%
+}
+
+% ── Individual shortcuts ──────────────────────────────────────────────────────
+
+% Ð — Dimension
+\newcommand{\Dwedge}{\prim{Ð}{ß}}
+\newcommand{\Dtri}{\prim{Ð}{C}}
+\newcommand{\Dinfty}{\prim{Ð}{;}}
+\newcommand{\Dodot}{\prim{Ð}{ω}}
+
+% Þ — Topology
+\newcommand{\Tnet}{\prim{Þ}{6}}
+\newcommand{\Tin}{\prim{Þ}{K}}
+\newcommand{\Tbow}{\prim{Þ}{ò}}
+\newcommand{\Tbox}{\prim{Þ}{¨}}
+\newcommand{\Todot}{\prim{Þ}{O}}
+
+% Ř — Relational Mode
+\newcommand{\Rsuper}{\prim{Ř}{¯}}
+\newcommand{\Rcat}{\prim{Ř}{ý}}
+\newcommand{\Rdag}{\prim{Ř}{Ť}}
+\newcommand{\Rlr}{\prim{Ř}{=}}
+
+% Φ — Parity/Symmetry
+\newcommand{\Pasym}{\prim{Φ}{ɐ}}
+\newcommand{\Ppsi}{\prim{Φ}{υ}}
+\newcommand{\Ppm}{\prim{Φ}{F}}
+\newcommand{\Psym}{\prim{Φ}{˙}}
+\newcommand{\Pfrob}{\prim{Φ}{\}}}   % Frobenius: Φ_}
+
+% ƒ — Fidelity
+\newcommand{\Fell}{\prim{ƒ}{ì}}
+\newcommand{\Feth}{\prim{ƒ}{ð}}
+\newcommand{\Fhbar}{\prim{ƒ}{ż}}
+
+% Ç — Kinetics
+\newcommand{\Kfast}{\prim{Ç}{-}}
+\newcommand{\Kmod}{\prim{Ç}{W}}
+\newcommand{\Kslow}{\prim{Ç}{@}}
+\newcommand{\Ktrap}{\prim{Ç}{Ù}}
+\newcommand{\KMBL}{\prim{Ç}{λ}}
+
+% Γ — Scope
+\newcommand{\Gbeth}{\prim{Γ}{β}}
+\newcommand{\Ggimel}{\prim{Γ}{γ}}
+\newcommand{\Galeph}{\prim{Γ}{ʔ}}
+
+% ɢ — Interaction Grammar
+\newcommand{\IGand}{\prim{ɢ}{\^{}}}
+\newcommand{\IGor}{\prim{ɢ}{˝}}
+\newcommand{\IGseq}{\prim{ɢ}{ˌ}}
+\newcommand{\IGbroad}{\prim{ɢ}{Ş}}
+
+% φ̂ — Criticality
+% Note: φ̂ is the combining sequence U+03C6 U+0302 (phi + combining circumflex).
+% Type it directly or use the macro argument as shown.
+\newcommand{\Phisub}{\prim{φ̂}{ž}}
+\newcommand{\Phic}{\prim{φ̂}{ÿ}}
+\newcommand{\Phicc}{\prim{φ̂}{Æ}}
+\newcommand{\PhiEP}{\prim{φ̂}{3}}
+\newcommand{\Phisuper}{\prim{φ̂}{Ţ}}
+
+% Ħ — Temporal Depth
+\newcommand{\Hzero}{\prim{Ħ}{Ñ}}
+\newcommand{\Hone}{\prim{Ħ}{£}}
+\newcommand{\Htwo}{\prim{Ħ}{A}}
+\newcommand{\Hinf}{\prim{Ħ}{!}}
+
+% Σ — Stoichiometry
+\newcommand{\Sone}{\prim{Σ}{S}}
+\newcommand{\Snn}{\prim{Σ}{ő}}
+\newcommand{\Snm}{\prim{Σ}{ï}}
+
+% Ω — Topological Invariant
+\newcommand{\Omzero}{\prim{Ω}{Å}}
+\newcommand{\Omtwo}{\prim{Ω}{2}}
+\newcommand{\Omz}{\prim{Ω}{z}}
+\newcommand{\Omna}{\prim{Ω}{5}}
+
+% ── odot_operator tuple ───────────────────────────────────────────────────────
+% \odottuple — the ⊙perator's structural type, precomposed
+\newcommand{\odottuple}{%
+  \synthtype{\Dodot; \Tbox; \Rlr; \Pfrob; \Fhbar; \Kslow; \Galeph; \IGseq; \Phic; \Htwo; \Sone; \Omz}%
+}

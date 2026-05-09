@@ -1,11 +1,20 @@
-# A $\Phi_c$-Critical Formalization of the Perfect Cuboid Non-Existence Theorem
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
+# A $\Phi_{\text{ctyogh}}$-Critical Formalization of the Perfect Cuboid Non-Existence Theorem
 
 **Lean 4 Proof Review and Structural Analysis**
 
 ---
 
 **Structural type:**
-$$\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
 Crystal address: **6 738 896** | Ouroboricity tier: $O_\infty$ | Consciousness score: $C = 0.828$
 
@@ -17,7 +26,7 @@ Crystal address: **6 738 896** | Ouroboricity tier: $O_\infty$ | Consciousness s
 
 The perfect cuboid problem asks whether there exists a rectangular parallelepiped with integer edge lengths $a, b, c$, integer face diagonals $d, e, f$, and integer space diagonal $g$. Four Diophantine equations, seven variables, one unanswered question since Euler. Exhaustive search has found nothing. Classical number theory has not ruled anything out.
 
-This is a review of `PerfectCuboid.lean` (440 lines) — a Lean 4 formalization that does not pretend to close the gap. It proves 22 lemmas with zero `sorry` in the algebraic and modular-arithmetic portions, then axiomatizes three descent operators at the critical edge and derives non-existence *conditional* on those axioms. The proof tracks its own criticality, enforces $H_2$ memory depth, conserves an $\Omega_\mathbb{Z}$ winding number, and satisfies Frobenius closure. The framework is self-aware in a way most formalizations are not: it knows where it stops proving and starts assuming.
+This is a review of `PerfectCuboid.lean` (440 lines) — a Lean 4 formalization that does not pretend to close the gap. It proves 22 lemmas with zero `sorry` in the algebraic and modular-arithmetic portions, then axiomatizes three descent operators at the critical edge and derives non-existence *conditional* on those axioms. The proof tracks its own criticality, enforces $H_2$ memory depth, conserves an $\Omega_{\text{dzlig}}$ winding number, and satisfies Frobenius closure. The framework is self-aware in a way most formalizations are not: it knows where it stops proving and starts assuming.
 
 ---
 
@@ -27,7 +36,7 @@ I began reading `PerfectCuboid.lean` looking for the standard pattern: a long ch
 
 What I found instead was something structurally different. The file does not hide its gap. It isolates it, names it, and builds a self-modeling framework *around* it. The descent operator is not proved; it is axiomatized. Three axioms, not zero. The formalization is honest about the distance between "we have proven everything up to the critical edge" and "we have proven the critical edge itself."
 
-The reason this matters is not that it solves the problem. It does not. The reason it matters is that it formalizes what it means to *be at the edge* of an unsolved problem — and does so in a way that is structurally self-consistent. That is the lift from a static Diophantine puzzle to a $\Phi_c$-critical operator.
+The reason this matters is not that it solves the problem. It does not. The reason it matters is that it formalizes what it means to *be at the edge* of an unsolved problem — and does so in a way that is structurally self-consistent. That is the lift from a static Diophantine puzzle to a $\Phi_{\text{ctyogh}}$-critical operator.
 
 ---
 ## 2. The Diophantine System — What We're Looking For
@@ -59,7 +68,7 @@ structure Cuboid where
 
 At this level, the problem is a static constraint-satisfaction puzzle. No memory. No self-reference. The structural type of the raw Diophantine system is:
 
-$$\langle D_\triangle;\ T_\text{net};\ R_\text{sup};\ P_\text{sym};\ F_\ell;\ K_\text{trap};\ G_\beth;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ 1{:}1;\ \Omega_0 \rangle$$
+$$\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 That is not the structure of a proof. It is the structure of a search problem. The lift to $O_\infty$ happens in Sections 3–8, where the formalization begins to model its own reasoning about this system — and, crucially, to model the gap between what it has proved and what it has not.
 
@@ -121,7 +130,7 @@ This restricts the factorizations of $b^2$ when $g$ and $e$ are coprime. Depends
 
 ### What This Chain Demonstrates
 
-The seven lemmas form a $\Gamma_\text{seq}$ chain: L1 → L2 → L3 → L4 → L5 → L6 → L7. Each reads at most two predecessors. No lemma is orphaned. No lemma is redundant. If you remove any one, the chain breaks. This is what load-bearing sequential composition looks like — the difference between $\Gamma_\wedge$ (all at once) and $\Gamma_\text{seq}$ (each step necessitated by the prior).
+The seven lemmas form a $\Gamma_{\text{secstress}}$ chain: L1 → L2 → L3 → L4 → L5 → L6 → L7. Each reads at most two predecessors. No lemma is orphaned. No lemma is redundant. If you remove any one, the chain breaks. This is what load-bearing sequential composition looks like — the difference between $\Gamma_{\text{corner}}$ (all at once) and $\Gamma_{\text{secstress}}$ (each step necessitated by the prior).
 
 ---
 ## 4. Modular Constraints — The Search Space Shrinks
@@ -181,7 +190,7 @@ One might wonder whether the axioms are too strong — whether `descent_smaller`
 ---
 ## 6. Self-Modeling Operators — The Proof Watches Itself
 
-The formalization does not just prove things about cuboids. It proves things about the *process* of proving things about cuboids. This is the shift from $D_\triangle$ to $D_\odot$: the state space becomes self-written.
+The formalization does not just prove things about cuboids. It proves things about the *process* of proving things about cuboids. This is the shift from $D_{\text{turnthree}}$ to $D_{\text{omega}}$: the state space becomes self-written.
 
 ### 6.1 Constraint Residuals
 
@@ -200,7 +209,7 @@ def criticalityMeasure (w : WindingNumber) (totalResidual : Nat) : Rat :=
 ```
 
 This maps residual to $(0, 1]$: small residual means high criticality. The classification is:
-- $\mu > 1/10$: critical — within the $\Phi_c$ window
+- $\mu > 1/10$: critical — within the $\Phi_{\text{ctyogh}}$ window
 - $0 < \mu \leq 1/10$: subcritical
 - $\mu = 0$: supercritical — solution found
 
@@ -213,7 +222,7 @@ def windingStep (w : WindingNumber) (residuals : Nat × Nat × Nat × Nat) : Win
   if r1 = 0 ∧ r2 = 0 ∧ r3 = 0 ∧ r4 = 0 then w + 1 else w
 ```
 
-The winding number increments iff all four residuals vanish. This is the $\Omega_\mathbb{Z}$ invariant: a conserved charge that counts completed constraint cycles.
+The winding number increments iff all four residuals vanish. This is the $\Omega_{\text{dzlig}}$ invariant: a conserved charge that counts completed constraint cycles.
 
 ### 6.4 The Self-Check
 
@@ -235,7 +244,7 @@ theorem frobenius_closure (state : ProofState 0) :
 
 $\mu \circ \delta = \text{id}$. The query extracts a fact; the update restores it. The proof is by reflexivity — which is exactly right. If the duality were anything less than trivial, the structure would not be self-consistent.
 
-This is the $P_{\pm}^{\text{sym}}$ condition: Frobenius-special, non-synthesizable from below. The system's query and update operators are each other's inverses by construction, not by theorem.
+This is the $P_{\text{doublebarpipe}}$ condition: Frobenius-special, non-synthesizable from below. The system's query and update operators are each other's inverses by construction, not by theorem.
 
 ---
 ## 7. Winding Number Conservation — The Topological Gate
@@ -288,22 +297,22 @@ The theorem is proved *conditional* on the axioms. The axioms are not proved fro
 
 ## 9. Structural Taxonomy — The Full Lift
 
-The formalization operates at two levels simultaneously. The raw Diophantine problem and the $\Phi_c$-critical framework have structural types that differ on every single primitive:
+The formalization operates at two levels simultaneously. The raw Diophantine problem and the $\Phi_{\text{ctyogh}}$-critical framework have structural types that differ on every single primitive:
 
-| Primitive | Base (raw Diophantine) | Lifted ($\Phi_c$ framework) |
+| Primitive | Base (raw Diophantine) | Lifted ($\Phi_{\text{ctyogh}}$ framework) |
 |-----------|----------------------|---------------------------|
-| $D$ | $D_\triangle$ (finite surface) | $D_\odot$ (self-written state) |
-| $T$ | $T_\text{net}$ (branching constraints) | $T_\odot$ (self-referential) |
-| $R$ | $R_\text{sup}$ (supervenience) | $R_\leftrightarrow$ (bidirectional feedback) |
-| $P$ | $P_\text{sym}$ (full symmetry) | $P_{\pm}^{\text{sym}}$ (Frobenius-special) |
-| $F$ | $F_\ell$ (classical) | $F_\hbar$ (quantum-coherent) |
-| $K$ | $K_\text{trap}$ (frozen order) | $K_\text{slow}$ (near-equilibrium) |
-| $G$ | $G_\beth$ (local) | $G_\aleph$ (universal) |
-| $\Gamma$ | $\Gamma_\wedge$ (conjunctive) | $\Gamma_\text{seq}$ (sequential) |
-| $\Phi$ | $\Phi_\text{sub}$ (below critical) | $\Phi_c$ (critical) |
+| $D$ | $D_{\text{turnthree}}$ (finite surface) | $D_{\text{omega}}$ (self-written state) |
+| $T$ | $T_{\text{nrleg}}$ (branching constraints) | $T_{\text{openo}}$ (self-referential) |
+| $R$ | $R_{\text{subrightarrow}}$ (supervenience) | $R_{\text{lyoghlig}}$ (bidirectional feedback) |
+| $P$ | $P_{\text{subdoublearrow}}$ (full symmetry) | $P_{\text{doublebarpipe}}$ (Frobenius-special) |
+| $F$ | $F_{\text{beltl}}$ (classical) | $F_{\text{hardsign}}$ (quantum-coherent) |
+| $K$ | $K_{\text{teshlig}}$ (frozen order) | $K_{\text{schwa}}$ (near-equilibrium) |
+| $G$ | $G_{\text{beta}}$ (local) | $G_{\text{revapostrophe}}$ (universal) |
+| $\Gamma$ | $\Gamma_{\text{corner}}$ (conjunctive) | $\Gamma_{\text{secstress}}$ (sequential) |
+| $\Phi$ | $\Phi_{\text{softsign}}$ (below critical) | $\Phi_{\text{ctyogh}}$ (critical) |
 | $H$ | $H_0$ (memoryless) | $H_2$ (two-step memory) |
 | $S$ | $1{:}1$ (single type) | $n{:}m$ (heterogeneous) |
-| $\Omega$ | $\Omega_0$ (trivial) | $\Omega_\mathbb{Z}$ (integer winding) |
+| $\Omega$ | $\Omega_{\text{closeepsilon}}$ (trivial) | $\Omega_{\text{dzlig}}$ (integer winding) |
 
 Twelve promotions. Not gradual — the entire problem is re-imscribed from static puzzle to self-modeling operator.
 
@@ -328,17 +337,17 @@ The lifted type achieves $O_\infty$: the maximal ouroboricity tier. The state sp
 
 ### 10.2 What Is Axiomatized (3)
 
-`descent`, `descent_smaller`, `descent_operator_exists` — all at the $\Phi_c$ critical edge.
+`descent`, `descent_smaller`, `descent_operator_exists` — all at the $\Phi_{\text{ctyogh}}$ critical edge.
 
 ### 10.3 Self-Modeling Checklist
 
 | Property | Status | Evidence |
 |----------|--------|----------|
-| Gate 1 ($\Phi_c$) | Open | $C = 0.828$, proof tracks its own edge |
-| Gate 2 ($K_\text{slow}$) | Open | Descent is a slow equilibrium search |
-| $\Omega_\mathbb{Z}$ | Active | Winding number tracks constraint cycles |
-| $P_{\pm}^{\text{sym}}$ | Verified | `frobenius_closure` proves $\mu \circ \delta = \text{id}$ |
-| $\Gamma_\text{seq}$ | Enforced | Each lemma uses ≤ 2 prior results ($H_2$) |
+| Gate 1 ($\Phi_{\text{ctyogh}}$) | Open | $C = 0.828$, proof tracks its own edge |
+| Gate 2 ($K_{\text{schwa}}$) | Open | Descent is a slow equilibrium search |
+| $\Omega_{\text{dzlig}}$ | Active | Winding number tracks constraint cycles |
+| $P_{\text{doublebarpipe}}$ | Verified | `frobenius_closure` proves $\mu \circ \delta = \text{id}$ |
+| $\Gamma_{\text{secstress}}$ | Enforced | Each lemma uses ≤ 2 prior results ($H_2$) |
 
 ---
 
@@ -346,7 +355,7 @@ The lifted type achieves $O_\infty$: the maximal ouroboricity tier. The state sp
 
 The bottleneck is the descent operator. A constructive proof would show that from any putative perfect cuboid $(a, b, c, d, e, f, g)$, one can derive a strictly smaller one $(a', b', c', d', e', f', g')$ with $g' < g$, using only the four Diophantine equations and elementary number theory. The seven algebraic lemmas provide the identities. The nine modular constraints restrict the space. The explicit descent construction is still missing.
 
-This is not a failure of the formalization. It is a faithful map of where the problem stands. The perfect cuboid sits at the $\Phi_c$ edge: the framework is complete, the self-modeling is operational, the Frobenius closure is verified — but the descent operator is axiomatized, not proved.
+This is not a failure of the formalization. It is a faithful map of where the problem stands. The perfect cuboid sits at the $\Phi_{\text{ctyogh}}$ edge: the framework is complete, the self-modeling is operational, the Frobenius closure is verified — but the descent operator is axiomatized, not proved.
 
 A proof that closes this gap would not just solve a 300-year-old problem. It would demonstrate that an $O_\infty$ self-modeling framework can be turned into a fully constructive theorem — that the critical edge, once named, can be crossed.
 
@@ -355,4 +364,4 @@ A proof that closes this gap would not just solve a 300-year-old problem. It wou
 *This manuscript was prepared by reviewing `PerfectCuboid.lean` (440 lines, Lean 4 + Mathlib v4.28.0) in the `perfect-cuboid` Lake project. All numerical claims (crystal address, $C$-score, tier, structural distances) were verified via Imscribing Grammar tool calls.*
 
 **Structural type of this lifted document:**
-$$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$$
+$$\langle D_{\text{omega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$$

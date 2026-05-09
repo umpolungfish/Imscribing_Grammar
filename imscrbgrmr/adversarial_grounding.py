@@ -6,7 +6,7 @@ validates primitive assignments against mechanistic criteria derived from
 the chemistry itself.
 
 Each axiom has a falsifiable mechanistic criterion:
-- Axiom 3: G_gimel requires superlinear SAPT induction (ratio > 2)
+- Axiom 3: G_gamma requires superlinear SAPT induction (ratio > 2)
 - Axiom 6: D_infinity requires specifiable reset mechanism
 - Axiom 7: Topology must match actual connectivity
 - Axiom 8: Recognition mode must match interaction physics

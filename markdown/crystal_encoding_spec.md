@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Exact Deterministic Encoding of the Universal Imscriptive Grammar
 ## Crystal of Types — Frobenius Address Space
 
@@ -10,31 +19,31 @@ These types are bijectively numbered 0 through 17,279,999 via a **mixed-radix po
 The address `A` is computed as:
 
 ```
-A = i_Phi * S_Phi + i_P * S_P + i_Omega * S_Omega
-  + i_D * S_D + i_T * S_T + i_R * S_R + i_F * S_F
-  + i_K * S_K + i_G * S_G + i_Gamma * S_Gamma + i_HS
+A = i_Phi * Σ_Phi + i_P * Σ_P + i_Omega * Σ_Omega
+  + i_D * Σ_D + i_T * Σ_T + i_R * Σ_R + i_F * Σ_F
+  + i_K * Σ_K + i_G * Σ_G + i_Gamma * Σ_Gamma + i_HS
 ```
 
 where:
 - `i_X` = index of the primitive value within its enumeration (0-based)
-- `S_X` = stride (block size) for that primitive
+- `Σ_X` = stride (block size) for that primitive
 
 ### Addressing Order (fastest- to slowest-varying)
 
 | Pos | Primitive | Values (enum order)                                         | Radix | Stride  |
 |-----|-----------|-------------------------------------------------------------|-------|---------|
-| 0   | H         | `H0=0, H1=1, H2=2, H_inf=3`                                | 4     | 3 *     |
-| 1   | S         | `one_one=0, n_n=1, n_m=2`                                  | 3     | 1       |
-| 2   | $\Gamma$  | `G_and=0, G_or=1, G_seq=2, G_broad=3`                      | 4     | 12      |
-| 3   | G         | `G_beth=0, G_gimel=1, G_aleph=2`                           | 3     | 48      |
-| 4   | K         | `K_fast=0, K_mod=1, K_slow=2, K_trap=3, K_MBL=4`          | 5     | 144     |
-| 5   | F         | `F_ell=0, F_eth=1, F_hbar=2`                               | 3     | 720     |
-| 6   | R         | `R_super=0, R_cat=1, R_dagger=2, R_lr=3`                   | 4     | 2160    |
-| 7   | T         | `T_network=0, T_in=1, T_bowtie=2, T_boxtimes=3, T_odot=4` | 5     | 8640    |
-| 8   | D         | `D_wedge=0, D_triangle=1, D_infty=2, D_odot=3`             | 4     | 43200   |
-| 9   | $\Omega$  | `Omega_0=0, Omega_Z2=1, Omega_Z=2, Omega_NA=3`             | 4     | 172800  |
-| 10  | P         | `P_asym=0, P_psi=1, P_pm=2, P_sym=3, P_pm_sym=4`          | 5     | 691200  |
-| 11  | $\Phi$    | `Phi_sub=0, Phi_c=1, Phi_c_complex=2, Phi_EP=3, Phi_super=4` | 5  | 3456000 |
+| 0   | H         | `Ħ_Ñ=0, Ħ_£=1, Ħ_A=2, Ħ_!=3`                                | 4     | 3 *     |
+| 1   | S         | `Σ_S=0, Σ_ő=1, Σ_ï=2`                                  | 3     | 1       |
+| 2   | $\Gamma$  | `ɢ_^=0, ɢ_˝=1, ɢ_ˌ=2, ɢ_Ş=3`                      | 4     | 12      |
+| 3   | G         | `Γ_β=0, Γ_γ=1, Γ_ʔ=2`                           | 3     | 48      |
+| 4   | K         | `Ç_-=0, Ç_W=1, Ç_@=2, Ç_Ù=3, Ç_λ=4`          | 5     | 144     |
+| 5   | F         | `ƒ_ì=0, ƒ_ð=1, ƒ_ż=2`                               | 3     | 720     |
+| 6   | R         | `Ř_¯=0, Ř_ý=1, Ř_Ť=2, Ř_==3`                   | 4     | 2160    |
+| 7   | T         | `Þ_6=0, Þ_K=1, Þ_ò=2, Þ_¨=3, Þ_O=4` | 5     | 8640    |
+| 8   | D         | `Ð_ß=0, Ð_C=1, Ð_;=2, Ð_ω=3`             | 4     | 43200   |
+| 9   | $\Omega$  | `Ω_Å=0, Ω_2=1, Ω_z=2, Ω_5=3`             | 4     | 172800  |
+| 10  | P         | `Φ_ɐ=0, Φ_υ=1, Φ_F=2, Φ_˙=3, Φ_}=4`          | 5     | 691200  |
+| 11  | $\Phi$    | `φ̂_ž=0, φ̂_ÿ=1, φ̂_Æ=2, φ̂_3=3, φ̂_Ţ=4` | 5  | 3456000 |
 
 \* H and S are packed together: `i_HS = i_H * 3 + i_S`, stride = 1.
 
@@ -86,7 +95,7 @@ Given primitive values:
 
 ### Example
 
-$\langle D_\odot;\ T_\boxtimes;\ R_\text{lr};\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$
+$\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
 
 ```
 i_Phi=1, i_P=4, i_Omega=2, i_D=3, i_T=3, i_R=3, i_F=2, i_K=2, i_G=2, i_Gamma=2, i_H=1, i_S=0
@@ -102,18 +111,18 @@ Verified via `crystal_encode` ✓
 
 ### Ouroboricity Tiers from Crystal Address
 
-Tier is primarily determined by $\Phi$ and $P$; the $\Omega$–$D$–$T$ interaction (via `topo_protection_probe`) can promote within the $\Phi_c$ sector:
+Tier is primarily determined by $\Phi$ and $P$; the $\Omega$–$D$–$T$ interaction (via `topo_protection_probe`) can promote within the $\Phi_{\text{ctyogh}}$ sector:
 
 | `Phi` value     | $P$ condition        | Tier           |
 |-----------------|----------------------|----------------|
-| `Phi_sub`       | any                  | $O_0$          |
-| `Phi_EP`        | any                  | $O_0$          |
-| `Phi_super`     | any                  | $O_0$          |
-| `Phi_c`         | `P_pm_sym`           | $O_\infty$     |
-| `Phi_c`         | other, $\Omega_0$    | $O_1$          |
-| `Phi_c`         | other, $\Omega\neq\Omega_0$, $D\in\{D_\wedge,D_\triangle,D_\odot\}$ | $O_2$ |
-| `Phi_c`         | other, $\Omega\neq\Omega_0$, $D_\infty$ | $O_2^\dagger$ |
-| `Phi_c_complex` | same rules as `Phi_c` | same tiers    |
+| `φ̂_ž`       | any                  | $O_0$          |
+| `φ̂_3`        | any                  | $O_0$          |
+| `φ̂_Ţ`     | any                  | $O_0$          |
+| `φ̂_ÿ`         | `Φ_}`           | $O_\infty$     |
+| `φ̂_ÿ`         | other, $\Omega_{\text{closeepsilon}}$    | $O_1$          |
+| `φ̂_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$ | $O_2$ |
+| `φ̂_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
+| `φ̂_Æ` | same rules as `φ̂_ÿ` | same tiers    |
 
 ### Implementation Notes
 

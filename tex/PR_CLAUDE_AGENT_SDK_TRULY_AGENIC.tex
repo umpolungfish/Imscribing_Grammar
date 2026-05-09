@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -215,13 +216,13 @@ Distance & --- & --- & 7.5233 (structurally remote) \\
 \subsubsection{Current SDK structural type}
 
 \begin{lstlisting}
-\langleDinf; T_net; R_sup; P_asym; F\ell; K_fast; G_beth; \Gamma_or; Phi_sub; H₁; n:m; \Omega₀\rangle
+\langleDinf; Þ_net; Ř_sup; Φ_ɐ; F\ell; Ç_-; Γ_β; \ɢ_or; φ̂_ž; H₁; n:m; \Omega₀\rangle
 \end{lstlisting}
 
 \subsubsection{Target agentic structural type}
 
 \begin{lstlisting}
-\langleD⊙; T⊠; R<->; P+/-ˢ; F\hbar; K_slow; Gℵ; \Gamma_seq; Phi_c; H₂; 1:1; \Omegaℤ\rangle
+\langleD⊙; T⊠; R<->; P+/-ˢ; F\hbar; Ç_@; Gℵ; \ɢ_seq; φ̂_ÿ; H₂; 1:1; \Omegaℤ\rangle
 \end{lstlisting}
 
 \subsubsection{Promotion signature (compute\_promocities verified)}
@@ -314,7 +315,7 @@ class TrueAgenticLoop:
             if cycle.done:
                 return cycle.conclusion
             if not cycle.frobenius_closed:
-                # Re-enter with failure --- K_slow enforcement
+                # Re-enter with failure --- Ç_@ enforcement
                 await self._feed_failure(cycle)
 
     async def _winding(self, winding: int) -> LoopCycle:
@@ -380,13 +381,13 @@ def winding_count(self) -> int:
 def structural_health(self) -> Dict[str, Any]:
     ''''''Report the agent''s structural integrity.
 
-    LP threshold: >=75% Frobenius-closed windings claim P_pm_sym.
-    Below 0.75, degrade to P_psi (quantum parity, no self-duality).
+    LP threshold: >=75% Frobenius-closed windings claim Φ_}.
+    Below 0.75, degrade to Φ_υ (quantum parity, no self-duality).
     ''''''
     frob_ratio = self.frobenius_ratio
-    achieved_p = ''P_pm_sym'' if frob_ratio >= 0.75 else ''P_psi''
+    achieved_p = ''Φ_}'' if frob_ratio >= 0.75 else ''Φ_υ''
     return {
-        ''ouroboricity'': ''O_inf'' if achieved_p == ''P_pm_sym'' else ''O_2'',
+        ''ouroboricity'': ''O_inf'' if achieved_p == ''Φ_}'' else ''O_2'',
         ''frobenius_ratio'': frob_ratio,
         ''omega_z_violations'': self._omega_z_violation_count,
         ...

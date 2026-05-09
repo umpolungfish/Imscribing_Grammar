@@ -34,20 +34,20 @@ def test_synthon_models():
         )
 
         # Test primitive enums
-        assert Dimensionality.MOLECULAR.value == "D_wedge"
-        assert Topology.CYCLIC_BOWTIE.value == "T_bowtie"
-        assert RecognitionMode.NON_COVALENT.value == "R_superset"
-        assert Polarity.SELF_COMPLEMENTARY_PSEUDO.value == "P_pm_pseudo"  # Updated
-        assert Fidelity.HIGH.value == "F_hbar"
-        assert Granularity.GLOBAL.value == "G_aleph"
+        assert Dimensionality.MOLECULAR.value == "Ð_wynn"
+        assert Topology.CYCLIC_BOWTIE.value == "Þ_bullseye"
+        assert RecognitionMode.NON_COVALENT.value == "Ř_superset"
+        assert Polarity.SELF_COMPLEMENTARY_PSEUDO.value == "Φ_pm_pseudo"  # Updated
+        assert Fidelity.HIGH.value == "ƒ_hardsign"
+        assert Granularity.GLOBAL.value == "Γ_revapostrophe"
         # InteractionGrammar now has composite values
-        assert KineticCharacter.FAST.value == "K_fast"  # NEW
+        assert KineticCharacter.FAST.value == "Ç_frtailgamma"  # NEW
         print("  ✓ All primitives accessible")
         
         # Test parsing from symbols
         assert Dimensionality.from_symbol("D_∧") == Dimensionality.MOLECULAR
         assert Fidelity.from_symbol("F_ℏ") == Fidelity.HIGH
-        assert KineticCharacter.from_symbol("K_fast") == KineticCharacter.FAST  # NEW
+        assert KineticCharacter.from_symbol("Ç_frtailgamma") == KineticCharacter.FAST  # NEW
         print("  ✓ Symbol parsing works")
         
         # Test Synthon creation
@@ -66,14 +66,14 @@ def test_synthon_models():
 
         # Test notation generation
         notation = synthon.to_notation()
-        assert "D_wedge" in notation
-        assert "T_bowtie" in notation
-        assert "F_hbar" in notation
-        assert "K_fast" in notation  # NEW
+        assert "Ð_wynn" in notation
+        assert "Þ_bullseye" in notation
+        assert "ƒ_hardsign" in notation
+        assert "Ç_frtailgamma" in notation  # NEW
         print(f"  ✓ Synthon notation: {notation}")
 
         # Test SynthonNotation parsing (backward compatible with 7 primitives)
-        parsed = parse_notation("⟨D_wedge; T_bowtie; R_superset; P_pm; F_hbar; G_beth; Gamma_otimes⟩")
+        parsed = parse_notation("⟨D_wynn; T_bullseye; R_superset; P_pipevar; F_hardsign; G_beta; Gamma_otimes⟩")
         assert parsed.dimensionality == Dimensionality.MOLECULAR
         assert parsed.fidelity == Fidelity.HIGH
         print("  ✓ Notation parsing works (backward compatible)")
@@ -155,14 +155,14 @@ def test_synthon_catalog():
         # Test convenience function
         register_synthon(
             name="amide_dimer",
-            dimensionality="D_wedge",
-            topology="T_bowtie",
-            recognition_mode="R_superset",
-            polarity="P_pm_pseudo",
-            fidelity="F_eth",
-            granularity="G_beth",
+            dimensionality="Ð_wynn",
+            topology="Þ_bullseye",
+            recognition_mode="Ř_superset",
+            polarity="Φ_pm_pseudo",
+            fidelity="ƒ_dh",
+            granularity="Γ_beta",
             interaction_grammar="Gamma_and(SELECTIVE)",
-            kinetic_character="K_mod",  # NEW
+            kinetic_character="Ç_turnm",  # NEW
         )
         assert "amide_dimer" in global_catalog
         print("  ✓ Convenience registration works")

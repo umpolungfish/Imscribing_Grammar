@@ -47,7 +47,7 @@ A = TypeVar("A")
 B = TypeVar("B")
 
 # F-tier ordering for Context.f_floor comparisons
-_F_ORDER: Dict[str, int] = {"F_ell": 0, "LOW": 0, "F_eth": 1, "MEDIUM": 1, "F_hbar": 2, "HIGH": 2}
+_F_ORDER: Dict[str, int] = {"ƒ_beltl": 0, "LOW": 0, "ƒ_dh": 1, "MEDIUM": 1, "ƒ_hardsign": 2, "HIGH": 2}
 
 
 @dataclass

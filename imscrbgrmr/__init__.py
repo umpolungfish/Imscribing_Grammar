@@ -24,7 +24,7 @@ The Seven Primitives (EXTENDED to nine):
 
     - Stoichiometry (S): Valency ratio primitive — NEW (v2.2)
 
-Extended Notation: ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩  (H/Ω optional, default H0/None)
+Extended Notation: ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
 """
 
 from .models import (
@@ -278,7 +278,7 @@ try:
 except Exception:
     pass  # Non-fatal; catalog may be read-only or already populated
 
-__version__ = "0.5.0"  # Quantum primitives: T_braid · K_MBL · Γ(QUANTUM) · Ω · Factor 8
+__version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · Γ(QUANTUM) · Ω · Factor 8
 __author__ = "Imscribing Grammar Contributors"
 
 __all__ = [
@@ -382,7 +382,7 @@ __all__ = [
     "PrimitiveCheckResult",
     "validate_hotswap",
     "XI_CP_TOLERANCE",
-    "K_MULTIPLICITY_PENALTY",
+    "Ç_MULTIPLICITY_PENALTY",
     # Translation Protocol v0.4 (NEW)
     "TranslationCost",
     "TranslationStep",

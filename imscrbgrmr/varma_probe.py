@@ -222,7 +222,7 @@ def degeneracy_strength(
         RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC
     }:
         tuple_bonus += 0.05
-    if synthon.criticality_phase is not None and synthon.criticality_phase.value == "Phi_c":
+    if synthon.criticality_phase is not None and synthon.criticality_phase.value == "φ̂_ctyogh":
         tuple_bonus += 0.05
     score += min(0.15, tuple_bonus)
 
@@ -352,7 +352,7 @@ def score_phi_c_candidacy(
             "name": "Explicit Φ_c assignment",
             "weight": w1,
             "contribution": w1,
-            "note": "synthon.criticality_phase == Phi_c",
+            "note": "synthon.criticality_phase == Phi_ctyogh",
         })
         score += w1
     elif synthon.criticality_phase == CriticalityPhase.SUBCRITICAL:
@@ -374,7 +374,7 @@ def score_phi_c_candidacy(
         })
         score += w1
         report.flags.append(
-            "Φ unassigned: assign Phi_c or Phi_sub to enable full Axiom 5 check."
+            "Φ unassigned: assign Phi_ctyogh or Phi_softsign to enable full Axiom 5 check."
         )
 
     # --- Factor 2: Logarithmic scaling check (weight 0.30) ---
@@ -593,10 +593,10 @@ def score_phi_c_candidacy(
     #
     # Required co-occurrence (all four must be present):
     #   D_∞       — temporal self-organisation: the cycle is sustained, not transient
-    #   T_bowtie  — closed-loop topology: product feeds back as catalyst
+    #   T_bullseye  — closed-loop topology: product feeds back as catalyst
     #   P_directional — enantiospecific / chiral recognition: the broken symmetry is
     #                   encoded in a directional polarity primitive
-    #   F_hbar    — high fidelity: amplification gain > 1 per cycle; without F_hbar
+    #   F_hardsign    — high fidelity: amplification gain > 1 per cycle; without F_hardsign
     #               the system drifts (racemises) rather than amplifies
     #
     # Together these encode: "an enantiospecific closed autocatalytic cycle whose
@@ -607,12 +607,12 @@ def score_phi_c_candidacy(
     # The contribution (0.25) is intentionally conservative: classical bifurcation
     # is well-established phenomenology but the correlation lengths have not been
     # measured; the Varma QXY scaling check (factor 2) remains the gold standard
-    # for Phi_c confirmation.
+    # for Phi_ctyogh confirmation.
     from .models import Topology, Polarity, Fidelity
     _has_temporal    = "temporal" in synthon.dimensionality.domains
     _has_bowtie      = synthon.topology == Topology.CYCLIC_BOWTIE
     _has_directional = synthon.polarity  == Polarity.DONOR_ACCEPTOR   # P_directional
-    _has_high_f      = synthon.fidelity  == Fidelity.HIGH              # F_hbar
+    _has_high_f      = synthon.fidelity  == Fidelity.HIGH              # F_hardsign
     if _has_temporal and _has_bowtie and _has_directional and _has_high_f:
         w7 = 0.25
         factors.append({
@@ -620,7 +620,7 @@ def score_phi_c_candidacy(
             "weight": 0.25,
             "contribution": w7,
             "note": (
-                "D_∞ + T_bowtie + P_directional + F_hbar co-present: "
+                "D_∞ + T_bullseye + P_directional + F_hardsign co-present: "
                 "gain > 1 enantiospecific closed autocatalytic cycle. "
                 "Pitchfork bifurcation at ee = 0 (Frank 1953). "
                 "Classical symmetry-breaking criticality — universality class "
@@ -638,9 +638,9 @@ def score_phi_c_candidacy(
         _missing = [
             label for cond, label in [
                 (_has_temporal,    "D_∞"),
-                (_has_bowtie,      "T_bowtie"),
-                (_has_directional, "P_directional"),
-                (_has_high_f,      "F_hbar"),
+                (_has_bowtie,      "Þ_bullseye"),
+                (_has_directional, "Φ_directional"),
+                (_has_high_f,      "ƒ_hardsign"),
             ] if not cond
         ]
         factors.append({
@@ -655,7 +655,7 @@ def score_phi_c_candidacy(
         })
 
     # --- Factor 8: Quantum criticality fingerprint (weight 0.20) ---
-    # Pattern: G_aleph + F_hbar + K_trap + ¬D_∞
+    # Pattern: G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞
     # Maps to: transverse-field Ising at h=h_c, heavy fermions (CeCu₆₋ₓAuₓ, YbRh₂Si₂),
     # quantum dots at charge degeneracy.  Distinct from Varma QXY (temporal) —
     # this is a spatial, ground-state degeneracy universality class.
@@ -672,12 +672,12 @@ def score_phi_c_candidacy(
     if _has_galeph and _has_f_high and _has_k_trap and _no_temporal:
         score += w8
         factors.append({
-            "name": "Quantum criticality fingerprint (G_aleph + F_hbar + K_trap + ¬D_∞)",
+            "name": "Quantum criticality fingerprint (G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞)",
             "weight": w8,
             "contribution": w8,
             "note": (
-                "All four quantum criticality co-requisites present: G_aleph (non-local constraint), "
-                "F_hbar (high constraint reliability), K_trap (ground-state-frozen kinetics), "
+                "All four quantum criticality co-requisites present: G_revapostrophe (non-local constraint), "
+                "F_hardsign (high constraint reliability), K_teshlig (ground-state-frozen kinetics), "
                 "¬D_∞ (spatial, not temporal). "
                 "Maps to TFI / heavy-fermion / quantum-dot-at-degeneracy universality class. "
                 "Falsifiable prediction: susceptibility divergence χ(T→0) ~ T^{−γ}; "
@@ -692,14 +692,14 @@ def score_phi_c_candidacy(
     else:
         _qc_missing = [
             label for cond, label in [
-                (_has_galeph,  "G_aleph"),
-                (_has_f_high,  "F_hbar"),
-                (_has_k_trap,  "K_trap"),
+                (_has_galeph,  "Γ_revapostrophe"),
+                (_has_f_high,  "ƒ_hardsign"),
+                (_has_k_trap,  "Ç_teshlig"),
                 (_no_temporal, "¬D_∞"),
             ] if not cond
         ]
         factors.append({
-            "name": "Quantum criticality fingerprint (G_aleph + F_hbar + K_trap + ¬D_∞)",
+            "name": "Quantum criticality fingerprint (G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞)",
             "weight": w8,
             "contribution": 0.0,
             "note": (
@@ -747,17 +747,17 @@ def score_phi_c_candidacy(
     label = report._candidacy_label()
     if report.score >= 0.70:
         report.recommendation = (
-            f"Assign Phi_c. {report.axiom5_note} "
+            f"Assign Phi_ctyogh. {report.axiom5_note} "
             f"Universality class: {report.universality_class or 'unconfirmed — needs scaling data'}."
         )
     elif report.score >= 0.40:
         report.recommendation = (
-            f"Candidate for Phi_c ({label}). Measure ξ_r and ξ_τ near the QCP to confirm "
-            f"ξ_r ≈ ln ξ_τ. If confirmed, assign Phi_c and note 'log-degenerate'."
+            f"Candidate for Phi_ctyogh ({label}). Measure ξ_r and ξ_τ near the QCP to confirm "
+            f"ξ_r ≈ ln ξ_τ. If confirmed, assign Phi_ctyogh and note 'log-degenerate'."
         )
     else:
         report.recommendation = (
-            f"Keep Phi_sub. No compelling evidence for criticality. "
+            f"Keep Phi_softsign. No compelling evidence for criticality. "
             f"Score {report.score:.2f}/1.0."
         )
 
@@ -772,7 +772,7 @@ def score_transition_phi_c(
 
     This is the morphism-level closure of Factor 8 in the Varma probe.
     Factor 8 fires on endpoint primitives as a heuristic
-    (G_aleph + F_hbar + K_trap + ¬D_∞); this fires on the transition
+    (G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞); this fires on the transition
     itself — the exact algebraic predicate for a quantum critical point.
 
     A morphism-level QCP requires:
@@ -851,7 +851,7 @@ def score_transition_phi_c(
                 "Path passes through Φ_c synthon(s): system is tuned through the "
                 "critical point, not adjacent to it.  Exact morphism-level QCP predicate "
                 "— superior to Factor 8 endpoint heuristic "
-                "(G_aleph + F_hbar + K_trap + ¬D_∞)."
+                "(G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞)."
             ),
         })
         score += wB
@@ -869,7 +869,7 @@ def score_transition_phi_c(
                 report.universality_class = "quantum_criticality (TFI/heavy_fermion class)"
                 break
             elif "non-local" in hint:
-                report.universality_class = "non-local QCP (G_aleph)"
+                report.universality_class = "non-local QCP (G_revapostrophe)"
                 break
         if not report.universality_class:
             report.universality_class = "morphism_QCP (universality class unresolved)"

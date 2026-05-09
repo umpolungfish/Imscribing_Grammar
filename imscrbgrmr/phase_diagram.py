@@ -13,12 +13,12 @@ The module computes:
   4. 2-D MDS projection (metric multidimensional scaling)
   5. Annotated visual output:
        - Dendrogram: branch height = tuple distance
-       - Phase map (MDS 2-D scatter): Ω color, Factor-8 marker, K_trap ring
+       - Phase map (MDS 2-D scatter): Ω color, Factor-8 marker, K_teshlig ring
 
 Interpretation of features:
   - Tall dendrogram branches → large structural discontinuity → phase boundary candidate
   - Factor-8 markers (★) → quantum criticality fingerprint (TFI/heavy-fermion)
-  - K_trap→K_MBL universal cost (+2.303 nats) appears as parallel trajectory in MDS
+  - K_teshlig→K_lambda universal cost (+2.303 nats) appears as parallel trajectory in MDS
   - Ω color encodes topological class:
       grey   = TRIVIAL (Ω₀)
       blue   = Z_CLASS (Ω_Z)
@@ -75,7 +75,7 @@ _OMEGA_LABEL = {
 
 
 def _is_factor8(s: Synthon) -> bool:
-    """Factor 8 trigger: G_ℵ + F_ℏ + K_trap + ¬D_∞."""
+    """Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞."""
     return (
         s.granularity == Granularity.GLOBAL
         and s.fidelity == Fidelity.HIGH
@@ -112,7 +112,7 @@ class PhaseDiagram:
         mds_coords: N×2 MDS coordinates (if computed)
         factor8_flags: bool list — True where Factor 8 fires
         omega_values: list of TopoIndex (or None) for each synthon
-        k_trap_flags: bool list — True where kinetic character is K_trap
+        k_trap_flags: bool list — True where kinetic character is K_teshlig
     """
     synthon_names: List[str]
     distance_matrix: np.ndarray
@@ -167,7 +167,7 @@ class PhaseDiagram:
 
         # K universality
         k_trap = [n for n, f in zip(self.synthon_names, self.k_trap_flags) if f]
-        print(f"── K_trap → K_MBL universal cost (+2.303 nats) candidates: {len(k_trap)} ──")
+        print(f"── K_teshlig → K_lambda universal cost (+2.303 nats) candidates: {len(k_trap)} ──")
         for name in k_trap:
             print(f"  ○ {name}")
         print()
@@ -185,7 +185,7 @@ class PhaseDiagram:
                 label = _OMEGA_LABEL.get(omega, str(omega))
                 print(f"  {label}: {', '.join(by_omega[omega])}")
         print()
-        print("  Legend: ★ = Factor-8 trigger  ○ = K_trap (MBL candidate)")
+        print("  Legend: ★ = Factor-8 trigger  ○ = K_teshlig (MBL candidate)")
         print("=" * 72)
 
     # ------------------------------------------------------------------ #
@@ -219,7 +219,7 @@ class PhaseDiagram:
         """
         Render two-panel phase diagram:
           Left:  Ward dendrogram (branch height = tuple distance)
-          Right: MDS 2-D phase map (Ω color, Factor-8 star, K_trap ring)
+          Right: MDS 2-D phase map (Ω color, Factor-8 star, K_teshlig ring)
         """
         try:
             import matplotlib.pyplot as plt
@@ -291,7 +291,7 @@ class PhaseDiagram:
                 is_f8 = self.factor8_flags[idx]
                 is_ktrap = self.k_trap_flags[idx]
 
-                # K_trap ring (outer circle)
+                # K_teshlig ring (outer circle)
                 if is_ktrap:
                     ax2.scatter(coords[idx, 0], coords[idx, 1],
                                 s=900, color="none", edgecolors="#e08c00",
@@ -364,7 +364,7 @@ class PhaseDiagram:
                    label="★ Factor-8 (quantum critical)"),
             Line2D([0], [0], marker="o", color="w", markerfacecolor="none",
                    markeredgecolor="#e08c00", markeredgewidth=3, markersize=16,
-                   label="○ K_trap (MBL candidate)"),
+                   label="○ K_teshlig (MBL candidate)"),
         ]
         ax2.legend(handles=legend_elements, loc="lower right", fontsize=12,
                    framealpha=0.93, edgecolor="#bbbbbb", borderpad=0.9)

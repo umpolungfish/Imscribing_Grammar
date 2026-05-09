@@ -9,8 +9,8 @@ CODE_TO_APPEND_2 = '''
 # =============================================================================
 
 _AG_GRAMMAR = (
-    "D_odot  T_bowtie  R_dagger  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_seq  Phi_c  H2  n:m  Omega_Z"
+    "D_omega  T_bullseye  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -20,16 +20,16 @@ def algebraic_geometry_group():
 
     \b
     Structural type:
-      D_odot T_bowtie R_dagger P_pm_sym F_hbar K_slow
-      G_aleph Gamma_seq Phi_c H2 n:m Omega_Z
+      D_omega T_bullseye R_downstep P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
-      D_odot            → imscriptive: all schemes encoded
-      T_bowtie          → local rings ↔ global sections ↔ Spec
-      R_dagger          → adjoint: pushforward ↔ pullback
-      Phi_c             → self-modeling: scheme ↔ category of sheaves
-      Omega_Z           → integer winding: cohomological dimension
+      D_omega            → imscriptive: all schemes encoded
+      T_bullseye          → local rings ↔ global sections ↔ Spec
+      R_downstep          → adjoint: pushforward ↔ pullback
+      Phi_ctyogh             → self-modeling: scheme ↔ category of sheaves
+      Omega_dzlig           → integer winding: cohomological dimension
 
     \b
     Examples:
@@ -48,17 +48,17 @@ def algebraic_geometry_describe():
         f"[bold]Tuple:[/bold]  {_AG_GRAMMAR}\\n\\n"
         "[bold]Tier:[/bold]  O_∞  (scheme ↔ sheaves duality)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot            → imscriptive encoding of all schemes and morphisms\\n"
-        "  T_bowtie          → bowtie topology: local rings ↔ global sections ↔ spectra\\n"
-        "  R_dagger          → adjoint relations: pushforward/pullback, global/local\\n"
-        "  P_pm_sym          → Frobenius: coherence sheaf uncertainty\\n"
-        "  F_hbar            → preserves exact sequences, cohomology, derived structure\\n"
-        "  K_slow            → slow traversal through cohomology spectral sequences\\n"
-        "  G_aleph           → arbitrary dimension and base schemes\\n"
+        "  D_omega            → imscriptive encoding of all schemes and morphisms\\n"
+        "  T_bullseye          → bowtie topology: local rings ↔ global sections ↔ spectra\\n"
+        "  R_downstep          → adjoint relations: pushforward/pullback, global/local\\n"
+        "  P_doublebarpipe          → Frobenius: coherence sheaf uncertainty\\n"
+        "  F_hardsign            → preserves exact sequences, cohomology, derived structure\\n"
+        "  K_schwa            → slow traversal through cohomology spectral sequences\\n"
+        "  G_revapostrophe           → arbitrary dimension and base schemes\\n"
         "  Gamma_seq         → sequential composition of morphisms\\n"
-        "  Phi_c             → self-modeling: scheme ≅ category of sheaves\\n"
-        "  H2                → two-step: cohomology of cohomology, spectral sequences\\n"
-        "  Omega_Z           → integer winding: cohomological dimension\\n\\n"
+        "  Phi_ctyogh             → self-modeling: scheme ≅ category of sheaves\\n"
+        "  H_turntwo                → two-step: cohomology of cohomology, spectral sequences\\n"
+        "  Omega_dzlig           → integer winding: cohomological dimension\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  compute_dimension          Krull dimension of schemes\\n"
         "  compute_cohomology         sheaf cohomology Hⁿ(X,F)\\n"
@@ -116,8 +116,8 @@ def algebraic_geometry_dimension(scheme: str):
 # =============================================================================
 
 _QFT_GRAMMAR = (
-    "D_odot  T_boxtimes  R_super  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_seq  Phi_c  H2  n_m  Omega_Z"
+    "D_omega  T_commatailz  R_subrightarrow  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  S_ltailm  Omega_dzlig"
 )
 
 
@@ -127,16 +127,16 @@ def quantum_field_theory_group():
 
     \b
     Structural type:
-      D_odot T_boxtimes R_super P_pm_sym F_hbar K_slow
-      G_aleph Gamma_seq Phi_c H2 n_m Omega_Z
+      D_omega T_commatailz R_subrightarrow P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo S_ltailm Omega_dzlig
 
     \b
     Key structural facts:
-      D_odot            → imscriptive: all QFTs encoded
-      T_boxtimes        → box topology: theory⊗symmetry⊗spacetime
-      R_super           → supervenience: operators supervene on couplings
-      Phi_c             → self-modeling: fixed points, conformal manifolds
-      H2                → counterterm → renormalized → physical
+      D_omega            → imscriptive: all QFTs encoded
+      T_commatailz        → box topology: theory⊗symmetry⊗spacetime
+      R_subrightarrow           → supervenience: operators supervene on couplings
+      Phi_ctyogh             → self-modeling: fixed points, conformal manifolds
+      H_turntwo                → counterterm → renormalized → physical
 
     \b
     Examples:
@@ -155,17 +155,17 @@ def quantum_field_theory_describe():
         f"[bold]Tuple:[/bold]  {_QFT_GRAMMAR}\\n\\n"
         "[bold]Tier:[/bold]  O_∞  (Wilsonian RG flow → critical points)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot            → imscriptive encoding of all QFTs, couplings, operators\\n"
-        "  T_boxtimes        → box topology: theory space ⊗ symmetry group ⊗ spacetime\\n"
-        "  R_super           → supervenience: operators supervene on couplings\\n"
-        "  P_pm_sym          → Frobenius: uncertainty between weak/strong coupling\\n"
-        "  F_hbar            → preserves commutation relations, Ward identities\\n"
-        "  K_slow            → slow RG flow (logarithmic scale separation)\\n"
-        "  G_aleph           → arbitrary spacetime dimensions, matter content\\n"
+        "  D_omega            → imscriptive encoding of all QFTs, couplings, operators\\n"
+        "  T_commatailz        → box topology: theory space ⊗ symmetry group ⊗ spacetime\\n"
+        "  R_subrightarrow           → supervenience: operators supervene on couplings\\n"
+        "  P_doublebarpipe          → Frobenius: uncertainty between weak/strong coupling\\n"
+        "  F_hardsign            → preserves commutation relations, Ward identities\\n"
+        "  K_schwa            → slow RG flow (logarithmic scale separation)\\n"
+        "  G_revapostrophe           → arbitrary spacetime dimensions, matter content\\n"
         "  Gamma_seq         → sequential RG flow: μ → μ'\\n"
-        "  Phi_c             → self-modeling: fixed points, conformal manifolds\\n"
-        "  H2                → two-step: counterterm → renormalized → physical\\n"
-        "  Omega_Z           → integer winding: index, instanton number, Chern-Simons level\\n\\n"
+        "  Phi_ctyogh             → self-modeling: fixed points, conformal manifolds\\n"
+        "  H_turntwo                → two-step: counterterm → renormalized → physical\\n"
+        "  Omega_dzlig           → integer winding: index, instanton number, Chern-Simons level\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  compute_beta_function          RG flow β(g)\\n"
         "  find_fixed_point               locate IR/UV fixed points\\n"

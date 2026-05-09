@@ -1,7 +1,7 @@
 -- ImscribingGrammar/PrimitiveMismatch.lean
 -- Formalizes the five temporal primitive diagnostics from the task:
---   1. Measurement problem as P_psi vs P_asym mismatch
---   2. Wick rotation as Γ_seq → K_slow primitive substitution
+--   1. Measurement problem as P_upsilon vs P_aolig mismatch
+--   2. Wick rotation as Γ_seq → K_schwa primitive substitution
 --   3. Berry phase as Ω_ℤ emergent vs constitutive
 --   4. H_∞ line: genuine memory vs Markovian approximation
 --   5. Temporal primitive sorting of physics problems
@@ -19,142 +19,142 @@ open ImscribingGrammar.Primitives
 -- Catalog entries (verified via encode_system)
 -- ============================================================
 
-/-- ⟨D_△; T_in; R_cat; P_ψ; F_ℏ; K_slow; G_aleph; Γ_seq; Φ_sub; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω₀⟩ -/
 def schrodingerDynamics : Synthon := {
-  dim  := .D_triangle
-  top  := .T_in
-  rel  := .R_cat
-  pol  := .P_psi
-  fid  := .F_hbar
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_turnthree
+  top  := .T_invscr
+  rel  := .R_ctz
+  pol  := .P_upsilon
+  fid  := .F_hardsign
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_seq
-  crit := .Phi_sub
-  chir := .H1
-  stoi := .one_one
-  prot := .Omega_0
+  crit := .Phi_softsign
+  chir := .H_toneletterstem
+  stoi := .S_doublebaresh
+  prot := .Omega_closeepsilon
 }
 
-/-- ⟨D_△; T_⋈; R_†; P_asym; F_ℓ; K_fast; G_beth; Γ_seq; Φ_c; H₀; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; Γ_seq; Φ_c; H₀; 1:1; Ω₀⟩ -/
 def measurementOutcome : Synthon := {
-  dim  := .D_triangle
-  top  := .T_bowtie
-  rel  := .R_dagger
-  pol  := .P_asym
-  fid  := .F_ell
-  kin  := .K_fast
-  gran := .G_beth
+  dim  := .D_turnthree
+  top  := .T_bullseye
+  rel  := .R_downstep
+  pol  := .P_aolig
+  fid  := .F_beltl
+  kin  := .K_frtailgamma
+  gran := .G_beta
   gram := .Gamma_seq
-  crit := .Phi_c
-  chir := .H0
-  stoi := .one_one
-  prot := .Omega_0
+  crit := .Phi_ctyogh
+  chir := .H_closeomega
+  stoi := .S_doublebaresh
+  prot := .Omega_closeepsilon
 }
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_slow; G_aleph; Γ_seq; Φ_c; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₁; 1:1; Ω₀⟩ -/
 def wickRotation : Synthon := {
-  dim  := .D_triangle
-  top  := .T_bowtie
-  rel  := .R_lr
-  pol  := .P_pm
-  fid  := .F_eth
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_turnthree
+  top  := .T_bullseye
+  rel  := .R_lyoghlig
+  pol  := .P_pipevar
+  fid  := .F_dh
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_seq
-  crit := .Phi_c
-  chir := .H1
-  stoi := .one_one
-  prot := .Omega_0
+  crit := .Phi_ctyogh
+  chir := .H_toneletterstem
+  stoi := .S_doublebaresh
+  prot := .Omega_closeepsilon
 }
 
-/-- ⟨D_△; T_in; R_cat; P_ψ; F_ℏ; K_slow; G_aleph; Γ_seq; Φ_sub; H₁; 1:1; Ω_ℤ⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω_ℤ⟩ -/
 def berryPhase : Synthon := {
-  dim  := .D_triangle
-  top  := .T_in
-  rel  := .R_cat
-  pol  := .P_psi
-  fid  := .F_hbar
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_turnthree
+  top  := .T_invscr
+  rel  := .R_ctz
+  pol  := .P_upsilon
+  fid  := .F_hardsign
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_seq
-  crit := .Phi_sub
-  chir := .H1
-  stoi := .one_one
-  prot := .Omega_Z
+  crit := .Phi_softsign
+  chir := .H_toneletterstem
+  stoi := .S_doublebaresh
+  prot := .Omega_dzlig
 }
 
-/-- ⟨D_∞; T_⊙; R_cat; P_ψ; F_ℏ; K_slow; G_aleph; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
 def tqft : Synthon := {
-  dim  := .D_infty
-  top  := .T_odot
-  rel  := .R_cat
-  pol  := .P_psi
-  fid  := .F_hbar
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_invomega
+  top  := .T_openo
+  rel  := .R_ctz
+  pol  := .P_upsilon
+  fid  := .F_hardsign
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_seq
-  crit := .Phi_c
-  chir := .H_inf
-  stoi := .n_m
-  prot := .Omega_Z
+  crit := .Phi_ctyogh
+  chir := .H_invscripta
+  stoi := .S_ltailm
+  prot := .Omega_dzlig
 }
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_mod; G_gimel; Γ_seq; Φ_c; H_∞; n:m; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; Γ_seq; Φ_c; H_∞; n:m; Ω₀⟩ -/
 def nonmarkovianOpenSystems : Synthon := {
-  dim  := .D_infty
-  top  := .T_network
-  rel  := .R_lr
-  pol  := .P_psi
-  fid  := .F_eth
-  kin  := .K_mod
-  gran := .G_gimel
+  dim  := .D_invomega
+  top  := .T_nrleg
+  rel  := .R_lyoghlig
+  pol  := .P_upsilon
+  fid  := .F_dh
+  kin  := .K_turnm
+  gran := .G_gamma
   gram := .Gamma_seq
-  crit := .Phi_c
-  chir := .H_inf
-  stoi := .n_m
-  prot := .Omega_0
+  crit := .Phi_ctyogh
+  chir := .H_invscripta
+  stoi := .S_ltailm
+  prot := .Omega_closeepsilon
 }
 
-/-- ⟨D_∞; T_net; R_sup; P_asym; F_ϑ; K_slow; G_aleph; Γ_∧; Φ_c; H₁; n:n; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; Γ_∧; Φ_c; H₁; n:n; Ω₀⟩ -/
 def statisticalMechanics : Synthon := {
-  dim  := .D_infty
-  top  := .T_network
-  rel  := .R_super
-  pol  := .P_asym
-  fid  := .F_eth
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_invomega
+  top  := .T_nrleg
+  rel  := .R_subrightarrow
+  pol  := .P_aolig
+  fid  := .F_dh
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_and
-  crit  := .Phi_c
-  chir  := .H1
-  stoi  := .n_n
-  prot  := .Omega_0
+  crit  := .Phi_ctyogh
+  chir  := .H_toneletterstem
+  stoi  := .S_ctn
+  prot  := .Omega_closeepsilon
 }
 
-/-- ⟨D_∞; T_⊙; R_↔; P_asym; F_ℏ; K_slow; G_aleph; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
 def quantumGravityCandidate : Synthon := {
-  dim  := .D_infty
-  top  := .T_odot
-  rel  := .R_lr
-  pol  := .P_asym
-  fid  := .F_hbar
-  kin  := .K_slow
-  gran := .G_aleph
+  dim  := .D_invomega
+  top  := .T_openo
+  rel  := .R_lyoghlig
+  pol  := .P_aolig
+  fid  := .F_hardsign
+  kin  := .K_schwa
+  gran := .G_revapostrophe
   gram := .Gamma_seq
-  crit := .Phi_c
-  chir := .H_inf
-  stoi := .n_m
-  prot := .Omega_Z
+  crit := .Phi_ctyogh
+  chir := .H_invscripta
+  stoi := .S_ltailm
+  prot := .Omega_dzlig
 }
 
 -- ============================================================
--- 1. The Measurement Problem: P_psi vs P_asym mismatch
+-- 1. The Measurement Problem: P_upsilon vs P_aolig mismatch
 -- ============================================================
 
 /-- The measurement problem as primitive mismatch -/
 theorem measurement_p_mismatch :
-  schrodingerDynamics.pol = .P_psi ∧
-  measurementOutcome.pol = .P_asym := by
+  schrodingerDynamics.pol = .P_upsilon ∧
+  measurementOutcome.pol = .P_aolig := by
   constructor
   · rfl
   · rfl
@@ -164,28 +164,28 @@ theorem schrodinger_measurement_hamming_8 :
   primitiveMismatches schrodingerDynamics measurementOutcome = 8 := by
   decide
 
-/-- The tensor product's P component is the bottleneck: P_asym wins over P_psi. -/
+/-- The tensor product's P component is the bottleneck: P_aolig wins over P_upsilon. -/
 theorem measurement_problem_is_structural :
-  (tensorProduct schrodingerDynamics measurementOutcome).pol = .P_asym ∧
-  schrodingerDynamics.pol ≠ .P_asym := by
+  (tensorProduct schrodingerDynamics measurementOutcome).pol = .P_aolig ∧
+  schrodingerDynamics.pol ≠ .P_aolig := by
   simp [tensorProduct, schrodingerDynamics, measurementOutcome]
   constructor
-  · -- (if compare P_psi P_asym = .lt then P_psi else P_asym) = P_asym
-    -- P_asym (idx 0) < P_psi (idx 1), so compare = .lt, result = P_asym
+  · -- (if compare P_upsilon P_aolig = .lt then P_upsilon else P_aolig) = P_aolig
+    -- P_aolig (idx 0) < P_upsilon (idx 1), so compare = .lt, result = P_aolig
     simp [compare, Polarity]
-  · -- P_psi ≠ P_asym
+  · -- P_upsilon ≠ P_aolig
     decide
 
 -- ============================================================
--- 2. Wick Rotation as Primitive Substitution (Γ_seq → K_slow)
+-- 2. Wick Rotation as Primitive Substitution (Γ_seq → K_schwa)
 -- ============================================================
 
 /-- The Wick rotation converts quantum coherence to thermal weight. -/
 def wickRotate (st : Synthon) : Synthon :=
-  { st with fid := .F_eth }
+  { st with fid := .F_dh }
 
 theorem wick_rotation_changes_fidelity :
-  (wickRotate schrodingerDynamics).fid = .F_eth := by
+  (wickRotate schrodingerDynamics).fid = .F_dh := by
   simp [wickRotate]
 
 theorem wick_rotation_single_primitive_change :
@@ -197,10 +197,10 @@ theorem wick_rotation_single_primitive_change :
 -- ============================================================
 
 def omegaIsConstitutive (st : Synthon) : Prop :=
-  st.prot = .Omega_Z ∧ st.top = .T_odot
+  st.prot = .Omega_dzlig ∧ st.top = .T_openo
 
 def omegaIsEmergent (st : Synthon) : Prop :=
-  st.prot = .Omega_Z ∧ st.top ≠ .T_odot
+  st.prot = .Omega_dzlig ∧ st.top ≠ .T_openo
 
 theorem berry_omega_emergent : omegaIsEmergent berryPhase := by
   simp [omegaIsEmergent, berryPhase]
@@ -209,12 +209,12 @@ theorem tqft_omega_constitutive : omegaIsConstitutive tqft := by
   simp [omegaIsConstitutive, tqft]
 
 theorem berry_vs_tqft_key_deltas :
-  berryPhase.top = .T_in ∧
-  tqft.top = .T_odot ∧
-  berryPhase.chir = .H1 ∧
-  tqft.chir = .H_inf ∧
-  berryPhase.prot = .Omega_Z ∧
-  tqft.prot = .Omega_Z := by
+  berryPhase.top = .T_invscr ∧
+  tqft.top = .T_openo ∧
+  berryPhase.chir = .H_toneletterstem ∧
+  tqft.chir = .H_invscripta ∧
+  berryPhase.prot = .Omega_dzlig ∧
+  tqft.prot = .Omega_dzlig := by
   repeat constructor <;> rfl
 
 /-- Hamming distance between Berry phase and TQFT = 5. -/
@@ -227,10 +227,10 @@ theorem berry_tqft_hamming_5 :
 -- ============================================================
 
 def hasGenuineMemory (st : Synthon) : Prop :=
-  st.chir = .H_inf
+  st.chir = .H_invscripta
 
 def isMarkovian (st : Synthon) : Prop :=
-  st.chir = .H0
+  st.chir = .H_closeomega
 
 theorem nonmarkovian_has_memory : hasGenuineMemory nonmarkovianOpenSystems := by
   simp [hasGenuineMemory, nonmarkovianOpenSystems]
@@ -261,10 +261,10 @@ inductive TemporalPrimitive where
 def activateTemporalPrimitive (tp : TemporalPrimitive) (st : Synthon) : Bool :=
   match tp with
   | .gammaSeq => st.gram = .Gamma_seq
-  | .kSlow    => st.kin = .K_slow
-  | .pAsym    => st.pol = .P_asym
-  | .omegaZ   => st.prot = .Omega_Z
-  | .hInf     => st.chir = .H_inf
+  | .kSlow    => st.kin = .K_schwa
+  | .pAsym    => st.pol = .P_aolig
+  | .omegaZ   => st.prot = .Omega_dzlig
+  | .hInf     => st.chir = .H_invscripta
 
 def activatedTemporalPrimitives (st : Synthon) : List TemporalPrimitive :=
   List.filter (activateTemporalPrimitive · st)
@@ -335,24 +335,24 @@ theorem schrodinger_to_qg_summary :
 
 /-- The tensor product schrodingerDynamics ⊗ measurementOutcome -/
 theorem measurement_tensor_result :
-  (tensorProduct schrodingerDynamics measurementOutcome).pol = .P_asym ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).fid = .F_ell ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).top = .T_bowtie ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).rel = .R_dagger ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).kin = .K_slow ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).gran = .G_aleph ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).crit = .Phi_c ∧
-  (tensorProduct schrodingerDynamics measurementOutcome).chir = .H1 := by
+  (tensorProduct schrodingerDynamics measurementOutcome).pol = .P_aolig ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).fid = .F_beltl ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).top = .T_bullseye ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).rel = .R_downstep ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).kin = .K_schwa ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).gran = .G_revapostrophe ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).crit = .Phi_ctyogh ∧
+  (tensorProduct schrodingerDynamics measurementOutcome).chir = .H_toneletterstem := by
   repeat constructor <;> decide
 
-/-- No mechanism operating purely within Γ_seq + K_slow with P_psi
-can produce P_asym — the measurement problem diagnosis. -/
+/-- No mechanism operating purely within Γ_seq + K_schwa with P_upsilon
+can produce P_aolig — the measurement problem diagnosis. -/
 theorem no_asym_from_psi :
   ∀ (mech : Synthon),
     mech.gram = .Gamma_seq →
-    mech.kin = .K_slow →
-    mech.pol = .P_psi →
-    mech.pol ≠ .P_asym := by
+    mech.kin = .K_schwa →
+    mech.pol = .P_upsilon →
+    mech.pol ≠ .P_aolig := by
   intro mech _ _ hpol
   rw [hpol]
   decide

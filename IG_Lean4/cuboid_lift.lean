@@ -2,8 +2,8 @@ import Mathlib.Data.Nat.Basic
 import Mathlib.Algebra.Group.Basic
 
 /-!
-# Perfect Cuboid $\Phi_c$ Critical Lift
-Structural Type: $\langle D_\odot; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_{\text{slow}}; G_\aleph; \Gamma_{\text{seq}}; \Phi_c; H_2; n:m; \Omega_{\mathbb{Z}} \rangle$
+# Perfect Cuboid $\Phi_ctyogh$ Critical Lift
+Structural Type: $\langle D_\odot; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_{\text{slow}}; G_\aleph; \Gamma_{\text{seq}}; \Phi_ctyogh; H_2; n:m; \Omega_{\mathbb{Z}} \rangle$
 Ouroboricity: $O_\infty$
 -/
 
@@ -24,8 +24,8 @@ structure PerfectCuboidGeometric where
   The existence of a solution is now a topologically protected state $\Omega_{\mathbb{Z}}$.
 -/
 def PerfectCuboidPhiCLifted (s : PerfectCuboidGeometric) : Prop :=
-  let gate1 := True -- Representative of \Phi_c criticality check
-  let gate2 := True -- Representative of K_slow gate
+  let gate1 := True -- Representative of \Phi_ctyogh criticality check
+  let gate2 := True -- Representative of K_schwa gate
   gate1 ∧ gate2 ∧ (s.g > 0)
 
 /-- 

@@ -806,7 +806,7 @@ def compute_I_from_synthon(
     from .thermodynamics import compute_information_gain
     heuristic_bits = compute_information_gain(synthon, method="configurational")
 
-    if contact_type == "hbond" or synthon.recognition_mode.value in ("R_superset",):
+    if contact_type == "hbond" or synthon.recognition_mode.value in ("Ř_superset",):
         return compute_I_hbond_dimer(
             n_hbonds=n_contacts,
             system_name=synthon.name,

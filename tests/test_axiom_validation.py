@@ -26,7 +26,7 @@ def test_axiom4_violation_detection():
     # This should violate Axiom 4
     invalid_synthon = Synthon(
         name="test_invalid_sequential",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,  # D_triangle - NOT temporal
+        dimensionality=Dimensionality.SUPRAMOLECULAR,  # D_turnthree - NOT temporal
         topology=Topology.CYCLIC_BOWTIE,
         recognition_mode=RecognitionMode.NON_COVALENT,  # NOT catalytic
         polarity=Polarity.ACCEPTOR,
@@ -86,10 +86,10 @@ def test_axiom1_violation_detection():
     invalid_synthon = Synthon(
         name="test_invalid_cyclic_low_fid",
         dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,  # T_bowtie - cyclic
+        topology=Topology.CYCLIC_BOWTIE,  # T_bullseye - cyclic
         recognition_mode=RecognitionMode.NON_COVALENT,  # Valid R
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,  # P_pm - self-complementary
-        fidelity=Fidelity.LOW,  # F_ell - LOW fidelity (VIOLATION!)
+        polarity=Polarity.SELF_COMPLEMENTARY_SYM,  # P_pipevar - self-complementary
+        fidelity=Fidelity.LOW,  # F_beltl - LOW fidelity (VIOLATION!)
         kinetic_character=KineticCharacter.FAST,
         granularity=Granularity.LOCAL,
         interaction_grammar=InteractionGrammar.SPECIFIC_AND,
@@ -114,7 +114,7 @@ def test_axiom1_violation_detection():
         topology=Topology.CYCLIC_BOWTIE,
         recognition_mode=RecognitionMode.NON_COVALENT,
         polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.MEDIUM,  # F_eth - acceptable
+        fidelity=Fidelity.MEDIUM,  # F_dh - acceptable
         kinetic_character=KineticCharacter.FAST,
         granularity=Granularity.LOCAL,
         interaction_grammar=InteractionGrammar.SPECIFIC_AND,

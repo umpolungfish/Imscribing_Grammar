@@ -72,7 +72,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     
     This agent ensures generated synthons satisfy all five composition axioms:
     
-    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ F_eth
+    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ_ð
     **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ → no global propagation
     **Axiom 3 (Cooperative Induction):** Superlinear induction → G_ג reclassification
     **Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡
@@ -180,10 +180,10 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
             kinetic_character=kinetic_character,
             granularity=granularity,
             grammar=interaction_grammar,
-            criticality_phase=criticality_phase or Criticality.Phi_sub,
-            protection=Protection.Omega_0,
-            stoichiometry=Stoichiometry.one_one,
-            chirality=Chirality.H0,
+            criticality_phase=criticality_phase or Criticality.φ̂_ž,
+            protection=Protection.Ω_Å,
+            stoichiometry=Stoichiometry.Σ_S,
+            chirality=Chirality.Ħ_Ñ,
             description=description,
             metadata={"auto_generated": True, "method": "rule_based_axiom_guided"}
         )
@@ -269,8 +269,8 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 </input>
 
 <axioms>
-**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ F_eth.
-Falsified by: cyclic self-complementary motif with F_ell or ξ_CP > 10.5 nats.
+**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ_ð.
+Falsified by: cyclic self-complementary motif with ƒ_ì or ξ_CP > 10.5 nats.
 
 **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ cannot propagate constraint globally.
 Falsified by: local specific synthon driving global assembly alone.
@@ -315,11 +315,11 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
 - **T_∈** — use only when ring topology is genuinely unspecified or irrelevant
 
 **T_□□ vs T_∪ vs T_⋈ — THREE-WAY DISTINCTION (critical):**
-- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; K_slow/K_trap default.
+- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; Ç_@/Ç_Ù default.
   Examples: cucurbiturils (CB[n]), cryptands, carceplexes, self-assembled metal-organic cages, COCs,
   Fujita-type Pd₁₂L₂₄ spheres. Keywords: "cage", "capsule", "encapsulat", "cucurbit", "cryptand",
   "carceplex", "carcerand".
-- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; K_fast default.
+- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; Ç_- default.
   Examples: calix[4]arene, calix[6]arene, calix[4]pyrrole, calix[4]resorcinarene, pillar[n]arene,
   cyclotriveratrylene (CTV), corannulene, hemicarceplex, cavitand (when not capped).
   **Any synthon with "calix", "resorcinarene", "pillar[", "calixpyrrole", "bowl", or "upper/lower rim"
@@ -329,30 +329,30 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
   T_⋈ requires a named closing bond. NOT for hosts/guests, NOT for cages, NOT for bowls.
 
 **Axiom 8 (R Physics Match):** R **MUST** match the actual interaction physics.
-- **R_superset** (R_⊇) = **NON-COVALENT** — use for H-bonds, hydrogen bonds, halogen bonds, π-stacking,
+- **Ř_¯set** (R_⊇) = **NON-COVALENT** — use for H-bonds, hydrogen bonds, halogen bonds, π-stacking,
   van der Waals, electrostatics, coordination, host-guest, ionic interactions. **No bond making/breaking.**
   This includes WATER hydrogen bond networks, ammonium/crown-ether complexes, CB[n] host-guest, etc.
 - **R_subset** (R_⊆) = **COVALENT bond formation** — use ONLY for reactions that form or break covalent bonds
   (condensation, Michael addition, imine formation, aldol C-C bond, polymerization). NOT for H-bonds.
-- **R_dagger** (R_‡) = **CATALYTIC / DYNAMIC** — transition-state stabilization, autocatalysis, reversible covalent.
+- **Ř_Ť** (R_‡) = **CATALYTIC / DYNAMIC** — transition-state stabilization, autocatalysis, reversible covalent.
 - **R_mechanical** = mechanical bond (rotaxane, catenane thread).
 You **MUST NOT** assign R_subset (covalent) for hydrogen bonding or coordination chemistry.
-You **MUST NOT** assign R_dagger merely because a system is "dynamic", "geometric", or "specific".
+You **MUST NOT** assign Ř_Ť merely because a system is "dynamic", "geometric", or "specific".
 </axioms>
 
 <instructions>
 Assign each primitive using these valid values:
-- D (Dimensionality): D_wedge (molecular only), D_triangle (supramolecular only), D_infinity (temporal only),
-  D_wedge_triangle (molecular+supramolecular hybrid), D_triangle_infinity (supramolecular+temporal hybrid),
-  D_wedge_infinity (molecular+temporal hybrid), D_wedge_triangle_infinity (all three scales)
-- T (Topology): T_bowtie (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), T_network (T_∈), T_network_hex (T_∈(hex)), T_network_mixed (T_∈(mixed)), T_network_interp (T_∈(×2)), T_network_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
-- R (Recognition): R_subset (COVALENT bond formation only), R_superset (NON-COVALENT: H-bonds/coordination/host-guest), R_dagger (catalytic), R_mechanical
-- P (Polarity): P_plus, P_minus, P_pm_sym, P_pm_pseudo, P_directional
-- F (Fidelity): F_hbar, F_eth, F_ell
-- K (Kinetics): K_fast, K_mod, K_slow, K_trap
-- G (Granularity): G_beth, G_gimel, G_aleph
-- Γ (Grammar): Gamma_and(SPECIFIC|SELECTIVE|BROAD), Gamma_or(...), Gamma_seq(...)
-- Φ (Criticality): Phi_sub, Phi_c, Phi_super (default: Phi_sub)
+- D (Dimensionality): Ð_ß (molecular only), Ð_C (supramolecular only), D_infinity (temporal only),
+  Ð_ß_triangle (molecular+supramolecular hybrid), Ð_C_infinity (supramolecular+temporal hybrid),
+  Ð_ß_infinity (molecular+temporal hybrid), Ð_ß_triangle_infinity (all three scales)
+- T (Topology): Þ_ò (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), Þ_6 (T_∈), Þ_6_hex (T_∈(hex)), Þ_6_mixed (T_∈(mixed)), Þ_6_interp (T_∈(×2)), Þ_6_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
+- R (Recognition): R_subset (COVALENT bond formation only), Ř_¯set (NON-COVALENT: H-bonds/coordination/host-guest), Ř_Ť (catalytic), R_mechanical
+- P (Polarity): P_plus, P_minus, Φ_}}, Φ_F_pseudo, P_directional
+- F (Fidelity): ƒ_ż, ƒ_ð, ƒ_ì
+- K (Kinetics): Ç_-, Ç_W, Ç_@, Ç_Ù
+- G (Granularity): Γ_β, Γ_γ, Γ_ʔ
+- Γ (Grammar): ɢ_^(SPECIFIC|SELECTIVE|BROAD), ɢ_˝(...), ɢ_ˌ(...)
+- Φ (Criticality): φ̂_ž, φ̂_ÿ, φ̂_Ţ (default: φ̂_ž)
 - S (Stoichiometry): "1:1" for homodimeric/symmetric, "n:m" for asymmetric, null if indeterminate
 
 For **EACH** axiom, explicitly state whether it applies and how it is satisfied.
@@ -439,18 +439,18 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 clean_name = f"synthon_{_desc_slug(description)}"
         return Synthon(
             name=clean_name,
-            dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "D_wedge")),
-            topology=Topology.from_symbol(data.get("topology", "T_linear")),
-            recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "R_superset")),
-            polarity=Polarity.from_symbol(data.get("polarity", "P_pm_pseudo")),
-            fidelity=Fidelity.from_symbol(data.get("fidelity", "F_eth")),
-            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "K_mod")),
-            granularity=Granularity.from_symbol(data.get("granularity", "G_beth")),
-            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "Gamma_and(SELECTIVE)")),
-            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "Phi_sub"),
-            protection=Protection.from_symbol(data.get("protection") or "Omega_0"),
+            dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "Ð_ß")),
+            topology=Topology.from_symbol(data.get("topology", "Þ_linear")),
+            recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "Ř_superset")),
+            polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
+            fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
+            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç_W")),
+            granularity=Granularity.from_symbol(data.get("granularity", "Γ_β")),
+            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ_^(SELECTIVE)")),
+            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "φ̂_ž"),
+            protection=Protection.from_symbol(data.get("protection") or "Ω_Å"),
             stoichiometry=Stoichiometry.from_symbol(data.get("stoichiometry") or "n:m"),
-            chirality=Chirality.from_symbol(data.get("chirality") or "H0"),
+            chirality=Chirality.from_symbol(data.get("chirality") or "Ħ_Ñ"),
             description=description,
             metadata={"auto_generated": True, "method": "axiom_guided_llm"}
         )
@@ -491,12 +491,12 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 synthon_data, reasoning, confidence = self._parse_llm_response(raw_response)
 
                 # Honor explicit criticality phase in description.
-                # If the description explicitly names Phi_c, override the LLM's
-                # conservative default of Phi_sub so the axiom validator can test it.
+                # If the description explicitly names φ̂_ÿ, override the LLM's
+                # conservative default of φ̂_ž so the axiom validator can test it.
                 import re as _re
                 _phi_match = _re.search(r'\bPhi_(c|sub|super)\b', description)
-                if _phi_match and _phi_match.group(0) == "Phi_c":
-                    synthon_data["criticality_phase"] = "Phi_c"
+                if _phi_match and _phi_match.group(0) == "φ̂_ÿ":
+                    synthon_data["criticality_phase"] = "φ̂_ÿ"
 
                 # Create synthon
                 synthon = self._create_synthon_from_data(synthon_data, description, explicit_name=name)

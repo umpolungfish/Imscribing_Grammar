@@ -2,22 +2,22 @@
 Category Theory Navigator - Imscribing Grammar
 
 Domain: Category theory, topos theory, abstract mathematics
-Structural type: <D_odot; T_odot; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_Z>
+Structural type: <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: 3-category message-passing network with arrow-centric typing.
-  - D_odot: Imscriptive encoding of entire category
-  - T_odot: Imscriptive topology (object→arrow→2-arrow→...)
-  - R_cat: Categorical relations (functoriality, natural transformations)
-  - P_pm_sym: Frobenius interface with uncertainty
-  - F_hbar: Quantum-faithful (preserves categorical structure exactly)
-  - K_slow: Slow evolution through morphism space
-  - G_aleph: Maximal scope (arbitrary categories)
-  - Gamma_seq: Sequential grammar (composition is sequential)
-  - Phi_c: Self-modeling criticality (category of categories)
-  - H2: Two-step temporal depth (composing with composition)
-  - n_m: Many heterogeneous objects/morphisms
-  - Omega_Z: Integer topological winding (looping through levels)
+  - Ð_ω: Imscriptive encoding of entire category
+  - Þ_O: Imscriptive topology (object→arrow→2-arrow→...)
+  - Ř_ý: Categorical relations (functoriality, natural transformations)
+  - Φ_}: Frobenius interface with uncertainty
+  - ƒ_ż: Quantum-faithful (preserves categorical structure exactly)
+  - Ç_@: Slow evolution through morphism space
+  - Γ_ʔ: Maximal scope (arbitrary categories)
+  - ɢ_ˌ: Sequential grammar (composition is sequential)
+  - φ̂_ÿ: Self-modeling criticality (category of categories)
+  - Ħ_A: Two-step temporal depth (composing with composition)
+  - Σ_ï: Many heterogeneous objects/morphisms
+  - Ω_z: Integer topological winding (looping through levels)
 
 Purpose: Navigate categorical structures, compute limits/colimits,
   detect adjunctions, verify topos axioms, find analogies across domains.
@@ -38,7 +38,7 @@ class NavigatorConfig:
         "Computes limits, colimits, adjunctions, and detects categorical equivalences."
     )
     domain: str = "Category theory, topos theory, homotopy type theory"
-    tuple: str = "D_odot; T_odot; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_Z"
+    tuple: str = "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z"
     tier: str = "O_inf"
     architecture: str = (
         "3-category GNN with arrow-centric typing - object nodes communicate via morphism "
@@ -47,18 +47,18 @@ class NavigatorConfig:
     )
     
     # Primitive specifications
-    D: str = "D_odot"  # Imscriptive
-    T: str = "T_odot"  # Imscriptive topology
-    R: str = "R_cat"   # Categorical relations
-    P: str = "P_pm_sym"  # Frobenius interface
-    F: str = "F_hbar"  # Quantum-faithful
-    K: str = "K_slow"  # Slow kinetics
-    G: str = "G_aleph"  # Maximal scope
-    Gamma: str = "G_seq"  # Sequential composition
-    Phi: str = "Phi_c"  # Critical self-modeling
-    H: str = "H2"  # Two-step temporal depth
-    S: str = "n_m"  # Many heterogeneous
-    Omega: str = "Omega_Z"  # Integer winding
+    D: str = "Ð_ω"  # Imscriptive
+    T: str = "Þ_O"  # Imscriptive topology
+    R: str = "Ř_ý"   # Categorical relations
+    P: str = "Φ_}"  # Frobenius interface
+    F: str = "ƒ_ż"  # Quantum-faithful
+    K: str = "Ç_@"  # Slow kinetics
+    G: str = "Γ_ʔ"  # Maximal scope
+    Gamma: str = "ɢ_ˌ"  # Sequential composition
+    Phi: str = "φ̂_ÿ"  # Critical self-modeling
+    H: str = "Ħ_A"  # Two-step temporal depth
+    S: str = "Σ_ï"  # Many heterogeneous
+    Omega: str = "Ω_z"  # Integer winding
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -68,18 +68,18 @@ class NavigatorConfig:
             "tuple": self.tuple,
             "tier": self.tier,
             "architecture": self.architecture,
-            "D": self.D,
-            "T": self.T,
-            "R": self.R,
-            "P": self.P,
-            "F": self.F,
-            "K": self.K,
-            "G": self.G,
-            "Gamma": self.Gamma,
-            "Phi": self.Phi,
-            "H": self.H,
-            "S": self.S,
-            "Omega": self.Omega
+            "Ð": self.D,
+            "Þ": self.T,
+            "Ř": self.R,
+            "Φ": self.P,
+            "ƒ": self.F,
+            "Ç": self.K,
+            "Γ": self.G,
+            "ɢ": self.Gamma,
+            "φ̂": self.Phi,
+            "Ħ": self.H,
+            "Σ": self.S,
+            "Ω": self.Omega
         }
     
     def hash(self) -> str:
@@ -348,8 +348,8 @@ def cmd_adjunction(category, limit):
         print(f"  Known: set, grp, top, abgrp, vect, fin_set, cat")
     print()
     print("─"*60)
-    print("Grammar: R_cat encodes categorical relations (functors, adjunctions)")
-    print("         T_odot: local↔global (unit–counit triangle identities)")
+    print("Grammar: Ř_ý encodes categorical relations (functors, adjunctions)")
+    print("         Þ_O: local↔global (unit–counit triangle identities)")
 
 
 def cmd_limit(category, diagram_type, shape):
@@ -372,8 +372,8 @@ def cmd_limit(category, diagram_type, shape):
         print(f"  Known diagram types: terminal, product, pullback, equalizer")
     print()
     print("─"*60)
-    print("Grammar: K_slow encodes slow traversal through the limit cone")
-    print("         Gamma_seq: cone maps compose sequentially")
+    print("Grammar: Ç_@ encodes slow traversal through the limit cone")
+    print("         ɢ_ˌ: cone maps compose sequentially")
 
 
 def cmd_colimit(category, diagram_type, shape):
@@ -397,7 +397,7 @@ def cmd_colimit(category, diagram_type, shape):
         print(f"  Known diagram types: initial, coproduct, pushout, coequalizer")
     print()
     print("─"*60)
-    print("Grammar: R_dagger: colimit ⊣ diagonal (adjoint to the limit)")
+    print("Grammar: Ř_Ť: colimit ⊣ diagonal (adjoint to the limit)")
 
 
 def main():

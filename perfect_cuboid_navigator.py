@@ -5,9 +5,9 @@ def get_structural_state():
     return {
         "name": "perfect_cuboid_phi_c_lifted",
         "tuple": {
-            "D": "D_odot", "T": "T_odot", "R": "R_lr", "P": "P_pm_sym",
-            "F": "F_hbar", "K": "K_slow", "G": "G_aleph", "Gamma": "G_seq",
-            "Phi": "Phi_c", "H": "H2", "S": "n_m", "Omega": "Omega_Z"
+            "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_=", "Φ": "Φ_}",
+            "ƒ": "ƒ_ż", "Ç": "Ç_@", "Γ": "Γ_ʔ", "ɢ": "ɢ_ˌ",
+            "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A", "Σ": "Σ_ï", "Ω": "Ω_z"
         },
         "ouroboricity": "O_inf",
         "verified_promotions": 11,

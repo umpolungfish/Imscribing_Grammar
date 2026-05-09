@@ -1,12 +1,12 @@
 """
-Omega_Z2 Lensing Signature Test.
+Ω_2 Lensing Signature Test.
 
-Tests for topological-protection (Omega_Z2) modifications to the weak
-lensing shear field. Standard lensing (Omega_0) predicts:
+Tests for topological-protection (Ω_2) modifications to the weak
+lensing shear field. Standard lensing (Ω_Å) predicts:
   - Curl-free shear (E-mode only, B-mode = 0 from systematics)
   - Parity-symmetric B-modes
 
-Omega_Z2 modification predicts:
+Ω_2 modification predicts:
   - Non-zero intrinsic B-mode power at specific scales
   - Parity-odd B-mode component (changes sign under 45° rotation)
   - Cross-correlation with DM density maps at theta < 5 arcmin
@@ -46,7 +46,7 @@ def simulate_shear_catalog(n_galaxies: int = 50000,
     """
     Simulate a weak lensing shear catalog for testing.
 
-    omega_z2_signal: amplitude of injected Omega_Z2 B-mode signal (0 = null).
+    omega_z2_signal: amplitude of injected Ω_2 B-mode signal (0 = null).
     Returns dict with ra, dec, e1, e2, weight arrays.
     """
     rng = np.random.default_rng(seed)
@@ -69,7 +69,7 @@ def simulate_shear_catalog(n_galaxies: int = 50000,
     e1_signal = kappa * np.cos(2 * np.arctan2(dec - field_dec, ra - field_ra))
     e2_signal = kappa * np.sin(2 * np.arctan2(dec - field_dec, ra - field_ra))
 
-    # Omega_Z2 B-mode injection: curl component with Z2 parity
+    # Ω_2 B-mode injection: curl component with Z2 parity
     if omega_z2_signal > 0:
         b_amp = omega_z2_signal
         # B-mode: 90-degree rotated shear pattern (parity-odd)
@@ -104,7 +104,7 @@ def compute_eb_aperture(cat: dict, theta_min: float = 0.5,
 
     The aperture mass M_ap is an E-mode estimator; M_perp is a B-mode estimator.
     B-modes from noise: zero mean, variance ~ sigma_e^2 / n_eff.
-    B-modes from Omega_Z2: correlated pattern, non-zero parity asymmetry.
+    B-modes from Ω_2: correlated pattern, non-zero parity asymmetry.
 
     Returns variance of E and B aperture masses as function of scale theta.
     """
@@ -157,18 +157,18 @@ def compute_eb_aperture(cat: dict, theta_min: float = 0.5,
 
 def parity_test(cat: dict) -> dict:
     """
-    Parity asymmetry test for Omega_Z2 signature.
+    Parity asymmetry test for Ω_2 signature.
 
     Under a 45° rotation, spin-2 shear transforms as e1 → -e2, e2 → e1.
-    For a true Omega_Z2 B-mode: B_rot ≈ -B_orig  (anti-correlated).
+    For a true Ω_2 B-mode: B_rot ≈ -B_orig  (anti-correlated).
     For noise/systematics: B_orig and B_rot are uncorrelated.
 
     Test statistic: Pearson r(B_orig, -B_rot).
-      Omega_Z2 → r close to +1.
+      Ω_2 → r close to +1.
       Noise    → r ~ 0.
 
     Uses scipy t-test on B_sum = B_orig + B_rot:
-      Omega_Z2 → B_sum ≈ 0, t-test p >> 0.05 (consistent with zero).
+      Ω_2 → B_sum ≈ 0, t-test p >> 0.05 (consistent with zero).
       Noise    → B_sum ~ N(0, sqrt(2)*sigma_B), t-test also consistent with zero,
                  but anti_corr is near 0 rather than near +1.
     """
@@ -189,7 +189,7 @@ def parity_test(cat: dict) -> dict:
     B_orig = B_orig[:n]
     B_rot  = B_rot[:n]
 
-    # Anti-correlation: r(B_orig, -B_rot) — target +1 for Omega_Z2
+    # Anti-correlation: r(B_orig, -B_rot) — target +1 for Ω_2
     if np.std(B_orig) < 1e-15 or np.std(B_rot) < 1e-15:
         anti_corr = 0.0
     else:
@@ -199,7 +199,7 @@ def parity_test(cat: dict) -> dict:
     B_sum = B_orig + B_rot
     t_stat, p_value = stats.ttest_1samp(B_sum, 0.0)
 
-    # Omega_Z2 candidate: strong anti-correlation + B_sum consistent with 0
+    # Ω_2 candidate: strong anti-correlation + B_sum consistent with 0
     omega_z2_candidate = bool(anti_corr > 0.5 and p_value > 0.05)
 
     return {
@@ -215,13 +215,13 @@ def run_lensing_test(near_pulsars: bool = True,
                      inject_signal: float = 0.0,
                      outfile: str = "omega_z2_results.json") -> dict:
     """
-    Run the Omega_Z2 lensing test.
+    Run the Ω_2 lensing test.
     near_pulsars: test fields centered on P-74 neutron star positions.
-    inject_signal: inject synthetic Omega_Z2 signal for validation (0 = real test).
+    inject_signal: inject synthetic Ω_2 signal for validation (0 = real test).
     """
-    print("=== Omega_Z2 Lensing Test ===")
+    print("=== Ω_2 Lensing Test ===")
     if inject_signal > 0:
-        print(f"  [VALIDATION MODE] Injecting Omega_Z2 signal = {inject_signal}")
+        print(f"  [VALIDATION MODE] Injecting Ω_2 signal = {inject_signal}")
 
     field_results = []
 
@@ -253,7 +253,7 @@ def run_lensing_test(near_pulsars: bool = True,
         # Parity anti-correlation is secondary diagnostic (requires real catalog)
         candidate = bool(max_b_snr > 2.5 and b_e_ratio > 0.15)
 
-        flag = "*** Omega_Z2 CANDIDATE ***" if candidate else ""
+        flag = "*** Ω_2 CANDIDATE ***" if candidate else ""
         print(f"    max B-SNR={max_b_snr:.2f}  E-SNR={max_e_snr:.2f}  "
               f"B/E={b_e_ratio:.3f}  anti_corr={parity['anti_correlation']:.3f}  "
               f"p_Bsum={parity['p_value']:.3f}  {flag}")
@@ -272,7 +272,7 @@ def run_lensing_test(near_pulsars: bool = True,
         })
 
     n_candidates = sum(1 for r in field_results if r["omega_z2_candidate"])
-    print(f"\n  Omega_Z2 candidates: {n_candidates}/{len(field_results)}")
+    print(f"\n  Ω_2 candidates: {n_candidates}/{len(field_results)}")
 
     output = {
         "mode": "validation" if inject_signal > 0 else "real",
@@ -293,7 +293,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--inject", type=float, default=0.0,
-                        help="Inject synthetic Omega_Z2 signal (e.g. 0.01)")
+                        help="Inject synthetic Ω_2 signal (e.g. 0.01)")
     args = parser.parse_args()
 
     # First run validation to confirm detection works

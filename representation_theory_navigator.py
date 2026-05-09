@@ -2,22 +2,22 @@
 Representation Theory Navigator - Imscribing Grammar
 
 Domain: Representation theory, Lie theory, character theory, geometric representation theory
-Structural type: <D_odot; T_boxtimes; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_Z>
+Structural type: <Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: Character table GNN with categorical representation tracking.
-  - D_odot: Imscriptive encoding of all groups, algebras, their representations
-  - T_boxtimes: Box topology (representation category ⊗ group ⊗ field)
-  - R_cat: Categorical relations (functoriality: induction ↔ restriction, tensor product)
-  - P_pm_sym: Frobenius with uncertainty in positive characteristic, modular representations
-  - F_hbar: Preserves character orthogonality, Schur orthogonality, tensor category axioms
-  - K_slow: Slow traversal through moduli of representations, Verma modules, highest weights
-  - G_aleph: Arbitrary groups (finite, Lie, algebraic), arbitrary fields
-  - Gamma_seq: Sequential (weight lattice, tensor product decomposition)
-  - Phi_c: Self-modeling (group algebra as its own representation category)
-  - H2: Two-step (representation tensor its dual, Clebsch-Gordan coefficients)
-  - n_m: Many heterogeneous objects (finite groups, Lie algebras, Hopf algebras, quantum groups)
-  - Omega_Z: Integer winding (dimension, weight lattice index, Dynkin index)
+  - Ð_ω: Imscriptive encoding of all groups, algebras, their representations
+  - Þ_¨: Box topology (representation category ⊗ group ⊗ field)
+  - Ř_ý: Categorical relations (functoriality: induction ↔ restriction, tensor product)
+  - Φ_}: Frobenius with uncertainty in positive characteristic, modular representations
+  - ƒ_ż: Preserves character orthogonality, Schur orthogonality, tensor category axioms
+  - Ç_@: Slow traversal through moduli of representations, Verma modules, highest weights
+  - Γ_ʔ: Arbitrary groups (finite, Lie, algebraic), arbitrary fields
+  - ɢ_ˌ: Sequential (weight lattice, tensor product decomposition)
+  - φ̂_ÿ: Self-modeling (group algebra as its own representation category)
+  - Ħ_A: Two-step (representation tensor its dual, Clebsch-Gordan coefficients)
+  - Σ_ï: Many heterogeneous objects (finite groups, Lie algebras, Hopf algebras, quantum groups)
+  - Ω_z: Integer winding (dimension, weight lattice index, Dynkin index)
 
 Purpose: Compute representations, characters, tensor decompositions, verify categoricity,
   match representations across different realizations, compute induction/restriction.
@@ -40,7 +40,7 @@ class RepTheoryConfig:
             "inductions/restrictions, matches representations across contexts."
         )
         self.domain = "Representation theory, Lie theory, character theory, geometric representation theory"
-        self.tuple = "D_odot; T_boxtimes; R_cat; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_Z"
+        self.tuple = "Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Character table GNN - representations communicate via character channels; "
@@ -48,18 +48,18 @@ class RepTheoryConfig:
             "via Frobenius reciprocity"
         )
         
-        self.D = "D_odot"
-        self.T = "T_boxtimes"
-        self.R = "R_cat"
-        self.P = "P_pm_sym"
-        self.F = "F_hbar"
-        self.K = "K_slow"
-        self.G = "G_aleph"
-        self.Gamma = "G_seq"
-        self.Phi = "Phi_c"
-        self.H = "H2"
-        self.S = "n_m"
-        self.Omega = "Omega_Z"
+        self.D = "Ð_ω"
+        self.T = "Þ_¨"
+        self.R = "Ř_ý"
+        self.P = "Φ_}"
+        self.F = "ƒ_ż"
+        self.K = "Ç_@"
+        self.G = "Γ_ʔ"
+        self.Gamma = "ɢ_ˌ"
+        self.Phi = "φ̂_ÿ"
+        self.H = "Ħ_A"
+        self.S = "Σ_ï"
+        self.Omega = "Ω_z"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -495,7 +495,7 @@ def cmd_character(group, rep, element):
 
     print()
     print("─"*55)
-    print("Grammar: F_hbar (Schur orthogonality preserved), Omega_Z (dim ∈ ℤ)")
+    print("Grammar: ƒ_ż (Schur orthogonality preserved), Ω_z (dim ∈ ℤ)")
 
 
 def cmd_tensor_decompose(group, rep_a, rep_b):
@@ -545,7 +545,7 @@ def cmd_tensor_decompose(group, rep_a, rep_b):
 
     print()
     print("─"*55)
-    print("Grammar: H2 (tensor ⊗ its dual), Omega_Z (weight lattice index ∈ ℤ)")
+    print("Grammar: Ħ_A (tensor ⊗ its dual), Ω_z (weight lattice index ∈ ℤ)")
 
 
 def main():

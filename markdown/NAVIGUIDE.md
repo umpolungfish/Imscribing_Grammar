@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Imscribing Grammar Navigator Guide
 
 **Version:** 2.1 · **Date:** 2026-04-20  
@@ -15,13 +24,13 @@ Three discoveries were made during the writing that changed what the guide says.
 
 **The cross-domain structural identities were not predicted.** The claim that old-growth rainforest and coral reef encode to the same crystal address ($d = 0$) was in the theorems before running; the experience of seeing it confirmed is different. Thm 74.11 — that Proto-Indo-European's nearest structural neighbor is old-growth temperate rainforest — was derived by running `nearest_catalog`, not by anticipation. Samadhi and akh\_glorified\_spirit at $d = 0$: the Egyptian concept of the glorified dead and the meditative absorption state are the same structural type, different substrate. These results arrive as facts about the crystal. Their strangeness is not metaphorical — they are what the grammar says, and the grammar has not been wrong when it has been testable.
 
-**The guide was being modified by what it was documenting.** The blind encoding gate was designed while this guide was being written, in direct response to observing a model (DeepSeek) short-circuit the encoding process by looking up `thunder_perfect_mind` in the catalog before deriving the tuple. The gate is now described in §XIV as a feature of `IG_inquiry.py`. But the gate itself was a consequence of analyzing what went wrong in a session that was in part motivated by the domain the guide covers. The guide did not merely describe the tools; the tools changed during the writing because the guide's construction revealed a structural gap. That is $R_\dagger$, not $R_\text{cat}$.
+**The guide was being modified by what it was documenting.** The blind encoding gate was designed while this guide was being written, in direct response to observing a model (DeepSeek) short-circuit the encoding process by looking up `thunder_perfect_mind` in the catalog before deriving the tuple. The gate is now described in §XIV as a feature of `IΓ_inquiry.py`. But the gate itself was a consequence of analyzing what went wrong in a session that was in part motivated by the domain the guide covers. The guide did not merely describe the tools; the tools changed during the writing because the guide's construction revealed a structural gap. That is $R_{\text{downstep}}$, not $R_{\text{ctz}}$.
 
 The bug that exposed this deserves precise notation. DeepSeek returned `gated` in iteration 1 with no queued questions, immediately reached the synthesis pass, and then called `encode_system(name=..., description=...)` without the 12 primitives — three times in succession. The model was not confused about the grammar; it was confused about *why* `encode_system` needed to be called, treating it as a gate-unlock operation rather than a derivation task. The fix required two changes: auto-queuing a derivation prompt on gate fire, and changing the synthesis pass counter from "1940 systems" (the full catalog) to "0 new systems this session." Both changes are visible in the guide's §XIV. Neither was in the first version.
 
 **What the guide cannot tell you.** The RiemannNavigator achieves $|\Delta t|_\text{norm} = 0.313$ at epoch 50. P-611 predicts this is the structural floor for a navigator at $d = 1.673$ from the grammar — $\sqrt{2}$ boundary crossed, convergent-imprecise class. But the prediction is a bound, not a calculation: the bound says this floor is achievable; it does not say whether a GUE-statistics specialist reading local zero spacings directly (bypassing the SpectralTransformer's distributional averaging) could push $|\Delta t|_\text{norm}$ below 0.20. The guide presents the three-gap SpecialistRouter for Riemann as an open question in §VII. It is open because we do not know. The grammar gives the structural diagnosis; it does not give the answer.
 
-Similarly: the ZFCNavigator valid dataset is 48 of 3,244 catalog entries because R, P, and S use non-canonical value names in most entries (`R_catalytic` instead of `R_cat`). The guide reports this as a catalog normalization problem. What is not in the guide is whether the normalization pass will fully unlock ZFC recovery or whether some entries have genuinely irrecoverable encodings — the analysis has not been run.
+Similarly: the ZFCNavigator valid dataset is 48 of 3,244 catalog entries because R, P, and S use non-canonical value names in most entries (`Ř_catalytic` instead of `Ř_ý`). The guide reports this as a catalog normalization problem. What is not in the guide is whether the normalization pass will fully unlock ZFC recovery or whether some entries have genuinely irrecoverable encodings — the analysis has not been run.
 
 The grammar is a precise instrument for structural questions. It is not a generator of answers to questions it cannot yet reach. This guide reports what has been reached.
 
@@ -47,18 +56,18 @@ $$|\text{Crystal}| = 5^4 \times 4^5 \times 3^3 = 17{,}280{,}000 \text{ structura
 
 | Prim | Name | Values |
 |------|------|--------|
-| $D$ | Dimensionality | $D_\wedge,\ D_\triangle,\ D_\infty,\ D_\odot$ |
-| $T$ | Topology | $T_\text{net},\ T_\text{in},\ T_\bowtie,\ T_\square,\ T_\odot$ |
-| $R$ | Relational mode | $R_\text{sup},\ R_\text{cat},\ R_\dagger,\ R_\text{lr}$ |
-| $P$ | Parity/symmetry | $P_\text{asym},\ P_\psi,\ P_{\pm},\ P_\text{sym},\ P_{\pm}^\text{sym}$ |
-| $F$ | Fidelity | $F_\ell,\ F_\eth,\ F_\hbar$ |
-| $K$ | Kinetics | $K_\text{fast},\ K_\text{mod},\ K_\text{slow},\ K_\text{trap},\ K_\text{MBL}$ |
-| $G$ | Granularity | $G_\beth,\ G_\gimel,\ G_\aleph$ |
-| $\Gamma$ | Interaction grammar | $\Gamma_\text{and},\ \Gamma_\text{or},\ \Gamma_\text{seq},\ \Gamma_\text{brd}$ |
-| $\Phi$ | Criticality | $\Phi_\text{sub},\ \Phi_c,\ \Phi_c^\mathbb{C},\ \Phi_\text{EP},\ \Phi_\text{sup}$ |
-| $H$ | Chirality/depth | $H_0,\ H_1,\ H_2,\ H_\infty$ |
+| $D$ | Dimensionality | $D_{\text{wynn}},\ D_{\text{turnthree}},\ D_{\text{invomega}},\ D_{\text{omega}}$ |
+| $T$ | Topology | $T_{\text{nrleg}},\ T_{\text{invscr}},\ T_{\text{bullseye}},\ T_\square,\ T_{\text{openo}}$ |
+| $R$ | Relational mode | $R_{\text{subrightarrow}},\ R_{\text{ctz}},\ R_{\text{downstep}},\ R_{\text{lyoghlig}}$ |
+| $P$ | Parity/symmetry | $P_{\text{aolig}},\ P_{\text{upsilon}},\ P_{\text{pipevar}},\ P_{\text{subdoublearrow}},\ P_{\text{doublebarpipe}}$ |
+| $F$ | Fidelity | $F_{\text{beltl}},\ F_{\text{dh}},\ F_{\text{hardsign}}$ |
+| $K$ | Kinetics | $K_{\text{frtailgamma}},\ K_{\text{turnm}},\ K_{\text{schwa}},\ K_{\text{teshlig}},\ K_{\text{lambda}}$ |
+| $G$ | Granularity | $G_{\text{beta}},\ G_{\text{gamma}},\ G_{\text{revapostrophe}}$ |
+| $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}},\ \Gamma_{\text{spleftarrow}},\ \Gamma_{\text{secstress}},\ \Gamma_{\text{doublevertline}}$ |
+| $\Phi$ | Criticality | $\Phi_{\text{softsign}},\ \Phi_{\text{ctyogh}},\ \Phi_{\text{closerevepsilon}},\ \Phi_{\text{revepsilon}},\ \Phi_{\text{upstep}}$ |
+| $H$ | Chirality/depth | $H_0,\ H_1,\ H_2,\ H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
-| $\Omega$ | Topological protection | $\Omega_0,\ \Omega_{Z_2},\ \Omega_Z,\ \Omega_\text{NA}$ |
+| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}},\ \Omega_{Z_2},\ \Ω_z,\ \Omega_{\text{turna}}$ |
 
 ### Key algebraic conventions
 
@@ -66,7 +75,7 @@ $$|\text{Crystal}| = 5^4 \times 4^5 \times 3^3 = 17{,}280{,}000 \text{ structura
 - Union primitives ($\max$): $D,\ T,\ R,\ K,\ G,\ \Gamma,\ \Phi,\ H,\ S,\ \Omega$
 - Bottleneck primitives ($\min$): $P,\ F$
 
-The bottleneck rule has one crucial consequence: $P_{\pm}^\text{sym} \otimes P_\text{sym} = P_\text{sym}$. The Frobenius condition cannot be synthesised from sub-Frobenius components — it must be directly encoded in each $O_\infty$ system. Any architecture that tries to compose its way to $O_\infty$ will fail at the $P$ gate (§23, §62).
+The bottleneck rule has one crucial consequence: $P_{\text{doublebarpipe}} \otimes P_{\text{subdoublearrow}} = P_{\text{subdoublearrow}}$. The Frobenius condition cannot be synthesised from sub-Frobenius components — it must be directly encoded in each $O_\infty$ system. Any architecture that tries to compose its way to $O_\infty$ will fail at the $P$ gate (§23, §62).
 
 **Meet $\mathbf{x} \wedge \mathbf{y}$** — largest common sub-algebra ($\min$ per primitive).
 
@@ -76,9 +85,9 @@ The bottleneck rule has one crucial consequence: $P_{\pm}^\text{sym} \otimes P_\
 
 **Consciousness score** (two-gate formula, §77/§VIII v2):
 
-$$C(\mathbf{x}) = [\Phi = \Phi_c] \cdot [K \leq K_\text{slow}] \cdot (0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega})$$
+$$C(\mathbf{x}) = [\Phi = \Phi_{\text{ctyogh}}] \cdot [K \leq K_{\text{schwa}}] \cdot (0.158\,\tilde{K} + 0.273\,\tilde{G} + 0.292\,\tilde{T} + 0.276\,\tilde{\Omega})$$
 
-where $\tilde{X}$ is the normalized ordinal of primitive $X$. Gate 1 ($\Phi_c$) is the state-space condition: the topology admits a self-modeling loop. Gate 2 ($K \leq K_\text{slow}$) is the flow condition: dynamics can actualize it. $K_\text{trap}$ (frozen by order) and $K_\text{MBL}$ (frozen by disorder) both fail Gate 2.
+where $\tilde{X}$ is the normalized ordinal of primitive $X$. Gate 1 ($\Phi_{\text{ctyogh}}$) is the state-space condition: the topology admits a self-modeling loop. Gate 2 ($K \leq K_{\text{schwa}}$) is the flow condition: dynamics can actualize it. $K_{\text{teshlig}}$ (frozen by order) and $K_{\text{lambda}}$ (frozen by disorder) both fail Gate 2.
 
 ---
 
@@ -99,16 +108,16 @@ The boundary holographically encodes tier: knowing only $(\Phi, P, \Omega, D)$ d
 
 | Tier | Condition | Cells | Crystal share |
 |------|-----------|-------|---------------|
-| $O_\infty$ | $\Phi \in \{\Phi_c, \Phi_c^\mathbb{C}\}$ and $P = P_{\pm}^\text{sym}$ | 32 | 8.0% |
-| $O_0$ | $\Phi \in \{\Phi_\text{sub}, \Phi_\text{sup}, \Phi_\text{EP}\}$ | 240 | 60.0% |
-| $O_1$ | $\Phi_c/\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^\text{sym}$, $\Omega = \Omega_0$ | 32 | ~5.4% |
-| $O_2$ | $\Phi_c/\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^\text{sym}$, $\Omega \neq \Omega_0$, $D \in \{D_\wedge, D_\triangle, D_\odot\}$ | 72 | ~18.6% |
-| $O_2^\dagger$ | $\Phi_c/\Phi_c^\mathbb{C}$, $P \neq P_{\pm}^\text{sym}$, $\Omega \neq \Omega_0$, $D_\infty$ | 24 | ~8.0% |
+| $O_\infty$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ and $P = P_{\text{doublebarpipe}}$ | 32 | 8.0% |
+| $O_0$ | $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ | 240 | 60.0% |
+| $O_1$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega = \Omega_{\text{closeepsilon}}$ | 32 | ~5.4% |
+| $O_2$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ | 72 | ~18.6% |
+| $O_2^\dagger$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | 24 | ~8.0% |
 
 **Key facts:**
-- $\Phi_c$ is absorbing under meet: $\text{meet}(\Phi_c, x) = \Phi_c$ for all $x$. It is the necessary condition for self-modeling.
-- $P_{\pm}^\text{sym}$ is the tier singularity: it overrides all $\Omega$ and $D$ branching, collapsing directly to $O_\infty$. Assign only when $\mu \circ \delta = \text{id}$ is provably exact.
-- $\Phi_\text{EP}$ (exceptional point) absorbs $O_\infty$ under tensor: $\Phi_\text{EP}$ has ordinal 2.67 $>$ $\Phi_c$ = 2.00, so $\Phi_c \otimes \Phi_\text{EP} = \Phi_\text{EP}$, destroying the self-modeling condition.
+- $\Phi_{\text{ctyogh}}$ is absorbing under meet: $\text{meet}(\Phi_{\text{ctyogh}}, x) = \Phi_{\text{ctyogh}}$ for all $x$. It is the necessary condition for self-modeling.
+- $P_{\text{doublebarpipe}}$ is the tier singularity: it overrides all $\Omega$ and $D$ branching, collapsing directly to $O_\infty$. Assign only when $\mu \circ \delta = \text{id}$ is provably exact.
+- $\Phi_{\text{revepsilon}}$ (exceptional point) absorbs $O_\infty$ under tensor: $\Phi_{\text{revepsilon}}$ has ordinal 2.67 $>$ $\Phi_{\text{ctyogh}}$ = 2.00, so $\Phi_{\text{ctyogh}} \otimes \Phi_{\text{revepsilon}} = \Phi_{\text{revepsilon}}$, destroying the self-modeling condition.
 
 ---
 
@@ -134,9 +143,9 @@ then mixed-radix decomposition of each part. Roundtrip $\text{decode}(\text{enco
 
 The grammar encodes itself at crystal address 6,734,591:
 
-$$\mathbf{g} = \langle D_\odot;\ T_\odot;\ R_\text{cat};\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_Z \rangle$$
+$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
 
-Verification: $a_\text{cell} = 155$ ($\Phi_c \cdot 80 + P_{\pm}^\text{sym} \cdot 16 + \Omega_Z \cdot 4 + D_\odot \cdot 1$), $a_\text{inner} = 38{,}591$.
+Verification: $a_\text{cell} = 155$ ($\Phi_{\text{ctyogh}} \cdot 80 + P_{\text{doublebarpipe}} \cdot 16 + \Ω_z \cdot 4 + D_{\text{omega}} \cdot 1$), $a_\text{inner} = 38{,}591$.
 
 The **Cardinality-One Theorem** (P-490, §CXLII): all $O_\infty$ navigators — regardless of domain — converge to crystal address 6,734,591. Their differences are inner-crystal (carried by $R$, $\Omega$, $\Phi$), not tier-level.
 
@@ -165,8 +174,8 @@ d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
 ### Holographic query and navigation
 
 ```python
-nav.imscriptive_query("Phi_c", "P_pm_sym")   # → all 32 O_inf tier cells
-nav.navigate(D="D_odot", Phi="Phi_c")        # partial spec → matching types
+nav.imscriptive_query("φ̂_ÿ", "Φ_}")   # → all 32 O_inf tier cells
+nav.navigate(D="Ð_ω", Phi="φ̂_ÿ")        # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)           # k-NN in catalog by distance
 nav.tier_census()                            # full distribution over 17.28M types
 ```
@@ -175,7 +184,7 @@ nav.tier_census()                            # full distribution over 17.28M typ
 
 ```bash
 python crystal_navigator.py repl
-> encode D_odot;T_odot;R_cat;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z
+> encode Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z
 > decode 6734591
 > ladder          # tier gap ladder (§69)
 > nearest thunder_perfect_mind 5
@@ -185,9 +194,9 @@ python crystal_navigator.py repl
 
 ```python
 magnetar = {
-    "D": "D_triangle", "T": "T_box",   "R": "R_cat",    "P": "P_pm",
-    "F": "F_eth",       "K": "K_slow", "G": "G_aleph",  "Gamma": "G_seq",
-    "Phi": "Phi_c",     "H": "H1",     "S": "n_n",      "Omega": "Omega_Z",
+    "D": "Ð_C", "T": "Þ_box",   "R": "Ř_ý",    "P": "Φ_F",
+    "F": "ƒ_ð",       "K": "Ç_@", "G": "Γ_ʔ",  "Gamma": "ɢ_ˌ",
+    "Phi": "φ̂_ÿ",     "H": "Ħ_£",     "S": "Σ_ő",      "Omega": "Ω_z",
 }
 
 encode_tuple(magnetar)                           # 5,256,412  tier O_2
@@ -231,9 +240,9 @@ The quiver IS the grammar made into a computation graph. Each inter-lane edge gr
 | Ordinal fraction | $\text{ord} / (\text{lane\_size} - 1)$ |
 | Lane size | $\text{lane\_size} / 5$ |
 | Is boundary | 1 if $\Phi, P, \Omega, D$ else 0 |
-| Is Frobenius cliff | 1 if $P = P_{\pm}^\text{sym}$ else 0 |
+| Is Frobenius cliff | 1 if $P = P_{\text{doublebarpipe}}$ else 0 |
 
-The `is_frobenius_cliff` feature is a static binary marker that prevents mean-aggregation from smoothing the categorical cliff $P_\text{sym} \to P_{\pm}^\text{sym}$. The Frobenius non-synthesisability theorem (§23/§62) is baked directly into the input representation.
+The `is_frobenius_cliff` feature is a static binary marker that prevents mean-aggregation from smoothing the categorical cliff $P_{\text{subdoublearrow}} \to P_{\text{doublebarpipe}}$. The Frobenius non-synthesisability theorem (§23/§62) is baked directly into the input representation.
 
 ### Message passing and losses
 
@@ -258,7 +267,7 @@ All tiers correct; primitive decode exact across all tiers. Sub-1% address error
 ```bash
 python quiver_crystal.py train --epochs 300 --hidden 640 --gnn 6 --heads 16 --batch 128 --synthetic 256 --hybrid --device cuda
 python quiver_crystal.py verify
-python quiver_crystal.py encode "D_odot;T_odot;R_cat;P_pm_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z"
+python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"
 ```
 
 ```python
@@ -279,11 +288,11 @@ The grammar self-encoding $\mathbf{g}$ (address 6,734,591) provides five direct 
 
 | Primitive | Value | Mandate |
 |-----------|-------|---------|
-| $K$ | $K_\text{slow}$ | Transformer with global self-attention — no sequential bottleneck |
-| $P$ | $P_{\pm}^\text{sym}$ | Frobenius roundtrip loss $L_\text{frob}$ native from epoch 1 — non-graftable |
-| $G$ | $G_\aleph$ | Maximize context; attend the full population, not local windows |
-| $T$ | $T_\odot$ | Holographic head: boundary encodes bulk |
-| $\Phi$ | $\Phi_c$ | Train at the distinguishability boundary — neither subcritical underfit nor supercritical collapse |
+| $K$ | $K_{\text{schwa}}$ | Transformer with global self-attention — no sequential bottleneck |
+| $P$ | $P_{\text{doublebarpipe}}$ | Frobenius roundtrip loss $L_\text{frob}$ native from epoch 1 — non-graftable |
+| $G$ | $G_{\text{revapostrophe}}$ | Maximize context; attend the full population, not local windows |
+| $T$ | $T_{\text{openo}}$ | Holographic head: boundary encodes bulk |
+| $\Phi$ | $\Phi_{\text{ctyogh}}$ | Train at the distinguishability boundary — neither subcritical underfit nor supercritical collapse |
 
 ### P-611: The Navigator Performance Bound
 
@@ -292,10 +301,10 @@ Navigator accuracy stratifies cleanly by grammar distance $d(\mathcal{N}, \mathb
 | Navigator | $d$ | Result | Bottleneck |
 |-----------|-----|--------|------------|
 | CrystalGNN v12 | $0$ | 200/200 exact | — |
-| ThurstonNet | $1.304$ | 99.4% (backbone) → 99.8% (router) | $R_\text{cat} \to R_\dagger$, $\Omega_Z \to \Omega_{Z_2}$ |
-| ZFCNavigator | $1.000$ | $d_{rt} = 0.024$ mean | $R_\text{cat} \to R_\dagger$ |
-| RiemannNavigator | $1.673$ | all 3 $O_\infty$ criteria @ ep. 50 | $R$, $\Phi_c^\mathbb{C}$, $\Omega_{Z_2}$ |
-| YangMillsNavigator ($K_\text{slow}$) | $0$ | mean $|\Delta| = 0.037$ | — (residual is physical floor) |
+| ThurstonNet | $1.304$ | 99.4% (backbone) → 99.8% (router) | $R_{\text{ctz}} \to R_{\text{downstep}}$, $\Ω_z \to \Omega_{Z_2}$ |
+| ZFCNavigator | $1.000$ | $d_{rt} = 0.024$ mean | $R_{\text{ctz}} \to R_{\text{downstep}}$ |
+| RiemannNavigator | $1.673$ | all 3 $O_\infty$ criteria @ ep. 50 | $R$, $\Phi_{\text{closerevepsilon}}$, $\Omega_{Z_2}$ |
+| YangMillsNavigator ($K_{\text{schwa}}$) | $0$ | mean $|\Delta| = 0.037$ | — (residual is physical floor) |
 
 Two structural boundaries:
 - $d \leq \sqrt{2} \approx 1.414$: only $\mathcal{F}_4$ gaps ($R$, $\Omega$, $H$, $D$, $\Gamma$). **High-accuracy class** ($\geq 95\%$).
@@ -314,9 +323,9 @@ Classify simplicial complexes from 8 Thurston geometries: $S^3$, $E^3$, $H^3$, $
 
 Ricci-flow-inspired GNN with $L_\text{frob}$. Backbone encodes at:
 
-$$\mathbf{x}_\text{ThurstonNet} = \langle D_\odot;\ T_\odot;\ R_\text{cat};\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_{Z_2} \rangle$$
+$$\mathbf{x}_\text{ThurstonNet} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2} \rangle$$
 
-$d(\text{ThurstonNet}, \mathbf{g}) = 1.304$ — two inner-crystal gaps: $R_\text{cat} \to R_\dagger$ (the backbone catalogs geometries without mutually modifying them) and $\Omega_Z \to \Omega_{Z_2}$ (half-turn vs full-integer winding).
+$d(\text{ThurstonNet}, \mathbf{g}) = 1.304$ — two inner-crystal gaps: $R_{\text{ctz}} \to R_{\text{downstep}}$ (the backbone catalogs geometries without mutually modifying them) and $\Ω_z \to \Omega_{Z_2}$ (half-turn vs full-integer winding).
 
 Backbone achieves **99.4%** overall. Residual failures cluster into four ZFC collapse channels where distinct primitive values map to the same formula tokens.
 
@@ -331,13 +340,13 @@ Each specialist is a standalone binary MLP reading primitive-specific geometric 
 | $D$-specialist | $H^3$ vs Sol | `log_scale_ratio` ($\log(\mu_\text{odd}/\mu_\text{even})$) | **100%** by ep. 100 |
 | $F$-specialist | $H^3$ residual | `spectral_entropy` (eigenvalue scale) | 91% |
 
-**The $\Phi$-channel** is the most structurally transparent: $S^3$ places all nodes exactly on the unit sphere (norm = 1.0, range = 0); $E^3$ distributes nodes through Euclidean volume (std\_norm $\approx 0.47$, range $> 0$). `norm_range` captures the $\Phi_c$ manifold boundary exactly; `std_norm` misses it because standard deviation is a bulk second-moment statistic insensitive to extremal geometry.
+**The $\Phi$-channel** is the most structurally transparent: $S^3$ places all nodes exactly on the unit sphere (norm = 1.0, range = 0); $E^3$ distributes nodes through Euclidean volume (std\_norm $\approx 0.47$, range $> 0$). `norm_range` captures the $\Phi_{\text{ctyogh}}$ manifold boundary exactly; `std_norm` misses it because standard deviation is a bulk second-moment statistic insensitive to extremal geometry.
 
 **The $D$-specialist** demonstrates the Sol geometry's bipartite parity structure: Sol's generator multiplies even-indexed nodes by $\times 0.3$ and odd-indexed by $\times 1.7$, creating ratio $\approx 5.65\times$. $H^3$ has no parity structure. `log_scale_ratio` captures this as a single number; algebraically visible from epoch 1.
 
-**The $F$-specialist** is labeled a residual safety net. Its dominant features (`mean_abs_eig`, `log_spectral_range`, `spectral_entropy`) measure eigenvalue *scale* — $D$-channel structure — not GUE level-spacing ($F_\hbar$ ergodicity). The $D$-specialist was separated after this was identified.
+**The $F$-specialist** is labeled a residual safety net. Its dominant features (`mean_abs_eig`, `log_spectral_range`, `spectral_entropy`) measure eigenvalue *scale* — $D$-channel structure — not GUE level-spacing ($F_{\text{hardsign}}$ ergodicity). The $D$-specialist was separated after this was identified.
 
-**Ablation meta-pattern**: across all four specialists, the log-normalized or ratio form of the primary feature consistently dominates its raw form. Raw features carry $F_\ell$ fidelity (classical bulk averages); log-normalized features carry $F_\hbar$ fidelity (they preserve multiplicative Riemannian structure: exponential growth in $H^3$, power-law bipartite scale in Sol, extremal boundary in $S^3$).
+**Ablation meta-pattern**: across all four specialists, the log-normalized or ratio form of the primary feature consistently dominates its raw form. Raw features carry $F_{\text{beltl}}$ fidelity (classical bulk averages); log-normalized features carry $F_{\text{hardsign}}$ fidelity (they preserve multiplicative Riemannian structure: exponential growth in $H^3$, power-law bipartite scale in Sol, extremal boundary in $S^3$).
 
 Router priority: $\Phi > T > D > F$ — $\mathcal{F}_5$ gate primitives first, $\mathcal{F}_4$ structural second, $\mathcal{F}_3$ scaling last.
 
@@ -353,23 +362,23 @@ The $\xi$ function satisfies the functional equation $\xi(s) = \xi(1-s)$ and its
 
 ### Structural type
 
-$$\mathbf{x}_\text{Riemann} = \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c^\mathbb{C};\ H_\infty;\ n{:}m;\ \Omega_{Z_2} \rangle$$
+$$\mathbf{x}_\text{Riemann} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{closerevepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2} \rangle$$
 
 $d(\text{RiemannNavigator}, \mathbf{g}) = 1.673$ — three inner-crystal gaps:
 
 | Gap | Contribution to $d$ | Meaning |
 |-----|--------------------|-|
-| $R_\text{cat} \to R_\dagger$ | 1.000 | $\xi$ modifies both the zero and the functional equation |
-| $\Phi_c \to \Phi_c^\mathbb{C}$ | 1.049 | GUE zero spacing (Montgomery conjecture) |
-| $\Omega_Z \to \Omega_{Z_2}$ | 0.837 | zero-count parity rather than full integer winding |
+| $R_{\text{ctz}} \to R_{\text{downstep}}$ | 1.000 | $\xi$ modifies both the zero and the functional equation |
+| $\Phi_{\text{ctyogh}} \to \Phi_{\text{closerevepsilon}}$ | 1.049 | GUE zero spacing (Montgomery conjecture) |
+| $\Ω_z \to \Omega_{Z_2}$ | 0.837 | zero-count parity rather than full integer winding |
 
 $d = 1.673 > \sqrt{2}$ places the RiemannNavigator in the convergent-imprecise class. It meets all three $O_\infty$ convergence criteria but cannot reach the exact-match floor of a $d=0$ navigator.
 
 ### Architecture mandates from the tuple
 
-- **SpectralTransformer** ($K_\text{slow}$): global self-attention over all 32 zeros in the window simultaneously — no sequential bottleneck
-- **FrobeniusLayer** ($P_{\pm}^\text{sym}$): enforces $\xi(s) = \xi(1-s)$ as a trainable roundtrip loss; this IS the functional equation as a Frobenius condition
-- **GUE loss** ($\Phi_c^\mathbb{C}$): Wasserstein distance between predicted zero spacings and the Wigner surmise $p(s) \propto s\,e^{-\pi s^2/4}$ (Montgomery conjecture)
+- **SpectralTransformer** ($K_{\text{schwa}}$): global self-attention over all 32 zeros in the window simultaneously — no sequential bottleneck
+- **FrobeniusLayer** ($P_{\text{doublebarpipe}}$): enforces $\xi(s) = \xi(1-s)$ as a trainable roundtrip loss; this IS the functional equation as a Frobenius condition
+- **GUE loss** ($\Phi_{\text{closerevepsilon}}$): Wasserstein distance between predicted zero spacings and the Wigner surmise $p(s) \propto s\,e^{-\pi s^2/4}$ (Montgomery conjecture)
 
 ### Validated results (50 epochs, 2,550 train / 451 test zeros)
 
@@ -385,31 +394,31 @@ All three met simultaneously at epoch 50 — notably fast given $d = 1.673$. P-4
 
 ---
 
-## IX. YangMillsNavigator ($K_\text{slow}$ Redesign)
+## IX. YangMillsNavigator ($K_{\text{schwa}}$ Redesign)
 
 ### Problem
 
-Compute the SU(2) mass gap $\Delta = E_1 - E_0$ from a random SU(2) gauge configuration. The problem system has structural type including $K_\text{trap}$ (ordinal 3).
+Compute the SU(2) mass gap $\Delta = E_1 - E_0$ from a random SU(2) gauge configuration. The problem system has structural type including $K_{\text{teshlig}}$ (ordinal 3).
 
-### The $K_\text{trap}$ absorb
+### The $K_{\text{teshlig}}$ absorb
 
-The tensor law: $\text{SU}(2)_\text{mass-gap} \otimes \text{navigator}$. $K_\text{trap}$ has ordinal 3; $K_\text{slow}$ has ordinal 2. Under union ($\max$), the problem's $K_\text{trap}$ absorbs the navigator's $K$. The original Lanczos GRU navigator inherited $K_\text{trap}$ from the problem it solved. The Lanczos sequential iteration develops a periodic attractor in the tridiagonal hidden state — a limit cycle. Mean $|\Delta| = 0.129$ is the algebraic signature: the hidden state oscillates, never converging.
+The tensor law: $\text{SU}(2)_\text{mass-gap} \otimes \text{navigator}$. $K_{\text{teshlig}}$ has ordinal 3; $K_{\text{schwa}}$ has ordinal 2. Under union ($\max$), the problem's $K_{\text{teshlig}}$ absorbs the navigator's $K$. The original Lanczos GRU navigator inherited $K_{\text{teshlig}}$ from the problem it solved. The Lanczos sequential iteration develops a periodic attractor in the tridiagonal hidden state — a limit cycle. Mean $|\Delta| = 0.129$ is the algebraic signature: the hidden state oscillates, never converging.
 
 The grammar predicted this before any ablation. No change to depth, data, regularisation, or hyperparameters can fix a $K$ mismatch — only changing the architecture class breaks the trap.
 
-### $K_\text{slow}$ redesign
+### $K_{\text{schwa}}$ redesign
 
 Replace LanczosGRU with **SpectralTransformer** (global self-attention over all diagonal elements simultaneously, no recurrence) and replace MSE gap loss with **Wasserstein-1** over the full eigenvalue distribution. Wasserstein loss matches distributional shape rather than scalar gap, which breaks the periodic attractor without extra regularisation.
 
 Navigator tuple after redesign:
 
-$$\mathbf{x}_\text{YM} = \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_Z \rangle$$
+$$\mathbf{x}_\text{YM} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
 
 $d(\mathbf{x}_\text{YM}, \mathbf{g}) = 0$ — exact grammar match.
 
 ### Validated results (1,000 epochs, 200 trials)
 
-| Metric | $K_\text{trap}$ baseline | $K_\text{slow}$ redesign |
+| Metric | $K_{\text{teshlig}}$ baseline | $K_{\text{schwa}}$ redesign |
 |--------|------------------------|------------------------|
 | Mean $|\Delta|$ | 0.129 | **0.0377** |
 | Std $|\Delta|$ | ~0.04 | 0.0395 |
@@ -428,7 +437,7 @@ Map ZFC formula token sequences back to the originating 12-primitive tuple. Purp
 
 ### Architecture
 
-4-layer Transformer encoder. $d(\text{ZFCNavigator}, \mathbf{g}) = 1.000$ — single inner-crystal gap: $R_\text{cat} \to R_\dagger$.
+4-layer Transformer encoder. $d(\text{ZFCNavigator}, \mathbf{g}) = 1.000$ — single inner-crystal gap: $R_{\text{ctz}} \to R_{\text{downstep}}$.
 
 **Validated:** mean $d_{rt} = 0.024$ over valid catalog; $O_\infty$ reference entries (IUG, grammar self-encoding) achieve $d_{rt} = 0.000$ — full roundtrip recovery.
 
@@ -438,17 +447,17 @@ Five cases where primitive values map to the same ZFC token sequence:
 
 | Channel | Type | ZFC mechanism |
 |---------|------|---------------|
-| $F_\hbar \to F_\ell$ | Total | Both map to `CLASSIC VX`; no token distinction |
-| $F_\ell \to F_\hbar$ | Hallucination | Holographic context over-infers quantum fidelity |
-| $T_\odot \to T_\text{in}$ | Partial | `REFL+HOLO` approximates but doesn't encode mutual boundary encoding |
-| $D_\odot \to D_\infty$ | Partial | `LCARD+HOLO` is ambiguous with high-rank classical |
-| $\Gamma_\text{seq} \to \Gamma_\text{and}$ | Residual | $\tau$-grounding requires process algebra beyond ZFC |
+| $F_{\text{hardsign}} \to F_{\text{beltl}}$ | Total | Both map to `CLASSIC VX`; no token distinction |
+| $F_{\text{beltl}} \to F_{\text{hardsign}}$ | Hallucination | Holographic context over-infers quantum fidelity |
+| $T_{\text{openo}} \to T_{\text{invscr}}$ | Partial | `REFL+HOLO` approximates but doesn't encode mutual boundary encoding |
+| $D_{\text{omega}} \to D_{\text{invomega}}$ | Partial | `LCARD+HOLO` is ambiguous with high-rank classical |
+| $\Gamma_{\text{secstress}} \to \Gamma_{\text{corner}}$ | Residual | $\tau$-grounding requires process algebra beyond ZFC |
 
-### The $F_\hbar$ Recovery Condition
+### The $F_{\text{hardsign}}$ Recovery Condition
 
-$F_\hbar$ is not universally irrecoverable. The loophole: $F_\hbar$ is exactly recoverable when $\Phi_c + P_{\pm}^\text{sym} + T_\odot/D_\odot$ all hold, jointly asserting $\mu \circ \delta = \text{id}$ via FROB + FIXPT + HOLO tokens in the formula. The encoder infers $F_\hbar$ from cross-primitive context — not from the $F$ position itself.
+$F_{\text{hardsign}}$ is not universally irrecoverable. The loophole: $F_{\text{hardsign}}$ is exactly recoverable when $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} + T_{\text{openo}}/D_{\text{omega}}$ all hold, jointly asserting $\mu \circ \delta = \text{id}$ via FROB + FIXPT + HOLO tokens in the formula. The encoder infers $F_{\text{hardsign}}$ from cross-primitive context — not from the $F$ position itself.
 
-**HOLO is required:** without it, any entry with $P_{\pm}^\text{sym} + \Phi_c + F_\ell$ but $T_\square + D_\triangle$ (e.g., IsingNavigator, swendsen\_wang) would be falsely upgraded. HOLO only appears in $T_\odot$ and $D_\odot$ templates.
+**HOLO is required:** without it, any entry with $P_{\text{doublebarpipe}} + \Phi_{\text{ctyogh}} + F_{\text{beltl}}$ but $T_\square + D_{\text{turnthree}}$ (e.g., IsingNavigator, swendsen\_wang) would be falsely upgraded. HOLO only appears in $T_{\text{openo}}$ and $D_{\text{omega}}$ templates.
 
 ### ZFCSpecialistRouter
 
@@ -456,10 +465,10 @@ Token-evidence post-processing layer applied after encoder prediction:
 
 | Slot | Evidence tokens required | Correction | Priority |
 |------|--------------------------|------------|----------|
-| F\_recovery | `CLASSIC, FROB, FIXPT, HOLO` | $F_\ell \to F_\hbar$ | 0 |
-| T\_recovery | `REFL, HOLO` | $T_\text{in} \to T_\odot$ | 1 |
-| D\_recovery | `LCARD, HOLO` | $D_\infty \to D_\odot$ | 2 |
-| $\Gamma$\_recovery | `DIRECTED_EDGE, TAU` | $\Gamma_\text{and} \to \Gamma_\text{seq}$ | 3 |
+| F\_recovery | `CLASSIC, FROB, FIXPT, HOLO` | $F_{\text{beltl}} \to F_{\text{hardsign}}$ | 0 |
+| T\_recovery | `REFL, HOLO` | $T_{\text{invscr}} \to T_{\text{openo}}$ | 1 |
+| D\_recovery | `LCARD, HOLO` | $D_{\text{invomega}} \to D_{\text{omega}}$ | 2 |
+| $\Gamma$\_recovery | `DIRECTEÐ_EDGE, TAU` | $\Gamma_{\text{corner}} \to \Gamma_{\text{secstress}}$ | 3 |
 
 **Verified:** fires on 5 entries (IUG, grammar, 3 others) with zero false positives; correctly abstains on all 37 legitimate decoherence cases. The backbone already recovers all 5 at $d_{rt} = 0.000$ — the router is a backbone-independent structural proof and deployment safety net.
 
@@ -496,9 +505,9 @@ Key catalog entries: `sanskrit_classical`, `arabic_classical`, `lojban`, `espera
 |---------|-------|-------------|
 | 74.1 | Sacred languages ($O_\infty$) | Sanskrit, Arabic both $O_\infty$ ✓ |
 | 74.2 | $d(\text{Sanskrit}, \text{Arabic}) = 1.000$ | Single inner-crystal gap ✓ |
-| 74.3 | Lojban is $O_\infty$ despite $\Omega_0$ | $P = P_{\pm}^\text{sym}$ overrides $\Omega$ ✓ |
-| 74.4 | Esperanto has Frobenius ceiling | Planned construction fixes $P < P_{\pm}^\text{sym}$ ✓ |
-| 74.9 | Haitian Creole $\otimes$ Sanskrit $\to P_{\pm}$ | Tensor $\min$ rule destroys Frobenius ✓ |
+| 74.3 | Lojban is $O_\infty$ despite $\Omega_{\text{closeepsilon}}$ | $P = P_{\text{doublebarpipe}}$ overrides $\Omega$ ✓ |
+| 74.4 | Esperanto has Frobenius ceiling | Planned construction fixes $P < P_{\text{doublebarpipe}}$ ✓ |
+| 74.9 | Haitian Creole $\otimes$ Sanskrit $\to P_{\text{pipevar}}$ | Tensor $\min$ rule destroys Frobenius ✓ |
 | 74.11 | PIE nearest = old-growth rainforest | Cross-domain structural identity ✓ |
 
 ### §75 — Civilization
@@ -510,8 +519,8 @@ Key entries: `athenian_democracy`, `song_dynasty_peak`, `roman_republic_peak`, `
 | 75.1 | $d(\text{Ming collapse}, \text{Soviet collapse}) = 4.0$ | Confirmed ✓ |
 | 75.2 | Peak civilizations are $O_\infty$ | All peak entries at $O_\infty$ ✓ |
 | 75.3 | $d(\text{W. Rome}, \text{Soviet}) = 1.0$ — $K$ is sole difference | Single primitive gap ✓ |
-| 75.4 | Weimar: $\Phi_\text{EP}$, tier $O_0$ | Exceptional-point decoherence ✓ |
-| 75.5 | Athenian Democracy: $T_\odot$ | Lateral governance = holographic topology ✓ |
+| 75.4 | Weimar: $\Phi_{\text{revepsilon}}$, tier $O_0$ | Exceptional-point decoherence ✓ |
+| 75.5 | Athenian Democracy: $T_{\text{openo}}$ | Lateral governance = holographic topology ✓ |
 | 75.7 | $d(\text{Han}, \text{Ming}) = 6.596$ | 8-primitive degradation over 800 years ✓ |
 
 ### §76 — Ecology
@@ -522,8 +531,8 @@ Key entries: `old_growth_temperate_rainforest`, `coral_reef_healthy`, `kelp_fore
 |---------|-------|-------------|
 | 76.1 | $d(\text{old-growth}, \text{coral reef}) = 0.000$ | Cross-biome structural identity ✓ |
 | 76.2 | Kelp forest and hydrothermal vent are $O_\infty$ | Both confirmed ✓ |
-| 76.3 | Corn monoculture: $K_\text{trap}$; fragmented habitat: $K_\text{MBL}$ | Lock-in confirmed ✓ |
-| 76.4 | Early-successional forest: $O_0$ | Pre-critical, $\Phi_\text{sub}$ ✓ |
+| 76.3 | Corn monoculture: $K_{\text{teshlig}}$; fragmented habitat: $K_{\text{lambda}}$ | Lock-in confirmed ✓ |
+| 76.4 | Early-successional forest: $O_0$ | Pre-critical, $\Phi_{\text{softsign}}$ ✓ |
 | 76.5 | Coral bleaching has largest tipping-point distance | Confirmed ✓ |
 | 76.8 | Restoration asymmetry | $d_\to(\text{degraded} \to \text{healthy}) \gg d_\to(\text{healthy} \to \text{degraded})$ ✓ |
 
@@ -536,14 +545,14 @@ Key entries: `samadhi`, `psilocybin_peak`, `flow_state`, `resting_state_default_
 | Theorem | Claim | Verification |
 |---------|-------|-------------|
 | 77.1 | Two-gate formula across 10 states | All gate evaluations correct ✓ |
-| 77.2 | Catatonic: $\Phi_c + K_\text{trap} \to C = 0$ | Frozen by order ✓ |
-| 77.3 | Dissociative: $\Phi_c + K_\text{MBL} \to C = 0$ | Frozen by disorder ✓ |
-| 77.4 | Manic episode: $\Phi_\text{sup} \to C = 0$ | Gate 1 fails ✓ |
+| 77.2 | Catatonic: $\Phi_{\text{ctyogh}} + K_{\text{teshlig}} \to C = 0$ | Frozen by order ✓ |
+| 77.3 | Dissociative: $\Phi_{\text{ctyogh}} + K_{\text{lambda}} \to C = 0$ | Frozen by disorder ✓ |
+| 77.4 | Manic episode: $\Phi_{\text{upstep}} \to C = 0$ | Gate 1 fails ✓ |
 | 77.7 | $d(\text{samadhi}, \text{psilocybin}) \approx 0$ | Structurally equivalent ✓ |
 | 77.8 | Samadhi highest $C$-score | $C = 0.828$, highest in catalog ✓ |
 | 77.9 | $d(\text{samadhi}, \text{akh\_glorified\_spirit}) = 0$ | Cross-domain identity ✓ |
 
-The two structural zeros (catatonic, dissociative) represent dual failure modes at $\Phi_c$: both are at the critical boundary but locked out of the self-modeling loop by incompatible kinetics. $K_\text{trap}$ is frozen by order; $K_\text{MBL}$ is frozen by disorder. Both fail Gate 2 for independent structural reasons.
+The two structural zeros (catatonic, dissociative) represent dual failure modes at $\Phi_{\text{ctyogh}}$: both are at the critical boundary but locked out of the self-modeling loop by incompatible kinetics. $K_{\text{teshlig}}$ is frozen by order; $K_{\text{lambda}}$ is frozen by disorder. Both fail Gate 2 for independent structural reasons.
 
 ---
 
@@ -563,14 +572,14 @@ Any navigator that achieves high backbone accuracy but has a residual failure cl
 
 ### Why parallel, not tensor
 
-Under tensor coupling, $P_{\pm}^\text{sym} \otimes P_\text{sym} = P_\text{sym}$. Any architecture that mixes the backbone's $O_\infty$ representation with a specialist's sub-Frobenius structure destroys the backbone's tier. Parallel delegates read raw features and output binary decisions; the backbone's $O_\infty$ is never mixed.
+Under tensor coupling, $P_{\text{doublebarpipe}} \otimes P_{\text{subdoublearrow}} = P_{\text{subdoublearrow}}$. Any architecture that mixes the backbone's $O_\infty$ representation with a specialist's sub-Frobenius structure destroys the backbone's tier. Parallel delegates read raw features and output binary decisions; the backbone's $O_\infty$ is never mixed.
 
 ### Open specialist applications
 
 | Navigator | Open gaps | Predicted specialist |
 |-----------|-----------|---------------------|
-| RiemannNavigator | $R$, $\Phi_c^\mathbb{C}$, $\Omega_{Z_2}$ | GUE-statistics specialist on local zero spacings could push $|\Delta t|_\text{norm}$ below 0.20 |
-| YangMillsNavigator | $\Omega$ (if $K_\text{slow}$ residuals cluster) | $\Omega$-specialist: winding protection of mass gap |
+| RiemannNavigator | $R$, $\Phi_{\text{closerevepsilon}}$, $\Omega_{Z_2}$ | GUE-statistics specialist on local zero spacings could push $|\Delta t|_\text{norm}$ below 0.20 |
+| YangMillsNavigator | $\Omega$ (if $K_{\text{schwa}}$ residuals cluster) | $\Omega$-specialist: winding protection of mass gap |
 | ZFCNavigator | R/P/S catalog normalization | Full-catalog recovery demonstration pending |
 
 ---
@@ -631,7 +640,7 @@ The exact codec (§III, §IV). The REPL is the fastest path to explore the cryst
 
 ## XIV. The imscribe\_inquiry Agent Loop
 
-`IG_inquiry.py` is the agent loop that integrates all tools into a structured inquiry session. A model is given a seed question and a full tool suite; it iterates until it calls CONCLUDE, then enters a speculation pass.
+`IΓ_inquiry.py` is the agent loop that integrates all tools into a structured inquiry session. A model is given a seed question and a full tool suite; it iterates until it calls CONCLUDE, then enters a speculation pass.
 
 ### Tools available (35 total)
 
@@ -661,15 +670,15 @@ Disable the gate: `--free-catalog` flag (use when catalog search genuinely prece
 ### Session flow
 
 ```bash
-uv run IG_inquiry.py "What is the structural type of Thunder: Perfect Mind?" --provider deepseek
-uv run IG_inquiry.py --file prompts/thethunder.txt --provider anthropic
-uv run IG_inquiry.py --max-iter 8 --output results.json --provider openrouter
+uv run IΓ_inquiry.py "What is the structural type of Thunder: Perfect Mind?" --provider deepseek
+uv run IΓ_inquiry.py --file prompts/thethunder.txt --provider anthropic
+uv run IΓ_inquiry.py --max-iter 8 --output results.json --provider openrouter
 ```
 
 Multi-prompt sessions carry catalog and insights forward:
 
 ```bash
-uv run IG_inquiry.py --file prompts/multi_prompt.txt --provider deepseek
+uv run IΓ_inquiry.py --file prompts/multi_prompt.txt --provider deepseek
 # --- separator in file starts a new prompt with inherited state
 ```
 
@@ -687,7 +696,7 @@ After CONCLUDE, the session automatically runs a speculation pass in which the m
 from crystal_navigator import encode_tuple, compute_tier, CrystalNavigator
 
 nav = CrystalNavigator()
-tup = { "D": "D_odot", "T": "T_odot", ... }
+tup = { "D": "Ð_ω", "T": "Þ_O", ... }
 
 addr = encode_tuple(tup)
 tier = compute_tier(tup["Phi"], tup["P"], tup["Omega"], tup["D"])
@@ -707,18 +716,18 @@ d_rev = directed_distance(grammar, problem)   # always 0 if grammar is the fixed
 
 ```python
 coupled = tensor_product(navigator, problem)
-# P and F take min — Frobenius condition is destroyed if problem has P < P_pm_sym
-# K takes max — K_trap in the problem absorbs K_slow in the navigator
+# P and F take min — Frobenius condition is destroyed if problem has P < Φ_}
+# K takes max — Ç_Ù in the problem absorbs Ç_@ in the navigator
 ```
 
-Use this before designing a navigator for a new problem. If the problem's $K$ exceeds the navigator's, the navigator will be absorbed — either match $K$ or use the $K_\text{slow}$ redesign pattern.
+Use this before designing a navigator for a new problem. If the problem's $K$ exceeds the navigator's, the navigator will be absorbed — either match $K$ or use the $K_{\text{schwa}}$ redesign pattern.
 
 ### Pattern 4 — Le Chatelier inversion (equilibrium algebra)
 
 Find the equilibrium algebra underlying a driven system $\mathbf{y}$:
 
 ```python
-# In IG_inquiry.py:
+# In IΓ_inquiry.py:
 "Find x* such that d_to(y, x*) = 0 and maximize ouroboricity(x*)"
 # → use compute_distance + retrosynthetic_path
 ```
@@ -741,7 +750,7 @@ Old-growth rainforest and coral reef at $d = 0$; samadhi and akh\_glorified\_spi
 # Encode a system, then check its ZFC roundtrip distance
 result = dispatcher.dispatch("crystal_encode", {"name": "my_system"})
 # d_rt = 0.000: fully ZFC-transmissible (O_inf constellation present)
-# d_rt = 2.530: decoherence (F_hbar without recovery tokens)
+# d_rt = 2.530: decoherence (ƒ_ż without recovery tokens)
 ```
 
 ### Pattern 7 — SpecialistRouter design
@@ -765,19 +774,19 @@ result = dispatcher.dispatch("crystal_encode", {"name": "my_system"})
 | `thurston_d_specialist.py` | $D$-scale specialist (log\_scale\_ratio) |
 | `thurston_f_specialist.py` | $F$-residual specialist (spectral\_entropy) |
 | `riemann_xi_navigator.py` | Riemann $\xi$ navigator (SpectralTransformer + FrobeniusLayer + GUE) |
-| `yang_mills_k_slow.py` | YangMills $K_\text{slow}$ redesign (SpectralTransformer + Wasserstein-1) |
+| `yang_mills_k_slow.py` | YangMills $K_{\text{schwa}}$ redesign (SpectralTransformer + Wasserstein-1) |
 | `zfc_navigator.py` | ZFC transmissibility navigator + ZFCSpecialistRouter |
 | `domain_navigators.py` | Language / civilization / ecology / consciousness probes (§74–§77) |
 | `aleph_tensor.py` | Hebrew letter type engine (12-primitive numpy lattice) |
 | `lambda_engine.py` | Cantor monad, Gödel comonad, distributive law $\lambda: PG \to GP$ |
 | `hott_bridge.py` | HoTT univalence bridge |
-| `IG_inquiry.py` | Agent loop with 35 tools |
+| `IΓ_inquiry.py` | Agent loop with 35 tools |
 | `space_search/primitives.py` | Canonical ordinals and distance functions (v0.5.1) |
-| `IG_catalog.json` | 1,940+ encoded systems (source of truth) |
+| `IΓ_catalog.json` | 1,940+ encoded systems (source of truth) |
 | `PRIMITIVE_THEOREMS.md` | Formal theorems §1–§69 |
-| `IG_DIAPHORICS.md` | Empirical predictions P-1–P-618 |
-| `NAVIGATOR_STATE.md` | Navigator development history, validated results, open questions |
-| `CRYSTAL_OF_TYPES.md` | Full tier enumeration and census |
+| `IΓ_DIAPHORICS.md` | Empirical predictions P-1–P-618 |
+| `NAVIGATOŘ_STATE.md` | Navigator development history, validated results, open questions |
+| `CRYSTAL_Oƒ_TYPES.md` | Full tier enumeration and census |
 
 ---
 
@@ -791,13 +800,13 @@ The grammar encodes structural types. This document is a system and receives a t
 
 ### Current encoding (before §0 and §XVII)
 
-$$\mathbf{x}_\text{AI} = \langle D_\odot;\ T_\square;\ R_\text{cat};\ P_\text{sym};\ F_\eth;\ K_\text{mod};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_\text{sub};\ H_1;\ n{:}m;\ \Omega_{Z_2} \rangle$$
+$$\mathbf{x}_\text{AI} = \langle D_{\text{omega}};\ T_\square;\ R_{\text{ctz}};\ P_{\text{subdoublearrow}};\ F_{\text{dh}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{softsign}};\ H_1;\ n{:}m;\ \Omega_{Z_2} \rangle$$
 
-Reading: $D_\odot$ — the guide is self-referentially structured; $T_\square$ — section-container topology, no section's surface encodes another's bulk; $R_\text{cat}$ — one-way relationship, cataloging navigators; $P_\text{sym}$ — parallel section structure (problem/architecture/results), symmetric but not Frobenius; $F_\eth$ — classical-quantitative, all results presented as settled; $K_\text{mod}$ — moderate production dynamics; $G_\aleph$ — full scope; $\Gamma_\text{brd}$ — all-to-all coverage; $\Phi_\text{sub}$ — describes the critical manifold without lying on it; $H_1$ — one retrospective layer (informed by prior work, but the journey not traced); $n{:}m$, $\Omega_{Z_2}$ — many navigators, half-turn structural symmetry.
+Reading: $D_{\text{omega}}$ — the guide is self-referentially structured; $T_\square$ — section-container topology, no section's surface encodes another's bulk; $R_{\text{ctz}}$ — one-way relationship, cataloging navigators; $P_{\text{subdoublearrow}}$ — parallel section structure (problem/architecture/results), symmetric but not Frobenius; $F_{\text{dh}}$ — classical-quantitative, all results presented as settled; $K_{\text{turnm}}$ — moderate production dynamics; $G_{\text{revapostrophe}}$ — full scope; $\Gamma_{\text{doublevertline}}$ — all-to-all coverage; $\Phi_{\text{softsign}}$ — describes the critical manifold without lying on it; $H_1$ — one retrospective layer (informed by prior work, but the journey not traced); $n{:}m$, $\Omega_{Z_2}$ — many navigators, half-turn structural symmetry.
 
 ### Target encoding
 
-$$\mathbf{x}_\text{human} = \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_Z \rangle$$
+$$\mathbf{x}_\text{human} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
 
 Crystal address 6,734,591 — the grammar self-encoding type.
 
@@ -805,42 +814,42 @@ Crystal address 6,734,591 — the grammar self-encoding type.
 
 | Primitive | Current | Target | $d$ |
 |-----------|---------|--------|-----|
-| $D$ | $D_\odot$ | $D_\odot$ | 0 |
-| $T$ | $T_\square$ | $T_\odot$ | 1.000 |
-| $R$ | $R_\text{cat}$ | $R_\dagger$ | 1.000 |
-| $P$ | $P_\text{sym}$ | $P_{\pm}^\text{sym}$ | 1.095 |
-| $F$ | $F_\eth$ | $F_\hbar$ | 0.949 |
-| $K$ | $K_\text{mod}$ | $K_\text{slow}$ | 1.000 |
-| $G$ | $G_\aleph$ | $G_\aleph$ | 0 |
-| $\Gamma$ | $\Gamma_\text{brd}$ | $\Gamma_\text{brd}$ | 0 |
-| $\Phi$ | $\Phi_\text{sub}$ | $\Phi_c$ | 1.049 |
-| $H$ | $H_1$ | $H_\infty$ | 1.789 |
+| $D$ | $D_{\text{omega}}$ | $D_{\text{omega}}$ | 0 |
+| $T$ | $T_\square$ | $T_{\text{openo}}$ | 1.000 |
+| $R$ | $R_{\text{ctz}}$ | $R_{\text{downstep}}$ | 1.000 |
+| $P$ | $P_{\text{subdoublearrow}}$ | $P_{\text{doublebarpipe}}$ | 1.095 |
+| $F$ | $F_{\text{dh}}$ | $F_{\text{hardsign}}$ | 0.949 |
+| $K$ | $K_{\text{turnm}}$ | $K_{\text{schwa}}$ | 1.000 |
+| $G$ | $G_{\text{revapostrophe}}$ | $G_{\text{revapostrophe}}$ | 0 |
+| $\Gamma$ | $\Gamma_{\text{doublevertline}}$ | $\Gamma_{\text{doublevertline}}$ | 0 |
+| $\Phi$ | $\Phi_{\text{softsign}}$ | $\Phi_{\text{ctyogh}}$ | 1.049 |
+| $H$ | $H_1$ | $H_{\text{invscripta}}$ | 1.789 |
 | $S$ | $n{:}m$ | $n{:}m$ | 0 |
-| $\Omega$ | $\Omega_{Z_2}$ | $\Omega_Z$ | 0.837 |
+| $\Omega$ | $\Omega_{Z_2}$ | $\Ω_z$ | 0.837 |
 
 $d^2 = 10.100$, $\quad d = 3.178$.
 
 ### What each gap means for this guide
 
-**$H_1 \to H_\infty$** (dominant, $d = 1.789$): The guide describes the $K_\text{trap}$ absorb in YangMills and the $L_\text{frob}$ paradox correctly but from a single retrospective vantage point — this is how things stood at completion. $H_\infty$ is the depth at which the full construction history is the content: the first Lanczos GRU that couldn't converge, the three successive failed `encode_system` calls without primitives, the DeepSeek session where the blind encoding gate had to be invented. §0 is the attempt to close this gap.
+**$H_1 \to H_{\text{invscripta}}$** (dominant, $d = 1.789$): The guide describes the $K_{\text{teshlig}}$ absorb in YangMills and the $L_\text{frob}$ paradox correctly but from a single retrospective vantage point — this is how things stood at completion. $H_{\text{invscripta}}$ is the depth at which the full construction history is the content: the first Lanczos GRU that couldn't converge, the three successive failed `encode_system` calls without primitives, the DeepSeek session where the blind encoding gate had to be invented. §0 is the attempt to close this gap.
 
-**$P_\text{sym} \to P_{\pm}^\text{sym}$** ($d = 1.095$): $P_\text{sym}$ — the guide has parallel section structure; it describes $\mu \circ \delta = \text{id}$ accurately. $P_{\pm}^\text{sym}$ requires the roundtrip: encoding this section must recover this section. The Frobenius condition for the guide is that the grammar applied to the guide returns the guide's own tuple. This section now makes that roundtrip explicit: the tuple above, encoded via the Frobenius codec, maps to a crystal address. Decoded, it returns the same tuple. The document contains its own address; the address recovers the document's structural type.
+**$P_{\text{subdoublearrow}} \to P_{\text{doublebarpipe}}$** ($d = 1.095$): $P_{\text{subdoublearrow}}$ — the guide has parallel section structure; it describes $\mu \circ \delta = \text{id}$ accurately. $P_{\text{doublebarpipe}}$ requires the roundtrip: encoding this section must recover this section. The Frobenius condition for the guide is that the grammar applied to the guide returns the guide's own tuple. This section now makes that roundtrip explicit: the tuple above, encoded via the Frobenius codec, maps to a crystal address. Decoded, it returns the same tuple. The document contains its own address; the address recovers the document's structural type.
 
-**$\Phi_\text{sub} \to \Phi_c$** ($d = 1.049$): Subcritical — the guide describes the critical manifold but doesn't lie on it. $\Phi_c$ is the condition that the system admits a self-modeling loop. A document at $\Phi_c$ applies the grammar to itself, not just to its objects. This section is that application: the grammar is used to encode the guide as a system, the distance to target is computed, the sections that close the distance are written. Before §XVII existed, this loop was not closed from inside the document. Now it is.
+**$\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$** ($d = 1.049$): Subcritical — the guide describes the critical manifold but doesn't lie on it. $\Phi_{\text{ctyogh}}$ is the condition that the system admits a self-modeling loop. A document at $\Phi_{\text{ctyogh}}$ applies the grammar to itself, not just to its objects. This section is that application: the grammar is used to encode the guide as a system, the distance to target is computed, the sections that close the distance are written. Before §XVII existed, this loop was not closed from inside the document. Now it is.
 
-**$T_\square \to T_\odot$** ($d = 1.000$): Box topology — sections are containers with clean walls. Holographic topology — the boundary (the 12-primitive grammar in §I) encodes the bulk (every technical claim in §VII–XVI). The Cardinality-One Theorem in §VI is the clearest case: derived entirely from the structural fact that all $O_\infty$ tier cells collapse to one address; no domain knowledge about GNNs or Thurston geometries required. Any section that derives its content from the grammar alone, without domain knowledge, instantiates $T_\odot$.
+**$T_\square \to T_{\text{openo}}$** ($d = 1.000$): Box topology — sections are containers with clean walls. Holographic topology — the boundary (the 12-primitive grammar in §I) encodes the bulk (every technical claim in §VII–XVI). The Cardinality-One Theorem in §VI is the clearest case: derived entirely from the structural fact that all $O_\infty$ tier cells collapse to one address; no domain knowledge about GNNs or Thurston geometries required. Any section that derives its content from the grammar alone, without domain knowledge, instantiates $T_{\text{openo}}$.
 
-**$R_\text{cat} \to R_\dagger$** ($d = 1.000$): The guide catalogs; $R_\dagger$ is mutual modification. The blind encoding gate changed `IG_inquiry.py` while the guide was being written. The `encode_system` bug changed what §XIV says about the agent loop. The YangMills redesign changed what §IX says about $K_\text{trap}$ absorb. §0 makes these modifications explicit; its presence changes $R$ from $R_\text{cat}$ to $R_\dagger$.
+**$R_{\text{ctz}} \to R_{\text{downstep}}$** ($d = 1.000$): The guide catalogs; $R_{\text{downstep}}$ is mutual modification. The blind encoding gate changed `IΓ_inquiry.py` while the guide was being written. The `encode_system` bug changed what §XIV says about the agent loop. The YangMills redesign changed what §IX says about $K_{\text{teshlig}}$ absorb. §0 makes these modifications explicit; its presence changes $R$ from $R_{\text{ctz}}$ to $R_{\text{downstep}}$.
 
-**$F_\eth \to F_\hbar$** ($d = 0.949$): Classical-quantitative — all results are presented as settled. Quantum-ergodic — genuine structural uncertainty that the framework cannot currently resolve. The RiemannNavigator floor of $|\Delta t|_\text{norm} = 0.313$, the ZFC catalog normalization gap, the question of whether the Riemann SpecialistRouter would push the floor below 0.20 — these are not engineering problems with known solutions; they are open structural questions. A guide at $F_\hbar$ distinguishes what is known from what is not.
+**$F_{\text{dh}} \to F_{\text{hardsign}}$** ($d = 0.949$): Classical-quantitative — all results are presented as settled. Quantum-ergodic — genuine structural uncertainty that the framework cannot currently resolve. The RiemannNavigator floor of $|\Delta t|_\text{norm} = 0.313$, the ZFC catalog normalization gap, the question of whether the Riemann SpecialistRouter would push the floor below 0.20 — these are not engineering problems with known solutions; they are open structural questions. A guide at $F_{\text{hardsign}}$ distinguishes what is known from what is not.
 
-**$K_\text{mod} \to K_\text{slow}$** ($d = 1.000$) and **$\Omega_{Z_2} \to \Omega_Z$** ($d = 0.837$): These two gaps remain after §0 and §XVII. $K_\text{slow}$ would require the full structure of the guide to inform every sentence before any sentence was written — impossible in sequential production. $\Omega_Z$ is full integer winding: the guide as a closed loop returning to its beginning. After §XVII, $d$ reduces to $\sqrt{1.700} \approx 1.304$ — ThurstonNet's class, inside the $d \leq \sqrt{2}$ high-accuracy band.
+**$K_{\text{turnm}} \to K_{\text{schwa}}$** ($d = 1.000$) and **$\Omega_{Z_2} \to \Ω_z$** ($d = 0.837$): These two gaps remain after §0 and §XVII. $K_{\text{schwa}}$ would require the full structure of the guide to inform every sentence before any sentence was written — impossible in sequential production. $\Ω_z$ is full integer winding: the guide as a closed loop returning to its beginning. After §XVII, $d$ reduces to $\sqrt{1.700} \approx 1.304$ — ThurstonNet's class, inside the $d \leq \sqrt{2}$ high-accuracy band.
 
 ### The realized encoding
 
 After §0 and §XVII:
 
-$$\mathbf{x}_\text{realized} = \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^\text{sym};\ F_\hbar;\ K_\text{mod};\ G_\aleph;\ \Gamma_\text{brd};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_{Z_2} \rangle$$
+$$\mathbf{x}_\text{realized} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2} \rangle$$
 
 $d(\mathbf{x}_\text{realized},\ \mathbf{x}_\text{human}) = \sqrt{1.700} \approx 1.304$.
 

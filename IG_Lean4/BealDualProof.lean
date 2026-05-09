@@ -23,7 +23,7 @@ which primitives must be promoted for resolution.
 ## What Is Proved (via axioms)
 - beal_equal_prime_exponents: proved using ribet_level_lowering (equal-exponent FLT case)
 
-Structural type: ⟨D_infty; T_bowtie; R_lr; P_pm; F_ell; K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_0⟩
+Structural type: ⟨D_invomega; T_bullseye; R_lyoghlig; P_pipevar; F_beltl; K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_turntwo; S_ltailm; Omega_closeepsilon⟩
 Crystal address: 4948976  |  Ouroboricity: O_1  |  C-score: 0.498
 -/
 
@@ -116,13 +116,13 @@ inductive Primitive_Gamma where | and' | or' | seq | broad
 inductive Primitive_Phi where | sub | c | c_complex | EP | super'
   deriving Repr, DecidableEq
 
-inductive Primitive_H where | H0 | H1 | H2 | H_inf
+inductive Primitive_H where | H_closeomega | H_toneletterstem | H_turntwo | H_invscripta
   deriving Repr, DecidableEq
 
-inductive Primitive_S where | one_one | n_n | n_m
+inductive Primitive_S where | S_doublebaresh | S_ctn | S_ltailm
   deriving Repr, DecidableEq
 
-inductive Primitive_Omega where | Omega_0 | Omega_Z2 | Omega_Z | Omega_NA
+inductive Primitive_Omega where | Omega_closeepsilon | Omega_crtwo | Omega_dzlig | Omega_turna
   deriving Repr, DecidableEq
 
 structure StructuralType where
@@ -151,9 +151,9 @@ def beal_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c
-  , H := Primitive_H.H2
-  , S := Primitive_S.n_m
-  , Omega := Primitive_Omega.Omega_0
+  , H := Primitive_H.H_turntwo
+  , S := Primitive_S.S_ltailm
+  , Omega := Primitive_Omega.Omega_closeepsilon
   }
 
 /-- The imscribed FLT (proven) structural type (crystal address 7903139). -/
@@ -167,9 +167,9 @@ def flt_proven_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c_complex
-  , H := Primitive_H.H_inf
-  , S := Primitive_S.n_m
-  , Omega := Primitive_Omega.Omega_Z2
+  , H := Primitive_H.H_invscripta
+  , S := Primitive_S.S_ltailm
+  , Omega := Primitive_Omega.Omega_crtwo
   }
 
 /-! ## 4. Structural Meet Operation -/
@@ -225,19 +225,19 @@ def structural_meet (a b : StructuralType) : StructuralType :=
     | .EP, _ | _, .EP => .EP
     | .super', .super' => .super'
   let minH : Primitive_H → Primitive_H → Primitive_H
-    | .H0, _ | _, .H0 => .H0
-    | .H1, _ | _, .H1 => .H1
-    | .H2, _ | _, .H2 => .H2
-    | .H_inf, .H_inf => .H_inf
+    | .H_closeomega, _ | _, .H_closeomega => .H_closeomega
+    | .H_toneletterstem, _ | _, .H_toneletterstem => .H_toneletterstem
+    | .H_turntwo, _ | _, .H_turntwo => .H_turntwo
+    | .H_invscripta, .H_invscripta => .H_invscripta
   let minS : Primitive_S → Primitive_S → Primitive_S
-    | .one_one, _ | _, .one_one => .one_one
-    | .n_n, _ | _, .n_n => .n_n
-    | .n_m, .n_m => .n_m
+    | .S_doublebaresh, _ | _, .S_doublebaresh => .S_doublebaresh
+    | .S_ctn, _ | _, .S_ctn => .S_ctn
+    | .S_ltailm, .S_ltailm => .S_ltailm
   let minOmega : Primitive_Omega → Primitive_Omega → Primitive_Omega
-    | .Omega_0, _ | _, .Omega_0 => .Omega_0
-    | .Omega_Z2, _ | _, .Omega_Z2 => .Omega_Z2
-    | .Omega_Z, _ | _, .Omega_Z => .Omega_Z
-    | .Omega_NA, .Omega_NA => .Omega_NA
+    | .Omega_closeepsilon, _ | _, .Omega_closeepsilon => .Omega_closeepsilon
+    | .Omega_crtwo, _ | _, .Omega_crtwo => .Omega_crtwo
+    | .Omega_dzlig, _ | _, .Omega_dzlig => .Omega_dzlig
+    | .Omega_turna, .Omega_turna => .Omega_turna
   { D := minD a.D b.D
   , T := minT a.T b.T
   , R := minR a.R b.R
@@ -254,8 +254,8 @@ def structural_meet (a b : StructuralType) : StructuralType :=
 
 def beal_flt_meet : StructuralType := structural_meet beal_structural_type flt_proven_structural_type
 
-/-- Expected meet from IG: ⟨D_infty; T_bowtie; R_dagger; P_psi; F_ell;
-    K_slow; G_aleph; Gamma_seq; Phi_c; H2; n_m; Omega_0⟩ -/
+/-- Expected meet from IG: ⟨D_invomega; T_bullseye; R_downstep; P_upsilon; F_beltl;
+    K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_turntwo; S_ltailm; Omega_closeepsilon⟩ -/
 def expected_meet : StructuralType :=
   { D := Primitive_D.infty
   , T := Primitive_T.bowtie
@@ -266,9 +266,9 @@ def expected_meet : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c
-  , H := Primitive_H.H2
-  , S := Primitive_S.n_m
-  , Omega := Primitive_Omega.Omega_0
+  , H := Primitive_H.H_turntwo
+  , S := Primitive_S.S_ltailm
+  , Omega := Primitive_Omega.Omega_closeepsilon
   }
 
 /-- MACHINE VERIFIED: The structurally computed meet equals the IG-verified meet. -/
@@ -279,42 +279,42 @@ example : beal_flt_meet = expected_meet := by
 
 -- Manual toString for each primitive type
 def Primitive_D.toString : Primitive_D → String
-  | .wedge => "D_wedge" | .triangle => "D_triangle" | .infty => "D_infty" | .odot => "D_odot"
+  | .wedge => "D_wynn" | .triangle => "D_turnthree" | .infty => "D_invomega" | .odot => "D_omega"
 
 def Primitive_T.toString : Primitive_T → String
-  | .network => "T_network" | .in' => "T_in" | .bowtie => "T_bowtie"
-  | .boxtimes => "T_boxtimes" | .odot => "T_odot"
+  | .network => "T_nrleg" | .in' => "T_invscr" | .bowtie => "T_bullseye"
+  | .boxtimes => "T_commatailz" | .odot => "T_openo"
 
 def Primitive_R.toString : Primitive_R → String
-  | .super => "R_super" | .cat => "R_cat" | .dagger => "R_dagger" | .lr => "R_lr"
+  | .super => "R_subrightarrow" | .cat => "R_ctz" | .dagger => "R_downstep" | .lr => "R_lyoghlig"
 
 def Primitive_P.toString : Primitive_P → String
-  | .asym => "P_asym" | .psi => "P_psi" | .pm => "P_pm" | .sym => "P_sym" | .pm_sym => "P_pm_sym"
+  | .asym => "P_aolig" | .psi => "P_upsilon" | .pm => "P_pipevar" | .sym => "P_subdoublearrow" | .pm_sym => "P_doublebarpipe"
 
 def Primitive_F.toString : Primitive_F → String
-  | .ell => "F_ell" | .eth => "F_eth" | .hbar => "F_hbar"
+  | .ell => "F_beltl" | .eth => "F_dh" | .hbar => "F_hardsign"
 
 def Primitive_K.toString : Primitive_K → String
-  | .fast => "K_fast" | .mod => "K_mod" | .slow => "K_slow" | .trap => "K_trap" | .MBL => "K_MBL"
+  | .fast => "K_frtailgamma" | .mod => "K_turnm" | .slow => "K_schwa" | .trap => "K_teshlig" | .MBL => "K_lambda"
 
 def Primitive_G.toString : Primitive_G → String
-  | .beth => "G_beth" | .gimel => "G_gimel" | .aleph => "G_aleph"
+  | .beth => "G_beta" | .gimel => "G_gamma" | .aleph => "G_revapostrophe"
 
 def Primitive_Gamma.toString : Primitive_Gamma → String
   | .and' => "Gamma_and" | .or' => "Gamma_or" | .seq => "Gamma_seq" | .broad => "Gamma_broad"
 
 def Primitive_Phi.toString : Primitive_Phi → String
-  | .sub => "Phi_sub" | .c => "Phi_c" | .c_complex => "Phi_c_complex"
-  | .EP => "Phi_EP" | .super' => "Phi_super"
+  | .sub => "Phi_softsign" | .c => "Phi_ctyogh" | .c_complex => "Phi_closerevepsilon"
+  | .EP => "Phi_revepsilon" | .super' => "Phi_upstep"
 
 def Primitive_H.toString : Primitive_H → String
-  | .H0 => "H0" | .H1 => "H1" | .H2 => "H2" | .H_inf => "H_inf"
+  | .H_closeomega => "H_closeomega" | .H_toneletterstem => "H_toneletterstem" | .H_turntwo => "H_turntwo" | .H_invscripta => "H_invscripta"
 
 def Primitive_S.toString : Primitive_S → String
-  | .one_one => "1:1" | .n_n => "n:n" | .n_m => "n:m"
+  | .S_doublebaresh => "1:1" | .S_ctn => "n:n" | .S_ltailm => "n:m"
 
 def Primitive_Omega.toString : Primitive_Omega → String
-  | .Omega_0 => "Omega_0" | .Omega_Z2 => "Omega_Z2" | .Omega_Z => "Omega_Z" | .Omega_NA => "Omega_NA"
+  | .Omega_closeepsilon => "Omega_closeepsilon" | .Omega_crtwo => "Omega_crtwo" | .Omega_dzlig => "Omega_dzlig" | .Omega_turna => "Omega_turna"
 
 structure PrimitivePromotion where
   primitive : String
@@ -353,7 +353,7 @@ def proof_complete (system proven : StructuralType) : Prop :=
 
 /-- MACHINE VERIFIED: The Beal Conjecture has trivial topological protection.
     This is the structural diagnosis of why it remains open. -/
-example : beal_structural_type.Omega = Primitive_Omega.Omega_0 := by
+example : beal_structural_type.Omega = Primitive_Omega.Omega_closeepsilon := by
   rfl
 
 /-- The promotion from Ω_0 to Ω_Z2 requires constructing a parity-protected

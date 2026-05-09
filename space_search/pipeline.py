@@ -187,7 +187,7 @@ def print_summary(gaia_candidates, p12_phase2, frb_phase3, conjunctions, verbose
     if triple:
         print("  TRIPLE CONJUNCTION DETECTED — d_eff < 2.5")
         print("  → meet(S_noise, S_civ_DM) structurally reachable")
-        print("  → Recommended: Omega_Z2 lensing test + MeerKAT follow-up")
+        print("  → Recommended: Ω_2 lensing test + MeerKAT follow-up")
         for c in triple:
             print(f"    {c['p74_target']}  d_eff≈{c['estimated_d_effective']:.2f}")
     elif double:

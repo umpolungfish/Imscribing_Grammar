@@ -39,21 +39,21 @@ TIER_LABEL = {
     "O_inf":     r"$O_\infty$  (Frobenius complete)",
 }
 
-PHI_VALUES   = ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"]
-OMEGA_VALUES = ["Omega_0", "Omega_Z2", "Omega_Z"]
-P_VALUES     = ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"]
-D_VALUES     = ["D_wedge", "D_triangle", "D_infty", "D_odot"]
+PHI_VALUES   = ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"]
+OMEGA_VALUES = ["Ω_Å", "Ω_2", "Ω_z"]
+P_VALUES     = ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"]
+D_VALUES     = ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"]
 
-CRITICAL   = {"Phi_c", "Phi_c_complex"}
-NONCRIT    = {"Phi_sub", "Phi_super", "Phi_EP"}
-BOUNDED_D  = {"D_wedge", "D_triangle", "D_odot"}
+CRITICAL   = {"φ̂_ÿ", "φ̂_Æ"}
+NONCRIT    = {"φ̂_ž", "φ̂_Ţ", "φ̂_3"}
+BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω"}
 
 def get_tier(phi, p, omega, d):
-    if phi in CRITICAL and p == "P_pm_sym":
+    if phi in CRITICAL and p == "Φ_}":
         return "O_inf"
     if phi in NONCRIT:
         return "O_0"
-    if omega == "Omega_0":
+    if omega == "Ω_Å":
         return "O_1"
     if d in BOUNDED_D:
         return "O_2"
@@ -71,16 +71,16 @@ def cell_tier_breakdown(phi, omega):
     return counts
 
 PHI_LABEL = {
-    "Phi_sub":       r"$\Phi_\mathrm{sub}$" + "\nordered",
-    "Phi_c":         r"$\Phi_c$" + "\nreal-axis critical",
-    "Phi_c_complex": r"$\Phi_c^\mathbb{C}$" + "\ncomplex-axis critical",
-    "Phi_EP":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
-    "Phi_super":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
+    "φ̂_ž":       r"$\Phi_\mathrm{sub}$" + "\nordered",
+    "φ̂_ÿ":         r"$\φ̂_ÿ$" + "\nreal-axis critical",
+    "φ̂_Æ": r"$\φ̂_ÿ^\mathbb{C}$" + "\ncomplex-axis critical",
+    "φ̂_3":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
+    "φ̂_Ţ":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
 }
 OMEGA_LABEL = {
-    "Omega_0":  r"$\Omega_0$" + "\nno protection",
-    "Omega_Z2": r"$\Omega_{Z_2}$" + "\nbinary protection",
-    "Omega_Z":  r"$\Omega_\mathbb{Z}$" + "\ninteger winding",
+    "Ω_Å":  r"$\Ω_Å$" + "\nno protection",
+    "Ω_2": r"$\Omega_{Z_2}$" + "\nbinary protection",
+    "Ω_z":  r"$\Omega_\mathbb{Z}$" + "\ninteger winding",
 }
 
 
@@ -284,21 +284,21 @@ plt.close(fig2)
 # ══════════════════════════════════════════════════════════════════════
 # Rows: P values (5)
 # Columns: 6 combinations of (Ω, D-type): (Ω0,any), (ΩZ2,D_bnd), (ΩZ2,D_inf), (ΩZ,D_bnd), (ΩZ,D_inf) — 5 combos
-# + 1 column for "P_pm_sym collapses all" label
+# + 1 column for "Φ_} collapses all" label
 
 OMEGA_D_COMBOS = [
-    ("Omega_0",  "D_wedge",    r"$\Omega_0$" + "\n(any $D$)"),
-    ("Omega_Z2", "D_wedge",    r"$\Omega_{Z_2}$" + "\nbounded $D$"),
-    ("Omega_Z2", "D_infty",    r"$\Omega_{Z_2}$" + "\n$D_\infty$"),
-    ("Omega_Z",  "D_wedge",    r"$\Omega_\mathbb{Z}$" + "\nbounded $D$"),
-    ("Omega_Z",  "D_infty",    r"$\Omega_\mathbb{Z}$" + "\n$D_\infty$"),
+    ("Ω_Å",  "Ð_ß",    r"$\Ω_Å$" + "\n(any $D$)"),
+    ("Ω_2", "Ð_ß",    r"$\Omega_{Z_2}$" + "\nbounded $D$"),
+    ("Ω_2", "Ð_;",    r"$\Omega_{Z_2}$" + "\n$D_\infty$"),
+    ("Ω_z",  "Ð_ß",    r"$\Omega_\mathbb{Z}$" + "\nbounded $D$"),
+    ("Ω_z",  "Ð_;",    r"$\Omega_\mathbb{Z}$" + "\n$D_\infty$"),
 ]
 P_SHORT = {
-    "P_asym":    r"$P_\mathrm{asym}$",
-    "P_psi":     r"$P_\psi$",
-    "P_pm":      r"$P_{\pm}$",
-    "P_sym":     r"$P_\mathrm{sym}$",
-    "P_pm_sym":  r"$P_{\pm}^\mathrm{sym}$" + "\n(Frobenius)",
+    "Φ_ɐ":    r"$P_\mathrm{asym}$",
+    "Φ_υ":     r"$P_\psi$",
+    "Φ_F":      r"$P_{\pm}$",
+    "Φ_˙":     r"$P_\mathrm{sym}$",
+    "Φ_}":  r"$P_{\pm}^\mathrm{sym}$" + "\n(Frobenius)",
 }
 
 fig3, ax3 = plt.subplots(figsize=(18, 9), facecolor=BG)
@@ -314,7 +314,7 @@ ax3.set_title(r"P-axis Frobenius Collapse: $P_{\pm}^\mathrm{sym}$ overrides all 
 
 for p_i, p in enumerate(P_VALUES):
     for od_j, (omega, d, _) in enumerate(OMEGA_D_COMBOS):
-        t = get_tier("Phi_c", p, omega, d)
+        t = get_tier("φ̂_ÿ", p, omega, d)
         color = TIER_COLOR[t]
         label = t.replace("_dag","†").replace("_inf","∞").replace("O_","O")
 
@@ -329,8 +329,8 @@ for p_i, p in enumerate(P_VALUES):
                  color="black" if t in ("O_1","O_inf") else "white",
                  zorder=4)
 
-# Highlight the P_pm_sym row with golden border
-p_frobenius = P_VALUES.index("P_pm_sym")
+# Highlight the Φ_} row with golden border
+p_frobenius = P_VALUES.index("Φ_}")
 ax3.add_patch(plt.Rectangle(
     (-0.5, p_frobenius - 0.5), len(OMEGA_D_COMBOS), 1.0,
     fill=False, edgecolor="#FFD700", linewidth=3, zorder=5
@@ -345,16 +345,16 @@ for od_j, (_, _, label) in enumerate(OMEGA_D_COMBOS):
 for p_i, p in enumerate(P_VALUES):
     ax3.text(-0.55, p_i, P_SHORT[p],
              ha="right", va="center", color="white",
-             fontsize=12, fontweight="bold" if p == "P_pm_sym" else "normal")
+             fontsize=12, fontweight="bold" if p == "Φ_}" else "normal")
 
 ax3.set_xticks([])
 ax3.set_yticks([])
-ax3.invert_yaxis()   # P_asym at top, P_pm_sym at bottom... actually keep natural order
+ax3.invert_yaxis()   # Φ_ɐ at top, Φ_} at bottom... actually keep natural order
 
 # Annotation
 ax3.text(len(OMEGA_D_COMBOS)/2 - 0.5, -0.9,
-         r"R1: $\Phi_c + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
-         r"R3: $\Phi_c + \Omega_0 \rightarrow O_1$    "
+         r"R1: $\φ̂_ÿ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
+         r"R3: $\φ̂_ÿ + \Ω_Å \rightarrow O_1$    "
          r"R4: bounded $D \rightarrow O_2$    "
          r"R5: $D_\infty \rightarrow O_2^\dagger$",
          ha="center", va="top", color="#AAAACC", fontsize=10)
@@ -401,7 +401,7 @@ QUADS = [
         "label": "Geometric",
         "prims": "T × R",
         "size":  "5 × 4 = 20",
-        "vals":  "T: network, in, bowtie, box, ⊙\nR: super, cat, dagger, lr",
+        "vals":  "Þ: network, in, bowtie, box, ⊙\nR: super, cat, dagger, lr",
         "role":  "Topology × Relational mode\n(how the algebra connects)",
         "color": "#2255AA",
         "x": 0.03, "y": 0.12, "w": 0.44, "h": 0.72,
@@ -410,7 +410,7 @@ QUADS = [
         "label": "Existence",
         "prims": "F × K",
         "size":  "3 × 4 = 12",
-        "vals":  "F: ℓ, ℏ, ħ\nK: fast, mod, slow, trap",
+        "vals":  "ƒ: ℓ, ℏ, ħ\nK: fast, mod, slow, trap",
         "role":  "Fidelity × Kinetics\n(how faithfully and how fast)",
         "color": "#225522",
         "x": 0.51, "y": 0.57, "w": 0.46, "h": 0.27,
@@ -419,7 +419,7 @@ QUADS = [
         "label": "Scope",
         "prims": "G × Γ",
         "size":  "3 × 4 = 12",
-        "vals":  "G: ℶ, ℷ, ℵ\nΓ: and, or, seq, broad",
+        "vals":  "Γ: ℶ, ℷ, ℵ\nΓ: and, or, seq, broad",
         "role":  "Granularity × Interaction grammar\n(how wide and how structured)",
         "color": "#552222",
         "x": 0.51, "y": 0.35, "w": 0.46, "h": 0.20,
@@ -428,7 +428,7 @@ QUADS = [
         "label": "Temporal",
         "prims": "H × S",
         "size":  "4 × 3 = 12",
-        "vals":  "H: H₀, H₁, H₂, H∞\nS: 1:1, n:n, n:m",
+        "vals":  "Ħ: H₀, H₁, H₂, H∞\nS: 1:1, n:n, n:m",
         "role":  "Chirality depth × Stoichiometry\n(how deep and how many)",
         "color": "#442255",
         "x": 0.51, "y": 0.12, "w": 0.46, "h": 0.21,

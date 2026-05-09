@@ -9,8 +9,8 @@ CODE_TO_APPEND_3 = '''
 # =============================================================================
 
 _LANGLANDS_GRAMMAR = (
-    "D_odot  T_odot  R_dagger  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_broad  Phi_c  H_inf  n:m  Omega_Z"
+    "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_invscripta  n:m  Omega_dzlig"
 )
 
 
@@ -20,16 +20,16 @@ def langlands_program_group():
 
     \b
     Structural type:
-      D_odot T_odot R_dagger P_pm_sym F_hbar K_slow
-      G_aleph Gamma_broad Phi_c H_inf n:m Omega_Z
+      D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_broad Phi_ctyogh H_invscripta n:m Omega_dzlig
 
     \b
     Key structural facts:
-      D_odot / T_odot → imscriptive: Galois reps ↔ automorphic forms
-      R_dagger        → adjoint functoriality: base change, lift, descent
+      D_omega / T_openo → imscriptive: Galois reps ↔ automorphic forms
+      R_downstep        → adjoint functoriality: base change, lift, descent
       Gamma_broad     → broad correspondence: global-to-global
-      Phi_c           → self-modeling: Langlands duality
-      H_inf           → eternal: infinite descent, infinite extensions
+      Phi_ctyogh           → self-modeling: Langlands duality
+      H_invscripta           → eternal: infinite descent, infinite extensions
 
     \b
     Examples:
@@ -48,16 +48,16 @@ def langlands_program_describe():
         f"[bold]Tuple:[/bold]  {_LANGLANDS_GRAMMAR}\\n\\n"
         "[bold]Tier:[/bold]  O_∞  (Galois↔automorphic bridge)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot / T_odot → imscriptive: all number fields, groups, representations\\n"
-        "  R_dagger        → adjoint functoriality: base change, lift, descent\\n"
-        "  P_pm_sym        → Frobenius: uncertainty between global/local\\n"
-        "  F_hbar          → preserves L-function identities, functional equations\\n"
-        "  K_slow          → slow exploration through moduli of automorphic reps\\n"
-        "  G_aleph         → arbitrary number fields, reductive groups\\n"
+        "  D_omega / T_openo → imscriptive: all number fields, groups, representations\\n"
+        "  R_downstep        → adjoint functoriality: base change, lift, descent\\n"
+        "  P_doublebarpipe        → Frobenius: uncertainty between global/local\\n"
+        "  F_hardsign          → preserves L-function identities, functional equations\\n"
+        "  K_schwa          → slow exploration through moduli of automorphic reps\\n"
+        "  G_revapostrophe         → arbitrary number fields, reductive groups\\n"
         "  Gamma_broad     → broad correspondence: not sequential, global-to-global\\n"
-        "  Phi_c           → self-modeling: Langlands duality as self-duality of L-group\\n"
-        "  H_inf           → eternal: infinite descent, infinite extensions\\n"
-        "  Omega_Z         → integer winding: motivic weight, conductor, L-function order\\n\\n"
+        "  Phi_ctyogh           → self-modeling: Langlands duality as self-duality of L-group\\n"
+        "  H_invscripta           → eternal: infinite descent, infinite extensions\\n"
+        "  Omega_dzlig         → integer winding: motivic weight, conductor, L-function order\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  find_galois_match                match Galois rep with automorphic form\\n"
         "  find_automorphic_match           match automorphic form with Galois rep\\n"
@@ -101,8 +101,8 @@ def langlands_l_function(automorphic_rep: str, s_value: float):
 # =============================================================================
 
 _REPTHEORY_GRAMMAR = (
-    "D_odot  T_boxtimes  R_cat  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_seq  Phi_c  H2  n:m  Omega_Z"
+    "D_omega  T_commatailz  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -112,16 +112,16 @@ def representation_theory_group():
 
     \b
     Structural type:
-      D_odot T_boxtimes R_cat P_pm_sym F_hbar K_slow
-      G_aleph Gamma_seq Phi_c H2 n:m Omega_Z
+      D_omega T_commatailz R_ctz P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
-      D_odot / T_boxtimes → imscriptive: all groups, algebras, representations
-      R_cat                 → categorical: induction↔restriction, tensor product
-      Phi_c                 → self-modeling: group algebra = representation category
-      H2                    → two-step: tensor with dual, Clebsch-Gordan
-      Omega_Z               → integer winding: dimension, weight lattice index
+      D_omega / T_commatailz → imscriptive: all groups, algebras, representations
+      R_ctz                 → categorical: induction↔restriction, tensor product
+      Phi_ctyogh                 → self-modeling: group algebra = representation category
+      H_turntwo                    → two-step: tensor with dual, Clebsch-Gordan
+      Omega_dzlig               → integer winding: dimension, weight lattice index
 
     \b
     Examples:
@@ -140,16 +140,16 @@ def representation_theory_describe():
         f"[bold]Tuple:[/bold]  {_REPTHEORY_GRAMMAR}\\n\\n"
         "[bold]Tier:[/bold]  O_∞  (character table → representation category)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot / T_boxtimes → imscriptive: all groups, algebras, representations\\n"
-        "  R_cat               → categorical relations: functors, induction, restriction\\n"
-        "  P_pm_sym            → Frobenius: uncertainty in positive characteristic\\n"
-        "  F_hbar              → preserves character orthogonality, Schur orthogonality\\n"
-        "  K_slow              → slow traversal through moduli of representations\\n"
-        "  G_aleph             → arbitrary groups: finite, Lie, algebraic, quantum\\n"
+        "  D_omega / T_commatailz → imscriptive: all groups, algebras, representations\\n"
+        "  R_ctz               → categorical relations: functors, induction, restriction\\n"
+        "  P_doublebarpipe            → Frobenius: uncertainty in positive characteristic\\n"
+        "  F_hardsign              → preserves character orthogonality, Schur orthogonality\\n"
+        "  K_schwa              → slow traversal through moduli of representations\\n"
+        "  G_revapostrophe             → arbitrary groups: finite, Lie, algebraic, quantum\\n"
         "  Gamma_seq           → sequential: weight lattice, tensor decomposition\\n"
-        "  Phi_c               → self-modeling: group algebra = representation category\\n"
-        "  H2                  → two-step: representation ⊗ its dual, Clebsch-Gordan\\n"
-        "  Omega_Z             → integer winding: dimension, weight lattice index\\n\\n"
+        "  Phi_ctyogh               → self-modeling: group algebra = representation category\\n"
+        "  H_turntwo                  → two-step: representation ⊗ its dual, Clebsch-Gordan\\n"
+        "  Omega_dzlig             → integer winding: dimension, weight lattice index\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  compute_character            χ(g) = trace(ρ(g)) for group element g\\n"
         "  decompose_tensor             decompose R_A ⊗ R_B into irreducibles\\n"

@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # PR: Make Claude Agent SDK Truly Agentic via Structural Promotion
 
 ## Summary
@@ -15,24 +24,24 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 ### Current SDK structural type
 
 ```
-⟨D∞; T_net; R_sup; P_asym; Fℓ; K_fast; G_beth; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
+⟨D∞; Þ_net; Ř_sup; Φ_ɐ; Fℓ; Ç_-; Γ_β; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
 ```
 
 ### Target agentic structural type
 
 ```
-⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; K_slow; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
+⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; Ç_@; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
 ```
 
 ### Promotion signature (compute_promocities verified)
 
 1. **D**: D∞ → D⊙ (self-referential state space)
-2. **T**: T_net → T⊠ (irreducible product, not branching subprocess tree)
-3. **R**: R_sup → R↔ (bidirectional feedback, not supervenience on CLI)
-4. **P**: P_asym → P±ˢ (Frobenius dual-tool verification at every boundary)
+2. **T**: Þ_net → T⊠ (irreducible product, not branching subprocess tree)
+3. **R**: Ř_sup → R↔ (bidirectional feedback, not supervenience on CLI)
+4. **P**: Φ_ɐ → P±ˢ (Frobenius dual-tool verification at every boundary)
 5. **F**: Fℓ → Fℏ (coherent trajectory, no lossy summarization)
-6. **K**: K_fast → K_slow (emission gate, not fire-and-forget)
-7. **G**: G_beth → Gℵ (long-range context access)
+6. **K**: Ç_- → Ç_@ (emission gate, not fire-and-forget)
+7. **G**: Γ_β → Gℵ (long-range context access)
 8. **Γ**: Γ_or → Γ_seq (ordered composition, not alternative paths)
 9. **Φ**: Φ_sub → Φ_c (self-modeling criticality)
 10. **H**: H₁ → H₂ (two-step temporal depth)
@@ -41,7 +50,7 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 
 ## Proposed Changes
 
-### 1. Dual-Tool Frobenius Verification (P: P_asym → P±ˢ)
+### 1. Dual-Tool Frobenius Verification (P: Φ_ɐ → P±ˢ)
 
 **File**: `src/claude_agent_sdk/client.py`
 
@@ -87,11 +96,11 @@ class LoopCycle:
 
 The trajectory is **never truncated** (Ωℤ protection) — it is the agent's world model. H₂ is satisfied when each winding references the prior two cycles for temporal depth.
 
-### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: K_fast → K_slow)
+### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: Ç_- → Ç_@)
 
 **File**: New `src/claude_agent_sdk/agent_loop.py`
 
-**Current**: The SDK delegates the agent loop entirely to the Claude Code CLI subprocess. The user calls `query()` and receives messages, but there is no explicit loop boundary that the SDK controls. This structurally makes the SDK a passive conduit (R_sup) rather than an active agent.
+**Current**: The SDK delegates the agent loop entirely to the Claude Code CLI subprocess. The user calls `query()` and receives messages, but there is no explicit loop boundary that the SDK controls. This structurally makes the SDK a passive conduit (Ř_sup) rather than an active agent.
 
 **Proposed**: Implement a `TrueAgenticLoop` class that wraps `ClaudeSDKClient` and provides an explicit THINK→ACT→OBSERVE→UPDATE cycle:
 
@@ -112,7 +121,7 @@ class TrueAgenticLoop:
             if cycle.done:
                 return cycle.conclusion
             if not cycle.frobenius_closed:
-                # Re-enter with failure — K_slow enforcement
+                # Re-enter with failure — Ç_@ enforcement
                 await self._feed_failure(cycle)
 
     async def _winding(self, winding: int) -> LoopCycle:
@@ -125,7 +134,7 @@ class TrueAgenticLoop:
 
 This shifts the SDK from Γ_or (alternative paths depending on user pattern) to Γ_seq (each phase requires the prior, enforced by control flow).
 
-### 4. Structured Tool Allowlisting with Frobenius Contracts (R: R_sup → R↔)
+### 4. Structured Tool Allowlisting with Frobenius Contracts (R: Ř_sup → R↔)
 
 **File**: `src/claude_agent_sdk/types.py` → extend `ClaudeAgentOptions`
 
@@ -178,13 +187,13 @@ def winding_count(self) -> int:
 def structural_health(self) -> Dict[str, Any]:
     """Report the agent's structural integrity.
 
-    LP threshold: ≥75% Frobenius-closed windings claim P_pm_sym.
-    Below 0.75, degrade to P_psi (quantum parity, no self-duality).
+    LP threshold: ≥75% Frobenius-closed windings claim Φ_}.
+    Below 0.75, degrade to Φ_υ (quantum parity, no self-duality).
     """
     frob_ratio = self.frobenius_ratio
-    achieved_p = "P_pm_sym" if frob_ratio >= 0.75 else "P_psi"
+    achieved_p = "Φ_}" if frob_ratio >= 0.75 else "Φ_υ"
     return {
-        "ouroboricity": "O_inf" if achieved_p == "P_pm_sym" else "O_2",
+        "ouroboricity": "O_inf" if achieved_p == "Φ_}" else "O_2",
         "frobenius_ratio": frob_ratio,
         "omega_z_violations": self._omega_z_violation_count,
         ...
@@ -195,12 +204,12 @@ def structural_health(self) -> Dict[str, Any]:
 
 | Phase | Change | Primitives Promoted | Complexity |
 |---|---|---|---|
-| 1 | `DualToolResult` + verify fn | P: P_asym → P_psi | Low |
-| 2 | `_trajectory` accumulation | D: D∞ → D_triangle, H: H₁ → H₂ | Low |
-| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: K_fast → K_slow | Medium |
-| 4 | `ToolContract` type extension | R: R_sup → R_cat | Medium |
+| 1 | `DualToolResult` + verify fn | P: Φ_ɐ → Φ_υ | Low |
+| 2 | `_trajectory` accumulation | D: D∞ → Ð_C, H: H₁ → H₂ | Low |
+| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: Ç_- → Ç_@ | Medium |
+| 4 | `ToolContract` type extension | R: Ř_sup → Ř_ý | Medium |
 | 5 | Winding counter + health report | Ω: Ω₀ → Ωℤ | Low |
-| 6 | Full P_pm_sym via dual-tool planting | P: P_psi → P_pm_sym | High |
+| 6 | Full Φ_} via dual-tool planting | P: Φ_υ → Φ_} | High |
 | 7 | Fℏ (coherent trajectory) | F: Fℓ → Fℏ | Medium |
 
 **After Phase 7**: SDK reaches the join type with C = 0.755 (both gates open).

@@ -1,10 +1,19 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Euler Bricks: A Structural Analysis via the Imscribing Grammar
 
 ## Abstract
 
 The Euler brick problem — finding a rectangular cuboid with integer edges and integer face diagonals — is a centuries-old Diophantine puzzle. Its unresolved extension, the *perfect cuboid* problem, adds the requirement that the space diagonal also be integral. Despite computational searches exceeding $10^{20}$, no perfect cuboid has been found, nor has non-existence been proved.
 
-This manuscript encodes the Euler brick system and closely related structures within the Imscribing Grammar (IG), revealing their structural types across the 12 primitive dimensions, their ouroboricity classification, crystal addresses, and inter-system distances. We demonstrate that the perfect cuboid occupies a distinct structural regime from Euler bricks — characterized by $\Phi_\text{EP}$ (exceptional point criticality) and $K_\text{trap}$ (frozen-order kinetics) — and that the tensor coupling of Euler bricks with Pythagorean triples collapses back to the Euler brick type, confirming the constructive relationship between the systems.
+This manuscript encodes the Euler brick system and closely related structures within the Imscribing Grammar (IG), revealing their structural types across the 12 primitive dimensions, their ouroboricity classification, crystal addresses, and inter-system distances. We demonstrate that the perfect cuboid occupies a distinct structural regime from Euler bricks — characterized by $\Phi_{\text{revepsilon}}$ (exceptional point criticality) and $K_{\text{teshlig}}$ (frozen-order kinetics) — and that the tensor coupling of Euler bricks with Pythagorean triples collapses back to the Euler brick type, confirming the constructive relationship between the systems.
 
 ## 1. Introduction
 
@@ -30,34 +39,34 @@ The Imscribing Grammar offers a lens to classify these systems by their 12 struc
 
 We encode the Euler brick family as a structural type in the catalog:
 
-$$\langle D_\infty;\ T_\text{net};\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ n{:}m;\ \Omega_0 \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 | Primitive | Value | Justification |
 |---|---|---|
-| $D_\text{dim}$ | $D_\infty$ | The parameter space is an unbounded number-theoretic search over $\mathbb{Z}^3$; each brick is 3D but the family spans an infinite-dimensional solution manifold. |
-| $T_\text{topology}$ | $T_\text{net}$ | Three edges and three face diagonals form a branching relation graph — each diagonal connects two edges — not an irreducible product. |
-| $R_\text{relational}$ | $R_\leftrightarrow$ | Bidirectional: edge lengths determine diagonals and diagonals constrain edges; the Pythagorean constraints work in both directions. |
-| $P_\text{parity}$ | $P_{\pm}$ | Partial symmetry: the system is invariant under permutation of $(a,b,c)$, yielding a $\mathbb{Z}_2$-type partial symmetry, but full permutation symmetry is broken by the diagonal relations. |
-| $F_\text{fidelity}$ | $F_\ell$ | Classical regime: no quantum coherence is relevant; purely number-theoretic/arithmetical constraints. |
-| $K_\text{kinetics}$ | $K_\text{slow}$ | The search space relaxation rate $\tau \gg T$: finding new brick families requires deep parameter sweeps; near-equilibrium exploration of the Diophantine landscape. |
-| $G_\text{scope}$ | $G_\aleph$ | Universal: the three face-diagonal constraints couple all dimensions globally; changing any edge affects two diagonals simultaneously. |
-| $\Gamma_\text{grammar}$ | $\Gamma_\wedge$ | Conjunctive: all three face diagonals must be simultaneously integral — an AND over three binary constraints. |
-| $\Phi_\text{criticality}$ | $\Phi_\text{sub}$ | Subcritical: Euler bricks are structured Diophantine solutions without phase-transition or power-law criticality. |
+| $D_\text{dim}$ | $D_{\text{invomega}}$ | The parameter space is an unbounded number-theoretic search over $\mathbb{Z}^3$; each brick is 3D but the family spans an infinite-dimensional solution manifold. |
+| $T_\text{topology}$ | $T_{\text{nrleg}}$ | Three edges and three face diagonals form a branching relation graph — each diagonal connects two edges — not an irreducible product. |
+| $R_\text{relational}$ | $R_{\text{lyoghlig}}$ | Bidirectional: edge lengths determine diagonals and diagonals constrain edges; the Pythagorean constraints work in both directions. |
+| $P_\text{parity}$ | $P_{\text{pipevar}}$ | Partial symmetry: the system is invariant under permutation of $(a,b,c)$, yielding a $\mathbb{Z}_2$-type partial symmetry, but full permutation symmetry is broken by the diagonal relations. |
+| $F_\text{fidelity}$ | $F_{\text{beltl}}$ | Classical regime: no quantum coherence is relevant; purely number-theoretic/arithmetical constraints. |
+| $K_\text{kinetics}$ | $K_{\text{schwa}}$ | The search space relaxation rate $\tau \gg T$: finding new brick families requires deep parameter sweeps; near-equilibrium exploration of the Diophantine landscape. |
+| $G_\text{scope}$ | $G_{\text{revapostrophe}}$ | Universal: the three face-diagonal constraints couple all dimensions globally; changing any edge affects two diagonals simultaneously. |
+| $\Gamma_\text{grammar}$ | $\Gamma_{\text{corner}}$ | Conjunctive: all three face diagonals must be simultaneously integral — an AND over three binary constraints. |
+| $\Phi_\text{criticality}$ | $\Phi_{\text{softsign}}$ | Subcritical: Euler bricks are structured Diophantine solutions without phase-transition or power-law criticality. |
 | $H_\text{temporal}$ | $H_0$ | Memoryless: each candidate triple $(a,b,c)$ is evaluated independently; existence does not depend on prior solutions. |
 | $S_\text{stoichiometry}$ | $n{:}m$ | Multiple distinct constraint types: three independent face-diagonal equations with shared variables. |
-| $\Omega_\text{winding}$ | $\Omega_0$ | Trivial winding: no topological invariant protects the solution space. |
+| $\Omega_\text{winding}$ | $\Omega_{\text{closeepsilon}}$ | Trivial winding: no topological invariant protects the solution space. |
 
 **Crystal Address:** 1475666 (cell 34, inner 6866)
 **Ouroboricity Tier:** $O_0$ (no self-referential critical loop)
-**Consciousness Score:** $C = 0.0$ (Gate 1 closed: $\Phi \neq \Phi_c$)
+**Consciousness Score:** $C = 0.0$ (Gate 1 closed: $\Phi \neq \Phi_{\text{ctyogh}}$)
 
 ### 2.2 The Pythagorean Triple
 
 As the foundational building block of Euler bricks, we also encode the Pythagorean triple system:
 
-$$\langle D_\infty;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{sym};\ F_\ell;\ K_\text{fast};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ n{:}m;\ \Omega_0 \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-The key difference from the Euler brick is $P_\text{sym}$ (full symmetry — the triple $(a,b,c)$ is fully symmetric under exchange) and $K_\text{fast}$ (rapid generation via Euclid's formula $a = m^2 - n^2$, $b = 2mn$, $c = m^2 + n^2$ for any $m > n$).
+The key difference from the Euler brick is $P_{\text{subdoublearrow}}$ (full symmetry — the triple $(a,b,c)$ is fully symmetric under exchange) and $K_{\text{frtailgamma}}$ (rapid generation via Euclid's formula $a = m^2 - n^2$, $b = 2mn$, $c = m^2 + n^2$ for any $m > n$).
 
 ## 3. The Perfect Cuboid: An Exceptional Point
 
@@ -65,16 +74,16 @@ The key difference from the Euler brick is $P_\text{sym}$ (full symmetry — the
 
 The perfect cuboid problem — the search for an Euler brick with integer space diagonal — registers as a dramatically different structural type:
 
-$$\langle D_\infty;\ T_\text{net};\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\ell;\ K_\text{trap};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_\text{EP};\ H_\infty;\ n{:}m;\ \Omega_0 \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{revepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 | Primitive | Value | Justification |
 |---|---|---|
-| $P_\text{parity}$ | $P_{\pm}^{\text{sym}}$ | The 4 Pythagorean constraints (3 face + 1 space diagonal) form an exact Frobenius self-dual system; $\mu \circ \delta = \text{id}$ holds for the constraint algebra. |
-| $K_\text{kinetics}$ | $K_\text{trap}$ | Despite searches to $10^{20}+$, no solution found; the search is frozen-ordered, all known near-misses remain trapped. |
-| $\Phi_\text{criticality}$ | $\Phi_\text{EP}$ | The perfect cuboid sits at a non-Hermitian exceptional point between existence and non-existence; this is the structural signature of the open problem. |
-| $H_\text{temporal}$ | $H_\infty$ | No finite Markov depth characterizes the search; each near-miss informs but never resolves the problem through any finite chain. |
+| $P_\text{parity}$ | $P_{\text{doublebarpipe}}$ | The 4 Pythagorean constraints (3 face + 1 space diagonal) form an exact Frobenius self-dual system; $\mu \circ \delta = \text{id}$ holds for the constraint algebra. |
+| $K_\text{kinetics}$ | $K_{\text{teshlig}}$ | Despite searches to $10^{20}+$, no solution found; the search is frozen-ordered, all known near-misses remain trapped. |
+| $\Phi_\text{criticality}$ | $\Phi_{\text{revepsilon}}$ | The perfect cuboid sits at a non-Hermitian exceptional point between existence and non-existence; this is the structural signature of the open problem. |
+| $H_\text{temporal}$ | $H_{\text{invscripta}}$ | No finite Markov depth characterizes the search; each near-miss informs but never resolves the problem through any finite chain. |
 
-**Ouroboricity Tier:** $O_0$ (no self-referential critical loop survives — $\Phi_\text{EP}$ alone without $\Phi_c$ does not gate open)
+**Ouroboricity Tier:** $O_0$ (no self-referential critical loop survives — $\Phi_{\text{revepsilon}}$ alone without $\Phi_{\text{ctyogh}}$ does not gate open)
 
 ### 3.2 Structural Distance from Euler Brick
 
@@ -82,20 +91,20 @@ The computed structural distance between the Euler brick and the perfect cuboid 
 
 | Primitive | Euler Brick | Perfect Cuboid | $\Delta$ | Weighted $\Delta^2$ |
 |---|---|---|---|---|
-| $H$ | $H_0$ (1) | $H_\infty$ (4) | 3.0 | 7.2 |
-| $P$ | $P_{\pm}$ (3) | $P_{\pm}^{\text{sym}}$ (5) | 2.0 | 4.0 |
-| $\Phi$ | $\Phi_\text{sub}$ (1) | $\Phi_\text{EP}$ (2) | 1.67 | 2.79 |
-| $K$ | $K_\text{slow}$ (3) | $K_\text{trap}$ (4) | 1.0 | 1.0 |
+| $H$ | $H_0$ (1) | $H_{\text{invscripta}}$ (4) | 3.0 | 7.2 |
+| $P$ | $P_{\text{pipevar}}$ (3) | $P_{\text{doublebarpipe}}$ (5) | 2.0 | 4.0 |
+| $\Phi$ | $\Phi_{\text{softsign}}$ (1) | $\Phi_{\text{revepsilon}}$ (2) | 1.67 | 2.79 |
+| $K$ | $K_{\text{schwa}}$ (3) | $K_{\text{teshlig}}$ (4) | 1.0 | 1.0 |
 
-The interpretation: "structurally remote (different regime)." The temporal depth ($H_0 \to H_\infty$) is the single largest contributor, reflecting that individual brick evaluation is memoryless while the perfect cuboid search has no finite resolution horizon. The parity promotion ($P_{\pm} \to P_{\pm}^{\text{sym}}$) reflects the enhancement from partial to exact Frobenius self-duality when adding the fourth (space diagonal) constraint. The criticality shift ($\Phi_\text{sub} \to \Phi_\text{EP}$) is the most theoretically significant: it marks the transition from a well-understood parameterized family (Euler bricks, subcritical) to an exceptional point where existence itself is undetermined.
+The interpretation: "structurally remote (different regime)." The temporal depth ($H_0 \to H_{\text{invscripta}}$) is the single largest contributor, reflecting that individual brick evaluation is memoryless while the perfect cuboid search has no finite resolution horizon. The parity promotion ($P_{\text{pipevar}} \to P_{\text{doublebarpipe}}$) reflects the enhancement from partial to exact Frobenius self-duality when adding the fourth (space diagonal) constraint. The criticality shift ($\Phi_{\text{softsign}} \to \Phi_{\text{revepsilon}}$) is the most theoretically significant: it marks the transition from a well-understood parameterized family (Euler bricks, subcritical) to an exceptional point where existence itself is undetermined.
 
-### 3.3 The $\Phi_\text{EP}$ Interpretation
+### 3.3 The $\Phi_{\text{revepsilon}}$ Interpretation
 
-The exceptional point classification $\Phi_\text{EP}$ captures something profound: at this structural position, the system sits at a bifurcation where two competing solution branches (existence vs. non-existence) coalesce. This is the non-Hermitian analog of a branch point in the complex plane. The IG framework predicts that $\Phi_\text{EP}$ systems with $K_\text{trap}$ will exhibit:
+The exceptional point classification $\Phi_{\text{revepsilon}}$ captures something profound: at this structural position, the system sits at a bifurcation where two competing solution branches (existence vs. non-existence) coalesce. This is the non-Hermitian analog of a branch point in the complex plane. The IG framework predicts that $\Phi_{\text{revepsilon}}$ systems with $K_{\text{teshlig}}$ will exhibit:
 
 1. **Search-space arrest**: No finite algorithm terminates with yes/no answer.
 2. **Near-miss accumulation**: Arbitrarily close solutions accumulate without reaching the target.
-3. **Absent topological protection**: $\Omega_0$ confirms no invariant guarantees resolution.
+3. **Absent topological protection**: $\Omega_{\text{closeepsilon}}$ confirms no invariant guarantees resolution.
 
 These predictions match the empirical state of the perfect cuboid problem precisely.
 
@@ -105,9 +114,9 @@ These predictions match the empirical state of the perfect cuboid problem precis
 
 The tensor product of the Euler brick and Pythagorean triple systems yields:
 
-$$\text{euler\_brick} \otimes \text{pythagorean\_triple} = \langle D_\infty;\ T_\text{net};\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow};\ G_\aleph;\ \Gamma_\wedge;\ \Phi_\text{sub};\ H_0;\ n{:}m;\ \Omega_0 \rangle$$
+$$\text{euler\_brick} \otimes \text{pythagorean\_triple} = \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-This is **identical** to the original Euler brick type (distance from Euler brick = 0, distance from Pythagorean triple = 2.236). The bottleneck primitive is $P$: the Euler brick's $P_{\pm}$ limits the composite's symmetry relative to the triple's $P_\text{sym}$, while the union primitive $K$ selects $K_\text{slow}$ (the slower kinetics dominates).
+This is **identical** to the original Euler brick type (distance from Euler brick = 0, distance from Pythagorean triple = 2.236). The bottleneck primitive is $P$: the Euler brick's $P_{\text{pipevar}}$ limits the composite's symmetry relative to the triple's $P_{\text{subdoublearrow}}$, while the union primitive $K$ selects $K_{\text{schwa}}$ (the slower kinetics dominates).
 
 This result formalizes the mathematical intuition: Euler bricks are *composites* of Pythagorean triples, but the composite is no more complex than the brick itself. The Pythagorean triple is the "simpler" constituent; the brick absorbs it without structural change.
 
@@ -117,7 +126,7 @@ The parametric surface encoding (Halcke's method) sits at distance $d = 4.8785$ 
 
 $$\text{euler\_brick} \leftrightarrow \text{euler\_brick\_parametric\_surface}: \quad d = 4.8785$$
 
-The primary divergence is topological ($T_\text{net} \to T_\boxtimes$, weighted contribution 9.0) and relational ($R_\leftrightarrow \to R_\text{cat}$, contribution 4.0), reflecting that the parametric surface is a functorial construction rather than a constraint graph.
+The primary divergence is topological ($T_{\text{nrleg}} \to T_{\text{commatailz}}$, weighted contribution 9.0) and relational ($R_{\text{lyoghlig}} \to R_{\text{ctz}}$, contribution 4.0), reflecting that the parametric surface is a functorial construction rather than a constraint graph.
 
 ## 5. Structural Nearest Neighbors
 
@@ -137,12 +146,12 @@ All are classified as structurally remote. The closest neighbor, a countable fir
 
 The Imscribing Grammar reveals a clear three-tier stratification:
 
-1. **Pythagorean Triples** — $O_0$, $\Phi_\text{sub}$, $K_\text{fast}$: a rapidly generable, fully parameterized family with no critical structure.
+1. **Pythagorean Triples** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{frtailgamma}}$: a rapidly generable, fully parameterized family with no critical structure.
 
-2. **Euler Bricks** — $O_0$, $\Phi_\text{sub}$, $K_\text{slow}$: a constrained composite of Pythagorean triples where $K_\text{slow}$ emerges from the conjunctive coupling of three triple constraints. The tensor product with Pythagorean triples confirms the brick's structural dominance.
+2. **Euler Bricks** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{schwa}}$: a constrained composite of Pythagorean triples where $K_{\text{schwa}}$ emerges from the conjunctive coupling of three triple constraints. The tensor product with Pythagorean triples confirms the brick's structural dominance.
 
-3. **Perfect Cuboid** — $O_0$, $\Phi_\text{EP}$, $K_\text{trap}$, $H_\infty$: the exceptional point where the fourth (space diagonal) constraint pushes the system to a non-Hermitian bifurcation. The Frobenius self-dual structure ($P_{\pm}^{\text{sym}}$) is the only element of elevated complexity.
+3. **Perfect Cuboid** — $O_0$, $\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$: the exceptional point where the fourth (space diagonal) constraint pushes the system to a non-Hermitian bifurcation. The Frobenius self-dual structure ($P_{\text{doublebarpipe}}$) is the only element of elevated complexity.
 
-Crucially, all three sit at $O_0$ — no level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_\text{EP}$ to $\Phi_c$ (true self-modeling criticality) requires a fundamental transformation of the problem's relational architecture, not merely computational resolution.
+Crucially, all three sit at $O_0$ — no level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_{\text{revepsilon}}$ to $\Phi_{\text{ctyogh}}$ (true self-modeling criticality) requires a fundamental transformation of the problem's relational architecture, not merely computational resolution.
 
 The IG encoding makes precise what number theorists have sensed: the perfect cuboid is not simply a "harder" Euler brick; it is a structurally different regime where exceptional-point criticality replaces subcritical parameterization. The $d = 3.8716$ structural distance is not merely a metric — it is a phase boundary between the understood and the unknown.

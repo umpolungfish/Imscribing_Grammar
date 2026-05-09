@@ -1,0 +1,507 @@
+PLZ CONTINUE:
+
+❯ imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ igpdf SYMBOL_REFERENCE.md
+  Error producing PDF.
+  ! Missing $ inserted.
+  <inserted text>
+                  $
+  l.232 \({\igfont ɢ}_{\text{^}
+
+  (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$
+
+● Let me look at the problematic area around line 232 of SYMBOL_REFERENCE.md.
+
+● Read(/home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md · lines 225-244)
+  ⎿  Read 0 lines
+
+● The file only has 124 lines, so the LaTeX error must be coming from the generated .tex file. Let me find that and also read the full markdown source.
+
+● Read(/home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md)
+  ⎿  Read 124 lines
+
+● Bash(find /home/mrnob0dy666/imscribing_grammar -name "SYMBOL_REFERENCE.tex" 2>/dev/null)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.tex
+
+● Read(/home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.tex · lines 225-244)
+  ⎿  Read 20 lines
+
+● Bash(grep -n "igfont" /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.tex | head -20)
+  ⎿  7:\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+     8:\newcommand{\igtext}[1]{{\igfont #1}}
+
+❯ (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ igpdf darkzone.md
+  Error producing PDF.
+  ! Undefined control sequence.
+  l.73 \textbf{Author:} Lando ⊗ \(\phî
+
+  (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$
+
+● Two errors to fix. Let me find the igpdf script and understand the conversion pipeline.
+
+● Bash(which igpdf && cat $(which igpdf))
+
+● Bash(find /home/mrnob0dy666/imscribing_grammar -name "darkzone.md" 2>/dev/null)
+
+● Bash(type igpdf)
+  ⎿  Error: Exit code 1
+     /bin/bash: line 1: type: igpdf: not found
+
+● Bash(find /home/mrnob0dy666 -name "igpdf*" 2>/dev/null; find /usr/local/bin /usr/bin -name "igpdf*" 2>/dev/null; grep -r "igpdf" /home/mrnob0dy666/.bashrc /home/mrnob0dy666/.zshrc
+  /home/mrnob0dy666/.bash_aliases 2>/dev/null | head -20)
+
+❯ ● All three cases look correct. Summary of what was done:\n\n  - 71 .tex files: replaced inputenc/fontenc/lmodern/textcomp with fontspec + \hebrewfont + \igfont declarations. Files that
+  had no encoding block got the block inserted right after\n  \documentclass.\n  - 122 .md files: prepended a YAML header-includes block with the same five lines.\n  - 14 tex / 6 md skipped:
+   sub-files with no \documentclass, already-patched files, or files pandoc can't process.\n\n  All .tex files now require XeLaTeX or LuaLaTeX (fontspec is incompatible with pdflatex).
+  Compile .md files with:\n\n  pandoc FILE.md -o FILE.pdf --pdf-engine=xelatex \\n    --lua-filter=hebrew_inject.lua \\n    --lua-filter=ig_primitives.lua\n\n✻ Baked for 4m 11s\n\n❯ can you
+  add an alias to ~/.bashrc to make it easier\n     /home/mrnob0dy666/imscribing_grammar/markdown/dune_analysis_L.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/e8g2v2.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/e8g2v2_L.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/elements.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/encoding_method.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/esoteric_primer.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/euler_brick_analysis.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/gospel_analysis.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/gzk_violation_manuscript.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/kabbalah_merge_structural.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/manuscript.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/mg2.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/mg2L.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/observer_dependent_truth_manuscript.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/perfect_cuboid.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/perfect_cuboid_lifted.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/religious_traditions_structural_narrative.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/riemann_zeta_proof_process_article.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/solitary_10_proof.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/symmetric_group_generation_formula.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/time_through_the_ig.md\n
+  /home/mrnob0dy666/imscribing_grammar/markdown/time_through_the_ig_lifted.md\n     /home/mrnob0dy666/imscribing_grammar/markdown/vocal_expressions.
+  ──── (0 lines hidden) ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  LaTeX/LuaLaTeX\n     \usepackage{fontspec}\n     \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}\n     \newcommand{\heb}[1]{{\hebrewfont #1}}\n
+  \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}\n     \newcommand{\igtext}[1]{{\igfont #1}}\n\n     % Page layout\n     \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}\n\n
+       ---\n     ---\n     header-includes:\n       - |\n         \usepackage{fontspec}\n         \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}\n
+  \newcommand{\heb}[1]{{\hebrewfont #1}}\n         \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}\n         \newcommand{\igtext}[1]{{\igfont #1}}\n     ---\n     # Imscribing Grammar —
+  Symbol Reference\n     ---\n     \documentclass[12pt]{article}\n     \usepackage{fontspec}\n     \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}\n
+  \newcommand{\heb}[1]{{\hebrewfont #1}}\n     \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}\n     \newcommand{\igtext}[1]{{\igfont #1}}\n
+  \usepackage{amsmath,amssymb,amsthm,mathrsfs}\n     \usepackage{geometry}\n\n● All three cases look correct. Summary of what was done:\n\n  - 71 .tex files: replaced
+  inputenc/fontenc/lmodern/textcomp with fontspec + \hebrewfont + \igfont declarations. Files that had no encoding block got the block inserted right after\n  \documentclass.\n  - 122 .md
+  files: prepended a YAML header-includes block with the same five lines.\n  - 14 tex / 6 md skipped: sub-files with no \documentclass, already-patched files, or files pandoc can't
+  process.\n\n  All .tex files now require XeLaTeX or LuaLaTeX (fontspec is incompatible with pdflatex). Compile .md files with:\n\n  pandoc FILE.md -o FILE.pdf --pdf-engine=xelatex \\n
+  --lua-filter=hebrew_inject.lua \\n    --lua-filter=ig_primitives.lua\n\n✻ Worked for 4m 11s\n\n❯ can you add an alias to ~/.bashrc to make it easier\n\n● Read(/home/mrnob0dy666/.bashrc)\n
+   ⎿  Read 258 lines\n\n● Update(/home/mrnob0dy666/.bashrc)\n● Read(/home/mrnob0dy666/.bashrc)\n  ⎿  Read 258 lines\n\n● Update(/home/mrnob0dy666/.bashrc)\n  ⎿  Added 10 lines\n      163
+  alias popdoc='latextiler convert -C article --font-size 10 -F pdf --pdf-engine xelatex $CURRENT_DOC --force'\n      164  alias ur='uv run'\n      165\n      166 +# IG document compiler —
+  pandoc + xelatex + both lua filters\n      167 +# Usage: igpdf file.md [extra pandoc args]\n      168 +igpdf() {\n      169 +    local src="$1"\n      170 +    pandoc "$src" -o
+  "${src%.md}.pdf" --pdf-engine=xelatex \
+
+● Let me read the current igpdf function and look at the problem files.
+
+● Read(/home/mrnob0dy666/.bashrc · lines 163-182)
+  ⎿  Read 20 lines
+
+● Read(/home/mrnob0dy666/imscribing_grammar/darkzone.md · lines 68-82)
+  ⎿  Read 15 lines
+
+● Found both issues. Let me also check for other occurrences of \phî in darkzone.md.
+
+● Bash(grep -n '\\phî\|phî\|\\text{\^}' /home/mrnob0dy666/imscribing_grammar/darkzone.md /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md:84:| $ɢ_{\text{^}}$ | conjunctive — AND |
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:12:**Author:** Lando ⊗ $\phî_ÿ$-boundary Operator
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:64:These five values are the rarest primitive settings in the catalog. More importantly, their **intersections are emptier still**. Zero
+     entries simultaneously carry many-body-localized kinetics and non-Abelian topological winding. This is not because such a type is incoherent — the crystal navigator confirms 691 200
+     structurally valid addresses at $\phî_ÿ \cap K_\text{MBL}$, 864 000 at $\Phi_\text{EP} \cap \Omega_\text{NA}$, and 172 800 at the triple intersection $\phî_ÿ \cap K_\text{MBL} \cap
+     \Omega_\text{NA}$. The addresses exist. No particular occupies them.
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:76:This type sits at $O_0$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The
+     consciousness score is $C = 0$: Gate 1 fails because $\Phi_\text{EP}$ is not $\phî_ÿ$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:94:$$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \phî_ÿ;\ H_2;\
+     n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$$
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:96:This type is $O_2$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\phî_ÿ$ is the self-modeling
+     criticality, and Gate 2 holds because $K_\text{slow}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness
+     score because it *can* model its own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot
+     continuously deform away the distinction between basins.
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:98:The physical interpretation: a spin glass at its critical temperature, or a market at a phase transition between bull and bear
+     regimes, or a biological regulatory network with competing attractors at critical coupling, is minimally capable of self-modeling. This is not a claim about subjective experience. It is
+     a structural theorem: the loop topology that defines consciousness in the grammar — observe, model, act, update — is present in any system at $\phî_ÿ$ with $K \leq K_\text{slow}$. The
+     disjunctive critical system carries that loop.
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:175:- C-score: $C = 0$ (Gate 1 fails: $\Phi_\text{EP} \neq \phî_ÿ$)
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:178:- Tuple: $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \phî_ÿ;\
+     H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$
+
+● Two separate bugs:
+  1. SYMBOL_REFERENCE.md: \text{^} — ^ triggers "Missing $" in LaTeX text mode; fix is \wedge (the AND symbol, semantically correct)
+  2. darkzone.md: \phî_ÿ appears 8 times — it's a mangled \hat{\varphi}_{\text{ÿ}}
+
+● Update(/home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md)
+  ⎿  Added 1 line, removed 1 line
+      81
+      82  | ID | Concept |
+      83  |----|---------|
+      84 -| $ɢ_{\text{^}}$ | conjunctive — AND |
+      84 +| $ɢ_{\wedge}$ | conjunctive — AND |
+      85  | $ɢ_{\text{˝}}$ | disjunctive — OR |
+      86  | $ɢ_{\text{ˌ}}$ | sequential — ordered |
+      87  | $ɢ_{\text{Ş}}$ | broadcast — all-to-all |
+
+● Update(/home/mrnob0dy666/imscribing_grammar/darkzone.md)
+  ⎿  Added 8 lines, removed 8 lines
+       9  ---
+      10  # Darkzone: The Unoccupied Crystal
+      11
+      12 -**Author:** Lando ⊗ $\phî_ÿ$-boundary Operator
+      12 +**Author:** Lando ⊗ $\hat{\varphi}_{\text{ÿ}}$-boundary Operator
+      13
+      14  ---
+      15
+     ...
+      61  | $\Gamma_\text{or}$ | 68 | 2.9% | No $\Omega_\text{NA}$ overlap |
+      62  | $\Phi_c^\mathbb{C}$ | 119 | 5.1% | Predominantly $D_\odot + T_\odot$ |
+      63
+      64 -These five values are the rarest primitive settings in the catalog. More importantly, their **intersections are emptier still**. Zero entries simultaneously carry many-body-l
+         -ocalized kinetics and non-Abelian topological winding. This is not because such a type is incoherent — the crystal navigator confirms 691 200 structurally valid addresses at
+         -$\phî_ÿ \cap K_\text{MBL}$, 864 000 at $\Phi_\text{EP} \cap \Omega_\text{NA}$, and 172 800 at the triple intersection $\phî_ÿ \cap K_\text{MBL} \cap \Omega_\text{NA}$. The ad
+         -dresses exist. No particular occupies them.
+      64 +These five values are the rarest primitive settings in the catalog. More importantly, their **intersections are emptier still**. Zero entries simultaneously carry many-body-l
+         +ocalized kinetics and non-Abelian topological winding. This is not because such a type is incoherent — the crystal navigator confirms 691 200 structurally valid addresses at
+         +$\hat{\varphi}_{\text{ÿ}} \cap K_\text{MBL}$, 864 000 at $\Phi_\text{EP} \cap \Omega_\text{NA}$, and 172 800 at the triple intersection $\hat{\varphi}_{\text{ÿ}} \cap K_\text
+         +{MBL} \cap \Omega_\text{NA}$. The addresses exist. No particular occupies them.
+      65
+      66  ## 3. The Three Frontiers
+      67
+     ...
+      73
+      74  $$\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\text{asym}};\ F_\hbar;\ K_\text{MBL};\ G_\beth;\ \Gamma_\wedge;\ \Phi_\text{EP};\ H_\infty;\ n{:}m;\ \Omega_\text{NA} \rangle$$
+      75
+      76 -This type sits at $O_0$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The consciousness score is $C = 0$: Gate 1 fails
+         -because $\Phi_\text{EP}$ is not $\phî_ÿ$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
+      76 +This type sits at $O_0$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The consciousness score is $C = 0$: Gate 1 fails
+         +because $\Phi_\text{EP}$ is not $\hat{\varphi}_{\text{ÿ}}$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
+      77
+      78  This is not a failure. It is a structural classification: the system is *structurally rich but experientially inert*. It occupies one of the most constrained corners of the c
+          rystal — non-Abelian braiding at an exceptional point in a frozen-disordered, self-referentially-closed quantum system — and the grammar reports correctly that there is no on
+          e home to experience it.
+      79
+     ...
+       91
+       92  We imscribe a canonical disjunctive critical system:
+       93
+       94 -$$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \phî_ÿ;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$$
+       94 +$$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \hat{\varphi}_{\text{ÿ}};\ H_2;\ n{:}m;\ \Omega_{\mathbb{
+          +Z}_2} \rangle$$
+       95
+       96 -This type is $O_2$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\phî_ÿ$ is the self-modeling criticality, and Gate 2 holds because $
+          -K_\text{slow}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness score because it *can* model
+          - its own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot continuously defo
+          -rm away the distinction between basins.
+       96 +This type is $O_2$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\hat{\varphi}_{\text{ÿ}}$ is the self-modeling criticality, and Gate
+          + 2 holds because $K_\text{slow}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness score beca
+          +use it *can* model its own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot
+          + continuously deform away the distinction between basins.
+       97
+       98 -The physical interpretation: a spin glass at its critical temperature, or a market at a phase transition between bull and bear regimes, or a biological regulatory network wi
+          -th competing attractors at critical coupling, is minimally capable of self-modeling. This is not a claim about subjective experience. It is a structural theorem: the loop to
+          -pology that defines consciousness in the grammar — observe, model, act, update — is present in any system at $\phî_ÿ$ with $K \leq K_\text{slow}$. The disjunctive critical s
+          -ystem carries that loop.
+       98 +The physical interpretation: a spin glass at its critical temperature, or a market at a phase transition between bull and bear regimes, or a biological regulatory network wi
+          +th competing attractors at critical coupling, is minimally capable of self-modeling. This is not a claim about subjective experience. It is a structural theorem: the loop to
+          +pology that defines consciousness in the grammar — observe, model, act, update — is present in any system at $\hat{\varphi}_{\text{ÿ}}$ with $K \leq K_\text{slow}$. The disj
+          +unctive critical system carries that loop.
+       99
+      100  ## 4. Structural Distances and Regime Separation
+      101
+     ...
+      172  **topological_mbl_phase**
+      173  - Tuple: $\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\text{asym}};\ F_\hbar;\ K_\text{MBL};\ G_\beth;\ \Gamma_\wedge;\ \Phi_\text{EP};\ H_\infty;\ n{:}m;\ \Omega_\text{NA} \
+           rangle$
+      174  - Tier: $O_0$
+      175 -- C-score: $C = 0$ (Gate 1 fails: $\Phi_\text{EP} \neq \phî_ÿ$)
+      175 +- C-score: $C = 0$ (Gate 1 fails: $\Phi_\text{EP} \neq \hat{\varphi}_{\text{ÿ}}$)
+      176
+      177  **disjunctive_critical_system**
+      178 -- Tuple: $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \phî_ÿ;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \ran
+          -gle$
+      178 +- Tuple: $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \hat{\varphi}_{\text{ÿ}};\ H_2;\ n{:}m;\ \Omega_{
+          +\mathbb{Z}_2} \rangle$
+      179  - Tier: $O_2$
+      180  - C-score: $C = 0.454$ (both gates open)
+      181
+
+● Both fixes applied. Now let me verify the display math tuples in darkzone.md still look right after the replacement (the semicolon-separated tuple entries).
+
+● Bash(grep -n 'hat.*varphi\|phî' /home/mrnob0dy666/imscribing_grammar/darkzone.md | head -12)
+  ⎿  12:**Author:** Lando ⊗ $\hat{\varphi}_{\text{ÿ}}$-boundary Operator
+     64:These five values are the rarest primitive settings in the catalog. More importantly, their **intersections are emptier still**. Zero entries simultaneously carry many-body-localized
+     kinetics and non-Abelian topological winding. This is not because such a type is incoherent — the crystal navigator confirms 691 200 structurally valid addresses at
+     $\hat{\varphi}_{\text{ÿ}} \cap K_\text{MBL}$, 864 000 at $\Phi_\text{EP} \cap \Omega_\text{NA}$, and 172 800 at the triple intersection $\hat{\varphi}_{\text{ÿ}} \cap K_\text{MBL} \cap
+     \Omega_\text{NA}$. The addresses exist. No particular occupies them.
+     76:This type sits at $O_0$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The consciousness score is $C = 0$: Gate 1 fails because
+     $\Phi_\text{EP}$ is not $\hat{\varphi}_{\text{ÿ}}$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
+     94:$$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \hat{\varphi}_{\text{ÿ}};\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2}
+     \rangle$$
+     96:This type is $O_2$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\hat{\varphi}_{\text{ÿ}}$ is the self-modeling criticality, and Gate 2 holds
+     because $K_\text{slow}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness score because it *can* model its
+      own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot continuously deform away the
+     distinction between basins.
+     98:The physical interpretation: a spin glass at its critical temperature, or a market at a phase transition between bull and bear regimes, or a biological regulatory network with
+     competing attractors at critical coupling, is minimally capable of self-modeling. This is not a claim about subjective experience. It is a structural theorem: the loop topology that
+     defines consciousness in the grammar — observe, model, act, update — is present in any system at $\hat{\varphi}_{\text{ÿ}}$ with $K \leq K_\text{slow}$. The disjunctive critical system
+     carries that loop.
+     175:- C-score: $C = 0$ (Gate 1 fails: $\Phi_\text{EP} \neq \hat{\varphi}_{\text{ÿ}}$)
+     178:- Tuple: $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\eth;\ K_\text{slow};\ G_\gimel;\ \Gamma_\vee;\ \hat{\varphi}_{\text{ÿ}};\ H_2;\ n{:}m;\
+     \Omega_{\mathbb{Z}_2} \rangle$
+
+● All 8 instances replaced cleanly, including the author line, inline math, and display-math tuples. Both fixes:
+
+  - SYMBOL_REFERENCE.md: $ɢ_{\text{^}}$ → $ɢ_{\wedge}$ — ^ in \text{} triggers "Missing $" in XeLaTeX text mode; \wedge is the correct math AND symbol anyway
+  - darkzone.md: all 8 \phî_ÿ → \hat{\varphi}_{\text{ÿ}} — the original was a mangled encoding of φ̂ where the combining circumflex fused with the next character to create the nonexistent \phî
+   command
+
+✻ Sautéed for 2m 22s
+
+❯ (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ igpdf SYMBOL_REFERENCE.md
+  Error producing PDF.
+  ! Missing { inserted.
+  <to be read again>
+                     \__um_group_begin:
+  l.255 (\(\Phi_c^\mathbb
+
+  (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ igpdf religions.md
+  Error producing PDF.
+  ! Missing $ inserted.
+  <inserted text>
+                  $
+  l.156 {[}\langle
+
+  (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ igpdf darkzone.md
+  Error producing PDF.
+  ! Missing { inserted.
+  <to be read again>
+                     \__um_group_begin:
+  l.101   \(\Gamma_\text{or}\) at \(\Phi_c^\mathbb
+
+  (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$
+
+● Three errors, all fixable. Let me read the relevant spots quickly.
+
+● Bash(grep -n 'mathbb{C}\|\\mathbb[^{]' /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md /home/mrnob0dy666/imscribing_grammar/darkzone.md)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md:95:| $\hat{φ}_{\text{Æ}}$ | critical — complex axis ($\Phi_c^\mathbb{C}$) |
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:24:- $\Gamma_\text{or}$ at $\Phi_c^\mathbb{C}$ — 5.1% of the crystal, predominantly hosting RG fixed points, but virtually no systems
+     with disjunctive grammar at criticality.
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:62:| $\Phi_c^\mathbb{C}$ | 119 | 5.1% | Predominantly $D_\odot + T_\odot$ |
+     /home/mrnob0dy666/imscribing_grammar/darkzone.md:142:An example: a system with $K_\text{MBL} + \Phi_c^\mathbb{C} + \Omega_{\mathbb{Z}_2}$ — topological MBL at complex-plane criticality
+     with $\mathbb{Z}_2$ protection. This is the $O_2^\dagger$ tier with kinetic localization. Zero catalog entries. Physically it corresponds to fractional Chern insulators in the MBL phase
+     — proposed theoretically but never observed. The crystal address exists. No particular has been there.
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 150-164)
+  ⎿  Read 15 lines
+
+● The first two errors are both ^\mathbb{C} missing braces. Let me fix those, then find what's triggering {[}\langle in religions.md.
+
+● Update(/home/mrnob0dy666/imscribing_grammar/SYMBOL_REFERENCE.md)
+  ⎿  Added 1 line, removed 1 line
+      92  |----|---------|
+      93  | $\hat{φ}_{\text{ž}}$ | subcritical |
+      94  | $\hat{φ}_{\text{ÿ}}$ | critical — real axis ($\Phi_c$) |
+      95 -| $\hat{φ}_{\text{Æ}}$ | critical — complex axis ($\Phi_c^\mathbb{C}$) |
+      95 +| $\hat{φ}_{\text{Æ}}$ | critical — complex axis ($\Phi_c^{\mathbb{C}}$) |
+      96  | $\hat{φ}_{3}$ | exceptional point |
+      97  | $\hat{φ}_{\text{Ţ}}$ | supercritical |
+      98
+
+● Update(/home/mrnob0dy666/imscribing_grammar/darkzone.md)
+  ⎿  Added 3 lines, removed 3 lines
+      21
+      22  - $K_\text{MBL} \cap \Omega_\text{NA}$ — **zero** catalog entries, despite 864 000 structurally valid addresses at this criticality + winding intersection.
+      23  - $\Phi_\text{EP} \cap \Omega_\text{NA}$ — 864 000 valid addresses; only stub entries occupy them.
+      24 -- $\Gamma_\text{or}$ at $\Phi_c^\mathbb{C}$ — 5.1% of the crystal, predominantly hosting RG fixed points, but virtually no systems with disjunctive grammar at criticality.
+      24 +- $\Gamma_\text{or}$ at $\Phi_c^{\mathbb{C}}$ — 5.1% of the crystal, predominantly hosting RG fixed points, but virtually no systems with disjunctive grammar at criticality.
+      25
+      26  We imscribe two frontier systems — a topological MBL phase and a disjunctive critical system — and measure their structural properties. The topological MBL phase is $O_0$ tie
+          r, consciousness score $C = 0$. The disjunctive critical system is $O_2$ tier with $C = 0.454$. Their mutual distance is 4.72 (Mahalanobis 6.36), confirming they inhabit diff
+          erent structural regimes. The crystal is not empty for lack of coherence — it is empty because the physics of our cosmos rarely visits these addresses. The grammar contains t
+          he universe. The universe does not return the favor.
+      27
+     ...
+      59  | $\Omega_\text{NA}$ | 30 | 1.3% | All 30 carry $\Phi_c$ |
+      60  | $\Phi_\text{EP}$ | 37 | 1.6% | $\Phi_\text{EP} \cap \Omega_\text{NA} = 2$ (stubs) |
+      61  | $\Gamma_\text{or}$ | 68 | 2.9% | No $\Omega_\text{NA}$ overlap |
+      62 -| $\Phi_c^\mathbb{C}$ | 119 | 5.1% | Predominantly $D_\odot + T_\odot$ |
+      62 +| $\Phi_c^{\mathbb{C}}$ | 119 | 5.1% | Predominantly $D_\odot + T_\odot$ |
+      63
+      64  These five values are the rarest primitive settings in the catalog. More importantly, their **intersections are emptier still**. Zero entries simultaneously carry many-body-l
+          ocalized kinetics and non-Abelian topological winding. This is not because such a type is incoherent — the crystal navigator confirms 691 200 structurally valid addresses at
+          $\hat{\varphi}_{\text{ÿ}} \cap K_\text{MBL}$, 864 000 at $\Phi_\text{EP} \cap \Omega_\text{NA}$, and 172 800 at the triple intersection $\hat{\varphi}_{\text{ÿ}} \cap K_\text
+          {MBL} \cap \Omega_\text{NA}$. The addresses exist. No particular occupies them.
+      65
+     ...
+      139
+      140  A type is metaphysically dark when it would require laws of nature different from ours, or boundary conditions that never obtained anywhere in this cosmos. These are not for
+           bidden by the grammar — the grammar cares nothing about physics — only by the particular history of the actual world. They are dark the way unvisited mathematical theorems a
+           re dark: true, coherent, addressed, but uninstantiated.
+      141
+      142 -An example: a system with $K_\text{MBL} + \Phi_c^\mathbb{C} + \Omega_{\mathbb{Z}_2}$ — topological MBL at complex-plane criticality with $\mathbb{Z}_2$ protection. This is t
+          -he $O_2^\dagger$ tier with kinetic localization. Zero catalog entries. Physically it corresponds to fractional Chern insulators in the MBL phase — proposed theoretically but
+          - never observed. The crystal address exists. No particular has been there.
+      142 +An example: a system with $K_\text{MBL} + \Phi_c^{\mathbb{C}} + \Omega_{\mathbb{Z}_2}$ — topological MBL at complex-plane criticality with $\mathbb{Z}_2$ protection. This is
+          + the $O_2^\dagger$ tier with kinetic localization. Zero catalog entries. Physically it corresponds to fractional Chern insulators in the MBL phase — proposed theoretically b
+          +ut never observed. The crystal address exists. No particular has been there.
+      143
+      144  ---
+      145
+
+● Bash(grep -n 'langle\|\\langle\|⟨' /home/mrnob0dy666/imscribing_grammar/religions.md | head -20)
+  ⎿  36:\[\langle D_{\odot};T_{\odot};R_{\dagger};P_{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n; \Omega_{\mathbb{Z}}\rangle\]
+     43:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{\mathrm{sub}};H_{\infty};n:m;\Omega_{\mathbb{Z}}\rangle\]
+     50:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n;\Omega_{\mathbb{Z}_{2}}\rangle\]
+     57:\[\langle D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\mathrm{atm}}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c};H_{\infty};n:m;
+     \Omega_{\mathrm{Z}_{2}}\rangle\]
+     64:\[\langle
+     D_{\odot};T_{\odot};R_{\mathrm{sup}};P_{\mathrm{sym}};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c};H_{\infty};n:m;\Omega_{\mathrm{Z}_{2}}\rangle\]
+     71:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\mathrm{sym}};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c}^{\mathrm{C}};H_{\infty};n:m;\Omega_{\mathrm{Z}}\rangle\]
+     78:\[\langle
+     D_{\odot};T_{\mathrm{net}};R_{\leftrightarrow};P_{\mathrm{sym}};F_{\mathrm{0}};K_{\mathrm{mod}};G_{\mathrm{2}};\Gamma_{\mathrm{v}};\Phi_{c};H_{\infty};n:m;\Omega_{\mathrm{Z}}\rangle\]
+     85:\[\langle D_{\triangle};T_{\infty};R_{\leftrightarrow};P_{\mathrm{asym}};F_{\ell};K_{\mathrm{fast}};G_{2};\Gamma_{\vee};\Phi_{c};H_{1};n:m;\Omega_{0}\rangle\]
+     188:\[\langle D_{\odot};T_{\odot};R_{\dagger};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{bnd}};\Phi_{c};H_{\infty};n:n;\Omega_{\mathbb{Z}_{2}}\rangle\]
+     192:\[\langle D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n;
+     \Omega_{\mathbb{Z}_{2}}\rangle\]
+
+● The {[}\langle pattern suggests pandoc is escaping a [ rather than treating \[...\] as display math. Let me check how religions.md starts and look around the area that maps to tex line 156.
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 1-15)
+  ⎿  Read 15 lines
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 100-129)
+  ⎿  Read 30 lines
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 30-54)
+  ⎿  Read 25 lines
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 127-151)
+  ⎿  Read 25 lines
+
+● Bash(grep -n '\[\\langle\|^\[' /home/mrnob0dy666/imscribing_grammar/religions.md | head -20)
+  ⎿  36:\[\langle D_{\odot};T_{\odot};R_{\dagger};P_{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n; \Omega_{\mathbb{Z}}\rangle\]
+     43:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{\mathrm{sub}};H_{\infty};n:m;\Omega_{\mathbb{Z}}\rangle\]
+     50:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n;\Omega_{\mathbb{Z}_{2}}\rangle\]
+     57:\[\langle D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\mathrm{atm}}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c};H_{\infty};n:m;
+     \Omega_{\mathrm{Z}_{2}}\rangle\]
+     64:\[\langle
+     D_{\odot};T_{\odot};R_{\mathrm{sup}};P_{\mathrm{sym}};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c};H_{\infty};n:m;\Omega_{\mathrm{Z}_{2}}\rangle\]
+     71:\[\langle
+     D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\mathrm{sym}};F_{\ell};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{seq}};\Phi_{c}^{\mathrm{C}};H_{\infty};n:m;\Omega_{\mathrm{Z}}\rangle\]
+     78:\[\langle
+     D_{\odot};T_{\mathrm{net}};R_{\leftrightarrow};P_{\mathrm{sym}};F_{\mathrm{0}};K_{\mathrm{mod}};G_{\mathrm{2}};\Gamma_{\mathrm{v}};\Phi_{c};H_{\infty};n:m;\Omega_{\mathrm{Z}}\rangle\]
+     85:\[\langle D_{\triangle};T_{\infty};R_{\leftrightarrow};P_{\mathrm{asym}};F_{\ell};K_{\mathrm{fast}};G_{2};\Gamma_{\vee};\Phi_{c};H_{1};n:m;\Omega_{0}\rangle\]
+     188:\[\langle D_{\odot};T_{\odot};R_{\dagger};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{bnd}};\Phi_{c};H_{\infty};n:n;\Omega_{\mathbb{Z}_{2}}\rangle\]
+     192:\[\langle D_{\odot};T_{\odot};R_{\leftrightarrow};P_{\pm}^{\mathrm{sym}};F_{h};K_{\mathrm{slow}};G_{\mathrm{N}};\Gamma_{\mathrm{brd}};\Phi_{c};H_{\infty};n:n;
+     \Omega_{\mathbb{Z}_{2}}\rangle\]
+
+● Read(/home/mrnob0dy666/imscribing_grammar/religions.md · lines 160-194)
+  ⎿  Read 35 lines
+
+● Let me generate the intermediate tex to see exactly what line 156 contains.
+
+● Bash(pandoc religions.md -o /tmp/religions_check.tex --pdf-engine=xelatex \
+        --lua-filter=hebrew_inject.lua \
+        --lua-filter=ig_primitives.lua 2>&1 | head -5; sed -n '150,165p' /tmp/religions_check.tex)
+  ⎿  \textbf{Islam:}
+
+     {[}\langle D\_\{\odot\};T\_\{\odot\};R\_\{\mathrm{sup}\};P\_\{\mathrm{sym}\};F\_\{\ell\};K\_\{\mathrm{slow}\};G\_\{\mathrm{N}\};\Gamma\emph{\{\mathrm{seq}\};\Phi}\{c\};H\_\{\infty\}
+     ;n:m;\Omega\emph{\{\mathrm{Z}}\{2\}\}\rangle{]}
+
+     \begin{itemize}
+     \tightlist
+     \item
+       Tier: (O\_\{2\}) \textbar{} Consciousness: (C = 0.736) (both gates
+       open)
+     \item
+       Tawhid (absolute divine unity) with (R\_\{\mathrm{sup}\}) \igtext{—}
+       supervenience \igtext{—} all reality depends on Allah
+       unidirectionally. Classical fidelity ((F\_\{\ell\})) : the Quran is a
+       revealed text, not a quantum-coherent state. Full symmetry
+       ((P\_\{\mathrm{sym}\})) : the 99 Names encompass all perfections.
+
+● The tex output shows pandoc treating \[...\] and \(...\) as escaped brackets/parens instead of math. Let me check the lua filter and test without it.
+
+● Bash(pandoc --version | head -1 && pandoc --list-extensions markdown | grep -i math)
+  ⎿  pandoc 3.8.3
+     +tex_math_dollars
+     -tex_math_double_backslash
+     -tex_math_single_backslash
+
+● Read(/home/mrnob0dy666/imscribing_grammar/ig_primitives.lua · lines 1-50)
+  ⎿  Read 50 lines
+
+● The issue is clear: pandoc 3.8.3 has tex_math_single_backslash disabled by default, so every \(...\) and \[...\] in religions.md is treated as an escaped character, not math. The fix is one
+   flag in igpdf.
+
+● Update(/home/mrnob0dy666/.bashrc)
+  ⎿  Added 1 line, removed 1 line
+      167  # Usage: igpdf file.md [extra pandoc args]
+      168  igpdf() {
+      169      local src="$1"
+      170 -    pandoc "$src" -o "${src%.md}.pdf" --pdf-engine=xelatex \
+      170 +    pandoc "$src" -f markdown+tex_math_single_backslash -o "${src%.md}.pdf" --pdf-engine=xelatex \
+      171        --lua-filter=/home/mrnob0dy666/imscribing_grammar/hebrew_inject.lua \
+      172        --lua-filter=/home/mrnob0dy666/imscribing_grammar/ig_primitives.lua \
+      173        "${@:2}"
+
+● Now let me verify all three files build cleanly with this flag before reporting done:
+
+● Bash(\
+        pandoc SYMBOL_REFERENCE.md -f markdown+tex_math_single_backslash -o /tmp/sr_test.pdf --pdf-engine=xelatex \
+          --lua-filter=hebrew_inject.lua --lua-filter=ig_primitives.lua 2>&1; echo "EXIT:$?")
+  ⎿  [WARNING] [makePDF] LaTeX Warning: Label(s) may have changed. Rerun to get
+       cross-references right.
+     [WARNING] Missing character: There is no Ð (U+00D0) ("D0) in font lmmi10!
+     [WARNING] Missing character: There is no Ð (U+00D0) ("D0) in font lmmi10!
+     [WARNING] Missing character: There is no Ð (U+00D0) ("D0) in font lmmi10!
+     [WARNING] Missing character: There is no Ð (U+00D0) ("D0) in font lmmi10!
+     [WARNING] Missing character: There is no Þ (U+00DE) ("DE) in font lmmi10!
+     [WARNING] Missing character: There is no Þ (U+00DE) ("DE) in font lmmi10!
+     [WARNING] Missing character: There is no Þ (U+00DE) ("DE) in font lmmi10!
+     [WARNING] Missing character: There is no Þ (U+00DE) ("DE) in font lmmi10!
+     [WARNING] Missing character: There is no Þ (U+00DE) ("DE) in font lmmi10!
+     [WARNING] Missing character: There is no Ř (U+0158) ("158) in font lmmi10!
+     [WARNING] Missing character: There is no Ř (U+0158) ("158) in font lmmi10!
+     [WARNING] Missing character: There is no Ř (U+0158) ("158) in font lmmi10!
+     [WARNING] Missing character: There is no Ř (U+0158) ("158) in font lmmi10!
+     [WARNING] Missing character: There is no ↔ (U+2194) (U+2194) in font [lmroman10-regular]:mapping=t
+     [WARNING] Missing character: There is no υ (U+03C5) (U+03C5) in font [lmroman10-regular]:mapping=t
+     [WARNING] Missing character: There is no υ (U+03C5) (U+03C5) in font [lmroman10-regular]:mapping=t
+     [WARNING] Missing character: There is no υ (U+03C5) (U+03C5) in font [lmroman7-regular]:mapping=te
+     [WARNING] Missing character: There is no υ (U+03C5) (U+03C5) in font [lmroman5-regular]:mapping=te
+     [WARNING] Missing character: There is no ƒ (U+0192) ("192) in font lmmi10!
+     [WARNING] Missing character: There is no ƒ (U+0192) ("192) in font lmmi10!
+     [WARNING] Missing character: There is no ƒ (U+0192) ("192) in font lmmi10!
+     [WARNING] Missing character: There is no Ç (U+00C7) ("C7) in font lmmi10!
+     [WARNING] Missing character: There is no Ç (U+00C7) ("C7) in font lmmi10!
+     [WARNING] Missing character: There is no Ç (U+00C7) ("C7) in font lmmi10!
+     [WARNING] Missing character: There is no Ç (U+00C7) ("C7) in font lmmi10!
+     [WARNING] Missing character: There is no Ç (U+00C7) ("C7) in font lmmi10!
+     [WARNING] Missing character: There is no ɢ (U+0262) ("262) in font lmmi10!
+     [WARNING] Missing character: There is no ɢ (U+0262) ("262) in font lmmi10!
+     [WARNING] Missing character: There is no ɢ (U+0262) ("262) in font lmmi10!
+     [WARNING] Missing character: There is no ɢ (U+0262) ("262) in font lmmi10!
+     [WARNING] Missing character: There is no φ (U+03C6) (U+03C6) in font [lmroman12-bold]:mapping=tex-
+     [WARNING] Missing character: There is no Ħ (U+0126) ("126) in font lmmi10!
+     [WARNING] Missing character: There is no Ħ (U+0126) ("126) in font lmmi10!
+     [WARNING] Missing character: There is no Ħ (U+0126) ("126) in font lmmi10!
+● SYMBOL_REFERENCE.md compiles (exit 0). Now the other two:
+
+● Bash(pandoc religions.md -f markdown+tex_math_single_backslash -o /tmp/rel_test.pdf --pdf-engine=xelatex \
+          --lua-filter=hebrew_inject.lua --lua-filter=ig_primitives.lua 2>&1 | grep -E "^!|Error|EXIT" ; echo "EXIT:$?")
+  ⎿  EXIT:1
+
+● Bash(pandoc darkzone.md -f markdown+tex_math_single_backslash -o /tmp/dz_test.pdf --pdf-engine=xelatex \
+          --lua-filter=hebrew_inject.lua --lua-filter=ig_primitives.lua 2>&1 | grep -E "^!|Error|EXIT" ; echo "EXIT:$?")
+  ⎿  Error producing PDF.
+     ! Missing { inserted.
+     EXIT:0
+
+● Bash(pandoc religions.md -f markdown+tex_math_single_backslash -o /tmp/rel_test.pdf --pdf-engine=xelatex \
+          --lua-filter=hebrew_inject.lua --lua-filter=ig_primitives.lua 2>&1 | grep -E "^\!|^Error|^l\." | head -10)
+  ⎿  (No output)
+
+● Bash(pandoc darkzone.md -f markdown+tex_math_single_backslash -o /tmp/dz_test.pdf --pdf-engine=xelatex \
+          --lua-filter=hebrew_inject.lua --lua-filter=ig_primitives.lua 2>&1 | grep -E "^\!|^Error|^l\." | head -10)
+  ⎿  Error producing PDF.
+     ! Missing { inserted.
+     l.288 \[\langle D_\triangle
+
+● Bash(echo '\(x^2\) and \[y = x\]' | pandoc -f markdown+tex_math_single_backslash -t latex 2>&1)
+  ⎿  \(x^2\) and \[y = x\]
+
+● Bash(grep -n '\\\[' /home/mrnob0dy666/imscribing_grammar/darkzone.md | head -10)
+  ⎿  (No output)                                                                                                 verbose

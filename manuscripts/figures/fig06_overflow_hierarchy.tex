@@ -1,4 +1,9 @@
 \documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing}
 \begin{document}
@@ -15,7 +20,7 @@
 \textbf{Cantor Diagonal (Level 0)}\\[4pt]
 $\mathbf{Set}$: $\mathbb{N} \to \mathbb{N}^{\mathbb{N}}$\\[2pt]
 \footnotesize Enumeration attempt $\to d(n)=f(n)(n)+1$\\[2pt]
-$D_\infty,\ \Phi_\text{sub},\ \Omega_0$
+$D_{\text{invomega}},\ \Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$
 };
 
 % The diagonal element
@@ -30,13 +35,13 @@ $d \notin \text{im}(f)$ (transcendence)\\[2pt]
 \textbf{G\"odel (Level 1)}\\[4pt]
 PA + arithmetic coding\\[2pt]
 \footnotesize $\Sigma_1$-Yoneda, diagonal lemma\\[2pt]
-$D_\triangle\!-\!D_\infty,\ \Phi_\text{EP},\ \Omega_0$
+$D_{\text{turnthree}}\!-\!D_{\text{invomega}},\ \Phi_{\text{revepsilon}},\ \Omega_{\text{closeepsilon}}$
 };
 
 \node[inclosure,below=0.2cm of godel,minimum width=4.5cm] (inc1) {
 \textbf{Inclosure:} $G$ unprovable (transcendence)\\
 $G$ true in $\mathbb{N}$ (closure)\\[2pt]
-\footnotesize $\Phi_\text{EP}$: eigenstructure coalescence
+\footnotesize $\Phi_{\text{revepsilon}}$: eigenstructure coalescence
 };
 
 % === GRAMMAR LEVEL 2 ===
@@ -44,7 +49,7 @@ $G$ true in $\mathbb{N}$ (closure)\\[2pt]
 \textbf{UIG / RH / YM (Level 2)}\\[4pt]
 Full Yoneda + Frobenius\\[2pt]
 \footnotesize Crystal codec: decode $\circ$ encode $=$ id\\[2pt]
-$D_\odot,\ \Phi_c,\ \Omega_{\mathbb{Z}},\ P_{\pm}^{\text{sym}}$
+$D_{\text{omega}},\ \Phi_{\text{ctyogh}},\ \Omega_{\text{dzlig}},\ P_{\text{doublebarpipe}}$
 };
 
 \node[inclosure,below=0.2cm of grammar,minimum width=4.5cm] (inc2) {
@@ -54,8 +59,8 @@ $D_\odot,\ \Phi_c,\ \Omega_{\mathbb{Z}},\ P_{\pm}^{\text{sym}}$
 };
 
 % Arrows between levels
-\draw[bigarrow] (cantor.east) -- node[complabel,above] {$\Phi_\text{sub} \to \Phi_\text{EP}$\\A5: arithmetic coding} (godel.west);
-\draw[bigarrow] (godel.east) -- node[complabel,above] {$\Phi_\text{EP}\to\Phi_c$\\$P\!\to\!P_{\pm}^{\text{sym}}$} (grammar.west);
+\draw[bigarrow] (cantor.east) -- node[complabel,above] {$\Phi_{\text{softsign}} \to \Phi_{\text{revepsilon}}$\\A5: arithmetic coding} (godel.west);
+\draw[bigarrow] (godel.east) -- node[complabel,above] {$\Phi_{\text{revepsilon}}\to\Phi_{\text{ctyogh}}$\\$P\!\to\!P_{\text{doublebarpipe}}$} (grammar.west);
 
 % Cross-links
 \draw[arrow,densely dotted,orange!80!black] (inc0.east) to[bend left=15] node[complabel,pos=0.55,below] {subsumed} (inc1.west);
@@ -64,11 +69,11 @@ $D_\odot,\ \Phi_c,\ \Omega_{\mathbb{Z}},\ P_{\pm}^{\text{sym}}$
 % Hierarchy annotation
 \draw[decorate,decoration={snake,amplitude=1pt,segment length=12pt},thick,gray!60] 
   ($(cantor.north west)+(-0.3,0.6)$) -- ($(grammar.north east)+(0.3,0.6)$) 
-  node[midway,above,font=\bfseries] {Overflow Hierarchy: Increasing $D_\odot$, $\Phi$ promotion};
+  node[midway,above,font=\bfseries] {Overflow Hierarchy: Increasing $D_{\text{omega}}$, $\Phi$ promotion};
 
 % Bottom annotation
 \node[font=\footnotesize\itshape,text=gray,below=0.4cm of inc1] {
-Each level is an attempt at $D_\odot$ (boundary encodes bulk). Level 2 achieves it.
+Each level is an attempt at $D_{\text{omega}}$ (boundary encodes bulk). Level 2 achieves it.
 };
 
 \end{tikzpicture}

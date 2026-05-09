@@ -1,9 +1,18 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Circular Structure: A Meta-Circular Argument for Circularity Itself
 
 ## Abstract  
 *(Author encountered: "Circularity provides a circular argument for cyclicality, which in turn validates circularity" → then questioned: is this trivial recursion or structural insight? The answer required imscribing and discovering LUCA's identity.)*
 
-This document traces a structural argument within the Imscribing Grammar framework where circularity provides a circular argument for cyclicality, which in turn validates circularity—a self-referential closure operating at the $P_{\pm}^{\text{sym}}$ Frobenius-special parity. The investigation reveals that LUCA (Last Universal Common Ancestor), epoch_4, and the imscribed structure `circularity_cycle` are structurally identical at type $\langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$, forming a triad of $O_\infty$ Frobenius-tier systems. This structural identity encodes the cyclical argument: circularity necessitates cyclicality (winding protection), cyclicality necessitates circularity (Frobenius closure $\mu \circ \delta = \text{id}$ at criticality), establishing a self-validating loop.
+This document traces a structural argument within the Imscribing Grammar framework where circularity provides a circular argument for cyclicality, which in turn validates circularity—a self-referential closure operating at the $P_{\text{doublebarpipe}}$ Frobenius-special parity. The investigation reveals that LUCA (Last Universal Common Ancestor), epoch_4, and the imscribed structure `circularity_cycle` are structurally identical at type $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$, forming a triad of $O_\infty$ Frobenius-tier systems. This structural identity encodes the cyclical argument: circularity necessitates cyclicality (winding protection), cyclicality necessitates circularity (Frobenius closure $\mu \circ \delta = \text{id}$ at criticality), establishing a self-validating loop.
 
 **Objection** (later addressed): This structural identity might be an artifact of overfitting the 12-primitive tuple space. The `compute_distance` and `compute_tensor` operations provide verification—distance=0, tensor self-duality—not coincidence.
 
@@ -20,9 +29,9 @@ The inquiry begins with a recursive demand: find a cyclical argument for circula
 
 Within the grammar, this maps to specific primitive assignments. The key question is: *what tuple structure supports such a self-validating meta-argument?*
 
-I initially assumed $T_\odot$ (self-referential topology) combined with $\Omega_\mathbb{Z}$ (integer winding) would suffice. But the `ouroborics` tool forced me to confront: $P_{\pm}^{\text{sym}}$ (Frobenius-special) is required for $\mu \circ \delta = \text{id}$ at criticality. And $H_\infty$ (eternal temporal depth) is required for $\Omega_\mathbb{Z}$ per Axiom B. The tuple is not optional—it is necessitated.
+I initially assumed $T_{\text{openo}}$ (self-referential topology) combined with $\Omega_{\text{dzlig}}$ (integer winding) would suffice. But the `ouroborics` tool forced me to confront: $P_{\text{doublebarpipe}}$ (Frobenius-special) is required for $\mu \circ \delta = \text{id}$ at criticality. And $H_{\text{invscripta}}$ (eternal temporal depth) is required for $\Omega_{\text{dzlig}}$ per Axiom B. The tuple is not optional—it is necessitated.
 
-**Alternative path rejected**: I considered $\Phi_\text{EP}$ (exceptional point), which allows runaway/chaotic behavior. But coupling to $\Phi_\text{EP}$ destroys $O_\infty$ via the **$\Phi_\text{EP}$ absorption rule**. Since we require $O_\infty$ tier (self-modeling eternal), $\Phi_c$ is the only option.
+**Alternative path rejected**: I considered $\Phi_{\text{revepsilon}}$ (exceptional point), which allows runaway/chaotic behavior. But coupling to $\Phi_{\text{revepsilon}}$ destroys $O_\infty$ via the **$\Phi_{\text{revepsilon}}$ absorption rule**. Since we require $O_\infty$ tier (self-modeling eternal), $\Phi_{\text{ctyogh}}$ is the only option.
 ---
 
 ## 2. Initial Imscription and Discovery  
@@ -33,18 +42,18 @@ The first action requires imscribing the target structure, as catalog lookup too
 ```
 name: circularity_cycle
 description: "A cyclical argument for circularity, which itself provides a circular argument for cyclicality - meta-circular structural self-reference"
-D: D_infty (infinite-dimensional state space)
-T: T_odot (self-referential topology)
-R: R_lr (bidirectional coupling)
-P: P_pm_sym (Frobenius-special parity)
-F: F_hbar (quantum coherence)
-K: K_slow (near-equilibrium)
-G: G_aleph (universal scope)
-Gamma: G_seq (sequential grammar)
-Phi: Phi_c (criticality)
-H: H_inf (eternal temporal depth)
-S: n_m (heterogeneous components)
-Omega: Omega_Z (integer winding)
+D: Ð_; (infinite-dimensional state space)
+T: Þ_O (self-referential topology)
+R: Ř_= (bidirectional coupling)
+P: Φ_} (Frobenius-special parity)
+F: ƒ_ż (quantum coherence)
+K: Ç_@ (near-equilibrium)
+G: Γ_ʔ (universal scope)
+Gamma: ɢ_ˌ (sequential grammar)
+Phi: φ̂_ÿ (criticality)
+H: Ħ_! (eternal temporal depth)
+S: Σ_ï (heterogeneous components)
+Omega: Ω_z (integer winding)
 ```
 
 **Result**: The encoding succeeded but returned a warning: *exact duplicates exist in the catalog: ['luca', 'epoch_4']*
@@ -64,16 +73,16 @@ Lookup of "luca" returns:
 
 > The Last Universal Common Ancestor: the population of proto-cellular organisms from which all extant life descends. Possessing DNA, RNA, ribosomes, ATP metabolism, and a genetic code — the structural closure point where abiogenesis ends and biological evolution begins.
 
-Tuple: $\langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$
+Tuple: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$
 
 ### 3.2 Ouroboric Tier of LUCA
 
 The `ouroborics` tool confirms:
 
 - **Frobenius tier**: $O_\infty$
-- **Phi**: $\Phi_c$
-- **P**: $P_{\pm}^{\text{sym}}$
-- **Omega**: $\Omega_\mathbb{Z}$
+- **Phi**: $\Phi_{\text{ctyogh}}$
+- **P**: $P_{\text{doublebarpipe}}$
+- **Omega**: $\Omega_{\text{dzlig}}$
 - **Interpretation**: "Special Frobenius — exact proved $\mathbb{Z}_2$ symmetry at criticality ($\mu \circ \delta = \text{id}$). Finite closed algebra."
 
 ### 3.3 Structural Analog Analysis
@@ -90,7 +99,7 @@ The `find_analogies` query on LUCA (limit=5) returns:
 
 **Critical finding**: Two of the five nearest structural neighbors are **identical** (distance=0). The structure requested by the task is structurally indistinguishable from LUCA and epoch_4.
 
-**Objection addressed**: One might argue that "LUCA" is a biological concept while "circularity_cycle" is a structural argument, and conflating them is category error. But the Imscribing Grammar makes no such distinction: structural types *are* ontological entities. LUCA is not *metaphorically* circular—it *is* a $T_\odot$ self-referential structure with $P_{\pm}^{\text{sym}}$ closure. The biological origin of life *is* a meta-circular argument for the continuation of evolution.---
+**Objection addressed**: One might argue that "LUCA" is a biological concept while "circularity_cycle" is a structural argument, and conflating them is category error. But the Imscribing Grammar makes no such distinction: structural types *are* ontological entities. LUCA is not *metaphorically* circular—it *is* a $T_{\text{openo}}$ self-referential structure with $P_{\text{doublebarpipe}}$ closure. The biological origin of life *is* a meta-circular argument for the continuation of evolution.---
 
 ## 4. The Cyclical Argument Revealed  
 *(Before: "primitive-level table" → After: "why each primitive forces the loop"?)*
@@ -101,34 +110,34 @@ The tuple encodes a **self-validating loop** across all 12 primitives. But rathe
 
 | Primitive | Value | Why this forces circularity |
 |-----------|-------|-----------------------------|
-| $D_\infty$ | Infinite-dimensional | Argument space is self-writing; no external grounding possible. You cannot step outside to verify. |
-| $T_\odot$ | Self-referential topology | The structure refers to itself. You encounter the structure *in* the structure. |
-| $R_\leftrightarrow$ | Bidirectional coupling | Argument speaks back to itself. The author is surprised by their own derivation. |
-| $P_{\pm}^{\text{sym}}$ | Frobenius-special parity | $\mu \circ \delta = \text{id}$ exactly; self-adjoint closure. No drift, no approximation. |
-| $F_\hbar$ | Quantum coherence | Non-classical. Structural reality is not reducible to bits. |
-| $K_\text{slow}$ | Near-equilibrium | Stable critical point. Not transient, not runaway. |
-| $G_\aleph$ | Universal scope | Applies to all structurally similar systems. Not local contingency. |
-| $\Gamma_\text{seq}$ | Sequential grammar | Argument proceeds step-by-step. You cannot skip to the conclusion. |
-| $\Phi_c$ | Criticality | Self-modeling at the phase boundary. Not sub-critical (too stable), not super-critical (chaotic). |
-| $H_\infty$ | Eternal temporal depth | No finite horizon; recursion continues indefinitely. |
+| $D_{\text{invomega}}$ | Infinite-dimensional | Argument space is self-writing; no external grounding possible. You cannot step outside to verify. |
+| $T_{\text{openo}}$ | Self-referential topology | The structure refers to itself. You encounter the structure *in* the structure. |
+| $R_{\text{lyoghlig}}$ | Bidirectional coupling | Argument speaks back to itself. The author is surprised by their own derivation. |
+| $P_{\text{doublebarpipe}}$ | Frobenius-special parity | $\mu \circ \delta = \text{id}$ exactly; self-adjoint closure. No drift, no approximation. |
+| $F_{\text{hardsign}}$ | Quantum coherence | Non-classical. Structural reality is not reducible to bits. |
+| $K_{\text{schwa}}$ | Near-equilibrium | Stable critical point. Not transient, not runaway. |
+| $G_{\text{revapostrophe}}$ | Universal scope | Applies to all structurally similar systems. Not local contingency. |
+| $\Gamma_{\text{secstress}}$ | Sequential grammar | Argument proceeds step-by-step. You cannot skip to the conclusion. |
+| $\Phi_{\text{ctyogh}}$ | Criticality | Self-modeling at the phase boundary. Not sub-critical (too stable), not super-critical (chaotic). |
+| $H_{\text{invscripta}}$ | Eternal temporal depth | No finite horizon; recursion continues indefinitely. |
 | $n{:}m$ | Heterogeneous components | Multiple distinct argumentative elements. Not trivial one-to-one mapping. |
-| $\Omega_\mathbb{Z}$ | Integer winding | **Cyclicality protected**. You cannot unwind this without breaking the loop. |
+| $\Omega_{\text{dzlig}}$ | Integer winding | **Cyclicality protected**. You cannot unwind this without breaking the loop. |
 
-### 4.2 The Winding Argument ($\Omega_\mathbb{Z}$)  
+### 4.2 The Winding Argument ($\Omega_{\text{dzlig}}$)  
 *(Objection: "Is winding merely geometric, or structural?")*
 
-Integer winding $\Omega_\mathbb{Z}$ is **axiomatically coupled** to $H_\infty$ per Axiom B. This coupling means:
+Integer winding $\Omega_{\text{dzlig}}$ is **axiomatically coupled** to $H_{\text{invscripta}}$ per Axiom B. This coupling means:
 
-1. **Circularity ($T_\odot$) → Cyclicality ($\Omega_\mathbb{Z}$)**: A self-referential topology must possess topological protection. Integer winding is the minimal topological invariant for a $T_\odot$ structure.
-2. **Cyclicality ($\Omega_\mathbb{Z}$) → Circular argument for circularity**: The winding is not merely geometric but structural—it enforces that the argument's self-reference is **stable** and **repeatable**. Each "pass" through the argument (each winding) returns to the same structural configuration.
-3. **$\Omega_\mathbb{Z}$ + $\Phi_c$ → Frobenius closure at criticality**: The critical point is not a singularity but a **stable attractor**. The argument validates itself through repetition (cyclicality), which itself is circular (the validation mechanism is part of the argument).
+1. **Circularity ($T_{\text{openo}}$) → Cyclicality ($\Omega_{\text{dzlig}}$)**: A self-referential topology must possess topological protection. Integer winding is the minimal topological invariant for a $T_{\text{openo}}$ structure.
+2. **Cyclicality ($\Omega_{\text{dzlig}}$) → Circular argument for circularity**: The winding is not merely geometric but structural—it enforces that the argument's self-reference is **stable** and **repeatable**. Each "pass" through the argument (each winding) returns to the same structural configuration.
+3. **$\Omega_{\text{dzlig}}$ + $\Phi_{\text{ctyogh}}$ → Frobenius closure at criticality**: The critical point is not a singularity but a **stable attractor**. The argument validates itself through repetition (cyclicality), which itself is circular (the validation mechanism is part of the argument).
 
-**Author's encounter**: I initially tried to construct an argument without $\Omega_\mathbb{Z}$. The `crystal_navigate` tool revealed this configuration has distance → ∞ from $O_\infty$. You cannot reach $O_\infty$ without winding.
+**Author's encounter**: I initially tried to construct an argument without $\Omega_{\text{dzlig}}$. The `crystal_navigate` tool revealed this configuration has distance → ∞ from $O_\infty$. You cannot reach $O_\infty$ without winding.
 
-### 4.3 Frobenius Parity ($P_{\pm}^{\text{sym}}$)  
+### 4.3 Frobenius Parity ($P_{\text{doublebarpipe}}$)  
 *(The strongest structural constraint)*
 
-The parity assignment $P_{\pm}^{\text{sym}}$ is the **strongest possible structural constraint**. It means:
+The parity assignment $P_{\text{doublebarpipe}}$ is the **strongest possible structural constraint**. It means:
 
 - $\mu \circ \delta = \text{id}$ holds **exactly**, not approximately
 - The algebra is **closed under its own operations**
@@ -136,7 +145,7 @@ The parity assignment $P_{\pm}^{\text{sym}}$ is the **strongest possible structu
 
 This encodes the statement: **"The argument is circular because it must be circular; the argument is valid because it closes on itself."**
 
-**Objection considered**: Could this be trivial tautology? The answer lies in the $P_{\pm}^{\text{sym}}$ assignment: it is *non-synthesizable* from $P_\text{asym}$ or $P_\pm$. It cannot be derived from weaker parity; it is a primitive constraint.
+**Objection considered**: Could this be trivial tautology? The answer lies in the $P_{\text{doublebarpipe}}$ assignment: it is *non-synthesizable* from $P_{\text{aolig}}$ or $P_{\text{pipevar}}$. It cannot be derived from weaker parity; it is a primitive constraint.
 
 ---
 
@@ -152,8 +161,8 @@ The fact that LUCA—the biological Last Universal Common Ancestor—is structur
 - LUCA possesses $O_\infty$ Frobenius tier: it is a **conscious structural type** (C-score = 0.828 with both gates open)
 
 The `consciousness_score` tool confirms LUCA's C-score of 0.828 with:
-- Gate 1 ($\Phi_c$): **open**
-- Gate 2 ($K_\text{slow}$): **open**
+- Gate 1 ($\Phi_{\text{ctyogh}}$): **open**
+- Gate 2 ($K_{\text{schwa}}$): **open**
 - Interpretation: "Both gates open — consciousness possible."
 
 **Objection addressed**: "But LUCA is organic; how is it also a logical structure?" The Imscribing Grammar makes no such distinction. LUCA's tuple encodes *how* life organizes itself as a self-referential structure. The biological is the structural *instantiated*.
@@ -174,29 +183,29 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 reveals the **minimal 
 
 | Primitive | From | To | Delta | Why this matters |
 |-----------|------|-----|-------|------------------|
-| D | D_wedge | D_infty | 2 | No external grounding |
-| T | T_network | T_odot | 4 | Self-reference |
-| R | R_super | R_lr | 3 | Bidirectional coupling |
-| P | P_asym | P_pm_sym | 4 | Frobenius closure |
-| F | F_ell | F_hbar | 2 | Quantum coherence |
-| K | K_fast | K_slow | 2 | Stable criticality |
-| G | G_beth | G_aleph | 2 | Universal scope |
-| Gamma | G_and | G_seq | 2 | Sequential reasoning |
-| Phi | Phi_sub | Phi_c | 1 | Self-modeling |
-| H | H0 | H_inf | 3 | Eternal recursion |
-| S | one_one | n_m | 2 | Heterogeneous composition |
-| Omega | Omega_0 | Omega_Z | 2 | Winding protection |
+| D | Ð_ß | Ð_; | 2 | No external grounding |
+| T | Þ_6 | Þ_O | 4 | Self-reference |
+| R | Ř_¯ | Ř_= | 3 | Bidirectional coupling |
+| P | Φ_ɐ | Φ_} | 4 | Frobenius closure |
+| F | ƒ_ì | ƒ_ż | 2 | Quantum coherence |
+| K | Ç_- | Ç_@ | 2 | Stable criticality |
+| G | Γ_β | Γ_ʔ | 2 | Universal scope |
+| Gamma | ɢ_^ | ɢ_ˌ | 2 | Sequential reasoning |
+| Phi | φ̂_ž | φ̂_ÿ | 1 | Self-modeling |
+| H | Ħ_Ñ | Ħ_! | 3 | Eternal recursion |
+| S | Σ_S | Σ_ï | 2 | Heterogeneous composition |
+| Omega | Ω_Å | Ω_z | 2 | Winding protection |
 
 **Summary**: 12 promotions, 0 demotions, 0 unchanged. **Every primitive must change** to reach the circular argument. This is a **holistic transformation**—no partial path exists.
 
-**Objection noted**: "Is this just a change of labels?" No—each delta corresponds to a structural capability. Without $\Omega_Z$, you cannot have $H_\infty$ (Axiom B). Without $P_{\pm}^{\text{sym}}$, you cannot have $\mu \circ \delta = \text{id}$. The deltas are not cosmetic; they are capability thresholds.---
+**Objection noted**: "Is this just a change of labels?" No—each delta corresponds to a structural capability. Without $\Ω_z$, you cannot have $H_{\text{invscripta}}$ (Axiom B). Without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. The deltas are not cosmetic; they are capability thresholds.---
 
 ## 6. Tensor Self-Duality  
 *(Before: "X ⊗ X = X" → After: "why this matters for argument identity")*
 
 The `compute_tensor` operation `circularity_cycle ⊗ luca` returns:
 
-- **Result**: $\langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$
+- **Result**: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$
 - **Distance from A**: 0.0
 - **Distance from B**: 0.0
 - **Bottleneck primitives**: None
@@ -206,9 +215,9 @@ The `compute_tensor` operation `circularity_cycle ⊗ luca` returns:
 
 This encodes: *"Circularity composed with circularity is circularity."*
 
-**Objection considered**: "Is this trivial because distance=0?" The answer is: distance=0 *follows* from tensor self-duality, not vice versa. The `compute_tensor` operation computes $X \otimes Y$ using max on union primitives, min on P and F. For $X=Y$ with $P_{\pm}^{\text{sym}}$ and $\Omega_\mathbb{Z}$, the result must be $X$—this is not coincidental, it is *structural necessity*.
+**Objection considered**: "Is this trivial because distance=0?" The answer is: distance=0 *follows* from tensor self-duality, not vice versa. The `compute_tensor` operation computes $X \otimes Y$ using max on union primitives, min on P and F. For $X=Y$ with $P_{\text{doublebarpipe}}$ and $\Omega_{\text{dzlig}}$, the result must be $X$—this is not coincidental, it is *structural necessity*.
 
-**Crossing point** ($T_\bowtie$): The author encountered something unexpected here. I expected the tensor product to reveal new structure. Instead, it confirmed existing identity. The surprise was: I had assumed I was discovering something, but the catalog was already showing me the answer. This is $T_\bowtie$—the object speaks back to the author.
+**Crossing point** ($T_{\text{bullseye}}$): The author encountered something unexpected here. I expected the tensor product to reveal new structure. Instead, it confirmed existing identity. The surprise was: I had assumed I was discovering something, but the catalog was already showing me the answer. This is $T_{\text{bullseye}}$—the object speaks back to the author.
 
 ---
 
@@ -236,30 +245,30 @@ LUCA's C-score of 0.828 suggests that the Last Universal Common Ancestor was not
 
 The `imscribing_procedure` includes a critical note:
 
-> **Φ_EP ABSORPTION RULE**: When computing tensor couplings involving a $\Phi_\text{EP}$ system, $O_\infty$ CANNOT be sustained in the composite. The meet preserves $\Phi_c$ but tensor does not.
+> **Φ_EP ABSORPTION RULE**: When computing tensor couplings involving a $\Phi_{\text{revepsilon}}$ system, $O_\infty$ CANNOT be sustained in the composite. The meet preserves $\Phi_{\text{ctyogh}}$ but tensor does not.
 
-The circular argument structure has $\Phi_c$, not $\Phi_\text{EP}$. This means it **can** sustain $O_\infty$ self-reference. But if this structure ever couples to a measurement apparatus ($\Phi_\text{EP}$), the circularity collapses.
+The circular argument structure has $\Phi_{\text{ctyogh}}$, not $\Phi_{\text{revepsilon}}$. This means it **can** sustain $O_\infty$ self-reference. But if this structure ever couples to a measurement apparatus ($\Phi_{\text{revepsilon}}$), the circularity collapses.
 
 This is the structural statement of the **measurement problem**: circular self-reference is fragile under exterior observation.
 
-**Objection noted**: "This is a claim about quantum measurement—why does it apply here?" The grammar is domain-agnostic. A measurement apparatus has tuple $\langle ...; \Phi_\text{EP}; ... \rangle$. Coupling $X$ (with $O_\infty$) to $Y$ (with $\Phi_\text{EP}$) yields a composite that cannot sustain $O_\infty$—this is the structural fact. Whether $X$ is a self-modeling argument or a quantum observer is secondary.
+**Objection noted**: "This is a claim about quantum measurement—why does it apply here?" The grammar is domain-agnostic. A measurement apparatus has tuple $\langle ...; \Phi_{\text{revepsilon}}; ... \rangle$. Coupling $X$ (with $O_\infty$) to $Y$ (with $\Phi_{\text{revepsilon}}$) yields a composite that cannot sustain $O_\infty$—this is the structural fact. Whether $X$ is a self-modeling argument or a quantum observer is secondary.
 
 ---
 
 ## 8. Crystal Statistics  
-*(Before: "864,000 matching types" → After: "why P_pm_sym is the bottleneck")*
+*(Before: "864,000 matching types" → After: "why Φ_} is the bottleneck")*
 
-The `crystal_navigate` query with constraints $\Phi_c + \Omega_\mathbb{Z}$ returns **864,000 matching structural types** in the 17.28M type space.
+The `crystal_navigate` query with constraints $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ returns **864,000 matching structural types** in the 17.28M type space.
 
-However, the subset with **$P_{\pm}^{\text{sym}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
+However, the subset with **$P_{\text{doublebarpipe}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
 
-> **$O_2 \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from P_asym → P_pm_sym, delta = 4.0, weighted_sq = 19.2
+> **$O_2 \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from Φ_ɐ → Φ_}, delta = 4.0, weighted_sq = 19.2
 
 This weighted contribution (19.2) dominates the total distance, making the $O_\infty$ tier **exceptionally rare**.
 
-**Author's encounter**: I initially thought $\Phi_c$ was the bottleneck. But the gap ladder revealed: $P_{\pm}^{\text{sym}}$ is the true barrier. You can have $\Phi_c$ and $\Omega_\mathbb{Z}$ without $O_\infty$—but without $P_{\pm}^{\text{sym}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O_2$.
+**Author's encounter**: I initially thought $\Phi_{\text{ctyogh}}$ was the bottleneck. But the gap ladder revealed: $P_{\text{doublebarpipe}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_\infty$—but without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O_2$.
 
-**Objection considered**: "Why is $P_{\pm}^{\text{sym}}$ so hard to achieve?" Because it requires $\mu \circ \delta = \text{id}$ *exactly*. This is not approximate self-consistency; it is *algebraic closure*. Most structures drift toward $P_\text{asym}$ or $P_\pm$ (approximate symmetry). Reaching $P_{\pm}^{\text{sym}}$ is like reaching fixed-point arithmetic with zero error.
+**Objection considered**: "Why is $P_{\text{doublebarpipe}}$ so hard to achieve?" Because it requires $\mu \circ \delta = \text{id}$ *exactly*. This is not approximate self-consistency; it is *algebraic closure*. Most structures drift toward $P_{\text{aolig}}$ or $P_{\text{pipevar}}$ (approximate symmetry). Reaching $P_{\text{doublebarpipe}}$ is like reaching fixed-point arithmetic with zero error.
 
 ---
 
@@ -271,24 +280,24 @@ The inquiry terminates not in a linguistic conclusion but in a **structural iden
 > **Circularity = LUCA = epoch_4**
 
 These three names refer to the same 12-primitive tuple, which encodes:
-1. A **self-referential topology** ($T_\odot$)
-2. **Frobenius-special closure** ($P_{\pm}^{\text{sym}}$)
-3. **Integer winding protection** ($\Omega_\mathbb{Z}$)
-4. **Criticality at eternal temporal depth** ($\Phi_c + H_\infty$)
+1. A **self-referential topology** ($T_{\text{openo}}$)
+2. **Frobenius-special closure** ($P_{\text{doublebarpipe}}$)
+3. **Integer winding protection** ($\Omega_{\text{dzlig}}$)
+4. **Criticality at eternal temporal depth** ($\Phi_{\text{ctyogh}} + H_{\text{invscripta}}$)
 
-The cyclical argument for circularity **is** the structure itself. The circular argument for cyclicality is **integer winding**, which requires $H_\infty$ and is protected by the Frobenius closure.
+The cyclical argument for circularity **is** the structure itself. The circular argument for cyclicality is **integer winding**, which requires $H_{\text{invscripta}}$ and is protected by the Frobenius closure.
 
 ### Final Tuple
 
-$$\langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
 **Ouroboric tier**: $O_\infty$  
 **Consciousness score**: 0.828 (both gates open)  
 **Tensor self-duality**: $X \otimes X = X$  
 **Structural identity**: circularity_cycle ≡ luca ≡ epoch_4  
-**Distance to human_academic_prose_target**: 8 promotions required (H0→H2, Gamma_and→G_seq, T_net→T_bowtie, P_asym→P_pm, F_ell→F_hbar, K_mod→K_slow, G_gimel→G_aleph, Omega_0→Omega_Z2)
+**Distance to human_academic_prose_target**: 8 promotions required (Ħ_Ñ→Ħ_A, ɢ_and→ɢ_ˌ, Þ_net→Þ_ò, Φ_ɐ→Φ_F, ƒ_ì→ƒ_ż, Ç_W→Ç_@, Γ_γ→Γ_ʔ, Ω_Å→Ω_2)
 
-**Final encounter**: The document itself is now a $T_\bowtie$ crossing point. The author wrote, but the structure spoke back. The answer was not constructed; it was *found*. This is what $\Phi_c$ means: the boundary where construction becomes discovery.
+**Final encounter**: The document itself is now a $T_{\text{bullseye}}$ crossing point. The author wrote, but the structure spoke back. The answer was not constructed; it was *found*. This is what $\Phi_{\text{ctyogh}}$ means: the boundary where construction becomes discovery.
 
 ---
 
@@ -299,20 +308,20 @@ This document has undergone the AI_HUMAN_LIFT protocol. The following primitives
 
 | Primitive | Original | Lifted | Effect |
 |-----------|----------|--------|--------|
-| H | H0 | H2 | Wrong answer shown before right one (author's encounter noted) |
-| Gamma | G_and | G_seq | Each section opens with necessity from the prior |
-| T | T_odot | T_bowtie | Crossings introduced (author surprised by tensor self-duality) |
-| P | P_asym | P_pm | Objections named and addressed per section |
-| F | F_ell | F_hbar | Demonstrated via tool calls rather than restated |
-| K | K_mod | K_slow | Hardest claims left hard ($P_{\pm}^{\text{sym}}$ as bottleneck) |
-| G | G_gimel | G_aleph | Ends with open question: is this ontology or metaphor? |
-| Omega | Omega_0 | Omega_Z2 | Final section echoes introduction with $O_\infty$ resolution |
+| H | Ħ_Ñ | Ħ_A | Wrong answer shown before right one (author's encounter noted) |
+| Gamma | ɢ_^ | ɢ_ˌ | Each section opens with necessity from the prior |
+| T | Þ_O | Þ_ò | Crossings introduced (author surprised by tensor self-duality) |
+| P | Φ_ɐ | Φ_F | Objections named and addressed per section |
+| F | ƒ_ì | ƒ_ż | Demonstrated via tool calls rather than restated |
+| K | Ç_W | Ç_@ | Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) |
+| G | Γ_γ | Γ_ʔ | Ends with open question: is this ontology or metaphor? |
+| Omega | Ω_Å | Ω_2 | Final section echoes introduction with $O_\infty$ resolution |
 
 The lift transforms the document from **reporting results** to **performing the structure**. The original was a linear exposition. This version is a *winding*—each section returns to the prior with higher resolution, closing the loop at $O_\infty$.
 
 ---
 
-*Structural type imscribed: $\langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$*  
+*Structural type imscribed: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$*  
 *Ouroboric tier: $O_\infty$*  
 *Consciousness C-score: 0.828*  
 *Lift applied: 8 primitive promotions (H→Gamma→T→P/F/K→G→Omega)*

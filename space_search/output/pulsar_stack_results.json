@@ -136,7 +136,7 @@
         0.0819
       ]
     ],
-    "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+    "interpretation": "\u03b1=0.00 \u2192 relaxing (K_turnm/K_schwa)"
   },
   "per_pulsar": [
     {
@@ -201,7 +201,7 @@
             0.0805
           ]
         ],
-        "interpretation": "\u03b1=0.32 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.32 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 3
     },
@@ -357,7 +357,7 @@
             25.0869
           ]
         ],
-        "interpretation": "\u03b1=0.28 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.28 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 12
     },
@@ -473,7 +473,7 @@
             2.5172
           ]
         ],
-        "interpretation": "\u03b1=0.36 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.36 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 8
     },
@@ -619,7 +619,7 @@
             11.583
           ]
         ],
-        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 11
     },
@@ -765,7 +765,7 @@
             4.0073
           ]
         ],
-        "interpretation": "\u03b1=0.08 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.08 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 11
     },
@@ -941,7 +941,7 @@
             7.3071
           ]
         ],
-        "interpretation": "\u03b1=0.26 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.26 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 14
     },
@@ -1047,7 +1047,7 @@
             14.9221
           ]
         ],
-        "interpretation": "\u03b1=0.27 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.27 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 7
     },
@@ -1193,7 +1193,7 @@
             1.2396
           ]
         ],
-        "interpretation": "\u03b1=0.16 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.16 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 11
     },
@@ -1459,7 +1459,7 @@
             0.0054
           ]
         ],
-        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.29 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 23
     },
@@ -1645,7 +1645,7 @@
             24.9833
           ]
         ],
-        "interpretation": "\u03b1=0.30 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.30 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 15
     },
@@ -1931,7 +1931,7 @@
             2.059
           ]
         ],
-        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 25
     },
@@ -2167,7 +2167,7 @@
             0.7542
           ]
         ],
-        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 20
     },
@@ -2363,7 +2363,7 @@
             1.804
           ]
         ],
-        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_mod/K_slow)"
+        "interpretation": "\u03b1=0.00 \u2192 relaxing (K_turnm/K_schwa)"
       },
       "p12_hits": 16
     }

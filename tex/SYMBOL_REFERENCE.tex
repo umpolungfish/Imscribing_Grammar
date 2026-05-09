@@ -1,0 +1,430 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\rowcolors{2}{gray!10}{white}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekeyword}{RGB}{0,0,180}
+\definecolor{codecomment}{RGB}{0,128,0}
+\definecolor{codestring}{RGB}{163,21,21}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    literate={_}{{\textunderscore}}1
+             {-}{{\textminus}}1
+             {<}{{\textless}}1
+             {>}{{\textgreater}}1
+             {~}{{\textasciitilde}}1
+             {^}{{\textasciicircum}}1
+}
+
+% YAML language definition for listings
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% TOML language definition for listings
+\lstdefinelanguage{TOML}{
+    keywords={true,false},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% Dockerfile language definition for listings
+\lstdefinelanguage{Dockerfile}{
+    keywords={FROM,RUN,CMD,LABEL,EXPOSE,ENV,ADD,COPY,ENTRYPOINT,VOLUME,USER,WORKDIR,ARG,ONBUILD,STOPSIGNAL,HEALTHCHECK,SHELL},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% JSON language definition for listings
+\lstdefinelanguage{JSON}{
+    keywords={true,false,null},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+}
+
+% Code listing float environment
+\usepackage{float}
+\newfloat{listing}{htbp}{lol}[section]
+\floatname{listing}{Listing}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Admonition style definitions
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Synthon tuple boxes
+\newtcolorbox{synthonbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+
+\begin{document}
+
+\title{Imscribing Grammar --- Symbol Reference}
+\date{\today}
+
+\maketitle
+
+49 canonical subtype IDs. Format: $\text{PrimitiveChar\_subtypeChar}$
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Ð --- Dimensionality}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$Ð_{\text{ß}}$ & imscriptive locality --- point-like, singular \\
+$Ð_{\text{C}}$ & spatial extension --- lattice, manifold \\
+$Ð_{\text{;}}$ & unbounded process --- infinite, cyclic \\
+$Ð_{\omega}$ & imscriptive self-containment --- bulk encoded at boundary \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Þ --- Topology}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$Þ_{\text{6}}$ & general graph / network \\
+$Þ_{\text{K}}$ & containment / nesting --- hierarchy \\
+$Þ_{\text{ò}}$ & crossing / bowtie \\
+$Þ_{\text{¨}}$ & box product / lattice --- Cartesian \\
+$Þ_{\text{O}}$ & imscriptive reflection --- self-referential closure \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Ř --- Relational mode}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$Ř_{\text{¯}}$ & supervenience --- one-way dependence \\
+$Ř_{\text{ý}}$ & categorical composition --- morphism chaining \\
+$Ř_{\text{Ť}}$ & adjoint / dagger --- reversal \\
+$Ř_{\text{=}}$ & bidirectional coupling --- L$\leftrightarrow$R \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{$\Phi$ --- Parity / symmetry}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$\Phi_{\text{ɐ}}$ & asymmetry \\
+$\Phi_{\text{\upsilon}}$ & $\mathbb{Z}_2$ parity \\
+$\Phi_{\text{F}}$ & $\pm$-symmetry \\
+$\Phi_{\text{˙}}$ & full symmetry \\
+$\Phi_{\}}$ & Frobenius special --- $\mu \circ \delta = \text{id}$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{ƒ --- Fidelity}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$ƒ_{\text{ì}}$ & classical / low fidelity \\
+$ƒ_{\text{ð}}$ & stochastic fidelity \\
+$ƒ_{\text{ż}}$ & quantum coherent \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Ç --- Kinetics}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$Ç_{\text{-}}$ & fast --- short $\tau$ \\
+$Ç_{\text{W}}$ & moderate --- $\tau \sim T$ \\
+$Ç_{\text{@}}$ & slow / equilibrium \\
+$Ç_{\text{Ù}}$ & kinetically trapped \\
+$Ç_{\lambda}$ & many-body localized \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{$\Gamma$ --- Scope / granularity}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$\Gamma_{\beta}$ & Beth --- local / microscale \\
+$\Gamma_{\gamma}$ & Gimel --- mesoscale \\
+$\Gamma_{\text{ʔ}}$ & Aleph --- global / cosmological \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{ɢ --- Interaction grammar}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$ɢ_{\text{^}}$ & conjunctive --- AND \\
+$ɢ_{\text{˝}}$ & disjunctive --- OR \\
+$ɢ_{\text{ˌ}}$ & sequential --- ordered \\
+$ɢ_{\text{Ş}}$ & broadcast --- all-to-all \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{$\phi$̂ --- Criticality}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$\hat{\phi}_{\text{ž}}$ & subcritical \\
+$\hat{\phi}_{\text{ÿ}}$ & critical --- real axis ($\Phi_c$) \\
+$\hat{\phi}_{\text{Æ}}$ & critical --- complex axis ($\Phi_c^\mathbb{C}$) \\
+$\hat{\phi}_{3}$ & exceptional point \\
+$\hat{\phi}_{\text{Ţ}}$ & supercritical \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Ħ --- Temporal depth}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$Ħ_{\text{Ñ}}$ & memoryless --- $H_0$ \\
+$Ħ_{\text{£}}$ & 1-step Markov --- $H_1$ \\
+$Ħ_{\text{A}}$ & 2-step Markov --- $H_2$ \\
+$Ħ_{\text{!}}$ & infinite memory --- $H_{\infty}$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{$\Sigma$ --- Stoichiometry}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$\Sigma_{\text{S}}$ & 1:1 \\
+$\Sigma_{\text{ő}}$ & n:n homogeneous \\
+$\Sigma_{\text{ï}}$ & n:m heterogeneous \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{$\Omega$ --- Winding}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{ID} & \textbf{Concept} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$\Omega_{\text{Å}}$ & trivial --- no topological invariant \\
+$\Omega_{2}$ & $\mathbb{Z}_2$ topological protection \\
+$\Omega_{\text{z}}$ & integer winding $\mathbb{Z}$ \\
+$\Omega_{5}$ & non-Abelian braiding \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\end{document}

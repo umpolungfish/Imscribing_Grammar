@@ -4,7 +4,7 @@
 content = r'''/-
   Perfect Cuboid — Φ_c Critical Formalization
   ───────────────────────────────────────────
-  Structural type: ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_slow; G_ℵ; Γ_seq; Φ_c; H_2; n:m; Ω_ℤ⟩
+  Structural type: ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_schwa; G_ℵ; Γ_seq; Φ_c; H_2; n:m; Ω_ℤ⟩
   Crystal address: 6738896  |  Tier: O_∞  |  C-score: 0.828
   
   This file formalizes the Perfect Cuboid Diophantine system as a self-modeling
@@ -13,7 +13,7 @@ content = r'''/-
     • Ω_ℤ  — integer winding number as topological invariant
     • H_2  — two-step temporal memory (each state references ≤2 prior states)
     • Φ_c  — self-modeling: the proof tracks its own proof-theoretic status
-    • K_slow — near-equilibrium reasoning; no premature resolution
+    • K_schwa — near-equilibrium reasoning; no premature resolution
   
   The Perfect Cuboid problem: find a,b,c,d,e,f,g ∈ ℕ⁺ such that
     (1) a² + b² = d²      (face diagonal ab)

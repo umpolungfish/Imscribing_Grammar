@@ -3,19 +3,19 @@ migration.py — Catalog migration from legacy primitive values to canonical for
 
 Handles all value renames introduced by the models.py unification with Core.lean:
 
-  1. Dimensionality: D_triangle -> D_cube, D_infinity -> D_infty
-  2. Topology: T_chains -> T_linear, T_square -> T_network, T_in -> T_network,
+  1. Dimensionality: D_turnthree -> D_cube, D_infinity -> D_invomega
+  2. Topology: T_chains -> T_linear, T_square -> T_nrleg, T_invscr -> T_nrleg,
                T_box -> T_cage
-  3. Recognition: R_dagger / R_cat -> R_catalytic
-  4. Polarity: P_asym -> P_pm, P_sym -> P_pm_sym
-  5. Grammar: Gamma_and -> G_and, Gamma_seq -> G_seq, etc.
-  6. Criticality: Phi_super -> Phi_sup
-  7. Chirality: Hinf -> H_inf
+  3. Recognition: R_downstep / R_ctz -> R_catalytic
+  4. Polarity: P_aolig -> P_pipevar, P_subdoublearrow -> P_doublebarpipe
+  5. Grammar: Gamma_and -> Gamma_corner, Gamma_seq -> Gamma_secstress, etc.
+  6. Criticality: Phi_upstep -> Phi_upstep
+  7. Chirality: Hinf -> H_invscripta
   8. Stoichiometry: "n:n" -> "n:m"
   9. Granularity PERMUTATION (ordering was inverted):
-       old G_aleph (GLOBAL/coarse) -> new G_gimel
-       old G_gimel (MESOSCALE)     -> new G_beth
-       old G_beth  (LOCAL/fine)    -> new G_aleph
+       old G_revapostrophe (GLOBAL/coarse) -> new G_gamma
+       old G_gamma (MESOSCALE)     -> new G_beta
+       old G_beta  (LOCAL/fine)    -> new G_revapostrophe
      This is a 3-cycle. The migration uses a temporary sentinel to avoid
      double-substitution within a single entry.
 
@@ -37,51 +37,51 @@ from typing import Any, Dict, List, Optional, Tuple
 # ─────────────────────────────────────────────────────────────────────────────
 
 _D_MAP = {
-    "D_triangle":  "D_cube",
-    "D_infinity":  "D_infty",
-    # unchanged: D_point, D_line, D_wedge, D_cube, D_infty, D_holo
+    "Ð_turnthree":  "Ð_cube",
+    "Ð_infinity":  "Ð_invomega",
+    # unchanged: D_point, D_line, D_wynn, D_cube, D_invomega, D_holo
 }
 
 _T_MAP = {
-    "T_chains":  "T_linear",
-    "T_square":  "T_network",   # hub-node -> generic network
-    "T_in":      "T_network",   # old shorthand
-    "T_box":     "T_cage",
-    # unchanged: T_linear, T_branched, T_network, T_bowtie, T_torus, T_holo,
+    "Þ_chains":  "Þ_linear",
+    "Þ_square":  "Þ_nrleg",   # hub-node -> generic network
+    "Þ_invscr":      "Þ_nrleg",   # old shorthand
+    "Þ_box":     "Þ_cage",
+    # unchanged: T_linear, T_branched, T_nrleg, T_bullseye, T_torus, T_holo,
     #            T_network_hex, T_network_mixed, T_network_interp, T_network_sym,
     #            T_cage, T_bowl, T_braid
 }
 
 _R_MAP = {
-    "R_dagger": "R_catalytic",
-    "R_cat":    "R_catalytic",
+    "Ř_downstep": "Ř_catalytic",
+    "Ř_ctz":    "Ř_catalytic",
     # unchanged: R_exact, R_subset, R_superset, R_catalytic, R_allosteric,
     #            R_mechanical, R_covalent_dynamic
 }
 
 _P_MAP = {
-    "P_asym": "P_pm",
-    "P_sym":  "P_pm_sym",
-    # unchanged: P_neutral, P_plus, P_minus, P_pm, P_pm_sym, P_pm_pseudo, P_directional
+    "Φ_aolig": "Φ_pipevar",
+    "Φ_subdoublearrow":  "Φ_doublebarpipe",
+    # unchanged: P_neutral, P_plus, P_minus, P_pipevar, P_doublebarpipe, P_pm_pseudo, P_directional
 }
 
 _GAMMA_MAP = {
-    "Gamma_and":         "G_and",
-    "Gamma_or":          "G_or",
-    "Gamma_seq":         "G_seq",
-    "Gamma_dissipative": "G_dissipative",
-    # already canonical: G_and, G_or, G_seq, G_xor, G_impl, G_dissipative
+    "ɢ_and":         "ɢ_corner",
+    "ɢ_or":          "ɢ_spleftarrow",
+    "ɢ_seq":         "ɢ_secstress",
+    "ɢ_dissipative": "Γ_dissipative",
+    # already canonical: Gamma_corner, Gamma_spleftarrow, Gamma_secstress, G_xor, G_impl, G_dissipative
     # compound forms like "Gamma_and(SPECIFIC)" -> extract operator part
 }
 
 _PHI_MAP = {
-    "Phi_super": "Phi_sup",
-    # unchanged: Phi_sub, Phi_c, Phi_sup
+    "φ̂_upstep": "φ̂_upstep",
+    # unchanged: Phi_softsign, Phi_ctyogh, Phi_upstep
 }
 
 _H_MAP = {
-    "Hinf": "H_inf",
-    # unchanged: H0, H1, H2, H_inf
+    "Hinf": "Ħ_invscripta",
+    # unchanged: H_closeomega, H_toneletterstem, H_turntwo, H_invscripta
 }
 
 _S_MAP = {
@@ -90,19 +90,19 @@ _S_MAP = {
 }
 
 # Granularity 3-cycle correction (old meaning -> new canonical value):
-#   old G_aleph was GLOBAL (coarsest) -> must become G_gimel (coarsest)
-#   old G_gimel was MESOSCALE         -> must become G_beth  (mesoscale)
-#   old G_beth  was LOCAL (finest)    -> must become G_aleph (finest)
+#   old G_revapostrophe was GLOBAL (coarsest) -> must become G_gamma (coarsest)
+#   old G_gamma was MESOSCALE         -> must become G_beta  (mesoscale)
+#   old G_beta  was LOCAL (finest)    -> must become G_revapostrophe (finest)
 # We use a sentinel to avoid double-substitution.
 _G_SENTINEL_MAP = {
-    "G_aleph": "__G_GIMEL__",
-    "G_gimel": "__G_BETH__",
-    "G_beth":  "__G_ALEPH__",
+    "Γ_revapostrophe": "__G_GIMEL__",
+    "Γ_gamma": "__G_BETH__",
+    "Γ_beta":  "__G_ALEPH__",
 }
 _G_SENTINEL_RESOLVE = {
-    "__G_GIMEL__": "G_gimel",
-    "__G_BETH__":  "G_beth",
-    "__G_ALEPH__": "G_aleph",
+    "__G_GIMEL__": "Γ_gamma",
+    "__G_BETH__":  "Γ_beta",
+    "__G_ALEPH__": "Γ_revapostrophe",
 }
 
 

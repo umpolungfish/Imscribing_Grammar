@@ -28,7 +28,7 @@ class TemporalSynthonAgent:
     Agent for analyzing temporal synthons in oscillatory chemical systems.
     
     Temporal synthons operate with D_infinity (1D temporal periodicity)
-    and typically involve R_dagger (dynamic/catalytic) recognition modes.
+    and typically involve R_downstep (dynamic/catalytic) recognition modes.
     
     Capabilities:
     - Reaction cycle mapping (stationary points, transition states)
@@ -84,8 +84,8 @@ class TemporalSynthonAgent:
             "cycle_name": cycle_name,
             "catalyst": catalyst,
             **cycle_data,
-            "dimensionality": "D_infinity",
-            "recognition_mode": "R_dagger",
+            "dimensionality": "Ð_infinity",
+            "recognition_mode": "Ř_downstep",
         }
     
     def compute_fidelity_per_cycle(
@@ -99,7 +99,7 @@ class TemporalSynthonAgent:
         F_cycle = k_cat / (k_cat + k_side)
         
         Based on Transformation #6 from QUANTIG.md:
-        - Proline aldol: F_cycle ≈ 0.999-0.9999 (F_eth)
+        - Proline aldol: F_cycle ≈ 0.999-0.9999 (F_dh)
         
         Args:
             k_cat: Catalytic rate constant (s^-1)
@@ -236,7 +236,7 @@ class TemporalSynthonAgent:
             "num_cycles": len(peaks),
             "period_seconds": avg_period,
             "amplitude": avg_amplitude,
-            "synthon_type": "D_infinity_temporal",
+            "synthon_type": "Ð_infinity_temporal",
         }
     
     def to_synthon(

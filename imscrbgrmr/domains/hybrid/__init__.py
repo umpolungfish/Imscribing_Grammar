@@ -69,11 +69,11 @@ class HybridSynthonAgent:
             "framework_type": framework_type,
             "topology": topology,
             "topology_name": topology_info.get(topology, {}).get("name", "Unknown"),
-            "dimensionality": "D_triangle",
+            "dimensionality": "Ð_turnthree",
             "granularity": Granularity.GLOBAL.value,
             "notes": (
                 f"{framework_type} with {topology} topology provides "
-                f"global (G_aleph) constraint propagation"
+                f"global (G_revapostrophe) constraint propagation"
             ),
         }
     
@@ -116,8 +116,8 @@ class HybridSynthonAgent:
         return {
             "cycle_type": cycle_type,
             "confinement": confinement,
-            "dimensionality": "D_infinity",
-            "recognition_mode": "R_dagger",
+            "dimensionality": "Ð_infinity",
+            "recognition_mode": "Ř_downstep",
             "confinement_effects": effect,
             "notes": (
                 f"Temporal synthon (D_infinity) coupled with "
@@ -134,7 +134,7 @@ class HybridSynthonAgent:
         Compute granularity amplification in hybrid systems.
         
         Based on Transformation #3 from QUANTIG.md:
-        - Chelate effect: G_beth → G_aleph (local to global)
+        - Chelate effect: G_beta → G_revapostrophe (local to global)
         - Single binding event enforces entire coordination sphere
         
         Args:

@@ -34,12 +34,12 @@ from .constraints import (
 # ---------------------------------------------------------------------------
 
 _DIM_DOMAINS: Dict[str, frozenset] = {
-    "D_point": frozenset({"point"}),
-    "D_line":  frozenset({"line"}),
-    "D_wedge": frozenset({"molecular"}),
-    "D_cube":  frozenset({"supramolecular"}),
-    "D_infty": frozenset({"temporal"}),
-    "D_odot":  frozenset({"holographic", "imscriptive"}),
+    "Ð_point": frozenset({"point"}),
+    "Ð_line":  frozenset({"line"}),
+    "Ð_wynn": frozenset({"molecular"}),
+    "Ð_cube":  frozenset({"supramolecular"}),
+    "Ð_invomega": frozenset({"temporal"}),
+    "Ð_omega":  frozenset({"holographic", "imscriptive"}),
 }
 
 
@@ -178,7 +178,7 @@ def _check_axioms(
                     axiom=2,
                     rule="Propagation Barrier",
                     condition=(
-                        "G_ℵ claimed but G_ב + Γ_∧(SPECIFIC) lacks Γ_∨ or T_network "
+                        "G_ℵ claimed but G_ב + Γ_∧(SPECIFIC) lacks Γ_∨ or T_nrleg "
                         "→ PRUNE (Axiom 2)"
                     ),
                 ))
@@ -304,8 +304,8 @@ class RetrodesignEngine:
 
         engine = RetrodesignEngine()
         tree = engine.decompose(
-            "⟨{D_triangle, D_infinity}; T_cage; R_superset+ddagger; "
-            "P_pm; F_eth; K_mod; G_gimel; Gamma_and(SELECTIVE); Phi_sub; 4:4⟩",
+            "⟨{D_turnthree, D_infinity}; T_cage; R_superset+ddagger; "
+            "P_pipevar; F_dh; K_turnm; G_gamma; Gamma_and(SELECTIVE); Phi_softsign; 4:4⟩",
             max_depth=3,
             prune_axioms=[1, 2, 4, 6],
         )
@@ -363,7 +363,7 @@ class RetrodesignEngine:
             prune_axioms:     axiom numbers to enforce (default [1, 2, 4, 6])
             strict_grounding: if True, abort decomposition when the target has
                               D_∞ but no Axiom 6 grounding metadata (default False)
-            prune_ktrap:      if True, prune leaf nodes with K_trap kinetics
+            prune_ktrap:      if True, prune leaf nodes with K_teshlig kinetics
                               (no escape pathway specified); default True
 
         Returns:
@@ -486,21 +486,21 @@ class RetrodesignEngine:
             violations = _check_axioms(child_synthon, prune_set)
             node_warnings: List[str] = []
 
-            # K_trap: prune by default (no escape pathway); warn only if prune_ktrap=False
+            # K_teshlig: prune by default (no escape pathway); warn only if prune_ktrap=False
             if child_synthon.kinetic_character == KineticCharacter.TRAP:
                 if prune_ktrap:
                     violations.append(PruningViolation(
                         axiom="Kinetics",
-                        rule="K_trap without escape pathway",
+                        rule="K_teshlig without escape pathway",
                         condition=(
-                            "K_trap assigned with no escape pathway metadata. "
+                            "K_teshlig assigned with no escape pathway metadata. "
                             "Specify metadata['escape_pathway'] or use prune_ktrap=False "
                             "to demote to warning. See IG_HOTSWAP.md §2.2."
                         ),
                     ))
                 else:
                     node_warnings.append(
-                        "K_trap detected — escape pathway not specified "
+                        "K_teshlig detected — escape pathway not specified "
                         "(IG_HOTSWAP.md §2.2); +0.5 nat accessibility penalty applied"
                     )
 
@@ -536,6 +536,6 @@ def parse_notation_from_string(notation_str: str) -> Synthon:
     """
     Parse a ⟨...⟩ notation string into a Synthon.
 
-        target = parse_notation_from_string("⟨D_triangle; T_cage; ...⟩")
+        target = parse_notation_from_string("⟨D_turnthree; T_cage; ...⟩")
     """
     return _parse_notation_to_synthon(notation_str)

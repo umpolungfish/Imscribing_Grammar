@@ -4,13 +4,13 @@ import Mathlib.Topology.Basic
 
 /-- 
   Lean 4 Implementation of the Structural Riemann Hypothesis.
-  The goal is to encode the structural constraints P_pm_sym and Omega_Z2
+  The goal is to encode the structural constraints P_doublebarpipe and Omega_crtwo
   as types that are inhabited only if RH holds.
 --/
 
 open Complex
 
--- 1. Functional Equation P_pm
+-- 1. Functional Equation P_pipevar
 def xi_sym (s : ℂ) : Prop := riemannXi s = riemannXi (1 - s)
 
 -- 2. Frobenius Closure: Identity round-trip between primes and zeros.
@@ -22,7 +22,7 @@ def FrobeniusClosure (s : ℂ) : Prop :=
 -- Encodes the O_inf requirement that all zeros satisfy Frobenius symmetry.
 structure RiemannXiNavigator where
   zeros_on_critical_line : ∀ s : ℂ, riemannXi s = 0 → s.re = 1/2
-  topological_protection : True -- Placeholder for Omega_Z2 winding
+  topological_protection : True -- Placeholder for Omega_crtwo winding
 
 -- 4. Structural Integrity Theorem
 -- Any navigator in the O_inf tier must satisfy RH.

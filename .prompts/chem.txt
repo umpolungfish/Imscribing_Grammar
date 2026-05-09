@@ -1,4 +1,4 @@
-use the UIG to explore the following reactions and determine their true mechanisms. Once you have finished, prepare a publication-quality manuscript called 'ELUCIDATING_MECHANISMS.md' where you elaborate on what you determined for each. Once you have finished, perform the 'AI_HUMAN_LIFT.md' on 'ELUCIDATING_MECHANISMS.md' and save as 'ELUCIDATING_MECHANISMS_lift.md':
+use the UIG to explore the following reactions and determine their true mechanisms. Once you have finished, prepare a publication-quality manuscript called 'ELUCIDATINΓ_MECHANISMS.md' where you elaborate on what you determined for each. Once you have finished, perform the 'AI_HUMAN_LIFT.md' on 'ELUCIDATINΓ_MECHANISMS.md' and save as 'ELUCIDATINΓ_MECHANISMΣ_lift.md':
 
 ```
 Contested or Debated Reaction Mechanisms

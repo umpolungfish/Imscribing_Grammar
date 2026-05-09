@@ -28,7 +28,7 @@
         "astrometric_excess_noise_sig": "173.0282",
         "primitive_flags": [
           "F_compliant",
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate"
         ],
@@ -74,7 +74,7 @@
         "astrometric_excess_noise_sig": "31.202015",
         "primitive_flags": [
           "F_compliant",
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate"
         ],
@@ -119,7 +119,7 @@
         "astrometric_excess_noise": "2.647295",
         "astrometric_excess_noise_sig": "287.15082",
         "primitive_flags": [
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate",
           "D_temporal"
@@ -165,7 +165,7 @@
         "astrometric_excess_noise": "2.647295",
         "astrometric_excess_noise_sig": "287.15082",
         "primitive_flags": [
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate",
           "D_temporal"
@@ -211,7 +211,7 @@
         "astrometric_excess_noise": "2.2301633",
         "astrometric_excess_noise_sig": "283.8636",
         "primitive_flags": [
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate",
           "D_temporal"
@@ -258,7 +258,7 @@
         "astrometric_excess_noise_sig": "78.249954",
         "primitive_flags": [
           "F_compliant",
-          "T_network",
+          "T_nrleg",
           "Phi_critical",
           "Omega_candidate"
         ],

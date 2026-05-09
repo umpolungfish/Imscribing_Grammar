@@ -109,37 +109,37 @@ def example_3_catalog_and_search():
     # Register synthons using the convenience function
     register_synthon(
         name="formamide_dimer",
-        dimensionality="D_wedge",
-        topology="T_bowtie",
-        recognition_mode="R_superset",
-        polarity="P_pm",
-        fidelity="F_ell",  # Lower fidelity than carboxylic acid
-        granularity="G_beth",
-        interaction_grammar="Gamma_otimes",
+        dimensionality="Ð_wynn",
+        topology="Þ_bullseye",
+        recognition_mode="Ř_superset",
+        polarity="Φ_pipevar",
+        fidelity="ƒ_beltl",  # Lower fidelity than carboxylic acid
+        granularity="Γ_beta",
+        interaction_grammar="ɢ_otimes",
         description="Weaker amide dimer (F_ℓ)",
     )
     
     register_synthon(
         name="triple_hbond_array",
-        dimensionality="D_wedge",
-        topology="T_bowtie",
-        recognition_mode="R_superset",
-        polarity="P_directional",
-        fidelity="F_hbar",  # HIGH fidelity due to cooperativity
-        granularity="G_gimel",  # Mesoscale
-        interaction_grammar="Gamma_otimes",
+        dimensionality="Ð_wynn",
+        topology="Þ_bullseye",
+        recognition_mode="Ř_superset",
+        polarity="Φ_directional",
+        fidelity="ƒ_hardsign",  # HIGH fidelity due to cooperativity
+        granularity="Γ_gamma",  # Mesoscale
+        interaction_grammar="ɢ_otimes",
         description="DAD·ADA triple H-bond array (Watson-Crick like)",
     )
     
     register_synthon(
         name="proline_aldol_cycle",
-        dimensionality="D_infinity",  # Temporal!
-        topology="T_bowtie",
-        recognition_mode="R_dagger",  # Catalytic
-        polarity="P_directional",
-        fidelity="F_eth",
-        granularity="G_gimel",
-        interaction_grammar="Gamma_selective",
+        dimensionality="Ð_infinity",  # Temporal!
+        topology="Þ_bullseye",
+        recognition_mode="Ř_downstep",  # Catalytic
+        polarity="Φ_directional",
+        fidelity="ƒ_dh",
+        granularity="Γ_gamma",
+        interaction_grammar="ɢ_selective",
         description="Proline-catalyzed aldol cycle (temporal synthon)",
     )
     
@@ -154,7 +154,7 @@ def example_3_catalog_and_search():
     
     # Search by fidelity
     high_f = catalog.search(fidelity=Fidelity.HIGH)
-    print(f"\nHigh fidelity (F_hbar) synthons: {len(high_f)}")
+    print(f"\nHigh fidelity (F_hardsign) synthons: {len(high_f)}")
     for s in high_f:
         print(f"  - {s.name}: {s.to_notation()}")
     

@@ -39,21 +39,21 @@ from imscrbgrmr.criticality import analyze_criticality  # NEW
 # Grok and similar models sometimes write correct values in the `reasoning`
 # field but submit different (wrong) values in the `synthon` JSON block.
 # This function scans the reasoning string for explicit canonical value
-# mentions (e.g. "D_odot:", "T_odot:") and overrides the synthon block where
+# mentions (e.g. "Ð_ω:", "Þ_O:") and overrides the synthon block where
 # the reasoning is specific and the block contradicts it.
 # Only overrides when: (a) the reasoning names the value with the primitive
 # prefix (D_X, T_X, …) followed by ":" or " —", and (b) the named value is
 # canonical (present in ORDINALS), and (c) it differs from what the block says.
 
 _REASONING_OVERRIDE_FIELDS = {
-    "dimensionality": ("D", r"D_(odot|infty|triangle|wedge)"),
-    "topology":       ("T", r"T_(odot|boxtimes|bowtie|in|network)\b"),
-    "criticality_phase": ("Phi", r"Phi_(c_complex|EP|super|sub|c)\b"),
-    "interaction_grammar": ("Gamma", r"G_(broad|seq|or|and)\b"),
-    "polarity":       ("P", r"P_(pm_sym|pm|sym|psi|asym)\b"),
-    "kinetic_character": ("K", r"K_(MBL|trap|slow|mod|fast)\b"),
-    "protection":     ("Omega", r"Omega_(NA|Z2|Z|0)\b"),
-    "chirality":      ("H", r"H(0|1|2|_inf)\b"),
+    "dimensionality": ("Ð", r"D_(odot|infty|triangle|wedge)"),
+    "topology":       ("Þ", r"T_(odot|boxtimes|bowtie|in|network)\b"),
+    "criticality_phase": ("φ̂", r"Phi_(c_complex|EP|super|sub|c)\b"),
+    "interaction_grammar": ("ɢ", r"G_(broad|seq|or|and)\b"),
+    "polarity":       ("Φ", r"P_(pm_sym|pm|sym|psi|asym)\b"),
+    "kinetic_character": ("Ç", r"K_(MBL|trap|slow|mod|fast)\b"),
+    "protection":     ("Ω", r"Omega_(NA|Z2|Z|0)\b"),
+    "chirality":      ("Ħ", r"H(0|1|2|_inf)\b"),
 }
 
 
@@ -69,15 +69,15 @@ def _reconcile_with_reasoning(synthon_data: dict, reasoning: str) -> dict:
         # Take the first explicit mention; build back the full value string
         raw = matches[0]
         # Reconstruct the canonical value from the pattern group
-        prefix = pattern.split("(")[0]  # e.g. "D_", "T_", "Phi_", "G_", "H"
+        prefix = pattern.split("(")[0]  # e.g. "D_", "T_", "Phi_", "G_", "Ħ"
         candidate = prefix + raw
         # Verify it's canonical before overriding
         try:
             from space_search.primitives import ORDINALS, PRIMITIVE_ORDER
             prim_key = {
-                "dimensionality": "D", "topology": "T", "criticality_phase": "Phi",
-                "interaction_grammar": "Gamma", "polarity": "P", "kinetic_character": "K",
-                "protection": "Omega", "chirality": "H",
+                "dimensionality": "Ð", "topology": "Þ", "criticality_phase": "φ̂",
+                "interaction_grammar": "ɢ", "polarity": "Φ", "kinetic_character": "Ç",
+                "protection": "Ω", "chirality": "Ħ",
             }[field]
             if candidate in ORDINALS[prim_key] and result.get(field) != candidate:
                 result[field] = candidate
@@ -190,67 +190,67 @@ class SynthonGeneratorAgent(BaseAgent):
     # ------------------------------------------------------------------
 
     GUIDED_PRIMITIVES: List[Dict[str, Any]] = [
-        {"short": "D",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
-         "options": [("D_wedge","Point-like — local, operates on a single unit"),
-                     ("D_triangle","Spatial — constraint propagates through an extended 3D arrangement"),
-                     ("D_infty","Temporal/iterative — recurs through a closed cycle with a reset step"),
-                     ("D_odot","Imscriptive — boundary encodes bulk (REQUIRES T_odot to co-occur)")]},
-        {"short": "T",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
-         "options": [("T_network","Generic network — connected graph, hub-spoke, mixed connectivity"),
-                     ("T_in","Containment / branched tree — partners enter a container or nested hierarchy"),
-                     ("T_bowtie","Cyclic closure — cyclic interface, figure-8, double-well"),
-                     ("T_boxtimes","Fully enclosed — partner cannot exit without distorting the container"),
-                     ("T_odot","Imscriptive — boundary encodes bulk (REQUIRES D_odot to co-occur)")]},
-        {"short": "R",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
-         "options": [("R_super","Soft association — non-covalent, reversible, analogical similarity"),
-                     ("R_cat","Bond formation / structural transformation — irreversible or semi-reversible"),
-                     ("R_dagger","Transition-state stabilization — lowers barrier without being consumed; adjoint/catalytic"),
-                     ("R_lr","Left-right asymmetric / mechanical topology — interlocking, knotting, irreversible handedness")]},
-        {"short": "P",  "long": "polarity",             "question": "What is the directional character of the interface?",
-         "options": [("P_asym","No preferred direction; no self-complementarity"),
-                     ("P_psi","Signed direction — one accepting OR one donating pole"),
-                     ("P_pm","Self-complementary — both donor and acceptor roles present simultaneously"),
-                     ("P_sym","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
-                     ("P_pm_sym","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
-        {"short": "F",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
-         "options": [("F_ell","Low — probabilistic; many false positives (I_net < 6 bits)"),
-                     ("F_eth","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
-                     ("F_hbar","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
-        {"short": "K",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
-         "options": [("K_fast","Low barrier — explores configuration space freely; reversible"),
-                     ("K_mod","Moderate barrier — accessible under perturbation"),
-                     ("K_slow","High barrier — kinetically frozen; requires external driving to rearrange"),
-                     ("K_trap","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
-                     ("K_MBL","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
-        {"short": "G",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
-         "options": [("G_beth","Local — single bond/event, no neighbours influenced"),
-                     ("G_gimel","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
-                     ("G_aleph","Global — propagates across the entire system; scale-free")]},
+        {"short": "Ð",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
+         "options": [("Ð_ß","Point-like — local, operates on a single unit"),
+                     ("Ð_C","Spatial — constraint propagates through an extended 3D arrangement"),
+                     ("Ð_;","Temporal/iterative — recurs through a closed cycle with a reset step"),
+                     ("Ð_ω","Imscriptive — boundary encodes bulk (REQUIRES Þ_O to co-occur)")]},
+        {"short": "Þ",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
+         "options": [("Þ_6","Generic network — connected graph, hub-spoke, mixed connectivity"),
+                     ("Þ_K","Containment / branched tree — partners enter a container or nested hierarchy"),
+                     ("Þ_ò","Cyclic closure — cyclic interface, figure-8, double-well"),
+                     ("Þ_¨","Fully enclosed — partner cannot exit without distorting the container"),
+                     ("Þ_O","Imscriptive — boundary encodes bulk (REQUIRES Ð_ω to co-occur)")]},
+        {"short": "Ř",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
+         "options": [("Ř_¯","Soft association — non-covalent, reversible, analogical similarity"),
+                     ("Ř_ý","Bond formation / structural transformation — irreversible or semi-reversible"),
+                     ("Ř_Ť","Transition-state stabilization — lowers barrier without being consumed; adjoint/catalytic"),
+                     ("Ř_=","Left-right asymmetric / mechanical topology — interlocking, knotting, irreversible handedness")]},
+        {"short": "Φ",  "long": "polarity",             "question": "What is the directional character of the interface?",
+         "options": [("Φ_ɐ","No preferred direction; no self-complementarity"),
+                     ("Φ_υ","Signed direction — one accepting OR one donating pole"),
+                     ("Φ_F","Self-complementary — both donor and acceptor roles present simultaneously"),
+                     ("Φ_˙","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
+                     ("Φ_}","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
+        {"short": "ƒ",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
+         "options": [("ƒ_ì","Low — probabilistic; many false positives (I_net < 6 bits)"),
+                     ("ƒ_dh","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
+                     ("ƒ_ż","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
+        {"short": "Ç",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
+         "options": [("Ç_-","Low barrier — explores configuration space freely; reversible"),
+                     ("Ç_W","Moderate barrier — accessible under perturbation"),
+                     ("Ç_@","High barrier — kinetically frozen; requires external driving to rearrange"),
+                     ("Ç_Ù","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
+                     ("Ç_lambda","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
+        {"short": "Γ",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
+         "options": [("Γ_β","Local — single bond/event, no neighbours influenced"),
+                     ("Γ_γ","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
+                     ("Γ_ʔ","Global — propagates across the entire system; scale-free")]},
         {"short": "Γ",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
-         "options": [("G_and","Conjunctive — all required partners must be present simultaneously"),
-                     ("G_or","Disjunctive — any partner from a set suffices"),
-                     ("G_seq","Sequential — ordered steps; partners engaged in sequence"),
-                     ("G_broad","Broad conjunctive — many required partners (>10), cooperative assembly")]},
+         "options": [("ɢ_corner","Conjunctive — all required partners must be present simultaneously"),
+                     ("ɢ_spleftarrow","Disjunctive — any partner from a set suffices"),
+                     ("ɢ_ˌ","Sequential — ordered steps; partners engaged in sequence"),
+                     ("ɢ_Ş","Broad conjunctive — many required partners (>10), cooperative assembly")]},
         {"short": "Φ",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
-         "options": [("Phi_sub","Subcritical — normal regime, no scale-free behavior"),
-                     ("Phi_c","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
-                     ("Phi_c_complex","Complex critical — criticality with complex eigenvalues"),
-                     ("Phi_EP","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
-                     ("Phi_super","Supercritical / post-threshold — system has passed through criticality")]},
-        {"short": "H",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
-         "options": [("H0","Achiral — mirror image accessible; no persistent symmetry breaking"),
-                     ("H1","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
-                     ("H2","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
-                     ("H_inf","Topological chirality — topology-protected; cannot be undone without global restructuring (implies K_trap)")]},
-        {"short": "S",  "long": "stoichiometry",        "question": "What is the participation ratio?",
+         "options": [("φ̂_ž","Subcritical — normal regime, no scale-free behavior"),
+                     ("φ̂_ÿ","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
+                     ("φ̂_Æ","Complex critical — criticality with complex eigenvalues"),
+                     ("φ̂_3","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
+                     ("φ̂_Ţ","Supercritical / post-threshold — system has passed through criticality")]},
+        {"short": "Ħ",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
+         "options": [("Ħ_Ñ","Achiral — mirror image accessible; no persistent symmetry breaking"),
+                     ("Ħ_£","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
+                     ("Ħ_A","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
+                     ("Ħ_!","Topological chirality — topology-protected; cannot be undone without global restructuring (implies Ç_Ù)")]},
+        {"short": "Σ",  "long": "stoichiometry",        "question": "What is the participation ratio?",
          "options": [("1:1","Equal symmetric pairing"),
                      ("n:n","Higher-order symmetric — oligomers, committees"),
                      ("n:m","Asymmetric — different counts on each side")]},
         {"short": "Ω",  "long": "protection",           "question": "Can the structural role be continuously deformed away?",
-         "options": [("Omega_0","No protection — role CAN be continuously deformed to trivial state"),
-                     ("Omega_Z2","Z2-protected — requires crossing a Z2 topological boundary to change"),
-                     ("Omega_Z","Integer-winding-protected — stable against perturbations preserving winding invariant"),
-                     ("Omega_NA","Non-Abelian protection — most robust; requires D_odot")]},
+         "options": [("Ω_Å","No protection — role CAN be continuously deformed to trivial state"),
+                     ("Ω_2","Z2-protected — requires crossing a Z2 topological boundary to change"),
+                     ("Ω_z","Integer-winding-protected — stable against perturbations preserving winding invariant"),
+                     ("Ω_5","Non-Abelian protection — most robust; requires Ð_ω")]},
     ]
 
     async def generate_guided(
@@ -323,7 +323,7 @@ class SynthonGeneratorAgent(BaseAgent):
         synthon_data = {prim["long"]: assigned[prim["short"]] for prim in self.GUIDED_PRIMITIVES}
         synthon_data["name"] = name or _desc_slug(description)
 
-        # Also add G_broad → G_and fallback for from_symbol compatibility
+        # Also add ɢ_Ş → ɢ_^ fallback for from_symbol compatibility
         synthon = self._create_synthon_from_data(synthon_data, description, explicit_name=name)
 
         if delta_g is not None:
@@ -661,68 +661,68 @@ Analyze the provided system and assign all twelve primitives from first principl
 
 <primitives>
 **D — Dimensionality** (operating space of constraint propagation):
-- `D_wedge`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
-- `D_triangle`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
-- `D_infty`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `D_odot`: Imscriptive — boundary encodes bulk; a lower-dimensional surface carries the full structural information of a higher-dimensional interior. **Axiom C: D_odot REQUIRES T_odot (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation encodes the whole.*
+- `Ð_ß`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
+- `Ð_C`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
+- `Ð_;`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
+- `Ð_ω`: Imscriptive — boundary encodes bulk; a lower-dimensional surface carries the full structural information of a higher-dimensional interior. **Axiom C: Ð_ω REQUIRES Þ_O (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation encodes the whole.*
 
 **T — Topology** (connectivity pattern of influence):
-- `T_network`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
-- `T_in`: Containment / branched tree — partners enter a container or are addressed in a directed hierarchy. *Chem: open cavity, host-guest, linear chain. Math: tree, DAG, ZFC cumulative hierarchy.*
-- `T_bowtie`: Cyclic closure — two (or more) partners form a cyclic interface; figure-8 or double-well. *Chem: catalytic cycle, macrocycle, torus. Math: loop space.*
-- `T_boxtimes`: Fully enclosed / type-hierarchical — partner cannot exit without distorting the container; bounded closed topology. *Chem: cage complex, cryptand. Math: classical proof assistant.*
-- `T_odot`: Imscriptive — boundary encodes bulk; non-local boundary-bulk coupling. **Axiom C: T_odot REQUIRES D_odot.** *Physics: AdS/CFT, black hole. Math: quotient/IUT.*
+- `Þ_6`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
+- `Þ_K`: Containment / branched tree — partners enter a container or are addressed in a directed hierarchy. *Chem: open cavity, host-guest, linear chain. Math: tree, DAG, ZFC cumulative hierarchy.*
+- `Þ_ò`: Cyclic closure — two (or more) partners form a cyclic interface; figure-8 or double-well. *Chem: catalytic cycle, macrocycle, torus. Math: loop space.*
+- `Þ_¨`: Fully enclosed / type-hierarchical — partner cannot exit without distorting the container; bounded closed topology. *Chem: cage complex, cryptand. Math: classical proof assistant.*
+- `Þ_O`: Imscriptive — boundary encodes bulk; non-local boundary-bulk coupling. **Axiom C: Þ_O REQUIRES Ð_ω.** *Physics: AdS/CFT, black hole. Math: quotient/IUT.*
 
 **R — Recognition mode** (mechanism of interaction/transformation):
-- `R_super`: Soft association — non-covalent, reversible binding (van der Waals, H-bond, electrostatic, narrative resonance, analogical similarity).
-- `R_cat`: Bond formation / structural transformation — irreversible or semi-reversible (covalent bond, institutional founding, mathematical construction).
-- `R_dagger`: Transition-state stabilization / adjoint — lowers barrier for a transformation without being consumed; conformational gating; enables state change in partners.
-- `R_lr`: Left-right asymmetric / mechanical topology — interaction mediated by mechanical topology (interlocking, knotting, narrative entrapment, irreversible handedness).
+- `Ř_¯`: Soft association — non-covalent, reversible binding (van der Waals, H-bond, electrostatic, narrative resonance, analogical similarity).
+- `Ř_ý`: Bond formation / structural transformation — irreversible or semi-reversible (covalent bond, institutional founding, mathematical construction).
+- `Ř_Ť`: Transition-state stabilization / adjoint — lowers barrier for a transformation without being consumed; conformational gating; enables state change in partners.
+- `Ř_=`: Left-right asymmetric / mechanical topology — interaction mediated by mechanical topology (interlocking, knotting, narrative entrapment, irreversible handedness).
 
 **P — Polarity** (directional character of the interface):
-- `P_asym`: No preferred direction; symmetric across all relevant reflections, or fully directed with no self-complementarity.
-- `P_psi`: Signed direction — one accepting/receiving pole or one donating/acting pole (electrophile, nucleophile, adversarial role).
-- `P_pm`: Self-complementary — both donor and acceptor roles present simultaneously.
-- `P_sym`: Mirror-symmetric — the interface has a global reflection symmetry (not Frobenius; both roles present but not special).
-- `P_pm_sym`: Special Frobenius — exact Z2 symmetry at criticality; assign ONLY when μ∘δ=id is provably exact.
+- `Φ_ɐ`: No preferred direction; symmetric across all relevant reflections, or fully directed with no self-complementarity.
+- `Φ_υ`: Signed direction — one accepting/receiving pole or one donating/acting pole (electrophile, nucleophile, adversarial role).
+- `Φ_F`: Self-complementary — both donor and acceptor roles present simultaneously.
+- `Φ_˙`: Mirror-symmetric — the interface has a global reflection symmetry (not Frobenius; both roles present but not special).
+- `Φ_}`: Special Frobenius — exact Z2 symmetry at criticality; assign ONLY when μ∘δ=id is provably exact.
 
 **F — Fidelity** (information transmitted per interaction; how reliably/precisely does it fire?):
-- `F_hbar`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
-- `F_eth`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
-- `F_ell`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
-**F ≠ "strength." A weak but specific interaction is F_hbar. A strong but promiscuous one is F_ell.**
+- `ƒ_ż`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
+- `ƒ_ð`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
+- `ƒ_ì`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
+**F ≠ "strength." A weak but specific interaction is ƒ_ż. A strong but promiscuous one is ƒ_ì.**
 
 **K — Kinetic character** (barrier to rearrangement / resistance to change):
-- `K_fast`: Low barrier — explores configuration space freely; reversible on relevant timescales.
-- `K_mod`: Moderate barrier — accessible under perturbation.
-- `K_slow`: High barrier — kinetically frozen; requires external driving to rearrange.
-- `K_trap`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
-- `K_MBL`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**H_inf implies K_trap (topology-protected chirality cannot be undone without global restructuring).**
+- `Ç_-`: Low barrier — explores configuration space freely; reversible on relevant timescales.
+- `Ç_W`: Moderate barrier — accessible under perturbation.
+- `Ç_@`: High barrier — kinetically frozen; requires external driving to rearrange.
+- `Ç_Ù`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
+- `Ç_λ`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
+**Ħ_! implies Ç_Ù (topology-protected chirality cannot be undone without global restructuring).**
 
 **G — Granularity** (correlation length: how far does one interaction propagate?):
-- `G_beth`: Local — single bond/event, no neighbours influenced.
-- `G_gimel`: Mesoscale — propagates through a motif or cluster (~10–1000 units).
-- `G_aleph`: Global — propagates across the entire system; divergent correlation length; scale-free.
+- `Γ_β`: Local — single bond/event, no neighbours influenced.
+- `Γ_γ`: Mesoscale — propagates through a motif or cluster (~10–1000 units).
+- `Γ_ʔ`: Global — propagates across the entire system; divergent correlation length; scale-free.
 
 **Γ — Interaction grammar** (partner selection logic):
-- `G_and`: Conjunctive — all required partners must be present simultaneously.
-- `G_or`: Disjunctive — any partner from a set suffices.
-- `G_seq`: Sequential — ordered steps; partners engaged in sequence.
-- `G_broad`: Broad conjunctive — many required partners (>10), cooperative assembly.
+- `ɢ_^`: Conjunctive — all required partners must be present simultaneously.
+- `ɢ_˝`: Disjunctive — any partner from a set suffices.
+- `ɢ_ˌ`: Sequential — ordered steps; partners engaged in sequence.
+- `ɢ_Ş`: Broad conjunctive — many required partners (>10), cooperative assembly.
 
 **Φ — Criticality** (proximity to a critical point/threshold):
-- `Phi_sub`: Subcritical — normal regime, no scale-free behavior.
-- `Phi_c`: Critical — at the threshold; scale-free correlations, G_aleph and Phi_c co-occur naturally.
-- `Phi_c_complex`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
-- `Phi_EP`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
-- `Phi_super`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
+- `φ̂_ž`: Subcritical — normal regime, no scale-free behavior.
+- `φ̂_ÿ`: Critical — at the threshold; scale-free correlations, Γ_ʔ and φ̂_ÿ co-occur naturally.
+- `φ̂_Æ`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
+- `φ̂_3`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
+- `φ̂_Ţ`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
 
 **H — Chirality / temporal depth** (persistence of broken orientational symmetry; memory depth):
-- `H0`: Achiral — mirror image accessible; no persistent symmetry breaking.
-- `H1`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
-- `H2`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `H_inf`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies K_trap.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
+- `Ħ_Ñ`: Achiral — mirror image accessible; no persistent symmetry breaking.
+- `Ħ_£`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
+- `Ħ_A`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
+- `Ħ_!`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç_Ù.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
 
 **S — Stoichiometry** (participation ratio):
 - `1:1`: Equal symmetric pairing.
@@ -730,17 +730,17 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `n:m`: Asymmetric — different counts on each side.
 
 **Ω — Topological protection** (can the role be continuously deformed away?):
-- `Omega_0`: No protection — trivial; the role CAN be continuously deformed to a trivial state. Default for most systems without explicit topological structure.
-- `Omega_Z2`: Z2-protected — requires crossing a Z2 topological boundary to change; binary, global protection.
-- `Omega_Z`: Integer-winding-protected — associated with a conserved winding number; the role is stable against perturbations that preserve the winding invariant.
-- `Omega_NA`: Non-Abelian protection — the most robust; requires D_odot.
-**For abstract/narrative systems: Ω encodes whether the structural ROLE can be continuously interpolated to its absence (Omega_0) or whether the system's topology forces the role to persist (Omega_Z, Omega_Z2). A death-principle in a cosmological system with a fixed winding structure may be Omega_Z.**
+- `Ω_Å`: No protection — trivial; the role CAN be continuously deformed to a trivial state. Default for most systems without explicit topological structure.
+- `Ω_2`: Z2-protected — requires crossing a Z2 topological boundary to change; binary, global protection.
+- `Ω_z`: Integer-winding-protected — associated with a conserved winding number; the role is stable against perturbations that preserve the winding invariant.
+- `Ω_5`: Non-Abelian protection — the most robust; requires Ð_ω.
+**For abstract/narrative systems: Ω encodes whether the structural ROLE can be continuously interpolated to its absence (Ω_Å) or whether the system's topology forces the role to persist (Ω_z, Ω_2). A death-principle in a cosmological system with a fixed winding structure may be Ω_z.**
 
 **MANDATORY AXIOMS — violating these causes a parse error:**
-- **Axiom A**: `H_inf` REQUIRES `K_trap`. If you assign H_inf, you MUST also assign K_trap. H_inf (topological chirality) means the symmetry cannot be undone without global restructuring — this IS K_trap. A fast-exchanging (K_fast) system cannot be topologically chiral.
-- **Axiom B**: `Omega_Z2` or `Omega_Z` REQUIRES `H2` or `H_inf` (chirality >= H2).
-- **Axiom C**: `D_odot` REQUIRES `T_odot` (and vice versa). They always co-occur.
-- **Axiom D**: `Omega_NA` REQUIRES `D_odot`.
+- **Axiom A**: `Ħ_!` REQUIRES `Ç_Ù`. If you assign Ħ_!, you MUST also assign Ç_Ù. Ħ_! (topological chirality) means the symmetry cannot be undone without global restructuring — this IS Ç_Ù. A fast-exchanging (Ç_-) system cannot be topologically chiral.
+- **Axiom B**: `Ω_2` or `Ω_z` REQUIRES `Ħ_A` or `Ħ_!` (chirality >= Ħ_A).
+- **Axiom C**: `Ð_ω` REQUIRES `Þ_O` (and vice versa). They always co-occur.
+- **Axiom D**: `Ω_5` REQUIRES `Ð_ω`.
 </primitives>
 
 <decision_procedure>
@@ -748,24 +748,24 @@ Analyze the provided system and assign all twelve primitives from first principl
 
 Each step constrains what remains. Do NOT assign all primitives simultaneously from a vague overall impression.
 
-  [1] D  → degrees of freedom: point → D_wedge; finite surface → D_triangle; infinite-dim field → D_infty; self-written state-space → D_odot
-  [2] T  → connectivity shape: graph → T_net; containment/nested → T_in; crossing point → T_bowtie; irreducible product → T_boxtimes; self-encoding topology → T_odot
-  [3] R  → coupling direction: supervenience (no feedback) → R_sup; functorial morphisms → R_cat; adjoint pair (one-way) → R_dagger; bidirectional mutual determination → R_lr
-  [4] P  → symmetry: none → P_asym; quantum superposition → P_psi; one Z₂ symmetry → P_pm; all symmetries → P_sym; μ∘δ=id exactly at Φ_c (Frobenius-special) → P_pm_sym
-  [5] F  → physical regime: classical → F_ell; thermal/noisy → F_eth; quantum coherence essential → F_hbar
-  [6] K  → relaxation: driven (τ≪T_obs) → K_fast; visible dynamics (τ∼T_obs) → K_mod; frozen (τ≫T_obs) → K_slow; trapped ordered → K_trap; trapped disordered → K_MBL
-  [7] G  → range: nearest-neighbor → G_beth; collective/emergent → G_gimel; long-range/universal → G_aleph
-  [8] Γ  → composition logic: all-simultaneous → G_and; any-sufficient → G_or; ordered steps → G_seq; one-to-all broadcast → G_broad
-  [9] Φ  → criticality: no power-laws → Phi_sub; power-law divergence, maximal sensitivity → Phi_c; complex-plane critical → Phi_c_complex; non-Hermitian degeneracy → Phi_EP; runaway/chaotic → Phi_super
-  [10] H → Markov order: n=0 (memoryless) → H0; n=1 → H1; n=2 → H2; no finite n → H_inf (requires K_trap)
+  [1] D  → degrees of freedom: point → Ð_ß; finite surface → Ð_C; infinite-dim field → Ð_;; self-written state-space → Ð_ω
+  [2] T  → connectivity shape: graph → T_net; containment/nested → Þ_K; crossing point → Þ_ò; irreducible product → Þ_¨; self-encoding topology → Þ_O
+  [3] R  → coupling direction: supervenience (no feedback) → R_sup; functorial morphisms → Ř_ý; adjoint pair (one-way) → Ř_Ť; bidirectional mutual determination → Ř_=
+  [4] P  → symmetry: none → Φ_ɐ; quantum superposition → Φ_υ; one Z₂ symmetry → Φ_F; all symmetries → Φ_˙; μ∘δ=id exactly at Φ_c (Frobenius-special) → Φ_}
+  [5] F  → physical regime: classical → ƒ_ì; thermal/noisy → ƒ_ð; quantum coherence essential → ƒ_ż
+  [6] K  → relaxation: driven (τ≪T_obs) → Ç_-; visible dynamics (τ∼T_obs) → Ç_W; frozen (τ≫T_obs) → Ç_@; trapped ordered → Ç_Ù; trapped disordered → Ç_λ
+  [7] G  → range: nearest-neighbor → Γ_β; collective/emergent → Γ_γ; long-range/universal → Γ_ʔ
+  [8] Γ  → composition logic: all-simultaneous → ɢ_^; any-sufficient → ɢ_˝; ordered steps → ɢ_ˌ; one-to-all broadcast → ɢ_Ş
+  [9] Φ  → criticality: no power-laws → φ̂_ž; power-law divergence, maximal sensitivity → φ̂_ÿ; complex-plane critical → φ̂_Æ; non-Hermitian degeneracy → φ̂_3; runaway/chaotic → φ̂_Ţ
+  [10] H → Markov order: n=0 (memoryless) → Ħ_Ñ; n=1 → Ħ_£; n=2 → Ħ_A; no finite n → Ħ_! (requires Ç_Ù)
   [11] S → component types: one type/one instance → 1:1; many identical → n:n; multiple distinct types → n:m
-  [12] Ω → topological invariant: none → Omega_0; Z₂ parity → Omega_Z2 (requires H2+); integer winding → Omega_Z (requires D≥D_infty); non-Abelian braiding → Omega_NA (requires D_odot)
+  [12] Ω → topological invariant: none → Ω_Å; Z₂ parity → Ω_2 (requires Ħ_A+); integer winding → Ω_z (requires D≥Ð_;); non-Abelian braiding → Ω_5 (requires Ð_ω)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
-- D-Ω: Omega_Z2 needs D≥D_triangle; Omega_Z needs D≥D_infty; Omega_NA needs D_odot
-- K-Φ: Phi_c + K_slow = critical deep structure (gravity, language, meditation); Phi_EP + K_fast = runaway decay
-- P_pm_sym requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
-- Tier verification: Phi_c + P_pm_sym → O_inf; Phi_c + Omega_0 → O_1; Phi_c + Omega≠0 + D∈{D_wedge,D_triangle,D_odot} → O_2; Phi_c + Omega≠0 + D_infty → O_2†
+- D-Ω: Ω_2 needs D≥Ð_C; Ω_z needs D≥Ð_;; Ω_5 needs Ð_ω
+- K-Φ: φ̂_ÿ + Ç_@ = critical deep structure (gravity, language, meditation); φ̂_3 + Ç_- = runaway decay
+- Φ_} requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
+- Tier verification: φ̂_ÿ + Φ_} → O_inf; φ̂_ÿ + Ω_Å → O_1; φ̂_ÿ + Omega≠0 + D∈{Ð_ß,Ð_C,Ð_ω} → O_2; φ̂_ÿ + Omega≠0 + Ð_; → O_2†
 </decision_procedure>
 
 <domain_guide>
@@ -774,35 +774,35 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 *Physical/molecular systems*: Ground each primitive in energy barriers (K), information content (F), correlation lengths (G), and topological connectivity (T). Cite the specific mechanism.
 
 *Abstract, symbolic, or mythological entities* (archetypes, angels, narrative roles, cultural forces): The entity's primitives are determined by its FUNCTIONAL ROLE in its native structural system (the mythology, narrative, cosmology, or text). Ask: In the system where this entity operates, what structural type does it instantiate?
-- D: Does it operate at a single locus (D_wedge), organize spatial structure (D_triangle), recur cyclically (D_infty), or imscriptively encode the system it inhabits (D_odot)?
+- D: Does it operate at a single locus (Ð_ß), organize spatial structure (Ð_C), recur cyclically (Ð_;), or imscriptively encode the system it inhabits (Ð_ω)?
 - T: What is the topology of its influence network?
 - R: How does it "recognize" or affect its participants? By soft association? By transformation? By catalysis? By mechanical entrapment?
-- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is F_hbar. A luck-spirit that sometimes helps is F_ell.
-- K: How resistant is its role to change? Can it be "talked out of" its function (K_fast)? Or is its role frozen by the structure of the narrative (K_slow/K_trap)?
+- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is ƒ_ż. A luck-spirit that sometimes helps is ƒ_ì.
+- K: How resistant is its role to change? Can it be "talked out of" its function (Ç_-)? Or is its role frozen by the structure of the narrative (Ç_@/Ç_Ù)?
 - G: Does it affect only its immediate contact, a local region, or the entire system?
 - Φ: Does it operate at a threshold — a point of maximum sensitivity between two states?
 - H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
 - Ω: Is the role topologically required by the structure of the system, or could it be continuously deformed away?
 
-*Mathematical structures*: The "operating space" is the mathematical domain; D_odot for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; Ω encodes homotopy class.
+*Mathematical structures*: The "operating space" is the mathematical domain; Ð_ω for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; Ω encodes homotopy class.
 
 *Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; Φ encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
 
 **EXAMPLE — Samael (שָׂמָאֵל, adversarial angel of death, Kabbalistic tradition):**
 In its structural role within Jewish cosmology, Samael is:
-- D_odot + T_odot: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: D_odot requires T_odot (Axiom C).
-- T_network is an alternative if D_odot is not assigned (see alternative below)
-- R_dagger: catalyzes the life→death transition without being consumed (adjoint/transition-state)
-- P_psi: the negating/adversarial pole of the cosmic polarity (signed direction)
-- F_hbar: death is geometry-enforcing — when it fires, it fires with certainty on its target
-- K_trap: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
-- G_aleph: correlation length is global — his influence is correlated across all mortal systems
-- G_or: any mortal is a valid partner (disjunctive)
-- Phi_c: he IS the critical threshold between life and non-life
-- H_inf: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
+- Ð_ω + Þ_O: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: Ð_ω requires Þ_O (Axiom C).
+- Þ_6 is an alternative if Ð_ω is not assigned (see alternative below)
+- Ř_Ť: catalyzes the life→death transition without being consumed (adjoint/transition-state)
+- Φ_υ: the negating/adversarial pole of the cosmic polarity (signed direction)
+- ƒ_ż: death is geometry-enforcing — when it fires, it fires with certainty on its target
+- Ç_Ù: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
+- Γ_ʔ: correlation length is global — his influence is correlated across all mortal systems
+- ɢ_˝: any mortal is a valid partner (disjunctive)
+- φ̂_ÿ: he IS the critical threshold between life and non-life
+- Ħ_!: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
 - n:m: one principle → many mortals
-- Omega_Z: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
-→ ⟨D_odot; T_odot; R_dagger; P_psi; F_hbar; K_trap; G_aleph; G_or; Phi_c; H_inf; n:m; Omega_Z⟩
+- Ω_z: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
+→ ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ_ż; Ç_Ù; Γ_ʔ; ɢ_˝; φ̂_ÿ; Ħ_!; n:m; Ω_z⟩
 This is a non-trivial, non-default encoding reached by structural reasoning, not template matching.
 </domain_guide>
 
@@ -813,25 +813,25 @@ Respond with a single JSON object with this EXACT structure. The outer key MUST 
 ```json
 {
   "synthon": {
-    "dimensionality": "D_wedge",
-    "topology": "T_bowtie",
-    "recognition_mode": "R_super",
-    "polarity": "P_pm",
-    "fidelity": "F_hbar",
-    "kinetic_character": "K_mod",
-    "granularity": "G_beth",
-    "interaction_grammar": "G_and",
-    "criticality_phase": "Phi_sub",
-    "chirality": "H0",
+    "dimensionality": "Ð_ß",
+    "topology": "Þ_ò",
+    "recognition_mode": "Ř_¯",
+    "polarity": "Φ_F",
+    "fidelity": "ƒ_ż",
+    "kinetic_character": "Ç_W",
+    "granularity": "Γ_β",
+    "interaction_grammar": "ɢ_corner",
+    "criticality_phase": "φ̂_ž",
+    "chirality": "Ħ_Ñ",
     "stoichiometry": "1:1",
-    "protection": "Omega_0"
+    "protection": "Ω_Å"
   },
   "confidence": 0.85,
-  "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'D_wedge: operates at single-locus scale. T_bowtie: cyclic interface...'",
-  "alternatives": [{"dimensionality": "D_wedge", "topology": "T_in", "recognition_mode": "R_super", "polarity": "P_pm", "fidelity": "F_eth", "kinetic_character": "K_fast", "granularity": "G_beth", "interaction_grammar": "G_or", "criticality_phase": "Phi_sub", "chirality": "H0", "stoichiometry": "n:m", "protection": "Omega_0"}]
+  "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'Ð_ß: operates at single-locus scale. Þ_ò: cyclic interface...'",
+  "alternatives": [{"dimensionality": "Ð_ß", "topology": "Þ_K", "recognition_mode": "Ř_¯", "polarity": "Φ_F", "fidelity": "ƒ_dh", "kinetic_character": "Ç_-", "granularity": "Γ_β", "interaction_grammar": "ɢ_spleftarrow", "criticality_phase": "φ̂_ž", "chirality": "Ħ_Ñ", "stoichiometry": "n:m", "protection": "Ω_Å"}]
 }
 ```
-Use only canonical string values shown above. The `reasoning` field MUST reference the same primitive values that appear in the `synthon` block — if you wrote `D_odot` in reasoning but `D_wedge` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "D_wedge: single-locus molecular complex"), total reasoning under 200 words.
+Use only canonical string values shown above. The `reasoning` field MUST reference the same primitive values that appear in the `synthon` block — if you wrote `Ð_ω` in reasoning but `Ð_ß` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "Ð_ß: single-locus molecular complex"), total reasoning under 200 words.
 </output_format>
 """
 
@@ -844,7 +844,7 @@ Use only canonical string values shown above. The `reasoning` field MUST referen
 
 Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the structural role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to structural type space.
 
-CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "D_wedge", "T_bowtie", "Phi_c"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
+CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "Ð_ß", "Þ_ò", "φ̂_ÿ"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
 Respond with the JSON object specified in output_format. Outer key must be "synthon". Confidence must reflect genuine uncertainty, not refusal to encode."""
 
@@ -864,7 +864,7 @@ You **MUST**:
 1. **PARSE** the SMILES to identify key structural features
 2. **DETERMINE** the dominant functional groups and their interactions
 3. **MAP** to all ten primitives based on:
-   - Molecular structure → **D_wedge** (typically)
+   - Molecular structure → **Ð_ß** (typically)
    - Functional group geometry → **Topology**
    - Interaction type → **Recognition Mode**
    - Electronic character → **Polarity**
@@ -918,16 +918,16 @@ You **MUST**:
 
         # Schema adapter: model used "synthon" wrapper but nested primitives under a
         # "primitives" sub-key instead of at the top level.
-        # e.g. {"synthon": {"name": ..., "primitives": {"D": ...}, "confidence": ...}}
+        # e.g. {"synthon": {"name": ..., "primitives": {"Ð": ...}, "confidence": ...}}
         if synthon_data and not self._has_string_primitive_values(synthon_data):
             inner = synthon_data.get("primitives")
             if isinstance(inner, dict):
                 _key_map = {
-                    "D": "dimensionality", "T": "topology", "R": "recognition_mode",
-                    "P": "polarity", "F": "fidelity", "K": "kinetic_character",
-                    "G": "granularity", "Gamma": "interaction_grammar", "Γ": "interaction_grammar",
-                    "Phi": "criticality_phase", "Φ": "criticality_phase",
-                    "H": "chirality", "S": "stoichiometry", "Omega": "protection", "Ω": "protection",
+                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
+                    "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
+                    "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
+                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 lifted: Dict[str, Any] = {"name": synthon_data.get("name", "")}
                 for k, v in inner.items():
@@ -941,11 +941,11 @@ You **MUST**:
             if isinstance(pa, dict):
                 # Remap abbreviated keys to canonical field names if needed
                 _key_map = {
-                    "D": "dimensionality", "T": "topology", "R": "recognition_mode",
-                    "P": "polarity", "F": "fidelity", "K": "kinetic_character",
-                    "G": "granularity", "Gamma": "interaction_grammar", "Γ": "interaction_grammar",
-                    "Phi": "criticality_phase", "Φ": "criticality_phase",
-                    "H": "chirality", "S": "stoichiometry", "Omega": "protection", "Ω": "protection",
+                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
+                    "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
+                    "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
+                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in pa.items():
@@ -960,11 +960,11 @@ You **MUST**:
             prim = data.get("primitives")
             if isinstance(prim, dict):
                 _key_map = {
-                    "D": "dimensionality", "T": "topology", "R": "recognition_mode",
-                    "P": "polarity", "F": "fidelity", "K": "kinetic_character",
-                    "G": "granularity", "Gamma": "interaction_grammar", "Γ": "interaction_grammar",
-                    "Phi": "criticality_phase", "Φ": "criticality_phase",
-                    "H": "chirality", "S": "stoichiometry", "Omega": "protection", "Ω": "protection",
+                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
+                    "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
+                    "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
+                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in prim.items():
@@ -992,17 +992,17 @@ You **MUST**:
 
     # Canonical short-form keys returned by models using grammar notation
     _SHORT_TO_LONG: Dict[str, str] = {
-        "D": "dimensionality",
-        "T": "topology",
-        "R": "recognition_mode",
-        "P": "polarity",
-        "F": "fidelity",
-        "K": "kinetic_character",
-        "G": "granularity",
+        "Ð": "dimensionality",
+        "Þ": "topology",
+        "Ř": "recognition_mode",
+        "Φ": "polarity",
+        "ƒ": "fidelity",
+        "Ç": "kinetic_character",
+        "Γ": "granularity",
         "Γ": "interaction_grammar",   # Γ
         "Φ": "criticality_phase",     # Φ
-        "H": "chirality",
-        "S": "stoichiometry",
+        "Ħ": "chirality",
+        "Σ": "stoichiometry",
         "Ω": "protection",            # Ω
     }
 
@@ -1033,7 +1033,7 @@ You **MUST**:
             raise ValueError(
                 f"Model returned numeric values for primitives instead of categorical strings.\n"
                 f"Numeric keys: {numeric}\n"
-                f"Expected strings like 'D_wedge', 'T_bowtie', etc.\n"
+                f"Expected strings like 'Ð_ß', 'Þ_ò', etc.\n"
                 f"Full normalized data: {data}"
             )
 
@@ -1072,7 +1072,7 @@ You **MUST**:
 
         # Topological protection — required
         if not data.get("protection"):
-            raise ValueError("Model response missing 'protection' (Omega_0 / Omega_Z2 / Omega_Z / Omega_NA).")
+            raise ValueError("Model response missing 'protection' (Ω_Å / Ω_2 / Ω_z / Ω_5).")
         protection = Protection.from_symbol(data["protection"])
 
         # Explicit name wins over LLM-generated name; sanitize LLM bleed otherwise

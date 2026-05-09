@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Imscribing Grammar — Index
 
 *Imscribing Grammar v0.4.46 · 12-primitive constraint algebra · Framework reference*
@@ -10,15 +19,15 @@ These files are the canonical reference for the Synthonicon grammar and the Mill
 
 | File | Content |
 | :--- | :--- |
-| **[IG_TOPICS.md](IG_TOPICS.md)** | Formal grammar: 12 primitives, 7 axioms, composition operations, primitive space |
-| **[IG_DIAPHORICS.md](IG_DIAPHORICS.md)** | Relational catalog: system encodings, distance matrices, cross-domain results, Millennium Problems |
-| **[IG_ONTICS.md](IG_ONTICS.md)** | Ontological implications: consciousness theorems, cosmological arc, G-scope, generator recognition |
-| **[IG_LANG.md](IG_LANG.md)** | Typed language for matter: Phase 3 grammar, compiler design, substrate expressions |
-| **[IG_PRIMER.md](IG_PRIMER.md)** | Reader guide: first-principles introduction, tool overview, `IG_inquiry.py` usage |
+| **[IΓ_TOPICS.md](IΓ_TOPICS.md)** | Formal grammar: 12 primitives, 7 axioms, composition operations, primitive space |
+| **[IΓ_DIAPHORICS.md](IΓ_DIAPHORICS.md)** | Relational catalog: system encodings, distance matrices, cross-domain results, Millennium Problems |
+| **[IΓ_ONTICS.md](IΓ_ONTICS.md)** | Ontological implications: consciousness theorems, cosmological arc, G-scope, generator recognition |
+| **[IΓ_LANG.md](IΓ_LANG.md)** | Typed language for matter: Phase 3 grammar, compiler design, substrate expressions |
+| **[IΓ_PRIMER.md](IΓ_PRIMER.md)** | Reader guide: first-principles introduction, tool overview, `IΓ_inquiry.py` usage |
 | **[PRIMITIVE_PREDICTIONS.md](PRIMITIVE_PREDICTIONS.md)** | Living ledger of predictions derived from primitive assignments (P-001 → P-114+) |
 | **[PRIMITIVE_THEOREMS.md](PRIMITIVE_THEOREMS.md)** | Archive of primitive-derived theorems (confidence tiers, three-plane annotations) |
 | **[THREE_PLANE_DEMONSTRATION.md](THREE_PLANE_DEMONSTRATION.md)** | Pedagogical example: Topics/Diaphorics/Ontics partition for a single system |
-| **[MILLENNIUM_BARRIERS_PAPER.md](MILLENNIUM_BARRIERS_PAPER.md)** | Research paper: formal barrier taxonomy for Millennium Prize Problems in Lean 4 (v0.1.0) |
+| **[MILLENNIUM_BARRIERΣ_PAPER.md](MILLENNIUM_BARRIERΣ_PAPER.md)** | Research paper: formal barrier taxonomy for Millennium Prize Problems in Lean 4 (v0.1.0) |
 
 ---
 
@@ -26,11 +35,11 @@ These files are the canonical reference for the Synthonicon grammar and the Mill
 
 | File | Purpose |
 | :--- | :--- |
-| **`IG_inquiry.py`** | Two-phase agentic loop: grammatical analysis + speculation pass |
+| **`IΓ_inquiry.py`** | Two-phase agentic loop: grammatical analysis + speculation pass |
 | **`synthon_tool.py`** | Primitive encoding, distance, meet/join, tensor operations |
 | **`synthon_agent.py`** | Autonomous synthon generation agent |
 | **`main.py`** | Primary entry point |
-| **`IG_catalog.json`** | Active synthon catalog (61 entries, inc. Millennium Problems) |
+| **`IΓ_catalog.json`** | Active synthon catalog (61 entries, inc. Millennium Problems) |
 
 ---
 
@@ -38,14 +47,14 @@ These files are the canonical reference for the Synthonicon grammar and the Mill
 
 ### `reports/`
 Standalone analyses and papers.
-- `IUG_NON_TRANSMISSIBILITY.md` / `.pdf` — structural non-transmissibility of Inter-Universal Geometer (12 sections, P-112/113/114)
-- `REACTIONLESS_THRUST.md` / `.pdf` — reactionless thrust analysis
-- `TENSOR_OPS.md` / `.pdf` — tensor operations reference
+- `IUΓ_NON_TRANSMISSIBILITY.md` / `.pdf` — structural non-transmissibility of Inter-Universal Geometer (12 sections, P-112/113/114)
+- `REACTIONLESΣ_THRUST.md` / `.pdf` — reactionless thrust analysis
+- `TENSOŘ_OPS.md` / `.pdf` — tensor operations reference
 - `PROOF.md` — fossil record and synthon propagation
 - `CHEMRXIV_OUTLINE.md` — ChemRxiv paper outline
 - `SYNOPSIS.md` — framework overview
-- Finance: `INVESTMENT_MEMORANDUM.md`, `PITCH_DECK.md`, `QUANTITATIVE_ROADMAP.md`, `EXTENDED_BACKTEST_REPORT.md`, `INSTITUTIONAL_BACKTEST_REPORT.md`, `PARAMETER_SWEEP_REPORT.md`, `TRADER_ONEPAGER.md`, `INFORMATIONAL_COST_ANALYSIS.md`
-- Misc analyses: `CLU.md`, `ESOP.md`, `FORMOM.md`, `HOLOCOMP.md`, `IG_SUGGESTED.md`
+- Finance: `INVESTMENÞ_MEMORANDUM.md`, `PITCĦ_DECK.md`, `QUANTITATIVE_ROADMAP.md`, `EXTENDEÐ_BACKTESÞ_REPORT.md`, `INSTITUTIONAL_BACKTESÞ_REPORT.md`, `PARAMETEŘ_SWEEΦ_REPORT.md`, `TRADEŘ_ONEPAGER.md`, `INFORMATIONAL_COSÞ_ANALYSIS.md`
+- Misc analyses: `CLU.md`, `ESOP.md`, `FORMOM.md`, `HOLOCOMP.md`, `IΓ_SUGGESTED.md`
 
 ### `research/`
 Domain research papers and applications.
@@ -61,21 +70,21 @@ Domain research papers and applications.
 
 ### `applications/`
 Synthonic operations and specialized capabilities.
-- `IG_CROSS_DOMAIN.md` — cross-domain constraint propagation
-- `IG_ENSEMBLER.md` — ensemble synthon operations
-- `IG_HOTSWAP.md` — dynamic primitive substitution
-- `IG_PERTURBATION.md` — perturbation analysis
-- `IG_RETRODESIGN.md` — retrosynthetic design
-- `IG_TRAJECTORY.md` — trajectory through primitive space
-- `IG_PHASE_TRANSITION_DETECTOR.md` — phase transition detection
-- `AUTONOMOUS_DISCOVERY.md` / `_SUMMARY.md` — autonomous discovery results
+- `IΓ_CROSΣ_DOMAIN.md` — cross-domain constraint propagation
+- `IΓ_ENSEMBLER.md` — ensemble synthon operations
+- `IΓ_HOTSWAP.md` — dynamic primitive substitution
+- `IΓ_PERTURBATION.md` — perturbation analysis
+- `IΓ_RETRODESIGN.md` — retrosynthetic design
+- `IΓ_TRAJECTORY.md` — trajectory through primitive space
+- `IΓ_PHASE_TRANSITION_DETECTOR.md` — phase transition detection
+- `AUTONOMOUΣ_DISCOVERY.md` / `_SUMMARY.md` — autonomous discovery results
 
 ### `docs/`
 Framework documentation, usage guides, integration references.
 - `README.md` — main project guide
 - `QUICKSTART.md` — quick start
 - `USAGE.md` — full usage reference
-- `AGENTS.md` / `AGENTS_README.md` — agent framework
+- `AGENTS.md` / `AGENTΣ_README.md` — agent framework
 - `LEAN_README.md` — Lean formalization guide
 - `LLM_AUGMENTATION.md` / `LLM_REFERENCE.md` — LLM integration
 - `METHODOLOGY.md` — methodology documentation
@@ -83,7 +92,7 @@ Framework documentation, usage guides, integration references.
 
 ### `archive/`
 Superseded documents, orphaned PDFs, old backups.
-- `IUT_NON_TRANSMISSIBILITY.pdf` — superseded by IUG version
+- `IUÞ_NON_TRANSMISSIBILITY.pdf` — superseded by IUG version
 - `PDW.pdf` / `PDW - Copy.pdf` — Pacific Depot Western
 - External papers: *Catch a Rising Problem*, *A Study of Objectively Real Time*
 - `QUANTIG.md.old.bkp` — old format backup
@@ -96,7 +105,7 @@ Catalogs, insights, reference data.
 - `downloads/` — downloaded papers and datasets
 
 ### `syncon_outputs/`
-All `IG_inquiry.py` session outputs (200+ JSON files, timestamped).
+All `IΓ_inquiry.py` session outputs (200+ JSON files, timestamped).
 
 ### `space_search/`
 Space observational pipeline — FRB, pulsar, spectral analysis code.
@@ -142,9 +151,9 @@ Full Lean 4 package. Key modules:
 | **`Barriers.lean`** | Taxonomy | Seven typed axioms; `ym_is_unique_missing_foundation` by `decide` |
 | **`PrimitiveBridge.lean`** | Bridge | Connects sorry boundaries to primitive field transitions; `ym_primitive_barrier_certificate`; `primitive_bridge_master` |
 
-### `UNIFIED_IG/`
+### `UNIFIEÐ_IG/`
 Unified three-document export: TOPOLOGOS, SCHESIAKOLOGOS, ONTOLOGOS (PDFs + TeX).
 
 ---
 
-*Last updated: 2026-03-26 · `IG_catalog.json`: 80 entries · Millennium Lean library: 9 files complete*
+*Last updated: 2026-03-26 · `IΓ_catalog.json`: 80 entries · Millennium Lean library: 9 files complete*

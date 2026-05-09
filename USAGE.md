@@ -1,23 +1,32 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Imscribing Grammar Framework: Comprehensive Usage Guide (v0.5.69)
 
 **Version 0.5.69** — Non-Mathematical Navigators (§74–§77) · 1,678 catalog entries · 538+ predictions · 77 formal theorems.
 
 New in v0.5.69:
 
-- **Non-Mathematical Navigators** — four domain navigators (Language, Civilization, Ecology, Consciousness) completed Session 1. Theorems §74–§77 in `PRIMITIVE_THEOREMS.md`; predictions P-523–P-538 in `PRIMITIVE_PREDICTIONS.md`; empirical sections §CXLVIII–§CLI in `IG_DIAPHORICS.md`; ontological synthesis §XLII in `IG_ONTICS.md`.
+- **Non-Mathematical Navigators** — four domain navigators (Language, Civilization, Ecology, Consciousness) completed Session 1. Theorems §74–§77 in `PRIMITIVE_THEOREMS.md`; predictions P-523–P-538 in `PRIMITIVE_PREDICTIONS.md`; empirical sections §CXLVIII–§CLI in `IΓ_DIAPHORICS.md`; ontological synthesis §XLII in `IΓ_ONTICS.md`.
 - **39 new catalog entries** — language systems (Sanskrit, Arabic, Lojban, Haitian Creole, Latin, Esperanto, Proto-Indo-European, Mandarin Classical, English Modern), civilizations (Han peak, Ming collapse, Soviet collapse, Western Roman collapse, Athenian Democracy, Augustus, Ottoman, Maya, Weimar, Renaissance Florence), ecosystems (old-growth rainforest, coral reef healthy/bleached, corn monoculture, fragmented habitat, savanna, hydrothermal vent, arctic tundra, early succession, kelp forest), and consciousness states (samadhi, psilocybin peak, waking DMN, focused, dreamless sleep, REM, catatonic, dissociative, manic, flow).
-- **Key results**: cross-biome identity $d(\text{old-growth}, \text{coral reef}) = 0$ (P-531); cross-domain identity $d(\text{samadhi}, \bar{a}kh) = 0$ (P-538); Lojban $O_\infty$ despite $\Omega_0$ — $P$ is tier gate, $\Omega$ is stability gate (P-523); coral bleaching tipping point $d = 8.28$ is $P$-dominant not $\Phi$-dominant (P-532); $K_\text{trap}$ vs $K_\text{MBL}$ duality confirmed in language, civilization, ecology, and consciousness.
-- **`docs/NAVIGATOR_ROADMAP.md`** — progress tracker for non-mathematical navigator development (v0.2).
+- **Key results**: cross-biome identity $d(\text{old-growth}, \text{coral reef}) = 0$ (P-531); cross-domain identity $d(\text{samadhi}, \bar{a}kh) = 0$ (P-538); Lojban $O_\infty$ despite $\Omega_{\text{closeepsilon}}$ — $P$ is tier gate, $\Omega$ is stability gate (P-523); coral bleaching tipping point $d = 8.28$ is $P$-dominant not $\Phi$-dominant (P-532); $K_{\text{teshlig}}$ vs $K_{\text{lambda}}$ duality confirmed in language, civilization, ecology, and consciousness.
+- **`docs/NAVIGATOŘ_ROADMAP.md`** — progress tracker for non-mathematical navigator development (v0.2).
 
 **Version 0.5.2** — CrystalGNN v8 · Algebraic Navigator's Guide · 17,280,000-type crystal (canonical) · 1,333 catalog entries · 454+ predictions · 69 formal theorems.
 
 New in v0.5.2:
 
 - **`quiver_crystal.py`** — CrystalGNN: quiver-based GNN neural navigator over the 17,280,000-type crystal. 49-node quiver (one node per primitive value), 255 edges including inter-lane structural correlations (Φ↔P, Φ↔K, Ω↔D). v8 benchmark: address error 0.24%, all-tier decode 200/200 = 100%, self-encode error 0.010%. `python quiver_crystal.py train` / `verify`.
-- **`ALGEBRAIC_NAVIGATOR_GUIDE.md`** — practitioner's reference: grammar families, crystal structure, Frobenius codec arithmetic, CrystalNavigator tool reference, CrystalGNN architecture, navigation patterns with real output.
-- **Crystal canonical update** — $K_\text{MBL}$ and $\Omega_\text{NA}$ are now canonical, expanding the crystal from 10,368,000 to **17,280,000** types ($3^3 \times 4^5 \times 5^4$). Boundary: 400 tier cells; bulk: 43,200 inner types per cell. Navigator self-encode address updated to 6,734,591.
+- **`ALGEBRAIC_NAVIGATOŘ_GUIDE.md`** — practitioner's reference: grammar families, crystal structure, Frobenius codec arithmetic, CrystalNavigator tool reference, CrystalGNN architecture, navigation patterns with real output.
+- **Crystal canonical update** — $K_{\text{lambda}}$ and $\Omega_{\text{turna}}$ are now canonical, expanding the crystal from 10,368,000 to **17,280,000** types ($3^3 \times 4^5 \times 5^4$). Boundary: 400 tier cells; bulk: 43,200 inner types per cell. Navigator self-encode address updated to 6,734,591.
 
-**Version 0.5.1** — Periodic Crystal Navigator · §69 Tier Gap Ladder · §68.4/§68.5 Arithmetic Ouroboros minimality · ENCODING_EPISTEMOLOGY · 1,322 catalog entries · 454+ predictions · 69 formal theorems.
+**Version 0.5.1** — Periodic Crystal Navigator · §69 Tier Gap Ladder · §68.4/§68.5 Arithmetic Ouroboros minimality · ENCODINΓ_EPISTEMOLOGY · 1,322 catalog entries · 454+ predictions · 69 formal theorems.
 
 New in v0.5.1:
 
@@ -25,13 +34,13 @@ New in v0.5.1:
 - **§69 Tier Gap Ladder** — exact adjacent distances: $d(O_0, O_1) \approx 1.049$, $d(O_1, O_2) \approx 1.304$, $d(O_2, O_2^\dagger) = 1.000$, $d(O_2^\dagger, O_\infty) \approx 4.382$. Frobenius cliff is 3.36× the next-largest gap; non-tunable by gradient methods.
 - **§68.4 Primitives-First Derivation** — the exponent of each base in $3^3 \times 4^5 \times 5^4$ is literally the count of primitive variables in that family. Not observed — forced by product structure.
 - **§68.5 Minimality** — $\{3,4,5\}$ is the unique minimal self-anchored triple; phase completeness ($\Phi$, $T$, $P$ each need 5 values) forces max base ≥ 5 and hence $n_1 \geq 3$.
-- **ENCODING_EPISTEMOLOGY.md** — theory of how encoding achieves determinism: structural reality vs ontological realization, monadic gating, comparative encoding, multi-session convergence, 9 convergence criteria.
+- **ENCODINΓ_EPISTEMOLOGY.md** — theory of how encoding achieves determinism: structural reality vs ontological realization, monadic gating, comparative encoding, multi-session convergence, 9 convergence criteria.
 
 **Version 0.5.0** — $\lambda_\aleph$ calculus · ℵ-OS · interaction functor · GNS Hilbert space · Octad Balance theorem · Hebrew $O_\infty$ revision (Vav, Mem, Shin) · 1,170+ catalog entries.
 
-**Version 0.4.0** — Quantum primitive extensions: T_braid · K_MBL · Γ_↓(DISSIPATIVE) · QUANTUM grammar tier · **Ω (TopoIndex) — 11th primitive** · Factor 8 (quantum criticality) · `imscribe distance` command · all algebra commands wired to `imscribe` CLI.
+**Version 0.4.0** — Quantum primitive extensions: Þ_braid · Ç_λ · Γ_↓(DISSIPATIVE) · QUANTUM grammar tier · **Ω (TopoIndex) — 11th primitive** · Factor 8 (quantum criticality) · `imscribe distance` command · all algebra commands wired to `imscribe` CLI.
 
-**Version 0.3.8** — Quantum domain encoding: 5 quantum particles (photon/proton/electron/spin/qubit) · G_aleph first appearance · Axiom 1 as classical boundary detector · spin singlet F_ell→F_hbar correction.
+**Version 0.3.8** — Quantum domain encoding: 5 quantum particles (photon/proton/electron/spin/qubit) · Γ_ʔ first appearance · Axiom 1 as classical boundary detector · spin singlet ƒ_ì→ƒ_ż correction.
 
 **Version 0.3.7** — Ice polymorph catalog (13 phases) · T_∈ sub-label integration across constraints/algebra/ensembler/perturbation/cli · domain-agnostic agent prompts · `imscribe compare` all 10 primitives · Key Justifications fix.
 
@@ -43,7 +52,7 @@ New in v0.5.1:
 
 **Version 0.3.2** — Tuple Algebra + Compositional Design Language: `meet`, `join`, `path`, `tensor`, `lift`, `pipeline`.
 
-**Version 0.3.0** — Four new analysis protocol modules: IG_PERTURBATION, IG_TRAJECTORY, IG_ENSEMBLER, IG_RETRODESIGN.
+**Version 0.3.0** — Four new analysis protocol modules: IΓ_PERTURBATION, IΓ_TRAJECTORY, IΓ_ENSEMBLER, IΓ_RETRODESIGN.
 
 **Full Notation**: ⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩  (Ω optional, defaults None for classical synthons)
 
@@ -53,7 +62,7 @@ New in v0.5.1:
 
 The eleven primitives `⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩` are **relational operators**, not intrinsic attributes. Every primitive describes a constraint between entities or a capacity for interaction — none describes an isolated property of a system standing alone.
 
-This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > F_eth > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + P_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
+This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > ƒ_ð > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + Φ_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
 
 The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unary information generators. Every operation requires at least one additional operand — environment, partner, or target state. You cannot call `tensor(photon)` without a second argument; the algebra returns an error. A synthon's tuple describes its *interaction-ready potential*; the algebra computes only when that potential is actualized against another term.
 
@@ -66,14 +75,14 @@ The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unar
    | Synthon | D | T | F | Role |
    |---------|---|---|---|------|
    | `nitroso_radical_redox_synthon_pair` | D_∞ | T_⋈ | F_ℏ | Temporal autocatalytic redox cycle; Frank-model Factor 7 fires (score > 0.3); start point for criticality-ascent designs |
-   | `amide_dimer` | D_∧ | T_⋈ | F_eth | N–H···O=C H-bonded dimer; F_eth weaker than carboxylic acid dimer (F_ℏ); lattice floor/ceiling pair for design 03 |
-   | `nitroso_radical_anion_π_cavitand_cage_synthon` | D_△ | T_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, K_slow |
-   | `nitroso_radical_calixarene_anion_π_sandwich_synthon` | D_△ | T_bowl | F_ℏ | Calixarene bowl; open cup, T_bowl < T_cage in ordinal (fallback partner in or-strategy) |
-   | `nitroso_radical_crown_ether_host_guest_synthon` | D_△ | T_cage | F_eth | Crown ether host–guest; flexible macrocycle → F_eth (fidelity bottleneck partner in design 12) |
-   | `nitroso_radical_anion_π_cryptand_cage_synthon` | D_△ | T_cage | F_ℏ | Cryptand cage; 3D bicyclic preorganisation → F_ℏ (design 16 start) |
-   | `nitroso_radical_cucurbituril_anion_rotaxane_synthon` | D_△ | T_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (K_slow); tensor partner in designs 12 and 16 |
-   | `synthon_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | F_eth | CH₃⁻ carbanion; P_minus; retrodesign target in designs 08 and 10 |
-   | `synthon_methyl_cation_electrophile_CH3` | D_∧ | T_\| | F_eth | CH₃⁺ carbocation; P_plus; tensor partner for anion-cation MI demonstration (design 10) |
+   | `amide_dimer` | D_∧ | T_⋈ | ƒ_ð | N–H···O=C H-bonded dimer; ƒ_ð weaker than carboxylic acid dimer (F_ℏ); lattice floor/ceiling pair for design 03 |
+   | `nitroso_radical_anion_π_cavitand_cage_synthon` | D_△ | Þ_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, Ç_@ |
+   | `nitroso_radical_calixarene_anion_π_sandwich_synthon` | D_△ | Þ_bowl | F_ℏ | Calixarene bowl; open cup, Þ_bowl < Þ_cage in ordinal (fallback partner in or-strategy) |
+   | `nitroso_radical_crown_ether_host_guest_synthon` | D_△ | Þ_cage | ƒ_ð | Crown ether host–guest; flexible macrocycle → ƒ_ð (fidelity bottleneck partner in design 12) |
+   | `nitroso_radical_anion_π_cryptand_cage_synthon` | D_△ | Þ_cage | F_ℏ | Cryptand cage; 3D bicyclic preorganisation → F_ℏ (design 16 start) |
+   | `nitroso_radical_cucurbituril_anion_rotaxane_synthon` | D_△ | Þ_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (Ç_@); tensor partner in designs 12 and 16 |
+   | `synthon_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | ƒ_ð | CH₃⁻ carbanion; Φ_minus; retrodesign target in designs 08 and 10 |
+   | `synthon_methyl_cation_electrophile_CH3` | D_∧ | T_\| | ƒ_ð | CH₃⁺ carbocation; Φ_plus; tensor partner for anion-cation MI demonstration (design 10) |
 
 2. **Design suite: all 20 `.syn` scripts execute without `[ERROR]`** — 18 succeed, 2 are intentional F-floor pedagogical demonstrations (designs 01 and 04). All previously `[ERROR]` failures caused by missing catalog entries are now resolved.
 
@@ -83,23 +92,23 @@ The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unar
 
 **Four Protocol Modules** (March 15, 2026):
 
-1. **IG_PERTURBATION** (`imscrbgrmr/perturbation.py`):
+1. **IΓ_PERTURBATION** (`imscrbgrmr/perturbation.py`):
    - `PerturbationEngine.sweep_all(synthon, delta_g)` — primitive Jacobian: Δξ_CP for every primitive ±1 tier
    - `PerturbationEngine.fault_injection(synthon, delta_g)` — single-point-of-failure analysis
    - `PerturbationEngine.find_path_to_target(synthon, delta_g, target_xi_CP, optimize_primitives)` — minimum-step tuning path
    - CLI: `imscribe perturb sweep <name> --delta-g <float>`
 
-2. **IG_TRAJECTORY** (`imscrbgrmr/trajectory.py`):
+2. **IΓ_TRAJECTORY** (`imscrbgrmr/trajectory.py`):
    - `TemporalSynthonAgent` — encode D_∞ systems as step sequences, validate Axiom 6 compliance
-   - Three checks: S mass balance, Axiom 4 (D_∞ or R_‡), K_trap/ΔG‡>100
+   - Three checks: S mass balance, Axiom 4 (D_∞ or R_‡), Ç_Ù/ΔG‡>100
    - CLI: `imscribe trajectory validate --steps <names> --reset <name>`
 
-3. **IG_ENSEMBLER** (`imscrbgrmr/ensembler.py`):
+3. **IΓ_ENSEMBLER** (`imscrbgrmr/ensembler.py`):
    - `EnsembleCatalog` — N×N pairwise compatibility, emergent property detection, system ξ_CP
    - Emergent: criticality, G_ב→G_ג amplification (Axiom 3), interface fidelity degradation
    - CLI: `imscribe ensemble check --components <names>`
 
-4. **IG_RETRODESIGN** (`imscrbgrmr/retrodesign.py`):
+4. **IΓ_RETRODESIGN** (`imscrbgrmr/retrodesign.py`):
    - `RetrodesignEngine.decompose()` — recursive axiom-pruned decomposition tree
    - Axioms 1, 2 (sub-tuples claiming G_ℵ only), 4, 6
    - CLI: `imscribe retrodesign <name_or_notation> --max-depth 3 --prune-axioms 1,2,4,6`
@@ -114,7 +123,7 @@ See **Section 7** for full protocol API documentation and CLI reference. See **S
 
 2. **`imscribe run <file.syn>`**: New CLI command. `--format text|json`, `--save PATH`, `--dry-run`. Runs `.syn` scripts and reports step-by-step trace plus output assertions.
 
-3. **Agent primitive awareness**: Both `axiom_guided_generator` and `synthon_generator_agent` now declare **ten primitives** (D, T, R, P, F, K, G, Γ, Φ, S). `criticality_phase` parser defaults to `Phi_sub` instead of returning `None`. Topology block lists all 7 values with symbols.
+3. **Agent primitive awareness**: Both `axiom_guided_generator` and `synthon_generator_agent` now declare **ten primitives** (D, T, R, P, F, K, G, Γ, Φ, S). `criticality_phase` parser defaults to `φ̂_ž` instead of returning `None`. Topology block lists all 7 values with symbols.
 
 4. **New topology symbols**: Three acyclic connectivity classes now have explicit symbols:
    - `T_|` (LINEAR) — unbranched linear chain, no junction nodes
@@ -122,7 +131,7 @@ See **Section 7** for full protocol API documentation and CLI reference. See **S
    - `T_∈` (NETWORK) — multiply-connected, cycles permitted without cage closure
    All three are registered in `Topology.from_symbol()`.
 
-5. **Notation always includes Φ**: `to_notation()` defaults to `Phi_sub` when `criticality_phase` is unset; S appended as 10th position when set. Notation is always a 9- or 10-element tuple.
+5. **Notation always includes Φ**: `to_notation()` defaults to `φ̂_ž` when `criticality_phase` is unset; S appended as 10th position when set. Notation is always a 9- or 10-element tuple.
 
 ### What's New in v0.3.3?
 
@@ -130,7 +139,7 @@ See **Section 7** for full protocol API documentation and CLI reference. See **S
 
 1. **CB[7] competitive displacement — 6/6 HotSwap validation**: Three-tier CB[7] series (Fc/Ad/DABCO) tests the F-floor asymmetric ratchet against Kim JACS 2001 / Assaf & Nau CSR 2015 experimental data. All 6 directional predictions (3 APPROVED, 3 BLOCKED) match experiment from ordinal F ranking alone. First use of **F_ℓ tier** (DABCO, Ka = 2×10⁵ M⁻¹ < threshold ~10⁷ M⁻¹).
 
-2. **Factor 7 — Frank-model classical bifurcation** (`varma_probe.py`): New heuristic factor (weight 0.25) in `score_phi_c_candidacy()`. Fires when D_∞ + T_⋈ + P_directional + F_ℏ are co-present. Identifies pitchfork bifurcation at ee = 0 (Frank 1953) — universality class distinct from Varma QXY and steric-cliff.
+2. **Factor 7 — Frank-model classical bifurcation** (`varma_probe.py`): New heuristic factor (weight 0.25) in `score_phi_c_candidacy()`. Fires when D_∞ + T_⋈ + Φ_directional + F_ℏ are co-present. Identifies pitchfork bifurcation at ee = 0 (Frank 1953) — universality class distinct from Varma QXY and steric-cliff.
 
 3. **Soai reaction catalog entry** (`soai_pyrimidyl_autocatalytic_cycle`): Fully grounded. ξ_r = 15, ξ_τ = 7.2×10¹⁵ (ω_c = 10¹² s⁻¹), ratio = 0.94. Probe score **0.920** (approaching Φ_c, Frank-model mechanism). Highest-confidence Φ_c candidate in catalog.
 
@@ -165,7 +174,7 @@ See **Section 8** for full reference.
 
 ### What's New in v2.1?
 
-**IG_FIXES.md Full Implementation** (March 14–15, 2026):
+**IΓ_FIXES.md Full Implementation** (March 14–15, 2026):
 
 1. **Grounding Validation with Registration Blocking** (Fix 1 — CRITICAL):
    - `--strict-grounding` flag blocks registration if primitives lack mechanistic grounding
@@ -178,16 +187,16 @@ See **Section 8** for full reference.
    - D_∞ requires either a named discrete reset OR a continuously supplied dissipative flux (see below)
    - **Discrete reset** (`reset_type="discrete"`): validates `cycle_steps` ≥ 2, or `axiom6_grounding` block with `initial_state`, `transformation`, `work_performed`, `reset_mechanism`
    - **Continuous dissipative** (`reset_type="continuous"`): validates `driving_gradient.description` and `driving_gradient.coupling` in `synthon.grounding["reset"]`
-   - Keyword scan (`AXIOM_6_RESET_INDICATORS`, `AXIOM_6_PROCESS_INDICATORS`) is fallback only when no structured block is present
+   - Keyword scan (`AXIOM_6_RESEÞ_INDICATORS`, `AXIOM_6_PROCESΣ_INDICATORS`) is fallback only when no structured block is present
 
 3. **Axiom 7: Cyclic Topology Grounding** (Fix 3 — HIGH):
    - T_⋈ now requires named closing bond/interaction
    - Detects invalid justifications (linear, rod, chain, axial, etc.)
-   - Keyword indicators: `AXIOM_7_CLOSING_INDICATORS`, `AXIOM_7_INVALID_TOPO_KEYWORDS`
+   - Keyword indicators: `AXIOM_7_CLOSINΓ_INDICATORS`, `AXIOM_7_INVALIÐ_TOPO_KEYWORDS`
 
 4. **Per-Primitive Confidence** (Fix 4 — MEDIUM):
    - `PrimitiveGrounding` dataclass: `confidence: float`, `is_grounded: bool`, `failure_reason`, `suggested_alternative`
-   - `ADVERSARIAL_GROUNDING_PROMPT` — challenges each primitive from first principles
+   - `ADVERSARIAL_GROUNDINΓ_PROMPT` — challenges each primitive from first principles
    - Confidence auto-derived from status (GROUNDED=0.9, AMBIGUOUS=0.5, UNGROUNDED=0.1, INVALID=0.0)
 
 5. **Quantum Extension Quarantine** (Fix 5 — MEDIUM):
@@ -199,12 +208,12 @@ See **Section 8** for full reference.
    - Axiom 6/7 shortcuts, `--auto-flag`, `--dry-run` support (see Section 4.2)
 
 7. **NLP Format Enforcement** (v2.1.3):
-   - All LLM prompts across the codebase follow NLP_FORMAT.md
+   - All LLM prompts across the codebase follow NLΦ_FORMAT.md
    - XML tags, `**MUST**`/`**MUST NOT**`, declarative commands, explicit output formats
 
 **Eight Axioms Now Enforced**:
 - Axioms 1-5: Composition axioms (QUANTIG.md Section IV)
-- Axioms 6-7: Grounding axioms (IG_FIXES.md)
+- Axioms 6-7: Grounding axioms (IΓ_FIXES.md)
 - Axiom 8: R physics match (R must match actual interaction physics)
 
 Imscribing Grammar is a groundbreaking Python framework that brings the theoretical elegance of the **Unified Synthonicon** to practical application. At its core, Imscribing Grammar provides a computational platform for systematically analyzing, designing, and predicting the behavior of self-organizing chemical systems. It unifies disparate fields—from traditional molecular organic chemistry to complex supramolecular assemblies and dynamic temporal processes—under a single, coherent conceptual umbrella.
@@ -230,15 +239,15 @@ The Unified Synthonicon is built upon ten primitives, each representing a crucia
 
 | Primitive                 | Symbol              | Description                                                  | Key Purpose in Imscribing Grammar                                   |
 | :------------------------ | :------------------ | :----------------------------------------------------------- | :------------------------------------------------------------ |
-| **Dimensionality**        | $D$ ($D_{\wedge}, D_{\bigtriangleup}, D_{\infty}$) | The coordinate set along which the synthon operates.         | Defines the operational scale (molecular, supramolecular, temporal). |
-| **Topology**              | $T$ ($T_{\bowtie}, T_{\ggg}, T_{\square}, T_{\square\square}, T_{|}, T_{\perp}, T_{\in}$) | The internal connectivity pattern of the synthon's minimal motif. | Characterizes structural arrangements (cyclic, chain, hub/node, cage, linear, branched, network). |
+| **Dimensionality**        | $D$ ($D_{\text{wynn}}, D_{\bigtriangleup}, D_{\text{invomega}}$) | The coordinate set along which the synthon operates.         | Defines the operational scale (molecular, supramolecular, temporal). |
+| **Topology**              | $T$ ($T_{\text{bullseye}}, T_{\ggg}, T_{\square}, T_{\square\square}, T_{|}, T_{\perp}, T_{\text{invscr}}$) | The internal connectivity pattern of the synthon's minimal motif. | Characterizes structural arrangements (cyclic, chain, hub/node, cage, linear, branched, network). |
 | **Recognition Mode**      | $R$ ($R_{\subseteq}, R_{\supseteq}, R_{\ddagger}, R_{\Leftrightarrow}$) | The physical mechanism of interaction.                       | Specifies how synthons interact (covalent, non-covalent, dynamic). |
-| **Polarity**              | $P$ ($P+, P-, P_{\pm}$) | The directional character of the interaction.                | Dictates partner preference and orientation (acceptor, donor, self-complementary). |
-| **Fidelity**              | $F$ ($F_{\hbar}, F_{\eth}, F_{\ell}$) | Thermodynamic reliability anchored to $\xi_{CP}$. Tiers: HIGH ≤ 8.5 nats · MEDIUM 8.5–11.0 nats · LOW > 11.0 nats. | Quantifies the predictability and robustness of an interaction. |
-| **Kinetic Character**     | $K$ ($K_{\text{fast}}, K_{\text{mod}}, K_{\text{slow}}, K_{\text{trap}}$) | Activation barrier and pathway multiplicity. | Distinguishes thermodynamic fidelity from operational accessibility. |
-| **Granularity**           | $G$ ($G_{\beth}, G_{\gimel}, G_{\aleph}$) | The scale of control exerted by the synthon.                 | Defines the scope of influence (local, mesoscale, global).    |
-| **Interaction Grammar**   | $\Gamma$ ($\Gamma_{\wedge}, \Gamma_{\vee}, \Gamma_{\to}$) × (SPECIFIC · SELECTIVE · BROAD) | The logic governing partner selection.                       | Determines the specificity and ordering of binding. |
-| **Criticality Phase**     | $\Phi$ ($\Phi_{\text{sub}}, \Phi_c, \Phi_{\text{super}}$) | Phase relative to the G–D criticality locus. | Encodes whether the synthon exhibits scale-free behavior (Axiom 5). |
+| **Polarity**              | $P$ ($P+, P-, P_{\text{pipevar}}$) | The directional character of the interaction.                | Dictates partner preference and orientation (acceptor, donor, self-complementary). |
+| **Fidelity**              | $F$ ($F_{\text{hardsign}}, F_{\text{dh}}, F_{\text{beltl}}$) | Thermodynamic reliability anchored to $\xi_{CP}$. Tiers: HIGH ≤ 8.5 nats · MEDIUM 8.5–11.0 nats · LOW > 11.0 nats. | Quantifies the predictability and robustness of an interaction. |
+| **Kinetic Character**     | $K$ ($K_{\text{frtailgamma}}, K_{\text{turnm}}, K_{\text{schwa}}, K_{\text{teshlig}}$) | Activation barrier and pathway multiplicity. | Distinguishes thermodynamic fidelity from operational accessibility. |
+| **Granularity**           | $G$ ($G_{\text{beta}}, G_{\text{gamma}}, G_{\text{revapostrophe}}$) | The scale of control exerted by the synthon.                 | Defines the scope of influence (local, mesoscale, global).    |
+| **Interaction Grammar**   | $\Gamma$ ($\Gamma_{\text{corner}}, \Gamma_{\text{spleftarrow}}, \Gamma_{\to}$) × (SPECIFIC · SELECTIVE · BROAD) | The logic governing partner selection.                       | Determines the specificity and ordering of binding. |
+| **Criticality Phase**     | $\Phi$ ($\Phi_{\text{softsign}}, \Phi_{\text{ctyogh}}, \Phi_{\text{upstep}}$) | Phase relative to the G–D criticality locus. | Encodes whether the synthon exhibits scale-free behavior (Axiom 5). |
 | **Stoichiometry**         | $S$ (e.g. `"1:1"`, `"2:1"`, `"n:m"`) | Valency ratio of the recognition event; constrains T and P. Weight 0.08 in analogy scoring. | Distinguishes homodimers from host–guest and polymeric assemblies. |
 
 Together, these primitives are used to generate the full **Unified Notation**: `⟨D; T; R; P; F; K; G; Γ; Φ; S⟩`. This notation is the cornerstone of Imscribing Grammar, enabling quantitative analysis and cross-domain comparisons.
@@ -369,13 +378,13 @@ The Unified Synthonicon framework categorizes the fundamental properties of chem
 Dimensionality specifies the coordinate set or "space" along which a synthon primarily operates. It helps define the context and scale of the chemical system under consideration. The `Dimensionality` enum can also represent hybrid systems that span multiple domains.
 
 *   **Enum Members**:
-    *   `MOLECULAR` (`"D_wedge"` or `"D_∧"`): Point-like reactivity, typically involving individual atoms or small molecules.
-    *   `SUPRAMOLECULAR` (`"D_triangle"` or `"D_△"`): Three-dimensional spatial organization, such as crystal packing or host-guest interactions.
-    *   `TEMPORAL` (`"D_infinity"` or `"D_∞"`): One-dimensional periodicity over time, characteristic of oscillating reactions or catalytic cycles.
-    *   `HYBRID_MOL_SUPRA` (`"D_wedge_triangle"`): Combines molecular-level reactions within a supramolecular framework.
-    *   `HYBRID_MOL_TEMP` (`"D_wedge_infinity"`): Molecular reactions with a temporal component (e.g., dynamic covalent chemistry).
-    *   `HYBRID_SUPRA_TEMP` (`"D_triangle_infinity"`): Supramolecular structures exhibiting temporal dynamics.
-    *   `HYBRID_ALL` (`"D_all"`): Spans all three fundamental dimensions.
+    *   `MOLECULAR` (`"Ð_ß"` or `"D_∧"`): Point-like reactivity, typically involving individual atoms or small molecules.
+    *   `SUPRAMOLECULAR` (`"Ð_C"` or `"D_△"`): Three-dimensional spatial organization, such as crystal packing or host-guest interactions.
+    *   `TEMPORAL` (`"Ð_infinity"` or `"D_∞"`): One-dimensional periodicity over time, characteristic of oscillating reactions or catalytic cycles.
+    *   `HYBRIÐ_MOL_SUPRA` (`"Ð_wedge_triangle"`): Combines molecular-level reactions within a supramolecular framework.
+    *   `HYBRIÐ_MOL_TEMP` (`"Ð_wedge_infinity"`): Molecular reactions with a temporal component (e.g., dynamic covalent chemistry).
+    *   `HYBRIÐ_SUPRA_TEMP` (`"Ð_triangle_infinity"`): Supramolecular structures exhibiting temporal dynamics.
+    *   `HYBRIÐ_ALL` (`"Ð_all"`): Spans all three fundamental dimensions.
 
 *   **Usage Examples**:
     ```python
@@ -390,7 +399,7 @@ Dimensionality specifies the coordinate set or "space" along which a synthon pri
     print(f"Temporal Dimensionality from symbol: {temp_dim.name}")
 
     # Hybrid example
-    hybrid_dim = Dimensionality.HYBRID_MOL_SUPRA
+    hybrid_dim = Dimensionality.HYBRIÐ_MOL_SUPRA
     print(f"Hybrid Dimensionality: {hybrid_dim.value}")
     ```
 
@@ -398,7 +407,7 @@ Dimensionality specifies the coordinate set or "space" along which a synthon pri
     Each `Dimensionality` member has a `domains` property, which returns a `Set[str]` indicating the fundamental domains it encompasses (e.g., "molecular", "supramolecular", "temporal").
 
     ```python
-    print(f"Domains for HYBRID_MOL_SUPRA: {hybrid_dim.domains}")
+    print(f"Domains for HYBRIÐ_MOL_SUPRA: {hybrid_dim.domains}")
     # Expected: {'molecular', 'supramolecular'}
     print(f"Domains for TEMPORAL: {temp_dim.domains}")
     # Expected: {'temporal'}
@@ -409,19 +418,19 @@ Dimensionality specifies the coordinate set or "space" along which a synthon pri
 Topology describes the internal connectivity pattern or spatial arrangement within the synthon's minimal motif. It characterizes the geometric scaffolding or network structure formed by the interacting components.
 
 *   **Enum Members**:
-    *   `CYCLIC_BOWTIE` (`"T_bowtie"` or `"T_⋈"`): Cyclic motifs, like hydrogen-bonded dimers (e.g., carboxylic acid dimer) or catalytic cycles.
-    *   `CHAIN` (`"T_chains"` or `"T_≫"`): Linear or extended chain structures (e.g., polymers, protein helices).
-    *   `HUB_NODE` (`"T_square"` or `"T_□"`): Central nodes connecting multiple branches, common in metal-organic frameworks (MOFs) or dendritic structures.
-    *   `LINEAR` (`"T_linear"` / `"T_|"`): Unbranched linear chain, no junction nodes (e.g., linear polymers, rod-like coordination chains).
-    *   `BRANCHED` (`"T_branched"` / `"T_⊥"`): Branched acyclic topology with one or more junction nodes (e.g., dendrimers, branched polymers).
-    *   `NETWORK` (`"T_network"` / `"T_∈"`): Multiply-connected, cycles permitted but without full 3D cage closure (e.g., MOF nets, 2D coordination networks). Use a sub-label when ring topology is known:
-        *   `NETWORK_HEX` (`"T_network_hex"` / `"T_∈(hex)"`): 6-membered rings only (e.g., ice Ih, honeycomb MOFs, graphene-like nets). Complexity 5.
-        *   `NETWORK_MIXED` (`"T_network_mixed"` / `"T_∈(mixed)"`): Mixed ring sizes (e.g., ice III, ice IV, ice V). Complexity 5.
-        *   `NETWORK_INTERPENETRATING` (`"T_network_interp"` / `"T_∈(×2)"`): Two independent sub-networks occupying the same space (e.g., ice VI, ice VII, ice VIII — bcc interpenetrating H-bond lattices). Complexity 6.
-        *   `NETWORK_SYM` (`"T_network_sym"` / `"T_∈(sym)"`): Centrosymmetric bonding — symmetric H-bond or equivalent (e.g., ice X at ≥70 GPa). Complexity 5.
-    *   `CAGE` (`"T_cage"` / `"T_□□"`): Fully enclosed, hollow structures — 3D closure required (e.g., cucurbiturils, Fujita spheres, COCs).
-    *   `BOWL` (`"T_bowl"` / `"T_∪"`): Open concave cavity with a single portal — guest enters and exits freely; K_fast is the default (e.g., calixarenes, resorcinarenes, pillar[n]arenes, cyclotriveratrylenes). Distinguished from T_□□ by the absence of full 3D closure: T_∪ → T_□□ is non-conservative (changes kinetic regime). *Identified through catalog self-audit in v0.3.6.*
-    *   `BRAID` (`"T_braid"` / `"T_↗↙"`): **NEW in v0.4.0.** Anyonic/braided exchange statistics — the topology of braid groups, not spatial connectivity. Encodes systems where particle exchange is described by non-abelian braid operations rather than simple permutations (Z₂ for bosons/fermions). `tensor(T_braid, T_braid) → T_braid` (anyonic statistics preserved). `T_braid ⊓ T_linear = ⊥` (no classical topology sits below both). Complexity 4. Physical systems: fractional quantum Hall states (ν=1/3, ν=5/2), Kitaev honeycomb B-phase, non-abelian Majorana platforms. *Identified as missing from the T lattice via quantum particle encoding (v0.4.0).*
+    *   `CYCLIC_BOWTIE` (`"Þ_ò"` or `"T_⋈"`): Cyclic motifs, like hydrogen-bonded dimers (e.g., carboxylic acid dimer) or catalytic cycles.
+    *   `CHAIN` (`"Þ_chains"` or `"T_≫"`): Linear or extended chain structures (e.g., polymers, protein helices).
+    *   `HUB_NODE` (`"Þ_square"` or `"T_□"`): Central nodes connecting multiple branches, common in metal-organic frameworks (MOFs) or dendritic structures.
+    *   `LINEAR` (`"Þ_linear"` / `"T_|"`): Unbranched linear chain, no junction nodes (e.g., linear polymers, rod-like coordination chains).
+    *   `BRANCHED` (`"Þ_branched"` / `"T_⊥"`): Branched acyclic topology with one or more junction nodes (e.g., dendrimers, branched polymers).
+    *   `NETWORK` (`"Þ_6"` / `"T_∈"`): Multiply-connected, cycles permitted but without full 3D cage closure (e.g., MOF nets, 2D coordination networks). Use a sub-label when ring topology is known:
+        *   `NETWORÇ_HEX` (`"Þ_network_hex"` / `"T_∈(hex)"`): 6-membered rings only (e.g., ice Ih, honeycomb MOFs, graphene-like nets). Complexity 5.
+        *   `NETWORÇ_MIXED` (`"Þ_network_mixed"` / `"T_∈(mixed)"`): Mixed ring sizes (e.g., ice III, ice IV, ice V). Complexity 5.
+        *   `NETWORÇ_INTERPENETRATING` (`"Þ_network_interp"` / `"T_∈(×2)"`): Two independent sub-networks occupying the same space (e.g., ice VI, ice VII, ice VIII — bcc interpenetrating H-bond lattices). Complexity 6.
+        *   `NETWORÇ_SYM` (`"Þ_network_sym"` / `"T_∈(sym)"`): Centrosymmetric bonding — symmetric H-bond or equivalent (e.g., ice X at ≥70 GPa). Complexity 5.
+    *   `CAGE` (`"Þ_cage"` / `"T_□□"`): Fully enclosed, hollow structures — 3D closure required (e.g., cucurbiturils, Fujita spheres, COCs).
+    *   `BOWL` (`"Þ_bowl"` / `"T_∪"`): Open concave cavity with a single portal — guest enters and exits freely; Ç_- is the default (e.g., calixarenes, resorcinarenes, pillar[n]arenes, cyclotriveratrylenes). Distinguished from T_□□ by the absence of full 3D closure: T_∪ → T_□□ is non-conservative (changes kinetic regime). *Identified through catalog self-audit in v0.3.6.*
+    *   `BRAID` (`"Þ_braid"` / `"T_↗↙"`): **NEW in v0.4.0.** Anyonic/braided exchange statistics — the topology of braid groups, not spatial connectivity. Encodes systems where particle exchange is described by non-abelian braid operations rather than simple permutations (Z₂ for bosons/fermions). `tensor(Þ_braid, Þ_braid) → Þ_braid` (anyonic statistics preserved). `Þ_braid ⊓ Þ_linear = ⊥` (no classical topology sits below both). Complexity 4. Physical systems: fractional quantum Hall states (ν=1/3, ν=5/2), Kitaev honeycomb B-phase, non-abelian Majorana platforms. *Identified as missing from the T lattice via quantum particle encoding (v0.4.0).*
 
 *   **Usage Examples**:
     ```python
@@ -450,11 +459,11 @@ Topology describes the internal connectivity pattern or spatial arrangement with
 Recognition Mode defines the specific physical mechanism by which synthons interact and recognize each other, enabling reliable propagation of information or structure.
 
 *   **Enum Members**:
-    *   `COVALENT` (`"R_subset"` or `"R_⊆"`): Involves the formation of strong, directional covalent bonds.
-    *   `NON_COVALENT` (`"R_superset"` or `"R_⊇"`): Relies on weaker, reversible interactions like hydrogen bonds, van der Waals forces, or halogen bonds.
-    *   `DYNAMIC_CATALYTIC` (`"R_dagger"` or `"R_‡"`): Encompasses interactions mediated by dynamic processes, often catalytic, leading to reversible bond formation or transformation.
-    *   `MECHANICAL` (`"R_mechanical"` or `"R_⇔"`): Characterizes interlocked molecules (e.g., rotaxanes, catenanes) where components are physically linked but not covalently bonded.
-    *   `COVALENT_DYNAMIC` (`"R_covalent_dynamic"` or `"R_⊆+‡"`): Hybrid mode for dynamic covalent chemistry, combining covalent bond formation with reversibility.
+    *   `COVALENT` (`"Ř_subset"` or `"R_⊆"`): Involves the formation of strong, directional covalent bonds.
+    *   `NON_COVALENT` (`"Ř_superset"` or `"R_⊇"`): Relies on weaker, reversible interactions like hydrogen bonds, van der Waals forces, or halogen bonds.
+    *   `DYNAMIC_CATALYTIC` (`"Ř_Ť"` or `"R_‡"`): Encompasses interactions mediated by dynamic processes, often catalytic, leading to reversible bond formation or transformation.
+    *   `MECHANICAL` (`"Ř_mechanical"` or `"R_⇔"`): Characterizes interlocked molecules (e.g., rotaxanes, catenanes) where components are physically linked but not covalently bonded.
+    *   `COVALENÞ_DYNAMIC` (`"Ř_covalent_dynamic"` or `"R_⊆+‡"`): Hybrid mode for dynamic covalent chemistry, combining covalent bond formation with reversibility.
 
 *   **Usage Examples**:
     ```python
@@ -484,10 +493,10 @@ Recognition Mode defines the specific physical mechanism by which synthons inter
 Polarity captures the directional character of the interaction, dictating how components orient themselves and select partners. It relates to electron density distribution and reactivity.
 
 *   **Enum Members**:
-    *   `ACCEPTOR` (`"P_plus"` or `"P+"`): Electron-deficient site, acts as an electrophile or hydrogen bond acceptor.
-    *   `DONOR` (`"P_minus"` or `"P-"`): Electron-rich site, acts as a nucleophile or hydrogen bond donor.
-    *   `SELF_COMPLEMENTARY` (`"P_pm"` or `"P_±"`): Possesses both donor and acceptor characteristics that allow it to interact with identical motifs (e.g., carboxylic acid dimers).
-    *   `DONOR_ACCEPTOR` (`"P_directional"` or `"P_+-"`): Combines donor and acceptor sites in a directional manner, forming specific D-A pairs.
+    *   `ACCEPTOR` (`"Φ_plus"` or `"P+"`): Electron-deficient site, acts as an electrophile or hydrogen bond acceptor.
+    *   `DONOR` (`"Φ_minus"` or `"P-"`): Electron-rich site, acts as a nucleophile or hydrogen bond donor.
+    *   `SELƒ_COMPLEMENTARY` (`"Φ_F"` or `"P_±"`): Possesses both donor and acceptor characteristics that allow it to interact with identical motifs (e.g., carboxylic acid dimers).
+    *   `DONOŘ_ACCEPTOR` (`"Φ_directional"` or `"P_+-"`): Combines donor and acceptor sites in a directional manner, forming specific D-A pairs.
 
 *   **Usage Examples**:
     ```python
@@ -510,7 +519,7 @@ Polarity captures the directional character of the interaction, dictating how co
     # Expected: True
     print(f"Is ACCEPTOR compatible with DONOR? {acceptor_pol.is_compatible_with(Polarity.DONOR)}")
     # Expected: True
-    print(f"Is ACCEPTOR compatible with SELF_COMPLEMENTARY? {acceptor_pol.is_compatible_with(Polarity.SELF_COMPLEMENTARY)}")
+    print(f"Is ACCEPTOR compatible with SELƒ_COMPLEMENTARY? {acceptor_pol.is_compatible_with(Polarity.SELƒ_COMPLEMENTARY)}")
     # Expected: False
     ```
 
@@ -519,9 +528,9 @@ Polarity captures the directional character of the interaction, dictating how co
 Fidelity provides a nuanced measure of a synthon's reliability, predictability, and robustness. It quantifies how consistently a synthon will perform its intended function under given conditions. Fidelity is domain-dependent and can be quantified differently (e.g., bond dissociation energy, interaction energy, fidelity per cycle).
 
 *   **Enum Members**:
-    *   `HIGH` (`"F_hbar"` or `"F_ℏ"`): Dominant, highly reliable, geometry-enforcing interactions. ξ_CP ≤ 8.5 nats. In supramolecular host–guest systems: Ka ≳ 10⁹ M⁻¹ (e.g., CB[7]·ferrocene-ammonium, Ka ≈ 3×10¹² M⁻¹). Represents strong constraint.
-    *   `MEDIUM` (`"F_eth"` or `"F_ℇ"`): Context-dependent, robust but conditional interactions. ξ_CP 8.5–11.0 nats. Ka ~10⁷–10⁹ M⁻¹ (e.g., CB[7]·adamantane-ammonium, Ka ≈ 4×10⁸ M⁻¹).
-    *   `LOW` (`"F_ell"` or `"F_ℓ"`): Probabilistic, competition-sensitive interactions, less reliable. ξ_CP > 11.0 nats. Ka ≲ 10⁷ M⁻¹ (e.g., CB[7]·DABCO, Ka ≈ 2×10⁵ M⁻¹). The F_ℓ tier boundary is anchored by the CB[7] competitive displacement series (Kim JACS 2001; v0.3.3).
+    *   `HIGH` (`"ƒ_ż"` or `"F_ℏ"`): Dominant, highly reliable, geometry-enforcing interactions. ξ_CP ≤ 8.5 nats. In supramolecular host–guest systems: Ka ≳ 10⁹ M⁻¹ (e.g., CB[7]·ferrocene-ammonium, Ka ≈ 3×10¹² M⁻¹). Represents strong constraint.
+    *   `MEDIUM` (`"ƒ_ð"` or `"F_ℇ"`): Context-dependent, robust but conditional interactions. ξ_CP 8.5–11.0 nats. Ka ~10⁷–10⁹ M⁻¹ (e.g., CB[7]·adamantane-ammonium, Ka ≈ 4×10⁸ M⁻¹).
+    *   `LOW` (`"ƒ_ì"` or `"F_ℓ"`): Probabilistic, competition-sensitive interactions, less reliable. ξ_CP > 11.0 nats. Ka ≲ 10⁷ M⁻¹ (e.g., CB[7]·DABCO, Ka ≈ 2×10⁵ M⁻¹). The F_ℓ tier boundary is anchored by the CB[7] competitive displacement series (Kim JACS 2001; v0.3.3).
 
 *   **Usage Examples**:
     ```python
@@ -537,12 +546,12 @@ Fidelity provides a nuanced measure of a synthon's reliability, predictability, 
 
 *   **Properties**:
     *   `numeric_value` (`float`): Returns a standardized numeric value (0.0-1.0) for quantitative calculations.
-    *   `xi_CP_range` (`Tuple[float, float]`): Provides the typical range for the Inefficiency Index ($\xi_{CP}$) associated with this fidelity level.
+    *   `xi_CΦ_range` (`Tuple[float, float]`): Provides the typical range for the Inefficiency Index ($\xi_{CP}$) associated with this fidelity level.
 
     ```python
     print(f"Numeric value for HIGH Fidelity: {high_fidelity.numeric_value}")
     # Expected: 0.95
-    print(f"ξ_CP range for MEDIUM Fidelity: {medium_fidelity.xi_CP_range} nats")
+    print(f"ξ_CP range for MEDIUM Fidelity: {medium_fidelity.xi_CΦ_range} nats")
     # Expected: (9.0, 11.5)
     ```
 
@@ -561,9 +570,9 @@ Fidelity provides a nuanced measure of a synthon's reliability, predictability, 
 Granularity defines the scale of control or influence exerted by the synthon within a larger system. It describes whether a synthon dictates organization locally, at an intermediate motif level, or globally across a network.
 
 *   **Enum Members**:
-    *   `LOCAL` (`"G_beth"` or `"G_ב"`): Control at a very confined scale, typically involving a single bond or interaction.
-    *   `MESOSCALE` (`"G_gimel"` or `"G_ג"`): Control over a motif or small cluster of interactions (e.g., a specific binding pocket, a small oligomer).
-    *   `GLOBAL` (`"G_aleph"` or `"G_א"`): Control that extends throughout an entire network or framework (e.g., a crystal lattice, a self-replicating system).
+    *   `LOCAL` (`"Γ_β"` or `"G_ב"`): Control at a very confined scale, typically involving a single bond or interaction.
+    *   `MESOSCALE` (`"Γ_γ"` or `"G_ג"`): Control over a motif or small cluster of interactions (e.g., a specific binding pocket, a small oligomer).
+    *   `GLOBAL` (`"Γ_ʔ"` or `"G_א"`): Control that extends throughout an entire network or framework (e.g., a crystal lattice, a self-replicating system).
 
 *   **Usage Examples**:
     ```python
@@ -600,11 +609,11 @@ Granularity defines the scale of control or influence exerted by the synthon wit
 Interaction Grammar governs the logic of partner selection for a synthon. It describes the specificity or promiscuity of its interactions, from highly selective binding to broad, non-specific recognition.
 
 *   **Enum Members**:
-    *   `SPECIFIC` (`"Gamma_otimes"` or `"Γ_⊗"`): Selects one highly specific partner, akin to a lock-and-key mechanism.
-    *   `SELECTIVE` (`"Gamma_odot"` or `"Γ_⊙"`): Interacts with a small, defined set of partners (typically 3-10).
-    *   `BROAD` (`"Gamma_bigcirc"` or `"Γ_○"`): Compatible with many potential partners, often leading to less predictable outcomes without additional constraints.
-    *   Sequential variants (v0.3.5): `SPECIFIC_SEQ`, `SELECTIVE_SEQ`, `BROAD_SEQ` — same specificity tier but operating along a directed temporal axis (D_∞ systems). Registered as `"Γ_⊗_seq"`, `"Γ_⊙_seq"`, `"Γ_○_seq"`.
-    *   **Dissipative variants (v0.4.0)**: `SPECIFIC_DISSIPATIVE`, `SELECTIVE_DISSIPATIVE`, `BROAD_DISSIPATIVE` — irreversible coupling governed by `Γ_↓(DISSIPATIVE)` operator (Lindblad/Zeno channel). Use for open quantum systems where the interaction causes information loss to the environment rather than unitary exchange. `specificity_score` = 0.95 / 0.75 / 0.25 respectively; `partner_count_range` = (1,1) / (1,3) / (1,∞).
+    *   `SPECIFIC` (`"ɢ_otimes"` or `"Γ_⊗"`): Selects one highly specific partner, akin to a lock-and-key mechanism.
+    *   `SELECTIVE` (`"ɢ_odot"` or `"Γ_⊙"`): Interacts with a small, defined set of partners (typically 3-10).
+    *   `BROAD` (`"ɢ_bigcirc"` or `"Γ_○"`): Compatible with many potential partners, often leading to less predictable outcomes without additional constraints.
+    *   Sequential variants (v0.3.5): `SPECIFIC_SEQ`, `SELECTIVE_SEQ`, `BROAÐ_SEQ` — same specificity tier but operating along a directed temporal axis (D_∞ systems). Registered as `"Γ_⊗_seq"`, `"Γ_⊙_seq"`, `"Γ_○_seq"`.
+    *   **Dissipative variants (v0.4.0)**: `SPECIFIC_DISSIPATIVE`, `SELECTIVE_DISSIPATIVE`, `BROAÐ_DISSIPATIVE` — irreversible coupling governed by `Γ_↓(DISSIPATIVE)` operator (Lindblad/Zeno channel). Use for open quantum systems where the interaction causes information loss to the environment rather than unitary exchange. `specificity_score` = 0.95 / 0.75 / 0.25 respectively; `partner_count_range` = (1,1) / (1,3) / (1,∞).
     *   **Quantum tier (v0.4.0)**: `QUANTUM_AND`, `QUANTUM_OR`, `QUANTUM_SEQ`, `QUANTUM_DISSIPATIVE` — Toffoli-gate semantics operating on superposition states. `QUANTUM_AND` requires simultaneous entanglement of two control qubits; `QUANTUM_OR` is the logical OR of coherent pathways; `QUANTUM_SEQ` chains unitary gates preserving superposition; `QUANTUM_DISSIPATIVE` = measurement/decoherence channel. All quantum members share `partner_count_range = (1, 2)` and `specificity_score = 0.9`. *Identified as missing during quantum particle encoding — classical Γ values destroy superposition semantics (v0.4.0).*
 
 *   **Usage Examples**:
@@ -632,25 +641,25 @@ Interaction Grammar governs the logic of partner selection for a synthon. It des
 
 ### 3.8. Kinetic Character (K)
 
-Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A synthon can be F_ℏ (high fidelity) but K_slow (kinetically inaccessible), or F_eth but K_fast.
+Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A synthon can be F_ℏ (high fidelity) but Ç_@ (kinetically inaccessible), or ƒ_ð but Ç_-.
 
 *   **Enum Members**:
-    *   `FAST` (`"K_fast"`): ΔG‡ < 60 kJ/mol; spontaneous on experimental timescales. Accessibility score: 0.95.
-    *   `MODERATE` (`"K_mod"`): ΔG‡ ≈ 60–100 kJ/mol; accessible with mild activation. Accessibility score: 0.70.
-    *   `SLOW` (`"K_slow"`): ΔG‡ > 100 kJ/mol; requires significant activation. Accessibility score: 0.30.
-    *   `TRAP` (`"K_trap"`): Pathway multiplicity high; kinetic products diverge from thermodynamic products. Accessibility score: 0.50.
-    *   `MBL` (`"K_MBL"`): **NEW in v0.4.0.** Many-body localization — disorder-induced kinetic arrest. The system is frozen not by an energy barrier but by the structure of its many-body eigenbasis; adding energy does not cause relaxation. Ordinal position 0 (below K_trap at 1) in the kinetic hierarchy — more arrested than any classical trap. Accessibility score: 0.05. Barrier range: (0.0, 0.0) — not barrier-limited. `meet(K_MBL, anything) → K_MBL`. **Cannot be inferred from `from_barrier()`**; requires explicit assignment. Physical systems: disordered quantum magnets, cold atoms in quasiperiodic potentials (Aubry-André model), many-body localized phases in 1D interacting systems. *Identified as missing via quantum particle encoding — K_trap is energy-barrier trapping, K_MBL is disorder trapping; the distinction matters because MBL stores quantum information indefinitely (v0.4.0).*
+    *   `FAST` (`"Ç_-"`): ΔG‡ < 60 kJ/mol; spontaneous on experimental timescales. Accessibility score: 0.95.
+    *   `MODERATE` (`"Ç_W"`): ΔG‡ ≈ 60–100 kJ/mol; accessible with mild activation. Accessibility score: 0.70.
+    *   `SLOW` (`"Ç_@"`): ΔG‡ > 100 kJ/mol; requires significant activation. Accessibility score: 0.30.
+    *   `TRAP` (`"Ç_Ù"`): Pathway multiplicity high; kinetic products diverge from thermodynamic products. Accessibility score: 0.50.
+    *   `MBL` (`"Ç_λ"`): **NEW in v0.4.0.** Many-body localization — disorder-induced kinetic arrest. The system is frozen not by an energy barrier but by the structure of its many-body eigenbasis; adding energy does not cause relaxation. Ordinal position 0 (below Ç_Ù at 1) in the kinetic hierarchy — more arrested than any classical trap. Accessibility score: 0.05. Barrier range: (0.0, 0.0) — not barrier-limited. `meet(Ç_λ, anything) → Ç_λ`. **Cannot be inferred from `from_barrier()`**; requires explicit assignment. Physical systems: disordered quantum magnets, cold atoms in quasiperiodic potentials (Aubry-André model), many-body localized phases in 1D interacting systems. *Identified as missing via quantum particle encoding — Ç_Ù is energy-barrier trapping, Ç_λ is disorder trapping; the distinction matters because MBL stores quantum information indefinitely (v0.4.0).*
 
-*   **Example usage**: The carboxylic acid homodimer is F_ℏ, K_fast. The gas-phase imine condensation proxy is F_eth, K_slow; aqueous imine is F_eth, K_mod — same thermodynamic tier, different operational accessibility.
+*   **Example usage**: The carboxylic acid homodimer is F_ℏ, Ç_-. The gas-phase imine condensation proxy is ƒ_ð, Ç_@; aqueous imine is ƒ_ð, Ç_W — same thermodynamic tier, different operational accessibility.
 
 ### 3.9. Criticality Phase (Φ)
 
 Criticality Phase encodes the synthon's position relative to the G–D criticality locus.
 
 *   **Enum Members**:
-    *   `SUBCRITICAL` (`"Phi_sub"`): G and D are demonstrably independent. Default assignment.
-    *   `CRITICAL` (`"Phi_c"`): At the criticality locus — ξ→∞, scale-free behavior, G/D degenerate (Axiom 5).
-    *   `SUPERCRITICAL` (`"Phi_super"`): Post-assembly state where synthon identity is absorbed into the assembled material.
+    *   `SUBCRITICAL` (`"φ̂_ž"`): G and D are demonstrably independent. Default assignment.
+    *   `CRITICAL` (`"φ̂_ÿ"`): At the criticality locus — ξ→∞, scale-free behavior, G/D degenerate (Axiom 5).
+    *   `SUPERCRITICAL` (`"φ̂_Ţ"`): Post-assembly state where synthon identity is absorbed into the assembled material.
 
 *   **Criticality probe** (v2.2+): Use `imscribe criticality-probe <name>` to score Φ_c candidacy. The probe now reports:
     *   `z_eff` — dynamic exponent (diverges logarithmically for Varma QXY class; = 1.33 for 2D percolation)
@@ -667,8 +676,8 @@ Criticality Phase encodes the synthon's position relative to the G–D criticali
     | 4 | P_± (symmetric polarity) | 0.15 | Varma QXY |
     | 5 | F_ℏ (quantum fidelity) | 0.15 | Varma QXY |
     | 6 | db24c8 steric-cliff analog | 0.10 | Steric-cliff |
-    | 7 | D_∞ + T_⋈ + P_DA + F_ℏ | 0.25 | Frank-model (classical bifurcation) |
-    | 8 | **G_ℵ + F_ℏ + K_trap + ¬D_∞** | **0.20** | **Quantum criticality (TFI/heavy-fermion)** |
+    | 7 | D_∞ + T_⋈ + Φ_DA + F_ℏ | 0.25 | Frank-model (classical bifurcation) |
+    | 8 | **G_ℵ + F_ℏ + Ç_Ù + ¬D_∞** | **0.20** | **Quantum criticality (TFI/heavy-fermion)** |
 
     Factor 8 (v0.4.0) fires when a synthon simultaneously has global granularity, quantum fidelity, and trap-kinetics, but **lacks** D_∞ temporality — the signature of a quantum critical point without a classical order parameter. Falsifiable prediction: susceptibility χ(T→0) ~ T^{-γ}. *Identified as missing when probing the spin singlet and qubit synthons, whose criticality fingerprint is orthogonal to Factors 1–7.*
 
@@ -685,7 +694,7 @@ Stoichiometry encodes the valency ratio of the recognition event — the molar r
 
 *   **Consistency rules** (enforced by Pass 4 audit):
     *   `T_⋈ + S="1:1"` → must have P± (self-complementary polarity)
-    *   `T_⋈ + S="n:m"` (n≠m) → must have Γ∨(BROAD) or T_network
+    *   `T_⋈ + S="n:m"` (n≠m) → must have Γ∨(BROAD) or Þ_6
     *   `T_⋈ + no S` → auto-suggested as `"1:1"` if P± present; otherwise flagged for manual review
 
 *   **Auto-backfill**:
@@ -826,7 +835,7 @@ The `imscribe audit` command runs a 4-pass scan of the catalog for grounding iss
 | 1 | Axiom 6 | D_∞ entries: structured grounding["reset"] block checked first (discrete or continuous); falls back to keyword scan |
 | 2 | Axiom 7 | T_⋈ entries for named closing bond; rejects linear/rod/chain |
 | 3 | — | Attractor-tuple contamination (≥7/7 match, no stored reasoning) |
-| 4 *(v2.2)* | — | S consistency: T_⋈[1:1]↔P±; T_⋈[n:m]↔Γ∨BROAD/T_network |
+| 4 *(v2.2)* | — | S consistency: T_⋈[1:1]↔P±; T_⋈[n:m]↔Γ∨BROAD/Þ_6 |
 
 **Usage:**
 ```bash
@@ -881,7 +890,7 @@ The audit calls `AxiomValidator.validate_axiom6_temporal_grounding(synthon)` whi
 1. **Structured block** — `synthon.grounding["reset"]` (persisted in catalog JSON, survives reload):
    - `type = "discrete"`: requires `cycle_steps` list ≥ 2, **or** `axiom6_grounding` metadata block
    - `type = "continuous"`: requires `driving_gradient.description` + `driving_gradient.coupling`
-2. **Keyword scan fallback** — only when no structured block exists. Scans description/reasoning for `AXIOM_6_RESET_INDICATORS` + `AXIOM_6_PROCESS_INDICATORS`; both must be present.
+2. **Keyword scan fallback** — only when no structured block exists. Scans description/reasoning for `AXIOM_6_RESEÞ_INDICATORS` + `AXIOM_6_PROCESΣ_INDICATORS`; both must be present.
 
 **Adding structured Axiom 6 grounding to a catalog entry:**
 
@@ -922,7 +931,7 @@ global_catalog.save_catalog()
 | `proline_aldol_cycle` | `discrete` | Iminium hydrolysis → free proline reset |
 
 **Axiom 7 check logic:**
-Scans the description for `AXIOM_7_CLOSING_INDICATORS` (e.g. "hydrogen bond", "ring", "macrocycle") and rejects if `AXIOM_7_INVALID_TOPO_KEYWORDS` are found (e.g. "linear", "rod", "allene").
+Scans the description for `AXIOM_7_CLOSINΓ_INDICATORS` (e.g. "hydrogen bond", "ring", "macrocycle") and rejects if `AXIOM_7_INVALIÐ_TOPO_KEYWORDS` are found (e.g. "linear", "rod", "allene").
 
 ### 4.3. I(bits) Calibration Command *(v2.2)*
 
@@ -939,7 +948,7 @@ imscribe info-bits carboxylic_acid_dimer
 imscribe info-bits triple_hbond_array --solvent THF
 ```
 
-**Output fields:** `I_recognition`, `I_orientation` (overhead), `I_net = I_rec − 0.3×I_orient`, `I_total+solvent`, `ΔS_conf`, heuristic comparison, verdict.
+**Output fields:** `I_recognition`, `I_orientation` (overhead), `I_net = I_rec − 0.3×I_orient`, `I_total+solvent`, `ΔΣ_conf`, heuristic comparison, verdict.
 
 **Calibrated ranges (v2.2):**
 | System type | I_recognition |
@@ -979,7 +988,7 @@ imscribe criticality-probe --batch --export-candidates candidates.json
 |--------|--------|------------|--------------------|
 | 1–5 (Varma QXY structural heuristics) | 0.35 / 0.25 / 0.20 / ... | D_∞, R_‡, G_ג primitives present | Varma QXY (quantum) |
 | 6 (Steric-cliff proxy) | 0.65 | `phi_c_candidacy.proxy_degeneracy_strength` ≥ 0.50 in grounding | Steric-cliff (mechanical) |
-| 7 (Frank-model classical bifurcation) | 0.25 | D_∞ + T_⋈ + P_directional + F_ℏ all present | Frank 1953 (classical pitchfork) |
+| 7 (Frank-model classical bifurcation) | 0.25 | D_∞ + T_⋈ + Φ_directional + F_ℏ all present | Frank 1953 (classical pitchfork) |
 
 **Validated case studies (v0.3.3):**
 
@@ -1009,7 +1018,7 @@ imscribe analogies my_synthon --stoichiometry-aware --critical-only
 
 #### CB[7] Competitive Displacement — F-floor Ratchet (6/6 Validated)
 
-Tests the HotSwap `F`-floor hard constraint: a swap is BLOCKED if F_new < F_old. The CB[7] host-guest series provides a literature-grounded three-tier ordering.
+Tests the HotSwap `F`-floor hard constraint: a swap is BLOCKED if ƒ_new < ƒ_old. The CB[7] host-guest series provides a literature-grounded three-tier ordering.
 
 ```bash
 # Register the three CB[7] complexes (already in catalog post-v0.3.3)
@@ -1019,19 +1028,19 @@ Tests the HotSwap `F`-floor hard constraint: a swap is BLOCKED if F_new < F_old.
 
 # Run all 6 directional swaps — expected: 3 APPROVED, 3 BLOCKED
 imscribe hotswap CB7_ferrocene_ammonium_complex CB7_adamantane_ammonium_complex --delta-g -49.1
-# → APPROVED (F_ℏ → F_ℇ, downgrade: F_new=F_ℇ < F_old=F_ℏ) ← NOTE: Fc→Ad is BLOCKED
+# → APPROVED (F_ℏ → F_ℇ, downgrade: ƒ_new=F_ℇ < ƒ_old=F_ℏ) ← NOTE: Fc→Ad is BLOCKED
 imscribe hotswap CB7_adamantane_ammonium_complex CB7_ferrocene_ammonium_complex --delta-g -71.2
-# → APPROVED (Ad→Fc: F_new=F_ℏ > F_old=F_ℇ)
+# → APPROVED (Ad→Fc: ƒ_new=F_ℏ > ƒ_old=F_ℇ)
 
 imscribe hotswap CB7_DABCO_complex CB7_adamantane_ammonium_complex --delta-g -49.1
-# → APPROVED (DABCO→Ad: F_new=F_ℇ > F_old=F_ℓ)
+# → APPROVED (DABCO→Ad: ƒ_new=F_ℇ > ƒ_old=F_ℓ)
 imscribe hotswap CB7_adamantane_ammonium_complex CB7_DABCO_complex --delta-g -30.1
-# → BLOCKED (Ad→DABCO: F_new=F_ℓ < F_old=F_ℇ)
+# → BLOCKED (Ad→DABCO: ƒ_new=F_ℓ < ƒ_old=F_ℇ)
 
 imscribe hotswap CB7_ferrocene_ammonium_complex CB7_DABCO_complex --delta-g -30.1
-# → BLOCKED (Fc→DABCO: F_new=F_ℓ < F_old=F_ℏ)
+# → BLOCKED (Fc→DABCO: ƒ_new=F_ℓ < ƒ_old=F_ℏ)
 imscribe hotswap CB7_DABCO_complex CB7_ferrocene_ammonium_complex --delta-g -71.2
-# → APPROVED (DABCO→Fc: F_new=F_ℏ > F_old=F_ℓ)
+# → APPROVED (DABCO→Fc: ƒ_new=F_ℏ > ƒ_old=F_ℓ)
 ```
 
 **Result table (all 6 match experiment):**
@@ -1055,7 +1064,7 @@ imscribe criticality-probe soai_pyrimidyl_autocatalytic_cycle --xi-r 15 --xi-tau
 
 **Expected output summary:**
 - Ratio ξ_r / ln(ξ_τ) = 15 / ln(7.2×10¹⁵) ≈ **0.94** (near-critical; threshold = 1.0 ± 20%)
-- Factor 7 fires: D_∞ + T_⋈ + P_directional + F_ℏ → Frank-model pitchfork bifurcation
+- Factor 7 fires: D_∞ + T_⋈ + Φ_directional + F_ℏ → Frank-model pitchfork bifurcation
 - Score: **0.920** — approaching Φ_c
 - Active species: [Zn₂·(pyrimidylalkoxide)₂·iPr₂Zn] dimer (Gridnev 2010)
 
@@ -1067,7 +1076,7 @@ imscribe criticality-probe proline_aldol_cycle --xi-r 6.2 --xi-tau 1.8e14
 
 **Expected output summary:**
 - Ratio ξ_r / ln(ξ_τ) = 6.2 / ln(1.8×10¹⁴) ≈ **0.189** (well below 1.0 threshold)
-- Factor 7 does not fire: P_±^ψ (pseudosymmetric, not directional P_DA)
+- Factor 7 does not fire: P_±^ψ (pseudosymmetric, not directional Φ_DA)
 - Score: **0.380** — Φ_sub (subcritical)
 - Structural prediction: criticality would require ξ_r ≥ 32 lattice units (~48 Å correlation), incompatible with observed enamine geometry
 
@@ -1091,7 +1100,7 @@ carboxylic_dimer = Synthon(
     dimensionality=Dimensionality.MOLECULAR,
     topology=Topology.CYCLIC_BOWTIE,
     recognition_mode=RecognitionMode.NON_COVALENT,
-    polarity=Polarity.SELF_COMPLEMENTARY,
+    polarity=Polarity.SELƒ_COMPLEMENTARY,
     fidelity=Fidelity.HIGH,
     kinetic_character=KineticCharacter.FAST,
     granularity=Granularity.LOCAL,
@@ -1108,7 +1117,7 @@ The `to_notation()` method generates the full formal string: `⟨D; T; R; P; F; 
 
 ```python
 print(carboxylic_dimer.to_notation())
-# Output: ⟨D_wedge; T_bowtie; R_superset; P_pm; F_hbar; K_fast; G_beth; Gamma_otimes; Phi_sub; 1:1⟩
+# Output: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
 ```
 
 You can also parse a notation string back into a `SynthonNotation` object:
@@ -1116,7 +1125,7 @@ You can also parse a notation string back into a `SynthonNotation` object:
 ```python
 from imscrbgrmr import parse_notation
 notation = parse_notation(
-    "⟨D_wedge; T_bowtie; R_superset; P_pm; F_hbar; K_fast; G_beth; Gamma_otimes; Phi_sub; 1:1⟩"
+    "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩"
 )
 print(notation.dimensionality)  # Dimensionality.MOLECULAR
 print(notation.stoichiometry)   # "1:1"
@@ -1561,14 +1570,14 @@ The agent saves to `./discovery_output/` (or custom `--output`):
 
 **Hard constraints (automatic rejection):**
 
-1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary synthons (T_⋈/P_±) cannot have low fidelity (F_ell)
+1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary synthons (T_⋈/P_±) cannot have low fidelity (ƒ_ì)
    - *Rationale*: Cyclic closure amplifies fidelity through cooperativity
-   - *Example rejection*: `T_bowtie + P_pm_sym + F_ell` → rejected
+   - *Example rejection*: `Þ_ò + Φ_} + ƒ_ì` → rejected
 
 2. **Axiom 4 (Sequential Grammar)**: Sequential grammar (Γ_→) requires temporal (D_∞) or catalytic (R_‡) dimension
    - *Rationale*: Ordered recognition requires state change mechanism
-   - *Example rejection*: `D_triangle + R_superset + Gamma_seq` → rejected
-   - *Example acceptance*: `D_infinity + R_superset + Gamma_seq` → accepted (has temporal dimension)
+   - *Example rejection*: `Ð_C + Ř_superset + ɢ_seq` → rejected
+   - *Example acceptance*: `Ð_infinity + Ř_superset + ɢ_seq` → accepted (has temporal dimension)
 
 **Soft constraints (flagged for review):**
 - Axiom 2 (Local Grammar Barrier)
@@ -1585,7 +1594,7 @@ synthon.metadata["axiom_warnings"] = ["Axiom 2 violation detected - flagged for 
 **Viewing axiom validation results:**
 ```python
 for result in results:
-    if result.validation_result == ValidationResult.INVALID_CHEMISTRY:
+    if result.validation_result == ValidationResult.INVALIÐ_CHEMISTRY:
         if "AXIOM" in result.reasoning:
             print(f"Axiom violation: {result.reasoning}")
     
@@ -1619,7 +1628,7 @@ CYCLE 1/20
 
 [✓] valid_novel
     Name: nitroso_radical_halogen_bonding_synthon_pair
-    Notation: ⟨D_wedge; T_linear; R_superset; P_pm; F_eth; K_fast; G_beth; Gamma_otimes; Phi_sub; 1:1⟩
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_F; ƒ_ð; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
     Confidence: 80.0%
 
 ==================================================
@@ -1628,7 +1637,7 @@ CYCLE 2/20
 
 [✓] valid_novel
     Name: nitroso_radical_anion_π_synthon_pair
-    Notation: ⟨D_wedge; T_linear; R_superset; P_directional; F_hbar; K_fast; G_beth; Gamma_otimes; Phi_sub; 1:1⟩
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_directional; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
     Confidence: 90.0%
 
 ...
@@ -1709,10 +1718,10 @@ result = asyncio.run(orchestrator.run_agent(
 
 ## Section 7. Protocol Suite (v0.3.0)
 
-### 7.1. IG_PERTURBATION
+### 7.1. IΓ_PERTURBATION
 
 Controlled perturbation of the 10-primitive tuple to identify load-bearing vs. decorative primitives.
-Full spec: `IG_PERTURBATION.md`.
+Full spec: `IΓ_PERTURBATION.md`.
 
 #### Python API
 
@@ -1761,10 +1770,10 @@ imscribe perturb pathfind carboxylic_acid_dimer --delta-g -12.0 --target 7.5 --o
 
 ---
 
-### 7.2. IG_TRAJECTORY
+### 7.2. IΓ_TRAJECTORY
 
 Encode D_∞ systems as ordered step sequences; validate Axiom 6 (temporal grounding) and kinetic accessibility.
-Full spec: `IG_TRAJECTORY.md`.
+Full spec: `IΓ_TRAJECTORY.md`.
 
 #### Python API
 
@@ -1782,7 +1791,7 @@ base = dict(
     dimensionality=Dimensionality.TEMPORAL,
     topology=Topology.CYCLIC_BOWTIE,
     recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-    polarity=Polarity.DONOR_ACCEPTOR,
+    polarity=Polarity.DONOŘ_ACCEPTOR,
     granularity=Granularity.MESOSCALE,
     interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
 )
@@ -1814,15 +1823,15 @@ imscribe trajectory criticality --steps enamine_formation,c_c_bond_form,hydrolys
 
 **Key checks**:
 - **Axiom 4** (per step): must have `D_∞` or `R_‡` (dynamic catalytic)
-- **Axiom 6** (cycle): reset step returns system to S_t0 (keyword or `is_reset=True`)
-- **K_trap / ΔG‡ > 100 kJ/mol**: flagged in `kinetic_traps`
+- **Axiom 6** (cycle): reset step returns system to Σ_t0 (keyword or `is_reset=True`)
+- **Ç_Ù / ΔG‡ > 100 kJ/mol**: flagged in `kinetic_traps`
 
 ---
 
-### 7.3. IG_ENSEMBLER
+### 7.3. IΓ_ENSEMBLER
 
 Multi-synthon composition: pairwise compatibility, emergent properties, system ξ_CP.
-Full spec: `IG_ENSEMBLER.md`.
+Full spec: `IΓ_ENSEMBLER.md`.
 
 #### Python API
 
@@ -1850,7 +1859,7 @@ for axiom, status in report.axiom_propagation.items():
 
 # System-level ξ_CP with interface overhead
 result = ensemble.compute_system_xi_CP(delta_g_assembly=-85.0, interface_overhead_bits=1.5)
-print(f"ξ_CP system: {result['xi_CP_system_nats']:.4f} nats [{result['efficiency_tier']}]")
+print(f"ξ_CP system: {result['xi_CΦ_system_nats']:.4f} nats [{result['efficiency_tier']}]")
 ```
 
 #### CLI
@@ -1875,10 +1884,10 @@ imscribe ensemble thermo --components carboxylic_acid_dimer,proline_aldol_cycle 
 
 ---
 
-### 7.4. IG_RETRODESIGN
+### 7.4. IΓ_RETRODESIGN
 
 Constraint-directed retrosynthetic decomposition: recursive axiom-pruned tree.
-Full spec: `IG_RETRODESIGN.md`.
+Full spec: `IΓ_RETRODESIGN.md`.
 
 #### Python API
 
@@ -1900,8 +1909,8 @@ print(f"Valid synthon set    : {tree.valid_synthon_set}")
 
 # Decompose by notation string (9-primitive ⟨...⟩ format)
 target = SynthonNotation.from_string(
-    "⟨{D_triangle, D_infinity}; T_cage; R_superset+ddagger; "
-    "P_pm; F_eth; K_mod; G_gimel; Gamma_and(SELECTIVE); Phi_sub⟩"
+    "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; "
+    "Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); φ̂_ž⟩"
 )
 # or pass the string directly
 tree2 = engine.decompose(notation_str, max_depth=2)
@@ -1928,7 +1937,7 @@ imscribe retrodesign carboxylic_acid_dimer
 imscribe retrodesign carboxylic_acid_dimer --max-depth 4 --prune-axioms 1,4,6
 
 # Decompose by notation string
-imscribe retrodesign "⟨{D_triangle, D_infinity}; T_cage; R_superset; P_pm; F_eth; K_mod; G_gimel; Gamma_and(SELECTIVE); Phi_sub⟩"
+imscribe retrodesign "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset; Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); φ̂_ž⟩"
 
 # JSON output
 imscribe retrodesign carboxylic_acid_dimer --format json
@@ -1938,7 +1947,7 @@ imscribe retrodesign carboxylic_acid_dimer --format json
 | Axiom | Name | Condition |
 |-------|------|-----------|
 | 1 | Fidelity Floor | `T_⋈ + P_± + F_ℓ → PRUNE` |
-| 2 | Propagation Barrier | sub-tuple claims `G_ℵ` but lacks `Γ_∨` or `T_network` → PRUNE |
+| 2 | Propagation Barrier | sub-tuple claims `G_ℵ` but lacks `Γ_∨` or `Þ_6` → PRUNE |
 | 4 | Grammar Mismatch | `Γ_→` without `D_∞` or `R_‡` → PRUNE |
 | 6 | Grounding Fail | `D_∞` without reset mechanism → FLAG |
 
@@ -1985,15 +1994,15 @@ Meet: Dithia ⊓ nitroso
 ┌────────┬────────────────┬────────────────┬─────────────────┐
 │ Prim   │ Dithia         │ nitroso        │ Result          │
 ├────────┼────────────────┼────────────────┼─────────────────┤
-│ D      │ D_molecular    │ D_molecular    │ D_molecular     │
-│ T      │ T_cyclic       │ T_cyclic       │ T_cyclic        │
-│ R      │ R_non_covalent │ R_non_covalent │ R_non_covalent  │
-│ F      │ F_hbar         │ F_eth          │ F_eth  ▼        │
-│ K      │ K_mod          │ K_fast         │ K_fast ▼ (wait) │
-│ G      │ G_gimel        │ G_beth         │ G_beth ▼        │
-│ Phi    │ Phi_sub        │ Phi_sub        │ Phi_sub         │
+│ D      │ Ð_molecular    │ Ð_molecular    │ Ð_molecular     │
+│ T      │ Þ_cyclic       │ Þ_cyclic       │ Þ_cyclic        │
+│ R      │ Ř_non_covalent │ Ř_non_covalent │ Ř_non_covalent  │
+│ F      │ ƒ_ż         │ ƒ_ð          │ ƒ_ð  ▼        │
+│ K      │ Ç_W          │ Ç_-         │ Ç_- ▼ (wait) │
+│ G      │ Γ_γ        │ Γ_β         │ Γ_β ▼        │
+│ Phi    │ φ̂_ž        │ φ̂_ž        │ φ̂_ž         │
 └────────┴────────────────┴────────────────┴─────────────────┘
-Result: ⟨D_∧; T_⋈; R_⊇; P_...;  F_eth; K_fast; G_ב; Γ_...; Φ_sub; S⟩
+Result: ⟨D_∧; T_⋈; R_⊇; P_...;  ƒ_ð; Ç_-; G_ב; Γ_...; Φ_sub; S⟩
 ```
 
 CONFLICT primitives are shown in red. A meet with no conflicts means the two synthons are mutually substitutable within the partial order.
@@ -2019,7 +2028,7 @@ Componentwise maximum: for ordered primitives takes the higher value; for catego
 
 **Key use case:** `join` is how to find the minimal upgrade that satisfies both of two design targets. If `join(s1, s2)` has no CONFLICTs, there exists a valid synthon above both.
 
-**Criticality rule:** $\Phi_c$ dominates in both meet and join. If either input has $\Phi_c$, the output has $\Phi_c$. This encodes the physical fact that criticality is not a property that can be averaged away.
+**Criticality rule:** $\Phi_{\text{ctyogh}}$ dominates in both meet and join. If either input has $\Phi_{\text{ctyogh}}$, the output has $\Phi_{\text{ctyogh}}$. This encodes the physical fact that criticality is not a property that can be averaged away.
 
 **Python API:**
 ```python
@@ -2093,7 +2102,7 @@ Computes the effective primitive tuple of a two-component assembly. Composition 
 
 **ξ correction:** $\xi_{\text{ens}} = \xi_1 + \xi_2 - \lambda \cdot I(s_1; s_2)$, where $I(s_1; s_2)$ is the mutual information between tuple vectors (shared primitive values), and $\lambda$ is the overlap discount (default 0.5).
 
-**Important consequence:** If `tensor(s1, s2)` drops F to $F_{\eth}$, a subsequent `criticality_lift` on the result will be BLOCKED — the F floor is correctly enforced without any explicit guard in the downstream pipeline.
+**Important consequence:** If `tensor(s1, s2)` drops F to $F_{\text{dh}}$, a subsequent `criticality_lift` on the result will be BLOCKED — the F floor is correctly enforced without any explicit guard in the downstream pipeline.
 
 **Python API:**
 ```python
@@ -2120,7 +2129,7 @@ Applies a primitive-rewriting map that migrates the synthon to a new domain whil
 
 | Target | Primitive changes | Guard condition |
 |---|---|---|
-| `temporal` | D_∧→D_∞, R→R_‡, K_fast→K_mod, Γ→Γ_→(SEQUENTIAL) | None |
+| `temporal` | D_∧→D_∞, R→R_‡, Ç_-→Ç_W, Γ→Γ_→(SEQUENTIAL) | None |
 | `spatial` | D_∧→D_△, T→T_□ if not spatial, G_ב→G_ג | None |
 | `critical` | Φ_sub→Φ_c, G→G_ℵ | **F ≥ F_ℏ required** (Axiom 5) |
 | `molecular` | D_∞→D_∧, R_‡→R_⊆, Γ_→→Γ_∧(SELECTIVE) | None (forgetful) |
@@ -2136,9 +2145,9 @@ Output:
 ```
 Lift: critical — Dithia
 Changed primitives:
-  Φ: Phi_sub → Phi_c
-  G: G_gimel → G_aleph
-Result: ⟨D_∧; T_⋈; R_⊇; P_+; F_ℏ; K_mod; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
+  Φ: φ̂_ž → φ̂_ÿ
+  G: Γ_γ → Γ_ʔ
+Result: ⟨D_∧; T_⋈; R_⊇; P_+; F_ℏ; Ç_W; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
 Note: Axiom 6 injection: temporal lift requires closed-cycle grounding before assembly.
 ```
 
@@ -2160,7 +2169,7 @@ else:
 ### 8.6. `imscribe pipeline` — Composable Design Pipeline
 
 ```bash
-imscribe pipeline START_SYNTHON --step STEP [--step STEP ...]
+imscribe pipeline STARÞ_SYNTHON --step STEP [--step STEP ...]
 ```
 
 A composable pipeline that chains algebra operations with automatic ξ_CP threading and fail-fast logging. Implements a Writer+Maybe monad: each step carries the accumulated cost (Writer) and continues from the last valid state even on BLOCKED steps (soft Maybe).
@@ -2189,20 +2198,20 @@ imscribe pipeline Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon \
 Output:
 ```
 Pipeline trace:
-  Start:  Dithia     ⟨...; F_ℏ; K_mod; G_ג; ...; Φ_sub; 1:1⟩
+  Start:  Dithia     ⟨...; F_ℏ; Ç_W; G_ג; ...; Φ_sub; 1:1⟩
 ──────────────────────────────────────────────────────────────
   Step 1: join(nitroso)
-    F: F_eth → F_hbar (max)   K: K_fast → K_mod   G: G_beth → G_gimel
+    F: ƒ_ð → ƒ_ż (max)   K: Ç_- → Ç_W   G: Γ_β → Γ_γ
     Δξ_CP = +0.519 nat       [PASS]
   Step 2: lift(critical)
-    Φ: Phi_sub → Phi_c   G: G_gimel → G_aleph
-    F = F_hbar ≥ F_hbar   ✓ eligibility gate passed
+    Φ: φ̂_ž → φ̂_ÿ   G: Γ_γ → Γ_ʔ
+    F = ƒ_ż ≥ ƒ_ż   ✓ eligibility gate passed
     Δξ_CP = +0.000 nat    [PASS]
   Step 3: path(Varma_synthon, tol=1.5)
     Hop 1: ... → Varma   Δξ = +0.847 nat   [APPROVED]
     Δξ_CP = +0.847 nat    [PASS]
 ──────────────────────────────────────────────────────────────
-  Final:  ⟨...; F_ℏ; K_mod; G_ℵ; ...; Φ_c; 1:1⟩
+  Final:  ⟨...; F_ℏ; Ç_W; G_ℵ; ...; Φ_c; 1:1⟩
   Total Δξ_CP: 1.366 nat   Steps: 3   Blocked: 0
 ```
 
@@ -2235,9 +2244,9 @@ print(f"Blocked steps: {result.blocked_count}")
 - **Fail condition**: A step that **raises an exception** (e.g., synthon not found, BFS graph unreachable) terminates the pipeline with an ERROR status distinct from BLOCKED.
 
 **Behavioral verification:**
-1. **F-bottleneck propagation**: `tensor(A, B)` dropping F to F_eth → subsequent `lift:critical` is BLOCKED without any explicit guard needed.
+1. **F-bottleneck propagation**: `tensor(A, B)` dropping F to ƒ_ð → subsequent `lift:critical` is BLOCKED without any explicit guard needed.
 2. **Path asymmetry**: `path:nitroso` from Dithia succeeds (F upgrade direction); `path:Dithia` from nitroso fails (F downgrade blocked).
-3. **Join-enables-path**: `join(nitroso)` upgrades F to F_hbar → `path:Varma` at Δξ = +0.847 nat succeeds where it would have failed from the lower-F starting point.
+3. **Join-enables-path**: `join(nitroso)` upgrades F to ƒ_ż → `path:Varma` at Δξ = +0.847 nat succeeds where it would have failed from the lower-F starting point.
 
 ### 8.7. `imscribe distance` — Tuple Distance (v0.4.0)
 
@@ -2279,10 +2288,10 @@ Distance: photon ↔ electron
   Primitive breakdown:
     D    0.00   D_∞ ↔ D_∞            [match]
     T    1.20   T_× ↔ T_|            [mismatch]
-    R    0.00   R_irr ↔ R_irr        [match]
-    P    0.80   P_γ ↔ P_e            [mismatch]
+    R    0.00   Ř_irr ↔ Ř_irr        [match]
+    P    0.80   P_γ ↔ Φ_e            [mismatch]
     F    0.00   F_ℏ ↔ F_ℏ            [match]
-    K    0.00   K_fast ↔ K_fast      [match]
+    K    0.00   Ç_- ↔ Ç_-      [match]
     G    0.90   G_ℵ ↔ G_ℵ            [match]
     Γ    0.00   Γ_⊗ ↔ Γ_⊗            [match]
     Φ    0.00   Φ_sub ↔ Φ_sub        [match]
@@ -2340,14 +2349,14 @@ imscribe hotswap Dithia nitroso      # HotSwap check
 imscribe path Dithia nitroso         # finds 1-hop path, Δξ = +0.312 nat
 
 # Step 3: What does the ensemble look like?
-imscribe tensor Dithia nitroso       # effective tuple (F→min→F_eth, K→min→K_mod)
+imscribe tensor Dithia nitroso       # effective tuple (F→min→ƒ_ð, K→min→Ç_W)
 
 # Step 4: Can we lift the joined ensemble to critical?
 imscribe pipeline Dithia \
   --step join:nitroso \
   --step lift:critical \
   --step path:Varma:xi_tolerance=1.5
-# → join restores F_hbar → criticality lift passes → path to Varma succeeds
+# → join restores ƒ_ż → criticality lift passes → path to Varma succeeds
 ```
 
 ---
@@ -2396,12 +2405,12 @@ result.print_trace()
 | Script | Status | Δξ_CP (nat) | Key Demonstration |
 |--------|--------|-------------|-------------------|
 | **Batch 1** | | | |
-| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(F_eth) cannot lift to Φ_c |
+| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(ƒ_ð) cannot lift to Φ_c |
 | `01b_soai_criticality_corrected.syn` | ✅ **SUCCESS** | 0.000 | Factor 7 fires; Φ_c lift; meet preserves Φ_c |
 | `02_tensor_ensemble_design.syn` | ⚠️ Partial | 13.624 | Tensor fidelity bottleneck |
 | `02b_tensor_ensemble_corrected.syn` | ✅ **SUCCESS** | 13.624 | Tensor → join → lift |
-| `03_retrosynthetic_meet_join.syn` | ✅ **SUCCESS** | 0.000 | meet(F_ℏ, F_eth)→F_eth; join→F_ℏ |
-| `04_hybrid_spatial_temporal.syn` | ❌ Blocked (pedagogical) | 16.802 | Tensor succeeds; F_eth bottleneck blocks Φ_c lift |
+| `03_retrosynthetic_meet_join.syn` | ✅ **SUCCESS** | 0.000 | meet(F_ℏ, ƒ_ð)→ƒ_ð; join→F_ℏ |
+| `04_hybrid_spatial_temporal.syn` | ❌ Blocked (pedagogical) | 16.802 | Tensor succeeds; ƒ_ð bottleneck blocks Φ_c lift |
 | `04b_hybrid_spatial_temporal_corrected.syn` | ✅ **SUCCESS** | 15.425 | D_△∞ hybrid; Axiom 6 pass; lift |
 | `05_varma_probe_validation.syn` | ⚠️ Partial | 0.000 | Varma probe, path limits |
 | `05b_varma_probe_corrected.syn` | ✅ **SUCCESS** | 0.000 | Varma + idempotent join |
@@ -2412,11 +2421,11 @@ result.print_trace()
 | `09_cross_domain_analogy.syn` | ✅ **SUCCESS** | 0.000 | Supramolecular analogy |
 | `10_hierarchical_ensemble.syn` | ✅ **SUCCESS** | 13.016 | **tensor(CH₃⁻, CH₃⁺); MI discount 7.100 nat** |
 | `11_criticality_ensemble_validation.syn` | ✅ **SUCCESS** | 0.000 | Full Varma + Axiom 6 |
-| `12_thermodynamic_efficiency.syn` | ✅ **SUCCESS** | 12.577 | crown(F_eth) ⊗ CB[n](F_ℏ) → F_eth; MI 5.698 nat |
+| `12_thermodynamic_efficiency.syn` | ✅ **SUCCESS** | 12.577 | crown(ƒ_ð) ⊗ CB[n](F_ℏ) → ƒ_ð; MI 5.698 nat |
 | `13_multi_hop_path_discovery.syn` | ✅ **SUCCESS** | 0.000 | Extended path search |
 | `14_complex_strategy_composition.syn` | ✅ **SUCCESS** | 0.000 | lift→BLOCKED; mplus→join(F_ℏ)→lift Φ_c |
 | `15_dna_base_pair_lattice.syn` | ✅ **SUCCESS** | 0.000 | Biological H-bond systems |
-| `16_mof_inspired_network.syn` | ✅ **SUCCESS** | 13.741 | cryptand ⊗ CB[n] → T_cage, F_ℏ; MI 8.588 nat |
+| `16_mof_inspired_network.syn` | ✅ **SUCCESS** | 13.741 | cryptand ⊗ CB[n] → Þ_cage, F_ℏ; MI 8.588 nat |
 
 ### 9.2. Running Design Scripts
 
@@ -2443,11 +2452,11 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 5/5 steps, Δξ_CP = 0.000 nat
 
 ```
-1. [PASS] ✓ meet(amide_dimer)  F: F_hbar ⊓ F_eth → F_eth
-2. [ASSERT_PASS] ✓ topology == T_bowtie
-3. [ASSERT_PASS] ✓ fidelity == F_eth
-4. [PASS] ✓ join(carboxylic_acid_dimer)  F: F_eth ⊔ F_hbar → F_hbar
-5. [ASSERT_PASS] ✓ fidelity == F_hbar
+1. [PASS] ✓ meet(amide_dimer)  F: ƒ_ż ⊓ ƒ_ð → ƒ_ð
+2. [ASSERÞ_PASS] ✓ topology == Þ_ò
+3. [ASSERÞ_PASS] ✓ fidelity == ƒ_ð
+4. [PASS] ✓ join(carboxylic_acid_dimer)  F: ƒ_ð ⊔ ƒ_ż → ƒ_ż
+5. [ASSERÞ_PASS] ✓ fidelity == ƒ_ż
 ```
 
 **Key Insights:**
@@ -2464,11 +2473,11 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 7/7 steps, Δξ_CP = 12.424 nat, **MI discount = 8.283 nat**
 
 ```
-1. [PASS] ✓ join(carbonyl)  F→F_eth
+1. [PASS] ✓ join(carbonyl)  F→ƒ_ð
 2. [PASS] ✓ path(methyl_anion)  1 hop
 3. [PASS] ✓ tensor(methyl_cation, λ=0.6)  Δξ=+12.424 nat  discount=8.283
-4. [ASSERT_PASS] ✓ topology == T_linear
-5. [ASSERT_PASS] ✓ fidelity == F_eth
+4. [ASSERÞ_PASS] ✓ topology == Þ_linear
+5. [ASSERÞ_PASS] ✓ fidelity == ƒ_ð
 ```
 
 **Key Insights:**
@@ -2490,10 +2499,10 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 3. [BLOCKED] ✗ join(redox_pair)  CONFLICT on R, P, Γ
 4. [PASS] ✓ mplus(fallback)  switching to fallback
 5. [PASS] ✓ path(redox_pair)  Δξ=+0.362 nat  1 hop
-6. [PASS] ✓ lift(critical)  Φ: None → Phi_c
-7. [ASSERT_PASS] ✓ criticality_phase == Phi_c
-8. [ASSERT_PASS] ✓ phi_c_score > 0.3
-9. [ASSERT_PASS] ✓ output.assert(steps <= 15)
+6. [PASS] ✓ lift(critical)  Φ: None → φ̂_ÿ
+7. [ASSERÞ_PASS] ✓ criticality_phase == φ̂_ÿ
+8. [ASSERÞ_PASS] ✓ phi_c_score > 0.3
+9. [ASSERÞ_PASS] ✓ output.assert(steps <= 15)
 ```
 
 **Key Insights:**
@@ -2511,14 +2520,14 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 8/8 steps, Δξ_CP = 0.000 nat
 
 ```
-1. [PASS] ✓ lift(critical)  Φ: None → Phi_c
-2. [ASSERT_PASS] ✓ phi_c_score > 0.3
-3. [ASSERT_PASS] ✓ criticality_phase == Phi_c
-4. [ASSERT_PASS] ✓ axiom6_satisfied
+1. [PASS] ✓ lift(critical)  Φ: None → φ̂_ÿ
+2. [ASSERÞ_PASS] ✓ phi_c_score > 0.3
+3. [ASSERÞ_PASS] ✓ criticality_phase == φ̂_ÿ
+4. [ASSERÞ_PASS] ✓ axiom6_satisfied
 5. [PASS] ✓ join(self)  idempotent
-6. [ASSERT_PASS] ✓ criticality preserved
-7. [ASSERT_PASS] ✓ fidelity == F_hbar
-8. [ASSERT_PASS] ✓ output.assert(criticality_ok == true)
+6. [ASSERÞ_PASS] ✓ criticality preserved
+7. [ASSERÞ_PASS] ✓ fidelity == ƒ_ż
+8. [ASSERÞ_PASS] ✓ output.assert(criticality_ok == true)
 ```
 
 **Key Insights:**
@@ -2546,8 +2555,8 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 
 | Gate | Condition | Blocked If | Evidence |
 |------|-----------|------------|----------|
-| **F-floor** (criticality) | F ≥ F_hbar | F = F_eth or F_ell | Designs 01, 04 (pedagogical demos) |
-| **D-floor** (criticality) | D = D_∞ OR G ≥ G_gimel | D = D_triangle, G = G_beth | Design 04 (after tensor bottleneck) |
+| **F-floor** (criticality) | F ≥ ƒ_ż | F = ƒ_ð or ƒ_ì | Designs 01, 04 (pedagogical demos) |
+| **D-floor** (criticality) | D = D_∞ OR G ≥ Γ_γ | D = Ð_C, G = Γ_β | Design 04 (after tensor bottleneck) |
 | **D/T match** (path) | Same {D, T} cluster | D or T differs | Designs 08, 09, 13 |
 | **Axiom 6** (temporal) | Reset block OR flux | D_∞ without grounding | Design 11 validates |
 
@@ -2583,41 +2592,41 @@ results/
 └── [20 JSON result files]
 ```
 
-### 9.7. Canonical Cross-Domain Demo (`TENSOR_OPS_DEMO.py`)
+### 9.7. Canonical Cross-Domain Demo (`TENSOŘ_OPΣ_DEMO.py`)
 
-`TENSOR_OPS_DEMO.py` is the definitive worked-example document for all seven algebraic operations. It is structured for readers familiar with tensor mathematics (category theory, functional analysis, lattice algebra) and serves as both a tutorial and a validation suite.
+`TENSOŘ_OPΣ_DEMO.py` is the definitive worked-example document for all seven algebraic operations. It is structured for readers familiar with tensor mathematics (category theory, functional analysis, lattice algebra) and serves as both a tutorial and a validation suite.
 
 **Run:**
 
 ```bash
 # Run all 7 sections (18 examples total, ~2–3 min)
-python TENSOR_OPS_DEMO.py
+python TENSOŘ_OPΣ_DEMO.py
 
 # Run a single section
-python TENSOR_OPS_DEMO.py --section meet
-python TENSOR_OPS_DEMO.py --section join
-python TENSOR_OPS_DEMO.py --section tensor
-python TENSOR_OPS_DEMO.py --section lift
-python TENSOR_OPS_DEMO.py --section path
-python TENSOR_OPS_DEMO.py --section pipeline
-python TENSOR_OPS_DEMO.py --section decomp
+python TENSOŘ_OPΣ_DEMO.py --section meet
+python TENSOŘ_OPΣ_DEMO.py --section join
+python TENSOŘ_OPΣ_DEMO.py --section tensor
+python TENSOŘ_OPΣ_DEMO.py --section lift
+python TENSOŘ_OPΣ_DEMO.py --section path
+python TENSOŘ_OPΣ_DEMO.py --section pipeline
+python TENSOŘ_OPΣ_DEMO.py --section decomp
 ```
 
 **Section Map:**
 
 | §  | Operation | Key Examples | Category-Theory Translation |
 |----|-----------|-------------|----------------------------|
-| 1 | **meet** | (1) Hv1 closed⊓open — Φ_c absorbing; (2) drug scaffold GLB; (3) AtHv1_silent⊓PsHv1 — K_trap isolates | Product / Heyting GLB |
+| 1 | **meet** | (1) Hv1 closed⊓open — Φ_c absorbing; (2) drug scaffold GLB; (3) AtHv1_silent⊓PsHv1 — Ç_Ù isolates | Product / Heyting GLB |
 | 2 | **join** | (1) Hv1 cross-species LUB; (2) pharmacophore ceiling; (3) Cooper pair⊔TI surface — Ω_Z survives | Coproduct / F-floor ratchet |
-| 3 | **tensor** | (1) electron⊗hole → exciton theorem (T_linear, no promotion); (2) Majorana⊗Majorana → T_braid special rule; (3) Cooper pair⊗phonon → full superconductor | Bifunctor; ξ_ens = ξ₁+ξ₂−λI |
-| 4 | **lift** | (1) AtHv1_silent lift(critical) → BLOCKED (K_trap gate); (2) molecular→temporal (loop-space functor Ω); (3) temporal→spatial (classifying space B(G)) | Natural transformation; +2.303 nat = ln10 |
+| 3 | **tensor** | (1) electron⊗hole → exciton theorem (Þ_linear, no promotion); (2) Majorana⊗Majorana → Þ_braid special rule; (3) Cooper pair⊗phonon → full superconductor | Bifunctor; ξ_ens = ξ₁+ξ₂−λI |
+| 4 | **lift** | (1) AtHv1_silent lift(critical) → BLOCKED (Ç_Ù gate); (2) molecular→temporal (loop-space functor Ω); (3) temporal→spatial (classifying space B(G)) | Natural transformation; +2.303 nat = ln10 |
 | 5 | **path** | (1) AtHv1_silent→Hv1_human_open — 3-hop Kleisli geodesic; (2) 2GBI→HIF inhibitor scaffold migration; (3) magnon→Cooper pair — blocked (D/T gate) | Lawvere metric geodesic |
 | 6 | **pipeline** | (1) Hv1 cross-species conservation (hv1_paper_reproduction.syn v6); (2) SynthonM do-notation chain; (3) fallback or-pattern (mplus) | WriterT+StateT+MaybeT Kleisli |
-| 7 | **decomp** | (1) cofactor(Cooper pair, electron) → K_slow+G_meso+T_bowtie+Φ_c; (2) principal_decomp Birkhoff atoms; (3) Heyting complement (satisfied=False anatomy) | Inverse bifunctor; Birkhoff theorem |
+| 7 | **decomp** | (1) cofactor(Cooper pair, electron) → Ç_@+Γ_meso+Þ_ò+Φ_c; (2) principal_decomp Birkhoff atoms; (3) Heyting complement (satisfied=False anatomy) | Inverse bifunctor; Birkhoff theorem |
 
-**Inline synthon definitions:** 16 synthons defined directly in the script — all registered to `global_catalog`. Includes: `Hv1_human_closed`, `Hv1_human_open`, `AtHv1_silent`, `AtHv1_primed`, `PsHv1_constitutive`, `2GBI_inhibitor`, `HIF_inhibitor`, `cooper_pair`, `majorana_fermion`, `TI_surface_state`, `phonon`, `magnon`, `electron`, `hole`, `GNF2_inhibitor`, `imatinib`.
+**Inline synthon definitions:** 16 synthons defined directly in the script — all registered to `global_catalog`. Includes: `Hv1_human_closed`, `Hv1_human_open`, `AtHv1_silent`, `AtHv1_primed`, `PsHv1_constitutive`, `2GBI_inhibitor`, `HIƒ_inhibitor`, `cooper_pair`, `majorana_fermion`, `TI_surface_state`, `phonon`, `magnon`, `electron`, `hole`, `GNF2_inhibitor`, `imatinib`.
 
-**For `IG_LANG.md` readers:** §"Algebraic Operations Reference" in `IG_LANG.md` contains the formal specification; this demo is the executable companion.
+**For `IΓ_LANG.md` readers:** §"Algebraic Operations Reference" in `IΓ_LANG.md` contains the formal specification; this demo is the executable companion.
 
 ---
 
@@ -2709,7 +2718,7 @@ Runs the autonomous `SynthonDesignAgent` loop: the LLM proposes a synthon encodi
 
 ```bash
 # Basic design run
-imscribe design --goal "bivalent allosteric ABL inhibitor that closes T_perp to T_in gap"
+imscribe design --goal "bivalent allosteric ABL inhibitor that closes Þ_perp to Þ_K gap"
 
 # With target path requirement and tighter convergence
 imscribe design \

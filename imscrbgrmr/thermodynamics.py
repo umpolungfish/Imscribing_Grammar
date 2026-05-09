@@ -119,10 +119,10 @@ def compute_kinetic_fidelity(
     Compute kinetic fidelity from barrier height or rate constants.
     
     From QUANTIG.md Section III:
-    - K_fast: ΔG‡ < 60 kJ/mol — spontaneous on experimental timescales
-    - K_mod: ΔG‡ ≈ 60-100 kJ/mol — accessible with mild activation
-    - K_slow: ΔG‡ > 100 kJ/mol — requires significant activation
-    - K_trap: high pathway multiplicity — kinetic products diverge from thermodynamic
+    - K_frtailgamma: ΔG‡ < 60 kJ/mol — spontaneous on experimental timescales
+    - K_turnm: ΔG‡ ≈ 60-100 kJ/mol — accessible with mild activation
+    - K_schwa: ΔG‡ > 100 kJ/mol — requires significant activation
+    - K_teshlig: high pathway multiplicity — kinetic products diverge from thermodynamic
     
     Args:
         delta_g_ddagger: Activation barrier in kJ/mol
@@ -136,7 +136,7 @@ def compute_kinetic_fidelity(
     Example:
         >>> k_char, k_fid = compute_kinetic_fidelity(delta_g_ddagger=85.0)
         >>> print(f"K = {k_char.value}, F_kinetic = {k_fid:.3f}")
-        K = K_mod, F_kinetic = 0.700
+        K = K_turnm, F_kinetic = 0.700
     """
     # Assign K from barrier
     k_char = KineticCharacter.from_barrier(delta_g_ddagger)
@@ -167,7 +167,7 @@ def compute_effective_fidelity(
     F_effective = F_thermo × F_kinetic
     
     This separation is required because a synthon can be thermodynamically
-    favored (F_hbar) yet kinetically inaccessible (K_slow) under synthesis
+    favored (F_hardsign) yet kinetically inaccessible (K_schwa) under synthesis
     conditions (from QUANTIG.md Section III).
     
     Args:
@@ -288,7 +288,7 @@ def compute_eta_CP(
     
     When use_effective_fidelity=True, F_effective = F_thermo × F_kinetic.
     This separation is required because a synthon can be thermodynamically
-    favored (F_hbar) yet kinetically inaccessible (K_slow) under synthesis
+    favored (F_hardsign) yet kinetically inaccessible (K_schwa) under synthesis
     conditions (from QUANTIG.md Section III).
 
     Args:
@@ -687,7 +687,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "xi_CP": (6.4, 7.0),             # 6.66 nats central; was 8.3–8.7 (ΔE artefact)
         "delta_g": -12,                  # kJ/mol ΔG(gas, 298K) [corrected; was −52 (ΔE)]
         "delta_e": -52,                  # kJ/mol ΔE (electronic binding energy, no thermal)
-        "fidelity": "F_hbar",
+        "fidelity": "ƒ_hardsign",
         "geometry": {
             "OO_distance_ang": 2.675,    # Å, midpoint of 2.65–2.70 Å lit range
             "OH_O_angle_deg":  177.5,    # °, midpoint of 175–180°
@@ -699,14 +699,14 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "eta_CP": (1e-4, 2e-4),
         "xi_CP": (8.1, 8.4),             # recalculated with I_cal=8.2
         "delta_g": -38,                  # kJ/mol — likely ΔH not ΔG; ITC needed to verify
-        "fidelity": "F_eth",
+        "fidelity": "ƒ_dh",
         "note": "P_+- directional; delta_g may be ΔH not ΔG — flagged for ITC verification",
     },
     "formamide_homodimer": {
         "eta_CP": (5e-5, 9e-5),
         "xi_CP": (10.0, 10.5),
         "delta_g": -28,                  # kJ/mol — likely ΔH not ΔG; ITC needed to verify
-        "fidelity": "F_ell",
+        "fidelity": "ƒ_beltl",
         "note": "Lowest F in series, weak P_±; delta_g may be ΔH not ΔG — flagged",
     },
 
@@ -716,7 +716,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "xi_CP": (7.5, 7.9),             # 7.65 nats central; was 7.1–7.6 (ΔE artefact)
         "delta_g": -55,                  # kJ/mol ΔG(gas, 298K) est. [corrected; was −95 (ΔE)]
         "delta_e": -95,                  # kJ/mol ΔE (electronic binding energy)
-        "fidelity": "F_hbar",
+        "fidelity": "ƒ_hardsign",
         "geometry": {
             "HB_distances_ang":  [1.80, 1.90, 1.80],  # three contacts; central slightly longer
             "HB_angles_deg":     [170, 163, 170],       # outer tighter than central
@@ -732,7 +732,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "xi_CP": (9.0, 9.5),             # 9.21 nats central; was 9.9–11.4
         "delta_g": 97,                   # kJ/mol ΔG‡ (operative barrier) [corrected; was 85]
         "delta_g_range": (92, 100),      # kJ/mol — Houk group bracket from multiple substrates
-        "fidelity": "F_eth",
+        "fidelity": "ƒ_dh",
         "geometry": {
             "NH_O_distance_ang": 1.825,  # Å, midpoint of 1.75–1.90 Å in TS
             "CC_forming_ang":    2.1,    # Å, midpoint of 2.0–2.2 Å in TS
@@ -752,7 +752,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "xi_CP": (7.4, 7.8),             # 7.59 nats central; was 8.06–8.40 (ΔE artefact)
         "delta_g": -20,                  # kJ/mol ΔG(CHCl3 est.) [corrected; was −32 (ΔE)]
         "delta_e": -32,                  # kJ/mol ΔE
-        "fidelity": "F_eth",
+        "fidelity": "ƒ_dh",
         "geometry": {
             "IN_distance_ang":   2.875,  # Å, midpoint of 2.80–2.95 Å lit range
             "CI_N_angle_deg":    177.5,  # °, midpoint of 176–179° (highly directional)
@@ -764,7 +764,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "eta_CP": (2e-4, 3e-4),
         "xi_CP": (8.3, 8.5),             # 8.40 nats with −64 kJ/mol (no correction applied)
         "delta_g": -64,                  # kJ/mol — uncertain ΔE vs ΔG; flagged for correction
-        "fidelity": "F_eth",
+        "fidelity": "ƒ_dh",
         "note": "3 σ-holes, no cooperativity; delta_g may be ΔE not ΔG — flagged",
     },
 
@@ -790,9 +790,9 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "eta_CP": None,  # To be computed
         "xi_CP": None,  # To be computed
         "delta_g_ddagger": (60, 125),  # kJ/mol (dethreading barrier)
-        "fidelity": "F_eth",
-        "kinetic_character": "K_mod",
-        "recognition_mode": "R_mechanical",
+        "fidelity": "ƒ_dh",
+        "kinetic_character": "Ç_turnm",
+        "recognition_mode": "Ř_mechanical",
         "note": "DB24C8/dialkylammonium pseudorotaxane - planned Transformation #8",
         "criticality_probe": True,  # Examine for near-critical topology
     },
@@ -804,7 +804,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "correlation_length": "divergent",
         "scaling_exponent": "to be determined",
         "note": "H-bond array near percolation threshold - candidate critical system",
-        "criticality_phase": "Phi_c",
+        "criticality_phase": "φ̂_ctyogh",
     },
 }
 

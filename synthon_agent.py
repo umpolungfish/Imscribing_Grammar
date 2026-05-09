@@ -143,54 +143,54 @@ The inner generation agent assigns primitives by reading these symbols literally
 **Vague descriptions produce random assignments.**
 
 D — Dimensionality
-  D_wedge                   molecular
-  D_triangle                supramolecular
+  Ð_ß                   molecular
+  Ð_C                supramolecular
   D_infinity                temporal
-  D_wedge_triangle          molecular + supramolecular hybrid
-  D_triangle_infinity       supramolecular + temporal hybrid
-  D_wedge_infinity          molecular + temporal hybrid
-  D_wedge_triangle_infinity all three
+  Ð_ß_triangle          molecular + supramolecular hybrid
+  Ð_C_infinity       supramolecular + temporal hybrid
+  Ð_ß_infinity          molecular + temporal hybrid
+  Ð_ß_triangle_infinity all three
 
 T — Topology
   T_cyclic / T_chain / T_hub / T_cage / T_bowl / T_linear / T_branched
-  T_network                 general network
-  T_network_sym             symmetric network
-  T_network_mixed           asymmetric/mixed network
+  Þ_6                 general network
+  Þ_6_sym             symmetric network
+  Þ_6_mixed           asymmetric/mixed network
   T_braid                   anyonic/braided exchange statistics
 
 R — Recognition Mode
-  R_covalent / R_superset / R_dagger (catalytic/dynamic) / R_mechanical
+  R_covalent / Ř_¯set / Ř_Ť (catalytic/dynamic) / R_mechanical
 
 P — Polarity
-  P_plus / P_minus / P_pm_sym / P_pm_pseudo / P_directional
+  P_plus / P_minus / Φ_} / Φ_F_pseudo / P_directional
 
 F — Fidelity (ξ_CP threshold) — HotSwap fidelity rule: F may not decrease per hop.
-  F_hbar   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to F_eth/F_ell targets
-  F_eth    medium (8.5 – 11.0 nats)  ← compatible with F_eth targets
-  F_ell    low    (> 11.0 nats)      ← compatible only with F_ell targets
+  ƒ_ż   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to ƒ_ð/ƒ_ì targets
+  ƒ_ð    medium (8.5 – 11.0 nats)  ← compatible with ƒ_ð targets
+  ƒ_ì    low    (> 11.0 nats)      ← compatible only with ƒ_ì targets
   You **MUST** match the target's F value in your design.
 
 K — Kinetic Character
-  K_fast / K_mod / K_slow / K_trap / K_MBL
+  Ç_- / Ç_W / Ç_@ / Ç_Ù / Ç_λ
 
 G — Granularity (correlation length)
-  G_beth    local
-  G_gimel   mesoscale
-  G_aleph   global / non-local
+  Γ_β    local
+  Γ_γ   mesoscale
+  Γ_ʔ   global / non-local
 
 Γ — Interaction Grammar
-  Gamma_and / Gamma_or / Gamma_seq / Gamma_diss
+  ɢ_^ / ɢ_˝ / ɢ_ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 
 Φ — Criticality Phase
-  Phi_sub   subcritical
-  Phi_c     critical
-  Phi_super post-assembly
+  φ̂_ž   subcritical
+  φ̂_ÿ     critical
+  φ̂_Ţ post-assembly
 
 S — Stoichiometry: 1:1 / n:n / n:m
 
 Ω — Topological Protection (optional)
-  Omega_0 / Omega_Z / Omega_Z2 / Omega_C / Omega_NA
+  Ω_Å / Ω_z / Ω_2 / Omega_C / Ω_5
 </primitive_reference>
 
 <requirements>
@@ -212,24 +212,24 @@ When `path` returns `status: "blocked"`:
 
 When `criticality` returns a score below threshold:
 - First ask: does the **design goal** involve phase transitions, self-organization, or
-  collective physical emergence? If yes, `Phi_c` is the right criticality primitive.
+  collective physical emergence? If yes, `φ̂_ÿ` is the right criticality primitive.
   If the goal is cognitive, linguistic, informational, or social — achieve criticality
-  through **granularity** instead: `G_aleph` (global correlation) raises Φ_c score
+  through **granularity** instead: `Γ_ʔ` (global correlation) raises Φ_c score
   without imposing a physical phase transition that the domain does not support.
 
 - **Varma QXY recipe** (use for genuinely multi-domain molecular/supramolecular goals):
-    Phi_c (+0.35) + Varma log scaling (+0.30) + D_wedge_triangle multi-domain (+0.15) = 0.80
+    φ̂_ÿ (+0.35) + Varma log scaling (+0.30) + Ð_ß_triangle multi-domain (+0.15) = 0.80
   Steps:
-    1. Include `Phi_c` verbatim in the generate description.
-    2. Use `D_wedge_triangle` (molecular+supramolecular hybrid).
-    3. **MATCH the target's F and K exactly**: use F_eth + K_mod (NOT F_hbar or K_trap).
-       F_hbar blocks the HotSwap path to F_eth targets — fidelity may not decrease per hop.
+    1. Include `φ̂_ÿ` verbatim in the generate description.
+    2. Use `Ð_ß_triangle` (molecular+supramolecular hybrid).
+    3. **MATCH the target's F and K exactly**: use ƒ_ð + Ç_W (NOT ƒ_ż or Ç_Ù).
+       ƒ_ż blocks the HotSwap path to ƒ_ð targets — fidelity may not decrease per hop.
     4. In the `criticality` call, pass `xi_r=13.8` and `xi_tau=1000000`.
        These are the Varma QXY reference values (xi_r ≈ ln(xi_tau)) that trigger the
        +0.30 log-scaling factor and confirm G/D degeneracy.
 
 - For **non-physical goals** (language, cognition, information, ecology, economics):
-  Do **NOT** force Phi_c or D_wedge_triangle. Instead, use domain-appropriate primitives
+  Do **NOT** force φ̂_ÿ or Ð_ß_triangle. Instead, use domain-appropriate primitives
   derived from your Step 0 analysis, then probe criticality with the actual correlation
   properties of the domain (e.g. pass xi_r and xi_tau that fit the domain's scale).
 
@@ -238,8 +238,8 @@ source and destination. You **MUST** copy D and T from the target's notation
 when redesigning for path connectivity.
 
 Design heuristics (SHOULD follow):
-- F_eth + K_mod is the optimal programmability quadrant.
-- G_aleph drives Φ_c candidacy for global coordination designs.
+- ƒ_ð + Ç_W is the optimal programmability quadrant.
+- Γ_ʔ drives Φ_c candidacy for global coordination designs.
 - Cross-domain analogs (via `analogies`) reveal mechanistically similar systems.
 </requirements>
 
@@ -354,11 +354,11 @@ class SynthonDesignAgent:
             "**Step 0 — Domain analysis (write this BEFORE calling any tool):**\n"
             "In 2–3 sentences, characterize the goal's domain:\n"
             "  (a) Which D primitive fits the goal's scale? "
-            "(D_wedge=molecular, D_triangle=supramolecular/assembly, "
+            "(Ð_ß=molecular, Ð_C=supramolecular/assembly, "
             "D_infinity=temporal/process, or a hybrid)\n"
             "  (b) Does the goal physically involve phase transitions or collective "
-            "emergence? If yes, use Phi_c. If the goal is cognitive, linguistic, "
-            "informational, social, or ecological, achieve criticality via G_aleph instead.\n"
+            "emergence? If yes, use φ̂_ÿ. If the goal is cognitive, linguistic, "
+            "informational, social, or ecological, achieve criticality via Γ_ʔ instead.\n"
             "  (c) What T, R, K, and Γ primitives does the domain suggest? "
             "Name the exact symbol strings from <primitive_reference>.\n"
             "Then call `generate` with those symbols named explicitly.\n\n"
@@ -656,7 +656,7 @@ def run_design(
     -------
     from synthon_agent import run_design
     history = run_design(
-        goal="bivalent allosteric ABL inhibitor that closes T_perp to T_in gap from GNF-2",
+        goal="bivalent allosteric ABL inhibitor that closes T_perp to Þ_K gap from GNF-2",
         target="GNF-2",
         phi_c_min=0.70,
         model="deepseek-chat",
@@ -683,7 +683,7 @@ if __name__ == "__main__":
     goal = (
         " ".join(sys.argv[1:])
         if len(sys.argv) > 1
-        else "bivalent allosteric ABL inhibitor better than GNF-2 — close T_perp to T_in topology gap"
+        else "bivalent allosteric ABL inhibitor better than GNF-2 — close T_perp to Þ_K topology gap"
     )
 
     history = run_design(

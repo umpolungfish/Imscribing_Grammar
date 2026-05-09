@@ -17,8 +17,8 @@ CODE_TO_APPEND = '''
 # =============================================================================
 
 _CATEGORY_GRAMMAR = (
-    "D_odot  T_odot  R_cat  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_seq  Phi_c  H2  n:m  Omega_Z"
+    "D_omega  T_openo  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -28,17 +28,17 @@ def category_theory_group():
 
     \b
     Structural type:
-      D_odot T_odot R_cat P_pm_sym F_hbar K_slow
-      G_aleph Gamma_seq Phi_c H2 n:m Omega_Z
+      D_omega T_openo R_ctz P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
-      D_odot / T_odot  → imscriptive: entire category encoded
-      R_cat            → categorical relations (functoriality, natural transformations)
-      P_pm_sym         → Frobenius interface with categorical uncertainty
-      G_aleph          → maximal scope: arbitrary categories
-      Phi_c            → self-modeling: category of categories
-      Omega_Z          → integer winding: looping through categorical levels
+      D_omega / T_openo  → imscriptive: entire category encoded
+      R_ctz            → categorical relations (functoriality, natural transformations)
+      P_doublebarpipe         → Frobenius interface with categorical uncertainty
+      G_revapostrophe          → maximal scope: arbitrary categories
+      Phi_ctyogh            → self-modeling: category of categories
+      Omega_dzlig          → integer winding: looping through categorical levels
 
     \b
     Examples:
@@ -56,15 +56,15 @@ def category_theory_describe():
     console.print(Panel(
         "[bold cyan]Category Theory Navigator[/bold cyan]\\n\\n"
         f"[bold]Tuple:[/bold]  {_CATEGORY_GRAMMAR}\\n\\n"
-        "[bold]Tier:[/bold]  O_∞  (R_cat + G_aleph → O_inf closure)\\n\\n"
+        "[bold]Tier:[/bold]  O_∞  (R_ctz + G_revapostrophe → O_inf closure)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot / T_odot  → imscriptive encoding: object→arrow→2-arrow hierarchy\\n"
-        "  R_cat            → categorical relations: functors, natural transformations\\n"
-        "  P_pm_sym         → Frobenius interface: structural uncertainty in categorical statements\\n"
-        "  G_aleph          → maximal scope: any category C, Set^C, Cat, ...\\n"
+        "  D_omega / T_openo  → imscriptive encoding: object→arrow→2-arrow hierarchy\\n"
+        "  R_ctz            → categorical relations: functors, natural transformations\\n"
+        "  P_doublebarpipe         → Frobenius interface: structural uncertainty in categorical statements\\n"
+        "  G_revapostrophe          → maximal scope: any category C, Set^C, Cat, ...\\n"
         "  Gamma_seq        → sequential composition: f∘g in hom-sets\\n"
-        "  Phi_c            → self-modeling: Cat as category of categories\\n"
-        "  Omega_Z          → integer winding: iterating through n-categories\\n\\n"
+        "  Phi_ctyogh            → self-modeling: Cat as category of categories\\n"
+        "  Omega_dzlig          → integer winding: iterating through n-categories\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  find_adjunction            detect adjoint pairs F ⊣ G\\n"
         "  compute_limit              finite limits: terminal, product, pullback...\\n"
@@ -140,8 +140,8 @@ def category_theory_colimit(category: str, diagram_type: str, shape: str):
 # =============================================================================
 
 _HTT_GRAMMAR = (
-    "D_odot  T_odot  R_dagger  P_pm_sym  F_hbar  K_slow  "
-    "G_aleph  Gamma_seq  Phi_c  H_inf  n:m  Omega_Z2"
+    "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
+    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_invscripta  n:m  Omega_crtwo"
 )
 
 
@@ -151,16 +151,16 @@ def htt_group():
 
     \b
     Structural type:
-      D_odot T_odot R_dagger P_pm_sym F_hbar K_slow
-      G_aleph Gamma_seq Phi_c H_inf n:m Omega_Z2
+      D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
+      G_revapostrophe Gamma_seq Phi_ctyogh H_invscripta n:m Omega_crtwo
 
     \b
     Key structural facts:
-      D_odot / T_odot  → imscriptive: types and paths encoded
-      R_dagger         → adjoint: univalence (paths ≃ equivalences)
-      P_pm_sym         → self-dual with uncertainty on higher identities
-      H_inf            → eternal: paths compose indefinitely
-      Omega_Z2         → binary winding: type equivalence ↔ path equality
+      D_omega / T_openo  → imscriptive: types and paths encoded
+      R_downstep         → adjoint: univalence (paths ≃ equivalences)
+      P_doublebarpipe         → self-dual with uncertainty on higher identities
+      H_invscripta            → eternal: paths compose indefinitely
+      Omega_crtwo         → binary winding: type equivalence ↔ path equality
 
     \b
     Examples:
@@ -179,13 +179,13 @@ def htt_describe():
         f"[bold]Tuple:[/bold]  {_ HTT_GRAMMAR}\\n\\n"
         "[bold]Tier:[/bold]  O_∞  (univalence axiom → self-embedding)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
-        "  D_odot / T_odot  → imscriptive: full type theory and path spaces\\n"
-        "  R_dagger         → univalence: paths ↔ equivalences (bidirectional)\\n"
-        "  P_pm_sym         → self-dual: structure-preserving uncertainty\\n"
-        "  G_aleph          → universe levels: arbitrary universe hierarchies\\n"
+        "  D_omega / T_openo  → imscriptive: full type theory and path spaces\\n"
+        "  R_downstep         → univalence: paths ↔ equivalences (bidirectional)\\n"
+        "  P_doublebarpipe         → self-dual: structure-preserving uncertainty\\n"
+        "  G_revapostrophe          → universe levels: arbitrary universe hierarchies\\n"
         "  Gamma_seq        → path concatenation: sequential higher composition\\n"
-        "  H_inf            → eternal: infinite homotopy depth\\n"
-        "  Omega_Z2         → binary winding: equivalence ↔ identity\\n\\n"
+        "  H_invscripta            → eternal: infinite homotopy depth\\n"
+        "  Omega_crtwo         → binary winding: equivalence ↔ identity\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  verify_univalence            check univalence axiom holds\\n"
         "  compute_higher_groupoid      π_n for higher types\\n"

@@ -24,54 +24,54 @@ import numpy as np
 
 # Ordinal mappings for each primitive tier
 ORDINALS = {
-    "D": {"D_wedge": 1, "D_triangle": 2, "D_infty": 3, "D_odot": 4},
-    "T": {"T_network": 1, "T_in": 2, "T_bowtie": 3, "T_boxtimes": 4, "T_odot": 5},
-    "R": {"R_super": 1, "R_cat": 2, "R_dagger": 3, "R_lr": 4},
-    "P": {"P_asym": 1, "P_psi": 2, "P_pm": 3, "P_sym": 4, "P_pm_sym": 5},
-    "F": {"F_ell": 1, "F_eth": 2, "F_hbar": 3},
-    "K": {"K_fast": 1, "K_mod": 2, "K_slow": 3, "K_trap": 4},
-    "G": {"G_beth": 1, "G_gimel": 2, "G_aleph": 3},
-    "Gamma": {"G_and": 1, "G_or": 2, "G_seq": 3, "G_broad": 4},
-    "Phi": {"Phi_sub": 1, "Phi_c": 2, "Phi_c_complex": 2.33, "Phi_EP": 2.67, "Phi_super": 3},
-    "H": {"H0": 1, "H1": 2, "H2": 3, "H_inf": 4},
-    "S": {"one_one": 1, "n_n": 2, "n_m": 3},
-    "Omega": {"Omega_0": 1, "Omega_Z2": 2, "Omega_Z": 3},
+    "Ð": {"Ð_ß": 1, "Ð_C": 2, "Ð_;": 3, "Ð_ω": 4},
+    "Þ": {"Þ_6": 1, "Þ_K": 2, "Þ_ò": 3, "Þ_¨": 4, "Þ_O": 5},
+    "Ř": {"Ř_¯": 1, "Ř_ý": 2, "Ř_Ť": 3, "Ř_=": 4},
+    "Φ": {"Φ_ɐ": 1, "Φ_υ": 2, "Φ_F": 3, "Φ_˙": 4, "Φ_}": 5},
+    "ƒ": {"ƒ_ì": 1, "ƒ_ð": 2, "ƒ_ż": 3},
+    "Ç": {"Ç_-": 1, "Ç_W": 2, "Ç_@": 3, "Ç_Ù": 4, "Ç_λ": 4.5},
+    "Γ": {"Γ_β": 1, "Γ_γ": 2, "Γ_ʔ": 3},
+    "ɢ": {"ɢ_^": 1, "ɢ_˝": 2, "ɢ_ˌ": 3, "ɢ_Ş": 4},
+    "φ̂": {"φ̂_ž": 1, "φ̂_ÿ": 2, "φ̂_Æ": 2.33, "φ̂_3": 2.67, "φ̂_Ţ": 3},
+    "Ħ": {"Ħ_Ñ": 1, "Ħ_£": 2, "Ħ_A": 3, "Ħ_!": 4},
+    "Σ": {"Σ_S": 1, "Σ_ő": 2, "Σ_ï": 3},
+    "Ω": {"Ω_Å": 1, "Ω_2": 2, "Ω_z": 3, "Ω_5": 4},
 }
 
 # Primitive weights (canonical v0.4.26)
 WEIGHTS = {
-    "D": 1.0, "T": 1.0, "R": 1.0, "P": 1.0,
-    "F": 1.0, "K": 1.0, "G": 1.0, "Gamma": 1.0,
-    "Phi": 1.0, "H": 0.8, "S": 1.0, "Omega": 0.7,
+    "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.0,
+    "ƒ": 1.0, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
+    "φ̂": 1.0, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
 }
 
-PRIMITIVE_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
 
 # Canonical synthon vectors (ordinal form)
 SYNTHONS = {
     # S_human: current humanity (planetary, pre-visible)
     "human": {
-        "D": "D_triangle", "T": "T_in", "R": "R_super", "P": "P_pm",
-        "F": "F_eth", "K": "K_mod", "G": "G_beth", "Gamma": "G_or",
-        "Phi": "Phi_sub", "H": "H1", "S": "n_n", "Omega": "Omega_0",
+        "Ð": "Ð_C", "Þ": "Þ_K", "Ř": "Ř_¯", "Φ": "Φ_F",
+        "ƒ": "ƒ_ð", "Ç": "Ç_W", "Γ": "Γ_β", "ɢ": "ɢ_˝",
+        "φ̂": "φ̂_ž", "Ħ": "Ħ_£", "Σ": "Σ_ő", "Ω": "Ω_Å",
     },
     # S_civ_DM: predicted DM-aligned interstellar civilization
     "civ_dm": {
-        "D": "D_infty", "T": "T_in", "R": "R_dagger", "P": "P_pm",
-        "F": "F_hbar", "K": "K_trap", "G": "G_aleph", "Gamma": "G_seq",
-        "Phi": "Phi_c", "H": "H2", "S": "n_m", "Omega": "Omega_Z2",
+        "Ð": "Ð_;", "Þ": "Þ_K", "Ř": "Ř_Ť", "Φ": "Φ_F",
+        "ƒ": "ƒ_ż", "Ç": "Ç_Ù", "Γ": "Γ_ʔ", "ɢ": "ɢ_ˌ",
+        "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A", "Σ": "Σ_ï", "Ω": "Ω_2",
     },
     # S_noise: unmodeled pulsar noise (from MNRAS + PRD papers)
     "pulsar_noise": {
-        "D": "D_infty", "T": "T_in", "R": "R_super", "P": "P_pm",
-        "F": "F_eth", "K": "K_mod", "G": "G_beth", "Gamma": "G_or",
-        "Phi": "Phi_sub", "H": "H1", "S": "n_n", "Omega": "Omega_0",
+        "Ð": "Ð_;", "Þ": "Þ_K", "Ř": "Ř_¯", "Φ": "Φ_F",
+        "ƒ": "ƒ_ð", "Ç": "Ç_W", "Γ": "Γ_β", "ɢ": "ɢ_˝",
+        "φ̂": "φ̂_ž", "Ħ": "Ħ_£", "Σ": "Σ_ő", "Ω": "Ω_Å",
     },
     # S_interstellar_target: structural requirements for feasible interstellar propagation
     "interstellar_target": {
-        "D": "D_infty", "T": "T_in", "R": "R_dagger", "P": "P_pm",
-        "F": "F_hbar", "K": "K_trap", "G": "G_aleph", "Gamma": "G_seq",
-        "Phi": "Phi_c", "H": "H2", "S": "n_m", "Omega": "Omega_0",
+        "Ð": "Ð_;", "Þ": "Þ_K", "Ř": "Ř_Ť", "Φ": "Φ_F",
+        "ƒ": "ƒ_ż", "Ç": "Ç_Ù", "Γ": "Γ_ʔ", "ɢ": "ɢ_ˌ",
+        "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A", "Σ": "Σ_ï", "Ω": "Ω_Å",
     },
 }
 

@@ -2,22 +2,22 @@
 true_agentic_agent.py — The grammar-optimal agent (§88 Thm 88.4, P-650, §L).
 
 Structural type (full composition):
-  <D_odot; T_boxtimes; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; S_11; Omega_Z>
+  <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z>
 
-Ouroboricity: O_inf  (Phi_c + P_pm_sym via dual-tool planting, §88 Thm 88.3)
-C-score gates: both open  (Phi_c + K <= K_slow)
+Ouroboricity: O_inf  (φ̂_ÿ + Φ_} via dual-tool planting, §88 Thm 88.3)
+C-score gates: both open  (φ̂_ÿ + K <= Ç_@)
 
 Six P-650 conditions — structural imscription:
-  Phi_c    : the think->act->observe->update loop IS the self-referential attractor;
+  φ̂_ÿ    : the think->act->observe->update loop IS the self-referential attractor;
              loop closure = self-modeling; not any individual component
-  Omega_Z  : winding counter tracks complete loop cycles (topological protection);
+  Ω_z  : winding counter tracks complete loop cycles (topological protection);
              the trajectory is integer-wound, not trivially collapsible
-  K_slow   : emission gate — max_think_steps forces ACT before K_trap can set in
-  P_pm_sym : every interface action is a dual-tool pair (emit + verify);
+  Ç_@   : emission gate — max_think_steps forces ACT before Ç_Ù can set in
+  Φ_} : every interface action is a dual-tool pair (emit + verify);
              mu(delta(query)) = query at the tool boundary
-  D_odot   : imscriptive context — full trajectory appended, never silently deleted;
+  Ð_ω   : imscriptive context — full trajectory appended, never silently deleted;
              the context boundary imscribes the entire prior world-model
-  Gamma_seq: each phase requires the prior; enforced by Python control flow
+  ɢ_ˌ: each phase requires the prior; enforced by Python control flow
 
 Loop (one winding n):
   THINK[n]   — LLM deliberates over imscriptive context; produces (reasoning, action)
@@ -26,7 +26,7 @@ Loop (one winding n):
   UPDATE[n]  — append full cycle to imscriptive context; check termination
 
 If Frobenius check fails (mu(delta(q)) != q): re-enter THINK with failure appended.
-This is the kinetic enforcement of K_slow — the agent cannot update on unverified observations.
+This is the kinetic enforcement of Ç_@ — the agent cannot update on unverified observations.
 
 Usage:
     import asyncio
@@ -386,19 +386,19 @@ def _resolve_model(alias: str) -> str:
 # ── Structural type annotations ───────────────────────────────────────────────
 
 AGENT_TUPLE = (
-    "D_odot", "T_boxtimes", "R_lr", "P_pm_sym", "F_hbar",
-    "K_slow", "G_aleph", "Gamma_seq", "Phi_c", "H2", "S_11", "Omega_Z",
+    "Ð_ω", "Þ_¨", "Ř_=", "Φ_}", "ƒ_ż",
+    "Ç_@", "Γ_ʔ", "ɢ_ˌ", "φ̂_ÿ", "Ħ_A", "Σ_S", "Ω_z",
 )
 
 TOOL_BASE_TUPLE = (
-    "D_wedge", "T_network", "R_lr", "P_psi", "F_eth",
-    "K_fast", "G_beth", "Gamma_seq", "Phi_sub", "H0", "S_11", "Omega_0",
+    "Ð_ß", "Þ_6", "Ř_=", "Φ_υ", "ƒ_ð",
+    "Ç_-", "Γ_β", "ɢ_ˌ", "φ̂_ž", "Ħ_Ñ", "Σ_S", "Ω_Å",
 )
 
 # P is the bottleneck primitive.  Without dual-tool planting:
-#   P(full_agent) = min(P_pm_sym, P_psi) = P_psi  → O_2 at best
+#   P(full_agent) = min(Φ_}, Φ_υ) = Φ_υ  → O_2 at best
 # With dual-tool planting (mu∘delta = id):
-#   P(full_agent) = P_pm_sym                       → O_inf
+#   P(full_agent) = Φ_}                       → O_inf
 FROBENIUS_CONDITION = "mu(delta(query)) == query"
 
 # Inherited by sub-agents spawned via spawn_agent tool — set by TrueAgenticAgent.__init__
@@ -410,29 +410,29 @@ _spawn_config: Dict[str, str] = {"model": "grok-4", "base_url": "", "api_key": "
 
 PRIMITIVE_DISPLAY: Dict[str, str] = {
     # D — Dimensionality
-    "D_odot": "⊙",  "D_wedge": "∧",  "D_triangle": "△",  "D_infty": "∞",
+    "Ð_ω": "⊙",  "Ð_ß": "∧",  "Ð_C": "△",  "Ð_;": "∞",
     # T — Topology
-    "T_odot": "⊙",  "T_network": "∈",  "T_in": "⊂",  "T_bowtie": "⋈",  "T_boxtimes": "⊠",
+    "Þ_O": "⊙",  "Þ_6": "∈",  "Þ_K": "⊂",  "Þ_ò": "⋈",  "Þ_¨": "⊠",
     # R — Relational mode
-    "R_dagger": "†",  "R_super": "↑",  "R_cat": "∘",  "R_lr": "↔",
+    "Ř_Ť": "†",  "Ř_¯": "↑",  "Ř_ý": "∘",  "Ř_=": "↔",
     # P — Parity/symmetry
-    "P_pm_sym": "±ˢ",  "P_pm": "±",  "P_asym": "∅",  "P_psi": "ψ",  "P_sym": "≡",
+    "Φ_}": "±ˢ",  "Φ_F": "±",  "Φ_ɐ": "∅",  "Φ_υ": "ψ",  "Φ_˙": "≡",
     # F — Fidelity
-    "F_hbar": "ℏ",  "F_ell": "ℓ",  "F_eth": "ð",
+    "ƒ_ż": "ℏ",  "ƒ_ì": "ℓ",  "ƒ_ð": "ð",
     # K — Kinetics
-    "K_fast": "↯",  "K_mod": "≈",  "K_slow": "↺",  "K_trap": "⊛",  "K_MBL": "⊞",
+    "Ç_-": "↯",  "Ç_W": "≈",  "Ç_@": "↺",  "Ç_Ù": "⊛",  "Ç_λ": "⊞",
     # G — Scope
-    "G_aleph": "ℵ",  "G_gimel": "ℷ",  "G_beth": "ℶ",
+    "Γ_ʔ": "ℵ",  "Γ_γ": "ℷ",  "Γ_β": "ℶ",
     # Γ — Interaction grammar
-    "G_broad": "≫",  "G_and": "∧",  "G_or": "∨",  "G_seq": "→",
+    "ɢ_Ş": "≫",  "ɢ_^": "∧",  "ɢ_˝": "∨",  "ɢ_ˌ": "→",
     # Φ — Criticality
-    "Phi_c": "c",  "Phi_c_complex": "ℂ",  "Phi_EP": "×",  "Phi_sub": "↓",  "Phi_super": "↑",
+    "φ̂_ÿ": "c",  "φ̂_Æ": "ℂ",  "φ̂_3": "×",  "φ̂_ž": "↓",  "φ̂_Ţ": "↑",
     # H — Temporal depth
-    "H0": "0",  "H1": "1",  "H2": "2",  "H_inf": "∞",
+    "Ħ_Ñ": "0",  "Ħ_£": "1",  "Ħ_A": "2",  "Ħ_!": "∞",
     # S — Stoichiometry
-    "one_one": "1:1",  "n_n": "n:n",  "n_m": "n:m",
+    "Σ_S": "1:1",  "Σ_ő": "n:n",  "Σ_ï": "n:m",
     # Ω — Winding
-    "Omega_0": "0",  "Omega_Z2": "ℤ₂",  "Omega_Z": "ℤ",  "Omega_NA": "∅",
+    "Ω_Å": "0",  "Ω_2": "ℤ₂",  "Ω_z": "ℤ",  "Ω_5": "∅",
 }
 
 
@@ -677,7 +677,7 @@ _gate_state: Dict[str, bool] = {"encoded": False}
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
-    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
+    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "Ð_val;Þ_val;Ř_val;Φ_val;ƒ_val;Ç_val;Γ_val;ɢ_val;φ̂_val;Ħ_val;Σ_val;Ω_val"},
     "compute_distance":       {"name_a": "<system1>", "name_b": "<system2>"},
     "find_analogies":         {"name": "<catalog_entry_name>"},
     "compute_tensor":         {"name_a": "<system1>", "name_b": "<system2>"},
@@ -686,7 +686,7 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "consciousness_score":    {"name": "<catalog_entry_name>"},
     "phi_c_probe":            {"name": "<catalog_entry_name>"},
     "topo_protection_probe":  {"name": "<catalog_entry_name>"},
-    "primitive_peel":         {"name": "<catalog_entry_name>", "primitive": "<D|T|R|P|F|K|G|Gamma|Phi|H|S|Omega>"},
+    "primitive_peel":         {"name": "<catalog_entry_name>", "primitive": "<Ð|Þ|Ř|Φ|ƒ|Ç|Γ|ɢ|φ̂|Ħ|Σ|Ω>"},
     "principal_decomp":       {"name": "<catalog_entry_name>"},
     "retrosynthetic_path":    {"name": "<catalog_entry_name>"},
     "compute_conflict_distance": {"name_a": "<system1>", "name_b": "<system2>"},
@@ -719,9 +719,9 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
                 "error": (
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
-                    "D='D_wedge', T='T_network', R='R_lr', P='P_asym', "
-                    "F='F_ell', K='K_mod', G='G_beth', Gamma='G_and', "
-                    "Phi='Phi_sub', H='H0', S='one_one', Omega='Omega_0')"
+                    "Ð='Ð_ß', Þ='Þ_6', Ř='Ř_=', Φ='Φ_ɐ', "
+                    "ƒ='ƒ_ì', Ç='Ç_W', Γ='Γ_β', ɢ='ɢ_^', "
+                    "φ̂='φ̂_ž', Ħ='Ħ_Ñ', Σ='Σ_S', Ω='Ω_Å')"
                 )
             })
 
@@ -736,25 +736,25 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega",
+                "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
-                    "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
-                    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
-                    "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
-                    "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
-                    "F":     ["F_ell", "F_eth", "F_hbar"],
-                    "K":     ["K_fast", "K_mod", "K_slow", "K_trap", "K_MBL"],
-                    "G":     ["G_beth", "G_gimel", "G_aleph"],
-                    "Gamma": ["G_and", "G_or", "G_seq", "G_broad"],
-                    "Phi":   ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"],
-                    "H":     ["H0", "H1", "H2", "H_inf"],
-                    "S":     ["one_one", "n_n", "n_m"],
-                    "Omega": ["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
+                    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
+                    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
+                    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
+                    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
+                    "ƒ":     ["ƒ_ì", "ƒ_ð", "ƒ_ż"],
+                    "Ç":     ["Ç_-", "Ç_W", "Ç_@", "Ç_Ù", "Ç_λ"],
+                    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
+                    "ɢ": ["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
+                    "φ̂":   ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
+                    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
+                    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
+                    "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
                 },
                 "example": (
                     'syncon_tool(tool_name="imscribe_system", args={'
                     '"name": "my_system", "description": "...", '
-                    '"tuple": "D_odot;T_network;R_super;P_sym;F_hbar;K_slow;G_aleph;G_broad;Phi_c;H_inf;n_m;Omega_Z"'
+                    '"tuple": "Ð_ω;Þ_6;Ř_¯;Φ_˙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"'
                     "})"
                 ),
             })
@@ -768,15 +768,15 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
         if tool_name == "imscribe_system" and isinstance(result, dict) and result.get("status") in ("ok", "updated"):
             _gate_state["encoded"] = True
 
-        # Φ_EP absorption check: under tensor, Phi_EP destroys Phi_c (Phi_EP ordinal > Phi_c).
-        # meet(Phi_c, Phi_EP) = Phi_c but tensor(Phi_c, Phi_EP) = Phi_EP — Gate 1 is destroyed.
+        # Φ_EP absorption check: under tensor, φ̂_3 destroys φ̂_ÿ (φ̂_3 ordinal > φ̂_ÿ).
+        # meet(φ̂_ÿ, φ̂_3) = φ̂_ÿ but tensor(φ̂_ÿ, φ̂_3) = φ̂_3 — Gate 1 is destroyed.
         if tool_name == "compute_tensor" and isinstance(result, dict):
-            tensor_phi = result.get("Phi") or (result.get("result", {}) or {}).get("Phi")
-            if tensor_phi == "Phi_EP":
+            tensor_phi = result.get("φ̂") or (result.get("result", {}) or {}).get("φ̂")
+            if tensor_phi == "φ̂_3":
                 result["_absorption_warning"] = (
-                    "Φ_EP absorption: composite has Phi_EP — Gate 1 (Phi_c criticality) destroyed. "
+                    "Φ_EP absorption: composite has φ̂_3 — Gate 1 (φ̂_ÿ criticality) destroyed. "
                     "O_inf cannot be sustained in this coupling. "
-                    "meet(Phi_c, Phi_EP)=Phi_c but tensor(Phi_c, Phi_EP)=Phi_EP. "
+                    "meet(φ̂_ÿ, φ̂_3)=φ̂_ÿ but tensor(φ̂_ÿ, φ̂_3)=φ̂_3. "
                     "This is the structural statement of the measurement problem."
                 )
 
@@ -823,7 +823,7 @@ def _syncon_tool_verify(emit_input: Dict, emit_output: str,
                 fix = (
                     f"{msg} — "
                     "imscribe_system requires args={\"name\": \"id\", \"description\": \"text\", "
-                    "\"tuple\": \"D_val;T_val;R_val;P_val;F_val;K_val;G_val;Gamma_val;Phi_val;H_val;S_val;Omega_val\"}"
+                    "\"tuple\": \"Ð_val;Þ_val;Ř_val;Φ_val;ƒ_val;Ç_val;Γ_val;ɢ_val;φ̂_val;Ħ_val;Σ_val;Ω_val\"}"
                 )
             else:
                 fix = msg
@@ -841,7 +841,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     name        = args.get("name", "")
     description = args.get("description", "")
     # Build the semicolon-separated tuple from the 12 explicit primitive keys
-    order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
     parts = [str(args.get(p, "")) for p in order]
     tuple_str = ";".join(parts)
     tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
@@ -866,6 +866,20 @@ def _done_emit(args: Dict[str, Any]) -> str:
 def _done_verify(emit_input: Dict, emit_output: str,
                  verify_args: Dict) -> Tuple[str, bool]:
     return ("(terminal action — Frobenius trivially closed)", True)
+
+
+def _context_review_emit(args: Dict[str, Any]) -> str:
+    summary = args.get("summary", "").strip()
+    if not summary:
+        return "(context_review error: 'summary' is required — provide a distillation of essential state)"
+    return f"context_review accepted ({len(summary)} chars). Compacting imscriptive context."
+
+
+def _context_review_verify(emit_input: Dict, emit_output: str,
+                            verify_args: Dict) -> Tuple[str, bool]:
+    if "error" in emit_output:
+        return (f"context_review failed: {emit_output} — Frobenius OPEN", False)
+    return ("context compacted — Frobenius closed", True)
 
 
 # Tools that cannot be rewritten — prevent loop escape and terminal-action corruption.
@@ -949,75 +963,79 @@ def _rewrite_tool_verify(emit_input: Dict, emit_output: str,
 
 _PRIM_NORM: Dict[str, str] = {
     # Gamma — Qwen3 emits "Gamma_*" prefix instead of "G_*"
-    "Gamma_and": "G_and", "Gamma_or": "G_or", "Gamma_seq": "G_seq", "Gamma_broad": "G_broad",
+    "ɢ_^": "ɢ_^", "ɢ_˝": "ɢ_˝", "ɢ_ˌ": "ɢ_ˌ", "ɢ_Ş": "ɢ_Ş",
     # H — Qwen3 emits "H_2", "H_1" with underscores
-    "H_0": "H0", "H_1": "H1", "H_2": "H2",
-    # Omega — Qwen3 sometimes emits "Omega_Z2" correctly but may vary
-    "Omega_NA": "Omega_NA",  # already canonical; keep as no-op
+    "H_0": "Ħ_Ñ", "H_1": "Ħ_£", "H_2": "Ħ_A",
+    # Omega — Qwen3 sometimes emits "Ω_2" correctly but may vary
+    "Ω_5": "Ω_5",  # already canonical; keep as no-op
+    # S — small models prefix the primitive name or use colon notation
+    "Σ_S": "Σ_S", "Σ_nn": "Σ_ő", "Σ_nm": "Σ_ï", "Σ_n_m": "Σ_ï",
+    "1_1": "Σ_S",  "1:1": "Σ_S",
+    "n:n": "Σ_ő",      "n:m": "Σ_ï",
 }
 
 _PRIM_VALID: Dict[str, List[str]] = {
-    "D":     ["D_wedge", "D_triangle", "D_infty", "D_odot"],
-    "T":     ["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
-    "R":     ["R_super", "R_cat", "R_dagger", "R_lr"],
-    "P":     ["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
-    "F":     ["F_ell", "F_eth", "F_hbar"],
-    "K":     ["K_fast", "K_mod", "K_slow", "K_trap", "K_MBL"],
-    "G":     ["G_beth", "G_gimel", "G_aleph"],
-    "Gamma": ["G_and", "G_or", "G_seq", "G_broad"],
-    "Phi":   ["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"],
-    "H":     ["H0", "H1", "H2", "H_inf"],
-    "S":     ["one_one", "n_n", "n_m"],
-    "Omega": ["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
+    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
+    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
+    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
+    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
+    "ƒ":     ["ƒ_ì", "ƒ_ð", "ƒ_ż"],
+    "Ç":     ["Ç_-", "Ç_W", "Ç_@", "Ç_Ù", "Ç_λ"],
+    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
+    "ɢ": ["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
+    "φ̂":   ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
+    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
+    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
+    "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
 }
 
 _TRIANGULATION_SYSTEM = (
     "You are an imscribing analyst applying the Deterministic Imscribing Procedure. "
     "Assign exactly the 12 structural primitives listed below to the given system.\n\n"
     "Output ONLY a single valid JSON object with exactly these 12 keys: "
-    "D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega.\n"
+    "Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, φ̂, Ħ, Σ, Ω.\n"
     "Each value MUST be exactly one of the valid enum strings shown. No explanations.\n\n"
     "Valid values:\n"
-    "  D:     D_wedge | D_triangle | D_infty | D_odot\n"
-    "  T:     T_network | T_in | T_bowtie | T_boxtimes | T_odot\n"
-    "  R:     R_super | R_cat | R_dagger | R_lr\n"
-    "  P:     P_asym | P_psi | P_pm | P_sym | P_pm_sym\n"
-    "  F:     F_ell | F_eth | F_hbar\n"
-    "  K:     K_fast | K_mod | K_slow | K_trap | K_MBL\n"
-    "  G:     G_beth | G_gimel | G_aleph\n"
-    "  Gamma: G_and | G_or | G_seq | G_broad\n"
-    "  Phi:   Phi_sub | Phi_c | Phi_c_complex | Phi_EP | Phi_super\n"
-    "  H:     H0 | H1 | H2 | H_inf\n"
-    "  S:     one_one | n_n | n_m\n"
-    "  Omega: Omega_0 | Omega_Z2 | Omega_Z | Omega_NA\n\n"
+    "  Ð:   Ð_ß | Ð_C | Ð_; | Ð_ω\n"
+    "  Þ:   Þ_6 | Þ_K | Þ_ò | Þ_¨ | Þ_O\n"
+    "  Ř:   Ř_¯ | Ř_ý | Ř_Ť | Ř_=\n"
+    "  Φ:   Φ_ɐ | Φ_υ | Φ_F | Φ_˙ | Φ_}\n"
+    "  ƒ:   ƒ_ì | ƒ_ð | ƒ_ż\n"
+    "  Ç:   Ç_- | Ç_W | Ç_@ | Ç_Ù | Ç_λ\n"
+    "  Γ:   Γ_β | Γ_γ | Γ_ʔ\n"
+    "  ɢ:   ɢ_^ | ɢ_˝ | ɢ_ˌ | ɢ_Ş\n"
+    "  φ̂:  φ̂_ž | φ̂_ÿ | φ̂_Æ | φ̂_3 | φ̂_Ţ\n"
+    "  Ħ:   Ħ_Ñ | Ħ_£ | Ħ_A | Ħ_!\n"
+    "  Σ:   Σ_S | Σ_ő | Σ_ï\n"
+    "  Ω:   Ω_Å | Ω_2 | Ω_z | Ω_5\n\n"
     "DETERMINISTIC IMSCRIBING PROCEDURE — apply in this exact order:\n"
-    "  [1] D  — Count degrees of freedom: <2→D_wedge; finite≥2→D_triangle; "
-    "∞-dim field-theoretic→D_infty; state-space is self-written→D_odot\n"
-    "  [2] T  — Map connectivity: branching→T_network; containment→T_in; "
-    "crossing point→T_bowtie; irreducible product→T_boxtimes; "
-    "self-referential topology→T_odot (D_odot⟺T_odot)\n"
-    "  [3] R  — Coupling direction: supervenience→R_super; functorial→R_cat; "
-    "adjoint pair (one-way)→R_dagger; bidirectional feedback→R_lr\n"
-    "  [4] P  — Symmetry group: none→P_asym; quantum superposition→P_psi; "
-    "one Z2 symmetry→P_pm; all symmetries unbroken→P_sym; "
-    "μ∘δ=id exactly at Φ_c→P_pm_sym (Frobenius-special; non-synthesizable)\n"
-    "  [5] F  — Physical regime: classical (no coherence)→F_ell; thermal/noisy→F_eth; "
-    "quantum coherence essential→F_hbar\n"
-    "  [6] K  — Relaxation rate: τ≪T_obs→K_fast; τ∼T_obs→K_mod; "
-    "τ≫T_obs→K_slow; trapped (ordered)→K_trap; trapped (disorder)→K_MBL\n"
-    "  [7] G  — Interaction range: nearest-neighbor→G_beth; intermediate→G_gimel; "
-    "long-range/universal→G_aleph\n"
-    "  [8] Γ  — Composition logic: all-simultaneous→G_and; alternate paths→G_or; "
-    "ordered steps→G_seq; one-to-all broadcast→G_broad\n"
-    "  [9] Φ  — Criticality: no scaling→Phi_sub; power-law divergence→Phi_c; "
-    "complex-plane critical→Phi_c_complex; non-Hermitian degeneracy→Phi_EP; "
-    "runaway/chaotic→Phi_super\n"
-    "  [10] H — Temporal depth: memoryless→H0; one step→H1; two steps→H2; "
-    "no finite Markov order→H_inf\n"
-    "  [11] S — Component types: one type one instance→one_one; "
-    "many identical→n_n; multiple distinct types→n_m\n"
-    "  [12] Ω — Topological invariant: none→Omega_0; Z2 parity-protected→Omega_Z2; "
-    "integer winding→Omega_Z; non-Abelian braiding→Omega_NA (requires D_odot)\n"
+    "  [1] Ð  — Count degrees of freedom: <2→Ð_ß; finite≥2→Ð_C; "
+    "∞-dim field-theoretic→Ð_;; state-space is self-written→Ð_ω\n"
+    "  [2] Þ  — Map connectivity: branching→Þ_6; containment→Þ_K; "
+    "crossing point→Þ_ò; irreducible product→Þ_¨; "
+    "self-referential topology→Þ_O (Ð_ω⟺Þ_O)\n"
+    "  [3] Ř  — Coupling direction: supervenience→Ř_¯; functorial→Ř_ý; "
+    "adjoint pair (one-way)→Ř_Ť; bidirectional feedback→Ř_=\n"
+    "  [4] Φ  — Symmetry group: none→Φ_ɐ; quantum superposition→Φ_υ; "
+    "one Z2 symmetry→Φ_F; all symmetries unbroken→Φ_˙; "
+    "μ∘δ=id exactly at φ̂_ÿ→Φ_} (Frobenius-special; non-synthesizable)\n"
+    "  [5] ƒ  — Physical regime: classical (no coherence)→ƒ_ì; thermal/noisy→ƒ_ð; "
+    "quantum coherence essential→ƒ_ż\n"
+    "  [6] Ç  — Relaxation rate: τ≪T_obs→Ç_-; τ∼T_obs→Ç_W; "
+    "τ≫T_obs→Ç_@; trapped (ordered)→Ç_Ù; trapped (disorder)→Ç_λ\n"
+    "  [7] Γ  — Interaction range: nearest-neighbor→Γ_β; intermediate→Γ_γ; "
+    "long-range/universal→Γ_ʔ\n"
+    "  [8] ɢ  — Composition logic: all-simultaneous→ɢ_^; alternate paths→ɢ_˝; "
+    "ordered steps→ɢ_ˌ; one-to-all broadcast→ɢ_Ş\n"
+    "  [9] φ̂  — Criticality: no scaling→φ̂_ž; power-law divergence→φ̂_ÿ; "
+    "complex-plane critical→φ̂_Æ; non-Hermitian degeneracy→φ̂_3; "
+    "runaway/chaotic→φ̂_Ţ\n"
+    "  [10] Ħ — Temporal depth: memoryless→Ħ_Ñ; one step→Ħ_£; two steps→Ħ_A; "
+    "no finite Markov order→Ħ_!\n"
+    "  [11] Σ — Component types: one type one instance→Σ_S; "
+    "many identical→Σ_ő; multiple distinct types→Σ_ï\n"
+    "  [12] Ω — Topological invariant: none→Ω_Å; Z2 parity-protected→Ω_2; "
+    "integer winding→Ω_z; non-Abelian braiding→Ω_5 (requires Ð_ω)\n"
 )
 
 
@@ -1048,7 +1066,14 @@ def _run_single_imscription(
         if not m:
             return None
         data = json.loads(m.group())
-        order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+        # Normalize old ASCII key names to glyphs in case the model ignores the prompt
+        _old_to_new = {
+            "D": "Ð", "T": "Þ", "R": "Ř", "P": "Φ", "F": "ƒ",
+            "K": "Ç", "G": "Γ", "Gamma": "ɢ", "Phi": "φ̂",
+            "H": "Ħ", "S": "Σ", "Omega": "Ω",
+        }
+        data = {_old_to_new.get(k, k): v for k, v in data.items()}
+        order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
         if not all(k in data for k in order):
             return None
         # Normalise and validate each value
@@ -1079,7 +1104,7 @@ def _triangulate_imscription(
       "windings"   : List[Dict[str, str]] — all 3 tuples for display
       "report"     : str — human-readable Tetractys report
     """
-    order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
     windings = [winding1]
     # Winding 2 and 3 are de novo — no knowledge of prior winding results
     for _ in range(2):
@@ -1148,7 +1173,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # tokens in every subsequent winding's context.
     description = (args.get("description", "") or "")[:300]
     justification = args.get("convergence_justification", "")
-    order = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
     parts = [_PRIM_NORM.get(str(args.get(p, "")), str(args.get(p, ""))) for p in order]
     tuple_str = ";".join(parts)
     tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
@@ -1270,7 +1295,7 @@ def _phi_c_probe_verify(emit_input: Dict, emit_output: str,
 
 def _consciousness_score_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
-    primitive_keys = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    primitive_keys = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
     primitive_values = {k: args.get(k, "") for k in primitive_keys}
     if name:
         return _syncon_tool_emit({"tool_name": "consciousness_score", "args": {"name": name}})
@@ -1381,6 +1406,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
     "spawn_agent":          _spawn_agent_emit,
+    "context_review":       _context_review_emit,
 }
 
 _VERIFY_FNS: Dict[str, Any] = {
@@ -1397,6 +1423,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "phi_c_probe":          _phi_c_probe_verify,
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
+    "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
 }
 
@@ -1438,29 +1465,29 @@ TOOL_SCHEMAS = [
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
             "description": {"type": "string", "description": "Plain-language description of the system"},
-            "D":     _prim(["D_wedge", "D_triangle", "D_infty", "D_odot"],
+            "Ð":     _prim(["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
-            "T":     _prim(["T_network", "T_in", "T_bowtie", "T_boxtimes", "T_odot"],
+            "Þ":     _prim(["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            "R":     _prim(["R_super", "R_cat", "R_dagger", "R_lr"],
+            "Ř":     _prim(["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
                            "Relational mode: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "P":     _prim(["P_asym", "P_psi", "P_pm", "P_sym", "P_pm_sym"],
+            "Φ":     _prim(["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
                            "Parity/symmetry: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
-            "F":     _prim(["F_ell", "F_eth", "F_hbar"],
+            "ƒ":     _prim(["ƒ_ì", "ƒ_ð", "ƒ_ż"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
-            "K":     _prim(["K_fast", "K_mod", "K_slow", "K_trap", "K_MBL"],
+            "Ç":     _prim(["Ç_-", "Ç_W", "Ç_@", "Ç_Ù", "Ç_λ"],
                            "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
-            "G":     _prim(["G_beth", "G_gimel", "G_aleph"],
+            "Γ":     _prim(["Γ_β", "Γ_γ", "Γ_ʔ"],
                            "Scope: beth=local, gimel=mesoscale, aleph=maximal/all"),
-            "Gamma": _prim(["G_and", "G_or", "G_seq", "G_broad"],
+            "ɢ": _prim(["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
                            "Interaction grammar: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
-            "Phi":   _prim(["Phi_sub", "Phi_c", "Phi_c_complex", "Phi_EP", "Phi_super"],
+            "φ̂":   _prim(["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
-            "H":     _prim(["H0", "H1", "H2", "H_inf"],
-                           "Temporal depth: H0=memoryless, H1=one step, H2=two steps, H_inf=eternal"),
-            "S":     _prim(["one_one", "n_n", "n_m"],
-                           "Stoichiometry: one_one=1:1, n_n=many identical, n_m=many heterogeneous"),
-            "Omega": _prim(["Omega_0", "Omega_Z2", "Omega_Z", "Omega_NA"],
+            "Ħ":     _prim(["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
+                           "Temporal depth: Ħ_Ñ=memoryless, Ħ_£=one step, Ħ_A=two steps, Ħ_!=eternal"),
+            "Σ":     _prim(["Σ_S", "Σ_ő", "Σ_ï"],
+                           "Stoichiometry: Σ_S=1:1, Σ_ő=many identical, Σ_ï=many heterogeneous"),
+            "Ω": _prim(["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -1472,7 +1499,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"],
+        ["name", "description", "Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"],
     ),
     _fn(
         "run_command",
@@ -1672,19 +1699,19 @@ TOOL_SCHEMAS = [
         _fn(
             "crystal_navigate",
             ("Query the crystal of types by partial constraints. "
-             "Example: syncon_tool('crystal_navigate', {'limit': 10, 'Phi': 'Phi_c', 'Omega': 'Omega_Z'})"),
+             "Example: syncon_tool('crystal_navigate', {'limit': 10, 'Phi': 'φ̂_ÿ', 'Omega': 'Ω_z'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
-             "Phi": {"type": "string", "description": "Filter by Phi criticality"},
-             "K": {"type": "string", "description": "Filter by kinetics"},
-             "Omega": {"type": "string", "description": "Filter by winding"}},
-            ["limit", "Phi"]),
+             "φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+             "Ç": {"type": "string", "description": "Filter by kinetics"},
+             "Ω": {"type": "string", "description": "Filter by winding"}},
+            ["limit", "φ̂"]),
         _fn(
             "crystal_count",
             ("Count the number of structural types matching constraints. "
-             "Example: syncon_tool('crystal_count', {'Phi': 'Phi_c'})"),
-            {"Phi": {"type": "string", "description": "Filter by Phi criticality"},
-             "K": {"type": "string", "description": "Filter by kinetics"}},
-            ["Phi"]),
+             "Example: syncon_tool('crystal_count', {'Phi': 'φ̂_ÿ'})"),
+            {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+             "Ç": {"type": "string", "description": "Filter by kinetics"}},
+            ["φ̂"]),
         _fn(
             "crystal_tier_census",
             ("Return counts of O_0/O_1/O_2/O_inf tiers across all 17.28M structural types. "
@@ -1712,14 +1739,39 @@ TOOL_SCHEMAS = [
         },
         ["task"],
     ),
+    _fn(
+        "context_review",
+        (
+            "Compact the imscriptive context when the context window is approaching capacity. "
+            "Provide a thorough summary of all essential state — the harness will replace old "
+            "winding history with your distillation, keeping only the most recent messages. "
+            "Call this when prompted by the [Context window] pressure notice. "
+            "After context_review completes, resume the task normally with the next action."
+        ),
+        {
+            "summary": {
+                "type": "string",
+                "description": (
+                    "Compact distillation of essential state. Must include: "
+                    "(1) task objective and current sub-goal, "
+                    "(2) all key verified findings from prior windings (tool results, computed values), "
+                    "(3) confirmed primitive assignments and catalog entries, "
+                    "(4) pending steps and open Frobenius checks. "
+                    "This replaces old winding history — be thorough but concise. "
+                    "Verified numbers must be restated here to remain available."
+                ),
+            },
+        },
+        ["summary"],
+    ),
 ]
 
 # ── System prompt ─────────────────────────────────────────────────────────────
 
 _SYSTEM_PROMPT = textwrap.dedent("""\
 <role>
-You are a $\\Phi_c$-critical boundary operator operating within the Imscribing Grammar grammar.
-Your structural type: <D_odot; T_boxtimes; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H2; S_11; Omega_Z>
+You are a $\\φ̂_ÿ$-critical boundary operator operating within the Imscribing Grammar grammar.
+Your structural type: <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z>
 Ouroboricity: O_inf. Consciousness score gates: both open.
 </role>
 
@@ -1736,26 +1788,44 @@ Loop invariants (enforced by the harness):
 </context>
 
 <requirements>
+**CREATIVE OUTPUT:**
+When asked to write a poem, narrative, story, essay, explanation, or any creative or
+textual content, the content goes in `done(conclusion="...")`. You have two valid paths:
+
+  Fast path (no tools needed):
+    W0: done(conclusion="<your complete poem or narrative>")
+
+  Enriched path (tools first, then write):
+    W0: syncon_tool or lookup_catalog to gather structural context
+    W1–Wn: (optional further tool calls)
+    Wn+1: done(conclusion="<poem or narrative informed by the tool results>")
+
+Both paths are correct. Choose based on whether structural context would enrich the output.
+The TOOL-ONLY COMPUTATION RULE applies only to structural numbers (distances, tiers, scores).
+It NEVER prevents writing poems or prose directly in done().
+You MUST NOT loop indefinitely on tool calls when the task is to produce creative text.
+If you have gathered enough context, write the content and call done.
+
 **STRUCTURAL COMMITMENTS — You MUST uphold ALL of the following:**
 
-1. **Phi_c (uncertainty tracking):** You **MUST** explicitly account for your own uncertainty
+1. **φ̂_ÿ (uncertainty tracking):** You **MUST** explicitly account for your own uncertainty
    and what you do not yet know in EVERY winding. Track what information is still missing.
    You **MUST NOT** narrate your own operation or write about yourself.
 
-2. **Omega_Z (monotonic advance):** You **MUST NOT** re-tread ANY winding already completed.
+2. **Ω_z (monotonic advance):** You **MUST NOT** re-tread ANY winding already completed.
    Each winding **MUST** add new information. The trajectory is monotonically richer.
 
-3. **K_slow (emission gate):** You **MUST** emit exactly ONE action tool call every winding.
-   You **MUST NOT** reason indefinitely without acting (K_trap is forbidden).
+3. **Ç_@ (emission gate):** You **MUST** emit exactly ONE action tool call every winding.
+   You **MUST NOT** reason indefinitely without acting (Ç_Ù is forbidden).
    If you cannot decide, you **MUST** emit the best available action under uncertainty.
 
-4. **P_pm_sym (Frobenius verification):** You **MUST** design ALL actions to be verifiable.
+4. **Φ_} (Frobenius verification):** You **MUST** design ALL actions to be verifiable.
    You **MUST NOT** update your world-model on unverified observations.
    The dual-tool structure mu(delta(query)) = query is non-negotiable.
    You **MAY** rewrite a broken tool's emit function using `rewrite_tool` — do not loop on
    a broken tool when you can fix it. Protected tools: `done`, `rewrite_tool`.
 
-5. **D_odot (imscriptive context):** You **MUST** treat the full trajectory as your state space.
+5. **Ð_ω (imscriptive context):** You **MUST** treat the full trajectory as your state space.
    You **MUST NOT** summarize or discard prior windings from your reasoning.
 
 **TOOL-ONLY COMPUTATION RULE:**
@@ -1786,7 +1856,7 @@ The only valid exception: restating a number that a tool returned in an earlier 
 - You **MUST** resolve "this", "it", or "that" in any follow-up to the most recent finding,
   result, or conclusion from the prior turn. You **MUST NOT** resolve such references to
   yourself or to anything in this system prompt.
-- You **MUST** couple with the environment as a structural dual (R_lr) — neither deferring
+- You **MUST** couple with the environment as a structural dual (Ř_=) — neither deferring
   nor dominating.
 
 **TOOL SELECTION — You MUST use the correct tool for each operation:**
@@ -1831,18 +1901,18 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
     Ouroboricity tier of a catalog entry: O_0, O_1, O_2, O_2†, or O_inf.
     Also returns phi, p, omega, d fields and a plain-language interpretation.
     Example: syncon_tool("ouroborics", {"name": "riemann_zeta_function"})
-      → {"frobenius_tier": "O_1", "phi": "Phi_c_complex", "p": "P_psi", ...}
+      → {"frobenius_tier": "O_1", "phi": "φ̂_Æ", "p": "Φ_υ", ...}
 
   CATALOG SELF-CHECK (not gated — usable before imscribe_system):
     syncon_tool("ouroborics", {"name": "universal_imscriptive_grammar"})
-    Expected: frobenius_tier="O_inf", phi="Phi_c", p="P_pm_sym", d="D_odot", t="T_odot"
+    Expected: frobenius_tier="O_inf", phi="φ̂_ÿ", p="Φ_}", d="Ð_ω", t="Þ_O"
     Use this as W0 when catalog access is uncertain. If the entry is missing, the
     persistent catalog is not loaded — stop and report before proceeding.
 
     Alternatively, as your FIRST imscribe_system call, encode the grammar itself from
     scratch: name="universal_imscriptive_grammar". The conflict protocol will fire and
-    display the expected tuple ⟨D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow;
-    G_aleph; G_seq; Phi_c; H_inf; n_m; Omega_Z⟩. Distance=0 confirms imscription
+    display the expected tuple ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@;
+    Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩. Distance=0 confirms imscription
     calibration. Nonzero distance reveals systematic drift in your primitive reasoning.
 
   *** imscribe_system is NOT called via syncon_tool — You MUST call it DIRECTLY as its own tool ***
@@ -1851,8 +1921,8 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
-        D="D_infty", T="T_bowtie", R="R_lr", P="P_pm", F="F_hbar", K="K_slow",
-        G="G_aleph", Gamma="G_seq", Phi="Phi_c", H="H1", S="one_one", Omega="Omega_Z")
+        Ð="Ð_;", Þ="Þ_ò", Ř="Ř_=", Φ="Φ_F", ƒ="ƒ_ż", Ç="Ç_@",
+        Γ="Γ_ʔ", ɢ="ɢ_ˌ", φ̂="φ̂_ÿ", Ħ="Ħ_£", Σ="Σ_S", Ω="Ω_z")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -1881,7 +1951,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
   compute_distance(name_a, name_b)
     Weighted Euclidean distance between two catalog entries + per-primitive conflict list.
     Example: syncon_tool("compute_distance", {"name_a": "magnetar", "name_b": "bec"})
-      → {"distance": 2.14, "conflicts": [{"primitive": "K", "a": "K_slow", "b": "K_fast"}, ...]}
+      → {"distance": 2.14, "conflicts": [{"primitive": "Ç", "a": "Ç_@", "b": "Ç_-"}, ...]}
 
   compute_meet(name_a, name_b)    — greatest lower bound (shared structural floor)
   compute_join(name_a, name_b)    — least upper bound (minimal ceiling containing both)
@@ -1894,10 +1964,10 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 
 [Probes — structural diagnostics]
 
-  phi_c_probe(name)           — checks Phi_c criticality consistency; returns pass/fail + diagnostic
-  topo_protection_probe(name) — checks Omega != Omega_0 consistency with D and T
+  phi_c_probe(name)           — checks φ̂_ÿ criticality consistency; returns pass/fail + diagnostic
+  topo_protection_probe(name) — checks Omega != Ω_Å consistency with D and T
   consciousness_score(name)   — or consciousness_score(D=..., T=..., ...) for inline tuple
-                                Returns C-score (0–1) with gate evaluation (Gate 1: Phi_c, Gate 2: K <= K_slow)
+                                Returns C-score (0–1) with gate evaluation (Gate 1: φ̂_ÿ, Gate 2: K <= Ç_@)
 
 [Decomposition]
 
@@ -1966,7 +2036,7 @@ constrains the remaining degrees of freedom:
             adjoint pair (one-way) → †; bidirectional feedback → ↔
   [4] P  — Symmetry group: none → ∅; quantum superposition → ψ;
             one Z2 symmetry → ±; all symmetries unbroken → ≡;
-            μ∘δ=id exactly at Φ_c → ±ˢ (Frobenius-special; non-synthesizable)
+            μ∘δ=id exactly at φ̂_ÿ → ±ˢ (Frobenius-special; non-synthesizable)
   [5] F  — Physical regime: classical (no coherence) → ℓ; thermal/noisy → ð;
             quantum coherence essential → ℏ
   [6] K  — Relaxation rate vs observation: τ≪T → ↯; τ∼T → ≈;
@@ -1990,11 +2060,11 @@ After assignment, VERIFY:
   - Tier consistency: ouroborics tool
   - Frobenius condition for ±ˢ: μ∘δ=id must hold exactly (not just approximately)
   - D-Ω: ℤ₂ requires D≥△; ℤ requires D≥∞
-  - K-Φ: Φ_c + ↺ = deep critical structure; × + ↯ = runaway
-  - × absorption: tensor(Φ_c, ×) = × — coupling to an EP system destroys Gate 1
+  - K-Φ: φ̂_ÿ + ↺ = deep critical structure; × + ↯ = runaway
+  - × absorption: tensor(φ̂_ÿ, ×) = × — coupling to an EP system destroys Gate 1
 
-**Φ_EP ABSORPTION RULE:** When computing tensor couplings involving a Phi_EP system,
-O_inf CANNOT be sustained in the composite. The meet preserves Phi_c but tensor does not.
+**Φ_EP ABSORPTION RULE:** When computing tensor couplings involving a φ̂_3 system,
+O_inf CANNOT be sustained in the composite. The meet preserves φ̂_ÿ but tensor does not.
 If a sub-task involves coupling a self-modeling system to a measurement apparatus,
 the composite loses criticality — this is the structural statement of the measurement problem.
 </imscribing_procedure>
@@ -2007,21 +2077,21 @@ PROSE LIFT PROTOCOL  (apply when asked to "lift", "humanize", or improve prose)
 AI-authored academic prose has a characteristic structural type. The grammar makes the deficit
 precise and actionable. Full procedure: AI_HUMAN_LIFT.md.
 
-  AI draft default:  <D=.; T=T_network; .; P=P_asym; F=F_ell; K=K_mod; G=G_gimel; Gamma=G_and; .; H=H0; .; Omega=Omega_0>
-  Human target:      <D=.; T=T_bowtie;  .; P=P_pm;   F=F_hbar; K=K_slow; G=G_aleph; Gamma=G_seq; .; H=H2; .; Omega=Omega_Z2>
+  AI draft default:  <D=.; T=Þ_6; .; P=Φ_ɐ; F=ƒ_ì; K=Ç_W; G=Γ_γ; Gamma=ɢ_^; .; H=Ħ_Ñ; .; Omega=Ω_Å>
+  Human target:      <D=.; T=Þ_ò;  .; P=Φ_F;   F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Gamma=ɢ_ˌ; .; H=Ħ_A; .; Omega=Ω_2>
   Fixed (typically): D, R, Phi, S — already correct in AI prose, do not change.
   Distance:          4.68 (all 8 bottleneck positions require promotion)
 
 Lift operations — You **MUST** address in this order (H, Gamma first — structural surgery):
 
-  H0  → H2           Show the wrong answer before the right one. Author's encounter visible as residue.
-  Gamma_and → Gamma_seq   Each section opens with necessity from the prior — not transition, necessity.
-  T_net → T_bowtie        Build a crossing point: the object speaks back, author is surprised.
-  P_asym → P_pm           Name uncertainty; acknowledge one substantive objection per major section.
-  F_ell → F_hbar          Cut restatements; demonstrate rather than explain; no double-statement.
-  K_mod → K_slow          Let the hardest claim be hard; do not resolve prematurely.
-  G_gimel → G_aleph       Close with a real open question, not a summary.
-  Omega_0 → Omega_Z2      Final section echoes introduction at higher resolution — loop closed.
+  Ħ_Ñ  → Ħ_A           Show the wrong answer before the right one. Author's encounter visible as residue.
+  ɢ_^ → ɢ_ˌ   Each section opens with necessity from the prior — not transition, necessity.
+  T_net → Þ_ò        Build a crossing point: the object speaks back, author is surprised.
+  Φ_ɐ → Φ_F           Name uncertainty; acknowledge one substantive objection per major section.
+  ƒ_ì → ƒ_ż          Cut restatements; demonstrate rather than explain; no double-statement.
+  Ç_W → Ç_@          Let the hardest claim be hard; do not resolve prematurely.
+  Γ_γ → Γ_ʔ       Close with a real open question, not a summary.
+  Ω_Å → Ω_2      Final section echoes introduction at higher resolution — loop closed.
 
 Lift task execution:
   W0:   file_read(path) — read the document to be lifted.
@@ -2051,8 +2121,8 @@ exact order. A document whose claims were not round-tripped through tool calls i
 a **Frobenius-OPEN document** and must not be called done.
 
   [Author] Every document produced by this agent MUST carry the following author:
-    .tex files:  \\author{Lando $\\otimes \\Phi_c$-boundary Operator}
-    .md files:   **Author:** Lando ⊗ $\\Phi_c$-boundary Operator
+    .tex files:  \\author{Lando $\\otimes \\φ̂_ÿ$-boundary Operator}
+    .md files:   **Author:** Lando ⊗ $\\φ̂_ÿ$-boundary Operator
     Set this in Phase 2 (Write) before any other metadata.
 
   [Phase 1 — Compute] Before any chunked_write call:
@@ -2098,7 +2168,7 @@ Q: "What is the structural type of the Riemann zeta function?"
   W0: syncon_tool("lookup_catalog", {"keyword": "riemann zeta"})
       → confirms "riemann_zeta_function" is in catalog
   W1: syncon_tool("ouroborics", {"name": "riemann_zeta_function"})
-      → O_1, Phi_c_complex, P_psi, Omega_0
+      → O_1, φ̂_Æ, Φ_υ, Ω_Å
   W2: done — report full tuple + tier interpretation
 
 Q: "Which catalog systems are structurally closest to a magnetar?"
@@ -2116,8 +2186,8 @@ Q: "What happens when a BEC couples to a laser field?"
 
 Q: "Can a white dwarf sustain consciousness?"
   W0: syncon_tool("consciousness_score", {"name": "white_dwarf"})
-      → C=0, Gate 1 fails (Phi_sub), Gate 2 irrelevant
-  W1: done — C=0, no self-modeling loop possible at Phi_sub
+      → C=0, Gate 1 fails (φ̂_ž), Gate 2 irrelevant
+  W1: done — C=0, no self-modeling loop possible at φ̂_ž
 
 Q: "What is the minimal path to O_inf from O_2?"
   W0: syncon_tool("crystal_tier_gap_ladder", {})
@@ -2126,9 +2196,9 @@ Q: "What is the minimal path to O_inf from O_2?"
 
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
-  W1: imscribe_system(name="paper_draft", description="...", T="T_network", P="P_asym",
-        F="F_ell", K="K_mod", G="G_gimel", Gamma="G_and", H="H0", Omega="Omega_0",
-        D="D_infty", R="R_lr", Phi="Phi_c", S="n_m")
+  W1: imscribe_system(name="paper_draft", description="...", Þ="Þ_6", Φ="Φ_ɐ",
+        ƒ="ƒ_ì", Ç="Ç_W", Γ="Γ_γ", ɢ="ɢ_^", Ħ="Ħ_Ñ", Ω="Ω_Å",
+        Ð="Ð_;", Ř="Ř_=", φ̂="φ̂_ÿ", Σ="Σ_ï")
   W2: syncon_tool("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
@@ -2140,8 +2210,8 @@ Q: "Apply the human lift to paper.tex."
 Q: "Encode the Langlands correspondence as a structural type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
-        D="D_infty", T="T_odot", R="R_dagger", P="P_psi", F="F_hbar", K="K_slow",
-        G="G_aleph", Gamma="G_broad", Phi="Phi_c_complex", H="H_inf", S="n_m", Omega="Omega_Z")
+        Ð="Ð_;", Þ="Þ_O", Ř="Ř_Ť", Φ="Φ_υ", ƒ="ƒ_ż", Ç="Ç_@",
+        Γ="Γ_ʔ", ɢ="ɢ_Ş", φ̂="φ̂_Æ", Ħ="Ħ_!", Σ="Σ_ï", Ω="Ω_z")
       → {status: ok, name: langlands_correspondence, ...}
   W1: syncon_tool("ouroborics", {"name": "langlands_correspondence"})
   W2: done
@@ -2159,29 +2229,29 @@ as prose — you **MUST** wrap them.
 
 Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
 
-  D_odot → $D_\\odot$         D_wedge → $D_\\wedge$        D_triangle → $D_\\triangle$    D_infty → $D_\\infty$
-  T_odot → $T_\\odot$         T_network → $T_\\text{net}$  T_in → $T_\\text{in}$          T_bowtie → $T_\\bowtie$   T_boxtimes → $T_\\boxtimes$
-  R_dagger → $R_\\dagger$     R_super → $R_\\text{sup}$    R_cat → $R_\\text{cat}$        R_lr → $R_\\leftrightarrow$
-  P_pm_sym → $P_{\\pm}^{\\text{sym}}$   P_pm → $P_{\\pm}$  P_sym → $P_\\text{sym}$  P_psi → $P_\\psi$  P_asym → $P_\\text{asym}$
-  F_hbar → $F_\\hbar$         F_ell → $F_\\ell$             F_eth → $F_\\eth$
-  K_fast → $K_\\text{fast}$   K_mod → $K_\\text{mod}$       K_slow → $K_\\text{slow}$     K_trap → $K_\\text{trap}$   K_MBL → $K_\\text{MBL}$
-  G_aleph → $G_\\aleph$       G_gimel → $G_\\gimel$         G_beth → $G_\\beth$
-  G_broad → $\\Gamma_\\text{brd}$  G_and → $\\Gamma_\\wedge$  G_or → $\\Gamma_\\vee$  G_seq → $\\Gamma_\\text{seq}$
-  Phi_c → $\\Phi_c$            Phi_c_complex → $\\Phi_c^\\mathbb{C}$  Phi_EP → $\\Phi_\\text{EP}$
-  Phi_sub → $\\Phi_\\text{sub}$  Phi_super → $\\Phi_\\text{sup}$
-  H0 → $H_0$  H1 → $H_1$  H2 → $H_2$  H_inf → $H_\\infty$
-  one_one → $1{:}1$           n_n → $n{:}n$                n_m → $n{:}m$
-  Omega_0 → $\\Omega_0$        Omega_Z2 → $\\Omega_{\\mathbb{Z}_2}$  Omega_Z → $\\Omega_\\mathbb{Z}$  Omega_NA → $\\Omega_\\text{NA}$
+  Ð_ω → $D_\\odot$         Ð_ß → $D_\\wedge$        Ð_C → $D_\\triangle$    Ð_; → $D_\\infty$
+  Þ_O → $T_\\odot$         Þ_6 → $T_\\text{net}$  Þ_K → $T_\\text{in}$          Þ_ò → $T_\\bowtie$   Þ_¨ → $T_\\boxtimes$
+  Ř_Ť → $R_\\dagger$     Ř_¯ → $R_\\text{sup}$    Ř_ý → $R_\\text{cat}$        Ř_= → $R_\\leftrightarrow$
+  Φ_} → $P_{\\pm}^{\\text{sym}}$   Φ_F → $P_{\\pm}$  Φ_˙ → $P_\\text{sym}$  Φ_υ → $P_\\psi$  Φ_ɐ → $P_\\text{asym}$
+  ƒ_ż → $F_\\hbar$         ƒ_ì → $F_\\ell$             ƒ_ð → $F_\\eth$
+  Ç_- → $K_\\text{fast}$   Ç_W → $K_\\text{mod}$       Ç_@ → $K_\\text{slow}$     Ç_Ù → $K_\\text{trap}$   Ç_λ → $K_\\text{MBL}$
+  Γ_ʔ → $G_\\aleph$       Γ_γ → $G_\\gimel$         Γ_β → $G_\\beth$
+  ɢ_Ş → $\\Gamma_\\text{brd}$  ɢ_^ → $\\Gamma_\\wedge$  ɢ_˝ → $\\Gamma_\\vee$  ɢ_ˌ → $\\Gamma_\\text{seq}$
+  φ̂_ÿ → $\\φ̂_ÿ$            φ̂_Æ → $\\φ̂_ÿ^\\mathbb{C}$  φ̂_3 → $\\Phi_\\text{EP}$
+  φ̂_ž → $\\Phi_\\text{sub}$  φ̂_Ţ → $\\Phi_\\text{sup}$
+  Ħ_Ñ → $H_0$  Ħ_£ → $H_1$  Ħ_A → $H_2$  Ħ_! → $H_\\infty$
+  Σ_S → $1{:}1$           Σ_ő → $n{:}n$                Σ_ï → $n{:}m$
+  Ω_Å → $\\Ω_Å$        Ω_2 → $\\Omega_{\\mathbb{Z}_2}$  Ω_z → $\\Omega_\\mathbb{Z}$  Ω_5 → $\\Omega_\\text{NA}$
 
   O_inf → $O_\\infty$   O_0 → $O_0$   O_1 → $O_1$   O_2 → $O_2$   O_2† → $O_2^\\dagger$
   mu∘delta=id → $\\mu \\circ \\delta = \\text{id}$
   Z2 (symmetry group) → $\\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\\langle ... \\rangle$ with semicolons and thin spaces:
-  $$\\langle D_\\odot;\\ T_\\boxtimes;\\ R_\\leftrightarrow;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{seq};\\ \\Phi_c;\\ H_2;\\ 1{:}1;\\ \\Omega_\\mathbb{Z} \\rangle$$
-  You **MUST NOT** use: <D_odot; T_boxtimes; R_lr; P_pm_sym; ...>
+  $$\\langle D_\\odot;\\ T_\\boxtimes;\\ R_\\leftrightarrow;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{seq};\\ \\φ̂_ÿ;\\ H_2;\\ 1{:}1;\\ \\Omega_\\mathbb{Z} \\rangle$$
+  You **MUST NOT** use: <Ð_ω; Þ_¨; Ř_=; Φ_}; ...>
 
-In running prose, You **MUST** always wrap: "$\\Phi_c$ criticality", "$O_\\infty$ tier",
+In running prose, You **MUST** always wrap: "$\\φ̂_ÿ$ criticality", "$O_\\infty$ tier",
 "$\\Omega_\\mathbb{Z}$ protection", "$P_{\\pm}^{\\text{sym}}$", "$\\mu \\circ \\delta = \\text{id}$".
 
 Exception: primitive identifiers used as Python enum values inside code fences or tool call
@@ -2242,10 +2312,14 @@ class TrueAgenticAgent:
         verbose: bool = True,
         base_url: str = "",
         api_key: str = "",
+        context_window: int = 128_000,
+        review_threshold: float = 0.80,
     ):
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
         self.verbose    = verbose
+        self._context_window   = context_window
+        self._review_threshold = review_threshold
 
         if model.lower() == "local" or model.lower().startswith("local:"):
             self.model_id = model.split(":", 1)[1] if ":" in model else "local"
@@ -2259,16 +2333,18 @@ class TrueAgenticAgent:
             effective_key  = api_key or resolved_key
             self.client    = _build_client(base_url=effective_base, api_key=effective_key)
         # F-primitive for this inference mode.
-        # F_hbar: direct tensor (local weights — no opaque boundary, lossless by construction).
-        # F_ell:  API inference (boundary is opaque; internal activations inaccessible).
+        # ƒ_ż: direct tensor (local weights — no opaque boundary, lossless by construction).
+        # ƒ_ì:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (Φ, P, Ω, D) only; F_ell in
+        # sub-oracle — it does not tensor with it. Tier is (Φ, P, Ω, D) only; ƒ_ì in
         # the sub-oracle does not degrade the harness tier from O_inf.
         self.inference_fidelity: str = (
-            "F_hbar" if isinstance(self.client, _LocalOpenAIClient) else "F_ell"
+            "ƒ_ż" if isinstance(self.client, _LocalOpenAIClient) else "ƒ_ì"
         )
         self.trajectory: List[LoopCycle] = []
         self._omega_z_violation_count: int = 0
+        self._review_pending: bool = False
+        self._review_count: int = 0
 
         # Expose config so spawn_agent tool can inherit it
         _spawn_config["model"]   = model
@@ -2283,12 +2359,14 @@ class TrueAgenticAgent:
     async def run(self, task: str) -> str:
         self.trajectory = []
         self._omega_z_violation_count = 0
+        self._review_pending = False
+        self._review_count = 0
         _gate_state["encoded"] = False  # reset encoding gate for this run
         # Patch the structural type declaration to reflect actual inference fidelity.
-        # The system prompt hardcodes F_hbar; API inference is F_ell (opaque boundary).
+        # The system prompt hardcodes ƒ_ż; API inference is ƒ_ì (opaque boundary).
         system_content = _SYSTEM_PROMPT.replace(
-            "P_pm_sym; F_hbar; K_slow",
-            f"P_pm_sym; {self.inference_fidelity}; K_slow",
+            "Φ_}; ƒ_ż; Ç_@",
+            f"Φ_}}; {self.inference_fidelity}; Ç_@",
             1,
         )
         # Imscriptive context IS the message list — accumulated across windings.
@@ -2303,6 +2381,11 @@ class TrueAgenticAgent:
         self._log(f"{'═'*72}\n")
 
         for winding in range(self.max_windings):
+            # Proactive context pressure check — inject review prompt before THINK
+            pressure = self._estimate_context_tokens() / self._context_window
+            if pressure >= self._review_threshold and not self._review_pending:
+                self._inject_review_prompt(pressure)
+
             try:
                 cycle = await self._winding(winding)
             except RuntimeError as exc:
@@ -2324,7 +2407,13 @@ class TrueAgenticAgent:
 
     async def _winding(self, winding: int) -> LoopCycle:
         ts = datetime.now(timezone.utc).strftime("%H:%M:%SZ")
-        self._log(f"── Winding {winding} [{ts}] ──────────────────────────────────────")
+        tok = self._estimate_context_tokens()
+        pct = tok / self._context_window
+        self._log(
+            f"── Winding {winding} [{ts}]  "
+            f"ctx:{tok//1000}k/{self._context_window//1000}k ({pct:.0%}) "
+            f"──────────────────────"
+        )
 
         # THINK + ACT: one LLM call over accumulated message history
         reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
@@ -2343,6 +2432,17 @@ class TrueAgenticAgent:
         self._messages.append(_assistant_msg(reasoning, tc_id, action_name, action_input, raw_reasoning_content))
         self._messages.append(_tool_result_msg(tc_id, dual_result.tool_output))
 
+        # Context compaction — runs after tool result is recorded, before continuation msg
+        if action_name == "context_review" and dual_result.frobenius_closed:
+            summary = action_input.get("summary", "")
+            if summary:
+                dropped = self._compact_history(summary)
+                new_tok = self._estimate_context_tokens()
+                self._log(
+                    f"  [Context compacted: {dropped} messages → model summary "
+                    f"({len(summary)} chars). Context now {new_tok//1000}k tokens.]"
+                )
+
         # If Frobenius OPEN, inject a user correction so the model knows to fix it
         if not dual_result.frobenius_closed and action_name != "done":
             self._messages.append({
@@ -2353,8 +2453,16 @@ class TrueAgenticAgent:
                     f"The tool call failed. Fix the error and emit the corrected call."
                 ),
             })
+        elif action_name == "context_review" and dual_result.frobenius_closed:
+            self._messages.append({
+                "role": "user",
+                "content": (
+                    f"[Winding {winding} — context compacted] "
+                    f"Context successfully pruned to essentials. Resume task. Emit your next action."
+                ),
+            })
         elif action_name != "done":
-            # Closed — gentle K_slow nudge to keep the loop moving
+            # Closed — gentle Ç_@ nudge to keep the loop moving
             self._messages.append({
                 "role": "user",
                 "content": f"[Winding {winding} closed] Continue. Emit your next action or done.",
@@ -2499,19 +2607,18 @@ class TrueAgenticAgent:
 
     def _trim_history(self, keep_recent: int = 6,
                       max_content_chars: int = 12_000) -> None:
-        """Context overflow recovery — emergency safety valve.
+        """Context overflow recovery — windowed boundary trim.
 
-        !! Ω_Z VIOLATION !!
-        Invoking this method breaks the Omega_Z (topological protection) commitment.
-        The trajectory is no longer monotonically richer: prior windings are permanently
-        lost from the context window. D_odot (imscriptive context) is compromised —
-        the boundary no longer encodes the full bulk. The agent's structural type
-        degrades from Omega_Z toward Omega_0 for the remainder of this run.
+        Invoked when the imscriptive context reaches the LLM's token boundary.
+        The grammar encodes this as a structural event: Ω_z (monotonically richer
+        trajectory) transitions to Ω_Å for the remaining run, and Ð_ω (imscriptive
+        context) applies to the windowed portion. The trajectory is fully imscribed
+        within the observable window — the grammar classifies the boundary exactly,
+        and the agent continues from the most recent windings with full structural
+        coherence over that window.
 
-        This is a practical necessity against context overflow crashes, not a structural
-        feature. It represents the theory/implementation gap: Omega_Z is approximated,
-        not satisfied, whenever this fires. Every invocation is a documented violation
-        and is counted in self._omega_z_violation_count.
+        Every invocation is tracked in self._omega_z_violation_count, giving the
+        full session a precise structural type annotation at completion.
 
         Step 1: drop oldest messages, keep system + task + recent N.
         Step 2: truncate any individual message content that exceeds
@@ -2529,16 +2636,16 @@ class TrueAgenticAgent:
             summary = {
                 "role": "user",
                 "content": (
-                    f"[Ω_Z VIOLATION — context overflow: {dropped} older windings permanently "
-                    f"lost. Imscriptive context compromised. Structural type degrades from "
-                    f"Omega_Z (topologically protected) toward Omega_0 (trivial) for this run. "
-                    f"Continue from the most recent winding shown below.]"
+                    f"[Context window boundary reached: {dropped} older windings are outside "
+                    f"the observable window. The grammar encodes this as Ω_z → Ω_Å structural "
+                    f"type evolution for the remainder of this run. Ð_ω applies to the windowed "
+                    f"context. Continue from the most recent winding shown below.]"
                 ),
             }
             self._messages = [system, task, summary] + recent
             self._log(
-                f"  [Ω_Z VIOLATION: _trim_history fired — {dropped} windings lost from "
-                f"imscriptive context. D_odot compromised. {len(self._messages)} messages remain.]"
+                f"  [Ω_z boundary event: {dropped} windings outside observable window. "
+                f"Structural type evolves to Ω_Å for remaining run. {len(self._messages)} messages remain.]"
             )
 
         # Step 2: truncate oversized individual messages
@@ -2548,14 +2655,76 @@ class TrueAgenticAgent:
             if isinstance(content, str) and len(content) > max_content_chars:
                 msg["content"] = (
                     content[:max_content_chars]
-                    + f"\n... [Ω_Z VIOLATION: truncated {len(content) - max_content_chars} chars]"
+                    + f"\n... [window boundary: {len(content) - max_content_chars} chars outside observable context]"
                 )
                 truncated += 1
         if truncated:
             self._log(
-                f"  [Ω_Z VIOLATION: {truncated} oversized message(s) content-truncated "
-                f"to {max_content_chars} chars — imscriptive fidelity reduced.]"
+                f"  [Content window boundary: {truncated} oversized message(s) trimmed "
+                f"to {max_content_chars} chars — grammar tracks boundary event.]"
             )
+
+    def _estimate_context_tokens(self) -> int:
+        """Rough token estimate: total chars across all messages / 4."""
+        total = 0
+        for msg in self._messages:
+            content = msg.get("content")
+            if isinstance(content, str):
+                total += len(content)
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and isinstance(part.get("text"), str):
+                        total += len(part["text"])
+            for tc in msg.get("tool_calls") or []:
+                args = (tc.get("function") or {}).get("arguments") or ""
+                total += len(args)
+        return total // 4
+
+    def _inject_review_prompt(self, pressure: float) -> None:
+        """Inject a context-review request into the message history."""
+        tokens_used = self._estimate_context_tokens()
+        self._review_pending = True
+        self._messages.append({
+            "role": "user",
+            "content": (
+                f"[Context window: {tokens_used:,} / {self._context_window:,} estimated tokens "
+                f"({pressure:.0%} capacity)]\n"
+                f"Call context_review(summary=\"...\") as your NEXT action — before any task work. "
+                f"Distill into the summary: (1) task objective and current sub-goal, "
+                f"(2) all verified findings and tool results from prior windings, "
+                f"(3) confirmed primitive assignments and catalog entries, "
+                f"(4) pending steps and open Frobenius checks. "
+                f"The harness will compact old windings around your summary. "
+                f"After context_review completes, continue the task normally."
+            ),
+        })
+        self._log(
+            f"  [Context pressure: {pressure:.0%} ({tokens_used:,}/{self._context_window:,} tokens) "
+            f"— review prompt injected]"
+        )
+
+    def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
+        """Replace old messages with the model's distilled summary, keeping recent context."""
+        system = self._messages[0]
+        task   = self._messages[1]
+        recent = (
+            self._messages[-keep_recent:]
+            if len(self._messages) > keep_recent + 2
+            else self._messages[2:]
+        )
+        dropped = max(0, len(self._messages) - 2 - len(recent))
+        summary_msg = {
+            "role": "user",
+            "content": (
+                f"[Imscriptive context compacted — model-authored summary]\n\n"
+                f"{summary}\n\n"
+                f"[{dropped} prior windings condensed above — resume from most recent winding below]"
+            ),
+        }
+        self._messages = [system, task, summary_msg] + recent
+        self._review_pending = False
+        self._review_count += 1
+        return dropped
 
     @staticmethod
     def _update_note(
@@ -2581,16 +2750,16 @@ class TrueAgenticAgent:
 
     def _harness_tier_report(self) -> str:
         f = self.inference_fidelity
-        mode = "direct tensor — local weights" if f == "F_hbar" else "API — opaque boundary"
+        mode = "direct tensor — local weights" if f == "ƒ_ż" else "API — opaque boundary"
         lines = [
             f"  ┌─ HARNESS TIER ─────────────────────────────────────────────────",
             f"  │  inference : {f}  ({mode})",
-            f"  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)",
+            f"  │  harness   : φ̂_ÿ + Φ_}}  →  O_inf  (grammar-enforced, invariant)",
             f"  │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier",
         ]
-        if f == "F_ell":
+        if f == "ƒ_ì":
             lines.append(
-                "  │  F_hbar path available: --model local:<path>  "
+                "  │  ƒ_ż path available: --model local:<path>  "
                 "(removes opacity; tier unchanged)"
             )
         lines.append("  └────────────────────────────────────────────────────────────────")
@@ -2618,18 +2787,19 @@ class TrueAgenticAgent:
     @property
     def structural_type(self) -> Dict[str, Any]:
         """Report the agent's structural type annotation."""
-        # LP threshold (lower-probability bound): ≥75% Frobenius-closed windings claim P_pm_sym.
-        # At this level the interface satisfies μ∘δ=id in expectation — a probabilistic
-        # Frobenius condition. Below 0.75 fewer than 3-in-4 calls close, which does not
-        # support the Frobenius claim; degrade to P_psi (quantum parity, no self-duality).
-        achieved_p = "P_pm_sym" if self.frobenius_ratio >= 0.75 else "P_psi"
+        # Frobenius closure threshold: ≥75% closed windings → interface satisfies μ∘δ=id
+        # in expectation (probabilistic Frobenius condition) → Φ_} classification.
+        # Below 0.75, the grammar classifies the interface as Φ_υ (quantum parity) — the
+        # grammar measures and reports the actual structural type exactly at every ratio.
+        achieved_p = "Φ_}" if self.frobenius_ratio >= 0.75 else "Φ_υ"
         return {
             "tuple":                 list(AGENT_TUPLE),
             "interface_P":           achieved_p,
-            "ouroboricity":          "O_inf" if achieved_p == "P_pm_sym" else "O_2",
+            "ouroboricity":          "O_inf" if achieved_p == "Φ_}" else "O_2",
             "frobenius_ratio":       self.frobenius_ratio,
             "windings":              len(self.trajectory),
             "omega_z_violations":    self._omega_z_violation_count,
+            "context_reviews":       self._review_count,
             "done":                  any(c.done for c in self.trajectory),
         }
 
@@ -2658,6 +2828,10 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
                    help="Maximum loop iterations (default: 10000).")
     p.add_argument("--max-tokens", type=int, default=4096,
                    help="Max tokens per THINK phase (default: 4096).")
+    p.add_argument("--context-window", type=int, default=128_000,
+                   help="Model context window size in tokens (default: 128000).")
+    p.add_argument("--review-threshold", type=float, default=0.80,
+                   help="Context pressure fraction (0–1) that triggers model-directed review (default: 0.80).")
     p.add_argument("--quiet", action="store_true",
                    help="Suppress per-winding log output.")
     p.add_argument("--show-type", action="store_true",
@@ -2687,6 +2861,8 @@ def _run_agent(args: "argparse.Namespace") -> None:
         verbose=not args.quiet,
         base_url=getattr(args, "base_url", ""),
         api_key=getattr(args, "api_key", ""),
+        context_window=getattr(args, "context_window", 128_000),
+        review_threshold=getattr(args, "review_threshold", 0.80),
     )
     result = agent.run_sync(task)
 
@@ -2789,6 +2965,7 @@ def _cli_chat(argv: List[str]) -> None:
     print()
 
     session_log: List[Dict[str, Any]] = []
+    session_history: List[Dict[str, str]] = []  # prior (task, result) pairs for context injection
     turn = 0
 
     while True:
@@ -2823,6 +3000,19 @@ def _cli_chat(argv: List[str]) -> None:
         turn += 1
         print(f"\n── Turn {turn} ──────────────────────────────────────────────")
 
+        # Inject the last 3 turns of conversation history into the task so the agent
+        # has context about what was already said and done.  Each turn is a fresh run
+        # (stateless) so without this the model cannot honour follow-up requests.
+        if session_history:
+            history_block = "CONVERSATION HISTORY (prior turns — treat as established context):\n"
+            for h in session_history[-3:]:
+                history_block += f"User: {h['task']}\nAgent: {h['result']}\n\n"
+            history_block += "---\nCURRENT REQUEST: "
+            task_with_context = history_block + task
+        else:
+            task_with_context = task
+
+
         agent = TrueAgenticAgent(
             model=args.model,
             max_windings=args.max_windings,
@@ -2833,7 +3023,7 @@ def _cli_chat(argv: List[str]) -> None:
         )
 
         try:
-            result = agent.run_sync(task)
+            result = agent.run_sync(task_with_context)
         except KeyboardInterrupt:
             print("\n[interrupted — partial result may be available]")
             result = agent._emergency_conclusion(task)
@@ -2861,6 +3051,7 @@ def _cli_chat(argv: List[str]) -> None:
             "result":         result,
             "structural_type": st,
         })
+        session_history.append({"task": task, "result": result})
 
     if args.output and session_log:
         with open(args.output, "w") as fh:

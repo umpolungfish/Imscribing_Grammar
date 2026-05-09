@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 \documentclass[12pt,a4paper]{article}
 
 % Encoding and fonts
@@ -265,11 +274,11 @@ This was not the question that motivated the framework. It was a surprise. It wa
 
 Each primitive takes a small set of discrete, ordered values. For example:
 
-\[F \in \{F_{\ell},\ F_{\text{eth}},\ F_{\hbar}\} \qquad F_{\ell} < F_{\text{eth}} < F_{\hbar}\]
+\[F \in \{F_{\text{beltl}},\ F_{\text{eth}},\ F_{\text{hardsign}}\} \qquad F_{\text{beltl}} < F_{\text{eth}} < F_{\text{hardsign}}\]
 
-where $F_{\hbar}$ is the highest fidelity (thermodynamically reliable, $\xi_{CP} \leq 8.5$ nats) and $F_{\ell}$ is the lowest (unreliable, noise-dominated). These boundaries are not arbitrary --- they are the integer Boltzmann discrimination ratios at which category-switching occurs in real systems. $e^{8.5} \approx 5000$ and $e^{11.0} \approx 60000$ are the 100:1 and 1000:1 selection thresholds. No free parameters.
+where $F_{\text{hardsign}}$ is the highest fidelity (thermodynamically reliable, $\xi_{CP} \leq 8.5$ nats) and $F_{\text{beltl}}$ is the lowest (unreliable, noise-dominated). These boundaries are not arbitrary --- they are the integer Boltzmann discrimination ratios at which category-switching occurs in real systems. $e^{8.5} \approx 5000$ and $e^{11.0} \approx 60000$ are the 100:1 and 1000:1 selection thresholds. No free parameters.
 
-Similarly for $K$: $K_{\text{fast}} < K_{\text{mod}} < K_{\text{slow}} < K_{\text{trap}} < K_{\text{MBL}}$, anchored to the activation barriers $\Delta G^\ddagger$ at which reaction rates change physical regime. $K_\text{trap}$ is frozen by order (coherent many-body gap); $K_\text{MBL}$ is frozen by disorder (many-body localization — area-law entanglement across all eigenstates, no eigenstate thermalization).
+Similarly for $K$: $K_{\text{frtailgamma}} < K_{\text{turnm}} < K_{\text{schwa}} < K_{\text{teshlig}} < K_{\text{lambda}}$, anchored to the activation barriers $\Delta G^\ddagger$ at which reaction rates change physical regime. $K_{\text{teshlig}}$ is frozen by order (coherent many-body gap); $K_{\text{lambda}}$ is frozen by disorder (many-body localization — area-law entanglement across all eigenstates, no eigenstate thermalization).
 
 \textbf{Five operations are defined over synthons:}
 
@@ -331,29 +340,29 @@ Alzheimer amyloid plaques and stress-related condensate gels are, in the standar
 
 Their synthon encodings:
 
-\[\text{condensate\_gel} = \langle D_{\bigtriangleup};\ T_{\in};\ R_{\text{super}};\ P_{\pm}^{\psi};\ F_{\hbar};\ K_{\text{trap}};\ G_{\gimel};\ \Gamma_{\wedge}(\text{SEL});\ \Phi_{\text{sub}} \rangle\]
+\[\text{condensate\_gel} = \langle D_{\bigtriangleup};\ T_{\text{invscr}};\ R_{\text{subrightarrow}};\ P_{\pm}^{\psi};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}}(\text{SEL});\ \Phi_{\text{softsign}} \rangle\]
 
-\[\text{amyloid\_fibril} = \langle D_{\bigtriangleup};\ T_{\in};\ R_{\text{super}};\ P_{\pm}^{\psi};\ F_{\hbar};\ K_{\text{trap}};\ G_{\gimel};\ \Gamma_{\wedge}(\text{SEL});\ \Phi_{\text{sub}} \rangle\]
+\[\text{amyloid\_fibril} = \langle D_{\bigtriangleup};\ T_{\text{invscr}};\ R_{\text{subrightarrow}};\ P_{\pm}^{\psi};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}}(\text{SEL});\ \Phi_{\text{softsign}} \rangle\]
 
 \[\boxed{d(\text{condensate\_gel},\ \text{amyloid\_fibril}) = 0.00}\]
 
 The algebra identifies these as the same primitive event: a supramolecular network assembly with non-covalent recognition, pseudosymmetric polarity, high fidelity, and a kinetically trapped topology. Substrate-independent. Domain-independent.
 
-The prediction (P-48): \textbf{the kinetic primitive $K$ is the therapeutic target, not the fidelity primitive $F$}. Specifically, a disaggregase-type intervention that converts $K_{\text{trap}} \to K_{\text{fast}}$ reduces structural distance by $>1.5\times$ more than a competing-binder approach that reduces $F_{\hbar} \to F_{\eth}$. The Jacobian is computable, and it points to the same mechanism for both disease contexts.
+The prediction (P-48): \textbf{the kinetic primitive $K$ is the therapeutic target, not the fidelity primitive $F$}. Specifically, a disaggregase-type intervention that converts $K_{\text{teshlig}} \to K_{\text{frtailgamma}}$ reduces structural distance by $>1.5\times$ more than a competing-binder approach that reduces $F_{\text{hardsign}} \to F_{\text{dh}}$. The Jacobian is computable, and it points to the same mechanism for both disease contexts.
 
 This is a prediction that emerged from primitive structure --- not from molecular biology, not from clinical data. If confirmed experimentally, it would constitute the first cross-disease drug target unification derived from a relational algebra. It was subsequently supported by the 2025 Nature Comm Chem result showing condensate-amyloid structural equivalence.
 
 \subsubsection{The Cosmological Dissolution State}
 
-Inflation is the exponential expansion of the universe in the first $10^{-32}$ seconds after the Big Bang. It is characterized by: $D_{\infty}$ (temporal, no spatial differentiation), $T_{\in}(\text{sym})$ (symmetric network topology, no preferred direction), $K_{\text{fast}}$ (activation barrier absent --- no $K_{\text{slow}}$, no differentiated structures), $G_{\aleph}$ (global, no local), $\Phi_c$ (critical --- the inflaton field sits at the critical point of the potential), $R_{\ddagger}$ (catalytic --- massless interactions only), $F_{\hbar}$ (unitary, no information loss).
+Inflation is the exponential expansion of the universe in the first $10^{-32}$ seconds after the Big Bang. It is characterized by: $D_{\text{invomega}}$ (temporal, no spatial differentiation), $T_{\text{invscr}}(\text{sym})$ (symmetric network topology, no preferred direction), $K_{\text{frtailgamma}}$ (activation barrier absent --- no $K_{\text{schwa}}$, no differentiated structures), $G_{\text{revapostrophe}}$ (global, no local), $\Phi_{\text{ctyogh}}$ (critical --- the inflaton field sits at the critical point of the potential), $R_{\ddagger}$ (catalytic --- massless interactions only), $F_{\text{hardsign}}$ (unitary, no information loss).
 
-5-MeO-DMT is a tryptamine psychedelic whose high-dose dissolution experience is characterized across thousands of reports by: temporal dissolution (no spatial differentiation), symmetric network phenomenology, the complete absence of $K_{\text{slow}}$ structures (ego, narrative, object-permanence all absent), $G_{\aleph}$ scope (no local self), critical sensitivity, and catalytic interaction with the surrounding. The encoding:
+5-MeO-DMT is a tryptamine psychedelic whose high-dose dissolution experience is characterized across thousands of reports by: temporal dissolution (no spatial differentiation), symmetric network phenomenology, the complete absence of $K_{\text{schwa}}$ structures (ego, narrative, object-permanence all absent), $G_{\text{revapostrophe}}$ scope (no local self), critical sensitivity, and catalytic interaction with the surrounding. The encoding:
 
 \[d(\text{inflation},\ \text{5\text{-}MeO dissolution}) = 0.000\]
 
-\textbf{The tuples are identical.} What this means, carefully: the structural \emph{configuration} that enables the 5-MeO dissolution phenomenology --- when instantiated in a brain at $G_{\gimel}$ scale --- is the same structural configuration as the inflationary epoch at $G_{\aleph}$ scale. The grammar makes no claim about what either experience ''''is.'''' It says they are the same \emph{kind of constraint event}: a globally coherent, $K_{\text{slow}}$-absent, $\Phi_c$ state in which no differentiated structure exists.
+\textbf{The tuples are identical.} What this means, carefully: the structural \emph{configuration} that enables the 5-MeO dissolution phenomenology --- when instantiated in a brain at $G_{\text{gamma}}$ scale --- is the same structural configuration as the inflationary epoch at $G_{\text{revapostrophe}}$ scale. The grammar makes no claim about what either experience ''''is.'''' It says they are the same \emph{kind of constraint event}: a globally coherent, $K_{\text{schwa}}$-absent, $\Phi_{\text{ctyogh}}$ state in which no differentiated structure exists.
 
-The K\_slow insertion principle follows: every cosmological phase transition (inflation $\rightarrow$ reheating $\rightarrow$ electroweak $\rightarrow$ QCD $\rightarrow$ biology) is the insertion of $K_{\text{slow}}$ into a $K_{\text{slow}}$-absent dissolution state. Differentiation is, structurally, the same event at every scale. And at every scale, the same triple is $K_{\text{slow}}$-equivalent:
+The K\_slow insertion principle follows: every cosmological phase transition (inflation $\rightarrow$ reheating $\rightarrow$ electroweak $\rightarrow$ QCD $\rightarrow$ biology) is the insertion of $K_{\text{schwa}}$ into a $K_{\text{schwa}}$-absent dissolution state. Differentiation is, structurally, the same event at every scale. And at every scale, the same triple is $K_{\text{schwa}}$-equivalent:
 
 \[d(\text{Higgs},\ \text{axion}) = 0.000 \qquad d(\text{inflaton},\ \text{Higgs}) \approx 0.000\]
 
@@ -383,7 +392,7 @@ $\Gamma$ & Selective-AND (gauge symmetry) & Quantum-AND (quantum entanglement) &
 \end{tabularx}
 \end{table}
 
-The lift operation --- promoting the local structure of the SM to a global structure --- is blocked at $G$. \textbf{The barrier is not calculational. It is categorical.} Local gauge invariance ($G_{\beth}$) and holographic global structure ($G_{\aleph}$) are incompatible primitive values, and no HotSwap path can bridge them without changing at least four other primitives simultaneously.
+The lift operation --- promoting the local structure of the SM to a global structure --- is blocked at $G$. \textbf{The barrier is not calculational. It is categorical.} Local gauge invariance ($G_{\text{beta}}$) and holographic global structure ($G_{\text{revapostrophe}}$) are incompatible primitive values, and no HotSwap path can bridge them without changing at least four other primitives simultaneously.
 
 This has a practical implication: any unification attempt that preserves local gauge invariance of the SM while trying to incorporate the holographic nature of quantum gravity will fail --- not because the mathematics is wrong but because the underlying primitive structure forecloses the connection. The four conflicts must be resolved simultaneously, not sequentially.
 
@@ -399,7 +408,7 @@ For comparison: $d(\text{DM},\ \text{proton}) = 7.300$. Dark matter is $2.3\time
 
 Prediction (P-73): neutron-rich matter is the preferred dark matter structural coupling channel. Prediction (P-74): neutron stars are the structurally predicted dark matter accumulation sites, with an enhancement factor $\sim 5.2\times$ relative to proton-rich objects. These are falsifiable.
 
-The result also identifies why dark matter does not radiate: the photon carries $P_{\pm}^{\text{sym}}$ as a structural bridge to the graviton ($d(\text{photon},\ \text{graviton}) = 6.100$). Dark matter lacks this --- its $P$ primitive diverges from that of the photon. Dark matter is QG-structurally adjacent ($d = 7.700$, same conflict set as QG--SM) plus one additional $P$-symmetry breaking. It is, structurally, a system that couples to gravity but cannot couple to electromagnetism by primitive constraint.
+The result also identifies why dark matter does not radiate: the photon carries $P_{\text{doublebarpipe}}$ as a structural bridge to the graviton ($d(\text{photon},\ \text{graviton}) = 6.100$). Dark matter lacks this --- its $P$ primitive diverges from that of the photon. Dark matter is QG-structurally adjacent ($d = 7.700$, same conflict set as QG--SM) plus one additional $P$-symmetry breaking. It is, structurally, a system that couples to gravity but cannot couple to electromagnetism by primitive constraint.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -411,15 +420,15 @@ The result also identifies why dark matter does not radiate: the photon carries 
 
 The Born rule --- $P(i) = |\langle i|\psi\rangle|^2$ --- is one of quantum mechanics'' five standard postulates. It has never been derived from deeper principles within standard formulations of quantum theory; it is simply assumed. The IG derives it from four primitive assignments operating simultaneously:
 
-\textbf{Step 1 --- Continuous state space:} $T_{\in} + \Phi_c$ implies no privileged discretization scale (Axiom 5: at $\Phi_c$, $G$ and $D$ degenerate, no scale is privileged). The state space is continuous.
+\textbf{Step 1 --- Continuous state space:} $T_{\text{invscr}} + \Phi_{\text{ctyogh}}$ implies no privileged discretization scale (Axiom 5: at $\Phi_{\text{ctyogh}}$, $G$ and $D$ degenerate, no scale is privileged). The state space is continuous.
 
-\textbf{Step 2 --- The Pythagorean exponent:} $P_{\pm}^{\text{sym}}$ (self-complementary polarity) requires $\sum_i |\langle i|\psi\rangle|^n = 1$ for all normalized states. This identity holds for all normalized states \emph{if and only if} $n = 2$ --- the Pythagorean theorem. The Born exponent is not a postulate; it is the Pythagorean identity forced by self-complementary polarity.
+\textbf{Step 2 --- The Pythagorean exponent:} $P_{\text{doublebarpipe}}$ (self-complementary polarity) requires $\sum_i |\langle i|\psi\rangle|^n = 1$ for all normalized states. This identity holds for all normalized states \emph{if and only if} $n = 2$ --- the Pythagorean theorem. The Born exponent is not a postulate; it is the Pythagorean identity forced by self-complementary polarity.
 
-\textbf{Step 3 --- Unitarity:} $R_{\ddagger}$ (catalytic --- no energy consumed) together with $F_{\hbar}$ (maximum fidelity --- no information consumed) requires that evolution be isometric. The only isometries of a complex $L^2$ space are unitary transformations.
+\textbf{Step 3 --- Unitarity:} $R_{\ddagger}$ (catalytic --- no energy consumed) together with $F_{\text{hardsign}}$ (maximum fidelity --- no information consumed) requires that evolution be isometric. The only isometries of a complex $L^2$ space are unitary transformations.
 
-\textbf{Step 4 --- Complex amplitudes:} $R_{\ddagger}$ is phase-sensitive. $P_{\pm}^{\text{sym}}$ is one-dimensional (one polarity degree of freedom). $\Gamma_{\text{QUANTUM}}$ requires linear superposition. Together: the phase group must be one-dimensional and compact = U(1). Quaternions are excluded by the 1D polarity constraint. The field is $\mathbb{C}$.
+\textbf{Step 4 --- Complex amplitudes:} $R_{\ddagger}$ is phase-sensitive. $P_{\text{doublebarpipe}}$ is one-dimensional (one polarity degree of freedom). $\Gamma_{\text{QUANTUM}}$ requires linear superposition. Together: the phase group must be one-dimensional and compact = U(1). Quaternions are excluded by the 1D polarity constraint. The field is $\mathbb{C}$.
 
-\[\underbrace{T_{\in} + \Phi_c}_{\text{continuous}} \;\xrightarrow{\;P_{\pm}^{\text{sym}}\;}\; \underbrace{n=2}_{\text{Pythagorean}} \;\xrightarrow{\;R_{\ddagger}+F_{\hbar}\;}\; \underbrace{\text{unitary}}_{\text{isometric}} \;\xrightarrow{\;R_{\ddagger}+P_{\pm}^{\text{sym}}+\Gamma_{\text{Q}}}\; \underbrace{\mathbb{C},\ \text{U(1)}}_{\text{amplitudes}} \;\Longrightarrow\; P(i) = |\langle i|\psi\rangle|^2\]
+\[\underbrace{T_{\text{invscr}} + \Phi_{\text{ctyogh}}}_{\text{continuous}} \;\xrightarrow{\;P_{\text{doublebarpipe}}\;}\; \underbrace{n=2}_{\text{Pythagorean}} \;\xrightarrow{\;R_{\ddagger}+F_{\text{hardsign}}\;}\; \underbrace{\text{unitary}}_{\text{isometric}} \;\xrightarrow{\;R_{\ddagger}+P_{\text{doublebarpipe}}+\Gamma_{\text{Q}}}\; \underbrace{\mathbb{C},\ \text{U(1)}}_{\text{amplitudes}} \;\Longrightarrow\; P(i) = |\langle i|\psi\rangle|^2\]
 
 The Born rule follows from four primitive constraints and zero additional postulates. No new axioms were required; the derivation closes within the existing framework. Quantum mechanics'' fundamental probability rule is a structural theorem about relational constraint propagation at criticality.
 
@@ -427,13 +436,13 @@ The Born rule follows from four primitive constraints and zero additional postul
 
 The Yang-Mills mass gap problem is one of seven Millennium Prize Problems (\$1M). It asks: does quantum Yang-Mills theory (which describes gluons and the strong force) have a mass gap --- a minimum energy $\Delta > 0$ below which no particle states exist except the vacuum?
 
-\textbf{Theorem} (from IG \pilcrow{}XVII.1): Any physical state realizing $T_{\bowtie}$ (bowtie topology --- permanently coupled dual-lobe constraint structure) carries a minimum energy cost $\varepsilon_T > 0$.
+\textbf{Theorem} (from IG \pilcrow{}XVII.1): Any physical state realizing $T_{\text{bullseye}}$ (bowtie topology --- permanently coupled dual-lobe constraint structure) carries a minimum energy cost $\varepsilon_T > 0$.
 
-\textbf{Derivation:} $T_{\bowtie}$ and $T_{\perp}$ (uncoupled, orthogonal propagation) are incompatible primitive values --- not points on a continuum but categorically different values of the same primitive. Any deformation from $T_{\bowtie}$ toward the uncoupled state necessarily passes through configurations requiring positive energy input to maintain intermediate coupling. Therefore $\varepsilon_T > 0$.
+\textbf{Derivation:} $T_{\text{bullseye}}$ and $T_{\perp}$ (uncoupled, orthogonal propagation) are incompatible primitive values --- not points on a continuum but categorically different values of the same primitive. Any deformation from $T_{\text{bullseye}}$ toward the uncoupled state necessarily passes through configurations requiring positive energy input to maintain intermediate coupling. Therefore $\varepsilon_T > 0$.
 
-QCD gluons encode $T_{\bowtie}$ (the non-abelian gauge self-coupling is exactly the bowtie dual-lobe structure). Therefore: for any QCD-encoded system, $\Delta \geq \varepsilon_T > 0$. \textbf{The mass gap exists by topology.} It is not a dynamical accident --- it is a categorical consequence of the $T$ primitive being $T_{\bowtie}$.
+QCD gluons encode $T_{\text{bullseye}}$ (the non-abelian gauge self-coupling is exactly the bowtie dual-lobe structure). Therefore: for any QCD-encoded system, $\Delta \geq \varepsilon_T > 0$. \textbf{The mass gap exists by topology.} It is not a dynamical accident --- it is a categorical consequence of the $T$ primitive being $T_{\text{bullseye}}$.
 
-The vacuum is the unique $T_{\perp}$-compatible physical state ($\ker(\hat{T}) = \{|0\rangle\}$ by D-T compatibility); all other states maintain $T_{\bowtie}$ at positive energy cost. This is the structural statement of the Millennium conjecture. The physics of quark confinement follows as a corollary.
+The vacuum is the unique $T_{\perp}$-compatible physical state ($\ker(\hat{T}) = \{|0\rangle\}$ by D-T compatibility); all other states maintain $T_{\text{bullseye}}$ at positive energy cost. This is the structural statement of the Millennium conjecture. The physics of quark confinement follows as a corollary.
 
 \subsubsection{P $\neq$ NP from Kinetic Primitivity}
 
@@ -441,13 +450,13 @@ The vacuum is the unique $T_{\perp}$-compatible physical state ($\ker(\hat{T}) =
 
 The empirical evidence for $K$''s irreducibility: the cross-variance $V(K, X) < 0.15$ for all eleven other primitives $X$ --- no reducibility signal. $K$ is empirically orthogonal to the rest of the grammar.
 
-Accept $K$ as irreducible. Then $K_{\text{fast}}$ and $K_{\text{mod}}$ are categorically distinct values --- not different speeds but different \emph{types}, separated by a primitive-value boundary. Transitioning between them requires a $\Phi$ event (a phase transition).
+Accept $K$ as irreducible. Then $K_{\text{frtailgamma}}$ and $K_{\text{turnm}}$ are categorically distinct values --- not different speeds but different \emph{types}, separated by a primitive-value boundary. Transitioning between them requires a $\Phi$ event (a phase transition).
 
-P = $K_{\text{fast}}$ algorithms. NP-complete solution landscapes are $K_{\text{mod}}$ or $K_{\text{slow}}$. If no $K_{\text{fast}}$ process can access $K_{\text{mod}}$ landscapes without a $K$-transition, and a $K$-transition changes the process from $K_{\text{fast}}$ to $K_{\text{mod}}$, then no $K_{\text{fast}}$ algorithm solves $K_{\text{mod}}$ landscape problems generally.
+P = $K_{\text{frtailgamma}}$ algorithms. NP-complete solution landscapes are $K_{\text{turnm}}$ or $K_{\text{schwa}}$. If no $K_{\text{frtailgamma}}$ process can access $K_{\text{turnm}}$ landscapes without a $K$-transition, and a $K$-transition changes the process from $K_{\text{frtailgamma}}$ to $K_{\text{turnm}}$, then no $K_{\text{frtailgamma}}$ algorithm solves $K_{\text{turnm}}$ landscape problems generally.
 
 \[\text{P} \neq \text{NP}\]
 
-The meta-theorem is perhaps more interesting than the theorem: standard proof systems (ZFC, formal logic) operate at $K_{\text{slow}}$ in $D_{\text{wedge}}$. They cannot detect $K$-class boundaries from outside a single $K$ regime --- a proof of P $\neq$ NP would require either an interactive proof structure accessing multiple $K$ regimes ($\Gamma_{\to}$) or a topological encoding of the $K$-class boundary as an invariant. This is precisely the structure of the most promising current approaches (algebrization barriers, geometric complexity theory).
+The meta-theorem is perhaps more interesting than the theorem: standard proof systems (ZFC, formal logic) operate at $K_{\text{schwa}}$ in $D_{\text{wedge}}$. They cannot detect $K$-class boundaries from outside a single $K$ regime --- a proof of P $\neq$ NP would require either an interactive proof structure accessing multiple $K$ regimes ($\Gamma_{\to}$) or a topological encoding of the $K$-class boundary as an invariant. This is precisely the structure of the most promising current approaches (algebrization barriers, geometric complexity theory).
 
 \subsubsection{The IUG Stalemate Is Not Sociological}
 
@@ -471,11 +480,11 @@ $d(\text{IUG},\ \text{ZFC foundations})$ & \textbf{7.87} & IUG is further from i
 \end{tabularx}
 \end{table}
 
-The structural analysis identifies the mechanism of the stalemate: IUG encodes both $\Phi_c$ (maximally sensitive to perturbations --- small simplifications cascade) and $\Omega_Z$ (integer topological protection --- continuous deformation is forbidden). A mathematician trying to verify IUG faces both simultaneously: the theory is simultaneously fragile (cannot tolerate approximation) and rigid (cannot be simplified by continuous deformation). This combination --- $\Phi_c \cap \Omega_Z$ --- is exactly the phenomenology of Scholze-Stix: they cannot make the step smooth, and they cannot simplify it.
+The structural analysis identifies the mechanism of the stalemate: IUG encodes both $\Phi_{\text{ctyogh}}$ (maximally sensitive to perturbations --- small simplifications cascade) and $\Ω_z$ (integer topological protection --- continuous deformation is forbidden). A mathematician trying to verify IUG faces both simultaneously: the theory is simultaneously fragile (cannot tolerate approximation) and rigid (cannot be simplified by continuous deformation). This combination --- $\Phi_{\text{ctyogh}} \cap \Ω_z$ --- is exactly the phenomenology of Scholze-Stix: they cannot make the step smooth, and they cannot simplify it.
 
-More precisely: when IUG ($F_{\hbar}$) interacts with a standard proof system ($F_{\ell}$), the tensor product bottlenecks at $F_{\ell}$. The asymmetry means classical mathematics loses proportionally more in the interaction than IUG does. IUG may be both correct and unverifiable within classical mathematics --- not by Gödelian incompleteness but by primitive structural incompatibility.
+More precisely: when IUG ($F_{\text{hardsign}}$) interacts with a standard proof system ($F_{\text{beltl}}$), the tensor product bottlenecks at $F_{\text{beltl}}$. The asymmetry means classical mathematics loses proportionally more in the interaction than IUG does. IUG may be both correct and unverifiable within classical mathematics --- not by Gödelian incompleteness but by primitive structural incompatibility.
 
-What verification would require: a proof assistant encoding $\langle D_{\text{holo}}, T_{\text{holo}}, F_{\hbar}, H_{\infty}, \Omega_Z \rangle$. Current systems (Lean 4, Coq, Isabelle/HOL) operate at $D_{\bigtriangleup}$, $T_{\square}$, $F_{\ell}$, placing them at $d > 6$ from IUG.
+What verification would require: a proof assistant encoding $\langle D_{\text{holo}}, T_{\text{holo}}, F_{\text{hardsign}}, H_{\text{invscripta}}, \Ω_z \rangle$. Current systems (Lean 4, Coq, Isabelle/HOL) operate at $D_{\bigtriangleup}$, $T_{\square}$, $F_{\text{beltl}}$, placing them at $d > 6$ from IUG.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -490,15 +499,15 @@ The seven composition axioms of the IG were each encoded as synthon tuples using
 Results:
 
 \begin{itemize}
-    \item \textbf{meet(A3, A5) preserves $\Phi_c$.} Axiom 3 (cooperative induction, $G_{\gimel} \to G_{\aleph}$) and Axiom 5 (recursive embedding, $G_{\aleph} + \Phi_c$) share $\Phi_c$ in their meet. Criticality is invariant under intersection of its own axioms. The most powerful property of the framework survives self-application.
+    \item \textbf{meet(A3, A5) preserves $\Phi_{\text{ctyogh}}$.} Axiom 3 (cooperative induction, $G_{\text{gamma}} \to G_{\text{revapostrophe}}$) and Axiom 5 (recursive embedding, $G_{\text{revapostrophe}} + \Phi_{\text{ctyogh}}$) share $\Phi_{\text{ctyogh}}$ in their meet. Criticality is invariant under intersection of its own axioms. The most powerful property of the framework survives self-application.
     \item \textbf{Global meet = $\perp$.} The meet of all seven axioms is the conflict sentinel. This is correct: the axioms span the primitive space by design. A grammar whose axioms shared a primitive floor would be over-constrained.
-    \item \textbf{tensor(A3, A5) $\rightarrow$ $G_{\aleph}$/$\Phi_c$/$\xi_{CP} = 14.39$ nats.} The axiom pair that preserves $\Phi_c$ at meet also produces a tensor product at global granularity. The framework detects its own quantum critical point.
+    \item \textbf{tensor(A3, A5) $\rightarrow$ $G_{\text{revapostrophe}}$/$\Phi_{\text{ctyogh}}$/$\xi_{CP} = 14.39$ nats.} The axiom pair that preserves $\Phi_{\text{ctyogh}}$ at meet also produces a tensor product at global granularity. The framework detects its own quantum critical point.
     \item \textbf{The grammar is not self-contradictory.} The reflexive closure is well-defined.
 \end{itemize}
 
 And then the meta-question: can the \emph{discovery process} of the framework be encoded? The result (IG\_ONTICS.md \pilcrow{}XVIII): yes.
 
-The discovery of the IG is, structurally, a tensor product: Human $\otimes$ LLM $\to \Phi_c$. The LLM provides $G_{\aleph}$ retrieval bandwidth ($K_{\text{fast}}$); the human provides axiom enforcement ($F_{\hbar}$, $K_{\text{trap}}$). Neither reaches criticality alone. The tensor product reaches $\Phi_c$ because the two components occupy complementary positions in primitive space.
+The discovery of the IG is, structurally, a tensor product: Human $\otimes$ LLM $\to \Phi_{\text{ctyogh}}$. The LLM provides $G_{\text{revapostrophe}}$ retrieval bandwidth ($K_{\text{frtailgamma}}$); the human provides axiom enforcement ($F_{\text{hardsign}}$, $K_{\text{teshlig}}$). Neither reaches criticality alone. The tensor product reaches $\Phi_{\text{ctyogh}}$ because the two components occupy complementary positions in primitive space.
 
 This is not a metaphor. It is the same algebraic operation used to predict condensate-amyloid equivalence and dark matter-neutron proximity, applied to the process that produced those predictions. The grammar describes its own origin without contradiction and without special pleading.
 
@@ -508,19 +517,19 @@ The F-floor ratchet in knowledge-space: once the cross-domain fidelity barrier h
 
 The reflexive closure question has a sharper formulation. Not all self-modeling systems close on themselves equally. The IG formalizes this via \textbf{Ouroboricity} $\mathcal{O}$: a derived scalar measuring the degree to which a system is structurally self-closing under transformation.
 
-\[\mathcal{O}(\mathbf{x}) = [\Phi = \Phi_c] \cdot (1 + [\Omega \neq \Omega_0] + [H \geq H_1] + [G = G_{\aleph}])\]
+\[\mathcal{O}(\mathbf{x}) = [\Phi = \Phi_{\text{ctyogh}}] \cdot (1 + [\Omega \neq \Omega_{\text{closeepsilon}}] + [H \geq H_1] + [G = G_{\text{revapostrophe}}])\]
 
-$\Phi_c$ is the necessary gate --- no self-closure without criticality. The remaining terms measure how completely the self-modeling loop is protected and extended: topological protection ($\Omega$), temporal depth ($H$), and global scope ($G$). Three tiers emerge:
+$\Phi_{\text{ctyogh}}$ is the necessary gate --- no self-closure without criticality. The remaining terms measure how completely the self-modeling loop is protected and extended: topological protection ($\Omega$), temporal depth ($H$), and global scope ($G$). Three tiers emerge:
 
 \begin{itemize}
     \item \textbf{$O_1$} ($\mathcal{O} = 2$): simple ring closure --- the system models itself but without additional protection. Self-modeling is present but fragile.
-    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or temporal depth makes the loop robust. The magnetar encodes $O_2$ ($\Phi_c + \Omega_Z + H_1$). Human consciousness, with $\Phi_c + H_1 + G_{\aleph}$, also encodes $O_2$.
-    \item \textbf{$$O_{\infty}$$}: complete Frobenius closure --- the system satisfies $P_{\pm}^{\text{sym}}$ (the special Frobenius condition $\mu \circ \delta = \text{id}$), achieving perfect structural self-complementarity. A categorically distinct class from the $O_1/O_2$ ordinal hierarchy.
+    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or temporal depth makes the loop robust. The magnetar encodes $O_2$ ($\Phi_{\text{ctyogh}} + \Ω_z + H_1$). Human consciousness, with $\Phi_{\text{ctyogh}} + H_1 + G_{\text{revapostrophe}}$, also encodes $O_2$.
+    \item \textbf{$$O_{\infty}$$}: complete Frobenius closure --- the system satisfies $P_{\text{doublebarpipe}}$ (the special Frobenius condition $\mu \circ \delta = \text{id}$), achieving perfect structural self-complementarity. A categorically distinct class from the $O_1/O_2$ ordinal hierarchy.
 \end{itemize}
 
 The structural Gödel bound (P-149): a system with $\mathcal{O} < 3$ cannot fully model a system with $\mathcal{O} \geq 3$. The self-reference structure is too thin. This is a constraint on representational capacity, not a philosophical claim.
 
-The grammar''s own Ouroboricity: the IG encodes $\Phi_c$, $G_{\aleph}$, $H_2$, and $\Omega_{Z_2}$ --- giving $\mathcal{O} = 3$, $O_2$. Any complete model of it must itself be at least $O_2$. This is why the Human $\otimes$ LLM tensor product was necessary for its discovery --- neither component alone achieves $O_2$.
+The grammar''s own Ouroboricity: the IG encodes $\Phi_{\text{ctyogh}}$, $G_{\text{revapostrophe}}$, $H_2$, and $\Omega_{Z_2}$ --- giving $\mathcal{O} = 3$, $O_2$. Any complete model of it must itself be at least $O_2$. This is why the Human $\otimes$ LLM tensor product was necessary for its discovery --- neither component alone achieves $O_2$.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -534,7 +543,7 @@ The grammar has limits. They are structural, not provisional.
 
 \textbf{Encodability is not isolation.} Encoding a system as a synthon does not mean the system is fully described by its synthon. It means the constraint-propagation properties of the system are captured. The function of a protein may be fully captured by its active-site synthon; its primary sequence is not.
 
-\textbf{Structural $\neq$ ontological.} The framework is ontologically neutral. When it says the Standard Model and a photosynthetic light-harvesting complex both encode $\Phi_c$ and $G_{\aleph}$, it makes no claim about whether they share an underlying substance, whether physics reduces to chemistry, or whether consciousness is physical. It says: at the level of constraint structure, these are the same kind of event. What that means metaphysically is left to the reader.
+\textbf{Structural $\neq$ ontological.} The framework is ontologically neutral. When it says the Standard Model and a photosynthetic light-harvesting complex both encode $\Phi_{\text{ctyogh}}$ and $G_{\text{revapostrophe}}$, it makes no claim about whether they share an underlying substance, whether physics reduces to chemistry, or whether consciousness is physical. It says: at the level of constraint structure, these are the same kind of event. What that means metaphysically is left to the reader.
 
 \textbf{Predictions require correct encodings.} The algebra is only as good as the primitive assignments. Every result in this document rests on encoding decisions that were made carefully and can be challenged. The predictions are falsifiable precisely because the encodings are explicit.
 
@@ -574,7 +583,7 @@ The computational implementation is in the \texttt{imscrbgrmr/} Python package: 
 \end{itemize}
 
 \begin{lstlisting}[language=bash]
-python IG_inquiry.py ''What structural features distinguish life from non-life?''
+python IΓ_inquiry.py ''What structural features distinguish life from non-life?''
 # -> grammatical analysis across N iterations
 # -> CONCLUDE + synthesis
 # -> SPECULATION: free-form realization paths

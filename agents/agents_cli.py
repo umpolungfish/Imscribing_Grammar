@@ -6,14 +6,14 @@ Usage:
     python agents/agents_cli.py <agent_name> --task <task>
     
 Agents:
-    true_agentic_agent    - Grammar-optimal Phi_c-critical agent (O_inf)
+    true_agentic_agent    - Grammar-optimal φ̂_ÿ-critical agent (O_inf)
     research_agent        - Information gathering and synthesis
     analysis_agent        - Data analysis and pattern recognition
     aider_code_agent      - Git-native code operations (requires aider)
     perturbation_agent    - Primitive Jacobian interpretation
     ensemble_agent        - Goal-directed multi-synthon composition
     retrodesign_agent     - Retrosynthetic analysis
-    criticality_agent     - Phi_c criticality hunting
+    criticality_agent     - φ̂_ÿ criticality hunting
     synthon_generator     - Synthon structure generation
     axiom_generator       - Axiom-guided generation
     autonomous_synthon    - Autonomous synthon discovery

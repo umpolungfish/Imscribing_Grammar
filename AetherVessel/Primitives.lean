@@ -12,53 +12,53 @@ import Std
 -- ============================================================
 
 inductive Dimensionality where
-  | D_wedge    -- point (0d)
-  | D_triangle -- bounded surface (2d)
-  | D_infty    -- infinite-dimensional / field-theoretic
-  | D_odot     -- imscriptive (self-written state space)
+  | D_wynn    -- point (0d)
+  | D_turnthree -- bounded surface (2d)
+  | D_invomega    -- infinite-dimensional / field-theoretic
+  | D_omega     -- imscriptive (self-written state space)
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Topology where
-  | T_network  -- branching (tree-like)
-  | T_in       -- containment (inclusion)
-  | T_bowtie   -- crossing point
-  | T_boxtimes -- irreducible product (box product)
-  | T_odot     -- imscriptive closure (self-referential)
+  | T_nrleg  -- branching (tree-like)
+  | T_invscr       -- containment (inclusion)
+  | T_bullseye   -- crossing point
+  | T_commatailz -- irreducible product (box product)
+  | T_openo     -- imscriptive closure (self-referential)
   deriving BEq, Repr, Ord, Inhabited
 
 inductive RelMode where
-  | R_super    -- supervenience
-  | R_cat      -- categorical / functorial
-  | R_dagger   -- adjoint pair (one-way)
-  | R_lr       -- bidirectional feedback coupling
+  | R_subrightarrow    -- supervenience
+  | R_ctz      -- categorical / functorial
+  | R_downstep   -- adjoint pair (one-way)
+  | R_lyoghlig       -- bidirectional feedback coupling
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Parity where
-  | P_asym     -- none
-  | P_psi      -- quantum superposition
-  | P_pm       -- one Z₂ symmetry
-  | P_sym      -- full symmetry, all unbroken
-  | P_pm_sym   -- Frobenius-special: μ ∘ δ = id exactly at Φ_c
+  | P_aolig     -- none
+  | P_upsilon      -- quantum superposition
+  | P_pipevar       -- one Z₂ symmetry
+  | P_subdoublearrow      -- full symmetry, all unbroken
+  | P_doublebarpipe   -- Frobenius-special: μ ∘ δ = id exactly at Φ_c
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Fidelity where
-  | F_ell  -- classical (no coherence)
-  | F_eth  -- thermal / noisy
-  | F_hbar -- quantum coherence essential
+  | F_beltl  -- classical (no coherence)
+  | F_dh  -- thermal / noisy
+  | F_hardsign -- quantum coherence essential
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Kinetics where
-  | K_fast -- τ ≪ T, driven
-  | K_mod  -- τ ∼ T, moderate
-  | K_slow -- τ ≫ T, near-equilibrium
-  | K_trap -- frozen order (K_trap)
-  | K_MBL  -- frozen disorder (many-body localized)
+  | K_frtailgamma -- τ ≪ T, driven
+  | K_turnm  -- τ ∼ T, moderate
+  | K_schwa -- τ ≫ T, near-equilibrium
+  | K_teshlig -- frozen order (K_teshlig)
+  | K_lambda  -- frozen disorder (many-body localized)
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Scope where
-  | G_beth  -- local / nearest-neighbor
-  | G_gimel -- intermediate / mesoscale
-  | G_aleph -- universal / maximal
+  | G_beta  -- local / nearest-neighbor
+  | G_gamma -- intermediate / mesoscale
+  | G_revapostrophe -- universal / maximal
   deriving BEq, Repr, Ord, Inhabited
 
 inductive InteractionGrammar where
@@ -69,29 +69,29 @@ inductive InteractionGrammar where
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Criticality where
-  | Phi_sub     -- subcritical, no scaling
-  | Phi_c       -- exactly critical (power-law divergence)
-  | Phi_c_complex -- complex-plane critical
-  | Phi_EP      -- exceptional point (non-Hermitian degeneracy)
-  | Phi_super   -- supercritical / runaway / chaotic
+  | Phi_softsign     -- subcritical, no scaling
+  | Phi_ctyogh       -- exactly critical (power-law divergence)
+  | Phi_closerevepsilon -- complex-plane critical
+  | Phi_revepsilon      -- exceptional point (non-Hermitian degeneracy)
+  | Phi_upstep   -- supercritical / runaway / chaotic
   deriving BEq, Repr, Ord, Inhabited
 
 inductive TemporalDepth where
-  | H0    -- memoryless (Markov order 0)
-  | H1    -- one-step memory
-  | H2    -- two-step memory
-  | H_inf -- unbounded / eternal memory (requires K_trap)
+  | H_closeomega    -- memoryless (Markov order 0)
+  | H_toneletterstem    -- one-step memory
+  | H_turntwo    -- two-step memory
+  | H_invscripta -- unbounded / eternal memory (requires K_teshlig)
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Stoichiometry where
-  | one_one -- 1:1 single type, single instance
-  | n_n     -- n:n many identical components
-  | n_m     -- n:m multiple distinct types
+  | S_doublebaresh -- 1:1 single type, single instance
+  | S_ctn     -- n:n many identical components
+  | S_ltailm     -- n:m multiple distinct types
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Winding where
-  | Omega_0  -- trivial
-  | Omega_Z2 -- Z₂ parity-protected
-  | Omega_Z  -- integer winding (topological)
-  | Omega_NA -- non-Abelian braiding (requires D_odot)
+  | Omega_closeepsilon  -- trivial
+  | Omega_crtwo -- Z₂ parity-protected
+  | Omega_dzlig  -- integer winding (topological)
+  | Omega_turna -- non-Abelian braiding (requires D_omega)
   deriving BEq, Repr, Ord, Inhabited

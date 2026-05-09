@@ -1,3 +1,12 @@
+---
+header-includes:
+  - |
+    \usepackage{fontspec}
+    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+    \newcommand{\heb}[1]{{\hebrewfont #1}}
+    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+    \newcommand{\igtext}[1]{{\igfont #1}}
+---
 # Tensor Expressions: The Stone and Its Objects of Insight
 
 ## Five Systems — Cataloged
@@ -6,11 +15,11 @@ All five systems from LAPISEXILIS.md have been imscribed and verified via Tetrac
 
 | System | Tuple | Tier |
 |--------|-------|------|
-| **laIG** | $\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ | $O_2^\dagger$ |
-| **lapis_exilis** | $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$ | $O_2$ |
-| **lapis_philosophorum** | $\langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$ | $O_\infty$ |
-| **crown_of_adventure** | $\langle D_\triangle;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$ | $O_\infty$ |
-| **graal** | $\langle D_\triangle;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ | $O_\infty$ |
+| **laIG** | $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | $O_2^\dagger$ |
+| **lapis_exilis** | $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$ | $O_2$ |
+| **lapis_philosophorum** | $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$ | $O_\infty$ |
+| **crown_of_adventure** | $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$ | $O_\infty$ |
+| **graal** | $\langle D_{\text{turnthree}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | $O_\infty$ |
 
 ---
 
@@ -18,19 +27,19 @@ All five systems from LAPISEXILIS.md have been imscribed and verified via Tetrac
 
 Each tensor with itself returns the identity — the structural projection $\mu \circ \delta$ preserves the type:
 
-$$\text{laIG} \otimes \text{laIG} = \langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{laIG} \otimes \text{laIG} = \langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 → 0 bottlenecks, 0 unions. Distance from self: 0.0
 
-$$\text{lapis\_exilis} \otimes \text{lapis\_exilis} = \langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_\pm;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_exilis} \otimes \text{lapis\_exilis} = \langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 → 0 bottlenecks, 0 unions. Distance from self: 0.0
 
-$$\text{lapis\_philosophorum} \otimes \text{lapis\_philosophorum} = \langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_philosophorum} \otimes \text{lapis\_philosophorum} = \langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 → 0 bottlenecks, 0 unions. Distance from self: 0.0 (*Special Frobenius*: $\mu \circ \delta = \text{id}$ exactly)
 
-$$\text{crown\_of\_adventure} \otimes \text{crown\_of\_adventure} = \langle D_\triangle;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{crown\_of\_adventure} \otimes \text{crown\_of\_adventure} = \langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 → 0 bottlenecks, 0 unions. Distance from self: 0.0
 
-$$\text{graal} \otimes \text{graal} = \langle D_\triangle;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{graal} \otimes \text{graal} = \langle D_{\text{turnthree}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 → 0 bottlenecks, 0 unions. Distance from self: 0.0
 
 ---
@@ -42,19 +51,19 @@ Already shown above — pure Frobenius idempotency. Distance: 0.0.
 
 ### B. The Stone ⊗ laIG (Seeker)
 
-$$\text{lapis\_philosophorum} \otimes \text{laIG} = \langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ \color{red}{P_\psi};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_philosophorum} \otimes \text{laIG} = \langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{upsilon}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\psi$ (from laIG). **Unions:** $D \uparrow D_\odot$, $T \uparrow T_\boxtimes$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** $P_{\text{upsilon}}$ (from laIG). **Unions:** $D \uparrow D_{\text{omega}}$, $T \uparrow T_{\text{commatailz}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from laIG: 1.4142 · Distance from lapis_philosophorum: 3.7148.
 
-> *The structural measurement problem:* when the seeking grammar couples to the completed stone, the composite is limited by the seeking side's unresolved parity. Even in contact with perfection, the questing grammar cannot achieve Frobenius symmetry. The $P_\psi$ bottleneck absorbs the Frobenius — $O_\infty$ cannot be sustained in the composite.
+> *The structural measurement problem:* when the seeking grammar couples to the completed stone, the composite is limited by the seeking side's unresolved parity. Even in contact with perfection, the questing grammar cannot achieve Frobenius symmetry. The $P_{\text{upsilon}}$ bottleneck absorbs the Frobenius — $O_\infty$ cannot be sustained in the composite.
 
 ### C. The Stone ⊗ lapis_exilis (Exile)
 
-$$\text{lapis\_philosophorum} \otimes \text{lapis\_exilis} = \langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ \color{red}{P_\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_philosophorum} \otimes \text{lapis\_exilis} = \langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{pipevar}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\pm$ (from lapis_exilis). **Unions:** $D \uparrow D_\odot$, $T \uparrow T_\boxtimes$.
+**Bottleneck:** $P_{\text{pipevar}}$ (from lapis_exilis). **Unions:** $D \uparrow D_{\text{omega}}$, $T \uparrow T_{\text{commatailz}}$.
 
 Distance from lapis_exilis: 2.2361 · Distance from lapis_philosophorum: 2.0.
 
@@ -62,9 +71,9 @@ Distance from lapis_exilis: 2.2361 · Distance from lapis_philosophorum: 2.0.
 
 ### D. The Stone ⊗ crown_of_adventure (Coronation)
 
-$$\text{lapis\_philosophorum} \otimes \text{crown\_of\_adventure} = \langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_philosophorum} \otimes \text{crown\_of\_adventure} = \langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** none. **Unions:** $D \uparrow D_\odot$.
+**Bottleneck:** none. **Unions:** $D \uparrow D_{\text{omega}}$.
 
 Distance from crown_of_adventure: 2.0 · Distance from lapis_philosophorum: **0.0**.
 
@@ -72,13 +81,13 @@ Distance from crown_of_adventure: 2.0 · Distance from lapis_philosophorum: **0.
 
 ### E. The Stone ⊗ graal (Vessel)
 
-$$\text{lapis\_philosophorum} \otimes \text{graal} = \langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_philosophorum} \otimes \text{graal} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** none. **Unions:** $D \uparrow D_\odot$, $T \uparrow T_\odot$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** none. **Unions:** $D \uparrow D_{\text{omega}}$, $T \uparrow T_{\text{openo}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from graal: 2.0 · Distance from lapis_philosophorum: 2.4083.
 
-> **No bottleneck.** The vessel's polysemy and eternality are absorbed without loss. The composite has $T_\odot$ (from graal's self-referential topology) and $D_\odot$ (from the Stone) — the richest topology in the lattice. This coupling expands without contracting: the Stone gains the vessel's multiplicity and the vessel gains the Stone's self-reference.
+> **No bottleneck.** The vessel's polysemy and eternality are absorbed without loss. The composite has $T_{\text{openo}}$ (from graal's self-referential topology) and $D_{\text{omega}}$ (from the Stone) — the richest topology in the lattice. This coupling expands without contracting: the Stone gains the vessel's multiplicity and the vessel gains the Stone's self-reference.
 
 ---
 
@@ -86,9 +95,9 @@ Distance from graal: 2.0 · Distance from lapis_philosophorum: 2.4083.
 
 ### A. laIG ⊗ lapis_exilis (Seeker ⊗ Exile)
 
-$$\text{laIG} \otimes \text{lapis\_exilis} = \langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ \color{red}{P_\psi};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{laIG} \otimes \text{lapis\_exilis} = \langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{upsilon}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\psi$ (from laIG). **Unions:** $D \uparrow D_\infty$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** $P_{\text{upsilon}}$ (from laIG). **Unions:** $D \uparrow D_{\text{invomega}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from laIG: 0.0 · Distance from lapis_exilis: 2.6077.
 
@@ -96,19 +105,19 @@ Distance from laIG: 0.0 · Distance from lapis_exilis: 2.6077.
 
 ### B. laIG ⊗ crown_of_adventure (Seeker ⊗ Coronation)
 
-$$\text{laIG} \otimes \text{crown\_of\_adventure} = \langle D_\infty;\ T_\boxtimes;\ R_\leftrightarrow;\ \color{red}{P_\psi};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{laIG} \otimes \text{crown\_of\_adventure} = \langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{upsilon}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\psi$ (from laIG). **Unions:** $D \uparrow D_\infty$, $T \uparrow T_\boxtimes$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** $P_{\text{upsilon}}$ (from laIG). **Unions:** $D \uparrow D_{\text{invomega}}$, $T \uparrow T_{\text{commatailz}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from laIG: 1.0 · Distance from crown_of_adventure: 3.8471.
 
-> The coronation's Frobenius symmetry is lost at the bottleneck. The seeking grammar imposes its unresolved parity even on sovereign structures. Topology is elevated ($T_\boxtimes$) but the parity bottleneck prevents $O_\infty$ from being achieved.
+> The coronation's Frobenius symmetry is lost at the bottleneck. The seeking grammar imposes its unresolved parity even on sovereign structures. Topology is elevated ($T_{\text{commatailz}}$) but the parity bottleneck prevents $O_\infty$ from being achieved.
 
 ### C. laIG ⊗ graal (Seeker ⊗ Vessel)
 
-$$\text{laIG} \otimes \text{graal} = \langle D_\infty;\ T_\odot;\ R_\leftrightarrow;\ \color{red}{P_\psi};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{laIG} \otimes \text{graal} = \langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{upsilon}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\psi$ (from laIG). **Unions:** $D \uparrow D_\infty$, $T \uparrow T_\odot$.
+**Bottleneck:** $P_{\text{upsilon}}$ (from laIG). **Unions:** $D \uparrow D_{\text{invomega}}$, $T \uparrow T_{\text{openo}}$.
 
 Distance from laIG: 2.0 · Distance from graal: 3.1623.
 
@@ -116,29 +125,29 @@ Distance from laIG: 2.0 · Distance from graal: 3.1623.
 
 ### D. lapis_exilis ⊗ crown_of_adventure (Exile ⊗ Coronation)
 
-$$\text{lapis\_exilis} \otimes \text{crown\_of\_adventure} = \langle D_\triangle;\ T_\boxtimes;\ R_\leftrightarrow;\ \color{red}{P_\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_exilis} \otimes \text{crown\_of\_adventure} = \langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{pipevar}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\pm$ (from lapis_exilis). **Unions:** $T \uparrow T_\boxtimes$.
+**Bottleneck:** $P_{\text{pipevar}}$ (from lapis_exilis). **Unions:** $T \uparrow T_{\text{commatailz}}$.
 
 Distance from lapis_exilis: 1.0 · Distance from crown_of_adventure: 2.0.
 
-> The closest cross-pair in the distance matrix (1.72). The exile's partial symmetry is the bottleneck — the coronation's Frobenius symmetry cannot elevate it. Topology reaches $T_\boxtimes$ but symmetry remains broken.
+> The closest cross-pair in the distance matrix (1.72). The exile's partial symmetry is the bottleneck — the coronation's Frobenius symmetry cannot elevate it. Topology reaches $T_{\text{commatailz}}$ but symmetry remains broken.
 
 ### E. lapis_exilis ⊗ graal (Exile ⊗ Vessel)
 
-$$\text{lapis\_exilis} \otimes \text{graal} = \langle D_\triangle;\ T_\odot;\ R_\leftrightarrow;\ \color{red}{P_\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{lapis\_exilis} \otimes \text{graal} = \langle D_{\text{turnthree}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ \color{red}{P_{\text{pipevar}}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** $P_\pm$ (from lapis_exilis). **Unions:** $T \uparrow T_\odot$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** $P_{\text{pipevar}}$ (from lapis_exilis). **Unions:** $T \uparrow T_{\text{openo}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from lapis_exilis: 2.9665 · Distance from graal: 2.0.
 
-> The vessel's topology ($T_\odot$) and eternality ($H_\infty$) are absorbed, but the parity bottleneck from the exile breaks Frobenius. The exiled stone cannot sustain the vessel's symmetry even when the vessel contains it.
+> The vessel's topology ($T_{\text{openo}}$) and eternality ($H_{\text{invscripta}}$) are absorbed, but the parity bottleneck from the exile breaks Frobenius. The exiled stone cannot sustain the vessel's symmetry even when the vessel contains it.
 
 ### F. crown_of_adventure ⊗ graal (Coronation ⊗ Vessel)
 
-$$\text{crown\_of\_adventure} \otimes \text{graal} = \langle D_\triangle;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\text{crown\_of\_adventure} \otimes \text{graal} = \langle D_{\text{turnthree}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-**Bottleneck:** none. **Unions:** $T \uparrow T_\odot$, $H \uparrow H_\infty$, $S \uparrow n{:}m$.
+**Bottleneck:** none. **Unions:** $T \uparrow T_{\text{openo}}$, $H \uparrow H_{\text{invscripta}}$, $S \uparrow n{:}m$.
 
 Distance from crown_of_adventure: 2.4083 · Distance from graal: **0.0**.
 
@@ -152,29 +161,29 @@ The parity primitive $P$ is the **universal bottleneck** across the lattice. Eve
 
 | Composite | Bottleneck | Result | Interpretation |
 |-----------|-----------|--------|----------------|
-| Stone ⊗ laIG | $P_\psi$ (laIG) | $P_\psi$ | Seeker blocks Frobenius |
-| Stone ⊗ lapis_exilis | $P_\pm$ (exile) | $P_\pm$ | Exile blocks Frobenius |
-| Stone ⊗ crown | **none** | $P_{\pm}^{\text{sym}}$ | Crown → Stone (distance 0) |
-| Stone ⊗ graal | **none** | $P_{\pm}^{\text{sym}}$ | Mutual elevation |
-| laIG ⊗ lapis_exilis | $P_\psi$ (laIG) | $P_\psi$ | laIG dominates |
-| laIG ⊗ crown | $P_\psi$ (laIG) | $P_\psi$ | Seeker blocks sovereignty |
-| laIG ⊗ graal | $P_\psi$ (laIG) | $P_\psi$ | Seeker blocks vessel |
-| lapis_exilis ⊗ crown | $P_\pm$ (exile) | $P_\pm$ | Exile blocks coronation |
-| lapis_exilis ⊗ graal | $P_\pm$ (exile) | $P_\pm$ | Exile blocks vessel |
-| crown ⊗ graal | **none** | $P_{\pm}^{\text{sym}}$ | Graal absorbs crown |
+| Stone ⊗ laIG | $P_{\text{upsilon}}$ (laIG) | $P_{\text{upsilon}}$ | Seeker blocks Frobenius |
+| Stone ⊗ lapis_exilis | $P_{\text{pipevar}}$ (exile) | $P_{\text{pipevar}}$ | Exile blocks Frobenius |
+| Stone ⊗ crown | **none** | $P_{\text{doublebarpipe}}$ | Crown → Stone (distance 0) |
+| Stone ⊗ graal | **none** | $P_{\text{doublebarpipe}}$ | Mutual elevation |
+| laIG ⊗ lapis_exilis | $P_{\text{upsilon}}$ (laIG) | $P_{\text{upsilon}}$ | laIG dominates |
+| laIG ⊗ crown | $P_{\text{upsilon}}$ (laIG) | $P_{\text{upsilon}}$ | Seeker blocks sovereignty |
+| laIG ⊗ graal | $P_{\text{upsilon}}$ (laIG) | $P_{\text{upsilon}}$ | Seeker blocks vessel |
+| lapis_exilis ⊗ crown | $P_{\text{pipevar}}$ (exile) | $P_{\text{pipevar}}$ | Exile blocks coronation |
+| lapis_exilis ⊗ graal | $P_{\text{pipevar}}$ (exile) | $P_{\text{pipevar}}$ | Exile blocks vessel |
+| crown ⊗ graal | **none** | $P_{\text{doublebarpipe}}$ | Graal absorbs crown |
 
 ### Key Structural Insights
 
 1. **The Stone ($O_\infty$) acts as a universal attractor** — any coupling to it elevates $D$ and $T$, but the bottleneck is always determined by the partner's parity.
 
-2. **laIG is the dominant seeker** — its $P_\psi$ bottleneck propagates to every composite, but its $D_\infty$ and $H_\infty$ union-expansions make it the structurally broadest attractor. When laIG couples to anything, the result is always laIG-elevated except on the bottleneck primitive.
+2. **laIG is the dominant seeker** — its $P_{\text{upsilon}}$ bottleneck propagates to every composite, but its $D_{\text{invomega}}$ and $H_{\text{invscripta}}$ union-expansions make it the structurally broadest attractor. When laIG couples to anything, the result is always laIG-elevated except on the bottleneck primitive.
 
 3. **Only three couplings are bottleneck-free:**
    - Stone ⊗ crown = Stone (distance 0 from Stone)
-   - Stone ⊗ graal = maximal elevation ($D_\odot$, $T_\odot$)
+   - Stone ⊗ graal = maximal elevation ($D_{\text{omega}}$, $T_{\text{openo}}$)
    - crown ⊗ graal = graal (distance 0 from graal)
 
-4. **The structural measurement problem:** The tensor coupling of the seeking grammar (laIG) to the completed Stone produces a composite with $P_\psi$ bottleneck — the seeker's unresolved quantum superposition parity prevents the Frobenius condition from being met. This is the formal statement: coupling to perfection does not achieve perfection if the coupling partner cannot sustain it.
+4. **The structural measurement problem:** The tensor coupling of the seeking grammar (laIG) to the completed Stone produces a composite with $P_{\text{upsilon}}$ bottleneck — the seeker's unresolved quantum superposition parity prevents the Frobenius condition from being met. This is the formal statement: coupling to perfection does not achieve perfection if the coupling partner cannot sustain it.
 
 ---
 
@@ -188,23 +197,23 @@ Self-tensors (5, all idempotent):
 - graal ⊗ graal = graal
 
 Cross-tensors (10, symmetric):
-- lapis_philosophorum ⊗ laIG: $\langle D_\odot; T_\boxtimes; R_\leftrightarrow; P_\psi; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$
-- lapis_philosophorum ⊗ lapis_exilis: $\langle D_\odot; T_\boxtimes; R_\leftrightarrow; P_\pm; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; 1{:}1; \Omega_\mathbb{Z} \rangle$
-- lapis_philosophorum ⊗ crown_of_adventure: $\langle D_\odot; T_\boxtimes; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; 1{:}1; \Omega_\mathbb{Z} \rangle$ = lapis_philosophorum
-- lapis_philosophorum ⊗ graal: $\langle D_\odot; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$
-- laIG ⊗ lapis_exilis: $\langle D_\infty; T_\bowtie; R_\leftrightarrow; P_\psi; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$ = laIG
-- laIG ⊗ crown_of_adventure: $\langle D_\infty; T_\boxtimes; R_\leftrightarrow; P_\psi; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$
-- laIG ⊗ graal: $\langle D_\infty; T_\odot; R_\leftrightarrow; P_\psi; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$
-- lapis_exilis ⊗ crown_of_adventure: $\langle D_\triangle; T_\boxtimes; R_\leftrightarrow; P_\pm; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_2; 1{:}1; \Omega_\mathbb{Z} \rangle$
-- lapis_exilis ⊗ graal: $\langle D_\triangle; T_\odot; R_\leftrightarrow; P_\pm; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$
-- crown_of_adventure ⊗ graal: $\langle D_\triangle; T_\odot; R_\leftrightarrow; P_{\pm}^{\text{sym}}; F_\hbar; K_\text{slow}; G_\aleph; \Gamma_\text{seq}; \Phi_c; H_\infty; n{:}m; \Omega_\mathbb{Z} \rangle$ = graal
+- lapis_philosophorum ⊗ laIG: $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$
+- lapis_philosophorum ⊗ lapis_exilis: $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; 1{:}1; \Omega_{\text{dzlig}} \rangle$
+- lapis_philosophorum ⊗ crown_of_adventure: $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; 1{:}1; \Omega_{\text{dzlig}} \rangle$ = lapis_philosophorum
+- lapis_philosophorum ⊗ graal: $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$
+- laIG ⊗ lapis_exilis: $\langle D_{\text{invomega}}; T_{\text{bullseye}}; R_{\text{lyoghlig}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ = laIG
+- laIG ⊗ crown_of_adventure: $\langle D_{\text{invomega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$
+- laIG ⊗ graal: $\langle D_{\text{invomega}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$
+- lapis_exilis ⊗ crown_of_adventure: $\langle D_{\text{turnthree}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; 1{:}1; \Omega_{\text{dzlig}} \rangle$
+- lapis_exilis ⊗ graal: $\langle D_{\text{turnthree}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$
+- crown_of_adventure ⊗ graal: $\langle D_{\text{turnthree}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ = graal
 
 ---
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│  Structural: D_odot; T_boxtimes; R_lr; P_pm_sym; F_hbar;           │
-│  K_slow; G_aleph; Gamma_seq; Phi_c; H2; 1:1; Omega_Z               │
+│  Structural: Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż;           │
+│  Ç_@; Γ_ʔ; ɢ_seq; φ̂_ÿ; Ħ_A; 1:1; Ω_z               │
 │  Tier: O_inf | C = 0.828 (both gates open)                          │
 └─────────────────────────────────────────────────────────────────────┘
 ```

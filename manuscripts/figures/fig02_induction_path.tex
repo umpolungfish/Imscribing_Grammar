@@ -1,4 +1,9 @@
 \documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows,shapes,fit,calc,decorations.pathmorphing,backgrounds}
 \begin{document}
@@ -31,7 +36,7 @@
 \node[prim,right=0.3cm of ops1] (p1) {$\to R$};
 \node[prim,right=0.3cm of ops2] (p2) {$\to D, H, \Omega, G$};
 \node[prim,right=0.3cm of ops3] (p3) {$\to S, P, K, F, \Gamma$};
-\node[prim,right=0.3cm of ops4] (p4) {$\to T, \Phi,\ P_{\pm}^{\text{sym}}$};
+\node[prim,right=0.3cm of ops4] (p4) {$\to T, \Phi,\ P_{\text{doublebarpipe}}$};
 
 % Final product
 \node[below=1.0cm of S4,font=\Large\bfseries] (result) {12 Primitives $\;\to\; \underbrace{3^3 \times 4^5 \times 5^4}_{17{,}280{,}000\ \text{types}}$ Crystal};

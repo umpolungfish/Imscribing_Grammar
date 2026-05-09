@@ -5,28 +5,28 @@ Canonical encodings for quantum particles and topological matter synthons.
 Eight synthons in two tiers:
 
   Tier 1 — Quantum Particles (five fundamental particles as recognition synthons):
-    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_fast · G_ℵ · Γ⊙(QUANTUM) · Φ_sub · Ω_0
-    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_fast · G_ℵ · Γ⊗          · Φ_sub · Ω_0
-    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_fast · G_ℵ · Γ⊗          · Φ_sub · Ω_0
-    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_trap · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_0
-    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_slow · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_0
+    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊙(QUANTUM) · Φ_sub · Ω_0
+    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · Φ_sub · Ω_0
+    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · Φ_sub · Ω_0
+    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_0
+    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_0
 
   Tier 2 — Topological Matter (first catalog entries using T_braid + Ω):
-    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_trap · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_Z
-    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_trap · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_NA
-    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_slow · G_ℵ · Γ⊙          · Φ_sub · Ω_Z₂
+    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_Z
+    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · Φ_sub · Ω_NA
+    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · Γ⊙          · Φ_sub · Ω_Z₂
 
 Key physics encoded:
-  - spin_singlet is the first Factor 8 trigger: G_ℵ + F_ℏ + K_trap + ¬D_∞
+  - spin_singlet is the first Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞
     → quantum criticality (TFI/heavy-fermion class), χ(T→0) ~ T^{-γ}
-  - kitaev_chain: K_trap (gap-protected) · Ω_Z (ℤ class-D invariant in 1D)
+  - kitaev_chain: K_teshlig (gap-protected) · Ω_Z (ℤ class-D invariant in 1D)
     · non-local Majorana qubit: left-end ⊗ right-end = one logical qubit
   - fqh_moore_read: T_braid (anyonic statistics) · Ω_NA (non-Abelian Ising anyons)
     · GSD = 3 on torus; fusion rules: σ × σ = 1 + ψ
   - topological_insulator: Ω_Z₂ (ℤ₂ class-AII, Kramers-protected)
-    · T_network encodes the 2D surface-state network on the 3D bulk
-  - MBL note: K_MBL deliberately absent from Tier 1; it belongs to disorder-driven
-    phases. The K_trap→K_MBL perturbation (Δξ +2.30 nats, HIGH sensitivity) was
+    · T_nrleg encodes the 2D surface-state network on the 3D bulk
+  - MBL note: K_lambda deliberately absent from Tier 1; it belongs to disorder-driven
+    phases. The K_teshlig→K_lambda perturbation (Δξ +2.30 nats, HIGH sensitivity) was
     identified as the largest single-primitive cost in the quantum playground sweep.
 
 Primitive key justifications per synthon are embedded in each _build_* function.
@@ -130,7 +130,7 @@ def _photon() -> Synthon:
           symmetric under time-reversal. Not a D-A pair.
       F = F_ℏ (HIGH): quantum field with definite frequency — no thermalisation,
           single photon is in a pure Fock state.
-      K = K_fast (FAST): propagates at c; no kinetic barrier for absorption.
+      K = K_frtailgamma (FAST): propagates at c; no kinetic barrier for absorption.
       G = G_ℵ (GLOBAL): entangled photon pairs exhibit non-local correlations
           across macroscopic distances (Bell tests).
       Γ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
@@ -179,7 +179,7 @@ def _proton() -> Synthon:
           reactions. The proton is always the acceptor of electron density.
       F = F_ℏ (HIGH): quantum tunnelling dominates at low temperatures (KIE
           experiments confirm proton tunnelling); definite charge state.
-      K = K_fast (FAST): proton transfer is near-diffusion-limited in water
+      K = K_frtailgamma (FAST): proton transfer is near-diffusion-limited in water
           (kH⁺ ~ 10¹¹ M⁻¹s⁻¹). Grotthuss mechanism is essentially barrierless.
       G = G_ℵ (GLOBAL): entangled proton states observed in neutron scattering
           experiments on ice; non-local in principle.
@@ -224,7 +224,7 @@ def _electron() -> Synthon:
           electron donor in all Lewis acid-base interactions.
       F = F_ℏ (HIGH): definite charge and spin state (pure quantum state in
           isolation). No thermal mixing of charge eigenstates.
-      K = K_fast (FAST): electron transfer at picosecond timescales (Marcus
+      K = K_frtailgamma (FAST): electron transfer at picosecond timescales (Marcus
           theory); Franck-Condon principle.
       G = G_ℵ (GLOBAL): Bell-pair electrons are non-locally correlated (CHSH).
       Γ = SPECIFIC_AND: one target orbital per bonding event.
@@ -259,7 +259,7 @@ def _spin_singlet() -> Synthon:
     """
     Spin singlet — maximally entangled two-spin Bell state |Ψ⁻⟩ = (|↑↓⟩−|↓↑⟩)/√2.
 
-    FACTOR 8 TRIGGER: G_ℵ + F_ℏ + K_trap + ¬D_∞
+    FACTOR 8 TRIGGER: G_ℵ + F_ℏ + K_teshlig + ¬D_∞
       → universality class: quantum criticality (TFI/heavy-fermion)
       → falsifiable prediction: χ(T→0) ~ T^{-γ} with γ > 1
 
@@ -276,14 +276,14 @@ def _spin_singlet() -> Synthon:
           distinguishes singlet from triplet.
       F = F_ℏ (HIGH): pure Bell state; maximal entanglement means F = 1 in
           isolation. The singlet is the most faithful two-spin state.
-      K = K_trap (TRAP): kinetically trapped — requires active decoherence or
+      K = K_teshlig (TRAP): kinetically trapped — requires active decoherence or
           perturbation to escape the singlet manifold. The singlet is a local
           free-energy minimum with a barrier to the triplet sector.
       G = G_ℵ (GLOBAL): non-local correlations; spins can be separated
           arbitrarily (EPR-type) while maintaining the singlet structure.
       Γ = QUANTUM_AND: the singlet requires BOTH spins simultaneously — it is
           a joint property of the two-particle system (Toffoli semantics).
-      Φ = Φ_sub: Factor 8 fires (G_ℵ + F_ℏ + K_trap + ¬D_∞) but the single
+      Φ = Φ_sub: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
           isolated singlet is not yet at the criticality locus; Factor 8
           scores the criticality candidacy probe, not Φ.
       Ω = TRIVIAL: the singlet is not a topologically protected state per se.
@@ -304,11 +304,11 @@ def _spin_singlet() -> Synthon:
         topo_index=TopoIndex.TRIVIAL,
         description=(
             "Maximally entangled two-spin Bell state |Ψ⁻⟩ = (|↑↓⟩−|↓↑⟩)/√2. "
-            "FACTOR 8 TRIGGER: G_ℵ + F_ℏ + K_trap + ¬D_∞ → quantum criticality "
+            "FACTOR 8 TRIGGER: G_ℵ + F_ℏ + K_teshlig + ¬D_∞ → quantum criticality "
             "(TFI/heavy-fermion class). Falsifiable: χ(T→0) ~ T^{-γ}. "
-            "K_trap: perturbation sweep shows K_trap→K_MBL costs Δξ +2.30 nats "
+            "K_teshlig: perturbation sweep shows K_teshlig→K_lambda costs Δξ +2.30 nats "
             "(HIGH sensitivity) — highest single-primitive cost in quantum series. "
-            "Contrast with qubit_logical (F_ell) — the singlet is the idealised "
+            "Contrast with qubit_logical (F_beltl) — the singlet is the idealised "
             "entangled pair, the qubit is the practical computational unit."
         ),
     )
@@ -331,13 +331,13 @@ def _qubit_logical() -> Synthon:
       F = F_ℓ (LOW): coherence times T₁, T₂ are finite; gate error rates
           10⁻² to 10⁻³ in current hardware — well below F_ℏ threshold.
           This is the critical gap between this synthon and spin_singlet.
-      K = K_slow (SLOW): gate operation speeds (ns–μs) are slow relative to
+      K = K_schwa (SLOW): gate operation speeds (ns–μs) are slow relative to
           environmental decoherence; threshold error correction overhead is large.
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
       Γ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
       Φ = Φ_sub: sub-threshold fidelity prevents criticality lift (Axiom 5).
       Ω = TRIVIAL: unprotected qubit. Topological qubit (Ω_NA) is a separate
-          synthon — it would have F_ℏ and K_trap instead.
+          synthon — it would have F_ℏ and K_teshlig instead.
     """
     return Synthon(
         name="qubit_logical",
@@ -354,12 +354,12 @@ def _qubit_logical() -> Synthon:
         topo_index=TopoIndex.TRIVIAL,
         description=(
             "Idealized logical qubit — two-level quantum system for gate-based "
-            "quantum computation. F_ell reflects current hardware reality "
-            "(decoherence limits T₂ to μs–ms range). K_slow captures that gate "
+            "quantum computation. F_beltl reflects current hardware reality "
+            "(decoherence limits T₂ to μs–ms range). K_schwa captures that gate "
             "operations are slow relative to decoherence. Compare: spin_singlet "
-            "(F_ℏ, K_trap) is the idealised entangled state; qubit_logical "
-            "(F_ell, K_slow) is the practical computational unit. "
-            "Topological qubit (Ω_NA) would flip both: F_ℏ, K_trap, Ω_NA."
+            "(F_ℏ, K_teshlig) is the idealised entangled state; qubit_logical "
+            "(F_beltl, K_schwa) is the practical computational unit. "
+            "Topological qubit (Ω_NA) would flip both: F_ℏ, K_teshlig, Ω_NA."
         ),
     )
 
@@ -391,9 +391,9 @@ def _kitaev_chain_majorana() -> Synthon:
           symmetrically (true symmetry, not pseudosymmetric).
       F = F_ℏ (HIGH): topological gap Δ_topo protects the Majorana modes from
           local perturbations — the highest available fidelity tier.
-      K = K_trap (TRAP): the topological gap acts as a kinetic barrier; thermal
+      K = K_teshlig (TRAP): the topological gap acts as a kinetic barrier; thermal
           excitations above the gap are exponentially suppressed. The Majorana
-          modes are gap-protected (contrast K_MBL which requires disorder).
+          modes are gap-protected (contrast K_lambda which requires disorder).
       G = G_ℵ (GLOBAL): the logical qubit is non-locally encoded — γ_L and γ_R
           are at opposite ends of the chain; no local operator can distinguish
           |0_L⟩ from |1_L⟩.
@@ -421,7 +421,7 @@ def _kitaev_chain_majorana() -> Synthon:
             "Kitaev chain: 1D spinless p-wave superconductor in its topological phase "
             "(|μ| < 2t). Majorana zero modes γ_L, γ_R at chain ends encode a "
             "single non-local logical qubit. AZ class D, ℤ invariant (W=1). "
-            "Gap-protected (K_trap); no disorder required (contrast K_MBL). "
+            "Gap-protected (K_teshlig); no disorder required (contrast K_lambda). "
             "Ω_Z: first topological synthon in the quantum catalog. "
             "Prediction: tensor(kitaev_chain, qubit_logical) → Ω_Z (dominant "
             "protection propagates); meet(kitaev_chain, spin_singlet) → Ω_0 "
@@ -452,7 +452,7 @@ def _fqh_moore_read() -> Synthon:
           by PHS but differ in microscopic details (anti-Pfaffian debate).
       F = F_ℏ (HIGH): topological gap Δ_5/2 ≈ 0.5 K protects the state.
           Fragile in practice but protected in principle (high F tier).
-      K = K_trap (TRAP): topological gap prevents thermal escape; the system is
+      K = K_teshlig (TRAP): topological gap prevents thermal escape; the system is
           pinned in the ν=5/2 plateau.
       G = G_ℵ (GLOBAL): non-local topological order — groundstate degeneracy
           (GSD = 3 on torus) is a global property inaccessible to local probes.
@@ -513,7 +513,7 @@ def _topological_insulator_bi2se3() -> Synthon:
       F = F_ℏ (HIGH): TRS + Kramers' theorem makes the surface states topologically
           protected — a single magnetic impurity at the Dirac point would gap the
           surface state, but that requires explicitly breaking TRS.
-      K = K_slow (SLOW): surface state mobility is lower than bulk carrier mobility
+      K = K_schwa (SLOW): surface state mobility is lower than bulk carrier mobility
           in typical Bi₂Se₃ (bulk conduction still dominant below ~100 K);
           the surface states are slow compared to bulk.
       G = G_ℵ (GLOBAL): bulk-boundary correspondence is a non-local relationship —
@@ -541,7 +541,7 @@ def _topological_insulator_bi2se3() -> Synthon:
             "Bi₂Se₃-type 3D strong topological insulator. ℤ₂ invariant ν₀=1, "
             "AZ class AII (time-reversal symmetric). Single Dirac cone per surface, "
             "Kramers-protected. Bulk gap ~0.35 eV; surface state velocity "
-            "v_F ~ 5×10⁵ m/s. K_slow: surface carrier mobility < bulk. "
+            "v_F ~ 5×10⁵ m/s. K_schwa: surface carrier mobility < bulk. "
             "Ω_Z₂ (protection_strength=1). "
             "Prediction: tensor(topological_insulator, spin_singlet) → Ω_Z₂ "
             "(dominates TRIVIAL). "

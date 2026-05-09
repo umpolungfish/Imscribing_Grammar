@@ -82,7 +82,7 @@ def _tide_pool() -> Synthon:
     Intertidal rock-pool ecological synthon.
 
     Formal tuple (Phase 2 target):
-        ⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð, F_ð⟩ ; K_slow ; G_ℶ ;
+        ⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð, F_ð⟩ ; K_schwa ; G_ℶ ;
           Γ∨(BROAD) ; Φ_sub ; n:m ⟩
 
     Phase 1 encoding (current enum limits):
@@ -152,7 +152,7 @@ def _tide_pool() -> Synthon:
                 "molecular": "proline_aldol_cycle (closed catalytic cycle, periodic reset)",
                 "supramolecular": "MOF framework (spatial organisation, mesoscale granularity)",
             },
-            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_slow ; G_ℶ ; Γ∨(BROAD) ; Φ_sub ; n:m ⟩",
+            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_schwa ; G_ℶ ; Γ∨(BROAD) ; Φ_sub ; n:m ⟩",
         },
     )
 
@@ -162,7 +162,7 @@ def _global_supply_chain() -> Synthon:
     Planetary logistics network synthon (techno-social).
 
     Formal tuple (Phase 2 target):
-        ⟨ D∞(open) ; T⋈·T_network ; R‡ ; P− ; ⟨F_ð, F_ℏ⟩ ; K_mod ; G_ℵ ;
+        ⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð, F_ℏ⟩ ; K_turnm ; G_ℵ ;
           Γ∧(SELECTIVE) ; Φ_sub ; 1:* ⟩
 
     Phase 1 encoding:
@@ -209,7 +209,7 @@ def _global_supply_chain() -> Synthon:
                 "D∞(open) — open dissipative qualifier; Axiom 6 directional-flow grounding not closed-cycle",
                 "stoichiometry_network — 1:* unbounded node count; S primitive needs network mode",
                 "fidelity_distribution — ⟨F_ð, F_ℏ⟩ stochastic demand + hard contractual constraints",
-                "compound_T — T_network·T⋈ simultaneous network topology + cyclic trade flows",
+                "compound_T — T_nrleg·T⋈ simultaneous network topology + cyclic trade flows",
             ],
             "grounding": {
                 "reset": {
@@ -240,7 +240,7 @@ def _global_supply_chain() -> Synthon:
                 "temporal": "proline_aldol_cycle (catalytic flow with continuous throughput)",
                 "supramolecular": "MOF framework (G_ℵ global network, selective AND grammar)",
             },
-            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_network ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_mod ; G_ℵ ; Γ∧(SELECTIVE) ; Φ_sub ; 1:* ⟩",
+            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_turnm ; G_ℵ ; Γ∧(SELECTIVE) ; Φ_sub ; 1:* ⟩",
         },
     )
 
@@ -250,7 +250,7 @@ def _autonomous_drone_swarm() -> Synthon:
     Autonomous UAV swarm synthon (robotic multi-agent).
 
     Formal tuple (Phase 2 target):
-        ⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ, F_ð⟩ ; K_fast ; G_ℵ ;
+        ⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ, F_ð⟩ ; K_frtailgamma ; G_ℵ ;
           Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; Φ_c ; n:m ⟩
 
     Phase 1 encoding:
@@ -323,7 +323,7 @@ def _autonomous_drone_swarm() -> Synthon:
                 "expected": "Power-law divergence of ξ_r at η_c (critical noise)",
                 "reference": "Vicsek et al. (1995) PRL 75:1226",
             },
-            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_fast ; G_ℵ ; Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; Φ_c ; n:m ⟩",
+            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_frtailgamma ; G_ℵ ; Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; Φ_c ; n:m ⟩",
         },
     )
 
@@ -333,7 +333,7 @@ def _db24c8_pseudorotaxane() -> Synthon:
     DB24C8/dialkylammonium pseudorotaxane — Transformation #8 Φ_c probe system.
 
     Formal tuple:
-        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_mod ; G_ב ; Γ_∧(SPECIFIC) ; Φ_sub→Φ_c ; 1:1 ⟩
+        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_turnm ; G_ב ; Γ_∧(SPECIFIC) ; Φ_sub→Φ_c ; 1:1 ⟩
 
     This is the primary-tier molecular system used as the Transformation #8
     literature-grounded partial Φ_c anchor.
@@ -344,10 +344,10 @@ def _db24c8_pseudorotaxane() -> Synthon:
     Key data:
       - Guest 6⁺ (good axle): ΔG‡ = 19.8 kcal mol⁻¹ (metadynamics, PBE-D2,
         explicit CH₂Cl₂ solvent); experimental ΔG‡_out = 23.1 kcal mol⁻¹.
-        Ring distortions < 200 cm⁻¹ (thermally accessible). K_mod.
+        Ring distortions < 200 cm⁻¹ (thermally accessible). K_turnm.
       - Guest 8⁺ (bad axle): ΔG‡ > 100 kcal mol⁻¹. Blocked modes at 614 and
-        809 cm⁻¹. Effective K_trap.
-      - Sub-Å methyl repositioning switches K_mod ↔ K_trap without disrupting
+        809 cm⁻¹. Effective K_teshlig.
+      - Sub-Å methyl repositioning switches K_turnm ↔ K_teshlig without disrupting
         R_⇔ or T_⋈. All-or-nothing steric cliff.
 
     Provisional degeneracy_strength ≈ 0.71 (proxy estimate; not computed).
@@ -361,8 +361,8 @@ def _db24c8_pseudorotaxane() -> Synthon:
         description=(
             "DB24C8 / dialkylammonium pseudorotaxane: steric-cliff dethreading system. "
             "Transformation #8 literature-grounded partial Φ_c anchor. "
-            "Guest 6⁺ (good axle): ΔG‡ = 19.8 kcal mol⁻¹ (K_mod). "
-            "Guest 8⁺ (bad axle): ΔG‡ > 100 kcal mol⁻¹ (K_trap). "
+            "Guest 6⁺ (good axle): ΔG‡ = 19.8 kcal mol⁻¹ (K_turnm). "
+            "Guest 8⁺ (bad axle): ΔG‡ > 100 kcal mol⁻¹ (K_teshlig). "
             "All-or-nothing steric cliff on sub-Å methyl repositioning. "
             "Provisional degeneracy_strength ≈ 0.71. "
             "Source: Groppi et al. Angew. Chem. Int. Ed. 2020, 59, 14825. "
@@ -399,7 +399,7 @@ def _db24c8_pseudorotaxane() -> Synthon:
                 "requires_full_scan": True,
                 "notes": (
                     "Matches predicted all-or-nothing steric cliff; K selectivity explosion "
-                    "at constant/improved F. Sub-Å methyl repositioning flips K_mod → K_trap "
+                    "at constant/improved F. Sub-Å methyl repositioning flips K_turnm → K_teshlig "
                     "without disrupting R_⇔ or T_⋈ — precisely the primitive contraction "
                     "Axiom 5 predicts near the criticality locus. "
                     "HotSwap code relaxations (F floor, K multiplicity, S defect) deferred "
@@ -413,14 +413,14 @@ def _db24c8_pseudorotaxane() -> Synthon:
                     "barrier_kcal_mol": 19.8,
                     "method": "ab initio metadynamics, PBE-D2, explicit CH₂Cl₂, 300 K",
                     "barrier_experimental_kcal_mol": 23.1,
-                    "kinetic_character": "K_mod",
+                    "kinetic_character": "Ç_turnm",
                     "ring_distortion_modes_cm1": "<200 (thermally accessible)",
                     "h_bonds_in_ts": "persist and shift",
                 },
                 "guest_8_plus": {
                     "barrier_kcal_mol": ">100",
                     "method": "ab initio metadynamics, PBE-D2, explicit CH₂Cl₂, 300 K",
-                    "kinetic_character": "K_trap",
+                    "kinetic_character": "Ç_teshlig",
                     "blocked_modes_cm1": [614, 809],
                     "reason": "high-frequency ring-elongation modes inaccessible at 300 K",
                 },
@@ -463,7 +463,7 @@ def _db24c8_pseudorotaxane() -> Synthon:
             ],
             "cross_domain_analog": {
                 "ecological": "tide_pool_ecological (open dissipative cycle with reset; R‡ analog to R_⇔ kinetic gating)",
-                "temporal": "proline_aldol_cycle (reset mechanism, cyclic topology, K_mod)",
+                "temporal": "proline_aldol_cycle (reset mechanism, cyclic topology, K_turnm)",
             },
         },
     )

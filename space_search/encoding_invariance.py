@@ -62,7 +62,7 @@ PROXIMITY_PAIRS = [
     (
         "human",       "synthons",
         "pulsar_noise", "synthons",
-        "Human vs unmodeled pulsar noise: differ only in D (D_triangle vs D_infty)",
+        "Human vs unmodeled pulsar noise: differ only in D (Ð_C vs Ð_;)",
     ),
 ]
 

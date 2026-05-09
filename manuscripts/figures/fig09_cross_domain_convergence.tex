@@ -1,4 +1,9 @@
 \documentclass[tikz,border=12pt]{standalone}
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 \usepackage{amsmath,amssymb}
 \usetikzlibrary{positioning,arrows,shapes,fit,calc,backgrounds,decorations.pathmorphing}
 \begin{document}
@@ -55,7 +60,7 @@ $\Rightarrow$ same structural type
 
 % Bottom annotation
 \node[font=\footnotesize,below=0.3cm of cotype,text=gray] {
-$V(P_i,P_j) < 0.15$ for all primitive pairs across 2,257$+$ encoded systems — independence is structural, not statistical.
+$V(Φ_i,Φ_j) < 0.15$ for all primitive pairs across 2,257$+$ encoded systems — independence is structural, not statistical.
 };
 
 \end{tikzpicture}

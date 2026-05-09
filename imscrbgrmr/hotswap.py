@@ -270,7 +270,7 @@ class HotSwapEngine:
         for c in prim_checks:
             if c.primitive == "K" and c.passed and candidate.kinetic_character == KineticCharacter.TRAP:
                 warnings.append(
-                    "Candidate K = K_trap — kinetic trap risk even though this passes "
+                    "Candidate K = K_teshlig — kinetic trap risk even though this passes "
                     "the primitive check. Verify pathway multiplicity experimentally."
                 )
 
@@ -539,7 +539,7 @@ class HotSwapEngine:
         passed = k in accessible
         note = "" if passed else (
             f"K = {k.value} is not accessible for hot-swapping. "
-            "K_slow creates kinetic bottlenecks; K_trap may freeze system state."
+            "K_schwa creates kinetic bottlenecks; K_teshlig may freeze system state."
         )
         old_k = target.kinetic_character.value if target is not None else "—"
         return PrimitiveCheckResult(
@@ -623,9 +623,9 @@ class HotSwapEngine:
         )
 
         return {
-            "D_T_S_exact_match":    all(prim_by_name.get(p, False) for p in ("D", "T", "S")),
-            "F_floor_preserved":    prim_by_name.get("F", False),
-            "K_accessible":         prim_by_name.get("K", False),
+            "Ð_T_S_exact_match":    all(prim_by_name.get(p, False) for p in ("D", "T", "S")),
+            "ƒ_floor_preserved":    prim_by_name.get("F", False),
+            "Ç_accessible":         prim_by_name.get("K", False),
             "axiom_validation_pass": axiom_report.get("all_satisfied", False),
             "xi_CP_within_tolerance": xi_ok,
             "grounding_status_ok":  grounding_check.get("passed", False),

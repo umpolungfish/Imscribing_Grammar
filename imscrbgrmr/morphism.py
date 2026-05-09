@@ -254,7 +254,7 @@ def find_qcp_path(
         no_temp    = "temporal" not in qcp_s.dimensionality.domains
         if has_galeph and has_fhigh and has_ktrap and no_temp:
             hints.append(
-                f"{qcp_s.name}: G_aleph + F_hbar + K_trap + ¬D_∞ → "
+                f"{qcp_s.name}: G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞ → "
                 "TFI/heavy-fermion quantum criticality class"
             )
         else:
@@ -421,11 +421,11 @@ def find_transition(
                 no_temp    = "temporal" not in s.dimensionality.domains
                 if has_galeph and has_fhigh and has_ktrap and no_temp:
                     hints.append(
-                        f"{name}: G_aleph + F_hbar + K_trap + ¬D_∞ → "
+                        f"{name}: G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞ → "
                         "TFI/heavy-fermion quantum criticality class"
                     )
                 elif has_galeph:
-                    hints.append(f"{name}: G_aleph → non-local QCP")
+                    hints.append(f"{name}: G_revapostrophe → non-local QCP")
                 else:
                     hints.append(f"{name}: Φ_c intermediate (universality class unresolved)")
         qcp = QuantumCriticalPoint(

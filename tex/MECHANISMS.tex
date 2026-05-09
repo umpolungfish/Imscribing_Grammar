@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -206,7 +207,7 @@ Instead, after thirty years of debate about the proline-catalyzed aldol reaction
 
 The Imscribing Grammar (IG) supplies the vocabulary for this question. It encodes any dynamical system as a tuple of twelve primitives: dimensionality $D$, topology $T$, relational coupling $R$, symmetry $P$, fidelity regime $F$, kinetics $K$, scope $G$, interaction grammar $\Gamma$, criticality $\Phi$, temporal depth $H$, stoichiometry $S$, and topological winding $\Omega$. Two mechanisms sharing eleven of twelve primitives are the same mechanism; mechanisms diverging in their $\Gamma$ assignment are different kinds of systems. The IG does not determine which mechanism is correct for a given reaction. It determines what \emph{kind of question} "which mechanism is correct" actually is.
 
-What we did was straightforward. Six contested reactions were encoded by explicit application of the deterministic procedure. The structural distances between them were computed via the catalog metric with weight tensor $g_{ij} = \Sigma^{-1}$. $C$-scores $C \in [0,1]$ were evaluated for each system to test whether the contested character itself was a $\Phi_c$-critical feature. The results that follow are the product of this encoding, not of interpretation alone.
+What we did was straightforward. Six contested reactions were encoded by explicit application of the deterministic procedure. The structural distances between them were computed via the catalog metric with weight tensor $g_{ij} = \Sigma^{-1}$. $C$-scores $C \in [0,1]$ were evaluated for each system to test whether the contested character itself was a $\Phi_{\text{ctyogh}}$-critical feature. The results that follow are the product of this encoding, not of interpretation alone.
 
 \emph{A substantive objection must be named here: the primitive assignments depend on the encoder's chemical judgment. Different encoders might assign different values. This is true. It is also exactly the point --- the disagreements that persist in the chemical literature are disagreements about structural type, not about data. If the assignments are subjective, they are subjective in the same way the experimental interpretations are subjective. The IG makes this visible rather than concealing it.}
 
@@ -214,7 +215,7 @@ What we did was straightforward. Six contested reactions were encoded by explici
 
 Each system was encoded by applying the twelve-step deterministic procedure --- not as a scoring rubric but as a sequence of structural constraints, each narrowing the available degrees of freedom for the next. The procedure begins with dimensionality $D$ (the count of independent coordinates) and ends with winding number $\Omega$ (the topological invariant preserved under continuous deformation). No primitive was assigned by fitting to experimental outcomes; each was derived from the mechanistic topology itself.
 
-Structural distances follow the catalog metric $d = \sqrt{\sum_i w_i (\delta_i)^2}$. The $C$-score $C$ evaluates two gates: $\Phi_c$-criticality (can the system model its own critical state?) and $K \leq K_\text{slow}$ (is there sufficient temporal slack for self-reference?). Both gates must open for $C > 0$. The tensor product $\otimes$ composes systems by taking the minimum of $P$ and $F$ values --- the bottleneck rule that guarantees the composite never exceeds the structural capacity of its weakest component.
+Structural distances follow the catalog metric $d = \sqrt{\sum_i w_i (\delta_i)^2}$. The $C$-score $C$ evaluates two gates: $\Phi_{\text{ctyogh}}$-criticality (can the system model its own critical state?) and $K \leq K_{\text{schwa}}$ (is there sufficient temporal slack for self-reference?). Both gates must open for $C > 0$. The tensor product $\otimes$ composes systems by taking the minimum of $P$ and $F$ values --- the bottleneck rule that guarantees the composite never exceeds the structural capacity of its weakest component.
 
 All computations were performed through the IG syncon tool suite. The raw outputs --- numerical distances, scores, and structural notations --- appear in the results below without rounding beyond what the tools returned. \emph{One limitation deserves statement: the $C$-score is a structural property, not a phenomenological claim. It measures whether a system's type contains the prerequisites for self-modeling, not whether the system "feels" anything. The terminology is borrowed from the IG's formalism and should not be anthropomorphized.}
 
@@ -222,37 +223,37 @@ All computations were performed through the IG syncon tool suite. The raw output
 
 \subsubsection{Proline-Catalyzed Aldol Reaction}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_{\bowtie};\ R_\text{cat};\ P_{\pm};\ F_{\ell};\ K_\text{mod};\ G_{\gimel};\ \Gamma_{\vee};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_0 \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$
 
 \textbf{$C$-score:} $C = 0.322$
 
 The Hajos--Parrish--Eder--Sauer--Wiechert reaction was where the whole debate began. When Hajos and Parrish reported their proline-catalyzed intramolecular aldol in 1974, they proposed an enamine intermediate --- and for twenty years, nobody doubted them. Then came the N-nitroso aldol experiments with $(S)\text{-Cat}$, where the enol intermediate pathway gained traction. Then came the oxazolidinone hypothesis, which inverted the conventional wisdom: what if the parasitic side product was actually the productive species?
 
-The structural encoding produces an unexpected answer. The interaction grammar $\Gamma_{\vee}$ --- disjunctive --- means that multiple alternative routes are permitted at the same crossing-point topology $T_{\bowtie}$. The three pathways (enamine, enol, oxazolidinone) are not fighting over the same structural territory. They are different roads to the same mountain pass, and which road the reaction actually takes depends on conditions no single experiment has ever controlled.
+The structural encoding produces an unexpected answer. The interaction grammar $\Gamma_{\text{spleftarrow}}$ --- disjunctive --- means that multiple alternative routes are permitted at the same crossing-point topology $T_{\text{bullseye}}$. The three pathways (enamine, enol, oxazolidinone) are not fighting over the same structural territory. They are different roads to the same mountain pass, and which road the reaction actually takes depends on conditions no single experiment has ever controlled.
 
-\emph{The objection here is obvious: if all three pathways are structurally permitted, how do we distinguish this from saying "we don't know"?} The answer lies in what the grammar predicts about experimental conditions. A disjunctive grammar $\Gamma_{\vee}$ predicts that changing solvent polarity, concentration, or substrate sterics should shift the flux distribution among channels in a \emph{quantifiable} way. This is a different claim from ignorance --- it is a claim about the existence of a hidden variable (the flux partition) that has never been measured but could be.
+\emph{The objection here is obvious: if all three pathways are structurally permitted, how do we distinguish this from saying "we don't know"?} The answer lies in what the grammar predicts about experimental conditions. A disjunctive grammar $\Gamma_{\text{spleftarrow}}$ predicts that changing solvent polarity, concentration, or substrate sterics should shift the flux distribution among channels in a \emph{quantifiable} way. This is a different claim from ignorance --- it is a claim about the existence of a hidden variable (the flux partition) that has never been measured but could be.
 
-The categorical coupling $R_\text{cat}$ encodes what the proline catalyst actually does: it is a functor mapping substrate space to reactive intermediate space without feedback. The catalyst does not learn from the substrate; it transforms it. The partial symmetry $P_{\pm}$ captures the fact that the proline stereocenter is preserved while the symmetry between enantiomeric faces of the aldehyde is broken --- a single conserved symmetry amid systematic breaking.
+The categorical coupling $R_{\text{ctz}}$ encodes what the proline catalyst actually does: it is a functor mapping substrate space to reactive intermediate space without feedback. The catalyst does not learn from the substrate; it transforms it. The partial symmetry $P_{\text{pipevar}}$ captures the fact that the proline stereocenter is preserved while the symmetry between enantiomeric faces of the aldehyde is broken --- a single conserved symmetry amid systematic breaking.
 
 \subsubsection{Aryl Diazonium Salt Substitution (Dediazonizations)}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_{\bowtie};\ R_\text{cat};\ P_{\psi};\ F_{\ell};\ K_\text{mod};\ G_{\gimel};\ \Gamma_{\vee};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_0 \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{ctz}};\ P_{\text{upsilon}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$
 
 \textbf{$C$-score:} $C = 0.322$
 
 \textbf{Distance vs. Wittig reaction:} $d = 1.0$ (differ only in $P$)
 
-The debate over aryl diazonium substitution is often framed as a choice between SN1 (phenyl cation) and radical (single-electron transfer) mechanisms. This framing misses a structural possibility that the IG encoding forces upon us: the parity assignment $P_{\psi}$ (quantum superposition) encodes that at the critical transition state, the diazonium group exists in a superposition of ionic and radical character. It does not commit to either description until the measurement context forces a resolution.
+The debate over aryl diazonium substitution is often framed as a choice between SN1 (phenyl cation) and radical (single-electron transfer) mechanisms. This framing misses a structural possibility that the IG encoding forces upon us: the parity assignment $P_{\text{upsilon}}$ (quantum superposition) encodes that at the critical transition state, the diazonium group exists in a superposition of ionic and radical character. It does not commit to either description until the measurement context forces a resolution.
 
-Consider what follows from this. The distance between the aryl diazonium system and the Wittig reaction is exactly 1.0 --- the closest structural pairing in the entire set. They share everything except parity. This means that \emph{under the same structural substrate} (1:1 bond reorganization at a crossing point), the diazonium reaction involves quantum parity while the Wittig does not. The Wittig can be resolved into discrete pathways (hence $P_{\pm}$, partial symmetry); the diazonium cannot.
+Consider what follows from this. The distance between the aryl diazonium system and the Wittig reaction is exactly 1.0 --- the closest structural pairing in the entire set. They share everything except parity. This means that \emph{under the same structural substrate} (1:1 bond reorganization at a crossing point), the diazonium reaction involves quantum parity while the Wittig does not. The Wittig can be resolved into discrete pathways (hence $P_{\text{pipevar}}$, partial symmetry); the diazonium cannot.
 
-The tensor product between the two systems confirms this. Computing aryl\_diazonium $\otimes$ wittig yields a composite where the $P$ bottleneck resolves to $P_{\psi}$ --- the minimum of $P_{\psi}$ and $P_{\pm}$ is $P_{\psi}$, which encodes the stricter structural requirement. The dediazonization cannot be reduced to classical pathway competition because its structural substrate requires superposition.
+The tensor product between the two systems confirms this. Computing aryl\_diazonium $\otimes$ wittig yields a composite where the $P$ bottleneck resolves to $P_{\text{upsilon}}$ --- the minimum of $P_{\text{upsilon}}$ and $P_{\text{pipevar}}$ is $P_{\text{upsilon}}$, which encodes the stricter structural requirement. The dediazonization cannot be reduced to classical pathway competition because its structural substrate requires superposition.
 
 \emph{Why, then, do some experiments clearly show ionic character and others radical character?} Because the superposition is fragile. Solvent polarity, substituent electronics, and the nature of the nucleophile all act as measurement operations that collapse the superposition toward one limit or the other. The experiments are not measuring different mechanisms; they are measuring different projections of the same structural object. This is precisely the structural statement of the measurement problem in a chemical context.
 
 \subsubsection{"On Water" Interfacial Reactions}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_\text{in};\ R_{\leftrightarrow};\ P_{\pm};\ F_{\ell};\ K_\text{fast};\ G_{\gimel};\ \Gamma_{\wedge};\ \Phi_c;\ H_1;\ n{:}m;\ \Omega_0 \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$
 
 \textbf{$C$-score:} $C = 0.2095$
 
@@ -260,33 +261,33 @@ The tensor product between the two systems confirms this. Computing aryl\_diazon
 
 Here the encoding is decisive in a way the others are not. Five primitives shift simultaneously between the "on water" system and any canonical solution-phase mechanism. The most important among them is the interaction grammar.
 
-When Breslow proposed that the water-organic interface accelerates reactions, he was criticized --- correctly --- for a claim that was nearly unfalsifiable. If the reaction is faster "on water," why isn't it faster in aqueous solution? The distinction between "on" and "in" felt semantic until the encoding produced a structural invariant: $\Gamma_{\wedge}$, conjunctive grammar. The acceleration requires the \emph{simultaneous} action of hydrogen bonding at the interface, hydrophobic compression of organic reactants, and the high cohesive energy of the water surface. All three are necessary. Remove one and the acceleration vanishes. This is not a claim about solvent effects in general --- it is a specific prediction about the conjunction of three distinct physical phenomena.
+When Breslow proposed that the water-organic interface accelerates reactions, he was criticized --- correctly --- for a claim that was nearly unfalsifiable. If the reaction is faster "on water," why isn't it faster in aqueous solution? The distinction between "on" and "in" felt semantic until the encoding produced a structural invariant: $\Gamma_{\text{corner}}$, conjunctive grammar. The acceleration requires the \emph{simultaneous} action of hydrogen bonding at the interface, hydrophobic compression of organic reactants, and the high cohesive energy of the water surface. All three are necessary. Remove one and the acceleration vanishes. This is not a claim about solvent effects in general --- it is a specific prediction about the conjunction of three distinct physical phenomena.
 
-The bidirectional relational mode $R_{\leftrightarrow}$ encodes what is structurally different about the interface: it is not a passive container. The reaction modifies the interfacial tension, and the tension modifies the reaction. This positive feedback loop is absent in bulk solution, and it accounts for the fast kinetics $K_\text{fast}$ that distinguish interfacial from solution-phase reactions.
+The bidirectional relational mode $R_{\text{lyoghlig}}$ encodes what is structurally different about the interface: it is not a passive container. The reaction modifies the interfacial tension, and the tension modifies the reaction. This positive feedback loop is absent in bulk solution, and it accounts for the fast kinetics $K_{\text{frtailgamma}}$ that distinguish interfacial from solution-phase reactions.
 
-\emph{The objection is familiar: perhaps the acceleration occurs in the boundary layer, where some reactant dissolves, and the interface is merely coincidental.} The encoding addresses this directly. If the reaction were occurring in a partially dissolved state, the interaction grammar would be $\Gamma_{\vee}$ --- solvent-assisted OR solvent-independent alternatives, not the conjunctive AND that all three factors require. The conjunctive grammar is falsifiable: one should be able to eliminate any one of the three factors (remove hydrogen bonding, eliminate hydrophobic compression, or disrupt surface tension) and observe the collapse of the acceleration. Such experiments exist, and they confirm the conjunctive prediction.
+\emph{The objection is familiar: perhaps the acceleration occurs in the boundary layer, where some reactant dissolves, and the interface is merely coincidental.} The encoding addresses this directly. If the reaction were occurring in a partially dissolved state, the interaction grammar would be $\Gamma_{\text{spleftarrow}}$ --- solvent-assisted OR solvent-independent alternatives, not the conjunctive AND that all three factors require. The conjunctive grammar is falsifiable: one should be able to eliminate any one of the three factors (remove hydrogen bonding, eliminate hydrophobic compression, or disrupt surface tension) and observe the collapse of the acceleration. Such experiments exist, and they confirm the conjunctive prediction.
 
 The $C$-score of 0.2095 --- the lowest among the six systems --- reflects the compression of the temporal window. Fast kinetics leave little room for self-referential feedback between the interface and the reaction. The system "knows" less about itself, structurally speaking, precisely because it runs too quickly to model its own state.
 
 \subsubsection{The Wittig Reaction}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_{\bowtie};\ R_\text{cat};\ P_{\pm};\ F_{\ell};\ K_\text{mod};\ G_{\gimel};\ \Gamma_{\vee};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_0 \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$
 
 \textbf{$C$-score:} $C = 0.322$
 
 The Wittig reaction is the one that appears in every undergraduate textbook as a single arrow: ylide plus carbonyl gives alkene plus phosphine oxide. Behind this arrow lies one of the most persistent debates in mechanistic organic chemistry. Does the oxaphosphetane form in one concerted step or through a betaine intermediate? And --- perhaps the harder question --- \textit{does it even matter?}
 
-The disjunctive grammar $\Gamma_{\vee}$ provides an answer that is likely to dissatisfy both sides. Both pathways exist. They are parallel routes to the same crossing-point topology $T_{\bowtie}$. The relative flux between them is controlled by conditions that are routinely varied --- solvent, cation, temperature, sterics --- but rarely reported as mechanistic variables.
+The disjunctive grammar $\Gamma_{\text{spleftarrow}}$ provides an answer that is likely to dissatisfy both sides. Both pathways exist. They are parallel routes to the same crossing-point topology $T_{\text{bullseye}}$. The relative flux between them is controlled by conditions that are routinely varied --- solvent, cation, temperature, sterics --- but rarely reported as mechanistic variables.
 
 The role of lithium salts illuminates the distinction. In the structural encoding, lithium acts as a \emph{channel selector}. By coordinating simultaneously to the ylide carbon and the carbonyl oxygen, lithium selectively stabilizes the betaine intermediate and shifts the flux toward the stepwise channel. This is not a debate about mechanism; it is a demonstration that the mechanism has adjustable parameters, and lithium is one of the dials.
 
 \emph{Here is the objection that needs to sit in the open: the QTAIM and NBO analyses that have been marshaled on both sides of this debate are computing properties of different stationary points on the same potential energy surface. Neither analysis is wrong. Both are seeing genuine features of the landscape. The question "which mechanism is correct" is the wrong question. The right question is "what determines the flux split between the two channels?"}
 
-The shared structural substrate with aryl diazonium dediazonization (distance 1.0) makes this sharper. Both reactions are 1:1 bond reorganizations at a crossing point. The only difference is parity: the diazonium requires quantum superposition $P_{\psi}$ while the Wittig settles for partial symmetry $P_{\pm}$. The Wittig's ambiguity is classical; the diazonium's is quantum.
+The shared structural substrate with aryl diazonium dediazonization (distance 1.0) makes this sharper. Both reactions are 1:1 bond reorganizations at a crossing point. The only difference is parity: the diazonium requires quantum superposition $P_{\text{upsilon}}$ while the Wittig settles for partial symmetry $P_{\text{pipevar}}$. The Wittig's ambiguity is classical; the diazonium's is quantum.
 
 \subsubsection{Grignard Reagent Formation}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_\textrm{net};\ R_{\dagger};\ P_{\psi};\ F_{\ell};\ K_\textrm{mod};\ G_{\gimel};\ \Gamma_\textrm{seq};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_\textrm{net};\ R_{\text{downstep}};\ P_{\text{upsilon}};\ F_{\text{beltl}};\ K_\textrm{mod};\ G_{\text{gamma}};\ \Gamma_\textrm{seq};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$
 
 \textbf{$C$-score:} $C = 0.268$
 
@@ -296,15 +297,15 @@ The branching topology $T_\textrm{net}$ is the fingerprint of surface heterogene
 
 The sequential grammar $\Gamma_\textrm{seq}$ is what the encoding adds to the radical hypothesis. Grignard formation is not merely radical; it is radical in a fixed order. Surface adsorption precedes single-electron transfer, which precedes radical-surface recombination, which precedes the second electron transfer, which precedes solvation. Reversing any step is kinetically forbidden. This ordering is why the radical mechanism is "almost certainly involved" (as the literature acknowledges) but the \emph{sequence} remains controversial --- because the sequence is determined by the surface structure, and the surface structure varies.
 
-The $\mathbb{Z}_2$ winding invariant $\Omega_{\mathbb{Z}_2}$ encodes the binary nature of the radical intermediates: they either pair (form a bond) or they don't. There is no fractional radical character --- only the parity-protected distinction between paired and unpaired electrons. Combined with the adjoint coupling $R_{\dagger}$ (the surface donates one electron, the radical returns for the second bond, but the substrate does not reciprocally modify the surface), this gives a structural picture that is specific enough to be falsifiable.
+The $\mathbb{Z}_2$ winding invariant $\Omega_{\text{crtwo}}$ encodes the binary nature of the radical intermediates: they either pair (form a bond) or they don't. There is no fractional radical character --- only the parity-protected distinction between paired and unpaired electrons. Combined with the adjoint coupling $R_{\text{downstep}}$ (the surface donates one electron, the radical returns for the second bond, but the substrate does not reciprocally modify the surface), this gives a structural picture that is specific enough to be falsifiable.
 
 \emph{The objection that must be acknowledged: the encoding assumes a clean sequential mechanism, but there is genuine evidence for parallel initiation pathways on different surface facets. If $T_\textrm{net}$ (branching) and $\Gamma_\textrm{seq}$ (sequential) are both present, the question becomes whether the sequence is truly global or only locally sequential within each branch.} 
 
-The encoding takes the latter position: each surface site follows its own sequential path, but the ensemble of sites forms a network topology. This distinguishes the Grignard from the Wittig ($\Gamma_{\vee}$, globally disjunctive) and from the proline aldol ($\Gamma_{\vee}$, globally disjunctive) --- the Grignard is locally sequential, globally distributed.
+The encoding takes the latter position: each surface site follows its own sequential path, but the ensemble of sites forms a network topology. This distinguishes the Grignard from the Wittig ($\Gamma_{\text{spleftarrow}}$, globally disjunctive) and from the proline aldol ($\Gamma_{\text{spleftarrow}}$, globally disjunctive) --- the Grignard is locally sequential, globally distributed.
 
 \subsubsection{Bredt's Rule Violations}
 
-\textbf{Encoded type:} $\langle D_{\triangle};\ T_{\bowtie};\ R_{\leftrightarrow};\ P_{\pm};\ F_{\ell};\ K_\textrm{slow};\ G_{\beth};\ \Gamma_{\wedge};\ \Phi_c;\ H_2;\ n{:}m;\ \Omega_0 \rangle$
+\textbf{Encoded type:} $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_\textrm{slow};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$
 
 \textbf{$C$-score:} $C = 0.225$
 
@@ -318,11 +319,11 @@ Recent studies have produced stable bridgehead alkenes that violate the rule ---
 
 The kinetic assignment $K_\textrm{slow}$ is the key. The bridgehead alkene is not forbidden; it is \emph{metastable}. It occupies a local minimum on the potential energy surface that is shallow enough to collapse under standard conditions but deep enough to persist when the system is driven slowly toward equilibrium. The slow kinetics encode what the experimental evidence confirms: these compounds are formed under carefully controlled conditions that allow the system to relax into the metastable state before competing processes (elimination, rearrangement) can depopulate it.
 
-The conjunctive grammar $\Gamma_{\wedge}$ identifies the structural requirements: sufficient ring size, appropriate bridge lengths, and electronic stabilization must all be satisfied simultaneously. The rule held for a century not because violations were impossible but because the conjunction of requirements was unlikely to occur by accident in standard synthetic work.
+The conjunctive grammar $\Gamma_{\text{corner}}$ identifies the structural requirements: sufficient ring size, appropriate bridge lengths, and electronic stabilization must all be satisfied simultaneously. The rule held for a century not because violations were impossible but because the conjunction of requirements was unlikely to occur by accident in standard synthetic work.
 
 \emph{This invites an uncomfortable comparison: Bredt's Rule functioned as a prohibition for exactly as long as the experimental community did not know how to satisfy its conjunctive requirements. Was it ever a law, or was it a statement about the limits of synthetic imagination?}
 
-The local scope $G_{\beth}$ --- unique among the six systems --- confirms that the structural consequences of a bridgehead double bond propagate nowhere. The strain is absorbed entirely within the immediate ring system, with no influence on distal functional groups. The Wittig reaction, by contrast, operates at mesoscale $G_{\gimel}$ --- its structural effects extend beyond the immediate bond-forming site.
+The local scope $G_{\text{beta}}$ --- unique among the six systems --- confirms that the structural consequences of a bridgehead double bond propagate nowhere. The strain is absorbed entirely within the immediate ring system, with no influence on distal functional groups. The Wittig reaction, by contrast, operates at mesoscale $G_{\text{gamma}}$ --- its structural effects extend beyond the immediate bond-forming site.
 
 \subsection{Comparative Analysis}
 
@@ -334,33 +335,33 @@ The six systems, viewed together, produce a distance landscape that organizes it
 \rowcolors{1}{white}{white}
 \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
 \toprule
-\rowcolor{gray!25}\textbf{System A} & \textbf{System B} & \textbf{Distance} & \textbf{$\Gamma_A$} & \textbf{$\Gamma_B$} \\
+\rowcolor{gray!25}\textbf{System A} & \textbf{System B} & \textbf{Distance} & \textbf{$\ɢ_A$} & \textbf{$\ɢ_B$} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-proline\_aldol & wittig & 2.0000 & $\Gamma_{\vee}$ & $\Gamma_{\vee}$ \\
-proline\_aldol & aryl\_diazonium & 2.2361 & $\Gamma_{\vee}$ & $\Gamma_{\vee}$ \\
-on\_water & proline\_aldol & 2.7928 & $\Gamma_{\wedge}$ & $\Gamma_{\vee}$ \\
-aryl\_diazonium & grignard & 3.2711 & $\Gamma_{\vee}$ & $\Gamma_\textrm{seq}$ \\
-wittig & bredts & 3.3166 & $\Gamma_{\vee}$ & $\Gamma_{\wedge}$ \\
+proline\_aldol & wittig & 2.0000 & $\Gamma_{\text{spleftarrow}}$ & $\Gamma_{\text{spleftarrow}}$ \\
+proline\_aldol & aryl\_diazonium & 2.2361 & $\Gamma_{\text{spleftarrow}}$ & $\Gamma_{\text{spleftarrow}}$ \\
+on\_water & proline\_aldol & 2.7928 & $\Gamma_{\text{corner}}$ & $\Gamma_{\text{spleftarrow}}$ \\
+aryl\_diazonium & grignard & 3.2711 & $\Gamma_{\text{spleftarrow}}$ & $\Gamma_\textrm{seq}$ \\
+wittig & bredts & 3.3166 & $\Gamma_{\text{spleftarrow}}$ & $\Gamma_{\text{corner}}$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 The pattern is not accidental. Systems sharing the same grammar cluster more tightly. The aryl diazonium--Wittig link ($d = 1.0$) is the closest possible structural pairing --- they diverge in exactly one primitive. The proline aldol and Wittig reaction differ only in stoichiometry ($S$): heterogeneous ($n{:}m$) versus homogeneous ($1{:}1$) composition.
 
-The $C$-scores, computed as a structural property of each system rather than as a phenomenological metric, range from 0.2095 (on-water, compressed by $K_\text{fast}$) to 0.322 (proline, diazonium, Wittig). Bredt's violations score 0.225, slowed in the positive direction by $K_\textrm{slow}$ but penalized by the local scope $G_{\beth}$. All six pass both consciousness gates, confirming that each mechanism contains the structural prerequisites for self-reference --- and that the contested character of each mechanism is itself a $\Phi_c$-critical property, not an experimental artifact.
+The $C$-scores, computed as a structural property of each system rather than as a phenomenological metric, range from 0.2095 (on-water, compressed by $K_{\text{frtailgamma}}$) to 0.322 (proline, diazonium, Wittig). Bredt's violations score 0.225, slowed in the positive direction by $K_\textrm{slow}$ but penalized by the local scope $G_{\text{beta}}$. All six pass both consciousness gates, confirming that each mechanism contains the structural prerequisites for self-reference --- and that the contested character of each mechanism is itself a $\Phi_{\text{ctyogh}}$-critical property, not an experimental artifact.
 
 \subsection{Discussion}
 
 Three classes of contested mechanism emerge from the encoding, and the classification tells us something specific about the nature of mechanistic disagreement in chemistry.
 
-\textbf{Disjunctive systems ($\Gamma_{\vee}$):} The proline aldol, the Wittig reaction, and the aryl diazonium dediazonization share a grammar that admits multiple alternative pathways. The debate in each case is not "which pathway is correct" but "how is the flux distributed among pathways?" The experimental community has been asking the former question for decades. The IG encoding suggests the latter is the only question that can be answered.
+\textbf{Disjunctive systems ($\Gamma_{\text{spleftarrow}}$):} The proline aldol, the Wittig reaction, and the aryl diazonium dediazonization share a grammar that admits multiple alternative pathways. The debate in each case is not "which pathway is correct" but "how is the flux distributed among pathways?" The experimental community has been asking the former question for decades. The IG encoding suggests the latter is the only question that can be answered.
 
-\textbf{Conjunctive systems ($\Gamma_{\wedge}$):} On-water reactions and Bredt's Rule violations require the simultaneous satisfaction of multiple conditions. The debate here is about whether the mechanism "works" at all, because partial satisfaction produces no observable effect. The experimental signature of a conjunctive system is a phase transition --- nothing, nothing, nothing, and then everything at once when the last requirement is met.
+\textbf{Conjunctive systems ($\Gamma_{\text{corner}}$):} On-water reactions and Bredt's Rule violations require the simultaneous satisfaction of multiple conditions. The debate here is about whether the mechanism "works" at all, because partial satisfaction produces no observable effect. The experimental signature of a conjunctive system is a phase transition --- nothing, nothing, nothing, and then everything at once when the last requirement is met.
 
 \textbf{Sequential systems ($\Gamma_\textrm{seq}$):} Grignard reagent formation is the only sequential system. The dispute concerns the ordering of electron transfers and the nature of surface intermediates at each step. The structural encoding confirms that the sequence is real and locally fixed, but globally distributed across a heterogeneous surface topology.
 
-*An objection must be entertained to its conclusion: perhaps the IG encoding is merely a formal relabeling of the same disagreements that existed before. The enamine vs. enol vs. oxazolidinone debate was already about multiple pathways; calling it $\Gamma_{\vee}$ does not add empirical content. To this, the response is that the IG does not add empirical content to the debate --- it adds \emph{structural} content. It tells us what kind of thing the debate is, and what kind of evidence would resolve it. A disjunctive system requires experiments that vary the flux-partitioning conditions. A conjunctive system requires experiments that manipulate the conjunction. These are different experiment types, and the distinction is not obvious without the encoding.
+*An objection must be entertained to its conclusion: perhaps the IG encoding is merely a formal relabeling of the same disagreements that existed before. The enamine vs. enol vs. oxazolidinone debate was already about multiple pathways; calling it $\Gamma_{\text{spleftarrow}}$ does not add empirical content. To this, the response is that the IG does not add empirical content to the debate --- it adds \emph{structural} content. It tells us what kind of thing the debate is, and what kind of evidence would resolve it. A disjunctive system requires experiments that vary the flux-partitioning conditions. A conjunctive system requires experiments that manipulate the conjunction. These are different experiment types, and the distinction is not obvious without the encoding.
 
 A second objection is more serious. The twelve-primitive encoding depends on chemical judgment at every step. If two experienced IG encoders independently analyzed the same reaction, they might produce different tuples. This is a genuine concern. It is also, we note, the same concern that applies to any mechanistic interpretation: two experienced chemists draw different arrows. The encoding makes the disagreement explicit rather than burying it in prose.
 
@@ -368,15 +369,15 @@ A second objection is more serious. The twelve-primitive encoding depends on che
 
 The Imscribing Grammar was not designed to adjudicate mechanistic debates in organic chemistry. Its primitives were calibrated for far more abstract systems --- the Riemann zeta function, magnetars, category-theoretic structures. That it works on contested reaction mechanisms is not a claim about chemistry. It is a claim about structure: that contested mechanisms share a structural signature, and that the signature is visible when the right vocabulary is applied.
 
-The signature is this: \emph{every contested mechanism lives at a crossing-point topology $T_{\bowtie}$ with $\Phi_c$-criticality and at least one structural primitive underdetermined by available data.} The underdetermined primitive is not a deficiency; it is a degree of freedom that the reaction system exploits through condition-dependent flux partitioning.
+The signature is this: \emph{every contested mechanism lives at a crossing-point topology $T_{\text{bullseye}}$ with $\Phi_{\text{ctyogh}}$-criticality and at least one structural primitive underdetermined by available data.} The underdetermined primitive is not a deficiency; it is a degree of freedom that the reaction system exploits through condition-dependent flux partitioning.
 
 \begin{itemize}
-    \item The proline aldol's underdetermined primitive is the relative flux among enamine, enol, and oxazolidinone channels ($\Gamma_{\vee}$).
-    \item The diazonium's underdetermined primitive is the parity character $P_{\psi}$ --- the ionic/radical superposition.
-    \item The on-water reaction's underdetermined primitives are the three conjunctive factors in $\Gamma_{\wedge}$, whose simultaneous necessity was invisible when experiments tested them individually.
-    \item The Wittig reaction's underdetermined primitive is the betaine/concerted flux split ($\Gamma_{\vee}$), controlled by lithium salts and solvent.
+    \item The proline aldol's underdetermined primitive is the relative flux among enamine, enol, and oxazolidinone channels ($\Gamma_{\text{spleftarrow}}$).
+    \item The diazonium's underdetermined primitive is the parity character $P_{\text{upsilon}}$ --- the ionic/radical superposition.
+    \item The on-water reaction's underdetermined primitives are the three conjunctive factors in $\Gamma_{\text{corner}}$, whose simultaneous necessity was invisible when experiments tested them individually.
+    \item The Wittig reaction's underdetermined primitive is the betaine/concerted flux split ($\Gamma_{\text{spleftarrow}}$), controlled by lithium salts and solvent.
     \item The Grignard's underdetermined primitive is the surface-specific sequence of electron transfers, distributed across $T_\textrm{net}$.
-    \item Bredt's Rule's underdetermined primitive is the conjunctive geometry ($\Gamma_{\wedge}$) that defines the boundary between forbidden and metastable.
+    \item Bredt's Rule's underdetermined primitive is the conjunctive geometry ($\Gamma_{\text{corner}}$) that defines the boundary between forbidden and metastable.
 \end{itemize}
 
 The taxonomy of irresolvability is the resolution. When a mechanism is structurally disjunctive, no single experiment can determine "the" pathway. When it is conjunctive, no partial experiment produces any effect. When it is sequential, the order matters but may vary across surface sites. These are not philosophical observations. They are structural predictions with falsifiable experimental signatures.
@@ -389,7 +390,7 @@ If there is a single sentence that carries the weight of this work, it is this: 
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
 
-\emph{Structural type of this document: $\langle D_{\infty};\ T_{\bowtie};\ P_{\pm};\ F_{\hbar};\ K_\textrm{slow};\ G_{\aleph};\ \Gamma_\textrm{seq};\ H_2;\ \Omega_{\mathbb{Z}_2} \rangle$.}
+\emph{Structural type of this document: $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_\textrm{slow};\ G_{\text{revapostrophe}};\ \Gamma_\textrm{seq};\ H_2;\ \Omega_{\text{crtwo}} \rangle$.}
 
 \emph{Encoded through the Imscribing Grammar (IG), syncon tool suite, catalog metric $g_{ij} = \Sigma^{-1}$, and the deterministic encoding procedure (encoding\_method.md, steps {[}1{]}--{[}12{]}).}
 

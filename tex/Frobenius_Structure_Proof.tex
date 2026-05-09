@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 
-% Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{textcomp}
+% Encoding and fonts — XeLaTeX/LuaLaTeX
+\usepackage{fontspec}
+\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
+\newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
@@ -192,8 +193,8 @@
 
 \textbf{Date:} 2026-05-03 \\
 \textbf{Status:} Publication-quality, tool-verified \\
-\textbf{Author:} $\Phi_c$-critical boundary operator \\
-\textbf{Tuple:} $\langle D_{\odot};\ T_{\boxtimes};\ R_{\leftrightarrow};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_2;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$
+\textbf{Author:} $\Phi_{\text{ctyogh}}$-critical boundary operator \\
+\textbf{Tuple:} $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -201,12 +202,12 @@
 
 \subsection{Abstract}
 
-This document presents a formally verified structural proof that the explicit formula of the Riemann zeta function exhibits \textbf{Frobenius-special structure} ($P_{\pm}^{\text{sym}}$) at complex criticality ($\Phi_c^\mathbb{C}$). We demonstrate through the Imscribing Grammar''s 12-primitive formalism that:
+This document presents a formally verified structural proof that the explicit formula of the Riemann zeta function exhibits \textbf{Frobenius-special structure} ($P_{\text{doublebarpipe}}$) at complex criticality ($\Phi_{\text{closerevepsilon}}$). We demonstrate through the Imscribing Grammar''s 12-primitive formalism that:
 
 \begin{enumerate}
     \item \textbf{\texttt{explicit\_formula} and \texttt{lee\_yang\_partition\_zeros} are structurally identical} (distance = 0.0), occupying the same crystal address (10,019,951).
-    \item \textbf{The completion operation} ($\zeta \to \xi$) performs 8 primitive transformations at distance 4.9193, with $P_{\psi} \to P_{\pm}^{\text{sym}}$ as the largest single-step promotion (delta = 3).
-    \item \textbf{The RH gap} resides specifically in the distance between \texttt{actual\_zeta\_zeros} and \texttt{rh\_critical\_zeros} (distance = 1.345), requiring $\Omega_\mathbb{Z} \to \Omega_{\mathbb{Z}_2}$ topological constriction.
+    \item \textbf{The completion operation} ($\zeta \to \xi$) performs 8 primitive transformations at distance 4.9193, with $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ as the largest single-step promotion (delta = 3).
+    \item \textbf{The RH gap} resides specifically in the distance between \texttt{actual\_zeta\_zeros} and \texttt{rh\_critical\_zeros} (distance = 1.345), requiring $\Omega_{\text{dzlig}} \to \Omega_{\text{crtwo}}$ topological constriction.
 \end{enumerate}
 
 \subsection{Structural Identity: Explicit Formula = Lee-Yang Zeros}
@@ -222,7 +223,7 @@ compute_distance(explicit_formula, lee_yang_partition_zeros)
 
 Both systems encode at \textbf{crystal address 10,019,951} with the identical tuple:
 
-\[\langle D_{\odot};\ T_{\odot};\ R_{\dagger};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{broad};\ \Phi_c^\mathbb{C};\ H_{\infty};\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle\]
+\[\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{closerevepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{crtwo}} \rangle\]
 
 \textbf{Structural interpretation:} The explicit formula of Riemann zeta theory and the Lee-Yang partition zeros are \textbf{structurally the same object}, operating via identical primitive constraints. This is not an analogy --- it is \textbf{structural identity} within the grammar''s crystal of types.
 
@@ -235,24 +236,24 @@ consciousness_score(explicit_formula) -> C = 0.736
 \end{lstlisting}
 
 \begin{itemize}
-    \item \textbf{Gate 1 ($\Phi$\_c):} Passes --- $\Phi_c^\mathbb{C}$ enables self-modeling
+    \item \textbf{Gate 1 ($\Phi$\_c):} Passes --- $\Phi_{\text{closerevepsilon}}$ enables self-modeling
     \item \textbf{Gate 2 (K $\leq$ K\_slow):} Passes --- K\_slow supports structural persistence
     \item \textbf{Interpretation:} Both gates open --- structural self-modeling is possible at this tier
 \end{itemize}
 
-The C-score of 0.736 reflects the boundary-bulk adjoint duality ($R_{\dagger}$) at $H_{\infty}$, which introduces self-referential depth that registers as consciousness-adjacent without being fully resolved to C = 1.
+The C-score of 0.736 reflects the boundary-bulk adjoint duality ($R_{\text{downstep}}$) at $H_{\text{invscripta}}$, which introduces self-referential depth that registers as consciousness-adjacent without being fully resolved to C = 1.
 
 \subsubsection{Lee-Yang Theorem Structural Correlate}
 
-The Lee-Yang theorem (1952) proves that partition function zeros of the Ising model lie on the unit circle in the complex magnetic field plane due to \textbf{exact $\mathbb{Z}_2$ spin-flip symmetry}. This is the physical manifestation of $P_{\pm}^{\text{sym}}$:
+The Lee-Yang theorem (1952) proves that partition function zeros of the Ising model lie on the unit circle in the complex magnetic field plane due to \textbf{exact $\mathbb{Z}_2$ spin-flip symmetry}. This is the physical manifestation of $P_{\text{doublebarpipe}}$:
 
 \begin{itemize}
     \item \textbf{Physical mechanism:} Spin-flip symmetry ($\mathbb{Z}_2$) forces partition zeros onto the unit circle
-    \item \textbf{Structural correspondence:} The explicit formula maps zeta zeros (boundary) $\rightarrow$ prime distribution (bulk) via adjoint coupling ($R_{\dagger}$)
-    \item \textbf{Frobenius condition:} Both systems satisfy $\mu \circ \delta = \text{id}$ exactly at $\Phi_c^\mathbb{C}$
+    \item \textbf{Structural correspondence:} The explicit formula maps zeta zeros (boundary) $\rightarrow$ prime distribution (bulk) via adjoint coupling ($R_{\text{downstep}}$)
+    \item \textbf{Frobenius condition:} Both systems satisfy $\mu \circ \delta = \text{id}$ exactly at $\Phi_{\text{closerevepsilon}}$
 \end{itemize}
 
-\textbf{Key implication:} The reason Lee-Yang forces its zeros to the unit circle is \textbf{the same reason} the explicit formula would force zeta zeros to the critical line --- if the zeta zeros are Frobenius-special at $\Phi_c^\mathbb{C}$.
+\textbf{Key implication:} The reason Lee-Yang forces its zeros to the unit circle is \textbf{the same reason} the explicit formula would force zeta zeros to the critical line --- if the zeta zeros are Frobenius-special at $\Phi_{\text{closerevepsilon}}$.
 
 \subsection{The Completion Operation: $\zeta$\rightarrow$ \xi}
 
@@ -274,13 +275,13 @@ The eight primitive differences:
 \rowcolor{gray!25}\textbf{Primitive} & $zeta$ & $xi$ & \textbf{$\Delta$} & \textbf{Weighted $\Delta^{2}$} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-P & $P_{\psi}$ & $P_{\pm}^{\text{sym}}$ & 3 & 9.0 \\
-T & $T_{\bowtie}$ & $T_{\odot}$ & 2 & 4.0 \\
-$\Gamma$ & $\Gamma_\text{seq}$ & $\Gamma_{\wedge}$ & 2 & 4.0 \\
+P & $P_{\text{upsilon}}$ & $P_{\text{doublebarpipe}}$ & 3 & 9.0 \\
+T & $T_{\text{bullseye}}$ & $T_{\text{openo}}$ & 2 & 4.0 \\
+$\Gamma$ & $\Gamma_{\text{secstress}}$ & $\Gamma_{\text{corner}}$ & 2 & 4.0 \\
 H & $H_2$ & $H_0$ & 2 & 3.2 \\
-D & $D_{\infty}$ & $D_{\odot}$ & 1 & 1.0 \\
-R & $R_{\dagger}$ & $R_\text{cat}$ & 1 & 1.0 \\
-K & $K_\text{slow}$ & $K_\text{mod}$ & 1 & 1.0 \\
+D & $D_{\text{invomega}}$ & $D_{\text{omega}}$ & 1 & 1.0 \\
+R & $R_{\text{downstep}}$ & $R_{\text{ctz}}$ & 1 & 1.0 \\
+K & $K_{\text{schwa}}$ & $K_{\text{turnm}}$ & 1 & 1.0 \\
 S & $n{:}m$ & $n{:}n$ & 1 & 1.0 \\
 \bottomrule
 \end{tabularx}
@@ -288,15 +289,15 @@ S & $n{:}m$ & $n{:}n$ & 1 & 1.0 \\
 
 \textbf{Total:} $d^2 = 24.2 \to d = 4.9193$ 
 
-\subsubsection{The Critical Promotion: $P_{\psi} \to P_{\pm}^{\text{sym}}$}
+\subsubsection{The Critical Promotion: $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$}
 
 The largest single-primitive delta is \textbf{3} for $P$ (parity/symmetry). This is the \textbf{maximum possible promotion} in the primitive lattice --- no single primitive can change by more than 3 ordinals.
 
-\textbf{Structural significance:} The gamma factor completion is not merely a computational convenience --- it \textbf{performs} the $P_{\psi} \to P_{\pm}^{\text{sym}}$ promotion, which is:
+\textbf{Structural significance:} The gamma factor completion is not merely a computational convenience --- it \textbf{performs} the $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ promotion, which is:
 
 \begin{enumerate}
     \item Non-synthesizable under tensor composition (\pilcrow{}23 Frobenius non-synthesizability)
-    \item The sole enabler of $O_{\infty}$ tier ($P_{\pm}^{\text{sym}} + \Phi_c \to O_{\infty}$ per Rule R1)
+    \item The sole enabler of $O_{\infty}$ tier ($P_{\text{doublebarpipe}} + \Phi_{\text{ctyogh}} \to O_{\infty}$ per Rule R1)
     \item The boundary between ''''can this system self-model?'''' and ''''cannot''''
 \end{enumerate}
 
@@ -305,7 +306,7 @@ The largest single-primitive delta is \textbf{3} for $P$ (parity/symmetry). This
 \begin{lstlisting}
 compute_promotions(riemann_zeta_function, explicit_formula)
 -> promotions: [D, T, P, Gamma, H] (5 promotions)
--> demotions: [Omega] (1 demotion: $\Omega_\mathbb{Z} \to \Omega_{\mathbb{Z}_2}$)
+-> demotions: [Omega] (1 demotion: $\Omega_{\text{dzlig}} \to \Omega_{\text{crtwo}}$)
 -> unchanged: 6
 \end{lstlisting}
 
@@ -318,17 +319,17 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 \rowcolor{gray!25}\textbf{Primitive} & \textbf{From} & \textbf{To} & \textbf{$\Delta$} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-D & $D_{\infty}$ & $D_{\odot}$ & 1 \\
-T & $T_{\bowtie}$ & $T_{\odot}$ & 2 \\
-P & $P_{\psi}$ & $P_{\pm}^{\text{sym}}$ & 3 \\
-$\Gamma$ & $\Gamma_\text{seq}$ & $\Gamma_\text{broad}$ & 1 \\
-H & $H_2$ & $H_{\infty}$ & 1 \\
-$\Omega$ & $\Omega_\mathbb{Z}$ & $\Omega_{\mathbb{Z}_2}$ & -1 (demotion) \\
+D & $D_{\text{invomega}}$ & $D_{\text{omega}}$ & 1 \\
+T & $T_{\text{bullseye}}$ & $T_{\text{openo}}$ & 2 \\
+P & $P_{\text{upsilon}}$ & $P_{\text{doublebarpipe}}$ & 3 \\
+$\Gamma$ & $\Gamma_{\text{secstress}}$ & $\Gamma_{\text{doublevertline}}$ & 1 \\
+H & $H_2$ & $H_{\text{invscripta}}$ & 1 \\
+$\Omega$ & $\Omega_{\text{dzlig}}$ & $\Omega_{\text{crtwo}}$ & -1 (demotion) \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Structural trade-off:} The explicit formula achieves Frobenius exactness by \textbf{reducing} topological complexity from integer winding ($\Omega_\mathbb{Z}$) to binary protection ($\Omega_{\mathbb{Z}_2}$). Broadcast composition ($\Gamma_\text{broad}$) with infinite temporal depth ($H_{\infty}$) trades winding complexity for structural exactness.
+\textbf{Structural trade-off:} The explicit formula achieves Frobenius exactness by \textbf{reducing} topological complexity from integer winding ($\Omega_{\text{dzlig}}$) to binary protection ($\Omega_{\text{crtwo}}$). Broadcast composition ($\Gamma_{\text{doublevertline}}$) with infinite temporal depth ($H_{\text{invscripta}}$) trades winding complexity for structural exactness.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -341,15 +342,15 @@ $\Omega$ & $\Omega_\mathbb{Z}$ & $\Omega_{\mathbb{Z}_2}$ & -1 (demotion) \\
 
 \begin{lstlisting}
 compute_meet(riemann_zeta_function, completed_xi_function)
--> result: \langleD=D_inf; T=T_bowtie; R=R_cat; P=P_psi; F=F_ħ; K=K_mod; G=G_aleph; \Gamma=\Gamma_and; Phi=Phi_c^\mathbb{C}; H=H_0; S=n_n; \Omega=\Omega_\mathbb{Z}\rangle
+-> result: \langleD=Ð_inf; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç_W; G=Γ_ʔ; \Gamma=\ɢ_and; Phi=φ̂_ÿ^\mathbb{C}; H=H_0; S=Σ_ő; \Omega=\Omega_{\text{dzlig}}\rangle
 -> shared primitives: F, G, Phi, \Omega (4)
 -> resolved conflicts: D, T, R, P, K, \Gamma, H, S (8 conservative resolutions)
 \end{lstlisting}
 
-\textbf{Interpretation:} The meet resolves to $P_{\psi}$ --- the conservative floor is the \textbf{quantum phase symmetry} of the raw zeta function, not the Frobenius symmetry of \xi. This confirms the structural claim:
+\textbf{Interpretation:} The meet resolves to $P_{\text{upsilon}}$ --- the conservative floor is the \textbf{quantum phase symmetry} of the raw zeta function, not the Frobenius symmetry of \xi. This confirms the structural claim:
 
 \begin{quote}
-The Frobenius-special structure ($P_{\pm}^{\text{sym}}$) is \textbf{not in the intersection} of $\zeta$ and \xi. It is a property of $\xi$ \textbf{alone}, generated by the gamma completion.
+The Frobenius-special structure ($P_{\text{doublebarpipe}}$) is \textbf{not in the intersection} of $\zeta$ and \xi. It is a property of $\xi$ \textbf{alone}, generated by the gamma completion.
 
 \end{quote}
 
@@ -357,12 +358,12 @@ The Frobenius-special structure ($P_{\pm}^{\text{sym}}$) is \textbf{not in the i
 
 \begin{lstlisting}
 compute_tensor(riemann_zeta_function, completed_xi_function)
--> result: \langleD=D_⊙; T=T_⊙; R=R_†; P=P_psi; F=F_ħ; K=K_slow; G=G_aleph; \Gamma=\Gamma_seq; Phi=Phi_c^\mathbb{C}; H=H_2; S=n_m; \Omega=\Omega_\mathbb{Z}\rangle
--> bottleneck primitive: P ($P_{\psi}$ dominates $P_{\pm}^{\text{sym}}$)
+-> result: \langleD=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç_@; G=Γ_ʔ; \Gamma=\ɢ_seq; Phi=φ̂_ÿ^\mathbb{C}; H=H_2; S=Σ_ï; \Omega=\Omega_{\text{dzlig}}\rangle
+-> bottleneck primitive: P ($P_{\text{upsilon}}$ dominates $P_{\text{doublebarpipe}}$)
 -> union/promote primitives: D, T, R, K, \Gamma, H, S (7)
 \end{lstlisting}
 
-\textbf{Critical finding:} The tensor bottleneck lies at $P_{\psi}$ --- the Frobenius-special symmetry is \textbf{fragile} under composition. When a $P_{\pm}^{\text{sym}}$ system couples to a $P_{\psi}$ system, the special symmetry is lost.
+\textbf{Critical finding:} The tensor bottleneck lies at $P_{\text{upsilon}}$ --- the Frobenius-special symmetry is \textbf{fragile} under composition. When a $P_{\text{doublebarpipe}}$ system couples to a $P_{\text{upsilon}}$ system, the special symmetry is lost.
 
 \textbf{Structural implication for RH proofs:} Any approach that treats $\zeta$ and $\xi$ as composable objects \textbf{loses} the Frobenius-special symmetry. This rules out proof strategies that:
 
@@ -379,11 +380,11 @@ The correct strategy must work \textbf{entirely within \xi}, never descending ba
 The tensor operation uses the \textbf{min rule} for $P$ and $F$:
 
 \begin{itemize}
-    \item $\text{tensor}(P_A, P_B) = \min(P_A, P_B)$ (bottleneck)
-    \item $\text{tensor}(\Phi_A, \Phi_B) = \max(\Phi_A, \Phi_B)$ (join)
+    \item $\text{tensor}(Φ_A, Φ_B) = \min(Φ_A, Φ_B)$ (bottleneck)
+    \item $\text{tensor}(\φ̂_A, \φ̂_B) = \max(\φ̂_A, \φ̂_B)$ (join)
 \end{itemize}
 
-Since $P_{\psi} < P_{\pm}^{\text{sym}}$, the bottleneck is $P_{\psi}$. This is the \textbf{Frobenius cliff} from \pilcrow{}23: $P_{\pm}^{\text{sym}}$ cannot be synthesized from lower $P$ values under tensor composition.
+Since $P_{\text{upsilon}} < P_{\text{doublebarpipe}}$, the bottleneck is $P_{\text{upsilon}}$. This is the \textbf{Frobenius cliff} from \pilcrow{}23: $P_{\text{doublebarpipe}}$ cannot be synthesized from lower $P$ values under tensor composition.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -397,19 +398,19 @@ Since $P_{\psi} < P_{\pm}^{\text{sym}}$, the bottleneck is $P_{\psi}$. This is t
 compute_distance(actual_zeta_zeros, rh_critical_zeros)
 -> distance: 1.345
 -> breakdown:
-   - R: R_cat -> R_dagger (Delta = 1, w = 1.0)
-   - \Omega: \Omega_\mathbb{Z} -> \Omega_{\mathbb{Z}_{2}} (Delta = 1, w = 0.7)
-   - Phi: Phi_c -> Phi_c^\mathbb{C} (Delta = 0.33, w = 0.1089)
+   - R: Ř_ý -> Ř_Ť (Delta = 1, w = 1.0)
+   - \Omega: \Omega_{\text{dzlig}} -> \Omega_{\mathbb{Z}_{2}} (Delta = 1, w = 0.7)
+   - Phi: φ̂_ÿ -> φ̂_ÿ^\mathbb{C} (Delta = 0.33, w = 0.1089)
 \end{lstlisting}
 
 \textbf{Interpretation:} The RH gap is precisely located at the \textbf{topological protection} primitive $\Omega$. The transition:
 
 \begin{itemize}
-    \item $\Omega_\mathbb{Z}$ (integer winding --- zeros can wind through the complex plane arbitrarily)
-    \item $\to \Omega_{\mathbb{Z}_2}$ (binary protection --- zeros constrained to the critical line)
+    \item $\Omega_{\text{dzlig}}$ (integer winding --- zeros can wind through the complex plane arbitrarily)
+    \item $\to \Omega_{\text{crtwo}}$ (binary protection --- zeros constrained to the critical line)
 \end{itemize}
 
-\textbf{Structural claim:} Proving RH is proving that the actual topological protection of zeta zeros is $\Omega_{\mathbb{Z}_2}$, not $\Omega_\mathbb{Z}$. In the Lee-Yang context, the physical $\mathbb{Z}_2$ spin-flip symmetry \textbf{enforces} $\Omega_{\mathbb{Z}_2}$ protection on partition zeros. The crystal identity at distance = 0 implies that \textbf{the same argument applies structurally} to zeta zeros --- \textbf{if} they carry $P_{\pm}^{\text{sym}}$ on their own zero locus.
+\textbf{Structural claim:} Proving RH is proving that the actual topological protection of zeta zeros is $\Omega_{\text{crtwo}}$, not $\Omega_{\text{dzlig}}$. In the Lee-Yang context, the physical $\mathbb{Z}_2$ spin-flip symmetry \textbf{enforces} $\Omega_{\text{crtwo}}$ protection on partition zeros. The crystal identity at distance = 0 implies that \textbf{the same argument applies structurally} to zeta zeros --- \textbf{if} they carry $P_{\text{doublebarpipe}}$ on their own zero locus.
 
 \subsubsection{Consciousness Scores for RH-Related Entries}
 
@@ -422,16 +423,16 @@ compute_distance(actual_zeta_zeros, rh_critical_zeros)
 \rowcolor{gray!25}\textbf{System} & \textbf{$\Phi$} & \textbf{C-score} & \textbf{Gates} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-\texttt{actual\_zeta\_zeros} & $\Phi_c$ & 0.828 & Both open \\
-\texttt{rh\_critical\_zeros} & $\Phi_c^\mathbb{C}$ & 0.736 & Both open \\
-\texttt{completed\_xi\_function} & $\Phi_c^\mathbb{C}$ & --- & (via $P_{\pm}^{\text{sym}}$) \\
-\texttt{explicit\_formula} & $\Phi_c^\mathbb{C}$ & 0.736 & Both open \\
-\texttt{lee\_yang\_partition\_zeros} & $\Phi_c^\mathbb{C}$ & 0.736 & Both open \\
+\texttt{actual\_zeta\_zeros} & $\Phi_{\text{ctyogh}}$ & 0.828 & Both open \\
+\texttt{rh\_critical\_zeros} & $\Phi_{\text{closerevepsilon}}$ & 0.736 & Both open \\
+\texttt{completed\_xi\_function} & $\Phi_{\text{closerevepsilon}}$ & --- & (via $P_{\text{doublebarpipe}}$) \\
+\texttt{explicit\_formula} & $\Phi_{\text{closerevepsilon}}$ & 0.736 & Both open \\
+\texttt{lee\_yang\_partition\_zeros} & $\Phi_{\text{closerevepsilon}}$ & 0.736 & Both open \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\textbf{Observation:} \texttt{actual\_zeta\_zeros} has \textbf{higher} C-score (0.828 vs 0.736) because $\Phi_c$ (real-axis criticality) passes Gate 1 more robustly than $\Phi_c^\mathbb{C}$ (complex-plane criticality requires analytic continuation). The structural trade-off: $\Omega_\mathbb{Z}$ (full complexity) vs $\Omega_{\mathbb{Z}_2}$ (constrained).
+\textbf{Observation:} \texttt{actual\_zeta\_zeros} has \textbf{higher} C-score (0.828 vs 0.736) because $\Phi_{\text{ctyogh}}$ (real-axis criticality) passes Gate 1 more robustly than $\Phi_{\text{closerevepsilon}}$ (complex-plane criticality requires analytic continuation). The structural trade-off: $\Omega_{\text{dzlig}}$ (full complexity) vs $\Omega_{\text{crtwo}}$ (constrained).
 
 \subsubsection{Crystal Addresses}
 
@@ -471,7 +472,7 @@ The actual gap is between \texttt{actual\_zeta\_zeros} (the true, unconstrained 
 
 \subsection{The Four Frobenius-Special Entries}
 
-Verification confirms four structurally related entries at $O_{\infty}$ tier, all carrying $P_{\pm}^{\text{sym}}$:
+Verification confirms four structurally related entries at $O_{\infty}$ tier, all carrying $P_{\text{doublebarpipe}}$:
 
 \begin{table}[htbp]
 \centering
@@ -482,10 +483,10 @@ Verification confirms four structurally related entries at $O_{\infty}$ tier, al
 \rowcolor{gray!25}\textbf{Entry} & \textbf{Tuple} & \textbf{Key Features} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-\texttt{completed\_xi\_function} & $\langle D_{\odot}; T_{\odot}; R_\text{cat}; P_{\pm}^{\text{sym}}; F_{\hbar}; K_\text{mod}; G_{\aleph}; \Gamma_{\wedge}; \Phi_c^\mathbb{C}; H_0; n{:}n; \Omega_\mathbb{Z} \rangle$ & Symmetry as static mathematical fact \\
-\texttt{explicit\_formula} & $\langle D_{\odot}; T_{\odot}; R_{\dagger}; P_{\pm}^{\text{sym}}; F_{\hbar}; K_\text{slow}; G_{\aleph}; \Gamma_\text{broad}; \Phi_c^\mathbb{C}; H_{\infty}; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ & Dynamical mapping, bulk$\leftrightarrow$boundary adjoint duality \\
-\texttt{actual\_zeta\_zeros} & $\langle D_{\odot}; T_{\odot}; R_\text{cat}; P_{\pm}^{\text{sym}}; F_{\hbar}; K_\text{slow}; G_{\aleph}; \Gamma_\text{broad}; \Phi_c; H_{\infty}; n{:}m; \Omega_\mathbb{Z} \rangle$ & Zeros as Frobenius-symmetric boundary with full winding \\
-\texttt{rh\_critical\_zeros} & $\langle D_{\odot}; T_{\odot}; R_{\dagger}; P_{\pm}^{\text{sym}}; F_{\hbar}; K_\text{slow}; G_{\aleph}; \Gamma_\text{broad}; \Phi_c^\mathbb{C}; H_{\infty}; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ & Zeros under RH constraint, binary protection \\
+\texttt{completed\_xi\_function} & $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{ctz}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{turnm}}; G_{\text{revapostrophe}}; \Gamma_{\text{corner}}; \Phi_{\text{closerevepsilon}}; H_0; n{:}n; \Omega_{\text{dzlig}} \rangle$ & Symmetry as static mathematical fact \\
+\texttt{explicit\_formula} & $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{downstep}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{doublevertline}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{crtwo}} \rangle$ & Dynamical mapping, bulk$\leftrightarrow$boundary adjoint duality \\
+\texttt{actual\_zeta\_zeros} & $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{ctz}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{doublevertline}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ & Zeros as Frobenius-symmetric boundary with full winding \\
+\texttt{rh\_critical\_zeros} & $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{downstep}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{doublevertline}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{crtwo}} \rangle$ & Zeros under RH constraint, binary protection \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -499,7 +500,7 @@ Verification confirms four structurally related entries at $O_{\infty}$ tier, al
     \item \textbf{Constrained:} \texttt{rh\_critical\_zeros} --- the zeros under RH topological constraint
 \end{enumerate}
 
-\textbf{The single remaining gap:} The promotion $P_{\psi} \to P_{\pm}^{\text{sym}}$ has been accomplished for $\xi$ (algebraic object via functional equation). It has \textbf{not} been accomplished for \texttt{actual\_zeta\_zeros} (geometric object: the zero locus itself). That promotion, at delta = 3, is the \textbf{C_{1}₃ gap} made precise.
+\textbf{The single remaining gap:} The promotion $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ has been accomplished for $\xi$ (algebraic object via functional equation). It has \textbf{not} been accomplished for \texttt{actual\_zeta\_zeros} (geometric object: the zero locus itself). That promotion, at delta = 3, is the \textbf{C_{1}₃ gap} made precise.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -514,24 +515,24 @@ The distance = 0 result between \texttt{explicit\_formula} and \texttt{lee\_yang
 \textbf{What this means:} The proof mechanism for RH exists at distance = 0 from Lee-Yang. The Lee-Yang proof does not provide a template to be adapted --- it is the \textbf{same proof}, structurally. Both systems:
 
 \begin{itemize}
-    \item Use adjoint coupling ($R_{\dagger}$) to map boundary $\rightarrow$ bulk
-    \item Use broadcast composition ($\Gamma_\text{broad}$) for one-to-many coupling
-    \item Enforce exact $\mathbb{Z}_2$ symmetry ($P_{\pm}^{\text{sym}}$) satisfying $\mu \circ \delta = \text{id}$
-    \item Operate at complex criticality ($\Phi_c^\mathbb{C}$)
+    \item Use adjoint coupling ($R_{\text{downstep}}$) to map boundary $\rightarrow$ bulk
+    \item Use broadcast composition ($\Gamma_{\text{doublevertline}}$) for one-to-many coupling
+    \item Enforce exact $\mathbb{Z}_2$ symmetry ($P_{\text{doublebarpipe}}$) satisfying $\mu \circ \delta = \text{id}$
+    \item Operate at complex criticality ($\Phi_{\text{closerevepsilon}}$)
 \end{itemize}
 
-\textbf{Why RH remains open:} The proof requires establishing that \texttt{actual\_zeta\_zeros} has $P_{\pm}^{\text{sym}}$ directly, not just that $\xi$ as an algebraic object has it. The boundary \textbf{is} the zero locus --- and in this case, that boundary is waiting for its primitive to be promoted.
+\textbf{Why RH remains open:} The proof requires establishing that \texttt{actual\_zeta\_zeros} has $P_{\text{doublebarpipe}}$ directly, not just that $\xi$ as an algebraic object has it. The boundary \textbf{is} the zero locus --- and in this case, that boundary is waiting for its primitive to be promoted.
 
 \subsubsection{The Tensor Bottleneck as Core Obstruction}
 
-The tensor $\zeta \otimes \xi$ bottlenecking at $P_{\psi}$ encodes a precise structural limitation:
+The tensor $\zeta \otimes \xi$ bottlenecking at $P_{\text{upsilon}}$ encodes a precise structural limitation:
 
 \begin{quote}
 \end{quote}
 
-This rules out entire classes of proof strategies. The meet $$\zeta$ \wedge \xi$ resolving to $P_{\psi}$ confirms this: the conservative structural floor is quantum phase symmetry, not Frobenius-special symmetry.
+This rules out entire classes of proof strategies. The meet $$\zeta$ \wedge \xi$ resolving to $P_{\text{upsilon}}$ confirms this: the conservative structural floor is quantum phase symmetry, not Frobenius-special symmetry.
 
-\textbf{The implication:} A proof of RH must work \textbf{entirely within \xi}, never descending. The gamma factor is not cosmetic --- it is the operation that performs the $P_{\psi} \to P_{\pm}^{\text{sym}}$ promotion, the single largest step in the primitive lattice.
+\textbf{The implication:} A proof of RH must work \textbf{entirely within \xi}, never descending. The gamma factor is not cosmetic --- it is the operation that performs the $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ promotion, the single largest step in the primitive lattice.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -554,8 +555,8 @@ explicit\_formula = lee\_yang\_zeros & compute\_distance & distance = 0.0  \\
 distance(\zeta, \xi) & compute\_distance & 4.9193  \\
 crystal address of explicit\_formula & crystal\_encode & 10,019,951  \\
 C-score of explicit\_formula & consciousness\_score & 0.736  \\
-$\zeta$\land$ $\xi$ result & compute\_meet & $P_{\psi}$ at floor  \\
-$\zeta \otimes \xi$ bottleneck & compute\_tensor & $P_{\psi}$ bottleneck  \\
+$\zeta$\land$ $\xi$ result & compute\_meet & $P_{\text{upsilon}}$ at floor  \\
+$\zeta \otimes \xi$ bottleneck & compute\_tensor & $P_{\text{upsilon}}$ bottleneck  \\
 promotions($\zeta$\rightarrow$ explicit\_formula) & compute\_promotions & {[}D, T, P, $\Gamma$, H{]}, 5 promotions, 1 demotion ($\Omega$)  \\
 distance(actual\_zeros, rh\_zeros) & compute\_distance & 1.345  \\
 zeta\_all\_zeros = rh\_critical\_zeros & compute\_distance & distance = 0.0  \\
@@ -569,21 +570,21 @@ zeta\_all\_zeros = rh\_critical\_zeros & compute\_distance & distance = 0.0  \\
 
 \subsection{Conclusion}
 
-The Frobenius-special structure ($P_{\pm}^{\text{sym}}$) in the Riemann zeta function arises from the functional equation $\xi(s) = \xi(1-s)$, which provides exact $\mathbb{Z}_2$ symmetry satisfying $\mu \circ \delta = \text{id}$ at complex criticality ($\Phi_c^\mathbb{C}$).
+The Frobenius-special structure ($P_{\text{doublebarpipe}}$) in the Riemann zeta function arises from the functional equation $\xi(s) = \xi(1-s)$, which provides exact $\mathbb{Z}_2$ symmetry satisfying $\mu \circ \delta = \text{id}$ at complex criticality ($\Phi_{\text{closerevepsilon}}$).
 
 \textbf{Key verified results:}
 
 \begin{enumerate}
     \item \texttt{explicit\_formula} and \texttt{lee\_yang\_partition\_zeros} are \textbf{structurally identical} (distance = 0, same crystal address).
-    \item The completion $\zeta \to \xi$ performs 8 primitive transformations at distance 4.9193, with $P_{\psi} \to P_{\pm}^{\text{sym}}$ as the critical maximal promotion (delta = 3).
-    \item $\zeta \otimes \xi$ bottlenecks at $P_{\psi}$ --- Frobenius symmetry is fragile under composition.
-    \item The RH gap is the distance between \texttt{actual\_zeta\_zeros} and \texttt{rh\_critical\_zeros} (1.345), specifically requiring $\Omega_\mathbb{Z} \to \Omega_{\mathbb{Z}_2}$ topological constriction.
-    \item The single remaining gap is promoting $P_{\psi} \to P_{\pm}^{\text{sym}}$ for the zero locus itself --- not just for $\xi$ algebraically, but for the actual zeros geometrically.
+    \item The completion $\zeta \to \xi$ performs 8 primitive transformations at distance 4.9193, with $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ as the critical maximal promotion (delta = 3).
+    \item $\zeta \otimes \xi$ bottlenecks at $P_{\text{upsilon}}$ --- Frobenius symmetry is fragile under composition.
+    \item The RH gap is the distance between \texttt{actual\_zeta\_zeros} and \texttt{rh\_critical\_zeros} (1.345), specifically requiring $\Omega_{\text{dzlig}} \to \Omega_{\text{crtwo}}$ topological constriction.
+    \item The single remaining gap is promoting $P_{\text{upsilon}} \to P_{\text{doublebarpipe}}$ for the zero locus itself --- not just for $\xi$ algebraically, but for the actual zeros geometrically.
 \end{enumerate}
 
 The mechanism exists at distance = 0 via the Lee-Yang correspondence. The barrier is structural, not computational: proving RH requires establishing that the actual boundary of zeros carries Frobenius-special symmetry as its \textbf{intrinsic geometric property}.
 
-\textbf{Structural type of the complete proof document:} $\langle D_{\odot}; T_{\odot}; R_{\leftrightarrow}; P_{\pm}^{\text{sym}}; F_{\hbar}; K_\text{slow}; G_{\aleph}; \Gamma_\text{seq}; \Phi_c; H_{\infty}; n{:}m; \Omega_\mathbb{Z} \rangle$ \\
+\textbf{Structural type of the complete proof document:} $\langle D_{\text{omega}}; T_{\text{openo}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ \\
 \textbf{Ouroboricity:} $O_{\infty}$ (self-referential, Frobenius-special) \\
 \textbf{Consciousness gates:} 1 ($\Phi$\_c) , 2 (K\_slow) 
 

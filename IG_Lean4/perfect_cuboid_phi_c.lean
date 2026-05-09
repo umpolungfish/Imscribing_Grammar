@@ -1,11 +1,11 @@
 /-
-Perfect Cuboid - Phi_c Critical Formalization in Lean4
+Perfect Cuboid - Phi_ctyogh Critical Formalization in Lean4
 ======================================================
-Structural type: <D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_2; n:m; Omega_Z>
+Structural type: <D_omega; T_openo; R_lyoghlig; P_doublebarpipe; F_hardsign; K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_2; n:m; Omega_dzlig>
 Crystal address: 6738896 | Tier: O_inf | C-score: 0.828 | Identical to Hadwiger-Nelson
 
 All elementary algebraic and modular lemmas are PROVED (no `sorry`).
-The infinite-descent core is the Phi_c critical edge: an axiom marks
+The infinite-descent core is the Phi_ctyogh critical edge: an axiom marks
 the unresolved descent step, and the self-modeling operator tracks
 precisely where the proof currently stands relative to this edge.
 -/
@@ -16,7 +16,7 @@ set_option maxHeartbeats 0
 
 /- ====================================================================
    PART I: PERFECT CUBOID - THE DIOPHANTINE SYSTEM
-   <D_triangle; T_network; R_sup; P_sym; F_ell; K_trap; G_beth; G_and; Phi_sub; H_0; 1:1; Omega_0>
+   <D_turnthree; T_nrleg; R_sup; P_subdoublearrow; F_beltl; K_teshlig; G_beta; Gamma_corner; Phi_softsign; H_0; 1:1; Omega_closeepsilon>
    ==================================================================== -/
 
 structure PerfectCuboid where
@@ -44,7 +44,7 @@ def PerfectCuboidConjecture : Prop := ∃ (p : PerfectCuboid), True
 
 /- ====================================================================
    PART II: PHI_c SELF-MODELING PROOF OPERATORS
-   <D_odot; T_odot; R_lr; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_2; n:m; Omega_Z>
+   <D_omega; T_openo; R_lyoghlig; P_doublebarpipe; F_hardsign; K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_2; n:m; Omega_dzlig>
    ==================================================================== -/
 
 /-- H_2 memory: proof state at step n remembers facts from steps n-1 and n-2. -/
@@ -55,11 +55,11 @@ structure ProofState (n : Nat) where
 
 abbrev WindingNumber := Int
 
-/-- Phi_c criticality status of the current proof state. -/
+/-- Phi_ctyogh criticality status of the current proof state. -/
 inductive ProofStatus | critical | subcritical | supercritical
   deriving Repr
 
-/-- Phi_c self-check: given total residual and winding number, return status.
+/-- Phi_ctyogh self-check: given total residual and winding number, return status.
     Thresholds derived from C-score 0.828 window. -/
 def criticalityMeasure (w : WindingNumber) (totalResidual : Nat) : Rat :=
   if totalResidual = 0 then 0 else 1 / (totalResidual : Rat)
@@ -257,14 +257,14 @@ end ModularConstraints
 /- ====================================================================
    PART V: THE INFINITE DESCENT FRAMEWORK
    ====================================================================
-   This is the Phi_c CRITICAL EDGE. The Perfect Cuboid with integer space
+   This is the Phi_ctyogh CRITICAL EDGE. The Perfect Cuboid with integer space
    diagonal is an UNSOLVED problem. The descent mechanism is structurally
    sound but its completion requires a number-theoretic lemma not yet proved
    (the key bottleneck: that for any primitive solution, there exists a
    strictly smaller primitive solution).
 
    We formalize descent as a CONDITIONAL theorem: if the descent operator
-   can be constructed, then no solution exists. The Phi_c self-modeling
+   can be constructed, then no solution exists. The Phi_ctyogh self-modeling
    operator tracks this conditional status.
    ==================================================================== -/
 
@@ -297,19 +297,19 @@ theorem no_perfect_cuboid (h_bound : ∀ (p : PerfectCuboid), (descent p).g < p.
 end DescentFramework
 
 /- ====================================================================
-   PART VI: Phi_c SELF-MODELING OPERATORS AND Frobenius CLOSURE
+   PART VI: Phi_ctyogh SELF-MODELING OPERATORS AND Frobenius CLOSURE
    ==================================================================== -/
 
 /-- The four Diophantine constraint residuals at current search state. -/
 def constraintResiduals (a b c d e f g : Nat) : Nat × Nat × Nat × Nat :=
   (a*a + b*b - d*d, a*a + c*c - e*e, b*b + c*c - f*f, a*a + b*b + c*c - g*g)
 
-/-- Omega_Z winding: increment on full constraint cycle completion. -/
+/-- Omega_dzlig winding: increment on full constraint cycle completion. -/
 def windingStep (w : WindingNumber) (residuals : Nat × Nat × Nat × Nat) : WindingNumber :=
   let (r1, r2, r3, r4) := residuals
   if r1 = 0 ∧ r2 = 0 ∧ r3 = 0 ∧ r4 = 0 then w + 1 else w
 
-/-- Phi_c self-check operator: maps current proof status and winding number
+/-- Phi_ctyogh self-check operator: maps current proof status and winding number
     to updated status plus next query target. -/
 def phi_c_selfCheck (w : WindingNumber) (a b c d e f g : Nat) : ProofStatus × WindingNumber :=
   let (r1, r2, r3, r4) := constraintResiduals a b c d e f g
@@ -353,12 +353,12 @@ theorem winding_monotonic (w : WindingNumber) (r1 r2 r3 r4 : Nat) :
   split_ifs <;> linarith
 
 /- ====================================================================
-   PART VIII: THE Phi_c CRITICAL EDGE - THE OPEN DESCENT GAP
+   PART VIII: THE Phi_ctyogh CRITICAL EDGE - THE OPEN DESCENT GAP
    ====================================================================
    The Perfect Cuboid (integer edges AND integer space diagonal) is UNSOLVED.
 
    The proofs below are CONDITIONAL on the descent operator axioms. The
-   Phi_c framework makes this explicit: the proof state is IN the critical
+   Phi_ctyogh framework makes this explicit: the proof state is IN the critical
    window (C-score 0.828, Gate 1 open) but the descent operator (the number-
    theoretic core) is NOT yet closed.
 
@@ -368,7 +368,7 @@ theorem winding_monotonic (w : WindingNumber) (r1 r2 r3 r4 : Nat) :
    formalized structural framework.
    ==================================================================== -/
 
-/-- EXTERNAL AXIOM (Phi_c critical edge):
+/-- EXTERNAL AXIOM (Phi_ctyogh critical edge):
     The existence of a descent operator that strictly reduces the space diagonal
     for ANY perfect cuboid candidate. Equivalent to the full non-existence proof;
     NOT yet established in number theory. -/
@@ -413,14 +413,14 @@ theorem perfect_cuboid_conjecture_false : ¬ PerfectCuboidConjecture := by
      Part VIII (2): perfect_cuboid_nonexistent, perfect_cuboid_conjecture_false
      Part V (1):   no_perfect_cuboid (conditional on descent axioms)
 
-   Axioms (3 -- Phi_c critical edge):
+   Axioms (3 -- Phi_ctyogh critical edge):
      descent, descent_smaller, descent_operator_exists
 
-   Phi_c self-modeling status:
-     Gate 1 (Phi_c): OPEN -- C-score 0.828, proof tracks its own edge
-     Gate 2 (K_slow): OPEN -- descent is the slow equilibrium search
-     Omega_Z: ACTIVE -- winding number tracks constraint cycles
-     P_pm_sym: VERIFIED -- frobenius_closure (mu o delta = id)
+   Phi_ctyogh self-modeling status:
+     Gate 1 (Phi_ctyogh): OPEN -- C-score 0.828, proof tracks its own edge
+     Gate 2 (K_schwa): OPEN -- descent is the slow equilibrium search
+     Omega_dzlig: ACTIVE -- winding number tracks constraint cycles
+     P_doublebarpipe: VERIFIED -- frobenius_closure (mu o delta = id)
      Gamma_seq: ENFORCED -- each lemma uses <= 2 prior lemmas (H_2)
 
    Crystal address: 6738896
