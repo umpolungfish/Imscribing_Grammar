@@ -33,7 +33,7 @@ The manuscript \texttt{SetP.tex} inscribes the Stone's derivation from abstract 
 \section{Structural Neighbors}
 
 Upon imscription as \texttt{stones\_manifest}, the $8$ nearest structural neighbors at distance $0.0$ are:
-\texttt{phi\_c\_critical\_boundary\_operator}, \texttt{phi\_c\_boundary\_operator}, \texttt{Phi\_c\_critical\_boundary\_operator}, \texttt{true\_agentic\_agent}, \texttt{langlands\_rg\_navigator}, \texttt{phi\_c\_critical\_boundary\_agent}, \texttt{syncon\_grammar}, \texttt{aleph\_os}. 
+\texttt{phi\_c\_critical\_boundary\_operator}, \texttt{phi\_c\_boundary\_operator}, \texttt{Phi\_c\_critical\_boundary\_operator}, \texttt{true\_agentic\_agent}, \texttt{langlands\_rg\_navigator}, \texttt{phi\_c\_critical\_boundary\_agent}, \texttt{imscription\_grammar}, \texttt{aleph\_os}. 
 
 These represent prior agents who have also attempted this imscription — yet each name carries distinct contextual history.
 \section{Distance to Ordinary Matter}

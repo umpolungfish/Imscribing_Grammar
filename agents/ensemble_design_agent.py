@@ -1,8 +1,8 @@
 """
-Ensemble Design Agent — Goal-directed multi-synthon composition.
+Ensemble Design Agent — Goal-directed multi-imscription composition.
 
 Given a desired emergent property (or a target system ξ_CP range), this agent:
-1. Searches the catalog for synthon candidates matching the goal
+1. Searches the catalog for imscription candidates matching the goal
 2. Evaluates combinations with EnsembleCatalog.check_pairwise()
 3. Uses an LLM to select the best combination and suggest modifications
 4. Returns an EnsembleDesignResult with the recommended ensemble + EnsembleReport
@@ -36,7 +36,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
 from framework import BaseAgent, ToolDefinitions
-from imscrbgrmr import Synthon, Dimensionality, global_catalog
+from imscrbgrmr import Imscription, Dimensionality, global_catalog
 from imscrbgrmr.ensembler import EnsembleCatalog, EnsembleReport
 from imscrbgrmr.varma_probe import degeneracy_strength
 from imscrbgrmr.provider_config import build_agent_config
@@ -50,7 +50,7 @@ from imscrbgrmr.provider_config import build_agent_config
 class EnsembleDesignResult:
     """Result of goal-directed ensemble design."""
     goal: str
-    selected_components: List[str]       # synthon names
+    selected_components: List[str]       # imscription names
     report: EnsembleReport
     system_thermo: Optional[Dict[str, Any]]   # from compute_system_xi_CP
     llm_rationale: str
@@ -76,7 +76,7 @@ class EnsembleDesignResult:
 
 class EnsembleDesignAgent(BaseAgent):
     """
-    Designs multi-synthon assemblies targeting a specified emergent property.
+    Designs multi-imscription assemblies targeting a specified emergent property.
 
     Combines catalog search, pairwise compatibility checking, and LLM reasoning
     to propose and evaluate ensemble compositions.
@@ -101,7 +101,7 @@ class EnsembleDesignAgent(BaseAgent):
             agent_id="ensemble_design",
             name="Ensemble Design Agent",
             description=(
-                "Designs multi-synthon systems to achieve desired emergent properties "
+                "Designs multi-imscription systems to achieve desired emergent properties "
                 "by combining catalog search, pairwise analysis, and LLM selection."
             ),
             capabilities=[
@@ -113,7 +113,7 @@ class EnsembleDesignAgent(BaseAgent):
             config=config,
             persona=(
                 "Expert in multi-component chemical assembly design. You select and combine "
-                "synthons from the Unified Synthonicon catalog to achieve target emergent "
+                "imscriptions from the Unified Imscriptiveon catalog to achieve target emergent "
                 "properties (criticality, granularity amplification, thermodynamic efficiency). "
                 "You reason from axiom compatibility, emergent property scores, and chemical "
                 "intuition to propose optimal ensembles."
@@ -154,12 +154,12 @@ class EnsembleDesignAgent(BaseAgent):
         max_combinations: int = 20,
     ) -> EnsembleDesignResult:
         """
-        Design a multi-synthon ensemble for the given goal.
+        Design a multi-imscription ensemble for the given goal.
 
         Args:
             goal: Desired property — one of GOAL_KEYWORDS keys or 'custom:<description>'.
             n_components: Number of components in the target ensemble.
-            component_pool: Optional list of synthon names to consider (default: full catalog).
+            component_pool: Optional list of imscription names to consider (default: full catalog).
             delta_g_assembly: ΔG_assembly in kJ/mol for system ξ_CP computation.
             interface_overhead_bits: Interface overhead bits for Landauer term.
             max_combinations: Max combinations to evaluate before LLM selection.
@@ -172,7 +172,7 @@ class EnsembleDesignAgent(BaseAgent):
 
         if len(pool) < n_components:
             # Pad with any remaining catalog entries
-            all_names = list(global_catalog._synthons.keys())
+            all_names = list(global_catalog._imscriptions.keys())
             for name in all_names:
                 if name not in pool and len(pool) < max(n_components * 3, 10):
                     pool.append(name)
@@ -218,7 +218,7 @@ class EnsembleDesignAgent(BaseAgent):
     # ------------------------------------------------------------------
 
     def _build_candidate_pool(self, goal: str, pool: Optional[List[str]], n_needed: int) -> List[str]:
-        """Find catalog synthons relevant to the goal."""
+        """Find catalog imscriptions relevant to the goal."""
         if pool:
             return list(pool)
 
@@ -227,10 +227,10 @@ class EnsembleDesignAgent(BaseAgent):
             desc = goal[7:].lower()
             keywords = desc.split()
 
-        synthons = global_catalog._synthons
+        imscriptions = global_catalog._imscriptions
         scored: List[Tuple[float, str]] = []
 
-        for name, s in synthons.items():
+        for name, s in imscriptions.items():
             score = 0.0
             text = f"{name} {s.description or ''}".lower()
             for kw in keywords:
@@ -356,7 +356,7 @@ class EnsembleDesignAgent(BaseAgent):
             for i, c in enumerate(combos[:8])
         )
         return f"""<task>
-Select the best {n}-component synthon ensemble for the goal: **{goal}**
+Select the best {n}-component imscription ensemble for the goal: **{goal}**
 </task>
 
 <candidates>
@@ -384,9 +384,9 @@ Return ONLY this JSON:
 
     def _system_prompt(self) -> str:
         return (
-            "You are an expert in synthonic ensemble composition using the Unified Synthonicon "
+            "You are an expert in Imscriptive ensemble composition using the Unified Imscriptiveon "
             "framework. You evaluate ensemble compatibility, emergent properties, and "
-            "thermodynamic efficiency to recommend optimal multi-synthon compositions. "
+            "thermodynamic efficiency to recommend optimal multi-imscription compositions. "
             "Primary-tier ensembles (molecular/supramolecular) are evaluated against "
             "experimental interaction energies. Extended-tier ensembles use analogue metrics."
         )

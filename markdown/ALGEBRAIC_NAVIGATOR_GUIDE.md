@@ -160,14 +160,14 @@ tier = nav.tier(tup)            # → "O_0" | "O_1" | "O_2" | "O_2_dag" | "O_inf
 ### Holographic query
 
 ```python
-nav.imscriptive_query("φ̂_ÿ", "Φ_}")
+nav.imscriptive_query("⊙_ÿ", "Φ_}")
 # → prints all 32 O_inf tier cells + bulk count
 ```
 
 ### Navigation
 
 ```python
-nav.navigate(D="Ð_ω", Phi="φ̂_ÿ")     # partial spec → matching types
+nav.navigate(D="Ð_ω", Phi="⊙_ÿ")     # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)        # k-NN in catalog by distance
 nav.tier_census()                         # full distribution across all 17.28M types
 ```
@@ -193,12 +193,12 @@ nav = CrystalNavigator()
 magnetar = {
     "D": "Ð_C", "T": "Þ_box",    "R": "Ř_ý",   "P": "Φ_F",
     "F": "ƒ_ð",       "K": "Ç_@",  "G": "Γ_ʔ", "Gamma": "ɢ_ˌ",
-    "Phi": "φ̂_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
+    "Phi": "⊙_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
 }
 navigator_self = {
     "D": "Ð_ω",  "T": "Þ_O",   "R": "Ř_ý",    "P": "Φ_}",
     "F": "ƒ_ż",  "K": "Ç_@",   "G": "Γ_ʔ",  "Gamma": "ɢ_Ş",
-    "Phi": "φ̂_ÿ", "H": "Ħ_!",    "S": "Σ_ï",      "Omega": "Ω_z",
+    "Phi": "⊙_ÿ", "H": "Ħ_!",    "S": "Σ_ï",      "Omega": "Ω_z",
 }
 
 # Exact addresses
@@ -242,7 +242,7 @@ address error, 100% tier accuracy, and exact primitive roundtrip. It provides:
    search, clustering).
 2. **Generalisation** — the GNN can be queried on novel tuples not in the catalog
    and will predict structurally coherent addresses and tiers.
-3. **Architecture as synthon** — the GNN itself can be encoded as a tuple
+3. **Architecture as imscription** — the GNN itself can be encoded as a tuple
    (cf. `prompts/quiver_crystal_led.txt`) and queried through `IΓ_inquiry.py`.
 
 Use the exact codec when you need a ground-truth address or roundtrip guarantee.
@@ -331,7 +331,7 @@ tier-stratified (equal tier exposure per batch).
 ```bash
 # Encode a tuple (semicolon-separated, PRIMS order)
 python quiver_crystal.py encode \
-  "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"
+  "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
 
 # Verify checkpoint quality across full catalog
 python quiver_crystal.py verify
@@ -359,7 +359,7 @@ model.eval()
 magnetar = {
     "D": "Ð_C", "T": "Þ_box",    "R": "Ř_ý",   "P": "Φ_F",
     "F": "ƒ_ð",       "K": "Ç_@",  "G": "Γ_ʔ", "Gamma": "ɢ_ˌ",
-    "Phi": "φ̂_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
+    "Phi": "⊙_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
 }
 
 with torch.no_grad():
@@ -500,7 +500,7 @@ out = model.forward([some_tuple])
 dec = {p: VALUES[p][out["dec_logits"][p][0].argmax()] for p in PRIMS}
 ```
 
-### Pattern 6 — Feed into syncon_inquiry
+### Pattern 6 — Feed into ig_inquiry
 
 The GNN and exact codec both integrate with the agent loop. A tuple encoded via
 either tool can be passed directly to `IΓ_inquiry.py` for semantic analysis,

@@ -7,15 +7,15 @@ header-includes:
     \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
     \newcommand{\igtext}[1]{{\igfont #1}}
 ---
-# Synthonic HotSwapping: Dynamic Component Exchange Protocol
+# Imscriptive HotSwapping: Dynamic Component Exchange Protocol
 
 ## 1.0 System Definition
-**Synthonic HotSwapping** is the operational procedure of replacing a registered synthon ($S_{old}$) within an active chemical system without collapsing the global constraint architecture ($\Psi$). The objective is to maintain system invariance ($\Psi_{initial} \approx \Psi_{final}$) or transition predictably to a target state ($\Psi_{target}$) while preserving the integrity of the ten-primitive tuple $\langle D; T; R; P; F; K; G; \Gamma; \Phi; S \rangle$.
+**Imscriptive HotSwapping** is the operational procedure of replacing a registered imscription ($S_{old}$) within an active chemical system without collapsing the global constraint architecture ($\Psi$). The objective is to maintain system invariance ($\Psi_{initial} \approx \Psi_{final}$) or transition predictably to a target state ($\Psi_{target}$) while preserving the integrity of the ten-primitive tuple $\langle D; T; R; P; F; K; G; \Gamma; \Phi; S \rangle$.
 
 This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom validation, thermodynamic efficiency metrics ($\xi_{CP}$), and criticality probing to ensure compatibility prior to exchange.
 
 ## 2.0 Pre-Swap Compatibility Criteria
-Candidate synthons must pass a rigorous interface check via the `ConstraintEngine`. Compatibility is determined by primitive alignment within defined tolerances.
+Candidate imscriptions must pass a rigorous interface check via the `ConstraintEngine`. Compatibility is determined by primitive alignment within defined tolerances.
 
 ### 2.1 Primitive Matching Matrix
 | Primitive | Requirement | Rationale |
@@ -26,7 +26,7 @@ Candidate synthons must pass a rigorous interface check via the `ConstraintEngin
 | **Recognition ($R$)** | **Compatible Class** | $R_⊇$ (non-covalent) may swap with $R_{⊆+‡}$ (dynamic covalent). Static $R_⊆$ is generally not hot-swappable. |
 | **Polarity ($P$)** | **Complementary** | Must match the environment's polarity constraints (e.g., $P_±$ for homodimers). |
 | **Fidelity ($F$)** | **$F_{new} \geq F_{old}$** | Swapping $F_ℏ$ (High) for $F_ℓ$ (Low) increases entropy production ($\xi_{CP}$), risking system destabilization. |
-| **Kinetic Character ($K$)** | **Accessible Pathway** | Both synthons must share accessible kinetic pathways ($K_{fast}$ or $K_{mod}$). |
+| **Kinetic Character ($K$)** | **Accessible Pathway** | Both imscriptions must share accessible kinetic pathways ($K_{fast}$ or $K_{mod}$). |
 | **Criticality ($\Phi$)** | **Degeneracy-dependent** | Unconfirmed $\Phi_{\text{ctyogh}}$ (degeneracy\_strength < 0.70): treat as $\Phi_{\text{softsign}}$, normal swap rules. Confirmed $\Phi_{\text{ctyogh}}$ (score ≥ 0.70, Varma probe run): swap permitted *with* Varma confirmation — not blanket prohibition. Axiom 5 predicts that at true criticality the primitive basis contracts, making local swaps *more* tolerant, not less. |
 
 ### 2.2 Fidelity & Kinetic Thresholds
@@ -38,7 +38,7 @@ Candidate synthons must pass a rigorous interface check via the `ConstraintEngin
 For $G_{\text{revapostrophe}}$ assemblies (crystal lattices, MOF networks, extended supramolecular frameworks), exact $S$ matching is relaxed via the `--allow-defect-fraction` flag:
 
 ```bash
-imscribe analogies target_synthon --stoichiometry-aware --allow-defect-fraction 0.25
+imscribe analogies target_imscription --stoichiometry-aware --allow-defect-fraction 0.25
 ```
 
 This permits partial substitution up to 25% defect fraction without violating mass balance, because network topology ($T_{\square}$) absorbs per-node variance. The flag is **restricted to $G_{\text{revapostrophe}}$** — molecular-scale swaps ($G_{\text{beta}}$) and mesoscale swaps ($G_{\text{gamma}}$) retain exact $S$ matching.
@@ -46,7 +46,7 @@ This permits partial substitution up to 25% defect fraction without violating ma
 ## 3.0 The HotSwap Protocol (5-Step Workflow)
 
 ### Step 1: Target Identification
-Identify the synthon to be replaced within the global catalog.
+Identify the imscription to be replaced within the global catalog.
 ```python
 from imscrbgrmr.registry import global_catalog
 target = global_catalog.get("carboxylic_acid_dimer")
@@ -66,12 +66,12 @@ Run the candidate against the composition axioms to ensure it doesn't violate gl
 from imscrbgrmr.constraints import AxiomValidator
 
 validator = AxiomValidator()
-report = validator.validate(candidate_synthon)
+report = validator.validate(candidate_imscription)
 if not report.all_satisfied:
     raise ValueError(f"Swap blocked: {report.violations}")
 ```
-*   **Critical Check:** Axiom 1 (Cyclic Closure). If swapping into a cyclic motif, ensure the new synthon maintains $F \geq F_ℇ$.
-*   **Critical Check:** Axiom 7 (Cyclic Grounding). Ensure the new synthon has a named closing bond compatible with the existing scaffold.
+*   **Critical Check:** Axiom 1 (Cyclic Closure). If swapping into a cyclic motif, ensure the new imscription maintains $F \geq F_ℇ$.
+*   **Critical Check:** Axiom 7 (Cyclic Grounding). Ensure the new imscription has a named closing bond compatible with the existing scaffold.
 
 ### Step 4: Thermodynamic Feasibility Check
 Calculate the efficiency gap. The swap should not increase inefficiency ($\xi_{CP}$) beyond a tolerable threshold.
@@ -91,7 +91,7 @@ Experimental execution requires dynamic conditions (e.g., solvent exchange, ther
 
 Post-swap, verify the system state:
 1.  **Re-run Constraint Propagation:** Ensure global constraint strength remains within 90% of initial value.
-2.  **Grounding Audit:** Verify the new synthon registers with `grounding_status=full` or `partial`.
+2.  **Grounding Audit:** Verify the new imscription registers with `grounding_status=full` or `partial`.
 ```bash
 imscribe audit --status unverified --dry-run
 ```
@@ -136,13 +136,13 @@ imscribe audit --status unverified --dry-run
 *   **Protocol:**
     1.  Register with `--speculative` flag to quarantine in the `quantum` or `speculative` domain.
     2.  Use `--override-grounding` with `--override-reason` to bypass Axiom 7 checks if the closing bond mechanism is theoretical.
-    3.  **Do not** hotswap speculative synthons into grounded molecular systems without empirical validation. Semantic contamination risk may corrupt catalog integrity and prediction accuracy.
+    3.  **Do not** hotswap speculative imscriptions into grounded molecular systems without empirical validation. Semantic contamination risk may corrupt catalog integrity and prediction accuracy.
 
 ## 6.0 Advanced: The "Quantum Quarantine" Swap
-For speculative systems (quantum synthons, hypothetical topologies):
-1.  Register the new synthon with `--speculative` flag.
+For speculative systems (quantum imscriptions, hypothetical topologies):
+1.  Register the new imscription with `--speculative` flag.
 2.  Isolate in `domain=quantum` or `domain=speculative`.
-3.  Do not attempt to hotswap speculative synthons into grounded molecular systems. The semantic contamination risk (Fix 5 in IΓ_FIXES.MD) may corrupt catalog integrity and prediction accuracy.
+3.  Do not attempt to hotswap speculative imscriptions into grounded molecular systems. The semantic contamination risk (Fix 5 in IΓ_FIXES.MD) may corrupt catalog integrity and prediction accuracy.
 
 ## 7.0 Connection to Transformation #8 and Phase 3
 

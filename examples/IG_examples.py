@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Imscribing Grammar Examples — Demonstrating the Unified Synthonicon Framework
+Imscribing Grammar Examples — Demonstrating the Unified Imscriptiveon Framework
 
 This script demonstrates:
-1. Creating synthons with the seven primitives
+1. Creating imscriptions with the seven primitives
 2. Computing constraint propagation efficiency (η_CP and ξ_CP)
 3. Analyzing cross-domain analogies
 4. Using domain-specific agents
@@ -14,20 +14,20 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 
-def example_1_basic_synthon():
-    """Example 1: Creating a basic synthon with seven primitives."""
+def example_1_basic_imscription():
+    """Example 1: Creating a basic imscription with seven primitives."""
     print("\n" + "=" * 60)
-    print("Example 1: Basic Synthon Creation")
+    print("Example 1: Basic Imscription Creation")
     print("=" * 60)
     
     from imscrbgrmr import (
-        Synthon, Dimensionality, Topology, RecognitionMode,
+        Imscription, Dimensionality, Topology, RecognitionMode,
         Polarity, Fidelity, Granularity, InteractionGrammar,
     )
     
-    # Create the classic carboxylic acid dimer synthon
+    # Create the classic carboxylic acid dimer imscription
     # This is the R₂²(8) hydrogen-bonded motif found in thousands of crystal structures
-    carboxylic_dimer = Synthon(
+    carboxylic_dimer = Imscription(
         name="carboxylic_acid_dimer",
         dimensionality=Dimensionality.MOLECULAR,  # D_∧ — point-like molecular reactivity
         topology=Topology.CYCLIC_BOWTIE,  # T_⋈ — cyclic R₂²(8) motif
@@ -43,7 +43,7 @@ def example_1_basic_synthon():
         },
     )
     
-    print(f"\nSynthon: {carboxylic_dimer.name}")
+    print(f"\nImscription: {carboxylic_dimer.name}")
     print(f"Unified notation: {carboxylic_dimer.to_notation()}")
     print(f"Description: {carboxylic_dimer.description}")
     print(f"Constraint strength: {carboxylic_dimer.constraint_strength:.2f}")
@@ -52,7 +52,7 @@ def example_1_basic_synthon():
     return carboxylic_dimer
 
 
-def example_2_thermodynamics(synthon: Synthon):
+def example_2_thermodynamics(imscription: Imscription):
     """Example 2: Computing thermodynamic efficiency metrics."""
     print("\n" + "=" * 60)
     print("Example 2: Thermodynamic Efficiency (η_CP and ξ_CP)")
@@ -66,9 +66,9 @@ def example_2_thermodynamics(synthon: Synthon):
     
     # Compute η_CP and ξ_CP for the carboxylic acid dimer
     # Using solvated ΔG ≈ -52 kJ/mol (from QUANTIG.md Transformation #1)
-    result = compute_eta_CP(synthon, delta_g=-52.0)
+    result = compute_eta_CP(imscription, delta_g=-52.0)
     
-    print(f"\nSynthon: {result.synthon_name}")
+    print(f"\nImscription: {result.imscription_name}")
     print(f"Information gain: {result.information_gain:.2f} bits")
     print(f"Fidelity: {result.fidelity:.3f}")
     print(f"ΔG: {result.delta_g:.1f} kJ/mol")
@@ -85,7 +85,7 @@ def example_2_thermodynamics(synthon: Synthon):
         print(f"  Note: {ref['note']}")
     
     # Benchmark against Landauer limit
-    benchmark = benchmark_against_landauer(synthon, delta_g=-52.0)
+    benchmark = benchmark_against_landauer(imscription, delta_g=-52.0)
     print(f"\nLandauer Benchmark:")
     print(f"  Minimum energy: {benchmark['landauer_minimum_kJ_mol']:.2e} kJ/mol")
     print(f"  Actual energy: {benchmark['actual_energy_kJ_mol']:.1f} kJ/mol")
@@ -95,19 +95,19 @@ def example_2_thermodynamics(synthon: Synthon):
 
 
 def example_3_catalog_and_search():
-    """Example 3: Using the synthon catalog for storage and search."""
+    """Example 3: Using the imscription catalog for storage and search."""
     print("\n" + "=" * 60)
-    print("Example 3: Synthon Catalog and Search")
+    print("Example 3: Imscription Catalog and Search")
     print("=" * 60)
     
-    from imscrbgrmr.registry import SynthonCatalog, register_synthon
+    from imscrbgrmr.registry import ImscriptionCatalog, register_imscription
     from imscrbgrmr import Fidelity, Dimensionality
     
     # Create a catalog
-    catalog = SynthonCatalog(name="example_catalog")
+    catalog = ImscriptionCatalog(name="example_catalog")
     
-    # Register synthons using the convenience function
-    register_synthon(
+    # Register imscriptions using the convenience function
+    register_imscription(
         name="formamide_dimer",
         dimensionality="Ð_wynn",
         topology="Þ_bullseye",
@@ -119,7 +119,7 @@ def example_3_catalog_and_search():
         description="Weaker amide dimer (F_ℓ)",
     )
     
-    register_synthon(
+    register_imscription(
         name="triple_hbond_array",
         dimensionality="Ð_wynn",
         topology="Þ_bullseye",
@@ -131,7 +131,7 @@ def example_3_catalog_and_search():
         description="DAD·ADA triple H-bond array (Watson-Crick like)",
     )
     
-    register_synthon(
+    register_imscription(
         name="proline_aldol_cycle",
         dimensionality="Ð_infinity",  # Temporal!
         topology="Þ_bullseye",
@@ -140,7 +140,7 @@ def example_3_catalog_and_search():
         fidelity="ƒ_dh",
         granularity="Γ_gamma",
         interaction_grammar="ɢ_selective",
-        description="Proline-catalyzed aldol cycle (temporal synthon)",
+        description="Proline-catalyzed aldol cycle (temporal imscription)",
     )
     
     # Add to our local catalog
@@ -150,24 +150,24 @@ def example_3_catalog_and_search():
             catalog.register(global_catalog[name])
     
     print(f"\nCatalog: {catalog.name}")
-    print(f"Total synthons: {len(catalog)}")
+    print(f"Total imscriptions: {len(catalog)}")
     
     # Search by fidelity
     high_f = catalog.search(fidelity=Fidelity.HIGH)
-    print(f"\nHigh fidelity (F_hardsign) synthons: {len(high_f)}")
+    print(f"\nHigh fidelity (F_hardsign) imscriptions: {len(high_f)}")
     for s in high_f:
         print(f"  - {s.name}: {s.to_notation()}")
     
     # Search by domain
     temporal = catalog.search_by_domain("temporal")
-    print(f"\nTemporal domain synthons: {len(temporal)}")
+    print(f"\nTemporal domain imscriptions: {len(temporal)}")
     for s in temporal:
         print(f"  - {s.name} ({s.dimensionality.value})")
     
-    # Find similar synthons
+    # Find similar imscriptions
     if high_f:
         similar = catalog.find_similar(high_f[0], match_primitives=4)
-        print(f"\nSynthons similar to '{high_f[0].name}': {len(similar)}")
+        print(f"\nimscriptions similar to '{high_f[0].name}': {len(similar)}")
         for s in similar[:3]:
             print(f"  - {s.name}")
     
@@ -180,18 +180,18 @@ def example_4_cross_domain_analogy():
     print("Example 4: Cross-Domain Analogy Search")
     print("=" * 60)
     
-    from imscrbgrmr.registry import SynthonCatalog, global_catalog
+    from imscrbgrmr.registry import ImscriptionCatalog, global_catalog
     from imscrbgrmr import Dimensionality
     
-    print("\nFinding temporal analogs of supramolecular synthons...")
-    print("(e.g., 'temporal synthons with regeneration analogous to self-complementarity')")
+    print("\nFinding temporal analogs of supramolecular imscriptions...")
+    print("(e.g., 'temporal imscriptions with regeneration analogous to self-complementarity')")
     
-    # Get a supramolecular synthon
-    supra_synthons = global_catalog.search_by_domain("supramolecular")
-    if not supra_synthons:
+    # Get a supramolecular imscription
+    supra_imscriptions = global_catalog.search_by_domain("supramolecular")
+    if not supra_imscriptions:
         # Create one if none exist
-        from imscrbgrmr import Synthon, Topology, RecognitionMode, Polarity, Fidelity, Granularity, InteractionGrammar
-        supra_synthon = Synthon(
+        from imscrbgrmr import Imscription, Topology, RecognitionMode, Polarity, Fidelity, Granularity, InteractionGrammar
+        supra_imscription = Imscription(
             name="carboxylic_acid_dimer",
             dimensionality=Dimensionality.SUPRAMOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
@@ -203,16 +203,16 @@ def example_4_cross_domain_analogy():
             description="Self-complementary H-bond dimer",
         )
     else:
-        supra_synthon = supra_synthons[0]
+        supra_imscription = supra_imscriptions[0]
     
-    print(f"\nReference synthon: {supra_synthon.name}")
-    print(f"  Notation: {supra_synthon.to_notation()}")
-    print(f"  Polarity: {supra_synthon.polarity.value} (self-complementary)")
-    print(f"  Fidelity: {supra_synthon.fidelity.value}")
+    print(f"\nReference imscription: {supra_imscription.name}")
+    print(f"  Notation: {supra_imscription.to_notation()}")
+    print(f"  Polarity: {supra_imscription.polarity.value} (self-complementary)")
+    print(f"  Fidelity: {supra_imscription.fidelity.value}")
     
     # Find temporal analogs
     temporal_analogs = global_catalog.find_cross_domain_analogs(
-        supra_synthon,
+        supra_imscription,
         target_domain="temporal",
     )
     
@@ -226,23 +226,23 @@ def example_4_cross_domain_analogy():
         print("\nNo temporal analogs found in current catalog.")
         print("(This is expected with the minimal example catalog)")
     
-    return supra_synthon
+    return supra_imscription
 
 
 def example_5_constraint_compatibility():
-    """Example 5: Checking synthon compatibility."""
+    """Example 5: Checking imscription compatibility."""
     print("\n" + "=" * 60)
     print("Example 5: Constraint Compatibility Checking")
     print("=" * 60)
     
     from imscrbgrmr.constraints import ConstraintEngine
-    from imscrbgrmr import Synthon, Dimensionality, Topology, RecognitionMode, Polarity, Fidelity, Granularity, InteractionGrammar
+    from imscrbgrmr import Imscription, Dimensionality, Topology, RecognitionMode, Polarity, Fidelity, Granularity, InteractionGrammar
     
     engine = ConstraintEngine()
     
-    # Create an electrophile synthon
-    electrophile = Synthon(
-        name="carbonyl_synthon",
+    # Create an electrophile imscription
+    electrophile = Imscription(
+        name="carbonyl_imscription",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
         recognition_mode=RecognitionMode.COVALENT,
@@ -253,9 +253,9 @@ def example_5_constraint_compatibility():
         description="Electrophilic carbonyl carbon",
     )
     
-    # Create a nucleophile synthon
-    nucleophile = Synthon(
-        name="enolate_synthon",
+    # Create a nucleophile imscription
+    nucleophile = Imscription(
+        name="enolate_imscription",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
         recognition_mode=RecognitionMode.COVALENT,
@@ -281,8 +281,8 @@ def example_5_constraint_compatibility():
             print(f"  - {cond}")
     
     # Check incompatible pair (same polarity)
-    another_electrophile = Synthon(
-        name="imine_synthon",
+    another_electrophile = Imscription(
+        name="imine_imscription",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
         recognition_mode=RecognitionMode.COVALENT,
@@ -307,20 +307,20 @@ def example_6_domain_agents():
     print("Example 6: Domain-Specific Analysis Agents")
     print("=" * 60)
     
-    from imscrbgrmr.domains.molecular import MolecularSynthonAgent
-    from imscrbgrmr.domains.supramolecular import SupramolecularSynthonAgent
-    from imscrbgrmr.domains.temporal import TemporalSynthonAgent
+    from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
+    from imscrbgrmr.domains.supramolecular import SupramolecularImscriptionAgent
+    from imscrbgrmr.domains.temporal import TemporalImscriptionAgent
     
     # Molecular agent
-    mol_agent = MolecularSynthonAgent()
+    mol_agent = MolecularImscriptionAgent()
     print("\n[Molecular Domain]")
-    synthons = mol_agent.list_molecular_synthons()
-    print(f"Available molecular synthons: {len(synthons)}")
-    for s in synthons:
+    imscriptions = mol_agent.list_molecular_imscriptions()
+    print(f"Available molecular imscriptions: {len(imscriptions)}")
+    for s in imscriptions:
         print(f"  - {s.name}: {s.polarity.value}, {s.fidelity.value}")
     
     # Supramolecular agent
-    supra_agent = SupramolecularSynthonAgent()
+    supra_agent = SupramolecularImscriptionAgent()
     print("\n[Supramolecular Domain]")
     coop = supra_agent.compute_cooperativity_induction(3)
     print(f"Triple H-bond array cooperativity:")
@@ -329,7 +329,7 @@ def example_6_domain_agents():
     print(f"  Note: {coop['note']}")
     
     # Temporal agent
-    temp_agent = TemporalSynthonAgent()
+    temp_agent = TemporalImscriptionAgent()
     print("\n[Temporal Domain]")
     fidelity_result = temp_agent.compute_fidelity_per_cycle(
         k_cat=1.0,  # s^-1
@@ -347,12 +347,12 @@ def main():
     """Run all examples."""
     print("\n" + "=" * 60)
     print("  Imscribing Grammar Framework Examples")
-    print("  A Unified Synthonicon Implementation")
+    print("  A Unified Imscriptiveon Implementation")
     print("=" * 60)
     
     # Run examples
-    synthon = example_1_basic_synthon()
-    example_2_thermodynamics(synthon)
+    imscription = example_1_basic_imscription()
+    example_2_thermodynamics(imscription)
     catalog = example_3_catalog_and_search()
     example_4_cross_domain_analogy()
     example_5_constraint_compatibility()
@@ -365,9 +365,9 @@ def main():
 Next Steps:
 1. Explore QUANTIG.md for theoretical background
 2. Review the seven primitives and unified notation
-3. Try creating your own synthons for specific chemical systems
+3. Try creating your own imscriptions for specific chemical systems
 4. Use domain agents to analyze molecular, supramolecular, and temporal systems
-5. Compute η_CP and ξ_CP for your synthons to compare efficiency
+5. Compute η_CP and ξ_CP for your imscriptions to compare efficiency
 """)
     
     return 0

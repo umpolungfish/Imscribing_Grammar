@@ -20,7 +20,7 @@ Toolchain: **Lean 4.28.0** · **Mathlib v4.28.0**
 Imscribing Grammar/
   Primitives/
     Core.lean         -- 12 primitive types with lattice structure + cross-primitive axioms
-    Synthon.lean      -- 12-field Synthon structure; primitiveMismatches (Hamming); P-70 identities
+    Imscription.lean      -- 12-field Imscription structure; primitiveMismatches (Hamming); P-70 identities
     TierCrossing.lean -- Granularity separation; tier crossing cost; Higgs hierarchy predictions
     OPN_2adic.lean    -- Classical number theory: 2-adic valuation + Touchard congruence for OPNs
     BSD_2adic.lean    -- BSD 2-adic / 3-adic valuation structure (companion to Millennium/BSD.lean)
@@ -33,7 +33,7 @@ Imscribing Grammar/
     OPN.lean          -- Odd Perfect Number: uses real Mathlib Nat.Perfect; Euler form MathlibGap
     BSD.lean          -- BSD Conjecture: real WeierstrassCurve ℚ; three parallel sorries
     Barriers.lean     -- Cross-problem taxonomy: BarrierType inductive; ym_is_unique_missing_foundation
-    PrimitiveBridge.lean -- Bridge: Synthon encodings + BarrierPrimitiveCertificate + primitive_bridge_master
+    PrimitiveBridge.lean -- Bridge: Imscription encodings + BarrierPrimitiveCertificate + primitive_bridge_master
 ```
 
 ---
@@ -221,8 +221,8 @@ applied to number theory. The primitives that map most naturally onto this pictu
 
 | OPN concept | Imscribing Grammar analogue |
 |---|---|
-| Euler prime `pᵏ` — unique 2-adic carrier | `φ̂_ÿ` — absorbing under meet, unique criticality carrier |
-| Square factors `q^(2e)` — 2-adically inert | `φ̂_ž` with `Ç_Ù` isolation |
+| Euler prime `pᵏ` — unique 2-adic carrier | `⊙_ÿ` — absorbing under meet, unique criticality carrier |
+| Square factors `q^(2e)` — 2-adically inert | `⊙_ž` with `Ç_Ù` isolation |
 | `σ(n) = 2n` — global balance | `S` (Stoichiometry) — exact ratio constraint |
 | `n` odd — parity conservation | `P` (Polarity) — parity / neutrality condition |
 
@@ -252,8 +252,8 @@ topos-theoretic or operadic model). That is out of scope for the current formali
 The types that need it (`Protection`, `Chirality`) only use `≥` in the cross-primitive axioms,
 not lattice operations. Deriving a full `LinearOrder` is straightforward — all types derive `Ord`
 and the machinery exists in Mathlib — but premature: it would be needed only once `⊓`/`⊔`
-operations are actually used in proofs. The exception is `Criticality`, where `φ̂_ÿ` is
-*absorbing* under meet (`meet(φ̂_ÿ, x) = φ̂_ÿ` for all `x`), which contradicts `min` semantics.
+operations are actually used in proofs. The exception is `Criticality`, where `⊙_ÿ` is
+*absorbing* under meet (`meet(⊙_ÿ, x) = ⊙_ÿ` for all `x`), which contradicts `min` semantics.
 A correct `MeetSemilattice` instance for `Criticality` will require a custom definition that
 overrides the `Ord`-derived ordering for meet — this is noted in a comment in `Core.lean` and
 is the first planned extension to the primitive lattice.
@@ -334,13 +334,13 @@ direction, not machinery.
 
 **Connecting the two tracks.** The most concrete near-term connection: as `Core.lean` gains
 `Semilattice` / `Lattice` instances, the OPN constraint structure could be encoded as a
-*synthon* — a tuple in the 12-dimensional primitive space — and the constraint propagation
-verified at that level. The `φ̂_ÿ` absorbing-meet property is the structural analogue of
+*imscription* — a tuple in the 12-dimensional primitive space — and the constraint propagation
+verified at that level. The `⊙_ÿ` absorbing-meet property is the structural analogue of
 the Euler prime's uniqueness; formalizing this analogy in Lean would be the first real
 integration between the files. This is planned but not yet scoped.
 
 **Lattice instances for `Core.lean`.** The immediate next step for `Core.lean` is implementing
-the custom `MeetSemilattice` for `Criticality` (where `φ̂_ÿ` is absorbing). After that, full
+the custom `MeetSemilattice` for `Criticality` (where `⊙_ÿ` is absorbing). After that, full
 `Lattice` instances for the five ordered primitives (`F`, `K`, `G`, `Ω`, `H`) are
 straightforward using `minFac`/`maxFac` over the `Ord`-derived linear order. The categorical
 primitives (`D`, `T`, `R`, `P`, `Γ`) require a different treatment: their meet semantics are
@@ -446,13 +446,13 @@ def BSDRankConjecture : Prop :=
 
 `PrimitiveBridge.lean` is the bridge between the `Millennium/` and `Primitives/` tracks. It provides:
 
-**Concrete Synthon encodings** for five problems (YM classical, YM quantum target, RH, NS, OPN) — each as a fully typed 12-field `Synthon` struct using the actual primitive types from `Core.lean`.
+**Concrete Imscription encodings** for five problems (YM classical, YM quantum target, RH, NS, OPN) — each as a fully typed 12-field `Imscription` struct using the actual primitive types from `Core.lean`.
 
 **`BarrierPrimitiveCertificate`** — a structure type connecting each `MillenniumProblem` to its blocked primitive field, with a `barrier_correct` field that machine-checks the classification against the `millenniumBarrier` taxonomy.
 
 ```lean
 structure BarrierPrimitiveCertificate (p : MillenniumProblem) where
-  encoding      : Synthon
+  encoding      : Imscription
   blockedField  : String
   barrier       : BarrierType
   barrier_correct : barrier = millenniumBarrier p
@@ -462,16 +462,16 @@ Concrete instances: `ym_certificate`, `opn_certificate`, `ns_certificate`.
 
 **The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `Γ_β → Γ_ʔ` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`Γ_ʔ`) description of gauge field space. The quantum YM target stays at `Ð_cube` (local, 4D), not `Ð_ω` (imscriptive/QG). This is formally distinct from quantum gravity.
 
-**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (φ̂_ÿ + Ç_Ù, OpenProblem), NS (φ̂_ž boundary, OpenProblem), RH (φ̂_ÿ locus, OpenProblem).
+**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (⊙_ÿ + Ç_Ù, OpenProblem), NS (⊙_ž boundary, OpenProblem), RH (⊙_ÿ locus, OpenProblem).
 
 ```lean
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 ∧
     millenniumBarrier .YM = .MissingFoundation ∧
-    opn_encoding.crit = φ̂_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
+    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
     millenniumBarrier .OPN = .OpenProblem ∧
-    ns_encoding.crit = φ̂_ž ∧ millenniumBarrier .NS = .OpenProblem ∧
-    rh_encoding.crit = φ̂_ÿ ∧ millenniumBarrier .RH = .OpenProblem
+    ns_encoding.crit = ⊙_ž ∧ millenniumBarrier .NS = .OpenProblem ∧
+    rh_encoding.crit = ⊙_ÿ ∧ millenniumBarrier .RH = .OpenProblem
 ```
 
 This is the formal content that connects the two tracks, enabling a paper claim: the sorry boundaries are not arbitrary — they correspond to specific primitive field transitions that can be computationally verified.

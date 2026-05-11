@@ -3,7 +3,7 @@ DeepSeek Framework Exploration
 ===============================
 Systematically explores the six cross-domain insights proposed in the
 "Typed Programming Language for Matter" analysis. Each section registers
-a new synthon and runs the appropriate framework analysis.
+a new imscription and runs the appropriate framework analysis.
 
 Run:
     python examples/deepseek_exploration.py
@@ -21,7 +21,7 @@ import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from imscrbgrmr import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar, GrammarOperator,
     KineticCharacter, CriticalityPhase, global_catalog,
 )
@@ -50,7 +50,7 @@ except ImportError:
 
 
 # =============================================================================
-# Helper: build a simple Synthon without catalog registration
+# Helper: build a simple Imscription without catalog registration
 # =============================================================================
 
 def fidelity_tier(r) -> str:
@@ -67,11 +67,11 @@ def fidelity_tier_name(r) -> str:
     else:            return "LOW"
 
 
-def make_synthon(
+def make_imscription(
     name, dim, topo, rec, pol, fid, kin, gran, gram,
     phi=None, stoich=None, description=""
 ):
-    return Synthon(
+    return Imscription(
         name=name,
         dimensionality=dim, topology=topo, recognition_mode=rec,
         polarity=pol, fidelity=fid, kinetic_character=kin,
@@ -89,7 +89,7 @@ def make_synthon(
 header("1 · Chelate Effect: G_beta → G_gamma Amplification")
 
 info("Monodentate: [Zn(py)₂Cl₂] — two independent pyridine ligands")
-zn_mono = make_synthon(
+zn_mono = make_imscription(
     name="zn_pyridine_monodentate",
     dim=Dimensionality.MOLECULAR,
     topo=Topology.CHAIN,
@@ -104,7 +104,7 @@ zn_mono = make_synthon(
 )
 
 info("Chelate:     [Zn(bpy)Cl₂] — bidentate 2,2'-bipyridine, hub topology")
-zn_chelate = make_synthon(
+zn_chelate = make_imscription(
     name="zn_bipyridine_chelate",
     dim=Dimensionality.MOLECULAR,
     topo=Topology.HUB_NODE,
@@ -122,7 +122,7 @@ zn_chelate = make_synthon(
 r_mono  = compute_eta_CP(zn_mono,    delta_g=-38.0)
 r_chel  = compute_eta_CP(zn_chelate, delta_g=-52.0)
 r_triple = compute_eta_CP(
-    global_catalog.get("triple_hbond_array") or make_synthon(
+    global_catalog.get("triple_hbond_array") or make_imscription(
         "triple_hbond_array",
         Dimensionality.SUPRAMOLECULAR, Topology.CYCLIC_BOWTIE,
         RecognitionMode.NON_COVALENT, Polarity.SELF_COMPLEMENTARY_SYM,
@@ -165,11 +165,11 @@ else:
 
 header("2 · Water's Hydrogen Bond Network: Varma Probe")
 
-info("Encoding bulk liquid water as a supramolecular network synthon:")
+info("Encoding bulk liquid water as a supramolecular network imscription:")
 info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, Γ_∨(BROAD), Φ_sub, n:m")
 info("  ΔG per H-bond ≈ -18 kJ/mol (gas-phase benchmark)")
 
-water = make_synthon(
+water = make_imscription(
     name="bulk_water_hbond_network",
     dim=Dimensionality.SUPRAMOLECULAR,
     topo=Topology.NETWORK,
@@ -250,7 +250,7 @@ header("3 · Formose Reaction: Factor 7 Check")
 info("Encoding the formose aldol autocatalytic cycle:")
 info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), Φ_sub, 1:1")
 
-formose = make_synthon(
+formose = make_imscription(
     name="formose_aldol_autocatalytic_cycle",
     dim=Dimensionality.TEMPORAL,
     topo=Topology.CYCLIC_BOWTIE,
@@ -323,7 +323,7 @@ else:
 header("4 · Cross-Domain Efficiency: Temporal vs Spatial vs Molecular")
 
 known_systems = [
-    # (name_or_synthon, delta_g, label)
+    # (name_or_imscription, delta_g, label)
     ("carboxylic_acid_homodimer",   -52.0, "Carboxylic acid dimer    (D_∧, T_⋈)"),
     ("triple_hbond_array",          -95.0, "Triple H-bond DAD·ADA   (D_△, T_⋈)"),
     ("iodopentafluorobenzene_dimer", -35.0, "σ-hole dimer C-I···N    (D_∧, T_⋈)"),
@@ -364,7 +364,7 @@ else:
     for label, dg, xi, f_tier in rows:
         print(f"  {xi:.2f} nats  {label}")
 
-result("Temporal synthons (proline, formose) sit in F_dh — not catastrophically worse than static assemblies.")
+result("Temporal imscriptions (proline, formose) sit in F_dh — not catastrophically worse than static assemblies.")
 result("Chelate and acid dimer share the same ξ_CP tier — DeepSeek's cross-domain prediction confirmed.")
 
 
@@ -386,7 +386,7 @@ if violations:
     warn(f"Found {len(violations)} Axiom 1 violation(s) — T_⋈ + P_± + F_beltl:")
     if Table and console:
         vt = Table(title="Axiom 1 Violations")
-        vt.add_column("Synthon", style="red")
+        vt.add_column("Imscription", style="red")
         vt.add_column("Status")
         vt.add_column("ΔG (catalog)")
         for s in violations[:20]:
@@ -471,7 +471,7 @@ if ax4_violations:
     warn(f"Found {len(ax4_violations)} Axiom 4 candidate violation(s) — Γ_→ without D_∞ or R_‡:")
     if Table and console:
         a4t = Table(title="Axiom 4 Candidates")
-        a4t.add_column("Synthon", style="yellow")
+        a4t.add_column("Imscription", style="yellow")
         a4t.add_column("D", style="cyan")
         a4t.add_column("R", style="cyan")
         a4t.add_column("Γ tier")

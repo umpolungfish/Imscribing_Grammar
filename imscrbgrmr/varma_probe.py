@@ -46,7 +46,7 @@ import math
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Dict, List, Optional, Any, Tuple
 
-from .models import Synthon, CriticalityPhase, Granularity, Dimensionality, Fidelity, KineticCharacter
+from .models import Imscription, CriticalityPhase, Granularity, Dimensionality, Fidelity, KineticCharacter
 
 if TYPE_CHECKING:
     from .morphism import TransitionMorphism
@@ -70,7 +70,7 @@ class VarmaCorrelationData:
 @dataclass
 class PhiCCandidacyReport:
     """
-    Φ_c candidacy score and breakdown for a synthon.
+    Φ_c candidacy score and breakdown for a imscription.
 
     score:       0.0–1.0; ≥0.7 → Φ_c, 0.4–0.7 → approaching, <0.4 → subcritical
     gd_degenerate: True if G and D are functionally coupled (cannot be independently set)
@@ -79,7 +79,7 @@ class PhiCCandidacyReport:
     scaling_prediction: predictions for ξ_r from ξ_τ
     flags: list of Axiom violation or warning strings
     """
-    synthon_name: str
+    imscription_name: str
     score: float = 0.0
     gd_degenerate: bool = False
     gd_degeneracy_type: str = "none"  # "logarithmic" | "power_law" | "none"
@@ -93,7 +93,7 @@ class PhiCCandidacyReport:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "synthon": self.synthon_name,
+            "imscription": self.imscription_name,
             "phi_c_score": round(self.score, 3),
             "phi_c_candidacy": self._candidacy_label(),
             "gd_degenerate": self.gd_degenerate,
@@ -150,12 +150,12 @@ def compute_dynamic_exponent(
 
 
 def degeneracy_strength(
-    synthon: "Synthon",
+    imscription: "Imscription",
     correlation_data: Optional["VarmaCorrelationData"] = None,
     frequency_series: Optional[List[Tuple[float, float]]] = None,
 ) -> Tuple[float, str]:
     """
-    Quantitative G/D degeneracy strength score (0–1) for a synthon.
+    Quantitative G/D degeneracy strength score (0–1) for a imscription.
 
     Score tiers:
       0.00–0.30 : no degeneracy     — G and D fully independent
@@ -170,7 +170,7 @@ def degeneracy_strength(
       4. Frequency-series z_eff trend (optional)    → bonus up to +0.10
 
     Args:
-        synthon: Synthon to evaluate
+        imscription: Imscription to evaluate
         correlation_data: Optional single-frequency ξ_r, ξ_τ measurement
         frequency_series: Optional list of (ξ_r(ω_i), ξ_τ(ω_i)) pairs across
                           decreasing frequencies; used to detect z_eff → ∞ trend
@@ -216,13 +216,13 @@ def degeneracy_strength(
     # --- Component 3: Tuple structure priors ---
     from .models import RecognitionMode, Dimensionality
     tuple_bonus = 0.0
-    if "temporal" in synthon.dimensionality.domains:
+    if "temporal" in imscription.dimensionality.domains:
         tuple_bonus += 0.05
-    if synthon.recognition_mode in {
+    if imscription.recognition_mode in {
         RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC
     }:
         tuple_bonus += 0.05
-    if synthon.criticality_phase is not None and synthon.criticality_phase.value == "φ̂_ctyogh":
+    if imscription.criticality_phase is not None and imscription.criticality_phase.value == "φ̂_ctyogh":
         tuple_bonus += 0.05
     score += min(0.15, tuple_bonus)
 
@@ -321,11 +321,11 @@ def predict_delta_from_xi_tau(xi_tau: float) -> Optional[float]:
 
 
 def score_phi_c_candidacy(
-    synthon: Synthon,
+    imscription: Imscription,
     correlation_data: Optional[VarmaCorrelationData] = None,
 ) -> PhiCCandidacyReport:
     """
-    Compute Φ_c candidacy score for a synthon, with Varma QXY interpretation.
+    Compute Φ_c candidacy score for a imscription, with Varma QXY interpretation.
 
     Score components (each 0–1, weighted):
     1. Explicit Φ_c assignment (weight 0.35)
@@ -335,27 +335,27 @@ def score_phi_c_candidacy(
     5. Dynamic criticality description (R_‡ + temporal, weight 0.10)
 
     Args:
-        synthon: Synthon to evaluate
+        imscription: Imscription to evaluate
         correlation_data: Optional empirical ξ_r, ξ_τ measurements
 
     Returns:
         PhiCCandidacyReport
     """
-    report = PhiCCandidacyReport(synthon_name=synthon.name)
+    report = PhiCCandidacyReport(imscription_name=imscription.name)
     factors: List[Dict[str, Any]] = []
     score = 0.0
 
     # --- Factor 1: Explicit Φ_c assignment (weight 0.35) ---
-    if synthon.criticality_phase == CriticalityPhase.CRITICAL:
+    if imscription.criticality_phase == CriticalityPhase.CRITICAL:
         w1 = 0.35
         factors.append({
             "name": "Explicit Φ_c assignment",
             "weight": w1,
             "contribution": w1,
-            "note": "synthon.criticality_phase == Phi_ctyogh",
+            "note": "imscription.criticality_phase == Phi_ctyogh",
         })
         score += w1
-    elif synthon.criticality_phase == CriticalityPhase.SUBCRITICAL:
+    elif imscription.criticality_phase == CriticalityPhase.SUBCRITICAL:
         w1 = 0.0
         factors.append({
             "name": "Explicit Φ_sub assignment",
@@ -449,9 +449,9 @@ def score_phi_c_candidacy(
         # No data — estimate from tuple structure
         # Varma QXY typically has: D_∞ + hybrid domains + R_‡
         from .models import RecognitionMode
-        has_temporal = "temporal" in synthon.dimensionality.domains
-        has_multi_domain = len(synthon.dimensionality.domains) >= 2
-        has_catalytic = synthon.recognition_mode in {
+        has_temporal = "temporal" in imscription.dimensionality.domains
+        has_multi_domain = len(imscription.dimensionality.domains) >= 2
+        has_catalytic = imscription.recognition_mode in {
             RecognitionMode.DYNAMIC_CATALYTIC,
             RecognitionMode.COVALENT_DYNAMIC,
         }
@@ -476,7 +476,7 @@ def score_phi_c_candidacy(
         )
 
     # --- Factor 3: Multi-domain dimensionality (weight 0.15) ---
-    n_domains = len(synthon.dimensionality.domains)
+    n_domains = len(imscription.dimensionality.domains)
     if n_domains >= 2:
         w3 = 0.15
         factors.append({
@@ -486,7 +486,7 @@ def score_phi_c_candidacy(
             "note": "D spans ≥2 scales — prerequisite for G/D degeneracy",
         })
         score += w3
-    elif "temporal" in synthon.dimensionality.domains:
+    elif "temporal" in imscription.dimensionality.domains:
         w3 = 0.08
         factors.append({
             "name": "Temporal dimension present (single domain)",
@@ -507,7 +507,7 @@ def score_phi_c_candidacy(
         )
 
     # --- Factor 4: Granularity MESOSCALE (weight 0.10) ---
-    if synthon.granularity == Granularity.MESOSCALE:
+    if imscription.granularity == Granularity.MESOSCALE:
         w4 = 0.10
         factors.append({
             "name": "G = MESOSCALE (G_ג)",
@@ -518,7 +518,7 @@ def score_phi_c_candidacy(
         score += w4
     else:
         factors.append({
-            "name": f"G = {synthon.granularity.name} (not MESOSCALE)",
+            "name": f"G = {imscription.granularity.name} (not MESOSCALE)",
             "weight": 0.10,
             "contribution": 0.0,
             "note": "MESOSCALE preferred for critical systems",
@@ -526,10 +526,10 @@ def score_phi_c_candidacy(
 
     # --- Factor 5: Dynamic catalytic recognition (weight 0.10) ---
     from .models import RecognitionMode
-    if synthon.recognition_mode in {RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC}:
+    if imscription.recognition_mode in {RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC}:
         w5 = 0.10
         factors.append({
-            "name": f"R = {synthon.recognition_mode.name}",
+            "name": f"R = {imscription.recognition_mode.name}",
             "weight": 0.10,
             "contribution": w5,
             "note": "Dynamic recognition supports temporal criticality coupling",
@@ -537,7 +537,7 @@ def score_phi_c_candidacy(
         score += w5
     else:
         factors.append({
-            "name": f"R = {synthon.recognition_mode.name} (not dynamic)",
+            "name": f"R = {imscription.recognition_mode.name} (not dynamic)",
             "weight": 0.10,
             "contribution": 0.0,
         })
@@ -550,7 +550,7 @@ def score_phi_c_candidacy(
     # Contributes as a floor — other factors may add on top.
     proxy_score = 0.0
     proxy_basis = None
-    g = getattr(synthon, "grounding", None)
+    g = getattr(imscription, "grounding", None)
     if g is not None:
         if isinstance(g, dict):
             cand = g.get("phi_c_candidacy", {}) or {}
@@ -609,10 +609,10 @@ def score_phi_c_candidacy(
     # measured; the Varma QXY scaling check (factor 2) remains the gold standard
     # for Phi_ctyogh confirmation.
     from .models import Topology, Polarity, Fidelity
-    _has_temporal    = "temporal" in synthon.dimensionality.domains
-    _has_bowtie      = synthon.topology == Topology.CYCLIC_BOWTIE
-    _has_directional = synthon.polarity  == Polarity.DONOR_ACCEPTOR   # P_directional
-    _has_high_f      = synthon.fidelity  == Fidelity.HIGH              # F_hardsign
+    _has_temporal    = "temporal" in imscription.dimensionality.domains
+    _has_bowtie      = imscription.topology == Topology.CYCLIC_BOWTIE
+    _has_directional = imscription.polarity  == Polarity.DONOR_ACCEPTOR   # P_directional
+    _has_high_f      = imscription.fidelity  == Fidelity.HIGH              # F_hardsign
     if _has_temporal and _has_bowtie and _has_directional and _has_high_f:
         w7 = 0.25
         factors.append({
@@ -660,14 +660,14 @@ def score_phi_c_candidacy(
     # quantum dots at charge degeneracy.  Distinct from Varma QXY (temporal) —
     # this is a spatial, ground-state degeneracy universality class.
     w8 = 0.20
-    _has_galeph  = synthon.granularity == Granularity.GLOBAL
-    _has_f_high  = synthon.fidelity == Fidelity.HIGH
-    _has_k_trap  = synthon.kinetic_character == KineticCharacter.TRAP
-    _no_temporal = not (hasattr(synthon.dimensionality, "domains") and
-                        "temporal" in getattr(synthon.dimensionality, "domains", []))
+    _has_galeph  = imscription.granularity == Granularity.GLOBAL
+    _has_f_high  = imscription.fidelity == Fidelity.HIGH
+    _has_k_trap  = imscription.kinetic_character == KineticCharacter.TRAP
+    _no_temporal = not (hasattr(imscription.dimensionality, "domains") and
+                        "temporal" in getattr(imscription.dimensionality, "domains", []))
     # Also accept dimensionality not being TEMPORAL sub-label
-    if hasattr(synthon.dimensionality, "value"):
-        _no_temporal = _no_temporal and ("infinity" not in synthon.dimensionality.value)
+    if hasattr(imscription.dimensionality, "value"):
+        _no_temporal = _no_temporal and ("infinity" not in imscription.dimensionality.value)
 
     if _has_galeph and _has_f_high and _has_k_trap and _no_temporal:
         score += w8
@@ -791,13 +791,13 @@ def score_transition_phi_c(
                   register one in the same D/T cluster to confirm)
       < 0.40 : 1st-order or unknown — no QCP possible
 
-    The report's ``synthon_name`` field carries the transition label
-    ``"src → dst"`` rather than a single synthon name.
+    The report's ``imscription_name`` field carries the transition label
+    ``"src → dst"`` rather than a single imscription name.
     """
     from .morphism import TransitionOrder
 
     label = f"{morphism.src_name} → {morphism.dst_name}"
-    report = PhiCCandidacyReport(synthon_name=label)
+    report = PhiCCandidacyReport(imscription_name=label)
     factors: List[Dict[str, Any]] = []
     score = 0.0
 
@@ -846,9 +846,9 @@ def score_transition_phi_c(
             "name": "Φ_c intermediate on path (morphism QCP — exact predicate)",
             "weight": wB,
             "contribution": wB,
-            "qcp_synthons": qcp.qcp_synthon_names,
+            "qcp_imscriptions": qcp.qcp_imscription_names,
             "note": (
-                "Path passes through Φ_c synthon(s): system is tuned through the "
+                "Path passes through Φ_c imscription(s): system is tuned through the "
                 "critical point, not adjacent to it.  Exact morphism-level QCP predicate "
                 "— superior to Factor 8 endpoint heuristic "
                 "(G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞)."
@@ -879,14 +879,14 @@ def score_transition_phi_c(
             "weight": 0.45,
             "contribution": 0.0,
             "note": (
-                "2nd-order transition but no Φ_c synthon on the forward path.  "
+                "2nd-order transition but no Φ_c imscription on the forward path.  "
                 "May be a sub-critical crossover or weakly 2nd-order.  "
-                "Register a Φ_c synthon in the same D/T cluster to confirm QCP."
+                "Register a Φ_c imscription in the same D/T cluster to confirm QCP."
             ),
         })
         report.flags.append(
             "No Φ_c intermediate found.  "
-            "Register a Φ_c synthon in the same D/T cluster as src and dst to confirm QCP."
+            "Register a Φ_c imscription in the same D/T cluster as src and dst to confirm QCP."
         )
 
     # --- Factor C: Reversibility bonus (weight 0.10) ---
@@ -943,7 +943,7 @@ def score_transition_phi_c(
     elif report.score >= 0.40:
         report.recommendation = (
             f"2nd-order transition approaching QCP ({report.score:.2f}/1.00).  "
-            "Register a Φ_c synthon in the same D/T cluster to confirm.  "
+            "Register a Φ_c imscription in the same D/T cluster to confirm.  "
             "Until confirmed, label as 'weakly 2nd-order or critical crossover'."
         )
     else:
@@ -953,7 +953,7 @@ def score_transition_phi_c(
 
 
 def check_axiom5_varma(
-    synthon: Synthon,
+    imscription: Imscription,
     xi_r: Optional[float] = None,
     xi_tau: Optional[float] = None,
 ) -> Dict[str, Any]:
@@ -964,7 +964,7 @@ def check_axiom5_varma(
     report format used in cli.py validate and audit commands.
     """
     data = VarmaCorrelationData(xi_r=xi_r, xi_tau=xi_tau)
-    report = score_phi_c_candidacy(synthon, data)
+    report = score_phi_c_candidacy(imscription, data)
 
     return {
         "axiom": "Axiom 5 (Criticality / Varma QXY probe)",

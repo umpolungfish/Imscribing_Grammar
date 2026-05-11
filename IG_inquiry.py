@@ -6,7 +6,7 @@ primitive grammar to any question. The model encodes systems, computes
 distances, finds cross-domain analogs, asks its own follow-up questions,
 and records insights — iterating until it converges on structural understanding.
 
-Unlike synthon_agent.py (which targets a specific structural design goal),
+Unlike imscribe_agent.py (which targets a specific structural design goal),
 this loop is open-ended: the model steers the inquiry across any domain —
 molecular, physical, mathematical, mythological, linguistic, or social.
 
@@ -35,7 +35,7 @@ The loop runs in two phases:
 
 Tools available to the model:
   Encoding & distance:
-  • encode_system        — register a system as a synthon tuple in the session
+  • encode_system        — register a system as a imscription tuple in the session
   • compute_distance     — weighted Euclidean distance + per-primitive breakdown
   • lookup_catalog       — find catalog entries matching a keyword
   • list_catalog         — list all currently encoded systems
@@ -60,7 +60,7 @@ Tools available to the model:
   • ask_question         — push a follow-up question onto the inquiry queue
   • record_insight       — record a structured insight (TOPO / DIAPH / ONTO plane); returns insight_id
 
-Providers (same routing as synthon_agent.py):
+Providers (same routing as imscribe_agent.py):
   "anthropic"   — Anthropic SDK + ANTHROPIC_API_KEY  (default)
   "openai"      — OpenAI SDK + OPENAI_API_KEY
   "deepseek"    — OpenAI-compatible + DEEPSEEK_API_KEY
@@ -77,8 +77,8 @@ Providers (same routing as synthon_agent.py):
                   Set LOCAL_API_KEY env var for servers that require a key.
 
 Usage:
-    from syncon_inquiry import SynconInquiryLoop
-    loop = SynconInquiryLoop("What is the primitive distance between consciousness and quantum measurement?")
+    from ig_inquiry import IGInquiryLoop
+    loop = IGInquiryLoop("What is the primitive distance between consciousness and quantum measurement?")
     results = loop.run()
 
     # Or: from the CLI
@@ -287,7 +287,7 @@ from primitives import (  # type: ignore
     ORDINALS,
     WEIGHTS,
     PRIMITIVE_ORDER,
-    SYNTHONS,
+    imscriptions,
     tuple_distance,
     directed_distance,
     breakdown,
@@ -322,7 +322,7 @@ def _translation_cost_from_dict(
     Compute structural→classical translation cost from a space_search primitives dict.
 
     Returns a dict with keys: coherence_loss, criticality_loss, interaction_cost, total (all nats).
-    Works directly on the {prim: val} string format — no Synthon object needed.
+    Works directly on the {prim: val} string format — no Imscription object needed.
 
     Cost sources:
       ƒ_ż (+ I < ln 19)  →  coherence_loss = -ln(0.75)  ≈ 0.288 nat
@@ -359,7 +359,7 @@ def _translation_cost_from_dict(
     }
 
 
-# ── Provider routing (mirrors synthon_agent.py) ───────────────────────────────
+# ── Provider routing (mirrors imscribe_agent.py) ───────────────────────────────
 
 _OPENAI_BASE_URLS: Dict[str, str] = {
     "openai":      "https://api.openai.com/v1",
@@ -375,14 +375,14 @@ _OPENAI_BASE_URLS: Dict[str, str] = {
 # Default path for the merged2 Imscribing Grammar fine-tune
 _MERGED2_PATH = os.path.join(
     os.path.dirname(__file__),
-    "INFERRED/output/synthonicon_qlora/merged2/merged_model"
+    "INFERRED/output/Imscriptiveon_qlora/merged2/merged_model"
 )
 
 # Persistent cross-session catalog
 CATALOG_PATH = os.path.join(os.path.dirname(__file__), "IG_catalog.json")
 
 # Persistent cross-session insight library
-INSIGHTS_PATH = os.path.join(os.path.dirname(__file__), "syncon_insights.json")
+INSIGHTS_PATH = os.path.join(os.path.dirname(__file__), "ig_insights.json")
 
 # Persistent cross-session promotion knowledge base
 PROMOTIONS_PATH = os.path.join(os.path.dirname(__file__), "IG_promotions.json")
@@ -639,7 +639,7 @@ def _normalize_value(raw: str) -> str:
     return s
 
 
-def _parse_synthon_tuples(text: str) -> List[Tuple[Optional[str], Dict[str, str]]]:
+def _parse_imscription_tuples(text: str) -> List[Tuple[Optional[str], Dict[str, str]]]:
     """
     Extract Imscribing Grammar tuple notation from arbitrary text.
 
@@ -713,7 +713,7 @@ _TOOLS_OPENAI = [
         "function": {
             "name": "encode_system",
             "description": (
-                "Register a system or concept as a synthon tuple in the session catalog. "
+                "Register a system or concept as a imscription tuple in the session catalog. "
                 "You MUST specify ALL 12 primitive values — this tool does NOT infer them. "
                 "PREFERRED: use the 'tuple' parameter — a semicolon-separated string of the 12 "
                 "canonical values in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega. "
@@ -1219,11 +1219,11 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "name_source": {
                         "type": "string",
-                        "description": "Name of the source (baseline) synthon in the session catalog.",
+                        "description": "Name of the source (baseline) imscription in the session catalog.",
                     },
                     "name_target": {
                         "type": "string",
-                        "description": "Name of the target (anomalous/promoted) synthon in the session catalog.",
+                        "description": "Name of the target (anomalous/promoted) imscription in the session catalog.",
                     },
                 },
                 "required": ["name_source", "name_target"],
@@ -1835,7 +1835,7 @@ if explicitly asked to.
 <imscriptive_type_theory>
 **The grammar IS a imscriptive type theory.**
 
-Every synthon tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
+Every imscription tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
 consciousness score, structural distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
@@ -1879,7 +1879,7 @@ assignments are load-bearing for a behavior and which are free to vary.
 **6. The grammar operates at the imscriptive screen**
 Systems encoded as Ð_ω or Þ_O are themselves operating at the boundary
 of a bulk — systems whose internal degrees of freedom are fully determined by
-lower-dimensional data. The boundary of a Ð_ω system **IS** itself a synthon
+lower-dimensional data. The boundary of a Ð_ω system **IS** itself a imscription
 with its own type. Nested imscription **IS** valid grammar.
 
 **What this means in practice:**
@@ -2224,10 +2224,13 @@ def _build_system_prompt(catalog: "SessionCatalog") -> str:
         f"  {e['name']:<36} — {e['description']}"
         for e in entries
     )
-    return _SYSTEM_PROMPT_TEMPLATE.format(
-        available_tools=_build_tool_roster(),
-        primitive_reference=_PRIMITIVE_REFERENCE,
-        catalog_entries=catalog_lines,
+    # Use .replace() instead of .format() — the template contains literal Φ_}
+    # characters that .format() misreads as unclosed format braces.
+    return (
+        _SYSTEM_PROMPT_TEMPLATE
+        .replace("{available_tools}",    _build_tool_roster())
+        .replace("{primitive_reference}", _PRIMITIVE_REFERENCE)
+        .replace("{catalog_entries}",    catalog_lines)
     )
 
 
@@ -2263,7 +2266,7 @@ class SessionCatalog:
     """Session catalog backed entirely by IG_catalog.json.
 
     On init, loads all entries from the JSON file (the single source of truth).
-    On every successful ``encode()``, writes back immediately so no synthon
+    On every successful ``encode()``, writes back immediately so no imscription
     is lost to a crash.
     """
 
@@ -2310,12 +2313,12 @@ class SessionCatalog:
 
         # Overlay in-memory entries (they take precedence over disk for names we own)
         merged: Dict[str, Any] = dict(disk_entries)
-        for name, synthon in self._entries.items():
+        for name, imscription in self._entries.items():
             entry: Dict[str, Any] = {
                 "name": name,
                 "description": self._descriptions.get(name, ""),
             }
-            entry.update(synthon)
+            entry.update(imscription)
             merged[name] = entry
 
         try:
@@ -2326,10 +2329,10 @@ class SessionCatalog:
 
     def encode(self, name: str, description: str,
                convergence_justification: str = "", **primitives) -> Dict[str, Any]:
-        """Validate and register a new synthon encoding."""
-        # Strip erroneous "synthon_" prefix the model sometimes prepends to names
-        if name.startswith("synthon_"):
-            name = name[len("synthon_"):]
+        """Validate and register a new imscription encoding."""
+        # Strip erroneous "imscription_" prefix the model sometimes prepends to names
+        if name.startswith("imscription_"):
+            name = name[len("imscription_"):]
         # Normalize: strip leading "{PRIM}_" prefix the model sometimes adds
         # e.g. "Σ_Σ_S" → "Σ_S", "Σ_n_n" → "Σ_ő"
         normalized: Dict[str, str] = {}
@@ -2363,7 +2366,7 @@ class SessionCatalog:
                 )
             return msg
 
-        synthon = {p: normalized[p] for p in PRIMITIVE_ORDER}
+        imscription = {p: normalized[p] for p in PRIMITIVE_ORDER}
 
         # ── Consistency check 1: same name, different tuple ──────────────────────
         # If the name already exists with a different tuple:
@@ -2372,13 +2375,13 @@ class SessionCatalog:
         conflict_info: Optional[Dict[str, Any]] = None
         if name in self._entries:
             existing = self._entries[name]
-            if existing != synthon:
-                differing = [p for p in PRIMITIVE_ORDER if existing.get(p) != synthon[p]]
-                dist = tuple_distance(existing, synthon)
+            if existing != imscription:
+                differing = [p for p in PRIMITIVE_ORDER if existing.get(p) != imscription[p]]
+                dist = tuple_distance(existing, imscription)
                 conflict_info = {
                     "existing_tuple": existing,
                     "existing_description": self._descriptions.get(name, ""),
-                    "new_tuple": synthon,
+                    "new_tuple": imscription,
                     "distance": round(dist, 4),
                     "differing_primitives": differing,
                 }
@@ -2388,7 +2391,7 @@ class SessionCatalog:
                         "status": "conflict_blocked",
                         "name": name,
                         "existing_tuple": existing,
-                        "proposed_tuple": {p: synthon[p] for p in PRIMITIVE_ORDER},
+                        "proposed_tuple": {p: imscription[p] for p in PRIMITIVE_ORDER},
                         "distance": round(dist, 4),
                         "differing_primitives": differing,
                         "instruction": (
@@ -2402,21 +2405,21 @@ class SessionCatalog:
                         ),
                     }
 
-        self._entries[name] = synthon
+        self._entries[name] = imscription
         self._descriptions[name] = description
 
         # ── Consistency check 2: exact duplicate under a different name ──────────
         exact_duplicates: List[str] = []
-        for other_name, other_synthon in self._entries.items():
-            if other_name != name and other_synthon == synthon:
+        for other_name, other_imscription in self._entries.items():
+            if other_name != name and other_imscription == imscription:
                 exact_duplicates.append(other_name)
 
-        # Persist immediately so no synthon is lost to a crash
+        # Persist immediately so no imscription is lost to a crash
         if self._catalog_path:
             self._save_to_file(self._catalog_path)
 
         # Build tuple notation
-        notation = "⟨" + "; ".join(f"{p}={synthon[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
         result: Dict[str, Any] = {
             "status": "ok" if not conflict_info else "updated",
             "name": name,
@@ -2457,9 +2460,9 @@ class SessionCatalog:
     def search(self, keyword: str) -> List[Dict[str, Any]]:
         kw = keyword.lower()
         results = []
-        for name, synthon in self._entries.items():
+        for name, imscription in self._entries.items():
             if kw in name.lower() or kw in self._descriptions.get(name, "").lower():
-                notation = "⟨" + "; ".join(f"{p}={synthon[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+                notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
                 results.append({
                     "name": name,
                     "description": self._descriptions.get(name, ""),
@@ -2469,8 +2472,8 @@ class SessionCatalog:
 
     def list_all(self) -> List[Dict[str, Any]]:
         results = []
-        for name, synthon in self._entries.items():
-            notation = "⟨" + "; ".join(f"{p}={synthon[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        for name, imscription in self._entries.items():
+            notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
             results.append({
                 "name": name,
                 "description": self._descriptions.get(name, ""),
@@ -2483,9 +2486,9 @@ class InsightLibrary:
     """
     Persistent cross-session library of Imscribing Grammar insights.
 
-    Stored in syncon_insights.json.  Each entry records the insight text,
+    Stored in ig_insights.json.  Each entry records the insight text,
     plane, confidence, source seed, timestamp, and automatically extracted
-    primitive/synthon references.
+    primitive/imscription references.
 
     Deduplication: entries are keyed by a 12-char SHA1 of the original text
     at creation time.  The ID remains stable across updates so the model can
@@ -2542,7 +2545,7 @@ class InsightLibrary:
     def _extract_primitives(self, text: str) -> List[str]:
         return sorted(set(self._PRIM_RE.findall(text)))
 
-    def _extract_synthons(self, text: str, catalog: Optional["SessionCatalog"]) -> List[str]:
+    def _extract_imscriptions(self, text: str, catalog: Optional["SessionCatalog"]) -> List[str]:
         if catalog is None:
             return []
         found = []
@@ -2575,7 +2578,7 @@ class InsightLibrary:
                         "confidence": ins.confidence,
                         "modified": ts,
                         "primitives": self._extract_primitives(ins.text),
-                        "synthons": self._extract_synthons(ins.text, catalog),
+                        "imscriptions": self._extract_imscriptions(ins.text, catalog),
                     })
                 continue
             entry: Dict[str, Any] = {
@@ -2587,7 +2590,7 @@ class InsightLibrary:
                 "timestamp": ts,
                 "run_file": run_file,
                 "primitives": self._extract_primitives(ins.text),
-                "synthons": self._extract_synthons(ins.text, catalog),
+                "imscriptions": self._extract_imscriptions(ins.text, catalog),
             }
             self._entries[iid] = entry
             added += 1
@@ -2611,7 +2614,7 @@ class InsightLibrary:
         if text is not None:
             entry["text"] = text
             entry["primitives"] = self._extract_primitives(text)
-            entry["synthons"] = self._extract_synthons(text, catalog)
+            entry["imscriptions"] = self._extract_imscriptions(text, catalog)
         if plane is not None:
             entry["plane"] = plane
         if confidence is not None:
@@ -2627,7 +2630,7 @@ class InsightLibrary:
         self,
         plane: Optional[str] = None,
         primitive: Optional[str] = None,
-        synthon: Optional[str] = None,
+        imscription: Optional[str] = None,
         keyword: Optional[str] = None,
         confidence: Optional[str] = None,
     ) -> List[Dict[str, Any]]:
@@ -2637,8 +2640,8 @@ class InsightLibrary:
             results = [e for e in results if e.get("plane") == plane]
         if primitive:
             results = [e for e in results if primitive in e.get("primitives", [])]
-        if synthon:
-            results = [e for e in results if synthon in e.get("synthons", [])]
+        if imscription:
+            results = [e for e in results if imscription in e.get("imscriptions", [])]
         if keyword:
             kw = keyword.lower()
             results = [e for e in results if kw in e["text"].lower() or kw in e.get("seed", "").lower()]
@@ -2653,8 +2656,8 @@ class InsightLibrary:
         """
         Generate a knowledge graph from the insight library.
 
-        Node types: insight, primitive, synthon, seed
-        Edge types: mentions_primitive, mentions_synthon, from_seed
+        Node types: insight, primitive, imscription, seed
+        Edge types: mentions_primitive, mentions_imscription, from_seed
         """
         nodes: List[Dict] = []
         edges: List[Dict] = []
@@ -2664,7 +2667,7 @@ class InsightLibrary:
 
         for e in self._entries.values():
             all_prims.update(e.get("primitives", []))
-            all_syns.update(e.get("synthons", []))
+            all_syns.update(e.get("imscriptions", []))
             all_seeds.add(e.get("seed", ""))
 
         for e in self._entries.values():
@@ -2676,7 +2679,7 @@ class InsightLibrary:
         for p in sorted(all_prims):
             nodes.append({"id": f"prim_{p}", "type": "primitive", "name": p})
         for s in sorted(all_syns):
-            nodes.append({"id": f"synthon_{s}", "type": "synthon", "name": s})
+            nodes.append({"id": f"imscription_{s}", "type": "imscription", "name": s})
         for seed in sorted(all_seeds):
             sid = self.make_id(seed)
             nodes.append({"id": f"seed_{sid}", "type": "seed", "text": seed[:100]})
@@ -2684,8 +2687,8 @@ class InsightLibrary:
         for e in self._entries.values():
             for p in e.get("primitives", []):
                 edges.append({"source": e["id"], "target": f"prim_{p}", "type": "mentions_primitive"})
-            for s in e.get("synthons", []):
-                edges.append({"source": e["id"], "target": f"synthon_{s}", "type": "mentions_synthon"})
+            for s in e.get("imscriptions", []):
+                edges.append({"source": e["id"], "target": f"imscription_{s}", "type": "mentions_imscription"})
             seed_id = self.make_id(e.get("seed", ""))
             edges.append({"source": e["id"], "target": f"seed_{seed_id}", "type": "from_seed"})
 
@@ -2694,7 +2697,7 @@ class InsightLibrary:
             "stats": {
                 "insights": len(self._entries),
                 "primitives": len(all_prims),
-                "synthons": len(all_syns),
+                "imscriptions": len(all_syns),
                 "seeds": len(all_seeds),
                 "edges": len(edges),
             },
@@ -3171,7 +3174,7 @@ class ToolDispatcher:
                     "text": e["text"],
                     "seed": e.get("seed", ""),
                     "primitives": e.get("primitives", []),
-                    "synthons": e.get("synthons", []),
+                    "imscriptions": e.get("imscriptions", []),
                 }
                 for e in results
             ],
@@ -3180,18 +3183,18 @@ class ToolDispatcher:
     # ── Algebra operations ────────────────────────────────────────────────────
 
     def _resolve(self, names: List[str]) -> Tuple[Optional[List[Dict]], Optional[Dict]]:
-        """Resolve a list of names to synthon dicts; return (synthons, error) pair."""
-        synthons = []
+        """Resolve a list of names to imscription dicts; return (imscriptions, error) pair."""
+        imscriptions = []
         missing = []
         for n in names:
             s = self.catalog.get(n)
             if s is None:
                 missing.append(n)
             else:
-                synthons.append(s)
+                imscriptions.append(s)
         if missing:
             return None, {"status": "error", "error": f"Unknown system(s): {missing}. Encode them first."}
-        return synthons, None
+        return imscriptions, None
 
     def _apply_binary(self, rule: str, p: str, va: str, vb: str) -> Tuple[str, Optional[Dict]]:
         """Apply tensor/meet/join rule for one primitive. Returns (winner_value, conflict_note_or_None)."""
@@ -3207,10 +3210,10 @@ class ToolDispatcher:
 
     def _compute_meet(self, name_a: str, name_b: str) -> Dict[str, Any]:
         """Lattice meet — shared primitive floor (most conservative value per primitive)."""
-        synthons, err = self._resolve([name_a, name_b])
+        imscriptions, err = self._resolve([name_a, name_b])
         if err:
             return err
-        sa, sb = synthons
+        sa, sb = imscriptions
         result, conflicts, shared = {}, [], []
         for p in PRIMITIVE_ORDER:
             val, conflict = self._apply_binary("min", p, sa[p], sb[p])
@@ -3234,10 +3237,10 @@ class ToolDispatcher:
 
     def _compute_join(self, name_a: str, name_b: str) -> Dict[str, Any]:
         """Lattice join — minimal upper bound (most expansive value per primitive)."""
-        synthons, err = self._resolve([name_a, name_b])
+        imscriptions, err = self._resolve([name_a, name_b])
         if err:
             return err
-        sa, sb = synthons
+        sa, sb = imscriptions
         result, conflicts = {}, []
         for p in PRIMITIVE_ORDER:
             val, conflict = self._apply_binary("max", p, sa[p], sb[p])
@@ -3260,10 +3263,10 @@ class ToolDispatcher:
 
     def _compute_tensor(self, name_a: str, name_b: str) -> Dict[str, Any]:
         """Tensor product — structural composition of two systems (A⊗B)."""
-        synthons, err = self._resolve([name_a, name_b])
+        imscriptions, err = self._resolve([name_a, name_b])
         if err:
             return err
-        sa, sb = synthons
+        sa, sb = imscriptions
         result, bottlenecks, unions, shared = {}, [], [], []
         for p in PRIMITIVE_ORDER:
             rule = _TENSOR_RULES[p]
@@ -3300,10 +3303,10 @@ class ToolDispatcher:
 
     def _check_imscription(self, name_boundary: str, name_bulk: str) -> Dict[str, Any]:
         """Test whether name_boundary imscribes name_bulk (§89)."""
-        synthons, err = self._resolve([name_boundary, name_bulk])
+        imscriptions, err = self._resolve([name_boundary, name_bulk])
         if err:
             return err
-        s_bnd, s_blk = synthons
+        s_bnd, s_blk = imscriptions
         from crystal_navigator import (  # type: ignore
             imscription_check as _imscription_check,
             imscription_statement as _imscription_statement,
@@ -3341,11 +3344,11 @@ class ToolDispatcher:
         if target is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
         scores = []
-        for entry_name, entry_synthon in self.catalog._entries.items():
+        for entry_name, entry_imscription in self.catalog._entries.items():
             if entry_name == name:
                 continue
-            d_diag = round(tuple_distance(target, entry_synthon), 4)
-            d = round(mahalanobis_distance(target, entry_synthon, _METRIC_G), 4) \
+            d_diag = round(tuple_distance(target, entry_imscription), 4)
+            d = round(mahalanobis_distance(target, entry_imscription, _METRIC_G), 4) \
                 if _METRIC_G is not None else d_diag
             scores.append({
                 "name": entry_name,
@@ -3417,7 +3420,7 @@ class ToolDispatcher:
         }
 
     def _classify_frobenius(self, s: Dict[str, Any]) -> str:
-        """Apply R1–R5 rules to classify a synthon dict into a Frobenius tier."""
+        """Apply R1–R5 rules to classify a imscription dict into a Frobenius tier."""
         phi = s.get("φ̂", "")
         p = s.get("Φ", "")
         omega = s.get("Ω", "")
@@ -3454,8 +3457,8 @@ class ToolDispatcher:
         if name == "__all__":
             counts: Dict[str, int] = {"O_inf": 0, "O_0": 0, "O_1": 0, "O_2": 0, "O_2_dag": 0}
             by_tier: Dict[str, List[str]] = {k: [] for k in counts}
-            for entry_name, synthon in self.catalog._entries.items():
-                tier = self._classify_frobenius(synthon)
+            for entry_name, imscription in self.catalog._entries.items():
+                tier = self._classify_frobenius(imscription)
                 counts[tier] += 1
                 by_tier[tier].append(entry_name)
             total = sum(counts.values())
@@ -4863,7 +4866,7 @@ class LocalQwen3Backend:
 
 # ── The inquiry loop ──────────────────────────────────────────────────────────
 
-class SynconInquiryLoop:
+class IGInquiryLoop:
     """
     Open-ended Imscribing Grammar inquiry loop.
 
@@ -4961,14 +4964,14 @@ class SynconInquiryLoop:
             PromotionKnowledgeBase(path=promotion_kb_path) if promotion_kb_path else None
         )
 
-        # Pre-register any synthon tuples embedded in the seed text.
+        # Pre-register any imscription tuples embedded in the seed text.
         # Tuples written as ⟨val; …; val⟩ (or with ASCII < > brackets) with an
         # optional "name: " label are parsed and loaded into the catalog so the
         # model finds them already encoded on its first iteration.
-        _seed_tuples = _parse_synthon_tuples(self.seed)
+        _seed_tuples = _parse_imscription_tuples(self.seed)
         _n_preloaded = 0
         for _idx, (_label, _pdict) in enumerate(_seed_tuples):
-            _name = (_label or f"seed_synthon_{_idx}").strip().replace(" ", "_")
+            _name = (_label or f"seed_imscription_{_idx}").strip().replace(" ", "_")
             if _name in self.catalog._entries:
                 continue
             _result = self.catalog.encode(_name, "auto-parsed from seed text", **_pdict)
@@ -4995,9 +4998,9 @@ class SynconInquiryLoop:
         if verbose:
             n_persistent = len(self.catalog._entries)
             if n_persistent:
-                _print(f"  [dim green]Catalog:[/dim green] {n_persistent} persistent synthon(s) loaded from [dim]{catalog_path}[/dim]")
+                _print(f"  [dim green]Catalog:[/dim green] {n_persistent} persistent imscription(s) loaded from [dim]{catalog_path}[/dim]")
             if _n_preloaded:
-                _print(f"  [dim green]Parsed:[/dim green]  {_n_preloaded} synthon tuple(s) pre-registered from seed text")
+                _print(f"  [dim green]Parsed:[/dim green]  {_n_preloaded} imscription tuple(s) pre-registered from seed text")
             if self._insight_library:
                 n_insights = len(self._insight_library.all())
                 if n_insights:
@@ -5342,7 +5345,7 @@ class SynconInquiryLoop:
     def run(self, max_iterations: Optional[int] = None) -> List[IterationRecord]:
         """Run the inquiry loop. Returns the full iteration history."""
         import datetime
-        _out_dir = os.path.join(os.path.dirname(__file__), "syncon_outputs")
+        _out_dir = os.path.join(os.path.dirname(__file__), "ig_outputs")
         os.makedirs(_out_dir, exist_ok=True)
         _ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         _slug = self.seed[:40].replace(" ", "_").replace("/", "-")
@@ -5532,7 +5535,7 @@ class SynconInquiryLoop:
             self._transcript_fh = None
 
         import datetime
-        out_dir = os.path.join(os.path.dirname(__file__), "syncon_outputs")
+        out_dir = os.path.join(os.path.dirname(__file__), "ig_outputs")
         os.makedirs(out_dir, exist_ok=True)
         ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         slug = self.seed[:40].replace(" ", "_").replace("/", "-")
@@ -5573,7 +5576,7 @@ class SynconInquiryLoop:
                         conf_color = self._CONF_COLORS.get(ins.confidence, "white")
                         self._log(f"    ([{conf_color}]{ins.confidence}[/{conf_color}]) {ins.text}")
 
-        # Translation cost summary across all encoded synthons
+        # Translation cost summary across all encoded imscriptions
         all_catalog = self.catalog.list_all()
         if all_catalog and _TRANSLATE_AVAILABLE:
             agg = {"coherence_loss": 0.0, "criticality_loss": 0.0, "interaction_cost": 0.0, "total": 0.0}
@@ -5586,9 +5589,9 @@ class SynconInquiryLoop:
                         agg[k] += cost[k]
                     if sdict.get("φ̂") == "φ̂_ÿ":
                         n_critical += 1
-            self._log(f"\n[dim green]Translation cost (structural→classical, all {len(all_catalog)} synthons):[/dim green]")
+            self._log(f"\n[dim green]Translation cost (structural→classical, all {len(all_catalog)} imscriptions):[/dim green]")
             self._log(f"  [dim green]coherence:    {agg['coherence_loss']:.4f} nat[/dim green]")
-            self._log(f"  [dim green]criticality:  {agg['criticality_loss']:.4f} nat  ({n_critical} φ̂_ÿ synthons × ln10)[/dim green]")
+            self._log(f"  [dim green]criticality:  {agg['criticality_loss']:.4f} nat  ({n_critical} φ̂_ÿ imscriptions × ln10)[/dim green]")
             self._log(f"  [dim green]interaction:  {agg['interaction_cost']:.4f} nat[/dim green]")
             self._log(f"  [dim green]total:        {agg['total']:.4f} nat[/dim green]")
 
@@ -5623,16 +5626,16 @@ class SynconInquiryLoop:
                 d["translation"] = ins.translation
             insight_dicts.append(d)
 
-        # Session-level translation summary: aggregate over all catalog synthons
+        # Session-level translation summary: aggregate over all catalog imscriptions
         all_catalog = self.catalog.list_all()
-        session_translation: Dict[str, Any] = {"per_synthon": {}, "total": {}}
+        session_translation: Dict[str, Any] = {"per_imscription": {}, "total": {}}
         if all_catalog and _TRANSLATE_AVAILABLE:
             agg = {"coherence_loss": 0.0, "criticality_loss": 0.0, "interaction_cost": 0.0, "total": 0.0}
             for entry in all_catalog:
                 sdict = self.catalog.get(entry["name"])
                 if sdict:
                     cost = _translation_cost_from_dict(sdict)
-                    session_translation["per_synthon"][entry["name"]] = cost
+                    session_translation["per_imscription"][entry["name"]] = cost
                     for k in agg:
                         agg[k] = round(agg[k] + cost[k], 4)
             session_translation["total"] = agg
@@ -5681,15 +5684,15 @@ def run_multi_prompt(
     catalog_path: Optional[str] = CATALOG_PATH,
     insight_library_path: Optional[str] = None,
     promotion_kb_path: Optional[str] = PROMOTIONS_PATH,
-) -> List[SynconInquiryLoop]:
+) -> List[IGInquiryLoop]:
     """Run multiple prompts sequentially, carrying catalog and insights forward.
 
     Each prompt sees all systems encoded and insights recorded by prior prompts.
     The separator between prompts in a file is ``MULTI_PROMPT_SEP`` (``---``).
 
-    Returns the list of completed ``SynconInquiryLoop`` instances (one per prompt).
+    Returns the list of completed ``IGInquiryLoop`` instances (one per prompt).
     """
-    loops: List[SynconInquiryLoop] = []
+    loops: List[IGInquiryLoop] = []
     inherited_catalog: Optional[SessionCatalog] = None
     inherited_insights: Optional[List[Insight]] = None
 
@@ -5698,7 +5701,7 @@ def run_multi_prompt(
         _print(f"[bold bright_cyan]PROMPT {idx + 1} / {len(seeds)}[/bold bright_cyan]")
         _print(f"[bold bright_cyan]{'='*72}[/bold bright_cyan]")
 
-        loop = SynconInquiryLoop(
+        loop = IGInquiryLoop(
             seed=seed,
             model=model,
             provider=provider,
@@ -5726,7 +5729,7 @@ def _cli_tool() -> None:
     import argparse, json as _json
 
     parser = argparse.ArgumentParser(
-        prog="syncon_inquiry tool",
+        prog="ig_inquiry tool",
         description="Dispatch a single ToolDispatcher tool without an LLM loop.",
     )
     parser.add_argument("tool_name", help="Tool name (e.g. ouroborics, find_analogies).")
@@ -5769,7 +5772,7 @@ def _cli_agent() -> None:
     import argparse
 
     parser = argparse.ArgumentParser(
-        prog="syncon_inquiry agent",
+        prog="ig_inquiry agent",
         description="Run the TrueAgenticAgent ($O_\\infty$, §88 Thm 88.4).",
     )
     parser.add_argument("task", help="Task for the agent to perform.")
@@ -5823,7 +5826,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     parser = argparse.ArgumentParser(
-        prog="syncon_inquiry",
+        prog="ig_inquiry",
         description="Imscribing Grammar open-ended inquiry loop.",
         epilog=(
             "Subcommands:\n"
@@ -5847,13 +5850,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--no-catalog",
         action="store_true",
-        help="Disable loading the persistent synthon catalog (IG_catalog.json). "
+        help="Disable loading the persistent imscription catalog (IG_catalog.json). "
              "Session starts with an empty catalog.",
     )
     parser.add_argument(
         "--insights",
         action="store_true",
-        help="Inject prior-session insights from syncon_insights.json into the system prompt. "
+        help="Inject prior-session insights from ig_insights.json into the system prompt. "
              "Disabled by default: prior interpretations can propagate errors across sessions.",
     )
     parser.add_argument(
@@ -5947,7 +5950,7 @@ if __name__ == "__main__":
                 json.dump(loops[-1].export_insights(), f, indent=2)
             _print(f"\nExported to {out_path}")
     else:
-        loop = SynconInquiryLoop(
+        loop = IGInquiryLoop(
             seed=seeds[0],
             model=model,
             provider=provider,

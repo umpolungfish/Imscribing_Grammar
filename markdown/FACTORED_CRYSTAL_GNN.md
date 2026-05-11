@@ -366,7 +366,7 @@ Known 3D Ising critical exponents (benchmarks): $\nu = 0.6301$, $\eta = 0.0362$,
 
 ### 9.1 Architectural Tier Ladder (AI Architectures)
 
-From syncon_inquiry probes (2026-04-11, 1373 total synthons):
+From ig_inquiry probes (2026-04-11, 1373 total imscriptions):
 
 | Architecture | Tier | $C$ score | Key primitive change |
 |---|---|---|---|

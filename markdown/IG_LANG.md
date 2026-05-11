@@ -15,13 +15,13 @@ header-includes:
 
 ## Vision
 
-The Synthonicon is a **type system for matter** — not just chemistry. Its eleven primitives are type constructors spanning molecular, supramolecular, temporal, quantum, and topological domains. Its axioms are refinement constraints. HotSwap transitions are category morphisms. Retrodesign is type inference. The Varma probe embeds proof obligations. The phase diagram maps the metric geometry of the type space itself.
+The Imscriptiveon is a **type system for matter** — not just chemistry. Its eleven primitives are type constructors spanning molecular, supramolecular, temporal, quantum, and topological domains. Its axioms are refinement constraints. HotSwap transitions are category morphisms. Retrodesign is type inference. The Varma probe embeds proof obligations. The phase diagram maps the metric geometry of the type space itself.
 
 v0.4.0 revealed something deeper than expected: the primitive algebra is **domain-agnostic by construction**. When quantum particles and topological materials were encoded using the same eleven primitives, the algebra immediately produced physically correct results — non-Abelian anyons outranking $\mathbb{Z}$-class invariants in tensor products, the $K_{\text{teshlig}} \to K_{\text{lambda}}$ universal cost ($+2.303$ nats) appearing identically across three different topological phases, the Ward dendrogram separating extended topological matter from point particles at $d \approx 9.52$ with no physics input. The framework did not simulate physics; it discovered it from the ordinal structure of the type system.
 
 The goal of this track is to make that implicit structure **explicit and mechanically enforced** — moving from "axioms checked at runtime via string matching" toward "illegal states unrepresentable by construction," and from "phase boundaries detected empirically" toward "phase boundaries provable from the Kleisli metric."
 
-**The primitives are relational operators, not intrinsic attributes.** Every element of the tuple describes a constraint between entities or a capacity for interaction. $F$ (fidelity) is reliability of constraint satisfaction relative to a competitor — there is no intrinsic $F$, only $F$ relative to a context. $K$ (kinetic) is a barrier to rearrangement, implying at least two states. $\Omega$ (topological protection) is protection against perturbations, meaningless without an environment. $\Gamma$ (grammar) is partner selection logic by definition. This is not a philosophical gloss; it is a **type-system requirement**: you cannot assign $F$, $K$, $\Gamma$, or $\Omega$ without specifying an interaction context. A synthon tuple without a context is a description of interaction potential, not isolated being.
+**The primitives are relational operators, not intrinsic attributes.** Every element of the tuple describes a constraint between entities or a capacity for interaction. $F$ (fidelity) is reliability of constraint satisfaction relative to a competitor — there is no intrinsic $F$, only $F$ relative to a context. $K$ (kinetic) is a barrier to rearrangement, implying at least two states. $\Omega$ (topological protection) is protection against perturbations, meaningless without an environment. $\Gamma$ (grammar) is partner selection logic by definition. This is not a philosophical gloss; it is a **type-system requirement**: you cannot assign $F$, $K$, $\Gamma$, or $\Omega$ without specifying an interaction context. A imscription tuple without a context is a description of interaction potential, not isolated being.
 
 The algebra enforces this. Every operation in `meet / join / tensor / path / lift / pipeline` requires at least one additional operand. $\text{tensor}(s_1, s_2)$ computes mutual information between two systems. $\text{path}(src, dst)$ requires two endpoints. $\text{lift}(s, \text{critical})$ requires a named target context and is blocked by a relational gate ($F \ge F_{\text{hardsign}}$). There are no unary information generators. The algebra cannot process "nothing but the object." This is the deeper reason the type system works: **it is a calculus of relations, and relations require at least two terms**.
 
@@ -40,7 +40,7 @@ do:
     xi_tolerance: 1.5
   - assert:
       expr: phi_c_score > 0.70
-      message: "Must approach φ̂_ÿ before ensemble step"
+      message: "Must approach ⊙_ÿ before ensemble step"
   - tensor: db24c8_dialkylammonium_pseudorotaxane
 output:
   format: text
@@ -58,25 +58,25 @@ output:
 | Eleven-primitive tuple | ✓ complete | $\langle D; T; R; P; F; K; G; \Gamma; \Phi; S; \Omega \rangle$ — $\Omega$ optional, defaults None for classical |
 | Axioms 1–7 | ✓ complete | Runtime; Axiom 6 discrete/continuous; Axiom 1 is quantum boundary detector |
 | Algebra (meet/join/tensor/lift/path/distance) | ✓ complete | `algebra.py`; all commands wired to `imscribe` |
-| DesignPipeline (Writer+Maybe) | ✓ complete | Fluent interface + `bind`/`mzero`/`mplus` via SynthonM |
+| DesignPipeline (Writer+Maybe) | ✓ complete | Fluent interface + `bind`/`mzero`/`mplus` via ImscriptionM |
 | $F$-floor HotSwap ratchet | ✓ validated | 6/6 CB[7] experimental match |
 | Varma probe (8 mechanisms) | ✓ validated | Factors 1–5 QXY · Factor 6 steric-cliff · Factor 7 Frank · Factor 8 quantum criticality |
 | `.syn` DSL runner | ✓ complete | `imscribe run design.syn` — `syn_runner.py` ~380 lines |
-| `SynthonM` monad type | ✓ complete | `monad.py` — WriterT+StateT+MaybeT stack |
+| `ImscriptionM` monad type | ✓ complete | `monad.py` — WriterT+StateT+MaybeT stack |
 | `DesignStrategy` type + combinators | ✓ complete | `strategy_then`, `strategy_or`, `optimize` |
 | Quantum primitive extensions | ✓ complete | $T_{\text{braid}}$ · $K_{\text{lambda}}$ · $\Gamma_{\downarrow}/\text{QUANTUM}$ · $\Omega$ (TopoIndex) — Phase 3d |
-| Quantum catalog (8 synthons) | ✓ complete | `domains/quantum/` — particles + topological matter, all $\Omega$ assigned |
+| Quantum catalog (8 imscriptions) | ✓ complete | `domains/quantum/` — particles + topological matter, all $\Omega$ assigned |
 | Tuple-space phase diagram | ✓ complete | `phase_diagram.py` — Ward clustering + MDS + `imscribe phase-diagram` |
 | Refinement types (Pydantic v2) | ✗ pending | Phase 3b target |
 | `from_disorder` KineticCharacter constructor | ✗ pending | Phase 3b — $K_{\text{lambda}}$ cannot use `from_barrier` |
-| `context.irreversible` in SynthonM | ✗ pending | Phase 3b — $\Gamma_{\downarrow}$ dissipative flag propagation |
+| `context.irreversible` in ImscriptionM | ✗ pending | Phase 3b — $\Gamma_{\downarrow}$ dissipative flag propagation |
 | Kleisli category (formal) | ✗ pending | Phase 3c target |
 | Z3/SMT retrodesign | ✗ pending | Phase 3c target |
 | Lean 4 axiom formalization | ✗ pending | Phase 3c long-term |
-| Holographic dimensionality $D_{\text{holo}}$ | ✓ complete | Phase 3e — `Dimensionality.HOLOGRAPHIC`; `ads_cft_boundary` synthon registered |
+| Holographic dimensionality $D_{\text{holo}}$ | ✓ complete | Phase 3e — `Dimensionality.HOLOGRAPHIC`; `ads_cft_boundary` imscription registered |
 | Phase transitions as morphisms | ✓ complete | Phase 3e — `imscrbgrmr/morphism.py`; `imscribe transition` CLI; Kleisli arrow classification |
-| Kitaev honeycomb B-phase synthon | ✗ pending | Phase 3e — $T_{\text{braid}} + \Omega_{\text{turna}} + D_{\text{turnthree}}$, 2D non-Abelian |
-| MBL phase synthon (disordered Kitaev) | ✗ pending | Phase 3e — $K_{\text{lambda}} + T_{|} + \Omega_{Z}$, universality track test |
+| Kitaev honeycomb B-phase imscription | ✗ pending | Phase 3e — $T_{\text{braid}} + \Omega_{\text{turna}} + D_{\text{turnthree}}$, 2D non-Abelian |
+| MBL phase imscription (disordered Kitaev) | ✗ pending | Phase 3e — $K_{\text{lambda}} + T_{|} + \Omega_{Z}$, universality track test |
 
 ---
 
@@ -84,15 +84,15 @@ output:
 
 **Target: `imscribe run design.syn` works end-to-end.**
 
-### 3a.1 `imscrbgrmr/monad.py` — SynthonM
+### 3a.1 `imscrbgrmr/monad.py` — ImscriptionM
 
-`SynthonM[A]` is the monad transformer stack:
+`ImscriptionM[A]` is the monad transformer stack:
 
 ```
-SynthonM[A] ≅ WriterT[float] (StateT[Context] (MaybeT Identity)) A
+ImscriptionM[A] ≅ WriterT[float] (StateT[Context] (MaybeT Identity)) A
 ```
 
-Concretely, a `SynthonM[Synthon]` carries:
+Concretely, a `ImscriptionM[Imscription]` carries:
 
 | Effect | Carrier | Meaning |
 |--------|---------|---------|
@@ -115,18 +115,18 @@ m1 | m2           # Operator alias for mplus
 **Monadic lifts** wrap each algebra operation:
 
 ```python
-join_m(name)            # algebra.join → SynthonM
-meet_m(name)            # algebra.meet → SynthonM
-tensor_m(name, λ)       # algebra.tensor → SynthonM
-lift_m(target)          # _LIFÞ_MAP[target] → SynthonM
-path_m(name, ξ_tol)     # algebra.find_path → SynthonM
-assert_m(pred, msg)     # inline proof obligation → SynthonM
+join_m(name)            # algebra.join → ImscriptionM
+meet_m(name)            # algebra.meet → ImscriptionM
+tensor_m(name, λ)       # algebra.tensor → ImscriptionM
+lift_m(target)          # _LIFÞ_MAP[target] → ImscriptionM
+path_m(name, ξ_tol)     # algebra.find_path → ImscriptionM
+assert_m(pred, msg)     # inline proof obligation → ImscriptionM
 ```
 
 **Strategy type:**
 
 ```python
-DesignStrategy = Callable[[Synthon], SynthonM[Synthon]]
+DesignStrategy = Callable[[Imscription], ImscriptionM[Imscription]]
 
 # Sequential composition
 strategy_then(s1, s2)  # s1 >> s2
@@ -135,12 +135,12 @@ strategy_then(s1, s2)  # s1 >> s2
 strategy_or(s1, s2)    # s1 <|> s2
 
 # First-success search
-optimize(synthon, [s1, s2, s3])  # asum over strategy list
+optimize(imscription, [s1, s2, s3])  # asum over strategy list
 ```
 
 ### 3a.2 `imscrbgrmr/syn_runner.py` — .syn DSL Evaluator
 
-Parses `.syn` YAML files and evaluates them as `SynthonM` pipelines.
+Parses `.syn` YAML files and evaluates them as `ImscriptionM` pipelines.
 
 **Step dispatch table:**
 
@@ -159,9 +159,9 @@ Parses `.syn` YAML files and evaluates them as `SynthonM` pipelines.
 ```
 phi_c_score > N        → run varma probe, check score
 phi_c_score >= N       → same
-fidelity == ƒ_ż     → check synthon.fidelity
-topology == Þ_ò   → check synthon.topology
-criticality_phase == φ̂_ÿ  → check enum value
+fidelity == ƒ_ż     → check imscription.fidelity
+topology == Þ_ò   → check imscription.topology
+criticality_phase == ⊙_ÿ  → check enum value
 axiom6_satisfied       → run AxiomValidator.validate_axiom6_temporal_grounding
 gd_degeneracy == X     → run probe, check gd_degeneracy_type
 reset_type == discrete → check grounding["reset"]["type"]
@@ -195,12 +195,12 @@ Imscribing Grammar Run: design.syn
 
 **Target: illegal states are unrepresentable, not just runtime-rejected.**
 
-### 3b.1 Pydantic v2 validators on Synthon
+### 3b.1 Pydantic v2 validators on Imscription
 
-Move all 7 axioms into `@model_validator(mode='after')` decorators. Construction of an invalid Synthon raises `ValidationError`, not a `grounding_failure` flag.
+Move all 7 axioms into `@model_validator(mode='after')` decorators. Construction of an invalid Imscription raises `ValidationError`, not a `grounding_failure` flag.
 
 ```python
-class Synthon(BaseModel):
+class Imscription(BaseModel):
     fidelity: Fidelity
     topology: Topology
     # ...
@@ -219,15 +219,15 @@ class Synthon(BaseModel):
 class FidelityGe(Annotated[Fidelity, Ge(Fidelity.MEDIUM)]):
     """F ≥ ƒ_ð — satisfied by ƒ_ð or ƒ_ż"""
 
-CriticalityCandidateSynthon = Synthon[fidelity=FidelityGe]
+CriticalityCandidateImscription = Imscription[fidelity=FidelityGe]
 ```
 
-Retrodesign returns `list[CriticalityCandidateSynthon]` for $\Phi_{\text{ctyogh}}$ targets — caller knows statically that every leaf has $F \ge F_{\text{eth}}$.
+Retrodesign returns `list[CriticalityCandidateImscription]` for $\Phi_{\text{ctyogh}}$ targets — caller knows statically that every leaf has $F \ge F_{\text{eth}}$.
 
 ### 3b.3 Protocol classes for domains
 
 ```python
-class TemporalSynthon(Protocol):
+class TemporalImscription(Protocol):
     """Structural subtype requiring D_∞ and grounding["reset"] block."""
     @property
     def dimensionality(self) -> Literal[Dimensionality.TEMPORAL]: ...
@@ -236,7 +236,7 @@ class TemporalSynthon(Protocol):
         assert "reset" in self.grounding
 ```
 
-`trajectory validate` and `retrodesign` for $D_{\text{invomega}}$ targets return `TemporalSynthon` so the type checker catches missing reset blocks before execution.
+`trajectory validate` and `retrodesign` for $D_{\text{invomega}}$ targets return `TemporalImscription` so the type checker catches missing reset blocks before execution.
 
 ---
 
@@ -248,7 +248,7 @@ class TemporalSynthon(Protocol):
 
 Document the category formally:
 
-- **Objects**: Synthons (equivalence classes of valid ten-tuples)
+- **Objects**: imscriptions (equivalence classes of valid ten-tuples)
 - **Morphisms**: HotSwap transitions $f: A \to B$ with cost $\Delta\xi_{\text{CP}}(f) \in \mathbb{R}_{\ge 0}$
 - **Identity**: trivial self-swap, cost 0
 - **Composition**: `find_path` (BFS composes morphisms; cost = sum of $\Delta\xi_{\text{CP}}$ per hop)
@@ -289,17 +289,17 @@ Formalize the seven axioms as Lean 4 theorems. The Python implementation becomes
 
 | File | Phase | Description |
 |------|-------|-------------|
-| `imscrbgrmr/monad.py` | 3a | SynthonM stack, monadic lifts, DesignStrategy |
+| `imscrbgrmr/monad.py` | 3a | ImscriptionM stack, monadic lifts, DesignStrategy |
 | `imscrbgrmr/syn_runner.py` | 3a | .syn YAML DSL evaluator |
 | `imscrbgrmr/cli.py` | 3a/3d/3e | `imscribe run` · algebra commands · `imscribe phase-diagram` |
 | `imscrbgrmr/models.py` | 3d | $T_{\text{braid}}$ · $K_{\text{lambda}}$ · QUANTUM/DISSIPATIVE grammar · TopoIndex |
 | `imscrbgrmr/algebra.py` | 3d | $\Omega$ lattice ops · eleven-dimensional `tuple_distance` |
 | `imscrbgrmr/varma_probe.py` | 3d | Factor 8 — quantum criticality block |
-| `imscrbgrmr/domains/quantum/__init__.py` | 3d | 8 canonical quantum/topological synthons |
+| `imscrbgrmr/domains/quantum/__init__.py` | 3d | 8 canonical quantum/topological imscriptions |
 | `imscrbgrmr/phase_diagram.py` | 3e | Ward clustering · MDS · `PhaseDiagram` dataclass |
 | `imscrbgrmr/morphism.py` | 3e | `TransitionMorphism` · `find_transition()` · Kleisli arrow classification · `imscribe transition` |
 | `imscrbgrmr/category.py` | 3c | Kleisli category formal definition (pending) |
-| `imscrbgrmr/typed.py` | 3b | Pydantic v2 Synthon, refinement types (pending) |
+| `imscrbgrmr/typed.py` | 3b | Pydantic v2 Imscription, refinement types (pending) |
 
 ---
 
@@ -374,7 +374,7 @@ The new primitives expose three open questions for Phase 3b:
 
 2. **$K_{\text{lambda}}$ violates `from_barrier` semantics**: disorder-induced localization cannot be assigned from a single $\Delta G^{\ddagger}$ value. The `from_barrier` classmethod correctly omits $K_{\text{lambda}}$, but a new `from_disorder` classmethod is implied.
 
-3. **$\Gamma_{\downarrow}(\text{DISSIPATIVE})$ introduces irreversibility into the grammar**: the existing `SynthonM` monad tracks cost accumulation (WriterT) but has no irreversibility primitive. A dissipative synthon flowing through a `SynthonM` pipeline should perhaps trigger a `StateT` flag: `context.irreversible = True`.
+3. **$\Gamma_{\downarrow}(\text{DISSIPATIVE})$ introduces irreversibility into the grammar**: the existing `ImscriptionM` monad tracks cost accumulation (WriterT) but has no irreversibility primitive. A dissipative imscription flowing through a `ImscriptionM` pipeline should perhaps trigger a `StateT` flag: `context.irreversible = True`.
 
 ---
 
@@ -384,22 +384,22 @@ The new primitives expose three open questions for Phase 3b:
 
 ### 3e.1 `imscrbgrmr/phase_diagram.py` — PhaseDiagram module
 
-`PhaseDiagram` is a dataclass computed from the full $N \times N$ pairwise `tuple_distance` matrix over a named set of synthons:
+`PhaseDiagram` is a dataclass computed from the full $N \times N$ pairwise `tuple_distance` matrix over a named set of imscriptions:
 
 ```python
 @dataclass
 class PhaseDiagram:
-    synthon_names: List[str]
+    imscription_names: List[str]
     distance_matrix: np.ndarray       # N×N symmetric
     candidates: List[PhaseBoundary]   # ranked boundary list
     linkage_matrix: np.ndarray        # Ward linkage (scipy format)
     mds_coords: np.ndarray            # N×2 MDS embedding
-    factor8_flags: Dict[str, bool]    # Factor-8 trigger per synthon
-    omega_values: Dict[str, str]      # Ω class per synthon
-    k_trap_flags: Dict[str, bool]     # Ç_Ù flag per synthon
+    factor8_flags: Dict[str, bool]    # Factor-8 trigger per imscription
+    omega_values: Dict[str, str]      # Ω class per imscription
+    k_trap_flags: Dict[str, bool]     # Ç_Ù flag per imscription
 ```
 
-`build_phase_map(synthon_names=None, catalog=None) → PhaseDiagram` constructs the full object from the catalog in one call.
+`build_phase_map(imscription_names=None, catalog=None) → PhaseDiagram` constructs the full object from the catalog in one call.
 
 **Phase boundary detection algorithm:**
 
@@ -407,7 +407,7 @@ class PhaseDiagram:
 2. Run Ward hierarchical clustering on the upper triangle.
 3. Extract consecutive height differences in the merge sequence.
 4. Rank gaps as Major (top 33%), Intermediate (middle), Minor (bottom 33%).
-5. The primary boundary (largest gap, $d \approx 9.52$ for the 8-synthon quantum catalog) is the most semantically significant cluster split.
+5. The primary boundary (largest gap, $d \approx 9.52$ for the 8-imscription quantum catalog) is the most semantically significant cluster split.
 
 ```python
 from imscrbgrmr.phase_diagram import build_phase_map
@@ -419,7 +419,7 @@ pd.plot(save_path="diagram.png")
 ### 3e.2 `imscribe phase-diagram` CLI command
 
 ```bash
-# All synthons in catalog:
+# All imscriptions in catalog:
 imscribe phase-diagram
 
 # Subset by name:
@@ -453,7 +453,7 @@ $$
 
 No sklearn dependency — pure `numpy.linalg.eigh`. Stress is not reported; the Ward dendrogram is the primary clustering artifact.
 
-**Key observation from the 8-synthon quantum map:**
+**Key observation from the 8-imscription quantum map:**
 
 - The primary boundary at $d \approx 9.52$ separates two branches with no physics input:
   - **Branch A (extended topological):** kitaev_chain_majorana · fqh_moore_read · topological_insulator_bi2se3
@@ -465,7 +465,7 @@ The framework isolated the topological phase boundary by ordinal arithmetic alon
 
 ### 3e.4 Universality track prediction
 
-The perturbation sweep $K_{\text{teshlig}} \to K_{\text{lambda}}$ produces $\Delta\xi = +2.303$ nats [HIGH] for spin_singlet, kitaev_chain_majorana, and fqh_moore_read — three synthons with different $T$ and $\Omega$ values, all producing the same thermodynamic cost. This is a **framework prediction**: the cost of entering MBL from a coherent gap-protected state is independent of the specific topological invariant.
+The perturbation sweep $K_{\text{teshlig}} \to K_{\text{lambda}}$ produces $\Delta\xi = +2.303$ nats [HIGH] for spin_singlet, kitaev_chain_majorana, and fqh_moore_read — three imscriptions with different $T$ and $\Omega$ values, all producing the same thermodynamic cost. This is a **framework prediction**: the cost of entering MBL from a coherent gap-protected state is independent of the specific topological invariant.
 
 The MDS map should display this as three parallel trajectories (same displacement vector, different starting positions) — this is the "universality track" that Phase 3e will make visually and algebraically explicit.
 
@@ -482,9 +482,9 @@ Three classes of objects identified by GPT‑4 review as stress tests for the tu
 - **2nd order** — HotSwap path exists through $\Phi_{\text{ctyogh}}$ intermediates (continuous; `imscribe transition` finds the path and reports forward/reverse costs and $\Phi_{\text{ctyogh}}$ intermediates)
 - **1st order** — No path ($D/T$ structural conflict); virtual Kleisli arrow with infinite primitive cost; latent heat $\approx$ barrier height between $D/T$ classes
 
-Key asymmetry result: `topological_insulator_bi2se3 → synthon_Fermi_liquid` is an asymmetric 1st-order morphism — the reverse path (Fermi liquid → TI, fidelity *increases*) is permitted; the forward path (TI → Fermi liquid, fidelity *decreases*) is blocked by the $F$-floor. Topological protection encodes as morphism irreversibility. `imscribe transition SRC DST` CLI registered.
+Key asymmetry result: `topological_insulator_bi2se3 → imscription_Fermi_liquid` is an asymmetric 1st-order morphism — the reverse path (Fermi liquid → TI, fidelity *increases*) is permitted; the forward path (TI → Fermi liquid, fidelity *decreases*) is blocked by the $F$-floor. Topological protection encodes as morphism irreversibility. `imscribe transition SRC DST` CLI registered.
 
-**Floquet synthons (periodic drive) ✓ complete (v0.4.4)**
+**Floquet imscriptions (periodic drive) ✓ complete (v0.4.4)**
 `floquet_chern_insulator` ($D_{\text{turnthree}}$, $T_{\uparrow\downarrow}$, $K_{\text{teshlig}}$, $\Ω_C$, $\Gamma_{\to}(\text{SEQUENTIAL})$) and `time_crystal_dtc` ($D_{\text{invomega}}$, $T_{\text{bullseye}}$, $K_{\text{lambda}}$, $\Ω_z$) registered. $d(\text{floquet\_chern}, \text{time\_crystal}) = 4.2$ — same $G_{\text{gamma}}/F_{\text{dh}}/\Phi_{\text{softsign}}$ floor, differing in $D/T/K$ and topological class ($\Ω_C$ vs. $\Ω_z$). $\Gamma_{\to}(\text{SEQUENTIAL})$ encodes the stroboscopic Floquet operator; $K_{\text{lambda}}$ encodes the disorder-localization required for DTC stability against Floquet heating.
 
 **Gauge theories (loop variables) ✓ complete (v0.4.4)**
@@ -496,18 +496,18 @@ Key asymmetry result: `topological_insulator_bi2se3 → synthon_Fermi_liquid` is
 
 *Runnable companion: `TENSOŘ_OPΣ_DEMO.py` — 18 worked examples, `python TENSOŘ_OPΣ_DEMO.py --section <op>`.*
 
-The synthon tuple space is a product of bounded lattices. Seven operations act on it. Each maps cleanly to a concept from tensor mathematics, category theory, or constructive logic — not as a metaphor but as a precise structural translation.
+The imscription tuple space is a product of bounded lattices. Seven operations act on it. Each maps cleanly to a concept from tensor mathematics, category theory, or constructive logic — not as a metaphor but as a precise structural translation.
 
 ### Operation Table
 
-| Operation | Signature | Category-theoretic reading | SynthonM lift |
+| Operation | Signature | Category-theoretic reading | ImscriptionM lift |
 |-----------|-----------|---------------------------|---------------|
-| `meet(s₁, s₂)` | $\text{Synthon}^2 \to \text{Synthon} \oplus \{\bot\}$ | Categorical product; infimum in product lattice | `meet_m(name)` |
-| `join(s₁, s₂)` | $\text{Synthon}^2 \to \text{Synthon} \oplus \{\bot\}$ | Coproduct; supremum; $F$-floor raised in WriterT | `join_m(name)` |
-| `tensor(s₁, s₂, λ)$ | $\text{Synthon}^2 \times [0,1] \to \text{Synthon}$ | Bifunctor; $\xi_{\text{tensor}} = \xi_1 + \xi_2 - \lambda \cdot I(s_1,s_2)$ | `tensor_m(name, λ)` |
-| `lift(s, target)` | $\text{Synthon} \to \text{Synthon}$ | Functor between domain categories | `lift_m(target)` |
-| `path(src, dst)` | $\text{Synthon}^2 \to \text{PathResult}$ | Geodesic in the Kleisli enriched category | `path_m(name, ξ_tol)` |
-| `assert(pred)` | $(\text{Synthon} \to \text{bool}) \to \text{SynthonM}$ | Inline proof obligation; does not alter value | `assert_m(pred, msg)` |
+| `meet(s₁, s₂)` | $\text{Imscription}^2 \to \text{Imscription} \oplus \{\bot\}$ | Categorical product; infimum in product lattice | `meet_m(name)` |
+| `join(s₁, s₂)` | $\text{Imscription}^2 \to \text{Imscription} \oplus \{\bot\}$ | Coproduct; supremum; $F$-floor raised in WriterT | `join_m(name)` |
+| `tensor(s₁, s₂, λ)$ | $\text{Imscription}^2 \times [0,1] \to \text{Imscription}$ | Bifunctor; $\xi_{\text{tensor}} = \xi_1 + \xi_2 - \lambda \cdot I(s_1,s_2)$ | `tensor_m(name, λ)` |
+| `lift(s, target)` | $\text{Imscription} \to \text{Imscription}$ | Functor between domain categories | `lift_m(target)` |
+| `path(src, dst)` | $\text{Imscription}^2 \to \text{PathResult}$ | Geodesic in the Kleisli enriched category | `path_m(name, ξ_tol)` |
+| `assert(pred)` | $(\text{Imscription} \to \text{bool}) \to \text{ImscriptionM}$ | Inline proof obligation; does not alter value | `assert_m(pred, msg)` |
 | **decomp** | see below | Inversion, projection, factorisation | `cofactor_m`, `factor_m`, `project_m` |
 
 ---
@@ -538,7 +538,7 @@ The absorbing $\Phi_{\text{ctyogh}}$ is a co-Heyting top: not the usual infimum 
 - *Ordered* ($F, K, G, \Omega$): max — most demanding; $F$-floor ratchet raised
 - $\Phi$: **$\Phi_{\text{ctyogh}}$ is join-dominant** — $\Phi_{\text{ctyogh}} \sqcup \Phi_{\text{softsign}} = \Phi_{\text{ctyogh}}$
 
-join is the **design target**: the minimal synthon that both inputs can inject into. In module theory: the pushout. The $F$-floor ratchet implements the *directed* nature of commitment — once a fidelity obligation is raised, it cannot be lowered by any downstream operation.
+join is the **design target**: the minimal imscription that both inputs can inject into. In module theory: the pushout. The $F$-floor ratchet implements the *directed* nature of commitment — once a fidelity obligation is raised, it cannot be lowered by any downstream operation.
 
 **Key examples (§2 in demo):**
 
@@ -566,7 +566,7 @@ where $I(s_1,s_2) \approx \frac{\text{primitive matches}}{7} \times \min(\xi_1, 
 - $\Phi$, $\Omega$: join-dominant (criticality and topological protection propagate)
 
 **Critical semantic boundary:**
-> tensor predicts **co-occupancy** (the two-particle Hilbert space). A **bound state** requires $\text{tensor}$ *then* $\text{meet}(\text{binding\_potential\_synthon})$ to acquire $T_{\text{bullseye}}$. This is the exciton theorem: $\text{electron} \otimes \text{hole} \to T_{|} \otimes T_{|} = T_{|}$; the Coulomb interaction that produces $T_{\text{bullseye}}$ is a *separate* meet step.
+> tensor predicts **co-occupancy** (the two-particle Hilbert space). A **bound state** requires $\text{tensor}$ *then* $\text{meet}(\text{binding\_potential\_imscription})$ to acquire $T_{\text{bullseye}}$. This is the exciton theorem: $\text{electron} \otimes \text{hole} \to T_{|} \otimes T_{|} = T_{|}$; the Coulomb interaction that produces $T_{\text{bullseye}}$ is a *separate* meet step.
 
 **Key examples (§3 in demo):**
 
@@ -594,7 +594,7 @@ Three lifts are implemented as functors between domain categories:
 
 **Gate:** `criticality_lift` requires $F \ge F_{\text{hardsign}}$. Blocked if $F < F_{\text{hardsign}}$. This is the relational gate that prevents phonons ($F_{\text{beltl}}$) from being criticality-lifted — they are not the order parameter.
 
-**Asymmetry:** lift has no inverse. The $F$-floor ratchet in SynthonM is monotone: `join` and `lift` raise the floor; no operation lowers it. This encodes thermodynamic irreversibility as a monad law.
+**Asymmetry:** lift has no inverse. The $F$-floor ratchet in ImscriptionM is monotone: `join` and `lift` raise the floor; no operation lowers it. This encodes thermodynamic irreversibility as a monad law.
 
 **Category-theoretic translations:**
 - `lift_to_temporal` ≅ loop-space functor $\Omega$: sends a pointed space (binding event) to its loop space (catalytic cycle), endowing it with a monoid structure
@@ -606,7 +606,7 @@ Three lifts are implemented as functors between domain categories:
 ### §5 · path — Geodesic in the HotSwap Kleisli Category
 
 **Category:**
-- Objects: synthons (equivalence classes of 10-tuples)
+- Objects: imscriptions (equivalence classes of 10-tuples)
 - Morphisms: HotSwap transitions $f: A \to B$ with cost $\Delta\xi_{\text{CP}}(f) \geq 0$
 - Enrichment: over $(\mathbb{R}_{\ge 0}, +, 0)$ — a **Lawvere metric space**
 - Composition: BFS path; total cost additive
@@ -629,10 +629,10 @@ A **blocked path** = a $T$- or $D$-class boundary = **1st-order-like transition*
 
 ---
 
-### §6 · SynthonM — Monad Transformer Stack
+### §6 · ImscriptionM — Monad Transformer Stack
 
 $$
-\text{SynthonM}[A] \cong \text{WriterT}[\mathbb{R}_{\ge 0}]\, (\text{StateT}[\text{Context}]\, (\text{MaybeT}\, \text{Identity}))\, A
+\text{ImscriptionM}[A] \cong \text{WriterT}[\mathbb{R}_{\ge 0}]\, (\text{StateT}[\text{Context}]\, (\text{MaybeT}\, \text{Identity}))\, A
 $$
 
 | Layer | Carrier | Semantics |
@@ -664,7 +664,7 @@ Decomposition operations **invert or factor** the algebraic operations. They are
 
 | Operation | Category-theoretic reading | Use |
 |-----------|---------------------------|-----|
-| `factor(s)` | Decrement morphism: step one ordinal to its sub-object | "What is the largest proper sub-synthon?" |
+| `factor(s)` | Decrement morphism: step one ordinal to its sub-object | "What is the largest proper sub-imscription?" |
 | `cofactor(C, A)` | **Inverse bifunctor**: find $B$ s.t. $\text{tensor}(A, B) \cong C$ | Reverse-engineer the unknown component of a co-assembly |
 | `kernel(s, probe)` | **Kernel of a predicate-morphism**: largest sub $s$ annihilated by $\phi$ | "What can I remove before $\Phi_{\text{ctyogh}}$ signal disappears?" |
 | `principal_decomp(s)` | **Join-irreducible basis decomposition** (Birkhoff representation) | SVD analog: ordered list of primitive contributions |
@@ -703,7 +703,7 @@ proj = project(cooper_pair, ["Phi", "Omega"])          # π_{Φ,Ω}(cooper_pair)
 crel = complement_rel(gnf2, context=proj, target=cooper_pair)
 # → crel: Ç_@ + Γ_meso + Þ_branched (the part context does NOT cover)
 ```
-The Heyting implication $\text{GNF-2} \Rightarrow \text{cooper\_pair}$ relative to $\neg\text{context}$: the maximal sub-synthon of GNF-2 that (a) has no overlap with the $\Phi/\Omega$ projection and (b) together with it covers the target. This is **design as constructive proof**.
+The Heyting implication $\text{GNF-2} \Rightarrow \text{cooper\_pair}$ relative to $\neg\text{context}$: the maximal sub-imscription of GNF-2 that (a) has no overlap with the $\Phi/\Omega$ projection and (b) together with it covers the target. This is **design as constructive proof**.
 
 ---
 
@@ -728,10 +728,10 @@ The $d(\text{AtHv1\_primed}, \text{PsHv1\_constitutive}) = 0.000$ result — the
 
 2. **Context merging on `bind`**: $F$-floor takes max (strictest requirement wins). Is this always right for `meet` operations which lower $F$? Currently: `meet` does not update `context.f_floor` (it lowers $F$, not raises the floor). Only `join` and `HotSwap` raise the floor.
 
-3. **`assert` timeout**: criticality probe assertions (`phi_c_score > N`) run the full Varma probe. For large catalogs this could be slow in a pipeline. Add `--timeout` flag or cache probe results per synthon.
+3. **`assert` timeout**: criticality probe assertions (`phi_c_score > N`) run the full Varma probe. For large catalogs this could be slow in a pipeline. Add `--timeout` flag or cache probe results per imscription.
 
 4. **Named strategies in `.syn`**: the `strategies:` block in `.syn` allows defining reusable sub-pipelines. Should these be first-class `DesignStrategy` objects (composable with `>>` and `<|>`) or just YAML macros (inlined at parse time)?
 
-5. **Phase boundary semantics**: the Ward dendrogram gives an empirical boundary at $d \approx 9.52$ for the current 8-synthon quantum catalog. Does this threshold generalise? Adding classical synthons will compress the inter-cluster gap. The open question is whether a **universal** threshold exists in the Kleisli metric, or whether boundaries are always catalog-relative. Phase 3e should test this by mixing the quantum catalog with the full classical molecular catalog and measuring whether the topological/particle split persists at the same threshold.
+5. **Phase boundary semantics**: the Ward dendrogram gives an empirical boundary at $d \approx 9.52$ for the current 8-imscription quantum catalog. Does this threshold generalise? Adding classical imscriptions will compress the inter-cluster gap. The open question is whether a **universal** threshold exists in the Kleisli metric, or whether boundaries are always catalog-relative. Phase 3e should test this by mixing the quantum catalog with the full classical molecular catalog and measuring whether the topological/particle split persists at the same threshold.
 
 6. **`.syn` assert grammar extension**: predicates for $\Omega$ and quantum grammar are not yet in the dispatch table. Needed additions: `topo_index == Ω_5`, `grammar == QUANTUM_AND`, `Ç_λ`, `factor8_triggered`. These enable design programs that assert topological protection before quantum tensor operations.

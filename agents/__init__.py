@@ -18,7 +18,7 @@ except ValueError:
 _sys.path.insert(0, _project_root)
 
 from .example_agent import ResearchAgent, AnalysisAgent
-from .synthon_generator_agent import SynthonGeneratorAgent, SynthonGenerationResult
+from .imscribe_generator_agent import ImscriptionGeneratorAgent, ImscriptionGenerationResult
 from .axiom_guided_generator import AxiomGuidedGeneratorAgent, AxiomGuidedResult
 
 try:
@@ -36,9 +36,9 @@ __all__ = [
     # Example agents
     "ResearchAgent",
     "AnalysisAgent",
-    # Synthon generator
-    "SynthonGeneratorAgent",
-    "SynthonGenerationResult",
+    # Imscription generator
+    "ImscriptionGeneratorAgent",
+    "ImscriptionGenerationResult",
     # Axiom-guided generator
     "AxiomGuidedGeneratorAgent",
     "AxiomGuidedResult",

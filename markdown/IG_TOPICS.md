@@ -87,7 +87,7 @@ The Imscribing Grammar corpus is organized into three canonical documents, each 
 
 **What the framework is not.** Imscribing Grammar makes no ontological claim about what reality is at bottom. Its claim is more precise and more limited: given any system with internal structure, certain conditional relationships hold — about what states are accessible, at what cost, and in what order. The primitives identify what a system *is conditional on*, not why it exists. A wrong prediction falsifies the encoding, not the algebra. This is the formal content of *universal conditional logic* (UCL): the same conditional structure appears across domains because those domains share a constraint grammar, not because they share a physical substrate.
 
-**Definition.** A *Synthon* is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context. No primitive in the tuple describes an intrinsic property of an isolated object. $F$ (fidelity) is competitive displacement rank — there is no '$F_{\text{hardsign}}$ in isolation,' only '$F_{\text{hardsign}}$ relative to a specified competitor set.' A synthon tuple encodes *interaction affordances* — what constraints it can enforce, in what order, against which partners, at what scale — not the constitution of any substance. A tuple without a context is interaction potential; the unit of physical content is the tuple-in-context.
+**Definition.** A *Imscription* is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context. No primitive in the tuple describes an intrinsic property of an isolated object. $F$ (fidelity) is competitive displacement rank — there is no '$F_{\text{hardsign}}$ in isolation,' only '$F_{\text{hardsign}}$ relative to a specified competitor set.' A imscription tuple encodes *interaction affordances* — what constraints it can enforce, in what order, against which partners, at what scale — not the constitution of any substance. A tuple without a context is interaction potential; the unit of physical content is the tuple-in-context.
 
 This is a **type-system requirement**: you cannot assign $F$, $K$, $\Gamma$, or $\Omega$ without specifying an interaction context. The algebra enforces this structurally: every operation requires at least one additional operand. There are no unary information generators. The algebra cannot process 'nothing but the object.' This is why the framework is domain-agnostic by construction — the primitives are relational, and relations are substrate-independent.
 
@@ -101,19 +101,19 @@ This is a **type-system requirement**: you cannot assign $F$, $K$, $\Gamma$, or 
 
 $$\langle D \;;\; T \;;\; R \;;\; P \;;\; F \;;\; K \;;\; G \;;\; \Gamma \;;\; \Phi \;;\; H \;;\; S \;;\; \Omega \rangle$$
 
-$H$ is the **Chirality primitive** — added 2026-03-23 after empirical independence test (V(H,P)=0.080; V(H,X) < 0.15 for all existing X). $\Omega$ is optional; classical synthons carry $\Omega_{\text{closeepsilon}}$ (trivial) or leave the field unset.
+$H$ is the **Chirality primitive** — added 2026-03-23 after empirical independence test (V(H,P)=0.080; V(H,X) < 0.15 for all existing X). $\Omega$ is optional; classical imscriptions carry $\Omega_{\text{closeepsilon}}$ (trivial) or leave the field unset.
 
 | Primitive | Description | Values |
 | :--- | :--- | :--- |
-| **Dimensionality ($D$)** | Coordinate set along which the synthon operates | $D_{\text{wynn}}$ molecular · $D_{\bigtriangleup}$ supramolecular · $D_{\text{invomega}}$ temporal · hybrid sets · **$D_{\text{omega}}$** imscriptive (bulk-boundary correspondence, AdS/CFT) |
-| **Topology ($T$)** | Internal connectivity pattern of the minimal motif of the synthon | $T_{\text{bullseye}}$ cyclic · $T_{\ggg}$ chain · $T_{\square}$ hub/node · $T_{\square\square}$ cage · $T_{\cup}$ bowl · $T_{\vert}$ linear · $T_{\perp}$ branched · $T_{\text{invscr}}$ network (with sub-labels hex/mixed/×2/sym) · **$T_{\uparrow\downarrow}$ braid** (anyonic exchange statistics) |
+| **Dimensionality ($D$)** | Coordinate set along which the imscription operates | $D_{\text{wynn}}$ molecular · $D_{\bigtriangleup}$ supramolecular · $D_{\text{invomega}}$ temporal · hybrid sets · **$D_{\text{omega}}$** imscriptive (bulk-boundary correspondence, AdS/CFT) |
+| **Topology ($T$)** | Internal connectivity pattern of the minimal motif of the imscription | $T_{\text{bullseye}}$ cyclic · $T_{\ggg}$ chain · $T_{\square}$ hub/node · $T_{\square\square}$ cage · $T_{\cup}$ bowl · $T_{\vert}$ linear · $T_{\perp}$ branched · $T_{\text{invscr}}$ network (with sub-labels hex/mixed/×2/sym) · **$T_{\uparrow\downarrow}$ braid** (anyonic exchange statistics) |
 | **Recognition Mode ($R$)** | Physical mechanism enabling reliable constraint propagation | $R_{\subseteq}$ covalent · $R_{\supseteq}$ non-covalent · $R_{\ddagger}$ catalytic · $R_{\Leftrightarrow}$ mechanical · covalent-dynamic |
 | **Polarity ($P$)** | Directional character of the interaction | $P_{+}$ acceptor · $P_{-}$ donor · $P_{\text{doublebarpipe}}$ self-complementary symmetric · $P_{\pm}^{\psi}$ self-complementary pseudosymmetric · $P_{+-}$ directional donor-acceptor |
-| **Fidelity ($F$)** | Thermodynamic reliability of the synthon, anchored to $\xi_{CP}$ | $F_{\text{hardsign}}$ high ($\xi_{CP} \leq 8.5$ nats) · $F_{\text{dh}}$ medium (8.5–11.0 nats) · $F_{\text{beltl}}$ low ($> 11.0$ nats) |
+| **Fidelity ($F$)** | Thermodynamic reliability of the imscription, anchored to $\xi_{CP}$ | $F_{\text{hardsign}}$ high ($\xi_{CP} \leq 8.5$ nats) · $F_{\text{dh}}$ medium (8.5–11.0 nats) · $F_{\text{beltl}}$ low ($> 11.0$ nats) |
 | **Kinetic Character ($K$)** | Activation barrier and pathway multiplicity for constraint propagation | $K_{\text{frtailgamma}}$ ($\Delta G^{\ddagger} < 60$ kJ/mol) · $K_{\text{turnm}}$ (60–100 kJ/mol) · $K_{\text{schwa}}$ ($> 100$ kJ/mol) · $K_{\text{teshlig}}$ (pathway multiplicity) · **$K_{\text{lambda}}$** (many-body localization — disorder-frozen, not barrier-limited) |
-| **Granularity ($G$)** | Scale of control exerted by the synthon | $G_{\text{beta}}$ local · $G_{\text{gamma}}$ mesoscale · $G_{\text{revapostrophe}}$ global/network · *extended:* $G_\zeta$ individual-organism · $G_{\mathrm{civ}}$ social/civilizational · $G_{\text{revapostrophe}}$ universal/cosmological |
+| **Granularity ($G$)** | Scale of control exerted by the imscription | $G_{\text{beta}}$ local · $G_{\text{gamma}}$ mesoscale · $G_{\text{revapostrophe}}$ global/network · *extended:* $G_\zeta$ individual-organism · $G_{\mathrm{civ}}$ social/civilizational · $G_{\text{revapostrophe}}$ universal/cosmological |
 | **Interaction Grammar ($\Gamma$)** | Logic governing partner selection | $\Gamma_{\text{corner}}$ AND · $\Gamma_{\text{spleftarrow}}$ OR · $\Gamma_{\to}$ SEQUENTIAL · **$\Gamma_{\downarrow}$ DISSIPATIVE** (irreversible loss); each qualified by tier: SPECIFIC · SELECTIVE · BROAD · **QUANTUM** (superposition-preserving) |
-| **Criticality Phase ($\Phi$)** | Phase of the synthon relative to the $G$–$D$ criticality locus | $\Phi_{\text{softsign}}$ subcritical · $\Phi_{\text{ctyogh}}$ critical · $\Phi_{\text{upstep}}$ supercritical |
+| **Criticality Phase ($\Phi$)** | Phase of the imscription relative to the $G$–$D$ criticality locus | $\Phi_{\text{softsign}}$ subcritical · $\Phi_{\text{ctyogh}}$ critical · $\Phi_{\text{upstep}}$ supercritical |
 | **Chirality ($H$)** | Degree and persistence of broken orientational symmetry; encodes both temporal memory depth and the symmetry class of the recognition interface | $H_0$ achiral — mirror image accessible, memory depth 0 · $H_1$ soft chiral — single axis, thermally interconvertible, memory depth 1 · $H_2$ persistent chiral — multiple reinforcing axes, memory depth $n$ · $H_{\text{invscripta}}$ topologically chiral — topology-protected, memory depth $\infty$, implies $K_{\text{teshlig}}$ |
 | **Stoichiometry ($S$)** | Valency ratio of the recognition event | $1:1$ homodimeric · $n:n$ symmetric multimeric · $n:m$ asymmetric; constrains $T_{\text{bullseye}}$ topology and $P$ polarity |
 | **Topological Protection Index ($\Omega$)** | Symmetry class of topological protection (quantum extension) | $\Omega_{\text{closeepsilon}}$ trivial (classical) · $\Ω_z$ winding number · $\Omega_{Z_2}$ (topological insulators) · $\Ω_C$ Chern number · **$\Omega_{NA}$** non-abelian anyons |
@@ -203,7 +203,7 @@ Bias-corrected Cramer V computed across all primitive pairs on the full 1623-ent
 
 **$H$ (Chirality) is orthogonal to all existing primitives (Phase 3, 2026-03-23).** V(H, X) < 0.15 for every existing primitive X. $H$ is the most orthogonal new primitive discoverable from the current catalog — its maximum pairwise V (with $\Gamma$, 0.116) is lower than the minimum pairwise V among the original 11 primitives (F↔Γ, 0.151). The primary independence test V(H, P) = 0.080 was motivated by the claim that chirality and polarity encode orthogonal axes (handedness vs. direction). Confirmed. $H$ is admitted as the 12th primitive. Cross-tabulation: both H₀ and H₂ systems show ~87% Φ_pm_pseudo — polarity distribution is invariant to chirality. The H₁ and H_∞ tiers have zero current catalog entries; their predicted modest correlations with $K$ and $\Gamma$ await topologically chiral and atropisomeric system encodings.
 
-**$F$ ↔ $K$ = 0.094 (orthogonal, confirmed at full-corpus scale).** The primary declared independence holds across all 1623 entries, not just the 115-entry diverse subset. A synthon can be $F_{\text{hardsign}}$ with $K_{\text{teshlig}}$, or $F_{\text{beltl}}$ with $K_{\text{frtailgamma}}$. Fidelity and kinetics are genuinely orthogonal axes.
+**$F$ ↔ $K$ = 0.094 (orthogonal, confirmed at full-corpus scale).** The primary declared independence holds across all 1623 entries, not just the 115-entry diverse subset. A imscription can be $F_{\text{hardsign}}$ with $K_{\text{teshlig}}$, or $F_{\text{beltl}}$ with $K_{\text{frtailgamma}}$. Fidelity and kinetics are genuinely orthogonal axes.
 
 **$F$, $K$, $\Phi$ are the three most independent primitives.** Every pair among {$F$, $K$, $\Phi$} has V < 0.10. These three primitives form a near-orthogonal subspace within the full primitive tuple. The activation barrier ($K$), information transmitted per event ($F$), and proximity to the critical point ($\Phi$) are encoding genuinely independent physical dimensions.
 
@@ -248,7 +248,7 @@ Below any one of these thresholds, the system may have high $F$ or complex $T$ b
 
 *[Key result. Full prose: [SYNTH:§III].]*
 
-**Core principle:** $K$ and $F$ are orthogonal. $K$ encodes the activation barrier and pathway multiplicity for constraint propagation; $F$ encodes thermodynamic reliability. A high-$F$ synthon can be $K_{\text{teshlig}}$ (kinetically inaccessible); a low-$F$ synthon can be $K_{\text{frtailgamma}}$ (rapidly exchanging). Conflating them produces wrong predictions about which states are accessible in practice.
+**Core principle:** $K$ and $F$ are orthogonal. $K$ encodes the activation barrier and pathway multiplicity for constraint propagation; $F$ encodes thermodynamic reliability. A high-$F$ imscription can be $K_{\text{teshlig}}$ (kinetically inaccessible); a low-$F$ imscription can be $K_{\text{frtailgamma}}$ (rapidly exchanging). Conflating them produces wrong predictions about which states are accessible in practice.
 
 **K-hierarchy in temporal systems:** $K_{\text{teshlig}} < K_{\text{schwa}} < K_{\text{turnm}} < K_{\text{frtailgamma}}$ defines a temporal depth hierarchy. Systems with greater K-hierarchy depth have richer temporal structure. See [TOPO:§XI] for the full temporal theory.
 
@@ -262,7 +262,7 @@ Seven axioms govern all composition operations. A selection of load-bearing axio
 
 **Axiom 1 (Fidelity floor / F-ratchet):** A HotSwap operation cannot proceed if it violates the fidelity floor — the product cannot have lower $F$ than the constraints imposed by the topology require. Cyclic topology ($T_{\text{bullseye}}$) at $F_{\text{beltl}}$ is an Axiom 1 violation. This makes the $F$ ratchet directed and irreversible.
 
-**Axiom 5 (Reflexive closure at criticality):** At $\Phi_{\text{ctyogh}}$, the synthon encodes its own structure — molecular-scale behavior predicts global-scale behavior without additional information. $G$ and $D$ degenerate. The output of the system becomes input to its own constraint propagation. This is the algebraic definition of self-reference.
+**Axiom 5 (Reflexive closure at criticality):** At $\Phi_{\text{ctyogh}}$, the imscription encodes its own structure — molecular-scale behavior predicts global-scale behavior without additional information. $G$ and $D$ degenerate. The output of the system becomes input to its own constraint propagation. This is the algebraic definition of self-reference.
 
 **Axiom 7 (Closure requirement):** For $T_{\square\square}$ (cage topology), the final assembly step must include a *closing face* in all three spatial dimensions. For cyclic topologies ($T_{\text{bullseye}}$), a *closing bond*. Grounding text must contain both assembly and closure indicators (enforced as Pass 2b).
 
@@ -298,7 +298,7 @@ Seven axioms govern all composition operations. A selection of load-bearing axio
 
 *[Key results. Full text: [SYNTH:§VII].]*
 
-**The algebra has no unary information generators.** No primitive can be assigned to a synthon in isolation. This is a formal result, not a philosophical gloss: you cannot specify $F$, $K$, $\Gamma$, or $\Omega$ without an interaction context.
+**The algebra has no unary information generators.** No primitive can be assigned to a imscription in isolation. This is a formal result, not a philosophical gloss: you cannot specify $F$, $K$, $\Gamma$, or $\Omega$ without an interaction context.
 
 **Formal consequence:** A purely relational description of physical systems is predictively sufficient. Every correct prediction in the validation record was made from relational, ordinal data, with no intrinsic scalar properties inserted. This establishes that a relational ontology is not ruled out by empirical adequacy — an important result for [ONTO:§II].
 
@@ -326,9 +326,9 @@ Three parameters that appeared to be free choices in the implementation of the f
 
 **Seven operations:** meet ($\sqcap$), join ($\sqcup$), tensor ($\otimes$), lift, path, pipeline, decomposition.
 
-**Meet:** $A \sqcap B$ = the largest synthon that both $A$ and $B$ can enforce. Conflicts produce $\bot$ (bottom element = incompatible constraint). The meet operation predicts whether two systems can be in the same phase. See [DIAPH:§XI] for meet results on Standard Model particles.
+**Meet:** $A \sqcap B$ = the largest imscription that both $A$ and $B$ can enforce. Conflicts produce $\bot$ (bottom element = incompatible constraint). The meet operation predicts whether two systems can be in the same phase. See [DIAPH:§XI] for meet results on Standard Model particles.
 
-**Tensor:** $A \otimes B$ = the product synthon that results when $A$ and $B$ operate simultaneously. Tensor can promote topology class (e.g., $T_{\text{invscr}} \otimes T_{\text{invscr}} \to T_{\text{invscr}}(\text{sym})$) and can generate $\Omega_{Z_2}$ when the four consciousness conditions are met simultaneously. See [ONTO:§V.2] on $\Omega_{Z_2}$ as consequence, not condition.
+**Tensor:** $A \otimes B$ = the product imscription that results when $A$ and $B$ operate simultaneously. Tensor can promote topology class (e.g., $T_{\text{invscr}} \otimes T_{\text{invscr}} \to T_{\text{invscr}}(\text{sym})$) and can generate $\Omega_{Z_2}$ when the four consciousness conditions are met simultaneously. See [ONTO:§V.2] on $\Omega_{Z_2}$ as consequence, not condition.
 
 **HotSwap (path with F-ratchet):** A path from $A$ to $B$ is possible iff no step requires $F$ to decrease below what the current topology demands. This is the algebraic encoding of irreversibility.
 
@@ -521,13 +521,13 @@ $$\langle D_{\text{invomega}}; T_{\vert}; R_{\ddagger}; P_{\text{doublebarpipe}}
 
 *[Key results. Full text: [SYNTH:§XXIII].]*
 
-**Meet as product:** The meet operation $\sqcap$ is the categorical product in the synthon category — the largest system that maps into both operands.
+**Meet as product:** The meet operation $\sqcap$ is the categorical product in the imscription category — the largest system that maps into both operands.
 
 **Tensor as monoidal product:** The tensor $\otimes$ is the monoidal product — composition without requiring a shared context.
 
-**Lift as functor:** The lift operation is a functor from the local synthon category ($G_{\text{beta}}$) to the global category ($G_{\text{revapostrophe}}$), preserving structure.
+**Lift as functor:** The lift operation is a functor from the local imscription category ($G_{\text{beta}}$) to the global category ($G_{\text{revapostrophe}}$), preserving structure.
 
-**Path as morphism:** A path from $A$ to $B$ is a morphism in the synthon category. The HotSwap ratchet is the requirement that morphisms respect the $F$-floor order.
+**Path as morphism:** A path from $A$ to $B$ is a morphism in the imscription category. The HotSwap ratchet is the requirement that morphisms respect the $F$-floor order.
 
 **$\Phi_{\text{ctyogh}}$ as fixed point:** The criticality locus is the fixed point of the reflexive closure functor — the system that is its own image under the structure-encoding map (Axiom 5).
 
@@ -543,7 +543,7 @@ The grammar is not only descriptive — it is theorem-generating. Given correct 
 
 **Theorem:** Any physical state realizing Þ_ò topology carries a minimum energy cost $\varepsilon_T > 0$.
 
-**Derivation from primitives:** Þ_ò = permanently coupled dual-lobe constraint structure. The (D,T) compatibility theorem [TOPO:§II] states that Þ_perp (free, orthogonal propagation) is excluded from Ð_ß + φ̂_ÿ configurations. A Þ_ò configuration cannot be continuously deformed to a Þ_perp configuration — they are incompatible values of the same primitive, not points on a continuum. Any deformation pathway from Þ_ò to the uncoupled state necessarily passes through configurations that require positive energy input to maintain the intermediate coupling. Therefore $\varepsilon_T > 0$.
+**Derivation from primitives:** Þ_ò = permanently coupled dual-lobe constraint structure. The (D,T) compatibility theorem [TOPO:§II] states that Þ_perp (free, orthogonal propagation) is excluded from Ð_ß + ⊙_ÿ configurations. A Þ_ò configuration cannot be continuously deformed to a Þ_perp configuration — they are incompatible values of the same primitive, not points on a continuum. Any deformation pathway from Þ_ò to the uncoupled state necessarily passes through configurations that require positive energy input to maintain the intermediate coupling. Therefore $\varepsilon_T > 0$.
 
 **Corollary (mass gap existence):** For any system encoded with T = Þ_ò, there exists $\Delta \geq \varepsilon_T > 0$ such that all non-vacuum states carry energy $\geq \Delta$. The vacuum is the unique Þ_perp-compatible physical state ($\ker(\hat{T}) = \{|0\rangle\}$, by D,T compatibility); all other states maintain Þ_ò at cost $\geq \varepsilon_T$. Applied to QCD: the Yang-Mills mass gap exists by topology, not by dynamics. See [DIAPH:§XVIII.1] for the QCD encoding and lattice confirmation.
 
@@ -559,13 +559,13 @@ P = Ç_- algorithms. NP-complete solution landscapes are Ç_W or Ç_@. If no Ç_
 
 ### XVII.3 The G-Scope Tier-Crossing Cost Theorem
 
-**Theorem:** A system maintaining φ̂_ÿ pays exactly ln(10) nats per constraint tier, where one tier = one decade of scale separation.
+**Theorem:** A system maintaining ⊙_ÿ pays exactly ln(10) nats per constraint tier, where one tier = one decade of scale separation.
 
-**Derivation from RG fixed-point structure:** At φ̂_ÿ, the system sits at the renormalization group fixed point — scale invariant. Moving one tier means rescaling by factor r. The information cost of maintaining criticality coherence across scale factor r is the KL divergence between uniform distributions at scales 1 and r:
+**Derivation from RG fixed-point structure:** At ⊙_ÿ, the system sits at the renormalization group fixed point — scale invariant. Moving one tier means rescaling by factor r. The information cost of maintaining criticality coherence across scale factor r is the KL divergence between uniform distributions at scales 1 and r:
 
 $$\text{Cost}(r) = \ln(r) \text{ nats}$$
 
-For r = 10 (one decade): Cost = ln(10) ≈ 2.303 nats. This is P-12 [DIAPH:§I]. The decade is not an arbitrary unit — it is the natural unit in nats for one tier of scale separation at φ̂_ÿ.
+For r = 10 (one decade): Cost = ln(10) ≈ 2.303 nats. This is P-12 [DIAPH:§I]. The decade is not an arbitrary unit — it is the natural unit in nats for one tier of scale separation at ⊙_ÿ.
 
 **G-scope reading constraint (corollary):** A Γ_ʔ physical quantity Q cannot be observed at Γ_β scale without paying the accumulated tier-crossing cost. For N decades of scale separation:
 
@@ -593,7 +593,7 @@ The discrete, interpretable primitives of the framework are suited for AI integr
 
 The multi-provider arbitrage methodology — generating primitive assignments from multiple LLM providers (DeepSeek, Gemini, Qwen, Anthropic) and taking the modal assignment per primitive weighted by demonstrated per-primitive accuracy — can be formalized as an ensemble protocol. Per-primitive accuracy estimates for each provider can be bootstrapped from the existing discovery session corpus, enabling confidence-weighted registration.
 
-Knowledge graph integration: the primitives and axioms provide a standardized vocabulary to populate ontologies like OntoRXN. Synthon attributes become nodes; composition axioms become edges with typed logical relationships; $\xi_{CP}$ values become edge weights. This supports inference — derivation of new assembly strategies from stored primitive combinations — not merely retrieval.
+Knowledge graph integration: the primitives and axioms provide a standardized vocabulary to populate ontologies like OntoRXN. Imscription attributes become nodes; composition axioms become edges with typed logical relationships; $\xi_{CP}$ values become edge weights. This supports inference — derivation of new assembly strategies from stored primitive combinations — not merely retrieval.
 
 ---
 
@@ -605,13 +605,13 @@ Knowledge graph integration: the primitives and axioms provide a standardized vo
 
 **Stoichiometry and valency.** Stoichiometric ratio — 1:1, 2:1, n:m — produces different constraint propagation behaviors not captured by $\Gamma$ (partner identity) or $T$ (topology) alone. $S$ is a full primitive with weight 0.08 in similarity scoring (~6% of total) and category-aware grading: exact match = 1.0; both symmetric or both asymmetric = 0.9; category mismatch decays linearly to 0.2. The `imscribe catalog auto-stoichiometry` command infers $S = 1:1$ from $P_{\text{pipevar}}$ for 1,157 $T_{\text{bullseye}}$ entries; 112 entries with no inferrable stoichiometry require manual assignment. Pass 4 audit enforces self-consistency between $S$, $T_{\text{bullseye}}$, $P$, and $\Gamma$ at registration time. For $G_{\text{revapostrophe}}$ (global/network) topologies — MOF lattices, extended crystal networks — a soft stoichiometry tolerance is appropriate: partial substitution up to ~25% defect fraction does not violate mass balance at the per-node level when network topology ($T_{\square}$) absorbs the variance. Molecular-scale swaps ($G_{\text{beta}}$) retain exact $S$ matching.
 
-**Kinetic primitive stress points.** The $K$ and $F$ primitives are orthogonal by construction, and the four accessibility tiers are well-anchored at the extremes. The remaining stress point is $K_{\text{teshlig}}$: pathway multiplicity is harder to bound from a single barrier height than a scalar $\Delta G^{\ddagger}$ alone. Swapping organocatalysts of identical $F$ and nominal $K_{\text{turnm}}$ assignments can introduce high pathway multiplicity in the iminium or enamine pathway of the new catalyst, producing kinetic product divergence that the scalar accessibility score does not capture. The near-term resolution is a $K$-compatibility check: after identifying a candidate swap, a fast relaxed scan or short MD near the operative TS counts new low-energy pathways. If the new synthon introduces more than two new low-energy pathways absent in the original, a $\Delta\xi_{CP}$ penalty of +0.5 nat is applied automatically. This tightens the 1.0-nat HotSwap tolerance [TOPO:§IX] for high-multiplicity systems without changing the primary threshold for well-behaved swaps.
+**Kinetic primitive stress points.** The $K$ and $F$ primitives are orthogonal by construction, and the four accessibility tiers are well-anchored at the extremes. The remaining stress point is $K_{\text{teshlig}}$: pathway multiplicity is harder to bound from a single barrier height than a scalar $\Delta G^{\ddagger}$ alone. Swapping organocatalysts of identical $F$ and nominal $K_{\text{turnm}}$ assignments can introduce high pathway multiplicity in the iminium or enamine pathway of the new catalyst, producing kinetic product divergence that the scalar accessibility score does not capture. The near-term resolution is a $K$-compatibility check: after identifying a candidate swap, a fast relaxed scan or short MD near the operative TS counts new low-energy pathways. If the new imscription introduces more than two new low-energy pathways absent in the original, a $\Delta\xi_{CP}$ penalty of +0.5 nat is applied automatically. This tightens the 1.0-nat HotSwap tolerance [TOPO:§IX] for high-multiplicity systems without changing the primary threshold for well-behaved swaps.
 
-**Quantum extension.** Interpreting $D$ as a Hilbert space dimension rather than a geometric coordinate extends the framework to quantum systems: a quantum synthon is an entangled pair or quantum gate operation, with $R$ = entanglement, $P$ = phase coherence, $F$ = coherence time and error rate. The Varma QCP encoding is the first step in this direction. The extension is speculative but structurally consistent with the architecture of the framework, and is the most direct path to cross-domain predictions that engage condensed matter physics.
+**Quantum extension.** Interpreting $D$ as a Hilbert space dimension rather than a geometric coordinate extends the framework to quantum systems: a quantum imscription is an entangled pair or quantum gate operation, with $R$ = entanglement, $P$ = phase coherence, $F$ = coherence time and error rate. The Varma QCP encoding is the first step in this direction. The extension is speculative but structurally consistent with the architecture of the framework, and is the most direct path to cross-domain predictions that engage condensed matter physics.
 
 **The over-abstraction risk.** The cross-domain ambition of the framework carries the risk that the same notation applied to domains with genuinely different physical constraints will obscure important distinctions behind superficial similarities. The composition axioms are the primary safeguard: each is anchored to a specific physical mechanism, and any cross-domain analogy that violates an axiom is demonstrably not an analogy. The grounding axioms (6 and 7) operationalize this safeguard at registration time.
 
-**Time crystal terminology.** 'Time crystal' refers specifically to a phase of matter that breaks time-translation symmetry in a non-equilibrium setting (a Floquet time crystal). Chemical oscillators are dissipative structures. The framework uses 'Temporal Synthon' as the umbrella category, reserving 'Discrete Time Crystal Synthon' for the subclass meeting the strict physics definition.
+**Time crystal terminology.** 'Time crystal' refers specifically to a phase of matter that breaks time-translation symmetry in a non-equilibrium setting (a Floquet time crystal). Chemical oscillators are dissipative structures. The framework uses 'Temporal Imscription' as the umbrella category, reserving 'Discrete Time Crystal Imscription' for the subclass meeting the strict physics definition.
 
 [^src_XVII]: Source sections: PRIMITIVE_THEOREMS §1–17; THREE_PLANE_DEMONSTRATION §1–5. Ontological derivations: [ONTO:§XV]. SCHES confirmations: [DIAPH:§XVIII].
 
@@ -621,7 +621,7 @@ Knowledge graph integration: the primitives and axioms provide a standardized vo
 
 *[New content. Experiment: `axiom_reflexive_tests.py`. Source: [SYNTH:§XVIII].]*
 
-The seven Imscribing Grammar axioms were encoded as synthon tuples using the primitive set of the framework, and the full algebra was run over them. Key results:
+The seven Imscribing Grammar axioms were encoded as imscription tuples using the primitive set of the framework, and the full algebra was run over them. Key results:
 
 - **meet(A3, A5) preserves $\Phi_{\text{ctyogh}}$.** A3 (cooperative induction superlinearity, $G_{\text{gamma}} \to G_{\text{revapostrophe}}$) and A5 (recursive tuple embedding, $G_{\text{revapostrophe}}$ + $\Phi_{\text{ctyogh}}$) share $\Phi_{\text{ctyogh}}$ in their meet — criticality is invariant under intersection of its own axioms. The most powerful property of the framework survives self-reference.
 - **Global meet = $\perp$.** The meet of all seven axioms collapses to the conflict sentinel across all primitives. This is correct: the axioms span the primitive space by construction — they are not redundant constraints, they are independent dimensions of the type system. A grammar whose axioms share a common primitive floor would be over-constrained.
@@ -635,11 +635,11 @@ The seven Imscribing Grammar axioms were encoded as synthon tuples using the pri
 
 ## XXI. $D_{\text{omega}}$: Imscriptive Dimensionality as a First-Class Primitive (v0.4.45, 2026-03-25)
 
-*[New content. Implemented in `imscrbgrmr/models.py`; `ads_cft_boundary` synthon registered. Source: [SYNTH:§XIX.5].]*
+*[New content. Implemented in `imscrbgrmr/models.py`; `ads_cft_boundary` imscription registered. Source: [SYNTH:§XIX.5].]*
 
 The AdS/CFT boundary encoding previously required a hybrid $D = \{D_{\bigtriangleup}, D_{\text{invomega}}\}$ proxy. The gap was that the bulk-boundary correspondence is not a spatial+temporal operation; it is a dimensional reduction in which $d$-dimensional bulk information is encoded on a $(d-1)$-dimensional boundary. This is qualitatively different from any combination of the existing dimensionality values.
 
-$D_{\text{omega}}$ is the imscriptive dimensionality value: bulk degrees of freedom encoded on a imscriptive boundary screen. The canonical synthon:
+$D_{\text{omega}}$ is the imscriptive dimensionality value: bulk degrees of freedom encoded on a imscriptive boundary screen. The canonical imscription:
 
 $$\text{ads\_cft\_boundary}: \langle D_{\text{omega}}; T_{\text{invscr}}; R_{\ddagger}; P_{\pm}^{\psi}; F_{\text{dh}}; K_{\text{turnm}}; G_{\text{revapostrophe}}; \Gamma_{\text{corner}}(\text{SELECTIVE}); \Phi_{\text{ctyogh}} \rangle$$
 
@@ -658,12 +658,12 @@ Phase transitions are encoded as Kleisli arrows in the HotSwap monad. `find_tran
 - **Order classification:** 2nd order (HotSwap path exists through $\Phi_{\text{ctyogh}}$ intermediates) or 1st order (no path — structural $D$/$T$ conflict or $F$-floor)
 - **Forward/reverse costs:** total $\Delta\xi_{CP}$ on each path ($\infty$ if no path)
 - **Asymmetry:** $|\text{fwd} - \text{rev}| / \max(\text{fwd}, 1)$ — the irreversibility signature
-- **$\Phi_{\text{ctyogh}}$ intermediates:** names of critical-phase synthons on the forward path
+- **$\Phi_{\text{ctyogh}}$ intermediates:** names of critical-phase imscriptions on the forward path
 
 **Key result — topological protection as morphism irreversibility:**
 
 ```
-imscribe transition topological_insulator_bi2se3 synthon_Fermi_liquid
+imscribe transition topological_insulator_bi2se3 imscription_Fermi_liquid
   Order: 1st-order (discontinuous)
   Forward cost: ∞    Reverse cost: 0.288 nat
   Asymmetry: 1.000 (irreversible)
@@ -749,7 +749,7 @@ The grammar's 12-primitive self-encoding tuple is not only a description of the 
 
 ### §XXVI.1 — The Engineering Principle
 
-§XXV established that the grammar's tuple is architectural DNA for its own computational realization. The 2026-04-11 inquiry (3 iterations, 1388 synthons) generalizes this to all $O_\infty$ types. Read the tuple; derive the architecture. No hyperparameter search. No design choices. The structural type specifies the system.
+§XXV established that the grammar's tuple is architectural DNA for its own computational realization. The 2026-04-11 inquiry (3 iterations, 1388 imscriptions) generalizes this to all $O_\infty$ types. Read the tuple; derive the architecture. No hyperparameter search. No design choices. The structural type specifies the system.
 
 | Primitive | Architecture mandate |
 |---|---|

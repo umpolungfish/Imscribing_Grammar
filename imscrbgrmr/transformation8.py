@@ -25,7 +25,7 @@ from typing import Dict, List, Optional, Tuple, Any
 import numpy as np
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -42,7 +42,7 @@ from imscrbgrmr.thermodynamics import compute_eta_CP, compute_kinetic_fidelity
 @dataclass
 class DethreadingProfile:
     """Results from rotaxane dethreading scan analysis."""
-    synthon_name: str
+    imscription_name: str
     dethreading_coordinate: List[float]  # Å
     energy_profile: List[float]  # kJ/mol
     barrier_height: float  # kJ/mol
@@ -55,7 +55,7 @@ class DethreadingProfile:
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary."""
         return {
-            "synthon_name": self.synthon_name,
+            "imscription_name": self.imscription_name,
             "barrier_height": self.barrier_height,
             "plateau_length": self.plateau_length,
             "cliff_position": self.cliff_position,
@@ -68,7 +68,7 @@ class DethreadingProfile:
 def analyze_dethreading_profile(
     coordinate: List[float],
     energy: List[float],
-    synthon_name: str = "rotaxane_dethreading",
+    imscription_name: str = "rotaxane_dethreading",
 ) -> DethreadingProfile:
     """
     Analyze a rotaxane dethreading energy profile.
@@ -76,7 +76,7 @@ def analyze_dethreading_profile(
     Args:
         coordinate: Dethreading coordinate (N···centroid distance) in Å
         energy: Energy profile in kJ/mol
-        synthon_name: Name for the synthon
+        imscription_name: Name for the imscription
     
     Returns:
         DethreadingProfile with analysis results
@@ -122,7 +122,7 @@ def analyze_dethreading_profile(
     }
     
     return DethreadingProfile(
-        synthon_name=synthon_name,
+        imscription_name=imscription_name,
         dethreading_coordinate=coordinate.tolist(),
         energy_profile=energy.tolist(),
         barrier_height=barrier_height,
@@ -134,19 +134,19 @@ def analyze_dethreading_profile(
     )
 
 
-def create_rotaxane_synthon(
+def create_rotaxane_imscription(
     name: str = "db24c8_ammonium_rotaxane",
     barrier_height: Optional[float] = None,
-) -> Synthon:
+) -> Imscription:
     """
-    Create a Synthon representing a mechanical bond rotaxane system.
+    Create a Imscription representing a mechanical bond rotaxane system.
     
     Args:
-        name: Synthon name
+        name: Imscription name
         barrier_height: Optional dethreading barrier for K assignment
     
     Returns:
-        Synthon with R_⇔ recognition mode
+        Imscription with R_⇔ recognition mode
     """
     # Assign kinetic character from barrier
     if barrier_height is not None:
@@ -154,7 +154,7 @@ def create_rotaxane_synthon(
     else:
         k_char = KineticCharacter.MODERATE  # Default for rotaxanes
     
-    return Synthon(
+    return Imscription(
         name=name,
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,  # Macrocycle
@@ -176,7 +176,7 @@ def create_rotaxane_synthon(
 
 
 def compute_rotaxane_efficiency(
-    synthon: Synthon,
+    imscription: Imscription,
     barrier_height: float,
     information_gain: float = 5.0,  # bits (estimated)
 ) -> Dict[str, Any]:
@@ -184,7 +184,7 @@ def compute_rotaxane_efficiency(
     Compute thermodynamic efficiency for a rotaxane mechanical bond.
     
     Args:
-        synthon: Rotaxane synthon
+        imscription: Rotaxane imscription
         barrier_height: Dethreading barrier in kJ/mol
         information_gain: Information gain in bits (default: 5.0)
     
@@ -193,7 +193,7 @@ def compute_rotaxane_efficiency(
     """
     # Compute η_CP using barrier as energy cost
     result = compute_eta_CP(
-        synthon,
+        imscription,
         delta_g=barrier_height,
         information_gain=information_gain,
         use_effective_fidelity=True,
@@ -203,7 +203,7 @@ def compute_rotaxane_efficiency(
     k_char, f_kinetic = compute_kinetic_fidelity(barrier_height)
     
     return {
-        "synthon_name": synthon.name,
+        "imscription_name": imscription.name,
         "barrier_height": barrier_height,
         "eta_CP": result.eta_CP,
         "xi_CP": result.xi_CP,
@@ -212,7 +212,7 @@ def compute_rotaxane_efficiency(
         "kinetic_fidelity": f_kinetic,
         "efficiency_description": result.efficiency_description,
         "mechanical_bond_signature": (
-            "Steric cliff detected" if synthon.metadata.get("discontinuous_profile")
+            "Steric cliff detected" if imscription.metadata.get("discontinuous_profile")
             else "Continuous profile"
         ),
     }
@@ -247,7 +247,7 @@ def check_transformation8_validation(
     
     return {
         "transformation": "#8 (Mechanical Bond)",
-        "synthon": profile.synthon_name,
+        "imscription": profile.imscription_name,
         "barrier_height": profile.barrier_height,
         "barrier_in_range": indicators["barrier_in_range"],
         "plateau_length": profile.plateau_length,
@@ -308,8 +308,8 @@ if __name__ == "__main__":
     print(f"Discontinuous: {profile.is_discontinuous}")
     print(f"Criticality indicators: {profile.criticality_indicators}")
     
-    # Create synthon and validate
-    synthon = create_rotaxane_synthon(barrier_height=profile.barrier_height)
+    # Create imscription and validate
+    imscription = create_rotaxane_imscription(barrier_height=profile.barrier_height)
     validation = check_transformation8_validation(profile)
     
     print(f"\nTransformation #8 Validation: {validation['validation_status']}")

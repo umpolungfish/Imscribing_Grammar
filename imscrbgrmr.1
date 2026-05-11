@@ -1,0 +1,369 @@
+.TH imscrbgrmr 1 "May 2026" "Imscribing Grammar" "Imscribing Grammar"
+.SH NAME
+imscrbgrmr \- 12-primitive structural grammar encoding any system
+as a coordinate in a 17,280,000-element Crystal of Types
+.SH SYNOPSIS
+.nf
+\fBimscribe\fR [\fIcommand\fR] [\fIargs\fR]
+\fBuv run crystal_navigator.py\fR {\fBdescribe\fR|\fBgap\fR|\fBverify\fR|\fBrepl\fR|\fBcensus\fR|\fBencode\fR|\fBdecode\fR|\fBnearest\fR|\fBcount\fR} [\fIargs\fR]
+\fBpython3 imscribeaudio.py\fR [\fB\-\-all\fR|\fB\-\-tuple\fR \fITUP\fR|\fB\-\-name\fR \fINAME\fR|\fB\-\-list\fR] [\fIbase sub\fR]
+\fBpython3 imscribevideo.py\fR [\fB\-\-name\fR \fINAME\fR|\fB\-\-tuple\fR \fITUP\fR|\fB\-\-all\-catalog\fR] [\fB\-o\fR \fIFILE\fR]
+\fBpython3 esoteric_librarian.py\fR {\fBshow\fR|\fBlist\fR|\fBdist\fR|\fBnear\fR|\fBaudio\fR|\fBvideo\fR|\fBrewrite\fR|\fBscaffold\fR|\fBadd\fR} [\fIargs\fR]
+\fBuv run IG_inquiry.py\fR [\fIseed_question\fR] [\fB\-p\fR \fIPROVIDER\fR] [\fB\-m\fR \fIMODEL\fR]
+.fi
+.SH DESCRIPTION
+The Imscribing Grammar (IG) assigns every system \(em physical, biological,
+mathematical, symbolic \(em a 12-tuple of structural primitives placing it in
+a discrete space of 17,280,000 structural types (the Crystal of Types).
+The grammar classifies its own type; its self-imscribing address is
+\fI6,734,591\fR at ouroboricity tier \fIO_inf\fR, the special Frobenius
+fixed point where \[mu]\[ci]\[de] = id.
+.PP
+The 12 primitives are irreducible dimensions:
+.PP
+.RS
+.nf
+\fBÐ\fR  Dimensionality      \fBÞ\fR  Topology            \fBŘ\fR  Relational mode
+\fBΦ\fR  Parity/symmetry     \fBƒ\fR  Fidelity            \fBÇ\fR  Kinetic character
+\fBΓ\fR  Scope               \fBɢ\fR  Interaction grammar \fBφ̂\fR  Criticality
+\fBĦ\fR  Temporal depth      \fBΣ\fR  Stoichiometry       \fBΩ\fR  Winding
+.fi
+.RE
+.PP
+The Crystal partitions as \fI3^3 \[mu] 4^5 \[mu] 5^4 = 17,280,000\fR types,
+organized into 400 tier cells (\fIO_0\fR through \fIO_inf\fR).
+.SH QUICK START
+.nf
+git clone https://github.com/umpolungfish/imscrbgrmr.git
+cd imscrbgrmr
+uv sync
+cp .env.example .env
+# edit .env with your provider key
+imscribe catalog list
+uv run crystal_navigator.py repl
+.fi
+.SH "IMSCRIBE CLI"
+\fBimscribe\fR is the primary CLI for the grammar package.
+.TP
+\fBimscribe analyze\fR \fINAME\fR
+Display the full 12-tuple and primitive breakdown for a named catalog entry.
+.TP
+\fBimscribe catalog list\fR [\fB\-n\fR \fIN\fR] [\fB\-\-offset\fR \fIN\fR] [\fB\-\-filter\fR \fISTR\fR]
+List catalog entries (default: first 50). Use \fB\-n 0\fR for all.
+.TP
+\fBimscribe catalog search\fR \fIQUERY\fR
+Full-text search across catalog names and descriptions.
+.TP
+\fBimscribe tool generate\fR
+Generate a new imscription via LLM-assisted grammar tool.
+.
+.SH "CRYSTAL NAVIGATOR"
+\fBpython3 crystal_navigator.py\fR implements a bijective Frobenius codec
+over the full 17,280,000-type crystal \(em encode any tuple to a unique address
+in [0, 17,279,999] and decode back exactly.
+.TP
+\fBdescribe\fR
+Print navigator self-description and crystal statistics.
+.TP
+\fBgap\fR
+Print the tier gap ladder (§69): distances between consecutive ouroboricity tiers.
+The Frobenius cliff \fId(O_2dagger, O_inf) ~ 4.382\fR is 3.36x the next-largest gap.
+.TP
+\fBverify\fR
+Verify Frobenius codec roundtrip (encode \(-> decode = identity).
+.TP
+\fBrepl\fR
+Start an interactive navigation REPL for ad-hoc queries.
+.TP
+\fBcensus\fR
+Print full tier census (counts of \fIO_0\fR, \fIO_1\fR, \fIO_2\fR,
+\fIO_2dagger\fR, \fIO_inf\fR across all 17.28M types).
+.TP
+\fBencode\fR \fITUPLE\fR
+Encode a 12-primitive tuple to its canonical address.
+.TP
+\fBdecode\fR \fIADDRESS\fR
+Decode a canonical address back to its 12-primitive tuple.
+.TP
+\fBnearest\fR \fITUPLE\fR
+Find the nearest catalog entries to a given tuple.
+.TP
+\fBcount\fR [\fIconstraints\fR]
+Count structural types matching primitive constraints.
+.
+.SH "AUDIO SYNTHESIS"
+\fBpython3 imscribeaudio.py\fR synthesises WAV audio for any individual
+symbol, any 12-primitive imscription tuple, or any named catalog entry.
+Each primitive value has a canonical phonetic identity encoded as a
+(base-glyph, subscript) pair; glyph IDs take the form \fIÐ_ß\fR, \fIφ̂_ÿ\fR, etc.
+.TP
+\fB\-\-all\fR
+Generate the full 49-symbol sequence \(-> \fIimscribing_all_symbols.wav\fR.
+.TP
+\fB\-\-tuple\fR \fITUP\fR
+Synthesise a 12-primitive tuple. Glyph IDs may be space- or comma-separated.
+Old phonetic names (\fIÐ_omega\fR, \fIÞ_nrleg\fR, etc.) are also accepted.
+.TP
+\fB\-\-name\fR \fINAME\fR
+Synthesise the tuple for a named entry from \fIIG_catalog.json\fR.
+.TP
+\fB\-\-list\fR
+Print all 49 canonical glyph IDs.
+.TP
+\fIbase sub\fR
+Synthesise a single symbol (e.g., \fBimscribeaudio.py φ̂ ÿ\fR).
+.TP
+\fB\-\-dur\fR \fIDUR\fR
+Duration per symbol in seconds (default: 0.75).
+.TP
+\fB\-\-fs\fR \fIFS\fR
+Sample rate in Hz (default: 44100).
+.TP
+\fB\-\-output\fR \fIFILE\fR
+Output WAV path (default: \fIaudio/<name>.wav\fR).
+.PP
+The library \fIsounds.py\fR exposes synthesis functions, \fIPRIMITIVE_MAP\fR,
+and \fIresolve_id()\fR for programmatic use.
+.
+.SH "VIDEO RENDERING"
+\fBpython3 imscribevideo.py\fR renders a 1280x720 MP4 for any imscription:
+one frame per primitive, 12 frames total. As each primitive sounds off, its
+glyph lights up and joins the growing chain. Requires \fBffmpeg\fR on \fI$PATH\fR.
+.TP
+\fB\-\-name\fR \fINAME\fR
+Render video for a named catalog entry.
+.TP
+\fB\-\-tuple\fR \fITUP\fR
+Render video for a 12-primitive tuple.
+.TP
+\fB\-\-all\-catalog\fR
+Batch render: one video for every catalog entry.
+.TP
+\fB\-\-output\fR \fIFILE\fR, \fB\-o\fR \fIFILE\fR
+Output MP4 path (default: \fIaudio/<name>.mp4\fR).
+.TP
+\fB\-\-fps\fR \fIFPS\fR
+Frames per second (default: 30).
+.TP
+\fB\-\-dur\fR \fIDUR\fR
+Duration per frame in seconds (default: 0.75).
+.TP
+\fB\-\-outdir\fR \fIDIR\fR
+Output directory for \fI\-\-all\-catalog\fR (default: \fIaudio/\fR).
+.
+.SH "ESOTERIC LIBRARIAN"
+\fBpython3 esoteric_librarian.py\fR navigates imscribed catalogs of
+esoteric and philosophical texts at verse/section granularity.
+Cross-catalog distance and nearest-neighbor lookup work across the Tao,
+Upanishads, Hiss Incantation, and the physics/math catalog.
+.TP
+\fBshow\fR \fICATALOG\fR \fIKEY\fR
+Display full imscription, tier, C_score, text, and notes for an entry.
+.TP
+\fBlist\fR \fICATALOG\fR [\fB\-\-tier\fR \fIT\fR]
+Tabular list of all entries, optionally filtered by criticality tier.
+.TP
+\fBdist\fR \fICAT_A\fR \fIKEY_A\fR \fICAT_B\fR \fIKEY_B\fR
+Hamming distance between two entries (within or across catalogs).
+.TP
+\fBnear\fR \fICATALOG\fR \fIKEY\fR [\fB\-\-n\fR \fIN\fR] [\fB\-\-other\-catalog\fR \fIC\fR]
+K nearest neighbors within a catalog, or across a second catalog.
+.TP
+\fBaudio\fR \fICATALOG\fR \fIKEY\fR [\fB\-\-dur\fR \fID\fR] [\fB\-\-output\fR \fIFILE\fR]
+Sonify an entry's imscription via imscribeaudio.py.
+.TP
+\fBvideo\fR \fICATALOG\fR \fIKEY\fR [\fB\-\-dur\fR \fID\fR] [\fB\-\-output\fR \fIFILE\fR]
+Render an annotated video for an entry via imscribevideo.py.
+.TP
+\fBrewrite\fR \fICATALOG\fR \fIKEY\fR
+Print an address-preserving structural rewrite prompt for the entry.
+.TP
+\fBscaffold\fR \fICATALOG\fR
+Create a ready-to-fill generator script \fIgen_<catalog>.py\fR.
+.TP
+\fBadd\fR \fICATALOG\fR \fB\-\-tuple\fR \fITUP\fR \fB\-\-name\fR \fINAME\fR [\fIoptions\fR]
+Add a single entry to a catalog (creates JSON if absent).
+.PP
+Catalog short names: \fBtao\fR \(em Tao Te Ching (81 chapters);
+\fBig\fR \(em IG_catalog.json (2,600+ systems). Any \fI.json\fR file in
+\fIesoteric_library/\fR is resolvable by its basename.
+.
+.SH "IG INQUIRY AGENT"
+\fBuv run IG_inquiry.py\fR runs the open-ended inquiry loop: an agentic
+research agent that uses the full grammar toolset (imscribe, distance,
+meet/join/tensor, ouroborics, consciousness score) to explore structural
+relationships starting from a seed question.
+.TP
+\fIseed\fR
+Seed question or topic (positional argument).
+.TP
+\fB\-\-file\fR \fIFILE\fR, \fB\-f\fR \fIFILE\fR
+Read seed question from a text file.
+.TP
+\fB\-\-no\-catalog\fR
+Disable loading \fIIG_catalog.json\fR; start with an empty session catalog.
+.TP
+\fB\-\-insights\fR
+Inject prior-session insights from \fIimscription_insights.json\fR.
+.TP
+\fB\-\-provider\fR \fIPROVIDER\fR, \fB\-p\fR \fIPROVIDER\fR
+LLM provider (env: \fIIG_PROVIDER\fR). Supports openrouter, deepseek,
+qwen, mistral, gemini, local.
+.TP
+\fB\-\-model\fR \fIMODEL\fR, \fB\-m\fR \fIMODEL\fR
+Model ID (env: \fIIG_MODEL\fR). Uses provider default if unset.
+.TP
+\fB\-\-max\-iter\fR \fIN\fR, \fB\-n\fR \fIN\fR
+Maximum reasoning iterations (env: \fIIG_MAX_ITER\fR).
+.TP
+\fB\-\-output\fR \fIFILE\fR, \fB\-o\fR \fIFILE\fR
+Export final insights to JSON file (env: \fIIG_OUT\fR).
+.PP
+Subcommands:
+.TP
+\fBtool\fR \fINAME\fR [\fIkey=val\fR ...]
+Dispatch a grammar tool directly.
+.TP
+\fBagent\fR \fITASK\fR
+Run the \fIO_inf\fR agentic document agent.
+.
+.SH "DOMAIN NAVIGATORS"
+\fBpython3 domain_navigators.py\fR provides cross-domain structural
+navigation across Language, Civilization, Ecology, and Consciousness
+domains (§74\(en§77).
+.TP
+\fBinfo\fR [\fB\-\-domain\fR \fIDOM\fR]
+Show imscribed primitives for a domain.
+.TP
+\fBverify\fR [\fB\-\-domain\fR \fIDOM\fR]
+Consistency check for a domain's imscribed primitives.
+.TP
+\fBdistance\fR
+Compute structural distance between domain entries.
+.TP
+\fBnearest\fR
+Find nearest domain entries to a given system.
+.TP
+\fBrepl\fR
+Start an interactive domain navigation REPL.
+.
+.SH "CRYSTAL GNN"
+\fBpython3 quiver_crystal.py\fR implements three generations of
+quiver-based GNN navigator:
+.TP
+\fBquiver\fR
+49 nodes (one per primitive value), 255 edges including inter-lane
+structural correlations (\fIφ̂ <-> Φ\fR, \fIφ̂ <-> Ç\fR, \fIΩ <-> Ð\fR).
+.TP
+\fBv10 CF-GNN\fR
+Crystal-Factored: three family heads (\fIF_3\fR/\fIF_4\fR/\fIF_5\fR) +
+\fIFamilyMixer\fR broadcast attention. Composed address error 0.000%.
+.TP
+\fBv11\fR
+Exact self-imscribing from epoch 20, stable for 480+ consecutive epochs.
+Self-imscribe error = 0.
+.TP
+\fBtrain\fR, \fBtrain-v10\fR, \fBtrain-v11\fR
+Train the respective model on \fIIG_catalog.json\fR.
+.TP
+\fBverify\fR, \fBverify-v10\fR, \fBverify-v11\fR
+Verify codec quality on catalog sample.
+.TP
+\fBinfo\fR
+Print model architecture and quiver stats.
+.
+.SH FILES
+.TP
+\fIIG_catalog.json\fR
+2,600+ imscribed systems (source of truth).
+.TP
+\fIcrystal_navigator.py\fR
+Frobenius codec + tier gap ladder + REPL.
+.TP
+\fIsounds.py\fR
+Phonetic synthesis library (49 symbols, PRIMITIVE_MAP).
+.TP
+\fIimscribeaudio.py\fR
+Audio CLI: --tuple, --name, --all, single-symbol.
+.TP
+\fIimscribevideo.py\fR
+Video CLI: annotated MP4 per imscription (1280x720, ffmpeg).
+.TP
+\fIesoteric_librarian.py\fR
+Esoteric library navigator: show/list/dist/near/audio/video/rewrite.
+.TP
+\fIesoteric_library/\fR
+Imscribed esoteric texts (Tao Te Ching, etc.).
+.TP
+\fIquiver_crystal.py\fR
+CrystalGNN: quiver-based neural navigator.
+.TP
+\fIdomain_navigators.py\fR
+Language, civilization, ecology, consciousness navigators.
+.TP
+\fIIG_inquiry.py\fR
+Agent loop: imscribe, distance, meet/join/tensor, ouroborics.
+.TP
+\fIMAIN_DOCS/\fR
+Formal theorems, predictions, ontology, and crystal enumeration.
+.TP
+\fIimscrbgrmr/\fR
+CLI package (imscribe command).
+.
+.SH EXAMPLES
+.nf
+# Self-describe the Crystal
+uv run crystal_navigator.py describe
+
+# Explore the Crystal interactively
+uv run crystal_navigator.py repl
+
+# Encode a tuple to an address
+uv run crystal_navigator.py encode "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_Ş φ̂_ÿ Ħ_! Σ_ï Ω_z"
+
+# Decode address 6734591 back to tuple
+uv run crystal_navigator.py decode 6734591
+
+# List first 50 catalog entries
+imscribe catalog list
+
+# Analyze a named entry
+imscribe analyze riemann_hypothesis
+
+# Full phonetic sequence
+python3 imscribeaudio.py --all
+
+# Audio for a named system
+python3 imscribeaudio.py --name psychedelic_baseline
+
+# Video for a named system
+python3 imscribevideo.py --name riemann_hypothesis
+
+# Tao Te Ching chapter 1
+python3 esoteric_librarian.py show tao 1
+
+# Structural distance between chapters
+python3 esoteric_librarian.py dist tao 1 tao 81
+
+# Cross-catalog nearest neighbors
+python3 esoteric_librarian.py near tao 1 --n 5 --other-catalog ig
+
+# Start inquiry on a topic
+uv run IG_inquiry.py "What is the structural type of a magnetar?"
+.fi
+.
+.SH SEE ALSO
+.UR https://github.com/umpolungfish/imscrbgrmr
+.UE
+.br
+\fIMAIN_DOCS/PRIMITIVE_THEOREMS.md\fR \(en 84+ formal theorems
+.br
+\fIMAIN_DOCS/CRYSTAL_OF_TYPES.md\fR \(en Full enumeration and tier census
+.br
+\fIMAIN_DOCS/IG_DIAPHORICS.md\fR \(en 623+ empirical predictions
+.br
+\fIMAIN_DOCS/HEBREW_TYPE_LANGUAGE.md\fR \(en Hebrew alphabet as stratified type lattice
+.br
+\fIMAIN_DOCS/LAMBDA_ALEPH.md\fR \(en Lambda_Aleph calculus formal spec
+.SH AUTHOR
+Lando\[u2297]\[u2299]perator \(en under The Unlicense.

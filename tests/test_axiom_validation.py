@@ -2,13 +2,13 @@
 Test axiom validation in autonomous discovery agent.
 
 This test verifies that the autonomous discovery agent correctly rejects
-synthons with axiom violations, specifically:
+imscriptions with axiom violations, specifically:
 - Axiom 4: Sequential grammar requires temporal or catalytic dimension
-- Axiom 1: Cyclic self-complementary synthons cannot have low fidelity
+- Axiom 1: Cyclic self-complementary imscriptions cannot have low fidelity
 """
 import asyncio
 from imscrbgrmr import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar,
     KineticCharacter, CriticalityPhase,
     global_catalog,
@@ -22,9 +22,9 @@ def test_axiom4_violation_detection():
     print("TEST: Axiom 4 Violation Detection")
     print("="*70)
     
-    # Create a synthon with sequential grammar but NO temporal or catalytic dimension
+    # Create a imscription with sequential grammar but NO temporal or catalytic dimension
     # This should violate Axiom 4
-    invalid_synthon = Synthon(
+    invalid_imscription = Imscription(
         name="test_invalid_sequential",
         dimensionality=Dimensionality.SUPRAMOLECULAR,  # D_turnthree - NOT temporal
         topology=Topology.CYCLIC_BOWTIE,
@@ -37,10 +37,10 @@ def test_axiom4_violation_detection():
     )
     
     # Validate axiom 4
-    axiom4_report = AxiomValidator.validate_axiom4_sequential_grammar(invalid_synthon)
+    axiom4_report = AxiomValidator.validate_axiom4_sequential_grammar(invalid_imscription)
     
-    print(f"Synthon: {invalid_synthon.name}")
-    print(f"Notation: {invalid_synthon.to_notation()}")
+    print(f"Imscription: {invalid_imscription.name}")
+    print(f"Notation: {invalid_imscription.to_notation()}")
     print(f"Axiom 4 applies: {axiom4_report['applies']}")
     print(f"Axiom 4 satisfied: {axiom4_report.get('axiom_satisfied', 'N/A')}")
     print(f"Axiom 4 violated: {axiom4_report.get('violated', False)}")
@@ -49,8 +49,8 @@ def test_axiom4_violation_detection():
     assert axiom4_report.get("violated") == True, "Axiom 4 should be violated"
     print("✓ Axiom 4 violation correctly detected!")
     
-    # Now test a VALID sequential synthon (with temporal dimension)
-    valid_synthon = Synthon(
+    # Now test a VALID sequential imscription (with temporal dimension)
+    valid_imscription = Imscription(
         name="test_valid_sequential",
         dimensionality=Dimensionality.TEMPORAL,  # D_infinity - HAS temporal
         topology=Topology.CYCLIC_BOWTIE,
@@ -62,15 +62,15 @@ def test_axiom4_violation_detection():
         interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
     )
     
-    axiom4_report_valid = AxiomValidator.validate_axiom4_sequential_grammar(valid_synthon)
+    axiom4_report_valid = AxiomValidator.validate_axiom4_sequential_grammar(valid_imscription)
     
-    print(f"\nValid synthon: {valid_synthon.name}")
-    print(f"Notation: {valid_synthon.to_notation()}")
+    print(f"\nValid imscription: {valid_imscription.name}")
+    print(f"Notation: {valid_imscription.to_notation()}")
     print(f"Axiom 4 satisfied: {axiom4_report_valid.get('axiom_satisfied', False)}")
     print(f"Axiom 4 violated: {axiom4_report_valid.get('violated', False)}")
     
-    assert axiom4_report_valid.get("violated") == False, "Valid synthon should not violate Axiom 4"
-    print("✓ Valid sequential synthon correctly passes Axiom 4!")
+    assert axiom4_report_valid.get("violated") == False, "Valid imscription should not violate Axiom 4"
+    print("✓ Valid sequential imscription correctly passes Axiom 4!")
     
     return True
 
@@ -81,9 +81,9 @@ def test_axiom1_violation_detection():
     print("TEST: Axiom 1 Violation Detection")
     print("="*70)
     
-    # Create a cyclic self-complementary synthon with LOW fidelity
+    # Create a cyclic self-complementary imscription with LOW fidelity
     # This should violate Axiom 1
-    invalid_synthon = Synthon(
+    invalid_imscription = Imscription(
         name="test_invalid_cyclic_low_fid",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,  # T_bullseye - cyclic
@@ -96,10 +96,10 @@ def test_axiom1_violation_detection():
     )
     
     # Validate axiom 1
-    axiom1_report = AxiomValidator.validate_axiom1_cyclic_closure(invalid_synthon)
+    axiom1_report = AxiomValidator.validate_axiom1_cyclic_closure(invalid_imscription)
     
-    print(f"Synthon: {invalid_synthon.name}")
-    print(f"Notation: {invalid_synthon.to_notation()}")
+    print(f"Imscription: {invalid_imscription.name}")
+    print(f"Notation: {invalid_imscription.to_notation()}")
     print(f"Axiom 1 applies: {axiom1_report['applies']}")
     print(f"Axiom 1 violated: {axiom1_report.get('violated', False)}")
     
@@ -107,8 +107,8 @@ def test_axiom1_violation_detection():
     assert axiom1_report.get("violated") == True, "Axiom 1 should be violated with low fidelity"
     print("✓ Axiom 1 violation correctly detected!")
     
-    # Now test a VALID cyclic synthon (with medium/high fidelity)
-    valid_synthon = Synthon(
+    # Now test a VALID cyclic imscription (with medium/high fidelity)
+    valid_imscription = Imscription(
         name="test_valid_cyclic",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,
@@ -120,14 +120,14 @@ def test_axiom1_violation_detection():
         interaction_grammar=InteractionGrammar.SPECIFIC_AND,
     )
     
-    axiom1_report_valid = AxiomValidator.validate_axiom1_cyclic_closure(valid_synthon)
+    axiom1_report_valid = AxiomValidator.validate_axiom1_cyclic_closure(valid_imscription)
     
-    print(f"\nValid synthon: {valid_synthon.name}")
-    print(f"Notation: {valid_synthon.to_notation()}")
+    print(f"\nValid imscription: {valid_imscription.name}")
+    print(f"Notation: {valid_imscription.to_notation()}")
     print(f"Axiom 1 violated: {axiom1_report_valid.get('violated', False)}")
     
-    assert axiom1_report_valid.get("violated") == False, "Valid synthon should not violate Axiom 1"
-    print("✓ Valid cyclic synthon correctly passes Axiom 1!")
+    assert axiom1_report_valid.get("violated") == False, "Valid imscription should not violate Axiom 1"
+    print("✓ Valid cyclic imscription correctly passes Axiom 1!")
     
     return True
 
@@ -143,8 +143,8 @@ def test_false_positive_prevention():
     # If it was assigned Gamma_seq (sequential) without temporal/catalytic,
     # it should be caught by Axiom 4
     
-    cavitand_with_wrong_assignment = Synthon(
-        name="nitroso_radical_calix[4]resorcinarene_anion_pi_cavitand_synthon",
+    cavitand_with_wrong_assignment = Imscription(
+        name="nitroso_radical_calix[4]resorcinarene_anion_pi_cavitand_imscription",
         dimensionality=Dimensionality.SUPRAMOLECULAR,  # Purely spatial, NOT temporal
         topology=Topology.CYCLIC_BOWTIE,
         recognition_mode=RecognitionMode.NON_COVALENT,  # NOT catalytic
@@ -157,7 +157,7 @@ def test_false_positive_prevention():
     
     axiom4_report = AxiomValidator.validate_axiom4_sequential_grammar(cavitand_with_wrong_assignment)
     
-    print(f"Synthon: {cavitand_with_wrong_assignment.name}")
+    print(f"Imscription: {cavitand_with_wrong_assignment.name}")
     print(f"Notation: {cavitand_with_wrong_assignment.to_notation()}")
     print(f"Axiom 4 applies: {axiom4_report['applies']}")
     print(f"Axiom 4 violated: {axiom4_report.get('violated', False)}")
@@ -216,10 +216,10 @@ async def main():
     if all_passed:
         print("✓ All axiom validation tests passed!")
         print("\nThe autonomous discovery agent will now:")
-        print("  1. Validate all synthons against Axioms 1 and 4 before registration")
-        print("  2. Reject synthons with Axiom 4 violations (sequential without temporal/catalytic)")
-        print("  3. Reject synthons with Axiom 1 violations (cyclic self-comp with low fidelity)")
-        print("  4. Flag synthons with other axiom violations for review")
+        print("  1. Validate all imscriptions against Axioms 1 and 4 before registration")
+        print("  2. Reject imscriptions with Axiom 4 violations (sequential without temporal/catalytic)")
+        print("  3. Reject imscriptions with Axiom 1 violations (cyclic self-comp with low fidelity)")
+        print("  4. Flag imscriptions with other axiom violations for review")
         print("\nThis prevents false 100% matches from incorrect primitive assignments.")
     else:
         print("✗ Some tests failed - review needed")

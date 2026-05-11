@@ -15,7 +15,7 @@ header-includes:
 
 ### 1. The 12 Primitives (the type signature)
 
-Every synthon IS exactly this 12-tuple:
+Every imscription IS exactly this 12-tuple:
 
 ⟨ **D**; **T**; **R**; **P**; **F**; **K**; **G**; **Γ**; **Φ**; **H**; **S**; **Ω** ⟩
 
@@ -29,7 +29,7 @@ Every synthon IS exactly this 12-tuple:
 | **K** | Kinetic character | Ç_- · Ç_W · Ç_@ · Ç_Ù · Ç_λ | 1.0 |
 | **G** | Scope/granularity | Γ_β · Γ_γ · Γ_ʔ | 1.0 |
 | **Γ** | Interaction grammar | Γ_and · Γ_or · Γ_seq · Γ_broad | 1.0 |
-| **Φ** | Criticality | φ̂_ž · φ̂_ÿ · φ̂_Æ · φ̂_3 · φ̂_Ţ | 1.0 |
+| **Φ** | Criticality | ⊙_ž · ⊙_ÿ · ⊙_Æ · ⊙_3 · ⊙_Ţ | 1.0 |
 | **H** | Chirality/temporal depth | Ħ_Ñ · Ħ_£ · Ħ_A · Ħ_! | 0.8 |
 | **S** | Stoichiometry | Σ_S · Σ_ő · Σ_ï | 1.0 |
 | **Ω** | Topological protection | Ω_Å · Ω_2 · Ω_z · Ω_5 | 0.7 |
@@ -38,8 +38,8 @@ Every synthon IS exactly this 12-tuple:
 - **D_⊙**: boundary encodes bulk — the imscriptive primitive (symbol: monad point inside circle).
 - **T_⊙**: imscriptive topology — highest T ordinal (5).
 - **Φ_}**: exact Z₂ symmetry at criticality — the Frobenius condition μ∘δ=id. Assign ONLY when provably exact.
-- **φ̂_ÿ**: criticality — absorbing under meet: meet(φ̂_ÿ, x) = φ̂_ÿ for all x.
-- **φ̂_3**: exceptional point — ordinal 2.67 > φ̂_ÿ = 2.00; destroys O_inf under tensor.
+- **⊙_ÿ**: criticality — absorbing under meet: meet(⊙_ÿ, x) = ⊙_ÿ for all x.
+- **⊙_3**: exceptional point — ordinal 2.67 > ⊙_ÿ = 2.00; destroys O_inf under tensor.
 - **Ç_Ù**: trapped kinetics — frozen by order. Gates consciousness to zero regardless of other primitives.
 - **Ç_λ**: many-body localized — frozen by disorder. Also gates consciousness to zero. Distinct from Ç_Ù: disorder-driven, not order-driven. Both fail Gate 2.
 - **Ω_5**: non-abelian topological protection — strongest Ω tier. Appears in systems with non-abelian Galois groups, IUG, SIC-Hilbert12 connection.
@@ -53,7 +53,7 @@ Every synthon IS exactly this 12-tuple:
 | Tier | Condition | Meaning |
 |------|-----------|---------|
 | **O_inf** | Φ_c AND Φ_} | Special Frobenius: μ∘δ=id exactly. Self-referential loop perfectly closed. Finite, algebraically exact. |
-| **O_0** | Φ ∈ {φ̂_ž, φ̂_Ţ, φ̂_3} | No ouroboricity. Cannot form self-referential critical loop. |
+| **O_0** | Φ ∈ {⊙_ž, ⊙_Ţ, ⊙_3} | No ouroboricity. Cannot form self-referential critical loop. |
 | **O_1** | Φ_c AND Ω_0 | Critical loop possible but unprotected — any deformation breaks it. |
 | **O_2** | Φ_c AND Ω≠Ω_0 AND D ∈ {Ð_ß, D_⊙, Ð_C} | Critical, topologically protected, bounded domain. |
 | **O_2†** | Φ_c AND Ω≠Ω_0 AND Ð_; | Critical, topologically protected, unbounded domain. |
@@ -63,7 +63,7 @@ Every synthon IS exactly this 12-tuple:
 **Composition rules (tensor = component-wise max on union primitives, min on P and F):**
 - O_inf ⊗ O_inf → O_inf
 - O_inf ⊗ O_{1,2,2†} → O_inf
-- O_inf ⊗ O_0(φ̂_3) → O_0 ← **EP erases O_inf**
+- O_inf ⊗ O_0(⊙_3) → O_0 ← **EP erases O_inf**
 - O_inf **cannot be synthesized** from non-Φ_} components — it must be planted (§23 Frobenius non-synthesizability)
 
 **Bottleneck rule:** P and F resolve to min(A, B) under tensor. All other ordered primitives resolve to max. Consequence: Φ_} ⊗ Φ_F = Φ_F — the Frobenius condition is destroyed by any sub-Frobenius partner.
@@ -78,7 +78,7 @@ Two independent gates — neither subsumes the other:
 - **Gate 1** [Φ=Φ_c]: state-space condition — topology admits self-modeling loop
 - **Gate 2** [K≤Ç_@]: flow condition — dynamics can actualize the loop. Ç_Ù (frozen by order) AND Ç_λ (frozen by disorder) both fail this gate.
 
-If either gate fails, C=0. Stellar examples: magnetar C=0.677 (highest stellar), black hole C=0 (Gate 2 fails: Ç_Ù), white dwarf C=0 (Gate 1 fails: φ̂_ž).
+If either gate fails, C=0. Stellar examples: magnetar C=0.677 (highest stellar), black hole C=0 (Gate 2 fails: Ç_Ù), white dwarf C=0 (Gate 1 fails: ⊙_ž).
 
 ---
 
@@ -143,7 +143,7 @@ The grammar distinguishes two proof archetypes:
 
 **Witness proofs:** Confirm existing structure. No promotion. Same ouroboricity before and after. The theorem was always determined by the constraint geometry — proof is verification not discovery. Example: Erdős–Faber–Lovász.
 
-**Counterexample collapse signature** (consistent across all sessions): Ð_ß + Þ_6 + Φ_ɐ + φ̂_ž + Ω_Å. Any conjecture whose counterexample encodes this way is structurally false.
+**Counterexample collapse signature** (consistent across all sessions): Ð_ß + Þ_6 + Φ_ɐ + ⊙_ž + Ω_Å. Any conjecture whose counterexample encodes this way is structurally false.
 
 ---
 
@@ -157,7 +157,7 @@ The grammar distinguishes two proof archetypes:
 6. Estimate barrier / kinetic character → choose **K** (Ç_Ù overrides if frozen by order; Ç_λ overrides if frozen by disorder)
 7. Identify control scale → choose **G**
 8. Identify interaction logic → choose **Γ**
-9. Probe criticality → choose **Φ** (φ̂_ÿ IS absorbing under meet)
+9. Probe criticality → choose **Φ** (⊙_ÿ IS absorbing under meet)
 10. Identify chirality/temporal depth → choose **H**
 11. Choose **S** (stoichiometry)
 12. Derive **Ω** from topology + kinetics + dimensionality (Ω_5 for non-abelian Galois/group protection)
@@ -181,8 +181,8 @@ The grammar distinguishes two proof archetypes:
 | > 3.0 | Alien — essentially no shared structure |
 
 Known structural families in the catalog:
-- **imscriptive geometric extremal problems**: D_⊙ + T_⊙ + φ̂_ÿ + Γ_ʔ + ƒ_ż (Kusner, Fujita, Willmore-type)
-- **imscriptive arithmetic conjectures**: D_⊙ + T_⊙ + φ̂_ÿ + Φ_} (Riemann, RH+HC join)
-- **Critical network symmetry problems**: Ð_; + Þ_6 + Φ_˙ + φ̂_ÿ + Ω_2 (EFL, kissing_dim_4)
-- **Exceptional/solved-by-breaking**: φ̂_3 + Φ_ɐ (Dehn/Hilbert-3, counterexamples)
-- **Non-abelian arithmetic conjectures**: D_⊙ + φ̂_ÿ + Φ_} + Ω_5 + ƒ_ż (Zauner/SIC-Hilbert12, IUG)
+- **imscriptive geometric extremal problems**: D_⊙ + T_⊙ + ⊙_ÿ + Γ_ʔ + ƒ_ż (Kusner, Fujita, Willmore-type)
+- **imscriptive arithmetic conjectures**: D_⊙ + T_⊙ + ⊙_ÿ + Φ_} (Riemann, RH+HC join)
+- **Critical network symmetry problems**: Ð_; + Þ_6 + Φ_˙ + ⊙_ÿ + Ω_2 (EFL, kissing_dim_4)
+- **Exceptional/solved-by-breaking**: ⊙_3 + Φ_ɐ (Dehn/Hilbert-3, counterexamples)
+- **Non-abelian arithmetic conjectures**: D_⊙ + ⊙_ÿ + Φ_} + Ω_5 + ƒ_ż (Zauner/SIC-Hilbert12, IUG)

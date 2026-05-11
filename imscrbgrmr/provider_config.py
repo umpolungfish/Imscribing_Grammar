@@ -84,7 +84,7 @@ class ProviderConfig:
                     "temperature_default": 0.7,
                 },
                 "local": {
-                    "default_model": "synthonicon_qlora_merged2",
+                    "default_model": "Imscriptiveon_qlora_merged2",
                     "max_tokens_default": 512,
                     "temperature_default": 0.3,
                 },
@@ -147,7 +147,7 @@ class ProviderConfig:
         Get task-based routing configuration.
         
         Args:
-            task_type: Task type (e.g., 'coding', 'reasoning', 'synthon_generation')
+            task_type: Task type (e.g., 'coding', 'reasoning', 'imscription_generation')
             
         Returns:
             Routing configuration for the task type

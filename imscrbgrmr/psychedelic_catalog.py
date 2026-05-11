@@ -1,18 +1,18 @@
 """
-Psychedelic Synthon Catalog — v0.4.9
+Psychedelic Imscription Catalog — v0.4.9
 
-Six classic psychedelic compounds encoded as synthons in the 10-primitive framework,
+Six classic psychedelic compounds encoded as imscriptions in the 10-primitive framework,
 each with dual-layer encoding:
 
-  (i)  Molecular synthon — the ligand as a chemical recognition agent
+  (i)  Molecular imscription — the ligand as a chemical recognition agent
          (receptor binding topology, fidelity, kinetics, grammar)
 
-  (ii) Brain-state synthon — the induced CNS constraint-propagation state
+  (ii) Brain-state imscription — the induced CNS constraint-propagation state
          (whole-brain network primitives, Φ_c conditions, K-hierarchy disruption)
 
-The two layers are coupled: the molecular synthon is the coupling agent that
+The two layers are coupled: the molecular imscription is the coupling agent that
 translates molecular grammar into whole-brain network grammar shift. The brain-state
-synthon is what the nervous system BECOMES while the molecular synthon is active.
+imscription is what the nervous system BECOMES while the molecular imscription is active.
 
 **The shared observation:** All six compounds induce CriticalityPhase.CRITICAL in the
 target system, via different receptor grammars and with different kinetic profiles.
@@ -34,7 +34,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -48,14 +48,14 @@ from .models import (
 from .registry import global_catalog
 
 _PSYCHEDELIC_NAMES = frozenset([
-    # Molecular synthons
+    # Molecular imscriptions
     "lsd_molecular",
     "dmt_molecular",
     "five_meo_dmt_molecular",
     "psilocin_molecular",
     "mescaline_molecular",
     "salvinorin_a_molecular",
-    # Brain-state synthons
+    # Brain-state imscriptions
     "lsd_brain_state",
     "dmt_brain_state",
     "five_meo_dmt_brain_state",
@@ -65,9 +65,9 @@ _PSYCHEDELIC_NAMES = frozenset([
 ])
 
 
-def register_psychedelic_synthons() -> List[str]:
+def register_psychedelic_imscriptions() -> List[str]:
     """
-    Register 12 psychedelic synthons (6 molecular + 6 brain-state) into the global catalog.
+    Register 12 psychedelic imscriptions (6 molecular + 6 brain-state) into the global catalog.
 
     Safe to call multiple times (idempotent). Refreshes metadata on already-present entries.
 
@@ -77,11 +77,11 @@ def register_psychedelic_synthons() -> List[str]:
     entries = _build_entries()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s)
             registered.append(s.name)
         else:
-            existing = global_catalog._synthons[s.name]
+            existing = global_catalog._imscriptions[s.name]
             if hasattr(existing, "metadata") and isinstance(existing.metadata, dict):
                 existing.metadata.update(s.metadata)
     return registered
@@ -91,16 +91,16 @@ def register_psychedelic_synthons() -> List[str]:
 # Entry builders
 # ---------------------------------------------------------------------------
 
-def _build_entries() -> List[Synthon]:
+def _build_entries() -> List[Imscription]:
     return [
-        # ── Molecular synthons ─────────────────────────────────────────────
+        # ── Molecular imscriptions ─────────────────────────────────────────────
         _lsd_molecular(),
         _dmt_molecular(),
         _five_meo_dmt_molecular(),
         _psilocin_molecular(),
         _mescaline_molecular(),
         _salvinorin_a_molecular(),
-        # ── Brain-state synthons ───────────────────────────────────────────
+        # ── Brain-state imscriptions ───────────────────────────────────────────
         _lsd_brain_state(),
         _dmt_brain_state(),
         _five_meo_dmt_brain_state(),
@@ -115,9 +115,9 @@ def _build_entries() -> List[Synthon]:
 # SMILES: CCN(CC)C(=O)[C@@H]1CN(C)[C@@H]2Cc3c[nH]c4cccc(c34)[C@@H]2C1
 # ===========================================================================
 
-def _lsd_molecular() -> Synthon:
+def _lsd_molecular() -> Imscription:
     """
-    LSD as a molecular receptor-binding synthon.
+    LSD as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_∈; R_nc; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
@@ -137,7 +137,7 @@ def _lsd_molecular() -> Synthon:
         Φ_c — fMRI Lempel-Ziv complexity and BOLD entropy increase confirmed;
             neural criticality measures (avalanche size distribution power-law) positive.
     """
-    return Synthon(
+    return Imscription(
         name="lsd_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.NETWORK,
@@ -174,7 +174,7 @@ def _lsd_molecular() -> Synthon:
             ),
             "endogenous": False,
             "nitrogen_present": True,
-            "brain_state_synthon": "lsd_brain_state",
+            "brain_state_imscription": "lsd_brain_state",
             "stellar_grammar_note": (
                 "Solar-grammar compound: acts via serotonin system which evolved under "
                 "solar grammar templating. Amplifies the G_ℵ coupling channel."
@@ -184,11 +184,11 @@ def _lsd_molecular() -> Synthon:
     )
 
 
-def _lsd_brain_state() -> Synthon:
+def _lsd_brain_state() -> Imscription:
     """
     The CNS network state induced by LSD.
 
-    The brain under LSD is not the same system as the brain at rest. This synthon
+    The brain under LSD is not the same system as the brain at rest. This imscription
     encodes the whole-brain constraint-propagation structure during peak LSD state.
 
     Formal tuple:
@@ -210,7 +210,7 @@ def _lsd_brain_state() -> Synthon:
             intrinsically topologically protected; it will collapse when the molecule
             is cleared. (This is what §XIX T_braid engineering aims to make permanent.)
     """
-    return Synthon(
+    return Imscription(
         name="lsd_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -239,7 +239,7 @@ def _lsd_brain_state() -> Synthon:
                 "Global functional connectivity increase (Tagliazucchi et al. 2016)",
                 "Neural avalanche power-law shift toward critical exponent",
             ],
-            "molecular_synthon": "lsd_molecular",
+            "molecular_imscription": "lsd_molecular",
             "topo_protection_index": 1,
             "t_braid_upgrade_target": True,
             "validation_tier": "primary",
@@ -252,9 +252,9 @@ def _lsd_brain_state() -> Synthon:
 # SMILES: CN(C)CCc1c[nH]c2ccccc12
 # ===========================================================================
 
-def _dmt_molecular() -> Synthon:
+def _dmt_molecular() -> Imscription:
     """
-    DMT as a molecular receptor-binding synthon.
+    DMT as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
@@ -277,7 +277,7 @@ def _dmt_molecular() -> Synthon:
             introducing a foreign grammar — it is overwhelming the normal operating
             level of an endogenous compound.
     """
-    return Synthon(
+    return Imscription(
         name="dmt_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.NETWORK,
@@ -327,13 +327,13 @@ def _dmt_molecular() -> Synthon:
                 "This may explain the unusual cellular protection effects of DMT."
             ),
             "nitrogen_present": True,
-            "brain_state_synthon": "dmt_brain_state",
+            "brain_state_imscription": "dmt_brain_state",
             "validation_tier": "primary",
         },
     )
 
 
-def _dmt_brain_state() -> Synthon:
+def _dmt_brain_state() -> Imscription:
     """
     The CNS network state induced by DMT.
 
@@ -347,7 +347,7 @@ def _dmt_brain_state() -> Synthon:
     what is the minimum time required to achieve the G_ℵ / T_nrleg / Φ_c state?
     Empirically: approximately 3-5 minutes post-inhalation.
     """
-    return Synthon(
+    return Imscription(
         name="dmt_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -376,7 +376,7 @@ def _dmt_brain_state() -> Synthon:
                 "Theta increase (memory/navigation network engagement)",
             ],
             "minimum_phi_c_induction_time_min": 3,
-            "molecular_synthon": "dmt_molecular",
+            "molecular_imscription": "dmt_molecular",
             "topo_protection_index": 0,
             "t_braid_upgrade_target": True,
             "comparison_note": (
@@ -395,9 +395,9 @@ def _dmt_brain_state() -> Synthon:
 # SMILES: CN(C)CCc1c[nH]c2cc(OC)ccc12
 # ===========================================================================
 
-def _five_meo_dmt_molecular() -> Synthon:
+def _five_meo_dmt_molecular() -> Imscription:
     """
-    5-MeO-DMT as a molecular receptor-binding synthon.
+    5-MeO-DMT as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
@@ -420,7 +420,7 @@ def _five_meo_dmt_molecular() -> Synthon:
 
         Both are endogenous (5-MeO-DMT found in mammalian CSF and glands).
     """
-    return Synthon(
+    return Imscription(
         name="five_meo_dmt_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.NETWORK,
@@ -464,13 +464,13 @@ def _five_meo_dmt_molecular() -> Synthon:
                 "Both reach Φ_c. The path to criticality diverges at the Γ operator."
             ),
             "nitrogen_present": True,
-            "brain_state_synthon": "five_meo_dmt_brain_state",
+            "brain_state_imscription": "five_meo_dmt_brain_state",
             "validation_tier": "primary",
         },
     )
 
 
-def _five_meo_dmt_brain_state() -> Synthon:
+def _five_meo_dmt_brain_state() -> Imscription:
     """
     The CNS network state induced by 5-MeO-DMT.
 
@@ -491,7 +491,7 @@ def _five_meo_dmt_brain_state() -> Synthon:
     condition (Φ_c at its limit) — the state where G_ℵ and D_∞ cannot be
     independently assigned because scale and time structure have both collapsed.
     """
-    return Synthon(
+    return Imscription(
         name="five_meo_dmt_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK_SYM,
@@ -528,7 +528,7 @@ def _five_meo_dmt_brain_state() -> Synthon:
                 "The phenomenological report 'there was nothing, and then there was everything' "
                 "is a description of the G/D degeneracy boundary from the inside."
             ),
-            "molecular_synthon": "five_meo_dmt_molecular",
+            "molecular_imscription": "five_meo_dmt_molecular",
             "topo_protection_index": 0,
             "t_braid_upgrade_target": True,
             "validation_tier": "primary",
@@ -542,9 +542,9 @@ def _five_meo_dmt_brain_state() -> Synthon:
 # Psilocybin SMILES (prodrug): CN(C)CCc1c[nH]c2cc(OP(=O)(O)O)ccc12
 # ===========================================================================
 
-def _psilocin_molecular() -> Synthon:
+def _psilocin_molecular() -> Imscription:
     """
-    Psilocin (active form of psilocybin) as a molecular receptor-binding synthon.
+    Psilocin (active form of psilocybin) as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
@@ -564,9 +564,9 @@ def _psilocin_molecular() -> Synthon:
             The 4-OH group provides a precise hydrogen bond geometry that
             tightens selectivity.
         The prodrug architecture (psilocybin) is encodable as a separate
-        kinetic-modifier synthon: psilocybin = psilocin + K_mod_phosphate_gate.
+        kinetic-modifier imscription: psilocybin = psilocin + K_mod_phosphate_gate.
     """
-    return Synthon(
+    return Imscription(
         name="psilocin_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.NETWORK,
@@ -605,7 +605,7 @@ def _psilocin_molecular() -> Synthon:
             ),
             "endogenous": False,
             "nitrogen_present": True,
-            "brain_state_synthon": "psilocin_brain_state",
+            "brain_state_imscription": "psilocin_brain_state",
             "clinical_note": (
                 "Most studied psychedelic in clinical trials (depression, addiction). "
                 "The K_turnm window (sustained, not overwhelming) is a clinical asset — "
@@ -616,7 +616,7 @@ def _psilocin_molecular() -> Synthon:
     )
 
 
-def _psilocin_brain_state() -> Synthon:
+def _psilocin_brain_state() -> Imscription:
     """
     The CNS network state induced by psilocin/psilocybin.
 
@@ -630,7 +630,7 @@ def _psilocin_brain_state() -> Synthon:
     memory reconsolidation processes (K_schwa memory encoding requires ~4 hr),
     short enough to avoid the fatigue of LSD's 12-hr K_schwa.
     """
-    return Synthon(
+    return Imscription(
         name="psilocin_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -666,7 +666,7 @@ def _psilocin_brain_state() -> Synthon:
                 "requires prior K_turnm unlocking). The drug opens the window; the therapy "
                 "determines what is written into it."
             ),
-            "molecular_synthon": "psilocin_molecular",
+            "molecular_imscription": "psilocin_molecular",
             "topo_protection_index": 0,
             "t_braid_upgrade_target": True,
             "validation_tier": "primary",
@@ -679,9 +679,9 @@ def _psilocin_brain_state() -> Synthon:
 # SMILES: COc1cc(CCN)cc(OC)c1OC
 # ===========================================================================
 
-def _mescaline_molecular() -> Synthon:
+def _mescaline_molecular() -> Imscription:
     """
-    Mescaline as a molecular receptor-binding synthon.
+    Mescaline as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_|; R_nc; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
@@ -707,7 +707,7 @@ def _mescaline_molecular() -> Synthon:
             molecular grammar. This is a Γ-convergent result: different scaffolds,
             different molecular topologies, same Φ_c destination at the brain level.
     """
-    return Synthon(
+    return Imscription(
         name="mescaline_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
@@ -756,13 +756,13 @@ def _mescaline_molecular() -> Synthon:
                 "the cultural grammar determines what is encoded."
             ),
             "nitrogen_present": True,
-            "brain_state_synthon": "mescaline_brain_state",
+            "brain_state_imscription": "mescaline_brain_state",
             "validation_tier": "primary",
         },
     )
 
 
-def _mescaline_brain_state() -> Synthon:
+def _mescaline_brain_state() -> Imscription:
     """
     The CNS network state induced by mescaline.
 
@@ -778,7 +778,7 @@ def _mescaline_brain_state() -> Synthon:
     less extreme depth. The geometry of Φ_c is the same; the dimensionality of
     the content within it is higher.
     """
-    return Synthon(
+    return Imscription(
         name="mescaline_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -813,7 +813,7 @@ def _mescaline_brain_state() -> Synthon:
                 "more sensory channels open, but each individual channel less pushed "
                 "toward G/D degeneracy."
             ),
-            "molecular_synthon": "mescaline_molecular",
+            "molecular_imscription": "mescaline_molecular",
             "topo_protection_index": 0,
             "t_braid_upgrade_target": True,
             "validation_tier": "primary",
@@ -826,9 +826,9 @@ def _mescaline_brain_state() -> Synthon:
 # SMILES: [C@@H]1([C@H](OC(C)=O)[C@H]2CC(=O)O[C@@H]([C@@H]3[C@@H]([C@@H]12)C(=O)OC)OC(c4ccoc4)=O)
 # ===========================================================================
 
-def _salvinorin_a_molecular() -> Synthon:
+def _salvinorin_a_molecular() -> Imscription:
     """
-    Salvinorin A as a molecular receptor-binding synthon.
+    Salvinorin A as a molecular receptor-binding imscription.
 
     Formal tuple:
         ⟨D_∧; T_⋈; R_nc; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
@@ -864,7 +864,7 @@ def _salvinorin_a_molecular() -> Synthon:
     orthogonal receptor grammar. The KOR path to criticality is as valid as the
     5-HT2A path. There is no single grammar that owns the Φ_c state.
     """
-    return Synthon(
+    return Imscription(
         name="salvinorin_a_molecular",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,
@@ -918,13 +918,13 @@ def _salvinorin_a_molecular() -> Synthon:
                 "from peyote/mushroom experiences. Framework confirms: orthogonal Γ "
                 "produces orthogonal content character, despite same Φ_c topology."
             ),
-            "brain_state_synthon": "salvinorin_a_brain_state",
+            "brain_state_imscription": "salvinorin_a_brain_state",
             "validation_tier": "primary",
         },
     )
 
 
-def _salvinorin_a_brain_state() -> Synthon:
+def _salvinorin_a_brain_state() -> Imscription:
     """
     The CNS network state induced by Salvinorin A.
 
@@ -941,7 +941,7 @@ def _salvinorin_a_brain_state() -> Synthon:
     the broad simultaneous multi-channel activation of serotonergic states.
     High precision, narrow channel, extreme depth.
     """
-    return Synthon(
+    return Imscription(
         name="salvinorin_a_brain_state",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -979,7 +979,7 @@ def _salvinorin_a_brain_state() -> Synthon:
                 "wide/shallow), LSD (Γ_BROAD → wide/deep), DMT (Γ_SELECTIVE → "
                 "moderate/very deep), salvinorin A (Γ_SPECIFIC → narrow/extremely deep)."
             ),
-            "molecular_synthon": "salvinorin_a_molecular",
+            "molecular_imscription": "salvinorin_a_molecular",
             "topo_protection_index": 0,
             "t_braid_upgrade_target": True,
             "validation_tier": "primary",

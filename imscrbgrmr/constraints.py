@@ -1,5 +1,5 @@
 """
-Constraint Propagation Engine — Core logic for synthon compatibility and propagation.
+Constraint Propagation Engine — Core logic for imscription compatibility and propagation.
 
 This module implements:
 - Constraint satisfaction checking
@@ -13,7 +13,7 @@ from typing import Dict, List, Optional, Set, Tuple, Any, Union
 from enum import Enum
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     Recognition,
@@ -164,10 +164,10 @@ class CompatibilityResult(Enum):
 
 @dataclass
 class CompatibilityReport:
-    """Report on synthon compatibility."""
+    """Report on imscription compatibility."""
     result: CompatibilityResult
-    synthon_a: str
-    synthon_b: str
+    imscription_a: str
+    imscription_b: str
     details: Dict[str, Any] = field(default_factory=dict)
     conditions: List[str] = field(default_factory=list)
     
@@ -311,10 +311,10 @@ class CompatibilityMatrix:
 @dataclass
 class ConstraintEngine:
     """
-    Engine for checking constraint satisfaction in synthon systems.
+    Engine for checking constraint satisfaction in imscription systems.
     
     Implements the constraint propagation principles from QUANTIG.md:
-    - Synthons act as local constraints that reduce degrees of freedom
+    - imscriptions act as local constraints that reduce degrees of freedom
     - Strong constraints (high F) collapse phase space onto narrow trajectories
     - Constraint efficiency depends on primitive combinations
     """
@@ -323,11 +323,11 @@ class ConstraintEngine:
     
     def check_pair_compatibility(
         self,
-        synthon_a: Synthon,
-        synthon_b: Synthon,
+        imscription_a: Imscription,
+        imscription_b: Imscription,
     ) -> CompatibilityReport:
         """
-        Check full compatibility between two synthons.
+        Check full compatibility between two imscriptions.
         
         Returns a detailed report with all compatibility checks.
         """
@@ -337,14 +337,14 @@ class ConstraintEngine:
         
         # Check recognition mode compatibility
         rec_compat = self.compatibility_matrix.check_recognition_compatibility(
-            synthon_a.recognition_mode,
-            synthon_b.recognition_mode,
+            imscription_a.recognition_mode,
+            imscription_b.recognition_mode,
         )
         details["recognition_mode"] = rec_compat.value
         if rec_compat == CompatibilityResult.CONDITIONAL:
             conditions = self.compatibility_matrix.get_conditions(
-                synthon_a.recognition_mode,
-                synthon_b.recognition_mode,
+                imscription_a.recognition_mode,
+                imscription_b.recognition_mode,
             )
             all_conditions.extend(conditions)
         elif rec_compat == CompatibilityResult.INCOMPATIBLE:
@@ -352,25 +352,25 @@ class ConstraintEngine:
         
         # Check polarity compatibility
         pol_compat = self.compatibility_matrix.check_polarity_compatibility(
-            synthon_a.polarity,
-            synthon_b.polarity,
+            imscription_a.polarity,
+            imscription_b.polarity,
         )
         details["polarity"] = pol_compat.value
         if pol_compat == CompatibilityResult.INCOMPATIBLE:
             incompatibilities.append("polarity")
         
         # Check domain overlap (for hybrid systems)
-        domain_overlap = synthon_a.dimensionality.domains & synthon_b.dimensionality.domains
+        domain_overlap = imscription_a.dimensionality.domains & imscription_b.dimensionality.domains
         details["domain_overlap"] = bool(domain_overlap)
         details["shared_domains"] = list(domain_overlap)
         if not domain_overlap:
             # No shared domain means they operate on different axes - can coexist
-            details["note"] = "No shared domains - synthons operate independently"
+            details["note"] = "No shared domains - imscriptions operate independently"
         
         # Check granularity compatibility
         gran_compat = (
-            synthon_a.granularity.can_amplify_to(synthon_b.granularity) or
-            synthon_b.granularity.can_amplify_to(synthon_a.granularity)
+            imscription_a.granularity.can_amplify_to(imscription_b.granularity) or
+            imscription_b.granularity.can_amplify_to(imscription_a.granularity)
         )
         details["granularity_compatible"] = gran_compat
         if not gran_compat:
@@ -388,33 +388,33 @@ class ConstraintEngine:
         
         return CompatibilityReport(
             result=result,
-            synthon_a=synthon_a.name,
-            synthon_b=synthon_b.name,
+            imscription_a=imscription_a.name,
+            imscription_b=imscription_b.name,
             details=details,
             conditions=all_conditions,
         )
     
     def check_system_consistency(
         self,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
     ) -> Dict[str, Any]:
         """
-        Check consistency of a system of multiple synthons.
+        Check consistency of a system of multiple imscriptions.
         
         Returns a report with:
         - Pairwise compatibility matrix
         - Overall system consistency score
         - Identified conflicts
         """
-        n = len(synthons)
+        n = len(imscriptions)
         compatibility_matrix_result = {}
         conflicts = []
         conditionals = []
         
         for i in range(n):
             for j in range(i + 1, n):
-                pair_a = synthons[i]
-                pair_b = synthons[j]
+                pair_a = imscriptions[i]
+                pair_b = imscriptions[j]
                 
                 report = self.check_pair_compatibility(pair_a, pair_b)
                 pair_key = f"{pair_a.name}::{pair_b.name}"
@@ -437,7 +437,7 @@ class ConstraintEngine:
         consistency_score = compatible_pairs / total_pairs if total_pairs > 0 else 1.0
         
         return {
-            "num_synthons": n,
+            "num_imscriptions": n,
             "total_pairs": total_pairs,
             "compatible_pairs": compatible_pairs,
             "conditional_pairs": len(conditionals),
@@ -451,22 +451,22 @@ class ConstraintEngine:
     
     def compute_constraint_strength(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
         context: Optional[Dict[str, float]] = None,
     ) -> float:
         """
-        Compute the effective constraint strength of a synthon.
+        Compute the effective constraint strength of a imscription.
         
         This combines the intrinsic constraint strength with context factors.
         
         Args:
-            synthon: The synthon to evaluate
+            imscription: The imscription to evaluate
             context: Optional context factors (solvent, temperature, etc.)
         
         Returns:
             Constraint strength (0.0-1.0)
         """
-        base_strength = synthon.constraint_strength
+        base_strength = imscription.constraint_strength
         
         if context is None:
             return base_strength
@@ -491,7 +491,7 @@ class ConstraintEngine:
 @dataclass
 class FidelityPropagator:
     """
-    Computes fidelity propagation through synthon networks.
+    Computes fidelity propagation through imscription networks.
     
     Based on the cooperativity principles from QUANTIG.md:
     - Triple H-bond arrays show superlinear induction growth
@@ -523,24 +523,24 @@ class FidelityPropagator:
     
     def propagate(
         self,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
         base_fidelity: Optional[Fidelity] = None,
     ) -> Fidelity:
         """
-        Compute propagated fidelity for a system of synthons.
+        Compute propagated fidelity for a system of imscriptions.
         
         Args:
-            synthons: List of synthons in the system
-            base_fidelity: Optional base fidelity (uses first synthon's F if not provided)
+            imscriptions: List of imscriptions in the system
+            base_fidelity: Optional base fidelity (uses first imscription's F if not provided)
         
         Returns:
             Effective fidelity after propagation
         """
-        if not synthons:
+        if not imscriptions:
             return Fidelity.LOW
         
         if base_fidelity is None:
-            base_fidelity = synthons[0].fidelity
+            base_fidelity = imscriptions[0].fidelity
         
         base_value = base_fidelity.numeric_value
         
@@ -548,21 +548,21 @@ class FidelityPropagator:
         total_cooperativity = 0.0
         total_granularity_amp = 0.0
         
-        for synthon in synthons:
+        for imscription in imscriptions:
             # Topology cooperativity
             topo_factor = self.TOPOLOGY_COOPERATIVITY.get(
-                synthon.topology, 1.0
+                imscription.topology, 1.0
             )
             total_cooperativity += topo_factor - 1.0
             
             # Granularity amplification
             gran_factor = self.GRANULARITY_AMPLIFICATION.get(
-                synthon.granularity, 1.0
+                imscription.granularity, 1.0
             )
             total_granularity_amp = max(total_granularity_amp, gran_factor - 1.0)
         
         # Compute amplified fidelity
-        # Cooperativity adds up (superlinear for multiple synthons)
+        # Cooperativity adds up (superlinear for multiple imscriptions)
         cooperativity_bonus = min(1.0, total_cooperativity * 0.1)
         granularity_bonus = total_granularity_amp * 0.15
         
@@ -578,19 +578,19 @@ class FidelityPropagator:
     
     def compute_cooperativity_factor(
         self,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
     ) -> Dict[str, Any]:
         """
-        Compute detailed cooperativity analysis for a synthon system.
+        Compute detailed cooperativity analysis for a imscription system.
         
         Returns:
             Dict with cooperativity breakdown by component
         """
-        if not synthons:
-            return {"error": "No synthons provided"}
+        if not imscriptions:
+            return {"error": "No imscriptions provided"}
         
         components = {
-            "num_synthons": len(synthons),
+            "num_imscriptions": len(imscriptions),
             "topology_factors": [],
             "granularity_factors": [],
             "total_cooperativity": 0.0,
@@ -598,18 +598,18 @@ class FidelityPropagator:
             "estimated_fidelity_gain": 0.0,
         }
         
-        for synthon in synthons:
-            topo_factor = self.TOPOLOGY_COOPERATIVITY.get(synthon.topology, 1.0)
-            gran_factor = self.GRANULARITY_AMPLIFICATION.get(synthon.granularity, 1.0)
+        for imscription in imscriptions:
+            topo_factor = self.TOPOLOGY_COOPERATIVITY.get(imscription.topology, 1.0)
+            gran_factor = self.GRANULARITY_AMPLIFICATION.get(imscription.granularity, 1.0)
             
             components["topology_factors"].append({
-                "synthon": synthon.name,
-                "topology": synthon.topology.value,
+                "imscription": imscription.name,
+                "topology": imscription.topology.value,
                 "factor": topo_factor,
             })
             components["granularity_factors"].append({
-                "synthon": synthon.name,
-                "granularity": synthon.granularity.value,
+                "imscription": imscription.name,
+                "granularity": imscription.granularity.value,
                 "factor": gran_factor,
             })
             
@@ -625,7 +625,7 @@ class FidelityPropagator:
         components["estimated_fidelity_gain"] = coop_bonus + gran_bonus
         
         # Check for superlinear induction (signature of cooperative systems)
-        if len(synthons) >= 3:
+        if len(imscriptions) >= 3:
             # Triple arrays should show superlinear behavior
             components["is_superlinear"] = components["total_cooperativity"] > 0.5
             if components["is_superlinear"]:
@@ -649,19 +649,19 @@ class AxiomValidator:
     """
     
     @classmethod
-    def validate_axiom1_cyclic_closure(cls, synthon: Synthon) -> Dict[str, Any]:
+    def validate_axiom1_cyclic_closure(cls, imscription: Imscription) -> Dict[str, Any]:
         """
         Axiom 1: Cyclic closure amplifies fidelity (T_⋈–F rule).
         
-        A synthon with T_⋈ and P_± necessarily achieves F ≥ F_dh,
+        A imscription with T_⋈ and P_± necessarily achieves F ≥ F_dh,
         provided R_⊇ or R_⊆.
         
-        Prediction: no T_⋈/P_± synthon will be assigned F_beltl.
+        Prediction: no T_⋈/P_± imscription will be assigned F_beltl.
         Falsified by: cyclic self-complementary motif with xi_CP > 10.5 nats.
         """
-        is_cyclic = synthon.topology == Topology.CYCLIC_BOWTIE
-        is_self_comp = synthon.polarity.is_self_complementary
-        is_valid_recognition = synthon.recognition_mode in {
+        is_cyclic = imscription.topology == Topology.CYCLIC_BOWTIE
+        is_self_comp = imscription.polarity.is_self_complementary
+        is_valid_recognition = imscription.recognition_mode in {
             RecognitionMode.NON_COVALENT,
             RecognitionMode.COVALENT,
             RecognitionMode.COVALENT_DYNAMIC,
@@ -674,11 +674,11 @@ class AxiomValidator:
             return {
                 "axiom": "Axiom 1 (Cyclic Closure)",
                 "applies": False,
-                "reason": "Not a cyclic self-complementary synthon with valid R",
+                "reason": "Not a cyclic self-complementary imscription with valid R",
             }
         
         # Check prediction
-        fidelity_violated = synthon.fidelity == Fidelity.LOW
+        fidelity_violated = imscription.fidelity == Fidelity.LOW
         
         return {
             "axiom": "Axiom 1 (Cyclic Closure)",
@@ -686,7 +686,7 @@ class AxiomValidator:
             "cyclic": is_cyclic,
             "self_complementary": is_self_comp,
             "recognition_valid": is_valid_recognition,
-            "fidelity": synthon.fidelity.value,
+            "fidelity": imscription.fidelity.value,
             "prediction_satisfied": not fidelity_violated,
             "violated": fidelity_violated,
             "falsification_note": (
@@ -697,22 +697,22 @@ class AxiomValidator:
     @classmethod
     def validate_axiom2_local_grammar_barrier(
         cls,
-        synthon: Synthon,
+        imscription: Imscription,
         target_granularity: Optional[Granularity] = None,
     ) -> Dict[str, Any]:
         """
         Axiom 2: Local grammar blocks network propagation (G_ב–Γ barrier rule).
         
-        A synthon with G_ב and Γ_⊗ cannot propagate constraint beyond
+        A imscription with G_ב and Γ_⊗ cannot propagate constraint beyond
         its immediate recognition pair.
         
-        Prediction: no single G_ב/Γ_⊗ synthon will be found as the sole
+        Prediction: no single G_ב/Γ_⊗ imscription will be found as the sole
         organizing element of a MOF, polymer, or oscillatory network.
         """
-        is_local = synthon.granularity == Granularity.LOCAL
+        is_local = imscription.granularity == Granularity.LOCAL
         is_specific = (
-            synthon.grammar == Grammar.Gamma_corner and
-            synthon.fidelity == Fidelity.HIGH
+            imscription.grammar == Grammar.Gamma_corner and
+            imscription.fidelity == Fidelity.HIGH
         )
         
         axiom_applies = is_local and is_specific
@@ -721,14 +721,14 @@ class AxiomValidator:
             return {
                 "axiom": "Axiom 2 (Local Grammar Barrier)",
                 "applies": False,
-                "reason": "Not a local specific synthon",
+                "reason": "Not a local specific imscription",
             }
         
         # Check if target granularity is achievable
         if target_granularity is None:
             can_propagate = False
         else:
-            can_propagate = synthon.granularity.can_amplify_to(target_granularity)
+            can_propagate = imscription.granularity.can_amplify_to(target_granularity)
         
         # Axiom predicts NO propagation to global
         prediction_satisfied = not can_propagate or target_granularity != Granularity.GLOBAL
@@ -746,7 +746,7 @@ class AxiomValidator:
     @classmethod
     def validate_axiom3_cooperative_induction(
         cls,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
         induction_ratio: Optional[float] = None,
     ) -> Dict[str, Any]:
         """
@@ -755,29 +755,29 @@ class AxiomValidator:
         When induction component of E_int grows faster than linearly with
         number of recognition contacts, system has crossed from G_ב to G_ג.
         
-        Prediction: any synthon array showing superlinear SAPT induction
+        Prediction: any imscription array showing superlinear SAPT induction
         should be reclassified from G_ב to G_ג.
         """
-        if len(synthons) < 2:
+        if len(imscriptions) < 2:
             return {
                 "axiom": "Axiom 3 (Cooperative Induction)",
                 "applies": False,
-                "reason": "Need at least 2 synthons for cooperativity analysis",
+                "reason": "Need at least 2 imscriptions for cooperativity analysis",
             }
         
         # Check if all are local (candidate for transition)
-        all_local = all(s.granularity == Granularity.LOCAL for s in synthons)
+        all_local = all(s.granularity == Granularity.LOCAL for s in imscriptions)
         
         if induction_ratio is None:
-            # Estimate from synthon properties
+            # Estimate from imscription properties
             # Triple H-bond arrays typically have induction_ratio ~2.5-3.5
-            induction_ratio = len(synthons) * 0.8  # Rough estimate
+            induction_ratio = len(imscriptions) * 0.8  # Rough estimate
         
         # Superlinear threshold
-        is_superlinear = induction_ratio > len(synthons) * 1.2
+        is_superlinear = induction_ratio > len(imscriptions) * 1.2
         
         # Check current granularity assignments
-        granularities = set(s.granularity for s in synthons)
+        granularities = set(s.granularity for s in imscriptions)
         
         # Axiom predicts reclassification if superlinear
         should_reclassify = is_superlinear and Granularity.LOCAL in granularities
@@ -785,10 +785,10 @@ class AxiomValidator:
         return {
             "axiom": "Axiom 3 (Cooperative Induction)",
             "applies": all_local,
-            "num_synthons": len(synthons),
+            "num_imscriptions": len(imscriptions),
             "induction_ratio": induction_ratio,
             "is_superlinear": is_superlinear,
-            "superlinear_threshold": len(synthons) * 1.2,
+            "superlinear_threshold": len(imscriptions) * 1.2,
             "should_reclassify_to_mesoscale": should_reclassify,
             "current_granularities": [g.value for g in granularities],
         }
@@ -796,18 +796,18 @@ class AxiomValidator:
     @classmethod
     def validate_axiom4_sequential_grammar(
         cls,
-        synthon: Synthon,
+        imscription: Imscription,
     ) -> Dict[str, Any]:
         """
         Axiom 4: Sequential grammar requires temporal or catalytic dimension.
         
         Γ_→ (ordered sequential recognition) is only physically realizable
-        if the synthon possesses D_∞ or R_‡, or both.
+        if the imscription possesses D_∞ or R_‡, or both.
         
         Prediction: all documented allosteric systems with ordered binding
         will contain either a conformational change (R_‡-like) or temporal component.
         """
-        is_sequential = synthon.grammar == Grammar.Gamma_secstress
+        is_sequential = imscription.grammar == Grammar.Gamma_secstress
         
         if not is_sequential:
             return {
@@ -816,8 +816,8 @@ class AxiomValidator:
                 "reason": "Not a sequential grammar",
             }
         
-        has_temporal = synthon.dimensionality in (Dimensionality.D_invomega, Dimensionality.TEMPORAL)
-        has_catalytic = synthon.recognition_mode in {
+        has_temporal = imscription.dimensionality in (Dimensionality.D_invomega, Dimensionality.TEMPORAL)
+        has_catalytic = imscription.recognition_mode in {
             RecognitionMode.DYNAMIC_CATALYTIC,
             RecognitionMode.COVALENT_DYNAMIC,
         }
@@ -841,7 +841,7 @@ class AxiomValidator:
     @classmethod
     def validate_axiom5_criticality(
         cls,
-        synthon: Synthon,
+        imscription: Imscription,
         correlation_length: Optional[float] = None,
     ) -> Dict[str, Any]:
         """
@@ -849,10 +849,10 @@ class AxiomValidator:
         
         At criticality (G-D degeneracy, ξ → ∞), G becomes redundant given D.
         
-        Prediction: a critical synthon's behavior at molecular scale fully
+        Prediction: a critical imscription's behavior at molecular scale fully
         predicts its behavior at supramolecular and temporal scales.
         """
-        is_critical = synthon.criticality_phase == CriticalityPhase.CRITICAL
+        is_critical = imscription.criticality_phase == CriticalityPhase.CRITICAL
         
         if not is_critical:
             # Check if approaching criticality
@@ -888,13 +888,13 @@ class AxiomValidator:
     @classmethod
     def validate_axiom6_temporal_grounding(
         cls,
-        synthon: Synthon,
+        imscription: Imscription,
         grounding_result: Optional[Any] = None,
     ) -> AxiomResult:
         """
         Axiom 6: D_∞ requires a physically grounded reset mechanism.
 
-        Supports two reset types via ``synthon.metadata["grounding"]["reset"]["type"]``:
+        Supports two reset types via ``imscription.metadata["grounding"]["reset"]["type"]``:
 
         * ``"discrete"`` (default / backward-compat): closed cycle with a named
           reset step.  Requires: initial state, transformation, work performed,
@@ -917,21 +917,21 @@ class AxiomValidator:
 
         # ── 1. Check whether D_∞ (TEMPORAL) is assigned ──────────────────────
         has_temporal = Dimensionality.TEMPORAL in (
-            synthon.dimensionality if isinstance(synthon.dimensionality, (list, set, tuple))
-            else [synthon.dimensionality]
+            imscription.dimensionality if isinstance(imscription.dimensionality, (list, set, tuple))
+            else [imscription.dimensionality]
         )
 
         if not has_temporal:
             return AxiomResult(axiom=6, satisfied=True, violations=[], warnings=[])
 
         # ── 2. Read reset_type from structured grounding block ────────────────
-        # Primary source: synthon.grounding["reset"] (persisted in catalog JSON)
-        # Fallback: synthon.metadata["grounding"]["reset"] (legacy in-memory path)
-        sg = getattr(synthon, "grounding", None) or {}
+        # Primary source: imscription.grounding["reset"] (persisted in catalog JSON)
+        # Fallback: imscription.metadata["grounding"]["reset"] (legacy in-memory path)
+        sg = getattr(imscription, "grounding", None) or {}
         reset_block = sg.get("reset", {})
         if not reset_block:
             # fallback to metadata-nested path (not persisted, but accepted in tests)
-            meta_grounding = synthon.metadata.get("grounding", {}) if hasattr(synthon, "metadata") and synthon.metadata else {}
+            meta_grounding = imscription.metadata.get("grounding", {}) if hasattr(imscription, "metadata") and imscription.metadata else {}
             reset_block = meta_grounding.get("reset", {})
         reset_type = reset_block.get("type", "discrete")  # default: discrete (backward-compat)
 
@@ -978,7 +978,7 @@ class AxiomValidator:
             )
 
         # Fallback: keyword scan on axiom6_grounding metadata dict
-        ax6 = synthon.metadata.get("axiom6_grounding", {}) if hasattr(synthon, "metadata") and synthon.metadata else {}
+        ax6 = imscription.metadata.get("axiom6_grounding", {}) if hasattr(imscription, "metadata") and imscription.metadata else {}
         if ax6:
             required_keys = {"initial_state", "transformation", "work_performed", "reset_mechanism"}
             present_keys = {k for k in required_keys if ax6.get(k)}
@@ -1037,22 +1037,22 @@ class AxiomValidator:
     @classmethod
     def validate_axiom7_cyclic_grounding(
         cls,
-        synthon: Synthon,
+        imscription: Imscription,
         grounding_result: Optional[Any] = None,
     ) -> AxiomResult:
         """
         Axiom 7: T_⋈ requires a named closing bond or interaction.
         
-        A synthon assigned T_⋈ must identify the specific interaction
+        A imscription assigned T_⋈ must identify the specific interaction
         or bond that closes the loop. If no closing interaction can be
         named, T_⋈ is invalid and the correct assignment is T_≫ (chain)
         or T_□ (hub/node).
         
-        Falsified by: a documented T_⋈ synthon where no closing bond
+        Falsified by: a documented T_⋈ imscription where no closing bond
         or interaction can be identified.
         
         Args:
-            synthon: The synthon to validate
+            imscription: The imscription to validate
             grounding_result: Optional GroundingResult with justifications
             
         Returns:
@@ -1061,8 +1061,8 @@ class AxiomValidator:
         violations = []
         warnings = []
         
-        is_bowtie = synthon.topology == Topology.CYCLIC_BOWTIE
-        is_cage = synthon.topology == Topology.CAGE
+        is_bowtie = imscription.topology == Topology.CYCLIC_BOWTIE
+        is_cage = imscription.topology == Topology.CAGE
 
         if not is_bowtie and not is_cage:
             return AxiomResult(axiom=7, satisfied=True, violations=[], warnings=[])
@@ -1145,51 +1145,51 @@ class AxiomValidator:
     @classmethod
     def validate_all_axioms(
         cls,
-        synthon_or_synthons: Union[Synthon, List[Synthon]],
+        imscription_or_imscriptions: Union[Imscription, List[Imscription]],
         **kwargs,
     ) -> Dict[str, Any]:
         """
-        Validate all seven axioms for a synthon or system.
+        Validate all seven axioms for a imscription or system.
         
         Includes Axioms 1-5 (composition axioms) and Axioms 6-7 (grounding axioms).
 
         Returns comprehensive axiom validation report.
         """
-        if isinstance(synthon_or_synthons, Synthon):
-            synthons = [synthon_or_synthons]
-            synthon = synthon_or_synthons
+        if isinstance(imscription_or_imscriptions, Imscription):
+            imscriptions = [imscription_or_imscriptions]
+            imscription = imscription_or_imscriptions
         else:
-            synthons = synthon_or_synthons
-            synthon = synthons[0] if synthons else None
+            imscriptions = imscription_or_imscriptions
+            imscription = imscriptions[0] if imscriptions else None
 
         results = {}
         grounding_result = kwargs.get("grounding_result")
 
-        if synthon:
-            results["axiom1"] = cls.validate_axiom1_cyclic_closure(synthon)
+        if imscription:
+            results["axiom1"] = cls.validate_axiom1_cyclic_closure(imscription)
             results["axiom2"] = cls.validate_axiom2_local_grammar_barrier(
-                synthon,
+                imscription,
                 target_granularity=kwargs.get("target_granularity"),
             )
-            results["axiom4"] = cls.validate_axiom4_sequential_grammar(synthon)
+            results["axiom4"] = cls.validate_axiom4_sequential_grammar(imscription)
             results["axiom5"] = cls.validate_axiom5_criticality(
-                synthon,
+                imscription,
                 correlation_length=kwargs.get("correlation_length"),
             )
             # Fix 2: Axiom 6 (temporal grounding)
             results["axiom6"] = cls.validate_axiom6_temporal_grounding(
-                synthon,
+                imscription,
                 grounding_result=grounding_result,
             )
             # Fix 3: Axiom 7 (cyclic topology grounding)
             results["axiom7"] = cls.validate_axiom7_cyclic_grounding(
-                synthon,
+                imscription,
                 grounding_result=grounding_result,
             )
 
-        if len(synthons) >= 2:
+        if len(imscriptions) >= 2:
             results["axiom3"] = cls.validate_axiom3_cooperative_induction(
-                synthons,
+                imscriptions,
                 induction_ratio=kwargs.get("induction_ratio"),
             )
 
@@ -1233,15 +1233,15 @@ class AxiomValidator:
 class AxiomViolation:
     axiom:   str
     message: str
-    synthon: str
+    imscription: str
 
 
 class CoreAxioms:
     """
-    Cross-primitive axioms from Core.lean, enforced on Python Synthon objects.
+    Cross-primitive axioms from Core.lean, enforced on Python Imscription objects.
 
     These are the same four axioms that are stated as `axiom` declarations in
-    Imscribing Grammar/Primitives/Core.lean and enforced in Synthon.__post_init__.
+    Imscribing Grammar/Primitives/Core.lean and enforced in Imscription.__post_init__.
     This class provides a soft-check path (returns violations rather than raising)
     useful for auditing existing catalog entries.
 
@@ -1265,70 +1265,70 @@ class CoreAxioms:
     """
 
     @staticmethod
-    def check(synthon: Synthon) -> List[AxiomViolation]:
+    def check(imscription: Imscription) -> List[AxiomViolation]:
         """
-        Return all axiom violations for the given synthon.
-        Empty list means the synthon is axiom-consistent.
+        Return all axiom violations for the given imscription.
+        Empty list means the imscription is axiom-consistent.
         """
         v: List[AxiomViolation] = []
-        name = synthon.name
+        name = imscription.name
 
         # Axiom A
-        if synthon.chirality == Chirality.H_invscripta and synthon.kinetic_character != KineticChar.K_teshlig:
+        if imscription.chirality == Chirality.H_invscripta and imscription.kinetic_character != KineticChar.K_teshlig:
             v.append(AxiomViolation(
                 axiom="A",
-                message=(f"H_invscripta requires K_teshlig (got {synthon.kinetic_character.value})"),
-                synthon=name,
+                message=(f"H_invscripta requires K_teshlig (got {imscription.kinetic_character.value})"),
+                imscription=name,
             ))
 
         # Axiom B
-        if _prot_ord(synthon.protection) >= _prot_ord(Protection.Omega_dzlig) \
-                and _chir_ord(synthon.chirality) < _chir_ord(Chirality.H_turntwo):
+        if _prot_ord(imscription.protection) >= _prot_ord(Protection.Omega_dzlig) \
+                and _chir_ord(imscription.chirality) < _chir_ord(Chirality.H_turntwo):
             v.append(AxiomViolation(
                 axiom="B",
                 message=(
-                    f"protection {synthon.protection.value} requires chirality >= H_turntwo "
-                    f"(got {synthon.chirality.value})"
+                    f"protection {imscription.protection.value} requires chirality >= H_turntwo "
+                    f"(got {imscription.chirality.value})"
                 ),
-                synthon=name,
+                imscription=name,
             ))
 
         # Axiom C
-        d_holo = synthon.dimensionality == Dimensionality.D_holo
-        t_holo = synthon.topology == Topology.T_holo
+        d_holo = imscription.dimensionality == Dimensionality.D_holo
+        t_holo = imscription.topology == Topology.T_holo
         if d_holo and not t_holo:
             v.append(AxiomViolation(
                 axiom="C",
-                message=f"D_omega requires T_openo (got {synthon.topology.value})",
-                synthon=name,
+                message=f"D_omega requires T_openo (got {imscription.topology.value})",
+                imscription=name,
             ))
         elif t_holo and not d_holo:
             v.append(AxiomViolation(
                 axiom="C",
-                message=f"T_openo requires D_omega (got {synthon.dimensionality.value})",
-                synthon=name,
+                message=f"T_openo requires D_omega (got {imscription.dimensionality.value})",
+                imscription=name,
             ))
 
         # Axiom D
-        if synthon.protection == Protection.Omega_turna \
-                and synthon.dimensionality != Dimensionality.D_holo:
+        if imscription.protection == Protection.Omega_turna \
+                and imscription.dimensionality != Dimensionality.D_holo:
             v.append(AxiomViolation(
                 axiom="D",
-                message=f"Omega_turna requires D_omega (got {synthon.dimensionality.value})",
-                synthon=name,
+                message=f"Omega_turna requires D_omega (got {imscription.dimensionality.value})",
+                imscription=name,
             ))
 
         return v
 
     @staticmethod
-    def check_all(synthons) -> Dict[str, List[AxiomViolation]]:
-        """Check a collection of synthons. Returns {name: [violations]}."""
-        return {s.name: CoreAxioms.check(s) for s in synthons}
+    def check_all(imscriptions) -> Dict[str, List[AxiomViolation]]:
+        """Check a collection of imscriptions. Returns {name: [violations]}."""
+        return {s.name: CoreAxioms.check(s) for s in imscriptions}
 
     @staticmethod
-    def audit_catalog(synthons) -> Dict[str, Any]:
+    def audit_catalog(imscriptions) -> Dict[str, Any]:
         """Audit report: counts, violation breakdown by axiom, offending names."""
-        all_violations = CoreAxioms.check_all(synthons)
+        all_violations = CoreAxioms.check_all(imscriptions)
         by_axiom: Dict[str, List[str]] = {"A": [], "B": [], "C": [], "D": []}
         total = 0
         for name, viols in all_violations.items():
@@ -1336,8 +1336,8 @@ class CoreAxioms:
                 by_axiom[v.axiom].append(name)
                 total += 1
         return {
-            "total_synthons": len(synthons),
+            "total_imscriptions": len(imscriptions),
             "total_violations": total,
             "clean": total == 0,
-            "by_axiom": {k: {"count": len(v), "synthons": v} for k, v in by_axiom.items()},
+            "by_axiom": {k: {"count": len(v), "imscriptions": v} for k, v in by_axiom.items()},
         }

@@ -1,5 +1,5 @@
 """
-GroundingValidator — mechanistic justification layer for synthon primitive assignments.
+GroundingValidator — mechanistic justification layer for imscription primitive assignments.
 
 This module implements a pre-axiom validation step that enforces:
     "Each primitive value must be justified by reference to a specific physical 
@@ -12,7 +12,7 @@ The validator catches three failure modes invisible to axiom checking:
 
 Usage:
     validator = GroundingValidator()
-    result = validator.validate(synthon, justifications)
+    result = validator.validate(imscription, justifications)
     if not result.is_valid:
         print(f"Ungrounded assignments: {result.ungrounded_primitives}")
 """
@@ -23,7 +23,7 @@ from typing import Dict, List, Set, Optional, Tuple
 from enum import Enum, auto
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -123,7 +123,7 @@ class GroundingValidator:
     # Grounding vocabulary: valid physical phenomena for each primitive value
     # These are extracted from QUANTIG.md transformations and examples
     GROUNDING_VOCABULARY: Dict[str, Dict[str, List[str]]] = {
-        # Dimensionality (D) — coordinate set along which synthon operates
+        # Dimensionality (D) — coordinate set along which imscription operates
         "dimensionality": {
             "MOLECULAR": [
                 "covalent bond formation",
@@ -558,7 +558,7 @@ class GroundingValidator:
             "SUPERCritical": [
                 "passed through assembly",
                 "merged into assembled material",
-                "synthon identity lost",
+                "imscription identity lost",
                 "post-critical phase",
             ],
         },
@@ -603,7 +603,7 @@ class GroundingValidator:
     
     def validate(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
         justifications: Dict[str, str],
         delta_g_value: Optional[float] = None,
         delta_g_justification: Optional[str] = None,
@@ -612,7 +612,7 @@ class GroundingValidator:
         Validate that all primitive assignments are mechanistically grounded.
 
         Args:
-            synthon: The synthon to validate
+            imscription: The imscription to validate
             justifications: Dict mapping primitive names to justification strings
                            e.g., {"dimensionality": "closed catalytic cycle with...",
                                   "fidelity": "proofreading via hydrolysis..."}
@@ -626,22 +626,22 @@ class GroundingValidator:
         ungrounded_primitives: List[str] = []
         warnings: List[str] = []
         
-        # Map synthon fields to primitive names
+        # Map imscription fields to primitive names
         field_mapping = {
-            "dimensionality": synthon.dimensionality.name,
-            "topology": synthon.topology.name,
-            "recognition_mode": synthon.recognition_mode.name,
-            "polarity": synthon.polarity.name,
-            "fidelity": synthon.fidelity.name,
-            "granularity": synthon.granularity.name,
-            "interaction_grammar": synthon.interaction_grammar.name,
+            "dimensionality": imscription.dimensionality.name,
+            "topology": imscription.topology.name,
+            "recognition_mode": imscription.recognition_mode.name,
+            "polarity": imscription.polarity.name,
+            "fidelity": imscription.fidelity.name,
+            "granularity": imscription.granularity.name,
+            "interaction_grammar": imscription.interaction_grammar.name,
         }
         
         # Add extension primitives if present
-        if hasattr(synthon, 'kinetic_character') and synthon.kinetic_character is not None:
-            field_mapping["kinetic"] = synthon.kinetic_character.name
-        if hasattr(synthon, 'criticality_phase') and synthon.criticality_phase is not None:
-            field_mapping["criticality"] = synthon.criticality_phase.name
+        if hasattr(imscription, 'kinetic_character') and imscription.kinetic_character is not None:
+            field_mapping["kinetic"] = imscription.kinetic_character.name
+        if hasattr(imscription, 'criticality_phase') and imscription.criticality_phase is not None:
+            field_mapping["criticality"] = imscription.criticality_phase.name
         
         for prim_name, prim_value in field_mapping.items():
             justification = justifications.get(prim_name, "")
@@ -841,18 +841,18 @@ class GroundingValidator:
     
     def validate_batch(
         self,
-        synthons: List[Tuple[Synthon, Dict[str, str]]],
+        imscriptions: List[Tuple[Imscription, Dict[str, str]]],
     ) -> List[GroundingResult]:
         """
-        Validate grounding for multiple synthons.
+        Validate grounding for multiple imscriptions.
         
         Args:
-            synthons: List of (synthon, justifications) tuples
+            imscriptions: List of (imscription, justifications) tuples
         
         Returns:
             List of GroundingResult objects
         """
-        return [self.validate(syn, just) for syn, just in synthons]
+        return [self.validate(syn, just) for syn, just in imscriptions]
     
     def get_grounding_report(
         self,
@@ -938,18 +938,18 @@ class GroundingValidator:
         return "\n".join(lines)
 
 
-def validate_synthon_with_grounding(
-    synthon: Synthon,
+def validate_imscription_with_grounding(
+    imscription: Imscription,
     justifications: Dict[str, str],
     delta_g_value: Optional[float] = None,
     delta_g_justification: Optional[str] = None,
     require_grounding: bool = True,
 ) -> Tuple[bool, Optional[str]]:
     """
-    Convenience function to validate synthon grounding.
+    Convenience function to validate imscription grounding.
     
     Args:
-        synthon: Synthon to validate
+        imscription: Imscription to validate
         justifications: Dict of primitive -> justification
         delta_g_value: Optional ΔG value (kJ/mol)
         delta_g_justification: Optional ΔG source/method justification
@@ -963,13 +963,13 @@ def validate_synthon_with_grounding(
     """
     validator = GroundingValidator()
     result = validator.validate(
-        synthon, justifications, delta_g_value, delta_g_justification
+        imscription, justifications, delta_g_value, delta_g_justification
     )
     
     if require_grounding and not result.is_valid:
         report = validator.get_grounding_report(result)
         raise ValueError(
-            f"Synthon has ungrounded primitive assignments:\n{report}"
+            f"Imscription has ungrounded primitive assignments:\n{report}"
         )
     
     return result.is_valid, None

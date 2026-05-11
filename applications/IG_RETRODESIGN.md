@@ -15,11 +15,11 @@ header-includes:
 
 ## 1.0 System Definition
 
-**IΓ_RETRODESIGN** is the inverse operation of **IΓ_HOTSWAP**. While HotSwap operates *forward* (replacing $S_{old}$ with $S_{new}$ in an active system $\Psi$), Retrodesign operates *backward*: given a target constraint architecture $\Psi_{target}$, it decomposes the target into a minimal set of constituent synthons whose composition axioms are mutually satisfiable.
+**IΓ_RETRODESIGN** is the inverse operation of **IΓ_HOTSWAP**. While HotSwap operates *forward* (replacing $S_{old}$ with $S_{new}$ in an active system $\Psi$), Retrodesign operates *backward*: given a target constraint architecture $\Psi_{target}$, it decomposes the target into a minimal set of constituent imscriptions whose composition axioms are mutually satisfiable.
 
 This reframes retrosynthesis from "what bonds to break" to "what primitive subsets, when composed, generate the target constraint architecture without axiom violations." The ten-primitive grammar makes this tractable because each decomposition step is axiom-checkable.
 
-This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom validation, thermodynamic efficiency metrics ($\xi_{CP}$), and recursive decomposition to identify valid synthon combinations.
+This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom validation, thermodynamic efficiency metrics ($\xi_{CP}$), and recursive decomposition to identify valid imscription combinations.
 
 ---
 
@@ -33,7 +33,7 @@ This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom v
 | **Topology ($T$)** | **Subgraph Isomorphism** | $T_{\square}$ (hub/node) decomposes into hub (SBU) + spokes (linkers). $T_{\text{bullseye}}$ (cyclic) may decompose into linear precursors with closing bond. |
 | **Recognition ($R$)** | **Mechanism Preservation** | $R_{\ddagger}$ (catalytic) must decompose into catalyst + substrate. $R_{\Leftrightarrow}$ (mechanical) must decompose into interlocked components. |
 | **Polarity ($P$)** | **Complementary Pairing** | $P_{\text{pipevar}}$ (self-complementary) may decompose into $P_{+} + P_{-}$ pair. $P_{+}$ requires $P_{-}$ partner in decomposition. |
-| **Fidelity ($F$)** | **Floor Enforcement** | Decomposed synthons must satisfy $F \geq F_{\text{dh}}$ for $T_{\text{bullseye}}$ (Axiom 1). Low-fidelity branches are pruned. |
+| **Fidelity ($F$)** | **Floor Enforcement** | Decomposed imscriptions must satisfy $F \geq F_{\text{dh}}$ for $T_{\text{bullseye}}$ (Axiom 1). Low-fidelity branches are pruned. |
 | **Kinetic Character ($K$)** | **Accessibility Check** | At least one decomposition pathway must have all-$K_{fast}$ or all-$K_{mod}$ steps. All-$K_{slow}$ branches are pruned. |
 | **Granularity ($G$)** | **Scale Consistency** | $G_{\text{revapostrophe}}$ (global) decomposes into $G_{\text{beta}}$ (local) + $G_{\text{gamma}}$ (mesoscale) components. $G_{\text{beta}}$ cannot directly produce $G_{\text{revapostrophe}}$ without amplification mechanism. |
 | **Interaction Grammar ($\Gamma$)** | **Logic Preservation** | $\Gamma_{\to}$ (SEQUENTIAL) decomposes into ordered sub-steps. $\Gamma_{\text{corner}}$ (AND) decomposes into simultaneous partners. |
@@ -72,24 +72,24 @@ The decomposition tree is pruned not by chemical intuition alone, but by **Axiom
 Encode the target system as a unified notation tuple. For complex systems, use hybrid dimensionality sets.
 
 ```python
-from imscrbgrmr import SynthonNotation
+from imscrbgrmr import ImscriptionNotation
 
 # Example: A supramolecular cage with temporal gating
-target = SynthonNotation.from_string(
+target = ImscriptionNotation.from_string(
     "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; Φ_F; ƒ_ð; Ç_W; "
-    "Γ_γ; ɢ_and(SELECTIVE); φ̂_ž; 4:4⟩"
+    "Γ_γ; ɢ_and(SELECTIVE); ⊙_ž; 4:4⟩"
 )
 
 # Example: MOF-catalyst hybrid (NU-1000 + Ni)
-mof_target = SynthonNotation.from_string(
+mof_target = ImscriptionNotation.from_string(
     "⟨{Ð_C}·{Ð_infinity}; {Þ_square·Þ_ò}; Ř_superset+ddagger; "
-    "Φ_F; ƒ_ż, ƒ_ð; Ç_W; Γ_ʔ; ɢ_odot(SELECTIVE); φ̂_ž; n:m⟩"
+    "Φ_F; ƒ_ż, ƒ_ð; Ç_W; Γ_ʔ; ɢ_odot(SELECTIVE); ⊙_ž; n:m⟩"
 )
 ```
 
 ```bash
 # CLI: Encode target from string
-imscribe retrodesign encode --target "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; φ̂_ž; 1:12⟩"
+imscribe retrodesign encode --target "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩"
 ```
 
 ### Step 2: Decomposition Search
@@ -98,7 +98,7 @@ The engine performs a recursive split of the primitive space, checking compatibi
 
 ```bash
 # CLI: Decompose target into valid sub-tuples
-imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; φ̂_ž; 1:12⟩" \
+imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩" \
     --max-depth 3 \
     --prune-axioms 1,2,4,6,7 \
     --domain supramolecular
@@ -110,18 +110,18 @@ imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_
 # │ Root: Zr-MOF Node (Ð_C, Þ_square, 1:12)                  │
 # │                                                                 │
 # │ ├── Branch A (Structural Scaffold)                              │
-# │ │   ├── Synthon: Zr6_oxo_SBU                                    │
+# │ │   ├── Imscription: Zr6_oxo_SBU                                    │
 # │ │   │   └── ⟨Ð_C; Þ_square; Ř_superset; Φ_plus;          │
-# │ │   │       ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; φ̂_ž; 1:12⟩  │
+# │ │   │       ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩  │
 # │ │   │                                                           │
-# │ │   └── Synthon: Terephthalate_Linker (×12)                     │
+# │ │   └── Imscription: Terephthalate_Linker (×12)                     │
 # │ │       └── ⟨Ð_C; Þ_chain; Ř_superset; Φ_minus;          │
-# │ │           ƒ_ż; Ç_-; Γ_β; ɢ_and; φ̂_ž; 1:1⟩    │
+# │ │           ƒ_ż; Ç_-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩    │
 # │                                                                 │
 # │ └── Branch B (Optional: Pore Functionalization)                 │
-# │     └── Synthon: Ni_catalyst (optional guest)                   │
+# │     └── Imscription: Ni_catalyst (optional guest)                   │
 # │         └── ⟨Ð_C; Þ_ò; Ř_ddagger; Φ_F;             │
-# │             ƒ_ð; Ç_W; Γ_β; ɢ_sequential; φ̂_ž; 1:1⟩ │
+# │             ƒ_ð; Ç_W; Γ_β; ɢ_sequential; ⊙_ž; 1:1⟩ │
 # └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -144,7 +144,7 @@ Dead branches are pruned immediately upon axiom violation.
 
 ```bash
 # CLI: Show pruning decisions
-imscribe retrodesign "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_low; Ç_-; Γ_β; ɢ_and; φ̂_ž; 1:1⟩" \
+imscribe retrodesign "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_low; Ç_-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩" \
     --show-pruned
 
 # Output:
@@ -202,8 +202,8 @@ imscribe retrodesign thermo --pathways pathways.json --delta-g -85.0
 from imscrbgrmr.thermodynamics import compute_eta_CP
 
 # Compare pathways
-pathway1_xi = compute_eta_CP(pathway1_synthon, delta_g=-85.0).xi_CP
-pathway2_xi = compute_eta_CP(pathway2_synthon, delta_g=-72.0).xi_CP
+pathway1_xi = compute_eta_CP(pathway1_imscription, delta_g=-85.0).xi_CP
+pathway2_xi = compute_eta_CP(pathway2_imscription, delta_g=-72.0).xi_CP
 
 print(f"Pathway 1 ξ_CP: {pathway1_xi:.2f} nats")
 print(f"Pathway 2 ξ_CP: {pathway2_xi:.2f} nats")
@@ -211,10 +211,10 @@ print(f"Pathway 2 ξ_CP: {pathway2_xi:.2f} nats")
 
 ### Step 5: Integration with Ensembler & HotSwap
 
-Retrodesign output (validated synthon set) feeds directly into IΓ_ENSEMBLER.md for composition verification, then into IΓ_HOTSWAP.md for candidate screening.
+Retrodesign output (validated imscription set) feeds directly into IΓ_ENSEMBLER.md for composition verification, then into IΓ_HOTSWAP.md for candidate screening.
 
 ```bash
-# CLI: Export validated synthon set for Ensembler
+# CLI: Export validated imscription set for Ensembler
 imscribe retrodesign export --pathways pathways.json --format ensemble --output ensemble_input.json
 
 # Then run Ensembler
@@ -240,7 +240,7 @@ compatibility = constraint_engine.check_pairwise(ensemble)
 | Failure Mode | Primitive Signature | Mitigation |
 | :--- | :--- | :--- |
 | **Axiom Violation (Fatal)** | $T_{\text{bullseye}} + F_{\text{beltl}}$; $\Gamma_{\to}$ without $D_{\text{invomega}}$ | Hard block — decomposition rejected at pruning. |
-| **No Valid Pathways** | All branches pruned | Relax constraints (increase max-depth, allow speculative synthons). |
+| **No Valid Pathways** | All branches pruned | Relax constraints (increase max-depth, allow speculative imscriptions). |
 | **Stoichiometry Mismatch** | $\sum Σ_i \neq S_{target}$ | Verify mass-balance; check for missing components. |
 | **Kinetic Inaccessibility** | All pathways have $K_{slow}$ steps | Add catalyst/template; switch assembly conditions. |
 | **Grounding Fail** | `grounding_status` → `unverified` for $D_{\text{invomega}}$ or $T_{\text{bullseye}}$ | Require full/override grounding; `imscribe audit`. |
@@ -290,7 +290,7 @@ compatibility = constraint_engine.check_pairwise(ensemble)
 
 *   **Target:** A crystalline MOF framework designed to host molecular qubits at precise positions.
 *   **Target Tuple:** $\langle \{D_{\bigtriangleup}\} \cdot \{D_{H}^{2 \otimes n}\}; \{T_{\square} \cdot T_{\text{bullseye}}\}; R_{\supseteq + (Ent)}; P_{\text{pipevar}}; \langle F_{\text{hardsign}}, F_{\text{hardsign}} \rangle; K_{fast \cdot mod}; G_{\text{revapostrophe}}; \Gamma_{\odot}(\text{SELECTIVE}); \Phi_{\text{ctyogh}}; 1:n \rangle$
-*   **Constraint:** Quantum synthons require `--speculative` flag and `--quantum-mode` for proper $T_{op}$ Landauer cost.
+*   **Constraint:** Quantum imscriptions require `--speculative` flag and `--quantum-mode` for proper $T_{op}$ Landauer cost.
 *   **Protocol:**
     1.  Register target with `--speculative` flag to quarantine in `quantum` domain.
     2.  Use `--quantum-mode` for proper thermodynamic accounting.
@@ -308,7 +308,7 @@ compatibility = constraint_engine.check_pairwise(ensemble)
 
 ## 6.0 Advanced: The "Quantum Quarantine" Decomposition
 
-For speculative systems (quantum synthons, hypothetical topologies):
+For speculative systems (quantum imscriptions, hypothetical topologies):
 
 1.  Register the target with `--speculative` flag.
 2.  Isolate in `domain=quantum` or `domain=speculative`.
@@ -358,11 +358,11 @@ Successful retrodesign implies the target system is decomposable into synthetica
 
 ## 9.0 Implementation Status
 
-> **Design specification.** `imscribe retrodesign` CLI and `DecompositionEngine` are planned. `SynthonNotation.from_string()` is planned. `ConstraintEngine.check_pair_compatibility` exists; recursive tree traversal with axiom pruning is planned. `AxiomValidator` is planned.
+> **Design specification.** `imscribe retrodesign` CLI and `DecompositionEngine` are planned. `ImscriptionNotation.from_string()` is planned. `ConstraintEngine.check_pair_compatibility` exists; recursive tree traversal with axiom pruning is planned. `AxiomValidator` is planned.
 
 *   **Core Engine:** Uses `ConstraintEngine.check_pair_compatibility` iteratively.
 *   **Validation:** Uses `AxiomValidator` at each tree node (planned).
 *   **Output:** JSON tree structure compatible with `imscrbgrmr.domains.hybrid`.
-*   **Integration:** Retrodesign output (validated synthon set) feeds directly into IΓ_HOTSWAP.md as candidate pool. Decomposed components should be pre-checked with IΓ_ENSEMBLER.md for emergent axiom violations before HotSwap screening begins.
+*   **Integration:** Retrodesign output (validated imscription set) feeds directly into IΓ_HOTSWAP.md as candidate pool. Decomposed components should be pre-checked with IΓ_ENSEMBLER.md for emergent axiom violations before HotSwap screening begins.
 
 ---

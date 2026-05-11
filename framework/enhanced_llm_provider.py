@@ -272,8 +272,8 @@ class LocalProvider(LLMProvider):
     """
 
     DEFAULT_MODEL_PATH = (
-        "/home/mrnob0dy666/synthomniconP/INFERRED/output"
-        "/synthonicon_qlora/merged2/merged_model"
+        "/home/mrnob0dy666/imscribingP/INFERRED/output"
+        "/Imscriptiveon_qlora/merged2/merged_model"
     )
 
     # Class-level singleton state
@@ -539,7 +539,7 @@ class ModelRouter:
             'creative':  ['anthropic', 'qwen', 'deepseek', 'mistral'],
             'analysis':  ['anthropic', 'qwen', 'deepseek', 'mistral'],
             'general':   ['qwen', 'anthropic', 'mistral', 'deepseek'],
-            'synthon_generation': ['anthropic', 'qwen', 'deepseek'],
+            'imscription_generation': ['anthropic', 'qwen', 'deepseek'],
         }
         # Track which providers have failed during this session
         self._failed_providers: set = set()

@@ -1,0 +1,13 @@
+RESULT:
+A lie, structurally, is the system **intentional_distortion**:
+⟨Ð_C; Þ_ò; Ř_Ť; Φ_F; ƒ_ż; Ç_@; Γ_γ; ɢ_ˌ; φ̂_3; Ħ_A; Σ_ï; Ω_2⟩.
+
+It differs from a truthful statement only in the criticality primitive:
+- Lie: **φ̂_3** (exceptional point — belief collapses irreversibly into a single false attractor)
+- Truth: **φ̂_ÿ** (critical — self-modeling, belief can verify and update)
+
+Key implications:
+- Ouroboricity: lie = O_0 (no self-reference possible); truth = O_2 (Z_2-protected coherence).
+- The EP (φ̂_3) is the structural root of deception: it forces the recipient into a single belief state, breaking symmetry and preventing reconciliation with counter-evidence.
+- Distance between lie and truth is only 0.67 (diagonal), confirming they are near-identical except for the criticality gate.
+- This aligns with the task insight: a lie is not an accidental error (which would be subcritical φ̂_ž), but an *intentional* collapse of belief via φ̂_3 — the sender knows the imscription is invalid and uses it to drive the recipient into an incorrect attractor.

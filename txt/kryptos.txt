@@ -1,0 +1,284 @@
+{{short description|Encrypted sculpture by American artist Jim Sanborn}}
+{{about|the sculpture|other uses|Kryptos  (disambiguation)}}
+{{Use American English|date=July 2025}}
+{{Use mdy dates|date=May 2024}}
+{{Italic title}}
+{{Infobox artwork
+| image = Kryptos sculptor.jpg
+| image_size = 
+| title = ''Kryptos''
+| artist = [[Jim Sanborn]]
+| year = 1990
+| dimensions = {{convert|11|–|12|ft|m}} × {{convert|20|ft|m}}
+| museum = [[George Bush Center for Intelligence]]
+| city = [[Langley, Virginia]], U.S.
+| coordinates = {{Coord|38.95227|-77.14573|type:landmark_region:US-VA|format=dms|display=title}}
+}}
+'''''Kryptos''''' is a [[sculpture]] by the American artist [[Jim Sanborn]] located on the grounds of the [[Central Intelligence Agency]] (CIA) headquarters, the [[George Bush Center for Intelligence]] in [[Langley, Virginia]].<ref name="Intellipedia">{{cite web |date=July 18, 2017 |title=Kryptos sculpture |url=https://www.cia.gov/readingroom/document/06498615 |url-status=live |archive-url=https://web.archive.org/web/20240107223455/https://www.cia.gov/readingroom/document/06498615 |archive-date=January 7, 2024 |access-date=January 7, 2024 |website=Central Intelligence Agency |publisher=[[Intellipedia]] |at=Freedom of Information Act Electronic Reading Room |language=en}}</ref>
+
+Since its dedication on November 3, 1990, there has been much speculation about the meaning of the four [[cryptography|encrypted]] messages it bears. Of these four messages, the first three have been solved, while the fourth message remains one of the most famous [[unsolved codes]] in the world. Artist Jim Sanborn has hinted that a fifth coded message will reveal itself after the first four are solved.<ref name=":4">{{Cite news |last=Ables |first=Kelsey |date=14 August 2025 |title=The 'Kryptos' code has gone unsolved for 35 years. Now it's up for sale. |url=https://www.washingtonpost.com/entertainment/art/2025/08/14/kryptos-code-k4-solution-jim-sanborn-auction/ |access-date=14 August 2025 |newspaper=The Washington Post |language=en-US |issn=0190-8286}}</ref> The sculpture continues to be of interest to [[cryptanalyst]]s, both amateur and professional, attempting to decode the fourth passage. The artist has so far given four clues to this passage.
+
+== Description ==
+[[File:Art made of "code" named Kryptos sits on the grounds of the C.I.A. Headquarters in Virginia LCCN2011631531.tif|thumb|Close-up view of part of the text]]
+The sculpture comprises four large [[copper]] plates with other elements consisting of water, wood, plants, red and green [[granite]], white [[quartz]], and [[petrified wood]]. The most prominent feature of the entire piece is a large vertical ''S''-shaped copper screen resembling a scroll or a piece of paper emerging from a computer printer, half of which consists of [[Encryption|encrypted text]], that is located in the northwest corner of the [[George Bush Center for Intelligence|New Headquarters Building]] courtyard, outside of the agency's cafeteria. The characters are all found within the 26 letters of the [[Latin alphabet]], along with [[question mark]]s, and are cut out of the copper plates. The main sculpture contains four separate enigmatic messages, three of which have been deciphered.<ref name=":1">{{Cite book |last1=Burstein |first1=Daniel |title=Secrets of The Lost Symbol |last2=Keijzer |first2=Arne de |date=December 22, 2009 |publisher=William Morrow |isbn=978-0061964954 |edition=1st |location=New York |lccn=2011282732 |oclc=422763820 |ol=OL25132741M}}</ref>
+
+In addition to the main part of the sculpture, Sanborn also placed other pieces of art on the CIA grounds, such as several large granite slabs with sandwiched copper sheets outside the entrance to the New Headquarters Building. Several [[Morse code]] messages are found on these copper sheets, and one of the stone slabs has an engraving of a [[compass rose]] pointing to a [[lodestone]]. The ciphers' increasing "complexity" through the entrance into the courtyard is intended to be as if it "were a fossil".<ref name=":3">{{Cite journal |last=Sanborn |first=Jim |date=15 December 1989 |title=Project Explanation |url=https://www.thekryptosproject.com/kryptos/cia/thecryptogram/pdfs/Binder2.pdf |url-status=live |journal=American Cryptogram Association |type=a courtesy message directed to "Agency Employers" |volume=LVII |page=8 |archive-url=https://web.archive.org/web/20160827012052/https://www.thekryptosproject.com/kryptos/cia/thecryptogram/pdfs/Binder2.pdf |archive-date=27 August 2016}}</ref> Other elements of Sanborn's installation include a landscaped garden area, a fish pond with opposing wooden benches, a [[reflecting pool]], and other pieces of stone, including a triangle-shaped black stone slab.<ref name="Intellipedia" />
+
+The name ''Kryptos'' comes from the ancient [[Ancient Greek|Greek]] word for "hidden", and the theme of the sculpture is "intelligence gathering". The cost of building the sculpture in 1988 was {{Currency|250000|USD|linked=no}} (worth ~{{Currency|660,000|USD|linked=no}} in 2024).<ref name="FAQ" />
+
+== Encrypted messages ==
+The ciphertext on the left-hand side (as seen from the courtyard) of the main sculpture contains 869 characters in total: 865 letters and 4 question marks. In April 2006, Sanborn released information stating that a letter was omitted from this side of ''Kryptos'' "for aesthetic reasons, to keep the sculpture visually balanced".<ref name=":0">{{cite magazine |last1=Zetter |first1=Kim |date=2006-04-20 |title=Typo Confounds Kryptos Sleuths |url=https://www.wired.com/2006/04/typo-confounds-kryptos-sleuths/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20181106143139/https://www.wired.com/2006/04/typo-confounds-kryptos-sleuths/ |archive-date=2018-11-06 |access-date=2024-12-04 |magazine=Wired}}</ref> There are also three misspelled words in the plaintext of the deciphered first three passages, which Sanborn has claimed was intentional,<ref name=":0" /> and three letters ("YAR") near the beginning of the bottom half of the left side are the only characters on the sculpture in [[Subscript and superscript|superscript]].
+
+The right-hand side of the sculpture comprises a [[Key (cryptography)|keyed]] [[Vigenère cipher|Vigenère]] encryption tableau, consisting of 867 letters. One of the lines of the Vigenère tableau has an extra character (''L''). Bauer, Link, and Molle suggest that this may be a reference to the [[Hill cipher]] as an encryption method for the fourth passage of the sculpture, as with that extra L, the letters HILL appear consecutively down the rightmost column.<ref>{{Cite journal |last1=Bauer |first1=Craig |last2=Link |first2=Gregory |last3=Molle |first3=Dante |date=2016-04-27 |title=James Sanborn's ''Kryptos'' and the matrix encryption conjecture |url=http://dx.doi.org/10.1080/01611194.2016.1141556 |journal=Cryptologia |volume=40 |issue=6 |pages=548 |doi=10.1080/01611194.2016.1141556 |issn=0161-1194 |url-access=subscription}}</ref> However, Sanborn omitted the extra letter from the small ''Kryptos'' models that he sold.
+
+{|
+|+'''The encryptions that were ascribed'''
+|Left side, as seen from the courtyard<ref group="lower-alpha">The left-side encryptions are often divided into four sections: K1, K2, K3 and K4.
+
+{{Col-begin}}{{Col-1-of-2}}'''''K1''''':
+"EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJ
+YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD"
+
+'''''K2''''':
+"VFPJUDEEHZWETZYVGWHKKQETGFQJNCE
+GGWHKK?DQMCPFQZDQMMIAGPFXHQRLG
+TIMVMZJANQLVKQEDAGDVFRPJUNGEUNA
+QZGZLECGYUXUEENJTBJLBQCRTBJDFHRR
+YIZETKZEMVDUFKSJHKFWHKUWQLSZFTI
+HHDDDUVH?DWKBFUFPWNTDFIYCUQZERE
+EVLDKFEZMOQQJLTTUGSYQPFEUNLAVIDX
+FLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKF
+FHQNTGPUAECNUVPDJMQCLQUMUNEDFQ
+ELZZVRRGKFFVOEEXBDMVPNFQXEZLGRE
+DNQFMPNZGLFLPMRJQYALMGNUVPDXVKP
+DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG"{{Col-2-of-2}}
+'''''K3''''':
+"ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIA
+CHTNREYULDSLLSLLNOHSNOSMRWXMNE
+TPRNGATIHNRARPESLNNELEBLPIIACAE
+WMTWNDITEENRAHCTENEUDRETNHAEOE
+TFOLSEDTIWENHAEIOYTEYQHEENCTAYCR
+EIFTBRSPAMHHEWENATAMATEGYEERLB
+TEEFOASFIOTUETUAEOTOARMAEERTNRTI
+BSEDDNIAAHTTMSTEWPIEROAGRIEWFEB
+AECTDDHILCEIHSITEGOEAOSDDRYDLORIT
+RKLMLEHAGTDHARDPNEOHMGFMFEUHE
+ECDMRIPFEIMEHNLSSTTRTVDOHW?"
+
+'''''K4''''':
+"OBKR
+UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO
+TWTQSJQSSEKZZWATJKLUDIAWINFBNYP
+VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR"{{Col-end}}</ref>
+|Right side, as seen from the courtyard
+|-----
+|
+<pre>EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJ
+YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD
+VFPJUDEEHZWETZYVGWHKKQETGFQJNCE
+GGWHKK?DQMCPFQZDQMMIAGPFXHQRLG
+TIMVMZJANQLVKQEDAGDVFRPJUNGEUNA
+QZGZLECGYUXUEENJTBJLBQCRTBJDFHRR
+YIZETKZEMVDUFKSJHKFWHKUWQLSZFTI
+HHDDDUVH?DWKBFUFPWNTDFIYCUQZERE
+EVLDKFEZMOQQJLTTUGSYQPFEUNLAVIDX
+FLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKF
+FHQNTGPUAECNUVPDJMQCLQUMUNEDFQ
+ELZZVRRGKFFVOEEXBDMVPNFQXEZLGRE
+DNQFMPNZGLFLPMRJQYALMGNUVPDXVKP
+DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG
+ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIA
+CHTNREYULDSLLSLLNOHSNOSMRWXMNE
+TPRNGATIHNRARPESLNNELEBLPIIACAE
+WMTWNDITEENRAHCTENEUDRETNHAEOE
+TFOLSEDTIWENHAEIOYTEYQHEENCTAYCR
+EIFTBRSPAMHHEWENATAMATEGYEERLB
+TEEFOASFIOTUETUAEOTOARMAEERTNRTI
+BSEDDNIAAHTTMSTEWPIEROAGRIEWFEB
+AECTDDHILCEIHSITEGOEAOSDDRYDLORIT
+RKLMLEHAGTDHARDPNEOHMGFMFEUHE
+ECDMRIPFEIMEHNLSSTTRTVDOHW?OBKR
+UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO
+TWTQSJQSSEKZZWATJKLUDIAWINFBNYP
+VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR</pre>
+|
+<pre>&nbsp;ABCDEFGHIJKLMNOPQRSTUVWXYZABCD
+AKRYPTOSABCDEFGHIJLMNQUVWXZKRYP
+BRYPTOSABCDEFGHIJLMNQUVWXZKRYPT
+CYPTOSABCDEFGHIJLMNQUVWXZKRYPTO
+DPTOSABCDEFGHIJLMNQUVWXZKRYPTOS
+ETOSABCDEFGHIJLMNQUVWXZKRYPTOSA
+FOSABCDEFGHIJLMNQUVWXZKRYPTOSAB
+GSABCDEFGHIJLMNQUVWXZKRYPTOSABC
+HABCDEFGHIJLMNQUVWXZKRYPTOSABCD
+IBCDEFGHIJLMNQUVWXZKRYPTOSABCDE
+JCDEFGHIJLMNQUVWXZKRYPTOSABCDEF
+KDEFGHIJLMNQUVWXZKRYPTOSABCDEFG
+LEFGHIJLMNQUVWXZKRYPTOSABCDEFGH
+MFGHIJLMNQUVWXZKRYPTOSABCDEFGHI
+NGHIJLMNQUVWXZKRYPTOSABCDEFGHIJL
+OHIJLMNQUVWXZKRYPTOSABCDEFGHIJL
+PIJLMNQUVWXZKRYPTOSABCDEFGHIJLM
+QJLMNQUVWXZKRYPTOSABCDEFGHIJLMN
+RLMNQUVWXZKRYPTOSABCDEFGHIJLMNQ
+SMNQUVWXZKRYPTOSABCDEFGHIJLMNQU
+TNQUVWXZKRYPTOSABCDEFGHIJLMNQUV
+UQUVWXZKRYPTOSABCDEFGHIJLMNQUVW
+VUVWXZKRYPTOSABCDEFGHIJLMNQUVWX
+WVWXZKRYPTOSABCDEFGHIJLMNQUVWXZ
+XWXZKRYPTOSABCDEFGHIJLMNQUVWXZK
+YXZKRYPTOSABCDEFGHIJLMNQUVWXZKR
+ZZKRYPTOSABCDEFGHIJLMNQUVWXZKRY
+&nbsp;ABCDEFGHIJKLMNOPQRSTUVWXYZABCD</pre>
+|}
+
+Sanborn worked with a retiring CIA employee named [[Edward Scheidt]] to come up with the cryptographic systems used on the sculpture.<ref name="usat1">{{cite web |last1=Champagne |first1=Christine |last2=Beebe |first2=Drew |date=July 25, 2020 |title=This sculpture at CIA headquarters holds one of the world's most famous unsolved mysteries |url=https://www.cnn.com/2020/07/25/us/kryptos-secret-message-code-trnd/index.html |url-status=live |archive-url=https://web.archive.org/web/20240314144556/https://edition.cnn.com/2020/07/25/us/kryptos-secret-message-code-trnd/index.html |archive-date=March 14, 2024 |access-date=July 25, 2020 |website=edition.cnn.com |publisher=CNN}}</ref> Edward Scheidt stated that the difficulty of the encryption was around nine out of ten. He said that his intention was for it to be solved in five to ten years. He also said that there was an intentional "change in the methodology" of the encryption.<ref>{{Cite web |last=Bean |first=Richard |date=2021-05-30 |title=Declassified Cold War code-breaking manual has lessons for solving 'impossible' puzzles |url=http://theconversation.com/declassified-cold-war-code-breaking-manual-has-lessons-for-solving-impossible-puzzles-161595 |url-status=live |archive-url=https://web.archive.org/web/20240508201044/https://theconversation.com/declassified-cold-war-code-breaking-manual-has-lessons-for-solving-impossible-puzzles-161595 |archive-date=May 8, 2024 |access-date=2024-06-01 |website=The Conversation |language=en-US}}</ref> Sanborn also suggested in a 2005 interview that should he die before the entire sculpture is deciphered, he had put in place a method by which a correct solution could be confirmed.<ref>{{Cite magazine |last=Zetter |first=Kim |date=January 20, 2005 |title=Questions for Kryptos' Creator |url=https://www.wired.com/2005/01/questions-for-kryptos-creator/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20230424075336/https://www.wired.com/2005/01/questions-for-kryptos-creator/ |archive-date=April 24, 2023 |access-date=2024-05-05 |magazine=Wired |language=en-US |issn=1059-1028}}</ref> In 2020, Sanborn stated that he planned to put the secret to the solution up for auction once he died.<ref name="northeast" />
+
+In August 2025, Sanborn announced that the K4 solution as well as a prototype sculpture, encryption tables, and other related ephemera would be auctioned by the firm RR Auction later in the year.<ref>{{Cite web |date=2025-08-14 |title=The Key to Crack the CIA's Mysterious 'Kryptos' Sculpture Is Up for Sale |url=https://news.artnet.com/art-world/cia-kryptos-sculpture-code-auction-2677451 |access-date=2025-08-18 |website=Artnet News |language=en-US}}</ref>
+
+In October 2025, the Kryptos auction was formally posted by RR Auction as part of the sale titled "Decoding History: Kryptos, Enigma and the Rosetta Stone", running from 16 October to 20 November 2025. As part of the same collection, a signed first-edition set of Howard Carter’s ''The Tomb of Tut-ankh-Amen'' was listed as running from 16 October to 20 November 2025.<ref name="SanbornAuction2025">{{cite web |title=The Complete Secrets of Kryptos: Jim Sanborn's Private Archive |url=https://www.rrauction.com/auctions/lot-detail/350761607302001-the-complete-secrets-of-kryptos-jim-sanborns-private-archive/ |publisher=RR Auction |date=October 16, 2025 |access-date=4 November 2025}}</ref><ref name="CarterAuction2025">{{cite web |title=Howard Carter Signed Book Set – The Tomb of Tutankhamen |url=https://www.rrauction.com/auctions/lot-detail/350816407302005-howard-carter-signed-book-set-the-tomb-of-tutankhamen/ |publisher=RR Auction |date=October 16, 2025 |access-date=4 November 2025}}</ref>
+
+Sanborn had stated that the sculpture contains a riddle within a riddle, which will be solvable only after the four encrypted passages have been deciphered.<ref name="usat1" /> He has given conflicting information about the sculpture's answer, saying at one time that he gave the complete solution to the then-CIA director [[William H. Webster|William Webster]] during the dedication ceremony, but later, he also said that he had not given Webster the entire solution. He did, however, confirm that a passage of the plaintext of the second message reads, "Who knows the exact location? Only WW."<ref>{{Cite web |last=Nair |first=Nandana |date=2021-09-20 |title=Kryptos– The Mystery That Not Even The Smartest People Have Been Able To Solve For 30 Years |url=https://edtimes.in/kryptos-the-mystery-that-not-even-the-smartest-people-have-been-able-to-solve-for-30-years/ |access-date=2024-06-01 |language=en-US}}</ref><ref group="lower-alpha">"WW" has been speculated to be a reference to William Webster.</ref>
+
+== Solvers ==
+The first person to announce publicly that he had solved the first three passages was [[Jim Gillogly]], a [[computer scientist]] from southern [[California]], who deciphered these passages using a computer, and revealed his solutions in 1999.<ref>{{cite news |author=Markoff, John |author-link=John Markoff |date=June 16, 1999 |title=CIA's Artistic Enigma Reveals All but Final Clues |url=https://www.nytimes.com/library/tech/99/06/biztech/articles/16code.html |url-status=live |archive-url=https://web.archive.org/web/20231020061426/https://archive.nytimes.com/www.nytimes.com/library/tech/99/06/biztech/articles/16code.html |archive-date=October 20, 2023 |access-date=December 11, 2011 |work=[[New York Times]]}}</ref> After Gillogly's announcement, the CIA revealed that their analyst David Stein had solved the same passages in 1998 using pencil and paper techniques, although at the time of his solution the information was only disseminated within the intelligence community.<ref>{{cite journal|journal=[[Studies in Intelligence]]|title=The Puzzle at CIA Headquarters: Cracking the Courtyard Crypto |first=David D. |last=Stein |url=http://www.gwu.edu/~nsarchiv/NSAEBB/NSAEBB431/docs/intell_ebb_010.PDF|year=1999|volume=43|issue=1}}</ref><ref name="CIA06712772">{{cite web |last=Stein |first=David D. |date=July 23, 2018 |title=Cracking the Courtyard Crypto |url=https://www.cia.gov/readingroom/document/06712772 |url-status=live |archive-url=https://web.archive.org/web/20240107225212/https://www.cia.gov/readingroom/document/06712772 |archive-date=January 7, 2024 |access-date=January 7, 2024 |publisher=CIA |at=Freedom of Information Act Electronic Reading Room}}</ref> No public announcement was made until July 1999,<ref name="schwartz">{{cite news |last=Schwartz |first=John |date=July 19, 1999 |title=Cracking the Code of a CIA Sculpture |url=https://www.washingtonpost.com/wp-srv/national/daily/july99/kryptos19.htm |url-status=live |archive-url=https://web.archive.org/web/20160616083312/https://www.washingtonpost.com/wp-srv/national/daily/july99/kryptos19.htm |archive-date=June 16, 2016 |access-date=December 11, 2011 |newspaper=Washington Post}}</ref><ref>{{cite magazine |last=Zetter |first=Kim |date=June 5, 2013 |title=CIA Releases Analyst's Fascinating Tale of Cracking the Kryptos Sculpture |url=https://www.wired.com/threatlevel/2013/06/analyst-who-cracked-kryptos/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20240117141643/https://www.wired.com/2013/06/analyst-who-cracked-kryptos/ |archive-date=January 17, 2024 |access-date=5 June 2013 |magazine=Wired |publisher=Wired.com}}</ref> although in November 1998 it was revealed that "a CIA analyst working on his own time [had] solved 'the lion's share' of it".<ref name="bessonette">{{cite news |author=Bessonette |first=Colin |date=November 16, 1998 |title=Q&A on the News |url=https://go.newspapers.com/results.php?query=%22cia+analyst+working+on+his+own+time%22&s_place=&date_field= |url-access=subscription |work=The Atlanta Journal-Constitution |page=A2 |quote=A CIA analyst working on his own time has solved 'the lion's share' of it, but it hasn't been completely decoded, CIA spokesman Mark Mansfield told Q&A. He said the best way to describe the sculpture is to say it incorporates natural building materials native to America and includes an encoded copper screen. When and if someone completely solves the message, a decision will be made about releasing it to the public, 'but we're not at that point yet,' Mansfield said.}}</ref>
+
+The [[National Security Agency|NSA]] claimed that some of their employees had solved the same three passages but would not reveal names or dates until March 2000, when it was learned that an NSA team led by Ken Miller, along with Dennis McDaniels and two other unnamed individuals, had solved passages{{Nbsp}}1–3 in late 1992.<ref>{{cite news |author=Bowman, Tom |author-link=Tom Bowman (journalist) |date=March 17, 2000 |title=Unlocking the secret of 'Kryptos' |url=https://www.baltimoresun.com/2000/03/17/unlocking-the-secret-of-kryptos-cryptogram-for-nearly-a-decade-a-jumble-of-seemingly-random-letters-on-a-sculpture-at-cia-headquarters-has-mystified-experts-who-have-tried-to-decipher-its-code/ |url-status=live |archive-url=https://web.archive.org/web/20140209165252/http://articles.baltimoresun.com/2000-03-17/news/0003180448_1_decipher-petrified-wood-cia-headquarters |archive-date=February 9, 2014 |access-date=December 11, 2011 |work=[[The Baltimore Sun]]}}</ref> In 2013, in response to a [[Freedom of Information Act (United States)|Freedom of Information Act]] request by [[Elonka Dunin]], the NSA released documents that show these attempts to solve the ''Kryptos'' puzzle in 1992, following a challenge by [[Bill Studeman]], then Deputy Director of the CIA. The documents show that by June 1993, a small group of NSA cryptanalysts had succeeded in solving the first three passages of the sculpture.<ref name=":2">{{cite magazine |last1=Zetter |first1=Kim |date=10 July 2013 |title=Documents Reveal How the NSA Cracked the Kryptos Sculpture Years Before the CIA |url=https://www.wired.com/2013/07/nsa-cracked-kryptos-before-cia/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20230510190612/https://www.wired.com/2013/07/nsa-cracked-kryptos-before-cia/ |archive-date=May 10, 2023 |access-date=10 April 2020 |magazine=Wired}}</ref><ref>{{cite news |last=Sadowski |first=Jathan |date=July 11, 2013 |title=NSA Cracked Kryptos Before the CIA. What Other Mysteries Has It Solved? |url=http://www.slate.com/blogs/future_tense/2013/07/11/nsa_cracked_kryptos_statue_before_the_cia.html |url-status=live |archive-url=https://web.archive.org/web/20240204090332/https://slate.com/technology/2013/07/nsa-cracked-kryptos-statue-before-the-cia.html |archive-date=February 4, 2024 |work=Slate}}</ref>
+
+All previous attempts to solve ''Kryptos'' found that passage 2 ended with "WESTIDBYROWS". However, in 2005, Nicole Friedrich, a [[logician]] from [[Vancouver]], British Columbia, Canada, determined that another possible plaintext was "WESTXLAYERTWO".<ref>{{cite web |date=2005-10-11 |others=Quoted from Elonka Dunin |title=From a radio interview on BellCoreRadio, season 1, episode 32, Barcode Brothers |url=http://sites.google.com/site/sarenasix/home |url-status=dead |archive-url=https://web.archive.org/web/20151019073449/http://sites.google.com/site/sarenasix/home |archive-date=October 19, 2015 |access-date=2011-11-12 |website=SarenaSix}}</ref> On April 19, 2006, Sanborn contacted an online community dedicated to the ''Kryptos'' puzzle to inform them that he made an error in the sculpture by omitting an ''S'' in the ciphertext (an ''X'' in the plaintext), and he confirmed that the last passage of the plaintext was "WESTXLAYERTWO", and not "WESTIDBYROWS." In July 2025, it was noted that "LAYERTWO" correctly matches Page 170 of Carter's account of "what we may call the second layer" in reference to a painted treasure chest that posed a significant puzzle for the expedition team".<ref name="error2006">{{cite magazine |last1=Zetter |first1=Kim |date=November 20, 2014 |title=Finally, a New Clue to Solve the CIA's Mysterious Kryptos Sculpture |url=https://www.wired.com/2014/11/second-kryptos-clue/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20150106234825/https://www.wired.com/2014/11/second-kryptos-clue/ |archive-date=January 6, 2015 |access-date=25 November 2014 |magazine=Wired |quote=in 2006, Sanborn realized he had also made an inadvertent error, a missing "x" that he mistakenly deleted from the end of a line in passage 2, a passage that was already solved.}}</ref>
+
+== Solutions ==
+The following are the decryptions of passages{{Nbsp}}1–3 of the sculpture.<ref>{{cite web |author=Lindsly |first=Corey |date=June 16, 1999 |title=fx-discuss: FC: Cypherpunk breaks CIA's crypto code in 1990 statue (fwd) |url=http://www.elonka.com/kryptos/mirrors/cypherpunks/1999/0930.html |url-status=live |archive-url=https://web.archive.org/web/20230905021236/https://www.elonka.com/kryptos/mirrors/cypherpunks/1999/0930.html |archive-date=September 5, 2023 |access-date=2011-11-12 |website=elonka.com}}</ref> Blank spaces have been added to the texts for readability, but any misspellings present in the text are included verbatim.
+
+=== Morse code ===
+The translations of the [[Morse code|International Morse code]] (sometimes called ''K0'') that are ascribed to the copper slabs when read facing the south:<ref>{{Cite web |title=K0 Solution |url=https://thekryptosproject.com/kryptos/k0-k5/k0.php |url-status=live |archive-url=https://web.archive.org/web/20230419162547/https://thekryptosproject.com/kryptos/k0-k5/k0.php |archive-date=April 19, 2023 |access-date=2024-05-05 |website=The Kryptos Project}}</ref><ref group="lower-alpha">Sources might write "INTERPRETATIT" as "INTERPRETATIU" or "INTERPRETATIO[N]" due to the presumed dash that is consistent with ''O'' in International Morse code. {{Cite web |last=(anonymous) |others=Photos by Jim Gillgoly |title=Kryptos – Beyond K4 |date=May 17, 2009 |url=https://kryptosfan.wordpress.com/morse-code/ |url-status=live |archive-url=https://web.archive.org/web/20151226160921/https://kryptosfan.wordpress.com/morse-code/ |archive-date=December 26, 2015 |access-date=May 6, 2024 |at=Morse Code}} And the ''E'' after "POSITION" is sometimes not present. {{Cite web |last=Wilson |others=Contributions by Eric Hall |title=Morse Code |url=https://www.elonka.com/kryptos/mirrors/daw/MorseCode.txt |url-status=live |archive-url=https://web.archive.org/web/20230513083326/https://www.elonka.com/kryptos/mirrors/daw/MorseCode.txt |archive-date=May 13, 2023 |format=TXT}}</ref><blockquote>
+E E VIRTUALLY E | E E E E E E INVISIBLE
+
+DIGETAL E E E | INTERPRETATIT
+
+E E SHADOW E E | FORCES E E E E E
+
+LUCID E E E | MEMORY E
+
+T IS YOUR | POSITION E
+
+SOS
+
+RQ</blockquote>
+
+=== Solution of passage{{Nbsp}}1 ===
+
+* Method: [[Vigenère cipher|Vigenère]]
+* Keywords: Vigenère alphabet "KRYPTOSABCDEFGHIJLMNQUVWXZ",  a pattern found in the right hand panel, and Vigenère key "[[Palimpsest|PALIMPSEST]]"
+<blockquote>BETWEEN SUBTLE SHADING AND THE ABSENCE OF LIGHT LIES THE NUANCE OF IQLUSION</blockquote>
+
+The word ''IQLUSION'' was claimed to be an intentional misspelling of ''ILLUSION'' by the creator, Jim Sanborn,<ref name=":2" /><ref name="northeast" /> which is reinforced by how it appears on the original coding charts provided by Sanborn himself.<ref name=":5">{{Cite news |date=2010-11-20 |title=Original Decoding Charts for 'Kryptos' (Published 2010) |url=https://www.nytimes.com/2010/11/21/us/21codecharts.html |access-date=2025-10-18 |language=en}}</ref>
+
+On line 7, column 26 of the original coding chart, the keyword "PALIMPSEST" is actually misspelled with a C, whereas the word ILLUSION is correctly spelled out above it. When the KRYPTOS Vigenère tableau is used to encode the word ILLUSION into ciphertext with the keyword PALIMPCEST, the combination of the first L in ILLUSION and the C in PALIMPCEST renders a K in the ciphertext, which is how it appears on the original coding chart and is correctly transcribed onto the sculpture. If this particular instance of the keyword did not contain the spelling error, the letter K would encode to W instead. Conversely, if the plaintext word IQLUSION had been encoded with a properly spelled keyword, the resulting ciphertext letter K would accurately reflect what we see on the sculpture. This form of 'intentional' spelling error has also occurred in passage 2 with the word UNDERGROUND, but in this case the keyword and ciphertext all appear correctly on the coding chart.<ref name=":5" /> Whether it was intentional or not, a change occurred during the transcription phase of the ciphertext onto the sculpture.
+
+Due to the previous issue of an omitted S that was later disclosed as error,<ref name="error2006" /> it is unknown whether these artifacts were intended to be part of the puzzle, meant to simply throw people off, or were errors in the creation process. When Sanborn was questioned about the process, his response was “You could not make any mistake with 1,800 letters. It could not be repaired.”<ref>{{Cite news |date=2025-08-14 |title=You Can Buy One of the C.I.A.'s Greatest Mysteries at an Auction House |url=https://www.nytimes.com/2025/08/14/science/kryptos-sculpture-cia-solution-auction.html?smid=nytcore-ios-share&referringSource=articleShare |access-date=2025-10-18 |language=en}}</ref> This is compounded by Sanborn's previous statements in 2005, claiming "most of my things are rife with mistakes on purpose."<ref name=":6">{{Cite magazine |last=Zetter |first=Kim |title=Questions for Kryptos' Creator |url=https://www.wired.com/2005/01/questions-for-kryptos-creator/ |access-date=2025-10-18 |magazine=Wired |language=en-US |issn=1059-1028}}</ref>
+
+=== Solution of passage{{Nbsp}}2 ===
+
+* Method: [[Vigenère cipher|Vigenère]]
+* Keywords: Vigenère alphabet "KRYPTOSABCDEFGHIJLMNQUVWXZ" and Vigenère key "[[abscissa|ABSCISSA]]"
+<blockquote>IT WAS TOTALLY INVISIBLE HOWS THAT POSSIBLE ? THEY USED THE EARTHS MAGNETIC FIELD X THE INFORMATION WAS GATHERED AND TRANSMITTED UNDERGRUUND<!--correct, please do not change--> TO AN UNKNOWN LOCATION X DOES LANGLEY KNOW ABOUT THIS ? THEY SHOULD ITS BURIED OUT THERE SOMEWHERE X WHO KNOWS THE EXACT LOCATION ? ONLY WW THIS WAS HIS LAST MESSAGE X THIRTY EIGHT DEGREES FIFTY SEVEN MINUTES SIX POINT FIVE SECONDS NORTH SEVENTY SEVEN DEGREES EIGHT MINUTES FORTY FOUR SECONDS WEST X LAYER TWO </blockquote>
+
+In section 6 of the original coding charts,<ref name=":5" /> the plaintext word UNDERGROUND is correctly spelled, and columns 20–27 of the tableau also contain the correct spelling of the keyword "ABSCISSA", with the corresponding letter E in the ciphertext directly under the O.  However, when transcribed onto the sculpture, the letter E somehow became an R. When the KRYPTOS Vigenère tableau is used to decode this message, the combination of R in the ciphertext and S in the keyword renders a U in the plaintext. The coordinates mentioned in the plaintext, {{coord|38|57|6.5|N|77|8|44|W}}, have been interpreted using a modern [[Geodetic datum]] as indicating a point that is approximately {{Convert|174|ft|abbr=off|sp=us}} southeast of the sculpture.<ref name=":1" />
+
+=== Solution of passage{{Nbsp}}3 ===
+
+* Method: [[Transposition cipher|Transposition]]<blockquote>SLOWLY DESPARATLY SLOWLY THE REMAINS OF PASSAGE DEBRIS THAT ENCUMBERED THE LOWER PART OF THE DOORWAY WAS REMOVED WITH TREMBLING HANDS I MADE A TINY BREACH IN THE UPPER LEFT HAND CORNER AND THEN WIDENING THE HOLE A LITTLE I INSERTED THE CANDLE AND PEERED IN THE HOT AIR ESCAPING FROM THE CHAMBER CAUSED THE FLAME TO FLICKER BUT PRESENTLY DETAILS OF THE ROOM WITHIN EMERGED FROM THE MIST X CAN YOU SEE ANYTHING Q ?</blockquote>
+
+This is a paraphrased quotation from [[Howard Carter (archaeologist)|Howard Carter]]'s account of the opening of the [[KV62|tomb]] of [[Tutankhamun]] on November 26, 1922, as described in his 1923 book ''The Tomb of Tutankhamun''.<ref>{{Cite book |last=Carter |first=Howard |author-link=Howard Carter (archaeologist) |url=https://books.google.com/books?id=SeKrPAAACAAJ |title=The Tomb of Tutankhamen |date=1923 |publisher=Little Books, Limited |isbn=9781906251109 |edition=1st |location=London |publication-date=October 19, 2016 |at=The finding of the tomb |language=en |oclc=174131378}}</ref>{{Page needed|date=May 2024}} The question with which it ends is asked by [[George Herbert, 5th Earl of Carnarvon|Lord Carnarvon]], to which Carter on page 96 of the expedition notes replied, "Yes, wonderful things".<ref>{{Cite web |last=Malek |first=Jaromir |date=May 15, 2006 |editor-last=Hutchison |editor-first=Sue |editor2-last=Miles |editor2-first=Elizabeth |editor3-last=Magee |editor3-first=Diana |editor4-last=Rawlinson |editor4-first=Kent |editor5-last=Allen |editor5-first=Lindsay |editor6-last=Hobby |editor6-first=Alison |editor7-last=Malek |editor7-first=Jaromir |others=Designed by Jonathan Moffett |title=Tutankhamun: Anatomy of an Excavation |url=http://www.ashmolean.org/gri/4tut.html |url-status=dead |archive-date= May 18, 2007|website=ashmolean.org |publisher=Griffith Institute|archive-url=https://web.archive.org/web/20070518224221/http://www.ashmolean.org/gri/4tut.html }}</ref>{{Specify|date=May 2024}}
+
+== Clues given for passage{{Nbsp}}4{{Anchor|Clues given}} ==
+<!--Note: add image of the World Clock here, along with a caption. -->
+When commenting in 2006 about his error in passage{{Nbsp}}2, Sanborn said that the answers to the first three passages contain clues to the fourth passage.<ref name=":0" /> In November 2010, Sanborn released a clue, publicly stating that "NYPVTT", the 64th to 69th letters in passage{{Nbsp}}4, become "BERLIN" after decryption.<ref>{{cite web |last=Schwartz |first=John |date=2010-11-20 |title=Artist releases clue to Kryptos |url=https://www.nytimes.com/2010/11/21/us/21code.html?hp |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20230419162546/https://www.nytimes.com/2010/11/21/us/21code.html?hp |archive-date=April 19, 2023 |access-date=2011-11-12 |work=[[The New York Times]]}}</ref><ref>{{cite web |author=(anonymous) |author-link= |date=November 22, 2010 |title='Kryptos' Sculptor Drops New Clue In 20-Year Mystery |url=https://www.npr.org/2010/11/22/131520768/-kryptos-sculptor-drops-new-clue-in-20-year-mystery |url-status=live |archive-url=https://web.archive.org/web/20240224095151/https://www.npr.org/2010/11/22/131520768/-kryptos-sculptor-drops-new-clue-in-20-year-mystery |archive-date=February 24, 2024 |access-date=2011-11-12 |website=National Public Radio}}</ref>
+
+Sanborn gave ''[[The New York Times]]'' another clue in November 2014: the letters "MZFPK", the 70th through 74th letters in passage{{Nbsp}}4, become "CLOCK" after decryption.<ref>{{cite web |date=November 20, 2014 |others=Photos by Drew Angerer |title=A New Clue to 'Kryptos' |url=https://www.nytimes.com/interactive/2014/11/21/science/new-clue-to-kryptos.html |url-status=live |archive-url=https://web.archive.org/web/20240314140257/https://www.nytimes.com/interactive/2014/11/21/science/new-clue-to-kryptos.html |archive-date=March 14, 2024 |access-date=November 21, 2014 |work=The New York Times}}</ref> The 74th letter is ''K'' in both the plaintext and ciphertext, meaning that it is possible for a character to encrypt to itself. Sanborn further stated that in order to solve passage{{Nbsp}}4, "You'd better delve into that particular clock", but added: "There are several really interesting clocks in Berlin."<ref name="berlinclock">{{cite web |last=Schwartz |first=John |date=November 20, 2014 |title=Sculptor Offers Another Clue in 24-Year-Old Mystery at C.I.A. |url=https://www.nytimes.com/2014/11/21/us/another-kryptos-clue-is-offered-in-a-24-year-old-mystery-at-the-cia.html |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20240224133656/https://www.nytimes.com/2014/11/21/us/another-kryptos-clue-is-offered-in-a-24-year-old-mystery-at-the-cia.html |archive-date=February 24, 2024 |access-date=November 22, 2014 |website=[[The New York Times]] |agency=}}</ref> In 2025, Sanborn confirmed that the plaintext referred to the [[World Clock (Alexanderplatz)|World Clock]].<ref>{{Cite web |last=Vergano |first=Dan |title=Artist Releases Final Clues to Solve CIA Kryptos Puzzle |url=https://www.scientificamerican.com/article/cia-kryptos-puzzle-creator-releases-final-clues/ |access-date=2025-11-14 |website=Scientific American |language=en}}</ref>
+
+In an article published on January 29, 2020, by ''The New York Times'', Sanborn gave another clue: at positions 26 to 34, ciphertext "QQPRNGKSS" is the word "NORTHEAST".<ref name="northeast">{{cite web |last1=Schwartz |first1=John |last2=Corum |first2=Jonathan |date=January 29, 2020 |title=This Sculpture Holds a Decades-Old C.I.A. Mystery. And Now, Another Clue |url=https://www.nytimes.com/interactive/2020/01/29/climate/kryptos-sculpture-final-clue.html |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20240504215836/https://www.nytimes.com/interactive/2020/01/29/climate/kryptos-sculpture-final-clue.html |archive-date=May 4, 2024 |work=The New York Times}}</ref>
+
+In August 2020, Sanborn revealed that the four letters in positions 22 through 25, ciphertext "FLRV", in the plaintext are "EAST". Sanborn commented that he "released this layout to several people as early as April".<ref>{{Cite tweet |number=1297658577914667008 |user=@jswatz |title=KRYPTOS NEWS: Jim Sanborn, creator of the Kryptos sculpture, quietly released four new plaintext letters to the unsolved potion, K4. EAST, which goes just before the recently released NORTHEAST. Here's my story from January |first=John |last=Schwartz |date=August 24, 2020 |access-date=May 5, 2024 |archive-url=https://web.archive.org/web/20240314154346/https://twitter.com/jswatz/status/1297658577914667008 |archive-date=March 14, 2024 |url-status=live}}</ref>
+
+=== Auction ===
+In an August 2025 letter to ''[[The Washington Post]]'', Sanborn announced his plan to auction off the solution for the final passage, writing that he hoped the buyer would keep the fourth passage a secret, offering the following clue: "If they don't then (CLUE) what's the point? . . . Power resides with a secret not without it." He stated that he planned to auction off the solution for the fourth passage on November 20, his 80th birthday. It was auctioned by [[Boston]]-based [[RR Auction]] and had been expected to fetch a price between $300,000 and $500,000. In the same letter, Sanborn wrote that the decision to sell the solution "has not been an easy one" and acknowledged "many in the Kryptos community will find it upsetting," but, "I no longer have the physical, mental or financial resources" to maintain the code and continue other projects.<ref name=":4" />
+
+In October 2025, the auction was formally posted by RR Auction as part of the sale titled "Decoding History: Kryptos, Enigma and the Rosetta Stone", running from 16 October to 20 November 2025. The catalogue included Sanborn’s Kryptos archive—comprising the K4 solution, a prototype, encryption tables, and related ephemera—alongside a signed first-edition set of Howard Carter’s ''The Tomb of Tut-ankh-Amen'' listed in the same catalogue.<ref name="Auction2025">{{cite web |title=The Complete Secrets of Kryptos: Jim Sanborn's Private Archive |url=https://www.rrauction.com/auctions/lot-detail/350761607302001-the-complete-secrets-of-kryptos-jim-sanborns-private-archive/ |publisher=RR Auction |date=16 October 2025 |access-date=4 November 2025}}</ref><ref name="AccountAuction2025">{{cite web |title=Howard Carter Signed Book Set – The Tomb of Tutankhamen |url=https://www.rrauction.com/auctions/lot-detail/350816407302005-howard-carter-signed-book-set-the-tomb-of-tutankhamen/ |publisher=RR Auction |date=16 October 2025 |access-date=4 November 2025}}</ref> The Kryptos archive ultimately sold for $962,500 at the conclusion of the auction.<ref name="SanbornAuction2025" />
+
+=== Discovery in the Smithsonian Archives ===
+In September 2025, journalists Jarett Kobek and Richard Byrne discovered several documents among papers donated by Jim Sanborn to [[Smithsonian]]'s [[Archives of American Art]] containing scraps of text that, when assembled together, produced what appeared likely to be the full plaintext of K4 (i.e., the "solution" to K4); they submitted this text to Sanborn, who confirmed its accuracy, explaining that he had mistakenly included those scraps in the donated archives while compiling documents during cancer treatment years earlier.<ref name="kobek discovery">{{cite web | title=A C.I.A. Secret Kept for 35 Years is Found in the Smithsonian's Vault | website=[[The New York Times]] | date=October 16, 2025 | url=https://www.nytimes.com/2025/10/16/science/kryptos-cia-solution-sanborn-auction.html }}</ref> Shortly thereafter, Sanborn asked the Smithsonian to seal the relevant files for the next 50 years (until 2075), and they complied.<ref>{{Cite web |last=Basilio |first=Humberto |title=After 35 Years, a Solution to the CIA's Kryptos Puzzle Has Been Found |url=https://www.scientificamerican.com/article/a-solution-to-the-cias-kryptos-code-is-found-after-35-years/ |access-date=2025-10-18 |website=Scientific American |language=en}}</ref>
+
+After consulting with the auction house, Sanborn requested Kobek and Byrne to sign [[Non-disclosure agreement|NDA]]s, which they refused.<ref name="kobek discovery"/> Kobek and Byrne also allege that lawyers for the auction house contacted them and threatened the two with [[copyright infringement]] and [[Tortious interference|interference with contracts]], if they were to publicly release the K4 plaintext.<ref name="kobek discovery" />
+
+Kobek said he's heard conflicting information about how long the documents had actually been at the Smithsonian before discovery, ranging from 2010 at the earliest to February 2024, or approximately 18 months before the K4 plaintext was discovered. The date for the donation, as currently displayed on the [[Finding Aid]] for the Smithsonian site, is 2023.<ref name=":7">{{Cite web |last1=Motel |first1=Zona |last2=Maren |first2=Mesha |last3=Escoria |first3=Juliet |date=2025-10-17 |title=INTERVIEW: Kryptos K4 Uncovered- Jarett Kobek and Richard Byrne on discovering the answer to a decades-long mystery |url=https://zonamotel.substack.com/p/interview-kryptos-k4-uncovered-jarett |access-date=2025-10-18 |website=Zona Motel}}</ref><ref>{{Cite web |title=A Finding Aid to the Jim Sanborn papers, circa 1950–2023 {{!}} Archives of American Art, Smithsonian Institution |url=https://www.aaa.si.edu/collections/jim-sanborn-papers-22298 |access-date=2025-10-19 |website=www.aaa.si.edu |language=en}}</ref>
+
+Kobek and Byrne mentioned sifting through several other examples of Sanborn's work in the Smithsonian archives before stumbling across the K4 plaintext, as during an interview with [[Wired News]] in 2005, Sanborn was asked if it was important to look at his other works, before and after Kryptos, to understand Kryptos. His response was "For the student of cryptography it's always helpful to gather as much information as possible when zeroing in on and encoding a system."<ref name=":6" /><ref name=":7" /> Kobek claims that in March 2019, a group of select members that attended an annual "Kryptos Dinner" had the opportunity to ask Sanborn directly about submissions regarding K4, claiming that Sanborn at that time said he "did not care" what method someone used to solve it.<ref name=":7" />
+
+In an open letter in August 2025, Sanborn confirmed the existence of K5, which will be revealed after K4 has been solved.<ref>{{Cite web |last=Sanborn |first=Jim |date=2025-08-14 |title=Open letter by sculptor Jim Sanborn, August 2025 |url=https://www.elonka.com/kryptos/OpenLetterAug2025.html |access-date=2025-08-22 |website=Elonka}}</ref>
+
+== Related sculptures ==
+After producing ''Kryptos'', Sanborn's first cryptographic sculpture, he went on to make several other sculptures with codes, including an "Untitled Kryptos Piece" and ''[[Cyrillic Projector]]'', which contain encrypted [[Cyrillic script|Russian Cyrillic]] text that includes an extract from a classified [[KGB]] document. The cipher on one side of Sanborn's 1997 sculpture ''[[Antipodes (sculpture)|Antipodes]]'' repeats part of the text from ''Kryptos'' with slight differences.
+
+== In popular culture ==
+The dust jacket of the US version of [[Dan Brown]]'s 2003 novel ''[[The Da Vinci Code]]'' contains two references to ''Kryptos''—one on the back cover (coordinates printed light red on dark red, vertically next to the blurbs) is a reference to the coordinates mentioned in the plaintext of [[Kryptos#Solution of passage 2|passage{{Nbsp}}2]], except the degree digit is off by one. When Brown and his publisher were asked about this, they both gave the same reply: "The discrepancy is intentional". The coordinates were part of the first clue of the second [[The Da Vinci Code WebQuests|''The Da Vinci Code'' WebQuests]], with the first answer being ''Kryptos''. The other reference is hidden in the brown "tear" artwork—the upside-down text "Only WW knows" is another reference to the second message on ''Kryptos''.<ref name="FAQ">{{cite web |date=December 14, 2003 |title=FAQ About Kryptos |url=http://elonka.com/kryptos/faq.html |url-status=live |archive-url=https://web.archive.org/web/20240421231607/https://elonka.com/kryptos/faq.html |archive-date=April 21, 2024 |access-date=2011-11-12 |website=elonka.com |at=Q: How much did ''Kryptos'' cost?}}</ref><ref>{{cite news |author=McKinnon, John D. |date=May 27, 2005 |title=CIA sculpture 'kryptos' draws mystery lovers |url=http://www.post-gazette.com/pg/05147/511693.stm |url-status=live |archive-url=https://web.archive.org/web/20070217114750/http://www.post-gazette.com/pg/05147/511693.stm |archive-date=February 17, 2007 |access-date=December 11, 2011 |work=[[Pittsburgh Post-Gazette]]}}</ref> ''Kryptos'' was also featured in another of Dan Brown's novels, ''[[The Lost Symbol]]'' (2009).<ref name=":1" />
+
+A small version of ''Kryptos'' appears in the season 5 episode of ''[[Alias (TV series)|Alias]]'' "[[Alias episodes (Season 5)#S.O.S.|S.O.S.]]". In it, [[Marshall Flinkman]] says he has cracked the code just by looking at it during a tour visit to the CIA office. The solution he describes sounds like the solution to the first two parts. It was also mentioned as "Kryptos Donuts" in the sixth episode of [[The Recruit (American TV series)|''The Recruit'']]{{'s}} Season 1, "[[The Recruit (American TV series)#Episodes|I.N.A.S.I.A.L.]]".
+
+== See also ==
+* [[Copiale cipher]]
+* [[History of cryptography]]
+* [[Voynich manuscript]]
+
+== Notes ==
+<references group="lower-alpha" />
+
+== References ==
+{{reflist|30em}}
+
+=== Books ===
+*{{cite book|title=Atomic Time: Pure Science and Seduction|year=2003|isbn=0-88675-072-5|author=Jonathan Binstock and Jim Sanborn|publisher=Corcoran Gallery of Art }} (contains 1–2 pages about Kryptos)
+*{{cite book|author-link=Elonka Dunin|author=Dunin, Elonka|title=The Mammoth Book of Secret Codes and Cryptograms|year=2006|page=500|publisher=[[Constable & Robinson]]|isbn=0-7867-1726-2}}
+*{{cite book|title=Secrets of the Lost Symbol: The Unauthorized Guide to the Mysteries Behind The Da Vinci Code Sequel|editor=Daniel Burstein|editor2=Arne de Keijzer|author=Dunin, Elonka|publisher=[[HarperCollins]]|year=2009|isbn=978-0-06-196495-4|chapter=Kryptos: The Unsolved Enigma|pages=[https://archive.org/details/secretsoflostsym00burs/page/319 319–326]|chapter-url=https://archive.org/details/secretsoflostsym00burs|url=https://archive.org/details/secretsoflostsym00burs/page/319}}
+*{{cite book|title=Secrets of the Lost Symbol: The Unauthorized Guide to the Mysteries Behind The Da Vinci Code Sequel|editor=Daniel Burstein|editor2=Arne de Keijzer|author=Dunin, Elonka|publisher=[[HarperCollins]]|year=2009|isbn=978-0-06-196495-4|chapter=Art, Encryption, and the Preservation of Secrets: An interview with Jim Sanborn|pages=[https://archive.org/details/secretsoflostsym00burs/page/294 294–300]|chapter-url=https://archive.org/details/secretsoflostsym00burs|url=https://archive.org/details/secretsoflostsym00burs/page/294}}
+*{{cite book|title=Illustrated Guide to the Lost Symbol|editor=John Weber|author=Taylor, Greg|isbn=978-1-4165-2366-6|year=2009|chapter=Decoding ''Kryptos''|publisher=[[Simon & Schuster]]|url=https://archive.org/details/isbn_9781416523666}}
+
+=== Journal articles ===
+*{{cite journal|last1=Bauer|first1=Craig|last2=Link|first2=Gregory|last3=Molle|first3=Dante|date=2016|title=James Sanborn's Kryptos and the matrix encryption conjecture|journal=Cryptologia|volume=40|issue=5|pages      =541–552|doi=10.1080/01611194.2016.1141556|s2cid=26592088}}
+
+=== Conference papers ===
+*{{cite conference |title=Cryptodiagnosis of "Kryptos K4" |doi=10.3384/ecp183153 |last=Bean |first=Richard |conference=4th International Conference on Historical Cryptology HistoCrypt |year=2021|doi-access=free }}
+
+=== Articles ===
+* [https://www.cia.gov/legacy/headquarters/kryptos-sculpture/ ''Kryptos'' 1,735 Alphabetical letters]
+* [https://web.archive.org/web/20180821055321/http://www.ussrback.com/crypto/nsa/kryptos/cia-art-jg.htm "Gillogly Cracks CIA Art", & "The Kryptos Code Unmasked"], 1999, ''[[The New York Times]]''
+* [https://www.baltimoresun.com/2000/03/17/unlocking-the-secret-of-kryptos-cryptogram-for-nearly-a-decade-a-jumble-of-seemingly-random-letters-on-a-sculpture-at-cia-headquarters-has-mystified-experts-who-have-tried-to-decipher-its-code/ "Unlocking the secret of ''Kryptos''"], March 17, 2000, ''[[The Baltimore Sun]]''
+* [https://www.wired.com/news/culture/0,1284,66334,00.html "Solving the Enigma of Kryptos"], January 26, 2005, ''[[Wired magazine|Wired]]'', by [[Kim Zetter]]
+* [https://www.theguardian.com/international/story/0,,1504223,00.html "Interest grows in solving cryptic CIA puzzle after link to ''Da Vinci Code''"], June 11, 2005, ''[[The Guardian]]''
+* [http://www.cnn.com/2005/US/06/19/cracking.the.code/index.html "Cracking the Code"], June 19, 2005, [[CNN]]
+
+== External links ==
+{{Commons category|Kryptos}}
+{{Wikiquote}}
+* [http://jimsanborn.net/main.html#KRYPTOS/ Jim Sanborn's official ''Kryptos'' webpage]
+* [http://www.elonka.com/kryptos ''Kryptos''] website maintained by [[Elonka Dunin]] (includes [http://www.elonka.com/kryptos/faq.html ''Kryptos'' FAQ], [http://www.elonka.com/kryptos/transcript.html transcript], pictures and links)
+* [http://www.voynich.net/Kryptos/ ''Kryptos'' photos] by [[Jim Gillogly]]
+* [https://www.cia.gov/legacy/headquarters/kryptos-sculpture/  The Central Intelligence Agency ''Kryptos'' webpage]
+
+{{Jim Sanborn}}
+
+[[Category:1990 establishments in Virginia]]
+[[Category:1990 sculptures]]
+[[Category:Buildings and structures in Fairfax County, Virginia]]
+[[Category:Central Intelligence Agency]]
+[[Category:Copper sculptures in the United States]]
+[[Category:Granite sculptures in Virginia]]
+[[Category:History of cryptography]]
+[[Category:McLean, Virginia]]
+[[Category:Outdoor sculptures in Virginia]]
+[[Category:Riddles]]
+[[Category:Sculptures by Jim Sanborn]]
+[[Category:Stone sculptures in Virginia]]
+[[Category:Undeciphered historical codes and ciphers]]
+[[Category:Wooden sculptures in the United States]]

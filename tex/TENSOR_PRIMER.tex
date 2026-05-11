@@ -173,8 +173,8 @@
     right=2mm,
 }
 
-% Synthon tuple boxes
-\newtcolorbox{synthonbox}{
+% Imscription tuple boxes
+\newtcolorbox{imscriptionbox}{
     enhanced,
     colback=blue!5,
     colframe=blue!75!black,
@@ -199,7 +199,7 @@
 
 \subsection{The Tuple}
 
-Every entity in the grammar is encoded as a \textbf{synthon}: an ordered 12-primitive tuple
+Every entity in the grammar is encoded as a \textbf{imscription}: an ordered 12-primitive tuple
 
 \[\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle\]
 
@@ -238,7 +238,7 @@ $\Omega$ & Topological protection & \textbf{ordered} $\Omega_{\text{closeepsilon
 
 \subsection{Distance}
 
-Before operations, you need to know how far apart two synthons are.
+Before operations, you need to know how far apart two imscriptions are.
 
 \subsubsection{Canonical Hamming distance}
 
@@ -347,7 +347,7 @@ A join CONFLICT has the same meaning as a meet CONFLICT: the entities are catego
 Ordered F:       min(F₁, F₂)       max(F₁, F₂)
 Ordered K:       min(K₁, K₂)       max(K₁, K₂)
 Categorical:     require match      require match
-φ̂_ÿ:             absorbing          absorbing
+$\odot$_ÿ:             absorbing          absorbing
 \end{lstlisting}
 
 The two operations differ \textbf{only} in their behaviour on ordered primitives. For categorical primitives, they are identical: match or CONFLICT.
@@ -397,7 +397,7 @@ The distinction matters conceptually:
     \item \textbf{Tensor} is a \emph{physical} operation: it asks what system \emph{results} from combination.
 \end{itemize}
 
-The join of two incompatible synthons produces a CONFLICT-marked result --- a partial answer. The tensor of two incompatible synthons is simply \textbf{not a valid synthon} --- the composite does not exist.
+The join of two incompatible imscriptions produces a CONFLICT-marked result --- a partial answer. The tensor of two incompatible imscriptions is simply \textbf{not a valid imscription} --- the composite does not exist.
 
 \subsubsection{What the tensor product encodes}
 

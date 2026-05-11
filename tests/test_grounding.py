@@ -12,7 +12,7 @@ by reference to a specific physical phenomenon, not a description keyword.
 
 import pytest
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -27,7 +27,7 @@ from imscrbgrmr.grounding import (
     GroundingValidator,
     GroundingStatus,
     GroundingResult,
-    validate_synthon_with_grounding,
+    validate_imscription_with_grounding,
 )
 
 
@@ -43,8 +43,8 @@ def validator():
 
 @pytest.fixture
 def carboxylic_acid_dimer():
-    """Create a grounded carboxylic acid dimer synthon."""
-    return Synthon(
+    """Create a grounded carboxylic acid dimer imscription."""
+    return Imscription(
         name="carboxylic_acid_dimer",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,
@@ -60,8 +60,8 @@ def carboxylic_acid_dimer():
 
 @pytest.fixture
 def proline_aldol_cycle():
-    """Create a grounded proline aldol cycle synthon."""
-    return Synthon(
+    """Create a grounded proline aldol cycle imscription."""
+    return Imscription(
         name="proline_aldol_cycle",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.CYCLIC_BOWTIE,
@@ -77,8 +77,8 @@ def proline_aldol_cycle():
 
 @pytest.fixture
 def quantum_time_crystal_speculative():
-    """Create a speculative quantum time crystal synthon (ungrounded)."""
-    return Synthon(
+    """Create a speculative quantum time crystal imscription (ungrounded)."""
+    return Imscription(
         name="quantum_time_crystal_speculative",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.CYCLIC_BOWTIE,
@@ -97,7 +97,7 @@ def quantum_time_crystal_speculative():
 # =============================================================================
 
 class TestGroundedJustifications:
-    """Test that properly grounded synthons pass validation."""
+    """Test that properly grounded imscriptions pass validation."""
 
     def test_carboxylic_acid_dimer_grounded(self, validator, carboxylic_acid_dimer):
         """Carboxylic acid dimer with mechanistic justifications should pass."""
@@ -196,7 +196,7 @@ class TestStrictMode:
         """Strict mode should reject keyword-heavy justifications."""
         strict_validator = GroundingValidator(strict_mode=True)
         
-        synthon = Synthon(
+        imscription = Imscription(
             name="test",
             dimensionality=Dimensionality.TEMPORAL,
             topology=Topology.CYCLIC_BOWTIE,
@@ -219,7 +219,7 @@ class TestStrictMode:
             "interaction_grammar": "One specific partner",
         }
         
-        result = strict_validator.validate(synthon, justifications)
+        result = strict_validator.validate(imscription, justifications)
         
         # Strict mode should flag the keyword
         assert not result.is_valid or len(result.warnings) > 0
@@ -258,14 +258,14 @@ class TestGroundingReport:
 # =============================================================================
 
 class TestConvenienceFunction:
-    """Test validate_synthon_with_grounding convenience function."""
+    """Test validate_imscription_with_grounding convenience function."""
 
     def test_require_grounding_true_raises(self, carboxylic_acid_dimer):
-        """require_grounding=True should raise on ungrounded synthons."""
+        """require_grounding=True should raise on ungrounded imscriptions."""
         justifications = {}  # Empty = ungrounded
         
         with pytest.raises(ValueError, match="ungrounded"):
-            validate_synthon_with_grounding(
+            validate_imscription_with_grounding(
                 carboxylic_acid_dimer,
                 justifications,
                 require_grounding=True,
@@ -275,7 +275,7 @@ class TestConvenienceFunction:
         """require_grounding=False should return without raising."""
         justifications = {}  # Empty = ungrounded
         
-        is_valid, error = validate_synthon_with_grounding(
+        is_valid, error = validate_imscription_with_grounding(
             carboxylic_acid_dimer,
             justifications,
             require_grounding=False,
@@ -290,11 +290,11 @@ class TestConvenienceFunction:
 # =============================================================================
 
 class TestBatchValidation:
-    """Test batch validation of multiple synthons."""
+    """Test batch validation of multiple imscriptions."""
 
     def test_batch_validation(self, validator, carboxylic_acid_dimer, proline_aldol_cycle):
-        """Batch validation should return results for all synthons."""
-        synthons = [
+        """Batch validation should return results for all imscriptions."""
+        imscriptions = [
             (
                 carboxylic_acid_dimer,
                 {
@@ -323,7 +323,7 @@ class TestBatchValidation:
             ),
         ]
         
-        results = validator.validate_batch(synthons)
+        results = validator.validate_batch(imscriptions)
         
         assert len(results) == 2
         assert all(isinstance(r, GroundingResult) for r in results)
@@ -416,7 +416,7 @@ class TestTupleCollisionDetection:
     def test_different_chemistry_different_grounding(self, validator):
         """Different chemical systems should have different groundings."""
         # System 1: Carboxylic acid dimer (molecular, H-bonding)
-        synthon1 = Synthon(
+        imscription1 = Imscription(
             name="acid_dimer",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
@@ -429,7 +429,7 @@ class TestTupleCollisionDetection:
         )
         
         # System 2: Proline cycle (temporal, catalytic)
-        synthon2 = Synthon(
+        imscription2 = Imscription(
             name="proline_cycle",
             dimensionality=Dimensionality.TEMPORAL,
             topology=Topology.CYCLIC_BOWTIE,
@@ -452,8 +452,8 @@ class TestTupleCollisionDetection:
             "polarity": "Pseudosymmetric self-complementary interface",
         }
         
-        result1 = validator.validate(synthon1, just1)
-        result2 = validator.validate(synthon2, just2)
+        result1 = validator.validate(imscription1, just1)
+        result2 = validator.validate(imscription2, just2)
         
         # Both should be grounded, but with DIFFERENT phenomena
         assert result1.primitive_results["topology"].matched_phenomena != \

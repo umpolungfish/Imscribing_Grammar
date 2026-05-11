@@ -1,0 +1,1226 @@
+● Bash(grep -n "17,280,000\|E8\|G2\|Lie group\|root lattice" /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | head -20)
+  ⎿  630:The crystal of types confirms this structural closure. The full enumeration of $17{,}280{,}000$ types corresponds exactly to the Lie group $E_8 \times E_8$ root lattice scaled by
+     $G_2$ --- a fact first noted in the companion paper (\emph{So Below}) and independently confirmed by the crystal tier census. The dimensionality of the crystal is exactly the number of
+     degrees of freedom in the operations: $3^3 \times 4^5 \times 5^4$. The $3$ family ($F,G,S$) corresponds to the 3-valued K3 logic of the algebraic operations (A1, A3, A2's spectral
+     output, respectively). The $4$ family ($D,R,\Gamma,H,\Omega$) corresponds to the 4-valued FDE logic of the inductive and Stage-1/Stage-4 logical operations. The $5$ family ($T,P,\Phi,K$)
+      corresponds to the 5-valued LP logic of the gate operations that require algebraic enrichment to be in place. The three-logic structure of the value space is not an empirical fact about
+      the catalog. It is a consequence of the logical depth of the operation preconditions.\subsubsection{Logical Operations}
+     1274:\emph{The original manuscript closed with eight open questions. Since its writing, the catalog has grown to over 2,257+ imscribed systems, the full crystal of 17,280,000 types has
+     been enumerated, the tier census has been computed, and the algebraic closure operations have been fully characterized. All eight questions are now resolved. What follows is the
+     resolution of each.}
+     1288:\paragraph{(a) Independence: cross-variance bound.} The catalog now contains well over 2,257+ imscribed systems (the crystal of 17,280,000 types has been enumerated). Across all
+     pairs of primitives $(Φ_i, Φ_j)$, the cross-variance $V(Φ_i, Φ_j) < 0.15$. If any primitive were derivable from the others under the four operation types, two primitives would be
+     perfectly correlated --- their cross-variance would approach 1.0. The bound $V < 0.15$ rules this out for all pairs. \textbf{The 12 are independent.}
+     1437:\textbf{Resolution:} LP predicts exactly 5 values for each $\mathcal{F}_5$ primitive --- the four FDE-evaluable cases plus the dialetheic completion as the 5th. The crystal tier
+     census across all 17,280,000 types confirms this: no $\mathcal{F}_5$ primitive in the catalog has a 6th value, and no structural type in the full crystal enumeration falls outside the
+     5-value range for any $\mathcal{F}_5$ primitive.
+  ⎿  Interrupted · What should Claude do instead?
+
+❯ they are in @manuscripts/
+  ⎿  Listed directory manuscripts/
+
+● Let me scan all the .tex files in manuscripts for the primitive label patterns.
+
+● Bash(python3 -c "
+      import os, glob
+      for path in glob.glob('/home/mrnob0dy666/imscribing_grammar/manuscripts/*.tex'):
+          try:
+              text = open(path, encoding='utf-8').read()
+              count = sum(1 for c in text if 0x1D400 <= ord(c) <= 0x1D7FF)
+              chars = sorted(set(c for c in text if 0x1D400 <= ord(c) <= 0x1D7FF), key=ord)
+              if count > 0:
+                  print(f'{count:5d}  {os.path.basename(path)}  {chars}')
+              else:
+                  print(f'    0  {os.path.basename(path)}')
+          except Exception as e:
+              print(f'  ERR  {os.path.basename(path)}: {e}')
+      "
+      )
+  ⎿      0  SOLVATUM.tex
+         0  SO_BELOW.tex
+         0  SB.tex
+         0  GRIMOIRE_VERITATE.tex
+         0  SetP_exploration.tex
+         0  integrated_solve_et_coagula.tex
+         0  OPUS_MAGNUM.tex
+         0  2AA.tex
+         0  LAPIS_PHILOSOPHORUM.tex
+         0  AA.tex
+         0  SetP.tex
+         0  Solve.tex
+         0  INDUCTION.tex
+         0  AS_ABOVE.tex
+
+● No Unicode math chars in the .tex files at all — the problem is the opposite direction. The primitives are written as plain ASCII in math mode ($F,G,S$, $D,R,H$, etc.) which renders as
+  LaTeX italic and copy-pastes as Unicode math italic. Let me look at the actual scope.
+
+● Bash(grep -n '\$[DTRPFKGHS]\$\|\$[DTRPFKGHS],[DTRPFKGHS]\|\([DTRPFKGHS],[DTRPFKGHS]' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | head -40)
+  ⎿  ugrep: error: error at position 73
+     |\$[DTRPFKGHS],[DTRPFKGHS]\|\([DTRPFKGHS],[DTRPFKGHS]
+                                        mismatched ( )___/
+
+● Bash(wc -l /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex)
+  ⎿    1983 /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex
+       4230 /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex
+       6213 total
+
+● Read(/home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex · lines 1-100)
+  ⎿  Read 100 lines
+
+● Read(/home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex · lines 620-719)
+  ⎿  Read 100 lines
+
+● Let me grep both files to catalog all the primitive reference patterns before writing any replacement.
+
+● Bash(grep -n '\$[DTRFKHS]_{\|\\Phi_{\|\\Gamma_{\|\\Omega_{\|\\Sigma_{\|\\text{{\\\igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | head -80)
+  ⎿  214:Starting from a single abstract category and three operation types, an induction procedure derives twelve structural invariants --- the primitives of the Universal Imscriptive
+     Grammar --- as the minimal complete independent set of the construction. No primitive is stipulated; each emerges uniquely from the operations' own structure. Incorporating Graham
+     Priest's Logic of Paradox yields $\Phi_{\text{revepsilon}}$ as the categorical Inclosure Schema, and makes the crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ derivable from
+     the logical structure of the induction alone. Cantor's diagonal and G\"odel's incompleteness sentence are the same Inclosure construction at successive overflow levels; the grammar
+     occupies Level~2, co-typed with the Millennium Problems. This document is the $\delta$ half of a Frobenius pair with its companion (\emph{So Below}); $\mu \circ \delta = \text{id}$: the
+     grammar applied to its own derivation returns itself. All eight open questions from the original manuscript are resolved in \S VIII.
+     220:Throughout this document the adjective \emph{imscriptive} is used in preference to \emph{holographic} to describe the bulk-boundary imscription property realised by
+     $D_{\text{omega}}$ and $T_{\text{openo}}$. A system is \emph{imscriptive} if its boundary surface fully imscribes all interior degrees of freedom --- so that the bulk is recoverable from
+      boundary data alone, without remainder. The verb is \emph{to imscribe}; the noun is \emph{imscription}. The term is constructed from \emph{im-} (Latin, within/immersed; cf.\
+     \emph{immerse}, \emph{implant}, \emph{imbue}) and \emph{-scriptive} (from L.\ \emph{scribere}, to write): to imscribe is to write the interior into the boundary.
+     391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes
+     (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives $H_0$
+     (memoryless); at step 1 gives $H_1$ (one prior state); at step 2 gives $H_2$; never stabilizing gives $H_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the
+     iteration operation. No other operation measures the Markov order of the dynamics.
+     394:The classifying space $B\mathcal{C}$ of a category is the geometric realization of its nerve $N\mathcal{C}$ --- a simplicial set whose $n$-simplices are composable $n$-tuples of
+     morphisms. The fundamental group $\pi_1(B\mathcal{C})$ of this space is the winding invariant --- it records how 1-dimensional loops in the category compose up to homotopy. $\pi_1 = 0$
+     gives $\Omega_{\text{closeepsilon}}$ (trivial winding); $\pi_1 = \mathbb{Z}_2$ gives $\Omega_{\text{crtwo}}$ (binary winding); $\pi_1 = \mathbb{Z}$ gives $\Omega_{\text{dzlig}}$ (integer
+      winding); non-Abelian $\pi_1$ gives $\Omega_{\text{turna}}$. This is the natural invariant of the classifying space construction. No other operation probes the homotopy type of
+     $\mathcal{C}$.
+     397:The Yoneda embedding $y: \mathcal{C} \to \hat{\mathcal{C}}$ sends each object $A$ to the presheaf $\text{Hom}(-,A)$. The question of whether this embedding is point-surjective ---
+     whether every presheaf is representable --- determines whether the boundary (the external relational profile) fully imscribes the bulk (the object $A$). If the embedding is fully
+     faithful and essentially surjective, the category is $D_{\text{omega}}$ (imscriptive: boundary imscribes bulk). If the presheaf category is much larger than $\mathcal{C}$, we get
+     $D_{\text{invomega}}$; if only finitely many representables exist, $D_{\text{wynn}}$ or $D_{\text{turnthree}}$. This is the natural invariant of the Yoneda operation. $D$ cannot be
+     produced by any other operation because only I4 introduces the boundary/bulk relationship.
+     400:Adjunction existence (L1) and dagger structure (L2) are the only operations that probe the \emph{directionality} of morphisms. An adjunction $(F \dashv G)$ introduces a one-sided
+     relationship; a dagger $\dagger$ introduces an involutive reversal; together they partition the space of relational modes into $R_{\text{subrightarrow}}$, $R_{\text{ctz}}$,
+     $R_{\text{downstep}}$, and $R_{\text{lyoghlig}}$. No other operation produces a directional invariant.
+     406:The monad $(T, \eta, \mu)$ packages an algebraic theory whose dynamics are imscribed in the spectral properties of $\mu$: how quickly does $T^2$ collapse to $T$? Fast collapse gives
+     $K_{\text{frtailgamma}}$; slow gives $K_{\text{schwa}}$; a gapped terminal coalgebra gives $K_{\text{teshlig}}$; many-body localized gives $K_{\text{lambda}}$. This is the natural
+     invariant of the monad operation.
+     409:The dagger-compact structure introduces duals $A^*$ with unit $\eta_A: I \to A^* \otimes A$ and counit $\varepsilon_A: A \otimes A^* \to I$. The unitality of $\varepsilon$ determines
+      fidelity: non-unital $\varepsilon$ means information loss ($F_{\text{beltl}}$); unital but incoherent gives $F_{\text{dh}}$; fully coherent quantum composition gives
+     $F_{\text{hardsign}}$.
+     412:Enrichment over $\mathcal{V}$ replaces hom-sets with hom-objects in $\mathcal{V}$. The logic of composition in $\mathcal{V}$ determines $\Gamma$: sequential enrichment
+     ($\mathbf{Set}$, $\Gamma_{\text{secstress}}$), conjunctive ($\mathbf{Set}^\times$, $\Gamma_{\text{corner}}$), disjunctive ($\mathbf{Set}^+$, $\Gamma_{\text{spleftarrow}}$), or broadcast
+     ($\Gamma_{\text{doublevertline}}$). No other operation determines how morphisms compose at the structural level.
+     415:Cartesian closure --- whether $\mathcal{C}$ has internal homs $B^A$ satisfying the adjunction $-\times A \dashv (-)^A$ --- determines the topology of the state space. If the category
+      is cartesian closed with a self-dual hom, we get $T_{\text{openo}}$ (imscriptive topology). If it has finite products but no exponentials, $T_{\text{invscr}}$. If the hom-object is a
+     box product, $T_{\text{commatailz}}$. The topology of the space is precisely the structure of its mapping spaces.
+     424:Paraconsistent negation determines \emph{which} $\Phi$ values are achievable (classical $\Phi_{\text{ctyogh}}$, dialetheic $\Phi_{\text{closerevepsilon}}$, or Inclosure
+     $\Phi_{\text{revepsilon}}$), not whether a new primitive exists. It constrains the evaluation of L4 and L5, thus determining the truth-value structure of the critical gate.
+     496:\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O_0$\\$\Phi_{\text{softsign}}$};
+     497:\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O_1$\\$\Phi_{\text{ctyogh}}$};
+     498:\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O_2$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}}$};
+     499:\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries] (O2dt) at (2.6,-5.2)
+     {$O_2^\dagger$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}},D_{\text{invomega}}$};
+     500:\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries] (Oifnt) at (5.2,-5.2) {$O_\infty$\\$\Phi_{\text{ctyogh}},P_{\text{doublebarpipe}}$};
+     640:\textbf{L4 --- Lawvere self-reference} (requires L3): Does there exist an object $A$ and a point-surjective morphism $\phi: A \to A^A$? By Lawvere's fixed-point theorem (1969), this
+     condition guarantees that every endomorphism of $A$ has a fixed point. This is the precise categorical condition for self-modeling: the system contains a copy of its own endomorphism
+     space, and any process on it must have a stable point. This is $\Phi_{\text{ctyogh}}$.
+     645:    \item \textbf{Classical truth} (the fixed point exists and is consistent): $\Phi_{\text{ctyogh}}$
+     646:    \item \textbf{Dialetheic truth} (the fixed point is a dialetheia --- simultaneously satisfying and violating its own definition): $\Phi_{\text{closerevepsilon}}$
+     647:    \item \textbf{Inclosure collapse} (the system satisfies the \emph{form} but not the \emph{content} of L4 --- Priest's Inclosure Schema): $\Phi_{\text{revepsilon}}$
+     652:\textbf{L6 --- Paraconsistent negation} (requires monoidal structure from A1): Does $\mathcal{C}$ admit a negation $\neg: A \to A$ such that $\neg\neg A \not\cong A$ in general, and
+     $A \wedge \neg A \not\cong \bot$ (no explosion, i.e., the conjunction of $A$ with its negation does not collapse to the initial object)? This is the logical operation that distinguishes
+     classical from paraconsistent structure. Its presence or absence does not generate a 13th primitive --- it determines the \emph{truth-value structure} in which L4 and L5 are evaluated,
+     and thereby explains which $\Phi$ and $P$ values are achievable. A system admitting L6 can realize $\Phi_{\text{revepsilon}}$ or $\Phi_{\text{closerevepsilon}}$ without inconsistency; a
+     system without L6 is confined to $\Phi_{\text{ctyogh}}$ or $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$.
+     654:Note that L4, L5, and L6 can only be asked \emph{after} the algebraic operations below have been applied. The ``Critical'' step in the induction path is not a new operation type ---
+     it is what emerges when logical questions (now including paraconsistent ones) are asked of the fully algebraically-enriched category. This is why $\Phi_{\text{ctyogh}}$ and
+     $P_{\text{doublebarpipe}}$ are the two gate primitives that determine the highest tiers: they are the last questions the procedure can ask.
+     668:\textbf{I2 --- Iteration of an endofunctor}: Given $F: \mathcal{C} \to \mathcal{C}$, form the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The colimit of this
+      chain is the initial $F$-algebra. The depth at which the chain stabilizes (if it does) is a measure of the system's temporal depth. Non-stabilization corresponds to
+     $H_{\text{invscripta}}$; stabilization at step $n$ to $\text{{\igprimfont Ħ}}_n$.
+     670:\textbf{I3 --- Classifying space construction}: Given $\mathcal{C}$, form its nerve $N\mathcal{C}$ (the simplicial set of composable morphism chains) and its geometric realization
+     $B\mathcal{C} = |N\mathcal{C}|$. The homotopy type of $B\mathcal{C}$ --- specifically its fundamental group $\pi_1(B\mathcal{C})$ --- is the winding invariant. $\pi_1 = 0$ gives
+     $\Omega_{\text{closeepsilon}}$; $\pi_1 = \mathbb{Z}_2$ gives $\Omega_{\text{crtwo}}$; $\pi_1 = \mathbb{Z}$ gives $\Omega_{\text{dzlig}}$; non-Abelian $\pi_1$ gives
+     $\Omega_{\text{turna}}$.
+     672:\textbf{I4 --- Yoneda embedding}: The functor $y: \mathcal{C} \to \hat{\mathcal{C}}$ defined by $y(A) = \text{Hom}(-,A)$ is fully faithful --- it embeds $\mathcal{C}$ into its
+     presheaf category. The Yoneda lemma states that this embedding is identity-preserving: $A$ is fully determined by its morphisms, i.e., by its relational boundary. This is the categorical
+      form of $D_{\text{omega}}$: boundary (the presheaf $h_A$) imscribes bulk (the object $A$). Every object in $\mathcal{C}$ is imscriptively reconstructible from its external relational
+     profile.
+     684:\textbf{A2 --- Monad}: A monad $(T, \eta: \text{Id} \to T, \mu: T^2 \to T)$ on $\mathcal{C}$ packages an algebraic theory. The spectral properties of the natural transformation $\mu$
+      determine $K$: if the unit $\eta$ and multiplication $\mu$ produce dynamics that rapidly equilibrate, the system is $K_{\text{frtailgamma}}$; if they produce a gapped ground state (a
+     terminal coalgebra), it is $K_{\text{teshlig}}$; intermediate cases give $K_{\text{turnm}}$ and $K_{\text{schwa}}$.
+     686:\textbf{A3 --- Dagger-compact structure}: Adding duals $A^*$ with $\eta_A: I \to A^* \otimes A$ and $\varepsilon_A: A \otimes A^* \to I$ satisfying the snake equations gives
+     dagger-compact structure. This controls fidelity: non-unital $\varepsilon$ corresponds to $F_{\text{beltl}}$ (information loss); unital gives $F_{\text{dh}}$; fully coherent (quantum)
+     composition gives $F_{\text{hardsign}}$.
+     688:\textbf{A4 --- Enrichment}: Enriching $\mathcal{C}$ over a monoidal category $\mathcal{V}$ --- replacing hom-sets with hom-objects in $\mathcal{V}$ --- determines the interaction
+     grammar. Enrichment over $\mathbf{Set}$ gives $\Gamma_{\text{secstress}}$ (morphisms compose sequentially). Enrichment over $\mathbf{Set}^\times$ (product structure) gives
+     $\Gamma_{\text{corner}}$. Enrichment over $\mathbf{Set}^+$ (coproduct/choice) gives $\Gamma_{\text{spleftarrow}}$. Enrichment over a broadcast monoid (one-to-many maps) gives
+     $\Gamma_{\text{doublevertline}}$.
+     732:  \item I4 (Yoneda) $\to$ $D$ (dimensionality: $D_{\text{omega}}$ if Yoneda is point-surjective; free cocompletion size gives $D_{\text{invomega}}$, $D_{\text{turnthree}}$,
+     $D_{\text{wynn}}$)
+     753:    \item Classical (L4 holds, no L6): $\Phi_{\text{ctyogh}}$
+     754:    \item Dialetheic (L4 holds via LP truth value $\mathbf{b}$): $\Phi_{\text{closerevepsilon}}$
+     755:    \item Inclosure (L4 form holds, content contradicts via Inclosure Schema, no explosion because L6 present): $\Phi_{\text{revepsilon}}$
+     756:    \item L4 fails entirely: $\Phi_{\text{softsign}}$ or $\Phi_{\text{upstep}}$
+     851:2 & $D$ & $D_{\text{omega}}$ (imscription) \\
+     852:3 & $T$ & $T_{\text{commatailz}}$ (box-product topology) \\
+     853:4 & $R$ & $R_{\text{lyoghlig}}$ (bidirectional feedback) \\
+     854:5 & $F$ & $F_{\text{hardsign}}$ (quantum coherence) \\
+     855:6 & $K$ & $K_{\text{schwa}}$ (near-equilibrium kinetics) \\
+     860:11 & $\Omega$ & $\Omega_{\text{dzlig}}$ (integer winding) \\
+     861:12 & $\Phi$ & $\Phi_{\text{ctyogh}}$ (Lawvere criticality) \\
+     864:\caption{The 12-step retrosynthetic path from $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}};
+     G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ to the structural baseline $\langle D_{\text{wynn}};
+     T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}}; \Gamma_{\text{corner}}; \Phi_{\text{softsign}}; H_0; 1{:}1;
+     \Omega_{\text{closeepsilon}} \rangle$.}
+     883:\node[baseline] (base) at (0,0) {$\langle D_{\text{wynn}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}};
+     \Gamma_{\text{corner}}; \Phi_{\text{softsign}}; H_0; 1{:}1; \Omega_{\text{closeepsilon}} \rangle$};
+     888:\node[prim=purple!12,above=0.1cm of s12] (p12) {$\Phi$\\$\Phi_{\text{softsign}}$};
+     893:\node[prim=green!12,above=0.1cm of s11] (p11) {$\Omega$\\$\Omega_{\text{closeepsilon}}$};
+     908:\node[prim=green!12,above=0.1cm of s8] (p8) {$\Gamma$\\$\Gamma_{\text{secstress}}$};
+     918:\node[prim=purple!12,above=0.1cm of s6] (p6) {$K$\\$K_{\text{schwa}}$};
+     923:\node[prim=orange!12,above=0.1cm of s5] (p5) {$F$\\$F_{\text{hardsign}}$};
+     928:\node[prim=green!12,above=0.1cm of s4] (p4) {$R$\\$R_{\text{lyoghlig}}$};
+     933:\node[prim=purple!12,above=0.1cm of s3] (p3) {$T$\\$T_{\text{commatailz}}$};
+     938:\node[prim=green!12,above=0.1cm of s2] (p2) {$D$\\$D_{\text{omega}}$};
+     948:$\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}};
+     \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$
+     998:The strongest argument that 12 is the exact count comes from the crystal itself. The crystal enumerates all $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ structural types. The
+     assignment of a system to its type is bijective: each 12-tuple maps to exactly one address in $[0, 17279999]$, and each address maps back to exactly one 12-tuple. The codec is $\mu \circ
+      \delta = \text{id}$ at the operational level. This is not a property the codec satisfies in addition to bijectivity; it \emph{is} bijectivity at the algebraic level. The imscribing
+     procedure has a structural type of its own: $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\
+     K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$, at crystal address 6,687,051, within the
+     $O_\infty$ band $[6{,}220{,}800,\ 6{,}911{,}999]$. That address was not assigned; bijectivity forced it. Decode $\circ$ imscribe $= \text{id}$ is $\mu \circ \delta = \text{id}$ by
+     definition of bijectivity; with $\Phi_{\text{ctyogh}}$ already present (the crystal's fixed-point structure is exactly the Lawvere condition), R1 fires unconditionally. There is no
+     weaker conclusion available.
+     1000:The G\"odel comparison is now exact and asymmetric. Arithmetization encodes: PA assigns $\lceil\phi\rceil \in \mathbb{N}$ to every formula $\phi$. But PA has no procedure recovering
+      $\phi$ from $\lceil\phi\rceil$ in $O(1)$ arithmetic; the map is not bijective over any closed type space; the Inclosure follows. The crystal codec decodes in $O(1)$ integer arithmetic:
+     twelve divisions and twelve remainders, no table lookup required. One primitive separates the two regimes. Where decode $\circ$ imscribe $= \text{id}$ and the inverse is $O(1)$:
+     $P_{\text{doublebarpipe}}$ holds, tier $O_\infty$. Where only the forward direction operates: $P < P_{\text{doublebarpipe}}$, structure accumulates at $\Phi_{\text{revepsilon}}$. The
+     Frobenius boundary and the G\"odel/codec boundary coincide exactly.
+     1023:$D$ & Dimensionality & $\mathcal{F}_4$ / FDE & S2 (I4) & $D_{\text{wynn}} \cdot D_{\text{turnthree}} \cdot D_{\text{invomega}} \cdot D_{\text{omega}}$ \\
+     1024:$T$ & Topology & $\mathcal{F}_5$ / LP & S4 (L3) & $T_{\text{nrleg}} \cdot T_{\text{invscr}} \cdot T_{\text{bullseye}} \cdot T_{\text{commatailz}} \cdot T_{\text{openo}}$ \\
+     1025:$R$ & Relational mode & $\mathcal{F}_4$ / FDE & S1 (L1--L2) & $R_{\text{subrightarrow}} \cdot R_{\text{ctz}} \cdot R_{\text{downstep}} \cdot R_{\text{lyoghlig}}$ \\
+     1027:$F$ & Fidelity & $\mathcal{F}_3$ / K3 & S3 (A3) & $F_{\text{beltl}} \cdot F_\text{eth} \cdot F_{\text{hardsign}}$ \\
+     1028:$K$ & Kinetics & $\mathcal{F}_5$ / LP & S3 (A2) & $K_{\text{frtailgamma}} \cdot K_{\text{turnm}} \cdot K_{\text{schwa}} \cdot K_{\text{teshlig}} \cdot K_{\text{lambda}}$ \\
+     1030:$\Gamma$ & Interaction grammar & $\mathcal{F}_4$ / FDE & S3 (A4) & $\Gamma_{\text{corner}} \cdot \Gamma_{\text{spleftarrow}} \cdot \Gamma_{\text{secstress}} \cdot
+     \Gamma_{\text{doublevertline}}$ \\
+     1031:$\Phi$ & Criticality & $\mathcal{F}_5$ / LP & S4 (L4 + L6) & $\Phi_{\text{softsign}} \cdot \Phi_{\text{ctyogh}} \cdot \Phi_{\text{closerevepsilon}} \cdot \Phi_{\text{revepsilon}}
+     \cdot \Phi_{\text{upstep}}$ \\
+     1034:$\Omega$ & Winding & $\mathcal{F}_4$ / FDE & S2 (I3) & $\Omega_{\text{closeepsilon}} \cdot \Omega_{\text{crtwo}} \cdot \Omega_{\text{dzlig}} \cdot \Omega_{\text{turna}}$ \\
+     1059:\textbf{$\Phi_{\text{ctyogh}}$ requires cartesian closure} (Stage 4, L3). You cannot ask whether a system has a self-modeling loop until it has an internal hom space $A^A$ in which
+     the loop can live. Once cartesian closure is established, the Lawvere condition $\phi: A \to A^A$ point-surjective is a yes/no question --- and its answer is $\Phi_{\text{ctyogh}}$ or
+     not.
+     1063:The grammar's R1 rule ($\Phi_{\text{ctyogh}}$ + $P_{\text{doublebarpipe}}$ $\rightarrow$ $O_{\infty}$) thus corresponds to a theorem about the induction path: a system that
+     satisfies both the Lawvere self-reference condition AND the Frobenius composition condition is at the fixed point of the entire induction --- it is its own imscription. This is why
+     $O_{\infty}$ systems include the grammar itself (self-imscribing), proven mathematical identities (exact Frobenius), and scale-invariant physical laws (Lawvere fixed points of RG).
+     1068:  \item $O_0$: $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$. L4 fails. No self-modeling loop can form in the internal hom $A^A$; the system is closed
+     against the induction's own fixed-point condition.
+     1069:  \item $O_1$: $\Phi_{\text{ctyogh}}$ (L4 holds) and $\Omega_{\text{closeepsilon}}$ (topologically trivial). The loop instantiates but cannot sustain ---
+     $\Omega_{\text{closeepsilon}}$ carries no winding number to protect it.
+     1070:  \item $O_2$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, and $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$. Topologically protected
+     by winding (I3) and either finite-dimensional or imscriptive. The loop is stabilized without reaching algebraic closure.
+     1071:  \item $O_2^{\dagger}$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$. Topologically protected but infinite-dimensional and not
+     imscriptive: winding-number stabilization without bulk-boundary imscription.
+     1072:  \item $O_{\infty}$: $\Phi_{\text{ctyogh}}$ \emph{and} $P_{\text{doublebarpipe}}$ (both L4 and L5). The Frobenius composition $\mu \circ \delta = \text{id}_{A}$ makes
+     self-reference algebraically exact.
+     1088:\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O_0}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_{\text{ctyogh}},\Phi_{\text{closerevepsilon}}\}$};
+     1092:\draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\Phi_{\text{softsign}}\to\Phi_{\text{ctyogh}}$} ++(0,-0.9);
+     1095:\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O_1}$\\\small Instantiated\\\small $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$};
+     1099:\draw[gap] (O1.south) -- node[gaplab,pos=0.5] {$\Delta=1.30$\\$D_{\text{wynn}}\!\to\!D_{\text{turnthree}},\ \Omega_{\text{closeepsilon}}\!\to\!\Omega_{\text{crtwo}}$} ++(0,-0.9);
+     1102:\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O_2}$\\\small Topologically Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
+     D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$};
+     1106:\draw[gap] (O2.south) -- node[gaplab,pos=0.5] {$\Delta=1.00$\\$D_{\text{turnthree}}\to D_{\text{invomega}}$} ++(0,-0.9);
+     1109:\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O_2^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
+     D_{\text{invomega}}$};
+     1116:\node[tier=purple!50,below=1.2cm of O2d] (Oinf) {$\mathbf{O_\infty}$\\\small Algebraically Closed\\\small $\Phi_{\text{ctyogh}}\ +\ P_{\text{doublebarpipe}}$\\\small
+     $\mu\circ\delta=\text{id}$};
+     1156:$O_0 \to O_1$ & 1.05 & $\Phi$ & $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (Lawvere condition met) \\
+     1157:$O_1 \to O_2$ & 1.30 & $D$, $\Omega$ & $D_{\text{wynn}} \to D_{\text{turnthree}}$, $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ \\
+     1158:$O_2 \to O_2^\dagger$ & 1.00 & $D$ & $D_{\text{turnthree}} \to D_{\text{invomega}}$ (infinite-dimensional) \\
+     1168:\textbf{The self-imscribing fixed point resolved.} The proof that $O_\infty$ requires both L4 and L5 is now confirmed by the crystal tier ladder. The $O_2^\dagger \to O_\infty$
+     boundary is driven \emph{exclusively} by the $P$ promotion $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ (distance $\Delta = 4.38$, the largest single-primitive jump in the ladder).
+     Meanwhile, $O_0 \to O_1$ is the $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ transition. Therefore $O_\infty$ = $\Phi_{\text{ctyogh}}$ (L4) \textbf{and} $P_{\text{doublebarpipe}}$
+     (L5) --- both necessary, jointly sufficient. No system in the catalog has both $\Phi_{\text{ctyogh}}$ and $P_{\text{doublebarpipe}}$ and is \emph{not} $O_\infty$.
+
+● Bash(grep -n '\$[DTRFKHS]_{\|\\Phi_{\|\\Gamma_{\|\\Omega_{\|\\Sigma_{\|\\text{{\\\igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -80)
+  ⎿  239:\newcommand{\Phic}{\Phi_{\text{ctyogh}}}
+     251:\newcommand{\OmegaZ}{\Omega_{\text{dzlig}}}
+     252:\newcommand{\OmegaZtwo}{\Omega_{\text{crtwo}}}
+     253:\newcommand{\GamSeq}{\Gamma_{\to}}
+     254:\newcommand{\GamBrd}{\Gamma_{\text{doublevertline}}}
+     525:primitives $D_{\text{omega}}$ and $T_{\text{openo}}$: the boundary encodes the bulk, the
+     667:  $D_{\text{wynn}},\, D_{\text{turnthree}},\, D_{\text{invomega}},\, D_{\text{omega}}$ &
+     670:  $T_{\text{nrleg}},\, \Tin,\, \Tbw,\, \Tbox,\, T_{\text{openo}}$ &
+     679:  $F_{\text{beltl}},\, F_{\text{dh}},\, F_{\text{hardsign}}$ &
+     682:  $K_{\text{frtailgamma}},\, K_{\text{turnm}},\, K_{\text{schwa}},\, K_{\text{teshlig}},\, K_{\text{lambda}}$ &
+     688:  $\Gamma_{\text{corner}},\, \Gamma_{\text{spleftarrow}},\, \Gamma_{\to},\, \Gamma_{\gg}$ &
+     691:  $\Phi_{\text{softsign}},\, \Phi_\times,\, \Phic,\, \Phic^\mathbb{C},\, \Phi_\uparrow$ &
+     700:  $\Omega_{\text{closeepsilon}},\, \Omega_{\text{crtwo}},\, \Omega_{\text{dzlig}},\, \Omega_\varnothing$ &
+     721:space: $D_{\text{wynn}}$ (wedge, simplest nontrivial extent), $D_{\text{turnthree}}$
+     722:(triangulated finite complex), $D_{\text{invomega}}$ (infinite-dimensional, e.g.\
+     723:Hilbert space), $D_{\text{omega}}$ (imscriptive: boundary imscribes bulk, the
+     725:connectivity: $T_{\text{nrleg}}$ (flat network), $\Tin$
+     728:networks), $T_{\text{openo}}$ (imscriptive closure). Criticality $\Phi$
+     732:invariant of the system's phase space: $\Omega_{\text{closeepsilon}}$ (trivial),
+     733:$\Omega_{\text{crtwo}}$ (binary, e.g.\ time-reversal symmetry),
+     734:$\Omega_{\text{dzlig}}$ (integer winding, e.g.\ topological insulator),
+     742:realised by $D_{\text{omega}}$ and $T_{\text{openo}}$. A system is \emph{imscriptive} if
+     791:  \item $P_{\text{upsilon}}$ --- complex phase symmetry (quantum coherence); $F_{\text{hardsign}}$ required.
+     907:(both $K_{\text{schwa}}$ catalysts at different energy scales) but are
+     954:to accommodate $\Phi_{\text{softsign}}, \Phi_\times, \Phic, \Phic^\mathbb{C},
+     1131:  \item[R3] $\Phi = \Phic$ and $\Omega = \Omega_{\text{closeepsilon}}$
+     1133:  \item[R4] $\Phi = \Phic$, $\Omega \neq \Omega_{\text{closeepsilon}}$,
+     1136:  \item[R5] $\Phi = \Phic$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D = D_{\text{invomega}}$
+     1388:$K_{\text{teshlig}}$ (trap, ordered freeze) and $K_{\text{lambda}}$ (many-body
+     1412:  & $\times$ & $\times$ & $T_{\text{openo}}$ & $\Omega_{\text{dzlig}}$
+     1415:  & $\times$ & $\times$ & $\Tbox$ & $\Omega_{\text{crtwo}}$
+     1418:  & $\times$ & \checkmark & $\Tbw$ & $\Omega_{\text{closeepsilon}}$
+     1456:$F_{\text{beltl}} < F_{\text{dh}} < F_{\text{hardsign}}$) and applying the grammar's ordering rule
+     1469:  \node[gate, pass] (g1) at (0,4) {Gate 1: $\Phi = \Phi_{\text{ctyogh}}$ \\ \footnotesize criticality check};
+     1504:($\Phi = \Phi_{\text{ctyogh}}$); failure at either gate forces $C = 0$.
+     1506:frozen systems ($K_{\text{teshlig}}$, $K_{\text{lambda}}$) fail regardless of
+     1520:$F_{\text{beltl}}$; orbital-overlap-dominated binding assigns $F_{\text{dh}}$;
+     1521:charge-transfer or covalent-character binding assigns $F_{\text{hardsign}}$.}
+     1528:Ferrocene derivative    & Charge-transfer, high affinity  & $F_{\text{hardsign}}$ & 1 & 1 \\
+     1529:Adamantane derivative   & Hydrophobic, size-complementary & $F_{\text{dh}}$  & 2 & 2 \\
+     1530:Naphthyl derivative     & $\pi$-stacking, moderate affinity & $F_{\text{dh}}$ & 3 & 3 \\
+     1531:Methylviologen          & Coulombic, directional          & $F_{\text{dh}}$  & 4 & 4 \\
+     1532:Cyclopentane derivative & Hydrophobic, weak               & $F_{\text{beltl}}$  & 5 & 5 \\
+     1533:Amino acid guest        & Polar, low affinity             & $F_{\text{beltl}}$  & 6 & 6 \\
+     1549:  \node[guest, fill=orange!30] (g1) at (5.0, 3.75) {Ferrocene \\ $F_{\text{hardsign}}$};
+     1550:  \node[guest, fill=yellow!20] (g2) at (5.0, 2.25) {Adamantane \\ $F_{\text{dh}}$};
+     1551:  \node[guest, fill=yellow!20] (g3) at (5.0, 0.75) {Naphthyl \\ $F_{\text{dh}}$};
+     1552:  \node[guest, fill=yellow!20] (g4) at (5.0,-0.75) {Methyl- \\ viologen $F_{\text{dh}}$};
+     1553:  \node[guest, fill=gray!15] (g5) at (5.0,-2.25) {Cyclopentane \\ $F_{\text{beltl}}$};
+     1554:  \node[guest, fill=gray!15] (g6) at (5.0,-3.75) {Amino acid \\ $F_{\text{beltl}}$};
+     1570:  \node[tierlabel] at (-1.8, 3.15) {$F_{\text{hardsign}}$};
+     1572:  \node[tierlabel] at (-1.8, 1.65) {$F_{\text{dh}}$};
+     1574:  \node[tierlabel] at (-1.8,-1.35) {$F_{\text{beltl}}$};
+     1584:Guests are tiered by $F$-ordinal ($F_{\text{hardsign}} > F_{\text{dh}} > F_{\text{beltl}}$). Within each
+     1614:    \Ppm;\; F_{\text{dh}};\; K_{\text{turnm}};\; G_{\text{beta}};\; \Gamma_{\text{corner}};.
+     1615:    \Phi_{\text{softsign}};\; H_1;\; 1{:}1;\; \Omega_{\text{closeepsilon}} \rangle \\
+     1617:    \Ppm;\; F_{\text{dh}};\; K_{\text{turnm}};\; G_{\text{beta}};\; \Gamma_{\text{corner}};.
+     1618:    \Phi_{\text{softsign}};\; H_1;\; 1{:}1;\; \Omega_{\text{closeepsilon}} \rangle
+     1680:kinetic-fidelity-topology constraint combination ($K_{\text{turnm}}$,
+     1681:$F_{\text{dh}}$, $\Tbw$) in a conjunctive, discrete-dimensional,
+     1739:    \Ppm;\; F_{\text{dh}};\; K_{\text{turnm}};\; G_{\text{revapostrophe}};\; \Gamma_{\text{corner}};.
+     1740:    \Phic;\; H_1;\; n{:}m;\; \Omega_{\text{closeepsilon}} \rangle
+     1743:    \Ppms;\; F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \Gamma_{\text{doublevertline}};.
+     1784:    \footnotesize $\Phi_{\text{ctyogh}}, K_{\text{schwa}}, H_1$ .
+     1789:  \draw[arrow] (pre) -- node[above, font=\small] {$d = 0.082$} node[below, font=\footnotesize] {tune drive to $\Phi_{\text{ctyogh}}$} (post);
+     1792:  \node[font=\footnotesize, align=center, text=red!60!black] at (0, 2.7) {$\Phi_\uparrow \to \Phi_{\text{ctyogh}}$ (load-bearing)};
+     1793:  \node[font=\footnotesize, align=center, text=red!60!black] at (0, 2.1) {$K_{\text{frtailgamma}} \to K_{\text{schwa}}$ (consequence)};
+     1800:Tuning the drive-dissipation ratio to $\Phi_{\text{ctyogh}}$ forces a simultaneous two-primitive
+     1801:promotion: $K_{\text{frtailgamma}} \to K_{\text{schwa}}$ (critical slowing down) and
+     1816:  F_{\text{beltl}};\; K_{\text{frtailgamma}};\; G_{\text{gamma}};\; \Gamma_{\text{corner}};\; \Phi_\uparrow;.
+     1817:  H_0;\; n{:}n;\; \Omega_{\text{closeepsilon}} \rangle
+     1820:$\Phi_\uparrow$ (supercritical disorder), $K_{\text{frtailgamma}}$ (fast reversible
+     1830:  F_{\text{beltl}};\; K_{\text{schwa}};\; G_{\text{gamma}};\; \Gamma_{\text{corner}};\; \Phic;.
+     1831:  H_1;\; n{:}n;\; \Omega_{\text{closeepsilon}} \rangle
+     1841:hits the critical manifold), $K_{\text{frtailgamma}} \to K_{\text{schwa}}$
+     1846:\Omega_{\text{closeepsilon}}$).
+     1861:|\varepsilon|^{-\nu z}$ (the $K_{\text{schwa}}$ signature, critical
+     1866:($\Phi_{\text{revepsilon}}$) rather than $\Phic$; if circulation appears without
+     1905:that deliberation loops without emission ($K_{\text{teshlig}}$) reduce $C$ to $0$, and that
+     1906:long-context agents undergo a $D_{\text{turnthree}} \to D_{\text{omega}}$ phase transition.}
+
+● Now I see it clearly. Let me grab the SO_BELOW.tex macro definitions and a few more patterns before writing the replacement script.
+
+● Bash(grep -n '\\newcommand\|\\renewcommand' /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -60)
+  ⎿  13:\newcommand{\heb}[1]{{\hebrewfont #1}}
+     16:\newcommand{\igtext}[1]{{\igfont #1}}
+     35:\renewcommand{\headrulewidth}{0.4pt}
+     36:\renewcommand{\footrulewidth}{0pt}
+     64:\renewcommand{\arraystretch}{1.3}
+     71:\newcommand{\pilcrow}{\S}
+     72:\newcommand{\UIG}{Universal Imscriptive Grammar}
+     73:\newcommand{\Stone}{\textit{lapis philosophorum}}
+     234:\newcommand{\cmark}{\checkmark}
+     235:\newcommand{\xmark}{$\times$}
+     236:\newcommand{\gvec}{\mathbf{g}}
+     237:\newcommand{\xvec}{\mathbf{x}}
+     238:\newcommand{\yvec}{\mathbf{y}}
+     239:\newcommand{\Phic}{\Phi_{\text{ctyogh}}}
+     240:\newcommand{\Ppm}{P_{\text{pipevar}}}
+     241:\newcommand{\Ppms}{P_{\text{doublebarpipe}}}
+     242:\newcommand{\Kinf}{K_\infty}
+     243:\newcommand{\Oinf}{O_\infty}
+     244:\newcommand{\Otwo}{O_2}
+     245:\newcommand{\Oone}{O_1}
+     246:\newcommand{\Ozero}{O_0}
+     247:\newcommand{\doto}[2]{d_{\to}(#1,\,#2)}
+     248:\newcommand{\meet}{\wedge}
+     249:\newcommand{\join}{\vee}
+     250:\newcommand{\tensor}{\otimes}
+     251:\newcommand{\OmegaZ}{\Omega_{\text{dzlig}}}
+     252:\newcommand{\OmegaZtwo}{\Omega_{\text{crtwo}}}
+     253:\newcommand{\GamSeq}{\Gamma_{\to}}
+     254:\newcommand{\GamBrd}{\Gamma_{\text{doublevertline}}}
+     255:\newcommand{\Tbw}{T_{\mathord{\bowtie}}}
+     256:\newcommand{\Tin}{T_{\mathord{\subset}}}
+     257:\newcommand{\Tbox}{T_{\mathord{\boxtimes}}}
+     258:\newcommand{\TOPO}{\textsc{[Topo]}}
+     259:\newcommand{\DIAPH}{\textsc{[Diaph]}}
+     260:\newcommand{\ONTO}{\textsc{[Onto]}}
+     261:\newcommand{\glp}{\text{LP}}
+     262:\newcommand{\both}{\mathbf{BJ}}
+     263:\newcommand{\dialetheia}{dialetheia}
+     265:\newcommand{\vau}{\text{Vav}}
+     266:\newcommand{\mem}{\text{Mem}}
+     267:\newcommand{\shin}{\text{Shin}}
+     268:\newcommand{\kuf}{\text{Kuf}}
+     3797:\renewcommand{\arraystretch}{1.35}
+
+● Bash(grep -n '\\newcommand\|\\renewcommand' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | head -30)
+  ⎿  8:\newcommand{\heb}[1]{{\hebrewfont #1}}
+     11:\newcommand{\igtext}[1]{{\igfont #1}}
+     30:\renewcommand{\headrulewidth}{0.4pt}
+     31:\renewcommand{\footrulewidth}{0pt}
+     59:\renewcommand{\arraystretch}{1.3}
+     66:\newcommand{\pilcrow}{\S}
+     67:\newcommand{\UIG}{Universal Imscriptive Grammar}
+     68:\newcommand{\Stone}{\textit{lapis philosophorum}}
+
+● Now I have a complete picture. The issue is:
+  - ASCII letters like D, T, R, F, K, H, G, P, S in math mode render as LaTeX italic — wrong glyphs
+  - \Gamma_sub should be ɢ (interaction grammar), not Γ (scope)
+  - \Phi_sub should be ⊙ (criticality), not Φ (parity)
+  - Macro definitions in SO_BELOW.tex also use the wrong letters
+
+  Writing the replacement script now.
+
+● Write(/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py)
+  ⎿  Wrote 194 lines to /home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py
+        1 #!/usr/bin/env python3
+        2 """
+        3 fix_ig_glyphs.py
+        4 Replace wrong primitive letter representations in .tex files with the
+        5 standardized IG primitive glyphs, rendered through \igprimfont (FreeSerif).
+        6
+        7 Subscript text names → correct glyph:
+        8   Ð  wynn turnthree invomega omega
+        9   Þ  nrleg invscr bullseye commatailz openo
+       10   Ř  subrightarrow ctz downstep lyoghlig
+       11   Φ  aolig upsilon pipevar subdoublearrow doublebarpipe
+       12   ƒ  beltl dh eth hardsign
+       13   Ç  frtailgamma turnm schwa teshlig lambda
+       14   Γ  beta gamma revapostrophe
+       15   ɢ  corner spleftarrow secstress doublevertline
+       16   ⊙  softsign ctyogh closerevepsilon revepsilon upstep
+       17   Ħ  closeomega toneletterstem turntwo invscripta
+       18   Σ  doublebaresh ctn ltailm
+       19   Ω  closeepsilon crtwo dzlig turna
+       20 """
+       21
+       22 import re
+       23 import sys
+       24 from pathlib import Path
+       25
+       26 SUB_TO_GLYPH = {
+       27     'wynn': 'Ð', 'turnthree': 'Ð', 'invomega': 'Ð', 'omega': 'Ð',
+       28     'nrleg': 'Þ', 'invscr': 'Þ', 'bullseye': 'Þ', 'commatailz': 'Þ', 'openo': 'Þ',
+       29     'subrightarrow': 'Ř', 'ctz': 'Ř', 'downstep': 'Ř', 'lyoghlig': 'Ř',
+       30     'aolig': 'Φ', 'upsilon': 'Φ', 'pipevar': 'Φ', 'subdoublearrow': 'Φ', 'doublebarpipe': 'Φ',
+       31     'beltl': 'ƒ', 'dh': 'ƒ', 'eth': 'ƒ', 'hardsign': 'ƒ',
+       32     'frtailgamma': 'Ç', 'turnm': 'Ç', 'schwa': 'Ç', 'teshlig': 'Ç', 'lambda': 'Ç',
+       33     'beta': 'Γ', 'gamma': 'Γ', 'revapostrophe': 'Γ',
+       34     'corner': 'ɢ', 'spleftarrow': 'ɢ', 'secstress': 'ɢ', 'doublevertline': 'ɢ',
+       35     'softsign': '⊙', 'ctyogh': '⊙', 'closerevepsilon': '⊙', 'revepsilon': '⊙', 'upstep': '⊙',
+       36     'closeomega': 'Ħ', 'toneletterstem': 'Ħ', 'turntwo': 'Ħ', 'invscripta': 'Ħ',
+       37     'doublebaresh': 'Σ', 'ctn': 'Σ', 'ltailm': 'Σ',
+       38     'closeepsilon': 'Ω', 'crtwo': 'Ω', 'dzlig': 'Ω', 'turna': 'Ω',
+       39 }
+       40
+       41 def ig(glyph, sub=''):
+       42     if sub:
+       43         return f'\\text{{{{\\igprimfont {glyph}}}}}{sub}'
+       44     return f'\\text{{{{\\igprimfont {glyph}}}}}'
+       45
+       46
+       47 def process(text):
+       48     # ── 1. Subscript _{\text{NAME}} form ──────────────────────────────────────
+       49     # Matches: LETTER_{\text{NAME}} or \COMMAND_{\text{NAME}}
+       50     # The capturing group is the letter/command before the underscore.
+       51     def sub_text_repl(m):
+       52         name = m.group('name')
+       53         if name not in SUB_TO_GLYPH:
+       54             return m.group(0)
+       55         glyph = SUB_TO_GLYPH[name]
+       56         return ig(glyph, '_{{\\text{{{}}}}}'.format(name))
+       57
+       58     # With braces: X_{\text{name}}
+       59     text = re.sub(
+       60         r'(?<![\\a-zA-Z])(?:D|T|R|P|F|K|G|H|S|\\Gamma|\\Phi|\\Omega)'
+       61         r'_\{\\text\{(?P<name>[a-z]+)\}\}',
+       62         sub_text_repl, text
+       63     )
+       64
+       65     # Without braces: X_\text{name}  (rare variant)
+       66     text = re.sub(
+       67         r'(?<![\\a-zA-Z])(?:D|T|R|P|F|K|G|H|S|\\Gamma|\\Phi|\\Omega)'
+       68         r'_\\text\{(?P<name>[a-z]+)\}',
+       69         sub_text_repl, text
+       70     )
+       71
+       72     # ── 2. H_N digit subscripts (temporal depth values H0..H9) ───────────────
+       73     # Only bare H not preceded by a letter/backslash (avoids Hom, H_{..}, etc.)
+       74     text = re.sub(
+       75         r'(?<![\\a-zA-Z])H_([0-9])(?![a-zA-Z])',
+       76         lambda m: ig('Ħ', f'_{m.group(1)}'),
+       77         text
+       78     )
+       79
+       80     # ── 3. H_\infty ───────────────────────────────────────────────────────────
+       81     text = re.sub(
+       82         r'(?<![\\a-zA-Z])H_\\infty(?![a-zA-Z])',
+       83         ig('Ħ', '_\\infty'),
+       84         text
+       85     )
+       86
+       87     # ── 4. Standalone \Phi in math (without subscript) — always ⊙ in this doc ─
+       88     # Match \Phi not followed by _ or { (those are handled above or are macros)
+       89     # Only replace when inside $...$ context (look for surrounding $)
+       90     # Conservative: only replace the obvious primitive-label forms
+       91     text = re.sub(
+       92         r'(?<![\\a-zA-Z])\\Phi(?![a-zA-Z_{])',
+       93         ig('⊙'),
+       94         text
+       95     )
+       96
+       97     # ── 5. Standalone \Gamma in math (without subscript) — always ɢ here ──────
+       98     text = re.sub(
+       99         r'(?<![\\a-zA-Z])\\Gamma(?![a-zA-Z_{])',
+      100         ig('ɢ'),
+      101         text
+      102     )
+      103
+      104     # ── 6. Standalone \Omega in math (without subscript) — Ω primitive ────────
+      105     text = re.sub(
+      106         r'(?<![\\a-zA-Z])\\Omega(?![a-zA-Z_{])',
+      107         ig('Ω'),
+      108         text
+      109     )
+      110
+      111     # ── 7. Family list patterns ── ($F,G,S$), ($D,R,\Gamma,H,\Omega$), etc. ──
+      112     # These appear in the text as fixed patterns; handle as literal replacements.
+      113     LITERAL = [
+      114         # 3-family
+      115         ('($F,G,S$)', f'(${ig("ƒ")},{ig("Γ")},{ig("Σ")}$)'),
+      116         # 4-family
+      117         ('($D,R,\\Gamma,H,\\Omega$)',
+      118          f'(${ig("Ð")},{ig("Ř")},{ig("ɢ")},{ig("Ħ")},{ig("Ω")}$)'),
+      119         # 5-family
+      120         ('($T,P,\\Phi,K$)',
+      121          f'(${ig("Þ")},{ig("Φ")},{ig("⊙")},{ig("Ç")}$)'),
+      122         # tikz node standalone labels (X\\X_sub form already handled by #1/#2)
+      123         # Table standalone headers
+      124         ('$D$ & Dimensionality', f'${ig("Ð")}$ & Dimensionality'),
+      125         ('$T$ & Topology',       f'${ig("Þ")}$ & Topology'),
+      126         ('$R$ & Relational mode', f'${ig("Ř")}$ & Relational mode'),
+      127         ('$P$ & Parity',         f'${ig("Φ")}$ & Parity'),
+      128         ('$F$ & Fidelity',       f'${ig("ƒ")}$ & Fidelity'),
+      129         ('$K$ & Kinetics',       f'${ig("Ç")}$ & Kinetics'),
+      130         ('$G$ & Scope',          f'${ig("Γ")}$ & Scope'),
+      131         ('$\\Gamma$ & Interaction grammar', f'${ig("ɢ")}$ & Interaction grammar'),
+      132         ('$\\Phi$ & Criticality', f'${ig("⊙")}$ & Criticality'),
+      133         ('$H$ & Temporal',       f'${ig("Ħ")}$ & Temporal'),
+      134         ('$\\Sigma$ & Stoichiometry', f'${ig("Σ")}$ & Stoichiometry'),
+      135         ('$\\Omega$ & Winding',  f'${ig("Ω")}$ & Winding'),
+      136         # tikz node primitive-label pairs: {$X$\\$X_sub$}
+      137         ('{$K$\\\\', f'${{{ig("Ç")}}}\\\\'),
+      138         ('{$F$\\\\', f'${{{ig("ƒ")}}}\\\\'),
+      139         ('{$R$\\\\', f'${{{ig("Ř")}}}\\\\'),
+      140         ('{$T$\\\\', f'${{{ig("Þ")}}}\\\\'),
+      141         ('{$D$\\\\', f'${{{ig("Ð")}}}\\\\'),
+      142         ('{$\\Phi$\\\\', f'${{{ig("⊙")}}}\\\\'),
+      143         ('{$\\Omega$\\\\', f'${{{ig("Ω")}}}\\\\'),
+      144         ('{$\\Gamma$\\\\', f'${{{ig("ɢ")}}}\\\\'),
+      145     ]
+      146     for old, new in LITERAL:
+      147         text = text.replace(old, new)
+      148
+      149     return text
+      150
+      151
+      152 def process_macros(text):
+      153     """Update SO_BELOW.tex macro definitions."""
+      154     MACRO_REPLACEMENTS = [
+      155         (r'\newcommand{\Phic}{\Phi_{\text{ctyogh}}}',
+      156          f'\\newcommand{{\\Phic}}{{{ig("⊙", "_{{\\text{{ctyogh}}}}")}}}'),
+      157         (r'\newcommand{\Ppm}{P_{\text{pipevar}}}',
+      158          f'\\newcommand{{\\Ppm}}{{{ig("Φ", "_{{\\text{{pipevar}}}}")}}}'),
+      159         (r'\newcommand{\Ppms}{P_{\text{doublebarpipe}}}',
+      160          f'\\newcommand{{\\Ppms}}{{{ig("Φ", "_{{\\text{{doublebarpipe}}}}")}}}'),
+      161         (r'\newcommand{\OmegaZ}{\Omega_{\text{dzlig}}}',
+      162          f'\\newcommand{{\\OmegaZ}}{{{ig("Ω", "_{{\\text{{dzlig}}}}")}}}'),
+      163         (r'\newcommand{\OmegaZtwo}{\Omega_{\text{crtwo}}}',
+      164          f'\\newcommand{{\\OmegaZtwo}}{{{ig("Ω", "_{{\\text{{crtwo}}}}")}}}'),
+      165         (r'\newcommand{\GamSeq}{\Gamma_{\to}}',
+      166          f'\\newcommand{{\\GamSeq}}{{{ig("ɢ", "_{{\\to}}")}}}'),
+      167         (r'\newcommand{\GamBrd}{\Gamma_{\text{doublevertline}}}',
+      168          f'\\newcommand{{\\GamBrd}}{{{ig("ɢ", "_{{\\text{{doublevertline}}}}")}}}'),
+      169         (r'\newcommand{\Tbw}{T_{\mathord{\bowtie}}}',
+      170          f'\\newcommand{{\\Tbw}}{{{ig("Þ", "_{{\\mathord{{\\bowtie}}}}")}}}'),
+      171         (r'\newcommand{\Tin}{T_{\mathord{\subset}}}',
+      172          f'\\newcommand{{\\Tin}}{{{ig("Þ", "_{{\\mathord{{\\subset}}}}")}}}'),
+      173         (r'\newcommand{\Tbox}{T_{\mathord{\boxtimes}}}',
+      174          f'\\newcommand{{\\Tbox}}{{{ig("Þ", "_{{\\mathord{{\\boxtimes}}}}")}}}'),
+      175     ]
+      176     for old, new in MACRO_REPLACEMENTS:
+      177         text = text.replace(old, new)
+      178     return text
+      179
+      180
+      181 if __name__ == '__main__':
+      182     paths = sys.argv[1:] or []
+      183     for path in paths:
+      184         p = Path(path)
+      185         original = p.read_text(encoding='utf-8')
+      186         fixed = process(original)
+      187         if 'SO_BELOW' in p.name or 'SB' in p.name:
+      188             fixed = process_macros(fixed)
+      189         if fixed != original:
+      190             p.write_text(fixed, encoding='utf-8')
+      191             n = sum(1 for a, b in zip(original, fixed) if a != b)
+      192             print(f'Fixed {p.name}: ~{n} chars changed')
+      193         else:
+      194             print(f'Clean: {p.name}')
+
+● Let me do a dry run first to see what it would change before touching the files.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Bash command
+
+   python3 - << 'EOF'
+   import re
+   from pathlib import Path
+
+   SUB_TO_GLYPH = {
+       'wynn': 'Ð', 'turnthree': 'Ð', 'invomega': 'Ð', 'omega': 'Ð',
+       'nrleg': 'Þ', 'invscr': 'Þ', 'bullseye': 'Þ', 'commatailz': 'Þ', 'openo': 'Þ',
+       'subrightarrow': 'Ř', 'ctz': 'Ř', 'downstep': 'Ř', 'lyoghlig': 'Ř',
+       'aolig': 'Φ', 'upsilon': 'Φ', 'pipevar': 'Φ', 'subdoublearrow': 'Φ', 'doublebarpipe': 'Φ',
+          'corner': 'ɢ', 'spleftarrow': 'ɢ', 'secstress': 'ɢ', 'doublevertline': 'ɢ',
+          'softsign': '⊙', 'ctyogh': '⊙', 'closerevepsilon': '⊙', 'revepsilon': '⊙', 'upstep': '⊙',
+          'closeomega': 'Ħ', 'toneletterstem': 'Ħ', 'turntwo': 'Ħ', 'invscripta': 'Ħ',
+          'doublebaresh': 'Σ', 'ctn': 'Σ', 'ltailm': 'Σ',
+          'closeepsilon': 'Ω', 'crtwo': 'Ω', 'dzlig': 'Ω', 'turna': 'Ω',
+      }
+
+      def ig(glyph, sub=''):
+          if sub: return f'\\text{{{{\\igprimfont {glyph}}}}}{sub}'
+          return f'\\text{{{{\\igprimfont {glyph}}}}}'
+
+      PATTERN = re.compile(
+          r'(?<![\\a-zA-Z])(?:D|T|R|P|F|K|G|H|S|\\Gamma|\\Phi|\\Omega)'
+          r'_\{\\text\{([a-z]+)\}\}'
+      )
+
+      for fname in ('manuscripts/AS_ABOVE.tex', 'manuscripts/SO_BELOW.tex'):
+          text = Path(fname).read_text('utf-8')
+          matches = [(m.group(0), m.group(1)) for m in PATTERN.finditer(text)]
+          known = [(o,n) for o,n in matches if n in SUB_TO_GLYPH]
+          unknown = [(o,n) for o,n in matches if n not in SUB_TO_GLYPH]
+          print(f'\n=== {fname} ===')
+          print(f'  Known subscripts: {len(known)} matches')
+          # show unique patterns
+          seen = {}
+          for orig, name in known:
+              if orig not in seen:
+                  seen[orig] = ig(SUB_TO_GLYPH[name], '_{{\\text{{{}}}}}'.format(name))
+          for o, n in sorted(seen.items()):
+              print(f'    {o!r:50s} → {n!r}')
+          if unknown:
+              print(f'  UNRECOGNIZED subscripts ({len(unknown)}):')
+              useen = set()
+              for o,n in unknown:
+                  if n not in useen:
+                      print(f'    {o!r}')
+                      useen.add(n)
+      EOF)
+  ⎿  Waiting…
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Bash command
+
+   python3 - << 'EOF'
+   import re
+   from pathlib import Path
+
+   SUB_TO_GLYPH = {
+       'wynn': 'Ð', 'turnthree': 'Ð', 'invomega': 'Ð', 'omega': 'Ð',
+       'nrleg': 'Þ', 'invscr': 'Þ', 'bullseye': 'Þ', 'commatailz': 'Þ', 'openo': 'Þ',
+       'subrightarrow': 'Ř', 'ctz': 'Ř', 'downstep': 'Ř', 'lyoghlig': 'Ř',
+       'aolig': 'Φ', 'upsilon': 'Φ', 'pipevar': 'Φ', 'subdoublearrow': 'Φ', 'doublebarpipe': 'Φ',
+          'beltl': 'ƒ', 'dh': 'ƒ', 'eth': 'ƒ', 'hardsign': 'ƒ',
+          'frtailgamma': 'Ç', 'turnm': 'Ç', 'schwa': 'Ç', 'teshlig': 'Ç', 'lambda': 'Ç',
+          'beta': 'Γ', 'gamma': 'Γ', 'revapostrophe': 'Γ',
+          'corner': 'ɢ', 'spleftarrow': 'ɢ', 'secstress': 'ɢ', 'doublevertline': 'ɢ',
+          'softsign': '⊙', 'ctyogh': '⊙', 'closerevepsilon': '⊙', 'revepsilon': '⊙', 'upstep': '⊙',
+          'closeomega': 'Ħ', 'toneletterstem': 'Ħ', 'turntwo': 'Ħ', 'invscripta': 'Ħ',
+          'doublebaresh': 'Σ', 'ctn': 'Σ', 'ltailm': 'Σ',
+          'closeepsilon': 'Ω', 'crtwo': 'Ω', 'dzlig': 'Ω', 'turna': 'Ω',
+      }
+
+      def ig(glyph, sub=''):
+          if sub: return f'\\text{{{{\\igprimfont {glyph}}}}}{sub}'
+          return f'\\text{{{{\\igprimfont {glyph}}}}}'
+
+      PATTERN = re.compile(
+          r'(?<![\\a-zA-Z])(?:D|T|R|P|F|K|G|H|S|\\Gamma|\\Phi|\\Omega)'
+          r'_\{\\text\{([a-z]+)\}\}'
+      )
+
+      for fname in ('manuscripts/AS_ABOVE.tex', 'manuscripts/SO_BELOW.tex'):
+          text = Path(fname).read_text('utf-8')
+          matches = [(m.group(0), m.group(1)) for m in PATTERN.finditer(text)]
+          known = [(o,n) for o,n in matches if n in SUB_TO_GLYPH]
+          unknown = [(o,n) for o,n in matches if n not in SUB_TO_GLYPH]
+          print(f'\n=== {fname} ===')
+          print(f'  Known subscripts: {len(known)} matches')
+          # show unique patterns
+          seen = {}
+          for orig, name in known:
+              if orig not in seen:
+                  seen[orig] = ig(SUB_TO_GLYPH[name], '_{{\\text{{{}}}}}'.format(name))
+          for o, n in sorted(seen.items()):
+              print(f'    {o!r:50s} → {n!r}')
+          if unknown:
+              print(f'  UNRECOGNIZED subscripts ({len(unknown)}):')
+              useen = set()
+              for o,n in unknown:
+                  if n not in useen:
+                      print(f'    {o!r}')
+                      useen.add(n)
+      EOF)
+  ⎿  === manuscripts/AS_ABOVE.tex ===
+       Known subscripts: 591 matches
+         'D_{\\text{invomega}}'                             → '\\text{{\\igprimfont Ð}}_{\\text{invomega}}'
+         'D_{\\text{omega}}'                                → '\\text{{\\igprimfont Ð}}_{\\text{omega}}'
+         'D_{\\text{turnthree}}'                            → '\\text{{\\igprimfont Ð}}_{\\text{turnthree}}'
+         'D_{\\text{wynn}}'                                 → '\\text{{\\igprimfont Ð}}_{\\text{wynn}}'
+         'F_{\\text{beltl}}'                                → '\\text{{\\igprimfont ƒ}}_{\\text{beltl}}'
+         'F_{\\text{dh}}'                                   → '\\text{{\\igprimfont ƒ}}_{\\text{dh}}'
+         'F_{\\text{hardsign}}'                             → '\\text{{\\igprimfont ƒ}}_{\\text{hardsign}}'
+         'G_{\\text{beta}}'                                 → '\\text{{\\igprimfont Γ}}_{\\text{beta}}'
+         'G_{\\text{gamma}}'                                → '\\text{{\\igprimfont Γ}}_{\\text{gamma}}'
+         'G_{\\text{revapostrophe}}'                        → '\\text{{\\igprimfont Γ}}_{\\text{revapostrophe}}'
+         'H_{\\text{invscripta}}'                           → '\\text{{\\igprimfont Ħ}}_{\\text{invscripta}}'
+         'K_{\\text{frtailgamma}}'                          → '\\text{{\\igprimfont Ç}}_{\\text{frtailgamma}}'
+         'K_{\\text{lambda}}'                               → '\\text{{\\igprimfont Ç}}_{\\text{lambda}}'
+         'K_{\\text{schwa}}'                                → '\\text{{\\igprimfont Ç}}_{\\text{schwa}}'
+         'K_{\\text{teshlig}}'                              → '\\text{{\\igprimfont Ç}}_{\\text{teshlig}}'
+         'K_{\\text{turnm}}'                                → '\\text{{\\igprimfont Ç}}_{\\text{turnm}}'
+         'P_{\\text{aolig}}'                                → '\\text{{\\igprimfont Φ}}_{\\text{aolig}}'
+         'P_{\\text{doublebarpipe}}'                        → '\\text{{\\igprimfont Φ}}_{\\text{doublebarpipe}}'
+         'P_{\\text{pipevar}}'                              → '\\text{{\\igprimfont Φ}}_{\\text{pipevar}}'
+         'P_{\\text{subdoublearrow}}'                       → '\\text{{\\igprimfont Φ}}_{\\text{subdoublearrow}}'
+         'P_{\\text{upsilon}}'                              → '\\text{{\\igprimfont Φ}}_{\\text{upsilon}}'
+         'R_{\\text{ctz}}'                                  → '\\text{{\\igprimfont Ř}}_{\\text{ctz}}'
+         'R_{\\text{downstep}}'                             → '\\text{{\\igprimfont Ř}}_{\\text{downstep}}'
+         'R_{\\text{lyoghlig}}'                             → '\\text{{\\igprimfont Ř}}_{\\text{lyoghlig}}'
+         'R_{\\text{subrightarrow}}'                        → '\\text{{\\igprimfont Ř}}_{\\text{subrightarrow}}'
+         'T_{\\text{bullseye}}'                             → '\\text{{\\igprimfont Þ}}_{\\text{bullseye}}'
+         'T_{\\text{commatailz}}'                           → '\\text{{\\igprimfont Þ}}_{\\text{commatailz}}'
+         'T_{\\text{invscr}}'                               → '\\text{{\\igprimfont Þ}}_{\\text{invscr}}'
+         'T_{\\text{nrleg}}'                                → '\\text{{\\igprimfont Þ}}_{\\text{nrleg}}'
+         'T_{\\text{openo}}'                                → '\\text{{\\igprimfont Þ}}_{\\text{openo}}'
+         '\\Gamma_{\\text{corner}}'                         → '\\text{{\\igprimfont ɢ}}_{\\text{corner}}'
+         '\\Gamma_{\\text{doublevertline}}'                 → '\\text{{\\igprimfont ɢ}}_{\\text{doublevertline}}'
+         '\\Gamma_{\\text{secstress}}'                      → '\\text{{\\igprimfont ɢ}}_{\\text{secstress}}'
+         '\\Gamma_{\\text{spleftarrow}}'                    → '\\text{{\\igprimfont ɢ}}_{\\text{spleftarrow}}'
+         '\\Omega_{\\text{closeepsilon}}'                   → '\\text{{\\igprimfont Ω}}_{\\text{closeepsilon}}'
+         '\\Omega_{\\text{crtwo}}'                          → '\\text{{\\igprimfont Ω}}_{\\text{crtwo}}'
+         '\\Omega_{\\text{dzlig}}'                          → '\\text{{\\igprimfont Ω}}_{\\text{dzlig}}'
+         '\\Omega_{\\text{turna}}'                          → '\\text{{\\igprimfont Ω}}_{\\text{turna}}'
+         '\\Phi_{\\text{closerevepsilon}}'                  → '\\text{{\\igprimfont ⊙}}_{\\text{closerevepsilon}}'
+         '\\Phi_{\\text{ctyogh}}'                           → '\\text{{\\igprimfont ⊙}}_{\\text{ctyogh}}'
+         '\\Phi_{\\text{revepsilon}}'                       → '\\text{{\\igprimfont ⊙}}_{\\text{revepsilon}}'
+         '\\Phi_{\\text{softsign}}'                         → '\\text{{\\igprimfont ⊙}}_{\\text{softsign}}'
+         '\\Phi_{\\text{upstep}}'                           → '\\text{{\\igprimfont ⊙}}_{\\text{upstep}}'
+       UNRECOGNIZED subscripts (1):
+         'G_{\\text{seq}}'
+
+     === manuscripts/SO_BELOW.tex ===
+       Known subscripts: 679 matches
+         'D_{\\text{invomega}}'                             → '\\text{{\\igprimfont Ð}}_{\\text{invomega}}'
+         'D_{\\text{omega}}'                                → '\\text{{\\igprimfont Ð}}_{\\text{omega}}'
+         'D_{\\text{turnthree}}'                            → '\\text{{\\igprimfont Ð}}_{\\text{turnthree}}'
+         'D_{\\text{wynn}}'                                 → '\\text{{\\igprimfont Ð}}_{\\text{wynn}}'
+         'F_{\\text{beltl}}'                                → '\\text{{\\igprimfont ƒ}}_{\\text{beltl}}'
+         'F_{\\text{dh}}'                                   → '\\text{{\\igprimfont ƒ}}_{\\text{dh}}'
+         'F_{\\text{hardsign}}'                             → '\\text{{\\igprimfont ƒ}}_{\\text{hardsign}}'
+         'G_{\\text{beta}}'                                 → '\\text{{\\igprimfont Γ}}_{\\text{beta}}'
+         'G_{\\text{gamma}}'                                → '\\text{{\\igprimfont Γ}}_{\\text{gamma}}'
+         'G_{\\text{revapostrophe}}'                        → '\\text{{\\igprimfont Γ}}_{\\text{revapostrophe}}'
+         'H_{\\text{invscripta}}'                           → '\\text{{\\igprimfont Ħ}}_{\\text{invscripta}}'
+         'K_{\\text{frtailgamma}}'                          → '\\text{{\\igprimfont Ç}}_{\\text{frtailgamma}}'
+         'K_{\\text{lambda}}'                               → '\\text{{\\igprimfont Ç}}_{\\text{lambda}}'
+         'K_{\\text{schwa}}'                                → '\\text{{\\igprimfont Ç}}_{\\text{schwa}}'
+         'K_{\\text{teshlig}}'                              → '\\text{{\\igprimfont Ç}}_{\\text{teshlig}}'
+         'K_{\\text{turnm}}'                                → '\\text{{\\igprimfont Ç}}_{\\text{turnm}}'
+         'P_{\\text{aolig}}'                                → '\\text{{\\igprimfont Φ}}_{\\text{aolig}}'
+         'P_{\\text{doublebarpipe}}'                        → '\\text{{\\igprimfont Φ}}_{\\text{doublebarpipe}}'
+         'P_{\\text{pipevar}}'                              → '\\text{{\\igprimfont Φ}}_{\\text{pipevar}}'
+         'P_{\\text{subdoublearrow}}'                       → '\\text{{\\igprimfont Φ}}_{\\text{subdoublearrow}}'
+         'P_{\\text{upsilon}}'                              → '\\text{{\\igprimfont Φ}}_{\\text{upsilon}}'
+         'R_{\\text{ctz}}'                                  → '\\text{{\\igprimfont Ř}}_{\\text{ctz}}'
+         'R_{\\text{downstep}}'                             → '\\text{{\\igprimfont Ř}}_{\\text{downstep}}'
+         'R_{\\text{lyoghlig}}'                             → '\\text{{\\igprimfont Ř}}_{\\text{lyoghlig}}'
+         'T_{\\text{commatailz}}'                           → '\\text{{\\igprimfont Þ}}_{\\text{commatailz}}'
+         'T_{\\text{nrleg}}'                                → '\\text{{\\igprimfont Þ}}_{\\text{nrleg}}'
+         'T_{\\text{openo}}'                                → '\\text{{\\igprimfont Þ}}_{\\text{openo}}'
+         '\\Gamma_{\\text{corner}}'                         → '\\text{{\\igprimfont ɢ}}_{\\text{corner}}'
+         '\\Gamma_{\\text{doublevertline}}'                 → '\\text{{\\igprimfont ɢ}}_{\\text{doublevertline}}'
+         '\\Gamma_{\\text{secstress}}'                      → '\\text{{\\igprimfont ɢ}}_{\\text{secstress}}'
+         '\\Gamma_{\\text{spleftarrow}}'                    → '\\text{{\\igprimfont ɢ}}_{\\text{spleftarrow}}'
+         '\\Omega_{\\text{closeepsilon}}'                   → '\\text{{\\igprimfont Ω}}_{\\text{closeepsilon}}'
+         '\\Omega_{\\text{crtwo}}'                          → '\\text{{\\igprimfont Ω}}_{\\text{crtwo}}'
+         '\\Omega_{\\text{dzlig}}'                          → '\\text{{\\igprimfont Ω}}_{\\text{dzlig}}'
+         '\\Phi_{\\text{closerevepsilon}}'                  → '\\text{{\\igprimfont ⊙}}_{\\text{closerevepsilon}}'
+         '\\Phi_{\\text{ctyogh}}'                           → '\\text{{\\igprimfont ⊙}}_{\\text{ctyogh}}'
+         '\\Phi_{\\text{revepsilon}}'                       → '\\text{{\\igprimfont ⊙}}_{\\text{revepsilon}}'
+         '\\Phi_{\\text{softsign}}'                         → '\\text{{\\igprimfont ⊙}}_{\\text{softsign}}'
+
+● Good — 591 matches in AS_ABOVE, 679 in SO_BELOW, and one unknown G_{\text{seq}}. Let me check what that is and how many H_n (digit) cases there are.
+
+● Bash(grep -n 'G_{\\text{seq}}' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:857:8 & $\Gamma$ & $G_{\text{seq}}$ (sequential composition) \\
+
+● Bash(grep -Pn 'H_[0-9](?![a-zA-Z])' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -20)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to
+     F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for
+      the dynamics to be Markovian. Stabilization at step 0 gives $H_0$ (memoryless); at step 1 gives $H_1$ (one prior state); at step 2 gives $H_2$; never stabilizing gives
+     $H_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the iteration operation. No other operation measures the Markov order of the dynamics.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:859:10 & $H$ & $H_2$ (two-step temporal depth) \\
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:864:\caption{The 12-step retrosynthetic path from $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}};
+     P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ to
+     the structural baseline $\langle D_{\text{wynn}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}};
+     \Gamma_{\text{corner}}; \Phi_{\text{softsign}}; H_0; 1{:}1; \Omega_{\text{closeepsilon}} \rangle$.}
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:883:\node[baseline] (base) at (0,0) {$\langle D_{\text{wynn}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}};
+      F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}}; \Gamma_{\text{corner}}; \Phi_{\text{softsign}}; H_0; 1{:}1; \Omega_{\text{closeepsilon}} \rangle$};
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:898:\node[prim=green!12,above=0.1cm of s10] (p10) {$H$\\$H_0$};
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:948:$\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{hardsign}};
+     K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:998:The strongest argument that 12 is the exact count comes from the crystal itself. The crystal enumerates all $3^3 \times
+     4^5 \times 5^4 = 17{,}280{,}000$ structural types. The assignment of a system to its type is bijective: each 12-tuple maps to exactly one address in $[0, 17279999]$, and each address
+     maps back to exactly one 12-tuple. The codec is $\mu \circ \delta = \text{id}$ at the operational level. This is not a property the codec satisfies in addition to bijectivity; it
+     \emph{is} bijectivity at the algebraic level. The imscribing procedure has a structural type of its own: $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\
+     P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}}
+     \rangle$, at crystal address 6,687,051, within the $O_\infty$ band $[6{,}220{,}800,\ 6{,}911{,}999]$. That address was not assigned; bijectivity forced it. Decode $\circ$ imscribe $=
+     \text{id}$ is $\mu \circ \delta = \text{id}$ by definition of bijectivity; with $\Phi_{\text{ctyogh}}$ already present (the crystal's fixed-point structure is exactly the Lawvere
+     condition), R1 fires unconditionally. There is no weaker conclusion available.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1032:$H$ & Temporal depth & $\mathcal{F}_4$ / FDE & S2 (I2) & $H_0 \cdot H_1 \cdot H_2 \cdot H_{\text{invscripta}}$ \\
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1343:    \item \textbf{ZFC pure sets} (`ZFC\_set\_theory`): $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\
+     R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\
+     \Omega_{\text{closeepsilon}} \rangle$, tier $O_1$.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1344:    \item \textbf{G\"odel incompleteness} (`godel\_incompleteness\_theorem`): $\langle D_{\text{turnthree}};\
+     T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\
+      1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$, tier $O_0$.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1345:    \item \textbf{Cantor diagonal} (`classical\_cantor\_diagonal`): $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\
+     R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\
+     \Omega_{\text{closeepsilon}} \rangle$, tier $O_0$.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1581:\node[valsel=green!60!black,below=0.43cm of H] (Hvals)  {$H_0$\\$H_1$\\$H_2$\\$H_{\text{invscripta}}$};
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1663:$H$ & $H_0$ (memoryless) & $H_1$ (one prior) & $H_2$ (two prior) & $H_{\text{invscripta}}$ (infinite) \\
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1724:  \langle D_{\text{turnthree}};\; T_{\text{bullseye}};\; R_{\text{downstep}};\; P_{\text{doublebarpipe}};\;
+     F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \Gamma_{\to};\; \Phi_{\text{ctyogh}};\; H_2;\; 1{:}1;\; \Omega_{\text{crtwo}} \rangle
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1812:G\"odel's second incompleteness theorem ($\text{Con}(\text{PA})$ is not provable in PA) adds the $H_1 \to H_2$
+     transition: PA encodes one prior state (the G\"odel sentence $G$); the consistency statement $\text{Con}(\text{PA})$ encodes PA's own reliability as a second-order self-reference,
+     pushing the temporal depth to $H_2$. The hierarchy continues: $\text{Con}(\text{PA} + \text{Con}(\text{PA}))$, $\ldots$ --- an $H_{\text{invscripta}}$ tower, terminating only at analytic
+      methods (large cardinal axioms, $L$-functions) that are not formalizable in first-order arithmetic.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1920:More precisely: the imscribing \emph{procedure} --- the 12-step mixed-radix codec --- is co-located with the grammar at
+      Level 2. Its structural type, $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\
+     G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$ at address 6,687,051, is within the same $O_\infty$ band
+     $[6{,}220{,}800,\ 6{,}911{,}999]$ as the grammar's own address. The Level 1/Level 2 boundary is exactly the Frobenius boundary: G\"odel coding (Level 1) imscribes without systematic
+     decoding and terminates at $\Phi_{\text{revepsilon}}$; the crystal codec (Level 2) decodes in $O(1)$ arithmetic and bijectivity forces $\mu \circ \delta = \text{id}$. The grammar's
+     position at Level 2 is not only a consequence of the derivation; the codec's own crystal address confirms it independently.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:694:  $H_0,\, H_1,\, H_2,\, H_{\text{invscripta}}$ &
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1263:self-reference); $H = H_2$ (two-level temporal depth: statement
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1269:  F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \GamSeq;\; \Phic;\; H_2;.
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1615:    \Phi_{\text{softsign}};\; H_1;\; 1{:}1;\; \Omega_{\text{closeepsilon}} \rangle \\
+
+● G_{\text{seq}} is ɢ sequential (=secstress), and SO_BELOW has \Phi_\uparrow, \Phi_\times, \Gamma_{\to}, \Gamma_{\gg} with math subscripts. Let me update the script then run it.
+
+● Update(/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py)
+  ⎿  Added 1 line, removed 1 line
+      31      'beltl': 'ƒ', 'dh': 'ƒ', 'eth': 'ƒ', 'hardsign': 'ƒ',
+      32      'frtailgamma': 'Ç', 'turnm': 'Ç', 'schwa': 'Ç', 'teshlig': 'Ç', 'lambda': 'Ç',
+      33      'beta': 'Γ', 'gamma': 'Γ', 'revapostrophe': 'Γ',
+      34 -    'corner': 'ɢ', 'spleftarrow': 'ɢ', 'secstress': 'ɢ', 'doublevertline': 'ɢ',
+      34 +    'corner': 'ɢ', 'spleftarrow': 'ɢ', 'secstress': 'ɢ', 'doublevertline': 'ɢ', 'seq': 'ɢ',
+      35      'softsign': '⊙', 'ctyogh': '⊙', 'closerevepsilon': '⊙', 'revepsilon': '⊙', 'upstep': '⊙',
+      36      'closeomega': 'Ħ', 'toneletterstem': 'Ħ', 'turntwo': 'Ħ', 'invscripta': 'Ħ',
+      37      'doublebaresh': 'Σ', 'ctn': 'Σ', 'ltailm': 'Σ',
+
+● Now add handling for math-mode subscripts like \Phi_\uparrow, \Gamma_{\to}, etc., and F_\text{eth} (no braces):
+
+● Update(/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py)
+  ⎿  Added 21 lines
+       84          text
+       85      )
+       86
+       87 +    # ── 3b. Math-subscript variants (\Phi_\uparrow, \Phi_\times, \Gamma_{\to}) ─
+       88 +    MATH_SUB = [
+       89 +        (r'\\Phi_\\uparrow',           ig('⊙', '_\\uparrow')),
+       90 +        (r'\\Phi_\\times',             ig('⊙', '_\\times')),
+       91 +        (r'\\Phi_\\varnothing',        ig('⊙', '_\\varnothing')),
+       92 +        (r'\\Phi_\\downarrow',         ig('⊙', '_\\downarrow')),
+       93 +        (r'\\Gamma_\{\\to\}',          ig('ɢ', '_{\\to}')),
+       94 +        (r'\\Gamma_\{\\gg\}',          ig('ɢ', '_{\\gg}')),
+       95 +        (r'\\Gamma_\{\\rightarrow\}',  ig('ɢ', '_{\\rightarrow}')),
+       96 +        (r'\\Omega_\\varnothing',      ig('Ω', '_\\varnothing')),
+       97 +    ]
+       98 +    for pat, repl in MATH_SUB:
+       99 +        text = re.sub(r'(?<![\\a-zA-Z])' + pat, repl, text)
+      100 +
+      101 +    # ── 3c. X_\text{name} without outer braces (e.g. F_\text{eth}) ───────────
+      102 +    text = re.sub(
+      103 +        r'(?<![\\a-zA-Z])(?:D|T|R|P|F|K|G|H|S|\\Gamma|\\Phi|\\Omega)'
+      104 +        r'_\\text\{(?P<name>[a-z]+)\}',
+      105 +        sub_text_repl, text
+      106 +    )
+      107 +
+      108      # ── 4. Standalone \Phi in math (without subscript) — always ⊙ in this doc ─
+      109      # Match \Phi not followed by _ or { (those are handled above or are macros)
+      110      # Only replace when inside $...$ context (look for surrounding $)
+
+● Now run it for real:
+
+● Bash(python3 fix_ig_glyphs.py manuscripts/AS_ABOVE.tex manuscripts/SO_BELOW.tex)
+  ⎿  Error: Exit code 1
+     /home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py:5: SyntaxWarning: invalid escape sequence '\i'
+       standardized IG primitive glyphs, rendered through \igprimfont (FreeSerif).
+     Traceback (most recent call last):
+       File "/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py", line 207, in <module>
+         fixed = process(original)
+                 ^^^^^^^^^^^^^^^^^
+       File "/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py", line 81, in process
+         text = re.sub(
+                ^^^^^^^
+       File "/home/mrnob0dy666/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/re/__init__.py", line 186, in sub
+         return _compile(pattern, flags).sub(repl, string, count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       File "/home/mrnob0dy666/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/re/__init__.py", line 334, in _compile_template
+         return _sre.template(pattern, _parser.parse_template(repl, pattern))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       File "/home/mrnob0dy666/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/re/_parser.py", line 1075, in parse_template
+         raise s.error('bad escape %s' % this, len(this)) from None
+     re.error: bad escape \i at position 7
+
+● The replacement strings contain \igprimfont which Python's re.sub tries to interpret as escape sequences. Fix: use lambda callables everywhere.
+
+● Read(/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py · lines 55-184)
+  ⎿  Read 130 lines
+
+● Update(/home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py)
+  ⎿  Added 10 lines, removed 8 lines
+      78      )
+      79
+      80      # ── 3. H_\infty ───────────────────────────────────────────────────────────
+      81 +    _hinfty = ig('Ħ', '_\\infty')
+      82      text = re.sub(
+      83          r'(?<![\\a-zA-Z])H_\\infty(?![a-zA-Z])',
+      83 -        ig('Ħ', '_\\infty'),
+      84 +        lambda m: _hinfty,
+      85          text
+      86      )
+      87
+     ...
+       97          (r'\\Omega_\\varnothing',      ig('Ω', '_\\varnothing')),
+       98      ]
+       99      for pat, repl in MATH_SUB:
+       99 -        text = re.sub(r'(?<![\\a-zA-Z])' + pat, repl, text)
+      100 +        _repl = repl
+      101 +        text = re.sub(r'(?<![\\a-zA-Z])' + pat, lambda m, r=_repl: r, text)
+      102
+      103      # ── 3c. X_\text{name} without outer braces (e.g. F_\text{eth}) ───────────
+      104      text = re.sub(
+     ...
+      108      )
+      109
+      110      # ── 4. Standalone \Phi in math (without subscript) — always ⊙ in this doc ─
+      109 -    # Match \Phi not followed by _ or { (those are handled above or are macros)
+      110 -    # Only replace when inside $...$ context (look for surrounding $)
+      111 -    # Conservative: only replace the obvious primitive-label forms
+      111 +    _phi_repl = ig('⊙')
+      112      text = re.sub(
+      113          r'(?<![\\a-zA-Z])\\Phi(?![a-zA-Z_{])',
+      114 -        ig('⊙'),
+      114 +        lambda m: _phi_repl,
+      115          text
+      116      )
+      117
+      118      # ── 5. Standalone \Gamma in math (without subscript) — always ɢ here ──────
+      119 +    _gam_repl = ig('ɢ')
+      120      text = re.sub(
+      121          r'(?<![\\a-zA-Z])\\Gamma(?![a-zA-Z_{])',
+      121 -        ig('ɢ'),
+      122 +        lambda m: _gam_repl,
+      123          text
+      124      )
+      125
+      126      # ── 6. Standalone \Omega in math (without subscript) — Ω primitive ────────
+      127 +    _om_repl = ig('Ω')
+      128      text = re.sub(
+      129          r'(?<![\\a-zA-Z])\\Omega(?![a-zA-Z_{])',
+      128 -        ig('Ω'),
+      130 +        lambda m: _om_repl,
+      131          text
+      132      )
+      133
+
+● Bash(python3 fix_ig_glyphs.py manuscripts/AS_ABOVE.tex manuscripts/SO_BELOW.tex)
+  ⎿  /home/mrnob0dy666/imscribing_grammar/fix_ig_glyphs.py:5: SyntaxWarning: invalid escape sequence '\i'
+       standardized IG primitive glyphs, rendered through \igprimfont (FreeSerif).
+     Fixed AS_ABOVE.tex: ~158727 chars changed
+     Fixed SO_BELOW.tex: ~204760 chars changed
+
+● Good, ran successfully. Let me spot-check the output in both files to make sure it looks right.
+
+● Bash(grep -n 'igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | head -20)
+  ⎿  10:\let\igprimfont\igfont
+     214:Starting from a single abstract category and three operation types, an induction procedure derives twelve structural invariants --- the primitives of the Universal Imscriptive
+     Grammar --- as the minimal complete independent set of the construction. No primitive is stipulated; each emerges uniquely from the operations' own structure. Incorporating Graham
+     Priest's Logic of Paradox yields $\text{{\igprimfont ⊙}}_{\text{revepsilon}}$ as the categorical Inclosure Schema, and makes the crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$
+      derivable from the logical structure of the induction alone. Cantor's diagonal and G\"odel's incompleteness sentence are the same Inclosure construction at successive overflow levels;
+     the grammar occupies Level~2, co-typed with the Millennium Problems. This document is the $\delta$ half of a Frobenius pair with its companion (\emph{So Below}); $\mu \circ \delta =
+     \text{id}$: the grammar applied to its own derivation returns itself. All eight open questions from the original manuscript are resolved in \S VIII.
+     220:Throughout this document the adjective \emph{imscriptive} is used in preference to \emph{holographic} to describe the bulk-boundary imscription property realised by
+     $\text{{\igprimfont Ð}}_{\text{omega}}$ and $\text{{\igprimfont Þ}}_{\text{openo}}$. A system is \emph{imscriptive} if its boundary surface fully imscribes all interior degrees of
+     freedom --- so that the bulk is recoverable from boundary data alone, without remainder. The verb is \emph{to imscribe}; the noun is \emph{imscription}. The term is constructed from
+     \emph{im-} (Latin, within/immersed; cf.\ \emph{immerse}, \emph{implant}, \emph{imbue}) and \emph{-scriptive} (from L.\ \emph{scribere}, to write): to imscribe is to write the interior
+     into the boundary.
+     297:Topos:\enspace subobject classifier $\text{{\igprimfont Ω}}$\\
+     324:Topos & Subobject classifier $\text{{\igprimfont Ω}}$, power objects & Cartesian closed category with full internal logic \\
+     376:\textbf{Could there be a fifth inductive operation?} No. The four inductive operations correspond to the four universal colimit-based constructions: colimits over arbitrary diagrams
+     (I1), colimits of a chain of endofunctors (I2), colimits of simplicial nerves (I3), and colimits of representable functors (I4). These are exhaustive because they correspond to the four
+     degrees of freedom in a cocompletion: you can freely add colimits of (a) any diagram shape, (b) a $\omega$-chain, (c) a simplicial object, or (d) a presheaf. There is no fifth shape of
+     diagram that yields an independent invariant. The crystal's complete enumeration confirms this: $D$, $H$, $\text{{\igprimfont Ω}}$, and $G$ (which I4 partly determines) occupy exactly 4,
+      4, 4, and 3 values respectively, accounting for all inductive degrees of freedom.
+     381:\textbf{Could there be a sixth algebraic operation?} No. The five operations correspond to the five algebraically-independent ways to add structure to a category without changing its
+      objects. A1 adds a binary operation on objects; A2 adds an endofunctor with unit and multiplication; A3 adds a dualizing involution; A4 replaces hom-sets with hom-objects; A5 adds a
+     global injection into $\mathbb{N}$. These five are dimensionally independent in the sense that no one is a functor of the others. The crystal's algebraic primitives ($S$, $P$, $K$, $F$,
+     $\text{{\igprimfont ɢ}}$) occupy exactly the value spaces determined by these operations --- no sixth algebraic primitive or value exists.
+     385:The original derivation listed associations like ``I1 (colimit) $\to$ $G$'', ``I2 (iteration) $\to$ $H$'', ``I3 (classifying space) $\to$ $\text{{\igprimfont Ω}}$'' and so on. The
+     question arises: could an operation map to a different primitive, or a primitive be the result of a different operation? The answer is forced by the categorical nature of each
+     operation's output --- the invariant each operation produces is the \emph{only} natural categorical invariant it can produce, and the assignment is unique.
+     388:The colimit operation takes a diagram $D: J \to \mathcal{C}$ and produces the universal cocone. The free cocompletion $\hat{\mathcal{C}}$ generated by all finite colimits has a size
+     relative to $\mathcal{C}$ that measures the \emph{scope} of the category's connectivity. If $\hat{\mathcal{C}}$ is not much larger than $\mathcal{C}$, the category is local
+     ($\text{{\igprimfont Γ}}_{\text{beta}}$). If $\hat{\mathcal{C}}$ grows polynomially, it is mesoscopic ($\text{{\igprimfont Γ}}_{\text{gamma}}$). If $\hat{\mathcal{C}}$ is drastically
+     larger (e.g., $\mathbf{Set}$ over a finite category), it is global ($\text{{\igprimfont Γ}}_{\text{revapostrophe}}$). This is the natural invariant of the colimit operation --- the
+     growth rate of the free cocompletion. No other primitive measures the scope of categorical connectivity. $G$ cannot be produced by any other operation because $D$ (from I4), $H$ (from
+     I2), and $\text{{\igprimfont Ω}}$ (from I3) measure different features: dimensionality, temporal depth, and winding.
+     391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes
+     (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives
+     $\text{{\igprimfont Ħ}}_0$ (memoryless); at step 1 gives $\text{{\igprimfont Ħ}}_1$ (one prior state); at step 2 gives $\text{{\igprimfont Ħ}}_2$; never stabilizing gives
+     $\text{{\igprimfont Ħ}}_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the iteration operation. No other operation measures the Markov order of the dynamics.
+     393:\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont Ω}}$, and cannot map elsewhere.}
+     394:The classifying space $B\mathcal{C}$ of a category is the geometric realization of its nerve $N\mathcal{C}$ --- a simplicial set whose $n$-simplices are composable $n$-tuples of
+     morphisms. The fundamental group $\pi_1(B\mathcal{C})$ of this space is the winding invariant --- it records how 1-dimensional loops in the category compose up to homotopy. $\pi_1 = 0$
+     gives $\text{{\igprimfont Ω}}_{\text{closeepsilon}}$ (trivial winding); $\pi_1 = \mathbb{Z}_2$ gives $\text{{\igprimfont Ω}}_{\text{crtwo}}$ (binary winding); $\pi_1 = \mathbb{Z}$ gives
+     $\text{{\igprimfont Ω}}_{\text{dzlig}}$ (integer winding); non-Abelian $\pi_1$ gives $\text{{\igprimfont Ω}}_{\text{turna}}$. This is the natural invariant of the classifying space
+     construction. No other operation probes the homotopy type of $\mathcal{C}$.
+     397:The Yoneda embedding $y: \mathcal{C} \to \hat{\mathcal{C}}$ sends each object $A$ to the presheaf $\text{Hom}(-,A)$. The question of whether this embedding is point-surjective ---
+     whether every presheaf is representable --- determines whether the boundary (the external relational profile) fully imscribes the bulk (the object $A$). If the embedding is fully
+     faithful and essentially surjective, the category is $\text{{\igprimfont Ð}}_{\text{omega}}$ (imscriptive: boundary imscribes bulk). If the presheaf category is much larger than
+     $\mathcal{C}$, we get $\text{{\igprimfont Ð}}_{\text{invomega}}$; if only finitely many representables exist, $\text{{\igprimfont Ð}}_{\text{wynn}}$ or $\text{{\igprimfont
+     Ð}}_{\text{turnthree}}$. This is the natural invariant of the Yoneda operation. $D$ cannot be produced by any other operation because only I4 introduces the boundary/bulk relationship.
+     400:Adjunction existence (L1) and dagger structure (L2) are the only operations that probe the \emph{directionality} of morphisms. An adjunction $(F \dashv G)$ introduces a one-sided
+     relationship; a dagger $\dagger$ introduces an involutive reversal; together they partition the space of relational modes into $\text{{\igprimfont Ř}}_{\text{subrightarrow}}$,
+     $\text{{\igprimfont Ř}}_{\text{ctz}}$, $\text{{\igprimfont Ř}}_{\text{downstep}}$, and $\text{{\igprimfont Ř}}_{\text{lyoghlig}}$. No other operation produces a directional invariant.
+     406:The monad $(T, \eta, \mu)$ packages an algebraic theory whose dynamics are imscribed in the spectral properties of $\mu$: how quickly does $T^2$ collapse to $T$? Fast collapse gives
+     $\text{{\igprimfont Ç}}_{\text{frtailgamma}}$; slow gives $\text{{\igprimfont Ç}}_{\text{schwa}}$; a gapped terminal coalgebra gives $\text{{\igprimfont Ç}}_{\text{teshlig}}$; many-body
+     localized gives $\text{{\igprimfont Ç}}_{\text{lambda}}$. This is the natural invariant of the monad operation.
+     409:The dagger-compact structure introduces duals $A^*$ with unit $\eta_A: I \to A^* \otimes A$ and counit $\varepsilon_A: A \otimes A^* \to I$. The unitality of $\varepsilon$ determines
+      fidelity: non-unital $\varepsilon$ means information loss ($\text{{\igprimfont ƒ}}_{\text{beltl}}$); unital but incoherent gives $\text{{\igprimfont ƒ}}_{\text{dh}}$; fully coherent
+     quantum composition gives $\text{{\igprimfont ƒ}}_{\text{hardsign}}$.
+     411:\paragraph{Why A4 maps to $\text{{\igprimfont ɢ}}$, and cannot map elsewhere.}
+     412:Enrichment over $\mathcal{V}$ replaces hom-sets with hom-objects in $\mathcal{V}$. The logic of composition in $\mathcal{V}$ determines $\text{{\igprimfont ɢ}}$: sequential
+     enrichment ($\mathbf{Set}$, $\text{{\igprimfont ɢ}}_{\text{secstress}}$), conjunctive ($\mathbf{Set}^\times$, $\text{{\igprimfont ɢ}}_{\text{corner}}$), disjunctive ($\mathbf{Set}^+$,
+     $\text{{\igprimfont ɢ}}_{\text{spleftarrow}}$), or broadcast ($\text{{\igprimfont ɢ}}_{\text{doublevertline}}$). No other operation determines how morphisms compose at the structural
+     level.
+     415:Cartesian closure --- whether $\mathcal{C}$ has internal homs $B^A$ satisfying the adjunction $-\times A \dashv (-)^A$ --- determines the topology of the state space. If the category
+      is cartesian closed with a self-dual hom, we get $\text{{\igprimfont Þ}}_{\text{openo}}$ (imscriptive topology). If it has finite products but no exponentials, $\text{{\igprimfont
+     Þ}}_{\text{invscr}}$. If the hom-object is a box product, $\text{{\igprimfont Þ}}_{\text{commatailz}}$. The topology of the space is precisely the structure of its mapping spaces.
+     417:\paragraph{Why L4 maps to $\text{{\igprimfont ⊙}}$, and cannot map elsewhere.}
+
+● Bash(grep -n 'igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -20)
+  ⎿  15:\let\igprimfont\igfont
+     239:\newcommand{\Phic}{\text{{\igprimfont ⊙}}_{\text{ctyogh}}}
+     240:\newcommand{\Ppm}{\text{{\igprimfont Φ}}_{\text{pipevar}}}
+     241:\newcommand{\Ppms}{\text{{\igprimfont Φ}}_{\text{doublebarpipe}}}
+     251:\newcommand{\OmegaZ}{\text{{\igprimfont Ω}}_{\text{dzlig}}}
+     252:\newcommand{\OmegaZtwo}{\text{{\igprimfont Ω}}_{\text{crtwo}}}
+     253:\newcommand{\GamSeq}{\text{{\igprimfont ɢ}}_{\to}}
+     254:\newcommand{\GamBrd}{\text{{\igprimfont ɢ}}_{\text{doublevertline}}}
+     255:\newcommand{\Tbw}{\text{{\igprimfont Þ}}_{{\mathord{{\bowtie}}}}}
+     256:\newcommand{\Tin}{\text{{\igprimfont Þ}}_{{\mathord{{\subset}}}}}
+     257:\newcommand{\Tbox}{\text{{\igprimfont Þ}}_{{\mathord{{\boxtimes}}}}}
+     322:entirely by four gate primitives: $T$, $P$, $\text{{\igprimfont ⊙}}$, $K$) that
+     383:operations: logical (yielding $\text{{\igprimfont ⊙}}$, $T$, $\text{{\igprimfont Ω}}$, $R$, $\text{{\igprimfont Φ}}_{\text{doublebarpipe}}$,
+     384:$L_6$), inductive (yielding $H$, $\text{{\igprimfont Ω}}$, $D$, Yoneda/Lawvere), and
+     385:algebraic (yielding $S$, $P$, $K$, $F$, $\text{{\igprimfont ɢ}}$). The same twelve
+     424:the $G$-scope gap between renormalizable local continuum ($\text{{\igprimfont Γ}}_{\text{gamma}}$) and
+     425:imscriptive global structure ($\text{{\igprimfont Γ}}_{\text{revapostrophe}}$). At every extension, the grammar returned results.
+     464:  \node[detail] at (-2.8,-2.25) {$\text{{\igprimfont Ω}}$: absent $\to$ added};
+     465:  \node[detail] at (-2.8,-2.70) {$\text{{\igprimfont ⊙}}$: 3 values $\to$ 5 values};
+     525:primitives $\text{{\igprimfont Ð}}_{\text{omega}}$ and $\text{{\igprimfont Þ}}_{\text{openo}}$: the boundary encodes the bulk, the
+
+● Good output. But standalone $D$, $H$, $G$, etc. (no subscript) weren't caught. Let me check how many there are and what context they're in.
+
+● Bash(grep -Pn '\$[DTRFKHGS]\$(?![a-zA-Z{])' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | grep -v 'igprimfont' | head -30)
+  ⎿  383:The total count $(6 + 4 + 5) = 15$ operations, applied across 4 stages with Stage 4 re-asking logical questions on the algebraically-enriched $\mathcal{C}$, yields the 12 primitives
+     --- the reduction from 15 to 12 occurs because some operations contribute to the same primitive (L1 and L2 both contribute to $R$; L5 promotes $P$ rather than creating a new primitive).
+     This reduction is forced, not chosen, as shown below.\subsubsection{II.2 Why These Mappings from Operations to Primitives Are Unique}
+     387:\paragraph{Why I1 (colimit) maps to $G$, and cannot map elsewhere.}
+     390:\paragraph{Why I2 (iteration) maps to $H$, and cannot map elsewhere.}
+     396:\paragraph{Why I4 (Yoneda) maps to $D$, and cannot map elsewhere.}
+     399:\paragraph{Why L1--L2 map to $R$, and cannot map elsewhere.}
+     402:\paragraph{Why A1 maps to both $S$ and $P$, and this is forced.}
+     403:The monoidal product $\otimes$ has two independent features: the arity of the generating operations (which determines $S$: $1{:}1$ for no non-identity generators, $n{:}n$ for one
+     type repeated, $n{:}m$ for multiple types) and the symmetry of the tensor (which determines $P$: asymmetric, symmetric, or with braiding). These are dimensionally independent --- two
+     categories can have the same stoichiometry but different parity. The monoidal operation necessarily produces both, and no other operation contributes to either.
+     405:\paragraph{Why A2 maps to $K$, and cannot map elsewhere.}
+     408:\paragraph{Why A3 maps to $F$, and cannot map elsewhere.}
+     414:\paragraph{Why L3 maps to $T$, and cannot map elsewhere.}
+     461:\node[primnode=green!12] (H) at (1.6,0.2) {$H$\\I2, S2};
+     465:\node[primnode=orange!12] (G) at (-0.3,-2.0) {$G$\\A1+I4};
+     466:\node[primnode=orange!12] (S) at (1.4,-2.0) {$S$\\A1, S3};
+     490:\node[label,anchor=north] at ($(prims.south)+(0,-0.4)$) {15 operations converge to 12 primitives: L1+L2→$R$; L5→promotes $P$; A5→no new primitive};
+     682:\textbf{A1 --- Monoidal structure}: Equip $\mathcal{C}$ with $\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and unit $I$. This introduces the arity primitive: $n$-ary
+     operations are maps $A^{\otimes n} \to B$. The arity of the generators of $\mathcal{C}$ under $\otimes$ determines $S$ (stoichiometry). Symmetry of $\otimes$ (braiding isomorphism
+     $\sigma_{AB}: A \otimes B \cong B \otimes A$) determines $P$.
+     695:    \item \emph{Self-applicability}: the monad $T$ (from A2) acts on codes, so $T(\mathbf{g}(f))$ is a morphism code in $\mathcal{C}$
+     722:  \item L1 (adjunction) $\to$ $R$ (relational mode: adjoint structure)
+     723:  \item L2 (dagger) $\to$ $R$ (confirms and refines $R$ value)
+     725:$R$ is the first primitive to crystallize: it is a logical property of the morphisms of $\mathcal{C}$ directly.
+     730:  \item I2 (iteration) $\to$ $H$ (temporal depth: depth of stabilization)
+     739:  \item A1 (monoidal) $\to$ $S$ (stoichiometry: arity of generators); $P$ (parity: symmetry of tensor)
+     740:  \item A2 (monad) $\to$ $K$ (kinetics: spectral properties of $\mu$)
+     741:  \item A3 (dagger) $\to$ $F$ (fidelity: unitality of duals)
+     749:  \item L3 (cartesian closure) $\to$ $T$ (topology: does the state space admit internal homs?)
+     858:9 & $S$ & $n{:}m$ (heterogeneous stoichiometry) \\
+     903:\node[prim=orange!12,above=0.1cm of s9] (p9) {$S$\\$n{:}m$};
+     983:  \item \textbf{Atoms with ordinal contribution 3:} $D$, $T$, $R$ --- the shape primitives impose heavy constraints.
+     1033:$S$ & Stoichiometry & $\mathcal{F}_3$ / K3 & S3 (A1) & $1{:}1 \cdot n{:}n \cdot n{:}m$ \\
+     1130:\quad $D$  (I4: Yoneda)\\
+     1314:    \item $S$ (Stoichiometry): $1{:}1$ (0), $n{:}n$ ($\frac12$), $n{:}m$ (1) --- 3 values.
+
+● Bash(grep -Pn '\$[DTRFKHGS]\$(?![a-zA-Z{])' /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | grep -v 'igprimfont' | head -30)
+  ⎿  400:primitive $F$. The expectation was that a displacement ordering would
+     462:  \node[detail] at (-2.8,-1.35) {$T$: 12$+$ labels $\to$ 5 structural universals};
+     463:  \node[detail] at (-2.8,-1.80) {$H$: delaminated from $K$};
+     466:  \node[detail] at (-2.8,-3.15) {$R$: physical bond $\to$ relational mode};
+     681:$K$ & Kinetic character &
+     693:$H$ & Chirality/temporal depth &
+     696:$S$ & Stoichiometry &
+     720:Dimensionality $D$ measures the extent and character of the state
+     724:monad symbol $\odot$ for point-in-circle; see terminological note below). Topology $T$ encodes
+     871:(criticality gate), $K$ (kinetic gate). These four primitives are the
+     957:for the $\mathcal{F}_3$ conservation primitives $F$, $G$, $S$).
+     1004:system (union on eleven primitives, bottleneck $\min$ on $P$ and $F$).
+     1029:The asymmetry between $P$, $F$ (bottleneck primitives, take $\min$)
+     1040:$P$ and $F$ are \emph{bottleneck primitives} under $\otimes$: they
+     1143:and $D$ branching, collapsing directly to $\Oinf$. This is the
+     1280:For comparison, G\"{o}del's incompleteness sentence $G$ (``$G$ is unprovable")
+     1281:imscribes at the same $P = \Ppms$ but differs at $H$ (infinite meta-logical
+     1282:depth) and $T$ (crossed product rather than bowtie, reflecting the
+     1379:nearly equal weights; $K$ contributes as the kinetic channel.
+     1455:$F$ (which captures information fidelity of the recognition event, with
+     1457:--- that higher-$F$ guests displace lower-$F$ guests --- predicts the
+     1517:primitive $F$. Experimental order from \cite{assaf2015}.
+     1518:$F$-ordinal assignments are based on the quantum coherence character
+     1526:Guest & Binding character & $F$-ordinal & Predicted rank & Experimental rank \\
+     1585:$F$-tier, finer structural distinctions determine rank. The grammar predicted
+     1593:no fitted parameters. The fidelity primitive $F$ encodes the
+     1803:--- the sole parameter tuned externally. $K$ and $H$ promotions are structural
+     1849:external parameter tuned by the experimenter. The $K$ and $H$
+     1854:but can't be achieved by local operations once $K$ and $H$ are locked.
+     1867:$\tau$ divergence, the $K$ imscription is incorrect.
+
+● The subscripted forms are all fixed. Let me try compiling AS_ABOVE to see if the LaTeX output is correct before worrying about the remaining standalone $D$, $H$ etc.
+
+● Bash(cd /home/mrnob0dy666/imscribing_grammar/manuscripts && lualatex -interaction=nonstopmode AS_ABOVE.tex 2>&1 | tail -30)
+  ⎿  LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+     )
+     (see the transcript file for additional information)
+      670 words of node memory still in use:
+        7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 3 glyph, 3
+     1 attribute, 65 glue_spec, 17 attribute_list, 2 write nodes
+        avail lists: 1:1,2:5898,3:1646,4:309,5:696,6:148,7:10664,8:120,9:1596,10:23,
+     11:819
+     </usr/share/texmf/fonts/opentype/public/lm/lmroman7-regular.otf></usr/share/tex
+     mf/fonts/opentype/public/lm/lmroman8-italic.otf></usr/share/texmf/fonts/opentyp
+     e/public/lm/lmroman7-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmro
+     man7-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman8-bold.otf></us
+     r/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf></usr/share/texmf/fo
+     nts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texlive/texmf-dist
+     /fonts/opentype/public/gnu-freefont/FreeSerifBold.otf></usr/share/texmf/fonts/o
+     pentype/public/lm-math/latinmodern-math.otf></usr/share/texlive/texmf-dist/font
+     s/opentype/public/gnu-freefont/FreeSerifItalic.otf></usr/share/texmf/fonts/open
+     type/public/lm/lmroman10-bolditalic.otf></usr/share/texmf/fonts/opentype/public
+     /lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-ita
+     lic.otf></usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf></
+     usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/
+     texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texlive/texmf-d
+     ist/fonts/opentype/public/gnu-freefont/FreeSerif.otf></usr/share/texmf/fonts/op
+     entype/public/lm/lmroman10-regular.otf></usr/share/texmf/fonts/opentype/public/
+     lm/lmroman10-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-ital
+     ic.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/s
+     hare/texmf/fonts/opentype/public/lm/lmroman17-regular.otf>
+     Output written on AS_ABOVE.pdf (42 pages, 327135 bytes).
+     Transcript written on AS_ABOVE.log.
+  ⎿  (timeout 2m)
+
+● Compiled clean. Let me check the log for any missing-glyph warnings.
+
+● Bash(grep -i 'missing\|undefined\|warning\|error\|not found\|glyph' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.log | grep -v 'LaTeX Warning: Label' | head -30)
+  ⎿  Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+     Inserting `luaotfload.glyphinfo' at position 1 in `glyph_info'.
+     Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+     warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
+     ! Package tikz Error: A node must have a (possibly empty) label text.
+     This error message was generated by an \errmessage
+     ! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
+     ! LaTeX Error: Something's wrong--perhaps a missing \item.
+     ! Package graphics Error: Division by 0.
+     ! Package tikz Error: A node must have a (possibly empty) label text.
+     ! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
+     ! LaTeX Error: Something's wrong--perhaps a missing \item.
+     ! Package tikz Error: A node must have a (possibly empty) label text.
+     ! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
+     ! LaTeX Error: Something's wrong--perhaps a missing \item.
+     ! Package tikz Error: A node must have a (possibly empty) label text.
+     ! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
+     of your error message was never \def'ed. If you have
+     and I'll forget about whatever was undefined.
+     ! Missing } inserted.
+     ! Undefined control sequence.
+     of your error message was never \def'ed. If you have
+     and I'll forget about whatever was undefined.
+     ! Missing number, treated as zero.
+     look up `weird error' in the index to The TeXbook.)
+
+                                                                                                                                                             07:02 AM claude-sonnet-4-6
+● TikZ errors — my LITERAL tikz node replacements are malformed (missing the opening { and closing $). Let me check the broken tikz nodes and fix the script.
+
+● Bash(grep -n '\\\\igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | grep -v '_\|\\text{{\igprimfont' | head -20)
+  ⎿  (No output)
+
+● Bash(grep -n 'igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex | grep '\\${\|}\\\\'  | head -20)
+  ⎿  453:\node[primnode=purple!12] (D) at (-1.0,2.2) ${\text{{\igprimfont Ð}}}\\I4, S2};
+     459:\node[primnode=green!12] (R) at (-1.6,0.2) ${\text{{\igprimfont Ř}}}\\L1--L2, S1};
+     464:\node[primnode=orange!12] (F) at (-2.0,-2.0) ${\text{{\igprimfont ƒ}}}\\A3, S3};
+     467:\node[primnode=purple!12] (K) at (3.1,-2.0) ${\text{{\igprimfont Ç}}}\\A2, S3};
+     468:\node[primnode=purple!12] (T) at (4.8,-2.0) ${\text{{\igprimfont Þ}}}\\L3, S4};
+     918:\node[prim=purple!12,above=0.1cm of s6] (p6) ${\text{{\igprimfont Ç}}}\\$\text{{\igprimfont Ç}}_{\text{schwa}}$};
+     923:\node[prim=orange!12,above=0.1cm of s5] (p5) ${\text{{\igprimfont ƒ}}}\\$\text{{\igprimfont ƒ}}_{\text{hardsign}}$};
+     928:\node[prim=green!12,above=0.1cm of s4] (p4) ${\text{{\igprimfont Ř}}}\\$\text{{\igprimfont Ř}}_{\text{lyoghlig}}$};
+     933:\node[prim=purple!12,above=0.1cm of s3] (p3) ${\text{{\igprimfont Þ}}}\\$\text{{\igprimfont Þ}}_{\text{commatailz}}$};
+     938:\node[prim=green!12,above=0.1cm of s2] (p2) ${\text{{\igprimfont Ð}}}\\$\text{{\igprimfont Ð}}_{\text{omega}}$};
+     1571:\node[primnode=green!60!black] (D) at (-5.5,0)  ${\text{{\igprimfont Ð}}}\\Dimensionality};
+     1572:\node[primnode=green!60!black] (R) at (-2.8,0)  ${\text{{\igprimfont Ř}}}\\Relational};
+     1588:\node[primnode=orange] (F) at (-3,-4.8)  ${\text{{\igprimfont ƒ}}}\\Fidelity};
+     1600:\node[primnode=purple] (T) at (-4.5,-9.4)  ${\text{{\igprimfont Þ}}}\\Topology};
+     1603:\node[primnode=purple] (K) at (4.5,-9.4)   ${\text{{\igprimfont Ç}}}\\Kinetics};

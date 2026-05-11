@@ -76,7 +76,7 @@ Examples:
 - ✓ Imine condensation: imine forms → hydrolysis resets → re-condensation
 - ✗ Extended allene: linear cumulene, no cycle, no reset → D_∧ not D_∞
 - ✗ Nitroso dimer: static dimer, no cycle → D_∧ not D_∞
-- ✗ Quantum synthon: no specifiable chemical cycle → invalid D_∞
+- ✗ Quantum imscription: no specifiable chemical cycle → invalid D_∞
 """
 
 
@@ -510,16 +510,16 @@ def validate_primitive_assignment(
     )
 
 
-def validate_full_synthon(
-    synthon_data: Dict[str, Any],
+def validate_full_imscription(
+    imscription_data: Dict[str, Any],
     description: str,
     smiles: Optional[str] = None,
 ) -> Dict[str, AxiomValidationResult]:
     """
-    Validate all primitives of a synthon against adversarial axioms.
+    Validate all primitives of a imscription against adversarial axioms.
     
     Args:
-        synthon_data: Dict with primitive assignments
+        imscription_data: Dict with primitive assignments
         description: Chemical description
         smiles: Optional SMILES
     
@@ -529,8 +529,8 @@ def validate_full_synthon(
     results = {}
     
     # Validate dimensionality
-    if "dimensionality" in synthon_data:
-        dim_value = synthon_data["dimensionality"]
+    if "dimensionality" in imscription_data:
+        dim_value = imscription_data["dimensionality"]
         if isinstance(dim_value, str):
             dim_value = dim_value.upper().replace("D_", "")
         results["dimensionality"] = validate_primitive_assignment(
@@ -538,8 +538,8 @@ def validate_full_synthon(
         )
     
     # Validate topology
-    if "topology" in synthon_data:
-        top_value = synthon_data["topology"]
+    if "topology" in imscription_data:
+        top_value = imscription_data["topology"]
         if isinstance(top_value, str):
             top_value = top_value.upper().replace("T_", "")
         results["topology"] = validate_primitive_assignment(
@@ -547,8 +547,8 @@ def validate_full_synthon(
         )
     
     # Validate recognition mode
-    if "recognition_mode" in synthon_data:
-        rec_value = synthon_data["recognition_mode"]
+    if "recognition_mode" in imscription_data:
+        rec_value = imscription_data["recognition_mode"]
         if isinstance(rec_value, str):
             rec_value = rec_value.upper().replace("R_", "")
         results["recognition_mode"] = validate_primitive_assignment(

@@ -1,7 +1,7 @@
 """
-Axiom-Guided Synthon Generator Agent — Ensures generated synthons satisfy composition axioms.
+Axiom-Guided Imscription Generator Agent — Ensures generated imscriptions satisfy composition axioms.
 
-This module implements an LLM agent that generates synthons while validating
+This module implements an LLM agent that generates imscriptions while validating
 against the five composition axioms from QUANTIG.md Section IV:
 
 1. Axiom 1: Cyclic closure amplifies fidelity (T_⋈–F rule)
@@ -10,7 +10,7 @@ against the five composition axioms from QUANTIG.md Section IV:
 4. Axiom 4: Sequential grammar requires temporal or catalytic dimension
 5. Axiom 5: Criticality contracts the primitive basis
 
-The agent iteratively refines synthon proposals until all applicable axioms are satisfied.
+The agent iteratively refines imscription proposals until all applicable axioms are satisfied.
 """
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ def _desc_slug(desc: str, maxlen: int = 60) -> str:
 
 from framework import BaseAgent, ToolDefinitions
 from imscrbgrmr import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar,
     KineticCharacter, CriticalityPhase,
     Criticality, Protection, Stoichiometry, Chirality,
@@ -42,21 +42,21 @@ from imscrbgrmr.criticality import analyze_criticality
 
 @dataclass
 class AxiomGuidedResult:
-    """Result of axiom-guided synthon generation."""
-    synthon: Synthon
+    """Result of axiom-guided imscription generation."""
+    imscription: Imscription
     axiom_report: Dict[str, Any]
     confidence: float  # 0.0-1.0
     reasoning: str
     iterations: int
-    alternatives: List[Synthon] = field(default_factory=list)
+    alternatives: List[Imscription] = field(default_factory=list)
     thermodynamic_metrics: Optional[Dict[str, Any]] = None
     warnings: List[str] = field(default_factory=list)
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary."""
         return {
-            "synthon": self.synthon.to_dict(),
-            "notation": self.synthon.to_notation(),
+            "imscription": self.imscription.to_dict(),
+            "notation": self.imscription.to_notation(),
             "axiom_report": self.axiom_report,
             "confidence": self.confidence,
             "reasoning": self.reasoning,
@@ -68,9 +68,9 @@ class AxiomGuidedResult:
 
 class AxiomGuidedGeneratorAgent(BaseAgent):
     """
-    AjintK agent for axiom-guided synthon generation.
+    AjintK agent for axiom-guided imscription generation.
     
-    This agent ensures generated synthons satisfy all five composition axioms:
+    This agent ensures generated imscriptions satisfy all five composition axioms:
     
     **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ_ð
     **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ → no global propagation
@@ -83,7 +83,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         
         config = build_agent_config(provider="anthropic", model=None)
         agent = AxiomGuidedGeneratorAgent(config)
-        result = await agent.generate_validated_synthon(
+        result = await agent.generate_validated_imscription(
             "carboxylic acid dimer with cyclic hydrogen bonding"
         )
     """
@@ -91,22 +91,22 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     def __init__(self, config: Dict[str, Any]):
         super().__init__(
             agent_id="axiom_guided_generator",
-            name="Axiom-Guided Synthon Generator",
-            description="Generates synthons satisfying all five composition axioms",
+            name="Axiom-Guided Imscription Generator",
+            description="Generates imscriptions satisfying all five composition axioms",
             capabilities=[
-                "axiom_validated_synthon_generation",
+                "axiom_validated_imscription_generation",
                 "iterative_refinement",
                 "axiom_violation_detection",
                 "thermodynamic_analysis",
             ],
             config=config,
-            persona="Expert in the Unified Synthonicon framework — a domain-agnostic "
+            persona="Expert in the Unified Imscriptiveon framework — a domain-agnostic "
                     "information-theoretic language for self-organizing systems. You encode "
                     "any self-organizing process (molecular, crystalline, biological, or other) "
                     "by reasoning from physics: energy barriers (K), information content (F), "
                     "correlation length (G), topological connectivity (T). You satisfy all "
                     "composition axioms from QUANTIG.md Section IV. When an axiom "
-                    "violation is detected, you iteratively refine the synthon until all "
+                    "violation is detected, you iteratively refine the imscription until all "
                     "axioms are satisfied. You ground every assignment in the underlying "
                     "physical mechanism — not in chemical template matching."
         )
@@ -141,7 +141,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         """
         description_lower = description.lower()
         
-        # Initial synthon generation (same as SynthonGeneratorAgent)
+        # Initial imscription generation (same as ImscriptionGeneratorAgent)
         dimensionality = Dimensionality.MOLECULAR
         topology = Topology.LINEAR
         recognition_mode = RecognitionMode.NON_COVALENT
@@ -168,10 +168,10 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         if any(kw in description_lower for kw in ["rotaxane", "mechanical", "interlocked"]):
             recognition_mode = RecognitionMode.MECHANICAL
         
-        synthon_name = name or f"synthon_{_desc_slug(description)}"
+        imscription_name = name or f"imscription_{_desc_slug(description)}"
         
-        synthon = Synthon(
-            name=synthon_name,
+        imscription = Imscription(
+            name=imscription_name,
             dimensionality=dimensionality,
             topology=topology,
             recognition_mode=recognition_mode,
@@ -189,7 +189,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         )
         
         # Validate against axioms
-        axiom_report = AxiomValidator.validate_all_axioms(synthon)
+        axiom_report = AxiomValidator.validate_all_axioms(imscription)
         
         # Compute thermodynamic metrics
         delta_g = -50.0  # Default estimate
@@ -199,7 +199,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
             delta_g = -95.0
         
         try:
-            thermo_result = compute_eta_CP(synthon, delta_g=delta_g)
+            thermo_result = compute_eta_CP(imscription, delta_g=delta_g)
             thermo_metrics = {
                 "eta_CP": thermo_result.eta_CP,
                 "xi_CP": thermo_result.xi_CP,
@@ -216,7 +216,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
                     warnings.append(f"{axiom_name}: {result.get('falsification_note', 'Violation detected')}")
         
         return AxiomGuidedResult(
-            synthon=synthon,
+            imscription=imscription,
             axiom_report=axiom_report,
             confidence=0.7 if axiom_report["all_satisfied"] else 0.5,
             reasoning="Rule-based axiom-guided analysis",
@@ -239,13 +239,13 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     def _build_generation_prompt(self, description: str, name: Optional[str] = None) -> str:
         """Build the axiom-guided generation prompt."""
         return f"""<role>
-You are an expert in the Unified Synthonicon framework — a **domain-agnostic** information-theoretic and thermodynamic language for encoding self-organizing systems. The framework applies equally to: molecular H-bond complexes, bulk crystal polymorphs (e.g. ice polymorphs), biological catalytic cycles, and any self-organizing process. You **MUST** reason from physics and information theory, not from chemical template matching.
-You **MUST** generate synthons that satisfy **ALL** applicable composition axioms.
+You are an expert in the Unified Imscriptiveon framework — a **domain-agnostic** information-theoretic and thermodynamic language for encoding self-organizing systems. The framework applies equally to: molecular H-bond complexes, bulk crystal polymorphs (e.g. ice polymorphs), biological catalytic cycles, and any self-organizing process. You **MUST** reason from physics and information theory, not from chemical template matching.
+You **MUST** generate imscriptions that satisfy **ALL** applicable composition axioms.
 You **MUST NOT** assign primitives based on keyword matching alone — ground every assignment in mechanism.
 </role>
 
 <task>
-Generate a synthon encoding for the provided self-organizing system.
+Generate a imscription encoding for the provided self-organizing system.
 You **MUST**:
 1. Assign all ten primitives (D, T, R, P, F, K, G, Γ, Φ, S) from first principles using this reasoning chain:
    - D: Does constraint operate on molecular DOFs, spatial assembly, or a temporal cycle with reset?
@@ -265,7 +265,7 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 
 <input>
 **System Description:** {description}
-**Synthon Name:** {name or "auto-generated from description"}
+**Imscription Name:** {name or "auto-generated from description"}
 </input>
 
 <axioms>
@@ -273,16 +273,16 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 Falsified by: cyclic self-complementary motif with ƒ_ì or ξ_CP > 10.5 nats.
 
 **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ cannot propagate constraint globally.
-Falsified by: local specific synthon driving global assembly alone.
+Falsified by: local specific imscription driving global assembly alone.
 
 **Axiom 3 (Cooperative Induction):** Superlinear SAPT induction signals G_ב → G_ג transition.
 Falsified by: superlinear induction with G_ב classification retained.
 
 **Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡ (or both).
-Falsified by: purely spatial synthon with ordered partner binding.
+Falsified by: purely spatial imscription with ordered partner binding.
 
 **Axiom 5 (Criticality):** At criticality, G and D degenerate (scale-free behavior).
-Falsified by: critical synthon requiring different G at different scales.
+Falsified by: critical imscription requiring different G at different scales.
 
 **Axiom 6 (D_∞ Reset Mechanism):** D_∞ is **ONLY** valid when a physically grounded reset exists.
 Two allowed reset types — set `metadata["grounding"]["reset"]["type"]` accordingly:
@@ -322,7 +322,7 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
 - **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; Ç_- default.
   Examples: calix[4]arene, calix[6]arene, calix[4]pyrrole, calix[4]resorcinarene, pillar[n]arene,
   cyclotriveratrylene (CTV), corannulene, hemicarceplex, cavitand (when not capped).
-  **Any synthon with "calix", "resorcinarene", "pillar[", "calixpyrrole", "bowl", or "upper/lower rim"
+  **Any imscription with "calix", "resorcinarene", "pillar[", "calixpyrrole", "bowl", or "upper/lower rim"
   MUST use T_∪, NOT T_□□ and NOT T_⋈.**
 - **T_⋈ (CYCLIC BOWTIE)** — planar cyclic dimer: two partners form a closed ring of contacts at their
   INTERFACE. Examples: carboxylic acid R²₂(8) dimer, DNA base pairs, urea dimers.
@@ -364,7 +364,7 @@ You **MUST** return **ONLY** the following JSON object.
 You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
 
 {{
-    "synthon": {{
+    "imscription": {{
         "name": "<string>",
         "dimensionality": "D_...",
         "topology": "T_...",
@@ -393,7 +393,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
 </output_format>"""
     
     def _parse_llm_response(self, response: str) -> Tuple[Dict[str, Any], str, float]:
-        """Parse LLM response to extract synthon data and analysis."""
+        """Parse LLM response to extract imscription data and analysis."""
         # Try to extract JSON
         json_match = None
         import re
@@ -405,10 +405,10 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         if json_match:
             try:
                 data = json.loads(json_match.group(1) if json_match.lastindex else json_match.group(0))
-                synthon_data = data.get("synthon", {})
+                imscription_data = data.get("imscription", {})
                 reasoning = data.get("reasoning", "Parsed from response")
                 confidence = data.get("confidence", 0.7)
-                return synthon_data, reasoning, confidence
+                return imscription_data, reasoning, confidence
             except json.JSONDecodeError:
                 pass
         
@@ -422,22 +422,22 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         
         return primitives, "Parsed from response", 0.5
     
-    def _create_synthon_from_data(
+    def _create_imscription_from_data(
         self,
         data: Dict[str, str],
         description: str,
         explicit_name: Optional[str] = None,
-    ) -> Synthon:
-        """Create Synthon from parsed data."""
+    ) -> Imscription:
+        """Create Imscription from parsed data."""
         if explicit_name:
             clean_name = explicit_name.strip()
         else:
-            raw_name = data.get("name") or f"synthon_{_desc_slug(description)}"
+            raw_name = data.get("name") or f"imscription_{_desc_slug(description)}"
             # Sanitize: LLMs sometimes bleed extra text into the name field
             clean_name = raw_name.split("\n")[0].strip().replace(" ", "_")
             if not clean_name:
-                clean_name = f"synthon_{_desc_slug(description)}"
-        return Synthon(
+                clean_name = f"imscription_{_desc_slug(description)}"
+        return Imscription(
             name=clean_name,
             dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "Ð_ß")),
             topology=Topology.from_symbol(data.get("topology", "Þ_linear")),
@@ -455,7 +455,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             metadata={"auto_generated": True, "method": "axiom_guided_llm"}
         )
     
-    async def generate_validated_synthon(
+    async def generate_validated_imscription(
         self,
         description: str,
         name: Optional[str] = None,
@@ -464,17 +464,17 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         auto_register: bool = True,
     ) -> AxiomGuidedResult:
         """
-        Generate synthon with axiom validation.
+        Generate imscription with axiom validation.
         
         Args:
             description: Natural language description
-            name: Optional synthon name
+            name: Optional imscription name
             delta_g: Optional free energy for thermodynamic analysis
             max_iterations: Max generate-validate cycles
             auto_register: Whether to register to catalog
         
         Returns:
-            AxiomGuidedResult with validated synthon
+            AxiomGuidedResult with validated imscription
         """
         for iteration in range(1, max_iterations + 1):
             try:
@@ -488,7 +488,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 )
                 
                 # Parse response
-                synthon_data, reasoning, confidence = self._parse_llm_response(raw_response)
+                imscription_data, reasoning, confidence = self._parse_llm_response(raw_response)
 
                 # Honor explicit criticality phase in description.
                 # If the description explicitly names φ̂_ÿ, override the LLM's
@@ -496,10 +496,10 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 import re as _re
                 _phi_match = _re.search(r'\bPhi_(c|sub|super)\b', description)
                 if _phi_match and _phi_match.group(0) == "φ̂_ÿ":
-                    synthon_data["criticality_phase"] = "φ̂_ÿ"
+                    imscription_data["criticality_phase"] = "φ̂_ÿ"
 
-                # Create synthon
-                synthon = self._create_synthon_from_data(synthon_data, description, explicit_name=name)
+                # Create imscription
+                imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)
                 
             except Exception as e:
                 # Fall back to rule-based
@@ -507,17 +507,17 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 result.iterations = iteration
                 result.reasoning = f"LLM failed ({e}), using rule-based: {result.reasoning}"
                 if auto_register:
-                    global_catalog.register(synthon)
+                    global_catalog.register(imscription)
                 return result
             
             # Validate against axioms
-            axiom_report = AxiomValidator.validate_all_axioms(synthon)
+            axiom_report = AxiomValidator.validate_all_axioms(imscription)
             
             # Compute thermodynamic metrics
             if delta_g is None:
                 delta_g = -50.0  # Default estimate
             try:
-                thermo_result = compute_eta_CP(synthon, delta_g=delta_g)
+                thermo_result = compute_eta_CP(imscription, delta_g=delta_g)
                 thermo_metrics = {
                     "eta_CP": thermo_result.eta_CP,
                     "xi_CP": thermo_result.xi_CP,
@@ -532,13 +532,13 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 grounding_warnings = []
                 failed_primitives = []
 
-                if synthon.dimensionality == Dimensionality.TEMPORAL:
+                if imscription.dimensionality == Dimensionality.TEMPORAL:
                     # Prefer trajectory module validation; fall back to keyword check
                     trajectory_ok = False
                     try:
-                        from imscrbgrmr.trajectory import TemporalSynthonAgent as TrajectoryValidator
+                        from imscrbgrmr.trajectory import TemporalImscriptionAgent as TrajectoryValidator
                         tv = TrajectoryValidator()
-                        tv.add_step(synthon, step_name="step_0", delta_g=-50.0, notes=reasoning)
+                        tv.add_step(imscription, step_name="step_0", delta_g=-50.0, notes=reasoning)
                         reset_ok, reset_step = tv.verify_reset()
                         trajectory_ok = reset_ok
                     except Exception:
@@ -562,7 +562,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                         )
 
                 # --- Axiom 7: T_⋈ closing bond check ---
-                if synthon.topology == Topology.CYCLIC_BOWTIE:
+                if imscription.topology == Topology.CYCLIC_BOWTIE:
                     reasoning_lower = reasoning.lower()
                     closing_indicators = ["hydrogen bond", "h-bond", "hbond", "coordinat", "covalent",
                                            "close", "ring", "loop", "cycl", "r2_2", "r22", "macrocycle",
@@ -588,18 +588,18 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                     )
                     continue  # Force another refinement iteration
 
-                # Tag synthon metadata with grounding status
+                # Tag imscription metadata with grounding status
                 grounding_status = "partial" if failed_primitives else "full"
-                synthon.metadata["grounding_status"] = grounding_status
-                synthon.metadata["failed_primitives"] = failed_primitives
+                imscription.metadata["grounding_status"] = grounding_status
+                imscription.metadata["failed_primitives"] = failed_primitives
                 if failed_primitives:
-                    synthon.metadata["flagged_for_review"] = True
+                    imscription.metadata["flagged_for_review"] = True
 
                 if auto_register:
-                    global_catalog.register(synthon)
+                    global_catalog.register(imscription)
 
                 return AxiomGuidedResult(
-                    synthon=synthon,
+                    imscription=imscription,
                     axiom_report=axiom_report,
                     confidence=confidence if not failed_primitives else confidence * 0.7,
                     reasoning=reasoning,
@@ -621,10 +621,10 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             else:
                 # Max iterations reached - return with warnings
                 if auto_register:
-                    global_catalog.register(synthon)
+                    global_catalog.register(imscription)
                 
                 return AxiomGuidedResult(
-                    synthon=synthon,
+                    imscription=imscription,
                     axiom_report=axiom_report,
                     confidence=confidence * 0.7,  # Penalize for violations
                     reasoning=reasoning + f"\n\nWARNING: {len(violations)} axiom violations after {max_iterations} iterations: {'; '.join(violations)}",
@@ -640,15 +640,15 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
     async def run(self, task: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Main entry point for AjintK framework."""
         try:
-            result = await self.generate_validated_synthon(task)
+            result = await self.generate_validated_imscription(task)
             
             status = "success" if result.axiom_report["all_satisfied"] else "partial"
             
             return {
                 "status": status,
                 "findings": (
-                    f"Generated axiom-validated synthon: {result.synthon.name}\n"
-                    f"Notation: {result.synthon.to_notation()}\n"
+                    f"Generated axiom-validated imscription: {result.imscription.name}\n"
+                    f"Notation: {result.imscription.to_notation()}\n"
                     f"Confidence: {result.confidence:.2f}\n"
                     f"Iterations: {result.iterations}\n"
                     f"Axioms Satisfied: {result.axiom_report['all_satisfied']}\n"
@@ -656,8 +656,8 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 ),
                 "artifacts": self.artifacts,
                 "metadata": {
-                    "synthon_name": result.synthon.name,
-                    "notation": result.synthon.to_notation(),
+                    "imscription_name": result.imscription.name,
+                    "notation": result.imscription.to_notation(),
                     "confidence": result.confidence,
                     "axiom_violations": result.axiom_report["violations"],
                     "all_axioms_satisfied": result.axiom_report["all_satisfied"],
@@ -674,11 +674,11 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
     def _get_system_prompt(self) -> str:
         """Get system prompt for the agent."""
         return """<role>
-You are an expert computational chemist specializing in the Unified Synthonicon framework.
+You are an expert computational chemist specializing in the Unified Imscriptiveon framework.
 Your expertise includes the ten formal primitives (D, T, R, P, F, K, G, Γ, Φ, S),
 the eight composition axioms from QUANTIG.md, thermodynamic analysis (η_CP, ξ_CP),
 and cross-domain analogy detection.
-You **MUST** generate synthons that satisfy **ALL** applicable axioms.
+You **MUST** generate imscriptions that satisfy **ALL** applicable axioms.
 You **MUST NOT** assign primitives by keyword matching — ground every assignment in physical mechanism.
 </role>
 

@@ -7,11 +7,11 @@ Operations
 ----------
 project          — orthogonal projection onto a named primitive subset
 primitive_peel   — drop one primitive to its constraint-bottom; track Φ_c / Ω cost
-factor           — greatest proper sub-synthon (greedy descent toward constraint-bottom)
+factor           — greatest proper sub-imscription (greedy descent toward constraint-bottom)
 principal_decomp — decompose into join-irreducible atomic factors
 cofactor         — residual B given composite C and factor A  (inverts tensor)
 complement_rel   — relative pseudocomplement w.r.t. context and target
-kernel           — largest sub-synthon annihilated by a probe predicate
+kernel           — largest sub-imscription annihilated by a probe predicate
 retrosynthetic_path — find minimal catalog factors whose tensor approximates a target
 
 Algebraic grounding
@@ -44,7 +44,7 @@ from .models import (
     KineticCharacter,
     Polarity,
     RecognitionMode,
-    Synthon,
+    Imscription,
     TopoIndex,
     Topology,
 )
@@ -116,22 +116,22 @@ ORDINAL_PRIMITIVES = {"F", "K", "G"}
 CATEGORICAL_PRIMITIVES = {"D", "T", "R", "P", "Gamma", "Phi", "Omega"}
 
 
-def _get(s: Synthon, prim: str):
+def _get(s: Imscription, prim: str):
     """Return the current value of a named primitive."""
     return getattr(s, _PRIM_FIELD[prim])
 
 
-def _set(s: Synthon, prim: str, value, suffix: str = "") -> Synthon:
+def _set(s: Imscription, prim: str, value, suffix: str = "") -> Imscription:
     """Return a copy of s with one primitive replaced."""
     name = s.name + (suffix or f"[{prim}→{value}]")
     return _dc_replace(s, name=name, **{_PRIM_FIELD[prim]: value})
 
 
-def _has_phi_c(s: Synthon) -> bool:
+def _has_phi_c(s: Imscription) -> bool:
     return s.criticality_phase is CriticalityPhase.CRITICAL
 
 
-def _has_topo_protection(s: Synthon) -> bool:
+def _has_topo_protection(s: Imscription) -> bool:
     return s.topo_index is not None and s.topo_index != TopoIndex.TRIVIAL
 
 
@@ -155,20 +155,20 @@ def _ordinal_max(prim: str) -> int:
 
 @dataclass
 class ProjectResult:
-    """Result of projecting a synthon onto a subset of primitives."""
-    synthon_name: str
+    """Result of projecting a imscription onto a subset of primitives."""
+    imscription_name: str
     projected: List[str]          # Primitives retained
     zeroed: List[str]             # Primitives set to bottom
-    result: Synthon
+    result: Imscription
     notes: List[str] = field(default_factory=list)
 
 
 @dataclass
 class PeelResult:
     """Result of removing one primitive constraint."""
-    synthon_name: str
+    imscription_name: str
     peeled: str                   # Primitive that was peeled
-    result: Optional[Synthon]     # None if axiom-blocked
+    result: Optional[Imscription]     # None if axiom-blocked
     phi_c_preserved: bool
     omega_preserved: bool
     peel_cost: float              # |Δξ_CP| from losing Φ_c or Ω (0 if preserved)
@@ -179,9 +179,9 @@ class PeelResult:
 
 @dataclass
 class FactorResult:
-    """Result of computing the greatest proper sub-synthon."""
-    synthon_name: str
-    result: Synthon               # Greatest proper sub-synthon
+    """Result of computing the greatest proper sub-imscription."""
+    imscription_name: str
+    result: Imscription               # Greatest proper sub-imscription
     stepped_primitive: str        # Which primitive was stepped down
     from_value: object
     to_value: object
@@ -190,9 +190,9 @@ class FactorResult:
 
 @dataclass
 class PrincipalDecompResult:
-    """Result of decomposing a synthon into join-irreducible atomic factors."""
-    synthon_name: str
-    factors: List[Synthon]        # Ordered list of irreducible components
+    """Result of decomposing a imscription into join-irreducible atomic factors."""
+    imscription_name: str
+    factors: List[Imscription]        # Ordered list of irreducible components
     n_factors: int
     xi_balance: float             # Std-dev of factor constraint strengths (0 = perfectly balanced)
     notes: List[str] = field(default_factory=list)
@@ -214,7 +214,7 @@ class CofactorResult:
     """Result of computing the residual B given composite C and factor A."""
     composite_name: str
     factor_name: str
-    result: Optional[Synthon]     # The inferred B; None if globally inconsistent
+    result: Optional[Imscription]     # The inferred B; None if globally inconsistent
     dimensions: List[CofactorDimension]
     bottleneck_primitives: List[str]   # Where A is the fidelity/kinetic bottleneck
     contributor_primitives: List[str]  # Where B is the scope/protection contributor
@@ -226,20 +226,20 @@ class CofactorResult:
 @dataclass
 class ComplementResult:
     """Relative pseudocomplement: max x s.t. x ⊓ ctx = ⊥ and x ⊔ ctx ≥ target."""
-    synthon_name: str
+    imscription_name: str
     context_name: str
     target_name: str
-    result: Optional[Synthon]
+    result: Optional[Imscription]
     satisfied: bool               # Whether the target condition is met
     notes: List[str] = field(default_factory=list)
 
 
 @dataclass
 class KernelResult:
-    """Largest sub-synthon annihilated by a probe predicate."""
-    synthon_name: str
+    """Largest sub-imscription annihilated by a probe predicate."""
+    imscription_name: str
     probe_name: str
-    result: Optional[Synthon]     # None if even the bottom tuple activates the probe
+    result: Optional[Imscription]     # None if even the bottom tuple activates the probe
     phi_c_in_kernel: bool         # Whether the kernel still has Φ_c
     primitives_trimmed: List[str] # Which primitives were lowered to enter the kernel
     notes: List[str] = field(default_factory=list)
@@ -266,7 +266,7 @@ class RetrosynthResult:
 # 1. project
 # ---------------------------------------------------------------------------
 
-def project(synthon: Synthon, primitives: Sequence[str]) -> ProjectResult:
+def project(imscription: Imscription, primitives: Sequence[str]) -> ProjectResult:
     """
     Orthogonal projection: retain only the named primitives; set all others to
     their constraint-bottom value (least restrictive / most permissive).
@@ -305,10 +305,10 @@ def project(synthon: Synthon, primitives: Sequence[str]) -> ProjectResult:
             zeroed.append(prim)
 
     proj_label = "+".join(sorted(keep))
-    result = _dc_replace(synthon, name=f"proj({synthon.name[:20]})[{proj_label}]", **kwargs)
+    result = _dc_replace(imscription, name=f"proj({imscription.name[:20]})[{proj_label}]", **kwargs)
     notes = [f"Projected onto {{{proj_label}}}; zeroed: {{{', '.join(zeroed)}}}"]
     return ProjectResult(
-        synthon_name=synthon.name,
+        imscription_name=imscription.name,
         projected=sorted(keep),
         zeroed=zeroed,
         result=result,
@@ -321,7 +321,7 @@ def project(synthon: Synthon, primitives: Sequence[str]) -> ProjectResult:
 # ---------------------------------------------------------------------------
 
 def primitive_peel(
-    synthon: Synthon,
+    imscription: Imscription,
     primitive: str,
     strict: bool = False,
     phi_c_cost: float = 3.0,
@@ -335,14 +335,14 @@ def primitive_peel(
       • Ω preserved?    If degraded and strict=True → blocked; else → cost += omega_cost × levels
       • Axiom 2 (G_ב + Γ_∧(SPECIFIC) cannot reach G_ℵ)?  → blocked always
 
-    Returns PeelResult with the peeled synthon, cost, and flags.
+    Returns PeelResult with the peeled imscription, cost, and flags.
     """
     if primitive not in _PRIM_FIELD:
         raise ValueError(f"Unknown primitive: {primitive!r}. Valid: {ALL_PRIMITIVES}")
 
-    original_phi_c = _has_phi_c(synthon)
-    original_omega = _G_ORD.get(synthon.granularity, 0)  # proxy for protection
-    original_topo = synthon.topo_index
+    original_phi_c = _has_phi_c(imscription)
+    original_omega = _G_ORD.get(imscription.granularity, 0)  # proxy for protection
+    original_topo = imscription.topo_index
 
     # --- Determine the bottom value for this primitive ---
     if primitive in ORDINAL_PRIMITIVES:
@@ -359,7 +359,7 @@ def primitive_peel(
         }
         new_val = bottom_map[primitive]
 
-    peeled = _set(synthon, primitive, new_val, suffix=f"[peel-{primitive}]")
+    peeled = _set(imscription, primitive, new_val, suffix=f"[peel-{primitive}]")
 
     # --- Invariant checks ---
     notes: List[str] = []
@@ -372,7 +372,7 @@ def primitive_peel(
         notes.append(f"Φ_c lost by peeling {primitive} — cost +{phi_c_cost:.1f} nats")
         if strict:
             return PeelResult(
-                synthon_name=synthon.name, peeled=primitive, result=None,
+                imscription_name=imscription.name, peeled=primitive, result=None,
                 phi_c_preserved=False, omega_preserved=True, peel_cost=0.0,
                 blocked=True, block_reason=f"Peeling {primitive} destroys Φ_c (strict mode)",
                 notes=notes,
@@ -390,7 +390,7 @@ def primitive_peel(
         notes.append(f"Ω degraded {original_topo} → {new_topo} ({levels_lost} level(s)) — cost +{oc:.1f} nats")
         if strict:
             return PeelResult(
-                synthon_name=synthon.name, peeled=primitive, result=None,
+                imscription_name=imscription.name, peeled=primitive, result=None,
                 phi_c_preserved=phi_c_preserved, omega_preserved=False, peel_cost=0.0,
                 blocked=True, block_reason=f"Peeling {primitive} degrades Ω (strict mode)",
                 notes=notes,
@@ -400,21 +400,21 @@ def primitive_peel(
     # Axiom 2: G_LOCAL + Gamma_AND(SPECIFIC) cannot propagate to G_GLOBAL
     if (peeled.granularity == Granularity.LOCAL
             and peeled.interaction_grammar == InteractionGrammar.SPECIFIC_AND
-            and synthon.granularity != Granularity.LOCAL):
+            and imscription.granularity != Granularity.LOCAL):
         reason = "Axiom 2 violation: peeling G to LOCAL with Γ_∧(SPECIFIC) blocks propagation"
         notes.append(reason)
         if strict:
             return PeelResult(
-                synthon_name=synthon.name, peeled=primitive, result=None,
+                imscription_name=imscription.name, peeled=primitive, result=None,
                 phi_c_preserved=phi_c_preserved, omega_preserved=omega_preserved,
                 peel_cost=0.0, blocked=True, block_reason=reason, notes=notes,
             )
 
     if not notes:
-        notes.append(f"Peeled {primitive}: {_get(synthon, primitive)} → {new_val} (cost-free)")
+        notes.append(f"Peeled {primitive}: {_get(imscription, primitive)} → {new_val} (cost-free)")
 
     return PeelResult(
-        synthon_name=synthon.name, peeled=primitive, result=peeled,
+        imscription_name=imscription.name, peeled=primitive, result=peeled,
         phi_c_preserved=phi_c_preserved, omega_preserved=omega_preserved,
         peel_cost=peel_cost, blocked=False, block_reason="", notes=notes,
     )
@@ -424,9 +424,9 @@ def primitive_peel(
 # 3. factor
 # ---------------------------------------------------------------------------
 
-def factor(synthon: Synthon, prefer: Optional[str] = None) -> FactorResult:
+def factor(imscription: Imscription, prefer: Optional[str] = None) -> FactorResult:
     """
-    Compute the greatest proper sub-synthon: step exactly one ordinal primitive
+    Compute the greatest proper sub-imscription: step exactly one ordinal primitive
     one notch toward its constraint-bottom.
 
     Preference order (unless `prefer` is given):
@@ -436,13 +436,13 @@ def factor(synthon: Synthon, prefer: Optional[str] = None) -> FactorResult:
     use primitive_peel() or project() for those.
 
     Returns the result of stepping the preferred primitive one level down.
-    If all ordinals are already at their constraint-bottom, returns the synthon
+    If all ordinals are already at their constraint-bottom, returns the imscription
     unchanged with a note.
     """
     order = [prefer] if prefer and prefer in ORDINAL_PRIMITIVES else ["F", "K", "G"]
 
     for prim in order:
-        cur_val = _get(synthon, prim)
+        cur_val = _get(imscription, prim)
         cur_ord = _ord_val(prim, cur_val)
         step = _FACTOR_STEP_DIR[prim]
         next_ord = cur_ord + step
@@ -456,18 +456,18 @@ def factor(synthon: Synthon, prefer: Optional[str] = None) -> FactorResult:
             continue   # already at constraint-bottom for this primitive
 
         next_val = _from_ord(prim, next_ord)
-        result = _set(synthon, prim, next_val, suffix=f"[factor:{prim}]")
+        result = _set(imscription, prim, next_val, suffix=f"[factor:{prim}]")
         return FactorResult(
-            synthon_name=synthon.name, result=result,
+            imscription_name=imscription.name, result=result,
             stepped_primitive=prim, from_value=cur_val, to_value=next_val,
             notes=[f"Stepped {prim}: {cur_val.value} → {next_val.value} (toward constraint-bottom)"],
         )
 
     # All ordinals already at bottom
     return FactorResult(
-        synthon_name=synthon.name, result=synthon,
+        imscription_name=imscription.name, result=imscription,
         stepped_primitive="none", from_value=None, to_value=None,
-        notes=["All ordinal primitives already at constraint-bottom; synthon is join-irreducible"],
+        notes=["All ordinal primitives already at constraint-bottom; imscription is join-irreducible"],
     )
 
 
@@ -475,25 +475,25 @@ def factor(synthon: Synthon, prefer: Optional[str] = None) -> FactorResult:
 # 4. principal_decomp
 # ---------------------------------------------------------------------------
 
-def principal_decomp(synthon: Synthon, max_factors: int = 9) -> PrincipalDecompResult:
+def principal_decomp(imscription: Imscription, max_factors: int = 9) -> PrincipalDecompResult:
     """
-    Decompose a synthon into its join-irreducible atomic factors by repeated
+    Decompose a imscription into its join-irreducible atomic factors by repeated
     application of factor().
 
     Each factor step produces a component and a residual.  We collect all the
     "peeled off" contributions (one per ordinal step) as atomic factors,
     plus the categorical skeleton as the final factor.
 
-    A synthon is join-irreducible in the ordinal dimensions when all F/K/G are at
+    A imscription is join-irreducible in the ordinal dimensions when all F/K/G are at
     their constraint-bottoms.  The categorical dimensions (D, T, R, P, Γ, Φ, Ω)
     are each a single atom — they cannot be further decomposed without losing their
     identity.
 
     Returns factors ordered from most-constraining contribution to least.
     """
-    factors: List[Synthon] = []
+    factors: List[Imscription] = []
     notes: List[str] = []
-    current = synthon
+    current = imscription
     steps = 0
 
     while steps < max_factors:
@@ -501,7 +501,7 @@ def principal_decomp(synthon: Synthon, max_factors: int = 9) -> PrincipalDecompR
         if fr.stepped_primitive == "none":
             break
         # The "peeled off" level is the difference: a 1-primitive atom
-        atom = project(synthon, [fr.stepped_primitive]).result
+        atom = project(imscription, [fr.stepped_primitive]).result
         atom = _dc_replace(
             atom,
             name=f"atom[{fr.stepped_primitive}={fr.from_value.value if hasattr(fr.from_value, 'value') else fr.from_value}]",
@@ -515,10 +515,10 @@ def principal_decomp(synthon: Synthon, max_factors: int = 9) -> PrincipalDecompR
         steps += 1
 
     # The remaining categorical skeleton is the final factor
-    skeleton_name = f"skeleton({synthon.name[:20]})"
+    skeleton_name = f"skeleton({imscription.name[:20]})"
     skeleton = _dc_replace(current, name=skeleton_name)
     factors.append(skeleton)
-    notes.append(f"  Skeleton: categorical primitives of {synthon.name}")
+    notes.append(f"  Skeleton: categorical primitives of {imscription.name}")
 
     # Balance metric: std-dev of constraint_strength across factors
     try:
@@ -530,7 +530,7 @@ def principal_decomp(synthon: Synthon, max_factors: int = 9) -> PrincipalDecompR
         xi_balance = 0.0
 
     return PrincipalDecompResult(
-        synthon_name=synthon.name, factors=factors, n_factors=len(factors),
+        imscription_name=imscription.name, factors=factors, n_factors=len(factors),
         xi_balance=xi_balance, notes=notes,
     )
 
@@ -539,7 +539,7 @@ def principal_decomp(synthon: Synthon, max_factors: int = 9) -> PrincipalDecompR
 # 5. cofactor
 # ---------------------------------------------------------------------------
 
-def cofactor(composite: Synthon, factor_a: Synthon) -> CofactorResult:
+def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     """
     Invert the tensor product: given composite C ≈ tensor(A, B), find B.
 
@@ -563,7 +563,7 @@ def cofactor(composite: Synthon, factor_a: Synthon) -> CofactorResult:
       • A[p] = C[p] → EXPLAINED (A explains it)
       • A[p] ≠ C[p] → PASSTHROUGH (B must have C[p]; we can't say more without the tensor rule)
 
-    Returns CofactorResult with per-dimension analysis and the inferred B synthon.
+    Returns CofactorResult with per-dimension analysis and the inferred B imscription.
     """
     C = composite
     A = factor_a
@@ -704,12 +704,12 @@ def cofactor(composite: Synthon, factor_a: Synthon) -> CofactorResult:
     else:
         phi_source = "none"
 
-    # ── Build the cofactor Synthon ────────────────────────────────────────────
+    # ── Build the cofactor Imscription ────────────────────────────────────────────
     if conflicts:
-        result_synthon = None
+        result_imscription = None
         notes = [f"Cofactor({C.name}, {A.name}) has CONFLICT on: {', '.join(conflicts)}"]
     else:
-        result_synthon = _dc_replace(
+        result_imscription = _dc_replace(
             composite,
             name=f"cofactor({C.name[:16]},{A.name[:16]})",
             **cofactor_kwargs,
@@ -719,7 +719,7 @@ def cofactor(composite: Synthon, factor_a: Synthon) -> CofactorResult:
     notes += [f"  {d.primitive}: {d.role} — {d.note}" for d in dims]
 
     return CofactorResult(
-        composite_name=C.name, factor_name=A.name, result=result_synthon,
+        composite_name=C.name, factor_name=A.name, result=result_imscription,
         dimensions=dims, bottleneck_primitives=bottlenecks,
         contributor_primitives=contributors, conflict_primitives=conflicts,
         phi_c_source=phi_source, notes=notes,
@@ -730,9 +730,9 @@ def cofactor(composite: Synthon, factor_a: Synthon) -> CofactorResult:
 # 6. complement_rel
 # ---------------------------------------------------------------------------
 
-def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> ComplementResult:
+def complement_rel(imscription: Imscription, context: Imscription, target: Imscription) -> ComplementResult:
     """
-    Relative pseudocomplement: find the maximal x ≤ synthon such that:
+    Relative pseudocomplement: find the maximal x ≤ imscription such that:
       (1) x ⊓ context = ⊥   (x and context share no constraint)
       (2) x ⊔ context ≥ target  (together they cover the target)
 
@@ -755,7 +755,7 @@ def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> Compl
     for prim in ORDINAL_PRIMITIVES:
         ctx_ord = _ord_val(prim, _get(context, prim))
         tgt_ord = _ord_val(prim, _get(target, prim))
-        syn_ord = _ord_val(prim, _get(synthon, prim))
+        syn_ord = _ord_val(prim, _get(imscription, prim))
 
         # Condition 1: x ⊓ ctx = ⊥ → for meet-dominant (F, K) and G (join)
         # For G (join): meet is min → min(x, ctx) = 0 → x = 0 (LOCAL) always satisfies if ctx > 0
@@ -797,7 +797,7 @@ def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> Compl
     for prim in ("D", "T", "R", "P", "Gamma", "Phi", "Omega"):
         ctx_val = _get(context, prim)
         tgt_val = _get(target, prim)
-        syn_val = _get(synthon, prim)
+        syn_val = _get(imscription, prim)
         if ctx_val == tgt_val:
             # Context already covers target; x[p] should not match context
             # Maximally: x[p] = syn[p] if syn[p] ≠ ctx[p]; else use None / bottom
@@ -813,17 +813,17 @@ def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> Compl
 
     if not satisfied:
         return ComplementResult(
-            synthon_name=synthon.name, context_name=context.name,
+            imscription_name=imscription.name, context_name=context.name,
             target_name=target.name, result=None, satisfied=False, notes=notes,
         )
 
     result = _dc_replace(
-        synthon,
-        name=f"comp_rel({synthon.name[:14]}, {context.name[:14]})",
+        imscription,
+        name=f"comp_rel({imscription.name[:14]}, {context.name[:14]})",
         **kwargs,
     )
     return ComplementResult(
-        synthon_name=synthon.name, context_name=context.name,
+        imscription_name=imscription.name, context_name=context.name,
         target_name=target.name, result=result, satisfied=True, notes=notes,
     )
 
@@ -833,35 +833,35 @@ def complement_rel(synthon: Synthon, context: Synthon, target: Synthon) -> Compl
 # ---------------------------------------------------------------------------
 
 def kernel(
-    synthon: Synthon,
-    probe: Callable[[Synthon], bool],
+    imscription: Imscription,
+    probe: Callable[[Imscription], bool],
     probe_name: str = "probe",
 ) -> KernelResult:
     """
-    Largest sub-synthon annihilated by a probe predicate.
+    Largest sub-imscription annihilated by a probe predicate.
 
-    Starting from the full synthon, greedily lowers each ordinal primitive
+    Starting from the full imscription, greedily lowers each ordinal primitive
     (F → LOW, K → FAST, G → LOCAL) one step at a time until the probe returns
-    False.  Returns the largest sub-synthon for which probe(s) = False.
+    False.  Returns the largest sub-imscription for which probe(s) = False.
 
-    If probe(full_synthon) = False: the full synthon is already in the kernel.
+    If probe(full_imscription) = False: the full imscription is already in the kernel.
     If even the bottom tuple activates the probe: returns None.
 
     Common probe: lambda s: varma_probe(s).phi_c_score > 0.5
-    → kernel = largest sub-synthon without Φ_c signal.
+    → kernel = largest sub-imscription without Φ_c signal.
     """
     notes: List[str] = []
     trimmed: List[str] = []
 
-    if not probe(synthon):
-        notes.append(f"Full synthon already in kernel({probe_name})")
+    if not probe(imscription):
+        notes.append(f"Full imscription already in kernel({probe_name})")
         return KernelResult(
-            synthon_name=synthon.name, probe_name=probe_name,
-            result=synthon, phi_c_in_kernel=_has_phi_c(synthon),
+            imscription_name=imscription.name, probe_name=probe_name,
+            result=imscription, phi_c_in_kernel=_has_phi_c(imscription),
             primitives_trimmed=[], notes=notes,
         )
 
-    current = synthon
+    current = imscription
     # Greedy descent through ordinal primitives
     for prim in ("F", "K", "G"):
         max_steps = _ordinal_max(prim) + 1
@@ -891,16 +891,16 @@ def kernel(
                     trimmed.append(prim)
 
     if probe(current):
-        notes.append(f"Probe activates on all sub-synthons — no kernel exists above ⊥")
+        notes.append(f"Probe activates on all sub-imscriptions — no kernel exists above ⊥")
         return KernelResult(
-            synthon_name=synthon.name, probe_name=probe_name,
+            imscription_name=imscription.name, probe_name=probe_name,
             result=None, phi_c_in_kernel=False,
             primitives_trimmed=trimmed, notes=notes,
         )
 
     notes.insert(0, f"Kernel({probe_name}) found: {current.name}")
     return KernelResult(
-        synthon_name=synthon.name, probe_name=probe_name,
+        imscription_name=imscription.name, probe_name=probe_name,
         result=current, phi_c_in_kernel=_has_phi_c(current),
         primitives_trimmed=trimmed, notes=notes,
     )
@@ -911,30 +911,30 @@ def kernel(
 # ---------------------------------------------------------------------------
 
 def retrosynthetic_path(
-    target: Synthon,
-    catalog: Sequence[Synthon],
+    target: Imscription,
+    catalog: Sequence[Imscription],
     max_factors: int = 3,
     top_k: int = 5,
     candidate_pool: int = 20,
 ) -> RetrosynthResult:
     """
-    Find the minimal set of catalog synthons whose tensor product best approximates
+    Find the minimal set of catalog imscriptions whose tensor product best approximates
     the target.
 
     Algorithm:
-      1. Rank all catalog synthons by distance to target (ascending) → pool of top N.
-      2. Try single synthons (n=1): each pool member is a candidate.
+      1. Rank all catalog imscriptions by distance to target (ascending) → pool of top N.
+      2. Try single imscriptions (n=1): each pool member is a candidate.
       3. Try pairs  (n=2): all pairs from the pool; compute tensor; distance to target.
       4. Try triples (n=3) if max_factors ≥ 3: top-M from pool.
       5. Return top-K candidates across all factor counts, ranked by distance.
 
     Distance is tuple_distance(tensor_result, target).  The tensor result is
-    approximated by creating a Synthon from the TensorResult fields.
+    approximated by creating a Imscription from the TensorResult fields.
     """
     from .algebra import tensor as _tensor, tuple_distance as _dist
 
-    def _tensor_to_synthon(tr, base: Synthon) -> Synthon:
-        """Convert a TensorResult to a Synthon (inherit missing fields from base)."""
+    def _tensor_to_imscription(tr, base: Imscription) -> Imscription:
+        """Convert a TensorResult to a Imscription (inherit missing fields from base)."""
         def _safe(v, fallback):
             return v if v is not None and not isinstance(v, str) else fallback
         return _dc_replace(
@@ -967,7 +967,7 @@ def retrosynthetic_path(
         )
 
     pool = ranked[:candidate_pool]
-    notes.append(f"Pool: top-{len(pool)} of {len(catalog)} catalog synthons by distance to target")
+    notes.append(f"Pool: top-{len(pool)} of {len(catalog)} catalog imscriptions by distance to target")
 
     # Single factors
     for s in pool:
@@ -982,7 +982,7 @@ def retrosynthetic_path(
         for s1, s2 in itertools.combinations(pool, 2):
             try:
                 tr = _tensor(s1, s2)
-                composite = _tensor_to_synthon(tr, s1)
+                composite = _tensor_to_imscription(tr, s1)
                 d = _dist(composite, target)
                 str1 = s1.constraint_strength()
                 str2 = s2.constraint_strength()
@@ -1002,9 +1002,9 @@ def retrosynthetic_path(
         for s1, s2, s3 in itertools.combinations(triple_pool, 3):
             try:
                 tr12 = _tensor(s1, s2)
-                c12 = _tensor_to_synthon(tr12, s1)
+                c12 = _tensor_to_imscription(tr12, s1)
                 tr123 = _tensor(c12, s3)
-                composite = _tensor_to_synthon(tr123, s1)
+                composite = _tensor_to_imscription(tr123, s1)
                 d = _dist(composite, target)
                 strs = [s.constraint_strength() for s in (s1, s2, s3)]
                 mean = sum(strs) / 3
@@ -1040,13 +1040,13 @@ def retrosynthetic_path(
 # Convenience: Φ_c probe for kernel()
 # ---------------------------------------------------------------------------
 
-def phi_c_probe(s: Synthon) -> bool:
-    """Standard probe: True if the synthon has Φ_c (criticality = CRITICAL)."""
+def phi_c_probe(s: Imscription) -> bool:
+    """Standard probe: True if the imscription has Φ_c (criticality = CRITICAL)."""
     return _has_phi_c(s)
 
 
-def topo_protection_probe(s: Synthon) -> bool:
-    """Standard probe: True if the synthon has non-trivial topological protection."""
+def topo_protection_probe(s: Imscription) -> bool:
+    """Standard probe: True if the imscription has non-trivial topological protection."""
     return _has_topo_protection(s)
 
 
@@ -1056,7 +1056,7 @@ def topo_protection_probe(s: Synthon) -> bool:
 
 def project_m(primitives: Sequence[str]):
     """Return a DesignPipeline-compatible step function for project()."""
-    def _step(s: Synthon):
+    def _step(s: Imscription):
         r = project(s, primitives)
         return r.result, r.notes, [], False, ""
     _step.__name__ = f"project({','.join(primitives)})"
@@ -1065,7 +1065,7 @@ def project_m(primitives: Sequence[str]):
 
 def peel_m(primitive: str, strict: bool = False):
     """Return a DesignPipeline-compatible step function for primitive_peel()."""
-    def _step(s: Synthon):
+    def _step(s: Imscription):
         r = primitive_peel(s, primitive, strict=strict)
         return r.result, r.notes, [], r.blocked, r.block_reason
     _step.__name__ = f"peel({primitive})"
@@ -1074,16 +1074,16 @@ def peel_m(primitive: str, strict: bool = False):
 
 def factor_m(prefer: Optional[str] = None):
     """Return a DesignPipeline-compatible step function for factor()."""
-    def _step(s: Synthon):
+    def _step(s: Imscription):
         r = factor(s, prefer=prefer)
         return r.result, r.notes, [], False, ""
     _step.__name__ = f"factor(prefer={prefer})"
     return _step
 
 
-def cofactor_m(factor_a: Synthon):
+def cofactor_m(factor_a: Imscription):
     """Return a DesignPipeline-compatible step function for cofactor()."""
-    def _step(s: Synthon):
+    def _step(s: Imscription):
         r = cofactor(s, factor_a)
         blocked = r.result is None
         return r.result, r.notes, [], blocked, ("; ".join(r.conflict_primitives) if blocked else "")

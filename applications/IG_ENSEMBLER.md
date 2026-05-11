@@ -9,13 +9,13 @@ header-includes:
 ---
 # IΓ_ENSEMBLER.md
 
-## Multi-Synthon Composition Verification
+## Multi-Imscription Composition Verification
 
 ---
 
 ## 1.0 System Definition
 
-**IΓ_ENSEMBLER** verifies the compatibility of multi-synthon systems. Every case in the standard validation table is a *single* synthon. Real systems are composed: a rotaxane is $R_{\Leftrightarrow}$ *plus* an H-bonding station *plus* a stopper.
+**IΓ_ENSEMBLER** verifies the compatibility of multi-imscription systems. Every case in the standard validation table is a *single* imscription. Real systems are composed: a rotaxane is $R_{\Leftrightarrow}$ *plus* an H-bonding station *plus* a stopper.
 
 Composition can produce **Emergent Axiom Violations**. Axiom 2 says a $G_{\text{beta}}$/$\Gamma_{\text{corner}}(\text{SPECIFIC})$ component can't propagate globally, but what happens when you *compose* two such components with different $T$? The Ensembler checks pairwise and higher-order axiom compatibility, computes the $\xi_{CP}$ of the *composed system*, and identifies emergent $\Phi_{\text{ctyogh}}$ candidacy.
 
@@ -44,7 +44,7 @@ Candidate ensemble components must pass a rigorous interface check via the `Cons
 ### 2.2 Fidelity & Interface Thresholds
 
 *   **Fidelity Calibration:** $F$ is anchored to $\xi_{CP}$ tiers (HIGH ≤ 8.5 nats, MEDIUM 8.5–11.0 nats, LOW > 11.0 nats). The ensemble should not increase inefficiency beyond $\Delta \xi_{CP} < 2.0$ nats relative to the sum of isolated components. A 2-nat drift corresponds to losing ~2 bits of recognition information or weakening interactions by ~3.4 kJ/mol at 298 K.
-*   **Interface Overhead ($I_{interface}$):** Every synthon-synthon interface introduces information overhead. Typical values:
+*   **Interface Overhead ($I_{interface}$):** Every imscription-imscription interface introduces information overhead. Typical values:
     *   $R_{\supseteq}$ + $R_{\supseteq}$ (H-bond network): 0.5–1.5 bits
     *   $R_{\subseteq}$ + $R_{\supseteq}$ (covalent + non-covalent): 1.0–2.0 bits
     *   $R_{\Leftrightarrow}$ + $R_{\supseteq}$ (mechanical + H-bond): 2.0–4.0 bits (steric alignment cost)
@@ -66,7 +66,7 @@ This permits partial substitution up to 25% defect fraction without violating ma
 
 ### Step 1: Component Registration
 
-Load all constituent synthons into a temporary ensemble catalog.
+Load all constituent imscriptions into a temporary ensemble catalog.
 
 ```python
 from imscrbgrmr.registry import EnsembleCatalog
@@ -123,7 +123,7 @@ from imscrbgrmr.thermodynamics import compute_eta_CP
 delta_g_assembly = -85.0  # kJ/mol (literature value for DB24C8 + ammonium axle)
 
 result = compute_eta_CP(
-    synthon=None,  # Ensemble mode
+    imscription=None,  # Ensemble mode
     delta_g=delta_g_assembly,
     ensemble_components=["axle", "wheel", "stopper"],
     interface_overhead=2.5  # bits (R_⇔ + R_⊇ interface)
@@ -240,7 +240,7 @@ imscribe audit --ensemble rotaxane_ensemble --status unverified
 
 ## 6.0 Advanced: The "Quantum Quarantine" Ensemble
 
-For speculative ensembles (quantum synthons, hypothetical topologies):
+For speculative ensembles (quantum imscriptions, hypothetical topologies):
 
 1.  Register all components with `--speculative` flag.
 2.  Isolate in `domain=quantum` or `domain=speculative`.
@@ -291,7 +291,7 @@ Successful ensembling implies the system has achieved a degree of modularity com
 
 > **Design specification.** `imscribe ensemble` CLI commands and `EnsembleCatalog` are planned. `ConstraintEngine.check_pair_compatibility` exists for pairwise checks; N-body extension is planned.
 
-*   **Input:** List of synthon names or JSON tuples.
+*   **Input:** List of imscription names or JSON tuples.
 *   **Engine:** Extended `ConstraintEngine` with N-body interaction support (planned).
 *   **Output:** Compatibility report + Emergent property flags + Thermodynamic analysis.
 *   **Integration:** Multi-component systems must pass Ensembler pairwise check before IΓ_HOTSWAP.md candidate screening. Emergent $\Phi_{\text{ctyogh}}$ (score ≥ 0.70) at ensemble level requires Varma probe on the *assembled* system, not individual components.

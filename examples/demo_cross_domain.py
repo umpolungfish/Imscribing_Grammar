@@ -1,7 +1,7 @@
 """
-Cross-Domain Synthon Demo — Phase 1 Validation
+Cross-Domain Imscription Demo — Phase 1 Validation
 
-Runs the three cross-domain synthons (tide pool, supply chain, drone swarm)
+Runs the three cross-domain imscriptions (tide pool, supply chain, drone swarm)
 through the full Imscribing Grammar analysis stack and reports:
 
   1. Axiom validation — which axioms fire, which are satisfied
@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import json
 
-from imscrbgrmr.cross_domain import register_cross_domain_synthons
+from imscrbgrmr.cross_domain import register_cross_domain_imscriptions
 from imscrbgrmr import global_catalog
 from imscrbgrmr.constraints import AxiomValidator
 from imscrbgrmr.thermodynamics import compute_eta_CP
@@ -42,14 +42,14 @@ ANALOGUE_DELTA_G = {
 
 def main():
     print(f"\n{SECTION}")
-    print("  CROSS-DOMAIN SYNTHON DEMO — Phase 1 Validation")
+    print("  CROSS-DOMAIN imscription DEMO — Phase 1 Validation")
     print(f"{SECTION}\n")
 
     # -----------------------------------------------------------------------
     # Registration
     # -----------------------------------------------------------------------
-    print("Registering cross-domain synthons...")
-    newly_registered = register_cross_domain_synthons()
+    print("Registering cross-domain imscriptions...")
+    newly_registered = register_cross_domain_imscriptions()
     cross_domain_names = [
         "tide_pool_ecological",
         "global_supply_chain",
@@ -62,7 +62,7 @@ def main():
         print(f"    Notation: {s.to_notation()}")
 
     # -----------------------------------------------------------------------
-    # Per-synthon analysis
+    # Per-imscription analysis
     # -----------------------------------------------------------------------
     engine = PerturbationEngine()
 
@@ -212,7 +212,7 @@ def main():
         n_ext = len(s.metadata.get("extensions_required", []))
         rows.append((name, s.metadata.get("domain_category", "?"), xi, n_ext))
 
-    print(f"  {'Synthon':<35} {'Domain':<14} {'ξ_CP (nats)':<14} {'Phase2 ext'}")
+    print(f"  {'Imscription':<35} {'Domain':<14} {'ξ_CP (nats)':<14} {'Phase2 ext'}")
     print(f"  {'-'*35} {'-'*14} {'-'*14} {'-'*10}")
     for r in rows:
         print(f"  {r[0]:<35} {r[1]:<14} {r[2]:<14} {r[3]}")

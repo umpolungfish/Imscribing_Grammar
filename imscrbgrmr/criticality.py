@@ -1,7 +1,7 @@
 """
 Criticality Detection — Utilities for identifying scale-free behavior.
 
-Implements methods to detect when a synthon operates at the G-D degeneracy locus
+Implements methods to detect when a imscription operates at the G-D degeneracy locus
 (from QUANTIG.md Section VIII).
 
 At criticality:
@@ -19,7 +19,7 @@ from typing import Dict, List, Optional, Tuple, Any
 import numpy as np
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Granularity,
     Dimensionality,
     CriticalityPhase,
@@ -51,7 +51,7 @@ class CriticalityAnalysis:
 
 
 def estimate_correlation_length(
-    synthon: Synthon,
+    imscription: Imscription,
     system_size: float,
     order_parameter_fluctuation: float,
 ) -> float:
@@ -64,7 +64,7 @@ def estimate_correlation_length(
     where ν is the critical exponent (typically 0.5-1.0).
     
     Args:
-        synthon: Synthon to analyze
+        imscription: Imscription to analyze
         system_size: Characteristic system size
         order_parameter_fluctuation: Variance in order parameter
     
@@ -118,14 +118,14 @@ def detect_scale_free_behavior(
 
 
 def analyze_criticality(
-    synthon: Synthon,
+    imscription: Imscription,
     experimental_data: Optional[Dict[str, Any]] = None,
 ) -> CriticalityAnalysis:
     """
-    Comprehensive criticality analysis for a synthon.
+    Comprehensive criticality analysis for a imscription.
     
     Args:
-        synthon: Synthon to analyze
+        imscription: Imscription to analyze
         experimental_data: Optional experimental measurements
     
     Returns:
@@ -135,7 +135,7 @@ def analyze_criticality(
     confidence_factors: List[float] = []
     
     # Indicator 1: Explicit criticality phase assignment
-    if synthon.criticality_phase == CriticalityPhase.CRITICAL:
+    if imscription.criticality_phase == CriticalityPhase.CRITICAL:
         indicators["explicit_critical"] = True
         confidence_factors.append(0.9)
     else:
@@ -144,7 +144,7 @@ def analyze_criticality(
     
     # Indicator 2: Granularity degeneracy
     # At criticality, G should be ambiguous
-    if synthon.granularity == Granularity.MESOSCALE:
+    if imscription.granularity == Granularity.MESOSCALE:
         # Mesoscale often indicates proximity to criticality
         indicators["granularity_ambiguous"] = True
         confidence_factors.append(0.6)
@@ -153,8 +153,8 @@ def analyze_criticality(
         confidence_factors.append(0.3)
     
     # Indicator 3: Domain convergence
-    # Critical synthons often span multiple domains
-    num_domains = len(synthon.dimensionality.domains)
+    # Critical imscriptions often span multiple domains
+    num_domains = len(imscription.dimensionality.domains)
     if num_domains >= 2:
         indicators["multi_domain"] = True
         confidence_factors.append(0.7)
@@ -209,7 +209,7 @@ def analyze_criticality(
     indicators["confidence_pattern"] = str(_pattern)
     indicators["confidence_factors"] = [round(f, 3) for f in confidence_factors]
 
-    # Generate per-synthon recommendation incorporating actual evidence
+    # Generate per-imscription recommendation incorporating actual evidence
     _evidence_parts = []
     if indicators.get("explicit_critical"):
         _evidence_parts.append("Φ_c explicitly assigned")
@@ -275,7 +275,7 @@ def analyze_criticality(
 
 
 def check_axiom5_criticality(
-    synthon: Synthon,
+    imscription: Imscription,
     molecular_behavior: Optional[Dict[str, Any]] = None,
     supramolecular_behavior: Optional[Dict[str, Any]] = None,
     temporal_behavior: Optional[Dict[str, Any]] = None,
@@ -287,7 +287,7 @@ def check_axiom5_criticality(
     and temporal behavior without additional primitive information.
     
     Args:
-        synthon: Synthon to analyze
+        imscription: Imscription to analyze
         molecular_behavior: Behavior metrics at molecular scale
         supramolecular_behavior: Behavior metrics at supramolecular scale
         temporal_behavior: Behavior metrics at temporal scale
@@ -295,13 +295,13 @@ def check_axiom5_criticality(
     Returns:
         Dict with axiom validation results
     """
-    is_critical = synthon.criticality_phase == CriticalityPhase.CRITICAL
+    is_critical = imscription.criticality_phase == CriticalityPhase.CRITICAL
     
     if not is_critical:
         return {
             "axiom": "Axiom 5 (Criticality)",
             "applies": False,
-            "reason": "Synthon not at criticality",
+            "reason": "Imscription not at criticality",
             "is_critical": False,
         }
     
@@ -342,14 +342,14 @@ def check_axiom5_criticality(
 
 
 def find_criticality_candidates(
-    synthons: List[Synthon],
+    imscriptions: List[Imscription],
     min_confidence: float = 0.5,
 ) -> List[Dict[str, Any]]:
     """
-    Find synthons that may be operating at or near criticality.
+    Find imscriptions that may be operating at or near criticality.
     
     Args:
-        synthons: List of synthons to analyze
+        imscriptions: List of imscriptions to analyze
         min_confidence: Minimum confidence threshold
     
     Returns:
@@ -357,12 +357,12 @@ def find_criticality_candidates(
     """
     candidates = []
     
-    for synthon in synthons:
-        analysis = analyze_criticality(synthon)
+    for imscription in imscriptions:
+        analysis = analyze_criticality(imscription)
         
         if analysis.confidence >= min_confidence:
             candidates.append({
-                "synthon_name": synthon.name,
+                "imscription_name": imscription.name,
                 "analysis": analysis.to_dict(),
             })
     

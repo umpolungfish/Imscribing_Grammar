@@ -29,7 +29,7 @@ from dataclasses import dataclass, field
 
 try:
     from imscrbgrmr import (
-        Synthon, Dimensionality, Topology, RecognitionMode,
+        Imscription, Dimensionality, Topology, RecognitionMode,
         Polarity, Fidelity, Granularity, InteractionGrammar,
         KineticCharacter, CriticalityPhase,
         Criticality, Protection, Stoichiometry, Chirality,
@@ -118,7 +118,7 @@ For each primitive, answer the specific question:
 - Does this interaction control ONE pair (local), a MOTIF (mesoscale), or an ENTIRE network (global)?
 
 **Γ (Interaction Grammar):**
-- Does the synthon require ONE specific partner (AND/SPECIFIC), accept SEVERAL (AND/SELECTIVE),
+- Does the imscription require ONE specific partner (AND/SPECIFIC), accept SEVERAL (AND/SELECTIVE),
   or work with MANY (AND/BROAD)?
 - Is there ORDERED recognition requiring a prior binding event (SEQUENTIAL)?
 
@@ -159,7 +159,7 @@ You **MUST NOT** include **ANY** markdown formatting or code blocks.
 """
 
 EXTRACTION_PROMPT = """<role>
-You are a chemical reasoning assistant extracting mechanistic justifications for synthon primitive assignments.
+You are a chemical reasoning assistant extracting mechanistic justifications for imscription primitive assignments.
 You **MUST** ground every assignment in specific physical phenomena, **NOT** in description keywords.
 </role>
 
@@ -324,7 +324,7 @@ def _extract_with_llm(
     if result.justifications:
         validator = GroundingValidator()
         result.validation_result = validator.validate(
-            _create_placeholder_synthon(),
+            _create_placeholder_imscription(),
             result.justifications,
             result.delta_g_value,
             result.delta_g_justification,
@@ -458,7 +458,7 @@ def _extract_with_rules(
     # Validate
     validator = GroundingValidator()
     result.validation_result = validator.validate(
-        _create_placeholder_synthon(),
+        _create_placeholder_imscription(),
         justifications,
         delta_g_value,
         delta_g_justification,
@@ -467,9 +467,9 @@ def _extract_with_rules(
     return result
 
 
-def _create_placeholder_synthon() -> Synthon:
-    """Create a placeholder synthon for validation."""
-    return Synthon(
+def _create_placeholder_imscription() -> Imscription:
+    """Create a placeholder imscription for validation."""
+    return Imscription(
         name="placeholder",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,

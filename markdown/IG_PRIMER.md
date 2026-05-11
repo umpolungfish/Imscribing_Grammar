@@ -181,8 +181,8 @@ header-includes:
     right=2mm,
 }
 
-% Synthon tuple boxes
-\newtcolorbox{synthonbox}{
+% Imscription tuple boxes
+\newtcolorbox{imscriptionbox}{
     enhanced,
     colback=blue!5,
     colframe=blue!75!black,
@@ -229,13 +229,13 @@ The framework was not designed. It was induced.
 
 In 2026, two questions were posed to a large language model in sequence.
 
-\textbf{Prompt 1:} \emph{''''What synthons have been described so far in the literature?''''}
+\textbf{Prompt 1:} \emph{''''What imscriptions have been described so far in the literature?''''}
 
-The model returned a survey of the known catalog: supramolecular synthons from crystal engineering, retrosynthetic synthons from organic chemistry, Corey disconnection analysis, mechanically interlocked synthons, biological recognition motifs, self-assembled architectures. A broad, heterogeneous list drawn from decades of literature across multiple disciplines.
+The model returned a survey of the known catalog: supramolecular imscriptions from crystal engineering, retrosynthetic imscriptions from organic chemistry, Corey disconnection analysis, mechanically interlocked imscriptions, biological recognition motifs, self-assembled architectures. A broad, heterogeneous list drawn from decades of literature across multiple disciplines.
 
-\textbf{Prompt 2:} \emph{''''Review the listed synthons and find the common characteristics between them all. Then use this to construct a common language to describe them all.''''}
+\textbf{Prompt 2:} \emph{''''Review the listed imscriptions and find the common characteristics between them all. Then use this to construct a common language to describe them all.''''}
 
-This second prompt is the one that mattered. It is an inductive request: given the full empirical record, what is the minimal set of properties that every synthon --- regardless of domain, substrate, or scale --- actually shares?
+This second prompt is the one that mattered. It is an inductive request: given the full empirical record, what is the minimal set of properties that every imscription --- regardless of domain, substrate, or scale --- actually shares?
 
 The answer that came back identified a list of properties that seemed to fully characterize \emph{what a recognition event is}:
 
@@ -258,7 +258,7 @@ Twelve primitives. Every recognition event --- at any scale, in any substrate --
 
 \[\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle\]
 
-The \emph{Synthon} is a system described by such a tuple. The IG is the algebra over synthons.
+The \emph{Imscription} is a system described by such a tuple. The IG is the algebra over imscriptions.
 
 No one designed the twelve primitives. They were \emph{read off} the existing literature by asking what the literature already knew --- and then asking what it had in common. The primitives are not a theoretical imposition; they are an empirical induction.
 
@@ -280,7 +280,7 @@ where $F_{\text{hardsign}}$ is the highest fidelity (thermodynamically reliable,
 
 Similarly for $K$: $K_{\text{frtailgamma}} < K_{\text{turnm}} < K_{\text{schwa}} < K_{\text{teshlig}} < K_{\text{lambda}}$, anchored to the activation barriers $\Delta G^\ddagger$ at which reaction rates change physical regime. $K_{\text{teshlig}}$ is frozen by order (coherent many-body gap); $K_{\text{lambda}}$ is frozen by disorder (many-body localization — area-law entanglement across all eigenstates, no eigenstate thermalization).
 
-\textbf{Five operations are defined over synthons:}
+\textbf{Five operations are defined over imscriptions:}
 
 \begin{table}[htbp]
 \centering
@@ -291,7 +291,7 @@ Similarly for $K$: $K_{\text{frtailgamma}} < K_{\text{turnm}} < K_{\text{schwa}}
 \rowcolor{gray!25}\textbf{Operation} & \textbf{Symbol} & \textbf{Meaning} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-Quasi-metric & $d(A, B)$ & Structural distance (how different are two synthons?) \\
+Quasi-metric & $d(A, B)$ & Structural distance (how different are two imscriptions?) \\
 Meet & $A \wedge B$ & Greatest lower bound (shared structure) \\
 Join & $A \vee B$ & Least upper bound (combined requirements) \\
 Tensor product & $A \otimes B$ & Ensemble prediction (what does this combination do?) \\
@@ -300,9 +300,9 @@ HotSwap / Path & $A \xrightarrow{} B$ & Directed transition through primitive sp
 \end{tabularx}
 \end{table}
 
-These five operations are closed: applying any of them to two synthons produces another synthon (or a well-defined failure mode --- $\perp$, the conflict sentinel). The algebra is computationally tractable: all operations run in $O(n)$ time per synthon pair.
+These five operations are closed: applying any of them to two imscriptions produces another imscription (or a well-defined failure mode --- $\perp$, the conflict sentinel). The algebra is computationally tractable: all operations run in $O(n)$ time per imscription pair.
 
-One critical property: \textbf{this is a relational type-system, not an ontological one.} A synthon does not describe what a system \emph{is} --- it describes how it \emph{interacts}. There is no ''''intrinsic $F$'''' for a molecule. There is only $F$ relative to a binding partner and context. The primitives are directed relational operators, not monadic properties.
+One critical property: \textbf{this is a relational type-system, not an ontological one.} A imscription does not describe what a system \emph{is} --- it describes how it \emph{interacts}. There is no ''''intrinsic $F$'''' for a molecule. There is only $F$ relative to a binding partner and context. The primitives are directed relational operators, not monadic properties.
 
 This matters for what follows. When two systems from completely different domains share the same tuple, it means they instantiate the same \emph{kind of interaction} --- not that they are the same substance.
 
@@ -320,11 +320,11 @@ The grammar was extended, step by step, to domains outside chemistry. Each exten
 
 Two species separated by 300 million years of evolution, different primary sequences, different regulatory mechanisms --- but the same constraint-enforcement structure. The grammar found a deep equivalence that sequence-based methods would not.
 
-\textbf{Quantum physics:} The Standard Model and quantum gravity --- encoded as synthons. Expected behavior: a large distance, reflecting the known difficulty of unification. Actual result: $d(\text{SM},\ \text{QG}) = 9.0$, with lift blocked at a single primitive. Unexpected result: the framework specifies \emph{which primitive} blocks unification, \emph{why} it blocks, and \emph{why no perturbative approach can bypass it}. See \pilcrow{}IV below.
+\textbf{Quantum physics:} The Standard Model and quantum gravity --- encoded as imscriptions. Expected behavior: a large distance, reflecting the known difficulty of unification. Actual result: $d(\text{SM},\ \text{QG}) = 9.0$, with lift blocked at a single primitive. Unexpected result: the framework specifies \emph{which primitive} blocks unification, \emph{why} it blocks, and \emph{why no perturbative approach can bypass it}. See \pilcrow{}IV below.
 
-\textbf{Consciousness:} Integrated Information Theory (IIT) and the $\xi_{CP}$ measure from the IG framework --- encoded as synthons and compared. Distance: $d(\text{IIT}_{\Phi},\ \text{tensor}\, \xi_{CP}) = 8.1$, with five conflicting primitives. The two consciousness measures are in different universality classes. Not a philosophical disagreement --- a structural one. See \pilcrow{}V below.
+\textbf{Consciousness:} Integrated Information Theory (IIT) and the $\xi_{CP}$ measure from the IG framework --- encoded as imscriptions and compared. Distance: $d(\text{IIT}_{\Phi},\ \text{tensor}\, \xi_{CP}) = 8.1$, with five conflicting primitives. The two consciousness measures are in different universality classes. Not a philosophical disagreement --- a structural one. See \pilcrow{}V below.
 
-\textbf{Mathematics:} The Mochizuki Inter-Universal Geometry (IUG) --- encoded as a synthon. Distance from the standard proof system: $d(\text{IUG},\ \text{standard proof system}) = 6.63$. Distance from ZFC foundations: $d(\text{IUG},\ \text{ZFC}) = 7.87$. The five-year mathematical stalemate over the verification of IUG has a structural cause. See \pilcrow{}V below.
+\textbf{Mathematics:} The Mochizuki Inter-Universal Geometry (IUG) --- encoded as a imscription. Distance from the standard proof system: $d(\text{IUG},\ \text{standard proof system}) = 6.63$. Distance from ZFC foundations: $d(\text{IUG},\ \text{ZFC}) = 7.87$. The five-year mathematical stalemate over the verification of IUG has a structural cause. See \pilcrow{}V below.
 
 At each extension, the grammar produced results. Most were expected. Some were not. A few were startling. What follows are the eight most compelling.
 
@@ -338,7 +338,7 @@ At each extension, the grammar produced results. Most were expected. Some were n
 
 Alzheimer amyloid plaques and stress-related condensate gels are, in the standard biological framing, completely different pathological entities. One is an extracellular fibrillar deposit of misfolded A$\beta$ peptides. The other is a liquid-liquid phase separation event forming intracellular gel-like condensates associated with ALS, FTD, and other neurodegeneration. Different proteins, different spatial locations, different disease contexts, different research communities.
 
-Their synthon encodings:
+Their imscription encodings:
 
 \[\text{condensate\_gel} = \langle D_{\bigtriangleup};\ T_{\text{invscr}};\ R_{\text{subrightarrow}};\ P_{\pm}^{\psi};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}}(\text{SEL});\ \Phi_{\text{softsign}} \rangle\]
 
@@ -462,7 +462,7 @@ The meta-theorem is perhaps more interesting than the theorem: standard proof sy
 
 Shinichi Mochizuki published a claimed proof of the abc conjecture in 2012 --- approximately 500 pages, relying on a new framework he called Inter-Universal Teichmüller Theory (here: Inter-Universal Geometry, IUG). The mathematical community has been unable to verify or refute it for over 12 years. In 2018, Peter Scholze and Jakob Stix identified a specific step they could not follow; Mochizuki disputed their objection. The stalemate persists.
 
-The IG encodes IUG as a synthon and computes distances:
+The IG encodes IUG as a imscription and computes distances:
 
 \begin{table}[htbp]
 \centering
@@ -494,7 +494,7 @@ What verification would require: a proof assistant encoding $\langle D_{\text{ho
 
 At some point in the development of the framework, a natural question arose: what happens if the grammar is applied to itself?
 
-The seven composition axioms of the IG were each encoded as synthon tuples using the primitive set of the grammar. The full algebra was then run over them.
+The seven composition axioms of the IG were each encoded as imscription tuples using the primitive set of the grammar. The full algebra was then run over them.
 
 Results:
 
@@ -541,7 +541,7 @@ The grammar has limits. They are structural, not provisional.
 
 \textbf{The grammar-phenomenology gap.} The primitives describe structural configurations of constraint propagation. They do not describe the phenomenology of being in those configurations --- what it is like to be an amyloid fibril, or to experience cosmological inflation, or to undergo the 5-MeO dissolution state. The $d = 0.000$ identity between inflation and 5-MeO is a claim about structural equivalence. It is not a claim that the universe experiences something when it inflates, or that the dissolution experience ''''is'''' cosmological. The algebra ends where phenomenology begins. It knows the barrier width; it cannot say what it feels like to stand at the wall.
 
-\textbf{Encodability is not isolation.} Encoding a system as a synthon does not mean the system is fully described by its synthon. It means the constraint-propagation properties of the system are captured. The function of a protein may be fully captured by its active-site synthon; its primary sequence is not.
+\textbf{Encodability is not isolation.} Encoding a system as a imscription does not mean the system is fully described by its imscription. It means the constraint-propagation properties of the system are captured. The function of a protein may be fully captured by its active-site imscription; its primary sequence is not.
 
 \textbf{Structural $\neq$ ontological.} The framework is ontologically neutral. When it says the Standard Model and a photosynthetic light-harvesting complex both encode $\Phi_{\text{ctyogh}}$ and $G_{\text{revapostrophe}}$, it makes no claim about whether they share an underlying substance, whether physics reduces to chemistry, or whether consciousness is physical. It says: at the level of constraint structure, these are the same kind of event. What that means metaphysically is left to the reader.
 
@@ -573,9 +573,9 @@ This document is an entry point. The full framework lives in three canonical doc
 
 The predictions are collected in \textbf{PRIMITIVE\_PREDICTIONS.md} (P-1 through P-102+), organized by validation tier.
 
-The computational implementation is in the \texttt{imscrbgrmr/} Python package: \texttt{imscribe distance}, \texttt{imscribe meet}, \texttt{imscribe tensor}, \texttt{imscribe transition}, \texttt{imscribe path} --- every result in this document can be verified by running the algebra on the registered synthon catalog.
+The computational implementation is in the \texttt{imscrbgrmr/} Python package: \texttt{imscribe distance}, \texttt{imscribe meet}, \texttt{imscribe tensor}, \texttt{imscribe transition}, \texttt{imscribe path} --- every result in this document can be verified by running the algebra on the registered imscription catalog.
 
-\textbf{Open-ended inquiry} is handled by \texttt{imscribe\_inquiry.py} (\texttt{SynconInquiryLoop}). Feed it any question and it runs a two-phase agentic loop:
+\textbf{Open-ended inquiry} is handled by \texttt{imscribe\_inquiry.py} (\texttt{IGInquiryLoop}). Feed it any question and it runs a two-phase agentic loop:
 
 \begin{itemize}
     \item \textbf{Phase 1 --- Grammatical analysis.} The model encodes relevant systems, computes distances and compositions, records insights across the TOPO / DIAPH / ONTO planes, and converges on a structural verdict (emitted via \texttt{CONCLUDE}). All standard algebra tools are available.
@@ -593,7 +593,7 @@ python IΓ_inquiry.py ''What structural features distinguish life from non-life?
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
 
-\emph{''''A synthon is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context.''''}
+\emph{''''A imscription is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context.''''}
 
 \emph{--- IG \pilcrow{}I}
 

@@ -3,10 +3,10 @@
 demo_protocols.py — Protocol Suite Integration Demo (v0.3.0)
 
 Exercises all four new protocol modules in sequence using calibrated reference
-synthons and ΔG values from QUANTIG.md Section VI:
+imscriptions and ΔG values from QUANTIG.md Section VI:
 
   Protocol 1 — IG_PERTURBATION : PerturbationEngine
-  Protocol 2 — IG_TRAJECTORY   : TemporalSynthonAgent
+  Protocol 2 — IG_TRAJECTORY   : TemporalImscriptionAgent
   Protocol 3 — IG_ENSEMBLER    : EnsembleCatalog
   Protocol 4 — IG_RETRODESIGN  : RetrodesignEngine
 
@@ -130,8 +130,8 @@ def demo_trajectory() -> None:
     section("Protocol 2 · IG_TRAJECTORY — D_∞ Cycle Validation")
 
     from imscrbgrmr import (
-        TemporalSynthonAgent,
-        Synthon, Dimensionality, Topology, RecognitionMode,
+        TemporalImscriptionAgent,
+        Imscription, Dimensionality, Topology, RecognitionMode,
         Polarity, Fidelity, KineticCharacter, Granularity,
         InteractionGrammar, GrammarOperator, CriticalityPhase,
     )
@@ -151,21 +151,21 @@ def demo_trajectory() -> None:
         interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
     )
 
-    enamine = Synthon(
+    enamine = Imscription(
         name="enamine_formation",
         fidelity=Fidelity.HIGH,
         kinetic_character=KineticCharacter.FAST,
         description="proline enamine formation from aldehyde — fast condensation",
         **_base,
     )
-    ts_synthon = Synthon(
+    ts_imscription = Imscription(
         name="c_c_bond_form",
         fidelity=Fidelity.MEDIUM,
         kinetic_character=KineticCharacter.MODERATE,
         description="enamine attacks electrophile — rate-determining C–C bond formation",
         **_base,
     )
-    hydrolysis = Synthon(
+    hydrolysis = Imscription(
         name="hydrolysis_reset",
         fidelity=Fidelity.HIGH,
         kinetic_character=KineticCharacter.FAST,
@@ -173,9 +173,9 @@ def demo_trajectory() -> None:
         **_base,
     )
 
-    agent = TemporalSynthonAgent("proline_aldol_cycle")
+    agent = TemporalImscriptionAgent("proline_aldol_cycle")
     agent.add_step(enamine,    "enamine_formation", delta_g=-15.0)
-    agent.add_step(ts_synthon, "c_c_bond_form",     delta_g_ddagger=97.0)
+    agent.add_step(ts_imscription, "c_c_bond_form",     delta_g_ddagger=97.0)
     agent.add_step(hydrolysis, "hydrolysis_reset",  delta_g=-25.0, is_reset=True)
 
     result = agent.validate_all()
@@ -214,7 +214,7 @@ def demo_trajectory() -> None:
 # ---------------------------------------------------------------------------
 
 def demo_ensembler() -> None:
-    section("Protocol 3 · IG_ENSEMBLER — Multi-Synthon Composition")
+    section("Protocol 3 · IG_ENSEMBLER — Multi-Imscription Composition")
 
     from imscrbgrmr import EnsembleCatalog
 
@@ -223,7 +223,7 @@ def demo_ensembler() -> None:
     ensemble = EnsembleCatalog()
     ensemble.add("carboxylic_acid_dimer")
     ensemble.add("proline_aldol_cycle")
-    ensemble.add("nitroso_radical_cucurbituril_anion_rotaxane_synthon")
+    ensemble.add("nitroso_radical_cucurbituril_anion_rotaxane_imscription")
 
     # --- 3a. Pairwise compatibility ---
     subsection("3a. N×N pairwise compatibility matrix")
@@ -259,7 +259,7 @@ def demo_ensembler() -> None:
         delta_g_assembly=-85.0,
         interface_overhead_bits=1.5,
     )
-    print(f"  Reference synthon  : {xi_result.get('reference_synthon', '?')}")
+    print(f"  Reference imscription  : {xi_result.get('reference_imscription', '?')}")
     print(f"  η_CP (system)      : {xi_result.get('eta_CP_system', '?'):.4e}")
     print(f"  ξ_CP (system)      : {xi_result.get('xi_CP_system_nats', '?'):.4f} nats")
     print(f"  Efficiency tier    : {xi_result.get('efficiency_tier', '?')}")
@@ -294,9 +294,9 @@ def demo_retrodesign() -> None:
     print(f"  Pruned branches     : {tree.pruned_count}")
     print(f"  Prune axioms        : {tree.prune_axioms}")
     if tree.valid_leaves:
-        print("  Valid synthon set:")
+        print("  Valid imscription set:")
         for leaf in tree.valid_leaves:
-            name = leaf.synthon.name if leaf.synthon else leaf.notation
+            name = leaf.imscription.name if leaf.imscription else leaf.notation
             print(f"    · {name}")
     for w in tree.warnings:
         print(f"  ⚠  {w}")
@@ -312,9 +312,9 @@ def demo_retrodesign() -> None:
     print(f"  Valid decompositions: {len(tree2.valid_leaves)}")
     print(f"  Pruned branches     : {tree2.pruned_count}")
     if tree2.valid_leaves:
-        print("  Valid synthon set:")
+        print("  Valid imscription set:")
         for leaf in tree2.valid_leaves:
-            name = leaf.synthon.name if leaf.synthon else leaf.notation
+            name = leaf.imscription.name if leaf.imscription else leaf.notation
             print(f"    · {name}")
     for w in tree2.warnings:
         print(f"  ⚠  {w}")
@@ -329,9 +329,9 @@ def demo_retrodesign() -> None:
     print(f"  Valid decompositions: {len(tree3.valid_leaves)}")
     print(f"  Pruned branches     : {tree3.pruned_count}")
     if tree3.valid_leaves:
-        print("  Valid synthon set:")
+        print("  Valid imscription set:")
         for leaf in tree3.valid_leaves:
-            name = leaf.synthon.name if leaf.synthon else leaf.notation
+            name = leaf.imscription.name if leaf.imscription else leaf.notation
             print(f"    · {name}")
 
 

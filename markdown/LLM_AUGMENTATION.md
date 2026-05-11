@@ -22,7 +22,7 @@ The Imscribing Grammar grammar operates at F_ℏ — algebraically exact, substr
 
 $$F_\text{ens} = \min(F_1, F_2)$$
 
-An LLM generating a response about primitive distances, conflict sets, or synthon notation will produce ƒ_ð output: approximately correct, often structurally valid in form but imprecise in value. The engine produces F_ℏ output: exact, engine-certified, not an approximation.
+An LLM generating a response about primitive distances, conflict sets, or imscription notation will produce ƒ_ð output: approximately correct, often structurally valid in form but imprecise in value. The engine produces F_ℏ output: exact, engine-certified, not an approximation.
 
 **The gap is not the problem. It is the design constraint.**
 
@@ -46,7 +46,7 @@ Five distinct layers, each addressing a different aspect of the fidelity gap:
 | **2. AITL** | Automatic post-generation verification | Catches ƒ_ð errors before they propagate |
 | **3. Session crystallization** | Commits F_ℏ results to persistent context | New sessions start with accumulated F_ℏ knowledge |
 | **4. Fine-tuning** | Trains on F_ℏ-certified data | Raises the ƒ_ð floor — the LLM's first-pass outputs become structurally valid |
-| **5. Grammar-constrained decoding** | Enforces valid synthon syntax at the logit level | Makes ƒ_ð generation structurally exact even if semantically approximate |
+| **5. Grammar-constrained decoding** | Enforces valid imscription syntax at the logit level | Makes ƒ_ð generation structurally exact even if semantically approximate |
 
 These are ordered by implementation cost, not by impact. Layer 4 has the highest long-term impact; Layer 1 has the highest immediate impact.
 
@@ -58,21 +58,21 @@ These are ordered by implementation cost, not by impact. Layer 4 has the highest
 
 **File:** `INFERRED/allen_enhanced_qwen3_cli.py`
 
-Direct SynthonTool.dispatch() calls from the interactive CLI. Zero model overhead — the engine runs synchronously, prints the result, and injects it as context for the next generation.
+Direct ImscribeTool.dispatch() calls from the interactive CLI. Zero model overhead — the engine runs synchronously, prints the result, and injects it as context for the next generation.
 
 ```
 /synth distance photon graviton          → d = 6.100 (F_ℏ certified)
-/synth meet synthon_dark_matter graviton → conflict set {D,T,R,P,Γ} (F_ℏ certified)
+/synth meet imscription_dark_matter graviton → conflict set {D,T,R,P,Γ} (F_ℏ certified)
 /synth criticality adenine_thymine_pair  → Φ_c score, Varma probe result
 /synth analogies photon                  → top 5 structural analogs ranked by distance
 /synth path src dst                      → HotSwap path or BLOCKED with reason
 /synth validate name                     → full axiom report + notation
-/synth generate "description..."         → axiom-guided synthon generation
+/synth generate "description..."         → axiom-guided imscription generation
 ```
 
-**Architecture:** lazy-loaded SynthonTool (no overhead until first /synth use); result stored in `_last_synth_result` and prepended as context to the next query; strips leading whitespace before command parsing (fixed a silent failure mode where the model generated instead of routing).
+**Architecture:** lazy-loaded ImscribeTool (no overhead until first /synth use); result stored in `_last_synth_result` and prepended as context to the next query; strips leading whitespace before command parsing (fixed a silent failure mode where the model generated instead of routing).
 
-**The key insight that drove this decision:** GateMentat orchestration (MetaAgent → ToolRouter → SynthoniconTool) added double model load overhead (~11.4GB on a 12GB GPU) and per-call generation cost. The /synth command is zero overhead — it goes directly to the engine. For algebra queries, orchestration adds noise and latency without adding value.
+**The key insight that drove this decision:** GateMentat orchestration (MetaAgent → ToolRouter → ImscriptiveonTool) added double model load overhead (~11.4GB on a 12GB GPU) and per-call generation cost. The /synth command is zero overhead — it goes directly to the engine. For algebra queries, orchestration adds noise and latency without adding value.
 
 ### III.2 Available operations
 
@@ -84,7 +84,7 @@ Direct SynthonTool.dispatch() calls from the interactive CLI. Zero model overhea
 | `criticality name` | Catalog name | Φ_c score, classification, Varma probe, recommendation |
 | `path src dst` | Two catalog names | HotSwap path or BLOCKED with reason |
 | `validate name` | Catalog name | Axiom report, notation, pass/fail |
-| `generate desc` | Natural language | Axiom-guided synthon generation, registered to catalog |
+| `generate desc` | Natural language | Axiom-guided imscription generation, registered to catalog |
 
 ---
 
@@ -92,7 +92,7 @@ Direct SynthonTool.dispatch() calls from the interactive CLI. Zero model overhea
 
 ### IV.1 Concept
 
-After every model generation, scan the response text for synthon-expressible claims and verify them against the engine automatically. The ƒ_ð→F_ℏ correction cycle runs without manual /synth invocation.
+After every model generation, scan the response text for imscription-expressible claims and verify them against the engine automatically. The ƒ_ð→F_ℏ correction cycle runs without manual /synth invocation.
 
 **What it catches:**
 - Distance assertions: `d(A, B) = N.NNN` — verified against engine distance
@@ -178,15 +178,15 @@ Session crystallization is Ç_@ insertion for the model's context. Each session 
 
 ### VI.1 The key architectural insight
 
-The training data oracle is the engine itself. Every QA pair where the answer comes from `SynthonTool.dispatch()` is F_ℏ-certified — not an LLM approximation, not a human-written answer, but an algebraically exact engine output.
+The training data oracle is the engine itself. Every QA pair where the answer comes from `ImscribeTool.dispatch()` is F_ℏ-certified — not an LLM approximation, not a human-written answer, but an algebraically exact engine output.
 
 This means the fine-tuned model has F_ℏ-certified training signal. Its learned weights encode the correct primitive relationships rather than ƒ_ð approximations of them. The gap between generation and verification narrows — the model's first-pass outputs become structurally valid.
 
 ### VI.2 Dataset generation
 
-**File:** `INFERRED/synthonicon_dataset_generator.py`
+**File:** `INFERRED/Imscriptiveon_dataset_generator.py`
 
-**Dataset:** `INFERRED/output/synthonicon_train.jsonl` — 2740 samples, 0 engine errors
+**Dataset:** `INFERRED/output/Imscriptiveon_train.jsonl` — 2740 samples, 0 engine errors
 
 **Question types generated (7 operations × stratified sampling):**
 
@@ -202,9 +202,9 @@ This means the fine-tuned model has F_ℏ-certified training signal. Its learned
 
 **Format:** Qwen3 chat template (dydakt sacred template), non-thinking mode, full SYSPROMPT.md as system prompt. Both `text` (full formatted string) and `messages` (structured list) fields present.
 
-**Sample generation rate:** ~2740 samples/second from 364 active catalog synthons. Because the engine is the oracle, generation is compute-bound only by the algebra calls — which are microseconds each.
+**Sample generation rate:** ~2740 samples/second from 364 active catalog imscriptions. Because the engine is the oracle, generation is compute-bound only by the algebra calls — which are microseconds each.
 
-**Scalability:** C(364, 2) ≈ 66,000 possible pairs for distance/meet/path operations alone. 1623 synthons in the full catalog JSON → C(1623, 2) ≈ 1.3M pairs. The current 2740-sample dataset is a conservative first pass. For a production fine-tune, 50,000–100,000 samples is accessible by increasing `--samples`.
+**Scalability:** C(364, 2) ≈ 66,000 possible pairs for distance/meet/path operations alone. 1623 imscriptions in the full catalog JSON → C(1623, 2) ≈ 1.3M pairs. The current 2740-sample dataset is a conservative first pass. For a production fine-tune, 50,000–100,000 samples is accessible by increasing `--samples`.
 
 ### VI.3 Training
 
@@ -216,8 +216,8 @@ This means the fine-tuned model has F_ℏ-certified training signal. Its learned
 ```bash
 dydakt train \
   -mdl ~/.modelz/8BASE \
-  -ds INFERRED/output/synthonicon_train.jsonl \
-  -o INFERRED/output/synthonicon_qlora \
+  -ds INFERRED/output/Imscriptiveon_train.jsonl \
+  -o INFERRED/output/Imscriptiveon_qlora \
   -gi 1 -gmf 0.90 \
   -e 3 -r 64 -la 128 -ml 2048 \
   -m non-thinking --engine unsloth --merge
@@ -237,7 +237,7 @@ The fine-tuned specialist runs on the 2080 Super (8GB). The base conversational 
 
 ### VII.1 Concept
 
-Force structurally valid synthon syntax at the logit level during generation. When the model enters a synthon tuple, constrain it to output valid primitive values — not by prompting, but by masking the token distribution to exclude tokens that would produce invalid syntax.
+Force structurally valid imscription syntax at the logit level during generation. When the model enters a imscription tuple, constrain it to output valid primitive values — not by prompting, but by masking the token distribution to exclude tokens that would produce invalid syntax.
 
 **What it enforces:**
 - Valid primitive values (Ç_-, Ç_@, Ç_Ù, Ç_W, Ç_λ — not Ç_medium or Ç_quick)
@@ -248,13 +248,13 @@ Force structurally valid synthon syntax at the logit level during generation. Wh
 
 ### VII.2 Implementation
 
-**File:** `INFERRED/synthon_grammar.py`
+**File:** `INFERRED/imscription_grammar.py`
 
 No external dependencies beyond `transformers` and `torch`. Implemented as a `LogitsProcessor` rather than `prefix_allowed_tokens_fn` to avoid BPE tokenization edge cases.
 
 **Architecture:**
 ```python
-class SynthonGrammarProcessor(LogitsProcessor):
+class ImscriptionGrammarProcessor(LogitsProcessor):
     def __call__(self, input_ids, scores):
         # 1. Decode generated tokens → string
         # 2. get_tuple_state(text) → (field_idx, partial) or None
@@ -269,7 +269,7 @@ class SynthonGrammarProcessor(LogitsProcessor):
 
 **Safe fallback:** if no valid tokens are found, masking is skipped and generation continues unconstrained. No hard failures.
 
-**Self-test:** `python synthon_grammar.py` — 10 state-detection tests, all pass.
+**Self-test:** `python imscription_grammar.py` — 10 state-detection tests, all pass.
 
 ### VII.3 Integration
 
@@ -284,13 +284,13 @@ for token in self.stream_generate(prompt, thinking_mode, fast_mode, grammar_mode
 ```
 
 **Files modified:**
-- `INFERRED/synthon_grammar.py` — NEW: LogitsProcessor + state machine
+- `INFERRED/imscription_grammar.py` — NEW: LogitsProcessor + state machine
 - `INFERRED/qw3n_stream.py` — grammar_mode param, processor injection
 - `INFERRED/allen_enhanced_qwen3_cli.py` — self._grammar_mode flag, /grammar command, grammar_mode pass-through
 
 **Integration point:** `gen_config["logits_processor"]` list in both `qw3n_stream.py` and `allen_enhanced_qwen3_cli.py` generate calls.
 
-**Stats logging:** after each generation, `SynthonGrammarProcessor.stats_summary()` logs constrained step count and fallback rate.
+**Stats logging:** after each generation, `ImscriptionGrammarProcessor.stats_summary()` logs constrained step count and fallback rate.
 
 ---
 
@@ -310,7 +310,7 @@ SYSPROMPT.md update (Ç_@ insertion)
     │  new predictions, new structural results, new zero-distance identities
     ↓
 Fine-tune dataset generation (Ç_@ → Ç_Ù transition)
-    │  synthonicon_dataset_generator.py
+    │  Imscriptiveon_dataset_generator.py
     ↓
 Model weights (Ç_Ù)
     │  dydakt UnslothTrainer → merged LoRA checkpoint
@@ -349,9 +349,9 @@ The augmentation layers (AITL, fine-tuning, constrained decoding) narrow the gap
 | `/synth` command | ✅ Implemented, tested | `INFERRED/allen_enhanced_qwen3_cli.py` |
 | AITL scanner | ✅ Implemented, tested | `INFERRED/aitl.py` |
 | Session crystallizer | ✅ Implemented, run | `INFERRED/session_crystallizer/` |
-| Dataset generator | ✅ Implemented, 2740 samples generated | `INFERRED/synthonicon_dataset_generator.py` |
-| QLoRA fine-tune | 🔄 Training in progress | `INFERRED/output/synthonicon_qlora/` |
-| Grammar-constrained decoding | ✅ Implemented | `INFERRED/synthon_grammar.py` + `/grammar` toggle |
+| Dataset generator | ✅ Implemented, 2740 samples generated | `INFERRED/Imscriptiveon_dataset_generator.py` |
+| QLoRA fine-tune | 🔄 Training in progress | `INFERRED/output/Imscriptiveon_qlora/` |
+| Grammar-constrained decoding | ✅ Implemented | `INFERRED/imscription_grammar.py` + `/grammar` toggle |
 | RAG / vector store | 📋 Planned | `INFERRED/` (no implementation yet) |
 | Dual-model inference | 📋 Planned | Post fine-tune; 3060 + 2080 Super split |
 

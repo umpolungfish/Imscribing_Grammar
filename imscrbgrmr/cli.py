@@ -1,7 +1,7 @@
 """
-Imscribing Grammar CLI — Command-line interface for the Unified Synthonicon framework.
+Imscribing Grammar CLI — Command-line interface for the Unified Imscriptiveon framework.
 
-Enhanced with AI-powered synthon generation via AjintK framework.
+Enhanced with AI-powered imscription generation via AjintK framework.
 Accessible via `imscrbgrmr` or `imscribe` command.
 """
 import asyncio
@@ -25,7 +25,7 @@ from rich.tree import Tree
 from rich.markdown import Markdown
 
 from imscrbgrmr import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar,
     KineticCharacter,  # NEW
     TopoIndex,         # Ω — quantum extension
@@ -51,36 +51,23 @@ def _load_ig_catalog_into_global():
     _ig_path = _PROJECT_ROOT / "IG_catalog.json"
     if not _ig_path.exists():
         return
-    from imscrbgrmr.models import (
-        Dimensionality as _D, Topology as _T, RecognitionMode as _R,
-        Polarity as _P, Fidelity as _F, KineticCharacter as _K,
-        Granularity as _G, InteractionGrammar as _Gm, Criticality as _Ph,
-        Chirality as _H, Stoichiometry as _S, Protection as _Om, Synthon as _Sy,
-    )
+    from imscrbgrmr.models import Imscription as _Sy
     with open(_ig_path, encoding="utf-8") as _fh:
         _ig_entries = json.load(_fh)
-    for _e in _ig_entries:
-        if _e.get("name") in global_catalog._synthons:
-            continue
-        try:
-            global_catalog.register(_Sy(
-                name=_e["name"],
-                description=_e.get("description", ""),
-                dimensionality=_D(_e["Ð"]),
-                topology=_T(_e["Þ"]),
-                recognition_mode=_R(_e["Ř"]),
-                polarity=_P(_e["Φ"]),
-                fidelity=_F(_e["ƒ"]),
-                kinetic_character=_K(_e["Ç"]),
-                granularity=_G(_e["Γ"]),
-                grammar=_Gm(_e["ɢ"]),
-                criticality_phase=_Ph(_e["φ̂"]),
-                chirality=_H(_e["Ħ"]),
-                stoichiometry=_S(_e["Σ"]),
-                protection=_Om(_e["Ω"]),
-            ))
-        except Exception:
-            pass
+    # Batch mode: suppress per-entry disk saves (save once at the end)
+    global_catalog._batch_loading = True
+    try:
+        for _e in _ig_entries:
+            if _e.get("name") in global_catalog._imscriptions:
+                continue
+            try:
+                global_catalog.register(_Sy.from_dict(_e))
+            except Exception:
+                pass
+    finally:
+        global_catalog._batch_loading = False
+        # No save: IG_catalog.json is the source of truth; live entries are saved
+        # only when the user explicitly registers new ones via tool/agent commands.
 
 
 # =============================================================================
@@ -142,20 +129,20 @@ def menu_command():
 @click.option("--format", "-f", type=click.Choice(["text", "json", "notation"]), default="text", help="Output format.")
 def analyze(identifier: str, format: str):
     """
-    Analyze a registered synthon by name or notation string.
+    Analyze a registered imscription by name or notation string.
 
     IDENTIFIER is a catalog name (e.g. 'muon', 'ice_Ih', 'סַמָּאֵל') or a
     full notation string ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
     """
     try:
         # Try to get from catalog first
-        synthon = global_catalog.get(identifier)
+        imscription = global_catalog.get(identifier)
         
         # If not found, try to parse as notation
-        if not synthon and identifier.startswith("⟨") and identifier.endswith("⟩"):
+        if not imscription and identifier.startswith("⟨") and identifier.endswith("⟩"):
             notation = parse_notation(identifier)
-            synthon = Synthon(
-                name="unnamed_synthon",
+            imscription = Imscription(
+                name="unnamed_imscription",
                 dimensionality=notation.dimensionality,
                 topology=notation.topology,
                 recognition_mode=notation.recognition_mode,
@@ -165,28 +152,28 @@ def analyze(identifier: str, format: str):
                 interaction_grammar=notation.interaction_grammar
             )
         
-        if not synthon:
-            console.print(f"[red]Error: Synthon '{identifier}' not found in catalog and not a valid notation.[/red]")
+        if not imscription:
+            console.print(f"[red]Error: Imscription '{identifier}' not found in catalog and not a valid notation.[/red]")
             sys.exit(1)
             
         if format == "json":
-            console.print_json(synthon.to_json())
+            console.print_json(imscription.to_json())
         elif format == "notation":
-            console.print(synthon.to_notation())
+            console.print(imscription.to_notation())
         else:
             # Rich table for analysis
-            table = Table(title=f"Synthon Analysis: {synthon.name}")
+            table = Table(title=f"Imscription Analysis: {imscription.name}")
             table.add_column("Primitive", style="cyan")
             table.add_column("Value", style="magenta")
             table.add_column("Description", style="white")
 
-            table.add_row("Dimensionality", synthon.dimensionality.value, "Operating space")
-            table.add_row("Topology", synthon.topology.value, "Influence connectivity")
-            table.add_row("Recognition Mode", synthon.recognition_mode.value, "Interaction mechanism")
-            table.add_row("Polarity", synthon.polarity.value, "Directional character")
-            table.add_row("Fidelity", synthon.fidelity.value, "Information per event")
-            table.add_row("Granularity", synthon.granularity.value, "Correlation length")
-            _ig = synthon.interaction_grammar
+            table.add_row("Dimensionality", imscription.dimensionality.value, "Operating space")
+            table.add_row("Topology", imscription.topology.value, "Influence connectivity")
+            table.add_row("Recognition Mode", imscription.recognition_mode.value, "Interaction mechanism")
+            table.add_row("Polarity", imscription.polarity.value, "Directional character")
+            table.add_row("Fidelity", imscription.fidelity.value, "Information per event")
+            table.add_row("Granularity", imscription.granularity.value, "Correlation length")
+            _ig = imscription.interaction_grammar
             _ig_value = (
                 f"{_ig.operator.value}({_ig.tier})"
                 if hasattr(_ig, "operator") and hasattr(_ig, "tier")
@@ -195,10 +182,10 @@ def analyze(identifier: str, format: str):
             table.add_row("Interaction Grammar", _ig_value, "Partner selection logic")
             
             console.print(table)
-            console.print(Panel(f"[bold]Unified Notation:[/bold] {synthon.to_notation()}"))
+            console.print(Panel(f"[bold]Unified Notation:[/bold] {imscription.to_notation()}"))
             
     except Exception as e:
-        console.print(f"[red]Error analyzing synthon: {e}[/red]")
+        console.print(f"[red]Error analyzing imscription: {e}[/red]")
         sys.exit(1)
 
 
@@ -208,7 +195,7 @@ def analyze(identifier: str, format: str):
 
 @main.group()
 def catalog():
-    """Manage and search the synthon catalog."""
+    """Manage and search the imscription catalog."""
     pass
 
 
@@ -216,13 +203,17 @@ def catalog():
 @click.option("--domain", "-d", help="Filter by domain.")
 @click.option("--source", "-s", type=click.Choice(["json", "global"]), default="json",
               help="Catalog source: 'json' = IG_catalog.json (default), 'global' = in-memory global_catalog.")
-def list_synthons(domain: Optional[str], source: str):
-    """List all registered synthons.
+@click.option("--limit", "-n", default=50, show_default=True, help="Max entries to display (0 = all).")
+@click.option("--offset", default=0, show_default=True, help="Start at this entry index.")
+@click.option("--filter", "name_filter", default="", help="Show only names containing this string.")
+def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: int, name_filter: str):
+    """List registered imscriptions (default: first 50).
 
     By default reads from IG_catalog.json (the single source of truth).
     Use --source global to list the legacy in-memory global_catalog instead.
+    Use -n 0 to show all entries (slow for large catalogs).
     """
-    PRIM_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+    PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
@@ -240,53 +231,68 @@ def list_synthons(domain: Optional[str], source: str):
             try:
                 with open(_live_path, "r", encoding="utf-8") as _lf:
                     _live = json.load(_lf)
-                _live_synthons = _live.get("synthons", _live) if isinstance(_live, dict) else _live
-                for _e in _live_synthons:
+                _live_imscriptions = _live.get("imscriptions", _live) if isinstance(_live, dict) else _live
+                for _e in _live_imscriptions:
                     if isinstance(_e, dict) and _e.get("name") not in _seen_names:
                         entries.append(_e)
                         _seen_names.add(_e.get("name"))
             except Exception:
                 pass
 
-        table = Table(title=f"Registered Synthons — IG_catalog.json + live catalog ({len(entries)} entries)")
+        total = len(entries)
+        if name_filter:
+            entries = [e for e in entries if name_filter.lower() in e.get("name", "").lower()]
+        entries = entries[offset:]
+        if limit > 0:
+            page = entries[:limit]
+        else:
+            page = entries
+
+        showing = f"{offset + 1}–{offset + len(page)} of {total}"
+        if name_filter:
+            showing += f" (filter: '{name_filter}')"
+        table = Table(title=f"Imscriptions — {showing}")
         table.add_column("Name", style="cyan")
         table.add_column("Tuple", style="magenta")
         table.add_column("D", style="green")
 
-        for entry in entries:
+        for entry in page:
             name = entry.get("name", "?")
-            d_val = entry.get("D", "?")
+            d_val = entry.get("Ð", "?")
             vals = [entry.get(p, "?") for p in PRIM_ORDER]
             notation = "⟨" + "; ".join(vals) + "⟩"
             table.add_row(name, notation, d_val)
 
         console.print(table)
-        console.print(f"[bold]{len(entries)}[/bold] synthons found.")
+        if limit > 0 and len(entries) > limit:
+            console.print(f"[dim]Showing {len(page)} of {total} total. Use --offset {offset+limit} for next page, or -n 0 for all.[/dim]")
+        else:
+            console.print(f"[bold]{total}[/bold] imscriptions total.")
 
     elif domain:
-        synthons = global_catalog.search_by_domain(domain)
-        title = f"Registered Synthons (Domain: {domain})"
+        imscriptions = global_catalog.search_by_domain(domain)
+        title = f"Registered imscriptions (Domain: {domain})"
         table = Table(title=title)
         table.add_column("Name", style="cyan")
         table.add_column("Notation", style="magenta")
         table.add_column("Dimensionality", style="green")
-        for s in synthons:
+        for s in imscriptions:
             table.add_row(s.name, s.to_notation(), s.dimensionality.name)
         console.print(table)
-        console.print(f"[bold]{len(synthons)}[/bold] synthons found.")
+        console.print(f"[bold]{len(imscriptions)}[/bold] imscriptions found.")
 
     else:
         # source == "global"
-        synthons = list(global_catalog._synthons.values())
-        title = "Registered Synthons — global_catalog (in-memory)"
+        imscriptions = list(global_catalog._imscriptions.values())
+        title = "Registered imscriptions — global_catalog (in-memory)"
         table = Table(title=title)
         table.add_column("Name", style="cyan")
         table.add_column("Notation", style="magenta")
         table.add_column("Dimensionality", style="green")
-        for s in synthons:
+        for s in imscriptions:
             table.add_row(s.name, s.to_notation(), s.dimensionality.name)
         console.print(table)
-        console.print(f"[bold]{len(synthons)}[/bold] synthons found.")
+        console.print(f"[bold]{len(imscriptions)}[/bold] imscriptions found.")
 
 
 @catalog.command(name="auto-stoichiometry")
@@ -318,7 +324,7 @@ def auto_stoichiometry(dry_run: bool, limit: int):
     }
 
     candidates = [
-        s for s in global_catalog._synthons.values()
+        s for s in global_catalog._imscriptions.values()
         if s.topology == Topology.CYCLIC_BOWTIE and not s.stoichiometry
     ]
     # Alphabetical ordering as proxy for insertion order / usage
@@ -360,7 +366,7 @@ def auto_stoichiometry(dry_run: bool, limit: int):
         )
     if flagged_manual:
         pct_missing = len(candidates) / max(1, sum(
-            1 for s in global_catalog._synthons.values()
+            1 for s in global_catalog._imscriptions.values()
             if s.topology == Topology.CYCLIC_BOWTIE
         )) * 100
         console.print(
@@ -440,11 +446,11 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
     JUNK_PATTERNS = [
         "quantum-chronos", "q-rad", "radical-chronosequential",
         "nitroso-aryl-biodagger", "quantum-photoredox-chrono",
-        "speculative_quantum_synthon", "speculative quantum synthon",
+        "speculative_quantum_imscription", "speculative quantum imscription",
         "cumulene-α,ω-rigid-rod", "extended-allene-axial-linker",
         "orthogonal-axial [d2d] allene",
         "cumulene-α", "extended-allene", "axial-linker",
-        "time crystal synthon", "chronos-recurrer",
+        "time crystal imscription", "chronos-recurrer",
         "photoredox-chrono", "chronosequential",
     ]
 
@@ -457,13 +463,13 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
     topology_skipped_no_closing: List[str] = []
     purged: List[str] = []
 
-    all_synthons = list(global_catalog._synthons.values())
+    all_imscriptions = list(global_catalog._imscriptions.values())
 
     # -------------------------------------------------------------------------
     # --topology repair
     # -------------------------------------------------------------------------
     if fix_topology:
-        bowtie_entries = [s for s in all_synthons if s.topology == Topology.CYCLIC_BOWTIE]
+        bowtie_entries = [s for s in all_imscriptions if s.topology == Topology.CYCLIC_BOWTIE]
         if limit:
             bowtie_entries = bowtie_entries[:limit]
 
@@ -537,7 +543,7 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
             NETWORK_HEX_KEYWORDS, NETWORK_MIXED_KEYWORDS,
             NETWORK_INTERPENETRATING_KEYWORDS, NETWORK_SYM_KEYWORDS,
         )
-        net_entries = [s for s in all_synthons if s.topology == Topology.NETWORK]
+        net_entries = [s for s in all_imscriptions if s.topology == Topology.NETWORK]
         for s in net_entries:
             combined = (s.name + " " + (s.description or "")).lower()
             if any(kw in combined for kw in NETWORK_SYM_KEYWORDS):
@@ -579,12 +585,12 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
     # --purge-junk
     # -------------------------------------------------------------------------
     if purge_junk:
-        for s in all_synthons:
+        for s in all_imscriptions:
             name_lower = s.name.lower()
             if any(pat in name_lower for pat in JUNK_PATTERNS):
                 purged.append(s.name)
                 if not dry_run:
-                    del global_catalog._synthons[s.name]
+                    del global_catalog._imscriptions[s.name]
 
         table2 = Table(title=f"Junk Purge {'(dry-run)' if dry_run else ''}")
         table2.add_column("Entry", style="red")
@@ -605,8 +611,8 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
 @catalog.command(name="search")
 @click.option("--fidelity", "-f", type=click.Choice(["HIGH", "MEDIUM", "LOW"]), help="Filter by fidelity.")
 @click.option("--topology", "-t", help="Filter by topology symbol (e.g., T_bullseye).")
-def search_synthons(fidelity: Optional[str], topology: Optional[str]):
-    """Search for synthons by primitives."""
+def search_imscriptions(fidelity: Optional[str], topology: Optional[str]):
+    """Search for imscriptions by primitives."""
     query = {}
     if fidelity:
         query["fidelity"] = Fidelity[fidelity]
@@ -623,7 +629,7 @@ def search_synthons(fidelity: Optional[str], topology: Optional[str]):
         table.add_row(s.name, s.to_notation())
         
     console.print(table)
-    console.print(f"[bold]{len(results)}[/bold] synthons matched criteria.")
+    console.print(f"[bold]{len(results)}[/bold] imscriptions matched criteria.")
 
 
 # =============================================================================
@@ -633,8 +639,8 @@ def search_synthons(fidelity: Optional[str], topology: Optional[str]):
 @catalog.command(name="delete")
 @click.argument("names", nargs=-1, required=True)
 @click.option("--yes", "-y", is_flag=True, help="Skip confirmation prompt.")
-def delete_synthons(names: tuple, yes: bool):
-    """Delete one or more synthons from IG_catalog.json by name."""
+def delete_imscriptions(names: tuple, yes: bool):
+    """Delete one or more imscriptions from IG_catalog.json by name."""
     catalog_path = _PROJECT_ROOT / "IG_catalog.json"
     if not catalog_path.exists():
         console.print("[red]IG_catalog.json not found.[/red]")
@@ -689,9 +695,9 @@ def thermo(identifier: str, delta_g: Optional[float], temp: float):
     If delta-g is not provided, the tool will attempt to find reference values.
     """
     try:
-        synthon = global_catalog.get(identifier)
-        if not synthon:
-            console.print(f"[red]Error: Synthon '{identifier}' not found in catalog.[/red]")
+        imscription = global_catalog.get(identifier)
+        if not imscription:
+            console.print(f"[red]Error: Imscription '{identifier}' not found in catalog.[/red]")
             sys.exit(1)
             
         if delta_g is None:
@@ -707,9 +713,9 @@ def thermo(identifier: str, delta_g: Optional[float], temp: float):
                 console.print(f"[red]Error: Please provide --delta-g explicitly.[/red]")
                 sys.exit(1)
                 
-        result = compute_eta_CP(synthon, delta_g, temp)
+        result = compute_eta_CP(imscription, delta_g, temp)
         
-        console.print(Panel(f"[bold]Thermodynamic Analysis: {synthon.name}[/bold]\n"
+        console.print(Panel(f"[bold]Thermodynamic Analysis: {imscription.name}[/bold]\n"
                             f"ΔG: {delta_g:.2f} kJ/mol\n"
                             f"T: {temp:.2f} K"))
         
@@ -726,7 +732,7 @@ def thermo(identifier: str, delta_g: Optional[float], temp: float):
         
         # Landauer benchmark
         from imscrbgrmr.thermodynamics import benchmark_against_landauer
-        bench = benchmark_against_landauer(synthon, delta_g)
+        bench = benchmark_against_landauer(imscription, delta_g)
         console.print(f"\n[bold]Landauer Overhead:[/bold] {bench['overhead_ratio']:.1e}× theoretical limit")
         
     except Exception as e:
@@ -755,8 +761,8 @@ _PRIM_ATTR = {
 _PRIMITIVE_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
 
 
-def _synthon_to_tuple(synthon) -> Dict[str, str]:
-    return {p: _PRIM_ATTR[p](synthon) for p in _PRIMITIVE_ORDER}
+def _imscription_to_tuple(imscription) -> Dict[str, str]:
+    return {p: _PRIM_ATTR[p](imscription) for p in _PRIMITIVE_ORDER}
 
 
 def _agent_resolve_conflict(
@@ -820,7 +826,7 @@ Preserve this description verbatim in the encode_system call:
 
 
 def _register_to_json_catalog(
-    synthon,
+    imscription,
     description: str = "",
     *,
     no_register: bool = False,
@@ -834,11 +840,11 @@ def _register_to_json_catalog(
     if catalog_path is None:
         catalog_path = _PROJECT_ROOT / "IG_catalog.json"
 
-    proposed = _synthon_to_tuple(synthon)
+    proposed = _imscription_to_tuple(imscription)
     # Normalize name: lowercase + strip apostrophes/punctuation so "Liars_Paradox"
     # resolves to "liar_paradox" and conflicts against existing entries correctly.
     import re as _re
-    name = _re.sub(r"['’‘]", "", synthon.name).lower()
+    name = _re.sub(r"['’‘]", "", imscription.name).lower()
 
     # Load current disk state
     disk_entries: Dict[str, Dict] = {}
@@ -946,7 +952,7 @@ def _register_to_json_catalog(
 
 @main.command()
 @click.argument("description")
-@click.option("--name", "-n", help="Name for the generated synthon.")
+@click.option("--name", "-n", help="Name for the generated imscription.")
 @click.option("--delta-g", "-g", type=float, help="Free energy (kJ/mol) for thermodynamic analysis.")
 @click.option("--smiles", "-s", help="SMILES string for RDKit-based ΔG estimation (molecular systems only).")
 @click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral, openrouter.")
@@ -961,7 +967,7 @@ def _register_to_json_catalog(
 @click.option("--strict-grounding", is_flag=True, help="Block registration if any primitives fail grounding validation.")
 @click.option("--override-grounding", is_flag=True, help="Allow registration despite grounding failures (requires --override-reason).")
 @click.option("--override-reason", default=None, help="Justification for overriding grounding failure (required with --override-grounding).")
-@click.option("--speculative", is_flag=True, help="Register synthon in the 'speculative' domain (non-canonical or hypothetical systems).")
+@click.option("--speculative", is_flag=True, help="Register imscription in the 'speculative' domain (non-canonical or hypothetical systems).")
 @click.option("--guided", is_flag=True, help="Step-by-step guided generation: assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values.")
 def generate(
     description: str,
@@ -1032,8 +1038,8 @@ def generate(
             from agents.axiom_guided_generator import AxiomGuidedGeneratorAgent as AgentClass
             console.print("[cyan]Using AXIOM-GUIDED generation (validates 5 composition axioms)...[/cyan]")
         else:
-            from agents.synthon_generator_agent import SynthonGeneratorAgent as AgentClass
-            console.print("[cyan]Generating synthon from description...[/cyan]")
+            from agents.imscribe_generator_agent import ImscriptionGeneratorAgent as AgentClass
+            console.print("[cyan]Generating imscription from description...[/cyan]")
         
         # Load provider configuration
         config_path = Path(config_file) if config_file else None
@@ -1113,7 +1119,7 @@ def generate(
         if axiom_guided:
             # Axiom-guided generation
             result = asyncio.run(
-                agent.generate_validated_synthon(
+                agent.generate_validated_imscription(
                     description,
                     name=name,
                     delta_g=delta_g,
@@ -1139,7 +1145,7 @@ def generate(
                 )
             )
 
-            console.print(Panel(f"[bold green]Guided Synthon Generation Complete![/bold green]",
+            console.print(Panel(f"[bold green]Guided Imscription Generation Complete![/bold green]",
                                 title="Generation Result"))
         else:
             # Standard generation
@@ -1152,7 +1158,7 @@ def generate(
                 )
             )
 
-            console.print(Panel(f"[bold green]Synthon Generated Successfully![/bold green]",
+            console.print(Panel(f"[bold green]Imscription Generated Successfully![/bold green]",
                                 title="Generation Result"))
 
         # CLI-level registration with grounding flags (Fix 1)
@@ -1160,7 +1166,7 @@ def generate(
             domain = "speculative" if speculative else "molecular"
             try:
                 global_catalog.register(
-                    result.synthon,
+                    result.imscription,
                     grounding_result=grounding_result.validation_result if grounding_result else None,
                     strict_grounding=strict_grounding,
                     override_grounding=override_grounding,
@@ -1172,47 +1178,47 @@ def generate(
                 console.print(f"[red]✗ Registration blocked: {e}[/red]")
                 sys.exit(1)
 
-        # Synthon details table
-        table = Table(title=f"Synthon: {result.synthon.name}")
+        # Imscription details table
+        table = Table(title=f"Imscription: {result.imscription.name}")
         table.add_column("Primitive", style="cyan")
         table.add_column("Value", style="magenta")
 
-        table.add_row("Dimensionality", result.synthon.dimensionality.value)
-        table.add_row("Topology", result.synthon.topology.value)
-        table.add_row("Recognition Mode", result.synthon.recognition_mode.value)
-        table.add_row("Polarity", result.synthon.polarity.value)
-        table.add_row("Fidelity", result.synthon.fidelity.value)
-        table.add_row("Kinetic Character", result.synthon.kinetic_character.value)
-        table.add_row("Granularity", result.synthon.granularity.value)
+        table.add_row("Dimensionality", result.imscription.dimensionality.value)
+        table.add_row("Topology", result.imscription.topology.value)
+        table.add_row("Recognition Mode", result.imscription.recognition_mode.value)
+        table.add_row("Polarity", result.imscription.polarity.value)
+        table.add_row("Fidelity", result.imscription.fidelity.value)
+        table.add_row("Kinetic Character", result.imscription.kinetic_character.value)
+        table.add_row("Granularity", result.imscription.granularity.value)
 
         # Interaction Grammar (Γ)
-        ig = result.synthon.grammar
+        ig = result.imscription.grammar
         table.add_row("Interaction Grammar", ig.value)
 
         # Criticality Phase (Φ) — always show, default Phi_softsign
-        cp = result.synthon.criticality_phase
+        cp = result.imscription.criticality_phase
         if cp is None:
             from imscrbgrmr.models import CriticalityPhase as _CP
             cp = _CP.SUBCRITICAL
         table.add_row("Criticality Phase", cp.value)
 
         # Chirality (H)
-        ch = result.synthon.chirality
+        ch = result.imscription.chirality
         if ch is not None:
             table.add_row("Chirality (H)", ch.value)
 
         # Stoichiometry (S)
-        s_obj = result.synthon.stoichiometry
+        s_obj = result.imscription.stoichiometry
         if s_obj is not None:
             table.add_row("Stoichiometry", s_obj.value)
 
         # Topological Protection (Ω)
-        omega = result.synthon.protection
+        omega = result.imscription.protection
         if omega is not None:
             table.add_row("Topo. Protection (Ω)", omega.value)
 
         console.print(table)
-        console.print(f"\n[bold]Unified Notation:[/bold] {result.synthon.to_notation()}")
+        console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
         console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
 
         # Reasoning
@@ -1271,7 +1277,7 @@ def generate(
                 "MEDIUM": "F_ℇ — I_net 6–9 bits / ξ_CP 8.5–11.0 nats: context-dependent, reliable under right conditions",
                 "LOW": "F_ℓ — I_net < 6 bits / ξ_CP > 11.0 nats: probabilistic, fires unreliably",
             }
-            s = result.synthon
+            s = result.imscription
             _justifications = {
                 "dimensionality": _D_JUST.get(s.dimensionality.name, s.dimensionality.value),
                 "topology": _T_JUST.get(s.topology.name, s.topology.value),
@@ -1299,11 +1305,11 @@ def generate(
         if adversarial_check:
             console.print(f"\n[bold]Adversarial Axiom Validation:[/bold]")
             try:
-                from imscrbgrmr.adversarial_grounding import validate_full_synthon
+                from imscrbgrmr.adversarial_grounding import validate_full_imscription
                 
-                synthon_data = result.synthon.to_dict()
-                adversarial_results = validate_full_synthon(
-                    synthon_data, description, smiles
+                imscription_data = result.imscription.to_dict()
+                adversarial_results = validate_full_imscription(
+                    imscription_data, description, smiles
                 )
                 
                 violations = [
@@ -1354,14 +1360,14 @@ def generate(
                 try:
                     alt_dict = dict(alt)
                     alt_dict.setdefault("name", f"alt_{i}")
-                    alt_synthon = Synthon.from_dict(alt_dict)
-                    console.print(f"  {i}. {alt_synthon.to_notation()}")
+                    alt_imscription = Imscription.from_dict(alt_dict)
+                    console.print(f"  {i}. {alt_imscription.to_notation()}")
                 except Exception as alt_err:
                     console.print(f"  {i}. [yellow](could not render alternative: {alt_err})[/yellow]")
 
         # JSON-catalog registration with interactive conflict resolution
         _register_to_json_catalog(
-            result.synthon,
+            result.imscription,
             description=description,
             no_register=no_register,
             model=agent_config.get("model", ""),
@@ -1371,7 +1377,7 @@ def generate(
         if output:
             output_path = Path(output)
             output_data = {
-                "synthon": result.synthon.to_dict(),
+                "imscription": result.imscription.to_dict(),
                 "confidence": result.confidence,
                 "reasoning": result.reasoning,
                 "thermodynamic_metrics": result.thermodynamic_metrics,
@@ -1387,7 +1393,7 @@ def generate(
         traceback.print_exc()
         sys.exit(1)
     except Exception as e:
-        console.print(f"[red]Error generating synthon: {e}[/red]")
+        console.print(f"[red]Error generating imscription: {e}[/red]")
         import traceback
         traceback.print_exc()
         sys.exit(1)
@@ -1399,7 +1405,7 @@ def generate(
 
 @chem_group.command("generate-smiles")
 @click.argument("smiles")
-@click.option("--name", "-n", help="Name for the generated synthon.")
+@click.option("--name", "-n", help="Name for the generated imscription.")
 @click.option("--functional-groups", "-f", help="Comma-separated list of functional groups.")
 @click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral.")
 @click.option("--model", "-m", default=None, envvar="IG_MODEL", help="Model ID (env: IG_MODEL). Uses provider default if unset.")
@@ -1425,7 +1431,7 @@ def generate_smiles(
         imscribe generate-smiles "CC(=O)O" --provider deepseek --name acetic_acid
     """
     try:
-        from agents.synthon_generator_agent import SynthonGeneratorAgent
+        from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
         from imscrbgrmr.provider_config import build_agent_config, get_provider_config
 
         # Load provider configuration
@@ -1451,11 +1457,11 @@ def generate_smiles(
             max_tokens=4000,
         )
         
-        agent = SynthonGeneratorAgent(agent_config)
+        agent = ImscriptionGeneratorAgent(agent_config)
 
         fg_list = functional_groups.split(",") if functional_groups else None
 
-        console.print(f"[cyan]Analyzing SMILES and generating synthon...[/cyan]")
+        console.print(f"[cyan]Analyzing SMILES and generating imscription...[/cyan]")
         console.print(f"[dim]SMILES: {smiles}[/dim]")
         console.print(f"[dim]Provider: {provider}/{agent_config['model']}[/dim]\n")
 
@@ -1469,32 +1475,32 @@ def generate_smiles(
         )
 
         # Display results
-        console.print(Panel(f"[bold green]Synthon Generated from SMILES![/bold green]",
+        console.print(Panel(f"[bold green]Imscription Generated from SMILES![/bold green]",
                             title="Generation Result"))
 
-        table = Table(title=f"Synthon: {result.synthon.name}")
+        table = Table(title=f"Imscription: {result.imscription.name}")
         table.add_column("Primitive", style="cyan")
         table.add_column("Value", style="magenta")
 
         for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Interaction Grammar"]:
             key = prim.lower().replace(" ", "_")
-            value = getattr(result.synthon, key)
+            value = getattr(result.imscription, key)
             table.add_row(prim, value.value)
 
         console.print(table)
-        console.print(f"\n[bold]Unified Notation:[/bold] {result.synthon.to_notation()}")
+        console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
         console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
         console.print(f"\n[bold]AI Reasoning:[/bold]")
         console.print(Markdown(result.reasoning))
 
         if not no_register:
-            console.print(f"\n[green]✓ Registered to catalog as '{result.synthon.name}'[/green]")
+            console.print(f"\n[green]✓ Registered to catalog as '{result.imscription.name}'[/green]")
 
     except ImportError:
         console.print("[red]Error: AjintK framework not available.[/red]")
         sys.exit(1)
     except Exception as e:
-        console.print(f"[red]Error generating synthon from SMILES: {e}[/red]")
+        console.print(f"[red]Error generating imscription from SMILES: {e}[/red]")
         sys.exit(1)
 
 
@@ -1503,31 +1509,31 @@ def generate_smiles(
 # =============================================================================
 
 @main.command()
-@click.argument("synthons", nargs=-1, required=True)
-@click.option("--delta-g", "-g", type=float, multiple=True, help="ΔG values for each synthon.")
+@click.argument("imscriptions", nargs=-1, required=True)
+@click.option("--delta-g", "-g", type=float, multiple=True, help="ΔG values for each imscription.")
 @click.option("--include-thermo", "-t", is_flag=True, help="Include thermodynamic comparison.")
-def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
+def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
     """
-    Compare multiple synthons side-by-side.
+    Compare multiple imscriptions side-by-side.
 
     Examples:
         imscrbgrmr compare muon electron tau_lepton
         imscrbgrmr compare ising_3d quantum_gravity allosteric_domain --include-thermo
     """
     try:
-        if len(synthons) < 2:
-            console.print("[red]Error: Provide at least two synthons to compare.[/red]")
+        if len(imscriptions) < 2:
+            console.print("[red]Error: Provide at least two imscriptions to compare.[/red]")
             sys.exit(1)
 
-        # Load synthons
-        loaded_synthons = []
-        for name in synthons:
+        # Load imscriptions
+        loaded_imscriptions = []
+        for name in imscriptions:
             s = global_catalog.get(name)
             if not s:
                 # Try parsing as notation
                 if name.startswith("⟨") and name.endswith("⟩"):
                     notation = parse_notation(name)
-                    s = Synthon(
+                    s = Imscription(
                         name=name,
                         dimensionality=notation.dimensionality,
                         topology=notation.topology,
@@ -1538,14 +1544,14 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
                         interaction_grammar=notation.interaction_grammar,
                     )
                 else:
-                    console.print(f"[red]Error: Synthon '{name}' not found.[/red]")
+                    console.print(f"[red]Error: Imscription '{name}' not found.[/red]")
                     sys.exit(1)
-            loaded_synthons.append(s)
+            loaded_imscriptions.append(s)
 
         # Comparison table
-        table = Table(title=f"Synthon Comparison ({len(loaded_synthons)} synthons)")
+        table = Table(title=f"Imscription Comparison ({len(loaded_imscriptions)} imscriptions)")
         table.add_column("Primitive", style="cyan")
-        for s in loaded_synthons:
+        for s in loaded_imscriptions:
             table.add_column(s.name, style="magenta")
 
         primitives = [
@@ -1561,35 +1567,35 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
 
         for prim_name, attr_name in primitives:
             row = [prim_name]
-            for s in loaded_synthons:
+            for s in loaded_imscriptions:
                 value = getattr(s, attr_name)
                 row.append(value.value)
             table.add_row(*row)
 
         # Φ (criticality phase) — enum
         row = ["Criticality (Φ)"]
-        for s in loaded_synthons:
+        for s in loaded_imscriptions:
             cp = getattr(s, "criticality_phase", None)
             row.append(cp.value if cp is not None else "—")
         table.add_row(*row)
 
         # H (chirality / temporal depth) — enum
         row = ["Chirality (H)"]
-        for s in loaded_synthons:
+        for s in loaded_imscriptions:
             ch = getattr(s, "chirality", None)
             row.append(ch.value if ch is not None else "—")
         table.add_row(*row)
 
         # S (stoichiometry) — enum
         row = ["Stoichiometry (S)"]
-        for s in loaded_synthons:
+        for s in loaded_imscriptions:
             stoi = getattr(s, "stoichiometry", None)
             row.append(stoi.value if stoi is not None else "—")
         table.add_row(*row)
 
         # Ω (topological protection) — always set, always show
         row = ["Topo. Protection (Ω)"]
-        for s in loaded_synthons:
+        for s in loaded_imscriptions:
             omega = getattr(s, "protection", None)
             row.append(omega.value if omega is not None else "Ω_closeepsilon")
         table.add_row(*row)
@@ -1598,18 +1604,18 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
 
         # Thermodynamic comparison if requested
         if include_thermo and delta_g:
-            if len(delta_g) != len(loaded_synthons):
-                console.print(f"[yellow]Warning: {len(delta_g)} ΔG values provided for {len(loaded_synthons)} synthons. Skipping thermo comparison.[/yellow]")
+            if len(delta_g) != len(loaded_imscriptions):
+                console.print(f"[yellow]Warning: {len(delta_g)} ΔG values provided for {len(loaded_imscriptions)} imscriptions. Skipping thermo comparison.[/yellow]")
             else:
                 console.print(f"\n[bold]Thermodynamic Comparison:[/bold]")
                 thermo_table = Table(title="Efficiency Metrics")
-                thermo_table.add_column("Synthon", style="cyan")
+                thermo_table.add_column("Imscription", style="cyan")
                 thermo_table.add_column("ΔG (kJ/mol)", style="magenta")
                 thermo_table.add_column("η_CP", style="green")
                 thermo_table.add_column("ξ_CP (nats)", style="yellow")
 
                 pairs = []
-                for s, dg in zip(loaded_synthons, delta_g):
+                for s, dg in zip(loaded_imscriptions, delta_g):
                     result = compute_eta_CP(s, dg)
                     thermo_table.add_row(s.name, f"{dg:.2f}", f"{result.eta_CP:.2e}", f"{result.xi_CP:.4f}")
                     pairs.append((s, dg))
@@ -1623,7 +1629,7 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
                     console.print(f"\n[green]✓ Most efficient: {best[0].name} (ξ_CP = {best[1].xi_CP:.4f} nats)[/green]")
 
     except Exception as e:
-        console.print(f"[red]Error comparing synthons: {e}[/red]")
+        console.print(f"[red]Error comparing imscriptions: {e}[/red]")
         sys.exit(1)
 
 
@@ -1636,7 +1642,7 @@ def compare(synthons: tuple, delta_g: tuple, include_thermo: bool):
 def rebuild_index(force: bool):
     """Verify the analogy engine is reading from live catalog objects.
 
-    The isomorph engine (imscribe isomorphs) operates entirely on live Synthon
+    The isomorph engine (imscribe isomorphs) operates entirely on live Imscription
     objects — there is no pre-computed similarity index that can become stale.
     Any 100% match with an empty 'Differing' list for entries that should differ
     is caused by a missing primitive weight in CrossDomainAnalogyDetector, not
@@ -1667,14 +1673,14 @@ def rebuild_index(force: bool):
 
     # Verify all catalog entries are readable
     errors = 0
-    for synthon in global_catalog:
+    for imscription in global_catalog:
         try:
-            detector._extract_primitives(synthon)
+            detector._extract_primitives(imscription)
         except Exception as e:
-            console.print(f"  [red]Error reading {synthon.name}: {e}[/red]")
+            console.print(f"  [red]Error reading {imscription.name}: {e}[/red]")
             errors += 1
 
-    total = len(global_catalog._synthons)
+    total = len(global_catalog._imscriptions)
     if errors:
         console.print(f"\n[red]⚠ {errors}/{total} entries failed primitive extraction.[/red]")
     else:
@@ -1688,27 +1694,27 @@ def tree(domain: Optional[str]):
     """Display catalog as a tree view."""
     try:
         if domain:
-            synthons = global_catalog.search_by_domain(domain)
+            imscriptions = global_catalog.search_by_domain(domain)
         else:
-            synthons = list(global_catalog)
+            imscriptions = list(global_catalog)
 
         # Build tree by topology
-        by_topology: Dict[Topology, List[Synthon]] = {}
-        for s in synthons:
+        by_topology: Dict[Topology, List[Imscription]] = {}
+        for s in imscriptions:
             if s.topology not in by_topology:
                 by_topology[s.topology] = []
             by_topology[s.topology].append(s)
 
-        root_tree = Tree(f"Synthon Catalog{' (' + domain + ')' if domain else ''}")
+        root_tree = Tree(f"Imscription Catalog{' (' + domain + ')' if domain else ''}")
 
-        for topo, topo_synthons in sorted(by_topology.items(), key=lambda x: x[0].name):
+        for topo, topo_imscriptions in sorted(by_topology.items(), key=lambda x: x[0].name):
             topo_branch = root_tree.add(f"[bold]{topo.name}[/bold] ({topo.value})")
-            for s in topo_synthons:
+            for s in topo_imscriptions:
                 label = f"{s.name} [dim](F:{s.fidelity.name}, P:{s.polarity.name})[/dim]"
                 topo_branch.add(label)
 
         console.print(root_tree)
-        console.print(f"\n[bold]{len(synthons)}[/bold] synthons displayed.")
+        console.print(f"\n[bold]{len(imscriptions)}[/bold] imscriptions displayed.")
 
     except Exception as e:
         console.print(f"[red]Error building tree: {e}[/red]")
@@ -1727,19 +1733,19 @@ def export(format: str, output: Optional[str], domain: Optional[str]):
     """Export catalog to file."""
     try:
         if domain:
-            synthons = global_catalog.search_by_domain(domain)
+            imscriptions = global_catalog.search_by_domain(domain)
         else:
-            synthons = list(global_catalog)
+            imscriptions = list(global_catalog)
 
         if format == "json":
-            data = json.dumps([s.to_dict() for s in synthons], indent=2)
+            data = json.dumps([s.to_dict() for s in imscriptions], indent=2)
         elif format == "csv":
             import csv
             import io
             output_stream = io.StringIO()
             writer = csv.writer(output_stream)
             writer.writerow(["name", "dimensionality", "topology", "recognition_mode", "polarity", "fidelity", "granularity", "interaction_grammar", "description"])
-            for s in synthons:
+            for s in imscriptions:
                 writer.writerow([
                     s.name, s.dimensionality.value, s.topology.value,
                     s.recognition_mode.value, s.polarity.value, s.fidelity.value,
@@ -1748,12 +1754,12 @@ def export(format: str, output: Optional[str], domain: Optional[str]):
             data = output_stream.getvalue()
         elif format == "yaml":
             import yaml
-            data = yaml.dump([s.to_dict() for s in synthons], default_flow_style=False)
+            data = yaml.dump([s.to_dict() for s in imscriptions], default_flow_style=False)
 
         if output:
             with open(output, "w") as f:
                 f.write(data)
-            console.print(f"[green]✓ Exported {len(synthons)} synthons to {output}[/green]")
+            console.print(f"[green]✓ Exported {len(imscriptions)} imscriptions to {output}[/green]")
         else:
             console.print(data)
 
@@ -1786,7 +1792,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
     Run an agent from the command line.
 
     AGENT can be passed as a positional argument or via -a/--agent.
-    Default agent: SynthonGeneratorAgent.
+    Default agent: ImscriptionGeneratorAgent.
 
     Examples:
         imscribe agents run -d "carboxylic acid dimer" -g -52.0
@@ -1796,8 +1802,8 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
         imscribe agents run RetrodesignAgent -d carboxylic_acid_dimer
         imscribe agents run CriticalityHuntingAgent -p deepseek
     """
-    # Positional arg takes priority over -a flag; default to SynthonGeneratorAgent
-    agent_name = agent_arg or agent_opt or "SynthonGeneratorAgent"
+    # Positional arg takes priority over -a flag; default to ImscriptionGeneratorAgent
+    agent_name = agent_arg or agent_opt or "ImscriptionGeneratorAgent"
     # -d is optional for agents that don't need a description (e.g. CriticalityHuntingAgent)
     desc = desc or ""
     def _enum_value_str(v) -> str:
@@ -1833,7 +1839,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
 
         # ── Agent dispatch ────────────────────────────────────────────────────
         GENERATION_AGENTS = {
-            "SynthonGeneratorAgent", "AxiomGuidedGeneratorAgent",
+            "ImscriptionGeneratorAgent", "AxiomGuidedGeneratorAgent",
         }
         PROTOCOL_AGENTS = {
             "PerturbationDesignAgent", "EnsembleDesignAgent",
@@ -1906,11 +1912,11 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
             from agents.axiom_guided_generator import AxiomGuidedGeneratorAgent
             agent_obj = AxiomGuidedGeneratorAgent(config)
             result = asyncio.run(agent_obj.generate(desc, delta_g=delta_g, auto_register=True))
-            console.print(Panel(f"[bold green]Synthon Generated (Axiom-Guided)![/bold green]",
+            console.print(Panel(f"[bold green]Imscription Generated (Axiom-Guided)![/bold green]",
                                 title="Agent Result"))
-            s = result.synthon
+            s = result.imscription
             ig = s.interaction_grammar
-            table = Table(title=f"Synthon: {s.name}")
+            table = Table(title=f"Imscription: {s.name}")
             table.add_column("Primitive", style="cyan")
             table.add_column("Value", style="magenta")
             table.add_row("Dimensionality", _enum_value_str(s.dimensionality.value))
@@ -1926,16 +1932,16 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
             console.print(f"[bold]Axioms satisfied:[/bold] {result.axioms_satisfied}")
 
         else:
-            # Default: SynthonGeneratorAgent
-            from agents.synthon_generator_agent import SynthonGeneratorAgent
-            agent_obj = SynthonGeneratorAgent(config)
+            # Default: ImscriptionGeneratorAgent
+            from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
+            agent_obj = ImscriptionGeneratorAgent(config)
             result = asyncio.run(
                 agent_obj.generate_from_description(desc, delta_g=delta_g, auto_register=True)
             )
-            console.print(Panel(f"[bold green]Synthon Generated![/bold green]", title="Agent Result"))
-            s = result.synthon
+            console.print(Panel(f"[bold green]Imscription Generated![/bold green]", title="Agent Result"))
+            s = result.imscription
             ig = s.interaction_grammar
-            table = Table(title=f"Synthon: {s.name}")
+            table = Table(title=f"Imscription: {s.name}")
             table.add_column("Primitive", style="cyan")
             table.add_column("Value", style="magenta")
             table.add_row("Dimensionality", _enum_value_str(s.dimensionality.value))
@@ -1967,7 +1973,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
             if agent_name == "PerturbationDesignAgent":
                 jac = result.jacobian
                 output_data = {
-                    "agent": agent_name, "synthon": desc,
+                    "agent": agent_name, "imscription": desc,
                     "baseline_xi_CP": jac.baseline_xi_CP,
                     "jacobian": [
                         {"primitive": r.primitive, "name": r.primitive_name,
@@ -2027,11 +2033,11 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
                     ],
                 }
             else:
-                # SynthonGeneratorAgent / AxiomGuidedGeneratorAgent
-                s = result.synthon
+                # ImscriptionGeneratorAgent / AxiomGuidedGeneratorAgent
+                s = result.imscription
                 output_data = {
                     "agent": agent_name, "description": desc,
-                    "synthon": s.to_dict() if hasattr(s, "to_dict") else str(s),
+                    "imscription": s.to_dict() if hasattr(s, "to_dict") else str(s),
                     "confidence": getattr(result, "confidence", None),
                     "reasoning": getattr(result, "reasoning", None),
                     "thermodynamic_metrics": getattr(result, "thermodynamic_metrics", None),
@@ -2058,11 +2064,11 @@ def list_agents():
     agents_info = [
         # ── Generation agents ─────────────────────────────────────────────────
         {
-            "name": "SynthonGeneratorAgent",
+            "name": "ImscriptionGeneratorAgent",
             "group": "Generation",
-            "description": "AI-powered synthon generation from natural language or SMILES",
+            "description": "AI-powered imscription generation from natural language or SMILES",
             "capabilities": [
-                "natural_language_synthon_generation",
+                "natural_language_imscription_generation",
                 "smiles_analysis",
                 "primitive_assignment",
                 "thermodynamic_analysis",
@@ -2072,7 +2078,7 @@ def list_agents():
         {
             "name": "AxiomGuidedGeneratorAgent",
             "group": "Generation",
-            "description": "Axiom-constrained synthon generation with grounding validation",
+            "description": "Axiom-constrained imscription generation with grounding validation",
             "capabilities": [
                 "axiom_guided_assignment",
                 "axiom6_trajectory_validation",
@@ -2081,7 +2087,7 @@ def list_agents():
             ]
         },
         {
-            "name": "AutonomousSynthonDiscoveryAgent",
+            "name": "AutonomousImscriptionDiscoveryAgent",
             "group": "Generation",
             "description": "Multi-cycle autonomous discovery with perturbation steering",
             "capabilities": [
@@ -2093,7 +2099,7 @@ def list_agents():
         },
         # ── Domain analysis agents ────────────────────────────────────────────
         {
-            "name": "MolecularSynthonAgent",
+            "name": "MolecularImscriptionAgent",
             "group": "Domain",
             "description": "Molecular domain analysis and retrosynthesis",
             "capabilities": [
@@ -2104,7 +2110,7 @@ def list_agents():
             ]
         },
         {
-            "name": "SupramolecularSynthonAgent",
+            "name": "SupramolecularImscriptionAgent",
             "group": "Domain",
             "description": "Supramolecular assembly and crystal packing analysis",
             "capabilities": [
@@ -2114,7 +2120,7 @@ def list_agents():
             ]
         },
         {
-            "name": "TemporalSynthonAgent",
+            "name": "TemporalImscriptionAgent",
             "group": "Domain",
             "description": "Temporal domain and catalytic cycle analysis",
             "capabilities": [
@@ -2124,9 +2130,9 @@ def list_agents():
             ]
         },
         {
-            "name": "HybridSynthonAgent",
+            "name": "HybridImscriptionAgent",
             "group": "Domain",
-            "description": "Multi-dimensional synthon analysis (MOFs, etc.)",
+            "description": "Multi-dimensional imscription analysis (MOFs, etc.)",
             "capabilities": [
                 "spatial_framework_analysis",
                 "granularity_amplification",
@@ -2148,7 +2154,7 @@ def list_agents():
         {
             "name": "EnsembleDesignAgent",
             "group": "Protocol",
-            "description": "Goal-directed multi-synthon ensemble composition",
+            "description": "Goal-directed multi-imscription ensemble composition",
             "capabilities": [
                 "goal_directed_ensemble_search",
                 "pairwise_compatibility_scoring",
@@ -2195,11 +2201,11 @@ def list_agents():
 @click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral.")
 @click.option("--model", "-m", default=None, envvar="IG_MODEL", help="Model ID (env: IG_MODEL). Uses provider default if unset.")
 @click.argument("smiles")
-@click.option("--name", "-n", help="Name for the synthon.")
+@click.option("--name", "-n", help="Name for the imscription.")
 @click.option("--output", "-o", type=click.Path(), help="Save result to file.")
 def from_smiles(provider, model, smiles, name, output):
     """
-    Generate a synthon from SMILES using the agent.
+    Generate a imscription from SMILES using the agent.
 
     Examples:
         imscribe agents from-smiles "CC(=O)O" --name acetic_acid
@@ -2207,7 +2213,7 @@ def from_smiles(provider, model, smiles, name, output):
         imscribe agents from-smiles "CC(=O)O" --provider deepseek --name acetic_acid
     """
     try:
-        from agents.synthon_generator_agent import SynthonGeneratorAgent
+        from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
         from imscrbgrmr.provider_config import build_agent_config, get_provider_config
 
         # Load provider configuration
@@ -2231,7 +2237,7 @@ def from_smiles(provider, model, smiles, name, output):
             model=model,
             max_tokens=4000,
         )
-        agent = SynthonGeneratorAgent(config)
+        agent = ImscriptionGeneratorAgent(config)
 
         console.print(f"[cyan]Analyzing SMILES with agent...[/cyan]")
         console.print(f"[dim]SMILES: {smiles}[/dim]")
@@ -2245,20 +2251,20 @@ def from_smiles(provider, model, smiles, name, output):
             )
         )
         
-        console.print(Panel(f"[bold green]Synthon Generated from SMILES![/bold green]",
+        console.print(Panel(f"[bold green]Imscription Generated from SMILES![/bold green]",
                             title="Agent Result"))
         
-        table = Table(title=f"Synthon: {result.synthon.name}")
+        table = Table(title=f"Imscription: {result.imscription.name}")
         table.add_column("Primitive", style="cyan")
         table.add_column("Value", style="magenta")
         
         for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Interaction Grammar"]:
             key = prim.lower().replace(" ", "_")
-            value = getattr(result.synthon, key)
+            value = getattr(result.imscription, key)
             table.add_row(prim, value.value)
 
         console.print(table)
-        console.print(f"\n[bold]Unified Notation:[/bold] {result.synthon.to_notation()}")
+        console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
         console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
         console.print(f"\n[bold]AI Reasoning:[/bold]")
         console.print(Markdown(result.reasoning))
@@ -2266,7 +2272,7 @@ def from_smiles(provider, model, smiles, name, output):
         if output:
             output_path = Path(output)
             output_data = {
-                "synthon": result.synthon.to_dict(),
+                "imscription": result.imscription.to_dict(),
                 "smiles": smiles,
                 "confidence": result.confidence,
                 "reasoning": result.reasoning,
@@ -2275,7 +2281,7 @@ def from_smiles(provider, model, smiles, name, output):
                 json.dump(output_data, f, indent=2)
             console.print(f"\n[green]✓ Saved to {output_path}[/green]")
         
-        console.print(f"\n[green]✓ Registered to catalog as '{result.synthon.name}'[/green]")
+        console.print(f"\n[green]✓ Registered to catalog as '{result.imscription.name}'[/green]")
         
     except Exception as e:
         console.print(f"[red]Error running agent: {e}[/red]")
@@ -2292,9 +2298,9 @@ def from_smiles(provider, model, smiles, name, output):
 @click.option("--output", "-o", type=click.Path(), default=None, help="Output directory for results.")
 def discover(provider, model, cycles, duration, confidence, focus, output):
     """
-    Run autonomous synthon discovery agent.
+    Run autonomous imscription discovery agent.
     
-    The agent will continuously propose, validate, and register synthons
+    The agent will continuously propose, validate, and register imscriptions
     until the cycle or time limit is reached.
     
     Examples:
@@ -2303,8 +2309,8 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
         imscribe agents discover --provider qwen --cycles 100 --duration 120
     """
     try:
-        from agents.autonomous_synthon_discovery_agent import (
-            AutonomousSynthonDiscoveryAgent,
+        from agents.autonomous_imscription_discovery_agent import (
+            AutonomousImscriptionDiscoveryAgent,
             AutonomousRunConfig,
         )
         from imscrbgrmr.provider_config import build_agent_config, get_provider_config
@@ -2337,9 +2343,9 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
         )
 
         # Create and run agent
-        agent = AutonomousSynthonDiscoveryAgent(config)
+        agent = AutonomousImscriptionDiscoveryAgent(config)
         
-        console.print(Panel(f"[bold blue]Starting Autonomous Synthon Discovery[/bold blue]",
+        console.print(Panel(f"[bold blue]Starting Autonomous Imscription Discovery[/bold blue]",
                             title="Discovery Agent"))
         console.print(f"[dim]Provider: {provider}/{config['model']}[/dim]")
         console.print(f"[dim]Max cycles: {cycles}[/dim]")
@@ -2356,10 +2362,10 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
         console.print(Panel(f"[bold green]Discovery Complete![/bold green]",
                             title="Final Report"))
         
-        # Show recently registered synthons
-        recent = list(global_catalog._synthons.values())[-5:]
+        # Show recently registered imscriptions
+        recent = list(global_catalog._imscriptions.values())[-5:]
         if recent:
-            console.print("\n[bold]Recently Registered Synthons:[/bold]")
+            console.print("\n[bold]Recently Registered imscriptions:[/bold]")
             for s in recent:
                 if s.metadata.get("auto_discovered"):
                     console.print(f"  • {s.name}: {s.to_notation()}")
@@ -2379,11 +2385,11 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
 # =============================================================================
 
 @main.command()
-@click.argument("synthon_name", required=False)
+@click.argument("imscription_name", required=False)
 @click.option(
     "--all", "show_all",
     is_flag=True,
-    help="Show criticality analysis for all registered synthons",
+    help="Show criticality analysis for all registered imscriptions",
 )
 @click.option(
     "--min-confidence",
@@ -2391,10 +2397,10 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
     default=0.5,
     help="Minimum confidence threshold for candidates (default: 0.5)",
 )
-def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: float):
-    """Detect synthons at the critical point Φ_c (Lawvere self-reference condition).
+def criticality(imscription_name: Optional[str], show_all: bool, min_confidence: float):
+    """Detect imscriptions at the critical point Φ_c (Lawvere self-reference condition).
 
-    A synthon is critical when its internal hom space A^A admits a point-surjective
+    A imscription is critical when its internal hom space A^A admits a point-surjective
     map φ: A → A^A (Stage 4, L3). This is a necessary condition for self-modeling.
     Use --all to scan the catalog for Φ_c candidates.
     """
@@ -2403,8 +2409,8 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
         
         if show_all:
             # Find all candidates
-            all_synthons = list(global_catalog._synthons.values())
-            candidates = find_criticality_candidates(all_synthons, min_confidence)
+            all_imscriptions = list(global_catalog._imscriptions.values())
+            candidates = find_criticality_candidates(all_imscriptions, min_confidence)
             
             console.print(Panel.fit(
                 f"[bold]Criticality Analysis[/bold] (min confidence: {min_confidence})\n"
@@ -2444,7 +2450,7 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
                 _pattern = analysis.get("indicators", {}).get("confidence_pattern", "()")
                 _shared = _pattern_counts.get(_pattern, 1) > 1
 
-                console.print(f"\n[bold]{candidate['synthon_name']}[/bold]")
+                console.print(f"\n[bold]{candidate['imscription_name']}[/bold]")
                 _conf_note = " [yellow](shared pattern — see contamination warning above)[/yellow]" if _shared and _contamination_warning else ""
                 console.print(f"  Confidence: [{confidence_color}]{analysis['confidence']:.1%}[/{confidence_color}]{_conf_note}")
                 console.print(f"  Is Critical: {analysis['is_critical']}")
@@ -2458,17 +2464,17 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
             if not candidates:
                 console.print("[yellow]No criticality candidates found.[/yellow]")
         
-        elif synthon_name:
-            # Analyze specific synthon
-            synthon = global_catalog.get(synthon_name)
-            if not synthon:
-                console.print(f"[red]Synthon '{synthon_name}' not found.[/red]")
+        elif imscription_name:
+            # Analyze specific imscription
+            imscription = global_catalog.get(imscription_name)
+            if not imscription:
+                console.print(f"[red]Imscription '{imscription_name}' not found.[/red]")
                 sys.exit(1)
             
-            analysis = analyze_criticality(synthon)
+            analysis = analyze_criticality(imscription)
             
             console.print(Panel.fit(
-                f"[bold]Criticality Analysis: {synthon_name}[/bold]",
+                f"[bold]Criticality Analysis: {imscription_name}[/bold]",
                 border_style="cyan",
             ))
             
@@ -2490,7 +2496,7 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
             
             # Check Axiom 5 if critical
             if analysis.is_critical:
-                axiom5_result = check_axiom5_criticality(synthon)
+                axiom5_result = check_axiom5_criticality(imscription)
                 console.print(f"\n[bold]Self-reference closure:[/bold]")
                 console.print(f"  Applies: {axiom5_result.get('applies', False)}")
                 if "axiom_satisfied" in axiom5_result:
@@ -2500,21 +2506,21 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
         
         else:
             # Show summary
-            all_synthons = list(global_catalog._synthons.values())
+            all_imscriptions = list(global_catalog._imscriptions.values())
             critical_count = sum(
-                1 for s in all_synthons
+                1 for s in all_imscriptions
                 if s.criticality_phase == CriticalityPhase.CRITICAL
             )
             
             console.print(Panel.fit(
                 "[bold]Criticality Analysis[/bold]\n"
-                f"Total synthons: {len(all_synthons)}\n"
+                f"Total imscriptions: {len(all_imscriptions)}\n"
                 f"Explicitly critical: {critical_count}",
                 border_style="cyan",
             ))
             
             console.print("\n[bold]Usage:[/bold]")
-            console.print("  imscrbgrmr criticality <synthon_name>  # Analyze specific synthon")
+            console.print("  imscrbgrmr criticality <imscription_name>  # Analyze specific imscription")
             console.print("  imscrbgrmr criticality --all           # Find all candidates")
             console.print("\n[bold]Examples:[/bold]")
             console.print("  imscrbgrmr criticality mox_framework")
@@ -2532,14 +2538,14 @@ def criticality(synthon_name: Optional[str], show_all: bool, min_confidence: flo
 # =============================================================================
 
 @main.command()
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.option(
     "--output", "-o",
     type=click.Path(),
     help="Save validation report to file",
 )
-def validate(synthon_name: str, output: Optional[str]):
-    """Validate a synthon's tuple against primitive constraint rules.
+def validate(imscription_name: str, output: Optional[str]):
+    """Validate a imscription's tuple against primitive constraint rules.
 
     Reports: notation, Φ_c status, any active predictive rules, and
     optional JSON output. Full axiom validation against the current
@@ -2548,16 +2554,16 @@ def validate(synthon_name: str, output: Optional[str]):
     try:
         from imscrbgrmr import SymbolicReasoningEngine
 
-        synthon = global_catalog.get(synthon_name)
-        if not synthon:
-            console.print(f"[red]Synthon '{synthon_name}' not found.[/red]")
+        imscription = global_catalog.get(imscription_name)
+        if not imscription:
+            console.print(f"[red]Imscription '{imscription_name}' not found.[/red]")
             sys.exit(1)
 
         engine = SymbolicReasoningEngine(global_catalog)
-        report = engine.validate_grammar(synthon)
+        report = engine.validate_grammar(imscription)
 
         console.print(Panel.fit(
-            f"[bold]Validation: {synthon_name}[/bold]\n"
+            f"[bold]Validation: {imscription_name}[/bold]\n"
             f"Notation: {report['notation']}",
             border_style="cyan",
         ))
@@ -2587,7 +2593,7 @@ def validate(synthon_name: str, output: Optional[str]):
 
 
 @main.command()
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.option(
     "--min-similarity",
     type=float,
@@ -2618,14 +2624,14 @@ def validate(synthon_name: str, output: Optional[str]):
     help="Apply S weight strictly: exact stoichiometry match required for high-similarity results.",
 )
 def isomorphs(
-    synthon_name: str,
+    imscription_name: str,
     min_similarity: float,
     limit: int,
     exclude_flagged: bool,
     critical_only: bool,
     stoichiometry_aware: bool,
 ):
-    """Find cross-domain isomorphs to a synthon.
+    """Find cross-domain isomorphs to a imscription.
 
     Uses formal similarity metrics to find structural isomorphs across any
     domain — physical, mathematical, mythological, linguistic, or social.
@@ -2638,9 +2644,9 @@ def isomorphs(
         from imscrbgrmr import CrossDomainAnalogyDetector
         from imscrbgrmr.varma_probe import score_phi_c_candidacy, VarmaCorrelationData
 
-        synthon = global_catalog.get(synthon_name)
-        if not synthon:
-            console.print(f"[red]Synthon '{synthon_name}' not found.[/red]")
+        imscription = global_catalog.get(imscription_name)
+        if not imscription:
+            console.print(f"[red]Imscription '{imscription_name}' not found.[/red]")
             sys.exit(1)
 
         detector = CrossDomainAnalogyDetector()
@@ -2651,7 +2657,7 @@ def isomorphs(
             detector.PRIMITIVE_WEIGHTS["S"] = 0.12  # double the baseline 0.08
             console.print("[dim](--stoichiometry-aware: S weight raised to 0.12)[/dim]")
 
-        candidates = list(global_catalog._synthons.values())
+        candidates = list(global_catalog._imscriptions.values())
 
         if exclude_flagged:
             pre_count = len(candidates)
@@ -2681,11 +2687,11 @@ def isomorphs(
                 f"have Φ_c score > 0.5)[/dim]"
             )
 
-        results = detector.find_analogies(synthon, candidates, min_similarity)
+        results = detector.find_analogies(imscription, candidates, min_similarity)
         
         # Display results
         console.print(Panel.fit(
-            f"[bold]Cross-Domain Analogies: {synthon_name}[/bold]\n"
+            f"[bold]Cross-Domain Analogies: {imscription_name}[/bold]\n"
             f"Found {len(results)} analogy(ies) with similarity ≥ {min_similarity:.0%}",
             border_style="cyan",
         ))
@@ -2695,7 +2701,7 @@ def isomorphs(
             return
         
         for i, result in enumerate(results[:limit], 1):
-            console.print(f"\n[bold]{i}. {result.synthon_b}[/bold]")
+            console.print(f"\n[bold]{i}. {result.imscription_b}[/bold]")
             console.print(f"  Similarity: {result.similarity_score:.1%}")
             console.print(f"  Type: {result.analogy_type}")
             console.print(f"  Shared: {', '.join(result.shared_primitives)}")
@@ -2723,7 +2729,7 @@ def isomorphs(
     help="Minimum confidence threshold (default: 0.7)",
 )
 def rules(min_support: int, min_confidence: float):
-    """Discover predictive rules from the synthon catalog.
+    """Discover predictive rules from the imscription catalog.
     
     Uses inductive logic programming to discover rules of the form:
     IF (T = T_bullseye AND P = P_pipevar) THEN (F ≥ F_dh)
@@ -2732,8 +2738,8 @@ def rules(min_support: int, min_confidence: float):
         from imscrbgrmr import PredictiveRuleGenerator
         
         generator = PredictiveRuleGenerator()
-        synthons = list(global_catalog._synthons.values())
-        rules = generator.generate_rules(synthons, min_support, min_confidence)
+        imscriptions = list(global_catalog._imscriptions.values())
+        rules = generator.generate_rules(imscriptions, min_support, min_confidence)
         
         # Display results
         console.print(Panel.fit(
@@ -2747,7 +2753,7 @@ def rules(min_support: int, min_confidence: float):
             console.print("\n[bold]Try:[/bold]")
             console.print("  • Lowering --min-support")
             console.print("  • Lowering --min-confidence")
-            console.print("  • Adding more synthons to the catalog")
+            console.print("  • Adding more imscriptions to the catalog")
             return
         
         for i, rule in enumerate(rules, 1):
@@ -2782,23 +2788,23 @@ _PREFIX_ATTRACTOR = {
 _PREFIX_ATTRACTOR_THRESHOLD = 7  # flag if ≥ this many primitives match attractor
 
 
-def _attractor_match_score(synthon) -> int:
-    """Return how many primitives of synthon match the pre-fix attractor tuple."""
+def _attractor_match_score(imscription) -> int:
+    """Return how many primitives of imscription match the pre-fix attractor tuple."""
     score = 0
     a = _PREFIX_ATTRACTOR
-    if synthon.dimensionality.name == a["dimensionality"]:
+    if imscription.dimensionality.name == a["dimensionality"]:
         score += 1
-    if synthon.topology.name == a["topology"]:
+    if imscription.topology.name == a["topology"]:
         score += 1
-    if synthon.recognition_mode.name == a["recognition_mode"]:
+    if imscription.recognition_mode.name == a["recognition_mode"]:
         score += 1
-    if synthon.polarity.name in a["polarity_values"]:
+    if imscription.polarity.name in a["polarity_values"]:
         score += 1
-    if synthon.fidelity.name == a["fidelity"]:
+    if imscription.fidelity.name == a["fidelity"]:
         score += 1
-    if synthon.kinetic_character.name == a["kinetic_character"]:
+    if imscription.kinetic_character.name == a["kinetic_character"]:
         score += 1
-    if synthon.granularity.name == a["granularity"]:
+    if imscription.granularity.name == a["granularity"]:
         score += 1
     return score
 
@@ -2880,11 +2886,11 @@ def audit(
     if not any([run_pass1, run_pass2, run_pass3, run_pass4, primitive, status]):
         run_pass1 = run_pass2 = True
 
-    all_flagged: List = []   # (synthon, entry, entry_status, flag_reasons, pass_id)
+    all_flagged: List = []   # (imscription, entry, entry_status, flag_reasons, pass_id)
     audited_count = 0
 
-    for synthon in global_catalog:
-        entry = global_catalog.get_entry_metadata(synthon.name)
+    for imscription in global_catalog:
+        entry = global_catalog.get_entry_metadata(imscription.name)
         entry_status = entry.grounding_status if entry else "unverified"
 
         # Filter by status if requested
@@ -2895,13 +2901,13 @@ def audit(
         if primitive and value:
             prim_lower = value.lower()
             prim_map = {
-                "D": synthon.dimensionality.name.lower(),
-                "T": synthon.topology.name.lower(),
-                "R": synthon.recognition_mode.name.lower(),
-                "P": synthon.polarity.name.lower(),
-                "F": synthon.fidelity.name.lower(),
-                "K": synthon.kinetic_character.name.lower(),
-                "G": synthon.granularity.name.lower(),
+                "D": imscription.dimensionality.name.lower(),
+                "T": imscription.topology.name.lower(),
+                "R": imscription.recognition_mode.name.lower(),
+                "P": imscription.polarity.name.lower(),
+                "F": imscription.fidelity.name.lower(),
+                "K": imscription.kinetic_character.name.lower(),
+                "G": imscription.granularity.name.lower(),
             }
             if prim_lower not in prim_map.get(primitive, ""):
                 continue
@@ -2911,24 +2917,24 @@ def audit(
         flag_pass_id = None
 
         # --- Pass 1: D_∞ closed-cycle grounding ---
-        if run_pass1 and synthon.dimensionality == Dimensionality.TEMPORAL:
+        if run_pass1 and imscription.dimensionality == Dimensionality.TEMPORAL:
             from imscrbgrmr.constraints import AxiomValidator
-            ax6_result = AxiomValidator.validate_axiom6_temporal_grounding(synthon)
+            ax6_result = AxiomValidator.validate_axiom6_temporal_grounding(imscription)
             if ax6_result.violated:
                 # Primary check: structured grounding block failed
                 flag_reasons.append("Pass 1 / Axiom 6: D_∞ without closed-cycle evidence")
                 flag_pass_id = "audit_pass_1"
             else:
                 # Structured check passed — also confirm reset_type is known
-                meta = getattr(synthon, "metadata", None) or {}
+                meta = getattr(imscription, "metadata", None) or {}
                 reset_block = meta.get("grounding", {}).get("reset", {})
                 reset_type = reset_block.get("type", None)
                 ax6_block = meta.get("axiom6_grounding", {})
                 if not reset_type and not ax6_block:
                     # No structured block at all — fall back to keyword scan
                     reasoning = (
-                        (synthon.grounding or {}).get("reasoning", "")
-                        + " " + (synthon.description or "")
+                        (imscription.grounding or {}).get("reasoning", "")
+                        + " " + (imscription.description or "")
                     ).lower()
                     has_reset = any(kw in reasoning for kw in AXIOM_6_RESET_INDICATORS)
                     has_process = any(kw in reasoning for kw in AXIOM_6_PROCESS_INDICATORS)
@@ -2937,10 +2943,10 @@ def audit(
                         flag_pass_id = "audit_pass_1"
 
         # --- Pass 2: T_⋈ closing bond grounding ---
-        if run_pass2 and synthon.topology == Topology.CYCLIC_BOWTIE:
+        if run_pass2 and imscription.topology == Topology.CYCLIC_BOWTIE:
             reasoning = (
-                (synthon.grounding or {}).get("reasoning", "")
-                + " " + (synthon.description or "")
+                (imscription.grounding or {}).get("reasoning", "")
+                + " " + (imscription.description or "")
             ).lower()
             has_closing = any(kw in reasoning for kw in AXIOM_7_CLOSING_INDICATORS)
             has_invalid = any(kw in reasoning for kw in AXIOM_7_INVALID_TOPO_KEYWORDS)
@@ -2951,9 +2957,9 @@ def audit(
 
         # --- Pass 3: Attractor-tuple contamination (bulk pre-fix entries) ---
         if run_pass3:
-            score = _attractor_match_score(synthon)
+            score = _attractor_match_score(imscription)
             has_reasoning = bool(
-                (synthon.grounding or {}).get("reasoning", "").strip()
+                (imscription.grounding or {}).get("reasoning", "").strip()
             )
             if score >= _PREFIX_ATTRACTOR_THRESHOLD and not has_reasoning:
                 flag_reasons.append(
@@ -2963,17 +2969,17 @@ def audit(
                     flag_pass_id = "audit_pass_3"
 
         # --- Pass 4: Stoichiometry unset or inconsistent on cyclic topology ---
-        if run_pass4 and synthon.topology == Topology.CYCLIC_BOWTIE:
+        if run_pass4 and imscription.topology == Topology.CYCLIC_BOWTIE:
             from imscrbgrmr.models import Polarity
             _SELF_COMP = {
                 Polarity.SELF_COMPLEMENTARY_SYM,
                 Polarity.SELF_COMPLEMENTARY_PSEUDO,
             }
-            s_val = synthon.stoichiometry
+            s_val = imscription.stoichiometry
 
             if not s_val:
                 # Missing S on T⋈ → suggest "1:1" default if P± present
-                if synthon.polarity in _SELF_COMP:
+                if imscription.polarity in _SELF_COMP:
                     flag_reasons.append(
                         "Pass 4 / Stoichiometry: T_⋈ + P± with no S. "
                         "Auto-suggest S='1:1'. "
@@ -2989,10 +2995,10 @@ def audit(
 
             elif s_val == "1:1":
                 # T⋈ + S="1:1" must have P± (sym or ψ)
-                if synthon.polarity not in _SELF_COMP:
+                if imscription.polarity not in _SELF_COMP:
                     flag_reasons.append(
                         f"Pass 4 / Stoichiometry: T_⋈[1:1] requires P± (self-complementary), "
-                        f"but P={synthon.polarity.name}. Either fix S or change P to P_±."
+                        f"but P={imscription.polarity.name}. Either fix S or change P to P_±."
                     )
                     if flag_pass_id is None:
                         flag_pass_id = "audit_pass_4"
@@ -3000,9 +3006,9 @@ def audit(
             else:
                 # T⋈ + S="n:m" (n≠m) must have Γ∨(BROAD) or T_nrleg
                 from imscrbgrmr.models import Topology as _Topo
-                grammar_tier = getattr(synthon.interaction_grammar, "tier", "")
+                grammar_tier = getattr(imscription.interaction_grammar, "tier", "")
                 is_broad = str(grammar_tier).upper() in ("BROAD",)
-                has_network_topo = synthon.topology in {
+                has_network_topo = imscription.topology in {
                     _Topo.NETWORK, _Topo.NETWORK_HEX,
                     _Topo.NETWORK_MIXED, _Topo.NETWORK_INTERPENETRATING,
                     _Topo.NETWORK_SYM,
@@ -3011,7 +3017,7 @@ def audit(
                     flag_reasons.append(
                         f"Pass 4 / Stoichiometry: T_⋈[{s_val}] (asymmetric) "
                         f"requires Γ∨(BROAD) or T_nrleg. "
-                        f"Current Γ={synthon.interaction_grammar}. "
+                        f"Current Γ={imscription.interaction_grammar}. "
                         "Update grammar tier or correct stoichiometry."
                     )
                     if flag_pass_id is None:
@@ -3023,21 +3029,21 @@ def audit(
             flag_pass_id = "audit_status"
 
         if flag_reasons:
-            all_flagged.append((synthon, entry, entry_status, flag_reasons, flag_pass_id))
+            all_flagged.append((imscription, entry, entry_status, flag_reasons, flag_pass_id))
 
     # --- Display ---
     pass_label = f"pass {audit_pass}" if audit_pass else "custom filter"
     table = Table(
         title=f"Catalog Audit ({pass_label}) — {audited_count} scanned, {len(all_flagged)} flagged"
     )
-    table.add_column("Synthon", style="cyan", no_wrap=False, max_width=50)
+    table.add_column("Imscription", style="cyan", no_wrap=False, max_width=50)
     table.add_column("Domain", style="dim")
     table.add_column("Status", style="magenta")
     table.add_column("Flag Reason", style="yellow", no_wrap=False, max_width=60)
 
-    for synthon, entry, entry_status, flag_reasons, _ in all_flagged:
+    for imscription, entry, entry_status, flag_reasons, _ in all_flagged:
         table.add_row(
-            synthon.name,
+            imscription.name,
             entry.domain if entry else "unknown",
             entry_status,
             "; ".join(flag_reasons),
@@ -3053,8 +3059,8 @@ def audit(
     # --- Apply auto-flag ---
     if auto_flag and not dry_run:
         flagged_count = 0
-        for synthon, entry, _, _, pass_id in all_flagged:
-            if global_catalog.flag_entry(synthon.name, pass_id or "audit_manual"):
+        for imscription, entry, _, _, pass_id in all_flagged:
+            if global_catalog.flag_entry(imscription.name, pass_id or "audit_manual"):
                 flagged_count += 1
         saved = global_catalog.save_catalog()
         save_msg = "saved to disk" if saved else "(no storage path configured — changes in-memory only)"
@@ -3152,17 +3158,17 @@ def reconstruct(history_dir: str, dry_run: bool, limit: int):
     updated: List[str] = []
 
     for name, corpus_entry in reasoning_corpus.items():
-        synthon = global_catalog.get(name)
-        if not synthon:
+        imscription = global_catalog.get(name)
+        if not imscription:
             not_in_catalog += 1
             continue
-        existing_reasoning = (synthon.grounding or {}).get("reasoning", "").strip()
+        existing_reasoning = (imscription.grounding or {}).get("reasoning", "").strip()
         if existing_reasoning:
             already_grounded += 1
             continue
         matched += 1
         if not dry_run:
-            global_catalog.update_synthon_reasoning(
+            global_catalog.update_imscription_reasoning(
                 name,
                 corpus_entry["reasoning"],
                 corpus_entry["provider"],
@@ -3238,7 +3244,7 @@ def criticality_probe(
 
     \b
     Examples:
-        imscribe criticality-probe synthon_Varma_quantum_XY_critical_poin
+        imscribe criticality-probe imscription_Varma_quantum_XY_critical_poin
         imscribe criticality-probe my_entry --xi-r 12.5 --xi-tau 1.5e6
         imscribe criticality-probe my_entry --xi-r 8.3 --xi-tau 550 -o probe.json
         imscribe criticality-probe --batch --export-candidates candidates.json
@@ -3252,7 +3258,7 @@ def criticality_probe(
     # BATCH mode — scan all catalog entries with Φ_c or flagged T⋈/D_∞
     # -----------------------------------------------------------------------
     if batch:
-        candidates = list(global_catalog._synthons.values())
+        candidates = list(global_catalog._imscriptions.values())
         batch_targets = candidates
         console.print(Panel.fit(
             f"[bold]Criticality Probe — Batch Mode[/bold]\n"
@@ -3280,7 +3286,7 @@ def criticality_probe(
 
         table = Table(title="Φ_c Batch Report — Ranked by Candidacy Score")
         table.add_column("Rank", style="dim")
-        table.add_column("Synthon", style="cyan", max_width=50)
+        table.add_column("Imscription", style="cyan", max_width=50)
         table.add_column("Φ_c Score", justify="right")
         table.add_column("Candidacy")
         table.add_column("Degeneracy", justify="center")
@@ -3320,14 +3326,14 @@ def criticality_probe(
         console.print("[red]Provide an ENTRY_NAME or use --batch.[/red]")
         sys.exit(1)
 
-    synthon = global_catalog.get(entry_name)
-    if not synthon:
+    imscription = global_catalog.get(entry_name)
+    if not imscription:
         console.print(f"[red]Entry '{entry_name}' not found in catalog.[/red]")
         sys.exit(1)
 
     console.print(Panel.fit(
         f"[bold]Criticality Probe: {entry_name}[/bold]\n"
-        f"Notation: {synthon.to_notation()}",
+        f"Notation: {imscription.to_notation()}",
         border_style="cyan",
     ))
 
@@ -3335,12 +3341,12 @@ def criticality_probe(
     try:
         from imscrbgrmr import SymbolicReasoningEngine
         engine = SymbolicReasoningEngine(global_catalog)
-        report_sym = engine.validate_grammar(synthon)
+        report_sym = engine.validate_grammar(imscription)
         gd_score = report_sym.get("gd_independence", 0.0)
         is_crit_sym = report_sym.get("is_critical", False)
     except Exception:
         gd_score = 0.5
-        is_crit_sym = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+        is_crit_sym = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
 
     gd_color = "red" if gd_score < 0.4 else ("yellow" if gd_score < 0.7 else "green")
     console.print(f"\n[bold]1. G/D Independence Score:[/bold] [{gd_color}]{gd_score:.3f}[/{gd_color}]")
@@ -3350,7 +3356,7 @@ def criticality_probe(
 
     # --- Check 2: Varma QXY scaling ---
     corr_data = VarmaCorrelationData(xi_r=xi_r, xi_tau=xi_tau)
-    varma_report = score_phi_c_candidacy(synthon, corr_data)
+    varma_report = score_phi_c_candidacy(imscription, corr_data)
 
     console.print(f"\n[bold]2. Varma QXY Scaling:[/bold]")
     if xi_r is not None and xi_tau is not None:
@@ -3371,8 +3377,8 @@ def criticality_probe(
 
     # --- Check 3: Recursive tuple potential ---
     console.print(f"\n[bold]3. Recursive Tuple Potential:[/bold]")
-    has_phi_c = synthon.criticality_phase is not None and synthon.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
-    is_imscriptive_d = synthon.dimensionality is not None and synthon.dimensionality.value == "Ð_omega"
+    has_phi_c = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+    is_imscriptive_d = imscription.dimensionality is not None and imscription.dimensionality.value == "Ð_omega"
 
     # Recursive potential: tuple can describe behavior at multiple scales without change
     # → requires Φ_c (self-modeling loop) OR D_⊙ (imscriptive, boundary encodes bulk)
@@ -3428,7 +3434,7 @@ def criticality_probe(
     console.print(f"\n[bold]Recommendation:[/bold] [{rec_color}]{varma_report.recommendation}[/{rec_color}]")
 
     # Degeneracy-type summary (always shown, highlighted when --degeneracy-type)
-    deg_score, deg_tier = degeneracy_strength(synthon, corr_data)
+    deg_score, deg_tier = degeneracy_strength(imscription, corr_data)
     deg_color = "green" if deg_tier in ("logarithmic", "collapse") else (
         "yellow" if deg_tier == "power-law" else "dim"
     )
@@ -3473,7 +3479,7 @@ def criticality_probe(
     if output:
         out_data = {
             "entry": entry_name,
-            "notation": synthon.to_notation(),
+            "notation": imscription.to_notation(),
             "gd_independence_score": gd_score,
             "degeneracy_type": deg_tier,
             "degeneracy_score": round(deg_score, 3),
@@ -3535,7 +3541,7 @@ def info_bits(
     """
     from imscrbgrmr.information import (
         compute_I_hbond_dimer,
-        compute_I_from_synthon,
+        compute_I_from_imscription,
         calibrate_I_pipeline,
     )
 
@@ -3590,12 +3596,12 @@ def info_bits(
             solvent_model=solvent_model,
         )
     else:
-        synthon = global_catalog.get(entry_name)
-        if not synthon:
+        imscription = global_catalog.get(entry_name)
+        if not imscription:
             console.print(f"[red]Entry '{entry_name}' not found.[/red]")
             sys.exit(1)
-        result = compute_I_from_synthon(
-            synthon,
+        result = compute_I_from_imscription(
+            imscription,
             n_contacts=n_contacts,
             solvent_model=solvent_model,
         )
@@ -3667,7 +3673,7 @@ def info_bits(
 @click.group(invoke_without_command=True)
 @click.version_option(version="0.1.0", prog_name="imscribe")
 @click.pass_context
-def syncon_alias(ctx):
+def imscribe_alias(ctx):
     """Imscribing Grammar CLI (imscribe): universal grammar for any self-organizing system.
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
@@ -3683,21 +3689,21 @@ def syncon_alias(ctx):
 
 
 # Register all commands with the imscribe alias
-syncon_alias.add_command(menu_command, name="menu")
-syncon_alias.add_command(analyze)
-syncon_alias.add_command(catalog)
-syncon_alias.add_command(chem_group, name="chem")
-syncon_alias.add_command(generate)
-syncon_alias.add_command(compare)
-syncon_alias.add_command(export)
-syncon_alias.add_command(agents)
-syncon_alias.add_command(criticality)
-syncon_alias.add_command(validate)
-syncon_alias.add_command(isomorphs)
-syncon_alias.add_command(rules)
-syncon_alias.add_command(audit)
-syncon_alias.add_command(reconstruct)
-syncon_alias.add_command(criticality_probe, name="criticality-probe")
+imscribe_alias.add_command(menu_command, name="menu")
+imscribe_alias.add_command(analyze)
+imscribe_alias.add_command(catalog)
+imscribe_alias.add_command(chem_group, name="chem")
+imscribe_alias.add_command(generate)
+imscribe_alias.add_command(compare)
+imscribe_alias.add_command(export)
+imscribe_alias.add_command(agents)
+imscribe_alias.add_command(criticality)
+imscribe_alias.add_command(validate)
+imscribe_alias.add_command(isomorphs)
+imscribe_alias.add_command(rules)
+imscribe_alias.add_command(audit)
+imscribe_alias.add_command(reconstruct)
+imscribe_alias.add_command(criticality_probe, name="criticality-probe")
 
 
 # =============================================================================
@@ -3756,11 +3762,11 @@ def perturb():
 
 
 @perturb.command(name="sweep")
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol, ΔG(298K,gas) basis).")
 @click.option("--metric", default="xi_CP", show_default=True, help="Metric to track.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def perturb_sweep(synthon_name: str, delta_g: float, metric: str, format: str):
+def perturb_sweep(imscription_name: str, delta_g: float, metric: str, format: str):
     """
     Sweep all primitives by one tier and report Δξ_CP sensitivity.
 
@@ -3770,19 +3776,19 @@ def perturb_sweep(synthon_name: str, delta_g: float, metric: str, format: str):
     """
     from imscrbgrmr.perturbation import PerturbationEngine
     try:
-        synthon = global_catalog.get(synthon_name)
-        if synthon is None:
-            console.print(f"[red]Synthon '{synthon_name}' not found in catalog.[/red]")
+        imscription = global_catalog.get(imscription_name)
+        if imscription is None:
+            console.print(f"[red]Imscription '{imscription_name}' not found in catalog.[/red]")
             sys.exit(1)
 
         engine = PerturbationEngine()
-        jacobian = engine.sweep_all(synthon, delta_g)
+        jacobian = engine.sweep_all(imscription, delta_g)
 
         if format == "json":
             console.print_json(json.dumps(jacobian.to_dict(), indent=2))
             return
 
-        console.print(f"\n[bold]Primitive Jacobian: {synthon_name}[/bold]")
+        console.print(f"\n[bold]Primitive Jacobian: {imscription_name}[/bold]")
         console.print(f"  Baseline ξ_CP = [cyan]{jacobian.baseline_xi_CP:.4f}[/cyan] nats  |  ΔG = {delta_g} kJ/mol\n")
 
         table = Table(title="Single-Primitive Perturbation Sweep")
@@ -3815,10 +3821,10 @@ def perturb_sweep(synthon_name: str, delta_g: float, metric: str, format: str):
 
 
 @perturb.command(name="fault-injection")
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def perturb_fault(synthon_name: str, delta_g: float, format: str):
+def perturb_fault(imscription_name: str, delta_g: float, format: str):
     """
     Identify Single Points of Failure (SPOF) in the primitive tuple.
 
@@ -3828,19 +3834,19 @@ def perturb_fault(synthon_name: str, delta_g: float, format: str):
     """
     from imscrbgrmr.perturbation import PerturbationEngine
     try:
-        synthon = global_catalog.get(synthon_name)
-        if synthon is None:
-            console.print(f"[red]Synthon '{synthon_name}' not found.[/red]")
+        imscription = global_catalog.get(imscription_name)
+        if imscription is None:
+            console.print(f"[red]Imscription '{imscription_name}' not found.[/red]")
             sys.exit(1)
 
         engine = PerturbationEngine()
-        result = engine.fault_injection(synthon, delta_g)
+        result = engine.fault_injection(imscription, delta_g)
 
         if format == "json":
             console.print_json(json.dumps(result, indent=2))
             return
 
-        console.print(f"\n[bold]Fault Injection: {synthon_name}[/bold]")
+        console.print(f"\n[bold]Fault Injection: {imscription_name}[/bold]")
         console.print(f"  Baseline ξ_CP = [cyan]{result['baseline_xi_CP_nats']:.4f}[/cyan] nats")
         if result["system_robust"]:
             console.print("[green]✓ No single-primitive fault identified. System is robust.[/green]")
@@ -3857,12 +3863,12 @@ def perturb_fault(synthon_name: str, delta_g: float, format: str):
 
 
 @perturb.command(name="pathfind")
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol).")
 @click.option("--target", "-t", type=float, required=True, help="Target ξ_CP (nats).")
 @click.option("--optimize", "-o", default=None, help="Comma-separated primitives (e.g. F,K).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def perturb_pathfind(synthon_name: str, delta_g: float, target: float, optimize: Optional[str], format: str):
+def perturb_pathfind(imscription_name: str, delta_g: float, target: float, optimize: Optional[str], format: str):
     """
     Find minimal primitive changes to reach a target ξ_CP.
 
@@ -3872,20 +3878,20 @@ def perturb_pathfind(synthon_name: str, delta_g: float, target: float, optimize:
     """
     from imscrbgrmr.perturbation import PerturbationEngine
     try:
-        synthon = global_catalog.get(synthon_name)
-        if synthon is None:
-            console.print(f"[red]Synthon '{synthon_name}' not found.[/red]")
+        imscription = global_catalog.get(imscription_name)
+        if imscription is None:
+            console.print(f"[red]Imscription '{imscription_name}' not found.[/red]")
             sys.exit(1)
 
         opt_prims = [p.strip() for p in optimize.split(",")] if optimize else None
         engine = PerturbationEngine()
-        result = engine.find_path_to_target(synthon, delta_g, target, opt_prims)
+        result = engine.find_path_to_target(imscription, delta_g, target, opt_prims)
 
         if format == "json":
             console.print_json(json.dumps(result, indent=2))
             return
 
-        console.print(f"\n[bold]Pathfinder: {synthon_name}[/bold]")
+        console.print(f"\n[bold]Pathfinder: {imscription_name}[/bold]")
         console.print(f"  Baseline ξ_CP = {result['baseline_xi_CP_nats']:.4f} nats  →  Target < {target} nats")
         if result["target_reached"]:
             console.print(f"[green]✓ Target reached: {result['achieved_xi_CP_nats']:.4f} nats in {result['num_steps']} step(s)[/green]")
@@ -3910,7 +3916,7 @@ def trajectory():
 
 
 @trajectory.command(name="validate")
-@click.option("--steps", "-s", required=True, help="Comma-separated synthon names (cycle order).")
+@click.option("--steps", "-s", required=True, help="Comma-separated imscription names (cycle order).")
 @click.option("--reset", "-r", default=None, help="Name of the reset step.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def trajectory_validate(steps: str, reset: Optional[str], format: str):
@@ -3921,14 +3927,14 @@ def trajectory_validate(steps: str, reset: Optional[str], format: str):
     Example:
         imscribe trajectory validate --steps enamine,c_c_bond_form,hydrolysis --reset hydrolysis
     """
-    from imscrbgrmr.trajectory import TemporalSynthonAgent
+    from imscrbgrmr.trajectory import TemporalImscriptionAgent
     try:
         step_names = [s.strip() for s in steps.split(",")]
-        agent = TemporalSynthonAgent("cli_cycle")
+        agent = TemporalImscriptionAgent("cli_cycle")
         for name in step_names:
             s = global_catalog.get(name)
             if s is None:
-                console.print(f"[red]Synthon '{name}' not found in catalog.[/red]")
+                console.print(f"[red]Imscription '{name}' not found in catalog.[/red]")
                 sys.exit(1)
             is_reset = (name == reset) or (reset is None and name == step_names[-1])
             agent.add_step(s, step_name=name, is_reset=is_reset)
@@ -3960,7 +3966,7 @@ def trajectory_validate(steps: str, reset: Optional[str], format: str):
 
 
 @trajectory.command(name="criticality")
-@click.option("--steps", "-s", required=True, help="Comma-separated synthon names.")
+@click.option("--steps", "-s", required=True, help="Comma-separated imscription names.")
 @click.option("--varma-probe", is_flag=True, help="Show full Varma probe output.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def trajectory_criticality(steps: str, varma_probe: bool, format: str):
@@ -3971,14 +3977,14 @@ def trajectory_criticality(steps: str, varma_probe: bool, format: str):
     Example:
         imscribe trajectory criticality --steps enamine,c_c_bond_form,hydrolysis --varma-probe
     """
-    from imscrbgrmr.trajectory import TemporalSynthonAgent
+    from imscrbgrmr.trajectory import TemporalImscriptionAgent
     try:
         step_names = [s.strip() for s in steps.split(",")]
-        agent = TemporalSynthonAgent("cli_cycle")
+        agent = TemporalImscriptionAgent("cli_cycle")
         for name in step_names:
             s = global_catalog.get(name)
             if s is None:
-                console.print(f"[red]Synthon '{name}' not found in catalog.[/red]")
+                console.print(f"[red]Imscription '{name}' not found in catalog.[/red]")
                 sys.exit(1)
             agent.add_step(s, step_name=name)
 
@@ -4012,12 +4018,12 @@ def trajectory_criticality(steps: str, varma_probe: bool, format: str):
 
 @main.group()
 def ensemble():
-    """Multi-Synthon Composition Verification — emergent axiom and criticality checks."""
+    """Multi-Imscription Composition Verification — emergent axiom and criticality checks."""
     pass
 
 
 @ensemble.command(name="check")
-@click.option("--components", "-c", required=True, help="Comma-separated synthon names.")
+@click.option("--components", "-c", required=True, help="Comma-separated imscription names.")
 @click.option("--pairwise", is_flag=True, default=True, help="Run pairwise compatibility matrix.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def ensemble_check(components: str, pairwise: bool, format: str):
@@ -4064,7 +4070,7 @@ def ensemble_check(components: str, pairwise: bool, format: str):
 
 
 @ensemble.command(name="probe")
-@click.option("--components", "-c", required=True, help="Comma-separated synthon names.")
+@click.option("--components", "-c", required=True, help="Comma-separated imscription names.")
 @click.option("--criticality", "check_crit", is_flag=True, help="Probe for emergent criticality.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def ensemble_probe(components: str, check_crit: bool, format: str):
@@ -4101,7 +4107,7 @@ def ensemble_probe(components: str, check_crit: bool, format: str):
 
 
 @ensemble.command(name="thermo")
-@click.option("--components", "-c", required=True, help="Comma-separated synthon names.")
+@click.option("--components", "-c", required=True, help="Comma-separated imscription names.")
 @click.option("--delta-g-assembly", "-g", type=float, required=True, help="Assembly ΔG (kJ/mol).")
 @click.option("--interface-overhead", type=float, default=0.0, show_default=True, help="Interface overhead (bits).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
@@ -4131,7 +4137,7 @@ def ensemble_thermo(components: str, delta_g_assembly: float, interface_overhead
             return
 
         console.print(f"\n[bold]Ensemble Thermodynamics[/bold]")
-        console.print(f"  Components: {result['num_components']}  |  Ref: {result.get('reference_synthon', '—')}")
+        console.print(f"  Components: {result['num_components']}  |  Ref: {result.get('reference_imscription', '—')}")
         console.print(f"  ΔG_assembly = {result['delta_g_assembly_kJ_mol']} kJ/mol")
         console.print(f"  System η_CP  = [cyan]{result['eta_CP_system']:.2e}[/cyan]")
         console.print(f"  System ξ_CP  = [cyan]{result['xi_CP_system_nats']:.4f}[/cyan] nats  [{result['efficiency_tier']}]")
@@ -4160,7 +4166,7 @@ def retrodesign(target: str, max_depth: int, prune_axioms: str, strict_grounding
     """
     Constraint-directed retrosynthetic decomposition of a target notation.
 
-    TARGET is a ⟨...⟩ notation string or a catalog synthon name.
+    TARGET is a ⟨...⟩ notation string or a catalog imscription name.
 
     \b
     Examples:
@@ -4195,9 +4201,9 @@ def retrodesign(target: str, max_depth: int, prune_axioms: str, strict_grounding
             console.print(f"  [yellow]⚠ {w}[/yellow]")
 
         if tree.valid_leaves:
-            console.print(f"\n[bold]Valid Synthon Set:[/bold]")
+            console.print(f"\n[bold]Valid Imscription Set:[/bold]")
             for leaf in tree.valid_leaves:
-                name = leaf.synthon.name if leaf.synthon else leaf.notation or "?"
+                name = leaf.imscription.name if leaf.imscription else leaf.notation or "?"
                 console.print(f"  [green]✓[/green] {leaf.branch_name}: [cyan]{name}[/cyan]")
                 for lw in leaf.warnings:
                     console.print(f"    [yellow]⚠ {lw}[/yellow]")
@@ -4233,9 +4239,9 @@ def hotswap(
     format: str,
 ):
     """
-    Validate a synthon hot-swap using the full HotSwap protocol.
+    Validate a imscription hot-swap using the full HotSwap protocol.
 
-    TARGET and CANDIDATE are catalog synthon names.
+    TARGET and CANDIDATE are catalog imscription names.
 
     Enforces all criteria from IG_HOTSWAP.md:
     D/T/S exact match, F_new ≥ F_old, |Δξ_CP| < 1.0 nat, K accessible,
@@ -4252,11 +4258,11 @@ def hotswap(
 
     target_syn = global_catalog.get(target)
     if target_syn is None:
-        console.print(f"[red]Target synthon '{target}' not found in catalog.[/red]")
+        console.print(f"[red]Target imscription '{target}' not found in catalog.[/red]")
         sys.exit(1)
     cand_syn = global_catalog.get(candidate)
     if cand_syn is None:
-        console.print(f"[red]Candidate synthon '{candidate}' not found in catalog.[/red]")
+        console.print(f"[red]Candidate imscription '{candidate}' not found in catalog.[/red]")
         sys.exit(1)
 
     try:
@@ -4349,24 +4355,24 @@ def hotswap(
 
 
 # Register all commands with the imscribe alias
-syncon_alias.add_command(analyze)
-syncon_alias.add_command(catalog)
-syncon_alias.add_command(chem_group, name="chem")
-syncon_alias.add_command(generate)
-syncon_alias.add_command(compare)
-syncon_alias.add_command(export)
-syncon_alias.add_command(agents)
-syncon_alias.add_command(criticality)
-syncon_alias.add_command(validate)
-syncon_alias.add_command(isomorphs)
-syncon_alias.add_command(rules)
-syncon_alias.add_command(audit)
-syncon_alias.add_command(reconstruct)
-syncon_alias.add_command(criticality_probe, name="criticality-probe")
-syncon_alias.add_command(cache)
-syncon_alias.add_command(perturb)
-syncon_alias.add_command(trajectory)
-syncon_alias.add_command(ensemble)
+imscribe_alias.add_command(analyze)
+imscribe_alias.add_command(catalog)
+imscribe_alias.add_command(chem_group, name="chem")
+imscribe_alias.add_command(generate)
+imscribe_alias.add_command(compare)
+imscribe_alias.add_command(export)
+imscribe_alias.add_command(agents)
+imscribe_alias.add_command(criticality)
+imscribe_alias.add_command(validate)
+imscribe_alias.add_command(isomorphs)
+imscribe_alias.add_command(rules)
+imscribe_alias.add_command(audit)
+imscribe_alias.add_command(reconstruct)
+imscribe_alias.add_command(criticality_probe, name="criticality-probe")
+imscribe_alias.add_command(cache)
+imscribe_alias.add_command(perturb)
+imscribe_alias.add_command(trajectory)
+imscribe_alias.add_command(ensemble)
 # run_syn is defined later in the file; registered below after its definition
 
 
@@ -4380,24 +4386,24 @@ main.add_command(nav_group, name="nav")  # navigators
 # Tuple Algebra: meet, join, path, tensor
 # =============================================================================
 
-def _load_synthon_by_name(name: str):
-    """Load a synthon from the global catalog by name."""
+def _load_imscription_by_name(name: str):
+    """Load a imscription from the global catalog by name."""
     from .registry import global_catalog
     s = global_catalog.get(name)
     if s is None:
-        click.echo(f"Synthon '{name}' not found in catalog.", err=True)
+        click.echo(f"Imscription '{name}' not found in catalog.", err=True)
         raise SystemExit(1)
     return s
 
 
 @main.command()
-@click.argument("synthon_a")
-@click.argument("synthon_b")
+@click.argument("imscription_a")
+@click.argument("imscription_b")
 @click.option("--symmetric/--directed", default=True, show_default=True,
               help="Symmetric (default) or directed quasi-metric d(A→B).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def distance(synthon_a: str, synthon_b: str, symmetric: bool, format: str):
-    """Weighted quasi-metric distance between two synthons.
+def distance(imscription_a: str, imscription_b: str, symmetric: bool, format: str):
+    """Weighted quasi-metric distance between two imscriptions.
 
     Symmetric mode returns a Hamming-like score over all ten primitives.
     Directed mode (--directed) penalises only downward moves in F/K —
@@ -4408,8 +4414,8 @@ def distance(synthon_a: str, synthon_b: str, symmetric: bool, format: str):
     """
     from .algebra import tuple_distance, mahalanobis_distance
 
-    s1 = _load_synthon_by_name(synthon_a)
-    s2 = _load_synthon_by_name(synthon_b)
+    s1 = _load_imscription_by_name(imscription_a)
+    s2 = _load_imscription_by_name(imscription_b)
     d_sym = tuple_distance(s1, s2, symmetric=True)
     d_dir = tuple_distance(s1, s2, symmetric=False)
     d_rev = tuple_distance(s2, s1, symmetric=False)
@@ -4418,13 +4424,13 @@ def distance(synthon_a: str, synthon_b: str, symmetric: bool, format: str):
     if format == "json":
         import json
         payload = {
-            "s1": synthon_a,
-            "s2": synthon_b,
+            "s1": imscription_a,
+            "s2": imscription_b,
             "distance_symmetric": round(d_sym, 4),
             "distance_directed_s1_to_s2": round(d_dir, 4),
             "distance_directed_s2_to_s1": round(d_rev, 4),
             "asymmetry": round(abs(d_dir - d_rev), 4),
-            "hotswap_favoured": synthon_a if d_rev > d_dir else (synthon_b if d_dir > d_rev else "symmetric"),
+            "hotswap_favoured": imscription_a if d_rev > d_dir else (imscription_b if d_dir > d_rev else "symmetric"),
         }
         if d_maha is not None:
             payload["distance_mahalanobis"] = round(d_maha, 4)
@@ -4432,14 +4438,14 @@ def distance(synthon_a: str, synthon_b: str, symmetric: bool, format: str):
         return
 
     click.echo()
-    click.echo(f"  Tuple Distance: {synthon_a}  ↔  {synthon_b}")
+    click.echo(f"  Tuple Distance: {imscription_a}  ↔  {imscription_b}")
     click.echo()
     click.echo(f"  d(symmetric)        : {d_sym:.4f}")
-    click.echo(f"  d({synthon_a} → {synthon_b})  : {d_dir:.4f}")
-    click.echo(f"  d({synthon_b} → {synthon_a})  : {d_rev:.4f}")
+    click.echo(f"  d({imscription_a} → {imscription_b})  : {d_dir:.4f}")
+    click.echo(f"  d({imscription_b} → {imscription_a})  : {d_rev:.4f}")
     asym = abs(d_dir - d_rev)
     if asym > 0.01:
-        cheaper = synthon_a if d_dir < d_rev else synthon_b
+        cheaper = imscription_a if d_dir < d_rev else imscription_b
         click.echo(f"  Asymmetry           : {asym:.4f}  (HotSwap cheaper from {cheaper})")
     else:
         click.echo(f"  Asymmetry           : ~0  (symmetric pair)")
@@ -4449,23 +4455,23 @@ def distance(synthon_a: str, synthon_b: str, symmetric: bool, format: str):
 
 
 @main.command()
-@click.argument("synthon_a")
-@click.argument("synthon_b")
+@click.argument("imscription_a")
+@click.argument("imscription_b")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def meet(synthon_a: str, synthon_b: str, format: str):
-    """Lattice MEET (⊓): greatest lower bound of two synthons.
+def meet(imscription_a: str, imscription_b: str, format: str):
+    """Lattice MEET (⊓): greatest lower bound of two imscriptions.
 
-    Returns the most general synthon that is a structural sub-type of both.
+    Returns the most general imscription that is a structural sub-type of both.
     Useful for retrosynthesis: the meet gives the minimal common precursor motif.
 
     Ordered primitives (F, K, G) take the minimum (more conservative).
     Categorical primitives (D, T, R, P, Γ) require exact match; mismatches
-    are reported as CONFLICT — the meet is a partial sub-synthon in that case.
+    are reported as CONFLICT — the meet is a partial sub-imscription in that case.
     """
     from .algebra import meet as _meet
 
-    s1 = _load_synthon_by_name(synthon_a)
-    s2 = _load_synthon_by_name(synthon_b)
+    s1 = _load_imscription_by_name(imscription_a)
+    s2 = _load_imscription_by_name(imscription_b)
     result = _meet(s1, s2)
 
     if format == "json":
@@ -4480,7 +4486,7 @@ def meet(synthon_a: str, synthon_b: str, format: str):
             return str(x) if x is not None else None
         click.echo(json.dumps({
             "operation": "meet",
-            "s1": synthon_a, "s2": synthon_b,
+            "s1": imscription_a, "s2": imscription_b,
             "result": result.to_notation(),
             "valid": result.is_valid,
             "conflicts": result.conflicts,
@@ -4503,8 +4509,8 @@ def meet(synthon_a: str, synthon_b: str, format: str):
 
     click.echo()
     click.echo("Lattice Meet  s1 ⊓ s2")
-    click.echo(f"  s1  : {synthon_a}")
-    click.echo(f"  s2  : {synthon_b}")
+    click.echo(f"  s1  : {imscription_a}")
+    click.echo(f"  s2  : {imscription_b}")
     click.echo()
     click.echo(f"  Result  : {result.to_notation()}")
     click.echo(f"  Valid   : {'✓ fully defined' if result.is_valid else '✗ partial (conflicts present)'}")
@@ -4519,13 +4525,13 @@ def meet(synthon_a: str, synthon_b: str, format: str):
 
 
 @main.command()
-@click.argument("synthon_a")
-@click.argument("synthon_b")
+@click.argument("imscription_a")
+@click.argument("imscription_b")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def join(synthon_a: str, synthon_b: str, format: str):
-    """Lattice JOIN (⊔): least upper bound of two synthons.
+def join(imscription_a: str, imscription_b: str, format: str):
+    """Lattice JOIN (⊔): least upper bound of two imscriptions.
 
-    Returns the most demanding synthon that both can be upgraded to.
+    Returns the most demanding imscription that both can be upgraded to.
     Useful for co-assembly design: the join gives the specification a
     unified scaffold must satisfy to host both components simultaneously.
 
@@ -4534,8 +4540,8 @@ def join(synthon_a: str, synthon_b: str, format: str):
     """
     from .algebra import join as _join
 
-    s1 = _load_synthon_by_name(synthon_a)
-    s2 = _load_synthon_by_name(synthon_b)
+    s1 = _load_imscription_by_name(imscription_a)
+    s2 = _load_imscription_by_name(imscription_b)
     result = _join(s1, s2)
 
     if format == "json":
@@ -4550,7 +4556,7 @@ def join(synthon_a: str, synthon_b: str, format: str):
             return str(x) if x is not None else None
         click.echo(json.dumps({
             "operation": "join",
-            "s1": synthon_a, "s2": synthon_b,
+            "s1": imscription_a, "s2": imscription_b,
             "result": result.to_notation(),
             "valid": result.is_valid,
             "conflicts": result.conflicts,
@@ -4560,15 +4566,15 @@ def join(synthon_a: str, synthon_b: str, format: str):
 
     click.echo()
     click.echo("Lattice Join  s1 ⊔ s2")
-    click.echo(f"  s1  : {synthon_a}")
-    click.echo(f"  s2  : {synthon_b}")
+    click.echo(f"  s1  : {imscription_a}")
+    click.echo(f"  s2  : {imscription_b}")
     click.echo()
     click.echo(f"  Result  : {result.to_notation()}")
     click.echo(f"  Valid   : {'✓ fully defined' if result.is_valid else '✗ partial (conflicts present)'}")
     if result.conflicts:
         click.echo(f"  Conflicts ({len(result.conflicts)}): {', '.join(result.conflicts)}")
         click.echo("    ⊤ (top) substituted for conflicting categorical primitives.")
-        click.echo("    No single registered synthon satisfies the join — a new design target.")
+        click.echo("    No single registered imscription satisfies the join — a new design target.")
     if result.notes:
         click.echo()
         click.echo("  Ordered-primitive resolutions:")
@@ -4588,8 +4594,8 @@ def join(synthon_a: str, synthon_b: str, format: str):
 def path(source: str, destination: str, max_hops: int, xi_tolerance: float, format: str):
     """Shortest valid HotSwap path from SOURCE to DESTINATION through the catalog.
 
-    Finds the minimum-hop sequence of valid swaps connecting two synthons.
-    Path search is restricted to synthons sharing the same D and T (the hard
+    Finds the minimum-hop sequence of valid swaps connecting two imscriptions.
+    Path search is restricted to imscriptions sharing the same D and T (the hard
     structural constraints of HotSwap), so the valid-swap graph is sparse.
 
     Edge weight = |Δξ_CP| per hop.  The algorithm is BFS (minimum hops);
@@ -4598,11 +4604,11 @@ def path(source: str, destination: str, max_hops: int, xi_tolerance: float, form
     from .algebra import find_path
     from .registry import global_catalog
 
-    s_src = _load_synthon_by_name(source)
-    s_dst = _load_synthon_by_name(destination)
-    synthons = list(global_catalog)
+    s_src = _load_imscription_by_name(source)
+    s_dst = _load_imscription_by_name(destination)
+    imscriptions = list(global_catalog)
 
-    result = find_path(s_src, s_dst, synthons, max_hops=max_hops, xi_tolerance=xi_tolerance)
+    result = find_path(s_src, s_dst, imscriptions, max_hops=max_hops, xi_tolerance=xi_tolerance)
 
     if format == "json":
         import json
@@ -4646,12 +4652,12 @@ def path(source: str, destination: str, max_hops: int, xi_tolerance: float, form
 
 
 @main.command()
-@click.argument("synthon_a")
-@click.argument("synthon_b")
+@click.argument("imscription_a")
+@click.argument("imscription_b")
 @click.option("--lambda", "lambda_", type=float, default=0.3, show_default=True,
               help="Mutual-information discount factor λ in ξ = ξ₁ + ξ₂ − λ·I(s₁;s₂).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def tensor(synthon_a: str, synthon_b: str, lambda_: float, format: str):
+def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
     """Tensor product s1 ⊗ s2: predicts the primitive profile of their ensemble.
 
     Computes the expected primitive tuple of the co-assembly or co-crystal
@@ -4668,8 +4674,8 @@ def tensor(synthon_a: str, synthon_b: str, lambda_: float, format: str):
     """
     from .algebra import tensor as _tensor
 
-    s1 = _load_synthon_by_name(synthon_a)
-    s2 = _load_synthon_by_name(synthon_b)
+    s1 = _load_imscription_by_name(imscription_a)
+    s2 = _load_imscription_by_name(imscription_b)
     try:
         result = _tensor(s1, s2)
     except ValueError as e:
@@ -4686,7 +4692,7 @@ def tensor(synthon_a: str, synthon_b: str, lambda_: float, format: str):
             return str(x)
         click.echo(json.dumps({
             "operation": "tensor",
-            "s1": synthon_a, "s2": synthon_b,
+            "s1": imscription_a, "s2": imscription_b,
             "result_notation": result.to_notation(),
             "primitives": {
                 "D": _ser(result.dimensionality),
@@ -4714,8 +4720,8 @@ def tensor(synthon_a: str, synthon_b: str, lambda_: float, format: str):
 
     click.echo()
     click.echo("Tensor Product  s1 ⊗ s2")
-    click.echo(f"  s1  : {synthon_a}")
-    click.echo(f"  s2  : {synthon_b}")
+    click.echo(f"  s1  : {imscription_a}")
+    click.echo(f"  s2  : {imscription_b}")
     click.echo()
     click.echo(f"  Result: {result.to_notation()}")
     click.echo()
@@ -4740,13 +4746,13 @@ def tensor(synthon_a: str, synthon_b: str, lambda_: float, format: str):
 
 
 @main.command()
-@click.argument("synthon_name")
+@click.argument("imscription_name")
 @click.argument("target", type=click.Choice(["temporal", "spatial", "critical", "molecular"]))
 @click.option("--strength", type=float, default=0.70, show_default=True,
               help="Provisional degeneracy_strength for criticality lift.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def lift(synthon_name: str, target: str, strength: float, format: str):
-    """Apply a natural transformation (dimensional lift) to a synthon.
+def lift(imscription_name: str, target: str, strength: float, format: str):
+    """Apply a natural transformation (dimensional lift) to a imscription.
 
     \b
     Targets:
@@ -4755,13 +4761,13 @@ def lift(synthon_name: str, target: str, strength: float, format: str):
       critical  — Φ_sub   → Φ_c  (inject criticality; requires F ≥ F_ℏ)
       molecular — any     → D_∧  (forgetful projection, loses spatial/temporal)
 
-    The lift is structural only.  The resulting synthon requires Axiom grounding
+    The lift is structural only.  The resulting imscription requires Axiom grounding
     before it can be registered.  All lifts preserve the naturality condition:
     if A → B is a valid HotSwap, then lift(A) → lift(B) is also valid.
     """
     from .algebra import _LIFT_MAP
 
-    s = _load_synthon_by_name(synthon_name)
+    s = _load_imscription_by_name(imscription_name)
     fn = _LIFT_MAP[target]
     if target in ("critical", "criticality"):
         result = fn(s, strength=strength)
@@ -4779,14 +4785,14 @@ def lift(synthon_name: str, target: str, strength: float, format: str):
                 return x.value
             return str(x)
         out = {
-            "source": synthon_name,
+            "source": imscription_name,
             "lift_type": target,
             "applicable": result.applicable,
             "notes": result.notes,
             "warnings": result.warnings,
         }
-        if result.synthon:
-            s2 = result.synthon
+        if result.imscription:
+            s2 = result.imscription
             out["result"] = {
                 "name": s2.name,
                 "D": _ser(s2.dimensionality),
@@ -4805,7 +4811,7 @@ def lift(synthon_name: str, target: str, strength: float, format: str):
 
     click.echo()
     click.echo(f"Natural Transformation: lift → {target}")
-    click.echo(f"  Source    : {synthon_name}")
+    click.echo(f"  Source    : {imscription_name}")
     click.echo(f"  Applicable: {'✓' if result.applicable else '✗'}")
     click.echo()
 
@@ -4815,7 +4821,7 @@ def lift(synthon_name: str, target: str, strength: float, format: str):
         click.echo()
         return
 
-    s2 = result.synthon
+    s2 = result.imscription
     click.echo(f"  Result    : {s2.name}")
     click.echo(f"  Notation  : {s2.to_notation()}")
     click.echo()
@@ -4863,17 +4869,17 @@ def lift(synthon_name: str, target: str, strength: float, format: str):
 
 
 @main.command("pipeline")
-@click.argument("start_synthon")
+@click.argument("start_imscription")
 @click.option("--step", "-s", "steps", multiple=True,
               help=(
                   "Pipeline step: 'op:arg' or 'op:arg:opt=val'. "
                   "op ∈ {meet, join, tensor, lift, path}. "
                   "Examples: meet:adenine_thymine_pair  lift:temporal  "
-                  "tensor:nitroso_radical_redox_synthon_pair:lambda=0.2  "
+                  "tensor:nitroso_radical_redox_imscription_pair:lambda=0.2  "
                   "path:proline_aldol_cycle:max_hops=5"
               ))
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def pipeline(start_synthon: str, steps, format: str):
+def pipeline(start_imscription: str, steps, format: str):
     """Chain algebra operations into a composable design pipeline.
 
     Implements Writer + Maybe monad semantics: each step threads ξ_CP
@@ -4882,9 +4888,9 @@ def pipeline(start_synthon: str, steps, format: str):
 
     \b
     Step syntax:  op:arg[:key=val]
-      meet:SYNTHON          — lattice meet with SYNTHON
-      join:SYNTHON          — lattice join with SYNTHON
-      tensor:SYNTHON        — tensor product (opt: lambda=0.3)
+      meet:imscription          — lattice meet with imscription
+      join:imscription          — lattice join with imscription
+      tensor:imscription        — tensor product (opt: lambda=0.3)
       lift:TARGET           — natural transformation (temporal|spatial|critical|molecular)
                               opt: strength=0.70 (criticality lift only)
       path:TARGET           — shortest HotSwap path to TARGET
@@ -4903,11 +4909,11 @@ def pipeline(start_synthon: str, steps, format: str):
     def _get(name):
         s = global_catalog.get(name)
         if s is None:
-            click.echo(f"Synthon '{name}' not found in catalog.", err=True)
+            click.echo(f"Imscription '{name}' not found in catalog.", err=True)
             raise SystemExit(1)
         return s
 
-    src = _get(start_synthon)
+    src = _get(start_imscription)
     pip = DesignPipeline.start(src)
     catalog = list(global_catalog)
 
@@ -4957,12 +4963,12 @@ def pipeline(start_synthon: str, steps, format: str):
             if hasattr(x, "value"): return x.value
             return str(x)
         out = {
-            "start": start_synthon,
+            "start": start_imscription,
             "status": "FAILED" if result.failed else "SUCCESS",
             "failed_at": result.failed_at or None,
             "failure_reason": result.failure_reason or None,
             "total_xi_delta": round(result.total_xi_delta, 4),
-            "final_synthon": result.value.name if result.value else None,
+            "final_imscription": result.value.name if result.value else None,
             "steps": [
                 {
                     "op": s.op,
@@ -4999,18 +5005,18 @@ def pipeline(start_synthon: str, steps, format: str):
               help="Parse and validate without executing.")
 def run_syn(script: str, fmt: Optional[str], save_path: Optional[str], dry_run: bool):
     """
-    Run a .syn design script as a typed SynthonM pipeline.
+    Run a .syn design script as a typed ImscriptionM pipeline.
 
     SCRIPT is a path to a .syn YAML design program.
 
     \b
     Step ops supported in do: block:
-      join:   <name>         — algebra.join → SynthonM
-      meet:   <name>         — algebra.meet → SynthonM
-      tensor: <name>         — algebra.tensor → SynthonM
+      join:   <name>         — algebra.join → ImscriptionM
+      meet:   <name>         — algebra.meet → ImscriptionM
+      tensor: <name>         — algebra.tensor → ImscriptionM
         lambda: <float>      (default 0.3)
-      lift:   <target>       — lift_* → SynthonM
-      path:   <name>         — find_path → SynthonM
+      lift:   <target>       — lift_* → ImscriptionM
+      path:   <name>         — find_path → ImscriptionM
         xi_tolerance: <float> (default 2.0)
         max_hops: <int>       (default 6)
       assert:                — inline proof obligation
@@ -5126,17 +5132,17 @@ def run_syn(script: str, fmt: Optional[str], save_path: Optional[str], dry_run: 
 
 
 # Register run_syn with the imscribe alias (must be after run_syn is defined above)
-syncon_alias.add_command(run_syn, name="run")  # Phase 3a — .syn DSL runner
+imscribe_alias.add_command(run_syn, name="run")  # Phase 3a — .syn DSL runner
 
-# Register tuple-algebra commands with syncon_alias (meet/join/path/tensor/lift/pipeline
+# Register tuple-algebra commands with imscribe_alias (meet/join/path/tensor/lift/pipeline
 # were decorated with @main.command but never wired into the imscribe entrypoint)
-syncon_alias.add_command(distance)
-syncon_alias.add_command(meet)
-syncon_alias.add_command(join)
-syncon_alias.add_command(path)
-syncon_alias.add_command(tensor)
-syncon_alias.add_command(lift)
-syncon_alias.add_command(pipeline)
+imscribe_alias.add_command(distance)
+imscribe_alias.add_command(meet)
+imscribe_alias.add_command(join)
+imscribe_alias.add_command(path)
+imscribe_alias.add_command(tensor)
+imscribe_alias.add_command(lift)
+imscribe_alias.add_command(pipeline)
 
 
 # ---------------------------------------------------------------------------
@@ -5154,7 +5160,7 @@ syncon_alias.add_command(pipeline)
               help="Distance metric: diagonal (v0.4.26 default) or mahalanobis (g=Σ⁻¹, §26).")
 def phase_diagram_cmd(names, save, text_only, fmt, metric):
     """
-    Compute tuple-space phase diagram for NAMES (defaults to 8 quantum synthons).
+    Compute tuple-space phase diagram for NAMES (defaults to 8 quantum imscriptions).
 
     Detects phase boundaries as large jumps in pairwise tuple distance.
     Renders a two-panel plot: Ward dendrogram + MDS 2-D phase map.
@@ -5176,9 +5182,9 @@ def phase_diagram_cmd(names, save, text_only, fmt, metric):
 
     name_list = list(names) if names else None
     try:
-        pd = build_phase_map(synthon_names=name_list, metric=metric)
+        pd = build_phase_map(imscription_names=name_list, metric=metric)
     except KeyError as e:
-        click.echo(f"[ERROR] Synthon not found: {e}", err=True)
+        click.echo(f"[ERROR] Imscription not found: {e}", err=True)
         raise SystemExit(1)
 
     if fmt == "json":
@@ -5195,11 +5201,11 @@ def phase_diagram_cmd(names, save, text_only, fmt, metric):
             click.echo(f"Phase diagram saved to: {save}")
 
 
-syncon_alias.add_command(phase_diagram_cmd, name="phase-diagram")
+imscribe_alias.add_command(phase_diagram_cmd, name="phase-diagram")
 
 
 # =============================================================================
-# Subcommand: tool  — single-shot SynthonTool dispatch
+# Subcommand: tool  — single-shot ImscribeTool dispatch
 # =============================================================================
 
 @main.command("tool")
@@ -5223,9 +5229,9 @@ syncon_alias.add_command(phase_diagram_cmd, name="phase-diagram")
 def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
              limit, max_hops, delta_g, provider, model, format):
     """
-    Single-shot SynthonTool dispatch — LLM tool layer from the command line.
+    Single-shot ImscribeTool dispatch — LLM tool layer from the command line.
 
-    Validates, probes, or composes synthons using the real Python API.
+    Validates, probes, or composes imscriptions using the real Python API.
     Every operation returns a structured result; axiom violations are shown
     with a precise trace.
 
@@ -5242,7 +5248,7 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).parent.parent))
-    from synthon_tool import SynthonTool
+    from imscribe_tool import IGTool as ImscribeTool
 
     kwargs = {}
     if name:        kwargs["name"]        = name
@@ -5259,7 +5265,7 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
     if provider:    kwargs["provider"]    = provider
     if model:       kwargs["model"]       = model
 
-    result = SynthonTool.dispatch(operation, **kwargs)
+    result = ImscribeTool.dispatch(operation, **kwargs)
 
     if format == "json":
         click.echo(result.to_json())
@@ -5337,7 +5343,7 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).parent.parent))
-    from synthon_agent import run_design, _OPENAI_BASE_URLS
+    from imscribe_agent import run_design, _OPENAI_BASE_URLS
 
     # Provider-aware model defaults
     _PROVIDER_DEFAULT_MODELS = {
@@ -5352,7 +5358,7 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
     resolved_model = model or _PROVIDER_DEFAULT_MODELS.get(provider, "deepseek-chat")
 
     console.print(Panel(
-        f"[bold cyan]Synthon Design Agent[/bold cyan]\n"
+        f"[bold cyan]Imscription Design Agent[/bold cyan]\n"
         f"Goal: {goal}\n"
         f"Criteria: Φ_c ≥ {phi_c_min}  ·  ξ_CP ≤ {xi_cp_max} nats"
         + (f"  ·  path→{target}" if target else ""),
@@ -5416,8 +5422,8 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
         console.print(f"[dim]History saved → {output}[/dim]")
 
 
-syncon_alias.add_command(tool_cmd, name="tool")
-syncon_alias.add_command(design_cmd, name="design")
+imscribe_alias.add_command(tool_cmd, name="tool")
+imscribe_alias.add_command(design_cmd, name="design")
 
 
 # ── imscribe remove ──────────────────────────────────────────────────────────────
@@ -5426,12 +5432,12 @@ syncon_alias.add_command(design_cmd, name="design")
 @click.argument("names", nargs=-1, required=True)
 @click.option("--yes", "-y", is_flag=True, help="Skip confirmation prompt.")
 def remove_cmd(names: tuple, yes: bool):
-    """Remove one or more synthons from the catalog by name.
+    """Remove one or more imscriptions from the catalog by name.
 
     \b
     Examples:
-        imscribe remove junk_synthon_1 junk_synthon_2
-        imscribe remove synthon_foo --yes
+        imscribe remove junk_imscription_1 junk_imscription_2
+        imscribe remove imscription_foo --yes
     """
     from imscrbgrmr.registry import global_catalog
 
@@ -5446,7 +5452,7 @@ def remove_cmd(names: tuple, yes: bool):
         raise SystemExit(1)
 
     if not yes:
-        console.print(f"\n[bold]About to remove {len(found)} synthon(s):[/bold]")
+        console.print(f"\n[bold]About to remove {len(found)} imscription(s):[/bold]")
         for n in found:
             console.print(f"  • {n}")
         click.confirm("\nContinue?", abort=True)
@@ -5463,10 +5469,10 @@ def remove_cmd(names: tuple, yes: bool):
     for n in failed:
         console.print(f"[red]✗ Failed:[/red]  {n}")
 
-    console.print(f"\n[bold]Catalog now has {len(global_catalog)} synthon(s).[/bold]")
+    console.print(f"\n[bold]Catalog now has {len(global_catalog)} imscription(s).[/bold]")
 
 
-syncon_alias.add_command(remove_cmd, name="remove")
+imscribe_alias.add_command(remove_cmd, name="remove")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -5481,7 +5487,7 @@ syncon_alias.add_command(remove_cmd, name="remove")
 @click.option("--xi-tolerance", default=1.0, show_default=True,
               help="Per-hop |Δξ_CP| budget (nats).")
 def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: float):
-    """Classify the phase transition between two catalog synthons.
+    """Classify the phase transition between two catalog imscriptions.
 
     \b
     Encodes the transition as a Kleisli arrow in the HotSwap monad:
@@ -5508,7 +5514,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
         console.print(f"[red]Not found:[/red] {dst_name}")
         raise SystemExit(1)
 
-    catalog = list(global_catalog._synthons.values())
+    catalog = list(global_catalog._imscriptions.values())
     morph = find_transition(src, dst, catalog,
                             max_hops=max_hops, xi_tolerance=xi_tolerance)
 
@@ -5543,7 +5549,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
     if morph.is_quantum_critical:
         qcp = morph.quantum_critical_point
         console.print(f"  [bold yellow]⚛  Quantum critical point detected[/bold yellow]")
-        console.print(f"     QCP synthon(s): {', '.join(qcp.qcp_synthon_names)}")
+        console.print(f"     QCP imscription(s): {', '.join(qcp.qcp_imscription_names)}")
         for h in qcp.universality_hints:
             console.print(f"     {h}")
 
@@ -5596,17 +5602,17 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
             console.print(f"    • {n}")
 
 
-syncon_alias.add_command(transition_cmd, name="transition")
+imscribe_alias.add_command(transition_cmd, name="transition")
 
 
 # ── Decomposition algebra commands ─────────────────────────────────────────────
 
 @main.command()
-@click.argument("synthon")
+@click.argument("imscription")
 @click.argument("primitives", nargs=-1, required=True)
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def project(synthon: str, primitives: tuple, format: str):
-    """Project a synthon onto a subset of named primitives (zero all others).
+def project(imscription: str, primitives: tuple, format: str):
+    """Project a imscription onto a subset of named primitives (zero all others).
 
     PRIMITIVES is one or more field names: F K G D T R P Phi Omega Gamma
 
@@ -5615,12 +5621,12 @@ def project(synthon: str, primitives: tuple, format: str):
       imscribe project allosteric_domain F K G Phi
     """
     from .decompose import project as _project
-    s = _load_synthon_by_name(synthon)
+    s = _load_imscription_by_name(imscription)
     r = _project(s, list(primitives))
     if format == "json":
         import json
         click.echo(json.dumps({
-            "synthon": synthon,
+            "imscription": imscription,
             "projected_primitives": list(primitives),
             "zeroed": r.zeroed,
             "result": r.result.to_notation() if r.result else None,
@@ -5628,7 +5634,7 @@ def project(synthon: str, primitives: tuple, format: str):
         }, indent=2))
         return
     click.echo()
-    click.echo(f"  project({synthon}, [{', '.join(primitives)}])")
+    click.echo(f"  project({imscription}, [{', '.join(primitives)}])")
     click.echo()
     if r.zeroed:
         click.echo(f"  Zeroed  : {', '.join(r.zeroed)}")
@@ -5639,15 +5645,15 @@ def project(synthon: str, primitives: tuple, format: str):
 
 
 @main.command()
-@click.argument("synthon")
+@click.argument("imscription")
 @click.argument("primitive")
 @click.option("--strict", is_flag=True, default=False,
               help="Block peel if it would destroy Phi_ctyogh (phase protection).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def peel(synthon: str, primitive: str, strict: bool, format: str):
+def peel(imscription: str, primitive: str, strict: bool, format: str):
     """Descend one tier on a single primitive (peel one layer off).
 
-    Returns the resulting synthon and any peel cost (in nats).
+    Returns the resulting imscription and any peel cost (in nats).
     Use --strict to block the peel if it would destroy a critical phase (Phi_ctyogh).
 
     \b
@@ -5656,12 +5662,12 @@ def peel(synthon: str, primitive: str, strict: bool, format: str):
       imscribe peel allosteric_domain F
     """
     from .decompose import primitive_peel as _peel
-    s = _load_synthon_by_name(synthon)
+    s = _load_imscription_by_name(imscription)
     r = _peel(s, primitive, strict=strict)
     if format == "json":
         import json
         click.echo(json.dumps({
-            "synthon": synthon,
+            "imscription": imscription,
             "primitive": primitive,
             "strict": strict,
             "blocked": r.blocked,
@@ -5672,7 +5678,7 @@ def peel(synthon: str, primitive: str, strict: bool, format: str):
         }, indent=2))
         return
     click.echo()
-    click.echo(f"  peel({synthon}, {primitive}{'  [strict]' if strict else ''})")
+    click.echo(f"  peel({imscription}, {primitive}{'  [strict]' if strict else ''})")
     click.echo()
     if r.blocked:
         click.echo(f"  BLOCKED : {r.block_reason}")
@@ -5685,14 +5691,14 @@ def peel(synthon: str, primitive: str, strict: bool, format: str):
 
 
 @main.command()
-@click.argument("synthon")
+@click.argument("imscription")
 @click.option("--prefer", "-p", default=None,
               help="Preferred primitive to factor on first (e.g. F, K, G).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def factor(synthon: str, prefer: str, format: str):
-    """Find the strongest meet-irreducible factor of a synthon.
+def factor(imscription: str, prefer: str, format: str):
+    """Find the strongest meet-irreducible factor of a imscription.
 
-    Returns the sub-synthon that best characterises the dominant structure.
+    Returns the sub-imscription that best characterises the dominant structure.
     Use --prefer to bias the factoring toward a specific primitive.
 
     \b
@@ -5701,12 +5707,12 @@ def factor(synthon: str, prefer: str, format: str):
       imscribe factor allosteric_domain
     """
     from .decompose import factor as _factor
-    s = _load_synthon_by_name(synthon)
+    s = _load_imscription_by_name(imscription)
     r = _factor(s, prefer=prefer)
     if format == "json":
         import json
         click.echo(json.dumps({
-            "synthon": synthon,
+            "imscription": imscription,
             "prefer": prefer,
             "stepped_primitive": r.stepped_primitive,
             "result": r.result.to_notation() if r.result else None,
@@ -5714,10 +5720,10 @@ def factor(synthon: str, prefer: str, format: str):
         }, indent=2))
         return
     click.echo()
-    click.echo(f"  factor({synthon}{'  prefer=' + prefer if prefer else ''})")
+    click.echo(f"  factor({imscription}{'  prefer=' + prefer if prefer else ''})")
     click.echo()
     if r.stepped_primitive == "none":
-        click.echo("  Irreducible — synthon is already a join-irreducible atom.")
+        click.echo("  Irreducible — imscription is already a join-irreducible atom.")
     else:
         click.echo(f"  Stepped on : {r.stepped_primitive}")
         click.echo(f"  Result     : {r.result.to_notation() if r.result else 'None'}")
@@ -5727,13 +5733,13 @@ def factor(synthon: str, prefer: str, format: str):
 
 
 @main.command("principal-decomp")
-@click.argument("synthon")
+@click.argument("imscription")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def principal_decomp_cmd(synthon: str, format: str):
-    """Recursively factor a synthon down to its join-irreducible atoms.
+def principal_decomp_cmd(imscription: str, format: str):
+    """Recursively factor a imscription down to its join-irreducible atoms.
 
     The principal decomposition reveals the minimal building-block atoms
-    that, when joined, reproduce the full synthon structure.
+    that, when joined, reproduce the full imscription structure.
 
     \b
     Example:
@@ -5741,19 +5747,19 @@ def principal_decomp_cmd(synthon: str, format: str):
       imscribe principal-decomp quantum_gravity
     """
     from .decompose import principal_decomp as _pd
-    s = _load_synthon_by_name(synthon)
+    s = _load_imscription_by_name(imscription)
     r = _pd(s)
     if format == "json":
         import json
         click.echo(json.dumps({
-            "synthon": synthon,
+            "imscription": imscription,
             "n_factors": r.n_factors,
             "factors": [a.to_notation() if hasattr(a, "to_notation") else str(a) for a in r.factors],
             "notes": r.notes,
         }, indent=2))
         return
     click.echo()
-    click.echo(f"  principal_decomp({synthon})")
+    click.echo(f"  principal_decomp({imscription})")
     click.echo(f"  Factors ({r.n_factors}):")
     for i, a in enumerate(r.factors, 1):
         click.echo(f"    [{i}] {a.to_notation() if hasattr(a, 'to_notation') else a}")
@@ -5780,8 +5786,8 @@ def cofactor(composite: str, factor_a: str, format: str):
       imscribe cofactor allosteric_domain gnf_2
     """
     from .decompose import cofactor as _cofactor
-    c = _load_synthon_by_name(composite)
-    a = _load_synthon_by_name(factor_a)
+    c = _load_imscription_by_name(composite)
+    a = _load_imscription_by_name(factor_a)
     r = _cofactor(c, a)
     if format == "json":
         import json
@@ -5831,12 +5837,12 @@ def cofactor(composite: str, factor_a: str, format: str):
 @click.option("--top", "-n", type=int, default=5, show_default=True,
               help="Number of top candidates to show.")
 @click.option("--max-factors", type=int, default=2, show_default=True,
-              help="Maximum number of catalog synthons to combine per candidate.")
+              help="Maximum number of catalog imscriptions to combine per candidate.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def retrosyn_cmd(target: str, top: int, max_factors: int, format: str):
     """Retrosynthetic search: find catalog pairs that tensor toward TARGET.
 
-    Searches the catalog for synthons (or pairs) whose tensor product
+    Searches the catalog for imscriptions (or pairs) whose tensor product
     most closely approaches the target tuple. Ranked by distance to target.
 
     \b
@@ -5846,7 +5852,7 @@ def retrosyn_cmd(target: str, top: int, max_factors: int, format: str):
     """
     from .decompose import retrosynthetic_path as _retro
     from .registry import global_catalog
-    t = _load_synthon_by_name(target)
+    t = _load_imscription_by_name(target)
     catalog = global_catalog.search()
     r = _retro(t, catalog, max_factors=max_factors)
     candidates = r.candidates[:top]
@@ -5876,11 +5882,11 @@ def retrosyn_cmd(target: str, top: int, max_factors: int, format: str):
 
 
 # Register decomposition commands with imscribe alias
-syncon_alias.add_command(project)          # DECOMPOSE_PROJECT
-syncon_alias.add_command(peel)             # DECOMPOSE_PEEL
-syncon_alias.add_command(factor)           # DECOMPOSE_FACTOR
-syncon_alias.add_command(principal_decomp_cmd, name="principal-decomp")  # DECOMPOSE_PD
-syncon_alias.add_command(cofactor)         # DECOMPOSE_COFACTOR
+imscribe_alias.add_command(project)          # DECOMPOSE_PROJECT
+imscribe_alias.add_command(peel)             # DECOMPOSE_PEEL
+imscribe_alias.add_command(factor)           # DECOMPOSE_FACTOR
+imscribe_alias.add_command(principal_decomp_cmd, name="principal-decomp")  # DECOMPOSE_PD
+imscribe_alias.add_command(cofactor)         # DECOMPOSE_COFACTOR
 # retrosyn is registered under chem_group
 
 
@@ -5889,7 +5895,7 @@ syncon_alias.add_command(cofactor)         # DECOMPOSE_COFACTOR
 # =============================================================================
 
 def _frobenius_classify(s) -> str:
-    """Apply R1–R5 to classify a Synthon into its Frobenius tier."""
+    """Apply R1–R5 to classify a Imscription into its Frobenius tier."""
     phi   = s.criticality_phase.value
     p     = s.polarity.value
     omega = s.protection.value
@@ -5924,10 +5930,10 @@ _FROBENIUS_TIER_DESC = {
 
 
 @main.command("ouroborics")
-@click.argument("synthon", default="__all__", required=False)
+@click.argument("imscription", default="__all__", required=False)
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def frobenius_tier_cmd(synthon: str, format: str):
-    """Classify a synthon (or the whole catalog) into its Frobenius ouroboricity tier.
+def frobenius_tier_cmd(imscription: str, format: str):
+    """Classify a imscription (or the whole catalog) into its Frobenius ouroboricity tier.
 
     Tiers: O_inf / O_0 / O_1 / O_2 / O_2_dag
 
@@ -5949,11 +5955,11 @@ def frobenius_tier_cmd(synthon: str, format: str):
     import json as _json
     from .registry import global_catalog
 
-    if synthon == "__all__":
-        all_synthons = global_catalog.search()
+    if imscription == "__all__":
+        all_imscriptions = global_catalog.search()
         counts = {"O_inf": 0, "O_0": 0, "O_1": 0, "O_2": 0, "O_2_dag": 0}
         by_tier: Dict[str, list] = {k: [] for k in counts}
-        for s in all_synthons:
+        for s in all_imscriptions:
             tier = _frobenius_classify(s)
             counts[tier] += 1
             by_tier[tier].append(s.name)
@@ -5987,16 +5993,16 @@ def frobenius_tier_cmd(synthon: str, format: str):
         click.echo()
         return
 
-    s = global_catalog.get(synthon)
+    s = global_catalog.get(imscription)
     if s is None:
-        click.echo(f"Synthon '{synthon}' not found in catalog.", err=True)
+        click.echo(f"Imscription '{imscription}' not found in catalog.", err=True)
         raise SystemExit(1)
 
     tier = _frobenius_classify(s)
 
     if format == "json":
         click.echo(_json.dumps({
-            "name": synthon,
+            "name": imscription,
             "frobenius_tier": tier,
             "Phi": s.criticality_phase.value,
             "P": s.polarity.value,
@@ -6007,7 +6013,7 @@ def frobenius_tier_cmd(synthon: str, format: str):
         return
 
     click.echo()
-    click.echo(f"  ouroborics({synthon})")
+    click.echo(f"  ouroborics({imscription})")
     click.echo()
     tier_label = tier.replace("O_2_dag", "O_2†")
     click.echo(f"  Tier    : {tier_label}")
@@ -6019,9 +6025,9 @@ def frobenius_tier_cmd(synthon: str, format: str):
     click.echo()
 
 
-syncon_alias.add_command(frobenius_tier_cmd, name="ouroborics")  # OUROBORICS
-syncon_alias.add_command(lambda_group, name="lambda")  # λ-engine
-syncon_alias.add_command(nav_group, name="nav")  # navigators
+imscribe_alias.add_command(frobenius_tier_cmd, name="ouroborics")  # OUROBORICS
+imscribe_alias.add_command(lambda_group, name="lambda")  # λ-engine
+imscribe_alias.add_command(nav_group, name="nav")  # navigators
 
 
 # ── vocal imscription ──────────────────────────────────────────────────────────
@@ -6161,7 +6167,7 @@ def _print_full_guide(guides: dict, primitive_order: list[str]) -> None:
     console.print()
 
 
-syncon_alias.add_command(vocal_cmd, name="vocal")
+imscribe_alias.add_command(vocal_cmd, name="vocal")
 
 
 if __name__ == "__main__":

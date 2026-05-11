@@ -1,7 +1,7 @@
 """
-Temporal Domain — Synthon agents for oscillatory reactions and catalytic cycles.
+Temporal Domain — Imscription agents for oscillatory reactions and catalytic cycles.
 
-This module implements agents for analyzing temporal synthons
+This module implements agents for analyzing temporal imscriptions
 in the context of dynamic chemical systems.
 """
 from __future__ import annotations
@@ -9,7 +9,7 @@ from __future__ import annotations
 from typing import Dict, List, Any, Optional
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -20,14 +20,14 @@ from imscrbgrmr.models import (
     KineticCharacter,  # NEW
 )
 
-__all__ = ["TemporalSynthonAgent"]
+__all__ = ["TemporalImscriptionAgent"]
 
 
-class TemporalSynthonAgent:
+class TemporalImscriptionAgent:
     """
-    Agent for analyzing temporal synthons in oscillatory chemical systems.
+    Agent for analyzing temporal imscriptions in oscillatory chemical systems.
     
-    Temporal synthons operate with D_infinity (1D temporal periodicity)
+    Temporal imscriptions operate with D_infinity (1D temporal periodicity)
     and typically involve R_downstep (dynamic/catalytic) recognition modes.
     
     Capabilities:
@@ -121,13 +121,13 @@ class TemporalSynthonAgent:
         else:
             fidelity_enum = Fidelity.LOW
         
-        # Compute ξ_CP for temporal synthon
+        # Compute ξ_CP for temporal imscription
         # Using typical barrier height for estimation
         delta_g_approx = 85  # kJ/mol (proline aldol reference)
         from imscrbgrmr.thermodynamics import compute_xi_CP
 
-        # Create a minimal synthon for calculation
-        temporal_synthon = Synthon(
+        # Create a minimal imscription for calculation
+        temporal_imscription = Imscription(
             name="temporal_cycle",
             dimensionality=Dimensionality.TEMPORAL,
             topology=Topology.CYCLIC_BOWTIE,
@@ -139,7 +139,7 @@ class TemporalSynthonAgent:
             interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
         )
 
-        xi_cp = compute_xi_CP(temporal_synthon, delta_g_approx)
+        xi_cp = compute_xi_CP(temporal_imscription, delta_g_approx)
 
         return {
             "k_cat": k_cat,
@@ -148,9 +148,9 @@ class TemporalSynthonAgent:
             "fidelity_enum": fidelity_enum.value,
             "xi_CP_nats": xi_cp,
             "interpretation": (
-                f"High fidelity temporal synthon (F ≈ {f_cycle:.4f})"
+                f"High fidelity temporal imscription (F ≈ {f_cycle:.4f})"
                 if f_cycle >= 0.99
-                else f"Medium fidelity temporal synthon (F ≈ {f_cycle:.3f})"
+                else f"Medium fidelity temporal imscription (F ≈ {f_cycle:.3f})"
             ),
         }
 
@@ -236,27 +236,27 @@ class TemporalSynthonAgent:
             "num_cycles": len(peaks),
             "period_seconds": avg_period,
             "amplitude": avg_amplitude,
-            "synthon_type": "Ð_infinity_temporal",
+            "imscription_type": "Ð_infinity_temporal",
         }
     
-    def to_synthon(
+    def to_imscription(
         self,
         cycle_name: str,
         fidelity: Fidelity = Fidelity.MEDIUM,
-    ) -> Synthon:
+    ) -> Imscription:
         """
-        Create a temporal synthon from a catalytic cycle.
+        Create a temporal imscription from a catalytic cycle.
         
         Args:
             cycle_name: Name of the cycle
             fidelity: Fidelity level (default: MEDIUM)
         
         Returns:
-            Synthon object
+            Imscription object
         """
         from imscrbgrmr.models import CriticalityPhase
         
-        return Synthon(
+        return Imscription(
             name=cycle_name,
             dimensionality=Dimensionality.TEMPORAL,
             topology=Topology.CYCLIC_BOWTIE,
@@ -267,6 +267,6 @@ class TemporalSynthonAgent:
             granularity=Granularity.MESOSCALE,
             interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
             criticality_phase=CriticalityPhase.SUBCRITICAL,
-            description=f"Temporal synthon: {cycle_name} cycle",
+            description=f"Temporal imscription: {cycle_name} cycle",
             metadata={"cycle_type": "catalytic"},
         )

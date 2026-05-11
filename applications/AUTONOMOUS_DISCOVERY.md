@@ -7,14 +7,14 @@ header-includes:
     \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
     \newcommand{\igtext}[1]{{\igfont #1}}
 ---
-# Autonomous Synthon Discovery Agent
+# Autonomous Imscription Discovery Agent
 
 ## Overview
 
-The `AutonomousSynthonDiscoveryAgent` is a self-directed agent that continuously:
-1. **Proposes** novel synthons based on chemical space exploration
+The `AutonomousImscriptionDiscoveryAgent` is a self-directed agent that continuously:
+1. **Proposes** novel imscriptions based on chemical space exploration
 2. **Validates** against existing catalog and literature
-3. **Registers** valid synthons to the global catalog
+3. **Registers** valid imscriptions to the global catalog
 4. **Repeats** until configured limits are reached
 
 ## Quick Start
@@ -42,8 +42,8 @@ imscribe agents discover --confidence 0.6 --cycles 30
 
 ```python
 import asyncio
-from agents.autonomous_synthon_discovery_agent import (
-    AutonomousSynthonDiscoveryAgent,
+from agents.autonomous_imscription_discovery_agent import (
+    AutonomousImscriptionDiscoveryAgent,
     AutonomousRunConfig,
     run_autonomous_discovery,
 )
@@ -59,7 +59,7 @@ results = await run_autonomous_discovery(
 
 # Method 2: Full control
 config = build_agent_config(provider="anthropic", model=None)
-agent = AutonomousSynthonDiscoveryAgent(config)
+agent = AutonomousImscriptionDiscoveryAgent(config)
 
 run_config = AutonomousRunConfig(
     max_cycles=100,
@@ -118,7 +118,7 @@ Each cycle performs these steps:
 - Identifies potential conflicts
 - Validates chemical reasonableness
 
-### 4. Synthon Generation
+### 4. Imscription Generation
 - Maps to seven primitives
 - Assigns confidence score
 - Provides reasoning
@@ -142,7 +142,7 @@ The agent saves progress to `output_dir` (default: `./discovery_output/`):
     "proposed_name": "pyridine_carboxylic_acid_cocrystal",
     "proposed_description": "...",
     "validation_result": "valid_novel",
-    "synthon": {...},
+    "imscription": {...},
     "confidence": 0.85,
     "reasoning": "...",
     "literature_references": [...]
@@ -156,9 +156,9 @@ The agent saves progress to `output_dir` (default: `./discovery_output/`):
 {
   "stats": {
     "cycles_completed": 10,
-    "synthons_proposed": 10,
-    "synthons_validated": 7,
-    "synthons_registered": 7,
+    "imscriptions_proposed": 10,
+    "imscriptions_validated": 7,
+    "imscriptions_registered": 7,
     "duplicates_detected": 2,
     "literature_conflicts": 1,
     "errors": 0
@@ -171,8 +171,8 @@ The agent saves progress to `output_dir` (default: `./discovery_output/`):
 ```json
 // catalog_20260313_143022_cycle_10.json
 {
-  "name": "global_synthonicon",
-  "synthons": [...]
+  "name": "global_Imscriptiveon",
+  "imscriptions": [...]
 }
 ```
 
@@ -192,7 +192,7 @@ The agent saves progress to `output_dir` (default: `./discovery_output/`):
 $ imscribe agents discover --cycles 5 --focus "halogen bonding"
 
 ======================================================================
-AUTONOMOUS SYNTHON DISCOVERY AGENT
+AUTONOMOUS imscription DISCOVERY AGENT
 ======================================================================
 Configuration:
   Max cycles: 5
@@ -219,7 +219,7 @@ CYCLE 2/5
 
 [⊗] duplicate_exists
     Name: carboxylic_acid_dimer
-    Reason: Duplicate of existing synthon: carboxylic_acid_dimer
+    Reason: Duplicate of existing imscription: carboxylic_acid_dimer
 
 ...
 
@@ -228,15 +228,15 @@ DISCOVERY RUN COMPLETE
 ======================================================================
 Duration: 3.2 minutes
 Cycles completed: 5
-Synthons proposed: 5
-Synthons validated: 3
-Synthons registered: 3
+imscriptions proposed: 5
+imscriptions validated: 3
+imscriptions registered: 3
 Duplicates detected: 1
 Literature conflicts: 1
 Errors: 0
 Success rate: 60.0%
 
-Catalog now contains 48 synthons
+Catalog now contains 48 imscriptions
 ======================================================================
 ```
 
@@ -271,7 +271,7 @@ await run_autonomous_discovery(
 Extend the agent to add custom validation:
 
 ```python
-class CustomDiscoveryAgent(AutonomousSynthonDiscoveryAgent):
+class CustomDiscoveryAgent(AutonomousImscriptionDiscoveryAgent):
     async def _validate_literature(self, description: str):
         # Add custom validation logic
         result = await super()._validate_literature(description)
@@ -320,7 +320,7 @@ async def _validate_literature(self, description: str):
 
 ## Troubleshooting
 
-### Agent Not Registering Synthons
+### Agent Not Registering imscriptions
 
 Check confidence threshold:
 ```bash
@@ -347,8 +347,8 @@ async def _run_discovery_cycle(self, cycle_number, config):
 
 Typical performance (depends on LLM provider):
 - **Cycle time**: 10-30 seconds per cycle
-- **Success rate**: 40-70% (valid novel synthons)
-- **Catalog growth**: ~5-15 synthons per 20 cycles
+- **Success rate**: 40-70% (valid novel imscriptions)
+- **Catalog growth**: ~5-15 imscriptions per 20 cycles
 
 ## Future Enhancements
 

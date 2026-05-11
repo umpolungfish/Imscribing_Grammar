@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Tuple
 
 from .models import (
-    Synthon, KineticCharacter, Dimensionality, RecognitionMode,
+    Imscription, KineticCharacter, Dimensionality, RecognitionMode,
 )
 from .constraints import AxiomValidator, AxiomResult
 from .varma_probe import degeneracy_strength, VarmaCorrelationData
@@ -28,7 +28,7 @@ from .varma_probe import degeneracy_strength, VarmaCorrelationData
 @dataclass
 class TrajectoryStep:
     """A single mechanistic step in a D_∞ cycle."""
-    synthon: Synthon
+    imscription: Imscription
     step_name: str
     delta_g: Optional[float] = None          # kJ/mol (reaction ΔG, signed)
     delta_g_ddagger: Optional[float] = None  # kJ/mol (activation barrier ΔG‡)
@@ -37,7 +37,7 @@ class TrajectoryStep:
 
     @property
     def kinetic_character(self) -> KineticCharacter:
-        return self.synthon.kinetic_character
+        return self.imscription.kinetic_character
 
 
 @dataclass
@@ -123,7 +123,7 @@ class TrajectoryValidationResult:
 
 
 # ---------------------------------------------------------------------------
-# TemporalSynthonAgent
+# TemporalImscriptionAgent
 # ---------------------------------------------------------------------------
 
 _RESET_KEYWORDS = [
@@ -133,15 +133,15 @@ _RESET_KEYWORDS = [
 ]
 
 
-class TemporalSynthonAgent:
+class TemporalImscriptionAgent:
     """
     Validates D_∞ systems as step sequences.
 
     Protocol::
 
-        agent = TemporalSynthonAgent("proline_aldol")
-        agent.add_step(enamine_synthon, "enamine_formation", delta_g=-15.0)
-        agent.add_step(ts_synthon,      "c_c_bond_form",     delta_g_ddagger=97.0)
+        agent = TemporalImscriptionAgent("proline_aldol")
+        agent.add_step(enamine_imscription, "enamine_formation", delta_g=-15.0)
+        agent.add_step(ts_imscription,      "c_c_bond_form",     delta_g_ddagger=97.0)
         agent.add_step(hydrolysis_syn,  "hydrolysis_reset",  delta_g=-25.0, is_reset=True)
         result = agent.validate_all()
         print(result.overall_valid)
@@ -153,17 +153,17 @@ class TemporalSynthonAgent:
 
     def add_step(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
         step_name: Optional[str] = None,
         delta_g: Optional[float] = None,
         delta_g_ddagger: Optional[float] = None,
         is_reset: bool = False,
         notes: str = "",
-    ) -> "TemporalSynthonAgent":
+    ) -> "TemporalImscriptionAgent":
         """Register a mechanistic step. Returns self for chaining."""
         name = step_name or f"step_{len(self._steps) + 1}"
         self._steps.append(TrajectoryStep(
-            synthon=synthon,
+            imscription=imscription,
             step_name=name,
             delta_g=delta_g,
             delta_g_ddagger=delta_g_ddagger,
@@ -192,8 +192,8 @@ class TemporalSynthonAgent:
             issues: List[str] = []
 
             # 1. Mass balance via S primitive
-            s_a = getattr(a.synthon, "stoichiometry", None)
-            s_b = getattr(b.synthon, "stoichiometry", None)
+            s_a = getattr(a.imscription, "stoichiometry", None)
+            s_b = getattr(b.imscription, "stoichiometry", None)
             if s_a and s_b and s_a != s_b:
                 mass_balance_ok = False
                 issues.append(
@@ -203,8 +203,8 @@ class TemporalSynthonAgent:
                 mass_balance_ok = True
 
             # 2. Axiom 4: D_∞ or R_‡ required for every sequential step
-            has_temporal = "temporal" in b.synthon.dimensionality.domains
-            has_catalytic = b.synthon.recognition_mode in {
+            has_temporal = "temporal" in b.imscription.dimensionality.domains
+            has_catalytic = b.imscription.recognition_mode in {
                 RecognitionMode.DYNAMIC_CATALYTIC,
                 RecognitionMode.COVALENT_DYNAMIC,
             }
@@ -216,7 +216,7 @@ class TemporalSynthonAgent:
                 )
 
             # 3. Kinetic accessibility
-            if b.synthon.kinetic_character == KineticCharacter.TRAP:
+            if b.imscription.kinetic_character == KineticCharacter.TRAP:
                 kinetic_accessible = False
                 issues.append(
                     f"K_teshlig at '{b.step_name}': pathway multiplicity — "
@@ -263,7 +263,7 @@ class TemporalSynthonAgent:
 
         # Keyword fallback in last step description
         last = self._steps[-1]
-        desc = (last.synthon.description or "").lower()
+        desc = (last.imscription.description or "").lower()
         if any(kw in desc for kw in _RESET_KEYWORDS):
             return True, last.step_name
 
@@ -286,7 +286,7 @@ class TemporalSynthonAgent:
         results: List[StepCriticalityResult] = []
         for step in self._steps:
             cd = correlation_data.get(step.step_name) if correlation_data else None
-            score, tier = degeneracy_strength(step.synthon, cd)
+            score, tier = degeneracy_strength(step.imscription, cd)
             results.append(StepCriticalityResult(
                 step_name=step.step_name,
                 degeneracy_score=score,
@@ -325,14 +325,14 @@ class TemporalSynthonAgent:
         # Collect kinetic traps
         kinetic_traps: List[str] = []
         for step in self._steps:
-            if step.synthon.kinetic_character == KineticCharacter.TRAP:
+            if step.imscription.kinetic_character == KineticCharacter.TRAP:
                 kinetic_traps.append(step.step_name)
             elif step.delta_g_ddagger is not None and step.delta_g_ddagger > 100.0:
                 kinetic_traps.append(step.step_name)
 
         # Axiom 6
         axiom6_result = AxiomValidator.validate_axiom6_temporal_grounding(
-            self._steps[0].synthon
+            self._steps[0].imscription
         )
         axiom6_base = (
             axiom6_result.satisfied

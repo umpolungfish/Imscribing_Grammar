@@ -1,5 +1,5 @@
 """
-Symbolic Reasoning Engine — Formal algebra and theorem proving for the Synthonicon grammar.
+Symbolic Reasoning Engine — Formal algebra and theorem proving for the Imscriptiveon grammar.
 
 This module implements:
 1. Primitive algebra (Γ Boolean operators, G-D tensor operations)
@@ -20,7 +20,7 @@ from enum import Enum
 import itertools
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -61,7 +61,7 @@ class SymbolicOperator(Enum):
     LEQ = "≤"
     GEQ = "≥"
     
-    # Synthon-specific
+    # Imscription-specific
     COMPATIBLE = "⊕"  # Compatibility relation
     AMPLIFIES = "↑"   # Amplification relation
     DEGENERATES = "≡"  # Degeneracy relation
@@ -70,7 +70,7 @@ class SymbolicOperator(Enum):
 @dataclass
 class SymbolicExpression:
     """
-    Represents a symbolic expression in the Synthonicon algebra.
+    Represents a symbolic expression in the Imscriptiveon algebra.
     
     Examples:
         - Primitive assertion: Primitive("F", "ƒ_hardsign")
@@ -88,9 +88,9 @@ class SymbolicExpression:
         else:
             return f"{self.operator.value}({', '.join(map(str, self.operands))})"
     
-    def evaluate(self, synthon: Synthon) -> bool:
-        """Evaluate the expression against a synthon."""
-        return _evaluate_expression(self, synthon)
+    def evaluate(self, imscription: Imscription) -> bool:
+        """Evaluate the expression against a imscription."""
+        return _evaluate_expression(self, imscription)
     
     @classmethod
     def primitive(cls, name: str, value: str) -> SymbolicExpression:
@@ -118,7 +118,7 @@ class SymbolicExpression:
         return cls(SymbolicOperator.IMPLIES, [antecedent, consequent])
 
 
-def _evaluate_expression(expr: SymbolicExpression, synthon: Synthon) -> bool:
+def _evaluate_expression(expr: SymbolicExpression, imscription: Imscription) -> bool:
     """Internal expression evaluation."""
     op = expr.operator
     
@@ -126,38 +126,38 @@ def _evaluate_expression(expr: SymbolicExpression, synthon: Synthon) -> bool:
         # Primitive assertion: F = F_hardsign
         primitive_name = expr.operands[0]
         expected_value = expr.operands[1]
-        actual_value = _get_primitive_value(synthon, primitive_name)
+        actual_value = _get_primitive_value(imscription, primitive_name)
         return actual_value == expected_value
     
     elif op == SymbolicOperator.AND:
-        return all(_evaluate_expression(o, synthon) for o in expr.operands)
+        return all(_evaluate_expression(o, imscription) for o in expr.operands)
     
     elif op == SymbolicOperator.OR:
-        return any(_evaluate_expression(o, synthon) for o in expr.operands)
+        return any(_evaluate_expression(o, imscription) for o in expr.operands)
     
     elif op == SymbolicOperator.NOT:
-        return not _evaluate_expression(expr.operands[0], synthon)
+        return not _evaluate_expression(expr.operands[0], imscription)
     
     elif op == SymbolicOperator.IMPLIES:
-        antecedent = _evaluate_expression(expr.operands[0], synthon)
-        consequent = _evaluate_expression(expr.operands[1], synthon)
+        antecedent = _evaluate_expression(expr.operands[0], imscription)
+        consequent = _evaluate_expression(expr.operands[1], imscription)
         return (not antecedent) or consequent  # Material implication
     
     return False
 
 
-def _get_primitive_value(synthon: Synthon, name: str) -> str:
-    """Get primitive value from synthon by name."""
+def _get_primitive_value(imscription: Imscription, name: str) -> str:
+    """Get primitive value from imscription by name."""
     mapping = {
-        "D": synthon.dimensionality.value,
-        "T": synthon.topology.value,
-        "R": synthon.recognition_mode.value,
-        "P": synthon.polarity.value,
-        "F": synthon.fidelity.value,
-        "K": synthon.kinetic_character.value,
-        "G": synthon.granularity.value,
-        "Γ": f"{synthon.interaction_grammar.operator.value}({synthon.interaction_grammar.tier})",
-        "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "φ̂_softsign",
+        "D": imscription.dimensionality.value,
+        "T": imscription.topology.value,
+        "R": imscription.recognition_mode.value,
+        "P": imscription.polarity.value,
+        "F": imscription.fidelity.value,
+        "K": imscription.kinetic_character.value,
+        "G": imscription.granularity.value,
+        "Γ": f"{imscription.interaction_grammar.operator.value}({imscription.interaction_grammar.tier})",
+        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
     }
     return mapping.get(name, "")
 
@@ -297,18 +297,18 @@ class GDTensor:
     }
     
     @classmethod
-    def compute_independence(cls, synthon: Synthon) -> float:
+    def compute_independence(cls, imscription: Imscription) -> float:
         """
         Compute G-D independence score (0-1).
         
         1.0 = fully independent (normal)
         0.0 = fully degenerate (critical)
         """
-        g = synthon.granularity
-        d = synthon.dimensionality
+        g = imscription.granularity
+        d = imscription.dimensionality
         
         # Check if at criticality
-        if synthon.criticality_phase == CriticalityPhase.CRITICAL:
+        if imscription.criticality_phase == CriticalityPhase.CRITICAL:
             return 0.0
         
         # Get compatibility for each domain
@@ -322,9 +322,9 @@ class GDTensor:
         return sum(compatibilities) / len(compatibilities)
     
     @classmethod
-    def check_degeneracy(cls, synthon: Synthon) -> bool:
+    def check_degeneracy(cls, imscription: Imscription) -> bool:
         """Check if G and D are degenerate (at criticality)."""
-        return synthon.criticality_phase == CriticalityPhase.CRITICAL
+        return imscription.criticality_phase == CriticalityPhase.CRITICAL
     
     @staticmethod
     def _domain_to_dimensionality(domain: str) -> Dimensionality:
@@ -367,60 +367,60 @@ class AxiomTheoremProver:
     
     Validates axioms through:
     1. Symbolic evaluation
-    2. Model checking against synthon catalog
+    2. Model checking against imscription catalog
     3. Counter-example search
     """
     
     def __init__(self, catalog=None):
-        """Initialize prover with optional synthon catalog."""
+        """Initialize prover with optional imscription catalog."""
         self.catalog = catalog
         self.proven_theorems: Dict[str, TheoremProof] = {}
     
     def prove_axiom(
         self,
         axiom_name: str,
-        test_synthons: Optional[List[Synthon]] = None,
+        test_imscriptions: Optional[List[Imscription]] = None,
     ) -> TheoremProof:
         """
-        Prove an axiom against a set of synthons.
+        Prove an axiom against a set of imscriptions.
         
         Args:
             axiom_name: Name of axiom (axiom1-axiom5)
-            test_synthons: Synthons to test against (uses catalog if None)
+            test_imscriptions: imscriptions to test against (uses catalog if None)
         
         Returns:
             TheoremProof with results
         """
-        if test_synthons is None:
-            test_synthons = list(self.catalog._synthons.values()) if self.catalog else []
+        if test_imscriptions is None:
+            test_imscriptions = list(self.catalog._imscriptions.values()) if self.catalog else []
         
         # Get axiom statement
         statement = self._get_axiom_statement(axiom_name)
         
-        # Test against all synthons
+        # Test against all imscriptions
         proof_steps = []
         counter_examples = []
         all_satisfied = True
         
-        for synthon in test_synthons:
+        for imscription in test_imscriptions:
             # Check if axiom applies
-            applies = self._check_axiom_applicability(axiom_name, synthon)
+            applies = self._check_axiom_applicability(axiom_name, imscription)
             
             if not applies:
-                proof_steps.append(f"{synthon.name}: axiom does not apply")
+                proof_steps.append(f"{imscription.name}: axiom does not apply")
                 continue
             
             # Evaluate axiom
-            satisfied = self._evaluate_axiom(axiom_name, synthon)
+            satisfied = self._evaluate_axiom(axiom_name, imscription)
             
             if satisfied:
-                proof_steps.append(f"{synthon.name}: ✓ satisfied")
+                proof_steps.append(f"{imscription.name}: ✓ satisfied")
             else:
-                proof_steps.append(f"{synthon.name}: ✗ VIOLATED")
+                proof_steps.append(f"{imscription.name}: ✗ VIOLATED")
                 all_satisfied = False
                 counter_examples.append({
-                    "synthon": synthon.name,
-                    "notation": synthon.to_notation(),
+                    "imscription": imscription.name,
+                    "notation": imscription.to_notation(),
                     "violation": f"{axiom_name} failed",
                 })
         
@@ -467,23 +467,23 @@ class AxiomTheoremProver:
     def _check_axiom_applicability(
         self,
         axiom_name: str,
-        synthon: Synthon,
+        imscription: Imscription,
     ) -> bool:
-        """Check if an axiom applies to a synthon."""
+        """Check if an axiom applies to a imscription."""
         if axiom_name == "axiom1":
-            return (synthon.topology == Topology.CYCLIC_BOWTIE and
-                    synthon.polarity.is_self_complementary)
+            return (imscription.topology == Topology.CYCLIC_BOWTIE and
+                    imscription.polarity.is_self_complementary)
         elif axiom_name == "axiom2":
-            return (synthon.granularity == Granularity.LOCAL and
-                    synthon.interaction_grammar.tier == "SPECIFIC")
+            return (imscription.granularity == Granularity.LOCAL and
+                    imscription.interaction_grammar.tier == "SPECIFIC")
         elif axiom_name == "axiom4":
-            return (synthon.interaction_grammar.operator == GrammarOperator.SEQUENTIAL)
+            return (imscription.interaction_grammar.operator == GrammarOperator.SEQUENTIAL)
         return True
     
-    def _evaluate_axiom(self, axiom_name: str, synthon: Synthon) -> bool:
-        """Evaluate an axiom against a synthon."""
+    def _evaluate_axiom(self, axiom_name: str, imscription: Imscription) -> bool:
+        """Evaluate an axiom against a imscription."""
         # Use AxiomValidator for consistency
-        validator_result = AxiomValidator.validate_all_axioms(synthon)
+        validator_result = AxiomValidator.validate_all_axioms(imscription)
         axiom_result = validator_result["detailed_results"].get(axiom_name, {})
         return not axiom_result.get("violated", False)
     
@@ -497,26 +497,26 @@ class AxiomTheoremProver:
         
         Args:
             axiom_name: Axiom to test
-            max_search: Maximum number of synthetic synthons to generate
+            max_search: Maximum number of synthetic imscriptions to generate
         
         Returns:
             List of TheoremProof objects for counter-examples found
         """
         counter_proofs = []
         
-        # Generate synthetic synthons to test
-        test_synthons = self._generate_test_synthons(max_search)
+        # Generate synthetic imscriptions to test
+        test_imscriptions = self._generate_test_imscriptions(max_search)
         
-        for synthon in test_synthons:
-            proof = self.prove_axiom(axiom_name, [synthon])
+        for imscription in test_imscriptions:
+            proof = self.prove_axiom(axiom_name, [imscription])
             if not proof.proven:
                 counter_proofs.append(proof)
         
         return counter_proofs
     
-    def _generate_test_synthons(self, count: int) -> List[Synthon]:
-        """Generate synthetic synthons for testing."""
-        synthons = []
+    def _generate_test_imscriptions(self, count: int) -> List[Imscription]:
+        """Generate synthetic imscriptions for testing."""
+        imscriptions = []
         
         # Generate combinations that might violate axioms
         for i in range(count):
@@ -525,8 +525,8 @@ class AxiomTheoremProver:
             polarity = [Polarity.SELF_COMPLEMENTARY_SYM, Polarity.DONOR][i % 2]
             fidelity = [Fidelity.LOW, Fidelity.HIGH][i % 2]
             
-            synthon = Synthon(
-                name=f"test_synthon_{i}",
+            imscription = Imscription(
+                name=f"test_imscription_{i}",
                 dimensionality=Dimensionality.MOLECULAR,
                 topology=topology,
                 recognition_mode=RecognitionMode.NON_COVALENT,
@@ -536,9 +536,9 @@ class AxiomTheoremProver:
                 granularity=Granularity.LOCAL,
                 interaction_grammar=InteractionGrammar.SELECTIVE_AND,
             )
-            synthons.append(synthon)
+            imscriptions.append(imscription)
         
-        return synthons
+        return imscriptions
 
 
 # =============================================================================
@@ -548,8 +548,8 @@ class AxiomTheoremProver:
 @dataclass
 class AnalogyResult:
     """Result of cross-domain analogy detection."""
-    synthon_a: str
-    synthon_b: str
+    imscription_a: str
+    imscription_b: str
     similarity_score: float  # 0.0-1.0
     shared_primitives: List[str]
     differing_primitives: List[str]
@@ -559,8 +559,8 @@ class AnalogyResult:
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary."""
         return {
-            "synthon_a": self.synthon_a,
-            "synthon_b": self.synthon_b,
+            "imscription_a": self.imscription_a,
+            "imscription_b": self.imscription_b,
             "similarity_score": self.similarity_score,
             "shared_primitives": self.shared_primitives,
             "differing_primitives": self.differing_primitives,
@@ -600,22 +600,22 @@ class CrossDomainAnalogyDetector:
     
     def compute_similarity(
         self,
-        synthon_a: Synthon,
-        synthon_b: Synthon,
+        imscription_a: Imscription,
+        imscription_b: Imscription,
     ) -> AnalogyResult:
         """
-        Compute formal similarity between two synthons.
+        Compute formal similarity between two imscriptions.
         
         Args:
-            synthon_a: First synthon
-            synthon_b: Second synthon
+            imscription_a: First imscription
+            imscription_b: Second imscription
         
         Returns:
             AnalogyResult with similarity metrics
         """
         # Extract primitive values
-        primitives_a = self._extract_primitives(synthon_a)
-        primitives_b = self._extract_primitives(synthon_b)
+        primitives_a = self._extract_primitives(imscription_a)
+        primitives_b = self._extract_primitives(imscription_b)
         
         # Compute weighted similarity
         total_weight = 0.0
@@ -630,8 +630,8 @@ class CrossDomainAnalogyDetector:
             if prim_name == "S":
                 # Stoichiometry uses a graded similarity rather than exact match
                 s_sim = self._stoichiometry_similarity(
-                    synthon_a.stoichiometry.value if synthon_a.stoichiometry else None,
-                    synthon_b.stoichiometry.value if synthon_b.stoichiometry else None,
+                    imscription_a.stoichiometry.value if imscription_a.stoichiometry else None,
+                    imscription_b.stoichiometry.value if imscription_b.stoichiometry else None,
                 )
                 weighted_similarity += weight * s_sim
                 if s_sim >= 0.95:
@@ -652,14 +652,14 @@ class CrossDomainAnalogyDetector:
         similarity_score = weighted_similarity / total_weight if total_weight > 0 else 0.0
         
         # Determine analogy type
-        analogy_type = self._classify_analogy(synthon_a, synthon_b, shared)
+        analogy_type = self._classify_analogy(imscription_a, imscription_b, shared)
         
         # Compute confidence
-        confidence = self._compute_confidence(synthon_a, synthon_b, similarity_score)
+        confidence = self._compute_confidence(imscription_a, imscription_b, similarity_score)
         
         return AnalogyResult(
-            synthon_a=synthon_a.name,
-            synthon_b=synthon_b.name,
+            imscription_a=imscription_a.name,
+            imscription_b=imscription_b.name,
             similarity_score=similarity_score,
             shared_primitives=shared,
             differing_primitives=differing,
@@ -667,19 +667,19 @@ class CrossDomainAnalogyDetector:
             confidence=confidence,
         )
     
-    def _extract_primitives(self, synthon: Synthon) -> Dict[str, str]:
-        """Extract primitive values from synthon."""
+    def _extract_primitives(self, imscription: Imscription) -> Dict[str, str]:
+        """Extract primitive values from imscription."""
         return {
-            "D": synthon.dimensionality.value,
-            "T": synthon.topology.value,
-            "R": synthon.recognition_mode.value,
-            "P": synthon.polarity.value,
-            "F": synthon.fidelity.value,
-            "K": synthon.kinetic_character.value,
-            "G": synthon.granularity.value,
-            "Γ": synthon.interaction_grammar.value,
-            "Φ": synthon.criticality_phase.value if synthon.criticality_phase else "φ̂_softsign",
-            "S": synthon.stoichiometry.value if synthon.stoichiometry else "unset",
+            "D": imscription.dimensionality.value,
+            "T": imscription.topology.value,
+            "R": imscription.recognition_mode.value,
+            "P": imscription.polarity.value,
+            "F": imscription.fidelity.value,
+            "K": imscription.kinetic_character.value,
+            "G": imscription.granularity.value,
+            "Γ": imscription.interaction_grammar.value,
+            "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+            "S": imscription.stoichiometry.value if imscription.stoichiometry else "unset",
         }
 
     @staticmethod
@@ -730,14 +730,14 @@ class CrossDomainAnalogyDetector:
     
     def _classify_analogy(
         self,
-        synthon_a: Synthon,
-        synthon_b: Synthon,
+        imscription_a: Imscription,
+        imscription_b: Imscription,
         shared_primitives: List[str],
     ) -> str:
         """Classify the type of analogy."""
         # Check domain overlap
-        domains_a = synthon_a.dimensionality.domains
-        domains_b = synthon_b.dimensionality.domains
+        domains_a = imscription_a.dimensionality.domains
+        domains_b = imscription_b.dimensionality.domains
         
         if domains_a & domains_b:
             # Same domain → structural analogy
@@ -753,8 +753,8 @@ class CrossDomainAnalogyDetector:
     
     def _compute_confidence(
         self,
-        synthon_a: Synthon,
-        synthon_b: Synthon,
+        imscription_a: Imscription,
+        imscription_b: Imscription,
         similarity_score: float,
     ) -> float:
         """Compute confidence in the analogy."""
@@ -763,8 +763,8 @@ class CrossDomainAnalogyDetector:
         
         # Boost if thermodynamic metrics are similar
         try:
-            xi_a = compute_xi_CP(synthon_a, delta_g=-50.0)
-            xi_b = compute_xi_CP(synthon_b, delta_g=-50.0)
+            xi_a = compute_xi_CP(imscription_a, delta_g=-50.0)
+            xi_b = compute_xi_CP(imscription_b, delta_g=-50.0)
             xi_diff = abs(xi_a - xi_b)
             
             if xi_diff < 1.0:
@@ -776,16 +776,16 @@ class CrossDomainAnalogyDetector:
     
     def find_analogies(
         self,
-        query_synthon: Synthon,
-        candidate_synthons: List[Synthon],
+        query_imscription: Imscription,
+        candidate_imscriptions: List[Imscription],
         min_similarity: float = 0.5,
     ) -> List[AnalogyResult]:
         """
-        Find analogies to a query synthon in a set of candidates.
+        Find analogies to a query imscription in a set of candidates.
         
         Args:
-            query_synthon: Query synthon
-            candidate_synthons: Candidate synthons to search
+            query_imscription: Query imscription
+            candidate_imscriptions: Candidate imscriptions to search
             min_similarity: Minimum similarity threshold
         
         Returns:
@@ -793,11 +793,11 @@ class CrossDomainAnalogyDetector:
         """
         results = []
         
-        for candidate in candidate_synthons:
-            if candidate.name == query_synthon.name:
+        for candidate in candidate_imscriptions:
+            if candidate.name == query_imscription.name:
                 continue
             
-            result = self.compute_similarity(query_synthon, candidate)
+            result = self.compute_similarity(query_imscription, candidate)
             
             if result.similarity_score >= min_similarity:
                 results.append(result)
@@ -819,7 +819,7 @@ class PredictiveRule:
     antecedent: SymbolicExpression  # IF part
     consequent: SymbolicExpression  # THEN part
     confidence: float  # 0.0-1.0
-    support_count: int  # Number of synthons supporting rule
+    support_count: int  # Number of imscriptions supporting rule
     falsified: bool = False
     
     def to_dict(self) -> Dict[str, Any]:
@@ -840,7 +840,7 @@ class PredictiveRule:
 
 class PredictiveRuleGenerator:
     """
-    Generates predictive rules from synthon data.
+    Generates predictive rules from imscription data.
     
     Uses inductive logic programming to discover rules of the form:
     IF (T = T_bullseye AND P = P_pipevar) THEN (F ≥ F_dh)
@@ -852,16 +852,16 @@ class PredictiveRuleGenerator:
     
     def generate_rules(
         self,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
         min_support: int = 3,
         min_confidence: float = 0.7,
     ) -> List[PredictiveRule]:
         """
-        Generate predictive rules from synthon data.
+        Generate predictive rules from imscription data.
         
         Args:
-            synthons: Training synthons
-            min_support: Minimum number of synthons supporting rule
+            imscriptions: Training imscriptions
+            min_support: Minimum number of imscriptions supporting rule
             min_confidence: Minimum confidence threshold
         
         Returns:
@@ -875,7 +875,7 @@ class PredictiveRuleGenerator:
 
         # Evaluate each candidate; collect those that pass thresholds
         for antecedent, consequent in candidate_rules:
-            rule = self._evaluate_rule(antecedent, consequent, synthons)
+            rule = self._evaluate_rule(antecedent, consequent, imscriptions)
 
             if (rule.support_count >= min_support and
                     rule.confidence >= min_confidence):
@@ -1022,22 +1022,22 @@ class PredictiveRuleGenerator:
         self,
         antecedent: SymbolicExpression,
         consequent: SymbolicExpression,
-        synthons: List[Synthon],
+        imscriptions: List[Imscription],
     ) -> PredictiveRule:
-        """Evaluate a rule against synthon data."""
+        """Evaluate a rule against imscription data."""
         self.rule_counter += 1
         
         supporting = 0
         total_applicable = 0
         falsified = False
         
-        for synthon in synthons:
+        for imscription in imscriptions:
             # Check if antecedent applies
-            if antecedent.evaluate(synthon):
+            if antecedent.evaluate(imscription):
                 total_applicable += 1
                 
                 # Check if consequent holds
-                if consequent.evaluate(synthon):
+                if consequent.evaluate(imscription):
                     supporting += 1
                 else:
                     falsified = True  # Found counter-example
@@ -1056,21 +1056,21 @@ class PredictiveRuleGenerator:
     def test_rule(
         self,
         rule: PredictiveRule,
-        test_synthons: List[Synthon],
+        test_imscriptions: List[Imscription],
     ) -> PredictiveRule:
         """
         Test a rule against new data (falsification attempt).
         
         Args:
             rule: Rule to test
-            test_synthons: Test synthons
+            test_imscriptions: Test imscriptions
         
         Returns:
             Updated PredictiveRule
         """
-        for synthon in test_synthons:
-            if rule.antecedent.evaluate(synthon):
-                if not rule.consequent.evaluate(synthon):
+        for imscription in test_imscriptions:
+            if rule.antecedent.evaluate(imscription):
+                if not rule.consequent.evaluate(imscription):
                     rule.falsified = True
                     break
         
@@ -1083,7 +1083,7 @@ class PredictiveRuleGenerator:
 
 class SymbolicReasoningEngine:
     """
-    Main engine for symbolic reasoning in the Synthonicon framework.
+    Main engine for symbolic reasoning in the Imscriptiveon framework.
     
     Integrates:
     - Primitive algebra
@@ -1104,37 +1104,37 @@ class SymbolicReasoningEngine:
     
     def validate_grammar(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
     ) -> Dict[str, Any]:
         """
-        Perform comprehensive grammar validation on a synthon.
+        Perform comprehensive grammar validation on a imscription.
         
         Args:
-            synthon: Synthon to validate
+            imscription: Imscription to validate
         
         Returns:
             Validation report
         """
         report = {
-            "synthon": synthon.name,
-            "notation": synthon.to_notation(),
+            "imscription": imscription.name,
+            "notation": imscription.to_notation(),
             "axiom_validation": {},
-            "gd_independence": self.gd_tensor.compute_independence(synthon),
-            "is_critical": self.gd_tensor.check_degeneracy(synthon),
+            "gd_independence": self.gd_tensor.compute_independence(imscription),
+            "is_critical": self.gd_tensor.check_degeneracy(imscription),
             "predictions": [],
         }
         
         # Validate all axioms
         for axiom_name in ["axiom1", "axiom2", "axiom3", "axiom4", "axiom5"]:
-            proof = self.theorem_prover.prove_axiom(axiom_name, [synthon])
+            proof = self.theorem_prover.prove_axiom(axiom_name, [imscription])
             report["axiom_validation"][axiom_name] = {
-                "applies": self.theorem_prover._check_axiom_applicability(axiom_name, synthon),
+                "applies": self.theorem_prover._check_axiom_applicability(axiom_name, imscription),
                 "satisfied": proof.proven,
                 "violated": not proof.proven,
             }
         
         # Generate predictions
-        rules = self.rule_generator.generate_rules([synthon], min_support=1, min_confidence=0.5)
+        rules = self.rule_generator.generate_rules([imscription], min_support=1, min_confidence=0.5)
         report["predictions"] = [str(rule) for rule in rules]
         
         return report
@@ -1145,10 +1145,10 @@ class SymbolicReasoningEngine:
         min_similarity: float = 0.5,
     ) -> List[AnalogyResult]:
         """
-        Find cross-domain analogies to a query synthon.
+        Find cross-domain analogies to a query imscription.
         
         Args:
-            query_name: Name of query synthon in catalog
+            query_name: Name of query imscription in catalog
             min_similarity: Minimum similarity threshold
         
         Returns:
@@ -1161,7 +1161,7 @@ class SymbolicReasoningEngine:
         if not query:
             return []
         
-        candidates = list(self.catalog._synthons.values())
+        candidates = list(self.catalog._imscriptions.values())
         return self.analogy_detector.find_analogies(query, candidates, min_similarity)
     
     def discover_rules(
@@ -1182,8 +1182,8 @@ class SymbolicReasoningEngine:
         if not self.catalog:
             return []
         
-        synthons = list(self.catalog._synthons.values())
-        return self.rule_generator.generate_rules(synthons, min_support, min_confidence)
+        imscriptions = list(self.catalog._imscriptions.values())
+        return self.rule_generator.generate_rules(imscriptions, min_support, min_confidence)
     
     def attempt_falsification(
         self,
@@ -1200,5 +1200,5 @@ class SymbolicReasoningEngine:
         Returns:
             Updated rule (may be marked as falsified)
         """
-        test_synthons = self.theorem_prover._generate_test_synthons(max_attempts)
-        return self.rule_generator.test_rule(rule, test_synthons)
+        test_imscriptions = self.theorem_prover._generate_test_imscriptions(max_attempts)
+        return self.rule_generator.test_rule(rule, test_imscriptions)

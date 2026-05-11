@@ -38,7 +38,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from space_search.primitives import (
-    SYNTHONS, PRIMITIVE_ORDER,
+    imscriptions, PRIMITIVE_ORDER,
     tuple_distance, mahalanobis_distance,
     build_metric_tensor, to_vector,
 )
@@ -49,7 +49,7 @@ FAR   = 4.0    # Battery C: d_g must be > FAR    (separation assertion)
 
 # ── Curated pair registry ─────────────────────────────────────────────────────
 # Each entry: (name_a, source_a, name_b, source_b, note)
-# source = "catalog" | "synthons"
+# source = "catalog" | "imscriptions"
 #
 # Battery B — pairs that should be close (same system, different encoding angle
 # or structurally identical tuple confirmed in prior sessions)
@@ -60,8 +60,8 @@ PROXIMITY_PAIRS = [
         "Hv1 proton channels: AtHv1 primed vs PsHv1 constitutive — identical tuple, d=0 (P-55)",
     ),
     (
-        "human",       "synthons",
-        "pulsar_noise", "synthons",
+        "human",       "imscriptions",
+        "pulsar_noise", "imscriptions",
         "Human vs unmodeled pulsar noise: differ only in D (Ð_C vs Ð_;)",
     ),
 ]
@@ -69,18 +69,18 @@ PROXIMITY_PAIRS = [
 # Battery C — pairs that should be far (distinct universality classes)
 SEPARATION_PAIRS = [
     (
-        "human",     "synthons",
-        "civ_dm",    "synthons",
+        "human",     "imscriptions",
+        "civ_dm",    "imscriptions",
         "Pre-visible humanity vs DM-aligned interstellar civilisation",
     ),
     (
-        "human",               "synthons",
-        "interstellar_target", "synthons",
+        "human",               "imscriptions",
+        "interstellar_target", "imscriptions",
         "Human encoding vs structural requirements for interstellar propagation",
     ),
     (
-        "pulsar_noise", "synthons",
-        "civ_dm",       "synthons",
+        "pulsar_noise", "imscriptions",
+        "civ_dm",       "imscriptions",
         "Pulsar noise vs DM-aligned civilisation",
     ),
 ]
@@ -117,8 +117,8 @@ def safe_tuple_dist(a: dict, b: dict) -> float | None:
 
 
 def resolve(name: str, source: str, catalog: dict) -> dict | None:
-    if source == "synthons":
-        return SYNTHONS.get(name)
+    if source == "imscriptions":
+        return imscriptions.get(name)
     return catalog.get(name)
 
 

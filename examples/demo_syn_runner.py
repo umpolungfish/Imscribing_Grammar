@@ -2,7 +2,7 @@
 """
 demo_syn_runner.py — Phase 3a Demo: Typed Design Programs for Matter
 
-Demonstrates what `imscribe run` and the SynthonM monad enable that was not
+Demonstrates what `imscribe run` and the ImscriptionM monad enable that was not
 possible with the previous ad-hoc pipeline interface:
 
   Demo 1 — Certification chain          (01_certify_soai.syn)
@@ -256,7 +256,7 @@ def demo6_dry_run() -> None:
     )
     narrate(
         "imscribe run --dry-run parses the .syn script and validates that the "
-        "start synthon exists in the catalog, without running any operations. "
+        "start imscription exists in the catalog, without running any operations. "
         "This is useful for CI pipelines, script linting, and rapid iteration "
         "on design programs before committing to a full probe run."
     )
@@ -284,11 +284,11 @@ def demo6_dry_run() -> None:
 def main() -> None:
     print()
     print(f"{BOLD}Imscribing Grammar v0.3.5 — Phase 3a Demo{RESET}")
-    print(f"{DIM}Typed Design Programs for Matter: SynthonM monad + .syn DSL runner{RESET}")
+    print(f"{DIM}Typed Design Programs for Matter: ImscriptionM monad + .syn DSL runner{RESET}")
     print()
     print(f"  {DIM}The .syn format compiles chemistry design goals into typed monadic{RESET}")
     print(f"  {DIM}pipelines.  Each step is a morphism in the Kleisli category of{RESET}")
-    print(f"  {DIM}synthons.  Assertions are proof obligations.  Failure short-circuits.{RESET}")
+    print(f"  {DIM}imscriptions.  Assertions are proof obligations.  Failure short-circuits.{RESET}")
     print(f"  {DIM}Every run produces a complete step trace + accumulated Δξ_CP cost.{RESET}")
 
     demo1_certification()

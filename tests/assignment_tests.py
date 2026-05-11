@@ -8,10 +8,10 @@ Runs three test suites:
      methods agree.
 
   2. Catalog consistency check — run F/K assignment from ξ_CP/ΔG data on
-     all catalog synthons that have quantitative entries; compare to hand-
+     all catalog imscriptions that have quantitative entries; compare to hand-
      coded values; report agreement rate and boundary cases.
 
-  3. Decomposition self-consistency — for two well-characterised synthons,
+  3. Decomposition self-consistency — for two well-characterised imscriptions,
      decompose to atoms, re-assign atoms from independent measurements,
      reconstruct, and check round-trip fidelity.
 
@@ -251,7 +251,7 @@ NOTE(f"P-22 decision tree confidence: {r.confidence:.2f} (derivational — not h
 
 HDR("SUITE 2 — Catalog Consistency: Algorithmic vs. Hand-Coded Assignments")
 
-NOTE("Running algorithmic assignment against all catalog synthons with ξ_CP/ΔG data...")
+NOTE("Running algorithmic assignment against all catalog imscriptions with ξ_CP/ΔG data...")
 report = check_catalog_consistency(engine)
 report.print_summary()
 
@@ -283,9 +283,9 @@ check(report.boundary_rate <= 0.30, f"Boundary rate ≤ 30% (got {report.boundar
 sub("2a. Boundary case analysis — systems near tier thresholds")
 
 boundary_entries = [e for e in report.entries if e.is_boundary]
-print(f"\n  {len(boundary_entries)} boundary assignments across {len(set(e.name for e in boundary_entries))} synthons")
+print(f"\n  {len(boundary_entries)} boundary assignments across {len(set(e.name for e in boundary_entries))} imscriptions")
 if boundary_entries:
-    print(f"  {'Synthon':<40}  {'Primitive':<8}  Catalog → Assigned")
+    print(f"  {'Imscription':<40}  {'Primitive':<8}  Catalog → Assigned")
     print(f"  {'─'*40}  {'─'*8}  {'─'*30}")
     for e in sorted(boundary_entries, key=lambda x: x.name)[:20]:
         cat_name = e.catalog_value.name if hasattr(e.catalog_value, 'name') else str(e.catalog_value)
@@ -396,7 +396,7 @@ HDR("ALGORITHMIC ASSIGNMENT PROJECT — SUMMARY")
 total = n_pass + n_fail
 print(f"""
   Unit tests         : {n_pass}/{total} passed
-  Catalog check      : {report.overall_agreement_rate:.1%} agreement ({report.n_synthons_checked} synthons, {report.n_primitives_checked} primitive checks)
+  Catalog check      : {report.overall_agreement_rate:.1%} agreement ({report.n_imscriptions_checked} imscriptions, {report.n_primitives_checked} primitive checks)
   Boundary rate      : {report.boundary_rate:.1%} of assignments near a tier threshold
 
   ── What the results mean ────────────────────────────────────────────────
@@ -422,7 +422,7 @@ print(f"""
   ── Next steps ───────────────────────────────────────────────────────────
   • Add structural metadata (D, T, R, P flags) to the catalog to enable
     full 10-primitive algorithmic assignment.
-  • Collect ΔG‡ data for catalog synthons to extend K assignment coverage.
+  • Collect ΔG‡ data for catalog imscriptions to extend K assignment coverage.
   • Formalise the Phi algorithmic assignment (currently heuristic) using
     the Varma probe output as a calibrated input.
   • Run method-independence check across all primitives with two or more

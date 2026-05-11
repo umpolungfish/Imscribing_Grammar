@@ -284,4 +284,4 @@ The following domains have not yet been systematically checked for CLU signature
 
 ---
 
-*Document version: 2026-03-24. Cross-references: P-84, P-86, P-87, P-88, P-89, P-90, P-91, P-93, P-94 in PRIMITIVE_PREDICTIONS.md; §VI, §XXXVI in SYNTHONICON.md; §IV in SYNTHONICON_DIAPHORICS.md.*
+*Document version: 2026-03-24. Cross-references: P-84, P-86, P-87, P-88, P-89, P-90, P-91, P-93, P-94 in PRIMITIVE_PREDICTIONS.md; §VI, §XXXVI in ImscriptiveON.md; §IV in ImscriptiveON_DIAPHORICS.md.*

@@ -2,7 +2,7 @@
 IG_RETRODESIGN — Constraint-Directed Retrosynthetic Decomposition
 
 The inverse of IG_HOTSWAP. Given a target constraint architecture
-Ψ_target, decomposes it into a minimal set of constituent synthons whose
+Ψ_target, decomposes it into a minimal set of constituent imscriptions whose
 composition axioms are mutually satisfiable.
 
 Decomposition is pruned by Axiom Violation rather than chemical intuition:
@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Union
 
 from .models import (
-    Synthon, Dimensionality, Topology,
+    Imscription, Dimensionality, Topology,
     RecognitionMode, Polarity, Fidelity, KineticCharacter,
     Granularity, InteractionGrammar, GrammarOperator, CriticalityPhase,
     Grammar, KineticChar, Criticality, Protection, Stoichiometry, Chirality, Recognition,
@@ -48,9 +48,9 @@ def _domains(dim: Dimensionality) -> frozenset:
     return _DIM_DOMAINS.get(dim.value, frozenset({"molecular"}))
 
 
-def _parse_notation_to_synthon(notation_str: str, name: str = "target") -> Synthon:
+def _parse_notation_to_imscription(notation_str: str, name: str = "target") -> Imscription:
     """
-    Parse a ⟨D=...; T=...; ...⟩ notation string into a Synthon.
+    Parse a ⟨D=...; T=...; ...⟩ notation string into a Imscription.
     Accepts both 'KEY=VALUE' and positional (value-only) formats.
     """
     s = notation_str.strip().lstrip("⟨<").rstrip("⟩>").strip()
@@ -69,7 +69,7 @@ def _parse_notation_to_synthon(notation_str: str, name: str = "target") -> Synth
             if i < len(key_order):
                 d[key_order[i]] = part.strip()
 
-    return Synthon.from_dict(d)
+    return Imscription.from_dict(d)
 
 
 # ---------------------------------------------------------------------------
@@ -100,9 +100,9 @@ class DecompositionNode:
     node_id: str
     branch_name: str
     notation: Optional[str]        # compact notation string for this sub-system
-    synthon: Optional[Synthon]     # resolved Synthon if available
+    imscription: Optional[Imscription]     # resolved Imscription if available
     is_pruned: bool = False
-    is_leaf: bool = False          # True if terminal valid synthon tuple
+    is_leaf: bool = False          # True if terminal valid imscription tuple
     violations: List[PruningViolation] = field(default_factory=list)
     warnings: List[str] = field(default_factory=list)
     children: List["DecompositionNode"] = field(default_factory=list)
@@ -137,8 +137,8 @@ class DecompositionTree:
             "valid_decompositions": len(self.valid_leaves),
             "pruned_branches": self.pruned_count,
             "tree": self.root.to_dict() if self.root else None,
-            "valid_synthon_set": [
-                (leaf.synthon.name if leaf.synthon else leaf.notation)
+            "valid_imscription_set": [
+                (leaf.imscription.name if leaf.imscription else leaf.notation)
                 for leaf in self.valid_leaves
             ],
             "warnings": self.warnings,
@@ -150,14 +150,14 @@ class DecompositionTree:
 # ---------------------------------------------------------------------------
 
 def _check_axioms(
-    synthon: Synthon,
+    imscription: Imscription,
     prune_set: frozenset,
 ) -> List[PruningViolation]:
-    """Run specified axioms on a synthon and return any violations."""
+    """Run specified axioms on a imscription and return any violations."""
     violations: List[PruningViolation] = []
 
     if 1 in prune_set:
-        r = AxiomValidator.validate_axiom1_cyclic_closure(synthon)
+        r = AxiomValidator.validate_axiom1_cyclic_closure(imscription)
         if r.get("applies") and r.get("violated"):
             violations.append(PruningViolation(
                 axiom=1,
@@ -169,9 +169,9 @@ def _check_axioms(
         # Only prune if the sub-tuple CLAIMS global granularity (G_ℵ) but
         # lacks the grammar to support it. Axiom 2 does not prune G_ב sub-tuples
         # that don't claim global scope — those are valid local components.
-        if synthon.granularity == Granularity.GLOBAL:
+        if imscription.granularity == Granularity.GLOBAL:
             r = AxiomValidator.validate_axiom2_local_grammar_barrier(
-                synthon, target_granularity=Granularity.GLOBAL
+                imscription, target_granularity=Granularity.GLOBAL
             )
             if r.get("applies") and r.get("violated"):
                 violations.append(PruningViolation(
@@ -184,7 +184,7 @@ def _check_axioms(
                 ))
 
     if 4 in prune_set:
-        r = AxiomValidator.validate_axiom4_sequential_grammar(synthon)
+        r = AxiomValidator.validate_axiom4_sequential_grammar(imscription)
         if r.get("applies") and r.get("violated"):
             violations.append(PruningViolation(
                 axiom=4,
@@ -193,7 +193,7 @@ def _check_axioms(
             ))
 
     if 6 in prune_set:
-        r = AxiomValidator.validate_axiom6_temporal_grounding(synthon)
+        r = AxiomValidator.validate_axiom6_temporal_grounding(imscription)
         if isinstance(r, AxiomResult) and r.violated:
             violations.append(PruningViolation(
                 axiom=6,
@@ -215,7 +215,7 @@ _DIM_TO_R = {
 }
 
 
-def _split_candidates(target: Synthon) -> List[Dict[str, Any]]:
+def _split_candidates(target: Imscription) -> List[Dict[str, Any]]:
     """
     Generate candidate sub-tuple overrides for a given target.
 
@@ -225,7 +225,7 @@ def _split_candidates(target: Synthon) -> List[Dict[str, Any]]:
       3. Fallback → two generic branches with target dimensionality
 
     Domain filter (fix for cross-domain semantic drift):
-      Catalog search results are restricted to synthons whose dimensionality
+      Catalog search results are restricted to imscriptions whose dimensionality
       shares at least one domain with the target.  A molecular/temporal target
       will not receive supramolecular or cross-domain catalog hits as candidates.
     """
@@ -261,7 +261,7 @@ def _split_candidates(target: Synthon) -> List[Dict[str, Any]]:
             and not (getattr(s, "metadata", None) or {}).get("cross_domain", False)
         ]
         for s in domain_filtered[:4]:
-            candidates.append({"branch": s.name, "_synthon": s})
+            candidates.append({"branch": s.name, "_imscription": s})
 
     if not candidates:
         candidates = [
@@ -272,9 +272,9 @@ def _split_candidates(target: Synthon) -> List[Dict[str, Any]]:
     return candidates
 
 
-def _build_sub_synthon(target: Synthon, overrides: Dict[str, Any], branch: str) -> Synthon:
-    """Construct a sub-Synthon from target notation with selective overrides."""
-    return Synthon(
+def _build_sub_imscription(target: Imscription, overrides: Dict[str, Any], branch: str) -> Imscription:
+    """Construct a sub-Imscription from target notation with selective overrides."""
+    return Imscription(
         name=branch.lower().replace(" ", "_"),
         dimensionality=overrides.get("dimensionality", target.dimensionality),
         topology=overrides.get("topology", target.topology),
@@ -309,7 +309,7 @@ class RetrodesignEngine:
             max_depth=3,
             prune_axioms=[1, 2, 4, 6],
         )
-        print(tree.valid_synthon_set)
+        print(tree.valid_imscription_set)
     """
 
     def __init__(self):
@@ -322,14 +322,14 @@ class RetrodesignEngine:
 
     def _resolve_target(
         self, target_notation: str
-    ) -> tuple[Optional[Synthon], Optional[Synthon], List[str]]:
-        """Parse or look up the target, returning (parsed_synthon, catalog_synthon, warnings)."""
+    ) -> tuple[Optional[Imscription], Optional[Imscription], List[str]]:
+        """Parse or look up the target, returning (parsed_imscription, catalog_imscription, warnings)."""
         warnings: List[str] = []
 
         # Try notation parse
         if target_notation.strip().startswith(("⟨", "<")):
             try:
-                parsed = _parse_notation_to_synthon(target_notation, name="target")
+                parsed = _parse_notation_to_imscription(target_notation, name="target")
                 return parsed, None, warnings
             except Exception as exc:
                 warnings.append(f"Notation parse failed: {exc}. Falling back to catalog.")
@@ -342,7 +342,7 @@ class RetrodesignEngine:
 
         warnings.append(
             f"Could not resolve '{target_notation}'. "
-            "Provide a valid ⟨...⟩ notation string or a catalog synthon name."
+            "Provide a valid ⟨...⟩ notation string or a catalog imscription name."
         )
         return None, None, warnings
 
@@ -358,7 +358,7 @@ class RetrodesignEngine:
         Decompose a target notation into valid sub-tuples.
 
         Args:
-            target_notation:  ⟨...⟩ string or catalog synthon name
+            target_notation:  ⟨...⟩ string or catalog imscription name
             max_depth:        maximum recursion depth (default 3)
             prune_axioms:     axiom numbers to enforce (default [1, 2, 4, 6])
             strict_grounding: if True, abort decomposition when the target has
@@ -374,7 +374,7 @@ class RetrodesignEngine:
         prune_set = frozenset(prune_axioms)
         self._counter = 0
 
-        target_parsed, target_synthon, warnings = self._resolve_target(target_notation)
+        target_parsed, target_imscription, warnings = self._resolve_target(target_notation)
         if target_parsed is None:
             return DecompositionTree(
                 target_notation=target_notation,
@@ -385,19 +385,19 @@ class RetrodesignEngine:
                 warnings=warnings,
             )
 
-        # Build root synthon
-        root_synthon = target_synthon or _build_sub_synthon(
+        # Build root imscription
+        root_imscription = target_imscription or _build_sub_imscription(
             target_parsed, {}, "Target Root"
         )
-        root_synthon.name = "target_root"
+        root_imscription.name = "target_root"
 
         # Grounding check: D∞ target without axiom6_grounding or grounding.reset
         grounding_absent = False
         if "temporal" in _domains(target_parsed.dimensionality):
-            meta = getattr(root_synthon, "metadata", None) or {}
-            sg = getattr(root_synthon, "grounding", None) or {}
+            meta = getattr(root_imscription, "metadata", None) or {}
+            sg = getattr(root_imscription, "grounding", None) or {}
             has_grounding = (
-                sg.get("reset")                              # primary: synthon.grounding["reset"] (persisted)
+                sg.get("reset")                              # primary: imscription.grounding["reset"] (persisted)
                 or meta.get("axiom6_grounding")              # legacy structured metadata block
                 or meta.get("grounding", {}).get("reset")    # legacy metadata-nested path
                 or meta.get("grounding", {}).get("cycle_steps")
@@ -406,7 +406,7 @@ class RetrodesignEngine:
                 grounding_absent = True
                 msg = (
                     "Target has D_∞ (temporal) but no Axiom 6 grounding "
-                    "(missing synthon.grounding['reset'] block). "
+                    "(missing imscription.grounding['reset'] block). "
                     "Run 'imscribe audit --axiom 6' to backfill grounding before decomposition."
                 )
                 if strict_grounding:
@@ -425,7 +425,7 @@ class RetrodesignEngine:
             node_id=self._uid("root"),
             branch_name="Root (Target)",
             notation=target_notation,
-            synthon=root_synthon,
+            imscription=root_imscription,
         )
 
         valid_leaves: List[DecompositionNode] = []
@@ -445,7 +445,7 @@ class RetrodesignEngine:
     def _expand(
         self,
         node: DecompositionNode,
-        target: Synthon,
+        target: Imscription,
         prune_set: frozenset,
         depth: int,
         max_depth: int,
@@ -468,26 +468,26 @@ class RetrodesignEngine:
         candidates = _split_candidates(target)
 
         # Name of the root target (for self-reference exclusion)
-        root_name = node.synthon.name if node.synthon else None
+        root_name = node.imscription.name if node.imscription else None
 
         for candidate in candidates:
-            # Use existing synthon from catalog if available
-            existing = candidate.get("_synthon")
+            # Use existing imscription from catalog if available
+            existing = candidate.get("_imscription")
             if existing:
-                # Skip self-references: a synthon cannot be its own precursor
+                # Skip self-references: a imscription cannot be its own precursor
                 if root_name and existing.name == root_name:
                     continue
-                child_synthon = existing
+                child_imscription = existing
             else:
-                child_synthon = _build_sub_synthon(
+                child_imscription = _build_sub_imscription(
                     target, candidate, candidate.get("branch", "component")
                 )
 
-            violations = _check_axioms(child_synthon, prune_set)
+            violations = _check_axioms(child_imscription, prune_set)
             node_warnings: List[str] = []
 
             # K_teshlig: prune by default (no escape pathway); warn only if prune_ktrap=False
-            if child_synthon.kinetic_character == KineticCharacter.TRAP:
+            if child_imscription.kinetic_character == KineticCharacter.TRAP:
                 if prune_ktrap:
                     violations.append(PruningViolation(
                         axiom="Kinetics",
@@ -506,12 +506,12 @@ class RetrodesignEngine:
 
             child = DecompositionNode(
                 node_id=self._uid("node"),
-                branch_name=candidate.get("branch", child_synthon.name),
+                branch_name=candidate.get("branch", child_imscription.name),
                 notation=(
-                    child_synthon.to_notation()
-                    if hasattr(child_synthon, "to_notation") else None
+                    child_imscription.to_notation()
+                    if hasattr(child_imscription, "to_notation") else None
                 ),
-                synthon=child_synthon,
+                imscription=child_imscription,
                 violations=violations,
                 warnings=node_warnings,
             )
@@ -529,13 +529,13 @@ class RetrodesignEngine:
 
 
 # ---------------------------------------------------------------------------
-# parse_notation_from_string — public alias for _parse_notation_to_synthon
+# parse_notation_from_string — public alias for _parse_notation_to_imscription
 # ---------------------------------------------------------------------------
 
-def parse_notation_from_string(notation_str: str) -> Synthon:
+def parse_notation_from_string(notation_str: str) -> Imscription:
     """
-    Parse a ⟨...⟩ notation string into a Synthon.
+    Parse a ⟨...⟩ notation string into a Imscription.
 
         target = parse_notation_from_string("⟨D_turnthree; T_cage; ...⟩")
     """
-    return _parse_notation_to_synthon(notation_str)
+    return _parse_notation_to_imscription(notation_str)

@@ -1,7 +1,7 @@
 """
-Cross-Domain Synthon Catalog — Phase 1 Implementation
+Cross-Domain Imscription Catalog — Phase 1 Implementation
 
-Registers the first non-chemical synthon entries: ecological, techno-social,
+Registers the first non-chemical imscription entries: ecological, techno-social,
 and robotic systems encoded in the 10-primitive tuple framework.
 
 Each entry uses the closest available enum values for the current primitive set,
@@ -26,7 +26,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon, Dimensionality, Topology, RecognitionMode, Polarity,
+    Imscription, Dimensionality, Topology, RecognitionMode, Polarity,
     Fidelity, KineticCharacter, Granularity, InteractionGrammar, CriticalityPhase,
 )
 from .registry import global_catalog
@@ -39,9 +39,9 @@ _CROSS_DOMAIN_NAMES = frozenset([
 ])
 
 
-def register_cross_domain_synthons() -> List[str]:
+def register_cross_domain_imscriptions() -> List[str]:
     """
-    Register the three Phase-1 cross-domain synthons into the global catalog.
+    Register the three Phase-1 cross-domain imscriptions into the global catalog.
 
     Safe to call multiple times. Always refreshes metadata on already-present
     entries so that `extensions_required` and other Phase 1 annotations are
@@ -50,25 +50,25 @@ def register_cross_domain_synthons() -> List[str]:
     Returns:
         List of names that were newly registered (empty if all already present).
     """
-    entries: List[Synthon] = _build_entries()
+    entries: List[Imscription] = _build_entries()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s)
             registered.append(s.name)
         else:
             # Refresh metadata in-place — persisted JSON may have dropped it
-            existing = global_catalog._synthons[s.name]
+            existing = global_catalog._imscriptions[s.name]
             if hasattr(existing, "metadata") and isinstance(existing.metadata, dict):
                 existing.metadata.update(s.metadata)
     return registered
 
 
 # ---------------------------------------------------------------------------
-# Synthon definitions
+# Imscription definitions
 # ---------------------------------------------------------------------------
 
-def _build_entries() -> List[Synthon]:
+def _build_entries() -> List[Imscription]:
     return [
         _tide_pool(),
         _global_supply_chain(),
@@ -77,9 +77,9 @@ def _build_entries() -> List[Synthon]:
     ]
 
 
-def _tide_pool() -> Synthon:
+def _tide_pool() -> Imscription:
     """
-    Intertidal rock-pool ecological synthon.
+    Intertidal rock-pool ecological imscription.
 
     Formal tuple (Phase 2 target):
         ⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð, F_ð⟩ ; K_schwa ; G_ℶ ;
@@ -101,7 +101,7 @@ def _tide_pool() -> Synthon:
         Axiom 6 — D∞(open) flagged; reset = tidal flushing + nutrient cycling
         Axiom 7 — T⋈ closing bond = nutrient-uptake step closes trophic loop
     """
-    return Synthon(
+    return Imscription(
         name="tide_pool_ecological",
         dimensionality=Dimensionality.HYBRID_SUPRA_TEMP,
         topology=Topology.CYCLIC_BOWTIE,
@@ -157,9 +157,9 @@ def _tide_pool() -> Synthon:
     )
 
 
-def _global_supply_chain() -> Synthon:
+def _global_supply_chain() -> Imscription:
     """
-    Planetary logistics network synthon (techno-social).
+    Planetary logistics network imscription (techno-social).
 
     Formal tuple (Phase 2 target):
         ⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð, F_ℏ⟩ ; K_turnm ; G_ℵ ;
@@ -181,7 +181,7 @@ def _global_supply_chain() -> Synthon:
         Axiom 6 — D∞(open) flagged; directional flow = production→distribution→consumption
         Axiom 7 — T⋈ component closes via payment/consumption loop returning capital to producers
     """
-    return Synthon(
+    return Imscription(
         name="global_supply_chain",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -245,9 +245,9 @@ def _global_supply_chain() -> Synthon:
     )
 
 
-def _autonomous_drone_swarm() -> Synthon:
+def _autonomous_drone_swarm() -> Imscription:
     """
-    Autonomous UAV swarm synthon (robotic multi-agent).
+    Autonomous UAV swarm imscription (robotic multi-agent).
 
     Formal tuple (Phase 2 target):
         ⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ, F_ð⟩ ; K_frtailgamma ; G_ℵ ;
@@ -269,7 +269,7 @@ def _autonomous_drone_swarm() -> Synthon:
         Axiom 4 — Γ_→ (SEQ) satisfied: R‡ (non-equilibrium motion) present
         Axiom 5 — Φ_c assigned: flocking correlation length ξ_r ~ N^(ν) (scale-free)
     """
-    return Synthon(
+    return Imscription(
         name="autonomous_drone_swarm",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.HUB_NODE,
@@ -328,7 +328,7 @@ def _autonomous_drone_swarm() -> Synthon:
     )
 
 
-def _db24c8_pseudorotaxane() -> Synthon:
+def _db24c8_pseudorotaxane() -> Imscription:
     """
     DB24C8/dialkylammonium pseudorotaxane — Transformation #8 Φ_c probe system.
 
@@ -356,7 +356,7 @@ def _db24c8_pseudorotaxane() -> Synthon:
     grounding_status: "partial" — literature proxy, full relaxed scan pending.
     validation_tier: "primary" — molecular domain, explicit literature ΔG data.
     """
-    return Synthon(
+    return Imscription(
         name="db24c8_dialkylammonium_pseudorotaxane",
         description=(
             "DB24C8 / dialkylammonium pseudorotaxane: steric-cliff dethreading system. "

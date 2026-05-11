@@ -1,5 +1,5 @@
 """
-Ice Phase Synthon Catalog — v0.4.13
+Ice Phase Imscription Catalog — v0.4.13
 
 Primitive-tuple encodings for the ice phase ladder and liquid water ocean,
 derived from the tensor session that produced the Dominant Triple Theorem
@@ -40,7 +40,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -64,26 +64,26 @@ _ICE_NAMES = frozenset([
 ])
 
 
-def register_ice_synthons() -> List[str]:
+def register_ice_imscriptions() -> List[str]:
     """
-    Register 7 ice phase / water synthons into the global catalog.
+    Register 7 ice phase / water imscriptions into the global catalog.
     Safe to call multiple times (idempotent).
     Returns list of names newly registered.
     """
     entries = _build_entries()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s)
             registered.append(s.name)
         else:
-            existing = global_catalog._synthons[s.name]
+            existing = global_catalog._imscriptions[s.name]
             if hasattr(existing, "metadata") and isinstance(existing.metadata, dict):
                 existing.metadata.update(s.metadata)
     return registered
 
 
-def _build_entries() -> List[Synthon]:
+def _build_entries() -> List[Imscription]:
     return [
         _ice_vi(),
         _ice_vii(),
@@ -96,7 +96,7 @@ def _build_entries() -> List[Synthon]:
 
 
 # ── Ice VI ─────────────────────────────────────────────────────────────────────
-def _ice_vi() -> Synthon:
+def _ice_vi() -> Imscription:
     """
     Ice VI — high-pressure ordered ice, ~0.6–2 GPa.
 
@@ -107,7 +107,7 @@ def _ice_vi() -> Synthon:
 
     ΔI to 5-MeO: bounded by K_teshlig/K_turnm mismatch and D mismatch.
     """
-    return Synthon(
+    return Imscription(
         name="ice_vi",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK_INTERPENETRATING,
@@ -132,7 +132,7 @@ def _ice_vi() -> Synthon:
 
 
 # ── Ice VII ─────────────────────────────────────────────────────────────────────
-def _ice_vii() -> Synthon:
+def _ice_vii() -> Imscription:
     """
     Ice VII — body-centred cubic, >2 GPa.
 
@@ -144,7 +144,7 @@ def _ice_vii() -> Synthon:
     time-averaged. ΔI to 5-MeO: ~1.891 nats (same K_teshlig ceiling as Ice VI
     but P-match improves).
     """
-    return Synthon(
+    return Imscription(
         name="ice_vii",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK_INTERPENETRATING,
@@ -170,7 +170,7 @@ def _ice_vii() -> Synthon:
 
 
 # ── Ice X ──────────────────────────────────────────────────────────────────────
-def _ice_x() -> Synthon:
+def _ice_x() -> Imscription:
     """
     Ice X — proton-symmetric, >60 GPa.
 
@@ -182,7 +182,7 @@ def _ice_x() -> Synthon:
     Still K_teshlig (proton position is locked at the midpoint — symmetry does not
     mean mobility). Still Φ_sub (no SOC statistics documented). P_SC_SYM.
     """
-    return Synthon(
+    return Imscription(
         name="ice_x",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK,
@@ -211,7 +211,7 @@ def _ice_x() -> Synthon:
 
 
 # ── Ice XVIII (Superionic) ─────────────────────────────────────────────────────
-def _ice_xviii_superionic() -> Synthon:
+def _ice_xviii_superionic() -> Imscription:
     """
     Ice XVIII — superionic ice, ~100–300 GPa, >2000 K.
 
@@ -228,7 +228,7 @@ def _ice_xviii_superionic() -> Synthon:
     fluid introduces MIXED topology — the effective H-bond network is neither
     static cage nor simple network.
     """
-    return Synthon(
+    return Imscription(
         name="ice_xviii_superionic",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK_MIXED,
@@ -256,7 +256,7 @@ def _ice_xviii_superionic() -> Synthon:
 
 
 # ── Ice XXI ────────────────────────────────────────────────────────────────────
-def _ice_xxi() -> Synthon:
+def _ice_xxi() -> Imscription:
     """
     Ice XXI — metastable tetragonal, room-temperature K_teshlig, >2 GPa.
 
@@ -279,7 +279,7 @@ def _ice_xxi() -> Synthon:
     F_MEDIUM (not HIGH): the tetragonal distortion introduces sub-ideal H-bond
     geometry; fidelity degraded relative to Ice VII.
     """
-    return Synthon(
+    return Imscription(
         name="ice_xxi",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.CAGE,
@@ -313,7 +313,7 @@ def _ice_xxi() -> Synthon:
 
 
 # ── Ice QCP (Superionic Quantum Critical Point) ────────────────────────────────
-def _ice_superionic_qcp() -> Synthon:
+def _ice_superionic_qcp() -> Imscription:
     """
     Ice QCP — quantum critical point of the superionic phase (theoretical).
 
@@ -328,7 +328,7 @@ def _ice_superionic_qcp() -> Synthon:
 
     Φ_c: quantum critical fluctuations are SOC-class by definition.
     """
-    return Synthon(
+    return Imscription(
         name="ice_superionic_qcp",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK_SYM,
@@ -360,11 +360,11 @@ def _ice_superionic_qcp() -> Synthon:
 
 
 # ── Liquid Water Ocean ─────────────────────────────────────────────────────────
-def _liquid_water_ocean() -> Synthon:
+def _liquid_water_ocean() -> Imscription:
     """
     Liquid Water Ocean — ambient oceanic reference, ~1 bar, ~275–300 K.
 
-    Bulk liquid water as a synthon: T_nrleg (hydrogen bond network, dynamic
+    Bulk liquid water as a imscription: T_nrleg (hydrogen bond network, dynamic
     restructuring on ps timescale); K_turnm (proton hopping and H-bond reorganisation
     at moderate rates); Φ_sub (no SOC statistics documented for bulk water).
     P_SC_PSEUDO: water molecules are self-complementary (donor/acceptor in every
@@ -374,7 +374,7 @@ def _liquid_water_ocean() -> Synthon:
     upward under pressure. In the ladder: liquid → Ice VI (pressure freezes K_turnm
     to K_teshlig) → Ice VII → Ice X → Ice XVIII → QCP.
     """
-    return Synthon(
+    return Imscription(
         name="liquid_water_ocean",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK,

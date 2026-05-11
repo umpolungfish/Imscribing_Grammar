@@ -104,7 +104,7 @@ class CategoryNavigator:
     
     def __init__(self, config: NavigatorConfig):
         self.config = config
-        self.catalog_ref = None  # Will be set when synthOmnicon is available
+        self.catalog_ref = None  # Will be set when imscribing is available
         
     def _validate_primitive(self, value: str, expected: str) -> bool:
         """Validate that a primitive matches expected value"""

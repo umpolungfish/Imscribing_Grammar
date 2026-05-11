@@ -5,7 +5,7 @@ This module implements the thermodynamic metrics from QUANTIG.md:
 - η_CP (Constraint Propagation Efficiency)
 - ξ_CP (Inefficiency Index in nats)
 
-These metrics quantify how effectively a synthon converts physical energy
+These metrics quantify how effectively a imscription converts physical energy
 expenditure into reliable information gain.
 
 EXTENDED: Now includes kinetic fidelity computation (K primitive).
@@ -16,7 +16,7 @@ import math
 from dataclasses import dataclass
 from typing import Dict, Any, List, Optional, Tuple, Union
 
-from .models import Synthon, Fidelity, KineticCharacter
+from .models import Imscription, Fidelity, KineticCharacter
 
 
 # =============================================================================
@@ -51,7 +51,7 @@ class ConstraintPropagationEfficiency:
     Real chemical systems have η_CP << 1 due to irreversible overhead.
     """
     
-    synthon_name: str
+    imscription_name: str
     information_gain: float  # bits
     fidelity: float  # 0-1
     delta_g: float  # kJ/mol (free energy cost)
@@ -87,7 +87,7 @@ class ConstraintPropagationEfficiency:
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary."""
         return {
-            "synthon_name": self.synthon_name,
+            "imscription_name": self.imscription_name,
             "information_gain_bits": self.information_gain,
             "fidelity": self.fidelity,
             "delta_g_kJ_mol": self.delta_g,
@@ -99,7 +99,7 @@ class ConstraintPropagationEfficiency:
     
     def __str__(self) -> str:
         return (
-            f"ConstraintPropagationEfficiency({self.synthon_name}): "
+            f"ConstraintPropagationEfficiency({self.imscription_name}): "
             f"η_CP = {self.eta_CP:.2e}, ξ_CP = {self.xi_CP:.2f} nats, "
             f"waste = {self.waste_factor:.1e}-fold"
         )
@@ -156,7 +156,7 @@ def compute_kinetic_fidelity(
 
 
 def compute_effective_fidelity(
-    synthon: Synthon,
+    imscription: Imscription,
     delta_g_ddagger: Optional[float] = None,
     k_cat: Optional[float] = None,
     k_side: Optional[float] = None,
@@ -166,12 +166,12 @@ def compute_effective_fidelity(
     
     F_effective = F_thermo × F_kinetic
     
-    This separation is required because a synthon can be thermodynamically
+    This separation is required because a imscription can be thermodynamically
     favored (F_hardsign) yet kinetically inaccessible (K_schwa) under synthesis
     conditions (from QUANTIG.md Section III).
     
     Args:
-        synthon: Synthon with F_thermo already assigned
+        imscription: Imscription with F_thermo already assigned
         delta_g_ddagger: Optional barrier for kinetic computation
         k_cat, k_side: Optional rate constants
     
@@ -179,11 +179,11 @@ def compute_effective_fidelity(
         Effective fidelity (0.0-1.0)
     
     Example:
-        >>> synthon = Synthon(..., fidelity=Fidelity.HIGH, kinetic_character=KineticCharacter.MODERATE)
-        >>> f_eff = compute_effective_fidelity(synthon)
+        >>> imscription = Imscription(..., fidelity=Fidelity.HIGH, kinetic_character=KineticCharacter.MODERATE)
+        >>> f_eff = compute_effective_fidelity(imscription)
         >>> print(f"F_effective = {f_eff:.3f}")
     """
-    f_thermo = synthon.fidelity.numeric_value
+    f_thermo = imscription.fidelity.numeric_value
     
     if delta_g_ddagger is not None or (k_cat is not None and k_side is not None):
         _, f_kinetic = compute_kinetic_fidelity(
@@ -193,18 +193,18 @@ def compute_effective_fidelity(
         )
     else:
         # Use K primitive if available
-        f_kinetic = synthon.kinetic_character.numeric_value
+        f_kinetic = imscription.kinetic_character.numeric_value
     
     return f_thermo * f_kinetic
 
 
 def compute_information_gain(
-    synthon: Synthon,
+    imscription: Imscription,
     num_coordinates: Optional[int] = None,
     method: str = "configurational",
 ) -> float:
     """
-    Estimate information gain (I) in bits for a synthon.
+    Estimate information gain (I) in bits for a imscription.
 
     First checks the calibrated I lookup table (_CALIBRATED_I_BITS) from
     the Phase 1.1 DOF-counting pipeline.  Falls back to topology/granularity
@@ -221,7 +221,7 @@ def compute_information_gain(
     - "topology_based": Based on topological complexity
 
     Args:
-        synthon: The synthon to analyze
+        imscription: The imscription to analyze
         num_coordinates: Number of coordinates restricted (default: estimated from G)
         method: Estimation method
 
@@ -230,47 +230,47 @@ def compute_information_gain(
     """
     # --- Calibrated lookup (highest priority) ---
     if method == "configurational":
-        calibrated = _CALIBRATED_I_BITS.get(synthon.name)
+        calibrated = _CALIBRATED_I_BITS.get(imscription.name)
         if calibrated is not None:
             return calibrated
 
         # Heuristic fallback with updated coordinate scaling
         if num_coordinates is None:
             coord_map = {
-                synthon.granularity.LOCAL: 2,
-                synthon.granularity.MESOSCALE: 4,
-                synthon.granularity.GLOBAL: 6,
+                imscription.granularity.LOCAL: 2,
+                imscription.granularity.MESOSCALE: 4,
+                imscription.granularity.GLOBAL: 6,
             }
-            num_coordinates = coord_map.get(synthon.granularity, 3)
+            num_coordinates = coord_map.get(imscription.granularity, 3)
 
         # Updated base: 3.5 bits/coord (previously 2.5) to reflect calibration
         base_bits = num_coordinates * 3.5
 
         topology_bonus = {
-            synthon.topology.CYCLIC_BOWTIE: 1.5,
-            synthon.topology.CHAIN: 0.5,
-            synthon.topology.HUB_NODE: 2.0,
-            synthon.topology.LINEAR: 0.0,
-            synthon.topology.BRANCHED: 1.0,
-            synthon.topology.NETWORK: 3.0,
-            synthon.topology.CAGE: 2.5,
+            imscription.topology.CYCLIC_BOWTIE: 1.5,
+            imscription.topology.CHAIN: 0.5,
+            imscription.topology.HUB_NODE: 2.0,
+            imscription.topology.LINEAR: 0.0,
+            imscription.topology.BRANCHED: 1.0,
+            imscription.topology.NETWORK: 3.0,
+            imscription.topology.CAGE: 2.5,
         }
 
-        return base_bits + topology_bonus.get(synthon.topology, 0.5)
+        return base_bits + topology_bonus.get(imscription.topology, 0.5)
 
     elif method == "fidelity_weighted":
         base_bits = 6.0   # Updated base from calibration (was 4.0)
-        return base_bits * synthon.fidelity.numeric_value
+        return base_bits * imscription.fidelity.numeric_value
 
     elif method == "topology_based":
-        return float(synthon.topology.complexity) * 1.5
+        return float(imscription.topology.complexity) * 1.5
 
     else:
         raise ValueError(f"Unknown method: {method}")
 
 
 def compute_eta_CP(
-    synthon: Synthon,
+    imscription: Imscription,
     delta_g: float,
     information_gain: Optional[float] = None,
     information_method: str = "configurational",
@@ -280,19 +280,19 @@ def compute_eta_CP(
     k_side: Optional[float] = None,  # NEW parameter
 ) -> ConstraintPropagationEfficiency:
     """
-    Compute constraint propagation efficiency (η_CP) for a synthon.
+    Compute constraint propagation efficiency (η_CP) for a imscription.
     
     EXTENDED: Now supports effective fidelity (F_thermo × F_kinetic).
     
     η_CP = (I × F_effective) / (ΔG / E_bit_molar)
     
     When use_effective_fidelity=True, F_effective = F_thermo × F_kinetic.
-    This separation is required because a synthon can be thermodynamically
+    This separation is required because a imscription can be thermodynamically
     favored (F_hardsign) yet kinetically inaccessible (K_schwa) under synthesis
     conditions (from QUANTIG.md Section III).
 
     Args:
-        synthon: The synthon to analyze
+        imscription: The imscription to analyze
         delta_g: Free energy cost (kJ/mol). Negative for favorable interactions.
         information_gain: Pre-computed information gain (bits). If None, estimated.
         information_method: Method for estimating information gain.
@@ -304,9 +304,9 @@ def compute_eta_CP(
         ConstraintPropagationEfficiency dataclass
 
     Example:
-        >>> from imscrbgrmr import Synthon, ...
-        >>> synthon = Synthon(...)  # carboxylic acid dimer
-        >>> result = compute_eta_CP(synthon, delta_g=-64.2)
+        >>> from imscrbgrmr import Imscription, ...
+        >>> imscription = Imscription(...)  # carboxylic acid dimer
+        >>> result = compute_eta_CP(imscription, delta_g=-64.2)
         >>> print(f"η_CP = {result.eta_CP:.2e}, ξ_CP = {result.xi_CP:.2f} nats")
     """
     # Use absolute value of ΔG (energy invested)
@@ -315,20 +315,20 @@ def compute_eta_CP(
     # Estimate information gain if not provided
     if information_gain is None:
         information_gain = compute_information_gain(
-            synthon, method=information_method
+            imscription, method=information_method
         )
 
     # Compute effective fidelity if requested
     if use_effective_fidelity:
         fidelity = compute_effective_fidelity(
-            synthon,
+            imscription,
             delta_g_ddagger=delta_g_ddagger,
             k_cat=k_cat,
             k_side=k_side,
         )
     else:
         # Use thermodynamic fidelity only
-        fidelity = synthon.fidelity.numeric_value
+        fidelity = imscription.fidelity.numeric_value
 
     # Compute η_CP
     # Denominator: energy cost in units of Landauer bits
@@ -346,7 +346,7 @@ def compute_eta_CP(
         xi_CP = -math.log(eta_CP)
 
     return ConstraintPropagationEfficiency(
-        synthon_name=synthon.name,
+        imscription_name=imscription.name,
         information_gain=information_gain,
         fidelity=fidelity,
         delta_g=delta_g,
@@ -356,19 +356,19 @@ def compute_eta_CP(
 
 
 def compute_xi_CP(
-    synthon: Synthon,
+    imscription: Imscription,
     delta_g: float,
     information_gain: Optional[float] = None,
 ) -> float:
     """
-    Compute inefficiency index (ξ_CP) for a synthon.
+    Compute inefficiency index (ξ_CP) for a imscription.
     
     ξ_CP = -ln(η_CP)  (units: nats)
     
     This is a convenience function that returns just the ξ_CP value.
     
     Args:
-        synthon: The synthon to analyze
+        imscription: The imscription to analyze
         delta_g: Free energy cost (kJ/mol)
         information_gain: Pre-computed information gain (bits)
     
@@ -381,19 +381,19 @@ def compute_xi_CP(
     - Temporal cycles: ξ_CP ≈ 9.9-11.4 nats
     - Zr-oxo proxies: ξ_CP ≈ 12.2-16.8 nats (least efficient)
     """
-    result = compute_eta_CP(synthon, delta_g, information_gain)
+    result = compute_eta_CP(imscription, delta_g, information_gain)
     return result.xi_CP
 
 
 def compare_efficiencies(
-    synthons_with_energy: list[Tuple[Synthon, float]],
+    imscriptions_with_energy: list[Tuple[Imscription, float]],
     information_method: str = "configurational",
 ) -> Dict[str, Any]:
     """
-    Compare constraint propagation efficiencies across multiple synthons.
+    Compare constraint propagation efficiencies across multiple imscriptions.
     
     Args:
-        synthons_with_energy: List of (synthon, ΔG) tuples
+        imscriptions_with_energy: List of (imscription, ΔG) tuples
         information_method: Method for estimating information gain
     
     Returns:
@@ -401,8 +401,8 @@ def compare_efficiencies(
     """
     results = []
     
-    for synthon, delta_g in synthons_with_energy:
-        result = compute_eta_CP(synthon, delta_g, information_method=information_method)
+    for imscription, delta_g in imscriptions_with_energy:
+        result = compute_eta_CP(imscription, delta_g, information_method=information_method)
         results.append(result)
     
     # Sort by efficiency (descending)
@@ -413,11 +413,11 @@ def compare_efficiencies(
     xi_values = [r.xi_CP for r in results if r.xi_CP != float('inf')]
     
     return {
-        "num_synthons": len(results),
+        "num_imscriptions": len(results),
         "rankings": [
             {
                 "rank": i + 1,
-                "synthon": r.synthon_name,
+                "imscription": r.imscription_name,
                 "eta_CP": r.eta_CP,
                 "xi_CP": r.xi_CP,
                 "waste_factor": r.waste_factor,
@@ -437,29 +437,29 @@ def compare_efficiencies(
                 "mean": sum(xi_values) / len(xi_values),
             },
         },
-        "most_efficient": results[0].synthon_name if results else None,
-        "least_efficient": results[-1].synthon_name if results else None,
+        "most_efficient": results[0].imscription_name if results else None,
+        "least_efficient": results[-1].imscription_name if results else None,
     }
 
 
 def benchmark_against_landauer(
-    synthon: Synthon,
+    imscription: Imscription,
     delta_g: float,
 ) -> Dict[str, Any]:
     """
-    Benchmark a synthon's efficiency against the Landauer limit.
+    Benchmark a imscription's efficiency against the Landauer limit.
     
     The Landauer limit represents the minimum possible energy cost
     per bit of information processing: E_bit = k_B T ln(2).
     
     Args:
-        synthon: The synthon to benchmark
+        imscription: The imscription to benchmark
         delta_g: Free energy cost (kJ/mol)
     
     Returns:
         Benchmark report
     """
-    result = compute_eta_CP(synthon, delta_g)
+    result = compute_eta_CP(imscription, delta_g)
     
     # Compute theoretical minimum energy
     min_energy = result.information_gain * LANDAUER_COST_PER_BIT
@@ -471,7 +471,7 @@ def benchmark_against_landauer(
     overhead = actual_energy / min_energy if min_energy > 0 else float('inf')
     
     return {
-        "synthon": synthon.name,
+        "imscription": imscription.name,
         "information_gain_bits": result.information_gain,
         "landauer_minimum_kJ_mol": min_energy,
         "actual_energy_kJ_mol": actual_energy,
@@ -480,7 +480,7 @@ def benchmark_against_landauer(
         "inefficiency_xi_CP": result.xi_CP,
         "waste_nats": result.xi_CP,
         "interpretation": (
-            f"This synthon uses {overhead:.1f}× more energy than the "
+            f"This imscription uses {overhead:.1f}× more energy than the "
             f"Landauer limit, corresponding to {result.xi_CP:.2f} nats "
             f"of wasted information per bit gained."
         ),
@@ -520,7 +520,7 @@ class CalibratedXiCPEntry:
 
     Includes uncertainty band (±1–2 nats) from I calibration.
     """
-    synthon_name: str
+    imscription_name: str
     I_calibrated_bits: float       # from _CALIBRATED_I_BITS or DOF counting
     I_uncertainty_bits: float      # ±range on calibrated I
     delta_g: float                 # kJ/mol
@@ -534,7 +534,7 @@ class CalibratedXiCPEntry:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "synthon": self.synthon_name,
+            "imscription": self.imscription_name,
             "I_calibrated_bits": round(self.I_calibrated_bits, 3),
             "I_uncertainty_bits": round(self.I_uncertainty_bits, 3),
             "delta_g_kJ_mol": self.delta_g,
@@ -619,7 +619,7 @@ def calibrated_xi_cp_table() -> Dict[str, CalibratedXiCPEntry]:
         tier_old  = _fidelity_tier_from_xi(xi_old)
 
         table[name] = CalibratedXiCPEntry(
-            synthon_name=name,
+            imscription_name=name,
             I_calibrated_bits=I_cal,
             I_uncertainty_bits=I_unc,
             delta_g=dg,
@@ -645,7 +645,7 @@ def audit_fidelity_tiers(
     ξ_CP using the calibrated I table.  Reports how many change.
 
     Args:
-        catalog: SynthonCatalog instance
+        catalog: ImscriptionCatalog instance
         verbose: If True, list all changed entries
 
     Returns:
@@ -655,11 +655,11 @@ def audit_fidelity_tiers(
     total = 0
     changed: List[str] = []
 
-    for synthon in catalog:
+    for imscription in catalog:
         total += 1
-        entry = xi_table.get(synthon.name)
+        entry = xi_table.get(imscription.name)
         if entry and entry.tier_changed:
-            changed.append(synthon.name)
+            changed.append(imscription.name)
 
     pct = (len(changed) / total * 100) if total > 0 else 0.0
     result: Dict[str, Any] = {
@@ -809,19 +809,19 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
 }
 
 
-def get_reference(synthon_name: str) -> Optional[Dict[str, Any]]:
+def get_reference(imscription_name: str) -> Optional[Dict[str, Any]]:
     """
     Get reference η_CP/ξ_CP values from QUANTIG.md.
     
     Args:
-        synthon_name: Name of the synthon
+        imscription_name: Name of the imscription
     
     Returns:
         Reference data dict or None if not found
     """
-    return REFERENCE_VALUES.get(synthon_name)
+    return REFERENCE_VALUES.get(imscription_name)
 
 
 def list_references() -> list[str]:
-    """Return list of all reference synthon names."""
+    """Return list of all reference imscription names."""
     return list(REFERENCE_VALUES.keys())

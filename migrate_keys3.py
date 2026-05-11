@@ -18,7 +18,7 @@ FILES = [
     "quantum_field_theory_navigator.py",
     "perfect_cuboid_navigator.py",
     "homotopy_type_theory_navigator.py",
-    "synthon_agent.py",
+    "imscribe_agent.py",
     "representation_theory_navigator.py",
     "algebraic_geometry_navigator.py",
     "crystal_viz.py",

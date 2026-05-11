@@ -57,7 +57,7 @@ This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom v
 
 **Axiom 6 — Temporal grounding: $D_{\text{invomega}}$ requires a named closed cycle.**
 
-Any synthon assigned $D_{\text{invomega}}$ must have a physically specified reset mechanism — the process by which the system returns to its initial state. A directed transformation without a recoverable ground state is not a temporal synthon.
+Any imscription assigned $D_{\text{invomega}}$ must have a physically specified reset mechanism — the process by which the system returns to its initial state. A directed transformation without a recoverable ground state is not a temporal imscription.
 
 **Enforced computationally:** $D_{\text{invomega}}$ without grounding text containing both:
 *   **Process indicator:** catalysis, oxidation, transfer, oscillation, turnover
@@ -71,14 +71,14 @@ Any synthon assigned $D_{\text{invomega}}$ must have a physically specified rese
 
 ### Step 1: Step Encoding
 
-Define each mechanistic step as a synthon tuple.
+Define each mechanistic step as a imscription tuple.
 
 ```python
-from imscrbgrmr import Synthon
+from imscrbgrmr import Imscription
 
 # Proline aldol cycle: 4-step encoding
 steps = [
-    Synthon(
+    Imscription(
         name="enamine_formation",
         dimensionality="Ð_infinity",
         topology="Þ_chain",       # Linear enamine intermediate
@@ -88,11 +88,11 @@ steps = [
         kinetic="Ç_W",          # ΔG‡ ≈ 75 kJ/mol
         granularity="Γ_γ",
         grammar="ɢ_sequential",
-        criticality="φ̂_ž",
+        criticality="⊙_ž",
         stoichiometry="1:1",
         grounding_text="Proline condensation with ketone, water elimination"
     ),
-    Synthon(
+    Imscription(
         name="c_c_bond_formation",
         dimensionality="Ð_infinity",
         topology="Þ_ò",      # Cyclic transition state (Zimmermann-Traxler)
@@ -102,11 +102,11 @@ steps = [
         kinetic="Ç_W",          # ΔG‡ = 97 kJ/mol (rate-determining)
         granularity="Γ_γ",
         grammar="ɢ_sequential",
-        criticality="φ̂_ž",    # Local Φ_c candidacy at TS
+        criticality="⊙_ž",    # Local Φ_c candidacy at TS
         stoichiometry="1:1",
         grounding_text="C-C bond formation via enamine attack on aldehyde"
     ),
-    Synthon(
+    Imscription(
         name="proton_transfer",
         dimensionality="Ð_infinity",
         topology="Þ_chain",
@@ -116,11 +116,11 @@ steps = [
         kinetic="Ç_-",         # ΔG‡ ≈ 40 kJ/mol
         granularity="Γ_β",
         grammar="ɢ_sequential",
-        criticality="φ̂_ž",
+        criticality="⊙_ž",
         stoichiometry="1:1",
         grounding_text="Intramolecular proton transfer, iminium formation"
     ),
-    Synthon(
+    Imscription(
         name="hydrolysis_reset",
         dimensionality="Ð_infinity",
         topology="Þ_ò",      # Cyclic hydrolysis transition state
@@ -130,7 +130,7 @@ steps = [
         kinetic="Ç_-",         # ΔG‡ ≈ 45 kJ/mol
         granularity="Γ_γ",
         grammar="ɢ_sequential",
-        criticality="φ̂_ž",
+        criticality="⊙_ž",
         stoichiometry="1:1",
         grounding_text="Hydrolysis regenerates proline catalyst, releases product"
     ),
@@ -374,7 +374,7 @@ for trap in kinetic_report.traps:
 
 ## 6.0 Advanced: The "Quantum Quarantine" Trajectory
 
-For speculative systems (quantum synthons, hypothetical topologies):
+For speculative systems (quantum imscriptions, hypothetical topologies):
 
 1.  Register the trajectory with `--speculative` flag.
 2.  Isolate in `domain=quantum` or `domain=speculative`.
@@ -413,13 +413,13 @@ For speculative systems (quantum synthons, hypothetical topologies):
 - [ ] Grounding status is `full` or `override` with logged reason.
 - [ ] Non-equilibrium cycles flagged with `--non-equilibrium` mode.
 
-Successful trajectory encoding implies the temporal synthon is well-characterized and axiom-compliant — a prerequisite for Phase 3 AI-driven design. Cycles without legitimate reset mechanisms (Axiom 6 violation) are not temporal synthons and should be reclassified as $D_{\text{wynn}}$ or $D_{\bigtriangleup}$ systems.
+Successful trajectory encoding implies the temporal imscription is well-characterized and axiom-compliant — a prerequisite for Phase 3 AI-driven design. Cycles without legitimate reset mechanisms (Axiom 6 violation) are not temporal imscriptions and should be reclassified as $D_{\text{wynn}}$ or $D_{\bigtriangleup}$ systems.
 
 ---
 
 ## 9.0 Implementation Status
 
-> **Design specification.** `imscribe trajectory` CLI commands and `TemporalSynthonAgent` are planned. `TrajectoryValidator` is planned.
+> **Design specification.** `imscribe trajectory` CLI commands and `TemporalImscriptionAgent` are planned. `TrajectoryValidator` is planned.
 
 *   **Input:** List of step definitions (JSON/Python).
 *   **Engine:** `TrajectoryValidator` with continuity checking, axiom validation, and criticality scanning.

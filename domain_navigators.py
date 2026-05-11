@@ -184,7 +184,7 @@ class Catalog:
             # Fallback for isolated runs without the package installed
             p = path if path is not None else ROOT / "IG_catalog.json"
             raw = json.loads(p.read_text())
-            entries = raw if isinstance(raw, list) else raw.get("synthons", [])
+            entries = raw if isinstance(raw, list) else raw.get("imscriptions", [])
         self._all: dict[str, dict] = {e["name"]: e for e in entries}
 
     def get(self, name: str) -> dict:

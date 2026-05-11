@@ -1,7 +1,7 @@
 """
-Catalog Cleanup Utility — Adversarial validation and cleanup of recorded synthons.
+Catalog Cleanup Utility — Adversarial validation and cleanup of recorded imscriptions.
 
-This module scans the synthon catalog, validates each entry against mechanistic
+This module scans the imscription catalog, validates each entry against mechanistic
 axioms, and flags or removes invalid assignments.
 
 Usage:
@@ -14,37 +14,37 @@ import json
 from pathlib import Path
 from typing import List, Tuple, Dict, Any
 
-from imscrbgrmr import global_catalog, Synthon
-from imscrbgrmr.adversarial_grounding import validate_full_synthon
+from imscrbgrmr import global_catalog, Imscription
+from imscrbgrmr.adversarial_grounding import validate_full_imscription
 
 
 def validate_catalog_entry(
     name: str,
-    synthon: Synthon,
+    imscription: Imscription,
     description: str = "",
 ) -> Tuple[bool, Dict[str, Any]]:
     """
     Validate a single catalog entry against adversarial axioms.
     
     Args:
-        name: Synthon name
-        synthon: Synthon object
+        name: Imscription name
+        imscription: Imscription object
         description: Optional description for context
     
     Returns:
         Tuple of (is_valid, validation_details)
     """
-    synthon_data = synthon.to_dict()
+    imscription_data = imscription.to_dict()
     
     # Extract description from metadata if available
-    if not description and synthon.description:
-        description = synthon.description
+    if not description and imscription.description:
+        description = imscription.description
     
     # If no description, use name as hint
     if not description:
         description = name.replace("_", " ")
     
-    results = validate_full_synthon(synthon_data, description)
+    results = validate_full_imscription(imscription_data, description)
     
     violations = [
         (prim, res) for prim, res in results.items()
@@ -53,7 +53,7 @@ def validate_catalog_entry(
     
     details = {
         "name": name,
-        "notation": synthon.to_notation(),
+        "notation": imscription.to_notation(),
         "violations": violations,
         "num_violations": len(violations),
         "is_valid": len(violations) == 0,
@@ -66,21 +66,21 @@ def validate_catalog_entry(
     return len(violations) == 0, details
 
 
-def scan_catalog() -> Tuple[List[Synthon], List[Dict[str, Any]]]:
+def scan_catalog() -> Tuple[List[Imscription], List[Dict[str, Any]]]:
     """
     Scan entire catalog for axiom violations.
     
     Returns:
-        Tuple of (valid_synthons, invalid_details)
+        Tuple of (valid_imscriptions, invalid_details)
     """
     valid = []
     invalid_details = []
     
-    for name, synthon in global_catalog._synthons.items():
-        is_valid, details = validate_catalog_entry(name, synthon)
+    for name, imscription in global_catalog._imscriptions.items():
+        is_valid, details = validate_catalog_entry(name, imscription)
         
         if is_valid:
-            valid.append(synthon)
+            valid.append(imscription)
         else:
             invalid_details.append(details)
     
@@ -96,7 +96,7 @@ def review_catalog() -> None:
     valid, invalid = scan_catalog()
     
     console.print(f"\n[bold]Catalog Review[/bold]")
-    console.print(f"Total synthons: {len(valid) + len(invalid)}")
+    console.print(f"Total imscriptions: {len(valid) + len(invalid)}")
     console.print(f"Valid: {len(valid)}")
     console.print(f"Invalid: {len(invalid)}")
     
@@ -158,8 +158,8 @@ def remove_invalid_entries(dry_run: bool = True) -> int:
                 print(f"    - {prim}: {res.assigned_value} → {res.alternative_value}")
                 print(f"      Reason: {res.reason}")
         else:
-            if name in global_catalog._synthons:
-                del global_catalog._synthons[name]
+            if name in global_catalog._imscriptions:
+                del global_catalog._imscriptions[name]
                 removed += 1
                 print(f"Removed: {name}")
     

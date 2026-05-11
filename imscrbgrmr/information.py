@@ -1,12 +1,12 @@
 """
 Rigorous I(bits) calibration pipeline — configurational entropy reduction.
 
-Computes the information content of a synthon from first principles:
+Computes the information content of a imscription from first principles:
 
     I(bits) = Σᵢ log₂(N_free_i / N_bound_i)
 
 where N_free_i is the number of microstates accessible to DOF i before
-synthon formation and N_bound_i is the number accessible after.
+imscription formation and N_bound_i is the number accessible after.
 
 Calibration targets (Phase 1.1 / v2.2):
   Carboxylic acid dimer (R²₂(8)):    I_recognition ≈ 9–10 bits (baseline)
@@ -175,7 +175,7 @@ class DOFRestriction:
 
 
 @dataclass
-class SynthonInformationResult:
+class ImscriptionInformationResult:
     """
     Rigorous I(bits) result with recognition vs. orientation decomposition.
 
@@ -302,7 +302,7 @@ def compute_I_hbond_dimer(
     apply_correlation_correction: bool = True,
     solvent_model: str = "vacuum",
     use_abstract_labels: bool = False,
-) -> SynthonInformationResult:
+) -> ImscriptionInformationResult:
     """
     Compute I(bits) for an H-bond dimer from degree-of-freedom counting.
 
@@ -329,10 +329,10 @@ def compute_I_hbond_dimer(
         solvent_model: One of "vacuum", "chloroform", "THF", "DMSO", "water", "generic"
 
     Returns:
-        SynthonInformationResult
+        ImscriptionInformationResult
     """
     solvent = SolventCorrection.from_model(solvent_model)
-    result = SynthonInformationResult(
+    result = ImscriptionInformationResult(
         system_name=system_name,
         heuristic_bits=heuristic_bits,
         solvent_correction=solvent if solvent_model != "vacuum" else None,
@@ -458,7 +458,7 @@ def compute_I_triple_hbond_array(
     system_name: str = "triple_hbond_DAD_ADA_array",
     heuristic_bits: float = 16.0,
     solvent_model: str = "vacuum",
-) -> SynthonInformationResult:
+) -> ImscriptionInformationResult:
     """
     Compute I(bits) for a triple H-bond DAD·ADA array with cooperativity.
 
@@ -480,7 +480,7 @@ def compute_I_triple_hbond_array(
         solvent_model: Solvent for ΔS_solv correction
 
     Returns:
-        SynthonInformationResult (expect I_recognition ≈ 14–18 bits)
+        ImscriptionInformationResult (expect I_recognition ≈ 14–18 bits)
     """
     # Base 3-H-bond calculation (same geometry as dimer but 3 contacts)
     base = compute_I_hbond_dimer(
@@ -522,7 +522,7 @@ def compute_I_proline_cycle(
     system_name: str = "proline_aldol_cycle",
     heuristic_bits: float = 7.5,
     solvent_model: str = "vacuum",
-) -> SynthonInformationResult:
+) -> ImscriptionInformationResult:
     """
     Estimate I(bits) for the proline aldol catalytic cycle (D_∞ temporal).
 
@@ -544,7 +544,7 @@ def compute_I_proline_cycle(
         solvent_model: Solvent correction model
 
     Returns:
-        SynthonInformationResult with I_recognition = I_cycle
+        ImscriptionInformationResult with I_recognition = I_cycle
     """
     # Base calculation for n stereocontrolling H-bond-like contacts
     base = compute_I_hbond_dimer(
@@ -578,7 +578,7 @@ def compute_I_quadruple_hbond_array(
     system_name: str = "quadruple_hbond_AADD_DDAA_array",
     heuristic_bits: float = 21.0,
     solvent_model: str = "vacuum",
-) -> SynthonInformationResult:
+) -> ImscriptionInformationResult:
     """
     Compute I(bits) for a quadruple H-bond AADD·DDAA array with cooperativity.
 
@@ -603,7 +603,7 @@ def compute_I_quadruple_hbond_array(
         solvent_model: Solvent for ΔS_solv correction
 
     Returns:
-        SynthonInformationResult (expect I_recognition ≈ 19–24 bits)
+        ImscriptionInformationResult (expect I_recognition ≈ 19–24 bits)
     """
     base = compute_I_hbond_dimer(
         n_hbonds=4,
@@ -641,13 +641,13 @@ class CalibrationReport:
     Stores I_recognition, I_net, I_total_with_solvent for each target,
     and assesses whether the calibrated values hit the expected ranges.
     """
-    acid_dimer: SynthonInformationResult
-    triple_hbond: SynthonInformationResult
-    proline_cycle: SynthonInformationResult
-    quadruple_hbond: Optional[SynthonInformationResult] = None
+    acid_dimer: ImscriptionInformationResult
+    triple_hbond: ImscriptionInformationResult
+    proline_cycle: ImscriptionInformationResult
+    quadruple_hbond: Optional[ImscriptionInformationResult] = None
 
     def summary(self) -> Dict[str, Any]:
-        def _entry(r: SynthonInformationResult, lo: float, hi: float) -> Dict[str, Any]:
+        def _entry(r: ImscriptionInformationResult, lo: float, hi: float) -> Dict[str, Any]:
             ok = lo <= r.recognition_bits <= hi
             return {
                 "system": r.system_name,
@@ -756,60 +756,60 @@ def calibrate_I_pipeline(
     )
 
 
-def compute_I_from_synthon(
-    synthon,
+def compute_I_from_imscription(
+    imscription,
     n_contacts: Optional[int] = None,
     contact_type: str = "hbond",
     solvent_model: str = "vacuum",
-) -> SynthonInformationResult:
+) -> ImscriptionInformationResult:
     """
-    Estimate I(bits) for a registered synthon using its primitives.
+    Estimate I(bits) for a registered imscription using its primitives.
 
     Uses topology and recognition mode to determine the number of contacts,
     then calls the appropriate DOF-counting function.
 
     Args:
-        synthon: Synthon object
+        imscription: Imscription object
         n_contacts: Override number of recognition contacts (default: inferred)
         contact_type: "hbond" | "coordination" | "mechanical"
 
     Returns:
-        SynthonInformationResult
+        ImscriptionInformationResult
     """
     from .models import Topology, RecognitionMode, Granularity
 
-    # compute_I_from_synthon applies the H-bond dimer DOF model as a universal
+    # compute_I_from_imscription applies the H-bond dimer DOF model as a universal
     # constraint-counting scaffold across all domains. Abstract labels are always
     # appropriate here — chemistry-specific labels (O···O Å, COOH, etc.) are
-    # misleading for non-molecular synthons. Direct calls to compute_I_hbond_dimer
+    # misleading for non-molecular imscriptions. Direct calls to compute_I_hbond_dimer
     # (calibration pipeline, molecular work) retain chemistry labels.
     abstract = True
 
     # Infer n_contacts from topology and granularity if not specified
     if n_contacts is None:
-        if synthon.topology == Topology.CYCLIC_BOWTIE:
+        if imscription.topology == Topology.CYCLIC_BOWTIE:
             n_contacts = 2  # typical cyclic dimer: 2 contacts
-        elif synthon.topology == Topology.HUB_NODE:
+        elif imscription.topology == Topology.HUB_NODE:
             n_contacts = 4  # hub: 4-fold connectivity
-        elif synthon.topology == Topology.CAGE:
+        elif imscription.topology == Topology.CAGE:
             n_contacts = 6
         else:
             n_contacts = 1
 
         # Granularity upscaling
-        if synthon.granularity == Granularity.MESOSCALE:
+        if imscription.granularity == Granularity.MESOSCALE:
             n_contacts = max(n_contacts, 3)
-        elif synthon.granularity == Granularity.GLOBAL:
+        elif imscription.granularity == Granularity.GLOBAL:
             n_contacts = max(n_contacts, 6)
 
     # Heuristic from compute_information_gain() for comparison
     from .thermodynamics import compute_information_gain
-    heuristic_bits = compute_information_gain(synthon, method="configurational")
+    heuristic_bits = compute_information_gain(imscription, method="configurational")
 
-    if contact_type == "hbond" or synthon.recognition_mode.value in ("Ř_superset",):
+    if contact_type == "hbond" or imscription.recognition_mode.value in ("Ř_superset",):
         return compute_I_hbond_dimer(
             n_hbonds=n_contacts,
-            system_name=synthon.name,
+            system_name=imscription.name,
             heuristic_bits=heuristic_bits,
             solvent_model=solvent_model,
             use_abstract_labels=abstract,
@@ -818,7 +818,7 @@ def compute_I_from_synthon(
     # Generic fallback: use hbond model scaled by contact count
     return compute_I_hbond_dimer(
         n_hbonds=n_contacts,
-        system_name=synthon.name,
+        system_name=imscription.name,
         heuristic_bits=heuristic_bits,
         solvent_model=solvent_model,
         use_abstract_labels=abstract,

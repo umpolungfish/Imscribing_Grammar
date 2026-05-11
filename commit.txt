@@ -1,0 +1,35 @@
+extend IG_primitives.lua + normalize_ig.py to enforce all 12 primitives
+
+normalize_ig.py:
+- ASCII_TO_PRIM table maps wrong ASCII surrogates to canonical IG glyphs
+  (D→Ð, T→Þ, R→Ř, P→Φ, F/f→ƒ, C→Ç, G→Γ, g→ɢ, H→Ħ, S→Σ, W→Ω)
+- fix_igprimfont_wrong_ascii(): replaces wrong ASCII chars inside
+  \text{{\igprimfont X}} in manuscript .tex files
+- normalize_md() extended: fixes wrong ASCII primitives in markdown
+  math mode ($D_{ω}$ → $Ð_{ω}$) and bare tuple notation (D_ω → Ð_ω)
+  using non-ASCII subtype chars as safe discriminators
+- normalize_tex_igprimfont() now calls fix_igprimfont_wrong_ascii()
+  after the existing fix_ig_glyphs delegation
+
+IG_primitives.lua:
+- Meta() function: auto-injects \igprimfont font definition into
+  header-includes so documents without YAML frontmatter compile cleanly
+- CLASS_A: added ⊗ (U+2297, tensor product) for lmroman text coverage
+- CLASS_B: expanded from 4 entries to full coverage of all IG subtype
+  chars — ß, æ, Æ, Å, Ñ, Ù, ì, ï, ð, ò, ý, ÿ, ő, Ţ, Ť, Ş, ż, ž, ˙,
+  £, ¨, ¯ — so fix_subarg_problem_chars wraps them with \text{} in math
+- TEXT_CMD_CHARS table: LaTeX text-mode commands → Unicode chars
+  (SS→ß, aelig→æ, AElig→Æ, AA→Å, ae/AE, oe/OE, DH/TH/NG, etc.)
+- strip_unicode_backslashes(): strips spurious \UNICODECHAR sequences
+  (e.g. \Ñ) that are undefined in math mode
+- fix_text_cmds_in_math(): replaces \aelig, \SS etc. inside math nodes
+- fix_unbraced_subcmds(): braces bare _\CMD subscripts (_\SS → _{ß})
+- fix_subarg_problem_chars(): wraps single Class A/B chars inside _{X}
+  and ^{X} subscript args with \text{} or \text{{\igprimfont}}
+- Math handler ordering: strip_unicode_backslashes → fix_unbraced_subcmds
+  → fix_text_cmds_in_math → fix_text_commands → fix_subarg_problem_chars
+  → fix_bare_chars
+
+fixes: collatz_primitive_proof.md compilation crash (Missing { from _\SS,
+       Undefined control sequence \Ñ, Undefined \aelig)
+fixes: collatz_conventional_proof.md missing ⊗ glyph in text mode

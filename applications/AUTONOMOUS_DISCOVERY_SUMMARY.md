@@ -7,22 +7,22 @@ header-includes:
     \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
     \newcommand{\igtext}[1]{{\igfont #1}}
 ---
-# Autonomous Synthon Discovery Agent - Implementation Summary
+# Autonomous Imscription Discovery Agent - Implementation Summary
 
 ## Overview
 
-Implemented a fully autonomous agent that performs end-to-end synthon discovery without human intervention. The agent proposes, validates, creates, and registers synthons in continuous cycles until configured limits are reached.
+Implemented a fully autonomous agent that performs end-to-end imscription discovery without human intervention. The agent proposes, validates, creates, and registers imscriptions in continuous cycles until configured limits are reached.
 
 ## What Was Built
 
-### 1. Core Agent (`agents/autonomous_synthon_discovery_agent.py`)
+### 1. Core Agent (`agents/autonomous_imscription_discovery_agent.py`)
 
-**AutonomousSynthonDiscoveryAgent** - Self-directed discovery agent with:
+**AutonomousImscriptionDiscoveryAgent** - Self-directed discovery agent with:
 - **Proposal Engine**: Generates novel chemical system descriptions
 - **Duplicate Detection**: Checks against existing catalog entries
 - **Literature Validation**: Screens for known systems and conflicts
-- **Synthon Generation**: Maps descriptions to seven primitives
-- **Auto-Registration**: Adds valid synthons to persistent catalog
+- **Imscription Generation**: Maps descriptions to seven primitives
+- **Auto-Registration**: Adds valid imscriptions to persistent catalog
 - **Progress Tracking**: Saves state every N cycles
 - **Configurable Limits**: Max cycles, duration, confidence threshold
 
@@ -71,7 +71,7 @@ class AutonomousRunConfig:
 │  3. VALIDATE LITERATURE                                      │
 │     Check for known systems and conflicts                    │
 │     ↓ (if conflict: skip to next cycle)                      │
-│  4. GENERATE SYNTHON                                         │
+│  4. GENERATE imscription                                         │
 │     Map to seven primitives with confidence                  │
 │     ↓ (if low confidence: skip)                              │
 │  5. REGISTER                                                 │
@@ -114,7 +114,7 @@ imscribe agents discover --provider qwen --cycles 100
 
 ### Python API
 ```python
-from agents.autonomous_synthon_discovery_agent import run_autonomous_discovery
+from agents.autonomous_imscription_discovery_agent import run_autonomous_discovery
 
 results = await run_autonomous_discovery(
     max_cycles=50,
@@ -137,7 +137,7 @@ Saves to `./discovery_output/` (or custom `--output`):
 
 | Result | Meaning | Action |
 |--------|---------|--------|
-| `valid_novel` | New, valid synthon | ✓ Registered |
+| `valid_novel` | New, valid imscription | ✓ Registered |
 | `duplicate_exists` | Already in catalog | ⊗ Skipped |
 | `invalid_chemistry` | Chemically invalid | ✗ Skipped |
 | `literature_conflict` | Conflicts with known | ⚠ Skipped |
@@ -147,9 +147,9 @@ Saves to `./discovery_output/` (or custom `--output`):
 
 The agent tracks:
 - `cycles_completed`: Total cycles run
-- `synthons_proposed`: Total proposals
-- `synthons_validated`: Passed validation
-- `synthons_registered`: Added to catalog
+- `imscriptions_proposed`: Total proposals
+- `imscriptions_validated`: Passed validation
+- `imscriptions_registered`: Added to catalog
 - `duplicates_detected`: Skipped (duplicate)
 - `literature_conflicts`: Skipped (conflict)
 - `errors`: Failed cycles
@@ -157,7 +157,7 @@ The agent tracks:
 ## Integration with Existing Systems
 
 ### Uses Persistent Catalog
-- Synthons are saved to `~/.imscrbgrmr/catalog.json`
+- imscriptions are saved to `~/.imscrbgrmr/catalog.json`
 - Automatically loads on startup
 - Auto-saves after each registration
 
@@ -176,13 +176,13 @@ The agent tracks:
 Typical metrics (depends on LLM):
 - **Cycle time**: 10-30 seconds
 - **Success rate**: 40-70%
-- **Catalog growth**: ~5-15 synthons per 20 cycles
+- **Catalog growth**: ~5-15 imscriptions per 20 cycles
 
 ## Example Session Output
 
 ```
 ======================================================================
-AUTONOMOUS SYNTHON DISCOVERY AGENT
+AUTONOMOUS imscription DISCOVERY AGENT
 ======================================================================
 Configuration:
   Max cycles: 5
@@ -207,7 +207,7 @@ CYCLE 2/5
 
 [⊗] duplicate_exists
     Name: carboxylic_acid_dimer
-    Reason: Duplicate of existing synthon
+    Reason: Duplicate of existing imscription
 
 ...
 
@@ -216,20 +216,20 @@ DISCOVERY RUN COMPLETE
 ======================================================================
 Duration: 3.2 minutes
 Cycles completed: 5
-Synthons proposed: 5
-Synthons validated: 3
-Synthons registered: 3
+imscriptions proposed: 5
+imscriptions validated: 3
+imscriptions registered: 3
 Duplicates detected: 1
 Success rate: 60.0%
 
-Catalog now contains 48 synthons
+Catalog now contains 48 imscriptions
 ======================================================================
 ```
 
 ## Files Created/Modified
 
 ### New Files
-1. `agents/autonomous_synthon_discovery_agent.py` - Main agent implementation
+1. `agents/autonomous_imscription_discovery_agent.py` - Main agent implementation
 2. `AUTONOMOUΣ_DISCOVERY.md` - Full documentation
 3. `AUTONOMOUΣ_DISCOVERY_SUMMARY.md` - This summary
 
@@ -261,4 +261,4 @@ Potential improvements:
 
 ## Summary
 
-The autonomous synthon discovery agent is a complete, production-ready system for continuous, self-directed synthon generation. It handles the entire workflow from proposal through registration, with configurable limits, progress tracking, and persistent storage. Just start it and let it run.
+The autonomous imscription discovery agent is a complete, production-ready system for continuous, self-directed imscription generation. It handles the entire workflow from proposal through registration, with configurable limits, progress tracking, and persistent storage. Just start it and let it run.

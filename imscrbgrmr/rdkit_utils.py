@@ -3,7 +3,7 @@ RDKit-based ΔG estimation, structure validation, and structural flag extraction
 
 This module provides:
 1. SMILES-based ΔG estimation using group additivity
-2. Structure validation for synthon chemical descriptions
+2. Structure validation for imscription chemical descriptions
 3. Automatic ΔG justification generation
 4. Structural flag extraction for PrimitiveAssignmentEngine (D, T, R, G flags)
 
@@ -251,15 +251,15 @@ def _estimate_from_properties(
     )
 
 
-def validate_synthon_structure(
-    synthon_description: str,
+def validate_imscription_structure(
+    imscription_description: str,
     smiles: str,
 ) -> Tuple[bool, str]:
     """
-    Validate that a SMILES structure matches the synthon description.
+    Validate that a SMILES structure matches the imscription description.
     
     Args:
-        synthon_description: Natural language description
+        imscription_description: Natural language description
         smiles: SMILES string to validate
     
     Returns:
@@ -273,7 +273,7 @@ def validate_synthon_structure(
         return False, f"Invalid SMILES: {smiles}"
     
     # Check for key features mentioned in description
-    description_lower = synthon_description.lower()
+    description_lower = imscription_description.lower()
     
     # Check for aromatic systems
     if "aromatic" in description_lower or "ring" in description_lower:
@@ -303,7 +303,7 @@ def generate_rdkit_grounding(
     description: str = "",
 ) -> Dict[str, Any]:
     """
-    Generate complete RDKit-based grounding for a synthon.
+    Generate complete RDKit-based grounding for a imscription.
     
     Args:
         smiles: SMILES string
@@ -316,7 +316,7 @@ def generate_rdkit_grounding(
     delta_g_result = estimate_delta_g_from_smiles(smiles, description)
     
     # Validate structure
-    is_valid, validation_msg = validate_synthon_structure(description, smiles)
+    is_valid, validation_msg = validate_imscription_structure(description, smiles)
     
     return {
         "delta_g_value": delta_g_result.delta_g,

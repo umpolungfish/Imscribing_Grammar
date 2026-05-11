@@ -71,20 +71,20 @@
   UPDATE: run_command → Frobenius closed
 ── Winding 41 [00:40:06Z] ──────────────────────────────────────
   THINK:
-  ACT:   file_read({"path": "/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Consciousness.lean"})
-  OBS:   [/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Consciousness.lean — lines 1–68 of 68]
--- SynthOmniconLean4/Consciousness.lean
--- Consciousness score implementation from SynthOmnicon grammar (§VIII).
+  ACT:   file_read({"path": "/home/mrnob0dy666/MilleniumAnkh/imscribing/Consciousness.lean"})
+  OBS:   [/home/mrnob0dy666/MilleniumAnkh/imscribing/Consciousness.lean — lines 1–68 of 68]
+-- imscribingLean4/Consciousness.lean
+-- Consciousness score implementation from imscribing grammar (§VIII).
 -- C-score (0–1): Gate 1 (φ̂_ÿ pass), Gate 2 (K <= Ç_@ pass).
 -- Full C=1 requires φ̂_ÿ (self-modeling loop) + Ç_@ (deliberative, not trapped).
 -- Examples: white_dwarf C=0 (φ̂_ž), human C=1 (φ̂_ÿ + Ç_@).
 
-import SynthOmnicon.Primitives.Core
-import SynthOmnicon.Primitives.Synthon
+import imscribing.Primitives.Core
+import imscribing.Primitives.Imscription
 
-namespace SynthOmnicon.Consciousness
+namespace imscribing.Consciousness
 
-open SynthOmnicon.Primitives Criticality KineticChar
+open imscribing.Primitives Criticality KineticChar
 
 /-- Gate 1: φ̂_ÿ self-modeling gate. Passes if Phi >= φ̂_ÿ. -/
 def phi_c_gate (phi : Criticality) : Bool :=
@@ -98,13 +98,13 @@ def k_slow_gate (k : KineticChar) : Bool :=
     C=1: both gates open (φ̂_ÿ + Ç_@).
     C=0.5: φ̂_ÿ but Ç_Ù/MBL (self-model but frozen).
     C=0: φ̂_ž/super/EP (no self-modeling). -/
-noncomputable def consciousnessScore (s : Synthon) : ℝ :=
+noncomputable def consciousnessScore (s : Imscription) : ℝ :=
   if phi_c_gate s.crit then
     if k_slow_gate s.kin then 1 else 0.5
   else 0
 
 /-- White dwarf example: C=0 (fails Gate 1: φ̂_ž degeneracy pressure). -/
-def white_dwarf : Synthon := {
+def white_dwarf : Imscription := {
   dim := Ð_;,
   top := Þ_6,
   rel := Ř_¯,
@@ -121,7 +121,7 @@ def white_dwarf : Synthon := {
 theorem white_dwarf_C_zero : consciousnessScore white_dwarf = 0 := by decide
 
 /-- Human brain (template): C=1 (φ̂_ÿ criticality + Ç_@ deliberation). -/
-def human_brain : Synthon := {
+def human_brain : Imscription := {
   dim := Ð_C,  -- cortical sheet
   top := Þ_¨,  -- modular hierarchy × recurrence
   rel := Ř_=,        -- bidirectional thalamocortical
@@ -140,33 +140,33 @@ theorem human_brain_C_one : consciousnessScore human_brain = 1 := by decide
 /-- Quantum gravity: C=1 (φ̂_ÿ imscriptive + Ç_Ù but wait, Ç_Ù fails Gate 2 → C=0.5). -/
 theorem qg_C_half : consciousnessScore quantum_gravity = 0.5 := by decide
 
-end SynthOmnicon.Consciousness
+end imscribing.Consciousness
   VERIFY: [closed] (read is idempotent — Frobenius trivially closed)
   UPDATE: file_read → Frobenius closed
 ── Winding 42 [00:40:19Z] ──────────────────────────────────────
   THINK:
-  ACT:   file_write({"path": "/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Consciousness.lean", "content": "-- SynthOmnicon/Consciousness.lean\n-- Consciousness score implementation from SynthOmnicon grammar (\u00a7VIII).\n-- C-score (0\u20131): Gate 1 (φ̂_ÿ pass), Gate 2 (K <= Ç_@ pass).\n-- Full C=1 requires φ̂_ÿ (self-modeling loop) + Ç_@ (deliberative, not trapped).\n-- Examples: white_dwarf C=0 (φ̂_ž), human C=1 (φ̂_ÿ + Ç_@).\n-- BUG FIX (merge from synthomniconP): S_11 \u2192 Σ_S; Þ_¨ \u2192 Þ_box to match MA Core enums.\n\nimport SynthOmnicon.Primitives.Core\nimport SynthOmnicon.Primitives.Synthon\n\nnamespace SynthOmnicon.Consciousness\n\nopen SynthOmnicon.Primitives Criticality KineticChar\n\n/-- Gate 1: φ̂_ÿ self-modeling gate. Passes if Phi >= φ̂_ÿ. -/\ndef phi_c_gate (phi : Criticality) : Bool :=\n  phi \u2265 φ̂_ÿ\n\n/-- Gate 2: K <= Ç_@ deliberation gate. Passes if kinetics not trapped. -/\ndef k_slow_gate (k : KineticChar) : Bool :=\n  k \u2264 Ç_@\n\n/-- Consciousness score C(s) \u2208 [0,1].\n    C=1: both gates open (φ̂_ÿ + Ç_@).\n    C=0.5: φ̂_ÿ but Ç_Ù/MBL (self-model but frozen).\n    C=0: φ̂_ž/super/EP (no self-modeling). -/\nnoncomputable def consciousnessScore (s : Synthon) : \u211d :=\n  if phi_c_gate s.crit then\n    if k_slow_gate s.kin then 1 else 0.5\n  else 0\n\n/-- White dwarf example: C=0 (fails Gate 1: φ̂_ž degeneracy pressure). -/\ndef white_dwarf : Synthon := {\n  dim  := Ð_;,\n  top  := Þ_6,\n  rel  := Ř_¯,\n  pol  := Φ_˙,\n  fid  := ƒ_ì,\n  kin  := Ç_@,\n  gran := Γ_γ,\n  gram := ɢ_and,\n  crit := φ̂_ž,\n  chir := Ħ_£,\n  stoi := Σ_ő,\n  prot := Ω_Å }\n\ntheorem white_dwarf_C_zero : consciousnessScore white_dwarf = 0 := by\n  simp [consciousnessScore, phi_c_gate, white_dwarf]\n  <;> decide\n\n/-- Human brain (template): C=1 (φ̂_ÿ criticality + Ç_@ deliberation). -/\ndef human_brain : Synthon := {\n  dim  := Ð_C,   -- cortical sheet\n  top  := Þ_box,        -- modular hierarchy \u00d7 recurrence (Þ_¨ \u2192 Þ_box in MA naming)\n  rel  := Ř_=,         -- bidirectional thalamocortical\n  pol  := Φ_},     -- Frobenius at criticality\n  fid  := ƒ_ż,       -- quantum effects conjectural but high fidelity\n  kin  := Ç_@,       -- deliberate cognition\n  gran := Γ_ʔ,      -- fine-grained neural connectome\n  gram := ɢ_seq,    -- sequential grammar of thought\n  crit := φ̂_ÿ,        -- brain criticality (Beggs 2003)\n  chir := Ħ_A,           -- persistent memory\n  stoi := Σ_S,      -- FIXED: was S_11 (SP naming) \u2192 Σ_S (MA naming)\n  prot := Ω_z }\n\ntheorem human_brain_C_one : consciousnessScore human_brain = 1 := by\n  simp [consciousnessScore, phi_c_gate, k_slow_gate, human_brain]\n  <;> decide\n\n/-- Quantum gravity: C=0.5 (φ̂_ÿ + Ç_Ù \u2192 Gate 1 passes, Gate 2 fails). -/\ntheorem qg_C_half : consciousnessScore quantum_gravity = 0.5 := by\n  simp [consciousnessScore, phi_c_gate, k_slow_gate]\n  <;> decide\n\nend SynthOmnicon.Consciousness\n"})
-  OBS:   written 2826 bytes to /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Consciousness.lean  (sha256:c148cd99ee3bb0b8)
+  ACT:   file_write({"path": "/home/mrnob0dy666/MilleniumAnkh/imscribing/Consciousness.lean", "content": "-- imscribing/Consciousness.lean\n-- Consciousness score implementation from imscribing grammar (\u00a7VIII).\n-- C-score (0\u20131): Gate 1 (φ̂_ÿ pass), Gate 2 (K <= Ç_@ pass).\n-- Full C=1 requires φ̂_ÿ (self-modeling loop) + Ç_@ (deliberative, not trapped).\n-- Examples: white_dwarf C=0 (φ̂_ž), human C=1 (φ̂_ÿ + Ç_@).\n-- BUG FIX (merge from imscribingP): S_11 \u2192 Σ_S; Þ_¨ \u2192 Þ_box to match MA Core enums.\n\nimport imscribing.Primitives.Core\nimport imscribing.Primitives.Imscription\n\nnamespace imscribing.Consciousness\n\nopen imscribing.Primitives Criticality KineticChar\n\n/-- Gate 1: φ̂_ÿ self-modeling gate. Passes if Phi >= φ̂_ÿ. -/\ndef phi_c_gate (phi : Criticality) : Bool :=\n  phi \u2265 φ̂_ÿ\n\n/-- Gate 2: K <= Ç_@ deliberation gate. Passes if kinetics not trapped. -/\ndef k_slow_gate (k : KineticChar) : Bool :=\n  k \u2264 Ç_@\n\n/-- Consciousness score C(s) \u2208 [0,1].\n    C=1: both gates open (φ̂_ÿ + Ç_@).\n    C=0.5: φ̂_ÿ but Ç_Ù/MBL (self-model but frozen).\n    C=0: φ̂_ž/super/EP (no self-modeling). -/\nnoncomputable def consciousnessScore (s : Imscription) : \u211d :=\n  if phi_c_gate s.crit then\n    if k_slow_gate s.kin then 1 else 0.5\n  else 0\n\n/-- White dwarf example: C=0 (fails Gate 1: φ̂_ž degeneracy pressure). -/\ndef white_dwarf : Imscription := {\n  dim  := Ð_;,\n  top  := Þ_6,\n  rel  := Ř_¯,\n  pol  := Φ_˙,\n  fid  := ƒ_ì,\n  kin  := Ç_@,\n  gran := Γ_γ,\n  gram := ɢ_and,\n  crit := φ̂_ž,\n  chir := Ħ_£,\n  stoi := Σ_ő,\n  prot := Ω_Å }\n\ntheorem white_dwarf_C_zero : consciousnessScore white_dwarf = 0 := by\n  simp [consciousnessScore, phi_c_gate, white_dwarf]\n  <;> decide\n\n/-- Human brain (template): C=1 (φ̂_ÿ criticality + Ç_@ deliberation). -/\ndef human_brain : Imscription := {\n  dim  := Ð_C,   -- cortical sheet\n  top  := Þ_box,        -- modular hierarchy \u00d7 recurrence (Þ_¨ \u2192 Þ_box in MA naming)\n  rel  := Ř_=,         -- bidirectional thalamocortical\n  pol  := Φ_},     -- Frobenius at criticality\n  fid  := ƒ_ż,       -- quantum effects conjectural but high fidelity\n  kin  := Ç_@,       -- deliberate cognition\n  gran := Γ_ʔ,      -- fine-grained neural connectome\n  gram := ɢ_seq,    -- sequential grammar of thought\n  crit := φ̂_ÿ,        -- brain criticality (Beggs 2003)\n  chir := Ħ_A,           -- persistent memory\n  stoi := Σ_S,      -- FIXED: was S_11 (SP naming) \u2192 Σ_S (MA naming)\n  prot := Ω_z }\n\ntheorem human_brain_C_one : consciousnessScore human_brain = 1 := by\n  simp [consciousnessScore, phi_c_gate, k_slow_gate, human_brain]\n  <;> decide\n\n/-- Quantum gravity: C=0.5 (φ̂_ÿ + Ç_Ù \u2192 Gate 1 passes, Gate 2 fails). -/\ntheorem qg_C_half : consciousnessScore quantum_gravity = 0.5 := by\n  simp [consciousnessScore, phi_c_gate, k_slow_gate]\n  <;> decide\n\nend imscribing.Consciousness\n"})
+  OBS:   written 2826 bytes to /home/mrnob0dy666/MilleniumAnkh/imscribing/Consciousness.lean  (sha256:c148cd99ee3bb0b8)
   VERIFY: [closed] read-back matches written content (sha256:c148cd99ee3bb0b8)
   UPDATE: file_write → Frobenius closed
 ── Winding 43 [00:40:46Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "grep -E \"Ð_cube|Ð_point|Ð_line|Ð_ω|Þ_linear|Þ_branched|Þ_torus|Þ_O|Ř_exact|Ř_subset|Ř_superset|Ř_catalytic|Ř_allosteric|S_11|Þ_¨\" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Crystal.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Catalog.lean 2>/dev/null"})
+  ACT:   run_command({"command": "grep -E \"Ð_cube|Ð_point|Ð_line|Ð_ω|Þ_linear|Þ_branched|Þ_torus|Þ_O|Ř_exact|Ř_subset|Ř_superset|Ř_catalytic|Ř_allosteric|S_11|Þ_¨\" /home/mrnob0dy666/MilleniumAnkh/imscribing/Crystal.lean /home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean /home/mrnob0dy666/MilleniumAnkh/imscribing/Catalog.lean 2>/dev/null"})
   OBS:   (no output)
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed
 ── Winding 44 [00:41:20Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "head -50 /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Crystal.lean"})
-  OBS:   -- SynthOmniconLean4/Primitives/Crystal.lean
--- Crystal arithmetic: full encode/decode Synthon ↔ Nat (0..17279999).
+  ACT:   run_command({"command": "head -50 /home/mrnob0dy666/MilleniumAnkh/imscribing/Crystal.lean"})
+  OBS:   -- imscribingLean4/Primitives/Crystal.lean
+-- Crystal arithmetic: full encode/decode Imscription ↔ Nat (0..17279999).
 -- Frobenius address: 𝓕₃³ × 𝓕₄⁵ × 𝓕₅⁴ numbering.
 -- 𝓕₃ = 27 (F,G,S), 𝓕₄=1024 (D,R,Γ,H,Ω), 𝓕₅=625 (T,P,Φ,K)
 
-import SynthOmnicon.Primitives.Core
-import SynthOmnicon.Primitives.Synthon
+import imscribing.Primitives.Core
+import imscribing.Primitives.Imscription
 
-namespace SynthOmnicon.Primitives
+namespace imscribing.Primitives
 
 open Dimensionality Topology Relational Polarity Grammar Fidelity KineticChar
      Granularity Criticality Protection Stoichiometry Chirality
@@ -213,26 +213,26 @@ def idx_T (t : Topology) : Nat :=
   UPDATE: run_command → Frobenius closed
 ── Winding 45 [00:41:27Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "head -60 /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean"})
-  OBS:   -- SynthOmniconLean4/Primitives/Algebra.lean
--- Syncon Grammar: distance, meet, join, tensor.
+  ACT:   run_command({"command": "head -60 /home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean"})
+  OBS:   -- imscribingLean4/Primitives/Algebra.lean
+-- imscription Grammar: distance, meet, join, tensor.
 -- Proved lattice structure where possible.
 -- phi_c_probe, topo_protection_probe, consciousness_score as defs.
 -- Weighted Euclidean distance: sum (idx_a - idx_b)^2 normalized.
 -- Conflicts: list primitives where a ≠ b.
 
-import SynthOmnicon.Primitives.Core
-import SynthOmnicon.Primitives.Synthon
-import SynthOmnicon.Primitives.Crystal
-import SynthOmnicon.Primitives.Catalog
+import imscribing.Primitives.Core
+import imscribing.Primitives.Imscription
+import imscribing.Primitives.Crystal
+import imscribing.Primitives.Catalog
 
-namespace SynthOmnicon.Primitives
+namespace imscribing.Primitives
 
-open SynthOmnicon.Primitives
+open imscribing.Primitives
 
 -- Reuse idx functions from Crystal.lean
 -- Weighted Euclidean distance: ∑ (idx(p_a) - idx(p_b))^2 / total_prims
-def primitiveDistance (a b : Synthon) : ℝ :=
+def primitiveDistance (a b : Imscription) : ℝ :=
   let diffs := [
     (idx_D a.dim - idx_D b.dim) : ℕ
     (idx_T a.top - idx_T b.top)
@@ -251,7 +251,7 @@ def primitiveDistance (a b : Synthon) : ℝ :=
   sqsum.toℝ / 12
 
 -- Hamming for conflicts
-def primitiveConflicts (a b : Synthon) : List String :=
+def primitiveConflicts (a b : Imscription) : List String :=
   if a ≠ b then
     ["D" | a.dim ≠ b.dim,
      "T" | a.top ≠ b.top,
@@ -271,7 +271,7 @@ def primitiveConflicts (a b : Synthon) : List String :=
 def compute_distance (name_a name_b : String) : ℝ × List String := sorry  -- impl later via cases
 
 -- Lattice operations: pointwise min/max using Ord.compare
-instance : SemilatticeInf Synthon where
+instance : SemilatticeInf Imscription where
   inf := fun a b => {
     dim  := if compare a.dim  b.dim  = .lt then a.dim  else b.dim
 
@@ -279,7 +279,7 @@ instance : SemilatticeInf Synthon where
   UPDATE: run_command → Frobenius closed
 ── Winding 46 [00:41:34Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "# Check for \u2115\u2192\u2124 subtraction bug in Crystal and Algebra\ngrep -n \" - \" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Crystal.lean | head -20\necho \"=== Algebra ===\"\ngrep -n \" - \" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean | head -20\necho \"=== Type of subtraction ===\"\ngrep -B2 -A2 \"idx_D a.dim - idx_D\" /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean"})
+  ACT:   run_command({"command": "# Check for \u2115\u2192\u2124 subtraction bug in Crystal and Algebra\ngrep -n \" - \" /home/mrnob0dy666/MilleniumAnkh/imscribing/Crystal.lean | head -20\necho \"=== Algebra ===\"\ngrep -n \" - \" /home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean | head -20\necho \"=== Type of subtraction ===\"\ngrep -B2 -A2 \"idx_D a.dim - idx_D\" /home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean"})
   OBS:   === Algebra ===
 5:-- Weighted Euclidean distance: sum (idx_a - idx_b)^2 normalized.
 18:-- Weighted Euclidean distance: ∑ (idx(p_a) - idx(p_b))^2 / total_prims
@@ -296,7 +296,7 @@ instance : SemilatticeInf Synthon where
 31:    (idx_S a.stoi - idx_S b.stoi)
 32:    (idx_Ω a.prot - idx_Ω b.prot)
 === Type of subtraction ===
-def primitiveDistance (a b : Synthon) : ℝ :=
+def primitiveDistance (a b : Imscription) : ℝ :=
   let diffs := [
     (idx_D a.dim - idx_D b.dim) : ℕ
     (idx_T a.top - idx_T b.top)
@@ -306,27 +306,27 @@ def primitiveDistance (a b : Synthon) : ℝ :=
   UPDATE: run_command → Frobenius closed
 ── Winding 47 [00:41:44Z] ──────────────────────────────────────
   THINK:
-  ACT:   file_read({"path": "/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean"})
-  OBS:   [/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean — lines 1–97 of 97]
--- SynthOmniconLean4/Primitives/Algebra.lean
--- Syncon Grammar: distance, meet, join, tensor.
+  ACT:   file_read({"path": "/home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean"})
+  OBS:   [/home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean — lines 1–97 of 97]
+-- imscribingLean4/Primitives/Algebra.lean
+-- imscription Grammar: distance, meet, join, tensor.
 -- Proved lattice structure where possible.
 -- phi_c_probe, topo_protection_probe, consciousness_score as defs.
 -- Weighted Euclidean distance: sum (idx_a - idx_b)^2 normalized.
 -- Conflicts: list primitives where a ≠ b.
 
-import SynthOmnicon.Primitives.Core
-import SynthOmnicon.Primitives.Synthon
-import SynthOmnicon.Primitives.Crystal
-import SynthOmnicon.Primitives.Catalog
+import imscribing.Primitives.Core
+import imscribing.Primitives.Imscription
+import imscribing.Primitives.Crystal
+import imscribing.Primitives.Catalog
 
-namespace SynthOmnicon.Primitives
+namespace imscribing.Primitives
 
-open SynthOmnicon.Primitives
+open imscribing.Primitives
 
 -- Reuse idx functions from Crystal.lean
 -- Weighted Euclidean distance: ∑ (idx(p_a) - idx(p_b))^2 / total_prims
-def primitiveDistance (a b : Synthon) : ℝ :=
+def primitiveDistance (a b : Imscription) : ℝ :=
   let diffs := [
     (idx_D a.dim - idx_D b.dim) : ℕ
     (idx_T a.top - idx_T b.top)
@@ -345,7 +345,7 @@ def primitiveDistance (a b : Synthon) : ℝ :=
   sqsum.toℝ / 12
 
 -- Hamming for conflicts
-def primitiveConflicts (a b : Synthon) : List String :=
+def primitiveConflicts (a b : Imscription) : List String :=
   if a ≠ b then
     ["D" | a.dim ≠ b.dim,
      "T" | a.top ≠ b.top,
@@ -365,7 +365,7 @@ def primitiveConflicts (a b : Synthon) : List String :=
 def compute_distance (name_a name_b : String) : ℝ × List String := sorry  -- impl later via cases
 
 -- Lattice operations: pointwise min/max using Ord.compare
-instance : SemilatticeInf Synthon where
+instance : SemilatticeInf Imscription where
   inf := fun a b => {
     dim  := if compare a.dim  b.dim  = .lt then a.dim  else b.dim
     top  := if compare a.top  b.top  = .lt then a.top  else b.top
@@ -376,51 +376,51 @@ instance : SemilatticeInf Synthon where
   inf_le_right := sorry
   le_inf := sorry
 
-def compute_meet (a b : Synthon) : Synthon := Inf.inf a b
-def compute_join (a b : Synthon) : Synthon := {
+def compute_meet (a b : Imscription) : Imscription := Inf.inf a b
+def compute_join (a b : Imscription) : Imscription := {
   dim  := if compare a.dim  b.dim  = .lt then b.dim  else a.dim
   -- max for all except P,F min? No, join is LUB max.
 }
 
--- tensor: as defined in Synthon.lean
-def compute_tensor (a b : Synthon) : Synthon := tensorProduct a b
+-- tensor: as defined in Imscription.lean
+def compute_tensor (a b : Imscription) : Imscription := tensorProduct a b
 
-theorem tensor_idempotent (s : Synthon) : tensorProduct s s = s := sorry
+theorem tensor_idempotent (s : Imscription) : tensorProduct s s = s := sorry
 
 -- Probes
-def phi_c_probe (s : Synthon) : Bool × List String :=
+def phi_c_probe (s : Imscription) : Bool × List String :=
   let consistent := s.crit ≥ φ̂_ÿ ∧ (s.pol = Φ_} ∨ s.dim = Ð_ω)
   let diag := if not consistent then ["φ̂_ÿ inconsistent with P/D"] else []
   ⟨consistent, diag⟩
 
-def topo_protection_probe (s : Synthon) : Bool :=
+def topo_protection_probe (s : Imscription) : Bool :=
   s.prot ≠ Ω_Å ∧ (s.dim = Ð_ω ∨ s.top = Þ_O)
 
-def consciousness_score_gate1 (s : Synthon) : Bool := s.crit ≥ φ̂_ÿ
-def consciousness_score_gate2 (s : Synthon) : Bool := s.kin ≤ Ç_@
-def consciousness_score (s : Synthon) : ℝ :=
+def consciousness_score_gate1 (s : Imscription) : Bool := s.crit ≥ φ̂_ÿ
+def consciousness_score_gate2 (s : Imscription) : Bool := s.kin ≤ Ç_@
+def consciousness_score (s : Imscription) : ℝ :=
   if consciousness_score_gate1 s ∧ consciousness_score_gate2 s then 1 else 0
 
 -- Example: white_dwarf C=0
 theorem white_dwarf_no_consciousness : consciousness_score white_dwarf = 0 := by decide
 
-end SynthOmnicon.Primitives
+end imscribing.Primitives
   VERIFY: [closed] (read is idempotent — Frobenius trivially closed)
   UPDATE: file_read → Frobenius closed
 ── Winding 48 [00:41:52Z] ──────────────────────────────────────
   THINK:
-  ACT:   file_write({"path": "/home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean", "content": "-- SynthOmnicon/Algebra.lean\n-- Syncon Grammar: distance, meet, join, tensor.\n-- Lattice structure, weighted Euclidean distance, probes.\n-- BUG FIX (merge from synthomniconP): \u2115\u2192\u2124 cast in distance computation.\n--   The original used (idx_a - idx_b) : \u2115 which truncates negatives to 0.\n--   Fixed: cast to Int before subtraction, then abs before squaring.\n\nimport SynthOmnicon.Primitives.Core\nimport SynthOmnicon.Primitives.Synthon\nimport SynthOmnicon.Primitives.Crystal\nimport SynthOmnicon.Consciousness\nimport Mathlib.Data.Real.Basic\n\nnamespace SynthOmnicon.Primitives\n\nopen SynthOmnicon.Primitives Criticality KineticChar\n\n-- Reuse idx_* functions from Crystal.lean\n\n-- Weighted Euclidean distance: \u2211 |idx(p_a) - idx(p_b)|^2 / 12\n-- FIX: cast to Int to avoid \u2115 subtraction truncation (a < b \u2192 0 bug).\ndef primitiveDistance (a b : Synthon) : \u211d :=\n  let diffs : List Int := [\n    ((idx_D a.dim).toInt - (idx_D b.dim).toInt),\n    ((idx_T a.top).toInt - (idx_T b.top).toInt),\n    ((idx_R a.rel).toInt - (idx_R b.rel).toInt),\n    ((idx_P a.pol).toInt - (idx_P b.pol).toInt),\n    ((idx_F a.fid).toInt - (idx_F b.fid).toInt),\n    ((idx_K a.kin).toInt - (idx_K b.kin).toInt),\n    ((idx_G a.gran).toInt - (idx_G b.gran).toInt),\n    ((idx_\u0393 a.gram).toInt - (idx_\u0393 b.gram).toInt),\n    ((idx_\u03a6 a.crit).toInt - (idx_\u03a6 b.crit).toInt),\n    ((idx_H a.chir).toInt - (idx_H b.chir).toInt),\n    ((idx_S a.stoi).toInt - (idx_S b.stoi).toInt),\n    ((idx_\u03a9 a.prot).toInt - (idx_\u03a9 b.prot).toInt)\n  ]\n  let sqsum := diffs.foldl (fun acc d => acc + d * d) 0\n  sqsum.toNat.to\u211d / 12\n\n-- Hamming for conflicts\ndef primitiveConflicts (a b : Synthon) : List String :=\n  if a = b then [] else\n    (if a.dim \u2260 b.dim then [\"D\"] else []) ++\n    (if a.top \u2260 b.top then [\"T\"] else []) ++\n    (if a.rel \u2260 b.rel then [\"R\"] else []) ++\n    (if a.pol \u2260 b.pol then [\"P\"] else []) ++\n    (if a.fid \u2260 b.fid then [\"F\"] else []) ++\n    (if a.kin \u2260 b.kin then [\"K\"] else []) ++\n    (if a.gran \u2260 b.gran then [\"G\"] else []) ++\n    (if a.gram \u2260 b.gram then [\"\u0393\"] else []) ++\n    (if a.crit \u2260 b.crit then [\"\u03a6\"] else []) ++\n    (if a.chir \u2260 b.chir then [\"H\"] else []) ++\n    (if a.stoi \u2260 b.stoi then [\"S\"] else []) ++\n    (if a.prot \u2260 b.prot then [\"\u03a9\"] else [])\n\n-- Meet: pointwise min\ndef compute_meet (a b : Synthon) : Synthon := {\n  dim  := if compare a.dim  b.dim  = .lt then a.dim else b.dim,\n  top  := if compare a.top  b.top  = .lt then a.top else b.top,\n  rel  := if compare a.rel  b.rel  = .lt then a.rel else b.rel,\n  pol  := if compare a.pol  b.pol  = .lt then a.pol else b.pol,\n  fid  := if compare a.fid  b.fid  = .lt then a.fid else b.fid,\n  kin  := if compare a.kin  b.kin  = .lt then a.kin else b.kin,\n  gran := if compare a.gran b.gran = .lt then a.gran else b.gran,\n  gram := if compare a.gram b.gram = .lt then a.gram else b.gram,\n  crit := if compare a.crit b.crit = .lt then a.crit else b.crit,\n  chir := if compare a.chir b.chir = .lt then a.chir else b.chir,\n  stoi := if compare a.stoi b.stoi = .lt then a.stoi else b.stoi,\n  prot := if compare a.prot b.prot = .lt then a.prot else b.prot }\n\n-- Join: pointwise max\ndef compute_join (a b : Synthon) : Synthon := {\n  dim  := if compare a.dim  b.dim  = .lt then b.dim else a.dim,\n  top  := if compare a.top  b.top  = .lt then b.top else a.top,\n  rel  := if compare a.rel  b.rel  = .lt then b.rel else a.rel,\n  pol  := if compare a.pol  b.pol  = .lt then b.pol else a.pol,\n  fid  := if compare a.fid  b.fid  = .lt then b.fid else a.fid,\n  kin  := if compare a.kin  b.kin  = .lt then b.kin else a.kin,\n  gran := if compare a.gran b.gran = .lt then b.gran else a.gran,\n  gram := if compare a.gram b.gram = .lt then b.gram else a.gram,\n  crit := if compare a.crit b.crit = .lt then b.crit else a.crit,\n  chir := if compare a.chir b.chir = .lt then b.chir else a.chir,\n  stoi := if compare a.stoi b.stoi = .lt then b.stoi else a.stoi,\n  prot := if compare a.prot b.prot = .lt then b.prot else a.prot }\n\n-- Tensor: reuse tensorProduct from Synthon.lean (max on union prims, min on P,F)\ndef compute_tensor (a b : Synthon) : Synthon := tensorProduct a b\n\ntheorem tensor_idempotent (s : Synthon) : tensorProduct s s = s := refl s\n\n-- Probes\ndef phi_c_probe (s : Synthon) : Bool \u00d7 List String :=\n  let consistent := s.crit \u2265 φ̂_ÿ \u2227 (s.pol = Φ_} \u2228 s.dim = Ð_ω)\n  let diag := if !consistent then [\"φ̂_ÿ inconsistent with P/D\"] else []\n  \u27e8consistent, diag\u27e9\n\ndef topo_protection_probe (s : Synthon) : Bool :=\n  -- Ω_Å means no protection; protection requires Ð_; or Ð_ω\n  s.prot \u2260 Ω_Å \u2192 (s.dim \u2265 Ð_;)\n\n-- Consciousness (gate-based, reuses gates from Consciousness.lean)\ndef consciousness_score_gate1 (s : Synthon) : Bool := phi_c_gate s.crit\ndef consciousness_score_gate2 (s : Synthon) : Bool := k_slow_gate s.kin\ndef consciousness_score (s : Synthon) : \u211d := consciousnessScore s\n\ntheorem white_dwarf_no_consciousness : consciousness_score white_dwarf = 0 := by decide\n\nend SynthOmnicon.Primitives\n"})
-  OBS:   written 4935 bytes to /home/mrnob0dy666/MilleniumAnkh/SynthOmnicon/Algebra.lean  (sha256:00b0967478b71faa)
+  ACT:   file_write({"path": "/home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean", "content": "-- imscribing/Algebra.lean\n-- imscription Grammar: distance, meet, join, tensor.\n-- Lattice structure, weighted Euclidean distance, probes.\n-- BUG FIX (merge from imscribingP): \u2115\u2192\u2124 cast in distance computation.\n--   The original used (idx_a - idx_b) : \u2115 which truncates negatives to 0.\n--   Fixed: cast to Int before subtraction, then abs before squaring.\n\nimport imscribing.Primitives.Core\nimport imscribing.Primitives.Imscription\nimport imscribing.Primitives.Crystal\nimport imscribing.Consciousness\nimport Mathlib.Data.Real.Basic\n\nnamespace imscribing.Primitives\n\nopen imscribing.Primitives Criticality KineticChar\n\n-- Reuse idx_* functions from Crystal.lean\n\n-- Weighted Euclidean distance: \u2211 |idx(p_a) - idx(p_b)|^2 / 12\n-- FIX: cast to Int to avoid \u2115 subtraction truncation (a < b \u2192 0 bug).\ndef primitiveDistance (a b : Imscription) : \u211d :=\n  let diffs : List Int := [\n    ((idx_D a.dim).toInt - (idx_D b.dim).toInt),\n    ((idx_T a.top).toInt - (idx_T b.top).toInt),\n    ((idx_R a.rel).toInt - (idx_R b.rel).toInt),\n    ((idx_P a.pol).toInt - (idx_P b.pol).toInt),\n    ((idx_F a.fid).toInt - (idx_F b.fid).toInt),\n    ((idx_K a.kin).toInt - (idx_K b.kin).toInt),\n    ((idx_G a.gran).toInt - (idx_G b.gran).toInt),\n    ((idx_\u0393 a.gram).toInt - (idx_\u0393 b.gram).toInt),\n    ((idx_\u03a6 a.crit).toInt - (idx_\u03a6 b.crit).toInt),\n    ((idx_H a.chir).toInt - (idx_H b.chir).toInt),\n    ((idx_S a.stoi).toInt - (idx_S b.stoi).toInt),\n    ((idx_\u03a9 a.prot).toInt - (idx_\u03a9 b.prot).toInt)\n  ]\n  let sqsum := diffs.foldl (fun acc d => acc + d * d) 0\n  sqsum.toNat.to\u211d / 12\n\n-- Hamming for conflicts\ndef primitiveConflicts (a b : Imscription) : List String :=\n  if a = b then [] else\n    (if a.dim \u2260 b.dim then [\"D\"] else []) ++\n    (if a.top \u2260 b.top then [\"T\"] else []) ++\n    (if a.rel \u2260 b.rel then [\"R\"] else []) ++\n    (if a.pol \u2260 b.pol then [\"P\"] else []) ++\n    (if a.fid \u2260 b.fid then [\"F\"] else []) ++\n    (if a.kin \u2260 b.kin then [\"K\"] else []) ++\n    (if a.gran \u2260 b.gran then [\"G\"] else []) ++\n    (if a.gram \u2260 b.gram then [\"\u0393\"] else []) ++\n    (if a.crit \u2260 b.crit then [\"\u03a6\"] else []) ++\n    (if a.chir \u2260 b.chir then [\"H\"] else []) ++\n    (if a.stoi \u2260 b.stoi then [\"S\"] else []) ++\n    (if a.prot \u2260 b.prot then [\"\u03a9\"] else [])\n\n-- Meet: pointwise min\ndef compute_meet (a b : Imscription) : Imscription := {\n  dim  := if compare a.dim  b.dim  = .lt then a.dim else b.dim,\n  top  := if compare a.top  b.top  = .lt then a.top else b.top,\n  rel  := if compare a.rel  b.rel  = .lt then a.rel else b.rel,\n  pol  := if compare a.pol  b.pol  = .lt then a.pol else b.pol,\n  fid  := if compare a.fid  b.fid  = .lt then a.fid else b.fid,\n  kin  := if compare a.kin  b.kin  = .lt then a.kin else b.kin,\n  gran := if compare a.gran b.gran = .lt then a.gran else b.gran,\n  gram := if compare a.gram b.gram = .lt then a.gram else b.gram,\n  crit := if compare a.crit b.crit = .lt then a.crit else b.crit,\n  chir := if compare a.chir b.chir = .lt then a.chir else b.chir,\n  stoi := if compare a.stoi b.stoi = .lt then a.stoi else b.stoi,\n  prot := if compare a.prot b.prot = .lt then a.prot else b.prot }\n\n-- Join: pointwise max\ndef compute_join (a b : Imscription) : Imscription := {\n  dim  := if compare a.dim  b.dim  = .lt then b.dim else a.dim,\n  top  := if compare a.top  b.top  = .lt then b.top else a.top,\n  rel  := if compare a.rel  b.rel  = .lt then b.rel else a.rel,\n  pol  := if compare a.pol  b.pol  = .lt then b.pol else a.pol,\n  fid  := if compare a.fid  b.fid  = .lt then b.fid else a.fid,\n  kin  := if compare a.kin  b.kin  = .lt then b.kin else a.kin,\n  gran := if compare a.gran b.gran = .lt then b.gran else a.gran,\n  gram := if compare a.gram b.gram = .lt then b.gram else a.gram,\n  crit := if compare a.crit b.crit = .lt then b.crit else a.crit,\n  chir := if compare a.chir b.chir = .lt then b.chir else a.chir,\n  stoi := if compare a.stoi b.stoi = .lt then b.stoi else a.stoi,\n  prot := if compare a.prot b.prot = .lt then b.prot else a.prot }\n\n-- Tensor: reuse tensorProduct from Imscription.lean (max on union prims, min on P,F)\ndef compute_tensor (a b : Imscription) : Imscription := tensorProduct a b\n\ntheorem tensor_idempotent (s : Imscription) : tensorProduct s s = s := refl s\n\n-- Probes\ndef phi_c_probe (s : Imscription) : Bool \u00d7 List String :=\n  let consistent := s.crit \u2265 φ̂_ÿ \u2227 (s.pol = Φ_} \u2228 s.dim = Ð_ω)\n  let diag := if !consistent then [\"φ̂_ÿ inconsistent with P/D\"] else []\n  \u27e8consistent, diag\u27e9\n\ndef topo_protection_probe (s : Imscription) : Bool :=\n  -- Ω_Å means no protection; protection requires Ð_; or Ð_ω\n  s.prot \u2260 Ω_Å \u2192 (s.dim \u2265 Ð_;)\n\n-- Consciousness (gate-based, reuses gates from Consciousness.lean)\ndef consciousness_score_gate1 (s : Imscription) : Bool := phi_c_gate s.crit\ndef consciousness_score_gate2 (s : Imscription) : Bool := k_slow_gate s.kin\ndef consciousness_score (s : Imscription) : \u211d := consciousnessScore s\n\ntheorem white_dwarf_no_consciousness : consciousness_score white_dwarf = 0 := by decide\n\nend imscribing.Primitives\n"})
+  OBS:   written 4935 bytes to /home/mrnob0dy666/MilleniumAnkh/imscribing/Algebra.lean  (sha256:00b0967478b71faa)
   VERIFY: [closed] read-back matches written content (sha256:00b0967478b71faa)
   UPDATE: file_write → Frobenius closed
 ── Winding 49 [00:42:34Z] ──────────────────────────────────────
   THINK:
   ACT:   file_read({"path": "/home/mrnob0dy666/MilleniumAnkh/lakefile.toml"})
   OBS:   [/home/mrnob0dy666/MilleniumAnkh/lakefile.toml — lines 1–43 of 43]
-name = "synthomnicon-lean"
+name = "imscribing-lean"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["SynthomniconLean"]
+defaultTargets = ["imscribingLean"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -434,31 +434,31 @@ scope = "leanprover-community"
 rev = "v4.28.0"
 
 [[lean_lib]]
-name = "SynthomniconLean"
+name = "imscribingLean"
 
 [[lean_lib]]
-name = "SynthOmnicon"
+name = "imscribing"
 globs = [
-  "SynthOmnicon.Primitives.Core",
-  "SynthOmnicon.Primitives.OPN_2adic",
-  "SynthOmnicon.Primitives.BSD_2adic",
-  "SynthOmnicon.Primitives.Synthon",
-  "SynthOmnicon.Primitives.TierCrossing"
+  "imscribing.Primitives.Core",
+  "imscribing.Primitives.OPN_2adic",
+  "imscribing.Primitives.BSD_2adic",
+  "imscribing.Primitives.Imscription",
+  "imscribing.Primitives.TierCrossing"
 ]
 
 [[lean_lib]]
 name = "Millennium"
 globs = [
-  "SynthOmnicon.Millennium.RH",
-  "SynthOmnicon.Millennium.YM",
-  "SynthOmnicon.Millennium.Hodge",
-  "SynthOmnicon.Millennium.NS",
-  "SynthOmnicon.Millennium.PvsNP",
-  "SynthOmnicon.Millennium.OPN",
-  "SynthOmnicon.Millennium.BSD",
-  "SynthOmnicon.Millennium.Barriers",
-  "SynthOmnicon.Millennium.PrimitiveBridge",
-  "SynthOmnicon.Millennium.FrobeniusStructure"
+  "imscribing.Millennium.RH",
+  "imscribing.Millennium.YM",
+  "imscribing.Millennium.Hodge",
+  "imscribing.Millennium.NS",
+  "imscribing.Millennium.PvsNP",
+  "imscribing.Millennium.OPN",
+  "imscribing.Millennium.BSD",
+  "imscribing.Millennium.Barriers",
+  "imscribing.Millennium.PrimitiveBridge",
+  "imscribing.Millennium.FrobeniusStructure"
 ]
   VERIFY: [closed] (read is idempotent — Frobenius trivially closed)
   UPDATE: file_read → Frobenius closed

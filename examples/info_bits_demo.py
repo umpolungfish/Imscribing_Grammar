@@ -2,7 +2,7 @@
 info_bits_demo.py — Demonstrate the calibrated I(bits) pipeline.
 
 Runs the three calibration targets and prints I_recognition, I_net,
-I_total_with_solvent for each. Then shows how to use compute_I_from_synthon()
+I_total_with_solvent for each. Then shows how to use compute_I_from_imscription()
 on a catalog entry.
 
 Run:
@@ -134,14 +134,14 @@ def demo_catalog_entry(name: str = "carboxylic_acid_dimer") -> None:
     print("=" * 55)
     try:
         from imscrbgrmr import global_catalog
-        from imscrbgrmr.information import compute_I_from_synthon
+        from imscrbgrmr.information import compute_I_from_imscription
 
         s = global_catalog.get(name)
         if not s:
             print(f"  (entry '{name}' not found in catalog)")
             return
-        r = compute_I_from_synthon(s, solvent_model="chloroform")
-        print_result(r, label=f"compute_I_from_synthon('{name}', solvent='chloroform')")
+        r = compute_I_from_imscription(s, solvent_model="chloroform")
+        print_result(r, label=f"compute_I_from_imscription('{name}', solvent='chloroform')")
     except Exception as e:
         print(f"  (Catalog unavailable: {e})")
 

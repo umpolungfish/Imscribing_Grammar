@@ -652,7 +652,7 @@ def zfc_probe(top: int, iug: bool):
 @click.option("--model", "-m", default="zfc_encoder.pt", show_default=True,
               help="Trained encoder checkpoint.")
 @click.option("--catalog", "-c", default=None,
-              help="Catalog file or glob (default: syncon_catalog*.json).")
+              help="Catalog file or glob (default: ig_catalog*.json).")
 @click.option("--no-model", is_flag=True, default=False,
               help="Skip encoder roundtrip — show ZFC formula only.")
 def zfc_entry(name: str, model: str, catalog: str, no_model: bool):
@@ -686,7 +686,7 @@ def zfc_entry(name: str, model: str, catalog: str, no_model: bool):
 
 @zfc_group.command("stats")
 @click.option("--catalog", "-c", default=None,
-              help="Catalog file or glob (default: syncon_catalog*.json).")
+              help="Catalog file or glob (default: ig_catalog*.json).")
 def zfc_stats(catalog: str):
     """Formula-length statistics across the catalog.
 

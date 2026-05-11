@@ -540,7 +540,7 @@ def load_catalog(path: str = None) -> List[dict]:
     Reads from (priority order, first-occurrence-wins deduplication):
       1. ~/.imscrbgrmr/catalog.json  (live CLI registry — entries added via
          `imscribe generate` / `imscribe encode`)
-      2. <project_root>/syncon_catalog*.json  (committed catalog)
+      2. <project_root>/ig_catalog*.json  (committed catalog)
       3. `path` if provided (single file or glob pattern)
 
     path can be:
@@ -558,7 +558,7 @@ def load_catalog(path: str = None) -> List[dict]:
         _DEFAULT_CANDIDATES = [
             os.path.join(_SCRIPT_DIR, "IG_catalog.json"),
             "IG_catalog.json",
-            "syncon_catalog*.json",
+            "ig_catalog*.json",
         ]
         if path is None:
             paths = []
@@ -1706,14 +1706,14 @@ if __name__ == "__main__":
     tr.add_argument("--hidden",     type=int,   default=256)
     tr.add_argument("--layers",     type=int,   default=4)
     tr.add_argument("--catalog",    type=str,   default=None,
-                    help="catalog file or glob (default: syncon_catalog*.json)")
+                    help="catalog file or glob (default: ig_catalog*.json)")
     tr.add_argument("--save",       type=str,   default="zfc_encoder.pt")
 
     # probe
     pr = sub.add_parser("probe")
     pr.add_argument("--model",      type=str,   default="zfc_encoder.pt")
     pr.add_argument("--catalog",    type=str,   default=None,
-                    help="catalog file or glob (default: syncon_catalog*.json)")
+                    help="catalog file or glob (default: ig_catalog*.json)")
     pr.add_argument("--top",        type=int,   default=20)
     pr.add_argument("--hidden",     type=int,   default=256)
     pr.add_argument("--layers",     type=int,   default=4)
@@ -1730,7 +1730,7 @@ if __name__ == "__main__":
                     help="catalog entry name, or: iug / grammar / zfc")
     en.add_argument("--model",       type=str,   default="zfc_encoder.pt")
     en.add_argument("--catalog",     type=str,   default=None,
-                    help="catalog file or glob (default: syncon_catalog*.json)")
+                    help="catalog file or glob (default: ig_catalog*.json)")
     en.add_argument("--hidden",      type=int,   default=256)
     en.add_argument("--layers",      type=int,   default=4)
     en.add_argument("--no-model",    action="store_true",
@@ -1740,7 +1740,7 @@ if __name__ == "__main__":
     rc = sub.add_parser("recover")
     rc.add_argument("--model",      type=str,   default="zfc_encoder.pt")
     rc.add_argument("--catalog",    type=str,   default=None,
-                    help="catalog file or glob (default: syncon_catalog*.json)")
+                    help="catalog file or glob (default: ig_catalog*.json)")
     rc.add_argument("--top",        type=int,   default=20)
     rc.add_argument("--hidden",     type=int,   default=256)
     rc.add_argument("--layers",     type=int,   default=4)
@@ -1754,7 +1754,7 @@ if __name__ == "__main__":
     # stats
     st = sub.add_parser("stats")
     st.add_argument("--catalog",    type=str,   default=None,
-                    help="catalog file or glob (default: syncon_catalog*.json)")
+                    help="catalog file or glob (default: ig_catalog*.json)")
 
     args = parser.parse_args()
 

@@ -15,7 +15,7 @@ header-includes:
 
 ## Core Documents
 
-These files are the canonical reference for the Synthonicon grammar and the Millennium barrier paper.
+These files are the canonical reference for the Imscriptiveon grammar and the Millennium barrier paper.
 
 | File | Content |
 | :--- | :--- |
@@ -36,10 +36,10 @@ These files are the canonical reference for the Synthonicon grammar and the Mill
 | File | Purpose |
 | :--- | :--- |
 | **`IΓ_inquiry.py`** | Two-phase agentic loop: grammatical analysis + speculation pass |
-| **`synthon_tool.py`** | Primitive encoding, distance, meet/join, tensor operations |
-| **`synthon_agent.py`** | Autonomous synthon generation agent |
+| **`imscribe_tool.py`** | Primitive encoding, distance, meet/join, tensor operations |
+| **`imscribe_agent.py`** | Autonomous imscription generation agent |
 | **`main.py`** | Primary entry point |
-| **`IΓ_catalog.json`** | Active synthon catalog (61 entries, inc. Millennium Problems) |
+| **`IΓ_catalog.json`** | Active imscription catalog (61 entries, inc. Millennium Problems) |
 
 ---
 
@@ -50,7 +50,7 @@ Standalone analyses and papers.
 - `IUΓ_NON_TRANSMISSIBILITY.md` / `.pdf` — structural non-transmissibility of Inter-Universal Geometer (12 sections, P-112/113/114)
 - `REACTIONLESΣ_THRUST.md` / `.pdf` — reactionless thrust analysis
 - `TENSOŘ_OPS.md` / `.pdf` — tensor operations reference
-- `PROOF.md` — fossil record and synthon propagation
+- `PROOF.md` — fossil record and imscription propagation
 - `CHEMRXIV_OUTLINE.md` — ChemRxiv paper outline
 - `SYNOPSIS.md` — framework overview
 - Finance: `INVESTMENÞ_MEMORANDUM.md`, `PITCĦ_DECK.md`, `QUANTITATIVE_ROADMAP.md`, `EXTENDEÐ_BACKTESÞ_REPORT.md`, `INSTITUTIONAL_BACKTESÞ_REPORT.md`, `PARAMETEŘ_SWEEΦ_REPORT.md`, `TRADEŘ_ONEPAGER.md`, `INFORMATIONAL_COSÞ_ANALYSIS.md`
@@ -62,16 +62,16 @@ Domain research papers and applications.
 - `PROTEINS.md` — protein folding and drug design applications
 - `EPILEPSY.md` — neural constraint analysis
 - `MYXOZOANS.MD` — parasitic organism analysis
-- `PROGRAMMABLE_MATTER.md` — programmable matter synthon catalog
+- `PROGRAMMABLE_MATTER.md` — programmable matter imscription catalog
 - `PROGRAMMABLE_MIND.md` — mind-programming framework
 - `SOLAR.md` — solar/energy domain analysis
 - `THE_SELF-MADE_ARCHITECTONICS.md` — architectural analysis
 - `IG.md` / `.pdf` — legacy main document (superseded by three-doc architecture)
 
 ### `applications/`
-Synthonic operations and specialized capabilities.
+Imscriptive operations and specialized capabilities.
 - `IΓ_CROSΣ_DOMAIN.md` — cross-domain constraint propagation
-- `IΓ_ENSEMBLER.md` — ensemble synthon operations
+- `IΓ_ENSEMBLER.md` — ensemble imscription operations
 - `IΓ_HOTSWAP.md` — dynamic primitive substitution
 - `IΓ_PERTURBATION.md` — perturbation analysis
 - `IΓ_RETRODESIGN.md` — retrosynthetic design
@@ -100,11 +100,11 @@ Superseded documents, orphaned PDFs, old backups.
 ### `data/`
 Catalogs, insights, reference data.
 - `hv1_lattice_insights.json` — Hv1 channel lattice analysis
-- `syncon_insights.json` — session insights cache
-- `SYNTHON_LIST_001.txt` — synthon reference list
+- `ig_insights.json` — session insights cache
+- `imscription_LIST_001.txt` — imscription reference list
 - `downloads/` — downloaded papers and datasets
 
-### `syncon_outputs/`
+### `ig_outputs/`
 All `IΓ_inquiry.py` session outputs (200+ JSON files, timestamped).
 
 ### `space_search/`
@@ -120,7 +120,7 @@ Core framework: base classes, LLM providers, orchestration.
 Demo scripts and exploration notebooks.
 
 ### `designs/`
-Synthon design specifications (`.syn` files).
+Imscription design specifications (`.syn` files).
 
 ### `results/`
 Analysis result JSONs and design summaries.
@@ -135,7 +135,7 @@ Lean 4 formalization: `OPN_2adic.lean`, `BSD_2adic.lean` — machine-verified co
 Full Lean 4 package. Key modules:
 
 **`Imscribing Grammar/Primitives/`**
-- `Synthon.lean` — 12-field `Synthon` structure; `primitiveMismatches` (Hamming distance); P-70 field-theoretic identities (inflaton≡Higgs≡axion proved by `rfl`); SM/QG distance = 9 by `decide`
+- `Imscription.lean` — 12-field `Imscription` structure; `primitiveMismatches` (Hamming distance); P-70 field-theoretic identities (inflaton≡Higgs≡axion proved by `rfl`); SM/QG distance = 9 by `decide`
 - `TierCrossing.lean` — granularity separation, tier crossing cost; Higgs hierarchy + cosmological predictions; `grammar_physics_correspondence` axiom
 
 **`Imscribing Grammar/Millennium/`** — Seven-file Millennium Prize Problem library

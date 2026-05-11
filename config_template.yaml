@@ -72,11 +72,11 @@ logging:
 # CLI Configuration (imscrbgrmr commands)
 # =============================================================================
 cli:
-  # Default provider for synthon generation commands
+  # Default provider for imscription generation commands
   default_provider: "anthropic"
   
   # Default max tokens for generation
   max_tokens: 4000
   
-  # Default temperature for synthon generation (lower = more deterministic)
+  # Default temperature for imscription generation (lower = more deterministic)
   temperature: 0.3

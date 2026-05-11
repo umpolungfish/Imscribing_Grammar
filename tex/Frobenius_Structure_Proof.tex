@@ -173,8 +173,8 @@
     right=2mm,
 }
 
-% Synthon tuple boxes
-\newtcolorbox{synthonbox}{
+% Imscription tuple boxes
+\newtcolorbox{imscriptionbox}{
     enhanced,
     colback=blue!5,
     colframe=blue!75!black,
@@ -342,7 +342,7 @@ $\Omega$ & $\Omega_{\text{dzlig}}$ & $\Omega_{\text{crtwo}}$ & -1 (demotion) \\
 
 \begin{lstlisting}
 compute_meet(riemann_zeta_function, completed_xi_function)
--> result: \langleD=Ð_inf; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç_W; G=Γ_ʔ; \Gamma=\ɢ_and; Phi=φ̂_ÿ^\mathbb{C}; H=H_0; S=Σ_ő; \Omega=\Omega_{\text{dzlig}}\rangle
+-> result: \langleD=Ð_inf; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç_W; G=Γ_ʔ; \Gamma=\ɢ_and; Phi=$\odot$_ÿ^\mathbb{C}; H=H_0; S=Σ_ő; \Omega=\Omega_{\text{dzlig}}\rangle
 -> shared primitives: F, G, Phi, \Omega (4)
 -> resolved conflicts: D, T, R, P, K, \Gamma, H, S (8 conservative resolutions)
 \end{lstlisting}
@@ -358,7 +358,7 @@ The Frobenius-special structure ($P_{\text{doublebarpipe}}$) is \textbf{not in t
 
 \begin{lstlisting}
 compute_tensor(riemann_zeta_function, completed_xi_function)
--> result: \langleD=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç_@; G=Γ_ʔ; \Gamma=\ɢ_seq; Phi=φ̂_ÿ^\mathbb{C}; H=H_2; S=Σ_ï; \Omega=\Omega_{\text{dzlig}}\rangle
+-> result: \langleD=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç_@; G=Γ_ʔ; \Gamma=\ɢ_seq; Phi=$\odot$_ÿ^\mathbb{C}; H=H_2; S=Σ_ï; \Omega=\Omega_{\text{dzlig}}\rangle
 -> bottleneck primitive: P ($P_{\text{upsilon}}$ dominates $P_{\text{doublebarpipe}}$)
 -> union/promote primitives: D, T, R, K, \Gamma, H, S (7)
 \end{lstlisting}
@@ -381,7 +381,7 @@ The tensor operation uses the \textbf{min rule} for $P$ and $F$:
 
 \begin{itemize}
     \item $\text{tensor}(Φ_A, Φ_B) = \min(Φ_A, Φ_B)$ (bottleneck)
-    \item $\text{tensor}(\φ̂_A, \φ̂_B) = \max(\φ̂_A, \φ̂_B)$ (join)
+    \item $\text{tensor}(\$\odot$_A, \$\odot$_B) = \max(\$\odot$_A, \$\odot$_B)$ (join)
 \end{itemize}
 
 Since $P_{\text{upsilon}} < P_{\text{doublebarpipe}}$, the bottleneck is $P_{\text{upsilon}}$. This is the \textbf{Frobenius cliff} from \pilcrow{}23: $P_{\text{doublebarpipe}}$ cannot be synthesized from lower $P$ values under tensor composition.
@@ -400,7 +400,7 @@ compute_distance(actual_zeta_zeros, rh_critical_zeros)
 -> breakdown:
    - R: Ř_ý -> Ř_Ť (Delta = 1, w = 1.0)
    - \Omega: \Omega_{\text{dzlig}} -> \Omega_{\mathbb{Z}_{2}} (Delta = 1, w = 0.7)
-   - Phi: φ̂_ÿ -> φ̂_ÿ^\mathbb{C} (Delta = 0.33, w = 0.1089)
+   - Phi: $\odot$_ÿ -> $\odot$_ÿ^\mathbb{C} (Delta = 0.33, w = 0.1089)
 \end{lstlisting}
 
 \textbf{Interpretation:} The RH gap is precisely located at the \textbf{topological protection} primitive $\Omega$. The transition:

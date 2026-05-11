@@ -17,7 +17,7 @@ header-includes:
 
 | ID | Concept |
 |----|---------|
-| $Ð_{\text{ß}}$ | imscriptive locality — point-like, singular |
+| $Ð_{ß}$ | imscriptive locality — point-like, singular |
 | $Ð_{C}$ | spatial extension — lattice, manifold |
 | $Ð_{;}$ | unbounded process — infinite, cyclic |
 | $Ð_{\omega}$ | imscriptive self-containment — bulk encoded at boundary |
@@ -55,9 +55,9 @@ header-includes:
 
 | ID | Concept |
 |----|---------|
-| $ƒ^{\text{ì}}$ | classical / low fidelity |
-| $ƒ^{\text{ð}}$ | stochastic fidelity |
-| $ƒ^{\text{ż}}$ | quantum coherent |
+| $\text{ƒ}^{\text{ì}}$ | classical / low fidelity |
+| $\text{ƒ}^{\text{ð}}$ | stochastic fidelity |
+| $\text{ƒ}^{\text{ż}}$ | quantum coherent |
 
 ## $Ç$ — Kinetics
 
@@ -81,29 +81,29 @@ header-includes:
 
 | ID | Concept |
 |----|---------|
-| $ɢ^{\wedge}$ | conjunctive — AND |
-| $ɢ^{\text{˝}}$ | disjunctive — OR |
-| $ɢ^{\text{ˌ}}$ | sequential — ordered |
-| $ɢ^{\text{Ş}}$ | broadcast — all-to-all |
+| $\text{ɢ}^{\wedge}$ | conjunctive — AND |
+| $\text{ɢ}^{\text{˝}}$ | disjunctive — OR |
+| $\text{ɢ}^{\text{ˌ}}$ | sequential — ordered |
+| $\text{ɢ}^{\text{Ş}}$ | broadcast — all-to-all |
 
 ## $⊙$ — Criticality
 
 | ID | Concept |
 |----|---------|
-| $⊙_{\text{ž}}$ | subcritical |
-| $⊙_{\text{ÿ}}$ | critical — real axis ($\Phi_c$) |
-| $⊙_{\text{Æ}}$ | critical — complex axis ($\Phi_c^{\mathbb{C}}$) |
-| $⊙_{3}$ | exceptional point |
-| $⊙_{\text{Ţ}}$ | supercritical |
+| $\odot_{\text{ž}}$ | subcritical |
+| $\odot_{\text{ÿ}}$ | critical — real axis ($\Phi_c$) |
+| $\odot_{\text{Æ}}$ | critical — complex axis ($\Phi_c^{\mathbb{C}}$) |
+| $\odot_{3}$ | exceptional point |
+| $\odot_{\text{Ţ}}$ | supercritical |
 
 ## $Ħ$ — Temporal depth
 
 | ID | Concept |
 |----|---------|
-| $Ħ_{\text{Ñ}}$ | memoryless — $H_0$ |
-| $Ħ_{\text{£}}$ | 1-step Markov — $H_1$ |
-| $Ħ_{A}$ | 2-step Markov — $H_2$ |
-| $Ħ_{!}$ | infinite memory — $H_\infty$ |
+| $\text{Ħ}_{\text{Ñ}}$ | memoryless — $H_0$ |
+| $\text{Ħ}_{\text{£}}$ | 1-step Markov — $H_1$ |
+| $\text{Ħ}_{A}$ | 2-step Markov — $H_2$ |
+| $\text{Ħ}_{!}$ | infinite memory — $H_\infty$ |
 
 ## $Σ$ — Stoichiometry
 

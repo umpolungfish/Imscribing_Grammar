@@ -1,5 +1,5 @@
 """
-Fundamental Particle Synthon Catalog — v0.4.21
+Fundamental Particle Imscription Catalog — v0.4.21
 
 Primitive-tuple encodings for Standard Model carriers and the graviton,
 derived from the Imscribing Grammar framework's K-hierarchy temporal theory
@@ -42,7 +42,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -68,9 +68,9 @@ _PARTICLE_NAMES = frozenset([
 ])
 
 
-def register_particle_synthons() -> List[str]:
+def register_particle_imscriptions() -> List[str]:
     """
-    Register 6 fundamental particle synthons into the global catalog.
+    Register 6 fundamental particle imscriptions into the global catalog.
     Safe to call multiple times (idempotent).
     For pre-existing entries (e.g., photon from quantum domain v0.4.0),
     topology and criticality_phase are updated to the authoritative §XXVI/§XXVII
@@ -80,11 +80,11 @@ def register_particle_synthons() -> List[str]:
     entries = _build_entries()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s)
             registered.append(s.name)
         else:
-            existing = global_catalog._synthons[s.name]
+            existing = global_catalog._imscriptions[s.name]
             # Update topology and criticality from authoritative particle encodings
             existing.topology = s.topology
             existing.kinetic_character = s.kinetic_character
@@ -97,7 +97,7 @@ def register_particle_synthons() -> List[str]:
     return registered
 
 
-def _build_entries() -> List[Synthon]:
+def _build_entries() -> List[Imscription]:
     return [
         # Group I — Massless
         _graviton(),
@@ -114,7 +114,7 @@ def _build_entries() -> List[Synthon]:
 # GROUP I — MASSLESS FORCE CARRIERS
 # ===========================================================================
 
-def _graviton() -> Synthon:
+def _graviton() -> Imscription:
     """
     Graviton — hypothetical spin-2 massless carrier of gravity.
 
@@ -150,7 +150,7 @@ def _graviton() -> Synthon:
     Prediction: P-59 (c propagation, no dispersion), P-60 (tensorial polarisation
     only — no scalar/vector modes).
     """
-    return Synthon(
+    return Imscription(
         name="graviton",
         dimensionality=Dimensionality.HOLOGRAPHIC,
         topology=Topology.NETWORK_SYM,
@@ -191,7 +191,7 @@ def _graviton() -> Synthon:
     )
 
 
-def _photon() -> Synthon:
+def _photon() -> Imscription:
     """
     Photon — spin-1 massless carrier of electromagnetism.
 
@@ -214,7 +214,7 @@ def _photon() -> Synthon:
     Phi_softsign: the photon is not self-referential — EM is linear (photons do not
     couple to other photons in QED at tree level). Contrast with graviton Phi_ctyogh.
     """
-    return Synthon(
+    return Imscription(
         name="photon",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.LINEAR,
@@ -248,7 +248,7 @@ def _photon() -> Synthon:
     )
 
 
-def _gluon() -> Synthon:
+def _gluon() -> Imscription:
     """
     Gluon — spin-1 massless carrier of the strong force (QCD).
 
@@ -275,7 +275,7 @@ def _gluon() -> Synthon:
     SU(3) gauge group's non-abelian structure (8 gluons carrying colour) makes
     QCD self-referential in a way QED (abelian U(1)) is not.
     """
-    return Synthon(
+    return Imscription(
         name="gluon",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK,
@@ -314,7 +314,7 @@ def _gluon() -> Synthon:
 # GROUP II — MASSIVE FORCE CARRIERS + SYMMETRY-BREAKING FIELD
 # ===========================================================================
 
-def _w_boson() -> Synthon:
+def _w_boson() -> Imscription:
     """
     W± boson — charged massive carrier of the weak force.
 
@@ -338,7 +338,7 @@ def _w_boson() -> Synthon:
     Phi_softsign: the massive W is in its post-symmetry-breaking (frozen) phase.
     The EW phase transition (Phi_ctyogh) has already completed.
     """
-    return Synthon(
+    return Imscription(
         name="w_boson",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
@@ -372,7 +372,7 @@ def _w_boson() -> Synthon:
     )
 
 
-def _z_boson() -> Synthon:
+def _z_boson() -> Imscription:
     """
     Z⁰ boson — neutral massive carrier of the weak force.
 
@@ -391,7 +391,7 @@ def _z_boson() -> Synthon:
     G_beta: single-particle coupling. Short range via K_teshlig mass (m_Z ≈ 91.2 GeV,
     shorter range than W: ~0.002 fm).
     """
-    return Synthon(
+    return Imscription(
         name="z_boson",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
@@ -425,7 +425,7 @@ def _z_boson() -> Synthon:
     )
 
 
-def _higgs() -> Synthon:
+def _higgs() -> Imscription:
     """
     Higgs boson / Higgs field — K_teshlig spatial localisation installer.
 
@@ -461,7 +461,7 @@ def _higgs() -> Synthon:
     matters: the Higgs *creates* a Phi_ctyogh event (symmetry breaking) but *lives* in
     Phi_softsign (the broken phase).
     """
-    return Synthon(
+    return Imscription(
         name="higgs",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,

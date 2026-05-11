@@ -23,7 +23,7 @@ globs = [
   "ImscribingGrammar.Primitives.Core",
   "ImscribingGrammar.Primitives.OPN_2adic",
   "ImscribingGrammar.Primitives.BSD_2adic",
-  "ImscribingGrammar.Primitives.Synthon",
+  "ImscribingGrammar.Primitives.Imscription",
   "ImscribingGrammar.Primitives.TierCrossing",
   "ImscribingGrammar.Primitives.CLUPrimitives"
 ]

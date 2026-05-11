@@ -47,8 +47,8 @@ WEIGHTS = {
 
 PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
 
-# Canonical synthon vectors (ordinal form)
-SYNTHONS = {
+# Canonical imscription vectors (ordinal form)
+imscriptions = {
     # S_human: current humanity (planetary, pre-visible)
     "human": {
         "Ð": "Ð_C", "Þ": "Þ_K", "Ř": "Ř_¯", "Φ": "Φ_F",
@@ -76,11 +76,11 @@ SYNTHONS = {
 }
 
 
-def to_vector(synthon: dict) -> np.ndarray:
-    """Convert a synthon dict to an ordinal vector in canonical primitive order."""
+def to_vector(imscription: dict) -> np.ndarray:
+    """Convert a imscription dict to an ordinal vector in canonical primitive order."""
     vec = []
     for prim in PRIMITIVE_ORDER:
-        val = synthon[prim]
+        val = imscription[prim]
         vec.append(ORDINALS[prim][val])
     return np.array(vec, dtype=float)
 
@@ -90,7 +90,7 @@ def weight_vector() -> np.ndarray:
 
 
 def tuple_distance(s1: dict, s2: dict) -> float:
-    """Weighted Euclidean distance between two synthon dicts."""
+    """Weighted Euclidean distance between two imscription dicts."""
     v1 = to_vector(s1)
     v2 = to_vector(s2)
     w = weight_vector()
@@ -149,7 +149,7 @@ _CATALOG_SEARCH_PATHS = [
 def build_metric_tensor(catalog_path: str | None = None) -> np.ndarray:
     """Compute G = Sigma^{-1} from the catalog and cache it in METRIC_TENSOR.
 
-    Each synthon is converted to its ordinal vector; the sample covariance
+    Each imscription is converted to its ordinal vector; the sample covariance
     matrix Sigma is estimated, then inverted.  The result is stored in the
     module-level METRIC_TENSOR and also returned.
 
@@ -177,10 +177,10 @@ def build_metric_tensor(catalog_path: str | None = None) -> np.ndarray:
 
     with open(catalog_path) as f:
         data = json.load(f)
-    synthons = data if isinstance(data, list) else list(data.values())
+    imscriptions = data if isinstance(data, list) else list(data.values())
 
     rows = []
-    for s in synthons:
+    for s in imscriptions:
         try:
             rows.append(to_vector(s))
         except (KeyError, TypeError):
@@ -255,7 +255,7 @@ def mahalanobis_distance(s1: dict, s2: dict, G: np.ndarray | None = None) -> flo
 
     Parameters
     ----------
-    s1, s2 : dict   Synthon dicts (same format as tuple_distance).
+    s1, s2 : dict   Imscription dicts (same format as tuple_distance).
     G : np.ndarray or None
         The 12x12 metric tensor (inverse covariance).  If None, uses the
         module-level METRIC_TENSOR, loading it from the catalog if necessary.
@@ -294,11 +294,11 @@ if __name__ == "__main__":
         ("human", "interstellar_target"),
     ]
     for a, b in pairs:
-        d_diag = tuple_distance(SYNTHONS[a], SYNTHONS[b])
-        d_maha = mahalanobis_distance(SYNTHONS[a], SYNTHONS[b], G)
+        d_diag = tuple_distance(imscriptions[a], imscriptions[b])
+        d_maha = mahalanobis_distance(imscriptions[a], imscriptions[b], G)
         print(f"  d_diag({a}, {b}) = {d_diag:.3f}")
         print(f"  d_maha({a}, {b}) = {d_maha:.3f}")
-        for row in breakdown(SYNTHONS[a], SYNTHONS[b])[:4]:
+        for row in breakdown(imscriptions[a], imscriptions[b])[:4]:
             if row["weighted_sq"] > 0:
                 print(f"    {row['primitive']}: Δ={row['delta']:.0f}  contrib={row['weighted_sq']:.2f}")
         print()

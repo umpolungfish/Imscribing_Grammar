@@ -11,12 +11,12 @@ Agents:
     analysis_agent        - Data analysis and pattern recognition
     aider_code_agent      - Git-native code operations (requires aider)
     perturbation_agent    - Primitive Jacobian interpretation
-    ensemble_agent        - Goal-directed multi-synthon composition
+    ensemble_agent        - Goal-directed multi-imscription composition
     retrodesign_agent     - Retrosynthetic analysis
     criticality_agent     - φ̂_ÿ criticality hunting
-    synthon_generator     - Synthon structure generation
+    imscription_generator     - Imscription structure generation
     axiom_generator       - Axiom-guided generation
-    autonomous_synthon    - Autonomous synthon discovery
+    autonomous_imscription    - Autonomous imscription discovery
 
 Example:
     python agents/agents_cli.py true_agentic_agent --task "Analyze Riemann zeta"
@@ -47,9 +47,9 @@ def build_parser():
             "ensemble_agent",
             "retrodesign_agent",
             "criticality_agent",
-            "synthon_generator",
+            "imscription_generator",
             "axiom_generator",
-            "autonomous_synthon",
+            "autonomous_imscription",
         ],
         help="Agent to run"
     )
@@ -230,14 +230,14 @@ def run_perturbation_agent(task: str, args):
     
     agent = PerturbationDesignAgent(config)
     
-    # Parse task for synthon_name and delta_g if provided
-    # format: "synthon_name delta_g [target_xi_cp]"
+    # Parse task for imscription_name and delta_g if provided
+    # format: "imscription_name delta_g [target_xi_cp]"
     parts = task.split()
-    synthon_name = parts[0] if parts else "carboxylic_acid_dimer"
+    imscription_name = parts[0] if parts else "carboxylic_acid_dimer"
     delta_g = float(parts[1]) if len(parts) > 1 else -12.0
     target_xi_cp = float(parts[2]) if len(parts) > 2 else None
     
-    result = agent.run_sync(synthon_name, delta_g, target_xi_cp)
+    result = agent.run_sync(imscription_name, delta_g, target_xi_cp)
     
     print("\n" + "="*72)
     print("PERTURBATION DESIGN RESULTS:")
@@ -319,24 +319,24 @@ def run_criticality_agent(task: str, args):
     }
 
 
-def run_synthon_generator_agent(task: str, args):
-    """Run SynthonGeneratorAgent."""
-    from agents import SynthonGeneratorAgent
+def run_imscribe_generator_agent(task: str, args):
+    """Run ImscriptionGeneratorAgent."""
+    from agents import ImscriptionGeneratorAgent
     from imscrbgrmr.provider_config import build_agent_config
     
     config = build_agent_config(provider="anthropic", model=args.model)
     if args.config:
         config.update(load_config(args.config))
     
-    agent = SynthonGeneratorAgent(config)
+    agent = ImscriptionGeneratorAgent(config)
     result = agent.run_sync(task)
     
     print("\n" + "="*72)
     print("SYTHON GENERATION RESULTS:")
-    print(result.synthons)
+    print(result.imscriptions)
     
     return {
-        "agent": "synthon_generator",
+        "agent": "imscription_generator",
         "result": result.to_dict(),
     }
 
@@ -363,24 +363,24 @@ def run_axiom_generator_agent(task: str, args):
     }
 
 
-def run_autonomous_synthon_agent(task: str, args):
-    """Run AutonomousSynthonDiscoveryAgent."""
-    from agents import AutonomousSynthonDiscoveryAgent
+def run_autonomous_imscribe_agent(task: str, args):
+    """Run AutonomousImscriptionDiscoveryAgent."""
+    from agents import AutonomousImscriptionDiscoveryAgent
     from imscrbgrmr.provider_config import build_agent_config
     
     config = build_agent_config(provider="anthropic", model=args.model)
     if args.config:
         config.update(load_config(args.config))
     
-    agent = AutonomousSynthonDiscoveryAgent(config)
+    agent = AutonomousImscriptionDiscoveryAgent(config)
     result = agent.run_sync(task)
     
     print("\n" + "="*72)
-    print("AUTONOMOUS SYNTHON RESULTS:")
+    print("AUTONOMOUS imscription RESULTS:")
     print(result)
     
     return {
-        "agent": "autonomous_synthon",
+        "agent": "autonomous_imscription",
         "result": result,
     }
 
@@ -410,9 +410,9 @@ def main():
         "ensemble_agent": run_ensemble_agent,
         "retrodesign_agent": run_retrodesign_agent,
         "criticality_agent": run_criticality_agent,
-        "synthon_generator": run_synthon_generator_agent,
+        "imscription_generator": run_imscribe_generator_agent,
         "axiom_generator": run_axiom_generator_agent,
-        "autonomous_synthon": run_autonomous_synthon_agent,
+        "autonomous_imscription": run_autonomous_imscribe_agent,
     }
     
     runner = runners.get(args.agent)

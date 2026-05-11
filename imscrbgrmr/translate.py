@@ -5,7 +5,7 @@ Translation Protocol v0.4 (implemented valid components)
 ---------------------------------------------------------
 
 1. WriterT/StateT monad for tracking translation cost
-   The existing SynthonM already provides WriterT[float] ⊗ StateT[Context].
+   The existing ImscriptionM already provides WriterT[float] ⊗ StateT[Context].
    Here we layer a structured TranslationCost on top: each translation step
    decomposes cost into coherence_loss + criticality_loss + interaction_cost.
 
@@ -29,7 +29,7 @@ Translation Protocol v0.4 (implemented valid components)
    λ ∈ (1, 3) stable fixed-point window.
 
 4. Kleisli enrichment cost:
-   Translation functions t : Synthon → TranslationM[Synthon] compose via:
+   Translation functions t : Imscription → TranslationM[Imscription] compose via:
        (t₁ >=> t₂)(s) = t₁(s) >>= t₂
    Costs accumulate additively in the Writer layer; the Fidelity floor in
    Context is updated monotonically upward (strictest requirement survives).
@@ -41,7 +41,7 @@ from dataclasses import dataclass, field
 from typing import Callable, List, Optional, Tuple, TypeVar
 
 from .models import (
-    Synthon,
+    Imscription,
     Fidelity,
     CriticalityPhase,
     InteractionGrammar,
@@ -69,7 +69,7 @@ __all__ = [
     "full_translation",
     "translation_cost_summary",
 ]
-from .monad import SynthonM, Context, StepRecord
+from .monad import ImscriptionM, Context, StepRecord
 
 A = TypeVar("A")
 
@@ -222,15 +222,15 @@ def phic_from_jacobian(j: float) -> bool:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def translate_fidelity(
-    s: Synthon,
+    s: Imscription,
     mutual_info_nats: Optional[float] = None,
-) -> SynthonM[Synthon]:
+) -> ImscriptionM[Imscription]:
     """
     Translate F_hardsign → F_dh when mutual information falls below the F_ℏ threshold.
 
     If mutual_info_nats is provided and < ln(19), the fidelity is downgraded
     and coherence_loss = ln(19) - I is recorded as Δξ cost.
-    If mutual_info_nats is None, checks whether synthon already has F_hardsign
+    If mutual_info_nats is None, checks whether imscription already has F_hardsign
     and warns; no automatic downgrade without data.
 
     Cost annotation: delta_xi = coherence_loss (nats) in the Writer log.
@@ -245,14 +245,14 @@ def translate_fidelity(
             "translate_fidelity", s.name, "PASS", 0.0,
             "No I(s₁;s₂) provided — fidelity unchanged; F_ℏ threshold not checked"
         )
-        return SynthonM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
+        return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     if fhbar_satisfied(mutual_info_nats):
         rec = StepRecord(
             "translate_fidelity", s.name, "PASS", 0.0,
             f"I={mutual_info_nats:.4f} nat ≥ ln(19)={FHBAR_THRESHOLD_NATS:.4f} — F_ℏ maintained"
         )
-        return SynthonM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
+        return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     # Below threshold — downgrade fidelity
     deficit = fhbar_deficit(mutual_info_nats)
@@ -285,10 +285,10 @@ def translate_fidelity(
     rec = StepRecord("translate_fidelity", s.name, "PASS", loss, msg)
     f_name = _F_NAME.get(new_s.fidelity, str(new_s.fidelity))
     ctx = Context(f_floor=f_name, step_count=1)
-    return SynthonM(value=new_s, cost=loss, context=ctx, log=[rec])
+    return ImscriptionM(value=new_s, cost=loss, context=ctx, log=[rec])
 
 
-def translate_criticality(s: Synthon) -> SynthonM[Synthon]:
+def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     """
     Translate Φ_c → Phi_softsign when mapping to classical dynamics.
 
@@ -307,7 +307,7 @@ def translate_criticality(s: Synthon) -> SynthonM[Synthon]:
             "translate_criticality", s.name, "PASS", 0.0,
             f"Φ={s.criticality_phase} — not Φ_c; no translation cost"
         )
-        return SynthonM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
+        return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     new_s = copy.copy(s)
     new_s.criticality_phase = CriticalityPhase.SUBCRITICAL
@@ -319,10 +319,10 @@ def translate_criticality(s: Synthon) -> SynthonM[Synthon]:
     )
     rec = StepRecord("translate_criticality", s.name, "PASS", CRITICALITY_LIFT_NATS, msg)
     ctx = Context(criticality_ok=False, step_count=1)
-    return SynthonM(value=new_s, cost=CRITICALITY_LIFT_NATS, context=ctx, log=[rec])
+    return ImscriptionM(value=new_s, cost=CRITICALITY_LIFT_NATS, context=ctx, log=[rec])
 
 
-def translate_grammar(s: Synthon) -> SynthonM[Synthon]:
+def translate_grammar(s: Imscription) -> ImscriptionM[Imscription]:
     """
     Translate interaction grammar for classical compatibility.
 
@@ -342,7 +342,7 @@ def translate_grammar(s: Synthon) -> SynthonM[Synthon]:
             "translate_grammar", s.name, "PASS", 0.0,
             "Γ=None — no grammar to translate"
         )
-        return SynthonM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
+        return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     # Extract the operator component from the (GrammarOperator, tier) tuple
     try:
@@ -363,7 +363,7 @@ def translate_grammar(s: Synthon) -> SynthonM[Synthon]:
             f"Γ={grammar.name if hasattr(grammar, 'name') else grammar} "
             f"(op={operator.name}) — classically compatible; no interaction cost"
         )
-        return SynthonM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
+        return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     # DISSIPATIVE or unknown — approximate with closest OR grammar, charge cost
     new_s = copy.copy(s)
@@ -382,15 +382,15 @@ def translate_grammar(s: Synthon) -> SynthonM[Synthon]:
         f"interaction_cost={cost:.4f} nat"
     )
     rec = StepRecord("translate_grammar", s.name, "PASS", cost, msg)
-    return SynthonM(value=new_s, cost=cost, context=Context(step_count=1), log=[rec])
+    return ImscriptionM(value=new_s, cost=cost, context=Context(step_count=1), log=[rec])
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Kleisli composition
 # ─────────────────────────────────────────────────────────────────────────────
 
-# A TranslationStep is a function Synthon → SynthonM[Synthon]
-TranslationStep = Callable[[Synthon], SynthonM[Synthon]]
+# A TranslationStep is a function Imscription → ImscriptionM[Imscription]
+TranslationStep = Callable[[Imscription], ImscriptionM[Imscription]]
 
 
 def kleisli_compose(*steps: TranslationStep) -> TranslationStep:
@@ -403,8 +403,8 @@ def kleisli_compose(*steps: TranslationStep) -> TranslationStep:
     Context (F-floor, criticality_ok) threads monotonically through steps.
     If any step fails (value=None), the chain short-circuits (MaybeT).
     """
-    def composed(s: Synthon) -> SynthonM[Synthon]:
-        result = SynthonM.return_(s)
+    def composed(s: Imscription) -> ImscriptionM[Imscription]:
+        result = ImscriptionM.return_(s)
         for step in steps:
             result = result.bind(step)
         return result
@@ -412,9 +412,9 @@ def kleisli_compose(*steps: TranslationStep) -> TranslationStep:
 
 
 def full_translation(
-    s: Synthon,
+    s: Imscription,
     mutual_info_nats: Optional[float] = None,
-) -> SynthonM[Synthon]:
+) -> ImscriptionM[Imscription]:
     """
     Full structural→classical translation pipeline.
 
@@ -425,8 +425,8 @@ def full_translation(
 
     Total Δξ_CP = Σ costs across all three steps.
 
-    Returns SynthonM with:
-      - value:   translated Synthon (or None if blocked)
+    Returns ImscriptionM with:
+      - value:   translated Imscription (or None if blocked)
       - cost:    total nats of structural information lost
       - context: updated F-floor and criticality gate
       - log:     step-by-step trace
@@ -446,9 +446,9 @@ def full_translation(
 # Cost summary
 # ─────────────────────────────────────────────────────────────────────────────
 
-def translation_cost_summary(result: SynthonM[Synthon]) -> TranslationCost:
+def translation_cost_summary(result: ImscriptionM[Imscription]) -> TranslationCost:
     """
-    Extract a structured TranslationCost from a completed SynthonM run.
+    Extract a structured TranslationCost from a completed ImscriptionM run.
 
     Classifies each StepRecord's delta_xi into the appropriate cost bucket
     based on which translation step produced it.

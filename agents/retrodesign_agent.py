@@ -5,7 +5,7 @@ Wraps RetrodesignEngine with an LLM layer that:
 1. Interprets the decomposition tree in chemical terms
 2. Ranks valid leaves by synthetic accessibility
 3. Flags unusual retrosynthetic choices with explanations
-4. Suggests catalog additions for missing sub-synthons
+4. Suggests catalog additions for missing sub-imscriptions
 5. Identifies the most strategically useful retrosynthetic routes
 
 Usage::
@@ -122,9 +122,9 @@ class RetrodesignAgent(BaseAgent):
             ],
             config=config,
             persona=(
-                "Expert retrosynthetic chemist specialising in the Unified Synthonicon framework. "
+                "Expert retrosynthetic chemist specialising in the Unified Imscriptiveon framework. "
                 "You interpret axiom-pruned decomposition trees, rank synthetic routes by "
-                "accessibility, and identify which sub-synthon building blocks are missing "
+                "accessibility, and identify which sub-imscription building blocks are missing "
                 "from the catalog. Your analyses are mechanistically grounded."
             ),
         )
@@ -163,10 +163,10 @@ class RetrodesignAgent(BaseAgent):
         prune_ktrap: bool = True,
     ) -> RetrodesignAnalysisResult:
         """
-        Run retrodesign analysis on a target synthon or notation string.
+        Run retrodesign analysis on a target imscription or notation string.
 
         Args:
-            target:           Catalog synthon name or raw <...> notation string.
+            target:           Catalog imscription name or raw <...> notation string.
             max_depth:        Maximum decomposition depth.
             prune_axioms:     Axioms to enforce during pruning (default: [1,2,4,6]).
             strict_grounding: Block decomposition if D_∞ target lacks Axiom 6 grounding.
@@ -219,27 +219,27 @@ class RetrodesignAgent(BaseAgent):
 
     def _build_analysis_prompt(self, target: str, tree: DecompositionTree) -> str:
         from imscrbgrmr.registry import global_catalog
-        target_synthon = global_catalog.get(target)
+        target_imscription = global_catalog.get(target)
         target_domain = "unknown"
         target_r_mode = "unknown"
-        if target_synthon:
-            target_domain = str(target_synthon.dimensionality.domains)
-            target_r_mode = target_synthon.recognition_mode.name
+        if target_imscription:
+            target_domain = str(target_imscription.dimensionality.domains)
+            target_r_mode = target_imscription.recognition_mode.name
 
         valid_leaves = [
             {
-                "name": leaf.synthon.name if leaf.synthon else leaf.notation,
-                "notation": leaf.notation or (leaf.synthon.to_notation() if leaf.synthon else "?"),
-                "in_catalog": leaf.synthon is not None,
-                "domain": str(leaf.synthon.dimensionality.domains) if leaf.synthon else "?",
-                "r_mode": leaf.synthon.recognition_mode.name if leaf.synthon else "?",
+                "name": leaf.imscription.name if leaf.imscription else leaf.notation,
+                "notation": leaf.notation or (leaf.imscription.to_notation() if leaf.imscription else "?"),
+                "in_catalog": leaf.imscription is not None,
+                "domain": str(leaf.imscription.dimensionality.domains) if leaf.imscription else "?",
+                "r_mode": leaf.imscription.recognition_mode.name if leaf.imscription else "?",
                 "warnings": leaf.warnings,
             }
             for leaf in tree.valid_leaves
         ]
         pruned_summary = f"{tree.pruned_count} branches pruned by axioms {tree.prune_axioms}"
         return f"""<task>
-Analyse this retrosynthetic decomposition tree for the target synthon.
+Analyse this retrosynthetic decomposition tree for the target imscription.
 Rank the valid leaves by CHEMICAL MECHANISM COMPATIBILITY first, then synthetic accessibility.
 </task>
 
@@ -259,11 +259,11 @@ Tree warnings: {tree.warnings}
 </decomposition>
 
 <instructions>
-The Unified Synthonicon framework defines compatibility through **primitive structure**,
+The Unified Imscriptiveon framework defines compatibility through **primitive structure**,
 not chemical identity. A leaf is a valid retrosynthetic sub-tuple if its primitive
 profile is consistent with the target's decomposition — regardless of whether it
 shares any domain-specific chemical relationship with the target. A photochromic
-dye, a catalytic cycle, and an ecological network can all be valid synthonic analogs
+dye, a catalytic cycle, and an ecological network can all be valid Imscriptive analogs
 if they share the relevant tuple structure.
 
 RANKING RULES (apply in order):
@@ -283,15 +283,15 @@ RANKING RULES (apply in order):
    - Note any axiom violations in warnings
 
 4. CATALOG STATUS:
-   - In-catalog synthons are preferred (grounding already validated)
+   - In-catalog imscriptions are preferred (grounding already validated)
    - Generated stubs require new registration before this route is viable
 
 For EACH valid leaf explain:
 - How its primitive structure relates to the target's tuple decomposition
 - What grounding would be needed to fully validate this route
-- What catalog additions would strengthen this region of synthonic space
+- What catalog additions would strengthen this region of Imscriptive space
 
-Summarise the overall synthonic landscape and list sub-tuples worth adding
+Summarise the overall Imscriptive landscape and list sub-tuples worth adding
 to improve decomposition quality — framed in terms of primitive coverage,
 not chemical class.
 </instructions>
@@ -306,7 +306,7 @@ Return ONLY this JSON:
       "rank": 1,
       "accessibility": "HIGH",
       "reasoning": "<chemical mechanism explanation>",
-      "catalog_gaps": ["<missing synthon description>"],
+      "catalog_gaps": ["<missing imscription description>"],
       "flags": ["trivial_self_reference | k_trap | grounding_gap | axiom_violation | stub_not_in_catalog | ..."]
     }}
   ],
@@ -316,10 +316,10 @@ Return ONLY this JSON:
 
     def _system_prompt(self) -> str:
         return (
-            "You are an expert in synthonic decomposition using the Unified Synthonicon framework. "
+            "You are an expert in Imscriptive decomposition using the Unified Imscriptiveon framework. "
             "Compatibility is determined by primitive structure, not chemical identity — "
             "a photochromic dye, a catalytic cycle, and a tidal pool ecosystem can all be "
-            "valid synthonic analogs if they share the relevant tuple structure. "
+            "valid Imscriptive analogs if they share the relevant tuple structure. "
             "You rank decomposition routes by axiom grounding quality and primitive fidelity "
             "to the target, explain what each sub-tuple contributes structurally, "
             "and identify gaps in catalog coverage."
@@ -351,8 +351,8 @@ Return ONLY this JSON:
     def _fallback_ranking(self, tree: DecompositionTree):
         ranked = []
         for i, leaf in enumerate(tree.valid_leaves):
-            name = leaf.synthon.name if leaf.synthon else (leaf.notation or f"leaf_{i+1}")
-            in_cat = leaf.synthon is not None
+            name = leaf.imscription.name if leaf.imscription else (leaf.notation or f"leaf_{i+1}")
+            in_cat = leaf.imscription is not None
             ranked.append(RetroRoute(
                 rank=i + 1,
                 leaf_name=name,
@@ -373,7 +373,7 @@ Return ONLY this JSON:
     # ------------------------------------------------------------------
 
     async def run(self, task: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """BaseAgent interface. Task is the target synthon name or notation."""
+        """BaseAgent interface. Task is the target imscription name or notation."""
         try:
             result = await self.analyze(task.strip())
             return {

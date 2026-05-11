@@ -1,5 +1,5 @@
 """
-Synthon Morphisms — Phase Transitions as Kleisli Arrows
+Imscription Morphisms — Phase Transitions as Kleisli Arrows
 
 Encodes phase transitions as morphisms in the Kleisli category over the
 HotSwap monad.  A transition A → B is:
@@ -31,7 +31,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import List, Optional, Sequence
 
-from .models import Synthon, CriticalityPhase
+from .models import Imscription, CriticalityPhase
 from .algebra import find_path, tuple_distance, PathResult
 
 
@@ -50,11 +50,11 @@ class QuantumCriticalPoint:
     """
     A quantum critical point (QCP) detected in a transition morphism.
 
-    A QCP is *not* a property of either endpoint synthon — it is a property
+    A QCP is *not* a property of either endpoint imscription — it is a property
     of the morphism between them.  Specifically: the transition is 2nd-order
     AND the forward path passes through at least one Φ_c intermediate.
 
-    The Φ_c intermediate is the QCP synthon — the system is tuned *through*
+    The Φ_c intermediate is the QCP imscription — the system is tuned *through*
     it, not to it.  This is the representational gap closed by the morphism
     infrastructure: Factor 8 in the Varma probe fires on an endpoint that
     *looks like* a QCP; the morphism QCP fires on the actual transition.
@@ -62,13 +62,13 @@ class QuantumCriticalPoint:
     Attributes
     ----------
     transition_src, transition_dst : endpoint names
-    qcp_synthon_names : names of the Φ_c synthons on the path (the QCPs)
+    qcp_imscription_names : names of the Φ_c imscriptions on the path (the QCPs)
     path_cost : total Δξ_CP to traverse the QCP from src to dst
     universality_hints : list of primitive-derived universality class hints
     """
     transition_src: str
     transition_dst: str
-    qcp_synthon_names: List[str]
+    qcp_imscription_names: List[str]
     path_cost: float
     universality_hints: List[str] = field(default_factory=list)
 
@@ -80,11 +80,11 @@ class TransitionMorphism:
 
     Attributes
     ----------
-    src_name, dst_name : names of the endpoint synthons
+    src_name, dst_name : names of the endpoint imscriptions
     order       : SECOND | FIRST | UNKNOWN
     forward_path : BFS PathResult for A→B (may be not found)
     reverse_path : BFS PathResult for B→A (may be not found)
-    phi_c_intermediates : names of Φ_c synthons on the forward path (if any)
+    phi_c_intermediates : names of Φ_c imscriptions on the forward path (if any)
     forward_cost  : total Δξ_CP on forward path  (math.inf if no path)
     reverse_cost  : total Δξ_CP on reverse path  (math.inf if no path)
     asymmetry     : |fwd − rev| / max(fwd, 1e-9)  ∈ [0, 1]
@@ -157,9 +157,9 @@ class TransitionMorphism:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def find_qcp_path(
-    src: Synthon,
-    dst: Synthon,
-    catalog: Sequence[Synthon],
+    src: Imscription,
+    dst: Imscription,
+    catalog: Sequence[Imscription],
     max_hops: int = 6,
     xi_tolerance: float = 1.0,
 ) -> Optional["TransitionMorphism"]:
@@ -168,7 +168,7 @@ def find_qcp_path(
     Φ_c intermediate — the morphism-level quantum critical point.
 
     Unlike `find_transition()`, which takes the cheapest BFS path (which may
-    bypass a Φ_c intermediate), this function enumerates all Φ_c synthons
+    bypass a Φ_c intermediate), this function enumerates all Φ_c imscriptions
     in the D/T cluster and checks for two-segment paths:
         src → Φ_c_intermediate → dst
 
@@ -263,7 +263,7 @@ def find_qcp_path(
         qcp_obj = QuantumCriticalPoint(
             transition_src=src.name,
             transition_dst=dst.name,
-            qcp_synthon_names=[qcp_s.name],
+            qcp_imscription_names=[qcp_s.name],
             path_cost=total_fwd,
             universality_hints=hints,
         )
@@ -294,14 +294,14 @@ def find_qcp_path(
 
 
 def find_transition(
-    src: Synthon,
-    dst: Synthon,
-    catalog: Sequence[Synthon],
+    src: Imscription,
+    dst: Imscription,
+    catalog: Sequence[Imscription],
     max_hops: int = 6,
     xi_tolerance: float = 1.0,
 ) -> TransitionMorphism:
     """
-    Determine the transition morphism between two synthons.
+    Determine the transition morphism between two imscriptions.
 
     Algorithm
     ---------
@@ -311,7 +311,7 @@ def find_transition(
        - SECOND (degenerate) if forward path exists but no Φ_c intermediate
          (near-critical pair — flag in notes)
        - FIRST  if no forward path (structural conflict blocks HotSwap)
-       - UNKNOWN if catalog is empty / both synthons absent
+       - UNKNOWN if catalog is empty / both imscriptions absent
     3. Compute costs and asymmetry.
     """
     # --- QCP-first search ---
@@ -331,7 +331,7 @@ def find_transition(
     # Extract Φ_c intermediates from forward path (exclude endpoints)
     phi_c_names: List[str] = []
     if fwd.found and len(fwd.path) > 2:
-        # path is a list of synthon names
+        # path is a list of imscription names
         interior = fwd.path[1:-1]
         catalog_map = {s.name: s for s in catalog}
         for name in interior:
@@ -431,7 +431,7 @@ def find_transition(
         qcp = QuantumCriticalPoint(
             transition_src=src.name,
             transition_dst=dst.name,
-            qcp_synthon_names=phi_c_names,
+            qcp_imscription_names=phi_c_names,
             path_cost=fwd_cost,
             universality_hints=hints,
         )

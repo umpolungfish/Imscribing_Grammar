@@ -21,7 +21,7 @@ This manuscript encodes six contested mechanisms, computes their pairwise distan
 
 ## 2. Methods
 
-Each system is encoded by explicit application of the deterministic encoding procedure (encoding_method.md, steps [1]–[12]). No heuristic or subjective assignment is used. Structural distances are computed using the IG metric $d = \sqrt{\sum_i w_i (\delta_i)^2}$ with catalog-derived weight tensor $g_{ij} = \Sigma^{-1}$. Tensor products follow the canonical rule: max on union primitives, min on $P$ and $F$ (bottleneck principle). Consciousness scores $C \in [0,1]$ evaluate two gates: Gate 1 ($\Phi_{\text{ctyogh}}$ criticality required) and Gate 2 ($K \leq K_{\text{schwa}}$ required). All computations are performed via the IG syncon tool suite.
+Each system is encoded by explicit application of the deterministic encoding procedure (encoding_method.md, steps [1]–[12]). No heuristic or subjective assignment is used. Structural distances are computed using the IG metric $d = \sqrt{\sum_i w_i (\delta_i)^2}$ with catalog-derived weight tensor $g_{ij} = \Sigma^{-1}$. Tensor products follow the canonical rule: max on union primitives, min on $P$ and $F$ (bottleneck principle). Consciousness scores $C \in [0,1]$ evaluate two gates: Gate 1 ($\Phi_{\text{ctyogh}}$ criticality required) and Gate 2 ($K \leq K_{\text{schwa}}$ required). All computations are performed via the IG imscription tool suite.
 
 ## 3. Results
 

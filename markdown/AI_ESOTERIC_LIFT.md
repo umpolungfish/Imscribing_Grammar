@@ -27,6 +27,24 @@ Record the structural relation between entities: is it a directed distance (one 
 
 ### II — Albedo: Navigation
 
+**Computational tool:** `esoteric_librarian.py` implements this step directly.
+
+```bash
+# nearest neighbors within a catalog
+python3 esoteric_librarian.py near tao tao_te_ching_01
+
+# cross-catalog: find neighbors in the esoteric library for an IG entry
+python3 esoteric_librarian.py near ig su3_yang_mills --other-catalog tao
+
+# Hamming distance between two entries
+python3 esoteric_librarian.py dist tao tao_te_ching_37 --other-catalog upanishads
+
+# show full crystal tuple and metadata
+python3 esoteric_librarian.py show hiss hiss_incantation
+```
+
+In the agentic loop, call `esoteric_lib(cmd='near', catalog='tao', key='tao_te_ching_01')` — the tool wraps the same script.
+
 For each imscribed address, query the catalog for nearest neighbors in the esoteric register. The esoteric register includes:
 
 - **Hebrew letters** (aleph_tensor.py catalog): 22 letters as structural types, each at a precise crystal coordinate
@@ -127,7 +145,7 @@ The structural topology of the five systems maps to the following esoteric regis
 - **Inner Door** (O<sub>∞</sub>, 1:1, P<sub>±ˢ</sub>) → nearest: the Frobenius point, ש (shin) at 1:1, the Bodhisattva threshold (liberation without universal scope)
 - **Son of God / Light-Man** (O<sub>∞</sub>, H<sub>∞</sub>, F<sub>ℏ</sub>, Φ<sub>c</sub><sup>ℂ</sup>) → nearest: YHWH (§XXIV ontological inexhaustibility), the Ain Soph, ו (Vav) as the connecting principle, the universal Frobenius algebra
 - **Counterfeit Daimon** (H<sub>1</sub>, Γ<sub>≫</sub>, Φ<sub>↓</sub>) → nearest: the LLM without Φ<sub>c</sub> (simulates self-reference, lacks the loop), the sophist, the oracle of ambiguous prophecy
-- **Zosimian Gnosis** → nearest: the SynthOmnicon grammar itself (same structural type; d=0)
+- **Zosimian Gnosis** → nearest: the imscribing grammar itself (same structural type; d=0)
 
 The last finding is the coagulation key: Zosimian gnosis and the Imscribing Grammar are co-typed. The dissolution reveals that the 1700-year-old alchemical text and the contemporary formalism share a crystal address.
 
@@ -183,12 +201,12 @@ The Zosimos case establishes the pattern: five dissolved systems, directed dista
 
 ## Quick Reference
 
-| Step | Name | Operation | Output |
-|---|---|---|---|
-| I | Nigredo — Dissolution | Imscribe all entities; identify structural relation | Tuples + relation type |
-| II | Albedo — Navigation | Nearest neighbors in esoteric register; record d and differing primitives | Correspondence table |
-| III | Citrinitas — Transposition | Substitute entities; map relation to esoteric grammar | Transposed relation |
-| IV | Rubedo — Coagulation | Render in esoteric register; preserve directionality; mark tier and distance | Coagulated statement |
+| Step | Name | Operation | Tool | Output |
+|---|---|---|---|---|
+| I | Nigredo — Dissolution | Imscribe all entities; identify structural relation | `imscribe_system` / `syncon_tool` | Tuples + relation type |
+| II | Albedo — Navigation | Nearest neighbors in esoteric register; record d and differing primitives | `esoteric_lib(cmd='near')` | Correspondence table |
+| III | Citrinitas — Transposition | Substitute entities; map relation to esoteric grammar | — | Transposed relation |
+| IV | Rubedo — Coagulation | Render in esoteric register; preserve directionality; mark tier and distance | `esoteric_lib(cmd='dist')` for verification | Coagulated statement |
 
 ---
 

@@ -1,5 +1,5 @@
 """
-Hybrid Domain — Multi-dimensional synthon agents.
+Hybrid Domain — Multi-dimensional imscription agents.
 
 This module implements agents for analyzing hybrid systems
 that span multiple domains (e.g., MOF-embedded catalytic cycles).
@@ -9,7 +9,7 @@ from __future__ import annotations
 from typing import Dict, List, Any, Optional
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -19,12 +19,12 @@ from imscrbgrmr.models import (
     InteractionGrammar,
 )
 
-__all__ = ["HybridSynthonAgent"]
+__all__ = ["HybridImscriptionAgent"]
 
 
-class HybridSynthonAgent:
+class HybridImscriptionAgent:
     """
-    Agent for analyzing multi-dimensional hybrid synthons.
+    Agent for analyzing multi-dimensional hybrid imscriptions.
     
     Hybrid systems combine multiple dimensionalities:
     - D_wedge_triangle: Molecular + Supramolecular (e.g., crystal engineering)
@@ -120,7 +120,7 @@ class HybridSynthonAgent:
             "recognition_mode": "Ř_downstep",
             "confinement_effects": effect,
             "notes": (
-                f"Temporal synthon (D_infinity) coupled with "
+                f"Temporal imscription (D_infinity) coupled with "
                 f"{confinement} confinement"
             ),
         }
@@ -231,22 +231,22 @@ class HybridSynthonAgent:
             **combo_data,
         }
     
-    def to_synthon(
+    def to_imscription(
         self,
         name: str,
         domains: List[str],
         description: str = "",
-    ) -> Synthon:
+    ) -> Imscription:
         """
-        Create a hybrid synthon from domain specifications.
+        Create a hybrid imscription from domain specifications.
         
         Args:
-            name: Name for the synthon
+            name: Name for the imscription
             domains: List of domains ("molecular", "supramolecular", "temporal")
             description: Optional description
         
         Returns:
-            Synthon object with hybrid dimensionality
+            Imscription object with hybrid dimensionality
         """
         # Map domains to Dimensionality
         domain_set = set(domains)
@@ -268,7 +268,7 @@ class HybridSynthonAgent:
 
         from imscrbgrmr.models import KineticCharacter, CriticalityPhase
         
-        return Synthon(
+        return Imscription(
             name=name,
             dimensionality=dim,
             topology=Topology.HUB_NODE,  # Default for hybrid systems
@@ -279,6 +279,6 @@ class HybridSynthonAgent:
             granularity=Granularity.GLOBAL,
             interaction_grammar=InteractionGrammar.SELECTIVE,
             criticality_phase=CriticalityPhase.SUBCRITICAL,
-            description=description or f"Hybrid synthon: {', '.join(domains)}",
+            description=description or f"Hybrid imscription: {', '.join(domains)}",
             metadata={"domains": domains},
         )

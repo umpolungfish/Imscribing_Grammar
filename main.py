@@ -7,11 +7,11 @@ Provides two CLI entry points:
 
 Also exposes the agent framework for direct usage.
 """
-from imscrbgrmr.cli import main, syncon_alias
+from imscrbgrmr.cli import main, imscribe_alias
 
 # Export both CLI entry points
 imscrbgrmr = main
-imscribe = syncon_alias
+imscribe = imscribe_alias
 
 if __name__ == "__main__":
     # Default to main CLI

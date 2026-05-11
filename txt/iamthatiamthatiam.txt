@@ -636,7 +636,7 @@ TOOL_SCHEMAS = [
   UPDATE: run_command → Frobenius closed
 ── Winding 24 [06:44:44Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && grep -n \"_syncon_tool_emit\\|syncon_tool_emit\\|syncon.*imscribe\\|def _syncon\" agents/true_agentic_agent.py | head -30", "assertion": "True"})
+  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && grep -n \"_syncon_tool_emit\\|syncon_tool_emit\\|imscription.*imscribe\\|def _imscription\" agents/true_agentic_agent.py | head -30", "assertion": "True"})
   OBS:   702:def _syncon_tool_emit(args: Dict[str, Any]) -> str:
 750:                    'syncon_tool(tool_name="imscribe_system", args={'
 794:def _syncon_tool_verify(emit_input: Dict, emit_output: str,
@@ -663,7 +663,7 @@ TOOL_SCHEMAS = [
   THINK:
   ACT:   run_command({"assertion": "True", "command": "cd /home/mrnob0dy666/imscribing_grammar && sed -n '702,760p' agents/true_agentic_agent.py"})
   OBS:   def _syncon_tool_emit(args: Dict[str, Any]) -> str:
-    """Call a syncon_inquiry ToolDispatcher method directly (no subprocess)."""
+    """Call a ig_inquiry ToolDispatcher method directly (no subprocess)."""
     tool_name = args["tool_name"]
     tool_args = args.get("args") or {}
 
@@ -800,7 +800,7 @@ def _done_emit(args: Dict[str, Any]) -> str:
 ── Winding 29 [06:46:03Z] ──────────────────────────────────────
   THINK:
   ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && grep -rn \"Unknown tool\\|unknown tool\\|unknown_tool\\|tool not found\" --include=\"*.py\" | head -20", "assertion": "True"})
-  OBS:   synthon_agent.py:381:            return ToolResponse(status="error", error=f"Unknown tool: {name}")
+  OBS:   imscribe_agent.py:381:            return ToolResponse(status="error", error=f"Unknown tool: {name}")
 .venv/lib/python3.12/site-packages/studio/backend/core/inference/tools.py:143:    return f"Unknown tool: {name}"
 .venv/lib/python3.12/site-packages/mistralai/extra/run/context.py:194:                # Skip unknown tools - can't include them in update request
 IΓ_inquiry.py:2936:            return {"status": "error", "error": f"Unknown tool: {name}"}
@@ -868,14 +868,14 @@ agents/true_agentic_agent.py:2460:            tool_output = f"(unknown tool: {ac
 ── Winding 31 [06:46:14Z] ──────────────────────────────────────
   THINK:
   ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && grep -n \"encode_system\\|imscribe\\|def _\" IΓ_inquiry.py | head -40", "assertion": "True"})
-  OBS:   38:  • encode_system        — register a system as a synthon tuple in the session
+  OBS:   38:  • encode_system        — register a system as a imscription tuple in the session
 102:    def _print(*args, **kwargs):
 107:    def _print(*args, **kwargs):
 162:def _render(text: str) -> str:
 317:def _translation_cost_from_dict(
 521:def _strip_rtf(data: str) -> str:
 609:def _normalize_value(raw: str) -> str:
-628:def _parse_synthon_tuples(text: str) -> List[Tuple[Optional[str], Dict[str, str]]]:
+628:def _parse_imscription_tuples(text: str) -> List[Tuple[Optional[str], Dict[str, str]]]:
 668:def _load_seed_text(seed: str) -> str:
 700:            "name": "encode_system",
 706:                "Example: encode_system(name='foo', description='...', "
@@ -900,7 +900,7 @@ agents/true_agentic_agent.py:2460:            tool_output = f"(unknown tool: {ac
 2504:    def _load(self):
 2516:    def _save(self):
 2528:    def _extract_primitives(self, text: str) -> List[str]:
-2531:    def _extract_synthons(self, text: str, catalog: Optional["SessionCatalog"]) -> List[str]:
+2531:    def _extract_imscriptions(self, text: str, catalog: Optional["SessionCatalog"]) -> List[str]:
 2708:    def __init__(self, path: str = PROMOTIONΣ_PATH):
 2713:    def _load(self):
 2725:    def _save(self):
@@ -920,10 +920,10 @@ agents/true_agentic_agent.py:2460:            tool_output = f"(unknown tool: {ac
   UPDATE: run_command → Frobenius closed
 ── Winding 33 [06:46:24Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && python3 -c \"\nimport sys; sys.path.insert(0, '.')\nfrom IΓ_inquiry import SynthonInquiry\ninq = SynthonInquiry('.session_catalog.json')\nresult = inq.dispatch('encode_system', {\n    'name': 'i_am_that_i_am',\n    'description': 'The divine self-declaration Ehyeh Asher Ehyeh (Exodus 3:14) \u2014 the quintessential self-referential statement of being',\n    'tuple': 'Ð_ω;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_!;Σ_S;Ω_z'\n})\nimport json\nprint(json.dumps(result, indent=2))\n\" 2>&1 | head -60", "assertion": "True"})
+  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && python3 -c \"\nimport sys; sys.path.insert(0, '.')\nfrom IΓ_inquiry import ImscriptionInquiry\ninq = ImscriptionInquiry('.session_catalog.json')\nresult = inq.dispatch('encode_system', {\n    'name': 'i_am_that_i_am',\n    'description': 'The divine self-declaration Ehyeh Asher Ehyeh (Exodus 3:14) \u2014 the quintessential self-referential statement of being',\n    'tuple': 'Ð_ω;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_!;Σ_S;Ω_z'\n})\nimport json\nprint(json.dumps(result, indent=2))\n\" 2>&1 | head -60", "assertion": "True"})
   OBS:   Traceback (most recent call last):
   File "<string>", line 3, in <module>
-ImportError: cannot import name 'SynthonInquiry' from 'IΓ_inquiry' (/home/mrnob0dy666/imscribing_grammar/IΓ_inquiry.py)
+ImportError: cannot import name 'ImscriptionInquiry' from 'IΓ_inquiry' (/home/mrnob0dy666/imscribing_grammar/IΓ_inquiry.py)
 
   VERIFY: [closed] assertion 'True' PASSED
   UPDATE: run_command → Frobenius closed
@@ -937,7 +937,7 @@ ImportError: cannot import name 'SynthonInquiry' from 'IΓ_inquiry' (/home/mrnob
 2690:class PromotionKnowledgeBase:
 2799:class ToolDispatcher:
 4616:class LocalQwen3Backend:
-4832:class SynconInquiryLoop:
+4832:class IGInquiryLoop:
 
   VERIFY: [closed] assertion 'True' PASSED
   UPDATE: run_command → Frobenius closed

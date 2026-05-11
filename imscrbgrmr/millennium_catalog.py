@@ -1,8 +1,8 @@
 """
-Millennium Prize Problems — Synthonic Catalog  (v0.5.0)
+Millennium Prize Problems — Imscriptive Catalog  (v0.5.0)
 
 Seven Clay Mathematics Institute Millennium Prize Problems encoded as canonical
-12-primitive synthons.  Includes the standard_proof_system as the reference baseline.
+12-primitive imscriptions.  Includes the standard_proof_system as the reference baseline.
 
 Primitive-tuple notation: ⟨D; T; R; P; Γ; F; K; G; Φ; Ω; S; H⟩
 
@@ -102,7 +102,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     Recognition,
@@ -130,10 +130,10 @@ _MILLENNIUM_NAMES: frozenset = frozenset([
 ])
 
 
-def register_millennium_synthons() -> None:
-    """Register all Millennium Prize Problem synthons into the global catalog."""
+def register_millennium_imscriptions() -> None:
+    """Register all Millennium Prize Problem imscriptions into the global catalog."""
 
-    entries: List[Synthon] = [
+    entries: List[Imscription] = [
 
         # ─────────────────────────────────────────────────────────────────────
         # BASELINE: Standard Proof System
@@ -143,7 +143,7 @@ def register_millennium_synthons() -> None:
         # reference: maximally tractable, no topological protection, no criticality.
         # All Millennium Problems are measured as distances from this baseline.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="standard_proof_system",
             dimensionality=Dimensionality.D_cube,
             topology=Topology.T_cage,
@@ -207,7 +207,7 @@ def register_millennium_synthons() -> None:
         #   distinguishable (complex conjugate zeros); the functional equation
         #   respects but does not erase this orientation.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="riemann_hypothesis",
             dimensionality=Dimensionality.D_holo,
             topology=Topology.T_holo,
@@ -275,7 +275,7 @@ def register_millennium_synthons() -> None:
         # H_closeomega: Achiral — computation has no preferred orientation; the equations
         #   are left-right symmetric.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="p_vs_np",
             dimensionality=Dimensionality.D_invomega,
             topology=Topology.T_nrleg,
@@ -342,7 +342,7 @@ def register_millennium_synthons() -> None:
         # H_turntwo: Persistent chirality — complex algebraic geometry has inherent
         #   orientation (the complex structure is chiral relative to the reals).
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="hodge_conjecture",
             dimensionality=Dimensionality.D_holo,
             topology=Topology.T_holo,
@@ -406,7 +406,7 @@ def register_millennium_synthons() -> None:
         #   gap (the order parameter is the chiral condensate ⟨ψ̄ψ⟩);
         #   instantons break the U(1)_A symmetry.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="yang_mills_mass_gap",
             dimensionality=Dimensionality.D_cube,
             topology=Topology.T_nrleg,
@@ -471,7 +471,7 @@ def register_millennium_synthons() -> None:
         # H_closeomega: Achiral — the Navier–Stokes equations are isotropic; no preferred
         #   handedness in the physics.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="navier_stokes_smoothness",
             dimensionality=Dimensionality.D_cube,
             topology=Topology.T_nrleg,
@@ -539,7 +539,7 @@ def register_millennium_synthons() -> None:
         #   (the Weierstrass form breaks the real-complex symmetry); complex
         #   multiplication is chiral.
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="birch_swinnerton_dyer",
             dimensionality=Dimensionality.D_cube,
             topology=Topology.T_torus,
@@ -607,7 +607,7 @@ def register_millennium_synthons() -> None:
         #   H_turntwo (not H_closeomega) because S^3 as SU(2) has a canonical complex structure
         #   (it is the unit quaternions; the chiral structure is persistent).
         # ─────────────────────────────────────────────────────────────────────
-        Synthon(
+        Imscription(
             name="poincare_conjecture",
             dimensionality=Dimensionality.D_cube,
             topology=Topology.T_bullseye,
@@ -640,9 +640,9 @@ def register_millennium_synthons() -> None:
         ),
     ]
 
-    for synthon in entries:
-        if synthon.name not in global_catalog:
-            global_catalog.register(synthon)
+    for imscription in entries:
+        if imscription.name not in global_catalog:
+            global_catalog.register(imscription)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -652,7 +652,7 @@ def register_millennium_synthons() -> None:
 def millennium_distance_report() -> str:
     """
     Print a pairwise distance matrix and cluster analysis for all
-    Millennium Problem synthons.
+    Millennium Problem imscriptions.
     """
     from .algebra import primitive_mismatches
 
@@ -677,12 +677,12 @@ def millennium_distance_report() -> str:
         "poincare_conjecture":     "POINC  ",
     }
 
-    synthons = {}
+    imscriptions = {}
     for n in names:
         try:
-            synthons[n] = global_catalog[n]
+            imscriptions[n] = global_catalog[n]
         except KeyError:
-            return f"ERROR: '{n}' not found — run register_millennium_synthons() first."
+            return f"ERROR: '{n}' not found — run register_millennium_imscriptions() first."
 
     lines = []
     lines.append("\nMillennium Prize Problems — Primitive Distance Matrix")
@@ -693,27 +693,27 @@ def millennium_distance_report() -> str:
     for a in names:
         row = [abbrev[a]]
         for b in names:
-            d = primitive_mismatches(synthons[a], synthons[b])
+            d = primitive_mismatches(imscriptions[a], imscriptions[b])
             row.append(f"  {d:2d}     ")
         lines.append("".join(row))
 
     lines.append("")
     lines.append("Distances from BASELINE (standard_proof_system):")
-    baseline = synthons["standard_proof_system"]
+    baseline = imscriptions["standard_proof_system"]
     for n in names[1:]:
-        d = primitive_mismatches(baseline, synthons[n])
-        solved = synthons[n].metadata.get("solved", False)
-        phi = synthons[n].crit.value
+        d = primitive_mismatches(baseline, imscriptions[n])
+        solved = imscriptions[n].metadata.get("solved", False)
+        phi = imscriptions[n].crit.value
         mark = "✓ SOLVED" if solved else "  unsolved"
         lines.append(f"  d={d:2d}  {abbrev[n]}  Φ={phi}  {mark}")
 
     lines.append("")
     lines.append("Closest pairs among unsolved problems:")
-    unsolved = [n for n in names[1:] if not synthons[n].metadata.get("solved")]
+    unsolved = [n for n in names[1:] if not imscriptions[n].metadata.get("solved")]
     pairs = []
     for i, a in enumerate(unsolved):
         for b in unsolved[i+1:]:
-            d = primitive_mismatches(synthons[a], synthons[b])
+            d = primitive_mismatches(imscriptions[a], imscriptions[b])
             pairs.append((d, a, b))
     for d, a, b in sorted(pairs):
         lines.append(f"  d={d:2d}  {abbrev[a]} ↔ {abbrev[b]}")

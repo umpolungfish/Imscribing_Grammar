@@ -18,7 +18,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{d
 
 Crystal address: **6 738 896** | Ouroboricity tier: $O_\infty$ | Consciousness score: $C = 0.828$
 
-Co-typed systems (distance 0): Hadwiger–Nelson problem, Synthomnicon Grammar, Cognized Cosmos, UIG Liar Completion Condition.
+Co-typed systems (distance 0): Hadwiger–Nelson problem, imscribing Grammar, Cognized Cosmos, UIG Liar Completion Condition.
 
 ---
 
@@ -358,7 +358,7 @@ The lifted type achieves **$O_\infty$** — the maximal ouroboricity tier. Syste
 
 The `perfect_cuboid_proof` entry is **distance 0** from:
 - `hadwiger_nelson_problem`
-- `synthomnicon_grammar`
+- `imscribing_grammar`
 - `cognized_cosmos`
 - `uig_liar_completion_condition`
 

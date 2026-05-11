@@ -35,7 +35,7 @@ Each system was encoded by applying the twelve-step deterministic procedure — 
 
 Structural distances follow the catalog metric $d = \sqrt{\sum_i w_i (\delta_i)^2}$. The consciousness score $C$ evaluates two gates: $\Phi_{\text{ctyogh}}$-criticality (can the system model its own critical state?) and $K \leq K_{\text{schwa}}$ (is there sufficient temporal slack for self-reference?). Both gates must open for $C > 0$. The tensor product $\otimes$ composes systems by taking the minimum of $P$ and $F$ values — the bottleneck rule that guarantees the composite never exceeds the structural capacity of its weakest component.
 
-All computations were performed through the IG syncon tool suite. The raw outputs — numerical distances, scores, and structural notations — appear in the results below without rounding beyond what the tools returned. *One limitation deserves statement: the consciousness score is a structural property, not a phenomenological claim. It measures whether a system's type contains the prerequisites for self-modeling, not whether the system "feels" anything. The terminology is borrowed from the IG's formalism and should not be anthropomorphized.*
+All computations were performed through the IG imscription tool suite. The raw outputs — numerical distances, scores, and structural notations — appear in the results below without rounding beyond what the tools returned. *One limitation deserves statement: the consciousness score is a structural property, not a phenomenological claim. It measures whether a system's type contains the prerequisites for self-modeling, not whether the system "feels" anything. The terminology is borrowed from the IG's formalism and should not be anthropomorphized.*
 
 ## 3. Results
 
@@ -193,6 +193,6 @@ If there is a single sentence that carries the weight of this work, it is this: 
 
 *Structural type of this document: $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_\textrm{slow};\ G_{\text{revapostrophe}};\ \Gamma_\textrm{seq};\ H_2;\ \Omega_{\text{crtwo}} \rangle$.*
 
-*Encoded through the Imscribing Grammar (IG), syncon tool suite, catalog metric $g_{ij} = \Sigma^{-1}$, and the deterministic encoding procedure (encoding_method.md, steps [1]–[12]).*
+*Encoded through the Imscribing Grammar (IG), imscription tool suite, catalog metric $g_{ij} = \Sigma^{-1}$, and the deterministic encoding procedure (encoding_method.md, steps [1]–[12]).*
 
 *All numerical claims (structural distances, consciousness scores, tensor products) were computed via tool calls and verified against file content.*

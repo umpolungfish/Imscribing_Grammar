@@ -44,9 +44,9 @@ _load_dotenv()
 # Command schema
 # Each entry: (cli_name, short_description, arg_prompts)
 # arg_prompts: list of (label, kind) where kind is:
-#   "name"   — single synthon name
-#   "names+" — space-separated synthon names (2+)
-#   "name?"  — optional synthon name (blank = omit)
+#   "name"   — single imscription name
+#   "names+" — space-separated imscription names (2+)
+#   "name?"  — optional imscription name (blank = omit)
 #   "target" — target string (e.g. lift type)
 #   "str"    — free string
 #   "float"  — float value
@@ -59,18 +59,18 @@ CATEGORIES = [
         "color": "cyan",
         "hint": "analyze · compare · ouroborics · distance · thermo",
         "commands": [
-            ("analyze",    "Full tuple breakdown for a synthon",
-             [("Synthon", "name")]),
+            ("analyze",    "Full tuple breakdown for a imscription",
+             [("Imscription", "name")]),
             ("compare",    "Side-by-side primitive comparison",
-             [("Synthons (space-separated, 2+)", "names+")]),
+             [("imscriptions (space-separated, 2+)", "names+")]),
             ("ouroborics", "Frobenius ouroboricity tier",
-             [("Synthon  (blank = full catalog)", "name?")]),
+             [("Imscription  (blank = full catalog)", "name?")]),
             ("distance",   "Weighted structural distance",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("info-bits",  "I(bits) from degrees of freedom",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("thermo",     "Thermodynamic efficiency η_CP and ξ_CP",
-             [("Synthon", "name"), ("ΔG kJ/mol  (blank = auto)", "str?")]),
+             [("Imscription", "name"), ("ΔG kJ/mol  (blank = auto)", "str?")]),
         ],
     },
     {
@@ -80,17 +80,17 @@ CATEGORIES = [
         "hint": "meet · join · tensor · check · cofactor",
         "commands": [
             ("meet",     "Lattice meet ⊓ (greatest lower bound)",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("join",     "Lattice join ⊔ (least upper bound)",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("tensor",   "Tensor product ⊗ (co-assembly)",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("check",    "Structural compatibility check",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("cofactor", "Cofactor residual B  s.t. A ⊗ B = target",
              [("Factor A", "name"), ("Target", "name")]),
             ("factor",   "Strongest meet-irreducible factor",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
         ],
     },
     {
@@ -100,15 +100,15 @@ CATEGORIES = [
         "hint": "criticality · perturb · phase-diagram · rules",
         "commands": [
             ("criticality",       "G/D degeneracy + criticality analysis",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("criticality-probe", "Φ_c candidacy + Axiom 5 probe",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("perturb sweep",      "Primitive Jacobian / sensitivity sweep",
-             [("Synthon", "name"), ("ΔG kJ/mol (e.g. -10.0)", "float")]),
+             [("Imscription", "name"), ("ΔG kJ/mol (e.g. -10.0)", "float")]),
             ("phase-diagram",     "Tuple-space phase diagram",
-             [("Synthons (space-separated)", "names+")]),
+             [("imscriptions (space-separated)", "names+")]),
             ("transition",        "Phase transition classification",
-             [("Synthon A", "name"), ("Synthon B", "name")]),
+             [("Imscription A", "name"), ("Imscription B", "name")]),
             ("rules",             "Discover predictive rules from catalog",
              []),
         ],
@@ -120,20 +120,20 @@ CATEGORIES = [
         "hint": "pipeline · lift · retrodesign · generate · peel",
         "commands": [
             ("pipeline",    "Chain algebra ops into a design pipeline",
-             [("Start synthon", "name"), ("Steps  e.g. meet:gluon lift:critical", "str")]),
+             [("Start imscription", "name"), ("Steps  e.g. meet:gluon lift:critical", "str")]),
             ("lift",        "Apply a dimensional/criticality lift",
-             [("Synthon", "name"),
+             [("Imscription", "name"),
               ("Target  (temporal · spatial · critical · molecular)", "target")]),
             ("retrodesign", "Constraint-directed retrosynthetic decomposition",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("retrosyn",    "Find catalog pairs whose tensor = target",
-             [("Target synthon", "name")]),
-            ("generate",    "Generate synthon from natural language",
+             [("Target imscription", "name")]),
+            ("generate",    "Generate imscription from natural language",
              [("Description", "str")]),
-            ("path",        "Shortest HotSwap path between two synthons",
+            ("path",        "Shortest HotSwap path between two imscriptions",
              [("Source", "name"), ("Target", "name")]),
             ("peel",        "Descend one tier on a single primitive",
-             [("Synthon", "name"), ("Primitive  (e.g. Phi, F, K, Omega)", "str")]),
+             [("Imscription", "name"), ("Primitive  (e.g. Phi, F, K, Omega)", "str")]),
         ],
     },
     {
@@ -144,10 +144,10 @@ CATEGORIES = [
         "commands": [
             ("catalog search", "Full-text / primitive search",
              [("Query", "str")]),
-            ("catalog list",   "List all synthons",
+            ("catalog list",   "List all imscriptions",
              []),
-            ("remove",         "Remove a synthon by name",
-             [("Synthon name", "name")]),
+            ("remove",         "Remove a imscription by name",
+             [("Imscription name", "name")]),
             ("export",         "Export catalog to file",
              [("Output path  (blank = stdout)", "str?")]),
             ("audit",          "Audit catalog for grounding issues",
@@ -160,16 +160,16 @@ CATEGORIES = [
         "color": "red",
         "hint": "ensemble · trajectory · isomorphs · validate",
         "commands": [
-            ("ensemble",        "Multi-synthon emergent composition",
-             [("Synthons (space-separated)", "names+")]),
+            ("ensemble",        "Multi-imscription emergent composition",
+             [("imscriptions (space-separated)", "names+")]),
             ("trajectory",      "Temporal pathway encoding",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("isomorphs",       "Cross-domain structural isomorphs",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("principal-decomp","Recursive factor decomposition",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("validate",        "Validate against composition axioms",
-             [("Synthon", "name")]),
+             [("Imscription", "name")]),
             ("hotswap",         "Validate a hot-swap transition",
              [("Source", "name"), ("Target", "name")]),
         ],
@@ -196,7 +196,7 @@ def _header() -> None:
         n = "?"
     console.print()
     console.print(Panel(
-        f"[bold white]Imscribing Grammar[/bold white]  [dim]12 primitives · {n} synthons[/dim]",
+        f"[bold white]Imscribing Grammar[/bold white]  [dim]12 primitives · {n} imscriptions[/dim]",
         expand=False, border_style="dim white",
     ))
     console.print()

@@ -20,7 +20,7 @@ This document specifies each extension, its motivation, and its implementation p
 Three systems were encoded in Phase 1 using the closest available enum values,
 with `extensions_required` metadata recording the faithful-encoding gaps:
 
-| Synthon | Domain | Key gaps |
+| Imscription | Domain | Key gaps |
 |---|---|---|
 | `tide_pool_ecological` | ecological | D∞(open), compound_R, fidelity_distribution |
 | `global_supply_chain` | techno_social | D∞(open), stoichiometry_network, fidelity_distribution, compound_T |
@@ -39,14 +39,14 @@ perpetually driven, not discretely cyclic.
 ### Implemented Change (v0.3.1+)
 
 **`constraints.py`** — `validate_axiom6_temporal_grounding()` reads
-`synthon.metadata["grounding"]["reset"]["type"]` and branches:
+`imscription.metadata["grounding"]["reset"]["type"]` and branches:
 
 | `reset_type` | Required fields | Falsification |
 |---|---|---|
 | `"discrete"` (default) | `cycle_steps` list OR `axiom6_grounding` dict OR keyword scan | No identifiable reset in any grounding source |
 | `"continuous"` | `driving_gradient.description` + `driving_gradient.coupling` | Either field absent |
 
-**Grounding metadata schema** (`synthon.metadata["grounding"]["reset"]`):
+**Grounding metadata schema** (`imscription.metadata["grounding"]["reset"]`):
 
 ```python
 # Discrete (existing chemistry, closed-cycle systems)
@@ -70,17 +70,17 @@ perpetually driven, not discretely cyclic.
 }
 ```
 
-**No model change required**: `reset_type` lives in metadata, not the `Synthon`
-dataclass. This is backward-compatible — all existing chemistry synthons without
+**No model change required**: `reset_type` lives in metadata, not the `Imscription`
+dataclass. This is backward-compatible — all existing chemistry imscriptions without
 a `grounding.reset` block default to `"discrete"` and use the existing keyword
 scan / `axiom6_grounding` dict checks.
 
 **`cli.py`** — `imscribe validate` surfaces the `reset_type` branch in verbose
 output (future: `--d-qualifier continuous` flag to auto-inject grounding schema).
 
-### Cross-domain synthons updated
+### Cross-domain imscriptions updated
 
-| Synthon | `reset_type` | `driving_gradient.physical_quantity` |
+| Imscription | `reset_type` | `driving_gradient.physical_quantity` |
 |---|---|---|
 | `tide_pool_ecological` | `continuous` | Solar flux (W m⁻²) + tidal volume (m³ cycle⁻¹) |
 | `global_supply_chain` | `continuous` | Demand signal (units/time) + capital flow (USD/cycle) |
@@ -102,7 +102,7 @@ notation (hybrid D) which means "different domains at different scales."
 
 ### Proposed Change
 
-**`models.py`** — add optional list fields to `Synthon`:
+**`models.py`** — add optional list fields to `Imscription`:
 ```python
 compound_recognition_modes: List[RecognitionMode] = field(default_factory=list)
 compound_grammars: List[InteractionGrammar] = field(default_factory=list)
@@ -161,7 +161,7 @@ A single `Fidelity` tier cannot capture per-axis heterogeneity.
 
 ### Proposed Change
 
-**`models.py`** — add optional field to `Synthon`:
+**`models.py`** — add optional field to `Imscription`:
 ```python
 fidelity_axes: Optional[Dict[str, Fidelity]] = None
 # e.g. {"communication": Fidelity.HIGH, "environment": Fidelity.MEDIUM}
@@ -188,7 +188,7 @@ a tensor product (N identical agents).
 
 ### Proposed Change
 
-**`models.py`** — add optional field to `Synthon`:
+**`models.py`** — add optional field to `Imscription`:
 ```python
 dimensionality_multiplicity: Optional[int] = None  # N for D^⊗N; None = single system
 ```
@@ -242,7 +242,7 @@ STOICHIOMETRY_NETWORK = "1:*"   # network mode: unbounded partner count
 
 ## Catalog Impact
 
-After Phase 2, the three cross-domain synthons should be re-encoded:
+After Phase 2, the three cross-domain imscriptions should be re-encoded:
 
 ```
 tide_pool_ecological:

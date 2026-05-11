@@ -27,7 +27,7 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Tuple
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     Fidelity,
@@ -79,7 +79,7 @@ class HotSwapReport:
 
     Attributes:
         decision:           APPROVED / CONDITIONAL / BLOCKED
-        target_name:        Name of the synthon being replaced (S_old)
+        target_name:        Name of the imscription being replaced (S_old)
         candidate_name:     Name of the proposed replacement (S_new)
         xi_old:             ξ_CP of S_old (nats)
         xi_new:             ξ_CP of S_new (nats)
@@ -152,7 +152,7 @@ class HotSwapReport:
 
 class HotSwapEngine:
     """
-    Enforces the Synthonic HotSwap protocol from IG_HOTSWAP.md.
+    Enforces the Imscriptive HotSwap protocol from IG_HOTSWAP.md.
 
     Usage::
 
@@ -176,8 +176,8 @@ class HotSwapEngine:
 
     def validate_candidate(
         self,
-        target: Synthon,
-        candidate: Synthon,
+        target: Imscription,
+        candidate: Imscription,
         delta_g: float = -12.0,
         allow_defect_fraction: Optional[float] = None,
         new_pathway_count: int = 0,
@@ -187,7 +187,7 @@ class HotSwapEngine:
         Run all HotSwap compatibility checks (Steps 3–4 of the protocol).
 
         Args:
-            target:               The synthon to be replaced (S_old).
+            target:               The imscription to be replaced (S_old).
             candidate:            The proposed replacement (S_new).
             delta_g:              ΔG basis for ξ_CP computation (kJ/mol).
             allow_defect_fraction: For G_ℵ assemblies only — relax S matching
@@ -307,8 +307,8 @@ class HotSwapEngine:
 
     def run_protocol(
         self,
-        target: Synthon,
-        candidates: List[Synthon],
+        target: Imscription,
+        candidates: List[Imscription],
         delta_g: float = -12.0,
         allow_defect_fraction: Optional[float] = None,
         top_n: int = 5,
@@ -320,7 +320,7 @@ class HotSwapEngine:
         Blocked candidates are included at the end, sorted by violation count.
 
         Args:
-            target:               S_old synthon.
+            target:               S_old imscription.
             candidates:           List of S_new candidates to evaluate.
             delta_g:              ΔG basis for ξ_CP computation.
             allow_defect_fraction: Defect tolerance for G_ℵ assemblies.
@@ -360,8 +360,8 @@ class HotSwapEngine:
 
     def _check_primitives(
         self,
-        target: Synthon,
-        candidate: Synthon,
+        target: Imscription,
+        candidate: Imscription,
         allow_defect_fraction: Optional[float],
     ) -> List[PrimitiveCheckResult]:
         checks: List[PrimitiveCheckResult] = []
@@ -389,7 +389,7 @@ class HotSwapEngine:
 
         return checks
 
-    def _check_D(self, target: Synthon, candidate: Synthon) -> PrimitiveCheckResult:
+    def _check_D(self, target: Imscription, candidate: Imscription) -> PrimitiveCheckResult:
         old = target.dimensionality.value
         new = candidate.dimensionality.value
         passed = target.dimensionality == candidate.dimensionality
@@ -399,7 +399,7 @@ class HotSwapEngine:
         )
         return PrimitiveCheckResult("D", passed, old, new, note)
 
-    def _check_T(self, target: Synthon, candidate: Synthon) -> PrimitiveCheckResult:
+    def _check_T(self, target: Imscription, candidate: Imscription) -> PrimitiveCheckResult:
         old = target.topology.value
         new = candidate.topology.value
         passed = target.topology == candidate.topology
@@ -411,8 +411,8 @@ class HotSwapEngine:
 
     def _check_S(
         self,
-        target: Synthon,
-        candidate: Synthon,
+        target: Imscription,
+        candidate: Imscription,
         allow_defect_fraction: Optional[float],
     ) -> PrimitiveCheckResult:
         old = target.stoichiometry or "unspecified"
@@ -436,7 +436,7 @@ class HotSwapEngine:
             # Cannot enforce check without data; treat as warning
             return PrimitiveCheckResult(
                 "S", True, old, new,
-                "Stoichiometry not specified on one/both synthons — check skipped."
+                "Stoichiometry not specified on one/both imscriptions — check skipped."
             )
 
         passed = old == new
@@ -446,7 +446,7 @@ class HotSwapEngine:
         )
         return PrimitiveCheckResult("S", passed, old, new, note)
 
-    def _check_R(self, target: Synthon, candidate: Synthon) -> PrimitiveCheckResult:
+    def _check_R(self, target: Imscription, candidate: Imscription) -> PrimitiveCheckResult:
         from .models import RecognitionMode
         old = target.recognition_mode.value
         new = candidate.recognition_mode.value
@@ -508,7 +508,7 @@ class HotSwapEngine:
             note = _MECHANISM_CHANGE_NOTES.get(swap_pair, "")
         return PrimitiveCheckResult("R", passed, old, new, note)
 
-    def _check_P(self, target: Synthon, candidate: Synthon) -> PrimitiveCheckResult:
+    def _check_P(self, target: Imscription, candidate: Imscription) -> PrimitiveCheckResult:
         old = target.polarity.value
         new = candidate.polarity.value
         passed = target.polarity == candidate.polarity
@@ -521,7 +521,7 @@ class HotSwapEngine:
         # Treat P mismatch as conditional (warning), not hard block
         return PrimitiveCheckResult("P", True, old, new, note if not passed else "")
 
-    def _check_F(self, target: Synthon, candidate: Synthon) -> PrimitiveCheckResult:
+    def _check_F(self, target: Imscription, candidate: Imscription) -> PrimitiveCheckResult:
         old = target.fidelity
         new = candidate.fidelity
         old_idx = _FIDELITY_ORDER.index(old)
@@ -533,7 +533,7 @@ class HotSwapEngine:
         )
         return PrimitiveCheckResult("F", passed, old.value, new.value, note)
 
-    def _check_K(self, candidate: Synthon, target: Synthon = None) -> PrimitiveCheckResult:
+    def _check_K(self, candidate: Imscription, target: Imscription = None) -> PrimitiveCheckResult:
         k = candidate.kinetic_character
         accessible = {KineticCharacter.FAST, KineticCharacter.MODERATE}
         passed = k in accessible
@@ -550,7 +550,7 @@ class HotSwapEngine:
     # Grounding check (§3 Step 5, §4 Grounding Drift failure mode)        #
     # ------------------------------------------------------------------ #
 
-    def _check_grounding(self, candidate: Synthon) -> Dict[str, Any]:
+    def _check_grounding(self, candidate: Imscription) -> Dict[str, Any]:
         meta = getattr(candidate, "metadata", None) or {}
         status = meta.get("grounding_status", "unverified")
         passed = status in GROUNDING_REQUIRED
@@ -568,9 +568,9 @@ class HotSwapEngine:
     # Thermodynamic helpers                                                #
     # ------------------------------------------------------------------ #
 
-    def _compute_xi(self, synthon: Synthon, delta_g: float) -> Optional[float]:
+    def _compute_xi(self, imscription: Imscription, delta_g: float) -> Optional[float]:
         try:
-            result = compute_eta_CP(synthon, delta_g=delta_g)
+            result = compute_eta_CP(imscription, delta_g=delta_g)
             return result.xi_CP
         except Exception:
             return None
@@ -579,7 +579,7 @@ class HotSwapEngine:
     # Varma probe                                                          #
     # ------------------------------------------------------------------ #
 
-    def _try_varma_score(self, candidate: Synthon) -> Optional[float]:
+    def _try_varma_score(self, candidate: Imscription) -> Optional[float]:
         try:
             from .varma_probe import degeneracy_strength
             score, _ = degeneracy_strength(candidate)
@@ -659,10 +659,10 @@ def validate_hotswap(
 
     target = global_catalog.get(target_name)
     if target is None:
-        raise KeyError(f"Synthon '{target_name}' not found in catalog.")
+        raise KeyError(f"Imscription '{target_name}' not found in catalog.")
     candidate = global_catalog.get(candidate_name)
     if candidate is None:
-        raise KeyError(f"Synthon '{candidate_name}' not found in catalog.")
+        raise KeyError(f"Imscription '{candidate_name}' not found in catalog.")
 
     engine = HotSwapEngine()
     return engine.validate_candidate(

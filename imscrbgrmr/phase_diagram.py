@@ -3,7 +3,7 @@ Tuple-Space Phase Diagram — imscrbgrmr/phase_diagram.py  (v0.4.0)
 
 Extracts phase transition signals from tuple distances.
 
-Each synthon is a point in the eleven-dimensional primitive space.
+Each imscription is a point in the eleven-dimensional primitive space.
 Large jumps in pairwise distance correspond to phase boundaries in that space.
 The module computes:
 
@@ -31,7 +31,7 @@ CLI:
 
 Python API:
   from imscrbgrmr.phase_diagram import build_phase_map, PhaseDiagram
-  pd = build_phase_map(synthon_names)
+  pd = build_phase_map(imscription_names)
   pd.print_report()
   pd.plot(save_path="phase_map.png")
 """
@@ -45,7 +45,7 @@ import numpy as np
 from scipy.cluster.hierarchy import linkage, fcluster
 from scipy.spatial.distance import squareform
 
-from .models import Synthon, TopoIndex, KineticCharacter, Granularity, Fidelity, Dimensionality
+from .models import Imscription, TopoIndex, KineticCharacter, Granularity, Fidelity, Dimensionality
 from .algebra import tuple_distance, mahalanobis_distance
 from .registry import global_catalog
 from .varma_probe import score_phi_c_candidacy
@@ -74,7 +74,7 @@ _OMEGA_LABEL = {
 }
 
 
-def _is_factor8(s: Synthon) -> bool:
+def _is_factor8(s: Imscription) -> bool:
     """Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞."""
     return (
         s.granularity == Granularity.GLOBAL
@@ -90,7 +90,7 @@ def _is_factor8(s: Synthon) -> bool:
 
 @dataclass
 class PhaseCandidate:
-    """A pair of synthons that defines a phase boundary candidate."""
+    """A pair of imscriptions that defines a phase boundary candidate."""
     name_a: str
     name_b: str
     distance: float
@@ -102,19 +102,19 @@ class PhaseCandidate:
 @dataclass
 class PhaseDiagram:
     """
-    Full phase-space analysis for a set of synthons.
+    Full phase-space analysis for a set of imscriptions.
 
     Attributes:
-        synthon_names: Ordered list of names (rows/cols of distance_matrix)
+        imscription_names: Ordered list of names (rows/cols of distance_matrix)
         distance_matrix: N×N numpy array of pairwise tuple distances
         candidates: Ranked phase boundary candidates (largest Δd first)
         linkage_matrix: Ward linkage matrix from scipy
         mds_coords: N×2 MDS coordinates (if computed)
         factor8_flags: bool list — True where Factor 8 fires
-        omega_values: list of TopoIndex (or None) for each synthon
+        omega_values: list of TopoIndex (or None) for each imscription
         k_trap_flags: bool list — True where kinetic character is K_teshlig
     """
-    synthon_names: List[str]
+    imscription_names: List[str]
     distance_matrix: np.ndarray
     candidates: List[PhaseCandidate]
     linkage_matrix: np.ndarray
@@ -127,7 +127,7 @@ class PhaseDiagram:
     # ------------------------------------------------------------------ #
     def print_report(self) -> None:
         """Print a human-readable phase diagram report."""
-        n = len(self.synthon_names)
+        n = len(self.imscription_names)
         print("=" * 72)
         print("  TUPLE-SPACE PHASE DIAGRAM REPORT")
         print("=" * 72)
@@ -135,9 +135,9 @@ class PhaseDiagram:
 
         # Distance matrix
         print("── Distance Matrix ──")
-        header = f"{'':28}" + "".join(f"{s[:7]:>8}" for s in self.synthon_names)
+        header = f"{'':28}" + "".join(f"{s[:7]:>8}" for s in self.imscription_names)
         print(header)
-        for i, a in enumerate(self.synthon_names):
+        for i, a in enumerate(self.imscription_names):
             row = f"{a:<28}" + "".join(
                 f"{'---':>8}" if i == j else f"{self.distance_matrix[i, j]:>8.2f}"
                 for j in range(n)
@@ -148,8 +148,8 @@ class PhaseDiagram:
         # Phase boundary candidates
         print("── Phase Boundary Candidates (ranked by Δd) ──")
         for c in self.candidates[:10]:
-            flag8_a = "★" if self.factor8_flags[self.synthon_names.index(c.name_a)] else " "
-            flag8_b = "★" if self.factor8_flags[self.synthon_names.index(c.name_b)] else " "
+            flag8_a = "★" if self.factor8_flags[self.imscription_names.index(c.name_a)] else " "
+            flag8_b = "★" if self.factor8_flags[self.imscription_names.index(c.name_b)] else " "
             print(
                 f"  [{c.rank:2d}] {c.boundary_type:>12}  "
                 f"{c.name_a}{flag8_a} ↔ {c.name_b}{flag8_b}  "
@@ -159,14 +159,14 @@ class PhaseDiagram:
         print()
 
         # Factor 8 summary
-        f8 = [n for n, f in zip(self.synthon_names, self.factor8_flags) if f]
-        print(f"── Factor 8 (quantum criticality): {len(f8)} synthons ──")
+        f8 = [n for n, f in zip(self.imscription_names, self.factor8_flags) if f]
+        print(f"── Factor 8 (quantum criticality): {len(f8)} imscriptions ──")
         for name in f8:
             print(f"  ★ {name}")
         print()
 
         # K universality
-        k_trap = [n for n, f in zip(self.synthon_names, self.k_trap_flags) if f]
+        k_trap = [n for n, f in zip(self.imscription_names, self.k_trap_flags) if f]
         print(f"── K_teshlig → K_lambda universal cost (+2.303 nats) candidates: {len(k_trap)} ──")
         for name in k_trap:
             print(f"  ○ {name}")
@@ -176,7 +176,7 @@ class PhaseDiagram:
         print("── Topological Class (Ω) ──")
         from collections import defaultdict
         by_omega: Dict[Any, List[str]] = defaultdict(list)
-        for name, omega in zip(self.synthon_names, self.omega_values):
+        for name, omega in zip(self.imscription_names, self.omega_values):
             by_omega[omega].append(name)
         omega_order = [None, TopoIndex.TRIVIAL, TopoIndex.Z2_CLASS,
                        TopoIndex.Z_CLASS, TopoIndex.CHERN, TopoIndex.NON_ABELIAN]
@@ -192,7 +192,7 @@ class PhaseDiagram:
     def to_dict(self) -> dict:
         """Return JSON-serializable representation."""
         return {
-            "synthons": self.synthon_names,
+            "imscriptions": self.imscription_names,
             "distance_matrix": self.distance_matrix.tolist(),
             "phase_candidates": [
                 {
@@ -202,15 +202,15 @@ class PhaseDiagram:
                     "distance": c.distance,
                     "boundary_type": c.boundary_type,
                     "primitives_differ": c.primitives_differ,
-                    "factor8_a": self.factor8_flags[self.synthon_names.index(c.name_a)],
-                    "factor8_b": self.factor8_flags[self.synthon_names.index(c.name_b)],
+                    "factor8_a": self.factor8_flags[self.imscription_names.index(c.name_a)],
+                    "factor8_b": self.factor8_flags[self.imscription_names.index(c.name_b)],
                 }
                 for c in self.candidates
             ],
-            "factor8": [n for n, f in zip(self.synthon_names, self.factor8_flags) if f],
-            "k_trap": [n for n, f in zip(self.synthon_names, self.k_trap_flags) if f],
+            "factor8": [n for n, f in zip(self.imscription_names, self.factor8_flags) if f],
+            "k_trap": [n for n, f in zip(self.imscription_names, self.k_trap_flags) if f],
             "omega": {n: (o.value if o else None) for n, o in
-                      zip(self.synthon_names, self.omega_values)},
+                      zip(self.imscription_names, self.omega_values)},
             "mds_coords": self.mds_coords.tolist() if self.mds_coords is not None else None,
         }
 
@@ -240,7 +240,7 @@ class PhaseDiagram:
         ax1 = axes[0]
         scipy_dendrogram(
             self.linkage_matrix,
-            labels=self.synthon_names,
+            labels=self.imscription_names,
             ax=ax1,
             leaf_rotation=40,
             leaf_font_size=13,
@@ -263,8 +263,8 @@ class PhaseDiagram:
         # Annotate Factor-8 leaf labels with ★
         for label in ax1.get_xticklabels():
             name = label.get_text()
-            if name in self.synthon_names:
-                idx = self.synthon_names.index(name)
+            if name in self.imscription_names:
+                idx = self.imscription_names.index(name)
                 if self.factor8_flags[idx]:
                     label.set_text(f"★ {name}")
                     label.set_color("#d62728")
@@ -285,7 +285,7 @@ class PhaseDiagram:
         ax2 = axes[1]
         if self.mds_coords is not None:
             coords = self.mds_coords
-            for idx, name in enumerate(self.synthon_names):
+            for idx, name in enumerate(self.imscription_names):
                 omega = self.omega_values[idx]
                 color = _OMEGA_COLOR.get(omega, "#888888")
                 is_f8 = self.factor8_flags[idx]
@@ -316,8 +316,8 @@ class PhaseDiagram:
 
             # Draw lines between top-5 phase boundary candidates
             for c in self.candidates[:5]:
-                ia = self.synthon_names.index(c.name_a)
-                ib = self.synthon_names.index(c.name_b)
+                ia = self.imscription_names.index(c.name_a)
+                ib = self.imscription_names.index(c.name_b)
                 alpha = 0.15 + 0.07 * (5 - c.rank)
                 ax2.plot(
                     [coords[ia, 0], coords[ib, 0]],
@@ -386,7 +386,7 @@ class PhaseDiagram:
 # Core analysis function
 # ---------------------------------------------------------------------------
 
-def _primitive_diff_labels(a: Synthon, b: Synthon) -> List[str]:
+def _primitive_diff_labels(a: Imscription, b: Imscription) -> List[str]:
     """Return list of primitive names where a and b differ."""
     diffs = []
     checks = [
@@ -428,17 +428,17 @@ def _mds_2d(D: np.ndarray) -> np.ndarray:
 
 
 def build_phase_map(
-    synthon_names: Optional[List[str]] = None,
+    imscription_names: Optional[List[str]] = None,
     catalog: Optional[Any] = None,
     metric: str = "diagonal",
 ) -> PhaseDiagram:
     """
-    Build a PhaseDiagram for the given synthon names.
+    Build a PhaseDiagram for the given imscription names.
 
     Args:
-        synthon_names: list of catalog names; defaults to the eight quantum/topological
-                       synthons registered by register_quantum_synthons().
-        catalog: SynthonCatalog to use; defaults to global_catalog.
+        imscription_names: list of catalog names; defaults to the eight quantum/topological
+                       imscriptions registered by register_quantum_imscriptions().
+        catalog: ImscriptionCatalog to use; defaults to global_catalog.
 
     Returns:
         PhaseDiagram instance with all computed fields.
@@ -456,11 +456,11 @@ def build_phase_map(
         "fqh_moore_read",
         "topological_insulator_bi2se3",
     ]
-    if synthon_names is None:
-        synthon_names = [n for n in _DEFAULT_QUANTUM if n in catalog._synthons]
+    if imscription_names is None:
+        imscription_names = [n for n in _DEFAULT_QUANTUM if n in catalog._imscriptions]
 
-    synthons = [catalog._synthons[n] for n in synthon_names]
-    n = len(synthons)
+    imscriptions = [catalog._imscriptions[n] for n in imscription_names]
+    n = len(imscriptions)
 
     # 1. Distance matrix
     use_mahalanobis = metric == "mahalanobis"
@@ -468,9 +468,9 @@ def build_phase_map(
     for i in range(n):
         for j in range(i + 1, n):
             if use_mahalanobis:
-                d = mahalanobis_distance(synthons[i], synthons[j])
+                d = mahalanobis_distance(imscriptions[i], imscriptions[j])
             else:
-                d = tuple_distance(synthons[i], synthons[j])
+                d = tuple_distance(imscriptions[i], imscriptions[j])
             D[i, j] = D[j, i] = d
 
     # 2. Phase boundary candidates
@@ -494,12 +494,12 @@ def build_phase_map(
         else:
             btype = "minor"
         candidates.append(PhaseCandidate(
-            name_a=synthon_names[i],
-            name_b=synthon_names[j],
+            name_a=imscription_names[i],
+            name_b=imscription_names[j],
             distance=dist,
             rank=rank,
             boundary_type=btype,
-            primitives_differ=_primitive_diff_labels(synthons[i], synthons[j]),
+            primitives_differ=_primitive_diff_labels(imscriptions[i], imscriptions[j]),
         ))
 
     # 3. Linkage (Ward on condensed distance matrix)
@@ -510,13 +510,13 @@ def build_phase_map(
     # 4. MDS
     mds = _mds_2d(D) if n >= 3 else None
 
-    # 5. Per-synthon annotations
-    f8_flags = [_is_factor8(s) for s in synthons]
-    omega_vals = [s.topo_index for s in synthons]
-    k_trap_flags = [s.kinetic_character == KineticCharacter.TRAP for s in synthons]
+    # 5. Per-imscription annotations
+    f8_flags = [_is_factor8(s) for s in imscriptions]
+    omega_vals = [s.topo_index for s in imscriptions]
+    k_trap_flags = [s.kinetic_character == KineticCharacter.TRAP for s in imscriptions]
 
     return PhaseDiagram(
-        synthon_names=synthon_names,
+        imscription_names=imscription_names,
         distance_matrix=D,
         candidates=candidates,
         linkage_matrix=Z,

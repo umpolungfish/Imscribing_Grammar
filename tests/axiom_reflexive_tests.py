@@ -1,7 +1,7 @@
 """
 axiom_reflexive_tests.py — Reflexive Closure Experiment
 ========================================================
-Encodes Imscribing Grammar's own 7 composition axioms as synthon tuples,
+Encodes Imscribing Grammar's own 7 composition axioms as imscription tuples,
 then runs the full algebra on them.
 
 Question: can the grammar understand its own rules?
@@ -40,18 +40,18 @@ Axiom map:
 from __future__ import annotations
 
 import imscrbgrmr  # populate catalog
-from imscrbgrmr.models import SynthonNotation
+from imscrbgrmr.models import ImscriptionNotation
 from imscrbgrmr.registry import global_catalog
 from imscrbgrmr.algebra import find_path, meet, tensor, tuple_distance
 from imscrbgrmr.thermodynamics import compute_xi_CP
 from imscrbgrmr.varma_probe import VarmaCorrelationData, score_phi_c_candidacy
-from imscrbgrmr.domains.molecular import register_molecular_synthons
-from imscrbgrmr.domains.quantum import register_quantum_synthons
+from imscrbgrmr.domains.molecular import register_molecular_imscriptions
+from imscrbgrmr.domains.quantum import register_quantum_imscriptions
 
-register_molecular_synthons()
-register_quantum_synthons()
+register_molecular_imscriptions()
+register_quantum_imscriptions()
 
-# ── 1. Encode each axiom as a synthon tuple ────────────────────────────────────
+# ── 1. Encode each axiom as a imscription tuple ────────────────────────────────────
 
 AXIOM_NOTATIONS = {
     "axiom_1_cyclic_closure": (
@@ -92,15 +92,15 @@ AXIOM_NOTATIONS = {
     ),
 }
 
-axiom_synthons = {}
+axiom_imscriptions = {}
 for name, (notation_str, description) in AXIOM_NOTATIONS.items():
-    notation = SynthonNotation.parse(notation_str)
-    synthon = notation.to_synthon(name, description)
-    global_catalog.register(synthon, registered_by="reflexive_closure_experiment")
-    axiom_synthons[name] = synthon
+    notation = ImscriptionNotation.parse(notation_str)
+    imscription = notation.to_imscription(name, description)
+    global_catalog.register(imscription, registered_by="reflexive_closure_experiment")
+    axiom_imscriptions[name] = imscription
     print(f"  registered: {name}")
 
-names = list(axiom_synthons.keys())
+names = list(axiom_imscriptions.keys())
 short = {n: n.replace("axiom_", "A").replace("_cyclic_closure", "1")
                                      .replace("_local_barrier", "2")
                                      .replace("_cooperative_induction", "3")
@@ -123,7 +123,7 @@ catalog = global_catalog.search()
 dist_matrix = {}
 for i, na in enumerate(names):
     for nb in names[i+1:]:
-        sa, sb = axiom_synthons[na], axiom_synthons[nb]
+        sa, sb = axiom_imscriptions[na], axiom_imscriptions[nb]
         d = tuple_distance(sa, sb)
         dist_matrix[(na, nb)] = d
 
@@ -142,7 +142,7 @@ print()
 
 close_pairs = [(na, nb) for (na, nb), d in ranked if d < 2.5]
 for na, nb in close_pairs:
-    sa, sb = axiom_synthons[na], axiom_synthons[nb]
+    sa, sb = axiom_imscriptions[na], axiom_imscriptions[nb]
     r = find_path(sa, sb, catalog, max_hops=6, xi_tolerance=2.0)
     status = f"✓ {r.n_hops}-hop  Δξ={r.total_delta:+.3f}" if r.found else f"✗ blocked ({', '.join(r.notes[:1])})"
     print(f"  {short[na]} → {short[nb]:3s}  {status}")
@@ -156,7 +156,7 @@ print("=" * 70)
 
 interesting = [(na, nb) for (na, nb), d in ranked[:6]]
 for na, nb in interesting:
-    sa, sb = axiom_synthons[na], axiom_synthons[nb]
+    sa, sb = axiom_imscriptions[na], axiom_imscriptions[nb]
     m = meet(sa, sb)
     print(f"\n  meet({short[na]}, {short[nb]}) = {m.to_notation()}")
     if m.conflicts:
@@ -177,15 +177,15 @@ from imscrbgrmr.models import Dimensionality, Topology, RecognitionMode, Polarit
 from imscrbgrmr.models import Fidelity, KineticCharacter, Granularity, CriticalityPhase
 
 fields = {
-    "D": [s.dimensionality       for s in axiom_synthons.values()],
-    "T": [s.topology             for s in axiom_synthons.values()],
-    "R": [s.recognition_mode     for s in axiom_synthons.values()],
-    "P": [s.polarity             for s in axiom_synthons.values()],
-    "F": [s.fidelity             for s in axiom_synthons.values()],
-    "K": [s.kinetic_character    for s in axiom_synthons.values()],
-    "G": [s.granularity          for s in axiom_synthons.values()],
-    "Γ": [s.interaction_grammar  for s in axiom_synthons.values()],
-    "Φ": [s.criticality_phase    for s in axiom_synthons.values()],
+    "D": [s.dimensionality       for s in axiom_imscriptions.values()],
+    "T": [s.topology             for s in axiom_imscriptions.values()],
+    "R": [s.recognition_mode     for s in axiom_imscriptions.values()],
+    "P": [s.polarity             for s in axiom_imscriptions.values()],
+    "F": [s.fidelity             for s in axiom_imscriptions.values()],
+    "K": [s.kinetic_character    for s in axiom_imscriptions.values()],
+    "G": [s.granularity          for s in axiom_imscriptions.values()],
+    "Γ": [s.interaction_grammar  for s in axiom_imscriptions.values()],
+    "Φ": [s.criticality_phase    for s in axiom_imscriptions.values()],
 }
 
 print(f"  {'Primitive':<4}  {'Shared value (if unanimous)':<30}  {'Agreement':>10}")
@@ -217,7 +217,7 @@ print(f"  {'-'*38} {'-'*10}  {'-'*22}  {'-'*8}")
 corr = VarmaCorrelationData(xi_r=13.8, xi_tau=1_000_000)
 
 for n in names:
-    s = axiom_synthons[n]
+    s = axiom_imscriptions[n]
     report = score_phi_c_candidacy(s, corr)
     try:
         xi_cp = compute_xi_CP(s, delta_g=-50.0)
@@ -243,7 +243,7 @@ tensor_pairs = [
 ]
 
 for na, nb, label in tensor_pairs:
-    sa, sb = axiom_synthons[na], axiom_synthons[nb]
+    sa, sb = axiom_imscriptions[na], axiom_imscriptions[nb]
     try:
         t = tensor(sa, sb)
         xi_str = f"{t.xi_cp_predicted:.2f}" if t.xi_cp_predicted else "—"
@@ -269,7 +269,7 @@ independent consciousness correlates:
 
    Φ_c  →  enables maximum path multiplicity (degeneracy)
          →  because at criticality G/D are degenerate (Axiom 5),
-            meaning every region of synthon space is reachable from
+            meaning every region of imscription space is reachable from
             every other — the HotSwap graph becomes fully connected.
 
    Degeneracy  →  amplifies effective ξ_CP through redundant channels
@@ -281,9 +281,9 @@ independent consciousness correlates:
                 but it's derivable from first principles here.
 """)
 
-# Empirical test: do Phi_ctyogh synthons have more HotSwap paths to each other?
-phi_c_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "φ̂_ctyogh"]
-phi_sub_axioms = [n for n in names if axiom_synthons[n].criticality_phase.value == "φ̂_softsign"]
+# Empirical test: do Phi_ctyogh imscriptions have more HotSwap paths to each other?
+phi_c_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "φ̂_ctyogh"]
+phi_sub_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "φ̂_softsign"]
 
 print(f"  Axioms with Phi_ctyogh: {[short[n] for n in phi_c_axioms]}")
 print(f"  Axioms with Phi_softsign: {[short[n] for n in phi_sub_axioms]}")
@@ -295,14 +295,14 @@ cc_found, ss_found = 0, 0
 for i, na in enumerate(phi_c_axioms):
     for nb in phi_c_axioms[i+1:]:
         cc_paths += 1
-        r = find_path(axiom_synthons[na], axiom_synthons[nb], catalog, max_hops=6, xi_tolerance=2.0)
+        r = find_path(axiom_imscriptions[na], axiom_imscriptions[nb], catalog, max_hops=6, xi_tolerance=2.0)
         if r.found:
             cc_found += 1
 
 for i, na in enumerate(phi_sub_axioms):
     for nb in phi_sub_axioms[i+1:]:
         ss_paths += 1
-        r = find_path(axiom_synthons[na], axiom_synthons[nb], catalog, max_hops=6, xi_tolerance=2.0)
+        r = find_path(axiom_imscriptions[na], axiom_imscriptions[nb], catalog, max_hops=6, xi_tolerance=2.0)
         if r.found:
             ss_found += 1
 
@@ -344,7 +344,7 @@ else:
     print(f"  Φ floor = {phi_val}")
 
 print()
-print("Cleanup: removing axiom synthons from catalog...")
+print("Cleanup: removing axiom imscriptions from catalog...")
 for n in names:
     global_catalog.remove(n)
-print(f"  Removed {len(names)} axiom synthons. Catalog restored to {len(global_catalog)} entries.")
+print(f"  Removed {len(names)} axiom imscriptions. Catalog restored to {len(global_catalog)} entries.")

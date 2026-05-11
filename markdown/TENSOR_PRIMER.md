@@ -11,13 +11,13 @@ header-includes:
 
 *v0.4.57 · 2026-03-27*
 
-> **Lean formalization status:** The operations defined in this document — meet ($\sqcap$), join ($\sqcup$), tensor ($\otimes$), and weighted distance — are part of the Imscribing Grammar grammatical algebra and are used throughout the inquiry tools. Lean instances implementing these operations on the `Synthon` type (e.g. `MeetSemilattice`, `BoundedLattice`, tensor product) are planned future work and are not yet present in `Primitives/`. The `primitiveMismatches` function in `Synthon.lean` provides the Hamming count underlying the distance; the full algebraic infrastructure is in progress.
+> **Lean formalization status:** The operations defined in this document — meet ($\sqcap$), join ($\sqcup$), tensor ($\otimes$), and weighted distance — are part of the Imscribing Grammar grammatical algebra and are used throughout the inquiry tools. Lean instances implementing these operations on the `Imscription` type (e.g. `MeetSemilattice`, `BoundedLattice`, tensor product) are planned future work and are not yet present in `Primitives/`. The `primitiveMismatches` function in `Imscription.lean` provides the Hamming count underlying the distance; the full algebraic infrastructure is in progress.
 
 ---
 
 ## 0. The Tuple
 
-Every entity in the grammar is encoded as a **synthon**: an ordered 12-primitive tuple
+Every entity in the grammar is encoded as a **imscription**: an ordered 12-primitive tuple
 
 $$\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$$
 
@@ -44,7 +44,7 @@ $$\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$$
 
 ## 1. Distance
 
-Before operations, you need to know how far apart two synthons are.
+Before operations, you need to know how far apart two imscriptions are.
 
 ### 1.1 Canonical Hamming distance
 
@@ -163,7 +163,7 @@ The distinction matters conceptually:
 - **Join** is a *representational* operation: it asks what description covers both.
 - **Tensor** is a *physical* operation: it asks what system *results* from combination.
 
-The join of two incompatible synthons produces a CONFLICT-marked result — a partial answer. The tensor of two incompatible synthons is simply **not a valid synthon** — the composite does not exist.
+The join of two incompatible imscriptions produces a CONFLICT-marked result — a partial answer. The tensor of two incompatible imscriptions is simply **not a valid imscription** — the composite does not exist.
 
 ### What the tensor product encodes
 

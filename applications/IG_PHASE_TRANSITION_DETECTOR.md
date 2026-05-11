@@ -20,7 +20,7 @@ header-includes:
 
 ## Abstract
 
-This document presents the **Phase Transition Detector**, a financial trading system built on the IG framework's core insight: that synthons are **directed relational operators** (morphisms), not static objects. By trading **primitive state transitions** rather than price direction or static regimes, the system achieves positive returns across all market regimes tested: calm (+9.62%), crash (+9.62%), bear (+17.20%), and recovery (+14.66%).
+This document presents the **Phase Transition Detector**, a financial trading system built on the IG framework's core insight: that imscriptions are **directed relational operators** (morphisms), not static objects. By trading **primitive state transitions** rather than price direction or static regimes, the system achieves positive returns across all market regimes tested: calm (+9.62%), crash (+9.62%), bear (+17.20%), and recovery (+14.66%).
 
 The key theoretical contribution is the formalization of **phase transitions** in financial markets using a 12-primitive tuple, with detection algorithms that identify when systems enter and exit critical states ($$\Phi_{\text{ctyogh}}$$). The system validates IG's central thesis:
 
@@ -45,7 +45,7 @@ With ultra-aggressive sizing, the system achieves **+51.10% over 18 months** (+3
 6. [Experimental Results](#6-experimental-results)
 7. [Analysis](#7-analysis)
 8. [Comparison to Traditional Strategies](#8-comparison-to-traditional-strategies)
-9. [IG Compliance](#9-synthonicon-compliance)
+9. [IG Compliance](#9-Imscriptiveon-compliance)
 10. [Discussion](#10-discussion)
 11. [Conclusion](#11-conclusion)
 12. [References](#12-references)
@@ -75,7 +75,7 @@ $$\text{Trading}_{\text{exotic}} = \langle D_{\text{holo}}; T_{\text{holo}}; R_{
 
 The key insight from IG §II:
 
-> *"A synthon is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context."*
+> *"A imscription is a directed relational operator: a minimal specification of constraint-enforcement capacity defined entirely by its interactions with a compatible context."*
 
 This means: **trade the interaction, not the object**. Trade the **→** (the transition), not the states on either side.
 
@@ -136,7 +136,7 @@ Applied to trading: **running directional strategies on phase-change data yields
 
 ### 3.1 Complete Primitive Definition
 
-Every synthon is a 12-tuple:
+Every imscription is a 12-tuple:
 
 $$\langle D; T; R; P; F; K; G; \Gamma; \Phi; H; S; \Omega \rangle$$
 
@@ -144,7 +144,7 @@ Each primitive is an **ordinal category** with discrete, ordered values.
 
 ### 3.2 Dimensionality ($$D$$)
 
-**Definition:** The coordinate set along which the synthon operates.
+**Definition:** The coordinate set along which the imscription operates.
 
 $$
 D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{invomega}}, D_{\text{holo}}\}
@@ -161,7 +161,7 @@ $$
 
 ### 3.3 Topology ($$T$$)
 
-**Definition:** Internal connectivity pattern of the synthon's minimal motif.
+**Definition:** Internal connectivity pattern of the imscription's minimal motif.
 
 $$
 T \in \{T_{\text{bullseye}}, T_{\ggg}, T_{\square}, T_{\square\square}, T_{\cup}, T_{|}, T_{\perp}, T_{\text{invscr}}, T_{\uparrow\downarrow}\}
@@ -210,7 +210,7 @@ $$
 
 ### 3.6 Fidelity ($$F$$)
 
-**Definition:** Thermodynamic reliability of the synthon, anchored to $$\xi_{CP}$$.
+**Definition:** Thermodynamic reliability of the imscription, anchored to $$\xi_{CP}$$.
 
 $$
 F \in \{F_{\text{beltl}}, F_{\text{eth}}, F_{\text{hardsign}}\} \quad \text{where} \quad F_{\text{beltl}} < F_{\text{eth}} < F_{\text{hardsign}}
@@ -255,7 +255,7 @@ $$
 
 ### 3.8 Granularity ($$G$$)
 
-**Definition:** Scale of control exerted by the synthon.
+**Definition:** Scale of control exerted by the imscription.
 
 $$
 G \in \{G_{\text{beta}}, G_{\text{gamma}}, G_{\text{revapostrophe}}\} \quad \text{where} \quad G_{\text{beta}} < G_{\text{gamma}} < G_{\text{revapostrophe}}
@@ -286,7 +286,7 @@ $$
 
 ### 3.10 Criticality Phase ($$\Phi$$)
 
-**Definition:** Phase of the synthon relative to the $$G$$–$$D$$ criticality locus.
+**Definition:** Phase of the imscription relative to the $$G$$–$$D$$ criticality locus.
 
 $$
 \Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{ctyogh}}, \Phi_{\text{upstep}}\} \quad \text{where} \quad \Phi_{\text{softsign}} < \Phi_{\text{ctyogh}} < \Phi_{\text{upstep}}
@@ -829,7 +829,7 @@ Our ultra-aggressive sizing (15-20%) is **~50-60% of full Kelly**, which is:
 
 From IG §II:
 
-> *"A synthon is a directed relational operator"*
+> *"A imscription is a directed relational operator"*
 
 This system trades **morphisms** (transitions), not **objects** (states):
 
@@ -1017,7 +1017,7 @@ Using Kelly Criterion analysis:
 
 This is not a "strategy" in the traditional sense — it is a **grammar for trading phase transitions** that can be applied to any market, any regime, any era.
 
-The key insight from IG — that synthons are **directed relational operators** — is not just philosophical. It is **actionable, testable, and profoundly profitable**.
+The key insight from IG — that imscriptions are **directed relational operators** — is not just philosophical. It is **actionable, testable, and profoundly profitable**.
 
 With optimal sizing (25-30% per transition), the Phase Transition Detector achieves:
 - **+51.10% total return** (18 months)

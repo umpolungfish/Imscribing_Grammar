@@ -1,7 +1,7 @@
 """
-Molecular Domain — Synthon agents for retrosynthetic analysis.
+Molecular Domain — Imscription agents for retrosynthetic analysis.
 
-This module implements agents for analyzing molecular synthons
+This module implements agents for analyzing molecular imscriptions
 in the context of retrosynthetic bond disconnection.
 """
 from __future__ import annotations
@@ -11,7 +11,7 @@ from typing import Dict, List, Any, Optional
 
 # Re-export for convenience
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -23,7 +23,7 @@ from imscrbgrmr.models import (
 )
 
 __all__ = [
-    "MolecularSynthonAgent",
+    "MolecularImscriptionAgent",
     "ReactionCenterAnalysis",
 ]
 
@@ -34,23 +34,23 @@ class ReactionCenterAnalysis:
     bond_index: int
     bond_type: str
     disconnection_feasibility: float  # 0-1
-    synthon_polarity: Polarity
+    imscription_polarity: Polarity
     estimated_bde: float  # Bond dissociation energy (kJ/mol)
     metadata: Dict[str, Any]
 
 
-class MolecularSynthonAgent:
+class MolecularImscriptionAgent:
     """
-    Agent for analyzing molecular synthons in retrosynthetic contexts.
+    Agent for analyzing molecular imscriptions in retrosynthetic contexts.
     
-    Molecular synthons operate with D_wynn (point-like reactivity)
+    Molecular imscriptions operate with D_wynn (point-like reactivity)
     and typically involve R_subset (covalent) or R_covalent_dynamic
     recognition modes.
     
     Capabilities:
     - Reaction center identification
     - Bond disconnection feasibility analysis
-    - Synthon polarity assignment (P+, P-, P_pipevar)
+    - Imscription polarity assignment (P+, P-, P_pipevar)
     - Bond dissociation energy estimation
     """
     
@@ -64,7 +64,7 @@ class MolecularSynthonAgent:
         bond_index: Optional[int] = None,
     ) -> ReactionCenterAnalysis:
         """
-        Analyze a reaction center for synthon disconnection.
+        Analyze a reaction center for imscription disconnection.
         
         Args:
             smiles: SMILES string of the molecule
@@ -77,25 +77,25 @@ class MolecularSynthonAgent:
         # In full implementation, this would use RDKit for:
         # 1. Parse SMILES and identify all bonds
         # 2. Score each bond for disconnection feasibility
-        # 3. Assign synthon polarity based on electronic properties
+        # 3. Assign imscription polarity based on electronic properties
         # 4. Estimate BDE from bond type and context
         
         return ReactionCenterAnalysis(
             bond_index=bond_index or 0,
             bond_type="C-C",
             disconnection_feasibility=0.75,
-            synthon_polarity=Polarity.DONOR,
+            imscription_polarity=Polarity.DONOR,
             estimated_bde=350.0,
             metadata={"smiles": smiles},
         )
     
-    def get_synthon_polarity(
+    def get_imscription_polarity(
         self,
         smiles: str,
         functional_groups: Optional[List[str]] = None,
     ) -> Polarity:
         """
-        Determine synthon polarity for a molecular fragment.
+        Determine imscription polarity for a molecular fragment.
         
         Args:
             smiles: SMILES of the fragment
@@ -157,25 +157,25 @@ class MolecularSynthonAgent:
         
         return 350.0  # Default C-C single bond
     
-    def list_molecular_synthons(
+    def list_molecular_imscriptions(
         self,
         reaction_type: Optional[str] = None,
-    ) -> List[Synthon]:
+    ) -> List[Imscription]:
         """
-        List known molecular synthons, optionally filtered by reaction type.
+        List known molecular imscriptions, optionally filtered by reaction type.
         
         Args:
             reaction_type: Optional filter (e.g., "Σ_N2", "Diels-Alder")
         
         Returns:
-            List of Synthon objects
+            List of Imscription objects
         """
         from imscrbgrmr.models import CriticalityPhase
         
-        # Common molecular synthons from retrosynthesis
-        synthons = [
+        # Common molecular imscriptions from retrosynthesis
+        imscriptions = [
             # Carboxylic acid dimer (self-complementary)
-            Synthon(
+            Imscription(
                 name="carboxylic_acid_dimer",
                 dimensionality=Dimensionality.MOLECULAR,
                 topology=Topology.CYCLIC_BOWTIE,
@@ -189,9 +189,9 @@ class MolecularSynthonAgent:
                 description="Classic R₂²(8) hydrogen-bonded dimer",
                 metadata={"reaction_type": "hydrogen_bonding"},
             ),
-            # Enolate synthon (nucleophilic)
-            Synthon(
-                name="enolate_synthon",
+            # Enolate imscription (nucleophilic)
+            Imscription(
+                name="enolate_imscription",
                 dimensionality=Dimensionality.MOLECULAR,
                 topology=Topology.LINEAR,
                 recognition_mode=RecognitionMode.COVALENT,
@@ -204,9 +204,9 @@ class MolecularSynthonAgent:
                 description="Nucleophilic enolate for C-C bond formation",
                 metadata={"reaction_type": "aldol"},
             ),
-            # Carbonyl synthon (electrophilic)
-            Synthon(
-                name="carbonyl_synthon",
+            # Carbonyl imscription (electrophilic)
+            Imscription(
+                name="carbonyl_imscription",
                 dimensionality=Dimensionality.MOLECULAR,
                 topology=Topology.LINEAR,
                 recognition_mode=RecognitionMode.COVALENT,
@@ -222,30 +222,30 @@ class MolecularSynthonAgent:
         ]
         
         if reaction_type:
-            synthons = [
-                s for s in synthons
+            imscriptions = [
+                s for s in imscriptions
                 if s.metadata.get("reaction_type") == reaction_type
             ]
         
-        return synthons
+        return imscriptions
     
-    def to_synthon(
+    def to_imscription(
         self,
         fragment_smiles: str,
         fragment_name: str = "",
-    ) -> Synthon:
+    ) -> Imscription:
         """
-        Convert a molecular fragment to a Synthon representation.
+        Convert a molecular fragment to a Imscription representation.
         
         Args:
             fragment_smiles: SMILES of the fragment
-            fragment_name: Optional name for the synthon
+            fragment_name: Optional name for the imscription
         
         Returns:
-            Synthon object representing the fragment
+            Imscription object representing the fragment
         """
         # Analyze the fragment
-        polarity = self.get_synthon_polarity(fragment_smiles)
+        polarity = self.get_imscription_polarity(fragment_smiles)
         
         # Determine interaction grammar based on specificity
         # (In full implementation, would analyze steric/electronic constraints)
@@ -253,7 +253,7 @@ class MolecularSynthonAgent:
 
         from imscrbgrmr.models import KineticCharacter, CriticalityPhase
         
-        return Synthon(
+        return Imscription(
             name=fragment_name or f"fragment_{fragment_smiles[:10]}",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.LINEAR,
@@ -264,15 +264,15 @@ class MolecularSynthonAgent:
             granularity=Granularity.LOCAL,
             interaction_grammar=grammar,
             criticality_phase=CriticalityPhase.SUBCRITICAL,
-            description=f"Molecular synthon from {fragment_smiles}",
+            description=f"Molecular imscription from {fragment_smiles}",
             metadata={"smiles": fragment_smiles},
         )
 
 
 # ---------------------------------------------------------------------------
-# Canonical Molecular Catalog — design-file synthons
+# Canonical Molecular Catalog — design-file imscriptions
 # ---------------------------------------------------------------------------
-# These synthons are referenced by .syn design scripts and must be present in
+# These imscriptions are referenced by .syn design scripts and must be present in
 # the global catalog at import time. They encode nine canonical systems not
 # already covered by registry.py's populate_defaults().
 #
@@ -282,22 +282,22 @@ class MolecularSynthonAgent:
 # drives the anion–π recognition in cavity systems.
 # ---------------------------------------------------------------------------
 
-MOLECULAR_SYNTHON_NAMES = frozenset([
-    "nitroso_radical_redox_synthon_pair",
+MOLECULAR_imscription_NAMES = frozenset([
+    "nitroso_radical_redox_imscription_pair",
     "amide_dimer",
-    "nitroso_radical_anion_π_cavitand_cage_synthon",
-    "nitroso_radical_calixarene_anion_π_sandwich_synthon",
-    "nitroso_radical_crown_ether_host_guest_synthon",
-    "nitroso_radical_anion_π_cryptand_cage_synthon",
-    "nitroso_radical_cucurbituril_anion_rotaxane_synthon",
+    "nitroso_radical_anion_π_cavitand_cage_imscription",
+    "nitroso_radical_calixarene_anion_π_sandwich_imscription",
+    "nitroso_radical_crown_ether_host_guest_imscription",
+    "nitroso_radical_anion_π_cryptand_cage_imscription",
+    "nitroso_radical_cucurbituril_anion_rotaxane_imscription",
     "methyl_anion_nucleophile_CH3",
     "methyl_cation_electrophile_CH3",
 ])
 
 
-def register_molecular_synthons() -> list:
+def register_molecular_imscriptions() -> list:
     """
-    Register nine canonical molecular/supramolecular synthons used by
+    Register nine canonical molecular/supramolecular imscriptions used by
     .syn design scripts into the global catalog.
 
     Safe to call multiple times (idempotent).
@@ -306,7 +306,7 @@ def register_molecular_synthons() -> list:
         List of names newly registered (empty if all already present).
     """
     from ...models import (
-        Synthon,
+        Imscription,
         Dimensionality,
         Topology,
         RecognitionMode,
@@ -331,15 +331,15 @@ def register_molecular_synthons() -> list:
 
     entries = [
         # ------------------------------------------------------------------
-        # nitroso_radical_redox_synthon_pair
+        # nitroso_radical_redox_imscription_pair
         # A high-fidelity temporal autocatalytic redox cycle encoding the
         # Frank-model bifurcation pattern (D_∞ + T_⋈ + P_directional + F_ℏ).
         # Intended role: start point for criticality-ascent design scripts;
         # the four Frank co-requisites mean Factor 7 fires (score 0.25) and
         # Factor 3 contributes ~0.10, giving phi_c_score > 0.3.
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_redox_synthon_pair",
+        Imscription(
+            name="nitroso_radical_redox_imscription_pair",
             dimensionality=D.TEMPORAL,
             topology=T.CYCLIC_BOWTIE,
             recognition_mode=R.DYNAMIC_CATALYTIC,
@@ -366,7 +366,7 @@ def register_molecular_synthons() -> list:
         # meet(carboxylic_acid_dimer [F_ℏ], amide_dimer [F_dh]) → F_dh ✓
         # join(amide_dimer [F_dh], carboxylic_acid_dimer [F_ℏ]) → F_ℏ ✓
         # ------------------------------------------------------------------
-        Synthon(
+        Imscription(
             name="amide_dimer",
             dimensionality=D.MOLECULAR,
             topology=T.CYCLIC_BOWTIE,
@@ -387,14 +387,14 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # nitroso_radical_anion_π_cavitand_cage_synthon
+        # nitroso_radical_anion_π_cavitand_cage_imscription
         # Deep-cavity cavitand host with anion–π recognition.
         # D_△ (supramolecular), T_cage (closed three-dimensional enclosure),
         # R_mechanical (shape-selective mechanical capture), F_ℏ (rigid cavity,
         # high fidelity), K_schwa (slow guest exchange kinetics).
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_anion_π_cavitand_cage_synthon",
+        Imscription(
+            name="nitroso_radical_anion_π_cavitand_cage_imscription",
             dimensionality=D.SUPRAMOLECULAR,
             topology=T.CAGE,
             recognition_mode=R.MECHANICAL,
@@ -414,14 +414,14 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # nitroso_radical_calixarene_anion_π_sandwich_synthon
+        # nitroso_radical_calixarene_anion_π_sandwich_imscription
         # Calixarene bowl — open cup topology (T_bowl) providing anion–π
         # sandwich geometry. Fallback partner to cavitand in hybrid designs.
         # T_bowl < T_cage in topology ordinal (3 vs 5), so serves as the
         # lower-complexity fallback in tensor or-patterns.
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_calixarene_anion_π_sandwich_synthon",
+        Imscription(
+            name="nitroso_radical_calixarene_anion_π_sandwich_imscription",
             dimensionality=D.SUPRAMOLECULAR,
             topology=T.BOWL,
             recognition_mode=R.MECHANICAL,
@@ -441,15 +441,15 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # nitroso_radical_crown_ether_host_guest_synthon
+        # nitroso_radical_crown_ether_host_guest_imscription
         # Crown ether host–guest complex. F_dh (lower than rigid cage
         # systems): crown ether binding is enthalpy-driven but the flexible
         # macrocycle has conformational entropy cost that limits fidelity.
         # Tensor with cucurbituril gives F_dh (min bottleneck) — used to
         # demonstrate thermodynamic efficiency tuning in design 12.
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_crown_ether_host_guest_synthon",
+        Imscription(
+            name="nitroso_radical_crown_ether_host_guest_imscription",
             dimensionality=D.SUPRAMOLECULAR,
             topology=T.CAGE,
             recognition_mode=R.MECHANICAL,
@@ -469,14 +469,14 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # nitroso_radical_anion_π_cryptand_cage_synthon
+        # nitroso_radical_anion_π_cryptand_cage_imscription
         # Cryptand cage — 3D bicyclic host with high encapsulation fidelity.
         # F_ℏ: cryptand preorganisation gives high binding affinity.
         # Tensor with cucurbituril gives F_ℏ (min of F_ℏ, F_ℏ = F_ℏ) — used
         # in design 16 MOF-inspired network assembly.
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_anion_π_cryptand_cage_synthon",
+        Imscription(
+            name="nitroso_radical_anion_π_cryptand_cage_imscription",
             dimensionality=D.SUPRAMOLECULAR,
             topology=T.CAGE,
             recognition_mode=R.MECHANICAL,
@@ -496,14 +496,14 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # nitroso_radical_cucurbituril_anion_rotaxane_synthon
+        # nitroso_radical_cucurbituril_anion_rotaxane_imscription
         # Cucurbit[n]uril barrel — high-fidelity mechanical cage.
         # Used as a tensor partner in both design 12 (with crown ether,
         # giving F_dh via bottleneck) and design 16 (with cryptand,
         # giving F_ℏ). The cucurbituril itself is F_ℏ in both cases.
         # ------------------------------------------------------------------
-        Synthon(
-            name="nitroso_radical_cucurbituril_anion_rotaxane_synthon",
+        Imscription(
+            name="nitroso_radical_cucurbituril_anion_rotaxane_imscription",
             dimensionality=D.SUPRAMOLECULAR,
             topology=T.CAGE,
             recognition_mode=R.MECHANICAL,
@@ -523,14 +523,14 @@ def register_molecular_synthons() -> list:
         ),
 
         # ------------------------------------------------------------------
-        # synthon_methyl_anion_nucleophile_CH3_
+        # imscription_methyl_anion_nucleophile_CH3_
         # Carbanion (methyl anion) — the archetypal anionic nucleophile.
         # D_∧ (point reactant), T_| (linear: one reactive site), R_subset
         # (forms one covalent bond), P_minus (donates electron pair),
         # F_dh, K_turnm. Used in retrodesign/path searches within the D_∧/T_|
-        # cluster of molecular synthons.
+        # cluster of molecular imscriptions.
         # ------------------------------------------------------------------
-        Synthon(
+        Imscription(
             name="methyl_anion_nucleophile_CH3",
             dimensionality=D.MOLECULAR,
             topology=T.LINEAR,
@@ -545,18 +545,18 @@ def register_molecular_synthons() -> list:
             description=(
                 "Methyl carbanion (CH₃⁻): archetypal anionic nucleophile. "
                 "P_minus: electron-pair donor. T_linear: single reactive carbon centre. "
-                "Retrosynthetic pair to carbonyl_synthon and methyl cation."
+                "Retrosynthetic pair to carbonyl_imscription and methyl cation."
             ),
             metadata={"domain": "molecular", "class": "carbanion_nucleophile"},
         ),
 
         # ------------------------------------------------------------------
-        # synthon_methyl_cation_electrophile_CH3
+        # imscription_methyl_cation_electrophile_CH3
         # Carbocation (methyl cation) — archetypal cationic electrophile.
         # Retrosynthetic partner to methyl anion; tensor(anion, cation) →
         # pseudo-zwitterionic P (P_pm_pseudo) encoding C–C bond formation.
         # ------------------------------------------------------------------
-        Synthon(
+        Imscription(
             name="methyl_cation_electrophile_CH3",
             dimensionality=D.MOLECULAR,
             topology=T.LINEAR,
@@ -571,7 +571,7 @@ def register_molecular_synthons() -> list:
             description=(
                 "Methyl carbocation (CH₃⁺): archetypal cationic electrophile. "
                 "P_plus: electron-pair acceptor. T_linear: single reactive carbon centre. "
-                "Retrosynthetic partner to synthon_methyl_anion_nucleophile_CH3_."
+                "Retrosynthetic partner to imscription_methyl_anion_nucleophile_CH3_."
             ),
             metadata={"domain": "molecular", "class": "carbocation_electrophile"},
         ),
@@ -579,7 +579,7 @@ def register_molecular_synthons() -> list:
 
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(
                 s,
                 domain="molecular",

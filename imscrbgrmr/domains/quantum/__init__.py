@@ -1,10 +1,10 @@
 """
 Quantum Domain Catalog — v0.4.0
 
-Canonical encodings for quantum particles and topological matter synthons.
-Eight synthons in two tiers:
+Canonical encodings for quantum particles and topological matter imscriptions.
+Eight imscriptions in two tiers:
 
-  Tier 1 — Quantum Particles (five fundamental particles as recognition synthons):
+  Tier 1 — Quantum Particles (five fundamental particles as recognition imscriptions):
     photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊙(QUANTUM) · Φ_sub · Ω_0
     proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · Φ_sub · Ω_0
     electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · Φ_sub · Ω_0
@@ -29,14 +29,14 @@ Key physics encoded:
     phases. The K_teshlig→K_lambda perturbation (Δξ +2.30 nats, HIGH sensitivity) was
     identified as the largest single-primitive cost in the quantum playground sweep.
 
-Primitive key justifications per synthon are embedded in each _build_* function.
+Primitive key justifications per imscription are embedded in each _build_* function.
 """
 from __future__ import annotations
 
 from typing import List
 
 from ...models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -55,7 +55,7 @@ from ...registry import global_catalog
 # Registry names (stable across versions — used as dict keys everywhere)
 # ---------------------------------------------------------------------------
 
-QUANTUM_SYNTHON_NAMES = frozenset([
+QUANTUM_imscription_NAMES = frozenset([
     "photon",
     "proton",
     "electron",
@@ -67,9 +67,9 @@ QUANTUM_SYNTHON_NAMES = frozenset([
 ])
 
 
-def register_quantum_synthons() -> List[str]:
+def register_quantum_imscriptions() -> List[str]:
     """
-    Register all eight quantum/topological synthons into the global catalog.
+    Register all eight quantum/topological imscriptions into the global catalog.
 
     Safe to call multiple times (idempotent). Always refreshes metadata on
     already-present entries so Ω and topo_index fields survive JSON round-trips.
@@ -80,24 +80,24 @@ def register_quantum_synthons() -> List[str]:
     entries = _build_all()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s, domain="quantum", override_grounding=True,
                                     override_reason="Canonical quantum domain entry (v0.4.0)")
             registered.append(s.name)
         else:
-            existing = global_catalog._synthons[s.name]
-            # Refresh topo_index and metadata in-place — JSON round-trips lose them
-            existing.topo_index = s.topo_index
+            existing = global_catalog._imscriptions[s.name]
+            # Refresh protection and metadata in-place — JSON round-trips lose them
+            existing.protection = s.protection
             if hasattr(existing, "metadata") and isinstance(existing.metadata, dict):
                 existing.metadata.update(s.metadata or {})
     return registered
 
 
 # ---------------------------------------------------------------------------
-# Build all eight synthons
+# Build all eight imscriptions
 # ---------------------------------------------------------------------------
 
-def _build_all() -> List[Synthon]:
+def _build_all() -> List[Imscription]:
     return [
         _photon(),
         _proton(),
@@ -114,7 +114,7 @@ def _build_all() -> List[Synthon]:
 # TIER 1 — QUANTUM PARTICLES
 # ===========================================================================
 
-def _photon() -> Synthon:
+def _photon() -> Imscription:
     """
     Photon — massless boson, quantum of the electromagnetic field.
 
@@ -137,9 +137,9 @@ def _photon() -> Synthon:
           frequency match (selective) AND a transition dipole (AND logic).
       Φ = Φ_sub: single photon is below the G–D criticality locus.
       Ω = TRIVIAL: free-space photon has no topological protection.
-          (Photonic topological insulators would be a separate synthon.)
+          (Photonic topological insulators would be a separate imscription.)
     """
-    return Synthon(
+    return Imscription(
         name="photon",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.CYCLIC_BOWTIE,
@@ -163,7 +163,7 @@ def _photon() -> Synthon:
     )
 
 
-def _proton() -> Synthon:
+def _proton() -> Imscription:
     """
     Proton — spin-½ baryon, fundamental charge carrier in acid-base chemistry.
 
@@ -187,7 +187,7 @@ def _proton() -> Synthon:
       Φ = Φ_sub.
       Ω = TRIVIAL: bare proton, no topological structure.
     """
-    return Synthon(
+    return Imscription(
         name="proton",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.HUB_NODE,
@@ -209,7 +209,7 @@ def _proton() -> Synthon:
     )
 
 
-def _electron() -> Synthon:
+def _electron() -> Imscription:
     """
     Electron — spin-½ lepton, fundamental charge carrier in electronics/chemistry.
 
@@ -230,9 +230,9 @@ def _electron() -> Synthon:
       Γ = SPECIFIC_AND: one target orbital per bonding event.
       Φ = Φ_sub.
       Ω = TRIVIAL: free electron; topological character emerges from band
-          structure of hosting material (separate synthon).
+          structure of hosting material (separate imscription).
     """
-    return Synthon(
+    return Imscription(
         name="electron",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.HUB_NODE,
@@ -255,7 +255,7 @@ def _electron() -> Synthon:
     )
 
 
-def _spin_singlet() -> Synthon:
+def _spin_singlet() -> Imscription:
     """
     Spin singlet — maximally entangled two-spin Bell state |Ψ⁻⟩ = (|↑↓⟩−|↓↑⟩)/√2.
 
@@ -289,7 +289,7 @@ def _spin_singlet() -> Synthon:
       Ω = TRIVIAL: the singlet is not a topologically protected state per se.
           (A spin singlet in a topological magnet would inherit the material Ω.)
     """
-    return Synthon(
+    return Imscription(
         name="spin_singlet",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.CYCLIC_BOWTIE,
@@ -314,7 +314,7 @@ def _spin_singlet() -> Synthon:
     )
 
 
-def _qubit_logical() -> Synthon:
+def _qubit_logical() -> Imscription:
     """
     Qubit (logical, unprotected) — idealized two-level quantum system for computation.
 
@@ -330,16 +330,16 @@ def _qubit_logical() -> Synthon:
           (they look like ± but quantum interference breaks the symmetry).
       F = F_ℓ (LOW): coherence times T₁, T₂ are finite; gate error rates
           10⁻² to 10⁻³ in current hardware — well below F_ℏ threshold.
-          This is the critical gap between this synthon and spin_singlet.
+          This is the critical gap between this imscription and spin_singlet.
       K = K_schwa (SLOW): gate operation speeds (ns–μs) are slow relative to
           environmental decoherence; threshold error correction overhead is large.
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
       Γ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
       Φ = Φ_sub: sub-threshold fidelity prevents criticality lift (Axiom 5).
       Ω = TRIVIAL: unprotected qubit. Topological qubit (Ω_NA) is a separate
-          synthon — it would have F_ℏ and K_teshlig instead.
+          imscription — it would have F_ℏ and K_teshlig instead.
     """
-    return Synthon(
+    return Imscription(
         name="qubit_logical",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
@@ -368,7 +368,7 @@ def _qubit_logical() -> Synthon:
 # TIER 2 — TOPOLOGICAL MATTER
 # ===========================================================================
 
-def _kitaev_chain_majorana() -> Synthon:
+def _kitaev_chain_majorana() -> Imscription:
     """
     Kitaev chain (1D p-wave superconductor) — topological phase with Majorana zero modes.
 
@@ -404,7 +404,7 @@ def _kitaev_chain_majorana() -> Synthon:
           The winding number W ∈ ℤ; topological phase has W = 1.
       S = "1:1": one Majorana zero mode per end (γ_L : γ_R = 1:1).
     """
-    return Synthon(
+    return Imscription(
         name="kitaev_chain_majorana",
         dimensionality=Dimensionality.MOLECULAR,
         topology=Topology.LINEAR,
@@ -422,7 +422,7 @@ def _kitaev_chain_majorana() -> Synthon:
             "(|μ| < 2t). Majorana zero modes γ_L, γ_R at chain ends encode a "
             "single non-local logical qubit. AZ class D, ℤ invariant (W=1). "
             "Gap-protected (K_teshlig); no disorder required (contrast K_lambda). "
-            "Ω_Z: first topological synthon in the quantum catalog. "
+            "Ω_Z: first topological imscription in the quantum catalog. "
             "Prediction: tensor(kitaev_chain, qubit_logical) → Ω_Z (dominant "
             "protection propagates); meet(kitaev_chain, spin_singlet) → Ω_0 "
             "(conservative guarantee)."
@@ -430,7 +430,7 @@ def _kitaev_chain_majorana() -> Synthon:
     )
 
 
-def _fqh_moore_read() -> Synthon:
+def _fqh_moore_read() -> Imscription:
     """
     FQH ν=5/2 Moore-Read state — non-Abelian fractional quantum Hall state.
 
@@ -459,13 +459,13 @@ def _fqh_moore_read() -> Synthon:
       Γ = QUANTUM_AND: non-Abelian fusion requires simultaneous manipulation of
           two or more anyons — inherently a multi-particle (QUANTUM AND) operation.
       Φ = Φ_sub: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
-          separate synthon).
+          separate imscription).
       Ω = NON_ABELIAN (Ω_NA): non-Abelian Ising anyons. First Ω_NA entry in the
           catalog. Protection_strength = 4 (maximum).
       S = None: filling fraction ν=5/2 is a material property, not a pairwise
           stoichiometric ratio.
     """
-    return Synthon(
+    return Imscription(
         name="fqh_moore_read",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.BRAID,
@@ -491,7 +491,7 @@ def _fqh_moore_read() -> Synthon:
     )
 
 
-def _topological_insulator_bi2se3() -> Synthon:
+def _topological_insulator_bi2se3() -> Imscription:
     """
     3D Strong Topological Insulator (Bi₂Se₃ archetype) — ℤ₂ protected surface states.
 
@@ -524,7 +524,7 @@ def _topological_insulator_bi2se3() -> Synthon:
       Ω = Z2_CLASS (Ω_Z₂): strong ℤ₂ TI, class AII (ν₀ = 1).
       S = None: bulk material, not a pairwise recognition event.
     """
-    return Synthon(
+    return Imscription(
         name="topological_insulator_bi2se3",
         dimensionality=Dimensionality.SUPRAMOLECULAR,
         topology=Topology.NETWORK,

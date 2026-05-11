@@ -1,5 +1,5 @@
 """
-Imscribing Grammar Domains — Domain-specific synthon implementations.
+Imscribing Grammar Domains — Domain-specific imscription implementations.
 
 Subpackages:
 - molecular: Retrosynthetic analysis, bond disconnection
@@ -8,12 +8,12 @@ Subpackages:
 - hybrid: Multi-dimensional systems (MOFs, programmable matter)
 """
 
-from .molecular import MolecularSynthonAgent
-from .supramolecular import SupramolecularSynthonAgent
-from .temporal import TemporalSynthonAgent
+from .molecular import MolecularImscriptionAgent
+from .supramolecular import SupramolecularImscriptionAgent
+from .temporal import TemporalImscriptionAgent
 
 __all__ = [
-    "MolecularSynthonAgent",
-    "SupramolecularSynthonAgent",
-    "TemporalSynthonAgent",
+    "MolecularImscriptionAgent",
+    "SupramolecularImscriptionAgent",
+    "TemporalImscriptionAgent",
 ]

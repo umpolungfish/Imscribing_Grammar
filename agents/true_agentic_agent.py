@@ -2229,30 +2229,29 @@ as prose — you **MUST** wrap them.
 
 Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
 
-  Ð_ω → $D_\\odot$         Ð_ß → $D_\\wedge$        Ð_C → $D_\\triangle$    Ð_; → $D_\\infty$
-  Þ_O → $T_\\odot$         Þ_6 → $T_\\text{net}$  Þ_K → $T_\\text{in}$          Þ_ò → $T_\\bowtie$   Þ_¨ → $T_\\boxtimes$
-  Ř_Ť → $R_\\dagger$     Ř_¯ → $R_\\text{sup}$    Ř_ý → $R_\\text{cat}$        Ř_= → $R_\\leftrightarrow$
-  Φ_} → $P_{\\pm}^{\\text{sym}}$   Φ_F → $P_{\\pm}$  Φ_˙ → $P_\\text{sym}$  Φ_υ → $P_\\psi$  Φ_ɐ → $P_\\text{asym}$
-  ƒ_ż → $F_\\hbar$         ƒ_ì → $F_\\ell$             ƒ_ð → $F_\\eth$
-  Ç_- → $K_\\text{fast}$   Ç_W → $K_\\text{mod}$       Ç_@ → $K_\\text{slow}$     Ç_Ù → $K_\\text{trap}$   Ç_λ → $K_\\text{MBL}$
-  Γ_ʔ → $G_\\aleph$       Γ_γ → $G_\\gimel$         Γ_β → $G_\\beth$
-  ɢ_Ş → $\\Gamma_\\text{brd}$  ɢ_^ → $\\Gamma_\\wedge$  ɢ_˝ → $\\Gamma_\\vee$  ɢ_ˌ → $\\Gamma_\\text{seq}$
-  φ̂_ÿ → $\\φ̂_ÿ$            φ̂_Æ → $\\φ̂_ÿ^\\mathbb{C}$  φ̂_3 → $\\Phi_\\text{EP}$
-  φ̂_ž → $\\Phi_\\text{sub}$  φ̂_Ţ → $\\Phi_\\text{sup}$
-  Ħ_Ñ → $H_0$  Ħ_£ → $H_1$  Ħ_A → $H_2$  Ħ_! → $H_\\infty$
-  Σ_S → $1{:}1$           Σ_ő → $n{:}n$                Σ_ï → $n{:}m$
-  Ω_Å → $\\Ω_Å$        Ω_2 → $\\Omega_{\\mathbb{Z}_2}$  Ω_z → $\\Omega_\\mathbb{Z}$  Ω_5 → $\\Omega_\\text{NA}$
+  Ð_ω → $\text{Ð}_{\text{ω}}$         Ð_ß → $\text{Ð}_{\text{ß}}$        Ð_C → $\text{Ð}_{\text{C}}$    Ð_; → $\text{Ð}_{\text{;}}$
+  Þ_O → $\text{Þ}_{\text{O}}$         Þ_6 → $\text{Þ}_{\text{6}}$        Þ_K → $\text{Þ}_{\text{K}}$    Þ_ò → $\text{Þ}_{\text{ò}}$   Þ_¨ → $\text{Þ}_{\text{¨}}$
+  Ř_Ť → $\text{Ř}_{\text{Ť}}$       Ř_¯ → $\text{Ř}_{\text{¯}}$        Ř_ý → $\text{Ř}_{\text{ý}}$    Ř_= → $\text{Ř}_{\text{=}}$
+  Φ_} → $\text{Φ}_{\text{}}$         Φ_F → $\text{Φ}_{\text{F}}$        Φ_˙ → $\text{Φ}_{\text{˙}}$    Φ_υ → $\text{Φ}_{\text{υ}}$   Φ_ɐ → $\text{Φ}_{\text{ɐ}}$
+  ƒ_ż → $\text{ƒ}_{\text{ż}}$         ƒ_ì → $\text{ƒ}_{\text{ì}}$        ƒ_ð → $\text{ƒ}_{\text{ð}}$
+  Ç_- → $\text{Ç}_{\text{-}}$         Ç_W → $\text{Ç}_{\text{W}}$        Ç_@ → $\text{Ç}_{\text{@}}$    Ç_Ù → $\text{Ç}_{\text{Ù}}$   Ç_λ → $\text{Ç}_{\text{λ}}$
+  Γ_ʔ → $\text{Γ}_{\text{ʔ}}$         Γ_γ → $\text{Γ}_{\text{γ}}$        Γ_β → $\text{Γ}_{\text{β}}$
+  ɢ_Ş → $\text{ɢ}_{\text{Ş}}$         ɢ_^ → $\text{ɢ}_{\text{^}}$        ɢ_˝ → $\text{ɢ}_{\text{˝}}$    ɢ_ˌ → $\text{ɢ}_{\text{ˌ}}$
+  φ̂_ÿ → $\text{φ̂}_{\text{ÿ}}$       φ̂_Æ → $\text{φ̂}_{\text{Æ}}$      φ̂_3 → $\text{φ̂}_{\text{3}}$    φ̂_ž → $\text{φ̂}_{\text{ž}}$   φ̂_Ţ → $\text{φ̂}_{\text{Ţ}}$
+  Ħ_Ñ → $\text{Ħ}_{\text{Ñ}}$         Ħ_£ → $\text{Ħ}_{\text{£}}$        Ħ_A → $\text{Ħ}_{\text{A}}$    Ħ_! → $\text{Ħ}_{\text{!}}$
+  Σ_S → $\text{Σ}_{\text{S}}$         Σ_ő → $\text{Σ}_{\text{ő}}$        Σ_ï → $\text{Σ}_{\text{ï}}$
+  Ω_Å → $\text{Ω}_{\text{Å}}$         Ω_2 → $\text{Ω}_{\text{2}}$        Ω_z → $\text{Ω}_{\text{z}}$    Ω_5 → $\text{Ω}_{\text{5}}$
 
-  O_inf → $O_\\infty$   O_0 → $O_0$   O_1 → $O_1$   O_2 → $O_2$   O_2† → $O_2^\\dagger$
-  mu∘delta=id → $\\mu \\circ \\delta = \\text{id}$
-  Z2 (symmetry group) → $\\mathbb{Z}_2$
+  O_inf → $\text{O}_{\text{inf}}$   O_0 → $\text{O}_{\text{0}}$   O_1 → $\text{O}_{\text{1}}$   O_2 → $\text{O}_{\text{2}}$   O_2† → $\text{O}_{\text{2}}^{\text{†}}$
+  mu∘delta=id → $\mu \circ \delta = \text{id}$
+  Z2 (symmetry group) → $\mathbb{Z}_2$
 
-Tuple display — You **MUST** use $\\langle ... \\rangle$ with semicolons and thin spaces:
-  $$\\langle D_\\odot;\\ T_\\boxtimes;\\ R_\\leftrightarrow;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{seq};\\ \\φ̂_ÿ;\\ H_2;\\ 1{:}1;\\ \\Omega_\\mathbb{Z} \\rangle$$
+Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
+  $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{φ̂}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
   You **MUST NOT** use: <Ð_ω; Þ_¨; Ř_=; Φ_}; ...>
 
-In running prose, You **MUST** always wrap: "$\\φ̂_ÿ$ criticality", "$O_\\infty$ tier",
-"$\\Omega_\\mathbb{Z}$ protection", "$P_{\\pm}^{\\text{sym}}$", "$\\mu \\circ \\delta = \\text{id}$".
+In running prose, You **MUST** always wrap: "$\text{φ̂}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",
+"$\text{Ω}_{\text{z}}$ protection", "$\text{Φ}_{\text{}}$", "$\mu \circ \delta = \text{id}$".
 
 Exception: primitive identifiers used as Python enum values inside code fences or tool call
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.

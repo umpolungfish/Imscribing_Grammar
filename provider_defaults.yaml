@@ -87,15 +87,15 @@ providers:
         use_cases: ["general", "long-context"]
 
   local:
-    default_model: "synthonicon_qlora_merged2"
+    default_model: "Imscriptiveon_qlora_merged2"
     max_tokens_default: 512
     temperature_default: 0.3
     note: "Direct tensor inference via transformers — no API key. Set LOCAL_MODEL_PATH env var to override model path."
     models:
-      - name: "synthonicon_qlora_merged2"
-        description: "SynthOmnicon QLoRA merged Qwen3 — primary local model"
+      - name: "Imscriptiveon_qlora_merged2"
+        description: "imscribing QLoRA merged Qwen3 — primary local model"
         max_tokens: 2048
-        use_cases: ["synthon_generation", "guided_generation"]
+        use_cases: ["imscription_generation", "guided_generation"]
 
   aider:
     default_model: "nvidia/nemotron-3-nano-30b-a3b:free"  # Free NVIDIA model - reliable and efficient
@@ -186,7 +186,7 @@ task_routing:
   general:
     preferred: ["qwen", "anthropic", "mistral", "deepseek"]
     default_provider: "qwen"
-  synthon_generation:
+  imscription_generation:
     preferred: ["anthropic", "qwen", "deepseek"]
     default_provider: "anthropic"
 
@@ -195,4 +195,4 @@ cli:
   default_provider: "anthropic"
   # No hardcoded model - uses provider's default_model from above
   max_tokens: 4000
-  temperature: 0.3  # Lower for deterministic synthon generation
+  temperature: 0.3  # Lower for deterministic imscription generation

@@ -11,7 +11,7 @@ def get_structural_state():
         },
         "ouroboricity": "O_inf",
         "verified_promotions": 11,
-        "analogs": ["hadwiger_nelson_problem", "synthomnicon_grammar"]
+        "analogs": ["hadwiger_nelson_problem", "imscribing_grammar"]
     }
 
 def navigate_search_space():

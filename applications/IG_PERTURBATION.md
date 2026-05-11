@@ -71,7 +71,7 @@ Perturbations that violate composition axioms are flagged as **CRITICAL** sensit
 
 ### Step 1: Baseline Measurement
 
-Compute baseline $\xi_{CP}$ and $I_{bits}$ for the reference synthon.
+Compute baseline $\xi_{CP}$ and $I_{bits}$ for the reference imscription.
 
 ```bash
 # CLI: Compute baseline thermodynamics
@@ -93,13 +93,13 @@ imscribe info-bits carboxylic_acid_dimer --solvent chloroform
 
 ```python
 from imscrbgrmr.thermodynamics import compute_eta_CP
-from imscrbgrmr.models import Synthon
+from imscrbgrmr.models import Imscription
 
-# Python: Load reference synthon
-synthon = Synthon.from_catalog("carboxylic_acid_dimer")
+# Python: Load reference imscription
+imscription = Imscription.from_catalog("carboxylic_acid_dimer")
 
 # Compute baseline
-result = compute_eta_CP(synthon, delta_g=-12.0)
+result = compute_eta_CP(imscription, delta_g=-12.0)
 print(f"Baseline ξ_CP: {result.xi_CP:.2f} nats")
 ```
 
@@ -130,7 +130,7 @@ from imscrbgrmr.perturbation import PerturbationEngine
 
 engine = PerturbationEngine()
 results = engine.sweep(
-    synthon=synthon,
+    imscription=imscription,
     primitives=["F", "K", "T", "P", "G", "Γ", "D"],
     metric="xi_CP",
     delta_g=-12.0
@@ -166,7 +166,7 @@ imscribe perturb carboxylic_acid_dimer --mode fault-injection --delta-g -12.0
 
 ```python
 # Python: Fault injection
-fault_results = engine.fault_injection(synthon, delta_g=-12.0)
+fault_results = engine.fault_injection(imscription, delta_g=-12.0)
 
 for fault in fault_results:
     if fault.collapse:
@@ -203,7 +203,7 @@ imscribe perturb carboxylic_acid_dimer --target "ξ_CP < 7.5" --optimize F,K --d
 ```python
 # Python: Pathfinding
 pathway = engine.find_pathway(
-    synthon=synthon,
+    imscription=imscription,
     target_xi=7.5,
     optimizable_primitives=["F", "K", "G"],
     constraints={"T": "Þ_ò", "D": "Ð_ß"}  # Lock load-bearing primitives
@@ -226,17 +226,17 @@ imscribe perturb carboxylic_acid_dimer --validate --primitive F --new-value ƒ_�
 # "Grounding status: full (H-bond closing bond preserved)"
 
 # CLI: Full audit
-imscribe audit --synthon carboxylic_acid_dimer --perturbed F=ƒ_ð
+imscribe audit --imscription carboxylic_acid_dimer --perturbed F=ƒ_ð
 ```
 
 ```python
 from imscrbgrmr.constraints import AxiomValidator
 
 validator = AxiomValidator()
-perturbed_synthon = synthon.copy()
-perturbed_synthon.fidelity = "ƒ_ð"
+perturbed_imscription = imscription.copy()
+perturbed_imscription.fidelity = "ƒ_ð"
 
-report = validator.validate(perturbed_synthon)
+report = validator.validate(perturbed_imscription)
 if report.all_satisfied:
     print("Perturbed state axiom-compliant.")
 else:
@@ -295,11 +295,11 @@ else:
     *   Status: PASS (Axiom 6 grounded).
 *   **Framework Tools:** `imscribe trajectory validate`; `imscribe perturb --primitive K`.
 
-### 5.3 Speculative System: Quantum Synthon Perturbation
+### 5.3 Speculative System: Quantum Imscription Perturbation
 
-*   **Context:** Perturbing a Bell pair synthon for enhanced coherence.
+*   **Context:** Perturbing a Bell pair imscription for enhanced coherence.
 *   **Baseline:** $D_{H}^{2 \otimes}$, $T_{\text{bullseye}}$, $R_{(Ent)}$, $P_{\text{pipevar}}$, $F_{\text{hardsign}}$, $K_{fast}$, $G_{\text{beta}}$, $\Gamma_{\text{corner}}(\text{SPECIFIC})$, $\Phi_{sub}$, $1:1$
-*   **Constraint:** Quantum synthons use $T_{op} = 20$ mK for Landauer cost, not 298 K.
+*   **Constraint:** Quantum imscriptions use $T_{op} = 20$ mK for Landauer cost, not 298 K.
 *   **Perturbation Sweep:**
     *   $F_{\text{hardsign}} \to F_{\text{dh}}$ (gate fidelity 99.9% → 99%): $\Delta \xi_{CP} = +2.3$ nats.
     *   $K_{fast} \to K_{mod}$ (gate time 50 ns → 200 ns): $\Delta \xi_{CP} = +0.5$ nats.
@@ -307,18 +307,18 @@ else:
 *   **Protocol:**
     1.  Register with `--speculative` flag to quarantine in `domain=quantum`.
     2.  Use `--quantum-mode` for proper Landauer cost at $T_{op}$.
-    3.  **Do not** perturb quantum synthons using classical thermodynamic parameters — semantic contamination risk.
+    3.  **Do not** perturb quantum imscriptions using classical thermodynamic parameters — semantic contamination risk.
 
 ---
 
 ## 6.0 Advanced: The "Quantum Quarantine" Perturbation
 
-For speculative systems (quantum synthons, hypothetical topologies):
+For speculative systems (quantum imscriptions, hypothetical topologies):
 
-1.  Register the synthon with `--speculative` flag.
+1.  Register the imscription with `--speculative` flag.
 2.  Isolate in `domain=quantum` or `domain=speculative`.
 3.  Use `--quantum-mode` for proper $T_{op}$ Landauer cost.
-4.  **Do not** perturb speculative synthons using classical parameters. The semantic contamination risk (Fix 5 in IΓ_FIXES.MD) may corrupt catalog integrity and prediction accuracy.
+4.  **Do not** perturb speculative imscriptions using classical parameters. The semantic contamination risk (Fix 5 in IΓ_FIXES.MD) may corrupt catalog integrity and prediction accuracy.
 
 ---
 

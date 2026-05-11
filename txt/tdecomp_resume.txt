@@ -100,9 +100,9 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
   "notation": "⟨D=Ð_ω; T=Þ_O; R=Ř_=; P=Φ_}; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_z⟩",
   "description": "",
   "persisted": true,
-  "duplicate_warning": "This tuple is IDENTICAL to existing catalog entries: ['synthomnicon_grammar', 'hadwiger_nelson_problem', 'cognized_cosmos', 'uig_liar_completion_condition', 'epoch_4_cognized_cosmos', 'cosmogeny_epoch_4_cognized_cosmos', 'perfect_cuboid_phi_c_lifted', 'perfect_cuboid_proof']. The encoding was accepted under name 'universal_imscriptive_grammar', but consider whether a new name is needed or if this should reuse an existing entry.",
+  "duplicate_warning": "This tuple is IDENTICAL to existing catalog entries: ['imscribing_grammar', 'hadwiger_nelson_problem', 'cognized_cosmos', 'uig_liar_completion_condition', 'epoch_4_cognized_cosmos', 'cosmogeny_epoch_4_cognized_cosmos', 'perfect_cuboid_phi_c_lifted', 'perfect_cuboid_proof']. The encoding was accepted under name 'universal_imscriptive_grammar', but consider whether a new name is needed or if this should reuse an existing entry.",
   "exact_duplicates": [
-    "synthomnicon_grammar",
+    "imscribing_grammar",
     "hadwiger_nelson_problem",
     "cognized_cosmos",
     "uig_liar_completion_condition",
@@ -879,7 +879,7 @@ drwxr-xr-x   2 mrnob0dy666 mrnob0dy666       4096 Jan  8 02:07 .semgrep
 drwxr-xr-x   4 mrnob0dy666 mrnob0dy666       4096 Jan  7 10:33 .sonar
 drwx------   2 mrnob0dy666 mrnob0dy666       4096 Apr 10 12:03 .ssh
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666          0 Oct 23  2025 .sudo_as_admin_successful
-drwxr-xr-x   2 mrnob0dy666 mrnob0dy666       4096 Mar 18 10:01 .synthomnicon
+drwxr-xr-x   2 mrnob0dy666 mrnob0dy666       4096 Mar 18 10:01 .imscribing
 drwxr-xr-x   3 mrnob0dy666 mrnob0dy666       4096 Feb 10 01:25 .texlive2021
 drwxr-xr-x   3 mrnob0dy666 mrnob0dy666       4096 Mar 22 20:19 .triton
 -rw-------   1 mrnob0dy666 mrnob0dy666      13317 Apr  8 23:44 .viminfo
@@ -966,9 +966,9 @@ drwxr-xr-x  29 mrnob0dy666 mrnob0dy666      12288 Mar 26 04:42 SOMNI
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666    1041773 Mar 29 21:37 Screenshot 2026-03-29 185638.paint
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666    1049182 Mar 29 21:37 Screenshot 2026-03-29 185638.png
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666      80319 Mar 18 02:02 Selection_Dynamics_Trace_Ordering_and_th.pdf
-drwxr-xr-x   3 mrnob0dy666 mrnob0dy666       4096 Apr  7 23:06 SynthOmnicon
+drwxr-xr-x   3 mrnob0dy666 mrnob0dy666       4096 Apr  7 23:06 imscribing
 drwxr-xr-x   2 mrnob0dy666 mrnob0dy666       4096 Jan 10 23:42 TLOGGER
--rw-r--r--   1 mrnob0dy666 mrnob0dy666     294477 Mar 10 23:28 Types-of-synthons-discovered-so-far-a-molecular-synthon-commonly-known-as-a-synthon.png
+-rw-r--r--   1 mrnob0dy666 mrnob0dy666     294477 Mar 10 23:28 Types-of-imscriptions-discovered-so-far-a-molecular-imscription-commonly-known-as-a-imscription.png
 drwxr-xr-x   4 mrnob0dy666 mrnob0dy666       4096 Mar 17 18:38 UHSMBL
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666    1189519 Mar  8 01:57 VOE.png
 drwxr-xr-x   4 mrnob0dy666 mrnob0dy666       4096 May  5 22:41 WSL_DOWNLOADS
@@ -1088,9 +1088,9 @@ drwx------   6 mrnob0dy666 mrnob0dy666       4096 Dec 29 19:20 snap
 drwxr-xr-x  20 mrnob0dy666 mrnob0dy666       4096 Apr  7 14:03 sodasuicide
 drwxr-xr-x   7 mrnob0dy666 mrnob0dy666       4096 May  5 08:36 solitary_10
 drwxr-xr-x  12 mrnob0dy666 mrnob0dy666       4096 Apr 25 23:14 synfin
-drwxr-xr-x  19 mrnob0dy666 mrnob0dy666      12288 May  1 11:05 synthomnicon
-drwxr-xr-x   7 mrnob0dy666 mrnob0dy666       4096 May  1 23:39 synthomnicon-lean
-drwxr-xr-x  63 mrnob0dy666 mrnob0dy666      36864 May  3 22:37 synthomniconP
+drwxr-xr-x  19 mrnob0dy666 mrnob0dy666      12288 May  1 11:05 imscribing
+drwxr-xr-x   7 mrnob0dy666 mrnob0dy666       4096 May  1 23:39 imscribing-lean
+drwxr-xr-x  63 mrnob0dy666 mrnob0dy666      36864 May  3 22:37 imscribingP
 drwxr-xr-x   3 mrnob0dy666 mrnob0dy666       4096 Oct 23  2025 test
 drwxr-xr-x  27 mrnob0dy666 mrnob0dy666       4096 Mar 26 05:15 texmexer
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666        714 Mar 28 02:05 texput.log
@@ -1107,14 +1107,14 @@ drwxr-xr-x  33 mrnob0dy666 mrnob0dy666     135168 Mar 17 18:38 xbz
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666     253761 Apr 15 21:10 zkVZz.jpg
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666     265733 Mar  4 01:12 zooble.jpg
 ./odd-perfect-numbers/lakefile.lean
-./synthomniconP/SynthOmniconLean4/lakefile.lean
+./imscribingP/imscribingLean4/lakefile.lean
 ./mathlib4_PROOFS/mathlib4/lakefile.lean
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed
 ── Winding 34 [07:53:56Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "ls -la ~/synthomnicon-lean/ && cat ~/synthomnicon-lean/lakefile.lean 2>/dev/null | head -20", "timeout": 10})
+  ACT:   run_command({"command": "ls -la ~/imscribing-lean/ && cat ~/imscribing-lean/lakefile.lean 2>/dev/null | head -20", "timeout": 10})
   OBS:   total 152
 drwxr-xr-x   7 mrnob0dy666 mrnob0dy666  4096 May  1 23:39 .
 drwxr-x--- 177 mrnob0dy666 mrnob0dy666 12288 May  6 00:29 ..
@@ -1123,9 +1123,9 @@ drwxr-xr-x   3 mrnob0dy666 mrnob0dy666  4096 Mar 25 00:43 .github
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666     7 Mar 25 00:43 .gitignore
 drwxr-xr-x   4 mrnob0dy666 mrnob0dy666  4096 Mar 25 00:48 .lake
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666 95763 Mar 25 05:23 README.pdf
-drwxr-xr-x   4 mrnob0dy666 mrnob0dy666  4096 Mar 26 01:38 SynthOmnicon
-drwxr-xr-x   2 mrnob0dy666 mrnob0dy666  4096 Mar 25 00:43 SynthomniconLean
--rw-r--r--   1 mrnob0dy666 mrnob0dy666    30 Mar 25 00:43 SynthomniconLean.lean
+drwxr-xr-x   4 mrnob0dy666 mrnob0dy666  4096 Mar 26 01:38 imscribing
+drwxr-xr-x   2 mrnob0dy666 mrnob0dy666  4096 Mar 25 00:43 imscribingLean
+-rw-r--r--   1 mrnob0dy666 mrnob0dy666    30 Mar 25 00:43 imscribingLean.lean
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666  3132 Mar 25 00:45 lake-manifest.json
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666   743 Mar 26 01:42 lakefile.toml
 -rw-r--r--   1 mrnob0dy666 mrnob0dy666    25 Mar 25 00:43 lean-toolchain
@@ -1206,7 +1206,7 @@ globs = [
   "ImscribingGrammar.Primitives.Core",
   "ImscribingGrammar.Primitives.OPN_2adic",
   "ImscribingGrammar.Primitives.BSD_2adic",
-  "ImscribingGrammar.Primitives.Synthon",
+  "ImscribingGrammar.Primitives.Imscription",
   "ImscribingGrammar.Primitives.TierCrossing"
 ]
 
@@ -1263,7 +1263,7 @@ globs = [
   OBS:   BSD_2adic.lean
 Core.lean
 OPN_2adic.lean
-Synthon.lean
+Imscription.lean
 TierCrossing.lean
 ---
 -- ImscribingGrammar/Primitives/Core.lean
@@ -1528,7 +1528,7 @@ Primitives
 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/BSD_2adic.lean
 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean
 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/OPN_2adic.lean
-/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean
+/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean
 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/TierCrossing.lean
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
@@ -1614,13 +1614,13 @@ inductive Grammar : Type where
   UPDATE: run_command → Frobenius closed
 ── Winding 49 [07:56:16Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "cat /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean", "timeout": 10})
-  OBS:   -- ImscribingGrammar/Primitives/Synthon.lean
--- Synthon struct, primitive distance (Hamming + ordinal), and key encodings.
+  ACT:   run_command({"command": "cat /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean", "timeout": 10})
+  OBS:   -- ImscribingGrammar/Primitives/Imscription.lean
+-- Imscription struct, primitive distance (Hamming + ordinal), and key encodings.
 -- Proves P-70 (Higgs = axion = inflaton) by rfl.
 -- All primitive names are canonical (v0.5.69).
 
-import SynthOmnicon.Primitives.Core
+import imscribing.Primitives.Core
 
 namespace ImscribingGrammar.Primitives
 
@@ -1629,14 +1629,14 @@ open Dimensionality Topology Relational Polarity Grammar
      Stoichiometry Chirality
 
 -- ============================================================
--- SYNTHON STRUCT
--- A Synthon is a 12-tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+-- imscription STRUCT
+-- A Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
 -- Field name 'rel' used for Relational (R) since 'rec' is reserved in Lean 4.
--- @[ext] generates Synthon.ext for pointwise equality.
+-- @[ext] generates Imscription.ext for pointwise equality.
 -- ============================================================
 
 @[ext]
-structure Synthon : Type where
+structure Imscription : Type where
   dim   : Dimensionality   -- D
   top   : Topology         -- T
   rel   : Relational       -- R
@@ -1656,7 +1656,7 @@ structure Synthon : Type where
 -- Count of component mismatches. Zero iff tuples are identical.
 -- ============================================================
 
-def primitiveMismatches (a b : Synthon) : Nat :=
+def primitiveMismatches (a b : Imscription) : Nat :=
   (if a.dim  = b.dim  then 0 else 1) +
   (if a.top  = b.top  then 0 else 1) +
   (if a.rel  = b.rel  then 0 else 1) +
@@ -1670,17 +1670,17 @@ def primitiveMismatches (a b : Synthon) : Nat :=
   (if a.stoi = b.stoi then 0 else 1) +
   (if a.prot = b.prot then 0 else 1)
 
-theorem primitiveMismatches_self (a : Synthon) : primitiveMismatches a a = 0 := by
+theorem primitiveMismatches_self (a : Imscription) : primitiveMismatches a a = 0 := by
   simp [primitiveMismatches]
 
-theorem primitiveMismatches_symm (a b : Synthon) :
+theorem primitiveMismatches_symm (a b : Imscription) :
     primitiveMismatches a b = primitiveMismatches b a := by
   simp only [primitiveMismatches, eq_comm]
 
 private lemma ite_mismatch_le_one (p : Prop) [Decidable p] :
     (if p then 0 else 1) ≤ 1 := by split_ifs <;> omega
 
-theorem primitiveMismatches_le_12 (a b : Synthon) :
+theorem primitiveMismatches_le_12 (a b : Imscription) :
     primitiveMismatches a b ≤ 12 := by
   unfold primitiveMismatches
   have h1  := ite_mismatch_le_one (a.dim  = b.dim)
@@ -1697,7 +1697,7 @@ theorem primitiveMismatches_le_12 (a b : Synthon) :
   have h12 := ite_mismatch_le_one (a.prot = b.prot)
   omega
 
-theorem primitiveMismatches_zero_iff (a b : Synthon) :
+theorem primitiveMismatches_zero_iff (a b : Imscription) :
     primitiveMismatches a b = 0 ↔ a = b := by
   constructor
   · intro h
@@ -1716,7 +1716,7 @@ theorem primitiveMismatches_zero_iff (a b : Synthon) :
 -- Bottleneck primitives: min (P, F) — weaker partner wins
 -- ============================================================
 
-def tensorProduct (a b : Synthon) : Synthon := {
+def tensorProduct (a b : Imscription) : Imscription := {
   dim  := if compare a.dim  b.dim  = .lt then b.dim  else a.dim   -- max
   top  := if compare a.top  b.top  = .lt then b.top  else a.top   -- max
   rel  := if compare a.rel  b.rel  = .lt then b.rel  else a.rel   -- max
@@ -1732,15 +1732,15 @@ def tensorProduct (a b : Synthon) : Synthon := {
 }
 
 -- P-bottleneck: O_inf ⊗ O_2 → Φ_} ⊗ Φ_˙ = Φ_˙ (Frobenius destroyed).
-theorem tensor_Φ_bottleneck (a b : Synthon) :
+theorem tensor_Φ_bottleneck (a b : Imscription) :
     (tensorProduct a b).pol =
       if compare a.pol b.pol = .lt then a.pol else b.pol := rfl
 
 -- ============================================================
--- OUROBORICITY OF A SYNTHON
+-- OUROBORICITY OF A imscription
 -- ============================================================
 
-def synthonTier (s : Synthon) : OuroboricityTier :=
+def imscriptionTier (s : Imscription) : OuroboricityTier :=
   ouroboricityTier s.crit s.pol s.prot s.dim
 
 -- ============================================================
@@ -1751,7 +1751,7 @@ def synthonTier (s : Synthon) : OuroboricityTier :=
 -- All three are spin-0 fields with double-well potential, slow-roll /
 -- SSB relaxation (Ç_@), symmetric potential (Φ_} at φ̂_ÿ).
 -- They differ in energy scale only — not in primitive structure.
-def scalarField_Kslow : Synthon := {
+def scalarField_Kslow : Imscription := {
   dim  := Ð_C   -- local simplicial field (no holographic substrate)
   top  := Þ_ò     -- double-well / figure-8 potential landscape
   rel  := Ř_Ť     -- field ↔ vacuum bidirectional (SSB is reciprocal)
@@ -1766,9 +1766,9 @@ def scalarField_Kslow : Synthon := {
   prot := Ω_Å      -- no topological protection of the vacuum
 }
 
-def higgs    : Synthon := scalarField_Kslow
-def axion    : Synthon := scalarField_Kslow
-def inflaton : Synthon := scalarField_Kslow
+def higgs    : Imscription := scalarField_Kslow
+def axion    : Imscription := scalarField_Kslow
+def inflaton : Imscription := scalarField_Kslow
 
 /-- P-70a: Higgs and axion are structurally identical. -/
 theorem P70a_higgs_axion_identity : higgs = axion := rfl
@@ -1782,10 +1782,10 @@ theorem P70_three_scale_Kslow :
   ⟨rfl, rfl, rfl⟩
 
 /-- All three scalar Ç_@ fields are O_inf. -/
-theorem scalar_Kslow_is_O_inf : synthonTier scalarField_Kslow = .O_inf := by decide
+theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_inf := by decide
 
 -- ── Standard Model ──────────────────────────────────────────
-def standard_model : Synthon := {
+def standard_model : Imscription := {
   dim  := Ð_;      -- 4D spacetime (unbounded temporal generation)
   top  := Þ_6    -- gauge group connections: general graph
   rel  := Ř_ý        -- compositional: gauge group × matter sector
@@ -1802,7 +1802,7 @@ def standard_model : Synthon := {
 
 -- ── Quantum Gravity ─────────────────────────────────────────
 -- Ð_ω and Þ_O are co-required (Axiom C).
-def quantum_gravity : Synthon := {
+def quantum_gravity : Imscription := {
   dim  := Ð_ω       -- holographic: boundary encodes bulk
   top  := Þ_O       -- holographic topology (co-required with Ð_ω)
   rel  := Ř_Ť     -- bulk ↔ boundary reciprocal
@@ -1818,10 +1818,10 @@ def quantum_gravity : Synthon := {
 }
 
 /-- Quantum gravity is O_inf (holographic Frobenius). -/
-theorem qg_is_O_inf : synthonTier quantum_gravity = .O_inf := by decide
+theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_inf := by decide
 
 -- ── General Relativity ──────────────────────────────────────
-def general_relativity : Synthon := {
+def general_relativity : Imscription := {
   dim  := Ð_;      -- 4D spacetime (not holographic — classical GR is local)
   top  := Þ_6    -- causal structure: general graph of events
   rel  := Ř_Ť     -- metric ↔ matter bidirectional (Einstein equations)
@@ -1837,7 +1837,7 @@ def general_relativity : Synthon := {
 }
 
 -- ── Yang-Mills (classical, pre-quantization) ────────────────
-def yang_mills_classical : Synthon := {
+def yang_mills_classical : Imscription := {
   dim  := Ð_;      -- 4D Minkowski spacetime
   top  := Þ_6    -- gauge group connections
   rel  := Ř_ý        -- compositional: gauge covariant derivative
@@ -1855,7 +1855,7 @@ def yang_mills_classical : Synthon := {
 -- ── Yang-Mills (quantum target) ─────────────────────────────
 -- The target tuple if the path integral measure existed.
 -- Gap from classical: F(eth→hbar), K(mod→trap), G(beth→aleph), Φ(sub→c) = 4 mismatches.
-def yang_mills_quantum_target : Synthon := {
+def yang_mills_quantum_target : Imscription := {
   dim  := Ð_;
   top  := Þ_6
   rel  := Ř_ý
@@ -1880,7 +1880,7 @@ theorem sm_qg_distance :
     primitiveMismatches standard_model quantum_gravity = 9 := by decide
 
 -- ── GR → Asymptotic Safety: 3 primitive changes ─────────────
-def asymptotic_safety : Synthon := { general_relativity with
+def asymptotic_safety : Imscription := { general_relativity with
   kin  := Ç_W    -- UV fixed point has moderate kinetics
   gran := Γ_ʔ  -- Planck-scale fine-grained
   crit := φ̂_ÿ    -- UV fixed point IS a quantum critical point
@@ -1895,8 +1895,8 @@ theorem gr_as_morphism_cost :
 
 /-- Frobenius cliff: O_inf requires Φ_}. No other Polarity gives O_inf
     regardless of Φ, Ω, D. (Lean-verified statement of §23 / §69.) -/
-theorem o_inf_iff_Φ_pm_sym_at_phi_c (s : Synthon) :
-    synthonTier s = .O_inf ↔
+theorem o_inf_iff_Φ_pm_sym_at_phi_c (s : Imscription) :
+    imscriptionTier s = .O_inf ↔
     (s.crit = .φ̂_ÿ ∨ s.crit = .φ̂_Æ) ∧ s.pol = .Φ_} := by
   constructor
   · intro h
@@ -1904,27 +1904,27 @@ theorem o_inf_iff_Φ_pm_sym_at_phi_c (s : Synthon) :
     · exact o_inf_requires_phi_c s.crit s.pol s.prot s.dim h
     · exact o_inf_requires_Φ_pm_sym s.crit s.pol s.prot s.dim h
   · intro ⟨hphi, hpol⟩
-    simp [synthonTier, ouroboricityTier]
+    simp [imscriptionTier, ouroboricityTier]
     cases hphi with
     | inl h => simp [h, hpol]
     | inr h => simp [h, hpol]
 
 /-- Higgs is O_inf (P-70 structural claim). -/
-theorem higgs_is_O_inf : synthonTier higgs = .O_inf := by decide
+theorem higgs_is_O_inf : imscriptionTier higgs = .O_inf := by decide
 
 /-- Tensor of O_inf with any O_2 system (Φ_˙) gives Φ_˙ — Frobenius destroyed. -/
-theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Synthon)
+theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
     (h_inf : s_inf.pol = .Φ_}) (h_two : s_two.pol = .Φ_˙) :
     (tensorProduct s_inf s_two).pol = .Φ_˙ := by
   simp [tensorProduct, h_inf, h_two, compare, Ord.compare,
         compareOfLessAndEq, instOrdPolarity]
 
-end SynthOmnicon.Primitives
+end imscribing.Primitives
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed
 ── Winding 50 [07:56:23Z] ──────────────────────────────────────
-  THINK: The standalone file duplicates the existing canonical primitives. Let me rewrite it to integrate with the project's `Synthon` type and `Core.lean`.
+  THINK: The standalone file duplicates the existing canonical primitives. Let me rewrite it to integrate with the project's `Imscription` type and `Core.lean`.
   ACT:   run_command({"command": "head -30 /home/mrnob0dy666/imscribing_grammar/IΓ_Lean4/ImscribingGrammar.lean", "timeout": 5})
   OBS:   import ImscribingGrammar.Basic
 
@@ -1932,29 +1932,29 @@ end SynthOmnicon.Primitives
   UPDATE: run_command → Frobenius closed
 ── Winding 51 [07:56:40Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "grep -r \"import SynthOmnicon\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean && grep \"namespace\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean | tail -3", "timeout": 5})
-  OBS:   import SynthOmnicon.Primitives.Core
+  ACT:   run_command({"command": "grep -r \"import imscribing\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean && grep \"namespace\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean | tail -3", "timeout": 5})
+  OBS:   import imscribing.Primitives.Core
 namespace ImscribingGrammar.Primitives
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed
 ── Winding 52 [07:56:45Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "grep \"^import\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean && grep \"namespace\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean | head -2", "timeout": 5})
-  OBS:   import SynthOmnicon.Primitives.Core
+  ACT:   run_command({"command": "grep \"^import\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean && grep \"namespace\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean | head -2", "timeout": 5})
+  OBS:   import imscribing.Primitives.Core
 namespace ImscribingGrammar.Primitives
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed
 ── Winding 53 [07:56:51Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "-- ImscribingGrammar/PrimitiveMismatch.lean\n-- Formalizes the five temporal primitive diagnostics from the task:\n--   1. Measurement problem as Φ_υ vs Φ_ɐ mismatch\n--   2. Wick rotation as \u0393_seq \u2192 Ç_@ primitive substitution\n--   3. Berry phase as \u03a9_\u2124 emergent vs constitutive\n--   4. H_\u221e line: genuine memory vs Markovian approximation\n--   5. Temporal primitive sorting of physics problems\n--\n-- Uses the canonical 12-primitive Synthon type from Primitives.Core.\n-- Catalog entries verified via encode_system; distances via syncon_tool.\n\nimport ImscribingGrammar.Primitives.Synthon\n\nnamespace ImscribingGrammar.PrimitiveMismatch\n\nopen Dimensionality Topology Relational Polarity Grammar\n     Fidelity KineticChar Granularity Criticality Protection\n     Stoichiometry Chirality\n\n-- ============================================================\n-- Catalog entries (verified via encode_system)\n-- ============================================================\n\n/-- \u27e8D_\u25b3; Þ_K; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_sub; H\u2081; 1:1; \u03a9\u2080\u27e9 -/\ndef schrodingerDynamics : Synthon := {\n  dim  := Ð_C\n  top  := Þ_K\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ž\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u25b3; T_\u22c8; R_\u2020; Φ_ɐ; F_\u2113; Ç_-; Γ_β; \u0393_seq; \u03a6_c; H\u2080; 1:1; \u03a9\u2080\u27e9 -/\ndef measurementOutcome : Synthon := {\n  dim  := Ð_C\n  top  := Þ_ò\n  rel  := Ř_Ť\n  pol  := Φ_ɐ\n  fid  := ƒ_ì\n  kin  := Ç_-\n  gran := Γ_β\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_Ñ\n  stoi := Σ_S\n  prot := Ω_Å\n}\n", "mode": "w", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "-- ImscribingGrammar/PrimitiveMismatch.lean\n-- Formalizes the five temporal primitive diagnostics from the task:\n--   1. Measurement problem as Φ_υ vs Φ_ɐ mismatch\n--   2. Wick rotation as \u0393_seq \u2192 Ç_@ primitive substitution\n--   3. Berry phase as \u03a9_\u2124 emergent vs constitutive\n--   4. H_\u221e line: genuine memory vs Markovian approximation\n--   5. Temporal primitive sorting of physics problems\n--\n-- Uses the canonical 12-primitive Imscription type from Primitives.Core.\n-- Catalog entries verified via encode_system; distances via syncon_tool.\n\nimport ImscribingGrammar.Primitives.Imscription\n\nnamespace ImscribingGrammar.PrimitiveMismatch\n\nopen Dimensionality Topology Relational Polarity Grammar\n     Fidelity KineticChar Granularity Criticality Protection\n     Stoichiometry Chirality\n\n-- ============================================================\n-- Catalog entries (verified via encode_system)\n-- ============================================================\n\n/-- \u27e8D_\u25b3; Þ_K; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_sub; H\u2081; 1:1; \u03a9\u2080\u27e9 -/\ndef schrodingerDynamics : Imscription := {\n  dim  := Ð_C\n  top  := Þ_K\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ž\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u25b3; T_\u22c8; R_\u2020; Φ_ɐ; F_\u2113; Ç_-; Γ_β; \u0393_seq; \u03a6_c; H\u2080; 1:1; \u03a9\u2080\u27e9 -/\ndef measurementOutcome : Imscription := {\n  dim  := Ð_C\n  top  := Þ_ò\n  rel  := Ř_Ť\n  pol  := Φ_ɐ\n  fid  := ƒ_ì\n  kin  := Ç_-\n  gran := Γ_β\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_Ñ\n  stoi := Σ_S\n  prot := Ω_Å\n}\n", "mode": "w", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 1621 chars (mode='w'); file total 1664 bytes  (sha256:7c11ab452ba74dbc)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 1664 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 54 [07:57:09Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n/-- \u27e8D_\u25b3; T_\u22c8; R_\u2194; P_\u00b1; F_\u03d1; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H\u2081; 1:1; \u03a9\u2080\u27e9 -/\ndef wickRotation : Synthon := {\n  dim  := Ð_C\n  top  := Þ_ò\n  rel  := Ř_=\n  pol  := Φ_F\n  fid  := ƒ_ð\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u25b3; Þ_K; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_sub; H\u2081; 1:1; \u03a9_\u2124\u27e9 -/\ndef berryPhase : Synthon := {\n  dim  := Ð_C\n  top  := Þ_K\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ž\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_z\n}\n\n/-- \u27e8D_\u221e; T_\u2299; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9_\u2124\u27e9 -/\ndef tqft : Synthon := {\n  dim  := Ð_;\n  top  := Þ_O\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_z\n}\n\n/-- \u27e8D_\u221e; Þ_net; R_\u2194; P_\u03c8; F_\u03d1; Ç_W; Γ_γ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9\u2080\u27e9 -/\ndef nonmarkovianOpenSystems : Synthon := {\n  dim  := Ð_;\n  top  := Þ_6\n  rel  := Ř_=\n  pol  := Φ_υ\n  fid  := ƒ_ð\n  kin  := Ç_W\n  gran := Γ_γ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u221e; Þ_net; Ř_sup; Φ_ɐ; F_\u03d1; Ç_@; Γ_ʔ; \u0393_\u2227; \u03a6_c; H\u2081; n:n; \u03a9\u2080\u27e9 -/\ndef statisticalMechanics : Synthon := {\n  dim  := Ð_;\n  top  := Þ_6\n  rel  := Ř_¯\n  pol  := Φ_ɐ\n  fid  := ƒ_ð\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_and\n  crit := φ̂_ÿ\n  chir := Ħ_£\n  stoi := Σ_ő\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u221e; T_\u2299; R_\u2194; Φ_ɐ; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9_\u2124\u27e9 -/\ndef quantumGravityCandidate : Synthon := {\n  dim  := Ð_;\n  top  := Þ_O\n  rel  := Ř_=\n  pol  := Φ_ɐ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_z\n}\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n/-- \u27e8D_\u25b3; T_\u22c8; R_\u2194; P_\u00b1; F_\u03d1; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H\u2081; 1:1; \u03a9\u2080\u27e9 -/\ndef wickRotation : Imscription := {\n  dim  := Ð_C\n  top  := Þ_ò\n  rel  := Ř_=\n  pol  := Φ_F\n  fid  := ƒ_ð\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u25b3; Þ_K; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_sub; H\u2081; 1:1; \u03a9_\u2124\u27e9 -/\ndef berryPhase : Imscription := {\n  dim  := Ð_C\n  top  := Þ_K\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ž\n  chir := Ħ_£\n  stoi := Σ_S\n  prot := Ω_z\n}\n\n/-- \u27e8D_\u221e; T_\u2299; Ř_ý; P_\u03c8; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9_\u2124\u27e9 -/\ndef tqft : Imscription := {\n  dim  := Ð_;\n  top  := Þ_O\n  rel  := Ř_ý\n  pol  := Φ_υ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_z\n}\n\n/-- \u27e8D_\u221e; Þ_net; R_\u2194; P_\u03c8; F_\u03d1; Ç_W; Γ_γ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9\u2080\u27e9 -/\ndef nonmarkovianOpenSystems : Imscription := {\n  dim  := Ð_;\n  top  := Þ_6\n  rel  := Ř_=\n  pol  := Φ_υ\n  fid  := ƒ_ð\n  kin  := Ç_W\n  gran := Γ_γ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u221e; Þ_net; Ř_sup; Φ_ɐ; F_\u03d1; Ç_@; Γ_ʔ; \u0393_\u2227; \u03a6_c; H\u2081; n:n; \u03a9\u2080\u27e9 -/\ndef statisticalMechanics : Imscription := {\n  dim  := Ð_;\n  top  := Þ_6\n  rel  := Ř_¯\n  pol  := Φ_ɐ\n  fid  := ƒ_ð\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_and\n  crit := φ̂_ÿ\n  chir := Ħ_£\n  stoi := Σ_ő\n  prot := Ω_Å\n}\n\n/-- \u27e8D_\u221e; T_\u2299; R_\u2194; Φ_ɐ; F_\u210f; Ç_@; Γ_ʔ; \u0393_seq; \u03a6_c; H_\u221e; n:m; \u03a9_\u2124\u27e9 -/\ndef quantumGravityCandidate : Imscription := {\n  dim  := Ð_;\n  top  := Þ_O\n  rel  := Ř_=\n  pol  := Φ_ɐ\n  fid  := ƒ_ż\n  kin  := Ç_@\n  gran := Γ_ʔ\n  gram := ɢ_seq\n  crit := φ̂_ÿ\n  chir := Ħ_!\n  stoi := Σ_ï\n  prot := Ω_z\n}\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 1929 chars (mode='a'); file total 3698 bytes  (sha256:c5c7cbf4b23daf67)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 3698 bytes on disk
   UPDATE: chunked_write → Frobenius closed
@@ -1975,42 +1975,42 @@ namespace ImscribingGrammar.Primitives
   UPDATE: chunked_write → Frobenius closed
 ── Winding 1 [08:01:17Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 2. Wick Rotation as Primitive Substitution (\u0393_seq \u2192 Ç_@)\n-- ============================================================\n\n/-- The Wick rotation t \u2192 -i\u03c4 converts \u0393_seq (directed sequential evolution)\ninto Ç_@ (relaxation/equilibration). In primitive terms: it converts\nƒ_hbar \u2192 ƒ_ð (quantum coherence \u2192 thermal weight). -/\ndef wickRotate (st : Synthon) : Synthon :=\n  { st with fid := ƒ_ð }\n\n/-- The Wick rotation on schrodingerDynamics changes fidelity to thermal. -/\ntheorem wick_rotation_changes_fidelity :\n  (wickRotate schrodingerDynamics).fid = ƒ_ð := by\n  simp [wickRotate, schrodingerDynamics]\n\n/-- Wick rotation preserves Ç_@ but shifts the physical regime.\nThe structural delta is only F: hbar \u2192 eth (one primitive change). -/\ntheorem wick_rotation_single_primitive_change :\n  primitiveMismatches schrodingerDynamics (wickRotate schrodingerDynamics) = 1 := by\n  simp [primitiveMismatches, wickRotate, schrodingerDynamics]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 2. Wick Rotation as Primitive Substitution (\u0393_seq \u2192 Ç_@)\n-- ============================================================\n\n/-- The Wick rotation t \u2192 -i\u03c4 converts \u0393_seq (directed sequential evolution)\ninto Ç_@ (relaxation/equilibration). In primitive terms: it converts\nƒ_hbar \u2192 ƒ_ð (quantum coherence \u2192 thermal weight). -/\ndef wickRotate (st : Imscription) : Imscription :=\n  { st with fid := ƒ_ð }\n\n/-- The Wick rotation on schrodingerDynamics changes fidelity to thermal. -/\ntheorem wick_rotation_changes_fidelity :\n  (wickRotate schrodingerDynamics).fid = ƒ_ð := by\n  simp [wickRotate, schrodingerDynamics]\n\n/-- Wick rotation preserves Ç_@ but shifts the physical regime.\nThe structural delta is only F: hbar \u2192 eth (one primitive change). -/\ntheorem wick_rotation_single_primitive_change :\n  primitiveMismatches schrodingerDynamics (wickRotate schrodingerDynamics) = 1 := by\n  simp [primitiveMismatches, wickRotate, schrodingerDynamics]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 1014 chars (mode='a'); file total 6440 bytes  (sha256:b19c28c9937f0621)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 6440 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 2 [08:01:29Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 3. Berry Phase as \u03a9_\u2124: Emergent vs Constitutive\n-- ============================================================\n\n/-- Berry phase carries \u03a9_\u2124 as a byproduct of adiabaticity (Ç_@).\nTQFT promotes \u03a9_\u2124 to a constitutive primitive (paired with Þ_O, Ħ_!). -/\ndef omegaIsConstitutive (st : Synthon) : Prop :=\n  st.prot = Ω_z \u2227 st.top = Þ_O\n\ndef omegaIsEmergent (st : Synthon) : Prop :=\n  st.prot = Ω_z \u2227 st.top \u2260 Þ_O\n\ntheorem berry_omega_emergent : omegaIsEmergent berryPhase := by\n  simp [omegaIsEmergent, berryPhase]\n\ntheorem tqft_omega_constitutive : omegaIsConstitutive tqft := by\n  simp [omegaIsConstitutive, tqft]\n\n/-- The key structural differences between Berry phase and TQFT:\nT differs (Þ_K vs Þ_O), H differs (Ħ_£ vs Ħ_!), D differs (Ð_C vs Ð_;),\nS differs (Σ_S vs Σ_ï). Omega is shared (both \u03a9_\u2124). -/\ntheorem berry_vs_tqft_key_deltas :\n  berryPhase.top = Þ_K \u2227\n  tqft.top = Þ_O \u2227\n  berryPhase.chir = Ħ_£ \u2227\n  tqft.chir = Ħ_! \u2227\n  berryPhase.prot = Ω_z \u2227\n  tqft.prot = Ω_z := by\n  simp [berryPhase, tqft]\n\n/-- Hamming distance between Berry phase and TQFT = 5 (D, T, H, S, Phi differ). -/\ntheorem berry_tqft_hamming_5 :\n  primitiveMismatches berryPhase tqft = 5 := by\n  simp [primitiveMismatches, berryPhase, tqft]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 3. Berry Phase as \u03a9_\u2124: Emergent vs Constitutive\n-- ============================================================\n\n/-- Berry phase carries \u03a9_\u2124 as a byproduct of adiabaticity (Ç_@).\nTQFT promotes \u03a9_\u2124 to a constitutive primitive (paired with Þ_O, Ħ_!). -/\ndef omegaIsConstitutive (st : Imscription) : Prop :=\n  st.prot = Ω_z \u2227 st.top = Þ_O\n\ndef omegaIsEmergent (st : Imscription) : Prop :=\n  st.prot = Ω_z \u2227 st.top \u2260 Þ_O\n\ntheorem berry_omega_emergent : omegaIsEmergent berryPhase := by\n  simp [omegaIsEmergent, berryPhase]\n\ntheorem tqft_omega_constitutive : omegaIsConstitutive tqft := by\n  simp [omegaIsConstitutive, tqft]\n\n/-- The key structural differences between Berry phase and TQFT:\nT differs (Þ_K vs Þ_O), H differs (Ħ_£ vs Ħ_!), D differs (Ð_C vs Ð_;),\nS differs (Σ_S vs Σ_ï). Omega is shared (both \u03a9_\u2124). -/\ntheorem berry_vs_tqft_key_deltas :\n  berryPhase.top = Þ_K \u2227\n  tqft.top = Þ_O \u2227\n  berryPhase.chir = Ħ_£ \u2227\n  tqft.chir = Ħ_! \u2227\n  berryPhase.prot = Ω_z \u2227\n  tqft.prot = Ω_z := by\n  simp [berryPhase, tqft]\n\n/-- Hamming distance between Berry phase and TQFT = 5 (D, T, H, S, Phi differ). -/\ntheorem berry_tqft_hamming_5 :\n  primitiveMismatches berryPhase tqft = 5 := by\n  simp [primitiveMismatches, berryPhase, tqft]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 1339 chars (mode='a'); file total 7807 bytes  (sha256:c1a30348c04802c4)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 7807 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 3 [08:01:42Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 4. The H_\u221e Line: Genuine Memory vs Markovian Approximation\n-- ============================================================\n\n/-- A system has genuine memory iff H = Ħ_!. -/\ndef hasGenuineMemory (st : Synthon) : Prop :=\n  st.chir = Ħ_!\n\n/-- Markovian systems forget their past (H\u2080). -/\ndef isMarkovian (st : Synthon) : Prop :=\n  st.chir = Ħ_Ñ\n\ntheorem nonmarkovian_has_memory : hasGenuineMemory nonmarkovianOpenSystems := by\n  simp [hasGenuineMemory, nonmarkovianOpenSystems]\n\ntheorem schrodinger_is_not_markovian_but_not_full_memory :\n  \u00acisMarkovian schrodingerDynamics \u2227\n  \u00achasGenuineMemory schrodingerDynamics := by\n  simp [isMarkovian, hasGenuineMemory, schrodingerDynamics]\n\n/-- The H_\u221e promotion is not a small correction; it changes the structural\nregime of the theory. Memory is a distinct structural regime, not a \"correction.\" -/\ntheorem memory_is_distinct_regime :\n  \u00ac(hasGenuineMemory nonmarkovianOpenSystems \u2192 hasGenuineMemory schrodingerDynamics) := by\n  simp [hasGenuineMemory, nonmarkovianOpenSystems, schrodingerDynamics]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 4. The H_\u221e Line: Genuine Memory vs Markovian Approximation\n-- ============================================================\n\n/-- A system has genuine memory iff H = Ħ_!. -/\ndef hasGenuineMemory (st : Imscription) : Prop :=\n  st.chir = Ħ_!\n\n/-- Markovian systems forget their past (H\u2080). -/\ndef isMarkovian (st : Imscription) : Prop :=\n  st.chir = Ħ_Ñ\n\ntheorem nonmarkovian_has_memory : hasGenuineMemory nonmarkovianOpenSystems := by\n  simp [hasGenuineMemory, nonmarkovianOpenSystems]\n\ntheorem schrodinger_is_not_markovian_but_not_full_memory :\n  \u00acisMarkovian schrodingerDynamics \u2227\n  \u00achasGenuineMemory schrodingerDynamics := by\n  simp [isMarkovian, hasGenuineMemory, schrodingerDynamics]\n\n/-- The H_\u221e promotion is not a small correction; it changes the structural\nregime of the theory. Memory is a distinct structural regime, not a \"correction.\" -/\ntheorem memory_is_distinct_regime :\n  \u00ac(hasGenuineMemory nonmarkovianOpenSystems \u2192 hasGenuineMemory schrodingerDynamics) := by\n  simp [hasGenuineMemory, nonmarkovianOpenSystems, schrodingerDynamics]\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 1108 chars (mode='a'); file total 8928 bytes  (sha256:29b9b448c18b5c97)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 8928 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 4 [08:01:55Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 5. Temporal Primitive Sorting of Physics Problems\n-- ============================================================\n\ninductive TemporalPrimitive where\n  | gammaSeq  -- \u0393_seq: sequential composition\n  | kSlow     -- Ç_@: relaxation/adiabatic timescale\n  | pAsym     -- Φ_ɐ: irreversibility/parity breaking\n  | omegaZ    -- \u03a9_\u2124: integer winding/topological protection\n  | hInf      -- H_\u221e: genuine memory/history dependence\n  deriving DecidableEq, Repr\n\ndef activateTemporalPrimitive (tp : TemporalPrimitive) (st : Synthon) : Bool :=\n  match tp with\n  | .gammaSeq => st.gram = ɢ_seq\n  | .kSlow    => st.kin = Ç_@\n  | .pAsym    => st.pol = Φ_ɐ\n  | .omegaZ   => st.prot = Ω_z\n  | .hInf     => st.chir = Ħ_!\n\ndef activatedTemporalPrimitives (st : Synthon) : List TemporalPrimitive :=\n  List.filter (activateTemporalPrimitive \u00b7 st)\n    [TemporalPrimitive.gammaSeq, .kSlow, .pAsym, .omegaZ, .hInf]\n\n/-- Complexity score: number of activated temporal primitives. -/\ndef temporalComplexity (st : Synthon) : Nat :=\n  (activatedTemporalPrimitives st).length\n\ntheorem schrodinger_temporal_set :\n  activatedTemporalPrimitives schrodingerDynamics = [.gammaSeq, .kSlow] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, schrodingerDynamics]\n\ntheorem quantum_gravity_temporal_set :\n  activatedTemporalPrimitives quantumGravityCandidate =\n    [.gammaSeq, .kSlow, .pAsym, .omegaZ, .hInf] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, quantumGravityCandidate]\n\ntheorem schrodinger_complexity_2 : temporalComplexity schrodingerDynamics = 2 := by\n  simp [temporalComplexity, activatedTemporalPrimitives, activateTemporalPrimitive, schrodingerDynamics]\n\ntheorem quantum_gravity_complexity_5 : temporalComplexity quantumGravityCandidate = 5 := by\n  simp [temporalComplexity, activatedTemporalPrimitives, activateTemporalPrimitive, quantumGravityCandidate]\n\n/-- Statistical mechanics activates: \u0393_seq, Ç_@, Φ_ɐ. -/\ntheorem stat_mech_complexity_3 :\n  activatedTemporalPrimitives statisticalMechanics = [.gammaSeq, .kSlow, .pAsym] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, statisticalMechanics]\n\n/-- TQFT activates: \u0393_seq, Ç_@, \u03a9_\u2124. -/\ntheorem tqft_temporal_set :\n  activatedTemporalPrimitives tqft = [.gammaSeq, .kSlow, .omegaZ] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, tqft]\n\n/-- Non-Markovian open systems activate: \u0393_seq, Ç_@ (via Ç_W? no), H_\u221e.\nÇ_mod \u2260 Ç_@ so only \u0393_seq and H_\u221e. -/\ntheorem nonmarkovian_temporal_set :\n  activatedTemporalPrimitives nonmarkovianOpenSystems = [.gammaSeq, .hInf] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, nonmarkovianOpenSystems]\n  -- Ç_W \u2260 Ç_@, Φ_υ \u2260 Φ_ɐ, Ω_Å \u2260 Ω_z\n  rfl\n\n/-- Theorem: quantum gravity is maximally temporally complex (5/5). -/\ntheorem quantum_gravity_max_complexity :\n  \u2200 st : Synthon, temporalComplexity st \u2264 5 := by\n  intro st\n  simp [temporalComplexity, activatedTemporalPrimitives]\n  exact List.length_filter_le _ _\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 5. Temporal Primitive Sorting of Physics Problems\n-- ============================================================\n\ninductive TemporalPrimitive where\n  | gammaSeq  -- \u0393_seq: sequential composition\n  | kSlow     -- Ç_@: relaxation/adiabatic timescale\n  | pAsym     -- Φ_ɐ: irreversibility/parity breaking\n  | omegaZ    -- \u03a9_\u2124: integer winding/topological protection\n  | hInf      -- H_\u221e: genuine memory/history dependence\n  deriving DecidableEq, Repr\n\ndef activateTemporalPrimitive (tp : TemporalPrimitive) (st : Imscription) : Bool :=\n  match tp with\n  | .gammaSeq => st.gram = ɢ_seq\n  | .kSlow    => st.kin = Ç_@\n  | .pAsym    => st.pol = Φ_ɐ\n  | .omegaZ   => st.prot = Ω_z\n  | .hInf     => st.chir = Ħ_!\n\ndef activatedTemporalPrimitives (st : Imscription) : List TemporalPrimitive :=\n  List.filter (activateTemporalPrimitive \u00b7 st)\n    [TemporalPrimitive.gammaSeq, .kSlow, .pAsym, .omegaZ, .hInf]\n\n/-- Complexity score: number of activated temporal primitives. -/\ndef temporalComplexity (st : Imscription) : Nat :=\n  (activatedTemporalPrimitives st).length\n\ntheorem schrodinger_temporal_set :\n  activatedTemporalPrimitives schrodingerDynamics = [.gammaSeq, .kSlow] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, schrodingerDynamics]\n\ntheorem quantum_gravity_temporal_set :\n  activatedTemporalPrimitives quantumGravityCandidate =\n    [.gammaSeq, .kSlow, .pAsym, .omegaZ, .hInf] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, quantumGravityCandidate]\n\ntheorem schrodinger_complexity_2 : temporalComplexity schrodingerDynamics = 2 := by\n  simp [temporalComplexity, activatedTemporalPrimitives, activateTemporalPrimitive, schrodingerDynamics]\n\ntheorem quantum_gravity_complexity_5 : temporalComplexity quantumGravityCandidate = 5 := by\n  simp [temporalComplexity, activatedTemporalPrimitives, activateTemporalPrimitive, quantumGravityCandidate]\n\n/-- Statistical mechanics activates: \u0393_seq, Ç_@, Φ_ɐ. -/\ntheorem stat_mech_complexity_3 :\n  activatedTemporalPrimitives statisticalMechanics = [.gammaSeq, .kSlow, .pAsym] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, statisticalMechanics]\n\n/-- TQFT activates: \u0393_seq, Ç_@, \u03a9_\u2124. -/\ntheorem tqft_temporal_set :\n  activatedTemporalPrimitives tqft = [.gammaSeq, .kSlow, .omegaZ] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, tqft]\n\n/-- Non-Markovian open systems activate: \u0393_seq, Ç_@ (via Ç_W? no), H_\u221e.\nÇ_mod \u2260 Ç_@ so only \u0393_seq and H_\u221e. -/\ntheorem nonmarkovian_temporal_set :\n  activatedTemporalPrimitives nonmarkovianOpenSystems = [.gammaSeq, .hInf] := by\n  simp [activatedTemporalPrimitives, activateTemporalPrimitive, nonmarkovianOpenSystems]\n  -- Ç_W \u2260 Ç_@, Φ_υ \u2260 Φ_ɐ, Ω_Å \u2260 Ω_z\n  rfl\n\n/-- Theorem: quantum gravity is maximally temporally complex (5/5). -/\ntheorem quantum_gravity_max_complexity :\n  \u2200 st : Imscription, temporalComplexity st \u2264 5 := by\n  intro st\n  simp [temporalComplexity, activatedTemporalPrimitives]\n  exact List.length_filter_le _ _\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 3100 chars (mode='a'); file total 12058 bytes  (sha256:ad537c8f3b83afb8)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 12058 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 5 [08:02:15Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 6. Promotion Signatures and Summary Theorems\n-- ============================================================\n\n/-- Promotion from Schr\u00f6dinger dynamics to quantum gravity requires\n7 promotions and 1 demotion (verified: syncon_tool compute_promotions).\nPromoted: D, T, R, Phi, H, S, Omega\nDemoted: P (Φ_υ \u2192 Φ_ɐ) -/\ntheorem schrodinger_to_qg_summary :\n  let sd := schrodingerDynamics\n  let qg := quantumGravityCandidate\n  -- Promotions (7):\n  sd.dim < qg.dim \u2227               -- Ð_C \u2192 Ð_;\n  sd.top < qg.top \u2227               -- Þ_K \u2192 Þ_O\n  sd.rel < qg.rel \u2227               -- Ř_ý \u2192 Ř_=\n  sd.crit < qg.crit \u2227             -- φ̂_ž \u2192 φ̂_ÿ\n  sd.chir < qg.chir \u2227             -- Ħ_£ \u2192 Ħ_!\n  sd.stoi < qg.stoi \u2227             -- Σ_S \u2192 Σ_ï\n  sd.prot < qg.prot \u2227             -- Ω_Å \u2192 Ω_z\n  -- Demotion (1):\n  qg.pol < sd.pol                 -- Φ_ɐ < Φ_υ (irreversibility replaces superposition)\n  := by\n  simp [schrodingerDynamics, quantumGravityCandidate]\n  -- All proven by ordinal comparison of constructors\n  all_goals (simp [instLEDimensionality, instLETopology, instLERelational,\n                      instLECriticality, instLEChirality, instLEStoichiometry,\n                      instLEProtection, instLEPolarity] <;> rfl)\n\n/-- The tensor product schrodingerDynamics \u2297 measurementOutcome:\nBottlenecks: P (Φ_ɐ), F (ƒ_ì)\nUnions: T (Þ_ò), R (Ř_Ť), K (Ç_@), G (Γ_ʔ), Phi (φ̂_ÿ), H (Ħ_£) -/\ntheorem measurement_tensor_result :\n  let composite := tensorProduct schrodingerDynamics measurementOutcome\n  composite.pol = Φ_ɐ \u2227\n  composite.fid = ƒ_ì \u2227\n  composite.top = Þ_ò \u2227\n  composite.rel = Ř_Ť \u2227\n  composite.kin = Ç_@ \u2227\n  composite.gran = Γ_ʔ \u2227\n  composite.crit = φ̂_ÿ \u2227\n  composite.chir = Ħ_£ := by\n  simp [tensorProduct, schrodingerDynamics, measurementOutcome]\n  all_goals rfl\n\n/-- No mechanism operating purely within \u0393_seq + Ç_@ with Φ_υ\ncan produce Φ_ɐ \u2014 the measurement problem diagnosis. -/\ntheorem no_asym_from_psi :\n  \u2200 (mech : Synthon),\n    mech.gram = ɢ_seq \u2192\n    mech.kin = Ç_@ \u2192\n    mech.pol = Φ_υ \u2192\n    mech.pol \u2260 Φ_ɐ := by\n  intro mech h_gamma h_k h_p\n  rw [h_p]\n  intro h; cases h\n\nend ImscribingGrammar.PrimitiveMismatch\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
+  ACT:   chunked_write({"chunk": "\n-- ============================================================\n-- 6. Promotion Signatures and Summary Theorems\n-- ============================================================\n\n/-- Promotion from Schr\u00f6dinger dynamics to quantum gravity requires\n7 promotions and 1 demotion (verified: syncon_tool compute_promotions).\nPromoted: D, T, R, Phi, H, S, Omega\nDemoted: P (Φ_υ \u2192 Φ_ɐ) -/\ntheorem schrodinger_to_qg_summary :\n  let sd := schrodingerDynamics\n  let qg := quantumGravityCandidate\n  -- Promotions (7):\n  sd.dim < qg.dim \u2227               -- Ð_C \u2192 Ð_;\n  sd.top < qg.top \u2227               -- Þ_K \u2192 Þ_O\n  sd.rel < qg.rel \u2227               -- Ř_ý \u2192 Ř_=\n  sd.crit < qg.crit \u2227             -- φ̂_ž \u2192 φ̂_ÿ\n  sd.chir < qg.chir \u2227             -- Ħ_£ \u2192 Ħ_!\n  sd.stoi < qg.stoi \u2227             -- Σ_S \u2192 Σ_ï\n  sd.prot < qg.prot \u2227             -- Ω_Å \u2192 Ω_z\n  -- Demotion (1):\n  qg.pol < sd.pol                 -- Φ_ɐ < Φ_υ (irreversibility replaces superposition)\n  := by\n  simp [schrodingerDynamics, quantumGravityCandidate]\n  -- All proven by ordinal comparison of constructors\n  all_goals (simp [instLEDimensionality, instLETopology, instLERelational,\n                      instLECriticality, instLEChirality, instLEStoichiometry,\n                      instLEProtection, instLEPolarity] <;> rfl)\n\n/-- The tensor product schrodingerDynamics \u2297 measurementOutcome:\nBottlenecks: P (Φ_ɐ), F (ƒ_ì)\nUnions: T (Þ_ò), R (Ř_Ť), K (Ç_@), G (Γ_ʔ), Phi (φ̂_ÿ), H (Ħ_£) -/\ntheorem measurement_tensor_result :\n  let composite := tensorProduct schrodingerDynamics measurementOutcome\n  composite.pol = Φ_ɐ \u2227\n  composite.fid = ƒ_ì \u2227\n  composite.top = Þ_ò \u2227\n  composite.rel = Ř_Ť \u2227\n  composite.kin = Ç_@ \u2227\n  composite.gran = Γ_ʔ \u2227\n  composite.crit = φ̂_ÿ \u2227\n  composite.chir = Ħ_£ := by\n  simp [tensorProduct, schrodingerDynamics, measurementOutcome]\n  all_goals rfl\n\n/-- No mechanism operating purely within \u0393_seq + Ç_@ with Φ_υ\ncan produce Φ_ɐ \u2014 the measurement problem diagnosis. -/\ntheorem no_asym_from_psi :\n  \u2200 (mech : Imscription),\n    mech.gram = ɢ_seq \u2192\n    mech.kin = Ç_@ \u2192\n    mech.pol = Φ_υ \u2192\n    mech.pol \u2260 Φ_ɐ := by\n  intro mech h_gamma h_k h_p\n  rw [h_p]\n  intro h; cases h\n\nend ImscribingGrammar.PrimitiveMismatch\n", "mode": "a", "path": "/home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean"})
   OBS:   wrote 2297 chars (mode='a'); file total 14415 bytes  (sha256:de77735e0f46d5ef)
   VERIFY: [closed] /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/PrimitiveMismatch.lean: 14415 bytes on disk
   UPDATE: chunked_write → Frobenius closed
 ── Winding 6 [08:02:30Z] ──────────────────────────────────────
   THINK:
   ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && lake build ImscribingGrammar.PrimitiveMismatch 2>&1 | tail -30", "timeout": 60, "assertion": "\"error\" not in output.lower() or \"type mismatch\" not in output.lower()"})
-  OBS:   ✖ [2/3] Building ImscribingGrammar.Primitives.Synthon (134ms)
-trace: .> LEAN_PATH=/home/mrnob0dy666/imscribing_grammar/.lake/packages/Cli/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/batteries/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/Qq/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/aesop/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/importGraph/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/plausible/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/mathlib/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean /home/mrnob0dy666/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Synthon.lean -o /home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean/ImscribingGrammar/Primitives/Synthon.olean -i /home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean/ImscribingGrammar/Primitives/Synthon.ilean -c /home/mrnob0dy666/imscribing_grammar/.lake/build/ir/ImscribingGrammar/Primitives/Synthon.c --setup /home/mrnob0dy666/imscribing_grammar/.lake/build/ir/ImscribingGrammar/Primitives/Synthon.setup.json --json
-error: ImscribingGrammar/Primitives/Synthon.lean:6:0: unknown module prefix 'SynthOmnicon'
+  OBS:   ✖ [2/3] Building ImscribingGrammar.Primitives.Imscription (134ms)
+trace: .> LEAN_PATH=/home/mrnob0dy666/imscribing_grammar/.lake/packages/Cli/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/batteries/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/Qq/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/aesop/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/importGraph/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/plausible/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/packages/mathlib/.lake/build/lib/lean:/home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean /home/mrnob0dy666/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Imscription.lean -o /home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean/ImscribingGrammar/Primitives/Imscription.olean -i /home/mrnob0dy666/imscribing_grammar/.lake/build/lib/lean/ImscribingGrammar/Primitives/Imscription.ilean -c /home/mrnob0dy666/imscribing_grammar/.lake/build/ir/ImscribingGrammar/Primitives/Imscription.c --setup /home/mrnob0dy666/imscribing_grammar/.lake/build/ir/ImscribingGrammar/Primitives/Imscription.setup.json --json
+error: ImscribingGrammar/Primitives/Imscription.lean:6:0: unknown module prefix 'imscribing'
 
-No directory 'SynthOmnicon' or file 'SynthOmnicon.olean' in the search path entries:
+No directory 'imscribing' or file 'imscribing.olean' in the search path entries:
 /home/mrnob0dy666/imscribing_grammar/.lake/packages/Cli/.lake/build/lib/lean
 /home/mrnob0dy666/imscribing_grammar/.lake/packages/batteries/.lake/build/lib/lean
 /home/mrnob0dy666/imscribing_grammar/.lake/packages/Qq/.lake/build/lib/lean
@@ -2024,16 +2024,16 @@ No directory 'SynthOmnicon' or file 'SynthOmnicon.olean' in the search path entr
 /home/mrnob0dy666/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean
 error: Lean exited with code 1
 Some required targets logged failures:
-- ImscribingGrammar.Primitives.Synthon
+- ImscribingGrammar.Primitives.Imscription
 error: build failed
 
   VERIFY: [closed] assertion '"error" not in output.lower() or "type mismatch" not in output.lower()' PASSED
   UPDATE: run_command → Frobenius closed
 ── Winding 7 [08:02:39Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && sed -i 's/import SynthOmnicon.Primitives.Core/import ImscribingGrammar.Primitives.Core/' ImscribingGrammar/Primitives/Synthon.lean && head -8 ImscribingGrammar/Primitives/Synthon.lean", "timeout": 5, "assertion": "\"ImscribingGrammar.Primitives.Core\" in open(\"ImscribingGrammar/Primitives/Synthon.lean\").read()"})
-  OBS:   -- ImscribingGrammar/Primitives/Synthon.lean
--- Synthon struct, primitive distance (Hamming + ordinal), and key encodings.
+  ACT:   run_command({"command": "cd /home/mrnob0dy666/imscribing_grammar && sed -i 's/import imscribing.Primitives.Core/import ImscribingGrammar.Primitives.Core/' ImscribingGrammar/Primitives/Imscription.lean && head -8 ImscribingGrammar/Primitives/Imscription.lean", "timeout": 5, "assertion": "\"ImscribingGrammar.Primitives.Core\" in open(\"ImscribingGrammar/Primitives/Imscription.lean\").read()"})
+  OBS:   -- ImscribingGrammar/Primitives/Imscription.lean
+-- Imscription struct, primitive distance (Hamming + ordinal), and key encodings.
 -- Proves P-70 (Higgs = axion = inflaton) by rfl.
 -- All primitive names are canonical (v0.5.69).
 
@@ -2064,7 +2064,7 @@ h : ¬instOrdPolarity.ord Polarity.Φ_F Polarity.Φ_} = Ordering.lt
 case neg.Φ_˙.Φ_}
 h : ¬instOrdPolarity.ord Polarity.Φ_˙ Polarity.Φ_} = Ordering.lt
 ⊢ False
-error: ImscribingGrammar/Primitives/Core.lean:321:0: Invalid name after `end`: Expected `ImscribingGrammar.Primitives`, but found `SynthOmnicon.Primitives`
+error: ImscribingGrammar/Primitives/Core.lean:321:0: Invalid name after `end`: Expected `ImscribingGrammar.Primitives`, but found `imscribing.Primitives`
 warning: ImscribingGrammar/Primitives/Core.lean:322:0: unclosed sections or namespaces; expected: '
 
 end Primitives
@@ -2091,7 +2091,7 @@ instance : DecidableEq Protection      := inferInstance
 instance : DecidableEq Stoichiometry   := inferInstance
 instance : DecidableEq Chirality       := inferInstance
 
-end SynthOmnicon.Primitives
+end imscribing.Primitives
 
   VERIFY: [OPEN] assertion '"true" in output' FAILED — output does not satisfy contract
   UPDATE: run_command → Frobenius OPEN — re-enter THINK with failure
@@ -2099,7 +2099,7 @@ end SynthOmnicon.Primitives
   THINK:
   ACT:   run_command({"command": "grep -n \"namespace\\|end \\|instOrdPolarity\" /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean | tail -20", "timeout": 5, "assertion": "\"namespace\" in output and \"end \" in output"})
   OBS:   12:namespace ImscribingGrammar.Primitives
-321:end SynthOmnicon.Primitives
+321:end imscribing.Primitives
 
   VERIFY: [closed] assertion '"namespace" in output and "end " in output' PASSED
   UPDATE: run_command → Frobenius closed
@@ -2132,7 +2132,7 @@ instance : DecidableEq Protection      := inferInstance
 instance : DecidableEq Stoichiometry   := inferInstance
 instance : DecidableEq Chirality       := inferInstance
 
-end SynthOmnicon.Primitives
+end imscribing.Primitives
 
   VERIFY: [OPEN] assertion '"instOrdPolarity" in output' FAILED — output does not satisfy contract
   UPDATE: run_command → Frobenius OPEN — re-enter THINK with failure
@@ -2144,7 +2144,7 @@ end SynthOmnicon.Primitives
   UPDATE: run_command → Frobenius OPEN — re-enter THINK with failure
 ── Winding 13 [08:03:18Z] ──────────────────────────────────────
   THINK:
-  ACT:   run_command({"command": "sed -i 's/end SynthOmnicon.Primitives/end ImscribingGrammar.Primitives/' /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean && tail -3 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean", "timeout": 5, "assertion": "\"end ImscribingGrammar.Primitives\" in open(\"ImscribingGrammar/Primitives/Core.lean\").read()"})
+  ACT:   run_command({"command": "sed -i 's/end imscribing.Primitives/end ImscribingGrammar.Primitives/' /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean && tail -3 /home/mrnob0dy666/imscribing_grammar/ImscribingGrammar/Primitives/Core.lean", "timeout": 5, "assertion": "\"end ImscribingGrammar.Primitives\" in open(\"ImscribingGrammar/Primitives/Core.lean\").read()"})
   OBS:   instance : DecidableEq Chirality       := inferInstance
 
 end ImscribingGrammar.Primitives

@@ -80,29 +80,29 @@ def demo_frequency_series() -> None:
     print("  → z_eff grows without bound: logarithmic G/D degeneracy confirmed.")
 
 
-def demo_degeneracy_strength(synthon_name: str = "synthon_Varma_quantum_XY_critical_poin") -> None:
+def demo_degeneracy_strength(imscription_name: str = "imscription_Varma_quantum_XY_critical_poin") -> None:
     """Score degeneracy strength for a catalog entry."""
     print("\n" + "=" * 60)
     print(f"Test 4: Degeneracy strength for catalog entry")
     print("=" * 60)
     try:
         from imscrbgrmr import global_catalog
-        synthon = global_catalog.get(synthon_name)
-        if not synthon:
-            print(f"  Entry '{synthon_name}' not in catalog — using reference data directly.")
+        imscription = global_catalog.get(imscription_name)
+        if not imscription:
+            print(f"  Entry '{imscription_name}' not in catalog — using reference data directly.")
             return
 
         # Test with Varma QXY reference data
         data = REFERENCE_CORRELATION_DATA["varma_qxy"]
         freq_series = [(2.0, math.exp(2.0)), (10.0, math.exp(10.0)), (14.0, math.exp(14.0))]
 
-        score, tier = degeneracy_strength(synthon, data, freq_series)
-        print(f"  Entry: {synthon_name}")
+        score, tier = degeneracy_strength(imscription, data, freq_series)
+        print(f"  Entry: {imscription_name}")
         print(f"  Degeneracy strength score: {score:.3f}")
         print(f"  Degeneracy tier: {tier}")
         print("  Tiers: 0.0–0.3=none | 0.3–0.6=logarithmic | 0.6–0.85=power-law | 0.85–1.0=collapse")
 
-        rep = score_phi_c_candidacy(synthon, data)
+        rep = score_phi_c_candidacy(imscription, data)
         print(f"  Φ_c candidacy: {rep._candidacy_label()} (score={rep.score:.3f})")
         print(f"  Axiom 5: {rep.axiom5_note[:80]}...")
     except Exception as e:

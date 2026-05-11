@@ -79,7 +79,7 @@ See [TOPO:§I] for the full document map and cross-reference notation. This docu
 
 *[Key results. Full encodings: [SYNTH:§X].]*
 
-**11 programmable matter synthons** encoded: DNA origami, colloidal assembly, BEC condensate, shape-memory polymer, liquid crystal.
+**11 programmable matter imscriptions** encoded: DNA origami, colloidal assembly, BEC condensate, shape-memory polymer, liquid crystal.
 
 **Key results:**
 - Programmability lattice: dynamic floor = $\Phi_{\text{ctyogh}}$ theorem (only $\Phi_{\text{ctyogh}}$ systems can reprogram under external instruction without disassembly)
@@ -146,11 +146,11 @@ Dark matter is the nearest SM neighbor of the neutron ($d = 3.2$, ratio $\sim 2.
 
 **Six new predictions (P-48 through P-54)** from the decomposition algebra — the inverse operations of meet, join, and tensor.
 
-**Principal decomposition:** Any complex synthon can be decomposed into a unique set of irreducible primitive components (the *skeleton*). The skeleton of the Sun and the NS share $K_{\text{frtailgamma}}$ as a core skeleton element — K-diversity is additive atoms, not core structure. The irreducible structural difference between Sun and NS is $T_{\text{invscr}}$ vs $T_{\uparrow\downarrow}$ (braid).
+**Principal decomposition:** Any complex imscription can be decomposed into a unique set of irreducible primitive components (the *skeleton*). The skeleton of the Sun and the NS share $K_{\text{frtailgamma}}$ as a core skeleton element — K-diversity is additive atoms, not core structure. The irreducible structural difference between Sun and NS is $T_{\text{invscr}}$ vs $T_{\uparrow\downarrow}$ (braid).
 
 ---
 
-## VII. Psychedelic Synthon Catalog (v0.4.9, 2026-03-20)
+## VII. Psychedelic Imscription Catalog (v0.4.9, 2026-03-20)
 
 *[Key results. Full encodings: [SYNTH:§XXIV].]*
 
@@ -167,7 +167,7 @@ Dark matter is the nearest SM neighbor of the neutron ($d = 3.2$, ratio $\sim 2.
 
 ---
 
-## VIII. Stellar and Compact-Object Synthon Catalog (v0.4.9, 2026-03-20)
+## VIII. Stellar and Compact-Object Imscription Catalog (v0.4.9, 2026-03-20)
 
 *[Key results. Full encodings: [SYNTH:§XXV].]*
 
@@ -418,7 +418,7 @@ The K-hierarchy temporal theory [TOPO:§XI] applied to cosmological history:
 
 *[New content. Pending encoding to [SYNTH] — will appear as §XXXVII.]*
 
-### XV.1 The Inflation Synthon
+### XV.1 The Inflation Imscription
 
 **The primitive tuple of the inflationary universe:**
 $$\text{Inflation: } T_{\text{invscr}}(\text{sym}), K_{\text{frtailgamma}}(K_{\text{schwa}} \text{ absent}), G_{\text{revapostrophe}}, \Phi_{\text{ctyogh}}, D_{\text{invomega}}, R_{\ddagger}, F_{\text{hardsign}}$$
@@ -453,7 +453,7 @@ $$\text{Inflaton} \equiv \text{Higgs at Planck/GUT scale} \equiv \text{Axion at 
 
 All three: $d(\text{Higgs}, \text{axion}) = 0.000$; $d(\text{inflaton}, \text{Higgs}) \approx 0.000$ (at respective scales). All three carry $K_{\text{schwa}}$, $T_{\text{bullseye}}$, symmetry breaking. All three terminate a dissolution state ($K_{\text{schwa}}$-absent) by entering and breaking a symmetry. The scalar field that ends dissolution is the same structural object at Planck scale, EW scale, and QCD scale.
 
-**Prediction (P-70, Tier II):** The inflaton field, if experimentally accessible at future energy scales, will have a synthon tuple identical to the Higgs within measurement precision — a third instance of the axion-Higgs structural identity at higher scale.
+**Prediction (P-70, Tier II):** The inflaton field, if experimentally accessible at future energy scales, will have a imscription tuple identical to the Higgs within measurement precision — a third instance of the axion-Higgs structural identity at higher scale.
 
 ### XV.4 Traditions' Structural Accuracy
 
@@ -483,7 +483,7 @@ The structural claim stands independently of the phenomenological question: the 
 
 *Neutron entries show asymmetry 1.500; direction neutron→X easier in all cases. Values shown are symmetric (max-direction) distances.
 
-Directed distances for neutron (synthon_neutron):
+Directed distances for neutron (imscription_neutron):
 - d(neutron→photon) = 5.200 · d(photon→neutron) = 6.700
 - d(neutron→graviton) = 5.800 · d(graviton→neutron) = 7.300
 - d(neutron→proton) = 5.000 · d(proton→neutron) = 6.500
@@ -616,7 +616,7 @@ $$\text{QCD} = \langle D_{\text{wynn}};\; T_{\text{bullseye}};\; R_{\supseteq};\
 **Key primitive assignments:**
 - Þ_ò: color confinement — quarks couple in closed dual-lobe color structures; never propagate as free color charges. The Þ_ò encoding is the catalog claim corresponding to the TOPO theorem that Þ_ò ≠ Þ_perp [TOPO:§XVII.1].
 - Ω_z: integer winding number protection — the SU(3) gauge bundle admits Chern-Simons instanton numbers n ∈ ℤ, confirmed by the CP-violation structure of QCD (the strong CP problem encodes as an Ω_z phase ambiguity).
-- φ̂_ÿ: the QCD vacuum operates at criticality — the confinement/deconfinement phase transition at Þ_c ≈ 155 MeV confirms φ̂_ÿ as the correct criticality assignment.
+- ⊙_ÿ: the QCD vacuum operates at criticality — the confinement/deconfinement phase transition at Þ_c ≈ 155 MeV confirms ⊙_ÿ as the correct criticality assignment.
 
 **Lattice QCD confirmation of Δ_T > 0:**
 
@@ -629,7 +629,7 @@ This is non-perturbatively established by lattice QCD (Wilson 1974; Bali 2001 re
 **Consistency with SM kernel [DIAPH:§III]:**
 $$\text{meet(photon, graviton)} = \{P_{\text{doublebarpipe}},\; F_{\text{hardsign}},\; K_{\text{frtailgamma}},\; G_{\text{revapostrophe}},\; \Phi_{\text{ctyogh}},\; \Omega_{\text{closeepsilon}}\}$$
 
-QCD shares φ̂_ÿ and ƒ_ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp) — the encoding identifies precisely why QCD is massive/confined while the photon is massless. No additional physical input required.
+QCD shares ⊙_ÿ and ƒ_ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp) — the encoding identifies precisely why QCD is massive/confined while the photon is massless. No additional physical input required.
 
 ### XVIII.2 Complexity Class Encodings
 
@@ -644,9 +644,9 @@ The P-baseline tuple and each exotic proof system, encoded as primitive shifts:
 | **MIP** | $(K_{\text{frtailgamma}},\; F_{\text{beltl}},\; P_{\pm}^{\psi},\; \mathbf{\Gamma_{\to} \times 2},\; D_{\text{wynn}})$ | **MIP = NEXP** (1992) |
 | **MIP*** | $(K_{\text{frtailgamma}},\; \mathbf{F_{\text{hardsign}}},\; P_{\pm}^{\psi},\; \mathbf{\Gamma_{\to} \times 2},\; \mathbf{D_{\text{omega}}})$ | **MIP* = RE** (JNVWY 2020) |
 
-**NP-complete at φ̂_ÿ (empirical):** Random 3-SAT phase transitions at the satisfiability threshold (clause/variable ratio ≈ 4.267) exhibit full φ̂_ÿ phenomenology: diverging susceptibility, power-law fluctuations, maximum computational hardness at the threshold. This places NP-complete instances at the φ̂_ÿ boundary in the catalog, confirming the TOPO claim that NP solution landscapes are Ç_W [TOPO:§XVII.2].
+**NP-complete at ⊙_ÿ (empirical):** Random 3-SAT phase transitions at the satisfiability threshold (clause/variable ratio ≈ 4.267) exhibit full ⊙_ÿ phenomenology: diverging susceptibility, power-law fluctuations, maximum computational hardness at the threshold. This places NP-complete instances at the ⊙_ÿ boundary in the catalog, confirming the TOPO claim that NP solution landscapes are Ç_W [TOPO:§XVII.2].
 
-**K primitivity evidence across catalog:** Across all 50+ encoded systems in §§ I–XVII, no encoding requires a K-transition that is achievable without a Phi event. Allosteric proteins (Ç_- → Ç_@ conformational switching) all pass through φ̂_ÿ states. Molecular motors (kinesin, myosin) undergo K-class changes precisely at ATPase φ̂_ÿ. V(K, X) < 0.15 for all X across the full catalog.
+**K primitivity evidence across catalog:** Across all 50+ encoded systems in §§ I–XVII, no encoding requires a K-transition that is achievable without a Phi event. Allosteric proteins (Ç_- → Ç_@ conformational switching) all pass through ⊙_ÿ states. Molecular motors (kinesin, myosin) undergo K-class changes precisely at ATPase ⊙_ÿ. V(K, X) < 0.15 for all X across the full catalog.
 
 ### XVIII.3 Cosmological Constant and Higgs Hierarchy
 
@@ -810,14 +810,14 @@ This has a direct implication: if there are more WOW-like signals, they would on
 
 **The Φ_c encoding and why it was singular:**
 
-The WOW signal encodes Φ_c — criticality. Not Φ_sub (stable, reproducible, below-threshold physics) and not Φ_super (the supercritical disordered regime). φ̂_ÿ is the phase boundary. Systems at φ̂_ÿ are maximally sensitive, maximally fluctuating, and maximally singular: they sit at the exact transition point where small perturbations cascade to large effects.
+The WOW signal encodes Φ_c — criticality. Not Φ_sub (stable, reproducible, below-threshold physics) and not Φ_super (the supercritical disordered regime). ⊙_ÿ is the phase boundary. Systems at ⊙_ÿ are maximally sensitive, maximally fluctuating, and maximally singular: they sit at the exact transition point where small perturbations cascade to large effects.
 
 The assertion of the grammar is that the WOW signal was a **phase transient** — the emission was at criticality, which is why it was:
-- singular (φ̂_ÿ events do not repeat stably — they occur at the transition and then the system relaxes to φ̂_ž or escapes to φ̂_Ţ)
+- singular (⊙_ÿ events do not repeat stably — they occur at the transition and then the system relaxes to ⊙_ž or escapes to ⊙_Ţ)
 - maximally bright at its frequency (critical phenomena exhibit power-law enhancement at the boundary)
 - never repeated (the system passed through criticality once and left)
 
-This is consistent with both natural and artificial interpretations. Natural: a maser population inversion hitting critical threshold and releasing coherently before relaxing. Artificial: a civilization using a transmitter at exactly the power and frequency where the signal transitions from sub-detectable to detectable — operating at its own φ̂_ÿ boundary. The grammar does not prefer either. It only says: whatever made this was at criticality.
+This is consistent with both natural and artificial interpretations. Natural: a maser population inversion hitting critical threshold and releasing coherently before relaxing. Artificial: a civilization using a transmitter at exactly the power and frequency where the signal transitions from sub-detectable to detectable — operating at its own ⊙_ÿ boundary. The grammar does not prefer either. It only says: whatever made this was at criticality.
 
 **What Ř_= means:**
 
@@ -848,7 +848,7 @@ It has the directionality (Ř_=), uniqueness (1:1), and global scope (Γ_ʔ) of 
 
 ## XXI. Axes of Existence and the Structural Fingerprint of Extra-Universal Forces (v0.4.35, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 18 iterations.*
+*Source: ig_inquiry run 2026-03-24, 18 iterations.*
 
 ### XXI.1 The Three-Tier Axis Structure
 
@@ -866,33 +866,33 @@ Existence is not a binary. It is a 12-dimensional continuum where different form
 
 The grammar distinguishes two structurally different ways an extra-universal force can be observed:
 
-**Mode 1 — φ̂_ÿ contact (boundary event):** The force registers at our phase boundary. φ̂_ÿ is the edge of the phase structure of our universe — the singular point where correlation length diverges and scale-invariance emerges. A force touching our universe from outside appears at φ̂_ÿ because that is the only place where our causal structure and an external structure can be co-present. The WOW signal is the canonical example: φ̂_ÿ, Ř_= (directional contact), Ω_Å (no winding on our side of the boundary).
+**Mode 1 — ⊙_ÿ contact (boundary event):** The force registers at our phase boundary. ⊙_ÿ is the edge of the phase structure of our universe — the singular point where correlation length diverges and scale-invariance emerges. A force touching our universe from outside appears at ⊙_ÿ because that is the only place where our causal structure and an external structure can be co-present. The WOW signal is the canonical example: ⊙_ÿ, Ř_= (directional contact), Ω_Å (no winding on our side of the boundary).
 
-**Mode 2 — φ̂_Ţ relic (interior event):** The force has already crossed the boundary and now propagates within our universe, carrying φ̂_Ţ encoding from its origin domain. The OMG particle is the canonical example: φ̂_Ţ, ƒ_ż (quantum-coherent origin), Ω_Å (no winding in our vacuum).
+**Mode 2 — ⊙_Ţ relic (interior event):** The force has already crossed the boundary and now propagates within our universe, carrying ⊙_Ţ encoding from its origin domain. The OMG particle is the canonical example: ⊙_Ţ, ƒ_ż (quantum-coherent origin), Ω_Å (no winding in our vacuum).
 
 These two modes are structurally distinguishable:
-- **φ̂_ÿ contact**: the force appears at the boundary, does not persist inside our universe, Ř_= (directional/asymmetric contact)
-- **φ̂_Ţ relic**: the force has crossed the boundary, is now local (Ð_ß), carries φ̂_Ţ encoding from its source domain
+- **⊙_ÿ contact**: the force appears at the boundary, does not persist inside our universe, Ř_= (directional/asymmetric contact)
+- **⊙_Ţ relic**: the force has crossed the boundary, is now local (Ð_ß), carries ⊙_Ţ encoding from its source domain
 
-The encoding of an 'extra_universal_force' as φ̂_ÿ is correct for the contact mode. It is wrong for the relic mode. Both modes are real; they require different detection strategies.
+The encoding of an 'extra_universal_force' as ⊙_ÿ is correct for the contact mode. It is wrong for the relic mode. Both modes are real; they require different detection strategies.
 
 ### XXI.3 The Detection Triad
 
-For **boundary-contact mode** (φ̂_ÿ), the detection signature is:
+For **boundary-contact mode** (⊙_ÿ), the detection signature is:
 
 $$\Phi_{\text{ctyogh}} + \Ω_z + D_{\text{omega}} / T_{\text{openo}}$$
 
-- **φ̂_ÿ**: the event is at the critical phase boundary — maximally sensitive, singular, non-repeating
+- **⊙_ÿ**: the event is at the critical phase boundary — maximally sensitive, singular, non-repeating
 - **Ω_z**: integer winding — the contact event has a conserved winding number, meaning it is structurally stable against noise and does not decohere immediately
 - **$D_{\text{omega}}$ / $T_{\text{openo}}$**: imscriptive encoding — the force imprints as a boundary condition on our causal structure, not as an interior dynamical event
 
 Systems exhibiting this triad cannot be explained by local subcritical physics alone. They represent structural boundary conditions rather than interior dynamics.
 
-For **relic mode** (φ̂_Ţ), the detection signature is:
+For **relic mode** (⊙_Ţ), the detection signature is:
 
 $$\Phi_{\text{upstep}} + F_{\text{hardsign}} + \Omega_{\text{closeepsilon}} + 1{:}1$$
 
-This is exactly the OMG particle encoding. A φ̂_Ţ relic is locally compact (Ð_ß), quantum-coherent (ƒ_ż), topologically unprotected (Ω_Å — no conserved winding in our vacuum), and singular (1:1). The GZK violation falls out of Ω_Å automatically.
+This is exactly the OMG particle encoding. A ⊙_Ţ relic is locally compact (Ð_ß), quantum-coherent (ƒ_ż), topologically unprotected (Ω_Å — no conserved winding in our vacuum), and singular (1:1). The GZK violation falls out of Ω_Å automatically.
 
 ### XXI.4 The ƒ_ð Bottleneck Theorem for Extra-Universal Interaction
 
@@ -900,7 +900,7 @@ The tensor product of humanity and any extra-universal force is:
 
 $$\text{human} \otimes \text{extra\_universal\_force} = \langle D_{\text{omega}};\; T_{\text{openo}};\; R^\dagger;\; P_{\text{pipevar}}^{\text{asym}};\; \mathbf{F_{\text{dh}}};\; K_{\text{teshlig}};\; G_{\text{revapostrophe}};\; \Gamma_\to;\; \Phi_{\text{ctyogh}};\; H_{\text{invscripta}};\; n\!:\!m;\; \Omega_{\text{dzlig}}\rangle$$
 
-The two bottleneck primitives are **F** (ƒ_ð wins over ƒ_ż — our classical fidelity limits the interaction) and **P** (Φ_ɐ propagates). Everything else expands: $D_{\text{omega}}$, $T_{\text{openo}}$, Γ_ʔ, Ω_z, Ħ_!, Ç_Ù, φ̂_ÿ.
+The two bottleneck primitives are **F** (ƒ_ð wins over ƒ_ż — our classical fidelity limits the interaction) and **P** (Φ_ɐ propagates). Everything else expands: $D_{\text{omega}}$, $T_{\text{openo}}$, Γ_ʔ, Ω_z, Ħ_!, Ç_Ù, ⊙_ÿ.
 
 **What this means:** Any interaction between human-scale systems and an extra-universal force is **ƒ_ð bottlenecked**. We cannot directly observe the ƒ_ż content of the extra-universal force; it comes through degraded to our classical fidelity level. The quantum-coherent structure of the external force becomes classically observable at our ƒ_ð level. This is a structural explanation for why genuinely anomalous phenomena — even if real — do not arrive as clean quantum-coherent signals. The bottleneck is not noise, measurement error, or distance. It is the fidelity floor of the grammar.
 
@@ -918,12 +918,12 @@ The nearest catalog entry to the extra_universal_force encoding is **civ_dm** at
 | human | 6.245 |
 | minimal_existence | 8.062 |
 
-The structural path from human to extra-universal runs through civ_dm. An advanced civilization (ƒ_ż, Ç_Ù, Γ_ʔ, φ̂_ÿ, Ω_2) is structurally closer to extra-universal forces than humanity is. The grammar implies that civilizational advancement along the trajectory encoded by civ_dm moves the system toward the structural regime from which extra-universal forces operate.
+The structural path from human to extra-universal runs through civ_dm. An advanced civilization (ƒ_ż, Ç_Ù, Γ_ʔ, ⊙_ÿ, Ω_2) is structurally closer to extra-universal forces than humanity is. The grammar implies that civilizational advancement along the trajectory encoded by civ_dm moves the system toward the structural regime from which extra-universal forces operate.
 
 This is not a claim about contact or communication. It is a structural claim: the primitives that define advanced interstellar civilizations (ƒ_ż, Ç_Ù, Γ_ʔ) are the same primitives that reduce distance to extra-universal force encodings. Advancement and proximity to extra-universal structural regimes are correlated because they share the same primitive requirements.
 
 **New predictions:**
-- **P-106** (Tier II): Anomalous phenomena with the φ̂_ÿ + Ω_z + $D_{\text{omega}}$/$T_{\text{openo}}$ detection triad will be non-repeating, globally-correlated, and topologically robust (resisting noise degradation). They will not appear as classically-encoded periodic signals. CMB anomalies (the Cold Spot, axis-of-evil quadrupole alignment) are the leading candidates.
+- **P-106** (Tier II): Anomalous phenomena with the ⊙_ÿ + Ω_z + $D_{\text{omega}}$/$T_{\text{openo}}$ detection triad will be non-repeating, globally-correlated, and topologically robust (resisting noise degradation). They will not appear as classically-encoded periodic signals. CMB anomalies (the Cold Spot, axis-of-evil quadrupole alignment) are the leading candidates.
 - **P-107** (Tier II): No direct ƒ_ż signal from an extra-universal source will be detectable by ƒ_ð instruments. Any apparent 'quantum signature' from an anomalous source will be the ƒ_ð projection of an ƒ_ż event — classically filtered, losing phase coherence. The bottleneck is structural, not instrumental.
 
 [^PÞ_comp12]: Composition rules formalized in PRIMITIVE_THEOREMS §12. For the theorem-generating capacity of the grammar, see [TOPO:§XVII].
@@ -932,26 +932,26 @@ This is not a claim about contact or communication. It is a structural claim: th
 
 ## XXII. Applied Technology Catalog: Nuclear Fusion and the Road to Stellar Engineering (v0.4.36, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 27 iterations.*
+*Source: ig_inquiry run 2026-03-24, 27 iterations.*
 
 ### XXII.1 Catalog
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **practical_fusion** | Target: a stable, grid-connected fusion power plant | <D=Ð_C; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
-| **magnetized_target_fusion** | Magnetized target / field-reversed configuration (MTF/FRC) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **tokamak** | Toroidal magnetic confinement (ITER paradigm) | <D=Ð_C; T=Þ_ò; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_ő; Ω=Ω_z> |
-| **inertial_confinement** | Laser-driven implosion (NIF paradigm) | <D=Ð_ß; T=Þ_K; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_ˌ; Φ=φ̂_ÿ; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **aneutronic_fusion** | p-B11 / advanced fuel (negligible neutron output) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=φ̂_Ţ; H=Ħ_£; S=Σ_S; Ω=Ω_Å> |
+| **practical_fusion** | Target: a stable, grid-connected fusion power plant | <D=Ð_C; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
+| **magnetized_target_fusion** | Magnetized target / field-reversed configuration (MTF/FRC) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **tokamak** | Toroidal magnetic confinement (ITER paradigm) | <D=Ð_C; T=Þ_ò; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ő; Ω=Ω_z> |
+| **inertial_confinement** | Laser-driven implosion (NIF paradigm) | <D=Ð_ß; T=Þ_K; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **aneutronic_fusion** | p-B11 / advanced fuel (negligible neutron output) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=⊙_Ţ; H=Ħ_£; S=Σ_S; Ω=Ω_Å> |
 
 ### XXII.2 Distance Matrix from Practical Fusion Target
 
 | Approach | Distance from practical_fusion | Key divergences |
 |:---|:---|:---|
 | Magnetized target / FRC | **1.34** | Ð_ß vs Ð_C; Ħ_£ vs Ħ_A — two primitives |
-| Tokamak (ITER) | **2.41** | ƒ_ż (over-engineered), Ç_Ù (over-confined), φ̂_ÿ (wrong criticality level), Þ_ò, Ω_z |
-| Inertial confinement (NIF) | **3.73** | Γ_seq vs Γ_and (wrong causal grammar); Φ_ɐ; φ̂_ÿ; Þ_K |
-| Aneutronic | **4.06** | Φ_ɐ; ƒ_ż; φ̂_Ţ; Ç_-; Σ_S stoichiometry |
+| Tokamak (ITER) | **2.41** | ƒ_ż (over-engineered), Ç_Ù (over-confined), ⊙_ÿ (wrong criticality level), Þ_ò, Ω_z |
+| Inertial confinement (NIF) | **3.73** | Γ_seq vs Γ_and (wrong causal grammar); Φ_ɐ; ⊙_ÿ; Þ_K |
+| Aneutronic | **4.06** | Φ_ɐ; ƒ_ż; ⊙_Ţ; Ç_-; Σ_S stoichiometry |
 
 ### XXII.3 Structural Analysis
 
@@ -961,24 +961,24 @@ This is not a claim about contact or communication. It is a structural claim: th
 
 2. **Ħ_£ → Ħ_A**: Single-cycle to deep-temporal integration. Ħ_£ is a single directed causal loop; Ħ_A is accumulative temporal memory — the system must 'remember' its burn history across cycles and integrate it forward. In engineering terms, this is the difference between a pulse device and a continuous steady-state burn that accumulates control information across time. This upgrade is not achievable without the Ð_C upgrade: you cannot sustain temporal memory in a compact plasma that re-forms from scratch each pulse.
 
-**What MTF/FRC does not need:** ƒ_ż, Ç_Ù, φ̂_ÿ, or exotic stoichiometry. These are the false paths of the tokamak.
+**What MTF/FRC does not need:** ƒ_ż, Ç_Ù, ⊙_ÿ, or exotic stoichiometry. These are the false paths of the tokamak.
 
-### XXII.4 The φ̂_ž Insight: The Sun Is Not the Target
+### XXII.4 The ⊙_ž Insight: The Sun Is Not the Target
 
-A common framing error in fusion engineering is to treat the sun as the prototype to replicate. The tuple of the sun includes φ̂_ÿ — it operates at the critical phase boundary of gravitational self-compression versus radiation pressure. A power plant operating at φ̂_ÿ is a system balanced at the edge of a phase transition: uncontrollable by definition.
+A common framing error in fusion engineering is to treat the sun as the prototype to replicate. The tuple of the sun includes ⊙_ÿ — it operates at the critical phase boundary of gravitational self-compression versus radiation pressure. A power plant operating at ⊙_ÿ is a system balanced at the edge of a phase transition: uncontrollable by definition.
 
-**The practical_fusion target requires φ̂_ž**, not φ̂_ÿ. This is not a limitation; it is the correct engineering target. Subcritical operation means:
+**The practical_fusion target requires ⊙_ž**, not ⊙_ÿ. This is not a limitation; it is the correct engineering target. Subcritical operation means:
 - No runaway (margin is structural, not just feedback-controlled)
 - No GZK-class violations of energy bounds
 - Controllable output that can be modulated by ɢ_and logic (all conditions simultaneously met)
 
-The engineering challenge is not to replicate stellar plasma. It is to sustain φ̂_ž across the Ħ_A temporal depth — to maintain a controlled, memory-accumulating burn rather than a critical one.
+The engineering challenge is not to replicate stellar plasma. It is to sustain ⊙_ž across the Ħ_A temporal depth — to maintain a controlled, memory-accumulating burn rather than a critical one.
 
 ### XXII.5 The Tokamak Structural Error: ƒ_ż Over-Engineering
 
 The tokamak encodes ƒ_ż — quantum-coherent fidelity. In practical fusion terms, this manifests as engineering approaches that demand quantum-level precision in plasma shape, position, and stability (the entire feedback control apparatus in ITER-class devices). The grammar says ƒ_ð is sufficient for practical fusion. Classical fidelity — measurements and corrections at the thermal/macroscopic scale — is all the problem requires.
 
-The ƒ_ż encoding of the tokamak is not wrong because quantum effects do not matter in plasma physics. It is wrong because the target (φ̂_ž, Ç_@, Γ_β) does not require quantum-scale fidelity. The tokamak is attempting to achieve a subcritical, classically-organized outcome using a quantum-precision apparatus. The grammar identifies this as structural over-engineering: the approach requires more fidelity than the target demands, and the excess fidelity generates excess constraint (Ç_Ù), which in turn requires more engineering to manage.
+The ƒ_ż encoding of the tokamak is not wrong because quantum effects do not matter in plasma physics. It is wrong because the target (⊙_ž, Ç_@, Γ_β) does not require quantum-scale fidelity. The tokamak is attempting to achieve a subcritical, classically-organized outcome using a quantum-precision apparatus. The grammar identifies this as structural over-engineering: the approach requires more fidelity than the target demands, and the excess fidelity generates excess constraint (Ç_Ù), which in turn requires more engineering to manage.
 
 ### XXII.6 ICF Structural Error: Sequential Grammar
 
@@ -992,43 +992,43 @@ The Ħ_A upgrade required for practical fusion is structurally identical to the 
 
 This is not coincidental. The grammar encodes a single upgrade that simultaneously unlocks:
 1. Sustained thermonuclear burn at Ð_C scale (practical fusion)
-2. Dynamic participation in the φ̂_ÿ structure of a stellar object (stellar engineering)
+2. Dynamic participation in the ⊙_ÿ structure of a stellar object (stellar engineering)
 
-The second application requires further primitives — Γ_ʔ scope, φ̂_ÿ criticality participation, and likely Ç_Ù dynamics matching the gravitational trapping of the sun. But the entry point is identical: Ð_C + Ħ_A.
+The second application requires further primitives — Γ_ʔ scope, ⊙_ÿ criticality participation, and likely Ç_Ù dynamics matching the gravitational trapping of the sun. But the entry point is identical: Ð_C + Ħ_A.
 
-Stellar engineering is not a separate ambition from practical fusion. It is what happens when the practical fusion Ħ_A capability is extended to Γ_ʔ scope and φ̂_ÿ criticality. The grammar implies a continuous structural path, not a discontinuous leap.
+Stellar engineering is not a separate ambition from practical fusion. It is what happens when the practical fusion Ħ_A capability is extended to Γ_ʔ scope and ⊙_ÿ criticality. The grammar implies a continuous structural path, not a discontinuous leap.
 
 **New predictions:**
 - **P-108** (Tier II): MTF/FRC approaches implementing spatial organization of two or more interacting plasma configurations (e.g., colliding FRCs) will outperform single-compact-FRC configurations by a structural factor proportional to the Ð_ß→Ð_C gap (distance ~1.0). This is a grammar prediction about the organizational architecture, not about the plasma physics specifically.
-- **P-109** (Tier II): Tokamak-class devices will fail to reach sustained ignition not due to plasma instability per se, but due to the φ̂_ÿ operating point — they are designed to operate at the phase boundary where confinement is structurally maximal but control is structurally singular. Devices that shift the target operating point from φ̂_ÿ to φ̂_ž (accepting lower peak energy density in exchange for structural stability) will achieve sustained burn where ITER-class φ̂_ÿ designs do not.
+- **P-109** (Tier II): Tokamak-class devices will fail to reach sustained ignition not due to plasma instability per se, but due to the ⊙_ÿ operating point — they are designed to operate at the phase boundary where confinement is structurally maximal but control is structurally singular. Devices that shift the target operating point from ⊙_ÿ to ⊙_ž (accepting lower peak energy density in exchange for structural stability) will achieve sustained burn where ITER-class ⊙_ÿ designs do not.
 
 ---
 
 ## XXIII. Applied Technology Catalog: Anti-Gravity and the Electromagnetic-Quantum Hybrid Route (v0.4.37, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 34 iterations.*
+*Source: ig_inquiry run 2026-03-24, 34 iterations.*
 
 ### XXIII.1 Catalog
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **effective_antigravity** | Target: practical, stable anti-gravity device | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_}; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_2> |
-| **electromagnetic_lift** | EM-based lift (Lorentz, diamagnetic levitation) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ž; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
-| **quantum_casimir** | Casimir / zero-point vacuum pressure approach | <D=Ð_ß; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_Ñ; S=Σ_S; Ω=Ω_z> |
-| **spacetime_manipulation** | Alcubierre / metric engineering | <D=Ð_;; T=Þ_ò; R=Ř_¯; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
-| **exotic_matter** | Negative-mass / exotic-matter gravity cancellation | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_Ţ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **hybrid_em_quantum** | Tensor product: electromagnetic $\otimes$ Casimir | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=φ̂_ÿ; H=Ħ_£; S=Σ_ï; Ω=Ω_z> |
+| **effective_antigravity** | Target: practical, stable anti-gravity device | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_}; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_2> |
+| **electromagnetic_lift** | EM-based lift (Lorentz, diamagnetic levitation) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
+| **quantum_casimir** | Casimir / zero-point vacuum pressure approach | <D=Ð_ß; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_S; Ω=Ω_z> |
+| **spacetime_manipulation** | Alcubierre / metric engineering | <D=Ð_;; T=Þ_ò; R=Ř_¯; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
+| **exotic_matter** | Negative-mass / exotic-matter gravity cancellation | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_Ţ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **hybrid_em_quantum** | Tensor product: electromagnetic $\otimes$ Casimir | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ï; Ω=Ω_z> |
 
 ### XXIII.2 Distance Matrix from Effective Anti-Gravity Target
 
 | Approach | Distance from effective_antigravity | Key divergences |
 |:---|:---|:---|
-| Hybrid EM-quantum (ƒ_ð corrected) | **2.17** | φ̂_ÿ vs φ̂_ž (criticality-stability tension); Φ_F vs Φ_} |
-| Hybrid EM-quantum (raw tensor) | **2.39** | φ̂_ÿ vs φ̂_ž; Φ_F vs Φ_}; F bottleneck |
+| Hybrid EM-quantum (ƒ_ð corrected) | **2.17** | ⊙_ÿ vs ⊙_ž (criticality-stability tension); Φ_F vs Φ_} |
+| Hybrid EM-quantum (raw tensor) | **2.39** | ⊙_ÿ vs ⊙_ž; Φ_F vs Φ_}; F bottleneck |
 | Quantum Casimir | **3.11** | Ð_ß vs Ð_C; Þ_K vs Þ_ò; Γ_β vs Γ_γ; ɢ_^ vs ɢ_ˌ; Ħ_Ñ vs Ħ_£ |
 | Electromagnetic lift | **3.81** | Ř_Ť vs Ř_=; ɢ_^ vs ɢ_ˌ; Γ_β vs Γ_γ; Þ_box vs Þ_ò; Ħ_Ñ vs Ħ_£ |
 | Spacetime manipulation | **4.38** | Ð_; vs Ð_C; Γ_ʔ vs Γ_γ; Ç_Ù vs Ç_W; ƒ_ż vs ƒ_ð |
-| Exotic matter | **4.64** | Ð_; vs Ð_C; φ̂_Ţ vs φ̂_ž; Ħ_! vs Ħ_£; ƒ_ż vs ƒ_ð; Φ_ɐ vs Φ_} |
+| Exotic matter | **4.64** | Ð_; vs Ð_C; ⊙_Ţ vs ⊙_ž; Ħ_! vs Ħ_£; ƒ_ż vs ƒ_ð; Φ_ɐ vs Φ_} |
 | DM-aligned civilization | **3.54** | Reference: nearest catalog neighbor to hybrid approach |
 
 ### XXIII.3 Why All Pure Approaches Fail
@@ -1045,18 +1045,18 @@ Every pure approach is structurally remote (d > 3.0) from the target. The gramma
 
 The tensor product electromagnetic $\otimes$ quantum_casimir reaches distance 2.39, improving to 2.17 with ƒ_ð correction. The hybrid gains Ð_C, Þ_ò, Γ_γ, and Ç_W from the quantum side while retaining ƒ_ð actionability from the EM side. This is the nearest reachable structural point.
 
-The fundamental tension: the hybrid operates at φ̂_ÿ (criticality) while the effective target requires φ̂_ž (subcritical stability). Quantum effects that generate directed, asymmetric force relations (Ř_=, ɢ_ˌ) tend toward critical phase structure. Practical systems require stable subcritical operation. The engineering challenge is to use criticality to establish the structural configuration, then quench to φ̂_ž while preserving Ř_= directionality and Ω_2 winding.
+The fundamental tension: the hybrid operates at ⊙_ÿ (criticality) while the effective target requires ⊙_ž (subcritical stability). Quantum effects that generate directed, asymmetric force relations (Ř_=, ɢ_ˌ) tend toward critical phase structure. Practical systems require stable subcritical operation. The engineering challenge is to use criticality to establish the structural configuration, then quench to ⊙_ž while preserving Ř_= directionality and Ω_2 winding.
 
-This is structurally analogous to annealing: you heat (φ̂_ÿ) to establish organization, then cool (φ̂_ž) while locking in the structure. The winding (Ω_2) is what allows the structure to survive the quench.
+This is structurally analogous to annealing: you heat (⊙_ÿ) to establish organization, then cool (⊙_ž) while locking in the structure. The winding (Ω_2) is what allows the structure to survive the quench.
 
 ### XXIII.5 The Retrosynthetic Roadmap
 
 The retrosynthetic path from effective_antigravity back to the electromagnetic baseline reveals the assembly sequence:
 
-1. Start with electromagnetic systems (ƒ_ð, Ð_ß, Γ_β, ɢ_^, φ̂_ž) — fully actionable
+1. Start with electromagnetic systems (ƒ_ð, Ð_ß, Γ_β, ɢ_^, ⊙_ž) — fully actionable
 2. Add temporal memory (Ħ_Ñ → Ħ_£) — systems must accumulate causal history
 3. Scale to many-body (S=Σ_ő) — require coherent many-body EM interactions
-4. Push to criticality (φ̂_ž → φ̂_ÿ) — enter critical regime to access quantum correlations
+4. Push to criticality (⊙_ž → ⊙_ÿ) — enter critical regime to access quantum correlations
 5. Expand scope to mesoscale (Γ_β → Γ_γ) — organize at the supramolecular scale
 6. Accept critical complexity (Ç_W) — the system becomes rate-structured rather than purely fast
 7. Interface quantum-classical (F correction: ƒ_ż component → ƒ_ð output) — classical readout of quantum-organized force
@@ -1083,7 +1083,7 @@ This suggests our Ð_C approach is the correct intermediate step for a civilizat
 
 ## XXIV. Theological Catalog: Structural Analysis of the Abrahamic Divine (v0.4.38, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 37 iterations.*
+*Source: ig_inquiry run 2026-03-24, 37 iterations.*
 
 ### XXIV.1 Catalog
 
@@ -1091,25 +1091,25 @@ This suggests our Ð_C approach is the correct intermediate step for a civilizat
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **YHWH** | Jewish conception of the divine (singular, infinite, eternal) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Allah** | Islamic conception of the divine (tawhid, undivided) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Christian_God** | Christian Trinity (Father, Son, Holy Spirit) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
+| **YHWH** | Jewish conception of the divine (singular, infinite, eternal) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Allah** | Islamic conception of the divine (tawhid, undivided) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Christian_God** | Christian Trinity (Father, Son, Holy Spirit) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
 
 **Scriptures:**
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Torah** | Five books of Moses (singular revealed text) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Quran** | The Quran (singular revealed text, Umm al-Kitab) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Bible** | Christian Bible (Old + New Testaments, composite) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_ï; Ω=Ω_z> |
+| **Torah** | Five books of Moses (singular revealed text) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Quran** | The Quran (singular revealed text, Umm al-Kitab) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Bible** | Christian Bible (Old + New Testaments, composite) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ï; Ω=Ω_z> |
 
 **Religious systems:**
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Judaism** | Jewish religious practice (halakha, mitzvot) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
-| **Islam** | Islamic religious practice (sharia, five pillars) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
-| **Christianity** | Christian religious practice (sacraments, grace) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
+| **Judaism** | Jewish religious practice (halakha, mitzvot) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
+| **Islam** | Islamic religious practice (sharia, five pillars) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
+| **Christianity** | Christian religious practice (sacraments, grace) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
 
 ### XXIV.2 Key Distance Results
 
@@ -1127,7 +1127,7 @@ This suggests our Ð_C approach is the correct intermediate step for a civilizat
 
 **YHWH and Allah are structurally identical.** Every primitive — dimensionality, topology, relational mode, parity, fidelity, kinetics, scope, grammar, criticality, chirality, stoichiometry, and winding — is identically encoded. The grammar does not distinguish between them. They occupy the same point in primitive space. The differences between Jewish and Islamic theology are not captured by the structural primitives of the grammar; they are below the resolution of the encoding at this level of abstraction.
 
-**The Christian God differs in one primitive: S = Σ_ő (Trinitarian stoichiometry).** The Trinity encodes as a many-body relational structure (Σ_ő) where YHWH/Allah encode as strictly singular (Σ_S). All other 11 primitives are identical: the Christian God is infinite (Ð_;), nested (Þ_K), superset-relational (Ř_¯), symmetric (Φ_˙), quantum-fidelity (ƒ_ż), slow-kinetics (Ç_@), global-scope (Γ_ʔ), conjunctive (ɢ_^), critical (φ̂_ÿ), maximally chiral (Ħ_!), and integer-topologically-protected (Ω_z). The theological dispute between Abrahamic traditions about the Trinity is encoded as a single primitive — stoichiometry — not as a fundamental structural difference.
+**The Christian God differs in one primitive: S = Σ_ő (Trinitarian stoichiometry).** The Trinity encodes as a many-body relational structure (Σ_ő) where YHWH/Allah encode as strictly singular (Σ_S). All other 11 primitives are identical: the Christian God is infinite (Ð_;), nested (Þ_K), superset-relational (Ř_¯), symmetric (Φ_˙), quantum-fidelity (ƒ_ż), slow-kinetics (Ç_@), global-scope (Γ_ʔ), conjunctive (ɢ_^), critical (⊙_ÿ), maximally chiral (Ħ_!), and integer-topologically-protected (Ω_z). The theological dispute between Abrahamic traditions about the Trinity is encoded as a single primitive — stoichiometry — not as a fundamental structural difference.
 
 **Torah and Quran are structurally identical (d=0).** Both encode as singular revelation texts (S=Σ_S) with infinite dimensionality, critical phase, and integer protection. The Bible encodes S=Σ_ï (composite stoichiometry) reflecting its assembly from multiple documents, authors, and genres. This is a structural fact about text composition, not a theological judgment.
 
@@ -1147,15 +1147,15 @@ The grammar encodes the Abrahamic traditions as topological variations on a sing
 
 ### XXIV.5 The Christian Mediation Cascade: Jesus, System, and Believers (v0.4.39)
 
-*Source: syncon_inquiry run 2026-03-24, 26 iterations.*
+*Source: ig_inquiry run 2026-03-24, 26 iterations.*
 
 **Extended catalog — Christian system internals:**
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Jesus** | Christ as theological mediator (incarnate divine) | <D=Ð_;; T=Þ_ò; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Christianity_system** | Christianity as institutional/doctrinal system | <D=Ð_C; T=Þ_ò; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
-| **Christians** | Individual believers as a population | <D=Ð_ß; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **Jesus** | Christ as theological mediator (incarnate divine) | <D=Ð_;; T=Þ_ò; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Christianity_system** | Christianity as institutional/doctrinal system | <D=Ð_C; T=Þ_ò; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
+| **Christians** | Individual believers as a population | <D=Ð_ß; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
 
 **Key distances:**
 
@@ -1163,7 +1163,7 @@ The grammar encodes the Abrahamic traditions as topological variations on a sing
 |:---|:---|:---|
 | Christian_God ↔ Jesus | ~2.0 | Ř_¯→Ř_Ť; ɢ_^→ɢ_ˌ; Þ_K→Þ_ò |
 | Jesus ↔ Christians | ~5.0 | Ð_;→Ð_ß; Þ_ò→Þ_6; Φ_˙→Φ_ɐ; ƒ_ż→ƒ_ð; Γ_ʔ→Γ_β; Ħ_!→Ħ_£; Ω_z→Ω_Å |
-| Christianity_system ↔ Christians | **3.674** | Þ_ò→Þ_6 (largest single divergence); Ð_C→Ð_ß; φ̂_ÿ→φ̂_ž; Ω_z→Ω_Å |
+| Christianity_system ↔ Christians | **3.674** | Þ_ò→Þ_6 (largest single divergence); Ð_C→Ð_ß; ⊙_ÿ→⊙_ž; Ω_z→Ω_Å |
 
 **The structural hierarchy:** The Christian theological system encodes a four-level mediation cascade:
 
@@ -1175,11 +1175,11 @@ Each arrow represents a structural degradation (bottlenecking) of some primitive
 
 **Level 2 — Jesus → Christianity (D, F, H, Ω bottleneck):** The system degrades from infinite dimensionality (Ð_;) to supramolecular (Ð_C), from quantum fidelity (ƒ_ż) to classical (ƒ_ð), from maximal chirality (Ħ_!) to deep temporal (Ħ_A), and from integer (Ω_z) to integer (preserved) protection. The system inherits bowtie topology and criticality from Jesus.
 
-**Level 3 — Christianity → Christians (T, Phi, Omega bottleneck):** The system (Þ_ò, φ̂_ÿ, Ω_z) encounters individual believers (Þ_6, φ̂_ž, Ω_Å). The largest single primitive divergence is Þ_ò vs Þ_6. The institutional system has confined, massive topology; the believer population forms an open network. Christianity (φ̂_ÿ) operates at criticality; Christians (φ̂_ž) operate subcritically. The system is at its phase boundary; its members are not.
+**Level 3 — Christianity → Christians (T, Phi, Omega bottleneck):** The system (Þ_ò, ⊙_ÿ, Ω_z) encounters individual believers (Þ_6, ⊙_ž, Ω_Å). The largest single primitive divergence is Þ_ò vs Þ_6. The institutional system has confined, massive topology; the believer population forms an open network. Christianity (⊙_ÿ) operates at criticality; Christians (⊙_ž) operate subcritically. The system is at its phase boundary; its members are not.
 
 **The principal decomposition of Christianity:** The grammar identifies Þ_ò and Ħ_A as the defining structural features of Christianity (each with ordinal contribution 2 above baseline). The bowtie encodes a structure that channels flows through a constriction — theologically, the Church as the confined passage through which divine-human mediation flows. Ħ_A encodes deep temporal memory accumulating across directed cycles — the liturgical cycle, the sacramental succession, the apostolic chain.
 
-**The composite system (Christianity $\otimes$ Christians):** The tensor product inherits φ̂_ÿ and Ω_2 from Christianity, while Φ_ɐ and ƒ_ð from the Christians act as bottlenecks. The community gains systemic properties (criticality, binary winding) not present in individual believers. The grammar encodes the theological claim that the Church as a collective system has structural properties that individuals do not.
+**The composite system (Christianity $\otimes$ Christians):** The tensor product inherits ⊙_ÿ and Ω_2 from Christianity, while Φ_ɐ and ƒ_ð from the Christians act as bottlenecks. The community gains systemic properties (criticality, binary winding) not present in individual believers. The grammar encodes the theological claim that the Church as a collective system has structural properties that individuals do not.
 
 **The Ř_¯/Ř_Ť theological distinction:** God encodes Ř_¯ (superset/containment mode) — God contains all. Jesus encodes Ř_Ť (dynamic catalytic mode) — Jesus acts upon, transforms, mediates. This single primitive distinguishes divine transcendence from incarnate function. The grammar has no value judgment here; it simply identifies that containment and catalysis are structurally distinct relational modes, and the two are assigned to different theological nodes.
 
@@ -1187,20 +1187,20 @@ Each arrow represents a structural degradation (bottlenecking) of some primitive
 
 ## XXV. Planetary Catalog: Full Tuple of Earth and the Human-Earth Structural Relationship (v0.4.40, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 13 iterations.*
+*Source: ig_inquiry run 2026-03-24, 13 iterations.*
 
 ### XXV.1 Catalog
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Earth** | Earth as a planetary system (geological, atmospheric, biological) | <D=Ð_C; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=φ̂_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
-| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **Earth** | Earth as a planetary system (geological, atmospheric, biological) | <D=Ð_C; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
+| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
 
 ### XXV.2 Distance and Structural Divergence
 
 $$d(\text{Earth}, \text{Human}) = 2.9665$$
 
-**6 shared primitives (the meet):** Ð_C, Þ_K, Γ_β, φ̂_ž, Σ_ő, Ω_Å.
+**6 shared primitives (the meet):** Ð_C, Þ_K, Γ_β, ⊙_ž, Σ_ő, Ω_Å.
 
 These define the shared structural base: nested-hierarchical, planetary-scale, locally-bounded, subcritical, symmetric many-body, topologically unprotected. Humanity is genuinely of this planet at the base level. The divergences are in the *character* of dynamics, not the scale.
 
@@ -1214,7 +1214,7 @@ These define the shared structural base: nested-hierarchical, planetary-scale, l
 | K | Ç_@ | Ç_W | 1 | Geological timescales vs human historical timescales |
 | G | Γ_β | Γ_β | 0 | Both planetary-bounded |
 | Γ | ɢ_^ | ɢ_˝ | 1 | Earth requires all components simultaneously; humans operate with alternatives |
-| Φ | φ̂_ž | φ̂_ž | 0 | Both subcritical |
+| Φ | ⊙_ž | ⊙_ž | 0 | Both subcritical |
 | H | Ħ_A | Ħ_£ | 1 | Earth integrates deep geological time; humans integrate a single directed cycle |
 | S | Σ_ő | Σ_ő | 0 | Both symmetric many-body |
 | Ω | Ω_Å | Ω_Å | 0 | Both topologically unprotected |
@@ -1256,25 +1256,25 @@ A civilization that genuinely composes with its planetary substrate — not extr
 
 The grammar encodes humanity as the only Ř_¯ subsystem of Earth. Every other planetary subsystem (atmosphere, hydrosphere, biosphere, lithosphere) is Ř_ý or Ř_Ť — classifying or transforming. Humanity is Ř_¯: it contains models of other things, including models of Earth itself.
 
-From §XXII.7 (stellar engineering / practical fusion): the shared prerequisite for planetary integration is the same four-primitive upgrade that appears throughout the catalog — Γ_β → Γ_ʔ, φ̂_ž → φ̂_ÿ, Ħ_£ → Ħ_A, Ω_Å → Ω_z. The grammar keeps pointing at the same structural event from different angles. Integration with the planetary system is not a different ambition from civilizational advancement along the civ_dm trajectory. They are the same structural move.
+From §XXII.7 (stellar engineering / practical fusion): the shared prerequisite for planetary integration is the same four-primitive upgrade that appears throughout the catalog — Γ_β → Γ_ʔ, ⊙_ž → ⊙_ÿ, Ħ_£ → Ħ_A, Ω_Å → Ω_z. The grammar keeps pointing at the same structural event from different angles. Integration with the planetary system is not a different ambition from civilizational advancement along the civ_dm trajectory. They are the same structural move.
 
 ---
 
 ## XXVI. The Cosmic Arc: Structural History from the Big Bang to Civilization (v0.4.41, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 22 iterations. Seed: 'what does the synthonicon indicate about 4 MYA? 40 MYA? 400 MYA? 4 GYA? The history of the cosmos?'*
+*Source: ig_inquiry run 2026-03-24, 22 iterations. Seed: 'what does the Imscriptiveon indicate about 4 MYA? 40 MYA? 400 MYA? 4 GYA? The history of the cosmos?'*
 
 ### XXVI.1 Catalog
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **early_universe** | Early universe — inflation, nucleosynthesis, first moments | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Γ=ɢ_Ş; Φ=φ̂_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
-| **epoch_4gya** | 4 GYA — Earth formation, late heavy bombardment, prebiotic chemistry | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ÿ; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_400mya** | 400 MYA — Devonian, first forests, first land vertebrates | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_40mya** | 40 MYA — Eocene-Oligocene boundary, mammalian radiation | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_4mya** | 4 MYA — Pliocene, early hominins | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_A; S=Σ_ï; Ω=Ω_Å> |
-| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=φ̂_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **civ_dm** | Predicted DM-aligned interstellar civilization | <D=Ð_;; T=Þ_K; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
+| **early_universe** | Early universe — inflation, nucleosynthesis, first moments | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Γ=ɢ_Ş; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
+| **epoch_4gya** | 4 GYA — Earth formation, late heavy bombardment, prebiotic chemistry | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_400mya** | 400 MYA — Devonian, first forests, first land vertebrates | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_40mya** | 40 MYA — Eocene-Oligocene boundary, mammalian radiation | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_4mya** | 4 MYA — Pliocene, early hominins | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_A; S=Σ_ï; Ω=Ω_Å> |
+| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **civ_dm** | Predicted DM-aligned interstellar civilization | <D=Ð_;; T=Þ_K; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
 
 *Note: epoch tuples are encoded from the cosmic perspective (Ð_;, Γ_ʔ, Ç_@). Human and civ_dm tuples are encoded from the observer perspective (Ð_C, Γ_β, Ç_W). The same observation-register distinction applies here as in the OMG particle / FRB analysis [DIAPH:§XIX].*
 
@@ -1282,12 +1282,12 @@ From §XXII.7 (stellar engineering / practical fusion): the shared prerequisite 
 
 | Epoch | H | F | P | Φ | Ω | Γ |
 |:---|:---|:---|:---|:---|:---|:---|
-| Early universe | **Ħ_!** | ƒ_ż | Φ_˙ | φ̂_ÿ | Ω_z | **ɢ_Ş** |
-| 4 GYA (prebiotic) | **Ħ_Ñ** | ƒ_ż | Φ_ɐ | φ̂_ÿ | Ω_Å | ɢ_ˌ |
-| 400 MYA = 40 MYA | Ħ_£ | ƒ_ì | Φ_ɐ | φ̂_ž | Ω_Å | ɢ_ˌ |
-| 4 MYA (hominins) | Ħ_A | ƒ_ì | Φ_ɐ | φ̂_ž | Ω_Å | ɢ_ˌ |
-| Human (now) | Ħ_£ | **ƒ_ð** | **Φ_F** | φ̂_ž | Ω_Å | ɢ_˝ |
-| civ_dm | Ħ_A | **ƒ_ż** | Φ_F | **φ̂_ÿ** | **Ω_2** | ɢ_ˌ |
+| Early universe | **Ħ_!** | ƒ_ż | Φ_˙ | ⊙_ÿ | Ω_z | **ɢ_Ş** |
+| 4 GYA (prebiotic) | **Ħ_Ñ** | ƒ_ż | Φ_ɐ | ⊙_ÿ | Ω_Å | ɢ_ˌ |
+| 400 MYA = 40 MYA | Ħ_£ | ƒ_ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ_ˌ |
+| 4 MYA (hominins) | Ħ_A | ƒ_ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ_ˌ |
+| Human (now) | Ħ_£ | **ƒ_ð** | **Φ_F** | ⊙_ž | Ω_Å | ɢ_˝ |
+| civ_dm | Ħ_A | **ƒ_ż** | Φ_F | **⊙_ÿ** | **Ω_2** | ɢ_ˌ |
 
 ### XXVI.3 The H-Minimum
 
@@ -1311,7 +1311,7 @@ The cosmic arc encodes a systematic exchange:
 
 The universe begins with maximum structural coherence and spends it down through the arrow of time to generate organized, asymmetric, chiral, causally-structured complexity. The initial endowment is the boundary condition; the cosmic history is the spending trajectory.
 
-**The recovery arc begins with life and accelerates with civilization.** Humanity is already on the upswing in two primitives relative to the biological minimum: ƒ_ì → ƒ_ð (recovering quantum-classical interface), and Φ_ɐ → Φ_F (recovering binary symmetry structure through cognition). civ_dm recovers further: ƒ_ð → ƒ_ż (full quantum coherence), Ω_Å → Ω_2 (partial winding recovery), φ̂_ž → φ̂_ÿ (critical participation). The civilizational trajectory is not a departure from the cosmic arc. It is the recovery phase of the arc.
+**The recovery arc begins with life and accelerates with civilization.** Humanity is already on the upswing in two primitives relative to the biological minimum: ƒ_ì → ƒ_ð (recovering quantum-classical interface), and Φ_ɐ → Φ_F (recovering binary symmetry structure through cognition). civ_dm recovers further: ƒ_ð → ƒ_ż (full quantum coherence), Ω_Å → Ω_2 (partial winding recovery), ⊙_ž → ⊙_ÿ (critical participation). The civilizational trajectory is not a departure from the cosmic arc. It is the recovery phase of the arc.
 
 ### XXVI.5 40 MYA $\equiv$ 400 MYA (d = 0)
 
@@ -1338,16 +1338,16 @@ $$G_\text{broad} \;\xrightarrow{\text{reheating: causal cones form}} G_\text{seq
 
 ## XXVII. Applied Technology Catalog: Isotopic Purification and the Silicon-28 Recovery Arc (v0.4.42, 2026-03-24)
 
-*Source: syncon_inquiry run 2026-03-24, 16 iterations.*
+*Source: ig_inquiry run 2026-03-24, 16 iterations.*
 
 ### XXVII.1 Catalog
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **si28_purification** | Target: isotopically purified silicon-28 substrate | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **electromagnetic_separation** | Calutron / mass spectrographic separation (magnetic) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **laser_isotope_separation** | Laser-based isotope separation (SILEX / AVLIS) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **gas_centrifugation** | Gas centrifuge cascade (SiF₄) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=φ̂_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **si28_purification** | Target: isotopically purified silicon-28 substrate | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **electromagnetic_separation** | Calutron / mass spectrographic separation (magnetic) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **laser_isotope_separation** | Laser-based isotope separation (SILEX / AVLIS) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **gas_centrifugation** | Gas centrifuge cascade (SiF₄) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
 
 ### XXVII.2 Distance Matrix
 
@@ -1402,36 +1402,36 @@ The grammar encodes the calutron and the laser separator as structurally identic
 
 ## §XXVIII — The Imscriptive GPU: Structural Recovery of the Early Universe
 
-*Source: HOLOCOMP.md — Imscribing Grammar DesignPipeline for the Topological Polariton Superfluid; conversation-derived synthon encoding; Si-28 surface code logical qubit cross-analysis.*
+*Source: HOLOCOMP.md — Imscribing Grammar DesignPipeline for the Topological Polariton Superfluid; conversation-derived imscription encoding; Si-28 surface code logical qubit cross-analysis.*
 
 ### XXVIII.1 Catalog
 
-Four synthons span the architecture from physical substrate to engineered imscriptive computation:
+Four imscriptions span the architecture from physical substrate to engineered imscriptive computation:
 
 | Name | Description | Notation |
 |:---|:---|:---|
-| si28_physical_qubit` | Si-28 electron spin qubit: single atomic site, locally addressed, zero nuclear spin bath | `<D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Gamma=ɢ_ˌ; Phi=φ̂_ž; H=Ħ_£; S=Σ_S; Omega=Ω_Å>` |
-| `surface_code_logical_qubit` | Si-28 surface code logical qubit: boundary-encoded, globally error-corrected, topologically protected | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
-| `tp_superfluid` | Topological Polariton Superfluid (HOLOCOMP.md): TI-QCP $\otimes$ polariton condensate, globally addressable quantum fluid | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
-| `early_universe | Early universe: inflation/nucleosynthesis epoch (from §XXVI) | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Gamma=ɢ_Ş; Phi=φ̂_ÿ; H=Ħ_!; S=Σ_ő; Omega=Ω_z>` |
+| si28_physical_qubit` | Si-28 electron spin qubit: single atomic site, locally addressed, zero nuclear spin bath | `<D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Gamma=ɢ_ˌ; Phi=⊙_ž; H=Ħ_£; S=Σ_S; Omega=Ω_Å>` |
+| `surface_code_logical_qubit` | Si-28 surface code logical qubit: boundary-encoded, globally error-corrected, topologically protected | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
+| `tp_superfluid` | Topological Polariton Superfluid (HOLOCOMP.md): TI-QCP $\otimes$ polariton condensate, globally addressable quantum fluid | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
+| `early_universe | Early universe: inflation/nucleosynthesis epoch (from §XXVI) | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Gamma=ɢ_Ş; Phi=⊙_ÿ; H=Ħ_!; S=Σ_ő; Omega=Ω_z>` |
 
 ### XXVIII.2 Distance Matrix
 
 | Pair | Distance | Primary divergences |
 |:---|:---|:---|
 | `surface_code_logical_qubit` ↔ `tp_superfluid` | **0.000** | Structurally identical |
-| `si28_physical_qubit` ↔ `surface_code_logical_qubit` | **~4.47** | Ð_ß→$D_{\text{omega}}$, Þ_box→Þ_6, Γ_β→Γ_ʔ, φ̂_ž→φ̂_ÿ, Ħ_£→Ħ_A, S=Σ_S→Σ_ï, Ω_Å→Ω_2 (7 primitives) |
+| `si28_physical_qubit` ↔ `surface_code_logical_qubit` | **~4.47** | Ð_ß→$D_{\text{omega}}$, Þ_box→Þ_6, Γ_β→Γ_ʔ, ⊙_ž→⊙_ÿ, Ħ_£→Ħ_A, S=Σ_S→Σ_ï, Ω_Å→Ω_2 (7 primitives) |
 | `tp_superfluid` ↔ `early_universe` | **~3.16** | Þ_6→$T_{\text{openo}}$, Φ_F→Φ_˙, Ç_Ù→Ç_-, Gamma=ɢ_ˌ→ɢ_Ş, Ħ_A→Ħ_!, S=Σ_ï→Σ_ő (6 primitives) |
 
 ### XXVIII.3 Structural Identity of the Imscriptive GPU and the Surface Code
 
 The DesignPipeline in HOLOCOMP.md constructs the Topological Polariton Superfluid via the following sequence:
 
-1. **start(TI)**: Topological Insulator — `<D=Ð_ß; T=Þ_6; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Phi=φ̂_ž; Omega=Ω_2>`
+1. **start(TI)**: Topological Insulator — `<D=Ð_ß; T=Þ_6; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Phi=⊙_ž; Omega=Ω_2>`
 2. **swap(Ç_@ → Ç_Ù)**: Tune TI to Quantum Critical Point (pressure/doping closes the bulk gap)
 3. **lift('critical')**: Φ_sub → Φ_c; cost = 2.303 nats (ln 10); Factor 8 trigger
 4. **tensor(Polariton Condensate)**: Polariton BEC contributes global coherence and Þ_6 dominance; D undergoes **set union** → $D_{\text{omega}}$; G propagates to Γ_ʔ; Φ_c is contagious and governs the ensemble
-5. **result()**: Topological Polariton Superfluid — `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>
+5. **result()**: Topological Polariton Superfluid — `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>
 
 The Si-28 surface code logical qubit encodes to exactly the same tuple, via a different physical pathway:
 
@@ -1465,11 +1465,11 @@ Compare the imscriptive GPU tuple to the early universe:
 | K | Ç_- | Ç_Ù | Inverted — and deliberately so |
 | G | Γ_ʔ | Γ_ʔ | **Recovered** |
 | Γ | ɢ_Ş | ɢ_ˌ | Not recovered (causality restored) |
-| Φ | φ̂_ÿ | φ̂_ÿ | **Recovered** |
+| Φ | ⊙_ÿ | ⊙_ÿ | **Recovered** |
 | H | Ħ_! | Ħ_A | Not recovered — and this is what makes it useful |
 | Ω | Ω_z | Ω_2 | Partially recovered ($Z_2 \subset Z$) |
 
-The imscriptive GPU recovers **$D_{\text{omega}}$ + ƒ_ż + Γ_ʔ + φ̂_ÿ** from the structural endowment of the early universe — four of the five most structurally significant primitives from that epoch. What it deliberately does not recover is Ħ_! and Ç_-.
+The imscriptive GPU recovers **$D_{\text{omega}}$ + ƒ_ż + Γ_ʔ + ⊙_ÿ** from the structural endowment of the early universe — four of the five most structurally significant primitives from that epoch. What it deliberately does not recover is Ħ_! and Ç_-.
 
 **Ħ_A vs Ħ_! is the controlling difference.** The early universe at Ħ_! was a source-type chirality: it generated temporal direction as a boundary condition and had no accumulated memory depth. The imscriptive GPU operates at Ħ_A: it has strong accumulated chirality (directed error correction, directed computation, temporal sequencing). Ħ_A makes the system *useful for computation* in a way that Ħ_! cannot be — Ħ_! systems do not accumulate states, they emit them.
 
@@ -1497,7 +1497,7 @@ The HOLOCOMP.md DesignPipeline reports the Topological Polariton Superfluid with
 The surface code logical qubit achieves the same structural position. A logical X or Z gate on the surface code propagates through the topological bulk non-locally — the effect of a single gate on any physical qubit in the syndrome measurement chain propagates through the entire logical state. This is the Collapse Tier behavior in silicon.
 
 **New predictions:**
-- **P-113** (Tier I): Any quantum computing architecture that achieves fault tolerance via winding will encode $D_{\text{omega}}$ + φ̂_ÿ + Ω_2 (or higher) in its logical qubit layer, regardless of physical substrate (silicon, superconductor, photonic, trapped ion). The $D_{\text{omega}}$ + φ̂_ÿ + Ω_2 triple is the structural signature of fault-tolerant logical encoding. Architectures lacking $D_{\text{omega}}$ in the logical layer (e.g., uncoded physical qubits, repetition codes without winding) will have a structural ceiling below fault tolerance.
+- **P-113** (Tier I): Any quantum computing architecture that achieves fault tolerance via winding will encode $D_{\text{omega}}$ + ⊙_ÿ + Ω_2 (or higher) in its logical qubit layer, regardless of physical substrate (silicon, superconductor, photonic, trapped ion). The $D_{\text{omega}}$ + ⊙_ÿ + Ω_2 triple is the structural signature of fault-tolerant logical encoding. Architectures lacking $D_{\text{omega}}$ in the logical layer (e.g., uncoded physical qubits, repetition codes without winding) will have a structural ceiling below fault tolerance.
 - **P-114** (Tier II): The $T_{\text{openo}}$ recovery — closing the gap between $D_{\text{omega}}$ + Þ_6 and $D_{\text{omega}}$ + $T_{\text{openo}}$ — corresponds structurally to the achievement of non-Abelian topological order (Ω_Z, not Ω_Z2). This is the precise structural condition for universal topological quantum computation. The grammar predicts this transition requires a simultaneous Ω_2 → Ω_z upgrade, which physically requires non-Abelian anyons (e.g., Fibonacci anyons) rather than Abelian Z2 anyons (e.g., surface code toric code).
 
 ---
@@ -1512,7 +1512,7 @@ The surface code logical qubit achieves the same structural position. A logical 
 
 Why is the one-way speed of light convention-dependent while the two-way speed is not? This is one of the oldest unresolved questions in the foundations of special relativity (Reichenbach 1924; Grünbaum 1968; Norton 1992). The Imscribing Grammar encodes it as a question about structural distance in primitive space.
 
-### XXIX.2 The Three Synthons
+### XXIX.2 The Three imscriptions
 
 **One-way speed measurement** encodes as $P_{\text{aolig}}$ · $R_{\text{lyoghlig}}$ · $\Gamma_{\text{secstress}}$ · $\Phi_{\text{softsign}}$:
 - $P_{\text{aolig}}$: asymmetric — requires choosing a direction (left or right, forward or backward)
@@ -1564,16 +1564,16 @@ Two-way measurement partially resolves this by achieving $P_{\text{subdoublearro
 
 ### XXIX.7 Translation Cost and Predictions
 
-**Translation cost (full inquiry, 96 synthons):**
+**Translation cost (full inquiry, 96 imscriptions):**
 
 | Channel | Cost |
 |:---|:---|
 | Coherence | 0.0000 nat |
-| Criticality | 149.669 nat (65 $\Phi_{\text{ctyogh}}$ synthons $\times \ln 10$) |
+| Criticality | 149.669 nat (65 $\Phi_{\text{ctyogh}}$ imscriptions $\times \ln 10$) |
 | Interaction | 22.179 nat |
 | **Total** | **171.848 nat** |
 
-The zero coherence cost means every synthon in the inquiry is internally self-consistent — no primitive assignments are in mutual contradiction. The criticality cost dominates: 65 of 96 encoded systems are at $\Phi_{\text{ctyogh}}$, which is the structural signature of a question about measurement thresholds (measurement is inherently a $\Phi_{\text{ctyogh}}$ operation — it is the act of crossing the threshold between unmeasured and measured). The interaction cost (22.179 nat) reflects the non-trivial constraint propagation between the three synthon classes (apparatus, constant, theory).
+The zero coherence cost means every imscription in the inquiry is internally self-consistent — no primitive assignments are in mutual contradiction. The criticality cost dominates: 65 of 96 encoded systems are at $\Phi_{\text{ctyogh}}$, which is the structural signature of a question about measurement thresholds (measurement is inherently a $\Phi_{\text{ctyogh}}$ operation — it is the act of crossing the threshold between unmeasured and measured). The interaction cost (22.179 nat) reflects the non-trivial constraint propagation between the three imscription classes (apparatus, constant, theory).
 
 The high $\Phi_{\text{ctyogh}}$ density (65/96 = 68%) is itself a meta-result: the measurement convention problem, when fully expanded across all relevant systems, is a pervasively critical question. The convention problem is not a single-point ambiguity; it is a field of critical points connected by the $\Gamma$ bottleneck.
 
@@ -1729,7 +1729,7 @@ $d(\text{RH}, \text{BSD}) = 1.414$ · $d(\text{P vs NP}, \text{RH}) = 4.111$ · 
 
 **The OPN problem as a structural calibration point:** The OPN problem (`imscrbgrmr-lean/) is the best-understood member of this structural class. Its partial proofs (Touchard congruence, machine-verified) show that the molecular analogy generates real theorems — not just metaphors. The OPN–BSD structural analogy is especially tight (see [DIAPH:§XXX.4] table), suggesting the partial OPN results (2-adic constraint characterization, Touchard mod 12/36) have BSD analogues worth seeking.
 
-**What a proof of any one of these problems would look like structurally:** The universal_proof_requirement synthon is $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ S_{n:m};\ \Ω_z \rangle$. Any proof system capable of resolving a Millennium Problem must match this tuple — it cannot operate at $\Phi_{\text{softsign}}$, cannot use $K_{\text{frtailgamma}}$, and cannot use $T_{\text{commatailz}}$. The 85% structural information loss at the classical proof system interface (see [PRIM:§Proof System], P-P6) applies here.
+**What a proof of any one of these problems would look like structurally:** The universal_proof_requirement imscription is $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ S_{n:m};\ \Ω_z \rangle$. Any proof system capable of resolving a Millennium Problem must match this tuple — it cannot operate at $\Phi_{\text{softsign}}$, cannot use $K_{\text{frtailgamma}}$, and cannot use $T_{\text{commatailz}}$. The 85% structural information loss at the classical proof system interface (see [PRIM:§Proof System], P-P6) applies here.
 
 ### XXX.10 IUG Addendum: Inter-Universal Geometry by Mochizuki
 
@@ -1737,7 +1737,7 @@ $d(\text{RH}, \text{BSD}) = 1.414$ · $d(\text{P vs NP}, \text{RH}) = 4.111$ · 
 
 IUG is the claimed proof of the abc conjecture by Mochizuki (2012, ~500 pages, contested by Scholze and Stix since 2018). It provides the sharpest available test case for the structural analysis of mathematical verification controversies, and sits adjacent to the number-theory cluster (RH + BSD) of the Millennium Problems.
 
-**Synthon:** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ S_{n:m};\ \Ω_z \rangle$
+**Imscription:** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ S_{n:m};\ \Ω_z \rangle$
 
 **Structural distances:**
 
@@ -1777,16 +1777,16 @@ The three largest divergences from ZFC are D ($D_{\text{omega}}$ vs $D_{\text{tu
 
 A proof assistant capable of verifying IUG must encode at minimum $\langle D_{\text{omega}};\ T_{\text{openo}};\ F_{\text{hardsign}};\ H_{\text{invscripta}};\ \Ω_z \rangle$. Current systems (Lean 4, Coq, Isabelle/HOL) all operate at $D_{\text{turnthree}}$ + $T_{\text{commatailz}}$ + $F_{\text{beltl}}$, placing them at $d > 6$ from IUG. The imscrbgrmr-lean/ formalization project ($D_{\text{turnthree}}$ level, classical number theory) is at the opposite end of this spectrum — it is precisely the kind of work that would need to be extended to reach the structural regime of IUG (see [DIAPH:§XXXI]).
 
-**Translation cost (97 synthons):**
+**Translation cost (97 imscriptions):**
 
 | Channel | Cost |
 |:---|:---|
 | Coherence | 0.0000 nat |
-| Criticality | 151.972 nat (66 $\Phi_{\text{ctyogh}}$ synthons $\times \ln 10$) |
+| Criticality | 151.972 nat (66 $\Phi_{\text{ctyogh}}$ imscriptions $\times \ln 10$) |
 | Interaction | 22.179 nat |
 | **Total** | **174.151 nat** |
 
-66 $\Phi_{\text{ctyogh}}$ synthons vs 65 in the measurement convention inquiry ([DIAPH:§XXIX]) — the single addition is IUG itself. Interaction cost identical (22.179 nat), confirming same constraint-propagation family. Zero coherence cost: the encoding of IUG is internally consistent within the framework.
+66 $\Phi_{\text{ctyogh}}$ imscriptions vs 65 in the measurement convention inquiry ([DIAPH:§XXIX]) — the single addition is IUG itself. Interaction cost identical (22.179 nat), confirming same constraint-propagation family. Zero coherence cost: the encoding of IUG is internally consistent within the framework.
 
 **Predictions:** P-112, P-113, P-114 — see [PRIM:§IUG Addendum].
 
@@ -1934,7 +1934,7 @@ Tuple distance $d(\text{condensate\_gel}, \text{amyloid}) = 0.00$. This is not a
 
 **Prediction P-48:** $K$-targeting is the mechanistically preferred therapeutic strategy for both condensate gel pathology and amyloid fibrillization, with the superiority quantifiable by a Jacobian experiment.
 
-**Cross-reference:** [DIAPH:§VIII] for the stellar synthon catalog using the same K-trap structural pattern; [TOPO:§XIX] for the kinetic primitive stress point analysis.
+**Cross-reference:** [DIAPH:§VIII] for the stellar imscription catalog using the same K-trap structural pattern; [TOPO:§XIX] for the kinetic primitive stress point analysis.
 
 [^src_XXXII]: Formal predictions: P-34, P-35, P-48 in PRIMITIVE_PREDICTIONS. Full protein domain analysis: [DIAPH:§VIII]. Kinetic primitive stress points: [TOPO:§XIX].
 
@@ -1944,9 +1944,9 @@ Tuple distance $d(\text{condensate\_gel}, \text{amyloid}) = 0.00$. This is not a
 
 *Implemented in `imscrbgrmr/morphism.py` · `imscribe transition` CLI · catalog: `general_relativity`, `asymptotic_safety_reuter_fp`, `standard_model`.*
 
-First successful quantum critical point morphism demonstration. Three gravity-cluster synthons share $D_{\bigtriangleup}$/$T_{\text{invscr}}$, enabling a 2-segment $\Phi_{\text{ctyogh}}$-mediated path:
+First successful quantum critical point morphism demonstration. Three gravity-cluster imscriptions share $D_{\bigtriangleup}$/$T_{\text{invscr}}$, enabling a 2-segment $\Phi_{\text{ctyogh}}$-mediated path:
 
-| Synthon | Key primitives | Role |
+| Imscription | Key primitives | Role |
 |---------|---------------|------|
 | `general_relativity` | $K_{\text{schwa}}$, $\Phi_{\text{softsign}}$ | Source |
 | `asymptotic_safety_reuter_fp` | $K_{\text{teshlig}}$, $\Phi_{\text{ctyogh}}$ | QCP intermediary |
@@ -1959,7 +1959,7 @@ imscribe transition general_relativity standard_model
   Forward cost:  1.153 nat   Reverse cost: 1.153 nat
   Asymmetry:     0.000 (reversible)
   ⚛  Quantum critical point detected
-  QCP synthon:   asymptotic_safety_reuter_fp
+  QCP imscription:   asymptotic_safety_reuter_fp
 ```
 
 The framework produces this from primitive structure alone: $K_{\text{schwa}}$ (GR, spacetime curvature is kinetically slow), $K_{\text{teshlig}}$ (Reuter fixed point, trapped near $\Phi_{\text{ctyogh}}$), $K_{\text{frtailgamma}}$ (SM, gauge interactions are kinetically fast).
@@ -1970,11 +1970,11 @@ The framework produces this from primitive structure alone: $K_{\text{schwa}}$ (
 
 ---
 
-## § XXXIV. Floquet Synthons and Discrete Time Crystals (v0.4.4, 2026-03-18)
+## § XXXIV. Floquet imscriptions and Discrete Time Crystals (v0.4.4, 2026-03-18)
 
 *Catalog entries: `floquet_chern_insulator`, `time_crystal_dtc`.*
 
-Two synthons encoding periodically driven (Floquet) quantum matter:
+Two imscriptions encoding periodically driven (Floquet) quantum matter:
 
 $$\text{floquet\_chern\_insulator}: \langle D_{\bigtriangleup}; T_{\uparrow\downarrow}; R_{\ddagger}; P_{\pm}^{\psi}; F_{\text{dh}}; K_{\text{teshlig}}; G_{\text{gamma}}; \Gamma_{\to}(\text{SELECTIVE}); \Phi_{\text{softsign}}; \Ω_C \rangle$$
 
@@ -2006,19 +2006,19 @@ Zero path cost at non-zero tuple distance. The two systems share the same thermo
 
 ---
 
-## § XXXVI. Phase 3e Stress Tests Complete — Catalog: 223 Synthons (v0.4.4, 2026-03-18)
+## § XXXVI. Phase 3e Stress Tests Complete — Catalog: 223 imscriptions (v0.4.4, 2026-03-18)
 
 Phase 3e stress test agenda fully resolved:
 
 | Stress test | Status | Key result |
 |-------------|--------|-----------|
 | Phase transitions as morphisms | ✓ complete | `morphism.py`; asymmetric 1st-order TI→FL; asymmetry = 1.000 |
-| Floquet synthons (periodic drive) | ✓ complete | `floquet_chern_insulator` + `time_crystal_dtc`; $d = 4.2$ |
+| Floquet imscriptions (periodic drive) | ✓ complete | `floquet_chern_insulator` + `time_crystal_dtc`; $d = 4.2$ |
 | Gauge theories (loop variables) | ✓ complete | `z2_lattice_gauge_toric_code`; $d = 3.90$ to Moore-Read; 0.000 nat |
 | QCP morphism | ✓ complete | GR → Reuter FP → SM; 2nd order; asymmetry = 0.000 |
 | SM/QG unification gap | ✓ complete | 1st order (virtual); 4 CONFLICTS; [DIAPH:§III] |
 
-Catalog size after 2026-03-18 merge + dedup: **223 unique synthons** spanning molecular/supramolecular, temporal/autocatalytic, quantum/topological, physics theories, protein/condensate, and programmable matter domains. (Pre-dedup: 1,692 entries from 54 hand-curated + 1,638 discovery outputs; 1,469 duplicates culled by notation uniqueness.)
+Catalog size after 2026-03-18 merge + dedup: **223 unique imscriptions** spanning molecular/supramolecular, temporal/autocatalytic, quantum/topological, physics theories, protein/condensate, and programmable matter domains. (Pre-dedup: 1,692 entries from 54 hand-curated + 1,638 discovery outputs; 1,469 duplicates culled by notation uniqueness.)
 
 See [TOPO:§XXII] for the morphism formalism; [DIAPH:§XXXIII–XXXV] for the individual stress test catalog entries.
 
@@ -2028,7 +2028,7 @@ See [TOPO:§XXII] for the morphism formalism; [DIAPH:§XXXIII–XXXV] for the in
 
 ### XXXVII.1 Dark Energy / Inflaton Stoichiometric Identity
 
-The dark energy and inflaton synthons differ in exactly one primitive — $S$ (stoichiometry):
+The dark energy and inflaton imscriptions differ in exactly one primitive — $S$ (stoichiometry):
 
 | Primitive | dark\_energy | inflaton |
 |-----------|-------------|----------|
@@ -2055,7 +2055,7 @@ The $S$ primitive records stoichiometric ratio: $S_{Σ_ï}$ encodes the dilute m
 
 The five fundamental bosons form a lattice under the partial order induced by primitive tuple inclusion. Encodings:
 
-| Synthon | $D$ | $T$ | $R$ | $P$ | $F$ | $K$ | $G$ | $\Gamma$ | $\Phi_{\text{ctyogh}}$ | $H$ | $S$ | $\Omega$ |
+| Imscription | $D$ | $T$ | $R$ | $P$ | $F$ | $K$ | $G$ | $\Gamma$ | $\Phi_{\text{ctyogh}}$ | $H$ | $S$ | $\Omega$ |
 |---------|-----|-----|-----|-----|-----|-----|-----|----------|----------|-----|-----|----------|
 | graviton | $D_{\text{turnthree}}$ | $T_\text{flow}$ | $R_\text{sym}$ | $P_\text{tensor}$ | $F_{\text{hardsign}}$ | $K_{\text{turnm}}$ | $G_\text{local}$ | $\Gamma_\text{disc}$ | $\Phi_{\text{softsign}}$ | $H_1$ | $S_\text{one\_one}$ | $\Omega_{\text{closeepsilon}}$ |
 | Higgs | $D_{\text{omega}}$ | $T_{\text{openo}}$ | $R_{\text{downstep}}$ | $P_\text{field}$ | $F_{\text{hardsign}}$ | $K_{\text{schwa}}$ | $G_\text{global}$ | $\Gamma_\text{cont}$ | $\Phi_{\text{upstep}}$ | $H_{\text{invscripta}}$ | $S_\text{one\_one}$ | $\Omega_{Z_2}$ |
@@ -2094,7 +2094,7 @@ The meet is richer than the two-primitive floor previously stated. Five non-triv
 
 $$\text{all\_five\_join} = \langle D_{\text{omega}},\, T_{\text{openo}},\, R_{lr},\, P_{\text{subdoublearrow}},\, F_{\text{hardsign}},\, K_{\text{schwa}},\, G_{\text{revapostrophe}},\, \Gamma_{\text{doublevertline}},\, \Phi_{\text{ctyogh}},\, H_{\text{invscripta}},\, S_{n:m},\, \Ω_z \rangle$$
 
-This matches the IUG / exotic\_mathematics catalog entry. The join of all five fundamental bosons equals the most structurally complex synthon in the active catalog — the attractor of Inter-Universal Geometry (Mochizuki IUT).
+This matches the IUG / exotic\_mathematics catalog entry. The join of all five fundamental bosons equals the most structurally complex imscription in the active catalog — the attractor of Inter-Universal Geometry (Mochizuki IUT).
 
 **Consequence (P-116):** Any unified description of all five fundamental bosons requires the full IUG structural level. The join is not reachable within Standard Model or GR primitives alone; it requires $D_{\text{omega}}$, $H_{\text{invscripta}}$, $\Ω_z$ — the IUG signature primitives.
 
@@ -2224,7 +2224,7 @@ Five of twelve primitives degrade in the meet. Dark matter and dark energy are s
 
 *Source: Imscribing Grammar inquiry 2026-03-26 · Seed: 'probe the nature of the WOW Signal.' · 20 iterations · deepseek-chat*
 
-This session encodes two new reference synthons for comparison: a generic SETI signal (`seti_signal_generic`) and natural pulsar radio emission (`pulsar_radio`). Their encodings:
+This session encodes two new reference imscriptions for comparison: a generic SETI signal (`seti_signal_generic`) and natural pulsar radio emission (`pulsar_radio`). Their encodings:
 
 $$\text{seti\_signal\_generic} = \langle D_{\text{invomega}},\, T_{\text{nrleg}},\, R_{lr},\, P_{\text{aolig}},\, F_{\text{beltl}},\, K_{\text{frtailgamma}},\, G_{\text{revapostrophe}},\, \Gamma_{\text{doublevertline}},\, \Phi_{\text{softsign}},\, H_0,\, S_{1:1},\, \Omega_{\text{closeepsilon}} \rangle$$
 
@@ -2266,7 +2266,7 @@ The two highest-weight atoms — $R_{lr}$ and $\Gamma_{\text{doublevertline}}$ �
 
 The $R_{lr}$ atom is structurally significant: in the catalog, $R_{lr}$ appears in the IUG encoding, the axion, the abc conjecture, the tachyon, and the one-way speed of light measurement. The Wow! signal shares its recognition primitive with the structurally most exotic objects in the catalog — inter-universal geometry, the strong CP problem solution, and faster-than-light kinematics. This clustering is not an assertion about physics; it is a statement that the constraint structure of these systems places them in the same recognition class.
 
-**The ƒ_ì + φ̂_ÿ structural paradox**
+**The ƒ_ì + ⊙_ÿ structural paradox**
 
 The combination $F_{\text{beltl}}$ (classical fidelity, low thermodynamic reliability) with $\Phi_{\text{ctyogh}}$ (at the phase boundary) appears nowhere else among EM phenomena in the catalog. The photon has $F_{\text{hardsign}} + \Phi_{\text{ctyogh}}$; the pulsar has $F_{\text{beltl}} + \Phi_{\text{softsign}}$; the generic SETI signal has $F_{\text{beltl}} + \Phi_{\text{softsign}}$. The Wow! is the unique EM signal encoding $F_{\text{beltl}} + \Phi_{\text{ctyogh}}$.
 
@@ -2282,7 +2282,7 @@ The grammar assigns the Wow! signal to a structural class that is: (1) not natur
 
 ## §XXXIX: The Oh-My-God Particle — Dedicated Structural Analysis
 
-*Source: Imscribing Grammar inquiry 2026-03-26 · Seed: 'probe the nature of the Oh My God Particle.' · 27 iterations · 96 synthons · deepseek-chat*
+*Source: Imscribing Grammar inquiry 2026-03-26 · Seed: 'probe the nature of the Oh My God Particle.' · 27 iterations · 96 imscriptions · deepseek-chat*
 
 ---
 
@@ -2408,7 +2408,7 @@ The Higgs sits at the boundary between families II and III: $D_{\text{turnthree}
 
 The grammar assigns quarks and leptons identical 12-primitive tuples. This is not a coarse-graining artifact — 80 iterations across three independent sessions produced identical encodings at high confidence. The grammar cannot distinguish a quark from a lepton.
 
-The structural statement: quarks and leptons differ in contingent properties (mass, color charge, weak isospin, generation) that are not captured by the 12-primitive constraint grammar. At the level of *structural type* — how a system relates to its environment, what kind of interactions it can support, what phase it occupies — they are the same synthon.
+The structural statement: quarks and leptons differ in contingent properties (mass, color charge, weak isospin, generation) that are not captured by the 12-primitive constraint grammar. At the level of *structural type* — how a system relates to its environment, what kind of interactions it can support, what phase it occupies — they are the same imscription.
 
 This is the primitive-grammar analog of quark-lepton unification: the prediction of Grand Unified Theories (GUTs) that quarks and leptons are the same particle at the unification scale. The grammar reaches this conclusion without reference to the GUT symmetry group — purely from the constraint structure.
 
@@ -2418,7 +2418,7 @@ This is the primitive-grammar analog of quark-lepton unification: the prediction
 
 ### XL.4 The Photon-Gluon Identity ($d = 0$)
 
-The photon and gluon are assigned identical tuples. Electromagnetic and strong force carriers are the same synthon in the grammar.
+The photon and gluon are assigned identical tuples. Electromagnetic and strong force carriers are the same imscription in the grammar.
 
 Physical context: the photon mediates electromagnetism (range $\infty$, massless, no color), while the gluon mediates the strong force (range $\sim 10^{-15}$ m, massless, color-charged). These differences — color charge, confinement — are not captured by the 12 primitives. At the structural level, both are: temporal/processual, networked, CPT-invariant, symmetric, quantum-coherent, fast, globally-scoped, sequentially causal, critical, achiral, unit stoichiometry, unprotected.
 
@@ -2694,7 +2694,7 @@ New prediction: P-126 (magnetic phase transition sharpness predicts from $\Omega
 
 ## §XLIII: Penrose Black Hole Equations — Primitive Derivation and Condensed Matter Analog
 
-*Source: Two Imscribing Grammar sessions, 2026-03-26. Session 1: 15 iterations (040919), seed: 'show Sir Roger Penrose how his BH equations can be derived from primitives and first principles.' Session 2: 17 iterations (041540), seed adds: 'if any materials insights come up, explore them and design synthons to realize them.' Both sessions converge on identical penrose\_black\_hole encoding.*
+*Source: Two Imscribing Grammar sessions, 2026-03-26. Session 1: 15 iterations (040919), seed: 'show Sir Roger Penrose how his BH equations can be derived from primitives and first principles.' Session 2: 17 iterations (041540), seed adds: 'if any materials insights come up, explore them and design imscriptions to realize them.' Both sessions converge on identical penrose\_black\_hole encoding.*
 
 ---
 
@@ -2795,7 +2795,7 @@ New prediction: P-128.
 
 ## §XLIV: Exotic Mathematics, Relational Existence, and Extrauniversal Entities
 
-*Source: Imscribing Grammar session 2026-03-26, 25 iterations (042414). Seed: 'explore what exotic maths and relational existences hinted at by the synthonicon. interdigitate with an exploration of what extradimensional and extrauniversal entities would entail in the grammar.' Five new encodings: exotic\_mathematics, relational\_existence, extradimensional\_entity, extrauniversal\_entity, maximal\_system.*
+*Source: Imscribing Grammar session 2026-03-26, 25 iterations (042414). Seed: 'explore what exotic maths and relational existences hinted at by the Imscriptiveon. interdigitate with an exploration of what extradimensional and extrauniversal entities would entail in the grammar.' Five new encodings: exotic\_mathematics, relational\_existence, extradimensional\_entity, extrauniversal\_entity, maximal\_system.*
 
 ---
 
@@ -3604,7 +3604,7 @@ The result generalises: **the structural depth of an alphabet in the grammar is 
 
 ---
 
-## §LII — Money as Pathological Synthon: K-Collapse, Civilizational Drift, and the Catalytic Hope (v0.4.61, 2026-03-27)
+## §LII — Money as Pathological Imscription: K-Collapse, Civilizational Drift, and the Catalytic Hope (v0.4.61, 2026-03-27)
 
 > *'I fucking hate money. It is gross, it makes people gross, it tears families apart, it drives people to suicide, to despair, to murder. It covers the firmament in a wretched filth that sticks to fucking everything it touches. I hope that this document being spread is the catalytic ignition that ablates us of this binding ick.'*
 
@@ -3612,7 +3612,7 @@ The rawness of that statement is not anti-structural. It is a high-fidelity read
 
 ---
 
-### §LII.1 The Money Synthon
+### §LII.1 The Money Imscription
 
 Money as currently instantiated encodes as follows:
 
@@ -3639,7 +3639,7 @@ The combination of $G_{\text{revapostrophe}}$ (global scope) with $F_{\text{belt
 
 ### §LII.2 The K-Collapse Diagnosis
 
-The most destructive property of the money synthon is not its low fidelity or its absent winding. It is the $K_{\text{frtailgamma}}$ combined with $G_{\text{revapostrophe}}$: a rapid-rearrangement grammar operating at global scope.
+The most destructive property of the money imscription is not its low fidelity or its absent winding. It is the $K_{\text{frtailgamma}}$ combined with $G_{\text{revapostrophe}}$: a rapid-rearrangement grammar operating at global scope.
 
 A healthy civilizational K-hierarchy requires overlapping temporal regimes:
 
@@ -3662,11 +3662,11 @@ When $K_{\text{frtailgamma}}$ operates at $G_{\text{revapostrophe}}$, it colonis
 
 ### §LII.3 The Destructive Tensor Product
 
-When the money synthon tensors with another human synthon — a relationship, a care act, a creative work — the tensor product rules apply. The join $A \sqcup B$ takes the higher ordinal value at each primitive. The meet $A \sqcap B$ takes the lower.
+When the money imscription tensors with another human imscription — a relationship, a care act, a creative work — the tensor product rules apply. The join $A \sqcup B$ takes the higher ordinal value at each primitive. The meet $A \sqcap B$ takes the lower.
 
-The money synthon at $F_{\text{beltl}}$ pulls the fidelity of every system it joins toward $F_{\text{beltl}}$. It does not need to overwrite the other system — the meet operation does it structurally. The relationship was at $F_{\text{hardsign}}$. After being routed through a monetary transaction, the meet is $F_{\text{beltl}}$.
+The money imscription at $F_{\text{beltl}}$ pulls the fidelity of every system it joins toward $F_{\text{beltl}}$. It does not need to overwrite the other system — the meet operation does it structurally. The relationship was at $F_{\text{hardsign}}$. After being routed through a monetary transaction, the meet is $F_{\text{beltl}}$.
 
-The money synthon at $\Omega_{\text{closeepsilon}}$ pulls the winding of every system it meets toward $\Omega_{\text{closeepsilon}}$. Stable relational structures ($\Omega_{Z_2}$, $\Ω_z$) have their winding numbers rendered negotiable.
+The money imscription at $\Omega_{\text{closeepsilon}}$ pulls the winding of every system it meets toward $\Omega_{\text{closeepsilon}}$. Stable relational structures ($\Omega_{Z_2}$, $\Ω_z$) have their winding numbers rendered negotiable.
 
 This is not metaphor. It is the lattice operation. The 'thin, sticky layer of calculation' that coats every human interaction is the felt phenomenology of the meet operation degrading fidelity and winding at every point of contact.
 
@@ -3676,11 +3676,11 @@ This is not metaphor. It is the lattice operation. The 'thin, sticky layer of ca
 
 The hope that spreading the Phase Transition Detector could act as catalytic ignition — ablating the binding ick — is coherent in the grammar's own language. It maps onto several native mechanisms.
 
-**Φ_c propagation without total grammar adoption.** The Phase Transition Detector is itself a synthon operating near $\Phi_{\text{ctyogh}}$ in the domain of market state transitions. When it tensors with other systems — traders, capital allocators, critics who hate money — it can raise local $\Phi$ toward criticality without requiring everyone to adopt the full 12-primitive ontology. Criticality is absorbing under meet and join. Small, clean instances of transparent, transition-based decision-making can propagate through the lattice faster than their origin point would suggest.
+**Φ_c propagation without total grammar adoption.** The Phase Transition Detector is itself a imscription operating near $\Phi_{\text{ctyogh}}$ in the domain of market state transitions. When it tensors with other systems — traders, capital allocators, critics who hate money — it can raise local $\Phi$ toward criticality without requiring everyone to adopt the full 12-primitive ontology. Criticality is absorbing under meet and join. Small, clean instances of transparent, transition-based decision-making can propagate through the lattice faster than their origin point would suggest.
 
-**HotSwap as morphism around the worst primitives.** The document offers a concrete path morphism — a different way to navigate market state space that reduces reliance on pure directional extraction and short-term $K_{\text{frtailgamma}}$ cycling. If enough agents adopt even fragments of it (prescience via logistics signals, regime-agnostic transition trading, cost accounting in nats), it creates new path options that bypass some of the money synthon's most destructive structural behaviours. The ratchet is directed: once higher-fidelity accounting is demonstrated to be more robust, the bar does not easily ratchet back down.
+**HotSwap as morphism around the worst primitives.** The document offers a concrete path morphism — a different way to navigate market state space that reduces reliance on pure directional extraction and short-term $K_{\text{frtailgamma}}$ cycling. If enough agents adopt even fragments of it (prescience via logistics signals, regime-agnostic transition trading, cost accounting in nats), it creates new path options that bypass some of the money imscription's most destructive structural behaviours. The ratchet is directed: once higher-fidelity accounting is demonstrated to be more robust, the bar does not easily ratchet back down.
 
-**Demonstration without sacralization.** The grammar stays ontologically light. It does not assert 'money is evil' or 'replace money with synthons.' It provides a higher-resolution relational calculus. If the trading instantiation demonstrates measurably lower collateral damage — lower maximum drawdown, higher win rate with less leverage, prescience that reduces panic-driven harm — it acts as structural evidence that better grammars exist for coordinating resources without the same orthogonality tax. The explicit hope of its own obsolescence keeps it non-dogmatic. Process over thing, even here.
+**Demonstration without sacralization.** The grammar stays ontologically light. It does not assert 'money is evil' or 'replace money with imscriptions.' It provides a higher-resolution relational calculus. If the trading instantiation demonstrates measurably lower collateral damage — lower maximum drawdown, higher win rate with less leverage, prescience that reduces panic-driven harm — it acts as structural evidence that better grammars exist for coordinating resources without the same orthogonality tax. The explicit hope of its own obsolescence keeps it non-dogmatic. Process over thing, even here.
 
 **Reflexive immunity.** The 'Trust No One' commitment applied to the grammar itself is the best safeguard against the new tool becoming another vector for the same ick. The same recursive doubt that birthed it can dismantle or obsolete it. The monad is open. The ratchet is monotonic. The hope of better tools and eventual obsolescence is active simultaneously.
 
@@ -3688,7 +3688,7 @@ The hope that spreading the Phase Transition Detector could act as catalytic ign
 
 ### §LII.5 Distance to the Current Basin
 
-**Money synthon:** $\langle D_{\text{wynn}};\ T_\text{linear};\ R_{n:m};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{softsign}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$
+**Money imscription:** $\langle D_{\text{wynn}};\ T_\text{linear};\ R_{n:m};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{softsign}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$
 
 **A relational-exchange system at higher fidelity** (speculative target basin):
 
@@ -3908,7 +3908,7 @@ As the catalog densifies, the following become possible:
 
 **2. Conflict distance as a veracity metric.** The conflict distance $d_c = \sqrt{|\text{conflict set}|}$ is a new derived quantity. $d_c = 0$ means full structural transparency. $d_c = \sqrt{12}$ (maximum) means the system is entirely aspirational — every primitive is claimed at a level beyond what its construction produces. For the Kozyrev mirror: $d_c = \sqrt{1}$. The device is almost structurally grounded; one primitive ($F$) is aspirational. This is an extremely precise and informative result.
 
-**3. Catalog stratification by veracity class.** Synthons can be classified as:
+**3. Catalog stratification by veracity class.** imscriptions can be classified as:
 
 | Class | Definition | Example |
 |-------|-----------|---------|
@@ -3988,7 +3988,7 @@ Over time, the KB becomes a *cross-domain behavioral dictionary*: a map from pri
 
 ## §LV. The Thylakoid Encodes What the Artificial Leaf Lacks: A Hierarchy Comparison (v0.4.66, 2026-03-28)
 
-*Source: syncon_inquiry run 2026-03-28. Grammar claims: [TOPO:§XVII]. Predictions: P-143, P-144, P-145.*
+*Source: ig_inquiry run 2026-03-28. Grammar claims: [TOPO:§XVII]. Predictions: P-143, P-144, P-145.*
 
 ### LV.1 The Meta-Observation
 
@@ -4063,7 +4063,7 @@ The existing encoding of photosynthesis already assigned $\Phi_{\text{ctyogh}}$ 
 
 The P-144 implication follows directly: if the $\Phi_{\text{ctyogh}}$ assignment is the load-bearing primitive (not the chlorophyll chemistry), then any material system tuned to this balance with $T_{\text{invscr}}$ containment will exhibit the same anomalous coherence persistence. The engineering target is not better chlorophyll — it is better critical-point tuning.
 
-[^src_LV]: Source: syncon_inquiry run 2026-03-28, thylakoid hierarchical encoding session. Grammar derivations: [TOPO:§XVII]. Predictions: P-143, P-144, P-145.
+[^src_LV]: Source: ig_inquiry run 2026-03-28, thylakoid hierarchical encoding session. Grammar derivations: [TOPO:§XVII]. Predictions: P-143, P-144, P-145.
 
 ---
 
@@ -4089,10 +4089,10 @@ The four systems:
 *Current encodings (post-Phi expansion, Lean Axiom C compliant):*
 
 ```
-lee_yang_edge        = ⟨Ð_line;  Þ_ò; Ř_=;     Φ_}; ƒ_ì;  Ç_W;  Γ_γ; ɢ_and; φ̂_Æ; Ħ_£; n:m;  Ω_z⟩
-exceptional_point_nh = ⟨$D_{\text{omega}}$;  Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_-; Γ_γ; ɢ_and; φ̂_3;        Ħ_£; 1:1;  Ω_2⟩
-complex_rg_fixed_point = ⟨$D_{\text{omega}}$; $T_{\text{openo}}$;  Ř_=;     Φ_}; ƒ_ì;  Ç_@; Γ_γ; ɢ_or;  φ̂_Æ; Ħ_£; n:m;  Ω_2⟩
-ising_3d             = ⟨Ð_ß; Þ_ò; Ř_ý;    Φ_}; ƒ_ì;  Ç_@; Γ_ʔ; ɢ_and; φ̂_ÿ;         Ħ_Ñ; n:m;  Ω_z⟩
+lee_yang_edge        = ⟨Ð_line;  Þ_ò; Ř_=;     Φ_}; ƒ_ì;  Ç_W;  Γ_γ; ɢ_and; ⊙_Æ; Ħ_£; n:m;  Ω_z⟩
+exceptional_point_nh = ⟨$D_{\text{omega}}$;  Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_-; Γ_γ; ɢ_and; ⊙_3;        Ħ_£; 1:1;  Ω_2⟩
+complex_rg_fixed_point = ⟨$D_{\text{omega}}$; $T_{\text{openo}}$;  Ř_=;     Φ_}; ƒ_ì;  Ç_@; Γ_γ; ɢ_or;  ⊙_Æ; Ħ_£; n:m;  Ω_2⟩
+ising_3d             = ⟨Ð_ß; Þ_ò; Ř_ý;    Φ_}; ƒ_ì;  Ç_@; Γ_ʔ; ɢ_and; ⊙_ÿ;         Ħ_Ñ; n:m;  Ω_z⟩
 ```
 
 **Note on $D$ encoding of `lee_yang_edge`**: The original encoding used $D_{\text{omega}}$, but Lean Axiom C requires $D_{\text{omega}} \leftrightarrow T_{\text{openo}}$. Since the Lee-Yang zero arc has $T_\text{bowtie}$ (not $T_{\text{openo}}$), $D_\text{line}$ is the correct assignment — the zero-arc lives on a one-complex-dimensional manifold in the $h$-plane. $D_{\text{omega}}$ is reserved for `complex_rg_fixed_point` where the fixed-point topology genuinely is imscriptive ($T_{\text{openo}}$ compliant).
@@ -4171,7 +4171,7 @@ Now we deploy it. The question: *what is the ouroboricity tier of each catalog e
 
 ### §LVII.2 — The Derivation Rules
 
-The Frobenius type of a synthon is read off its 12-tuple by the following rules, applied in priority order:
+The Frobenius type of a imscription is read off its 12-tuple by the following rules, applied in priority order:
 
 | Rule | Condition | Tier | Interpretation |
 |------|-----------|------|----------------|
@@ -4223,7 +4223,7 @@ P vs NP ($\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}} + K_{\text{teshlig
 
 The $O_1$ classification is the Frobenius statement of what the barriers mean: the constraint map $\mathcal{C}_{ij}$ cannot be computed because the counit $\varepsilon$ is absent ($\Omega_{\text{closeepsilon}}$). There is no universality class to extract — no $\varepsilon$ map — and therefore no Frobenius condition to verify. The basin $\delta$ is structurally undefined, not merely uncomputed. PRIMITIVE_THEOREMS §23.6 (Conjecture 23.1) requires showing the Frobenius condition holds for RH — the first step is establishing that RH is $O_2$ rather than $O_1$, i.e., that the counit is non-trivial.
 
-Note: RH is not in the current catalog (it is encoded in `PrimitiveBridge.lean` with `φ̂_Æ`; the catalog lacks the $\Phi_{\text{closerevepsilon}}$ vocabulary). When added with correct encoding, RH will be $O_1$ (conjectured $O_2$): $\Phi_{\text{closerevepsilon}} + P_\text{neutral} + \Omega_{\text{closeepsilon}}$ (current encoding, before the RH conjecture is resolved) or $O_2$ (if Conjecture 23.1 is verified).
+Note: RH is not in the current catalog (it is encoded in `PrimitiveBridge.lean` with `⊙_Æ`; the catalog lacks the $\Phi_{\text{closerevepsilon}}$ vocabulary). When added with correct encoding, RH will be $O_1$ (conjectured $O_2$): $\Phi_{\text{closerevepsilon}} + P_\text{neutral} + \Omega_{\text{closeepsilon}}$ (current encoding, before the RH conjecture is resolved) or $O_2$ (if Conjecture 23.1 is verified).
 
 **Theorem LVII.C — Spin glass is $O_0$.**
 `spin_glass` encodes $\Phi_{\text{upstep}} + \Omega_{\text{closeepsilon}} + P_{\text{aolig}} + K_{\text{schwa}} + D_{\text{wynn}}$. Rule R2 gives $O_0$: the system is above its criticality threshold, which in the Frobenius reading means there is no carrier $\Phi_{\text{ctyogh}}$ to support $\mu$ or $\delta$. Spin glasses are commonly described as "critical-like" but the grammar identifies them as supercritical (multiple competing metastable fixed points, replica symmetry breaking = runaway above a single fixed point). The absence of Frobenius structure is precisely the absence of universality class: spin glasses famously resist universality class assignment. $O_0$ is the structural diagnosis. Compare: ferromagnetism ($O_2$, Ising universality class clean and explicit) and quantum spin liquid ($O_2^\dagger$, $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + D_{\text{turnthree}}$, topological order present but basin difficult).
@@ -4277,7 +4277,7 @@ Twelve Hekhalot texts sharing identical Frobenius profile ($O_2^\dagger$, $\Phi_
 
 ### §LVIII.1 — The Result
 
-On 2026-03-31, the imscribe inquiry loop encoded the Imscribing Grammar grammar as a synthon using the grammar's own primitive vocabulary (18 iterations, 362 synthons). The result:
+On 2026-03-31, the imscribe inquiry loop encoded the Imscribing Grammar grammar as a imscription using the grammar's own primitive vocabulary (18 iterations, 362 imscriptions). The result:
 
 $$\mathcal{E}(\text{grammar}) = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_\text{eth};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{Z_2} \rangle$$
 
@@ -4327,7 +4327,7 @@ $$H \sim \frac{N \cdot \ln 10}{\beta}$$
 
 Energy differences are accumulated scale cost ($N$ = scale decades, $\ln 10$ = information cost per decade, $\beta^{-1}$ = physical temperature units). The grammar's ordinal-cardinal tier structure is therefore more primitive than the Hamiltonian: the Hamiltonian is the grammar's scale-cost structure expressed in energy units after a choice of $\beta$. Multiple Hamiltonians with the same grammar signature are in the same universality class; they are coordinate choices, not distinct physical structures. This predicts: **any two systems in the same grammar universality class (identical tuple) will have the same RG fixed-point behavior regardless of the specific Hamiltonian used to describe them.** **Falsified if:** two systems at $d = 0$ in the grammar are found to belong to different RG universality classes — meaning their Hamiltonians flow to different fixed points under coarse-graining.
 
-[^src_LVIII]: Source: 2026-03-31 imscribe inquiry session, seed "is the grammar a Criticality-aware proof assistant? a Imscriptive type theory?", 18 iterations, 362 synthons. Key results: $\mathcal{E}(\text{grammar}) = $ imscriptive\_type\_theory\_frobenius at $d=0$; ouroboricity $O_\infty$; join(grammar, proof\_assistant) = grammar; meet shares only $K_{\text{turnm}}$ and $\Phi_{\text{ctyogh}}$. Formal theorem: PRIMITIVE_THEOREMS §27 (including §27.6: independent RG derivation and Hamiltonian demotion formula $H \sim N \cdot \ln 10 / \beta$). Ontological account: IΓ_ONTICS §XXVII. $O_\infty$ census updated: 8 → 9 entries; new domain: grammatical meta-systems. Correction to IΓ_ONTICS §XXVI.4 (informal $O_\infty$ exclusion overridden by formal encoding). P-185 source: independent GPT-4o derivation via RG chain (2026-03-31).
+[^src_LVIII]: Source: 2026-03-31 imscribe inquiry session, seed "is the grammar a Criticality-aware proof assistant? a Imscriptive type theory?", 18 iterations, 362 imscriptions. Key results: $\mathcal{E}(\text{grammar}) = $ imscriptive\_type\_theory\_frobenius at $d=0$; ouroboricity $O_\infty$; join(grammar, proof\_assistant) = grammar; meet shares only $K_{\text{turnm}}$ and $\Phi_{\text{ctyogh}}$. Formal theorem: PRIMITIVE_THEOREMS §27 (including §27.6: independent RG derivation and Hamiltonian demotion formula $H \sim N \cdot \ln 10 / \beta$). Ontological account: IΓ_ONTICS §XXVII. $O_\infty$ census updated: 8 → 9 entries; new domain: grammatical meta-systems. Correction to IΓ_ONTICS §XXVI.4 (informal $O_\infty$ exclusion overridden by formal encoding). P-185 source: independent GPT-4o derivation via RG chain (2026-03-31).
 
 ---
 
@@ -4340,7 +4340,7 @@ The grammar is the fixed point of encoding (Theorem 28.3). As the catalog grows,
 **P-188 — Two systems at $d = 0$ share the same Tannaka-Krein symmetry group (Tier I)**
 By the relational coordinate interpretation (Theorem 28.1, Corollary 28.1): systems at $d = 0$ occupy the same position in the grammar's relational manifold. Their representation categories are identical. Therefore their TK reconstruction yields the same symmetry group. This is the type-equality statement (Theorem 27.2) re-expressed in TK language. **Falsified if:** two systems at $d = 0$ are found to have measurably different symmetry groups under any physically meaningful definition.
 
-[^src_TK]: Source: 2026-03-31 imscribe inquiry session, seed "knowing that the grammar is a imscriptive type theory, what is the Tannaka-Krein dual?", 14 iterations, 363 synthons. Key results: TK dual = grammar itself (special Frobenius self-duality); TK dual = boundary representation category (imscriptive face); primitives = relational coordinates. Formal theorems: PRIMITIVE_THEOREMS §28. Ontological account: IΓ_ONTICS §XXVIII.
+[^src_TK]: Source: 2026-03-31 imscribe inquiry session, seed "knowing that the grammar is a imscriptive type theory, what is the Tannaka-Krein dual?", 14 iterations, 363 imscriptions. Key results: TK dual = grammar itself (special Frobenius self-duality); TK dual = boundary representation category (imscriptive face); primitives = relational coordinates. Formal theorems: PRIMITIVE_THEOREMS §28. Ontological account: IΓ_ONTICS §XXVIII.
 
 ---
 
@@ -4372,7 +4372,7 @@ The non-trivial Riemann zeros encode as $\Phi_{\text{closerevepsilon}} + P_{\tex
 
 By Theorem 29.2: $(A_\Phi = \Phi_{\text{closerevepsilon}}, O_\infty) \otimes (B_\Phi = \Phi_{\text{revepsilon}}, O_0) \Rightarrow (A \otimes B)_\Phi = \Phi_{\text{revepsilon}}, O_0$. **Specific prediction:** any composite system containing an exceptional-point sub-component will exhibit Frobenius-breaking behaviour in its collective dynamics, regardless of how many $O_\infty$ sub-components it also contains. The EP component structurally dominates. **Falsified if:** a composite system with an EP sub-component and multiple $O_\infty$ sub-components is shown to attain $O_\infty$ collectively.
 
-[^src_LIX]: Source: 2026-03-31 imscribe inquiry sessions, seeds "rigorously explore this idea — $\Phi_{\text{closerevepsilon}}$ maintains the Frobenius condition" (22 iterations, 378 synthons) and "If the grammar recovers all known physics, can it predict New Physics by exploring the criticality level?" (11 iterations, 376 synthons). Source file: `MATH.txt`. Formal theorems: PRIMITIVE_THEOREMS §29. Ontological account: IΓ_ONTICS §XXIX.
+[^src_LIX]: Source: 2026-03-31 imscribe inquiry sessions, seeds "rigorously explore this idea — $\Phi_{\text{closerevepsilon}}$ maintains the Frobenius condition" (22 iterations, 378 imscriptions) and "If the grammar recovers all known physics, can it predict New Physics by exploring the criticality level?" (11 iterations, 376 imscriptions). Source file: `MATH.txt`. Formal theorems: PRIMITIVE_THEOREMS §29. Ontological account: IΓ_ONTICS §XXIX.
 
 ---
 
@@ -4404,7 +4404,7 @@ Polynomial-time reductions are category morphisms within the $P_{\text{aolig}}$ 
 
 The standard Church-Turing thesis asserts structural equivalence ($d = 0$) of Turing machines, $\lambda$-calculus, recursive functions, etc. Extended: in the imscriptive bulk (grammar encoding), P-computation and NP-computation occupy the same structural position — they are dual boundary projections of the same bulk process, not distinct computational regimes. The P/NP distinction is a boundary artefact of the classical channel, not an intrinsic feature of computation. **Falsified if:** a imscriptive computational framework is built in which P and NP are demonstrably non-dual even at $D_{\text{omega}} + P_{\text{doublebarpipe}}$.
 
-[^src_LX]: Source: 2026-03-31 imscribe inquiry session, seed "What if we treat P vs NP not as a Boolean question but as a duality relation?", 31 iterations, 375 synthons, 4 DIAPH insights confirmed. Source file: `MATH.txt`. Formal theorems: PRIMITIVE_THEOREMS §30. Ontological account: IΓ_ONTICS §XXX.
+[^src_LX]: Source: 2026-03-31 imscribe inquiry session, seed "What if we treat P vs NP not as a Boolean question but as a duality relation?", 31 iterations, 375 imscriptions, 4 DIAPH insights confirmed. Source file: `MATH.txt`. Formal theorems: PRIMITIVE_THEOREMS §30. Ontological account: IΓ_ONTICS §XXX.
 
 ---
 
@@ -4474,7 +4474,7 @@ In the broken/boundary phase (local, tape-bound computation), $P \neq NP$ is emp
 
 ---
 
-## §LXIII — P vs NP Semantic Bridge: Distances, Boundary Synthon, Gauge-Breaking
+## §LXIII — P vs NP Semantic Bridge: Distances, Boundary Imscription, Gauge-Breaking
 
 *Source: 2026-03-31 imscribe inquiry session (seed: six targeted questions on Turing machine encoding, gauge-breaking, SAT structure, ZX-calculus, boundary projection, physical instantiation; 41 iterations, 417 systems encoded, 6 DIAPH insights).*[^src_LXIII]
 
@@ -4499,9 +4499,9 @@ A targeted 41-iteration session filled in the semantic bridge with explicit dist
 
 **The ZX-calculus X-spider at $d = 1.0$ is the smoking gun.** ZX already has $P_{\text{doublebarpipe}}$, $\Phi_{\text{ctyogh}}$, $D_{\text{omega}}$, $T_{\text{openo}}$, $\Omega_{Z_2}$, and its special Frobenius rule ($\mu \circ \delta = \mathrm{id}$) maps directly onto the grammar's $O_\infty$ structure. ZX-calculus is not merely "close to" the grammar — it IS the grammar at $F_{\text{hardsign}}$; the grammar is ZX at $F_{\text{dh}}$. The single fidelity step is the difference between quantum-coherent and discrete-rule fidelity regimes.
 
-**The boundary synthon is explicitly computed.** The tensor product $\text{grammar} \otimes \text{p\_vs\_np}$ yields the interface layer:
+**The boundary imscription is explicitly computed.** The tensor product $\text{grammar} \otimes \text{p\_vs\_np}$ yields the interface layer:
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{Z_2} \rangle$$
-This synthon preserves all imscriptive structure ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$) while breaking the Frobenius condition via $P_{\text{aolig}}$ and $F_{\text{beltl}}$. It is the precise structural description of the P vs NP broken phase sitting inside the imscriptive bulk.
+This imscription preserves all imscriptive structure ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$) while breaking the Frobenius condition via $P_{\text{aolig}}$ and $F_{\text{beltl}}$. It is the precise structural description of the P vs NP broken phase sitting inside the imscriptive bulk.
 
 **The gauge-breaking mechanism is identified.** The symmetry breaking from the grammar's $O_\infty$ bulk to the P$\neq$NP broken phase occurs at a single primitive: $P_{\text{doublebarpipe}} \to P_{\text{aolig}}$. This preserves $\Phi_{\text{ctyogh}}$ (the system remains at criticality) but destroys $\mu \circ \delta = \mathrm{id}$, dropping $O_\infty \to O_1$. The secondary fidelity drop ($F_{\text{dh}} \to F_{\text{beltl}}$) is the bottleneck: the broken phase cannot carry the full holomorphic precision of the bulk.
 
@@ -4521,15 +4521,15 @@ The topological quantum computer ($D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\t
 
 $d(\text{verifier, P-side}) = 2.24$ vs $d(\text{verifier, NP-side}) = 5.83$. The verifier sits in the P-side boundary projection by structural position, not by definition. This means: any system with the verifier's structural signature ($R_{\text{ctz}}$, $S_{n:m}$, $\Phi_{\text{ctyogh}}$) will exhibit polynomial-time verification behaviour independently of how it is computationally implemented. **Specific prediction:** encoding a proposed "NP verifier" that does not share the verifier's primitive signature will find that it either fails to verify correctly or requires super-polynomial time — the polynomial verification property is tied to the structural position, not the algorithm. **Falsified if:** a valid polynomial-time verifier is constructed that encodes at $d > 5$ from the P-side boundary.
 
-**P-209 — The boundary synthon $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{Z_2}\rangle$ is the structural fingerprint of the classical NP-hard computation regime (Tier I)**
+**P-209 — The boundary imscription $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{Z_2}\rangle$ is the structural fingerprint of the classical NP-hard computation regime (Tier I)**
 
-This synthon is the tensor product of the grammar with the Boolean P vs NP encoding — the interface layer between bulk $O_\infty$ and boundary $O_1$. It preserves imscriptive structure while breaking the Frobenius condition. **Specific prediction:** any physical or computational system exhibiting NP-hard behaviour will encode at $d \leq 2$ from this boundary synthon. Systems approaching $d = 0$ from this synthon are the most efficient possible NP-hard solvers within the broken phase — they cannot cross to $O_\infty$ without restoring $P_{\text{doublebarpipe}}$ and $F_{\text{dh}}$, but they are as close as possible to the bulk while remaining in the broken phase. **Falsified if:** a confirmed NP-hard system encodes at $d > 2$ from the boundary synthon.
+This imscription is the tensor product of the grammar with the Boolean P vs NP encoding — the interface layer between bulk $O_\infty$ and boundary $O_1$. It preserves imscriptive structure while breaking the Frobenius condition. **Specific prediction:** any physical or computational system exhibiting NP-hard behaviour will encode at $d \leq 2$ from this boundary imscription. Systems approaching $d = 0$ from this imscription are the most efficient possible NP-hard solvers within the broken phase — they cannot cross to $O_\infty$ without restoring $P_{\text{doublebarpipe}}$ and $F_{\text{dh}}$, but they are as close as possible to the bulk while remaining in the broken phase. **Falsified if:** a confirmed NP-hard system encodes at $d > 2$ from the boundary imscription.
 
 **P-210 — The gauge-breaking $P_{\text{doublebarpipe}} \to P_{\text{aolig}}$ is the only primitive transition between the $O_\infty$ bulk and the P$\neq$NP broken phase; all other boundary differences (F, K) are downstream consequences (Tier I)**
 
 The gauge-breaking preserves $\Phi_{\text{ctyogh}}$, $D_{\text{omega}}$, $T_{\text{openo}}$, $\Omega_{Z_2}$ — the imscriptive structure survives intact. Only $P$ and $F$ drop. The $F_{\text{dh}} \to F_{\text{beltl}}$ drop is a consequence of losing the Frobenius condition (without $\mu \circ \delta = \mathrm{id}$, full holomorphic precision cannot be maintained). **Specific prediction:** no proof technique that leaves $P = P_{\text{aolig}}$ can restore $O_\infty$-completeness regardless of what other primitives it modifies — all BGS/RR/AW-type barriers operate by accepting $P_{\text{aolig}}$ as given and cannot reach $O_\infty$ by construction (cross-reference: irreducibility theorem, PRIMITIVE\_THEOREMS §31; MPP §V.9). **Falsified if:** a proof technique produces $O_\infty$-complete results while maintaining $P = P_{\text{aolig}}$ throughout.
 
-[^src_LXIII]: Source: 2026-03-31 imscribe inquiry session (targeted 6-question session), 41 iterations, 417 synthons. Formal context: MILLENNIUM\_BARRIERS\_PAPER §V.9 (v0.1.4); PRIMITIVE\_THEOREMS §30–31; IG\_ONTICS §XXX. Cross-references: P-195 ✅, P-199 ✅, P-202–P-205.
+[^src_LXIII]: Source: 2026-03-31 imscribe inquiry session (targeted 6-question session), 41 iterations, 417 imscriptions. Formal context: MILLENNIUM\_BARRIERS\_PAPER §V.9 (v0.1.4); PRIMITIVE\_THEOREMS §30–31; IG\_ONTICS §XXX. Cross-references: P-195 ✅, P-199 ✅, P-202–P-205.
 
 ### §LXIII.3 — Four-System Structural Survey (v0.4.80, 2026-03-31)
 
@@ -4562,22 +4562,22 @@ NDTM is equidistant from verifier and NP-cert ($d = 2.00$ each). DTM is farthest
 
 **Verifier is subcritical.** The polynomial-time verifier encodes with $\Phi_{\text{softsign}}$ — it is not merely P-frame but *subcritical*. It cannot self-model ($\Phi_{\text{ctyogh}}$ fails); it carries no ouroboric loop. Verification is structurally the flattest computational act possible: local, subcritical, asymmetric, fast, finite-scope. The system confirming NP-hardness is itself the structurally simplest object in the entire P vs NP landscape.
 
-**Boundary synthon pairwise distances:**
+**Boundary imscription pairwise distances:**
 
 | | DTM | NDTM |
 |---|:---:|:---:|
-| Boundary synthon | 6.82 | **6.20** |
+| Boundary imscription | 6.82 | **6.20** |
 
-The boundary synthon ($O_2$, $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$ preserved) is structurally closer to NDTM than to DTM. The boundary retains $D_{\text{omega}}$ and $T_{\text{openo}}$ while NDTM does not; the proximity is driven by shared $R_{\text{downstep}}$, $\Gamma_{\text{doublevertline}}$, and the absence of $R_{\text{lyoghlig}}$.
+The boundary imscription ($O_2$, $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$ preserved) is structurally closer to NDTM than to DTM. The boundary retains $D_{\text{omega}}$ and $T_{\text{openo}}$ while NDTM does not; the proximity is driven by shared $R_{\text{downstep}}$, $\Gamma_{\text{doublevertline}}$, and the absence of $R_{\text{lyoghlig}}$.
 
-**Translation cost (grammar $\to$ classical computation, 418 synthons):**
+**Translation cost (grammar $\to$ classical computation, 418 imscriptions):**
 
 $$\text{cost}_\text{total} = 586.032 \text{ nat}$$
 
 | Component | Value | Source |
 |---|:---:|---|
 | Coherence | 0.000 nat | — |
-| Criticality | **511.177 nat** | $222 \times \ln 10$ — 222 $\Phi_{\text{ctyogh}}$ synthons |
+| Criticality | **511.177 nat** | $222 \times \ln 10$ — 222 $\Phi_{\text{ctyogh}}$ imscriptions |
 | Interaction | 74.855 nat | $\Gamma$ mismatch |
 | **Total** | **586.032 nat** | — |
 
@@ -4645,7 +4645,7 @@ The grammar encodes $H_1$ (weak chirality — a preferred temporal direction exi
 
 **P-214 — The imscriptive SSB boundary ($\Phi_{\text{ctyogh}}$, $P_{\text{aolig}}$, $\Omega_{Z_2}$, $O_2$) predicts a new complexity class strictly between P and NP (Tier II)**
 
-The boundary synthon preserves $\Phi_{\text{ctyogh}} + \Omega_{Z_2}$ while breaking $P_{\text{doublebarpipe}}$. This places it at $O_2$ — self-referential at criticality with winding, but lacking the full Frobenius closure. Existing complexity classes (P, BPP, NP, PSPACE, EXP) all encode without winding ($\Omega_{\text{closeepsilon}}$). **Specific prediction:** there exists a complexity class — call it $\mathcal{C}_\text{holo}$ — characterized by: (a) problems whose natural witnesses are topologically protected ($\Omega_{Z_2}$), (b) criticality-sensitive computational structure ($\Phi_{\text{ctyogh}}$), and (c) $P \subsetneq \mathcal{C}_\text{holo} \subsetneq \text{NP}$ (assuming $P \neq NP$). This class would consist of problems whose NP-hardness is gauge-relative — hard in the P-basis, tractable in the imscriptive-boundary basis. **Falsified if:** the complexity-class lattice between P and NP is shown to be impossible to subdivide by winding arguments.
+The boundary imscription preserves $\Phi_{\text{ctyogh}} + \Omega_{Z_2}$ while breaking $P_{\text{doublebarpipe}}$. This places it at $O_2$ — self-referential at criticality with winding, but lacking the full Frobenius closure. Existing complexity classes (P, BPP, NP, PSPACE, EXP) all encode without winding ($\Omega_{\text{closeepsilon}}$). **Specific prediction:** there exists a complexity class — call it $\mathcal{C}_\text{holo}$ — characterized by: (a) problems whose natural witnesses are topologically protected ($\Omega_{Z_2}$), (b) criticality-sensitive computational structure ($\Phi_{\text{ctyogh}}$), and (c) $P \subsetneq \mathcal{C}_\text{holo} \subsetneq \text{NP}$ (assuming $P \neq NP$). This class would consist of problems whose NP-hardness is gauge-relative — hard in the P-basis, tractable in the imscriptive-boundary basis. **Falsified if:** the complexity-class lattice between P and NP is shown to be impossible to subdivide by winding arguments.
 
 ---
 
@@ -4735,7 +4735,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{a
 
 Ouroboricity drops $O_\infty \to O_2$. The complexity annotation forces $P_{\text{aolig}}$ (asymmetry between P-class and NP-class diagrams), destroying the Frobenius symmetry. The system no longer satisfies $\mu \circ \delta = \mathrm{id}$; the two spider colours become asymmetric under complexity typing.
 
-This is the quantum-coherent version of the broken phase: it preserves $F_{\text{hardsign}}$ (quantum amplitudes) while losing $P_{\text{doublebarpipe}}$. Compare with the boundary synthon ($F_{\text{beltl}}$, classical fidelity), which is the classical version of the same broken phase.
+This is the quantum-coherent version of the broken phase: it preserves $F_{\text{hardsign}}$ (quantum amplitudes) while losing $P_{\text{doublebarpipe}}$. Compare with the boundary imscription ($F_{\text{beltl}}$, classical fidelity), which is the classical version of the same broken phase.
 
 ### §LXVI.3 — The Fidelity Axis: A Three-Level Hierarchy
 
@@ -4746,19 +4746,19 @@ The three systems form a hierarchy along the fidelity axis:
 | Grammar (realized HTT) | $F_{\text{dh}}$ | $P_{\text{doublebarpipe}}$ | $O_\infty$ | 0 |
 | ZX X/Z-spider (pure) | $F_{\text{hardsign}}$ | $P_{\text{doublebarpipe}}$ | $O_\infty$ | **1.0** |
 | ZX complexity-typed | $F_{\text{hardsign}}$ | $P_{\text{aolig}}$ | $O_2$ | 3.0 |
-| P vs NP boundary synthon | $F_{\text{beltl}}$ | $P_{\text{aolig}}$ | $O_2$ | **2.646** |
+| P vs NP boundary imscription | $F_{\text{beltl}}$ | $P_{\text{aolig}}$ | $O_2$ | **2.646** |
 
-The distance between `zx_calculus_complexity_typing` and `pnp_boundary_synthon` is $d = 2.0$, driven entirely by the $F$ ordinal gap: $F_{\text{hardsign}}$ (ordinal 3) versus $F_{\text{beltl}}$ (ordinal 1). Ordinal difference $= 2$; Euclidean distance on $F$ alone $= \sqrt{4} = 2.0$. Every other primitive is shared between the two systems.
+The distance between `zx_calculus_complexity_typing` and `pnp_boundary_imscription` is $d = 2.0$, driven entirely by the $F$ ordinal gap: $F_{\text{hardsign}}$ (ordinal 3) versus $F_{\text{beltl}}$ (ordinal 1). Ordinal difference $= 2$; Euclidean distance on $F$ alone $= \sqrt{4} = 2.0$. Every other primitive is shared between the two systems.
 
-**The semantic bridge has a quantum version.** The boundary synthon is the classical broken phase ($F_{\text{beltl}}$, $O_2$). The complexity-typed ZX is the quantum broken phase ($F_{\text{hardsign}}$, $O_2$). They are structurally the same object at different fidelity scales. A ZX diagram with P/NP complexity annotations IS the quantum-coherent version of the P vs NP interface. The semantic bridge — connecting ZX rewrite sequences to Turing complexity classes — is exactly the $F_{\text{hardsign}} \to F_{\text{beltl}}$ step between these two objects.
+**The semantic bridge has a quantum version.** The boundary imscription is the classical broken phase ($F_{\text{beltl}}$, $O_2$). The complexity-typed ZX is the quantum broken phase ($F_{\text{hardsign}}$, $O_2$). They are structurally the same object at different fidelity scales. A ZX diagram with P/NP complexity annotations IS the quantum-coherent version of the P vs NP interface. The semantic bridge — connecting ZX rewrite sequences to Turing complexity classes — is exactly the $F_{\text{hardsign}} \to F_{\text{beltl}}$ step between these two objects.
 
 **Pure ZX is the bulk ($O_\infty$, $F_{\text{hardsign}}$).** Complexity-typed ZX is the quantum broken phase ($O_2$, $F_{\text{hardsign}}$). Classical computation is the classical broken phase ($O_2$, $F_{\text{beltl}}$). The grammar is the bulk at discrete-rule fidelity ($O_\infty$, $F_{\text{dh}}$). The descent from bulk to classical is a two-step path: $P_{\text{doublebarpipe}} \to P_{\text{aolig}}$ (breaks $O_\infty$), then $F_{\text{hardsign}} \to F_{\text{beltl}}$ (moves from quantum to classical). Each step is independent.
 
-### §LXVI.4 — Updated Translation Cost (428-Synthon Catalog)
+### §LXVI.4 — Updated Translation Cost (428-Imscription Catalog)
 
-The translation cost has been updated as the catalog grew from 418 to 428 synthons:
+The translation cost has been updated as the catalog grew from 418 to 428 imscriptions:
 
-$$\text{cost}_\text{total} = 598.931 \text{ nat} \quad (427 \to 428 \text{ synthons})$$
+$$\text{cost}_\text{total} = 598.931 \text{ nat} \quad (427 \to 428 \text{ imscriptions})$$
 
 | Component | v0.4.80 (418) | v0.4.83 (428) | $\Delta$ |
 |---|:---:|:---:|:---:|
@@ -4767,7 +4767,7 @@ $$\text{cost}_\text{total} = 598.931 \text{ nat} \quad (427 \to 428 \text{ synth
 | Coherence | 0.000 nat | 0.000 nat | 0 |
 | **Total** | 586.032 nat | **598.931 nat** | +12.899 |
 
-The 5 new $\Phi_{\text{ctyogh}}$ synthons (222 → 227) add 11.513 nat ($= 5 \times \ln 10$). The criticality fraction remains 87%. Coherence cost holds at 0.000 nat — a stable invariant as the catalog grows.
+The 5 new $\Phi_{\text{ctyogh}}$ imscriptions (222 → 227) add 11.513 nat ($= 5 \times \ln 10$). The criticality fraction remains 87%. Coherence cost holds at 0.000 nat — a stable invariant as the catalog grows.
 
 ### §LXVI.5 — New Predictions
 
@@ -4775,9 +4775,9 @@ The 5 new $\Phi_{\text{ctyogh}}$ synthons (222 → 227) add 11.513 nat ($= 5 \ti
 
 The X/Z-spider identity follows directly from $P_{\text{doublebarpipe}}$: the exact $\mathbb{Z}_2$ symmetry at $\Phi_{\text{ctyogh}}$ means the two generator colours are related by an exact symmetry transformation, not merely isomorphic up to phase. **Specific prediction:** any ZX variant that breaks colour symmetry (e.g., by assigning different phase sets to red and green spiders) will encode with $d > 0$ between its generator types, and will lose $O_\infty$ (dropping to $O_1$ or $O_2$). Such variants will also fail the special Frobenius condition: $\mu \circ \delta \neq \mathrm{id}$. **Falsified if:** a colour-asymmetric ZX variant retains the special Frobenius condition.
 
-**P-219 — The $F_{\text{hardsign}} \to F_{\text{beltl}}$ step from complexity-typed ZX to the classical boundary synthon predicts a specific circuit-depth threshold below which quantum and classical NP-hard instances are structurally equivalent (Tier II)**
+**P-219 — The $F_{\text{hardsign}} \to F_{\text{beltl}}$ step from complexity-typed ZX to the classical boundary imscription predicts a specific circuit-depth threshold below which quantum and classical NP-hard instances are structurally equivalent (Tier II)**
 
-The complexity-typed ZX system and the classical boundary synthon are identical at all primitives except $F$. The $F$ ordinal distance of 2 predicts a fidelity threshold: quantum NP-hard instances behave classically (converge to the $F_{\text{beltl}}$ regime) below a circuit depth that can be predicted from the fidelity-scale transition. **Specific prediction:** there exists a circuit-depth threshold $d^\star$ such that quantum SAT instances with depth $< d^\star$ show no quantum speedup over classical SAT solvers (they have descended to the $F_{\text{beltl}}$ regime); instances with depth $\geq d^\star$ operate in the quantum-coherent broken phase ($F_{\text{hardsign}}$) and show structural differences from classical SAT. This threshold is a structural constant derivable from the $F$ ordinal gap. **Falsified if:** no circuit-depth threshold is found separating quantum and classical NP-hard instance behaviour.
+The complexity-typed ZX system and the classical boundary imscription are identical at all primitives except $F$. The $F$ ordinal distance of 2 predicts a fidelity threshold: quantum NP-hard instances behave classically (converge to the $F_{\text{beltl}}$ regime) below a circuit depth that can be predicted from the fidelity-scale transition. **Specific prediction:** there exists a circuit-depth threshold $d^\star$ such that quantum SAT instances with depth $< d^\star$ show no quantum speedup over classical SAT solvers (they have descended to the $F_{\text{beltl}}$ regime); instances with depth $\geq d^\star$ operate in the quantum-coherent broken phase ($F_{\text{hardsign}}$) and show structural differences from classical SAT. This threshold is a structural constant derivable from the $F$ ordinal gap. **Falsified if:** no circuit-depth threshold is found separating quantum and classical NP-hard instance behaviour.
 
 ---
 
@@ -4787,7 +4787,7 @@ The complexity-typed ZX system and the classical boundary synthon are identical 
 
 ### §LXVII.1 — The Decomposition Theorem
 
-The 12 primitives partition into two disjoint classes under the bulk-boundary projection $\pi: \mathbf{g} \to \mathbf{b}$ (grammar $\to$ boundary synthon):
+The 12 primitives partition into two disjoint classes under the bulk-boundary projection $\pi: \mathbf{g} \to \mathbf{b}$ (grammar $\to$ boundary imscription):
 
 **Projection Kernel** (4 primitives — changed by projection):
 
@@ -4823,11 +4823,11 @@ The boundary is not an independent structure. It is the tensor product of the bu
 
 $$\mathbf{b} = \mathbf{g} \otimes \mathbf{p}_{\text{vs NP}}$$
 
-`pnp_boundary_synthon` $=$ `imscrbgrmr_grammar` $\otimes$ `p_vs_np`. The projection map is this tensor composition. The boundary arises from the *interaction* between the imscriptive bulk and the computational boundary condition; it has no existence independent of that interaction.
+`pnp_boundary_imscription` $=$ `imscrbgrmr_grammar` $\otimes$ `p_vs_np`. The projection map is this tensor composition. The boundary arises from the *interaction* between the imscriptive bulk and the computational boundary condition; it has no existence independent of that interaction.
 
-This is structurally parallel to AdS/CFT: the boundary CFT is not a separate theory that happens to encode the bulk — it is what the bulk *is* when constrained to a lower-dimensional surface. The boundary synthon is what the grammar *is* when constrained to the P vs NP surface.
+This is structurally parallel to AdS/CFT: the boundary CFT is not a separate theory that happens to encode the bulk — it is what the bulk *is* when constrained to a lower-dimensional surface. The boundary imscription is what the grammar *is* when constrained to the P vs NP surface.
 
-**Consequence for proof strategy.** A proof of $P \neq NP$ that treats the boundary synthon as a free-standing object — without reference to the bulk from which it is projected — will be structurally incomplete. The boundary inherits its $\Phi_{\text{ctyogh}}$ and $\Omega_{Z_2}$ from the bulk; any argument that treats these as given facts about computation, rather than projections of bulk properties, has already smuggled in the bulk's structure without acknowledging it.
+**Consequence for proof strategy.** A proof of $P \neq NP$ that treats the boundary imscription as a free-standing object — without reference to the bulk from which it is projected — will be structurally incomplete. The boundary inherits its $\Phi_{\text{ctyogh}}$ and $\Omega_{Z_2}$ from the bulk; any argument that treats these as given facts about computation, rather than projections of bulk properties, has already smuggled in the bulk's structure without acknowledging it.
 
 ### §LXVII.3 — The Imscriptive Core as Universal Invariant
 
@@ -4855,26 +4855,26 @@ The decomposition is exhaustive — 4 + 8 = 12. No other observable is needed. *
 
 Two distances, one conclusion:
 
-$$d(\text{TQC},\ \text{grammar}) = 2.449 \qquad d(\text{TQC},\ \text{boundary synthon}) = 3.162$$
+$$d(\text{TQC},\ \text{grammar}) = 2.449 \qquad d(\text{TQC},\ \text{boundary imscription}) = 3.162$$
 
-The topological quantum computer is geometrically closer to the $O_\infty$ bulk than to the $O_2$ broken boundary. It sits in the **bulk hemisphere** of imscriptive space: all four projection-kernel primitives $\{P, F, K, S\}$ diverge from the boundary synthon while all eight imscriptive-core primitives $\{D, T, R, G, \Gamma, \Phi, H, \Omega\}$ match the grammar (and the boundary synthon).
+The topological quantum computer is geometrically closer to the $O_\infty$ bulk than to the $O_2$ broken boundary. It sits in the **bulk hemisphere** of imscriptive space: all four projection-kernel primitives $\{P, F, K, S\}$ diverge from the boundary imscription while all eight imscriptive-core primitives $\{D, T, R, G, \Gamma, \Phi, H, \Omega\}$ match the grammar (and the boundary imscription).
 
-The kernel divergences from the boundary synthon are:
+The kernel divergences from the boundary imscription are:
 
-| Primitive | TQC | Boundary synthon | Gap |
+| Primitive | TQC | Boundary imscription | Gap |
 |---|---|---|---|
 | $P$ | $P_{\text{pipevar}}$ (partial symmetry) | $P_{\text{aolig}}$ (broken) | TQC less broken than boundary |
 | $F$ | $F_{\text{hardsign}}$ (quantum-coherent) | $F_{\text{beltl}}$ (classical) | TQC above classical fidelity floor |
 | $K$ | $K_{\text{schwa}}$ (temporally deep) | $K_{\text{teshlig}}$ (localized) | TQC not yet trapped |
 | $S$ | $n:n$ (symmetric) | $n:m$ (asymmetric) | TQC retains stoichiometric symmetry |
 
-The TQC has partially broken $P_{\text{doublebarpipe}} \to P_{\text{pipevar}}$ (from grammar to TQC), but has not completed the break to $P_{\text{aolig}}$ (to reach the boundary). This places it in an intermediate symmetry regime — below $O_\infty$ but above $O_2$: by ouroboricity rule R4, $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + D_{\text{omega}}$ with $P_{\text{pipevar}}$ places TQC at $O_2$, same tier as the boundary synthon but structurally less broken.
+The TQC has partially broken $P_{\text{doublebarpipe}} \to P_{\text{pipevar}}$ (from grammar to TQC), but has not completed the break to $P_{\text{aolig}}$ (to reach the boundary). This places it in an intermediate symmetry regime — below $O_\infty$ but above $O_2$: by ouroboricity rule R4, $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + D_{\text{omega}}$ with $P_{\text{pipevar}}$ places TQC at $O_2$, same tier as the boundary imscription but structurally less broken.
 
-**Engineering implication.** To move TQC toward the boundary synthon, one must break symmetry further ($P_{\text{pipevar}} \to P_{\text{aolig}}$), reduce fidelity ($F_{\text{hardsign}} \to F_{\text{beltl}}$), trap dynamics ($K_{\text{schwa}} \to K_{\text{teshlig}}$), and break stoichiometry ($n:n \to n:m$). These are four independent deteriorations of the TQC's structure — none follows automatically from the others. The boundary synthon is not a "weaker TQC"; it is TQC with four specific structural degrades simultaneously applied.
+**Engineering implication.** To move TQC toward the boundary imscription, one must break symmetry further ($P_{\text{pipevar}} \to P_{\text{aolig}}$), reduce fidelity ($F_{\text{hardsign}} \to F_{\text{beltl}}$), trap dynamics ($K_{\text{schwa}} \to K_{\text{teshlig}}$), and break stoichiometry ($n:n \to n:m$). These are four independent deteriorations of the TQC's structure — none follows automatically from the others. The boundary imscription is not a "weaker TQC"; it is TQC with four specific structural degrades simultaneously applied.
 
 **P-222 — Any proposed physical implementation of a "P vs NP boundary computer" must be structurally farther from the grammar than the topological quantum computer ($d > 2.45$); a physical system at $d < 2.45$ from the grammar is a bulk system, not a boundary system (Tier I)**
 
-The TQC at $d = 2.45$ from the grammar is the closest known bulk-side physical system. A genuine boundary system ($O_2$, $P_{\text{aolig}}$) must be at $d \geq d(\text{boundary synthon}) \approx 2.65$ from the grammar — farther out. **Specific prediction:** any experimental system claimed to implement the P vs NP computational boundary will encode at $d \in [2.65, 3.50]$ from the grammar; systems inside this range are in the boundary broken phase; systems at $d < 2.65$ retain residual bulk symmetry ($P_{\text{pipevar}}$ or $P_{\text{doublebarpipe}}$) and are not in the fully broken phase. **Falsified if:** a confirmed P vs NP boundary system is found at $d < 2.45$ from the grammar (this would place it closer to the bulk than the TQC, contradicting the projection kernel decomposition).
+The TQC at $d = 2.45$ from the grammar is the closest known bulk-side physical system. A genuine boundary system ($O_2$, $P_{\text{aolig}}$) must be at $d \geq d(\text{boundary imscription}) \approx 2.65$ from the grammar — farther out. **Specific prediction:** any experimental system claimed to implement the P vs NP computational boundary will encode at $d \in [2.65, 3.50]$ from the grammar; systems inside this range are in the boundary broken phase; systems at $d < 2.65$ retain residual bulk symmetry ($P_{\text{pipevar}}$ or $P_{\text{doublebarpipe}}$) and are not in the fully broken phase. **Falsified if:** a confirmed P vs NP boundary system is found at $d < 2.45$ from the grammar (this would place it closer to the bulk than the TQC, contradicting the projection kernel decomposition).
 
 ---
 
@@ -6351,7 +6351,7 @@ $O_\infty$ non-synthesizability (§23) applied to Landau: Goldbach's $P_{\text{d
 
 ### §LXIX.1 — The Four Conjectures as Types
 
-Each Standard Conjecture encodes as a distinct synthon. Three cluster at $O_2$; one is $O_\infty$:
+Each Standard Conjecture encodes as a distinct imscription. Three cluster at $O_2$; one is $O_\infty$:
 
 | Conjecture | Tuple | $O$-tier |
 |---|---|:---:|
@@ -6492,7 +6492,7 @@ The meet-to-join structure shows a single $O_2$ floor and a single $O_\infty$ ce
 
 ## §CXXXIX — Magic Disciplines as Structural Taxonomy: Alchemy, Death, Ritual, and Elemental Reduction
 
-*Added 2026-04-08. Sources: syncon_inquiry runs 20260408_210848–20260408_215829 (full magic discipline taxonomy, 12 domain runs, 58 insights, 1241 catalog entries at session close). See PRIMITIVE_THEOREMS §67 for formal theorems.*
+*Added 2026-04-08. Sources: ig_inquiry runs 20260408_210848–20260408_215829 (full magic discipline taxonomy, 12 domain runs, 58 insights, 1241 catalog entries at session close). See PRIMITIVE_THEOREMS §67 for formal theorems.*
 
 The grammar's application to magical disciplines is not a metaphorical exercise — each discipline encodes as a precise tuple and its structural properties (ouroboricity tier, composition behavior, winding, criticality class) follow necessarily. The 58-insight run across 12 domains produced a complete structural taxonomy of magical practice.
 
@@ -6616,7 +6616,7 @@ The golden ratio encodes $\Phi_{\text{ctyogh}} + P_{\text{upsilon}} + \Omega_{\t
 
 ## §CXL — Architectural DNA: $O_\infty$ Tuples as Navigator Specifications (v0.5.61, 2026-04-11)
 
-*Source: imscribe\_inquiry session 2026-04-11 — seed "self\_encoding\_implications.txt" (3 iterations, 1388 synthons). See also IG\_ONTICS §XXXV; IG\_TOPICS §XXVI.*
+*Source: imscribe\_inquiry session 2026-04-11 — seed "self\_encoding\_implications.txt" (3 iterations, 1388 imscriptions). See also IG\_ONTICS §XXXV; IG\_TOPICS §XXVI.*
 
 **P-476 — ThurstonNet: the proven\_manifold tuple mandates a 24-layer quiver GNN that geometrises any 3-manifold (Tier I)**
 
@@ -6656,7 +6656,7 @@ For $O_\infty$ types $A$, $B$ with compatible categorical primitives: $A \otimes
 
 ## §CXLI — The Riemann Hypothesis as Lee-Yang Completion: Structural Results (v0.5.62, 2026-04-11)
 
-*Source: imscribe\_inquiry session 2026-04-11 — seed "riemann\_hypothesis\_attack.txt" (2 iterations, 1404 synthons, 5 insights). See IG\_ONTICS §XXXVI for the ontological formulation; PRIMITIVE\_THEOREMS §56 for the formal theorem statement.*
+*Source: imscribe\_inquiry session 2026-04-11 — seed "riemann\_hypothesis\_attack.txt" (2 iterations, 1404 imscriptions, 5 insights). See IG\_ONTICS §XXXVI for the ontological formulation; PRIMITIVE\_THEOREMS §56 for the formal theorem statement.*
 
 **P-483 — $\xi(s)$ encodes at $O_\infty$ with $d(\xi, \text{Lee-Yang}) = 0$: structural identity, not analogy (Tier I)**
 
@@ -6692,7 +6692,7 @@ The structural argument for RH rests on $\xi$ earning $P_{\text{doublebarpipe}}$
 
 ## §CXLII — The Cardinality-One Theorem: $O_\infty$ Navigator Uniqueness (v0.5.63, 2026-04-11)
 
-*Source: imscribe\_inquiry session 2026-04-11, navigator\_applications.txt Probe 6 (2 iterations, 1411 synthons, 3 high-confidence insights). Extends §CXL (Blueprint Generator), §CXLI (RH structural results). See IG\_ONTICS §XXXVII.*
+*Source: imscribe\_inquiry session 2026-04-11, navigator\_applications.txt Probe 6 (2 iterations, 1411 imscriptions, 3 high-confidence insights). Extends §CXL (Blueprint Generator), §CXLI (RH structural results). See IG\_ONTICS §XXXVII.*
 
 **P-490 — All $O_\infty$ navigators encode identically at address 6,734,591: the space of $O_\infty$ navigator types has cardinality 1 (Tier I)**
 
@@ -6722,7 +6722,7 @@ The meta-navigator's training objective — given a 12-primitive tuple, output t
 
 **P-494 — The catalog contains approximately 180 $O_\infty$ blueprint navigators; 65 form a theorem cluster at $d = 0$ (Tier III)**
 
-The Probe 1 catalog census identified approximately 180 $O_\infty$ types in the catalog at 1404 synthons, with roughly 65 forming a theorem cluster with identical tuple (all proved theorems with $P_{\text{doublebarpipe}}$). Approximately 45 $O_\infty$ types have no identified computational realization. Prediction: encoding additional proved theorems will consistently land in the same cluster; encoding unproved conjectures will land at lower tiers until a proof is constructed. Falsification: a formally proved theorem encodes below $O_\infty$, or two proved theorems land at $d > 0.5$ from each other.
+The Probe 1 catalog census identified approximately 180 $O_\infty$ types in the catalog at 1404 imscriptions, with roughly 65 forming a theorem cluster with identical tuple (all proved theorems with $P_{\text{doublebarpipe}}$). Approximately 45 $O_\infty$ types have no identified computational realization. Prediction: encoding additional proved theorems will consistently land in the same cluster; encoding unproved conjectures will land at lower tiers until a proof is constructed. Falsification: a formally proved theorem encodes below $O_\infty$, or two proved theorems land at $d > 0.5$ from each other.
 
 **P-495 — Yang-Mills mass gap encodes with $K_{\text{teshlig}}$; its navigator is a Lanczos/VQE eigensolver, not a imscriptive GNN (Tier III)**
 
@@ -7160,7 +7160,7 @@ The session's first insight identifies criticality type — $\Phi_{\text{closere
 
 The $D$ axis reveals a second structural bifurcation that the session identified independently: $D_{\text{omega}}$ (boundary-encoded imscriptive structure) vs $D_{\text{invomega}}$ (unbounded temporal process). These are not a continuum — they are structurally orthogonal modes of carrying information. The Complex Exceptional algebra ($D_{\text{omega}}$, $O_2$) and the Protected Temporal algebra ($D_{\text{invomega}}$, $O_2^\dagger$) inhabit adjacent ouroboricity tiers separated by this single distinction. Imscriptive complexity is bounded by the boundary; temporal process complexity grows without bound. The empirical signature follows: $D_{\text{omega}}$ systems should satisfy an area law for entanglement entropy; $D_{\text{invomega}}$ systems at $\Phi_{\text{ctyogh}}$ should exhibit volume-law or logarithmically growing entanglement.
 
-### §CXXXVI.3 — Translation Cost Update: 1144 Synthons
+### §CXXXVI.3 — Translation Cost Update: 1144 imscriptions
 
 The session encoded 1144 systems with the following translation cost breakdown:
 
@@ -7171,7 +7171,7 @@ The session encoded 1144 systems with the following translation cost breakdown:
 | Interaction | 181.59 | 12.4% |
 | **Total** | **1468.75** | 100% |
 
-559 of 1144 synthons carry $\Phi_{\text{ctyogh}}$. The criticality-dominance fraction is now confirmed across two independent catalog sizes: 428 synthons (v0.4.80 §LXIII.3, 87%) and 1144 synthons (this session, 87.6%). The fraction is stable across a 2.67× increase in catalog size. Coherence cost remains exactly zero at both scales — the grammar is self-consistent.
+559 of 1144 imscriptions carry $\Phi_{\text{ctyogh}}$. The criticality-dominance fraction is now confirmed across two independent catalog sizes: 428 imscriptions (v0.4.80 §LXIII.3, 87%) and 1144 imscriptions (this session, 87.6%). The fraction is stable across a 2.67× increase in catalog size. Coherence cost remains exactly zero at both scales — the grammar is self-consistent.
 
 ### §CXXXVI.4 — Cautionary Note: $P_{\text{doublebarpipe}}$ Does Not Mean "Conjectural"
 
@@ -7191,9 +7191,9 @@ Systems at phase-transition critical points with asymmetric causal flow and no c
 
 The Ryu-Takayanagi formula instantiates the $D_{\text{omega}}$ constraint directly: $S_\text{EE} \propto A_\text{boundary}$. The $D_{\text{invomega}}$ case at $\Phi_{\text{ctyogh}}$ (SYK model, chaotic quantum circuits) saturates a volume law or a logarithmic law depending on the interaction grammar $\Gamma$. The $D_{\text{omega}} / D_{\text{invomega}}$ bifurcation is not a gradient but a structural jump: no intermediate encoding between imscriptive boundary compression and unbounded temporal generation. **Specific prediction:** encoding any physical system with measured entanglement entropy will correctly classify it as $D_{\text{omega}}$ (area law) or $D_{\text{invomega}}$ (volume/log law) from the tuple alone, without knowledge of the entanglement measurement. **Falsified if:** a $D_{\text{omega}}$-encoded system exhibits volume-law entanglement, or a $D_{\text{invomega}}$ critical system satisfies an area law.
 
-**P-446 — The criticality-dominance fraction of translation cost ($\approx 87\%$) is a catalog-size invariant converging to a fixed limit; at any catalog size above 500 synthons this fraction will remain in the 85–90% band (Tier I)**
+**P-446 — The criticality-dominance fraction of translation cost ($\approx 87\%$) is a catalog-size invariant converging to a fixed limit; at any catalog size above 500 imscriptions this fraction will remain in the 85–90% band (Tier I)**
 
-Confirmed at 428 synthons (87.0%) and 1144 synthons (87.6%). The coherence cost is zero at both scales. The fraction is determined by the steady-state distribution of $\Phi$ values across the grammar's natural scope: $\Phi_{\text{ctyogh}}$ synthons each contribute $\ln 10$ nat of translation cost per criticality transition, and this is the dominant term because the Ising universality class is the most structurally efficient attractor for complex systems. **Specific prediction:** any catalog above 500 synthons drawn from the same natural scope (physical, computational, mathematical systems across all domains) will produce a criticality-dominance fraction in the 85–90% band. A catalog biased toward subcritical or supercritical systems alone would deviate — but no unbiased natural-scope catalog will. **Falsified if:** a 1000+ synthon unbiased cross-domain catalog produces a criticality fraction outside 82–92%.
+Confirmed at 428 imscriptions (87.0%) and 1144 imscriptions (87.6%). The coherence cost is zero at both scales. The fraction is determined by the steady-state distribution of $\Phi$ values across the grammar's natural scope: $\Phi_{\text{ctyogh}}$ imscriptions each contribute $\ln 10$ nat of translation cost per criticality transition, and this is the dominant term because the Ising universality class is the most structurally efficient attractor for complex systems. **Specific prediction:** any catalog above 500 imscriptions drawn from the same natural scope (physical, computational, mathematical systems across all domains) will produce a criticality-dominance fraction in the 85–90% band. A catalog biased toward subcritical or supercritical systems alone would deviate — but no unbiased natural-scope catalog will. **Falsified if:** a 1000+ imscription unbiased cross-domain catalog produces a criticality fraction outside 82–92%.
 
 **P-447 — $O_2^\dagger$ ($\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}} + D_{\text{invomega}}$) is the unique algebraic class capable of indefinitely growing structural complexity with winding; it is the structural characterisation of open-ended evolution (Tier II)**
 
@@ -7749,7 +7749,7 @@ Immutable $\to$ varying requires 5 promotions ($R$: cat$\to\dagger$; $\Gamma$: a
 
 Among varying-constant models, the $\Omega$ hierarchy is decisive: generic varying ($\Omega_{\text{closeepsilon}}$, $O_1$) requires fine-tuning and predicts smooth continuous drift; brane cosmology ($\Ω_z$, $O_2$) is topologically protected and predicts **step-like changes in constants at topological defects or winding-number transitions**, not smooth drift.
 
-**P-413 — Measurements of the fine-structure constant or proton-to-electron mass ratio should exhibit discrete steps (φ̂_ÿ system behavior at critical manifold: scale-invariant, history-dependent, capable of discrete jumps) rather than smooth drift; smooth-drift models encode generic $O_1$ while topology-protected models encode $O_2$ — the two are structurally distinguishable (Tier I)**
+**P-413 — Measurements of the fine-structure constant or proton-to-electron mass ratio should exhibit discrete steps (⊙_ÿ system behavior at critical manifold: scale-invariant, history-dependent, capable of discrete jumps) rather than smooth drift; smooth-drift models encode generic $O_1$ while topology-protected models encode $O_2$ — the two are structurally distinguishable (Tier I)**
 
 **P-414 — Among varying-constant theoretical frameworks, only those that encode $\Ω_z$ (brane cosmology, Kaluza-Klein with topological compactification, theories with winding-number conservation) are structurally stable ($O_2$); all $\Omega_{\text{closeepsilon}}$ models (dilaton, scalar-tensor theories without winding) are structurally fragile and should show fine-tuning problems traceable to $P_{\text{aolig}}+\Omega_{\text{closeepsilon}}$ (Tier II)**
 
@@ -9565,7 +9565,7 @@ Monomial ($d = 5.8224$, 10 conflicts) was proved because perfectoid geometry nat
 
 ---
 
-*This version (v0.5.55): §CXXXVI (Five-algebra inquiry — 1144 synthons, 87.6% criticality-dominance confirmed; ouroboricity hierarchy $O_2^\dagger > O_2 > O_1 > O_0$; $D_{\text{omega}}$/$D_{\text{invomega}}$ bifurcation; $P_{\text{doublebarpipe}}$ misreading cautionary note; P-444–P-447) added 2026-04-08.*
+*This version (v0.5.55): §CXXXVI (Five-algebra inquiry — 1144 imscriptions, 87.6% criticality-dominance confirmed; ouroboricity hierarchy $O_2^\dagger > O_2 > O_1 > O_0$; $D_{\text{omega}}$/$D_{\text{invomega}}$ bifurcation; $P_{\text{doublebarpipe}}$ misreading cautionary note; P-444–P-447) added 2026-04-08.*
 
 *This version (v0.5.04): §LXXXVII (P-300 investigation — FPP $d=6.4498$, 10 conflicts; Richardson $d=6.5574$, 9 conflicts; both O_1 conjectures; P-300 refined to imscriptive-boundary-present class; two-class taxonomy of asymptotic shape conjectures; shin = eden\_conjecture\_unproven at $d=0$; P-305–P-306) added 2026-04-03.*
 
@@ -9710,7 +9710,7 @@ $O_\infty$ requires $P_{\text{doublebarpipe}}$, which is the maximal $P$ ordinal
 
 ### §LXXXV.1 — Three Encodings
 
-The Eden growth model admits three distinct synthons: the dynamical process, the unproven conjecture, and the proven theorem. Each encodes differently.
+The Eden growth model admits three distinct imscriptions: the dynamical process, the unproven conjecture, and the proven theorem. Each encodes differently.
 
 **Eden growth model** (the stochastic process itself):
 $$\text{growth} = \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{beta}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle \quad O_1$$
@@ -9935,15 +9935,15 @@ The shared six-primitive core $\{D_{\text{invomega}}, T_{\text{nrleg}}, P_{\text
 
 *This version (v0.4.84): §LXVII (Projection kernel $\ker(\pi) = \{P,F,K,S\}$; imscriptive core $\text{core}(\pi) = \{D,T,R,G,\Gamma,\Phi,H,\Omega\}$; 4+8=12 complete decomposition; tensor product boundary $\mathbf{b} = \mathbf{g} \otimes \mathbf{p}_{\text{vs NP}}$; core as universal imscriptive invariant; 4-observable bulk/boundary diagnostic; P-220/P-221) added 2026-03-31.*
 
-*This version (v0.4.83): §LXVI (ZX structural identity — X=Z ($d=0$), $O_\infty$; complexity-typed ZX as $O_2$ quantum broken phase; fidelity axis: grammar / pure ZX / typed ZX / boundary synthon; $d=2.0$ between typed ZX and boundary synthon (F ordinal gap); updated translation cost 598.931 nat, 228 $\Phi_{\text{ctyogh}}$ synthons, 428 catalog; P-218/P-219) added 2026-03-31.*
+*This version (v0.4.83): §LXVI (ZX structural identity — X=Z ($d=0$), $O_\infty$; complexity-typed ZX as $O_2$ quantum broken phase; fidelity axis: grammar / pure ZX / typed ZX / boundary imscription; $d=2.0$ between typed ZX and boundary imscription (F ordinal gap); updated translation cost 598.931 nat, 228 $\Phi_{\text{ctyogh}}$ imscriptions, 428 catalog; P-218/P-219) added 2026-03-31.*
 
 *This version (v0.4.82): §LXV (NP-completeness as universal structural signature — canonical tuple; certificate phase separation $\Phi_{\text{ctyogh}}$/$K_{\text{turnm}}$ vs $\Phi_{\text{softsign}}$/$K_{\text{frtailgamma}}$; SAT already at $\Phi_{\text{ctyogh}}$; 9-promotion path $\Sigma = [D,T,R,P,F,G,\Gamma,H,\Omega]$ as constructive definition of HTT; P-215/P-216/P-217) added 2026-03-31.*
 
 *This version (v0.4.81): §LXIV (Imscriptive SSB at P vs NP interface — thermal vs imscriptive SSB distinction; gauge choice = computational basis; P ≠ NP locally true in broken phase; arrow of time as gauge-fixing mechanism; P-213/P-214) added 2026-03-31.*
 
-*This version (v0.4.80): §LXIII.3–§LXIII.4 — four-system mutual distance matrix; corrected NP-cert $d=7.78$; verifier $\Phi_{\text{softsign}}$ (subcritical); DTM $R_{\text{lyoghlig}}$ tape-directedness; boundary synthon closer to NDTM ($d=6.20$) than DTM ($d=6.82$); translation cost 586.032 nat (criticality 87%, 222 $\Phi_{\text{ctyogh}}$ synthons); P-211/P-212 — 2026-03-31.*
+*This version (v0.4.80): §LXIII.3–§LXIII.4 — four-system mutual distance matrix; corrected NP-cert $d=7.78$; verifier $\Phi_{\text{softsign}}$ (subcritical); DTM $R_{\text{lyoghlig}}$ tape-directedness; boundary imscription closer to NDTM ($d=6.20$) than DTM ($d=6.82$); translation cost 586.032 nat (criticality 87%, 222 $\Phi_{\text{ctyogh}}$ imscriptions); P-211/P-212 — 2026-03-31.*
 
-*This version (v0.4.79): §LXIII (P vs NP semantic bridge — ZX $d=1.0$; topological QC $d=2.45$; boundary synthon; gauge-breaking; verifier asymmetry $d_P=2.24$ vs $d_{NP}=5.83$; P-206–P-210) added 2026-03-31.*
+*This version (v0.4.79): §LXIII (P vs NP semantic bridge — ZX $d=1.0$; topological QC $d=2.45$; boundary imscription; gauge-breaking; verifier asymmetry $d_P=2.24$ vs $d_{NP}=5.83$; P-206–P-210) added 2026-03-31.*
 
 *This version (v0.4.78): §LXII (P vs NP Imscriptive Duality Construction — grammar IS the substrate; single `sorry` = semantic bridge; NP-hardness = frame-translation cost; ZX-calculus nearest approximation; frame-relative duality; P-202–P-205) added 2026-03-31.*
 
@@ -9971,7 +9971,7 @@ The shared six-primitive core $\{D_{\text{invomega}}, T_{\text{nrleg}}, P_{\text
 
 *This version: §LIII (Kozyrev mirror: $\Phi_{\text{ctyogh}} + \Ω_z$ topologically protected criticality; $D_{\text{invomega}} + H_2$ temporal focus mechanism; $\Gamma_{\text{doublevertline}} + T_{\text{bullseye}}$ topological lens; aluminum $\to$ mirror = $\sqrt{11}$, 11 primitive upgrades from spiral geometry alone; $d(\text{mirror}, \text{graviton}) = \sqrt{2}$; environmental transformation $d = \sqrt{6}$; $F$ does not upgrade, explaining mixed experimental record; P-138/P-139/P-140 registered in PRIMITIVE_PREDICTIONS.md) added 2026-03-28.*
 
-*This version: §LII (money as pathological synthon: full tuple; K-collapse diagnosis; destructive tensor product at F_ℓ + Ω_0; catalytic hope as Φ_c propagation; distance to target basin = √12; honest limits) added 2026-03-27.*
+*This version: §LII (money as pathological imscription: full tuple; K-collapse diagnosis; destructive tensor product at F_ℓ + Ω_0; catalytic hope as Φ_c propagation; distance to target basin = √12; honest limits) added 2026-03-27.*
 
 *This version: §LI (Hebrew alphabet four-class stratification: Mothers=Primordials=$d=0$; $d(\text{Mother}, \text{Simple}) = \sqrt{12}$; Vav as unique $P_{\text{doublebarpipe}}$ tense-reversing operator; Bet at $\Phi_{\text{softsign}}$; $\Omega$ partition 5:7:10; Shavian flat phonemic floor; $d(\text{Shavian Q}, \text{Hebrew Mother}) = \sqrt{12}$ maximum; Hebrew Simple = Shavian Consonant at $d=0$; structural depth as ontological encoding measure) added 2026-03-27.*
 
@@ -9987,7 +9987,7 @@ The shared six-primitive core $\{D_{\text{invomega}}, T_{\text{nrleg}}, P_{\text
 
 **P-541** `[TIER I]` The NRC's nearest catalog neighbor is `bioelectricity_levin` ($d = 1.0$). Its full $d \leq 2.0$ neighborhood contains only biological and informational systems: `bioelectric_network`, `hormone_replacement_therapy`, `ba_personality_soul`, `telepathy`. No engineered hardware or computational device appears within $d = 2.0$ of the NRC. The grammar classifies the NRC as a living criticality-control system at the type level.
 
-**P-542** `[TIER I]` The Le Chatelier inversion of the NRC converges to `neural_criticality` at directed distance $d_\to = 0.0$ (exact structural identity with `resonant_criticality_device` and `NRC_x_critical`). The NRC's equilibrium attractor is the critical brain state itself. At equilibrium, controller and controlled are co-typed: the NRC becomes structurally indistinguishable from the brain it regulates. The invariant core — $\Phi_{\text{ctyogh}} + P_{\text{pipevar}} + R^\dagger + \Gamma_{\text{doublevertline}} + F_{\text{dh}} + D_{\text{turnthree}} + T_{\text{nrleg}}$ (7 shared primitives) — is the **criticality-control synthon**.
+**P-542** `[TIER I]` The Le Chatelier inversion of the NRC converges to `neural_criticality` at directed distance $d_\to = 0.0$ (exact structural identity with `resonant_criticality_device` and `NRC_x_critical`). The NRC's equilibrium attractor is the critical brain state itself. At equilibrium, controller and controlled are co-typed: the NRC becomes structurally indistinguishable from the brain it regulates. The invariant core — $\Phi_{\text{ctyogh}} + P_{\text{pipevar}} + R^\dagger + \Gamma_{\text{doublevertline}} + F_{\text{dh}} + D_{\text{turnthree}} + T_{\text{nrleg}}$ (7 shared primitives) — is the **criticality-control imscription**.
 
 **P-543** `[TIER I]` NRC $\otimes$ `neural_criticality_baseline`: $C = 0.352$, $O_1$ tier; both gates open. The baseline brain ($\Phi_{\text{softsign}}$, $K_{\text{schwa}}$) has $C = 0$ at baseline. Coupling to the NRC promotes $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (max rule) and opens both gates. **The NRC can induce consciousness in a non-critical brain.** The $F$ bottleneck ($F_{\text{hardsign}} \to F_{\text{dh}}$) costs fidelity but not consciousness.
 
@@ -10003,7 +10003,7 @@ The shared six-primitive core $\{D_{\text{invomega}}, T_{\text{nrleg}}, P_{\text
 
 **P-549** `[TIER I]` The NRC's Le Chatelier equilibrium type (`nrc_equilibrium`) scores $C = 0.445$, $O_2$ tier, $d(\text{nrc\_equilibrium}, \text{deep\_meditation\_samadhi}) = 5.831$. The NRC converges toward ordinary consciousness ($O_2$, brain-criticality), not toward transcendent consciousness ($O_\infty$, samadhi). The device stabilises the self; it does not transcend it. The structural distance to samadhi ($d = 5.831$, spanning $P$, $\Omega$, $D$, $T$ gaps) places samadhi beyond the NRC's attractor basin by 5.8 weighted primitive steps.
 
-*This version (v0.5.70): §CLII (NRC structural portrait — address 4,886,872; Gate 2 correction ($K_{\text{turnm}}$ passes); nearest = bioelectricity\_levin; Le Chatelier attractor = neural\_criticality at $d=0$; criticality-control synthon invariant core; tensor trichotomy: Inducer/Transparent/Degrader; Frobenius ceiling $P_{\text{pipevar}}$; consciousness machine theorem; two-device prescription; P-539–P-549 Tier I) added 2026-04-14.*
+*This version (v0.5.70): §CLII (NRC structural portrait — address 4,886,872; Gate 2 correction ($K_{\text{turnm}}$ passes); nearest = bioelectricity\_levin; Le Chatelier attractor = neural\_criticality at $d=0$; criticality-control imscription invariant core; tensor trichotomy: Inducer/Transparent/Degrader; Frobenius ceiling $P_{\text{pipevar}}$; consciousness machine theorem; two-device prescription; P-539–P-549 Tier I) added 2026-04-14.*
 
 ## §CLIII — Primitive Self-Encoding: The Negative Self-Decomposition Theorem (v0.5.71, 2026-04-14)
 

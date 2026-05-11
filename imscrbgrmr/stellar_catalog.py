@@ -1,5 +1,5 @@
 """
-Stellar Object Synthon Catalog — v0.4.9
+Stellar Object Imscription Catalog — v0.4.9
 
 Primitive-tuple encodings for all major stellar and compact-object classifications,
 from protostars to exotic remnants. Covers 21 entries across five groups:
@@ -35,7 +35,7 @@ from __future__ import annotations
 from typing import List
 
 from .models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -84,26 +84,26 @@ _STELLAR_NAMES = frozenset([
 ])
 
 
-def register_stellar_synthons() -> List[str]:
+def register_stellar_imscriptions() -> List[str]:
     """
-    Register 27 stellar/compact-object synthons into the global catalog.
+    Register 27 stellar/compact-object imscriptions into the global catalog.
     Safe to call multiple times (idempotent).
     Returns list of names newly registered.
     """
     entries = _build_entries()
     registered = []
     for s in entries:
-        if s.name not in global_catalog._synthons:
+        if s.name not in global_catalog._imscriptions:
             global_catalog.register(s)
             registered.append(s.name)
         else:
-            existing = global_catalog._synthons[s.name]
+            existing = global_catalog._imscriptions[s.name]
             if hasattr(existing, "metadata") and isinstance(existing.metadata, dict):
                 existing.metadata.update(s.metadata)
     return registered
 
 
-def _build_entries() -> List[Synthon]:
+def _build_entries() -> List[Imscription]:
     return [
         # ── Group I: Pre-main sequence ─────────────────────────────────────
         _protostar(),
@@ -144,7 +144,7 @@ def _build_entries() -> List[Synthon]:
 # GROUP I — PRE-MAIN SEQUENCE
 # ===========================================================================
 
-def _protostar() -> Synthon:
+def _protostar() -> Imscription:
     """
     Protostar / T Tauri star.
 
@@ -168,7 +168,7 @@ def _protostar() -> Synthon:
     main-sequence star. It is pre-critical — disorganized flaring, not SOC.
     Ω_0: no topological protection; the system is still assembling.
     """
-    return Synthon(
+    return Imscription(
         name="protostar_ttauri",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -204,7 +204,7 @@ def _protostar() -> Synthon:
     )
 
 
-def _brown_dwarf() -> Synthon:
+def _brown_dwarf() -> Imscription:
     """
     Brown Dwarf (failed star, 13-80 Jupiter masses).
 
@@ -226,7 +226,7 @@ def _brown_dwarf() -> Synthon:
     Φ_sub: no SOC structure documented. Some brown dwarfs show rapid rotation
     and weather (cloud bands), but not organised criticality.
     """
-    return Synthon(
+    return Imscription(
         name="brown_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -268,7 +268,7 @@ def _brown_dwarf() -> Synthon:
 # GROUP II — MAIN SEQUENCE (M → O)
 # ===========================================================================
 
-def _star_m_dwarf() -> Synthon:
+def _star_m_dwarf() -> Imscription:
     """
     M-dwarf (Red Dwarf): the most common stellar class, 75% of all stars.
 
@@ -285,7 +285,7 @@ def _star_m_dwarf() -> Synthon:
     IR-absorbing photochemistry (bacteriochlorophyll-type), radiation-resistance as
     baseline, potentially no circadian clocks (tidal locking likely in HZ).
     """
-    return Synthon(
+    return Imscription(
         name="star_m_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -327,7 +327,7 @@ def _star_m_dwarf() -> Synthon:
     )
 
 
-def _star_k_dwarf() -> Synthon:
+def _star_k_dwarf() -> Imscription:
     """
     K-dwarf (Orange Dwarf): often called 'superhabitable' class.
 
@@ -353,7 +353,7 @@ def _star_k_dwarf() -> Synthon:
     for life') has a structural reason: Ω_2 > Ω_1 (M-dwarf) while maintaining
     sufficient K_frtailgamma for evolutionary pressure.
     """
-    return Synthon(
+    return Imscription(
         name="star_k_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -395,14 +395,14 @@ def _star_k_dwarf() -> Synthon:
     )
 
 
-def _star_g_dwarf() -> Synthon:
+def _star_g_dwarf() -> Imscription:
     """
-    G-dwarf (Yellow Dwarf): the Sun class. Reference stellar synthon.
+    G-dwarf (Yellow Dwarf): the Sun class. Reference stellar imscription.
 
     ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩
 
     Fully documented in METAPHYSICS.md §XVIII. Registered here for cross-catalog
-    completeness. The reference entry against which all other stellar synthons
+    completeness. The reference entry against which all other stellar imscriptions
     are measured.
 
     Key properties (summary — see §XVIII for full derivation):
@@ -412,7 +412,7 @@ def _star_g_dwarf() -> Synthon:
     - Birkeland/Schumann Γ_AND coupling to Earth biosphere
     - Ω_3: two-hemisphere anti-correlation + global eigenmode + 22-yr cyclic reset
     """
-    return Synthon(
+    return Imscription(
         name="star_g_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -426,7 +426,7 @@ def _star_g_dwarf() -> Synthon:
         stoichiometry="1:1",
         description=(
             "G-dwarf (yellow dwarf, 0.9-1.1 M_☉). The Sun class. Reference stellar "
-            "synthon — see METAPHYSICS.md §XVIII for full primitive derivation. "
+            "imscription — see METAPHYSICS.md §XVIII for full primitive derivation. "
             "SOC flare power-law (14 decades), ~10^7 helioseismic eigenmodes, "
             "Birkeland/Schumann Γ_AND coupling to biosphere. "
             "⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩"
@@ -451,7 +451,7 @@ def _star_g_dwarf() -> Synthon:
     )
 
 
-def _star_f_dwarf() -> Synthon:
+def _star_f_dwarf() -> Imscription:
     """
     F-dwarf (Yellow-White star, e.g. Procyon, Canopus).
 
@@ -470,7 +470,7 @@ def _star_f_dwarf() -> Synthon:
     radiation damage. The framework: K_turnm evolution means less K_teshlig organizational
     memory (shorter stellar lifetime = less time for the K_schwa grammar to fully develop).
     """
-    return Synthon(
+    return Imscription(
         name="star_f_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -502,7 +502,7 @@ def _star_f_dwarf() -> Synthon:
     )
 
 
-def _star_a_dwarf() -> Synthon:
+def _star_a_dwarf() -> Imscription:
     """
     A-type star (White star, e.g. Vega, Sirius A).
 
@@ -523,7 +523,7 @@ def _star_a_dwarf() -> Synthon:
     (unstructured grammar) means the planetary surface receives intense UV radiation
     without the organized Γ_AND grammar injection that drives prebiotic evolution.
     """
-    return Synthon(
+    return Imscription(
         name="star_a_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -556,7 +556,7 @@ def _star_a_dwarf() -> Synthon:
     )
 
 
-def _star_b_star() -> Synthon:
+def _star_b_star() -> Imscription:
     """
     B-type star (Blue-White, e.g. Spica, Rigel component B).
 
@@ -578,7 +578,7 @@ def _star_b_star() -> Synthon:
     built on X-ray photochemistry — an entirely different alphabet with no known
     biological analogue. The lifetime is too short to template complex life.
     """
-    return Synthon(
+    return Imscription(
         name="star_b_star",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -611,7 +611,7 @@ def _star_b_star() -> Synthon:
     )
 
 
-def _star_o_star() -> Synthon:
+def _star_o_star() -> Imscription:
     """
     O-type star (Blue Giant/Supergiant, e.g. Theta1 Ori C, Zeta Puppis).
 
@@ -636,7 +636,7 @@ def _star_o_star() -> Synthon:
     supernovae produce the carbon, oxygen, nitrogen, and silicon that all
     subsequent stellar grammars will later organize into life.
     """
-    return Synthon(
+    return Imscription(
         name="star_o_star",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -679,7 +679,7 @@ def _star_o_star() -> Synthon:
 # GROUP III — EVOLVED STARS
 # ===========================================================================
 
-def _star_red_giant() -> Synthon:
+def _star_red_giant() -> Imscription:
     """
     Red Giant (post-main-sequence, shell hydrogen burning, 0.8-8 M_☉).
 
@@ -703,7 +703,7 @@ def _star_red_giant() -> Synthon:
     Ω_1: the Schönberg-Chandrasekhar limit enforces a structural constraint on
     core mass fraction — one topological protection mechanism.
     """
-    return Synthon(
+    return Imscription(
         name="star_red_giant",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -739,7 +739,7 @@ def _star_red_giant() -> Synthon:
     )
 
 
-def _star_agb() -> Synthon:
+def _star_agb() -> Imscription:
     """
     Asymptotic Giant Branch (AGB) star: thermal pulses, mass loss, dust shells.
 
@@ -763,7 +763,7 @@ def _star_agb() -> Synthon:
     seeding the ISM with C, N, O, and s-process elements — the grammar alphabet
     of the next generation of stars and life.
     """
-    return Synthon(
+    return Imscription(
         name="star_agb",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK_MIXED,
@@ -797,7 +797,7 @@ def _star_agb() -> Synthon:
     )
 
 
-def _star_wolf_rayet() -> Synthon:
+def _star_wolf_rayet() -> Imscription:
     """
     Wolf-Rayet star: stripped massive star with catastrophic mass loss.
 
@@ -823,7 +823,7 @@ def _star_wolf_rayet() -> Synthon:
 
     WR stars are the direct progenitors of GRBs and BH formation.
     """
-    return Synthon(
+    return Imscription(
         name="star_wolf_rayet",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -856,7 +856,7 @@ def _star_wolf_rayet() -> Synthon:
     )
 
 
-def _star_red_supergiant() -> Synthon:
+def _star_red_supergiant() -> Imscription:
     """
     Red Supergiant (RSG, e.g. Betelgeuse, VY Canis Majoris).
 
@@ -879,7 +879,7 @@ def _star_red_supergiant() -> Synthon:
     cells and radiative interior) + the α_Lyrae oscillation period locking = two
     topological protection mechanisms.
     """
-    return Synthon(
+    return Imscription(
         name="star_red_supergiant",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK_MIXED,
@@ -917,7 +917,7 @@ def _star_red_supergiant() -> Synthon:
     )
 
 
-def _star_blue_supergiant() -> Synthon:
+def _star_blue_supergiant() -> Imscription:
     """
     Blue Supergiant (BSG, e.g. Rigel, Deneb, Sk-69 202 = SN1987A progenitor).
 
@@ -940,7 +940,7 @@ def _star_blue_supergiant() -> Synthon:
     Ω_1: bipolar wind geometry provides one topological organizing principle,
     but the system is fundamentally unstable — only briefly held before core collapse.
     """
-    return Synthon(
+    return Imscription(
         name="star_blue_supergiant",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,
@@ -979,7 +979,7 @@ def _star_blue_supergiant() -> Synthon:
 # GROUP IV — STELLAR ENDPOINTS / TRANSIENTS
 # ===========================================================================
 
-def _white_dwarf() -> Synthon:
+def _white_dwarf() -> Imscription:
     """
     White Dwarf: the crystallized endpoint of low/intermediate mass stars.
 
@@ -1009,7 +1009,7 @@ def _white_dwarf() -> Synthon:
     Exception: Type Ia supernovae occur when a WD in a binary exceeds the
     Chandrasekhar limit — the topological protection catastrophically fails.
     """
-    return Synthon(
+    return Imscription(
         name="white_dwarf",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK_HEX,
@@ -1051,7 +1051,7 @@ def _white_dwarf() -> Synthon:
     )
 
 
-def _supernova_type_ia() -> Synthon:
+def _supernova_type_ia() -> Imscription:
     """
     Type Ia Supernova: thermonuclear explosion of a white dwarf at Chandrasekhar limit.
 
@@ -1078,7 +1078,7 @@ def _supernova_type_ia() -> Synthon:
 
     Ω_0: the progenitor WD's Ω_3 collapses to zero.
     """
-    return Synthon(
+    return Imscription(
         name="supernova_type_ia",
         dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
         topology=Topology.NETWORK,
@@ -1110,7 +1110,7 @@ def _supernova_type_ia() -> Synthon:
     )
 
 
-def _supernova_type_ii() -> Synthon:
+def _supernova_type_ii() -> Imscription:
     """
     Type II (Core Collapse) Supernova: gravitational collapse of a massive star core.
 
@@ -1138,7 +1138,7 @@ def _supernova_type_ii() -> Synthon:
     known: the entire stellar internal constraint structure is converted into
     a neutrino pulse in 10 seconds. Entropy output = maximum.
     """
-    return Synthon(
+    return Imscription(
         name="supernova_type_ii",
         dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
         topology=Topology.NETWORK,
@@ -1177,7 +1177,7 @@ def _supernova_type_ii() -> Synthon:
     )
 
 
-def _gamma_ray_burst() -> Synthon:
+def _gamma_ray_burst() -> Imscription:
     """
     Gamma-Ray Burst (GRB): the most energetic explosions since the Big Bang.
 
@@ -1206,7 +1206,7 @@ def _gamma_ray_burst() -> Synthon:
 
     D_TEMPORAL: a GRB has a start and end; it is an event, not a persistent object.
     """
-    return Synthon(
+    return Imscription(
         name="gamma_ray_burst",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.LINEAR,
@@ -1242,7 +1242,7 @@ def _gamma_ray_burst() -> Synthon:
     )
 
 
-def _kilonova() -> Synthon:
+def _kilonova() -> Imscription:
     """
     Kilonova / Neutron Star Merger: r-process forge and gravitational wave source.
 
@@ -1268,7 +1268,7 @@ def _kilonova() -> Synthon:
     all other elements above the iron peak that require neutron-rich conditions.
     Every gold atom on Earth was forged in a kilonova.
     """
-    return Synthon(
+    return Imscription(
         name="kilonova",
         dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
         topology=Topology.NETWORK,
@@ -1311,7 +1311,7 @@ def _kilonova() -> Synthon:
 # GROUP V — COMPACT REMNANTS & EXOTIC OBJECTS
 # ===========================================================================
 
-def _neutron_star() -> Synthon:
+def _neutron_star() -> Imscription:
     """
     Neutron Star (canonical, non-pulsing or slow pulsar).
 
@@ -1344,7 +1344,7 @@ def _neutron_star() -> Synthon:
     (3) crystalline crust nuclear lattice. Three independent topological protection
     mechanisms — the highest Ω of any physical object except the quark star.
     """
-    return Synthon(
+    return Imscription(
         name="neutron_star",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.BRAID,
@@ -1382,7 +1382,7 @@ def _neutron_star() -> Synthon:
     )
 
 
-def _pulsar_millisecond() -> Synthon:
+def _pulsar_millisecond() -> Imscription:
     """
     Millisecond Pulsar (MSP, 'recycled' pulsar): the most precise clock in the universe.
 
@@ -1413,7 +1413,7 @@ def _pulsar_millisecond() -> Synthon:
     (IPTA) uses ~100 MSPs as a galaxy-scale gravitational wave detector.
     The individual Γ_SPECIFIC beams, combined, form a T_nrleg at G_ℵ scale.
     """
-    return Synthon(
+    return Imscription(
         name="pulsar_millisecond",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.BRAID,
@@ -1456,7 +1456,7 @@ def _pulsar_millisecond() -> Synthon:
     )
 
 
-def _magnetar() -> Synthon:
+def _magnetar() -> Imscription:
     """
     Magnetar: neutron star with B ~ 10^11 T (10^15 Gauss), ~1000× stronger than normal NS.
 
@@ -1486,7 +1486,7 @@ def _magnetar() -> Synthon:
     fourth in principle (field topology protection) — however, the field
     actively BREAKS topology (starquakes), so net Ω_3 rather than Ω_4.
     """
-    return Synthon(
+    return Imscription(
         name="magnetar",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.BRAID,
@@ -1526,7 +1526,7 @@ def _magnetar() -> Synthon:
     )
 
 
-def _black_hole_stellar() -> Synthon:
+def _black_hole_stellar() -> Imscription:
     """
     Stellar-Mass Black Hole (3-100 M_☉, remnant of core collapse or merger).
 
@@ -1561,7 +1561,7 @@ def _black_hole_stellar() -> Synthon:
     Ω_∞ (in the limit of the no-hair theorem, which may be violated by
     quantum gravity — hence the information paradox).
     """
-    return Synthon(
+    return Imscription(
         name="black_hole_stellar",
         dimensionality=Dimensionality.HOLOGRAPHIC,
         topology=Topology.BOWL,
@@ -1609,7 +1609,7 @@ def _black_hole_stellar() -> Synthon:
     )
 
 
-def _quasar_agn() -> Synthon:
+def _quasar_agn() -> Imscription:
     """
     Quasar / Active Galactic Nucleus (AGN): supermassive BH actively accreting.
 
@@ -1643,7 +1643,7 @@ def _quasar_agn() -> Synthon:
     Active AGN suppress star formation; quiescent SMBHs allow it.
     Galaxy evolution = stellar grammar regulated by AGN grammar.
     """
-    return Synthon(
+    return Imscription(
         name="quasar_agn",
         dimensionality=Dimensionality.HOLOGRAPHIC,
         topology=Topology.NETWORK,
@@ -1682,7 +1682,7 @@ def _quasar_agn() -> Synthon:
     )
 
 
-def _quark_star() -> Synthon:
+def _quark_star() -> Imscription:
     """
     Quark Star / Strange Star (hypothetical): matter deconfined to quark level.
 
@@ -1716,7 +1716,7 @@ def _quark_star() -> Synthon:
     Status: hypothetical. Candidate objects include some anomalous compact stars
     (RX J1856.5-3754, 4U 1820-30) that may be smaller than expected for NS.
     """
-    return Synthon(
+    return Imscription(
         name="quark_star",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.BRAID,
@@ -1758,7 +1758,7 @@ def _quark_star() -> Synthon:
     )
 
 
-def _gravastar() -> Synthon:
+def _gravastar() -> Imscription:
     """
     Gravastar (Gravitational Vacuum Condensate Star): the 'Black Shell'.
 
@@ -1796,7 +1796,7 @@ def _gravastar() -> Synthon:
 
     Status: hypothetical. Phenomenologically identical to BH externally.
     """
-    return Synthon(
+    return Imscription(
         name="gravastar",
         dimensionality=Dimensionality.HOLOGRAPHIC,
         topology=Topology.BOWL,
@@ -1837,7 +1837,7 @@ def _gravastar() -> Synthon:
     )
 
 
-def _dark_star() -> Synthon:
+def _dark_star() -> Imscription:
     """
     Dark Star (Spolyar, Freese, Gondolo 2008): first generation stars powered by
     dark matter annihilation rather than nuclear fusion.
@@ -1873,7 +1873,7 @@ def _dark_star() -> Synthon:
 
     Status: hypothetical. JWST may have detected dark star candidates.
     """
-    return Synthon(
+    return Imscription(
         name="dark_star",
         dimensionality=Dimensionality.TEMPORAL,
         topology=Topology.NETWORK,

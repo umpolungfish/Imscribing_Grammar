@@ -1,8 +1,8 @@
 """
-Imscribing Grammar — A Unified Framework for Synthonic Systems
+Imscribing Grammar — A Unified Framework for Imscriptive Systems
 
 This package implements the theoretical framework from QUANTIG.md,
-providing computational tools for analyzing self-organizing synthonic systems
+providing computational tools for analyzing self-organizing Imscriptive systems
 across molecular, supramolecular, temporal, and cross-domain scales
 using twelve formal primitives.
 
@@ -50,12 +50,12 @@ from .models import (
     InteractionGrammar,
     GrammarOperator,
     # Core class
-    Synthon,
+    Imscription,
     CONFLICT,
     # Notation parser
     parse_notation,
 )
-from .registry import SynthonCatalog, global_catalog, get_validation_tier
+from .registry import ImscriptionCatalog, global_catalog, get_validation_tier
 from .constraints import (
     ConstraintEngine,
     CompatibilityMatrix,
@@ -78,7 +78,7 @@ from .criticality import (  # NEW
 )
 from .transformation8 import (  # NEW - Transformation #8 probe
     analyze_dethreading_profile,
-    create_rotaxane_synthon,
+    create_rotaxane_imscription,
     compute_rotaxane_efficiency,
     check_transformation8_validation,
     DethreadingProfile,
@@ -100,11 +100,11 @@ from .grounding import (  # NEW - Grounding validation layer
     GroundingStatus,
     GroundingResult,
     PrimitiveGrounding,
-    validate_synthon_with_grounding,
+    validate_imscription_with_grounding,
 )
 from .rdkit_utils import (  # RDKit-based ΔG estimation and structural flag extraction
     estimate_delta_g_from_smiles,
-    validate_synthon_structure,
+    validate_imscription_structure,
     generate_rdkit_grounding,
     DeltaGEstimationResult,
     RDKit_AVAILABLE,
@@ -125,7 +125,7 @@ from .perturbation import (  # IG_PERTURBATION
     PRIMITIVE_WEIGHTS as PERTURBATION_PRIMITIVE_WEIGHTS,
 )
 from .trajectory import (  # IG_TRAJECTORY
-    TemporalSynthonAgent,
+    TemporalImscriptionAgent,
     TrajectoryStep,
     TrajectoryValidationResult,
     StepCriticalityResult,
@@ -153,14 +153,14 @@ from .hotswap import (  # IG_HOTSWAP
     XI_CP_TOLERANCE,
     K_MULTIPLICITY_PENALTY,
 )
-from .cross_domain import register_cross_domain_synthons  # Phase 1 cross-domain entries
-from .domains.quantum import register_quantum_synthons      # v0.4.0 quantum/topological entries
-from .domains.molecular import register_molecular_synthons  # v0.4.0 molecular catalog (.syn design files)
-from .psychedelic_catalog import register_psychedelic_synthons  # v0.4.9 psychedelic synthons
-from .stellar_catalog import register_stellar_synthons          # v0.4.10 stellar/compact-object catalog
-from .ice_catalog import register_ice_synthons                  # v0.4.13 ice phase ladder catalog
-from .particle_catalog import register_particle_synthons        # v0.4.21 fundamental particle catalog
-from .millennium_catalog import register_millennium_synthons, millennium_distance_report  # v0.5.0
+from .cross_domain import register_cross_domain_imscriptions  # Phase 1 cross-domain entries
+from .domains.quantum import register_quantum_imscriptions      # v0.4.0 quantum/topological entries
+from .domains.molecular import register_molecular_imscriptions  # v0.4.0 molecular catalog (.syn design files)
+from .psychedelic_catalog import register_psychedelic_imscriptions  # v0.4.9 psychedelic imscriptions
+from .stellar_catalog import register_stellar_imscriptions          # v0.4.10 stellar/compact-object catalog
+from .ice_catalog import register_ice_imscriptions                  # v0.4.13 ice phase ladder catalog
+from .particle_catalog import register_particle_imscriptions        # v0.4.21 fundamental particle catalog
+from .millennium_catalog import register_millennium_imscriptions, millennium_distance_report  # v0.5.0
 from .translate import (  # Translation Protocol v0.4 — structural→classical cost layer
     TranslationCost,
     TranslationStep,
@@ -182,8 +182,8 @@ from .translate import (  # Translation Protocol v0.4 — structural→classical
     full_translation,
     translation_cost_summary,
 )
-from .monad import (  # Phase 3a — SynthonM monad transformer stack
-    SynthonM,
+from .monad import (  # Phase 3a — ImscriptionM monad transformer stack
+    ImscriptionM,
     Context,
     StepRecord,
     DesignStrategy,
@@ -230,53 +230,10 @@ from .decompose import (  # Decomposition algebra — inverse of build-up operat
     RetrosynthCandidate,
 )
 
-# Auto-register cross-domain synthons on import
-try:
-    register_cross_domain_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register quantum/topological synthons on import
-try:
-    register_quantum_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register canonical molecular/supramolecular synthons on import
-try:
-    register_molecular_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register psychedelic synthons on import
-try:
-    register_psychedelic_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register stellar/compact-object synthons on import
-try:
-    register_stellar_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register ice phase / water synthons on import
-try:
-    register_ice_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register fundamental particle synthons on import
-try:
-    register_particle_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
-
-# Auto-register Millennium Prize Problem synthons on import
-try:
-    register_millennium_synthons()
-except Exception:
-    pass  # Non-fatal; catalog may be read-only or already populated
+# Domain catalog entries are loaded from IG_catalog.json by the CLI.
+# Call these explicitly if you need them in a Python API context:
+#   from imscrbgrmr import register_cross_domain_imscriptions; register_cross_domain_imscriptions()
+# (auto-registration removed to avoid ~200ms startup overhead)
 
 __version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · Γ(QUANTUM) · Ω · Factor 8
 __author__ = "Imscribing Grammar Contributors"
@@ -295,11 +252,11 @@ __all__ = [
     "CriticalityPhase",  # NEW
     "TopoIndex",         # NEW — Ω
     # Core classes
-    "Synthon",
-    "SynthonNotation",
+    "Imscription",
+    "ImscriptionNotation",
     "parse_notation",
     # Registry
-    "SynthonCatalog",
+    "ImscriptionCatalog",
     "global_catalog",
     "get_validation_tier",
     # Constraints
@@ -321,7 +278,7 @@ __all__ = [
     "CriticalityAnalysis",
     # Transformation #8 (NEW)
     "analyze_dethreading_profile",
-    "create_rotaxane_synthon",
+    "create_rotaxane_imscription",
     "compute_rotaxane_efficiency",
     "check_transformation8_validation",
     "DethreadingProfile",
@@ -341,10 +298,10 @@ __all__ = [
     "GroundingStatus",
     "GroundingResult",
     "PrimitiveGrounding",
-    "validate_synthon_with_grounding",
+    "validate_imscription_with_grounding",
     # RDKit Utilities (NEW)
     "estimate_delta_g_from_smiles",
-    "validate_synthon_structure",
+    "validate_imscription_structure",
     "generate_rdkit_grounding",
     "DeltaGEstimationResult",
     "RDKit_AVAILABLE",
@@ -359,7 +316,7 @@ __all__ = [
     "PrimitiveJacobian",
     "PERTURBATION_PRIMITIVE_WEIGHTS",
     # Trajectory (NEW)
-    "TemporalSynthonAgent",
+    "TemporalImscriptionAgent",
     "TrajectoryStep",
     "TrajectoryValidationResult",
     "StepCriticalityResult",
@@ -403,8 +360,8 @@ __all__ = [
     "kleisli_compose",
     "full_translation",
     "translation_cost_summary",
-    # Phase 3a — SynthonM monad (NEW)
-    "SynthonM",
+    # Phase 3a — ImscriptionM monad (NEW)
+    "ImscriptionM",
     "Context",
     "StepRecord",
     "DesignStrategy",

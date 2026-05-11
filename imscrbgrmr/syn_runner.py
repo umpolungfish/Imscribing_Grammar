@@ -1,12 +1,12 @@
 """
 syn_runner — .syn YAML DSL evaluator for Imscribing Grammar.
 
-Parses a .syn design script and evaluates it as a SynthonM monadic pipeline.
+Parses a .syn design script and evaluates it as a ImscriptionM monadic pipeline.
 
 .syn YAML schema
 ────────────────
   version: "1.0"
-  start: <synthon_name>
+  start: <imscription_name>
   strategies:              # optional: named reusable sub-pipelines
     my_strategy:
       - join: foo
@@ -49,9 +49,9 @@ from typing import Any, Callable, Dict, List, Optional
 
 import yaml
 
-from .models import Synthon
+from .models import Imscription
 from .monad import (
-    SynthonM,
+    ImscriptionM,
     DesignStrategy,
     Context,
     StepRecord,
@@ -78,9 +78,9 @@ class UnknownAssertion(SynParseError):
 
 # ── Safe predicate compiler ───────────────────────────────────────────────────
 
-def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
+def _compile_predicate(expr: str) -> Callable[[Imscription], bool]:
     """
-    Compile a predicate string into a callable (Synthon → bool).
+    Compile a predicate string into a callable (Imscription → bool).
 
     Supported forms:
         phi_c_score > N            — Varma probe score
@@ -98,7 +98,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"phi_c_score\s*(>=|>)\s*([0-9]*\.?[0-9]+)", expr)
     if m:
         op, threshold = m.group(1), float(m.group(2))
-        def _phi_c(s: Synthon, _op=op, _t=threshold) -> bool:
+        def _phi_c(s: Imscription, _op=op, _t=threshold) -> bool:
             from .varma_probe import score_phi_c_candidacy
             rep = score_phi_c_candidacy(s)
             return rep.score >= _t if _op == ">=" else rep.score > _t
@@ -108,7 +108,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"fidelity\s*==\s*(\w+)", expr)
     if m:
         tier = m.group(1).upper()
-        def _fid(s: Synthon, _tier=tier) -> bool:
+        def _fid(s: Imscription, _tier=tier) -> bool:
             f = s.fidelity
             return (f.value.upper() == _tier if hasattr(f, "value") else str(f).upper() == _tier)
         return _fid
@@ -117,7 +117,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"topology\s*==\s*(\S+)", expr)
     if m:
         topo = m.group(1).upper()
-        def _top(s: Synthon, _topo=topo) -> bool:
+        def _top(s: Imscription, _topo=topo) -> bool:
             t = s.topology
             raw = (t.value.upper() if hasattr(t, "value") else str(t).upper())
             return raw == _topo or raw.replace("_", "") == _topo.replace("_", "")
@@ -127,7 +127,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"criticality_phase\s*==\s*(\S+)", expr)
     if m:
         phase = m.group(1).upper()
-        def _cp(s: Synthon, _phase=phase) -> bool:
+        def _cp(s: Imscription, _phase=phase) -> bool:
             p = s.criticality_phase
             raw = (p.value.upper() if hasattr(p, "value") else str(p).upper())
             return raw == _phase
@@ -135,7 +135,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
 
     # axiom6_satisfied  (no arguments)
     if re.fullmatch(r"axiom6_satisfied", expr):
-        def _ax6(s: Synthon) -> bool:
+        def _ax6(s: Imscription) -> bool:
             from .constraints import AxiomValidator
             result = AxiomValidator.validate_axiom6_temporal_grounding(s)
             return not result.violated
@@ -145,7 +145,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"gd_degeneracy\s*==\s*(\S+)", expr)
     if m:
         deg_type = m.group(1).lower()
-        def _gd(s: Synthon, _dt=deg_type) -> bool:
+        def _gd(s: Imscription, _dt=deg_type) -> bool:
             from .varma_probe import score_phi_c_candidacy
             rep = score_phi_c_candidacy(s)
             raw = (rep.gd_degeneracy_type or "").lower()
@@ -156,7 +156,7 @@ def _compile_predicate(expr: str) -> Callable[[Synthon], bool]:
     m = re.fullmatch(r"reset_type\s*==\s*(discrete|continuous)", expr)
     if m:
         rtype = m.group(1).lower()
-        def _rt(s: Synthon, _rt=rtype) -> bool:
+        def _rt(s: Imscription, _rt=rtype) -> bool:
             sg = getattr(s, "grounding", None) or {}
             block = sg.get("reset", {})
             if not block:
@@ -283,7 +283,7 @@ def _compile_strategy_block(
     """
     compiled = [_compile_step(s, named_strategies) for s in steps]
     if not compiled:
-        return lambda syn: SynthonM.return_(syn)  # identity
+        return lambda syn: ImscriptionM.return_(syn)  # identity
     result = compiled[0]
     for step in compiled[1:]:
         result = strategy_then(result, step)
@@ -306,7 +306,7 @@ _OUT_ASSERT_OPS = {
 def _compile_output_assertion(expr: str):
     """
     Compile a single output.assert expression.
-    Returns (label, checker) where checker(result: SynthonM) -> (bool, str).
+    Returns (label, checker) where checker(result: ImscriptionM) -> (bool, str).
 
     Supported forms:
         total_delta_xi < N
@@ -368,7 +368,7 @@ class SynScript:
     A parsed and compiled .syn design script.
 
     Use `SynScript.from_file(path)` or `SynScript.from_string(text)` to load.
-    Call `.run()` to evaluate and get back a `SynthonM[Synthon]`.
+    Call `.run()` to evaluate and get back a `ImscriptionM[Imscription]`.
     """
 
     def __init__(
@@ -473,21 +473,21 @@ class SynScript:
         """
         Validate the script without executing it.
         Returns a list of warning strings (empty = clean).
-        Checks: start synthon exists in catalog.
+        Checks: start imscription exists in catalog.
         """
         from .registry import global_catalog
         warnings_list: List[str] = []
         if global_catalog.get(self.start_name) is None:
             warnings_list.append(
-                f"start: synthon '{self.start_name}' not found in catalog"
+                f"start: imscription '{self.start_name}' not found in catalog"
             )
         return warnings_list
 
     # ── Execution ─────────────────────────────────────────────────────────
 
-    def run(self) -> SynthonM[Synthon]:
+    def run(self) -> ImscriptionM[Imscription]:
         """
-        Execute the compiled pipeline and return the resulting SynthonM.
+        Execute the compiled pipeline and return the resulting ImscriptionM.
         """
         from .registry import global_catalog
 
@@ -495,11 +495,11 @@ class SynScript:
         if start is None:
             rec = StepRecord(
                 "start", self.start_name, "ERROR", 0.0,
-                f"Synthon '{self.start_name}' not found in catalog"
+                f"Imscription '{self.start_name}' not found in catalog"
             )
-            return SynthonM(value=None, cost=0.0, context=Context(), log=[rec])
+            return ImscriptionM(value=None, cost=0.0, context=Context(), log=[rec])
 
-        result = SynthonM.return_(start).bind(self.strategy)
+        result = ImscriptionM.return_(start).bind(self.strategy)
 
         # Apply output.assert post-hoc checks (evalRWS-style cost/context gates)
         if self._output_assertions and result.value is not None:
@@ -513,7 +513,7 @@ class SynScript:
                 extra_log.append(rec)
                 if not ok:
                     failed = True
-            result = SynthonM(
+            result = ImscriptionM(
                 value=result.value if not failed else None,
                 cost=result.cost,
                 context=result.context,
@@ -531,11 +531,11 @@ def run_syn_file(
     dry_run: bool = False,
     format_override: Optional[str] = None,
     save_override: Optional[str] = None,
-) -> SynthonM[Synthon]:
+) -> ImscriptionM[Imscription]:
     """
     Parse, optionally validate, and run a .syn file.
 
-    Returns the SynthonM result (or a failed SynthonM on dry-run with errors).
+    Returns the ImscriptionM result (or a failed ImscriptionM on dry-run with errors).
     """
     script = SynScript.from_file(path)
 
@@ -555,7 +555,7 @@ def run_syn_file(
                 "validate", str(path), "ERROR", 0.0,
                 "; ".join(warnings_list)
             )
-            return SynthonM(value=None, cost=0.0, context=Context(), log=[rec])
+            return ImscriptionM(value=None, cost=0.0, context=Context(), log=[rec])
 
     if dry_run:
         rec = StepRecord(
@@ -563,6 +563,6 @@ def run_syn_file(
             f"Dry-run OK — start='{script.start_name}', "
             f"steps={len(script._raw.get('do') or [])}"
         )
-        return SynthonM(value=None, cost=0.0, context=Context(), log=[rec])
+        return ImscriptionM(value=None, cost=0.0, context=Context(), log=[rec])
 
     return script.run()

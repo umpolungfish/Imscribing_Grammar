@@ -16,7 +16,7 @@ Color encodes Phi (criticality tier):
 
 Node area encodes Ouroboricity O(x).
 Special markers distinguish Millennium Prize problems (★) and field-theory
-synthons (◆) from ordinary catalog entries (●).
+imscriptions (◆) from ordinary catalog entries (●).
 
 Usage:
     python3 IG_primitive_map.py
@@ -249,9 +249,9 @@ mds_coords = cmds(maha_mat ** 2)
 print("MDS projection done.")
 
 # ── Key theorem / lemma nodes ─────────────────────────────────────────────────
-# These include both catalog entries and the Lean-defined synthons in Synthon.lean
+# These include both catalog entries and the Lean-defined imscriptions in Imscription.lean
 # and PrimitiveBridge.lean (encoded in catalog-compatible format).
-KEY_SYNTHONS: dict[str, dict] = {
+KEY_imscriptions: dict[str, dict] = {
     # ── Millennium Prize encodings (PrimitiveBridge.lean) ─────────────────
     "YM classical":      {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_exact",     "P":"Φ_F",     "F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_β",  "Gamma":"ɢ_^",  "Phi":"φ̂_ž",       "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
     "YM quantum\n(target)": {"D":"Ð_cube","T":"Þ_6","R":"Ř_exact",    "P":"Φ_F",     "F":"ƒ_ż", "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
@@ -259,7 +259,7 @@ KEY_SYNTHONS: dict[str, dict] = {
     "Lee-Yang\n(proved)":{"D":"Ð_line",  "T":"Þ_ò", "R":"Ř_exact",     "P":"Φ_υ",    "F":"ƒ_ì",  "K":"Ç_W",  "G":"Γ_γ", "Gamma":"ɢ_^",  "Phi":"φ̂_Æ", "H":"Ħ_£",  "S":"Σ_ï",   "Omega":"Ω_Å"},
     "NS smooth\nsoln":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_β",  "Gamma":"ɢ_^",  "Phi":"φ̂_ž",       "H":"Ħ_Ñ",  "S":"Σ_ï",   "Omega":"Ω_Å"},
     "OPN\nconstraint":   {"D":"Ð_point", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ_ì",  "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_Ñ",  "S":"one_n", "Omega":"Ω_Å"},
-    # ── Field-theory synthons (Synthon.lean) ──────────────────────────────
+    # ── Field-theory imscriptions (Imscription.lean) ──────────────────────────────
     "Higgs / axion\n/ inflaton":{"D":"Ð_point","T":"Þ_ò","R":"Ř_catalytic","P":"Φ_}","F":"ƒ_ż","K":"Ç_@","G":"Γ_β","Gamma":"ɢ_^","Phi":"φ̂_ÿ","H":"Ħ_£","S":"one_n","Omega":"Ω_Å"},
     "Standard\nModel":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_allosteric", "P":"Φ_F",     "F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_A",  "S":"Σ_ï",   "Omega":"Ω_z"},
     "Quantum\nGravity":  {"D":"Ð_ω",  "T":"Þ_O",   "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ_ż", "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"Γ_impl", "Phi":"φ̂_ÿ",         "H":"Ħ_!","S":"Σ_ï",  "Omega":"Ω_5"},
@@ -277,7 +277,7 @@ catalog_by_name = {e["name"]: e for e in catalog}
 for name in KEY_CATALOG:
     if name in catalog_by_name:
         label = name.replace("_", "\n")
-        KEY_SYNTHONS[label] = catalog_by_name[name]
+        KEY_imscriptions[label] = catalog_by_name[name]
 
 # Assign a marker type
 MILLENNIUM = {"YM classical", "YM quantum\n(target)", "RH (ζ zeros)",
@@ -286,8 +286,8 @@ FIELD_THEORY = {"Higgs / axion\n/ inflaton", "Standard\nModel", "Quantum\nGravit
                 "General\nRelativity", "Asymptotic\nSafety"}
 
 # ── Compute key-node pairwise distances & spring layout ───────────────────────
-key_names = list(KEY_SYNTHONS.keys())
-key_entries = [KEY_SYNTHONS[k] for k in key_names]
+key_names = list(KEY_imscriptions.keys())
+key_entries = [KEY_imscriptions[k] for k in key_names]
 k = len(key_names)
 
 key_dist = np.zeros((k, k), dtype=float)
@@ -533,7 +533,7 @@ marker_items = [
     Line2D([0], [0], marker='*', color='w', markerfacecolor='#AAAAAA',
            markersize=13, linestyle='None', label="Millennium Prize problem"),
     Line2D([0], [0], marker='D', color='w', markerfacecolor='#AAAAAA',
-           markersize=8,  linestyle='None', label="Field-theory synthon (Lean)"),
+           markersize=8,  linestyle='None', label="Field-theory imscription (Lean)"),
     Line2D([0], [0], marker='o', color='w', markerfacecolor='#AAAAAA',
            markersize=8,  linestyle='None', label="Catalog entry"),
 ]

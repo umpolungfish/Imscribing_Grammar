@@ -116,6 +116,56 @@ The **Frobenius non-synthesizability theorem** (§23/§62): $P_{\text{doublebarp
 
 ---
 
+## Audio — Phonetic Synthesis
+
+Every primitive value has a canonical phonetic identity encoded as a (base-glyph, subscript) pair. `imscribeaudio.py` synthesises WAV audio for any individual symbol, any 12-primitive Imscription tuple, or any named entry from the catalog.
+
+```bash
+# Full 49-symbol sequence
+python imscribeaudio.py --all
+
+# Single symbol
+python imscribeaudio.py ⊙ ž
+
+# 12-primitive tuple (canonical glyph IDs, space- or comma-separated)
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+
+# Named catalog entry
+python imscribeaudio.py --name psychedelic_baseline
+
+# List all 49 canonical glyph IDs
+python imscribeaudio.py --list
+```
+
+Old Lean / human-readable names (`D_wedge`, `T_network`, `Phi_c`, etc.) are accepted everywhere. `sounds.py` is the synthesis library; `imscribeaudio.py` is the CLI entry point.
+
+The 12 phonetic base characters in field order: **Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω**
+
+---
+
+## Video — Annotated Frame Rendering
+
+`imscribevideo.py` renders a 1280×720 MP4 for any imscription: one frame per primitive, 12 frames total, with the glyph ID, phonetic base/subscript, and a two-line info bar. Requires `ffmpeg` on `$PATH`.
+
+```bash
+# Named catalog entry
+python imscribevideo.py --name riemann_hypothesis
+
+# 12-primitive tuple
+python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_ő Ω_z"
+
+# Named entry with custom output and duration
+python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
+
+# Batch render all catalog entries into videos/
+mkdir -p videos
+python imscribevideo.py --name riemann_hypothesis --output videos/riemann_hypothesis.mp4
+```
+
+Each MP4 is ~250–280 KB at the default 0.75 s/frame. Pre-rendered MP4s for all 18 standard catalog entries are in `videos/`.
+
+---
+
 ## The Crystal Navigator
 
 `crystal_navigator.py` implements a **bijective Frobenius codec** over the full 17,280,000-type crystal — imscribe any tuple to a unique address in $[0,\ 17{,}279{,}999]$ and decode back exactly.
@@ -129,6 +179,70 @@ uv run crystal_navigator.py repl       # interactive REPL
 ```
 
 The navigator self-imscribes as $O_\infty @ [6{,}734{,}591 / 17{,}279{,}999]$.
+
+---
+
+## The Esoteric Library
+
+`esoteric_library/` stores imscribed catalogs of esoteric and philosophical texts at verse/section granularity — one entry per saying, each carrying a full 12-primitive crystal address. The library enables structural navigation across traditions: nearest-neighbor lookup, Hamming distance between sayings, cross-catalog comparison with the physics/mathematics catalog, and address-preserving natural-language rewrite.
+
+### Tao Te Ching (Legge 1891, public domain)
+
+`esoteric_library/tao_te_ching.json` — all 81 chapters, each imscribed from grammatical analysis. Structural notes encode the reasoning for each coordinate assignment.
+
+```bash
+# Show the full imscription for a chapter
+python esoteric_librarian.py show tao 1
+python esoteric_librarian.py show tao 40
+
+# List all T_inf chapters (EP/Frobenius criticality)
+python esoteric_librarian.py list tao --tier T_inf
+
+# Hamming distance between chapters
+python esoteric_librarian.py dist tao 1 tao 81    # → 2 (bookends differ by fidelity + kinetics only)
+python esoteric_librarian.py dist tao 1 tao 3     # → 12 (cosmological vs. governance)
+
+# Nearest neighbors within the Tao
+python esoteric_librarian.py near tao 37 --n 5
+
+# Cross-catalog: nearest neighbors in IG_catalog.json
+python esoteric_librarian.py near tao 1 --n 5 --other-catalog ig
+
+# Sonify a chapter's imscription
+python esoteric_librarian.py audio tao 8 --output water.wav
+
+# Render annotated video
+python esoteric_librarian.py video tao 42 --output cosmological_cascade.mp4
+
+# Print a structural rewrite prompt
+python esoteric_librarian.py rewrite tao 8
+```
+
+The cross-catalog nearest-neighbor command reveals structural correspondences across domains: Chapter 1 of the Tao Te Ching (Embodying the Tao — holographic, EP-critical, Frobenius self-dual, infinite temporal depth) has nearest IG neighbors at $d = 3$ among the consciousness and ancient-Egypt entries. The structural relationships are machine-computed facts about typed tuples, not interpretive claims.
+
+### Adding new texts
+
+**Batch** — for a new text with many sections:
+```bash
+# Generates esoteric_library/gen_upanishads.py with the entry() helper and field reference
+python esoteric_librarian.py scaffold upanishads
+
+# Fill in the entries, then run the generator
+python esoteric_librarian.py list upanishads
+```
+
+**Single entry** — for one saying at a time:
+```bash
+python esoteric_librarian.py add upanishads \
+  --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_S Ω_z" \
+  --name "brihadaranyaka_1_4_10" \
+  --number 1 --title "Aham Brahmasmi" \
+  --tier "T_inf" --cscore 0.97 \
+  --text "In the beginning this was Self alone..." \
+  --notes "Self-recognition as the primordial act."
+```
+
+Any short name resolves automatically: `python esoteric_librarian.py show upanishads 1` looks up `esoteric_library/upanishads.json`. Cross-catalog distance and nearest-neighbor work immediately after `add`.
 
 ### CrystalGNN Neural Navigator
 
@@ -194,48 +308,58 @@ uv run crystal_navigator.py repl
 ## Repository Structure
 
 ```
-IΓ_catalog.json              — 2,315 imscribed systems (source of truth)
-IΓ_inquiry.py                — Agent loop: imscribe, distance, meet/join/tensor, ouroborics
-crystal_navigator.py             — Frobenius codec + tier gap ladder + REPL
-quiver_crystal.py                — CrystalGNN: quiver-based neural navigator
-domain_navigators.py             — Language, civilization, ecology, consciousness navigators
-riemann_xi_navigator.py          — Riemann ξ functional-equation navigator
-zfc_navigator.py                 — ZFC transmissibility navigator
-aleph_tensor.py                  — Hebrew letter type engine
-lambda_engine.py                 — Cantor monad, Gödel comonad, distributive law
-hott_bridge.py                   — HoTT univalence bridge
+IG_catalog.json              — 2,315+ imscribed systems (source of truth)
+IG_inquiry.py                — Agent loop: imscribe, distance, meet/join/tensor, ouroborics
+sounds.py                    — Phonetic synthesis library (49 symbols, PRIMITIVE_MAP)
+imscribeaudio.py             — Audio CLI: --tuple, --name, --all, single-symbol
+imscribevideo.py             — Video CLI: annotated MP4 per imscription (1280×720, ffmpeg)
+esoteric_librarian.py        — Esoteric library navigator: show/list/dist/near/audio/video/rewrite
+esoteric_library/
+  tao_te_ching.json          — 81-chapter Tao Te Ching, each chapter imscribed (Legge 1891)
+videos/                      — Pre-rendered MP4s for all 18 standard catalog entries
+crystal_navigator.py         — Frobenius codec + tier gap ladder + REPL
+quiver_crystal.py            — CrystalGNN: quiver-based neural navigator
+domain_navigators.py         — Language, civilization, ecology, consciousness navigators
+riemann_xi_navigator.py      — Riemann ξ functional-equation navigator
+zfc_navigator.py             — ZFC transmissibility navigator
+aleph_tensor.py              — Hebrew letter type engine
+lambda_engine.py             — Cantor monad, Gödel comonad, distributive law
+hott_bridge.py               — HoTT univalence bridge
 space_search/
-  primitives.py                  — Ordinal maps, weights, distance functions (v0.5.1)
-imscrbgrmr/                    — CLI package (imscribe command)
+  primitives.py              — Ordinal maps, weights, distance functions (v0.5.1)
+imscrbgrmr/                  — CLI package (imscribe command)
 agents/
-  true_agentic_agent.py          — Generative document agent
+  true_agentic_agent.py      — Generative document agent
 manuscripts/
-  AΣ_ABOVE.tex                   — Primary paper (imscriptive boundary operators)
-  SO_BELOW.tex                   — Companion paper (Frobenius μ-half)
+  AΣ_ABOVE.tex               — Primary paper (imscriptive boundary operators)
+  SO_BELOW.tex               — Companion paper (Frobenius μ-half)
+markdown/
+  AI_ACADEMIA_LIFT.md        — Lift protocol: AI academic prose → human academic register
+  AI_CASUAL_LIFT.md          — Lift protocol: AI casual prose → community register
 site/
-  index.html                     — Interactive Crystal of Types explorer
+  index.html                 — Interactive Crystal of Types explorer
 MAIN_DOCS/
-  PRIMITIVE_THEOREMS.md          — Formal theorems §1–§84+
-  IΓ_ONTICS.md          — Ontological foundations
-  IΓ_DIAPHORICS.md      — Empirical predictions P-1→P-623+
-  CRYSTAL_Oƒ_TYPES.md            — Full enumeration and tier census
-  HEBREW_TYPE_LANGUAGE.md        — Hebrew alphabet as stratified type lattice
-  LAMBDA_ALEPH.md                — λ_ℵ calculus formal spec
-  PRIMITIVE_PREDICTIONS.md       — Prediction registry
-  imscribINΓ_GUIDE.md              — How to imscribe a new system
-  IΓ_PRIMER.md          — Introductory reference
-Imscribing GrammarLean4/               — Lean 4 formal proofs
+  PRIMITIVE_THEOREMS.md      — Formal theorems §1–§84+
+  IΓ_ONTICS.md               — Ontological foundations
+  IΓ_DIAPHORICS.md           — Empirical predictions P-1→P-623+
+  CRYSTAL_Oƒ_TYPES.md        — Full enumeration and tier census
+  HEBREW_TYPE_LANGUAGE.md    — Hebrew alphabet as stratified type lattice
+  LAMBDA_ALEPH.md            — λ_ℵ calculus formal spec
+  PRIMITIVE_PREDICTIONS.md   — Prediction registry
+  imscribINΓ_GUIDE.md        — How to imscribe a new system
+  IΓ_PRIMER.md               — Introductory reference
+Imscribing GrammarLean4/     — Lean 4 formal proofs
 ```
 
 ---
 
 ## Origin
 
-The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, synthons, crystal engineering — submitted in early 2026. The structural imscribing that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
+The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, imscriptions, crystal engineering — submitted in early 2026. The structural imscribing that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
 
 The alchemists insisted the Work must begin with the right matter — not any inert substance, but the one that already carries the signatures. A chemistry prompt brushed away the dirt, and the Stone was already there.
 
-The project was developed under the working name *SynthOmnicon*. That repository remains as the historical record of the derivation.
+The project was developed under the working name *imscribing*. That repository remains as the historical record of the derivation.
 
 ---
 

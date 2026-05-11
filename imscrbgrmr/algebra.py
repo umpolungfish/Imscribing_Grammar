@@ -1,9 +1,9 @@
 """
-Synthon Algebra — lattice operations, canonical distance, and path search.
+Imscription Algebra — lattice operations, canonical distance, and path search.
 
 Canonical distance: primitive_mismatches(a, b) -> int
   Pure Hamming over all 12 fields. Matches the Lean kernel-verified
-  primitiveMismatches in Synthon.lean. Returns 0 iff a == b (as 12-tuples).
+  primitiveMismatches in Imscription.lean. Returns 0 iff a == b (as 12-tuples).
 
 Weighted distance: tuple_distance(a, b) -> float
   Per-primitive weights + ordinal gaps for F, K, G. For HotSwap / xi_CP
@@ -40,7 +40,7 @@ from .models import (
     Protection,
     Recognition,
     Stoichiometry,
-    Synthon,
+    Imscription,
     Topology,
 )
 
@@ -94,14 +94,14 @@ _CHIR_BY_ORD = {v: k for k, v in _CHIR_ORD.items()}
 # Canonical distance: primitive_mismatches
 # ─────────────────────────────────────────────────────────────────────────────
 
-def primitive_mismatches(a: Synthon, b: Synthon) -> int:
+def primitive_mismatches(a: Imscription, b: Imscription) -> int:
     """
     Canonical Hamming distance over the 12-primitive product.
 
-    Matches the Lean kernel-verified primitiveMismatches in Synthon.lean:
+    Matches the Lean kernel-verified primitiveMismatches in Imscription.lean:
       sum of (0 if a.field == b.field else 1) for each of the 12 fields.
 
-    Returns an integer in [0, 12]. Zero iff the two synthons are identical
+    Returns an integer in [0, 12]. Zero iff the two imscriptions are identical
     as 12-tuples (name and metadata are ignored).
     """
     return int(
@@ -141,13 +141,13 @@ _DEFAULT_WEIGHTS: Dict[str, float] = {
 
 
 def tuple_distance(
-    s1: Synthon,
-    s2: Synthon,
+    s1: Imscription,
+    s2: Imscription,
     weights: Optional[Dict[str, float]] = None,
     symmetric: bool = True,
 ) -> float:
     """
-    Weighted quasi-metric between two synthons.
+    Weighted quasi-metric between two imscriptions.
 
     Uses ordinal gaps for F, K, G, Omega, H; binary mismatch for
     the categorical primitives D, T, R, P, Gamma, Phi, S.
@@ -229,8 +229,8 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
 }
 
 
-def _synthon_to_primitives_dict(s: Synthon) -> Optional[Dict[str, str]]:
-    """Convert a Synthon to the dict format expected by space_search/primitives.py.
+def _imscription_to_primitives_dict(s: Imscription) -> Optional[Dict[str, str]]:
+    """Convert a Imscription to the dict format expected by space_search/primitives.py.
 
     Extended enum values that postdate the catalog encoding are mapped to their
     nearest canonical equivalent via _PRIMITIVES_FALLBACK.  Returns None only
@@ -273,15 +273,15 @@ def _synthon_to_primitives_dict(s: Synthon) -> Optional[Dict[str, str]]:
 _ALGEBRA_METRIC_G = None  # lazy-loaded
 
 
-def mahalanobis_distance(s1: Synthon, s2: Synthon) -> Optional[float]:
+def mahalanobis_distance(s1: Imscription, s2: Imscription) -> Optional[float]:
     """Riemannian distance d = sqrt((v1-v2)^T g (v1-v2)) with g = Sigma^{-1}.
 
-    Returns None if either synthon contains values outside the catalog ordinals
+    Returns None if either imscription contains values outside the catalog ordinals
     or if the catalog cannot be located.
     """
     global _ALGEBRA_METRIC_G
-    d1 = _synthon_to_primitives_dict(s1)
-    d2 = _synthon_to_primitives_dict(s2)
+    d1 = _imscription_to_primitives_dict(s1)
+    d2 = _imscription_to_primitives_dict(s2)
     if d1 is None or d2 is None:
         return None
 
@@ -374,7 +374,7 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str) -> 
     return [Criticality.Phi_softsign, Criticality.Phi_ctyogh, Criticality.Phi_upstep][idx]
 
 
-def meet(s1: Synthon, s2: Synthon) -> LatticeResult:
+def meet(s1: Imscription, s2: Imscription) -> LatticeResult:
     """
     Lattice meet (sqcap): greatest lower bound.
 
@@ -417,7 +417,7 @@ def meet(s1: Synthon, s2: Synthon) -> LatticeResult:
     )
 
 
-def join(s1: Synthon, s2: Synthon) -> LatticeResult:
+def join(s1: Imscription, s2: Imscription) -> LatticeResult:
     """
     Lattice join (sqcup): least upper bound.
 
@@ -480,9 +480,9 @@ class PathResult:
 
 
 def find_path(
-    src: Synthon,
-    dst: Synthon,
-    catalog: Sequence[Synthon],
+    src: Imscription,
+    dst: Imscription,
+    catalog: Sequence[Imscription],
     max_hops: int = 6,
     xi_tolerance: float = 1.0,
     ignore_grounding: bool = True,
@@ -491,7 +491,7 @@ def find_path(
     Shortest valid HotSwap path from src to dst through the catalog.
 
     Uses directed tuple_distance (symmetric=False) as the hop cost so that
-    upward moves in F/K are free. Restricts to synthons sharing src.dim and
+    upward moves in F/K are free. Restricts to imscriptions sharing src.dim and
     src.top (HotSwap hard constraint: D and T cannot change mid-path).
     """
     try:
@@ -517,7 +517,7 @@ def find_path(
         if current.name == dst.name or primitive_mismatches(current, dst) == 0:
             break
         # Find best next hop (min directed distance to dst)
-        best: Optional[Synthon] = None
+        best: Optional[Imscription] = None
         best_d = float("inf")
         for cand in candidates:
             if cand.name in visited:
@@ -550,9 +550,9 @@ def find_path(
 # Tensor product
 # ─────────────────────────────────────────────────────────────────────────────
 
-def tensor(s1: Synthon, s2: Synthon, name: Optional[str] = None) -> Synthon:
+def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None) -> Imscription:
     """
-    Tensor product of two synthons (co-assembly / ensemble encoding).
+    Tensor product of two imscriptions (co-assembly / ensemble encoding).
 
     Uses join for ordered primitives (F, K, G, Omega, H — take the more demanding)
     and requires exact match for categorical primitives (conflict raises ValueError).
@@ -569,7 +569,7 @@ def tensor(s1: Synthon, s2: Synthon, name: Optional[str] = None) -> Synthon:
     old_enforce = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
-        t = Synthon(
+        t = Imscription(
             name             = name or f"tensor({s1.name},{s2.name})",
             dimensionality   = result.dimensionality,
             topology         = result.topology,
@@ -596,12 +596,12 @@ def tensor(s1: Synthon, s2: Synthon, name: Optional[str] = None) -> Synthon:
 @dataclass
 class LiftResult:
     applicable: bool
-    synthon: Optional[Synthon]
+    imscription: Optional[Imscription]
     notes: List[str] = field(default_factory=list)
     warnings: List[str] = field(default_factory=list)
 
 
-def _lift_temporal(s: Synthon) -> LiftResult:
+def _lift_temporal(s: Imscription) -> LiftResult:
     """D_* → D_invomega: inject temporal/iterative dimension."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
@@ -620,7 +620,7 @@ def _lift_temporal(s: Synthon) -> LiftResult:
     return LiftResult(True, result, notes=[f"D {s.dimensionality.value} → D_invomega"])
 
 
-def _lift_spatial(s: Synthon) -> LiftResult:
+def _lift_spatial(s: Imscription) -> LiftResult:
     """D_wynn → D_cube: molecular → supramolecular spatial array."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
@@ -638,7 +638,7 @@ def _lift_spatial(s: Synthon) -> LiftResult:
     return LiftResult(True, result, notes=[f"D {s.dimensionality.value} → D_cube"])
 
 
-def _lift_critical(s: Synthon, strength: float = 1.0) -> LiftResult:
+def _lift_critical(s: Imscription, strength: float = 1.0) -> LiftResult:
     """Φ_sub → Φ_c: inject criticality. Requires F ≥ F_hardsign."""
     import imscrbgrmr.models as _m
     from .models import Criticality, Fidelity
@@ -660,7 +660,7 @@ def _lift_critical(s: Synthon, strength: float = 1.0) -> LiftResult:
                       warnings=warnings)
 
 
-def _lift_molecular(s: Synthon) -> LiftResult:
+def _lift_molecular(s: Imscription) -> LiftResult:
     """Forgetful projection → D_wynn (loses spatial/temporal)."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
@@ -679,8 +679,8 @@ def _lift_molecular(s: Synthon) -> LiftResult:
                       warnings=["Forgetful projection — spatial/temporal structure lost"])
 
 
-def _synthon_from_lattice(r: "LatticeResult", s1: Synthon, s2: Synthon, op: str) -> Synthon:
-    """Extract a Synthon from a LatticeResult, substituting s1 values for conflicts."""
+def _imscription_from_lattice(r: "LatticeResult", s1: Imscription, s2: Imscription, op: str) -> Imscription:
+    """Extract a Imscription from a LatticeResult, substituting s1 values for conflicts."""
     import imscrbgrmr.models as _m
     CONFLICT = object.__class__  # sentinel check
     def _resolve(val, fallback):
@@ -692,7 +692,7 @@ def _synthon_from_lattice(r: "LatticeResult", s1: Synthon, s2: Synthon, op: str)
     _m._ENFORCE_AXIOMS = False
     try:
         from .models import Dimensionality, Topology, Recognition, Polarity, Grammar
-        t = Synthon(
+        t = Imscription(
             name             = f"{op}({s1.name},{s2.name})",
             dimensionality   = _resolve(r.dimensionality,    s1.dimensionality),
             topology         = _resolve(r.topology,          s1.topology),
@@ -739,7 +739,7 @@ class PipelineStep:
 
 @dataclass
 class PipelineResult:
-    value:         Optional[Synthon]
+    value:         Optional[Imscription]
     steps:         List[PipelineStep]
     total_xi_delta: float
     failed:        bool
@@ -750,7 +750,7 @@ class PipelineResult:
         status = "[FAILED]" if self.failed else "[OK]"
         print(f"\nPipeline result: {status}")
         if self.value:
-            print(f"  Final synthon : {self.value.name}")
+            print(f"  Final imscription : {self.value.name}")
             print(f"  Notation      : {self.value.to_notation()}")
         print(f"  Total Δξ_CP   : {self.total_xi_delta:.4f} nats")
         print()
@@ -769,13 +769,13 @@ class PipelineResult:
 
 
 class DesignPipeline:
-    """Fluent builder for chained synthon algebra operations."""
+    """Fluent builder for chained imscription algebra operations."""
 
-    def __init__(self, synthon: Optional[Synthon], steps: List[PipelineStep],
+    def __init__(self, imscription: Optional[Imscription], steps: List[PipelineStep],
                  xi_total: float, failed: bool,
                  failed_at: Optional[str] = None,
                  failure_reason: Optional[str] = None):
-        self._synthon = synthon
+        self._imscription = imscription
         self._steps = steps
         self._xi_total = xi_total
         self._failed = failed
@@ -783,8 +783,8 @@ class DesignPipeline:
         self._failure_reason = failure_reason
 
     @classmethod
-    def start(cls, synthon: Synthon) -> "DesignPipeline":
-        return cls(synthon, [], 0.0, False)
+    def start(cls, imscription: Imscription) -> "DesignPipeline":
+        return cls(imscription, [], 0.0, False)
 
     def _fail(self, op: str, input_name: str, reason: str) -> "DesignPipeline":
         step = PipelineStep(op=op, input_name=input_name, output_name="—",
@@ -792,12 +792,12 @@ class DesignPipeline:
         return DesignPipeline(None, self._steps + [step], self._xi_total,
                               True, failed_at=op, failure_reason=reason)
 
-    def meet(self, other: Synthon) -> "DesignPipeline":
-        if self._failed or self._synthon is None:
+    def meet(self, other: Imscription) -> "DesignPipeline":
+        if self._failed or self._imscription is None:
             return self
         try:
-            r = meet(self._synthon, other)
-            out = _synthon_from_lattice(r, self._synthon, other, "meet")
+            r = meet(self._imscription, other)
+            out = _imscription_from_lattice(r, self._imscription, other, "meet")
             notes = "; ".join(r.notes) if r.notes else ""
             warnings = f"conflicts on {r.conflicts}" if r.conflicts else ""
             step = PipelineStep("meet", other.name, out.name, notes=notes, warnings=warnings)
@@ -805,12 +805,12 @@ class DesignPipeline:
         except Exception as e:
             return self._fail("meet", other.name, str(e))
 
-    def join(self, other: Synthon) -> "DesignPipeline":
-        if self._failed or self._synthon is None:
+    def join(self, other: Imscription) -> "DesignPipeline":
+        if self._failed or self._imscription is None:
             return self
         try:
-            r = join(self._synthon, other)
-            out = _synthon_from_lattice(r, self._synthon, other, "join")
+            r = join(self._imscription, other)
+            out = _imscription_from_lattice(r, self._imscription, other, "join")
             notes = "; ".join(r.notes) if r.notes else ""
             warnings = f"conflicts on {r.conflicts}" if r.conflicts else ""
             step = PipelineStep("join", other.name, out.name, notes=notes, warnings=warnings)
@@ -818,31 +818,31 @@ class DesignPipeline:
         except Exception as e:
             return self._fail("join", other.name, str(e))
 
-    def tensor(self, other: Synthon, lambda_: float = 0.3) -> "DesignPipeline":
-        if self._failed or self._synthon is None:
+    def tensor(self, other: Imscription, lambda_: float = 0.3) -> "DesignPipeline":
+        if self._failed or self._imscription is None:
             return self
         try:
-            out = tensor(self._synthon, other)
+            out = tensor(self._imscription, other)
             step = PipelineStep("tensor", other.name, out.name)
             return DesignPipeline(out, self._steps + [step], self._xi_total, False)
         except ValueError as e:
             return self._fail("tensor", other.name, str(e))
 
     def lift(self, target: str, **kw) -> "DesignPipeline":
-        if self._failed or self._synthon is None:
+        if self._failed or self._imscription is None:
             return self
         fn = _LIFT_MAP.get(target)
         if fn is None:
             return self._fail("lift", target,
                               f"Unknown lift target '{target}'. Valid: {list(_LIFT_MAP)}")
         try:
-            r = fn(self._synthon, **kw)
+            r = fn(self._imscription, **kw)
             if not r.applicable:
                 step = PipelineStep("lift", target, "—", blocked=True,
                                     block_reason="; ".join(r.notes))
                 return DesignPipeline(None, self._steps + [step], self._xi_total,
                                       True, "lift", "; ".join(r.notes))
-            out = r.synthon or self._synthon
+            out = r.imscription or self._imscription
             step = PipelineStep("lift", target, out.name,
                                 notes="; ".join(r.notes),
                                 warnings="; ".join(r.warnings))
@@ -850,17 +850,17 @@ class DesignPipeline:
         except Exception as e:
             return self._fail("lift", target, str(e))
 
-    def path(self, target: Synthon, catalog: Any,
+    def path(self, target: Imscription, catalog: Any,
              max_hops: int = 6, xi_tolerance: float = 1.0) -> "DesignPipeline":
-        if self._failed or self._synthon is None:
+        if self._failed or self._imscription is None:
             return self
         try:
-            r = find_path(self._synthon, target,
+            r = find_path(self._imscription, target,
                           list(catalog) if not isinstance(catalog, list) else catalog,
                           max_hops=max_hops)
             if not r.found:
                 return self._fail("path", target.name, "No valid path found")
-            out = r.path[-1] if r.path else self._synthon
+            out = r.path[-1] if r.path else self._imscription
             step = PipelineStep("path", target.name, out.name,
                                 delta_xi=r.total_delta,
                                 notes=f"{len(r.path)} hops, Δξ={r.total_delta:.3f}")
@@ -871,7 +871,7 @@ class DesignPipeline:
 
     def result(self) -> PipelineResult:
         return PipelineResult(
-            value=self._synthon,
+            value=self._imscription,
             steps=self._steps,
             total_xi_delta=self._xi_total,
             failed=self._failed,

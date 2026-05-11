@@ -9,7 +9,7 @@ to tier values.  The engine also runs two embedded tests:
   1. Assignment method independence — multiple measurement routes should
      converge to the same tier (cross-checks reported as AGREEMENT/CONFLICT).
 
-  2. Self-consistency under decomposition — for catalog synthons with known
+  2. Self-consistency under decomposition — for catalog imscriptions with known
      ΔG data, assign algorithmically, compare to hand-coded catalog value,
      flag boundary cases and conflicts.
 
@@ -44,7 +44,7 @@ from .models import (
     GrammarOperator,
     CriticalityPhase,
     TopoIndex,
-    Synthon,
+    Imscription,
 )
 
 # ── Physical constants ──────────────────────────────────────────────────────
@@ -104,8 +104,8 @@ class MethodComparison:
 
 
 @dataclass
-class SynthonAssignment:
-    """Complete algorithmic assignment result for a synthon."""
+class ImscriptionAssignment:
+    """Complete algorithmic assignment result for a imscription."""
     assignments: Dict[str, PrimitiveAssignment]
     boundary_cases: List[str] = field(default_factory=list)
     underdetermined: List[str] = field(default_factory=list)
@@ -113,10 +113,10 @@ class SynthonAssignment:
     method_comparisons: List[MethodComparison] = field(default_factory=list)
     notes: List[str] = field(default_factory=list)
 
-    def to_synthon(self, name: str = "assigned") -> Synthon:
-        """Convert assignment to a Synthon object (underdetermined fields get defaults)."""
+    def to_imscription(self, name: str = "assigned") -> Imscription:
+        """Convert assignment to a Imscription object (underdetermined fields get defaults)."""
         a = self.assignments
-        return Synthon(
+        return Imscription(
             name=name,
             dimensionality=a["D"].value if "D" in a else Dimensionality.MOLECULAR,
             topology=a["T"].value if "T" in a else Topology.NETWORK,
@@ -139,7 +139,7 @@ class SynthonAssignment:
 
 @dataclass
 class CatalogConsistencyEntry:
-    """Comparison of algorithmic vs. hand-coded assignment for a catalog synthon."""
+    """Comparison of algorithmic vs. hand-coded assignment for a catalog imscription."""
     name: str
     primitive: str
     catalog_value: Any
@@ -154,16 +154,16 @@ class CatalogConsistencyEntry:
 class CatalogConsistencyReport:
     """Full catalog consistency check results."""
     entries: List[CatalogConsistencyEntry]
-    n_synthons_checked: int
+    n_imscriptions_checked: int
     n_primitives_checked: int
     overall_agreement_rate: float
     boundary_rate: float
-    conflict_summary: Dict[str, List[str]]  # primitive → list of conflicting synthon names
+    conflict_summary: Dict[str, List[str]]  # primitive → list of conflicting imscription names
     notes: List[str] = field(default_factory=list)
 
     def print_summary(self) -> None:
         print(f"\n  Catalog Consistency Report")
-        print(f"  Synthons checked : {self.n_synthons_checked}")
+        print(f"  imscriptions checked : {self.n_imscriptions_checked}")
         print(f"  Primitive checks : {self.n_primitives_checked}")
         print(f"  Agreement rate   : {self.overall_agreement_rate:.1%}")
         print(f"  Boundary rate    : {self.boundary_rate:.1%}")
@@ -679,7 +679,7 @@ class PrimitiveAssignmentEngine:
     ) -> PrimitiveAssignment:
         """
         Derive Ω from {T, K, D, Γ, G} using the P-22 five-rule decision tree.
-        Zero mismatches on 32/32 catalog synthons in the original audit.
+        Zero mismatches on 32/32 catalog imscriptions in the original audit.
 
         Rules (priority order):
           1. K = MBL                        → Ω = Z2_CLASS  (MBL topological order)
@@ -772,7 +772,7 @@ class PrimitiveAssignmentEngine:
 
     # ── Master assign_all ─────────────────────────────────────────────────────
 
-    def assign_all(self, measurements: Dict) -> SynthonAssignment:
+    def assign_all(self, measurements: Dict) -> ImscriptionAssignment:
         """
         Run all applicable assignment methods from a measurements dict.
 
@@ -956,7 +956,7 @@ class PrimitiveAssignmentEngine:
             if pa.is_boundary:
                 boundary_cases.append(pname)
 
-        return SynthonAssignment(
+        return ImscriptionAssignment(
             assignments=assignments,
             boundary_cases=boundary_cases,
             underdetermined=underdetermined,
@@ -970,7 +970,7 @@ class PrimitiveAssignmentEngine:
         smiles: str,
         description: str = "",
         extra_measurements: Optional[Dict] = None,
-    ) -> SynthonAssignment:
+    ) -> ImscriptionAssignment:
         """
         Run assign_all() from a SMILES string via RDKit structural flag extraction.
 
@@ -994,7 +994,7 @@ class PrimitiveAssignmentEngine:
                                varma_score, n_compatible_partners, …) merged on top
 
         Returns:
-            SynthonAssignment with per-primitive results, boundary flags, and
+            ImscriptionAssignment with per-primitive results, boundary flags, and
             notes listing any detected structural features.
         """
         from .rdkit_utils import smiles_to_measurements
@@ -1054,7 +1054,7 @@ def check_catalog_consistency(
     engine: Optional[PrimitiveAssignmentEngine] = None,
 ) -> CatalogConsistencyReport:
     """
-    Run the algorithmic assignment engine against all catalog synthons that
+    Run the algorithmic assignment engine against all catalog imscriptions that
     have ΔG and/or ξ_CP data, and compare to hand-coded primitive values.
 
     This is the self-consistency test of the Algorithmic Assignment Project:
@@ -1071,13 +1071,13 @@ def check_catalog_consistency(
         engine = PrimitiveAssignmentEngine()
 
     xi_table = calibrated_xi_cp_table()
-    all_synthons = global_catalog.search()
+    all_imscriptions = global_catalog.search()
 
     entries: List[CatalogConsistencyEntry] = []
     conflict_summary: Dict[str, List[str]] = {}
 
-    for synthon in all_synthons:
-        name = synthon.name or ""
+    for imscription in all_imscriptions:
+        name = imscription.name or ""
         measurements: Dict = {}
 
         # Pull ξ_CP if available
@@ -1087,18 +1087,18 @@ def check_catalog_consistency(
             if row.delta_g is not None and row.delta_g < 0:
                 # Only use delta_g for F assignment when it is a binding free energy
                 # (negative).  Positive values in this table are activation barriers
-                # (stored by compute_eta_CP for kinetic synthons) — not suitable for
+                # (stored by compute_eta_CP for kinetic imscriptions) — not suitable for
                 # P-21 Boltzmann-ratio assignment.
                 measurements["delta_g_kj"] = row.delta_g
 
         if not measurements:
-            continue  # skip synthons with no quantitative data
+            continue  # skip imscriptions with no quantitative data
 
         sa = engine.assign_all(measurements)
 
         # Compare F assignment (most data available)
         for prim_name, pa in sa.assignments.items():
-            cat_val = _get_catalog_primitive(synthon, prim_name)
+            cat_val = _get_catalog_primitive(imscription, prim_name)
             if cat_val is None:
                 continue
 
@@ -1127,14 +1127,14 @@ def check_catalog_consistency(
     boundary_rate  = n_boundary / n_prim if n_prim > 0 else 0.0
 
     notes = [
-        f"Checked {n_checked} catalog synthons with quantitative data",
+        f"Checked {n_checked} catalog imscriptions with quantitative data",
         f"F and K assignments from ξ_CP/ΔG data only — other primitives underdetermined without structural metadata",
         "Φ assignments are heuristic — all flagged as boundary cases",
     ]
 
     return CatalogConsistencyReport(
         entries=entries,
-        n_synthons_checked=n_checked,
+        n_imscriptions_checked=n_checked,
         n_primitives_checked=n_prim,
         overall_agreement_rate=round(agreement_rate, 4),
         boundary_rate=round(boundary_rate, 4),
@@ -1143,19 +1143,19 @@ def check_catalog_consistency(
     )
 
 
-def _get_catalog_primitive(synthon: Synthon, prim_name: str) -> Optional[Any]:
-    """Extract a primitive value from a Synthon by primitive name string."""
+def _get_catalog_primitive(imscription: Imscription, prim_name: str) -> Optional[Any]:
+    """Extract a primitive value from a Imscription by primitive name string."""
     mapping = {
-        "F": synthon.fidelity,
-        "K": synthon.kinetic_character,
-        "G": synthon.granularity,
-        "D": synthon.dimensionality,
-        "T": synthon.topology,
-        "R": synthon.recognition_mode,
-        "P": synthon.polarity,
-        "Gamma": synthon.interaction_grammar,
-        "Phi": synthon.criticality_phase,
-        "Omega": synthon.topo_index,
+        "F": imscription.fidelity,
+        "K": imscription.kinetic_character,
+        "G": imscription.granularity,
+        "D": imscription.dimensionality,
+        "T": imscription.topology,
+        "R": imscription.recognition_mode,
+        "P": imscription.polarity,
+        "Gamma": imscription.interaction_grammar,
+        "Phi": imscription.criticality_phase,
+        "Omega": imscription.topo_index,
     }
     return mapping.get(prim_name)
 
@@ -1166,8 +1166,8 @@ def _get_catalog_primitive(synthon: Synthon, prim_name: str) -> Optional[Any]:
 
 @dataclass
 class DecompositionConsistencyEntry:
-    """Result of re-assigning a synthon's atoms and checking round-trip consistency."""
-    synthon_name: str
+    """Result of re-assigning a imscription's atoms and checking round-trip consistency."""
+    imscription_name: str
     n_atoms: int
     primitive: str
     original_value: Any
@@ -1176,14 +1176,14 @@ class DecompositionConsistencyEntry:
     note: str = ""
 
 
-def _lattice_result_to_synthon(lr, name: str = "join_result") -> Synthon:
-    """Convert a LatticeResult to a Synthon, replacing CONFLICT tokens with defaults."""
+def _lattice_result_to_imscription(lr, name: str = "join_result") -> Imscription:
+    """Convert a LatticeResult to a Imscription, replacing CONFLICT tokens with defaults."""
     from .algebra import CONFLICT
 
     def _safe(val, default):
         return default if val == CONFLICT else val
 
-    return Synthon(
+    return Imscription(
         name=name,
         dimensionality=_safe(lr.dimensionality, Dimensionality.MOLECULAR),
         topology=_safe(lr.topology, Topology.NETWORK),
@@ -1199,7 +1199,7 @@ def _lattice_result_to_synthon(lr, name: str = "join_result") -> Synthon:
 
 
 def check_decomposition_consistency(
-    synthon_name: str,
+    imscription_name: str,
     measurements_per_atom: List[Dict],
     engine: Optional[PrimitiveAssignmentEngine] = None,
 ) -> List[DecompositionConsistencyEntry]:
@@ -1207,7 +1207,7 @@ def check_decomposition_consistency(
     Self-consistency test under decomposition (Algorithmic Assignment Project, test 2).
 
     Workflow:
-      1. Load synthon from catalog.
+      1. Load imscription from catalog.
       2. Run principal_decomp → atoms.
       3. Assign each atom's primitives independently from measurements_per_atom.
       4. Reconstruct via join of all atoms.
@@ -1225,21 +1225,21 @@ def check_decomposition_consistency(
     if engine is None:
         engine = PrimitiveAssignmentEngine()
 
-    synthon = global_catalog.get(synthon_name)
-    if synthon is None:
+    imscription = global_catalog.get(imscription_name)
+    if imscription is None:
         return [DecompositionConsistencyEntry(
-            synthon_name=synthon_name, n_atoms=0, primitive="*",
+            imscription_name=imscription_name, n_atoms=0, primitive="*",
             original_value=None, reconstructed_value=None, consistent=False,
-            note=f"Synthon '{synthon_name}' not found in catalog",
+            note=f"Imscription '{imscription_name}' not found in catalog",
         )]
 
-    pd_result = principal_decomp(synthon)
+    pd_result = principal_decomp(imscription)
     atoms = pd_result.factors
     n_atoms = len(atoms)
 
     if n_atoms == 0:
         return [DecompositionConsistencyEntry(
-            synthon_name=synthon_name, n_atoms=0, primitive="*",
+            imscription_name=imscription_name, n_atoms=0, primitive="*",
             original_value=None, reconstructed_value=None, consistent=False,
             note="principal_decomp returned no atoms",
         )]
@@ -1249,32 +1249,32 @@ def check_decomposition_consistency(
     for i, atom in enumerate(atoms):
         if i < len(measurements_per_atom):
             sa = engine.assign_all(measurements_per_atom[i])
-            assigned_atoms.append(sa.to_synthon(name=f"{synthon_name}_atom_{i}"))
+            assigned_atoms.append(sa.to_imscription(name=f"{imscription_name}_atom_{i}"))
         else:
             assigned_atoms.append(atom)  # use original atom if no measurements
 
     # Reconstruct via iterated join.
-    # algebra_join returns a LatticeResult (not a Synthon), so we convert each
-    # intermediate result back to a Synthon before the next join.
+    # algebra_join returns a LatticeResult (not a Imscription), so we convert each
+    # intermediate result back to a Imscription before the next join.
     reconstructed = assigned_atoms[0]
     for atom in assigned_atoms[1:]:
         lr = algebra_join(reconstructed, atom)
-        reconstructed = _lattice_result_to_synthon(lr, f"{synthon_name}_join")
+        reconstructed = _lattice_result_to_imscription(lr, f"{imscription_name}_join")
 
     # Compare to original
     results = []
     primitives_to_check = [
-        ("F", synthon.fidelity, reconstructed.fidelity),
-        ("K", synthon.kinetic_character, reconstructed.kinetic_character),
-        ("G", synthon.granularity, reconstructed.granularity),
-        ("D", synthon.dimensionality, reconstructed.dimensionality),
-        ("T", synthon.topology, reconstructed.topology),
-        ("Phi", synthon.criticality_phase, reconstructed.criticality_phase),
+        ("F", imscription.fidelity, reconstructed.fidelity),
+        ("K", imscription.kinetic_character, reconstructed.kinetic_character),
+        ("G", imscription.granularity, reconstructed.granularity),
+        ("D", imscription.dimensionality, reconstructed.dimensionality),
+        ("T", imscription.topology, reconstructed.topology),
+        ("Phi", imscription.criticality_phase, reconstructed.criticality_phase),
     ]
     for prim, orig, recon in primitives_to_check:
         consistent = (orig == recon)
         results.append(DecompositionConsistencyEntry(
-            synthon_name=synthon_name,
+            imscription_name=imscription_name,
             n_atoms=n_atoms,
             primitive=prim,
             original_value=orig,

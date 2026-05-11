@@ -2,11 +2,11 @@
 Criticality Hunting Agent — Automated search for near-Φ_c systems.
 
 Combines Varma probe degeneracy scoring with perturbation pathfinding to:
-1. Scan the entire catalog and score each synthon's Φ_c candidacy
+1. Scan the entire catalog and score each imscription's Φ_c candidacy
 2. Identify near-critical systems (score 0.40–0.70 — "approaching" range)
 3. Run PerturbationEngine.find_path_to_target() toward a Φ_c ξ_CP threshold
 4. Use an LLM to evaluate which proposed modifications are chemically realistic
-5. Optionally generate new LLM-proposed upgraded synthon candidates
+5. Optionally generate new LLM-proposed upgraded imscription candidates
 
 The agent focuses on "near-critical" systems rather than already-critical ones,
 since those represent the highest-value targets for Φ_c assignment.
@@ -24,7 +24,7 @@ Usage::
         top_n=10,
     )
     for c in report.candidates:
-        print(c.synthon_name, c.current_score, c.upgrade_path)
+        print(c.imscription_name, c.current_score, c.upgrade_path)
 """
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ from imscrbgrmr.provider_config import build_agent_config
 @dataclass
 class CriticalityCandidate:
     """A single near-Φ_c candidate with upgrade path."""
-    synthon_name: str
+    imscription_name: str
     current_score: float          # degeneracy_strength score
     current_tier: str             # "none" / "logarithmic" / "power-law" / "collapse"
     current_xi_CP: Optional[float]
@@ -58,7 +58,7 @@ class CriticalityCandidate:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "synthon": self.synthon_name,
+            "imscription": self.imscription_name,
             "current_score": round(self.current_score, 3),
             "current_tier": self.current_tier,
             "current_xi_CP_nats": round(self.current_xi_CP, 4) if self.current_xi_CP else None,
@@ -73,7 +73,7 @@ class CriticalityCandidate:
 class CriticalityHuntReport:
     """Full report from a criticality hunting run."""
     candidates: List[CriticalityCandidate]   # sorted by score descending
-    already_critical: List[str]              # synthon names already at Φ_c
+    already_critical: List[str]              # imscription names already at Φ_c
     scan_stats: Dict[str, Any]
     llm_summary: str
     metadata: Dict[str, Any] = field(default_factory=dict)
@@ -93,7 +93,7 @@ class CriticalityHuntReport:
 
 class CriticalityHuntingAgent(BaseAgent):
     """
-    Hunts for near-Φ_c synthons in the catalog and proposes upgrade paths.
+    Hunts for near-Φ_c imscriptions in the catalog and proposes upgrade paths.
 
     Combines Varma probe degeneracy scoring (imscrbgrmr.varma_probe) with
     PerturbationEngine pathfinding and LLM chemical evaluation.
@@ -127,7 +127,7 @@ class CriticalityHuntingAgent(BaseAgent):
             config=config,
             persona=(
                 "Expert in quantum criticality and self-organised chemical systems. "
-                "You identify synthons approaching the critical point (Φ_c) and design "
+                "You identify imscriptions approaching the critical point (Φ_c) and design "
                 "targeted chemical modifications to push them into the critical regime. "
                 "Your proposals are grounded in the Varma QXY universality class and "
                 "scale-free degeneracy theory."
@@ -218,10 +218,10 @@ class CriticalityHuntingAgent(BaseAgent):
         self, delta_g: float
     ) -> Tuple[List[Tuple[float, str, str]], List[str], Dict[str, Any]]:
         """
-        Score every synthon in the catalog.
+        Score every imscription in the catalog.
 
         Returns:
-            approaching: [(score, tier, name)] for near-critical synthons, sorted descending
+            approaching: [(score, tier, name)] for near-critical imscriptions, sorted descending
             already_critical: names already at Φ_c (score ≥ 0.70)
             stats: scan statistics dict
         """
@@ -230,10 +230,10 @@ class CriticalityHuntingAgent(BaseAgent):
 
         total = 0
         errors = 0
-        for name, synthon in global_catalog._synthons.items():
+        for name, imscription in global_catalog._imscriptions.items():
             total += 1
             try:
-                score, tier = degeneracy_strength(synthon)
+                score, tier = degeneracy_strength(imscription)
                 if score >= self.PHI_C_THRESHOLD:
                     already_critical.append(name)
                 elif score >= self.APPROACHING_LOW:
@@ -265,13 +265,13 @@ class CriticalityHuntingAgent(BaseAgent):
         """Run perturbation pathfinding for each near-critical candidate."""
         candidates = []
         for score, tier, name in approaching:
-            synthon = global_catalog.get(name)
-            if synthon is None:
+            imscription = global_catalog.get(name)
+            if imscription is None:
                 continue
 
             # Baseline ξ_CP
             try:
-                baseline = self._perturb_engine.compute_baseline(synthon, delta_g)
+                baseline = self._perturb_engine.compute_baseline(imscription, delta_g)
                 xi_cp = baseline.xi_CP
             except Exception:
                 xi_cp = None
@@ -280,14 +280,14 @@ class CriticalityHuntingAgent(BaseAgent):
             path_result = None
             try:
                 path_result = self._perturb_engine.find_path_to_target(
-                    synthon, delta_g, target_xi_cp,
+                    imscription, delta_g, target_xi_cp,
                     optimize_primitives=optimize_primitives,
                 )
             except Exception:
                 pass
 
             candidates.append(CriticalityCandidate(
-                synthon_name=name,
+                imscription_name=name,
                 current_score=score,
                 current_tier=tier,
                 current_xi_CP=xi_cp,
@@ -322,7 +322,7 @@ class CriticalityHuntingAgent(BaseAgent):
         except Exception:
             summary = (
                 f"Found {len(candidates)} near-critical candidates. "
-                f"Top candidate: {candidates[0].synthon_name} "
+                f"Top candidate: {candidates[0].imscription_name} "
                 f"(score={candidates[0].current_score:.3f}, tier={candidates[0].current_tier})."
             )
         return candidates, summary
@@ -336,12 +336,12 @@ class CriticalityHuntingAgent(BaseAgent):
                 reachable = c.upgrade_path.get("reachable", False)
                 path_summary = f"Reachable={reachable}, steps={len(steps)}: {steps[:3]}"
             candidate_lines.append(
-                f"- {c.synthon_name}: score={c.current_score:.3f}, tier={c.current_tier}, "
+                f"- {c.imscription_name}: score={c.current_score:.3f}, tier={c.current_tier}, "
                 f"ξ_CP={c.current_xi_CP:.3f if c.current_xi_CP else 'N/A'} nats | "
                 f"Upgrade path: {path_summary}"
             )
         return f"""<task>
-Evaluate the chemical feasibility of pushing near-critical synthons to Φ_c.
+Evaluate the chemical feasibility of pushing near-critical imscriptions to Φ_c.
 </task>
 
 <candidates>
@@ -375,7 +375,7 @@ Return ONLY this JSON:
   "summary": "<3-sentence overview of best upgrade opportunities>",
   "evaluations": [
     {{
-      "synthon_name": "<name>",
+      "imscription_name": "<name>",
       "feasibility": "HIGH",
       "strategy": "<concrete chemical modification>",
       "flags": ["<any concerns>"]
@@ -386,10 +386,10 @@ Return ONLY this JSON:
 
     def _system_prompt(self) -> str:
         return (
-            "You are an expert in criticality and scale-free behaviour across synthonic systems. "
+            "You are an expert in criticality and scale-free behaviour across Imscriptive systems. "
             "You evaluate whether proposed primitive-tier upgrades are physically realistic "
             "within their domain and propose specific modifications to push systems toward "
-            "the Varma QXY critical point (Φ_c) in the Unified Synthonicon framework. "
+            "the Varma QXY critical point (Φ_c) in the Unified Imscriptiveon framework. "
             "For primary-tier systems this means concrete chemical modifications; "
             "for extended-tier systems this means domain-appropriate structural or parameter changes."
         )
@@ -402,9 +402,9 @@ Return ONLY this JSON:
             try:
                 data = json.loads(match.group(0))
                 summary = data.get("summary", "")
-                evals = {e["synthon_name"]: e for e in data.get("evaluations", [])}
+                evals = {e["imscription_name"]: e for e in data.get("evaluations", [])}
                 for c in candidates:
-                    ev = evals.get(c.synthon_name, {})
+                    ev = evals.get(c.imscription_name, {})
                     if ev:
                         c.llm_feasibility = ev.get("feasibility", "MEDIUM")
                         c.llm_strategy = ev.get("strategy", "")
@@ -414,7 +414,7 @@ Return ONLY this JSON:
                 pass
         summary = (
             f"Found {len(candidates)} near-critical candidates. "
-            f"Top: {candidates[0].synthon_name} (score={candidates[0].current_score:.3f})."
+            f"Top: {candidates[0].imscription_name} (score={candidates[0].current_score:.3f})."
         )
         return candidates, summary
 

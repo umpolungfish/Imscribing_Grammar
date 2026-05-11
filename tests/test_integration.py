@@ -3,8 +3,8 @@
 Test script for Imscribing Grammar framework integration.
 
 Tests:
-1. Core synthon models (seven primitives)
-2. SynthonCatalog registry
+1. Core imscription models (seven primitives)
+2. ImscriptionCatalog registry
 3. Constraint propagation engine
 4. Thermodynamics (η_CP and ξ_CP metrics)
 5. Domain agents (molecular, supramolecular, temporal)
@@ -18,19 +18,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 
 # =============================================================================
-# Test 1: Synthon Models
+# Test 1: Imscription Models
 # =============================================================================
 
-def test_synthon_models():
-    """Test that synthon models and seven primitives work correctly."""
-    print("Testing Synthon models and seven primitives...")
+def test_imscription_models():
+    """Test that imscription models and seven primitives work correctly."""
+    print("Testing Imscription models and seven primitives...")
 
     try:
         from imscrbgrmr.models import (
             Dimensionality, Topology, RecognitionMode,
             Polarity, Fidelity, Granularity, InteractionGrammar,
             KineticCharacter,  # NEW
-            Synthon, SynthonNotation, parse_notation,
+            Imscription, ImscriptionNotation, parse_notation,
         )
 
         # Test primitive enums
@@ -50,8 +50,8 @@ def test_synthon_models():
         assert KineticCharacter.from_symbol("Ç_frtailgamma") == KineticCharacter.FAST  # NEW
         print("  ✓ Symbol parsing works")
         
-        # Test Synthon creation
-        synthon = Synthon(
+        # Test Imscription creation
+        imscription = Imscription(
             name="carboxylic_acid_dimer",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
@@ -65,24 +65,24 @@ def test_synthon_models():
         )
 
         # Test notation generation
-        notation = synthon.to_notation()
+        notation = imscription.to_notation()
         assert "Ð_wynn" in notation
         assert "Þ_bullseye" in notation
         assert "ƒ_hardsign" in notation
         assert "Ç_frtailgamma" in notation  # NEW
-        print(f"  ✓ Synthon notation: {notation}")
+        print(f"  ✓ Imscription notation: {notation}")
 
-        # Test SynthonNotation parsing (backward compatible with 7 primitives)
+        # Test ImscriptionNotation parsing (backward compatible with 7 primitives)
         parsed = parse_notation("⟨D_wynn; T_bullseye; R_superset; P_pipevar; F_hardsign; G_beta; Gamma_otimes⟩")
         assert parsed.dimensionality == Dimensionality.MOLECULAR
         assert parsed.fidelity == Fidelity.HIGH
         print("  ✓ Notation parsing works (backward compatible)")
         
         # Test JSON serialization
-        json_str = synthon.to_json()
+        json_str = imscription.to_json()
         assert "carboxylic_acid_dimer" in json_str
-        restored = Synthon.from_json(json_str)
-        assert restored.name == synthon.name
+        restored = Imscription.from_json(json_str)
+        assert restored.name == imscription.name
         print("  ✓ JSON serialization works")
         
         # Test fidelity numeric value
@@ -98,34 +98,34 @@ def test_synthon_models():
         return True
         
     except Exception as e:
-        print(f"  ✗ Error testing synthon models: {e}")
+        print(f"  ✗ Error testing imscription models: {e}")
         import traceback
         traceback.print_exc()
         return False
 
 
 # =============================================================================
-# Test 2: SynthonCatalog Registry
+# Test 2: ImscriptionCatalog Registry
 # =============================================================================
 
-def test_synthon_catalog():
-    """Test synthon catalog registration and search."""
-    print("\nTesting SynthonCatalog registry...")
+def test_imscription_catalog():
+    """Test imscription catalog registration and search."""
+    print("\nTesting ImscriptionCatalog registry...")
     
     try:
-        from imscrbgrmr.registry import SynthonCatalog, global_catalog, register_synthon
+        from imscrbgrmr.registry import ImscriptionCatalog, global_catalog, register_imscription
         from imscrbgrmr.models import (
             Dimensionality, Topology, RecognitionMode,
             Polarity, Fidelity, Granularity, InteractionGrammar,
             KineticCharacter,  # NEW
-            Synthon,
+            Imscription,
         )
 
         # Create a test catalog
-        catalog = SynthonCatalog(name="test_catalog")
+        catalog = ImscriptionCatalog(name="test_catalog")
 
-        # Register synthons
-        synthon1 = Synthon(
+        # Register imscriptions
+        imscription1 = Imscription(
             name="test_dimer",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
@@ -136,7 +136,7 @@ def test_synthon_catalog():
             granularity=Granularity.LOCAL,
             interaction_grammar=InteractionGrammar.SELECTIVE_AND,
         )
-        catalog.register(synthon1)
+        catalog.register(imscription1)
 
         assert "test_dimer" in catalog
         assert catalog.get("test_dimer") is not None
@@ -148,12 +148,12 @@ def test_synthon_catalog():
         print("  ✓ Search by primitive works")
 
         # Test search by domain
-        mol_synthons = catalog.search_by_domain("molecular")
-        assert len(mol_synthons) >= 1
+        mol_imscriptions = catalog.search_by_domain("molecular")
+        assert len(mol_imscriptions) >= 1
         print("  ✓ Domain search works")
 
         # Test convenience function
-        register_synthon(
+        register_imscription(
             name="amide_dimer",
             dimensionality="Ð_wynn",
             topology="Þ_bullseye",
@@ -169,8 +169,8 @@ def test_synthon_catalog():
         
         # Test catalog summary
         summary = catalog.summary()
-        assert "total_synthons" in summary
-        print(f"  ✓ Catalog summary: {summary['total_synthons']} synthons")
+        assert "total_imscriptions" in summary
+        print(f"  ✓ Catalog summary: {summary['total_imscriptions']} imscriptions")
         
         return True
         
@@ -195,15 +195,15 @@ def test_constraint_engine():
             CompatibilityResult,
         )
         from imscrbgrmr.models import (
-            Synthon, Dimensionality, Topology, RecognitionMode,
+            Imscription, Dimensionality, Topology, RecognitionMode,
             Polarity, Fidelity, Granularity, InteractionGrammar,
             KineticCharacter,  # NEW
         )
 
         engine = ConstraintEngine()
 
-        # Create compatible synthons
-        synthon_a = Synthon(
+        # Create compatible imscriptions
+        imscription_a = Imscription(
             name="electrophile",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.LINEAR,
@@ -215,7 +215,7 @@ def test_constraint_engine():
             interaction_grammar=InteractionGrammar.SELECTIVE_AND,
         )
 
-        synthon_b = Synthon(
+        imscription_b = Imscription(
             name="nucleophile",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.LINEAR,
@@ -228,13 +228,13 @@ def test_constraint_engine():
         )
 
         # Test compatibility
-        report = engine.check_pair_compatibility(synthon_a, synthon_b)
+        report = engine.check_pair_compatibility(imscription_a, imscription_b)
         assert report.is_compatible
         assert "polarity" in report.details
         print("  ✓ Compatible pair detected")
 
         # Test incompatible pair (same polarity)
-        synthon_c = Synthon(
+        imscription_c = Imscription(
             name="another_electrophile",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.LINEAR,
@@ -246,24 +246,24 @@ def test_constraint_engine():
             interaction_grammar=InteractionGrammar.SELECTIVE_AND,
         )
 
-        report2 = engine.check_pair_compatibility(synthon_a, synthon_c)
+        report2 = engine.check_pair_compatibility(imscription_a, imscription_c)
         assert not report2.is_compatible
         print("  ✓ Incompatible pair detected (same polarity)")
 
         # Test system consistency
-        consistency = engine.check_system_consistency([synthon_a, synthon_b, synthon_c])
+        consistency = engine.check_system_consistency([imscription_a, imscription_b, imscription_c])
         assert "consistency_score" in consistency
         assert consistency["conflicts"] >= 1
         print(f"  ✓ System consistency: {consistency['consistency_score']:.2f}")
         
         # Test fidelity propagation
         propagator = FidelityPropagator()
-        propagated = propagator.propagate([synthon_a, synthon_b])
+        propagated = propagator.propagate([imscription_a, imscription_b])
         assert propagated in [Fidelity.LOW, Fidelity.MEDIUM, Fidelity.HIGH]
         print(f"  ✓ Fidelity propagation: {propagated.value}")
         
         # Test cooperativity
-        coop = propagator.compute_cooperativity_factor([synthon_a, synthon_b])
+        coop = propagator.compute_cooperativity_factor([imscription_a, imscription_b])
         assert "total_cooperativity" in coop
         print(f"  ✓ Cooperativity factor: {coop['total_cooperativity']:.2f}")
         
@@ -295,7 +295,7 @@ def test_thermodynamics():
             list_references,
         )
         from imscrbgrmr.models import (
-            Synthon, Dimensionality, Topology, RecognitionMode,
+            Imscription, Dimensionality, Topology, RecognitionMode,
             Polarity, Fidelity, Granularity, InteractionGrammar,
             KineticCharacter,  # NEW
         )
@@ -304,8 +304,8 @@ def test_thermodynamics():
         assert LANDAUER_COST_PER_BIT > 0
         print(f"  ✓ Landauer cost: {LANDAUER_COST_PER_BIT:.2e} kJ/mol/bit")
 
-        # Create test synthon (carboxylic acid dimer)
-        synthon = Synthon(
+        # Create test imscription (carboxylic acid dimer)
+        imscription = Imscription(
             name="acetic_acid_dimer",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
@@ -318,7 +318,7 @@ def test_thermodynamics():
         )
 
         # Test η_CP computation (ΔG ≈ -52 kJ/mol for AA dimer)
-        result = compute_eta_CP(synthon, delta_g=-52.0)
+        result = compute_eta_CP(imscription, delta_g=-52.0)
         assert result.eta_CP > 0
         assert result.eta_CP < 1  # Should be much less than 1
         assert result.xi_CP > 0
@@ -337,7 +337,7 @@ def test_thermodynamics():
         print(f"  ✓ Efficiency description: {desc}")
         
         # Test benchmark against Landauer
-        benchmark = benchmark_against_landauer(synthon, delta_g=-52.0)
+        benchmark = benchmark_against_landauer(imscription, delta_g=-52.0)
         assert "overhead_ratio" in benchmark
         print(f"  ✓ Landauer overhead: {benchmark['overhead_ratio']:.1e}×")
         
@@ -360,24 +360,24 @@ def test_thermodynamics():
 # =============================================================================
 
 def test_domain_agents():
-    """Test domain-specific synthon agents."""
+    """Test domain-specific imscription agents."""
     print("\nTesting Domain Agents...")
     
     try:
-        from imscrbgrmr.domains.molecular import MolecularSynthonAgent
-        from imscrbgrmr.domains.supramolecular import SupramolecularSynthonAgent
-        from imscrbgrmr.domains.temporal import TemporalSynthonAgent
-        from imscrbgrmr.domains.hybrid import HybridSynthonAgent
+        from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
+        from imscrbgrmr.domains.supramolecular import SupramolecularImscriptionAgent
+        from imscrbgrmr.domains.temporal import TemporalImscriptionAgent
+        from imscrbgrmr.domains.hybrid import HybridImscriptionAgent
         from imscrbgrmr.models import Fidelity
         
         # Test Molecular agent
-        mol_agent = MolecularSynthonAgent()
-        synthons = mol_agent.list_molecular_synthons()
-        assert len(synthons) > 0
-        print(f"  ✓ Molecular agent: {len(synthons)} synthons listed")
+        mol_agent = MolecularImscriptionAgent()
+        imscriptions = mol_agent.list_molecular_imscriptions()
+        assert len(imscriptions) > 0
+        print(f"  ✓ Molecular agent: {len(imscriptions)} imscriptions listed")
         
         # Test Supramolecular agent
-        supra_agent = SupramolecularSynthonAgent()
+        supra_agent = SupramolecularImscriptionAgent()
         hbond_analysis = supra_agent.analyze_hydrogen_bond_network("test.cif")
         assert "motif" in hbond_analysis
         print(f"  ✓ Supramolecular agent: H-bond analysis works")
@@ -388,7 +388,7 @@ def test_domain_agents():
         print(f"  ✓ Triple H-bond cooperativity: superlinear detected")
         
         # Test Temporal agent
-        temp_agent = TemporalSynthonAgent()
+        temp_agent = TemporalImscriptionAgent()
         cycle_analysis = temp_agent.analyze_reaction_cycle("proline_aldol", "L-proline")
         assert "cycle_name" in cycle_analysis
         print(f"  ✓ Temporal agent: Cycle analysis works")
@@ -399,7 +399,7 @@ def test_domain_agents():
         print(f"  ✓ Fidelity per cycle: {fidelity_result['f_cycle']:.4f}")
         
         # Test Hybrid agent
-        hybrid_agent = HybridSynthonAgent()
+        hybrid_agent = HybridImscriptionAgent()
         spatial = hybrid_agent.analyze_spatial_framework("MOF", "pcu")
         assert "framework_type" in spatial
         print(f"  ✓ Hybrid agent: Spatial framework analysis works")
@@ -436,14 +436,14 @@ def test_framework_integration():
 
         # Test that imscrbgrmr can be used alongside framework
         from imscrbgrmr import (
-            Synthon, Dimensionality, Fidelity, Topology, RecognitionMode,
+            Imscription, Dimensionality, Fidelity, Topology, RecognitionMode,
             Polarity, Granularity, InteractionGrammar, KineticCharacter
         )
         from imscrbgrmr.thermodynamics import compute_eta_CP
 
-        # Create a synthon
-        synthon = Synthon(
-            name="test_synthon",
+        # Create a imscription
+        imscription = Imscription(
+            name="test_imscription",
             dimensionality=Dimensionality.MOLECULAR,
             topology=Topology.CYCLIC_BOWTIE,
             recognition_mode=RecognitionMode.NON_COVALENT,
@@ -455,7 +455,7 @@ def test_framework_integration():
         )
 
         # Compute thermodynamics
-        result = compute_eta_CP(synthon, delta_g=-50.0)
+        result = compute_eta_CP(imscription, delta_g=-50.0)
         assert result.eta_CP > 0
         print(f"  ✓ Imscribing Grammar + Framework integration works")
 
@@ -570,8 +570,8 @@ def run_tests():
     print("=" * 60)
 
     results = [
-        test_synthon_models(),
-        test_synthon_catalog(),
+        test_imscription_models(),
+        test_imscription_catalog(),
         test_constraint_engine(),
         test_thermodynamics(),
         test_domain_agents(),

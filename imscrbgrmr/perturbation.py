@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Tuple
 
 from .models import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, KineticCharacter, Granularity,
     InteractionGrammar, GrammarOperator, CriticalityPhase,
 )
@@ -165,7 +165,7 @@ class PerturbationResult:
 @dataclass
 class PrimitiveJacobian:
     """Full Jacobian: Δξ_CP sensitivity for each primitive."""
-    synthon_name: str
+    imscription_name: str
     baseline_xi_CP: float
     delta_g: float
     results: List[PerturbationResult] = field(default_factory=list)
@@ -183,7 +183,7 @@ class PrimitiveJacobian:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "synthon": self.synthon_name,
+            "imscription": self.imscription_name,
             "baseline_xi_CP_nats": round(self.baseline_xi_CP, 4),
             "delta_g_kJ_mol": self.delta_g,
             "perturbation_results": [r.to_dict() for r in self.results],
@@ -200,7 +200,7 @@ class PrimitiveJacobian:
 
 class PerturbationEngine:
     """
-    Computes the Primitive Jacobian for a synthon.
+    Computes the Primitive Jacobian for a imscription.
 
     For each of the 8 non-stoichiometry primitives, shifts the value by one
     tier (up or down), recomputes ξ_CP, and records Δξ_CP and sensitivity.
@@ -208,7 +208,7 @@ class PerturbationEngine:
     Example::
 
         engine = PerturbationEngine()
-        jacobian = engine.sweep_all(synthon, delta_g=-12.0)
+        jacobian = engine.sweep_all(imscription, delta_g=-12.0)
         print(jacobian.most_sensitive.primitive)   # e.g. "T"
     """
 
@@ -216,18 +216,18 @@ class PerturbationEngine:
     # Internal helpers
     # ------------------------------------------------------------------
 
-    def _mutated(self, synthon: Synthon, primitive: str, new_value) -> Synthon:
-        """Return a shallow copy of synthon with one primitive changed."""
-        s = copy.copy(synthon)
+    def _mutated(self, imscription: Imscription, primitive: str, new_value) -> Imscription:
+        """Return a shallow copy of imscription with one primitive changed."""
+        s = copy.copy(imscription)
         attr = _PRIM_ATTR.get(primitive)
         if attr:
             setattr(s, attr, new_value)
         return s
 
-    def _axiom_violation(self, synthon: Synthon) -> Optional[str]:
+    def _axiom_violation(self, imscription: Imscription) -> Optional[str]:
         """Return the first violated axiom key, or None."""
         try:
-            report = AxiomValidator.validate_all_axioms(synthon)
+            report = AxiomValidator.validate_all_axioms(imscription)
             if report["violations"] > 0:
                 for key, val in report["detailed_results"].items():
                     violated = (
@@ -243,7 +243,7 @@ class PerturbationEngine:
 
     def _perturb_one(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
         primitive: str,
         new_value,
         delta_g: float,
@@ -251,7 +251,7 @@ class PerturbationEngine:
         direction: str,
     ) -> PerturbationResult:
         """Compute a single perturbation result."""
-        mutated = self._mutated(synthon, primitive, new_value)
+        mutated = self._mutated(imscription, primitive, new_value)
         try:
             perturbed_xi = compute_eta_CP(mutated, delta_g).xi_CP
         except Exception:
@@ -261,7 +261,7 @@ class PerturbationEngine:
         axiom = self._axiom_violation(mutated)
         weight = PRIMITIVE_WEIGHTS.get(primitive, 0.05)
 
-        old_str = str(getattr(synthon, _PRIM_ATTR.get(primitive, ""), "?")).split(".")[-1]
+        old_str = str(getattr(imscription, _PRIM_ATTR.get(primitive, ""), "?")).split(".")[-1]
         new_str = str(new_value).split(".")[-1] if new_value is not None else "N/A"
 
         return PerturbationResult(
@@ -281,31 +281,31 @@ class PerturbationEngine:
     # Public API
     # ------------------------------------------------------------------
 
-    def compute_baseline(self, synthon: Synthon, delta_g: float) -> ConstraintPropagationEfficiency:
+    def compute_baseline(self, imscription: Imscription, delta_g: float) -> ConstraintPropagationEfficiency:
         """Compute baseline η_CP / ξ_CP."""
-        return compute_eta_CP(synthon, delta_g)
+        return compute_eta_CP(imscription, delta_g)
 
-    def sweep_all(self, synthon: Synthon, delta_g: float) -> PrimitiveJacobian:
+    def sweep_all(self, imscription: Imscription, delta_g: float) -> PrimitiveJacobian:
         """
         Run a full single-primitive sweep across all perturbable primitives.
 
         For each primitive, tries both up and down shifts; reports whichever
         produces the largest |Δξ_CP|.
         """
-        baseline = self.compute_baseline(synthon, delta_g)
+        baseline = self.compute_baseline(imscription, delta_g)
         xi0 = baseline.xi_CP
 
         perturb_map: List[Tuple[str, Any, list]] = [
-            ("F", synthon.fidelity,           _FIDELITY_TIERS),
-            ("K", synthon.kinetic_character,  _KINETIC_TIERS),
-            ("T", synthon.topology,           _TOPOLOGY_TIERS),
-            ("D", synthon.dimensionality,     _DIM_TIERS),
-            ("R", synthon.recognition_mode,   _RECOGNITION_TIERS),
-            ("P", synthon.polarity,           _POLARITY_TIERS),
-            ("G", synthon.granularity,        _GRANULARITY_TIERS),
+            ("F", imscription.fidelity,           _FIDELITY_TIERS),
+            ("K", imscription.kinetic_character,  _KINETIC_TIERS),
+            ("T", imscription.topology,           _TOPOLOGY_TIERS),
+            ("D", imscription.dimensionality,     _DIM_TIERS),
+            ("R", imscription.recognition_mode,   _RECOGNITION_TIERS),
+            ("P", imscription.polarity,           _POLARITY_TIERS),
+            ("G", imscription.granularity,        _GRANULARITY_TIERS),
         ]
-        if synthon.criticality_phase is not None:
-            perturb_map.append(("Φ", synthon.criticality_phase, _CRITICALITY_TIERS))
+        if imscription.criticality_phase is not None:
+            perturb_map.append(("Φ", imscription.criticality_phase, _CRITICALITY_TIERS))
 
         results: List[PerturbationResult] = []
         fault_prims: List[str] = []
@@ -315,9 +315,9 @@ class PerturbationEngine:
             up = _next_tier(current, tiers)
             down = _prev_tier(current, tiers)
             if up is not None:
-                candidates.append(self._perturb_one(synthon, prim, up, delta_g, xi0, "up"))
+                candidates.append(self._perturb_one(imscription, prim, up, delta_g, xi0, "up"))
             if down is not None:
-                candidates.append(self._perturb_one(synthon, prim, down, delta_g, xi0, "down"))
+                candidates.append(self._perturb_one(imscription, prim, down, delta_g, xi0, "down"))
             if candidates:
                 best = max(candidates, key=lambda r: abs(r.delta_xi_CP))
                 results.append(best)
@@ -328,25 +328,25 @@ class PerturbationEngine:
         results.sort(key=lambda r: abs(r.delta_xi_CP), reverse=True)
 
         return PrimitiveJacobian(
-            synthon_name=synthon.name,
+            imscription_name=imscription.name,
             baseline_xi_CP=xi0,
             delta_g=delta_g,
             results=results,
             fault_primitives=fault_prims,
         )
 
-    def fault_injection(self, synthon: Synthon, delta_g: float) -> Dict[str, Any]:
+    def fault_injection(self, imscription: Imscription, delta_g: float) -> Dict[str, Any]:
         """
         Identify Single Points of Failure (SPOF): primitive changes that
         cause axiom violations or ξ_CP collapse.
         """
-        jacobian = self.sweep_all(synthon, delta_g)
+        jacobian = self.sweep_all(imscription, delta_g)
         spofs = [
             r for r in jacobian.results
             if r.axiom_violated or r.sensitivity == "CRITICAL"
         ]
         return {
-            "synthon": synthon.name,
+            "imscription": imscription.name,
             "baseline_xi_CP_nats": round(jacobian.baseline_xi_CP, 4),
             "single_points_of_failure": [r.to_dict() for r in spofs],
             "fault_primitives": jacobian.fault_primitives,
@@ -356,7 +356,7 @@ class PerturbationEngine:
 
     def find_path_to_target(
         self,
-        synthon: Synthon,
+        imscription: Imscription,
         delta_g: float,
         target_xi_CP: float,
         optimize_primitives: Optional[List[str]] = None,
@@ -372,12 +372,12 @@ class PerturbationEngine:
         Greedily applies the largest-magnitude steps in the required direction
         until the target is reached or all available steps are exhausted.
         """
-        jacobian = self.sweep_all(synthon, delta_g)
+        jacobian = self.sweep_all(imscription, delta_g)
         baseline = jacobian.baseline_xi_CP
 
         if abs(baseline - target_xi_CP) < 1e-6:
             return {
-                "synthon": synthon.name,
+                "imscription": imscription.name,
                 "baseline_xi_CP_nats": round(baseline, 4),
                 "target_xi_CP_nats": target_xi_CP,
                 "achieved_xi_CP_nats": round(baseline, 4),
@@ -420,7 +420,7 @@ class PerturbationEngine:
         reached = (current_xi <= target_xi_CP) if lowering else (current_xi >= target_xi_CP)
 
         return {
-            "synthon": synthon.name,
+            "imscription": imscription.name,
             "baseline_xi_CP_nats": round(baseline, 4),
             "target_xi_CP_nats": target_xi_CP,
             "achieved_xi_CP_nats": round(current_xi, 4),

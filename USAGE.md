@@ -7,7 +7,71 @@ header-includes:
     \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
     \newcommand{\igtext}[1]{{\igfont #1}}
 ---
-# Imscribing Grammar Framework: Comprehensive Usage Guide (v0.5.69)
+# Imscribing Grammar Framework: Comprehensive Usage Guide (v0.5.71)
+
+**Version 0.5.71** — Video rendering CLI · Esoteric Library infrastructure · Tao Te Ching (81 chapters imscribed).
+
+New in v0.5.71:
+
+- **`imscribevideo.py`** — Annotated MP4 renderer for any imscription. Renders 1280×720 at configurable frame duration via matplotlib Agg + ffmpeg pipe. Typographic subscript rendering: base character and subscript drawn as two separate text calls for correct positioning. Modes: `--name` (catalog lookup), `--tuple` (12-primitive string), single `base sub`. Options: `--dur` (seconds per frame), `--fs` (sample rate), `--output`. Pre-rendered MP4s for all 18 standard catalog entries are in `videos/`.
+
+  ```bash
+  python imscribevideo.py --name riemann_hypothesis
+  python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_ő Ω_z" --output ch1.mp4
+  python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
+  ```
+
+- **`esoteric_library/`** — Catalog directory for imscribed esoteric and philosophical texts. Each file is a JSON array in `IG_catalog.json`-compatible format, extended with `number`, `title`, `text`, `tier`, `C_score`, and `notes` fields. The criticality key remains `⊙` (pre-migration) for compatibility with `imscribeaudio.py`.
+
+- **`esoteric_library/tao_te_ching.json`** — All 81 chapters of the Tao Te Ching (Legge 1891 translation, public domain), each with a full 12-primitive imscription derived by grammatical analysis of the verse structure. Structural notes document the reasoning for each coordinate.
+
+  Tier distribution: 10 chapters at `T_inf` (holographic, EP/Frobenius criticality — Chapters 1, 4, 14, 25, 37, 40, 42, 47, 56, 81); 15 chapters at `T_3`/`T_2`; the remainder at `T_1`/`T_0`. Chapter 1 and Chapter 81 differ by only 2 fields (fidelity and kinetics), confirming the bookend structure structurally. Chapter 37 (wu wei) and Chapter 40 (return) are nearest neighbors at $d = 1$.
+
+- **`esoteric_librarian.py`** — Navigation tool for the esoteric library. Commands:
+
+  | Command | Description |
+  |---------|-------------|
+  | `show <catalog> <key>` | Display full imscription, tier, C_score, text, notes |
+  | `list <catalog> [--tier T]` | Tabular list, optionally filtered by tier |
+  | `dist <cat_a> <key_a> <cat_b> <key_b>` | Hamming distance + differing fields |
+  | `near <catalog> <key> [--n N] [--other-catalog C]` | K nearest neighbors within or across catalogs |
+  | `audio <catalog> <key> [--dur D] [-o FILE]` | Sonify via `imscribeaudio.py` |
+  | `video <catalog> <key> [--dur D] [-o FILE]` | Render MP4 via `imscribevideo.py` |
+  | `rewrite <catalog> <key>` | Print address-preserving rewrite prompt |
+
+  Catalog short names: `tao` → `esoteric_library/tao_te_ching.json`; `ig` → `IG_catalog.json`. Any `.json` file in `esoteric_library/` is automatically resolvable by its basename.
+
+- **Adding new texts** — two workflows:
+
+  *Batch* (many sections):
+  ```bash
+  python esoteric_librarian.py scaffold upanishads
+  # → creates esoteric_library/gen_upanishads.py with entry() helper + field reference
+  # Fill in entries, run generator, then navigate with 'list upanishads', 'show upanishads 1', etc.
+  ```
+
+  *Single entry*:
+  ```bash
+  python esoteric_librarian.py add upanishads \
+    --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_S Ω_z" \
+    --name "brihadaranyaka_1_4_10" --number 1 --title "Aham Brahmasmi" \
+    --tier "T_inf" --cscore 0.97 \
+    --text "In the beginning this was Self alone..." \
+    --notes "Self-recognition as the primordial act."
+  ```
+  Creates `esoteric_library/upanishads.json` if it doesn't exist. Cross-catalog distance and `near` work immediately after `add`.
+
+  Confirmed first result: Brihadaranyaka 1.4.10 ("Aham Brahmasmi") is at $d = 0$ from Tao Te Ching Chapter 4 ("The Fountainless") and Chapter 14 ("Manifestation of the Mystery"); at $d = 1$ from Chapter 1. The single differing field is stoichiometry: Σ_S (singular self-recognition) vs Σ_ő (symmetric named/unnamed pair).
+
+**Version 0.5.70** — Phonetic Audio CLI · canonical glyph IDs · `sounds.py` library · `PRIMITIVE_MAP`.
+
+New in v0.5.70:
+
+- **Audio CLI** — `imscribeaudio.py` is now the single entry point for phonetic synthesis. Modes: `--all` (full 49-symbol sequence), `--tuple` (any 12-primitive Imscription), `--name` (catalog lookup), single `base sub` (one symbol). See **Section 4.6** for full reference.
+- **`sounds.py` as library** — synthesis functions, `symbol_list`, `PRIMITIVE_MAP` (49 canonical glyph IDs → `(base, sub)` tuples), `OLD_ID_MAP` (60 old-name aliases), and `resolve_id()` are all importable. Bottom script guarded under `__main__`.
+- **Canonical glyph IDs** — primitive values are now addressed by glyph strings (`Ð_ß`, `⊙_ÿ`, etc.), not human-readable names. Old Lean names (`D_wedge`, `Phi_c`, etc.) remain valid via `OLD_ID_MAP`. The IDs ARE the glyphs.
+- **`⊙` → `⊙` migration** — criticality field in `IG_catalog.json` uses the pre-migration key `⊙`; the audio CLI reads both and normalises automatically.
+- **Character normalisation** — three ID/synthesizer discrepancies are resolved in `PRIMITIVE_MAP`: `Ř_¯` (macron U+00AF) → combining macron (U+0304); `ɢ_^` (caret) → wedge `∧` (U+2227); `Φ_˙` (modifier dot U+02D9) → combining dot (U+0307).
 
 **Version 0.5.69** — Non-Mathematical Navigators (§74–§77) · 1,678 catalog entries · 538+ predictions · 77 formal theorems.
 
@@ -54,7 +118,7 @@ New in v0.5.1:
 
 **Version 0.3.0** — Four new analysis protocol modules: IΓ_PERTURBATION, IΓ_TRAJECTORY, IΓ_ENSEMBLER, IΓ_RETRODESIGN.
 
-**Full Notation**: ⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩  (Ω optional, defaults None for classical synthons)
+**Full Notation**: ⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩  (Ω optional, defaults None for classical imscriptions)
 
 ## 1. Introduction to Imscribing Grammar
 
@@ -64,42 +128,42 @@ The eleven primitives `⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩` are **relationa
 
 This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > ƒ_ð > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + Φ_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
 
-The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unary information generators. Every operation requires at least one additional operand — environment, partner, or target state. You cannot call `tensor(photon)` without a second argument; the algebra returns an error. A synthon's tuple describes its *interaction-ready potential*; the algebra computes only when that potential is actualized against another term.
+The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unary information generators. Every operation requires at least one additional operand — environment, partner, or target state. You cannot call `tensor(photon)` without a second argument; the algebra returns an error. A imscription's tuple describes its *interaction-ready potential*; the algebra computes only when that potential is actualized against another term.
 
 ### What's New in v0.4.1?
 
-**Molecular Domain Catalog — Persistent Synthon Registration** (March 17, 2026):
+**Molecular Domain Catalog — Persistent Imscription Registration** (March 17, 2026):
 
-1. **`imscrbgrmr/domains/molecular/__init__.py`** — `register_molecular_synthons()` added. Nine canonical molecular and supramolecular synthons are now programmatically registered at import time, surviving catalog JSON resets:
+1. **`imscrbgrmr/domains/molecular/__init__.py`** — `register_molecular_imscriptions()` added. Nine canonical molecular and supramolecular imscriptions are now programmatically registered at import time, surviving catalog JSON resets:
 
-   | Synthon | D | T | F | Role |
+   | Imscription | D | T | F | Role |
    |---------|---|---|---|------|
-   | `nitroso_radical_redox_synthon_pair` | D_∞ | T_⋈ | F_ℏ | Temporal autocatalytic redox cycle; Frank-model Factor 7 fires (score > 0.3); start point for criticality-ascent designs |
+   | `nitroso_radical_redox_imscription_pair` | D_∞ | T_⋈ | F_ℏ | Temporal autocatalytic redox cycle; Frank-model Factor 7 fires (score > 0.3); start point for criticality-ascent designs |
    | `amide_dimer` | D_∧ | T_⋈ | ƒ_ð | N–H···O=C H-bonded dimer; ƒ_ð weaker than carboxylic acid dimer (F_ℏ); lattice floor/ceiling pair for design 03 |
-   | `nitroso_radical_anion_π_cavitand_cage_synthon` | D_△ | Þ_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, Ç_@ |
-   | `nitroso_radical_calixarene_anion_π_sandwich_synthon` | D_△ | Þ_bowl | F_ℏ | Calixarene bowl; open cup, Þ_bowl < Þ_cage in ordinal (fallback partner in or-strategy) |
-   | `nitroso_radical_crown_ether_host_guest_synthon` | D_△ | Þ_cage | ƒ_ð | Crown ether host–guest; flexible macrocycle → ƒ_ð (fidelity bottleneck partner in design 12) |
-   | `nitroso_radical_anion_π_cryptand_cage_synthon` | D_△ | Þ_cage | F_ℏ | Cryptand cage; 3D bicyclic preorganisation → F_ℏ (design 16 start) |
-   | `nitroso_radical_cucurbituril_anion_rotaxane_synthon` | D_△ | Þ_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (Ç_@); tensor partner in designs 12 and 16 |
-   | `synthon_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | ƒ_ð | CH₃⁻ carbanion; Φ_minus; retrodesign target in designs 08 and 10 |
-   | `synthon_methyl_cation_electrophile_CH3` | D_∧ | T_\| | ƒ_ð | CH₃⁺ carbocation; Φ_plus; tensor partner for anion-cation MI demonstration (design 10) |
+   | `nitroso_radical_anion_π_cavitand_cage_imscription` | D_△ | Þ_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, Ç_@ |
+   | `nitroso_radical_calixarene_anion_π_sandwich_imscription` | D_△ | Þ_bowl | F_ℏ | Calixarene bowl; open cup, Þ_bowl < Þ_cage in ordinal (fallback partner in or-strategy) |
+   | `nitroso_radical_crown_ether_host_guest_imscription` | D_△ | Þ_cage | ƒ_ð | Crown ether host–guest; flexible macrocycle → ƒ_ð (fidelity bottleneck partner in design 12) |
+   | `nitroso_radical_anion_π_cryptand_cage_imscription` | D_△ | Þ_cage | F_ℏ | Cryptand cage; 3D bicyclic preorganisation → F_ℏ (design 16 start) |
+   | `nitroso_radical_cucurbituril_anion_rotaxane_imscription` | D_△ | Þ_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (Ç_@); tensor partner in designs 12 and 16 |
+   | `imscription_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | ƒ_ð | CH₃⁻ carbanion; Φ_minus; retrodesign target in designs 08 and 10 |
+   | `imscription_methyl_cation_electrophile_CH3` | D_∧ | T_\| | ƒ_ð | CH₃⁺ carbocation; Φ_plus; tensor partner for anion-cation MI demonstration (design 10) |
 
 2. **Design suite: all 20 `.syn` scripts execute without `[ERROR]`** — 18 succeed, 2 are intentional F-floor pedagogical demonstrations (designs 01 and 04). All previously `[ERROR]` failures caused by missing catalog entries are now resolved.
 
-3. **`register_molecular_synthons()` wired to `imscrbgrmr/__init__.py`** — auto-invoked on `import imscrbgrmr`, idempotent. Registration order: cross-domain → quantum → molecular.
+3. **`register_molecular_imscriptions()` wired to `imscrbgrmr/__init__.py`** — auto-invoked on `import imscrbgrmr`, idempotent. Registration order: cross-domain → quantum → molecular.
 
 ### What's New in v0.3.0?
 
 **Four Protocol Modules** (March 15, 2026):
 
 1. **IΓ_PERTURBATION** (`imscrbgrmr/perturbation.py`):
-   - `PerturbationEngine.sweep_all(synthon, delta_g)` — primitive Jacobian: Δξ_CP for every primitive ±1 tier
-   - `PerturbationEngine.fault_injection(synthon, delta_g)` — single-point-of-failure analysis
-   - `PerturbationEngine.find_path_to_target(synthon, delta_g, target_xi_CP, optimize_primitives)` — minimum-step tuning path
+   - `PerturbationEngine.sweep_all(imscription, delta_g)` — primitive Jacobian: Δξ_CP for every primitive ±1 tier
+   - `PerturbationEngine.fault_injection(imscription, delta_g)` — single-point-of-failure analysis
+   - `PerturbationEngine.find_path_to_target(imscription, delta_g, target_xi_CP, optimize_primitives)` — minimum-step tuning path
    - CLI: `imscribe perturb sweep <name> --delta-g <float>`
 
 2. **IΓ_TRAJECTORY** (`imscrbgrmr/trajectory.py`):
-   - `TemporalSynthonAgent` — encode D_∞ systems as step sequences, validate Axiom 6 compliance
+   - `TemporalImscriptionAgent` — encode D_∞ systems as step sequences, validate Axiom 6 compliance
    - Three checks: S mass balance, Axiom 4 (D_∞ or R_‡), Ç_Ù/ΔG‡>100
    - CLI: `imscribe trajectory validate --steps <names> --reset <name>`
 
@@ -119,11 +183,11 @@ See **Section 7** for full protocol API documentation and CLI reference. See **S
 
 **Phase 3a DSL + Agent Fixes + Topology Symbols** (March 16, 2026):
 
-1. **`.syn` YAML DSL** (`imscrbgrmr/syn_runner.py`): Design programs compiled to `SynthonM` pipelines. Supported step types: `join`, `meet`, `tensor`, `lift`, `path`, `assert`, `bind`, `or`. The `or:` step implements MonadPlus fallback (`strategy_or`). Post-hoc `output: assert:` block checks WriterT-level cost (`total_delta_xi < N`, `steps <= N`, `criticality_ok`).
+1. **`.syn` YAML DSL** (`imscrbgrmr/syn_runner.py`): Design programs compiled to `ImscriptionM` pipelines. Supported step types: `join`, `meet`, `tensor`, `lift`, `path`, `assert`, `bind`, `or`. The `or:` step implements MonadPlus fallback (`strategy_or`). Post-hoc `output: assert:` block checks WriterT-level cost (`total_delta_xi < N`, `steps <= N`, `criticality_ok`).
 
 2. **`imscribe run <file.syn>`**: New CLI command. `--format text|json`, `--save PATH`, `--dry-run`. Runs `.syn` scripts and reports step-by-step trace plus output assertions.
 
-3. **Agent primitive awareness**: Both `axiom_guided_generator` and `synthon_generator_agent` now declare **ten primitives** (D, T, R, P, F, K, G, Γ, Φ, S). `criticality_phase` parser defaults to `φ̂_ž` instead of returning `None`. Topology block lists all 7 values with symbols.
+3. **Agent primitive awareness**: Both `axiom_guided_generator` and `imscribe_generator_agent` now declare **ten primitives** (D, T, R, P, F, K, G, Γ, Φ, S). `criticality_phase` parser defaults to `⊙_ž` instead of returning `None`. Topology block lists all 7 values with symbols.
 
 4. **New topology symbols**: Three acyclic connectivity classes now have explicit symbols:
    - `T_|` (LINEAR) — unbranched linear chain, no junction nodes
@@ -131,7 +195,7 @@ See **Section 7** for full protocol API documentation and CLI reference. See **S
    - `T_∈` (NETWORK) — multiply-connected, cycles permitted without cage closure
    All three are registered in `Topology.from_symbol()`.
 
-5. **Notation always includes Φ**: `to_notation()` defaults to `φ̂_ž` when `criticality_phase` is unset; S appended as 10th position when set. Notation is always a 9- or 10-element tuple.
+5. **Notation always includes Φ**: `to_notation()` defaults to `⊙_ž` when `criticality_phase` is unset; S appended as 10th position when set. Notation is always a 9- or 10-element tuple.
 
 ### What's New in v0.3.3?
 
@@ -186,7 +250,7 @@ See **Section 8** for full reference.
 2. **Axiom 6: Temporal Grounding** (Fix 2 — HIGH, extended v0.3.3):
    - D_∞ requires either a named discrete reset OR a continuously supplied dissipative flux (see below)
    - **Discrete reset** (`reset_type="discrete"`): validates `cycle_steps` ≥ 2, or `axiom6_grounding` block with `initial_state`, `transformation`, `work_performed`, `reset_mechanism`
-   - **Continuous dissipative** (`reset_type="continuous"`): validates `driving_gradient.description` and `driving_gradient.coupling` in `synthon.grounding["reset"]`
+   - **Continuous dissipative** (`reset_type="continuous"`): validates `driving_gradient.description` and `driving_gradient.coupling` in `imscription.grounding["reset"]`
    - Keyword scan (`AXIOM_6_RESEÞ_INDICATORS`, `AXIOM_6_PROCESΣ_INDICATORS`) is fallback only when no structured block is present
 
 3. **Axiom 7: Cyclic Topology Grounding** (Fix 3 — HIGH):
@@ -216,38 +280,38 @@ See **Section 8** for full reference.
 - Axioms 6-7: Grounding axioms (IΓ_FIXES.md)
 - Axiom 8: R physics match (R must match actual interaction physics)
 
-Imscribing Grammar is a groundbreaking Python framework that brings the theoretical elegance of the **Unified Synthonicon** to practical application. At its core, Imscribing Grammar provides a computational platform for systematically analyzing, designing, and predicting the behavior of self-organizing chemical systems. It unifies disparate fields—from traditional molecular organic chemistry to complex supramolecular assemblies and dynamic temporal processes—under a single, coherent conceptual umbrella.
+Imscribing Grammar is a groundbreaking Python framework that brings the theoretical elegance of the **Unified Imscriptiveon** to practical application. At its core, Imscribing Grammar provides a computational platform for systematically analyzing, designing, and predicting the behavior of self-organizing chemical systems. It unifies disparate fields—from traditional molecular organic chemistry to complex supramolecular assemblies and dynamic temporal processes—under a single, coherent conceptual umbrella.
 
 The framework's primary goal is to bridge the understanding gap between these domains by employing a shared language: the **Ten Primitives** (Dimensionality, Topology, Recognition Mode, Polarity, Fidelity, Kinetic Character, Granularity, Interaction Grammar, Criticality Phase, and Stoichiometry). This unified notation allows researchers and developers to describe any self-organizing chemical motif, regardless of its scale or mechanism, with unprecedented precision.
 
 **Key Benefits of Imscribing Grammar:**
 
 *   **Unified Language:** Provides a common vocabulary for describing chemical systems across molecular, supramolecular, and temporal scales, fostering interdisciplinary insights.
-*   **Predictive Power:** Enables the prediction of system behavior, compatibility, and efficiency based on the fundamental properties of its constituent synthons.
-*   **Axiom Validation:** Automatically validates synthons against five composition axioms from QUANTIG.md Section IV.
+*   **Predictive Power:** Enables the prediction of system behavior, compatibility, and efficiency based on the fundamental properties of its constituent imscriptions.
+*   **Axiom Validation:** Automatically validates imscriptions against five composition axioms from QUANTIG.md Section IV.
 *   **AI-Driven Design:** The discrete and quantifiable nature of its primitives makes Imscribing Grammar an ideal foundation for AI and machine learning applications in chemical synthesis and materials discovery. By encoding chemical knowledge in a structured format, it facilitates generative design and autonomous chemical research.
 
-### Core Philosophy: Synthons as Constraint Propagation Units
+### Core Philosophy: imscriptions as Constraint Propagation Units
 
-At the heart of Imscribing Grammar lies the concept of a **Synthon** as a "constraint propagation unit." Traditionally, synthons were idealized fragments used in retrosynthetic analysis. Imscribing Grammar extends this definition: a Synthon is understood as a minimal subsystem that **encodes a specific set of constraints**. When this synthon interacts with a compatible environment via a defined recognition mode, it actively *reduces the system's degrees of freedom*. This reduction reliably steers the overall system towards a predictable target state—be it a specific molecular connectivity, a complex supramolecular geometry, or a precise temporal sequence.
+At the heart of Imscribing Grammar lies the concept of a **Imscription** as a "constraint propagation unit." Traditionally, imscriptions were idealized fragments used in retrosynthetic analysis. Imscribing Grammar extends this definition: a Imscription is understood as a minimal subsystem that **encodes a specific set of constraints**. When this imscription interacts with a compatible environment via a defined recognition mode, it actively *reduces the system's degrees of freedom*. This reduction reliably steers the overall system towards a predictable target state—be it a specific molecular connectivity, a complex supramolecular geometry, or a precise temporal sequence.
 
-This information-theoretic perspective positions synthons not merely as static building blocks, but as dynamic agents that guide assembly and transformation by influencing the probabilistic landscape of chemical outcomes. In essence, synthons act as local rules that propagate their influence globally, analogous to constraint propagation algorithms in computer science, where local rules reduce a vast search space to a manageable set of solutions.
+This information-theoretic perspective positions imscriptions not merely as static building blocks, but as dynamic agents that guide assembly and transformation by influencing the probabilistic landscape of chemical outcomes. In essence, imscriptions act as local rules that propagate their influence globally, analogous to constraint propagation algorithms in computer science, where local rules reduce a vast search space to a manageable set of solutions.
 
 ### The Ten Primitives: A Unified Language
 
-The Unified Synthonicon is built upon ten primitives, each representing a crucial aspect of a synthon's behavior and function. These primitives form a standardized, extensible vocabulary:
+The Unified Imscriptiveon is built upon ten primitives, each representing a crucial aspect of a imscription's behavior and function. These primitives form a standardized, extensible vocabulary:
 
 | Primitive                 | Symbol              | Description                                                  | Key Purpose in Imscribing Grammar                                   |
 | :------------------------ | :------------------ | :----------------------------------------------------------- | :------------------------------------------------------------ |
-| **Dimensionality**        | $D$ ($D_{\text{wynn}}, D_{\bigtriangleup}, D_{\text{invomega}}$) | The coordinate set along which the synthon operates.         | Defines the operational scale (molecular, supramolecular, temporal). |
-| **Topology**              | $T$ ($T_{\text{bullseye}}, T_{\ggg}, T_{\square}, T_{\square\square}, T_{|}, T_{\perp}, T_{\text{invscr}}$) | The internal connectivity pattern of the synthon's minimal motif. | Characterizes structural arrangements (cyclic, chain, hub/node, cage, linear, branched, network). |
-| **Recognition Mode**      | $R$ ($R_{\subseteq}, R_{\supseteq}, R_{\ddagger}, R_{\Leftrightarrow}$) | The physical mechanism of interaction.                       | Specifies how synthons interact (covalent, non-covalent, dynamic). |
+| **Dimensionality**        | $D$ ($D_{\text{wynn}}, D_{\bigtriangleup}, D_{\text{invomega}}$) | The coordinate set along which the imscription operates.         | Defines the operational scale (molecular, supramolecular, temporal). |
+| **Topology**              | $T$ ($T_{\text{bullseye}}, T_{\ggg}, T_{\square}, T_{\square\square}, T_{|}, T_{\perp}, T_{\text{invscr}}$) | The internal connectivity pattern of the imscription's minimal motif. | Characterizes structural arrangements (cyclic, chain, hub/node, cage, linear, branched, network). |
+| **Recognition Mode**      | $R$ ($R_{\subseteq}, R_{\supseteq}, R_{\ddagger}, R_{\Leftrightarrow}$) | The physical mechanism of interaction.                       | Specifies how imscriptions interact (covalent, non-covalent, dynamic). |
 | **Polarity**              | $P$ ($P+, P-, P_{\text{pipevar}}$) | The directional character of the interaction.                | Dictates partner preference and orientation (acceptor, donor, self-complementary). |
 | **Fidelity**              | $F$ ($F_{\text{hardsign}}, F_{\text{dh}}, F_{\text{beltl}}$) | Thermodynamic reliability anchored to $\xi_{CP}$. Tiers: HIGH ≤ 8.5 nats · MEDIUM 8.5–11.0 nats · LOW > 11.0 nats. | Quantifies the predictability and robustness of an interaction. |
 | **Kinetic Character**     | $K$ ($K_{\text{frtailgamma}}, K_{\text{turnm}}, K_{\text{schwa}}, K_{\text{teshlig}}$) | Activation barrier and pathway multiplicity. | Distinguishes thermodynamic fidelity from operational accessibility. |
-| **Granularity**           | $G$ ($G_{\text{beta}}, G_{\text{gamma}}, G_{\text{revapostrophe}}$) | The scale of control exerted by the synthon.                 | Defines the scope of influence (local, mesoscale, global).    |
+| **Granularity**           | $G$ ($G_{\text{beta}}, G_{\text{gamma}}, G_{\text{revapostrophe}}$) | The scale of control exerted by the imscription.                 | Defines the scope of influence (local, mesoscale, global).    |
 | **Interaction Grammar**   | $\Gamma$ ($\Gamma_{\text{corner}}, \Gamma_{\text{spleftarrow}}, \Gamma_{\to}$) × (SPECIFIC · SELECTIVE · BROAD) | The logic governing partner selection.                       | Determines the specificity and ordering of binding. |
-| **Criticality Phase**     | $\Phi$ ($\Phi_{\text{softsign}}, \Phi_{\text{ctyogh}}, \Phi_{\text{upstep}}$) | Phase relative to the G–D criticality locus. | Encodes whether the synthon exhibits scale-free behavior (Axiom 5). |
+| **Criticality Phase**     | $\Phi$ ($\Phi_{\text{softsign}}, \Phi_{\text{ctyogh}}, \Phi_{\text{upstep}}$) | Phase relative to the G–D criticality locus. | Encodes whether the imscription exhibits scale-free behavior (Axiom 5). |
 | **Stoichiometry**         | $S$ (e.g. `"1:1"`, `"2:1"`, `"n:m"`) | Valency ratio of the recognition event; constrains T and P. Weight 0.08 in analogy scoring. | Distinguishes homodimers from host–guest and polymeric assemblies. |
 
 Together, these primitives are used to generate the full **Unified Notation**: `⟨D; T; R; P; F; K; G; Γ; Φ; S⟩`. This notation is the cornerstone of Imscribing Grammar, enabling quantitative analysis and cross-domain comparisons.
@@ -360,22 +424,22 @@ You should see a message indicating that all tests passed. If any tests fail, pl
 
 The Imscribing Grammar framework is organized into several key directories:
 
-*   `imscrbgrmr/`: Contains the core Python modules for the Unified Synthonicon, including primitive definitions, the Synthon dataclass, catalog, constraints engine, and thermodynamics calculations.
+*   `imscrbgrmr/`: Contains the core Python modules for the Unified Imscriptiveon, including primitive definitions, the Imscription dataclass, catalog, constraints engine, and thermodynamics calculations.
 *   `imscrbgrmr/domains/`: Houses domain-specific agents (molecular, supramolecular, temporal, hybrid) that leverage the core framework for specialized analyses.
 *   `framework/`: Includes components of the underlying AjintK multi-agent framework, providing utilities for agent orchestration and communication.
 *   `examples/`: Demonstrative scripts showing how to use various parts of the Imscribing Grammar
-*   `QUANTIG.md`: The foundational theoretical document detailing the Unified Synthonicon.
+*   `QUANTIG.md`: The foundational theoretical document detailing the Unified Imscriptiveon.
 *   `README.md`: General project information and quick start guide.
 *   `requirements.txt`: Lists all Python dependencies.
 *   `test_integration.py`: The suite of integration tests.
 
 ## 3. Core Concepts: The Ten Primitives in Detail
 
-The Unified Synthonicon framework categorizes the fundamental properties of chemical interactions into ten primitives. Primitives 1–9 are encoded as Python `Enum` classes; primitive 10 (S, Stoichiometry) is a string field with category-aware similarity grading and Pass 4 audit enforcement. Together they form the standardized language for describing, comparing, and predicting synthon behavior across molecular, supramolecular, and temporal domains.
+The Unified Imscriptiveon framework categorizes the fundamental properties of chemical interactions into ten primitives. Primitives 1–9 are encoded as Python `Enum` classes; primitive 10 (S, Stoichiometry) is a string field with category-aware similarity grading and Pass 4 audit enforcement. Together they form the standardized language for describing, comparing, and predicting imscription behavior across molecular, supramolecular, and temporal domains.
 
 ### 3.1. Dimensionality (D)
 
-Dimensionality specifies the coordinate set or "space" along which a synthon primarily operates. It helps define the context and scale of the chemical system under consideration. The `Dimensionality` enum can also represent hybrid systems that span multiple domains.
+Dimensionality specifies the coordinate set or "space" along which a imscription primarily operates. It helps define the context and scale of the chemical system under consideration. The `Dimensionality` enum can also represent hybrid systems that span multiple domains.
 
 *   **Enum Members**:
     *   `MOLECULAR` (`"Ð_ß"` or `"D_∧"`): Point-like reactivity, typically involving individual atoms or small molecules.
@@ -415,7 +479,7 @@ Dimensionality specifies the coordinate set or "space" along which a synthon pri
 
 ### 3.2. Topology (T)
 
-Topology describes the internal connectivity pattern or spatial arrangement within the synthon's minimal motif. It characterizes the geometric scaffolding or network structure formed by the interacting components.
+Topology describes the internal connectivity pattern or spatial arrangement within the imscription's minimal motif. It characterizes the geometric scaffolding or network structure formed by the interacting components.
 
 *   **Enum Members**:
     *   `CYCLIC_BOWTIE` (`"Þ_ò"` or `"T_⋈"`): Cyclic motifs, like hydrogen-bonded dimers (e.g., carboxylic acid dimer) or catalytic cycles.
@@ -456,7 +520,7 @@ Topology describes the internal connectivity pattern or spatial arrangement with
 
 ### 3.3. Recognition Mode (R)
 
-Recognition Mode defines the specific physical mechanism by which synthons interact and recognize each other, enabling reliable propagation of information or structure.
+Recognition Mode defines the specific physical mechanism by which imscriptions interact and recognize each other, enabling reliable propagation of information or structure.
 
 *   **Enum Members**:
     *   `COVALENT` (`"Ř_subset"` or `"R_⊆"`): Involves the formation of strong, directional covalent bonds.
@@ -525,7 +589,7 @@ Polarity captures the directional character of the interaction, dictating how co
 
 ### 3.5. Fidelity (F)
 
-Fidelity provides a nuanced measure of a synthon's reliability, predictability, and robustness. It quantifies how consistently a synthon will perform its intended function under given conditions. Fidelity is domain-dependent and can be quantified differently (e.g., bond dissociation energy, interaction energy, fidelity per cycle).
+Fidelity provides a nuanced measure of a imscription's reliability, predictability, and robustness. It quantifies how consistently a imscription will perform its intended function under given conditions. Fidelity is domain-dependent and can be quantified differently (e.g., bond dissociation energy, interaction energy, fidelity per cycle).
 
 *   **Enum Members**:
     *   `HIGH` (`"ƒ_ż"` or `"F_ℏ"`): Dominant, highly reliable, geometry-enforcing interactions. ξ_CP ≤ 8.5 nats. In supramolecular host–guest systems: Ka ≳ 10⁹ M⁻¹ (e.g., CB[7]·ferrocene-ammonium, Ka ≈ 3×10¹² M⁻¹). Represents strong constraint.
@@ -567,7 +631,7 @@ Fidelity provides a nuanced measure of a synthon's reliability, predictability, 
 
 ### 3.6. Granularity (G)
 
-Granularity defines the scale of control or influence exerted by the synthon within a larger system. It describes whether a synthon dictates organization locally, at an intermediate motif level, or globally across a network.
+Granularity defines the scale of control or influence exerted by the imscription within a larger system. It describes whether a imscription dictates organization locally, at an intermediate motif level, or globally across a network.
 
 *   **Enum Members**:
     *   `LOCAL` (`"Γ_β"` or `"G_ב"`): Control at a very confined scale, typically involving a single bond or interaction.
@@ -606,7 +670,7 @@ Granularity defines the scale of control or influence exerted by the synthon wit
 
 ### 3.7. Interaction Grammar ($\Gamma$)
 
-Interaction Grammar governs the logic of partner selection for a synthon. It describes the specificity or promiscuity of its interactions, from highly selective binding to broad, non-specific recognition.
+Interaction Grammar governs the logic of partner selection for a imscription. It describes the specificity or promiscuity of its interactions, from highly selective binding to broad, non-specific recognition.
 
 *   **Enum Members**:
     *   `SPECIFIC` (`"ɢ_otimes"` or `"Γ_⊗"`): Selects one highly specific partner, akin to a lock-and-key mechanism.
@@ -641,7 +705,7 @@ Interaction Grammar governs the logic of partner selection for a synthon. It des
 
 ### 3.8. Kinetic Character (K)
 
-Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A synthon can be F_ℏ (high fidelity) but Ç_@ (kinetically inaccessible), or ƒ_ð but Ç_-.
+Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A imscription can be F_ℏ (high fidelity) but Ç_@ (kinetically inaccessible), or ƒ_ð but Ç_-.
 
 *   **Enum Members**:
     *   `FAST` (`"Ç_-"`): ΔG‡ < 60 kJ/mol; spontaneous on experimental timescales. Accessibility score: 0.95.
@@ -654,12 +718,12 @@ Kinetic Character encodes the activation barrier and pathway multiplicity for co
 
 ### 3.9. Criticality Phase (Φ)
 
-Criticality Phase encodes the synthon's position relative to the G–D criticality locus.
+Criticality Phase encodes the imscription's position relative to the G–D criticality locus.
 
 *   **Enum Members**:
-    *   `SUBCRITICAL` (`"φ̂_ž"`): G and D are demonstrably independent. Default assignment.
-    *   `CRITICAL` (`"φ̂_ÿ"`): At the criticality locus — ξ→∞, scale-free behavior, G/D degenerate (Axiom 5).
-    *   `SUPERCRITICAL` (`"φ̂_Ţ"`): Post-assembly state where synthon identity is absorbed into the assembled material.
+    *   `SUBCRITICAL` (`"⊙_ž"`): G and D are demonstrably independent. Default assignment.
+    *   `CRITICAL` (`"⊙_ÿ"`): At the criticality locus — ξ→∞, scale-free behavior, G/D degenerate (Axiom 5).
+    *   `SUPERCRITICAL` (`"⊙_Ţ"`): Post-assembly state where imscription identity is absorbed into the assembled material.
 
 *   **Criticality probe** (v2.2+): Use `imscribe criticality-probe <name>` to score Φ_c candidacy. The probe now reports:
     *   `z_eff` — dynamic exponent (diverges logarithmically for Varma QXY class; = 1.33 for 2D percolation)
@@ -679,10 +743,10 @@ Criticality Phase encodes the synthon's position relative to the G–D criticali
     | 7 | D_∞ + T_⋈ + Φ_DA + F_ℏ | 0.25 | Frank-model (classical bifurcation) |
     | 8 | **G_ℵ + F_ℏ + Ç_Ù + ¬D_∞** | **0.20** | **Quantum criticality (TFI/heavy-fermion)** |
 
-    Factor 8 (v0.4.0) fires when a synthon simultaneously has global granularity, quantum fidelity, and trap-kinetics, but **lacks** D_∞ temporality — the signature of a quantum critical point without a classical order parameter. Falsifiable prediction: susceptibility χ(T→0) ~ T^{-γ}. *Identified as missing when probing the spin singlet and qubit synthons, whose criticality fingerprint is orthogonal to Factors 1–7.*
+    Factor 8 (v0.4.0) fires when a imscription simultaneously has global granularity, quantum fidelity, and trap-kinetics, but **lacks** D_∞ temporality — the signature of a quantum critical point without a classical order parameter. Falsifiable prediction: susceptibility χ(T→0) ~ T^{-γ}. *Identified as missing when probing the spin singlet and qubit imscriptions, whose criticality fingerprint is orthogonal to Factors 1–7.*
 
     ```bash
-    imscribe criticality-probe my_synthon --degeneracy-type
+    imscribe criticality-probe my_imscription --degeneracy-type
     imscribe criticality-probe --batch --export-candidates top20.json
     ```
 
@@ -716,13 +780,13 @@ Stoichiometry encodes the valency ratio of the recognition event — the molar r
 
 *   **Python**:
     ```python
-    synthon = Synthon(name="my_dimer", ..., stoichiometry="1:1")
-    print(synthon.stoichiometry)  # "1:1"
+    imscription = Imscription(name="my_dimer", ..., stoichiometry="1:1")
+    print(imscription.stoichiometry)  # "1:1"
     ```
 
 ### 3.11. Topological Protection Index (Ω) — 11th Primitive (v0.4.0)
 
-Ω encodes the Altland–Zirnbauer / K-theory topological classification of a synthon. It is an **optional field** that defaults to `None` for all classical (non-topological) synthons. When set, it appears as the 11th element of the tuple notation: `⟨…; S; Ω⟩`.
+Ω encodes the Altland–Zirnbauer / K-theory topological classification of a imscription. It is an **optional field** that defaults to `None` for all classical (non-topological) imscriptions. When set, it appears as the 11th element of the tuple notation: `⟨…; S; Ω⟩`.
 
 *   **Enum**: `TopoIndex` (importable from `imscrbgrmr`)
 
@@ -745,9 +809,9 @@ Stoichiometry encodes the valency ratio of the recognition event — the molar r
 
 *   **Usage**:
     ```python
-    from imscrbgrmr import TopoIndex, Synthon
+    from imscrbgrmr import TopoIndex, Imscription
 
-    kitaev_chain = Synthon(
+    kitaev_chain = Imscription(
         name="kitaev_chain",
         ...,
         topo_index=TopoIndex.NON_ABELIAN,   # Ω_NA — Majorana edge modes
@@ -765,16 +829,16 @@ Stoichiometry encodes the valency ratio of the recognition event — the molar r
     Ω (TopoIndex)   Ω_NA   Non-Abelian anyonic · protection_strength=4
     ```
 
-*   *Identified as missing when encoding the five quantum particle synthons (photon/proton/electron/spin/qubit). The framework had no way to distinguish a trivially gapped insulator from a topological insulator or non-Abelian fractional QH state — the distinction is operationally essential for quantum information protection arguments (v0.4.0).*
+*   *Identified as missing when encoding the five quantum particle imscriptions (photon/proton/electron/spin/qubit). The framework had no way to distinguish a trivially gapped insulator from a topological insulator or non-Abelian fractional QH state — the distinction is operationally essential for quantum information protection arguments (v0.4.0).*
 
 ## 4. Command Line Interface (CLI)
 
-Imscribing Grammar provides a powerful command-line interface for rapid analysis and exploration of synthons. The CLI is accessible via `main.py` or the `imscrbgrmr` command (if installed as a package).
+Imscribing Grammar provides a powerful command-line interface for rapid analysis and exploration of imscriptions. The CLI is accessible via `main.py` or the `imscrbgrmr` command (if installed as a package).
 
 ### 4.1. Core Commands
 
 #### `analyze`
-Analyze a synthon by its name or a raw notation string.
+Analyze a imscription by its name or a raw notation string.
 
 **Usage:**
 ```bash
@@ -787,7 +851,7 @@ python3 main.py analyze carboxylic_acid_dimer
 ```
 
 #### `catalog list`
-List all synthons currently registered in the global catalog.
+List all imscriptions currently registered in the global catalog.
 
 **Usage:**
 ```bash
@@ -800,7 +864,7 @@ python3 main.py catalog list --domain temporal
 ```
 
 #### `thermo`
-Calculate thermodynamic metrics ($\eta_{CP}$ and $\xi_{CP}$) for a registered synthon.
+Calculate thermodynamic metrics ($\eta_{CP}$ and $\xi_{CP}$) for a registered imscription.
 
 **Usage:**
 ```bash
@@ -813,16 +877,16 @@ python3 main.py thermo carboxylic_acid_dimer --delta-g -12.0
 ```
 
 #### `check`
-Check the compatibility between two synthons.
+Check the compatibility between two imscriptions.
 
 **Usage:**
 ```bash
-python3 main.py check [SYNTHON_A] [SYNTHON_B]
+python3 main.py check [imscription_A] [imscription_B]
 ```
 
 **Example:**
 ```bash
-python3 main.py check enolate_synthon carbonyl_synthon
+python3 main.py check enolate_imscription carbonyl_imscription
 ```
 
 ### 4.2. Catalog Audit Command
@@ -877,7 +941,7 @@ imscribe audit --status unverified --auto-flag
 **Understanding the output:**
 
 The command prints a Rich table with columns:
-- **Synthon** — catalog entry name
+- **Imscription** — catalog entry name
 - **Domain** — molecular / supramolecular / temporal / speculative
 - **Grounding Status** — full / partial / override / unverified / flagged_for_review
 - **Failed Primitives** — primitives that failed grounding checks
@@ -885,9 +949,9 @@ The command prints a Rich table with columns:
 
 **Axiom 6 check logic (updated v0.3.3 — discrete/continuous):**
 
-The audit calls `AxiomValidator.validate_axiom6_temporal_grounding(synthon)` which checks in priority order:
+The audit calls `AxiomValidator.validate_axiom6_temporal_grounding(imscription)` which checks in priority order:
 
-1. **Structured block** — `synthon.grounding["reset"]` (persisted in catalog JSON, survives reload):
+1. **Structured block** — `imscription.grounding["reset"]` (persisted in catalog JSON, survives reload):
    - `type = "discrete"`: requires `cycle_steps` list ≥ 2, **or** `axiom6_grounding` metadata block
    - `type = "continuous"`: requires `driving_gradient.description` + `driving_gradient.coupling`
 2. **Keyword scan fallback** — only when no structured block exists. Scans description/reasoning for `AXIOM_6_RESEÞ_INDICATORS` + `AXIOM_6_PROCESΣ_INDICATORS`; both must be present.
@@ -897,7 +961,7 @@ The audit calls `AxiomValidator.validate_axiom6_temporal_grounding(synthon)` whi
 ```python
 from imscrbgrmr import global_catalog
 
-s = global_catalog.get("my_dissipative_synthon")
+s = global_catalog.get("my_dissipative_imscription")
 
 # Continuous (dissipative, far-from-equilibrium):
 s.grounding["reset"] = {
@@ -943,7 +1007,7 @@ imscribe info-bits --calibrate
 imscribe info-bits --calibrate --solvent chloroform
 imscribe info-bits --calibrate --solvent water
 
-# Single synthon
+# Single imscription
 imscribe info-bits carboxylic_acid_dimer
 imscribe info-bits triple_hbond_array --solvent THF
 ```
@@ -962,11 +1026,11 @@ imscribe info-bits triple_hbond_array --solvent THF
 
 ```bash
 # Single entry
-imscribe criticality-probe my_synthon
-imscribe criticality-probe my_synthon --degeneracy-type
+imscribe criticality-probe my_imscription
+imscribe criticality-probe my_imscription --degeneracy-type
 
 # With measured correlation lengths (Varma QXY test)
-imscribe criticality-probe my_synthon --xi-r 6.2 --xi-tau 1.8e14
+imscribe criticality-probe my_imscription --xi-r 6.2 --xi-tau 1.8e14
 
 # Batch mode: scan all Φ_c / T_⋈+D_∞ / steric-cliff candidacy entries
 imscribe criticality-probe --batch
@@ -1009,9 +1073,9 @@ imscribe catalog auto-stoichiometry             # apply (up to 500 entries)
 imscribe catalog auto-stoichiometry --limit 2000  # larger batch
 
 # Analogy search with stoichiometry flags
-imscribe analogies my_synthon --stoichiometry-aware   # raises S weight to 0.12
-imscribe analogies my_synthon --critical-only          # pre-filter by Φ_c score > 0.5
-imscribe analogies my_synthon --stoichiometry-aware --critical-only
+imscribe analogies my_imscription --stoichiometry-aware   # raises S weight to 0.12
+imscribe analogies my_imscription --critical-only          # pre-filter by Φ_c score > 0.5
+imscribe analogies my_imscription --stoichiometry-aware --critical-only
 ```
 
 ### 4.6. Experimental Validation Case Studies *(v0.3.3)*
@@ -1080,22 +1144,89 @@ imscribe criticality-probe proline_aldol_cycle --xi-r 6.2 --xi-tau 1.8e14
 - Score: **0.380** — Φ_sub (subcritical)
 - Structural prediction: criticality would require ξ_r ≥ 32 lattice units (~48 Å correlation), incompatible with observed enamine geometry
 
-## 5. Building and Managing Synthons
+### 4.6. Audio CLI (`imscribeaudio.py`)
 
-The core data structure in Imscribing Grammar is the `Synthon` class. It encapsulates all ten primitives and provides methods for notation generation and serialization.
+Synthesises WAV audio for any primitive value, Imscription tuple, or named catalog entry. Requires `numpy`, `scipy`.
 
-### 5.1. Creating Synthons
+#### Modes
 
-You can create a `Synthon` object by providing its name and primitives as enum members plus the optional `stoichiometry` string.
+```bash
+# Full 49-symbol canon in field order (Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω)
+python imscribeaudio.py --all [--dur 0.75] [--fs 44100] [-o FILE]
+
+# Single symbol by base glyph + subscript
+python imscribeaudio.py ⊙ ž
+python imscribeaudio.py Ħ A --dur 1.2
+
+# 12-primitive Imscription tuple — space- or comma-separated
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+python imscribeaudio.py -t "Ð_ß,Þ_6,Ř_¯,Φ_F,ƒ_ì,Ç_-,Γ_ʔ,ɢ_^,⊙_ž,Ħ_Ñ,Σ_S,Ω_Å"
+
+# Named catalog entry (auto-resolves ⊙ → ⊙ for pre-migration entries)
+python imscribeaudio.py --name psychedelic_baseline
+python imscribeaudio.py -n dark_matter -o dark_matter.wav
+
+# List all 49 canonical glyph IDs
+python imscribeaudio.py --list
+```
+
+#### Glyph IDs
+
+Primitive values are addressed by canonical glyph strings — the ID **is** the glyph:
+
+| Field | Canonical IDs |
+|-------|--------------|
+| Ð (Dimensionality) | `Ð_ß` `Ð_C` `Ð_;` `Ð_ω` |
+| Þ (Topology) | `Þ_6` `Þ_K` `Þ_ò` `Þ_¨` `Þ_O` |
+| Ř (Relational) | `Ř_¯` `Ř_ý` `Ř_Ť` `Ř_=` |
+| Φ (Polarity) | `Φ_ɐ` `Φ_υ` `Φ_F` `Φ_˙` `Φ_}` |
+| ƒ (Fidelity) | `ƒ_ì` `ƒ_ð` `ƒ_ż` |
+| Ç (Kinetics) | `Ç_-` `Ç_W` `Ç_@` `Ç_Ù` `Ç_λ` |
+| Γ (Scope) | `Γ_β` `Γ_γ` `Γ_ʔ` |
+| ɢ (Grammar) | `ɢ_^` `ɢ_˝` `ɢ_ˌ` `ɢ_Ş` |
+| ⊙ (Criticality) | `⊙_ž` `⊙_ÿ` `⊙_Æ` `⊙_3` `⊙_Ţ` |
+| Ħ (Temporal Depth) | `Ħ_Ñ` `Ħ_£` `Ħ_A` `Ħ_!` |
+| Σ (Stoichiometry) | `Σ_S` `Σ_ő` `Σ_ï` |
+| Ω (Winding) | `Ω_Å` `Ω_2` `Ω_z` `Ω_5` |
+
+Old Lean names (`D_wedge`, `T_network`, `Phi_c`, `R_lr`, etc.) are accepted everywhere via `OLD_ID_MAP` in `sounds.py`.
+
+#### odot_operator tuple
+
+```bash
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+```
+
+#### Library usage
+
+```python
+from sounds import synthesize_symbol, normalize, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
+
+# Resolve any token (canonical or old name) → (base, sub) for synthesize_symbol
+pair = resolve_id('Phi_c')      # → ('⊙', 'ÿ')
+pair = resolve_id('⊙_ÿ')        # → ('⊙', 'ÿ')
+
+sig = synthesize_symbol(*pair, fs=44100, dur=0.75)
+```
+
+---
+
+## 5. Building and Managing imscriptions
+
+The core data structure in Imscribing Grammar is the `Imscription` class. It encapsulates all ten primitives and provides methods for notation generation and serialization.
+
+### 5.1. Creating imscriptions
+
+You can create a `Imscription` object by providing its name and primitives as enum members plus the optional `stoichiometry` string.
 
 ```python
 from imscrbgrmr import (
-    Synthon, Dimensionality, Topology, RecognitionMode,
+    Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, KineticCharacter, Granularity,
     InteractionGrammar, CriticalityPhase
 )
 
-carboxylic_dimer = Synthon(
+carboxylic_dimer = Imscription(
     name="carboxylic_acid_dimer",
     dimensionality=Dimensionality.MOLECULAR,
     topology=Topology.CYCLIC_BOWTIE,
@@ -1117,15 +1248,15 @@ The `to_notation()` method generates the full formal string: `⟨D; T; R; P; F; 
 
 ```python
 print(carboxylic_dimer.to_notation())
-# Output: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
+# Output: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
 ```
 
-You can also parse a notation string back into a `SynthonNotation` object:
+You can also parse a notation string back into a `ImscriptionNotation` object:
 
 ```python
 from imscrbgrmr import parse_notation
 notation = parse_notation(
-    "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩"
+    "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩"
 )
 print(notation.dimensionality)  # Dimensionality.MOLECULAR
 print(notation.stoichiometry)   # "1:1"
@@ -1133,7 +1264,7 @@ print(notation.stoichiometry)   # "1:1"
 
 ### 5.3. Serialization
 
-Synthons support serialization to dictionaries and JSON for easy storage and transmission.
+imscriptions support serialization to dictionaries and JSON for easy storage and transmission.
 
 ```python
 # To Dictionary
@@ -1143,16 +1274,16 @@ data = carboxylic_dimer.to_dict()
 json_str = carboxylic_dimer.to_json()
 
 # From JSON
-new_synthon = Synthon.from_json(json_str)
+new_imscription = Imscription.from_json(json_str)
 ```
 
-## 6. SynthonCatalog: Storage and Discovery
+## 6. ImscriptionCatalog: Storage and Discovery
 
-The `SynthonCatalog` acts as a centralized repository for synthons, enabling advanced search and cross-domain reasoning.
+The `ImscriptionCatalog` acts as a centralized repository for imscriptions, enabling advanced search and cross-domain reasoning.
 
 ### 6.1. Registration
 
-Registering synthons allows you to retrieve them by name later or include them in global searches.
+Registering imscriptions allows you to retrieve them by name later or include them in global searches.
 
 ```python
 from imscrbgrmr.registry import global_catalog
@@ -1167,10 +1298,10 @@ global_catalog.register(carboxylic_dimer)
 The catalog supports indexed searches by any of the ten primitives.
 
 ```python
-# Search for all high-fidelity synthons
+# Search for all high-fidelity imscriptions
 high_f = global_catalog.search(fidelity=Fidelity.HIGH)
 
-# Search for all temporal synthons
+# Search for all temporal imscriptions
 temporal = global_catalog.search_by_domain("temporal")
 ```
 
@@ -1179,7 +1310,7 @@ temporal = global_catalog.search_by_domain("temporal")
 One of the most powerful features of Imscribing Grammar is the ability to find "analogs" across different domains (e.g., finding a temporal process that behaves like a molecular H-bond dimer).
 
 ```python
-# Find temporal synthons that are topologically and functionally 
+# Find temporal imscriptions that are topologically and functionally 
 # analogous to a molecular carboxylic acid dimer
 analogs = global_catalog.find_cross_domain_analogs(
     carboxylic_dimer, 
@@ -1189,17 +1320,17 @@ analogs = global_catalog.find_cross_domain_analogs(
 
 ## 7. Constraint Propagation Engine
 
-The `ConstraintEngine` and `FidelityPropagator` are used to analyze how synthons interact and how their individual constraints combine to influence the overall system.
+The `ConstraintEngine` and `FidelityPropagator` are used to analyze how imscriptions interact and how their individual constraints combine to influence the overall system.
 
 ### 7.1. Pairwise Compatibility
 
-Check if two synthons can interact based on their primitives (recognition mode, polarity, dimensionality, etc.).
+Check if two imscriptions can interact based on their primitives (recognition mode, polarity, dimensionality, etc.).
 
 ```python
 from imscrbgrmr.constraints import ConstraintEngine
 
 engine = ConstraintEngine()
-report = engine.check_pair_compatibility(synthon_a, synthon_b)
+report = engine.check_pair_compatibility(imscription_a, imscription_b)
 
 if report.is_compatible:
     print(f"Compatible! Shared domains: {report.details['shared_domains']}")
@@ -1209,18 +1340,18 @@ else:
 
 ### 7.2. Fidelity Propagation and Cooperativity
 
-Individual synthon fidelities often amplify when combined in specific topologies (e.g., cyclic motifs show superlinear cooperativity).
+Individual imscription fidelities often amplify when combined in specific topologies (e.g., cyclic motifs show superlinear cooperativity).
 
 ```python
 from imscrbgrmr.constraints import FidelityPropagator
 
 propagator = FidelityPropagator()
 
-# Propagate fidelity across a list of interacting synthons
-total_fidelity = propagator.propagate([synthon_a, synthon_b, synthon_c])
+# Propagate fidelity across a list of interacting imscriptions
+total_fidelity = propagator.propagate([imscription_a, imscription_b, imscription_c])
 
 # Compute cooperativity factors
-coop = propagator.compute_cooperativity_factor([synthon_a, synthon_b])
+coop = propagator.compute_cooperativity_factor([imscription_a, imscription_b])
 print(f"Total cooperativity: {coop['total_cooperativity']:.2f}")
 ```
 
@@ -1264,9 +1395,9 @@ Imscribing Grammar includes specialized agents that apply the core framework to 
 Used for retrosynthetic analysis and molecular bond disconnection.
 
 ```python
-from imscrbgrmr.domains.molecular import MolecularSynthonAgent
+from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
 
-mol_agent = MolecularSynthonAgent()
+mol_agent = MolecularImscriptionAgent()
 analysis = mol_agent.analyze_reaction_center("CC(=O)O")
 print(f"Disconnection Feasibility: {analysis.disconnection_feasibility}")
 ```
@@ -1276,9 +1407,9 @@ print(f"Disconnection Feasibility: {analysis.disconnection_feasibility}")
 Focuses on spatial organization and cooperative effects in non-covalent networks.
 
 ```python
-from imscrbgrmr.domains.supramolecular import SupramolecularSynthonAgent
+from imscrbgrmr.domains.supramolecular import SupramolecularImscriptionAgent
 
-supra_agent = SupramolecularSynthonAgent()
+supra_agent = SupramolecularImscriptionAgent()
 coop = supra_agent.compute_cooperativity_induction(num_bonds=3)
 ```
 
@@ -1287,29 +1418,29 @@ coop = supra_agent.compute_cooperativity_induction(num_bonds=3)
 Analyzes time-dependent processes, catalytic cycles, and temporal reliability.
 
 ```python
-from imscrbgrmr.domains.temporal import TemporalSynthonAgent
+from imscrbgrmr.domains.temporal import TemporalImscriptionAgent
 
-temp_agent = TemporalSynthonAgent()
+temp_agent = TemporalImscriptionAgent()
 fidelity = temp_agent.compute_fidelity_per_cycle(k_cat=1.0, k_side=0.001)
 ```
 
-## 10. AI-Powered Synthon Generation
+## 10. AI-Powered Imscription Generation
 
-Imscribing Grammar includes an LLM-powered agent that can automatically generate synthons from natural language descriptions or SMILES strings.
+Imscribing Grammar includes an LLM-powered agent that can automatically generate imscriptions from natural language descriptions or SMILES strings.
 
-### 10.1. SynthonGeneratorAgent
+### 10.1. ImscriptionGeneratorAgent
 
-The `SynthonGeneratorAgent` uses advanced language models to analyze chemical descriptions and map them to all ten primitives.
+The `ImscriptionGeneratorAgent` uses advanced language models to analyze chemical descriptions and map them to all ten primitives.
 
 ```python
 import asyncio
-from agents.synthon_generator_agent import SynthonGeneratorAgent
+from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
 from imscrbgrmr.provider_config import build_agent_config
 
 async def main():
     # Use config-driven defaults (model=None uses provider default)
     config = build_agent_config(provider="anthropic", model=None)
-    agent = SynthonGeneratorAgent(config)
+    agent = ImscriptionGeneratorAgent(config)
 
     # Generate from natural language description
     result = await agent.generate_from_description(
@@ -1318,8 +1449,8 @@ async def main():
         auto_register=True  # Automatically add to catalog
     )
 
-    print(f"Generated: {result.synthon.name}")
-    print(f"Notation: {result.synthon.to_notation()}")
+    print(f"Generated: {result.imscription.name}")
+    print(f"Notation: {result.imscription.to_notation()}")
     print(f"Confidence: {result.confidence:.1%}")
     print(f"Reasoning: {result.reasoning}")
 
@@ -1334,11 +1465,11 @@ asyncio.run(main())
 ### 10.2. Generation from SMILES
 
 ```python
-from agents.synthon_generator_agent import SynthonGeneratorAgent
+from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
 from imscrbgrmr.provider_config import build_agent_config
 
 config = build_agent_config(provider="anthropic", model=None)
-agent = SynthonGeneratorAgent(config)
+agent = ImscriptionGeneratorAgent(config)
 
 result = await agent.generate_from_smiles(
     "CC(=O)O",  # Acetic acid
@@ -1347,24 +1478,24 @@ result = await agent.generate_from_smiles(
     auto_register=True
 )
 
-print(f"Generated synthon: {result.synthon.to_notation()}")
+print(f"Generated imscription: {result.imscription.to_notation()}")
 ```
 
 ### 10.3. Convenience Function
 
-For quick synthon generation, use the `generate_synthon` function:
+For quick imscription generation, use the `generate_imscription` function:
 
 ```python
-from agents.synthon_generator_agent import generate_synthon
+from agents.imscribe_generator_agent import generate_imscription
 
-result = await generate_synthon(
+result = await generate_imscription(
     "DNA adenine-thymine base pair",
     provider="qwen",
     model="qwen3-max",
     delta_g=-80.0
 )
 
-print(f"Notation: {result.synthon.to_notation()}")
+print(f"Notation: {result.imscription.to_notation()}")
 print(f"ξ_CP: {result.thermodynamic_metrics['xi_CP']:.4f} nats")
 ```
 
@@ -1405,7 +1536,7 @@ imscribe generate "novel quantum system" \
     --override-reason "speculative entry, grounding pending publication"
 
 # Register in the 'speculative' domain (Fix 5 quarantine)
-imscribe generate "quantum tunneling synthon" --speculative
+imscribe generate "quantum tunneling imscription" --speculative
 
 # Combine: speculative + override
 imscribe generate "..." --speculative --override-grounding \
@@ -1429,7 +1560,7 @@ The AjintK agent framework is accessible via the `agents` subcommand:
 # List all available agents
 imscribe agents list
 
-# Run SynthonGeneratorAgent from CLI
+# Run ImscriptionGeneratorAgent from CLI
 imscribe agents run -d "carboxylic acid dimer" -g -12.0
 imscribe agents run --provider qwen --model qwen3-max -d "DNA base pair"
 
@@ -1440,14 +1571,14 @@ imscribe agents from-smiles "CC(=O)O" -o result.json
 
 ### 10.6. Additional CLI Commands
 
-#### Compare Synthons
+#### Compare imscriptions
 
 ```bash
-# Compare multiple synthons side-by-side
+# Compare multiple imscriptions side-by-side
 imscrbgrmr compare carboxylic_acid_dimer adenine_thymine_pair
 
 # Include thermodynamic comparison
-imscrbgrmr compare synthon1 synthon2 --delta-g -52.0 -45.0 --include-thermo
+imscrbgrmr compare imscription1 imscription2 --delta-g -52.0 -45.0 --include-thermo
 ```
 
 #### Catalog Tree View
@@ -1464,18 +1595,18 @@ imscrbgrmr catalog tree --domain molecular
 
 ```bash
 # Export to JSON
-imscrbgrmr export --format json --output synthons.json
+imscrbgrmr export --format json --output imscriptions.json
 
 # Export to CSV
-imscrbgrmr export --format csv --output synthons.csv
+imscrbgrmr export --format csv --output imscriptions.csv
 
 # Export specific domain
 imscrbgrmr export --domain temporal --format yaml
 ```
 
-## 10.5. Autonomous Synthon Discovery
+## 10.5. Autonomous Imscription Discovery
 
-The `AutonomousSynthonDiscoveryAgent` enables continuous, self-directed synthon discovery. The agent autonomously proposes novel chemical systems, validates them against existing knowledge, and registers valid synthons to the persistent catalog.
+The `AutonomousImscriptionDiscoveryAgent` enables continuous, self-directed imscription discovery. The agent autonomously proposes novel chemical systems, validates them against existing knowledge, and registers valid imscriptions to the persistent catalog.
 
 ### Running Autonomous Discovery
 
@@ -1497,8 +1628,8 @@ imscribe agents discover --provider qwen --confidence 0.6 --cycles 30
 
 ```python
 import asyncio
-from agents.autonomous_synthon_discovery_agent import (
-    AutonomousSynthonDiscoveryAgent,
+from agents.autonomous_imscription_discovery_agent import (
+    AutonomousImscriptionDiscoveryAgent,
     AutonomousRunConfig,
     run_autonomous_discovery,
 )
@@ -1514,7 +1645,7 @@ results = await run_autonomous_discovery(
 
 # Method 2: Full control
 config = build_agent_config(provider="anthropic", model=None)
-agent = AutonomousSynthonDiscoveryAgent(config)
+agent = AutonomousImscriptionDiscoveryAgent(config)
 
 run_config = AutonomousRunConfig(
     max_cycles=100,
@@ -1529,8 +1660,8 @@ results = await agent.run_autonomous(run_config)
 
 # Access results
 print(f"Cycles completed: {agent.stats['cycles_completed']}")
-print(f"Synthons registered: {agent.stats['synthons_registered']}")
-print(f"Success rate: {agent.stats['synthons_registered'] / agent.stats['cycles_completed'] * 100:.1f}%")
+print(f"imscriptions registered: {agent.stats['imscriptions_registered']}")
+print(f"Success rate: {agent.stats['imscriptions_registered'] / agent.stats['cycles_completed'] * 100:.1f}%")
 ```
 
 ### Configuration Options
@@ -1566,11 +1697,11 @@ The agent saves to `./discovery_output/` (or custom `--output`):
 
 ### Axiom Validation (March 14, 2026)
 
-**All synthons are now validated against composition axioms before registration.** This prevents physically impossible primitive combinations from being registered, ensuring catalog integrity.
+**All imscriptions are now validated against composition axioms before registration.** This prevents physically impossible primitive combinations from being registered, ensuring catalog integrity.
 
 **Hard constraints (automatic rejection):**
 
-1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary synthons (T_⋈/P_±) cannot have low fidelity (ƒ_ì)
+1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary imscriptions (T_⋈/P_±) cannot have low fidelity (ƒ_ì)
    - *Rationale*: Cyclic closure amplifies fidelity through cooperativity
    - *Example rejection*: `Þ_ò + Φ_} + ƒ_ì` → rejected
 
@@ -1584,11 +1715,11 @@ The agent saves to `./discovery_output/` (or custom `--output`):
 - Axiom 3 (Cooperative Induction)
 - Axiom 5 (Criticality)
 
-Synthons with soft axiom violations are registered but flagged in metadata:
+imscriptions with soft axiom violations are registered but flagged in metadata:
 ```python
-synthon.metadata["axiom_validated"] = True
-synthon.metadata["axiom_violations"] = 1  # Count of soft violations
-synthon.metadata["axiom_warnings"] = ["Axiom 2 violation detected - flagged for review"]
+imscription.metadata["axiom_validated"] = True
+imscription.metadata["axiom_violations"] = 1  # Count of soft violations
+imscription.metadata["axiom_warnings"] = ["Axiom 2 violation detected - flagged for review"]
 ```
 
 **Viewing axiom validation results:**
@@ -1598,8 +1729,8 @@ for result in results:
         if "AXIOM" in result.reasoning:
             print(f"Axiom violation: {result.reasoning}")
     
-    if result.synthon and result.synthon.metadata.get("axiom_warnings"):
-        print(f"Warning: {result.synthon.name} - {result.synthon.metadata['axiom_warnings']}")
+    if result.imscription and result.imscription.metadata.get("axiom_warnings"):
+        print(f"Warning: {result.imscription.name} - {result.imscription.metadata['axiom_warnings']}")
 ```
 
 **References:**
@@ -1613,7 +1744,7 @@ for result in results:
 $ imscribe agents discover --focus "nitroso radicals" --cycles 20
 
 ======================================================================
-AUTONOMOUS SYNTHON DISCOVERY AGENT
+AUTONOMOUS imscription DISCOVERY AGENT
 ======================================================================
 Configuration:
   Max cycles: 20
@@ -1627,8 +1758,8 @@ CYCLE 1/20
 ==================================================
 
 [✓] valid_novel
-    Name: nitroso_radical_halogen_bonding_synthon_pair
-    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_F; ƒ_ð; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
+    Name: nitroso_radical_halogen_bonding_imscription_pair
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_F; ƒ_ð; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
     Confidence: 80.0%
 
 ==================================================
@@ -1636,8 +1767,8 @@ CYCLE 2/20
 ==================================================
 
 [✓] valid_novel
-    Name: nitroso_radical_anion_π_synthon_pair
-    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_directional; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; φ̂_ž; 1:1⟩
+    Name: nitroso_radical_anion_π_imscription_pair
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_directional; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
     Confidence: 90.0%
 
 ...
@@ -1647,16 +1778,16 @@ DISCOVERY RUN COMPLETE
 ======================================================================
 Duration: 3.2 minutes
 Cycles completed: 20
-Synthons registered: 15
+imscriptions registered: 15
 Success rate: 75.0%
 
-Catalog now contains 1,298 synthons
+Catalog now contains 1,298 imscriptions
 ======================================================================
 ```
 
 ### Catalog Persistence
 
-All synthons are automatically persisted to `~/.imscrbgrmr/catalog.json`:
+All imscriptions are automatically persisted to `~/.imscrbgrmr/catalog.json`:
 
 - **Auto-save**: After each registration
 - **Auto-load**: On startup
@@ -1666,14 +1797,14 @@ All synthons are automatically persisted to `~/.imscrbgrmr/catalog.json`:
 from imscrbgrmr import global_catalog
 
 # Catalog persists across runs
-print(f"Catalog contains {len(global_catalog)} synthons")
+print(f"Catalog contains {len(global_catalog)} imscriptions")
 
-# Access auto-discovered synthons
-auto_synthons = [
-    s for s in global_catalog._synthons.values()
+# Access auto-discovered imscriptions
+auto_imscriptions = [
+    s for s in global_catalog._imscriptions.values()
     if s.metadata.get('auto_discovered')
 ]
-print(f"Auto-discovered: {len(auto_synthons)}")
+print(f"Auto-discovered: {len(auto_imscriptions)}")
 ```
 
 ## 11. Integration with AjintK Multi-Agent Framework
@@ -1686,10 +1817,10 @@ The `AgentOrchestrator` manages multiple agents and their communication.
 
 ```python
 from framework.orchestrator import AgentOrchestrator
-from imscrbgrmr.domains.molecular import MolecularSynthonAgent
+from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
 
 orchestrator = AgentOrchestrator()
-orchestrator.register_agent("molecular_expert", MolecularSynthonAgent())
+orchestrator.register_agent("molecular_expert", MolecularImscriptionAgent())
 
 # Run a task through the orchestrator
 result = asyncio.run(orchestrator.run_agent(
@@ -1702,10 +1833,10 @@ result = asyncio.run(orchestrator.run_agent(
 
 ### 12.1. Best Practices
 
-*   **Registry over Raw Objects**: Always prefer registering synthons in the `global_catalog` to enable cross-domain reasoning features.
+*   **Registry over Raw Objects**: Always prefer registering imscriptions in the `global_catalog` to enable cross-domain reasoning features.
 *   **Fidelity Calibration**: Fidelity values should be calibrated against known experimental benchmarks (see `QUANTIG.md`).
-*   **Domain Overlap**: When modeling complex materials like MOFs, use hybrid dimensionality synthons to capture both molecular and supramolecular constraints.
-*   **AI Generation Confidence**: Review the confidence scores and reasoning from AI-generated synthons before using them in critical analyses.
+*   **Domain Overlap**: When modeling complex materials like MOFs, use hybrid dimensionality imscriptions to capture both molecular and supramolecular constraints.
+*   **AI Generation Confidence**: Review the confidence scores and reasoning from AI-generated imscriptions before using them in critical analyses.
 
 ### 12.2. Troubleshooting
 
@@ -1778,15 +1909,15 @@ Full spec: `IΓ_TRAJECTORY.md`.
 #### Python API
 
 ```python
-from imscrbgrmr import TemporalSynthonAgent, Synthon
+from imscrbgrmr import TemporalImscriptionAgent, Imscription
 from imscrbgrmr.models import (
     Dimensionality, Topology, RecognitionMode, Polarity,
     Fidelity, KineticCharacter, Granularity, InteractionGrammar,
 )
 
-agent = TemporalSynthonAgent("proline_aldol_cycle")
+agent = TemporalImscriptionAgent("proline_aldol_cycle")
 
-# Build step synthons (all must have D_∞ or R_‡ for Axiom 4)
+# Build step imscriptions (all must have D_∞ or R_‡ for Axiom 4)
 base = dict(
     dimensionality=Dimensionality.TEMPORAL,
     topology=Topology.CYCLIC_BOWTIE,
@@ -1795,9 +1926,9 @@ base = dict(
     granularity=Granularity.MESOSCALE,
     interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
 )
-enamine  = Synthon(name="enamine_formation",  fidelity=Fidelity.HIGH,   kinetic_character=KineticCharacter.FAST,     **base)
-ts       = Synthon(name="c_c_bond_form",       fidelity=Fidelity.MEDIUM, kinetic_character=KineticCharacter.MODERATE, **base)
-hydrol   = Synthon(name="hydrolysis_reset",    fidelity=Fidelity.HIGH,   kinetic_character=KineticCharacter.FAST,     **base)
+enamine  = Imscription(name="enamine_formation",  fidelity=Fidelity.HIGH,   kinetic_character=KineticCharacter.FAST,     **base)
+ts       = Imscription(name="c_c_bond_form",       fidelity=Fidelity.MEDIUM, kinetic_character=KineticCharacter.MODERATE, **base)
+hydrol   = Imscription(name="hydrolysis_reset",    fidelity=Fidelity.HIGH,   kinetic_character=KineticCharacter.FAST,     **base)
 
 agent.add_step(enamine,  "enamine_formation",  delta_g=-15.0)
 agent.add_step(ts,       "c_c_bond_form",       delta_g_ddagger=97.0)   # rate-determining
@@ -1830,7 +1961,7 @@ imscribe trajectory criticality --steps enamine_formation,c_c_bond_form,hydrolys
 
 ### 7.3. IΓ_ENSEMBLER
 
-Multi-synthon composition: pairwise compatibility, emergent properties, system ξ_CP.
+Multi-imscription composition: pairwise compatibility, emergent properties, system ξ_CP.
 Full spec: `IΓ_ENSEMBLER.md`.
 
 #### Python API
@@ -1841,7 +1972,7 @@ from imscrbgrmr import EnsembleCatalog
 ensemble = EnsembleCatalog()
 ensemble.add("carboxylic_acid_dimer")    # by catalog name
 ensemble.add("proline_aldol_cycle")
-ensemble.add("nitroso_radical_cucurbituril_anion_rotaxane_synthon")
+ensemble.add("nitroso_radical_cucurbituril_anion_rotaxane_imscription")
 
 # Pairwise compatibility + emergent properties
 report = ensemble.check_pairwise()
@@ -1905,12 +2036,12 @@ tree = engine.decompose(
 
 print(f"Valid decompositions : {len(tree.valid_leaves)}")
 print(f"Pruned branches      : {tree.pruned_count}")
-print(f"Valid synthon set    : {tree.valid_synthon_set}")
+print(f"Valid imscription set    : {tree.valid_imscription_set}")
 
 # Decompose by notation string (9-primitive ⟨...⟩ format)
-target = SynthonNotation.from_string(
+target = ImscriptionNotation.from_string(
     "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; "
-    "Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); φ̂_ž⟩"
+    "Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
 )
 # or pass the string directly
 tree2 = engine.decompose(notation_str, max_depth=2)
@@ -1937,7 +2068,7 @@ imscribe retrodesign carboxylic_acid_dimer
 imscribe retrodesign carboxylic_acid_dimer --max-depth 4 --prune-axioms 1,4,6
 
 # Decompose by notation string
-imscribe retrodesign "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset; Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); φ̂_ž⟩"
+imscribe retrodesign "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset; Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
 
 # JSON output
 imscribe retrodesign carboxylic_acid_dimer --format json
@@ -1977,15 +2108,15 @@ The ten-tuple is a typed mathematical object. `imscrbgrmr/algebra.py` implements
 ### 8.1. `imscribe meet` — Lattice Meet (Greatest Lower Bound)
 
 ```bash
-imscribe meet SYNTHON_A SYNTHON_B [--format text|json]
+imscribe meet imscription_A imscription_B [--format text|json]
 ```
 
-Computes the componentwise minimum: for ordered primitives (F, K, G) takes the lower value; for categorical primitives (D, T, R, P, Γ, Φ, S) returns the shared value or **CONFLICT** if they differ. The result is the "most conservative valid synthon below both inputs" — the guaranteed design floor of any system that must satisfy both.
+Computes the componentwise minimum: for ordered primitives (F, K, G) takes the lower value; for categorical primitives (D, T, R, P, Γ, Φ, S) returns the shared value or **CONFLICT** if they differ. The result is the "most conservative valid imscription below both inputs" — the guaranteed design floor of any system that must satisfy both.
 
 **Example:**
 ```bash
-imscribe meet Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon \
-            nitroso_radical_redox_synthon_pair
+imscribe meet Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription \
+            nitroso_radical_redox_imscription_pair
 ```
 
 Output:
@@ -2000,12 +2131,12 @@ Meet: Dithia ⊓ nitroso
 │ F      │ ƒ_ż         │ ƒ_ð          │ ƒ_ð  ▼        │
 │ K      │ Ç_W          │ Ç_-         │ Ç_- ▼ (wait) │
 │ G      │ Γ_γ        │ Γ_β         │ Γ_β ▼        │
-│ Phi    │ φ̂_ž        │ φ̂_ž        │ φ̂_ž         │
+│ Phi    │ ⊙_ž        │ ⊙_ž        │ ⊙_ž         │
 └────────┴────────────────┴────────────────┴─────────────────┘
 Result: ⟨D_∧; T_⋈; R_⊇; P_...;  ƒ_ð; Ç_-; G_ב; Γ_...; Φ_sub; S⟩
 ```
 
-CONFLICT primitives are shown in red. A meet with no conflicts means the two synthons are mutually substitutable within the partial order.
+CONFLICT primitives are shown in red. A meet with no conflicts means the two imscriptions are mutually substitutable within the partial order.
 
 **Python API:**
 ```python
@@ -2021,12 +2152,12 @@ print(result.is_valid)        # True if no CONFLICT sentinels
 ### 8.2. `imscribe join` — Lattice Join (Least Upper Bound)
 
 ```bash
-imscribe join SYNTHON_A SYNTHON_B [--format text|json]
+imscribe join imscription_A imscription_B [--format text|json]
 ```
 
-Componentwise maximum: for ordered primitives takes the higher value; for categoricals, shared value or CONFLICT. The result is the "minimal synthon that subsumes both" — the minimal ceiling of the design space spanned by the two inputs.
+Componentwise maximum: for ordered primitives takes the higher value; for categoricals, shared value or CONFLICT. The result is the "minimal imscription that subsumes both" — the minimal ceiling of the design space spanned by the two inputs.
 
-**Key use case:** `join` is how to find the minimal upgrade that satisfies both of two design targets. If `join(s1, s2)` has no CONFLICTs, there exists a valid synthon above both.
+**Key use case:** `join` is how to find the minimal upgrade that satisfies both of two design targets. If `join(s1, s2)` has no CONFLICTs, there exists a valid imscription above both.
 
 **Criticality rule:** $\Phi_{\text{ctyogh}}$ dominates in both meet and join. If either input has $\Phi_{\text{ctyogh}}$, the output has $\Phi_{\text{ctyogh}}$. This encodes the physical fact that criticality is not a property that can be averaged away.
 
@@ -2051,12 +2182,12 @@ BFS over the directed valid-swap graph. Edges exist where `HotSwapEngine` return
 **Example:**
 ```bash
 # This succeeds (1 hop, Δξ = +0.312 nat):
-imscribe path Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon \
-            nitroso_radical_redox_synthon_pair
+imscribe path Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription \
+            nitroso_radical_redox_imscription_pair
 
 # This fails (F downgrade blocked):
-imscribe path nitroso_radical_redox_synthon_pair \
-            Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon
+imscribe path nitroso_radical_redox_imscription_pair \
+            Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription
 ```
 
 Output (success):
@@ -2082,7 +2213,7 @@ if path.found:
 ### 8.4. `imscribe tensor` — Ensemble Prediction (Tensor Product)
 
 ```bash
-imscribe tensor SYNTHON_A SYNTHON_B [--lambda 0.5] [--format text|json]
+imscribe tensor imscription_A imscription_B [--lambda 0.5] [--format text|json]
 ```
 
 Computes the effective primitive tuple of a two-component assembly. Composition rules:
@@ -2118,12 +2249,12 @@ print(result.overlap_discount)  # λ · I(s₁;s₂) correction
 ### 8.5. `imscribe lift` — Natural Transformation (Cross-Domain Migration)
 
 ```bash
-imscribe lift SYNTHON_NAME TARGET [--format text|json]
+imscribe lift imscription_NAME TARGET [--format text|json]
 ```
 
 where `TARGET` is one of: `temporal`, `spatial`, `critical`, `molecular`.
 
-Applies a primitive-rewriting map that migrates the synthon to a new domain while preserving as much structure as possible. Output shows a side-by-side diff of changed primitives.
+Applies a primitive-rewriting map that migrates the imscription to a new domain while preserving as much structure as possible. Output shows a side-by-side diff of changed primitives.
 
 **Available lifts:**
 
@@ -2134,18 +2265,18 @@ Applies a primitive-rewriting map that migrates the synthon to a new domain whil
 | `critical` | Φ_sub→Φ_c, G→G_ℵ | **F ≥ F_ℏ required** (Axiom 5) |
 | `molecular` | D_∞→D_∧, R_‡→R_⊆, Γ_→→Γ_∧(SELECTIVE) | None (forgetful) |
 
-**Criticality lift guard (Axiom 5 enforcement):** If F < F_ℏ, the lift is BLOCKED with explanation. A synthon must have high thermodynamic fidelity to carry a reliable criticality signature.
+**Criticality lift guard (Axiom 5 enforcement):** If F < F_ℏ, the lift is BLOCKED with explanation. A imscription must have high thermodynamic fidelity to carry a reliable criticality signature.
 
 **Example:**
 ```bash
-imscribe lift Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon critical
+imscribe lift Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription critical
 ```
 
 Output:
 ```
 Lift: critical — Dithia
 Changed primitives:
-  Φ: φ̂_ž → φ̂_ÿ
+  Φ: ⊙_ž → ⊙_ÿ
   G: Γ_γ → Γ_ʔ
 Result: ⟨D_∧; T_⋈; R_⊇; P_+; F_ℏ; Ç_W; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
 Note: Axiom 6 injection: temporal lift requires closed-cycle grounding before assembly.
@@ -2159,7 +2290,7 @@ result = criticality_lift(s)
 if result.blocked:
     print(f"BLOCKED: {result.block_reason}")
 else:
-    print(result.result_synthon.to_notation())
+    print(result.result_imscription.to_notation())
     for warning in result.warnings:
         print(f"  Warning: {warning}")
 ```
@@ -2169,7 +2300,7 @@ else:
 ### 8.6. `imscribe pipeline` — Composable Design Pipeline
 
 ```bash
-imscribe pipeline STARÞ_SYNTHON --step STEP [--step STEP ...]
+imscribe pipeline STARÞ_imscription --step STEP [--step STEP ...]
 ```
 
 A composable pipeline that chains algebra operations with automatic ξ_CP threading and fail-fast logging. Implements a Writer+Maybe monad: each step carries the accumulated cost (Writer) and continues from the last valid state even on BLOCKED steps (soft Maybe).
@@ -2181,18 +2312,18 @@ op:argument[:key=value[:key=value...]]
 
 | Step | Syntax | Operation |
 |---|---|---|
-| meet | `meet:synthon_name` | Lattice meet with named synthon |
-| join | `join:synthon_name` | Lattice join with named synthon |
-| tensor | `tensor:synthon_name` or `tensor:synthon_name:lambda=0.3` | Tensor product |
+| meet | `meet:imscription_name` | Lattice meet with named imscription |
+| join | `join:imscription_name` | Lattice join with named imscription |
+| tensor | `tensor:imscription_name` or `tensor:imscription_name:lambda=0.3` | Tensor product |
 | lift | `lift:temporal` / `lift:spatial` / `lift:critical` / `lift:molecular` | Natural transformation |
 | path | `path:target_name` or `path:target_name:xi_tolerance=1.5` | Path search to target |
 
 **Full example:**
 ```bash
-imscribe pipeline Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Synthon \
-  --step join:nitroso_radical_redox_synthon_pair \
+imscribe pipeline Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription \
+  --step join:nitroso_radical_redox_imscription_pair \
   --step lift:critical \
-  --step path:Varma_synthon:xi_tolerance=1.5
+  --step path:Varma_imscription:xi_tolerance=1.5
 ```
 
 Output:
@@ -2204,10 +2335,10 @@ Pipeline trace:
     F: ƒ_ð → ƒ_ż (max)   K: Ç_- → Ç_W   G: Γ_β → Γ_γ
     Δξ_CP = +0.519 nat       [PASS]
   Step 2: lift(critical)
-    Φ: φ̂_ž → φ̂_ÿ   G: Γ_γ → Γ_ʔ
+    Φ: ⊙_ž → ⊙_ÿ   G: Γ_γ → Γ_ʔ
     F = ƒ_ż ≥ ƒ_ż   ✓ eligibility gate passed
     Δξ_CP = +0.000 nat    [PASS]
-  Step 3: path(Varma_synthon, tol=1.5)
+  Step 3: path(Varma_imscription, tol=1.5)
     Hop 1: ... → Varma   Δξ = +0.847 nat   [APPROVED]
     Δξ_CP = +0.847 nat    [PASS]
 ──────────────────────────────────────────────────────────────
@@ -2220,28 +2351,28 @@ Pipeline trace:
 from imscrbgrmr.algebra import DesignPipeline
 from imscrbgrmr.registry import global_catalog
 
-nitroso = global_catalog["nitroso_radical_redox_synthon_pair"]
-varma   = global_catalog["Varma_synthon"]
+nitroso = global_catalog["nitroso_radical_redox_imscription_pair"]
+varma   = global_catalog["Varma_imscription"]
 
 result = (
     DesignPipeline
     .start(dithia)
     .join(nitroso)
     .lift("critical")
-    .path("Varma_synthon")
+    .path("Varma_imscription")
     .result()
 )
 
 result.print_trace()
 print(f"Total Δξ_CP: {result.total_delta_xi:.3f} nat")
-print(f"Final tuple: {result.current_synthon.to_notation()}")
+print(f"Final tuple: {result.current_imscription.to_notation()}")
 print(f"Blocked steps: {result.blocked_count}")
 ```
 
 **Pipeline semantics:**
 - **Writer effect**: `total_delta_xi` accumulates across all steps.
-- **Maybe effect**: BLOCKED steps are logged but do not terminate the pipeline. The pipeline continues from the last successfully transformed synthon.
-- **Fail condition**: A step that **raises an exception** (e.g., synthon not found, BFS graph unreachable) terminates the pipeline with an ERROR status distinct from BLOCKED.
+- **Maybe effect**: BLOCKED steps are logged but do not terminate the pipeline. The pipeline continues from the last successfully transformed imscription.
+- **Fail condition**: A step that **raises an exception** (e.g., imscription not found, BFS graph unreachable) terminates the pipeline with an ERROR status distinct from BLOCKED.
 
 **Behavioral verification:**
 1. **F-bottleneck propagation**: `tensor(A, B)` dropping F to ƒ_ð → subsequent `lift:critical` is BLOCKED without any explicit guard needed.
@@ -2251,10 +2382,10 @@ print(f"Blocked steps: {result.blocked_count}")
 ### 8.7. `imscribe distance` — Tuple Distance (v0.4.0)
 
 ```bash
-imscribe distance SYNTHON_A SYNTHON_B [--directed] [--format text|json]
+imscribe distance imscription_A imscription_B [--directed] [--format text|json]
 ```
 
-Computes the weighted Hamming-style distance between two synthon tuples in the eleven-primitive space. By default reports the **symmetric** distance d(A, B) = d(B, A). With `--directed`, also reports the asymmetric directed distances d(A→B) and d(B→A) and the asymmetry index.
+Computes the weighted Hamming-style distance between two imscription tuples in the eleven-primitive space. By default reports the **symmetric** distance d(A, B) = d(B, A). With `--directed`, also reports the asymmetric directed distances d(A→B) and d(B→A) and the asymmetry index.
 
 **Primitive weights** (default):
 
@@ -2302,8 +2433,8 @@ Distance: photon ↔ electron
 **JSON output** (`--format json`):
 ```json
 {
-  "synthon_a": "photon",
-  "synthon_b": "electron",
+  "imscription_a": "photon",
+  "imscription_b": "electron",
   "d_sym": 3.20,
   "d_a_to_b": 3.05,
   "d_b_to_a": 3.35,
@@ -2319,7 +2450,7 @@ Distance: photon ↔ electron
 ```python
 from imscrbgrmr.algebra import tuple_distance
 
-d = tuple_distance(synthon_a, synthon_b)
+d = tuple_distance(imscription_a, imscription_b)
 print(f"Distance: {d:.3f}")
 ```
 
@@ -2340,7 +2471,7 @@ print(f"Distance: {d:.3f}")
 # Step 0: Measure primitive-space separation
 imscribe distance Dithia nitroso --directed   # d(sym)=2.10; asymmetry=0.40
 
-# Step 1: Check whether two synthons are lattice-compatible
+# Step 1: Check whether two imscriptions are lattice-compatible
 imscribe meet Dithia nitroso         # identifies F/K/G gaps
 imscribe join Dithia nitroso         # identifies minimal common ceiling
 
@@ -2366,7 +2497,7 @@ imscribe pipeline Dithia \
 ```python
 from imscrbgrmr.algebra import DesignPipeline, global_catalog
 
-# Load starting synthon
+# Load starting imscription
 start = global_catalog.get("proline_aldol_cycle")
 
 # Build a multi-stage pipeline
@@ -2375,7 +2506,7 @@ pipeline = (
     .start(start)
     .meet("amide_dimer")              # lattice meet
     .join("carboxylic_acid_dimer")    # lattice join
-    .tensor("nitroso_radical_redox_synthon_pair", lambda_=0.5)
+    .tensor("nitroso_radical_redox_imscription_pair", lambda_=0.5)
     .lift("critical")                 # natural transformation
     .path("soai_pyrimidyl_autocatalytic_cycle", xi_tolerance=2.0)
 )
@@ -2384,7 +2515,7 @@ pipeline = (
 result = pipeline.result()
 
 # Inspect results
-print(f"Final synthon: {result.current_synthon.name}")
+print(f"Final imscription: {result.current_imscription.name}")
 print(f"Total Δξ_CP: {result.total_delta_xi:+.3f} nat")
 print(f"Steps: {len(result.steps)}, Blocked: {result.blocked_count}")
 
@@ -2499,8 +2630,8 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 3. [BLOCKED] ✗ join(redox_pair)  CONFLICT on R, P, Γ
 4. [PASS] ✓ mplus(fallback)  switching to fallback
 5. [PASS] ✓ path(redox_pair)  Δξ=+0.362 nat  1 hop
-6. [PASS] ✓ lift(critical)  Φ: None → φ̂_ÿ
-7. [ASSERÞ_PASS] ✓ criticality_phase == φ̂_ÿ
+6. [PASS] ✓ lift(critical)  Φ: None → ⊙_ÿ
+7. [ASSERÞ_PASS] ✓ criticality_phase == ⊙_ÿ
 8. [ASSERÞ_PASS] ✓ phi_c_score > 0.3
 9. [ASSERÞ_PASS] ✓ output.assert(steps <= 15)
 ```
@@ -2520,9 +2651,9 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 8/8 steps, Δξ_CP = 0.000 nat
 
 ```
-1. [PASS] ✓ lift(critical)  Φ: None → φ̂_ÿ
+1. [PASS] ✓ lift(critical)  Φ: None → ⊙_ÿ
 2. [ASSERÞ_PASS] ✓ phi_c_score > 0.3
-3. [ASSERÞ_PASS] ✓ criticality_phase == φ̂_ÿ
+3. [ASSERÞ_PASS] ✓ criticality_phase == ⊙_ÿ
 4. [ASSERÞ_PASS] ✓ axiom6_satisfied
 5. [PASS] ✓ join(self)  idempotent
 6. [ASSERÞ_PASS] ✓ criticality preserved
@@ -2621,10 +2752,10 @@ python TENSOŘ_OPΣ_DEMO.py --section decomp
 | 3 | **tensor** | (1) electron⊗hole → exciton theorem (Þ_linear, no promotion); (2) Majorana⊗Majorana → Þ_braid special rule; (3) Cooper pair⊗phonon → full superconductor | Bifunctor; ξ_ens = ξ₁+ξ₂−λI |
 | 4 | **lift** | (1) AtHv1_silent lift(critical) → BLOCKED (Ç_Ù gate); (2) molecular→temporal (loop-space functor Ω); (3) temporal→spatial (classifying space B(G)) | Natural transformation; +2.303 nat = ln10 |
 | 5 | **path** | (1) AtHv1_silent→Hv1_human_open — 3-hop Kleisli geodesic; (2) 2GBI→HIF inhibitor scaffold migration; (3) magnon→Cooper pair — blocked (D/T gate) | Lawvere metric geodesic |
-| 6 | **pipeline** | (1) Hv1 cross-species conservation (hv1_paper_reproduction.syn v6); (2) SynthonM do-notation chain; (3) fallback or-pattern (mplus) | WriterT+StateT+MaybeT Kleisli |
+| 6 | **pipeline** | (1) Hv1 cross-species conservation (hv1_paper_reproduction.syn v6); (2) ImscriptionM do-notation chain; (3) fallback or-pattern (mplus) | WriterT+StateT+MaybeT Kleisli |
 | 7 | **decomp** | (1) cofactor(Cooper pair, electron) → Ç_@+Γ_meso+Þ_ò+Φ_c; (2) principal_decomp Birkhoff atoms; (3) Heyting complement (satisfied=False anatomy) | Inverse bifunctor; Birkhoff theorem |
 
-**Inline synthon definitions:** 16 synthons defined directly in the script — all registered to `global_catalog`. Includes: `Hv1_human_closed`, `Hv1_human_open`, `AtHv1_silent`, `AtHv1_primed`, `PsHv1_constitutive`, `2GBI_inhibitor`, `HIƒ_inhibitor`, `cooper_pair`, `majorana_fermion`, `TI_surface_state`, `phonon`, `magnon`, `electron`, `hole`, `GNF2_inhibitor`, `imatinib`.
+**Inline imscription definitions:** 16 imscriptions defined directly in the script — all registered to `global_catalog`. Includes: `Hv1_human_closed`, `Hv1_human_open`, `AtHv1_silent`, `AtHv1_primed`, `PsHv1_constitutive`, `2GBI_inhibitor`, `HIƒ_inhibitor`, `cooper_pair`, `majorana_fermion`, `TI_surface_state`, `phonon`, `magnon`, `electron`, `hole`, `GNF2_inhibitor`, `imatinib`.
 
 **For `IΓ_LANG.md` readers:** §"Algebraic Operations Reference" in `IΓ_LANG.md` contains the formal specification; this demo is the executable companion.
 
@@ -2642,7 +2773,7 @@ python TENSOŘ_OPΣ_DEMO.py --section decomp
 
 ## 10. LLM Tool Layer (v0.4.5)
 
-`synthon_tool.py` and `synthon_agent.py` implement the Imscribing Grammar LLM tool layer — a structured interface that lets any tool-calling LLM interact with the live algebra without being able to hallucinate impossible chemistry. Every proposal is immediately rejected with a precise axiom trace if it fails.
+`imscribe_tool.py` and `imscribe_agent.py` implement the Imscribing Grammar LLM tool layer — a structured interface that lets any tool-calling LLM interact with the live algebra without being able to hallucinate impossible chemistry. Every proposal is immediately rejected with a precise axiom trace if it fails.
 
 ### 10.1. `imscribe tool` — Single-Shot Tool Dispatch
 
@@ -2650,7 +2781,7 @@ python TENSOŘ_OPΣ_DEMO.py --section decomp
 imscribe tool OPERATION [OPTIONS]
 ```
 
-Runs one SynthonTool operation and prints the result (text or JSON).
+Runs one ImscribeTool operation and prints the result (text or JSON).
 
 **Operations and their required options:**
 
@@ -2699,7 +2830,7 @@ imscribe tool distance --a allosteric_domain --b active_site --format json
 imscribe design --goal TEXT [OPTIONS]
 ```
 
-Runs the autonomous `SynthonDesignAgent` loop: the LLM proposes a synthon encoding, every proposal is immediately axiom-validated, the Φ_c probe is applied, and the loop continues until convergence criteria are met or `--max-iterations` is reached.
+Runs the autonomous `ImscriptionDesignAgent` loop: the LLM proposes a imscription encoding, every proposal is immediately axiom-validated, the Φ_c probe is applied, and the loop continues until convergence criteria are met or `--max-iterations` is reached.
 
 **Options:**
 
@@ -2748,21 +2879,21 @@ imscribe design \
 ### 10.3. Python API
 
 ```python
-from synthon_tool import SynthonTool, ToolResponse
+from imscribe_tool import ImscribeTool, ToolResponse
 
 # All operations return ToolResponse dataclass
-r: ToolResponse = SynthonTool.distance("allosteric_domain", "active_site")
+r: ToolResponse = ImscribeTool.distance("allosteric_domain", "active_site")
 print(r.status)       # "ok"
 print(r.distance)     # 5.4
 print(r.to_json())    # full JSON
 
 # Dispatch by operation name (used by agent)
-r = SynthonTool.dispatch("criticality", name="allosteric_domain", xi_r=8.5)
+r = ImscribeTool.dispatch("criticality", name="allosteric_domain", xi_r=8.5)
 
 # Full agent loop
-from synthon_agent import SynthonDesignAgent, ConvergenceCriteria
+from imscribe_agent import ImscriptionDesignAgent, ConvergenceCriteria
 
-agent = SynthonDesignAgent(
+agent = ImscriptionDesignAgent(
     goal="bivalent allosteric ABL inhibitor",
     criteria=ConvergenceCriteria(phi_c_min=0.70, xi_cp_max=12.0),
     model="claude-sonnet-4-6",
@@ -2775,10 +2906,10 @@ for r in history:
     print(r.iteration, r.phi_c_score, r.xi_cp, r.converged)
 ```
 
-### 10.4. Using `SYNTHON_TOOL_SCHEMA` with any LLM API
+### 10.4. Using `imscription_TOOL_SCHEMA` with any LLM API
 
 ```python
-from synthon_tool import SYNTHON_TOOL_SCHEMA, SynthonTool
+from imscribe_tool import imscription_TOOL_SCHEMA, ImscribeTool
 
 # Pass to Anthropic messages.create()
 import anthropic
@@ -2786,7 +2917,7 @@ client = anthropic.Anthropic()
 response = client.messages.create(
     model="claude-sonnet-4-6",
     max_tokens=1024,
-    tools=[SYNTHON_TOOL_SCHEMA],
+    tools=[imscription_TOOL_SCHEMA],
     messages=[{"role": "user", "content": "Find the nearest analog to allosteric_domain"}],
 )
 
@@ -2794,11 +2925,11 @@ response = client.messages.create(
 for block in response.content:
     if block.type == "tool_use":
         op = block.input.pop("operation")
-        result = SynthonTool.dispatch(op, **block.input)
+        result = ImscribeTool.dispatch(op, **block.input)
         print(result.to_json())
 ```
 
-The same `SYNTHON_TOOL_SCHEMA` works with OpenAI-format APIs (pass as `tools=[SYNTHON_TOOL_SCHEMA["function"]]` with `type="function"` wrapping).
+The same `imscription_TOOL_SCHEMA` works with OpenAI-format APIs (pass as `tools=[imscription_TOOL_SCHEMA["function"]]` with `type="function"` wrapping).
 
 ---
 

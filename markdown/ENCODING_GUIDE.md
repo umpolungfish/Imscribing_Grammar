@@ -255,7 +255,7 @@ imscribe ouroborics system_name
 imscribe nearest system_name --n 5
 ```
 
-Within `syncon_inquiry`, the agent can accept natural-language descriptions and derive the tuple, asking clarifying questions about any ambiguous primitives.
+Within `ig_inquiry`, the agent can accept natural-language descriptions and derive the tuple, asking clarifying questions about any ambiguous primitives.
 
 ---
 

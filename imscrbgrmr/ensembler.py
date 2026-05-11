@@ -1,7 +1,7 @@
 """
-IG_ENSEMBLER — Multi-Synthon Composition Verification
+IG_ENSEMBLER — Multi-Imscription Composition Verification
 
-Verifies compatibility of multi-synthon systems. Checks for emergent axiom
+Verifies compatibility of multi-imscription systems. Checks for emergent axiom
 violations, computes system-level ξ_CP, and identifies emergent Φ_c candidacy.
 
 Key principle: ξ_CP(Ψ_ensemble) ≠ Σ ξ_CP(S_i).
@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Union
 
 from .models import (
-    Synthon, Granularity, GrammarOperator, CriticalityPhase, Topology,
+    Imscription, Granularity, GrammarOperator, CriticalityPhase, Topology,
 )
 from .constraints import (
     ConstraintEngine, CompatibilityReport, CompatibilityResult, AxiomValidator,
@@ -111,7 +111,7 @@ _COMPAT_LABEL = {
 
 class EnsembleCatalog:
     """
-    Registry for multi-synthon composition analysis.
+    Registry for multi-imscription composition analysis.
 
     Usage::
 
@@ -120,7 +120,7 @@ class EnsembleCatalog:
         ensemble = EnsembleCatalog()
         ensemble.add("rotaxane_axle")     # by catalog name
         ensemble.add("macrocycle_wheel")
-        ensemble.add(stopper_synthon)     # or by Synthon object
+        ensemble.add(stopper_imscription)     # or by Imscription object
 
         report = ensemble.check_pairwise()
         print(report.is_consistent)
@@ -130,25 +130,25 @@ class EnsembleCatalog:
     """
 
     def __init__(self):
-        self._synthons: List[Synthon] = []
+        self._imscriptions: List[Imscription] = []
         self._engine = ConstraintEngine()
 
-    def add(self, synthon_or_name: Union[Synthon, str]) -> "EnsembleCatalog":
-        """Add a synthon by object or by name from the global catalog."""
-        if isinstance(synthon_or_name, str):
+    def add(self, imscription_or_name: Union[Imscription, str]) -> "EnsembleCatalog":
+        """Add a imscription by object or by name from the global catalog."""
+        if isinstance(imscription_or_name, str):
             from .registry import global_catalog
-            s = global_catalog.get(synthon_or_name)
+            s = global_catalog.get(imscription_or_name)
             if s is None:
                 raise KeyError(
-                    f"Synthon '{synthon_or_name}' not found in global catalog."
+                    f"Imscription '{imscription_or_name}' not found in global catalog."
                 )
-            self._synthons.append(s)
+            self._imscriptions.append(s)
         else:
-            self._synthons.append(synthon_or_name)
+            self._imscriptions.append(imscription_or_name)
         return self
 
-    def components(self) -> List[Synthon]:
-        return list(self._synthons)
+    def components(self) -> List[Imscription]:
+        return list(self._imscriptions)
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -156,10 +156,10 @@ class EnsembleCatalog:
 
     def _pairwise_matrix(self) -> List[EnsembleCompatibilityEntry]:
         entries: List[EnsembleCompatibilityEntry] = []
-        n = len(self._synthons)
+        n = len(self._imscriptions)
         for i in range(n):
             for j in range(i + 1, n):
-                a, b = self._synthons[i], self._synthons[j]
+                a, b = self._imscriptions[i], self._imscriptions[j]
                 report: CompatibilityReport = self._engine.check_pair_compatibility(a, b)
                 entries.append(EnsembleCompatibilityEntry(
                     component_a=a.name,
@@ -175,7 +175,7 @@ class EnsembleCatalog:
         results: List[EmergentPropertyResult] = []
 
         # 1. Emergent criticality
-        individual_scores = [degeneracy_strength(s)[0] for s in self._synthons]
+        individual_scores = [degeneracy_strength(s)[0] for s in self._imscriptions]
         avg_individual = (
             sum(individual_scores) / len(individual_scores) if individual_scores else 0.0
         )
@@ -184,8 +184,8 @@ class EnsembleCatalog:
             Topology.NETWORK_MIXED, Topology.NETWORK_INTERPENETRATING,
             Topology.NETWORK_SYM,
         }
-        n_network = sum(1 for s in self._synthons if s.topology in _NET_TOPOS)
-        coop_boost = min(0.30, n_network * 0.10 + len(self._synthons) * 0.03)
+        n_network = sum(1 for s in self._imscriptions if s.topology in _NET_TOPOS)
+        coop_boost = min(0.30, n_network * 0.10 + len(self._imscriptions) * 0.03)
         ensemble_score = min(1.0, avg_individual + coop_boost)
         emergent_crit = (ensemble_score > avg_individual + 0.10) and ensemble_score >= 0.40
 
@@ -203,10 +203,10 @@ class EnsembleCatalog:
         ))
 
         # 2. Granularity amplification G_ב → G_ג (Axiom 3)
-        local_count = sum(1 for s in self._synthons if s.granularity == Granularity.LOCAL)
+        local_count = sum(1 for s in self._imscriptions if s.granularity == Granularity.LOCAL)
         gran_amp = False
         if local_count >= 3:
-            ax3 = AxiomValidator.validate_axiom3_cooperative_induction(self._synthons)
+            ax3 = AxiomValidator.validate_axiom3_cooperative_induction(self._imscriptions)
             gran_amp = ax3.get("should_reclassify_to_mesoscale", False)
 
         results.append(EmergentPropertyResult(
@@ -222,7 +222,7 @@ class EnsembleCatalog:
         ))
 
         # 3. Interface fidelity degradation
-        avg_f = sum(s.fidelity.numeric_value for s in self._synthons) / len(self._synthons)
+        avg_f = sum(s.fidelity.numeric_value for s in self._imscriptions) / len(self._imscriptions)
         matrix = self._pairwise_matrix()
         has_incompat = any(e.result == "Incompatible" for e in matrix)
         iface_lower_f = has_incompat and avg_f > 0.5
@@ -245,7 +245,7 @@ class EnsembleCatalog:
 
         # Axiom 1
         cyclic_ok = True
-        for s in self._synthons:
+        for s in self._imscriptions:
             r = AxiomValidator.validate_axiom1_cyclic_closure(s)
             if r.get("applies") and r.get("violated"):
                 cyclic_ok = False
@@ -264,7 +264,7 @@ class EnsembleCatalog:
                 Topology.NETWORK_MIXED, Topology.NETWORK_INTERPENETRATING,
                 Topology.NETWORK_SYM,
             }
-            for s in self._synthons
+            for s in self._imscriptions
         )
         props["Axiom 2 (Grammar Barrier)"] = (
             "Global propagation (G_ℵ) supported — Γ_∨ or T_nrleg present."
@@ -273,7 +273,7 @@ class EnsembleCatalog:
         )
 
         # Axiom 3
-        ax3 = AxiomValidator.validate_axiom3_cooperative_induction(self._synthons)
+        ax3 = AxiomValidator.validate_axiom3_cooperative_induction(self._imscriptions)
         props["Axiom 3 (Cooperative Induction)"] = (
             "Superlinear induction — reclassify ensemble to G_ג."
             if ax3.get("should_reclassify_to_mesoscale", False) else
@@ -281,7 +281,7 @@ class EnsembleCatalog:
         )
 
         # Axiom 5
-        max_score = max((degeneracy_strength(s)[0] for s in self._synthons), default=0.0)
+        max_score = max((degeneracy_strength(s)[0] for s in self._imscriptions), default=0.0)
         if max_score >= 0.70:
             props["Axiom 5 (Criticality)"] = (
                 f"Ensemble degeneracy_strength = {max_score:.2f} ≥ 0.70. "
@@ -300,9 +300,9 @@ class EnsembleCatalog:
 
     def check_pairwise(self) -> EnsembleReport:
         """Check all N×N interactions and return a full EnsembleReport."""
-        if len(self._synthons) < 2:
+        if len(self._imscriptions) < 2:
             return EnsembleReport(
-                component_names=[s.name for s in self._synthons],
+                component_names=[s.name for s in self._imscriptions],
                 pairwise_matrix=[],
                 consistency_score=1.0,
                 emergent_properties=[],
@@ -330,7 +330,7 @@ class EnsembleCatalog:
                 )
 
         return EnsembleReport(
-            component_names=[s.name for s in self._synthons],
+            component_names=[s.name for s in self._imscriptions],
             pairwise_matrix=matrix,
             consistency_score=consistency,
             emergent_properties=emergent,
@@ -352,11 +352,11 @@ class EnsembleCatalog:
         Uses the most constrained (highest F) component as reference.
         Interface overhead adds bits to ξ_CP via the Landauer identity.
         """
-        if not self._synthons:
+        if not self._imscriptions:
             return {"error": "No components registered."}
 
         # Use the component with highest fidelity as thermodynamic reference
-        ref = max(self._synthons, key=lambda s: s.fidelity.numeric_value)
+        ref = max(self._imscriptions, key=lambda s: s.fidelity.numeric_value)
         try:
             result = compute_eta_CP(ref, delta_g_assembly)
             xi_system = result.xi_CP + interface_overhead_bits * math.log(2)
@@ -370,8 +370,8 @@ class EnsembleCatalog:
             "HIGH"
         )
         return {
-            "num_components": len(self._synthons),
-            "reference_synthon": ref.name,
+            "num_components": len(self._imscriptions),
+            "reference_imscription": ref.name,
             "delta_g_assembly_kJ_mol": delta_g_assembly,
             "eta_CP_system": round(eta_system, 6),
             "xi_CP_system_nats": round(xi_system, 4),

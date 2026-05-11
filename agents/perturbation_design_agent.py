@@ -19,7 +19,7 @@ Usage::
     config = build_agent_config(provider="anthropic", model=None)
     agent = PerturbationDesignAgent(config)
     result = await agent.analyze(
-        synthon_name="carboxylic_acid_dimer",
+        imscription_name="carboxylic_acid_dimer",
         delta_g=-12.0,
         target_xi_cp=5.0,   # optional — triggers pathfinding
     )
@@ -57,7 +57,7 @@ class Intervention:
 @dataclass
 class PerturbationDesignResult:
     """Full result of a perturbation design analysis."""
-    synthon_name: str
+    imscription_name: str
     delta_g: float
     baseline_xi_CP: float
     jacobian: PrimitiveJacobian
@@ -69,7 +69,7 @@ class PerturbationDesignResult:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            "synthon": self.synthon_name,
+            "imscription": self.imscription_name,
             "delta_g_kJ_mol": self.delta_g,
             "baseline_xi_CP_nats": round(self.baseline_xi_CP, 4),
             "most_sensitive_primitive": (
@@ -130,7 +130,7 @@ class PerturbationDesignAgent(BaseAgent):
             config=config,
             persona=(
                 "Expert synthetic chemist and thermodynamic modeller specialising in "
-                "the Unified Synthonicon framework. You translate numerical Δξ_CP "
+                "the Unified Imscriptiveon framework. You translate numerical Δξ_CP "
                 "sensitivity data into practical experimental strategies, citing "
                 "specific functional-group changes, solvent conditions, substituent "
                 "effects, and geometric modifications."
@@ -164,7 +164,7 @@ class PerturbationDesignAgent(BaseAgent):
 
     async def analyze(
         self,
-        synthon_name: str,
+        imscription_name: str,
         delta_g: float,
         target_xi_cp: Optional[float] = None,
         optimize_primitives: Optional[List[str]] = None,
@@ -174,7 +174,7 @@ class PerturbationDesignAgent(BaseAgent):
         Run full perturbation analysis and generate LLM-interpreted recommendations.
 
         Args:
-            synthon_name: Name of synthon in the global catalog.
+            imscription_name: Name of imscription in the global catalog.
             delta_g: Assembly/reaction ΔG in kJ/mol.
             target_xi_cp: Optional target ξ_CP (nats). Triggers pathfinding.
             optimize_primitives: Primitives to vary in pathfinding (default: all).
@@ -183,31 +183,31 @@ class PerturbationDesignAgent(BaseAgent):
         Returns:
             PerturbationDesignResult with recommendations.
         """
-        synthon = global_catalog.get(synthon_name)
-        if synthon is None:
-            raise KeyError(f"Synthon '{synthon_name}' not found in global catalog.")
+        imscription = global_catalog.get(imscription_name)
+        if imscription is None:
+            raise KeyError(f"Imscription '{imscription_name}' not found in global catalog.")
 
         # 1. Run Primitive Jacobian
-        jacobian = self._engine.sweep_all(synthon, delta_g)
+        jacobian = self._engine.sweep_all(imscription, delta_g)
 
         # 2. Fault injection
-        fault_report = self._engine.fault_injection(synthon, delta_g)
+        fault_report = self._engine.fault_injection(imscription, delta_g)
 
         # 3. Optional pathfinding
         path_result: Optional[Dict[str, Any]] = None
         if target_xi_cp is not None:
             path_result = self._engine.find_path_to_target(
-                synthon, delta_g, target_xi_cp,
+                imscription, delta_g, target_xi_cp,
                 optimize_primitives=optimize_primitives,
             )
 
         # 4. LLM interpretation
         llm_summary, recommendations = await self._interpret_with_llm(
-            synthon, delta_g, jacobian, fault_report, path_result, top_n
+            imscription, delta_g, jacobian, fault_report, path_result, top_n
         )
 
         return PerturbationDesignResult(
-            synthon_name=synthon_name,
+            imscription_name=imscription_name,
             delta_g=delta_g,
             baseline_xi_CP=jacobian.baseline_xi_CP,
             jacobian=jacobian,
@@ -224,7 +224,7 @@ class PerturbationDesignAgent(BaseAgent):
 
     async def _interpret_with_llm(
         self,
-        synthon,
+        imscription,
         delta_g: float,
         jacobian: PrimitiveJacobian,
         fault_report: Dict[str, Any],
@@ -232,7 +232,7 @@ class PerturbationDesignAgent(BaseAgent):
         top_n: int,
     ):
         """Call LLM to translate Jacobian numbers into chemical strategies."""
-        prompt = self._build_interpretation_prompt(synthon, delta_g, jacobian, fault_report, path_result, top_n)
+        prompt = self._build_interpretation_prompt(imscription, delta_g, jacobian, fault_report, path_result, top_n)
         try:
             raw = await self.call_llm(
                 prompt=prompt,
@@ -244,7 +244,7 @@ class PerturbationDesignAgent(BaseAgent):
         except Exception:
             return self._fallback_recommendations(jacobian, fault_report)
 
-    def _build_interpretation_prompt(self, synthon, delta_g, jacobian, fault_report, path_result, top_n) -> str:
+    def _build_interpretation_prompt(self, imscription, delta_g, jacobian, fault_report, path_result, top_n) -> str:
         jacobian_rows = "\n".join(
             f"  {r.primitive} ({r.primitive_name}): {r.old_value} → {r.new_value} "
             f"[Δξ_CP = {r.delta_xi_CP:+.3f} nats, {r.sensitivity}]"
@@ -262,17 +262,17 @@ class PerturbationDesignAgent(BaseAgent):
             )
 
         return f"""<task>
-You are analysing perturbation sensitivity data for a chemical synthon.
+You are analysing perturbation sensitivity data for a chemical imscription.
 Translate each numerical Δξ_CP sensitivity into a concrete experimental strategy.
 </task>
 
-<synthon>
-Name: {synthon.name}
-Description: {synthon.description or "N/A"}
-Notation: {synthon.to_notation()}
+<imscription>
+Name: {imscription.name}
+Description: {imscription.description or "N/A"}
+Notation: {imscription.to_notation()}
 ΔG: {delta_g} kJ/mol
 Baseline ξ_CP: {jacobian.baseline_xi_CP:.3f} nats
-</synthon>
+</imscription>
 
 <jacobian>
 {jacobian_rows}
@@ -321,7 +321,7 @@ Return ONLY a JSON object:
 
     def _system_prompt(self) -> str:
         return (
-            "You are an expert in synthonic system design using the Unified Synthonicon framework. "
+            "You are an expert in Imscriptive system design using the Unified Imscriptiveon framework. "
             "You translate Δξ_CP Primitive Jacobian data into actionable intervention strategies. "
             "For primary-tier (molecular/supramolecular) systems your recommendations are "
             "chemically specific and experimentally grounded. For extended-tier (cross-domain) "
@@ -390,16 +390,16 @@ Return ONLY a JSON object:
     # ------------------------------------------------------------------
 
     async def run(self, task: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """BaseAgent interface. Task format: '<synthon_name> <delta_g> [target_xi_cp]'"""
+        """BaseAgent interface. Task format: '<imscription_name> <delta_g> [target_xi_cp]'"""
         import re
         parts = task.strip().split()
         if len(parts) < 2:
-            return {"status": "error", "error": "Usage: <synthon_name> <delta_g> [target_xi_cp]"}
+            return {"status": "error", "error": "Usage: <imscription_name> <delta_g> [target_xi_cp]"}
         try:
-            synthon_name = parts[0]
+            imscription_name = parts[0]
             delta_g = float(parts[1])
             target = float(parts[2]) if len(parts) > 2 else None
-            result = await self.analyze(synthon_name, delta_g, target_xi_cp=target)
+            result = await self.analyze(imscription_name, delta_g, target_xi_cp=target)
             return {
                 "status": "success",
                 "findings": result.llm_summary,
@@ -415,7 +415,7 @@ Return ONLY a JSON object:
 # ---------------------------------------------------------------------------
 
 async def design_perturbation(
-    synthon_name: str,
+    imscription_name: str,
     delta_g: float,
     target_xi_cp: Optional[float] = None,
     provider: str = "anthropic",
@@ -424,4 +424,4 @@ async def design_perturbation(
     """Quick helper: run perturbation design analysis."""
     config = build_agent_config(provider=provider, model=model)
     agent = PerturbationDesignAgent(config)
-    return await agent.analyze(synthon_name, delta_g, target_xi_cp=target_xi_cp)
+    return await agent.analyze(imscription_name, delta_g, target_xi_cp=target_xi_cp)

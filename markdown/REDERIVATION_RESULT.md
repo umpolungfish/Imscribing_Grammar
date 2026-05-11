@@ -82,7 +82,7 @@ From the encoding, several catalog entries are the **same primitive signature** 
 
 ## Step 4: Predicted Missing Seam Types
 
-The Synthonicon rederivation predicts seam types that the empirical sayer process **never discovered**:
+The Imscriptiveon rederivation predicts seam types that the empirical sayer process **never discovered**:
 
 ### 1. Φ_super Explicit Seam
 The catalog has many Φ: sub→c seams but **no dedicated type for Φ: c→super** (all correlations → 1, full contagion). The *systemic* category approaches this but no type formally encodes the supercritical crossing.
@@ -103,13 +103,13 @@ When a temporal cycle collapses to a single point event. **No seam type for cycl
 
 ## Conclusion
 
-**Yes, seam types can be rederived from Synthonicon primitives.**
+**Yes, seam types can be rederived from Imscriptiveon primitives.**
 
 The empirical process was performing an **unguided search over primitive-transition space**; the sayer agent was essentially computing:
 
 $$\{(p_i, p_j) : \text{financially observable boundary}\}$$
 
-without knowing it was enumerating Synthonicon transitions.
+without knowing it was enumerating Imscriptiveon transitions.
 
 ### Practical Implications
 
@@ -127,11 +127,11 @@ without knowing it was enumerating Synthonicon transitions.
 
 ```
 seamcore (empirical seam enumeration)
-    → Synthonicon (primitive grammar that explains *why* seams exist)
+    → Imscriptiveon (primitive grammar that explains *why* seams exist)
         → Phase Transition Detector (primitive-state monitoring, trading morphisms)
 ```
 
-**The rederivation closes the circle:** Synthonicon can now **generate** seamcore rather than just classify it.
+**The rederivation closes the circle:** Imscriptiveon can now **generate** seamcore rather than just classify it.
 
 ---
 

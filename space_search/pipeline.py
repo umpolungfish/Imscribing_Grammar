@@ -213,7 +213,7 @@ def run(skip_gaia: bool = False, verbose: bool = False):
 
     from p12_spectral_test import run_p12_test
     from frb_catalog_p12 import run_frb_catalog_p12
-    from primitives import tuple_distance, SYNTHONS, breakdown
+    from primitives import tuple_distance, imscriptions, breakdown
 
     # Print canonical distances
     print("=== Canonical Tuple Distances ===")
@@ -223,7 +223,7 @@ def run(skip_gaia: bool = False, verbose: bool = False):
         ("human", "interstellar_target"),
     ]
     for a, b in pairs:
-        d = tuple_distance(SYNTHONS[a], SYNTHONS[b])
+        d = tuple_distance(imscriptions[a], imscriptions[b])
         print(f"  d({a}, {b}) = {d:.3f}")
     print()
 

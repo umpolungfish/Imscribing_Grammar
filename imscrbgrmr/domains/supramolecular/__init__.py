@@ -1,7 +1,7 @@
 """
-Supramolecular Domain — Synthon agents for crystal packing and non-covalent interactions.
+Supramolecular Domain — Imscription agents for crystal packing and non-covalent interactions.
 
-This module implements agents for analyzing supramolecular synthons
+This module implements agents for analyzing supramolecular imscriptions
 in the context of crystal engineering and host-guest chemistry.
 """
 from __future__ import annotations
@@ -9,7 +9,7 @@ from __future__ import annotations
 from typing import Dict, List, Any, Optional
 
 from imscrbgrmr.models import (
-    Synthon,
+    Imscription,
     Dimensionality,
     Topology,
     RecognitionMode,
@@ -19,14 +19,14 @@ from imscrbgrmr.models import (
     InteractionGrammar,
 )
 
-__all__ = ["SupramolecularSynthonAgent"]
+__all__ = ["SupramolecularImscriptionAgent"]
 
 
-class SupramolecularSynthonAgent:
+class SupramolecularImscriptionAgent:
     """
-    Agent for analyzing supramolecular synthons in crystal packing contexts.
+    Agent for analyzing supramolecular imscriptions in crystal packing contexts.
     
-    Supramolecular synthons operate with D_turnthree (3D packing)
+    Supramolecular imscriptions operate with D_turnthree (3D packing)
     and typically involve R_superset (non-covalent) recognition modes.
     
     Capabilities:
@@ -193,22 +193,22 @@ class SupramolecularSynthonAgent:
             "reliability": "high" if result["frequency"] > 0.8 else "medium",
         }
     
-    def to_synthon(
+    def to_imscription(
         self,
         motif_name: str,
         motif_type: str = "hydrogen_bond",
-    ) -> Synthon:
+    ) -> Imscription:
         """
-        Create a supramolecular synthon from a motif description.
+        Create a supramolecular imscription from a motif description.
         
         Args:
             motif_name: Name of the motif (e.g., "carboxylic_acid_dimer")
             motif_type: Type of interaction
         
         Returns:
-            Synthon object
+            Imscription object
         """
-        # Common supramolecular synthons
+        # Common supramolecular imscriptions
         known_motifs = {
             "carboxylic_acid_dimer": {
                 "topology": Topology.CYCLIC_BOWTIE,
@@ -240,7 +240,7 @@ class SupramolecularSynthonAgent:
 
         from imscrbgrmr.models import KineticCharacter, CriticalityPhase
         
-        return Synthon(
+        return Imscription(
             name=motif_name,
             dimensionality=Dimensionality.SUPRAMOLECULAR,
             topology=motif_data["topology"],
@@ -251,6 +251,6 @@ class SupramolecularSynthonAgent:
             granularity=Granularity.MESOSCALE,
             interaction_grammar=InteractionGrammar.SELECTIVE,
             criticality_phase=CriticalityPhase.SUBCRITICAL,
-            description=f"Supramolecular synthon: {motif_type}",
+            description=f"Supramolecular imscription: {motif_type}",
             metadata={"motif_type": motif_type},
         )
