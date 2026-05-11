@@ -172,6 +172,19 @@ local TEXT_CMD_CHARS = {
   i  = "ı", j  = "ȷ",
 }
 
+-- Escape ^ and ~ inside \text{} in math mode.
+-- In LaTeX text mode ^ and ~ are accent/tie operators that expect arguments;
+-- \textasciicircum and \textasciitilde produce the literal glyphs safely.
+local function fix_text_accent_chars(s)
+  return (s:gsub("\\text(%s*)(%b{})", function(spaces, braced)
+    local inner = braced:sub(2, -2)
+    local fixed = inner:gsub("%^", "\\textasciicircum")
+                       :gsub("~",  "\\textasciitilde")
+    if fixed == inner then return nil end
+    return "\\text" .. spaces .. "{" .. fixed .. "}"
+  end))
+end
+
 -- Replace any \COMMAND inside math with its Unicode char when the command is
 -- a known text-mode command (not a math command).  Handles both braced and
 -- unbraced positions.  Unknown commands are left untouched.
@@ -321,7 +334,9 @@ function Math(el)
   -- Step 3: replace remaining \CMD text-mode commands with Unicode chars
   --         e.g. _{\aelig} → _{æ}
   s = fix_text_cmds_in_math(s)
-  -- Step 3: font-wrap problem chars
+  -- Step 4: escape ^ and ~ inside \text{} (accent operators in text mode)
+  s = fix_text_accent_chars(s)
+  -- Step 5: font-wrap problem chars
   if str_has_any_problem(s) then
     s = fix_text_commands(s)         -- upgrade existing \text{} wrappers
     s = fix_subarg_problem_chars(s)  -- wrap single-char _{X}/^{X} subscript args
