@@ -42,7 +42,7 @@ venv/
 dist/
 build/
 .pytest_cache/
-
+.claude
 # ── Windows zone identifiers ──────────────────────────────────────────────────
 *:Zone.Identifier
 
@@ -56,6 +56,8 @@ build/
 *.synctex.gz
 *.bbl
 *.blg
+*.mp4
+*.pt
 
 # ── Misc ──────────────────────────────────────────────────────────────────────
 .DS_Store
