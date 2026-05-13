@@ -1,0 +1,5855 @@
+--- [THE ENGINE: FULL MANUSCRIPT COMPILATION v2.3 INITIALIZED] ---
+Loading ./LSI_ivtff_0d.txt ...
+Enforcing linear type-system checks with embedded primitive scanner... OK
+
+Loaded 227 folios.
+
+=====================================================================
+ COMPILING LOGICAL NODE: F1R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +225 more
+ -> Allocation Matrix: 245 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F1V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +84 more
+ -> Allocation Matrix: 104 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F2R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +111 more
+ -> Allocation Matrix: 131 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F2V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +63 more
+ -> Allocation Matrix: 83 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F3R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +163 more
+ -> Allocation Matrix: 183 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F3V
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x5 | ISCRIB %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +113 more
+ -> Allocation Matrix: 133 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F4R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +88 more
+ -> Allocation Matrix: 108 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F4V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +126 more
+ -> Allocation Matrix: 146 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F5R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +42 more
+ -> Allocation Matrix: 62 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F5V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0xA | ENGAGR %r19
+ ... +34 more
+ -> Allocation Matrix: 54 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F6R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +112 more
+ -> Allocation Matrix: 132 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F6V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +165 more
+ -> Allocation Matrix: 185 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F7R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x8 | EVALT  %r19
+ ... +80 more
+ -> Allocation Matrix: 100 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F7V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +66 more
+ -> Allocation Matrix: 86 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F8R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +181 more
+ -> Allocation Matrix: 201 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F8V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +141 more
+ -> Allocation Matrix: 161 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F9R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +82 more
+ -> Allocation Matrix: 102 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F9V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +86 more
+ -> Allocation Matrix: 106 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F10R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +81 more
+ -> Allocation Matrix: 101 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F10V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +43 more
+ -> Allocation Matrix: 63 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F11R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +41 more
+ -> Allocation Matrix: 61 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F11V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xB | IFIX  %r19
+ ... +42 more
+ -> Allocation Matrix: 62 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F13R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +72 more
+ -> Allocation Matrix: 92 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F13V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x3 | AREV  %r2
+ 0x4 | CLINK  %r3
+ 0x5 | ISCRIB %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x4 | CLINK  %r19
+ ... +64 more
+ -> Allocation Matrix: 84 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F14R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x6 | FSPLIT %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0x2 | AFWD  %r10
+ 0x3 | AREV  %r11
+ 0x4 | CLINK  %r12
+ 0x5 | ISCRIB %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x1 | TANCH  %r19
+ ... +102 more
+ -> Allocation Matrix: 122 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F14V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +59 more
+ -> Allocation Matrix: 79 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F15R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x3 | AREV  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +123 more
+ -> Allocation Matrix: 143 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F15V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x0 | VINIT  %r18
+ 0x1 | TANCH  %r19
+ ... +83 more
+ -> Allocation Matrix: 103 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F16R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +98 more
+ -> Allocation Matrix: 118 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F16V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +90 more
+ -> Allocation Matrix: 110 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F17R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +90 more
+ -> Allocation Matrix: 110 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F17V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x0 | VINIT  %r9
+ 0x1 | TANCH  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +187 more
+ -> Allocation Matrix: 207 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F18R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +101 more
+ -> Allocation Matrix: 121 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F18V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x5 | ISCRIB %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +65 more
+ -> Allocation Matrix: 85 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F19R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +94 more
+ -> Allocation Matrix: 114 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F19V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +99 more
+ -> Allocation Matrix: 119 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F20R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0xA | ENGAGR %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +93 more
+ -> Allocation Matrix: 113 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F20V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xB | IFIX  %r19
+ ... +81 more
+ -> Allocation Matrix: 101 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F21R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +97 more
+ -> Allocation Matrix: 117 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F21V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +48 more
+ -> Allocation Matrix: 68 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F22R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +95 more
+ -> Allocation Matrix: 115 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F22V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +125 more
+ -> Allocation Matrix: 145 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F23R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x0 | VINIT  %r9
+ 0x3 | AREV  %r10
+ 0x4 | CLINK  %r11
+ 0x8 | EVALT  %r12
+ 0x9 | EVALF  %r13
+ 0xA | ENGAGR %r14
+ 0xB | IFIX  %r15
+ 0x6 | FSPLIT %r16
+ 0x0 | VINIT  %r17
+ 0x3 | AREV  %r18
+ 0x4 | CLINK  %r19
+ ... +77 more
+ -> Allocation Matrix: 97 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F23V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +97 more
+ -> Allocation Matrix: 117 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F24R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +155 more
+ -> Allocation Matrix: 175 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F24V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +124 more
+ -> Allocation Matrix: 144 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F25R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +38 more
+ -> Allocation Matrix: 58 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F25V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +54 more
+ -> Allocation Matrix: 74 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F26R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +86 more
+ -> Allocation Matrix: 106 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F26V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +74 more
+ -> Allocation Matrix: 94 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F27R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +109 more
+ -> Allocation Matrix: 129 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F27V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x5 | ISCRIB %r3
+ 0x8 | EVALT  %r4
+ 0x9 | EVALF  %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x7 | FFUSE  %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +64 more
+ -> Allocation Matrix: 84 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F28R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +63 more
+ -> Allocation Matrix: 83 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F28V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +56 more
+ -> Allocation Matrix: 76 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F29R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +68 more
+ -> Allocation Matrix: 88 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F29V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +100 more
+ -> Allocation Matrix: 120 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F30R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +111 more
+ -> Allocation Matrix: 131 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F30V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +86 more
+ -> Allocation Matrix: 106 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F31R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +142 more
+ -> Allocation Matrix: 162 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F31V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +89 more
+ -> Allocation Matrix: 109 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F32R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +134 more
+ -> Allocation Matrix: 154 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F32V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +82 more
+ -> Allocation Matrix: 102 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F33R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +49 more
+ -> Allocation Matrix: 69 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F33V
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +91 more
+ -> Allocation Matrix: 111 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F34R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +141 more
+ -> Allocation Matrix: 161 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F34V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +89 more
+ -> Allocation Matrix: 109 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F35R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x0 | VINIT  %r9
+ 0x1 | TANCH  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x1 | TANCH  %r19
+ ... +117 more
+ -> Allocation Matrix: 137 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F35V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x8 | EVALT  %r4
+ 0xA | ENGAGR %r5
+ 0xB | IFIX  %r6
+ 0x6 | FSPLIT %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0x2 | AFWD  %r10
+ 0x3 | AREV  %r11
+ 0x8 | EVALT  %r12
+ 0x9 | EVALF  %r13
+ 0xA | ENGAGR %r14
+ 0xB | IFIX  %r15
+ 0x6 | FSPLIT %r16
+ 0x0 | VINIT  %r17
+ 0x1 | TANCH  %r18
+ 0x3 | AREV  %r19
+ ... +149 more
+ -> Allocation Matrix: 169 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F36R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +55 more
+ -> Allocation Matrix: 75 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F36V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +102 more
+ -> Allocation Matrix: 122 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F37R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +82 more
+ -> Allocation Matrix: 102 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F37V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0xA | ENGAGR %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +161 more
+ -> Allocation Matrix: 181 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F38R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +39 more
+ -> Allocation Matrix: 59 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F38V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +54 more
+ -> Allocation Matrix: 74 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F39R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x9 | EVALF  %r19
+ ... +140 more
+ -> Allocation Matrix: 160 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F39V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +125 more
+ -> Allocation Matrix: 145 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F40R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +92 more
+ -> Allocation Matrix: 112 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F40V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xB | IFIX  %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0x3 | AREV  %r10
+ 0x4 | CLINK  %r11
+ 0x8 | EVALT  %r12
+ 0x9 | EVALF  %r13
+ 0xA | ENGAGR %r14
+ 0x0 | VINIT  %r15
+ 0x1 | TANCH  %r16
+ 0x3 | AREV  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +156 more
+ -> Allocation Matrix: 176 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F41R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +94 more
+ -> Allocation Matrix: 114 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F41V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x2 | AFWD  %r1
+ 0x3 | AREV  %r2
+ 0x4 | CLINK  %r3
+ 0x9 | EVALF  %r4
+ 0xA | ENGAGR %r5
+ 0x6 | FSPLIT %r6
+ 0x7 | FFUSE  %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0x2 | AFWD  %r10
+ 0x3 | AREV  %r11
+ 0x4 | CLINK  %r12
+ 0x8 | EVALT  %r13
+ 0x9 | EVALF  %r14
+ 0xA | ENGAGR %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +57 more
+ -> Allocation Matrix: 77 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F42R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +199 more
+ -> Allocation Matrix: 219 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F42V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +133 more
+ -> Allocation Matrix: 153 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F43R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +124 more
+ -> Allocation Matrix: 144 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F43V
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +141 more
+ -> Allocation Matrix: 161 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F44R
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +88 more
+ -> Allocation Matrix: 108 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F44V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x4 | CLINK  %r3
+ 0x5 | ISCRIB %r4
+ 0x8 | EVALT  %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x7 | FFUSE  %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +94 more
+ -> Allocation Matrix: 114 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F45R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +72 more
+ -> Allocation Matrix: 92 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F45V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +88 more
+ -> Allocation Matrix: 108 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F46R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +137 more
+ -> Allocation Matrix: 157 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F46V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +102 more
+ -> Allocation Matrix: 122 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F47R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +86 more
+ -> Allocation Matrix: 106 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F47V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0xA | ENGAGR %r19
+ ... +111 more
+ -> Allocation Matrix: 131 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F48R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +70 more
+ -> Allocation Matrix: 90 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F48V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +98 more
+ -> Allocation Matrix: 118 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F49R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +163 more
+ -> Allocation Matrix: 183 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F49V
+=====================================================================
+ DATA | RAW_VAL f
+ 0x0 | VINIT  %r0
+ 0xA | ENGAGR %r1
+ 0xB | IFIX  %r2
+ 0x2 | AFWD  %r3
+ DATA | RAW_VAL 5->?<!@140
+ 0x9 | EVALF  %r4
+ 0x5 | ISCRIB %r5
+ 0x1 | TANCH  %r6
+ 0x0 | VINIT  %r7
+ DATA | RAW_VAL @192
+ 0xB | IFIX  %r8
+ 0x2 | AFWD  %r9
+ DATA | RAW_VAL @140
+ DATA | RAW_VAL @164
+ 0x1 | TANCH  %r10
+ 0x0 | VINIT  %r11
+ DATA | RAW_VAL @192
+ 0xB | IFIX  %r12
+ 0x2 | AFWD  %r13
+ ... +302 more
+ -> Allocation Matrix: 315 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F50R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +82 more
+ -> Allocation Matrix: 102 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F50V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +84 more
+ -> Allocation Matrix: 104 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F51R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +119 more
+ -> Allocation Matrix: 139 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F51V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x8 | EVALT  %r19
+ ... +103 more
+ -> Allocation Matrix: 123 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F52R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +66 more
+ -> Allocation Matrix: 86 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F52V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +114 more
+ -> Allocation Matrix: 134 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F53R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x7 | FFUSE  %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x7 | FFUSE  %r19
+ ... +70 more
+ -> Allocation Matrix: 90 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F53V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +102 more
+ -> Allocation Matrix: 122 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F54R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +106 more
+ -> Allocation Matrix: 126 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F54V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0xA | ENGAGR %r19
+ ... +116 more
+ -> Allocation Matrix: 136 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F55R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x9 | EVALF  %r14
+ 0xA | ENGAGR %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x3 | AREV  %r19
+ ... +98 more
+ -> Allocation Matrix: 118 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F55V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x0 | VINIT  %r9
+ 0x1 | TANCH  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +96 more
+ -> Allocation Matrix: 116 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F56R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +150 more
+ -> Allocation Matrix: 170 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F56V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0xA | ENGAGR %r19
+ ... +117 more
+ -> Allocation Matrix: 137 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F57R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +87 more
+ -> Allocation Matrix: 107 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F57V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x4 | CLINK  %r2
+ 0xA | ENGAGR %r3
+ 0x6 | FSPLIT %r4
+ 0x7 | FFUSE  %r5
+ 0x0 | VINIT  %r6
+ 0x2 | AFWD  %r7
+ 0x3 | AREV  %r8
+ 0x4 | CLINK  %r9
+ 0x5 | ISCRIB %r10
+ 0x8 | EVALT  %r11
+ 0x9 | EVALF  %r12
+ 0xA | ENGAGR %r13
+ 0xB | IFIX  %r14
+ 0x0 | VINIT  %r15
+ 0x1 | TANCH  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +62 more
+ -> Allocation Matrix: 82 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F58R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +384 more
+ -> Allocation Matrix: 404 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F58V
+=====================================================================
+ 0x3 | AREV  %r0
+ 0x5 | ISCRIB %r1
+ 0x8 | EVALT  %r2
+ 0xA | ENGAGR %r3
+ 0x6 | FSPLIT %r4
+ 0x7 | FFUSE  %r5
+ 0x0 | VINIT  %r6
+ 0x1 | TANCH  %r7
+ 0x3 | AREV  %r8
+ 0x4 | CLINK  %r9
+ 0x8 | EVALT  %r10
+ 0x9 | EVALF  %r11
+ 0xA | ENGAGR %r12
+ 0xB | IFIX  %r13
+ 0x7 | FFUSE  %r14
+ 0x0 | VINIT  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +342 more
+ -> Allocation Matrix: 362 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F65R
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x4 | CLINK  %r2
+ 0x8 | EVALT  %r3
+ -> Allocation Matrix: 4 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F65V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +45 more
+ -> Allocation Matrix: 65 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F66R
+=====================================================================
+ 0x3 | AREV  %r0
+ 0xA | ENGAGR %r1
+ 0xB | IFIX  %r2
+ 0x3 | AREV  %r3
+ 0x5 | ISCRIB %r4
+ 0xA | ENGAGR %r5
+ 0x0 | VINIT  %r6
+ 0xA | ENGAGR %r7
+ 0x3 | AREV  %r8
+ 0x4 | CLINK  %r9
+ 0xA | ENGAGR %r10
+ 0x0 | VINIT  %r11
+ 0x9 | EVALF  %r12
+ 0xB | IFIX  %r13
+ 0x5 | ISCRIB %r14
+ 0xB | IFIX  %r15
+ 0x3 | AREV  %r16
+ 0x5 | ISCRIB %r17
+ 0x3 | AREV  %r18
+ 0xA | ENGAGR %r19
+ ... +383 more
+ -> Allocation Matrix: 393 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F66V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +112 more
+ -> Allocation Matrix: 132 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F67R1
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +116 more
+ -> Allocation Matrix: 136 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F67R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x5 | ISCRIB %r2
+ 0x9 | EVALF  %r3
+ 0xB | IFIX  %r4
+ 0x6 | FSPLIT %r5
+ 0x3 | AREV  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x7 | FFUSE  %r17
+ 0x0 | VINIT  %r18
+ 0x3 | AREV  %r19
+ ... +377 more
+ -> Allocation Matrix: 397 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F67V2
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x8 | EVALT  %r2
+ 0xA | ENGAGR %r3
+ 0x6 | FSPLIT %r4
+ 0x0 | VINIT  %r5
+ 0x3 | AREV  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0x0 | VINIT  %r9
+ 0x2 | AFWD  %r10
+ 0x3 | AREV  %r11
+ 0x8 | EVALT  %r12
+ 0xA | ENGAGR %r13
+ 0xB | IFIX  %r14
+ 0x0 | VINIT  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x8 | EVALT  %r19
+ ... +103 more
+ -> Allocation Matrix: 123 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F67V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x4 | CLINK  %r1
+ 0x5 | ISCRIB %r2
+ 0x9 | EVALF  %r3
+ 0xB | IFIX  %r4
+ 0x0 | VINIT  %r5
+ 0x2 | AFWD  %r6
+ 0x3 | AREV  %r7
+ 0x4 | CLINK  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x4 | CLINK  %r15
+ 0x9 | EVALF  %r16
+ 0x0 | VINIT  %r17
+ 0x3 | AREV  %r18
+ 0x5 | ISCRIB %r19
+ ... +169 more
+ -> Allocation Matrix: 189 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +163 more
+ -> Allocation Matrix: 183 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +147 more
+ -> Allocation Matrix: 167 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68R3
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +127 more
+ -> Allocation Matrix: 147 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68V3
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +134 more
+ -> Allocation Matrix: 154 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xB | IFIX  %r19
+ ... +122 more
+ -> Allocation Matrix: 142 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F68V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +57 more
+ -> Allocation Matrix: 77 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F69R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +286 more
+ -> Allocation Matrix: 305 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F69V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +135 more
+ -> Allocation Matrix: 155 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F70R1
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x5 | ISCRIB %r2
+ 0xA | ENGAGR %r3
+ 0x6 | FSPLIT %r4
+ 0x7 | FFUSE  %r5
+ 0x0 | VINIT  %r6
+ 0x1 | TANCH  %r7
+ 0x2 | AFWD  %r8
+ 0x3 | AREV  %r9
+ 0x4 | CLINK  %r10
+ 0x5 | ISCRIB %r11
+ 0x8 | EVALT  %r12
+ 0x9 | EVALF  %r13
+ 0xA | ENGAGR %r14
+ 0xB | IFIX  %r15
+ 0x6 | FSPLIT %r16
+ 0x0 | VINIT  %r17
+ 0x1 | TANCH  %r18
+ 0x2 | AFWD  %r19
+ ... +94 more
+ -> Allocation Matrix: 114 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F70R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +174 more
+ -> Allocation Matrix: 194 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F70V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x8 | EVALT  %r13
+ 0xB | IFIX  %r14
+ 0x0 | VINIT  %r15
+ 0x4 | CLINK  %r16
+ 0x9 | EVALF  %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +133 more
+ -> Allocation Matrix: 153 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F70V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +80 more
+ -> Allocation Matrix: 100 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F71R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0xA | ENGAGR %r16
+ 0x0 | VINIT  %r17
+ 0x3 | AREV  %r18
+ 0x4 | CLINK  %r19
+ ... +88 more
+ -> Allocation Matrix: 108 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F71V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x3 | AREV  %r14
+ 0xA | ENGAGR %r15
+ 0x6 | FSPLIT %r16
+ 0x3 | AREV  %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +74 more
+ -> Allocation Matrix: 94 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x4 | CLINK  %r13
+ 0xB | IFIX  %r14
+ 0x6 | FSPLIT %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0xA | ENGAGR %r19
+ ... +79 more
+ -> Allocation Matrix: 99 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x3 | AREV  %r2
+ 0x4 | CLINK  %r3
+ 0xB | IFIX  %r4
+ 0x0 | VINIT  %r5
+ 0x3 | AREV  %r6
+ 0x4 | CLINK  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x9 | EVALF  %r13
+ 0xA | ENGAGR %r14
+ 0x0 | VINIT  %r15
+ 0x3 | AREV  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +136 more
+ -> Allocation Matrix: 156 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72R3
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x4 | CLINK  %r13
+ 0x0 | VINIT  %r14
+ 0x3 | AREV  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +150 more
+ -> Allocation Matrix: 170 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72V3
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x4 | CLINK  %r13
+ 0x9 | EVALF  %r14
+ 0x0 | VINIT  %r15
+ 0x2 | AFWD  %r16
+ 0x0 | VINIT  %r17
+ 0x2 | AFWD  %r18
+ 0xA | ENGAGR %r19
+ ... +128 more
+ -> Allocation Matrix: 148 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0xB | IFIX  %r15
+ 0x0 | VINIT  %r16
+ 0x2 | AFWD  %r17
+ 0x3 | AREV  %r18
+ 0x4 | CLINK  %r19
+ ... +140 more
+ -> Allocation Matrix: 160 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F72V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x8 | EVALT  %r14
+ 0xB | IFIX  %r15
+ 0x0 | VINIT  %r16
+ 0x8 | EVALT  %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +123 more
+ -> Allocation Matrix: 143 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F73R
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x8 | EVALT  %r1
+ 0xB | IFIX  %r2
+ 0x6 | FSPLIT %r3
+ 0x0 | VINIT  %r4
+ 0x9 | EVALF  %r5
+ 0xB | IFIX  %r6
+ 0x0 | VINIT  %r7
+ 0x2 | AFWD  %r8
+ 0x4 | CLINK  %r9
+ 0x9 | EVALF  %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +139 more
+ -> Allocation Matrix: 159 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F73V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x9 | EVALF  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0xB | IFIX  %r6
+ 0x0 | VINIT  %r7
+ 0x2 | AFWD  %r8
+ 0x4 | CLINK  %r9
+ 0x8 | EVALT  %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x4 | CLINK  %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x7 | FFUSE  %r18
+ 0x0 | VINIT  %r19
+ ... +132 more
+ -> Allocation Matrix: 152 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F75R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +461 more
+ -> Allocation Matrix: 481 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F75V
+=====================================================================
+ 0x5 | ISCRIB %r0
+ DATA | RAW_VAL l
+ DATA | RAW_VAL l
+ 0x0 | VINIT  %r1
+ 0xA | ENGAGR %r2
+ 0x6 | FSPLIT %r3
+ 0x0 | VINIT  %r4
+ 0x1 | TANCH  %r5
+ 0x2 | AFWD  %r6
+ 0x3 | AREV  %r7
+ 0x4 | CLINK  %r8
+ 0x5 | ISCRIB %r9
+ 0x8 | EVALT  %r10
+ 0x9 | EVALF  %r11
+ 0xA | ENGAGR %r12
+ 0xB | IFIX  %r13
+ 0x6 | FSPLIT %r14
+ 0x7 | FFUSE  %r15
+ 0x0 | VINIT  %r16
+ 0x2 | AFWD  %r17
+ ... +447 more
+ -> Allocation Matrix: 465 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F76R
+=====================================================================
+ 0x5 | ISCRIB %r0
+ 0x4 | CLINK  %r1
+ DATA | RAW_VAL q
+ 0x5 | ISCRIB %r2
+ 0x0 | VINIT  %r3
+ DATA | RAW_VAL l
+ 0x9 | EVALF  %r4
+ 0xA | ENGAGR %r5
+ 0x5 | ISCRIB %r6
+ 0x6 | FSPLIT %r7
+ 0x7 | FFUSE  %r8
+ 0x0 | VINIT  %r9
+ 0x1 | TANCH  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ ... +499 more
+ -> Allocation Matrix: 517 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F76V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +387 more
+ -> Allocation Matrix: 407 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F77R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x5 | ISCRIB %r2
+ 0x9 | EVALF  %r3
+ 0x0 | VINIT  %r4
+ 0x2 | AFWD  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x0 | VINIT  %r9
+ 0x8 | EVALT  %r10
+ 0x9 | EVALF  %r11
+ 0xA | ENGAGR %r12
+ 0x0 | VINIT  %r13
+ 0x8 | EVALT  %r14
+ 0x6 | FSPLIT %r15
+ 0x4 | CLINK  %r16
+ 0xB | IFIX  %r17
+ 0x0 | VINIT  %r18
+ 0x3 | AREV  %r19
+ ... +409 more
+ -> Allocation Matrix: 429 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F77V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x9 | EVALF  %r2
+ 0xB | IFIX  %r3
+ 0x0 | VINIT  %r4
+ 0x2 | AFWD  %r5
+ 0x3 | AREV  %r6
+ 0x4 | CLINK  %r7
+ 0x9 | EVALF  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0xA | ENGAGR %r14
+ 0x0 | VINIT  %r15
+ 0x3 | AREV  %r16
+ 0x5 | ISCRIB %r17
+ 0xA | ENGAGR %r18
+ 0x0 | VINIT  %r19
+ ... +369 more
+ -> Allocation Matrix: 389 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F78R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +379 more
+ -> Allocation Matrix: 399 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F78V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x7 | FFUSE  %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +282 more
+ -> Allocation Matrix: 302 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F79R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0xB | IFIX  %r19
+ ... +421 more
+ -> Allocation Matrix: 441 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F79V
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +376 more
+ -> Allocation Matrix: 396 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F80R
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0xA | ENGAGR %r2
+ 0xB | IFIX  %r3
+ 0x6 | FSPLIT %r4
+ 0x0 | VINIT  %r5
+ 0x4 | CLINK  %r6
+ 0xB | IFIX  %r7
+ 0x0 | VINIT  %r8
+ 0x3 | AREV  %r9
+ 0x9 | EVALF  %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x9 | EVALF  %r13
+ 0x0 | VINIT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x0 | VINIT  %r18
+ 0x1 | TANCH  %r19
+ ... +456 more
+ -> Allocation Matrix: 476 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F80V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +393 more
+ -> Allocation Matrix: 413 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F81R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +260 more
+ -> Allocation Matrix: 280 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F81V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +239 more
+ -> Allocation Matrix: 259 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F82R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +340 more
+ -> Allocation Matrix: 360 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F82V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x2 | AFWD  %r2
+ 0x4 | CLINK  %r3
+ 0x8 | EVALT  %r4
+ 0xB | IFIX  %r5
+ 0x0 | VINIT  %r6
+ 0x2 | AFWD  %r7
+ 0x4 | CLINK  %r8
+ 0x8 | EVALT  %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0xB | IFIX  %r15
+ 0x0 | VINIT  %r16
+ 0x2 | AFWD  %r17
+ 0x3 | AREV  %r18
+ 0x4 | CLINK  %r19
+ ... +385 more
+ -> Allocation Matrix: 405 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F83R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +456 more
+ -> Allocation Matrix: 476 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F83V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +290 more
+ -> Allocation Matrix: 310 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F84R
+=====================================================================
+ 0x2 | AFWD  %r0
+ 0x8 | EVALT  %r1
+ 0xA | ENGAGR %r2
+ 0xB | IFIX  %r3
+ 0x7 | FFUSE  %r4
+ 0x0 | VINIT  %r5
+ 0x2 | AFWD  %r6
+ 0x3 | AREV  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0x4 | CLINK  %r10
+ 0xB | IFIX  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0x9 | EVALF  %r15
+ 0xB | IFIX  %r16
+ 0x0 | VINIT  %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +376 more
+ -> Allocation Matrix: 396 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F84V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x2 | AFWD  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x8 | EVALT  %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x0 | VINIT  %r8
+ 0x2 | AFWD  %r9
+ 0x3 | AREV  %r10
+ 0x5 | ISCRIB %r11
+ 0x9 | EVALF  %r12
+ 0xA | ENGAGR %r13
+ 0xB | IFIX  %r14
+ 0x7 | FFUSE  %r15
+ 0x0 | VINIT  %r16
+ 0x2 | AFWD  %r17
+ 0x3 | AREV  %r18
+ 0x4 | CLINK  %r19
+ ... +399 more
+ -> Allocation Matrix: 419 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F85R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +341 more
+ -> Allocation Matrix: 361 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F85R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +192 more
+ -> Allocation Matrix: 212 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: FROS
+=====================================================================
+ -> Allocation Matrix: 0 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F86V4
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +114 more
+ -> Allocation Matrix: 134 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F86V6
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +420 more
+ -> Allocation Matrix: 440 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F86V5
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +358 more
+ -> Allocation Matrix: 378 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F86V3
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +319 more
+ -> Allocation Matrix: 339 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F87R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +152 more
+ -> Allocation Matrix: 172 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F87V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xB | IFIX  %r19
+ ... +132 more
+ -> Allocation Matrix: 152 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F88R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x2 | AFWD  %r2
+ 0x8 | EVALT  %r3
+ 0xA | ENGAGR %r4
+ 0xB | IFIX  %r5
+ 0x0 | VINIT  %r6
+ 0x3 | AREV  %r7
+ 0xA | ENGAGR %r8
+ 0x0 | VINIT  %r9
+ 0x3 | AREV  %r10
+ 0x4 | CLINK  %r11
+ 0xA | ENGAGR %r12
+ 0x0 | VINIT  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0xA | ENGAGR %r16
+ 0x0 | VINIT  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +198 more
+ -> Allocation Matrix: 218 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F88V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x4 | CLINK  %r1
+ 0x9 | EVALF  %r2
+ 0xB | IFIX  %r3
+ 0x6 | FSPLIT %r4
+ 0x0 | VINIT  %r5
+ 0x2 | AFWD  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x0 | VINIT  %r9
+ 0x1 | TANCH  %r10
+ 0x2 | AFWD  %r11
+ 0xA | ENGAGR %r12
+ 0x0 | VINIT  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +202 more
+ -> Allocation Matrix: 222 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F89R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x9 | EVALF  %r3
+ 0xB | IFIX  %r4
+ 0x0 | VINIT  %r5
+ 0x9 | EVALF  %r6
+ 0x0 | VINIT  %r7
+ 0x3 | AREV  %r8
+ 0x4 | CLINK  %r9
+ 0x0 | VINIT  %r10
+ 0x4 | CLINK  %r11
+ 0x8 | EVALT  %r12
+ 0xB | IFIX  %r13
+ 0x6 | FSPLIT %r14
+ 0x0 | VINIT  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0xA | ENGAGR %r18
+ 0x6 | FSPLIT %r19
+ ... +165 more
+ -> Allocation Matrix: 185 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F89R2
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x4 | CLINK  %r1
+ 0xA | ENGAGR %r2
+ 0xB | IFIX  %r3
+ 0x0 | VINIT  %r4
+ 0x4 | CLINK  %r5
+ 0xB | IFIX  %r6
+ 0x6 | FSPLIT %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0x3 | AREV  %r10
+ 0x5 | ISCRIB %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x5 | ISCRIB %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x1 | TANCH  %r19
+ ... +246 more
+ -> Allocation Matrix: 266 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F89V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x2 | AFWD  %r2
+ 0x5 | ISCRIB %r3
+ 0xB | IFIX  %r4
+ 0x0 | VINIT  %r5
+ 0x3 | AREV  %r6
+ 0x9 | EVALF  %r7
+ 0x6 | FSPLIT %r8
+ 0x0 | VINIT  %r9
+ 0x2 | AFWD  %r10
+ 0x3 | AREV  %r11
+ 0x4 | CLINK  %r12
+ 0x5 | ISCRIB %r13
+ 0xA | ENGAGR %r14
+ 0x6 | FSPLIT %r15
+ 0x0 | VINIT  %r16
+ 0x3 | AREV  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +182 more
+ -> Allocation Matrix: 202 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F89V1
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x4 | CLINK  %r2
+ 0x9 | EVALF  %r3
+ 0xA | ENGAGR %r4
+ 0xB | IFIX  %r5
+ 0x0 | VINIT  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x8 | EVALT  %r13
+ 0xA | ENGAGR %r14
+ 0x7 | FFUSE  %r15
+ 0x0 | VINIT  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0xA | ENGAGR %r19
+ ... +168 more
+ -> Allocation Matrix: 188 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F90R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +79 more
+ -> Allocation Matrix: 99 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F90R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +38 more
+ -> Allocation Matrix: 58 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F90V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +65 more
+ -> Allocation Matrix: 85 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F90V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +101 more
+ -> Allocation Matrix: 121 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F93R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x1 | TANCH  %r15
+ 0x2 | AFWD  %r16
+ 0x3 | AREV  %r17
+ 0x4 | CLINK  %r18
+ 0x5 | ISCRIB %r19
+ ... +276 more
+ -> Allocation Matrix: 296 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F93V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +87 more
+ -> Allocation Matrix: 107 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F94R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +68 more
+ -> Allocation Matrix: 88 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F94V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +100 more
+ -> Allocation Matrix: 120 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F95R1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xB | IFIX  %r19
+ ... +81 more
+ -> Allocation Matrix: 101 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F95R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +68 more
+ -> Allocation Matrix: 88 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F95V2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +58 more
+ -> Allocation Matrix: 78 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F95V1
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +116 more
+ -> Allocation Matrix: 136 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F96R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +116 more
+ -> Allocation Matrix: 136 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F96V
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x1 | TANCH  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +101 more
+ -> Allocation Matrix: 121 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F99R
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x9 | EVALF  %r2
+ 0xA | ENGAGR %r3
+ 0x0 | VINIT  %r4
+ 0x3 | AREV  %r5
+ 0x9 | EVALF  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x3 | AREV  %r9
+ 0x4 | CLINK  %r10
+ 0xA | ENGAGR %r11
+ 0x0 | VINIT  %r12
+ 0x9 | EVALF  %r13
+ 0xB | IFIX  %r14
+ 0x0 | VINIT  %r15
+ 0x3 | AREV  %r16
+ 0x5 | ISCRIB %r17
+ 0x0 | VINIT  %r18
+ 0xA | ENGAGR %r19
+ ... +276 more
+ -> Allocation Matrix: 296 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F99V
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x3 | AREV  %r1
+ 0x8 | EVALT  %r2
+ 0xA | ENGAGR %r3
+ 0xB | IFIX  %r4
+ 0x0 | VINIT  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x0 | VINIT  %r10
+ 0x1 | TANCH  %r11
+ 0x3 | AREV  %r12
+ 0x8 | EVALT  %r13
+ 0xA | ENGAGR %r14
+ 0xB | IFIX  %r15
+ 0x0 | VINIT  %r16
+ 0x4 | CLINK  %r17
+ 0xB | IFIX  %r18
+ 0x1 | TANCH  %r19
+ ... +259 more
+ -> Allocation Matrix: 279 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F100R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x3 | AREV  %r3
+ 0x5 | ISCRIB %r4
+ 0xA | ENGAGR %r5
+ 0x6 | FSPLIT %r6
+ 0x0 | VINIT  %r7
+ 0x5 | ISCRIB %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x8 | EVALT  %r14
+ 0xA | ENGAGR %r15
+ 0x6 | FSPLIT %r16
+ 0x0 | VINIT  %r17
+ 0x3 | AREV  %r18
+ 0xA | ENGAGR %r19
+ ... +150 more
+ -> Allocation Matrix: 170 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F100V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x4 | CLINK  %r2
+ 0x8 | EVALT  %r3
+ 0x6 | FSPLIT %r4
+ 0x0 | VINIT  %r5
+ 0x5 | ISCRIB %r6
+ 0x6 | FSPLIT %r7
+ 0x0 | VINIT  %r8
+ 0x1 | TANCH  %r9
+ 0xA | ENGAGR %r10
+ 0x0 | VINIT  %r11
+ 0x5 | ISCRIB %r12
+ 0xA | ENGAGR %r13
+ 0xB | IFIX  %r14
+ 0x0 | VINIT  %r15
+ 0x2 | AFWD  %r16
+ 0x5 | ISCRIB %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +118 more
+ -> Allocation Matrix: 138 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F101R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +91 more
+ -> Allocation Matrix: 111 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F101V
+=====================================================================
+ 0x3 | AREV  %r0
+ 0x5 | ISCRIB %r1
+ 0xA | ENGAGR %r2
+ 0xB | IFIX  %r3
+ 0x0 | VINIT  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xB | IFIX  %r8
+ 0x1 | TANCH  %r9
+ 0x3 | AREV  %r10
+ 0x8 | EVALT  %r11
+ 0x0 | VINIT  %r12
+ 0x3 | AREV  %r13
+ 0x8 | EVALT  %r14
+ 0x1 | TANCH  %r15
+ 0x3 | AREV  %r16
+ 0x8 | EVALT  %r17
+ 0x3 | AREV  %r18
+ 0x8 | EVALT  %r19
+ ... +166 more
+ -> Allocation Matrix: 186 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F102R1
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x4 | CLINK  %r1
+ 0xA | ENGAGR %r2
+ 0x0 | VINIT  %r3
+ 0x3 | AREV  %r4
+ 0xA | ENGAGR %r5
+ 0xB | IFIX  %r6
+ 0x7 | FFUSE  %r7
+ 0x3 | AREV  %r8
+ 0x4 | CLINK  %r9
+ 0xA | ENGAGR %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x4 | CLINK  %r13
+ 0x8 | EVALT  %r14
+ 0xA | ENGAGR %r15
+ 0x7 | FFUSE  %r16
+ 0x0 | VINIT  %r17
+ 0x1 | TANCH  %r18
+ 0x2 | AFWD  %r19
+ ... +123 more
+ -> Allocation Matrix: 143 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F102R2
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x5 | ISCRIB %r5
+ 0xA | ENGAGR %r6
+ 0xB | IFIX  %r7
+ 0x6 | FSPLIT %r8
+ 0x7 | FFUSE  %r9
+ 0x0 | VINIT  %r10
+ 0x2 | AFWD  %r11
+ 0x3 | AREV  %r12
+ 0x4 | CLINK  %r13
+ 0x9 | EVALF  %r14
+ 0xA | ENGAGR %r15
+ 0xB | IFIX  %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x2 | AFWD  %r19
+ ... +129 more
+ -> Allocation Matrix: 149 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F102V2
+=====================================================================
+ 0x7 | FFUSE  %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x5 | ISCRIB %r3
+ 0xA | ENGAGR %r4
+ 0x0 | VINIT  %r5
+ 0x2 | AFWD  %r6
+ 0x4 | CLINK  %r7
+ 0x5 | ISCRIB %r8
+ 0xB | IFIX  %r9
+ 0x0 | VINIT  %r10
+ 0x8 | EVALT  %r11
+ 0x9 | EVALF  %r12
+ 0xB | IFIX  %r13
+ 0x0 | VINIT  %r14
+ 0xA | ENGAGR %r15
+ 0x0 | VINIT  %r16
+ 0x2 | AFWD  %r17
+ 0xA | ENGAGR %r18
+ 0x6 | FSPLIT %r19
+ ... +225 more
+ -> Allocation Matrix: 245 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F102V1
+=====================================================================
+ 0x0 | VINIT  %r0
+ 0x2 | AFWD  %r1
+ 0x9 | EVALF  %r2
+ 0xA | ENGAGR %r3
+ 0x0 | VINIT  %r4
+ 0x2 | AFWD  %r5
+ 0x4 | CLINK  %r6
+ 0x9 | EVALF  %r7
+ 0xB | IFIX  %r8
+ 0x0 | VINIT  %r9
+ 0x2 | AFWD  %r10
+ 0x4 | CLINK  %r11
+ 0x9 | EVALF  %r12
+ 0xB | IFIX  %r13
+ 0x0 | VINIT  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0xB | IFIX  %r18
+ 0x0 | VINIT  %r19
+ ... +155 more
+ -> Allocation Matrix: 175 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F103R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +526 more
+ -> Allocation Matrix: 546 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F103V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +442 more
+ -> Allocation Matrix: 462 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F104R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +423 more
+ -> Allocation Matrix: 443 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F104V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +407 more
+ -> Allocation Matrix: 427 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F105R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +341 more
+ -> Allocation Matrix: 361 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F105V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x1 | TANCH  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +363 more
+ -> Allocation Matrix: 383 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F106R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +433 more
+ -> Allocation Matrix: 453 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F106V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x5 | ISCRIB %r17
+ 0x8 | EVALT  %r18
+ 0x9 | EVALF  %r19
+ ... +455 more
+ -> Allocation Matrix: 475 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F107R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +439 more
+ -> Allocation Matrix: 459 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F107V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x2 | AFWD  %r2
+ 0x3 | AREV  %r3
+ 0x4 | CLINK  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +414 more
+ -> Allocation Matrix: 434 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F108R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x2 | AFWD  %r14
+ 0x3 | AREV  %r15
+ 0x4 | CLINK  %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +438 more
+ -> Allocation Matrix: 458 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F108V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +495 more
+ -> Allocation Matrix: 515 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F111R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +508 more
+ -> Allocation Matrix: 528 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F111V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x7 | FFUSE  %r12
+ 0x0 | VINIT  %r13
+ 0x1 | TANCH  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x4 | CLINK  %r17
+ 0x5 | ISCRIB %r18
+ 0x8 | EVALT  %r19
+ ... +482 more
+ -> Allocation Matrix: 502 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F112R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x3 | AREV  %r12
+ 0x5 | ISCRIB %r13
+ 0x8 | EVALT  %r14
+ 0x9 | EVALF  %r15
+ 0xA | ENGAGR %r16
+ 0x6 | FSPLIT %r17
+ 0x0 | VINIT  %r18
+ 0x2 | AFWD  %r19
+ ... +402 more
+ -> Allocation Matrix: 422 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F112V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x5 | ISCRIB %r5
+ 0x8 | EVALT  %r6
+ 0x9 | EVALF  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x5 | ISCRIB %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x7 | FFUSE  %r19
+ ... +423 more
+ -> Allocation Matrix: 443 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F113R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x5 | ISCRIB %r16
+ 0x8 | EVALT  %r17
+ 0x9 | EVALF  %r18
+ 0xA | ENGAGR %r19
+ ... +487 more
+ -> Allocation Matrix: 507 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F113V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +455 more
+ -> Allocation Matrix: 475 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F114R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0x9 | EVALF  %r8
+ 0xA | ENGAGR %r9
+ 0xB | IFIX  %r10
+ 0x6 | FSPLIT %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x3 | AREV  %r14
+ 0x4 | CLINK  %r15
+ 0x8 | EVALT  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +398 more
+ -> Allocation Matrix: 418 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F114V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x8 | EVALT  %r6
+ 0xA | ENGAGR %r7
+ 0xB | IFIX  %r8
+ 0x6 | FSPLIT %r9
+ 0x7 | FFUSE  %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x8 | EVALT  %r16
+ 0xB | IFIX  %r17
+ 0x6 | FSPLIT %r18
+ 0x0 | VINIT  %r19
+ ... +368 more
+ -> Allocation Matrix: 388 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F115R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x7 | FFUSE  %r11
+ 0x0 | VINIT  %r12
+ 0x2 | AFWD  %r13
+ 0x4 | CLINK  %r14
+ 0x5 | ISCRIB %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +409 more
+ -> Allocation Matrix: 429 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F115V
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x0 | VINIT  %r1
+ 0x1 | TANCH  %r2
+ 0x2 | AFWD  %r3
+ 0x3 | AREV  %r4
+ 0x4 | CLINK  %r5
+ 0x5 | ISCRIB %r6
+ 0x8 | EVALT  %r7
+ 0xA | ENGAGR %r8
+ 0xB | IFIX  %r9
+ 0x6 | FSPLIT %r10
+ 0x0 | VINIT  %r11
+ 0x2 | AFWD  %r12
+ 0x3 | AREV  %r13
+ 0x4 | CLINK  %r14
+ 0x8 | EVALT  %r15
+ 0x9 | EVALF  %r16
+ 0xA | ENGAGR %r17
+ 0xB | IFIX  %r18
+ 0x6 | FSPLIT %r19
+ ... +425 more
+ -> Allocation Matrix: 445 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F116R
+=====================================================================
+ 0x6 | FSPLIT %r0
+ 0x7 | FFUSE  %r1
+ 0x0 | VINIT  %r2
+ 0x1 | TANCH  %r3
+ 0x2 | AFWD  %r4
+ 0x3 | AREV  %r5
+ 0x4 | CLINK  %r6
+ 0x5 | ISCRIB %r7
+ 0x8 | EVALT  %r8
+ 0x9 | EVALF  %r9
+ 0xA | ENGAGR %r10
+ 0xB | IFIX  %r11
+ 0x6 | FSPLIT %r12
+ 0x7 | FFUSE  %r13
+ 0x0 | VINIT  %r14
+ 0x2 | AFWD  %r15
+ 0x3 | AREV  %r16
+ 0x9 | EVALF  %r17
+ 0xA | ENGAGR %r18
+ 0xB | IFIX  %r19
+ ... +480 more
+ -> Allocation Matrix: 500 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+ COMPILING LOGICAL NODE: F116V
+=====================================================================
+ -> Allocation Matrix: 0 registers locked, ΔS = 0.00000000 J/K
+
+=====================================================================
+--- [COMPILATION SUMMARY: ALL SYSTEMS COHERENT] ---
+Total Combined Corpus Instructions: 44445 operations burned to ROM.
+Active Hardware Flux Registers: 44423 topological nodes stabilized.
+Global System Status: SELF_SUSTAINING_BOOTSTRAP_COMPLETE [RUNNING INFINITE]
+=====================================================================

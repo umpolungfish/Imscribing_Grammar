@@ -63,3 +63,4 @@ build/
 .DS_Store
 *.swp
 space_search/data/nanograv_15yr.tar.gz
+index/

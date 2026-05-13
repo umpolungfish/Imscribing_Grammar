@@ -370,7 +370,7 @@ class GroundingValidator:
             ],
         },
         
-        # Interaction Grammar (Γ) — partner selection logic
+        # Coupling (Γ) — partner selection logic
         "interaction_grammar": {
             # SPECIFIC tier
             "SPECIFIC_AND": [

@@ -1343,7 +1343,7 @@ inductive Relational : Type where
   | Ř_=      -- lateral / peer: symmetric two-way exchange
   deriving DecidableEq, Repr, Ord
 
--- 3. Interaction Grammar (Γ)  [𝓕₄]
+-- 3. Coupling (Γ)  [𝓕₄]
 -- Ordered: ɢ_and < ɢ_or < ɢ_seq < ɢ_broad
 -- Categorical primitive (identity of composition rule required for non-⊥ meet).
 inductive Grammar : Type where
@@ -1598,7 +1598,7 @@ inductive Relational : Type where
   | Ř_=      -- lateral / peer: symmetric two-way exchange
   deriving DecidableEq, Repr, Ord
 
--- 3. Interaction Grammar (Γ)  [𝓕₄]
+-- 3. Coupling (Γ)  [𝓕₄]
 -- Ordered: ɢ_and < ɢ_or < ɢ_seq < ɢ_broad
 -- Categorical primitive (identity of composition rule required for non-⊥ meet).
 inductive Grammar : Type where

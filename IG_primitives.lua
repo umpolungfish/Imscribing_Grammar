@@ -65,6 +65,12 @@ local CLASS_A = {
   [0x02DD] = true,  -- ˝  double acute accent    (ɢ_˝ subtype)
   [0x2299] = true,  -- ⊙  circled dot            (⊙ criticality primitive)
   [0x2297] = true,  -- ⊗  tensor product         (not in lmroman text font)
+  -- Greek subtype chars — not in lmroman; FreeSerif has full Greek coverage
+  [0x03B2] = true,  -- β  beta                   (Γ_β subtype)
+  [0x03B3] = true,  -- γ  gamma                  (Γ_γ subtype)
+  [0x03BB] = true,  -- λ  lambda                 (Ç_λ subtype)
+  [0x03C5] = true,  -- υ  upsilon                (Φ_υ subtype)
+  [0x03C9] = true,  -- ω  omega                  (Ð_ω subtype)
 }
 
 -- Class B: in lmroman (text mode) but NOT in lmmi10 (math mode).
@@ -134,7 +140,7 @@ local function wrap_class_a(s)
     if #run == 0 then return end
     local chunk = table.concat(run)
     if in_a then
-      table.insert(parts, "{\\igprimfont " .. chunk .. "}")
+      table.insert(parts, "{\\igprimfont\\upshape " .. chunk .. "}")
     else
       table.insert(parts, chunk)
     end
@@ -277,7 +283,7 @@ local function fix_subarg_problem_chars(s)
     end)
     if count ~= 1 or not cp then return nil end
     if CLASS_A[cp] then
-      return marker .. "{\\text{{\\igprimfont " .. utf8.char(cp) .. "}}}"
+      return marker .. "{\\text{{\\igprimfont\\upshape " .. utf8.char(cp) .. "}}}"
     elseif CLASS_B[cp] then
       return marker .. "{\\text{" .. utf8.char(cp) .. "}}"
     end
@@ -307,7 +313,7 @@ local function fix_bare_chars(s)
         table.insert(parts, char)
       elseif depth == 0 then
         if CLASS_A[cp] then
-          table.insert(parts, "\\text{{\\igprimfont " .. char .. "}}")
+          table.insert(parts, "\\text{{\\igprimfont\\upshape " .. char .. "}}")
         elseif CLASS_B[cp] then
           table.insert(parts, "\\text{" .. char .. "}")
         else
@@ -359,7 +365,7 @@ function Str(el)
     if #run == 0 then return end
     local chunk = table.concat(run)
     if in_a then
-      table.insert(parts, pandoc.RawInline("latex", "{\\igprimfont " .. chunk .. "}"))
+      table.insert(parts, pandoc.RawInline("latex", "{\\igprimfont\\upshape " .. chunk .. "}"))
     else
       table.insert(parts, pandoc.Str(chunk))
     end

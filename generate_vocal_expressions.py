@@ -124,83 +124,83 @@ def synthesize_espeak(phoneme: str, path: Path,
 # method is either "[[SAMPA]]" or "CLICK:type"
 ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     # D — Dimensionality
-    ("D", "Ð_ß",         "[[w]]",        "/w/ labial-velar approximant",          None),
-    ("D", "Ð_turnthree",    "[[3:]]",        "/ɜː/ open-mid central",                None),
-    ("D", "Ð_invomega",     "[[U]]",         "/ʊ/ near-close back rounded",          None),
-    ("D", "Ð_omega",        "[[Q]]",         "/ɒ/ open back rounded",                None),
+    ("D", "Ð_ß",  "[[w]]",        "/w/ labial-velar approximant",          None),
+    ("D", "Ð_C",  "[[3:]]",       "/ɜː/ open-mid central",                None),
+    ("D", "Ð_;",  "[[U]]",        "/ʊ/ near-close back rounded",          None),
+    ("D", "Ð_ω",  "[[Q]]",        "/ɒ/ open back rounded",                None),
 
     # T — Topology
-    ("T", "Þ_nrleg",        "[[n.]]",        "/ɳ/ retroflex nasal",                  None),
-    ("T", "Þ_invscr",       "[[r.]]",        "/ɻ/ retroflex approximant",            None),
+    ("T", "Þ_6",  "[[n.]]",       "/ɳ/ retroflex nasal",                  None),
+    ("T", "Þ_K",  "[[r.]]",       "/ɻ/ retroflex approximant",            None),
     # bilabial click /ʘ/ — programmatically generated
-    ("T", "Þ_bullseye",     "CLICK:bilabial","/ʘ/ bilabial click",                   None),
-    ("T", "Þ_commatailz",   "[[z.]]",        "/ʐ/ retroflex sibilant",               None),
-    ("T", "Þ_openo",        "[[O]]",         "/ɔ/ open-mid back rounded",            None),
+    ("T", "Þ_ò",  "CLICK:bilabial","/ʘ/ bilabial click",                  None),
+    ("T", "Þ_¨",  "[[z.]]",       "/ʐ/ retroflex sibilant",               None),
+    ("T", "Þ_O",  "[[O]]",        "/ɔ/ open-mid back rounded",            None),
 
     # R — Relational mode
-    ("R", "Ř_subrightarrow","[[r]]",         "/r/ alveolar trill",                   None),
-    ("R", "Ř_ctz",          "[[ts]]",        "/ts/ alveolar affricate",              None),
-    ("R", "Ř_downstep",     "[[a2]]",        "/a/ falling tone",                     None),
-    ("R", "Ř_lyoghlig",     "[[j]]",         "/j/ palatal approximant (yogh)",       None),
+    ("R", "Ř_¯",  "[[r]]",        "/r/ alveolar trill",                   None),
+    ("R", "Ř_ý",  "[[ts]]",       "/ts/ alveolar affricate",              None),
+    ("R", "Ř_Ť",  "[[a2]]",       "/a/ falling tone",                     None),
+    ("R", "Ř_=",  "[[j]]",        "/j/ palatal approximant (yogh)",       None),
 
     # P — Parity / Symmetry
-    ("P", "Φ_aolig",        "[[{]]",         "/æ/ near-open front unrounded",        None),
-    ("P", "Φ_upsilon",      "[[U]]",         "/ʊ/ near-close back rounded",          None),
+    ("P", "Φ_ɐ",  "[[{]]",        "/æ/ near-open front unrounded",        None),
+    ("P", "Φ_υ",  "[[U]]",        "/ʊ/ near-close back rounded",          None),
     # dental click /ǀ/ — programmatically generated
-    ("P", "Φ_pipevar",      "CLICK:dental",  "/ǀ/ dental click",                     None),
-    ("P", "Φ_subdoublearrow","[[@]]",        "/ə/ schwa",                            None),
-    ("P", "Φ_doublebarpipe","[[? ts]]",      "/ʔts/ Frobenius glottal + affricate",  None),
+    ("P", "Φ_F",  "CLICK:dental", "/ǀ/ dental click",                     None),
+    ("P", "Φ_˙",  "[[@]]",        "/ə/ schwa",                            None),
+    ("P", "Φ_}",  "[[? ts]]",     "/ʔts/ Frobenius glottal + affricate",  None),
 
     # F — Fidelity
-    ("F", "ƒ_beltl",        "[[K]]",         "/ɬ/ voiceless lateral fricative",      None),
-    ("F", "ƒ_dh",           "[[D]]",         "/ð/ voiced dental fricative",          None),
-    ("F", "ƒ_hardsign",     "[[?]]",         "/ʔ/ glottal stop",                     None),
+    ("F", "ƒ_ì",  "[[K]]",        "/ɬ/ voiceless lateral fricative",      None),
+    ("F", "ƒ_ð",  "[[D]]",        "/ð/ voiced dental fricative",          None),
+    ("F", "ƒ_ż",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # K — Kinetics
     # /ɣ/ voiced velar fricative — Spanish voice has [[Q]] = /ɣ/
-    ("K", "Ç_frtailgamma",  "[[Q]]",         "/ɣ/ voiced velar fricative",           "es"),
+    ("K", "Ç_-",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
     # /ɯ/ close back unrounded — Korean voice [[u-]] = /ɯ/
-    ("K", "Ç_turnm",        "[[u-]]",        "/ɯ/ close back unrounded",             "ko"),
-    ("K", "Ç_schwa",        "[[@]]",         "/ə/ mid central vowel",                None),
-    ("K", "Ç_teshlig",      "[[tS]]",        "/tʃ/ palato-alveolar affricate",       None),
-    ("K", "Ç_lambda",       "[[l]]",         "/l/ alveolar lateral approximant",     None),
+    ("K", "Ç_W",  "[[u-]]",       "/ɯ/ close back unrounded",             "ko"),
+    ("K", "Ç_@",  "[[@]]",        "/ə/ mid central vowel",                None),
+    ("K", "Ç_Ù",  "[[tS]]",       "/tʃ/ palato-alveolar affricate",       None),
+    ("K", "Ç_λ",  "[[l]]",        "/l/ alveolar lateral approximant",     None),
 
     # G — Scope
-    ("G", "Γ_β",         "[[B]]",         "/β/ voiced bilabial fricative",        None),
+    ("G", "Γ_β",  "[[B]]",        "/β/ voiced bilabial fricative",        None),
     # /ɣ/ — Spanish voice
-    ("G", "Γ_γ",        "[[Q]]",         "/ɣ/ voiced velar fricative",           "es"),
-    ("G", "Γ_revapostrophe","[[?]]",         "/ʔ/ glottal stop",                     None),
+    ("G", "Γ_γ",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
+    ("G", "Γ_ʔ",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # Gamma — Interaction grammar
-    ("Gamma", "ɢ_corner",        "[[k]]", "/k/ velar stop",                      None),
-    ("Gamma", "ɢ_spleftarrow",   "[[r r]]","/r r/ alternating rhotic",           None),
-    ("Gamma", "ɢ_secstress",     "[[@]]", "/ə/ secondary stress schwa",          None),
-    ("Gamma", "ɢ_doublevertline","[[a:]]","/aː/ open broadcast vowel",           None),
+    ("Gamma", "ɢ_^",  "[[k]]",    "/k/ velar stop",                       None),
+    ("Gamma", "ɢ_˝",  "[[r r]]",  "/r r/ alternating rhotic",             None),
+    ("Gamma", "ɢ_ˌ",  "[[@]]",    "/ə/ secondary stress schwa",           None),
+    ("Gamma", "ɢ_Ş",  "[[a:]]",   "/aː/ open broadcast vowel",            None),
 
     # Phi — Criticality
-    ("Phi", "φ̂_ž",        "[[j]]",   "/j/ palatalization",                  None),
-    ("Phi", "φ̂_ctyogh",          "[[c]]",   "/c/ voiceless palatal stop",          None),
-    ("Phi", "φ̂_Æ", "[[@]]",   "/ɞ/ close-mid central (approx /ə/)",  None),
-    ("Phi", "φ̂_3",      "[[E]]",   "/ɛ/ open-mid front unrounded",        None),
-    ("Phi", "φ̂_Ţ",          "[[a:]]",  "/aː/ open vowel (supercritical)",     None),
+    ("Phi", "φ̂_ž",  "[[j]]",     "/j/ palatalization",                   None),
+    ("Phi", "φ̂_ÿ",  "[[c]]",     "/c/ voiceless palatal stop",           None),
+    ("Phi", "φ̂_Æ",  "[[@]]",     "/ɞ/ close-mid central (approx /ə/)",   None),
+    ("Phi", "φ̂_3",  "[[E]]",     "/ɛ/ open-mid front unrounded",         None),
+    ("Phi", "φ̂_Ţ",  "[[a:]]",    "/aː/ open vowel (supercritical)",      None),
 
     # H — Temporal depth
-    ("H", "Ħ_closeomega",      "[[o]]",       "/o/ close-mid back rounded",          None),
-    ("H", "Ħ_toneletterstem",  "[[a]]",       "/a/ open front",                      None),
-    ("H", "Ħ_turntwo",         "[[Z]]",       "/ʒ/ voiced palato-alveolar fricative",None),
-    ("H", "Ħ_invscripta",      "[[A:]]",      "/ɑː/ open back unrounded",            None),
+    ("H", "Ħ_Ñ",  "[[o]]",        "/o/ close-mid back rounded",           None),
+    ("H", "Ħ_£",  "[[a]]",        "/a/ open front",                       None),
+    ("H", "Ħ_A",  "[[Z]]",        "/ʒ/ voiced palato-alveolar fricative", None),
+    ("H", "Ħ_!",  "[[A:]]",       "/ɑː/ open back unrounded",             None),
 
     # S — Stoichiometry
     # /ɧ/ Swedish sj-sound — Swedish voice [[sx]] ≈ /ɧ/
-    ("S", "Σ_doublebaresh",    "[[sx]]",      "/ɧ/ sj-sound (Swedish voice)",        "sv"),
-    ("S", "Σ_ctn",             "[[n]]",       "/n/ alveolar nasal",                  None),
-    ("S", "Σ_ltailm",          "[[F]]",       "/ɱ/ labiodental nasal",               None),
+    ("S", "Σ_S",  "[[sx]]",       "/ɧ/ sj-sound (Swedish voice)",         "sv"),
+    ("S", "Σ_ő",  "[[n]]",        "/n/ alveolar nasal",                   None),
+    ("S", "Σ_ï",  "[[F]]",        "/ɱ/ labiodental nasal",                None),
 
     # Omega — Topological invariant
-    ("Omega", "Ω_Å","[[e]]",   "/e/ close-mid front unrounded",       None),
-    ("Omega", "Ω_crtwo",       "[[2]]",   "/ø/ close-mid front rounded",         None),
-    ("Omega", "Ω_dzlig",       "[[dz]]",  "/dz/ voiced alveolar affricate",      None),
-    ("Omega", "Ω_turna",       "[[6]]",   "/ɐ/ near-open central",               None),
+    ("Omega", "Ω_Å",  "[[e]]",    "/e/ close-mid front unrounded",        None),
+    ("Omega", "Ω_2",  "[[2]]",    "/ø/ close-mid front rounded",          None),
+    ("Omega", "Ω_z",  "[[dz]]",   "/dz/ voiced alveolar affricate",       None),
+    ("Omega", "Ω_5",  "[[6]]",    "/ɐ/ near-open central",                None),
 ]
 
 

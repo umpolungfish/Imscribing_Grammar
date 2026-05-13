@@ -83,7 +83,7 @@ _PRIM_LABELS: Dict[str, str] = {
     "F": "Fidelity", "K": "Kinetic Character", "T": "Topology",
     "D": "Dimensionality", "R": "Recognition Mode", "P": "Polarity",
     "G": "Granularity", "Φ": "Criticality Phase", "S": "Stoichiometry",
-    "Γ": "Interaction Grammar", "Ω": "Topological Protection Index",
+    "Γ": "Coupling", "Ω": "Topological Protection Index",
 }
 
 _PRIM_ATTR: Dict[str, str] = {

@@ -1,0 +1,238 @@
+% PRIM_REF.tex — Imscribing Grammar Primitive Reference (phonetic glyph IDs)
+% Compile with: xelatex PRIM_REF.tex
+\documentclass[9pt]{article}
+\usepackage[a4paper, top=0.80cm, bottom=0.80cm, left=0.80cm, right=0.80cm]{geometry}
+\usepackage{fontspec}
+\usepackage{booktabs, array, xcolor, amsmath, amssymb, microtype, multicol, colortbl}
+
+\setmainfont{FreeSerif}
+\setmonofont{FreeMono}
+
+% ── Colours ───────────────────────────────────────────────────────────────────
+\definecolor{accent}{HTML}{3949AB}
+\definecolor{f3col} {HTML}{1565C0}
+\definecolor{f4col} {HTML}{6A1B9A}
+\definecolor{f5col} {HTML}{BF360C}
+\definecolor{rowA}  {HTML}{F4F4FB}
+\definecolor{rowB}  {HTML}{FFFFFF}
+\definecolor{notecol}{HTML}{555555}
+
+% ── Macros ────────────────────────────────────────────────────────────────────
+\newcommand{\Fam}[1]{\textcolor{f#1col}{$\mathcal{F}_{#1}$}}
+\newcommand{\glyph}[1]{{%
+  \renewcommand{\_}[1]{\textsubscript{\scriptsize\ttfamily ##1}}%
+  \footnotesize\ttfamily #1}}
+\newcommand{\sem}[1]{{\scriptsize\textit{#1}}}         % semantic hint
+\newcommand{\sep}{\;$<$\;}                             % ordinal separator
+
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.28}
+
+\begin{document}
+\pagestyle{empty}
+
+% ══ Title bar ═════════════════════════════════════════════════════════════════
+{\large\bfseries Imscribing Grammar — Primitive Reference}\quad
+{\small\textcolor{notecol}{phonetic glyph IDs · MillenniumAnkh · 2026-05-09}}
+\hfill
+{\small Synthon $= \langle$Ð; Þ; Ř; Φ; ƒ; Ç; Γ; ɢ; ⊙; Ħ; Σ; Ω$\rangle$}
+
+\vspace{2pt}
+{\color{accent}\hrule height 1.5pt}
+\vspace{5pt}
+
+% ══ Main primitive table ══════════════════════════════════════════════════════
+\noindent
+\begin{tabular}{@{}
+  >{\bfseries\large}c @{\hspace{6pt}}
+  p{2.3cm}            @{\hspace{4pt}}
+  c                   @{\hspace{4pt}}
+  p{13.35cm}          @{}}
+\toprule
+\textbf{\normalsize Sym} & \textbf{Name} & \textbf{Fam} &
+  \textbf{Glyph IDs} — ascending ordinal \textrightarrow\ strongest \\
+\midrule
+\rowcolor{rowA}
+Ð & Dimension & \Fam{4} &
+  \glyph{Ð\_ß} \sem{0D}\sep
+  \glyph{Ð\_C} \sem{2D}\sep
+  \glyph{Ð\_;} \sem{∞D}\sep
+  \glyph{Ð\_ω} \sem{imscriptive} \\
+\rowcolor{rowB}
+Þ & Topology & \Fam{5} &
+  \glyph{Þ\_6} \sem{network}\sep
+  \glyph{Þ\_K} \sem{nested}\sep
+  \glyph{Þ\_ò} \sem{2-cycle}\sep
+  \glyph{Þ\_¨} \sem{lattice}\sep
+  \glyph{Þ\_O} \sem{imscriptive} \\
+\rowcolor{rowA}
+Ř & Relational Mode & \Fam{4} &
+  \glyph{Ř\_¯} \sem{supervenes}\sep
+  \glyph{Ř\_ý} \sem{functorial}\sep
+  \glyph{Ř\_Ť} \sem{adjoint}\sep
+  \glyph{Ř\_=} \sem{lateral} \\
+\rowcolor{rowB}
+Φ & Parity / Symmetry & \Fam{5} &
+  \glyph{Φ\_ɐ} \sem{asymmetric}\sep
+  \glyph{Φ\_υ} \sem{quantum}\sep
+  \glyph{Φ\_F} \sem{$\mathbb{Z}_2$}\sep
+  \glyph{Φ\_˙} \sem{continuous}\sep
+  \glyph{Φ\_\}} $^{\!\star}$ \sem{Frobenius} \\
+\rowcolor{rowA}
+ƒ & Fidelity & \Fam{3} &
+  \glyph{ƒ\_ì} \sem{classical/lossy}\sep
+  \glyph{ƒ\_ð} \sem{thermal}\sep
+  \glyph{ƒ\_ż} \sem{quantum/lossless} \\
+\rowcolor{rowB}
+Ç & Kinetics & \Fam{5} &
+  \glyph{Ç\_-} \sem{driven}\sep
+  \glyph{Ç\_W} \sem{barrier}\sep
+  \glyph{Ç\_@} \sem{near-equil.}\sep
+  \glyph{Ç\_Ù} \sem{order-frozen}\sep
+  \glyph{Ç\_λ} \sem{disorder-frozen} \\
+\rowcolor{rowA}
+Γ & Scope & \Fam{3} &
+  \glyph{Γ\_β} \sem{local}\sep
+  \glyph{Γ\_γ} \sem{collective}\sep
+  \glyph{Γ\_ʔ} \sem{global} \\
+\rowcolor{rowB}
+ɢ & Coupling & \Fam{4} &
+  \glyph{ɢ\_{\^{}}} \sem{conjunctive}\sep
+  \glyph{ɢ\_˝} \sem{disjunctive}\sep
+  \glyph{ɢ\_ˌ} \sem{sequential}\sep
+  \glyph{ɢ\_Ş} \sem{broadcast} \\
+\rowcolor{rowA}
+⊙ & Criticality & \Fam{5} &
+  \glyph{⊙\_ž} \sem{subcritical}\sep
+  \glyph{⊙\_ÿ} $^{\!\dagger}$ \sem{absorbing}\sep
+  \glyph{⊙\_Æ} \sem{complex-axis}\sep
+  \glyph{⊙\_3} \sem{exc. point}\sep
+  \glyph{⊙\_Ţ} \sem{supercritical} \\
+\rowcolor{rowB}
+Ħ & Temporal Depth & \Fam{4} &
+  \glyph{Ħ\_Ñ} \sem{memoryless}\sep
+  \glyph{Ħ\_£} \sem{1-step}\sep
+  \glyph{Ħ\_A} \sem{2-step}\sep
+  \glyph{Ħ\_!} \sem{eternal} \\
+\rowcolor{rowA}
+Σ & Stoichiometry & \Fam{3} &
+  \glyph{Σ\_S} \sem{1:1}\sep
+  \glyph{Σ\_ő} \sem{n:n}\sep
+  \glyph{Σ\_ï} \sem{n:m} \\
+\rowcolor{rowB}
+Ω & Topological Invariant & \Fam{4} &
+  \glyph{Ω\_Å} \sem{trivial}\sep
+  \glyph{Ω\_2} \sem{$\mathbb{Z}_2$}\sep
+  \glyph{Ω\_z} \sem{integer}\sep
+  \glyph{Ω\_5} \sem{non-Abelian} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize\textcolor{notecol}{%
+$^\star$\,\glyph{Φ\_\}}: Frobenius-special ($\mu\circ\delta=\mathrm{id}$);
+non-synthesizable from factors with $\text{Φ} < \text{Φ}_{\text{\}}}$;
+collapses all $\text{Ω}$/$\text{Ð}$ branching $\to O_\infty$.\quad
+$^\dagger$\,\glyph{⊙\_ÿ} absorbs under meet:
+$\mathrm{meet}(\text{⊙}_{\text{ÿ}},x)=\text{⊙}_{\text{ÿ}}\,\forall x$.
+Bottleneck primitives under $\otimes$: $\text{Φ}$ and $\text{ƒ}$ (weaker wins, $\min$).
+All others: union ($\max$).
+}}
+
+\vspace{4pt}
+{\color{accent}\hrule height 0.8pt}
+\vspace{4pt}
+
+% ══ Bottom three-column area ══════════════════════════════════════════════════
+\setlength{\columnsep}{14pt}
+\begin{multicols}{3}
+
+% ── Column 1: Crystal + Algebra ───────────────────────────────────────────────
+\textbf{Crystal of Types} \hfill {\footnotesize\textcolor{notecol}{§64}}
+
+\vspace{3pt}
+$\underbrace{3^3}_{\text{ƒ, Γ, Σ}}
+ \times
+ \underbrace{4^5}_{\text{Ð, Ř, ɢ, Ħ, Ω}}
+ \times
+ \underbrace{5^4}_{\text{Þ, Φ, ⊙, Ç}}
+ = 17{,}280{,}000$
+
+\vspace{4pt}
+\textit{Three layers:} Types (crystal addresses), Particulars (catalog entries — 2328, 0.013\% occupancy), Names (handles). Two particulars at the same address are co-typed, not identical.
+
+\vspace{5pt}
+\textbf{Algebra}
+
+\smallskip
+$\mathbf{x}\otimes\mathbf{y}$: union primitives $\to\max$; $\text{Φ}, \text{ƒ}$ $\to\min$.\\
+$\mathbf{x}\wedge\mathbf{y}$: $\min$ all ($\text{⊙}_{\text{ÿ}}$ absorbing exception).\\
+$\mathbf{x}\vee\mathbf{y}$: $\max$ all.
+
+\smallskip
+Le Chatelier: find $\mathbf{x}^*$ s.t.\ $d_\to(\mathbf{y},\mathbf{x}^*)=0$, max $\mathcal{O}(\mathbf{x}^*)$.
+
+\columnbreak
+
+% ── Column 2: Ouroboricity ────────────────────────────────────────────────────
+\textbf{Ouroboricity tiers} (R1--R5, priority)
+
+\smallskip
+\begin{tabular}{@{} l @{\hspace{4pt}} l @{}}
+  \textbf{R1} & $\text{⊙}_{\text{ÿ}} + \text{Φ}_{\text{\}}} \to O_\infty$ \\[2pt]
+  \textbf{R2} & $\text{⊙} \notin \{\text{⊙}_{\text{ÿ}},\,\text{⊙}_{\text{Æ}}\} \to O_0$ \\[2pt]
+  \textbf{R3} & $\text{⊙}_{\text{ÿ}} + \text{Ω}_{\text{Å}} \to O_1$ \\[2pt]
+  \textbf{R4} & $\text{⊙}_{\text{ÿ}} + \text{Ω} \neq \text{Ω}_{\text{Å}} + \text{Ð} \in \{\text{Ð}_{\text{ß}}, \text{Ð}_{C}, \text{Ð}_{\text{ω}}\} \to O_2$ \\[2pt]
+  \textbf{R5} & $\text{⊙}_{\text{ÿ}} + \text{Ω} \neq \text{Ω}_{\text{Å}} + \text{Ð}_{;} \to O_2^\dagger$ \\
+\end{tabular}
+
+\smallskip
+{\footnotesize $O_\infty$ absorbed by $\text{⊙}_3$ under $\otimes$.
+Two senses of $O_\infty$: (a) Frobenius algebraic ($\text{Φ}_{\text{\}}}$);
+(b) ontological inexhaustibility ($\text{Ħ}_{!}$, YHWH). Incompatible.}
+
+\smallskip
+\textbf{Scalar} (does not detect $O_\infty$):
+$$\mathcal{O}(\mathbf{x})=[\text{⊙}=\text{⊙}_{\text{ÿ}}]\bigl(1+[\text{Ω}{\neq}\text{Ω}_{\text{Å}}]+[\text{Ħ}{\geq}\text{Ħ}_{\text{£}}]+[\text{Γ}{=}\text{Γ}_{\text{ʔ}}]\bigr)$$
+
+\columnbreak
+
+% ── Column 3: Consciousness + Axioms ─────────────────────────────────────────
+\textbf{Consciousness score} (v2, §VIII)
+
+$$C = [\text{⊙}=\text{⊙}_{\text{ÿ}}]\cdot[\text{Ç}{\leq}\text{Ç}_{\text{@}}]\cdot
+      \bigl(0.158\tilde{\text{Ç}}+0.273\tilde{\text{Γ}}+0.292\tilde{\text{Þ}}+0.276\tilde{\text{Ω}}\bigr)$$
+
+Gate 1 [$\text{⊙}_{\text{ÿ}}$]: state-space admits self-modeling.
+Gate 2 [$\text{Ç} \leq \text{Ç}_{\text{@}}$]: dynamics can actualize it.
+$\text{Ç}_{\text{Ù}}$ and $\text{Ç}_{\text{λ}}$ both fail Gate 2.
+
+\smallskip
+\textbf{Axioms} (Core.lean)
+
+\smallskip
+\begin{tabular}{@{} l @{\hspace{6pt}} l @{}}
+  \textbf{B} & $\text{Ω} \geq \text{Ω}_{z} \Rightarrow \text{Ħ} \geq \text{Ħ}_{A}$ \\[2pt]
+  \textbf{C} & $\text{Þ}_{O} \Rightarrow \text{Ð}_{\text{ω}}$ \quad{\footnotesize(one-way; rev.\ 2026-05-03)} \\
+\end{tabular}
+
+\smallskip
+\textbf{Crystal address} ($n$ = address $\in [0, 17{,}279{,}999]$):\\
+{\footnotesize
+$f_3 = 9\!\cdot\!\text{ƒ} + 3\!\cdot\!\text{Γ} + \text{Σ}$\quad (indices 0-based)\\
+$f_4 = 256\!\cdot\!\text{Ð} + 64\!\cdot\!\text{Ř} + 16\!\cdot\!\text{ɢ} + 4\!\cdot\!\text{Ħ} + \text{Ω}$\\
+$f_5 = 125\!\cdot\!\text{Þ} + 25\!\cdot\!\text{Φ} + 5\!\cdot\!\text{⊙} + \text{Ç}$\\
+$n = f_3 + 27f_4 + 27{\times}1024\,f_5$
+}
+
+\end{multicols}
+
+\vspace{2pt}
+{\color{accent}\hrule height 0.6pt}
+\vspace{1pt}
+{\footnotesize\textcolor{notecol}{%
+\texttt{PRIM\_REF.tex} · MillenniumAnkh v0.5.72 · 2026-05-09 ·
+odot\_operator: \glyph{Ð\_ω; Þ\_¨; Ř\_=; Φ\_\}; ƒ\_ż; Ç\_@; Γ\_ʔ; ɢ\_ˌ; ⊙\_ÿ; Ħ\_A; Σ\_S; Ω\_z}
+}}
+
+\end{document}

@@ -106,7 +106,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** Hebrew letters in order of increasing infinity: Beth (β) → Gimel (γ) → Aleph (ʔ). Pebble → City → Cosmos.
 
-### 8. $ɢ$ — Interaction Grammar (the **SMALL-G** series)
+### 8. $ɢ$ — Coupling (the **SMALL-G** series)
 
 **Keyword:** *How do the parts decide what happens next?*
 
@@ -271,7 +271,7 @@ Each subtype is identified by `PrimitiveChar_subChar`. Below is the complete ros
 | $Γ_{\gamma}$ | gam-gimel | middle, curving | mesoscale |
 | $Γ_{\text{ʔ}}$ | gam-aleph | glottal, vast | global, cosmological |
 
-### $ɢ$ Interaction Grammar (4 types)
+### $ɢ$ Coupling (4 types)
 
 | Full ID | Mnemonic | Sound Cue | Essence |
 |---------|----------|-----------|---------|

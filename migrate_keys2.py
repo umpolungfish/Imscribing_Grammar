@@ -58,7 +58,7 @@ VALUE_PAIRS = [
     ("Γ_revapostrophe",  "Γ_ʔ"),
     ("Γ_gamma",          "Γ_γ"),
     ("Γ_beta",           "Γ_β"),
-    # ɢ — Interaction Grammar
+    # ɢ — Coupling
     ("ɢ_doublevertline", "ɢ_Ş"),
     ("ɢ_secstress",      "ɢ_ˌ"),
     ("ɢ_spleftarrow",    "ɢ_˝"),

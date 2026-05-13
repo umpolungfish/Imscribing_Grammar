@@ -146,7 +146,7 @@ TABLE = [
      "Reversed apostrophe = IPA glottal stop /ʔ/ = aleph",
      "\"Revapostrophe\" /ɛv/ and /ʔ/ evoke aleph's silent onset"),
 
-    # ===== Gamma (Interaction Grammar) =====
+    # ===== Gamma (Coupling) =====
     ("Gamma", "and", "corner", "^",
      "Corner ⌜ = two lines meeting = logical AND",
      "\"Corner\" ends with schwa; the join = simultaneity of AND"),

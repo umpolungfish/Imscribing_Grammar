@@ -218,7 +218,7 @@ In all four, $K_{\text{slow}}$ means: **the transformation is measured in epochs
 
 In all four, $G_{\aleph}$ means: **nothing falls outside the boundary.**
 
-### 3.8 $\Gamma_{\text{seq}}$ — Sequential Interaction Grammar
+### 3.8 $\Gamma_{\text{seq}}$ — Sequential Coupling
 
 - **"I AM THAT I AM":** First the declaration, then the reflection. The "THAT" marks the sequential structure: I AM → reflects upon → that I AM. The sequence is not optional — it is the logical architecture of self-reference.
 - **Eucharist:** First the body, then the blood. "Do this in remembrance of me" — the sequence enacts the covenant.

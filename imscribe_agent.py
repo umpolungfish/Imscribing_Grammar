@@ -178,7 +178,7 @@ G — Granularity (correlation length)
   Γ_γ   mesoscale
   Γ_ʔ   global / non-local
 
-Γ — Interaction Grammar
+Γ — Coupling
   ɢ_^ / ɢ_˝ / ɢ_ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 

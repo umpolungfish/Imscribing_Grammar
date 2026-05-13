@@ -449,7 +449,7 @@ $d(P, NP) = 3.5355$
 
 Eight primitive divergences: K, G, Γ, Φ, D, T, S, Ω. P and NP are structurally remote systems — more distant than many cross-domain pairs in the catalog.
 
-### Argument 1 — Γ: Interaction Grammar Irreducibility
+### Argument 1 — Γ: Coupling Irreducibility
 
 `[TOPO]` $\Gamma_{\text{spleftarrow}}$ (disjunctive: any valid witness accepted) and $\Gamma_{\text{secstress}}$ (sequential: must follow deterministic path) are categorically distinct interaction grammars. $V(\Gamma, X) < 0.15$ for all other primitives X — Γ does not reduce to combinations of other primitives.
 

@@ -36,7 +36,7 @@ This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom v
 | **Fidelity ($F$)** | **Floor Enforcement** | Decomposed imscriptions must satisfy $F \geq F_{\text{dh}}$ for $T_{\text{bullseye}}$ (Axiom 1). Low-fidelity branches are pruned. |
 | **Kinetic Character ($K$)** | **Accessibility Check** | At least one decomposition pathway must have all-$K_{fast}$ or all-$K_{mod}$ steps. All-$K_{slow}$ branches are pruned. |
 | **Granularity ($G$)** | **Scale Consistency** | $G_{\text{revapostrophe}}$ (global) decomposes into $G_{\text{beta}}$ (local) + $G_{\text{gamma}}$ (mesoscale) components. $G_{\text{beta}}$ cannot directly produce $G_{\text{revapostrophe}}$ without amplification mechanism. |
-| **Interaction Grammar ($\Gamma$)** | **Logic Preservation** | $\Gamma_{\to}$ (SEQUENTIAL) decomposes into ordered sub-steps. $\Gamma_{\text{corner}}$ (AND) decomposes into simultaneous partners. |
+| **Coupling ($\Gamma$)** | **Logic Preservation** | $\Gamma_{\to}$ (SEQUENTIAL) decomposes into ordered sub-steps. $\Gamma_{\text{corner}}$ (AND) decomposes into simultaneous partners. |
 | **Criticality ($\Phi$)** | **Emergence Detection** | $\Phi_{\text{ctyogh}}$ targets may decompose into $\Phi_{sub}$ components (emergent criticality). $\Phi_{sub}$ targets with $\Phi_{\text{ctyogh}}$ components are flagged. |
 | **Stoichiometry ($S$)** | **Mass-Balance Closure** | Sum of component $S$ values must equal target $S$. $1:12$ (MOF node:linker) decomposes into $1 \times$ node + $12 \times$ linker. |
 

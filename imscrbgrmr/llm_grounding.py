@@ -117,7 +117,7 @@ For each primitive, answer the specific question:
 **G (Granularity):**
 - Does this interaction control ONE pair (local), a MOTIF (mesoscale), or an ENTIRE network (global)?
 
-**Γ (Interaction Grammar):**
+**Γ (Coupling):**
 - Does the imscription require ONE specific partner (AND/SPECIFIC), accept SEVERAL (AND/SELECTIVE),
   or work with MANY (AND/BROAD)?
 - Is there ORDERED recognition requiring a prior binding event (SEQUENTIAL)?

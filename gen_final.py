@@ -87,7 +87,7 @@ add("G","beth", "beta",         "Beta = Greek cognate of Hebrew beth",          
 add("G","gimel","gamma",        "Gamma = Greek analogue of gimel, 3rd letter",         '"Gamma" /ɡ/ = onset of "gimel"')
 add("G","aleph","revapostrophe","Rev apostrophe = glottal stop = aleph",               '"Revapostrophe" /ʔ/ = glottal stop = aleph [char: ʔ]')
 
-# Gamma — Interaction Grammar (F4)
+# Gamma — Coupling (F4)
 add("Gamma","and",  "corner",        "Corner = two lines meeting = logical AND",       '"Corner" join = simultaneity of AND')
 add("Gamma","or",   "spleftarrow",   "Left arrow = alternate path in disjunction",     '"Spleftarrow" /sp/ = disjunction branch')
 add("Gamma","seq",  "secstress",     "Secondary stress = ordered sequence",            '"Secstress" /sɛk/ = /sɛk/ of "seq" [char: ˌ U+02CC]')

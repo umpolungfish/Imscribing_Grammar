@@ -72,7 +72,7 @@ After reviewing **psymbols.txt** (Tables 15–23 from tipa, tipx, wsuipa, wasysy
 | $G_\gimel$ | $G_\gamma$ | `γ` (\textgamma) | Gamma = Greek analogue of gimel, 3rd letter | "Gamma" /ɡ/ = onset of "gimel" |
 | $G_\aleph$ | $G_\text{revapostrophe}$ | `\` (\textrevapostrophe) | Rev apostrophe = IPA glottal stop ʔ = aleph | "Revapostrophe" /ɛv/ + /ʔ/ evoke aleph's onset |
 
-### Γ — Interaction Grammar
+### Γ — Coupling
 | Original | New | Symbol | Nature | Sound |
 |---|---|---|---|---|
 | $\Gamma_\wedge$ | $\Gamma_\text{corner}$ | `^` (\textcorner) | Corner ⌜ = two lines meeting = logical AND | "Corner" join = simultaneity of AND |
@@ -84,8 +84,8 @@ After reviewing **psymbols.txt** (Tables 15–23 from tipa, tipx, wsuipa, wasysy
 | Original | New | Symbol | Nature | Sound |
 |---|---|---|---|---|
 | $\Phi_\text{sub}$ | $\Phi_\text{softsign}$ | `ž` (\textsoftsign) | Soft sign = below critical threshold | "Soft" /sɒf/ = /s/ of "sub" (below) |
-| $\φ̂_c$ | $\Phi_\text{ctyogh}$ | `ÿ` (\textctyogh) | C-t-yogh ligature = critical self-modeling point | "Ctyogh" /k/ = /k/ of critical "c" |
-| $\φ̂_c^{\mathbb{C}}$ | $\Phi_\text{closerevepsilon}$ | `Æ` (\textcloserevepsilon) | Closed reversed epsilon = complex-plane criticality | "Closerevepsilon" /riːvɛps/ echoes "complex" |
+| $\⊙_c$ | $\Phi_\text{ctyogh}$ | `ÿ` (\textctyogh) | C-t-yogh ligature = critical self-modeling point | "Ctyogh" /k/ = /k/ of critical "c" |
+| $\⊙_c^{\mathbb{C}}$ | $\Phi_\text{closerevepsilon}$ | `Æ` (\textcloserevepsilon) | Closed reversed epsilon = complex-plane criticality | "Closerevepsilon" /riːvɛps/ echoes "complex" |
 | $\Phi_\text{EP}$ | $\Phi_\text{revepsilon}$ | `3` (\textrevepsilon) | Reversed epsilon = exceptional point (non-Hermitian) | "Revepsilon" /rɛvɛps/ begins with /ɛp/ = "EP" |
 | $\Phi_\text{sup}$ | $\Phi_\text{upstep}$ | `Ţ` (\textupstep) | Upward step = supercritical, crossing threshold | "Upstep" /ʌp/ = "sup" without /s/; up = above |
 

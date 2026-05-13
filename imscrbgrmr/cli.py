@@ -179,7 +179,7 @@ def analyze(identifier: str, format: str):
                 if hasattr(_ig, "operator") and hasattr(_ig, "tier")
                 else str(_ig.value)
             )
-            table.add_row("Interaction Grammar", _ig_value, "Partner selection logic")
+            table.add_row("Coupling", _ig_value, "Partner selection logic")
             
             console.print(table)
             console.print(Panel(f"[bold]Unified Notation:[/bold] {imscription.to_notation()}"))
@@ -1191,9 +1191,9 @@ def generate(
         table.add_row("Kinetic Character", result.imscription.kinetic_character.value)
         table.add_row("Granularity", result.imscription.granularity.value)
 
-        # Interaction Grammar (Γ)
+        # Coupling (Γ)
         ig = result.imscription.grammar
-        table.add_row("Interaction Grammar", ig.value)
+        table.add_row("Coupling", ig.value)
 
         # Criticality Phase (Φ) — always show, default Phi_softsign
         cp = result.imscription.criticality_phase
@@ -1482,7 +1482,7 @@ def generate_smiles(
         table.add_column("Primitive", style="cyan")
         table.add_column("Value", style="magenta")
 
-        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Interaction Grammar"]:
+        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Coupling"]:
             key = prim.lower().replace(" ", "_")
             value = getattr(result.imscription, key)
             table.add_row(prim, value.value)
@@ -1562,7 +1562,7 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
             ("Fidelity (F)", "fidelity"),
             ("Kinetic Character (K)", "kinetic_character"),
             ("Granularity (G)", "granularity"),
-            ("Interaction Grammar (Γ)", "interaction_grammar"),
+            ("Coupling (Γ)", "interaction_grammar"),
         ]
 
         for prim_name, attr_name in primitives:
@@ -1926,7 +1926,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
             table.add_row("Fidelity", _enum_value_str(s.fidelity.value))
             table.add_row("Granularity", _enum_value_str(s.granularity.value))
             ig_val = f"{ig.operator.value}({ig.tier})" if hasattr(ig, "operator") else ig.value
-            table.add_row("Interaction Grammar", ig_val)
+            table.add_row("Coupling", ig_val)
             console.print(table)
             console.print(f"\n[bold]Notation:[/bold] {s.to_notation()}")
             console.print(f"[bold]Axioms satisfied:[/bold] {result.axioms_satisfied}")
@@ -1951,7 +1951,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
             table.add_row("Fidelity", _enum_value_str(s.fidelity.value))
             table.add_row("Granularity", _enum_value_str(s.granularity.value))
             ig_val = f"{ig.operator.value}({ig.tier})" if hasattr(ig, "operator") else ig.value
-            table.add_row("Interaction Grammar", ig_val)
+            table.add_row("Coupling", ig_val)
             console.print(table)
             console.print(f"\n[bold]Unified Notation:[/bold] {s.to_notation()}")
             console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
@@ -2258,7 +2258,7 @@ def from_smiles(provider, model, smiles, name, output):
         table.add_column("Primitive", style="cyan")
         table.add_column("Value", style="magenta")
         
-        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Interaction Grammar"]:
+        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Coupling"]:
             key = prim.lower().replace(" ", "_")
             value = getattr(result.imscription, key)
             table.add_row(prim, value.value)
@@ -6168,6 +6168,153 @@ def _print_full_guide(guides: dict, primitive_order: list[str]) -> None:
 
 
 imscribe_alias.add_command(vocal_cmd, name="vocal")
+
+
+# =============================================================================
+# PROOF-PATH — find and translate a proof path between two imscriptions
+# =============================================================================
+
+@main.command("proof-path")
+@click.argument("source")
+@click.argument("target")
+@click.option("--translate/--no-translate", default=True,
+              help="Generate LLM proof sketch (default: on).")
+@click.option("--full-proof/--no-full-proof", default=False,
+              help="Expand sketch to a full LaTeX proof + Lean4 skeleton (default: off).")
+@click.option("--compile/--no-compile", "compile_pdf", default=False,
+              help="Run lualatex twice on the generated .tex to produce a PDF (default: off).")
+@click.option("--model", default="google/gemini-2.5-flash-preview", show_default=True,
+              help="OpenRouter model for proof sketch and full proof.")
+@click.option("--max-steps", default=12, show_default=True,
+              help="Maximum number of operation steps in the path.")
+@click.pass_context
+def proof_path_cmd(
+    ctx, source: str, target: str,
+    translate: bool, full_proof: bool, compile_pdf: bool,
+    model: str, max_steps: int,
+):
+    """Find the operation path from SOURCE imscription to TARGET and translate it.
+
+    SOURCE and TARGET must be names of catalog entries.
+
+    \b
+    Examples:
+      imscribe proof-path hodge_conjecture lefschetz_1_1_theorem
+      imscribe proof-path hodge_conjecture lefschetz_1_1_theorem --full-proof
+      imscribe proof-path hodge_conjecture lefschetz_1_1_theorem --full-proof --compile
+      imscribe proof-path hodge_conjecture lefschetz_1_1_theorem --no-translate
+    """
+    from imscrbgrmr.proof_path import find_path, generate_lean_skeleton, generate_full_proof, compile_latex
+    from imscrbgrmr.proof_path.translator import (
+        format_path_display, translate_path, _get_client, _TRANSCRIPT_DIR,
+    )
+
+    # Resolve catalog entries for descriptions
+    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+    with open(catalog_path) as f:
+        raw = json.load(f)
+    entries = raw if isinstance(raw, list) else raw.get("entries", [])
+    by_name = {e["name"]: e for e in entries}
+
+    if source not in by_name:
+        console.print(f"[red]Source '{source}' not found in catalog.[/red]")
+        raise SystemExit(1)
+    if target not in by_name:
+        console.print(f"[red]Target '{target}' not found in catalog.[/red]")
+        raise SystemExit(1)
+
+    src_desc = by_name[source].get("description", "")
+    tgt_desc = by_name[target].get("description", "")
+
+    console.print(f"\n[bold]Searching for proof path…[/bold]")
+    console.print(f"  Source: [cyan]{source}[/cyan] — {src_desc[:70]}")
+    console.print(f"  Target: [cyan]{target}[/cyan] — {tgt_desc[:70]}\n")
+
+    steps = find_path(source, target, max_steps=max_steps)
+
+    if steps is None:
+        console.print(f"[red]No proof path found within {max_steps} steps.[/red]")
+        raise SystemExit(1)
+
+    if not steps:
+        console.print("[green]Source and target are identical — no path needed.[/green]")
+        return
+
+    console.print(format_path_display(steps, source, target))
+
+    sketch: str | None = None
+
+    if translate:
+        console.print("[bold]Generating proof sketch…[/bold]\n")
+        try:
+            sketch = translate_path(
+                steps,
+                source_name=source,
+                source_desc=src_desc,
+                target_name=target,
+                target_desc=tgt_desc,
+                model=model,
+            )
+        except Exception as exc:
+            console.print(f"[red]Sketch failed: {exc}[/red]")
+
+    if full_proof:
+        # Always generate the Lean4 skeleton (deterministic — no LLM needed)
+        console.print("\n[bold]Generating Lean4 skeleton…[/bold]")
+        lean = generate_lean_skeleton(steps, source, target)
+
+        # Full LaTeX proof requires the sketch as context
+        latex: str | None = None
+        if sketch:
+            console.print("[bold]Generating full proof (LaTeX)…[/bold]\n")
+            try:
+                client = _get_client()
+                latex = generate_full_proof(
+                    steps=steps,
+                    source_name=source,
+                    source_desc=src_desc,
+                    target_name=target,
+                    target_desc=tgt_desc,
+                    sketch=sketch,
+                    client=client,
+                    model=model,
+                )
+            except Exception as exc:
+                console.print(f"[red]Full proof generation failed: {exc}[/red]")
+        else:
+            console.print(
+                "[yellow]Skipping LaTeX proof — sketch required (run without --no-translate).[/yellow]"
+            )
+
+        # Write artifacts to proof_transcripts/
+        import datetime
+        ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        slug = f"{source}___{target}".replace(" ", "_")
+        base = _TRANSCRIPT_DIR / f"{ts}_{slug}"
+        _TRANSCRIPT_DIR.mkdir(exist_ok=True)
+
+        lean_path = Path(f"{base}.lean")
+        lean_path.write_text(lean, encoding="utf-8")
+        console.print(f"[green]Lean4 skeleton:[/green] {lean_path}")
+
+        if latex:
+            tex_path = Path(f"{base}.tex")
+            tex_path.write_text(latex, encoding="utf-8")
+            console.print(f"[green]LaTeX proof:  [/green] {tex_path}")
+
+            if compile_pdf:
+                console.print("[bold]Compiling PDF (2 passes)…[/bold]")
+                try:
+                    from imscrbgrmr.proof_path.writer import compile_latex
+                    pdf_path = compile_latex(tex_path)
+                    console.print(f"[green]PDF:          [/green] {pdf_path}")
+                except Exception as exc:
+                    console.print(f"[red]Compile failed: {exc}[/red]")
+        elif compile_pdf:
+            console.print("[yellow]--compile requires --full-proof and a successful sketch.[/yellow]")
+
+
+imscribe_alias.add_command(proof_path_cmd, name="proof-path")
 
 
 if __name__ == "__main__":

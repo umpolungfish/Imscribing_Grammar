@@ -247,7 +247,7 @@ The answer that came back identified a list of properties that seemed to fully c
     \item How thermodynamically reliable is it? (\textbf{Fidelity}, $F$)
     \item How fast or slow does it reach equilibrium? (\textbf{Kinetic Character}, $K$)
     \item At what spatial scale does it coordinate? (\textbf{Granularity}, $G$)
-    \item What logic governs partner selection? (\textbf{Interaction Grammar}, $\Gamma$)
+    \item What logic governs partner selection? (\textbf{Coupling}, $\Gamma$)
     \item Is the system near a critical point? (\textbf{Criticality Phase}, $\Phi$)
     \item What stoichiometry does the recognition event have? (\textbf{Stoichiometry}, $S$)
     \item Is the structure topologically protected? (\textbf{Topological Protection}, $\Omega$)

@@ -67,7 +67,7 @@ RENAME: list[tuple[str, str]] = [
     ("Γ_gimel",         "Γ_gamma"),
     ("Γ_aleph",         "Γ_revapostrophe"),
 
-    # Gamma — Interaction Grammar  (F4)
+    # Gamma — Coupling  (F4)
     # Old Python/JSON used G_ prefix; Lean already uses Gamma_.
     # After migration, Python/JSON also use Gamma_.
     ("Γ_and",           "ɢ_corner"),

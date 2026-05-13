@@ -870,7 +870,7 @@ You **MUST**:
    - Electronic character → **Polarity**
    - Bond strength/specificity → **Fidelity**
    - Size of motif → **Granularity**
-   - Partner specificity → **Interaction Grammar**
+   - Partner specificity → **Coupling**
 </instructions>
 
 <output>You **MUST** provide your analysis as a **JSON OBJECT**.</output>

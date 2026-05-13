@@ -36,7 +36,7 @@ This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom v
 | **Stoichiometry ($S$)** | 0.08 | **MEDIUM** (Valency change) | +0.8–2.0 nats | Tunable |
 | **Kinetic Character ($K$)** | 0.10 | **MEDIUM** (Accessibility) | +0.5–1.5 nats | Tunable |
 | **Granularity ($G$)** | 0.09 | **MEDIUM** (Scale shift) | +0.5–1.5 nats | Tunable |
-| **Interaction Grammar ($\Gamma$)** | 0.07 | **LOW/MEDIUM** (Partner logic) | +0.3–1.0 nats | Decorative |
+| **Coupling ($\Gamma$)** | 0.07 | **LOW/MEDIUM** (Partner logic) | +0.3–1.0 nats | Decorative |
 | **Criticality ($\Phi$)** | 0.06 | **CONTEXT-DEPENDENT** | Variable | Emergent |
 | **Polarity ($P$)** | 0.09 | **MEDIUM** (Directional) | +0.5–2.0 nats | Tunable |
 

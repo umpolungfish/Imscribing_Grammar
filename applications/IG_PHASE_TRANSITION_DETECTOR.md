@@ -269,7 +269,7 @@ $$
 
 **IG §VII:** G-scope homeomorphism principle — the same primitive pattern appears at every scale.
 
-### 3.9 Interaction Grammar ($$\Gamma$$)
+### 3.9 Coupling ($$\Gamma$$)
 
 **Definition:** Logic governing partner selection.
 

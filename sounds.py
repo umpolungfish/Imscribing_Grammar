@@ -300,7 +300,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * env
 
     # =========================================================================
-    # ɢ — Interaction Grammar
+    # ɢ — Coupling
     # How events compose in time:
     # simultaneous chord (and) → alternating (or) → ascending steps (seq) →
     # wide reverberant wash (broad)

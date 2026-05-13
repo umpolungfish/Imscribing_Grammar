@@ -39,7 +39,7 @@ This protocol leverages the Imscribing Grammar v2.2 framework, utilizing axiom v
 | **Fidelity ($F$)** | **Step-Appropriate** | Individual steps may have $F_{\text{beltl}}$ (low) if overall cycle $F \geq F_{\text{dh}}$. Rate-determining step typically $F_{\text{dh}}$; fast steps $F_{\text{hardsign}}$. |
 | **Kinetic Character ($K$)** | **Accessible Pathway** | At most one $K_{slow}$ step permitted (rate-determining). $K_{trap}$ requires explicit bypass pathway. All-$K_{fast}$ cycles are diffusion-limited. |
 | **Granularity ($G$)** | **Hierarchically Consistent** | $G$ may amplify ($G_{\text{beta}} \to G_{\text{gamma}}$) via Axiom 3, but must not fragment ($G_{\text{revapostrophe}} \to G_{\text{beta}}$) without explicit disassembly step. |
-| **Interaction Grammar ($\Gamma$)** | **Sequential-Valid** | $\Gamma_{\to}$ (SEQUENTIAL) required for ordered mechanisms. $\Gamma_{\text{corner}}$ (AND) permitted for cooperative steps. $\Gamma_{\text{spleftarrow}}$ (OR) indicates branching (potential side reaction). |
+| **Coupling ($\Gamma$)** | **Sequential-Valid** | $\Gamma_{\to}$ (SEQUENTIAL) required for ordered mechanisms. $\Gamma_{\text{corner}}$ (AND) permitted for cooperative steps. $\Gamma_{\text{spleftarrow}}$ (OR) indicates branching (potential side reaction). |
 | **Criticality ($\Phi$)** | **Step-Local** | Individual steps may exhibit $\Phi_{\text{ctyogh}}$ candidacy (e.g., transition states). Full cycle typically $\Phi_{sub}$ unless oscillatory/dissipative. |
 | **Stoichiometry ($S$)** | **Mass-Balance Consistent** | Sum of $S$ changes over cycle must equal zero. $1:1 \to 2:1 \to 1:1$ is valid (transient dimer); $1:1 \to 2:1 \to 2:1$ indicates mass accumulation (cycle break). |
 

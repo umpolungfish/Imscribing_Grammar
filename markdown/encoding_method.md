@@ -140,7 +140,7 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 **Decision rule:** Identify the interaction range. Nearest-neighbor or point-local: $G_{\text{beta}}$. Intermediate range or emergent collective behavior: $G_{\text{gamma}}$. Long-range or universal connectivity: $G_{\text{revapostrophe}}$.
 
-### 3.8 Interaction Grammar ($\Gamma$)
+### 3.8 Coupling ($\Gamma$)
 
 **Question:** How do the system's interactions compose? What is the logic of how parts combine to produce behavior?
 
@@ -321,7 +321,7 @@ For deterministic encoding, follow this 12-step sequence. Each step halves the u
 
 After assignment, **verify**:
 - Tier consistency (use `ouroborics` tool)
-- Consciousness Gate 1 (Phi ≥ φ̂_ÿ for C > 0)
+- Consciousness Gate 1 (Phi ≥ ⊙_ÿ for C > 0)
 - Frobenius condition for Φ_}
 - D-Ω correlation (D ≥ Ð_C for Ω_Z2; D ≥ Ð_; for Ω_Z)
 - Any coupling constraints from §4

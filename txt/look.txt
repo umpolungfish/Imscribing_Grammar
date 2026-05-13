@@ -1,0 +1,560 @@
+
+  'instLTTopology      : LT'
+should be written as
+  'instLTTopology : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Primitives/Core.lean:238:24: extra space in the source
+
+This part of the code
+  'instLTPolarity      : LT'
+should be written as
+  'instLTPolarity : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Primitives/Core.lean:239:27: extra space in the source
+
+This part of the code
+  'instLTCriticality   : LT'
+should be written as
+  'instLTCriticality : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Primitives/Core.lean:240:27: extra space in the source
+
+This part of the code
+  'instLTKineticChar   : LT'
+should be written as
+  'instLTKineticChar : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Primitives/Core.lean:241:24: extra space in the source
+
+This part of the code
+  'instLTFidelity      : LT'
+should be written as
+  'instLTFidelity : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Primitives/Core.lean:242:27: extra space in the source
+
+This part of the code
+  'instLTGranularity   : LT'
+should be written as
+  'instLTGranularity : LT'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+⚠ [3102/3296] Replayed Imscribing.Primitives.OPN_2adic
+warning: Imscribing/Primitives/OPN_2adic.lean:179:8: declaration uses `sorry`
+warning: Imscribing/Primitives/OPN_2adic.lean:396:8: declaration uses `sorry`
+⚠ [3113/3296] Replayed Imscribing.Primitives.BSD_2adic
+warning: Imscribing/Primitives/BSD_2adic.lean:192:8: declaration uses `sorry`
+warning: Imscribing/Primitives/BSD_2adic.lean:219:8: declaration uses `sorry`
+info: Imscribing/Primitives/BSD_2adic.lean:272:0: bsd_touchard : ∀ (E : WeierstrassCurve ℚ) [E.IsElliptic], rootNumber_EC E = -1 → rank_EC E % 6 = 1 ∨ rank_EC E % 18 = 9
+⚠ [3116/3296] Replayed Imscribing.Primitives.Crystal
+warning: Imscribing/Primitives/Crystal.lean:180:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:181:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:182:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:183:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:184:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:185:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Primitives/Crystal.lean:188:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+⚠ [3120/3296] Replayed Imscribing.Primitives.ZFCt
+warning: Imscribing/Primitives/ZFCt.lean:70:13: unused variable `ρ`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:70:15: unused variable `μ`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:70:23: unused variable `v`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:70:43: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:70:63: unused variable `f`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:72:14: unused variable `v`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:75:25: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:76:4: unused variable `t₁`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:76:7: unused variable `t₂`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:78:8: declaration uses `sorry`
+warning: Imscribing/Primitives/ZFCt.lean:81:38: unused variable `u`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:82:39: unused variable `u`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:84:31: unused variable `u`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:84:49: unused variable `c`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:85:29: unused variable `u`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Primitives/ZFCt.lean:85:47: unused variable `c`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3326/3528] Replayed Imscribing.Millennium.RH
+warning: Imscribing/Millennium/RH.lean:116:8: declaration uses `sorry`
+⚠ [3357/3528] Replayed Imscribing.Millennium.YM
+warning: Imscribing/Millennium/YM.lean:111:18: declaration uses `sorry`
+warning: Imscribing/Millennium/YM.lean:176:8: declaration uses `sorry`
+warning: Imscribing/Millennium/YM.lean:186:8: declaration uses `sorry`
+⚠ [3358/3528] Replayed Imscribing.Millennium.Hodge
+warning: Imscribing/Millennium/Hodge.lean:184:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Hodge.lean:214:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Hodge.lean:314:8: declaration uses `sorry`
+⚠ [3359/3528] Replayed Imscribing.Millennium.NS
+warning: Imscribing/Millennium/NS.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Millennium/NS.lean:215:8: declaration uses `sorry`
+warning: Imscribing/Millennium/NS.lean:233:8: declaration uses `sorry`
+warning: Imscribing/Millennium/NS.lean:383:8: declaration uses `sorry`
+⚠ [3365/3528] Replayed Imscribing.Millennium.PvsNP
+warning: Imscribing/Millennium/PvsNP.lean:171:4: declaration uses `sorry`
+warning: Imscribing/Millennium/PvsNP.lean:252:8: declaration uses `sorry`
+⚠ [3367/3528] Replayed Imscribing.Millennium.OPN
+warning: Imscribing/Millennium/OPN.lean:116:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:154:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:176:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:184:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:193:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:223:8: declaration uses `sorry`
+warning: Imscribing/Millennium/OPN.lean:257:8: declaration uses `sorry`
+⚠ [3385/3528] Replayed Imscribing.Millennium.BSD
+warning: Imscribing/Millennium/BSD.lean:211:8: declaration uses `sorry`
+warning: Imscribing/Millennium/BSD.lean:238:8: declaration uses `sorry`
+warning: Imscribing/Millennium/BSD.lean:268:8: declaration uses `sorry`
+warning: Imscribing/Millennium/BSD.lean:334:8: declaration uses `sorry`
+warning: Imscribing/Millennium/BSD.lean:351:8: declaration uses `sorry`
+⚠ [3391/3528] Replayed Imscribing.Classical.Solitary10
+warning: Imscribing/Classical/Solitary10.lean:30:8: declaration uses `sorry`
+⚠ [8053/8064] Replayed Imscribing.PrimitiveMismatch
+warning: Imscribing/PrimitiveMismatch.lean:167:37: This simp argument is unused:
+  compare
+
+Hint: Omit it from the simp argument list.
+  simp (config := {̵d̵e̵c̵i̵d̵e̵{̲ ̲d̲e̲c̲i̲d̲e̲ := t̵r̵u̵e̵}̵)̵ ̵[̵c̵o̵m̵p̵a̵r̵e̵]̵t̲r̲u̲e̲ ̲}̲)̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Imscribing/PrimitiveMismatch.lean:301:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/PrimitiveMismatch.lean:304:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/PrimitiveMismatch.lean:352:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/PrimitiveMismatch.lean:370:13: This simp argument is unused:
+  tensorProduct
+
+Hint: Omit it from the simp argument list.
+  simp only [̵t̵e̵n̵s̵o̵r̵P̵r̵o̵d̵u̵c̵t̵,̵ ̵s̵c̵h̵r̵o̵d̵i̵n̵g̵e̵r̵D̵y̵n̵a̵m̵i̵c̵s̵,̵[̲s̲c̲h̲r̲o̲d̲i̲n̲g̲e̲r̲D̲y̲n̲a̲m̲i̲c̲s̲,̲ measurementOutcome, compare]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Imscribing/PrimitiveMismatch.lean:370:28: This simp argument is unused:
+  schrodingerDynamics
+
+Hint: Omit it from the simp argument list.
+  simp only [tensorProduct, s̵c̵h̵r̵o̵d̵i̵n̵g̵e̵r̵D̵y̵n̵a̵m̵i̵c̵s̵,̵ ̵measurementOutcome, compare]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Imscribing/PrimitiveMismatch.lean:370:49: This simp argument is unused:
+  measurementOutcome
+
+Hint: Omit it from the simp argument list.
+  simp only [tensorProduct, schrodingerDynamics, m̵e̵a̵s̵u̵r̵e̵m̵e̵n̵t̵O̵u̵t̵c̵o̵m̵e̵,̵ ̵compare]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8054/8064] Replayed Imscribing.Millennium.Zosimos_Stilling
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:149:6: 'decide' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:149:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:155:6: 'decide' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:155:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:161:6: 'decide' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:161:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:167:6: 'decide' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:167:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:173:6: 'decide' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:173:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:428:0: Please, add a comment explaining the need for modifying the maxHeartbeat limit, as in
+set_option maxHeartbeats 800000 in
+-- reason for change
+...
+
+Note: This linter can be disabled with `set_option linter.style.maxHeartbeats false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:504:2: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.
+
+Note: This linter can be disabled with `set_option linter.style.refine false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:523:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:525:4: The `show` tactic should only be used to indicate intermediate goal states for readability.
+However, this tactic invocation changed the goal. Please use `change` instead for these purposes.
+
+Note: This linter can be disabled with `set_option linter.style.show false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:638:14: 'simp_all' is a flexible tactic modifying '⊢'. Try 'simp_all?' and use the suggested 'simp_all only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Zosimos_Stilling.lean:638:27: 'decide' uses '⊢'!
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:638:14: 'simp_all' is a flexible tactic modifying '⊢'. Try 'simp_all?' and use the suggested 'simp_all only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Zosimos_Stilling.lean:638:27: 'decide' uses '⊢'!
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:638:14: 'simp_all' is a flexible tactic modifying '⊢'. Try 'simp_all?' and use the suggested 'simp_all only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Zosimos_Stilling.lean:638:27: 'decide' uses '⊢'!
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:638:14: 'simp_all' is a flexible tactic modifying '⊢'. Try 'simp_all?' and use the suggested 'simp_all only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Zosimos_Stilling.lean:638:27: 'decide' uses '⊢'!
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:736:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:741:2: Using `native_decide` is not allowed in mathlib: because it trusts the entire Lean compiler (not just the Lean kernel), it could quite possibly be used to prove false.
+
+Note: This linter can be disabled with `set_option linter.style.nativeDecide false`
+warning: Imscribing/Millennium/Zosimos_Stilling.lean:743:14: '' starts on column 14, but all commands should start at the beginning of the line.
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+⚠ [8055/8064] Replayed Imscribing.Millennium.WorldReligions
+warning: Imscribing/Millennium/WorldReligions.lean:266:104: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Millennium/WorldReligions.lean:266:37: '/-- Sufi fana-baqa (annihilation-in-God / subsistence-through-God).
+    Tuple: <D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph;
+            Gamma_broad; Phi_c; H_inf; n:n; Omega_Z2>
+    Near-identity with Buddhism: d = 1.0, differing only on R (R_dagger vs R_lr). -/
+def Sufi_fana_baqa : RelTuple where
+  D := .odot; T := .odot; R := .dagger; P := .pm_sym; F := .hbar
+  K := .slow; G := .aleph; Gamma := .broad; Phi := .c
+  H := .Hinf; S := .n_n; Omega := .Z2' starts on column 37, but all commands should start at the beginning of the line.
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/Millennium/WorldReligions.lean:456:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:461:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:466:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:471:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:476:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:481:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:488:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:511:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:523:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:529:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:572:8: declaration uses `sorry`
+warning: Imscribing/Millennium/WorldReligions.lean:578:8: declaration uses `sorry`
+⚠ [8056/8064] Replayed Imscribing.Millennium.Collatz
+warning: Imscribing/Millennium/Collatz.lean:76:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:101:2: 'simp [InverseTree, T_inv_preimage] at *' is a flexible tactic modifying '*'. Try 'simp?' and use the suggested 'simp only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Collatz.lean:102:2: 'use k + 1' uses '*'!
+warning: Imscribing/Millennium/Collatz.lean:101:2: 'simp [InverseTree, T_inv_preimage] at *' is a flexible tactic modifying '*'. Try 'simp?' and use the suggested 'simp only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Collatz.lean:102:2: 'use k + 1' uses '*'!
+warning: Imscribing/Millennium/Collatz.lean:101:2: 'simp [InverseTree, T_inv_preimage] at *' is a flexible tactic modifying '*'. Try 'simp?' and use the suggested 'simp only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Collatz.lean:104:2: 'rw [T_iter_comm, hn, hk]' uses '*'!
+warning: Imscribing/Millennium/Collatz.lean:101:2: 'simp [InverseTree, T_inv_preimage] at *' is a flexible tactic modifying '*'. Try 'simp?' and use the suggested 'simp only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Collatz.lean:104:2: 'rw [T_iter_comm, hn, hk]' uses '*'!
+warning: Imscribing/Millennium/Collatz.lean:101:2: 'simp [InverseTree, T_inv_preimage] at *' is a flexible tactic modifying '*'. Try 'simp?' and use the suggested 'simp only [...]'. Alternatively, use `suffices` to explicitly state the simplified form.
+
+Note: This linter can be disabled with `set_option linter.flexible false`
+info: Imscribing/Millennium/Collatz.lean:104:2: 'rw [T_iter_comm, hn, hk]' uses '*'!
+warning: Imscribing/Millennium/Collatz.lean:111:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:118:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:119:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Millennium/Collatz.lean:120:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:121:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:128:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:133:8: declaration uses `sorry`
+warning: Imscribing/Millennium/Collatz.lean:138:8: declaration uses `sorry`
+⚠ [8057/8064] Replayed Imscribing.IGMorphism
+warning: Imscribing/IGMorphism.lean:107:16: extra space in the source
+
+This part of the code
+  'litany_fear  : Imscription'
+should be written as
+  'litany_fear : Imscription'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/IGMorphism.lean:116:16: extra space in the source
+
+This part of the code
+  'litany_self  : Imscription'
+should be written as
+  'litany_self : Imscription'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/IGMorphism.lean:119:21: extra space in the source
+
+This part of the code
+  'lbl_face  : Imscription'
+should be written as
+  'lbl_face : Imscription'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+warning: Imscribing/IGMorphism.lean:312:56: This simp argument is unused:
+  compare
+
+Hint: Omit it from the simp argument list.
+  simp only [ZFCt.zfc, ZFCt.zfc_t, primitiveMismatches,̵ ̵c̵o̵m̵p̵a̵r̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Imscribing/IGMorphism.lean:345:22: extra space in the source
+
+This part of the code
+  'zfc_Hinf_topo  : zfc_Hinf.chir'
+should be written as
+  'zfc_Hinf_topo : zfc_Hinf.chir'
+
+
+Note: This linter can be disabled with `set_option linter.style.whitespace false`
+⚠ [8061/8064] Replayed Imscribing.Millennium.SIC_POVM_Stark
+warning: Imscribing/Millennium/SIC_POVM_Stark.lean:125:5: unused variable `sc`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Imscribing/Millennium/SIC_POVM_Stark.lean:152:8: declaration uses `sorry`
+warning: Imscribing/Millennium/SIC_POVM_Stark.lean:160:8: declaration uses `sorry`
+⚠ [8062/8064] Replayed Imscribing.Millennium.CMPLX_IMGN
+warning: Imscribing/Millennium/CMPLX_IMGN.lean:275:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: Imscribing/Millennium/CMPLX_IMGN.lean:341:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✖ [8063/8064] Building Imscribing.Millennium.GeneralizedPipeline
+trace: .> LEAN_PATH=/home/mrnob0dy666/MillenniumAnkh/.lake/packages/Cli/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/batteries/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/Qq/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/aesop/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/importGraph/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/plausible/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/packages/mathlib/.lake/build/lib/lean:/home/mrnob0dy666/MillenniumAnkh/.lake/build/lib/lean /home/mrnob0dy666/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/mrnob0dy666/MillenniumAnkh/Imscribing/Millennium/GeneralizedPipeline.lean -o /home/mrnob0dy666/MillenniumAnkh/.lake/build/lib/lean/Imscribing/Millennium/GeneralizedPipeline.olean -i /home/mrnob0dy666/MillenniumAnkh/.lake/build/lib/lean/Imscribing/Millennium/GeneralizedPipeline.ilean -c /home/mrnob0dy666/MillenniumAnkh/.lake/build/ir/Imscribing/Millennium/GeneralizedPipeline.c --setup /home/mrnob0dy666/MillenniumAnkh/.lake/build/ir/Imscribing/Millennium/GeneralizedPipeline.setup.json --json
+error: Imscribing/Millennium/GeneralizedPipeline.lean:71:7: unexpected token ':'; expected identifier
+error: Imscribing/Millennium/GeneralizedPipeline.lean:75:10: unexpected identifier; expected 'instance'
+error: Imscribing/Millennium/GeneralizedPipeline.lean:322:0: expected interpolated string
+error: Imscribing/Millennium/GeneralizedPipeline.lean:402:3: unexpected token '/--'; expected term
+error: Imscribing/Millennium/GeneralizedPipeline.lean:422:74: Application type mismatch: The argument
+  "\n"
+has type
+  String
+but is expected to have type
+  List (List String)
+in the application
+  (List.map (fun i ↦ toString "import " ++ toString i) imports).intercalate "\n"
+error: Imscribing/Millennium/GeneralizedPipeline.lean:425:19: failed to synthesize instance of type class
+  ToString MathematicalDomain
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Imscribing/Millennium/GeneralizedPipeline.lean:437:22: Application type mismatch: The argument
+  "\n"
+has type
+  String
+but is expected to have type
+  List (List String)
+in the application
+  (List.flatMap
+        (fun s ↦
+          [toString "  -- Lemma " ++ toString ?m.126 ++ toString ": " ++ toString ?m.131,
+            toString "  -- IG Primitive: " ++ toString ?m.149, toString "  " ++ toString (lean4TacticFor ?m.159)])
+        sections).intercalate
+    "\n"
+error: Imscribing/Millennium/GeneralizedPipeline.lean:434:23: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:434:41: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:435:31: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:436:29: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:439:2: failed to synthesize instance of type class
+  HAppend String (List String) ?m.201
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Imscribing/Millennium/GeneralizedPipeline.lean:461:61: Application type mismatch: The argument
+  "\n\n"
+has type
+  String
+but is expected to have type
+  List (List ?m.31)
+in the application
+  (List.map (fun s ↦ ?m.29) sections).intercalate "\n\n"
+error: Imscribing/Millennium/GeneralizedPipeline.lean:462:44: Application type mismatch: The argument
+  allText
+has type
+  List ?m.31
+but is expected to have type
+  String
+in the application
+  verifyFrobeniusClosure lemmas allText
+error: Imscribing/Millennium/GeneralizedPipeline.lean:452:6: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Imscribing.GeneralizedPipeline.InstantiatedSection.mk` does not have explicit fields, but 4 were provided
+error: Imscribing/Millennium/GeneralizedPipeline.lean:461:29: Invalid field `renderedContent`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.renderedContent`, so it is not possible to project the field `renderedContent` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:474:49: unsolved goals
+case ofByteArray
+toByteArray✝ : ByteArray
+isValidUTF8✝ : toByteArray✝.IsValidUTF8
+hp :
+  { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Phi_}" ∨
+    { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Theta_O" ∨
+      { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "R_=" ∨
+        { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Omega_z" ∨
+          { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "phi_hat_y" ∨
+            { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "C_@" ∨
+              { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "D_C" ∨
+                { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Gamma_ʔ" ∨
+                  { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "f_dot_z" ∨
+                    { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "H_A" ∨
+                      { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Sigma_S" ∨
+                        { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } = "Theta_double_dot"
+⊢ ¬(match { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } with
+      | "Phi_}" => "Bijective encoding / duality"
+      | "Theta_O" => "Inverse/dual construction"
+      | "R_=" => "Adjoint pair / Galois connection"
+      | "Omega_z" => "Topological invariant"
+      | "phi_hat_y" => "Phase boundary / extremal principle"
+      | "C_@" => "Equidistribution / regularity"
+      | "D_C" => "Manifold / quotient structure"
+      | "Gamma_ʔ" => "Universal/local quantification"
+      | "f_dot_z" => "Coherence / non-classical feature"
+      | "H_A" => "Markov order / recursion depth"
+      | "Sigma_S" => "Uniqueness of witness"
+      | "Theta_double_dot" => "Intersection / transversality"
+      | x => "Unknown primitive") =
+      "Unknown primitive"
+error: Imscribing/Millennium/GeneralizedPipeline.lean:484:41: unsolved goals
+case ofByteArray
+toByteArray✝ : ByteArray
+isValidUTF8✝ : toByteArray✝.IsValidUTF8
+hp :
+  { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } ∈
+    ["Phi_}", "Theta_O", "R_=", "Omega_z", "phi_hat_y", "C_@", "D_C", "Gamma_ʔ", "f_dot_z", "H_A", "Sigma_S",
+      "Theta_double_dot"]
+⊢ 0 <
+    (match { toByteArray := toByteArray✝, isValidUTF8 := isValidUTF8✝ } with
+      | "Phi_}" =>
+        "The encoding map \\(\\delta: X \\to Y\\) induced by the system's symmetry is injective on equivalence classes. That is, if \\(\\delta(x) = \\delta(x')\\), then \\(x\\) and \\(x'\\) lie in the same orbit under the dynamics."
+      | "Theta_O" =>
+        "The space \\(X\\) admits a self-referential decomposition \\(X = \\mathcal{S} \\cup X_{\\text{exc}}\\), where \\(\\mathcal{S}\\) is the closure under the inverse relation and \\(X_{\\text{exc}}\\) is empty iff the conjecture holds."
+      | "R_=" =>
+        "The forward construction \\(S\\) and inverse construction \\(I\\) are mutually exhaustive: \\(S \\subseteq I\\) and \\(I \\subseteq S\\), hence \\(S = I\\)."
+      | "Omega_z" =>
+        "The target structure carries an integer-valued invariant \\(w \\in \\mathbb{Z}\\) that distinguishes it from all exotic configurations."
+      | "phi_hat_y" => "No trajectory escapes to infinity. The system is confined to a bounded region of state space."
+      | "C_@" => "The relevant statistical or geometric quantity is well-distributed on typical configurations."
+      | "D_C" => "The state space is a finite-dimensional manifold admitting a quotient structure."
+      | "Gamma_ʔ" => "The property holds universally for the designated scope."
+      | "f_dot_z" => "Quantum or complex coherence is essential to the system's behavior."
+      | "H_A" => "The dynamics depend on at most two prior states (Markov order 2)."
+      | "Sigma_S" => "There exists exactly one solution or witness."
+      | "Theta_double_dot" => "Two substructures intersect at a distinguished point."
+      | x => "No default proposition defined for this primitive.").length
+error: Imscribing/Millennium/GeneralizedPipeline.lean:497:2: `simp` made no progress
+warning: Imscribing/Millennium/GeneralizedPipeline.lean:497:8: declaration uses `sorry`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:510:14: `simp` made no progress
+error: Imscribing/Millennium/GeneralizedPipeline.lean:567:19: Application type mismatch: The argument
+  "\n"
+has type
+  String
+but is expected to have type
+  List (List String)
+in the application
+  (List.map
+        (fun s ↦
+          let tactic := synthesizeTacticsFromStrategy ?m.5 domain;
+          toString "  -- Lemma " ++ toString ?m.10 ++ toString ": " ++ toString ?m.15 ++ toString "\n  " ++
+            toString tactic)
+        sections).intercalate
+    "\n"
+error: Imscribing/Millennium/GeneralizedPipeline.lean:565:50: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:566:21: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:566:39: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:606:3: unexpected token 'lemma'; expected '_', '}', identifier or term
+error: Imscribing/Millennium/GeneralizedPipeline.lean:607:9: unexpected token ':='; expected identifier
+error: Imscribing/Millennium/GeneralizedPipeline.lean:619:12: Invalid field `renderedContent`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.renderedContent`, so it is not possible to project the field `renderedContent` from an expression
+  composite
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:639:19: failed to synthesize instance of type class
+  ToString MathematicalDomain
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: Imscribing/Millennium/GeneralizedPipeline.lean:635:52: Invalid field `lemma`: The environment does not contain `Imscribing.GeneralizedPipeline.InstantiatedSection.lemma`, so it is not possible to project the field `lemma` from an expression
+  s
+of type `InstantiatedSection`
+error: Imscribing/Millennium/GeneralizedPipeline.lean:636:15: `renderedContent` is not a field of structure `InstantiatedSection`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Imscribing.Millennium.GeneralizedPipeline
+error: build failed
+(milleniumankh) mrnob0dy666@devilsdevice:~/MillenniumAnkh$ lake build Imscribing

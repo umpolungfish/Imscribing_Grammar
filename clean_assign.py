@@ -149,7 +149,7 @@ add("G", "aleph", "revapostrophe", "\\",
     "Reversed apostrophe ʻ — represents the glottal stop phoneme of Hebrew aleph",
     '"Revapostrophe" evokes the /ʔ/ of aleph; reversed = aleph\'s silent letter')
 
-# ===== Γ (Interaction Grammar) =====
+# ===== Γ (Coupling) =====
 add("Gamma", "and", "aolig", '"',
     "Wait, aolig already used. Use 'corner' instead.",
     "Fixing...")

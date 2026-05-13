@@ -282,7 +282,7 @@ See **Section 8** for full reference.
 
 Imscribing Grammar is a groundbreaking Python framework that brings the theoretical elegance of the **Unified Imscriptiveon** to practical application. At its core, Imscribing Grammar provides a computational platform for systematically analyzing, designing, and predicting the behavior of self-organizing chemical systems. It unifies disparate fields—from traditional molecular organic chemistry to complex supramolecular assemblies and dynamic temporal processes—under a single, coherent conceptual umbrella.
 
-The framework's primary goal is to bridge the understanding gap between these domains by employing a shared language: the **Ten Primitives** (Dimensionality, Topology, Recognition Mode, Polarity, Fidelity, Kinetic Character, Granularity, Interaction Grammar, Criticality Phase, and Stoichiometry). This unified notation allows researchers and developers to describe any self-organizing chemical motif, regardless of its scale or mechanism, with unprecedented precision.
+The framework's primary goal is to bridge the understanding gap between these domains by employing a shared language: the **Ten Primitives** (Dimensionality, Topology, Recognition Mode, Polarity, Fidelity, Kinetic Character, Granularity, Coupling, Criticality Phase, and Stoichiometry). This unified notation allows researchers and developers to describe any self-organizing chemical motif, regardless of its scale or mechanism, with unprecedented precision.
 
 **Key Benefits of Imscribing Grammar:**
 
@@ -310,7 +310,7 @@ The Unified Imscriptiveon is built upon ten primitives, each representing a cruc
 | **Fidelity**              | $F$ ($F_{\text{hardsign}}, F_{\text{dh}}, F_{\text{beltl}}$) | Thermodynamic reliability anchored to $\xi_{CP}$. Tiers: HIGH ≤ 8.5 nats · MEDIUM 8.5–11.0 nats · LOW > 11.0 nats. | Quantifies the predictability and robustness of an interaction. |
 | **Kinetic Character**     | $K$ ($K_{\text{frtailgamma}}, K_{\text{turnm}}, K_{\text{schwa}}, K_{\text{teshlig}}$) | Activation barrier and pathway multiplicity. | Distinguishes thermodynamic fidelity from operational accessibility. |
 | **Granularity**           | $G$ ($G_{\text{beta}}, G_{\text{gamma}}, G_{\text{revapostrophe}}$) | The scale of control exerted by the imscription.                 | Defines the scope of influence (local, mesoscale, global).    |
-| **Interaction Grammar**   | $\Gamma$ ($\Gamma_{\text{corner}}, \Gamma_{\text{spleftarrow}}, \Gamma_{\to}$) × (SPECIFIC · SELECTIVE · BROAD) | The logic governing partner selection.                       | Determines the specificity and ordering of binding. |
+| **Coupling**   | $\Gamma$ ($\Gamma_{\text{corner}}, \Gamma_{\text{spleftarrow}}, \Gamma_{\to}$) × (SPECIFIC · SELECTIVE · BROAD) | The logic governing partner selection.                       | Determines the specificity and ordering of binding. |
 | **Criticality Phase**     | $\Phi$ ($\Phi_{\text{softsign}}, \Phi_{\text{ctyogh}}, \Phi_{\text{upstep}}$) | Phase relative to the G–D criticality locus. | Encodes whether the imscription exhibits scale-free behavior (Axiom 5). |
 | **Stoichiometry**         | $S$ (e.g. `"1:1"`, `"2:1"`, `"n:m"`) | Valency ratio of the recognition event; constrains T and P. Weight 0.08 in analogy scoring. | Distinguishes homodimers from host–guest and polymeric assemblies. |
 
@@ -668,9 +668,9 @@ Granularity defines the scale of control or influence exerted by the imscription
     # Expected: False
     ```
 
-### 3.7. Interaction Grammar ($\Gamma$)
+### 3.7. Coupling ($\Gamma$)
 
-Interaction Grammar governs the logic of partner selection for a imscription. It describes the specificity or promiscuity of its interactions, from highly selective binding to broad, non-specific recognition.
+Coupling governs the logic of partner selection for a imscription. It describes the specificity or promiscuity of its interactions, from highly selective binding to broad, non-specific recognition.
 
 *   **Enum Members**:
     *   `SPECIFIC` (`"ɢ_otimes"` or `"Γ_⊗"`): Selects one highly specific partner, akin to a lock-and-key mechanism.
