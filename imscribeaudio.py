@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Imscribing Grammar — Audio CLI
+Imscribing Grammar — Audio CLI (optimized v2.0)
 
 Modes:
   imscribeaudio.py --all
-      Full 49-symbol sequence → imscribing_all_symbols.wav
+      Full 49-symbol sequence -> imscribing_all_symbols.wav
 
   imscribeaudio.py <base> <sub>
-      Single symbol, e.g.:  imscribeaudio.py ⊙ ž
+      Single symbol, e.g.:  imscribeaudio.py ō ž
 
-  imscribeaudio.py --tuple "Ð_ß Þ_6 Ř_¯ Φ_F ƒ_ì Ç_- Γ_ʔ ɢ_^ ⊙_ž Ħ_Ñ Σ_S Ω_Å"
-      12-primitive Imscription tuple → WAV with each primitive in sequence
+  imscribeaudio.py --tuple "Ð_ß Þ_6 Ř_¯ Φ_F ƒ_ì Ç_- Γ_ʔ ɢ_^ φ̂_ž Ħ_Ñ Σ_S Ω_Å"
+      12-primitive Imscription tuple -> WAV with each primitive in sequence
       Accepts space- or comma-separated glyph IDs (canonical or old Lean names).
 
   imscribeaudio.py --name psychedelic_baseline
@@ -18,17 +18,17 @@ Modes:
 
   imscribeaudio.py --list
       Print all 49 canonical glyph IDs.
+
+Features:
+  - Dual criticality key support (catalog phi_hat / sounds.py odot)
+  - NFC normalization
+  - Old Lean name resolution
 """
 
-import sys
-import os
-import json
-import re
-import argparse
+import sys, os, json, re, argparse
 import numpy as np
 from scipy.io import wavfile
 
-# ---- import library --------------------------------------------------------
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
 from sounds import (
@@ -36,46 +36,63 @@ from sounds import (
     PRIMITIVE_MAP, OLD_ID_MAP, FIELD_ORDER, resolve_id,
 )
 
-# ============================================================================
-# Catalog helpers
-# ============================================================================
+# Criticality key normalization
+# Catalog entries use φ̂ (pre-migration); sounds.py uses ⊙ (post-migration)
+# We accept both and normalize automatically.
+_CRIT_LEGACY = '\u03c6\u0302'  # φ + combining circumflex = φ̂
+_CRIT_MODERN = '\u2299'         # ⊙ (circled dot)
+
+def _norm_glyph(gid):
+    """NFC-normalize a glyph ID. Convert ⊙_* -> φ̂_* for internal consistency."""
+    import unicodedata
+    gid = unicodedata.normalize('NFC', gid.strip())
+    if gid.startswith(_CRIT_MODERN + '_'):
+        return _CRIT_LEGACY + gid[len(_CRIT_MODERN):]
+    return gid
+
+def _read_crit(entry):
+    """Read criticality from catalog entry. Accepts φ̂ or ⊙ key. Returns φ̂_* form."""
+    raw = entry.get(_CRIT_LEGACY, entry.get(_CRIT_MODERN, ''))
+    if raw.startswith(_CRIT_MODERN + '_'):
+        raw = _CRIT_LEGACY + raw[len(_CRIT_MODERN):]
+    import unicodedata
+    return unicodedata.normalize('NFC', raw)
+
 _CATALOG_PATH = os.path.join(_HERE, 'IG_catalog.json')
-_CRIT_OLD_KEY = 'φ̂'   # pre-migration criticality field name in catalog
 
 def _load_catalog():
     with open(_CATALOG_PATH, encoding='utf-8') as f:
         return json.load(f)
 
 def _catalog_entry_to_ids(entry):
-    """Return list of 12 canonical glyph IDs from a catalog entry dict."""
+    """Return 12 glyph IDs from a catalog entry (normalized to φ̂ form)."""
     ids = []
     for field in FIELD_ORDER:
-        if field == '⊙' and '⊙' not in entry:
-            raw = entry.get(_CRIT_OLD_KEY, '')
-            # φ̂_ž → ⊙_ž
-            raw = raw.replace(_CRIT_OLD_KEY + '_', '⊙_')
+        if field == _CRIT_MODERN:
+            ids.append(_read_crit(entry))
         else:
             raw = entry.get(field, '')
-        ids.append(raw)
+            ids.append(_norm_glyph(raw))
     return ids
 
 def _find_catalog_entry(name):
-    catalog = _load_catalog()
-    for entry in catalog:
+    for entry in _load_catalog():
         if entry.get('name') == name:
             return entry
     return None
 
-# ============================================================================
-# Audio assembly
-# ============================================================================
 def build_sequence(ids, fs=44100, dur=0.75, gap_s=0.12):
-    """ids: list of canonical glyph ID strings → concatenated waveform."""
+    """ids: list of glyph ID strings -> concatenated waveform."""
     gap = np.zeros(int(gap_s * fs))
     sequence = np.array([])
     errors = []
     for gid in ids:
+        # Try as-is first (sounds.py uses ⊙ base for criticality)
         pair = resolve_id(gid)
+        if pair is None:
+            # Convert φ̂_* -> ⊙_* for sounds.py lookup
+            converted = gid.replace(_CRIT_LEGACY + '_', _CRIT_MODERN + '_')
+            pair = resolve_id(converted)
         if pair is None:
             errors.append(gid)
             sequence = np.concatenate([sequence, np.zeros(int(dur * fs)), gap])
@@ -83,16 +100,12 @@ def build_sequence(ids, fs=44100, dur=0.75, gap_s=0.12):
             sig = synthesize_symbol(pair[0], pair[1], fs, dur)
             sequence = np.concatenate([sequence, sig, gap])
     return normalize(sequence, peak=0.9), errors
-
 def save_wav(path, sequence, fs=44100):
     wavfile.write(path, fs, (sequence * 32767).astype(np.int16))
 
 def _sanitize(s):
     return re.sub(r'[<>:"/\\|?*]', '_', s) if s else 'unknown'
 
-# ============================================================================
-# CLI
-# ============================================================================
 def main():
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -130,7 +143,7 @@ def main():
     if args.all:
         if args.base or args.sub or args.tuple or args.name:
             parser.error("--all cannot be combined with other mode flags")
-        print("Generating full 49-symbol sequence…")
+        print("Generating full 49-symbol sequence...")
         fs = args.fs
         gap = np.zeros(int(0.12 * fs))
         sequence = np.array([])
@@ -184,8 +197,7 @@ def main():
 
     # ---- single symbol -----------------------------------------------------
     if args.base and args.sub:
-        # normalize common substitutions
-        sub_norm = {'¯': '̄', '^': '∧', '˙': '̇'}
+        sub_norm = {'-': '-', '^': '^', '.': '.'}
         sub = sub_norm.get(args.sub, args.sub)
         sig = synthesize_symbol(args.base, sub, fs=args.fs, dur=args.dur)
         if args.output:

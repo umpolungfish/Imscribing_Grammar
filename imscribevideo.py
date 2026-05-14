@@ -84,23 +84,30 @@ HUMAN = {
 }
 
 _CATALOG_PATH = os.path.join(_HERE, 'IG_catalog.json')
-_CRIT_OLD_KEY = 'φ̂'
+_CRIT_LEGACY = 'φ̂'  # phi_hat (catalog key)
+_CRIT_MODERN = '⊙'     # odot (sounds.py key)
 
-# ── catalog helpers ───────────────────────────────────────────────────────────
+def _read_crit(entry):
+    import unicodedata
+    raw = entry.get(_CRIT_LEGACY, entry.get(_CRIT_MODERN, ''))
+    raw = unicodedata.normalize('NFC', raw)
+    if raw.startswith(_CRIT_LEGACY + '_'):
+        return _CRIT_MODERN + raw[len(_CRIT_LEGACY):]
+    return raw
 
 def load_catalog():
     with open(_CATALOG_PATH, encoding='utf-8') as f:
         return json.load(f)
 
 def entry_to_ids(entry):
+    import unicodedata
     ids = []
     for field in FIELD_ORDER:
-        if field == '⊙' and '⊙' not in entry:
-            raw = entry.get(_CRIT_OLD_KEY, '')
-            raw = raw.replace(_CRIT_OLD_KEY + '_', '⊙_')
+        if field == _CRIT_MODERN:
+            ids.append(_read_crit(entry))
         else:
             raw = entry.get(field, '')
-        ids.append(raw)
+            ids.append(unicodedata.normalize('NFC', raw))
     return ids
 
 def find_entry(name):

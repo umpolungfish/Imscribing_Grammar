@@ -3,35 +3,27 @@
 esoteric_librarian.py — Navigate the esoteric library by crystal address.
 
 Usage:
-  python3 esoteric_librarian.py show tao 1
-      Show imscription for Tao Te Ching chapter 1.
+  python3 esoteric_librarian.py show tao 1          Show imscription for a chapter
+  python3 esoteric_librarian.py list tao [--tier T]  List entries, optionally by tier
+  python3 esoteric_librarian.py dist tao 1 tao 81    Hamming distance between two entries
+  python3 esoteric_librarian.py near tao 1 [--n 5]   Find nearest neighbors
+  python3 esoteric_librarian.py validate tao          Check structural consistency
+  python3 esoteric_librarian.py stats tao             Catalog statistics & tier distribution
+  python3 esoteric_librarian.py export tao 1          Emit crystal-address notation
+  python3 esoteric_librarian.py audio tao 1           Sonify an entry
+  python3 esoteric_librarian.py video tao 1           Render annotated video
+  python3 esoteric_librarian.py rewrite tao 1         Print structural rewrite prompt
+  python3 esoteric_librarian.py scaffold upanishads   Create generator template
+  python3 esoteric_librarian.py add tao --tuple ...   Append one entry manually
 
-  python3 esoteric_librarian.py list tao [--tier T_inf]
-      List all chapters, optionally filtered by tier.
-
-  python3 esoteric_librarian.py dist tao 1 tao 81
-      Hamming distance between two chapters.
-
-  python3 esoteric_librarian.py near tao 1 [--n 5] [--other-catalog ig]
-      Find nearest neighbors within or across catalogs.
-
-  python3 esoteric_librarian.py audio tao 1 [--dur 0.75] [--output FILE]
-      Sonify the imscription for a chapter.
-
-  python3 esoteric_librarian.py video tao 1 [--dur 0.75] [--output FILE]
-      Render an annotated video for a chapter.
-
-  python3 esoteric_librarian.py rewrite tao 1
-      Print a structural rewrite prompt for the chapter.
-
-  python3 esoteric_librarian.py scaffold upanishads
-      Create esoteric_library/gen_upanishads.py — a ready-to-fill generator.
-
-  python3 esoteric_librarian.py add tao --tuple "Ð_ω Þ_O ..." --name foo --title "..."
-      Append one entry to a catalog from the command line.
+Optimized v2.0:
+  - Robust criticality key normalization (⊙ / φ̂)
+  - `validate` command for structural consistency checks
+  - `stats` command for catalog-level tier distribution
+  - `export` command for crystal-address notation output
 """
 
-import sys, os, json, argparse
+import sys, os, json, argparse, unicodedata
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
@@ -39,13 +31,29 @@ sys.path.insert(0, _HERE)
 from sounds import FIELD_ORDER, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
 
 # ── field keys ───────────────────────────────────────────────────────────────
-CRIT_KEY = 'φ̂'   # pre-migration criticality key used in all catalog files
+# Catalog files may use φ̂ (pre-migration key) or ⊙ (post-migration) for criticality.
+# We accept BOTH when reading, but normalize to φ̂ for internal tuple storage.
+CRIT_LEGACY = 'φ̂'    # used in all catalog .json files
+CRIT_MODERN = '⊙'    # used in sounds.py FIELD_ORDER
+_FIELDS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', 'Σ', 'Ω']
 
-# canonical field order for display / distance computation
-_FIELDS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_KEY, 'Ħ', 'Σ', 'Ω']
+# ── criticality key normalization ─────────────────────────────────────────────
+def _get_crit(entry):
+    """Read criticality from entry, accepting ⊙ or φ̂ key. Normalize to φ̂_* form."""
+    raw = entry.get(CRIT_LEGACY, entry.get(CRIT_MODERN, ''))
+    # If we got ⊙_ÿ, normalize to φ̂_ÿ for internal consistency
+    if raw.startswith(CRIT_MODERN + '_'):
+        raw = CRIT_LEGACY + raw[len(CRIT_MODERN):]
+    return unicodedata.normalize('NFC', raw)
+
+def _norm_glyph(gid):
+    """Return NFC-normalized glyph ID with φ̂ form for criticality."""
+    gid = unicodedata.normalize('NFC', gid.strip())
+    if gid.startswith(CRIT_MODERN + '_'):
+        return CRIT_LEGACY + gid[len(CRIT_MODERN):]
+    return gid
 
 # ── catalog loading ───────────────────────────────────────────────────────────
-
 def _load_json(path):
     with open(path, encoding='utf-8') as f:
         return json.load(f)
@@ -62,10 +70,8 @@ def load_catalog(name):
         return _load_json(_tao_path())
     if name in ('ig', 'catalog', 'ig_catalog'):
         return _load_json(_ig_path())
-    # try as a direct path first
     if os.path.exists(name):
         return _load_json(name)
-    # try as a short name in esoteric_library/
     slug = name.lower().replace(' ', '_').replace('-', '_')
     candidate = os.path.join(_HERE, 'esoteric_library', f'{slug}.json')
     if os.path.exists(candidate):
@@ -77,10 +83,7 @@ def load_catalog(name):
     )
 
 def find_entry(catalog, key):
-    """
-    Find one entry by name (string) or number (int / str digit).
-    Returns the entry dict or raises KeyError.
-    """
+    """Find one entry by name (string) or number (int / str digit)."""
     if isinstance(key, str) and key.isdigit():
         key = int(key)
     if isinstance(key, int):
@@ -92,34 +95,26 @@ def find_entry(catalog, key):
         if e.get('name') == key:
             return e
     raise KeyError(f"No entry named '{key}'")
-
 # ── imscription helpers ───────────────────────────────────────────────────────
-
 def get_ids(entry):
-    """Return list of 12 canonical ⊙-based glyph IDs from an entry."""
+    """Return list of 12 canonical glyph IDs from an entry (normalized to φ̂ form)."""
     ids = []
-    for field in FIELD_ORDER:
-        if field == '⊙' and '⊙' not in entry:
-            raw = entry.get(CRIT_KEY, '')
-            raw = raw.replace(CRIT_KEY + '_', '⊙_')
+    for field in _FIELDS:
+        if field == CRIT_LEGACY:
+            ids.append(_get_crit(entry))
         else:
-            raw = entry.get(field, entry.get(CRIT_KEY, '') if field == '⊙' else '')
-        ids.append(raw)
+            ids.append(_norm_glyph(entry.get(field, '')))
     return ids
 
 def entry_tuple(entry):
     """12-tuple of raw glyph ID strings in _FIELDS order."""
-    ids = []
-    for f in _FIELDS:
-        ids.append(entry.get(f, ''))
-    return tuple(ids)
+    return tuple(get_ids(entry))
 
 def hamming(a, b):
     """Hamming distance between two 12-tuples."""
     return sum(x != y for x, y in zip(a, b))
 
 # ── display ───────────────────────────────────────────────────────────────────
-
 _FIELD_LABELS = {
     'Ð': 'D  Dimensionality',
     'Þ': 'T  Topology      ',
@@ -129,18 +124,18 @@ _FIELD_LABELS = {
     'Ç': 'K  Kinetics      ',
     'Γ': 'G  Scope         ',
     'ɢ': 'Γ  Grammar       ',
-    CRIT_KEY: 'Φ  Criticality   ',
+    CRIT_LEGACY: 'Φ  Criticality   ',
     'Ħ': 'H  Temporal Depth',
     'Σ': 'S  Stoichiometry ',
     'Ω': 'Ω  Winding       ',
 }
 
-_OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}  # canonical → first old name
+_OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
 
 def _friendly(glyph_id):
-    """⊙_ÿ → Phi_c (the most readable old name if available)."""
-    # convert φ̂_X → ⊙_X for lookup
-    lookup = glyph_id.replace(CRIT_KEY + '_', '⊙_')
+    """φ̂_ÿ → Phi_c (the most readable old name if available)."""
+    # Try both φ̂_ and ⊙_ forms for lookup
+    lookup = glyph_id.replace(CRIT_LEGACY + '_', CRIT_MODERN + '_')
     return _OLD_NAMES.get(lookup, glyph_id)
 
 def show_entry(entry):
@@ -160,7 +155,9 @@ def show_entry(entry):
         print(f"  tier: {tier}   C_score: {cscore}")
     print()
     for f in _FIELDS:
-        val = entry.get(f, '─')
+        val = entry.get(f, '')
+        if f == CRIT_LEGACY and not val:
+            val = _get_crit(entry)
         label = _FIELD_LABELS.get(f, f)
         friendly = _friendly(val)
         diff = f" ({friendly})" if friendly != val else ''
@@ -171,10 +168,7 @@ def show_entry(entry):
     notes = entry.get('notes', '')
     if notes:
         print(f"\n  Note: {notes[:200]}")
-    print(f"{'─'*60}\n")
-
-# ── commands ──────────────────────────────────────────────────────────────────
-
+    print(f"{'─'*60}\n")# ── commands ──────────────────────────────────────────────────────────────────
 def cmd_show(args):
     cat = load_catalog(args.catalog)
     entry = find_entry(cat, args.key)
@@ -192,7 +186,7 @@ def cmd_list(args):
         num = e.get('number', '')
         name = e.get('name', '')[:30]
         cscore = e.get('C_score', 0)
-        crit = e.get(CRIT_KEY, '')
+        crit = _get_crit(e)
         title = e.get('title', '')[:35]
         print(f"  {num:>3}  {name:<32}  {tier:<8}  {cscore:>5.2f}  {crit:>10}  {title}")
     print()
@@ -218,14 +212,12 @@ def cmd_dist(args):
         print("  ↳ Same crystal region.")
     else:
         print("  ↳ Structurally distant (>8 fields).")
-    # Show differing fields
     ta, tb = entry_tuple(a), entry_tuple(b)
     diffs = [(f, va, vb) for f, va, vb in zip(_FIELDS, ta, tb) if va != vb]
     if diffs:
         print(f"\n  Differing fields ({len(diffs)}):")
         for f, va, vb in diffs:
-            label = _FIELD_LABELS.get(f, f).split()[0]
-            print(f"    {label}: {va} → {vb}")
+            print(f"    {_FIELD_LABELS.get(f, f).split()[0]}: {va} → {vb}")
     print()
 
 def cmd_near(args):
@@ -249,8 +241,154 @@ def cmd_near(args):
         name = e.get('title', e.get('name', ''))
         tier = e.get('tier', '')
         print(f"  d={d:>2}  {num:>3}  {tier:<8}  {name}")
+    print()# ── validate ──────────────────────────────────────────────────────────────────
+def cmd_validate(args):
+    """Check structural consistency of a catalog: verify all fields are valid."""
+    cat = load_catalog(args.catalog)
+    total = len(cat)
+    errors = []
+    warnings = []
+    valid_vals = {
+        'Ð': {'Ð_ß', 'Ð_C', 'Ð_;', 'Ð_ω'},
+        'Þ': {'Þ_6', 'Þ_K', 'Þ_ò', 'Þ_¨', 'Þ_O'},
+        'Ř': {'Ř_¯', 'Ř_ý', 'Ř_Ť', 'Ř_='},
+        'Φ': {'Φ_ɐ', 'Φ_υ', 'Φ_F', 'Φ_˙', 'Φ_}'},
+        'ƒ': {'ƒ_ì', 'ƒ_ð', 'ƒ_ż'},
+        'Ç': {'Ç_-', 'Ç_W', 'Ç_@', 'Ç_Ù', 'Ç_λ'},
+        'Γ': {'Γ_β', 'Γ_γ', 'Γ_ʔ'},
+        'ɢ': {'ɢ_^', 'ɢ_˝', 'ɢ_ˌ', 'ɢ_Ş'},
+        CRIT_LEGACY: {'φ̂_ž', 'φ̂_ÿ', 'φ̂_Æ', 'φ̂_3', 'φ̂_Ţ'},
+        'Ħ': {'Ħ_Ñ', 'Ħ_£', 'Ħ_A', 'Ħ_!'},
+        'Σ': {'Σ_S', 'Σ_ő', 'Σ_ï'},
+        'Ω': {'Ω_Å', 'Ω_2', 'Ω_z', 'Ω_5'},
+    }
+    valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O_0', 'O_1', 'O_2', 'O_2†', 'O_inf', ''}
+
+    for i, e in enumerate(cat):
+        name = e.get('name', f'[index {i}]')
+        # Check required fields
+        for field in _FIELDS:
+            val = e.get(field, '')
+            if field == CRIT_LEGACY and not val:
+                val = _get_crit(e)
+            if not val:
+                errors.append(f"{name}: missing field {field}")
+                continue
+            nfc_val = unicodedata.normalize('NFC', val)
+            if nfc_val != val:
+                warnings.append(f"{name}: {field} has non-NFC normalization: {repr(val)}")
+            if val not in valid_vals.get(field, set()):
+                errors.append(f"{name}: invalid {field} value: {repr(val)}")
+        # Check tier
+        tier = e.get('tier', '')
+        if tier not in valid_tiers:
+            warnings.append(f"{name}: unrecognized tier: {repr(tier)}")
+        # Check C_score range
+        cs = e.get('C_score', None)
+        if cs is not None:
+            try:
+                csf = float(cs)
+                if csf < 0 or csf > 1:
+                    warnings.append(f"{name}: C_score out of [0,1]: {cs}")
+            except (ValueError, TypeError):
+                warnings.append(f"{name}: C_score not numeric: {cs}")
+
+    print(f"\nCatalog: {args.catalog}  ({total} entries)")
+    print(f"  Errors:   {len(errors)}")
+    print(f"  Warnings: {len(warnings)}")
+    if errors:
+        print("\n  Errors:")
+        for e in errors[:20]:
+            print(f"    ✗ {e}")
+        if len(errors) > 20:
+            print(f"    ... and {len(errors)-20} more")
+    if warnings:
+        print("\n  Warnings:")
+        for w in warnings[:20]:
+            print(f"    ⚠ {w}")
+        if len(warnings) > 20:
+            print(f"    ... and {len(warnings)-20} more")
+    if not errors and not warnings:
+        print("  ✓ All entries are structurally consistent.")
+    print()# ── stats ─────────────────────────────────────────────────────────────────────
+def cmd_stats(args):
+    """Catalog-level statistics: tier distribution, C-score range, field diversity."""
+    cat = load_catalog(args.catalog)
+    total = len(cat)
+    if total == 0:
+        print(f"\nCatalog '{args.catalog}' is empty.\n")
+        return
+
+    # Tier distribution
+    tiers = {}
+    for e in cat:
+        t = e.get('tier', '')
+        tiers[t] = tiers.get(t, 0) + 1
+
+    # C-score stats
+    cscores = []
+    for e in cat:
+        cs = e.get('C_score', None)
+        if cs is not None:
+            try:
+                cscores.append(float(cs))
+            except (ValueError, TypeError):
+                pass
+
+    # Field diversity — count distinct values per field
+    field_diversity = {}
+    for f in _FIELDS:
+        vals = set()
+        for e in cat:
+            if f == CRIT_LEGACY:
+                vals.add(_get_crit(e))
+            else:
+                v = e.get(f, '')
+                if v:
+                    vals.add(v)
+        field_diversity[f] = len(vals)
+
+    print(f"\n{'='*60}")
+    print(f"  Catalog: {args.catalog}")
+    print(f"  Entries: {total}")
+    print(f"{'='*60}")
+
+    print(f"\n  Tier Distribution:")
+    for t in sorted(tiers.keys(), key=lambda x: (
+        {'T_0':0,'T_1':1,'T_2':2,'T_3':3,'T_inf':4,'O_0':0,'O_1':1,'O_2':2,'O_2†':3,'O_inf':4,'':-1}.get(x, 99)
+    )):
+        label = t if t else '(unset)'
+        pct = tiers[t] / total * 100
+        bar = '█' * int(pct / 2) + '░' * (50 - int(pct / 2))
+        print(f"    {label:<8} {tiers[t]:>4} ({pct:5.1f}%) {bar}")
+
+    if cscores:
+        print(f"\n  C-Score:  min={min(cscores):.2f}  max={max(cscores):.2f}  "
+              f"mean={sum(cscores)/len(cscores):.2f}  median={sorted(cscores)[len(cscores)//2]:.2f}")
+        print(f"  Entries with C_score: {len(cscores)}/{total}")
+
+    print(f"\n  Field Diversity (distinct values):")
+    for f in _FIELDS:
+        label = _FIELD_LABELS.get(f, f).split()[0]
+        bar = '█' * field_diversity[f] + '░' * (12 - field_diversity[f])
+        print(f"    {label}: {field_diversity[f]:>2} {bar}")
     print()
 
+# ── export ────────────────────────────────────────────────────────────────────
+def cmd_export(args):
+    """Emit entry as a crystal-address notation string."""
+    cat = load_catalog(args.catalog)
+    entry = find_entry(cat, args.key)
+    ids = get_ids(entry)
+    name = entry.get('title', entry.get('name', ''))
+    tier = entry.get('tier', '')
+    cs = entry.get('C_score', '')
+    print(f"\n  {name}")
+    if tier or cs:
+        print(f"  tier={tier}  C_score={cs}")
+    print(f"  ⟨{'  '.join(ids)}⟩")
+    print(f"  Address: {' '.join(ids)}")
+    print()# ── audio ─────────────────────────────────────────────────────────────────────
 def cmd_audio(args):
     import subprocess
     cat = load_catalog(args.catalog)
@@ -259,7 +397,6 @@ def cmd_audio(args):
     out = getattr(args, 'output', None) or f"{name}.wav"
     dur = getattr(args, 'dur', 0.75)
     ids = get_ids(entry)
-    # write a temp catalog entry-like call to imscribeaudio
     tuple_str = ' '.join(ids)
     script = os.path.join(_HERE, 'imscribeaudio.py')
     cmd = [sys.executable, script, '--tuple', tuple_str, '--output', out, '--dur', str(dur)]
@@ -267,6 +404,7 @@ def cmd_audio(args):
     print(f"Tuple: {tuple_str}")
     subprocess.run(cmd)
 
+# ── video ─────────────────────────────────────────────────────────────────────
 def cmd_video(args):
     import subprocess
     cat = load_catalog(args.catalog)
@@ -284,6 +422,7 @@ def cmd_video(args):
     print(f"Rendering: {title}")
     subprocess.run(cmd)
 
+# ── rewrite ───────────────────────────────────────────────────────────────────
 def cmd_rewrite(args):
     cat = load_catalog(args.catalog)
     entry = find_entry(cat, args.key)
@@ -296,7 +435,7 @@ def cmd_rewrite(args):
     print(f"Source text:\n  {text}\n")
     print(f"Crystal address (12-tuple):\n  {' '.join(ids)}\n")
     print("Primitive semantics:")
-    for f, gid in zip(_FIELDS, [entry.get(f,'') for f in _FIELDS]):
+    for f, gid in zip(_FIELDS, ids):
         friendly = _friendly(gid)
         label = _FIELD_LABELS.get(f, f).strip()
         print(f"  {label}: {friendly}")
@@ -323,10 +462,7 @@ Rewrite instructions:
     - Does the temporal depth match (dry, shallow, deep, infinite)?
     - Does the stoichiometry match (one voice, many, asymmetric)?
     - Does the winding match (open, cyclic, returning)?
-""")
-
-# ── scaffold ──────────────────────────────────────────────────────────────────
-
+""")# ── scaffold ──────────────────────────────────────────────────────────────────
 _SCAFFOLD_TEMPLATE = '''\
 #!/usr/bin/env python3
 """Generate {name}.json — imscribed catalog for {name}.
@@ -336,32 +472,21 @@ Fill in the entries below, then run:
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Pre-migration criticality key (compatible with imscribeaudio.py)
-PHI = 'φ̂'
+PHI = 'φ̂'  # criticality key (pre-migration, compatible with all tools)
 
-# ---------------------------------------------------------------------------
 # Available glyph IDs — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ [φ̂=crit] Ħ Σ Ω
-#
-#   Ð  Dimensionality : Ð_ß  Ð_C  Ð_;  Ð_ω
-#   Þ  Topology       : Þ_6  Þ_K  Þ_ò  Þ_¨  Þ_O
-#   Ř  Relational     : Ř_¯  Ř_ý  Ř_Ť  Ř_=
-#   Φ  Polarity       : Φ_ɐ  Φ_υ  Φ_F  Φ_˙  Φ_}}
-#   ƒ  Fidelity       : ƒ_ì  ƒ_ð  ƒ_ż
-#   Ç  Kinetics       : Ç_-  Ç_W  Ç_@  Ç_Ù  Ç_λ
-#   Γ  Scope          : Γ_β  Γ_γ  Γ_ʔ
-#   ɢ  Grammar        : ɢ_^  ɢ_˝  ɢ_ˌ  ɢ_Ş
-#   φ̂  Criticality    : φ̂_ž  φ̂_ÿ  φ̂_Æ  φ̂_3  φ̂_Ţ
-#   Ħ  Temporal Depth : Ħ_Ñ  Ħ_£  Ħ_A  Ħ_!
-#   Σ  Stoichiometry  : Σ_S  Σ_ő  Σ_ï
-#   Ω  Winding        : Ω_Å  Ω_2  Ω_z  Ω_5
-#
-# Tier heuristic (boundary fields: Φ, D, φ̂, Ω):
-#   T_0   : φ̂_ž, D compact/infty, Φ not Frobenius
-#   T_1   : φ̂_ÿ, Φ not Frobenius
-#   T_2   : φ̂_ÿ/φ̂_Æ, Φ not Frobenius, Ω winding
-#   T_3   : φ̂_Æ/φ̂_3, any Φ, Ω winding
-#   T_inf : φ̂_3 or (φ̂_ÿ + Φ_}}) — Frobenius + EP
-# ---------------------------------------------------------------------------
+#   Ð: Ð_ß Ð_C Ð_; Ð_ω
+#   Þ: Þ_6 Þ_K Þ_ò Þ_¨ Þ_O
+#   Ř: Ř_¯ Ř_ý Ř_Ť Ř_=
+#   Φ: Φ_ɐ Φ_υ Φ_F Φ_˙ Φ_}}
+#   ƒ: ƒ_ì ƒ_ð ƒ_ż
+#   Ç: Ç_- Ç_W Ç_@ Ç_Ù Ç_λ
+#   Γ: Γ_β Γ_γ Γ_ʔ
+#   ɢ: ɢ_^ ɢ_˝ ɢ_ˌ ɢ_Ş
+#   φ̂: φ̂_ž φ̂_ÿ φ̂_Æ φ̂_3 φ̂_Ţ
+#   Ħ: Ħ_Ñ Ħ_£ Ħ_A Ħ_!
+#   Σ: Σ_S Σ_ő Σ_ï
+#   Ω: Ω_Å Ω_2 Ω_z Ω_5
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -378,28 +503,19 @@ def entry(num, title, desc, text,
         "tier": tier, "C_score": cscore, "notes": notes,
     }}
 
-# ---------------------------------------------------------------------------
-# Fill in one entry per section/verse. Arguments:
-#   entry(number, title, description, text,
-#         D,    T,    R,    P,    F,    K,    G,    Gm,   Crit, H,    S,    Omega,
-#         tier, C_score, notes="...")
-# ---------------------------------------------------------------------------
-
 chapters = [
     entry(1, "Section title",
-        "One-line description of the structural claim",
-        "Verbatim source text for this section.",
+        "One-line description",
+        "Verbatim source text.",
         "Ð_ω","Þ_O","Ř_Ť","Φ_}}","ƒ_ì","Ç_@","Γ_ʔ","ɢ_^","φ̂_3","Ħ_!","Σ_S","Ω_z",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
-
-    # entry(2, ...),
 ]
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "{name}.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(chapters, f, ensure_ascii=False, indent=2)
-print(f"Wrote {{len(chapters)}} entries → {{out}}")
+print(f"Wrote {{len(chapters)}} entries -> {{out}}")
 '''
 
 def cmd_scaffold(args):
@@ -420,10 +536,7 @@ def cmd_scaffold(args):
     print(f"  3. Navigate:  python3 esoteric_librarian.py list {name}")
     print()
     print("The catalog short name will be the filename without .json:")
-    print(f"  python3 esoteric_librarian.py show {name} 1")
-
-# ── imscribe (auto-assign via LLM loop) ──────────────────────────────────────
-
+    print(f"  python3 esoteric_librarian.py show {name} 1")# ── imscribe (auto-assign via LLM loop) ──────────────────────────────────────
 def cmd_imscribe(args):
     """Auto-assign all 12 primitives via IGInquiryLoop, then save to catalog."""
     try:
@@ -441,11 +554,9 @@ def cmd_imscribe(args):
     provider    = getattr(args, 'provider', None) or os.environ.get('IG_PROVIDER', 'anthropic')
     model       = getattr(args, 'model', None)   or os.environ.get('IG_MODEL', None)
 
-    # Split text into sections (blank-line separated paragraphs)
     sections = [s.strip() for s in text.split('\n\n') if s.strip()] if text else []
     multi = len(sections) > 1
 
-    # Resolve writable catalog path
     cat_slug = args.catalog.lower().replace(' ', '_').replace('-', '_')
     lib_dir  = os.path.join(_HERE, 'esoteric_library')
     if args.catalog in ('tao', 'tao_te_ching'):
@@ -477,7 +588,6 @@ def cmd_imscribe(args):
             json.dump(cat, f, ensure_ascii=False, indent=2)
 
     if multi:
-        # One focused loop per section — saves results incrementally
         print(f"\nImscribing {len(sections)} sections one at a time…\n")
         total_saved = 0
         for i, sec_text in enumerate(sections):
@@ -486,11 +596,9 @@ def cmd_imscribe(args):
             if sec_name in {e.get('name') for e in catalog}:
                 print(f"  §{i+1} ({sec_name}) already imscribed — skipping.")
                 continue
-
             print(f"\n{'='*60}")
             print(f"  Imscribing §{i+1}/{len(sections)}: {sec_name}")
             print(f"{'='*60}\n")
-
             seed = (
                 f"Imscribe the following section for the esoteric library catalog.\n\n"
                 f"Name: {sec_name}\n"
@@ -502,11 +610,9 @@ def cmd_imscribe(args):
                 f"then call encode_system(name='{sec_name}', description='...', ...) "
                 f"with all 12 values explicitly set. Once imscribed, CONCLUDE."
             )
-
             loop = _run_loop(seed)
             imscription = loop.dispatcher.catalog._entries.get(sec_name)
             if not imscription:
-                # fuzzy match
                 for k, v in loop.dispatcher.catalog._entries.items():
                     if k not in {e.get('name') for e in _load_catalog()} and name in k:
                         imscription = v
@@ -514,7 +620,6 @@ def cmd_imscribe(args):
             if not imscription:
                 print(f"  Warning: §{i+1} ({sec_name}) was not imscribed — skipping.")
                 continue
-
             entry = {
                 'name': sec_name, 'number': i + 1,
                 'title': f"{title} — §{i+1}",
@@ -524,14 +629,12 @@ def cmd_imscribe(args):
                 entry['description'] = description
             for field in _FIELDS:
                 entry[field] = imscription.get(field, '')
-
             catalog = _load_catalog()
             catalog.append(entry)
             _save_catalog(catalog)
             total_saved += 1
             print(f"\n  ✓ Saved §{i+1} ({sec_name})  [{total_saved} saved so far]")
             show_entry(entry)
-
         print(f"\nDone. Imscribed {total_saved}/{len(sections)} sections → {cat_path}")
     else:
         seed = (
@@ -545,10 +648,8 @@ def cmd_imscribe(args):
             f"with all 12 values explicitly set. Once imscribed, CONCLUDE."
         )
         loop = _run_loop(seed)
-
         catalog = _load_catalog()
         existing_names = {e.get('name') for e in catalog}
-
         imscription = loop.dispatcher.catalog._entries.get(name)
         if not imscription:
             for k, v in loop.dispatcher.catalog._entries.items():
@@ -559,7 +660,6 @@ def cmd_imscribe(args):
             sys.exit(f"\nError: '{name}' was not imscribed by the loop. Check output above.")
         if name in existing_names:
             sys.exit(f"Error: '{name}' already exists in {cat_path}. Use a different --name.")
-
         entry = {'name': name}
         if args.number is not None:
             entry['number'] = args.number
@@ -571,41 +671,30 @@ def cmd_imscribe(args):
             entry['text'] = text
         for field in _FIELDS:
             entry[field] = imscription.get(field, '')
-        if getattr(args, 'tier',  ''):
-            entry['tier']  = args.tier
+        if getattr(args, 'tier', ''):
+            entry['tier'] = args.tier
         if getattr(args, 'notes', ''):
             entry['notes'] = args.notes
-
         catalog.append(entry)
         _save_catalog(catalog)
         print(f"\nSaved '{name}' to {cat_path}  ({len(catalog)} entries total)")
-        show_entry(entry)
-
-
-# ── add ───────────────────────────────────────────────────────────────────────
-
+        show_entry(entry)# ── add ───────────────────────────────────────────────────────────────────────
 def cmd_add(args):
-    # resolve catalog path (only esoteric_library files are writable)
     name = args.catalog.lower().replace(' ', '_').replace('-', '_')
     lib_dir = os.path.join(_HERE, 'esoteric_library')
     cat_path = os.path.join(lib_dir, f'{name}.json')
-
     if not os.path.exists(cat_path):
-        # create an empty catalog if it doesn't exist
         with open(cat_path, 'w', encoding='utf-8') as f:
             json.dump([], f)
         print(f"Created new catalog: {cat_path}")
-
     with open(cat_path, encoding='utf-8') as f:
         catalog = json.load(f)
 
-    # parse the tuple
     raw = args.tuple.replace(',', ' ').split()
     if len(raw) != 12:
         sys.exit(f"Error: --tuple requires exactly 12 glyph IDs, got {len(raw)}")
 
-    # map positional fields to keys
-    field_keys = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_KEY, 'Ħ', 'Σ', 'Ω']
+    field_keys = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', 'Σ', 'Ω']
     entry = {}
     entry['name'] = args.name
     if args.number is not None:
@@ -617,7 +706,7 @@ def cmd_add(args):
     if args.text:
         entry['text'] = args.text
     for key, val in zip(field_keys, raw):
-        entry[key] = val
+        entry[key] = _norm_glyph(val)
     if args.tier:
         entry['tier'] = args.tier
     if args.cscore is not None:
@@ -625,21 +714,17 @@ def cmd_add(args):
     if args.notes:
         entry['notes'] = args.notes
 
-    # check for duplicate name
     existing_names = {e.get('name') for e in catalog}
     if entry['name'] in existing_names:
         sys.exit(f"Error: entry '{entry['name']}' already exists in {cat_path}. "
                  "Use a different --name or edit the file directly.")
-
     catalog.append(entry)
     with open(cat_path, 'w', encoding='utf-8') as f:
         json.dump(catalog, f, ensure_ascii=False, indent=2)
-
     print(f"Added '{entry['name']}' to {cat_path}  ({len(catalog)} entries total)")
     show_entry(entry)
 
 # ── main ──────────────────────────────────────────────────────────────────────
-
 def main():
     p = argparse.ArgumentParser(
         description=__doc__,
@@ -649,7 +734,7 @@ def main():
 
     # show
     s = sub.add_parser('show', help='Show imscription for one entry')
-    s.add_argument('catalog', help='Catalog name: tao, ig')
+    s.add_argument('catalog', help='Catalog name: tao, ig, or basename in esoteric_library/')
     s.add_argument('key', help='Chapter number or entry name')
 
     # list
@@ -671,6 +756,19 @@ def main():
     s.add_argument('--n', type=int, default=5, help='Number of neighbors')
     s.add_argument('--other-catalog', dest='other_catalog', default=None,
                    help='Search in a different catalog (default: same)')
+
+    # validate
+    s = sub.add_parser('validate', help='Check structural consistency of a catalog')
+    s.add_argument('catalog')
+
+    # stats
+    s = sub.add_parser('stats', help='Catalog-level statistics and tier distribution')
+    s.add_argument('catalog')
+
+    # export
+    s = sub.add_parser('export', help='Emit entry as crystal-address notation')
+    s.add_argument('catalog')
+    s.add_argument('key')
 
     # audio
     s = sub.add_parser('audio', help='Sonify an entry')
@@ -699,13 +797,13 @@ def main():
     # imscribe
     s = sub.add_parser('imscribe',
         help='Auto-assign all 12 primitives via the IG_inquiry LLM loop and save to catalog')
-    s.add_argument('catalog', help='Target catalog name (e.g. tao, upanishads)')
+    s.add_argument('catalog', help='Target catalog name')
     s.add_argument('--name', '-n', required=True, help='Unique entry name')
     s.add_argument('--number', type=int, default=None, help='Section/chapter number')
     s.add_argument('--title', default='', help='Section title')
     s.add_argument('--description', '--desc', default='', help='One-line description')
     s.add_argument('--text', default='', help='Verbatim source text to imscribe')
-    s.add_argument('--file', '-f', default=None, help='Path to text file to imscribe (alternative to --text)')
+    s.add_argument('--file', '-f', default=None, help='Path to text file (alternative to --text)')
     s.add_argument('--tier', default='', help='Tier override (optional)')
     s.add_argument('--notes', default='', help='Structural notes override (optional)')
     s.add_argument('--provider', default='anthropic',
@@ -714,7 +812,7 @@ def main():
 
     # add
     s = sub.add_parser('add', help='Append one entry to a catalog (manual --tuple required)')
-    s.add_argument('catalog', help='Target catalog name (e.g. tao, upanishads)')
+    s.add_argument('catalog', help='Target catalog name')
     s.add_argument('--tuple', '-t', required=True, metavar='IDS',
                    help='12 glyph IDs in field order (space- or comma-separated)')
     s.add_argument('--name', '-n', required=True, help='Unique entry name')
@@ -736,6 +834,9 @@ def main():
         'list':     cmd_list,
         'dist':     cmd_dist,
         'near':     cmd_near,
+        'validate': cmd_validate,
+        'stats':    cmd_stats,
+        'export':   cmd_export,
         'audio':    cmd_audio,
         'video':    cmd_video,
         'rewrite':  cmd_rewrite,
