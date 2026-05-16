@@ -135,7 +135,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **The absorption rule:** Any tensor product involving $⊙_3$ (EP) destroys $⊙_ÿ$ in the composite. This is the structural statement of the measurement problem — measuring a self-modeling system kills its self-modeling.
 
-### 10. $Ħ$ — Temporal Depth (the **AYK** series)
+### 10. $Ħ$ — Chirality (the **AYK** series)
 
 **Keyword:** *How much of the past does the present remember?*
 
@@ -291,7 +291,7 @@ Each subtype is identified by `PrimitiveChar_subChar`. Below is the complete ros
 | $⊙_{3}$ | phi-three | numbered, precise | exceptional point (EP) — degenerate |
 | $⊙_{\text{Ţ}}$ | phi-turned-t | tipped, cedilla-drop | supercritical — runaway growth |
 
-### $Ħ$ Temporal Depth (4 types)
+### $Ħ$ Chirality (4 types)
 
 | Full ID | Mnemonic | Sound Cue | Essence |
 |---------|----------|-----------|---------|

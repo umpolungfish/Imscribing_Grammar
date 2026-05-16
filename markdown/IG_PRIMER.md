@@ -519,11 +519,11 @@ The reflexive closure question has a sharper formulation. Not all self-modeling 
 
 \[\mathcal{O}(\mathbf{x}) = [\Phi = \Phi_{\text{ctyogh}}] \cdot (1 + [\Omega \neq \Omega_{\text{closeepsilon}}] + [H \geq H_1] + [G = G_{\text{revapostrophe}}])\]
 
-$\Phi_{\text{ctyogh}}$ is the necessary gate --- no self-closure without criticality. The remaining terms measure how completely the self-modeling loop is protected and extended: topological protection ($\Omega$), temporal depth ($H$), and global scope ($G$). Three tiers emerge:
+$\Phi_{\text{ctyogh}}$ is the necessary gate --- no self-closure without criticality. The remaining terms measure how completely the self-modeling loop is protected and extended: topological protection ($\Omega$), chirality ($H$), and global scope ($G$). Three tiers emerge:
 
 \begin{itemize}
     \item \textbf{$O_1$} ($\mathcal{O} = 2$): simple ring closure --- the system models itself but without additional protection. Self-modeling is present but fragile.
-    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or temporal depth makes the loop robust. The magnetar encodes $O_2$ ($\Phi_{\text{ctyogh}} + \Ω_z + H_1$). Human consciousness, with $\Phi_{\text{ctyogh}} + H_1 + G_{\text{revapostrophe}}$, also encodes $O_2$.
+    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or chirality makes the loop robust. The magnetar encodes $O_2$ ($\Phi_{\text{ctyogh}} + \Ω_z + H_1$). Human consciousness, with $\Phi_{\text{ctyogh}} + H_1 + G_{\text{revapostrophe}}$, also encodes $O_2$.
     \item \textbf{$$O_{\infty}$$}: complete Frobenius closure --- the system satisfies $P_{\text{doublebarpipe}}$ (the special Frobenius condition $\mu \circ \delta = \text{id}$), achieving perfect structural self-complementarity. A categorically distinct class from the $O_1/O_2$ ordinal hierarchy.
 \end{itemize}
 

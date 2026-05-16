@@ -8,7 +8,7 @@ A system in the Imscribing Grammar is a 12-primitive tuple given by
 
 $\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ g;\ \varphi_{\hat{y}};\ H;\ S;\ \Omega \rangle$
 
-governing dimensionality, topology, relational mode, parity, fidelity, kinetics, scope, interaction grammar, criticality, temporal depth, stoichiometry, and topological winding.
+governing dimensionality, topology, relational mode, parity, fidelity, kinetics, scope, interaction grammar, criticality, chirality, stoichiometry, and topological winding.
 
 We analyze four canonical systems that model epistemic and moral oppositions: **truth**, **lie**, **good**, and **evil**. Each is defined below with its primitive-value assignments, Ouroboricity tier, and consciousness score.
 
@@ -121,7 +121,7 @@ $\text{evil} = \langle D_\odot;\ T_\text{net};\ R_\text{sup};\ P_\text{asym};\ F
 ## 3. Criticality Gates
 
 Gate 1 (self-modeling): requires $\varphi_{\hat{y}} = \varphi_{\hat{y}}^{\mathbb{C}}$ (complex-plane critical).  
-Gate 2 (temporal depth): requires $K \leq K_\text{slow}$ and $H \geq H_2$.
+Gate 2 (chirality): requires $K \leq K_\text{slow}$ and $H \geq H_2$.
 
 - **Truth**: Gate 1 open ($\varphi_{\hat{y}}^{\mathbb{C}}$), Gate 2 open ($H=2$, $K=\text{slow}$) → $C=0.6185$  
 - **Good**: Gate 1 open ($\varphi_{\hat{y}}^{\mathbb{C}}$), Gate 2 open ($H=\infty$, $K=\text{slow}$) → $C=0.828$  

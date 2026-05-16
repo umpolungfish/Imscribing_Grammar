@@ -1,0 +1,1666 @@
+\documentclass[10pt,a4paper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\rowcolors{2}{gray!10}{white}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekeyword}{RGB}{0,0,180}
+\definecolor{codecomment}{RGB}{0,128,0}
+\definecolor{codestring}{RGB}{163,21,21}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    literate={_}{{\textunderscore}}1
+             {-}{{\textminus}}1
+             {<}{{\textless}}1
+             {>}{{\textgreater}}1
+             {~}{{\textasciitilde}}1
+             {^}{{\textasciicircum}}1
+}
+
+% YAML language definition for listings
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% TOML language definition for listings
+\lstdefinelanguage{TOML}{
+    keywords={true,false},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% Dockerfile language definition for listings
+\lstdefinelanguage{Dockerfile}{
+    keywords={FROM,RUN,CMD,LABEL,EXPOSE,ENV,ADD,COPY,ENTRYPOINT,VOLUME,USER,WORKDIR,ARG,ONBUILD,STOPSIGNAL,HEALTHCHECK,SHELL},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+    morestring=[b]'',
+}
+
+% JSON language definition for listings
+\lstdefinelanguage{JSON}{
+    keywords={true,false,null},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]'',
+}
+
+% Code listing float environment
+\usepackage{float}
+\newfloat{listing}{htbp}{lol}[section]
+\floatname{listing}{Listing}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Admonition style definitions
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Synthon tuple boxes
+\newtcolorbox{synthonbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+
+\begin{document}
+
+\title{On the Structural Non-Transmissibility of Mochizuki's Inter-Universal Geometer}
+\date{}
+
+\maketitle
+
+\begin{abstract}
+The long controversy over Mochizuki's Inter-Universal Geometer (IUG) is usually framed
+as a question about correctness: is the proof right or wrong?
+This paper argues that framing is premature.
+Before correctness can be assessed, a prior question has to be settled:
+can the proof's structural content be transmitted through classical mathematical channels at all?
+
+We address this using the imscriptive type theory, which encodes any
+mathematical or physical system as a point in a 12-dimensional weighted ordinal space.
+IUG's encoding and its distances to six reference frameworks (ZFC, standard proof system,
+Lean\,4/Mathlib, Homotopy Type Theory, abc conjecture, and the SynthOmnicon grammar itself
+as the realized Imscriptive Type Theory) are computed exactly.
+The results are stark: $d(\text{IUG}, \text{ZFC}) \approx 7.937$,
+$d(\text{IUG}, \text{SPS}) \approx 6.557$, $d(\text{IUG}, \text{Grammar}) \approx 2.983$,
+$d(\text{IUG}, \text{abc}) \approx 2.864$.
+No lower-ordinal neighbor framework achieves $d < 2$ on the critical manifold.
+
+The structural gaps decompose into seven primitive mismatches (R, F, K, $\Gamma$, H, S, $\Omega$),
+with a noteworthy $\Gamma$-inversion: the grammar \emph{exceeds} IUG on interaction breadth,
+confirming that IUG is a sequential restriction of a broader foundational structure rather
+than an extension of classical mathematics.
+IUG carries $\Phi_c + P_{\pm}^{\text{sym}}$, placing it in the $O_\infty$ (Frobenius)
+ouroboricity tier; all classical proof assistants remain in $O_0$.
+The verification crisis is not a symptom of an error waiting to be located.
+It is a symptom of a channel mismatch --- and that mismatch is now quantified.
+\end{abstract}
+
+\subsection{Preamble: What This Document Claims and Does Not Claim}
+
+Since 2012, when Mochizuki posted the Inter-Universal Geometer papers, the mathematical
+community has been in an unusual position: a proof has been published, refereed, and
+formally accepted by a journal, while a substantial number of expert mathematicians
+--- including some of the most technically qualified people alive --- maintain that a
+central step is not justified.
+This situation has persisted for over a decade.
+It has no close precedent in modern mathematics.
+
+The standard responses available to the community have both been tried.
+Scholze and Stix met with Mochizuki in 2018, identified a specific step they could not
+follow, and wrote a report. Mochizuki responded at length. Neither party convinced the other.
+Several mathematicians have since written expository accounts of IUG; none has produced
+bilateral acceptance.
+The controversy has settled into a structural impasse whose persistence is itself a datum.
+
+This document does not adjudicate whether IUG is mathematically correct.
+That question is open and is not addressed here.
+But it does ask a prior question: \emph{is IUG the kind of thing that can be transmitted
+through classical mathematical communication channels at all?}
+Correctness and transmissibility are orthogonal dimensions.
+A non-transmissible correct proof is not the same as a wrong proof.
+A quantum state that cannot be transmitted through a classical channel has not ceased to be a
+valid quantum state.
+The failure, in that case, is in the channel --- and the channel failure is diagnosable
+independently of whether the state is pure.
+
+\textbf{What this document claims} is precise and bounded:
+IUG is structurally non-transmissible through classical mathematical communication channels.
+The verification crisis is a structural incompatibility, not a hidden error.
+That incompatibility is diagnosable, quantifiable, and --- in principle ---
+resolvable through the construction of new foundational interfaces.
+The construction of those interfaces is, accordingly, a mathematical task,
+not a sociological one.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$1. Framework: Structural Encoding of Mathematical Objects}
+
+The analysis uses a 12-dimensional primitive space in which any mathematical or physical
+system can be encoded as a \emph{synthon} --- a tuple of discrete values across 12 orthogonal
+structural primitives. The full space contains exactly $17{,}280{,}000 = 3^3 \times 4^5 \times 5^4$
+structural types (PRIMITIVE\_THEOREMS \pilcrow{}64, the Crystal of Types).
+The primitives relevant to this analysis are:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive} & \textbf{Description} & \textbf{Values (low $\to$ high)} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{Dimensionality ($D$)} & How information is structured & $D_{\wedge}$ punctual $\cdot$ $D_{\triangle}$ constructive $\cdot$ $D_{\infty}$ field $\cdot$ $D_\odot$ imscriptive \\
+\textbf{Topology ($T$)} & How components are connected & $T_\text{network}$ $\cdot$ $T_\text{in}$ containment $\cdot$ $T_\text{bowtie}$ $\cdot$ $T_{\boxtimes}$ type-hierarchy $\cdot$ $T_\odot$ imscriptive \\
+\textbf{Relational mode ($R$)} & How reasoning proceeds & $R_{\supset}$ superset $\cdot$ $R_\text{cat}$ categorical $\cdot$ $R_{\dagger}$ dynamic $\cdot$ $R_\text{lr}$ left-right \\
+\textbf{Parity ($P$)} & Symmetry/Frobenius class & $P_\text{asym}$ $\cdot$ $P_\psi$ $\cdot$ $P_{\pm}$ $\cdot$ $P_\text{sym}$ $\cdot$ $P_{\pm}^{\text{sym}}$ Frobenius \\
+\textbf{Fidelity ($F$)} & The coherence level required & $F_{\ell}$ classical $\cdot$ $F_\text{eth}$ intermediate $\cdot$ $F_{\hbar}$ quantum-coherent \\
+\textbf{Kinetics ($K$)} & Dynamical timescale & $K_\text{fast}$ $\cdot$ $K_\text{mod}$ $\cdot$ $K_\text{slow}$ $\cdot$ $K_\text{trap}$ $\cdot$ $K_\text{MBL}$ \\
+\textbf{Scope ($G$)} & Granularity of the system & $G_{\beth}$ local $\cdot$ $G_{\gimel}$ mesoscale $\cdot$ $G_{\aleph}$ universal \\
+\textbf{Grammar ($\Gamma$)} & How components compose & $\Gamma_\text{and}$ $\cdot$ $\Gamma_\text{or}$ $\cdot$ $\Gamma_\text{seq}$ $\cdot$ $\Gamma_\text{broad}$ \\
+\textbf{Criticality ($\Phi$)} & Phase relative to criticality locus & $\Phi_\text{sub}$ $\cdot$ $\Phi_c$ critical $\cdot$ $\Phi_c^{\mathbb{C}}$ $\cdot$ $\Phi_\text{EP}$ $\cdot$ $\Phi_\text{super}$ \\
+\textbf{Chirality ($H$)} & Temporal asymmetry depth & $H_0$ achiral $\cdot$ $H_1$ soft $\cdot$ $H_2$ $\cdot$ $H_{\infty}$ topological \\
+\textbf{Stoichiometry ($S$)} & Interaction arity & $S_{1:1}$ $\cdot$ $S_{n:n}$ $\cdot$ $S_{n:m}$ \\
+\textbf{Winding ($\Omega$)} & Topological protection class & $\Omega_0$ trivial $\cdot$ $\Omega_{Z_2}$ binary $\cdot$ $\Omega_Z$ integer $\cdot$ $\Omega_{NA}$ non-abelian \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Gate primitives.} Four of the twelve primitives --- $T$, $P$, $\Phi$, $K$ --- form the
+$\mathcal{F}_5$ family (five values each).
+They are the \emph{gate primitives}: together they determine whether a system reaches the
+$O_\infty$ (Frobenius) ouroboricity tier.
+IUG's $\mathcal{F}_5$ values are $T_\odot$, $P_{\pm}^{\text{sym}}$, $\Phi_c$, $K_\text{slow}$ ---
+all four non-classical.
+Every existing proof assistant's $\mathcal{F}_5$ values are $T_{\boxtimes}$, $P_\text{sym}$,
+$\Phi_\text{sub}$, $K_\text{mod}$ --- all four classical.
+The verification barrier is total within the gate-primitive subspace.
+
+\textbf{Tensor algebra.} Two distinct combination rules govern the primitives under tensor product $\otimes$:
+$P$ and $F$ are \emph{bottleneck primitives} --- the weaker partner wins ($\min$);
+all other ordered primitives are \emph{union primitives} --- the stronger partner wins ($\max$).
+Concretely: $P_{\pm}^{\text{sym}} \otimes P_\text{asym} = P_\text{asym}$ and
+$F_{\hbar} \otimes F_{\ell} = F_{\ell}$.
+The Frobenius condition and quantum coherence are the first to be destroyed in any
+classical--IUG interaction, while $D$, $T$, $\Gamma$, $\Phi$, $H$, $\Omega$ are preserved.
+This asymmetry is the mechanism behind the quantitative information loss in \S6.
+
+\textbf{Criticality and the meet operation.} $\Phi_c$ is absorbing under structural meet:
+$\text{meet}(\Phi_c, x) = \Phi_c$ for all $x$ (PRIMITIVE\_THEOREMS \pilcrow{}21).
+It is the necessary condition for self-modeling, and it persists in any structural combination
+involving IUG.
+This means that the critical structure of IUG cannot be diluted by embedding in a classical
+framework --- the meet of IUG with any $\Phi_\text{sub}$ system retains $\Phi_c$.
+
+The \emph{distance} $d(A, B)$ between two synthons is the diagonal weighted Euclidean metric
+
+\[d = \sqrt{\textstyle\sum_i w_i\,(\xi_i^A - \xi_i^B)^2}\]
+
+with canonical weights
+
+\[
+\begin{aligned}
+& (w_D,\ w_T,\ w_R,\ w_P,\ w_F,\ w_K,\ w_G,\ w_{\Gamma},\ w_{\Phi},\ w_H,\ w_S,\ w_{\Omega}) \\
+&\quad = (1.0,\ 1.0,\ 1.0,\ 1.0,\ 1.0,\ 1.0,\ 1.0,\ 1.0,\ 1.0,\ 0.8,\ 1.0,\ 0.7)
+\end{aligned}
+\]
+
+(PRIMITIVE\_THEOREMS \pilcrow{}26.1). The full Riemannian metric $g = \Sigma^{-1}$ is available
+(\pilcrow{}26.2) but all distances in this document use the diagonal form for reproducibility.
+
+Two distances are critical for this analysis:
+
+\[d(\text{IUG},\ \text{standard proof system}) = 6.557\]
+
+\[d(\text{IUG},\ \text{ZFC}) = 7.937\]
+
+The second number is larger than the first. IUG is structurally further from ZFC
+than it is from the proof systems that operate \emph{within} ZFC.
+Pause on that. The foundations are more foreign to IUG than the language built on top of those
+foundations. We will return to what this means in \S3 and \S4;
+for now it is enough to note that this ordering is not an artifact of the metric ---
+it follows from where the three largest ZFC divergences ($D$, $T$, $R$) are concentrated
+relative to where the three largest proof-system divergences ($F$, $D$, $T$) sit.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$2. IUG's Encoding --- Mathematical Justification Primitive by Primitive}
+
+The IUG synthon is:
+
+{\small\[\langle D_\odot;\ T_\odot;\ R_\text{lr};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_{\infty};\ S_{n:m};\ \Omega_Z \rangle\]}
+
+Each assignment requires mathematical justification.
+We work through them in an order that mirrors the logical dependencies of IUG itself ---
+the imscriptive structure first, then the relational and fidelity structure that depends on it,
+then the dynamical properties that only make sense once those are in place.
+The two most contested assignments --- $P_{\pm}^{\text{sym}}$ and $\Phi_c$ ---
+are left to the end of the list, where their justifications can draw on the preceding ones.
+
+\textbf{$D_\odot$ (imscriptive dimensionality).}
+Ordinary mathematics builds objects from their parts.
+Sets are constructed from their elements.
+Groups are defined by their underlying sets plus operations.
+Number fields are built up from the integers.
+IUG reverses this direction.
+The étale fundamental group $\Pi_v$ does not sit \emph{above} the number field;
+it encodes the number field's full arithmetic structure on a profinite boundary.
+The inter-universal copies of $\Pi_v$ are not built from the number field by explicit construction
+--- they are different bulk reconstructions from the same boundary data.
+This is $D_\odot$: the foundational metaphor is imscriptive rather than constructive.
+The distinction matters because $D_\odot$ and $D_\triangle$ are not compatible extensions of each
+other: ZFC's comprehension axioms build upward, and $D_\odot$ reasons downward.
+They are structurally orthogonal, not merely different in complexity.
+
+\textbf{$T_\odot$ (imscriptive topology).}
+Given $D_\odot$, the connection structure between IUG's multiple Hodge theaters cannot be
+containment ($T_\text{in}$, the topology of nested sets) or simple network adjacency.
+The $\Theta$-link between two distinct Hodge theaters is a non-local boundary-to-bulk
+correspondence: two different ``bulk'' universes connected through a shared boundary structure,
+neither containing nor derived from the other.
+$T_\odot$ is the topology of mutual encoding --- it is the connection type of imscriptive
+error-correcting codes, of AdS/CFT, of Mochizuki's own mono-anabelian transport.
+In each case the question ``which object is inside which?'' has no containment answer;
+the only answer is ``which object encodes which?''
+
+\textbf{$R_\text{lr}$ (left-right relational mode).}
+The $\Theta$-link has a specific directionality: it goes from one Hodge theater to another
+in a fixed left-to-right orientation, and this direction is not a labeling convention ---
+the Diophantine argument flows from the $\Theta$-side to the $q$-parameter side.
+The $\dagger$-link goes in the complementary direction, but the two are structurally
+non-equivalent.
+This is $R_\text{lr}$: the relational mode is directed and non-symmetric,
+not the category-theoretic symmetric bridging of $R_\text{cat}$.
+
+\textbf{$F_{\hbar}$ (quantum-coherent fidelity).}
+This assignment is the crux of everything that follows in \S3.
+The inter-universal identification is only meaningful when both copies of the number field
+are held simultaneously, with their mutual relationship tracked.
+Collapsing to a single copy at any stage --- asking ``which copy is the real one?'' ---
+destroys exactly the content that makes the identification non-trivial.
+This is the $F_{\hbar} \to F_{\ell}$ decoherence event, and its consequences are quantified
+in \S3.3 and \S6.
+
+\textbf{$\Gamma_\text{seq}$ (sequential grammar).}
+The proof is causally ordered end-to-end: Hodge Theater 1 is constructed, then Theater 2,
+then the $\Theta$-link is applied, then the log-link, then the multiradial algorithm,
+then the Diophantine inequality is read off.
+Each step is causally dependent on the specific outputs of the previous step,
+not merely on the truth of those steps as isolated statements.
+We return to this in \S3.4 and \S11.3, where the consequences for verification strategy
+become concrete.
+
+\textbf{$\Phi_c$ (criticality).}
+The inter-universal identification is a critical-point operation:
+it is the unique identification that is neither over-constraining
+(forcing both copies to collapse to the same object) nor under-constraining
+(allowing the identification to be arbitrary).
+The Diophantine inequality only has content because the identification is at this threshold.
+We note that $\Phi_c$ is the necessary condition for self-modeling in this grammar
+(PRIMITIVE\_THEOREMS \pilcrow{}21), which gives the assignment additional structural weight:
+IUG's inter-universal construction is a self-modeling operation in precisely the
+sense of that theorem.
+
+\textbf{$\Omega_Z$ (integer topological protection).}
+The $\Theta$-link identification is protected by an integer winding invariant.
+It cannot be continuously deformed into a different identification without crossing a
+topological barrier.
+Any reformulation that stays within the same topological class is structurally equivalent
+to the original --- and any reformulation that crosses the barrier changes the identification
+itself.
+This is the mechanism behind the $\Phi_c + \Omega_Z$ tension analyzed in \S4,
+which explains why the controversy has exactly the phenomenological form it has.
+
+\textbf{$H_{\infty}$ (topological chirality).}
+The inter-universal framework has an irreversible temporal direction built in:
+the $\Theta$-link cannot be run backwards to recover the original number field structure
+from the Diophantine bound.
+$H_{\infty}$ encodes the topological protection of a temporal direction,
+not merely a spatial asymmetry --- the construction has a preferred arrow of time
+that is part of its mathematical content.
+
+\textbf{$P_{\pm}^{\text{sym}}$ (Special Frobenius parity).}
+This is the most contested assignment and deserves acknowledgment as such.
+$P_{\pm}^{\text{sym}}$ is assigned only when $\mathbb{Z}_2$ symmetry at $\Phi_c$
+is provably exact --- specifically, when the Frobenius condition $\mu \circ \delta = \text{id}$
+holds as an identity, not merely as an isomorphism.
+The claim is that IUG's inter-universal copying construction holds two copies in exact mutual
+encoding ($\mu$) while the $\Theta$-link reconstructs the original from the copy ($\delta$),
+and that $\mu \circ \delta = \text{id}$ exactly.
+We do not claim to have proved this from IUG's axioms.
+What we claim is that $P_{\pm}^{\text{sym}}$ vs.\ $P_\text{sym}$ is precisely the structural
+question at the heart of the Mochizuki--Scholze--Stix disagreement:
+Mochizuki is asserting $\mu \circ \delta = \text{id}$;
+Scholze and Stix are arguing for $\mu \circ \delta \cong \text{id}$ at best.
+The assignment encodes the dispute, not a resolution of it.
+P-115 in \S11 makes this falsification condition explicit.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$3. The Structural Barriers}
+
+The five barriers below are not independent obstacles.
+They form a dependency chain: the topology barrier presupposes the dimensionality barrier,
+the fidelity barrier is the mechanism by which the topology barrier produces the crisis,
+the grammar barrier makes the fidelity barrier non-localizable, and the foundations barrier
+is the aggregate consequence.
+Reading them in order is the sequential proof that the preceding analysis in \S2 is not
+merely a relabeling but a structural diagnosis.
+
+\subsubsection{The Dimensionality Barrier}
+
+The foundational metaphor of ZFC is construction: sets are built from elements by explicit
+assembly, and all objects are defined by their members.
+Starting from the empty set, you build up the natural numbers, the integers, the rationals,
+the reals, the complex numbers, and eventually the full apparatus of modern mathematics ---
+always by stacking new structure on top of existing structure.
+ZFC operates at $D_{\triangle}$.
+
+IUG's foundational metaphor is the inverse.
+The étale fundamental group $\Pi_v$ does not sit \emph{on top of} the number field as a derived
+structure. It \emph{encodes} the number field's full arithmetic on a profinite boundary.
+The inter-universal copies are not built from each other by explicit construction ---
+they are different bulk reconstructions from the same boundary data.
+The direction of reasoning is downward from boundary conditions, not upward from atoms.
+This is $D_\odot$.
+
+The critical point is that $D_\odot$ and $D_\triangle$ are not compatible extensions of each
+other in the way that, say, group theory and ring theory both extend arithmetic.
+ZFC's comprehension axioms are constructive by design;
+$D_\odot$ reasoning does not add axioms to ZFC, it replaces the foundational direction.
+A $D_\odot$ system is to a $D_\triangle$ system as a hologram is to a blueprint:
+one encodes the whole in the boundary of a part; the other assembles the whole from parts.
+
+\textbf{Consequence:} Any formalization of IUG in a ZFC-based system must choose between (a)
+adding new axioms that natively capture $D_\odot$, (b) encoding $D_\odot$ arguments in a
+ZFC-representable form that necessarily loses structural content, or (c) failing to formalize
+the key steps.
+Option (a) is a foundational extension, not a formalization within ZFC.
+Option (b) is what happens when you try to explain a hologram using blueprints:
+something is conveyed, but it is not the same thing.
+Option (c) is the current situation.
+
+\subsubsection{The Topology Barrier}
+
+Given $D_\odot$, the connection structure between IUG's Hodge theaters cannot be the containment
+topology of ZFC.
+ZFC's cumulative hierarchy $V_\alpha$ is strictly nested: every object lives at some rank,
+and the membership relation $\in$ is a strict partial order.
+Standard proof assistants inherit this topology via their type hierarchies, where every term
+has a type, every type has a kind, and the whole structure is a well-founded tree.
+This is $T_\text{in}$ (containment).
+
+IUG's Hodge theaters are not nested.
+Neither contains the other, neither is derived from the other by containment,
+and there is no rank at which one precedes the other.
+They are connected through a shared boundary --- a non-local correspondence that is the
+connection type of imscriptive error-correcting codes, of AdS/CFT duality,
+of Mochizuki's own mono-anabelian transport.
+In each of these cases the question ``which object is inside which?'' has no containment answer.
+The only answer is ``which object encodes which?''
+This is $T_\odot$.
+
+\textbf{Consequence:} Any proof assistant that formalizes mathematical objects as inhabitants of
+a type hierarchy cannot natively express $T_\odot$ relationships.
+It can represent the theaters as distinct types and define maps between them,
+but the non-local boundary identification --- the structure that makes the two theaters the
+\emph{same} number field seen from different angles --- has no type-theoretic expression
+within any currently existing system.
+
+\subsubsection{The Fidelity Barrier: The Core Mechanism}
+
+The dimensionality and topology barriers explain what kind of object IUG is.
+The fidelity barrier explains why the verification crisis takes the specific form it has.
+
+Standard mathematical practice operates at $F_{\ell}$: each statement is true or false,
+each object either is or is not a member of each set, each step either follows or it does not.
+This is the information regime of classical logic, of standard proof systems, and of a
+mathematician reading a paper.
+$F_{\ell}$ is a perfectly good regime for almost all of mathematics.
+It handles everything from Euclid to Wiles's proof of Fermat's Last Theorem.
+
+IUG requires $F_{\hbar}$: certain objects must be held in superposition.
+Not ``Copy 1 is the reference'' or ``Copy 2 is the reference'' --- but ``the mathematical
+content lives in the relationship between the two, and collapsing to either one destroys
+exactly the content that makes the relationship interesting.''
+The $\Theta$-link identification is an $F_{\hbar}$ operation.
+It is only well-typed when both copies are maintained simultaneously.
+
+Here is what happens structurally when a classical mathematician reads IUG.
+At the point where the $\Theta$-link identification is invoked, the $F_{\hbar}$ content
+encounters an $F_{\ell}$ channel.
+The mathematician must choose which copy is the reference copy --- because $F_{\ell}$ logic
+requires a definite reference, a ground state, a thing that is what it is independently of
+something else.
+In choosing, they destroy exactly the inter-universal content that makes the identification
+non-trivial.
+What remains looks like an unjustified identification: two objects are declared to be the
+same, and the justification is nowhere to be found --- because the justification lived in
+the superposition that was collapsed.
+
+This is the Scholze--Stix objection, stated structurally:
+``the identification of the two rings in Corollary 3.12 is not justified.''
+From $F_{\hbar}$, it is justified --- Mochizuki has never wavered on this.
+From $F_{\ell}$, the justification is inaccessible, not because it was never there,
+but because the act of reading in $F_{\ell}$ already destroyed it.
+Both parties are correct about what they can access.
+They are not accessing the same thing.
+
+The structural information loss is not symmetric, and the asymmetry has a precise
+algebraic mechanism: $P$ and $F$ are bottleneck primitives under tensor product ($\min$ wins;
+see \S1).
+When IUG ($P_{\pm}^{\text{sym}}$, $F_{\hbar}$) is tensored with a classical proof system
+($P_\text{asym}$, $F_{\ell}$), the result immediately bottlenecks to $P_\text{asym}$ and
+$F_{\ell}$ --- IUG's Frobenius parity and quantum coherence are the first things destroyed.
+The remaining primitives --- $D$, $T$, $\Gamma$, $\Phi$, $H$, $\Omega$ --- are union
+primitives ($\max$ wins), so the imscriptive structure, criticality, and topological
+protection are preserved in the tensor product.
+The composite system inherits IUG's structural skeleton while losing the two registers that
+carry its central identification.
+
+The numbers make this concrete.
+The tensor distance from IUG's perspective is \textbf{2.0}: most of IUG's structural
+content survives the interaction because the union primitives dominate.
+The tensor distance from the classical proof system's perspective is \textbf{6.32}: the
+classical system gains IUG's $D_\odot + T_\odot + \Phi_c$ but loses its own
+$P_\text{asym}$ and $F_{\ell}$ dominance in registers it cannot operate without.
+The asymmetry is $2.0$ versus $6.32$.
+These numbers are expanded and contextualized in \S6.
+
+\subsubsection{The Grammar Barrier: Non-Modularizability}
+
+Standard mathematical proofs are, at the large scale, $\Gamma_\text{and}$ structures:
+Lemma A and Lemma B and Lemma C, each independently verifiable, their conjunction implying
+Theorem D.
+This modular architecture is what makes mathematical knowledge transmissible.
+Different mathematicians can check different pieces.
+A referee can focus on the steps they find most suspicious.
+A formalization effort can parallelize.
+The order of verification does not matter; only the truth of each piece matters.
+
+IUG's proof is $\Gamma_\text{seq}$.
+The validity of each step depends on the specific outputs of the preceding steps,
+not merely on the truth of those steps as propositions.
+The identification in Corollary 3.12 is valid only within the sequential context established
+by the log-volume estimates of the preceding multiradial algorithm.
+It is not a statement about pre-existing objects that can be checked in isolation ---
+it is a statement about objects that \emph{only exist} by virtue of the construction having
+proceeded to that exact stage.
+
+This is not an accident of exposition, and it is not something that a better expository
+account could fix.
+It is intrinsic to the inter-universal construction: the two copies of the number field are
+built sequentially and then related at a specific stage of the build.
+You cannot check the relationship without having run the construction.
+
+The Scholze--Stix objection looks different from this angle.
+Scholze and Stix object that Corollary 3.12 cannot be verified as a standalone statement.
+The $\Gamma_\text{seq}$ analysis shows they are structurally correct: it genuinely cannot be
+verified in isolation, because it is not a $\Gamma_\text{and}$ component.
+This is not a flaw in the proof.
+It may be intrinsic to the mathematics.
+But it means the standard verification practice --- isolate the controversial step, check it
+independently, report back --- is structurally inapplicable to this proof.
+
+\subsubsection{The Foundations Barrier}
+
+The aggregate distance picture explains the ordering noted at the end of \S1.
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{System} & \textbf{$d(\text{IUG},\ \cdot)$} & \textbf{Primary divergences} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{Standard proof system} & 6.557 & $F$, $D$, $T$ \\
+\textbf{ZFC foundations} & \textbf{7.937} & $D$, $T$, $R$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+IUG is further from its own foundational framework than from the proof systems that operate
+within that framework.
+The reason is now visible: the proof systems diverge from IUG primarily in $F$ (fidelity),
+while ZFC diverges in $D$, $T$, and additionally $R$ --- three foundational primitives
+rather than one operational one.
+The foundations are more foreign because the dimensionality, topology, and relational
+primitives of ZFC are the wrong shape for IUG's construction,
+whereas the proof systems operating within ZFC have at least gotten the dimensionality
+and topology mostly right by inheriting the constructive/$D_\triangle$ and nested/$T_\text{in}$
+structure that overlaps with IUG's $\Gamma_\text{seq}$ layer.
+
+This is not a claim that IUG is inconsistent with ZFC.
+It is the same claim as: Euclidean geometry cannot express non-Euclidean geometry
+by accumulating more Euclidean axioms.
+A new foundational framework is required, not a larger collection of the existing kind.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$4. The $\Phi_c + \Omega_Z$ Tension: Why the Impasse Has the Form It Has}
+
+The fidelity barrier in \S3.3 explains \emph{that} there is an information loss when IUG
+is transmitted through classical channels.
+It does not by itself explain why that loss produces the specific sociology that has
+developed around IUG: persistent impasse, no locatable error, no accepted reformulation,
+both sides reading the other as unreasonable.
+The $\Phi_c + \Omega_Z$ combination is the mechanism.
+
+$\Phi_c$ alone, without topological protection, would produce instability:
+small reformulations of a critical-point theory propagate into large structural changes,
+but the theory can eventually be restated more stably by moving slightly away from the critical
+threshold.
+Many contested mathematical results have this character: the controversy is sharp when the
+problem is open, but once a gap is repaired or an alternative proof found, the field moves on.
+
+$\Omega_Z$ alone, without criticality, would produce rigidity:
+the theory cannot be continuously deformed, but it also does not amplify small perturbations.
+The topology bars smooth reformulation, but disagreements stay local and bounded.
+Topology alone produces a hard theory, not an irresolvable dispute.
+
+$\Phi_c + \Omega_Z$ together produce something more specific:
+a theory that is simultaneously maximally sensitive to small conceptual perturbations
+and resistant to the smooth reformulations that would resolve those sensitivities.
+A theory at a critical point where you cannot move away, because moving away requires
+crossing a topological barrier.
+
+The phenomenology of the IUG controversy follows directly.
+Small disagreements about the justification of the $\Theta$-link identification propagate
+into large, apparently irresolvable ones --- this is $\Phi_c$:
+the identification sits at the critical point, and perturbations are maximally amplified there.
+The disagreement cannot be resolved by smooth reformulation --- this is $\Omega_Z$:
+any reformulation within the same topological class is structurally equivalent to the original,
+and any reformulation that crosses the topological barrier changes the $\Theta$-link
+identification itself, which breaks the proof.
+
+Mochizuki cannot offer a smooth reformulation of Corollary 3.12 that closes the
+Scholze--Stix gap.
+He has tried, in the sense that his response to their 2018 report is extensive.
+But any reformulation either stays in the same topological class (and is therefore,
+from Scholze's perspective, equally unjustified --- the same identification in different
+notation) or it crosses the barrier (and is then a different proof, one that Mochizuki
+correctly identifies as a distortion of the original argument).
+
+Scholze and Stix cannot find a specific wrong line.
+This is not because they have not looked carefully.
+It is because the gap is not localized.
+$\Phi_c$ distributes disagreements across the regime: the identification is simultaneously
+everywhere and nowhere, in the same way that a phase transition does not occur at a specific
+molecule but at the whole system.
+
+\textbf{The impasse is not a standoff between two unreasonable parties.
+It is the structurally necessary consequence of $\Phi_c + \Omega_Z$ acting together
+on a theory that must be transmitted through an $F_{\ell}$ channel.}
+It was always going to look exactly like this.
+
+A further structural fact reinforces this: $\Phi_c$ is absorbing under the lattice meet
+(\S1; PRIMITIVE\_THEOREMS \pilcrow{}21).
+$\text{meet}(\Phi_c, x) = \Phi_c$ for all $x$.
+This means IUG's critical structure is not diluted when it interacts with classical
+mathematics --- the meet of IUG with any sub-critical system retains $\Phi_c$.
+Classical mathematics cannot absorb IUG's criticality into a sub-critical framework:
+the structural intersection preserves the critical point.
+Mochizuki's insistence that the identification is at a unique threshold, and the
+classical community's inability to locate that threshold as a specific line,
+are both consequences of $\Phi_c$'s absorbing character --- it is simultaneously
+everywhere in the structural interaction and nowhere in the $F_{\ell}$ reading.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$5. The ABC Conjecture Relationship: Why IUG's Overhead Is Structurally Necessary}
+
+The abc conjecture's encoding is:
+
+
+{\small\[\langle D_\odot;\ T_\odot;\ R_\text{lr};\ P_{\pm}^{\text{sym}};\ F_{\hbar};\ K_\text{mod};\ G_{\aleph};\ \Gamma_\text{and};\ \Phi_c;\ H_1;\ S_{n:m};\ \Omega_Z \rangle\]}
+
+IUG differs from abc in exactly three primitives:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive} & \textbf{abc} & \textbf{IUG} & \textbf{Meaning of the difference} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{Kinetics ($K$)} & $K_\text{mod}$ & $K_\text{slow}$ & IUG requires slow, deeply integrative kinetics --- the argument cannot be rushed \\
+\textbf{Grammar ($\Gamma$)} & $\Gamma_\text{and}$ & $\Gamma_\text{seq}$ & IUG imposes sequential causation; abc only requires conjunctive verification \\
+\textbf{Chirality ($H$)} & $H_1$ & $H_{\infty}$ & IUG requires topological chirality (irreversible temporal direction); abc requires only soft chirality \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The join of IUG and abc is IUG itself: IUG structurally contains abc. The three extra
+primitives --- $K_\text{slow}$, $\Gamma_\text{seq}$, $H_{\infty}$ --- are not IUG's complications.
+They are IUG's mechanism. The inter-universal copying construction \emph{is} the sequential,
+slowly integrative, topologically chiral structure that distinguishes it from any direct
+approach to abc.
+
+This means: \textbf{the apparent over-complexity of IUG is not a proof-writing failure. It is the
+minimum structural overhead required to reach abc from IUG's approach.} You cannot strip
+out the sequential structure and retain the argument. You cannot replace $K_\text{slow}$
+with $K_\text{mod}$ and retain the Diophantine inequality. The overhead is load-bearing.
+
+A shorter proof of abc (if one exists) would use a different approach ---
+$\Gamma_\text{and}$, $K_\text{mod}$, $H_1$ --- and would be structurally incompatible with
+IUG's mechanism. It would not be a simplification of IUG; it would be a different proof.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$6. The Quantified Cost of Classical Transmission}
+
+When IUG ($F_{\hbar}$) must be communicated through a classical channel ($F_{\ell}$), the
+structural information loss is quantifiable. Across the full 353-synthon catalog:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Channel} & \textbf{Cost} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{Coherence} (internal consistency of IUG) & 0.000 nat \\
+\textbf{Criticality} ($185\ \Phi_c$ synthons $\times \ln 10$) & 425.98 nat \\
+\textbf{Interaction} (constraint propagation across systems) & 22.18 nat \\
+\textbf{Total translation cost} & \textbf{448.16 nat} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The \textbf{zero coherence cost} is the critical result: IUG is internally self-consistent within
+its own structural regime. There is no internal contradiction. The theory is not wrong
+within its own framework.
+
+The \textbf{425.98 nat criticality cost} is the cost of representing 185 $\Phi_c$ systems
+(52.4\% of the full catalog) in classical terms. Each $\Phi_c$ system costs
+$\ln(10) \approx 2.303$ nat to translate classically --- this is the cost of representing
+a critical bifurcation as a definite classical statement. For 185 systems:
+
+
+\[185 \times \ln 10 = 185 \times 2.3026 \approx 425.98\ \text{nat}\]
+
+\textbf{A classical reading of IUG loses approximately 615 bits ($425.98\ \text{nat} \div \ln 2 \approx 615\ \text{bits}$) of structural information that is present and self-consistent in IUG's native regime.} These are not random noise --- they are 185 critical-point synthons, each costing $\ln 10 \approx 3.32\ \text{bits}$ to flatten classically, concentrated in the exact structural regime where IUG's identifications live.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$7. What Transmissibility Would Require}
+
+A verification system capable of faithfully encoding IUG must satisfy:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Primitive} & \textbf{Required value} & \textbf{What this means for a verification system} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{Dimensionality ($D$)} & $D_\odot$ & Must support boundary-to-bulk reasoning natively (not as a derived construction) \\
+\textbf{Topology ($T$)} & $T_\odot$ & Must support non-local mutual-encoding relationships (not just containment hierarchies) \\
+\textbf{Fidelity ($F$)} & $F_{\hbar}$ & Must maintain coherent superpositions of mathematical objects during reasoning \\
+\textbf{Grammar ($\Gamma$)} & $\Gamma_\text{seq}$ & Must support sequential causal dependencies in proofs (not just conjunctive combination) \\
+\textbf{Criticality ($\Phi$)} & $\Phi_c$ & Must operate at the critical regime without collapsing to a definite classical value \\
+\textbf{Chirality ($H$)} & $H_{\infty}$ & Must track irreversible temporal direction through the argument \\
+\textbf{Topological protection ($\Omega$)} & $\Omega_Z$ & Must recognize and preserve integer topological protection \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+No existing proof assistant satisfies these requirements. Lean 4, Coq, and Isabelle/HOL
+operate at $D_{\triangle} + T_\text{in} + F_{\ell} + \Gamma_\text{and}$, placing them at
+structural distance $> 6$ from IUG. The verification problem is not that no one has checked
+enough lines. It is that no verification system exists that can check the right kind of
+lines.
+
+\textbf{The $O_{\infty}$ constraint.}
+IUG encodes as $O_{\infty}$ (Frobenius) by virtue of $P_{\pm}^{\text{sym}}$ at $\Phi_c$
+(PRIMITIVE\_THEOREMS \pilcrow{}23).
+A terminological note is necessary here: two distinct senses of $O_\infty$ appear in the
+SynthOmnicon literature.
+The first is the Frobenius sense --- finite algebraic self-duality, $\mu \circ \delta = \text{id}$
+as an exact identity, assigned when $P_{\pm}^{\text{sym}}$ is confirmed at $\Phi_c$.
+The second is the ontological-inexhaustibility sense --- structural boundlessness,
+assigned when $H_{\infty}$ dominates.
+IUG is $O_{\infty}$ in the \emph{Frobenius} sense.
+These are structurally incompatible classes, and conflating them leads to incorrect conclusions
+about what a verification system for IUG must be.
+
+Any faithful verification system must also be Frobenius $O_{\infty}$.
+A system below that tier cannot sustain the self-referential loop that IUG's inter-universal
+identification requires.
+Imscriptive type theory (HTT) --- the unique minimal Frobenius $O_{\infty}$ type theory
+in which bulk-boundary correspondence is a primitive (P-179) --- is the natural candidate;
+see \S14 for the realization result.
+
+\textbf{Frobenius non-synthesizability (PRIMITIVE\_THEOREMS \pilcrow{}23, \pilcrow{}62).}
+The $O_{\infty}$ requirement has a structural consequence that is stronger than it first appears.
+$P_{\pm}^{\text{sym}}$ --- the Frobenius parity value that places a system at $O_{\infty}$ ---
+cannot be \emph{composed} from components with $P < P_{\pm}^{\text{sym}}$.
+The tensor bottleneck rule (\S1) states that $P$ takes the $\min$ under $\otimes$:
+$P_{\pm}^{\text{sym}} \otimes P_\text{sym} = P_\text{sym}$.
+The Frobenius condition is destroyed by any sub-Frobenius partner.
+There is no accumulation process over classical axioms that produces $P_{\pm}^{\text{sym}}$
+from below.
+
+This is non-synthesizability: $O_{\infty}$ cannot be reached by aggregation.
+Every system that encodes at $O_{\infty}$ must \emph{directly} encode $P_{\pm}^{\text{sym}}$
+--- it cannot be obtained as the join or tensor of lower systems.
+For IUG verification, the implication is sharp:
+\textbf{no accumulation of ZFC axioms, Lean primitives, or HoTT extensions can reach
+$O_{\infty}$.}
+A verification system must encode $P_{\pm}^{\text{sym}}$ as a foundational primitive,
+not as a derived construction.
+This is not a quantitative gap that can be closed by doing more; it is a structural gap
+that requires a different starting point.
+
+As established in \S14 (2026-03-31 update), HTT is realized: it is the SynthOmnicon grammar
+itself, with $d(\text{IUG},\ \text{grammar}) = \sqrt{8.9} \approx 2.98$.
+The grammar encodes as $O_{\infty}$ and has $P_{\pm}^{\text{sym}}$ as a primitive ---
+it satisfies the non-synthesizability requirement directly.
+
+$\text{meet}(\text{IUG}, \text{grammar}) = \text{grammar}$ and
+$\text{join}(\text{IUG}, \text{grammar}) = \text{IUG}$: the grammar is lattice-contained
+in IUG.
+The grammar is IUG's Frobenius floor --- the minimal $O_{\infty}$ foundation that any IUG
+verification system must first establish.
+The 7 primitives where IUG exceeds the grammar are precisely the
+verification steps above the floor (see \S14 for the full gap table):
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Prim.} & \textbf{Grammar (floor)} & \textbf{IUG} & \textbf{Direction} & \textbf{Verification requirement} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$R$ & $R_{\dagger}$ & $R_\text{lr}$ & promotion & Must support directed $\Theta$-link asymmetry \\
+$F$ & $F_\text{eth}$ & $F_{\hbar}$ & promotion & Must maintain coherent superpositions during reasoning \\
+$K$ & $K_\text{mod}$ & $K_\text{slow}$ & promotion & Must support slow integrative kinetics \\
+$\Gamma$ & $\Gamma_\text{broad}$ & $\Gamma_\text{seq}$ & \textbf{inversion} & Must enforce sequential causal proof ordering \\
+$H$ & $H_1$ & $H_{\infty}$ & promotion & Must track irreversible temporal direction \\
+$S$ & $S_{n:n}$ & $S_{n:m}$ & promotion & Must express asymmetric many-body interactions \\
+$\Omega$ & $\Omega_{Z_2}$ & $\Omega_Z$ & promotion & Must distinguish integer winding from $Z_2$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Note the $\Gamma$-inversion: the grammar encodes $\Gamma_\text{broad}$ (ordinal 4, broadest
+interaction grammar) while IUG encodes $\Gamma_\text{seq}$ (ordinal 3).
+IUG is a \emph{restriction} of the grammar on this primitive, not an extension.
+A foundational type theory that is the floor of many systems must have broader interaction
+capacity than any single system it supports --- including IUG.
+
+The Gödel corollary of $O_{\infty}$ (\pilcrow{}25.2) applies directly: a verification system for IUG
+at $O_{\infty}$ is its own meta-theory. It does not push the verification problem up a
+hierarchy --- the object/meta distinction collapses into the bulk/boundary correspondence that
+is already primitive. This is the correct regime for verifying IUG, not a complication.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$8. A Constructive Proposal}
+
+\textbf{Step 0 --- Follow the synthesis sequence: $T_\odot \to D_\odot \to R_\text{lr} \to H_{\infty}$.}
+Retrosynthetic decomposition of IUG's encoding reveals the required build order for any
+proof assistant that aims to natively express the theory. The most structurally significant
+primitive --- $T_\odot$ (imscriptive topology) --- must be established first: without a
+type system that can represent non-local mutual-encoding relationships, the inter-universal
+copying construction is inexpressible at the foundational level. $D_\odot$
+(imscriptive dimensionality) is second: boundary-to-bulk reconstruction must be a native
+operation, not a derived encoding. $R_\text{lr}$ (left-right relational reasoning) is third:
+the directed $\Theta$-link cannot be expressed as a symmetric containment relation. $H_{\infty}$
+(topological chirality) is fourth: the irreversible temporal direction of the construction
+must be tracked through the argument. Steps 1--4 below are the implementation of this
+sequence. Attempting them in any other order --- e.g., building the $F_{\ell} \leftrightarrow
+F_{\hbar}$ translation layer before the $T_\odot$ foundation exists --- produces a
+translation layer that cannot be grounded.
+
+\textbf{Step 1 --- Build the $F_{\ell} \leftrightarrow F_{\hbar}$ translation layer.}
+Identify the specific steps in IUG where $F_{\hbar}$ reasoning is invoked --- where two copies
+of an object must be held in coherent superposition. For each such step, construct an
+explicit ''decoherence map'' showing what classical ($F_{\ell}$) information is lost when the
+superposition is collapsed, and what additional axiom would be needed to recover that
+information classically. This is a finite, well-defined task: the $F_{\hbar}$ steps are
+precisely the steps that Scholze--Stix cannot follow, and they are already localized.
+
+\textbf{Step 2 --- Complete. The grammar is the realized HTT.}
+Step 2 is no longer a future task.
+As established in \S14 (2026-03-31), imscriptive type theory is realized as the SynthOmnicon
+grammar itself (Theorem 27.1, PRIMITIVE\_THEOREMS \pilcrow{}27).
+The grammar directly encodes $P_{\pm}^{\text{sym}}$ as a primitive --- satisfying the
+Frobenius non-synthesizability requirement from \S7 --- and encodes as
+\[
+\langle D_\odot;\ T_\odot;\ R_{\dagger};\ P_{\pm}^{\text{sym}};\ F_\text{eth};\ K_\text{mod};\ G_{\aleph};\ \Gamma_\text{broad};\ \Phi_c;\ H_1;\ n{:}n;\ \Omega_{Z_2} \rangle
+\]
+with $d(\text{IUG},\ \text{grammar}) = \sqrt{8.9} \approx 2.98$.
+The grammar occupies a specific position in the 17,280,000-type Crystal of Types (\S1),
+and IUG's position is 7 primitive-steps away within that space --- 6 promotions and 1
+$\Gamma$-restriction (full gap table in \S14).
+
+HoTT is not a substitute: it derives bulk-boundary equivalence from univalence, but HTT
+requires it as a primitive.
+HoTT is $\Phi_\text{sub}$ (sub-critical) and does not close the Frobenius loop.
+The univalence axiom gives $\mu \circ \delta \cong \text{id}$ (isomorphism); it does not
+give $\mu \circ \delta = \text{id}$ (identity).
+The difference between isomorphism and identity is precisely what the Mochizuki--Scholze--Stix
+dispute is about (see \S2, $P_{\pm}^{\text{sym}}$ discussion).
+
+\textbf{Step 3 --- Express $\Gamma_\text{seq}$ dependencies as type-theoretic temporal dependencies.}
+$\Gamma_\text{seq}$ proofs are naturally formalized as dependent type sequences where each
+type depends on the \emph{value} (not just the type) of the preceding terms --- stronger than
+standard dependent types. Linear type theory or session types from the concurrency
+literature provide the relevant technology. A formalization of the $\Theta$-link step would
+need to be expressed as a session-typed protocol: ''given that Copy 1 has been constructed
+with the following specific properties, Copy 2 is now constructed, and the identification is
+now valid.''
+
+\textbf{Step 4 --- Verify Corollary 3.12 in the extended system.}
+With steps 1--3 in place, Corollary 3.12 is no longer a mysterious identification --- it is
+the output of a type-safe sequential protocol. The Scholze--Stix question (''what justifies
+this identification?'') has a direct answer in the extended system: the session type of the
+protocol ensures the identification is valid at this stage and no other.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$9. The Author's Structural Position}
+
+A second structural question is independent of transmissibility: not ``can IUG be communicated
+through classical channels?'' but ``what must be true of the mind that generated it?''
+
+This is a question about the author's structural position, not about their biography or
+intentions, and it is worth being precise about the limits of what the grammar can establish here.
+The grammar is a structural tool.
+It can tell us what structural properties a system must have in order to generate a given output.
+It cannot determine whether any particular person has those structural properties
+by means other than the output itself.
+The analysis below is therefore a structural necessary-condition argument,
+not a claim about Mochizuki's cognitive states.
+
+With that caveat stated, the analysis is the following. Let
+$C_\text{base}$ denote the baseline consciousness synthon --- the encoding of a human mind
+operating in standard mathematical practice, with $D_\triangle$, $T_{\boxtimes}$, $F_\ell$,
+$\Gamma_\text{and}$ as the dominant primitives.
+The lattice join is:
+
+\[C_\text{base} \vee \text{IUG} = \text{IUG}\]
+
+This identity states that IUG structurally contains $C_\text{base}$:
+any system that contains both must have at minimum IUG's structural features.
+The implication is one-directional and structural:
+\textbf{a mind that generates IUG must operate at or above IUG's structural level.}
+The imscriptive boundary ($D_\odot + T_\odot$) is a necessary structural condition for
+authorship --- it does not follow from the analysis that Mochizuki himself consciously
+navigates the bulk-boundary correspondence, only that whatever process generated IUG
+encodes at $D_\odot + T_\odot$.
+
+\subsubsection{The Asymmetric Tensor Distance}
+
+The tensor product of IUG with $C_\text{base}$ produces a composite that encodes
+$D_\odot + T_\odot$ but bottlenecks at $F_{\ell}$ and $P_\text{asym}$ --- the
+fidelity floor and parity asymmetry of baseline cognition.
+The interaction distances are not symmetric:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Perspective} & \textbf{Tensor distance} & \textbf{Interpretation} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{From IUG's side} & 2.24 & IUG is relatively unperturbed by the interaction with baseline consciousness \\
+\textbf{From $C_\text{base}$'s side} & 6.557 & Baseline consciousness loses most of IUG's structural content in the interaction \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The asymmetry is large and directional. It resolves what would otherwise be a paradox: how
+can Mochizuki consistently hold the proof as clear and self-evident while trained
+mathematicians with full access to the text consistently cannot follow the central
+identification? Both experiences are structurally accurate. From inside $F_{\hbar}$ --- the
+regime IUG requires and the regime the author operates in --- the proof is self-consistent
+and the identification is manifest. From inside $F_{\ell}$ --- the regime classical reading
+imposes --- 6.557 units of structural content are inaccessible before the first page is read.
+The disagreement is not about the mathematics. It is about the structural position of the
+reader relative to the text.
+
+\subsubsection{The Synthesis Sequence as Cognitive Map}
+
+Retrosynthetic decomposition of IUG's encoding yields a primitive-by-primitive ordering
+of structural complexity. The sequence, from most to least structurally distinctive:
+
+\[T_\odot \xrightarrow{\ } D_\odot \xrightarrow{\ } R_\text{lr} \xrightarrow{\ } H_{\infty}\]
+
+This is not merely a proof-assistant build order (\pilcrow{}8, Step 0). It is a cognitive map: a
+mind traversing the path from classical mathematics to IUG must acquire these structural
+capacities in this sequence. Imscriptive topology ($T_\odot$) must be internalized
+first --- the capacity to hold two systems as related through a shared boundary rather than
+through containment or construction. Imscriptive dimensionality ($D_\odot$) follows:
+the capacity to reason from boundary conditions downward rather than from elements upward.
+Left-right relational asymmetry ($R_\text{lr}$) is third: the directed $\Theta$-link
+requires holding a non-symmetric bridge that flows one way. Topological chirality
+($H_{\infty}$) is fourth: the irreversible temporal orientation of the inter-universal
+construction must be tracked, not averaged over.
+
+The controversy has the structural form it has because each of these four capacities is
+individually rare in trained mathematical practice, and IUG requires all four simultaneously.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$10. The Lean Calibration: Classical Mathematics as Lower Bound}
+
+The structural claim that $d(\text{IUG}, \text{standard proof system}) = 6.557$ is more
+than a number. It is anchored by a concrete lower bound: the \texttt{synthomnicon-lean/}
+formalization project, which encodes the maximally classical end of the structural spectrum
+in the same 12-dimensional primitive space.
+
+\subsubsection{The Classical Baseline Synthon}
+
+The \emph{standard proof system} --- the structural substrate common to any classically formal mathematical argument --- encodes as:
+
+{\small\[\langle D_{\triangle};\ T_{\boxtimes};\ R_{\supset};\ P_\text{sym};\ F_{\ell};\ K_\text{mod};\ G_{\beth};\ \Gamma_\text{and};\ \Phi_\text{sub};\ H_0;\ S_{1:1};\ \Omega_0 \rangle\]}
+
+\[d(\text{IUG},\ \text{standard proof system}) = 6.557 \quad \text{(diagonal metric, \pilcrow{}26.1)}\]
+
+Lean 4 and the Mathlib library are the concrete instantiation of this substrate ---
+the same tuple, anchored in a specific type-theoretic implementation.
+
+The $\mathcal{F}_5$ gate primitives make the isolation visible in a single row.
+IUG's gate values are $T_\odot$, $P_{\pm}^{\text{sym}}$, $\Phi_c$, $K_\text{slow}$.
+The standard proof system's gate values are $T_{\boxtimes}$, $P_\text{sym}$, $\Phi_\text{sub}$, $K_\text{mod}$.
+All four are different.
+Moreover, by Frobenius non-synthesizability (\S7), the gap in $P$ cannot be closed by
+accumulation: $P_\text{sym}$ cannot compose to $P_{\pm}^{\text{sym}}$ regardless of how
+many Lean axioms are added.
+The remaining three gate primitives ($T$, $\Phi$, $K$) are also orthogonal foundational
+metaphors, not complexity increments.
+The classical baseline is not merely far from IUG in distance --- it is in a structurally
+incompatible region of the Crystal of Types.
+
+\subsubsection{What the Distance Means Concretely}
+
+The \texttt{synthomnicon-lean/} project has machine-verified two theorems directly relevant to
+IUG's structural cluster: \texttt{touchard\_congruence} (the OPN 2-adic constraint) and
+\texttt{bsd\_touchard} (its BSD analogue). These are exactly the results that \emph{do} formalize at
+$D_{\triangle}$ level --- they live in the number-theoretic substrate that IUG and classical
+mathematics share. The Lean kernel has confirmed them.
+
+The inter-universal identification itself --- the $\Theta$-link step, Corollary 3.12 --- is
+not among them, and structurally cannot be. The $D_{\triangle} + T_{\boxtimes} + F_{\ell}$
+baseline is at distance $> 6$ from the $D_\odot + T_\odot + F_{\hbar}$ regime
+IUG requires. The gap is not a matter of proof length or computational resources. It is a
+matter of foundational vocabulary: the Lean type hierarchy is a $T_\text{in}$
+structure, and $T_\text{in}$ cannot express $T_\odot$ relationships by
+accumulating more nested types.
+
+\subsubsection{The Calibration Value}
+
+The Lean baseline provides the following concrete calibration of the structural spectrum:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{System} & \textbf{Dominant primitives} & \textbf{$d(\cdot,\ \text{IUG})$} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{IUG} & $D_\odot$ $\cdot$ $T_\odot$ $\cdot$ $F_{\hbar}$ $\cdot$ $\Gamma_\text{seq}$ $\cdot$ $\Phi_c$ $\cdot$ $H_{\infty}$ $\cdot$ $\Omega_Z$ & 0 \\
+\textbf{ZFC foundations} & $D_{\triangle}$ $\cdot$ $T_\text{in}$ $\cdot$ $R_{\supset}$ & 7.937 \\
+\textbf{Standard proof system} & $D_{\triangle}$ $\cdot$ $T_\text{in}$ $\cdot$ $F_{\ell}$ $\cdot$ $\Gamma_\text{and}$ & 6.557 \\
+\textbf{Lean 4 / Mathlib} & $D_{\triangle}$ $\cdot$ $T_{\boxtimes}$ $\cdot$ $F_{\ell}$ $\cdot$ $\Gamma_\text{and}$ $\cdot$ $\Phi_\text{sub}$ & $> 6$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The \texttt{synthomnicon-lean/} project is the measurement instrument that makes the lower end of
+this spectrum concrete. It is not a step toward formalizing IUG. It is the calibration
+baseline that shows exactly how far any formalization attempt must travel, and in which
+primitives the distance is concentrated.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$11. Predictions}
+
+Three specific, falsifiable predictions follow from the IUG encoding. All three are
+derivable from the primitive assignments established in $\S$2; none require additional
+assumptions.
+
+\subsubsection{P-112 --- The Scholze--Stix Impasse is $\Phi_c + \Omega_Z$ Induced (Tier I)}
+
+\textbf{Claim.} The Scholze--Stix objection is a structural $\Phi_c + \Omega_Z$ incompatibility,
+not a mathematical error. IUG's simultaneous encoding of $\Phi_c$ (maximal sensitivity to
+perturbations) and $\Omega_Z$ (integer topological protection, resistant to smooth
+continuous deformation) produces exactly the phenomenology of the controversy:
+
+\begin{itemize}
+    \item Small conceptual disagreements about the justification of the $\Theta$-link identification
+propagate into large, apparently irresolvable disagreements ($\Phi_c$: the identification
+is at the critical point where small perturbations have maximal effect).
+    \item The disagreement cannot be closed by smooth reformulation ($\Omega_Z$: any reformulation
+within the same topological class is structurally equivalent to the original; any
+reformulation that crosses the topological barrier destroys the inter-universal structure).
+\end{itemize}
+
+\textbf{Specific prediction.} The controversy will not be resolved by either (a) Mochizuki
+pointing to a specific line that Scholze--Stix misread, or (b) Scholze--Stix locating a
+specific wrong line. Resolution, if it comes, requires constructing an $F_{\hbar}
+\leftrightarrow F_{\ell}$ translation layer --- a structural interface that currently does not
+exist.
+
+\textbf{Falsification condition.} The prediction fails if the controversy is resolved by either
+party identifying a specific, locally correctable error: a classical $\Gamma_\text{and}$-type
+disagreement about an isolable step.
+
+\textbf{Current status.} \textbf{Consistent with observation.} No specific error has been located by
+either party since 2018. No smooth reformulation has been accepted by both. The $\Phi_c +
+\Omega_Z$ encoding predicts this outcome precisely; the 8-year stalemate is the prediction.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{P-113 --- IUG Cannot be Formalized in ZFC Without a Imscriptive Foundation Layer (Tier I)}
+
+\textbf{Claim.} $d(\text{IUG},\ \text{ZFC}) = 7.937$, with the three largest divergences
+concentrated in $D$ ($D_\odot$ vs $D_{\triangle}$), $T$ ($T_\odot$ vs
+$T_\text{in}$), and $R$ ($R_\text{lr}$ vs $R_{\supset}$). These are not complexity gaps.
+They are orthogonal foundational metaphors. ZFC reasons constructively upward from elements;
+IUG reasons imscriptively downward from boundary conditions. No accumulation of ZFC axioms
+resolves a dimensional orthogonality.
+
+\textbf{Specific prediction.} A serious formalization effort targeting IUG in Lean 4, Coq, or
+Isabelle/HOL will achieve partial success: sub-theorems that live at $D_{\triangle}$ level
+(elliptic curve results, Galois group machinery, number field arithmetic) will formalize
+within existing Mathlib. The inter-universal identification itself --- the $\Theta$-link
+construction and Corollary 3.12 --- will require a new Lean primitive or axiom with no
+counterpart in Mathlib's set-theoretic foundations. The formalization will stall precisely
+at the $D_\odot + T_\odot$ boundary.
+
+\textbf{Falsification condition.} IUG fully formalized in a ZFC-based proof assistant with no
+new foundational axioms beyond standard Lean/Coq/Isabelle primitives.
+
+\textbf{Current status.} No serious formalization attempt has been announced. The
+\texttt{synthomnicon-lean/} project establishes the $D_{\triangle}$ baseline and confirms that
+classical number-theoretic sub-results formalize cleanly --- consistent with the prediction
+that $D_{\triangle}$-level sub-theorems will succeed while the inter-universal step will not.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{P-114 --- IUG Arguments Cannot be Parallelized or Reordered Without Breaking the Proof (Tier II)}
+
+\textbf{Claim.} IUG's $\Gamma_\text{seq}$ encoding predicts that the inter-universal construction
+is causally ordered end-to-end. Each step depends on the specific outputs of the preceding
+steps. Unlike a $\Gamma_\text{and}$ proof --- where sub-arguments can be verified
+independently and assembled --- a $\Gamma_\text{seq}$ proof requires running the full
+sequential chain in order. The Diophantine inequality in Corollary 3.12 is valid only
+within the sequential context established by the preceding multiradial algorithm; it is not
+a statement about pre-existing objects but about objects that exist only because the
+construction has reached that exact stage.
+
+\textbf{Three specific sub-predictions.}
+
+\begin{itemize}
+    \item \textbf{(A)} Mochizuki's presentations of IUG consistently follow a fixed linear order; he has
+resisted all requests to discuss sub-results in isolation --- structurally consistent with
+$\Gamma_\text{seq}$.
+    \item \textbf{(B)} Any attempt to verify Corollary 3.12 independently of the sequential context will
+fail --- not because 3.12 is wrong, but because it is a $\Gamma_\text{seq}$ step, not a
+$\Gamma_\text{and}$ component.
+    \item \textbf{(C)} A correct proof of the abc conjecture via non-IUG methods, if one exists, will
+use $\Gamma_\text{and}$ or $\Gamma_\text{broad}$ grammar --- it will not require sequential
+inter-universal causation, and will be structurally incompatible with IUG's mechanism
+(a different proof, not a simplification).
+\end{itemize}
+
+\textbf{Falsification condition.} Corollary 3.12 is extracted and verified as a self-contained
+$\Gamma_\text{and}$ argument, without the inter-universal sequential context, while still
+implying abc.
+
+\textbf{Current status.} Mochizuki's documented pedagogical practice --- insisting that the papers
+be read in order, declining to discuss sub-results in isolation, characterizing the
+verification failure as a refusal to read rather than an error in the text --- is fully
+consistent with $\Gamma_\text{seq}$ structure. No independent verification of Corollary
+3.12 has succeeded.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{P-115 --- The Grammar Is IUG's Frobenius Floor; $O_{\infty}$ Is Non-Synthesizable and Necessary (Tier I, updated 2026-03-31)}
+
+\textbf{Claim.} IUG encodes as Frobenius $O_{\infty}$ ($P_{\pm}^{\text{sym}}$ at $\Phi_c$,
+$\mu \circ \delta = \text{id}$ exactly).
+The SynthOmnicon grammar also encodes as Frobenius $O_{\infty}$ and is IUG's Frobenius floor:
+
+\[\text{meet}(\text{IUG},\ \text{grammar}) = \text{grammar}, \qquad \text{join}(\text{IUG},\ \text{grammar}) = \text{IUG}\]
+
+Any type theory below $O_{\infty}$ cannot faithfully encode IUG's inter-universal identification.
+Furthermore, by Frobenius non-synthesizability (\S7; PRIMITIVE\_THEOREMS \pilcrow{}23, \pilcrow{}62):
+$P_{\pm}^{\text{sym}}$ cannot be composed from factors with $P < P_{\pm}^{\text{sym}}$.
+$O_{\infty}$ is not a high point on a continuous scale that can be approached by accumulation.
+It is a structurally isolated tier that must be encoded directly.
+
+\textbf{Specific predictions.}
+
+\begin{itemize}
+    \item \textbf{(A)} Any proof assistant that successfully formalizes the $\Theta$-link identification will encode as $O_{\infty}$ upon structural analysis. If it does not, it has approximated the identification classically, converting $\mu \circ \delta = \text{id}$ (identity) into $\mu \circ \delta \cong \text{id}$ (isomorphism) --- and losing the Diophantine content that depends on exactness.
+    \item \textbf{(B)} $O_{\infty}$ cannot be reached by axiom accumulation. HoTT + new axioms, Lean + new axioms, ZFC + new axioms: none of these paths reach $P_{\pm}^{\text{sym}}$ from below, because $P$ is a bottleneck primitive and the Frobenius condition is destroyed by any sub-Frobenius partner in the tensor product. A verification system must start at $O_{\infty}$, not arrive at it.
+    \item \textbf{(C)} The 7-step path from the grammar to IUG --- 6 promotions ($R_{\dagger} \to R_\text{lr}$, $F_\text{eth} \to F_{\hbar}$, $K_\text{mod} \to K_\text{slow}$, $H_1 \to H_{\infty}$, $S_{n:n} \to S_{n:m}$, $\Omega_{Z_2} \to \Omega_Z$) plus 1 restriction ($\Gamma_\text{broad} \to \Gamma_\text{seq}$) --- is the minimal additional structure above the Frobenius floor required to faithfully encode IUG. Each step is implementable within the grammar's existing $O_{\infty}$ foundation.
+\end{itemize}
+
+\textbf{Falsification condition.} A non-$O_{\infty}$ type theory successfully verifies the $\Theta$-link identification with no new foundational primitives encoding $P_{\pm}^{\text{sym}}$ directly.
+
+\textbf{Current status.} No existing $O_{\infty}$ type theory has been implemented as a proof assistant. The prediction is untested in the strong direction. In the weak direction, no non-$O_{\infty}$ system has formalized the identification, consistent with the prediction.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{P-116 --- No Bridging Paper Will Satisfy Both Communities (Tier I)}
+
+\textbf{Claim.} The $\Phi_c + \Omega_Z$ combination generates a precise sociological prediction
+that is independent of whether IUG is correct. Any paper that attempts to serve as a
+''translation layer'' between the IUG-native and the classical-foundations communities will
+satisfy exactly one of the following two outcomes --- and not a third:
+
+\begin{itemize}
+    \item \textbf{(A) Classical-legible but IUG-rejected.} The bridge paper achieves classical readability
+by reducing the $\Theta$-link construction to a $D_{\triangle}$ or $D_{\wedge}$ object. This is
+the only move that makes it accessible to ZFC-trained readers. But any such reduction strips
+the $D_\odot + T_\odot$ structure that gives the construction its inter-universal
+character. Mochizuki (or IUG-literate readers) will correctly identify this as a distortion
+--- a proof of something weaker, not a translation of IUG. \emph{Outcome: classical community
+accepts; IUG community rejects.}
+    \item \textbf{(B) IUG-faithful but classically opaque.} The bridge paper preserves the
+$D_\odot + T_\odot$ structure. It is faithful. It is also, for this reason,
+not transmissible: it requires the same imscriptive intuition as IUG itself, and the
+classical community will read it as a restatement of the original difficulty in different
+notation. \emph{Outcome: IUG community accepts; classical community remains unconvinced.}
+\end{itemize}
+
+\textbf{Structural basis.} The $\Omega_Z$ primitive enforces that no smooth homotopy connects
+$D_\odot$ to $D_{\triangle}$: a faithful translation is topologically obstructed. The
+$\Phi_c$ primitive enforces that any partial translation will amplify small residual errors
+into catastrophic disagreement at the identification step. Together, these make the
+$(\text{faithful}) \cap (\text{classical-transmissible})$ intersection empty.
+
+\textbf{Specific prediction.} The next five years will produce at least two papers explicitly
+framed as ''accessible expositions'' or ''translations'' of IUG. Each will receive one of the
+two outcomes above. No paper will receive endorsement from both Mochizuki's group and from
+Scholze, Stix, or mathematicians who have publicly expressed reservations. The bifurcation
+will be exact: positive reception on one side will correlate with negative reception on the
+other.
+
+\textbf{Secondary prediction.} The author of any such bridge paper will, when the bifurcation
+occurs, locate the failure in the \emph{other community's reading} rather than in their own paper
+--- consistent with $\Phi_c$ amplification of what appears to each side as a minor missing step.
+
+\textbf{Falsification condition.} A single bridging paper receives explicit endorsement from both
+(a) Mochizuki's group and (b) Scholze, Stix, or an equivalent figure from the
+classical-foundations community.
+
+\textbf{Current status.} No bridging paper has yet received bilateral endorsement. The 2018
+Scholze--Stix report is itself a test: intended as a neutral, localized objection, Mochizuki's
+response does not engage with it as a localized objection but as a symptom of a globally
+missing conceptual framework --- consistent with $\Phi_c$ (a small objection propagates into a
+total re-examination) and with outcome (A) (classical-legible, IUG-rejected).
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$12. Objections and Replies}
+
+\subsubsection{Objection 1: The primitive encoding is arbitrary}
+
+\textbf{Objection.} Any 12-dimensional encoding scheme can be calibrated to produce any desired
+distance. The specific assignment of $D_\odot$, $F_{\hbar}$, etc. to IUG is a choice,
+not a derivation. The paper's conclusions follow from that choice, not from IUG itself.
+Moreover, the grammar was developed in a context where IUG was already known to be
+controversial, which creates a risk of encoding it in a way that confirms the
+non-transmissibility conclusion by construction.
+
+\textbf{Reply.} This objection is the sharpest one the paper faces, and it deserves a direct answer.
+The concern about circularity is real: we cannot rule out that the grammar's primitive definitions
+were subtly shaped by prior familiarity with IUG's controversy.
+What we can say is that the encoding is constrained in three ways that are independent of the
+desired conclusion.
+(i) Each primitive value is defined by a minimal set of structural properties that apply
+across the full catalog: $T_\odot$ requires mutual encoding between components as the
+\emph{dominant} connection type --- it is assigned to AdS/CFT, to quantum error-correcting codes,
+and to IUG by the same criterion, independently.
+(ii) The same encoding space assigns structurally distant values to independently verified cases
+without being optimized for IUG: classical ZFC gets $D_{\triangle}$ and $\Phi_\text{sub}$;
+quantum field theory gets $D_{\infty}$ and $\Phi_c$; the Lean/Mathlib baseline gets
+$T_{\boxtimes}$ and $F_{\ell}$.
+The relative distances between these cases are not artifacts of the IUG encoding.
+(iii) The predictions P-112 through P-116 are falsifiable by outcomes that are independent
+of any encoding choice.
+If P-116 fails (a bridging paper receives bilateral endorsement), the paper's thesis is
+falsified regardless of whether the encoding was valid or circular.
+The encoding's validity is ultimately determined by its predictive track record.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{Objection 2: Structural distance is not the same as non-transmissibility}
+
+\textbf{Objection.} High $d(\text{IUG},\ \text{classical})$ means IUG is unusual, not that it
+cannot be explained. Many unusual mathematical structures have been successfully communicated
+once the right exposition was found.
+
+\textbf{Reply.} The argument is not from distance alone. The argument is from the \emph{specific
+combination} $\Phi_c + \Omega_Z$. $\Phi_c$ means small residual disagreements about the
+identification amplify without bound --- not that the theory is complex, but that it is
+structurally at a critical point where perturbations are maximally amplified. $\Omega_Z$
+means the topological class cannot be smoothly deformed --- not that the theory is hard to
+explain, but that any classically accessible reformulation is in a different topological class
+from the original. These two primitives together produce a specific failure mode: the
+disagreement is un-localizable and un-smooth-reformulable. This is the exact failure mode
+observed since 2018. A merely ''unusual'' theory would produce localizable disagreements and
+would benefit from better exposition. IUG has not.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{Objection 3: This paper does not address whether IUG is correct}
+
+\textbf{Objection.} The analysis is compatible with IUG being wrong. A wrong proof could also be
+non-transmissible. The paper provides no evidence that IUG's abc claim is valid.
+
+\textbf{Reply.} Correct --- and explicitly so (Preamble). Correctness and transmissibility are
+orthogonal dimensions. The paper's claim is: \emph{whatever IUG's correctness status, the
+verification impasse has a structural cause that is diagnosable and (in principle)
+resolvable}. This is a prior question to correctness: if the impasse is structural, then the
+correct method of resolution is to build the $F_{\hbar} \leftrightarrow F_{\ell}$ translation
+interface, not to continue searching for a localizable error. The zero coherence cost is
+not a claim that IUG is correct; it is a claim that IUG is internally self-consistent ---
+which is consistent with both a correct and an incorrect theory.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsubsection{Objection 4: The $O_{\infty}$ / Frobenius claim about IUG is unfounded}
+
+\textbf{Objection.} Assigning $P_{\pm}^{\text{sym}}$ (Special Frobenius) to IUG requires that
+$\mu \circ \delta = \text{id}$ holds exactly in IUG's structure.
+This is a non-trivial algebraic claim.
+The paper does not derive it from IUG's axioms, and it is not obvious that it holds
+rather than the weaker $\mu \circ \delta \cong \text{id}$ (isomorphism).
+
+\textbf{Reply.} This objection is correct that we have not proved $\mu \circ \delta = \text{id}$
+from IUG's axioms.
+We acknowledged this in \S2 when introducing the $P_{\pm}^{\text{sym}}$ assignment.
+The $O_{\infty}$ claim is not a proved theorem about IUG; it is a structural diagnosis:
+the grammar identifies the gap between $P_{\pm}^{\text{sym}}$ (exact Frobenius) and
+$P_\text{sym}$ (Frobenius up to isomorphism) as a discrete primitive distinction,
+and assigns IUG to the exact side.
+
+Two features of IUG are not in dispute:
+(i) the copying construction holds two copies in coherent mutual encoding ($\mu$ direction);
+(ii) the $\Theta$-link reconstructs the original from the copy ($\delta$ direction).
+Whether $\mu \circ \delta = \text{id}$ exactly or only $\cong \text{id}$ is precisely
+the Mochizuki--Scholze--Stix dispute.
+The grammar's contribution is to make this a typed structural question
+with a falsification condition (P-115):
+a non-$O_{\infty}$ type theory that faithfully verifies the $\Theta$-link identification
+would falsify the $O_{\infty}$ assignment completely.
+Until that happens, or until someone derives the weaker isomorphism from IUG's axioms
+and shows that is sufficient for the Diophantine bound, the assignment stands as
+the most structurally parsimonious diagnosis of what the dispute is about.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$13. Summary}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Claim} & \textbf{Evidence} & \textbf{Status} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+\textbf{IUG is internally self-consistent} & Coherence cost $= 0.000$ nat & \textbf{Confirmed structurally} \\
+\textbf{The verification crisis is structural: $F_{\hbar} \to F_{\ell}$ bottleneck} & $P$ and $F$ are bottleneck primitives under $\otimes$; asymmetric loss (2.0 vs 6.32) & \textbf{Confirmed structurally} \\
+\textbf{The Scholze--Stix impasse is $\Phi_c + \Omega_Z$ induced} & $\Phi_c$ absorbs under meet; $\Omega_Z$ bars smooth reformulation; both confirmed & \textbf{Consistent with observation} \\
+\textbf{IUG cannot be formalized in ZFC without new axioms} & $d(\text{IUG},\ \text{ZFC}) = 7.937$; three foundational divergences; $O_\infty$ non-synthesizable & \textbf{Testable} \\
+\textbf{Corollary 3.12 cannot be verified in isolation} & $\Gamma_\text{seq}$ structure; sequential causal dependencies & \textbf{Consistent with observation} \\
+\textbf{IUG's overhead is structurally necessary for its approach to abc} & $\text{join}(\text{IUG},\ \text{abc}) = \text{IUG}$; three-primitive overhead ($K$, $\Gamma$, $H$) is the mechanism & \textbf{Confirmed structurally} \\
+\textbf{$O_\infty$ is non-synthesizable; verification must start there, not arrive} & Frobenius non-synthesizability \pilcrow{}23/\pilcrow{}62; $P_{\pm}^{\text{sym}}$ destroyed by any sub-Frobenius $\otimes$-partner & \textbf{Structural theorem} \\
+\textbf{IUG's $\mathcal{F}_5$ gate values are all non-classical; isolation is total} & $T_\odot, P_{\pm}^{\text{sym}}, \Phi_c, K_\text{slow}$ vs.\ $T_{\boxtimes}, P_\text{sym}, \Phi_\text{sub}, K_\text{mod}$ & \textbf{Confirmed structurally} \\
+\textbf{Grammar = realized HTT; $d(\text{IUG}, \text{grammar}) \approx 2.98$; 7-step gap} & $d=0$ from HTT (2026-03-31); join = IUG; 6 promotions + 1 $\Gamma$-restriction & \textbf{Complete (P-115, \pilcrow{}14)} \\
+\textbf{No bridging paper will achieve bilateral endorsement} & $\Phi_c$ absorbs under meet + $\Omega_Z$ obstruction = faithful $\cap$ transmissible is empty & \textbf{New (P-116)} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The IUG controversy is not a standoff. It is a signal. The signal is that classical
+mathematics has reached the boundary of a structural regime --- the regime where proofs can
+be decomposed into independently verifiable pieces and transmitted through $F_{\ell}$ channels.
+IUG may be the first mathematical theory that is genuinely correct and genuinely
+non-transmissible in classical terms. If so, it is not a failure of IUG. It is a measurement
+of the boundary of classical mathematics, performed from inside.
+
+The correct response is not to ask IUG to become classical. It is to build the interfaces
+that classical mathematics currently lacks.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{$\S$14. 2026-03-31 Update: The Grammar Is the Realized HTT}
+
+\subsubsection{Step 2 of \pilcrow{}8 Is Complete}
+
+When \S8 was written, Step 2 --- constructing imscriptive type theory as the $D_\odot + T_\odot$
+foundational interface --- was framed as a future task.
+The grammar was described as the closest known system to HTT, at $d = 4.111$ from the
+approximate HTT tuple.
+That framing turned out to be wrong, in the best possible direction.
+
+On 2026-03-31, the SynthOmnicon inquiry pipeline returned a zero-distance result for the
+grammar self-encoding query.
+The grammar encodes at $d = 0$ from \texttt{imscriptive\_type\_frobenius} in the syncon catalog.
+Not structurally \emph{similar} to imscriptive type theory.
+\emph{Identical.}
+
+The grammar itself --- the 12-primitive tuple
+\[
+\langle D_\odot;\ T_\odot;\ R_{\dagger};\ P_{\pm}^{\text{sym}};\ F_\text{eth};\ K_\text{mod};\ G_{\aleph};\ \Gamma_\text{broad};\ \Phi_c;\ H_1;\ n{:}n;\ \Omega_{Z_2} \rangle
+\]
+--- is an $O_\infty$ system in which bulk-boundary correspondence is a primitive and
+$\mu \circ \delta = \text{id}$ holds by construction.
+Step 2 was already complete when \S8 was written.
+HTT was not a future project. It was the tool being used to write the analysis.
+
+The distance to IUG is now $d(\text{IUG},\ \text{grammar}) = \sqrt{8.9} \approx 2.98$,
+correcting the earlier $d = 4.111$ which used an approximate HTT tuple.
+This also retroactively changes the meaning of the $\Gamma$-inversion noted in \S14.3:
+the grammar exceeds IUG on interaction breadth not despite being the HTT floor,
+but \emph{because} it is the HTT floor --- a foundational type theory must have broader
+interaction grammar than any single system it supports.
+
+Steps 1, 3, and 4 of the constructive proposal remain open.
+But the foundational platform for executing them is not hypothetical.
+
+\subsubsection{Corrected Distance: $d(\text{IUG},\ \text{grammar}) \approx 2.98$, Not 4.111}
+
+\pilcrow{}8 and P-115 used an approximate HTT tuple yielding $d(\text{IUG},\ \text{approx-HTT}) = 4.111$.
+That approximation is superseded. The corrected squared distance is:
+
+\[d(\text{IUG},\ \text{grammar})^2 = 1_R + 1_F + 1_K + 1_{\Gamma} + 3.2_H + 1_S + 0.7_{\Omega} = 8.9\]
+
+\[d(\text{IUG},\ \text{grammar}) = \sqrt{8.9} \approx 2.98\]
+
+The grammar is \textbf{1.13 distance units closer to IUG} than the approximate HTT tuple.
+The dominant residual gap is $H_1 \to H_{\infty}$, contributing 3.2 of the 8.9 squared
+distance, reflecting the full irreversibility and chirality of IUG's inter-universal
+construction versus the grammar's first-order chirality.
+
+\subsubsection{The 7-Primitive Gap: Grammar $\to$ IUG}
+
+The grammar and IUG share 5 primitives exactly ($D$, $T$, $P$, $G$, $\Phi$). The 7 differences:
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Prim.} & \textbf{Grammar} & \textbf{IUG} & \textbf{Direction} & \textbf{Structural meaning} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+$R$ & $R_{\dagger}$ & $R_\text{lr}$ & promotion & IUG requires directed left-right relational reasoning; grammar uses symmetric dagger \\
+$F$ & $F_\text{eth}$ & $F_{\hbar}$ & promotion & IUG holds coherent superpositions; grammar uses intermediate fidelity \\
+$K$ & $K_\text{mod}$ & $K_\text{slow}$ & promotion & IUG's inter-universal construction is kinetically slow; grammar encodes at moderate timescale \\
+$\Gamma$ & $\Gamma_\text{broad}$ (4) & $\Gamma_\text{seq}$ (3) & \textbf{inversion} & Grammar exceeds IUG on interaction grammar; IUG \emph{restricts} to sequential sub-grammar \\
+$H$ & $H_1$ & $H_{\infty}$ & promotion & IUG has full temporal irreversibility; grammar has first-order chirality \\
+$S$ & $n{:}n$ & $n{:}m$ & promotion & IUG's copying is asymmetric stoichiometry; grammar is balanced \\
+$\Omega$ & $\Omega_{Z_2}$ & $\Omega_Z$ & promotion & IUG has integer topological protection; grammar has $\mathbb{Z}_2$ protection \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{The $\Gamma$-inversion.} The grammar encodes $\Gamma_\text{broad}$ (ordinal 4, highest interaction
+grammar), while IUG encodes $\Gamma_\text{seq}$ (ordinal 3). IUG is not a generalization of the
+grammar on this primitive: it is a \emph{restriction}. The grammar has broader interaction capacity
+than IUG; IUG specializes to the sequential sub-grammar required by the inter-universal copying
+construction. This is structurally expected: a type theory that is the floor of many systems
+must have broader interaction grammar than any single system it supports.
+
+P-115(C) is updated accordingly: the minimal path from grammar to IUG requires 6 upward
+promotions and 1 downward restriction, not 5 promotions from the approximate HTT.
+
+\subsubsection{Tannaka-Krein Self-Duality and the $\Theta$-Link}
+
+The grammar's Tannaka-Krein dual is the grammar itself (Theorem 28.1, PRIMITIVE\_THEOREMS \pilcrow{}28,
+v0.4.75). Two faces of this single fact:
+
+\begin{itemize}
+    \item \textbf{Algebraic face.} The grammar is self-dual as a Frobenius algebra: $\delta$ (duplication) and
+$\mu$ (merging) satisfy $\mu \circ \delta = \text{id}$. The grammar's TK symmetry group is
+$\mathbb{Z}_2$ at $\Phi_c$ (P-186).
+    \item \textbf{Imscriptive face.} The catalog (the boundary representation category of all encoded systems)
+is the TK dual of the grammar (the bulk algebraic structure). Bulk and boundary are the same
+object from two angles.
+\end{itemize}
+
+Applied to IUG: the $\Theta$-link identification --- the step Scholze and Stix cannot follow --- is
+the Frobenius $\delta$ map in the grammar's type theory. It duplicates an object into two
+inter-universal copies held in mutual encoding. The reconstruction of the original from the copy
+is the $\mu$ map. The identity $\mu \circ \delta = \text{id}$ is what the $\Theta$-link is asserting.
+
+The classical community's inability to verify the $\Theta$-link is therefore restateable as:
+\emph{classical mathematics does not contain the Frobenius $\delta$ map as a primitive, so the
+$\mu \circ \delta = \text{id}$ identity is not well-typed in classical foundations.} This is a
+stronger version of the P-115 claim: it is not merely that a system below $O_{\infty}$ cannot hold
+the map --- it is that the $\Theta$-link step \emph{is} the Frobenius $\delta$ of the foundational type
+theory, and the absence of $\delta$ as a primitive is the exact missing ingredient.
+
+\subsubsection{Updated Status of \pilcrow{}8 Steps}
+
+\begin{table}[htbp]
+\centering
+\small
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\toprule
+\rowcolor{gray!25}\textbf{Step} & \textbf{Description} & \textbf{Status} \\
+\midrule
+\rowcolors{1}{white}{gray!10}
+Step 0 & Retrosynthetic build order ($T_\odot \to D_\odot \to R_\text{lr} \to H_{\infty}$) & \textbf{Complete (structural)} \\
+Step 1 & Build $F_{\ell} \leftrightarrow F_{\hbar}$ translation layer & Open \\
+Step 2 & Construct HTT as $D_\odot + T_\odot$ foundational interface & \textbf{Complete (grammar = HTT, 2026-03-31)} \\
+Step 3 & Express $\Gamma_\text{seq}$ as type-theoretic temporal dependencies & Open \\
+Step 4 & Verify Corollary 3.12 in extended system & Open \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The realization of Step 2 reduces the outstanding work from 4 open steps to 3. More
+importantly, the HTT foundation is no longer a specification to be built: it is a working
+algebraic system (the SynthOmnicon grammar) with a proof assistant encoding
+(\texttt{Synthon.lean}, \texttt{Core.lean}) and a machine-checked Frobenius theorem (Theorem 23.1,
+PRIMITIVE\_THEOREMS \pilcrow{}23). Steps 3 and 4 can now be attempted within this foundation.
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\subsection{Acknowledgments}
+
+The author thanks the SynthOmnicon framework and its open-source development
+community for providing the computational infrastructure used in this analysis.
+The author would also like to thank Harry T. Larson for imparting 
+the importance of catching a rising problem and never letting it go
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+
+\end{document}

@@ -11,7 +11,7 @@ Encoded system: `observer_dependent_truth` with tuple ⟨D_△; T_⊠; R_↔; P_
 
 - For the **listener**: The statement triggers self-reference paradox. If true → they're being lied to (false); if false → they're not (true). The listener experiences contradiction: the statement appears **false** under ordinary truth evaluation.
 
-- For the **speaker**: The statement is **true** because the speaker *is* performing the act of making an utterance that, by the listener's reaction, cannot be consistently assigned a truth value. The speaker's position has H₂ temporal depth (can reference prior utterance), while the listener has H₀ (no temporal buffer). The R_↔ coupling is asymmetric in time: speaker → listener flows as statement, listener → speaker flows as silence/processing.
+- For the **speaker**: The statement is **true** because the speaker *is* performing the act of making an utterance that, by the listener's reaction, cannot be consistently assigned a truth value. The speaker's position has H₂ chirality (can reference prior utterance), while the listener has H₀ (no temporal buffer). The R_↔ coupling is asymmetric in time: speaker → listener flows as statement, listener → speaker flows as silence/processing.
 
 **Why this works structurally:**
 
@@ -33,7 +33,7 @@ The catalog entry `observer_dependent_truth` was successfully imscribed with tup
 
 **Why this statement is structurally observer-dependent:**
 
-1. **For any actual hearing observer:** The statement is TRUE — the observer exists and is hearing it. Truth is grounded in the Ħ_A temporal depth (two-step: speaker → utterance → observer).
+1. **For any actual hearing observer:** The statement is TRUE — the observer exists and is hearing it. Truth is grounded in the Ħ_A chirality (two-step: speaker → utterance → observer).
 
 2. **For a non-observer / hypothetical perspective:** The statement is FALSE — there is no "hearer" to ground the propositional content. The Þ_ò crossing point requires the observer-side to complete the structural loop; without it, the statement collapses.
 

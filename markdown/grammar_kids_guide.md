@@ -31,7 +31,7 @@ Each syllable is the first sound of a Building Block's real name:
 | **Gá** | **Ga**laxy (Scope) | How far does it reach? | 🌌 |
 | **Gá** | **Gá**th (Interaction grammar) | Do we work together or take turns? | 🤝 |
 | **Fí** | Críti**cal**ity (Criticality) | Is it calm, shaky, or exploding? | 🌋 |
-| **Hé** | Temporal heig**ht** (Temporal depth) | How much does it remember? | 🧠 |
+| **Hé** | Temporal heig**ht** (Chirality) | How much does it remember? | 🧠 |
 | **Stó** | **Sto**ichiometry | Are the pieces all the same or different? | 🧩 |
 | **Om** | Winding (Ω**me**ga) | Does it loop back on itself? | 🔄 |
 

@@ -977,7 +977,7 @@ class IsingNavigator:
         Ω_2    — Z2 spin-flip symmetry baked into the update kernel as a
                       hardware invariant (NOT enforced by loss)
         ƒ_ì       — classical fidelity: no quantum coherence
-        Ħ_Ñ          — no temporal depth; one-shot map (not a flow)
+        Ħ_Ñ          — no chirality; one-shot map (not a flow)
         T_box       — box topology: periodic boundary conditions on 3D lattice
         Ð_C  — triangular (simplicial) lattice structure
 

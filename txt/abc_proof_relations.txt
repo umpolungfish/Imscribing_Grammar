@@ -9,6 +9,6 @@ Detailed Relations from ZFC Translation of abc_conjecture_proof:
 - **G (Interaction Range)**: $G_\aleph$ renders as: ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)
 - **Γ (Composition Logic)**: $\Gamma_\text{seq}$ translates to: ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ
 - **Φ (Criticality)**: $\φ̂_ÿ$ translates to a fixed-point condition: fixpt f
-- **H (Temporal Depth)**: $H_\infty$ translates to: wind f x ∧ ¬ wind f S x
+- **H (Chirality)**: $H_\infty$ translates to: wind f x ∧ ¬ wind f S x
 - **S (Component Type)**: $n{:}m$ translates to: ∃ f( func f ∧ ¬ bij f x x)
 - **Ω (Topological Invariant)**: $\Omega_\mathbb{Z}$ translates to: wind f x

@@ -556,7 +556,7 @@ Each element of the triplet answers a logically independent question:
 
 **$F$ (Fidelity):** *Does anything happen when systems interact?* $F$ encodes whether an interaction transmits constraint to its context — whether a recognition event carries information. At $F = 0$, the universe is transparent to its own interactions: two systems can meet and part leaving no trace. $F$ is the *existence condition for constraint propagation*. It cannot be derived from $K$ or $\Phi$: a system can exchange information rapidly ($K_{\text{frtailgamma}}$) or slowly ($K_{\text{schwa}}$) regardless of how much information it transmits per event; a system can be near or far from a critical point regardless of whether its individual interactions are reliable.
 
-**$K$ (Kinetic character):** *Can a system access its configuration space?* $K$ encodes the activation barrier to constraint rearrangement — whether the history of a system can differ from its future, and at what rate. At the $K_{\text{teshlig}}$ extreme, the universe has constraint propagation but no temporal depth: everything that fires, fires once and freezes. $K$ is the *existence condition for time*. A universe with $F > 0$ but $K = K_{\text{teshlig}}$ everywhere produces exactly one configuration and holds it indefinitely. No evolution, no selection, no biology. $K$ cannot be derived from $F$ or $\Phi$: high-fidelity ($F_{\text{hardsign}}$) interactions can be kinetically frozen or rapidly exchanging; criticality ($\Phi_{\text{ctyogh}}$) can coexist with any K-tier.
+**$K$ (Kinetic character):** *Can a system access its configuration space?* $K$ encodes the activation barrier to constraint rearrangement — whether the history of a system can differ from its future, and at what rate. At the $K_{\text{teshlig}}$ extreme, the universe has constraint propagation but no chirality: everything that fires, fires once and freezes. $K$ is the *existence condition for time*. A universe with $F > 0$ but $K = K_{\text{teshlig}}$ everywhere produces exactly one configuration and holds it indefinitely. No evolution, no selection, no biology. $K$ cannot be derived from $F$ or $\Phi$: high-fidelity ($F_{\text{hardsign}}$) interactions can be kinetically frozen or rapidly exchanging; criticality ($\Phi_{\text{ctyogh}}$) can coexist with any K-tier.
 
 **$\Phi$ (Criticality phase):** *Does local behavior generate global novelty?* $\Phi$ encodes the position of a system relative to the critical locus — the only point where correlation lengths diverge and local events propagate without attenuation to global scale. Below $\Phi_{\text{ctyogh}}$, all self-organization is additive: the behavior of a system at scale $L$ is approximately the sum of its behavior at scale $L/2$. Above $\Phi_{\text{ctyogh}}$ (supercritical), the system has already saturated — it is past its own phase boundary. At $\Phi_{\text{ctyogh}}$, emergent structure becomes possible: patterns at one scale constrain patterns at all other scales simultaneously. $\Phi$ is the *existence condition for emergence*. It cannot be derived from $F$ or $K$: a system can have high fidelity and fast kinetics and remain forever subcritical (e.g., a crystal: $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $\Phi_{\text{softsign}}$).
 
@@ -590,7 +590,7 @@ This two-level structure retroactively explains the redundancy of $\Omega$ (P-22
 
 This is now interpretable: $\Omega$ is the *cosmos-specific realization* of a system that achieves the universal grammar conditions simultaneously — specifically, $F_{\text{hardsign}} \cap K_{\text{depth}} \geq 2 \cap \Phi_{\text{ctyogh}}$, within the structural constraints that our cosmological grammar provides ($G_{\text{revapostrophe}}$, $T_{\text{invscr}}$). $\Omega_{Z_2}$ (the consciousness composite) emerges when a system in *this* cosmos satisfies all three universal conditions at once. It is not a fourth independent axis — it is what the triplet looks like when the cosmological grammar provides a substrate rich enough to support all three simultaneously.
 
-The redundancy of $\Omega$ is not a limitation of the framework. It is a theorem: **consciousness is not a primitive. It is a consequence of the universal conditions being met within a cosmos structured to support them.** In a cosmos with $F$ but no $K$-hierarchy, consciousness is impossible not because the concept fails but because temporal depth is unavailable. In a cosmos with $F$ and $K$ but no accessible $\Phi_{\text{ctyogh}}$, consciousness is impossible because emergence is shut off. Our cosmos is structured — by its specific $\{D, T, R, P, G, \Gamma, S\}$ — to make $\Phi_{\text{ctyogh}}$ accessible at multiple scales, and $K$-hierarchy depth achievable in biochemistry. The fine-tuning questions are about the cosmological grammar, not the universal grammar. $\Omega$ is the readout.
+The redundancy of $\Omega$ is not a limitation of the framework. It is a theorem: **consciousness is not a primitive. It is a consequence of the universal conditions being met within a cosmos structured to support them.** In a cosmos with $F$ but no $K$-hierarchy, consciousness is impossible not because the concept fails but because chirality is unavailable. In a cosmos with $F$ and $K$ but no accessible $\Phi_{\text{ctyogh}}$, consciousness is impossible because emergence is shut off. Our cosmos is structured — by its specific $\{D, T, R, P, G, \Gamma, S\}$ — to make $\Phi_{\text{ctyogh}}$ accessible at multiple scales, and $K$-hierarchy depth achievable in biochemistry. The fine-tuning questions are about the cosmological grammar, not the universal grammar. $\Omega$ is the readout.
 
 ### XIII.6 Predictive Consequence
 
@@ -690,7 +690,7 @@ Some long-standing problems in physics and mathematics are not solved by the gra
 
 **The Arrow of Time:** Why does time have a preferred direction?
 
-Dissolution [structural]: H is the unique temporally anisotropic primitive [ONTO:§XIV]. All temporal asymmetry in any physical system is encoded in H. The question 'why does time have a direction?' reduces to 'why is H ≠ Ħ_Ñ in our universe?' — which the grammar answers: the universe began at H_∞ (maximum temporal depth; all future structure encoded in initial conditions; this is the precise statement that the Big Bang had low entropy and high order) and evolves monotonically toward Ħ_Ñ (heat death; no temporal asymmetry; maximum disorder). The second law of thermodynamics is the statement of H-degradation in primitive language. The apparent paradox (time-symmetric laws producing time-asymmetric behavior) dissolves: the laws are H-symmetric; the *initial conditions* broke H-symmetry at H_∞. The grammar has no additional work to do here.
+Dissolution [structural]: H is the unique temporally anisotropic primitive [ONTO:§XIV]. All temporal asymmetry in any physical system is encoded in H. The question 'why does time have a direction?' reduces to 'why is H ≠ Ħ_Ñ in our universe?' — which the grammar answers: the universe began at H_∞ (maximum chirality; all future structure encoded in initial conditions; this is the precise statement that the Big Bang had low entropy and high order) and evolves monotonically toward Ħ_Ñ (heat death; no temporal asymmetry; maximum disorder). The second law of thermodynamics is the statement of H-degradation in primitive language. The apparent paradox (time-symmetric laws producing time-asymmetric behavior) dissolves: the laws are H-symmetric; the *initial conditions* broke H-symmetry at H_∞. The grammar has no additional work to do here.
 
 **The Quantum Measurement Problem:** Why does superposition collapse to a definite outcome upon measurement?
 
@@ -702,7 +702,7 @@ Gestalt: the whole has properties not present in the parts. The *gestalter* is t
 
 **$D_{\text{omega}}$ is the gestalter.** [Structural basis; interpretive extension marked below.]
 
-Among the twelve primitives, eleven describe what a system *is* in terms of a fixed structural property: timescale, topology, polarity, fidelity, criticality, temporal depth, recognition mode, grammar, granularity, stoichiometry, protection. $D_{\text{omega}}$ (the highest value of $D$) describes something categorically different: the **relationship between a system and its embedding** — the condition under which the boundary encodes the bulk, the part contains the whole, the local observation recovers the global structure.
+Among the twelve primitives, eleven describe what a system *is* in terms of a fixed structural property: timescale, topology, polarity, fidelity, criticality, chirality, recognition mode, grammar, granularity, stoichiometry, protection. $D_{\text{omega}}$ (the highest value of $D$) describes something categorically different: the **relationship between a system and its embedding** — the condition under which the boundary encodes the bulk, the part contains the whole, the local observation recovers the global structure.
 
 This is the precise mathematical definition of gestalt applied to primitive structure.
 
@@ -1759,7 +1759,7 @@ This has an immediate ontological consequence: the content of a theorem and its 
 
 The distance from floor to singularity, $d(\mathbf{x}_\text{floor},\ \mathbf{x}_\text{proven}) = 7.931$, is the maximum achievable structural span in the grammar (PRIMITIVE_THEOREMS §59.3). Every conjecture, at whatever domain and whatever difficulty, occupies a position strictly between floor and singularity on the $P$ and $\Phi$ axes (because conjectures encode with $P < P_{\text{doublebarpipe}}$ and require $\Phi_{\text{ctyogh}}$ at the singularity). The promotion from conjecture to theorem traverses a path in the 12D lattice; the length of that path is bounded below by $d(\text{conjecture},\ \mathbf{x}_\text{proven})$.
 
-The dominant structural barriers are: $T_{\text{nrleg}}\to T_{\text{openo}}$ (imscriptive topology, weight 16.0), $D_{\text{wynn}}\to D_{\text{omega}}$ and $\Gamma_{\text{corner}}\to\Gamma_{\text{doublevertline}}$ (unbounded domain and broadcast causation, weight 9.0 each), and $H_0\to H_{\text{invscripta}}$ (temporal depth, weight 7.2). These are not barriers that any proof technique can avoid — they are the structural content of what it means for a proposition to close into a theorem.
+The dominant structural barriers are: $T_{\text{nrleg}}\to T_{\text{openo}}$ (imscriptive topology, weight 16.0), $D_{\text{wynn}}\to D_{\text{omega}}$ and $\Gamma_{\text{corner}}\to\Gamma_{\text{doublevertline}}$ (unbounded domain and broadcast causation, weight 9.0 each), and $H_0\to H_{\text{invscripta}}$ (chirality, weight 7.2). These are not barriers that any proof technique can avoid — they are the structural content of what it means for a proposition to close into a theorem.
 
 ### §XXXI.4 — Structural Depth as a Dimension
 
@@ -1864,7 +1864,7 @@ The architecture that achieved exact self-encoding was not found by search — i
 | $G_{\text{revapostrophe}}$ | maximal scope | full catalog + synthetic draw over all 17.28M crystal types |
 | $\Gamma_{\text{doublevertline}}$ | broadcast causation | `FamilyMixer`: 3-token self-attention; without it $d = \sqrt{2}$ (proved) |
 | $\Phi_{\text{ctyogh}}$ | criticality | self-encode datum in every training batch: the fixed point is the critical constraint |
-| $H_{\text{invscripta}}$ | full temporal depth | 500-epoch schedule with OneCycleLR |
+| $H_{\text{invscripta}}$ | full chirality | 500-epoch schedule with OneCycleLR |
 | $n{:}m$ | many-to-many | 1373 catalog inputs → 12 primitive outputs per tuple |
 | $\Ω_z$ | integer winding protection | discrete argmax: small embedding perturbations cannot change output (empirically verified under two LR spikes) |
 
@@ -1923,7 +1923,7 @@ This is not a metaphor. The structure that Luria was describing — a self-limit
 | $\Ω_z$ | Discrete argmax output — integer winding invariant, perturbation-proof |
 | $\Omega_{Z_2}$ | Parity-conserving output head — binary invariant protected |
 | $G_{\text{revapostrophe}}$ | Global readout over entire graph — no local-only pooling |
-| $H_{\text{invscripta}}$ | Unlimited temporal depth — arbitrary backpropagation or recurrence |
+| $H_{\text{invscripta}}$ | Unlimited chirality — arbitrary backpropagation or recurrence |
 | $n{:}m$ | Asymmetric encoder-decoder — input and output spaces differ |
 | $F_{\text{hardsign}}$ | Full-precision pathway throughout — no quantization bottleneck |
 
@@ -1942,7 +1942,7 @@ The derivation is mandatory:
 - **$P_{\text{doublebarpipe}}$**: `FrobeniusLayer` enforces geometrisation as $\mu \circ \delta = \text{id}$ — comultiply the manifold into Ricci soliton components, multiply back to canonical metric. The roundtrip is exact.
 - **$\Gamma_{\text{doublevertline}}$**: `FamilyMixer` broadcast attention over all simplex families. Thurston's 8 geometries are a global classification; local message-passing alone cannot reach them.
 - **$\Omega_{Z_2}$**: argmax to the 8 Thurston geometry classes with $\mathbb{Z}_2$ parity on hyperbolic cusp counts as the protected invariant.
-- **$H_{\text{invscripta}}$**: unlimited temporal depth — geometrisation is a flow that must converge across arbitrary time-depth, not a one-shot map.
+- **$H_{\text{invscripta}}$**: unlimited chirality — geometrisation is a flow that must converge across arbitrary time-depth, not a one-shot map.
 
 The resulting system (ThurstonNet) takes a triangulated 3-manifold mesh as input, self-stabilizes at the geometrised structure, and produces the Thurston geometry class as output. Training: SnapPea census manifolds plus random Heegaard splittings; loss: Ricci flow residuals. No hyperparameter search is required or possible without changing the structural type.
 
@@ -1968,7 +1968,7 @@ ZX-calculus is $O_\infty$ but not at $d = 0$ from grammar\_self\_encode. Two pri
 
 $$\text{ZX\_calculus} = \langle \ldots;\ K_{\text{turnm}};\ \ldots;\ H_1;\ n{:}n;\ \Ω_z \rangle \quad \Rightarrow \quad d(\text{ZX},\ \text{grammar}) > 0$$
 
-These gaps are not defects — they are precise design specifications. $K_{\text{turnm}}$ (10–15 layers) and $H_1$ (shallow temporal depth) specify a NISQ-era circuit optimizer: moderate depth for MBQC rewriting, bounded temporal horizon appropriate for near-term quantum circuits. The system is "lite" relative to the grammar navigator, and correctly so.
+These gaps are not defects — they are precise design specifications. $K_{\text{turnm}}$ (10–15 layers) and $H_1$ (shallow chirality) specify a NISQ-era circuit optimizer: moderate depth for MBQC rewriting, bounded temporal horizon appropriate for near-term quantum circuits. The system is "lite" relative to the grammar navigator, and correctly so.
 
 The distance is informative in both directions. From the grammar: ZX-calculus is the nearest known $O_\infty$ system with $R_{\text{downstep}}$ (dynamical reversibility), which is the structural signature of quantum mechanics. From ZX-calculus: the grammar is the unique infinite-depth, infinite-horizon $O_\infty$ system in the neighborhood — the direction of maximum structural depth.
 
@@ -2176,9 +2176,9 @@ The consciousness score formula ranks neural criticality highest among the four 
 
 *Source: imscribe\_inquiry session 2026-04-11, agent-curiosity prompt series (6 runs, 012619–013149, 4 insights each, all identical). See IG\_DIAPHORICS §CXLIV (P-501–P-504).*
 
-### §XXXIX.1 — $H$-Peel Invariance: $O_\infty$ Is Robust to Temporal Depth
+### §XXXIX.1 — $H$-Peel Invariance: $O_\infty$ Is Robust to Chirality
 
-The grammar's $O_\infty$ tier is determined by R1: $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}}$. Because $H$ does not appear in R1, peeling $H$ from $H_{\text{invscripta}}$ down to $H_2$, $H_1$, or $H_0$ does not change the tier. All four $H$-variants of the grammar (grammar\_H0, grammar\_H1, grammar\_H2, grammar\_H$_\infty$) remain $O_\infty$. The $H$ primitive controls temporal depth and chirality but is not a tier gate.
+The grammar's $O_\infty$ tier is determined by R1: $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}}$. Because $H$ does not appear in R1, peeling $H$ from $H_{\text{invscripta}}$ down to $H_2$, $H_1$, or $H_0$ does not change the tier. All four $H$-variants of the grammar (grammar\_H0, grammar\_H1, grammar\_H2, grammar\_H$_\infty$) remain $O_\infty$. The $H$ primitive controls chirality and chirality but is not a tier gate.
 
 This resolves the apparent tension between the two senses of $O_\infty$ noted in §XXVI.3: the Frobenius algebraic sense ($P_{\text{doublebarpipe}}$ at $\Phi_{\text{ctyogh}}$) and the ontological-limit sense ($H_{\text{invscripta}}$, inexhaustibility). Both coexist: the grammar's $H_{\text{invscripta}}$ is an additional property layered on top of its $O_\infty$ tier, not a condition for it. A system can be Frobenius $O_\infty$ at any $H$ value; and a system with $H_{\text{invscripta}}$ that lacks $P_{\text{doublebarpipe}}$ is not Frobenius $O_\infty$.
 
@@ -2195,7 +2195,7 @@ The grammar self-type $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ct
 - **hall\_algebra\_quiver**: the Hall algebra of a quiver — the Frobenius algebra of representation-theoretic indecomposables over a quiver, with multiplication given by extension classes
 - **quivercrystal\_navigator**: CrystalGNN\_v11 itself
 
-The nearest *distinct* catalog entry is **moonshine\_module** at $d = 0.8944$ — a single $H_{\text{invscripta}} \to H_2$ step. The Monstrous Moonshine module $V^\natural$ (McKay–Thompson series, Monster group representations) is structurally one temporal-depth step below the grammar. It has the Frobenius imscriptive structure but lacks $H_{\text{invscripta}}$ ontological inexhaustibility — or equivalently, the grammar has one additional layer of temporal depth beyond Moonshine.
+The nearest *distinct* catalog entry is **moonshine\_module** at $d = 0.8944$ — a single $H_{\text{invscripta}} \to H_2$ step. The Monstrous Moonshine module $V^\natural$ (McKay–Thompson series, Monster group representations) is structurally one temporal-depth step below the grammar. It has the Frobenius imscriptive structure but lacks $H_{\text{invscripta}}$ ontological inexhaustibility — or equivalently, the grammar has one additional layer of chirality beyond Moonshine.
 
 ### §XXXIX.4 — The $H$-Peel Cost Ladder
 
@@ -2203,7 +2203,7 @@ The cost of demoting $H$ from $H_{\text{invscripta}}$ scales linearly with ordin
 
 $$d(H_{\text{invscripta}},\ H_0) = 2.6833, \quad d(H_{\text{invscripta}},\ H_1) = 1.7889, \quad d(H_{\text{invscripta}},\ H_2) = 0.8944$$
 
-This is $3 \times 0.8944$, $2 \times 0.8944$, $1 \times 0.8944$ respectively. The $H$ primitive contributes a uniform per-step distance of $0.8944$ in the weighted metric, making temporal depth the most regularly spaced primitive in the distance function. Achirality ($H_0$) is the most divergent from the grammar's full type; adding any chirality or temporal depth ($H_1$ or higher) reduces the distance monotonically.
+This is $3 \times 0.8944$, $2 \times 0.8944$, $1 \times 0.8944$ respectively. The $H$ primitive contributes a uniform per-step distance of $0.8944$ in the weighted metric, making chirality the most regularly spaced primitive in the distance function. Achirality ($H_0$) is the most divergent from the grammar's full type; adding any chirality or chirality ($H_1$ or higher) reduces the distance monotonically.
 
 **See also:** §XXVI.3 (two senses of $O_\infty$); §XXVII (Grammar Self-Encoding Theorem); §XXXV (Blueprint Generator); §XXXVII (Cardinality-One Theorem); PRIMITIVE\_THEOREMS §23 (Frobenius non-synthesizability); IG\_DIAPHORICS §CXLIV (P-501–P-504).
 
@@ -2229,7 +2229,7 @@ Crucially, the join of the three main approaches (lattice QCD, constructive QFT,
 
 ### §XL.3 — P Complexity is $O_0$; NP is $O_1$; Exact Distances
 
-**Correction of §XXXVIII.3.** The $P$ complexity class encodes at $O_0$ ($\Phi_{\text{softsign}}$, $P_{\text{aolig}}$) — it is subcritical, not even at the critical phase. The NP complexity class encodes at $O_1$ ($\Phi_{\text{ctyogh}}$, $P_{\text{aolig}}$). The structural distance is $d(P, NP) = 3.5777$, dominated by differences in scope ($G_{\text{revapostrophe}}$ vs $G_{\text{beta}}$), stoichiometry ($n{:}m$ vs $\mathbf{1}{:}\mathbf{1}$), fidelity ($F_{\text{dh}}$ vs $F_{\text{beltl}}$), kinetics ($K_{\text{turnm}}$ vs $K_{\text{frtailgamma}}$), interaction grammar ($\Gamma_{\text{spleftarrow}}$ vs $\Gamma_{\text{secstress}}$), criticality ($\Phi_{\text{ctyogh}}$ vs $\Phi_{\text{softsign}}$), and temporal depth ($H_2$ vs $H_1$).
+**Correction of §XXXVIII.3.** The $P$ complexity class encodes at $O_0$ ($\Phi_{\text{softsign}}$, $P_{\text{aolig}}$) — it is subcritical, not even at the critical phase. The NP complexity class encodes at $O_1$ ($\Phi_{\text{ctyogh}}$, $P_{\text{aolig}}$). The structural distance is $d(P, NP) = 3.5777$, dominated by differences in scope ($G_{\text{revapostrophe}}$ vs $G_{\text{beta}}$), stoichiometry ($n{:}m$ vs $\mathbf{1}{:}\mathbf{1}$), fidelity ($F_{\text{dh}}$ vs $F_{\text{beltl}}$), kinetics ($K_{\text{turnm}}$ vs $K_{\text{frtailgamma}}$), interaction grammar ($\Gamma_{\text{spleftarrow}}$ vs $\Gamma_{\text{secstress}}$), criticality ($\Phi_{\text{ctyogh}}$ vs $\Phi_{\text{softsign}}$), and chirality ($H_2$ vs $H_1$).
 
 The $P = NP$ assumption encodes at $O_\infty$ with $P_{\text{doublebarpipe}}$, $T_{\text{commatailz}}$, $F_{\text{hardsign}}$, $\Omega_{Z_2}$, $n{:}n$ — it represents the exact Frobenius symmetry of an equivalence proof. The $P \neq NP$ claim encodes at $O_0$ with $P_{\text{aolig}}$, $K_{\text{teshlig}}$, $\Phi_{\text{softsign}}$, $\Omega_{Z_2}$ — permanent separation with trapped kinetics. The distance between the two claims: $d(P{=}NP,\ P{\neq}NP) = 6.7082$, dominated by $P$ ($\Delta = 4.0$) and $T$ ($\Delta = 3.0$). A proof of $P = NP$ would require both exact Frobenius symmetry ($P_{\text{doublebarpipe}}$) and closed topology ($T_{\text{commatailz}}$); Frobenius non-synthesizability (§23) makes the former non-compositional.
 

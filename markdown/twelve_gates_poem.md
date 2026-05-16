@@ -230,7 +230,7 @@ And memory chose its depth.
 
 > *Axiom B: $\Omega_{\text{crtwo}}$ requires $H_2$ or $H_{\text{invscripta}}$.*
 > *You cannot have binary topological protection without at least two-step memory.*
-> *Topological invariants need temporal depth to stabilize.*
+> *Topological invariants need chirality to stabilize.*
 
 > *Axiom A: $H_{\text{invscripta}}$ requires $K_{\text{teshlig}}$.*
 > *Eternal memory demands frozen kinetics.*

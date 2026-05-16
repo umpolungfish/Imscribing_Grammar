@@ -718,7 +718,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `φ̂_3`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
 - `φ̂_Ţ`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
 
-**H — Chirality / temporal depth** (persistence of broken orientational symmetry; memory depth):
+**H — Chirality / chirality** (persistence of broken orientational symmetry; memory depth):
 - `Ħ_Ñ`: Achiral — mirror image accessible; no persistent symmetry breaking.
 - `Ħ_£`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
 - `Ħ_A`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.

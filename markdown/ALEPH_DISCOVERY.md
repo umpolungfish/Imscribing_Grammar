@@ -47,7 +47,7 @@ where each primitive takes an ordered set of values (ordinals). The 12 primitive
 | $G$ | Scope/granularity | Scale |
 | $\Gamma$ | Interaction grammar | Compositional mode |
 | $\Phi$ | Criticality | Distance from critical point |
-| $H$ | Chirality/temporal depth | Time-asymmetry |
+| $H$ | Chirality/chirality | Time-asymmetry |
 | $S$ | Stoichiometry | Ratio structure |
 | $\Omega$ | Topological protection | Robustness class |
 

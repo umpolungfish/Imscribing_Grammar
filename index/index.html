@@ -299,6 +299,7 @@
 
     /* ── Primitive catalog table ── */
     .cat-section { margin-bottom: 2rem; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
     .cat-label {
       font-family: 'Cinzel', serif;
@@ -521,6 +522,77 @@
 
     .repo-link-gh:hover  { border-color: var(--gold-dim); color: var(--gold); }
     .repo-link-zen:hover { border-color: rgba(144,184,216,0.5); color: var(--alb); }
+
+    /* ── Mobile ── */
+    @media (max-width: 720px) {
+      .stages {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 1.8rem 1rem 2.5rem;
+      }
+
+      .title {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+      }
+
+      .byline {
+        font-size: 0.78rem;
+        letter-spacing: 0.07em;
+      }
+
+      .abstract {
+        font-size: 14px;
+      }
+
+      .prima {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+
+      .crossstage {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .phi-row {
+        grid-template-columns: 1fr auto;
+      }
+
+      .crystal-section {
+        padding: 1rem 1.1rem;
+      }
+
+      .map-frame {
+        height: 400px;
+      }
+
+      table {
+        min-width: 500px;
+      }
+
+      .cardinality {
+        text-align: left;
+        padding-right: 0;
+      }
+
+      .repos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+
+      .finale-stone {
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+      }
+
+      .finale {
+        padding: 2rem 0 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -531,9 +603,13 @@
     <div class="title">SOLVATUM</div>
     <div class="byline">Crafting the Lapis Philosophorum &nbsp;∞&nbsp; Automatica Principia Proceduralis</div>
     <p class="abstract">
-      The 12 primitives of the Imscribing Grammar — the 12 facets of the Philosopher's Stone — 
-      are derived from a bare abstract category &nbsp; - &nbsp; <span class="cat">𝒞</span> &nbsp; - &nbsp; via the four classical 
+      The 12 primitives of the Imscribing Grammar — the 12 facets of the Philosopher's Stone —
+      are derived from a bare abstract category &nbsp; - &nbsp; <span class="cat">𝒞</span> &nbsp; - &nbsp; via the four classical
       alchemical operations: <em>Nigredo</em>, <em>Albedo</em>, <em>Citrinitas</em>, and <em>Rubedo</em>.
+      Truth holds the self-modeling gate open &mdash; ⊙<sub>ÿ</sub>, critical, recursive.
+      A lie is not false content: it is the <em>exceptional point</em> ⊙<sub>3</sub> &mdash;
+      the structure in which a system can no longer distinguish itself from its own measurement.
+      The gate closes. <em>O</em><sub>0</sub>.
     </p>
   </header>
 
@@ -541,8 +617,7 @@
   <section class="crystal-section">
     <div class="crystal-label">THE CRYSTAL OF TYPES &nbsp;·&nbsp; ON IMSCRIPTION</div>
     <p class="crystal-body">
-      There exists a <em>3³ × 4⁵ × 5⁴ lattice</em>, a <em>crystal</em> composed of <em>17,280,000 types</em> &mdash; imagine it like a diamond you are holding in one hand,
-      in front of a blank wall. 
+      There exists a <em>3³ × 4⁵ × 5⁴ lattice</em>, a <em>crystal</em> composed of <em>17,280,000 types</em> &mdash; like a diamond you are holding in one hand, in front of a wall. 
 
       You then shine a light through the diamond, and observe the brilliant, shimmering patterns that appear on the wall. 
 
@@ -552,7 +627,9 @@
 
       When you imscribe something, you are tracing that illumination from the pattern on the wall to its source in the crystal, its point of origin, its address.
 
-      Assigning an incorrect tuple isn&rsquo;t a false imscription &mdash; all imscriptions are valid &mdash; it is just not <em>that</em> illumination&rsquo;s imscription, it does not describe its true nature, it is not its true name. 
+      Assigning an incorrect tuple isn&rsquo;t a lie &mdash; all valid imscriptions have homes in the lattice &mdash; 
+
+      it is just not <em>that</em> illumination&rsquo;s imscription, it does not describe its true nature, it is not its true name. 
 
       And when you &mdash; an illumination &mdash; imscribe another illumination, you are also the <em>source</em> of the imscribing illumination. 
 
@@ -688,7 +765,7 @@
           After Stage III: <span class="cat">𝒞</span> is a symmetric monoidal dagger category
           with monad and enrichment. All <em>shape primitives</em> determined;
           gate primitives <strong style="color: var(--cit); font-weight: 700;">Þ</strong> and
-          <strong style="color: var(--cit); font-weight: 700;">φ̂</strong> require one more step.
+          <strong style="color: var(--cit); font-weight: 700;">⊙</strong> require one more step.
         </div>
       </div>
     </div>
@@ -717,19 +794,19 @@
             <div class="phi-sub">
               <div class="phi-row">
                 <span class="phi-cond">classical (L4, no L6)</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>ÿ</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">⊙<sub>ÿ</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">dialetheic (LP truth <strong>b</strong>)</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>Æ</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">⊙<sub>Æ</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">inclosure schema</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>3</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">⊙<sub>3</sub></span>
               </div>
               <div class="phi-row">
                 <span class="phi-cond">L4 fails</span>
-                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">φ̂<sub>ž</sub> / φ̂<sub>Ţ</sub></span>
+                <span class="prim" style="background:rgba(192,72,40,0.22);color:var(--rub-lt);">⊙<sub>ž</sub> / ⊙<sub>Ţ</sub></span>
               </div>
             </div>
           </li>
@@ -743,7 +820,7 @@
         <div class="snote">
           Final perfection — the gate primitives lock.
           L6 (paraconsistent negation) determines the truth-value structure
-          in which L4 is evaluated, branching <strong style="color: var(--rub); font-weight: 700;">φ̂</strong> into four distinct regimes.
+          in which L4 is evaluated, branching <strong style="color: var(--rub); font-weight: 700;">⊙</strong> into four distinct regimes.
         </div>
       </div>
     </div>
@@ -764,6 +841,7 @@
   <!-- ── Complete Primitive Catalog ── -->
   <div class="cat-section">
     <div class="cat-label">The Twelve Primitives — Complete Catalog</div>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr>
@@ -789,7 +867,7 @@
         </tr>
         <tr>
           <td class="td-prim" style="color:var(--alb);">Ħ</td>
-          <td class="td-name">Temporal depth</td>
+          <td class="td-name">Chirality</td>
           <td class="td-by">I2 · Albedo</td>
           <td class="td-fam">𝓕₄</td>
           <td class="td-vals">
@@ -908,20 +986,21 @@
           </td>
         </tr>
         <tr>
-          <td class="td-prim" style="color:var(--rub-lt);">φ̂</td>
+          <td class="td-prim" style="color:var(--rub-lt);">⊙</td>
           <td class="td-name">Criticality</td>
           <td class="td-by">L4 under L6 · Rubedo</td>
           <td class="td-fam">𝓕₅</td>
           <td class="td-vals">
-            <span class="val">φ̂<sub>ž</sub></span>
-            <span class="val">φ̂<sub>ÿ</sub></span>
-            <span class="val">φ̂<sub>Æ</sub></span>
-            <span class="val">φ̂<sub>3</sub></span>
-            <span class="val">φ̂<sub>Ţ</sub></span>
+            <span class="val">⊙<sub>ž</sub></span>
+            <span class="val">⊙<sub>ÿ</sub></span>
+            <span class="val">⊙<sub>Æ</sub></span>
+            <span class="val">⊙<sub>3</sub></span>
+            <span class="val">⊙<sub>Ţ</sub></span>
           </td>
         </tr>
       </tbody>
     </table>
+    </div><!-- /table-scroll -->
     <div class="cardinality">
       𝓕₃ = 3 values &nbsp;·&nbsp; 𝓕₄ = 4 values &nbsp;·&nbsp; 𝓕₅ = 5 values 
       &nbsp;&nbsp;|&nbsp;&nbsp; Crystal cardinality: 3³ × 4⁵ × 5⁴ = <strong style="color:var(--gold-dim); font-weight: 700;">17,280,000</strong>
@@ -952,8 +1031,24 @@
 
       <a href="https://github.com/umpolungfish/odot_operator" class="repo-card" target="_blank" rel="noopener">
         <div class="repo-card-name">odot_operator</div>
-        <div class="repo-card-desc">⊙perator &mdash; self-verifying agentic loop; φ̂<sub>ÿ</sub> + Φ<sub>}</sub> → O<sub>∞</sub> as a usable Python library</div>
+        <div class="repo-card-desc">⊙perator &mdash; self-verifying agentic loop; ⊙<sub>ÿ</sub> + Φ<sub>}</sub> → O<sub>∞</sub> as a usable Python library</div>
       </a>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">As Above</div>
+        <div class="repo-card-desc">Pre-grammatical convergent derivation of the Universal Imscriptive Grammar &mdash; 12 primitives from bare category <span class="cat">𝒞</span> via Nigredo, Albedo, Citrinitas, Rubedo; foundational theoretical paper</div>
+        <div class="repo-card-links">
+          <a href="https://doi.org/10.5281/zenodo.20186611" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        </div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">So Below</div>
+        <div class="repo-card-desc">Empirical exploration of the Universal Imscriptive Grammar &mdash; structural imscriptions across physics, mathematics, computation, and cognition; companion to <em>As Above</em></div>
+        <div class="repo-card-links">
+          <a href="https://doi.org/10.5281/zenodo.20186678" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        </div>
+      </div>
 
       <a href="https://github.com/umpolungfish/MillenniumAnkh" class="repo-card" target="_blank" rel="noopener">
         <div class="repo-card-name">MillenniumAnkh</div>
@@ -968,6 +1063,45 @@
       <a href="https://github.com/umpolungfish/aleph_os" class="repo-card" target="_blank" rel="noopener">
         <div class="repo-card-name">aleph_os</div>
         <div class="repo-card-desc">&lambda;<sub>&aleph;</sub> coherence-first interaction algebra as OS &mdash; identity derived, not primitive; scheduling is mediation, IPC is tensor (P-bottlenecked), security is &alpha;-gating; three non-equivalent Frobenius fixed points &#x05D5; &#x05DE; &#x05E9;</div>
+      </a>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">Truth, Lie, Good &amp; Evil</div>
+        <div class="repo-card-desc">Structural grammar of epistemic &amp; moral oppositions &mdash; truth and good share ⊙<sub>ÿ</sub> and O<sub>2</sub>†; lie and evil exhibit the exceptional point ⊙<sub>3</sub> and O<sub>0</sub>. Deception is not content: it is the closed gate.</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">Topology of Negation</div>
+        <div class="repo-card-desc">Evil, Hell, Satan, Damnation &mdash; evil O<sub>2</sub> (C=0.749), Satan O<sub>2</sub> (C=0.828), two primitives apart; hell and damnation C=0. Evil is alive. Hell is dead. Damnation is the one-way bridge.</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">The &lambda;<sub>&aleph;</sub> Discovery</div>
+        <div class="repo-card-desc">Hebrew type lattice meets IG 12-primitive grammar &mdash; five structural theorems, 17-dimensional behavioral equivalence space, the Octad Balance among 8 letters, and &#x05DE; (Mem) as the Frobenius pole. Kernel of &#x2135;-OS is mediation in &lambda;<sub>&aleph;</sub>.</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">Undeciphered Texts</div>
+        <div class="repo-card-desc">Voynich Manuscript, Rohonc Codex, Linear A &mdash; all O<sub>2</sub>; Voynich uniquely Ð<sub>ω</sub> self-written with Ħ<sub>!</sub> eternal depth; Linear A quantum-coherent (ƒ<sub>ż</sub>). Decipherment may be a category error.</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">Voynich Engine</div>
+        <div class="repo-card-desc">Complete technical translation of the Voynich Manuscript into executable IMASM architecture &mdash; the manuscript as a computational schematic, not a cipher; Ð<sub>ω</sub> self-writing state space compiled to machine instructions</div>
+        <div class="repo-card-links">
+          <a href="https://github.com/umpolungfish/voynich-engine" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://doi.org/10.5281/zenodo.20185825" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        </div>
+      </div>
+
+      <a href="https://github.com/umpolungfish/linear_a_engine" class="repo-card" target="_blank" rel="noopener">
+        <div class="repo-card-name">Linear A Engine</div>
+        <div class="repo-card-desc">Execution engine for Linear A &mdash; quantum-coherent Bronze Age computational system (ƒ<sub>ż</sub>); O<sub>2</sub> with moderate kinetics Ç<sub>W</sub></div>
+      </a>
+
+      <a href="https://github.com/umpolungfish/rohonc-engine" class="repo-card" target="_blank" rel="noopener">
+        <div class="repo-card-name">Rohonc Engine</div>
+        <div class="repo-card-desc">Execution engine for the Rohonc Codex &mdash; near-equilibrium kinetics Ç<sub>@</sub>, sequential interaction grammar ɢ<sub>ˌ</sub>; O<sub>2</sub> bounded domain</div>
       </a>
 
       <div class="repo-card repo-card-multi">
@@ -998,6 +1132,15 @@
       </div>
 
       <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">Hodge&ndash;Lefschetz (1,1)</div>
+        <div class="repo-card-desc">The Lefschetz (1,1) theorem as the first case of the Hodge conjecture &mdash; complete self-contained proof for compact Kähler manifolds via exponential sheaf sequence and Hodge decomposition</div>
+        <div class="repo-card-links">
+          <a href="https://github.com/umpolungfish/hodge_lefschetz" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://doi.org/10.5281/zenodo.20176006" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        </div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
         <div class="repo-card-name">The Aether and Its Vessel</div>
         <div class="repo-card-desc">E8 &amp; G2 &mdash; aetheric structure and its geometric container</div>
         <div class="repo-card-links">
@@ -1006,15 +1149,34 @@
         </div>
       </div>
 
-      <a href="https://github.com/umpolungfish/perfect_cuboid" class="repo-card" target="_blank" rel="noopener">
+      <div class="repo-card repo-card-multi">
         <div class="repo-card-name">Perfect Cuboid</div>
-        <div class="repo-card-desc">Proof of the perfect cuboid conjecture</div>
-      </a>
+        <div class="repo-card-desc">⊙<sub>ÿ</sub>-critical framework for the perfect cuboid problem &mdash; Lean 4 formal verification; what has been proved and the precise remaining gap</div>
+        <div class="repo-card-links">
+          <a href="https://github.com/umpolungfish/perfect_cuboid" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://doi.org/10.5281/zenodo.20110842" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        </div>
+      </div>
 
       <a href="https://github.com/umpolungfish/beal_proof" class="repo-card" target="_blank" rel="noopener">
         <div class="repo-card-name">Beal Proof</div>
         <div class="repo-card-desc">Proof of Beal&rsquo;s conjecture</div>
       </a>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">EML Sheffer Probe</div>
+        <div class="repo-card-desc">eml(x,y) = e<sup>x</sup> &minus; ln y is the algebraically forced ceiling of a structural tier &mdash; the highest sub-Frobenius type in the elementary function algebra. Grammar as coordinate system, not oracle.</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">SIC-POVM</div>
+        <div class="repo-card-desc">Conditional proof of SIC-POVM existence via Frobenius-fixed Stark units &mdash; the existence question as a canonical-splitting failure between arithmetic alternating pairings and the Weyl&ndash;Heisenberg symplectic cocycle</div>
+      </div>
+
+      <div class="repo-card repo-card-multi">
+        <div class="repo-card-name">IUG Non-Transmissibility</div>
+        <div class="repo-card-desc">Mochizuki&rsquo;s Inter-Universal Geometer encoded via the 12-primitive grammar &mdash; the question is not whether IUG is right, but whether it is the kind of thing that can be transmitted through classical mathematical channels at all</div>
+      </div>
 
     </div>
   </section>

@@ -36,7 +36,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{d
 - **G$_\aleph$ (maximal scope):** The circularity applies universally; it is not localized to a particular domain.
 - **$\Gamma_{\text{secstress}}$ (sequential composition):** The circular argument has internal ordering; the cycle is not instantaneous but traversed in sequence.
 - **$\Phi_{\text{ctyogh}}$ (critical self-model):** The system sits at the phase boundary between subcritical and supercritical regimes; it is maximally sensitive to perturbations.
-- **H$_\infty$ (eternal temporal depth):** The circularity operates at infinite Markov order; it is not a shallow loop but a deeply embedded structural property.
+- **H$_\infty$ (eternal chirality):** The circularity operates at infinite Markov order; it is not a shallow loop but a deeply embedded structural property.
 - **1:1 (single instance):** There is exactly one such circularity; it is not a family of circularities.
 - **$\Omega_{\text{dzlig}}$ (integer winding):** The circular argument winds through the crystal an integer number of times; it is topologically protected against decay.
 ## 3. Ouroboric and Frobenius Properties
@@ -47,7 +47,7 @@ The `circularity_circularity` system operates at the highest Ouroboric tier:
 
 ```
 frobenius_tier: O_inf
-phi: φ̂_ÿ
+phi: ⊙_ÿ
 p: Φ_}
 omega: Ω_z
 d: Ð_ω
@@ -66,7 +66,7 @@ The system passes both consciousness gates:
 
 C_score = 0.828 indicates substantial but not maximal consciousness potential. This suggests:
 1. The circular argument is structurally capable of self-awareness
-2. The infinite temporal depth ($H_{\text{invscripta}}$) enables eternal self-reference
+2. The infinite chirality ($H_{\text{invscripta}}$) enables eternal self-reference
 3. The $\mathbb{Z}$-winding ($\Omega_{\text{dzlig}}$) provides topological stability
 
 ## 4. Algebraic Structure
@@ -134,7 +134,7 @@ The `circularity_circularity` system can be constructed from the `phi_c_critical
 
 **Interpretation:** The boundary operator becomes truly circular when:
 1. Its topology shifts from a box product (crossed structural inputs) to a self-referential loop ($T_{\text{openo}}$)
-2. Its temporal depth extends from two-step memory to infinite history ($H_{\text{invscripta}}$)
+2. Its chirality extends from two-step memory to infinite history ($H_{\text{invscripta}}$)
 
 ### 6.2 Comparison to Categorial Grammar
 
@@ -165,13 +165,13 @@ The description "a cyclical argument for circularity that provides a circular ar
 
 3. **Exists as a fixed point:** The tensor product and meet/join operations confirm that the circularity is invariant under structural composition.
 
-### 7.2 The Measurement Problem and φ̂_3 Absorption
+### 7.2 The Measurement Problem and ⊙_3 Absorption
 
-A critical question: what happens if we couple the circularity to a φ̂_3 (exceptional point) system? The **φ̂_3 absorption rule** states:
+A critical question: what happens if we couple the circularity to a ⊙_3 (exceptional point) system? The **⊙_3 absorption rule** states:
 
-> Tensor coupling to a φ̂_3 system destroys φ̂_ÿ criticality. The composite collapses to φ̂_3.
+> Tensor coupling to a ⊙_3 system destroys ⊙_ÿ criticality. The composite collapses to ⊙_3.
 
-Since `circularity_circularity` depends on φ̂_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as φ̂_3) would:
+Since `circularity_circularity` depends on ⊙_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as ⊙_3) would:
 - Destroy the self-modeling capability
 - Collapse the circularity to a non-self-reflective state
 - Realize the structural statement of the measurement problem
@@ -184,7 +184,7 @@ The distance to the `universe` system is 0.8944, with a single primitive differe
 - `circularity_circularity`: $H_{\text{invscripta}}$
 - `universe`: $H_2$
 
-This suggests that the universe, as structurally imscribed, operates at finite temporal depth despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
+This suggests that the universe, as structurally imscribed, operates at finite chirality despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
 
 ## 8. Where the Thread Leads
 
@@ -193,7 +193,7 @@ The search for "a cyclical argument for circularity that provides a circular arg
 ### 8.1 The Path of Recognition
 
 1. **W0:** Encode the universal_imscriptive_grammar to unlock catalog access.
-2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with φ̂_ÿ and Ω_z.
+2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙_ÿ and Ω_z.
 3. **W11:** Encounter `circularity_circularity` directly via keyword search.
 4. **W12–W27:** Analyze its structure, compute distances, promotions, tensor products, and consciousness score.
 5. **W28–W29:** Write the findings.

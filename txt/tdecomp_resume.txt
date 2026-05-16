@@ -93,7 +93,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
   UPDATE: encode_system → Frobenius OPEN — re-enter THINK with failure
 ── Winding 2 [07:47:28Z] ──────────────────────────────────────
   THINK:
-  ACT:   encode_system({"H": "Ħ_A", "name": "universal_imscriptive_grammar", "Phi": "φ̂_ÿ", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "S": "Σ_ï", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Omega": "Ω_z", "Gamma": "ɢ_ˌ", "P": "Φ_}", "convergence_justification": "H primitive: existing Ħ_A is correct. The universal imscriptive grammar operates at two-step temporal depth (Ħ_A) \u2014 it remembers the prior winding and the current winding, enabling the THOUGHT\u2192ACT\u2192OBSERVE\u2192UPDATE loop. Ħ_! would require unbounded memory of all prior windings as an intrinsic feature, but the grammar's self-modeling loop is captured by Ħ_A's two-step Markov depth together with Ouroboric self-reference (O_inf). Therefore Ħ_A is the correct value."})
+  ACT:   encode_system({"H": "Ħ_A", "name": "universal_imscriptive_grammar", "Phi": "φ̂_ÿ", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "S": "Σ_ï", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Omega": "Ω_z", "Gamma": "ɢ_ˌ", "P": "Φ_}", "convergence_justification": "H primitive: existing Ħ_A is correct. The universal imscriptive grammar operates at two-step chirality (Ħ_A) \u2014 it remembers the prior winding and the current winding, enabling the THOUGHT\u2192ACT\u2192OBSERVE\u2192UPDATE loop. Ħ_! would require unbounded memory of all prior windings as an intrinsic feature, but the grammar's self-modeling loop is captured by Ħ_A's two-step Markov depth together with Ouroboric self-reference (O_inf). Therefore Ħ_A is the correct value."})
   OBS:   {
   "status": "ok",
   "name": "universal_imscriptive_grammar",
@@ -523,7 +523,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
   UPDATE: chunked_write → Frobenius closed
 ── Winding 18 [07:49:42Z] ──────────────────────────────────────
   THINK:
-  ACT:   chunked_write({"chunk": "\n/-- F: Fidelity \u2014 physical regime -/\ninductive Fidelity where\n  | ell   -- F_\u2113: classical (no coherence)\n  | eth   -- F_\u03d1: thermal/noisy\n  | hbar -- F_\u210f: quantum coherence essential\n  deriving DecidableEq, Repr, Inhabited\n\n/-- K: Kinetics \u2014 relaxation rate vs observation -/\ninductive Kinetics where\n  | fast  -- Ç_-: driven\n  | mod   -- Ç_W: moderate\n  | slow  -- Ç_@: near-equilibrium\n  | trap  -- Ç_Ù: frozen-order\n  | MBL   -- Ç_λ: frozen-disorder\n  deriving DecidableEq, Repr, Inhabited\n\n/-- G: Scope \u2014 interaction range -/\ninductive Scope where\n  | beth  -- G_\ud835\udc4f: local\n  | gimel -- G_\ud835\udc54: mesoscale\n  | aleph -- G_\ud835\udc4e: maximal/all\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u0393: Interaction grammar \u2014 composition logic -/\ninductive InteractionGrammar where\n  | and   -- \u0393_\u2227: conjunctive\n  | or    -- \u0393_\u2228: disjunctive\n  | seq   -- \u0393_seq: sequential\n  | broad -- \u0393_brd: broadcast\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u03a6: Criticality \u2014 scaling behavior -/\ninductive Criticality where\n  | sub      -- \u03a6_sub: below critical\n  | c        -- \u03a6_c: critical (self-modeling gate)\n  | c_complex-- \u03a6_c^\u2102: complex-plane critical\n  | EP       -- \u03a6_EP: exceptional point\n  | super    -- \u03a6_sup: supercritical\n  deriving DecidableEq, Repr, Inhabited\n\n/-- H: Temporal depth \u2014 Markov order -/\ninductive TemporalDepth where\n  | h0   -- H\u2080: memoryless\n  | h1   -- H\u2081: one step\n  | h2   -- H\u2082: two steps\n  | hInf -- H_\u221e: eternal (no finite n)\n  deriving DecidableEq, Repr, Inhabited\n\n/-- S: Stoichiometry \u2014 component types -/\ninductive Stoichiometry where\n  | Σ_S -- 1:1: one type, one instance\n  | Σ_ő     -- n:n: many identical\n  | Σ_ï     -- n:m: many heterogeneous\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u03a9: Winding \u2014 topological invariant -/\ninductive Winding where\n  | zero -- \u03a9\u2080: trivial\n  | z2   -- \u03a9_\u2124\u2082: binary\n  | z    -- \u03a9_\u2124: integer (topological)\n  | NA   -- \u03a9_NA: non-Abelian braiding\n  deriving DecidableEq, Repr, Inhabited\n", "mode": "a", "path": "primitive_mismatch_diagnosis.lean"})
+  ACT:   chunked_write({"chunk": "\n/-- F: Fidelity \u2014 physical regime -/\ninductive Fidelity where\n  | ell   -- F_\u2113: classical (no coherence)\n  | eth   -- F_\u03d1: thermal/noisy\n  | hbar -- F_\u210f: quantum coherence essential\n  deriving DecidableEq, Repr, Inhabited\n\n/-- K: Kinetics \u2014 relaxation rate vs observation -/\ninductive Kinetics where\n  | fast  -- Ç_-: driven\n  | mod   -- Ç_W: moderate\n  | slow  -- Ç_@: near-equilibrium\n  | trap  -- Ç_Ù: frozen-order\n  | MBL   -- Ç_λ: frozen-disorder\n  deriving DecidableEq, Repr, Inhabited\n\n/-- G: Scope \u2014 interaction range -/\ninductive Scope where\n  | beth  -- G_\ud835\udc4f: local\n  | gimel -- G_\ud835\udc54: mesoscale\n  | aleph -- G_\ud835\udc4e: maximal/all\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u0393: Interaction grammar \u2014 composition logic -/\ninductive InteractionGrammar where\n  | and   -- \u0393_\u2227: conjunctive\n  | or    -- \u0393_\u2228: disjunctive\n  | seq   -- \u0393_seq: sequential\n  | broad -- \u0393_brd: broadcast\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u03a6: Criticality \u2014 scaling behavior -/\ninductive Criticality where\n  | sub      -- \u03a6_sub: below critical\n  | c        -- \u03a6_c: critical (self-modeling gate)\n  | c_complex-- \u03a6_c^\u2102: complex-plane critical\n  | EP       -- \u03a6_EP: exceptional point\n  | super    -- \u03a6_sup: supercritical\n  deriving DecidableEq, Repr, Inhabited\n\n/-- H: Chirality \u2014 Markov order -/\ninductive TemporalDepth where\n  | h0   -- H\u2080: memoryless\n  | h1   -- H\u2081: one step\n  | h2   -- H\u2082: two steps\n  | hInf -- H_\u221e: eternal (no finite n)\n  deriving DecidableEq, Repr, Inhabited\n\n/-- S: Stoichiometry \u2014 component types -/\ninductive Stoichiometry where\n  | Σ_S -- 1:1: one type, one instance\n  | Σ_ő     -- n:n: many identical\n  | Σ_ï     -- n:m: many heterogeneous\n  deriving DecidableEq, Repr, Inhabited\n\n/-- \u03a9: Winding \u2014 topological invariant -/\ninductive Winding where\n  | zero -- \u03a9\u2080: trivial\n  | z2   -- \u03a9_\u2124\u2082: binary\n  | z    -- \u03a9_\u2124: integer (topological)\n  | NA   -- \u03a9_NA: non-Abelian braiding\n  deriving DecidableEq, Repr, Inhabited\n", "mode": "a", "path": "primitive_mismatch_diagnosis.lean"})
   OBS:   wrote 1948 chars (mode='a'); file total 4159 bytes  (sha256:6907da02b0903447)
   VERIFY: [closed] primitive_mismatch_diagnosis.lean: 4159 bytes on disk
   UPDATE: chunked_write → Frobenius closed
@@ -1353,16 +1353,16 @@ inductive Grammar : Type where
   | ɢ_broad  -- broadcast / universal: one-to-all coupling
   deriving DecidableEq, Repr, Ord
 
--- 4. Chirality / Temporal Depth (H)  [𝓕₄]
+-- 4. Chirality / Chirality (H)  [𝓕₄]
 -- Ordered: Ħ_Ñ < Ħ_£ < Ħ_A < Ħ_!
--- Ħ_Ñ: no temporal memory; Ħ_!: topologically protected temporal depth.
+-- Ħ_Ñ: no temporal memory; Ħ_!: topologically protected chirality.
 -- Cross-primitive: Ħ_! tends to co-occur with Ç_Ù (frozen dynamics preserve
 -- deep temporal structure), but this is a structural tendency, not a hard axiom.
 inductive Chirality : Type where
   | Ħ_Ñ      -- achiral, no temporal memory
   | Ħ_£      -- soft chiral, weak temporal asymmetry
   | Ħ_A      -- persistent chiral, strong temporal asymmetry
-  | Ħ_!   -- topological chiral, inexhaustible temporal depth
+  | Ħ_!   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 
 -- 5. Topological Protection (Ω)  [𝓕₄]
@@ -1608,7 +1608,7 @@ inductive Grammar : Type where
   | ɢ_broad  -- broadcast / universal: one-to-all coupling
   deriving DecidableEq, Repr, Ord
 
--- 4. Chirality / Temporal Depth (H)  [𝓕₄]
+-- 4. Chirality / Chirality (H)  [𝓕₄]
 
   VERIFY: [closed] (no assertion provided — Frobenius trivially closed)
   UPDATE: run_command → Frobenius closed

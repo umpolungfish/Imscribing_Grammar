@@ -46,7 +46,7 @@ Primitive assignment follows the deterministic procedure (§1–§12 of encoding
 
 **Criticality ($\Phi_{\text{ctyogh}}$)**. Self-modeling. Both utterances model their own truth conditions and generate the reality they describe.
 
-**Temporal depth ($H_{\text{invscripta}}$)**. Eternal. No finite Markov order captures these statements.
+**Chirality ($H_{\text{invscripta}}$)**. Eternal. No finite Markov order captures these statements.
 
 **Stoichiometry ($S$)**. Here is where they diverge. $1{:}1$ for the self-declaration. $n{:}m$ for the communal consumption.
 

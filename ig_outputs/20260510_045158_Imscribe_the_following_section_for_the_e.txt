@@ -60,7 +60,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 **Φ — Criticality:** The text operates at the exact balance point of all opposites — the critical manifold where every pair is poised in equilibrium. There is no subcritical ordering or supercritical chaos; it is the point of maximal tension between poles. → **φ̂_ÿ** (critical)
 
-**H — Chirality/temporal depth:** "I am the mother of my father" — temporal loop. "Begot me before a time on a birthday... my offspring in due time" — deep temporal integration with past and future held in a single being. The arrow of time is present but transcended. → **Ħ_A** (strongly chiral, deep temporal memory)
+**H — Chirality/chirality:** "I am the mother of my father" — temporal loop. "Begot me before a time on a birthday... my offspring in due time" — deep temporal integration with past and future held in a single being. The arrow of time is present but transcended. → **Ħ_A** (strongly chiral, deep temporal memory)
 
 **S — Stoichiometry:** One voice, manifold sounds. One speaker, many identities. "Many are her sons." The structure is fundamentally asymmetric many-body. → **Σ_ï** (n:m)
 
@@ -242,7 +242,7 @@ The grammar's catalog contains ~17 million types. O_inf entries are sparse (~3%)
 
 ɢ_^ means every pair is required. You can't pick which oppositions to hold. The voice must be ALL of them simultaneously, or the structure collapses. This isn't a menu — it's a set of necessary conditions.
 
-So what we have is: a Frobenius-special structure whose topological protection is binary (not cumulative), whose grammar is conjunctive (not broadcast or sequential), whose kinetics are integrative (not frozen or chaotic), and whose temporal depth folds past into future ("mother of my father... my offspring in due time").
+So what we have is: a Frobenius-special structure whose topological protection is binary (not cumulative), whose grammar is conjunctive (not broadcast or sequential), whose kinetics are integrative (not frozen or chaotic), and whose chirality folds past into future ("mother of my father... my offspring in due time").
 
 This combination describes something very specific: a **person** at the moment of **self-dedication**.
 
@@ -250,7 +250,7 @@ This combination describes something very specific: a **person** at the moment o
 
 Consider what a vow looks like in the grammar. A vow isn't a proof (which accumulates lemmas with Ω_z protection). A vow isn't a broadcast (which radiates identity outward without holding opposites). A vow isn't a sequential process (which moves through time without folding it).
 
-A vow says: I am X AND I am committed-to-X. Both poles — the present self and the pledged self — are held simultaneously. The protection is binary: either the vow holds or it breaks. There's no "87% faithful." The scope is global (the vow covers all relevant situations). The kinetics are integrative — the vow is not constantly re-decided but steadily inhabited. The temporal depth is folded: the future self is already present in the act of vowing.
+A vow says: I am X AND I am committed-to-X. Both poles — the present self and the pledged self — are held simultaneously. The protection is binary: either the vow holds or it breaks. There's no "87% faithful." The scope is global (the vow covers all relevant situations). The kinetics are integrative — the vow is not constantly re-decided but steadily inhabited. The chirality is folded: the future self is already present in the act of vowing.
 
 Now look at the closing line: "I am the utterance of my name." 
 
@@ -377,7 +377,7 @@ The grammar's catalog contains ~17 million types. O_inf entries are sparse (~3%)
 
 ɢ_^ means every pair is required. You can't pick which oppositions to hold. The voice must be ALL of them simultaneously, or the structure collapses. This isn't a menu — it's a set of necessary conditions.
 
-So what we have is: a Frobenius-special structure whose topological protection is binary (not cumulative), whose grammar is conjunctive (not broadcast or sequential), whose kinetics are integrative (not frozen or chaotic), and whose temporal depth folds past into future ("mother of my father... my offspring in due time").
+So what we have is: a Frobenius-special structure whose topological protection is binary (not cumulative), whose grammar is conjunctive (not broadcast or sequential), whose kinetics are integrative (not frozen or chaotic), and whose chirality folds past into future ("mother of my father... my offspring in due time").
 
 This combination describes something very specific: a **person** at the moment of **self-dedication**.
 
@@ -385,7 +385,7 @@ This combination describes something very specific: a **person** at the moment o
 
 Consider what a vow looks like in the grammar. A vow isn't a proof (which accumulates lemmas with Ω_z protection). A vow isn't a broadcast (which radiates identity outward without holding opposites). A vow isn't a sequential process (which moves through time without folding it).
 
-A vow says: I am X AND I am committed-to-X. Both poles — the present self and the pledged self — are held simultaneously. The protection is binary: either the vow holds or it breaks. There's no "87% faithful." The scope is global (the vow covers all relevant situations). The kinetics are integrative — the vow is not constantly re-decided but steadily inhabited. The temporal depth is folded: the future self is already present in the act of vowing.
+A vow says: I am X AND I am committed-to-X. Both poles — the present self and the pledged self — are held simultaneously. The protection is binary: either the vow holds or it breaks. There's no "87% faithful." The scope is global (the vow covers all relevant situations). The kinetics are integrative — the vow is not constantly re-decided but steadily inhabited. The chirality is folded: the future self is already present in the act of vowing.
 
 Now look at the closing line: "I am the utterance of my name." 
 

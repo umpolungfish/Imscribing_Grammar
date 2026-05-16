@@ -44,7 +44,7 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 7. **G**: Γ_β → Gℵ (long-range context access)
 8. **Γ**: Γ_or → Γ_seq (ordered composition, not alternative paths)
 9. **Φ**: Φ_sub → Φ_c (self-modeling criticality)
-10. **H**: H₁ → H₂ (two-step temporal depth)
+10. **H**: H₁ → H₂ (two-step chirality)
 11. **Ω**: Ω₀ → Ωℤ (topologically protected winding)
 12. **S**: n:m → 1:1 (demotion: single agent instance, not heterogeneous swarm)
 
@@ -94,7 +94,7 @@ class LoopCycle:
     frobenius_closed: bool = False
 ```
 
-The trajectory is **never truncated** (Ωℤ protection) — it is the agent's world model. H₂ is satisfied when each winding references the prior two cycles for temporal depth.
+The trajectory is **never truncated** (Ωℤ protection) — it is the agent's world model. H₂ is satisfied when each winding references the prior two cycles for chirality.
 
 ### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: Ç_- → Ç_@)
 

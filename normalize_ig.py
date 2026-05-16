@@ -132,7 +132,7 @@ TEXTTT_FIXES = [
     (r'\texttt{Ř\_ý}',               r'$\text{Ř}_{\text{ý}}$'),
     (r'\texttt{Ř\_=}',               r'$\text{Ř}_{=}$'),
     (r'\texttt{Ř\_¯}',               r'$\text{Ř}_{\text{¯}}$'),
-    # Temporal depth (Ħ) — subscript
+    # Chirality (Ħ) — subscript
     (r'\texttt{Ħ\_!}',               r'$\text{Ħ}_{!}$'),
     (r'\texttt{Ħ\_A}',               r'$\text{Ħ}_{A}$'),
     (r'\texttt{Ħ\_Ñ}',               r'$\text{Ħ}_{\text{Ñ}}$'),

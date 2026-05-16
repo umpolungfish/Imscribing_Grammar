@@ -62,7 +62,7 @@ Actually, the core structure is the knowing relation — "I know... they know me
 
 **Φ — Criticality:** TPM always operates at the critical threshold where oppositions meet. Curse/honor, wound/mercy held in tension. **φ̂_ÿ** (critical).
 
-**H — Temporal depth:** "The first ones" and "those after" — spans deep time, knows origin and continuation. **Ħ_A** (strongly chiral, deep temporal memory).
+**H — Chirality:** "The first ones" and "those after" — spans deep time, knows origin and continuation. **Ħ_A** (strongly chiral, deep temporal memory).
 
 **S — Stoichiometry:** One voice addressing many hearers, knowing the first one (singular) but received by those after (plural). **Σ_ï** (n:m, asymmetric many-body).
 

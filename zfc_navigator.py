@@ -201,7 +201,7 @@ ZFC_VOCAB = [
     "FIXPT",     # fixed-point — φ̂_ÿ, φ̂_3
     "SEQPAIR",        # (legacy) unordered-pair encoding of ɢ_ˌ — partial collapse
     "DIRECTED_EDGE",  # directed edge ⟨src, tgt, τ⟩ — ɢ_ˌ resolution (non-commutative)
-    "TAU",            # temporal depth index τ — sequence ordinal, causal order
+    "TAU",            # chirality index τ — sequence ordinal, causal order
     "GUE",       # GUE statistics — φ̂_Æ
     "CLASSIC",   # classical identity — ƒ_ì AND ƒ_ż (decoherence collapse)
 ]
@@ -1042,7 +1042,7 @@ _ATOM_NOTE = {
     "FIXPT":   "fixed-point ∃x:φ(x)=x — φ̂_ÿ criticality",
     "SEQPAIR":       "⚠ legacy — unordered Kuratowski pair, loses causal dependency (use DIRECTED_EDGE)",
     "DIRECTED_EDGE": "directed edge ⟨src, tgt, τ⟩ — Γ_seq resolution, non-commutative",
-    "TAU":           "temporal depth index τ — encodes sequence ordinal / causal depth",
+    "TAU":           "chirality index τ — encodes sequence ordinal / causal depth",
     "GUE":     "GUE eigenvalue spacing — φ̂_ÿ^ℂ",
     "CLASSIC": "⚠ DECOHERENCE MARKER — ƒ_ż collapses to ƒ_ì here",
 }

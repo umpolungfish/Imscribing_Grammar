@@ -64,13 +64,13 @@ Each primitive is assigned a vocal articulation whose physics mirrors the struct
 - **ɢ_Ş**: broadcast exclamation [aː] — one-to-all projection
 
 ## Phi (Criticality)
-- **φ̂_ž**: dead stop [ʔ] — no criticality, no scaling
-- **φ̂_ÿ**: critical creak [ˀ] — self-modeling gate, critical divergence
-- **φ̂_Æ**: vibrato [a̪ː̃] — complex-plane oscillation
-- **φ̂_3**: exceptional merge [a̸] — non-Hermitian degeneracy, two modes coalesce
-- **φ̂_Ţ**: runaway howl [a͈] — supercritical, no bounded attractor
+- **⊙_ž**: dead stop [ʔ] — no criticality, no scaling
+- **⊙_ÿ**: critical creak [ˀ] — self-modeling gate, critical divergence
+- **⊙_Æ**: vibrato [a̪ː̃] — complex-plane oscillation
+- **⊙_3**: exceptional merge [a̸] — non-Hermitian degeneracy, two modes coalesce
+- **⊙_Ţ**: runaway howl [a͈] — supercritical, no bounded attractor
 
-## H (Temporal depth)
+## H (Chirality)
 - **Ħ_Ñ**: memoryless click [ǀ] — no prior state needed
 - **Ħ_£**: one-step echo [a.ə] — one temporal memory
 - **Ħ_A**: two-step cadence [a.ə.ɑ̃] — two prior states retained

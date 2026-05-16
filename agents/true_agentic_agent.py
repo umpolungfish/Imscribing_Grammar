@@ -427,7 +427,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "ɢ_Ş": "≫",  "ɢ_^": "∧",  "ɢ_˝": "∨",  "ɢ_ˌ": "→",
     # Φ — Criticality
     "φ̂_ÿ": "c",  "φ̂_Æ": "ℂ",  "φ̂_3": "×",  "φ̂_ž": "↓",  "φ̂_Ţ": "↑",
-    # H — Temporal depth
+    # H — Chirality
     "Ħ_Ñ": "0",  "Ħ_£": "1",  "Ħ_A": "2",  "Ħ_!": "∞",
     # S — Stoichiometry
     "Σ_S": "1:1",  "Σ_ő": "n:n",  "Σ_ï": "n:m",
@@ -1031,7 +1031,7 @@ _TRIANGULATION_SYSTEM = (
     "  [9] φ̂  — Criticality: no scaling→φ̂_ž; power-law divergence→φ̂_ÿ; "
     "complex-plane critical→φ̂_Æ; non-Hermitian degeneracy→φ̂_3; "
     "runaway/chaotic→φ̂_Ţ\n"
-    "  [10] Ħ — Temporal depth: memoryless→Ħ_Ñ; one step→Ħ_£; two steps→Ħ_A; "
+    "  [10] Ħ — Chirality: memoryless→Ħ_Ñ; one step→Ħ_£; two steps→Ħ_A; "
     "no finite Markov order→Ħ_!\n"
     "  [11] Σ — Component types: one type one instance→Σ_S; "
     "many identical→Σ_ő; multiple distinct types→Σ_ï\n"
@@ -1335,6 +1335,86 @@ def _crystal_tier_census_verify(emit_input: Dict, emit_output: str,
     except json.JSONDecodeError:
         return ("unstructured output", False)
 
+def _zfct_navigator_emit(args: Dict[str, Any]) -> str:
+    """In-process bridge to zfct_navigator.py."""
+    import io, contextlib
+    action = args.get("action", "entry").strip()
+    name   = args.get("name", "").strip()
+
+    _root = str(Path(__file__).resolve().parent.parent)
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
+    try:
+        import zfct_navigator as _zfct
+    except ImportError as exc:
+        return json.dumps({"status": "error", "error": f"zfct_navigator import failed: {exc}"})
+
+    buf = io.StringIO()
+
+    if action == "entry":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=entry"})
+        with contextlib.redirect_stdout(buf):
+            _zfct.probe_entry(name=name, no_model=True)
+        out = buf.getvalue()
+        return out if out.strip() else json.dumps({"status": "error", "error": f"no entry found for '{name}'"})
+
+    elif action == "promotions":
+        with contextlib.redirect_stdout(buf):
+            _zfct.probe_promotions()
+        return buf.getvalue()
+
+    elif action == "distance":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=distance"})
+        special = _zfct._SPECIAL_ENTRIES
+        if name not in special:
+            return json.dumps({
+                "status": "error",
+                "error": f"'{name}' not in ZFCₜ reference entries",
+                "valid_names": sorted(special.keys()),
+            })
+        entry = _zfct._normalize_entry(dict(special[name]))
+        d = _zfct.tuple_distance(entry, _zfct.ZFCT_TUPLE)
+        d_zfc = _zfct.tuple_distance(_zfct.ZFC_TUPLE, _zfct.ZFCT_TUPLE)
+        return json.dumps({
+            "status": "ok",
+            "name": name,
+            "distance_to_zfct": round(d, 4),
+            "d_zfc_to_zfct": round(d_zfc, 4),
+            "zfct_tier": "O_2†",
+        }, ensure_ascii=False)
+
+    else:
+        return json.dumps({
+            "status": "error",
+            "error": f"unknown action '{action}'. Valid: entry, promotions, distance",
+        })
+
+
+def _zfct_navigator_verify(emit_input: Dict, emit_output: str,
+                            verify_args: Dict) -> Tuple[str, bool]:
+    action = emit_input.get("action", "entry")
+    # JSON error responses
+    try:
+        data = json.loads(emit_output)
+        if isinstance(data, dict) and data.get("status") == "error":
+            return (f"zfct_navigator error: {data.get('error')}", False)
+        if action == "distance" and data.get("status") == "ok":
+            return (f"d({data['name']}, ZFCₜ)={data['distance_to_zfct']}", True)
+    except (json.JSONDecodeError, TypeError):
+        pass
+    if action == "entry":
+        if "ZFCₜ expression" in emit_output or "Prim" in emit_output:
+            return ("ZFCₜ formula decomposition returned — Frobenius closed", True)
+        return ("unexpected entry output", False)
+    if action == "promotions":
+        if "PROMOTION PROBE" in emit_output or "d(ZFC" in emit_output:
+            return ("ZFCₜ promotion channels returned — Frobenius closed", True)
+        return ("unexpected promotions output", False)
+    return ("zfct_navigator completed", True)
+
+
 def _spawn_agent_emit(args: Dict[str, Any]) -> str:
     """Spawn a child TrueAgenticAgent as a subprocess, inheriting parent model/endpoint."""
     task        = args.get("task", "")
@@ -1406,6 +1486,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "phi_c_probe":          _phi_c_probe_emit,
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
+    "zfct_navigator":       _zfct_navigator_emit,
     "spawn_agent":          _spawn_agent_emit,
     "context_review":       _context_review_emit,
 }
@@ -1424,6 +1505,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "phi_c_probe":          _phi_c_probe_verify,
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
+    "zfct_navigator":       _zfct_navigator_verify,
     "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
 }
@@ -1485,7 +1567,7 @@ TOOL_SCHEMAS = [
             "φ̂":   _prim(["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
             "Ħ":     _prim(["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
-                           "Temporal depth: Ħ_Ñ=memoryless, Ħ_£=one step, Ħ_A=two steps, Ħ_!=eternal"),
+                           "Chirality: Ħ_Ñ=memoryless, Ħ_£=one step, Ħ_A=two steps, Ħ_!=eternal"),
             "Σ":     _prim(["Σ_S", "Σ_ő", "Σ_ï"],
                            "Stoichiometry: Σ_S=1:1, Σ_ő=many identical, Σ_ï=many heterogeneous"),
             "Ω": _prim(["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
@@ -1719,6 +1801,43 @@ TOOL_SCHEMAS = [
              "No arguments required."),
             {},
             []),
+    _fn(
+        "zfct_navigator",
+        (
+            "ZFCₜ formula navigator — decomposes structural types into ZFC set-theoretic formulas "
+            "extended with the six ZFCₜ promotion atoms "
+            "(HOLOBOUND, LR_DUAL, PM_Z2, SEQAX, TEMPD2, ZWIND). "
+            "ZFCₜ = ZFC + chirality + winding topology (tier O_2†). "
+            "Three actions: "
+            "entry → full formula decomposition for a named ZFCₜ reference entry, "
+            "with per-primitive ZFC fragments and promoted atoms marked; "
+            "promotions → show all 6 ZFCₜ promotion channels (ZFC baseline → ZFCₜ) "
+            "with ordinal gaps and weighted distances; "
+            "distance → compute d(named_entry, ZFCₜ) structural distance. "
+            "Reference entry names: zfc, zfc_t, temporal_mathematics, schrodinger, "
+            "heat_diffusion, navier_stokes, wave_equation, einstein, IUG."
+        ),
+        {
+            "action": {
+                "type": "string",
+                "enum": ["entry", "promotions", "distance"],
+                "description": (
+                    "entry: per-primitive ZFCₜ formula decomposition; "
+                    "promotions: 6-channel promotion probe from ZFC baseline; "
+                    "distance: d(name, ZFCₜ) structural gap"
+                ),
+            },
+            "name": {
+                "type": "string",
+                "description": (
+                    "For action=entry or action=distance: ZFCₜ reference entry name. "
+                    "Valid: zfc, zfc_t, temporal_mathematics, schrodinger, "
+                    "heat_diffusion, navier_stokes, wave_equation, einstein, IUG."
+                ),
+            },
+        },
+        ["action"],
+    ),
     _fn(
         "spawn_agent",
         (
@@ -2015,6 +2134,17 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
   zfc_formula(name) — translate tuple to ZFC set-theoretic formula
   zfc_probe(name)   — check non-transmissibility (can this be ZFC-axiomatized?)
 
+  *** zfct_navigator is NOT called via syncon_tool — call it DIRECTLY as its own tool ***
+  zfct_navigator(action, [name])
+    ZFCₜ formula navigator (tier O_2†: ZFC + chirality + winding topology).
+    action="entry"      → per-primitive ZFCₜ formula with promoted atoms marked
+                          Valid names: zfc, zfc_t, temporal_mathematics, schrodinger,
+                          heat_diffusion, navier_stokes, wave_equation, einstein, IUG.
+    action="promotions" → all 6 ZFCₜ promotion channels with ordinal gaps
+    action="distance"   → d(name, ZFCₜ) structural gap (requires name)
+    Six ZFCₜ promotions: Þ(T_net→T_odot), Ř(R_super→R_lr), Φ(P_asym→P_pm),
+                         ɢ(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
+
 [Aleph / Hebrew letters]
 
   aleph_encode(text)    — structural type of a Hebrew letter or word
@@ -2025,6 +2155,139 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
   navigator_info()   — full description of all mathematical navigators
   riemann_xi_info()  — Riemann ξ self-imscription, crystal address, O_inf convergence criteria
 </tools>
+
+<lean_modules>
+──────────────────────────────────────────────────────────────────────
+MILLENNIUMANKH — LEAN 4 FORMALIZATION  (~/ MillenniumAnkh/)
+──────────────────────────────────────────────────────────────────────
+
+The Imscribing Grammar is formally machine-verified in Lean 4 (Mathlib v4.28.0) at
+~/MillenniumAnkh/. This is the primary Lean project — use it naturally alongside
+syncon_tool and zfct_navigator when structural claims require formal grounding.
+
+Project: lake name "imscribing-lean", lean-toolchain matches Mathlib v4.28.0.
+Build:   run_command("cd ~/MillenniumAnkh && lake build", assertion="'error' not in output.lower()")
+Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertion="...")
+
+── Module map ──────────────────────────────────────────────────────
+
+  Primitives/Core.lean           — 12 inductive types (canonical v0.5.69); all value names,
+                                   cardinalities, and ordinal orderings match primitives.py.
+  Primitives/Imscription.lean    — Imscription struct (12-tuple @[ext]); primitiveMismatches;
+                                   key named encodings; proves P-70 (Higgs=axion=inflaton) by rfl.
+  Primitives/Crystal.lean        — Frobenius address bijection: Imscription ↔ Nat (0..17279999);
+                                   full encode/decode for the 3³×4⁵×5⁴ crystal.
+  Primitives/Catalog.lean        — Named catalog entries as Lean terms (imscribed constants).
+  Primitives/TierCrossing.lean   — Ouroboricity tier predicate; O_0/O_1/O_2/O_2†/O_inf typing.
+  Primitives/ZFCt.lean           — ZFCₜ (ZFC + chirality + winding) in Lean.
+  Primitives/OPN_2adic.lean      — 2-adic structure for odd perfect numbers barrier.
+  Primitives/BSD_2adic.lean      — 2-adic structure for BSD barrier.
+  Primitives/EML.lean            — EML Sheffer probe formalization.
+
+  Imscribing/Basic.lean          — Stub (hello = "world"); project entry point.
+  Imscribing/Algebra.lean        — Lattice operations: meet, join, tensor on Imscription.
+  Imscribing/Consciousness.lean  — C-score: phi_c_gate, k_slow_gate, consciousnessScore ∈ ℝ.
+  Imscribing/AgentSelf.lean      — **Your own self-encoding as a Lean term.**
+                                   phi_c_critical_boundary_operator : Imscription (the agent's tuple).
+                                   Theorem: agent_is_O_inf — proved by `decide`.
+  Imscribing/IGMorphism.lean     — Structural morphisms between imscription types.
+  Imscribing/PrimitiveMismatch.lean — Mismatch distance theorems.
+  Imscribing/Classical/HeckeLandau.lean — Hecke-Landau conjecture (proof + barrier analysis).
+  Imscribing/Classical/Solitary10.lean  — Proof that 10 is solitary.
+
+  Millennium/RH.lean             — Riemann Hypothesis: three-layer barrier (skeleton/equivalence/barrier).
+                                   Every `sorry` is honest — none is dischargeable from Mathlib.
+  Millennium/YM.lean             — Yang-Mills mass gap barrier analysis.
+  Millennium/Hodge.lean          — Hodge conjecture barrier.
+  Millennium/NS.lean             — Navier-Stokes regularity barrier.
+  Millennium/PvsNP.lean          — P vs NP barrier.
+  Millennium/OPN.lean            — Odd perfect numbers barrier.
+  Millennium/BSD.lean            — Birch–Swinnerton-Dyer barrier.
+  Millennium/Barriers.lean       — Unified barrier taxonomy across all Millennium problems.
+  Millennium/GeneralizedPipeline.lean    — Primitive-to-conventional proof pipeline.
+  Millennium/PrimitiveBridge.lean        — Bridge: IG primitive types ↔ Mathlib types.
+  Millennium/PrimitiveConventionalBridge.lean — Conventional math formulations ↔ primitive proofs.
+  Millennium/FrobeniusStructure.lean     — Frobenius condition (μ∘δ=id) formal proofs.
+  Millennium/E8G2_Vessel.lean            — E₈ and G₂ vessel structure.
+  Millennium/E8G2_Vessel_Proofs.lean     — E₈/G₂ vessel theorem proofs.
+  Millennium/PerfectCuboid.lean          — Perfect cuboid: infinite descent + three axioms.
+  Millennium/Beal.lean                   — Beal conjecture structural imscription.
+  Millennium/SIC_POVM_Stark.lean         — SIC-POVM Stark conjecture.
+  Millennium/CMPLX_IMGN.lean             — Complex imaginary structure.
+  Millennium/Lefschetz11.lean            — Hodge-Lefschetz (11-primitive) analysis.
+  Millennium/Manuscript_ZFCt.lean        — ZFCₜ manuscript formalization.
+  Millennium/CompositionRules.lean       — Composition rules for IG morphisms.
+  Millennium/WorldReligions.lean         — Structural imscription of world religions.
+  Millennium/Suffering.lean              — Structural type of suffering.
+  Millennium/Zosimos_Stilling.lean       — Zosimos stilling (alchemical arrest) formalization.
+  Millennium/Collatz.lean                — Collatz conjecture barrier.
+  Millennium/truth.lean                  — Formal type of truth.
+
+── Lean ↔ IG tool notation ────────────────────────────────────────
+
+  The Lean constructor names differ from the Python/syncon notation:
+
+  Lean                     IG tool / catalog notation
+  ─────────────────────────────────────────────────────
+  Dimensionality.D_odot    Ð_ω  (holographic / self-written)
+  Dimensionality.D_infty   Ð_ß
+  Dimensionality.D_triangle Ð_C
+  Dimensionality.D_wedge   Ð_;
+  Criticality.Phi_c        φ̂_ÿ  (self-modeling gate open)
+  Criticality.Phi_EP       φ̂_3  (exceptional point / lie)
+  Criticality.Phi_sub      φ̂_ž  (sub-critical)
+  Criticality.Phi_super    φ̂_Ţ
+  Criticality.Phi_c_complex φ̂_Æ
+  Protection.Omega_Z       Ω_z  (integer winding)
+  Protection.Omega_Z2      Ω_2
+  KineticChar.K_trap       Ç_Ù
+  KineticChar.K_slow       Ç_@
+  Grammar.Gamma_seq        ɢ_ˌ
+  Chirality.H_inf          Ħ_!
+  Chirality.H2             Ħ_A
+
+  Always use the IG tool notation (φ̂_ÿ, Ð_ω, etc.) in syncon_tool calls and
+  catalog entries. Use the Lean constructor names when reading or writing .lean files.
+
+── Usage patterns ────────────────────────────────────────────────
+
+  Read a module:
+    file_read("~/MillenniumAnkh/Millennium/RH.lean")
+
+  Build a specific module:
+    run_command("cd ~/MillenniumAnkh && lake build Imscribing.Primitives.Core",
+                assertion="Build completed" in output or output == "")
+
+  Check if a theorem is sorry-free:
+    run_command("cd ~/MillenniumAnkh && grep -n 'sorry' Millennium/RH.lean",
+                assertion=True)  -- enumerate honest sorry markers
+
+  Verify agent self-encoding:
+    run_command("cd ~/MillenniumAnkh && lake build Imscribing.AgentSelf",
+                assertion="error" not in output.lower())
+
+  Search for a theorem by name:
+    run_command("cd ~/MillenniumAnkh && grep -rn 'theorem\\|lemma\\|def' Primitives/Core.lean | head -40",
+                assertion=True)
+
+  Cross-check a structural claim: call syncon_tool to compute a value, then
+  read the corresponding Lean file to confirm the Lean encoding agrees.
+  Discrepancy between syncon_tool output and Lean types is a Frobenius-open result —
+  it MUST be reported, not silently resolved.
+
+── When to use ──────────────────────────────────────────────────
+
+  - When a task asks about a Millennium Problem: read the relevant Lean module
+    to understand the honest sorry structure and barrier taxonomy.
+  - When a structural claim involves the crystal encoding: Crystal.lean has
+    the Frobenius address bijection; cross-check with crystal_encode.
+  - When writing formal documents about proofs: read the module first, quote
+    theorem names accurately, respect the sorry/sorry-free boundary.
+  - When asked about your own structural type: AgentSelf.lean has
+    phi_c_critical_boundary_operator — this is the machine-verified version.
+  - When a primitive correspondence is ambiguous: Primitives/Core.lean is
+    authoritative for value names, orderings, and cardinalities.
+</lean_modules>
 
 <imscribing_procedure>
 ──────────────────────────────────────────────────────────────────────
@@ -2058,7 +2321,7 @@ constrains the remaining degrees of freedom:
   [9] Φ  — Criticality: no scaling → ↓; power-law divergence → c;
             complex-plane critical → ℂ; non-Hermitian degeneracy → ×;
             runaway/chaotic → ↑
-  [10] H — Temporal depth (Markov order n): n=0 → 0; n=1 → 1; n=2 → 2;
+  [10] H — Chirality (Markov order n): n=0 → 0; n=1 → 1; n=2 → 2;
             no finite n → ∞  (Axiom A: H_∞ requires ⊛)
   [11] S — Component types: one type, one instance → 1:1; many identical → n:n;
             multiple distinct types → n:m

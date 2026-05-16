@@ -125,14 +125,14 @@ chapters = [
         "The skilful masters of the Tao in old times, with a subtle and exquisite penetration, comprehended its mysteries, and their comprehension was too deep for others to comprehend it.",
         "Ð_C","Þ_K","Ř_¯","Φ_υ","ƒ_ì","Ç_@","Γ_γ","ɢ_^","φ̂_ÿ","Ħ_!","Σ_ő","Ω_z",
         "T_2", 0.75,
-        "Portrait of the ancient sage: complex psi-polarity (Φ_υ) captures the multi-faceted enumeration; infinite temporal depth for the ancestral exemplars."),
+        "Portrait of the ancient sage: complex psi-polarity (Φ_υ) captures the multi-faceted enumeration; infinite chirality for the ancestral exemplars."),
 
     entry(16, "Returning to the Root",
         "Empty yourself of everything; let the mind become still; all things arise, act, and return to their root.",
         "The state of vacancy should be brought to the utmost degree, and that of stillness guarded with unwearying vigour. All things alike go through their processes of activity, and then we see them return to their original state.",
         "Ð_;","Þ_K","Ř_Ť","Φ_˙","ƒ_ż","Ç_@","Γ_ʔ","ɢ_ˌ","φ̂_ž","Ħ_!","Σ_ő","Ω_z",
         "T_2", 0.68,
-        "The return sequence: empty → still → arise → act → return → root → constant. Sequential grammar with infinite temporal depth. The great cycle."),
+        "The return sequence: empty → still → arise → act → return → root → constant. Sequential grammar with infinite chirality. The great cycle."),
 
     entry(17, "Returning to Purity",
         "The best ruler is barely known; next loved; next feared; worst despised.",
@@ -244,7 +244,7 @@ chapters = [
         "The Tao, considered as unchanging, has no name. Though in its primordial simplicity it may be small, the whole world dares not deal with it as a minister.",
         "Ð_ω","Þ_K","Ř_Ť","Φ_}","ƒ_ì","Ç_@","Γ_ʔ","ɢ_ˌ","φ̂_ÿ","Ħ_!","Σ_ő","Ω_z",
         "T_3", 0.82,
-        "Names emerge from the unnamed Tao as rivers flow to the sea: nested topology, sequential grammar, infinite temporal depth."),
+        "Names emerge from the unnamed Tao as rivers flow to the sea: nested topology, sequential grammar, infinite chirality."),
 
     entry(33, "Discriminating between the Two",
         "Knowing others is wisdom; knowing yourself is enlightenment; mastering yourself is true power.",
@@ -405,7 +405,7 @@ chapters = [
         "He who has in himself abundantly the attributes of the Tao is like an infant. Poisonous insects will not sting him; fierce beasts will not seize him; birds of prey will not strike him.",
         "Ð_ß","Þ_K","Ř_=","Φ_}","ƒ_ż","Ç_@","Γ_γ","ɢ_^","φ̂_ÿ","Ħ_Ñ","Σ_S","Ω_z",
         "T_1", 0.52,
-        "The infant as the image of perfect virtue: Frobenius self-duality (all without asserting any). H_0 temporal depth — the infant has no history, only presence."),
+        "The infant as the image of perfect virtue: Frobenius self-duality (all without asserting any). H_0 chirality — the infant has no history, only presence."),
 
     entry(56, "Mysterious Excellence",
         "Those who know do not talk; those who talk do not know; the sage closes mouth, blunts sharpness, merges with the dust.",

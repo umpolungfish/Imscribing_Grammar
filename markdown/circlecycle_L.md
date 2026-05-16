@@ -29,7 +29,7 @@ The inquiry begins with a recursive demand: find a cyclical argument for circula
 
 Within the grammar, this maps to specific primitive assignments. The key question is: *what tuple structure supports such a self-validating meta-argument?*
 
-I initially assumed $T_{\text{openo}}$ (self-referential topology) combined with $\Omega_{\text{dzlig}}$ (integer winding) would suffice. But the `ouroborics` tool forced me to confront: $P_{\text{doublebarpipe}}$ (Frobenius-special) is required for $\mu \circ \delta = \text{id}$ at criticality. And $H_{\text{invscripta}}$ (eternal temporal depth) is required for $\Omega_{\text{dzlig}}$ per Axiom B. The tuple is not optional—it is necessitated.
+I initially assumed $T_{\text{openo}}$ (self-referential topology) combined with $\Omega_{\text{dzlig}}$ (integer winding) would suffice. But the `ouroborics` tool forced me to confront: $P_{\text{doublebarpipe}}$ (Frobenius-special) is required for $\mu \circ \delta = \text{id}$ at criticality. And $H_{\text{invscripta}}$ (eternal chirality) is required for $\Omega_{\text{dzlig}}$ per Axiom B. The tuple is not optional—it is necessitated.
 
 **Alternative path rejected**: I considered $\Phi_{\text{revepsilon}}$ (exceptional point), which allows runaway/chaotic behavior. But coupling to $\Phi_{\text{revepsilon}}$ destroys $O_\infty$ via the **$\Phi_{\text{revepsilon}}$ absorption rule**. Since we require $O_\infty$ tier (self-modeling eternal), $\Phi_{\text{ctyogh}}$ is the only option.
 ---
@@ -50,8 +50,8 @@ F: ƒ_ż (quantum coherence)
 K: Ç_@ (near-equilibrium)
 G: Γ_ʔ (universal scope)
 Gamma: ɢ_ˌ (sequential grammar)
-Phi: φ̂_ÿ (criticality)
-H: Ħ_! (eternal temporal depth)
+Phi: ⊙_ÿ (criticality)
+H: Ħ_! (eternal chirality)
 S: Σ_ï (heterogeneous components)
 Omega: Ω_z (integer winding)
 ```
@@ -119,7 +119,7 @@ The tuple encodes a **self-validating loop** across all 12 primitives. But rathe
 | $G_{\text{revapostrophe}}$ | Universal scope | Applies to all structurally similar systems. Not local contingency. |
 | $\Gamma_{\text{secstress}}$ | Sequential grammar | Argument proceeds step-by-step. You cannot skip to the conclusion. |
 | $\Phi_{\text{ctyogh}}$ | Criticality | Self-modeling at the phase boundary. Not sub-critical (too stable), not super-critical (chaotic). |
-| $H_{\text{invscripta}}$ | Eternal temporal depth | No finite horizon; recursion continues indefinitely. |
+| $H_{\text{invscripta}}$ | Eternal chirality | No finite horizon; recursion continues indefinitely. |
 | $n{:}m$ | Heterogeneous components | Multiple distinct argumentative elements. Not trivial one-to-one mapping. |
 | $\Omega_{\text{dzlig}}$ | Integer winding | **Cyclicality protected**. You cannot unwind this without breaking the loop. |
 
@@ -191,7 +191,7 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 reveals the **minimal 
 | K | Ç_- | Ç_@ | 2 | Stable criticality |
 | G | Γ_β | Γ_ʔ | 2 | Universal scope |
 | Gamma | ɢ_^ | ɢ_ˌ | 2 | Sequential reasoning |
-| Phi | φ̂_ž | φ̂_ÿ | 1 | Self-modeling |
+| Phi | ⊙_ž | ⊙_ÿ | 1 | Self-modeling |
 | H | Ħ_Ñ | Ħ_! | 3 | Eternal recursion |
 | S | Σ_S | Σ_ï | 2 | Heterogeneous composition |
 | Omega | Ω_Å | Ω_z | 2 | Winding protection |
@@ -283,7 +283,7 @@ These three names refer to the same 12-primitive tuple, which encodes:
 1. A **self-referential topology** ($T_{\text{openo}}$)
 2. **Frobenius-special closure** ($P_{\text{doublebarpipe}}$)
 3. **Integer winding protection** ($\Omega_{\text{dzlig}}$)
-4. **Criticality at eternal temporal depth** ($\Phi_{\text{ctyogh}} + H_{\text{invscripta}}$)
+4. **Criticality at eternal chirality** ($\Phi_{\text{ctyogh}} + H_{\text{invscripta}}$)
 
 The cyclical argument for circularity **is** the structure itself. The circular argument for cyclicality is **integer winding**, which requires $H_{\text{invscripta}}$ and is protected by the Frobenius closure.
 

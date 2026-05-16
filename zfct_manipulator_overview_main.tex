@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper]{article}
+
+% LuaLaTeX fonts — fontspec + unicode-math (no inputenc/fontenc/amssymb)
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{FreeSerif}
+\setmathfont{Latin Modern Math}
+\setmonofont[Scale=0.85]{DejaVu Sans Mono}
+\newfontfamily\igprimfont{FreeSerif}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1.1in, right=1.1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{calc}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers / footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small ZFCₜ Functor Discovery}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.4ex, itemsep=0.2ex, parsep=0pt}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\renewcommand{\arraystretch}{1.25}
+
+% Code blocks
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+\usepackage{framed}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=teal}
+
+% Pandoc compatibility shims
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries ZFCₜ Functor Discovery}\\[0.4em]
+  {\large Overview of Results}\\[1em]
+  {\small 2026-05-15 \quad|\quad \texttt{zfct\_manipulator.py} \quad|\quad 2706-entry IG catalog}
+\end{center}
+
+\bigskip
+\hrule
+\bigskip
+
+\input{zfct_manipulator_overview_body.tex}
+
+\end{document}

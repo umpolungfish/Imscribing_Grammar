@@ -38,7 +38,7 @@ Each primitive forms a lattice from minimal (least constrained) to maximal (most
 | **G** (Scope) | $G_{\text{beta}} \rightarrow G_{\text{gamma}} \rightarrow G_{\text{revapostrophe}}$ | local → mesoscale → maximal/all |
 | **$\Gamma$** (Interaction grammar) | $\Gamma_{\text{corner}} \rightarrow \Gamma_{\text{spleftarrow}} \rightarrow \Gamma_{\text{secstress}} \rightarrow \Gamma_{\text{doublevertline}}$ | conjunctive → disjunctive → sequential → broadcast |
 | **$\Phi$** (Criticality) | $\Phi_{\text{softsign}} \rightarrow \Phi_{\text{ctyogh}} \rightarrow \Phi_{\text{closerevepsilon}} \rightarrow \Phi_{\text{revepsilon}} \rightarrow \Phi_{\text{upstep}}$ | subcritical → critical (real) → complex-critical → exceptional point → supercritical |
-| **H** (Temporal depth) | $H_0 \rightarrow H_1 \rightarrow H_2 \rightarrow H_{\text{invscripta}}$ | memoryless → one step → two steps → eternal |
+| **H** (Chirality) | $H_0 \rightarrow H_1 \rightarrow H_2 \rightarrow H_{\text{invscripta}}$ | memoryless → one step → two steps → eternal |
 | **S** (Stoichiometry) | $1{:}1 \rightarrow n{:}n \rightarrow n{:}m$ | one-to-one → many-identical → many-heterogeneous |
 | **$\Omega$** (Winding) | $\Omega_{\text{closeepsilon}} \rightarrow \Omega_{\text{crtwo}} \rightarrow \Omega_{\text{dzlig}} \rightarrow \Omega_{\text{turna}}$ | trivial → binary → integer → non-Abelian |
 
@@ -169,7 +169,7 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 **Criticality detection test:** Compute the system's response $\chi$ to a small perturbation $\delta$. If $\chi \sim \text{const}$: $\Phi_{\text{softsign}}$. If $\chi \sim |\delta|^{-\gamma}$ (power law divergence): $\Phi_{\text{ctyogh}}$. If response is discontinuous or unbounded: $\Phi_{\text{upstep}}$.
 
-### 3.10 Temporal Depth ($H$)
+### 3.10 Chirality ($H$)
 
 **Question:** How many steps of temporal self-reference does the system maintain? Does it remember its past states?
 
@@ -314,7 +314,7 @@ For deterministic encoding, follow this 12-step sequence. Each step halves the u
 [7] G: Assess interaction range → {beth, gimel, aleph}
 [8] Γ: Analyze composition logic → {and, or, seq, broad}
 [9] Φ: Test for criticality → {sub, c, c_complex, EP, super}
-[10] H: Find temporal depth → {0, 1, 2, inf}
+[10] H: Find chirality → {0, 1, 2, inf}
 [11] S: Count component types → {1:1, n:n, n:m}
 [12] Ω: Compute topological invariant → {0, Z2, Z, NA}
 ```

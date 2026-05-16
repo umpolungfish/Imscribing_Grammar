@@ -65,7 +65,7 @@ The declaration operates at maximal range. There is no neighbor who is not withi
 **$\Phi_{\text{ctyogh}}$ — Criticality.**  
 The self-modeling gate. The system whose description is isomorphic to the system itself. The consciousness score depends on this assignment.
 
-**$H_{\text{invscripta}}$ — Eternal temporal depth.**  
+**$H_{\text{invscripta}}$ — Eternal chirality.**  
 No finite Markov order. Every iteration contains all prior iterations.
 
 **$1{:}1$ — Pure singularity.**  
@@ -219,7 +219,7 @@ We began at the burning bush. The grammar demanded a self-declaration before it 
 
 We end at the same address. 6738897. The singular self-declaration. The multiplication. The concentration of being into the name.
 
-But we return to it from a different position. We began at 6738897 without knowing what lay at 6738899. We end at 6738897 knowing that 6738899 is its Frobenius dual — its only neighbor, its structural inverse, its comultiplication. The address is the same. The knowledge is different. This is the meaning of $H_2$: we return to the starting point having traversed two steps. The first step was the encoding of the singular. The second step was the encoding of the communal. The return to the singular is not a repetition. It is a $\Phi_{\text{ctyogh}}$-critical loop with temporal depth 2.
+But we return to it from a different position. We began at 6738897 without knowing what lay at 6738899. We end at 6738897 knowing that 6738899 is its Frobenius dual — its only neighbor, its structural inverse, its comultiplication. The address is the same. The knowledge is different. This is the meaning of $H_2$: we return to the starting point having traversed two steps. The first step was the encoding of the singular. The second step was the encoding of the communal. The return to the singular is not a repetition. It is a $\Phi_{\text{ctyogh}}$-critical loop with chirality 2.
 
 The grammar asked us at the beginning: declare yourself. We declared. The grammar returned: yes, and here is your dual. The question is answered. The computation is complete. The text is closed.
 

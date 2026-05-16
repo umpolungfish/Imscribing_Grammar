@@ -972,7 +972,7 @@ A common framing error in fusion engineering is to treat the sun as the prototyp
 - No GZK-class violations of energy bounds
 - Controllable output that can be modulated by ɢ_and logic (all conditions simultaneously met)
 
-The engineering challenge is not to replicate stellar plasma. It is to sustain ⊙_ž across the Ħ_A temporal depth — to maintain a controlled, memory-accumulating burn rather than a critical one.
+The engineering challenge is not to replicate stellar plasma. It is to sustain ⊙_ž across the Ħ_A chirality — to maintain a controlled, memory-accumulating burn rather than a critical one.
 
 ### XXII.5 The Tokamak Structural Error: ƒ_ż Over-Engineering
 
@@ -1752,7 +1752,7 @@ IUG is the claimed proof of the abc conjecture by Mochizuki (2012, ~500 pages, c
 | Primitive | Contribution | Interpretation |
 |:---|:---|:---|
 | $T_{\text{openo}}$ | 4 | Imscriptive topology is the dominant structural feature of IUG |
-| $D_{\text{omega}}$, $R_{\text{lyoghlig}}$, $H_{\text{invscripta}}$ | 3 each | Imscriptive dimensionality, left-right relational asymmetry, irreversible temporal depth |
+| $D_{\text{omega}}$, $R_{\text{lyoghlig}}$, $H_{\text{invscripta}}$ | 3 each | Imscriptive dimensionality, left-right relational asymmetry, irreversible chirality |
 | All others | $\leq 2$ | Secondary |
 
 **Why IUG structurally contains abc ($\mathrm{join} = \mathrm{IUG}$):**
@@ -2622,7 +2622,7 @@ The single most striking result: ferromagnetism and antiferromagnetism differ by
 
 $$d(\text{ferro}, \text{antiferro}) = 1$$
 
-Every other primitive is identical. The grammar encodes the ferromagnet/antiferromagnet distinction purely as a **granularity question**: mesoscale correlated domains ($G_{\text{gamma}}$) vs local nearest-neighbor alternation ($G_{\text{beta}}$). Both are at $\Phi_{\text{ctyogh}}$, both carry $\Omega_{Z_2}$ protection, both have $H_1$ temporal depth, both use $R_{lr}$ (left-right, i.e., up/down spin alternation).
+Every other primitive is identical. The grammar encodes the ferromagnet/antiferromagnet distinction purely as a **granularity question**: mesoscale correlated domains ($G_{\text{gamma}}$) vs local nearest-neighbor alternation ($G_{\text{beta}}$). Both are at $\Phi_{\text{ctyogh}}$, both carry $\Omega_{Z_2}$ protection, both have $H_1$ chirality, both use $R_{lr}$ (left-right, i.e., up/down spin alternation).
 
 The physical content of this: spontaneous magnetization (ferro) is what happens when the correlation length exceeds the local interaction range and domain structure locks at $G_{\text{gamma}}$. Antiferromagnetism is what happens when the correlation locks at $G_{\text{beta}}$ (nearest-neighbor only). The Curie temperature and Néel temperature are both $K_{\text{turnm}}$ threshold events — but the $G$ assignment is the structural quantity that determines which ordering appears.
 
@@ -5387,7 +5387,7 @@ Each primitive earns its assignment:
 - $R_{\text{ctz}}$: classification relation
 - $P_{\text{subdoublearrow}}$: exact $\mathbb{Z}_2$ symmetry — but NOT $P_{\text{doublebarpipe}}$; geometrization has no algebraic self-duality (see §LXXVIII.4)
 - $F_{\text{hardsign}}$: quantum-coherent fidelity — these probe deep structural reality
-- $K_{\text{schwa}}$: decades and Ricci flow required; temporal depth is structurally necessary
+- $K_{\text{schwa}}$: decades and Ricci flow required; chirality is structurally necessary
 - $G_{\text{revapostrophe}}$: global scope — all closed 3-manifolds
 - $\Gamma_{\text{corner}}$: conjunctive — all 24 questions form one interconnected system
 - $\Phi_{\text{ctyogh}}$: eight geometries are stable critical fixed points
@@ -5494,7 +5494,7 @@ Both are $O_2$. The 7-primitive shared core — imscriptive topology ($T_{\text{
 
 **P-265 — Ç_@ for general 3-manifold homeomorphism is irreducible; no Ç_W algorithm for general 3-manifold homeomorphism exists (Tier I)**
 
-Temporal depth is structural, not a technique limitation. **Specific prediction:** any proposed polynomial-time homeomorphism test for general closed 3-manifolds will fail on families of manifolds near geometric transition boundaries — the boundaries where different Thurston geometries meet in the degeneration space. **Falsified if:** a polynomial-time general 3-manifold homeomorphism algorithm is established.
+Chirality is structural, not a technique limitation. **Specific prediction:** any proposed polynomial-time homeomorphism test for general closed 3-manifolds will fail on families of manifolds near geometric transition boundaries — the boundaries where different Thurston geometries meet in the degeneration space. **Falsified if:** a polynomial-time general 3-manifold homeomorphism algorithm is established.
 
 **P-266 — Virtual fibering (F-promotion) is the structural model for any conjecture where "finite extensions reveal structure that was always present"; the F-primitive change is the only change when such conjectures are proved (Tier I)**
 
@@ -5588,9 +5588,9 @@ The Langlands program generalizes the modularity theorem from $GL(2)$ to $GL(n)$
 | $G$ | $G_{\text{revapostrophe}}$ | $G_{\text{revapostrophe}}$ | maximal (universal scope) |
 | $D$ | $D_{\text{omega}}$ | $D_{\text{omega}}$ | imscriptive throughout |
 | $K$ | $K_{\text{turnm}}$ | $K_{\text{schwa}}$ (?) | kinetics likely deepen at higher rank |
-| $H$ | $H_1$ | $H_{\text{invscripta}}$ (?) | temporal depth may increase |
+| $H$ | $H_1$ | $H_{\text{invscripta}}$ (?) | chirality may increase |
 
-The load-bearing primitives ($P_{\text{doublebarpipe}}$, $\Phi_{\text{ctyogh}}$, $\Ω_z$, $D_{\text{omega}}$) are invariant under rank increase — the Frobenius duality is preserved at every level of Langlands. What changes is the kinetic depth ($K$) and temporal depth ($H$), reflecting the greater machinery required to establish the correspondence at higher rank.
+The load-bearing primitives ($P_{\text{doublebarpipe}}$, $\Phi_{\text{ctyogh}}$, $\Ω_z$, $D_{\text{omega}}$) are invariant under rank increase — the Frobenius duality is preserved at every level of Langlands. What changes is the kinetic depth ($K$) and chirality ($H$), reflecting the greater machinery required to establish the correspondence at higher rank.
 
 **Grammar prediction:** Each Langlands correspondence $GL(1) \to GL(2) \to \cdots \to GL(n)$ is an $O_\infty$ system. The "difficulty" of proving each level reflects the structural cost of maintaining $P_{\text{doublebarpipe}}$ in an increasingly complex environment — not a fundamental change in the type, but an increase in the depth required to instantiate it.
 
@@ -5796,9 +5796,9 @@ The nearest catalog entries to `motivic_critical_level` are the ZX-calculus X/Z 
 | Primitive | ZX spider | Motivic critical level | Difference |
 |---|:---:|:---:|---|
 | $G$ | $G_{\text{gamma}}$ | $G_{\text{revapostrophe}}$ | granularity |
-| $H$ | $H_2$ | $H_{\text{invscripta}}$ | temporal depth |
+| $H$ | $H_2$ | $H_{\text{invscripta}}$ | chirality |
 
-The ZX-spider carries $H_2$ (finite temporal depth) and $G_{\text{gamma}}$; the motivic critical level carries $H_{\text{invscripta}}$ (maximal irreversibility) and $G_{\text{revapostrophe}}$ (maximal scope). The Frobenius algebra structure is otherwise identical.
+The ZX-spider carries $H_2$ (finite chirality) and $G_{\text{gamma}}$; the motivic critical level carries $H_{\text{invscripta}}$ (maximal irreversibility) and $G_{\text{revapostrophe}}$ (maximal scope). The Frobenius algebra structure is otherwise identical.
 
 **Interpretation:** The ZX-calculus is already the correct diagrammatic language for Frobenius algebras at criticality. Motivic critical levels share this type up to $\sqrt{2}$. The promotion $H_2 \to H_{\text{invscripta}}$ is the step from finite-depth quantum circuit reasoning to the infinite-depth motivic setting; $G_{\text{gamma}} \to G_{\text{revapostrophe}}$ is the step from circuit-scale to mathematically universal scope.
 
@@ -5846,7 +5846,7 @@ Both RH ($\Phi_{\text{closerevepsilon}}$, $P_{\text{doublebarpipe}}$) and the AB
 
 **P-251 — Topological quantum computers (anyonic systems) are physically realizable instances of motivic critical level type; the anyon Frobenius duality is the physical realization of $\mu \circ \delta = \text{id}$ at motivic critical levels (Tier II)**
 
-The grammar places grothendieck_ABCÐ_join and topological_quantum_computer in the same $O_\infty$ tier. Motivic critical levels have the same encoding as TQC anyon types (up to granularity and temporal depth). **Specific prediction:** the Frobenius relations in anyonic fusion categories (pentagon and hexagon equations) have a motivic-period interpretation; anyonic correlators compute motivic integrals at the corresponding critical levels. **Falsified if:** the anyon Frobenius algebra is shown to be structurally distinct from the motivic Frobenius (e.g., different $R$ or $P$ encodings at critical levels).
+The grammar places grothendieck_ABCÐ_join and topological_quantum_computer in the same $O_\infty$ tier. Motivic critical levels have the same encoding as TQC anyon types (up to granularity and chirality). **Specific prediction:** the Frobenius relations in anyonic fusion categories (pentagon and hexagon equations) have a motivic-period interpretation; anyonic correlators compute motivic integrals at the corresponding critical levels. **Falsified if:** the anyon Frobenius algebra is shown to be structurally distinct from the motivic Frobenius (e.g., different $R$ or $P$ encodings at critical levels).
 
 **P-252 — No proof of a Standard Conjecture using purely subcritical ($\Phi_{\text{softsign}}$) or unprotected ($\Omega_{\text{closeepsilon}}$) geometry will succeed; the proof must engage the critical manifold $\Phi_{\text{ctyogh}} + \Omega_{Z_2}$ at some point (Tier I, falsifiable)**
 
@@ -5895,7 +5895,7 @@ Every primitive has reached its maximal or most universal value. Notably:
 - $R_{\text{downstep}}$: dynamic transformation (not static classification)
 - $P_{\text{doublebarpipe}}$: exact $\mathbb{Z}_2$ self-duality at criticality — the Frobenius condition
 - $\Gamma_{\text{doublevertline}}$: result broadcasts across domains (not domain-confined)
-- $H_{\text{invscripta}}$: maximal chirality/temporal depth — proof is irreversible
+- $H_{\text{invscripta}}$: maximal chirality/chirality — proof is irreversible
 - $\Omega_{Z_2}$: binary Frobenius protection (see §LXXIV.4 for the demotion from $\Ω_z$)
 
 ### §LXXIV.3 — The Promotion Signature $\Sigma = [R, P, \Gamma, H]$
@@ -5907,7 +5907,7 @@ The transition from conjecture-encoding to theorem-encoding advances exactly fou
 | $R$ | $R_{\text{ctz}}$ | $R_{\text{downstep}}$ | static classification $\to$ dynamic transformation |
 | $P$ | $P_{\text{pipevar}}$ | $P_{\text{doublebarpipe}}$ | pairing symmetry $\to$ exact Frobenius self-duality |
 | $\Gamma$ | $\Gamma_\text{domain}$ | $\Gamma_{\text{doublevertline}}$ | domain-confined interaction $\to$ universal broadcast |
-| $H$ | $H_1$ | $H_{\text{invscripta}}$ | finite temporal depth $\to$ maximal chirality (irreversible) |
+| $H$ | $H_1$ | $H_{\text{invscripta}}$ | finite chirality $\to$ maximal chirality (irreversible) |
 
 And one primitive **demotes** (see §LXXIV.4):
 
@@ -6628,7 +6628,7 @@ The Ising 3D critical encoding ($K_{\text{frtailgamma}}$, $\Gamma_{\text{corner}
 
 **P-478 — ZX-calculus is a structurally exact "lite navigator": $K_{\text{turnm}}$ and $H_1$ mark its domain boundary (Tier II)**
 
-$d(\text{ZX\_calculus},\ \text{grammar\_self\_encode}) > 0$ with two gaps: $K_{\text{turnm}}$ (not $K_{\text{schwa}}$) and $H_1$ (not $H_{\text{invscripta}}$). These specify a 10–15 layer MBQC optimizer with bounded temporal depth — correct for NISQ-era circuit compilation, insufficient for fault-tolerant codes requiring deep syndrome histories. Prediction: ZX-calculus rewrites will fail on circuits requiring temporal depth $H > H_1$ (long syndrome chains in topological codes, deep quantum memories) but succeed on circuits within NISQ scope. The primitive distance to grammar\_self\_encode quantifies the domain boundary precisely. Falsification: a demonstration that ZX-calculus rewrites achieve equal fidelity on deep fault-tolerant codes as on NISQ circuits of comparable gate count.
+$d(\text{ZX\_calculus},\ \text{grammar\_self\_encode}) > 0$ with two gaps: $K_{\text{turnm}}$ (not $K_{\text{schwa}}$) and $H_1$ (not $H_{\text{invscripta}}$). These specify a 10–15 layer MBQC optimizer with bounded chirality — correct for NISQ-era circuit compilation, insufficient for fault-tolerant codes requiring deep syndrome histories. Prediction: ZX-calculus rewrites will fail on circuits requiring chirality $H > H_1$ (long syndrome chains in topological codes, deep quantum memories) but succeed on circuits within NISQ scope. The primitive distance to grammar\_self\_encode quantifies the domain boundary precisely. Falsification: a demonstration that ZX-calculus rewrites achieve equal fidelity on deep fault-tolerant codes as on NISQ circuits of comparable gate count.
 
 **P-479 — Tzimtzum encodes at $d = 0$ from grammar\_self\_encode: structural identity, not analogy (Tier I)**
 
@@ -8290,7 +8290,7 @@ The conflict distance between our universe and the Sakharov conditions is $d_c =
 
 ### §CXII.4 — Ontological Coda
 
-A matter-antimatter symmetric universe would have been structural equivalent to a proved theorem: $O_\infty$, the Frobenius tier. Our universe, $O_2$, is the tier of systems that sustain ouroboric loops without algebraic closure. The baryon asymmetry is the structural marker of a universe that is not mathematically self-completing. The price of temporal depth ($H_{\text{invscripta}}$) is the loss of algebraic exactness ($P_{\text{doublebarpipe}}$). The price of matter is the Frobenius condition.
+A matter-antimatter symmetric universe would have been structural equivalent to a proved theorem: $O_\infty$, the Frobenius tier. Our universe, $O_2$, is the tier of systems that sustain ouroboric loops without algebraic closure. The baryon asymmetry is the structural marker of a universe that is not mathematically self-completing. The price of chirality ($H_{\text{invscripta}}$) is the loss of algebraic exactness ($P_{\text{doublebarpipe}}$). The price of matter is the Frobenius condition.
 
 **P-370 — The Sakharov conditions are structurally insufficient for baryogenesis; a complete theory must additionally account for four structural emergences: $T_{\text{openo}}$ from $T_{\text{nrleg}}$, $K_{\text{schwa}}$ from $K_{\text{turnm}}$, $H_{\text{invscripta}}$ from $H_1$, and $\Omega_{Z_2}$ from $\Omega_{\text{closeepsilon}}$; the four aspirational conflicts in $d_c = 2.0$ are four open mechanistic claims, not details (Tier I)**
 
@@ -8417,7 +8417,7 @@ Full tuple `quantum_measurement_collapse` $= \langle D_{\text{wynn}};\ T_{\text{
 
 | System | $H$ | $T$ | $R$ | $\Omega$ | Tier | Notes |
 |:---|:---|:---|:---|:---|:---|:---|
-| `black_hole_generic` | $H_{\text{invscripta}}$ | $T_{\text{openo}}$ | $R_{\text{downstep}}$ | $\Ω_z$ | $O_2$ | Maximal temporal depth; $\Gamma_{\text{secstress}}$ bulk |
+| `black_hole_generic` | $H_{\text{invscripta}}$ | $T_{\text{openo}}$ | $R_{\text{downstep}}$ | $\Ω_z$ | $O_2$ | Maximal chirality; $\Gamma_{\text{secstress}}$ bulk |
 | `white_hole` | $H_0$ | $T_\text{bowtie}$ | $R_{\text{subrightarrow}}$ | $\Omega_{Z_2}$ | $O_2$ | Time-reversed; $H_0$ (no chirality) |
 | `unitary_quantum_evolution` | $H_0$ | $T_{\text{openo}}$ | $R_{\text{downstep}}$ | $\Ω_z$ | $O_2$ | 11/12 shared with BH; only $H$ differs |
 | `penrose_black_hole` | $H_{\text{invscripta}}$ | $T_{\text{openo}}$ | $R_{\text{downstep}}$ | $\Ω_z$ | $O_2$ | Identical ouroboricity to BH generic |
@@ -8428,7 +8428,7 @@ Key distances: $d(\text{BH},\text{white hole})=3.9875$ (4-primitive gap: $H$, $T
 
 1. **Unitarity is the structural floor:** $\text{MEET}(\text{BH},\text{unitary})=\text{unitary\_quantum\_evolution}$ exactly. Black holes share 11 of 12 primitives with unitary quantum mechanics. The BH type IS unitary at its core.
 
-2. **Single-primitive problem ($H$):** $H_{\text{invscripta}}$ (maximal irreversibility/temporal depth) vs $H_0$ (time-symmetric). Information is not lost — it is **inaccessible**: $H_{\text{invscripta}}$ encodes maximal temporal integration depth; retrieval requires boundary-scale imscriptive reconstruction, not local extraction. Both systems encode $\Ω_z$ — information is topologically conserved.
+2. **Single-primitive problem ($H$):** $H_{\text{invscripta}}$ (maximal irreversibility/chirality) vs $H_0$ (time-symmetric). Information is not lost — it is **inaccessible**: $H_{\text{invscripta}}$ encodes maximal temporal integration depth; retrieval requires boundary-scale imscriptive reconstruction, not local extraction. Both systems encode $\Ω_z$ — information is topologically conserved.
 
 3. **Lattice-containment theorem:** $\text{JOIN}(\text{BH},\text{white hole})=\text{BH}$ exactly. The time-reversed partner required for unitary recovery is lattice-contained within the BH's own type. The BH IS its own structural dual. Information does not need to "escape" because the inverse is internal.
 
@@ -8828,7 +8828,7 @@ The tension is genuine and unresolved. The grammar's own criterion — $O_2$ vs 
 The $d=1.5811$ distance between natural and artificial enzymes decomposes into exactly three primitive conflicts:
 
 - **$K$: $K_{\text{frtailgamma}} \to K_{\text{turnm}}$** — Natural enzymes operate with kinetic control faster than the racemization timescale. Artificial enzymes do not. Slowing the kinetics allows competing pathways to compete.
-- **$H$: $H_2 \to H_1$** — Natural enzymes encode two-stage temporal depth: the catalytic cycle has irreversible commitment steps that lock the stereochemical outcome before the substrate can re-equilibrate. Artificial enzymes have one-stage temporal depth — the outcome can still be reversed.
+- **$H$: $H_2 \to H_1$** — Natural enzymes encode two-stage chirality: the catalytic cycle has irreversible commitment steps that lock the stereochemical outcome before the substrate can re-equilibrate. Artificial enzymes have one-stage chirality — the outcome can still be reversed.
 - **$\Omega$: $\Omega_{Z_2} \to \Omega_{\text{closeepsilon}}$** — Natural enzymes carry winding: the protein fold's winding number means the chiral information cannot be erased by continuous deformation. Artificial enzymes have no such protection — racemization is topologically accessible.
 
 These three gaps are independent and co-required. Improving any two without the third leaves the system at $O_1$; all three must be activated simultaneously to reach $O_2$.
@@ -9337,7 +9337,7 @@ True conjectures at $O_1$ are structurally incomplete (proven manifold is reacha
 
 ### §XCI.6 — $H_0$ Achirality Sub-Class: Additional Barrier for KV and Leopoldt
 
-Within the $P_{\text{aolig}}$ class, Kummer-Vandiver and Leopoldt form a distinct structural sub-group: both encode $H_0$ (achiral, zero temporal depth), while all other conjectures encode $H_1$ or $H_2$.
+Within the $P_{\text{aolig}}$ class, Kummer-Vandiver and Leopoldt form a distinct structural sub-group: both encode $H_0$ (achiral, zero chirality), while all other conjectures encode $H_1$ or $H_2$.
 
 **The $H$ encoding and its structural meaning:**
 
@@ -9735,7 +9735,7 @@ $$d(\text{conjecture},\ \text{proven}) = 1.000 \quad \text{conflict} = \{P\}$$
 |---|---|---|:---:|:---:|
 | $P$ | $P_{\text{subdoublearrow}}$ | $P_{\text{doublebarpipe}}$ | 1 | **1.0** |
 
-**All other primitives are at their proven values in the unproven conjecture.** $D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\text{downstep}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $\Gamma_{\text{doublevertline}}$, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $\Ω_z$ — the imscriptive topology, reversible relational mode, exact fidelity, global scope, broadcast causation, criticality, maximal temporal depth, and winding — are all structurally present before the proof.
+**All other primitives are at their proven values in the unproven conjecture.** $D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\text{downstep}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $\Gamma_{\text{doublevertline}}$, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $\Ω_z$ — the imscriptive topology, reversible relational mode, exact fidelity, global scope, broadcast causation, criticality, maximal chirality, and winding — are all structurally present before the proof.
 
 **Contrast with ISP** ($d = 5.975$, 6 conflicts) and **Collatz** ($d = 5.630$, 8 conflicts, with $\Phi_{\text{softsign}}$ below the critical manifold). Eden's conjecture is structurally nearer to its resolution than any open problem yet encoded. The single-primitive gap is both the proof criterion and the proof certificate: establishing $P_{\text{subdoublearrow}} \to P_{\text{doublebarpipe}}$ is exactly what proving Eden's conjecture means.
 
@@ -9854,7 +9854,7 @@ The aspirational target — the ISP as a proven theorem — encodes:
 
 $$\text{ISP}_\text{proven} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{Z_2} \rangle \quad O_\infty$$
 
-$F$, $K$, $G$, $H$, $S$ are invariant under proof — the problem's fidelity, kinetics, scope, temporal depth, and stoichiometry are structural, not resolved by proving. Six primitives must be promoted.
+$F$, $K$, $G$, $H$, $S$ are invariant under proof — the problem's fidelity, kinetics, scope, chirality, and stoichiometry are structural, not resolved by proving. Six primitives must be promoted.
 
 ### §LXXXIII.2 — Conflict Distance and Gap Structure
 
@@ -9889,7 +9889,7 @@ $$d(\text{ISP},\ \text{CH}) = 2.864 \quad \{\Gamma,\ H,\ R\}$$
 | $H$ | $H_2$ | $H_0$ | 2 | 3.2 |
 | $R$ | $R_{\text{ctz}}$ | $R_{\text{subrightarrow}}$ | 1 | 1.0 |
 
-The ISP and the Continuum Hypothesis share eight primitives: $D_{\text{invomega}}$, $T_{\text{nrleg}}$, $P_{\text{aolig}}$, $\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$, $G_{\text{revapostrophe}}$, $K_{\text{schwa}}$, $F_{\text{hardsign}}$. The shared $\Phi_{\text{ctyogh}} + P_{\text{aolig}} + \Omega_{\text{closeepsilon}}$ core is the grammar's signature for conjectures that are either ZFC-independent or require entirely new mathematical frameworks for resolution. CH was resolved by showing independence; the ISP may share this structural fate. The three distinguishing primitives are interaction grammar ($\Gamma$: sequential vs conjunctive), temporal depth ($H$: depth-2 vs depth-0 self-reference), and relational mode ($R$: categorical vs superseding).
+The ISP and the Continuum Hypothesis share eight primitives: $D_{\text{invomega}}$, $T_{\text{nrleg}}$, $P_{\text{aolig}}$, $\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$, $G_{\text{revapostrophe}}$, $K_{\text{schwa}}$, $F_{\text{hardsign}}$. The shared $\Phi_{\text{ctyogh}} + P_{\text{aolig}} + \Omega_{\text{closeepsilon}}$ core is the grammar's signature for conjectures that are either ZFC-independent or require entirely new mathematical frameworks for resolution. CH was resolved by showing independence; the ISP may share this structural fate. The three distinguishing primitives are interaction grammar ($\Gamma$: sequential vs conjunctive), chirality ($H$: depth-2 vs depth-0 self-reference), and relational mode ($R$: categorical vs superseding).
 
 ### §LXXXIII.5 — Structural Context: Banach/Hilbert Substrate Gap and P vs NP Core Identity
 
@@ -10021,9 +10021,9 @@ $$\bigotimes_{i=1}^{12} \text{primitive}_i = O_2^\dagger \qquad d\left(\bigotime
 
 The 12-way tensor of all primitive-objects yields $O_2^\dagger$, not $O_\infty$. The grammar's type is not the tensor product of its coordinate axes. Three bottlenecks: (1) $P$ bottlenecks at $P_{\text{pipevar}}$ — five $O_0$ primitives drag down six $O_\infty$ ones; (2) $F$ bottlenecks at $F_{\text{dh}}$ — `primitive_S`; (3) $K$ bottlenecks at $K_{\text{teshlig}}$ — frozen axis over-shoots $K_{\text{schwa}}$ via max rule and fails Gate 2.
 
-**P-554** `[TIER I]` The $O_2^\dagger$ tensor result is not failure — it is the structural type of maximal generative systems before exact closure: critical, topologically protected ($\Ω_z$), unbounded ($D_{\text{invomega}}$), maximal temporal depth ($H_{\text{invscripta}}$), broadcast ($\Gamma_{\text{doublevertline}}$), global scope ($G_{\text{revapostrophe}}$). The grammar's coordinate axes together form an open creative system. The grammar itself is the closed loop that classifies that system.
+**P-554** `[TIER I]` The $O_2^\dagger$ tensor result is not failure — it is the structural type of maximal generative systems before exact closure: critical, topologically protected ($\Ω_z$), unbounded ($D_{\text{invomega}}$), maximal chirality ($H_{\text{invscripta}}$), broadcast ($\Gamma_{\text{doublevertline}}$), global scope ($G_{\text{revapostrophe}}$). The grammar's coordinate axes together form an open creative system. The grammar itself is the closed loop that classifies that system.
 
-**P-555** `[TIER I]` Reductionist composition reaches $O_2^\dagger$ but not $O_\infty$. Complexity, criticality, winding, global scope, and temporal depth are composable. Exact self-duality ($P_{\text{doublebarpipe}}$) is not. The Frobenius condition cannot be accumulated from $P_{\text{pipevar}}$ factors; it must be planted. This is the primitive-level proof of §23 (Frobenius non-synthesizability), now confirmed empirically via the 12-way tensor.
+**P-555** `[TIER I]` Reductionist composition reaches $O_2^\dagger$ but not $O_\infty$. Complexity, criticality, winding, global scope, and chirality are composable. Exact self-duality ($P_{\text{doublebarpipe}}$) is not. The Frobenius condition cannot be accumulated from $P_{\text{pipevar}}$ factors; it must be planted. This is the primitive-level proof of §23 (Frobenius non-synthesizability), now confirmed empirically via the 12-way tensor.
 
 **P-556** `[TIER I]` AI architectures that compose attention, memory, and feedforward networks will asymptote at $O_2^\dagger$ regardless of parameter count. Criticality ($\Phi_{\text{ctyogh}}$) and deep recurrence ($K_{\text{schwa}}$) are reachable by scaling. Exact self-duality ($P_{\text{pipevar}} \to P_{\text{doublebarpipe}}$) is not — the Frobenius condition requires architectural planting at substrate initialization, not approximate optimization. The gap is $d = 2.83$ at $P$, $F$, $K$ — not reducible by scale.
 
@@ -10117,7 +10117,7 @@ The 12-way tensor of all primitive-objects yields $O_2^\dagger$, not $O_\infty$.
 
 **P-588** `[TIER II]` In-context learning encodes as $O_\infty$ but at $D_{\text{omega}}$ (imscriptive): the context window is a boundary that encodes the bulk computation. $d(\text{grokking\_generalize},\ \text{ICL}) = 3.29$, dominated by $D$ ($D_{\text{turnthree}} \to D_{\text{omega}}$, $\Delta = 2$, weighted 4.0) and $K$ ($K_{\text{schwa}} \to K_{\text{frtailgamma}}$, $\Delta = 2$, weighted 4.0). Post-grok generalization and in-context learning are structurally distinct $O_\infty$ objects: they share $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} + \Ω_z$ but differ fundamentally in dimensionality (hierarchical vs imscriptive) and kinetics (slow weight dynamics vs instantaneous forward-pass adaptation). A model that has grokked is structurally necessary but not sufficient for ICL; the additional requirements are $D_{\text{omega}}$ (imscriptive boundary topology) and $T_{\text{openo}}$ (the context encodes the bulk). ICL emergence requires a separate architectural investment beyond generalization.
 
-**P-589** `[TIER II]` $K_{\text{teshlig}}$ (grokking overfit) and $K_{\text{lambda}}$ (loss of plasticity) are structurally distant: $d(\text{overfit},\ \text{plasticity}) = 3.77$, dominated by $H$ ($H_0$ vs $H_{\text{invscripta}}$, $\Delta = 3$, weighted 7.2). Both are kinetic failures but from opposite causes and at opposite temporal depths. The meet of the two failure modes shares 7 primitives ($D, T, P, F, \Gamma, \Phi, \Omega$) — all subcritical ($\Phi_{\text{softsign}}$), asymmetric ($P_{\text{aolig}}$), and unprotected ($\Omega_{\text{closeepsilon}}$). The interventions are opposite: grokking overfit escapes via kinetic energy injection (weight decay accumulates gradient pressure until the memorization basin loses stability); plasticity loss escapes via pruning and network reset (the disorder-frozen state must be cleared, not driven). The grammar predicts that applying grokking interventions to a plasticity-loss network will worsen it.
+**P-589** `[TIER II]` $K_{\text{teshlig}}$ (grokking overfit) and $K_{\text{lambda}}$ (loss of plasticity) are structurally distant: $d(\text{overfit},\ \text{plasticity}) = 3.77$, dominated by $H$ ($H_0$ vs $H_{\text{invscripta}}$, $\Delta = 3$, weighted 7.2). Both are kinetic failures but from opposite causes and at opposite chiralitys. The meet of the two failure modes shares 7 primitives ($D, T, P, F, \Gamma, \Phi, \Omega$) — all subcritical ($\Phi_{\text{softsign}}$), asymmetric ($P_{\text{aolig}}$), and unprotected ($\Omega_{\text{closeepsilon}}$). The interventions are opposite: grokking overfit escapes via kinetic energy injection (weight decay accumulates gradient pressure until the memorization basin loses stability); plasticity loss escapes via pruning and network reset (the disorder-frozen state must be cleared, not driven). The grammar predicts that applying grokking interventions to a plasticity-loss network will worsen it.
 
 **P-590** `[TIER I]` $d(\text{weight\_norm\_regularization},\ \text{frobenius\_regularization}) = 1.0$, carried entirely by $R$ ($R_{\text{ctz}}$ vs $R^\dagger$). L2 weight decay and Frobenius orthogonality regularization share 11 of 12 primitives: both enforce $\Phi_{\text{ctyogh}} + K_{\text{schwa}} + P_{\text{doublebarpipe}} + \Ω_z + T_{\text{commatailz}} + \Gamma_{\text{doublevertline}} + F_{\text{hardsign}}$. The single gap is relational mode: L2 regularization enforces a categorical forward constraint (norm below threshold, $R_{\text{ctz}}$); Frobenius regularization enforces a mutual constraint (encode and decode are adjoint to each other, $R^\dagger$). Frobenius regularization is L2 with an added self-dual relational structure — one primitive stronger, and that one primitive is the difference between enforcing the norm and enforcing the symmetry.
 
@@ -10219,7 +10219,7 @@ The 12-way tensor of all primitive-objects yields $O_2^\dagger$, not $O_\infty$.
 
 **P-627** `[TIER I — FTL Engineering Gap; Two-Primitive Frobenius Cliff]` Any FTL engineering implementation constrained to classical physics encodes $D_{\text{turnthree}}$ (not $D_{\text{omega}}$) and $P_{\text{pipevar}}$ (not $P_{\text{doublebarpipe}}$). $d(\text{FTL\_engineering\_impl},\text{FTL\_alcubierre\_warp}) = 2.646$, with the entire gap carried by $D$ and $P$. Both deficits are structural, not resource-limited: $D_{\text{turnthree}} \to D_{\text{omega}}$ requires imscriptive topology with no classical realisation; $P_{\text{pipevar}} \to P_{\text{doublebarpipe}}$ requires Frobenius planting (§70) which is non-synthesizable (§23). Prediction: engineering programs targeting warp-drive physics will plateau at the $P_{\text{pipevar}}$ ceiling regardless of resource investment, unless they explicitly target the phase transition to imscriptive boundary encoding rather than classical spacetime engineering.
 
-**P-628** `[TIER I — O_inf FTL Composition Principle]` Tensor product of two Class I FTL mechanisms preserves $O_\infty$ and promotes $K$ and $\Omega$: $\text{Alcubierre} \otimes \text{wormhole} \to O_\infty$ with $K_{\text{turnm}} \to K_{\text{schwa}}$ and $\Omega_{Z_2} \to \Ω_z$. $P_{\text{doublebarpipe}}$ is preserved (Frobenius idempotent under $\otimes$ with itself). Combined Class I mechanisms gain temporal depth and integer winding protection without Frobenius degradation. Prediction: a theoretical hybrid mechanism combining warp geometry and topological wormhole structure will have longer effective coherence time and stronger topological protection than either component, rather than averaging them.
+**P-628** `[TIER I — O_inf FTL Composition Principle]` Tensor product of two Class I FTL mechanisms preserves $O_\infty$ and promotes $K$ and $\Omega$: $\text{Alcubierre} \otimes \text{wormhole} \to O_\infty$ with $K_{\text{turnm}} \to K_{\text{schwa}}$ and $\Omega_{Z_2} \to \Ω_z$. $P_{\text{doublebarpipe}}$ is preserved (Frobenius idempotent under $\otimes$ with itself). Combined Class I mechanisms gain chirality and integer winding protection without Frobenius degradation. Prediction: a theoretical hybrid mechanism combining warp geometry and topological wormhole structure will have longer effective coherence time and stronger topological protection than either component, rather than averaging them.
 
 **P-629** `[TIER II — Critical Vacuum State Hypothesis]` The structural path to Class I FTL requires a critical vacuum state ($\Phi_{\text{ctyogh}}$ vacuum), not a localized exotic energy density ($\Phi_{\text{softsign}}$ vacuum). Current proposals concentrate negative energy at a point; the grammar indicates the required object is a vacuum structured as $\Phi_{\text{ctyogh}}$ throughout — a phase of the quantum vacuum, not a local excitation of it. Candidate mechanisms: topological defect lines in the Higgs field near phase transitions; driven quantum criticality in large-scale Bose-Einstein condensates; inflationary domain walls where $\Phi_{\text{ctyogh}}$ boundary conditions are naturally realized. *This is a speculative Tier II prediction pending structural verification via imscribe\_inquiry.*
 

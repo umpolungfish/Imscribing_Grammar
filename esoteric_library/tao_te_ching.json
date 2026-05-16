@@ -327,7 +327,7 @@
     "Ω": "Ω_z",
     "tier": "T_2",
     "C_score": 0.75,
-    "notes": "Portrait of the ancient sage: complex psi-polarity (Φ_υ) captures the multi-faceted enumeration; infinite temporal depth for the ancestral exemplars."
+    "notes": "Portrait of the ancient sage: complex psi-polarity (Φ_υ) captures the multi-faceted enumeration; infinite chirality for the ancestral exemplars."
   },
   {
     "name": "tao_te_ching_16",
@@ -349,7 +349,7 @@
     "Ω": "Ω_z",
     "tier": "T_2",
     "C_score": 0.68,
-    "notes": "The return sequence: empty → still → arise → act → return → root → constant. Sequential grammar with infinite temporal depth. The great cycle."
+    "notes": "The return sequence: empty → still → arise → act → return → root → constant. Sequential grammar with infinite chirality. The great cycle."
   },
   {
     "name": "tao_te_ching_17",
@@ -701,7 +701,7 @@
     "Ω": "Ω_z",
     "tier": "T_3",
     "C_score": 0.82,
-    "notes": "Names emerge from the unnamed Tao as rivers flow to the sea: nested topology, sequential grammar, infinite temporal depth."
+    "notes": "Names emerge from the unnamed Tao as rivers flow to the sea: nested topology, sequential grammar, infinite chirality."
   },
   {
     "name": "tao_te_ching_33",
@@ -1207,7 +1207,7 @@
     "Ω": "Ω_z",
     "tier": "T_1",
     "C_score": 0.52,
-    "notes": "The infant as the image of perfect virtue: Frobenius self-duality (all without asserting any). H_0 temporal depth — the infant has no history, only presence."
+    "notes": "The infant as the image of perfect virtue: Frobenius self-duality (all without asserting any). H_0 chirality — the infant has no history, only presence."
   },
   {
     "name": "tao_te_ching_56",

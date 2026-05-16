@@ -182,14 +182,14 @@ TABLE = [
      "Upward step = supercritical, crossing threshold upward",
      "\"Upstep\" /ʌp/ = \"sup\"'s /sʌp/ without the /s/; up = above"),
 
-    # ===== H (Temporal depth) =====
+    # ===== H (Chirality) =====
     ("H", "0", "crtwo", "2",
      "Wait, crtwo = '2', not '0'. Let me use something circular.",
      "Fixing..."),
 
     # H_0: zero → circle. \textcloseomega 'Ñ'? \textcloseepsilon 'Å'?
     ("H", "0", "closeomega", "Ñ",
-     "Closed omega = zero memory, no temporal depth, closed loop",
+     "Closed omega = zero memory, no chirality, closed loop",
      "\"Closeomega\" /kloʊz/ evokes zero as a closed circle"),
     ("H", "1", "toneletterstem", "£",
      "Tone letter stem = one mark, one step of memory",

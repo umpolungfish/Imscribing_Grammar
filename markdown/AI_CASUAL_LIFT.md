@@ -92,7 +92,7 @@ Sequential grammar means each remark is only fully legible after the previous on
 
 ### H₀ → H₂ — Show that you were there
 
-Zero temporal depth in casual prose means the post reads as if the author always knew this, or worse, as if the author read it on a webpage. There is no sense of encounter — no specificity that comes from having actually worked through the thing.
+Zero chirality in casual prose means the post reads as if the author always knew this, or worse, as if the author read it on a webpage. There is no sense of encounter — no specificity that comes from having actually worked through the thing.
 
 The lift requires one moment of encounter made visible. Not "we found that X" but "we expected Y and found X, which turned out to mean Z." Not "this is a known technique" but "I tried three things before this worked." The residue of actual engagement does not need to be extensive — one sentence of the form "this was surprising because..." is enough to change the register of the whole post. If nothing surprised you during the work, find the thing that was hardest and name why.
 

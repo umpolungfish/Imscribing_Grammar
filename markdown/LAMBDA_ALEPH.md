@@ -181,7 +181,7 @@ $$I(G_\infty) \neq I(N_\infty) \quad \Rightarrow \quad G_\infty \not\cong N_\inf
 | $R$ | $R_{\text{downstep}}$ | $R_{\text{lyoghlig}}$ | full self-duality → directional relations |
 | $P$ | $P_{\text{doublebarpipe}}$ | $P_{\text{subdoublearrow}}$ | global Frobenius → local only |
 | $\Gamma$ | $\Gamma_{\text{doublevertline}}$ | $\Gamma_{\text{corner}}$ | broadcast → sequential composition |
-| $H$ | $H_{\text{invscripta}}$ | $H_2$ | infinite temporal depth → bounded recursion |
+| $H$ | $H_{\text{invscripta}}$ | $H_2$ | infinite chirality → bounded recursion |
 
 $\Phi_{\text{ctyogh}}$, $\Ω_z$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$ are **preserved** — the world after Tzimtzum remains critical and topologically protected, but loses automatic equivalence.
 

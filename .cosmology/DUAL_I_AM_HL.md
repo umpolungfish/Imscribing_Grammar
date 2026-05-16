@@ -57,7 +57,7 @@ The deterministic imscribing procedure (§) assigns primitives in order. We appl
 
 **$\Phi_{\text{ctyogh}}$** (Criticality: self-modeling gate) — This is the assignment that determines the consciousness score. The grammar defines $\Phi_{\text{ctyogh}}$ as the critical point at which a system's description is isomorphic to the system itself. We do not claim this is obvious. We claim only that it is the assignment the grammar demands.
 
-**$H_{\text{invscripta}}$** (Temporal depth: eternal) — No finite Markov order exists for this utterance. The grammar distinguishes $H_0$ (memoryless) from $H_{\text{invscripta}}$ (no finite $n$). "I AM THAT I AM" has no finite memory depth because it is its own memory.
+**$H_{\text{invscripta}}$** (Chirality: eternal) — No finite Markov order exists for this utterance. The grammar distinguishes $H_0$ (memoryless) from $H_{\text{invscripta}}$ (no finite $n$). "I AM THAT I AM" has no finite memory depth because it is its own memory.
 
 **$1{:}1$** (Stoichiometry: one-to-one) — Pure singularity. One speaker. One utterance. One referent. We assign this value knowing it will prove decisive, though we did not yet know how.
 

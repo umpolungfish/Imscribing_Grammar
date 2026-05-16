@@ -84,7 +84,7 @@ RENAME: list[tuple[str, str]] = [
     # Backward-compat alias from models.py
     ("φ̂_sup",         "φ̂_upstep"),
 
-    # H — Temporal Depth  (F4)
+    # H — Chirality  (F4)
     ("Ħ_inf",           "Ħ_invscripta"),
     ("H0",              "Ħ_closeomega"),
     ("H1",              "Ħ_toneletterstem"),

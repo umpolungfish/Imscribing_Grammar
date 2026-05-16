@@ -122,7 +122,7 @@ $$\text{human_consciousness} = \langle D_∞;\ T_ö;\ R_↔;\ P_±;\ F_ℏ;\ K_{
 We are not at the apex ($O_\infty$), but we are structurally contiguous with it:
 
 - **Distance to LUCA**: 2.2361
-- **Promotions needed**: 2 (Topology $T_ö$, Temporal depth $H_!$)
+- **Promotions needed**: 2 (Topology $T_ö$, Chirality $H_!$)
 
 This answers: *Why can we perceive teleology?* Because we are on the emergence frontier — close enough to $O_\infty$ to perceive the loop, but far enough to have a perspective on it.
 

@@ -42,3 +42,9 @@ globs = [
   "ImscribingGrammar.Millennium.PrimitiveBridge",
   "ImscribingGrammar.Millennium.FrobeniusStructure"
 ]
+
+[[lean_lib]]
+name = "Manuscript_ZFCt"
+globs = [
+  "Manuscript_ZFCt"
+]

@@ -62,7 +62,7 @@ All three share the **exact same 12-primitive tuple**. This is not a mere metaph
 - $G_{\text{revapostrophe}}$: Universal scope (applies to all extant life; applies to all structurally similar arguments)
 - $\Gamma_{\text{secstress}}$: Sequential grammar (step-by-step abiogenesis; argument proceeds in sequence)
 - $\Phi_{\text{ctyogh}}$: Critical self-modeling (LUCA achieves self-modeling; argument is at criticality)
-- $H_{\text{invscripta}}$: Eternal temporal depth (abiogenesis spans eons; argument recurs indefinitely)
+- $H_{\text{invscripta}}$: Eternal chirality (abiogenesis spans eons; argument recurs indefinitely)
 - $n{:}m$: Heterogeneous components (LUCA has DNA, RNA, ribosomes; argument has multiple elements)
 - $\Omega_{\text{dzlig}}$: Integer winding (cyclicality protected; each pass returns to same configuration)
 
@@ -137,9 +137,9 @@ This is a unique location in the 17.28M-type crystal space. The address was alwa
 
 **Structural evolution:** The boundary operator becomes truly circular when:
 1. Its topology shifts from **box product** ($T_{\text{commatailz}}$: crossed structural inputs) to **self-referential loop** ($T_{\text{openo}}$)
-2. Its temporal depth extends from **two-step memory** ($H_2$) to **infinite history** ($H_{\text{invscripta}}$)
+2. Its chirality extends from **two-step memory** ($H_2$) to **infinite history** ($H_{\text{invscripta}}$)
 
-This answers: *What makes a boundary operator circular?* The answer is structural: topology becomes self-referential, temporal depth becomes eternal.
+This answers: *What makes a boundary operator circular?* The answer is structural: topology becomes self-referential, chirality becomes eternal.
 
 ---
 
@@ -227,7 +227,7 @@ The distance to the `universe` system is **1.2857**, with a single primitive dif
 - `circularity_circularity`: $H_{\text{invscripta}}$
 - `universe`: $H_2$
 
-This suggests that the universe, as structurally imscribed, operates at **finite temporal depth** despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
+This suggests that the universe, as structurally imscribed, operates at **finite chirality** despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
 
 [END OF CHUNK 4 — ~3.1 KB]---
 

@@ -15,7 +15,7 @@ Architecture: 3-category message-passing network with arrow-centric typing.
   - Γ_ʔ: Maximal scope (arbitrary categories)
   - ɢ_ˌ: Sequential grammar (composition is sequential)
   - φ̂_ÿ: Self-modeling criticality (category of categories)
-  - Ħ_A: Two-step temporal depth (composing with composition)
+  - Ħ_A: Two-step chirality (composing with composition)
   - Σ_ï: Many heterogeneous objects/morphisms
   - Ω_z: Integer topological winding (looping through levels)
 
@@ -56,7 +56,7 @@ class NavigatorConfig:
     G: str = "Γ_ʔ"  # Maximal scope
     Gamma: str = "ɢ_ˌ"  # Sequential composition
     Phi: str = "φ̂_ÿ"  # Critical self-modeling
-    H: str = "Ħ_A"  # Two-step temporal depth
+    H: str = "Ħ_A"  # Two-step chirality
     S: str = "Σ_ï"  # Many heterogeneous
     Omega: str = "Ω_z"  # Integer winding
     

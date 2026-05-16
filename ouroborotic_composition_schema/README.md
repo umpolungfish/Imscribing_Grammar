@@ -43,7 +43,7 @@ Three promotions required to lift to the universal grammar:
 |-----------|---------|--------|
 | **Þ** | Þ_¨ (network) | Þ_O (imscriptive closure) |
 | **Φ** | Φ_F (Frobenius-special) | Φ_} (general symmetry) |
-| **Ħ** | Ħ_A (two-step memory) | Ħ_! (eternal temporal depth) |
+| **Ħ** | Ħ_A (two-step memory) | Ħ_! (eternal chirality) |
 
 ---
 

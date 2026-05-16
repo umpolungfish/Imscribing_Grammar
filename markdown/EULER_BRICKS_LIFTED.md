@@ -33,7 +33,7 @@ are integers. Equivalently: $(a,b,d_{ab})$, $(a,c,d_{ac})$, and $(b,c,d_{bc})$ m
 
 The question that follows inevitably is: can the space diagonal $d_{abc} = \sqrt{a^2 + b^2 + c^2}$ also be integral? This is the perfect cuboid problem. Computational searches have ruled out all solutions with smallest edge below $5 \times 10^{11}$ and all space diagonals below $9 \times 10^{15}$. Yet neither existence nor non-existence has been proved.
 
-The tempting answer — "it is merely harder" — turns out to be structurally wrong. The perfect cuboid is not a more difficult Euler brick. It is a different regime of the same constraint algebra, and the difference is measurable: $d = 3.8716$ in the diagonal metric. The temporal depth contribution alone ($H_0 \to H_{\text{invscripta}}$) accounts for a weighted squared distance of 7.2, meaning that the shift from memoryless evaluation to a search with no finite resolution horizon is the single largest structural delta.
+The tempting answer — "it is merely harder" — turns out to be structurally wrong. The perfect cuboid is not a more difficult Euler brick. It is a different regime of the same constraint algebra, and the difference is measurable: $d = 3.8716$ in the diagonal metric. The chirality contribution alone ($H_0 \to H_{\text{invscripta}}$) accounts for a weighted squared distance of 7.2, meaning that the shift from memoryless evaluation to a search with no finite resolution horizon is the single largest structural delta.
 
 The Imscribing Grammar does not solve the perfect cuboid problem. What it does is reframe the problem's intractability as a structural fact rather than a computational accident. What follows is the evidence for that claim.
 
@@ -118,7 +118,7 @@ The full distance between these types is $d = 3.8716$ (diagonal metric), $d_M = 
 | $\Phi$ | 1.67 | 2.79 |
 | $K$ | 1.0 | 1.0 |
 
-The temporal depth shift ($H_0 \to H_{\text{invscripta}}$) is the largest single contributor, weighted at 7.2. Individually evaluated bricks are memoryless — each $(a,b,c)$ triple stands alone. The perfect cuboid search has no finite resolution horizon. Every near-miss informs the next search but no finite chain of such information ever terminates with an answer. This is not a technicality. It is the structural expression of why the problem has persisted for centuries.
+The chirality shift ($H_0 \to H_{\text{invscripta}}$) is the largest single contributor, weighted at 7.2. Individually evaluated bricks are memoryless — each $(a,b,c)$ triple stands alone. The perfect cuboid search has no finite resolution horizon. Every near-miss informs the next search but no finite chain of such information ever terminates with an answer. This is not a technicality. It is the structural expression of why the problem has persisted for centuries.
 
 ### 3.2 Why $\Phi_{\text{revepsilon}}$ is Not Metaphor
 

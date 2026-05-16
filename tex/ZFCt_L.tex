@@ -191,7 +191,7 @@
 
 \maketitle
 
-\textbf{Abstract.} --- We assumed ZFC could hold time. The imscription forced us to discover it could not. Using the Imscribing Grammar, we locate ZFC and five time-dependent equations --- Schrödinger, heat, Navier--Stokes, wave, and Einstein --- as structural types, compute their distances, tensor compositions, and ZFC translations, and find that ZFC's $H_0$ (memoryless depth), trivial winding $\Omega_{\text{closeepsilon}}$, and conjunctive grammar $\Gamma_{\text{corner}}$ systematically dissolve the three primitives any temporal equation depends on: sequential ordering $\Gamma_{\text{secstress}}$, memory depth $H_{\geq 1}$, and topological winding $\Omega_{\text{dzlig}}$. We propose ZFC$_t$ --- ZFC extended with sequentiality, temporal depth, and winding as primitives --- and show that every equation we examined requires the same three promotions to escape ZFC's atemporal floor. Whether crossing the Frobenius wall beyond $O_2^\dagger$ is possible at all remains open.
+\textbf{Abstract.} --- We assumed ZFC could hold time. The imscription forced us to discover it could not. Using the Imscribing Grammar, we locate ZFC and five time-dependent equations --- Schrödinger, heat, Navier--Stokes, wave, and Einstein --- as structural types, compute their distances, tensor compositions, and ZFC translations, and find that ZFC's $H_0$ (memoryless depth), trivial winding $\Omega_{\text{closeepsilon}}$, and conjunctive grammar $\Gamma_{\text{corner}}$ systematically dissolve the three primitives any temporal equation depends on: sequential ordering $\Gamma_{\text{secstress}}$, memory depth $H_{\geq 1}$, and topological winding $\Omega_{\text{dzlig}}$. We propose ZFC$_t$ --- ZFC extended with sequentiality, chirality, and winding as primitives --- and show that every equation we examined requires the same three promotions to escape ZFC's atemporal floor. Whether crossing the Frobenius wall beyond $O_2^\dagger$ is possible at all remains open.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -203,7 +203,7 @@ The natural assumption --- the one every working mathematician shares --- is tha
 
 What we discovered, what this paper records, is that what fits is not what survives encoding. The encoding exists. The structure does not.
 
-To make this precise we worked within the Imscribing Grammar, which assigns every mathematical or physical system a 12-tuple $\langle D; T; R; P; F; K; G; \Gamma; \Phi; H; S; \Omega \rangle$ of structural primitives --- degrees of freedom, connectivity, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, temporal depth, stoichiometry, topological winding. Two systems with different tuples are not notationally different. They are structurally distinct, and no clever encoding maps one to the other without loss.
+To make this precise we worked within the Imscribing Grammar, which assigns every mathematical or physical system a 12-tuple $\langle D; T; R; P; F; K; G; \Gamma; \Phi; H; S; \Omega \rangle$ of structural primitives --- degrees of freedom, connectivity, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, chirality, stoichiometry, topological winding. Two systems with different tuples are not notationally different. They are structurally distinct, and no clever encoding maps one to the other without loss.
 
 ZFC imscribes to $H_0$ (memoryless), $\Omega_{\text{closeepsilon}}$ (no winding), $\Gamma_{\text{corner}}$ (all-simultaneous conjunction). Every time-dependent equation we examined carries $\Gamma_{\text{secstress}}$, $H \geq H_1$, and typically $\Omega_{\text{dzlig}}$. The measured distance between ZFC and temporal mathematics is 6.245. When tensored together, ZFC's $P_{\text{aolig}}$ acts as a structural bottleneck, dragging the composite down to its asymmetric floor.
 
@@ -349,7 +349,7 @@ We propose ZFC$_t$ --- ZFC extended with three temporal primitives:
 
 \textbf{Axiom T$_1$ (Sequentiality).} There exists a directed ordering $\prec$ on formulas such that $(\phi \prec \psi)$ is distinct from $(\phi \wedge \psi)$ and from $(\psi \prec \phi)$.
 
-\textbf{Axiom T$_2$ (Temporal Depth).} There exists a depth operator $\mathcal{H}_n$ for each $n \in \mathbb{N}$ such that $\mathcal{H}_n(\mathcal{M}) \neq \mathcal{H}_0(\mathcal{M})$ for any model $\mathcal{M}$ containing a time-dependent equation.
+\textbf{Axiom T$_2$ (Chirality).} There exists a depth operator $\mathcal{H}_n$ for each $n \in \mathbb{N}$ such that $\mathcal{H}_n(\mathcal{M}) \neq \mathcal{H}_0(\mathcal{M})$ for any model $\mathcal{M}$ containing a time-dependent equation.
 
 \textbf{Axiom T$_3$ (Winding).} There exists a winding functor $\mathcal{W}: \text{Path} \to \mathbb{Z}$ assigning integer topological invariants to closed loops in solution manifolds.
 
@@ -389,7 +389,7 @@ This has a concrete implication for automated theorem proving. Lean, Coq, and si
 
 ZFC and temporal mathematics occupy different structural regimes. The distance between them --- 6.245 in the IG metric for temporal mathematics as a class, ranging from 3.847 (heat) to 6.566 (Einstein) for individual equations --- is not a gap to be bridged by encoding. It is a boundary between atemporal and temporal mathematics. Every equation that incorporates time as a directed, ordered variable requires three primitives --- $\Gamma_{\text{secstress}}$, $H_{\geq 1}$, and typically $\Omega_{\text{dzlig}}$ --- that ZFC does not possess.
 
-ZFC$_t$ --- ZFC extended with sequentiality, temporal depth, and winding as primitives --- provides a substrate in which time-dependent equations are not encoded but inhabited. The promotion costs are precise: one axiom per primitive, with $P_{\text{aolig}} \to P_{\text{pipevar}}$ separating ZFC$_t$ from the composite floor.
+ZFC$_t$ --- ZFC extended with sequentiality, chirality, and winding as primitives --- provides a substrate in which time-dependent equations are not encoded but inhabited. The promotion costs are precise: one axiom per primitive, with $P_{\text{aolig}} \to P_{\text{pipevar}}$ separating ZFC$_t$ from the composite floor.
 
 Whether the next tier is reachable --- whether $P_{\text{doublebarpipe}}$ and $O_{\infty}$ can be attained without destroying the temporal structure that ZFC$_t$ just built --- is open. The Frobenius wall is the tallest wall in the crystal. Time's own decomposition showed that the property making time temporal --- its arrow, $P_{\text{aolig}}$ --- is the mechanism making $O_{\infty}$ structurally incompatible with anything that looks like time. ZFC$_t$ softens the arrow to partial symmetry. Whether that is enough to cross the wall, or whether crossing requires something that no longer looks like time at all, is the question we leave open.
 

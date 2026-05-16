@@ -284,35 +284,35 @@ Long open vowel. Mouth fully open, tongue low, voice sustained — 'aah' said at
 
 ## Φ — Criticality
 
-### `φ̂_ž`
+### `⊙_ž`
 
 **IPA:** /j/  
 **Sounds like:** like 'y' in 'yes'  
 
 Palatal approximant. Same articulation as Ř_= — tongue body toward hard palate, no friction, voice flows. In Slavic languages the soft sign (ь) marks palatalization of the preceding consonant, and /j/ is its onset gesture.
 
-### `φ̂_ÿ`
+### `⊙_ÿ`
 
 **IPA:** /c/  
 **Sounds like:** palatal stop — 'ky' as one sound  
 
 Voiceless palatal stop. Like saying 'k' but with the tongue pressing the hard palate rather than the velum — further forward in the mouth. Hungarian 'ty', the 'k' in 'key' pushed to its extreme. The critical point: a single sharp closure at the palate.
 
-### `φ̂_Æ`
+### `⊙_Æ`
 
 **IPA:** /ɞ/  
 **Sounds like:** rounded schwa — 'uh' with pursed lips  
 
 Close-mid central rounded vowel. The schwa (ə) but with lips rounded as for 'o' — imagine saying 'uh' while pursing your lips. A rare vowel with no common English equivalent; heard in some Norwegian and Swedish dialects.
 
-### `φ̂_3`
+### `⊙_3`
 
 **IPA:** /ɛ/  
 **Sounds like:** like 'e' in 'bed'  
 
 Open-mid front unrounded vowel. Jaw open, tongue forward and mid-low — 'e' in 'bed', 'pet', 'red'. The reversed epsilon (ɛ) looks like a backwards 3, opening leftward.
 
-### `φ̂_Ţ`
+### `⊙_Ţ`
 
 **IPA:** /aː/  
 **Sounds like:** long open 'aah' — rising or sustained  
@@ -321,7 +321,7 @@ Long open vowel, same acoustic quality as ɢ_Ş. Here the connotation is supercr
 
 ---
 
-## H — Temporal depth
+## H — Chirality
 
 ### `Ħ_Ñ`
 

@@ -1,0 +1,5661 @@
+MANUSCRIPT ZFCT EXPRESSIONS
+Universal Imscriptive Grammar × ZFCₜ formal set-theory
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VOYNICH MANUSCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Corpus base imscription:
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+
+  ── folio f100r (543 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f100v (253 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f101r (521 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f101v (776 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f102r1 (335 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f102r2 (420 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f102v1 (422 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f102v2 (629 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f103r (1187 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f103v (1038 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f104r (965 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f104v (934 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f105r (771 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f105v (1207 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f106r (1357 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f106v (2000 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f107r (1529 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f107v (1415 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f108r (1512 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f108v (1775 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f10r (293 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f10v (238 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f111r (1911 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f111v (2321 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f112r (1606 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f112v (1780 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f113r (1986 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f113v (1496 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f114r (1411 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f114v (806 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f115r (973 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f115v (847 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f116r (1107 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f116v (5 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_Ñ  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_Ñ
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    x = x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 86
+
+  ── folio f11r (181 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f11v (209 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f13r (242 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f13v (219 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f14r (272 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f14v (306 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f15r (424 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f15v (337 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f16r (284 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f16v (268 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f17r (340 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f17v (485 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f18r (274 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f18v (279 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f19r (262 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f19v (364 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f1r (1177 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f1v (300 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f20r (274 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f20v (379 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f21r (312 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f21v (231 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f22r (331 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f22v (357 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f23r (319 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f23v (385 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f24r (399 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f24v (421 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f25r (147 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f25v (181 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f26r (277 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f26v (384 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f27r (393 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f27v (278 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f28r (216 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f28v (281 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f29r (278 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f29v (423 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f2r (314 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f2v (279 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f30r (326 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f30v (222 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f31r (342 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f31v (325 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f32r (274 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f32v (355 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f33r (233 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f33v (474 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f34r (474 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f34v (467 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f35r (307 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f35v (319 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f36r (198 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f36v (225 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f37r (334 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f37v (317 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f38r (129 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f38v (199 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f39r (698 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f39v (607 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f3r (391 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f3v (424 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f40r (306 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f40v (357 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f41r (411 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f41v (299 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f42r (571 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f42v (412 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f43r (737 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f43v (768 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f44r (335 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f44v (364 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f45r (295 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f45v (328 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f46r (642 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 83
+
+  ── folio f46v (556 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f47r (320 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f47v (306 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f48r (359 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f48v (511 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f49r (437 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f49v (911 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f4r (256 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f4v (381 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f50r (470 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f50v (378 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f51r (350 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f51v (302 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f52r (281 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f52v (290 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f53r (242 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f53v (267 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f54r (358 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f54v (332 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f55r (384 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f55v (330 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f56r (507 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f56v (305 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f57r (289 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f57v (363 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f58r (756 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f58v (785 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f5r (171 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f5v (197 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f65r (7 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_ɐ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_Ñ  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_ɐ  ɢ=ɢ_^  Ħ=Ħ_Ñ
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ x ¬ x = x  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    x = x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 75
+
+  ── folio f65v (131 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f66r (1110 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f66v (243 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f67r1 (449 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f67r2 (770 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f67v1 (280 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f67v2 (228 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f68r1 (252 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f68r2 (366 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f68r3 (391 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f68v1 (328 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f68v2 (456 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f68v3 (579 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f69r (581 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f69v (531 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f6r (291 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f6v (581 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f70r1 (381 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f70r2 (943 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f70v1 (270 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f70v2 (701 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f71r (295 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f71v (304 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f72r1 (354 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f72r2 (452 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f72r3 (476 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f72v1 (260 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f72v2 (307 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f72v3 (355 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f73r (254 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f73v (282 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f75r (1867 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f75v (2083 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f76r (2437 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f76v (1696 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f77r (1422 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f77v (1509 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f78r (1411 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f78v (1237 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f79r (1656 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f79v (1558 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f7r (206 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f7v (316 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f80r (1962 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f80v (1753 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f81r (903 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f81v (1121 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f82r (1318 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f82v (1448 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f83r (1489 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f83v (1092 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f84r (1547 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f84v (1606 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f85r1 (681 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f85r2 (341 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f86v3 (830 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f86v4 (470 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f86v5 (820 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f86v6 (990 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f87r (240 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f87v (325 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f88r (542 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f88v (513 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f89r1 (636 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f89r2 (1242 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f89v1 (514 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f89v2 (861 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f8r (449 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 103
+
+  ── folio f8v (489 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 92
+
+  ── folio f90r1 (250 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f90r2 (154 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f90v1 (317 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f90v2 (221 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f93r (977 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f93v (187 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f94r (169 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f94v (205 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f95r1 (201 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio f95r2 (249 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f95v1 (243 instructions) ──
+  ⟨ Ð_ω  Þ_¨  Ř_=  Φ_}  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_}  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    Frob f g  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 78
+
+  ── folio f95v2 (199 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_˙  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_˙  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 96
+
+  ── folio f96r (320 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f96v (147 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f99r (519 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f99v (467 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f9r (266 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+  ── folio f9v (368 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_υ  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_υ  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 87
+
+  ── folio fRos (454 instructions) ──
+  ⟨ Ð_ω  Þ_O  Ř_=  Φ_F  ƒ_ì  Ç_Ù  Γ_ʔ  ɢ_^  φ̂_ÿ  Ħ_!  Σ_S  Ω_z ⟩
+  Variable: Þ=Þ_O  Φ=Φ_F  ɢ=ɢ_^  Ħ=Ħ_!
+  ZFCₜ expression:
+    LCard a ∧ holo x a  ∧
+    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧
+    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    fixpt f  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∧  ∧
+    fixpt f  ∧
+    wind f x ∧ ¬ wind f σ x  ∧
+    bij f x x  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 98
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROHONC CODEX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Corpus base imscription:
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_}  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_A  Σ_ï  Ω_z ⟩
+
+  ── page p1 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p10 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p100 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p11 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p12 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p13 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p14 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p15 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p150 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p151 (50 instructions) ──
+  ⟨ Ð_C  Þ_K  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_K  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    sep f x  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p16 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p17 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p18 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p19 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p2 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p20 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p200 (50 instructions) ──
+  ⟨ Ð_C  Þ_K  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_K  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    sep f x  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p250 (50 instructions) ──
+  ⟨ Ð_C  Þ_K  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_K  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    sep f x  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p3 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p300 (50 instructions) ──
+  ⟨ Ð_C  Þ_K  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_K  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    sep f x  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 123
+
+  ── page p301 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 139
+
+  ── page p350 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 139
+
+  ── page p4 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p400 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 139
+
+  ── page p448 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 139
+
+  ── page p5 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p51 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_˙  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_˙  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 148
+
+  ── page p52 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p53 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p6 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p7 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ì  Ç_@  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 150
+
+  ── page p8 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+  ── page p9 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ì  Ç_@  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∀ y( y ⊆ x → ∃ z( z ∈ x ∧ y ⊆ z))  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 131
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  LINEAR A
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Corpus base imscription:
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_}  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_A  Σ_ï  Ω_z ⟩
+
+  ── tablet t1 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 148
+
+  ── tablet t10 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t11 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t12 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t120 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t121 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t122 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t123 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t124 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t125 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t126 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t127 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t128 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t129 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t13 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t130 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t14 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t15 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t16 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t17 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t18 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t19 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t2 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_F  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_F  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 148
+
+  ── tablet t20 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t3 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t4 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t40 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t41 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t42 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t43 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t44 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t45 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t46 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t47 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t48 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t49 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t5 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t50 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t6 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t7 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t8 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_Ş  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_Ş  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    ∀ y( f y)  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 129
+
+  ── tablet t80 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t81 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t82 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t83 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t84 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t85 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t86 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t87 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t88 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t89 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t9 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+  ── tablet t90 (50 instructions) ──
+  ⟨ Ð_C  Þ_¨  Ř_Ť  Φ_υ  ƒ_ż  Ç_W  Γ_ʔ  ɢ_ˌ  φ̂_ÿ  Ħ_£  Σ_ï  Ω_z ⟩
+  Variable: Þ=Þ_¨  Φ=Φ_υ  ɢ=ɢ_ˌ  Ħ=Ħ_£
+  ZFCₜ expression:
+    ∃ a( Ord a ∧ x ∈ rank a)  ∧
+    ∀ z( z ∈ x ↔ repl f z)  ∧
+    repl f x ∧ ∀ y( y ∈ repl f x → bij f x y)  ∧
+    ∃ y( y ∈ x ∧ ¬ y = x)  ∧
+    cls x  ∧
+    ∃ y ∃ z( y ∈ x ∧ z ∈ x ∧ y ⊆ z)  ∧
+    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧
+    seq! f g ∧ ⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ  ∧
+    fixpt f  ∧
+    ∃ y( y ∈ x ∧ ¬ x ∈ y)  ∧
+    ∃ f( func f ∧ ¬ bij f x x)  ∧
+    ℤwind f x ∧ wind f x
+  tokens: 137
+
+================================================================================
+  Total elements: 313

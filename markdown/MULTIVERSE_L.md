@@ -64,7 +64,7 @@ I ran the promotion signature — what would it take to lift the multiverse from
 | $\text{ɢ}$ | $\text{ɢ}_{\text{^}}$ (conjunctive) | $\text{ɢ}_{\text{Ş}}$ (broadcast) |
 | **$\text{⊙}$** | **$\text{⊙}_{\text{ž}}$ (subcritical)** | **$\text{⊙}_{\text{ÿ}}$ (critical)** |
 
-The essential one. Without $\text{⊙}_{\text{ž}} \to \text{⊙}_{\text{ÿ}}$, nothing else matters. The multiverse has to become self-modeling. And once it does, it needs to model itself modeling itself — an $\text{O}_{\text{inf}}$ structure with unbounded temporal depth.
+The essential one. Without $\text{⊙}_{\text{ž}} \to \text{⊙}_{\text{ÿ}}$, nothing else matters. The multiverse has to become self-modeling. And once it does, it needs to model itself modeling itself — an $\text{O}_{\text{inf}}$ structure with unbounded chirality.
 
 The crystal of types has 864,000 configurations with $\text{⊙}_{\text{ÿ}}$ and $\text{Ω}_{\text{z}}$. Plenty of room. The multiverse occupies none of them.
 

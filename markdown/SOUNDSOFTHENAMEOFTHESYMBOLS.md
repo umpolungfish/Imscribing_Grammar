@@ -89,7 +89,7 @@ After reviewing **psymbols.txt** (Tables 15–23 from tipa, tipx, wsuipa, wasysy
 | $\Phi_\text{EP}$ | $\Phi_\text{revepsilon}$ | `3` (\textrevepsilon) | Reversed epsilon = exceptional point (non-Hermitian) | "Revepsilon" /rɛvɛps/ begins with /ɛp/ = "EP" |
 | $\Phi_\text{sup}$ | $\Phi_\text{upstep}$ | `Ţ` (\textupstep) | Upward step = supercritical, crossing threshold | "Upstep" /ʌp/ = "sup" without /s/; up = above |
 
-### H — Temporal Depth
+### H — Chirality
 | Original | New | Symbol | Nature | Sound |
 |---|---|---|---|---|
 | $H_0$ | $H_\text{closeomega}$ | `Ñ` (\textcloseomega) | Closed omega = zero memory, closed temporal loop | "Closeomega" /kloʊz/ evokes zero as closed circle |

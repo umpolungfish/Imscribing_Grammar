@@ -1185,7 +1185,7 @@ Primitive values are addressed by canonical glyph strings — the ID **is** the 
 | Γ (Scope) | `Γ_β` `Γ_γ` `Γ_ʔ` |
 | ɢ (Grammar) | `ɢ_^` `ɢ_˝` `ɢ_ˌ` `ɢ_Ş` |
 | ⊙ (Criticality) | `⊙_ž` `⊙_ÿ` `⊙_Æ` `⊙_3` `⊙_Ţ` |
-| Ħ (Temporal Depth) | `Ħ_Ñ` `Ħ_£` `Ħ_A` `Ħ_!` |
+| Ħ (Chirality) | `Ħ_Ñ` `Ħ_£` `Ħ_A` `Ħ_!` |
 | Σ (Stoichiometry) | `Σ_S` `Σ_ő` `Σ_ï` |
 | Ω (Winding) | `Ω_Å` `Ω_2` `Ω_z` `Ω_5` |
 

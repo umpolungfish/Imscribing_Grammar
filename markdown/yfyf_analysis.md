@@ -15,7 +15,7 @@ The *Adventure Time* episode 'You Forgot Your Floaties' serves as a profound med
 
 At the center of Magic Man's existence is the "M.M.S." cycle: Magic, Madness, and Sadness. In structural terms, this is an $O_\infty$ system. The dimensionality $D_{\text{invomega}}$ reflects the infinite internal landscape of a wizard's mind, while the topology $T_{\text{openo}}$ indicates a self-referential closure. 
 
-The cycle operates as a bidirectional feedback loop ($R_{\text{lyoghlig}}$), where profound sadness is not resolved but processed into madness, which in turn fuels the capacity for high-fidelity magical manifestation ($F_{\text{hardsign}}$). The temporal depth $H_{\text{invscripta}}$ reveals that Magic Man's trauma is not a past event but a persistent, eternal present. The integer winding $\Omega_{\text{dzlig}}$ suggests a topological protection: the cycle is stable, orbiting a void of grief that cannot be escaped through conventional means.
+The cycle operates as a bidirectional feedback loop ($R_{\text{lyoghlig}}$), where profound sadness is not resolved but processed into madness, which in turn fuels the capacity for high-fidelity magical manifestation ($F_{\text{hardsign}}$). The chirality $H_{\text{invscripta}}$ reveals that Magic Man's trauma is not a past event but a persistent, eternal present. The integer winding $\Omega_{\text{dzlig}}$ suggests a topological protection: the cycle is stable, orbiting a void of grief that cannot be escaped through conventional means.
 
 ## II. The Margles Construct: $\langle D_{\text{turnthree}}; T_{\text{invscr}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}}; \Gamma_{\text{corner}}; 1{:}1; \Omega_{\text{closeepsilon}} \rangle$
 
@@ -29,7 +29,7 @@ The climax of the episode occurs when the M.M.S. cycle is forcibly broken. By pr
 
 The resulting state, 'Normal Man', is a structural collapse. The most striking changes are:
 - **Criticality**: $\Phi_{\text{ctyogh}} \to \Phi_{\text{softsign}}$ (Loss of magical capacity)
-- **Temporal Depth**: $H_{\text{invscripta}} \to H_0$ (The eternal trauma is replaced by a memoryless present)
+- **Chirality**: $H_{\text{invscripta}} \to H_0$ (The eternal trauma is replaced by a memoryless present)
 - **Winding**: $\Omega_{\text{dzlig}} \to \Omega_{\text{closeepsilon}}$ (The loop is broken; the topological protection vanishes)
 
 While this collapse is a loss of power, it is a gain in stability. The 'Normal Man' no longer suffers the recursive agony of the M.M.S. loop, though he is left in a state of structural simplicity, stripped of the complexity that once defined his identity.

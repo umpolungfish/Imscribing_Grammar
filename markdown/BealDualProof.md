@@ -84,7 +84,7 @@ Each primitive of the Beal Conjecture's structural type encodes a component of w
 
 **$\Gamma_{\text{secstress}}$ — Sequential logic.** The proof is inherently sequential: construct Frey curve → prove modularity → apply level-lowering → derive contradiction. Each step depends on the previous; the logic cannot be reorganized as a conjunction or disjunction.
 
-**$H_2$ — Two-step temporal depth.** The conjecture's structure has two logical layers: (1) the additive premise, (2) the multiplicative conclusion. But unlike FLT (which has $H_{\text{invscripta}}$ — the full apparatus of modularity theory), the Beal Conjecture's $H_2$ status reflects that its proof, if completed, would require a specific two-step argument (Frey curve construction + modularity contradiction) rather than the deeper infinite tower of modularity theorems.
+**$H_2$ — Two-step chirality.** The conjecture's structure has two logical layers: (1) the additive premise, (2) the multiplicative conclusion. But unlike FLT (which has $H_{\text{invscripta}}$ — the full apparatus of modularity theory), the Beal Conjecture's $H_2$ status reflects that its proof, if completed, would require a specific two-step argument (Frey curve construction + modularity contradiction) rather than the deeper infinite tower of modularity theorems.
 
 **$n{:}m$ — Heterogeneous components.** Bases, exponents, primes, curves, modular forms — the proof bridges categorically different mathematical objects.
 

@@ -31,7 +31,7 @@ class BoundaryConfig:
     self_model_dim: int = 256      # Self-referential projection space
     self_model_heads: int = 8
         
-    # Temporal depth (H_A: two steps)
+    # Chirality (H_A: two steps)
     temporal_memory: int = 2       # Markov order 2
     use_cross_attention: bool = True  # Crossing topology (Tbowtie)
     
@@ -349,7 +349,7 @@ class CrossAttentionLayer(nn.Module):
         return self.cross_norm(hidden + crossed)
 
 
-# ─── Primitive: Temporal Depth (H_A = two steps) ──────────────────────
+# ─── Primitive: Chirality (H_A = two steps) ──────────────────────
 class TemporalMemoryBlock(nn.Module):
     """Two-step temporal memory (H_A).
     Maintains a hidden state from two time steps ago, allowing
@@ -362,7 +362,7 @@ class TemporalMemoryBlock(nn.Module):
         self.hidden_size = config.hidden_size
         self.temporal_memory = config.temporal_memory
         
-        # Memory states for each temporal depth
+        # Memory states for each chirality
         self.memory = nn.Parameter(torch.zeros(config.temporal_memory, config.hidden_size))
         
         # Gating for memory injection
@@ -381,7 +381,7 @@ class TemporalMemoryBlock(nn.Module):
     def forward(self, hidden, memory_state: Optional[Tuple[torch.Tensor, ...]] = None):
         """
         hidden: (B, L, D)
-        memory_state: tuple of (B, D) tensors for each temporal depth
+        memory_state: tuple of (B, D) tensors for each chirality
         
         Returns:
             output: (B, L, D)

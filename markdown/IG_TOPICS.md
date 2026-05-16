@@ -250,7 +250,7 @@ Below any one of these thresholds, the system may have high $F$ or complex $T$ b
 
 **Core principle:** $K$ and $F$ are orthogonal. $K$ encodes the activation barrier and pathway multiplicity for constraint propagation; $F$ encodes thermodynamic reliability. A high-$F$ imscription can be $K_{\text{teshlig}}$ (kinetically inaccessible); a low-$F$ imscription can be $K_{\text{frtailgamma}}$ (rapidly exchanging). Conflating them produces wrong predictions about which states are accessible in practice.
 
-**K-hierarchy in temporal systems:** $K_{\text{teshlig}} < K_{\text{schwa}} < K_{\text{turnm}} < K_{\text{frtailgamma}}$ defines a temporal depth hierarchy. Systems with greater K-hierarchy depth have richer temporal structure. See [TOPO:§XI] for the full temporal theory.
+**K-hierarchy in temporal systems:** $K_{\text{teshlig}} < K_{\text{schwa}} < K_{\text{turnm}} < K_{\text{frtailgamma}}$ defines a chirality hierarchy. Systems with greater K-hierarchy depth have richer temporal structure. See [TOPO:§XI] for the full temporal theory.
 
 ---
 
@@ -761,7 +761,7 @@ The grammar's 12-primitive self-encoding tuple is not only a description of the 
 | $\Gamma_{\text{doublevertline}}$ | `FamilyMixer` broadcast attention over all families |
 | $\Ω_z$ | Discrete argmax output — integer winding, perturbation-proof |
 | $G_{\text{revapostrophe}}$ | Global graph readout — no local-only pooling |
-| $H_{\text{invscripta}}$ | Unlimited temporal depth or recurrence |
+| $H_{\text{invscripta}}$ | Unlimited chirality or recurrence |
 
 ### §XXVI.2 — Three Worked Derivations
 

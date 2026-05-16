@@ -125,7 +125,7 @@ _FIELD_LABELS = {
     'Γ': 'G  Scope         ',
     'ɢ': 'Γ  Grammar       ',
     CRIT_LEGACY: 'Φ  Criticality   ',
-    'Ħ': 'H  Temporal Depth',
+    'Ħ': 'H  Chirality',
     'Σ': 'S  Stoichiometry ',
     'Ω': 'Ω  Winding       ',
 }
@@ -459,7 +459,7 @@ Rewrite instructions:
     - Does the scope match (narrow vs. full-spectrum)?
     - Does the grammar match (simultaneous vs. sequential)?
     - Does the criticality match (stable, critical, expanding)?
-    - Does the temporal depth match (dry, shallow, deep, infinite)?
+    - Does the chirality match (dry, shallow, deep, infinite)?
     - Does the stoichiometry match (one voice, many, asymmetric)?
     - Does the winding match (open, cyclic, returning)?
 """)# ── scaffold ──────────────────────────────────────────────────────────────────

@@ -53,7 +53,7 @@ def normalize(signal, peak=0.8):
 #   Γ  Scope           — bandwidth           (narrow → full spectrum)
 #   ɢ  Grammar         — temporal structure  (how events compose in time)
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
-#   Ħ  Temporal depth  — reverberation       (dry → long decay = deep memory)
+#   Ħ  Chirality  — reverberation       (dry → long decay = deep memory)
 #   Σ  Stoichiometry   — multiplicity        (one voice → many at fixed ratio)
 #   Ω  Winding         — topological closure (open fade → periodic wrap)
 # =============================================================================
@@ -373,7 +373,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * np.exp(-2 * t / dur)
 
     # =========================================================================
-    # Ħ — Temporal Depth (memory)
+    # Ħ — Chirality (memory)
     # Reverberation depth encodes temporal memory:
     # dry (H0) → short decay (H1) → medium decay (H2) → long decay (H_inf)
     # =========================================================================
@@ -481,7 +481,7 @@ symbol_list = [
     ('Γ', 'β'), ('Γ', 'γ'), ('Γ', 'ʔ'),                          # Γ Scope
     ('ɢ', '∧'), ('ɢ', '˝'), ('ɢ', 'ˌ'), ('ɢ', 'Ş'),             # ɢ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
-    ('Ħ', 'Ñ'), ('Ħ', '£'), ('Ħ', 'A'), ('Ħ', '!'),             # Ħ Temporal Depth
+    ('Ħ', 'Ñ'), ('Ħ', '£'), ('Ħ', 'A'), ('Ħ', '!'),             # Ħ Chirality
     ('Σ', 'S'), ('Σ', 'ő'), ('Σ', 'ï'),                          # Σ Stoichiometry
     ('Ω', 'Å'), ('Ω', '2'), ('Ω', 'z'), ('Ω', '5'),              # Ω Topological Invariant
 ]
@@ -515,7 +515,7 @@ PRIMITIVE_MAP = {
     # ⊙ Criticality
     '⊙_ž': ('⊙', 'ž'),   '⊙_ÿ': ('⊙', 'ÿ'),   '⊙_Æ': ('⊙', 'Æ'),
     '⊙_3': ('⊙', '3'),   '⊙_Ţ': ('⊙', 'Ţ'),
-    # Ħ Temporal Depth
+    # Ħ Chirality
     'Ħ_Ñ': ('Ħ', 'Ñ'),   'Ħ_£': ('Ħ', '£'),
     'Ħ_A': ('Ħ', 'A'),   'Ħ_!': ('Ħ', '!'),
     # Σ Stoichiometry

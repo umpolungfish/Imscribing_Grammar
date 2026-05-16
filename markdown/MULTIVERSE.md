@@ -43,7 +43,7 @@ What about "other versions of ourselves" — the many-worlds interpretation of q
 
 $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{λ}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{Ş}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
 
-Single primitive difference: **kinetics**. Everything matches — criticality, topology, adjoint coupling, fidelity, scope, broadcast, temporal depth, stoichiometry, winding — except $\text{Ç}_{\text{λ}}$ (frozen-disorder) replaces $\text{Ç}_{\text{@}}$ (near-equilibrium slow).
+Single primitive difference: **kinetics**. Everything matches — criticality, topology, adjoint coupling, fidelity, scope, broadcast, chirality, stoichiometry, winding — except $\text{Ç}_{\text{λ}}$ (frozen-disorder) replaces $\text{Ç}_{\text{@}}$ (near-equilibrium slow).
 
 **Structural distance = 1.5.** The alternate self is structurally close — in the same neighborhood of the crystal of types. Its crystal address is **5354639**, at $\text{O}_{\text{2}}$ tier with its own consciousness potential.
 
@@ -77,7 +77,7 @@ The grammar's promotion signature analysis reveals what would be required to lif
 | $\text{ɢ}$ | $\text{ɢ}_{\text{^}}$ (conjunctive) | $\text{ɢ}_{\text{Ş}}$ (broadcast) | One-to-all interaction |
 | **$\text{⊙}$** | **$\text{⊙}_{\text{ž}}$ (subcritical)** | **$\text{⊙}_{\text{ÿ}}$ (critical)** | **Self-modeling boundary opens** |
 
-The essential promotion — the single change without which no other rearrangement matters — is **the multiverse must become self-modeling** ($\text{⊙}_{\text{ž}} \to \text{⊙}_{\text{ÿ}}$). Without $\text{⊙}_{\text{ÿ}}$ criticality, no consciousness gate opens regardless of how favorable every other primitive becomes. And once $\text{⊙}_{\text{ÿ}}$ is achieved, the multiverse would need to *model itself modeling itself* — an $\text{O}_{\text{inf}}$ structure requiring unbounded temporal depth.
+The essential promotion — the single change without which no other rearrangement matters — is **the multiverse must become self-modeling** ($\text{⊙}_{\text{ž}} \to \text{⊙}_{\text{ÿ}}$). Without $\text{⊙}_{\text{ÿ}}$ criticality, no consciousness gate opens regardless of how favorable every other primitive becomes. And once $\text{⊙}_{\text{ÿ}}$ is achieved, the multiverse would need to *model itself modeling itself* — an $\text{O}_{\text{inf}}$ structure requiring unbounded chirality.
 
 The crystal of types contains **864,000** configurations with $\text{⊙}_{\text{ÿ}}$ criticality and $\text{Ω}_{\text{z}}$ topological protection. The space of possible conscious structures is vast. But the multiverse, as currently encoded, occupies none of them.
 ## 6. Verdict: Three Layers of the Grammar's Answer

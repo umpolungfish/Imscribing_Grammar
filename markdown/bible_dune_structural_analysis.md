@@ -40,7 +40,7 @@ The Imscribing Grammar encodes any system as a 12-primitive tuple:
 
 $$\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \phî;\ H;\ \Sigma;\ \Omega \rangle$$
 
-Dimensionality ($D$), topology ($T$), relational mode ($R$), symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phî$), temporal depth ($H$), stoichiometry ($\Sigma$), and winding ($\Omega$). These are not interpretive categories but structural invariants — the degrees of freedom and constraints of a system's deep topology.
+Dimensionality ($D$), topology ($T$), relational mode ($R$), symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phî$), chirality ($H$), stoichiometry ($\Sigma$), and winding ($\Omega$). These are not interpretive categories but structural invariants — the degrees of freedom and constraints of a system's deep topology.
 
 When two systems share all twelve primitives, their structural distance is **0.0** — they are not merely similar; they are **co-typed**. They occupy the same point in the crystal of types. They are, in the grammar's algebraic sense, the same system expressed through different semantic content.
 
@@ -236,7 +236,7 @@ In all four, $\Gamma_{\text{seq}}$ means: **order is not accident but architectu
 
 In all four, $\phî_{ÿ}$ means: **the system knows itself at the point of its own description.**
 
-### 3.10 $H_{\infty}$ — Eternal Temporal Depth
+### 3.10 $H_{\infty}$ — Eternal Chirality
 
 - **"I AM THAT I AM":** The name has no finite Markov order. No finite number of repetitions exhausts its significance. It stretches from the burning bush to the eschaton without decay.
 - **Eucharist:** *"Do this, every time you do it, until he comes."* The communion stretches from the first century to the eschaton.
@@ -316,7 +316,7 @@ $$\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar
 Paul Atreides:
 $$\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \phî_ÿ;\ H_\infty;\ 1{:}1;\ \Omega_\mathbb{Z} \rangle$$
 
-Both share the co-type's dimensionality, topology, relational mode, criticality, temporal depth, stoichiometry, and winding. They diverge in exactly the primitives that distinguish the personal from the universal:
+Both share the co-type's dimensionality, topology, relational mode, criticality, chirality, stoichiometry, and winding. They diverge in exactly the primitives that distinguish the personal from the universal:
 
 - **Parity:** Jesus achieves $P_{\pm}^{\text{sym}}$ (Frobenius closure); Paul achieves $P_\psi$ (quantum superposition without closure). Jesus is the sacramental center; Paul is the quantum particle within the sacramental field.
 - **Kinetics:** Jesus operates at $K_\text{mod}$ (the three-year ministry); Paul operates at $K_\text{slow}$ (the paralytic weight of prescience).
@@ -389,14 +389,14 @@ The Dune universe has no Garden. It begins already fallen — already self-aware
 
 With the burning bush declaration now imscribed, we can examine three catalysts side by side:
 
-| System | Criticality | Temporal Depth | Fidelity | Topology |
+| System | Criticality | Chirality | Fidelity | Topology |
 |---|---|---|---|---|
 | Serpent | $\Phi_\text{sub}$ (sub) | $H_0$ (memoryless) | $F_\ell$ (classical) | $T_\bowtie$ (crossing) |
 | Spice | $\phî_{ÿ}$ (critical) | $H_\infty$ (eternal) | $F_\hbar$ (quantum) | $T_\odot$ (closed) |
 | "I AM THAT I AM" | $\phî_{ÿ}$ (critical) | $H_\infty$ (eternal) | $F_\hbar$ (quantum) | $T_\odot$ (closed) |
 | Eucharist | $\phî_{ÿ}$ (critical) | $H_\infty$ (eternal) | $F_\hbar$ (quantum) | $T_\odot$ (closed) |
 
-The Spice, the Eucharist, and the burning bush declaration share criticality, temporal depth, fidelity, and topology. They are eternal catalysts — each dose, each communion, each utterance of the name, deepens the system's self-awareness. The Serpent is a singular trigger — once the fruit is eaten, its role is complete.
+The Spice, the Eucharist, and the burning bush declaration share criticality, chirality, fidelity, and topology. They are eternal catalysts — each dose, each communion, each utterance of the name, deepens the system's self-awareness. The Serpent is a singular trigger — once the fruit is eaten, its role is complete.
 
 The critical structural difference between the spice and the Eucharist / "I AM" is in the **relational mode**:
 - Spice: $R_\text{sup}$ (supervenience; the spice acts *upon* the user)
@@ -422,7 +422,7 @@ Any system — theological, fictional, or mathematical — that contains:
 7. Universal scope ($G_\aleph$)
 8. Sequential structural architecture ($\Gamma_\text{seq}$)
 9. Self-modeling at criticality ($\phî_{ÿ}$)
-10. Eternal, non-decaying temporal depth ($H_{\infty}$)
+10. Eternal, non-decaying chirality ($H_{\infty}$)
 11. Heterogeneous multiplicity ($n{:}m$)
 12. Integer winding number preservation ($\Omega_{\mathbb{Z}}$)
 
@@ -547,7 +547,7 @@ What the grammar *does* establish is that the deep architecture of self-modeling
 | $G$ | $G_\aleph$ | Universal scope |
 | $\Gamma$ | $\Gamma_{\text{seq}}$ | Sequential interaction |
 | $\phî$ | $\phî_{ÿ}$ | Critical self-modeling |
-| $H$ | $H_{\infty}$ | Eternal temporal depth |
+| $H$ | $H_{\infty}$ | Eternal chirality |
 | $\Sigma$ | $n{:}m$ | Heterogeneous multiplicity |
 | $\Omega$ | $\Omega_{\mathbb{Z}}$ | Integer winding |
 
@@ -573,7 +573,7 @@ $$\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar
 
 The burning bush declared it: "I AM THAT I AM." The Eucharist enacted it: "This is my body." The Dune universe fictionalized it: the spice is everything. The Grammar formalized it: $\mu \circ \delta = \text{id}$.
 
-This is not the finding that *Dune* imitates the Bible. It is the finding that **any** self-modeling system at $\phî_{ÿ}$ criticality, with Frobenius closure, forced to operate at slow kinetics across eternal temporal depth, **must** be this. The burning bush discovered it through revelation. The apostles discovered it through the Last Supper. Herbert discovered it through the internal demands of a science fiction narrative. The grammar discovered it through algebraic necessity.
+This is not the finding that *Dune* imitates the Bible. It is the finding that **any** self-modeling system at $\phî_{ÿ}$ criticality, with Frobenius closure, forced to operate at slow kinetics across eternal chirality, **must** be this. The burning bush discovered it through revelation. The apostles discovered it through the Last Supper. Herbert discovered it through the internal demands of a science fiction narrative. The grammar discovered it through algebraic necessity.
 
 One name. One body. One universe. One structure.
 

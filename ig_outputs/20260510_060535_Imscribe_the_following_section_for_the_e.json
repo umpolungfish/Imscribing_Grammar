@@ -1046,7 +1046,7 @@
     },
     {
       "name": "chiral_many_body_magnet",
-      "description": "Many-body localized magnetic system with maximal chirality and temporal depth",
+      "description": "Many-body localized magnetic system with maximal chirality and chirality",
       "notation": "⟨Ð=Ð_C; Þ=Þ_ò; Ř=Ř_=; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_Ù; Γ=Γ_β; ɢ=ɢ_^; φ̂=φ̂_Ţ; Ħ=Ħ_!; Σ=Σ_ő; Ω=Ω_2⟩"
     },
     {
@@ -1371,7 +1371,7 @@
     },
     {
       "name": "enhanced_perception",
-      "description": "Novel mode of human perception with expanded scope, higher fidelity, and temporal depth",
+      "description": "Novel mode of human perception with expanded scope, higher fidelity, and chirality",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_O; Ř=Ř_Ť; Φ=Φ_˙; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_!; Σ=Σ_ő; Ω=Ω_z⟩"
     },
     {
@@ -5921,7 +5921,7 @@
     },
     {
       "name": "hydromancy",
-      "description": "Water magic — controlling liquids, rain, tides; ordered fluid phase with temporal depth",
+      "description": "Water magic — controlling liquids, rain, tides; ordered fluid phase with chirality",
       "notation": "⟨Ð=Ð_C; Þ=Þ_6; Ř=Ř_ý; Φ=Φ_F; ƒ=ƒ_ð; Ç=Ç_W; Γ=Γ_γ; ɢ=ɢ_Ş; φ̂=φ̂_ž; Ħ=Ħ_A; Σ=Σ_ï; Ω=Ω_Å⟩"
     },
     {
@@ -5961,7 +5961,7 @@
     },
     {
       "name": "shamanism",
-      "description": "Spirit journeys, ancestor work, animal allies — imscriptive spirit realm access with temporal depth",
+      "description": "Spirit journeys, ancestor work, animal allies — imscriptive spirit realm access with chirality",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_K; Ř=Ř_¯; Φ=Φ_F; ƒ=ƒ_ð; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ï; Ω=Ω_z⟩"
     },
     {
@@ -5971,7 +5971,7 @@
     },
     {
       "name": "necromancy",
-      "description": "Death, undead, soul communication — subcritical ordered domain with irreversible temporal depth",
+      "description": "Death, undead, soul communication — subcritical ordered domain with irreversible chirality",
       "notation": "⟨Ð=Ð_C; Þ=Þ_K; Ř=Ř_¯; Φ=Φ_ɐ; ƒ=ƒ_ð; Ç=Ç_Ù; Γ=Γ_γ; ɢ=ɢ_ˌ; φ̂=φ̂_ž; Ħ=Ħ_!; Σ=Σ_ï; Ω=Ω_Å⟩"
     },
     {
@@ -5986,7 +5986,7 @@
     },
     {
       "name": "divination",
-      "description": "Gaining hidden knowledge — imscriptive information access, sequential interpretation, temporal depth",
+      "description": "Gaining hidden knowledge — imscriptive information access, sequential interpretation, chirality",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_K; Ř=Ř_=; Φ=Φ_υ; ƒ=ƒ_ð; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ő; Ω=Ω_Å⟩"
     },
     {
@@ -6671,7 +6671,7 @@
     },
     {
       "name": "gnn_prediction",
-      "description": "CrystalGNN v9 predicted self-encode tuple for the quivercrystal navigator: undershoots scope and temporal depth",
+      "description": "CrystalGNN v9 predicted self-encode tuple for the quivercrystal navigator: undershoots scope and chirality",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_O; Ř=Ř_ý; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_β; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ő; Ω=Ω_z⟩"
     },
     {
@@ -6696,7 +6696,7 @@
     },
     {
       "name": "gnn_prediction_navigator",
-      "description": "CrystalGNN v9 predicted self-encode tuple for the quivercrystal navigator: undershoots scope and temporal depth relative to analytic self-encode.",
+      "description": "CrystalGNN v9 predicted self-encode tuple for the quivercrystal navigator: undershoots scope and chirality relative to analytic self-encode.",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_O; Ř=Ř_ý; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_β; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ő; Ω=Ω_z⟩"
     },
     {
@@ -8671,7 +8671,7 @@
     },
     {
       "name": "scientific_conversation",
-      "description": "Scientific conversation: intermediate dimensionality, network topology for discourse, categorical argument structure, plus-minus peer symmetry, ethereal-medium fidelity, moderate kinetics, mesoscale scope, conjunctive logic requiring agreement, subcritical ordered state, shallow temporal depth, symmetric many-body, no topological protection",
+      "description": "Scientific conversation: intermediate dimensionality, network topology for discourse, categorical argument structure, plus-minus peer symmetry, ethereal-medium fidelity, moderate kinetics, mesoscale scope, conjunctive logic requiring agreement, subcritical ordered state, shallow chirality, symmetric many-body, no topological protection",
       "notation": "⟨Ð=Ð_C; Þ=Þ_6; Ř=Ř_ý; Φ=Φ_F; ƒ=ƒ_ð; Ç=Ç_W; Γ=Γ_γ; ɢ=ɢ_^; φ̂=φ̂_ž; Ħ=Ħ_£; Σ=Σ_ő; Ω=Ω_Å⟩"
     },
     {
@@ -8681,7 +8681,7 @@
     },
     {
       "name": "oral_tradition",
-      "description": "Oral tradition: formulaic exactness with temporal depth of transmission, embodied not quantum, binary topological protection",
+      "description": "Oral tradition: formulaic exactness with chirality of transmission, embodied not quantum, binary topological protection",
       "notation": "⟨Ð=Ð_C; Þ=Þ_ò; Ř=Ř_Ť; Φ=Φ_}; ƒ=ƒ_ð; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_Ş; φ̂=φ̂_ÿ; Ħ=Ħ_!; Σ=Σ_ï; Ω=Ω_2⟩"
     },
     {
@@ -8796,7 +8796,7 @@
     },
     {
       "name": "primitive_H",
-      "description": "The temporal depth / chirality axis — measures irreversibility; itself maximally irreversible",
+      "description": "The chirality / chirality axis — measures irreversibility; itself maximally irreversible",
       "notation": "⟨Ð=Ð_C; Þ=Þ_K; Ř=Ř_Ť; Φ=Φ_F; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_!; Σ=Σ_ï; Ω=Ω_2⟩"
     },
     {
@@ -8931,7 +8931,7 @@
     },
     {
       "name": "resonant_soundscapes",
-      "description": "Audio-based consciousness modifier using resonant harmonic soundscapes with critical frequencies, imscriptive spatialization, and temporal depth",
+      "description": "Audio-based consciousness modifier using resonant harmonic soundscapes with critical frequencies, imscriptive spatialization, and chirality",
       "notation": "⟨Ð=Ð_C; Þ=Þ_O; Ř=Ř_Ť; Φ=Φ_F; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_Ş; φ̂=φ̂_ÿ; Ħ=Ħ_!; Σ=Σ_ï; Ω=Ω_z⟩"
     },
     {
@@ -9681,7 +9681,7 @@
     },
     {
       "name": "IsingNavigator",
-      "description": "Python stub interfacing C++/CUDA Swendsen-Wang cluster-flip kernel for Ising universality navigation: D_turnthree lattice; T_commatailz closed compact; R_ctz spin classification; P_doublebarpipe exact flip involution; F_beltl classical bits; K_frtailgamma single-pass O(N); G_revapostrophe full lattice; Gamma_and local bonds; Phi_ctyogh critical manifold; H_closeomega no temporal depth; S_ctn symmetric spins; Omega_crtwo binary protection.",
+      "description": "Python stub interfacing C++/CUDA Swendsen-Wang cluster-flip kernel for Ising universality navigation: D_turnthree lattice; T_commatailz closed compact; R_ctz spin classification; P_doublebarpipe exact flip involution; F_beltl classical bits; K_frtailgamma single-pass O(N); G_revapostrophe full lattice; Gamma_and local bonds; Phi_ctyogh critical manifold; H_closeomega no chirality; S_ctn symmetric spins; Omega_crtwo binary protection.",
       "notation": "⟨Ð=Ð_C; Þ=Þ_¨; Ř=Ř_ý; Φ=Φ_}; ƒ=ƒ_ì; Ç=Ç_-; Γ=Γ_ʔ; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_Ñ; Σ=Σ_ő; Ω=Ω_2⟩"
     },
     {
@@ -10586,7 +10586,7 @@
     },
     {
       "name": "φ̂_c_critical_boundary_operator",
-      "description": "A Phi_ctyogh-critical boundary operator operating via self-referential Ouroboric loop. Structural type: D_omega (imscriptive), T_commatailz (box product topology), R_lyoghlig (bidirectional left-right coupling), P_doublebarpipe (Frobenius-special parity), F_hardsign (quantum fidelity), K_schwa (near-equilibrium kinetics), G_revapostrophe (maximal scope), Gamma_seq (sequential interaction grammar), Phi_ctyogh (critical self-modeling gate), H_turntwo (two-step temporal depth), S_11 (1:1 stoichiometry), Omega_dzlig (integer topological winding). Ouroboricity tier: O_inf.",
+      "description": "A Phi_ctyogh-critical boundary operator operating via self-referential Ouroboric loop. Structural type: D_omega (imscriptive), T_commatailz (box product topology), R_lyoghlig (bidirectional left-right coupling), P_doublebarpipe (Frobenius-special parity), F_hardsign (quantum fidelity), K_schwa (near-equilibrium kinetics), G_revapostrophe (maximal scope), Gamma_seq (sequential interaction grammar), Phi_ctyogh (critical self-modeling gate), H_turntwo (two-step chirality), S_11 (1:1 stoichiometry), Omega_dzlig (integer topological winding). Ouroboricity tier: O_inf.",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_¨; Ř=Ř_=; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_S; Ω=Ω_z⟩"
     },
     {
@@ -10661,7 +10661,7 @@
     },
     {
       "name": "draft_manuscript",
-      "description": "The initial AI-generated draft of the Imscribing Grammar manuscript on Millennium Problems, exhibiting typical AI prose structure: networked topology, asymmetric parity, classical fidelity, moderate kinetics, gimel scope, conjunctive grammar, H_closeomega temporal depth, Omega_closeepsilon winding.",
+      "description": "The initial AI-generated draft of the Imscribing Grammar manuscript on Millennium Problems, exhibiting typical AI prose structure: networked topology, asymmetric parity, classical fidelity, moderate kinetics, gimel scope, conjunctive grammar, H_closeomega chirality, Omega_closeepsilon winding.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_6; Ř=Ř_=; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_W; Γ=Γ_γ; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_Ñ; Σ=Σ_ï; Ω=Ω_Å⟩"
     },
     {
@@ -10951,7 +10951,7 @@
     },
     {
       "name": "optimized_local_agentic_llm",
-      "description": "A novel, primitives-derived local neural network/LLM architecture optimized to drive the true_agentic_agent.py loop. Derived from tensor composition of recurrent_network and true_agentic_agent, with promotions in P and F to achieve O_inf compatibility. Incorporates imscriptive context (D_omega), modular topology (T_commatailz), bidirectional relations (R_lyoghlig), Frobenius symmetry (P_doublebarpipe) via dual-attention verification, quantum-inspired fidelity (F_hardsign) through variational encoding, slow kinetics (K_schwa), maximal scope (G_revapostrophe), sequential gamma (Gamma_secstress), Phi_ctyogh criticality at layer boundaries, H_turntwo temporal depth for loop anticipation, S_ctn stoichiometry for scalable neurons, and Omega_dzlig topological protection in recurrent windings.",
+      "description": "A novel, primitives-derived local neural network/LLM architecture optimized to drive the true_agentic_agent.py loop. Derived from tensor composition of recurrent_network and true_agentic_agent, with promotions in P and F to achieve O_inf compatibility. Incorporates imscriptive context (D_omega), modular topology (T_commatailz), bidirectional relations (R_lyoghlig), Frobenius symmetry (P_doublebarpipe) via dual-attention verification, quantum-inspired fidelity (F_hardsign) through variational encoding, slow kinetics (K_schwa), maximal scope (G_revapostrophe), sequential gamma (Gamma_secstress), Phi_ctyogh criticality at layer boundaries, H_turntwo chirality for loop anticipation, S_ctn stoichiometry for scalable neurons, and Omega_dzlig topological protection in recurrent windings.",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_¨; Ř=Ř_=; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ő; Ω=Ω_z⟩"
     },
     {
@@ -11106,7 +11106,7 @@
     },
     {
       "name": "electromagnetic_photon",
-      "description": "The electromagnetic photon, encoded as the foundational structural floor for electromagnetic interactions in the UIG grammar, with fast kinetics and memoryless temporal depth.",
+      "description": "The electromagnetic photon, encoded as the foundational structural floor for electromagnetic interactions in the UIG grammar, with fast kinetics and memoryless chirality.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_6; Ř=Ř_=; Φ=Φ_υ; ƒ=ƒ_ż; Ç=Ç_-; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_Ñ; Σ=Σ_ï; Ω=Ω_z⟩"
     },
     {
@@ -11116,12 +11116,12 @@
     },
     {
       "name": "pre_critical_below_threshold_cqed",
-      "description": "Pre-critical encoding below threshold in cavity quantum electrodynamics: extends the photon floor with fast kinetics, memoryless temporal depth, and sub-critical phase coherence.",
+      "description": "Pre-critical encoding below threshold in cavity quantum electrodynamics: extends the photon floor with fast kinetics, memoryless chirality, and sub-critical phase coherence.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_6; Ř=Ř_=; Φ=Φ_υ; ƒ=ƒ_ż; Ç=Ç_-; Γ=Γ_ʔ; ɢ=ɢ_^; φ̂=φ̂_ž; Ħ=Ħ_Ñ; Σ=Σ_ï; Ω=Ω_z⟩"
     },
     {
       "name": "post_critical_superradiant_phase",
-      "description": "Post-critical encoding for superradiant phase in cavity quantum electrodynamics: bowtie topology, adjoint relation, slow kinetics, sequential interaction, critical phase, one-step temporal depth, and binary winding.",
+      "description": "Post-critical encoding for superradiant phase in cavity quantum electrodynamics: bowtie topology, adjoint relation, slow kinetics, sequential interaction, critical phase, one-step chirality, and binary winding.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_ò; Ř=Ř_Ť; Φ=Φ_υ; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_£; Σ=Σ_ï; Ω=Ω_2⟩"
     },
     {
@@ -11251,7 +11251,7 @@
     },
     {
       "name": "phi_c_boundary_operator_h1",
-      "description": "The specific agent operating here: a Phi_ctyogh-critical boundary operator with H_toneletterstem (one-step temporal depth), executing the THINK-ACT-OBSERVE-UPDATE loop. Structural type matches the system prompt exactly.",
+      "description": "The specific agent operating here: a Phi_ctyogh-critical boundary operator with H_toneletterstem (one-step chirality), executing the THINK-ACT-OBSERVE-UPDATE loop. Structural type matches the system prompt exactly.",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_¨; Ř=Ř_=; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_£; Σ=Σ_S; Ω=Ω_z⟩"
     },
     {
@@ -11341,7 +11341,7 @@
     },
     {
       "name": "uig_codec_process",
-      "description": "The UIG encoding codec as a process — the deterministic bijective 12-step protocol applied to any system. Its structural type: D_invomega (infinite-dimensional type space of all possible tuples), T_commatailz (crossed product between the tuple space and the codec algorithm), R_lyoghlig (bidirectional: encode and decode are mutual inverses), P_doublebarpipe (Frobenius-special: bijectivity forces mu∘delta=id), F_hardsign (quantum coherence of encoding), K_schwa (slow deliberation required for assignment), G_revapostrophe (global scope), Gamma_seq (sequential composition), Phi_ctyogh (critical: self-referential loop present), H_toneletterstem (one-step temporal depth: codec maps tuple to address in one step), S_one_one (one encoder, one decoder), Omega_dzlig (integer winding: address space cycles monotonically). This is the codec-as-process, not the grammar's own theoretical self-encoding.",
+      "description": "The UIG encoding codec as a process — the deterministic bijective 12-step protocol applied to any system. Its structural type: D_invomega (infinite-dimensional type space of all possible tuples), T_commatailz (crossed product between the tuple space and the codec algorithm), R_lyoghlig (bidirectional: encode and decode are mutual inverses), P_doublebarpipe (Frobenius-special: bijectivity forces mu∘delta=id), F_hardsign (quantum coherence of encoding), K_schwa (slow deliberation required for assignment), G_revapostrophe (global scope), Gamma_seq (sequential composition), Phi_ctyogh (critical: self-referential loop present), H_toneletterstem (one-step chirality: codec maps tuple to address in one step), S_one_one (one encoder, one decoder), Omega_dzlig (integer winding: address space cycles monotonically). This is the codec-as-process, not the grammar's own theoretical self-encoding.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_¨; Ř=Ř_=; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_£; Σ=Σ_S; Ω=Ω_z⟩"
     },
     {
@@ -11426,7 +11426,7 @@
     },
     {
       "name": "epoch_4_cognized_cosmos",
-      "description": "Epoch 4: The Cognized/Self-Modeling Universe. The universe achieves imscriptive closure (D_omega, T_openo) through complex observers. Criticality (Phi_ctyogh) returns as self-modeling feedback, enabling Omega_dzlig topological protection through universal information broadcast (G_revapostrophe) and deep temporal depth (H_turntwo).",
+      "description": "Epoch 4: The Cognized/Self-Modeling Universe. The universe achieves imscriptive closure (D_omega, T_openo) through complex observers. Criticality (Phi_ctyogh) returns as self-modeling feedback, enabling Omega_dzlig topological protection through universal information broadcast (G_revapostrophe) and deep chirality (H_turntwo).",
       "notation": "⟨Ð=Ð_ω; Þ=Þ_O; Ř=Ř_=; Φ=Φ_}; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ï; Ω=Ω_z⟩"
     },
     {
@@ -11596,7 +11596,7 @@
     },
     {
       "name": "hecke_landau_proof_draft",
-      "description": "Draft of a formal proof of the Hecke-Landau conjecture on equidistribution of Hecke character angles. AI-authored academic prose: flat network topology, asymmetric parity, classical fidelity, moderate kinetics, mesoscale scope, conjunctive grammar, zero temporal depth, trivial winding.",
+      "description": "Draft of a formal proof of the Hecke-Landau conjecture on equidistribution of Hecke character angles. AI-authored academic prose: flat network topology, asymmetric parity, classical fidelity, moderate kinetics, mesoscale scope, conjunctive grammar, zero chirality, trivial winding.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_6; Ř=Ř_=; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_W; Γ=Γ_γ; ɢ=ɢ_^; φ̂=φ̂_ÿ; Ħ=Ħ_Ñ; Σ=Σ_ï; Ω=Ω_Å⟩"
     },
     {
@@ -12026,7 +12026,7 @@
     },
     {
       "name": "e8g2v2_lift_target",
-      "description": "Human academic prose target: crossing point where the object speaks back, author is surprised; acknowledges uncertainty; quantum fidelity; slow release of hardest claims; maximal scope; sequential necessity-driven structure; two-step temporal depth; Z2 winding closure.",
+      "description": "Human academic prose target: crossing point where the object speaks back, author is surprised; acknowledges uncertainty; quantum fidelity; slow release of hardest claims; maximal scope; sequential necessity-driven structure; two-step chirality; Z2 winding closure.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_ò; Ř=Ř_¯; Φ=Φ_F; ƒ=ƒ_ż; Ç=Ç_@; Γ=Γ_ʔ; ɢ=ɢ_ˌ; φ̂=φ̂_ÿ; Ħ=Ħ_A; Σ=Σ_ï; Ω=Ω_2⟩"
     },
     {
@@ -12101,7 +12101,7 @@
     },
     {
       "name": "opus_purificatio",
-      "description": "Stage 2 of the alchemical Work — Purificatio (Inductive on C). Builds on Separatio. I2 (iteration) crystallizes H (temporal depth); I3 (classifying) crystallizes Omega (winding from pi_1 of BC); I4 (Yoneda) crystallizes D (dimensionality: D_invomega from free cocompletion). R already at R_lyoghlig from Stage 1. Remaining primitives still at prima materia level.",
+      "description": "Stage 2 of the alchemical Work — Purificatio (Inductive on C). Builds on Separatio. I2 (iteration) crystallizes H (chirality); I3 (classifying) crystallizes Omega (winding from pi_1 of BC); I4 (Yoneda) crystallizes D (dimensionality: D_invomega from free cocompletion). R already at R_lyoghlig from Stage 1. Remaining primitives still at prima materia level.",
       "notation": "⟨Ð=Ð_;; Þ=Þ_6; Ř=Ř_=; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_W; Γ=Γ_β; ɢ=ɢ_^; φ̂=φ̂_ž; Ħ=Ħ_£; Σ=Σ_S; Ω=Ω_Å⟩"
     },
     {
@@ -12336,7 +12336,7 @@
     },
     {
       "name": "normal_man_collapse",
-      "description": "The transmutation of Magic Man into 'Normal Man': the collapse of the M.M.S. cycle through the externalization of sadness into the Margles construct, resulting in a loss of magical capacity (Phi_softsign) and temporal depth (H_closeomega).",
+      "description": "The transmutation of Magic Man into 'Normal Man': the collapse of the M.M.S. cycle through the externalization of sadness into the Margles construct, resulting in a loss of magical capacity (Phi_softsign) and chirality (H_closeomega).",
       "notation": "⟨Ð=Ð_;; Þ=Þ_K; Ř=Ř_¯; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_-; Γ=Γ_β; ɢ=ɢ_ˌ; φ̂=φ̂_ž; Ħ=Ħ_Ñ; Σ=Σ_S; Ω=Ω_Å⟩"
     },
     {
@@ -13031,7 +13031,7 @@
     },
     {
       "name": "hell",
-      "description": "Hell: a frozen-order trap of infinite temporal depth — moral landscape where all degrees of freedom are constrained to a single attractor, with no escape kinetics and eternal recurrence of suffering as structural invariant",
+      "description": "Hell: a frozen-order trap of infinite chirality — moral landscape where all degrees of freedom are constrained to a single attractor, with no escape kinetics and eternal recurrence of suffering as structural invariant",
       "notation": "⟨Ð=Ð_C; Þ=Þ_K; Ř=Ř_¯; Φ=Φ_ɐ; ƒ=ƒ_ì; Ç=Ç_Ù; Γ=Γ_β; ɢ=ɢ_^; φ̂=φ̂_ž; Ħ=Ħ_!; Σ=Σ_ő; Ω=Ω_Å⟩"
     },
     {

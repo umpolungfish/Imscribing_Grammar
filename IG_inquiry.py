@@ -497,7 +497,7 @@ G  — Scope / correlation length
     φ̂_3          exceptional-point criticality: non-Hermitian eigenvector coalescence; no standard ν, η; Ç_- signature
     φ̂_Ţ       supercritical (disordered, post-transition)
 
-H  — Chirality / temporal depth (arrow of time)
+H  — Chirality / chirality (arrow of time)
     Ħ_Ñ            achiral / time-symmetric
     Ħ_£            weakly chiral / shallow temporal integration
     Ħ_A            strongly chiral / deep temporal memory

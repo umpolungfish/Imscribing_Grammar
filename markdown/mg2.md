@@ -31,7 +31,7 @@ The leading Schwinger term $\alpha/2\pi \approx 0.0011614$ was computed in 1948 
 
 The muon ($m_\mu = 105.66$ MeV) is 207 times heavier than the electron. Anomalous contributions scale approximately as $(m_\ell/\Lambda)^2$ for virtual particles of mass $\Lambda$. This means the muon is $\sim 43\,000$ times more sensitive to heavy virtual particles than the electron. Hadronic contributions — the dominant source of theoretical uncertainty — are enhanced by $(m_\mu/m_e)^2 \approx 4.3 \times 10^4$. The electron $g-2$ agrees with theory at sub-ppb precision; the muon $g-2$ probes the frontier where new physics may hide.
 
-For the electron, the structural type is $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$ — a point-like degree-0 system with no topological protection, trivial temporal depth, and below-critical behavior. The QED sector is saturated: there is nothing left to discover there.
+For the electron, the structural type is $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$ — a point-like degree-0 system with no topological protection, trivial chirality, and below-critical behavior. The QED sector is saturated: there is nothing left to discover there.
 
 The muon, by contrast, lives at a higher structural address, where hadronic degrees of freedom enter and the calculation ceases to be perturbative.
 

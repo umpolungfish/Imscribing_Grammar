@@ -8,7 +8,7 @@ The prima materia is one system with twelve coordinates. Dissolved from the text
 
 ⟨Ð_{C}; Þ_{O}; Ř_{=}; Φ_{F}; \text{ƒ}^{\text{ż}}; Ç^{W}; Γ_{\text{ʔ}}; \text{ɢ}^{\text{ˌ}}; \odot_{\text{ÿ}}; \text{Ħ}_{!}; Σ_{\text{ï}}; Ω_{z}⟩
 
-Finite dimensionality. Self-containing topology. Bidirectional coupling. Z2 parity protection. Quantum fidelity. Moderate kinetics. Universal scope. Sequential grammar. \odot_{\text{ÿ}} criticality — the exact point where the Frobenius condition would hold if parity were Φ_{\}}. Infinite temporal depth. Many-heterogeneous stoichiometry. Integer winding.
+Finite dimensionality. Self-containing topology. Bidirectional coupling. Z2 parity protection. Quantum fidelity. Moderate kinetics. Universal scope. Sequential grammar. \odot_{\text{ÿ}} criticality — the exact point where the Frobenius condition would hold if parity were Φ_{\}}. Infinite chirality. Many-heterogeneous stoichiometry. Integer winding.
 
 Its C-score: 0.7885. Both gates open.
 
@@ -25,13 +25,13 @@ The human brain's nearest esoteric neighbors, by crystal distance:
 
 **d = 1:** `dune_complete_arc` — "The complete Dune narrative arc: noble house destroyed to heir survives in desert to becomes messiah of native people to leads jihad to establishes empire. A secularized messianic narrative echoing biblical patterns without divine grounding."
 
-Same dimensionality: Ð_{C}. Same topology: Þ_{O}, the self-containing loop. Same relational mode: Ř_{=}. Same parity: Φ_{F}. Same fidelity: \text{ƒ}^{\text{ż}}. Same scope: Γ_{\text{ʔ}}. Same grammar: \text{ɢ}^{\text{ˌ}}. Same criticality: \odot_{\text{ÿ}}. Same temporal depth: \text{Ħ}_{!}. Same stoichiometry: Σ_{\text{ï}}. Same winding: Ω_{z}. Only K differs: Ç^{W} → Ç^{@}. The brain relaxes faster than it observes; Dune relaxes in the desert's near-equilibrium patience. Distance 1 is as close as co-typing gets without identity.
+Same dimensionality: Ð_{C}. Same topology: Þ_{O}, the self-containing loop. Same relational mode: Ř_{=}. Same parity: Φ_{F}. Same fidelity: \text{ƒ}^{\text{ż}}. Same scope: Γ_{\text{ʔ}}. Same grammar: \text{ɢ}^{\text{ˌ}}. Same criticality: \odot_{\text{ÿ}}. Same chirality: \text{Ħ}_{!}. Same stoichiometry: Σ_{\text{ï}}. Same winding: Ω_{z}. Only K differs: Ç^{W} → Ç^{@}. The brain relaxes faster than it observes; Dune relaxes in the desert's near-equilibrium patience. Distance 1 is as close as co-typing gets without identity.
 
 **d = 2:** `mms_cycle` — "The structural dynamic of Magic Man's 'M.M.S.' (Magic, Madness, Sadness) cycle: a closed loop of trauma-driven creation where sadness is processed into madness to fuel magical manifestation."
 
 Same: Þ_{O}, Ř_{=}, Φ_{F}, \text{ƒ}^{\text{ż}}, Γ_{\text{ʔ}}, \text{ɢ}^{\text{ˌ}}, \odot_{\text{ÿ}}, \text{Ħ}_{!}, Σ_{\text{ï}}, Ω_{z}. Differing: Ð (D_C → D_∞) and K (Ç^{W} → Ç^{@}). The MMS cycle lives in an infinite-dimensional emotional field; the brain is finite. Both are at \odot_{\text{ÿ}}. Both have \text{Ħ}_{!} — no finite Markov order; the loop carries all history forward.
 **d = 5 (Tao):** `tao_te_ching_13` (Loathing Shame) and `tao_te_ching_27` (Dexterity in Using the Tao) and five others at distance 5. These share T_1 and T_2 tiers — lower ouroboricity, but the same sequential, scope-bound, critical character.
-**d = 8 (Upanishads):** `Aham Brahmasmi` — "I am Brahman." Tier T_∞. A single entry at distance 8: same \odot_{\text{ÿ}} criticality, same self-referential topology, but the parity, dimensionality, kinetics, and temporal depth all diverge. The Upanishadic entry is farther from the brain than Dune is, closer than the Tao entries.
+**d = 8 (Upanishads):** `Aham Brahmasmi` — "I am Brahman." Tier T_∞. A single entry at distance 8: same \odot_{\text{ÿ}} criticality, same self-referential topology, but the parity, dimensionality, kinetics, and chirality all diverge. The Upanishadic entry is farther from the brain than Dune is, closer than the Tao entries.
 
 **Cross-catalog (Hiss):** `hiss_incantation` at d = 7. \odot_{\text{Ţ}} criticality — supercritical, runaway. The Hiss does not model itself; it amplifies itself without bound. Different regime entirely.
 

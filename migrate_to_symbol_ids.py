@@ -68,7 +68,7 @@ RENAME: list[tuple[str, str]] = [
     ("φ̂_ctc",               "φ̂_ÿ"),   # old gen_final.py name, same target
     ("φ̂_revepsilon",        "φ̂_3"),
     ("φ̂_upstep",            "φ̂_Ţ"),
-    # H — Temporal depth
+    # H — Chirality
     ("Ħ_closeomega",         "Ħ_Ñ"),
     ("Ħ_toneletterstem",     "Ħ_£"),
     ("Ħ_turntwo",            "Ħ_A"),

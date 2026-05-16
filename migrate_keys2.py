@@ -69,7 +69,7 @@ VALUE_PAIRS = [
     ("φ̂_upstep",         "φ̂_Ţ"),
     ("φ̂_ctyogh",         "φ̂_ÿ"),
     ("φ̂_softsign",       "φ̂_ž"),
-    # Ħ — Temporal Depth
+    # Ħ — Chirality
     ("Ħ_invscripta",     "Ħ_!"),
     ("Ħ_turntwo",        "Ħ_A"),
     ("Ħ_toneletterstem", "Ħ_£"),

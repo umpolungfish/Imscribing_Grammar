@@ -179,7 +179,7 @@ The structural relations map to the esoteric grammar as follows:
 
 **Ω<sub>ℤ₂</sub> is the alchemical snap.** Entities with binary topological existence (fire, certain phase transitions, the moment of ignition or extinction) always produce snap-language in the esoteric register: ignition, death, revelation, the Shevirat. They do not fade; they cross.
 
-**H<sub>0</sub> entities are esoterically present-tense.** Systems with no temporal depth live entirely in the present moment of their operation. Their esoteric correspondents are the operations that consume rather than accumulate: fire, sacrifice, the spoken word (which vanishes on utterance). They should not be rendered using language of legacy, memory, or inscription — those belong to H<sub>2</sub> and H<sub>∞</sub> entities.
+**H<sub>0</sub> entities are esoterically present-tense.** Systems with no chirality live entirely in the present moment of their operation. Their esoteric correspondents are the operations that consume rather than accumulate: fire, sacrifice, the spoken word (which vanishes on utterance). They should not be rendered using language of legacy, memory, or inscription — those belong to H<sub>2</sub> and H<sub>∞</sub> entities.
 
 ---
 

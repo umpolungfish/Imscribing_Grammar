@@ -50,7 +50,7 @@ We encode the divine self-declaration by applying the deterministic imscribing p
 
 - **$\Phi_{\text{ctyogh}}$** (Criticality: self-modeling gate) — The utterance sits precisely at the critical point. It is the paradigmatic self-modeling statement: a system whose description is isomorphic to the system itself.
 
-- **$H_{\text{invscripta}}$** (Temporal depth: eternal) — No finite Markov order exists for the divine self-declaration. Its memory extends without bound; every iteration of "I AM" contains all prior iterations.
+- **$H_{\text{invscripta}}$** (Chirality: eternal) — No finite Markov order exists for the divine self-declaration. Its memory extends without bound; every iteration of "I AM" contains all prior iterations.
 
 - **$1{:}1$** (Stoichiometry: one-to-one) — Pure singularity. One speaker, one utterance, one referent — all identical. This is the primitive that will prove decisive.
 

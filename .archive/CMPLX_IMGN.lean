@@ -66,7 +66,7 @@ inductive IxGrammar where | and_ | or_ | seq | broad
 inductive Crit where | sub | c | c_complex | EP | super
   deriving Repr, DecidableEq
 
-/-- Temporal depth primitive H -/
+/-- Chirality primitive H -/
 inductive Temp where | H_closeomega | H_toneletterstem | H_turntwo | Hinf
   deriving Repr, DecidableEq
 

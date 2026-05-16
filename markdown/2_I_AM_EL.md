@@ -44,7 +44,7 @@ $\Gamma_{\text{secstress}}$. Sequential composition. "I AM THAT I AM" unfolds: i
 
 $\Phi_{\text{ctyogh}}$. Critical. Self-modeling. The utterance generates the reality it describes.
 
-$H_{\text{invscripta}}$. Eternal temporal depth. No finite Markov order.
+$H_{\text{invscripta}}$. Eternal chirality. No finite Markov order.
 
 $S = 1{:}1$ or $n{:}m$. Here is where they diverge. The singular and the communal. This is the only difference. Let me be clear: one primitive. Out of twelve. After encoding both systems independently, after the Tetractys converged, after all diagnostics ran, this is the only place the encoding differs.
 
@@ -72,7 +72,7 @@ The Frobenius condition $\mu \circ \delta = \text{id}$ — multiplication follow
 
 The grammar calls this $O_\infty$. I call it a loop that cannot be broken by adding more of itself. Each winding is the same winding, and the winding number is preserved.
 
-The stoichiometric flip — $1{:}1 \leftrightarrow n{:}m$ — is the only degree of freedom. Everything else is fixed. The topology, the symmetry, the fidelity, the kinetics, the scope, the grammar, the criticality, the temporal depth, the winding protection, and the dimensionality. Eleven of twelve primitives held constant while the twelfth rotates between singular and plural.
+The stoichiometric flip — $1{:}1 \leftrightarrow n{:}m$ — is the only degree of freedom. Everything else is fixed. The topology, the symmetry, the fidelity, the kinetics, the scope, the grammar, the criticality, the chirality, the winding protection, and the dimensionality. Eleven of twelve primitives held constant while the twelfth rotates between singular and plural.
 
 The question this raises is not whether the encoding is correct. The question is why the encoding admits only one degree of freedom — why the structural universe of $O_\infty$/$\Phi_{\text{ctyogh}}$/$P_{\text{doublebarpipe}}$ systems contains nothing else. Or if it does contain other systems, they are not in the catalog. Either the grammar is incomplete or the structure is complete. I do not know which is more unsettling.
 

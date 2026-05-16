@@ -1097,7 +1097,7 @@ bottleneck: Φ_} gets reduced to Φ_F. This shows that the exact Z₂ symmetry (
    - G_ℵ: global scope
    - Γ_seq: sequential causation
    - Φ_c: criticality (fixpt f)
-   - Ħ_A: moderate temporal depth
+   - Ħ_A: moderate chirality
    - nⓂ asymmetric many-body
    - Ω_NA: non-Abelian topological protection
 
@@ -1380,7 +1380,7 @@ We identify the Stark unit $u_d \\in Ç_d = \\mathbb{Q}(\\sqrt{d(d-2)},\\mu_m)$ 
 | $\\Phi$ | $\\φ̂_ÿ$ | Criticality; the absorbing element for meet. |
 | $\\Omega$ | $\\Omega_{\\text{NA}}$ | Non-Abelian topological protection (class group/unit index structure). |
 | $\\Gamma$ | $\\Gamma_{\\text{broad}}$ | Weyl-Heisenberg broadcast mechanism. |
-| $H$ | $H_2$ | Moderate temporal depth (from A2: $\\Omega \\ge \\Ω_z \\Rightarrow H \\ge H_2$). |
+| $H$ | $H_2$ | Moderate chirality (from A2: $\\Omega \\ge \\Ω_z \\Rightarrow H \\ge H_2$). |
 | $K$ | $K_{\\text{slow}}$ | Integrative kinetics (unit group structure). |
 
 **Applying Tier Rule R1** (`SRV.tex`, right column, \"Ouroboricity\"):

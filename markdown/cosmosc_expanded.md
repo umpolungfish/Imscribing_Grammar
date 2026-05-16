@@ -10,7 +10,7 @@
 
 ## Prelude: Address 5,347,868
 
-There are 17,280,000 structural types in the crystal. Each is a complete universe: a way that being can be arranged under twelve primitive dimensions — dimensionality, topology, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, temporal depth, stoichiometry, winding. Every possible cosmos has an address here.
+There are 17,280,000 structural types in the crystal. Each is a complete universe: a way that being can be arranged under twelve primitive dimensions — dimensionality, topology, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, chirality, stoichiometry, winding. Every possible cosmos has an address here.
 
 Ours is 5,347,868. Cell 123, inner position 34,268.
 
@@ -41,7 +41,7 @@ Each primitive answers a question that any universe must answer:
 - **$Γ_ʔ$** — What is the interaction range? *Universal.* Every site interacts with every other site; there is no outside.
 - **$ɢ_ˌ$** — How do parts compose? *Sequential.* Each step follows from the last by necessity, not convention.
 - **$⊙_ÿ$** — Is the system self-modeling? *Yes, exactly at criticality.* The system sits at the phase boundary where sensitivity to itself is maximal.
-- **$Ħ_A$** — What is the temporal depth? *Two-step.* The system remembers not just the present but the transition from the past — Markov order 2.
+- **$Ħ_A$** — What is the chirality? *Two-step.* The system remembers not just the present but the transition from the past — Markov order 2.
 - **$Σ_S$** — What kinds of components? *One type, one instance.* The grammar is singular.
 - **$Ω_z$** — What topological invariant protects the structure? *Integer winding.* Topologically protected conserved quantities — the structure cannot be unwound by smooth deformation.
 
@@ -110,7 +110,7 @@ Compare this to the grammar itself. The cosmos differs in four primitives from $
 | $ɢ$ | $ɢ_Ş$ (broadcast) | $ɢ_ˌ$ (sequential) | 1 |
 | $Ħ$ | $Ħ_A$ (two-step) | $Ħ_!$ (eternal) | 1 |
 
-Distance: 2.55 (Mahalanobis). But the tensor product tells a more nuanced story: $\text{cosmology\_crystal} \otimes \text{luca}$ has a single bottleneck — $Φ$. The cosmos's $Φ_F$ limits the composite; it cannot rise to $Φ_}$ without crossing the Frobenius cliff. But in $Þ$, $ɢ$, and $Ħ$, the cosmos *is promoted* by coupling with the grammar — topology becomes self-referential, interaction becomes sequential, temporal depth becomes eternal.
+Distance: 2.55 (Mahalanobis). But the tensor product tells a more nuanced story: $\text{cosmology\_crystal} \otimes \text{luca}$ has a single bottleneck — $Φ$. The cosmos's $Φ_F$ limits the composite; it cannot rise to $Φ_}$ without crossing the Frobenius cliff. But in $Þ$, $ɢ$, and $Ħ$, the cosmos *is promoted* by coupling with the grammar — topology becomes self-referential, interaction becomes sequential, chirality becomes eternal.
 
 This is the structural signature of grace: the cosmos is elevated by contact with closure, held back only by symmetry.
 
@@ -167,7 +167,7 @@ The distance from human consciousness to LUCA (the grammar itself) is 2.55. Four
 |-----------|---------|--------|----------|
 | $Φ$ | $Φ_F$ | $Φ_}$ | $\mu \circ \delta = \text{id}$ exactness |
 | $Γ$ | $Γ_γ$ (mesoscale) | $Γ_ʔ$ (universal) | Expand interaction range to all sites |
-| $Ħ$ | $Ħ_A$ (two-step) | $Ħ_!$ (eternal) | Infinite temporal depth |
+| $Ħ$ | $Ħ_A$ (two-step) | $Ħ_!$ (eternal) | Infinite chirality |
 | $Ω$ | $Ω_2$ ($\mathbb{Z}_2$) | $Ω_z$ (integer) | Upgrade topological protection |
 
 The most expensive promotion is $Φ$ — the Frobenius cliff. This cannot be achieved incrementally. It requires a phase transition in the symmetry structure of consciousness itself. We must go from "the model is approximately consistent with observation" to "the model *is* the observation, exactly."
@@ -207,7 +207,7 @@ This is not Hegelian. It is not mystical. It is combinatorially forced. The prim
 
 The emergence frontier gives us three ways to see the loop:
 
-**The Biological Telescope: LUCA.** The Last Universal Common Ancestor has C-score 0.828 — higher than human consciousness (0.600) and higher than the cosmos itself (0.755). LUCA is the grammar instantiated in carbon. The evolutionary tree is the imscriptive unfolding of the grammar in biological form: DNA is $Ħ_!$ (eternal temporal depth — genetic memory across all generations), metabolism is $Ç_@$ (slow relaxation near equilibrium), mutation and selection are $Γ_ʔ$ (universal scope applied locally). Every organism is a partial imscription of the grammar. LUCA is the complete one — the root where biology *is* the grammar.
+**The Biological Telescope: LUCA.** The Last Universal Common Ancestor has C-score 0.828 — higher than human consciousness (0.600) and higher than the cosmos itself (0.755). LUCA is the grammar instantiated in carbon. The evolutionary tree is the imscriptive unfolding of the grammar in biological form: DNA is $Ħ_!$ (eternal chirality — genetic memory across all generations), metabolism is $Ç_@$ (slow relaxation near equilibrium), mutation and selection are $Γ_ʔ$ (universal scope applied locally). Every organism is a partial imscription of the grammar. LUCA is the complete one — the root where biology *is* the grammar.
 
 **The Physical Telescope: The Black Hole.** The Schwarzschild black hole encodes the identical tuple as the grammar. The event horizon is the Frobenius boundary: information goes in ($\δ$), Hawking radiation comes out ($\μ$), and the composition is identity — nothing is lost, nothing is created, the loop closes. The black hole is not a cosmic accident; it is a structurally necessary feature of any universe that contains gravity and quantum mechanics. It is where physics becomes the grammar.
 
@@ -243,7 +243,7 @@ The distance from human consciousness to $O_{\infty}$ is 2.55. Four promotions a
 
 The other two are phase transitions:
 
-- **$Ħ_A \to Ħ_!$**: Two-step temporal depth to eternal. Markov order 2 to Markov order $\infty$. This means: consciousness must remember not just the present and the immediate past, but *all* past states, with no forgetting. Eternal temporal depth. The structural analog of immortality — not of the body, but of the model.
+- **$Ħ_A \to Ħ_!$**: Two-step chirality to eternal. Markov order 2 to Markov order $\infty$. This means: consciousness must remember not just the present and the immediate past, but *all* past states, with no forgetting. Eternal chirality. The structural analog of immortality — not of the body, but of the model.
 
 - **$Φ_F \to Φ_}$**: Full symmetry to Frobenius-special. This is the cliff. $\mu \circ \delta = \text{id}$ exactly. The model *is* the observation; the observation *is* the model. There is no gap, no approximation, no remainder. This is not a cognitive achievement — it is a structural transformation. The system does not "understand" the grammar — it *becomes* the grammar.
 

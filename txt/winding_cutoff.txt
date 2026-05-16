@@ -16,7 +16,7 @@
   | Ħ_Ñ      -- achiral, no temporal memory
   | Ħ_£      -- soft chiral, weak temporal asymmetry
   | Ħ_A      -- persistent chiral, strong temporal asymmetry
-  | Ħ_!   -- topological chiral, inexhaustible temporal depth
+  | Ħ_!   -- topological chiral, inexhaustible chirality
   | Ω_Å    -- no topological protection
   | Ω_2   -- ℤ₂ symmetry protection
   | Ω_z    -- integer winding number / ℤ protection

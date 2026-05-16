@@ -6,7 +6,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Data.Real.Basic
 import ImscribingGrammar.Primitives.Core
-import ImscribingGrammar.Primitives.Synthon
+import ImscribingGrammar.Primitives.Imscription
 
 namespace ImscribingGrammar.Primitives
 
@@ -196,17 +196,17 @@ theorem CLU_scale_independence (x c : ℝ) (hx : x > 0) (hc : c > 0) :
   unfold CLU
   rfl
 
-noncomputable def synthonKDistance (a b : Synthon) : ℝ :=
+noncomputable def imscriptionKDistance (a b : Imscription) : ℝ :=
   kTierCrossingCost (kineticCharToKTier a.kin) (kineticCharToKTier b.kin)
 
 theorem higgs_axion_K_distance_zero :
-    synthonKDistance higgs axion = 0 := by
-  simp [synthonKDistance, kTierCrossingCost, kineticCharToKTier,
+    imscriptionKDistance higgs axion = 0 := by
+  simp [imscriptionKDistance, kTierCrossingCost, kineticCharToKTier,
         higgs, axion, scalarField_Kslow, kTierLevel, kTierSteps]
 
 theorem qg_higgs_K_distance_one_CLU :
-    synthonKDistance quantum_gravity higgs = CLU := by
-  simp [synthonKDistance, kTierCrossingCost, kineticCharToKTier,
+    imscriptionKDistance quantum_gravity higgs = CLU := by
+  simp [imscriptionKDistance, kTierCrossingCost, kineticCharToKTier,
         quantum_gravity, higgs, scalarField_Kslow, kTierLevel, kTierSteps, CLU]
 
 theorem CLU_universality (n : ℕ) :

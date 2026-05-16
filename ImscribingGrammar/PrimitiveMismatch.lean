@@ -6,10 +6,10 @@
 --   4. H_∞ line: genuine memory vs Markovian approximation
 --   5. Temporal primitive sorting of physics problems
 --
--- Uses the canonical 12-primitive Synthon type from Primitives.Core.
+-- Uses the canonical 12-primitive Imscription type from Primitives.Core.
 -- Catalog entries verified via encode_system; distances via syncon_tool.
 
-import ImscribingGrammar.Primitives.Synthon
+import ImscribingGrammar.Primitives.Imscription
 
 namespace ImscribingGrammar.PrimitiveMismatch
 
@@ -20,7 +20,7 @@ open ImscribingGrammar.Primitives
 -- ============================================================
 
 /-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω₀⟩ -/
-def schrodingerDynamics : Synthon := {
+def schrodingerDynamics : Imscription := {
   dim  := .D_turnthree
   top  := .T_invscr
   rel  := .R_ctz
@@ -36,7 +36,7 @@ def schrodingerDynamics : Synthon := {
 }
 
 /-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; Γ_seq; Φ_c; H₀; 1:1; Ω₀⟩ -/
-def measurementOutcome : Synthon := {
+def measurementOutcome : Imscription := {
   dim  := .D_turnthree
   top  := .T_bullseye
   rel  := .R_downstep
@@ -52,7 +52,7 @@ def measurementOutcome : Synthon := {
 }
 
 /-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₁; 1:1; Ω₀⟩ -/
-def wickRotation : Synthon := {
+def wickRotation : Imscription := {
   dim  := .D_turnthree
   top  := .T_bullseye
   rel  := .R_lyoghlig
@@ -68,7 +68,7 @@ def wickRotation : Synthon := {
 }
 
 /-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω_ℤ⟩ -/
-def berryPhase : Synthon := {
+def berryPhase : Imscription := {
   dim  := .D_turnthree
   top  := .T_invscr
   rel  := .R_ctz
@@ -84,7 +84,7 @@ def berryPhase : Synthon := {
 }
 
 /-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
-def tqft : Synthon := {
+def tqft : Imscription := {
   dim  := .D_invomega
   top  := .T_openo
   rel  := .R_ctz
@@ -100,7 +100,7 @@ def tqft : Synthon := {
 }
 
 /-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; Γ_seq; Φ_c; H_∞; n:m; Ω₀⟩ -/
-def nonmarkovianOpenSystems : Synthon := {
+def nonmarkovianOpenSystems : Imscription := {
   dim  := .D_invomega
   top  := .T_nrleg
   rel  := .R_lyoghlig
@@ -116,7 +116,7 @@ def nonmarkovianOpenSystems : Synthon := {
 }
 
 /-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; Γ_∧; Φ_c; H₁; n:n; Ω₀⟩ -/
-def statisticalMechanics : Synthon := {
+def statisticalMechanics : Imscription := {
   dim  := .D_invomega
   top  := .T_nrleg
   rel  := .R_subrightarrow
@@ -132,7 +132,7 @@ def statisticalMechanics : Synthon := {
 }
 
 /-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
-def quantumGravityCandidate : Synthon := {
+def quantumGravityCandidate : Imscription := {
   dim  := .D_invomega
   top  := .T_openo
   rel  := .R_lyoghlig
@@ -181,7 +181,7 @@ theorem measurement_problem_is_structural :
 -- ============================================================
 
 /-- The Wick rotation converts quantum coherence to thermal weight. -/
-def wickRotate (st : Synthon) : Synthon :=
+def wickRotate (st : Imscription) : Imscription :=
   { st with fid := .F_dh }
 
 theorem wick_rotation_changes_fidelity :
@@ -196,10 +196,10 @@ theorem wick_rotation_single_primitive_change :
 -- 3. Berry Phase as Ω_ℤ: Emergent vs Constitutive
 -- ============================================================
 
-def omegaIsConstitutive (st : Synthon) : Prop :=
+def omegaIsConstitutive (st : Imscription) : Prop :=
   st.prot = .Omega_dzlig ∧ st.top = .T_openo
 
-def omegaIsEmergent (st : Synthon) : Prop :=
+def omegaIsEmergent (st : Imscription) : Prop :=
   st.prot = .Omega_dzlig ∧ st.top ≠ .T_openo
 
 theorem berry_omega_emergent : omegaIsEmergent berryPhase := by
@@ -226,10 +226,10 @@ theorem berry_tqft_hamming_5 :
 -- 4. The H_∞ Line: Genuine Memory vs Markovian Approximation
 -- ============================================================
 
-def hasGenuineMemory (st : Synthon) : Prop :=
+def hasGenuineMemory (st : Imscription) : Prop :=
   st.chir = .H_invscripta
 
-def isMarkovian (st : Synthon) : Prop :=
+def isMarkovian (st : Imscription) : Prop :=
   st.chir = .H_closeomega
 
 theorem nonmarkovian_has_memory : hasGenuineMemory nonmarkovianOpenSystems := by
@@ -258,7 +258,7 @@ inductive TemporalPrimitive where
   | hInf
   deriving DecidableEq, Repr
 
-def activateTemporalPrimitive (tp : TemporalPrimitive) (st : Synthon) : Bool :=
+def activateTemporalPrimitive (tp : TemporalPrimitive) (st : Imscription) : Bool :=
   match tp with
   | .gammaSeq => st.gram = .Gamma_seq
   | .kSlow    => st.kin = .K_schwa
@@ -266,11 +266,11 @@ def activateTemporalPrimitive (tp : TemporalPrimitive) (st : Synthon) : Bool :=
   | .omegaZ   => st.prot = .Omega_dzlig
   | .hInf     => st.chir = .H_invscripta
 
-def activatedTemporalPrimitives (st : Synthon) : List TemporalPrimitive :=
+def activatedTemporalPrimitives (st : Imscription) : List TemporalPrimitive :=
   List.filter (activateTemporalPrimitive · st)
     [.gammaSeq, .kSlow, .pAsym, .omegaZ, .hInf]
 
-def temporalComplexity (st : Synthon) : Nat :=
+def temporalComplexity (st : Imscription) : Nat :=
   (activatedTemporalPrimitives st).length
 
 theorem schrodinger_temporal_set :
@@ -302,7 +302,7 @@ theorem nonmarkovian_temporal_set :
 
 /-- Quantum gravity is maximally temporally complex (5/5). -/
 theorem quantum_gravity_max_complexity :
-  ∀ st : Synthon, temporalComplexity st ≤ 5 := by
+  ∀ st : Imscription, temporalComplexity st ≤ 5 := by
   intro st
   unfold temporalComplexity activatedTemporalPrimitives
   -- Filter of a 5-element list has at most 5 elements
@@ -348,7 +348,7 @@ theorem measurement_tensor_result :
 /-- No mechanism operating purely within Γ_seq + K_schwa with P_upsilon
 can produce P_aolig — the measurement problem diagnosis. -/
 theorem no_asym_from_psi :
-  ∀ (mech : Synthon),
+  ∀ (mech : Imscription),
     mech.gram = .Gamma_seq →
     mech.kin = .K_schwa →
     mech.pol = .P_upsilon →

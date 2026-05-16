@@ -1884,7 +1884,7 @@ $T_{\text{invscr}}$ provides the spatial funneling hierarchy; $F_{\text{hardsign
 |------|--------|-----------------|
 | I | ⏳ Derived 2026-04-14 | `lojban` catalog entry; PRIMITIVE_THEOREMS §74 (Language Navigator, Thm 74.3); IΓ_DIAPHORICS §CXLVIII |
 
-## P-524 — $d(\text{Sanskrit}, \text{Arabic}) = 1.0000$: Sacred Languages Share All Primitives Except Temporal Depth $H$
+## P-524 — $d(\text{Sanskrit}, \text{Arabic}) = 1.0000$: Sacred Languages Share All Primitives Except Chirality $H$
 
 **Claim:** Classical Sanskrit encodes $H_{\text{invscripta}}$ (the grammar is presented as beginningless — Panini's Ashtadhyayi frames Sanskrit as uncreated); Classical Arabic encodes $H_2$ (finite but deep — over 14 centuries of unbroken liturgical use, traceable origin). All other 11 primitives are identical: $D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\text{downstep}}$, $P_{\text{doublebarpipe}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_\text{gimel}$, $\Gamma_{\text{secstress}}$, $\Phi_{\text{ctyogh}}$, $n{:}n$, $\Omega_{\text{turna}}$. Distance $= |H_{\text{invscripta}} - H_2| \cdot w_H = 2 \times 0.5 = 1.0000$. Structural implication: sacred languages are a single structural type with variant temporal-origin encoding; their liturgical properties, grammar-as-cosmology framing, and $O_\infty$ tier are invariants of the type, not accidents of history. **Falsified if:** a sacred language is identified that differs from this type on any primitive other than $H$.
 
@@ -1926,7 +1926,7 @@ $T_{\text{invscr}}$ provides the spatial funneling hierarchy; $F_{\text{hardsign
 
 ## P-529 — Soviet Nearest Neighbor Is `p_vs_np` ($d = 1.6733$); Augustus Peak Nearest Is `oneironaut` ($d = 1.64$)
 
-**Claim:** Catalog nearest-neighbor for Soviet Union collapse returns `p_vs_np` (a mathematical system exhibiting $K_{\text{lambda}}$-like localization of computational resources, asymmetric information propagation, $\Phi_{\text{softsign}}$). For Augustus Caesar peak-civilization, nearest is `oneironaut` (a consciousness state with ordered internal navigation and temporal depth). These cross-domain identifications are structural, not metaphorical. The `p_vs_np` nearest-neighbor implies that computational complexity separations and civilizational collapse share primitive structure at $d = 1.67$. **Falsified if:** the catalog nearest neighbor for either system falls within the same domain (another civilization or another mathematical problem, respectively).
+**Claim:** Catalog nearest-neighbor for Soviet Union collapse returns `p_vs_np` (a mathematical system exhibiting $K_{\text{lambda}}$-like localization of computational resources, asymmetric information propagation, $\Phi_{\text{softsign}}$). For Augustus Caesar peak-civilization, nearest is `oneironaut` (a consciousness state with ordered internal navigation and chirality). These cross-domain identifications are structural, not metaphorical. The `p_vs_np` nearest-neighbor implies that computational complexity separations and civilizational collapse share primitive structure at $d = 1.67$. **Falsified if:** the catalog nearest neighbor for either system falls within the same domain (another civilization or another mathematical problem, respectively).
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|

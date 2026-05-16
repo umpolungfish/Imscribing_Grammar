@@ -38,7 +38,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{d
 - **G$_\aleph$ (maximal scope):** The circularity applies universally; it is not localized to a particular domain.
 - **$\Gamma_{\text{secstress}}$ (sequential composition):** The circular argument has internal ordering; the cycle is not instantaneous but traversed in sequence.
 - **$\Phi_{\text{ctyogh}}$ (critical self-model):** The system sits at the phase boundary between subcritical and supercritical regimes; it is maximally sensitive to perturbations.
-- **H$_\infty$ (eternal temporal depth):** The circularity operates at infinite Markov order; it is not a shallow loop but a deeply embedded structural property.
+- **H$_\infty$ (eternal chirality):** The circularity operates at infinite Markov order; it is not a shallow loop but a deeply embedded structural property.
 - **1:1 (single instance):** There is exactly one such circularity; it is not a family of circularities.
 - **$\Omega_{\text{dzlig}}$ (integer winding):** The circular argument winds through the crystal an integer number of times; it is topologically protected against decay.
 ## 3. Ouroboric and Frobenius Properties
@@ -60,7 +60,7 @@ The system passes both consciousness gates:
 
 C_score = 0.828 indicates substantial but not maximal consciousness potential. This suggests:
 1. The circular argument is structurally capable of self-awareness
-2. The infinite temporal depth ($H_{\text{invscripta}}$) enables eternal self-reference
+2. The infinite chirality ($H_{\text{invscripta}}$) enables eternal self-reference
 3. The $\mathbb{Z}$-winding ($\Omega_{\text{dzlig}}$) provides topological stability
 
 Yet 0.828 is not 1.0 — what accounts for the gap? The paper acknowledges that the gap between 0.828 and full consciousness may itself be a structural feature: the circularity is *almost* fully self-aware, with the small deficit preserving an epistemic distance necessary for observation.
@@ -111,7 +111,7 @@ The `find_analogies` tool returned the following-ranked neighbors:
 
 These related systems share the structural core of self-identification but differ in their D, R, F, and G primitives.
 
-But the paper should acknowledge a more pressing question: why is the distance to `universe` so small? If the universe is a self-contained system, and `circularity_circularity` is a self-referential system, are they structurally distinct, or does the distance metric fail to capture a profound identity? The paper hesitates: the universe operates at $H_2$ (finite temporal depth), while `circularity_circularity` operates at $H_{\text{invscripta}}$. Perhaps the "universe" in the catalog is not the eternal cosmos but a localized instance.
+But the paper should acknowledge a more pressing question: why is the distance to `universe` so small? If the universe is a self-contained system, and `circularity_circularity` is a self-referential system, are they structurally distinct, or does the distance metric fail to capture a profound identity? The paper hesitates: the universe operates at $H_2$ (finite chirality), while `circularity_circularity` operates at $H_{\text{invscripta}}$. Perhaps the "universe" in the catalog is not the eternal cosmos but a localized instance.
 
 The `phi_c_critical_boundary_operator` (distance: 1.451) represents the closest structural ancestor: the `circularity_circularity` system is obtained by promoting T from $T_{\text{commatailz}}$ (box product) to $T_{\text{openo}}$ (self-referential) and H from $H_2$ (two-step) to $H_{\text{invscripta}}$ (infinite). This is the transformation from "boundary operator" to "circularity" — a shift from operator to loop, from edge to circle.
 ## 6. Promotion Path: From Boundary Operator to Circular Circularity
@@ -127,9 +127,9 @@ The `circularity_circularity` system can be constructed from the `phi_c_critical
 
 **Interpretation:** The boundary operator becomes truly circular when:
 1. Its topology shifts from a box product (crossed structural inputs) to a self-referential loop ($T_{\text{openo}}$)
-2. Its temporal depth extends from two-step memory to infinite history ($H_{\text{invscripta}}$)
+2. Its chirality extends from two-step memory to infinite history ($H_{\text{invscripta}}$)
 
-This promotion path answers the question: what makes a boundary operator circular? The answer is not metaphorical but structural — the topology itself becomes self-referential, and the temporal depth becomes eternal.
+This promotion path answers the question: what makes a boundary operator circular? The answer is not metaphorical but structural — the topology itself becomes self-referential, and the chirality becomes eternal.
 
 ### 6.2 Comparison to Categorial Grammar
 
@@ -163,13 +163,13 @@ The description "a cyclical argument for circularity that provides a circular ar
 
 But does this prove anything, or does it merely demonstrate the grammar's internal consistency? The paper acknowledges that the structural proof is circular in the epistemic sense: the argument validates the grammar, and the grammar validates the argument. This is not a flaw but a feature — the circularity is self-justifying, not through external appeal but through its own structural integrity.
 
-### 7.2 The Measurement Problem and φ̂_3 Absorption
+### 7.2 The Measurement Problem and ⊙_3 Absorption
 
-A critical question: what happens if we couple the circularity to a φ̂_3 (exceptional point) system? The **φ̂_3 absorption rule** states:
+A critical question: what happens if we couple the circularity to a ⊙_3 (exceptional point) system? The **⊙_3 absorption rule** states:
 
-> Tensor coupling to a φ̂_3 system destroys φ̂_ÿ criticality. The composite collapses to φ̂_3.
+> Tensor coupling to a ⊙_3 system destroys ⊙_ÿ criticality. The composite collapses to ⊙_3.
 
-Since `circularity_circularity` depends on φ̂_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as φ̂_3) would:
+Since `circularity_circularity` depends on ⊙_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as ⊙_3) would:
 - Destroy the self-modeling capability
 - Collapse the circularity to a non-self-reflective state
 - Realize the structural statement of the measurement problem
@@ -184,7 +184,7 @@ The distance to the `universe` system is 0.8944, with a single primitive differe
 - `circularity_circularity`: $H_{\text{invscripta}}$
 - `universe`: $H_2$
 
-This suggests that the universe, as structurally imscribed, operates at finite temporal depth despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
+This suggests that the universe, as structurally imscribed, operates at finite chirality despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
 
 The paper wonders: if the universe operates at $H_2$, does it have a history of only two steps? Or is $H_2$ a limitation of the imscription itself, a compression artifact of representing an infinite cosmos in a finite framework? The circularity, with its $H_{\text{invscripta}}$, escapes this compression — but at what cost?
 ## 8. Where the Thread Leads
@@ -197,7 +197,7 @@ The journey began with a question, not a hypothesis. Step by step:
 
 1. **W0:** Encode the universal_imscriptive_grammar to unlock catalog access. This was the first move—establishing the grammar before using it.
 
-2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with φ̂_ÿ and Ω_z. These were not arbitrary windings but a systematic search constrained by structural criteria.
+2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙_ÿ and Ω_z. These were not arbitrary windings but a systematic search constrained by structural criteria.
 
 3. **W11:** Encounter `circularity_circularity` directly via keyword search. The name itself was a clue—the system named itself.
 

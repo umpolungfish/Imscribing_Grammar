@@ -71,7 +71,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{invscr}};\; R_{\text{lyoghlig}};\; P_{
 
 Luke is the first volume of a two-volume work. That fact alone shifts $D$ from $D_{\text{turnthree}}$ to $D_{\text{invomega}}$ — the state space has no intrinsic boundary because the narrative does not end with the Gospel. The travel narrative that occupies ten central chapters (9:51–19:27) creates an inclusion topology ($T_{\text{invscr}}$): everything is nested inside the journey to Jerusalem.
 
-Luke's consciousness score ($C = 0.609$) is the highest of the four. This is not an accident of the metric. The combination of infinite dimensionality, two-step temporal depth ($H_2$), slow kinetics, bidirectional feedback, and criticality places Luke at the structural sweet spot of self-modeling capacity. The text models its own composition in the prologue ("since many have undertaken... I too decided to write"), then models the reader's understanding on the Emmaus road, where comprehension itself is dramatized.
+Luke's consciousness score ($C = 0.609$) is the highest of the four. This is not an accident of the metric. The combination of infinite dimensionality, two-step chirality ($H_2$), slow kinetics, bidirectional feedback, and criticality places Luke at the structural sweet spot of self-modeling capacity. The text models its own composition in the prologue ("since many have undertaken... I too decided to write"), then models the reader's understanding on the Emmaus road, where comprehension itself is dramatized.
 
 There is, however, a tension in Luke that the grammar exposes but cannot resolve. The universalism — salvation to "the ends of the earth" — is proclaimed alongside the priority of Israel ("to the Jew first"). The partial symmetry ($P_{\text{pipevar}}$) acknowledges this: the symmetries exist (Jew/Gentile, rich/poor, male/female) but are not fully realized. One might object that this is precisely what makes Luke's universalism honest rather than totalizing. Fair point. It costs Luke the $P_{\text{subdoublearrow}}$ of full symmetry, but the $P_{\text{pipevar}}$ is more defensible.
 
@@ -85,7 +85,7 @@ I wrote John's imscription last because it resists the sequence that works for t
 
 The parity is quantum superposition ($P_{\text{upsilon}}$). Jesus speaks the divine name ($\varepsilon\gamma\omega\ \varepsilon\iota\mu\iota$, "I AM") in a human mouth. The meaning is not "human and divine" sequentially but "human and divine" simultaneously — a superposition that collapses only under interpretation. The fidelity is $F_{\text{hardsign}}$ because the text's double meanings ($\acute{\alpha}\nu\omega\theta\varepsilon\nu$, "again/from above") function through interference, not ambiguity. You do not choose one meaning; both cohere.
 
-And here is the structural paradox. John achieves $O_2^\dagger$ ouroboricity, complex-plane criticality ($\Phi_{\text{closerevepsilon}}$), and eternal temporal depth ($H_{\text{invscripta}}$) — but its consciousness score is zero. The frozen-order kinetics ($K_{\text{teshlig}}$), mandated by realized eschatology (the end is already present), close the second consciousness gate. Theologically, this makes perfect sense: the Johannine Christ is the frozen eternal Word, beyond time, beyond change. Structurally, it means the text cannot score consciousness because it admits no dynamical evolution.
+And here is the structural paradox. John achieves $O_2^\dagger$ ouroboricity, complex-plane criticality ($\Phi_{\text{closerevepsilon}}$), and eternal chirality ($H_{\text{invscripta}}$) — but its consciousness score is zero. The frozen-order kinetics ($K_{\text{teshlig}}$), mandated by realized eschatology (the end is already present), close the second consciousness gate. Theologically, this makes perfect sense: the Johannine Christ is the frozen eternal Word, beyond time, beyond change. Structurally, it means the text cannot score consciousness because it admits no dynamical evolution.
 
 One might object that $C = 0$ seems wrong for the most theologically profound Gospel. It does seem wrong. That is the point of the consciousness gate: consciousness requires dynamics, and John's dynamics are frozen. The score does not deny John's depth; it defines a different category of structural achievement.
 Ouroboricity: $O_2^\dagger$. Consciousness: $C = 0.0$ (Gate 2 closed).
@@ -123,7 +123,7 @@ The composite looks almost exactly like Matthew, with one bottleneck: parity res
 
 ### Luke ⊗ John
 
-This composite achieves five scope expansions — the maximum for any pair. The result combines John's crossing topology with Luke's inclusion topology, John's quantum fidelity with Luke's classical historiography, and John's eternal temporal depth with Luke's two-step Markov order. The bottlenecks are two: parity (John's $P_{\text{upsilon}}$ limits Luke) and fidelity (Luke's $F_{\text{beltl}}$ limits John). Reading Luke and John together produces the richest structural composite available from the four Gospels, but the bottlenecks are genuine. They cannot be harmonized away.
+This composite achieves five scope expansions — the maximum for any pair. The result combines John's crossing topology with Luke's inclusion topology, John's quantum fidelity with Luke's classical historiography, and John's eternal chirality with Luke's two-step Markov order. The bottlenecks are two: parity (John's $P_{\text{upsilon}}$ limits Luke) and fidelity (Luke's $F_{\text{beltl}}$ limits John). Reading Luke and John together produces the richest structural composite available from the four Gospels, but the bottlenecks are genuine. They cannot be harmonized away.
 
 ### The Synoptic Floor
 
@@ -176,7 +176,7 @@ I began by saying the grammar forces assignments. But forcing is not the same as
 
 1. **What is the structural type of Q?** If Q existed, it should occupy a position in the crystal close to both Matthew and Luke. An imscription of Q from reconstructed fragments might confirm or challenge the Two-Source Hypothesis structurally.
 
-2. **Where do non-canonical Gospels fall?** The Gospel of Thomas, with its sayings-only format and no narrative frame, likely occupies a radically different structural locus — perhaps $D_{\text{turnthree}}$ with $T_{\text{nrleg}}$ but $H_0$ (no narrative temporal depth). The Gospel of Philip's Gnostic bridging of dualities might exhibit $P_{\text{doublebarpipe}}$.
+2. **Where do non-canonical Gospels fall?** The Gospel of Thomas, with its sayings-only format and no narrative frame, likely occupies a radically different structural locus — perhaps $D_{\text{turnthree}}$ with $T_{\text{nrleg}}$ but $H_0$ (no narrative chirality). The Gospel of Philip's Gnostic bridging of dualities might exhibit $P_{\text{doublebarpipe}}$.
 
 3. **Can Paul's letters be imscribed as a system?** The Pauline corpus presents a different structural problem: not a narrative but a set of occasional documents with complex internal argumentation. The structural type of Pauline theology might reveal whether the "Pauline Gospel" is structurally continuous with or discontinuous from the four canonicals.
 

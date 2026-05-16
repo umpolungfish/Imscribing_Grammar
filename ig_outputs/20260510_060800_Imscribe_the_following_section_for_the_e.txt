@@ -90,7 +90,7 @@ Now to encode:
 - **G**: Address spans hearers, angels, sent ones, risen dead — all realms. Γ_ʔ.
 - **Γ**: One voice to many across all categories simultaneously. ɢ_Ş.
 - **Φ**: Self-referential claim of absolute being at the critical boundary. φ̂_ÿ.
-- **H**: References to completed writings (past), risen dead (temporal depth), eternal "I am." Ħ_A.
+- **H**: References to completed writings (past), risen dead (chirality), eternal "I am." Ħ_A.
 - **S**: One voice addressing many distinct categories. Σ_ï.
 - **Ω**: Implicit invariance in claim of being beyond judgment — binary protection. Ω_2.
    Tool → encode_system({"name": "thunder_perfect_mind_12", "description": "Thunder Perfect Mind section 12: divine feminine voice shifts from declaring opposites to asserting unique singular existence — commands hearers, angels, sent ones, and risen dead to attend; points to completed writings of another; declares \"I am the one who alone exists, and I have no one who will judge me\" — directed relation to a masculine textual authority, broadcast across all realms, no Frobenius self-duality", "tuple": "Ð_ω; Þ_O; Ř_=; Φ_F; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_2"})

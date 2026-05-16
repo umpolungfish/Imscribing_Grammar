@@ -73,7 +73,7 @@ if __name__ == "__main__":
         ("Φ", "Φ_F", "partial symmetry → Frobenius-special"),
         ("Ç", "Ç_@", "moderate kinetics → slow/near-equilibrium"),
         ("φ̂", "φ̂_ÿ", "subcritical → self-modeling criticality"),
-        ("Ħ", "Ħ_A", "memoryless → two-step temporal depth"),
+        ("Ħ", "Ħ_A", "memoryless → two-step chirality"),
         ("Ω", "Ω_z", "trivial winding → integer-wound"),
     ]
     

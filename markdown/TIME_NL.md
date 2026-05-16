@@ -43,7 +43,7 @@ I expected this to reveal which primitive was time. The grammar does not work th
 
 1. Sequential gamma structure — The sequential interaction grammar. This is the most direct structural correlate of "before and after." Removing sequential gamma structure (peeling to conjunctive gamma structure, all-simultaneous) destroys the directed chain — what remains is a system where interactions happen all-at-once, not in ordered steps. The directed edge structure is the ZFC rendering of irreversible ordering. But I am getting ahead of myself.
 
-2. Infinite historical depth — Infinite temporal depth (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets. A Markov-0 system has no history; a Markov-1 system has only the immediate past. Neither is temporal in the rich sense.
+2. Infinite historical depth — Infinite chirality (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets. A Markov-0 system has no history; a Markov-1 system has only the immediate past. Neither is temporal in the rich sense.
 
 3. Integer winding number — Integer winding number. This is topological time-protection: the winding invariant cannot be deformed away continuously. Time has a conserved topological charge. I had not expected topology to enter the picture; the grammar insisted on it.
 

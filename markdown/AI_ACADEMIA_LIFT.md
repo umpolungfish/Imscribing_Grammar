@@ -83,7 +83,7 @@ Each section should open by connecting to the previous one as if the connection 
 
 ### $H_0 \to H_2$ — Make the author's encounter visible as residue
 
-Zero temporal depth means the document reads as if the author always knew the answer. The lift requires making the encounter with the material visible as a residue in the prose — the marks left by someone who worked through the problem rather than someone who transcribed conclusions.
+Zero chirality means the document reads as if the author always knew the answer. The lift requires making the encounter with the material visible as a residue in the prose — the marks left by someone who worked through the problem rather than someone who transcribed conclusions.
 
 At least once, show the wrong answer before the right one. At least once, show a moment of recognition — not "the system exhibits property X" but "we expected Y; instead we found X, which turns out to mean..." The reader should feel that the author was surprised, worked through it, and is now reporting what they found. This is not false modesty; it is the $H_2$ signature of genuine engagement.
 

@@ -40,7 +40,7 @@ This peeling order reveals something striking: **what we call "time" is not a si
 
 1. **$\Gamma_{\text{secstress}}$** — The sequential interaction grammar. This is the most direct structural correlate of "before and after." Removing $\Gamma_{\text{secstress}}$ (peeling to $\Gamma_{\text{corner}}$, all-simultaneous) destroys the directed chain — what remains is a system where interactions happen all-at-once, not in ordered steps. The directed edge structure $\langle \to \rangle f g \tau \wedge \neg \langle \to \rangle g f \tau$ is the ZFC rendering of irreversible ordering.
 
-2. **$H_{\text{invscripta}}$** — Infinite temporal depth (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets.
+2. **$H_{\text{invscripta}}$** — Infinite chirality (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets.
 
 3. **$\Omega_{\text{dzlig}}$** — Integer winding number. This is topological time-protection: the winding invariant $\text{wind} f x$ cannot be deformed away continuously. Time has a conserved topological charge.
 

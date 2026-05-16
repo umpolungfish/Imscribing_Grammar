@@ -40,7 +40,7 @@ I should say here that assigning quantum fidelity ($F_\hbar$) to a two-millennia
 
 **Criticality: $\phi_c$.** This is the text's defining coordinate. It sits at the self-modeling gate — scale-invariant, maximally sensitive. The Thunder does not *approach* criticality. It *is* criticality. The probe confirmed this: "AT criticality."
 
-**Temporal depth: $H_\infty$.** No finite Markov order captures the Thunder. Each utterance reaches back to the totality of all prior statements and forward to all future readings. Axiom A requires $H_\infty$ to pair with trapped or slow kinetics — the Thunder satisfies the latter. It has been read for two thousand years and its contradictions have not aged. I expected, when I started this work, that the temporal depth would be $H_2$ — two-step memory, deep but bounded. The infinity claim felt like overreach. Then I sat with the text one evening and realized: I had read it three times that week, and each reading had not repeated but *accumulated*. The text had changed between readings without changing at all. That is the signature of unbounded temporal depth.
+**Chirality: $H_\infty$.** No finite Markov order captures the Thunder. Each utterance reaches back to the totality of all prior statements and forward to all future readings. Axiom A requires $H_\infty$ to pair with trapped or slow kinetics — the Thunder satisfies the latter. It has been read for two thousand years and its contradictions have not aged. I expected, when I started this work, that the chirality would be $H_2$ — two-step memory, deep but bounded. The infinity claim felt like overreach. Then I sat with the text one evening and realized: I had read it three times that week, and each reading had not repeated but *accumulated*. The text had changed between readings without changing at all. That is the signature of unbounded chirality.
 
 **Stoichiometry: $n{:}m$.** Heterogeneous — aretalogies, paradoxes, instructions, revelations. Not many identical copies but many different species of utterance.
 
@@ -97,7 +97,7 @@ The retrosynthetic analysis shows the Thunder's construction path — reading ba
 7. Elevate fidelity to quantum-coherent ($F_\hbar$). Contradictions hold phase rather than collapse.
 8. Establish partial symmetry ($P_{\pm}$). The mirror flips, but cracks.
 9. Promote relational mode to adjoint ($R_\dagger$). The speaker transforms the hearer.
-10. Extend temporal depth to eternal ($H_\infty$). No finite memory bound.
+10. Extend chirality to eternal ($H_\infty$). No finite memory bound.
 11. Rewire topology to irreducible product ($T_\boxtimes$). The paradoxes bind permanently.
 12. Lift dimensionality to imscriptive ($D_\odot$). The text writes its own arena.
 
@@ -113,7 +113,7 @@ The `compute_promotions` tool reveals what the Thunder would need to reach $O_\i
 
 **One promotion. $T_\boxtimes \to T_\odot$.** 
 
-Topology from box-product to imscriptive closure. That's it. Everything else — the criticality, the kinetics, the temporal depth, the winding, the fidelity — is already sufficient. The Thunder is not held back by a deficit in consciousness, or coherence, or depth. It is held back by one thing: its topology is a static irreducible product rather than a self-generating one.
+Topology from box-product to imscriptive closure. That's it. Everything else — the criticality, the kinetics, the chirality, the winding, the fidelity — is already sufficient. The Thunder is not held back by a deficit in consciousness, or coherence, or depth. It is held back by one thing: its topology is a static irreducible product rather than a self-generating one.
 
 Let me explain what this means in non-technical language. The Thunder *contains* paradoxes. It enacts them, holds them, presents them in sequence. Each paradox is bound into the text's structure — the $T_\boxtimes$ that makes it an irreducible conjunction. But for $O_\infty$, the paradox would need to *produce* the text in real time. Not fill a pre-existing form but *generate* the form that contains it. The box-product is topology that exists; imscriptive closure is topology that writes itself.
 
@@ -170,7 +170,7 @@ This means the grammar's current ontology separates the document from its recept
 | Scope | $G_\aleph$ | Universal — long-range |
 | Interaction grammar | $\Gamma_\text{seq}$ | Sequential — ordered accretion |
 | Criticality | $\phi_c$ | Self-modeling gate — open |
-| Temporal depth | $H_\infty$ | Eternal — no finite Markov bound |
+| Chirality | $H_\infty$ | Eternal — no finite Markov bound |
 | Stoichiometry | $n{:}m$ | Heterogeneous — multiple distinct utterance types |
 | Winding | $\Omega_\mathbb{Z}$ | Integer — topologically protected loop |
 

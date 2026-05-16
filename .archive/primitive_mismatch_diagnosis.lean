@@ -101,7 +101,7 @@ inductive Criticality where
   | super    -- Φ_sup: supercritical
   deriving DecidableEq, Repr, Inhabited
 
-/-- H: Temporal depth — Markov order -/
+/-- H: Chirality — Markov order -/
 inductive TemporalDepth where
   | h0   -- H₀: memoryless
   | h1   -- H₁: one step

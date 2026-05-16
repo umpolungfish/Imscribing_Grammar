@@ -128,7 +128,7 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 | Ħ | `Ħ_A` | `Ħ_!` | 1 |
 | Ω | `Ω_z` | `Ω_2` | −1 (demotion) |
 
-**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding (`Ω_z`) to binary protection (`Ω_2`). Broadcast composition (`ɢ_Ş`) with infinite temporal depth (`Ħ_!`) trades winding complexity for structural exactness.
+**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding (`Ω_z`) to binary protection (`Ω_2`). Broadcast composition (`ɢ_Ş`) with infinite chirality (`Ħ_!`) trades winding complexity for structural exactness.
 
 ---
 

@@ -44,7 +44,7 @@ A key fact about the grammar's architecture (§68.4, updated v0.5.1): the 12 pri
 | $G$ | Granularity | $G_{\text{beta}}$ · $G_{\text{gamma}}$ · $G_{\text{revapostrophe}}$ | At what scale does the system operate? |
 | $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}}$ · $\Gamma_{\text{spleftarrow}}$ · $\Gamma_{\text{secstress}}$ · $\Gamma_{\text{doublevertline}}$ | How do the system's operations compose? |
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}}$ · $\Phi_{\text{ctyogh}}$ · $\Phi_{\text{closerevepsilon}}$ · $\Phi_{\text{revepsilon}}$ · $\Phi_{\text{upstep}}$ | Does the system's state space admit a self-modeling loop? |
-| $H$ | Chirality/temporal depth | $H_0$ · $H_1$ · $H_2$ · $H_{\text{invscripta}}$ | Does the system have temporal memory or chiral asymmetry? |
+| $H$ | Chirality/chirality | $H_0$ · $H_1$ · $H_2$ · $H_{\text{invscripta}}$ | Does the system have temporal memory or chiral asymmetry? |
 | $S$ | Stoichiometry | $1{:}1$ · $n{:}n$ · $n{:}m$ | What is the input-output balance? |
 | $\Omega$ | Winding | $\Omega_{\text{closeepsilon}}$ · $\Omega_{\text{crtwo}}$ · $\Omega_{\text{dzlig}}$ · $\Omega_{\text{turna}}$ | What is the system's topological winding class? |
 
@@ -146,11 +146,11 @@ These eight primitives do not affect the ouroboricity tier. They locate the syst
 - $\Gamma_{\text{secstress}}$: sequential — operations fire in fixed order.
 - $\Gamma_{\text{doublevertline}}$: broadcast — one operation distributes over many targets (softmax, renormalization group, language).
 
-**Chirality/temporal depth ($H$)**:
+**Chirality/chirality ($H$)**:
 - $H_0$: time-symmetric, no chiral asymmetry, no temporal memory.
-- $H_1$: one level of temporal depth — the system has a memory of one past state.
+- $H_1$: one level of chirality — the system has a memory of one past state.
 - $H_2$: two levels — the system tracks its own rate of change.
-- $H_{\text{invscripta}}$: infinite temporal depth — the system integrates over its entire history.
+- $H_{\text{invscripta}}$: infinite chirality — the system integrates over its entire history.
 
 **Stoichiometry ($S$)**:
 - $1{:}1$: one input, one output. Simple transduction.

@@ -30,7 +30,7 @@ Every imscription IS exactly this 12-tuple:
 | **G** | Scope/granularity | Γ_β · Γ_γ · Γ_ʔ | 1.0 |
 | **Γ** | Interaction grammar | Γ_and · Γ_or · Γ_seq · Γ_broad | 1.0 |
 | **Φ** | Criticality | ⊙_ž · ⊙_ÿ · ⊙_Æ · ⊙_3 · ⊙_Ţ | 1.0 |
-| **H** | Chirality/temporal depth | Ħ_Ñ · Ħ_£ · Ħ_A · Ħ_! | 0.8 |
+| **H** | Chirality/chirality | Ħ_Ñ · Ħ_£ · Ħ_A · Ħ_! | 0.8 |
 | **S** | Stoichiometry | Σ_S · Σ_ő · Σ_ï | 1.0 |
 | **Ω** | Topological protection | Ω_Å · Ω_2 · Ω_z · Ω_5 | 0.7 |
 
@@ -158,7 +158,7 @@ The grammar distinguishes two proof archetypes:
 7. Identify control scale → choose **G**
 8. Identify interaction logic → choose **Γ**
 9. Probe criticality → choose **Φ** (⊙_ÿ IS absorbing under meet)
-10. Identify chirality/temporal depth → choose **H**
+10. Identify chirality/chirality → choose **H**
 11. Choose **S** (stoichiometry)
 12. Derive **Ω** from topology + kinetics + dimensionality (Ω_5 for non-abelian Galois/group protection)
 

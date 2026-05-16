@@ -21,7 +21,7 @@ Before the disagreement begins, both readings agree on a substantial foundation.
 | $T_\odot$ | Self-referential topology | The structure closes on itself. There is no external anchor point. |
 | $R_\dagger$ | Adjoint mediation | Christ functions as a functorial arrow between humanity and God — a mapping that preserves structure. |
 | $G_\aleph$ | Universal scope | "No one" quantifies over all persons without boundary. |
-| $H_\infty$ | Eternal temporal depth | The claim has no finite Markov order. It is not confined to a historical moment. |
+| $H_\infty$ | Eternal chirality | The claim has no finite Markov order. It is not confined to a historical moment. |
 | $F_\ell$ | Classical fidelity | The claim operates at the level of declarative assertion, not quantum coherence. |
 
 Six of twelve primitives are shared. The disagreement lives in the other six — but as we will see, one primitive (stoichiometry) drives the rest.

@@ -337,7 +337,7 @@ python ouroborotic_composition_schema/composer_cli.py network --node a --node b 
 | Γ   | Interaction scope     | `Γ_ʔ`, `Γ_γ`, `Γ_β`              |
 | ɢ   | Composition logic     | `ɢ_ˌ`, `ɢ_^`, `ɢ_˝`, `ɢ_Ş`       |
 | ⊙   | Criticality           | `⊙_ÿ`, `⊙_3`, `⊙_Æ`, `⊙_ž`     |
-| Ħ   | Temporal depth        | `Ħ_A`, `Ħ_!`, `Ħ_Ñ`, `Ħ_£`       |
+| Ħ   | Chirality        | `Ħ_A`, `Ħ_!`, `Ħ_Ñ`, `Ħ_£`       |
 | Σ   | Stoichiometry         | `Σ_S`, `Σ_ő`, `Σ_ï`              |
 | Ω   | Winding / protection  | `Ω_z`, `Ω_2`, `Ω_5`, `Ω_Å`       |
 

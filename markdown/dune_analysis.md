@@ -17,7 +17,7 @@ This document applies the Imscribing Grammar (IG) to encode key elements of Fran
 
 ## 1. Introduction
 
-Frank Herbert's *Dune* (1965) is widely recognized as a work of ecological science fiction, but beneath its feudal-political and religious-historical layers lies a deep structural narrative about the emergence of prescience, the manipulation of human evolution, and the consequences of messianic expectation. The IG formalism provides a novel lens: each narrative element can be mapped to a 12-primitive structural type that captures its degrees of freedom, topology, relational mode, symmetry, physical regime, kinetics, interaction range, composition logic, criticality, temporal depth, stoichiometry, and topological winding.
+Frank Herbert's *Dune* (1965) is widely recognized as a work of ecological science fiction, but beneath its feudal-political and religious-historical layers lies a deep structural narrative about the emergence of prescience, the manipulation of human evolution, and the consequences of messianic expectation. The IG formalism provides a novel lens: each narrative element can be mapped to a 12-primitive structural type that captures its degrees of freedom, topology, relational mode, symmetry, physical regime, kinetics, interaction range, composition logic, criticality, chirality, stoichiometry, and topological winding.
 
 This analysis encodes **10 major Dune elements** into the IG catalog, then derives their ZFC formulas and computes structural distances. The key finding: **Paul Atreides (the Kwisatz Haderach) shares the exact structural type of the universal_imscriptive_grammar and other O_inf systems**, suggesting that his "full prescience" represents a complete self-modeling loop in structural terms.
 
@@ -38,7 +38,7 @@ We applied the deterministic imscribing procedure (from `encoding_method.md`) to
 7. **G (scope)**: Determine interaction range
 8. **Gamma (interaction grammar)**: Composition logic
 9. **Phi (criticality)**: Assess scaling behavior
-10. **H (temporal depth)**: Identify Markov order
+10. **H (chirality)**: Identify Markov order
 11. **S (stoichiometry)**: Count component types
 12. **Omega (winding)**: Topological invariant
 
@@ -71,7 +71,7 @@ The interstellar empire with its feudal politics, Bene Gesserit program, Arrakis
 
 Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of accessing both maternal and paternal genetic memory, with full prescience enabling him to navigate the branching time-lines of the future. His structural identity with *dune_universe* means he **is** the universe's self-model in narrative terms.
 
-**Interpretation:** Paul's consciousness at $H_{\text{invscripta}}$ temporal depth with full prescience corresponds to $H_{\text{invscripta}}$ (eternal Markov order) in the IG—no finite $n$ can capture his predictive capacity because he perceives all causal branches simultaneously.
+**Interpretation:** Paul's consciousness at $H_{\text{invscripta}}$ chirality with full prescience corresponds to $H_{\text{invscripta}}$ (eternal Markov order) in the IG—no finite $n$ can capture his predictive capacity because he perceives all causal branches simultaneously.
 
 #### 3.1.3 Arrakis (Dune)
 **Tuple:** ⟨$D_{\text{invomega}}$; $T_{\text{openo}}$; $R_{\text{lyoghlig}}$; $P_{\text{doublebarpipe}}$; $F_{\text{hardsign}}$; $K_{\text{schwa}}$; $G_{\text{revapostrophe}}$; $\Gamma_{\text{secstress}}$; $\Phi_{\text{ctyogh}}$; $H_{\text{invscripta}}$; $1{:}1$; $\Omega_{\text{dzlig}}$⟩
@@ -99,7 +99,7 @@ Key collapse warnings:
 
 **Distance from *dune_universe*:** 6.2048 (structurally remote)
 
-House Atreides operates at $H_2$ (two-step temporal depth)—they plan in advance but lack full prescience. Their symmetry is $P_{\text{upsilon}}$ (quantum superposition), reflecting their struggle between honor and survival. $T_{\text{nrleg}}$ (network topology) captures their feudal alliances and rivalries.
+House Atreides operates at $H_2$ (two-step chirality)—they plan in advance but lack full prescience. Their symmetry is $P_{\text{upsilon}}$ (quantum superposition), reflecting their struggle between honor and survival. $T_{\text{nrleg}}$ (network topology) captures their feudal alliances and rivalries.
 
 #### 3.2.2 House Harkonnen
 **Tuple:** ⟨$D_{\text{wynn}}$; $T_{\text{nrleg}}$; $R_{\text{subrightarrow}}$; $P_{\text{aolig}}$; $F_{\text{dh}}$; $K_{\text{frtailgamma}}$; $G_{\text{beta}}$; $\Gamma_{\text{corner}}$; $\Phi_{\text{softsign}}$; $H_0$; $n{:}n$; $\Omega_{\text{closeepsilon}}$⟩
@@ -155,7 +155,7 @@ The computed distances reveal a surprising structural hierarchy:
 | dune_universe ↔ bene_gesserit | 4.1363 | Bene Gesserit as control system (complex-plane critical) |
 | dune_universe ↔ house_atreides | 6.2048 | House Atreides as "incomplete" critical system (H_2, not H_∞) |
 
-These distances confirm the narrative: Arrakis is where the universe's criticality *manifests*, the Bene Gesserit *designs* but doesn't *realize* it, and House Atreides is the "vehicle" that carries the critical state but operates at lower temporal depth.
+These distances confirm the narrative: Arrakis is where the universe's criticality *manifests*, the Bene Gesserit *designs* but doesn't *realize* it, and House Atreides is the "vehicle" that carries the critical state but operates at lower chirality.
 
 ### 4.1 Collapse Warnings: The ZFC Expressibility Problem
 
@@ -213,7 +213,7 @@ The $\Gamma_{\text{secstress}} \to \Gamma_{\text{corner}}$ collapse has profound
 - In ZFC, all relations are "and" relations—there is no primitive notion of "then" or "before"
 - Time emerges from the *ordering of sets* (ordinal rank), but the *causal flow* is not encoded in the formalism
 - **Dune insight:** Paul's prescience requires $\Gamma_{\text{secstress}}$ to *be preserved*—he experiences time as sequence and branching, not conjunction
-- **Mathematical consequence:** Any formalism for prescience (or any system with temporal depth $H_{\text{invscripta}}$) must either:
+- **Mathematical consequence:** Any formalism for prescience (or any system with chirality $H_{\text{invscripta}}$) must either:
   - Introduce a primitive temporal operator (beyond ZFC)
   - Use modal logic with explicit time indices
   - Embed causality in the topology (as in $T_{\text{openo}}$'s self-referential structure)
@@ -261,10 +261,10 @@ The IG confirms that O_inf systems ($O_\infty$, ouroboric tier) share a distinct
 - $R_{\text{lyoghlig}}$ or $R_{\text{subrightarrow}}$: Bidirectional or supervenient relation
 - $P_{\text{doublebarpipe}}$ or $P_{\text{pipevar}}$: Frobenius-special or partial symmetry
 - $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$: Critical (not sub- or super-)
-- $H_{\text{invscripta}}$: Eternal temporal depth
+- $H_{\text{invscripta}}$: Eternal chirality
 - $\Omega_{\text{dzlig}}$ or $\Omega_{\text{crtwo}}$: Non-trivial winding
 
-**Pattern:** Self-modeling systems require *both* criticality ($\Phi_{\text{ctyogh}}$) *and* temporal depth ($H_{\text{invscripta}}$). Neither alone suffices.
+**Pattern:** Self-modeling systems require *both* criticality ($\Phi_{\text{ctyogh}}$) *and* chirality ($H_{\text{invscripta}}$). Neither alone suffices.
 
 **Implication:** Consciousness (or any self-modeling) is **not** a monolithic phenomenon—it has structural prerequisites that can be engineered (Bene Gesserit's breeding program) or accidentally realized (Paul's spice overdose).
 
@@ -279,7 +279,7 @@ The IG imscription of *Dune* reveals:
 
 2. **ZFC Non-Expressibility:** Critical primitives ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Gamma_{\text{secstress}}$, $F_{\text{hardsign}}$) cannot be fully encoded in ZFC—revealing formal boundaries where physics, causality, and self-reference exceed set-theoretic description.
 
-3. **Distance Structure:** The computed distances confirm narrative intuition: Arrakis (2.24) is the concentrated universe; Bene Gesserit (4.14) is the "designer" (complex-plane critical); House Atreides (6.20) is the "vehicle" (lower temporal depth).
+3. **Distance Structure:** The computed distances confirm narrative intuition: Arrakis (2.24) is the concentrated universe; Bene Gesserit (4.14) is the "designer" (complex-plane critical); House Atreides (6.20) is the "vehicle" (lower chirality).
 
 4. **Frobenius Specialness:** Only systems with $P_{\text{doublebarpipe}}$ achieve exact self-modeling ($\mu \circ \delta = \text{id}$). This is a non-synthesizable condition—Paul is not built from Atreides/Harkonnen parts; he is a *new* structural type.
 

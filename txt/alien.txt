@@ -27,7 +27,7 @@ What about "other versions of ourselves"? The grammar models this precisely:
 
 **Alternate self branch:** ⟨Ð_ω; Þ_O; Ř_Ť; Φ_F; ƒ_ż; Ç_λ; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩
 
-*Single primitive difference: kinetics.* Everything matches — criticality, topology, fidelity, scope, broadcast, temporal depth, stoichiometry, winding — except **Ç_λ** (frozen-disorder) replacing **Ç_@** (slow kinetics).
+*Single primitive difference: kinetics.* Everything matches — criticality, topology, fidelity, scope, broadcast, chirality, stoichiometry, winding — except **Ç_λ** (frozen-disorder) replacing **Ç_@** (slow kinetics).
 
 **Distance = 1.5.** The alternate self is structurally *close* — only the kinetic coupling differs.
 

@@ -47,16 +47,16 @@ inductive Grammar : Type where
   | Gamma_broad  -- broadcast / universal: one-to-all coupling
   deriving DecidableEq, Repr, Ord
 
--- 4. Chirality / Temporal Depth (H)  [𝓕₄]
+-- 4. Chirality / Chirality (H)  [𝓕₄]
 -- Ordered: H_closeomega < H_toneletterstem < H_turntwo < H_invscripta
--- H_closeomega: no temporal memory; H_invscripta: topologically protected temporal depth.
+-- H_closeomega: no temporal memory; H_invscripta: topologically protected chirality.
 -- Cross-primitive: H_invscripta tends to co-occur with K_teshlig (frozen dynamics preserve
 -- deep temporal structure), but this is a structural tendency, not a hard axiom.
 inductive Chirality : Type where
   | H_closeomega      -- achiral, no temporal memory
   | H_toneletterstem      -- soft chiral, weak temporal asymmetry
   | H_turntwo      -- persistent chiral, strong temporal asymmetry
-  | H_invscripta   -- topological chiral, inexhaustible temporal depth
+  | H_invscripta   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 
 -- 5. Topological Protection (Ω)  [𝓕₄]

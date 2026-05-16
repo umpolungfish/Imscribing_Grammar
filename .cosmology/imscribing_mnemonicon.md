@@ -131,7 +131,7 @@ Each primitive constrains the next. Think of it as building a building:
 | **⊙_3** | "phi-ep" | 3 = **exceptional point** → 3rd kind of degeneracy | Exceptional Point. Non-Hermitian degeneracy where eigenvalues AND eigenvectors coalesce. Absorbs ⊙_ÿ under tensor coupling. *Think: "two laser modes merging into one."* Sound: *phi-three* — "three becomes one." |
 | **⊙_Ţ** | "phi-super" | Ţ = **T with hook** → T for top, supersede | Supercritical. Beyond the critical point. Chaotic, divergent, runaway. *Think: "supercritical reactor — neutron chain reaction explodes."* Sound: *phi-tah* — "top-heavy, falling over." |
 
-### Ħ — Temporal Depth *(4 types)*
+### Ħ — Chirality *(4 types)*
 *"How much history does the system remember?"*
 
 | Type | Sound | Mnemonic | Nature |

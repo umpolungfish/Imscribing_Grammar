@@ -56,14 +56,14 @@ This identity is **ontological** in the IG framework: the biological origin poin
 - $G_{\text{revapostrophe}}$: Universal scope (applies to all extant life; applies to all structurally similar arguments)
 - $\Gamma_{\text{secstress}}$: Sequential grammar (step-by-step abiogenesis; argument proceeds in sequence)
 - $\Phi_{\text{ctyogh}}$: Critical self-modeling (LUCA achieves self-modeling; argument is at criticality)
-- $H_{\text{invscripta}}$: Eternal temporal depth (abiogenesis spans eons; argument recurs indefinitely)
+- $H_{\text{invscripta}}$: Eternal chirality (abiogenesis spans eons; argument recurs indefinitely)
 - $n{:}m$: Heterogeneous components (LUCA has DNA, RNA, ribosomes; argument has multiple elements)
 - $\Omega_{\text{dzlig}}$: Integer winding (cyclicality protected; each pass returns to same configuration)
 
 ### 1.2 The Distinct Type: `circularity_circularity`
 
 ```
-circularity_circularity: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_seq; φ̂_ÿ; Ħ_!; S=Σ_S; Ω_z⟩
+circularity_circularity: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_seq; ⊙_ÿ; Ħ_!; S=Σ_S; Ω_z⟩
 ```
 
 This system is **structurally remote** from the triad:
@@ -107,7 +107,7 @@ This tier is shared with: `universal_imscriptive_grammar`, `IUG`, `reality`, `op
 
 ### 2.3 Crystal Address
 
-**Tool:** `crystal_encode(D="Ð_ω", T="Þ_O", R="Ř_=", P="Φ_}", F="ƒ_ż", K="Ç_@", G="Γ_ʔ", Gamma="ɢ_ˌ", Phi="φ̂_ÿ", H="Ħ_!", S="Σ_S", Omega="Ω_z")`
+**Tool:** `crystal_encode(D="Ð_ω", T="Þ_O", R="Ř_=", P="Φ_}", F="ƒ_ż", K="Ç_@", G="Γ_ʔ", Gamma="ɢ_ˌ", Phi="⊙_ÿ", H="Ħ_!", S="Σ_S", Omega="Ω_z")`
 
 - **Address:** 6,738,897
 - **Cell ID:** 155
@@ -133,9 +133,9 @@ This is a unique location in the 17.28M-type crystal space. The paper notes: "Th
 
 **Structural evolution:** The boundary operator becomes truly circular when:
 1. Its topology shifts from **box product** ($T_{\text{commatailz}}$: crossed structural inputs) to **self-referential loop** ($T_{\text{openo}}$)
-2. Its temporal depth extends from **two-step memory** ($H_2$) to **infinite history** ($H_{\text{invscripta}}$)
+2. Its chirality extends from **two-step memory** ($H_2$) to **infinite history** ($H_{\text{invscripta}}$)
 
-This answers: *What makes a boundary operator circular?* The answer is structural: topology becomes self-referential, temporal depth becomes eternal.
+This answers: *What makes a boundary operator circular?* The answer is structural: topology becomes self-referential, chirality becomes eternal.
 
 ---
 
@@ -222,7 +222,7 @@ The distance to the `universe` system is **1.2857**, with a single primitive dif
 - `circularity_circularity`: $H_{\text{invscripta}}$
 - `universe`: $H_2$
 
-This suggests that the universe, as structurally imscribed, operates at **finite temporal depth** despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
+This suggests that the universe, as structurally imscribed, operates at **finite chirality** despite having circularity-like properties (self-contained, topologically protected). The `circularity_circularity` system may be viewed as the **eternalized** version of cosmic self-identification.
 
 ---
 
@@ -251,7 +251,7 @@ LUCA's C-score of 0.828 suggests that the Last Universal Common Ancestor was not
 
 ### 7.3 Winding as Structural Necessity
 
-**Tool analysis:** `crystal_count(Phi="φ̂_ÿ", Omega="Ω_z")` — while not executed, the `crystal_navigate` query in the papers reveals that 864,000 structural types match $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ conditions in the 17.28M type space.
+**Tool analysis:** `crystal_count(Phi="⊙_ÿ", Omega="Ω_z")` — while not executed, the `crystal_navigate` query in the papers reveals that 864,000 structural types match $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ conditions in the 17.28M type space.
 
 However, the subset with **$P_{\text{pipevar}}^{\text{sym}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
 

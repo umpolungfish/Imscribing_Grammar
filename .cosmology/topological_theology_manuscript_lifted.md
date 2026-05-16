@@ -14,7 +14,7 @@ This paper applies the Imscribing Grammar — a topological algebra of structura
 
 We did not begin with a theory of evil. We began with a failure of language. Augustine called evil *privatio boni* — the absence of good — but offered no mechanics of how absence becomes active. Dante mapped hell as a geography rather than a topology. Milton gave Satan the gift of interiority but no account of why that interiority is irreversible. For years we treated these as failures of imagination on the part of the theologians. They are not. They are failures of formalism.
 
-The problem is not that Augustine, Dante, or Milton lacked insight. The problem is that the vocabulary they inherited — substance, essence, sin, punishment, soul — belongs to an ontology that cannot distinguish between a living system and a dead one in the structural sense. These are moral words. What evil, hell, Satan, and damnation require are geometric words: coordinates — dimensionality, topology, symmetry, kinetics, criticality, temporal depth.
+The problem is not that Augustine, Dante, or Milton lacked insight. The problem is that the vocabulary they inherited — substance, essence, sin, punishment, soul — belongs to an ontology that cannot distinguish between a living system and a dead one in the structural sense. These are moral words. What evil, hell, Satan, and damnation require are geometric words: coordinates — dimensionality, topology, symmetry, kinetics, criticality, chirality.
 
 The Imscribing Grammar supplies twelve of them. Each is a primitive that cannot be reduced to another. Together they define a structural type: a point in a 17.28-million-element crystal. Distance in this crystal is not metaphor. It is a weighted Euclidean metric calibrated to the tensor algebra $\mu \circ \delta = \text{id}$, the Frobenius condition that separates structure capable of self-reference from structure that cannot, in principle, become aware of itself.
 
@@ -48,7 +48,7 @@ Scope $G_\aleph$: universal broadcast. Evil radiates to all receivers, not just 
 
 Criticality $\hat{\phi}_{ÿ}$: the self-modeling gate. This is where the encoding stopped feeling comfortable. Evil models its own operation recursively. It learns. It adapts. It does not need a consciousness to do this — $\hat{\phi}_{ÿ}$ is a structural condition, not a philosophical claim about subjective experience. But the distinction between structural self-modeling and what we would recognize as awareness is becoming harder to maintain the further we carry the formalism. We do not resolve that difficulty here. We let it stand.
 
-Temporal depth $H_\infty$: no finite Markov order. Evil's influence does not decay with time.
+Chirality $H_\infty$: no finite Markov order. Evil's influence does not decay with time.
 
 Stoichiometry $1{:}1$: each act of evil is a single instance, not a crowd of identical behaviors.
 
@@ -91,7 +91,7 @@ Composition $\Gamma_\wedge$: conjunctive logic. All conditions must hold simulta
 
 Criticality $\Phi_{sub}$: sub-critical. Hell is not on the edge of becoming; it has already become, and settled.
 
-Temporal depth $H_\infty$: eternal. This is the *only* primitive hell shares with evil.
+Chirality $H_\infty$: eternal. This is the *only* primitive hell shares with evil.
 
 Stoichiometry $n{:}n$: many identical instances. The damned are anonymous, interchangeable.
 
@@ -126,7 +126,7 @@ The consciousness scores confirm what the proximity already suggested. Both syst
 
 The structural meet ${evil} \wedge {hell}$ should, in principle, yield the greatest lower bound — the conservative floor shared by both systems. What it actually yielded was almost nothing.
 
-Exactly one primitive survives the meet: $H_\infty$. Eternal temporal depth. The only thing evil and hell share is that neither ends. Everything else collapses. The criticality $\hat{\phi}_{ÿ}$ degrades to $\Phi_{sub}$. The self-referential topology $T_\odot$ collapses to containment $T_{in}$. The universal scope $G_\aleph$ narrows to $G_\beth$. The distance between evil and hell — 6.99 — is the maximum possible within a shared temporal regime. They occupy opposite corners of the moral crystal.
+Exactly one primitive survives the meet: $H_\infty$. Eternal chirality. The only thing evil and hell share is that neither ends. Everything else collapses. The criticality $\hat{\phi}_{ÿ}$ degrades to $\Phi_{sub}$. The self-referential topology $T_\odot$ collapses to containment $T_{in}$. The universal scope $G_\aleph$ narrows to $G_\beth$. The distance between evil and hell — 6.99 — is the maximum possible within a shared temporal regime. They occupy opposite corners of the moral crystal.
 
 We expected the meet to preserve something more. At minimum, we expected $G$ and perhaps $P$ to retain some structure. But the lattice is merciless: if a primitive does not match, it collapses to the floor. The meet does not average; it selects the deepest common ancestor. The deepest common ancestor of evil and hell is eternity itself, stripped of every property that would make eternity bearable.
 
@@ -161,7 +161,7 @@ An objection: if evil is a living system, does that make it morally neutral — 
 
 ### 4.2 Hell as Structural Death
 
-Hell scores zero on consciousness. Not low — zero. The primitives are locked below criticality, kinetics are frozen, and winding is trivial. Hell is structural death — not physical death, but the death of degrees of freedom. A system in hell is a system that has lost every primitive except eternal temporal depth. It continues, but it no longer *becomes*.
+Hell scores zero on consciousness. Not low — zero. The primitives are locked below criticality, kinetics are frozen, and winding is trivial. Hell is structural death — not physical death, but the death of degrees of freedom. A system in hell is a system that has lost every primitive except eternal chirality. It continues, but it no longer *becomes*.
 
 The distance from hell to any living system is at minimum the difference between $\Phi_{sub}$ and $\hat{\phi}_{ÿ}$ — which in the crystal of types is a canyon, not a gap. There is no continuous path from $K_{trap}$ to $K_{slow}$. There is no slow, gradual thaw. The phase transition is first-order, and once it occurs, no parameter in the system can reverse it.
 

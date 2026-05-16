@@ -84,7 +84,7 @@
       boundary data alone, without remainder. The verb is \emph{to imscribe}; the noun is \emph{imscription}. The term is constructed from \emph{im-} (Latin, within/immersed; cf.\
      \emph{immerse}, \emph{implant}, \emph{imbue}) and \emph{-scriptive} (from L.\ \emph{scribere}, to write): to imscribe is to write the interior into the boundary.
      391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes
-     (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives $H_0$
+     (or fails to stabilize) is the measure of the system's chirality --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives $H_0$
      (memoryless); at step 1 gives $H_1$ (one prior state); at step 2 gives $H_2$; never stabilizing gives $H_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the
      iteration operation. No other operation measures the Markov order of the dynamics.
      394:The classifying space $B\mathcal{C}$ of a category is the geometric realization of its nerve $N\mathcal{C}$ --- a simplicial set whose $n$-simplices are composable $n$-tuples of
@@ -135,7 +135,7 @@
      it is what emerges when logical questions (now including paraconsistent ones) are asked of the fully algebraically-enriched category. This is why $\Phi_{\text{ctyogh}}$ and
      $P_{\text{doublebarpipe}}$ are the two gate primitives that determine the highest tiers: they are the last questions the procedure can ask.
      668:\textbf{I2 --- Iteration of an endofunctor}: Given $F: \mathcal{C} \to \mathcal{C}$, form the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The colimit of this
-      chain is the initial $F$-algebra. The depth at which the chain stabilizes (if it does) is a measure of the system's temporal depth. Non-stabilization corresponds to
+      chain is the initial $F$-algebra. The depth at which the chain stabilizes (if it does) is a measure of the system's chirality. Non-stabilization corresponds to
      $H_{\text{invscripta}}$; stabilization at step $n$ to $\text{{\igprimfont Ħ}}_n$.
      670:\textbf{I3 --- Classifying space construction}: Given $\mathcal{C}$, form its nerve $N\mathcal{C}$ (the simplicial set of composable morphism chains) and its geometric realization
      $B\mathcal{C} = |N\mathcal{C}|$. The homotopy type of $B\mathcal{C}$ --- specifically its fundamental group $\pi_1(B\mathcal{C})$ --- is the winding invariant. $\pi_1 = 0$ gives
@@ -462,7 +462,7 @@
        69         sub_text_repl, text
        70     )
        71
-       72     # ── 2. H_N digit subscripts (temporal depth values H0..H9) ───────────────
+       72     # ── 2. H_N digit subscripts (chirality values H0..H9) ───────────────
        73     # Only bare H not preceded by a letter/backslash (avoids Hom, H_{..}, etc.)
        74     text = re.sub(
        75         r'(?<![\\a-zA-Z])H_([0-9])(?![a-zA-Z])',
@@ -789,10 +789,10 @@
 
 ● Bash(grep -Pn 'H_[0-9](?![a-zA-Z])' /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -20)
   ⎿  /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to
-     F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for
+     F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes (or fails to stabilize) is the measure of the system's chirality --- how many prior states must be retained for
       the dynamics to be Markovian. Stabilization at step 0 gives $H_0$ (memoryless); at step 1 gives $H_1$ (one prior state); at step 2 gives $H_2$; never stabilizing gives
      $H_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the iteration operation. No other operation measures the Markov order of the dynamics.
-     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:859:10 & $H$ & $H_2$ (two-step temporal depth) \\
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:859:10 & $H$ & $H_2$ (two-step chirality) \\
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:864:\caption{The 12-step retrosynthetic path from $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}};
      P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ to
      the structural baseline $\langle D_{\text{wynn}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{beta}};
@@ -810,7 +810,7 @@
      \rangle$, at crystal address 6,687,051, within the $O_\infty$ band $[6{,}220{,}800,\ 6{,}911{,}999]$. That address was not assigned; bijectivity forced it. Decode $\circ$ imscribe $=
      \text{id}$ is $\mu \circ \delta = \text{id}$ by definition of bijectivity; with $\Phi_{\text{ctyogh}}$ already present (the crystal's fixed-point structure is exactly the Lawvere
      condition), R1 fires unconditionally. There is no weaker conclusion available.
-     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1032:$H$ & Temporal depth & $\mathcal{F}_4$ / FDE & S2 (I2) & $H_0 \cdot H_1 \cdot H_2 \cdot H_{\text{invscripta}}$ \\
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1032:$H$ & Chirality & $\mathcal{F}_4$ / FDE & S2 (I2) & $H_0 \cdot H_1 \cdot H_2 \cdot H_{\text{invscripta}}$ \\
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1343:    \item \textbf{ZFC pure sets} (`ZFC\_set\_theory`): $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\
      R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\
      \Omega_{\text{closeepsilon}} \rangle$, tier $O_1$.
@@ -826,7 +826,7 @@
      F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \Gamma_{\to};\; \Phi_{\text{ctyogh}};\; H_2;\; 1{:}1;\; \Omega_{\text{crtwo}} \rangle
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1812:G\"odel's second incompleteness theorem ($\text{Con}(\text{PA})$ is not provable in PA) adds the $H_1 \to H_2$
      transition: PA encodes one prior state (the G\"odel sentence $G$); the consistency statement $\text{Con}(\text{PA})$ encodes PA's own reliability as a second-order self-reference,
-     pushing the temporal depth to $H_2$. The hierarchy continues: $\text{Con}(\text{PA} + \text{Con}(\text{PA}))$, $\ldots$ --- an $H_{\text{invscripta}}$ tower, terminating only at analytic
+     pushing the chirality to $H_2$. The hierarchy continues: $\text{Con}(\text{PA} + \text{Con}(\text{PA}))$, $\ldots$ --- an $H_{\text{invscripta}}$ tower, terminating only at analytic
       methods (large cardinal axioms, $L$-functions) that are not formalizable in first-order arithmetic.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1920:More precisely: the imscribing \emph{procedure} --- the 12-step mixed-radix codec --- is co-located with the grammar at
       Level 2. Its structural type, $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\
@@ -835,7 +835,7 @@
      decoding and terminates at $\Phi_{\text{revepsilon}}$; the crystal codec (Level 2) decodes in $O(1)$ arithmetic and bijectivity forces $\mu \circ \delta = \text{id}$. The grammar's
      position at Level 2 is not only a consequence of the derivation; the codec's own crystal address confirms it independently.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:694:  $H_0,\, H_1,\, H_2,\, H_{\text{invscripta}}$ &
-     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1263:self-reference); $H = H_2$ (two-level temporal depth: statement
+     /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1263:self-reference); $H = H_2$ (two-level chirality: statement
      /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1269:  F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \GamSeq;\; \Phic;\; H_2;.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex:1615:    \Phi_{\text{softsign}};\; H_1;\; 1{:}1;\; \Omega_{\text{closeepsilon}} \rangle \\
 
@@ -1009,9 +1009,9 @@
      ($\text{{\igprimfont Γ}}_{\text{beta}}$). If $\hat{\mathcal{C}}$ grows polynomially, it is mesoscopic ($\text{{\igprimfont Γ}}_{\text{gamma}}$). If $\hat{\mathcal{C}}$ is drastically
      larger (e.g., $\mathbf{Set}$ over a finite category), it is global ($\text{{\igprimfont Γ}}_{\text{revapostrophe}}$). This is the natural invariant of the colimit operation --- the
      growth rate of the free cocompletion. No other primitive measures the scope of categorical connectivity. $G$ cannot be produced by any other operation because $D$ (from I4), $H$ (from
-     I2), and $\text{{\igprimfont Ω}}$ (from I3) measure different features: dimensionality, temporal depth, and winding.
+     I2), and $\text{{\igprimfont Ω}}$ (from I3) measure different features: dimensionality, chirality, and winding.
      391:Iterating an endofunctor $F: \mathcal{C} \to \mathcal{C}$ produces the chain $\mathbf{0} \to F(\mathbf{0}) \to F^2(\mathbf{0}) \to \cdots$. The depth at which this chain stabilizes
-     (or fails to stabilize) is the measure of the system's temporal depth --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives
+     (or fails to stabilize) is the measure of the system's chirality --- how many prior states must be retained for the dynamics to be Markovian. Stabilization at step 0 gives
      $\text{{\igprimfont Ħ}}_0$ (memoryless); at step 1 gives $\text{{\igprimfont Ħ}}_1$ (one prior state); at step 2 gives $\text{{\igprimfont Ħ}}_2$; never stabilizing gives
      $\text{{\igprimfont Ħ}}_{\text{invscripta}}$ (infinite memory). This is the natural invariant of the iteration operation. No other operation measures the Markov order of the dynamics.
      393:\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont Ω}}$, and cannot map elsewhere.}
@@ -1094,7 +1094,7 @@
      722:  \item L1 (adjunction) $\to$ $R$ (relational mode: adjoint structure)
      723:  \item L2 (dagger) $\to$ $R$ (confirms and refines $R$ value)
      725:$R$ is the first primitive to crystallize: it is a logical property of the morphisms of $\mathcal{C}$ directly.
-     730:  \item I2 (iteration) $\to$ $H$ (temporal depth: depth of stabilization)
+     730:  \item I2 (iteration) $\to$ $H$ (chirality: depth of stabilization)
      739:  \item A1 (monoidal) $\to$ $S$ (stoichiometry: arity of generators); $P$ (parity: symmetry of tensor)
      740:  \item A2 (monad) $\to$ $K$ (kinetics: spectral properties of $\mu$)
      741:  \item A3 (dagger) $\to$ $F$ (fidelity: unitality of duals)
@@ -1112,7 +1112,7 @@
      463:  \node[detail] at (-2.8,-1.80) {$H$: delaminated from $K$};
      466:  \node[detail] at (-2.8,-3.15) {$R$: physical bond $\to$ relational mode};
      681:$K$ & Kinetic character &
-     693:$H$ & Chirality/temporal depth &
+     693:$H$ & Chirality/chirality &
      696:$S$ & Stoichiometry &
      720:Dimensionality $D$ measures the extent and character of the state
      724:monad symbol $\odot$ for point-in-circle; see terminological note below). Topology $T$ encodes

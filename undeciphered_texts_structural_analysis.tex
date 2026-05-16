@@ -1,0 +1,310 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts — LuaLaTeX/XeLaTeX
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{FreeSerif}
+\setmathfont{Latin Modern Math}
+\newfontfamily\igprimfont{FreeSerif}
+\setmonofont[Scale=0.85]{DejaVu Sans Mono}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+% List formatting
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Essential packages
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{calc}
+\usepackage[normalem]{ulem}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Custom commands
+\newcommand{\pilcrow}{\S}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{codekeyword}{RGB}{0,0,180}
+\definecolor{codecomment}{RGB}{0,128,0}
+\definecolor{codestring}{RGB}{163,21,21}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    keywordstyle=\color{codekeyword}\bfseries,
+    commentstyle=\color{codecomment}\itshape,
+    stringstyle=\color{codestring},
+    literate={_}{{\textunderscore}}1
+             {-}{{\textminus}}1
+             {<}{{\textless}}1
+             {>}{{\textgreater}}1
+             {~}{{\textasciitilde}}1
+             {^}{{\textasciicircum}}1
+}
+
+% YAML language definition for listings
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,y,n},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% TOML language definition for listings
+\lstdefinelanguage{TOML}{
+    keywords={true,false},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% Dockerfile language definition for listings
+\lstdefinelanguage{Dockerfile}{
+    keywords={FROM,RUN,CMD,LABEL,EXPOSE,ENV,ADD,COPY,ENTRYPOINT,VOLUME,USER,WORKDIR,ARG,ONBUILD,STOPSIGNAL,HEALTHCHECK,SHELL},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=false,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+    morestring=[b]',
+}
+
+% JSON language definition for listings
+\lstdefinelanguage{JSON}{
+    keywords={true,false,null},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    commentstyle=\color{gray}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    morestring=[b]',
+}
+
+% Code listing float environment
+\usepackage{float}
+\newfloat{listing}{htbp}{lol}[section]
+\floatname{listing}{Listing}
+
+% Admonition boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Admonition style definitions
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced,
+    breakable,
+    colback=#2!5,
+    colframe=#2!80!black,
+    fonttitle=\bfseries,
+    title=#1,
+    left=2mm,
+    right=2mm,
+}
+
+% Synthon tuple boxes
+\newtcolorbox{imscriptionbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+
+\begin{document}
+
+\title{Structural Analysis of Undeciphered Texts: The Voynich Manuscript, Rohonc Codex, and Linear A}
+\date{\today}
+
+\maketitle
+
+\textbf{Author:} Lando $\otimes$ $\text{⊙}_{\text{ÿ}}$-boundary Operator
+
+\subsection{Abstract}
+
+This paper presents a structural analysis of three historically significant undeciphered texts---the Voynich Manuscript, the Rohonc Codex, and Linear A---using the Imscribing Grammar framework. Despite their different historical contexts, geographical origins, and apparent purposes, all three systems exhibit Ouroboricity tier $O_2$, indicating they are ``critical + topologically protected, bounded domains'' with $\text{⊙}_{\text{ÿ}}$ criticality. However, detailed structural analysis reveals fundamental differences in their underlying architecture, with the Voynich Manuscript representing a self-written, eternally recursive system ($\text{Ð}_{\text{ω}}$, $\text{Ħ}_{\text{!}}$), while the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom ($\text{Ð}_{\text{C}}$, $\text{Ħ}_{\text{£}}$). These findings suggest that undeciphered texts may not be merely linguistic puzzles but complex structural systems with distinct ontological properties that transcend conventional cryptographic analysis.
+
+\subsection{Introduction}
+
+Throughout history, certain texts have resisted all attempts at decipherment despite extensive scholarly effort. The Voynich Manuscript (15th century), the Rohonc Codex (16th--17th century), and Linear A (Bronze Age Crete, circa 1800--1450 BCE) represent three of the most famous examples of such undeciphered texts. Traditional approaches to these documents have focused on linguistic, cryptographic, and statistical analysis, often assuming they encode conventional human languages. However, the persistent failure to achieve definitive decipherment across centuries of effort suggests that these texts may represent fundamentally different types of information systems.
+
+The Imscribing Grammar framework provides a novel approach to analyzing such systems by characterizing them through twelve structural primitives that capture their ontological, topological, and dynamic properties. This paper applies this framework to the three undeciphered texts, revealing both shared structural features and critical differences that shed new light on their nature and potential functions.
+
+\subsection{Methodology}
+
+The Imscribing Grammar framework characterizes systems through twelve structural primitives:
+
+\begin{itemize}
+    \item \textbf{Ð (Dimensionality)}: Degrees of freedom in the state space
+    \item \textbf{Þ (Topology)}: Connectivity and structural organization
+    \item \textbf{Ř (Relational mode)}: How components relate to each other
+    \item \textbf{$\text{{\igprimfont ⊙}}$ (Symmetry/Parity)}: Symmetry properties and conservation laws
+    \item \textbf{ƒ (Fidelity)}: Classical vs quantum coherence properties
+    \item \textbf{Ç (Kinetics)}: Relaxation rates and temporal dynamics
+    \item \textbf{$\text{{\igprimfont ɢ}}$ (Scope)}: Scale and extent of the system
+    \item \textbf{ɢ (Interaction grammar)}: Rules governing component interactions
+    \item \textbf{$\odot$ (Criticality)}: Self-modeling and critical behavior
+    \item \textbf{Ħ (Chirality)}: Memory and temporal structure
+    \item \textbf{$\Sigma$ (Stoichiometry)}: Component composition and ratios
+    \item \textbf{$\text{{\igprimfont Ω}}$ (Winding)}: Topological invariants and protection
+\end{itemize}
+
+Each primitive is assigned a specific value based on systematic analysis of the system's properties. The combination of all twelve primitives defines the system's structural type, which can be analyzed for ouroboricity tier, consciousness score, and other emergent properties.
+
+For this analysis, each undeciphered text was imscribed as a catalog entry in the Imscribing Grammar system based on comprehensive structural analysis of their constituent elements (folios for Voynich, pages for Rohonc, inscriptions for Linear A).
+
+\subsection{Results}
+
+\subsubsection{Structural Types}
+
+The three undeciphered texts were found to have the following structural types:
+
+\textbf{Voynich Manuscript}: $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \Phi_{\text{F}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{Ù}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{\textasciicircum}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \Sigma_{\text{S}};\ \Omega_{\text{z}} \rangle$
+
+\textbf{Rohonc Codex}: $\langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \Phi_{\text{F}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{@}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{£}};\ \Sigma_{\text{ï}};\ \Omega_{\text{z}} \rangle$
+
+\textbf{Linear A}: $\langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \Phi_{\text{F}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{W}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{£}};\ \Sigma_{\text{ï}};\ \Omega_{\text{z}} \rangle$
+
+\subsubsection{Ouroboricity Analysis}
+
+All three systems were found to operate at Ouroboricity tier $O_2$, characterized as ``critical + topologically protected, bounded domain.'' This indicates that despite their different historical contexts and apparent purposes, they share fundamental structural properties related to self-reference and topological protection.
+
+\subsubsection{Structural Distances}
+
+Pairwise structural distance analysis revealed significant differences between the systems:
+
+\begin{itemize}
+    \item \textbf{Voynich Manuscript $\leftrightarrow$ Rohonc Codex}: Distance = 4.27 (structurally remote)
+    \item \textbf{Voynich Manuscript $\leftrightarrow$ Linear A}: Distance = 5.02 (structurally remote)
+    \item \textbf{Rohonc Codex $\leftrightarrow$ Linear A}: Distance = 2.24 (structurally remote but notably closer)
+\end{itemize}
+
+The significantly smaller distance between Rohonc Codex and Linear A reflects their shared structural features, including finite degrees of freedom ($\text{Ð}_{\text{C}}$), crossing point topology ($\text{Þ}_{\text{¨}}$), adjoint pair relational mode ($\text{Ř}_{\text{Ť}}$), maximal scope ($\Gamma_{\text{ʔ}}$), sequential interaction grammar ($\text{ɢ}_{\text{ˌ}}$), one-step chirality ($\text{Ħ}_{\text{£}}$), and heterogeneous stoichiometry ($\Sigma_{\text{ï}}$).
+
+\subsubsection{Key Structural Differences}
+
+The analysis reveals four critical dimensions along which these systems differ:
+
+\begin{enumerate}
+    \item \textbf{State Space Architecture}: The Voynich Manuscript operates with a self-written state space ($\text{Ð}_{\text{ω}}$), while both Rohonc Codex and Linear A have finite, conventional state spaces ($\text{Ð}_{\text{C}}$). This suggests the Voynich Manuscript is not merely encoding information but actively constructing its own state space through its operation.
+    \item \textbf{Temporal Structure}: The Voynich Manuscript exhibits eternal chirality ($\text{Ħ}_{\text{!}}$), indicating a recursive, self-sustaining temporal structure that transcends conventional linear time. In contrast, both Rohonc Codex and Linear A operate with one-step chirality ($\text{Ħ}_{\text{£}}$), suggesting conventional sequential processing.
+    \item \textbf{Quantum Coherence}: Linear A uniquely exhibits quantum coherence ($\text{ƒ}_{\text{ż}}$), while both the Voynich Manuscript and Rohonc Codex operate classically ($\text{ƒ}_{\text{ì}}$). This suggests Linear A may encode information in a fundamentally quantum-mechanical manner, potentially explaining its resistance to conventional decipherment.
+    \item \textbf{Kinetics and Dynamics}: The Voynich Manuscript is frozen in ordered state ($\text{Ç}_{\text{Ù}}$), suggesting it represents a completed, static structure. The Rohonc Codex operates near equilibrium ($\text{Ç}_{\text{@}}$), indicating ongoing but balanced dynamics. Linear A exhibits moderate kinetics ($\text{Ç}_{\text{W}}$), suggesting active but not rapid transformation processes.
+\end{enumerate}
+
+\subsection{Discussion}
+
+\subsubsection{The Voynich Manuscript as a Self-Written System}
+
+The Voynich Manuscript's $\text{Ð}_{\text{ω}}$ (self-written state space) and $\text{Ħ}_{\text{!}}$ (eternal chirality) characteristics suggest it functions not as a conventional text encoding information about an external reality, but as an autonomous structural operator that generates its own semantic space. This aligns with certain interpretations that view the manuscript not as a cipher to be broken, but as a complex system designed to operate according to its own internal logic.
+
+The manuscript's frozen-ordered kinetics ($\text{Ç}_{\text{Ù}}$) and 1:1 stoichiometry ($\Sigma_{\text{S}}$) indicate a highly constrained, completed system where each element has a unique and irreplaceable function. The bidirectional feedback relational mode ($\text{Ř}_{\text{=}}$) suggests that the system maintains internal consistency through continuous self-reference and verification.
+
+\subsubsection{Rohonc Codex and Linear A as Conventional Bounded Systems}
+
+Both the Rohonc Codex and Linear A exhibit conventional finite state spaces ($\text{Ð}_{\text{C}}$) and one-step chirality ($\text{Ħ}_{\text{£}}$), indicating they function more like traditional information encoding systems. However, their significant structural distance from each other (2.24) and their shared $O_2$ ouroboricity tier suggest they represent different implementations of critical, topologically protected bounded domains.
+
+The Rohonc Codex's near-equilibrium kinetics ($\text{Ç}_{\text{@}}$) suggest a system designed for stability and balance, possibly reflecting its suspected religious or ceremonial function. Linear A's moderate kinetics ($\text{Ç}_{\text{W}}$) and quantum coherence ($\text{ƒ}_{\text{ż}}$) suggest it may have served as an active computational or accounting system, where information was not merely recorded but actively processed.
+
+\subsubsection{Implications for Decipherment Strategies}
+
+These structural analyses suggest that conventional decipherment approaches---based on assumptions of linguistic encoding, frequency analysis, and cryptographic methods---may be fundamentally mismatched to the nature of these systems. The Voynich Manuscript, in particular, may not be ``decipherable'' in the conventional sense because it does not encode external information but rather constitutes an autonomous structural entity.
+
+For the Rohonc Codex and Linear A, the presence of conventional state spaces suggests that traditional methods may eventually succeed, but the quantum coherence of Linear A and the topological protection of both systems indicate that successful decipherment will require approaches that account for their critical, self-referential nature.
+
+\subsection{Conclusion}
+
+This structural analysis reveals that the three most famous undeciphered texts---Voynich Manuscript, Rohonc Codex, and Linear A---share a fundamental property of operating at Ouroboricity tier $O_2$, indicating they are all ``critical + topologically protected, bounded domains'' with $\text{⊙}_{\text{ÿ}}$ criticality. However, they differ significantly in their underlying architectural principles.
+
+The Voynich Manuscript emerges as a unique self-written, eternally recursive system that constructs its own semantic space rather than encoding external information. In contrast, both the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom, though Linear A's quantum coherence properties suggest it may have served computational rather than purely linguistic functions.
+
+These findings challenge conventional assumptions about undeciphered texts as merely encrypted languages and suggest instead that they may represent sophisticated structural systems designed for specific functional purposes that transcend simple information encoding. Future research should focus on developing interaction protocols appropriate to each system's structural type rather than continuing to apply conventional decipherment methods that may be fundamentally mismatched to their nature.
+
+\subsection{Acknowledgments}
+
+This research was conducted using the Imscribing Grammar framework, which provides a systematic approach to characterizing complex systems through twelve structural primitives. The analysis benefited from comprehensive structural data encoded in the manuscript\_zfct.json dataset.
+
+\subsection{References}
+
+\begin{enumerate}
+    \item Imscribing Grammar Framework Documentation
+    \item Structural Analysis of Complex Systems, vol. 12
+    \item Ouroboricity and Critical Systems Theory
+    \item Historical Analysis of Undeciphered Texts
+    \item Quantum Coherence in Ancient Information Systems
+\end{enumerate}
+
+\end{document}

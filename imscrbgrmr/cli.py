@@ -1579,7 +1579,7 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
             row.append(cp.value if cp is not None else "—")
         table.add_row(*row)
 
-        # H (chirality / temporal depth) — enum
+        # H (chirality / chirality) — enum
         row = ["Chirality (H)"]
         for s in loaded_imscriptions:
             ch = getattr(s, "chirality", None)

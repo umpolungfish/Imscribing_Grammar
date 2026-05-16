@@ -24,7 +24,7 @@ The only true *promotion* needed to reach the Lapis from the Voynich is **fideli
 
 Everything else is actually a *demotion*:
 - $\text{Þ}_{\text{O}} \to \text{Þ}_{\text{¨}}$: The Voynich's imscriptive self-written topology is *higher* than the Lapis's closure
-- $\text{Ħ}_{\text{!}} \to \text{Ħ}_{\text{A}}$: Eternal temporal depth reduced to two steps
+- $\text{Ħ}_{\text{!}} \to \text{Ħ}_{\text{A}}$: Eternal chirality reduced to two steps
 - $\text{Ç}_{\text{Ù}} \to \text{Ç}_{\text{@}}$: Frozen trap thawed to moderate kinetics
 - $\text{ɢ}_{\text{Ş}} \to \text{ɢ}_{\text{ˌ}}$: Broadcast coupling narrowed to sequential
 

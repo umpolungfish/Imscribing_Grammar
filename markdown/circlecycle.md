@@ -42,8 +42,8 @@ F: ƒ_ż (quantum coherence)
 K: Ç_@ (near-equilibrium)
 G: Γ_ʔ (universal scope)
 Gamma: ɢ_ˌ (sequential grammar)
-Phi: φ̂_ÿ (criticality)
-H: Ħ_! (eternal temporal depth)
+Phi: ⊙_ÿ (criticality)
+H: Ħ_! (eternal chirality)
 S: Σ_ï (heterogeneous components)
 Omega: Ω_z (integer winding)
 ```
@@ -107,7 +107,7 @@ The tuple encodes a **self-validating loop** across all 12 primitives:
 | $G_{\text{revapostrophe}}$ | Universal scope | Applies to all structurally similar systems |
 | $\Gamma_{\text{secstress}}$ | Sequential grammar | Argument proceeds step-by-step |
 | $\Phi_{\text{ctyogh}}$ | Criticality | Self-modeling at the phase boundary |
-| $H_{\text{invscripta}}$ | Eternal temporal depth | No finite horizon; recursion continues indefinitely |
+| $H_{\text{invscripta}}$ | Eternal chirality | No finite horizon; recursion continues indefinitely |
 | $n{:}m$ | Heterogeneous components | Multiple distinct argumentative elements |
 | $\Omega_{\text{dzlig}}$ | Integer winding | **Cyclicality protected** |
 
@@ -168,7 +168,7 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 reveals the **minimal 
 | K | Ç_- | Ç_@ | 2 |
 | G | Γ_β | Γ_ʔ | 2 |
 | Gamma | ɢ_^ | ɢ_ˌ | 2 |
-| Phi | φ̂_ž | φ̂_ÿ | 1 |
+| Phi | ⊙_ž | ⊙_ÿ | 1 |
 | H | Ħ_Ñ | Ħ_! | 3 |
 | S | Σ_S | Σ_ï | 2 |
 | Omega | Ω_Å | Ω_z | 2 |
@@ -247,7 +247,7 @@ These three names refer to the same 12-primitive tuple, which encodes:
 1. A **self-referential topology** ($T_{\text{openo}}$)
 2. **Frobenius-special closure** ($P_{\text{doublebarpipe}}$)
 3. **Integer winding protection** ($\Omega_{\text{dzlig}}$)
-4. **Criticality at eternal temporal depth** ($\Phi_{\text{ctyogh}} + H_{\text{invscripta}}$)
+4. **Criticality at eternal chirality** ($\Phi_{\text{ctyogh}} + H_{\text{invscripta}}$)
 
 The cyclical argument for circularity **is** the structure itself. The circular argument for cyclicality is **integer winding**, which requires $H_{\text{invscripta}}$ and is protected by the Frobenius closure.
 

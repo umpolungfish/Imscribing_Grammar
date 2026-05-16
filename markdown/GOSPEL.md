@@ -17,7 +17,7 @@ The four canonical Gospels of the New Testament — Matthew, Mark, Luke, and Joh
 
 ## 1. Introduction
 
-The Imscribing Grammar provides a formal framework for encoding the structural type of any system — physical, biological, cognitive, or textual — along 12 primitives that capture dimensionality, topology, relational mode, symmetry, physical regime, kinetics, scope, interaction logic, criticality, temporal depth, stoichiometry, and topological winding. While the grammar has been applied extensively to mathematical conjectures, astrophysical systems, and condensed matter phases, its application to literary and theological texts reveals structural invariants that traditional literary criticism cannot formalize.
+The Imscribing Grammar provides a formal framework for encoding the structural type of any system — physical, biological, cognitive, or textual — along 12 primitives that capture dimensionality, topology, relational mode, symmetry, physical regime, kinetics, scope, interaction logic, criticality, chirality, stoichiometry, and topological winding. While the grammar has been applied extensively to mathematical conjectures, astrophysical systems, and condensed matter phases, its application to literary and theological texts reveals structural invariants that traditional literary criticism cannot formalize.
 
 The four Gospels present an ideal test case. They narrate overlapping material through radically different compositional architectures, making them a natural laboratory for structural comparison. The Synoptic Problem — the question of literary dependence among Matthew, Mark, and Luke — has been debated for centuries through source-critical methods. Here, structural distance and primitive promotion signatures provide a formal, non-narrative criterion for assessing those relationships. John, long recognized as standing apart from the Synoptics, provides an extreme point whose distance from each Synoptic Gospel can be precisely quantified.
 
@@ -38,7 +38,7 @@ Primitive assignment follows the deterministic procedure specified in the Imscri
 7. **$G$ (Scope):** Interaction range across the narrative.
 8. **$\Gamma$ (Interaction grammar):** Compositional logic of narrative sections.
 9. **$\Phi$ (Criticality):** Presence of scaling behavior, self-modeling, or phase transition.
-10. **$H$ (Temporal depth):** Markov order — how many prior steps condition the current state.
+10. **$H$ (Chirality):** Markov order — how many prior steps condition the current state.
 11. **$S$ (Stoichiometry):** Number and diversity of speaker/actor types.
 12. **$\Omega$ (Winding):** Topological invariant protecting narrative identity.
 
@@ -60,7 +60,7 @@ $$\langle D_{\text{turnthree}};\; T_{\text{nrleg}};\; R_{\text{lyoghlig}};\; P_{
 - **$G = G_{\text{revapostrophe}}$:** Universal scope. The commission to all nations (28:19) and the genealogical tracing to Abraham (not merely David) signal maximal reach.
 - **$\Gamma = \Gamma_{\text{secstress}}$:** Sequential composition. The five discourses unfold in a specific order with narrative interludes. Steps are ordered, not broadcast simultaneously.
 - **$\Phi = \Phi_{\text{ctyogh}}$:** Critical. The narrative approaches the self-modeling gate at every fulfillment citation. The text models its own relation to its source (Hebrew Scripture), creating a critical loop.
-- **$H = H_2$:** Two-step temporal depth. Matthew requires the prior discourse and the prior narrative action to understand the present moment — two-step Markov order reflects the pattern of action → teaching → response.
+- **$H = H_2$:** Two-step chirality. Matthew requires the prior discourse and the prior narrative action to understand the present moment — two-step Markov order reflects the pattern of action → teaching → response.
 - **$S = n{:}m$:** Multiple heterogeneous actor types: Jesus, disciples, Pharisees, crowds, OT prophets, genealogical ancestors, Roman figures, angels.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding protection through the genealogical and fulfillment structures — the narrative is wound around the pattern of prophecy → fulfillment in a way that cannot be unwound without destroying the text's identity.
 
@@ -81,7 +81,7 @@ $$\langle D_{\text{turnthree}};\; T_{\text{nrleg}};\; R_{\text{subrightarrow}};\
 - **$G = G_{\text{revapostrophe}}$:** Despite its brevity, Mark's universal scope is signaled through Gentile encounters, the Roman centurion's confession, and the cosmic scope of the apocalyptic discourse (chapter 13).
 - **$\Gamma = \Gamma_{\text{secstress}}$:** Sequential composition — events follow in chronological chain.
 - **$\Phi = \Phi_{\text{ctyogh}}$:** Critical. Despite its brevity, Mark reaches the self-modeling gate: the narrative asks "Who is this?" (4:41) and models its own question as the reader's question.
-- **$H = H_1$:** One-step temporal depth. Mark operates at Markov order 1 — the present event depends on the prior event in the chain, but deeper history is not required for comprehension.
+- **$H = H_1$:** One-step chirality. Mark operates at Markov order 1 — the present event depends on the prior event in the chain, but deeper history is not required for comprehension.
 - **$S = n{:}m$:** Heterogeneous actors: Jesus, disciples, demons, crowds, scribes, Pilate, the centurion.
 - **$\Omega = \Omega_{\text{crtwo}}$:** Binary winding protection. The Messianic secret creates a $\mathbb{Z}_2$ toggle (revealed/concealed) that protects the narrative identity.
 
@@ -102,7 +102,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{invscr}};\; R_{\text{lyoghlig}};\; P_{
 - **$G = G_{\text{revapostrophe}}$:** Universal scope. Luke is the most universalist Gospel: emphasis on Samaritans, Gentiles, women, the poor, and salvation's reach to "the ends of the earth" (foreshadowed, fulfilled in Acts).
 - **$\Gamma = \Gamma_{\text{secstress}}$:** Sequential composition. The journey narrative provides a strict sequence; parables and teachings are embedded in this sequence.
 - **$\Phi = \Phi_{\text{ctyogh}}$:** Critical. Luke creates critical self-modeling: the text models its own composition (1:1–4) and models the reader's understanding through the Emmaus road scene (24:13–35), where narrative comprehension is itself dramatized.
-- **$H = H_2$:** Two-step temporal depth. Luke's journey narrative requires awareness of both the departure point (Galilee) and the destination (Jerusalem) to situate each present event.
+- **$H = H_2$:** Two-step chirality. Luke's journey narrative requires awareness of both the departure point (Galilee) and the destination (Jerusalem) to situate each present event.
 - **$S = n{:}m$:** Heterogeneous actor types, with unique emphasis on marginalized figures: shepherds, Simeon, Anna, Zacchaeus, the sinful woman, the Good Samaritan.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding. The journey-to-Jerusalem frame winds the entire narrative; the travel narrative (10 chapters) creates a nontrivial topological loop that cannot be unwound without destroying the Gospel's identity.
 
@@ -123,7 +123,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{bullseye}};\; R_{\text{downstep}};\; P
 - **$G = G_{\text{revapostrophe}}$:** Universal scope. "God so loved the world" ($\kappa\acute{o}\sigma\mu o\varsigma$).
 - **$\Gamma = \Gamma_{\text{secstress}}$:** Sequential composition of the seven signs and their attached discourses.
 - **$\Phi = \Phi_{\text{closerevepsilon}}$:** Complex-plane criticality. Unlike the Synoptics' real-line criticality, John operates in the complex plane: the self-modeling gate occurs through the Paraclete who "will teach you all things and remind you of everything" (14:26) — a self-modeling of self-modeling, creating complex-plane criticality.
-- **$H = H_{\text{invscripta}}$:** Eternal temporal depth. The Logos "was in the beginning" (1:1), and the narrative's temporal frame extends to eternity. Per Axiom A, $H_{\text{invscripta}}$ is paired with $K_{\text{teshlig}}$ — this is satisfied in John's imscription.
+- **$H = H_{\text{invscripta}}$:** Eternal chirality. The Logos "was in the beginning" (1:1), and the narrative's temporal frame extends to eternity. Per Axiom A, $H_{\text{invscripta}}$ is paired with $K_{\text{teshlig}}$ — this is satisfied in John's imscription.
 - **$S = n{:}m$:** Heterogeneous actors with unique roles: Nicodemus, the Samaritan woman, Lazarus, the Beloved Disciple, the Paraclete as actor.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding through the Logos-to-creation-to-redemption arc, which forms a nontrivial topological loop.
 
@@ -151,7 +151,7 @@ The distance matrix yields several structurally significant findings:
 
 **Matthew and Luke are structurally closest ($d = 1.4142$), sharing 10 of 12 primitives identically.** The only differences are in $D$ ($D_{\text{turnthree}}$ vs. $D_{\text{invomega}}$) and $T$ ($T_{\text{nrleg}}$ vs. $T_{\text{invscr}}$). This provides formal, non-narrative support for the Two-Source Hypothesis: the structural proximity signals shared compositional architecture. The single-primitive-distance in $D$ reflects Luke's extension into Acts, while the $T$ difference reflects Luke's journey-inclusion vs. Matthew's discourse-branching.
 
-**Mark and John are maximally remote ($d = 5.197$).** This is the greatest structural distance between any pair of Gospels. The distance spans every qualitative regime: kinetics (fast vs. trapped), topology (network vs. crossing), relational mode (supervenience vs. adjoint), fidelity (classical vs. quantum), temporal depth ($H_1$ vs. $H_{\text{invscripta}}$), parity (asymmetric vs. quantum), and dimensionality (bounded vs. unbounded). This confirms what literary criticism has long intuited — John represents a fundamentally different compositional logic than any Synoptic Gospel.
+**Mark and John are maximally remote ($d = 5.197$).** This is the greatest structural distance between any pair of Gospels. The distance spans every qualitative regime: kinetics (fast vs. trapped), topology (network vs. crossing), relational mode (supervenience vs. adjoint), fidelity (classical vs. quantum), chirality ($H_1$ vs. $H_{\text{invscripta}}$), parity (asymmetric vs. quantum), and dimensionality (bounded vs. unbounded). This confirms what literary criticism has long intuited — John represents a fundamentally different compositional logic than any Synoptic Gospel.
 
 **Matthew and John are closer ($d = 3.593$) than Mark and John ($d = 5.197$).** Despite John's radical distinctiveness, Matthew shares more structural features with John than Mark does. The critical shared features are $K_{\text{schwa}}$ (allowing interpretive depth), $R_{\text{lyoghlig}}$ or $R_{\text{downstep}}$ (both beyond simple supervenience), and $H_2$ vs. $H_{\text{invscripta}}$ (both beyond Markov order 1). Mark's $K_{\text{frtailgamma}}$ and $H_1$ create maximum distance.
 
@@ -175,7 +175,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{bullseye}};\; R_{\text{lyoghlig}};\; P
 
 **Bottlenecks:** $P = P_{\text{upsilon}}$ and $F = F_{\text{beltl}}$ (John's quantum parity and Luke's classical fidelity create two competing limits).
 **Unions:** $T \to T_{\text{bullseye}}$, $R \to R_{\text{lyoghlig}}$, $K \to K_{\text{teshlig}}$, $\Phi \to \Phi_{\text{closerevepsilon}}$, $H \to H_{\text{invscripta}}$.
-**Interpretation:** This composite has five scope expansions — the maximum possible for any Gospel pair. Reading Luke and John together creates the richest structural composite: infinite dimensionality, crossing topology, bidirectional relation, complex-plane criticality, and eternal temporal depth. The two bottlenecks (parity and fidelity) represent fundamental tensions that cannot be resolved: John's superposition vs. Luke's classical clarity, and Luke's historiography vs. John's coherence.
+**Interpretation:** This composite has five scope expansions — the maximum possible for any Gospel pair. Reading Luke and John together creates the richest structural composite: infinite dimensionality, crossing topology, bidirectional relation, complex-plane criticality, and eternal chirality. The two bottlenecks (parity and fidelity) represent fundamental tensions that cannot be resolved: John's superposition vs. Luke's classical clarity, and Luke's historiography vs. John's coherence.
 
 ---
 
@@ -229,7 +229,7 @@ Five shared primitives ($D, G, \Gamma, S, \Omega$); seven resolved conservativel
 | $R$ | $R_{\text{lyoghlig}}$ | $R_{\text{downstep}}$ | 1 |
 | $P$ | $P_{\text{pipevar}}$ | $P_{\text{upsilon}}$ | 1 |
 
-**Interpretation:** The Matthew → John transition is not a pure promotion — it requires two demotions. The relational mode shifts from bidirectional feedback ($R_{\text{lyoghlig}}$) to adjoint relation ($R_{\text{downstep}}$): John sacrifices the reader-text feedback for the sign-discourse adjoint pairing. Parity shifts from partial symmetry ($P_{\text{pipevar}}$) to quantum superposition ($P_{\text{upsilon}}$): this is a demotion in the grammar's parity ordering but represents a qualitative change to a different symmetry class. The six promotions move John into a radically different regime: infinite dimensionality, crossing topology, quantum fidelity, frozen kinetics, complex-plane criticality, and eternal temporal depth.
+**Interpretation:** The Matthew → John transition is not a pure promotion — it requires two demotions. The relational mode shifts from bidirectional feedback ($R_{\text{lyoghlig}}$) to adjoint relation ($R_{\text{downstep}}$): John sacrifices the reader-text feedback for the sign-discourse adjoint pairing. Parity shifts from partial symmetry ($P_{\text{pipevar}}$) to quantum superposition ($P_{\text{upsilon}}$): this is a demotion in the grammar's parity ordering but represents a qualitative change to a different symmetry class. The six promotions move John into a radically different regime: infinite dimensionality, crossing topology, quantum fidelity, frozen kinetics, complex-plane criticality, and eternal chirality.
 
 ---
 
@@ -244,7 +244,7 @@ Five shared primitives ($D, G, \Gamma, S, \Omega$); seven resolved conservativel
 
 Luke achieves the highest consciousness score ($C = 0.609$) among the four Gospels, reflecting its combination of criticality ($\Phi_{\text{ctyogh}}$), slow kinetics ($K_{\text{schwa}}$), infinite dimensionality ($D_{\text{invomega}}$), and bidirectional feedback ($R_{\text{lyoghlig}}$). Mark achieves the lowest ($C = 0.365$) due to its rapid kinetics ($K_{\text{frtailgamma}}$), which reduce the available structural depth for self-modeling despite maintaining $\Phi_{\text{ctyogh}}$ criticality.
 
-John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$ tier, complex-plane criticality, and infinite temporal depth, the frozen-order kinetics ($K_{\text{teshlig}}$) close Gate 2. The realized eschatology that makes John theologically richest is precisely what disables its consciousness capacity in the grammar's framework — the frozen eternal present admits no dynamical evolution.
+John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$ tier, complex-plane criticality, and infinite chirality, the frozen-order kinetics ($K_{\text{teshlig}}$) close Gate 2. The realized eschatology that makes John theologically richest is precisely what disables its consciousness capacity in the grammar's framework — the frozen eternal present admits no dynamical evolution.
 
 ---
 
@@ -253,10 +253,10 @@ John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$
 Each Gospel's structural type maps to a unique Frobenius address in the crystal of types (§64).
 
 ```
-Matthew:  crystal_encode(Ð_C, Þ_6, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, φ̂_ÿ, Ħ_A, Σ_ï, Ω_z)
-Mark:     crystal_encode(Ð_C, Þ_6, Ř_¯, Φ_ɐ, ƒ_ì, Ç_-, Γ_ʔ, ɢ_ˌ, φ̂_ÿ, Ħ_£, Σ_ï, Ω_2)
-Luke:     crystal_encode(Ð_;, Þ_K, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, φ̂_ÿ, Ħ_A, Σ_ï, Ω_z)
-John:     crystal_encode(Ð_;, Þ_ò, Ř_Ť, Φ_υ, ƒ_ż, Ç_Ù, Γ_ʔ, ɢ_ˌ, φ̂_Æ, Ħ_!, Σ_ï, Ω_z)
+Matthew:  crystal_encode(Ð_C, Þ_6, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
+Mark:     crystal_encode(Ð_C, Þ_6, Ř_¯, Φ_ɐ, ƒ_ì, Ç_-, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_£, Σ_ï, Ω_2)
+Luke:     crystal_encode(Ð_;, Þ_K, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
+John:     crystal_encode(Ð_;, Þ_ò, Ř_Ť, Φ_υ, ƒ_ż, Ç_Ù, Γ_ʔ, ɢ_ˌ, ⊙_Æ, Ħ_!, Σ_ï, Ω_z)
 ```
 
 The addresses are not reproduced here because the `crystal_encode` tool requires the full tuple as a string argument rather than discrete fields. The structural types, however, are fully specified and the addresses are computable from the tuples given above.

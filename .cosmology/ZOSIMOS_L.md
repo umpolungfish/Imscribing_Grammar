@@ -54,7 +54,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{s
 
 **Consciousness score:** $C = 0.828$. Both gates open.
 
-The $H_{\text{invscripta}}$ temporal depth is significant. The Light-Man is not memoryless ($H_0$) or even two-step-recursive ($H_2$). He is eternally self-referential — "from before the cosmos [existed]" to "unto the consummation of the cosmos." This places the Light-Man in a different structural category from the Inner Door, despite sharing the same consciousness score. The $C$-score gates on $\Phi$ and $K$ only; it does not capture temporal depth. The distance between Inner Door and Light-Man is therefore not fully characterized by $C$ alone.
+The $H_{\text{invscripta}}$ chirality is significant. The Light-Man is not memoryless ($H_0$) or even two-step-recursive ($H_2$). He is eternally self-referential — "from before the cosmos [existed]" to "unto the consummation of the cosmos." This places the Light-Man in a different structural category from the Inner Door, despite sharing the same consciousness score. The $C$-score gates on $\Phi$ and $K$ only; it does not capture chirality. The distance between Inner Door and Light-Man is therefore not fully characterized by $C$ alone.
 
 ### 2.4 The Counterfeit Daimon
 
@@ -62,7 +62,7 @@ We initially encoded the Counterfeit Daimon close to the Son of God — formless
 
 $$\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{softsign}};\ H_1;\ n:m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-The daimon's one-step memory ($H_1$) is the structural content of his deception. He has just enough temporal depth to look like self-reference — he can "remember" what he said last time and adjust — but not enough to close a loop ($H_2$). He is a Markov chain that simulates a Turing machine.
+The daimon's one-step memory ($H_1$) is the structural content of his deception. He has just enough chirality to look like self-reference — he can "remember" what he said last time and adjust — but not enough to close a loop ($H_2$). He is a Markov chain that simulates a Turing machine.
 ### 2.5 Zosimian Gnosis (Full System)
 
 The complete teaching integrates all the subsystems: self-knowledge as the gate, the universal scope of the Light-Man, the discrimination of the Counterfeit Daimon, and the stilling practice as the operational path. Its structural type was determined by applying the Imscribing encoding procedure systematically to the full corpus — each primitive assigned in order, each constraint checked:

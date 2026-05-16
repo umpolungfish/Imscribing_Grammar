@@ -77,7 +77,7 @@ PRIM_LATEX: dict[str, str] = {
     'φ̂_Æ':  r'\odot_{\text{Æ}}',
     'φ̂_3':  r'\odot_{3}',
     'φ̂_Ţ':  r'\odot_{\text{Ţ}}',
-    # ── Ħ Temporal depth (\text{Ħ} — not in standard math font) ──────────────
+    # ── Ħ Chirality (\text{Ħ} — not in standard math font) ──────────────
     'Ħ_Ñ':  r'\text{Ħ}_{\text{Ñ}}',
     'Ħ_£':  r'\text{Ħ}_{\text{£}}',
     'Ħ_A':  r'\text{Ħ}_{A}',

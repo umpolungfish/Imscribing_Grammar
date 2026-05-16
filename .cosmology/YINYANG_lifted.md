@@ -4,7 +4,7 @@
 
 A system in the Imscribing Grammar is a 12-primitive tuple  
 $\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \⊙_ÿ;\ H;\ S;\ \Omega \rangle$  
-governing dimensionality, topology, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, temporal depth, stoichiometry, and topological winding.
+governing dimensionality, topology, relational mode, symmetry, fidelity, kinetics, scope, interaction grammar, criticality, chirality, stoichiometry, and topological winding.
 
 We analyze four canonical systems that model epistemic and moral oppositions: **truth**, **lie**, **good**, and **evil**. Each is defined below with its primitive assignment.
 

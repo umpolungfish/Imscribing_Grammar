@@ -100,7 +100,7 @@ add("Phi","c_complex", "closerevepsilon","Closed reversed epsilon = complex-plan
 add("Phi","EP",        "revepsilon",     "Reversed epsilon = exceptional point",        '"Revepsilon" /rɛvɛps/ = /ɛp/ of "EP"')
 add("Phi","super",     "upstep",         "Upward step = supercritical crossing",        '"Upstep" /ʌp/ = "sup" without /s/; up=above')
 
-# H — Temporal Depth (F4)
+# H — Chirality (F4)
 add("H","0",  "closeomega",    "Closed omega = zero memory closed temporal loop",      '"Closeomega" /kloʊz/ evokes zero as closed')
 add("H","1",  "toneletterstem","Tone letter stem = one stroke one step",               '"Tone" /toʊn/ contains /wʌn/ echo of "one"')
 add("H","2",  "turntwo",       "Turned 2 = two-step Markov memory depth",              '"Turntwo" /tuː/ = /tuː/ of "two"')

@@ -96,7 +96,7 @@ header-includes:
 | $\odot_{3}$ | exceptional point |
 | $\odot_{\text{Ţ}}$ | supercritical |
 
-## $Ħ$ — Temporal depth
+## $Ħ$ — Chirality
 
 | ID | Concept |
 |----|---------|

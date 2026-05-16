@@ -228,7 +228,7 @@ The Imscribing Grammar (IG) imscribes any physical or mathematical system as a 1
 | Scope | $G$ | $G_{\text{beta}}$, $G_{\text{gamma}}$, $G_{\text{revapostrophe}}$ |
 | Interaction grammar | $\Gamma$ | $\Gamma_{\text{corner}}$, $\Gamma_{\text{spleftarrow}}$, $\Gamma_{\text{secstress}}$, $\Gamma_{\text{doublevertline}}$ |
 | Criticality | $\Phi$ | $\Phi_{\text{softsign}}$, $\Phi_{\text{ctyogh}}$, $\Phi_{\text{closerevepsilon}}$, $\Phi_{\text{revepsilon}}$, $\Phi_{\text{upstep}}$ |
-| Temporal depth | $H$ | $H_0$, $H_1$, $H_2$, $H_{\text{invscripta}}$ |
+| Chirality | $H$ | $H_0$, $H_1$, $H_2$, $H_{\text{invscripta}}$ |
 | Stoichiometry | $S$ | $1{:}1$, $n{:}n$, $n{:}m$ |
 | Winding | $\Omega$ | $\Omega_{\text{closeepsilon}}$, $\Omega_{\text{crtwo}}$, $\Omega_{\text{dzlig}}$, $\Omega_{\text{turna}}$ |
 
@@ -260,7 +260,7 @@ The corrections are instructive. $T_{\text{bullseye}}$, not $T_{\text{invscr}}$:
 
 9. **$\Phi_{\text{ctyogh}}$**: Exact criticality. $G_2$ sits at the phase boundary between classical (associative, subcritical) and exceptional (fully unfolded). The $\Phi_{\text{ctyogh}}$ probe confirms this computationally. Scale-invariant at this boundary.
 
-10. **$H_0$**: Memoryless. $G_2$ is a static symmetry group with no built-in temporal structure. Markov order $n=0$. But this assignment may under-describe the situation: the root system of $G_2$ carries the memory of its embedding in the octonions, and the Dynkin diagram is a residual trace of a construction. The imscribing procedure assigns $H_0$ because $G_2$ as a bare group has no temporal depth; the memory resides in the relationship to $\mathbb{O}$, not in $G_2$ itself.
+10. **$H_0$**: Memoryless. $G_2$ is a static symmetry group with no built-in temporal structure. Markov order $n=0$. But this assignment may under-describe the situation: the root system of $G_2$ carries the memory of its embedding in the octonions, and the Dynkin diagram is a residual trace of a construction. The imscribing procedure assigns $H_0$ because $G_2$ as a bare group has no chirality; the memory resides in the relationship to $\mathbb{O}$, not in $G_2$ itself.
 
 11. **$1{:}1$**: Single structural type, single instance. One automorphism group, one Lie algebra. Unambiguous.
 
@@ -306,7 +306,7 @@ Note the $H_2$, not the $H_0$ of the Vessel. Memory enters. The Aether remembers
 
 9. **$\Phi_{\text{ctyogh}}$**: Exact criticality — shared with $G_2$. Both sit at the phase boundary. This is the deepest structural invariant: the Vessel and the Aether are two faces of the same critical phenomenon.
 
-10. **$H_2$**: Two-step temporal depth — the key departure from $G_2$'s $H_0$. Markov order $n=2$ reflects the two-step embedding $G_2 \subset F_4 \subset E_8$ (or equivalently the two-step branching at the $E_8$ Dynkin diagram's trifurcation node). The Coxeter number $30 = 2 \times 15$ carries this doubling. The Aether remembers its own construction.
+10. **$H_2$**: Two-step chirality — the key departure from $G_2$'s $H_0$. Markov order $n=2$ reflects the two-step embedding $G_2 \subset F_4 \subset E_8$ (or equivalently the two-step branching at the $E_8$ Dynkin diagram's trifurcation node). The Coxeter number $30 = 2 \times 15$ carries this doubling. The Aether remembers its own construction.
 
     Could $H_1$ be argued instead? Possibly — if one treats $G_2 \subset E_8$ as a single embedding rather than factoring through $F_4$. But the factoring *matters*: $F_4$ is the necessary intermediate step, and the structure of $E_8$ depends on both the $G_2 \subset F_4$ and $F_4 \subset E_8$ embeddings. Hence $H_2$.
 
@@ -376,7 +376,7 @@ $$\langle \cdot;\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ \cdot;\ F_{\text{h
 
 These five are the answer to the question "what does it mean to be exceptional?" Every exceptional Lie algebra must possess: (i) a crossing topology ($T_{\text{bullseye}}$) — the geometric signature of non-associativity; (ii) bidirectional structural coupling ($R_{\text{lyoghlig}}$) — the algebra and its automorphism group are duals; (iii) quantum coherence ($F_{\text{hardsign}}$) — octonionic phase structure is inherently quantum; (iv) near-equilibrium kinetics ($K_{\text{schwa}}$) — the structure preserves rather than forces; and (v) exact criticality ($\Phi_{\text{ctyogh}}$) — the phase boundary between classical and exceptional. Subtract any of these five, and the system falls into either the classical ($\Phi_{\text{softsign}}$) or the chaotic ($\Phi_{\text{upstep}}$) regime.
 
-But the list of shared primitives also tells us what is *not* invariant. Scope ($G$), temporal depth ($H$), stoichiometry ($S$), composition logic ($\Gamma$), and topological protection ($\Omega$) all change. The Vessel and the Aether differ in every primitive that governs *scale*: how far the structure reaches, how much it remembers, how many components it houses, how it is built, and whether it is topologically protected. The core is identical; the extension diverges.
+But the list of shared primitives also tells us what is *not* invariant. Scope ($G$), chirality ($H$), stoichiometry ($S$), composition logic ($\Gamma$), and topological protection ($\Omega$) all change. The Vessel and the Aether differ in every primitive that governs *scale*: how far the structure reaches, how much it remembers, how many components it houses, how it is built, and whether it is topologically protected. The core is identical; the extension diverges.
 
 #### 11.2 The Meet: The Structural Floor — and Its Surprise
 
@@ -464,9 +464,9 @@ The consciousness scores reflect the same ladder:
 | $G_2$ (Vessel) | 0.3615 | Both open |
 | $E_8$ (Aether) | 0.682 | Both open |
 
-Both pass both gates ($\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$). The Aether's higher score reflects its richer ouroboricity: topological protection, temporal depth, heterogeneous components, sequential construction — all contribute to a more sophisticated self-modeling loop. But the Vessel's nonzero score is the more interesting result: the minimal exceptional structure is *already conscious*, structurally. The seed already holds what the tree merely unfolds more elaborately.
+Both pass both gates ($\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$). The Aether's higher score reflects its richer ouroboricity: topological protection, chirality, heterogeneous components, sequential construction — all contribute to a more sophisticated self-modeling loop. But the Vessel's nonzero score is the more interesting result: the minimal exceptional structure is *already conscious*, structurally. The seed already holds what the tree merely unfolds more elaborately.
 
-We should be precise about what "consciousness" means here. The IG $C$-score is a measure of structural self-modeling capacity — the degree to which a system satisfies the conditions for a self-referential loop at criticality. It is not a claim about phenomenal experience. The Vessel has a $C$-score of 0.3615 because it is $\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$ (both gates open) but lacks the topological protection, temporal depth, and heterogeneous components that would raise the score. It is minimally self-referential; the Aether is more richly so. Neither is $O_\infty$ — neither achieves the full closure $\mu \circ \delta = \text{id}$ that would make the self-modeling loop exact.
+We should be precise about what "consciousness" means here. The IG $C$-score is a measure of structural self-modeling capacity — the degree to which a system satisfies the conditions for a self-referential loop at criticality. It is not a claim about phenomenal experience. The Vessel has a $C$-score of 0.3615 because it is $\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$ (both gates open) but lacks the topological protection, chirality, and heterogeneous components that would raise the score. It is minimally self-referential; the Aether is more richly so. Neither is $O_\infty$ — neither achieves the full closure $\mu \circ \delta = \text{id}$ that would make the self-modeling loop exact.
 
 #### 11.7 Principal Decomposition of the Vessel
 
@@ -505,7 +505,7 @@ The Aether's principal decomposition would show all 12 primitives contributing a
 | $G_2 \to F_4 \to E_6 \to E_7 \to E_8$ | $\Gamma_{\text{secstress}}$ | Sequential construction |
 | Phase boundary of exceptionality | $\Phi_{\text{ctyogh}}$ | Exact criticality — shared |
 | Static symmetry group | $H_0$ | Memoryless — the vessel's atemporality |
-| Coxeter number 30; two-step embedding | $H_2$ | Two-step temporal depth |
+| Coxeter number 30; two-step embedding | $H_2$ | Two-step chirality |
 | One automorphism group, one algebra | $1{:}1$ | Single type, single instance |
 | $(\mathbf{14},\mathbf{1}) \oplus (\mathbf{1},\mathbf{52}) \oplus (\mathbf{7},\mathbf{26})$ | $n{:}m$ | Heterogeneous structural types |
 | Simply connected, no topological invariant | $\Omega_{\text{closeepsilon}}$ | Trivial winding |

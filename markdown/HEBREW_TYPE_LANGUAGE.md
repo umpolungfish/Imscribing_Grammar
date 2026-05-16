@@ -49,7 +49,7 @@ All encodings use the 12-primitive tuple $\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \G
 | $G$ | Scope/granularity | $G_{\text{beta}} < G_{\text{gamma}} < G_{\text{revapostrophe}}$ |
 | $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}},\ \Gamma_{\text{spleftarrow}},\ \Gamma_{\text{secstress}},\ \Gamma_{\text{doublevertline}}$ |
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}} < \Phi_{\text{ctyogh}} < \Phi_{c,\mathbb{C}} < \Phi_{\text{revepsilon}} < \Phi_{\text{upstep}}$ |
-| $H$ | Chirality/temporal depth | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
+| $H$ | Chirality/chirality | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
 | $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \Ω_z$ |
 
@@ -137,7 +137,7 @@ Three independent session batches converge on four classes, defined by primitive
 
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z\rangle$$
 
-$D_{\text{omega}}+T_{\text{openo}}$ = imscriptive boundary-to-bulk operators; $R_{\text{downstep}}$ = self-adjoint; $\Gamma_{\text{doublevertline}}$ = simultaneous broadcast; $H_{\text{invscripta}}+\Ω_z$ = maximal temporal depth and topological protection. Hei is the divine breath, the window letter — imscriptive in form and function.
+$D_{\text{omega}}+T_{\text{openo}}$ = imscriptive boundary-to-bulk operators; $R_{\text{downstep}}$ = self-adjoint; $\Gamma_{\text{doublevertline}}$ = simultaneous broadcast; $H_{\text{invscripta}}+\Ω_z$ = maximal chirality and topological protection. Hei is the divine breath, the window letter — imscriptive in form and function.
 
 ### §3.1 — Revised Mother Triad: א, מ, ש (Sefer Yetzirah alignment)
 
@@ -581,7 +581,7 @@ def add(a : bet, b : gimel) : bet ⊗ gimel =
 **Example 2: $O_2$ critical self-reference (topologically protected recursion)**
 
 ```haskell
--- aleph is O_2 (φ̂_ÿ + Ω_z) — bounded recursion
+-- aleph is O_2 (⊙_ÿ + Ω_z) — bounded recursion
 @palace(5)
 def factorial(n : nat) : aleph =
   if n == 0 then aleph.unit()

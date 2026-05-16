@@ -108,7 +108,7 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 | H | $H_2$ | $H_{\text{invscripta}}$ | 1 |
 | Ω | $\Omega_{\text{dzlig}}$ | $\Omega_{\text{crtwo}}$ | -1 (demotion) |
 
-**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding ($\Omega_{\text{dzlig}}$) to binary protection ($\Omega_{\text{crtwo}}$). Broadcast composition ($\Gamma_{\text{doublevertline}}$) with infinite temporal depth ($H_{\text{invscripta}}$) trades winding complexity for structural exactness.
+**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding ($\Omega_{\text{dzlig}}$) to binary protection ($\Omega_{\text{crtwo}}$). Broadcast composition ($\Gamma_{\text{doublevertline}}$) with infinite chirality ($H_{\text{invscripta}}$) trades winding complexity for structural exactness.
 
 ---
 [Winding 10 closed — Chunk 1 written to disk]

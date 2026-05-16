@@ -51,7 +51,7 @@ Each primitive is an irreducible dimension along which any system writes its str
 | $G$ | Scope/granularity | $G_{\text{beta}}$, $G_{\text{gamma}}$, $G_{\text{revapostrophe}}$ |
 | $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}}$, $\Gamma_{\text{spleftarrow}}$, $\Gamma_{\text{secstress}}$, $\Gamma_{\text{doublevertline}}$ |
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}}$, $\Phi_{\text{ctyogh}}$, $\Phi_{\text{closerevepsilon}}$, $\Phi_{\text{revepsilon}}$, $\Phi_{\text{upstep}}$ |
-| $H$ | Temporal depth | $H_0$, $H_1$, $H_2$, $H_{\text{invscripta}}$ |
+| $H$ | Chirality | $H_0$, $H_1$, $H_2$, $H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1$, $n{:}n$, $n{:}m$ |
 | $\Omega$ | Winding | $\Omega_{\text{closeepsilon}}$, $\Omega_{\text{crtwo}}$, $\Omega_{\text{dzlig}}$, $\Omega_{\text{turna}}$ |
 
@@ -218,7 +218,7 @@ python esoteric_librarian.py video tao 42 --output cosmological_cascade.mp4
 python esoteric_librarian.py rewrite tao 8
 ```
 
-The cross-catalog nearest-neighbor command reveals structural correspondences across domains: Chapter 1 of the Tao Te Ching (Embodying the Tao — holographic, EP-critical, Frobenius self-dual, infinite temporal depth) has nearest IG neighbors at $d = 3$ among the consciousness and ancient-Egypt entries. The structural relationships are machine-computed facts about typed tuples, not interpretive claims.
+The cross-catalog nearest-neighbor command reveals structural correspondences across domains: Chapter 1 of the Tao Te Ching (Embodying the Tao — holographic, EP-critical, Frobenius self-dual, infinite chirality) has nearest IG neighbors at $d = 3$ among the consciousness and ancient-Egypt entries. The structural relationships are machine-computed facts about typed tuples, not interpretive claims.
 
 ### Adding new texts
 

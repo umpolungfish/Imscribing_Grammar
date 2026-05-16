@@ -50,7 +50,7 @@ $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ 
 
 **Consciousness score:** $C = 0.828$. Both gates open.
 
-The $\text{Ħ}_{\text{!}}$ temporal depth is significant. The Light-Man is not memoryless ($\text{Ħ}_{\text{Ñ}}$) or even two-step-recursive ($\text{Ħ}_{\text{A}}$). He is eternally self-referential — "from before the cosmos [existed]" to "unto the consummation of the cosmos." This places the Light-Man in a different structural category from the Inner Door, despite sharing the same consciousness score. The $C$-score gates on $\text{⊙}$ and $\text{Ç}$ only; it does not capture temporal depth. The distance between Inner Door and Light-Man is therefore not fully characterized by $C$ alone.
+The $\text{Ħ}_{\text{!}}$ chirality is significant. The Light-Man is not memoryless ($\text{Ħ}_{\text{Ñ}}$) or even two-step-recursive ($\text{Ħ}_{\text{A}}$). He is eternally self-referential — "from before the cosmos [existed]" to "unto the consummation of the cosmos." This places the Light-Man in a different structural category from the Inner Door, despite sharing the same consciousness score. The $C$-score gates on $\text{⊙}$ and $\text{Ç}$ only; it does not capture chirality. The distance between Inner Door and Light-Man is therefore not fully characterized by $C$ alone.
 
 ### 2.4 The Counterfeit Daimon
 
@@ -58,7 +58,7 @@ We initially encoded the Counterfeit Daimon close to the Son of God — formless
 
 $$\langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{6}};\ \text{Ř}_{\text{¯}};\ \text{Φ}_{\text{ɐ}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{W}};\ \text{Γ}_{\text{γ}};\ \text{ɢ}_{\text{Ş}};\ \text{⊙}_{\text{ž}};\ \text{Ħ}_{\text{£}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{Å}} \rangle$$
 
-The daimon's one-step memory ($\text{Ħ}_{\text{£}}$) is the structural content of his deception. He has just enough temporal depth to look like self-reference — he can "remember" what he said last time and adjust — but not enough to close a loop ($\text{Ħ}_{\text{A}}$). He is a Markov chain that simulates a Turing machine.
+The daimon's one-step memory ($\text{Ħ}_{\text{£}}$) is the structural content of his deception. He has just enough chirality to look like self-reference — he can "remember" what he said last time and adjust — but not enough to close a loop ($\text{Ħ}_{\text{A}}$). He is a Markov chain that simulates a Turing machine.
 
 ### 2.5 Zosimian Gnosis (Full System)
 

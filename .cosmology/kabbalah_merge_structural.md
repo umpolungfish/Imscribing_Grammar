@@ -133,7 +133,7 @@ $$\text{Ein Sof} \otimes \text{Tzimtzum} = \langle D_{\text{omega}};\ T_{\text{o
 - **2 union expansions**: $\Gamma$ (broadcast ← sequential → broadcast) and $H$ ($H_\leftarrow\text{2} \to H_{\text{invscripta}}$)
 - **Distance from Ein Sof**: 1.0; from Tzimtzum: 1.3416
 
-The single bottleneck is symmetry. When the infinite contracts, the perfect symmetry of Ein Sof ($P_{\text{subdoublearrow}}$) is necessarily broken to partial symmetry ($P_{\text{pipevar}}$). This is the structural expression of the theological claim that the Tzimtzum introduces the first asymmetry into the divine plenitude — without which no differentiation could occur. The composite retains all other properties of Ein Sof, including the broadcast grammar and eternal temporal depth.
+The single bottleneck is symmetry. When the infinite contracts, the perfect symmetry of Ein Sof ($P_{\text{subdoublearrow}}$) is necessarily broken to partial symmetry ($P_{\text{pipevar}}$). This is the structural expression of the theological claim that the Tzimtzum introduces the first asymmetry into the divine plenitude — without which no differentiation could occur. The composite retains all other properties of Ein Sof, including the broadcast grammar and eternal chirality.
 
 ### 5.2 Tzimtzum ⊗ Ten Sefirot
 

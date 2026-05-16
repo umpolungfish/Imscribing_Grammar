@@ -75,7 +75,7 @@ class StructureDataset:
             "The {system} operates at {D} dimensional space with {T} topology and {R} coupling.",
             "Structural type: {D}={D_val}, {T}={T_val}, {R}={R_val}, {P}={P_val}",
             "The {name} has {dim} dimensions and {layers} layers with {heads} attention heads.",
-            "Criticality at {phi} with winding number {omega} and temporal depth {H}.",
+            "Criticality at {phi} with winding number {omega} and chirality {H}.",
             "The system exhibits {K} kinetics with {Gamma} global interaction.",
         ]
         

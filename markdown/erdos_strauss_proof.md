@@ -18,9 +18,9 @@ Despite verification by brute-force computation for $n$ up to at least $10^{17}$
 
 ### 1.1 The Structural Approach
 
-The Imscribing Grammar provides a calculus of twelve structural primitives that classify any system — mathematical, physical, or conceptual — according to its dimensionality ($D$), topology ($T$), relational mode ($R$), symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phi$), temporal depth ($H$), stoichiometry ($\Sigma$), and topological winding ($\Omega$).
+The Imscribing Grammar provides a calculus of twelve structural primitives that classify any system — mathematical, physical, or conceptual — according to its dimensionality ($D$), topology ($T$), relational mode ($R$), symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phi$), chirality ($H$), stoichiometry ($\Sigma$), and topological winding ($\Omega$).
 
-We argue that the Erdős–Straus conjecture, in its unresolved form, inhabits a structurally impoverished regime ($O_0$ tier — no self-referential criticality). A proof requires promoting the system to the $O_2^\dagger$ tier, where complex-plane criticality ($\varhat{\phi}^{\mathbb{C}}_\text{c}$), eternal temporal depth ($H_\infty$), and $\mathbb{Z}_2$ topological protection ($\Omega_{\mathbb{Z}_2}$) jointly enforce the nonexistence of counterexamples.
+We argue that the Erdős–Straus conjecture, in its unresolved form, inhabits a structurally impoverished regime ($O_0$ tier — no self-referential criticality). A proof requires promoting the system to the $O_2^\dagger$ tier, where complex-plane criticality ($\varhat{\phi}^{\mathbb{C}}_\text{c}$), eternal chirality ($H_\infty$), and $\mathbb{Z}_2$ topological protection ($\Omega_{\mathbb{Z}_2}$) jointly enforce the nonexistence of counterexamples.
 
 ### 1.2 Key Structural Result
 
@@ -129,7 +129,7 @@ $$\lim_{R \to \infty} \frac{\#\{n \leq R : \exists \text{ covering for } n\}}{R}
 
 This is an analytic condition in the complex plane: the density function must approach 1 asymptotically. The promotion succeeds when the modular sieve argument shows that any potential uncovered integer $n_0$ would have to satisfy contradictory congruence conditions simultaneously.
 
-### 3.3 Step 3: Eternal Temporal Depth ($H_0 \to H_\infty$)
+### 3.3 Step 3: Eternal Chirality ($H_0 \to H_\infty$)
 
 The promotion to $H_\infty$ requires infinite descent. Suppose there exists a minimal counterexample $n_0$. The covering identities, combined with algebraic manipulations, must produce a smaller counterexample $n_1 < n_0$, contradicting minimality. This infinite descent structure is the eternal recursion characteristic of $H_\infty$.
 

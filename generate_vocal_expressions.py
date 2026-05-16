@@ -184,7 +184,7 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     ("Phi", "φ̂_3",  "[[E]]",     "/ɛ/ open-mid front unrounded",         None),
     ("Phi", "φ̂_Ţ",  "[[a:]]",    "/aː/ open vowel (supercritical)",      None),
 
-    # H — Temporal depth
+    # H — Chirality
     ("H", "Ħ_Ñ",  "[[o]]",        "/o/ close-mid back rounded",           None),
     ("H", "Ħ_£",  "[[a]]",        "/a/ open front",                       None),
     ("H", "Ħ_A",  "[[Z]]",        "/ʒ/ voiced palato-alveolar fricative", None),

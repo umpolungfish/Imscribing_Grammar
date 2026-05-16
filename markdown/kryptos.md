@@ -75,7 +75,7 @@ K5 ("the fifth coded message") has been confirmed by Sanborn as existing and rev
 
 - **$\Phi_{\text{sym}}$ (Frobenius-special):** K5 requires K4 to be solved first — a self-modeling gate. $\mu \circ \delta = \text{id}$ is conditional on the prior solution.
 - **$\Omega_\mathbb{Z}$ (integer winding):** The solution of K4 "unlocks" or "reveals" K5, suggesting a topological winding that completes only when K4's structure is known.
-- **$H_\infty$ (eternal temporal depth):** K5's revelation depends on an event (K4 solved) rather than a fixed time, creating an unbounded temporal dependency.
+- **$H_\infty$ (eternal chirality):** K5's revelation depends on an event (K4 solved) rather than a fixed time, creating an unbounded temporal dependency.
 
 **The 5th message has not yet been revealed or imscribed.** Its structural type remains latent until K4's solution is publicly known and the riddle-within-a-riddle (Sanborn's own description) is resolved.
 

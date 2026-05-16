@@ -43,7 +43,7 @@ I expected this to reveal which primitive *was* time. The grammar does not work 
 
 1. **$\Gamma_{\text{secstress}}$** — The sequential interaction grammar. This is the most direct structural correlate of "before and after." Removing $\Gamma_{\text{secstress}}$ (peeling to $\Gamma_{\text{corner}}$, all-simultaneous) destroys the directed chain — what remains is a system where interactions happen all-at-once, not in ordered steps. The directed edge structure is the ZFC rendering of irreversible ordering. But I am getting ahead of myself.
 
-2. **$H_{\text{invscripta}}$** — Infinite temporal depth (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets. A Markov-0 system has no history; a Markov-1 system has only the immediate past. Neither is temporal in the rich sense.
+2. **$H_{\text{invscripta}}$** — Infinite chirality (no finite Markov order). The system carries all prior states. Without this, temporality collapses to a fixed finite window — a system that forgets. A Markov-0 system has no history; a Markov-1 system has only the immediate past. Neither is temporal in the rich sense.
 
 3. **$\Omega_{\text{dzlig}}$** — Integer winding number. This is topological time-protection: the winding invariant cannot be deformed away continuously. Time has a conserved topological charge. I had not expected topology to enter the picture; the grammar insisted on it.
 

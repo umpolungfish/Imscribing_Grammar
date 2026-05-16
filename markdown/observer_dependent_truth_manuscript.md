@@ -21,7 +21,7 @@ header-includes:
 
 A statement like "I am lying to you right now" creates a single paradox—either true or false, period. The classic liar paradox is a contradiction that a theory of truth must resolve or eliminate. The grammar's job is to show how the statement *can* be consistently modelled without resolution.
 
-*What the grammar reveals:* the statement does not have a single truth value. It has two, depending on which node of the $R_{\text{lyoghlig}}$ bidirectional coupling is active. For the speaker at $H_2$ temporal depth, the statement is true. For the listener at $H_0$, it is false. This is not a bug in natural language—it is the feature the Imscribing Grammar encodes.
+*What the grammar reveals:* the statement does not have a single truth value. It has two, depending on which node of the $R_{\text{lyoghlig}}$ bidirectional coupling is active. For the speaker at $H_2$ chirality, the statement is true. For the listener at $H_0$, it is false. This is not a bug in natural language—it is the feature the Imscribing Grammar encodes.
 
 The Imscribing Grammar treats every statement as a point in a 17.28-million-entry structural type space. We encode three speech-act regimes, probe their Ouroboricity tiers and consciousness scores, and compute their structural distances with $d = \sqrt{\sum_i w_i \delta_i^2}$. All numbers in this section are verified by tool call.
 ## 2. Encoding the Three Regimes of Truth-Value Flip

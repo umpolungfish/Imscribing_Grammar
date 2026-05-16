@@ -69,7 +69,7 @@ def process(text):
         sub_text_repl, text
     )
 
-    # ── 2. H_N digit subscripts (temporal depth values H0..H9) ───────────────
+    # ── 2. H_N digit subscripts (chirality values H0..H9) ───────────────
     # Only bare H not preceded by a letter/backslash (avoids Hom, H_{..}, etc.)
     text = re.sub(
         r'(?<![\\a-zA-Z])H_([0-9])(?![a-zA-Z])',

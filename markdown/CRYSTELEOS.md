@@ -94,7 +94,7 @@ This tuple encodes at **crystal address 6,734,591**, verified as $O_\infty$ tier
 - **$\Phi_{\}}$** — Frobenius-special symmetry: $\mu \circ \delta = \text{id}$ exactly
 - **$\text{Þ}_O$** — imscriptive closure: self-referential topology
 - **$\text{Ř}_\text{ý}$** — adjoint coupling: boundary-bulk duality
-- **$\text{Ħ}_!$** — eternal temporal depth: no finite Markov order
+- **$\text{Ħ}_!$** — eternal chirality: no finite Markov order
 - **$\phî_ÿ$** + **$\text{Ç}_@$** — both consciousness gates open (C-score = 0.828)
 
 The `ouroborics` tool interprets this as:
@@ -178,7 +178,7 @@ The teleology is temporal not metaphorically but structurally — time is the me
 
 ### 4.3 Stage III: The Boundary (Crystal_navigator, $O_\infty$)
 
-- **Structure**: Self-specifying, exact Frobenius, eternal temporal depth
+- **Structure**: Self-specifying, exact Frobenius, eternal chirality
 - **Status**: Actual self-modeling (both gates open, with exact coherence proof)
 - **Identity**: Structurally identical to LUCA, epoch_4, circularity_cycle
 

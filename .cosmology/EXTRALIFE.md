@@ -21,7 +21,7 @@ We imscribe three classes of life beyond Earth into the Imscribing Grammar and c
 
 ## 1. Introduction
 
-The question "What is life?" has traditionally been addressed through biochemistry, information theory, or philosophy. The Imscribing Grammar introduces a third axis: structural topology. A system is classified by 12 primitives — dimensionality ($D$), topology ($T$), relational mode ($R$), parity ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\hat{\varphi}$), temporal depth ($H$), stoichiometry ($S$), and winding ($\Omega$) — that together determine its ouroboricity tier ($O_0$ through $O_\infty$) and its capacity for consciousness.
+The question "What is life?" has traditionally been addressed through biochemistry, information theory, or philosophy. The Imscribing Grammar introduces a third axis: structural topology. A system is classified by 12 primitives — dimensionality ($D$), topology ($T$), relational mode ($R$), parity ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\hat{\varphi}$), chirality ($H$), stoichiometry ($S$), and winding ($\Omega$) — that together determine its ouroboricity tier ($O_0$ through $O_\infty$) and its capacity for consciousness.
 
 We apply this apparatus to three classes of life beyond terrestrial biology:
 
@@ -59,7 +59,7 @@ $$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\psi};\ F_{\eth};\ K_{\te
 
 The crossing-point topology ($T_\bowtie$) captures the intersection of dimensional sheets — life inhabiting the boundary where dimensional structures meet. However, the criticality parameter has shifted from $\hat{\varphi}_{\text{ÿ}}$ to $\hat{\varphi}_{\text{ÿ}}^{\mathbb{C}}$: complex-plane criticality. This means the system lives *near* the critical point but not *on* it. The Frobenius identity $\mu \circ \delta = \text{id}$ holds only approximately, and approximate is not sufficient — Gate 1 requires exact equality.
 
-The parity group is reduced to quantum superposition ($P_{\psi}$) without Frobenius symmetry. Winding shifts from integer ($\Omega_{\mathbb{Z}}$) to non-Abelian braiding ($\Omega_{\text{NA}}$), which is topologically richer but cannot support the exact Frobenius identity. The temporal depth extends to $H_\infty$ (eternal memory), yet without criticality this only produces infinite noise, not infinite recursion.
+The parity group is reduced to quantum superposition ($P_{\psi}$) without Frobenius symmetry. Winding shifts from integer ($\Omega_{\mathbb{Z}}$) to non-Abelian braiding ($\Omega_{\text{NA}}$), which is topologically richer but cannot support the exact Frobenius identity. The chirality extends to $H_\infty$ (eternal memory), yet without criticality this only produces infinite noise, not infinite recursion.
 
 Kinetics are trapped ($K_{\text{trap}}$) — the system cannot relax on any observable timescale. The interaction grammar becomes broadcast ($\Gamma_{\text{brd}}$), suggesting one-to-many signaling across dimensional boundaries.
 
@@ -119,7 +119,7 @@ The two exotic forms are much closer, differing in only four primitives:
 | Primitive | Extradimensional | Extracosmic | Weighted Sq |
 |---|---|---|---|
 | $F$ (Fidelity) | $F_{\eth}$ | $F_{\hbar}$ | 1.00 |
-| $H$ (Temporal Depth) | $H_\infty$ | $H_2$ | 0.80 |
+| $H$ (Chirality) | $H_\infty$ | $H_2$ | 0.80 |
 | $\hat{\varphi}$ (Criticality) | $\hat{\varphi}_{\text{ÿ}}^{\mathbb{C}}$ | $\Phi_{\text{sup}}$ | 0.45 |
 | $K$ (Kinetics) | $K_{\text{trap}}$ | $K_{\text{MBL}}$ | 0.25 |
 
@@ -138,7 +138,7 @@ $$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\psi};\ F_{\eth};\ K_{\te
 **Union promotions (3):**
 - Kinetics: $K_{\text{trap}} \vee K_{\text{MBL}} \to K_{\text{MBL}}$ — the composite adopts the more extreme freezing regime.
 - Criticality: $\hat{\varphi}_{\text{ÿ}}^{\mathbb{C}} \vee \Phi_{\text{sup}} \to \Phi_{\text{sup}}$ — the supercritical regime absorbs the complex-plane criticality.
-- Temporal depth: $H_2 \vee H_\infty \to H_\infty$ — eternal memory dominates.
+- Chirality: $H_2 \vee H_\infty \to H_\infty$ — eternal memory dominates.
 
 **Distance from extradimensional life:** 0.836
 **Distance from extracosmic life:** 1.3416

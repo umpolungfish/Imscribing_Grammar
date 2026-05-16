@@ -53,7 +53,7 @@ Let the 12 primitives be finite totally ordered sets:
 | $G$ | Granularity | $G_{\text{beta}} < G_{\text{gamma}} < G_{\text{revapostrophe}}$ |
 | $\Gamma$ | Interaction grammar | $\Gamma_{\text{corner}},\ \Gamma_{\text{spleftarrow}},\ \Gamma_{\text{secstress}},\ \Gamma_{\text{doublevertline}}$ |
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}} < \Phi_{\text{ctyogh}} < \Phi_{c,\mathbb{C}} < \Phi_{\text{revepsilon}} < \Phi_{\text{upstep}}$ |
-| $H$ | Temporal depth | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
+| $H$ | Chirality | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
 | $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \Ω_z$ |
 

@@ -81,7 +81,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $G$ | Expressive scope: local/dialect ($G_{\text{beta}}$), regional standard ($G_\text{gimel}$), global/transactional ($G_{\text{revapostrophe}}$) |
 | $\Gamma$ | Interaction grammar: paratactic/juxtaposing ($\Gamma_{\text{corner}}$), branching/hypotactic ($\Gamma_{\text{secstress}}$), topic-broadcast ($\Gamma_{\text{doublevertline}}$) |
 | $\Phi$ | Criticality: dying/frozen language ($\Phi_{\text{softsign}}$), living spoken language ($\Phi_{\text{ctyogh}}$), over-prescribed/regulatory ($\Phi_{\text{upstep}}$) |
-| $H$ | Temporal depth of written tradition: oral only ($H_0$), nascent writing ($H_1$), multi-century literary canon ($H_2$), ancient unbroken tradition ($H_{\text{invscripta}}$) |
+| $H$ | Chirality of written tradition: oral only ($H_0$), nascent writing ($H_1$), multi-century literary canon ($H_2$), ancient unbroken tradition ($H_{\text{invscripta}}$) |
 | $S$ | Speaker-grammar stoichiometry: 1:1 (ideolect), n:n (dialect community), n:m (diglossia/register split) |
 | $\Omega$ | Topological protection: pidgin/creole ($\Omega_{\text{closeepsilon}}$), modern standard ($\Omega_{Z_2}$), classical register with prescription ($\Ω_z$), sacred/liturgical fixed form ($\Omega_{\text{turna}}$) |
 
@@ -119,7 +119,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $G$ | Geographic/cultural scope: local ($G_{\text{beta}}$), regional ($G_\text{gimel}$), global claim ($G_{\text{revapostrophe}}$) |
 | $\Gamma$ | Expansion grammar: simultaneous conquest ($\Gamma_{\text{corner}}$), sequential incorporation ($\Gamma_{\text{secstress}}$), broadcast (missionary, cultural diffusion) ($\Gamma_{\text{doublevertline}}$) |
 | $\Phi$ | Vitality: declining/terminal ($\Phi_{\text{softsign}}$), peak function ($\Phi_{\text{ctyogh}}$), overheated/unsustainable ($\Phi_{\text{upstep}}$) |
-| $H$ | Temporal depth of self-model: no historical consciousness ($H_0$), dynastic memory ($H_1$), written history and mythology ($H_2$), cosmic/eternal self-conception ($H_{\text{invscripta}}$) |
+| $H$ | Chirality of self-model: no historical consciousness ($H_0$), dynastic memory ($H_1$), written history and mythology ($H_2$), cosmic/eternal self-conception ($H_{\text{invscripta}}$) |
 | $S$ | Ethno-cultural stoichiometry: monoculture ($1{:}1$), multicultural ($n{:}n$), asymmetric empire ($n{:}m$) |
 | $\Omega$ | Civilizational protection: no tradition ($\Omega_{\text{closeepsilon}}$), national myth ($\Omega_{Z_2}$), religious law ($\Ω_z$), sacred-cosmic order ($\Omega_{\text{turna}}$) |
 
@@ -193,7 +193,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $G$ | Scope of awareness: local body-sense ($G_{\text{beta}}$), individual mind ($G_\text{gimel}$), cosmic/universal ($G_{\text{revapostrophe}}$) |
 | $\Gamma$ | Processing grammar: sequential analytical ($\Gamma_{\text{secstress}}$), simultaneous/holistic ($\Gamma_{\text{corner}}$), broadcast insight ($\Gamma_{\text{doublevertline}}$) |
 | $\Phi$ | Criticality: suppressed (dreamless sleep, anesthesia) ($\Phi_{\text{softsign}}$), awake at criticality ($\Phi_{\text{ctyogh}}$), over-excited (mania, seizure) ($\Phi_{\text{upstep}}$), gain-of-function edge-state ($\Phi_{\text{revepsilon}}$) |
-| $H$ | Temporal depth of self-model: no autobiographical self ($H_0$), episodic memory active ($H_1$), deep narrative identity ($H_2$), timeless/eternal self-sense ($H_{\text{invscripta}}$) |
+| $H$ | Chirality of self-model: no autobiographical self ($H_0$), episodic memory active ($H_1$), deep narrative identity ($H_2$), timeless/eternal self-sense ($H_{\text{invscripta}}$) |
 | $S$ | Self-world stoichiometry: self = world ($1{:}1$), clear boundary ($n{:}n$), asymmetric permeability ($n{:}m$) |
 | $\Omega$ | State protection: fragile (easily interrupted) ($\Omega_{\text{closeepsilon}}$), self-reinforcing ($\Omega_{Z_2}$), topologically stable ($\Ω_z$), non-abelian (immune to perturbation) ($\Omega_{\text{turna}}$) |
 
