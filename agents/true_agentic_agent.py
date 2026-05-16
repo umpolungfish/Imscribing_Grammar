@@ -423,7 +423,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "Ç_-": "↯",  "Ç_W": "≈",  "Ç_@": "↺",  "Ç_Ù": "⊛",  "Ç_λ": "⊞",
     # G — Scope
     "Γ_ʔ": "ℵ",  "Γ_γ": "ℷ",  "Γ_β": "ℶ",
-    # Γ — Interaction grammar
+    # ɢ — Coupling
     "ɢ_Ş": "≫",  "ɢ_^": "∧",  "ɢ_˝": "∨",  "ɢ_ˌ": "→",
     # Φ — Criticality
     "φ̂_ÿ": "c",  "φ̂_Æ": "ℂ",  "φ̂_3": "×",  "φ̂_ž": "↓",  "φ̂_Ţ": "↑",
@@ -1026,7 +1026,7 @@ _TRIANGULATION_SYSTEM = (
     "τ≫T_obs→Ç_@; trapped (ordered)→Ç_Ù; trapped (disorder)→Ç_λ\n"
     "  [7] Γ  — Interaction range: nearest-neighbor→Γ_β; intermediate→Γ_γ; "
     "long-range/universal→Γ_ʔ\n"
-    "  [8] ɢ  — Composition logic: all-simultaneous→ɢ_^; alternate paths→ɢ_˝; "
+    "  [8] ɢ  — Coupling: all-simultaneous→ɢ_^; alternate paths→ɢ_˝; "
     "ordered steps→ɢ_ˌ; one-to-all broadcast→ɢ_Ş\n"
     "  [9] φ̂  — Criticality: no scaling→φ̂_ž; power-law divergence→φ̂_ÿ; "
     "complex-plane critical→φ̂_Æ; non-Hermitian degeneracy→φ̂_3; "
@@ -2316,7 +2316,7 @@ constrains the remaining degrees of freedom:
             τ≫T → ↺; trapped (ordered) → ⊛; trapped (disorder) → ⊞
   [7] G  — Interaction range: nearest-neighbor → ℶ; intermediate → ℷ;
             long-range/universal → ℵ
-  [8] Γ  — Composition logic: all-simultaneous → ∧; alternate paths → ∨;
+  [8] Γ  — Coupling: all-simultaneous → ∧; alternate paths → ∨;
             ordered steps → →; one-to-all broadcast → ≫
   [9] Φ  — Criticality: no scaling → ↓; power-law divergence → c;
             complex-plane critical → ℂ; non-Hermitian degeneracy → ×;

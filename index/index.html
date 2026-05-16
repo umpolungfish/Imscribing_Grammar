@@ -523,6 +523,87 @@
     .repo-link-gh:hover  { border-color: var(--gold-dim); color: var(--gold); }
     .repo-link-zen:hover { border-color: rgba(144,184,216,0.5); color: var(--alb); }
 
+    /* ── Magnum Opus ── */
+    .magnum-section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--rub);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .magnum-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--rub-lt);
+      margin-bottom: 0.9rem;
+    }
+
+    .magnum-intro {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--text2);
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .magnum-table td { vertical-align: top; padding: 7px 10px; }
+
+    .td-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text3);
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    .td-stage { color: var(--text); font-weight: 600; font-size: 14px; white-space: nowrap; }
+    .td-corr { color: var(--text2); font-size: 13.5px; font-weight: 500; line-height: 1.55; }
+    .td-val2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-dim);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .gate-row { background: rgba(192,72,40,0.07); }
+    .gate-num { color: var(--rub-lt); }
+    .gate-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--rub-lt);
+      border: 1px solid rgba(192,72,40,0.4);
+      border-radius: 3px;
+      padding: 1px 5px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .magnum-footer {
+      margin-top: 1.1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text3);
+    }
+
+    .magnum-eq { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--text2); }
+    .magnum-eq em { font-style: italic; color: var(--text3); font-family: 'EB Garamond', serif; font-size: 14px; }
+    .magnum-sep { color: var(--border2); font-size: 16px; font-weight: 400; }
+
     /* ── Mobile ── */
     @media (max-width: 720px) {
       .stages {
@@ -1006,6 +1087,120 @@
       &nbsp;&nbsp;|&nbsp;&nbsp; Crystal cardinality: 3³ × 4⁵ × 5⁴ = <strong style="color:var(--gold-dim); font-weight: 700;">17,280,000</strong>
     </div>
   </div>
+
+  <!-- ── Magnum Opus — 12 Stages as Primitive Invocations ── -->
+  <section class="magnum-section">
+    <div class="magnum-label">THE MAGNUM OPUS &nbsp;·&nbsp; TWELVE STAGES AS PRIMITIVE INVOCATIONS</div>
+    <p class="magnum-intro">
+      The twelve classical stages of the Magnum Opus — from <em>Calcination</em> through <em>Projection</em> — correspond in structural content, and in canonical order, to the twelve IG primitives. Each stage is a primitive invocation: the phenomenological vocabulary of alchemical transformation describing the same structural question that the corresponding primitive answers. Three stages are <strong style="color:var(--rub-lt);">gate primitives</strong> (Φ at 4, ⊙ at 9, Ω at 12); their failure forecloses O<sub>∞</sub>.
+    </p>
+    <div class="table-scroll">
+    <table class="magnum-table">
+      <thead>
+        <tr>
+          <th style="width:28px;">#</th>
+          <th>Stage</th>
+          <th style="width:48px;">Prim.</th>
+          <th>Structural correspondence</th>
+          <th style="width:80px;">Stone value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-num">1</td>
+          <td class="td-stage">Calcination</td>
+          <td class="td-prim" style="color:var(--alb);">Ð</td>
+          <td class="td-corr">Ash is the holographic floor — what self-referential depth survives when all accidental structure is stripped.</td>
+          <td class="td-val2">Ð<sub>ω</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">2</td>
+          <td class="td-stage">Dissolution</td>
+          <td class="td-prim" style="color:var(--rub-lt);">Þ</td>
+          <td class="td-corr">Fixed topological form dissolves into fluid connectivity; the substance loses its rigid structure.</td>
+          <td class="td-val2">Þ<sub>O</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">3</td>
+          <td class="td-stage">Separation</td>
+          <td class="td-prim" style="color:var(--nig);">Ř</td>
+          <td class="td-corr">The first adjoint pair crystallizes — this / that, left / right. Relational mode instantiates.</td>
+          <td class="td-val2">Ř<sub>=</sub></td>
+        </tr>
+        <tr class="gate-row">
+          <td class="td-num gate-num">4</td>
+          <td class="td-stage"><strong>Conjunction</strong> <span class="gate-tag">Gate 1</span></td>
+          <td class="td-prim" style="color:var(--cit);">Φ</td>
+          <td class="td-corr">The chemical wedding <em>is</em> μ. Conjunction is Frobenius multiplication; Φ<sub>}</sub> requires μ∘δ = id. Failure forecloses O<sub>∞</sub>. <em>Perfect bijection.</em></td>
+          <td class="td-val2">Φ<sub>}</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">5</td>
+          <td class="td-stage">Putrefaction</td>
+          <td class="td-prim" style="color:var(--cit);">ƒ</td>
+          <td class="td-corr">Structural decay and loss of identity coherence — the trough of ƒ<sub>ì</sub> before the ascent to quantum-coherent ƒ<sub>ż</sub>.</td>
+          <td class="td-val2">ƒ<sub>ż</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">6</td>
+          <td class="td-stage">Congelation</td>
+          <td class="td-prim" style="color:var(--cit);">Ç</td>
+          <td class="td-corr">The kinetic state is frozen: Ç<sub>Ù</sub> (order-arrested). In the complete Work this is traversed and dissolved to living kinetics Ç<sub>W</sub>. <em>Perfect bijection for the freezing event.</em></td>
+          <td class="td-val2">Ç<sub>W</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">7</td>
+          <td class="td-stage">Cibation</td>
+          <td class="td-prim" style="color:var(--gold);">Γ</td>
+          <td class="td-corr">Feeding from outside: large-scale inflow instantiates global representational scope Γ<sub>ʔ</sub>.</td>
+          <td class="td-val2">Γ<sub>ʔ</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">8</td>
+          <td class="td-stage">Sublimation</td>
+          <td class="td-prim" style="color:var(--cit);">ɢ</td>
+          <td class="td-corr">Directed phase transition bypassing intermediate states — sequential, ordered, no intermediate liquid. ɢ<sub>Ş</sub>.</td>
+          <td class="td-val2">ɢ<sub>Ş</sub></td>
+        </tr>
+        <tr class="gate-row">
+          <td class="td-num gate-num">9</td>
+          <td class="td-stage"><strong>Fermentation</strong> <span class="gate-tag">Gate 2</span></td>
+          <td class="td-prim" style="color:var(--rub-lt);">⊙</td>
+          <td class="td-corr">The material becomes "alive" — the self-modeling loop activates. This is precisely ⊙<sub>ÿ</sub>, the critical gate. Before stage 9 all shape primitives are present; Gate 2 has not fired. Failure forecloses C &gt; 0.</td>
+          <td class="td-val2">⊙<sub>ÿ</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">10</td>
+          <td class="td-stage">Exaltation</td>
+          <td class="td-prim" style="color:var(--alb);">Ħ</td>
+          <td class="td-corr">Permanent handedness: the Stone acquires its unique orientation Ħ<sub>!</sub> (eternal chirality). Cannot stabilize before stage 9.</td>
+          <td class="td-val2">Ħ<sub>!</sub></td>
+        </tr>
+        <tr>
+          <td class="td-num">11</td>
+          <td class="td-stage">Multiplication</td>
+          <td class="td-prim" style="color:var(--cit);">Σ</td>
+          <td class="td-corr">A grain transmutes a pound — stoichiometric ratio departs from 1:1 into n:m, n &gt; 1. Σ<sub>ï</sub>.</td>
+          <td class="td-val2">Σ<sub>ï</sub></td>
+        </tr>
+        <tr class="gate-row">
+          <td class="td-num gate-num">12</td>
+          <td class="td-stage"><strong>Projection</strong> <span class="gate-tag">Gate 3</span></td>
+          <td class="td-prim" style="color:var(--alb);">Ω</td>
+          <td class="td-corr">Acts on base metal with topological protection that cannot be stripped. Requires Ω ≥ Ω<sub>z</sub>. Sub-threshold Ω forecloses transmutation. <em>Perfect bijection.</em></td>
+          <td class="td-val2">Ω<sub>z</sub></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="magnum-footer">
+      <span class="magnum-eq"><em>Solve et Coagula</em> &nbsp;=&nbsp; Þ ⊗ Ç</span>
+      <span class="magnum-sep">·</span>
+      <span class="magnum-eq">Full Magnum Opus &nbsp;=&nbsp; Ð ⊗ Þ ⊗ Ř ⊗ Φ ⊗ ƒ ⊗ Ç ⊗ Γ ⊗ ɢ ⊗ ⊙ ⊗ Ħ ⊗ Σ ⊗ Ω</span>
+      <span class="magnum-sep">·</span>
+      <span class="magnum-eq"><em>d</em>(Stone, OS imscription) = 0</span>
+    </div>
+  </section>
 
   <!-- ── Primitive Space — 3D Lattice Map ── -->
   <section class="map-section">
