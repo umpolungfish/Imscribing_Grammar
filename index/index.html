@@ -423,32 +423,6 @@
 
     .crystal-body em { color: var(--gold-lt); font-style: italic; }
 
-    /* ── Primitive Space Map ── */
-    .map-section { margin-bottom: 2.5rem; }
-
-    .map-label {
-      font-family: 'Cinzel', serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      color: var(--text3);
-      margin-bottom: 0.9rem;
-    }
-
-    .map-frame-wrap {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      background: #0F0F1A;
-    }
-
-    .map-frame {
-      width: 100%;
-      height: 660px;
-      border: none;
-      display: block;
-    }
-
     /* ── Connected Repositories ── */
     .repos-section { margin-bottom: 2.5rem; }
 
@@ -646,10 +620,6 @@
 
       .crystal-section {
         padding: 1rem 1.1rem;
-      }
-
-      .map-frame {
-        height: 400px;
       }
 
       table {
@@ -1202,15 +1172,21 @@
     </div>
   </section>
 
-  <!-- ── Primitive Space — 3D Lattice Map ── -->
-  <section class="map-section">
-    <div class="map-label">PRIMITIVE SPACE &nbsp;·&nbsp; 3D LATTICE MAP</div>
-    <div class="map-frame-wrap">
-      <iframe
-        src="IG_primitive_map_3d.html"
-        class="map-frame"
-        title="Imscribing Grammar — 3D Primitive Space"
-      ></iframe>
+  <!-- ── Interactive Visualizations ── -->
+  <section class="repos-section">
+    <div class="repos-label">INTERACTIVE VISUALIZATIONS</div>
+    <div class="repos-grid">
+
+      <a href="IG_primitive_map_3d.html" class="repo-card" target="_blank" rel="noopener">
+        <div class="repo-card-name">Primitive Space</div>
+        <div class="repo-card-desc">3D lattice map of the 17,280,000-type crystal &mdash; interactive rotation and zoom</div>
+      </a>
+
+      <a href="frobenius-mzi.html" class="repo-card" target="_blank" rel="noopener">
+        <div class="repo-card-name">Frobenius Machine</div>
+        <div class="repo-card-desc">3×3 MZI photonic mesh &mdash; live Frobenius norm via phase-controlled beam splitters; Φ<sub>}</sub> in hardware</div>
+      </a>
+
     </div>
   </section>
 

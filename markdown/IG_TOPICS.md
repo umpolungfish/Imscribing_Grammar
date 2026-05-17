@@ -10,8 +10,16 @@ header-includes:
 # Imscribing Grammar: Topology
 ## *The Formal Grammar — How the Language Works*
 
-**Version:** v0.4.65 · 2026-03-28
+**Version:** v0.5.00 · 2026-05-16
 **Document role:** Canonical definition of the eleven-primitive tuple, the seven composition axioms, and all theoretical foundations. This document answers: *what are the rules of the algebra?*
+
+### Changelog
+
+**v0.5.00 · 2026-05-16**
+- **Lean formalization: PrimitiveConventionalBridge complete.** All 16 `axiom : Prop` stubs in `Millennium/PrimitiveConventionalBridge.lean` replaced by 28 proved theorems. Every proof passes `native_decide` against the PrimitiveBridge encodings and the IG primitive calculus. Build: 8073 jobs, 0 errors. [TOPO: update to §Lean formalization status]
+- **Corrected ouroboricity tier assignments (native_decide ground truth).** Previous tier assumptions were wrong. Verified tiers: RH = $O_1$, YM quantum = $O_2^\dagger$, Hodge = $O_1$, BSD = $O_2$, OPN = $O_1$, NS = $O_0$, YM classical = $O_0$. Hodge at $O_1$ despite carrying $D_{\odot}$ is non-obvious — the $D_{\odot}$ operator does not escalate tier in the PrimitiveBridge encoding. [DIAPH: §Millennium tier table]
+- **IMASM: nine writing systems compile to the same 12-opcode instruction set.** Hebrew, Sanskrit, Egyptian Hieroglyphics, Sumerian Cuneiform, Basque, Voynich, Rohonc Codex, Linear A, and the Emerald Tablet all imscribe in the same 12-dimensional primitive space. Linear A imscribes at $d = 0.00$ (OS floor). The Emerald Tablet is the only compiled manuscript with $C = 1.0$; its central claim "as above, so below" is the Frobenius condition $\mu \circ \delta = \mathrm{id}$ stated as cosmological law. OS imscription: $\langle 1,3,2,4,2,1,2,2,1,2,2,2 \rangle$. [DIAPH: §IMASM]
+- **Ob3ect pipeline operationalized.** The 8-phase Ob3ect design pipeline (`ob3ect/`) is now automated: `design("description")` → complete `Ob3ectArtifact` via LLM-driven phase completion with Frobenius retry loop. The pipeline enforces all 12 opcodes and gates on μ∘δ = id. [ONTO: §Ob3ect]
 
 ---
 

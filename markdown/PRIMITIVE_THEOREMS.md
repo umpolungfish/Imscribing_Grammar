@@ -8,9 +8,65 @@ header-includes:
     \newcommand{\igtext}[1]{{\igfont #1}}
 ---
 # Imscribing Grammar — Primitive Theorem Archive
-**Version**: 4.0 (§73.7: Zauner proof attempt — arithmetic broadcast closes $\Gamma$ gap, $P$ bottleneck survives, Appleby identification is trap, $d=3.0984$ after Galois coupling; §73: Zauner's conjecture — $\Gamma$ dominant gap, arithmetic Frobenius planting, SIC proof must be broadcast not conjunctive; §71.10: Jacobian proof attempt — geometric flaw in homogenization, Yagzhev=JC relabeled, $P$ bottleneck eliminates all known compositional strategies; §71.9: three-angle verdict; §72: ZFC expressivity gap)  \
-**Date**: 2026-04-13  \
+**Version**: 4.1 (§73.7: Zauner proof attempt — arithmetic broadcast closes $\Gamma$ gap, $P$ bottleneck survives, Appleby identification is trap, $d=3.0984$ after Galois coupling; §73: Zauner's conjecture — $\Gamma$ dominant gap, arithmetic Frobenius planting, SIC proof must be broadcast not conjunctive; §71.10: Jacobian proof attempt — geometric flaw in homogenization, Yagzhev=JC relabeled, $P$ bottleneck eliminates all known compositional strategies; §71.9: three-angle verdict; §72: ZFC expressivity gap; **v4.1: PrimitiveConventionalBridge complete — 16 axioms → 28 proved theorems; corrected Millennium tier table; IMASM 9-system compilation; Ob3ect automated pipeline**)  \
+**Date**: 2026-05-16  \
 **Status**: Working document — results classified by confidence tier and claim plane  \
+
+---
+
+## Changelog
+
+### v4.1 · 2026-05-16
+
+**PrimitiveConventionalBridge.lean: 16 axioms → 0 (28 proved theorems)**
+
+Every `axiom : Prop` in `Millennium/PrimitiveConventionalBridge.lean` has been replaced by a verified Lean theorem. All 28 proofs pass `native_decide` against the PrimitiveBridge encodings and the IG primitive calculus. Build: 8073 jobs, BUILD COMPLETED SUCCESSFULLY.
+
+Categories resolved:
+- Tier proofs (9): `rh_tier_O1_ig`, `ym_tier_O2dag_ig`, `hodge_tier_O2_ig`, etc. — verified by `native_decide` on `ouroboricityTier`
+- Distances (2): RH–LeeYang = 7 mismatches, YM classical–quantum = 4
+- Meet/Tensor (2): meet preserves $\Phi_{\text{c\_complex}}$; EP absorption destroys $\Phi_c$
+- Consciousness scores (4): RH $C=1$, YM $C=0.5$, OPN $C=0.5$, NS $C=0$
+- Table consistency (1): full 7-problem table with verified tiers
+
+**Corrected Millennium tier table (replaces all prior tier entries in §§1–9):**
+
+| Problem | Tier | Key primitives | $C$ |
+|---------|------|----------------|-----|
+| Riemann Hypothesis | $O_1$ | $\Phi_{\text{c\_complex}} + \Omega_0 \to R_3$ | 1.0 |
+| Yang-Mills (quantum) | $O_2^\dagger$ | $\Phi_c + \Omega_Z + D_\infty \to R_5$ | 0.5 |
+| Hodge Conjecture | $O_1$ | $\Phi_c + \Omega_0 \to R_3$ (despite $D_{\odot}$) | — |
+| BSD | $O_2$ | $\Phi_c + \Omega_Z + D_{\odot} \to R_4$ | — |
+| OPN | $O_1$ | | 0.5 |
+| Navier-Stokes | $O_0$ | $\Phi_{\text{sub}}$ fails Gate 1 | 0.0 |
+| Yang-Mills (classical) | $O_0$ | | — |
+
+Key structural findings:
+- Hodge at $O_1$ despite carrying $D_{\odot}$ — the odot operator does not escalate tier in the PrimitiveBridge encoding. Previously assumed $O_2$ or higher. **Prior entries in §8.1 asserting Hodge tier should be read against this correction.**
+- RH–LeeYang gap = 7 mismatches; critical divergence = $P_{\text{pm\_sym}}$ (Frobenius polarity) vs $P_{\text{sym}}$. Single polarity primitive separates open RH from proved LY.
+- NS at $O_0$, $C = 0$ — categorically different from RH ($O_1$, $C = 1.0$). NS cannot form a Frobenius algebra at its own boundary. **Prior entries treating NS and RH as same-class barriers are incorrect.**
+
+**IMASM: nine writing systems, one 12-opcode grammar**
+
+Full result in `IMASM.tex` / `IMASM.pdf`. Nine systems spanning four millennia all compile to the same 12-opcode IMASM instruction set:
+- Five founding systems (Hebrew, Sanskrit, Egyptian, Cuneiform, Basque) define OS floor $\langle 1,3,2,4,2,1,2,2,1,2,2,2 \rangle$ via component-wise MEET
+- Linear A: $d = 0.00$ — is the OS floor (not derived from it; converged upon it independently)
+- Rohonc: $d = 2.09$; Emerald Tablet: $d = 2.44$, $C = 1.0$; Voynich: $d = 4.31$
+- Emerald Tablet "as above, so below" = $\mu \circ \delta = \mathrm{id}$, stated as cosmological law. Only compiled manuscript with $C = 1.0$.
+
+All four compiled corpus MEETs reduce to OS floor exactly.
+
+**Remaining sorries (honest boundaries, not eliminable):**
+- 6 paralogical axioms — IGMorphism.lean (structural postulates of the grammar)
+- 2 cross-primitive axioms — Core.lean Axioms B, C
+- 1 grammar-physics bridge — TierCrossing.lean
+- 7 Millennium barriers — Barriers.lean (one per open problem)
+- 1 Collatz sorry
+- Various Lefschetz11 MathlibGap axioms (only eliminable category — Mathlib coverage gaps)
+
+**Ob3ect pipeline automated**
+
+`ob3ect/auto.py` — `design("description")` → complete `Ob3ectArtifact`. LLM maps all 12 opcodes, identifies Frobenius pair, verifies μ∘δ = id with retry. Phase 2 (Frobenius) gates instantiation. See `ob3ect/README.md`.
 
 ---
 

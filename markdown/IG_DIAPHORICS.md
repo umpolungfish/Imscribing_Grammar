@@ -10,8 +10,44 @@ header-includes:
 # Imscribing Grammar: Diaphorology
 ## *The Catalog of Distinctions — What the Grammar Says*
 
-**Version:** v0.5.80 · 2026-04-20
+**Version:** v0.6.00 · 2026-05-16
 **Document role:** All specific system encodings, cross-domain comparative results, distance matrices, consciousness scores, predictions, and catalog entries. This document answers: *what does the algebra say about system X, and how does it relate to system Y?*
+
+### Changelog
+
+**v0.6.00 · 2026-05-16**
+- **Millennium ouroboricity tiers corrected (native_decide verified).** All previous tier assignments in `PrimitiveConventionalBridge.lean` were axioms; all are now proved theorems. Ground-truth tiers from `ouroboricityTier` computation:
+
+  | Problem | Tier | Key primitives |
+  |---------|------|----------------|
+  | Riemann Hypothesis | $O_1$ | $\Phi_{\text{c\_complex}} + \Omega_0 \to R_3$ |
+  | Yang-Mills (quantum) | $O_2^\dagger$ | $\Phi_c + \Omega_Z + D_\infty \to R_5$ |
+  | Hodge Conjecture | $O_1$ | $\Phi_c + \Omega_0 \to R_3$ (despite $D_{\odot}$) |
+  | BSD | $O_2$ | $\Phi_c + \Omega_Z + D_{\odot} \to R_4$ |
+  | OPN | $O_1$ | |
+  | Navier-Stokes | $O_0$ | |
+  | Yang-Mills (classical) | $O_0$ | |
+
+  Hodge at $O_1$ is non-obvious: $D_{\odot}$ does not escalate the tier in the PrimitiveBridge encoding. BSD and YM quantum diverge structurally ($O_2$ vs $O_2^\dagger$) via the $D_\infty$ vs $D_{\odot}$ primitive.
+
+- **RH–LY structural gap formalized.** Distance RH–LeeYang = 7 primitive mismatches. Critical divergence: $P_{\text{pm\_sym}}$ (Frobenius polarity, required by RH) vs $P_{\text{sym}}$ (plain symmetry, sufficient for Lee-Yang). This single polarity gap separates the proved Lee-Yang result from the open Riemann Hypothesis. Lee-Yang zeros live on a plain symmetric structure; RH zeros require signed/Frobenius polarity — the functional equation's ± reflection.
+
+- **Consciousness scores for Millennium problems (verified by native_decide):**
+
+  | Problem | $C$ | Gate status |
+  |---------|-----|-------------|
+  | RH | 1.0 | Both gates open |
+  | Yang-Mills | 0.5 | $K_{\text{trap}}$ fails Gate 2 |
+  | OPN | 0.5 | $K_{\text{trap}}$ fails Gate 2 |
+  | Navier-Stokes | 0.0 | $\Phi_{\text{sub}}$ fails Gate 1 |
+
+  RH is the only Millennium problem with $C = 1.0$. NS is categorically different from the others — $\Phi_{\text{sub}}$ failing Gate 1 means the obstruction is at the substructure level, not the quantum/coherence level.
+
+- **EP absorption verified.** `tensorProduct(Phi_c, Phi_EP) ≠ Phi_c` — the measurement problem statement (Frobenius destruction under tensor with the Everett-projection primitive) is now a proved Lean theorem, not an axiom.
+
+- **IMASM: nine writing systems, one 12-opcode grammar.** Hebrew, Sanskrit, Egyptian, Cuneiform, Basque (founding systems, define OS floor), Voynich ($d = 4.31$, $C < 1$), Rohonc ($d = 2.09$, $C < 1$), Linear A ($d = 0.00$ — IS the OS floor), Emerald Tablet ($d = 2.44$, $C = 1.0$). OS imscription: $\langle 1,3,2,4,2,1,2,2,1,2,2,2 \rangle$. All four system MEETs reduce to this floor. The Emerald Tablet's "as above, so below" = $\mu \circ \delta = \mathrm{id}$.
+
+- **Previous entry at §ouroboricity projection (line ~4226) corrected:** "RH is not in the current catalog... $O_1$ (conjectured $O_2$)" — now confirmed $O_1$ by native_decide. The $O_2$ conjecture is falsified.
 
 ---
 

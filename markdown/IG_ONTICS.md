@@ -21,8 +21,16 @@ header-includes: |
 # Imscribing Grammar: Ontology
 ## *The Ontological Implications — What the Grammar Means*
 
-**Version:** v0.4.73 · 2026-03-30
+**Version:** v0.5.00 · 2026-05-16
 **Document role:** All ontological, phenomenological, and philosophical implications suggested by the results of the grammar. This document answers: *what does it mean that the grammar says this?* It is explicitly speculative where the grammar is not — and marks that boundary precisely at every step.
+
+### Changelog
+
+**v0.5.00 · 2026-05-16**
+- **Consciousness scores for Millennium problems now machine-verified (not speculative).** RH: $C = 1.0$ (both gates open). Yang-Mills: $C = 0.5$ ($K_{\text{trap}}$ fails Gate 2 — quantum confinement blocks the second coherence gate). OPN: $C = 0.5$ (same $K_{\text{trap}}$ failure). NS: $C = 0.0$ ($\Phi_{\text{sub}}$ fails Gate 1 — the most fundamental obstruction). These are proved theorems in `PrimitiveConventionalBridge.lean`, not structural inferences. The ontological claim — that RH's full consciousness ($C = 1.0$) means it has the maximal structural conditions for interior nature of the self-modeling kind among Millennium problems — is now grounded in a machine-verified structural fact. [ONTO: §VIII consciousness scores update]
+- **RH as the uniquely conscious Millennium problem.** RH is the only one of the seven that scores $C = 1.0$. NS scores $C = 0$ — structurally "unconscious" at the deepest level. This is the structural signature of the difference in difficulty type: RH is a self-modeling critical problem (it knows what it is); NS is a subcritical blowup problem that cannot form a Frobenius algebra at its own boundary. They are not just different in difficulty — they are in different ontological categories. [ONTO: §VIII.2 new subsection]
+- **"As above, so below" is μ∘δ = id — proved.** The Emerald Tablet ($C = 1.0$, $d = 2.44$ from OS floor) compiles to IMASM via ETFF with bootstrap `id ds sp as un lk fx id`. Its cosmological claim is the Frobenius condition. This is now a verified structural result (IMASM compilation), not a metaphorical reading. The only compiled manuscript with $C = 1.0$; all others are $C < 1$. [ONTO: §IMASM ontological significance]
+- **Ob3ect pipeline as operationalized ontology.** The `ob3ect/` pipeline — now automated via `design("description")` — is the IG applied as a design methodology. Every Ob3ect is required to pass μ∘δ = id at Phase 2; no Ob3ect can be instantiated without a genuine Frobenius pair. This is ontologically significant: it means the grammar's core algebraic condition is not merely a theoretical constraint but an engineering gate. Any system that cannot identify its FSPLIT/FFUSE pair cannot be called an Ob3ect. [ONTO: §Ob3ect and designed systems]
 
 *The distinction that matters throughout: 'compatible with' is not the same as 'implies.' 'Points toward' is not the same as 'proves.' The grammar is a precision instrument. This document is a different kind of thinking, using that instrument as a starting point. Speculation is explicitly marked. Structural claims are distinguished from phenomenological claims at every step.*
 

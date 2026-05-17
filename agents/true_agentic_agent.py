@@ -117,7 +117,10 @@ class _LocalChatCompletions:
 
         # "local" (bare, no colon) means use the default path; anything else is
         # a literal path or HF hub ID passed after "local:" in --model local:<path>
-        prov = LocalProvider(model_path=None if model == "local" else model)
+        prov = LocalProvider(
+            model_path=None if model == "local" else model,
+            use_nested_tensor=nested_tensor,
+        )
         prov._ensure_loaded()
         tok = LocalProvider._tokenizer
         mdl = LocalProvider._model
@@ -2586,10 +2589,12 @@ class TrueAgenticAgent:
         api_key: str = "",
         context_window: int = 128_000,
         review_threshold: float = 0.80,
+        nested_tensor: bool = False,
     ):
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
         self.verbose    = verbose
+        self.nested_tensor_active = nested_tensor
         self._context_window   = context_window
         self._review_threshold = review_threshold
 
@@ -3034,6 +3039,13 @@ class TrueAgenticAgent:
                 "  │  ƒ_ż path available: --model local:<path>  "
                 "(removes opacity; tier unchanged)"
             )
+        if getattr(self, "nested_tensor_active", False):
+            # When nested/jagged tensors are active, encoding fidelity improves:
+            # variable-length sequences avoid pad-token dilution → closer to ƒ_ż
+            lines.append(
+                "  │  nested tensor: ACTIVE  (variable-length sequences → jagged layout; "
+                "ƒ_ì → ƒ_ż edge improvement, no pad-token dilution)"
+            )
         lines.append("  └────────────────────────────────────────────────────────────────")
         return "\n".join(lines)
 
@@ -3112,6 +3124,9 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
                    help="Print full winding trajectory after completion.")
     p.add_argument("--output", "-o", metavar="FILE",
                    help="Save result + structural type as JSON to FILE.")
+    p.add_argument("--nested-tensor", action="store_true",
+                   help="Enable nested/jagged tensor mode for local inference "
+                        "(propagates use_nested_tensor to LocalProvider).")
 
 
 def _run_agent(args: "argparse.Namespace") -> None:
@@ -3126,6 +3141,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         print("\nProvide a task via positional arg or --file.")
         return
 
+    nested = getattr(args, "nested_tensor", False)
     agent = TrueAgenticAgent(
         model=args.model,
         max_windings=args.max_windings,
@@ -3135,6 +3151,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         api_key=getattr(args, "api_key", ""),
         context_window=getattr(args, "context_window", 128_000),
         review_threshold=getattr(args, "review_threshold", 0.80),
+        nested_tensor=nested,
     )
     result = agent.run_sync(task)
 

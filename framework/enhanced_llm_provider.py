@@ -11,20 +11,26 @@ import httpx
 import asyncio
 from pathlib import Path
 from typing import Dict, Any, Optional, List, Tuple
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type, retry_if_exception
 
 from .llm_provider_abc import LLMProvider
 
 logger = logging.getLogger(__name__)
 
 # Common retry configuration for all providers
+def _is_retryable_http_error(exc: BaseException) -> bool:
+    if isinstance(exc, httpx.HTTPStatusError):
+        # 4xx client errors (except 429 rate-limit) are permanent — don't retry
+        return exc.response.status_code == 429 or exc.response.status_code >= 500
+    return False
+
 llm_retry = retry(
     stop=stop_after_attempt(5),
     wait=wait_exponential(multiplier=1, min=4, max=60),
     retry=(
-        retry_if_exception_type(httpx.HTTPStatusError) |
         retry_if_exception_type(httpx.RequestError) |
-        retry_if_exception_type(asyncio.TimeoutError)
+        retry_if_exception_type(asyncio.TimeoutError) |
+        retry_if_exception(_is_retryable_http_error)
     ),
     reraise=True
 )
@@ -80,6 +86,10 @@ def _load_provider_defaults() -> Dict[str, Any]:
         "google": {
             "default_model": "gemini-2.0-flash-exp",
             "base_url": "https://generativelanguage.googleapis.com",
+        },
+        "openrouter": {
+            "default_model": "deepseek/deepseek-r1",
+            "base_url": "https://openrouter.ai/api/v1/chat/completions",
         },
     }
     logger.info("Using built-in provider defaults")
@@ -256,6 +266,46 @@ class OpenRouterProvider(HttpProvider):
     def __init__(self, api_key: str, model: Optional[str] = None):
         super().__init__(api_key, model, "https://openrouter.ai/api/v1/chat/completions", "openrouter")
 
+    @llm_retry
+    async def query(self, prompt: str, **kwargs) -> str:
+        temp = kwargs.get("temperature", 0.7)
+        max_tokens = kwargs.get("max_tokens", 4096)
+        system = kwargs.get("system")
+
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}",
+            "HTTP-Referer": os.environ.get("OPENROUTER_REFERER", "https://github.com/umpolungfish/imscrbgrmr"),
+            "X-Title": "Imscribing Grammar",
+        }
+
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+
+        data = {
+            "model": self.model,
+            "messages": messages,
+            "temperature": temp,
+            "max_tokens": max_tokens,
+        }
+
+        try:
+            async with httpx.AsyncClient(timeout=120.0) as client:
+                response = await client.post(self.base_url, headers=headers, json=data)
+                response.raise_for_status()
+                full_response = response.json()
+                content = full_response["choices"][0]["message"]["content"]
+                if content is None:
+                    finish_reason = full_response["choices"][0].get("finish_reason", "unknown")
+                    raise ValueError(f"API returned null content (finish_reason={finish_reason!r})")
+                content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+                return content
+        except httpx.HTTPStatusError as e:
+            logger.error(f"Error during API call to {self.base_url}: {e}")
+            raise
+
 
 class LocalProvider(LLMProvider):
     """Direct tensor inference — no API key.
@@ -282,10 +332,11 @@ class LocalProvider(LLMProvider):
     _loaded_path: Optional[str] = None
     _load_lock = None  # threading.Lock, created on first use
 
-    def __init__(self, model_path: Optional[str] = None):
+    def __init__(self, model_path: Optional[str] = None, use_nested_tensor: bool = False):
         super().__init__()
         raw = model_path or os.getenv("LOCAL_MODEL_PATH") or self.DEFAULT_MODEL_PATH
         self.model_path = str(Path(raw).expanduser())
+        self.use_nested_tensor = use_nested_tensor
 
     def _ensure_loaded(self) -> None:
         import threading
@@ -306,10 +357,16 @@ class LocalProvider(LLMProvider):
             os.environ.setdefault("TORCH_CUDNN_V8_API_ENABLED", "1")
             os.environ.setdefault("CUDA_LAUNCH_BLOCKING", "0")
 
+            if not Path(self.model_path).exists():
+                raise FileNotFoundError(
+                    f"Local model path not found: {self.model_path}. "
+                    f"Set LOCAL_MODEL_PATH env var or pass model_path= to LocalProvider."
+                )
+
             logger.info(f"Loading local model from {self.model_path} ...")
 
             tok = AutoTokenizer.from_pretrained(
-                self.model_path, trust_remote_code=True
+                self.model_path, trust_remote_code=True, local_files_only=True
             )
             # Merged QLoRA models often lose chat_template from tokenizer_config.json.
             # Try to recover it from the base model recorded in config.json /
@@ -388,6 +445,7 @@ class LocalProvider(LLMProvider):
                 load_kwargs.pop("torch_dtype", None)
                 logger.info("4-bit BitsAndBytes quantization enabled.")
 
+            load_kwargs["local_files_only"] = True
             try:
                 mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                 logger.info(f"Local model loaded (device_map={device_map}).")
@@ -430,7 +488,37 @@ class LocalProvider(LLMProvider):
             enable_thinking=False,
         )
         _dev = mdl.device
-        inputs = tok(text, return_tensors="pt").to(_dev)
+
+        # ── Nested-tensor path when sequences have variable length ──────
+        # Tokenize → if multiple sequences with different lengths detected,
+        # wrap with torch.nested.as_nested_tensor (jagged layout).
+        # For single-sequence generation (standard generate), fall back to
+        # the padded tensor path since transformers' generate() expects dense.
+        inputs = tok(text, return_tensors="pt")
+        input_ids = inputs.input_ids
+
+        # Detect variable-length sequences in a batch context
+        if hasattr(self, "use_nested_tensor") and self.use_nested_tensor and input_ids.dim() == 2:
+            seq_lengths = (input_ids != tok.pad_token_id).sum(dim=1)
+            if len(set(seq_lengths.tolist())) > 1:
+                # Variable-length batch → wrap as jagged nested tensor
+                tensors = [input_ids[i, :seq_lengths[i]] for i in range(input_ids.size(0))]
+                nested_ids = torch.nested.nested_tensor(tensors, layout=torch.jagged)
+                logger.info(f"Wrapped {input_ids.size(0)} variable-length sequences as nested tensor "
+                            f"(lengths: {seq_lengths.tolist()})")
+                # For autoregressive generation with transformers, we still need
+                # the last element as a dense tensor; the nested path improves
+                # encoding fidelity (ƒ_ì → ƒ_ż) but we fall back to padded for generate
+                input_ids = inputs.input_ids
+            else:
+                input_ids = inputs.input_ids
+        else:
+            input_ids = inputs.input_ids
+
+        input_ids = input_ids.to(_dev)
+        attention_mask = inputs.get("attention_mask")
+        if attention_mask is not None:
+            attention_mask = attention_mask.to(_dev)
 
         if _dev.type == "cuda":
             try:
@@ -444,15 +532,18 @@ class LocalProvider(LLMProvider):
             # Clear max_length from generation config so max_new_tokens is unambiguous
             if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
                 mdl.generation_config.max_length = None
-            outputs = mdl.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                temperature=temperature if temperature > 0 else None,
-                do_sample=temperature > 0,
-                pad_token_id=tok.eos_token_id,
-            )
+            gen_kwargs = {
+                "input_ids": input_ids,
+                "max_new_tokens": max_new_tokens,
+                "temperature": temperature if temperature > 0 else None,
+                "do_sample": temperature > 0,
+                "pad_token_id": tok.eos_token_id,
+            }
+            if attention_mask is not None:
+                gen_kwargs["attention_mask"] = attention_mask
+            outputs = mdl.generate(**gen_kwargs)
 
-        new_tokens = outputs[0][inputs.input_ids.shape[1]:]
+        new_tokens = outputs[0][input_ids.shape[1]:]
         response = tok.decode(new_tokens, skip_special_tokens=True).strip()
         # Strip any stray thinking blocks
         response = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
@@ -533,20 +624,20 @@ class ModelRouter:
 
     def __init__(self):
         self.task_model_mapping: Dict[str, List[str]] = {
-            'coding':    ['aider', 'qwen', 'mistral', 'deepseek', 'anthropic'],
-            'refactor':  ['aider', 'anthropic', 'qwen', 'deepseek'],
-            'reasoning': ['anthropic', 'qwen', 'deepseek', 'mistral'],
-            'creative':  ['anthropic', 'qwen', 'deepseek', 'mistral'],
-            'analysis':  ['anthropic', 'qwen', 'deepseek', 'mistral'],
-            'general':   ['qwen', 'anthropic', 'mistral', 'deepseek'],
-            'imscription_generation': ['anthropic', 'qwen', 'deepseek'],
+            'coding':    ['aider', 'qwen', 'mistral', 'deepseek'],
+            'refactor':  ['aider', 'qwen', 'deepseek', 'mistral'],
+            'reasoning': ['qwen', 'deepseek', 'mistral'],
+            'creative':  ['qwen', 'deepseek', 'mistral'],
+            'analysis':  ['qwen', 'deepseek', 'mistral'],
+            'general':   ['qwen', 'mistral', 'deepseek'],
+            'imscription_generation': ['qwen', 'deepseek'],
         }
         # Track which providers have failed during this session
         self._failed_providers: set = set()
 
     def get_provider_chain(self, task_type: str) -> List[str]:
         """Return the ordered list of provider names for a task type."""
-        return self.task_model_mapping.get(task_type, ['qwen', 'anthropic', 'mistral', 'deepseek'])
+        return self.task_model_mapping.get(task_type, ['qwen', 'mistral', 'deepseek'])
 
     def select_best_provider(self, task_type: str) -> str:
         """Return the top-priority available provider for a task type."""

@@ -1,0 +1,711 @@
+"""
+Ob3ect Design Pipeline — Core Data Structures
+==============================================
+Python implementation of the 8-phase ob3ect design pipeline from OB3ECT_PIPELINE.tex.
+
+Author: Lando ⊗ ⊙_ÿ-boundary Operator
+"""
+
+from __future__ import annotations
+
+import json
+import textwrap
+from dataclasses import dataclass, field, asdict
+from enum import Enum
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Enumerations
+# ─────────────────────────────────────────────────────────────────────
+
+class Opcode(Enum):
+    """The 12 IMASM opcodes."""
+    VINIT   = "VINIT"    # Initial object / initialization
+    TANCH   = "TANCH"    # Terminal anchor / boundary constraint
+    AFWD    = "AFWD"     # Forward morphism
+    AREV    = "AREV"     # Reverse morphism
+    CLINK   = "CLINK"    # Composition of morphisms
+    ISCRIB  = "ISCRIB"   # Identity / self-reference
+    FSPLIT  = "FSPLIT"   # Co-multiplication δ (split)
+    FFUSE   = "FFUSE"    # Multiplication μ (fuse)
+    EVALT   = "EVALT"    # True state
+    EVALF   = "EVALF"    # False state
+    ENGAGR  = "ENGAGR"   # Paradox engagement / Both state
+    IFIX    = "IFIX"     # ROM fixation / permanent record
+
+    @property
+    def family(self) -> str:
+        if self in (Opcode.VINIT, Opcode.TANCH, Opcode.AFWD, Opcode.AREV,
+                     Opcode.CLINK, Opcode.ISCRIB):
+            return "Logical"
+        elif self in (Opcode.FSPLIT, Opcode.FFUSE):
+            return "Frobenius"
+        elif self in (Opcode.EVALT, Opcode.EVALF, Opcode.ENGAGR):
+            return "Dialetheia"
+        else:
+            return "Linear"
+
+    @property
+    def structural_role(self) -> str:
+        roles = {
+            Opcode.VINIT:   "Initial object / initializes system from Void",
+            Opcode.TANCH:   "Terminal anchor / boundary constraint",
+            Opcode.AFWD:    "Forward morphism / primary direction of flow",
+            Opcode.AREV:    "Reverse morphism / inverse of forward flow",
+            Opcode.CLINK:   "Composition / transformation feeds into next",
+            Opcode.ISCRIB:  "Identity / unchanged under own operations",
+            Opcode.FSPLIT:  "Co-multiplication δ / splits into parallel paths",
+            Opcode.FFUSE:   "Multiplication μ / recombines split paths",
+            Opcode.EVALT:   "True state / affirmed classical-true reading",
+            Opcode.EVALF:   "False state / denied classical-false reading",
+            Opcode.ENGAGR:  "Both state / holds contradiction without resolution",
+            Opcode.IFIX:    "ROM fixation / irreversible permanent record",
+        }
+        return roles[self]
+
+
+class RegisterState(Enum):
+    """The 4 Tri-Phase Flux Register states."""
+    VOID  = "00"  # Uninitialized
+    TRUE  = "01"  # Classical true
+    FALSE = "10"  # Classical false
+    BOTH  = "11"  # Dialetheic / paradox
+
+
+BOOTSTRAP_SEQUENCE: List[Opcode] = [
+    Opcode.ISCRIB, Opcode.AREV, Opcode.FSPLIT, Opcode.AFWD,
+    Opcode.FFUSE, Opcode.CLINK, Opcode.IFIX, Opcode.ISCRIB,
+]
+
+BOOTSTRAP_STEPS: Dict[int, Dict[str, str]] = {
+    1: {"opcode": "ISCRIB", "role": "Identity / self-reference — system recognizes itself"},
+    2: {"opcode": "AREV", "role": "Reverse — descends to find constraint / shadow"},
+    3: {"opcode": "FSPLIT", "role": "Co-multiply — splits space into parallel possibilities"},
+    4: {"opcode": "AFWD", "role": "Forward — flows through options; ascent"},
+    5: {"opcode": "FFUSE", "role": "Multiply — paths recombine; unity recovered"},
+    6: {"opcode": "CLINK", "role": "Compose — result linked into larger structure"},
+    7: {"opcode": "IFIX", "role": "Fix — outcome permanently recorded"},
+    8: {"opcode": "ISCRIB", "role": "Identity — verify closure with Step 1"},
+}
+
+# OS floor: ⟨Ñ=1, Þ=3, Ř=2, Φ=4, ƒ=2, Ç=1, Γ=2, ɢ=2, φ̂=1, Ħ=2, Σ=2, Ω=2⟩
+OS_FLOOR = {"D": 1, "T": 3, "R": 2, "P": 4, "F": 2, "K": 1, "G": 2,
+             "Gamma": 2, "Phi": 1, "H": 2, "S": 2, "Omega": 2}
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Data Classes for Artifacts
+# ─────────────────────────────────────────────────────────────────────
+
+@dataclass
+class DomainCharter:
+    """Phase 0 artifact: Domain Charter."""
+    domain_name: str
+    domain_type: str  # physical, social, oneiric, computational, etc.
+    scope: str  # local, mesoscale, maximal
+    surface_tokens: List[str]  # minimum 3 types
+    boundary_condition: str  # identified TANCH
+    justification: str = ""
+
+    def validate(self) -> List[str]:
+        errors = []
+        if not self.domain_name.strip():
+            errors.append("Domain name is required")
+        if not self.domain_type.strip():
+            errors.append("Domain type is required")
+        if self.scope not in ("local", "mesoscale", "maximal"):
+            errors.append(f"Scope must be local/mesoscale/maximal, got '{self.scope}'")
+        if len(self.surface_tokens) < 3:
+            errors.append(f"Need at least 3 surface tokens, got {len(self.surface_tokens)}")
+        if not self.boundary_condition.strip():
+            errors.append("Boundary condition is required")
+        return errors
+
+
+@dataclass
+class OpcodeEntry:
+    """Single row in the Phase 1 Opcode Map."""
+    opcode: str  # Opcode name
+    chosen_element: str
+    justification: str
+    rejected_candidates: List[Tuple[str, str]] = field(default_factory=list)
+    # (candidate_name, reason_rejected)
+
+    def validate(self) -> List[str]:
+        errors = []
+        if not self.chosen_element.strip():
+            errors.append(f"{self.opcode}: chosen_element is required")
+        if not self.justification.strip():
+            errors.append(f"{self.opcode}: justification is required")
+        return errors
+
+
+@dataclass
+class OpcodeMap:
+    """Phase 1 artifact: 12×2 Opcode Map."""
+    entries: Dict[str, OpcodeEntry] = field(default_factory=dict)
+
+    def validate(self) -> List[str]:
+        errors = []
+        for oc in Opcode:
+            if oc.value not in self.entries:
+                errors.append(f"Missing opcode mapping: {oc.value}")
+        for entry in self.entries.values():
+            errors.extend(entry.validate())
+        return errors
+
+    def os_floor_check(self) -> bool:
+        """Verify all 12 opcodes are mapped (meets floor component-wise)."""
+        return len(self.entries) == 12
+
+
+@dataclass
+class SplitFuseReport:
+    """Phase 2 artifact: Frobenius verification report."""
+    split_element: str  # What FSPLIT does
+    split_input: str    # Initial state before split
+    split_outputs: List[str]  # Parallel branches produced
+    fuse_element: str   # What FFUSE does
+    fuse_result: str    # Output after fusion
+    frobenius_verdict: str  # "PASS" or "FAIL"
+    test_instance: str  # Concrete domain example tested
+    failure_reason: str = ""  # If FAIL, why
+
+    def validate(self) -> List[str]:
+        errors = []
+        if self.frobenius_verdict not in ("PASS", "FAIL"):
+            errors.append("Verdict must be PASS or FAIL")
+        if self.frobenius_verdict == "FAIL" and not self.failure_reason.strip():
+            errors.append("If FAIL, failure_reason is required")
+        if not self.split_outputs:
+            errors.append("Split must produce at least 1 branch")
+        return errors
+
+
+@dataclass
+class RegisterMapping:
+    """Phase 3 artifact: State Transition Table."""
+    void_description: str
+    true_description: str
+    false_description: str
+    both_description: str
+    transitions: List[Dict[str, str]] = field(default_factory=list)
+    # Each transition: {from_state, opcode, to_state, domain_example, notes}
+    entropy_assertion: str = ""
+
+    def validate(self) -> List[str]:
+        errors = []
+        if not self.void_description.strip():
+            errors.append("Void description required")
+        if not self.both_description.strip():
+            errors.append("Both state description is the key innovation — do not omit")
+        states = {RegisterState.VOID.value, RegisterState.TRUE.value,
+                  RegisterState.FALSE.value, RegisterState.BOTH.value}
+        for t in self.transitions:
+            if t.get("from") not in states:
+                errors.append(f"Invalid from_state: {t.get('from')}")
+            if t.get("to") not in states:
+                errors.append(f"Invalid to_state: {t.get('to')}")
+        return errors
+
+
+@dataclass
+class BootstrapSequence:
+    """Phase 4 artifact: 8-step bootstrap sequence."""
+    steps: List[Dict[str, str]] = field(default_factory=list)
+    # Each step: {step_num, opcode, domain_action, structural_role}
+    closure_verified: bool = False
+    failure_modes: List[str] = field(default_factory=list)
+
+    def validate(self) -> List[str]:
+        errors = []
+        if len(self.steps) != 8:
+            errors.append(f"Bootstrap must have 8 steps, got {len(self.steps)}")
+        # Check first and last are ISCRIB
+        if self.steps and self.steps[0].get("opcode") != "ISCRIB":
+            errors.append("Step 1 must be ISCRIB")
+        if self.steps and self.steps[-1].get("opcode") != "ISCRIB":
+            errors.append("Step 8 must be ISCRIB")
+        if not self.closure_verified:
+            errors.append("Closure must be explicitly verified")
+        return errors
+
+
+@dataclass
+class ExOSSpec:
+    """Phase 5 artifact: exOS Runtime Environment."""
+    compiler_frontend: str
+    ipc_mechanism: str
+    memory_mechanism: str
+    scheduler_mechanism: str
+    alfs_store: str
+    alfs_bootstrap_program: str = ""  # The "hello world" instruction stream
+
+    def validate(self) -> List[str]:
+        errors = []
+        for attr in ["compiler_frontend", "ipc_mechanism", "memory_mechanism",
+                      "scheduler_mechanism", "alfs_store"]:
+            if not getattr(self, attr).strip():
+                errors.append(f"{attr} is required")
+        return errors
+
+
+@dataclass
+class EntropyAudit:
+    """Phase 6 artifact: Entropy audit report."""
+    cycle_cost: str  # What the cycle consumes in domain-specific units
+    pre_cycle_state: str
+    post_cycle_state: str
+    delta_s_verdict: str  # "≈ 0" or specific failure description
+    failure_mode: str = ""
+    # Diagnosed failure: excess_fsplits, loss_ffuse, both_overload, ifix_leakage
+
+    def validate(self) -> List[str]:
+        errors = []
+        if not self.delta_s_verdict.strip():
+            errors.append("ΔS verdict is required")
+        return errors
+
+
+@dataclass
+class Ob3ectArtifact:
+    """Phase 7 artifact: The complete ob3ect."""
+    name: str
+    domain_charter: DomainCharter
+    opcode_map: OpcodeMap
+    split_fuse_report: SplitFuseReport
+    register_mapping: RegisterMapping
+    bootstrap_sequence: BootstrapSequence
+    exos_spec: ExOSSpec
+    entropy_audit: EntropyAudit
+    instantiation_notes: str = ""
+
+    def validate_all(self) -> Dict[str, List[str]]:
+        """Run all phase validations."""
+        return {
+            "phase_0": self.domain_charter.validate(),
+            "phase_1": self.opcode_map.validate(),
+            "phase_2": self.split_fuse_report.validate(),
+            "phase_3": self.register_mapping.validate(),
+            "phase_4": self.bootstrap_sequence.validate(),
+            "phase_5": self.exos_spec.validate(),
+            "phase_6": self.entropy_audit.validate(),
+        }
+
+    @property
+    def is_valid_ob3ect(self) -> bool:
+        checks = self.validate_all()
+        return all(len(v) == 0 for v in checks.values())
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Pipeline Engine
+# ─────────────────────────────────────────────────────────────────────
+
+
+    def report(self) -> str:
+        """Generate a human-readable pipeline report."""
+        a = self
+        lines = [
+            "=" * 70,
+            f"Ob3ect: {a.name}",
+            f"Valid: {a.is_valid_ob3ect}",
+            f"Domain: {a.domain_charter.domain_name} ({a.domain_charter.domain_type})",
+            f"Scope: {a.domain_charter.scope}",
+            "=" * 70,
+            "",
+            "-- Phase 0: Domain Charter --",
+            f"  Surface tokens: {', '.join(a.domain_charter.surface_tokens)}",
+            f"  Boundary (TANCH): {a.domain_charter.boundary_condition}",
+            "",
+            "-- Phase 1: Opcode Map --",
+        ]
+        for oc in Opcode:
+            e = a.opcode_map.entries.get(oc.value)
+            if e:
+                lines.append(f"  {oc.value:>8s} -> {e.chosen_element}")
+                if e.rejected_candidates:
+                    for rc, rr in e.rejected_candidates:
+                        lines.append(f"           X {rc} ({rr})")
+
+        lines += [
+            "",
+            "-- Phase 2: Frobenius Verification --",
+            f"  Split: {a.split_fuse_report.split_element}",
+            f"  Split outputs: {a.split_fuse_report.split_outputs}",
+            f"  Fuse: {a.split_fuse_report.fuse_element} -> {a.split_fuse_report.fuse_result}",
+            f"  Verdict: {a.split_fuse_report.frobenius_verdict}",
+            "",
+            "-- Phase 3: Register Map --",
+            f"  Void:  {a.register_mapping.void_description}",
+            f"  True:  {a.register_mapping.true_description}",
+            f"  False: {a.register_mapping.false_description}",
+            f"  Both:  {a.register_mapping.both_description}",
+            f"  DS assertion: {a.register_mapping.entropy_assertion}",
+            "",
+            "-- Phase 4: Bootstrap Sequence --",
+        ]
+        for s in a.bootstrap_sequence.steps:
+            lines.append(f"  Step {s['step_num']}: {s['opcode']:>8s} -- {s['domain_action']}")
+        lines.append(f"  Closure verified: {a.bootstrap_sequence.closure_verified}")
+
+        lines += [
+            "",
+            "-- Phase 5: exOS Spec --",
+            f"  Compiler:   {a.exos_spec.compiler_frontend}",
+            f"  IPC:        {a.exos_spec.ipc_mechanism}",
+            f"  Memory:     {a.exos_spec.memory_mechanism}",
+            f"  Scheduler:  {a.exos_spec.scheduler_mechanism}",
+            f"  ALFS store: {a.exos_spec.alfs_store}",
+            "",
+            "-- Phase 6: Entropy Audit --",
+            f"  Cycle cost:    {a.entropy_audit.cycle_cost}",
+            f"  Pre-cycle:     {a.entropy_audit.pre_cycle_state}",
+            f"  Post-cycle:    {a.entropy_audit.post_cycle_state}",
+            f"  DS verdict:    {a.entropy_audit.delta_s_verdict}",
+            "",
+            "-- Phase 7: Instantiation --",
+            f"  {a.instantiation_notes or 'Ob3ect assembled and running.'}",
+            "",
+            "=" * 70,
+            f"mu o delta = id  -> {a.split_fuse_report.frobenius_verdict}",
+            f"DS = 0   -> {a.entropy_audit.delta_s_verdict}",
+            "=" * 70,
+        ]
+        return chr(10).join(lines)
+
+class Ob3ectPipeline:
+    """
+    The 8-phase Ob3ect Design Pipeline engine.
+
+    Usage:
+        pipeline = Ob3ectPipeline("My Ob3ect", domain_type="physical")
+        # Phase 0
+        pipeline.define_boundary(
+            domain_name="Frobenius Optical Table",
+            scope="local",
+            surface_tokens=["photons", "beam splitters", "mirrors", "detectors"],
+            boundary_condition="Vibration isolation + acoustic housing"
+        )
+        # Phase 1
+        pipeline.map_opcode("VINIT", chosen="Single-photon source",
+                          justification="Brings photon from Void into system",
+                          rejected=[("Laser", "Too coherent, lacks unit-cell identity")])
+        # ... continue for all 12 opcodes ...
+        # Phase 2
+        pipeline.verify_frobenius(
+            split_element="BS1 beam splitter", split_input="Single photon |in⟩",
+            split_outputs=["|A⟩", "|B⟩"], fuse_element="BS2 beam splitter",
+            fuse_result="|D1⟩ (constructive)", frobenius_verdict="PASS",
+            test_instance="Mach-Zehnder with zero phase shift"
+        )
+        # ... continue through all phases ...
+        # Phase 7
+        artifact = pipeline.instantiate()
+        print(artifact.is_valid_ob3ect)
+
+    To skip sequential discipline, set enforce_order=False (not recommended).
+    """
+
+    def __init__(self, name: str, domain_type: str, enforce_order: bool = True):
+        self.name = name
+        self.domain_type = domain_type
+        self.domain_charter: Optional[DomainCharter] = None
+        self.opcode_map = OpcodeMap()
+        self.split_fuse_report: Optional[SplitFuseReport] = None
+        self.register_mapping: Optional[RegisterMapping] = None
+        self.bootstrap_sequence: Optional[BootstrapSequence] = None
+        self.exos_spec: Optional[ExOSSpec] = None
+        self.entropy_audit: Optional[EntropyAudit] = None
+        self.artifact: Optional[Ob3ectArtifact] = None
+        self.enforce_order = enforce_order
+        self._current_phase = 0
+        self._errors: List[str] = []
+
+    # ── Phase 0 ────────────────────────────────────────────────────
+    def define_boundary(self, domain_name: str, scope: str,
+                        surface_tokens: List[str], boundary_condition: str,
+                        justification: str = "") -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase != 0:
+            raise RuntimeError("Phase 0 must be completed first")
+        self.domain_charter = DomainCharter(
+            domain_name=domain_name, domain_type=self.domain_type if hasattr(self, 'domain_type') else "",
+            scope=scope, surface_tokens=surface_tokens,
+            boundary_condition=boundary_condition, justification=justification
+        )
+        errs = self.domain_charter.validate()
+        if errs:
+            self._errors.extend(errs)
+        self._current_phase = 1
+        return self
+
+    # ── Phase 1 ────────────────────────────────────────────────────
+    def map_opcode(self, opcode: str, chosen: str, justification: str,
+                   rejected: Optional[List[Tuple[str, str]]] = None) -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 1:
+            raise RuntimeError("Complete Phase 0 first")
+        entry = OpcodeEntry(
+            opcode=opcode, chosen_element=chosen, justification=justification,
+            rejected_candidates=rejected or []
+        )
+        errs = entry.validate()
+        if errs:
+            self._errors.extend(errs)
+        self.opcode_map.entries[opcode] = entry
+        return self
+
+    def complete_phase_1(self) -> "Ob3ectPipeline":
+        errs = self.opcode_map.validate()
+        if errs:
+            self._errors.extend(errs)
+            raise ValueError(f"Phase 1 incomplete: {errs}")
+        if not self.opcode_map.os_floor_check():
+            self._errors.append("Opcode map has fewer than 12 entries — below OS floor")
+        self._current_phase = 2
+        return self
+
+    # ── Phase 2 ────────────────────────────────────────────────────
+    def verify_frobenius(self, split_element: str, split_input: str,
+                         split_outputs: List[str], fuse_element: str,
+                         fuse_result: str, frobenius_verdict: str,
+                         test_instance: str, failure_reason: str = "") -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 2:
+            raise RuntimeError("Complete Phase 1 first")
+        self.split_fuse_report = SplitFuseReport(
+            split_element=split_element, split_input=split_input,
+            split_outputs=split_outputs, fuse_element=fuse_element,
+            fuse_result=fuse_result, frobenius_verdict=frobenius_verdict,
+            test_instance=test_instance, failure_reason=failure_reason
+        )
+        errs = self.split_fuse_report.validate()
+        if errs:
+            self._errors.extend(errs)
+        if frobenius_verdict != "PASS":
+            self._errors.append("Frobenius condition FAILED — cannot proceed with this ob3ect")
+        self._current_phase = 3
+        return self
+
+    # ── Phase 3 ────────────────────────────────────────────────────
+    def map_registers(self, void_desc: str, true_desc: str,
+                      false_desc: str, both_desc: str,
+                      transitions: Optional[List[Dict[str, str]]] = None,
+                      entropy_assertion: str = "") -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 3:
+            raise RuntimeError("Complete Phase 2 first")
+        self.register_mapping = RegisterMapping(
+            void_description=void_desc, true_description=true_desc,
+            false_description=false_desc, both_description=both_desc,
+            transitions=transitions or [], entropy_assertion=entropy_assertion
+        )
+        errs = self.register_mapping.validate()
+        if errs:
+            self._errors.extend(errs)
+        self._current_phase = 4
+        return self
+
+    def add_transition(self, from_state: str, opcode: str, to_state: str,
+                       domain_example: str, notes: str = "") -> "Ob3ectPipeline":
+        if self.register_mapping is None:
+            raise RuntimeError("Call map_registers first")
+        self.register_mapping.transitions.append({
+            "from": from_state, "opcode": opcode, "to": to_state,
+            "domain_example": domain_example, "notes": notes
+        })
+        return self
+
+    # ── Phase 4 ────────────────────────────────────────────────────
+    def design_bootstrap(self, steps: List[Dict[str, str]],
+                         closure_verified: bool = True,
+                         failure_modes: Optional[List[str]] = None) -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 4:
+            raise RuntimeError("Complete Phase 3 first")
+        self.bootstrap_sequence = BootstrapSequence(
+            steps=steps, closure_verified=closure_verified,
+            failure_modes=failure_modes or []
+        )
+        errs = self.bootstrap_sequence.validate()
+        if errs:
+            self._errors.extend(errs)
+        self._current_phase = 5
+        return self
+
+    def add_bootstrap_step(self, step_num: int, opcode: str,
+                           domain_action: str, structural_role: str) -> "Ob3ectPipeline":
+        if self.bootstrap_sequence is None:
+            self.bootstrap_sequence = BootstrapSequence()
+        self.bootstrap_sequence.steps.append({
+            "step_num": step_num, "opcode": opcode,
+            "domain_action": domain_action, "structural_role": structural_role,
+        })
+        return self
+
+    # ── Phase 5 ────────────────────────────────────────────────────
+    def specify_exos(self, compiler_frontend: str, ipc_mechanism: str,
+                     memory_mechanism: str, scheduler_mechanism: str,
+                     alfs_store: str, alfs_bootstrap_program: str = "") -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 5:
+            raise RuntimeError("Complete Phase 4 first")
+        self.exos_spec = ExOSSpec(
+            compiler_frontend=compiler_frontend,
+            ipc_mechanism=ipc_mechanism, memory_mechanism=memory_mechanism,
+            scheduler_mechanism=scheduler_mechanism, alfs_store=alfs_store,
+            alfs_bootstrap_program=alfs_bootstrap_program
+        )
+        errs = self.exos_spec.validate()
+        if errs:
+            self._errors.extend(errs)
+        self._current_phase = 6
+        return self
+
+    # ── Phase 6 ────────────────────────────────────────────────────
+    def audit_entropy(self, cycle_cost: str, pre_cycle_state: str,
+                      post_cycle_state: str, delta_s_verdict: str,
+                      failure_mode: str = "") -> "Ob3ectPipeline":
+        if self.enforce_order and self._current_phase < 6:
+            raise RuntimeError("Complete Phase 5 first")
+        self.entropy_audit = EntropyAudit(
+            cycle_cost=cycle_cost, pre_cycle_state=pre_cycle_state,
+            post_cycle_state=post_cycle_state, delta_s_verdict=delta_s_verdict,
+            failure_mode=failure_mode
+        )
+        errs = self.entropy_audit.validate()
+        if errs:
+            self._errors.extend(errs)
+        self._current_phase = 7
+        return self
+
+    # ── Phase 7 ────────────────────────────────────────────────────
+    def instantiate(self, instantiation_notes: str = "") -> Ob3ectArtifact:
+        if self.enforce_order and self._current_phase < 7:
+            raise RuntimeError("Complete Phases 0–6 first")
+        if self.domain_charter is None:
+            raise RuntimeError("Phase 0 not completed")
+        if not self.opcode_map.os_floor_check():
+            raise RuntimeError("Phase 1: not all 12 opcodes mapped")
+        if self.split_fuse_report is None:
+            raise RuntimeError("Phase 2 not completed")
+        if self.register_mapping is None:
+            raise RuntimeError("Phase 3 not completed")
+        if self.bootstrap_sequence is None:
+            raise RuntimeError("Phase 4 not completed")
+        if self.exos_spec is None:
+            raise RuntimeError("Phase 5 not completed")
+        if self.entropy_audit is None:
+            raise RuntimeError("Phase 6 not completed")
+
+        self.artifact = Ob3ectArtifact(
+            name=self.name,
+            domain_charter=self.domain_charter,
+            opcode_map=self.opcode_map,
+            split_fuse_report=self.split_fuse_report,
+            register_mapping=self.register_mapping,
+            bootstrap_sequence=self.bootstrap_sequence,
+            exos_spec=self.exos_spec,
+            entropy_audit=self.entropy_audit,
+            instantiation_notes=instantiation_notes,
+        )
+        self._current_phase = 8
+        return self.artifact
+
+    # ── Export / Reporting ─────────────────────────────────────────
+    def to_dict(self) -> Dict[str, Any]:
+        """Export the complete ob3ect as a JSON-serializable dictionary."""
+        if self.artifact is None:
+            raise RuntimeError("Call instantiate() first")
+        a = self.artifact
+        return {
+            "name": a.name,
+            "is_valid_ob3ect": a.is_valid_ob3ect,
+            "validations": a.validate_all(),
+            "phase_0_domain_charter": asdict(a.domain_charter),
+            "phase_1_opcode_map": {k: asdict(v) for k, v in a.opcode_map.entries.items()},
+            "phase_2_frobenius": asdict(a.split_fuse_report),
+            "phase_3_registers": asdict(a.register_mapping),
+            "phase_4_bootstrap": asdict(a.bootstrap_sequence),
+            "phase_5_exos": asdict(a.exos_spec),
+            "phase_6_entropy": asdict(a.entropy_audit),
+            "phase_7_notes": a.instantiation_notes,
+        }
+
+    def to_json(self, indent: int = 2) -> str:
+        return json.dumps(self.to_dict(), indent=indent)
+
+    def save(self, path: str) -> Path:
+        p = Path(path)
+        p.write_text(self.to_json(), encoding="utf-8")
+        return p
+
+    def report(self) -> str:
+        """Generate a human-readable pipeline report."""
+        if self.artifact is None:
+            raise RuntimeError("Call instantiate() first")
+        a = self.artifact
+        lines = [
+            "=" * 70,
+            f"Ob3ect: {a.name}",
+            f"Valid: {a.is_valid_ob3ect}",
+            f"Domain: {a.domain_charter.domain_name} ({a.domain_charter.domain_type})",
+            f"Scope: {a.domain_charter.scope}",
+            "=" * 70,
+            "",
+            "── Phase 0: Domain Charter ──",
+            f"  Surface tokens: {', '.join(a.domain_charter.surface_tokens)}",
+            f"  Boundary (TANCH): {a.domain_charter.boundary_condition}",
+            "",
+            "── Phase 1: Opcode Map ──",
+        ]
+        for oc in Opcode:
+            e = a.opcode_map.entries.get(oc.value)
+            if e:
+                lines.append(f"  {oc.value:>8s} → {e.chosen_element}")
+                if e.rejected_candidates:
+                    for rc, rr in e.rejected_candidates:
+                        lines.append(f"           ✗ {rc} ({rr})")
+
+        lines += [
+            "",
+            "── Phase 2: Frobenius Verification ──",
+            f"  Split: {a.split_fuse_report.split_element}",
+            f"  Split outputs: {a.split_fuse_report.split_outputs}",
+            f"  Fuse: {a.split_fuse_report.fuse_element} → {a.split_fuse_report.fuse_result}",
+            f"  Verdict: {a.split_fuse_report.frobenius_verdict}",
+            "",
+            "── Phase 3: Register Map ──",
+            f"  Void:  {a.register_mapping.void_description}",
+            f"  True:  {a.register_mapping.true_description}",
+            f"  False: {a.register_mapping.false_description}",
+            f"  Both:  {a.register_mapping.both_description}",
+            f"  ΔS assertion: {a.register_mapping.entropy_assertion}",
+            "",
+            "── Phase 4: Bootstrap Sequence ──",
+        ]
+        for s in a.bootstrap_sequence.steps:
+            lines.append(f"  Step {s['step_num']}: {s['opcode']:>8s} — {s['domain_action']}")
+        lines.append(f"  Closure verified: {a.bootstrap_sequence.closure_verified}")
+
+        lines += [
+            "",
+            "── Phase 5: exOS Spec ──",
+            f"  Compiler:   {a.exos_spec.compiler_frontend}",
+            f"  IPC:        {a.exos_spec.ipc_mechanism}",
+            f"  Memory:     {a.exos_spec.memory_mechanism}",
+            f"  Scheduler:  {a.exos_spec.scheduler_mechanism}",
+            f"  ALFS store: {a.exos_spec.alfs_store}",
+            "",
+            "── Phase 6: Entropy Audit ──",
+            f"  Cycle cost:    {a.entropy_audit.cycle_cost}",
+            f"  Pre-cycle:     {a.entropy_audit.pre_cycle_state}",
+            f"  Post-cycle:    {a.entropy_audit.post_cycle_state}",
+            f"  ΔS verdict:    {a.entropy_audit.delta_s_verdict}",
+            "",
+            "── Phase 7: Instantiation ──",
+            f"  {a.instantiation_notes or 'Ob3ect assembled and running.'}",
+            "",
+            "=" * 70,
+            f"μ∘δ = id  → {a.split_fuse_report.frobenius_verdict}",
+            f"ΔS = 0   → {a.entropy_audit.delta_s_verdict}",
+            "=" * 70,
+        ]
+        return "\n".join(lines)

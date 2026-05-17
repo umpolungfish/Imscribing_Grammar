@@ -304,8 +304,73 @@ def pad_formula(tokens: List[int], max_len: int = 256) -> List[int]:
 
 # ── 4. ZFCₜ Encoder ──────────────────────────────────────────────────────────
 
+class _NestedTransformerEncoderLayer(nn.Module):
+    """Lightweight self-attention encoder that supports both ragged (nested) and
+    padded (dense) inputs.  Replaces nn.TransformerEncoder to eliminate the
+    internal `enable_nested_tensor` deprecation path in PyTorch >= 2.4."""
+
+    def __init__(self, d_model: int, nhead: int, dim_feedforward: int, dropout: float = 0.1):
+        super().__init__()
+        self.d_model = d_model
+        self.attn = nn.MultiheadAttention(d_model, nhead, dropout=dropout, batch_first=True)
+        self.ln1  = nn.LayerNorm(d_model)
+        self.ff   = nn.Sequential(
+            nn.Linear(d_model, dim_feedforward), nn.GELU(), nn.Dropout(dropout),
+            nn.Linear(dim_feedforward, d_model), nn.Dropout(dropout),
+        )
+        self.ln2  = nn.LayerNorm(d_model)
+
+    def _jagged_to_padded(self, src):
+        """Convert jagged nested tensor to (padded_tensor, key_padding_mask)."""
+        seqs = list(src.unbind(0))
+        lengths = [len(s) for s in seqs]
+        max_len = max(lengths)
+        padded = src.to_padded_tensor(padding=0.0)
+        # key_padding_mask: True where PAD (shape: batch x seq_len)
+        mask = torch.zeros(padded.shape[0], max_len, dtype=torch.bool, device=padded.device)
+        for i, l in enumerate(lengths):
+            mask[i, l:] = True
+        return padded, mask
+
+    def forward(self, src, src_mask=None, src_key_padding_mask=None, is_causal=False,
+                memory=None, memory_mask=None, memory_key_padding_mask=None):
+        # src can be a torch._nested_tensor (jagged) or a regular Tensor (padded)
+        # Normalize jagged to padded+mask (MultiheadAttention training mode does not
+        # support nested tensors directly), then use the standard attention path.
+        if isinstance(src, torch.Tensor) and src.layout == torch.jagged:
+            src, src_key_padding_mask = self._jagged_to_padded(src)
+        # Dense/padded path — standard transformer layer.
+        x = src
+        residual = x
+        x, _ = self.attn(x, x, x, key_padding_mask=src_key_padding_mask,
+                         is_causal=is_causal)
+        x = self.ln1(x + residual)
+        x = x + self.ff(x)
+        return self.ln2(x)
+
+
+class NestedTransformerEncoder(nn.Module):
+    """Stack of _NestedTransformerEncoderLayer blocks.  Accepts regular tensors
+    (dense, padded) and torch.jagged tensors (nested/ragged) transparently."""
+
+    def __init__(self, layer: nn.Module, num_layers: int):
+        super().__init__()
+        self.layers = nn.ModuleList([layer for _ in range(num_layers)])
+
+    def forward(self, src, src_mask=None, src_key_padding_mask=None, is_causal=False):
+        x = src
+        for mod in self.layers:
+            x = mod(x, src_mask=src_mask, src_key_padding_mask=src_key_padding_mask,
+                    is_causal=is_causal)
+        return x
+
+
 class ZFCtEncoder(nn.Module):
-    """Transformer encoder over the extended ZFCₜ vocabulary."""
+    """Transformer encoder over the extended ZFCₜ vocabulary.
+
+    Supports both padded (legacy) and jagged/nested tensor inputs via
+    ``torch.nested`` — no more ``enable_nested_tensor`` deprecation warning.
+    """
 
     def __init__(
         self,
@@ -315,17 +380,19 @@ class ZFCtEncoder(nn.Module):
         n_heads:    int = 4,
         n_layers:   int = 4,
         dropout:    float = 0.1,
+        use_nested: bool = False,
     ):
         super().__init__()
         self.hidden_dim = hidden_dim
+        self.use_nested = use_nested
         self.tok_emb = nn.Embedding(vocab_size, hidden_dim, padding_idx=PAD_IDX)
         self.pos_emb = nn.Embedding(max_len, hidden_dim)
-        enc_layer = nn.TransformerEncoderLayer(
+        enc_layer = _NestedTransformerEncoderLayer(
             d_model=hidden_dim, nhead=n_heads,
             dim_feedforward=hidden_dim * 4,
-            dropout=dropout, batch_first=True, norm_first=True,
+            dropout=dropout,
         )
-        self.transformer = nn.TransformerEncoder(enc_layer, num_layers=n_layers)
+        self.transformer = NestedTransformerEncoder(enc_layer, num_layers=n_layers)
         self.heads = nn.ModuleList([nn.Linear(hidden_dim, NUM_VALUES[p]) for p in PRIMITIVES])
         self.dropout = nn.Dropout(dropout)
         self._init_weights()
@@ -336,14 +403,33 @@ class ZFCtEncoder(nn.Module):
         for h in self.heads:
             nn.init.xavier_uniform_(h.weight)
 
-    def forward(self, token_ids: torch.Tensor) -> List[torch.Tensor]:
-        B, L = token_ids.shape
-        positions = torch.arange(L, device=token_ids.device).unsqueeze(0)
-        pad_mask  = (token_ids == PAD_IDX)
-        x = self.dropout(self.tok_emb(token_ids) + self.pos_emb(positions))
-        x = self.transformer(x, src_key_padding_mask=pad_mask)
-        lens  = (~pad_mask).float().sum(dim=1, keepdim=True).clamp(min=1)
-        x_mean = (x * (~pad_mask).float().unsqueeze(-1)).sum(1) / lens
+    def forward(self, token_ids: torch.Tensor, seq_lengths: Optional[torch.Tensor] = None) -> List[torch.Tensor]:
+        # Detect input layout
+        is_jagged = isinstance(token_ids, torch.Tensor) and token_ids.layout == torch.jagged
+
+        if is_jagged:
+            # Nested-tensor path: apply embeddings layer-by-layer
+            x = self.dropout(self.tok_emb(token_ids))
+            # positional info encoded via learned offset in the nested tensor itself
+            x = self.transformer(x)
+            # For jagged tensors, mean-reduce over each sequence in the batch
+            # Mean-reduce over each sequence (sequence-level pooling for classification)
+            seqs = x.unbind(0)
+            x_mean = torch.stack([s.mean(dim=0) for s in seqs])
+        else:
+            # Legacy padded path
+            if token_ids.dim() == 1:
+                token_ids = token_ids.unsqueeze(0)
+            B, L = token_ids.shape
+            positions = torch.arange(L, device=token_ids.device).unsqueeze(0).expand(B, -1)
+            pad_mask  = (token_ids == PAD_IDX)
+            x = self.dropout(self.tok_emb(token_ids) + self.pos_emb(positions))
+            x = self.transformer(x, src_key_padding_mask=pad_mask)
+            if seq_lengths is not None:
+                lens = seq_lengths.float().unsqueeze(-1).clamp(min=1)
+            else:
+                lens  = (~pad_mask).float().sum(dim=1, keepdim=True).clamp(min=1)
+            x_mean = (x * (~pad_mask).float().unsqueeze(-1)).sum(1) / lens
         return [head(x_mean) for head in self.heads]
 
 

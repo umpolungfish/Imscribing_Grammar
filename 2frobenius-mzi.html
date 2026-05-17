@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Frobenius Mesh 3x3 | Looping Photons • Complex MZI Matrix & SVD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,500;14..32,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #03030c;
+            color: #eef5ff;
+        }
+        .ui-panel {
+            position: absolute;
+            background: rgba(12, 18, 32, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(0, 255, 200, 0.25);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+            padding: 16px 20px;
+            z-index: 20;
+            pointer-events: auto;
+            transition: all 0.2s ease;
+        }
+        .panel-left {
+            top: 20px;
+            left: 20px;
+            width: 280px;
+            background: rgba(8, 12, 24, 0.92);
+        }
+        .panel-right {
+            top: 20px;
+            right: 20px;
+            width: 320px;
+            background: rgba(8, 12, 24, 0.92);
+        }
+        .panel-bottom {
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            background: rgba(12, 18, 32, 0.88);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            backdrop-filter: blur(16px);
+            border-top: 1px solid #00ffcc33;
+        }
+        h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        h2 span {
+            background: #00ffcc22;
+            padding: 2px 8px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-family: monospace;
+        }
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: #00000066;
+            border-radius: 16px;
+            padding: 12px;
+            margin: 12px 0;
+        }
+        .matrix-cell {
+            background: #0b0f1c;
+            padding: 6px 4px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #2a3a66;
+        }
+        .matrix-cell .re {
+            color: #88ffcc;
+            font-weight: 600;
+        }
+        .matrix-cell .im {
+            color: #ff99cc;
+            font-size: 0.7rem;
+        }
+        .frob-value {
+            font-size: 1.9rem;
+            font-weight: 800;
+            font-family: monospace;
+            color: #ffdd77;
+            text-shadow: 0 0 12px #ffaa33;
+            letter-spacing: 2px;
+        }
+        .svd-list {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            margin: 12px 0;
+            font-family: monospace;
+        }
+        .svd-item {
+            background: #0f1322;
+            padding: 5px 12px;
+            border-radius: 40px;
+            border-left: 3px solid #ff66cc;
+        }
+        button {
+            background: rgba(0, 255, 200, 0.12);
+            border: 1px solid #00ffcc;
+            color: #00ffcc;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.8rem;
+        }
+        button:hover {
+            background: rgba(0, 255, 200, 0.35);
+            box-shadow: 0 0 8px #00ffcc88;
+        }
+        .mzi-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 12px 0;
+        }
+        .mzi-btn {
+            background: #171d30;
+            border: 1px solid #3a4466;
+            border-radius: 32px;
+            padding: 6px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .mzi-btn.active {
+            background: #00ffcc22;
+            border-color: #00ffcc;
+            color: #ccffff;
+            box-shadow: 0 0 8px #00ffcc88;
+        }
+        .slider-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 8px 0;
+            justify-content: space-between;
+        }
+        .slider-group label {
+            font-size: 0.75rem;
+            width: 55px;
+        }
+        input[type="range"] {
+            flex: 1;
+            accent-color: #00ffcc;
+        }
+        .phase-val {
+            font-family: monospace;
+            width: 55px;
+            text-align: right;
+            font-size: 0.8rem;
+        }
+        .unitary-badge {
+            font-family: monospace;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background: #1f1f3a;
+            border-radius: 24px;
+            display: inline-block;
+        }
+        hr {
+            border-color: #2a3a66;
+            margin: 10px 0;
+        }
+        .footnote {
+            font-size: 0.7rem;
+            opacity: 0.65;
+            text-align: right;
+        }
+        @media (max-width: 1000px) {
+            .panel-left, .panel-right { width: 260px; }
+            .panel-bottom { flex-direction: column; align-items: stretch; }
+        }
+        .photon-trail {
+            position: absolute;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ui-panel panel-left">
+        <h2>🌀 MZI MESH 3×3 <span>complex</span></h2>
+        <div class="mzi-selector" id="mziGridSelector"></div>
+        <div id="mziControlArea">
+            <div class="slider-group">
+                <label>θ (amp)</label>
+                <input type="range" id="thetaSlider" min="0" max="360" step="1" value="78">
+                <span id="thetaVal" class="phase-val">78°</span>
+            </div>
+            <div class="slider-group">
+                <label>φ (phase)</label>
+                <input type="range" id="phiSlider" min="0" max="360" step="1" value="125">
+                <span id="phiVal" class="phase-val">125°</span>
+            </div>
+            <div style="font-size:0.7rem; margin-top: 6px; text-align:center;">a<sub>ij</sub> = sin(θ)·e<sup>iφ</sup></div>
+        </div>
+        <hr>
+        <div><span style="color:#00ffcc;">●</span> selected MZI : <strong id="selectedMZIName">MZI₁₁</strong></div>
+        <div style="margin-top: 8px;"><span style="color:#ff99cc;">⚡ amplitude ∝ sinθ</span> &nbsp;|&nbsp; <span style="color:#88ffaa;">🌈 phase factor e<sup>iφ</sup></span></div>
+    </div>
+
+    <div class="ui-panel panel-right">
+        <h2>📐 COMPLEX MATRIX A (3×3)</h2>
+        <div id="matrix3x3Display" class="matrix-grid"></div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <div>‖A‖<sub>F</sub> = <span id="frobNorm" class="frob-value">0.00</span></div>
+            <div class="unitary-badge" id="unitaryCheck">⚡ unitarity ?</div>
+        </div>
+        <h2 style="margin-top: 14px;">📊 SINGULAR VALUES</h2>
+        <div id="svdPanel" class="svd-list">σ₁: — &nbsp; σ₂: — &nbsp; σ₃: —</div>
+        <div style="font-size:0.68rem; margin-top: 4px;">SVD (power iteration) | condition number </div>
+        <div id="condNum" style="font-family: monospace; font-size:0.75rem;"></div>
+        <hr>
+        <div style="display: flex; gap: 12px; justify-content: space-between;">
+            <button id="randomizeBtn">🎲 Random Phases</button>
+            <button id="resetUnitaryBtn">🔁 Reset (near-unitary)</button>
+        </div>
+        <div class="footnote">Each MZI: a_ij = sin(θ)·exp(iφ)</div>
+    </div>
+
+    <div class="ui-panel panel-bottom">
+        <div>🧬 Frobenius algebra | 3x3 MZI Mesh | 🔄 LOOPING PHOTONS (closed circuits)</div>
+        <div style="display: flex; gap: 15px;">
+            <div>🟡 🔴 🔵 photon rings | ∞ infinite loop</div>
+            <button id="toggleOrbitBtn">🎥 Auto-rotate</button>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+
+        // ---------- COMPLEX MATH & SVD ----------
+        class Complex {
+            constructor(re, im) { this.re = re; this.im = im; }
+            mag() { return Math.hypot(this.re, this.im); }
+            static add(a,b) { return new Complex(a.re+b.re, a.im+b.im); }
+            static mul(a,b) { return new Complex(a.re*b.re - a.im*b.im, a.re*b.im + a.im*b.re); }
+            static conj(a) { return new Complex(a.re, -a.im); }
+        }
+
+        function matMul3x3(A, B) {
+            let C = Array(9).fill().map(()=>new Complex(0,0));
+            for(let i=0;i<3;i++) for(let j=0;j<3;j++) for(let k=0;k<3;k++) {
+                let prod = Complex.mul(A[i*3+k], B[k*3+j]);
+                C[i*3+j] = Complex.add(C[i*3+j], prod);
+            }
+            return C;
+        }
+        function matHermitianMul(A, B) {
+            let At = Array(9).fill().map(()=>new Complex(0,0));
+            for(let i=0;i<3;i++) for(let j=0;j<3;j++) At[i*3+j] = Complex.conj(A[j*3+i]);
+            return matMul3x3(At, B);
+        }
+        function frobeniusNorm(matrix) {
+            let sum = 0;
+            for(let c of matrix) sum += c.mag()**2;
+            return Math.sqrt(sum);
+        }
+        function identity3() {
+            let I = Array(9).fill().map(()=>new Complex(0,0));
+            for(let i=0;i<3;i++) I[i*3+i] = new Complex(1,0);
+            return I;
+        }
+        function subtractMat(A,B) { return A.map((c,i)=>new Complex(c.re-B[i].re, c.im-B[i].im)); }
+        
+        function largestEigenvalue(HermMat) {
+            let vec = [new Complex(1,0), new Complex(0.5,0), new Complex(0.2,0)];
+            for(let iter=0;iter<50;iter++) {
+                let nv = [new Complex(0,0), new Complex(0,0), new Complex(0,0)];
+                for(let i=0;i<3;i++) for(let j=0;j<3;j++) {
+                    let prod = Complex.mul(HermMat[i*3+j], vec[j]);
+                    nv[i] = Complex.add(nv[i], prod);
+                }
+                let norm = Math.sqrt(nv.reduce((s,v)=>s+v.mag()**2,0));
+                if(norm<1e-9) break;
+                vec = nv.map(v=>new Complex(v.re/norm, v.im/norm));
+            }
+            let num = 0, den = 0;
+            for(let i=0;i<3;i++) for(let j=0;j<3;j++) {
+                let prod = Complex.mul(Complex.conj(vec[i]), Complex.mul(HermMat[i*3+j], vec[j]));
+                num += prod.re;
+            }
+            den = vec.reduce((s,v)=>s+v.mag()**2,0);
+            return num/den;
+        }
+        
+        function computeSVD(matrix3x3) {
+            const A = matrix3x3;
+            const A_dagger_A = matHermitianMul(A, A);
+            let eigenvals = [];
+            let M = A_dagger_A.map(c=>new Complex(c.re,c.im));
+            for(let k=0;k<3;k++) {
+                let lambda = largestEigenvalue(M);
+                eigenvals.push(lambda);
+                let vec = [new Complex(1,0), new Complex(0.618,0), new Complex(0,0)];
+                for(let iter=0;iter<40;iter++) {
+                    let nv = [new Complex(0,0), new Complex(0,0), new Complex(0,0)];
+                    for(let i=0;i<3;i++) for(let j=0;j<3;j++) {
+                        let prod = Complex.mul(M[i*3+j], vec[j]);
+                        nv[i] = Complex.add(nv[i], prod);
+                    }
+                    let norm = Math.sqrt(nv.reduce((s,v)=>s+v.mag()**2,0));
+                    if(norm<1e-9) break;
+                    vec = nv.map(v=>new Complex(v.re/norm, v.im/norm));
+                }
+                for(let i=0;i<3;i++) for(let j=0;j<3;j++) {
+                    let proj = Complex.mul(vec[i], Complex.conj(vec[j]));
+                    proj = new Complex(proj.re * lambda, proj.im * lambda);
+                    M[i*3+j] = new Complex(M[i*3+j].re - proj.re, M[i*3+j].im - proj.im);
+                }
+            }
+            let sv = eigenvals.map(v=>Math.sqrt(Math.max(0, v))).sort((a,b)=>b-a);
+            return sv;
+        }
+        
+        function checkUnitarity(A) {
+            let Id = identity3();
+            let A_dag_A = matHermitianMul(A, A);
+            let diff = subtractMat(A_dag_A, Id);
+            let err = frobeniusNorm(diff);
+            return err < 0.25 ? (err < 0.08 ? "✓ nearly unitary" : "~ approx unitary") : "⊗ not unitary";
+        }
+        
+        // ---------- SCENE SETUP ----------
+        let currentMatrix = Array(9).fill().map(()=>new Complex(0,0));
+        let mziParams = [];
+        let selectedIdx = 0;
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x03030c);
+        scene.fog = new THREE.FogExp2(0x03030c, 0.003);
+        
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 200);
+        camera.position.set(28, 22, 32);
+        const renderer = new THREE.WebGLRenderer({antialias:true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        document.body.appendChild(renderer.domElement);
+        
+        const labelRenderer = new CSS2DRenderer();
+        labelRenderer.setSize(window.innerWidth, window.innerHeight);
+        labelRenderer.domElement.style.position = 'absolute';
+        labelRenderer.domElement.style.top = '0px';
+        labelRenderer.domElement.style.left = '0px';
+        labelRenderer.domElement.style.pointerEvents = 'none';
+        document.body.appendChild(labelRenderer.domElement);
+        
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.08;
+        controls.autoRotate = false;
+        controls.autoRotateSpeed = 1.2;
+        controls.enableZoom = true;
+        
+        // Lighting
+        const ambient = new THREE.AmbientLight(0x2a2a4a);
+        scene.add(ambient);
+        const mainLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        mainLight.position.set(10,30,15);
+        mainLight.castShadow = true;
+        scene.add(mainLight);
+        const fillLight = new THREE.PointLight(0x4488ff, 0.5);
+        fillLight.position.set(-8,12,10);
+        scene.add(fillLight);
+        const backLight = new THREE.PointLight(0xffaa66, 0.4);
+        backLight.position.set(5,8,-15);
+        scene.add(backLight);
+        
+        const table = new THREE.Mesh(
+            new THREE.BoxGeometry(62, 0.8, 52),
+            new THREE.MeshStandardMaterial({color: 0x101520, roughness:0.6, metalness:0.2})
+        );
+        table.position.y = -1.2;
+        table.receiveShadow = true;
+        scene.add(table);
+        scene.add(new THREE.GridHelper(70, 35, 0x4488aa, 0x224466));
+        
+        // MZI visual component
+        const cols = [-18, 0, 18];
+        const rows = [-12, 0, 12];
+        let mziInstances = [];
+        
+        function createMZIinstance(x, z, idx, row, col) {
+            const group = new THREE.Group();
+            group.position.set(x, 2.4, z);
+            const bsMat = new THREE.MeshStandardMaterial({color: 0x66aaff, metalness:0.65, emissive:0x2266aa, emissiveIntensity:0.2});
+            const bsGeo = new THREE.CylinderGeometry(0.8,0.8,0.3,16);
+            const bsLeft = new THREE.Mesh(bsGeo, bsMat);
+            bsLeft.position.set(-3.2,0,0);
+            bsLeft.castShadow=true;
+            const bsRight = new THREE.Mesh(bsGeo, bsMat);
+            bsRight.position.set(3.2,0,0);
+            bsRight.castShadow=true;
+            group.add(bsLeft, bsRight);
+            
+            const tubeMat = new THREE.MeshStandardMaterial({color: 0x88ccff, emissive:0x2288aa, emissiveIntensity:0.35});
+            const makeTube = (points) => new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 24, 0.09, 6), tubeMat);
+            const upArm = makeTube([new THREE.Vector3(-2.5,0.45,0.8), new THREE.Vector3(-1,1.0,1.1), new THREE.Vector3(0,1.2,1.2), new THREE.Vector3(1,1.0,1.1), new THREE.Vector3(2.5,0.45,0.8)]);
+            const lowArm = makeTube([new THREE.Vector3(-2.5,0.3,-0.8), new THREE.Vector3(-1,0.7,-1.0), new THREE.Vector3(0,0.9,-1.1), new THREE.Vector3(1,0.7,-1.0), new THREE.Vector3(2.5,0.3,-0.8)]);
+            group.add(upArm, lowArm);
+            
+            const ringMat = new THREE.MeshStandardMaterial({color: 0xffaa77, emissive:0xff6633, emissiveIntensity:0.5});
+            const ring = new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.08, 16, 48), ringMat);
+            ring.position.set(0, 1.0, 0);
+            ring.rotation.x = Math.PI/2;
+            group.add(ring);
+            
+            const detMat = new THREE.MeshStandardMaterial({color: 0xff6688, emissive:0xff2266, emissiveIntensity:0.7});
+            const detector = new THREE.Mesh(new THREE.SphereGeometry(0.65, 24,24), detMat);
+            detector.position.set(4.2, 0.25, 0);
+            group.add(detector);
+            
+            const div = document.createElement('div');
+            div.className = 'mzi-label-custom';
+            div.style.background = '#0a0e1fcc';
+            div.style.padding = '2px 8px';
+            div.style.borderRadius = '20px';
+            div.style.fontSize = '0.7rem';
+            div.style.fontFamily = 'monospace';
+            div.style.border = '1px solid #88ccff';
+            div.style.color = '#bbffff';
+            div.innerHTML = `MZI<sub>${row+1}${col+1}</sub> <span id="mzival-${idx}" style="color:#ffcc88;">0.00</span>`;
+            const labelObj = new CSS2DObject(div);
+            labelObj.position.set(0, 2.2, 0);
+            group.add(labelObj);
+            
+            scene.add(group);
+            return { group, detector, ring, labelDiv: div, idx, row, col, detMat };
+        }
+        
+        for(let i=0;i<3;i++) {
+            for(let j=0;j<3;j++) {
+                const idx = i*3+j;
+                const inst = createMZIinstance(cols[j], rows[i], idx, i, j);
+                mziInstances.push(inst);
+            }
+        }
+        
+        // Connectors
+        const connMat = new THREE.MeshStandardMaterial({color: 0x77aaff, emissive:0x3377aa, emissiveIntensity:0.2});
+        for(let r=0;r<3;r++) {
+            const zpos = rows[r];
+            for(let c=0;c<2;c++) {
+                const x1 = cols[c] + 3.2;
+                const x2 = cols[c+1] - 3.2;
+                const points = [new THREE.Vector3(x1, 2.6, zpos), new THREE.Vector3((x1+x2)/2, 2.9, zpos), new THREE.Vector3(x2, 2.6, zpos)];
+                const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 20, 0.08, 6), connMat);
+                scene.add(tube);
+            }
+            const startX = -28;
+            const endX = cols[0] - 3.2;
+            const pointsIn = [new THREE.Vector3(startX, 2.7, rows[r]), new THREE.Vector3((startX+endX)/2, 3.0, rows[r]), new THREE.Vector3(endX, 2.6, rows[r])];
+            const inTube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pointsIn), 16, 0.09, 6), connMat);
+            scene.add(inTube);
+            // output tubes
+            const outStart = cols[2] + 4.2;
+            const outEnd = 32;
+            const pointsOut = [new THREE.Vector3(outStart, 2.6, rows[r]), new THREE.Vector3((outStart+outEnd)/2, 2.85, rows[r]), new THREE.Vector3(outEnd, 2.7, rows[r])];
+            const outTube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pointsOut), 18, 0.09, 6), connMat);
+            scene.add(outTube);
+        }
+        
+        // ========== LOOPING PHOTON PATHS (TRUE CLOSED LOOPS) ==========
+        // Create 3 distinct closed-loop circuits, one per row, that cycle through the MZI mesh and return.
+        const rowLoopCurves = [];
+        const photonColors = [0xff6666, 0xffaa66, 0x66ffaa]; // warm gradients
+        
+        for (let r = 0; r < 3; r++) {
+            const z = rows[r];
+            // closed loop: enters from left, goes through all 3 columns, exits right, then loops back above the mesh to restart
+            const loopPoints = [
+                new THREE.Vector3(-26, 2.7, z),               // start left
+                new THREE.Vector3(cols[0] - 3.0, 2.65, z),    // approach col1
+                new THREE.Vector3(cols[0], 2.55, z),          // inside col1
+                new THREE.Vector3(cols[0] + 3.0, 2.65, z),    // exit col1
+                new THREE.Vector3(cols[1] - 3.0, 2.7, z),     // to col2
+                new THREE.Vector3(cols[1], 2.55, z),          // inside col2
+                new THREE.Vector3(cols[1] + 3.0, 2.65, z),    // exit col2
+                new THREE.Vector3(cols[2] - 3.0, 2.7, z),     // to col3
+                new THREE.Vector3(cols[2], 2.55, z),          // inside col3
+                new THREE.Vector3(cols[2] + 4.5, 2.7, z),     // exit right
+                new THREE.Vector3(28, 2.9, z),                // far right
+                new THREE.Vector3(30, 3.8, z + 2),            // turn up and loop back
+                new THREE.Vector3(20, 4.2, z + 3),
+                new THREE.Vector3(10, 4.5, z + 2.5),
+                new THREE.Vector3(0, 4.6, z + 2),
+                new THREE.Vector3(-10, 4.5, z + 2.5),
+                new THREE.Vector3(-20, 4.2, z + 3),
+                new THREE.Vector3(-28, 3.5, z + 1.5),
+                new THREE.Vector3(-26, 2.9, z)               // back to start (closed)
+            ];
+            const curve = new THREE.CatmullRomCurve3(loopPoints);
+            curve.curveType = 'centripetal';
+            curve.closed = true;   // TRUE LOOP!
+            rowLoopCurves.push(curve);
+        }
+        
+        // Also add cross-row mixing photons (shorter loops that jump between rows)
+        const crossLoops = [];
+        const crossColors = [0x88aaff, 0xff88cc, 0x88ffaa];
+        for (let k = 0; k < 3; k++) {
+            const offsetZ = [-10, 0, 10][k];
+            const pointsCross = [
+                new THREE.Vector3(-20, 3.0, offsetZ),
+                new THREE.Vector3(-8, 3.2, offsetZ + 2),
+                new THREE.Vector3(0, 3.5, offsetZ),
+                new THREE.Vector3(8, 3.2, offsetZ - 2),
+                new THREE.Vector3(20, 3.0, offsetZ),
+                new THREE.Vector3(8, 3.1, offsetZ + 1),
+                new THREE.Vector3(0, 3.4, offsetZ + 1.5),
+                new THREE.Vector3(-8, 3.1, offsetZ + 1),
+                new THREE.Vector3(-20, 3.0, offsetZ)
+            ];
+            const curve = new THREE.CatmullRomCurve3(pointsCross);
+            curve.closed = true;
+            crossLoops.push(curve);
+        }
+        
+        // Create photon spheres
+        const photons = [];
+        // Main row photons (9: 3 per row)
+        for (let row = 0; row < 3; row++) {
+            for (let p = 0; p < 3; p++) {
+                const sphereGeo = new THREE.SphereGeometry(0.28, 24, 24);
+                const material = new THREE.MeshStandardMaterial({
+                    color: photonColors[row % photonColors.length],
+                    emissive: photonColors[row % photonColors.length],
+                    emissiveIntensity: 1.1,
+                    metalness: 0.2
+                });
+                const sphere = new THREE.Mesh(sphereGeo, material);
+                sphere.castShadow = true;
+                scene.add(sphere);
+                photons.push({
+                    mesh: sphere,
+                    curve: rowLoopCurves[row],
+                    t: (p / 3.0) + (row * 0.2), // offset so they spread out
+                    speed: 0.0028 + (p * 0.0005),
+                    color: photonColors[row],
+                    type: 'row'
+                });
+            }
+        }
+        // Cross coupling photons (6 extra, showing mode mixing)
+        for (let i = 0; i < 6; i++) {
+            const sphereGeo = new THREE.SphereGeometry(0.22, 20, 20);
+            const material = new THREE.MeshStandardMaterial({
+                color: 0xff88aa,
+                emissive: 0xff44aa,
+                emissiveIntensity: 0.9
+            });
+            const sphere = new THREE.Mesh(sphereGeo, material);
+            scene.add(sphere);
+            photons.push({
+                mesh: sphere,
+                curve: crossLoops[i % crossLoops.length],
+                t: Math.random(),
+                speed: 0.0032 + Math.random() * 0.002,
+                color: 0xff88aa,
+                type: 'cross'
+            });
+        }
+        
+        // Update matrix from MZI params
+        function updateMatrixFromParams() {
+            for(let idx=0; idx<9; idx++) {
+                const p = mziParams[idx];
+                const thetaRad = p.theta_deg * Math.PI/180;
+                const phiRad = p.phi_deg * Math.PI/180;
+                const amp = Math.sin(thetaRad);
+                const re = amp * Math.cos(phiRad);
+                const im = amp * Math.sin(phiRad);
+                currentMatrix[idx] = new Complex(re, im);
+                const inst = mziInstances[idx];
+                if(inst) {
+                    inst.detMat.emissiveIntensity = 0.3 + amp*1.4;
+                    inst.ring.rotation.z = phiRad;
+                    const span = inst.labelDiv.querySelector(`#mzival-${idx}`);
+                    if(span) span.innerText = amp.toFixed(3);
+                    // scale detector intensity visually
+                    const scaleVal = 0.7 + amp * 0.6;
+                    inst.detector.scale.set(scaleVal, scaleVal, scaleVal);
+                }
+            }
+            const matrixDiv = document.getElementById('matrix3x3Display');
+            matrixDiv.innerHTML = '';
+            for(let i=0;i<3;i++) {
+                for(let j=0;j<3;j++) {
+                    const c = currentMatrix[i*3+j];
+                    matrixDiv.innerHTML += `<div class="matrix-cell"><span class="re">${c.re.toFixed(3)}</span> ${c.im>=0?'+':'-'} <span class="im">${Math.abs(c.im).toFixed(3)}i</span></div>`;
+                }
+            }
+            const norm = frobeniusNorm(currentMatrix);
+            document.getElementById('frobNorm').innerHTML = norm.toFixed(4);
+            const sv = computeSVD(currentMatrix);
+            document.getElementById('svdPanel').innerHTML = sv.map((s,i)=>`<div class="svd-item">σ<sub>${i+1}</sub> = ${s.toFixed(3)}</div>`).join('');
+            const cond = sv[2] > 1e-6 ? (sv[0]/sv[2]).toFixed(2) : '∞';
+            document.getElementById('condNum').innerHTML = `condition κ = ${cond}`;
+            const unitaryStatus = checkUnitarity(currentMatrix);
+            document.getElementById('unitaryCheck').innerHTML = `🔮 ${unitaryStatus}`;
+        }
+        
+        // UI binding
+        const thetaSlider = document.getElementById('thetaSlider');
+        const phiSlider = document.getElementById('phiSlider');
+        const thetaVal = document.getElementById('thetaVal');
+        const phiVal = document.getElementById('phiVal');
+        const selectedSpan = document.getElementById('selectedMZIName');
+        
+        function updateSelectedMZIParams() {
+            const p = mziParams[selectedIdx];
+            thetaSlider.value = p.theta_deg;
+            phiSlider.value = p.phi_deg;
+            thetaVal.innerText = p.theta_deg + "°";
+            phiVal.innerText = p.phi_deg + "°";
+            const row = Math.floor(selectedIdx/3)+1;
+            const col = (selectedIdx%3)+1;
+            selectedSpan.innerHTML = `MZI<sub>${row}${col}</sub>`;
+            document.querySelectorAll('.mzi-btn').forEach((btn,i)=>{
+                if(i===selectedIdx) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            updateMatrixFromParams();
+        }
+        
+        thetaSlider.addEventListener('input', ()=>{
+            mziParams[selectedIdx].theta_deg = parseFloat(thetaSlider.value);
+            thetaVal.innerText = thetaSlider.value + "°";
+            updateMatrixFromParams();
+        });
+        phiSlider.addEventListener('input', ()=>{
+            mziParams[selectedIdx].phi_deg = parseFloat(phiSlider.value);
+            phiVal.innerText = phiSlider.value + "°";
+            updateMatrixFromParams();
+        });
+        
+        const selectorDiv = document.getElementById('mziGridSelector');
+        for(let r=0;r<3;r++) {
+            for(let c=0;c<3;c++) {
+                const idx = r*3+c;
+                const btn = document.createElement('div');
+                btn.className = 'mzi-btn';
+                btn.innerText = `MZI${r+1}${c+1}`;
+                btn.addEventListener('click', ()=>{
+                    selectedIdx = idx;
+                    updateSelectedMZIParams();
+                });
+                selectorDiv.appendChild(btn);
+            }
+        }
+        
+        function randomPhases() {
+            for(let i=0;i<9;i++) {
+                mziParams[i].theta_deg = Math.random() * 360;
+                mziParams[i].phi_deg = Math.random() * 360;
+            }
+            updateSelectedMZIParams();
+            updateMatrixFromParams();
+        }
+        
+        function resetNearUnitary() {
+            const unitarySet = [
+                [60, 30], [90, 45], [120, 60],
+                [45, 90], [70, 0], [100, 120],
+                [135, 180], [30, 270], [80, 210]
+            ];
+            for(let i=0;i<9;i++) {
+                mziParams[i].theta_deg = unitarySet[i][0];
+                mziParams[i].phi_deg = unitarySet[i][1];
+            }
+            updateSelectedMZIParams();
+            updateMatrixFromParams();
+        }
+        
+        for(let i=0;i<9;i++) {
+            mziParams.push({theta_deg: 70 + (i*19)%360, phi_deg: (i*47)%360 });
+        }
+        selectedIdx = 0;
+        updateSelectedMZIParams();
+        
+        document.getElementById('randomizeBtn').addEventListener('click', randomPhases);
+        document.getElementById('resetUnitaryBtn').addEventListener('click', resetNearUnitary);
+        let autoRotateFlag = false;
+        document.getElementById('toggleOrbitBtn').addEventListener('click', ()=>{
+            controls.autoRotate = !controls.autoRotate;
+            autoRotateFlag = controls.autoRotate;
+            document.getElementById('toggleOrbitBtn').innerHTML = autoRotateFlag ? "⏸ Stop" : "🎥 Auto-rotate";
+        });
+        
+        // Animation: update photon positions along their CLOSED LOOP curves
+        let lastTime = performance.now();
+        function animatePhotons(now) {
+            let delta = Math.min(0.033, (now - lastTime) / 1000);
+            lastTime = now;
+            for (let ph of photons) {
+                ph.t += ph.speed * (delta * 30); // speed normalization
+                if (ph.t > 1) ph.t -= 1;
+                const pos = ph.curve.getPoint(ph.t);
+                ph.mesh.position.copy(pos);
+                // pulsate intensity
+                const intensity = 0.8 + Math.sin(now * 0.012 + ph.t * 20) * 0.6;
+                ph.mesh.material.emissiveIntensity = intensity;
+            }
+        }
+        
+        function animate() {
+            const now = performance.now();
+            animatePhotons(now);
+            controls.update();
+            renderer.render(scene, camera);
+            labelRenderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+        
+        lastTime = performance.now();
+        animate();
+        
+        window.addEventListener('resize', ()=>{
+            camera.aspect = window.innerWidth/window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            labelRenderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+    <style>
+        .mzi-label-custom {
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+    </style>
+</body>
+</html>

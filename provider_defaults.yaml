@@ -97,6 +97,19 @@ providers:
         max_tokens: 2048
         use_cases: ["imscription_generation", "guided_generation"]
 
+  openrouter:
+    default_model: "deepseek/deepseek-r1"
+    base_url: "https://openrouter.ai/api/v1/chat/completions"
+    max_tokens_default: 4000
+    temperature_default: 0.7
+    models:
+      - name: "deepseek/deepseek-r1"
+        description: "DeepSeek R1 via OpenRouter"
+        use_cases: ["reasoning", "imscription_generation", "general"]
+      - name: "qwen/qwen3-235b-a22b"
+        description: "Qwen3 235B via OpenRouter"
+        use_cases: ["reasoning", "imscription_generation", "general"]
+
   aider:
     default_model: "nvidia/nemotron-3-nano-30b-a3b:free"  # Free NVIDIA model - reliable and efficient
     base_url: "https://openrouter.ai/api/v1"
