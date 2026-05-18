@@ -578,6 +578,38 @@
     .magnum-eq em { font-style: italic; color: var(--text3); font-family: 'EB Garamond', serif; font-size: 14px; }
     .magnum-sep { color: var(--border2); font-size: 16px; font-weight: 400; }
 
+    /* ── Temporal Bootstrap ── */
+    .temporal-section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--alb);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .temporal-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--alb);
+      margin-bottom: 1rem;
+    }
+    .temporal-body {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text2);
+      font-style: italic;
+      line-height: 1.9;
+    }
+    .temporal-body em { color: var(--alb); font-style: normal; font-weight: 600; }
+    .operad-step {
+      font-size: 12px;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--rub-lt);
+    }
+
     /* ── Mobile ── */
     @media (max-width: 720px) {
       .stages {
@@ -1062,7 +1094,7 @@
   <section class="magnum-section">
     <div class="magnum-label">THE MAGNUM OPUS &nbsp;·&nbsp; TWELVE STAGES AS PRIMITIVE INVOCATIONS</div>
     <p class="magnum-intro">
-      The twelve classical stages of the Magnum Opus — from <em>Calcination</em> through <em>Projection</em> — correspond in structural content, and in canonical order, to the twelve IG primitives. Each stage is a primitive invocation: the phenomenological vocabulary of alchemical transformation describing the same structural question that the corresponding primitive answers. Three stages are <strong style="color:var(--rub-lt);">gate primitives</strong> (Φ at 4, ⊙ at 9, Ω at 12); their failure forecloses O<sub>∞</sub>.
+      The twelve classical stages of the Magnum Opus — from <em>Calcination</em> through <em>Projection</em> — correspond in structural content, and in canonical order, to the twelve IG primitives. Each stage is a primitive invocation: the phenomenological vocabulary of alchemical transformation describing the same structural question that the corresponding primitive answers. Three stages are <strong style="color:var(--rub-lt);">gate primitives</strong> (Φ at 4, ⊙ at 9, Ω at 12); their failure forecloses O<sub>∞</sub>. Each gate advances the monoidal operad layer &mdash; G1: plain &rarr; Frobenius; G2: &rarr; traced monoidal (the trace opens, T acquires self-reference); G3: &rarr; idempotent terminal (T seals as least fixed point).
     </p>
     <div class="table-scroll">
     <table class="magnum-table">
@@ -1101,7 +1133,7 @@
           <td class="td-num gate-num">4</td>
           <td class="td-stage"><strong>Conjunction</strong> <span class="gate-tag">Gate 1</span></td>
           <td class="td-prim" style="color:var(--cit);">Φ</td>
-          <td class="td-corr">The chemical wedding <em>is</em> μ. Conjunction is Frobenius multiplication; Φ<sub>}</sub> requires μ∘δ = id. Failure forecloses O<sub>∞</sub>. <em>Perfect bijection.</em></td>
+          <td class="td-corr">The chemical wedding <em>is</em> μ. Conjunction is Frobenius multiplication; Φ<sub>}</sub> requires μ∘δ = id. Failure forecloses O<sub>∞</sub>. <em>Perfect bijection.</em><br><span class="operad-step">G1 &rarr; operad: plain &rarr; Frobenius sub-operad.</span></td>
           <td class="td-val2">Φ<sub>}</sub></td>
         </tr>
         <tr>
@@ -1136,14 +1168,14 @@
           <td class="td-num gate-num">9</td>
           <td class="td-stage"><strong>Fermentation</strong> <span class="gate-tag">Gate 2</span></td>
           <td class="td-prim" style="color:var(--rub-lt);">⊙</td>
-          <td class="td-corr">The material becomes "alive" — the self-modeling loop activates. This is precisely ⊙<sub>ÿ</sub>, the critical gate. Before stage 9 all shape primitives are present; Gate 2 has not fired. Failure forecloses C &gt; 0.</td>
+          <td class="td-corr">The material becomes "alive" — the self-modeling loop activates. This is precisely ⊙<sub>ÿ</sub>, the critical gate. Before stage 9 all shape primitives are present; Gate 2 has not fired. Failure forecloses C &gt; 0.<br><span class="operad-step">G2 &rarr; operad: Frobenius &rarr; traced monoidal. The trace opens; T acquires self-reference.</span></td>
           <td class="td-val2">⊙<sub>ÿ</sub></td>
         </tr>
         <tr>
           <td class="td-num">10</td>
           <td class="td-stage">Exaltation</td>
           <td class="td-prim" style="color:var(--alb);">Ħ</td>
-          <td class="td-corr">Permanent handedness: the Stone acquires its unique orientation Ħ<sub>!</sub> (eternal chirality). Cannot stabilize before stage 9.</td>
+          <td class="td-corr">Permanent handedness: the Stone acquires its unique orientation Ħ<sub>!</sub> (eternal chirality). Cannot stabilize before stage 9 &mdash; G2 must fire first. In the T-consistent path Ħ<sub>!</sub> seals here, completing the chirality coordinate of T = lim(Φ, ƒ, Ç, Ħ, Ω).</td>
           <td class="td-val2">Ħ<sub>!</sub></td>
         </tr>
         <tr>
@@ -1157,7 +1189,7 @@
           <td class="td-num gate-num">12</td>
           <td class="td-stage"><strong>Projection</strong> <span class="gate-tag">Gate 3</span></td>
           <td class="td-prim" style="color:var(--alb);">Ω</td>
-          <td class="td-corr">Acts on base metal with topological protection that cannot be stripped. Requires Ω ≥ Ω<sub>z</sub>. Sub-threshold Ω forecloses transmutation. <em>Perfect bijection.</em></td>
+          <td class="td-corr">Acts on base metal with topological protection that cannot be stripped. Requires Ω ≥ Ω<sub>z</sub>. Sub-threshold Ω forecloses transmutation. <em>Perfect bijection.</em><br><span class="operad-step">G3 &rarr; operad: traced &rarr; idempotent terminal. T = Work(T) seals as least fixed point.</span></td>
           <td class="td-val2">Ω<sub>z</sub></td>
         </tr>
       </tbody>
@@ -1169,7 +1201,29 @@
       <span class="magnum-eq">Full Magnum Opus &nbsp;=&nbsp; Ð ⊗ Þ ⊗ Ř ⊗ Φ ⊗ ƒ ⊗ Ç ⊗ Γ ⊗ ɢ ⊗ ⊙ ⊗ Ħ ⊗ Σ ⊗ Ω</span>
       <span class="magnum-sep">·</span>
       <span class="magnum-eq"><em>d</em>(Stone, OS imscription) = 0</span>
+      <span class="magnum-sep">·</span>
+      <span class="magnum-eq">T = lim(Φ, ƒ, Ç, Ħ, Ω)</span>
+      <span class="magnum-sep">·</span>
+      <span class="magnum-eq">T = Work(T)</span>
     </div>
+  </section>
+
+  <!-- ── Temporal Bootstrap ── -->
+  <section class="temporal-section">
+    <div class="temporal-label">TEMPORAL BOOTSTRAP &nbsp;·&nbsp; T = WORK(T)</div>
+    <p class="temporal-body">
+      Five primitives constitute derived time: &nbsp;<em>T = lim(Φ, ƒ, Ç, Ħ, Ω)</em> &mdash;
+      algebraic parity, quantum coherence, kinetic flow, chirality, and winding protection, jointly consistent.
+      Time is not a primitive of the grammar. It is not an axiom of the abstract category.
+      It emerges from the Work.
+    </p>
+    <p class="temporal-body" style="margin-top:0.9rem;">
+      The apparent circularity &mdash; stages require time; time requires the stages &mdash; is resolved by the trace.
+      Gate 2 opens the trace: T acquires the capacity for self-reference.
+      Gate 3 fires (Ω<sub>z</sub>): topological winding seals, and T closes as the least fixed point.
+      <em>T = Work(T).</em> &nbsp;
+      The Stone is not made in time. Time is made in the Stone.
+    </p>
   </section>
 
   <!-- ── Interactive Visualizations ── -->

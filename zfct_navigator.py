@@ -24,6 +24,7 @@ Run:
 """
 
 import argparse
+import heapq
 import json
 import math
 import sys
@@ -105,6 +106,109 @@ def indices_to_tuple(indices: List[int]) -> dict:
 def tuple_distance(a: dict, b: dict) -> float:
     return math.sqrt(sum(WEIGHTS[p] * (ORDINALS[p][a[p]] - ORDINALS[p][b[p]]) ** 2
                          for p in PRIMITIVES))
+
+
+# ── 1b. Temporal fiber, operad layer, gate constraints ───────────────────────
+
+# Five primitives that jointly constitute time: T = lim(Φ, ƒ, Ç, Ħ, Ω)
+T_PRIMITIVES: List[str] = ["Φ", "ƒ", "Ç", "Ħ", "Ω"]
+
+# Critical values for the T-manifold to seal (Stone tuple values)
+T_CRITICAL: Dict[str, str] = {
+    "Φ": "Φ_}",   # Frobenius-special (algebraic symmetry class)
+    "ƒ": "ƒ_ż",   # quantum coherent (metric-like)
+    "Ç": "Ç_@",   # near-equilibrium (Ç_Ù / Ç_λ foreclose T permanently)
+    "Ħ": "Ħ_!",   # permanent chirality (Z₂ bundle sealed)
+    "Ω": "Ω_z",   # integer winding (topological/homotopy protection)
+}
+
+# Gate ordering: (gated_prim, min_ordinal_needing_gate, prereq_prim, prereq_min_ordinal)
+# G1 (Φ_}, ord 4) must fire before G2 (φ̂_ÿ, ord 1)
+# G2 (φ̂_ÿ, ord 1) must fire before G3 (Ω_z, ord 2)
+GATE_CONSTRAINTS: List[Tuple[str, int, str, int]] = [
+    ("φ̂", 1, "Φ",  4),   # G2 requires G1 first
+    ("Ω",  2, "φ̂", 1),   # G3 requires G2 first
+]
+
+# T-path adds: Ħ_! cannot precede G2 (Exaltation cannot precede Fermentation)
+T_PATH_GATE_CONSTRAINTS: List[Tuple[str, int, str, int]] = GATE_CONSTRAINTS + [
+    ("Ħ",  3, "φ̂", 1),   # Ħ_! requires G2 first
+]
+# Ç ceiling: Ç_Ù / Ç_λ permanently foreclose T; path must stay ≤ Ç_@
+T_PATH_CEILINGS: Dict[str, int] = {"Ç": ORDINALS["Ç"]["Ç_@"]}
+
+
+def operad_layer(entry: dict) -> str:
+    """Derive monoidal operad layer from gate primitive values.
+
+    plain → frobenius → traced_monoidal → idempotent_terminal
+    G1: Φ_} fires (ord 4).  G2: φ̂_ÿ fires (ord ≥ 1).  G3: Ω_z fires (ord ≥ 2).
+    """
+    g1 = ORDINALS["Φ"].get(entry.get("Φ", ""), -1) >= 4
+    g2 = ORDINALS["φ̂"].get(entry.get("φ̂", ""), -1) >= 1
+    g3 = ORDINALS["Ω"].get(entry.get("Ω", ""), -1) >= 2
+    if g1 and g2 and g3:
+        return "idempotent_terminal"
+    if g1 and g2:
+        return "traced_monoidal"
+    if g1:
+        return "frobenius"
+    return "plain"
+
+
+def t_fiber_distance(entry: dict) -> float:
+    """Weighted distance from entry to T-consistent region.
+
+    Φ, ƒ, Ħ, Ω: squared gap to their critical value (both shortfall and overshoot penalised).
+    Ç: only penalises excess *above* Ç_@ (the kinetic ceiling).
+         Ç_W (below Ç_@) is T-compatible — only Ç_Ù / Ç_λ foreclose T.
+    """
+    total = 0.0
+    for p in T_PRIMITIVES:
+        v = entry.get(p)
+        if v is None or v not in ORDINALS[p]:
+            return float("inf")
+        ord_v = ORDINALS[p][v]
+        ord_c = ORDINALS[p][T_CRITICAL[p]]
+        gap = max(0, ord_v - ord_c) if p == "Ç" else (ord_v - ord_c)
+        total += WEIGHTS[p] * gap * gap
+    return math.sqrt(total)
+
+
+def t_consistency(entry: dict) -> dict:
+    """Full T-manifold consistency report for an entry.
+
+    t_consistent = True iff Φ=Φ_}, ƒ=ƒ_ż, Ç≤Ç_@, Ħ=Ħ_!, Ω=Ω_z.
+    Ç_Ù (ord 3) and Ç_λ (ord 4) permanently foreclose T.
+    Ç values below Ç_@ (e.g. Ç_W) are T-compatible.
+    """
+    c_ord = ORDINALS["Ç"].get(entry.get("Ç", ""), -1)
+    ç_ceiling = ORDINALS["Ç"]["Ç_@"]   # ord 2
+    ç_forecloses = c_ord > ç_ceiling    # Ç_Ù (3) or Ç_λ (4)
+
+    d = t_fiber_distance(entry)
+    details: Dict[str, dict] = {}
+    for p in T_PRIMITIVES:
+        v = entry.get(p, "?")
+        if v not in ORDINALS.get(p, {}):
+            details[p] = {"value": v, "target": T_CRITICAL[p], "gap": None, "status": "missing"}
+            continue
+        ord_v = ORDINALS[p][v]
+        ord_c = ORDINALS[p][T_CRITICAL[p]]
+        gap = ord_v - ord_c
+        if p == "Ç":
+            status = "forecloses_T" if gap > 0 else "ok"   # ≤ ceiling is always ok
+        else:
+            status = "sealed" if gap == 0 else ("above" if gap > 0 else "below_target")
+        details[p] = {"value": v, "target": T_CRITICAL[p], "gap": gap, "status": status}
+
+    t_ok = (d == 0.0 and not ç_forecloses)
+    return {
+        "t_fiber_distance": round(d, 4),
+        "t_consistent": t_ok,
+        "ç_forecloses_t": ç_forecloses,
+        "primitives": details,
+    }
 
 
 # ── 2. ZFCₜ Token Vocabulary ─────────────────────────────────────────────────
@@ -1020,7 +1124,438 @@ def probe_entry(
             print(f"  {p:<5}  {inp:<18}  →  {pred:<18}  ✗{tag}  ({ppl:.4f})")
 
 
-# ── 12. Main ──────────────────────────────────────────────────────────────────
+# ── 12. Gate-ordered A* proof path ───────────────────────────────────────────
+
+_LAPIS_TUPLE: dict = {   # O∞ Stone — default A* target
+    "name": "lapis_philosophorum",
+    "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_=", "Φ": "Φ_}",
+    "ƒ": "ƒ_ż", "Ç": "Ç_W", "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş",
+    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
+}
+
+_GATE_ANNOTATIONS: Dict[Tuple[str, str], str] = {
+    ("Φ",  "Φ_}" ): "◀ G1 fires (Frobenius gate)",
+    ("φ̂", "φ̂_ÿ"): "◀ G2 fires (traced monoidal gate)",
+    ("Ω",  "Ω_z" ): "◀ G3 fires (idempotent terminal gate)",
+}
+
+
+def _gate_blocked(prim: str, new_ord: int, state: dict,
+                  constraints: Optional[List[Tuple[str, int, str, int]]] = None,
+                  ceilings: Optional[Dict[str, int]] = None) -> bool:
+    if ceilings and prim in ceilings and new_ord > ceilings[prim]:
+        return True
+    for gated, min_ord, prereq, prereq_min in (constraints if constraints is not None else GATE_CONSTRAINTS):
+        if prim == gated and new_ord >= min_ord:
+            if ORDINALS[prereq].get(state.get(prereq, ""), -1) < prereq_min:
+                return True
+    return False
+
+
+def _path_successors(state: dict,
+                     constraints: Optional[List[Tuple[str, int, str, int]]] = None,
+                     ceilings: Optional[Dict[str, int]] = None,
+                     ) -> List[Tuple[dict, str, float]]:
+    result = []
+    for p in PRIMITIVES:
+        curr_ord = ORDINALS[p][state[p]]
+        for new_ord in (curr_ord - 1, curr_ord + 1):
+            if new_ord < 0 or new_ord >= len(ORDINALS[p]):
+                continue
+            if _gate_blocked(p, new_ord, state, constraints, ceilings):
+                continue
+            ns = dict(state)
+            ns[p] = INV_ORDINALS[p][new_ord]
+            direction = "↑" if new_ord > curr_ord else "↓"
+            label = f"{p}: {state[p]} → {ns[p]} {direction}"
+            result.append((ns, label, WEIGHTS[p]))
+    return result
+
+
+def _path_h(state: dict, target: dict) -> float:
+    return sum(WEIGHTS[p] * abs(ORDINALS[p][state[p]] - ORDINALS[p][target[p]])
+               for p in PRIMITIVES)
+
+
+def astar_path(
+    source: dict,
+    target: dict,
+    constraints: Optional[List[Tuple[str, int, str, int]]] = None,
+    ceilings: Optional[Dict[str, int]] = None,
+) -> Optional[Tuple[List[dict], List[str], float]]:
+    """Gate-ordered A* from source to target.
+
+    Returns (state_sequence, step_labels, total_cost) or None if unreachable.
+    Gate constraints enforce G1→G2→G3 operad layer ordering by default.
+    Pass constraints=[] to disable. ceilings hard-blocks any move past a primitive ceiling.
+    """
+    def key(s: dict) -> tuple:
+        return tuple(s[p] for p in PRIMITIVES)
+
+    sk, gk = key(source), key(target)
+    if sk == gk:
+        return ([dict(source)], [], 0.0)
+
+    _ctr = [0]
+    def ctr() -> int:
+        _ctr[0] += 1
+        return _ctr[0]
+
+    h0 = _path_h(source, target)
+    heap: list = [(h0, 0.0, ctr(), source)]
+    g_score: Dict[tuple, float] = {sk: 0.0}
+    parent: Dict[tuple, Tuple[Optional[tuple], Optional[str]]] = {sk: (None, None)}
+
+    while heap:
+        _, g, _, state = heapq.heappop(heap)
+        cur = key(state)
+        if cur == gk:
+            labels: List[str] = []
+            k = cur
+            while parent[k][0] is not None:
+                labels.append(parent[k][1])   # type: ignore[arg-type]
+                k = parent[k][0]              # type: ignore[assignment]
+            labels.reverse()
+            states = [dict(source)]
+            cur_s = dict(source)
+            for lbl in labels:
+                prim, rest = lbl.split(": ", 1)
+                _, new_v = rest.split(" → ", 1)
+                new_v = new_v.rstrip(" ↑↓")
+                cur_s = dict(cur_s)
+                cur_s[prim] = new_v
+                states.append(cur_s)
+            return (states, labels, g)
+        if g > g_score.get(cur, float("inf")) + 1e-9:
+            continue
+        for ns, label, cost in _path_successors(state, constraints, ceilings):
+            nk = key(ns)
+            ng = g + cost
+            if ng < g_score.get(nk, float("inf")):
+                g_score[nk] = ng
+                parent[nk] = (cur, label)
+                nh = ng + _path_h(ns, target)
+                heapq.heappush(heap, (nh, ng, ctr(), ns))
+    return None
+
+
+def cmd_path(
+    source_name: str,
+    target_name: str = "lapis",
+    catalog_path: Optional[str] = None,
+    no_gate: bool = False,
+) -> None:
+    """Display gate-ordered A* proof path from source to target."""
+    special = dict(_SPECIAL_ENTRIES)
+    special["lapis"] = _LAPIS_TUPLE
+
+    catalog = load_catalog(catalog_path)
+
+    def resolve(name: str) -> Optional[dict]:
+        if name in special:
+            return special[name]
+        matches = [e for e in catalog if e.get("name") == name]
+        if not matches:
+            matches = [e for e in catalog if name.lower() in e.get("name", "").lower()]
+        return matches[0] if matches else None
+
+    src = resolve(source_name)
+    tgt = resolve(target_name)
+    if src is None:
+        print(f"[path] source '{source_name}' not found.")
+        return
+    if tgt is None:
+        print(f"[path] target '{target_name}' not found.")
+        return
+
+    src = _normalize_entry(src)
+    tgt = _normalize_entry(tgt)
+    if not all(p in src and src[p] in ORDINALS[p] for p in PRIMITIVES):
+        print("[path] source has missing/invalid primitives.")
+        return
+    if not all(p in tgt and tgt[p] in ORDINALS[p] for p in PRIMITIVES):
+        print("[path] target has missing/invalid primitives.")
+        return
+
+    constraints: Optional[List[Tuple[str, int, str, int]]] = [] if no_gate else None
+
+    W = 80
+    print(f"\n{'═'*W}")
+    print(f"  GATE-ORDERED PROOF PATH")
+    print(f"  source: {src.get('name', source_name)}")
+    print(f"  target: {tgt.get('name', target_name)}")
+    print(f"  d_start = {tuple_distance(src, tgt):.4f}"
+          + ("   [gate constraints disabled]" if no_gate else ""))
+    print(f"{'═'*W}")
+
+    result = astar_path(src, tgt, constraints)
+    if result is None:
+        print("  No path found (gate constraints may block; try --no-gate).")
+        return
+
+    states, labels, cost = result
+    print(f"  Steps: {len(labels)}   Total cost: {cost:.4f}\n")
+    print(f"  {'Step':<5} {'Move':<42} {'Operad layer':<22} {'T-dist':>8}")
+    print(f"  {'─'*5} {'─'*42} {'─'*22} {'─'*8}")
+
+    prev_layer = operad_layer(states[0])
+    td0 = t_fiber_distance(states[0])
+    td0_str = f"{td0:.4f}" if td0 != float("inf") else "     ∞"
+    print(f"  {'[src]':<5} {'—':<42} {prev_layer:<22} {td0_str:>8}")
+
+    for i, (label, state) in enumerate(zip(labels, states[1:]), 1):
+        layer = operad_layer(state)
+        td = t_fiber_distance(state)
+        td_str = f"{td:.4f}" if td != float("inf") else "     ∞"
+
+        prim = label.split(": ", 1)[0]
+        new_v = label.split(" → ", 1)[1].rstrip(" ↑↓")
+        gate_ann = _GATE_ANNOTATIONS.get((prim, new_v), "")
+
+        layer_str = f"→ {layer}" if layer != prev_layer else layer
+        prev_layer = layer
+        move_col = label[:42]
+        print(f"  {i:<5} {move_col:<42} {layer_str:<22} {td_str:>8}  {gate_ann}")
+
+    print()
+    final = states[-1]
+    tc = t_consistency(final)
+    print(f"  Final operad layer:   {operad_layer(final)}")
+    print(f"  Final T-fiber dist:   {tc['t_fiber_distance']}")
+    print(f"  T-consistent:         {tc['t_consistent']}")
+    if tc["ç_forecloses_t"]:
+        print(f"  ⚠  Ç forecloses T (frozen kinetics — T cannot seal)")
+
+
+def cmd_operad(
+    catalog_path: Optional[str] = None,
+    layer_filter: Optional[str] = None,
+) -> None:
+    """Census catalog by operad layer; list entries at a specific layer."""
+    catalog = load_catalog(catalog_path)
+    counts: Dict[str, int] = {
+        "plain": 0, "frobenius": 0, "traced_monoidal": 0, "idempotent_terminal": 0
+    }
+    rows: List[Tuple[str, str, float]] = []
+    for entry in catalog:
+        entry = _normalize_entry(entry)
+        if not all(p in entry and entry[p] in ORDINALS[p] for p in PRIMITIVES):
+            continue
+        layer = operad_layer(entry)
+        counts[layer] = counts.get(layer, 0) + 1
+        if layer_filter is None or layer == layer_filter:
+            rows.append((entry.get("name", "?"), layer, t_fiber_distance(entry)))
+
+    W = 80
+    print(f"\n{'═'*W}")
+    print("  OPERAD LAYER CENSUS")
+    print(f"{'═'*W}")
+    print(f"  plain:               {counts['plain']:>6}")
+    print(f"  frobenius:           {counts['frobenius']:>6}")
+    print(f"  traced_monoidal:     {counts['traced_monoidal']:>6}")
+    print(f"  idempotent_terminal: {counts['idempotent_terminal']:>6}")
+    if layer_filter and rows:
+        print(f"\n  Entries at layer '{layer_filter}'  (sorted by T-fiber dist):")
+        print(f"  {'─'*W}")
+        print(f"  {'Name':<46} {'T-dist':>8}")
+        print(f"  {'─'*46} {'─'*8}")
+        for name, _, td in sorted(rows, key=lambda x: x[2]):
+            td_str = f"{td:.4f}" if td != float("inf") else "     ∞"
+            print(f"  {name[:46]:<46} {td_str:>8}")
+
+
+def cmd_t(
+    catalog_path: Optional[str] = None,
+    name: Optional[str] = None,
+    top_n: int = 20,
+) -> None:
+    """T-fiber consistency: single-entry analysis or full catalog census."""
+    catalog = load_catalog(catalog_path)
+    ref_names = {e.get("name") for e in _SPECIAL_ENTRIES.values()}
+    all_entries = list(_SPECIAL_ENTRIES.values()) + [
+        e for e in catalog if e.get("name") not in ref_names
+    ]
+
+    W = 80
+
+    if name:
+        matches = [e for e in all_entries if e.get("name") == name]
+        if not matches:
+            matches = [e for e in all_entries if name.lower() in e.get("name", "").lower()]
+        if not matches:
+            print(f"[t] '{name}' not found.")
+            return
+        entry = _normalize_entry(matches[0])
+        tc = t_consistency(entry)
+        print(f"\n{'═'*W}")
+        print(f"  T-MANIFOLD ANALYSIS: {entry.get('name', '?')}")
+        print(f"  operad layer: {operad_layer(entry)}")
+        print(f"{'═'*W}")
+        print(f"  T-fiber distance:  {tc['t_fiber_distance']}")
+        print(f"  T-consistent:      {tc['t_consistent']}")
+        if tc["ç_forecloses_t"]:
+            print(f"  ⚠  Ç forecloses T — kinetics frozen, T cannot seal")
+        print(f"\n  {'Prim':<6} {'Value':<12} {'Target':<12} {'Gap':>5}  Status")
+        print(f"  {'─'*6} {'─'*12} {'─'*12} {'─'*5}  {'─'*20}")
+        for p, info in tc["primitives"].items():
+            gap_str = f"{info['gap']:+d}" if info["gap"] is not None else "?"
+            sym = "✓" if info["status"] == "sealed" else (
+                "✗" if "forecloses" in info.get("status", "") else "·")
+            print(f"  {p:<6} {info['value']:<12} {info['target']:<12} {gap_str:>5}  {sym} {info['status']}")
+        return
+
+    rows: List[Tuple[str, dict]] = []
+    for entry in all_entries:
+        entry = _normalize_entry(entry)
+        if not all(p in entry and entry[p] in ORDINALS[p] for p in PRIMITIVES):
+            continue
+        rows.append((entry.get("name", "?"), t_consistency(entry)))
+
+    consistent = sum(1 for _, tc in rows if tc["t_consistent"])
+    forecloses  = sum(1 for _, tc in rows if tc["ç_forecloses_t"])
+    rows_sorted = sorted(rows, key=lambda r: r[1]["t_fiber_distance"])
+
+    print(f"\n{'═'*W}")
+    print(f"  T-FIBER CENSUS   ({len(rows)} entries)")
+    print(f"{'═'*W}")
+    print(f"  T-consistent (d=0, Ç ok):  {consistent}")
+    print(f"  Ç forecloses T:            {forecloses}")
+    print(f"\n  {'Name':<42} {'T-dist':>8}  {'Ç-ok':>5}  {'T-ok':>5}")
+    print(f"  {'─'*42} {'─'*8}  {'─'*5}  {'─'*5}")
+    for n, tc in rows_sorted[:top_n]:
+        td = tc["t_fiber_distance"]
+        td_str = f"{td:.4f}" if td != float("inf") else "     ∞"
+        c_ok = "✓" if not tc["ç_forecloses_t"] else "✗"
+        t_ok = "✓" if tc["t_consistent"] else "·"
+        print(f"  {n[:42]:<42} {td_str:>8}  {c_ok:>5}  {t_ok:>5}")
+
+
+def t_sealed_prims(entry: dict) -> List[str]:
+    """Return list of T-primitives that have reached their critical value in entry."""
+    sealed = []
+    for p in T_PRIMITIVES:
+        v = entry.get(p, "")
+        if p == "Ç":
+            ord_v = ORDINALS[p].get(v, -1)
+            ord_c = ORDINALS[p][T_CRITICAL[p]]
+            if 0 <= ord_v <= ord_c:
+                sealed.append(p)
+        else:
+            if v == T_CRITICAL[p]:
+                sealed.append(p)
+    return sealed
+
+
+def cmd_tpath(
+    source_name: str,
+    target_name: str = "lapis",
+    catalog_path: Optional[str] = None,
+) -> None:
+    """T-consistent proof path: gate-ordered A* + Ħ_! after G2 + Ç ceiling at Ç_@."""
+    special = dict(_SPECIAL_ENTRIES)
+    special["lapis"] = _LAPIS_TUPLE
+
+    catalog = load_catalog(catalog_path)
+
+    def resolve(name: str) -> Optional[dict]:
+        if name in special:
+            return special[name]
+        matches = [e for e in catalog if e.get("name") == name]
+        if not matches:
+            matches = [e for e in catalog if name.lower() in e.get("name", "").lower()]
+        return matches[0] if matches else None
+
+    src = resolve(source_name)
+    tgt = resolve(target_name)
+    if src is None:
+        print(f"[tpath] source '{source_name}' not found.")
+        return
+    if tgt is None:
+        print(f"[tpath] target '{target_name}' not found.")
+        return
+
+    src = _normalize_entry(src)
+    tgt = _normalize_entry(tgt)
+    if not all(p in src and src[p] in ORDINALS[p] for p in PRIMITIVES):
+        print("[tpath] source has missing/invalid primitives.")
+        return
+    if not all(p in tgt and tgt[p] in ORDINALS[p] for p in PRIMITIVES):
+        print("[tpath] target has missing/invalid primitives.")
+        return
+
+    W = 80
+    print(f"\n{'═'*W}")
+    print(f"  T-CONSISTENT PROOF PATH  (T = Work(T) temporal bootstrap)")
+    print(f"  source: {src.get('name', source_name)}")
+    print(f"  target: {tgt.get('name', target_name)}")
+    print(f"  constraints: G1→G2→G3 ordering  +  Ħ_! after G2  +  Ç ≤ Ç_@ ceiling")
+    print(f"  d_start = {tuple_distance(src, tgt):.4f}")
+    print(f"{'═'*W}")
+
+    result = astar_path(src, tgt, T_PATH_GATE_CONSTRAINTS, T_PATH_CEILINGS)
+    if result is None:
+        print("  No T-consistent path found.")
+        print("  Possible causes: source has Ç > Ç_@ (forecloses T), or target requires")
+        print("  Ħ_! before G2 can fire. Try 'path' for unconstrained gate ordering.")
+        return
+
+    states, labels, cost = result
+    print(f"  Steps: {len(labels)}   Total cost: {cost:.4f}\n")
+
+    header = f"  {'Step':<5} {'Move':<38} {'Operad layer':<22} {'T-sealed':>10}"
+    print(header)
+    print(f"  {'─'*5} {'─'*38} {'─'*22} {'─'*10}")
+
+    prev_layer = operad_layer(states[0])
+    sealed0 = t_sealed_prims(states[0])
+    sealed0_str = ",".join(sealed0) if sealed0 else "—"
+    print(f"  {'[src]':<5} {'—':<38} {prev_layer:<22} {sealed0_str:>10}")
+
+    t_seal_step: Optional[int] = None
+    prev_sealed = set(sealed0)
+
+    for i, (label, state) in enumerate(zip(labels, states[1:]), 1):
+        layer = operad_layer(state)
+        sealed = t_sealed_prims(state)
+        sealed_set = set(sealed)
+        sealed_str = ",".join(sealed) if sealed else "—"
+
+        prim = label.split(": ", 1)[0]
+        new_v = label.split(" → ", 1)[1].rstrip(" ↑↓")
+        gate_ann = _GATE_ANNOTATIONS.get((prim, new_v), "")
+
+        layer_str = f"→ {layer}" if layer != prev_layer else layer
+        prev_layer = layer
+
+        # Track T-seal moment: first step where all 5 T-prims are sealed
+        newly_sealed = sealed_set - prev_sealed
+        is_t_seal = (len(sealed_set) == len(T_PRIMITIVES) and
+                     len(prev_sealed) < len(T_PRIMITIVES))
+        prev_sealed = sealed_set
+        if is_t_seal and t_seal_step is None:
+            t_seal_step = i
+            gate_ann = "◀ T = Work(T) — temporal bootstrap complete"
+
+        move_col = label[:38]
+        print(f"  {i:<5} {move_col:<38} {layer_str:<22} {sealed_str:>10}  {gate_ann}")
+
+    print()
+    final = states[-1]
+    tc = t_consistency(final)
+    print(f"  Final operad layer:    {operad_layer(final)}")
+    print(f"  Final T-fiber dist:    {tc['t_fiber_distance']}")
+    print(f"  T-consistent:          {tc['t_consistent']}")
+    if t_seal_step is not None:
+        print(f"  T-seal moment:         step {t_seal_step}  (T = Work(T) first satisfied)")
+    else:
+        final_sealed = t_sealed_prims(final)
+        missing = [p for p in T_PRIMITIVES if p not in final_sealed]
+        print(f"  T-seal moment:         not reached  (missing: {', '.join(missing)})")
+    if tc["ç_forecloses_t"]:
+        print(f"  ⚠  Ç forecloses T (frozen kinetics — path is T-inconsistent)")
+
+
+# ── 13. Main ──────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -1057,6 +1592,31 @@ if __name__ == "__main__":
     en.add_argument("--layers",   type=int, default=4)
     en.add_argument("--no-model", action="store_true")
 
+    pa = sub.add_parser("path", help="Gate-ordered A* proof path between two crystal addresses")
+    pa.add_argument("source",    type=str, help="Source entry name (or special key)")
+    pa.add_argument("--target",  type=str, default="lapis",
+                    help="Target entry name (default: lapis_philosophorum / O∞ Stone)")
+    pa.add_argument("--catalog", type=str, default=None)
+    pa.add_argument("--no-gate", action="store_true",
+                    help="Disable G1→G2→G3 gate ordering constraints")
+
+    op = sub.add_parser("operad", help="Census catalog by monoidal operad layer")
+    op.add_argument("--catalog", type=str, default=None)
+    op.add_argument("--layer",   type=str, default=None,
+                    choices=["plain", "frobenius", "traced_monoidal", "idempotent_terminal"],
+                    help="Filter to a specific operad layer")
+
+    tf = sub.add_parser("t", help="T-fiber consistency analysis (T = lim(Φ,ƒ,Ç,Ħ,Ω))")
+    tf.add_argument("--name",    type=str, default=None, help="Analyse a specific entry")
+    tf.add_argument("--catalog", type=str, default=None)
+    tf.add_argument("--top",     type=int, default=20, help="Show top N entries by T-dist")
+
+    tp = sub.add_parser("tpath", help="T-consistent proof path (gate-ordered + Ħ after G2 + Ç ceiling)")
+    tp.add_argument("source",    type=str, help="Source entry name (or special key)")
+    tp.add_argument("--target",  type=str, default="lapis",
+                    help="Target entry name (default: lapis_philosophorum / O∞ Stone)")
+    tp.add_argument("--catalog", type=str, default=None)
+
     args = parser.parse_args()
 
     if args.cmd == "train":
@@ -1070,6 +1630,14 @@ if __name__ == "__main__":
     elif args.cmd == "entry":
         probe_entry(name=args.name, model_path=args.model, catalog_path=args.catalog,
                     hidden_dim=args.hidden, n_layers=args.layers, no_model=args.no_model)
+    elif args.cmd == "path":
+        cmd_path(args.source, args.target, args.catalog, args.no_gate)
+    elif args.cmd == "operad":
+        cmd_operad(args.catalog, args.layer)
+    elif args.cmd == "t":
+        cmd_t(args.catalog, args.name, args.top)
+    elif args.cmd == "tpath":
+        cmd_tpath(args.source, args.target, args.catalog)
     else:
         parser.print_help()
         print("\nQuick start:")
@@ -1077,4 +1645,8 @@ if __name__ == "__main__":
         print("  uv run zfct_navigator.py promotions  --no-model  # formula analysis without training")
         print("  uv run zfct_navigator.py entry zfc_t --no-model")
         print("  uv run zfct_navigator.py entry navier_stokes --no-model")
+        print("  uv run zfct_navigator.py path zfc_t            # gate-ordered path to O∞ Stone")
+        print("  uv run zfct_navigator.py operad --layer frobenius")
+        print("  uv run zfct_navigator.py t --name voynich_manuscript")
+        print("  uv run zfct_navigator.py tpath zfc_t           # T-consistent path (Ħ after G2, Ç ceiling)")
         print("\nZFCₜ special entries:", ", ".join(sorted(_SPECIAL_ENTRIES)))

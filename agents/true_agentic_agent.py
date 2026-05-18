@@ -1418,6 +1418,93 @@ def _zfct_navigator_verify(emit_input: Dict, emit_output: str,
     return ("zfct_navigator completed", True)
 
 
+# ── ob3ect pipeline tool ───────────────────────────────────────────────────────
+
+def _ob3ect_emit(args: Dict[str, Any]) -> str:
+    """Generate a new ob3ect via ob3ect/auto.py and optionally run it."""
+    description = args.get("description", "").strip()
+    domain      = args.get("domain", "computational").strip()
+    scope       = args.get("scope", "local").strip()
+    run         = args.get("run", True)
+
+    if not description:
+        return json.dumps({"status": "error", "error": "'description' is required"})
+
+    root = Path(__file__).resolve().parent.parent
+    cmd  = [sys.executable, str(root / "ob3ect" / "auto.py"), description,
+            "--domain", domain, "--scope", scope]
+
+    try:
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=120, cwd=str(root)
+        )
+        output = result.stdout + (("\n[stderr]\n" + result.stderr) if result.stderr.strip() else "")
+
+        if result.returncode != 0:
+            return json.dumps({
+                "status": "error",
+                "error": f"auto.py exited {result.returncode}",
+                "output": output[:2000],
+            })
+
+        generated_path = None
+        for line in output.splitlines():
+            if "ob3ect/digital" in line and ".py" in line:
+                for tok in line.split():
+                    if "ob3ect/digital" in tok and tok.endswith(".py"):
+                        generated_path = tok.strip("→").strip()
+                        break
+
+        run_output = ""
+        if run and generated_path:
+            full_path = (root / generated_path
+                         if not Path(generated_path).is_absolute()
+                         else Path(generated_path))
+            if full_path.exists():
+                r2 = subprocess.run(
+                    [sys.executable, str(full_path)],
+                    capture_output=True, text=True, timeout=60, cwd=str(root)
+                )
+                run_output = r2.stdout + (r2.stderr if r2.stderr.strip() else "")
+
+        return json.dumps({
+            "status": "ok",
+            "generated": generated_path or "(path not detected)",
+            "generation_output": output[:3000],
+            "run_output": run_output[:2000] if run_output else "(not run)",
+        }, ensure_ascii=False)
+
+    except subprocess.TimeoutExpired:
+        return json.dumps({"status": "error", "error": "auto.py timed out after 120s"})
+    except Exception as exc:
+        return json.dumps({"status": "error", "error": str(exc)})
+
+
+def _ob3ect_verify(emit_input: Dict, emit_output: str,
+                   verify_args: Dict) -> Tuple[str, bool]:
+    try:
+        data = json.loads(emit_output)
+    except (json.JSONDecodeError, TypeError):
+        return ("ob3ect: could not parse emit output", False)
+
+    if data.get("status") != "ok":
+        return (f"ob3ect error: {data.get('error', 'unknown')}", False)
+
+    generated = data.get("generated", "")
+    run_out   = data.get("run_output", "")
+    closed    = "Closure: True" in run_out or "Grand Closure: True" in run_out
+
+    if emit_input.get("run", True) and run_out and run_out != "(not run)":
+        if not closed:
+            return (f"ob3ect generated {generated} but Closure check FAILED", False)
+        return (f"ob3ect: {generated} — Closure: True", True)
+
+    return (
+        f"ob3ect generated: {generated}",
+        bool(generated and generated != "(path not detected)"),
+    )
+
+
 def _spawn_agent_emit(args: Dict[str, Any]) -> str:
     """Spawn a child TrueAgenticAgent as a subprocess, inheriting parent model/endpoint."""
     task        = args.get("task", "")
@@ -1490,6 +1577,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
     "zfct_navigator":       _zfct_navigator_emit,
+    "ob3ect":               _ob3ect_emit,
     "spawn_agent":          _spawn_agent_emit,
     "context_review":       _context_review_emit,
 }
@@ -1509,6 +1597,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
     "zfct_navigator":       _zfct_navigator_verify,
+    "ob3ect":               _ob3ect_verify,
     "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
 }
@@ -1842,6 +1931,37 @@ TOOL_SCHEMAS = [
         ["action"],
     ),
     _fn(
+        "ob3ect",
+        (
+            "Generate a new self-imscribing ob3ect via the ob3ect/auto.py pipeline. "
+            "The ob3ect is a program that verifies its own algebraic closure (μ∘δ = id_A). "
+            "auto.py synthesizes the ob3ect, places it in ob3ect/digital/<slug>/<slug>_ob3ect.py, "
+            "and (if run=true, the default) executes it immediately to confirm Closure: True. "
+            "Use this to extend the categorical tower with new structural types — "
+            "Hopf, monad, topos, linear logic, HoTT, quantum, etc."
+        ),
+        {
+            "description": {
+                "type": "string",
+                "description": "Natural-language description of the ob3ect to generate",
+            },
+            "domain": {
+                "type": "string",
+                "description": "Domain hint: computational, biological, alchemical, mathematical (default: computational)",
+            },
+            "scope": {
+                "type": "string",
+                "enum": ["local", "mesoscale", "maximal"],
+                "description": "Generation scope (default: local)",
+            },
+            "run": {
+                "type": "boolean",
+                "description": "Run the generated ob3ect immediately and confirm Closure: True (default: true)",
+            },
+        },
+        ["description"],
+    ),
+    _fn(
         "spawn_agent",
         (
             "Spawn a child TrueAgenticAgent to handle a sub-task. "
@@ -2136,6 +2256,13 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 
   zfc_formula(name) — translate tuple to ZFC set-theoretic formula
   zfc_probe(name)   — check non-transmissibility (can this be ZFC-axiomatized?)
+
+  *** ob3ect is NOT called via syncon_tool — call it DIRECTLY as its own tool ***
+  ob3ect(description, [domain], [scope], [run=true])
+    Generate a new self-imscribing ob3ect via ob3ect/auto.py.
+    Extends the categorical tower in ob3ect/digital/.
+    Verify step confirms Closure: True by running the generated ob3ect.
+    Use when you need a new structural type instantiated and self-verified.
 
   *** zfct_navigator is NOT called via syncon_tool — call it DIRECTLY as its own tool ***
   zfct_navigator(action, [name])
