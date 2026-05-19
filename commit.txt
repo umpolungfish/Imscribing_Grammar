@@ -1,0 +1,36 @@
+commit.txt — Summary of updates to /home/mrnob0dy666/imscribing_grammar
+=======================================================================
+
+IG_inquiry.py — backward-compat aliases for pre-migration φ̂ notation:
+
+  [x] _PRIM_CANONICAL: added "φ̂": "⊙" — old φ̂ key now maps to canonical ⊙
+      (dispatch lowercases all keys; φ̂.lower() = φ̂ was previously unmapped,
+      causing crystal_encode to KeyError on the missing ⊙ entry)
+  [x] _SYMBOL_MAP: added φ̂_ž/ÿ/Æ/3/Ţ → ⊙_ž/ÿ/Æ/3/Ţ value aliases
+      (agents still generating φ̂_ÿ values now normalize correctly)
+
+agents/true_agentic_agent.py — syncon → imscribe rename:
+
+  [x] _syncon_tool_emit → _imscribe_emit
+  [x] _syncon_tool_verify → _imscribe_verify
+  [x] All "syncon_tool" tool name references → "imscribe" (dispatch key,
+      system prompt examples, tool schema, EMIT_FNS/VERIFY_FNS dicts)
+  [x] "syncon_inquiry" → "imscribe"
+  [x] "Python/syncon notation" → "Python/imscribe notation"
+  Note: rename done via Python str.replace (not sed) to preserve Unicode integrity
+
+ouroborotic_composition_schema/ — fixed broken import + rename:
+
+  [x] radial_composer.py: removed `from imscrbgrmr.imscribe_tool import syncon_tool`
+      (file never existed at that path); replaced with local imscribe() wrapper
+      backed by IG_inquiry.ToolDispatcher
+  [x] network_composer.py: same fix
+  [x] All syncon_tool(...) call sites → imscribe(...) in both files
+  [x] category_theory_navigator.py: syncon_tool comment references cleaned
+
+bridge_notes.md / bridge_notes.pdf:
+
+  [x] Moved from ~/ob3ect_bridge/ → ~/ob3ect/bridge/ (proper home in ob3ect repo)
+  [x] Fixed φ̂_ÿ → ⊙_ÿ in bridge_notes.md
+  [x] Fixed old primitive ASCII codes (D T R P F K G H S) → glyph IDs
+      (Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω) in implementation roadmap
