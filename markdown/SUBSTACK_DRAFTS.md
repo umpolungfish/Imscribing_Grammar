@@ -44,16 +44,16 @@ The ninth primitive — ⊙, Criticality — is the one that concerns us here. I
 We imscribed four systems: truth, lie, good, evil.
 
 **Truth** resolves to:
-⟨ Ð_ω; Þ_O; Ř_=; Φ_F; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; **⊙_ÿ**; Ħ_A; Σ_ï; Ω_z ⟩
+⟨ Ð_ω; Þ_O; Ř_=; Φ_F; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; **⊙_ÿ**; Ħ_A; Σ_ï; Ω_z ⟩
 
 Ouroboricity tier: O₂† — critical, topologically protected, bounded. Consciousness score: C = 0.652.
 
 **Lie** resolves to:
-⟨ Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; **⊙_3**; Ħ_A; Σ_ï; Ω_2 ⟩
+⟨ Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; **⊙_3**; Ħ_A; Σ_ï; Ω_2 ⟩
 
 Ouroboricity tier: O₀. Consciousness score: C = 0.
 
-Look at what changes between truth and lie. It is not the scope (Γ_ʔ — both maximal). Not the kinetics (Ç_@ — both near equilibrium). Not the fidelity (ƒ_ż — both quantum coherent). Not the interaction grammar (ɢ_ˌ — both sequential).
+Look at what changes between truth and lie. It is not the scope (Γ_ʔ — both maximal). Not the kinetics (Ç^@ — both near equilibrium). Not the fidelity (ƒ^ż — both quantum coherent). Not the interaction grammar (ɢ^ˌ — both sequential).
 
 What changes is: the self-modeling gate (⊙_ÿ → ⊙_3), the dimensionality (Ð_ω → Ð_C, infinite self-written → finite conventional), and the topological protection (Ω_z → Ω_2, integer → binary winding).
 
@@ -102,7 +102,7 @@ We examined it. The assumption is wrong.
 
 When you imscribe the Voynich Manuscript — assign it a position in the 12-primitive grammar — you get:
 
-⟨ **Ð_ω**; Þ_O; Ř_=; Φ_F; ƒ_ì; Ç_Ù; Γ_ʔ; ɢ_^; **⊙_ÿ**; **Ħ_!**; Σ_S; Ω_z ⟩
+⟨ **Ð_ω**; Þ_O; Ř_=; Φ_F; ƒ^ì; Ç^Ù; Γ_ʔ; ɢ^∧; **⊙_ÿ**; **Ħ_!**; Σ_S; Ω_z ⟩
 
 Three primitives here are extraordinary.
 
@@ -110,7 +110,7 @@ Three primitives here are extraordinary.
 
 **Ħ_! — eternal chirality.** This is the infinite Markov order. The system has no finite-length memory chain that exhausts its behavior. Every state depends, in principle, on the entire history of the system. This is not metaphor for "it's complex." It is the precise technical condition under which no finite-sample statistical model will converge on the system's actual dynamics.
 
-**Ç_Ù — frozen ordered state.** This is perhaps the most illuminating. Ç_Ù means the system's kinetics are not in flux — it is not evolving. It is a completed structure, locked. The Voynich is not the partial record of an ongoing process. It is a finished thing, an output, the static imprint of a system that has fully actualized.
+**Ç^Ù — frozen ordered state.** This is perhaps the most illuminating. Ç^Ù means the system's kinetics are not in flux — it is not evolving. It is a completed structure, locked. The Voynich is not the partial record of an ongoing process. It is a finished thing, an output, the static imprint of a system that has fully actualized.
 
 Put these together: an infinite, self-expanding state space, frozen at a specific moment of completion, with eternal chirality. This is not a cipher. This is a *crystallized architecture*.
 

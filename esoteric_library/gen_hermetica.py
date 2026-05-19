@@ -5,7 +5,7 @@ Corpus Hermeticum entries from G.R.S. Mead's Thrice-Greatest Hermes, Vol. 2 [190
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PHI = 'φ̂'
+PHI = '⊙'
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -24,8 +24,8 @@ def entry(num, title, desc, text,
 
 HERM_TUPLE = {
     "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "P": "Φ_}",
-    "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Gm": "ɢ_ˌ",
-    "C": "φ̂_ÿ", "H": "Ħ_!", "S": "Σ_ï", "Om": "Ω_z",
+    "F": "ƒ^ż", "K": "Ç^@", "G": "Γ_ʔ", "Gm": "ɢ^ˌ",
+    "C": "⊙_ÿ", "H": "Ħ_!", "S": "Σ_ï", "Om": "Ω_z",
     "tier": "O_inf", "cscore": 0.94
 }
 

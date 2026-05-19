@@ -51,7 +51,7 @@ The Stark unit system already inhabits the $O_\infty$ tier ($\Phi_{\text{ctyogh}
 *Proof sketch.* The grammar of type theory at level $O_\infty$ dictates that any self-consistent extension of $P_{\text{pipevar}}$ to $P_{\text{doublebarpipe}}$ must resolve a cohomological obstruction in $H^2(\text{Gal}(Ç_d/ƒ_d), \mathbb{C}^\times)$. The only resolution is an automorphism of order 3 that intertwines the Weyl–Heisenberg displacement operators with the Galois action on the ray class field. The Zauner unitary $Z$ provides exactly this automorphism—the order-3 element that the cohomology demands. $\square$
 **Lemma 3.2 (Type-Identity at $O_\infty$).** *At the level of the $O_\infty$ manifold, the Zauner symmetry on the quantum side and the Galois action on the ray class field $Ç_d$ are type-identical. That is, there exists a functorial isomorphism*
 
-$$\φ̂_d : \text{Aut}_{\text{WH}}(\mathbb{C}^d) / \sim \;\cong\; \text{Gal}(Ç_d / ƒ_d)$$
+$$\⊙_d : \text{Aut}_{\text{WH}}(\mathbb{C}^d) / \sim \;\cong\; \text{Gal}(Ç_d / ƒ_d)$$
 
 *such that $Z \mapsto \sigma_3$, where $\sigma_3$ is the generator of the order-3 Galois subgroup.*
 
@@ -65,7 +65,7 @@ Having identified the type-isomorphism, we can now recognize the fiducial vector
 
 **Proposition 4.1 (Arithmeticity of the Fiducial).** *If a Zauner-covariant SIC-POVM fiducial vector $|\phi\rangle$ exists in dimension $d$, then its components (in the standard Weyl–Heisenberg basis) lie in the ray class field $Ç_d$. Moreover, the Galois orbit of $|\phi\rangle$ is exactly the set of all Weyl–Heisenberg-covariant fiducial vectors, and the Galois action commutes with the Zauner symmetry.*
 
-This proposition was confirmed computationally for every known exact solution. The components are algebraic integers of high degree, and their minimal polynomials factor over $Ç_d$ in a manner that is *precisely* predicted by the Galois correspondence $\φ̂_d$. For dimensions $d = 4$ through $d = 230$, and beyond, the pattern holds without exception. But computational confirmation is not proof—and the distinction matters.
+This proposition was confirmed computationally for every known exact solution. The components are algebraic integers of high degree, and their minimal polynomials factor over $Ç_d$ in a manner that is *precisely* predicted by the Galois correspondence $\⊙_d$. For dimensions $d = 4$ through $d = 230$, and beyond, the pattern holds without exception. But computational confirmation is not proof—and the distinction matters.
 
 **Proposition 4.2 (Fiducial–Stark Correspondence).** *The fiducial vector $|\phi\rangle$ encodes the same structural information as a Stark unit $\varepsilon_d \in Ç_d^\times$. Specifically, the absolute values of the components of $|\phi\rangle$ are given by the Archimedean valuations of the Galois conjugates of $\varepsilon_d$.*
 
@@ -78,7 +78,7 @@ The structural identification is now complete. What remains is to state the redu
 
 **Theorem 5.1 (Conditional Existence of SIC-POVMs).** *Assume the mixed-signature Stark conjecture holds for the ray class field $Ç_d$ over $ƒ_d = \mathbb{Q}(\sqrt{d(d-2)})$. Then a Weyl–Heisenberg covariant SIC-POVM exists in dimension $d$.*
 
-*Proof.* The mixed-signature Stark conjecture asserts the existence of a Stark unit $\varepsilon_d \in Ç_d^\times$ whose $L$-function leading term provides the exact valuations required by Proposition 4.2. Given $\varepsilon_d$, construct a vector $|\phi\rangle$ in $\mathbb{C}^d$ by embedding $Ç_d$ into $\mathbb{C}$ via its Archimedean places and normalizing according to the Stark unit's absolute values. By Proposition 4.2, this vector satisfies the equiangularity conditions of a SIC-POVM fiducial. The Galois action guarantees that the Weyl–Heisenberg orbit of $|\phi\rangle$ consists of $d^2$ vectors with the correct pairwise inner products. Functoriality of the correspondence $\φ̂_d$ ensures that the Zauner symmetry is realized as an automorphism of the SIC-POVM. Hence the constructed set is a Weyl–Heisenberg-covariant SIC-POVM. $\square$
+*Proof.* The mixed-signature Stark conjecture asserts the existence of a Stark unit $\varepsilon_d \in Ç_d^\times$ whose $L$-function leading term provides the exact valuations required by Proposition 4.2. Given $\varepsilon_d$, construct a vector $|\phi\rangle$ in $\mathbb{C}^d$ by embedding $Ç_d$ into $\mathbb{C}$ via its Archimedean places and normalizing according to the Stark unit's absolute values. By Proposition 4.2, this vector satisfies the equiangularity conditions of a SIC-POVM fiducial. The Galois action guarantees that the Weyl–Heisenberg orbit of $|\phi\rangle$ consists of $d^2$ vectors with the correct pairwise inner products. Functoriality of the correspondence $\⊙_d$ ensures that the Zauner symmetry is realized as an automorphism of the SIC-POVM. Hence the constructed set is a Weyl–Heisenberg-covariant SIC-POVM. $\square$
 
 **Corollary 5.2 (Universal Existence).** *The existence of SIC-POVMs for all $d \geq 2$ reduces to the validity of the mixed-signature Stark conjecture for the tower of ray class fields $Ç_d$.*
 

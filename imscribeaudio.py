@@ -9,7 +9,7 @@ Modes:
   imscribeaudio.py <base> <sub>
       Single symbol, e.g.:  imscribeaudio.py ō ž
 
-  imscribeaudio.py --tuple "Ð_ß Þ_6 Ř_¯ Φ_F ƒ_ì Ç_- Γ_ʔ ɢ_^ φ̂_ž Ħ_Ñ Σ_S Ω_Å"
+  imscribeaudio.py --tuple "Ð_ß Þ_6 Ř_¯ Φ_F ƒ^ì Ç^- Γ_ʔ ɢ^∧ ⊙_ž Ħ_Ñ Σ_S Ω_Å"
       12-primitive Imscription tuple -> WAV with each primitive in sequence
       Accepts space- or comma-separated glyph IDs (canonical or old Lean names).
 
@@ -37,13 +37,13 @@ from sounds import (
 )
 
 # Criticality key normalization
-# Catalog entries use φ̂ (pre-migration); sounds.py uses ⊙ (post-migration)
+# Catalog entries use ⊙ (pre-migration); sounds.py uses ⊙ (post-migration)
 # We accept both and normalize automatically.
-_CRIT_LEGACY = '\u03c6\u0302'  # φ + combining circumflex = φ̂
+_CRIT_LEGACY = '\u03c6\u0302'  # φ + combining circumflex = ⊙
 _CRIT_MODERN = '\u2299'         # ⊙ (circled dot)
 
 def _norm_glyph(gid):
-    """NFC-normalize a glyph ID. Convert ⊙_* -> φ̂_* for internal consistency."""
+    """NFC-normalize a glyph ID. Convert ⊙_* -> ⊙_* for internal consistency."""
     import unicodedata
     gid = unicodedata.normalize('NFC', gid.strip())
     if gid.startswith(_CRIT_MODERN + '_'):
@@ -51,7 +51,7 @@ def _norm_glyph(gid):
     return gid
 
 def _read_crit(entry):
-    """Read criticality from catalog entry. Accepts φ̂ or ⊙ key. Returns φ̂_* form."""
+    """Read criticality from catalog entry. Accepts ⊙ or ⊙ key. Returns ⊙_* form."""
     raw = entry.get(_CRIT_LEGACY, entry.get(_CRIT_MODERN, ''))
     if raw.startswith(_CRIT_MODERN + '_'):
         raw = _CRIT_LEGACY + raw[len(_CRIT_MODERN):]
@@ -65,7 +65,7 @@ def _load_catalog():
         return json.load(f)
 
 def _catalog_entry_to_ids(entry):
-    """Return 12 glyph IDs from a catalog entry (normalized to φ̂ form)."""
+    """Return 12 glyph IDs from a catalog entry (normalized to ⊙ form)."""
     ids = []
     for field in FIELD_ORDER:
         if field == _CRIT_MODERN:
@@ -90,7 +90,7 @@ def build_sequence(ids, fs=44100, dur=0.75, gap_s=0.12):
         # Try as-is first (sounds.py uses ⊙ base for criticality)
         pair = resolve_id(gid)
         if pair is None:
-            # Convert φ̂_* -> ⊙_* for sounds.py lookup
+            # Convert ⊙_* -> ⊙_* for sounds.py lookup
             converted = gid.replace(_CRIT_LEGACY + '_', _CRIT_MODERN + '_')
             pair = resolve_id(converted)
         if pair is None:

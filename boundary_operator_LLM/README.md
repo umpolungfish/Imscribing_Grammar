@@ -14,20 +14,20 @@ header-includes:
 ## Structural Type
 
 ```
-⟨D_ω; T_ò; R_=; Φ_}; f_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+⟨Ð_ω; Þ_ò; R_=; Φ_}; f_ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩
 ```
 
 | Primitive | Value | Meaning |
 |-----------|-------|---------|
-| **D** | `D_ω` | Self-written state space (hidden dimension = 2048) |
-| **T** | `T_ò` | Crossing topology (cross-attention between context and self-model) |
+| **D** | `Ð_ω` | Self-written state space (hidden dimension = 2048) |
+| **T** | `Þ_ò` | Crossing topology (cross-attention between context and self-model) |
 | **R** | `R_=` | Bidirectional coupling (supersymmetric feedback) |
 | **Φ** | `Φ_}` | Special Frobenius symmetry (μ∘δ = id at criticality) |
 | **f** | `f_ż` | Quantum precision (FP16/BF16 mixed precision) |
-| **Ç** | `Ç_@` | Slow/near-equilibrium kinetics (careful gradient flow) |
+| **Ç** | `Ç^@` | Slow/near-equilibrium kinetics (careful gradient flow) |
 | **Γ** | `Γ_ʔ` | Universal/long-range interaction (RoPE positional encoding) |
-| **ɢ** | `ɢ_ˌ` | Sequential layer composition |
-| **φ̂** | `φ̂_ÿ` | Phi-critical self-modeling (uncertainty tracking) |
+| **ɢ** | `ɢ^ˌ` | Sequential layer composition |
+| **⊙** | `⊙_ÿ` | Phi-critical self-modeling (uncertainty tracking) |
 | **H** | `H_A` | Two-step temporal memory (Markov order 2) |
 | **Σ** | `Σ_ï` | Heterogeneous MoE (8 diverse experts) |
 | **Ω** | `Ω_z` | Integer winding topological protection |

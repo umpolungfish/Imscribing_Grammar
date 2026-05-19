@@ -326,38 +326,38 @@ class Grammar(Enum):
 
     G_dissipative retained from old GrammarOperator for catalogs that used it.
     """
-    Gamma_corner      = "ɢ_^"   # conjunctive / simultaneous (all partners required)
-    Gamma_spleftarrow = "ɢ_˝"   # disjunctive / any one suffices
-    Gamma_secstress   = "ɢ_ˌ"   # sequential / ordered
+    Gamma_corner      = "ɢ^∧"   # conjunctive / simultaneous (all partners required)
+    Gamma_spleftarrow = "ɢ^˝"   # disjunctive / any one suffices
+    Gamma_secstress   = "ɢ^ˌ"   # sequential / ordered
     G_xor         = "Γ_xor"     # exclusive (NEW — was missing)
     G_impl        = "Γ_impl"    # implicative / conditional (NEW — was missing)
-    G_dissipative = "ɢ_Ş"       # irreversible / Lindblad (legacy)
+    G_dissipative = "ɢ^Ş"       # irreversible / Lindblad (legacy)
     # Backward-compat aliases: old compound InteractionGrammar values -> canonical operator
-    SPECIFIC_AND         = "ɢ_^"
-    SELECTIVE_AND        = "ɢ_^"
-    BROAD_AND            = "ɢ_^"
-    QUANTUM_AND          = "ɢ_^"
-    SPECIFIC_OR          = "ɢ_˝"
-    SELECTIVE_OR         = "ɢ_˝"
-    BROAD_OR             = "ɢ_˝"
-    QUANTUM_OR           = "ɢ_˝"
-    SPECIFIC_SEQ         = "ɢ_ˌ"
-    SELECTIVE_SEQ        = "ɢ_ˌ"
-    BROAD_SEQ            = "ɢ_ˌ"
-    QUANTUM_SEQ          = "ɢ_ˌ"
-    SPECIFIC_DISSIPATIVE  = "ɢ_Ş"
-    SELECTIVE_DISSIPATIVE = "ɢ_Ş"
-    BROAD_DISSIPATIVE     = "ɢ_Ş"
-    QUANTUM_DISSIPATIVE   = "ɢ_Ş"
+    SPECIFIC_AND         = "ɢ^∧"
+    SELECTIVE_AND        = "ɢ^∧"
+    BROAD_AND            = "ɢ^∧"
+    QUANTUM_AND          = "ɢ^∧"
+    SPECIFIC_OR          = "ɢ^˝"
+    SELECTIVE_OR         = "ɢ^˝"
+    BROAD_OR             = "ɢ^˝"
+    QUANTUM_OR           = "ɢ^˝"
+    SPECIFIC_SEQ         = "ɢ^ˌ"
+    SELECTIVE_SEQ        = "ɢ^ˌ"
+    BROAD_SEQ            = "ɢ^ˌ"
+    QUANTUM_SEQ          = "ɢ^ˌ"
+    SPECIFIC_DISSIPATIVE  = "ɢ^Ş"
+    SELECTIVE_DISSIPATIVE = "ɢ^Ş"
+    BROAD_DISSIPATIVE     = "ɢ^Ş"
+    QUANTUM_DISSIPATIVE   = "ɢ^Ş"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Grammar":
         _map = {
             # glyph IDs (canonical)
-            "ɢ_^":  cls.Gamma_corner,
-            "ɢ_˝":  cls.Gamma_spleftarrow,
-            "ɢ_ˌ":  cls.Gamma_secstress,
-            "ɢ_Ş":  cls.G_dissipative,
+            "ɢ^∧":  cls.Gamma_corner,
+            "ɢ^˝":  cls.Gamma_spleftarrow,
+            "ɢ^ˌ":  cls.Gamma_secstress,
+            "ɢ^Ş":  cls.G_dissipative,
             # phonetic names (backward compat)
             "ɢ_corner": cls.Gamma_corner,   "ɢ_and": cls.Gamma_corner,
             "ɢ_otimes": cls.Gamma_corner,   "Γ_⊗": cls.Gamma_corner,
@@ -408,21 +408,21 @@ class Fidelity(Enum):
       F_hardsign  = quantum / high-fidelity (ℏ)
     """
     F_noise    = "ƒ_noise"  # below threshold, lossy (NEW)
-    F_beltl    = "ƒ_ì"     # classical search fidelity
-    F_dh       = "ƒ_ð"     # HotSwap threshold
-    F_hardsign = "ƒ_ż"     # quantum coherent
+    F_beltl    = "ƒ^ì"     # classical search fidelity
+    F_dh       = "ƒ^ð"     # HotSwap threshold
+    F_hardsign = "ƒ^ż"     # quantum coherent
     # Backward-compat aliases
-    LOW    = "ƒ_ì"
-    MEDIUM = "ƒ_ð"
-    HIGH   = "ƒ_ż"
+    LOW    = "ƒ^ì"
+    MEDIUM = "ƒ^ð"
+    HIGH   = "ƒ^ż"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Fidelity":
         _map = {
             # glyph IDs (canonical)
-            "ƒ_ì":  cls.F_beltl,
-            "ƒ_ð":  cls.F_dh,
-            "ƒ_ż":  cls.F_hardsign,
+            "ƒ^ì":  cls.F_beltl,
+            "ƒ^ð":  cls.F_dh,
+            "ƒ^ż":  cls.F_hardsign,
             # phonetic names (backward compat)
             "ƒ_noise": cls.F_noise,
             "ƒ_beltl": cls.F_beltl,   "F_ℓ": cls.F_beltl,   "LOW": cls.F_beltl,
@@ -436,7 +436,7 @@ class Fidelity(Enum):
 
     @property
     def numeric_value(self) -> float:
-        return {"ƒ_noise": 0.0, "ƒ_ì": 0.33, "ƒ_ð": 0.67, "ƒ_ż": 1.0}[self.value]
+        return {"ƒ_noise": 0.0, "ƒ^ì": 0.33, "ƒ^ð": 0.67, "ƒ^ż": 1.0}[self.value]
 
 
 # =============================================================================
@@ -454,27 +454,27 @@ class KineticChar(Enum):
       K_teshlig = kinetically trapped / pathway-multiplicity dominated
       K_lambda  = many-body localised (disorder-frozen)
     """
-    K_frtailgamma = "Ç_-"
-    K_turnm       = "Ç_W"   # was MODERATE
-    K_schwa       = "Ç_@"
-    K_teshlig     = "Ç_Ù"
-    K_lambda      = "Ç_λ"
+    K_frtailgamma = "Ç^-"
+    K_turnm       = "Ç^W"   # was MODERATE
+    K_schwa       = "Ç^@"
+    K_teshlig     = "Ç^Ù"
+    K_lambda      = "Ç^λ"
     # Backward-compat aliases
-    FAST     = "Ç_-"
-    MODERATE = "Ç_W"
-    SLOW     = "Ç_@"
-    TRAP     = "Ç_Ù"
-    MBL      = "Ç_λ"
+    FAST     = "Ç^-"
+    MODERATE = "Ç^W"
+    SLOW     = "Ç^@"
+    TRAP     = "Ç^Ù"
+    MBL      = "Ç^λ"
 
     @classmethod
     def from_symbol(cls, s: str) -> "KineticChar":
         _map = {
             # glyph IDs (canonical)
-            "Ç_-":  cls.K_frtailgamma,
-            "Ç_W":  cls.K_turnm,
-            "Ç_@":  cls.K_schwa,
-            "Ç_Ù":  cls.K_teshlig,
-            "Ç_λ":  cls.K_lambda,
+            "Ç^-":  cls.K_frtailgamma,
+            "Ç^W":  cls.K_turnm,
+            "Ç^@":  cls.K_schwa,
+            "Ç^Ù":  cls.K_teshlig,
+            "Ç^λ":  cls.K_lambda,
             # phonetic names (backward compat)
             "Ç_frtailgamma": cls.K_frtailgamma, "FAST": cls.K_frtailgamma,
             "Ç_turnm":  cls.K_turnm,  "MODERATE": cls.K_turnm,
@@ -489,7 +489,7 @@ class KineticChar(Enum):
 
     @property
     def numeric_value(self) -> float:
-        return {"Ç_λ": 0.0, "Ç_Ù": 0.25, "Ç_@": 0.5, "Ç_W": 0.75, "Ç_-": 1.0}[self.value]
+        return {"Ç^λ": 0.0, "Ç^Ù": 0.25, "Ç^@": 0.5, "Ç^W": 0.75, "Ç^-": 1.0}[self.value]
 
 
 # =============================================================================
@@ -559,31 +559,31 @@ class Criticality(Enum):
       Phi_upstep     = supercritical (unstable)
     Phi_ctyogh is ABSORBING under meet: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """
-    Phi_softsign        = "φ̂_ž"   # subcritical (stable, ordered)
-    Phi_ctyogh          = "φ̂_ÿ"   # critical point (absorbing under meet)
-    Phi_closerevepsilon = "φ̂_Æ"   # complex criticality (paraconsistent)
-    Phi_revepsilon      = "φ̂_3"   # exceptional-point criticality
-    Phi_upstep          = "φ̂_Ţ"   # supercritical (unstable)
+    Phi_softsign        = "⊙_ž"   # subcritical (stable, ordered)
+    Phi_ctyogh          = "⊙_ÿ"   # critical point (absorbing under meet)
+    Phi_closerevepsilon = "⊙_Æ"   # complex criticality (paraconsistent)
+    Phi_revepsilon      = "⊙_3"   # exceptional-point criticality
+    Phi_upstep          = "⊙_Ţ"   # supercritical (unstable)
     # Backward-compat aliases
-    SUBCRITICAL  = "φ̂_ž"
-    CRITICAL     = "φ̂_ÿ"
-    SUPERCRITICAL = "φ̂_Ţ"
+    SUBCRITICAL  = "⊙_ž"
+    CRITICAL     = "⊙_ÿ"
+    SUPERCRITICAL = "⊙_Ţ"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
         _map = {
             # glyph IDs (canonical)
-            "φ̂_ž":  cls.Phi_softsign,
-            "φ̂_ÿ":  cls.Phi_ctyogh,
-            "φ̂_Æ":  cls.Phi_closerevepsilon,
-            "φ̂_3":  cls.Phi_revepsilon,
-            "φ̂_Ţ":  cls.Phi_upstep,
+            "⊙_ž":  cls.Phi_softsign,
+            "⊙_ÿ":  cls.Phi_ctyogh,
+            "⊙_Æ":  cls.Phi_closerevepsilon,
+            "⊙_3":  cls.Phi_revepsilon,
+            "⊙_Ţ":  cls.Phi_upstep,
             # phonetic names (backward compat)
-            "φ̂_softsign":       cls.Phi_softsign,       "Φ_sub":   cls.Phi_softsign,
-            "φ̂_ctyogh":         cls.Phi_ctyogh,         "Φ_c":     cls.Phi_ctyogh,
-            "φ̂_closerevepsilon": cls.Phi_closerevepsilon, "Φ_c_ℂ":  cls.Phi_closerevepsilon,
-            "φ̂_revepsilon":      cls.Phi_revepsilon,      "Φ_EP":    cls.Phi_revepsilon,
-            "φ̂_upstep":         cls.Phi_upstep,          "Φ_sup":   cls.Phi_upstep,
+            "⊙_softsign":       cls.Phi_softsign,       "Φ_sub":   cls.Phi_softsign,
+            "⊙_ctyogh":         cls.Phi_ctyogh,         "Φ_c":     cls.Phi_ctyogh,
+            "⊙_closerevepsilon": cls.Phi_closerevepsilon, "Φ_c_ℂ":  cls.Phi_closerevepsilon,
+            "⊙_revepsilon":      cls.Phi_revepsilon,      "Φ_EP":    cls.Phi_revepsilon,
+            "⊙_upstep":         cls.Phi_upstep,          "Φ_sup":   cls.Phi_upstep,
             # odot-prefixed variants (old memory file notation)
             "⊙_ž":  cls.Phi_softsign,
             "⊙_ÿ":  cls.Phi_ctyogh,
@@ -899,7 +899,7 @@ class Imscription:
         "Þ_network_hex": "Þ_6", "Þ_network_mixed": "Þ_6",
         "Þ_network_interp": "Þ_6", "Þ_network_sym": "Þ_6",
         # Grammar — non-canonical G_xor/G_impl/G_dissipative collapse to canonical
-        "Γ_impl": "ɢ_ˌ", "Γ_xor": "ɢ_˝", "Γ_dissipative": "ɢ_Ş",
+        "Γ_impl": "ɢ^ˌ", "Γ_xor": "ɢ^˝", "Γ_dissipative": "ɢ^Ş",
     }
 
     @classmethod
@@ -918,7 +918,7 @@ class Imscription:
             "Ç":             self._canon(self.kinetic_character.value),
             "Γ":             self._canon(self.granularity.value),
             "ɢ":             self._canon(self.grammar.value),
-            "φ̂":             self._canon(self.criticality_phase.value),
+            "⊙":             self._canon(self.criticality_phase.value),
             "Ω":             self._canon(self.protection.value),
             "Σ":             self._canon(self.stoichiometry.value),
             "Ħ":             self._canon(self.chirality.value),
@@ -932,7 +932,7 @@ class Imscription:
         """
         Construct a Imscription from a catalog dict (new or legacy format).
 
-        Accepts glyph keys (Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, φ̂, Ħ, Σ, Ω), short ASCII keys
+        Accepts glyph keys (Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω), short ASCII keys
         (D, T, R, P, F, K, G, Gamma, Phi, Omega, S, H), and long Python field names.
         Parses all primitive fields via from_symbol() for backward compatibility.
         """
@@ -958,11 +958,11 @@ class Imscription:
                 topology         = Topology.from_symbol(_get("Þ", "T", "topology", "Þ_6")),
                 recognition_mode = Recognition.from_symbol(_get("Ř", "R", "recognition_mode", "Ř_¯")),
                 polarity         = Polarity.from_symbol(_get("Φ", "P", "polarity", "Φ_ɐ")),
-                grammar          = Grammar.from_symbol(_get("ɢ", "Gamma", "grammar", "ɢ_^")),
-                fidelity         = Fidelity.from_symbol(_get("ƒ", "F", "fidelity", "ƒ_ì")),
-                kinetic_character= KineticChar.from_symbol(_get("Ç", "K", "kinetic_character", "Ç_W")),
+                grammar          = Grammar.from_symbol(_get("ɢ", "Gamma", "grammar", "ɢ^∧")),
+                fidelity         = Fidelity.from_symbol(_get("ƒ", "F", "fidelity", "ƒ^ì")),
+                kinetic_character= KineticChar.from_symbol(_get("Ç", "K", "kinetic_character", "Ç^W")),
                 granularity      = Granularity.from_symbol(_get("Γ", "G", "granularity", "Γ_β")),
-                criticality_phase= Criticality.from_symbol(_get("φ̂", "Phi", "criticality_phase", "φ̂_ž")),
+                criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "⊙_ž")),
                 protection       = Protection.from_symbol(_get("Ω", "Omega", "protection", "Ω_Å")),
                 stoichiometry    = Stoichiometry.from_symbol(_get("Σ", "S", "stoichiometry", "n:m")),
                 chirality        = Chirality.from_symbol(_get("Ħ", "H", "chirality", "Ħ_Ñ")),

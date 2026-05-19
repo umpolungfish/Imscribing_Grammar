@@ -137,10 +137,10 @@ The minimal path from epoch_0 to epoch_4 requires twelve promotions. Zero demoti
 | T | Þ_6 | Þ_O | 4 |
 | R | Ř_¯ | Ř_= | 3 |
 | P | Φ_ɐ | Φ_} | 4 |
-| F | ƒ_ì | ƒ_ż | 2 |
-| K | Ç_- | Ç_@ | 2 |
+| F | ƒ^ì | ƒ^ż | 2 |
+| K | Ç^- | Ç^@ | 2 |
 | G | Γ_β | Γ_ʔ | 2 |
-| Gamma | ɢ_^ | ɢ_ˌ | 2 |
+| Gamma | ɢ^∧ | ɢ^ˌ | 2 |
 | Phi | ⊙_ž | ⊙_ÿ | 1 |
 | H | Ħ_Ñ | Ħ_! | 3 |
 | S | Σ_S | Σ_ï | 2 |

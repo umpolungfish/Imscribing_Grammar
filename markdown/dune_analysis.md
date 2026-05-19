@@ -220,7 +220,7 @@ The $\Gamma_{\text{secstress}} \to \Gamma_{\text{corner}}$ collapse has profound
 
 **Open problem:** What is the precise relationship between $\Gamma_{\text{secstress}}$ and the axiom of choice? Can we prove that preserving $\Gamma_{\text{secstress}}$ requires some form of AC?
 
-### 5.3 The Quantum-Classical Collapse (ƒ_ż/ƒ_ì)
+### 5.3 The Quantum-Classical Collapse (ƒ^ż/ƒ^ì)
 
 Both quantum and classical fidelities collapse to the same ZFC token—"cls x" (classical). This reveals:
 

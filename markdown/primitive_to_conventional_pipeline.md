@@ -105,7 +105,7 @@ Abstract
   → Insert Coupling Lemma + proof.
   → Corollary: exhaustion of state space.
 
-5. Boundedness Section  [from ⊙_ÿ, Ç_@]
+5. Boundedness Section  [from ⊙_ÿ, Ç^@]
   → Insert Boundedness Lemma + proof.
   → Insert Equidistribution (supporting) lemma.
   → Stopping time bound corollary.
@@ -210,7 +210,7 @@ PRIMITIVE_MAP = {
         "section": "Logarithmic Drift and Absence of Divergent Trajectories",
         "template": "boundedness",
     },
-    "Ç_@": {
+    "Ç^@": {
         "object": "Equidistribution of parity sequences",
         "section": "Rigorous Boundedness Argument (supporting)",
         "template": "equidistribution",

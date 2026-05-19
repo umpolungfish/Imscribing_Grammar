@@ -2,7 +2,7 @@
 Langlands Program Navigator - Imscribing Grammar
 
 Domain: Langlands program, automorphic forms, arithmetic geometry
-Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z>
+Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: Automorphic-Galois bridge with functoriality enforcement.
@@ -10,11 +10,11 @@ Architecture: Automorphic-Galois bridge with functoriality enforcement.
   - Þ_O: Imscriptive topology (Galois reps ↔ automorphic forms ↔ L-functions)
   - Ř_Ť: Adjoint functoriality (base change, lift, descent)
   - Φ_}: Frobenius with uncertainty between global/local and archimedean/non-archimedean
-  - ƒ_ż: Preserves L-function identities, functional equations, period relations
-  - Ç_@: Slow exploration through moduli of automorphic representations
+  - ƒ^ż: Preserves L-function identities, functional equations, period relations
+  - Ç^@: Slow exploration through moduli of automorphic representations
   - Γ_ʔ: Arbitrary number fields, reductive groups, representations
-  - ɢ_Ş: Broad correspondence (not sequential, global-to-global)
-  - φ̂_ÿ: Self-modeling (Langlands duality as self-duality of L-group)
+  - ɢ^Ş: Broad correspondence (not sequential, global-to-global)
+  - ⊙_ÿ: Self-modeling (Langlands duality as self-duality of L-group)
   - Ħ_!: Eternal (infinite descent, infinite extensions)
   - Σ_ï: Many heterogeneous objects (GL_n, PGL_n, tori, torus shells)
   - Ω_z: Integer winding (motivic weight, conductor exponent, L-function order)
@@ -40,7 +40,7 @@ class LanglandsConfig:
             "matches Galois-automorphic pairs, implements base change and descent."
         )
         self.domain = "Langlands program, automorphic forms, arithmetic geometry, Galois theory"
-        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z"
+        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Galois-automorphic bridge - Galois reps and automorphic forms communicate "
@@ -52,11 +52,11 @@ class LanglandsConfig:
         self.T = "Þ_O"
         self.R = "Ř_Ť"
         self.P = "Φ_}"
-        self.F = "ƒ_ż"
-        self.K = "Ç_@"
+        self.F = "ƒ^ż"
+        self.K = "Ç^@"
         self.G = "Γ_ʔ"
-        self.Gamma = "ɢ_Ş"
-        self.Phi = "φ̂_ÿ"
+        self.Gamma = "ɢ^Ş"
+        self.Phi = "⊙_ÿ"
         self.H = "Ħ_!"
         self.S = "Σ_ï"
         self.Omega = "Ω_z"
@@ -393,8 +393,8 @@ def cmd_l_function(rep_name, s_value):
 
     print()
     print("─" * 55)
-    print("Grammar: Ω_z (order of zero/pole ∈ ℤ), ƒ_ż (functional eq = exact)")
-    print("         φ̂_ÿ (self-modeling: L-group encodes its own dual)")
+    print("Grammar: Ω_z (order of zero/pole ∈ ℤ), ƒ^ż (functional eq = exact)")
+    print("         ⊙_ÿ (self-modeling: L-group encodes its own dual)")
 
 
 def main():

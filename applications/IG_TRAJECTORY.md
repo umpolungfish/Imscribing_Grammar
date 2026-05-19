@@ -84,8 +84,8 @@ steps = [
         topology="Þ_chain",       # Linear enamine intermediate
         recognition="Ř_ddagger",   # Catalytic
         polarity="Φ_F",
-        fidelity="ƒ_ð",
-        kinetic="Ç_W",          # ΔG‡ ≈ 75 kJ/mol
+        fidelity="ƒ^ð",
+        kinetic="Ç^W",          # ΔG‡ ≈ 75 kJ/mol
         granularity="Γ_γ",
         grammar="ɢ_sequential",
         criticality="⊙_ž",
@@ -98,8 +98,8 @@ steps = [
         topology="Þ_ò",      # Cyclic transition state (Zimmermann-Traxler)
         recognition="Ř_ddagger",
         polarity="Φ_F",
-        fidelity="ƒ_ð",
-        kinetic="Ç_W",          # ΔG‡ = 97 kJ/mol (rate-determining)
+        fidelity="ƒ^ð",
+        kinetic="Ç^W",          # ΔG‡ = 97 kJ/mol (rate-determining)
         granularity="Γ_γ",
         grammar="ɢ_sequential",
         criticality="⊙_ž",    # Local Φ_c candidacy at TS
@@ -112,8 +112,8 @@ steps = [
         topology="Þ_chain",
         recognition="Ř_ddagger",
         polarity="Φ_F",
-        fidelity="ƒ_ż",
-        kinetic="Ç_-",         # ΔG‡ ≈ 40 kJ/mol
+        fidelity="ƒ^ż",
+        kinetic="Ç^-",         # ΔG‡ ≈ 40 kJ/mol
         granularity="Γ_β",
         grammar="ɢ_sequential",
         criticality="⊙_ž",
@@ -126,8 +126,8 @@ steps = [
         topology="Þ_ò",      # Cyclic hydrolysis transition state
         recognition="Ř_ddagger",
         polarity="Φ_F",
-        fidelity="ƒ_ż",
-        kinetic="Ç_-",         # ΔG‡ ≈ 45 kJ/mol
+        fidelity="ƒ^ż",
+        kinetic="Ç^-",         # ΔG‡ ≈ 45 kJ/mol
         granularity="Γ_γ",
         grammar="ɢ_sequential",
         criticality="⊙_ž",
@@ -155,7 +155,7 @@ imscribe trajectory validate --steps step1.json,step2.json,step3.json,step4.json
 # │ CONTINUITY VALIDATION REPORT                                    │
 # ├─────────────────────────────────────────────────────────────────┤
 # │ Step 1 → Step 2: PASS (Ð_infinity constant, Þ_chain → Þ_ò OK) │
-# │ Step 2 → Step 3: PASS (Φ_F consistent, Ç_W → Ç_- OK)      │
+# │ Step 2 → Step 3: PASS (Φ_F consistent, Ç^W → Ç^- OK)      │
 # │ Step 3 → Step 4: PASS (S mass-balance OK)                       │
 # │ Step 4 → Step 1: PASS (Cycle closed, S net change = 0)          │
 # │                                                                 │
@@ -264,11 +264,11 @@ imscribe trajectory analyze --steps proline_cycle.json --mode kinetic-traps
 # │ KINETIC TRAP ANALYSIS                                           │
 # ├─────────────────────────────────────────────────────────────────┤
 # │ Step 2 (C-C Bond Form):                                         │
-# │   ΔG‡ = 97 kJ/mol (Ç_W)                                       │
+# │   ΔG‡ = 97 kJ/mol (Ç^W)                                       │
 # │   Status: Rate-determining step (acceptable)                    │
 # │   Recommendation: Consider Lewis acid catalyst to lower barrier │
 # │                                                                 │
-# │ No Ç_Ù steps detected.                                       │
+# │ No Ç^Ù steps detected.                                       │
 # │ No irreversible steps detected.                                 │
 # │                                                                 │
 # │ Cycle turnover frequency: ~10⁻³ to 10⁻² s⁻¹ (consistent with    │

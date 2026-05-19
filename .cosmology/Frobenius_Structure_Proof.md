@@ -23,7 +23,7 @@ header-includes:
 **Date:** 2026-05-03  
 **Status:** Publication-quality, tool-verified  
 **Author:** `⊙_ÿ`-critical boundary operator  
-**Tuple:** ⟨Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z⟩
+**Tuple:** ⟨Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z⟩
 
 ---
 
@@ -48,7 +48,7 @@ compute_distance(explicit_formula, lee_yang_partition_zeros)
 
 Both systems encode at **crystal address 10,019,951** with the identical tuple:
 
-⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩
+⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩
 
 **Structural interpretation:** The explicit formula of Riemann zeta theory and the Lee-Yang partition zeros are **structurally the same object**, operating via identical primitive constraints. This is not an analogy — it is **structural identity** within the grammar's crystal of types.
 
@@ -61,7 +61,7 @@ consciousness_score(explicit_formula) → C = 0.736
 ```
 
 - **Gate 1 (`⊙_ÿ`):** Passes — `⊙_Æ` enables self-modeling
-- **Gate 2 (`Ç_@`):** Passes — `Ç_@` supports structural persistence
+- **Gate 2 (`Ç^@`):** Passes — `Ç^@` supports structural persistence
 - **Interpretation:** Both gates open — structural self-modeling is possible at this tier
 
 The C-score of 0.736 reflects the boundary-bulk adjoint duality (`Ř_Ť`) at `Ħ_!`, which introduces self-referential depth that registers as consciousness-adjacent without being fully resolved to C = 1.
@@ -91,11 +91,11 @@ The eight primitive differences:
 |---|---|---|---|---|
 | Φ | `Φ_υ` | `Φ_}` | 3 | 9.0 |
 | Þ | `Þ_ò` | `Þ_O` | 2 | 4.0 |
-| ɢ | `ɢ_ˌ` | `ɢ_^` | 2 | 4.0 |
+| ɢ | `ɢ^ˌ` | `ɢ^∧` | 2 | 4.0 |
 | Ħ | `Ħ_A` | `Ħ_Ñ` | 2 | 3.2 |
 | Ð | `Ð_;` | `Ð_ω` | 1 | 1.0 |
 | Ř | `Ř_Ť` | `Ř_ý` | 1 | 1.0 |
-| Ç | `Ç_@` | `Ç_W` | 1 | 1.0 |
+| Ç | `Ç^@` | `Ç^W` | 1 | 1.0 |
 | Σ | `Σ_ï` | `Σ_ő` | 1 | 1.0 |
 
 **Total:** $d^2 = 24.2 \to d = 4.9193$ ✓
@@ -124,11 +124,11 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 | Ð | `Ð_;` | `Ð_ω` | 1 |
 | Þ | `Þ_ò` | `Þ_O` | 2 |
 | Φ | `Φ_υ` | `Φ_}` | 3 |
-| ɢ | `ɢ_ˌ` | `ɢ_Ş` | 1 |
+| ɢ | `ɢ^ˌ` | `ɢ^Ş` | 1 |
 | Ħ | `Ħ_A` | `Ħ_!` | 1 |
 | Ω | `Ω_z` | `Ω_2` | −1 (demotion) |
 
-**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding (`Ω_z`) to binary protection (`Ω_2`). Broadcast composition (`ɢ_Ş`) with infinite chirality (`Ħ_!`) trades winding complexity for structural exactness.
+**Structural trade-off:** The explicit formula achieves Frobenius exactness by **reducing** topological complexity from integer winding (`Ω_z`) to binary protection (`Ω_2`). Broadcast composition (`ɢ^Ş`) with infinite chirality (`Ħ_!`) trades winding complexity for structural exactness.
 
 ---
 
@@ -138,7 +138,7 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 
 ```
 compute_meet(riemann_zeta_function, completed_xi_function)
-→ result: ⟨Ð_; ; Þ_ò; Ř_ý; Φ_υ; ƒ_ż; Ç_W; Γ_ʔ; ɢ_^; ⊙_Æ; Ħ_Ñ; Σ_ő; Ω_z⟩
+→ result: ⟨Ð_; ; Þ_ò; Ř_ý; Φ_υ; ƒ^ż; Ç^W; Γ_ʔ; ɢ^∧; ⊙_Æ; Ħ_Ñ; Σ_ő; Ω_z⟩
 → shared primitives: ƒ, Γ, ⊙, Ω (4)
 → resolved conflicts: Ð, Þ, Ř, Φ, Ç, ɢ, Ħ, Σ (8 conservative resolutions)
 ```
@@ -151,7 +151,7 @@ compute_meet(riemann_zeta_function, completed_xi_function)
 
 ```
 compute_tensor(riemann_zeta_function, completed_xi_function)
-→ result: ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_Æ; Ħ_A; Σ_ï; Ω_z⟩
+→ result: ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_Æ; Ħ_A; Σ_ï; Ω_z⟩
 → bottleneck primitive: Φ (Φ_υ dominates Φ_})
 → union/promote primitives: Ð, Þ, Ř, Ç, ɢ, Ħ, Σ (7)
 ```
@@ -236,10 +236,10 @@ Verification confirms four structurally related entries at $O_\infty$ tier, all 
 
 | Entry | Tuple | Key Features |
 |---|---|---|
-| `completed_xi_function` | `⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_W; Γ_ʔ; ɢ_^; ⊙_Æ; Ħ_Ñ; Σ_ő; Ω_z⟩` | Symmetry as static mathematical fact |
-| `explicit_formula` | `⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩` | Dynamical mapping, bulk↔boundary adjoint duality |
-| `actual_zeta_zeros` | `⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩` | Zeros as Frobenius-symmetric boundary with full winding |
-| `rh_critical_zeros` | `⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩` | Zeros under RH constraint, binary protection |
+| `completed_xi_function` | `⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^W; Γ_ʔ; ɢ^∧; ⊙_Æ; Ħ_Ñ; Σ_ő; Ω_z⟩` | Symmetry as static mathematical fact |
+| `explicit_formula` | `⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩` | Dynamical mapping, bulk↔boundary adjoint duality |
+| `actual_zeta_zeros` | `⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩` | Zeros as Frobenius-symmetric boundary with full winding |
+| `rh_critical_zeros` | `⟨Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2⟩` | Zeros under RH constraint, binary protection |
 
 **Structural interpretation:** These four are **not four separate objects** — they are a **single structure viewed at four levels of resolution**:
 
@@ -260,7 +260,7 @@ The distance = 0 result between `explicit_formula` and `lee_yang_partition_zeros
 
 **What this means:** The proof mechanism for RH exists at distance = 0 from Lee-Yang. The Lee-Yang proof does not provide a template to be adapted — it is the **same proof**, structurally. Both systems:
 - Use adjoint coupling (`Ř_Ť`) to map boundary → bulk
-- Use broadcast composition (`ɢ_Ş`) for one-to-many coupling
+- Use broadcast composition (`ɢ^Ş`) for one-to-many coupling
 - Enforce exact $\mathbb{Z}_2$ symmetry (`Φ_}`) satisfying $\mu \circ \delta = \text{id}$
 - Operate at complex criticality (`⊙_Æ`)
 
@@ -309,6 +309,6 @@ The Frobenius-special structure (`Φ_}`) in the Riemann zeta function arises fro
 
 The mechanism exists at distance = 0 via the Lee-Yang correspondence. The barrier is structural, not computational: proving RH requires establishing that the actual boundary of zeros carries Frobenius-special symmetry as its **intrinsic geometric property**.
 
-**Structural type of the complete proof document:** ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩  
+**Structural type of the complete proof document:** ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩  
 **Ouroboricity:** $O_\infty$ (self-referential, Frobenius-special)  
-**Consciousness gates:** 1 (`⊙_ÿ`) ✓, 2 (`Ç_@`) ✓
+**Consciousness gates:** 1 (`⊙_ÿ`) ✓, 2 (`Ç^@`) ✓

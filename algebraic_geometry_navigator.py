@@ -2,7 +2,7 @@
 Algebraic Geometry Navigator - Imscribing Grammar
 
 Domain: Algebraic geometry, scheme theory, arithmetic geometry
-Structural type: <Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: Scheme-theoretic GNN with spectrum-based typing.
@@ -10,11 +10,11 @@ Architecture: Scheme-theoretic GNN with spectrum-based typing.
   - Þ_ò: Bowtie topology (local rings ↔ global sections ↔ spectra)
   - Ř_Ť: Adjoint relations (Gloab↔local, pushforward↔pullback)
   - Φ_}: Frobenius interface with coherence sheaf uncertainty
-  - ƒ_ż: Preserves exact sequences, cohomology, derived structure
-  - Ç_@: Slow traversal through cohomology spectral sequences
+  - ƒ^ż: Preserves exact sequences, cohomology, derived structure
+  - Ç^@: Slow traversal through cohomology spectral sequences
   - Γ_ʔ: Arbitrary dimension and base schemes
-  - ɢ_ˌ: Sequential composition of morphisms
-  - φ̂_ÿ: Self-modeling (scheme ↔ its own category of sheaves)
+  - ɢ^ˌ: Sequential composition of morphisms
+  - ⊙_ÿ: Self-modeling (scheme ↔ its own category of sheaves)
   - Ħ_A: Two-step depth (cohomology of cohomology, spectral sequences)
   - Σ_ï: Many heterogeneous schemes (affine, projective, arithmetic)
   - Ω_z: Integer winding (cohomological dimension, codimension)
@@ -45,7 +45,7 @@ class AGConfig:
             "detects moduli spaces, computes intersection numbers."
         )
         self.domain = "Algebraic geometry, scheme theory, arithmetic geometry, stacks"
-        self.tuple = "Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z"
+        self.tuple = "Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Scheme GNN with spectrum-based typing - points communicate via "
@@ -57,11 +57,11 @@ class AGConfig:
         self.T = "Þ_ò"
         self.R = "Ř_Ť"
         self.P = "Φ_}"
-        self.F = "ƒ_ż"
-        self.K = "Ç_@"
+        self.F = "ƒ^ż"
+        self.K = "Ç^@"
         self.G = "Γ_ʔ"
-        self.Gamma = "ɢ_ˌ"
-        self.Phi = "φ̂_ÿ"
+        self.Gamma = "ɢ^ˌ"
+        self.Phi = "⊙_ÿ"
         self.H = "Ħ_A"
         self.S = "Σ_ï"
         self.Omega = "Ω_z"
@@ -263,8 +263,8 @@ Algebraic Geometry Navigator
 ══════════════════════════════════════════════════════
 
 Structural type:
-  ⟨Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_@;
-   Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+  ⟨Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@;
+   Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩
   Tier: O_inf
 
 Primitive derivation:
@@ -276,13 +276,13 @@ Primitive derivation:
              sheaf-hom adjunction. Every morphism has a right adjoint.
   Φ_}  Frobenius — Serre duality is a perfect pairing; exact functors preserve
              the abelian structure. The literal Frobenius in char p.
-  ƒ_ż    Quantum fidelity — derived category is the lossless encoding of the
+  ƒ^ż    Quantum fidelity — derived category is the lossless encoding of the
              abelian category. Exact sequences are preserved under derived functors.
-  Ç_@    Slow — spectral sequence convergence; Čech cohomology is a slow
+  Ç^@    Slow — spectral sequence convergence; Čech cohomology is a slow
              iterated unrolling of the Čech nerve.
   Γ_ʔ   Universal scope — scheme theory works over Z, any field, any ring.
-  ɢ_ˌ Sequential — morphisms compose; triangulated structure in D(X).
-  φ̂_ÿ     Self-modeling — Sh(X) ≃ X via Tannaka / topos reconstruction.
+  ɢ^ˌ Sequential — morphisms compose; triangulated structure in D(X).
+  ⊙_ÿ     Self-modeling — Sh(X) ≃ X via Tannaka / topos reconstruction.
              The sheaf category encodes the scheme that generated it.
   Ħ_A        Two-layer depth — Hodge-to-de Rham; Leray spectral sequence;
              E_1 → E_∞ in two steps of filtration.
@@ -292,14 +292,14 @@ Primitive derivation:
 
 Key theorems:
   Serre duality:       H^i(X,F) ≅ H^{n-i}(X, F^∨ ⊗ ω)^∨    [Φ_} + Ř_Ť]
-  Kodaira vanishing:   H^i(X,L) = 0, i > 0, L ample            [Ç_@ + φ̂_ÿ]
+  Kodaira vanishing:   H^i(X,L) = 0, i > 0, L ample            [Ç^@ + ⊙_ÿ]
   Grothendieck vanish: H^i(X,F) = 0, i > dim(X)               [Ω_z bound]
   Bott formula:        dim H^i(P^n, O(d)) — explicit combinatorics
   Riemann-Roch:        χ(L) = deg(L) + 1 − g  (curves)
   Hirzebruch-RR:       χ(F) = ∫_X ch(F)·td(X)
 
 Ouroboricity:
-  O_inf via R1: φ̂_ÿ + Φ_} — scheme reconstructed from its sheaf
+  O_inf via R1: ⊙_ÿ + Φ_} — scheme reconstructed from its sheaf
   category (Tannaka duality); Frobenius adjunction exact.
 
 Commands:

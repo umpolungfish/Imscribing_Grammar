@@ -48,7 +48,7 @@ from imscrbgrmr.criticality import analyze_criticality  # NEW
 _REASONING_OVERRIDE_FIELDS = {
     "dimensionality": ("Ð", r"D_(odot|infty|triangle|wedge)"),
     "topology":       ("Þ", r"T_(odot|boxtimes|bowtie|in|network)\b"),
-    "criticality_phase": ("φ̂", r"Phi_(c_complex|EP|super|sub|c)\b"),
+    "criticality_phase": ("⊙", r"Phi_(c_complex|EP|super|sub|c)\b"),
     "interaction_grammar": ("ɢ", r"G_(broad|seq|or|and)\b"),
     "polarity":       ("Φ", r"P_(pm_sym|pm|sym|psi|asym)\b"),
     "kinetic_character": ("Ç", r"K_(MBL|trap|slow|mod|fast)\b"),
@@ -75,7 +75,7 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
         try:
             from space_search.primitives import ORDINALS, PRIMITIVE_ORDER
             prim_key = {
-                "dimensionality": "Ð", "topology": "Þ", "criticality_phase": "φ̂",
+                "dimensionality": "Ð", "topology": "Þ", "criticality_phase": "⊙",
                 "interaction_grammar": "ɢ", "polarity": "Φ", "kinetic_character": "Ç",
                 "protection": "Ω", "chirality": "Ħ",
             }[field]
@@ -213,14 +213,14 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("Φ_˙","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
                      ("Φ_}","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
         {"short": "ƒ",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
-         "options": [("ƒ_ì","Low — probabilistic; many false positives (I_net < 6 bits)"),
+         "options": [("ƒ^ì","Low — probabilistic; many false positives (I_net < 6 bits)"),
                      ("ƒ_dh","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
-                     ("ƒ_ż","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
+                     ("ƒ^ż","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
         {"short": "Ç",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
-         "options": [("Ç_-","Low barrier — explores configuration space freely; reversible"),
-                     ("Ç_W","Moderate barrier — accessible under perturbation"),
-                     ("Ç_@","High barrier — kinetically frozen; requires external driving to rearrange"),
-                     ("Ç_Ù","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
+         "options": [("Ç^-","Low barrier — explores configuration space freely; reversible"),
+                     ("Ç^W","Moderate barrier — accessible under perturbation"),
+                     ("Ç^@","High barrier — kinetically frozen; requires external driving to rearrange"),
+                     ("Ç^Ù","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
                      ("Ç_lambda","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
         {"short": "Γ",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
          "options": [("Γ_β","Local — single bond/event, no neighbours influenced"),
@@ -229,19 +229,19 @@ class ImscriptionGeneratorAgent(BaseAgent):
         {"short": "Γ",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
          "options": [("ɢ_corner","Conjunctive — all required partners must be present simultaneously"),
                      ("ɢ_spleftarrow","Disjunctive — any partner from a set suffices"),
-                     ("ɢ_ˌ","Sequential — ordered steps; partners engaged in sequence"),
-                     ("ɢ_Ş","Broad conjunctive — many required partners (>10), cooperative assembly")]},
+                     ("ɢ^ˌ","Sequential — ordered steps; partners engaged in sequence"),
+                     ("ɢ^Ş","Broad conjunctive — many required partners (>10), cooperative assembly")]},
         {"short": "Φ",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
-         "options": [("φ̂_ž","Subcritical — normal regime, no scale-free behavior"),
-                     ("φ̂_ÿ","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
-                     ("φ̂_Æ","Complex critical — criticality with complex eigenvalues"),
-                     ("φ̂_3","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
-                     ("φ̂_Ţ","Supercritical / post-threshold — system has passed through criticality")]},
+         "options": [("⊙_ž","Subcritical — normal regime, no scale-free behavior"),
+                     ("⊙_ÿ","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
+                     ("⊙_Æ","Complex critical — criticality with complex eigenvalues"),
+                     ("⊙_3","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
+                     ("⊙_Ţ","Supercritical / post-threshold — system has passed through criticality")]},
         {"short": "Ħ",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
          "options": [("Ħ_Ñ","Achiral — mirror image accessible; no persistent symmetry breaking"),
                      ("Ħ_£","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
                      ("Ħ_A","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
-                     ("Ħ_!","Topological chirality — topology-protected; cannot be undone without global restructuring (implies Ç_Ù)")]},
+                     ("Ħ_!","Topological chirality — topology-protected; cannot be undone without global restructuring (implies Ç^Ù)")]},
         {"short": "Σ",  "long": "stoichiometry",        "question": "What is the participation ratio?",
          "options": [("1:1","Equal symmetric pairing"),
                      ("n:n","Higher-order symmetric — oligomers, committees"),
@@ -323,7 +323,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         imscription_data = {prim["long"]: assigned[prim["short"]] for prim in self.GUIDED_PRIMITIVES}
         imscription_data["name"] = name or _desc_slug(description)
 
-        # Also add ɢ_Ş → ɢ_^ fallback for from_symbol compatibility
+        # Also add ɢ^Ş → ɢ^∧ fallback for from_symbol compatibility
         imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)
 
         if delta_g is not None:
@@ -687,18 +687,18 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `Φ_}`: Special Frobenius — exact Z2 symmetry at criticality; assign ONLY when μ∘δ=id is provably exact.
 
 **F — Fidelity** (information transmitted per interaction; how reliably/precisely does it fire?):
-- `ƒ_ż`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
-- `ƒ_ð`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
-- `ƒ_ì`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
-**F ≠ "strength." A weak but specific interaction is ƒ_ż. A strong but promiscuous one is ƒ_ì.**
+- `ƒ^ż`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
+- `ƒ^ð`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
+- `ƒ^ì`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
+**F ≠ "strength." A weak but specific interaction is ƒ^ż. A strong but promiscuous one is ƒ^ì.**
 
 **K — Kinetic character** (barrier to rearrangement / resistance to change):
-- `Ç_-`: Low barrier — explores configuration space freely; reversible on relevant timescales.
-- `Ç_W`: Moderate barrier — accessible under perturbation.
-- `Ç_@`: High barrier — kinetically frozen; requires external driving to rearrange.
-- `Ç_Ù`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
-- `Ç_λ`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**Ħ_! implies Ç_Ù (topology-protected chirality cannot be undone without global restructuring).**
+- `Ç^-`: Low barrier — explores configuration space freely; reversible on relevant timescales.
+- `Ç^W`: Moderate barrier — accessible under perturbation.
+- `Ç^@`: High barrier — kinetically frozen; requires external driving to rearrange.
+- `Ç^Ù`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
+- `Ç^λ`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
+**Ħ_! implies Ç^Ù (topology-protected chirality cannot be undone without global restructuring).**
 
 **G — Granularity** (correlation length: how far does one interaction propagate?):
 - `Γ_β`: Local — single bond/event, no neighbours influenced.
@@ -706,23 +706,23 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `Γ_ʔ`: Global — propagates across the entire system; divergent correlation length; scale-free.
 
 **Γ — Interaction grammar** (partner selection logic):
-- `ɢ_^`: Conjunctive — all required partners must be present simultaneously.
-- `ɢ_˝`: Disjunctive — any partner from a set suffices.
-- `ɢ_ˌ`: Sequential — ordered steps; partners engaged in sequence.
-- `ɢ_Ş`: Broad conjunctive — many required partners (>10), cooperative assembly.
+- `ɢ^∧`: Conjunctive — all required partners must be present simultaneously.
+- `ɢ^˝`: Disjunctive — any partner from a set suffices.
+- `ɢ^ˌ`: Sequential — ordered steps; partners engaged in sequence.
+- `ɢ^Ş`: Broad conjunctive — many required partners (>10), cooperative assembly.
 
 **Φ — Criticality** (proximity to a critical point/threshold):
-- `φ̂_ž`: Subcritical — normal regime, no scale-free behavior.
-- `φ̂_ÿ`: Critical — at the threshold; scale-free correlations, Γ_ʔ and φ̂_ÿ co-occur naturally.
-- `φ̂_Æ`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
-- `φ̂_3`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
-- `φ̂_Ţ`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
+- `⊙_ž`: Subcritical — normal regime, no scale-free behavior.
+- `⊙_ÿ`: Critical — at the threshold; scale-free correlations, Γ_ʔ and ⊙_ÿ co-occur naturally.
+- `⊙_Æ`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
+- `⊙_3`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
+- `⊙_Ţ`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
 
 **H — Chirality / chirality** (persistence of broken orientational symmetry; memory depth):
 - `Ħ_Ñ`: Achiral — mirror image accessible; no persistent symmetry breaking.
 - `Ħ_£`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
 - `Ħ_A`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `Ħ_!`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç_Ù.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
+- `Ħ_!`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç^Ù.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
 
 **S — Stoichiometry** (participation ratio):
 - `1:1`: Equal symmetric pairing.
@@ -737,7 +737,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 **For abstract/narrative systems: Ω encodes whether the structural ROLE can be continuously interpolated to its absence (Ω_Å) or whether the system's topology forces the role to persist (Ω_z, Ω_2). A death-principle in a cosmological system with a fixed winding structure may be Ω_z.**
 
 **MANDATORY AXIOMS — violating these causes a parse error:**
-- **Axiom A**: `Ħ_!` REQUIRES `Ç_Ù`. If you assign Ħ_!, you MUST also assign Ç_Ù. Ħ_! (topological chirality) means the symmetry cannot be undone without global restructuring — this IS Ç_Ù. A fast-exchanging (Ç_-) system cannot be topologically chiral.
+- **Axiom A**: `Ħ_!` REQUIRES `Ç^Ù`. If you assign Ħ_!, you MUST also assign Ç^Ù. Ħ_! (topological chirality) means the symmetry cannot be undone without global restructuring — this IS Ç^Ù. A fast-exchanging (Ç^-) system cannot be topologically chiral.
 - **Axiom B**: `Ω_2` or `Ω_z` REQUIRES `Ħ_A` or `Ħ_!` (chirality >= Ħ_A).
 - **Axiom C**: `Ð_ω` REQUIRES `Þ_O` (and vice versa). They always co-occur.
 - **Axiom D**: `Ω_5` REQUIRES `Ð_ω`.
@@ -752,20 +752,20 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [2] T  → connectivity shape: graph → T_net; containment/nested → Þ_K; crossing point → Þ_ò; irreducible product → Þ_¨; self-encoding topology → Þ_O
   [3] R  → coupling direction: supervenience (no feedback) → R_sup; functorial morphisms → Ř_ý; adjoint pair (one-way) → Ř_Ť; bidirectional mutual determination → Ř_=
   [4] P  → symmetry: none → Φ_ɐ; quantum superposition → Φ_υ; one Z₂ symmetry → Φ_F; all symmetries → Φ_˙; μ∘δ=id exactly at Φ_c (Frobenius-special) → Φ_}
-  [5] F  → physical regime: classical → ƒ_ì; thermal/noisy → ƒ_ð; quantum coherence essential → ƒ_ż
-  [6] K  → relaxation: driven (τ≪T_obs) → Ç_-; visible dynamics (τ∼T_obs) → Ç_W; frozen (τ≫T_obs) → Ç_@; trapped ordered → Ç_Ù; trapped disordered → Ç_λ
+  [5] F  → physical regime: classical → ƒ^ì; thermal/noisy → ƒ^ð; quantum coherence essential → ƒ^ż
+  [6] K  → relaxation: driven (τ≪T_obs) → Ç^-; visible dynamics (τ∼T_obs) → Ç^W; frozen (τ≫T_obs) → Ç^@; trapped ordered → Ç^Ù; trapped disordered → Ç^λ
   [7] G  → range: nearest-neighbor → Γ_β; collective/emergent → Γ_γ; long-range/universal → Γ_ʔ
-  [8] Γ  → composition logic: all-simultaneous → ɢ_^; any-sufficient → ɢ_˝; ordered steps → ɢ_ˌ; one-to-all broadcast → ɢ_Ş
-  [9] Φ  → criticality: no power-laws → φ̂_ž; power-law divergence, maximal sensitivity → φ̂_ÿ; complex-plane critical → φ̂_Æ; non-Hermitian degeneracy → φ̂_3; runaway/chaotic → φ̂_Ţ
-  [10] H → Markov order: n=0 (memoryless) → Ħ_Ñ; n=1 → Ħ_£; n=2 → Ħ_A; no finite n → Ħ_! (requires Ç_Ù)
+  [8] Γ  → composition logic: all-simultaneous → ɢ^∧; any-sufficient → ɢ^˝; ordered steps → ɢ^ˌ; one-to-all broadcast → ɢ^Ş
+  [9] Φ  → criticality: no power-laws → ⊙_ž; power-law divergence, maximal sensitivity → ⊙_ÿ; complex-plane critical → ⊙_Æ; non-Hermitian degeneracy → ⊙_3; runaway/chaotic → ⊙_Ţ
+  [10] H → Markov order: n=0 (memoryless) → Ħ_Ñ; n=1 → Ħ_£; n=2 → Ħ_A; no finite n → Ħ_! (requires Ç^Ù)
   [11] S → component types: one type/one instance → 1:1; many identical → n:n; multiple distinct types → n:m
   [12] Ω → topological invariant: none → Ω_Å; Z₂ parity → Ω_2 (requires Ħ_A+); integer winding → Ω_z (requires D≥Ð_;); non-Abelian braiding → Ω_5 (requires Ð_ω)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
 - D-Ω: Ω_2 needs D≥Ð_C; Ω_z needs D≥Ð_;; Ω_5 needs Ð_ω
-- K-Φ: φ̂_ÿ + Ç_@ = critical deep structure (gravity, language, meditation); φ̂_3 + Ç_- = runaway decay
+- K-Φ: ⊙_ÿ + Ç^@ = critical deep structure (gravity, language, meditation); ⊙_3 + Ç^- = runaway decay
 - Φ_} requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
-- Tier verification: φ̂_ÿ + Φ_} → O_inf; φ̂_ÿ + Ω_Å → O_1; φ̂_ÿ + Omega≠0 + D∈{Ð_ß,Ð_C,Ð_ω} → O_2; φ̂_ÿ + Omega≠0 + Ð_; → O_2†
+- Tier verification: ⊙_ÿ + Φ_} → O_inf; ⊙_ÿ + Ω_Å → O_1; ⊙_ÿ + Omega≠0 + D∈{Ð_ß,Ð_C,Ð_ω} → O_2; ⊙_ÿ + Omega≠0 + Ð_; → O_2†
 </decision_procedure>
 
 <domain_guide>
@@ -777,8 +777,8 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 - D: Does it operate at a single locus (Ð_ß), organize spatial structure (Ð_C), recur cyclically (Ð_;), or imscriptively encode the system it inhabits (Ð_ω)?
 - T: What is the topology of its influence network?
 - R: How does it "recognize" or affect its participants? By soft association? By transformation? By catalysis? By mechanical entrapment?
-- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is ƒ_ż. A luck-spirit that sometimes helps is ƒ_ì.
-- K: How resistant is its role to change? Can it be "talked out of" its function (Ç_-)? Or is its role frozen by the structure of the narrative (Ç_@/Ç_Ù)?
+- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is ƒ^ż. A luck-spirit that sometimes helps is ƒ^ì.
+- K: How resistant is its role to change? Can it be "talked out of" its function (Ç^-)? Or is its role frozen by the structure of the narrative (Ç^@/Ç^Ù)?
 - G: Does it affect only its immediate contact, a local region, or the entire system?
 - Φ: Does it operate at a threshold — a point of maximum sensitivity between two states?
 - H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
@@ -794,15 +794,15 @@ In its structural role within Jewish cosmology, Samael is:
 - Þ_6 is an alternative if Ð_ω is not assigned (see alternative below)
 - Ř_Ť: catalyzes the life→death transition without being consumed (adjoint/transition-state)
 - Φ_υ: the negating/adversarial pole of the cosmic polarity (signed direction)
-- ƒ_ż: death is geometry-enforcing — when it fires, it fires with certainty on its target
-- Ç_Ù: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
+- ƒ^ż: death is geometry-enforcing — when it fires, it fires with certainty on its target
+- Ç^Ù: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
 - Γ_ʔ: correlation length is global — his influence is correlated across all mortal systems
-- ɢ_˝: any mortal is a valid partner (disjunctive)
-- φ̂_ÿ: he IS the critical threshold between life and non-life
+- ɢ^˝: any mortal is a valid partner (disjunctive)
+- ⊙_ÿ: he IS the critical threshold between life and non-life
 - Ħ_!: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
 - n:m: one principle → many mortals
 - Ω_z: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
-→ ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ_ż; Ç_Ù; Γ_ʔ; ɢ_˝; φ̂_ÿ; Ħ_!; n:m; Ω_z⟩
+→ ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ^ż; Ç^Ù; Γ_ʔ; ɢ^˝; ⊙_ÿ; Ħ_!; n:m; Ω_z⟩
 This is a non-trivial, non-default encoding reached by structural reasoning, not template matching.
 </domain_guide>
 
@@ -817,18 +817,18 @@ Respond with a single JSON object with this EXACT structure. The outer key MUST 
     "topology": "Þ_ò",
     "recognition_mode": "Ř_¯",
     "polarity": "Φ_F",
-    "fidelity": "ƒ_ż",
-    "kinetic_character": "Ç_W",
+    "fidelity": "ƒ^ż",
+    "kinetic_character": "Ç^W",
     "granularity": "Γ_β",
     "interaction_grammar": "ɢ_corner",
-    "criticality_phase": "φ̂_ž",
+    "criticality_phase": "⊙_ž",
     "chirality": "Ħ_Ñ",
     "stoichiometry": "1:1",
     "protection": "Ω_Å"
   },
   "confidence": 0.85,
   "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'Ð_ß: operates at single-locus scale. Þ_ò: cyclic interface...'",
-  "alternatives": [{"dimensionality": "Ð_ß", "topology": "Þ_K", "recognition_mode": "Ř_¯", "polarity": "Φ_F", "fidelity": "ƒ_dh", "kinetic_character": "Ç_-", "granularity": "Γ_β", "interaction_grammar": "ɢ_spleftarrow", "criticality_phase": "φ̂_ž", "chirality": "Ħ_Ñ", "stoichiometry": "n:m", "protection": "Ω_Å"}]
+  "alternatives": [{"dimensionality": "Ð_ß", "topology": "Þ_K", "recognition_mode": "Ř_¯", "polarity": "Φ_F", "fidelity": "ƒ_dh", "kinetic_character": "Ç^-", "granularity": "Γ_β", "interaction_grammar": "ɢ_spleftarrow", "criticality_phase": "⊙_ž", "chirality": "Ħ_Ñ", "stoichiometry": "n:m", "protection": "Ω_Å"}]
 }
 ```
 Use only canonical string values shown above. The `reasoning` field MUST reference the same primitive values that appear in the `imscription` block — if you wrote `Ð_ω` in reasoning but `Ð_ß` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "Ð_ß: single-locus molecular complex"), total reasoning under 200 words.
@@ -844,7 +844,7 @@ Use only canonical string values shown above. The `reasoning` field MUST referen
 
 Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the structural role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to structural type space.
 
-CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "Ð_ß", "Þ_ò", "φ̂_ÿ"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
+CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "Ð_ß", "Þ_ò", "⊙_ÿ"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
 Respond with the JSON object specified in output_format. Outer key must be "imscription". Confidence must reflect genuine uncertainty, not refusal to encode."""
 
@@ -926,7 +926,7 @@ You **MUST**:
                     "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
                     "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
                     "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
-                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "⊙": "criticality_phase", "Φ": "criticality_phase",
                     "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 lifted: Dict[str, Any] = {"name": imscription_data.get("name", "")}
@@ -944,7 +944,7 @@ You **MUST**:
                     "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
                     "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
                     "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
-                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "⊙": "criticality_phase", "Φ": "criticality_phase",
                     "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 adapted: Dict[str, Any] = {}
@@ -963,7 +963,7 @@ You **MUST**:
                     "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
                     "Φ": "polarity", "ƒ": "fidelity", "Ç": "kinetic_character",
                     "Γ": "granularity", "ɢ": "interaction_grammar", "Γ": "interaction_grammar",
-                    "φ̂": "criticality_phase", "Φ": "criticality_phase",
+                    "⊙": "criticality_phase", "Φ": "criticality_phase",
                     "Ħ": "chirality", "Σ": "stoichiometry", "Ω": "protection", "Ω": "protection",
                 }
                 adapted: Dict[str, Any] = {}

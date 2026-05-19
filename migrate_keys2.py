@@ -14,7 +14,7 @@ FILES = [
 
 # ── Key renaming ───────────────────────────────────────────────────────────────
 KEY_PAIRS = [
-    ("Gamma", "ɢ"), ("Omega", "Ω"), ("Phi", "φ̂"),   # multi-char first
+    ("Gamma", "ɢ"), ("Omega", "Ω"), ("Phi", "⊙"),   # multi-char first
     ("D", "Ð"), ("T", "Þ"), ("R", "Ř"), ("P", "Φ"),
     ("F", "ƒ"), ("K", "Ç"), ("G", "Γ"), ("H", "Ħ"), ("S", "Σ"),
 ]
@@ -45,30 +45,30 @@ VALUE_PAIRS = [
     ("Φ_upsilon",        "Φ_υ"),
     ("Φ_aolig",          "Φ_ɐ"),
     # ƒ — Fidelity
-    ("ƒ_hardsign",       "ƒ_ż"),
-    ("ƒ_dh",             "ƒ_ð"),
-    ("ƒ_beltl",          "ƒ_ì"),
+    ("ƒ_hardsign",       "ƒ^ż"),
+    ("ƒ_dh",             "ƒ^ð"),
+    ("ƒ_beltl",          "ƒ^ì"),
     # Ç — Kinetics
-    ("Ç_lambda",         "Ç_λ"),
-    ("Ç_teshlig",        "Ç_Ù"),
-    ("Ç_schwa",          "Ç_@"),
-    ("Ç_turnm",          "Ç_W"),
-    ("Ç_frtailgamma",    "Ç_-"),
+    ("Ç_lambda",         "Ç^λ"),
+    ("Ç_teshlig",        "Ç^Ù"),
+    ("Ç_schwa",          "Ç^@"),
+    ("Ç_turnm",          "Ç^W"),
+    ("Ç_frtailgamma",    "Ç^-"),
     # Γ — Scope
     ("Γ_revapostrophe",  "Γ_ʔ"),
     ("Γ_gamma",          "Γ_γ"),
     ("Γ_beta",           "Γ_β"),
     # ɢ — Coupling
-    ("ɢ_doublevertline", "ɢ_Ş"),
-    ("ɢ_secstress",      "ɢ_ˌ"),
-    ("ɢ_spleftarrow",    "ɢ_˝"),
-    ("ɢ_corner",         "ɢ_^"),
-    # φ̂ — Criticality
-    ("φ̂_closerevepsilon","φ̂_Æ"),
-    ("φ̂_revepsilon",     "φ̂_3"),
-    ("φ̂_upstep",         "φ̂_Ţ"),
-    ("φ̂_ctyogh",         "φ̂_ÿ"),
-    ("φ̂_softsign",       "φ̂_ž"),
+    ("ɢ_doublevertline", "ɢ^Ş"),
+    ("ɢ_secstress",      "ɢ^ˌ"),
+    ("ɢ_spleftarrow",    "ɢ^˝"),
+    ("ɢ_corner",         "ɢ^∧"),
+    # ⊙ — Criticality
+    ("⊙_closerevepsilon","⊙_Æ"),
+    ("⊙_revepsilon",     "⊙_3"),
+    ("⊙_upstep",         "⊙_Ţ"),
+    ("⊙_ctyogh",         "⊙_ÿ"),
+    ("⊙_softsign",       "⊙_ž"),
     # Ħ — Chirality
     ("Ħ_invscripta",     "Ħ_!"),
     ("Ħ_turntwo",        "Ħ_A"),

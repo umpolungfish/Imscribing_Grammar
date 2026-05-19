@@ -1,6 +1,6 @@
 """
 Network Composer — Full Tensor/Graph Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, φ̂_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
 
 Constructs arbitrary tensor networks: G = (V, E) where vertices are systems,
 edges are coupling operations (tensor, meet, join, directed).
@@ -9,7 +9,12 @@ import json
 from pathlib import Path
 from typing import List, Dict, Tuple, Set
 
-from imscrbgrmr.imscribe_tool import syncon_tool
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from IG_inquiry import ToolDispatcher as _Dispatcher
+_d = _Dispatcher()
+def imscribe(tool_name: str, args: dict) -> dict:
+    return _d.dispatch(tool_name, args, 0)
 
 
 SCHEMA_PATH = Path(__file__).parent
@@ -65,15 +70,15 @@ def build_network_composite(
         if src not in catalog or tgt not in catalog:
             raise ValueError(f"Edge {i}: source '{src}' or target '{tgt}' not in catalog")
         
-        # Compute coupling via syncon_tool
+        # Compute coupling via imscribe
         if op == "tensor":
-            result = syncon_tool("compute_tensor", {"name_a": src, "name_b": tgt})
+            result = imscribe("compute_tensor", {"name_a": src, "name_b": tgt})
         elif op == "meet":
-            result = syncon_tool("compute_meet", {"name_a": src, "name_b": tgt})
+            result = imscribe("compute_meet", {"name_a": src, "name_b": tgt})
         elif op == "join":
-            result = syncon_tool("compute_join", {"name_a": src, "name_b": tgt})
+            result = imscribe("compute_join", {"name_a": src, "name_b": tgt})
         elif op == "directed":
-            result = syncon_tool(
+            result = imscribe(
                 "compute_conflict_distance",
                 {"name_a": src, "name_b": tgt}
             )
@@ -97,11 +102,11 @@ def build_network_composite(
         "Þ": composite.get("T", "Þ_6"),
         "Ř": composite.get("R", "Ř_="),
         "Φ": composite.get("Phi", "Φ_ɐ"),
-        "ƒ": composite.get("F", "ƒ_ì"),
-        "Ç": composite.get("K", "Ç_-"),
+        "ƒ": composite.get("F", "ƒ^ì"),
+        "Ç": composite.get("K", "Ç^-"),
         "Γ": composite.get("G", "Γ_γ"),
-        "ɢ": composite.get("Gamma", "ɢ_^"),
-        "φ̂": composite.get("Phi", "φ̂_ž"),
+        "ɢ": composite.get("Gamma", "ɢ^∧"),
+        "⊙": composite.get("Phi", "⊙_ž"),
         "Ħ": composite.get("H", "Ħ_Ñ"),
         "Σ": composite.get("S", "Σ_S"),
         "Ω": composite.get("Omega", "Ω_Å"),
@@ -117,7 +122,7 @@ def build_network_composite(
     }
     
     # Verification (run if composite were actually imscribed)
-    result["verification"] = syncon_tool(
+    result["verification"] = imscribe(
         "ouroborics",
         {"name": comp_name}  # will fail until actually imscribed
     )

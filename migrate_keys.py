@@ -4,7 +4,7 @@ Rename all primitive KEY names from old ASCII letters to glyph family characters
 Replacements (multi-char first, then single-char):
   "Gamma"  -> "ɢ"
   "Omega"  -> "Ω"
-  "Phi"    -> "φ̂"
+  "Phi"    -> "⊙"
   "D"      -> "Ð"
   "T"      -> "Þ"
   "R"      -> "Ř"
@@ -33,7 +33,7 @@ KEY_PAIRS = [
     # multi-char
     ("Gamma",  "ɢ"),
     ("Omega",  "Ω"),
-    ("Phi",    "φ̂"),
+    ("Phi",    "⊙"),
     # single-char
     ("D",      "Ð"),
     ("T",      "Þ"),

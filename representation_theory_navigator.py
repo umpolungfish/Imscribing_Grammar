@@ -2,7 +2,7 @@
 Representation Theory Navigator - Imscribing Grammar
 
 Domain: Representation theory, Lie theory, character theory, geometric representation theory
-Structural type: <Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: Character table GNN with categorical representation tracking.
@@ -10,11 +10,11 @@ Architecture: Character table GNN with categorical representation tracking.
   - Þ_¨: Box topology (representation category ⊗ group ⊗ field)
   - Ř_ý: Categorical relations (functoriality: induction ↔ restriction, tensor product)
   - Φ_}: Frobenius with uncertainty in positive characteristic, modular representations
-  - ƒ_ż: Preserves character orthogonality, Schur orthogonality, tensor category axioms
-  - Ç_@: Slow traversal through moduli of representations, Verma modules, highest weights
+  - ƒ^ż: Preserves character orthogonality, Schur orthogonality, tensor category axioms
+  - Ç^@: Slow traversal through moduli of representations, Verma modules, highest weights
   - Γ_ʔ: Arbitrary groups (finite, Lie, algebraic), arbitrary fields
-  - ɢ_ˌ: Sequential (weight lattice, tensor product decomposition)
-  - φ̂_ÿ: Self-modeling (group algebra as its own representation category)
+  - ɢ^ˌ: Sequential (weight lattice, tensor product decomposition)
+  - ⊙_ÿ: Self-modeling (group algebra as its own representation category)
   - Ħ_A: Two-step (representation tensor its dual, Clebsch-Gordan coefficients)
   - Σ_ï: Many heterogeneous objects (finite groups, Lie algebras, Hopf algebras, quantum groups)
   - Ω_z: Integer winding (dimension, weight lattice index, Dynkin index)
@@ -40,7 +40,7 @@ class RepTheoryConfig:
             "inductions/restrictions, matches representations across contexts."
         )
         self.domain = "Representation theory, Lie theory, character theory, geometric representation theory"
-        self.tuple = "Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z"
+        self.tuple = "Ð_ω; Þ_¨; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Character table GNN - representations communicate via character channels; "
@@ -52,11 +52,11 @@ class RepTheoryConfig:
         self.T = "Þ_¨"
         self.R = "Ř_ý"
         self.P = "Φ_}"
-        self.F = "ƒ_ż"
-        self.K = "Ç_@"
+        self.F = "ƒ^ż"
+        self.K = "Ç^@"
         self.G = "Γ_ʔ"
-        self.Gamma = "ɢ_ˌ"
-        self.Phi = "φ̂_ÿ"
+        self.Gamma = "ɢ^ˌ"
+        self.Phi = "⊙_ÿ"
         self.H = "Ħ_A"
         self.S = "Σ_ï"
         self.Omega = "Ω_z"
@@ -495,7 +495,7 @@ def cmd_character(group, rep, element):
 
     print()
     print("─"*55)
-    print("Grammar: ƒ_ż (Schur orthogonality preserved), Ω_z (dim ∈ ℤ)")
+    print("Grammar: ƒ^ż (Schur orthogonality preserved), Ω_z (dim ∈ ℤ)")
 
 
 def cmd_tensor_decompose(group, rep_a, rep_b):

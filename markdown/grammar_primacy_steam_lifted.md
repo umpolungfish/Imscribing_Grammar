@@ -34,7 +34,7 @@ Three operations act on these tuples:
 
 **Ř = Ř_=** — Relational mode: lateral/bilateral. Fire exerts bidirectional pressure on its environment. Structurally symmetric — distinct from containment and from subsetting.
 
-**Ç = Ç_-** — Kinetics: minimal. Fire does not flow. It is an event with a rate of internal change near zero relative to its substrate.
+**Ç = Ç^-** — Kinetics: minimal. Fire does not flow. It is an event with a rate of internal change near zero relative to its substrate.
 
 `water_fluid` at a different address:
 
@@ -42,7 +42,7 @@ Three operations act on these tuples:
 
 **Ř = Ř_¯** — Relational mode: superset/containing. Water contains; it does not exert lateral pressure.
 
-**Ç = Ç_W** — Kinetics: moderate. Water flows.
+**Ç = Ç^W** — Kinetics: moderate. Water flows.
 
 Seven of the twelve slots are identical between fire and water. They share topology, polarity, fidelity, scope, interaction grammar, chirality, and winding. Their differences concentrate in five slots: Ð, Ř, Ç, ⊙, and Ω.
 
@@ -58,10 +58,10 @@ Per-primitive maximum with the bottleneck rule. Fire and water agree on both bot
 | Þ | Þ_6 | Þ_6 | Þ_6 | = |
 | **Ř** | **Ř_=** | Ř_¯ | **Ř_=** | ← fire |
 | Φ | Φ_ɐ | Φ_ɐ | Φ_ɐ | = |
-| ƒ | ƒ_ð | ƒ_ð | ƒ_ð | = |
-| **Ç** | Ç_- | **Ç_W** | **Ç_W** | ← water |
+| ƒ | ƒ^ð | ƒ^ð | ƒ^ð | = |
+| **Ç** | Ç^- | **Ç^W** | **Ç^W** | ← water |
 | Γ | Γ_β | Γ_β | Γ_β | = |
-| ɢ | ɢ_^ | ɢ_^ | ɢ_^ | = |
+| ɢ | ɢ^∧ | ɢ^∧ | ɢ^∧ | = |
 | **⊙** | **⊙_Ţ** | ⊙_ž | **⊙_Ţ** | ← fire |
 | Ħ | Ħ_Ñ | Ħ_Ñ | Ħ_Ñ | = |
 | Σ | Σ_ï | Σ_ï | Σ_ï | = |
@@ -71,7 +71,7 @@ The result differs from `fire_combustion` in one slot: Ç. Everything else is fi
 
 ## Steam
 
-The resulting imscription carries fire's maximal criticality (⊙_Ţ), fire's bilateral relational mode (Ř_=), and water's moderate kinetics (Ç_W).
+The resulting imscription carries fire's maximal criticality (⊙_Ţ), fire's bilateral relational mode (Ř_=), and water's moderate kinetics (Ç^W).
 
 This is steam.
 

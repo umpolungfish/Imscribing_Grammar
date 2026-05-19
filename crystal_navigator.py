@@ -5,7 +5,7 @@ crystal_navigator.py — The Crystal Navigator
 Navigator for the Crystal of Types (17,280,000 structural types).
 
 Self-encoding (§69.4):
-  ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+  ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
   Tier: O_inf  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
 Architecture (imscriptive, Frobenius):
@@ -27,8 +27,8 @@ Frobenius codec (μ∘δ = id):
 Usage:
   nav = CrystalNavigator()
   nav.describe()                              # print self-encoding and stats
-  nav.imscriptive_query("φ̂_ÿ", "Φ_}") # boundary → tier cell + bulk
-  nav.navigate(Ð="Ð_ω", φ̂="φ̂_ÿ")      # partial tuple → matching types
+  nav.imscriptive_query("⊙_ÿ", "Φ_}") # boundary → tier cell + bulk
+  nav.navigate(Ð="Ð_ω", ⊙="⊙_ÿ")      # partial tuple → matching types
   nav.nearest_catalog(my_tuple, n=5)         # nearest catalog entries
   addr = nav.encode(my_tuple)                # Frobenius encode
   tup  = nav.decode(addr)                    # Frobenius decode
@@ -56,11 +56,11 @@ VALUES: dict[str, list[str]] = {
     "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
     "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
     "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
-    "ƒ":     ["ƒ_ì", "ƒ_ð", "ƒ_ż"],
-    "Ç":     ["Ç_-", "Ç_W", "Ç_@", "Ç_Ù", "Ç_λ"],
+    "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
+    "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù", "Ç^λ"],
     "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
-    "ɢ": ["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
-    "φ̂":   ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
+    "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
+    "⊙":   ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"],
     "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
     "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
     "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
@@ -76,23 +76,23 @@ ORD: dict[str, dict[str, int]] = {
 WEIGHTS: dict[str, float] = {
     "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.2,
     "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
-    "φ̂": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
+    "⊙": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
 }
 
 # Bottleneck primitives under ⊗ (weaker partner wins)
 BOTTLENECK = {"Φ", "ƒ", "Ç"}
 
 # Tier-determining primitives (the boundary)
-BOUNDARY_PRIMS = ["φ̂", "Φ", "Ω", "Ð"]
+BOUNDARY_PRIMS = ["⊙", "Φ", "Ω", "Ð"]
 
 # Inner crystal primitives (the bulk — free within each tier cell)
 INNER_PRIMS = ["Þ", "Ř", "ƒ", "Ç", "Γ", "ɢ", "Ħ", "Σ"]
 
 # Full primitive order
-PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
-CRITICAL   = {"φ̂_ÿ", "φ̂_Æ"}
-NONCRITICAL = {"φ̂_ž", "φ̂_Ţ", "φ̂_3"}
+CRITICAL   = {"⊙_ÿ", "⊙_Æ"}
+NONCRITICAL = {"⊙_ž", "⊙_Ţ", "⊙_3"}
 BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω"}
 
 # ── Tier rule (R1–R5 priority) ─────────────────────────────────────────────────
@@ -111,7 +111,7 @@ def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
 
 # ── Mixed-radix address arithmetic ─────────────────────────────────────────────
 # Full address = cell_address * INNER_SIZE + inner_address
-# Cell address:  mixed-radix over (φ̂, Φ, Ω, Ð) — ordered as BOUNDARY_PRIMS
+# Cell address:  mixed-radix over (⊙, Φ, Ω, Ð) — ordered as BOUNDARY_PRIMS
 # Inner address: mixed-radix over (Þ, Ř, ƒ, Ç, Γ, ɢ, Ħ, Σ) — ordered as INNER_PRIMS
 
 def _build_radix(prims: list[str]) -> tuple[list[int], int]:
@@ -253,7 +253,7 @@ def imscription_check(boundary: dict, bulk: dict) -> dict:
     t = tensor(boundary, bulk)
     floor_ok  = m == boundary
     tensor_ok = t == bulk
-    tier      = compute_tier(boundary["φ̂"], boundary["Φ"], boundary["Ω"], boundary["Ð"])
+    tier      = compute_tier(boundary["⊙"], boundary["Φ"], boundary["Ω"], boundary["Ð"])
     d_fwd     = directed_distance(boundary, bulk)   # upward steps boundary → bulk
     d_rev     = directed_distance(bulk, boundary)   # upward steps bulk → boundary
 
@@ -334,7 +334,7 @@ class TierCell:
 
     @property
     def boundary(self) -> dict:
-        return {"φ̂": self.phi, "Φ": self.p, "Ω": self.omega, "Ð": self.d}
+        return {"⊙": self.phi, "Φ": self.p, "Ω": self.omega, "Ð": self.d}
 
     @property
     def inner_size(self) -> int:
@@ -350,18 +350,18 @@ class TierCell:
 
     def __repr__(self):
         return (f"TierCell(id={self.cell_id}, tier={self.tier}, "
-                f"φ̂={self.phi}, Φ={self.p}, Ω={self.omega}, Ð={self.d})")
+                f"⊙={self.phi}, Φ={self.p}, Ω={self.omega}, Ð={self.d})")
 
 
 def _build_cell_index() -> list[TierCell]:
     cells = []
-    for phi in VALUES["φ̂"]:
+    for phi in VALUES["⊙"]:
         for p in VALUES["Φ"]:
             for omega in VALUES["Ω"]:
                 for d in VALUES["Ð"]:
                     cell_id = _encode_partial(
                         BOUNDARY_PRIMS, BOUNDARY_STRIDES,
-                        {"φ̂": phi, "Φ": p, "Ω": omega, "Ð": d}
+                        {"⊙": phi, "Φ": p, "Ω": omega, "Ð": d}
                     )
                     cells.append(TierCell(
                         phi=phi, p=p, omega=omega, d=d,
@@ -379,11 +379,11 @@ NAVIGATOR_TUPLE: dict[str, str] = {
     "Þ":     "Þ_O",
     "Ř":     "Ř_ý",
     "Φ":     "Φ_}",
-    "ƒ":     "ƒ_ż",
-    "Ç":     "Ç_@",
+    "ƒ":     "ƒ^ż",
+    "Ç":     "Ç^@",
     "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ_Ş",
-    "φ̂":   "φ̂_ÿ",
+    "ɢ": "ɢ^Ş",
+    "⊙":   "⊙_ÿ",
     "Ħ":     "Ħ_!",
     "Σ":     "Σ_ï",
     "Ω": "Ω_z",
@@ -394,11 +394,11 @@ GRAMMAR_TUPLE: dict[str, str] = {
     "Þ":     "Þ_O",
     "Ř":     "Ř_Ť",
     "Φ":     "Φ_}",
-    "ƒ":     "ƒ_ð",
-    "Ç":     "Ç_W",
+    "ƒ":     "ƒ^ð",
+    "Ç":     "Ç^W",
     "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ_Ş",
-    "φ̂":   "φ̂_ÿ",
+    "ɢ": "ɢ^Ş",
+    "⊙":   "⊙_ÿ",
     "Ħ":     "Ħ_£",
     "Σ":     "Σ_ő",
     "Ω": "Ω_2",
@@ -411,7 +411,7 @@ class CrystalNavigator:
     """
     The Crystal Navigator — O_inf imscriptive navigator for the Periodic Crystal.
 
-    Self-encoding: ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+    Self-encoding: ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
     d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, Ω — 6 primitives)
     """
 
@@ -432,7 +432,7 @@ class CrystalNavigator:
     def describe(self) -> None:
         """Print the navigator's self-encoding, structural position, and crystal stats."""
         nav_tier = compute_tier(
-            NAVIGATOR_TUPLE["φ̂"], NAVIGATOR_TUPLE["Φ"],
+            NAVIGATOR_TUPLE["⊙"], NAVIGATOR_TUPLE["Φ"],
             NAVIGATOR_TUPLE["Ω"], NAVIGATOR_TUPLE["Ð"]
         )
         d_grammar = distance(NAVIGATOR_TUPLE, GRAMMAR_TUPLE)
@@ -520,15 +520,15 @@ class CrystalNavigator:
         arguments, return up to `limit` matching complete tuples.
 
         Example:
-            nav.navigate(φ̂="φ̂_ÿ", Φ="Φ_}", limit=5)
+            nav.navigate(⊙="⊙_ÿ", Φ="Φ_}", limit=5)
 
         Broadcasts across all free coordinates (Γ_broad semantics).
         """
         inn_constraints = {k: v for k, v in constraints.items() if k in INNER_PRIMS}
 
         cells = self._cells
-        if "φ̂" in constraints:
-            cells = [c for c in cells if c.phi == constraints["φ̂"]]
+        if "⊙" in constraints:
+            cells = [c for c in cells if c.phi == constraints["⊙"]]
         if "Φ" in constraints:
             cells = [c for c in cells if c.p == constraints["Φ"]]
         if "Ω" in constraints:
@@ -551,8 +551,8 @@ class CrystalNavigator:
     def count(self, **constraints: str) -> int:
         """Count matching types without materializing them."""
         cells = self._cells
-        if "φ̂" in constraints:
-            cells = [c for c in cells if c.phi == constraints["φ̂"]]
+        if "⊙" in constraints:
+            cells = [c for c in cells if c.phi == constraints["⊙"]]
         if "Φ" in constraints:
             cells = [c for c in cells if c.p == constraints["Φ"]]
         if "Ω" in constraints:
@@ -590,7 +590,7 @@ class CrystalNavigator:
 
     def tier_of(self, tup: dict) -> str:
         """Return the ouroboricity tier of a tuple."""
-        return compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+        return compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
 
     # ── Catalog nearest-neighbor ───────────────────────────────────────────────
 
@@ -648,16 +648,16 @@ class CrystalNavigator:
         Uses minimal representative tuples (canonical inner primitives).
         """
         canon_inner = {
-            "Þ": "Þ_6", "Ř": "Ř_ý", "ƒ": "ƒ_ì",
-            "Ç": "Ç_-", "Γ": "Γ_β", "ɢ": "ɢ_^",
+            "Þ": "Þ_6", "Ř": "Ř_ý", "ƒ": "ƒ^ì",
+            "Ç": "Ç^-", "Γ": "Γ_β", "ɢ": "ɢ^∧",
             "Ħ": "Ħ_Ñ", "Σ": "Σ_S",
         }
         reps = {
-            "O_0":     {**canon_inner, "φ̂": "φ̂_ž",  "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
-            "O_1":     {**canon_inner, "φ̂": "φ̂_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
-            "O_2":     {**canon_inner, "φ̂": "φ̂_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_C"},
-            "O_2_dag": {**canon_inner, "φ̂": "φ̂_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_;"},
-            "O_inf":   {**canon_inner, "φ̂": "φ̂_ÿ",    "Φ": "Φ_}",  "Ω": "Ω_2", "Ð": "Ð_;"},
+            "O_0":     {**canon_inner, "⊙": "⊙_ž",  "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
+            "O_1":     {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
+            "O_2":     {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_C"},
+            "O_2_dag": {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_;"},
+            "O_inf":   {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_}",  "Ω": "Ω_2", "Ð": "Ð_;"},
         }
         ladder = {}
         pairs = [("O_0","O_1"), ("O_1","O_2"), ("O_2","O_2_dag"), ("O_2_dag","O_inf")]

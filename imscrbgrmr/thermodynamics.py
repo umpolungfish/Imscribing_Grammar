@@ -804,7 +804,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "correlation_length": "divergent",
         "scaling_exponent": "to be determined",
         "note": "H-bond array near percolation threshold - candidate critical system",
-        "criticality_phase": "φ̂_ctyogh",
+        "criticality_phase": "⊙_ctyogh",
     },
 }
 

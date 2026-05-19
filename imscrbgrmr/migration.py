@@ -75,7 +75,7 @@ _GAMMA_MAP = {
 }
 
 _PHI_MAP = {
-    "φ̂_upstep": "φ̂_upstep",
+    "⊙_upstep": "⊙_upstep",
     # unchanged: Phi_softsign, Phi_ctyogh, Phi_upstep
 }
 

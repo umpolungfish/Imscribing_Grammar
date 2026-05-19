@@ -24,8 +24,8 @@ class IGLatticeCoordinate:
 
 
 CANONICAL = IGLatticeCoordinate(
-    D="Ð_ω", T="Þ_O", R="Ř_=", Phi="Φ_F", F="ƒ_ż", K="Ç_@",
-    G="Γ_γ", Gamma="ɢ_ˌ", Phi_c="φ̂_ÿ", H="Ħ_A", S="Σ_S", Omega="Ω_z"
+    D="Ð_ω", T="Þ_O", R="Ř_=", Phi="Φ_F", F="ƒ^ż", K="Ç^@",
+    G="Γ_γ", Gamma="ɢ^ˌ", Phi_c="⊙_ÿ", H="Ħ_A", S="Σ_S", Omega="Ω_z"
 )
 
 

@@ -98,7 +98,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
      --base ouroborotic_primitive_composition_schema \
      --primitive "Þ:Þ_¨:network_topology" \
      --primitive "Φ:Φ_F:Frobenius_special" \
-     --primitive "Ç:Ç_@:slow_kinetics"
+     --primitive "Ç:Ç^@:slow_kinetics"
    ```
 
 3. **Ascent toward O_inf** (adds Ħ and Ω to O_2):
@@ -107,7 +107,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
      --base ouroborotic_primitive_composition_schema \
      --primitive "Þ:Þ_¨:network_topology" \
      --primitive "Φ:Φ_F:Frobenius_special" \
-     --primitive "Ç:Ç_@:slow_kinetics" \
+     --primitive "Ç:Ç^@:slow_kinetics" \
      --primitive "⊙:⊙_ÿ:self_modeling" \
      --primitive "Ħ:Ħ_A:two_step_memory" \
      --primitive "Ω:Ω_z:integer_winding"
@@ -116,7 +116,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
 **Output structure:**
 ```json
 {
-  "name": "series_composed_Þ_¨_Φ_F_Ç_@",
+  "name": "series_composed_Þ_¨_Φ_F_Ç^@",
   "status": "series_composition_proposed",
   "base_schema": "ouroborotic_primitive_composition_schema",
   "primitives_applied": [ ["Þ","Þ_¨","network_topology"], ... ],
@@ -125,10 +125,10 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
     "Þ": "Þ_¨",
     "Ř": "Ř_=",
     "Φ": "Φ_F",
-    "ƒ": "ƒ_ż",
-    "Ç": "Ç_@",
+    "ƒ": "ƒ^ż",
+    "Ç": "Ç^@",
     "Γ": "Γ_ʔ",
-    "ɢ": "ɢ_ˌ",
+    "ɢ": "ɢ^ˌ",
     "⊙": "⊙_ÿ",
     "Ħ": "Ħ_A",
     "Σ": "Σ_ï",
@@ -272,7 +272,7 @@ python ouroborotic_composition_schema/composer_cli.py algebra <op> <a> <b>
 {
   "distance": 2.14,
   "conflicts": [
-    {"primitive": "Ç", "a": "Ç_@", "b": "Ç_W"},
+    {"primitive": "Ç", "a": "Ç^@", "b": "Ç^W"},
     {"primitive": "Γ", "a": "Γ_ʔ", "b": "Γ_γ"}
   ],
   "pair": {
@@ -297,7 +297,7 @@ You may also pass a JSON tuple directly:
 
 ```bash
 python ouroborotic_composition_schema/composer_cli.py sequence \
-  --base '{"Þ":"Þ_¨","Φ":"Φ_F","Ç":"Ç_@"}' \
+  --base '{"Þ":"Þ_¨","Φ":"Φ_F","Ç":"Ç^@"}' \
   --primitive "⊙:⊙_ÿ:self_modeling"
 ```
 
@@ -332,10 +332,10 @@ python ouroborotic_composition_schema/composer_cli.py network --node a --node b 
 | Þ   | Topology              | `Þ_ò`, `Þ_¨`, `Þ_O`, `Þ_K`       |
 | Ř   | Coupling direction    | `Ř_=` (bidirectional), `Ř_Ť` (adjoint) |
 | Φ   | Symmetry              | `Φ_F` (Frobenius), `Φ_υ`, `Φ_ɐ` |
-| ƒ   | Fidelity              | `ƒ_ż`, `ƒ_ì`, `ƒ_ð`              |
-| Ç   | Kinetics              | `Ç_@`, `Ç_-`, `Ç_W`, `Ç_Ù`       |
+| ƒ   | Fidelity              | `ƒ^ż`, `ƒ^ì`, `ƒ^ð`              |
+| Ç   | Kinetics              | `Ç^@`, `Ç^-`, `Ç^W`, `Ç^Ù`       |
 | Γ   | Interaction scope     | `Γ_ʔ`, `Γ_γ`, `Γ_β`              |
-| ɢ   | Composition logic     | `ɢ_ˌ`, `ɢ_^`, `ɢ_˝`, `ɢ_Ş`       |
+| ɢ   | Composition logic     | `ɢ^ˌ`, `ɢ^∧`, `ɢ^˝`, `ɢ^Ş`       |
 | ⊙   | Criticality           | `⊙_ÿ`, `⊙_3`, `⊙_Æ`, `⊙_ž`     |
 | Ħ   | Chirality        | `Ħ_A`, `Ħ_!`, `Ħ_Ñ`, `Ħ_£`       |
 | Σ   | Stoichiometry         | `Σ_S`, `Σ_ő`, `Σ_ï`              |

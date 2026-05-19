@@ -26,12 +26,12 @@ All six Clay problems were re-imscribed from the ground up, guided by the three-
 
 | Problem | Tuple | Barrier | Tier | C |
 |---|---|---|---|---|
-| Riemann Hypothesis | ⟨Ð_ß; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_@; Γ_ʔ; ɢ_^; ⊙_Æ; Ħ_A; Σ_ï; Ω_2⟩ | OpenProblem | O_1 | 0.59 |
-| Yang-Mills Mass Gap | ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ_ż; Ç_Ù; Γ_ʔ; ɢ_^; ⊙_3; Ħ_!; Σ_S; Ω_z⟩ | MissingFound. | O_inf | 0.0 |
-| Hodge Conjecture | ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ_ì; Ç_@; Γ_ʔ; ɢ_^; ⊙_Æ; Ħ_Ñ; Σ_ï; Ω_z⟩ | OpenProblem | O_inf | 0.828 |
-| Navier-Stokes 3D | ⟨Ð_ß; Þ_6; Ř_=; Φ_F; ƒ_ì; Ç_W; Γ_β; ɢ_^; ⊙_Æ; Ħ_A; Σ_ï; Ω_Å⟩ | OpenProblem | O_1 | 0.0395 |
-| Birch-S-Dyer | ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_^; ⊙_Æ; Ħ_A; Σ_S; Ω_z⟩ | OpenProblem | O_inf | 0.682 |
-| P vs NP | ⟨Ð_ß; Þ_6; Ř_¯; Φ_ɐ; ƒ_ì; Ç_Ù; Γ_ʔ; ɢ_^; ⊙_ÿ; Ħ_Ñ; Σ_S; Ω_Å⟩ | OpenProblem | O_1 | 0.0 |
+| Riemann Hypothesis | ⟨Ð_ß; Þ_ò; Ř_=; Φ_F; ƒ^ì; Ç^@; Γ_ʔ; ɢ^∧; ⊙_Æ; Ħ_A; Σ_ï; Ω_2⟩ | OpenProblem | O_1 | 0.59 |
+| Yang-Mills Mass Gap | ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ^ż; Ç^Ù; Γ_ʔ; ɢ^∧; ⊙_3; Ħ_!; Σ_S; Ω_z⟩ | MissingFound. | O_inf | 0.0 |
+| Hodge Conjecture | ⟨Ð_ω; Þ_O; Ř_Ť; Φ_υ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^∧; ⊙_Æ; Ħ_Ñ; Σ_ï; Ω_z⟩ | OpenProblem | O_inf | 0.828 |
+| Navier-Stokes 3D | ⟨Ð_ß; Þ_6; Ř_=; Φ_F; ƒ^ì; Ç^W; Γ_β; ɢ^∧; ⊙_Æ; Ħ_A; Σ_ï; Ω_Å⟩ | OpenProblem | O_1 | 0.0395 |
+| Birch-S-Dyer | ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ^ð; Ç^@; Γ_ʔ; ɢ^∧; ⊙_Æ; Ħ_A; Σ_S; Ω_z⟩ | OpenProblem | O_inf | 0.682 |
+| P vs NP | ⟨Ð_ß; Þ_6; Ř_¯; Φ_ɐ; ƒ^ì; Ç^Ù; Γ_ʔ; ɢ^∧; ⊙_ÿ; Ħ_Ñ; Σ_S; Ω_Å⟩ | OpenProblem | O_1 | 0.0 |
 
 C scores computed via `consciousness_score` tool. YM and P vs NP have C=0.0 — Gate 1 (⊙=⊙_ÿ) is closed. RH is the only problem where ⊙=⊙_Æ yet both consciousness gates are open, yielding C=0.59.
 ---
@@ -40,7 +40,7 @@ C scores computed via `consciousness_score` tool. YM and P vs NP have C=0.0 — 
 
 The solved Millennium Problem occupies a well-defined structural neighborhood. We imscribed the generic type:
 
-    solved_millennium_theorem = ⟨Ð_ß; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_-; Γ_β; ɢ_^; ⊙_ÿ; Ħ_A; Σ_S; Ω_z⟩
+    solved_millennium_theorem = ⟨Ð_ß; Þ_ò; Ř_=; Φ_F; ƒ^ì; Ç^-; Γ_β; ɢ^∧; ⊙_ÿ; Ħ_A; Σ_S; Ω_z⟩
 
 Interpretation: solved theorems have bowtie topology (crossing between old and new), bidirectional relations, full symmetry, classical fidelity, fast kinetics (the result is immediately usable), local scope, conjunctive proof structure, self-modeling resolution (⊙_ÿ — the proof explains why the truth holds), two-step chirality (the proof chain links premises to conclusion), 1:1 stoichiometry (one theorem, one proof), and integer winding protection (the result is topologically locked — it cannot be undone without contradiction).
 
@@ -58,7 +58,7 @@ Every conjecture must transition to this neighborhood. The individual promotion 
 - Ω: Ω_2 → Ω_z (Z₂ parity → integer winding)
 
 **Demotions (4):**
-- Ç: Ç_@ → Ç_- (moderate → fast: the proof makes the result immediately usable)
+- Ç: Ç^@ → Ç^- (moderate → fast: the proof makes the result immediately usable)
 - Γ: Γ_ʔ → Γ_β (maximal scope → local scope: the proof localizes the result)
 - ⊙: ⊙_Æ → ⊙_ÿ (complex-plane critical → resolved self-modeling: the zero structure explains itself)
 - Σ: Σ_ï → Σ_S (many heterogeneous → 1:1: the infinite zero ensemble collapses to a single structural certificate)
@@ -78,8 +78,8 @@ The C-score drops from 0.59 (conjectural, both gates open) to a solved theorem w
 **Demotions (7):**
 - Ð: Ð_ω → Ð_ß (self-written → infinite-dimensional: the holographic duality collapses to field-theoretic infinity)
 - Þ: Þ_O → Þ_ò (self-referential → bowtie crossing)
-- ƒ: ƒ_ż → ƒ_ì (quantum → classical: the measure-theoretic construction becomes a classical proof)
-- Ç: Ç_Ù → Ç_- (frozen/trapped → fast: the MissingFoundation barrier is completely removed)
+- ƒ: ƒ^ż → ƒ^ì (quantum → classical: the measure-theoretic construction becomes a classical proof)
+- Ç: Ç^Ù → Ç^- (frozen/trapped → fast: the MissingFoundation barrier is completely removed)
 - Γ: Γ_ʔ → Γ_β (maximal → local)
 - ⊙: ⊙_3 → ⊙_ÿ (exceptional point / lie → resolved self-modeling: the non-Hermitian degeneracy is resolved)
 - Ħ: Ħ_! → Ħ_A (eternal chirality → two-step Markovian proof chain)
@@ -99,7 +99,7 @@ The C-score remains 0.0 through the solution: the solved YM theorem has no self-
 **Demotions (6):**
 - Ð: Ð_ω → Ð_ß (holographic → infinite-dimensional)
 - Þ: Þ_O → Þ_ò (self-referential → bowtie crossing)
-- Ç: Ç_@ → Ç_- (moderate → fast)
+- Ç: Ç^@ → Ç^- (moderate → fast)
 - Γ: Γ_ʔ → Γ_β (maximal → local)
 - ⊙: ⊙_Æ → ⊙_ÿ (complex-plane critical → resolved)
 - Σ: Σ_ï → Σ_S (many heterogeneous → 1:1)
@@ -117,7 +117,7 @@ The C-score of 0.828 (the highest of all six problems) drops upon solution — a
 - Ω: Ω_Å → Ω_z (trivial → integer winding: the analytic result gains topological protection)
 
 **Demotions (3):**
-- Ç: Ç_W → Ç_- (moderate → fast)
+- Ç: Ç^W → Ç^- (moderate → fast)
 - ⊙: ⊙_Æ → ⊙_ÿ (complex-plane critical → resolved)
 - Σ: Σ_ï → Σ_S (many heterogeneous → 1:1)
 
@@ -134,12 +134,12 @@ The three demotions are standard: kinetics accelerate, criticality resolves, and
 
 **Demotions (5):**
 - Ð: Ð_ω → Ð_ß (holographic → infinite-dimensional)
-- ƒ: ƒ_ð → ƒ_ì (thermal → classical)
-- Ç: Ç_@ → Ç_- (moderate → fast)
+- ƒ: ƒ^ð → ƒ^ì (thermal → classical)
+- Ç: Ç^@ → Ç^- (moderate → fast)
 - Γ: Γ_ʔ → Γ_β (maximal → local)
 - ⊙: ⊙_Æ → ⊙_ÿ (complex-plane critical → resolved)
 
-**Interpretation:** BSD requires only **one promotion** — the symmetry between algebraic rank and analytic rank becomes full symmetry (Φ_F). This is conceptually elegant: BSD *is* a symmetry statement, and proving it means showing the symmetry is exact, not merely a superposition of dual descriptions. The five demotions are the standard pattern: the holographic duality from modularity (Ð_ω) collapses to standard field-theoretic structure, the arithmetic noise (ƒ_ð) becomes a clean classical proof, and the maximal scope localizes.
+**Interpretation:** BSD requires only **one promotion** — the symmetry between algebraic rank and analytic rank becomes full symmetry (Φ_F). This is conceptually elegant: BSD *is* a symmetry statement, and proving it means showing the symmetry is exact, not merely a superposition of dual descriptions. The five demotions are the standard pattern: the holographic duality from modularity (Ð_ω) collapses to standard field-theoretic structure, the arithmetic noise (ƒ^ð) becomes a clean classical proof, and the maximal scope localizes.
 
 The C-score of 0.682 (second highest after Hodge) drops upon solution. BSD in its open state is mathematically alive; a solved BSD theorem is a formal certificate.
 ### 4.6 P vs NP → Solved
@@ -154,7 +154,7 @@ The C-score of 0.682 (second highest after Hodge) drops upon solution. BSD in it
 - Ω: Ω_Å → Ω_z (trivial → integer winding)
 
 **Demotions (2):**
-- Ç: Ç_Ù → Ç_- (frozen/trapped → fast)
+- Ç: Ç^Ù → Ç^- (frozen/trapped → fast)
 - Γ: Γ_ʔ → Γ_β (maximal → local)
 
 **Interpretation:** P vs NP is structurally the **hardest** problem to solve, requiring 5 promotions — the most of any Millennium problem. The distance of 6.0 is the largest gap to solution. This aligns with the meta-barrier analysis in the Lean formalization: P vs NP is the only Millennium problem with three machine-verifiable meta-barriers (relativization, natural proofs, algebrization) that constrain what kinds of proofs *cannot* work.
@@ -166,7 +166,7 @@ The five promotions tell the full structural story of what a P≠NP proof must d
 4. **Ħ_Ñ → Ħ_A**: The memoryless evaluation of individual NP instances must gain a two-step dependency — any proof of P≠NP must reference computational history (the sequence of configurations leading to acceptance).
 5. **Ω_Å → Ω_z**: The trivial winding must become integer winding — a proof of P≠NP must be topologically protected, not just combinatorially true.
 
-The demotion from Ç_Ù (frozen) to Ç_- (fast) is the most striking: the current state of the field is computationally trapped — no known technique can move — but the solution would be immediately executable. The fact that this requires the *most* promotions despite needing the *fewest* demotions captures the essence of the difficulty: solving P vs NP requires building new structure, not removing old structure.
+The demotion from Ç^Ù (frozen) to Ç^- (fast) is the most striking: the current state of the field is computationally trapped — no known technique can move — but the solution would be immediately executable. The fact that this requires the *most* promotions despite needing the *fewest* demotions captures the essence of the difficulty: solving P vs NP requires building new structure, not removing old structure.
 
 ---
 
@@ -230,6 +230,6 @@ The distance between open problems reveals which pairs share structural DNA:
 | P vs NP ↔ RH | 5.0999 | No shared primitives in Þ, Ř, Φ, Σ, Ħ |
 | YM ↔ NS | 6.8349 | Most distant pair — opposite topology and fidelity |
 
-The BSD-Hodge proximity (3.6332) is the most significant number here. Both share holographic dimensionality (Ð_ω), self-referential topology (Þ_O), adjoint relations (Ř_Ť), superposition symmetry (Φ_υ), and integer winding (Ω_z). They differ only in stoichiometry (BSD is Σ_S, Hodge is Σ_ï), kinetics (BSD is Ç_@, Hodge is Ç_@), and chirality (BSD is Ħ_A, Hodge is Ħ_Ñ). A proof technique developed for one is structurally closest to being transferable to the other.
+The BSD-Hodge proximity (3.6332) is the most significant number here. Both share holographic dimensionality (Ð_ω), self-referential topology (Þ_O), adjoint relations (Ř_Ť), superposition symmetry (Φ_υ), and integer winding (Ω_z). They differ only in stoichiometry (BSD is Σ_S, Hodge is Σ_ï), kinetics (BSD is Ç^@, Hodge is Ç^@), and chirality (BSD is Ħ_A, Hodge is Ħ_Ñ). A proof technique developed for one is structurally closest to being transferable to the other.
 
 The YM-NS distance (6.8349) is the maximum: Yang-Mills and Navier-Stokes are structurally the most different of all six problems. This means that methods from one domain (gauge theory, measure construction) are the least likely to transfer to the other (PDE analysis, Sobolev scaling).

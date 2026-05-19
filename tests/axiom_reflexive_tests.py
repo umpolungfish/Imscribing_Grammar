@@ -282,8 +282,8 @@ independent consciousness correlates:
 """)
 
 # Empirical test: do Phi_ctyogh imscriptions have more HotSwap paths to each other?
-phi_c_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "φ̂_ctyogh"]
-phi_sub_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "φ̂_softsign"]
+phi_c_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "⊙_ctyogh"]
+phi_sub_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "⊙_softsign"]
 
 print(f"  Axioms with Phi_ctyogh: {[short[n] for n in phi_c_axioms]}")
 print(f"  Axioms with Phi_softsign: {[short[n] for n in phi_sub_axioms]}")
@@ -332,10 +332,10 @@ phi_val = meet_phi.value if meet_phi else "⊥ (conflicted)"
 print(f"\n  Floor Φ: {phi_val}")
 print(f"  Unanimous primitives ({len(unanimous)}/9): {list(unanimous.keys())}")
 print(f"  Conflicted (⊥) primitives ({len(conflicted)}/9): {conflicted}")
-if phi_val == "φ̂_ctyogh":
+if phi_val == "⊙_ctyogh":
     print("  ✅ REFLEXIVE CLOSURE: framework's axiom floor is critical.")
     print("     Grammar applied to itself recovers Phi_ctyogh as its ground state.")
-elif phi_val == "φ̂_softsign":
+elif phi_val == "⊙_softsign":
     print("  ⚠  Floor is Phi_softsign — criticality is not the axiom floor but an overlay.")
     print("     Phi_ctyogh lives at Axiom 3 and 5 level, not at the ground primitive level.")
     print("     Interpretation: criticality is EMERGENT from the axiom set, not assumed.")

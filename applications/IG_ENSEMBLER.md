@@ -72,9 +72,9 @@ Load all constituent imscriptions into a temporary ensemble catalog.
 from imscrbgrmr.registry import EnsembleCatalog
 
 ensemble = EnsembleCatalog()
-ensemble.add("rotaxane_axle")       # D_∧, T_≫, R_⊇, P_+, F_ℏ, Ç_-, Γ_β, Γ_⊗, Φ_sub, 1:1
-ensemble.add("macrocycle_wheel")    # D_∧, T_⋈, R_⊇, P_-, F_ℏ, Ç_-, Γ_β, Γ_⊙, Φ_sub, 1:1
-ensemble.add("stopper_group")       # D_∧, T_⋈, R_⊆, P_±, F_ℏ, Ç_W, Γ_β, Γ_⊗, Φ_sub, 1:1
+ensemble.add("rotaxane_axle")       # D_∧, T_≫, R_⊇, P_+, F_ℏ, Ç^-, Γ_β, Γ_⊗, Φ_sub, 1:1
+ensemble.add("macrocycle_wheel")    # D_∧, T_⋈, R_⊇, P_-, F_ℏ, Ç^-, Γ_β, Γ_⊙, Φ_sub, 1:1
+ensemble.add("stopper_group")       # D_∧, T_⋈, R_⊆, P_±, F_ℏ, Ç^W, Γ_β, Γ_⊗, Φ_sub, 1:1
 ```
 
 ### Step 2: Pairwise Compatibility Matrix

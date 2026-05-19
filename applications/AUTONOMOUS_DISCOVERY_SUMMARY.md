@@ -197,7 +197,7 @@ CYCLE 1/5
 
 [✓] valid_novel
     Name: iodoperfluorobenzene_pyridine_cocrystal
-    Notation: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_directional; ƒ_ż; Γ_β; ɢ_otimes⟩
+    Notation: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_directional; ƒ^ż; Γ_β; ɢ_otimes⟩
     Confidence: 85%
     Literature: 2 references found
 

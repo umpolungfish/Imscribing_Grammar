@@ -72,7 +72,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
   --base ouroborotic_primitive_composition_schema \
   --primitive "Þ:Þ_¨:network_topology" \
   --primitive "Φ:Φ_F:Frobenius_special" \
-  --primitive "Ç:Ç_@:slow_kinetics"
+  --primitive "Ç:Ç^@:slow_kinetics"
 ```
 
 Each `--primitive` argument has format: `id:value:description`
@@ -141,7 +141,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
   --base ouroborotic_primitive_composition_schema \
   --primitive "Þ:Þ_¨:network_topology" \
   --primitive "Φ:Φ_F:Frobenius_special" \
-  --primitive "Ç:Ç_@:slow_kinetics" \
+  --primitive "Ç:Ç^@:slow_kinetics" \
   --primitive "⊙:⊙_ÿ:self_modeling" \
   --primitive "Ħ:Ħ_A:two_step_memory" \
   --primitive "Ω:Ω_z:integer_winding"

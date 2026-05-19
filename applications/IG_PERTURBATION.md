@@ -80,7 +80,7 @@ imscribe thermo carboxylic_acid_dimer --delta-g -12.0
 # Output:
 # Baseline: ξ_CP = 6.66 nats [6.56–6.77]
 # η_CP = 2.8e-4
-# Fidelity tier: ƒ_ż (HIGH)
+# Fidelity tier: ƒ^ż (HIGH)
 
 # CLI: Compute information content
 imscribe info-bits carboxylic_acid_dimer --solvent chloroform
@@ -115,8 +115,8 @@ imscribe perturb carboxylic_acid_dimer --sweep all --metric xi_CP --delta-g -12.
 # ┌────────────────────┬──────────────────────────┬───────────────┬─────────────┐
 # │ Primitive          │ Shift                    │ Δξ_CP (nats)  │ Sensitivity │
 # ├────────────────────┼──────────────────────────┼───────────────┼─────────────┤
-# │ Fidelity           │ ƒ_ż → ƒ_ð           │ +1.8          │ HIGH        │
-# │ Kinetic Character  │ Ç_- → Ç_W           │ +0.3          │ LOW         │
+# │ Fidelity           │ ƒ^ż → ƒ^ð           │ +1.8          │ HIGH        │
+# │ Kinetic Character  │ Ç^- → Ç^W           │ +0.3          │ LOW         │
 # │ Topology           │ Þ_ò → Þ_chain       │ +4.2          │ CRITICAL    │
 # │ Polarity           │ Φ_F → Φ_plus            │ +2.1          │ HIGH        │
 # │ Granularity        │ Γ_β → Γ_γ         │ +0.6          │ LOW         │
@@ -154,12 +154,12 @@ imscribe perturb carboxylic_acid_dimer --mode fault-injection --delta-g -12.0
 # │ FAULT INJECTION ANALYSIS                                        │
 # ├─────────────────────────────────────────────────────────────────┤
 # │ System collapses if Polarity shifts from Φ_F to Φ_plus         │
-# │   → Axiom 1 Violation: Þ_ò + P_+ + ƒ_ż (no self-complement) │
+# │   → Axiom 1 Violation: Þ_ò + P_+ + ƒ^ż (no self-complement) │
 # │                                                                 │
 # │ System collapses if Topology shifts from Þ_ò to Þ_chain    │
 # │   → Axiom 1 Violation: cyclic closure fidelity lost             │
 # │                                                                 │
-# │ System degrades (non-fatal) if Fidelity shifts ƒ_ż → ƒ_ð   │
+# │ System degrades (non-fatal) if Fidelity shifts ƒ^ż → ƒ^ð   │
 # │   → Δξ_CP = +1.8 nats (within tolerance)                        │
 # └─────────────────────────────────────────────────────────────────┘
 ```
@@ -219,14 +219,14 @@ Verify perturbed states against axioms and grounding requirements.
 
 ```bash
 # CLI: Validate perturbed state
-imscribe perturb carboxylic_acid_dimer --validate --primitive F --new-value ƒ_ð
+imscribe perturb carboxylic_acid_dimer --validate --primitive F --new-value ƒ^ð
 
 # Output:
 # "Perturbed state axiom-compliant."
 # "Grounding status: full (H-bond closing bond preserved)"
 
 # CLI: Full audit
-imscribe audit --imscription carboxylic_acid_dimer --perturbed F=ƒ_ð
+imscribe audit --imscription carboxylic_acid_dimer --perturbed F=ƒ^ð
 ```
 
 ```python
@@ -234,7 +234,7 @@ from imscrbgrmr.constraints import AxiomValidator
 
 validator = AxiomValidator()
 perturbed_imscription = imscription.copy()
-perturbed_imscription.fidelity = "ƒ_ð"
+perturbed_imscription.fidelity = "ƒ^ð"
 
 report = validator.validate(perturbed_imscription)
 if report.all_satisfied:

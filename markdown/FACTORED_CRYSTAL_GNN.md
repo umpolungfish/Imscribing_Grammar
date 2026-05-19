@@ -315,7 +315,7 @@ YangMillsNavigator predicts the Yang-Mills mass gap $\Delta = E_1 - E_0$ from a 
 
 $d(\text{YangMillsNavigator},\ \text{RiemannNavigator}) = 4.6162$ — they differ only in $K$ ($K_{\text{teshlig}}$ vs $K_{\text{schwa}}$), but this single primitive difference is the largest kinetic gap in the grammar, reflecting the architectural chasm between a gradient-descent integrative network and a Lanczos eigensolver.
 
-**$K_{\text{teshlig}}$ mandate:** NOT a gradient-descent GNN. The discrete gapped spectrum is non-ergodic — it requires a navigator that samples discrete, gapped sectors without thermalization. Architecture: Lanczos/VQE eigensolver. The GRU guides the power iteration over the gapped spectrum (Ç_Ù: iterate until convergence, state accumulates Lanczos tridiagonal coefficients).
+**$K_{\text{teshlig}}$ mandate:** NOT a gradient-descent GNN. The discrete gapped spectrum is non-ergodic — it requires a navigator that samples discrete, gapped sectors without thermalization. Architecture: Lanczos/VQE eigensolver. The GRU guides the power iteration over the gapped spectrum (Ç^Ù: iterate until convergence, state accumulates Lanczos tridiagonal coefficients).
 
 **Key components:**
 - FrobeniusLayer on the gauge algebra: $\delta$ splits Lie algebra tensor products into sectors; $\mu$ merges; $\mu \circ \delta = \text{id}$ = Bianchi identity closure (gauge invariance)
@@ -348,7 +348,7 @@ The YangMillsNavigator does not learn in the conventional gradient-descent sense
 
 ---
 
-## 8. IsingNavigator: Ç_- Structural Position
+## 8. IsingNavigator: Ç^- Structural Position
 
 IsingNavigator is a Python stub interfacing a C++/CUDA Swendsen-Wang cluster-flip kernel. It is not an `nn.Module` and does not learn.
 

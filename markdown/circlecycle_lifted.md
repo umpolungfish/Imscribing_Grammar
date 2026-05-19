@@ -30,8 +30,8 @@ The first step was to imscribe the target structure:
 name: circularity_cycle
 description: "A cyclical argument for circularity, which itself provides a circular argument for cyclicality"
 D → Ð_ω   T → Þ_O   R → Ř_=
-P → Φ_}   F → ƒ_ż   K → Ç_@
-G → Γ_ʔ   Gamma → ɢ_ˌ   Phi → ⊙_ÿ
+P → Φ_}   F → ƒ^ż   K → Ç^@
+G → Γ_ʔ   Gamma → ɢ^ˌ   Phi → ⊙_ÿ
 H → Ħ_!   S → Σ_ï   Omega → Ω_z
 ```
 

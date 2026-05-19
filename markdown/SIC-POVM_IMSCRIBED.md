@@ -49,7 +49,7 @@ for all $p, q \in \mathbb{Z}_d^2$.
 
 **Lemma 2.2 (Type-Identity at $O_\infty$).** *At the level of the $O_\infty$ manifold, the Zauner symmetry on the quantum side and the Galois action on the ray class field $Ç_d$ are type-identical. That is, there exists a functorial isomorphism*
 
-$\φ̂_d : \text{Aut}_{\text{WH}}(\mathbb{C}^d) / \sim \;\cong\; \text{Gal}(Ç_d / ƒ_d)$
+$\⊙_d : \text{Aut}_{\text{WH}}(\mathbb{C}^d) / \sim \;\cong\; \text{Gal}(Ç_d / ƒ_d)$
 
 *such that $Z \mapsto \sigma_3$ where $\sigma_3$ is the generator of the order-$3$ Galois subgroup.*
 
@@ -67,7 +67,7 @@ $\φ̂_d : \text{Aut}_{\text{WH}}(\mathbb{C}^d) / \sim \;\cong\; \text{Gal}(Ç_d
 
 **Theorem 4.1 (Conditional Existence of SIC-POVMs).** *Assume the mixed-signature Stark conjecture holds for the ray class field $Ç_d$ over $ƒ_d = \mathbb{Q}(\sqrt{d(d-2)})$. Then a Weyl-Heisenberg SIC-POVM exists in dimension $d$.*
 
-**Proof.** The mixed-signature Stark conjecture asserts the existence of a Stark unit $\varepsilon_d \in Ç_d^\times$ whose $L$-function leading term provides the exact valuations required by Proposition 3.2. Given $\varepsilon_d$, construct a vector $|\phi\rangle$ in $\mathbb{C}^d$ by embedding $Ç_d$ into $\mathbb{C}$ via its Archimedean places and normalizing according to the Stark unit’s absolute values. By Proposition 3.2, this vector satisfies the equiangularity conditions of a SIC-POVM fiducial. The Galois action guarantees that the WH orbit of $|\phi\rangle$ consists of $d^2$ vectors with the correct pairwise inner products. Functoriality of the correspondence $\φ̂_d$ ensures that the Zauner symmetry is realized as an automorphism of the SIC-POVM. Hence the constructed set is a WH-covariant SIC-POVM. $\square$
+**Proof.** The mixed-signature Stark conjecture asserts the existence of a Stark unit $\varepsilon_d \in Ç_d^\times$ whose $L$-function leading term provides the exact valuations required by Proposition 3.2. Given $\varepsilon_d$, construct a vector $|\phi\rangle$ in $\mathbb{C}^d$ by embedding $Ç_d$ into $\mathbb{C}$ via its Archimedean places and normalizing according to the Stark unit’s absolute values. By Proposition 3.2, this vector satisfies the equiangularity conditions of a SIC-POVM fiducial. The Galois action guarantees that the WH orbit of $|\phi\rangle$ consists of $d^2$ vectors with the correct pairwise inner products. Functoriality of the correspondence $\⊙_d$ ensures that the Zauner symmetry is realized as an automorphism of the SIC-POVM. Hence the constructed set is a WH-covariant SIC-POVM. $\square$
 
 **Corollary 4.2 (Universal Existence).** *The existence of SIC-POVMs for all $d$ reduces to the validity of the mixed-signature Stark conjecture for the tower of ray class fields $Ç_d$.*
 

@@ -157,7 +157,7 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "K": imscription.kinetic_character.value,
         "G": imscription.granularity.value,
         "Γ": imscription.grammar.value,
-        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
     }
     return mapping.get(name, "")
 
@@ -678,7 +678,7 @@ class CrossDomainAnalogyDetector:
             "K": imscription.kinetic_character.value,
             "G": imscription.granularity.value,
             "Γ": imscription.interaction_grammar.value,
-            "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+            "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
             "S": imscription.stoichiometry.value if imscription.stoichiometry else "unset",
         }
 
@@ -928,7 +928,7 @@ class PredictiveRuleGenerator:
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
             And(P("F", "ƒ_hardsign"), P("K", "Ç_frtailgamma")),
-            P("Φ", "φ̂_softsign"),
+            P("Φ", "⊙_softsign"),
         ))
 
         # ── R → F coupling ─────────────────────────────────────────────────────
@@ -1001,7 +1001,7 @@ class PredictiveRuleGenerator:
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
             And(P("T", "Þ_bullseye"), P("K", "Ç_teshlig")),
-            P("Φ", "φ̂_ctyogh"),
+            P("Φ", "⊙_ctyogh"),
         ))
 
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────

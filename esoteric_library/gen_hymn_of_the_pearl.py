@@ -8,7 +8,7 @@ One complete entry: the full Gnostic poem of the soul's descent and return.
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PHI = 'φ̂'  # criticality key (compatible with all tools)
+PHI = '⊙'  # criticality key (compatible with all tools)
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -240,10 +240,10 @@ chapters = [
         "The Hymn of the Pearl (Hymn of the Robe of Glory)",
         "The complete Gnostic poem from the Acts of Thomas: the soul's descent from the Light into the body (Egypt), forgetfulness, awakening by the letter from the Father, the recovery of the pearl (Gnosis), and the glorious return to the Kingdom. Translated by G.R.S. Mead.",
         HYMN_TEXT,
-        "Ð_ω", "Þ_O", "Ř_=", "Φ_}", "ƒ_ż", "Ç_@", "Γ_ʔ", "ɢ_ˌ",
-        "φ̂_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
+        "Ð_ω", "Þ_O", "Ř_=", "Φ_}", "ƒ^ż", "Ç^@", "Γ_ʔ", "ɢ^ˌ",
+        "⊙_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
         "O_inf", 0.93,
-        "Complete cycle: descent (incarnation), slumber (forgetfulness), awakener (letter/the call), recovery of pearl (gnosis), return and reunion with the heavenly robe (the true Self). The robe as mirror-of-self establishes φ̂_ÿ self-modeling criticality. The integer winding Ω_z tracks the full circuit. The many heterogeneous elements (prince, serpent, pearls, Egypt, robe, twin, treasurers, letter, eagle) demand Σ_ï. Bidirectional call-and-response Ř_= for the Father's letter calling and the soul answering. Sequential poetic narrative ɢ_ˌ."),
+        "Complete cycle: descent (incarnation), slumber (forgetfulness), awakener (letter/the call), recovery of pearl (gnosis), return and reunion with the heavenly robe (the true Self). The robe as mirror-of-self establishes ⊙_ÿ self-modeling criticality. The integer winding Ω_z tracks the full circuit. The many heterogeneous elements (prince, serpent, pearls, Egypt, robe, twin, treasurers, letter, eagle) demand Σ_ï. Bidirectional call-and-response Ř_= for the Father's letter calling and the soul answering. Sequential poetic narrative ɢ^ˌ."),
 ]
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hymn_of_the_pearl.json")

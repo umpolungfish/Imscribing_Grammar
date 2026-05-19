@@ -11,12 +11,12 @@ ouroboricity tier (which is determined entirely by Φ, P, Ω, D), and generates 
 PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
-  R1: Φ ∈ {φ̂_ÿ, φ̂_Æ} AND P = Φ_}  →  O_∞
+  R1: Φ ∈ {⊙_ÿ, ⊙_Æ} AND P = Φ_}  →  O_∞
   R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O_0
-  R3: Φ ∈ {φ̂_ÿ, φ̂_Æ} AND Ω = Ω_Å       →  O_1
-  R4: Φ ∈ {φ̂_ÿ, φ̂_Æ} AND Ω ≠ Ω_Å
+  R3: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω = Ω_Å       →  O_1
+  R4: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
       AND D ∈ {Ð_ß, Ð_C, Ð_ω}      →  O_2
-  R5: Φ ∈ {φ̂_ÿ, φ̂_Æ} AND Ω ≠ Ω_Å
+  R5: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
       AND D = Ð_;                             →  O_2†
 """
 
@@ -33,11 +33,11 @@ VALUES = {
     "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
     "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
     "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
-    "ƒ":     ["ƒ_ì", "ƒ_ð", "ƒ_ż"],
-    "Ç":     ["Ç_-", "Ç_W", "Ç_@", "Ç_Ù"],
+    "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
+    "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù"],
     "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
-    "ɢ": ["ɢ_^", "ɢ_˝", "ɢ_ˌ", "ɢ_Ş"],
-    "φ̂":   ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"],
+    "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
+    "⊙":   ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"],
     "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
     "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
     "Ω": ["Ω_Å", "Ω_2", "Ω_z"],
@@ -45,8 +45,8 @@ VALUES = {
 
 PRIMS = list(VALUES.keys())
 
-CRITICAL = {"φ̂_ÿ", "φ̂_Æ"}
-NONCRITICAL = {"φ̂_ž", "φ̂_Ţ", "φ̂_3"}
+CRITICAL = {"⊙_ÿ", "⊙_Æ"}
+NONCRITICAL = {"⊙_ž", "⊙_Ţ", "⊙_3"}
 BOUNDED_D = {"Ð_ß", "Ð_C", "Ð_ω"}
 
 def tier(phi, p, omega, d):
@@ -82,7 +82,7 @@ for p in ["Þ", "Ř", "ƒ", "Ç", "Γ", "ɢ", "Ħ", "Σ"]:
 tier_counts = defaultdict(int)
 tier_cells  = defaultdict(list)          # (Phi, P, Omega, D) cells per tier
 
-for phi in VALUES["φ̂"]:
+for phi in VALUES["⊙"]:
     for p in VALUES["Φ"]:
         for omega in VALUES["Ω"]:
             for d in VALUES["Ð"]:
@@ -111,14 +111,14 @@ print(header)
 print("─" * len(header))
 
 PERIOD_LABEL = {
-    "φ̂_ž":       "Φ_sub   (ordered)",
-    "φ̂_ÿ":         "φ̂_ÿ     (critical)",
-    "φ̂_Æ": "φ̂_ÿ^C   (complex-crit)",
-    "φ̂_3":        "Φ_EP    (exc. point)",
-    "φ̂_Ţ":     "φ̂_Ţ (disordered)",
+    "⊙_ž":       "Φ_sub   (ordered)",
+    "⊙_ÿ":         "⊙_ÿ     (critical)",
+    "⊙_Æ": "⊙_ÿ^C   (complex-crit)",
+    "⊙_3":        "Φ_EP    (exc. point)",
+    "⊙_Ţ":     "⊙_Ţ (disordered)",
 }
 
-for phi in VALUES["φ̂"]:
+for phi in VALUES["⊙"]:
     row = {}
     dom = defaultdict(int)
     for omega in VALUES["Ω"]:
@@ -141,14 +141,14 @@ for phi in VALUES["φ̂"]:
 
 
 # ── Sub-table: P axis within each critical period ─────────────────────────────
-print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (φ̂_ÿ and φ̂_Æ)\n")
+print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙_ÿ and ⊙_Æ)\n")
 print(f"{'P value':12s}  {'Ω_Å → tier':16s}  {'Ω≠0, D_bnd → tier':22s}  {'Ω≠0, D_∞ → tier':20s}")
 print("─" * 75)
 
 for p in VALUES["Φ"]:
-    t_o1    = tier("φ̂_ÿ", p, "Ω_Å",  "Ð_ß")
-    t_o2    = tier("φ̂_ÿ", p, "Ω_2", "Ð_ß")
-    t_o2d   = tier("φ̂_ÿ", p, "Ω_2", "Ð_;")
+    t_o1    = tier("⊙_ÿ", p, "Ω_Å",  "Ð_ß")
+    t_o2    = tier("⊙_ÿ", p, "Ω_2", "Ð_ß")
+    t_o2d   = tier("⊙_ÿ", p, "Ω_2", "Ð_;")
     print(f"{p:12s}  {t_o1:16s}  {t_o2:22s}  {t_o2d}")
 
 print()
@@ -162,7 +162,7 @@ with open(ROOT / "IG_catalog.json") as f:
 
 catalog_by_tier = defaultdict(list)
 for entry in catalog:
-    phi   = entry.get("φ̂", "φ̂_ž")
+    phi   = entry.get("⊙", "⊙_ž")
     p     = entry.get("Φ", "Φ_ɐ")
     omega = entry.get("Ω", "Ω_Å")
     d     = entry.get("Ð", "Ð_ß")

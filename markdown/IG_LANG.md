@@ -159,7 +159,7 @@ Parses `.syn` YAML files and evaluates them as `ImscriptionM` pipelines.
 ```
 phi_c_score > N        → run varma probe, check score
 phi_c_score >= N       → same
-fidelity == ƒ_ż     → check imscription.fidelity
+fidelity == ƒ^ż     → check imscription.fidelity
 topology == Þ_ò   → check imscription.topology
 criticality_phase == ⊙_ÿ  → check enum value
 axiom6_satisfied       → run AxiomValidator.validate_axiom6_temporal_grounding
@@ -183,7 +183,7 @@ Imscribing Grammar Run: design.syn
   Start: soai_pyrimidyl_autocatalytic_cycle
 
   1. [PASS] ✓ join(proline_aldol_cycle)  Δξ=+0.000 nat
-  2. [BLOCKED] ✗ lift(critical)  — F floor not met (ƒ_ð < ƒ_ż required)
+  2. [BLOCKED] ✗ lift(critical)  — F floor not met (ƒ^ð < ƒ^ż required)
   3. [PASS] ✓ assert(phi_c_score > 0.70)  — ASSERÞ_FAIL: score=0.380
 
   Total Δξ_CP: +0.000 nat  |  Steps: 3  |  FAILED at step 2
@@ -209,7 +209,7 @@ class Imscription(BaseModel):
     def axiom1_fidelity_floor(self):
         if self.topology == Topology.CYCLIC_BOWTIE:
             if self.fidelity == Fidelity.LOW:
-                raise ValueError("Axiom 1: T_⋈ requires F ≥ ƒ_ð")
+                raise ValueError("Axiom 1: T_⋈ requires F ≥ ƒ^ð")
         return self
 ```
 
@@ -217,7 +217,7 @@ class Imscription(BaseModel):
 
 ```python
 class FidelityGe(Annotated[Fidelity, Ge(Fidelity.MEDIUM)]):
-    """F ≥ ƒ_ð — satisfied by ƒ_ð or ƒ_ż"""
+    """F ≥ ƒ^ð — satisfied by ƒ^ð or ƒ^ż"""
 
 CriticalityCandidateImscription = Imscription[fidelity=FidelityGe]
 ```
@@ -396,7 +396,7 @@ class PhaseDiagram:
     mds_coords: np.ndarray            # N×2 MDS embedding
     factor8_flags: Dict[str, bool]    # Factor-8 trigger per imscription
     omega_values: Dict[str, str]      # Ω class per imscription
-    k_trap_flags: Dict[str, bool]     # Ç_Ù flag per imscription
+    k_trap_flags: Dict[str, bool]     # Ç^Ù flag per imscription
 ```
 
 `build_phase_map(imscription_names=None, catalog=None) → PhaseDiagram` constructs the full object from the catalog in one call.
@@ -677,7 +677,7 @@ Decomposition operations **invert or factor** the algebraic operations. They are
 **cofactor** — Cooper pair reverse engineering:
 ```
 cofactor(cooper_pair, conducting_electron) → inferred partner B:
-  K: BOTTLENECK   → B must be Ç_@ (condensate timescale, not Fermi velocity)
+  K: BOTTLENECK   → B must be Ç^@ (condensate timescale, not Fermi velocity)
   G: CONTRIBUTOR  → B must be Γ_meso (coherence length ξ ~ 100–1000 nm)
   T: PASSTHROUGH  → B must have T_⋈ (pairing loop)
   Φ: CONTRIBUTOR  → B carries Φ_c (superfluid phase transition)
@@ -689,7 +689,7 @@ The cofactor reconstructs the phonon-dressed retarded partner from the observabl
 ```
 principal_decomp(GNF-2) → 4 join-irreducible atoms:
   [1] atom[F=F_ℇ]     — fidelity contribution    (most constraining)
-  [2] atom[K=Ç_W]   — kinetic contribution
+  [2] atom[K=Ç^W]   — kinetic contribution
   [3] atom[G=G_ג]     — mesoscale contribution
   [4] skeleton(GNF-2) — categorical primitives (Φ_c, Þ_branched, ...)
 ```
@@ -701,7 +701,7 @@ Order = hardest to engineer first. If improving GNF-2, start at [3] ($G$ escalat
 #  what does GNF-2 uniquely contribute toward the cooper_pair target?"
 proj = project(cooper_pair, ["Phi", "Omega"])          # π_{Φ,Ω}(cooper_pair)
 crel = complement_rel(gnf2, context=proj, target=cooper_pair)
-# → crel: Ç_@ + Γ_meso + Þ_branched (the part context does NOT cover)
+# → crel: Ç^@ + Γ_meso + Þ_branched (the part context does NOT cover)
 ```
 The Heyting implication $\text{GNF-2} \Rightarrow \text{cooper\_pair}$ relative to $\neg\text{context}$: the maximal sub-imscription of GNF-2 that (a) has no overlap with the $\Phi/\Omega$ projection and (b) together with it covers the target. This is **design as constructive proof**.
 
@@ -734,4 +734,4 @@ The $d(\text{AtHv1\_primed}, \text{PsHv1\_constitutive}) = 0.000$ result — the
 
 5. **Phase boundary semantics**: the Ward dendrogram gives an empirical boundary at $d \approx 9.52$ for the current 8-imscription quantum catalog. Does this threshold generalise? Adding classical imscriptions will compress the inter-cluster gap. The open question is whether a **universal** threshold exists in the Kleisli metric, or whether boundaries are always catalog-relative. Phase 3e should test this by mixing the quantum catalog with the full classical molecular catalog and measuring whether the topological/particle split persists at the same threshold.
 
-6. **`.syn` assert grammar extension**: predicates for $\Omega$ and quantum grammar are not yet in the dispatch table. Needed additions: `topo_index == Ω_5`, `grammar == QUANTUM_AND`, `Ç_λ`, `factor8_triggered`. These enable design programs that assert topological protection before quantum tensor operations.
+6. **`.syn` assert grammar extension**: predicates for $\Omega$ and quantum grammar are not yet in the dispatch table. Needed additions: `topo_index == Ω_5`, `grammar == QUANTUM_AND`, `Ç^λ`, `factor8_triggered`. These enable design programs that assert topological protection before quantum tensor operations.

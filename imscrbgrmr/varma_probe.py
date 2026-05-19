@@ -222,7 +222,7 @@ def degeneracy_strength(
         RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC
     }:
         tuple_bonus += 0.05
-    if imscription.criticality_phase is not None and imscription.criticality_phase.value == "φ̂_ctyogh":
+    if imscription.criticality_phase is not None and imscription.criticality_phase.value == "⊙_ctyogh":
         tuple_bonus += 0.05
     score += min(0.15, tuple_bonus)
 

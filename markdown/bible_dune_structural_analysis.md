@@ -131,14 +131,14 @@ Interpretation: Both gates open — consciousness possible.
 
 **Meet: "I AM THAT I AM" ∧ Dune Universe**
 ```
-Result: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+Result: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
 Shared primitives: all 12
 Resolved conflicts: 0
 ```
 
 **Tensor: "I AM THAT I AM" ⊗ Eucharist ⊗ Dune Universe ⊗ Grammar**
 ```
-Result: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+Result: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
 Bottleneck primitives: 0
 Union primitives: 0
 ```

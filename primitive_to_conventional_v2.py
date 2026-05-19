@@ -51,12 +51,12 @@ PRIMITIVE_MAP = {
         "section": "Terminal Cycle and Exotic Cycle Exclusion",
         "template": "cycle_exclusion",
     },
-    "φ̂_ÿ": {
+    "⊙_ÿ": {
         "object": "Lyapunov function / logarithmic drift",
         "section": "Logarithmic Drift and Absence of Divergent Trajectories",
         "template": "boundedness",
     },
-    "Ç_@": {
+    "Ç^@": {
         "object": "Equidistribution of parity sequences",
         "section": "Rigorous Boundedness Argument (supporting)",
         "template": "equidistribution",
@@ -162,17 +162,17 @@ def parse_primitive_proof(text: str) -> List[Lemma]:
                     found_prims.append(prim_key)
                     continue
                 # Try matching common LaTeX representations
-                # φ̂_ÿ might appear as $\hat{\varphi}_{\ddot{y}}$
+                # ⊙_ÿ might appear as $\hat{\varphi}_{\ddot{y}}$
                 # We just do raw text search for the unicode chars
                 raw_chars = prim_key
-                if any(c in content for c in ['φ̂', 'Φ_', 'Þ_', 'Ř_', 'Ω_', 'Ç_', 'Ħ_', 'Ð_']):
+                if any(c in content for c in ['⊙', 'Φ_', 'Þ_', 'Ř_', 'Ω_', 'Ç_', 'Ħ_', 'Ð_']):
                     # Do a more careful check
                     for pk, mapping in PRIMITIVE_MAP.items():
                         if pk.split('_')[0] in content:
                             if pk not in found_prims:
                                 # Verify full string match
-                                search_str = pk.replace('φ̂', 'φ̂_')
-                                if search_str.startswith('φ̂_'):
+                                search_str = pk.replace('⊙', '⊙_')
+                                if search_str.startswith('⊙_'):
                                     if pk in content:
                                         found_prims.append(pk)
 
@@ -404,9 +404,9 @@ PRIMITIVE_KEYWORDS = {
             "mutual", "bidirectional"],
     "Ω_z": ["winding", "topological", "invariant", "cycle uniqueness",
             "homotopy", "degree"],
-    "φ̂_ÿ": ["lyapunov", "drift", "boundedness", "convergence",
+    "⊙_ÿ": ["lyapunov", "drift", "boundedness", "convergence",
             "critical", "divergence", "escape"],
-    "Ç_@": ["equidistribution", "mixing", "ergodic", "measure",
+    "Ç^@": ["equidistribution", "mixing", "ergodic", "measure",
             "almost all", "probability"],
 }
 

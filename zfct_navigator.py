@@ -6,7 +6,7 @@ ZFCₜ extends ZFC via six primitive promotions (from MillenniumAnkh/Primitives/
   Þ_6 → Þ_O   T_network → T_odot      holographic topology
   Ř_¯ → Ř_=   R_super   → R_lr        lateral relational mode
   Φ_ɐ → Φ_F   P_asym    → P_pm        ℤ₂ discrete symmetry
-  ɢ_^ → ɢ_ˌ   Gamma_and  → Gamma_seq   sequential composition
+  ɢ^∧ → ɢ^ˌ   Gamma_and  → Gamma_seq   sequential composition
   Ħ_Ñ → Ħ_A   H0        → H2          persistent temporal asymmetry
   Ω_Å → Ω_z   Omega_0   → Omega_Z     integer winding number
 
@@ -40,18 +40,18 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # ── 1. Primitives (canonical v0.5.1, identical to zfc_navigator) ────────────
 
-PRIMITIVES = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+PRIMITIVES = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
 ORDINALS: Dict[str, Dict[str, float]] = {
     "Ð":  {"Ð_ß": 0, "Ð_C": 1, "Ð_;": 2, "Ð_ω": 3},
     "Þ":  {"Þ_6": 0, "Þ_K": 1, "Þ_ò": 2, "Þ_¨": 3, "Þ_O": 4},
     "Ř":  {"Ř_¯": 0, "Ř_ý": 1, "Ř_Ť": 2, "Ř_=": 3},
     "Φ":  {"Φ_ɐ": 0, "Φ_υ": 1, "Φ_F": 2, "Φ_˙": 3, "Φ_}": 4},
-    "ƒ":  {"ƒ_ì": 0, "ƒ_ð": 1, "ƒ_ż": 2},
-    "Ç":  {"Ç_-": 0, "Ç_W": 1, "Ç_@": 2, "Ç_Ù": 3, "Ç_λ": 4},
+    "ƒ":  {"ƒ^ì": 0, "ƒ^ð": 1, "ƒ^ż": 2},
+    "Ç":  {"Ç^-": 0, "Ç^W": 1, "Ç^@": 2, "Ç^Ù": 3, "Ç^λ": 4},
     "Γ":  {"Γ_β": 0, "Γ_γ": 1, "Γ_ʔ": 2},
-    "ɢ":  {"ɢ_^": 0, "ɢ_˝": 1, "ɢ_ˌ": 2, "ɢ_Ş": 3},
-    "φ̂": {"φ̂_ž": 0, "φ̂_ÿ": 1, "φ̂_Æ": 2, "φ̂_3": 3, "φ̂_Ţ": 4},
+    "ɢ":  {"ɢ^∧": 0, "ɢ^˝": 1, "ɢ^ˌ": 2, "ɢ^Ş": 3},
+    "⊙": {"⊙_ž": 0, "⊙_ÿ": 1, "⊙_Æ": 2, "⊙_3": 3, "⊙_Ţ": 4},
     "Ħ":  {"Ħ_Ñ": 0, "Ħ_£": 1, "Ħ_A": 2, "Ħ_!": 3},
     "Σ":  {"Σ_S": 0, "Σ_ő": 1, "Σ_ï": 2},
     "Ω":  {"Ω_Å": 0, "Ω_2": 1, "Ω_z": 2, "Ω_5": 3},
@@ -60,7 +60,7 @@ ORDINALS: Dict[str, Dict[str, float]] = {
 WEIGHTS = {
     "Ð": 1.0, "Þ": 1.2, "Ř": 1.0, "Φ": 1.0,
     "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.2,
-    "φ̂": 1.1, "Ħ": 1.2, "Σ": 0.8, "Ω": 1.2,
+    "⊙": 1.1, "Ħ": 1.2, "Σ": 0.8, "Ω": 1.2,
 }
 # ZFCₜ weights boost the 6 promoted primitives (Þ, ɢ, Ħ, Ω) to increase
 # sensitivity to promotion-channel collapse.
@@ -116,36 +116,36 @@ T_PRIMITIVES: List[str] = ["Φ", "ƒ", "Ç", "Ħ", "Ω"]
 # Critical values for the T-manifold to seal (Stone tuple values)
 T_CRITICAL: Dict[str, str] = {
     "Φ": "Φ_}",   # Frobenius-special (algebraic symmetry class)
-    "ƒ": "ƒ_ż",   # quantum coherent (metric-like)
-    "Ç": "Ç_@",   # near-equilibrium (Ç_Ù / Ç_λ foreclose T permanently)
+    "ƒ": "ƒ^ż",   # quantum coherent (metric-like)
+    "Ç": "Ç^@",   # near-equilibrium (Ç^Ù / Ç^λ foreclose T permanently)
     "Ħ": "Ħ_!",   # permanent chirality (Z₂ bundle sealed)
     "Ω": "Ω_z",   # integer winding (topological/homotopy protection)
 }
 
 # Gate ordering: (gated_prim, min_ordinal_needing_gate, prereq_prim, prereq_min_ordinal)
-# G1 (Φ_}, ord 4) must fire before G2 (φ̂_ÿ, ord 1)
-# G2 (φ̂_ÿ, ord 1) must fire before G3 (Ω_z, ord 2)
+# G1 (Φ_}, ord 4) must fire before G2 (⊙_ÿ, ord 1)
+# G2 (⊙_ÿ, ord 1) must fire before G3 (Ω_z, ord 2)
 GATE_CONSTRAINTS: List[Tuple[str, int, str, int]] = [
-    ("φ̂", 1, "Φ",  4),   # G2 requires G1 first
-    ("Ω",  2, "φ̂", 1),   # G3 requires G2 first
+    ("⊙", 1, "Φ",  4),   # G2 requires G1 first
+    ("Ω",  2, "⊙", 1),   # G3 requires G2 first
 ]
 
 # T-path adds: Ħ_! cannot precede G2 (Exaltation cannot precede Fermentation)
 T_PATH_GATE_CONSTRAINTS: List[Tuple[str, int, str, int]] = GATE_CONSTRAINTS + [
-    ("Ħ",  3, "φ̂", 1),   # Ħ_! requires G2 first
+    ("Ħ",  3, "⊙", 1),   # Ħ_! requires G2 first
 ]
-# Ç ceiling: Ç_Ù / Ç_λ permanently foreclose T; path must stay ≤ Ç_@
-T_PATH_CEILINGS: Dict[str, int] = {"Ç": ORDINALS["Ç"]["Ç_@"]}
+# Ç ceiling: Ç^Ù / Ç^λ permanently foreclose T; path must stay ≤ Ç^@
+T_PATH_CEILINGS: Dict[str, int] = {"Ç": ORDINALS["Ç"]["Ç^@"]}
 
 
 def operad_layer(entry: dict) -> str:
     """Derive monoidal operad layer from gate primitive values.
 
     plain → frobenius → traced_monoidal → idempotent_terminal
-    G1: Φ_} fires (ord 4).  G2: φ̂_ÿ fires (ord ≥ 1).  G3: Ω_z fires (ord ≥ 2).
+    G1: Φ_} fires (ord 4).  G2: ⊙_ÿ fires (ord ≥ 1).  G3: Ω_z fires (ord ≥ 2).
     """
     g1 = ORDINALS["Φ"].get(entry.get("Φ", ""), -1) >= 4
-    g2 = ORDINALS["φ̂"].get(entry.get("φ̂", ""), -1) >= 1
+    g2 = ORDINALS["⊙"].get(entry.get("⊙", ""), -1) >= 1
     g3 = ORDINALS["Ω"].get(entry.get("Ω", ""), -1) >= 2
     if g1 and g2 and g3:
         return "idempotent_terminal"
@@ -160,8 +160,8 @@ def t_fiber_distance(entry: dict) -> float:
     """Weighted distance from entry to T-consistent region.
 
     Φ, ƒ, Ħ, Ω: squared gap to their critical value (both shortfall and overshoot penalised).
-    Ç: only penalises excess *above* Ç_@ (the kinetic ceiling).
-         Ç_W (below Ç_@) is T-compatible — only Ç_Ù / Ç_λ foreclose T.
+    Ç: only penalises excess *above* Ç^@ (the kinetic ceiling).
+         Ç^W (below Ç^@) is T-compatible — only Ç^Ù / Ç^λ foreclose T.
     """
     total = 0.0
     for p in T_PRIMITIVES:
@@ -178,13 +178,13 @@ def t_fiber_distance(entry: dict) -> float:
 def t_consistency(entry: dict) -> dict:
     """Full T-manifold consistency report for an entry.
 
-    t_consistent = True iff Φ=Φ_}, ƒ=ƒ_ż, Ç≤Ç_@, Ħ=Ħ_!, Ω=Ω_z.
-    Ç_Ù (ord 3) and Ç_λ (ord 4) permanently foreclose T.
-    Ç values below Ç_@ (e.g. Ç_W) are T-compatible.
+    t_consistent = True iff Φ=Φ_}, ƒ=ƒ^ż, Ç≤Ç^@, Ħ=Ħ_!, Ω=Ω_z.
+    Ç^Ù (ord 3) and Ç^λ (ord 4) permanently foreclose T.
+    Ç values below Ç^@ (e.g. Ç^W) are T-compatible.
     """
     c_ord = ORDINALS["Ç"].get(entry.get("Ç", ""), -1)
-    ç_ceiling = ORDINALS["Ç"]["Ç_@"]   # ord 2
-    ç_forecloses = c_ord > ç_ceiling    # Ç_Ù (3) or Ç_λ (4)
+    ç_ceiling = ORDINALS["Ç"]["Ç^@"]   # ord 2
+    ç_forecloses = c_ord > ç_ceiling    # Ç^Ù (3) or Ç^λ (4)
 
     d = t_fiber_distance(entry)
     details: Dict[str, dict] = {}
@@ -217,7 +217,7 @@ def t_consistency(entry: dict) -> dict:
 #   HOLOBOUND  holographic boundary/bulk encoding  → Þ_O  (stronger than HOLO)
 #   LR_DUAL    lateral relational duality          → Ř_=
 #   PM_Z2      ℤ₂ parity marker                   → Φ_F
-#   SEQAX      sequentiality axiom                 → ɢ_ˌ
+#   SEQAX      sequentiality axiom                 → ɢ^ˌ
 #   TEMPD2     chirality 2 chirality          → Ħ_A
 #   ZWIND      ℤ-winding (integer, not just ∃)     → Ω_z
 #
@@ -249,7 +249,7 @@ ZFCT_VOCAB = [
     "HOLOBOUND",    # holographic boundary — Þ_O (T_odot)
     "LR_DUAL",      # lateral relational duality — Ř_= (R_lr)
     "PM_Z2",        # ℤ₂ parity — Φ_F (P_pm)
-    "SEQAX",        # sequentiality axiom — ɢ_ˌ (Gamma_seq)
+    "SEQAX",        # sequentiality axiom — ɢ^ˌ (Gamma_seq)
     "TEMPD2",       # chirality 2 — Ħ_A (H2)
     "ZWIND",        # integer winding — Ω_z (Omega_Z)
 ]
@@ -318,22 +318,22 @@ ZFCT_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
         "Φ_}":  ["FROB", "VF", "VG"],
     },
     "ƒ": {
-        "ƒ_ì":  ["CLASSIC", "VX"],
-        "ƒ_ð":  ["EXISTS", "VY", "LPAREN",
+        "ƒ^ì":  ["CLASSIC", "VX"],
+        "ƒ^ð":  ["EXISTS", "VY", "LPAREN",
                  "VY", "EQ", "VX", "AND", "VY", "IN", "OMEGA", "RPAREN"],
-        # ⚠ TOTAL COLLAPSE: ƒ_ż → identical CLASSIC token as ƒ_ì
-        "ƒ_ż":  ["CLASSIC", "VX"],
+        # ⚠ TOTAL COLLAPSE: ƒ^ż → identical CLASSIC token as ƒ^ì
+        "ƒ^ż":  ["CLASSIC", "VX"],
     },
     "Ç": {
-        "Ç_-":  ["EXISTS", "VY", "LPAREN", "SUCC", "VY", "EQ", "VX", "RPAREN"],
-        "Ç_W":  ["EXISTS", "VY", "EXISTS", "VZ", "LPAREN",
+        "Ç^-":  ["EXISTS", "VY", "LPAREN", "SUCC", "VY", "EQ", "VX", "RPAREN"],
+        "Ç^W":  ["EXISTS", "VY", "EXISTS", "VZ", "LPAREN",
                  "VY", "IN", "VX", "AND", "VZ", "IN", "VX", "AND", "VY", "SUBSETEQ", "VZ", "RPAREN"],
-        "Ç_@":  ["FORALL", "VY", "LPAREN",
+        "Ç^@":  ["FORALL", "VY", "LPAREN",
                  "VY", "SUBSETEQ", "VX", "IMPLIES",
                  "EXISTS", "VZ", "LPAREN", "VZ", "IN", "VX", "AND", "VY", "SUBSETEQ", "VZ",
                  "RPAREN", "RPAREN"],
-        "Ç_Ù":  ["FIXPT", "VF"],
-        "Ç_λ":  ["FORALL", "VY", "FORALL", "VZ", "LPAREN",
+        "Ç^Ù":  ["FIXPT", "VF"],
+        "Ç^λ":  ["FORALL", "VY", "FORALL", "VZ", "LPAREN",
                  "VY", "IN", "VX", "AND", "VZ", "IN", "VX",
                  "AND", "NOT", "VY", "EQ", "VZ", "IMPLIES",
                  "NOT", "VY", "IN", "VZ", "RPAREN"],
@@ -347,21 +347,21 @@ ZFCT_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
                  "CARD", "VY", "AND", "VA", "SUBSETEQ", "VY", "AND", "VY", "IN", "VX", "RPAREN"],
     },
     "ɢ": {
-        "ɢ_^":  ["AND"],
-        "ɢ_˝":  ["OR"],
+        "ɢ^∧":  ["AND"],
+        "ɢ^˝":  ["OR"],
         # ZFCₜ promotion: SEQAX prefix + DIRECTED_EDGE+TAU (ZFCₜ axiom for causal ordering)
-        "ɢ_ˌ":  ["SEQAX", "VF", "VG", "AND",
+        "ɢ^ˌ":  ["SEQAX", "VF", "VG", "AND",
                  "DIRECTED_EDGE", "VF", "VG", "TAU",
                  "AND", "NOT", "DIRECTED_EDGE", "VG", "VF", "TAU"],
-        "ɢ_Ş":  ["FORALL", "VY", "LPAREN", "VF", "VY", "RPAREN"],
+        "ɢ^Ş":  ["FORALL", "VY", "LPAREN", "VF", "VY", "RPAREN"],
     },
-    "φ̂": {
-        "φ̂_ž":  ["EXISTS", "VY", "LPAREN",
+    "⊙": {
+        "⊙_ž":  ["EXISTS", "VY", "LPAREN",
                  "VY", "IN", "VX", "AND", "RANK", "VY", "SUBSET", "RANK", "VX", "RPAREN"],
-        "φ̂_ÿ":  ["FIXPT", "VF"],
-        "φ̂_Æ":  ["GUE", "VX", "AND", "FIXPT", "VF"],
-        "φ̂_3":  ["LCARD", "VA", "AND", "FIXPT", "VF"],
-        "φ̂_Ţ":  ["FORALL", "VY", "LPAREN",
+        "⊙_ÿ":  ["FIXPT", "VF"],
+        "⊙_Æ":  ["GUE", "VX", "AND", "FIXPT", "VF"],
+        "⊙_3":  ["LCARD", "VA", "AND", "FIXPT", "VF"],
+        "⊙_Ţ":  ["FORALL", "VY", "LPAREN",
                  "VY", "SUBSETEQ", "VX", "IMPLIES", "FIXPT", "VY", "RPAREN"],
     },
     "Ħ": {
@@ -600,8 +600,8 @@ ZFC_TUPLE = {
     "name": "ZFC_foundations",
     "description": "Zermelo-Fraenkel set theory with Choice (corrected: D_infty, Phi_c)",
     "Ð": "Ð_;",  "Þ": "Þ_K",  "Ř": "Ř_¯",  "Φ": "Φ_ɐ",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_^",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^∧",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
 }
 
 ZFCT_TUPLE = {
@@ -611,11 +611,11 @@ ZFCT_TUPLE = {
     "Þ": "Þ_O",   # T_odot   ← ZFCₜ promotion
     "Ř": "Ř_=",   # R_lr     ← ZFCₜ promotion
     "Φ": "Φ_}",   # P_pm_sym ← ZFCₜ promotion (Frobenius-special)
-    "ƒ": "ƒ_ż",   # F_hbar
-    "Ç": "Ç_@",   # K_slow
+    "ƒ": "ƒ^ż",   # F_hbar
+    "Ç": "Ç^@",   # K_slow
     "Γ": "Γ_ʔ",   # G_aleph
-    "ɢ": "ɢ_ˌ",   # Gamma_seq  ← ZFCₜ promotion
-    "φ̂": "φ̂_ÿ",  # Phi_c
+    "ɢ": "ɢ^ˌ",   # Gamma_seq  ← ZFCₜ promotion
+    "⊙": "⊙_ÿ",  # Phi_c
     "Ħ": "Ħ_A",   # H2       ← ZFCₜ promotion
     "Σ": "Σ_ï",   # n_m
     "Ω": "Ω_z",   # Omega_Z  ← ZFCₜ promotion
@@ -625,56 +625,56 @@ TEMPORAL_MATHEMATICS_TUPLE = {
     "name": "temporal_mathematics",
     "description": "Temporal mathematics (ZFCt.lean: temporal_mathematics)",
     "Ð": "Ð_;",  "Þ": "Þ_O",  "Ř": "Ř_Ť",  "Φ": "Φ_˙",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 SCHRODINGER_TUPLE = {
     "name": "schrodinger_equation",
     "description": "Schrödinger equation (ZFCt.lean: schrodinger_equation)",
     "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_υ",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_Æ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_Æ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 HEAT_DIFFUSION_TUPLE = {
     "name": "heat_diffusion_equation",
     "description": "Heat diffusion equation (ZFCt.lean: heat_diffusion_equation)",
     "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_Ť",  "Φ": "Φ_ɐ",
-    "ƒ": "ƒ_ð",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ž", "Ħ": "Ħ_£",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
+    "ƒ": "ƒ^ð",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ž", "Ħ": "Ħ_£",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
 }
 
 NAVIER_STOKES_TUPLE = {
     "name": "navier_stokes_equations",
     "description": "Navier-Stokes equations (ZFCt.lean: navier_stokes_equations)",
     "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_F",
-    "ƒ": "ƒ_ì",  "Ç": "Ç_W",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ì",  "Ç": "Ç^W",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 WAVE_EQUATION_TUPLE = {
     "name": "wave_equation_temporal",
     "description": "Wave equation (ZFCt.lean: wave_equation_temporal)",
     "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_Ť",  "Φ": "Φ_˙",
-    "ƒ": "ƒ_ì",  "Ç": "Ç_W",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ž", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
+    "ƒ": "ƒ^ì",  "Ç": "Ç^W",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ž", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
 }
 
 EINSTEIN_TUPLE = {
     "name": "einstein_field_equations_dynamic",
     "description": "Einstein field equations dynamic (ZFCt.lean)",
     "Ð": "Ð_;",  "Þ": "Þ_O",  "Ř": "Ř_Ť",  "Φ": "Φ_˙",
-    "ƒ": "ƒ_ì",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_Æ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ì",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_Æ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 IUG_TUPLE = {
     "name": "IUG_mochizuki",
     "description": "Inter-Universal Teichmüller Theory (Mochizuki)",
     "Ð": "Ð_ω",  "Þ": "Þ_O",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 _SPECIAL_ENTRIES = {
@@ -700,7 +700,7 @@ ZFCT_PROMOTIONS: List[Tuple[str, str, str]] = [
     ("Þ", "Þ_6", "Þ_O"),   # T_network → T_odot
     ("Ř", "Ř_¯", "Ř_="),   # R_super   → R_lr
     ("Φ", "Φ_ɐ", "Φ_F"),   # P_asym    → P_pm
-    ("ɢ", "ɢ_^", "ɢ_ˌ"),   # Gamma_and → Gamma_seq
+    ("ɢ", "ɢ^∧", "ɢ^ˌ"),   # Gamma_and → Gamma_seq
     ("Ħ", "Ħ_Ñ", "Ħ_A"),   # H0        → H2
     ("Ω", "Ω_Å", "Ω_z"),   # Omega_0   → Omega_Z
 ]
@@ -784,8 +784,8 @@ class ZFCtSlot:
 DEFAULT_ZFCT_SLOTS: List[ZFCtSlot] = [
     # Þ-channel: holographic topology — HOLOBOUND+REFL distinguishes Þ_O from Þ_K
     ZFCtSlot("Þ_recovery",  "Þ",  ["HOLOBOUND", "REFL"],                  "Þ_K",  "Þ_O",  0),
-    # ɢ-channel: sequential composition — SEQAX+DIRECTED_EDGE+TAU → ɢ_ˌ
-    ZFCtSlot("ɢ_recovery",  "ɢ",  ["SEQAX", "DIRECTED_EDGE", "TAU"],      "ɢ_^",  "ɢ_ˌ",  1),
+    # ɢ-channel: sequential composition — SEQAX+DIRECTED_EDGE+TAU → ɢ^ˌ
+    ZFCtSlot("ɢ_recovery",  "ɢ",  ["SEQAX", "DIRECTED_EDGE", "TAU"],      "ɢ^∧",  "ɢ^ˌ",  1),
     # Ř-channel: lateral relational — LR_DUAL+THETA → Ř_=
     ZFCtSlot("Ř_recovery",  "Ř",  ["LR_DUAL", "THETA"],                   "Ř_Ť",  "Ř_=",  2),
     # Φ-channel: ℤ₂ parity — PM_Z2 is unique to Φ_F template
@@ -796,7 +796,7 @@ DEFAULT_ZFCT_SLOTS: List[ZFCtSlot] = [
     ZFCtSlot("Ω_recovery",  "Ω",  ["ZWIND", "WIND"],                      "Ω_Å",  "Ω_z",  5),
     # ƒ-channel: F_hbar (quantum) — retained from zfc_navigator F-recovery
     # CLASSIC+FROB+FIXPT+HOLO jointly mark O_inf-adjacent quantum-fidelity context
-    ZFCtSlot("ƒ_recovery",  "ƒ",  ["CLASSIC", "FROB", "FIXPT", "HOLO"],   "ƒ_ì",  "ƒ_ż",  6),
+    ZFCtSlot("ƒ_recovery",  "ƒ",  ["CLASSIC", "FROB", "FIXPT", "HOLO"],   "ƒ^ì",  "ƒ^ż",  6),
 ]
 
 
@@ -1129,13 +1129,13 @@ def probe_entry(
 _LAPIS_TUPLE: dict = {   # O∞ Stone — default A* target
     "name": "lapis_philosophorum",
     "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_=", "Φ": "Φ_}",
-    "ƒ": "ƒ_ż", "Ç": "Ç_W", "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
+    "ƒ": "ƒ^ż", "Ç": "Ç^W", "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
 }
 
 _GATE_ANNOTATIONS: Dict[Tuple[str, str], str] = {
     ("Φ",  "Φ_}" ): "◀ G1 fires (Frobenius gate)",
-    ("φ̂", "φ̂_ÿ"): "◀ G2 fires (traced monoidal gate)",
+    ("⊙", "⊙_ÿ"): "◀ G2 fires (traced monoidal gate)",
     ("Ω",  "Ω_z" ): "◀ G3 fires (idempotent terminal gate)",
 }
 
@@ -1451,7 +1451,7 @@ def cmd_tpath(
     target_name: str = "lapis",
     catalog_path: Optional[str] = None,
 ) -> None:
-    """T-consistent proof path: gate-ordered A* + Ħ_! after G2 + Ç ceiling at Ç_@."""
+    """T-consistent proof path: gate-ordered A* + Ħ_! after G2 + Ç ceiling at Ç^@."""
     special = dict(_SPECIAL_ENTRIES)
     special["lapis"] = _LAPIS_TUPLE
 
@@ -1488,14 +1488,14 @@ def cmd_tpath(
     print(f"  T-CONSISTENT PROOF PATH  (T = Work(T) temporal bootstrap)")
     print(f"  source: {src.get('name', source_name)}")
     print(f"  target: {tgt.get('name', target_name)}")
-    print(f"  constraints: G1→G2→G3 ordering  +  Ħ_! after G2  +  Ç ≤ Ç_@ ceiling")
+    print(f"  constraints: G1→G2→G3 ordering  +  Ħ_! after G2  +  Ç ≤ Ç^@ ceiling")
     print(f"  d_start = {tuple_distance(src, tgt):.4f}")
     print(f"{'═'*W}")
 
     result = astar_path(src, tgt, T_PATH_GATE_CONSTRAINTS, T_PATH_CEILINGS)
     if result is None:
         print("  No T-consistent path found.")
-        print("  Possible causes: source has Ç > Ç_@ (forecloses T), or target requires")
+        print("  Possible causes: source has Ç > Ç^@ (forecloses T), or target requires")
         print("  Ħ_! before G2 can fire. Try 'path' for unconstrained gate ordering.")
         return
 

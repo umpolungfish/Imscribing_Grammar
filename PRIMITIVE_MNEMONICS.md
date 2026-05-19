@@ -427,16 +427,16 @@ Step 4:  Φ — What survives symmetry operations?
          μ∘δ=id      →  Φ_}  (Frobenius-special)
 
 Step 5:  ƒ — What regime?
-         classical    →  ƒ_ì  (coherent trajectories)
-         thermal      →  ƒ_ð  (noisy, Brownian)
-         quantum      →  ƒ_ż  (coherent superposition)
+         classical    →  ƒ^ì  (coherent trajectories)
+         thermal      →  ƒ^ð  (noisy, Brownian)
+         quantum      →  ƒ^ż  (coherent superposition)
 
 Step 6:  Ç — How fast vs. how long we watch?
-         τ ≪ T       →  Ç_-  (fast, forgets)
-         τ ∼ T       →  Ç_W  (moderate)
-         τ ≫ T       →  Ç_@  (slow, remembers)
-         trapped(order)→ Ç_Ù  (frozen crystal)
-         trapped(disorder)→Ç_λ (MBL glass)
+         τ ≪ T       →  Ç^-  (fast, forgets)
+         τ ∼ T       →  Ç^W  (moderate)
+         τ ≫ T       →  Ç^@  (slow, remembers)
+         trapped(order)→ Ç^Ù  (frozen crystal)
+         trapped(disorder)→Ç^λ (MBL glass)
 
 Step 7:  Γ — How far does it reach?
          nearest-neighbor →  Γ_β  (local)
@@ -444,10 +444,10 @@ Step 7:  Γ — How far does it reach?
          universal        →  Γ_ʔ  (global)
 
 Step 8:  ɢ — How do parts combine?
-         all must be true →  ɢ_^  (AND)
-         any suffices     →  ɢ_˝  (OR)
-         ordered sequence  →  ɢ_ˌ  (then)
-         one speaks to all →  ɢ_Ş  (broadcast)
+         all must be true →  ɢ^∧  (AND)
+         any suffices     →  ɢ^˝  (OR)
+         ordered sequence  →  ɢ^ˌ  (then)
+         one speaks to all →  ɢ^Ş  (broadcast)
 
 Step 9:  ⊙ — Where relative to critical point?
          below     →  ⊙_ž  (subcritical)
@@ -460,7 +460,7 @@ Step 10: Ħ — How much history matters?
          0 steps   →  Ħ_Ñ  (memoryless)
          1 step    →  Ħ_£  (one-step Markov)
          2 steps   →  Ħ_A  (two-step Markov)
-         ∞ steps   →  Ħ_!  (eternal — requires Ç_Ù or Ç_λ)
+         ∞ steps   →  Ħ_!  (eternal — requires Ç^Ù or Ç^λ)
 
 Step 11: Σ — How many part types?
          one kind   →  Σ_S  (1:1)

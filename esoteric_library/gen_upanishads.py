@@ -3,7 +3,7 @@
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PHI = 'φ̂'
+PHI = '⊙'
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -22,7 +22,7 @@ def entry(num, title, desc, text,
 
 # All Upanishads share the same tuple — Atman = Brahman is the closed loop
 D, T, R, P, F, K, G, Gm, C, H, S, Om = (
-    "Ð_ω","Þ_O","Ř_=","Φ_}","ƒ_ż","Ç_@","Γ_ʔ","ɢ_ˌ","φ̂_ÿ","Ħ_!","Σ_ï","Ω_z"
+    "Ð_ω","Þ_O","Ř_=","Φ_}","ƒ^ż","Ç^@","Γ_ʔ","ɢ^ˌ","⊙_ÿ","Ħ_!","Σ_ï","Ω_z"
 )
 
 chapters = [
@@ -100,7 +100,7 @@ chapters = [
 ]
 
 # Fix entry 12 missing Gm
-chapters[11]["ɢ"] = "ɢ_ˌ"
+chapters[11]["ɢ"] = "ɢ^ˌ"
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "upanishads.json")
 with open(out, "w", encoding="utf-8") as f:

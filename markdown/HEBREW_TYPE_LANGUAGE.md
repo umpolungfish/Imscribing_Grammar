@@ -575,7 +575,7 @@ A Vav-cast succeeds iff $d(A, B) \leq \tau$ and the tensor derivation tree shows
 @palace(1)
 def add(a : bet, b : gimel) : bet ⊗ gimel =
   a ⊗ b   -- tensor application, result stays O_0
--- Type: ⟨Ð_ß; Þ_ò; Ř_=; Φ_ɐ; ƒ_ì; Ç_-; Γ_β; ...⟩
+-- Type: ⟨Ð_ß; Þ_ò; Ř_=; Φ_ɐ; ƒ^ì; Ç^-; Γ_β; ...⟩
 ```
 
 **Example 2: $O_2$ critical self-reference (topologically protected recursion)**

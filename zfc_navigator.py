@@ -4,11 +4,11 @@ zfc_navigator.py — Grammar tuple → ZFC expression navigator
 with transmissibility probe.
 
 Grammar-derived architecture:
-  Ç_@     → 4-layer Transformer encoder (global self-attention)
+  Ç^@     → 4-layer Transformer encoder (global self-attention)
   Φ_}   → Frobenius roundtrip loss native from epoch 1 (non-graftable)
   R_†        → the output restructures its own co-domain (ZFC formula space)
   Γ_ʔ    → maximize sequence context (window = 256 tokens)
-  φ̂_ÿ^C    → encoder trained at the distinguishability boundary
+  ⊙_ÿ^C    → encoder trained at the distinguishability boundary
 
 Core prediction (from IUG_NON_TRANSMISSIBILITY §3):
   Non-transmissible primitive values produce a ZFC formula from which the
@@ -16,11 +16,11 @@ Core prediction (from IUG_NON_TRANSMISSIBILITY §3):
   bounded below by d(x, T_ZFC) where T_ZFC is the ZFC-realizable subspace.
 
   The five collapse channels:
-    ƒ_ż  → ƒ_ì  (identical ZFC token sequence — total information loss)
-    ƒ_ì   → ƒ_ż (hallucination: high holistic density pulls cls x → quantum read)
+    ƒ^ż  → ƒ^ì  (identical ZFC token sequence — total information loss)
+    ƒ^ì   → ƒ^ż (hallucination: high holistic density pulls cls x → quantum read)
     Þ_O  → Þ_K   (REFL → SEP approximation — partial loss)
     Ð_ω  → Ð_; (LCARD fragment ambiguous with high-rank — partial loss)
-    ɢ_ˌ → ɢ_^ (sequential dep. becomes conjunction — total for that step)
+    ɢ^ˌ → ɢ^∧ (sequential dep. becomes conjunction — total for that step)
 
 Run:
     python zfc_navigator.py train        # train encoder, save model
@@ -45,18 +45,18 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # ── 1. Primitive ordinals (canonical v0.5.1) ────────────────────────────────
 
-PRIMITIVES = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+PRIMITIVES = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
 ORDINALS: Dict[str, Dict[str, float]] = {
     "Ð":     {"Ð_ß": 0, "Ð_C": 1, "Ð_;": 2, "Ð_ω": 3},
     "Þ":     {"Þ_6": 0, "Þ_K": 1, "Þ_ò": 2, "Þ_¨": 3, "Þ_O": 4},
     "Ř":     {"Ř_¯": 0, "Ř_ý": 1, "Ř_Ť": 2, "Ř_=": 3},
     "Φ":     {"Φ_ɐ": 0, "Φ_υ": 1, "Φ_F": 2, "Φ_˙": 3, "Φ_}": 4},
-    "ƒ":     {"ƒ_ì": 0, "ƒ_ð": 1, "ƒ_ż": 2},
-    "Ç":     {"Ç_-": 0, "Ç_W": 1, "Ç_@": 2, "Ç_Ù": 3, "Ç_λ": 4},
+    "ƒ":     {"ƒ^ì": 0, "ƒ^ð": 1, "ƒ^ż": 2},
+    "Ç":     {"Ç^-": 0, "Ç^W": 1, "Ç^@": 2, "Ç^Ù": 3, "Ç^λ": 4},
     "Γ":     {"Γ_β": 0, "Γ_γ": 1, "Γ_ʔ": 2},
-    "ɢ": {"ɢ_^": 0, "ɢ_˝": 1, "ɢ_ˌ": 2, "ɢ_Ş": 3},
-    "φ̂":   {"φ̂_ž": 0, "φ̂_ÿ": 1, "φ̂_Æ": 2, "φ̂_3": 3, "φ̂_Ţ": 4},
+    "ɢ": {"ɢ^∧": 0, "ɢ^˝": 1, "ɢ^ˌ": 2, "ɢ^Ş": 3},
+    "⊙":   {"⊙_ž": 0, "⊙_ÿ": 1, "⊙_Æ": 2, "⊙_3": 3, "⊙_Ţ": 4},
     "Ħ":     {"Ħ_Ñ": 0, "Ħ_£": 1, "Ħ_A": 2, "Ħ_!": 3},
     "Σ":     {"Σ_S": 0, "Σ_ő": 1, "Σ_ï": 2},
     "Ω": {"Ω_Å": 0, "Ω_2": 1, "Ω_z": 2, "Ω_5": 3},
@@ -65,7 +65,7 @@ ORDINALS: Dict[str, Dict[str, float]] = {
 WEIGHTS = {
     "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.2,
     "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
-    "φ̂": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
+    "⊙": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
 }
 
 # Inverse ordinal maps for decoding predictions
@@ -158,15 +158,15 @@ def tuple_distance(a: dict, b: dict) -> float:
 #       WIND   winding number                            → Ω_z / Ω_5
 #       HOLO   imscriptive boundary encoding             → Þ_O / Ð_ω (partial)
 #       THETA  inter-universal Θ-link                    → Ř_= / Ω_5
-#       FIXPT  fixed-point ∃x:φ(x)=x                    → φ̂_ÿ
-#       SEQPAIR ordered sequential dependency            → ɢ_ˌ
-#       GUE    GUE spacing assertion                     → φ̂_Æ
-#       CLASSIC classical identity (ƒ_ì channel)       → ƒ_ì AND ƒ_ż collapse
+#       FIXPT  fixed-point ∃x:φ(x)=x                    → ⊙_ÿ
+#       SEQPAIR ordered sequential dependency            → ɢ^ˌ
+#       GUE    GUE spacing assertion                     → ⊙_Æ
+#       CLASSIC classical identity (ƒ^ì channel)       → ƒ^ì AND ƒ^ż collapse
 #
 # ── DECOHERENCE NOTE ────────────────────────────────────────────────────────
-# ƒ_ż has no ZFC expression distinct from ƒ_ì.  Both map to CLASSIC.
-# When the encoder sees CLASSIC it cannot recover ƒ_ż.
-# Roundtrip loss for ƒ_ż inputs = WEIGHTS["ƒ"] * (ordinal_gap)^2
+# ƒ^ż has no ZFC expression distinct from ƒ^ì.  Both map to CLASSIC.
+# When the encoder sees CLASSIC it cannot recover ƒ^ż.
+# Roundtrip loss for ƒ^ż inputs = WEIGHTS["ƒ"] * (ordinal_gap)^2
 #                                   = 1.0 * (2-0)^2 = 4.0 → sqrt contributes ~2.0
 # This is the IUG fidelity barrier made numerically explicit.
 # ────────────────────────────────────────────────────────────────────────────
@@ -198,12 +198,12 @@ ZFC_VOCAB = [
     "WIND",      # winding number — Ω_z, Ω_5
     "HOLO",      # imscriptive encoding — Þ_O / Ð_ω (partial)
     "THETA",     # Θ-link — Ř_=, Ω_5
-    "FIXPT",     # fixed-point — φ̂_ÿ, φ̂_3
-    "SEQPAIR",        # (legacy) unordered-pair encoding of ɢ_ˌ — partial collapse
-    "DIRECTED_EDGE",  # directed edge ⟨src, tgt, τ⟩ — ɢ_ˌ resolution (non-commutative)
+    "FIXPT",     # fixed-point — ⊙_ÿ, ⊙_3
+    "SEQPAIR",        # (legacy) unordered-pair encoding of ɢ^ˌ — partial collapse
+    "DIRECTED_EDGE",  # directed edge ⟨src, tgt, τ⟩ — ɢ^ˌ resolution (non-commutative)
     "TAU",            # chirality index τ — sequence ordinal, causal order
-    "GUE",       # GUE statistics — φ̂_Æ
-    "CLASSIC",   # classical identity — ƒ_ì AND ƒ_ż (decoherence collapse)
+    "GUE",       # GUE statistics — ⊙_Æ
+    "CLASSIC",   # classical identity — ƒ^ì AND ƒ^ż (decoherence collapse)
 ]
 
 ZFC_VOCAB_SIZE = len(ZFC_VOCAB)
@@ -293,34 +293,34 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
     },
     "ƒ": {
         # Classical fidelity — standard identity
-        "ƒ_ì":      ["CLASSIC", "VX"],
+        "ƒ^ì":      ["CLASSIC", "VX"],
         # Intermediate — finite approximation
-        "ƒ_ð":      ["EXISTS", "VY", "LPAREN",
+        "ƒ^ð":      ["EXISTS", "VY", "LPAREN",
                        "VY", "EQ", "VX", "AND", "VY", "IN", "OMEGA", "RPAREN"],
-        # ⚠ TOTAL COLLAPSE: ƒ_ż has no ZFC expression.
+        # ⚠ TOTAL COLLAPSE: ƒ^ż has no ZFC expression.
         # The quantum-coherent superposition of two copies cannot be represented
-        # in ƒ_ì logic.  Mapped to CLASSIC — identical to ƒ_ì template.
-        # Roundtrip loss = WEIGHTS["ƒ"] * (ord(ƒ_ż) - ord(ƒ_ì))^2 = 1.0 * 4 = 4.0
+        # in ƒ^ì logic.  Mapped to CLASSIC — identical to ƒ^ì template.
+        # Roundtrip loss = WEIGHTS["ƒ"] * (ord(ƒ^ż) - ord(ƒ^ì))^2 = 1.0 * 4 = 4.0
         # This is the Scholze–Stix fidelity barrier made numerically explicit.
-        "ƒ_ż":     ["CLASSIC", "VX"],   # ← decoherence collapse
+        "ƒ^ż":     ["CLASSIC", "VX"],   # ← decoherence collapse
     },
     "Ç": {
         # Rapid local transitions
-        "Ç_-":     ["EXISTS", "VY", "LPAREN", "SUCC", "VY", "EQ", "VX", "RPAREN"],
+        "Ç^-":     ["EXISTS", "VY", "LPAREN", "SUCC", "VY", "EQ", "VX", "RPAREN"],
         # Moderate integration
-        "Ç_W":      ["EXISTS", "VY", "EXISTS", "VZ", "LPAREN",
+        "Ç^W":      ["EXISTS", "VY", "EXISTS", "VZ", "LPAREN",
                        "VY", "IN", "VX", "AND", "VZ", "IN", "VX",
                        "AND", "VY", "SUBSETEQ", "VZ", "RPAREN"],
         # Global integrative convergence — every subset has a supremum
-        "Ç_@":     ["FORALL", "VY", "LPAREN",
+        "Ç^@":     ["FORALL", "VY", "LPAREN",
                        "VY", "SUBSETEQ", "VX", "IMPLIES",
                        "EXISTS", "VZ", "LPAREN",
                        "VZ", "IN", "VX", "AND", "VY", "SUBSETEQ", "VZ",
                        "RPAREN", "RPAREN"],
         # Sequential fixed cycle
-        "Ç_Ù":     ["FIXPT", "VF"],
+        "Ç^Ù":     ["FIXPT", "VF"],
         # Many-body localisation — every element is isolated
-        "Ç_λ":      ["FORALL", "VY", "FORALL", "VZ", "LPAREN",
+        "Ç^λ":      ["FORALL", "VY", "FORALL", "VZ", "LPAREN",
                        "VY", "IN", "VX", "AND", "VZ", "IN", "VX",
                        "AND", "NOT", "VY", "EQ", "VZ", "IMPLIES",
                        "NOT", "VY", "IN", "VZ", "RPAREN"],
@@ -337,10 +337,10 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
     },
     "ɢ": {
         # Conjunctive — independent lemmas
-        "ɢ_^":      ["AND"],
+        "ɢ^∧":      ["AND"],
         # Disjunctive
-        "ɢ_˝":       ["OR"],
-        # Resolution of ɢ_ˌ collapse (music_crawler diagnosis, steps 15–38):
+        "ɢ^˝":       ["OR"],
+        # Resolution of ɢ^ˌ collapse (music_crawler diagnosis, steps 15–38):
         # Old SEQPAIR encoding used Kuratowski pairs — static, symmetric under
         # set-theoretic projection, destroying causal asymmetry.
         # New: directed edge ⟨src, tgt, τ⟩ + explicit non-commutativity.
@@ -348,24 +348,24 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
         # encodes f∘g ≠ g∘f — the DAG algebra condition.
         # Residual collapse: τ grounding still requires process algebra beyond ZFC;
         # the asymmetry is explicit but the irreversibility is semantic, not axiomatic.
-        "ɢ_ˌ":      ["DIRECTED_EDGE", "VF", "VG", "TAU",
+        "ɢ^ˌ":      ["DIRECTED_EDGE", "VF", "VG", "TAU",
                        "AND", "NOT", "DIRECTED_EDGE", "VG", "VF", "TAU"],
         # Broadcast — universal quantification
-        "ɢ_Ş":    ["FORALL", "VY", "LPAREN", "VF", "VY", "RPAREN"],
+        "ɢ^Ş":    ["FORALL", "VY", "LPAREN", "VF", "VY", "RPAREN"],
     },
-    "φ̂": {
+    "⊙": {
         # Subcritical — well-founded, below fixed point
-        "φ̂_ž":    ["EXISTS", "VY", "LPAREN",
+        "⊙_ž":    ["EXISTS", "VY", "LPAREN",
                        "VY", "IN", "VX", "AND",
                        "RANK", "VY", "SUBSET", "RANK", "VX", "RPAREN"],
         # Critical — fixed point of power-set operator (approx)
-        "φ̂_ÿ":      ["FIXPT", "VF"],
+        "⊙_ÿ":      ["FIXPT", "VF"],
         # Complex criticality — GUE statistics
-        "φ̂_Æ": ["GUE", "VX", "AND", "FIXPT", "VF"],
+        "⊙_Æ": ["GUE", "VX", "AND", "FIXPT", "VF"],
         # Exceptional point — large cardinal fixed point
-        "φ̂_3":     ["LCARD", "VA", "AND", "FIXPT", "VF"],
+        "⊙_3":     ["LCARD", "VA", "AND", "FIXPT", "VF"],
         # Supercritical — every subset has a fixed point
-        "φ̂_Ţ":  ["FORALL", "VY", "LPAREN",
+        "⊙_Ţ":  ["FORALL", "VY", "LPAREN",
                        "VY", "SUBSETEQ", "VX", "IMPLIES", "FIXPT", "VY", "RPAREN"],
     },
     "Ħ": {
@@ -428,7 +428,7 @@ def pad_formula(tokens: List[int], max_len: int = 256) -> List[int]:
 
 # ── 4. ZFC Encoder (formula tokens → primitive logits) ──────────────────────
 #
-# Ç_@ architecture: 4-layer Transformer encoder with CLS token.
+# Ç^@ architecture: 4-layer Transformer encoder with CLS token.
 # Reads the full formula simultaneously — no sequential bottleneck.
 # 12 classification heads, one per primitive, each predicting the ordinal value.
 
@@ -444,9 +444,9 @@ class ZFCEncoder(nn.Module):
         self,
         vocab_size:  int = ZFC_VOCAB_SIZE,
         max_len:     int = 256,       # Γ_ʔ: maximize context
-        hidden_dim:  int = 256,       # Ç_@ + ƒ_ż: same as other navigators
+        hidden_dim:  int = 256,       # Ç^@ + ƒ^ż: same as other navigators
         n_heads:     int = 4,         # Γ_ʔ: 4 attention heads
-        n_layers:    int = 4,         # Ç_@: deep global integration
+        n_layers:    int = 4,         # Ç^@: deep global integration
         dropout:     float = 0.1,
     ):
         super().__init__()
@@ -456,7 +456,7 @@ class ZFCEncoder(nn.Module):
         self.tok_emb = nn.Embedding(vocab_size, hidden_dim, padding_idx=PAD_IDX)
         self.pos_emb = nn.Embedding(max_len, hidden_dim)
 
-        # Ç_@: Transformer encoder layers (global self-attention)
+        # Ç^@: Transformer encoder layers (global self-attention)
         enc_layer = nn.TransformerEncoderLayer(
             d_model=hidden_dim,
             nhead=n_heads,
@@ -621,11 +621,11 @@ def build_dataset(
 
 def train(
     catalog_path: str   = None,
-    n_epochs:     int   = 300,        # Ç_@ + Ħ_!: integrative dynamics need time
+    n_epochs:     int   = 300,        # Ç^@ + Ħ_!: integrative dynamics need time
     batch_size:   int   = 64,         # Γ_ʔ: large batch for global statistics
-    lr:           float = 3e-4,       # Ç_@ + ƒ_ż: careful optimisation
+    lr:           float = 3e-4,       # Ç^@ + ƒ^ż: careful optimisation
     hidden_dim:   int   = 256,
-    n_layers:     int   = 4,          # Ç_@: 4 Transformer layers
+    n_layers:     int   = 4,          # Ç^@: 4 Transformer layers
     max_len:      int   = 256,        # Γ_ʔ: maximise context window
     seed:         int   = 42,
     save_path:    str   = "zfc_encoder.pt",
@@ -639,15 +639,15 @@ def train(
     print(f"[zfc_navigator] dataset: {len(token_seqs)} valid entries ({len(catalog)} loaded)")
 
     # Check decoherence instances in the dataset
-    n_fhbar    = sum(1 for e in catalog if e.get("ƒ") == "ƒ_ż")
+    n_fhbar    = sum(1 for e in catalog if e.get("ƒ") == "ƒ^ż")
     n_todot    = sum(1 for e in catalog if e.get("Þ") == "Þ_O")
     n_dodot    = sum(1 for e in catalog if e.get("Ð") == "Ð_ω")
-    n_gseq     = sum(1 for e in catalog if e.get("ɢ") == "ɢ_ˌ")
+    n_gseq     = sum(1 for e in catalog if e.get("ɢ") == "ɢ^ˌ")
     print(f"[zfc_navigator] non-transmissible instances:")
-    print(f"  ƒ_ż  (total collapse):   {n_fhbar}")
+    print(f"  ƒ^ż  (total collapse):   {n_fhbar}")
     print(f"  Þ_O  (partial collapse): {n_todot}")
     print(f"  Ð_ω  (partial collapse): {n_dodot}")
-    print(f"  ɢ_ˌ   (partial collapse): {n_gseq}")
+    print(f"  ɢ^ˌ   (partial collapse): {n_gseq}")
 
     dataset    = TensorDataset(token_seqs, targets)
     loader     = DataLoader(dataset, batch_size=batch_size, shuffle=True)
@@ -713,7 +713,7 @@ def train(
 #      - collapse_flags: which non-transmissible values are present
 #
 # The roundtrip_dist is the key measure: it should be ≥ d(tuple, T_ZFC).
-# For IUG-type entries (ƒ_ż, Þ_O, Ð_ω, ɢ_ˌ), the floor is predictable
+# For IUG-type entries (ƒ^ż, Þ_O, Ð_ω, ɢ^ˌ), the floor is predictable
 # from the IUG_NON_TRANSMISSIBILITY analysis.
 
 @dataclass
@@ -772,10 +772,10 @@ def run_probe(
             # Flag collapse events
             collapses = []
             COLLAPSE_MAP = {
-                "ƒ":     ("ƒ_ż",  "ƒ_ì",   "total"),
+                "ƒ":     ("ƒ^ż",  "ƒ^ì",   "total"),
                 "Þ":     ("Þ_O",  "Þ_K",    "partial"),
                 "Ð":     ("Ð_ω",  "Ð_;", "partial"),
-                "ɢ": ("ɢ_ˌ",   "ɢ_^",   "residual"),
+                "ɢ": ("ɢ^ˌ",   "ɢ^∧",   "residual"),
             }
             for prim, (bad_val, zfc_val, kind) in COLLAPSE_MAP.items():
                 if entry.get(prim) == bad_val:
@@ -783,9 +783,9 @@ def run_probe(
                     collapses.append(
                         f"{prim}: {bad_val}→{predicted} ({kind})"
                     )
-            # Inverse F collapse: ƒ_ì hallucinated as ƒ_ż
-            if entry.get("ƒ") == "ƒ_ì" and pred_tuple.get("ƒ") == "ƒ_ż":
-                collapses.append("ƒ: ƒ_ì→ƒ_ż (hallucination)")
+            # Inverse F collapse: ƒ^ì hallucinated as ƒ^ż
+            if entry.get("ƒ") == "ƒ^ì" and pred_tuple.get("ƒ") == "ƒ^ż":
+                collapses.append("ƒ: ƒ^ì→ƒ^ż (hallucination)")
 
             results.append(ProbeResult(
                 name            = entry.get("name", "?"),
@@ -812,7 +812,7 @@ def run_probe(
     print("\n" + "─" * 80)
     all_dists = [r.roundtrip_dist for r in results]
     fhbar_dists = [r.roundtrip_dist for r in results
-                   if r.input_tuple.get("ƒ") == "ƒ_ż"]
+                   if r.input_tuple.get("ƒ") == "ƒ^ż"]
     todot_dists = [r.roundtrip_dist for r in results
                    if r.input_tuple.get("Þ") == "Þ_O"]
     zfc_ref     = [r for r in results
@@ -822,7 +822,7 @@ def run_probe(
     print(f"Mean roundtrip distance:    {np.mean(all_dists):.4f}")
     print(f"Max roundtrip distance:     {np.max(all_dists):.4f}")
     if fhbar_dists:
-        print(f"ƒ_ż entries ({len(fhbar_dists)}):       "
+        print(f"ƒ^ż entries ({len(fhbar_dists)}):       "
               f"mean d_rt = {np.mean(fhbar_dists):.4f}  "
               f"(predicted floor ≥ 2.0 from F decoherence)")
     if todot_dists:
@@ -855,11 +855,11 @@ IUG_TUPLE = {
     "Þ":     "Þ_O",
     "Ř":     "Ř_=",
     "Φ":     "Φ_}",
-    "ƒ":     "ƒ_ż",
-    "Ç":     "Ç_@",
+    "ƒ":     "ƒ^ż",
+    "Ç":     "Ç^@",
     "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ_ˌ",
-    "φ̂":   "φ̂_ÿ",
+    "ɢ": "ɢ^ˌ",
+    "⊙":   "⊙_ÿ",
     "Ħ":     "Ħ_!",
     "Σ":     "Σ_ï",
     "Ω": "Ω_z",
@@ -873,11 +873,11 @@ GRAMMAR_TUPLE = {
     "Þ":     "Þ_O",
     "Ř":     "Ř_Ť",
     "Φ":     "Φ_}",
-    "ƒ":     "ƒ_ż",
-    "Ç":     "Ç_@",
+    "ƒ":     "ƒ^ż",
+    "Ç":     "Ç^@",
     "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ_Ş",
-    "φ̂":   "φ̂_ÿ",
+    "ɢ": "ɢ^Ş",
+    "⊙":   "⊙_ÿ",
     "Ħ":     "Ħ_!",
     "Σ":     "Σ_ï",
     "Ω": "Ω_z",
@@ -891,11 +891,11 @@ ZFC_TUPLE = {
     "Þ":     "Þ_K",
     "Ř":     "Ř_¯",
     "Φ":     "Φ_˙",
-    "ƒ":     "ƒ_ì",
-    "Ç":     "Ç_@",
+    "ƒ":     "ƒ^ì",
+    "Ç":     "Ç^@",
     "Γ":     "Γ_β",
-    "ɢ": "ɢ_^",
-    "φ̂":   "φ̂_ž",
+    "ɢ": "ɢ^∧",
+    "⊙":   "⊙_ž",
     "Ħ":     "Ħ_Ñ",
     "Σ":     "Σ_S",
     "Ω": "Ω_Å",
@@ -956,16 +956,16 @@ def probe_specific(
                 flag = ""
                 if inp != pred:
                     # Classify the collapse type
-                    if inp == "ƒ_ż" and pred == "ƒ_ì":
-                        flag = "  ← ⚠ TOTAL DECOHERENCE (ƒ_ż→ƒ_ì)"
-                    elif inp == "ƒ_ì" and pred == "ƒ_ż":
-                        flag = "  ← ⚠ HALLUCINATION (ƒ_ì→ƒ_ż)"
+                    if inp == "ƒ^ż" and pred == "ƒ^ì":
+                        flag = "  ← ⚠ TOTAL DECOHERENCE (ƒ^ż→ƒ^ì)"
+                    elif inp == "ƒ^ì" and pred == "ƒ^ż":
+                        flag = "  ← ⚠ HALLUCINATION (ƒ^ì→ƒ^ż)"
                     elif inp == "Þ_O":
                         flag = f"  ← partial collapse (Þ_O→{pred})"
                     elif inp == "Ð_ω":
                         flag = f"  ← partial collapse (Ð_ω→{pred})"
-                    elif inp == "ɢ_ˌ":
-                        flag = f"  ← partial collapse (ɢ_ˌ→{pred})"
+                    elif inp == "ɢ^ˌ":
+                        flag = f"  ← partial collapse (ɢ^ˌ→{pred})"
                     else:
                         flag = f"  ← mismatch"
                 print(f"    {p:<6}  input={inp:<15}  pred={pred:<15}{flag}")
@@ -1039,20 +1039,20 @@ _ATOM_NOTE = {
     "WIND":    "winding number — Ω_z / Ω_NA protection",
     "HOLO":    "imscriptive encoding — Þ_O / Ð_ω (partial loss)",
     "THETA":   "inter-universal Θ-link — Ř_= / Ω_NA",
-    "FIXPT":   "fixed-point ∃x:φ(x)=x — φ̂_ÿ criticality",
+    "FIXPT":   "fixed-point ∃x:φ(x)=x — ⊙_ÿ criticality",
     "SEQPAIR":       "⚠ legacy — unordered Kuratowski pair, loses causal dependency (use DIRECTED_EDGE)",
     "DIRECTED_EDGE": "directed edge ⟨src, tgt, τ⟩ — Γ_seq resolution, non-commutative",
     "TAU":           "chirality index τ — encodes sequence ordinal / causal depth",
-    "GUE":     "GUE eigenvalue spacing — φ̂_ÿ^ℂ",
-    "CLASSIC": "⚠ DECOHERENCE MARKER — ƒ_ż collapses to ƒ_ì here",
+    "GUE":     "GUE eigenvalue spacing — ⊙_ÿ^ℂ",
+    "CLASSIC": "⚠ DECOHERENCE MARKER — ƒ^ż collapses to ƒ^ì here",
 }
 
 # Collapse kind for each primitive → value pair
 _COLLAPSE_KIND = {
-    ("ƒ",     "ƒ_ż"):  "TOTAL — no ZFC token distinct from ƒ_ì",
+    ("ƒ",     "ƒ^ż"):  "TOTAL — no ZFC token distinct from ƒ^ì",
     ("Þ",     "Þ_O"):  "PARTIAL — REFL+HOLO approximates but does not encode mutual boundary",
     ("Ð",     "Ð_ω"):  "PARTIAL — LCARD+HOLO ambiguous with Ð_; under classical reading",
-    ("ɢ", "ɢ_ˌ"):   "RESIDUAL — DIRECTED_EDGE preserves asymmetry and non-commutativity; τ grounding still requires process algebra beyond ZFC",
+    ("ɢ", "ɢ^ˌ"):   "RESIDUAL — DIRECTED_EDGE preserves asymmetry and non-commutativity; τ grounding still requires process algebra beyond ZFC",
 }
 
 
@@ -1166,10 +1166,10 @@ def probe_entry(
         rendered = render_tokens(frag)
         ck       = _COLLAPSE_KIND.get((p, val), "")
 
-        # Collect unique atoms for this primitive (suppress CLASSIC on ƒ_ì)
+        # Collect unique atoms for this primitive (suppress CLASSIC on ƒ^ì)
         prim_atoms = list(dict.fromkeys(
             a for a in _atoms_in(frag)
-            if not (a == "CLASSIC" and val == "ƒ_ì")
+            if not (a == "CLASSIC" and val == "ƒ^ì")
         ))
         for a in prim_atoms:
             if a not in legend:
@@ -1281,8 +1281,8 @@ def probe_entry(
             ck   = _COLLAPSE_KIND.get((p, inp), "")
             if ck:
                 kind_str = f"collapse  {ck}"
-            elif p == "ƒ" and inp == "ƒ_ì" and pred == "ƒ_ż":
-                kind_str = "hallucination  ƒ_ì→ƒ_ż"
+            elif p == "ƒ" and inp == "ƒ^ì" and pred == "ƒ^ż":
+                kind_str = "hallucination  ƒ^ì→ƒ^ż"
             else:
                 oi = ORDINALS[p][inp]
                 op = ORDINALS[p][pred]
@@ -1318,13 +1318,13 @@ def probe_entry(
 # Recovery logic:
 #
 #   F-channel (TOTAL COLLAPSE, highest priority):
-#     CLASSIC token marks the ƒ_ż ↔ ƒ_ì decoherence point.
-#     FROB (Φ_} context) + FIXPT (φ̂_ÿ context) jointly assert
+#     CLASSIC token marks the ƒ^ż ↔ ƒ^ì decoherence point.
+#     FROB (Φ_} context) + FIXPT (⊙_ÿ context) jointly assert
 #     mu∘delta=id — the O_inf loophole. When all three present AND encoder
-#     predicted ƒ_ì, override to ƒ_ż.
-#     Tightness: CLASSIC is the decoherence marker (both ƒ_ì/ƒ_ż map here);
-#     FROB alone is insufficient (Φ_} with ƒ_ì is possible); FIXPT alone
-#     is insufficient (Ç_Ù also generates FIXPT). Joint FROB+FIXPT+CLASSIC
+#     predicted ƒ^ì, override to ƒ^ż.
+#     Tightness: CLASSIC is the decoherence marker (both ƒ^ì/ƒ^ż map here);
+#     FROB alone is insufficient (Φ_} with ƒ^ì is possible); FIXPT alone
+#     is insufficient (Ç^Ù also generates FIXPT). Joint FROB+FIXPT+CLASSIC
 #     is the exact O_inf recovery condition from IUG_NON_TRANSMISSIBILITY §5.
 #
 #   T-channel (PARTIAL COLLAPSE):
@@ -1334,13 +1334,13 @@ def probe_entry(
 #
 #   D-channel (PARTIAL COLLAPSE):
 #     LCARD+HOLO → Ð_ω. LCARD (inaccessible cardinal) uniquely identifies
-#     Ð_ω/φ̂_3; HOLO is shared with Þ_O but LCARD distinguishes.
+#     Ð_ω/⊙_3; HOLO is shared with Þ_O but LCARD distinguishes.
 #     Joint LCARD+HOLO → Ð_ω, not Ð_;.
 #
 #   Gamma-channel (RESIDUAL COLLAPSE):
-#     DIRECTED_EDGE+TAU → ɢ_ˌ. The v0.5.76 fix added directed non-commutative
-#     encoding; these tokens appear only in ɢ_ˌ template. If encoder still
-#     predicts ɢ_^ (older templates or ambiguous context), the router corrects.
+#     DIRECTED_EDGE+TAU → ɢ^ˌ. The v0.5.76 fix added directed non-commutative
+#     encoding; these tokens appear only in ɢ^ˌ template. If encoder still
+#     predicts ɢ^∧ (older templates or ambiguous context), the router corrects.
 
 from dataclasses import dataclass as _dataclass
 from typing import List as _List
@@ -1361,14 +1361,14 @@ DEFAULT_ZFC_SLOTS: _List[ZFCSpecialistSlot] = [
     # F-channel: O_inf loophole — the "quantum workaround"
     # Requires HOLO in addition to FROB+FIXPT+CLASSIC: HOLO only appears in Þ_O / Ð_ω
     # templates, so this fires only when imscriptive topology or dimensionality is also present.
-    # Without HOLO the false-positive rate is ~100% for any Φ_}+φ̂_ÿ+ƒ_ì system
+    # Without HOLO the false-positive rate is ~100% for any Φ_}+⊙_ÿ+ƒ^ì system
     # (e.g., IsingNavigator, swendsen_wang — both have T_box+Ð_C, no HOLO).
     ZFCSpecialistSlot(
         name            = "ƒ_recovery",
         primitive       = "ƒ",
         evidence_tokens = ["CLASSIC", "FROB", "FIXPT", "HOLO"],
-        wrong_pred      = "ƒ_ì",
-        correction      = "ƒ_ż",
+        wrong_pred      = "ƒ^ì",
+        correction      = "ƒ^ż",
         priority        = 0,
     ),
     # T-channel: imscriptive topology recovery
@@ -1394,8 +1394,8 @@ DEFAULT_ZFC_SLOTS: _List[ZFCSpecialistSlot] = [
         name            = "ɢ_recovery",
         primitive       = "ɢ",
         evidence_tokens = ["DIRECTED_EDGE", "TAU"],
-        wrong_pred      = "ɢ_^",
-        correction      = "ɢ_ˌ",
+        wrong_pred      = "ɢ^∧",
+        correction      = "ɢ^ˌ",
         priority        = 3,
     ),
 ]

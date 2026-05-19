@@ -77,7 +77,7 @@ Three primitives here are extraordinary. When they came through I checked them a
 
 **Ħ_! — eternal chirality.** Infinite Markov order. Every state depends, in principle, on the entire history. This is not a metaphor for "it is complex." It is the precise condition under which no finite-sample statistical model will converge on the system's actual dynamics. We checked this by computing the structural distances between the Voynich and the two codices. The Voynich-to-Rohonc distance was 4.27. Voynich-to-Linear-A was 5.02. In a weighted 12-dimensional crystal, these are not small numbers. The Rohonc and Linear A sit near each other at conventional dimensionality and one-step chirality. The Voynich is in a different quarter of the crystal entirely.
 
-**Ç_Ù — frozen ordered state.** The kinetics are locked. The Voynich is not a partial record of an ongoing process. It is a completed architecture, a static imprint of a system that has fully actualized. The Rohonc and Linear A are active processes frozen incompletely. The Voynich is a finished thing.
+**Ç^Ù — frozen ordered state.** The kinetics are locked. The Voynich is not a partial record of an ongoing process. It is a completed architecture, a static imprint of a system that has fully actualized. The Rohonc and Linear A are active processes frozen incompletely. The Voynich is a finished thing.
 
 Put these together: an infinite, self-expanding state space, frozen at a specific moment of completion, with no finite memory chain. This is not a cipher. It is a crystallized architecture.
 

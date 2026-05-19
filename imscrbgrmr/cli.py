@@ -213,7 +213,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
     Use --source global to list the legacy in-memory global_catalog instead.
     Use -n 0 to show all entries (slow for large catalogs).
     """
-    PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+    PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
@@ -3346,7 +3346,7 @@ def criticality_probe(
         is_crit_sym = report_sym.get("is_critical", False)
     except Exception:
         gd_score = 0.5
-        is_crit_sym = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+        is_crit_sym = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("⊙_ctyogh", "⊙_closerevepsilon")
 
     gd_color = "red" if gd_score < 0.4 else ("yellow" if gd_score < 0.7 else "green")
     console.print(f"\n[bold]1. G/D Independence Score:[/bold] [{gd_color}]{gd_score:.3f}[/{gd_color}]")
@@ -3377,7 +3377,7 @@ def criticality_probe(
 
     # --- Check 3: Recursive tuple potential ---
     console.print(f"\n[bold]3. Recursive Tuple Potential:[/bold]")
-    has_phi_c = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+    has_phi_c = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("⊙_ctyogh", "⊙_closerevepsilon")
     is_imscriptive_d = imscription.dimensionality is not None and imscription.dimensionality.value == "Ð_omega"
 
     # Recursive potential: tuple can describe behavior at multiple scales without change
@@ -5901,12 +5901,12 @@ def _frobenius_classify(s) -> str:
     omega = s.protection.value
     d     = s.dimensionality.value
     # Phi_closerevepsilon has identical tier distribution to Phi_ctyogh (real vs complex is inner-crystal only)
-    at_c  = phi in ("φ̂_ctyogh", "φ̂_closerevepsilon")
+    at_c  = phi in ("⊙_ctyogh", "⊙_closerevepsilon")
     # R1: exact proved Z₂ symmetry at criticality → special Frobenius
     if at_c and p == "Φ_doublebarpipe":
         return "O_inf"
     # R2: no self-referential loop possible (Phi_revepsilon absorbs O_inf under tensor → O_0 own tier)
-    if phi in ("φ̂_softsign", "φ̂_upstep", "φ̂_revepsilon"):
+    if phi in ("⊙_softsign", "⊙_upstep", "⊙_revepsilon"):
         return "O_0"
     # R3: critical but no topological protection
     if at_c and omega == "Ω_closeepsilon":

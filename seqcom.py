@@ -87,7 +87,7 @@ dur = 0.6                     # default duration for each sound (seconds)
 gap = np.zeros(int(0.1 * fs)) # silence between sounds
 
 # =============================================================================
-# 1. φ̂_ÿ  (Phi‑hat with y‑diaeresis)
+# 1. ⊙_ÿ  (Phi‑hat with y‑diaeresis)
 # =============================================================================
 # Voiceless bilabial fricative shaped by [ʉ] (centralized rounded close vowel)
 noise = bandpass_noise(dur, fs, 200, 1500, order=4)
@@ -165,7 +165,7 @@ tone = 0.2 * np.sin(2 * np.pi * freq * t)
 snd7 = normalize(noise * 0.7 + tone)
 
 # =============================================================================
-# 8. Ç_Ù  (C‑cedilla with U‑grave)
+# 8. Ç^Ù  (C‑cedilla with U‑grave)
 # =============================================================================
 # [s] with [u] rounding (very low second formant), falling pitch
 noise = bandpass_noise(dur, fs, 500, 1500, order=4)   # low‑frequency hiss

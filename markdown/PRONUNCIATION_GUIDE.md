@@ -163,21 +163,21 @@ Glottal stop followed immediately by an alveolar affricate. Throat closes with a
 
 ## F — Fidelity
 
-### `ƒ_ì`
+### `ƒ^ì`
 
 **IPA:** /ɬ/  
 **Sounds like:** Welsh 'll' in 'Llanfair'  
 
 Voiceless lateral fricative. Tongue tip touches the ridge behind the upper teeth (as for 'l'), but instead of voicing, air is forced over both sides of the tongue with friction — the 'll' in Welsh place names.
 
-### `ƒ_ð`
+### `ƒ^ð`
 
 **IPA:** /ð/  
 **Sounds like:** like 'th' in 'this'  
 
 Voiced dental fricative. Tongue tip between or just behind the upper teeth, voice on — 'th' in 'this', 'the', 'there'. Contrast with voiceless /θ/ in 'think'.
 
-### `ƒ_ż`
+### `ƒ^ż`
 
 **IPA:** /ʔ/  
 **Sounds like:** glottal stop — 'uh-oh' catch  
@@ -188,35 +188,35 @@ Glottal stop. The vocal folds close completely, briefly halting all airflow, the
 
 ## K — Kinetics
 
-### `Ç_-`
+### `Ç^-`
 
 **IPA:** /ɣ/  
 **Sounds like:** Spanish 'g' in 'agua'  
 
 Voiced velar fricative. The back of the tongue approaches but does not touch the velum, and voice flows through with friction — the softened 'g' between vowels in Spanish 'agua', 'amigo'. A voiced version of the Scottish 'ch' in 'loch'.
 
-### `Ç_W`
+### `Ç^W`
 
 **IPA:** /ɯ/  
 **Sounds like:** back 'oo' with spread lips  
 
 Close back unrounded vowel. Like the 'oo' in 'food' but with lips completely flat and spread — the opposite of rounding. Common in Korean (으), Turkish (ı), Japanese (u in many contexts).
 
-### `Ç_@`
+### `Ç^@`
 
 **IPA:** /ə/  
 **Sounds like:** schwa — 'uh' resting vowel  
 
 Mid central vowel. The vocal tract at rest — tongue mid-height, mid-front-back, lips neutral. The default reduced vowel in English: 'a'bout, 'comm'a, 'bett'er. The acoustic center of gravity.
 
-### `Ç_Ù`
+### `Ç^Ù`
 
 **IPA:** /tʃ/  
 **Sounds like:** like 'ch' in 'church'  
 
 Voiceless palato-alveolar affricate. Tongue tip at the ridge behind the upper teeth, releasing into a 'sh'-like hiss — 'ch' in 'church', 'cheese', 'chair'.
 
-### `Ç_λ`
+### `Ç^λ`
 
 **IPA:** /l/  
 **Sounds like:** like 'l' in 'light'  
@@ -239,41 +239,41 @@ Voiced bilabial fricative. Both lips brought close together but not fully touchi
 **IPA:** /ɣ/  
 **Sounds like:** Spanish 'g' in 'agua'  
 
-Voiced velar fricative. Same as Ç_- — back of tongue near but not touching the velum, voice flowing through with turbulence. Greek γ, Dutch 'g', Arabic غ.
+Voiced velar fricative. Same as Ç^- — back of tongue near but not touching the velum, voice flowing through with turbulence. Greek γ, Dutch 'g', Arabic غ.
 
 ### `Γ_ʔ`
 
 **IPA:** /ʔ/  
 **Sounds like:** glottal stop — 'uh-oh' catch  
 
-Glottal stop. Same as ƒ_ż — complete closure of the vocal folds, a hard catch, then release. The IPA symbol ʔ is derived from the reversed apostrophe, and aleph (א) in Semitic alphabets represents this sound.
+Glottal stop. Same as ƒ^ż — complete closure of the vocal folds, a hard catch, then release. The IPA symbol ʔ is derived from the reversed apostrophe, and aleph (א) in Semitic alphabets represents this sound.
 
 ---
 
 ## Γ — Interaction grammar
 
-### `ɢ_^`
+### `ɢ^∧`
 
 **IPA:** /k/  
 **Sounds like:** like 'k' in 'key'  
 
 Voiceless velar stop. Back of tongue presses against the velum, air pressure builds, then releases abruptly with no voice — 'k' in 'key', 'cat', 'back'.
 
-### `ɢ_˝`
+### `ɢ^˝`
 
 **IPA:** /r…r/  
 **Sounds like:** alternating rolled 'r'  
 
 Repeated alveolar trill. Two rapid tongue-tip flutters in sequence, separated by a brief voiced interval — the oscillation of an alternating path.
 
-### `ɢ_ˌ`
+### `ɢ^ˌ`
 
 **IPA:** /ə/  
 **Sounds like:** weak schwa — unstressed beat  
 
-Mid central vowel at secondary stress. The same neutral 'uh' as Ç_@, but positioned at the lighter of two stress beats — the secondary pulse in a compound word or polysyllabic sequence.
+Mid central vowel at secondary stress. The same neutral 'uh' as Ç^@, but positioned at the lighter of two stress beats — the secondary pulse in a compound word or polysyllabic sequence.
 
-### `ɢ_Ş`
+### `ɢ^Ş`
 
 **IPA:** /aː/  
 **Sounds like:** long open 'aah'  
@@ -317,7 +317,7 @@ Open-mid front unrounded vowel. Jaw open, tongue forward and mid-low — 'e' in 
 **IPA:** /aː/  
 **Sounds like:** long open 'aah' — rising or sustained  
 
-Long open vowel, same acoustic quality as ɢ_Ş. Here the connotation is supercritical: the voice is at full aperture, sustained or rising — past the threshold into the runaway state.
+Long open vowel, same acoustic quality as ɢ^Ş. Here the connotation is supercritical: the voice is at full aperture, sustained or rising — past the threshold into the runaway state.
 
 ---
 

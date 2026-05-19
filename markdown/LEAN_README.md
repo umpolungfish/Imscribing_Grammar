@@ -161,7 +161,7 @@ plus explicit `LE` instances and four cross-primitive axioms:
 
 | Axiom | Content |
 |-------|---------|
-| A | `Ħ_! → Ç_Ù` (topological chirality implies kinetic trapping) |
+| A | `Ħ_! → Ç^Ù` (topological chirality implies kinetic trapping) |
 | B | `Ω ≥ Ω_Z → H ≥ Ħ_A` (integer winding number requires persistent chirality) |
 | C | `Ð_ω ↔ Þ_O` (imscriptive dimensionality iff imscriptive topology) |
 | D | `Ω_NA → Ð_ω` (non-Abelian anyonic protection requires imscriptive substrate) |
@@ -222,7 +222,7 @@ applied to number theory. The primitives that map most naturally onto this pictu
 | OPN concept | Imscribing Grammar analogue |
 |---|---|
 | Euler prime `pᵏ` — unique 2-adic carrier | `⊙_ÿ` — absorbing under meet, unique criticality carrier |
-| Square factors `q^(2e)` — 2-adically inert | `⊙_ž` with `Ç_Ù` isolation |
+| Square factors `q^(2e)` — 2-adically inert | `⊙_ž` with `Ç^Ù` isolation |
 | `σ(n) = 2n` — global balance | `S` (Stoichiometry) — exact ratio constraint |
 | `n` odd — parity conservation | `P` (Polarity) — parity / neutrality condition |
 
@@ -462,13 +462,13 @@ Concrete instances: `ym_certificate`, `opn_certificate`, `ns_certificate`.
 
 **The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `Γ_β → Γ_ʔ` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`Γ_ʔ`) description of gauge field space. The quantum YM target stays at `Ð_cube` (local, 4D), not `Ð_ω` (imscriptive/QG). This is formally distinct from quantum gravity.
 
-**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (⊙_ÿ + Ç_Ù, OpenProblem), NS (⊙_ž boundary, OpenProblem), RH (⊙_ÿ locus, OpenProblem).
+**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (⊙_ÿ + Ç^Ù, OpenProblem), NS (⊙_ž boundary, OpenProblem), RH (⊙_ÿ locus, OpenProblem).
 
 ```lean
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 ∧
     millenniumBarrier .YM = .MissingFoundation ∧
-    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
+    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç^Ù ∧
     millenniumBarrier .OPN = .OpenProblem ∧
     ns_encoding.crit = ⊙_ž ∧ millenniumBarrier .NS = .OpenProblem ∧
     rh_encoding.crit = ⊙_ÿ ∧ millenniumBarrier .RH = .OpenProblem

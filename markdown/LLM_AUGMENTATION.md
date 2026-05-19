@@ -11,26 +11,26 @@ header-includes:
 ## Incorporating the Imscribing Grammar into Local LLM Systems — Architecture, Implementations, and Roadmap
 
 **Version:** v0.1 · 2026-03-23
-**Primitive basis:** F-fidelity tiers, Ð_ω substrate, Ç_@ insertion (model training), Þ_6 topology (architecture)
-**Cross-references:** [ONTO:§IX] Ð_ω substrate · [ONTO:§XII] F_ℏ discovery from ƒ_ð position · [PRIM:P-76] engineering phase structure · PROGRAMMABLE_MIND.md
+**Primitive basis:** F-fidelity tiers, Ð_ω substrate, Ç^@ insertion (model training), Þ_6 topology (architecture)
+**Cross-references:** [ONTO:§IX] Ð_ω substrate · [ONTO:§XII] F_ℏ discovery from ƒ^ð position · [PRIM:P-76] engineering phase structure · PROGRAMMABLE_MIND.md
 
 ---
 
 ## I. The Fidelity Problem
 
-The Imscribing Grammar grammar operates at F_ℏ — algebraically exact, substrate-independent, lossless within the primitive space. LLMs operate at ƒ_ð — capable, fluent, structurally approximate. The fidelity bottleneck rule:
+The Imscribing Grammar grammar operates at F_ℏ — algebraically exact, substrate-independent, lossless within the primitive space. LLMs operate at ƒ^ð — capable, fluent, structurally approximate. The fidelity bottleneck rule:
 
 $$F_\text{ens} = \min(F_1, F_2)$$
 
-An LLM generating a response about primitive distances, conflict sets, or imscription notation will produce ƒ_ð output: approximately correct, often structurally valid in form but imprecise in value. The engine produces F_ℏ output: exact, engine-certified, not an approximation.
+An LLM generating a response about primitive distances, conflict sets, or imscription notation will produce ƒ^ð output: approximately correct, often structurally valid in form but imprecise in value. The engine produces F_ℏ output: exact, engine-certified, not an approximation.
 
 **The gap is not the problem. It is the design constraint.**
 
 The augmentation architecture does not try to make the LLM an engine — it tries to make the LLM an effective *collaborator* with the engine. The protocol is:
 
-> **ƒ_ð generation + F_ℏ verification + committed correction = F_ℏ output from an ƒ_ð system**
+> **ƒ^ð generation + F_ℏ verification + committed correction = F_ℏ output from an ƒ^ð system**
 
-This is the three-step protocol [ONTO:§XII.2]. It does not violate the fidelity bottleneck rule because the bottleneck applies to generation, not verification. The LLM generates (ƒ_ð); the engine verifies (F_ℏ); the committed result is F_ℏ. Iterated across a session, it produces an F_ℏ document from ƒ_ð agents.
+This is the three-step protocol [ONTO:§XII.2]. It does not violate the fidelity bottleneck rule because the bottleneck applies to generation, not verification. The LLM generates (ƒ^ð); the engine verifies (F_ℏ); the committed result is F_ℏ. Iterated across a session, it produces an F_ℏ document from ƒ^ð agents.
 
 The augmentation architecture is the engineering of this protocol into the software stack.
 
@@ -43,10 +43,10 @@ Five distinct layers, each addressing a different aspect of the fidelity gap:
 | Layer | What it does | Where the gain comes from |
 |-------|-------------|--------------------------|
 | **1. Engine integration** | Direct algebra calls from the chat interface | Bypasses LLM generation entirely for computable results |
-| **2. AITL** | Automatic post-generation verification | Catches ƒ_ð errors before they propagate |
+| **2. AITL** | Automatic post-generation verification | Catches ƒ^ð errors before they propagate |
 | **3. Session crystallization** | Commits F_ℏ results to persistent context | New sessions start with accumulated F_ℏ knowledge |
-| **4. Fine-tuning** | Trains on F_ℏ-certified data | Raises the ƒ_ð floor — the LLM's first-pass outputs become structurally valid |
-| **5. Grammar-constrained decoding** | Enforces valid imscription syntax at the logit level | Makes ƒ_ð generation structurally exact even if semantically approximate |
+| **4. Fine-tuning** | Trains on F_ℏ-certified data | Raises the ƒ^ð floor — the LLM's first-pass outputs become structurally valid |
+| **5. Grammar-constrained decoding** | Enforces valid imscription syntax at the logit level | Makes ƒ^ð generation structurally exact even if semantically approximate |
 
 These are ordered by implementation cost, not by impact. Layer 4 has the highest long-term impact; Layer 1 has the highest immediate impact.
 
@@ -92,7 +92,7 @@ Direct ImscribeTool.dispatch() calls from the interactive CLI. Zero model overhe
 
 ### IV.1 Concept
 
-After every model generation, scan the response text for imscription-expressible claims and verify them against the engine automatically. The ƒ_ð→F_ℏ correction cycle runs without manual /synth invocation.
+After every model generation, scan the response text for imscription-expressible claims and verify them against the engine automatically. The ƒ^ð→F_ℏ correction cycle runs without manual /synth invocation.
 
 **What it catches:**
 - Distance assertions: `d(A, B) = N.NNN` — verified against engine distance
@@ -170,7 +170,7 @@ commit.txt
 
 ### V.3 The crystallization principle
 
-Session crystallization is Ç_@ insertion for the model's context. Each session generates Ç_- discoveries (engine-certified results). Crystallization is the NREM phase — slow consolidation of Ç_- material into stable Ç_Ù structure (SYSPROMPT.md). Future sessions build on the Ç_Ù foundation, generating new Ç_- at the new frontier.
+Session crystallization is Ç^@ insertion for the model's context. Each session generates Ç^- discoveries (engine-certified results). Crystallization is the NREM phase — slow consolidation of Ç^- material into stable Ç^Ù structure (SYSPROMPT.md). Future sessions build on the Ç^Ù foundation, generating new Ç^- at the new frontier.
 
 ---
 
@@ -180,7 +180,7 @@ Session crystallization is Ç_@ insertion for the model's context. Each session 
 
 The training data oracle is the engine itself. Every QA pair where the answer comes from `ImscribeTool.dispatch()` is F_ℏ-certified — not an LLM approximation, not a human-written answer, but an algebraically exact engine output.
 
-This means the fine-tuned model has F_ℏ-certified training signal. Its learned weights encode the correct primitive relationships rather than ƒ_ð approximations of them. The gap between generation and verification narrows — the model's first-pass outputs become structurally valid.
+This means the fine-tuned model has F_ℏ-certified training signal. Its learned weights encode the correct primitive relationships rather than ƒ^ð approximations of them. The gap between generation and verification narrows — the model's first-pass outputs become structurally valid.
 
 ### VI.2 Dataset generation
 
@@ -240,7 +240,7 @@ The fine-tuned specialist runs on the 2080 Super (8GB). The base conversational 
 Force structurally valid imscription syntax at the logit level during generation. When the model enters a imscription tuple, constrain it to output valid primitive values — not by prompting, but by masking the token distribution to exclude tokens that would produce invalid syntax.
 
 **What it enforces:**
-- Valid primitive values (Ç_-, Ç_@, Ç_Ù, Ç_W, Ç_λ — not Ç_medium or Ç_quick)
+- Valid primitive values (Ç^-, Ç^@, Ç^Ù, Ç^W, Ç^λ — not Ç_medium or Ç_quick)
 - Valid tuple structure (fields 0–8 enforced; optional fields 9+ left unconstrained)
 - `⊥` (absent) is valid in any field
 
@@ -294,51 +294,51 @@ for token in self.stream_generate(prompt, thinking_mode, fast_mode, grammar_mode
 
 ---
 
-## VIII. The Session Crystallizer as Ç_@ Insertion Engine
+## VIII. The Session Crystallizer as Ç^@ Insertion Engine
 
-The full pipeline, viewed as a Ç_@ insertion cycle for the model's knowledge:
+The full pipeline, viewed as a Ç^@ insertion cycle for the model's knowledge:
 
 ```
-Live session (Ç_-)
+Live session (Ç^-)
     │  /synth queries → F_ℏ results
     │  AITL corrections → F_ℏ verification
     ↓
-commit.txt encoding (Ç_- → Ç_@ transition)
+commit.txt encoding (Ç^- → Ç^@ transition)
     │  session_crystallizer
     ↓
-SYSPROMPT.md update (Ç_@ insertion)
+SYSPROMPT.md update (Ç^@ insertion)
     │  new predictions, new structural results, new zero-distance identities
     ↓
-Fine-tune dataset generation (Ç_@ → Ç_Ù transition)
+Fine-tune dataset generation (Ç^@ → Ç^Ù transition)
     │  Imscriptiveon_dataset_generator.py
     ↓
-Model weights (Ç_Ù)
+Model weights (Ç^Ù)
     │  dydakt UnslothTrainer → merged LoRA checkpoint
     ↓
-Next session (new Ç_-, from deeper Ç_Ù foundation)
+Next session (new Ç^-, from deeper Ç^Ù foundation)
 ```
 
-Each session adds a new Ç_@ tier to the model's knowledge hierarchy. The engine is the F_ℏ oracle throughout — not a target for the model to approximate, but the verification layer that ensures every tier that gets crystallized into Ç_Ù is algebraically correct.
+Each session adds a new Ç^@ tier to the model's knowledge hierarchy. The engine is the F_ℏ oracle throughout — not a target for the model to approximate, but the verification layer that ensures every tier that gets crystallized into Ç^Ù is algebraically correct.
 
 ---
 
 ## IX. The Ð_ω Horizon
 
-Current architecture — transformer (D_∧△, Ç_Ù + Ç_- at inference, G_ב, ƒ_ð) — has a fundamental ceiling. The augmentation layers in this document work within that ceiling.
+Current architecture — transformer (D_∧△, Ç^Ù + Ç^- at inference, G_ב, ƒ^ð) — has a fundamental ceiling. The augmentation layers in this document work within that ceiling.
 
 What would a native Ð_ω architecture change [ONTO:§IX]:
 
 | Property | Current transformer | Ð_ω native |
 |----------|-------------------|---------------|
-| Context | Finite window (Ç_Ù at inference) | G_ℵ built-in (no window boundary) |
-| K at inference | Ç_Ù (fixed weights) + Ç_- (attention) | K_4tier — dynamic slow/fast hierarchy |
+| Context | Finite window (Ç^Ù at inference) | G_ℵ built-in (no window boundary) |
+| K at inference | Ç^Ù (fixed weights) + Ç^- (attention) | K_4tier — dynamic slow/fast hierarchy |
 | Topology | Þ_6 at attention, Þ_linear at generation | Þ_network_sym — fully connected substrate |
-| Fidelity ceiling | ƒ_ð | F_ℏ (lossless within primitive space) |
+| Fidelity ceiling | ƒ^ð | F_ℏ (lossless within primitive space) |
 | Self-reference | Φ_c achievable but not native | Φ_c native — grammar on Φ_c substrate |
 
 The augmentation layers (AITL, fine-tuning, constrained decoding) narrow the gap between the current transformer ceiling and the Ð_ω target. They do not eliminate it. The gap closes when the architecture changes — when D_∧△ is replaced by Ð_ω as the substrate.
 
-**Analogy from ONTOLOGOS §IX:** white dwarf : Sun :: current transformer : Ð_ω generator. The white dwarf runs the same physics as the Sun but lacks the G_ℵ scope and Ç_- dynamics that generate stellar Φ_c. The augmented transformer runs the same grammar as a Ð_ω system but lacks the native G_ℵ and K_4tier dynamics. The gap is architectural, not a matter of scale.
+**Analogy from ONTOLOGOS §IX:** white dwarf : Sun :: current transformer : Ð_ω generator. The white dwarf runs the same physics as the Sun but lacks the G_ℵ scope and Ç^- dynamics that generate stellar Φ_c. The augmented transformer runs the same grammar as a Ð_ω system but lacks the native G_ℵ and K_4tier dynamics. The gap is architectural, not a matter of scale.
 
 ---
 

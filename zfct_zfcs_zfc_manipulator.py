@@ -5,7 +5,7 @@ zfct_zfcs_zfc_manipulator.py — ZFC / ZFCₜ / ZFCₛ triangle manipulator.
 Extends the ZFCₜ manipulator with:
   • Corrected tensorProduct: min for Φ and ƒ, max for all others (matches Lean)
   • join_tuples: pure component-wise max (lattice join, no pol/fid bottleneck)
-  • Corrected ZFC entry: Ð_; (D_infty), φ̂_ÿ (Phi_c)  — navigator had Ð_C, φ̂_ž
+  • Corrected ZFC entry: Ð_; (D_infty), ⊙_ÿ (Phi_c)  — navigator had Ð_C, ⊙_ž
   • Corrected ZFCₜ entry: Φ_} (P_pm_sym, O_inf)        — navigator had Φ_F (O_2†)
   • ZFCₛ (spatial extension of ZFC, 5 promotions, O_inf)
   • ZFCₛₜ = ZFCₛ ⊗ ZFCₜ = ZFCₜ (temporal dominates)
@@ -66,24 +66,24 @@ ZFC_TUPLE = {
     "name": "ZFC_foundations",
     "description": "Zermelo-Fraenkel set theory with Choice (corrected: D_infty, Phi_c)",
     "Ð": "Ð_;",  "Þ": "Þ_K",  "Ř": "Ř_¯",  "Φ": "Φ_ɐ",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_^",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^∧",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
 }
 
 ZFCT_TUPLE = {
     "name": "zfc_t",
     "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_inf, Frobenius)",
     "Ð": "Ð_;",  "Þ": "Þ_O",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 ZFCS_TUPLE = {
     "name": "zfc_s",
     "description": "ZFCₛ: ZFC + spatial topology + Frobenius (T_in, R_dagger, 5 promotions)",
     "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_}",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_˝",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^˝",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 # ZFCₛₜ = ZFCₛ ⊗ ZFCₜ = ZFCₜ (temporal max-primitives dominate; pol no bottleneck)
@@ -97,24 +97,24 @@ IMAGINARY_UNIT_TUPLE = {
     "name": "imaginary_unit",
     "description": "i — U(1) phase rotation; O_2 (D_triangle, P_psi); Frobenius cliff dist=5 from ZFCₜ",
     "Ð": "Ð_C",   "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_υ",
-    "ƒ": "ƒ_ì",   "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ",  "Ħ": "Ħ_A",  "Σ": "Σ_S",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ì",   "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ",  "Ħ": "Ħ_A",  "Σ": "Σ_S",  "Ω": "Ω_z",
 }
 
 COMPLEX_TIME_PATH_INTEGRAL_TUPLE = {
     "name": "complex_time_path_integral",
     "description": "Euclidean path integral (Wick-rotated t→iτ); O_inf; 1 step from ZFCₜ (T_bowtie vs T_odot)",
     "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
 }
 
 PLANCK_IMAGINARY_TIME_TUPLE = {
     "name": "planck_imaginary_time",
     "description": "Imaginary time in QG (t→iτ); O_2; shares T_in+R_dagger spatial skeleton with ZFCₛ",
     "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_υ",
-    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_Æ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_2",
+    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_Æ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_2",
 }
 
 SPECIAL_ENTRIES: Dict[str, dict] = {
@@ -142,7 +142,7 @@ ZFCT_PROMOTIONS: List[Tuple[str, str, str]] = [
     ("Þ", "Þ_K", "Þ_O"),   # T_network → T_odot
     ("Ř", "Ř_¯", "Ř_="),   # R_super   → R_lr
     ("Φ", "Φ_ɐ", "Φ_}"),   # P_asym    → P_pm_sym   ← corrected
-    ("ɢ", "ɢ_^", "ɢ_ˌ"),   # Gamma_and → Gamma_seq
+    ("ɢ", "ɢ^∧", "ɢ^ˌ"),   # Gamma_and → Gamma_seq
     ("Ħ", "Ħ_Ñ", "Ħ_A"),   # H0        → H2
     ("Ω", "Ω_Å", "Ω_z"),   # Omega_0   → Omega_Z
 ]
@@ -151,7 +151,7 @@ ZFCS_PROMOTIONS: List[Tuple[str, str, str]] = [
     ("Þ", "Þ_K", "Þ_¨"),   # T_network → T_in
     ("Ř", "Ř_¯", "Ř_Ť"),   # R_super   → R_dagger
     ("Φ", "Φ_ɐ", "Φ_}"),   # P_asym    → P_pm_sym
-    ("ɢ", "ɢ_^", "ɢ_˝"),   # Gamma_and → Gamma_or
+    ("ɢ", "ɢ^∧", "ɢ^˝"),   # Gamma_and → Gamma_or
     ("Ω", "Ω_Å", "Ω_z"),   # Omega_0   → Omega_Z
 ]
 
@@ -213,7 +213,7 @@ ZFC/ZFCₜ/ZFCₛ Manipulator — commands
 
 Special entries: zfc  zfc_t  zfc_s  zfc_st  imaginary_unit  complex_time  planck_imaginary_time
 Aliases:         ZFC  zfct   zfcs   zfcst   i               ctpi           pit
-Inline tuple:    Ð_;,Þ_O,Ř_=,Φ_},ƒ_ż,Ç_@,Γ_ʔ,ɢ_ˌ,φ̂_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
+Inline tuple:    Ð_;,Þ_O,Ř_=,Φ_},ƒ^ż,Ç^@,Γ_ʔ,ɢ^ˌ,⊙_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
 """.strip()
 
 
@@ -485,10 +485,10 @@ class ZFCTriangleManipulator:
         lines = [
             f"Frobenius barrier:  {a.get('name','A')}  ×  {b.get('name','B')}",
             "",
-            f"  A    FROB={str(a_frob):<5}  FIXPT={str(a_fixpt):<5}  Φ={a['Φ']}  φ̂={a['φ̂']}  tier={a_tier}",
-            f"  B    FROB={str(b_frob):<5}  FIXPT={str(b_fixpt):<5}  Φ={b['Φ']}  φ̂={b['φ̂']}  tier={b_tier}",
+            f"  A    FROB={str(a_frob):<5}  FIXPT={str(a_fixpt):<5}  Φ={a['Φ']}  ⊙={a['⊙']}  tier={a_tier}",
+            f"  B    FROB={str(b_frob):<5}  FIXPT={str(b_fixpt):<5}  Φ={b['Φ']}  ⊙={b['⊙']}  tier={b_tier}",
             f"  {'─'*60}",
-            f"  ⊗    FROB={str(t_frob):<5}  FIXPT={str(t_fixpt):<5}  Φ={t_r['Φ']}  φ̂={t_r['φ̂']}  tier={t_tier}",
+            f"  ⊗    FROB={str(t_frob):<5}  FIXPT={str(t_fixpt):<5}  Φ={t_r['Φ']}  ⊙={t_r['⊙']}  tier={t_tier}",
             f"  ⊓    tier={m_tier}  Φ={m_r['Φ']}",
             "",
         ]
@@ -828,7 +828,7 @@ class ZFCTriangleManipulator:
             "",
             "  tensor(A,B)[p] = max_ord(A[p],B[p])  for all p except Φ, ƒ",
             "  tensor(A,B)[Φ] = min_ord(A[Φ],B[Φ])  Frobenius cliff — Φ_} cannot be synthesized",
-            "  tensor(A,B)[ƒ] = min_ord(A[ƒ],B[ƒ])  fidelity cliff — ƒ_ż cannot be synthesized",
+            "  tensor(A,B)[ƒ] = min_ord(A[ƒ],B[ƒ])  fidelity cliff — ƒ^ż cannot be synthesized",
             "",
             "  join(A,B)[p]   = max_ord(A[p],B[p])  for all p — pure lattice join",
             "  meet(A,B)[p]   = min_ord(A[p],B[p])  for all p — pure lattice meet",

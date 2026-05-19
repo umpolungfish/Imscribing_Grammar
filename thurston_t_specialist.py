@@ -2,7 +2,7 @@
 thurston_t_specialist.py — T-aware topology specialist for H3 vs Ħ_A×R.
 
 Probe 4 grammar diagnosis:
-  The H3 Ç_Ù specialist (thurston_h3_specialist.py) achieves 94% combined
+  The H3 Ç^Ù specialist (thurston_h3_specialist.py) achieves 94% combined
   accuracy = 94% backbone accuracy — no improvement. Root cause:
 
   $d(H3, Ħ_A \\times \\mathbb{R}) = 3.6056$, $T$ contributes 80% of this distance
@@ -201,7 +201,7 @@ class TTopologySpecialist(nn.Module):
 
     Structural type (parallel delegate — never tensor-composed with backbone):
       $\\langle D_\\triangle;\\ T_\\text{in};\\ R_\\text{cat};\\ P_\\psi;\\ F_\\eth;\\
-        K_\\text{mod};\\ G_\\text{beth};\\ \\Gamma_\\text{and};\\ \\φ̂_ÿ;\\ H_1;\\ 1{:}1;\\ \\Ω_Å \\rangle$
+        K_\\text{mod};\\ G_\\text{beth};\\ \\Gamma_\\text{and};\\ \\⊙_ÿ;\\ H_1;\\ 1{:}1;\\ \\Ω_Å \\rangle$
 
       $P_\\psi$: asymmetric binary discriminator — no Frobenius symmetry.
       $T_\\text{in}$: the specialist itself operates on product-structured input
@@ -355,7 +355,7 @@ def train_t_specialist(
     If T-specialist accuracy < 85%: the synthetic manifolds don't have detectable
     T-structure (test failure, not a grammar failure).
     If T-specialist accuracy > 90%: T features are sufficient, confirming that the
-    original Ç_Ù Lanczos specialist was solving the wrong primitive.
+    original Ç^Ù Lanczos specialist was solving the wrong primitive.
     """
     model = TTopologySpecialist(hidden_dim=hidden_dim).to(DEVICE)
     opt   = optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
@@ -366,7 +366,7 @@ def train_t_specialist(
     print(f"Feature dim: 9 (frac_norm_near_one, PCA anisotropy, product score, ...)")
     print(f"params={n_params:,}  device={DEVICE}")
     print(f"Grammar prediction: > 90% accuracy from T-features alone")
-    print(f"  (Ç_Ù specialist was addressing K; T-features address T)\n")
+    print(f"  (Ç^Ù specialist was addressing K; T-features address T)\n")
     print(f"  {'Epoch':>6}  {'Loss':>10}  {'Acc':>8}")
     print(f"  {'-'*6}  {'-'*10}  {'-'*8}")
 
@@ -464,7 +464,7 @@ def evaluate_t_specialist_on_confusions(
     print(f"\n  Grammar verdict:")
     if acc_specialist > 0.90:
         print(f"  CONFIRMED — T-features resolve confusion cases.")
-        print(f"  The Ç_Ù Lanczos specialist was addressing the wrong primitive (K, not T).")
+        print(f"  The Ç^Ù Lanczos specialist was addressing the wrong primitive (K, not T).")
         print(f"  T-aware parallel delegation is the correct fix for the H3/Ħ_A×R gap.")
     else:
         print(f"  INCONCLUSIVE — T-features insufficient or backbone confusion margin too broad.")
@@ -565,7 +565,7 @@ def main():
     print(f"Thurston T-Specialist (Test 5)")
     print(f"T-aware H3 vs Ħ_A×R discriminator — parallel delegation")
     print(f"d(H3, Ħ_A×R) = 3.6056; T contributes 80% (Þ_O vs Þ_K)")
-    print(f"Ç_Ù Lanczos specialist: wrong primitive (K, not T)")
+    print(f"Ç^Ù Lanczos specialist: wrong primitive (K, not T)")
     print(f"T-features: bimodal norm distribution, PCA anisotropy, product score")
     print(f"{'='*68}\n")
 

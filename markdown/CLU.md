@@ -30,7 +30,7 @@ The K-tier grammar uses base-10 decades because the observable universe's struct
 Any system transitioning from a regime with characteristic scale $x$ to a regime with characteristic scale $10x$ must cross a structural gate costing exactly 1 CLU = 2.303 nats. This cost is:
 - **Scale-independent**: the same whether $x$ is a reaction rate, a parameter count, a spatial correlation length, or an information capacity
 - **Temperature-independent in structural units**: the CLU is always 2.303 nats; its energy equivalent is $2.303\,RT$ (temperature-dependent), but the structural cost is invariant
-- **Direction-sensitive**: crossings from lower to higher K-tier (Ç_@ → Ç_λ, Ç_Ù → Ç_λ) are gated; the F-floor ratchet makes some crossings irreversible
+- **Direction-sensitive**: crossings from lower to higher K-tier (Ç^@ → Ç^λ, Ç^Ù → Ç^λ) are gated; the F-floor ratchet makes some crossings irreversible
 
 ---
 
@@ -149,7 +149,7 @@ Each log-normal decade boundary is separated by exactly 1 CLU. The width of a lo
 | Transition | Time elapsed | Ratio to next |
 |---|---|---|
 | Abiotic → first life | 3.8 Ga → 3.8 | 1.4× |
-| Life → GOE | 2.7 Ga → 2.7 | 4.5× (GOE Ç_Ù bottleneck) |
+| Life → GOE | 2.7 Ga → 2.7 | 4.5× (GOE Ç^Ù bottleneck) |
 | GOE → Cambrian | 0.6 Ga → 0.6 | 60× (language/civilization extra CLU?) |
 | Cambrian → civilization | 0.01 Ga | — |
 
@@ -184,9 +184,9 @@ The OMNICON_CORE_01 gel-lock transport state (P-94) approaches the Bekenstein bo
 
 ### III.9 Cosmology: Inflationary K-Slow Insertions (P-70)
 
-**Identity:** Inflaton ≡ Higgs ≡ axion as a three-scale Ç_@ identity — the same Ç_@ insertion principle operating at three distinct energy decades in the early universe.
+**Identity:** Inflaton ≡ Higgs ≡ axion as a three-scale Ç^@ identity — the same Ç^@ insertion principle operating at three distinct energy decades in the early universe.
 
-Each cosmological phase transition (inflation → reheating, electroweak → QCD, QCD → hadron epoch) is a K-tier insertion costing +1 CLU. The Hubble tension (P-69) is proposed as evidence that Ç_W dynamics are operative at the cosmological horizon scale — a smoothness condition that the standard Ç_@ ΛCDM model cannot accommodate.
+Each cosmological phase transition (inflation → reheating, electroweak → QCD, QCD → hadron epoch) is a K-tier insertion costing +1 CLU. The Hubble tension (P-69) is proposed as evidence that Ç^W dynamics are operative at the cosmological horizon scale — a smoothness condition that the standard Ç^@ ΛCDM model cannot accommodate.
 
 ---
 

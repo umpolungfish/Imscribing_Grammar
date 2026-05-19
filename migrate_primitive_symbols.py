@@ -11,7 +11,7 @@ Old → New:
   K     → Ç  (U+00C7  cedilla-c)
   G     → Γ  (U+0393  gamma)
   Gamma → ɢ  (U+0262  small-cap G)
-  Phi   → φ̂  (U+03C6 + U+0302  phi + combining circumflex)
+  Phi   → ⊙  (U+03C6 + U+0302  phi + combining circumflex)
   H     → Ħ  (U+0126  h-bar)
   S     → Σ  (U+03A3  sigma)
   Omega → Ω  (U+03A9  omega)
@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent
 # ---------------------------------------------------------------------------
 JSON_KEY_MAP: list[tuple[str, str]] = [
     ("Gamma", "ɢ"),
-    ("Phi",   "φ̂"),
+    ("Phi",   "⊙"),
     ("Omega", "Ω"),
     ("D",     "Ð"),
     ("T",     "Þ"),
@@ -54,7 +54,7 @@ JSON_KEY_MAP: list[tuple[str, str]] = [
 # ---------------------------------------------------------------------------
 VALUE_PREFIXES: list[tuple[str, str]] = [
     ("Gamma_", "ɢ_"),
-    ("Phi_",   "φ̂_"),
+    ("Phi_",   "⊙_"),
     ("Omega_", "Ω_"),
     ("D_",     "Ð_"),
     ("T_",     "Þ_"),

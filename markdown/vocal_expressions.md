@@ -41,16 +41,16 @@ Each primitive is assigned a vocal articulation whose physics mirrors the struct
 - **Φ_}**: Frobenius snap [ǀt͡s] — μ∘δ=id at the critical crossing point
 
 ## F (Fidelity)
-- **ƒ_ì**: deterministic tap [ɾ] — classical, no coherence needed
-- **ƒ_ð**: breathy voice [ɦ] — thermal noise mixed with phonation
-- **ƒ_ż**: coherent whistle [çʷ] — quantum-phase-stable laminar tone
+- **ƒ^ì**: deterministic tap [ɾ] — classical, no coherence needed
+- **ƒ^ð**: breathy voice [ɦ] — thermal noise mixed with phonation
+- **ƒ^ż**: coherent whistle [çʷ] — quantum-phase-stable laminar tone
 
 ## K (Kinetics)
-- **Ç_-**: driven plosive [k] — rapid energy release
-- **Ç_W**: moderate approximant [ɹ] — intermediate timescale
-- **Ç_@**: prolonged nasal hum [ŋ̊ː] — near-equilibrium sustained tone
-- **Ç_Ù**: frozen-order formant [aː] — trapped ordered resonance
-- **Ç_λ**: creaky voice [a̰] — frozen disorder, irregular vibration
+- **Ç^-**: driven plosive [k] — rapid energy release
+- **Ç^W**: moderate approximant [ɹ] — intermediate timescale
+- **Ç^@**: prolonged nasal hum [ŋ̊ː] — near-equilibrium sustained tone
+- **Ç^Ù**: frozen-order formant [aː] — trapped ordered resonance
+- **Ç^λ**: creaky voice [a̰] — frozen disorder, irregular vibration
 
 ## G (Scope)
 - **Γ_β**: local dental tap [ɾ̪] — nearest-neighbor articulation
@@ -58,10 +58,10 @@ Each primitive is assigned a vocal articulation whose physics mirrors the struct
 - **Γ_ʔ**: universal glottal [h] — long-range, whole-tract participation
 
 ## Gamma (Interaction grammar)
-- **ɢ_^**: simultaneous labial-velar [k͡p] — conjunctive co-articulation
-- **ɢ_˝**: fluctuating rhotic [r～ɽ] — alternate articulator paths
-- **ɢ_ˌ**: sequential diphthong [ɑɪ] — ordered temporal progression
-- **ɢ_Ş**: broadcast exclamation [aː] — one-to-all projection
+- **ɢ^∧**: simultaneous labial-velar [k͡p] — conjunctive co-articulation
+- **ɢ^˝**: fluctuating rhotic [r～ɽ] — alternate articulator paths
+- **ɢ^ˌ**: sequential diphthong [ɑɪ] — ordered temporal progression
+- **ɢ^Ş**: broadcast exclamation [aː] — one-to-all projection
 
 ## Phi (Criticality)
 - **⊙_ž**: dead stop [ʔ] — no criticality, no scaling

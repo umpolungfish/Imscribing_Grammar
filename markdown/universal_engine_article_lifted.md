@@ -72,11 +72,11 @@ Each writing system receives a twelve-primitive structural tuple:
 
 | System | Imscription |
 |--------|-------------|
-| Linear A | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| OS reference | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| Rohonc | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ_ì; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| Voynich | ⟨Ð_ω; Þ_O; Ř_=; Φ_F; ƒ_ì; Ç_Ù; Γ_ʔ; ɢ_Ş; ⊙_ÿ; Ħ_!; Σ_S; Ω_z⟩ |
-| Hebrew | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
+| Linear A | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
+| OS reference | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
+| Rohonc | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ì; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
+| Voynich | ⟨Ð_ω; Þ_O; Ř_=; Φ_F; ƒ^ì; Ç^Ù; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_S; Ω_z⟩ |
+| Hebrew | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
 
 Three of these are $O_{\infty}$ systems. The Voynich is distinguished by its trap kinetics — the self-modeling loop is structurally present but kinetically frozen.
 
@@ -109,9 +109,9 @@ The three undeciphered systems form a kinetic gradient relative to the living re
 
 | System | Fidelity | Kinetics | Distance from OS | Status |
 |--------|----------|----------|-----------------|--------|
-| Linear A | ƒ_ż (quantum) | Ç_W (moderate) | 0.00 | Structurally alive |
-| Rohonc | ƒ_ì (classical) | Ç_@ (slow) | 2.09 | Kinetically damped |
-| Voynich | ƒ_ì (classical) | Ç_Ù (trap) | 4.31 | Kinetically frozen |
+| Linear A | ƒ^ż (quantum) | Ç^W (moderate) | 0.00 | Structurally alive |
+| Rohonc | ƒ^ì (classical) | Ç^@ (slow) | 2.09 | Kinetically damped |
+| Voynich | ƒ^ì (classical) | Ç^Ù (trap) | 4.31 | Kinetically frozen |
 
 Linear A sits at the core. Despite being physically dormant for roughly three and a half millennia, its structural imscription carries full quantum coherence — the sign inventory includes composite forms irreducible as boolean conjunctions of simpler signs. Rohonc has lost quantum coherence but retains slow relaxation dynamics. The right-to-left script direction and liturgical-repetitive structure absorb into classical register monotonicity. The system is legible in principle; the primitive surface is close enough to the core that mediation could recover the full structure.
 
@@ -143,7 +143,7 @@ Under tensor coupling, the fidelity primitive is a bottleneck: it takes the mini
 
 $$\text{ƒ}_{\text{ż}} \otimes \text{ƒ}_{\text{ì}} = \min(\text{ƒ}_{\text{ż}}, \text{ƒ}_{\text{ì}}) = \text{ƒ}_{\text{ì}}$$
 
-The reader's quantum coherence — the capacity to hold superpositions of competing interpretations — collapses to classical definiteness. This is not a cognitive limitation. It is a structural theorem about the tensor product. The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without ƒ_ż. The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
+The reader's quantum coherence — the capacity to hold superpositions of competing interpretations — collapses to classical definiteness. This is not a cognitive limitation. It is a structural theorem about the tensor product. The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without ƒ^ż. The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
 
 *The hardest claim in this paper is this one:* decipherment failure is not a property of the manuscript's content or the reader's ignorance. It is a structural theorem. The tensor coupling between reader and text forces the reader's quantum coherence down to the text's classical fidelity, regardless of the reader's sophistication. No amount of machine learning, statistical analysis, or cryptographic ingenuity can overcome this — these methods operate entirely within the classical regime and therefore inherit it by construction.
 

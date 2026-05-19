@@ -516,9 +516,9 @@ def compute_primitive_state(ticker, date):
     
     # K from RV level
     if rv_30d > 0.60:
-        kinetic = 'Ç_Ù'
+        kinetic = 'Ç^Ù'
     elif rv_30d > 0.40:
-        kinetic = 'Ç_@'
+        kinetic = 'Ç^@'
     ...
     
     # Φ from RV regime + trend
@@ -900,7 +900,7 @@ This system makes no claims about what markets **are** — only about how they *
 
 **Sample Output:**
 ```
-⟨D_∧;T_⋈;R_⊇;P_±^ψ;F_ℏ;Ç_W;Γ_γ;Γ_∧;Φ_sub;H_1;1:1;Ω_0⟩
+⟨D_∧;T_⋈;R_⊇;P_±^ψ;F_ℏ;Ç^W;Γ_γ;Γ_∧;Φ_sub;H_1;1:1;Ω_0⟩
 ```
 
 **Conclusion:** Full 12-tuple inference functional. Enables richer signal detection.
@@ -1052,13 +1052,13 @@ def infer_primitives(rv_30d, rv_trend):
     
     # K from RV level
     if rv_30d > 0.60:
-        kinetic = 'Ç_Ù'
+        kinetic = 'Ç^Ù'
     elif rv_30d > 0.40:
-        kinetic = 'Ç_@'
+        kinetic = 'Ç^@'
     elif rv_30d > 0.25:
-        kinetic = 'Ç_W'
+        kinetic = 'Ç^W'
     else:
-        kinetic = 'Ç_-'
+        kinetic = 'Ç^-'
     
     # Φ from RV regime + trend
     if rv_30d > 0.60 and rv_trend == 'rising':
@@ -1070,9 +1070,9 @@ def infer_primitives(rv_30d, rv_trend):
     
     # F from RV stability
     if rv_30d < 0.20:
-        fidelity = 'ƒ_ż'
+        fidelity = 'ƒ^ż'
     elif rv_30d < 0.35:
-        fidelity = 'ƒ_ð'
+        fidelity = 'ƒ^ð'
     else:
         fidelity = 'F_ℓ'
     

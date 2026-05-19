@@ -434,8 +434,8 @@ The full certificate:
 theorem ym_primitive_barrier_certificate :
     ym_quantum_target.gran = Γ_ʔ ∧     -- needs quantum-level granularity
     ym_quantum_target.crit = ⊙_ÿ ∧       -- needs mass gap (critical)
-    ym_quantum_target.fid  = ƒ_ż ∧      -- needs quantum fidelity
-    ym_quantum_target.kin  = Ç_Ù ∧      -- needs confinement
+    ym_quantum_target.fid  = ƒ^ż ∧      -- needs quantum fidelity
+    ym_quantum_target.kin  = Ç^Ù ∧      -- needs confinement
     ym_quantum_target.dim  = Ð_cube ∧      -- stays 4D local (NOT QG)
     ym_quantum_target.dim  ≠ quantum_gravity.dim ∧
     Barriers.millenniumBarrier .YM = .MissingFoundation := by
@@ -454,7 +454,7 @@ The OPN, NS, and RH certificates connect to the $\Phi_{\text{ctyogh}}$ criticali
 
 ```lean
 theorem opn_primitive_certificate :
-    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
+    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç^Ù ∧
     Barriers.millenniumBarrier .OPN = .OpenProblem := ⟨rfl, rfl, rfl⟩
 
 theorem ns_primitive_certificate :
@@ -472,7 +472,7 @@ theorem rh_primitive_certificate :
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 ∧
     Barriers.millenniumBarrier .YM = .MissingFoundation ∧
-    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç_Ù ∧
+    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç^Ù ∧
     Barriers.millenniumBarrier .OPN = .OpenProblem ∧
     ns_encoding.crit = ⊙_ž ∧
     Barriers.millenniumBarrier .NS = .OpenProblem ∧

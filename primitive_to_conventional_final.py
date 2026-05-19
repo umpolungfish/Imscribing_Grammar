@@ -46,10 +46,10 @@ LEMMA_TITLE_MAP = {
     "bidirectional": "Ř_=",
     "coupling": "Ř_=",
     "winding": "Ω_z",
-    "phase boundar": "φ̂_ÿ",
-    "confinement": "φ̂_ÿ",
-    "drift": "φ̂_ÿ",
-    "boundedness": "φ̂_ÿ",
+    "phase boundar": "⊙_ÿ",
+    "confinement": "⊙_ÿ",
+    "drift": "⊙_ÿ",
+    "boundedness": "⊙_ÿ",
 }
 
 # ── Primary primitive -> conventional section ──────────────────────────────
@@ -58,8 +58,8 @@ PRIMITIVE_SECTIONS = {
     "Þ_O": "The Inverse Tree",
     "Ř_=": "Bidirectional Coupling",
     "Ω_z": "Terminal Cycle and Exotic Cycle Exclusion",
-    "φ̂_ÿ": "Logarithmic Drift and Absence of Divergent Trajectories",
-    "Ç_@": "Equidistribution (supporting)",
+    "⊙_ÿ": "Logarithmic Drift and Absence of Divergent Trajectories",
+    "Ç^@": "Equidistribution (supporting)",
 }
 
 # ── Lemma body templates per primitive ─────────────────────────────────────
@@ -102,7 +102,7 @@ LEMMA_TEMPLATES = {
             "= \\mathbb{Z}^+$.\n"
         ),
     },
-    "φ̂_ÿ": {
+    "⊙_ÿ": {
         "lemma": (
             "**Lemma (Negative Drift).** Define $L(n) = \\ln n$. The expected "
             "change per step is $\\mathbb{E}[\\Delta L] = \\tfrac{1}{2}\\ln"
@@ -149,7 +149,7 @@ def parse_primitive_proof(text: str) -> List[Lemma]:
         content = m.group(3).strip()[:400]
 
         # Determine primary primitive from title keywords
-        primary = "φ̂_ÿ"  # default fallback
+        primary = "⊙_ÿ"  # default fallback
         for keyword, prim in LEMMA_TITLE_MAP.items():
             if keyword.lower() in title.lower():
                 primary = prim
@@ -244,8 +244,8 @@ def generate_conventional_proof(
     out.append(
         "\\section{Logarithmic Drift and Absence of Divergent Trajectories}\n"
     )
-    out.append(LEMMA_TEMPLATES["φ̂_ÿ"]["lemma"])
-    out.append(LEMMA_TEMPLATES["φ̂_ÿ"]["supporting"])
+    out.append(LEMMA_TEMPLATES["⊙_ÿ"]["lemma"])
+    out.append(LEMMA_TEMPLATES["⊙_ÿ"]["supporting"])
 
     # ── Section 6: Cycle Exclusion ───────────────────────────────────────────
     out.append("\\section{Terminal Cycle and Exotic Cycle Exclusion}\n")
@@ -291,8 +291,8 @@ PRIMITIVE_KEYWORDS = {
     "Þ_O": ["inverse", "tree", "self-referent", "R(m)", "preimage"],
     "Ř_=": ["bidirectional", "coupling", "iff", "exhaust", "mutual"],
     "Ω_z": ["cycle", "winding", "Diophantine", "exotic", "uniqueness"],
-    "φ̂_ÿ": ["drift", "diverg", "Lyapu", "bounded", "escape"],
-    "Ç_@": ["Terras", "almost all", "stopping time", "equidistrib"],
+    "⊙_ÿ": ["drift", "diverg", "Lyapu", "bounded", "escape"],
+    "Ç^@": ["Terras", "almost all", "stopping time", "equidistrib"],
 }
 
 

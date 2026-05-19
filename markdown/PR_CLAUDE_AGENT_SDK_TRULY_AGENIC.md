@@ -24,13 +24,13 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 ### Current SDK structural type
 
 ```
-⟨D∞; Þ_net; Ř_sup; Φ_ɐ; Fℓ; Ç_-; Γ_β; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
+⟨D∞; Þ_net; Ř_sup; Φ_ɐ; Fℓ; Ç^-; Γ_β; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
 ```
 
 ### Target agentic structural type
 
 ```
-⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; Ç_@; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
+⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; Ç^@; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
 ```
 
 ### Promotion signature (compute_promocities verified)
@@ -40,7 +40,7 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 3. **R**: Ř_sup → R↔ (bidirectional feedback, not supervenience on CLI)
 4. **P**: Φ_ɐ → P±ˢ (Frobenius dual-tool verification at every boundary)
 5. **F**: Fℓ → Fℏ (coherent trajectory, no lossy summarization)
-6. **K**: Ç_- → Ç_@ (emission gate, not fire-and-forget)
+6. **K**: Ç^- → Ç^@ (emission gate, not fire-and-forget)
 7. **G**: Γ_β → Gℵ (long-range context access)
 8. **Γ**: Γ_or → Γ_seq (ordered composition, not alternative paths)
 9. **Φ**: Φ_sub → Φ_c (self-modeling criticality)
@@ -96,7 +96,7 @@ class LoopCycle:
 
 The trajectory is **never truncated** (Ωℤ protection) — it is the agent's world model. H₂ is satisfied when each winding references the prior two cycles for chirality.
 
-### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: Ç_- → Ç_@)
+### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: Ç^- → Ç^@)
 
 **File**: New `src/claude_agent_sdk/agent_loop.py`
 
@@ -121,7 +121,7 @@ class TrueAgenticLoop:
             if cycle.done:
                 return cycle.conclusion
             if not cycle.frobenius_closed:
-                # Re-enter with failure — Ç_@ enforcement
+                # Re-enter with failure — Ç^@ enforcement
                 await self._feed_failure(cycle)
 
     async def _winding(self, winding: int) -> LoopCycle:
@@ -206,7 +206,7 @@ def structural_health(self) -> Dict[str, Any]:
 |---|---|---|---|
 | 1 | `DualToolResult` + verify fn | P: Φ_ɐ → Φ_υ | Low |
 | 2 | `_trajectory` accumulation | D: D∞ → Ð_C, H: H₁ → H₂ | Low |
-| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: Ç_- → Ç_@ | Medium |
+| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: Ç^- → Ç^@ | Medium |
 | 4 | `ToolContract` type extension | R: Ř_sup → Ř_ý | Medium |
 | 5 | Winding counter + health report | Ω: Ω₀ → Ωℤ | Low |
 | 6 | Full Φ_} via dual-tool planting | P: Φ_υ → Φ_} | High |

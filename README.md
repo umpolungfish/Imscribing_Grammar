@@ -193,7 +193,7 @@ Every primitive value has a canonical phonetic identity. `imscribeaudio.py` synt
 ```bash
 python imscribeaudio.py --all                         # Full 49-symbol sequence
 python imscribeaudio.py ⊙ ž                           # Single symbol
-python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
 python imscribeaudio.py --name psychedelic_baseline   # Named catalog entry
 python imscribeaudio.py --list                        # All 49 canonical glyph IDs
 ```
@@ -208,7 +208,7 @@ The 12 phonetic base characters in field order: **Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ
 
 ```bash
 python imscribevideo.py --name riemann_hypothesis
-python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_ő Ω_z"
+python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_ő Ω_z"
 python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
 ```
 
@@ -283,7 +283,7 @@ python esoteric_librarian.py list upanishads
 **Single entry**:
 ```bash
 python esoteric_librarian.py add upanishads \
-  --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_S Ω_z" \
+  --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_S Ω_z" \
   --name "brihadaranyaka_1_4_10" \
   --number 1 --title "Aham Brahmasmi" \
   --tier "T_inf" --cscore 0.97 \

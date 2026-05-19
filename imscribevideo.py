@@ -11,7 +11,7 @@ Requires: numpy, scipy, matplotlib, pillow, ffmpeg (in PATH)
 Usage:
   python imscribevideo.py --name riemann_hypothesis
   python imscribevideo.py --name psilocybin_peak -o audio/psilocybin_peak.mp4
-  python imscribevideo.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+  python imscribevideo.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
   python imscribevideo.py --all-catalog          # batch: every catalog entry
 """
 
@@ -73,10 +73,10 @@ HUMAN = {
     'Þ_6':'nrleg',      'Þ_K':'invscr',     'Þ_ò':'bullseye',    'Þ_¨':'commatailz',  'Þ_O':'openo',
     'Ř_¯':'subrightarrow','Ř_ý':'ctz',      'Ř_Ť':'downstep',    'Ř_=':'lyoghlig',
     'Φ_ɐ':'aolig',      'Φ_υ':'upsilon',    'Φ_F':'pipevar',     'Φ_˙':'subdoublearrow','Φ_}':'doublebarpipe',
-    'ƒ_ì':'beltl',      'ƒ_ð':'dh',         'ƒ_ż':'hardsign',
-    'Ç_-':'frtailgamma','Ç_W':'turnm',      'Ç_@':'schwa',       'Ç_Ù':'teshlig',     'Ç_λ':'lambda',
+    'ƒ^ì':'beltl',      'ƒ^ð':'dh',         'ƒ^ż':'hardsign',
+    'Ç^-':'frtailgamma','Ç^W':'turnm',      'Ç^@':'schwa',       'Ç^Ù':'teshlig',     'Ç^λ':'lambda',
     'Γ_β':'beta',       'Γ_γ':'gamma',      'Γ_ʔ':'revapostrophe',
-    'ɢ_^':'corner',     'ɢ_˝':'spleftarrow','ɢ_ˌ':'secstress',   'ɢ_Ş':'doublevertline',
+    'ɢ^∧':'corner',     'ɢ^˝':'spleftarrow','ɢ^ˌ':'secstress',   'ɢ^Ş':'doublevertline',
     '⊙_ž':'softsign',   '⊙_ÿ':'ctyogh',    '⊙_Æ':'closerevepsilon','⊙_3':'revepsilon','⊙_Ţ':'upstep',
     'Ħ_Ñ':'closeomega', 'Ħ_£':'toneletterstem','Ħ_A':'turntwo',  'Ħ_!':'invscripta',
     'Σ_S':'doublebaresh','Σ_ő':'ctn',       'Σ_ï':'ltailm',
@@ -84,7 +84,7 @@ HUMAN = {
 }
 
 _CATALOG_PATH = os.path.join(_HERE, 'IG_catalog.json')
-_CRIT_LEGACY = 'φ̂'  # phi_hat (catalog key)
+_CRIT_LEGACY = '⊙'  # phi_hat (catalog key)
 _CRIT_MODERN = '⊙'     # odot (sounds.py key)
 
 def _read_crit(entry):

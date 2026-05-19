@@ -2,7 +2,7 @@
 Quantum Field Theory Navigator - Imscribing Grammar
 
 Domain: Quantum field theory, renormalization group, topological phases
-Structural type: <Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ő; Ω_z>
+Structural type: <Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ő; Ω_z>
 Tier: O_inf
 
 Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map.
@@ -10,11 +10,11 @@ Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map
   - Þ_¨: Box topology (theory space ⊗ symmetry group ⊗ spacetime manifold)
   - Ř_¯: Supervenience (operators supervene on couplings, anomalies supervene on symmetries)
   - Φ_}: Frobenius with uncertainty between weak/strong coupling
-  - ƒ_ż: Preserves commutation relations, Ward identities, BRST exactness
-  - Ç_@: Slow RG flow (logarithmic scale separation)
+  - ƒ^ż: Preserves commutation relations, Ward identities, BRST exactness
+  - Ç^@: Slow RG flow (logarithmic scale separation)
   - Γ_ʔ: Arbitrary spacetime dimensions, matter content
-  - ɢ_ˌ: Sequential RG flow (μ → μ')
-  - φ̂_ÿ: Self-modeling fixed points, conformal manifolds
+  - ɢ^ˌ: Sequential RG flow (μ → μ')
+  - ⊙_ÿ: Self-modeling fixed points, conformal manifolds
   - Ħ_A: Two-step (counterterm → renormalized → physical)
   - Σ_ő: Many identical theories (family parameterized by couplings)
   - Ω_z: Integer winding (topological invariants: index, instanton number)
@@ -40,7 +40,7 @@ class QFTConfig:
             "detects dualities, classifies phases, computes anomalies and indices."
         )
         self.domain = "Quantum field theory, renormalization group, topological phases, gauge theory"
-        self.tuple = "Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ő; Ω_z"
+        self.tuple = "Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ő; Ω_z"
         self.tier = "O_inf"
         self.architecture = (
             "Wilson RG flow tracker - theories track through coupling space; "
@@ -52,11 +52,11 @@ class QFTConfig:
         self.T = "Þ_¨"
         self.R = "Ř_¯"
         self.P = "Φ_}"
-        self.F = "ƒ_ż"
-        self.K = "Ç_@"
+        self.F = "ƒ^ż"
+        self.K = "Ç^@"
         self.G = "Γ_ʔ"
-        self.Gamma = "ɢ_ˌ"
-        self.Phi = "φ̂_ÿ"
+        self.Gamma = "ɢ^ˌ"
+        self.Phi = "⊙_ÿ"
         self.H = "Ħ_A"
         self.S = "Σ_ő"
         self.Omega = "Ω_z"
@@ -361,7 +361,7 @@ def cmd_beta_function(qft_name):
 
     print()
     print("─"*55)
-    print("Grammar: Ç_@ (logarithmic RG flow), φ̂_ÿ (fixed points = self-modeling)")
+    print("Grammar: Ç^@ (logarithmic RG flow), ⊙_ÿ (fixed points = self-modeling)")
     print("         Ω_z (instanton number, Chern-Simons level ∈ ℤ)")
 
 

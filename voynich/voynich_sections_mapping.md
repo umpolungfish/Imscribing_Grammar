@@ -25,10 +25,10 @@ $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{6}};\ \text{Ř}_{\text{=}};\ 
 | **Þ_6**   | network   | Branching topology — local plant diagrams with root-like lineages. |
 | **Ř_=`**  | bidir     | Structural dual — neither deferring to external botany nor dominating with prior theory. |
 | **Φ_F**   | full sym  | All symmetries unbroken — robust identity for each plant type. |
-| **ƒ_ì**   | classical | No quantum coherence — reading proceeds classically, no phase locking. |
-| **Ç_W**   | barrier   | Barrier kinetics — dynamic engagement with illustrations. |
+| **ƒ^ì**   | classical | No quantum coherence — reading proceeds classically, no phase locking. |
+| **Ç^W**   | barrier   | Barrier kinetics — dynamic engagement with illustrations. |
 | **Γ_γ**   | mesoscale | Intermediate scope — group-level classification (genus-like). |
-| **ɢ_ˌ**   | seq       | Sequential logic — stepwise comparison (leaf → flower → label). |
+| **ɢ^ˌ**   | seq       | Sequential logic — stepwise comparison (leaf → flower → label). |
 | **⊙_ÿ**   | critical  | Phase-boundary behavior — interpretation collapses at critical point. |
 | **Ħ_A**   | two-step  | Visual memory of prior plant + label required. |
 | **Σ_ï**   | many-het  | Many distinct plant types — heterogeneous inventory. |
@@ -147,10 +147,10 @@ All six sections share **⊙_ÿ** (critical self-modeling), confirming the manus
 | **Þ**     | 6         | K   | O           | 6      |
 | **Ř**     | =         | =   | =           | Ť      |
 | **Φ_F**   | ✓         | ✓   | ✓           | ✓      |
-| **ƒ_ì**   | ✓         | ✓   | ✓           | ✓      |
-| **Ç_W**   | ✓         | ✓   | ✓           | ✓      |
+| **ƒ^ì**   | ✓         | ✓   | ✓           | ✓      |
+| **Ç^W**   | ✓         | ✓   | ✓           | ✓      |
 | **Γ**     | γ         | γ   | γ           | β      |
-| **ɢ_ˌ**   | ✓         | ✓   | ✓           | ✓      |
+| **ɢ^ˌ**   | ✓         | ✓   | ✓           | ✓      |
 | **⊙_ÿ**   | ✓         | ✓   | ✓           | ✓      |
 | **Ħ**     | A         | A   | A           | £      |
 | **Σ_ï**   | ✓         | ✓   | ✓           | ✓      |

@@ -508,7 +508,7 @@ theorem beal_prime_mixed_exponents (p q r : ℕ)
     For Beal: the promotion signature to FLT has 5 promotions + 2 demotions.
     A complete proof of Beal would yield a new imscription with:
       Ω promoted from Ω_0 to Ω_Z2 (or Ω_Z)
-      F promoted from ƒ_ì to ƒ_ż
+      F promoted from ƒ^ì to ƒ^ż
       T potentially promoted from Þ_ò to Þ_O
     
     The IG does not prove Beal — it identifies the structural

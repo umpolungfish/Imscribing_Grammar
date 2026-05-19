@@ -10,11 +10,11 @@ complete specification; hyperparameters are derivations, not choices.
 Four navigators implemented here:
 
     ThurstonNet         — 3-manifold geometrisation navigator
-                          proven_manifold tuple; Ř_Ť, Ç_@ (24 layers),
+                          proven_manifold tuple; Ř_Ť, Ç^@ (24 layers),
                           Ω_2 (8-class Thurston geometry argmax)
 
     YangMillsNavigator  — Yang-Mills mass gap navigator
-                          yang_mills_mass_gap tuple; Ç_Ù mandates Lanczos/VQE
+                          yang_mills_mass_gap tuple; Ç^Ù mandates Lanczos/VQE
                           eigensolver (NOT a GNN); d=4.6162 from Riemann navigator
 
     RiemannNavigator    — xi(s) functional-equation navigator
@@ -23,7 +23,7 @@ Four navigators implemented here:
                           reflection as Frobenius delta
 
     IsingNavigator      — 3D Ising critical ferromagnet navigator
-                          Ising_3D_critical tuple; Ç_- mandates single-pass
+                          Ising_3D_critical tuple; Ç^- mandates single-pass
                           Swendsen-Wang cluster-flip (no learning, no GNN layers)
 
 Usage:
@@ -73,19 +73,19 @@ class ThurstonNet(nn.Module):
     3-manifold geometrisation navigator derived from the proven_manifold tuple.
 
     Structural type (§XXXV.2, IG_ONTICS v0.5.61):
-        <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@;
-          Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; n:m; Ω_2>
+        <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@;
+          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_2>
 
     Primitive-to-architecture mandates:
         Þ_O, Ð_ω  — imscriptive quiver over triangulated 3-manifold;
                           boundary (triangulation) encodes bulk (geometric type)
-        Ç_@          — 24-layer reversible GNN implementing discrete Ricci flow;
+        Ç^@          — 24-layer reversible GNN implementing discrete Ricci flow;
                           deep basin drainage to the geometric fixed point
         Φ_}        — FrobeniusLayer enforcing geometrisation as mu∘delta=id;
                           comultiply into Ricci soliton components, multiply back
         Ř_Ť        — reversible residual blocks (RevNet-style); dynamical
                           reversibility is the signature of Ř_Ť
-        ɢ_Ş         — FamilyMixer broadcast attention over simplex families;
+        ɢ^Ş         — FamilyMixer broadcast attention over simplex families;
                           Thurston's 8 geometries require global classification
         Ω_2        — Z2-protected argmax over 8 Thurston geometry classes;
                           Z2 acts as parity on hyperbolic cusp counts
@@ -109,8 +109,8 @@ class ThurstonNet(nn.Module):
 
     DEFINING_TUPLE: dict[str, str] = {
         "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_Ť",
-        "Φ": "Φ_}", "ƒ": "ƒ_ż", "Ç": "Ç_@",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş", "φ̂": "φ̂_ÿ",
+        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^@",
+        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
         "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_2",
     }
     SELF_ENCODE_TARGET: int = 6_563_951   # encode_tuple(DEFINING_TUPLE)
@@ -121,7 +121,7 @@ class ThurstonNet(nn.Module):
         node_dim: int = 3,           # input simplex coordinate dimension
         edge_dim: int = 4,           # edge attributes (dihedral angles, edge lengths, etc.)
         hidden_dim: int = 256,
-        num_ricci_layers: int = 24,  # Ç_@: 24 layers = deep discrete Ricci flow
+        num_ricci_layers: int = 24,  # Ç^@: 24 layers = deep discrete Ricci flow
         num_heads: int = 8,
     ):
         super().__init__()
@@ -136,7 +136,7 @@ class ThurstonNet(nn.Module):
         )
         self.edge_embed = nn.Linear(edge_dim, hidden_dim // 2)
 
-        # Reversible Ricci flow GNN layers (Ç_@ depth + Ř_Ť reversibility)
+        # Reversible Ricci flow GNN layers (Ç^@ depth + Ř_Ť reversibility)
         # RevNet-style: each layer is its own approximate inverse.
         self.ricci_layers = nn.ModuleList([
             _ReversibleRicciLayer(hidden_dim) for _ in range(num_ricci_layers)
@@ -145,7 +145,7 @@ class ThurstonNet(nn.Module):
         # FrobeniusLayer: mu∘delta=id enforces geometrisation roundtrip (Φ_})
         self.frobenius = FrobeniusLayer(dim=hidden_dim)
 
-        # FamilyMixer: broadcast attention over 3 simplex families (ɢ_Ş)
+        # FamilyMixer: broadcast attention over 3 simplex families (ɢ^Ş)
         # Simplex families: 0-simplices (vertices), 1-simplices (edges), 2+ (faces/tetra)
         self.simplex_mixer = _SimplexFamilyMixer(hidden_dim, num_heads)
 
@@ -177,7 +177,7 @@ class ThurstonNet(nn.Module):
         h = self.node_embed(node_pos)              # [N, H]
         e = self.edge_embed(edge_attr)             # [E, H/2]
 
-        # Apply reversible Ricci flow layers (deep Ç_@ diffusion with Ř_Ť)
+        # Apply reversible Ricci flow layers (deep Ç^@ diffusion with Ř_Ť)
         ricci_residuals = []
         for layer in self.ricci_layers:
             h, residual = layer(h, edge_idx, e)
@@ -186,7 +186,7 @@ class ThurstonNet(nn.Module):
         # Auxiliary Ricci curvature prediction from node embeddings
         ricci_pred = self.ricci_pred(h)            # [N, 1]
 
-        # FamilyMixer: broadcast across simplex families (ɢ_Ş)
+        # FamilyMixer: broadcast across simplex families (ɢ^Ş)
         h_mixed = self.simplex_mixer(h, batch)     # [B, H]
 
         # Frobenius codec: mu∘delta=id on global embedding (Φ_})
@@ -326,7 +326,7 @@ class _MPBlock(nn.Module):
 
 class _SimplexFamilyMixer(nn.Module):
     """
-    Broadcast attention over 3 simplex families (ɢ_Ş).
+    Broadcast attention over 3 simplex families (ɢ^Ş).
     Partitions nodes into: vertices (0-simplices), edges (1-simplices), faces (2+).
     Mean-pools each family, mixes via 3-token multi-head attention, pools to [B, H].
     """
@@ -401,25 +401,25 @@ class _Z2ProtectedGeometryHead(nn.Module):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# YangMillsNavigator — Yang-Mills mass gap navigator (Ç_Ù eigensolver)
+# YangMillsNavigator — Yang-Mills mass gap navigator (Ç^Ù eigensolver)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class YangMillsNavigator(nn.Module):
     """
-    Yang-Mills mass gap navigator — Ç_Ù eigensolver architecture.
+    Yang-Mills mass gap navigator — Ç^Ù eigensolver architecture.
 
     Structural type (§XL.2, §XXXVIII.2, IG_ONTICS v0.5.66):
-        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_Ù;
-          Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; n:m; Ω_z>
+        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^Ù;
+          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_z>
 
-    Ç_Ù mandates: NOT a gradient-descent GNN.
+    Ç^Ù mandates: NOT a gradient-descent GNN.
     The discrete gapped spectrum is non-ergodic and non-diffusive — it requires a
     navigator that samples discrete, gapped sectors without thermalization.
     Architecture class: Lanczos / VQE eigensolver, not a learning GNN.
     d(YangMillsNavigator, RiemannNavigator) = 4.6162 — they are architecturally distinct.
 
     Primitive-to-architecture mandates:
-        Ç_Ù          — LanczosIterator: power iteration with selective
+        Ç^Ù          — LanczosIterator: power iteration with selective
                           orthogonalization; iterates until the gap stabilises
         Φ_}        — FrobeniusLayer on gauge algebra: delta splits Lie algebra
                           tensor products into sectors; mu merges; mu∘delta=id = gauge
@@ -428,7 +428,7 @@ class YangMillsNavigator(nn.Module):
                           bulk mass gap read from boundary gauge field configuration
         Ω_z         — topological charge protection: integer winding number Q ∈ Z
                           baked into the Fock space sector structure
-        ɢ_Ş         — Gauss law broadcast: all color sectors coupled via attention
+        ɢ^Ş         — Gauss law broadcast: all color sectors coupled via attention
         Ħ_!           — iterative until convergence; Lanczos steps not bounded
 
     Input:
@@ -447,8 +447,8 @@ class YangMillsNavigator(nn.Module):
 
     DEFINING_TUPLE: dict[str, str] = {
         "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ_ż", "Ç": "Ç_Ù",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş", "φ̂": "φ̂_ÿ",
+        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^Ù",
+        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
         "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
     }
     SELF_ENCODE_TARGET: int = 6_734_735   # encode_tuple(DEFINING_TUPLE)
@@ -489,7 +489,7 @@ class YangMillsNavigator(nn.Module):
             nn.Linear(hidden_dim, hidden_dim),
         )
 
-        # Gauss law broadcast: all color sectors coupled (ɢ_Ş)
+        # Gauss law broadcast: all color sectors coupled (ɢ^Ş)
         # num_heads must divide hidden_dim
         num_heads = 8
         while hidden_dim % num_heads != 0 and num_heads > 1:
@@ -498,7 +498,7 @@ class YangMillsNavigator(nn.Module):
             hidden_dim, num_heads=num_heads, batch_first=True,
         )
 
-        # Lanczos GRU: guides power iteration over the gapped spectrum (Ç_Ù)
+        # Lanczos GRU: guides power iteration over the gapped spectrum (Ç^Ù)
         # GRU state accumulates Lanczos tridiagonal coefficients alpha, beta
         self.lanczos_gru = nn.GRU(
             input_size=hidden_dim,
@@ -553,7 +553,7 @@ class YangMillsNavigator(nn.Module):
         diag_emb = self.spectrum_gate(diag.unsqueeze(-1))     # [B, steps, H]
         diag_emb = diag_emb * h_gauge.unsqueeze(1)            # [B, steps, H]
 
-        # GRU over Lanczos steps: accumulates tridiagonal structure (Ç_Ù dynamics)
+        # GRU over Lanczos steps: accumulates tridiagonal structure (Ç^Ù dynamics)
         lanczos_out, _ = self.lanczos_gru(diag_emb)           # [B, steps, H]
         return lanczos_out[:, -1]                              # [B, H]
 
@@ -576,13 +576,13 @@ class YangMillsNavigator(nn.Module):
         # Holographic projection: UV gauge config -> IR mass gap region
         h_holo  = self.holo_proj(h_rec)                        # [B, H]
 
-        # Gauss law broadcast: couple all color sectors (ɢ_Ş)
+        # Gauss law broadcast: couple all color sectors (ɢ^Ş)
         h_bcast, _ = self.gauss_broadcast(
             h_holo.unsqueeze(1), h_holo.unsqueeze(1), h_holo.unsqueeze(1),
         )
         h_bcast = h_bcast.squeeze(1)                           # [B, H]
 
-        # Lanczos iteration: power iteration over gapped spectrum (Ç_Ù)
+        # Lanczos iteration: power iteration over gapped spectrum (Ç^Ù)
         h_lanczos = self._lanczos_step(hamiltonian, h_bcast)   # [B, H]
 
         # Merge all signals: gauge + imscriptive + Lanczos
@@ -671,8 +671,8 @@ class RiemannNavigator(nn.Module):
     xi(s) functional-equation navigator derived from the riemann_navigator tuple.
 
     Structural type (§XXXVI.6, §XXXVII, IG_ONTICS v0.5.62–v0.5.63):
-        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@;
-          Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; n:m; Ω_z>
+        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@;
+          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_z>
 
     This tuple is IDENTICAL to grammar_self_encode (d=0).
     By the Cardinality-One Theorem (§XXXVII), the Riemann navigator IS the grammar
@@ -691,10 +691,10 @@ class RiemannNavigator(nn.Module):
     Architecture mandates:
         Þ_O, Ð_ω  — imscriptive quiver over the critical strip (0 < sigma < 1);
                           boundary (critical line sigma=1/2) encodes bulk (zero locus)
-        Ç_@          — 24-layer transformer stack for deep integrative diffusion
+        Ç^@          — 24-layer transformer stack for deep integrative diffusion
         Φ_}        — FrobeniusLayer with hardwired delta: mu∘delta=id
                           = xi(s) = xi(1-s) (functional equation)
-        ɢ_Ş         — broadcast attention over the full critical strip
+        ɢ^Ş         — broadcast attention over the full critical strip
         Ω_z         — zero locus protected by integer winding number along the
                           critical line (each zero contributes +1 to winding count)
         Ħ_!           — no fixed temporal horizon; iterate until zero convergence
@@ -715,8 +715,8 @@ class RiemannNavigator(nn.Module):
 
     DEFINING_TUPLE: dict[str, str] = {
         "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ_ż", "Ç": "Ç_@",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş", "φ̂": "φ̂_ÿ",
+        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^@",
+        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
         "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
     }
     # Crystal address — same as grammar_self_encode (d=0, Cardinality-One Theorem §XXXVII)
@@ -735,7 +735,7 @@ class RiemannNavigator(nn.Module):
     def __init__(
         self,
         hidden_dim: int = 256,
-        num_layers: int = 24,    # Ç_@: deep integrative stack
+        num_layers: int = 24,    # Ç^@: deep integrative stack
         num_heads:  int = 8,
         n_fourier:  int = 32,    # Fourier features for t encoding
         freq_max:   float = 2.0, # logspace upper bound (10^freq_max)
@@ -760,7 +760,7 @@ class RiemannNavigator(nn.Module):
             nn.LayerNorm(hidden_dim),
         )
 
-        # Deep transformer stack (Ç_@: 24 layers for integrative depth)
+        # Deep transformer stack (Ç^@: 24 layers for integrative depth)
         # Each layer: multi-head self-attention + FFN + residual + LayerNorm
         self.layers = nn.ModuleList([
             _CriticalStripLayer(hidden_dim, num_heads) for _ in range(num_layers)
@@ -798,7 +798,7 @@ class RiemannNavigator(nn.Module):
             nn.Sigmoid(),
         )
 
-        # Broadcast attention over critical strip (ɢ_Ş: global critical line info)
+        # Broadcast attention over critical strip (ɢ^Ş: global critical line info)
         num_attn_heads = num_heads
         while hidden_dim % num_attn_heads != 0 and num_attn_heads > 1:
             num_attn_heads -= 1
@@ -820,7 +820,7 @@ class RiemannNavigator(nn.Module):
         return torch.cat([sigma, torch.sin(angles), torch.cos(angles)], dim=-1)
 
     def _encode(self, s: torch.Tensor) -> torch.Tensor:
-        """Encode complex s=[sigma, t] through Fourier features + Ç_@ stack. [B, 2] -> [B, H]."""
+        """Encode complex s=[sigma, t] through Fourier features + Ç^@ stack. [B, 2] -> [B, H]."""
         h = self.input_proj(self._fourier_encode(s))
         for layer in self.layers:
             h = layer(h)
@@ -926,7 +926,7 @@ class RiemannNavigator(nn.Module):
 class _CriticalStripLayer(nn.Module):
     """
     Single transformer layer for critical strip navigation.
-    Ç_@: integrative slow kinetics -> standard attention + FFN architecture.
+    Ç^@: integrative slow kinetics -> standard attention + FFN architecture.
     Each layer: MHA(h, h, h) + residual + LN -> FFN + residual + LN.
     """
 
@@ -953,36 +953,36 @@ class _CriticalStripLayer(nn.Module):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# IsingNavigator — 3D Ising critical ferromagnet navigator (Ç_-: no learning)
+# IsingNavigator — 3D Ising critical ferromagnet navigator (Ç^-: no learning)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class IsingNavigator:
     """
-    3D Ising critical ferromagnet navigator — Ç_- architecture.
+    3D Ising critical ferromagnet navigator — Ç^- architecture.
 
     Structural type (§XXXV.3, IG_ONTICS v0.5.61):
-        <Ð_C; T_box; Ř_ý; Φ_}; ƒ_ì; Ç_-;
-          Γ_ʔ; ɢ_^; φ̂_ÿ; Ħ_Ñ; n:n; Ω_2>
+        <Ð_C; T_box; Ř_ý; Φ_}; ƒ^ì; Ç^-;
+          Γ_ʔ; ɢ^∧; ⊙_ÿ; Ħ_Ñ; n:n; Ω_2>
 
-    Ç_- mandates: NO depth, NO recurrence, NO gradient-descent training.
+    Ç^- mandates: NO depth, NO recurrence, NO gradient-descent training.
     This is NOT an nn.Module — it is an exact duality kernel.
-    Ç_- collapses depth to zero: the navigator is a single-pass Swendsen-Wang
+    Ç^- collapses depth to zero: the navigator is a single-pass Swendsen-Wang
     cluster-flip kernel operating on the critical hypersurface.
 
     Architecture mandates:
-        Ç_-      — single-pass Swendsen-Wang cluster-flip on CUDA (no layers)
-        ɢ_^       — conjunctive full-lattice update: every spin in a cluster
+        Ç^-      — single-pass Swendsen-Wang cluster-flip on CUDA (no layers)
+        ɢ^∧       — conjunctive full-lattice update: every spin in a cluster
                       flips simultaneously (no sequential or broadcast structure)
         Γ_ʔ     — 10^12-spin lattices; global sweeps are minimum viable
         Ω_2    — Z2 spin-flip symmetry baked into the update kernel as a
                       hardware invariant (NOT enforced by loss)
-        ƒ_ì       — classical fidelity: no quantum coherence
+        ƒ^ì       — classical fidelity: no quantum coherence
         Ħ_Ñ          — no chirality; one-shot map (not a flow)
         T_box       — box topology: periodic boundary conditions on 3D lattice
         Ð_C  — triangular (simplicial) lattice structure
 
     The contrast with ThurstonNet and the Riemann navigator is structurally exact:
-    Ç_- vs Ç_@ is the single primitive that collapses depth to zero and
+    Ç^- vs Ç^@ is the single primitive that collapses depth to zero and
     changes the entire architectural class from a learning system to an exact kernel.
 
     Predictions:
@@ -995,8 +995,8 @@ class IsingNavigator:
 
     DEFINING_TUPLE: dict[str, str] = {
         "Ð": "Ð_C", "Þ": "Þ_¨", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ_ì", "Ç": "Ç_-",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ_^", "φ̂": "φ̂_ÿ",
+        "Φ": "Φ_}", "ƒ": "ƒ^ì", "Ç": "Ç^-",
+        "Γ": "Γ_ʔ", "ɢ": "ɢ^∧", "⊙": "⊙_ÿ",
         "Ħ": "Ħ_Ñ", "Σ": "Σ_ő", "Ω": "Ω_2",
     }
 
@@ -1014,7 +1014,7 @@ class IsingNavigator:
     def __init__(self, L: int = 64):
         """
         L: lattice linear size. Full lattice has L^3 spins.
-        Ç_- + Γ_ʔ: target L >= 1024 for thermodynamic limit predictions.
+        Ç^- + Γ_ʔ: target L >= 1024 for thermodynamic limit predictions.
         """
         self.L = L
         self.N = L ** 3
@@ -1029,7 +1029,7 @@ class IsingNavigator:
 
     def _swendsen_wang_step(self) -> None:
         """
-        Single Swendsen-Wang cluster-flip step (Ç_-: one-pass, no depth).
+        Single Swendsen-Wang cluster-flip step (Ç^-: one-pass, no depth).
         Ω_2: each cluster flip preserves Z2 symmetry.
 
         Full implementation requires C++/CUDA Union-Find.
@@ -1044,7 +1044,7 @@ class IsingNavigator:
             self._spins = -self._spins
 
     def sweep(self, n_steps: int = 100) -> None:
-        """Run n_steps Swendsen-Wang sweeps (Ç_-: each sweep is single-pass)."""
+        """Run n_steps Swendsen-Wang sweeps (Ç^-: each sweep is single-pass)."""
         for _ in range(n_steps):
             self._swendsen_wang_step()
 
@@ -1085,9 +1085,9 @@ class IsingNavigator:
             "beta":           self._beta,
             "magnetization":  self.magnetization(),
             "known_exponents": self.KNOWN_EXPONENTS,
-            "architecture":   "single-pass Swendsen-Wang cluster-flip (Ç_-)",
+            "architecture":   "single-pass Swendsen-Wang cluster-flip (Ç^-)",
             "note": (
-                "Ç_- collapses depth to zero. This is an exact duality kernel, "
+                "Ç^- collapses depth to zero. This is an exact duality kernel, "
                 "not a learning system. No gradient computation. No training loop."
             ),
         }
@@ -1253,10 +1253,10 @@ def navigator_info() -> None:
         print(f"  Tuple:  <{'; '.join(f'{v}' for v in tup.values())}>")
         k = tup.get("Ç", "?")
         arch = {
-            "Ç_@":  "deep GNN stack (FrobeniusLayer + FamilyMixer)",
-            "Ç_Ù":  "Lanczos/VQE eigensolver (Ç_Ù: non-ergodic)",
-            "Ç_-":  "single-pass cluster-flip kernel (Ç_-: no depth)",
-            "Ç_W":   "moderate-depth GNN (10-15 layers)",
+            "Ç^@":  "deep GNN stack (FrobeniusLayer + FamilyMixer)",
+            "Ç^Ù":  "Lanczos/VQE eigensolver (Ç^Ù: non-ergodic)",
+            "Ç^-":  "single-pass cluster-flip kernel (Ç^-: no depth)",
+            "Ç^W":   "moderate-depth GNN (10-15 layers)",
         }.get(k, k)
         print(f"  Arch:   {arch}")
     print()

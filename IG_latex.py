@@ -48,35 +48,35 @@ PRIM_LATEX: dict[str, str] = {
     'Φ_˙':  r'Φ_{\text{˙}}',
     'Φ_}':  r'Φ_{\}}',
     # ── ƒ Fidelity  (SUPERSCRIPT; \text{ƒ} — not in standard math font) ────────
-    'ƒ_ì':  r'\text{ƒ}^{\text{ì}}',
-    'ƒ_ð':  r'\text{ƒ}^{\text{ð}}',
-    'ƒ_ż':  r'\text{ƒ}^{\text{ż}}',
+    'ƒ^ì':  r'\text{ƒ}^{\text{ì}}',
+    'ƒ^ð':  r'\text{ƒ}^{\text{ð}}',
+    'ƒ^ż':  r'\text{ƒ}^{\text{ż}}',
     # ── Ç Kinetics  (SUPERSCRIPT) ─────────────────────────────────────────────
-    'Ç_-':  r'Ç^{-}',
-    'Ç_W':  r'Ç^{W}',
-    'Ç_@':  r'Ç^{@}',
-    'Ç_Ù':  r'Ç^{\text{Ù}}',
-    'Ç_λ':  r'Ç^{\lambda}',
+    'Ç^-':  r'Ç^{-}',
+    'Ç^W':  r'Ç^{W}',
+    'Ç^@':  r'Ç^{@}',
+    'Ç^Ù':  r'Ç^{\text{Ù}}',
+    'Ç^λ':  r'Ç^{\lambda}',
     # ── Γ Scope ───────────────────────────────────────────────────────────────
     'Γ_β':  r'Γ_{\beta}',
     'Γ_γ':  r'Γ_{\gamma}',
     'Γ_ʔ':  r'Γ_{\text{ʔ}}',
     # ── ɢ Grammar  (SUPERSCRIPT; \text{ɢ} — not in standard math font) ─────────
-    'ɢ_^':  r'\text{ɢ}^{\wedge}',
-    'ɢ_˝':  r'\text{ɢ}^{\text{˝}}',
-    'ɢ_ˌ':  r'\text{ɢ}^{\text{ˌ}}',
-    'ɢ_Ş':  r'\text{ɢ}^{\text{Ş}}',
-    # ── ⊙ Criticality (\odot renders in all LaTeX modes; φ̂ is old catalog key) ─
+    'ɢ^∧':  r'\text{ɢ}^{\wedge}',
+    'ɢ^˝':  r'\text{ɢ}^{\text{˝}}',
+    'ɢ^ˌ':  r'\text{ɢ}^{\text{ˌ}}',
+    'ɢ^Ş':  r'\text{ɢ}^{\text{Ş}}',
+    # ── ⊙ Criticality (\odot renders in all LaTeX modes; ⊙ is old catalog key) ─
     '⊙_ž':  r'\odot_{\text{ž}}',
     '⊙_ÿ':  r'\odot_{\text{ÿ}}',
     '⊙_Æ':  r'\odot_{\text{Æ}}',
     '⊙_3':  r'\odot_{3}',
     '⊙_Ţ':  r'\odot_{\text{Ţ}}',
-    'φ̂_ž':  r'\odot_{\text{ž}}',
-    'φ̂_ÿ':  r'\odot_{\text{ÿ}}',
-    'φ̂_Æ':  r'\odot_{\text{Æ}}',
-    'φ̂_3':  r'\odot_{3}',
-    'φ̂_Ţ':  r'\odot_{\text{Ţ}}',
+    '⊙_ž':  r'\odot_{\text{ž}}',
+    '⊙_ÿ':  r'\odot_{\text{ÿ}}',
+    '⊙_Æ':  r'\odot_{\text{Æ}}',
+    '⊙_3':  r'\odot_{3}',
+    '⊙_Ţ':  r'\odot_{\text{Ţ}}',
     # ── Ħ Chirality (\text{Ħ} — not in standard math font) ──────────────
     'Ħ_Ñ':  r'\text{Ħ}_{\text{Ñ}}',
     'Ħ_£':  r'\text{Ħ}_{\text{£}}',
@@ -96,7 +96,7 @@ PRIM_LATEX: dict[str, str] = {
 # ── Public API ────────────────────────────────────────────────────────────────
 
 def fmt(raw_id: str) -> str:
-    """Return canonical LaTeX body for a source ID like 'ƒ_ż'. No $ delimiters."""
+    """Return canonical LaTeX body for a source ID like 'ƒ^ż'. No $ delimiters."""
     if raw_id not in PRIM_LATEX:
         raise KeyError(f"Unknown primitive ID: {raw_id!r}")
     return PRIM_LATEX[raw_id]
@@ -149,7 +149,7 @@ def _build_fix_patterns() -> list[tuple[re.Pattern, str]]:
 
     for raw_id, canonical in PRIM_LATEX.items():
         prim, sub = raw_id.split('_', 1)
-        # de-duplicate: φ̂ aliases point to same canonical as ⊙ entries
+        # de-duplicate: ⊙ aliases point to same canonical as ⊙ entries
         if canonical in seen:
             continue
         seen.add(canonical)
@@ -168,14 +168,14 @@ def _build_fix_patterns() -> list[tuple[re.Pattern, str]]:
         )
         patterns.append((re.compile(pat), canonical))
 
-    # Also handle φ̂ prim char → ⊙ canonical (the old key in source documents)
+    # Also handle ⊙ prim char → ⊙ canonical (the old key in source documents)
     for raw_id, canonical in PRIM_LATEX.items():
-        if not raw_id.startswith('φ̂'):
+        if not raw_id.startswith('⊙'):
             continue
         _, sub = raw_id.split('_', 1)
         sub_pat = _subtype_pattern(sub)
         pat = (
-            re.escape('φ̂')
+            re.escape('⊙')
             + r'[_^]'
             + r'\{?'
             + r'(?:\\text\{)?'
@@ -230,8 +230,8 @@ def fix_file(path: str) -> None:
     with open(path, 'w', encoding='utf-8') as f:
         f.write(fixed)
     # Report changed primitives
-    orig_set  = set(re.findall(r'[ÐÞŘΦƒÇΓɢ⊙Ħ-ΩΣφ̂][_^][^\s;\\$\{]+', original))
-    fixed_set = set(re.findall(r'[ÐÞŘΦƒÇΓɢ⊙Ħ-ΩΣφ̂][_^][^\s;\\$\{]+', fixed))
+    orig_set  = set(re.findall(r'[ÐÞŘΦƒÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
+    fixed_set = set(re.findall(r'[ÐÞŘΦƒÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
     print(f"Fixed: {path}")
 
 
@@ -239,7 +239,7 @@ def fix_file(path: str) -> None:
 
 def _cmd_list():
     for raw_id, canon in PRIM_LATEX.items():
-        if raw_id.startswith('φ̂'):
+        if raw_id.startswith('⊙'):
             continue   # suppress duplicate alias listing
         print(f"  {raw_id:<8}  →  ${canon}$")
 

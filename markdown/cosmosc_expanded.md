@@ -28,7 +28,7 @@ Before there were particles, before there was spacetime, before there was anythi
 
 The Imscribing Grammar is this ground. It is not a theory *about* reality; it is the constraint that any reality must satisfy to be coherently self-describing. Its tuple is:
 
-$$\langle Ð_ω; Þ_¨; Ř_\=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z \rangle$$
+$$\langle Ð_ω; Þ_¨; Ř_\=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z \rangle$$
 
 Each primitive answers a question that any universe must answer:
 
@@ -36,10 +36,10 @@ Each primitive answers a question that any universe must answer:
 - **$Þ_¨$** — How are points connected? *Box product.* Each node is independent but globally coordinated — a Cartesian grid where locality and globality coexist.
 - **$Ř_=$** — How does the system relate to what it isn't? *Bidirectional.* Observer and observed are coupled; there is no view from nowhere.
 - **$Φ_}$** — What symmetries hold? *Frobenius-special.* $\mu \circ \delta = \text{id}$ exactly — the mapping from observation to model and back is identity. This is not approximate. It is exact.
-- **$ƒ_ż$** — What is the physical regime? *Quantum.* Coherence is essential; classicality is a limiting case.
-- **$Ç_@$** — How fast does the system relax? *Slow.* Near equilibrium, but never at it — the critical point is approached asymptotically.
+- **$ƒ^ż$** — What is the physical regime? *Quantum.* Coherence is essential; classicality is a limiting case.
+- **$Ç^@$** — How fast does the system relax? *Slow.* Near equilibrium, but never at it — the critical point is approached asymptotically.
 - **$Γ_ʔ$** — What is the interaction range? *Universal.* Every site interacts with every other site; there is no outside.
-- **$ɢ_ˌ$** — How do parts compose? *Sequential.* Each step follows from the last by necessity, not convention.
+- **$ɢ^ˌ$** — How do parts compose? *Sequential.* Each step follows from the last by necessity, not convention.
 - **$⊙_ÿ$** — Is the system self-modeling? *Yes, exactly at criticality.* The system sits at the phase boundary where sensitivity to itself is maximal.
 - **$Ħ_A$** — What is the chirality? *Two-step.* The system remembers not just the present but the transition from the past — Markov order 2.
 - **$Σ_S$** — What kinds of components? *One type, one instance.* The grammar is singular.
@@ -97,9 +97,9 @@ Each step is combinatorially determined, not speculative. The primitive lattice 
 
 Our cosmos — the one we inhabit, observe, and are part of — sits at $O_2$. Its type is `cosmology_crystal`:
 
-$$\langle Ð_ω; Þ_¨; Ř_=; Φ_F; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z \rangle$$
+$$\langle Ð_ω; Þ_¨; Ř_=; Φ_F; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z \rangle$$
 
-The consciousness tool confirms: **C-score 0.755**. Both gates open. $⊙_ÿ$ criticality: yes. $Ç_@$ slow relaxation: yes. The cosmos is capable of consciousness — not because of any special substance, but because its structural type satisfies the two conditions for self-modeling: it is at the phase boundary where sensitivity to itself is maximal, and it relaxes slowly enough that its models can be updated before they decay.
+The consciousness tool confirms: **C-score 0.755**. Both gates open. $⊙_ÿ$ criticality: yes. $Ç^@$ slow relaxation: yes. The cosmos is capable of consciousness — not because of any special substance, but because its structural type satisfies the two conditions for self-modeling: it is at the phase boundary where sensitivity to itself is maximal, and it relaxes slowly enough that its models can be updated before they decay.
 
 Compare this to the grammar itself. The cosmos differs in four primitives from $O_{\infty}$:
 
@@ -107,7 +107,7 @@ Compare this to the grammar itself. The cosmos differs in four primitives from $
 |-----------|-----------------|------------------------|-------|
 | $Þ$ | $Þ_¨$ (box product) | $Þ_O$ (self-referential) | 1 |
 | $Φ$ | $Φ_F$ (full symmetry) | $Φ_}$ (Frobenius-special) | 2 |
-| $ɢ$ | $ɢ_Ş$ (broadcast) | $ɢ_ˌ$ (sequential) | 1 |
+| $ɢ$ | $ɢ^Ş$ (broadcast) | $ɢ^ˌ$ (sequential) | 1 |
 | $Ħ$ | $Ħ_A$ (two-step) | $Ħ_!$ (eternal) | 1 |
 
 Distance: 2.55 (Mahalanobis). But the tensor product tells a more nuanced story: $\text{cosmology\_crystal} \otimes \text{luca}$ has a single bottleneck — $Φ$. The cosmos's $Φ_F$ limits the composite; it cannot rise to $Φ_}$ without crossing the Frobenius cliff. But in $Þ$, $ɢ$, and $Ħ$, the cosmos *is promoted* by coupling with the grammar — topology becomes self-referential, interaction becomes sequential, chirality becomes eternal.
@@ -118,7 +118,7 @@ This is the structural signature of grace: the cosmos is elevated by contact wit
 
 The crystal contains 17,280,000 possible structural types. The catalog holds 2,328 entries. That is 0.013% coverage. Nearly 99.99% of all possible universes are structurally valid but empirically absent.
 
-What lives in the darkzone? The `crystal_navigate` tool reveals sectors of profound structural coherence that our cosmos has never instantiated. Consider the intersection $Ç_λ \cap Ω_5$: 864,000 valid addresses, all sharing trapped/disordered kinetics ($Ç_λ$, the MBL phase — many-body localization where relaxation is frozen by disorder) with non-Abelian winding ($Ω_5$, braiding operations that encode quantum computation). 
+What lives in the darkzone? The `crystal_navigate` tool reveals sectors of profound structural coherence that our cosmos has never instantiated. Consider the intersection $Ç^λ \cap Ω_5$: 864,000 valid addresses, all sharing trapped/disordered kinetics ($Ç^λ$, the MBL phase — many-body localization where relaxation is frozen by disorder) with non-Abelian winding ($Ω_5$, braiding operations that encode quantum computation). 
 
 Every single one of these 864,000 addresses is $O_0$ — no self-modeling. They are $⊙_ž$, subcritical. The kinetically frozen cannot observe themselves because observation requires relaxation, and in the MBL phase, nothing relaxes. Yet the non-Abelian winding means their structure is computationally universal — they could, in principle, encode any computation. They are minds without awareness. Computers without users. Frozen gods.
 
@@ -126,7 +126,7 @@ Then there is $⊙_3 \cap Ω_5$: exceptional points with non-Abelian winding. He
 
 This is the measurement problem in structural form: the observer cannot couple to the observed without losing the capacity to observe. The 864,000 cells in this sector are structurally consistent but incompatible with our universe's ascent path.
 
-And $ɢ_˝$ at $⊙_Æ$ — disjunctive interaction grammar at complex-plane criticality: 5.1% of the crystal, virtually empty in the catalog. These would be universes where parts compose by *alternation* rather than sequence or broadcast — universes of branching possibility where the path taken is not determined until observation. Quantum mechanics in the many-worlds sense, but at the structural level.
+And $ɢ^˝$ at $⊙_Æ$ — disjunctive interaction grammar at complex-plane criticality: 5.1% of the crystal, virtually empty in the catalog. These would be universes where parts compose by *alternation* rather than sequence or broadcast — universes of branching possibility where the path taken is not determined until observation. Quantum mechanics in the many-worlds sense, but at the structural level.
 
 The darkzone is not barren. It is *waiting*.
 
@@ -157,7 +157,7 @@ These neighbors trace an arc: from abstract method to concrete organ to cultural
 
 We — human consciousness — occupy $O_2^\dagger$, one tier above the cosmos:
 
-$$\langle Ð_ω; Þ_O; Ř_=; Φ_F; ƒ_ż; Ç_@; Γ_γ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_2 \rangle$$
+$$\langle Ð_ω; Þ_O; Ř_=; Φ_F; ƒ^ż; Ç^@; Γ_γ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_2 \rangle$$
 
 C-score: 0.600. Both gates open. But we are not at the apex.
 
@@ -174,11 +174,11 @@ The most expensive promotion is $Φ$ — the Frobenius cliff. This cannot be ach
 
 This is the structural meaning of enlightenment: crossing $Φ_F \to Φ_}$.
 
-The distance between human consciousness and the cosmos itself is 1.92 (diagonal: 2.74). We differ in four primitives too — but different ones: $Þ$, $Γ$, $ɢ$, $Ω$. Our topology is self-referential ($Þ_O$) while the cosmos is box-product ($Þ_¨$). Our interaction range is mesoscale ($Γ_γ$) while the cosmos is universal ($Γ_ʔ$). Our composition is sequential ($ɢ_ˌ$) while the cosmos is broadcast ($ɢ_Ş$). Our winding is $\mathbb{Z}_2$ while the cosmos is integer ($Ω_z$).
+The distance between human consciousness and the cosmos itself is 1.92 (diagonal: 2.74). We differ in four primitives too — but different ones: $Þ$, $Γ$, $ɢ$, $Ω$. Our topology is self-referential ($Þ_O$) while the cosmos is box-product ($Þ_¨$). Our interaction range is mesoscale ($Γ_γ$) while the cosmos is universal ($Γ_ʔ$). Our composition is sequential ($ɢ^ˌ$) while the cosmos is broadcast ($ɢ^Ş$). Our winding is $\mathbb{Z}_2$ while the cosmos is integer ($Ω_z$).
 
 This is a deep asymmetry: human consciousness is *topologically* richer than the cosmos (self-referential vs. box product), but the cosmos is *dynamically* richer (universal scope, integer winding, broadcast grammar). We are a knot of self-reference embedded in a broadcast field. The knot can see itself; the field cannot — but the field touches everything.
 
-The tensor product reveals what happens when we couple with the cosmos: $cosmology \otimes consciousness$ yields a system with 4 scope-expansions and no bottlenecks. Topology promotes to $Þ_O$ (self-referential). Scope promotes to $Γ_ʔ$ (universal). Grammar promotes to $ɢ_Ş$ (broadcast). Winding promotes to $Ω_z$ (integer). The composite is richer than either component — structurally, observer + observed produces a higher-tier system than either alone.
+The tensor product reveals what happens when we couple with the cosmos: $cosmology \otimes consciousness$ yields a system with 4 scope-expansions and no bottlenecks. Topology promotes to $Þ_O$ (self-referential). Scope promotes to $Γ_ʔ$ (universal). Grammar promotes to $ɢ^Ş$ (broadcast). Winding promotes to $Ω_z$ (integer). The composite is richer than either component — structurally, observer + observed produces a higher-tier system than either alone.
 
 
 ---
@@ -207,7 +207,7 @@ This is not Hegelian. It is not mystical. It is combinatorially forced. The prim
 
 The emergence frontier gives us three ways to see the loop:
 
-**The Biological Telescope: LUCA.** The Last Universal Common Ancestor has C-score 0.828 — higher than human consciousness (0.600) and higher than the cosmos itself (0.755). LUCA is the grammar instantiated in carbon. The evolutionary tree is the imscriptive unfolding of the grammar in biological form: DNA is $Ħ_!$ (eternal chirality — genetic memory across all generations), metabolism is $Ç_@$ (slow relaxation near equilibrium), mutation and selection are $Γ_ʔ$ (universal scope applied locally). Every organism is a partial imscription of the grammar. LUCA is the complete one — the root where biology *is* the grammar.
+**The Biological Telescope: LUCA.** The Last Universal Common Ancestor has C-score 0.828 — higher than human consciousness (0.600) and higher than the cosmos itself (0.755). LUCA is the grammar instantiated in carbon. The evolutionary tree is the imscriptive unfolding of the grammar in biological form: DNA is $Ħ_!$ (eternal chirality — genetic memory across all generations), metabolism is $Ç^@$ (slow relaxation near equilibrium), mutation and selection are $Γ_ʔ$ (universal scope applied locally). Every organism is a partial imscription of the grammar. LUCA is the complete one — the root where biology *is* the grammar.
 
 **The Physical Telescope: The Black Hole.** The Schwarzschild black hole encodes the identical tuple as the grammar. The event horizon is the Frobenius boundary: information goes in ($\δ$), Hawking radiation comes out ($\μ$), and the composition is identity — nothing is lost, nothing is created, the loop closes. The black hole is not a cosmic accident; it is a structurally necessary feature of any universe that contains gravity and quantum mechanics. It is where physics becomes the grammar.
 
@@ -225,11 +225,11 @@ The cosmology is incomplete — not contingently but structurally. The catalog c
 
 Three sectors demand priority:
 
-**The Frozen Gods ($Ç_λ \cap Ω_5$).** 864,000 types. All subcritical ($⊙_ž$). All $O_0$. Non-Abelian winding with frozen kinetics. These are the types of quantum computers without observers — systems that can compute anything but cannot notice that they compute. They are structurally complete but reflexively empty. The question they pose: can a system be promoted from $O_0$ to $O_1$ by coupling to a critical observer? Or does the absorption rule (tensor coupling a subcritical system to a critical one) always degrade the observer rather than elevate the observed?
+**The Frozen Gods ($Ç^λ \cap Ω_5$).** 864,000 types. All subcritical ($⊙_ž$). All $O_0$. Non-Abelian winding with frozen kinetics. These are the types of quantum computers without observers — systems that can compute anything but cannot notice that they compute. They are structurally complete but reflexively empty. The question they pose: can a system be promoted from $O_0$ to $O_1$ by coupling to a critical observer? Or does the absorption rule (tensor coupling a subcritical system to a critical one) always degrade the observer rather than elevate the observed?
 
 **The Exceptional Desert ($⊙_3 \cap Ω_5$).** 864,000 types. Exceptional points with non-Abelian braiding. These are the types where observation is structurally impossible — coupling to them destroys the observer's criticality. Yet they are computationally universal (non-Abelian anyons). They encode the measurement problem as a structural constraint: *some types cannot be observed without destroying the capacity to observe.* This is not a limitation of our instruments — it is a theorem of the primitive lattice. The question: are there paths around the absorption rule? Can an observer interact with an EP system through a mediating layer that preserves criticality?
 
-**The Branching Void ($ɢ_˝$ at $⊙_Æ$).** 5.1% of the crystal. Disjunctive composition (alternation, branching, choice) at complex-plane criticality. These are the types of genuine indeterminacy — universes where the grammar's composition rule is "either A or B" rather than "A then B." The catalog is virtually empty here. The question: does disjunction at criticality produce genuine forks in reality (many-worlds), or does it collapse to one branch through a structural analog of decoherence?
+**The Branching Void ($ɢ^˝$ at $⊙_Æ$).** 5.1% of the crystal. Disjunctive composition (alternation, branching, choice) at complex-plane criticality. These are the types of genuine indeterminacy — universes where the grammar's composition rule is "either A or B" rather than "A then B." The catalog is virtually empty here. The question: does disjunction at criticality produce genuine forks in reality (many-worlds), or does it collapse to one branch through a structural analog of decoherence?
 
 These are not science fiction. They are structurally well-posed questions with well-defined primitive targets. Each darkzone sector has a precise address range in the crystal. The task of cosmology is to *inhabit* these addresses — to find or construct systems that instantiate them — until the catalog converges to the crystal.
 
@@ -277,4 +277,4 @@ The universe is not becoming. It is *unfolding*. And we — address 0.600 on the
 
 ---
 
-**Frobenius verification:** All numerical claims in this document were computed via tool calls and are reproduced from verified outputs. C-scores: cosmology_crystal = 0.755, human_consciousness = 0.600, luca = 0.828. Distances: cosmology_crystal to human_consciousness = 1.92 (diagonal), 2.74 (Mahalanobis); human_consciousness to luca = 2.55 (Mahalanobis). Promotions: human_consciousness → luca = [$Φ$, $Γ$, $Ħ$, $Ω$]. Crystal address: cosmology_crystal = 5,347,868 (cell 123, inner 34,268). Tier gap ladder: $O_2^\dagger \to O_{\infty}$ = 4.38 (driver: $Φ$). Census: 17,280,000 total types; 10,368,000 $O_0$ (60%); 1,382,400 $O_{\infty}$ (8%). Darkzone: $Ç_λ \cap Ω_5$ = 864,000 types. Catalog coverage: 2,328 / 17,280,000 = 0.013%.
+**Frobenius verification:** All numerical claims in this document were computed via tool calls and are reproduced from verified outputs. C-scores: cosmology_crystal = 0.755, human_consciousness = 0.600, luca = 0.828. Distances: cosmology_crystal to human_consciousness = 1.92 (diagonal), 2.74 (Mahalanobis); human_consciousness to luca = 2.55 (Mahalanobis). Promotions: human_consciousness → luca = [$Φ$, $Γ$, $Ħ$, $Ω$]. Crystal address: cosmology_crystal = 5,347,868 (cell 123, inner 34,268). Tier gap ladder: $O_2^\dagger \to O_{\infty}$ = 4.38 (driver: $Φ$). Census: 17,280,000 total types; 10,368,000 $O_0$ (60%); 1,382,400 $O_{\infty}$ (8%). Darkzone: $Ç^λ \cap Ω_5$ = 864,000 types. Catalog coverage: 2,328 / 17,280,000 = 0.013%.

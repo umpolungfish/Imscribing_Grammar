@@ -1,12 +1,12 @@
-_CRIT_LEGACY = '\u03c6\u0302'  # φ̂
+_CRIT_LEGACY = '\u03c6\u0302'  # ⊙
 _CRIT_MODERN = '\u2299'         # ⊙
 
 def _read_crit(entry):
-    """Read criticality from entry, accepting ⊙ or φ̂ key. Returns ⊙_* form."""
+    """Read criticality from entry, accepting ⊙ or ⊙ key. Returns ⊙_* form."""
     import unicodedata
     raw = entry.get(_CRIT_LEGACY, entry.get(_CRIT_MODERN, ''))
     raw = unicodedata.normalize('NFC', raw)
-    # Normalize φ̂_* -> ⊙_* (sounds.py uses ⊙ base)
+    # Normalize ⊙_* -> ⊙_* (sounds.py uses ⊙ base)
     if raw.startswith(_CRIT_LEGACY + '_'):
         return _CRIT_MODERN + raw[len(_CRIT_LEGACY):]
     return raw

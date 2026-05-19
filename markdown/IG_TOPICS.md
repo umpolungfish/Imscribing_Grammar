@@ -144,13 +144,13 @@ $H$ encodes **broken orientational symmetry and its persistence**. It subsumes t
 
 **Axiom consequence (H and Axiom 5):** At $\Phi_{\text{ctyogh}}$, the system encodes its own structure. For $H \geq 1$ systems at $\Phi_{\text{ctyogh}}$, this means the system encodes its own handedness — chirality amplification becomes self-referential. This is the algebraic definition of autocatalytic symmetry breaking: the system uses its own $H$ value as the template for the next cycle. Soai autocatalysis is Axiom 5 running on the $H$ primitive.
 
-**Empirical validation (2026-03-23):** V(H, P) = 0.080, confirming the central independence claim. Full independence profile: V(H, Φ) = 0.000, V(H, F) = 0.030, V(H, K) = 0.049, V(H, G) = 0.060, V(H, T) = 0.077, V(H, P) = 0.080, V(H, R) = 0.093, V(H, D) = 0.098, V(H, Γ) = 0.116. All < 0.15. $H$ is the most orthogonal new primitive discoverable from the existing catalog — more orthogonal to the full tuple than $F$ is to $K$ (0.094). *Caveat: H₁ and H_∞ have zero catalog entries; the four-tier test awaits rotaxane/catenane and atropisomer encoding. The H_∞ → Ç_Ù predicted correlation will manifest when topologically chiral systems are added.*
+**Empirical validation (2026-03-23):** V(H, P) = 0.080, confirming the central independence claim. Full independence profile: V(H, Φ) = 0.000, V(H, F) = 0.030, V(H, K) = 0.049, V(H, G) = 0.060, V(H, T) = 0.077, V(H, P) = 0.080, V(H, R) = 0.093, V(H, D) = 0.098, V(H, Γ) = 0.116. All < 0.15. $H$ is the most orthogonal new primitive discoverable from the existing catalog — more orthogonal to the full tuple than $F$ is to $K$ (0.094). *Caveat: H₁ and H_∞ have zero catalog entries; the four-tier test awaits rotaxane/catenane and atropisomer encoding. The H_∞ → Ç^Ù predicted correlation will manifest when topologically chiral systems are added.*
 
 **$D_{\text{omega}}$ (imscriptive, v0.4.4):** Bulk degrees of freedom encoded on a lower-dimensional boundary. Any transition from $D_{\text{omega}}$ to any bulk phase is a 1st-order morphism with infinite primitive cost — the bulk-boundary map is not a continuous HotSwap.
 
 ### II.1 Primitive Independence: Empirical Analysis (2026-03-24, updated 2026-03-23 ×2)
 
-Bias-corrected Cramer V computed across all primitive pairs on the full 1623-entry catalog. **Phase 1** (2026-03-24) used only the 115 hand-curated diverse entries after discovering that 93% of auto-discovery entries were locked to Ç_W + ƒ_ż defaults. **Phase 2** (2026-03-23) fixed the generator K/F/Φ assignment rules and re-analyzed the full corpus with corrected values — K changed in 76.3% of entries, F in 91.0%, Φ in 4.7%. **Phase 3** (2026-03-23) tested the proposed $H$ (Chirality) primitive against all existing primitives; all V(H, X) < 0.15, confirming $H$ as the 12th genuine primitive. See [TOPO:§II.0] for the formal definition.
+Bias-corrected Cramer V computed across all primitive pairs on the full 1623-entry catalog. **Phase 1** (2026-03-24) used only the 115 hand-curated diverse entries after discovering that 93% of auto-discovery entries were locked to Ç^W + ƒ^ż defaults. **Phase 2** (2026-03-23) fixed the generator K/F/Φ assignment rules and re-analyzed the full corpus with corrected values — K changed in 76.3% of entries, F in 91.0%, Φ in 4.7%. **Phase 3** (2026-03-23) tested the proposed $H$ (Chirality) primitive against all existing primitives; all V(H, X) < 0.15, confirming $H$ as the 12th genuine primitive. See [TOPO:§II.0] for the formal definition.
 
 **Full-corpus Cramer V table (N = 1623, K/F/Φ corrected):**
 
@@ -231,11 +231,11 @@ This correlation is not a deficiency — it reflects a physical constraint: the 
 
 ### II.1.3 Generator Bias: Before and After
 
-**Phase 1 finding (2026-03-24):** 1508/1623 entries (93%) defaulted to Ç_W + ƒ_ż + null-Φ from the generator rule-based fallback. K, F, and Φ dimensions were statistically unencoded.
+**Phase 1 finding (2026-03-24):** 1508/1623 entries (93%) defaulted to Ç^W + ƒ^ż + null-Φ from the generator rule-based fallback. K, F, and Φ dimensions were statistically unencoded.
 
-**Phase 2 fix (2026-03-23):** Generator now detects Ç_- (proton transfer, fluxional, kcat, labile), Ç_@ (crystalline, ordered, persistent, co-crystal), Ç_Ù (metastable, spin-forbidden, glass, locked), and infers from topology (Þ_cage→Ç_@; Þ_bowl→Ç_-). ƒ_ż fires on lock-and-key/geometry-enforcing/picomolar; ƒ_ì on promiscuous/π-stacking/metastable. Φ_c fires on scale-free/critical/emergent/condensate keywords.
+**Phase 2 fix (2026-03-23):** Generator now detects Ç^- (proton transfer, fluxional, kcat, labile), Ç^@ (crystalline, ordered, persistent, co-crystal), Ç^Ù (metastable, spin-forbidden, glass, locked), and infers from topology (Þ_cage→Ç^@; Þ_bowl→Ç^-). ƒ^ż fires on lock-and-key/geometry-enforcing/picomolar; ƒ^ì on promiscuous/π-stacking/metastable. Φ_c fires on scale-free/critical/emergent/condensate keywords.
 
-**After correction:** Ç_@ 59%, Ç_W 23.5%, Ç_- 16%, Ç_Ù 1.4%. ƒ_ð 71.8%, ƒ_ì 20.6%, ƒ_ż 7.6%. Φ_sub 95.5%, Φ_c 4.2%, Φ_super 0.3%.
+**After correction:** Ç^@ 59%, Ç^W 23.5%, Ç^- 16%, Ç^Ù 1.4%. ƒ^ð 71.8%, ƒ^ì 20.6%, ƒ^ż 7.6%. Φ_sub 95.5%, Φ_c 4.2%, Φ_super 0.3%.
 
 The corrected Φ distribution (95.5% Φ_sub) is plausible — most self-organizing systems in the catalog are subcritical assemblies. The low Φ_c rate (4.2%) reflects that criticality is a special condition, not a default. The K and F distributions now carry physical information rather than reflecting generator prior.
 
@@ -351,11 +351,11 @@ Three parameters that appeared to be free choices in the implementation of the f
 **Statement:** When the external driving frequency $\omega_{\text{ext}}$ at any K-tier exceeds the internal integration frequency $\omega_{\text{int}}$, that tier collapses to $T_{\vert}$ (linear, directionless). The Zeno condition freezes transverse structure.
 
 **Corollaries:**
-1. $T_{\text{invscr}}$ (network) under $\omega_{\text{ext}} \gg \omega_{\text{int}}$ → $T_{\vert}$: a network under extreme Ç_- driving loses integrative topology.
+1. $T_{\text{invscr}}$ (network) under $\omega_{\text{ext}} \gg \omega_{\text{int}}$ → $T_{\vert}$: a network under extreme Ç^- driving loses integrative topology.
 2. GRB as maximum Zeno machine: the GRB jet operates at the Zeno limit in the propagation direction, reducing all transverse topology to $T_{\vert}$. [DIAPH:§XII.3]
 3. Cosmic void formation: anti-Zeno regions where $K_{\text{frtailgamma}} > K_{\text{teshlig}}$ → $T_{\cup}$ (bowl/void topology). [DIAPH:§XIV.1]
 
-**Zeno threshold in information terms:** $\xi_{CP} > \xi_{\text{Zeno}}$ = threshold for topology collapse. Verified at 11.0 nats (Higgs unitarity violation without Ç_@ catalyst, P-64).
+**Zeno threshold in information terms:** $\xi_{CP} > \xi_{\text{Zeno}}$ = threshold for topology collapse. Verified at 11.0 nats (Higgs unitarity violation without Ç^@ catalyst, P-64).
 
 ---
 
@@ -388,7 +388,7 @@ Three parameters that appeared to be free choices in the implementation of the f
 
 **Core encoding:** Quantum mechanics occupies the $K_{\text{frtailgamma}}$ tier at all scales — it is not a separate domain but a K-tier description of constraint propagation at the fastest accessible timescales.
 
-**Wave-particle duality:** Dual description of the same Ç_- constraint propagation: wave description is the $T_{\text{invscr}}$ (network) perspective; particle description is the $G_{\text{beta}}$ (local) perspective.
+**Wave-particle duality:** Dual description of the same Ç^- constraint propagation: wave description is the $T_{\text{invscr}}$ (network) perspective; particle description is the $G_{\text{beta}}$ (local) perspective.
 
 **Quantum entanglement:** $R_{\ddagger}$ (catalytic recognition) at $G_{\text{revapostrophe}}$ — global-scope constraint preserved across arbitrary spatial separation by topological protection ($\Omega_{Z_2}$). Entanglement is not non-local action; it is $G_{\text{revapostrophe}}$-scope $R_{\ddagger}$ with $\Omega_{Z_2}$.
 
@@ -559,11 +559,11 @@ The grammar is not only descriptive — it is theorem-generating. Given correct 
 
 **Theorem:** If K is irreducible (a genuine primitive, not decomposable into combinations of the other eleven), then P ≠ NP.
 
-**Derivation:** The empirical cross-variance V(K, X) < 0.15 for all other primitives X [DIAPH:§XVIII.2] establishes K as a candidate primitive with no reducibility signal. Accept K as irreducible. Then Ç_- and Ç_W are categorically distinct — not different speeds but different primitive values, each requiring a Phi event (phase transition) to transition between.
+**Derivation:** The empirical cross-variance V(K, X) < 0.15 for all other primitives X [DIAPH:§XVIII.2] establishes K as a candidate primitive with no reducibility signal. Accept K as irreducible. Then Ç^- and Ç^W are categorically distinct — not different speeds but different primitive values, each requiring a Phi event (phase transition) to transition between.
 
-P = Ç_- algorithms. NP-complete solution landscapes are Ç_W or Ç_@. If no Ç_- process can access Ç_W landscapes without a K-transition, and a K-transition changes the process from Ç_- to Ç_W, then no Ç_- algorithm solves Ç_W landscape problems generally. Therefore P ≠ NP.
+P = Ç^- algorithms. NP-complete solution landscapes are Ç^W or Ç^@. If no Ç^- process can access Ç^W landscapes without a K-transition, and a K-transition changes the process from Ç^- to Ç^W, then no Ç^- algorithm solves Ç^W landscape problems generally. Therefore P ≠ NP.
 
-**Meta-theorem:** Standard proof systems (formal logic, ZFC) operate at Ç_@ in Ð_ß. They cannot detect K-class boundaries from outside any single K regime. This predicts that a proof of P ≠ NP will require either an interactive proof structure (ɢ_arrow, accessing multiple K regimes via directional grammar) or a topological encoding of the K-class boundary as an invariant — analogous to the Yang-Mills result above.
+**Meta-theorem:** Standard proof systems (formal logic, ZFC) operate at Ç^@ in Ð_ß. They cannot detect K-class boundaries from outside any single K regime. This predicts that a proof of P ≠ NP will require either an interactive proof structure (ɢ_arrow, accessing multiple K regimes via directional grammar) or a topological encoding of the K-class boundary as an invariant — analogous to the Yang-Mills result above.
 
 ### XVII.3 The G-Scope Tier-Crossing Cost Theorem
 
@@ -585,9 +585,9 @@ This is not a physical suppression mechanism — it is a grammar constraint on c
 
 **Theorem:** Under $D_{\text{omega}}$, all K-class boundaries are dissolved. The K-class hierarchy (P ⊊ NP ⊊ PSPACE ⊊ EXP ⊊ ...) collapses entirely. $D_{\text{omega}}$ is the unique primitive with this property.
 
-**Derivation:** $D_{\text{omega}}$ = imscriptive dimensionality; bulk degrees of freedom encoded on a lower-dimensional boundary. Under $D_{\text{omega}}$, a Ç_- boundary query accesses the full K-class content of the bulk because the boundary *is* the bulk. K-class barriers exist within Ð_ß because local Ç_- systems cannot see Ç_@ bulk structure. Under $D_{\text{omega}}$ there is no bulk-boundary separation — Ç_- boundary and Ç_@ bulk are the same degrees of freedom.
+**Derivation:** $D_{\text{omega}}$ = imscriptive dimensionality; bulk degrees of freedom encoded on a lower-dimensional boundary. Under $D_{\text{omega}}$, a Ç^- boundary query accesses the full K-class content of the bulk because the boundary *is* the bulk. K-class barriers exist within Ð_ß because local Ç^- systems cannot see Ç^@ bulk structure. Under $D_{\text{omega}}$ there is no bulk-boundary separation — Ç^- boundary and Ç^@ bulk are the same degrees of freedom.
 
-**Single-primitive test for uniqueness:** Φ_pm_psi alone does not collapse K hierarchies (BPP ≠ NP, believed). ƒ_ż alone does not collapse K hierarchies (BQP ≠ NP, believed). ɢ_arrow alone reaches exactly Ç_@ (IP = PSPACE, proved). ƒ_ż + ɢ_arrow reaches NEXP (MIP = NEXP, proved). ƒ_ż + ɢ_arrow + $D_{\text{omega}}$ reaches RE (MIP* = RE, proved, JNVWY 2020). $D_{\text{omega}}$ is the primitive whose addition collapses to the computability ceiling. No other single primitive achieves this; $D_{\text{omega}}$ with any grammar and fidelity achieves it.
+**Single-primitive test for uniqueness:** Φ_pm_psi alone does not collapse K hierarchies (BPP ≠ NP, believed). ƒ^ż alone does not collapse K hierarchies (BQP ≠ NP, believed). ɢ_arrow alone reaches exactly Ç^@ (IP = PSPACE, proved). ƒ^ż + ɢ_arrow reaches NEXP (MIP = NEXP, proved). ƒ^ż + ɢ_arrow + $D_{\text{omega}}$ reaches RE (MIP* = RE, proved, JNVWY 2020). $D_{\text{omega}}$ is the primitive whose addition collapses to the computability ceiling. No other single primitive achieves this; $D_{\text{omega}}$ with any grammar and fidelity achieves it.
 
 **Cross-reference:** [DIAPH:§XVIII.2] for complexity class encoding table; [ONTO:§XV] for ontological implications of hierarchy collapse; [ONTO:§IX] for the $D_{\text{omega}}$ substrate entry.
 

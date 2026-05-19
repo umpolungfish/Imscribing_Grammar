@@ -11,11 +11,11 @@ mapping = {
     'Ř_=': 'Relational.R_lyoghlig', 'Ř_Ť': 'Relational.R_downstep',
     'Φ_υ': 'Polarity.P_aolig', 'Φ_ɐ': 'Polarity.P_aolig', 'Φ_F': 'Polarity.P_pipevar',
     'Φ_˙': 'Polarity.P_subdoublearrow', 'Φ_}': 'Polarity.P_doublebarpipe',
-    'ƒ_ì': 'Fidelity.F_beltl', 'ƒ_ż': 'Fidelity.F_hardsign',
-    'Ç_Ù': 'KineticChar.K_teshlig', 'Ç_@': 'KineticChar.K_schwa', 'Ç_W': 'KineticChar.K_frtailgamma',
+    'ƒ^ì': 'Fidelity.F_beltl', 'ƒ^ż': 'Fidelity.F_hardsign',
+    'Ç^Ù': 'KineticChar.K_teshlig', 'Ç^@': 'KineticChar.K_schwa', 'Ç^W': 'KineticChar.K_frtailgamma',
     'Γ_ʔ': 'Granularity.G_revapostrophe',
-    'ɢ_^': 'Grammar.Gamma_seq', 'ɢ_ˌ': 'Grammar.Gamma_seq', 'ɢ_Ş': 'Grammar.Gamma_broad',
-    'φ̂_ÿ': 'Criticality.Phi_ctyogh',
+    'ɢ^∧': 'Grammar.Gamma_seq', 'ɢ^ˌ': 'Grammar.Gamma_seq', 'ɢ^Ş': 'Grammar.Gamma_broad',
+    '⊙_ÿ': 'Criticality.Phi_ctyogh',
     'Ħ_!': 'Chirality.H_invscripta', 'Ħ_£': 'Chirality.H_toneletterstem', 'Ħ_Ñ': 'Chirality.H_closeomega',
     'Σ_S': 'Stoichiometry.S_doublebaresh', 'Σ_ï': 'Stoichiometry.S_ltailm',
     'Ω_z': 'Protection.Omega_dzlig', 'Ω_Å': 'Protection.Omega_closeepsilon',
@@ -30,7 +30,7 @@ def mk_synthon(tup):
             f'    kin  := {mapping[tup["Ç"]]},\n'
             f'    gran := {mapping[tup["Γ"]]},\n'
             f'    gram := {mapping[tup["ɢ"]]},\n'
-            f'    crit := {mapping[tup["φ̂"]]},\n'
+            f'    crit := {mapping[tup["⊙"]]},\n'
             f'    chir := {mapping[tup["Ħ"]]},\n'
             f'    stoi := {mapping[tup["Σ"]]},\n'
             f'    prot := {mapping[tup["Ω"]]} }}')
@@ -46,9 +46,9 @@ def tier_for(tup):
 # Fix the CorpusComparison section at the bottom.
 # Need to identify the correct P_doublebarpipe tuples for voynich_frobenius variants.
 # They differ by (top, gram):
-#   (Þ_¨, ɢ_^) — 6 entries: crossing topology, sequential grammar
-#   (Þ_¨, ɢ_Ş) — 1 entry: crossing topology, broadcast grammar
-#   (Þ_O, ɢ_^) — 3 entries: open topology, sequential grammar
+#   (Þ_¨, ɢ^∧) — 6 entries: crossing topology, sequential grammar
+#   (Þ_¨, ɢ^Ş) — 1 entry: crossing topology, broadcast grammar
+#   (Þ_O, ɢ^∧) — 3 entries: open topology, sequential grammar
 
 frob_tuples = []
 for _, g in data['voynich'].items():

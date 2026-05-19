@@ -32,14 +32,14 @@ class Imscription:
         return h % 17280000
 
     def frobenius_check(self) -> bool:
-        return (self.Phi_hat == "φ̂_ÿ" and
-                self.K == "Ç_@" and
+        return (self.Phi_hat == "⊙_ÿ" and
+                self.K == "Ç^@" and
                 self.Omega == "Ω_z")
 
 def main():
     stone_memory = Imscription(
-        D="Ð_ω", T="Þ_O", R="Ř_=", Phi="Φ_}", F="ƒ_ż", K="Ç_@",
-        G="Γ_β", Gamma="ɢ_ˌ", Phi_hat="φ̂_ÿ", H="Ħ_A", Sigma="Σ_ï", Omega="Ω_z"
+        D="Ð_ω", T="Þ_O", R="Ř_=", Phi="Φ_}", F="ƒ^ż", K="Ç^@",
+        G="Γ_β", Gamma="ɢ^ˌ", Phi_hat="⊙_ÿ", H="Ħ_A", Sigma="Σ_ï", Omega="Ω_z"
     )
     assert stone_memory.frobenius_check(), "Frobenius closure failed"
     delta_out = stone_memory

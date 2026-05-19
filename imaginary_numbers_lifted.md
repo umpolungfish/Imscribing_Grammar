@@ -75,7 +75,7 @@ The tensor product of the imaginary number with itself produces the identical ty
 
 ### The Ground Floor of Complex-Time Physics
 
-The meet of the imaginary number with the complex-time path integral equals the imaginary number itself. Eight of twelve primitives are shared between them; the four conflicts — dimensionality ($Ð_C$ vs $Ð_{;}$), symmetry ($Φ_υ$ vs $Φ_{·}$), fidelity ($ƒ_ì$ vs $ƒ_{ż}$), and stoichiometry ($Σ_S$ vs $Σ_{ï}$) — all resolve conservatively to the imaginary number's values. The imaginary unit is not merely *used* by the path integral; it is the structural floor upon which the path integral stands.
+The meet of the imaginary number with the complex-time path integral equals the imaginary number itself. Eight of twelve primitives are shared between them; the four conflicts — dimensionality ($Ð_C$ vs $Ð_{;}$), symmetry ($Φ_υ$ vs $Φ_{·}$), fidelity ($ƒ^ì$ vs $ƒ_{ż}$), and stoichiometry ($Σ_S$ vs $Σ_{ï}$) — all resolve conservatively to the imaginary number's values. The imaginary unit is not merely *used* by the path integral; it is the structural floor upon which the path integral stands.
 
 ### The Distance That Matters
 

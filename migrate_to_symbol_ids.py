@@ -42,32 +42,32 @@ RENAME: list[tuple[str, str]] = [
     ("Φ_pipevar",            "Φ_F"),
     ("Φ_subdoublearrow",     "Φ_˙"),
     # F — Fidelity
-    ("ƒ_beltl",              "ƒ_ì"),
-    ("ƒ_dh",                 "ƒ_ð"),
-    ("ƒ_hardsign",           "ƒ_ż"),
-    ("ƒ_hvlig",              "ƒ_ż"),   # old gen_final.py name, same target
+    ("ƒ_beltl",              "ƒ^ì"),
+    ("ƒ_dh",                 "ƒ^ð"),
+    ("ƒ_hardsign",           "ƒ^ż"),
+    ("ƒ_hvlig",              "ƒ^ż"),   # old gen_final.py name, same target
     # K — Kinetics
-    ("Ç_frtailgamma",        "Ç_-"),
-    ("Ç_turnm",              "Ç_W"),
-    ("Ç_schwa",              "Ç_@"),
-    ("Ç_teshlig",            "Ç_Ù"),
-    ("Ç_lambda",             "Ç_λ"),
+    ("Ç_frtailgamma",        "Ç^-"),
+    ("Ç_turnm",              "Ç^W"),
+    ("Ç_schwa",              "Ç^@"),
+    ("Ç_teshlig",            "Ç^Ù"),
+    ("Ç_lambda",             "Ç^λ"),
     # G — Scope/Granularity
     ("Γ_beta",               "Γ_β"),
     ("Γ_gamma",              "Γ_γ"),
     ("Γ_revapostrophe",      "Γ_ʔ"),
     # Gamma — Interaction grammar
-    ("ɢ_corner",             "ɢ_^"),
-    ("ɢ_spleftarrow",        "ɢ_˝"),
-    ("ɢ_secstress",          "ɢ_ˌ"),
-    ("ɢ_doublevertline",     "ɢ_Ş"),
+    ("ɢ_corner",             "ɢ^∧"),
+    ("ɢ_spleftarrow",        "ɢ^˝"),
+    ("ɢ_secstress",          "ɢ^ˌ"),
+    ("ɢ_doublevertline",     "ɢ^Ş"),
     # Phi — Criticality (c_complex before c to avoid partial match)
-    ("φ̂_closerevepsilon",   "φ̂_Æ"),
-    ("φ̂_softsign",          "φ̂_ž"),
-    ("φ̂_ctyogh",            "φ̂_ÿ"),
-    ("φ̂_ctc",               "φ̂_ÿ"),   # old gen_final.py name, same target
-    ("φ̂_revepsilon",        "φ̂_3"),
-    ("φ̂_upstep",            "φ̂_Ţ"),
+    ("⊙_closerevepsilon",   "⊙_Æ"),
+    ("⊙_softsign",          "⊙_ž"),
+    ("⊙_ctyogh",            "⊙_ÿ"),
+    ("⊙_ctc",               "⊙_ÿ"),   # old gen_final.py name, same target
+    ("⊙_revepsilon",        "⊙_3"),
+    ("⊙_upstep",            "⊙_Ţ"),
     # H — Chirality
     ("Ħ_closeomega",         "Ħ_Ñ"),
     ("Ħ_toneletterstem",     "Ħ_£"),

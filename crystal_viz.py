@@ -39,13 +39,13 @@ TIER_LABEL = {
     "O_inf":     r"$O_\infty$  (Frobenius complete)",
 }
 
-PHI_VALUES   = ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"]
+PHI_VALUES   = ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"]
 OMEGA_VALUES = ["Ω_Å", "Ω_2", "Ω_z"]
 P_VALUES     = ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"]
 D_VALUES     = ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"]
 
-CRITICAL   = {"φ̂_ÿ", "φ̂_Æ"}
-NONCRIT    = {"φ̂_ž", "φ̂_Ţ", "φ̂_3"}
+CRITICAL   = {"⊙_ÿ", "⊙_Æ"}
+NONCRIT    = {"⊙_ž", "⊙_Ţ", "⊙_3"}
 BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω"}
 
 def get_tier(phi, p, omega, d):
@@ -71,11 +71,11 @@ def cell_tier_breakdown(phi, omega):
     return counts
 
 PHI_LABEL = {
-    "φ̂_ž":       r"$\Phi_\mathrm{sub}$" + "\nordered",
-    "φ̂_ÿ":         r"$\φ̂_ÿ$" + "\nreal-axis critical",
-    "φ̂_Æ": r"$\φ̂_ÿ^\mathbb{C}$" + "\ncomplex-axis critical",
-    "φ̂_3":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
-    "φ̂_Ţ":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
+    "⊙_ž":       r"$\Phi_\mathrm{sub}$" + "\nordered",
+    "⊙_ÿ":         r"$\⊙_ÿ$" + "\nreal-axis critical",
+    "⊙_Æ": r"$\⊙_ÿ^\mathbb{C}$" + "\ncomplex-axis critical",
+    "⊙_3":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
+    "⊙_Ţ":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
 }
 OMEGA_LABEL = {
     "Ω_Å":  r"$\Ω_Å$" + "\nno protection",
@@ -314,7 +314,7 @@ ax3.set_title(r"P-axis Frobenius Collapse: $P_{\pm}^\mathrm{sym}$ overrides all 
 
 for p_i, p in enumerate(P_VALUES):
     for od_j, (omega, d, _) in enumerate(OMEGA_D_COMBOS):
-        t = get_tier("φ̂_ÿ", p, omega, d)
+        t = get_tier("⊙_ÿ", p, omega, d)
         color = TIER_COLOR[t]
         label = t.replace("_dag","†").replace("_inf","∞").replace("O_","O")
 
@@ -353,8 +353,8 @@ ax3.invert_yaxis()   # Φ_ɐ at top, Φ_} at bottom... actually keep natural ord
 
 # Annotation
 ax3.text(len(OMEGA_D_COMBOS)/2 - 0.5, -0.9,
-         r"R1: $\φ̂_ÿ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
-         r"R3: $\φ̂_ÿ + \Ω_Å \rightarrow O_1$    "
+         r"R1: $\⊙_ÿ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
+         r"R3: $\⊙_ÿ + \Ω_Å \rightarrow O_1$    "
          r"R4: bounded $D \rightarrow O_2$    "
          r"R5: $D_\infty \rightarrow O_2^\dagger$",
          ha="center", va="top", color="#AAAACC", fontsize=10)

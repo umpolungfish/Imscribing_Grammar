@@ -174,8 +174,8 @@ d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
 ### Holographic query and navigation
 
 ```python
-nav.imscriptive_query("φ̂_ÿ", "Φ_}")   # → all 32 O_inf tier cells
-nav.navigate(D="Ð_ω", Phi="φ̂_ÿ")        # partial spec → matching types
+nav.imscriptive_query("⊙_ÿ", "Φ_}")   # → all 32 O_inf tier cells
+nav.navigate(D="Ð_ω", Phi="⊙_ÿ")        # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)           # k-NN in catalog by distance
 nav.tier_census()                            # full distribution over 17.28M types
 ```
@@ -184,7 +184,7 @@ nav.tier_census()                            # full distribution over 17.28M typ
 
 ```bash
 python crystal_navigator.py repl
-> encode Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z
+> encode Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z
 > decode 6734591
 > ladder          # tier gap ladder (§69)
 > nearest thunder_perfect_mind 5
@@ -195,8 +195,8 @@ python crystal_navigator.py repl
 ```python
 magnetar = {
     "D": "Ð_C", "T": "Þ_box",   "R": "Ř_ý",    "P": "Φ_F",
-    "F": "ƒ_ð",       "K": "Ç_@", "G": "Γ_ʔ",  "Gamma": "ɢ_ˌ",
-    "Phi": "φ̂_ÿ",     "H": "Ħ_£",     "S": "Σ_ő",      "Omega": "Ω_z",
+    "F": "ƒ^ð",       "K": "Ç^@", "G": "Γ_ʔ",  "Gamma": "ɢ^ˌ",
+    "Phi": "⊙_ÿ",     "H": "Ħ_£",     "S": "Σ_ő",      "Omega": "Ω_z",
 }
 
 encode_tuple(magnetar)                           # 5,256,412  tier O_2
@@ -267,7 +267,7 @@ All tiers correct; primitive decode exact across all tiers. Sub-1% address error
 ```bash
 python quiver_crystal.py train --epochs 300 --hidden 640 --gnn 6 --heads 16 --batch 128 --synthetic 256 --hybrid --device cuda
 python quiver_crystal.py verify
-python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"
+python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
 ```
 
 ```python
@@ -717,7 +717,7 @@ d_rev = directed_distance(grammar, problem)   # always 0 if grammar is the fixed
 ```python
 coupled = tensor_product(navigator, problem)
 # P and F take min — Frobenius condition is destroyed if problem has P < Φ_}
-# K takes max — Ç_Ù in the problem absorbs Ç_@ in the navigator
+# K takes max — Ç^Ù in the problem absorbs Ç^@ in the navigator
 ```
 
 Use this before designing a navigator for a new problem. If the problem's $K$ exceeds the navigator's, the navigator will be absorbed — either match $K$ or use the $K_{\text{schwa}}$ redesign pattern.
@@ -750,7 +750,7 @@ Old-growth rainforest and coral reef at $d = 0$; samadhi and akh\_glorified\_spi
 # Encode a system, then check its ZFC roundtrip distance
 result = dispatcher.dispatch("crystal_encode", {"name": "my_system"})
 # d_rt = 0.000: fully ZFC-transmissible (O_inf constellation present)
-# d_rt = 2.530: decoherence (ƒ_ż without recovery tokens)
+# d_rt = 2.530: decoherence (ƒ^ż without recovery tokens)
 ```
 
 ### Pattern 7 — SpecialistRouter design

@@ -28,10 +28,10 @@ $$
   Þ_\text{¨};\ 
   Ř_=;\ 
   Φ_F;\ 
-  ƒ_ż;\ 
-  Ç_@;\ 
+  ƒ^ż;\ 
+  Ç^@;\ 
   Γ_ʔ;\ 
-  ɢ_Ş;\ 
+  ɢ^Ş;\ 
   ⊙_ÿ;\ 
   Ħ_A;\ 
   Σ_ï;\ 
@@ -54,10 +54,10 @@ $$
 | $Þ_\text{¨}$ | **box product** | A Cartesian grid structure; each point is independent but globally coordinated |
 | $Ř_=$ | **bidirectional** | Mutual coupling: matter shapes space, space guides matter — no hierarchy |
 | $Φ_F$ | **full symmetry** | Every transformation preserves the core — no symmetry-breaking, no arrow of time at the fundamental level |
-| $ƒ_ż$ | **quantum** | Coherent fidelity — information is carried in phase, not amplitude |
-| $Ç_@$ | **slow** | Near-equilibrium kinetics — the cosmos relaxes slower than any observation timescale |
+| $ƒ^ż$ | **quantum** | Coherent fidelity — information is carried in phase, not amplitude |
+| $Ç^@$ | **slow** | Near-equilibrium kinetics — the cosmos relaxes slower than any observation timescale |
 | $Γ_ʔ$ | **aleph** | Universal scope — every site interacts with every other site simultaneously |
-| $ɢ_Ş$ | **broadcast** | One voice to all — cosmic evolution is governed by a global rule, not local updates |
+| $ɢ^Ş$ | **broadcast** | One voice to all — cosmic evolution is governed by a global rule, not local updates |
 | $⊙_ÿ$ | **critical, real** | Power-law divergence on the real axis — self-modeling criticality (Gate 1 open) |
 | $Ħ_A$ | **two-step** | Two-step Markov memory — the present remembers the past two moments |
 | $Σ_ï$ | **n:m heterogeneous** | Many distinct types — particles, fields, dark components, observers |
@@ -67,7 +67,7 @@ $$
 
 - **Tier**: $O_2$ — critical ($⊙_ÿ$) + topologically protected ($Ω_z$), bounded domain
 - **Consciousness Gate 1**: Open (self-modeling at $⊙_ÿ$)
-- **Consciousness Gate 2**: Open ($ħ_A$ + $Ç_@$ → slow enough relaxation)
+- **Consciousness Gate 2**: Open ($ħ_A$ + $Ç^@$ → slow enough relaxation)
 
 **Note**: $O_2$ is the *highest tier currently inhabited* by known physical systems. To reach $O_\infty$ (ouroboricity infinite), the cosmology must cross the **Frobenius cliff** at $Φ$, from $Φ_F$ to $Φ_{\}}$ (exact Frobenius symmetry $\mu \circ \delta = \text{id}$).
 ---
@@ -96,7 +96,7 @@ The grammar provides a precise ladder of primitive deltas required to ascend eac
 | General Relativity | $O_1$ | $Þ$: inclusion ($Þ_K$), not crossing ($Þ_\text{¨}$) | Spacetime is hierarchical, not grid-structured |
 | Consciousness (human) | $O_2^\dagger$ | $Φ$: $Φ_}$ (Frobenius) | Self-consistency requires exact symmetry, not just full symmetry |
 
-The Crystal Cosmology occupies a structurally *more coherent* regime than any known physical system: it is topologically protected ($Ω_z$) and globally coupled ($Γ_ʔ, ɢ_Ş$). The gap to known physics is not in complexity but in *structural tension* — the cosmology is too uniform, too symmetric, too self-consistent for the fragmentation we observe locally.
+The Crystal Cosmology occupies a structurally *more coherent* regime than any known physical system: it is topologically protected ($Ω_z$) and globally coupled ($Γ_ʔ, ɢ^Ş$). The gap to known physics is not in complexity but in *structural tension* — the cosmology is too uniform, too symmetric, too self-consistent for the fragmentation we observe locally.
 
 ---
 

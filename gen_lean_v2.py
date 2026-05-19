@@ -16,14 +16,14 @@ M = {
     'Φ_υ': 'Polarity.P_aolig', 'Φ_ɐ': 'Polarity.P_aolig',
     'Φ_F': 'Polarity.P_pipevar', 'Φ_˙': 'Polarity.P_subdoublearrow',
     'Φ_}': 'Polarity.P_doublebarpipe',
-    'ƒ_ì': 'Fidelity.F_beltl', 'ƒ_ð': 'Fidelity.F_dh', 'ƒ_ż': 'Fidelity.F_hardsign',
-    'Ç_Ù': 'KineticChar.K_teshlig', 'Ç_@': 'KineticChar.K_schwa',
-    'Ç_W': 'KineticChar.K_frtailgamma', 'Ç_-': 'KineticChar.K_turnm', 'Ç_λ': 'KineticChar.K_lambda',
+    'ƒ^ì': 'Fidelity.F_beltl', 'ƒ^ð': 'Fidelity.F_dh', 'ƒ^ż': 'Fidelity.F_hardsign',
+    'Ç^Ù': 'KineticChar.K_teshlig', 'Ç^@': 'KineticChar.K_schwa',
+    'Ç^W': 'KineticChar.K_frtailgamma', 'Ç^-': 'KineticChar.K_turnm', 'Ç^λ': 'KineticChar.K_lambda',
     'Γ_ʔ': 'Granularity.G_revapostrophe', 'Γ_β': 'Granularity.G_beta', 'Γ_γ': 'Granularity.G_gamma',
-    'ɢ_^': 'Grammar.Gamma_seq', 'ɢ_ˌ': 'Grammar.Gamma_seq', 'ɢ_Ş': 'Grammar.Gamma_broad',
-    'ɢ_˝': 'Grammar.Gamma_or',
-    'φ̂_ÿ': 'Criticality.Phi_ctyogh', 'φ̂_Æ': 'Criticality.Phi_closerevepsilon',
-    'φ̂_3': 'Criticality.Phi_revepsilon', 'φ̂_ž': 'Criticality.Phi_softsign', 'φ̂_Ţ': 'Criticality.Phi_upstep',
+    'ɢ^∧': 'Grammar.Gamma_seq', 'ɢ^ˌ': 'Grammar.Gamma_seq', 'ɢ^Ş': 'Grammar.Gamma_broad',
+    'ɢ^˝': 'Grammar.Gamma_or',
+    '⊙_ÿ': 'Criticality.Phi_ctyogh', '⊙_Æ': 'Criticality.Phi_closerevepsilon',
+    '⊙_3': 'Criticality.Phi_revepsilon', '⊙_ž': 'Criticality.Phi_softsign', '⊙_Ţ': 'Criticality.Phi_upstep',
     'Ħ_!': 'Chirality.H_invscripta', 'Ħ_£': 'Chirality.H_toneletterstem',
     'Ħ_Ñ': 'Chirality.H_closeomega', 'Ħ_A': 'Chirality.H_turntwo',
     'Σ_S': 'Stoichiometry.S_doublebaresh', 'Σ_ő': 'Stoichiometry.S_ctn', 'Σ_ï': 'Stoichiometry.S_ltailm',
@@ -41,7 +41,7 @@ def mk_s(tup):
             f'    kin  := {M[tup["Ç"]]},\n'
             f'    gran := {M[tup["Γ"]]},\n'
             f'    gram := {M[tup["ɢ"]]},\n'
-            f'    crit := {M[tup["φ̂"]]},\n'
+            f'    crit := {M[tup["⊙"]]},\n'
             f'    chir := {M[tup["Ħ"]]},\n'
             f'    stoi := {M[tup["Σ"]]},\n'
             f'    prot := {M[tup["Ω"]]} }}')
@@ -77,7 +77,7 @@ def mk_name(idx, tup):
         label = {'Φ_F': 'sym_F', 'Φ_}': 'sym_cl', 'Φ_˙': 'sym_all'}
         parts.append(label.get(tup['Φ'], f"sym_{tup['Φ'][-1]}"))
     # grammar variant
-    if tup['ɢ'] == 'ɢ_Ş':
+    if tup['ɢ'] == 'ɢ^Ş':
         parts.append("broad")
     # topology variant (skip if default)
     if tup['Þ'] == 'Þ_K':
@@ -158,7 +158,7 @@ def mk_synthon(tup):
             f'      kin  := {M[tup["Ç"]]},\n'
             f'      gran := {M[tup["Γ"]]},\n'
             f'      gram := {M[tup["ɢ"]]},\n'
-            f'      crit := {M[tup["φ̂"]]},\n'
+            f'      crit := {M[tup["⊙"]]},\n'
             f'      chir := {M[tup["Ħ"]]},\n'
             f'      stoi := {M[tup["Σ"]]},\n'
             f'      prot := {M[tup["Ω"]]} }}')
@@ -210,7 +210,7 @@ w("")
 w("  /-- Voynich Frobenius-special entries (P_doublebarpipe, μ∘δ=id) -/")
 w("  /-- 6 entries: crossing topology, sequential grammar (e.g. f103r, f103v, f1r) -/")
 w("  def voynich_frob_cross_seq : Synthon :=")
-f1 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_¨' and g['tuple']['ɢ'] == 'ɢ_^'][0]
+f1 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_¨' and g['tuple']['ɢ'] == 'ɢ^∧'][0]
 w(f"    {mk_synthon(f1['tuple'])}")
 w("  theorem voynich_frob_cross_seq_tier : synthonTier voynich_frob_cross_seq = .O_inf := by")
 w("    native_decide")
@@ -226,7 +226,7 @@ w("")
 
 w("  /-- 1 entry: crossing topology, broadcast grammar (e.g. f46r) -/")
 w("  def voynich_frob_cross_broad : Synthon :=")
-f3 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['ɢ'] == 'ɢ_Ş'][0]
+f3 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['ɢ'] == 'ɢ^Ş'][0]
 w(f"    {mk_synthon(f3['tuple'])}")
 w("  theorem voynich_frob_cross_broad_tier : synthonTier voynich_frob_cross_broad = .O_inf := by")
 w("    native_decide")

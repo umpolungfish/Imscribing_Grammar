@@ -76,13 +76,13 @@ RENAME: list[tuple[str, str]] = [
     ("Γ_broad",         "ɢ_doublevertline"),
 
     # Phi — Criticality  (F5) — Phi_c_complex before Phi_c
-    ("φ̂_c_complex",   "φ̂_closerevepsilon"),
-    ("φ̂_c",           "φ̂_ctyogh"),
-    ("φ̂_sub",         "φ̂_softsign"),
-    ("φ̂_EP",          "φ̂_revepsilon"),
-    ("φ̂_super",       "φ̂_upstep"),
+    ("⊙_c_complex",   "⊙_closerevepsilon"),
+    ("⊙_c",           "⊙_ctyogh"),
+    ("⊙_sub",         "⊙_softsign"),
+    ("⊙_EP",          "⊙_revepsilon"),
+    ("⊙_super",       "⊙_upstep"),
     # Backward-compat alias from models.py
-    ("φ̂_sup",         "φ̂_upstep"),
+    ("⊙_sup",         "⊙_upstep"),
 
     # H — Chirality  (F4)
     ("Ħ_inf",           "Ħ_invscripta"),

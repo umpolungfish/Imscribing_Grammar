@@ -223,7 +223,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     "F": {"ƒ_noise": "ƒ_beltl"},
     "K": {"Ç_lambda": "Ç_teshlig"},
     "Gamma": {"Γ_dissipative": "ɢ_doublevertline", "Γ_impl": "ɢ_corner", "Γ_xor": "ɢ_spleftarrow"},
-    "Phi": {"φ̂_upstep": "φ̂_upstep"},
+    "Phi": {"⊙_upstep": "⊙_upstep"},
     "S": {"1:1": "Σ_doublebaresh", "1:n": "Σ_ctn", "n:m": "Σ_ltailm", "cat": "Σ_ltailm"},
     "Omega": {"Ω_C": "Ω_dzlig", "Ω_turna": "Ω_dzlig"},
 }

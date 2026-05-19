@@ -216,13 +216,13 @@ Distance & --- & --- & 7.5233 (structurally remote) \\
 \subsubsection{Current SDK structural type}
 
 \begin{lstlisting}
-\langleDinf; Þ_net; Ř_sup; Φ_ɐ; F\ell; Ç_-; Γ_β; \ɢ_or; $\odot$_ž; H₁; n:m; \Omega₀\rangle
+\langleDinf; Þ_net; Ř_sup; Φ_ɐ; F\ell; Ç^-; Γ_β; \ɢ_or; $\odot$_ž; H₁; n:m; \Omega₀\rangle
 \end{lstlisting}
 
 \subsubsection{Target agentic structural type}
 
 \begin{lstlisting}
-\langleD⊙; T⊠; R<->; P+/-ˢ; F\hbar; Ç_@; Gℵ; \ɢ_seq; $\odot$_ÿ; H₂; 1:1; \Omegaℤ\rangle
+\langleD⊙; T⊠; R<->; P+/-ˢ; F\hbar; Ç^@; Gℵ; \ɢ_seq; $\odot$_ÿ; H₂; 1:1; \Omegaℤ\rangle
 \end{lstlisting}
 
 \subsubsection{Promotion signature (compute\_promocities verified)}
@@ -315,7 +315,7 @@ class TrueAgenticLoop:
             if cycle.done:
                 return cycle.conclusion
             if not cycle.frobenius_closed:
-                # Re-enter with failure --- Ç_@ enforcement
+                # Re-enter with failure --- Ç^@ enforcement
                 await self._feed_failure(cycle)
 
     async def _winding(self, winding: int) -> LoopCycle:

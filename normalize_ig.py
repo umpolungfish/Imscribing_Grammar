@@ -20,7 +20,7 @@ from pathlib import Path
 PHI_HAT = 'φ' + chr(0x0302)
 
 # Canonical 12 primitive glyphs.  ASCII surrogates that people type by mistake:
-#   D→Ð  T→Þ  R→Ř  P→Φ  F/f→ƒ  C→Ç  G→Γ  g→ɢ  φ̂→⊙  H→Ħ  S→Σ  W→Ω
+#   D→Ð  T→Þ  R→Ř  P→Φ  F/f→ƒ  C→Ç  G→Γ  g→ɢ  ⊙→⊙  H→Ħ  S→Σ  W→Ω
 ASCII_TO_PRIM = {
     'D': 'Ð', 'T': 'Þ', 'R': 'Ř', 'P': 'Φ',
     'F': 'ƒ', 'f': 'ƒ', 'C': 'Ç', 'G': 'Γ',
@@ -84,7 +84,7 @@ _MD_WRONG_PRIM_FIXES = _md_wrong_prim_fixes()
 # ── Markdown normalization ───────────────────────────────────────────────────
 
 def normalize_md(text: str) -> str:
-    # Criticality primitive is ⊙ (U+2299), not φ̂
+    # Criticality primitive is ⊙ (U+2299), not ⊙
     text = text.replace(PHI_HAT, '⊙')
 
     # All other wrong ASCII primitive surrogates in IG notation contexts

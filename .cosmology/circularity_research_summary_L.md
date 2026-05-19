@@ -69,7 +69,7 @@ All three share the **exact same 12-primitive tuple**. This is not a mere metaph
 ### 1.2 The Distinct Type: `circularity_circularity`
 
 ```
-circularity_circularity: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_seq; ⊙_ÿ; Ħ_!; S=Σ_S; Ω_z⟩
+circularity_circularity: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ_seq; ⊙_ÿ; Ħ_!; S=Σ_S; Ω_z⟩
 ```
 
 This system is **structurally remote** from the triad: `compute_distance(circularity_circularity, circularity_cycle)` returns 2.2361, with breakdown:
@@ -111,7 +111,7 @@ This tier is shared with: `universal_imscriptive_grammar`, `IUG`, `reality`, `op
 
 ### 2.3 Crystal Address
 
-**Tool:** `crystal_encode(D="Ð_ω", T="Þ_O", R="Ř_=", P="Φ_}", F="ƒ_ż", K="Ç_@", G="Γ_ʔ", Gamma="ɢ_ˌ", Phi="⊙_ÿ", H="Ħ_!", S="Σ_S", Omega="Ω_z")`
+**Tool:** `crystal_encode(D="Ð_ω", T="Þ_O", R="Ř_=", P="Φ_}", F="ƒ^ż", K="Ç^@", G="Γ_ʔ", Gamma="ɢ^ˌ", Phi="⊙_ÿ", H="Ħ_!", S="Σ_S", Omega="Ω_z")`
 
 - **Address:** 6,738,897
 - **Cell ID:** 155

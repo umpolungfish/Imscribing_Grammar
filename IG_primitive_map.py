@@ -91,16 +91,16 @@ ORDINALS = {
     },
     "F": {
         "ƒ_noise": 0.5,
-        "ƒ_ì":   1.0,
-        "ƒ_ð":   2.0,
-        "ƒ_ż":  3.0,
+        "ƒ^ì":   1.0,
+        "ƒ^ð":   2.0,
+        "ƒ^ż":  3.0,
     },
     "K": {
-        "Ç_-": 1.0,
-        "Ç_W":  2.0,
-        "Ç_@": 3.0,
-        "Ç_Ù": 4.0,
-        "Ç_λ":  4.5,
+        "Ç^-": 1.0,
+        "Ç^W":  2.0,
+        "Ç^@": 3.0,
+        "Ç^Ù": 4.0,
+        "Ç^λ":  4.5,
     },
     "G": {
         "Γ_β":  1.0,
@@ -108,20 +108,20 @@ ORDINALS = {
         "Γ_ʔ": 3.0,
     },
     "Gamma": {
-        "ɢ_^":   1.0,
-        "ɢ_˝":    2.0,
+        "ɢ^∧":   1.0,
+        "ɢ^˝":    2.0,
         "Γ_xor":   2.5,
-        "ɢ_ˌ":   3.0,
+        "ɢ^ˌ":   3.0,
         "Γ_impl":  3.5,
-        "ɢ_Ş": 4.0,
+        "ɢ^Ş": 4.0,
         "Γ_disc":  4.5,
     },
     "Phi": {
-        "φ̂_ž":       1.0,
-        "φ̂_ÿ":         2.0,
-        "φ̂_Æ": 2.33,
-        "φ̂_3":        2.67,
-        "φ̂_Ţ":     3.0,
+        "⊙_ž":       1.0,
+        "⊙_ÿ":         2.0,
+        "⊙_Æ": 2.33,
+        "⊙_3":        2.67,
+        "⊙_Ţ":     3.0,
     },
     "H": {
         "Ħ_Ñ":    1.0,
@@ -149,18 +149,18 @@ PRIM_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omeg
 
 # ── Phi colour map ────────────────────────────────────────────────────────────
 PHI_COLOR = {
-    "φ̂_ž":       "#4472C4",   # steel blue
-    "φ̂_ÿ":         "#FFD700",   # gold
-    "φ̂_Æ": "#FF8C00",   # dark orange
-    "φ̂_3":        "#DC143C",   # crimson
-    "φ̂_Ţ":     "#9370DB",   # medium purple
+    "⊙_ž":       "#4472C4",   # steel blue
+    "⊙_ÿ":         "#FFD700",   # gold
+    "⊙_Æ": "#FF8C00",   # dark orange
+    "⊙_3":        "#DC143C",   # crimson
+    "⊙_Ţ":     "#9370DB",   # medium purple
 }
 PHI_LABEL = {
-    "φ̂_ž":       r"$\Phi_\mathrm{sub}$",
-    "φ̂_ÿ":         r"$\Phi_ctyogh$  (real-axis)",
-    "φ̂_Æ": r"$\Phi_ctyogh^\mathbb{C}$  (complex-axis)",
-    "φ̂_3":        r"$\Phi_\mathrm{EP}$  (exceptional point)",
-    "φ̂_Ţ":     r"$\Phi_\mathrm{sup}$",
+    "⊙_ž":       r"$\Phi_\mathrm{sub}$",
+    "⊙_ÿ":         r"$\Phi_ctyogh$  (real-axis)",
+    "⊙_Æ": r"$\Phi_ctyogh^\mathbb{C}$  (complex-axis)",
+    "⊙_3":        r"$\Phi_\mathrm{EP}$  (exceptional point)",
+    "⊙_Ţ":     r"$\Phi_\mathrm{sup}$",
 }
 
 # ── Ouroboricity formula ──────────────────────────────────────────────────────
@@ -168,7 +168,7 @@ def ouroboricity(entry: dict) -> float:
     """O(x) = [Phi=Phi_ctyogh* ] * (1 + [Omega≠Omega_closeepsilon] + [H≥H_toneletterstem] + [G=G_revapostrophe])
     Returns inf when H=H_invscripta and Phi is critical."""
     phi = entry.get("Phi", "")
-    is_critical = phi in ("φ̂_ÿ", "φ̂_Æ", "φ̂_3")
+    is_critical = phi in ("⊙_ÿ", "⊙_Æ", "⊙_3")
     if not is_critical:
         return 0.0
     h = entry.get("H", "Ħ_Ñ")
@@ -253,18 +253,18 @@ print("MDS projection done.")
 # and PrimitiveBridge.lean (encoded in catalog-compatible format).
 KEY_imscriptions: dict[str, dict] = {
     # ── Millennium Prize encodings (PrimitiveBridge.lean) ─────────────────
-    "YM classical":      {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_exact",     "P":"Φ_F",     "F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_β",  "Gamma":"ɢ_^",  "Phi":"φ̂_ž",       "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
-    "YM quantum\n(target)": {"D":"Ð_cube","T":"Þ_6","R":"Ř_exact",    "P":"Φ_F",     "F":"ƒ_ż", "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
-    "RH (ζ zeros)":      {"D":"Ð_line",  "T":"Þ_6","R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ_ż", "K":"Ç_@", "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_Æ", "H":"Ħ_Ñ",  "S":"one_n", "Omega":"Ω_Å"},
-    "Lee-Yang\n(proved)":{"D":"Ð_line",  "T":"Þ_ò", "R":"Ř_exact",     "P":"Φ_υ",    "F":"ƒ_ì",  "K":"Ç_W",  "G":"Γ_γ", "Gamma":"ɢ_^",  "Phi":"φ̂_Æ", "H":"Ħ_£",  "S":"Σ_ï",   "Omega":"Ω_Å"},
-    "NS smooth\nsoln":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_β",  "Gamma":"ɢ_^",  "Phi":"φ̂_ž",       "H":"Ħ_Ñ",  "S":"Σ_ï",   "Omega":"Ω_Å"},
-    "OPN\nconstraint":   {"D":"Ð_point", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ_ì",  "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_Ñ",  "S":"one_n", "Omega":"Ω_Å"},
+    "YM classical":      {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_exact",     "P":"Φ_F",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"Γ_β",  "Gamma":"ɢ^∧",  "Phi":"⊙_ž",       "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
+    "YM quantum\n(target)": {"D":"Ð_cube","T":"Þ_6","R":"Ř_exact",    "P":"Φ_F",     "F":"ƒ^ż", "K":"Ç^Ù", "G":"Γ_ʔ", "Gamma":"ɢ^∧",  "Phi":"⊙_ÿ",         "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_z"},
+    "RH (ζ zeros)":      {"D":"Ð_line",  "T":"Þ_6","R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"Γ_ʔ", "Gamma":"ɢ^∧",  "Phi":"⊙_Æ", "H":"Ħ_Ñ",  "S":"one_n", "Omega":"Ω_Å"},
+    "Lee-Yang\n(proved)":{"D":"Ð_line",  "T":"Þ_ò", "R":"Ř_exact",     "P":"Φ_υ",    "F":"ƒ^ì",  "K":"Ç^W",  "G":"Γ_γ", "Gamma":"ɢ^∧",  "Phi":"⊙_Æ", "H":"Ħ_£",  "S":"Σ_ï",   "Omega":"Ω_Å"},
+    "NS smooth\nsoln":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ð",  "K":"Ç^W",  "G":"Γ_β",  "Gamma":"ɢ^∧",  "Phi":"⊙_ž",       "H":"Ħ_Ñ",  "S":"Σ_ï",   "Omega":"Ω_Å"},
+    "OPN\nconstraint":   {"D":"Ð_point", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ì",  "K":"Ç^Ù", "G":"Γ_ʔ", "Gamma":"ɢ^∧",  "Phi":"⊙_ÿ",         "H":"Ħ_Ñ",  "S":"one_n", "Omega":"Ω_Å"},
     # ── Field-theory imscriptions (Imscription.lean) ──────────────────────────────
-    "Higgs / axion\n/ inflaton":{"D":"Ð_point","T":"Þ_ò","R":"Ř_catalytic","P":"Φ_}","F":"ƒ_ż","K":"Ç_@","G":"Γ_β","Gamma":"ɢ_^","Phi":"φ̂_ÿ","H":"Ħ_£","S":"one_n","Omega":"Ω_Å"},
-    "Standard\nModel":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_allosteric", "P":"Φ_F",     "F":"ƒ_ð",  "K":"Ç_W",  "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_A",  "S":"Σ_ï",   "Omega":"Ω_z"},
-    "Quantum\nGravity":  {"D":"Ð_ω",  "T":"Þ_O",   "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ_ż", "K":"Ç_Ù", "G":"Γ_ʔ", "Gamma":"Γ_impl", "Phi":"φ̂_ÿ",         "H":"Ħ_!","S":"Σ_ï",  "Omega":"Ω_5"},
-    "General\nRelativity":{"D":"Ð_cube", "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ_ż", "K":"Ç_@", "G":"Γ_γ", "Gamma":"ɢ_^",  "Phi":"φ̂_ž",       "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_Å"},
-    "Asymptotic\nSafety":{"D":"Ð_cube",  "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ_ż", "K":"Ç_W",  "G":"Γ_ʔ", "Gamma":"ɢ_^",  "Phi":"φ̂_ÿ",         "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_Å"},
+    "Higgs / axion\n/ inflaton":{"D":"Ð_point","T":"Þ_ò","R":"Ř_catalytic","P":"Φ_}","F":"ƒ^ż","K":"Ç^@","G":"Γ_β","Gamma":"ɢ^∧","Phi":"⊙_ÿ","H":"Ħ_£","S":"one_n","Omega":"Ω_Å"},
+    "Standard\nModel":   {"D":"Ð_cube",  "T":"Þ_6","R":"Ř_allosteric", "P":"Φ_F",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"Γ_ʔ", "Gamma":"ɢ^∧",  "Phi":"⊙_ÿ",         "H":"Ħ_A",  "S":"Σ_ï",   "Omega":"Ω_z"},
+    "Quantum\nGravity":  {"D":"Ð_ω",  "T":"Þ_O",   "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^Ù", "G":"Γ_ʔ", "Gamma":"Γ_impl", "Phi":"⊙_ÿ",         "H":"Ħ_!","S":"Σ_ï",  "Omega":"Ω_5"},
+    "General\nRelativity":{"D":"Ð_cube", "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"Γ_γ", "Gamma":"ɢ^∧",  "Phi":"⊙_ž",       "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_Å"},
+    "Asymptotic\nSafety":{"D":"Ð_cube",  "T":"Þ_6","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^W",  "G":"Γ_ʔ", "Gamma":"ɢ^∧",  "Phi":"⊙_ÿ",         "H":"Ħ_£",  "S":"one_n", "Omega":"Ω_Å"},
 }
 
 # Supplement with catalog entries by name
@@ -298,7 +298,7 @@ for i in range(k):
 # NetworkX graph for spring layout
 G = nx.Graph()
 for i, name in enumerate(key_names):
-    G.add_node(i, label=name, phi=key_entries[i].get("Phi", "φ̂_ž"))
+    G.add_node(i, label=name, phi=key_entries[i].get("Phi", "⊙_ž"))
 # Add edges for pairs with distance ≤ 7
 EDGE_THRESHOLD = 7
 for i in range(k):
@@ -335,7 +335,7 @@ ax_mds.set_title(
 xs, ys = mds_coords[:, 0], mds_coords[:, 1]
 
 for entry, x, y in zip(catalog, xs, ys):
-    phi = entry.get("Phi", "φ̂_ž")
+    phi = entry.get("Phi", "⊙_ž")
     color = PHI_COLOR.get(phi, "#888888")
     ou = ouroboricity(entry)
     size = 60 if math.isinf(ou) else 22 + ou * 18
@@ -381,7 +381,7 @@ for entry, x, y in zip(catalog, xs, ys):
 # Criticality legend — lower right
 phi_patches = [
     mpatches.Patch(facecolor=PHI_COLOR[p], label=PHI_LABEL[p], linewidth=0)
-    for p in ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"]
+    for p in ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"]
 ]
 leg1 = ax_mds.legend(
     handles=phi_patches, loc="lower right",
@@ -470,7 +470,7 @@ for u, v, data in G.edges(data=True):
 # Draw nodes
 for i, name in enumerate(key_names):
     entry = key_entries[i]
-    phi = entry.get("Phi", "φ̂_ž")
+    phi = entry.get("Phi", "⊙_ž")
     color = PHI_COLOR.get(phi, "#888888")
     ou = ouroboricity(entry)
     x, y = pos[i]
@@ -517,7 +517,7 @@ for i, name in enumerate(key_names):
 # Criticality legend — lower left (bottom)
 phi_patches2 = [
     mpatches.Patch(facecolor=PHI_COLOR[p], label=PHI_LABEL[p], linewidth=0)
-    for p in ["φ̂_ž", "φ̂_ÿ", "φ̂_Æ", "φ̂_3", "φ̂_Ţ"]
+    for p in ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"]
 ]
 leg4 = ax_net.legend(
     handles=phi_patches2, loc="lower left",

@@ -76,20 +76,20 @@ from imscrbgrmr import ImscriptionNotation
 
 # Example: A supramolecular cage with temporal gating
 target = ImscriptionNotation.from_string(
-    "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; Φ_F; ƒ_ð; Ç_W; "
+    "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; Φ_F; ƒ^ð; Ç^W; "
     "Γ_γ; ɢ_and(SELECTIVE); ⊙_ž; 4:4⟩"
 )
 
 # Example: MOF-catalyst hybrid (NU-1000 + Ni)
 mof_target = ImscriptionNotation.from_string(
     "⟨{Ð_C}·{Ð_infinity}; {Þ_square·Þ_ò}; Ř_superset+ddagger; "
-    "Φ_F; ƒ_ż, ƒ_ð; Ç_W; Γ_ʔ; ɢ_odot(SELECTIVE); ⊙_ž; n:m⟩"
+    "Φ_F; ƒ^ż, ƒ^ð; Ç^W; Γ_ʔ; ɢ_odot(SELECTIVE); ⊙_ž; n:m⟩"
 )
 ```
 
 ```bash
 # CLI: Encode target from string
-imscribe retrodesign encode --target "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩"
+imscribe retrodesign encode --target "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ^ż; Ç^W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩"
 ```
 
 ### Step 2: Decomposition Search
@@ -98,7 +98,7 @@ The engine performs a recursive split of the primitive space, checking compatibi
 
 ```bash
 # CLI: Decompose target into valid sub-tuples
-imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩" \
+imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ^ż; Ç^W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩" \
     --max-depth 3 \
     --prune-axioms 1,2,4,6,7 \
     --domain supramolecular
@@ -112,16 +112,16 @@ imscribe retrodesign "⟨Ð_C; Þ_square; Ř_superset; Φ_plus; ƒ_ż; Ç_W; Γ_
 # │ ├── Branch A (Structural Scaffold)                              │
 # │ │   ├── Imscription: Zr6_oxo_SBU                                    │
 # │ │   │   └── ⟨Ð_C; Þ_square; Ř_superset; Φ_plus;          │
-# │ │   │       ƒ_ż; Ç_W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩  │
+# │ │   │       ƒ^ż; Ç^W; Γ_ʔ; ɢ_odot; ⊙_ž; 1:12⟩  │
 # │ │   │                                                           │
 # │ │   └── Imscription: Terephthalate_Linker (×12)                     │
 # │ │       └── ⟨Ð_C; Þ_chain; Ř_superset; Φ_minus;          │
-# │ │           ƒ_ż; Ç_-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩    │
+# │ │           ƒ^ż; Ç^-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩    │
 # │                                                                 │
 # │ └── Branch B (Optional: Pore Functionalization)                 │
 # │     └── Imscription: Ni_catalyst (optional guest)                   │
 # │         └── ⟨Ð_C; Þ_ò; Ř_ddagger; Φ_F;             │
-# │             ƒ_ð; Ç_W; Γ_β; ɢ_sequential; ⊙_ž; 1:1⟩ │
+# │             ƒ^ð; Ç^W; Γ_β; ɢ_sequential; ⊙_ž; 1:1⟩ │
 # └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -144,7 +144,7 @@ Dead branches are pruned immediately upon axiom violation.
 
 ```bash
 # CLI: Show pruning decisions
-imscribe retrodesign "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_low; Ç_-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩" \
+imscribe retrodesign "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_low; Ç^-; Γ_β; ɢ_and; ⊙_ž; 1:1⟩" \
     --show-pruned
 
 # Output:
@@ -155,10 +155,10 @@ imscribe retrodesign "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_low; Ç_-; Γ_β; �
 # │                                                                 │
 # │ PRUNED at depth 0:                                              │
 # │   Reason: Axiom 1 Violation — Þ_ò + Φ_F + ƒ_low forbidden │
-# │   Fidelity floor requires F >= ƒ_ð for cyclic self-complementary │
+# │   Fidelity floor requires F >= ƒ^ð for cyclic self-complementary │
 # │                                                                 │
 # │ No valid decomposition pathways found.                          │
-# │ Recommendation: Increase target fidelity to ƒ_ð or higher.    │
+# │ Recommendation: Increase target fidelity to ƒ^ð or higher.    │
 # └─────────────────────────────────────────────────────────────────┘
 ```
 

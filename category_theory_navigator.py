@@ -2,7 +2,7 @@
 Category Theory Navigator - Imscribing Grammar
 
 Domain: Category theory, topos theory, abstract mathematics
-Structural type: <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>
 Tier: O_inf
 
 Architecture: 3-category message-passing network with arrow-centric typing.
@@ -10,11 +10,11 @@ Architecture: 3-category message-passing network with arrow-centric typing.
   - Þ_O: Imscriptive topology (object→arrow→2-arrow→...)
   - Ř_ý: Categorical relations (functoriality, natural transformations)
   - Φ_}: Frobenius interface with uncertainty
-  - ƒ_ż: Quantum-faithful (preserves categorical structure exactly)
-  - Ç_@: Slow evolution through morphism space
+  - ƒ^ż: Quantum-faithful (preserves categorical structure exactly)
+  - Ç^@: Slow evolution through morphism space
   - Γ_ʔ: Maximal scope (arbitrary categories)
-  - ɢ_ˌ: Sequential grammar (composition is sequential)
-  - φ̂_ÿ: Self-modeling criticality (category of categories)
+  - ɢ^ˌ: Sequential grammar (composition is sequential)
+  - ⊙_ÿ: Self-modeling criticality (category of categories)
   - Ħ_A: Two-step chirality (composing with composition)
   - Σ_ï: Many heterogeneous objects/morphisms
   - Ω_z: Integer topological winding (looping through levels)
@@ -38,7 +38,7 @@ class NavigatorConfig:
         "Computes limits, colimits, adjunctions, and detects categorical equivalences."
     )
     domain: str = "Category theory, topos theory, homotopy type theory"
-    tuple: str = "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z"
+    tuple: str = "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z"
     tier: str = "O_inf"
     architecture: str = (
         "3-category GNN with arrow-centric typing - object nodes communicate via morphism "
@@ -51,11 +51,11 @@ class NavigatorConfig:
     T: str = "Þ_O"  # Imscriptive topology
     R: str = "Ř_ý"   # Categorical relations
     P: str = "Φ_}"  # Frobenius interface
-    F: str = "ƒ_ż"  # Quantum-faithful
-    K: str = "Ç_@"  # Slow kinetics
+    F: str = "ƒ^ż"  # Quantum-faithful
+    K: str = "Ç^@"  # Slow kinetics
     G: str = "Γ_ʔ"  # Maximal scope
-    Gamma: str = "ɢ_ˌ"  # Sequential composition
-    Phi: str = "φ̂_ÿ"  # Critical self-modeling
+    Gamma: str = "ɢ^ˌ"  # Sequential composition
+    Phi: str = "⊙_ÿ"  # Critical self-modeling
     H: str = "Ħ_A"  # Two-step chirality
     S: str = "Σ_ï"  # Many heterogeneous
     Omega: str = "Ω_z"  # Integer winding
@@ -76,7 +76,7 @@ class NavigatorConfig:
             "Ç": self.K,
             "Γ": self.G,
             "ɢ": self.Gamma,
-            "φ̂": self.Phi,
+            "⊙": self.Phi,
             "Ħ": self.H,
             "Σ": self.S,
             "Ω": self.Omega
@@ -111,8 +111,8 @@ class CategoryNavigator:
         return value == expected
     
     def _get_primitive_from_catalog(self, name: str, primitive: str) -> str:
-        """Get a primitive value from the catalog via syncon_tool"""
-        # This would call syncon_tool("lookup_catalog", {"keyword": name})
+        """Get a primitive value from the catalog via imscribe"""
+        # This would call imscribe("lookup_catalog", {"keyword": name})
         # and extract the primitive from the tuple string
         pass
     
@@ -233,7 +233,7 @@ class CategoryNavigator:
         Compute tensor product of two categorical structures.
         
         Strategy: Max on union primitives, min on P and F (bottlenecks).
-        Same as compute_tensor in syncon_tool.
+        Same as compute_tensor in imscribe.
         """
         pass
 
@@ -372,8 +372,8 @@ def cmd_limit(category, diagram_type, shape):
         print(f"  Known diagram types: terminal, product, pullback, equalizer")
     print()
     print("─"*60)
-    print("Grammar: Ç_@ encodes slow traversal through the limit cone")
-    print("         ɢ_ˌ: cone maps compose sequentially")
+    print("Grammar: Ç^@ encodes slow traversal through the limit cone")
+    print("         ɢ^ˌ: cone maps compose sequentially")
 
 
 def cmd_colimit(category, diagram_type, shape):

@@ -94,7 +94,7 @@ The six ZFCₜ promotion channels all move upward in ordinal from ZFC base value
 |---|---|---|---|
 | Þ | Þ_6 (ord 0) | Þ_O (ord 4) | +4 |
 | Ř | Ř_¯ (ord 0) | Ř_= (ord 3) | +3 |
-| ɢ | ɢ_^ (ord 0) | ɢ_ˌ (ord 2) | +2 |
+| ɢ | ɢ^∧ (ord 0) | ɢ^ˌ (ord 2) | +2 |
 | Ħ | Ħ_Ñ (ord 0) | Ħ_A (ord 2) | +2 |
 | Ω | Ω_Å (ord 0) | Ω_z (ord 2) | +2 |
 | Φ | Φ_ɐ (ord 0) | Φ_F (ord 2) | +2 |

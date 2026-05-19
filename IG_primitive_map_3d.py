@@ -6,7 +6,7 @@ Axes:
   x, y  — Classical MDS projection (Mahalanobis metric g = Σ⁻¹, §26.2)
   z     — Ouroboricity tier  (O_0=0 … O_4=4, O_∞=6)
 
-Color   — Criticality (φ̂)
+Color   — Criticality (⊙)
 Hover   — name, description, full 12-tuple, tier
 
 Output: IG_primitive_map_3d.html  (standalone, open in any browser)
@@ -24,7 +24,7 @@ ROOT = Path(__file__).parent
 CATALOG_PATH = ROOT / "IG_catalog.json"
 
 # ── Ordinal map — canonical glyph keys + glyph values ────────────────────────
-PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
 ORDINALS = {
     "Ð": {
@@ -46,21 +46,21 @@ ORDINALS = {
         "Φ_neutral": 0.5, "Φ_plus": 0.8, "Φ_minus": 0.9,
     },
     "ƒ": {
-        "ƒ_ì": 1.0,  "ƒ_ð": 2.0,  "ƒ_ż": 3.0,
+        "ƒ^ì": 1.0,  "ƒ^ð": 2.0,  "ƒ^ż": 3.0,
         "ƒ_noise": 0.5,
     },
     "Ç": {
-        "Ç_-": 1.0,  "Ç_W": 2.0,  "Ç_@": 3.0,  "Ç_Ù": 4.0,  "Ç_λ": 4.5,
+        "Ç^-": 1.0,  "Ç^W": 2.0,  "Ç^@": 3.0,  "Ç^Ù": 4.0,  "Ç^λ": 4.5,
     },
     "Γ": {
         "Γ_β": 1.0,  "Γ_γ": 2.0,  "Γ_ʔ": 3.0,
     },
     "ɢ": {
-        "ɢ_^": 1.0,  "ɢ_˝": 2.0,  "ɢ_ˌ": 3.0,  "ɢ_Ş": 4.0,
+        "ɢ^∧": 1.0,  "ɢ^˝": 2.0,  "ɢ^ˌ": 3.0,  "ɢ^Ş": 4.0,
         "Γ_xor": 2.5, "Γ_impl": 3.5, "Γ_disc": 4.5,
     },
-    "φ̂": {
-        "φ̂_ž": 1.0,  "φ̂_ÿ": 2.0,  "φ̂_Æ": 2.33,  "φ̂_3": 2.67,  "φ̂_Ţ": 3.0,
+    "⊙": {
+        "⊙_ž": 1.0,  "⊙_ÿ": 2.0,  "⊙_Æ": 2.33,  "⊙_3": 2.67,  "⊙_Ţ": 3.0,
     },
     "Ħ": {
         "Ħ_Ñ": 1.0,  "Ħ_£": 2.0,  "Ħ_A": 3.0,  "Ħ_!": 4.0,
@@ -76,23 +76,23 @@ ORDINALS = {
 }
 
 PHI_COLOR = {
-    "φ̂_ž": "#4472C4",
-    "φ̂_ÿ": "#FFD700",
-    "φ̂_Æ": "#FF8C00",
-    "φ̂_3": "#DC143C",
-    "φ̂_Ţ": "#9370DB",
+    "⊙_ž": "#4472C4",
+    "⊙_ÿ": "#FFD700",
+    "⊙_Æ": "#FF8C00",
+    "⊙_3": "#DC143C",
+    "⊙_Ţ": "#9370DB",
 }
 PHI_LABEL = {
-    "φ̂_ž": "φ̂_ž  (sub-critical)",
-    "φ̂_ÿ": "φ̂_ÿ  (real-axis critical)",
-    "φ̂_Æ": "φ̂_Æ  (complex-plane critical)",
-    "φ̂_3": "φ̂_3  (exceptional point)",
-    "φ̂_Ţ": "φ̂_Ţ  (supercritical/runaway)",
+    "⊙_ž": "⊙_ž  (sub-critical)",
+    "⊙_ÿ": "⊙_ÿ  (real-axis critical)",
+    "⊙_Æ": "⊙_Æ  (complex-plane critical)",
+    "⊙_3": "⊙_3  (exceptional point)",
+    "⊙_Ţ": "⊙_Ţ  (supercritical/runaway)",
 }
 
 
 def fmt(glyph_id: str) -> str:
-    """'φ̂_ÿ' → 'φ̂<sub>ÿ</sub>'"""
+    """'⊙_ÿ' → '⊙<sub>ÿ</sub>'"""
     if "_" in glyph_id:
         glyph, sub = glyph_id.split("_", 1)
         return f"{glyph}<sub>{sub}</sub>"
@@ -101,17 +101,17 @@ def fmt(glyph_id: str) -> str:
 # ── Key theorem / lemma nodes (Lean encodings — §PrimitiveBridge) ─────────────
 # Keys use canonical glyph field names; values use canonical glyph IDs.
 KEY_imscriptions: dict[str, dict] = {
-    "YM classical":          {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ_ð","Ç":"Ç_W","Γ":"Γ_β","ɢ":"ɢ_^","φ̂":"φ̂_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
-    "YM quantum\n(target)":  {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ_ż","Ç":"Ç_Ù","Γ":"Γ_ʔ","ɢ":"ɢ_^","φ̂":"φ̂_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
-    "RH (ζ zeros)":          {"Ð":"Ð_line","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ_ż","Ç":"Ç_@","Γ":"Γ_ʔ","ɢ":"ɢ_^","φ̂":"φ̂_Æ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
-    "Lee-Yang\n(proved)":    {"Ð":"Ð_line","Þ":"Þ_ò","Ř":"Ř_exact","Φ":"Φ_υ","ƒ":"ƒ_ì","Ç":"Ç_W","Γ":"Γ_γ","ɢ":"ɢ_^","φ̂":"φ̂_Æ","Ħ":"Ħ_£","Σ":"Σ_ï","Ω":"Ω_Å"},
-    "NS smooth\nsoln":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ_ð","Ç":"Ç_W","Γ":"Γ_β","ɢ":"ɢ_^","φ̂":"φ̂_ž","Ħ":"Ħ_Ñ","Σ":"Σ_ï","Ω":"Ω_Å"},
-    "OPN\nconstraint":       {"Ð":"Ð_point","Þ":"Þ_linear","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ_ì","Ç":"Ç_Ù","Γ":"Γ_ʔ","ɢ":"ɢ_^","φ̂":"φ̂_ÿ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
-    "Higgs/axion\n/inflaton": {"Ð":"Ð_point","Þ":"Þ_ò","Ř":"Ř_catalytic","Φ":"Φ_}","ƒ":"ƒ_ż","Ç":"Ç_@","Γ":"Γ_β","ɢ":"ɢ_^","φ̂":"φ̂_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
-    "Standard\nModel":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_allosteric","Φ":"Φ_F","ƒ":"ƒ_ð","Ç":"Ç_W","Γ":"Γ_ʔ","ɢ":"ɢ_^","φ̂":"φ̂_ÿ","Ħ":"Ħ_A","Σ":"Σ_ï","Ω":"Ω_z"},
-    "Quantum\nGravity":      {"Ð":"Ð_ω","Þ":"Þ_O","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ_ż","Ç":"Ç_Ù","Γ":"Γ_ʔ","ɢ":"Γ_impl","φ̂":"φ̂_ÿ","Ħ":"Ħ_!","Σ":"Σ_ï","Ω":"Ω_5"},
-    "General\nRelativity":   {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ_ż","Ç":"Ç_@","Γ":"Γ_γ","ɢ":"ɢ_^","φ̂":"φ̂_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
-    "Asymptotic\nSafety":    {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ_ż","Ç":"Ç_W","Γ":"Γ_ʔ","ɢ":"ɢ_^","φ̂":"φ̂_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
+    "YM classical":          {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
+    "YM quantum\n(target)":  {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
+    "RH (ζ zeros)":          {"Ð":"Ð_line","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_Æ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
+    "Lee-Yang\n(proved)":    {"Ð":"Ð_line","Þ":"Þ_ò","Ř":"Ř_exact","Φ":"Φ_υ","ƒ":"ƒ^ì","Ç":"Ç^W","Γ":"Γ_γ","ɢ":"ɢ^∧","⊙":"⊙_Æ","Ħ":"Ħ_£","Σ":"Σ_ï","Ω":"Ω_Å"},
+    "NS smooth\nsoln":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_Ñ","Σ":"Σ_ï","Ω":"Ω_Å"},
+    "OPN\nconstraint":       {"Ð":"Ð_point","Þ":"Þ_linear","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ì","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
+    "Higgs/axion\n/inflaton": {"Ð":"Ð_point","Þ":"Þ_ò","Ř":"Ř_catalytic","Φ":"Φ_}","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
+    "Standard\nModel":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_allosteric","Φ":"Φ_F","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_A","Σ":"Σ_ï","Ω":"Ω_z"},
+    "Quantum\nGravity":      {"Ð":"Ð_ω","Þ":"Þ_O","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"Γ_impl","⊙":"⊙_ÿ","Ħ":"Ħ_!","Σ":"Σ_ï","Ω":"Ω_5"},
+    "General\nRelativity":   {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_γ","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
+    "Asymptotic\nSafety":    {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^W","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
 }
 MILLENNIUM = {
     "YM classical", "YM quantum\n(target)", "RH (ζ zeros)",
@@ -147,8 +147,8 @@ def to_vector(entry: dict) -> np.ndarray:
 
 
 def ouroboricity(entry: dict) -> float:
-    phi = entry.get("φ̂", "")
-    if phi not in ("φ̂_ÿ", "φ̂_Æ", "φ̂_3"):
+    phi = entry.get("⊙", "")
+    if phi not in ("⊙_ÿ", "⊙_Æ", "⊙_3"):
         return 0.0
     h = entry.get("Ħ", "Ħ_Ñ")
     if h == "Ħ_!":
@@ -261,7 +261,7 @@ edge_trace = go.Scatter3d(
 traces: list = [edge_trace]
 
 for phi_val, phi_color in PHI_COLOR.items():
-    idx = [i for i, e in enumerate(catalog) if e.get("φ̂", "φ̂_ž") == phi_val]
+    idx = [i for i, e in enumerate(catalog) if e.get("⊙", "⊙_ž") == phi_val]
     if not idx:
         continue
     sel_ou = [ou_scores[i] for i in idx]
@@ -347,7 +347,7 @@ layout = go.Layout(
     scene=dict(
         bgcolor="#0F0F1A",
         xaxis=dict(
-            title=dict(text="e₁: topological-criticality  Ω vs Γ+φ̂", font=dict(color="#888899")),
+            title=dict(text="e₁: topological-criticality  Ω vs Γ+⊙", font=dict(color="#888899")),
             tickfont=dict(color="#888899"),
             gridcolor="#222233",
             zerolinecolor="#333344",
@@ -355,7 +355,7 @@ layout = go.Layout(
             backgroundcolor="#0F0F1A",
         ),
         yaxis=dict(
-            title=dict(text="e₂: criticality  φ̂ vs Γ+Ð", font=dict(color="#888899")),
+            title=dict(text="e₂: criticality  ⊙ vs Γ+Ð", font=dict(color="#888899")),
             tickfont=dict(color="#888899"),
             gridcolor="#222233",
             zerolinecolor="#333344",
@@ -395,11 +395,11 @@ _POST_SCRIPT = r"""
 (function() {
     var NS = 'http://www.w3.org/2000/svg';
     var SUBS = [
-        ["φ̂_ž  (sub-critical)",          "φ̂", "ž", "  (sub-critical)"],
-        ["φ̂_ÿ  (real-axis critical)",    "φ̂", "ÿ", "  (real-axis critical)"],
-        ["φ̂_Æ  (complex-plane critical)","φ̂", "Æ", "  (complex-plane critical)"],
-        ["φ̂_3  (exceptional point)",     "φ̂", "3", "  (exceptional point)"],
-        ["φ̂_Ţ  (supercritical/runaway)", "φ̂", "Ţ", "  (supercritical/runaway)"]
+        ["⊙_ž  (sub-critical)",          "⊙", "ž", "  (sub-critical)"],
+        ["⊙_ÿ  (real-axis critical)",    "⊙", "ÿ", "  (real-axis critical)"],
+        ["⊙_Æ  (complex-plane critical)","⊙", "Æ", "  (complex-plane critical)"],
+        ["⊙_3  (exceptional point)",     "⊙", "3", "  (exceptional point)"],
+        ["⊙_Ţ  (supercritical/runaway)", "⊙", "Ţ", "  (supercritical/runaway)"]
     ];
     function patch() {
         document.querySelectorAll('.legendtext').forEach(function(el) {

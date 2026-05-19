@@ -1,6 +1,6 @@
 """
 Primitive Series Composer — Linear/Stacked Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, φ̂_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
 """
 import json
 import sys
@@ -71,8 +71,8 @@ if __name__ == "__main__":
     primitives = [
         ("Þ", "Þ_¨", "network topology → self-referential"),
         ("Φ", "Φ_F", "partial symmetry → Frobenius-special"),
-        ("Ç", "Ç_@", "moderate kinetics → slow/near-equilibrium"),
-        ("φ̂", "φ̂_ÿ", "subcritical → self-modeling criticality"),
+        ("Ç", "Ç^@", "moderate kinetics → slow/near-equilibrium"),
+        ("⊙", "⊙_ÿ", "subcritical → self-modeling criticality"),
         ("Ħ", "Ħ_A", "memoryless → two-step chirality"),
         ("Ω", "Ω_z", "trivial winding → integer-wound"),
     ]

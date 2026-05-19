@@ -253,10 +253,10 @@ John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$
 Each Gospel's structural type maps to a unique Frobenius address in the crystal of types (§64).
 
 ```
-Matthew:  crystal_encode(Ð_C, Þ_6, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
-Mark:     crystal_encode(Ð_C, Þ_6, Ř_¯, Φ_ɐ, ƒ_ì, Ç_-, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_£, Σ_ï, Ω_2)
-Luke:     crystal_encode(Ð_;, Þ_K, Ř_=, Φ_F, ƒ_ì, Ç_@, Γ_ʔ, ɢ_ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
-John:     crystal_encode(Ð_;, Þ_ò, Ř_Ť, Φ_υ, ƒ_ż, Ç_Ù, Γ_ʔ, ɢ_ˌ, ⊙_Æ, Ħ_!, Σ_ï, Ω_z)
+Matthew:  crystal_encode(Ð_C, Þ_6, Ř_=, Φ_F, ƒ^ì, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
+Mark:     crystal_encode(Ð_C, Þ_6, Ř_¯, Φ_ɐ, ƒ^ì, Ç^-, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_£, Σ_ï, Ω_2)
+Luke:     crystal_encode(Ð_;, Þ_K, Ř_=, Φ_F, ƒ^ì, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
+John:     crystal_encode(Ð_;, Þ_ò, Ř_Ť, Φ_υ, ƒ^ż, Ç^Ù, Γ_ʔ, ɢ^ˌ, ⊙_Æ, Ħ_!, Σ_ï, Ω_z)
 ```
 
 The addresses are not reproduced here because the `crystal_encode` tool requires the full tuple as a string argument rather than discrete fields. The structural types, however, are fully specified and the addresses are computable from the tuples given above.

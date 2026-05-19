@@ -5,7 +5,7 @@ Logic:
   - Load published timing residual data from IPTA / NANOGrav public datasets
   - Weight each pulsar by its proximity to known DM-density nodes (P-74)
   - Stack residuals, search for:
-    (a) Non-relaxing scale-invariant components (Ç_Ù signature)
+    (a) Non-relaxing scale-invariant components (Ç^Ù signature)
     (b) ln(10) periodicity in the stacked power spectrum (P-12 signature)
     (c) Correlated anomalies across pulsars (Þ_6 / Γ_ʔ signature)
 
@@ -173,7 +173,7 @@ def test_ln10_periodicity(frequencies: np.ndarray, power: np.ndarray,
 def test_scale_invariance(times: np.ndarray, residuals: np.ndarray,
                            scales_yr: list = None) -> dict:
     """
-    Test for Ç_Ù signature: residuals that do not relax at any temporal scale.
+    Test for Ç^Ù signature: residuals that do not relax at any temporal scale.
     Scale invariance = variance grows ∝ t^α with α close to 1 (random walk) or > 1.
     A purely relaxing process has α < 0.5 (mean-reverting).
     """
@@ -198,7 +198,7 @@ def test_scale_invariance(times: np.ndarray, residuals: np.ndarray,
     vars_arr   = np.log([v[1] for v in variances])
     slope, intercept, r, p, se = stats.linregress(scales_arr, vars_arr)
 
-    # α > 0.9 suggests non-relaxing (Ç_Ù / scale-invariant)
+    # α > 0.9 suggests non-relaxing (Ç^Ù / scale-invariant)
     scale_invariant = bool(slope > 0.9 and p < 0.1)
 
     return {
@@ -208,7 +208,7 @@ def test_scale_invariance(times: np.ndarray, residuals: np.ndarray,
         "p_value": round(float(p), 4),
         "variances": [(round(s, 2), round(v, 4)) for s, v in variances],
         "interpretation": (
-            f"α={slope:.2f} → {'non-relaxing (Ç_Ù candidate)' if scale_invariant else 'relaxing (Ç_W/Ç_@)'}"
+            f"α={slope:.2f} → {'non-relaxing (Ç^Ù candidate)' if scale_invariant else 'relaxing (Ç^W/Ç^@)'}"
         ),
     }
 
@@ -304,7 +304,7 @@ def run_pulsar_stack(outfile: str = "pulsar_stack_results.json") -> dict:
 
     print(f"\n  Summary:")
     print(f"    Pulsars with P-12 matches: {n_p12}/{len(per_pulsar)}")
-    print(f"    Pulsars with Ç_Ù signature: {n_ktrap}/{len(per_pulsar)}")
+    print(f"    Pulsars with Ç^Ù signature: {n_ktrap}/{len(per_pulsar)}")
     print(f"    Globular cluster pulsars (w≥0.85): {len(gc_pulsars)}")
     for r in gc_pulsars:
         p12 = f"P12×{r['p12_hits']}" if r["p12_hits"] else ""

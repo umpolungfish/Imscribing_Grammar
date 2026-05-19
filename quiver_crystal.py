@@ -11,14 +11,14 @@ Architecture:
   • Tier head: tuple embedding → ouroboricity tier logits
 
 Self-encoding bootstrap:
-  Navigator tuple ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ_ż; Ç_@;
-                   Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+  Navigator tuple ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@;
+                   Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
   Target address: 6,734,591  (confirmed by exact codec)
 
 Training:
   python quiver_crystal.py train [--epochs N] [--batch B] [--hidden H] [--gnn L]
                                  [--synthetic N] [--device cuda]
-  python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"
+  python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
   python quiver_crystal.py verify [--checkpoint path]
 
 Synthetic augmentation (--synthetic N):
@@ -73,8 +73,8 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
     + inter-lane structural correlation edges.
 
     Inter-lane edges (bidirectional, all-to-all within each pair):
-      Phi ↔ P     — R1: φ̂_ÿ enables Φ_} (Gate 1 / Frobenius condition)
-      Phi ↔ K     — Gate 2: φ̂_ÿ constrains kinetic regime (K <= Ç_@)
+      Phi ↔ P     — R1: ⊙_ÿ enables Φ_} (Gate 1 / Frobenius condition)
+      Phi ↔ K     — Gate 2: ⊙_ÿ constrains kinetic regime (K <= Ç^@)
       Omega ↔ D   — R4/R5: protection × dimensionality determines O_2 vs O_2†
 
     Returns (edge_src, edge_dst) as 1-D long tensors.
@@ -97,8 +97,8 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
 
     # Inter-lane structural correlation edges (bidirectional, all-to-all)
     INTER_LANE = [
-        ("φ̂",   "Φ"),    # Gate 1 / R1: criticality × Frobenius gate
-        ("φ̂",   "Ç"),    # Gate 2: criticality × kinetic gate
+        ("⊙",   "Φ"),    # Gate 1 / R1: criticality × Frobenius gate
+        ("⊙",   "Ç"),    # Gate 2: criticality × kinetic gate
         ("Ω", "Ð"),    # R4/R5: topological protection × dimensionality
     ]
     for p1, p2 in INTER_LANE:
@@ -122,7 +122,7 @@ def _build_node_features() -> torch.Tensor:
                          singularity that ordinal message-passing cannot
                          reconstruct by smoothing from Φ_˙.
     """
-    BOUNDARY = {"φ̂", "Φ", "Ω", "Ð"}
+    BOUNDARY = {"⊙", "Φ", "Ω", "Ð"}
     feats = []
     for p, v, ord_frac in NODE_META:
         lane_idx   = PRIMS.index(p) / 11.0
@@ -392,8 +392,8 @@ class CrystalGNN(nn.Module):
     # Navigator self-encoding ground truth
     NAVIGATOR_TUPLE: dict[str, str] = {
         "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý", "Φ": "Φ_}",
-        "ƒ": "ƒ_ż",  "Ç": "Ç_@", "Γ": "Γ_ʔ", "ɢ": "ɢ_Ş",
-        "φ̂": "φ̂_ÿ", "Ħ": "Ħ_!",  "Σ": "Σ_ï", "Ω": "Ω_z",
+        "ƒ": "ƒ^ż",  "Ç": "Ç^@", "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş",
+        "⊙": "⊙_ÿ", "Ħ": "Ħ_!",  "Σ": "Σ_ï", "Ω": "Ω_z",
     }
     SELF_ENCODE_TARGET: int = 6_734_591
 
@@ -547,11 +547,11 @@ class CrystalGNN(nn.Module):
 # TierHead_45 takes cat(h_f4, h_f5) to see all four tier-determining dims.
 #
 # Broadcast mixer (FamilyMixer): 3-token attention over [h_f3, h_f4, h_f5]
-# so each family embedding can attend to the other two — ɢ_Ş preserved.
+# so each family embedding can attend to the other two — ɢ^Ş preserved.
 
 F3_PRIMS: list[str] = ["ƒ", "Γ", "Σ"]
 F4_PRIMS: list[str] = ["Ð", "Ř", "ɢ", "Ħ", "Ω"]
-F5_PRIMS: list[str] = ["Þ", "Φ", "φ̂", "Ç"]
+F5_PRIMS: list[str] = ["Þ", "Φ", "⊙", "Ç"]
 
 # Maps primitive name → which family it belongs to
 PRIM_FAMILY: dict[str, str] = {
@@ -591,7 +591,7 @@ class FamilyMixer(nn.Module):
     """Broadcast attention over the three family embeddings [h_f3, h_f4, h_f5].
 
     Treats the three family vectors as a 3-token sequence and applies multi-head
-    self-attention so each family can attend to all others — ɢ_Ş over the
+    self-attention so each family can attend to all others — ɢ^Ş over the
     family space.  A residual + LayerNorm follows.
     """
     def __init__(self, hidden_dim: int, num_heads: int = 4):
@@ -706,7 +706,7 @@ class CrystalGNN_v10(nn.Module):
         self.proj_f5 = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim), nn.GELU(), nn.LayerNorm(hidden_dim))
 
-        # Broadcast mixer (ɢ_Ş over family space)
+        # Broadcast mixer (ɢ^Ş over family space)
         self.mixer = FamilyMixer(hidden_dim=hidden_dim, num_heads=mixer_heads)
 
         # Per-family primitive prediction heads
@@ -1079,7 +1079,7 @@ class CrystalDataset:
                     if tup[p] not in ORD[p]:
                         raise ValueError(f"{p}={tup[p]!r}")
                 addr      = encode_tuple(tup)
-                tier_str  = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+                tier_str  = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
                 tier_idx  = self.TIER_IDX.index(tier_str)
                 self.tuples.append(tup)
                 self.addresses.append(addr)
@@ -1108,7 +1108,7 @@ class CrystalDataset:
 _TIER_BOUNDARY_COMBOS: dict[str, list[tuple]] = {}
 
 def _precompute_tier_combos() -> None:
-    for phi in VALUES["φ̂"]:
+    for phi in VALUES["⊙"]:
         for p in VALUES["Φ"]:
             for omega in VALUES["Ω"]:
                 for d in VALUES["Ð"]:
@@ -1117,7 +1117,7 @@ def _precompute_tier_combos() -> None:
 
 _precompute_tier_combos()
 
-_INNER_PRIMS = [p for p in PRIMS if p not in {"φ̂", "Φ", "Ω", "Ð"}]
+_INNER_PRIMS = [p for p in PRIMS if p not in {"⊙", "Φ", "Ω", "Ð"}]
 
 
 def _sample_random_tuples(n: int, stratified: bool = False) -> tuple:
@@ -1142,14 +1142,14 @@ def _sample_random_tuples(n: int, stratified: bool = False) -> tuple:
             tier_name = random.choice(tier_names)
             phi, p, omega, d = random.choice(_TIER_BOUNDARY_COMBOS[tier_name])
             tup: dict[str, str] = {prim: random.choice(VALUES[prim]) for prim in _INNER_PRIMS}
-            tup["φ̂"] = phi
+            tup["⊙"] = phi
             tup["Φ"]   = p
             tup["Ω"] = omega
             tup["Ð"]   = d
             tier_idx = tier_list.index(tier_name)
         else:
             tup = {prim: random.choice(VALUES[prim]) for prim in PRIMS}
-            tier_name = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+            tier_name = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
             tier_idx = tier_list.index(tier_name)
 
         addr = encode_tuple(tup)
@@ -1227,7 +1227,7 @@ def train(
     nav_tup  = CrystalGNN.NAVIGATOR_TUPLE
     nav_addr = torch.tensor([float(CrystalGNN.SELF_ENCODE_TARGET)])
     nav_tier = torch.tensor([TierHead.TIERS.index(
-        compute_tier(nav_tup["φ̂"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
+        compute_tier(nav_tup["⊙"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1383,7 +1383,7 @@ def verify(checkpoint: Path = ROOT / "crystal_gnn.pt", n_samples: int = 50) -> N
             err  = abs(pred - true) / TOTAL_SIZE * 100
             errors.append(err)
 
-            true_tier = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+            true_tier = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
 
             # Tier head (direct classification)
             head_tier = tier_names[out["tier_logits"][0].argmax().item()]
@@ -1393,7 +1393,7 @@ def verify(checkpoint: Path = ROOT / "crystal_gnn.pt", n_samples: int = 50) -> N
             # Decoded tuple tier (roundtrip) — use embedding-conditioned decoder
             dec_logits_single = {p: out["dec_logits"][p][0:1] for p in PRIMS}
             dec = {p: VALUES[p][dec_logits_single[p][0].argmax().item()] for p in PRIMS}
-            dec_tier = compute_tier(dec["φ̂"], dec["Φ"], dec["Ω"], dec["Ð"])
+            dec_tier = compute_tier(dec["⊙"], dec["Φ"], dec["Ω"], dec["Ð"])
             if dec_tier == true_tier:
                 tier_ok_decoded += 1
 
@@ -1492,7 +1492,7 @@ def train_v10(
     nav_tup  = CrystalGNN_v10.NAVIGATOR_TUPLE
     nav_addr = torch.tensor([float(CrystalGNN_v10.SELF_ENCODE_TARGET)])
     nav_tier = torch.tensor([TierHead_45.tier_idx(
-        compute_tier(nav_tup["φ̂"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
+        compute_tier(nav_tup["⊙"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1658,12 +1658,12 @@ def verify_v10(
             composed_addr = encode_tuple(pred_tup)
             composed_errors.append(abs(composed_addr - true) / TOTAL_SIZE * 100)
 
-            true_tier = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+            true_tier = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
             pred_tier = tier_names[out["tier_logits"][0].argmax().item()]
             if pred_tier == true_tier:
                 tier_ok_head += 1
 
-            dec_tier = compute_tier(pred_tup["φ̂"], pred_tup["Φ"],
+            dec_tier = compute_tier(pred_tup["⊙"], pred_tup["Φ"],
                                     pred_tup["Ω"], pred_tup["Ð"])
             if dec_tier == true_tier:
                 tier_ok_decode += 1
@@ -1770,7 +1770,7 @@ def train_v11(
 
     nav_tup  = CrystalGNN_v11.NAVIGATOR_TUPLE
     nav_tier = torch.tensor([TierHead_45.tier_idx(
-        compute_tier(nav_tup["φ̂"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
+        compute_tier(nav_tup["⊙"], nav_tup["Φ"], nav_tup["Ω"], nav_tup["Ð"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1922,12 +1922,12 @@ def verify_v11(
             if composed_addr == true:
                 exact_count += 1
 
-            true_tier = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+            true_tier = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
             pred_tier = tier_names[out["tier_logits"][0].argmax().item()]
             if pred_tier == true_tier:
                 tier_ok_head += 1
 
-            dec_tier = compute_tier(pred_tup["φ̂"], pred_tup["Φ"],
+            dec_tier = compute_tier(pred_tup["⊙"], pred_tup["Φ"],
                                     pred_tup["Ω"], pred_tup["Ð"])
             if dec_tier == true_tier:
                 tier_ok_decode += 1
@@ -2078,7 +2078,7 @@ if __name__ == "__main__":
             pred = model.encode([tup]).item()
         exact = encode_tuple(tup)
         err   = abs(pred - exact)
-        tier  = compute_tier(tup["φ̂"], tup["Φ"], tup["Ω"], tup["Ð"])
+        tier  = compute_tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
 
         print(f"Tuple:  {tup}")
         print(f"Tier:   {tier}")

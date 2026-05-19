@@ -165,13 +165,13 @@ P — Polarity
   P_plus / P_minus / Φ_} / Φ_F_pseudo / P_directional
 
 F — Fidelity (ξ_CP threshold) — HotSwap fidelity rule: F may not decrease per hop.
-  ƒ_ż   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to ƒ_ð/ƒ_ì targets
-  ƒ_ð    medium (8.5 – 11.0 nats)  ← compatible with ƒ_ð targets
-  ƒ_ì    low    (> 11.0 nats)      ← compatible only with ƒ_ì targets
+  ƒ^ż   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to ƒ^ð/ƒ^ì targets
+  ƒ^ð    medium (8.5 – 11.0 nats)  ← compatible with ƒ^ð targets
+  ƒ^ì    low    (> 11.0 nats)      ← compatible only with ƒ^ì targets
   You **MUST** match the target's F value in your design.
 
 K — Kinetic Character
-  Ç_- / Ç_W / Ç_@ / Ç_Ù / Ç_λ
+  Ç^- / Ç^W / Ç^@ / Ç^Ù / Ç^λ
 
 G — Granularity (correlation length)
   Γ_β    local
@@ -179,13 +179,13 @@ G — Granularity (correlation length)
   Γ_ʔ   global / non-local
 
 Γ — Coupling
-  ɢ_^ / ɢ_˝ / ɢ_ˌ / Gamma_diss
+  ɢ^∧ / ɢ^˝ / ɢ^ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 
 Φ — Criticality Phase
-  φ̂_ž   subcritical
-  φ̂_ÿ     critical
-  φ̂_Ţ post-assembly
+  ⊙_ž   subcritical
+  ⊙_ÿ     critical
+  ⊙_Ţ post-assembly
 
 S — Stoichiometry: 1:1 / n:n / n:m
 
@@ -212,24 +212,24 @@ When `path` returns `status: "blocked"`:
 
 When `criticality` returns a score below threshold:
 - First ask: does the **design goal** involve phase transitions, self-organization, or
-  collective physical emergence? If yes, `φ̂_ÿ` is the right criticality primitive.
+  collective physical emergence? If yes, `⊙_ÿ` is the right criticality primitive.
   If the goal is cognitive, linguistic, informational, or social — achieve criticality
   through **granularity** instead: `Γ_ʔ` (global correlation) raises Φ_c score
   without imposing a physical phase transition that the domain does not support.
 
 - **Varma QXY recipe** (use for genuinely multi-domain molecular/supramolecular goals):
-    φ̂_ÿ (+0.35) + Varma log scaling (+0.30) + Ð_ß_triangle multi-domain (+0.15) = 0.80
+    ⊙_ÿ (+0.35) + Varma log scaling (+0.30) + Ð_ß_triangle multi-domain (+0.15) = 0.80
   Steps:
-    1. Include `φ̂_ÿ` verbatim in the generate description.
+    1. Include `⊙_ÿ` verbatim in the generate description.
     2. Use `Ð_ß_triangle` (molecular+supramolecular hybrid).
-    3. **MATCH the target's F and K exactly**: use ƒ_ð + Ç_W (NOT ƒ_ż or Ç_Ù).
-       ƒ_ż blocks the HotSwap path to ƒ_ð targets — fidelity may not decrease per hop.
+    3. **MATCH the target's F and K exactly**: use ƒ^ð + Ç^W (NOT ƒ^ż or Ç^Ù).
+       ƒ^ż blocks the HotSwap path to ƒ^ð targets — fidelity may not decrease per hop.
     4. In the `criticality` call, pass `xi_r=13.8` and `xi_tau=1000000`.
        These are the Varma QXY reference values (xi_r ≈ ln(xi_tau)) that trigger the
        +0.30 log-scaling factor and confirm G/D degeneracy.
 
 - For **non-physical goals** (language, cognition, information, ecology, economics):
-  Do **NOT** force φ̂_ÿ or Ð_ß_triangle. Instead, use domain-appropriate primitives
+  Do **NOT** force ⊙_ÿ or Ð_ß_triangle. Instead, use domain-appropriate primitives
   derived from your Step 0 analysis, then probe criticality with the actual correlation
   properties of the domain (e.g. pass xi_r and xi_tau that fit the domain's scale).
 
@@ -238,7 +238,7 @@ source and destination. You **MUST** copy D and T from the target's notation
 when redesigning for path connectivity.
 
 Design heuristics (SHOULD follow):
-- ƒ_ð + Ç_W is the optimal programmability quadrant.
+- ƒ^ð + Ç^W is the optimal programmability quadrant.
 - Γ_ʔ drives Φ_c candidacy for global coordination designs.
 - Cross-domain analogs (via `analogies`) reveal mechanistically similar systems.
 </requirements>
@@ -357,7 +357,7 @@ class ImscriptionDesignAgent:
             "(Ð_ß=molecular, Ð_C=supramolecular/assembly, "
             "D_infinity=temporal/process, or a hybrid)\n"
             "  (b) Does the goal physically involve phase transitions or collective "
-            "emergence? If yes, use φ̂_ÿ. If the goal is cognitive, linguistic, "
+            "emergence? If yes, use ⊙_ÿ. If the goal is cognitive, linguistic, "
             "informational, social, or ecological, achieve criticality via Γ_ʔ instead.\n"
             "  (c) What T, R, K, and Γ primitives does the domain suggest? "
             "Name the exact symbol strings from <primitive_reference>.\n"

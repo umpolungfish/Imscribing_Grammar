@@ -28,11 +28,11 @@ from zfct_navigator import (
 # ── Tier computation ──────────────────────────────────────────────────────────
 
 TIER_LABELS = {
-    "O_0":    "O₀  (semasiographic baseline — non-critical φ̂)",
-    "O_1":    "O₁  (critical, Omega-bound — φ̂≥1, Ω=0)",
-    "O_2":    "O₂  (recursive, finite dim — φ̂≥1, Ω≥1, Ð<2)",
-    "O_2dag": "O₂† (recursive, D_infty — φ̂≥1, Ω≥1, Ð≥2)",
-    "O_inf":  "O_∞ (Frobenius round-trip — φ̂≥1 ∧ Φ=Φ_})",
+    "O_0":    "O₀  (semasiographic baseline — non-critical ⊙)",
+    "O_1":    "O₁  (critical, Omega-bound — ⊙≥1, Ω=0)",
+    "O_2":    "O₂  (recursive, finite dim — ⊙≥1, Ω≥1, Ð<2)",
+    "O_2dag": "O₂† (recursive, D_infty — ⊙≥1, Ω≥1, Ð≥2)",
+    "O_inf":  "O_∞ (Frobenius round-trip — ⊙≥1 ∧ Φ=Φ_})",
 }
 
 TIER_ORDER = {"O_0": 0, "O_1": 1, "O_2": 2, "O_2dag": 3, "O_inf": 4}
@@ -49,13 +49,13 @@ TIER_COLOR = {
 def compute_tier(t: dict) -> str:
     """
     OuroboricityTier rules (from Imscribing.Primitives.Imscription):
-      R1: φ̂ ≥ ord 1 (critical)  ∧  Φ = Φ_} (P_pm_sym)  →  O_inf
-      R2: φ̂ = ord 0 (φ̂_ž)                               →  O_0
-      R3: φ̂ ≥ 1  ∧  Ω = ord 0 (Ω_Å)                    →  O_1
-      R4: φ̂ ≥ 1  ∧  Ω ≥ 1  ∧  Ð < ord 2                →  O_2
-      R5: φ̂ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (D_infty)      →  O_2†
+      R1: ⊙ ≥ ord 1 (critical)  ∧  Φ = Φ_} (P_pm_sym)  →  O_inf
+      R2: ⊙ = ord 0 (⊙_ž)                               →  O_0
+      R3: ⊙ ≥ 1  ∧  Ω = ord 0 (Ω_Å)                    →  O_1
+      R4: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð < ord 2                →  O_2
+      R5: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (D_infty)      →  O_2†
     """
-    phi_c_ord = ORDINALS["φ̂"][t["φ̂"]]
+    phi_c_ord = ORDINALS["⊙"][t["⊙"]]
     phi_frob  = t["Φ"] == "Φ_}"
     omega_ord = ORDINALS["Ω"][t["Ω"]]
     dim_ord   = ORDINALS["Ð"][t["Ð"]]
@@ -215,13 +215,13 @@ class RuleExtractor:
             "              → FROBENIUS CLIFF: P_pm_sym is non-synthesizable by tensor",
             "                from any pair where neither input has P_pm_sym",
             "",
-            "  R-FIXPT-T   FIXPT ∈ clauses(tensor(A,B))  iff  A[φ̂] ord≥1 OR B[φ̂] ord≥1",
-            "              φ̂_ÿ (Phi_c) is ordinal 1 — reached by any critical input",
+            "  R-FIXPT-T   FIXPT ∈ clauses(tensor(A,B))  iff  A[⊙] ord≥1 OR B[⊙] ord≥1",
+            "              ⊙_ÿ (Phi_c) is ordinal 1 — reached by any critical input",
             "",
             "  R-TIER-EMRG tier(tensor(A,B)) can exceed tier(A) and tier(B)",
             "              mechanism: FROB ∧ FIXPT cross-clause conjunction",
-            "              example:   A = O_2† with Φ_} but φ̂_ž  (has FROB, no FIXPT)",
-            "                         B = O_2† with φ̂_ÿ but Φ_F  (has FIXPT, no FROB)",
+            "              example:   A = O_2† with Φ_} but ⊙_ž  (has FROB, no FIXPT)",
+            "                         B = O_2† with ⊙_ÿ but Φ_F  (has FIXPT, no FROB)",
             "                         tensor(A,B) has BOTH → O_inf",
             "",
             "  R-ZFCT-ABS  For all 6 ZFCₜ promotion channels c:",
@@ -280,7 +280,7 @@ ZFCₜ Manipulator — commands
 Entry names:
   special:   zfc  zfct  schrodinger  navier_stokes  einstein  iug  wave  heat
   catalog:   exact name or fuzzy substring match
-  inline:    Ð_;,Þ_O,Ř_=,Φ_F,ƒ_ż,Ç_@,Γ_ʔ,ɢ_ˌ,φ̂_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
+  inline:    Ð_;,Þ_O,Ř_=,Φ_F,ƒ^ż,Ç^@,Γ_ʔ,ɢ^ˌ,⊙_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
 """.strip()
 
 
@@ -595,10 +595,10 @@ class ZFCtManipulator:
         lines = [
             f"Frobenius barrier:  {a.get('name','A')}  ×  {b.get('name','B')}",
             "",
-            f"  A    FROB={str(a_frob):<5}  FIXPT={str(a_fixpt):<5}  Φ={a['Φ']}  φ̂={a['φ̂']}  tier={a_tier}",
-            f"  B    FROB={str(b_frob):<5}  FIXPT={str(b_fixpt):<5}  Φ={b['Φ']}  φ̂={b['φ̂']}  tier={b_tier}",
+            f"  A    FROB={str(a_frob):<5}  FIXPT={str(a_fixpt):<5}  Φ={a['Φ']}  ⊙={a['⊙']}  tier={a_tier}",
+            f"  B    FROB={str(b_frob):<5}  FIXPT={str(b_fixpt):<5}  Φ={b['Φ']}  ⊙={b['⊙']}  tier={b_tier}",
             f"  ─────────────────────────────────────────────────────────────",
-            f"  ⊗    FROB={str(t_frob):<5}  FIXPT={str(t_fixpt):<5}  Φ={tensor_r['Φ']}  φ̂={tensor_r['φ̂']}  tier={t_tier}",
+            f"  ⊗    FROB={str(t_frob):<5}  FIXPT={str(t_fixpt):<5}  Φ={tensor_r['Φ']}  ⊙={tensor_r['⊙']}  tier={t_tier}",
             f"  ⊓    tier={m_tier}  Φ={meet_r['Φ']}",
             "",
         ]

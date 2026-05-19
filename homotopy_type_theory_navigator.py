@@ -2,7 +2,7 @@
 Homotopy Type Theory Navigator - Imscribing Grammar
 
 Domain: Homotopy type theory, univalent foundations, higher topos theory
-Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_2>
+Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2>
 Tier: O_inf
 
 Architecture: Univalence-preserving GNN with univalence axiom enforcement.
@@ -10,11 +10,11 @@ Architecture: Univalence-preserving GNN with univalence axiom enforcement.
   - Þ_O: Imscriptive topology (n-types, (n+1)-types, ...)
   - Ř_Ť: Adjoint/unnivalence relations (paths ↔ equivalences)
   - Φ_}: Self-dual with uncertainty on higher identities
-  - ƒ_ż: Exactly preserves univalence principle
-  - Ç_@: Slow evolution through higher homotopies
+  - ƒ^ż: Exactly preserves univalence principle
+  - Ç^@: Slow evolution through higher homotopies
   - Γ_ʔ: Arbitrary universe levels possible
-  - ɢ_ˌ: Sequential higher composition (path concatenation)
-  - φ̂_ÿ: Self-modeling (type is equivalent to its univalence)
+  - ɢ^ˌ: Sequential higher composition (path concatenation)
+  - ⊙_ÿ: Self-modeling (type is equivalent to its univalence)
   - Ħ_!: Eternal (paths compose indefinitely)
   - Σ_ï: Many heterogeneous types and paths
   - Ω_2: Binary winding (type equivalence ↔ path equality)
@@ -38,7 +38,7 @@ class HTTConfig:
             "computes higher groupoids, detects type equivalences."
         )
         self.domain = "Homotopy type theory, univalent foundations, higher topos theory"
-        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_2"
+        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2"
         self.tier = "O_inf"
         self.architecture = (
             "Univalence-preserving GNN - types communicate via path channels; "
@@ -51,11 +51,11 @@ class HTTConfig:
         self.T = "Þ_O"
         self.R = "Ř_Ť"
         self.P = "Φ_}"
-        self.F = "ƒ_ż"
-        self.K = "Ç_@"
+        self.F = "ƒ^ż"
+        self.K = "Ç^@"
         self.G = "Γ_ʔ"
-        self.Gamma = "ɢ_ˌ"
-        self.Phi = "φ̂_ÿ"
+        self.Gamma = "ɢ^ˌ"
+        self.Phi = "⊙_ÿ"
         self.H = "Ħ_!"
         self.S = "Σ_ï"
         self.Omega = "Ω_2"

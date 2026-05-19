@@ -25,26 +25,26 @@ mapping = {
     'Φ_F': 'Polarity.P_pipevar',
     'Φ_˙': 'Polarity.P_subdoublearrow',
     'Φ_}': 'Polarity.P_doublebarpipe',
-    'ƒ_ì': 'Fidelity.F_beltl',
-    'ƒ_ð': 'Fidelity.F_dh',
-    'ƒ_ż': 'Fidelity.F_hardsign',
-    'Ç_Ù': 'KineticChar.K_teshlig',
-    'Ç_@': 'KineticChar.K_schwa',
-    'Ç_W': 'KineticChar.K_frtailgamma',
-    'Ç_-': 'KineticChar.K_turnm',
-    'Ç_λ': 'KineticChar.K_lambda',
+    'ƒ^ì': 'Fidelity.F_beltl',
+    'ƒ^ð': 'Fidelity.F_dh',
+    'ƒ^ż': 'Fidelity.F_hardsign',
+    'Ç^Ù': 'KineticChar.K_teshlig',
+    'Ç^@': 'KineticChar.K_schwa',
+    'Ç^W': 'KineticChar.K_frtailgamma',
+    'Ç^-': 'KineticChar.K_turnm',
+    'Ç^λ': 'KineticChar.K_lambda',
     'Γ_ʔ': 'Granularity.G_revapostrophe',
     'Γ_β': 'Granularity.G_beta',
     'Γ_γ': 'Granularity.G_gamma',
-    'ɢ_^': 'Grammar.Gamma_seq',
-    'ɢ_ˌ': 'Grammar.Gamma_seq',
-    'ɢ_Ş': 'Grammar.Gamma_broad',
-    'ɢ_˝': 'Grammar.Gamma_or',
-    'φ̂_ÿ': 'Criticality.Phi_ctyogh',
-    'φ̂_Æ': 'Criticality.Phi_closerevepsilon',
-    'φ̂_3': 'Criticality.Phi_revepsilon',
-    'φ̂_ž': 'Criticality.Phi_softsign',
-    'φ̂_Ţ': 'Criticality.Phi_upstep',
+    'ɢ^∧': 'Grammar.Gamma_seq',
+    'ɢ^ˌ': 'Grammar.Gamma_seq',
+    'ɢ^Ş': 'Grammar.Gamma_broad',
+    'ɢ^˝': 'Grammar.Gamma_or',
+    '⊙_ÿ': 'Criticality.Phi_ctyogh',
+    '⊙_Æ': 'Criticality.Phi_closerevepsilon',
+    '⊙_3': 'Criticality.Phi_revepsilon',
+    '⊙_ž': 'Criticality.Phi_softsign',
+    '⊙_Ţ': 'Criticality.Phi_upstep',
     'Ħ_!': 'Chirality.H_invscripta',
     'Ħ_£': 'Chirality.H_toneletterstem',
     'Ħ_Ñ': 'Chirality.H_closeomega',
@@ -68,7 +68,7 @@ def mk_synthon(tup):
             f'    kin  := {mapping[tup["Ç"]]},\n'
             f'    gran := {mapping[tup["Γ"]]},\n'
             f'    gram := {mapping[tup["ɢ"]]},\n'
-            f'    crit := {mapping[tup["φ̂"]]},\n'
+            f'    crit := {mapping[tup["⊙"]]},\n'
             f'    chir := {mapping[tup["Ħ"]]},\n'
             f'    stoi := {mapping[tup["Σ"]]},\n'
             f'    prot := {mapping[tup["Ω"]]} }}')
@@ -78,7 +78,7 @@ def mk_name(group_idx, tup):
     parts = [f"type{group_idx}"]
     if tup['Φ'] != 'Φ_υ':
         parts.append(f"sym_{tup['Φ'][-1]}")
-    if tup['ɢ'] == 'ɢ_Ş':
+    if tup['ɢ'] == 'ɢ^Ş':
         parts.append("broad")
     if tup['Þ'] == 'Þ_K':
         parts.append("incl")

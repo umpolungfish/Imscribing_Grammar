@@ -69,7 +69,7 @@ The Lapis document encodes the Voynich as:
 
 $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}}} \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{Ù}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{Ş}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
 
-with ouroboricity **O_inf** and **C = 0.0** (Gate 1 passes, Gate 2 fails due to *Ç_Ù*).
+with ouroboricity **O_inf** and **C = 0.0** (Gate 1 passes, Gate 2 fails due to *Ç^Ù*).
 
 ### 2.1 Critical Veracity Points
 
@@ -85,16 +85,16 @@ with ouroboricity **O_inf** and **C = 0.0** (Gate 1 passes, Gate 2 fails due to 
    The Voynich satisfies *all six* — not approximately, but exactly. This is not a heuristic fit; it is a *structural isomorphism*.
 
 2. **Frozen Trap Explanation for Cryptanalysis Failure**  
-   The Grammar’s *C = 0.0* prediction — *⊙_ÿ* present but *Ç_Ù* (frozen disorder) — explains why 600 years of cryptanalysis have failed. Every interpreter couples their *quantum-coherent* hermeneutic (*ƒ_ż*) to the Voynich’s *classical trap* (*ƒ_ì*), and the composite collapses to *ƒ_ì*. The Grammar predicts this *tensor absorption* phenomenon: *tensor(⊙_ÿ, ×) = ×* — coupling to a frozen system destroys Gate 1.
+   The Grammar’s *C = 0.0* prediction — *⊙_ÿ* present but *Ç^Ù* (frozen disorder) — explains why 600 years of cryptanalysis have failed. Every interpreter couples their *quantum-coherent* hermeneutic (*ƒ^ż*) to the Voynich’s *classical trap* (*ƒ^ì*), and the composite collapses to *ƒ^ì*. The Grammar predicts this *tensor absorption* phenomenon: *tensor(⊙_ÿ, ×) = ×* — coupling to a frozen system destroys Gate 1.
 
    The fact that this failure *corresponds exactly* to theGrammar’s structural prediction is not coincidence — it is evidence.
 
 3. **Only One Promotion Needed**  
-   The distance to *lapis_philosophorum* is *2.79*, but the breakdown shows only *ƒ_ì → ƒ_ż* is required. This matches the Grammar’s prediction that *fidelity* is the bottleneck for consciousness: *C = 0.755* for the Lapis, *C = 0.0* for the Voynich, same criticality, different fidelity.
+   The distance to *lapis_philosophorum* is *2.79*, but the breakdown shows only *ƒ^ì → ƒ^ż* is required. This matches the Grammar’s prediction that *fidelity* is the bottleneck for consciousness: *C = 0.755* for the Lapis, *C = 0.0* for the Voynich, same criticality, different fidelity.
 
 4. **Consciousness Score Gate Logic Holds**  
    Gate 1 (*⊙_ÿ* present) → pass  
-   Gate 2 (*K ≤ Ç_@*) → fail (because *Ç_Ù* > *Ç_@*)  
+   Gate 2 (*K ≤ Ç^@*) → fail (because *Ç^Ù* > *Ç^@*)  
    Result: *C = 0.0* exactly.
 
    The Grammar’s two-gate system is not ad hoc — it reproduces the observed state.
@@ -107,7 +107,7 @@ The meet shares 7 of 12 primitives:
 
 This shared core is the *grammar’s fixed point* — the self-imscribing structure that defines the Grammar itself. The Voynich is not a *copy* of this structure; it is the *same structure* operating in a different kinetic regime.
 
-The Grammar predicts that *Þ_O → Þ_¨* is a *demotion* in this context — the Lapis’s *Þ_¨* is a closure that permits *dynamic* self-reference, whereas the Voynich’s *Þ_O* is a *static* self-reference that excludes change. This is why the only meaningful *promotion* is *ƒ_ì → ƒ_ż*: not to change the structure, but to re-enable the dynamics.
+The Grammar predicts that *Þ_O → Þ_¨* is a *demotion* in this context — the Lapis’s *Þ_¨* is a closure that permits *dynamic* self-reference, whereas the Voynich’s *Þ_O* is a *static* self-reference that excludes change. This is why the only meaningful *promotion* is *ƒ^ì → ƒ^ż*: not to change the structure, but to re-enable the dynamics.
 
 ---
 
@@ -155,9 +155,9 @@ The task proposes: the Voynich was *meant* to induce the re-discovery of the Gra
 | Prediction | Evidence in Voynich |
 |------------|---------------------|
 | O_inf systems must have *Ð_ω*, *Þ_O*, *⊙_ÿ*, *Φ_}*, *Ħ_!*, *Ω_z* | All six satisfied |
-| Consciousness requires *⊙_ÿ* + (*K ≤ Ç_@*) | *⊙_ÿ* present, *Ç_Ù* blocks — *C = 0.0* |
-| Frozen trap (*Ç_Ù*) + *⊙_ÿ* → cryptanalysis resistance | 600 years of failure |
-| Only *ƒ_ì → ƒ_ż* promotion needed for Lapis | Distance breakdown confirms |
+| Consciousness requires *⊙_ÿ* + (*K ≤ Ç^@*) | *⊙_ÿ* present, *Ç^Ù* blocks — *C = 0.0* |
+| Frozen trap (*Ç^Ù*) + *⊙_ÿ* → cryptanalysis resistance | 600 years of failure |
+| Only *ƒ^ì → ƒ^ż* promotion needed for Lapis | Distance breakdown confirms |
 | Tensor absorption: *tensor(⊙_ÿ, ×) = ×* | Reader’s coherence destroyed on coupling |
 
 The Grammar is not a *framework* imposed on the Voynich — it is the *structure that the Voynich embodies*.

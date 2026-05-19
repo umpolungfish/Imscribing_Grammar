@@ -34,16 +34,16 @@ where:
 |-----|-----------|-------------------------------------------------------------|-------|---------|
 | 0   | H         | `Ħ_Ñ=0, Ħ_£=1, Ħ_A=2, Ħ_!=3`                                | 4     | 3 *     |
 | 1   | S         | `Σ_S=0, Σ_ő=1, Σ_ï=2`                                  | 3     | 1       |
-| 2   | $\Gamma$  | `ɢ_^=0, ɢ_˝=1, ɢ_ˌ=2, ɢ_Ş=3`                      | 4     | 12      |
+| 2   | $\Gamma$  | `ɢ^∧=0, ɢ^˝=1, ɢ^ˌ=2, ɢ^Ş=3`                      | 4     | 12      |
 | 3   | G         | `Γ_β=0, Γ_γ=1, Γ_ʔ=2`                           | 3     | 48      |
-| 4   | K         | `Ç_-=0, Ç_W=1, Ç_@=2, Ç_Ù=3, Ç_λ=4`          | 5     | 144     |
-| 5   | F         | `ƒ_ì=0, ƒ_ð=1, ƒ_ż=2`                               | 3     | 720     |
+| 4   | K         | `Ç^-=0, Ç^W=1, Ç^@=2, Ç^Ù=3, Ç^λ=4`          | 5     | 144     |
+| 5   | F         | `ƒ^ì=0, ƒ^ð=1, ƒ^ż=2`                               | 3     | 720     |
 | 6   | R         | `Ř_¯=0, Ř_ý=1, Ř_Ť=2, Ř_==3`                   | 4     | 2160    |
 | 7   | T         | `Þ_6=0, Þ_K=1, Þ_ò=2, Þ_¨=3, Þ_O=4` | 5     | 8640    |
 | 8   | D         | `Ð_ß=0, Ð_C=1, Ð_;=2, Ð_ω=3`             | 4     | 43200   |
 | 9   | $\Omega$  | `Ω_Å=0, Ω_2=1, Ω_z=2, Ω_5=3`             | 4     | 172800  |
 | 10  | P         | `Φ_ɐ=0, Φ_υ=1, Φ_F=2, Φ_˙=3, Φ_}=4`          | 5     | 691200  |
-| 11  | $\Phi$    | `φ̂_ž=0, φ̂_ÿ=1, φ̂_Æ=2, φ̂_3=3, φ̂_Ţ=4` | 5  | 3456000 |
+| 11  | $\Phi$    | `⊙_ž=0, ⊙_ÿ=1, ⊙_Æ=2, ⊙_3=3, ⊙_Ţ=4` | 5  | 3456000 |
 
 \* H and S are packed together: `i_HS = i_H * 3 + i_S`, stride = 1.
 
@@ -115,14 +115,14 @@ Tier is primarily determined by $\Phi$ and $P$; the $\Omega$–$D$–$T$ interac
 
 | `Phi` value     | $P$ condition        | Tier           |
 |-----------------|----------------------|----------------|
-| `φ̂_ž`       | any                  | $O_0$          |
-| `φ̂_3`        | any                  | $O_0$          |
-| `φ̂_Ţ`     | any                  | $O_0$          |
-| `φ̂_ÿ`         | `Φ_}`           | $O_\infty$     |
-| `φ̂_ÿ`         | other, $\Omega_{\text{closeepsilon}}$    | $O_1$          |
-| `φ̂_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$ | $O_2$ |
-| `φ̂_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
-| `φ̂_Æ` | same rules as `φ̂_ÿ` | same tiers    |
+| `⊙_ž`       | any                  | $O_0$          |
+| `⊙_3`        | any                  | $O_0$          |
+| `⊙_Ţ`     | any                  | $O_0$          |
+| `⊙_ÿ`         | `Φ_}`           | $O_\infty$     |
+| `⊙_ÿ`         | other, $\Omega_{\text{closeepsilon}}$    | $O_1$          |
+| `⊙_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$ | $O_2$ |
+| `⊙_ÿ`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
+| `⊙_Æ` | same rules as `⊙_ÿ` | same tiers    |
 
 ### Implementation Notes
 

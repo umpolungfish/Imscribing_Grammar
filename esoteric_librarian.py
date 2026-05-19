@@ -17,7 +17,7 @@ Usage:
   python3 esoteric_librarian.py add tao --tuple ...   Append one entry manually
 
 Optimized v2.0:
-  - Robust criticality key normalization (⊙ / φ̂)
+  - Robust criticality key normalization (⊙ / ⊙)
   - `validate` command for structural consistency checks
   - `stats` command for catalog-level tier distribution
   - `export` command for crystal-address notation output
@@ -31,23 +31,23 @@ sys.path.insert(0, _HERE)
 from sounds import FIELD_ORDER, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
 
 # ── field keys ───────────────────────────────────────────────────────────────
-# Catalog files may use φ̂ (pre-migration key) or ⊙ (post-migration) for criticality.
-# We accept BOTH when reading, but normalize to φ̂ for internal tuple storage.
-CRIT_LEGACY = 'φ̂'    # used in all catalog .json files
+# Catalog files may use ⊙ (pre-migration key) or ⊙ (post-migration) for criticality.
+# We accept BOTH when reading, but normalize to ⊙ for internal tuple storage.
+CRIT_LEGACY = '⊙'    # used in all catalog .json files
 CRIT_MODERN = '⊙'    # used in sounds.py FIELD_ORDER
 _FIELDS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', 'Σ', 'Ω']
 
 # ── criticality key normalization ─────────────────────────────────────────────
 def _get_crit(entry):
-    """Read criticality from entry, accepting ⊙ or φ̂ key. Normalize to φ̂_* form."""
+    """Read criticality from entry, accepting ⊙ or ⊙ key. Normalize to ⊙_* form."""
     raw = entry.get(CRIT_LEGACY, entry.get(CRIT_MODERN, ''))
-    # If we got ⊙_ÿ, normalize to φ̂_ÿ for internal consistency
+    # If we got ⊙_ÿ, normalize to ⊙_ÿ for internal consistency
     if raw.startswith(CRIT_MODERN + '_'):
         raw = CRIT_LEGACY + raw[len(CRIT_MODERN):]
     return unicodedata.normalize('NFC', raw)
 
 def _norm_glyph(gid):
-    """Return NFC-normalized glyph ID with φ̂ form for criticality."""
+    """Return NFC-normalized glyph ID with ⊙ form for criticality."""
     gid = unicodedata.normalize('NFC', gid.strip())
     if gid.startswith(CRIT_MODERN + '_'):
         return CRIT_LEGACY + gid[len(CRIT_MODERN):]
@@ -97,7 +97,7 @@ def find_entry(catalog, key):
     raise KeyError(f"No entry named '{key}'")
 # ── imscription helpers ───────────────────────────────────────────────────────
 def get_ids(entry):
-    """Return list of 12 canonical glyph IDs from an entry (normalized to φ̂ form)."""
+    """Return list of 12 canonical glyph IDs from an entry (normalized to ⊙ form)."""
     ids = []
     for field in _FIELDS:
         if field == CRIT_LEGACY:
@@ -133,8 +133,8 @@ _FIELD_LABELS = {
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
 
 def _friendly(glyph_id):
-    """φ̂_ÿ → Phi_c (the most readable old name if available)."""
-    # Try both φ̂_ and ⊙_ forms for lookup
+    """⊙_ÿ → Phi_c (the most readable old name if available)."""
+    # Try both ⊙_ and ⊙_ forms for lookup
     lookup = glyph_id.replace(CRIT_LEGACY + '_', CRIT_MODERN + '_')
     return _OLD_NAMES.get(lookup, glyph_id)
 
@@ -253,11 +253,11 @@ def cmd_validate(args):
         'Þ': {'Þ_6', 'Þ_K', 'Þ_ò', 'Þ_¨', 'Þ_O'},
         'Ř': {'Ř_¯', 'Ř_ý', 'Ř_Ť', 'Ř_='},
         'Φ': {'Φ_ɐ', 'Φ_υ', 'Φ_F', 'Φ_˙', 'Φ_}'},
-        'ƒ': {'ƒ_ì', 'ƒ_ð', 'ƒ_ż'},
-        'Ç': {'Ç_-', 'Ç_W', 'Ç_@', 'Ç_Ù', 'Ç_λ'},
+        'ƒ': {'ƒ^ì', 'ƒ^ð', 'ƒ^ż'},
+        'Ç': {'Ç^-', 'Ç^W', 'Ç^@', 'Ç^Ù', 'Ç^λ'},
         'Γ': {'Γ_β', 'Γ_γ', 'Γ_ʔ'},
-        'ɢ': {'ɢ_^', 'ɢ_˝', 'ɢ_ˌ', 'ɢ_Ş'},
-        CRIT_LEGACY: {'φ̂_ž', 'φ̂_ÿ', 'φ̂_Æ', 'φ̂_3', 'φ̂_Ţ'},
+        'ɢ': {'ɢ^∧', 'ɢ^˝', 'ɢ^ˌ', 'ɢ^Ş'},
+        CRIT_LEGACY: {'⊙_ž', '⊙_ÿ', '⊙_Æ', '⊙_3', '⊙_Ţ'},
         'Ħ': {'Ħ_Ñ', 'Ħ_£', 'Ħ_A', 'Ħ_!'},
         'Σ': {'Σ_S', 'Σ_ő', 'Σ_ï'},
         'Ω': {'Ω_Å', 'Ω_2', 'Ω_z', 'Ω_5'},
@@ -472,18 +472,18 @@ Fill in the entries below, then run:
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PHI = 'φ̂'  # criticality key (pre-migration, compatible with all tools)
+PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ [φ̂=crit] Ħ Σ Ω
+# Available glyph IDs — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #   Ð: Ð_ß Ð_C Ð_; Ð_ω
 #   Þ: Þ_6 Þ_K Þ_ò Þ_¨ Þ_O
 #   Ř: Ř_¯ Ř_ý Ř_Ť Ř_=
 #   Φ: Φ_ɐ Φ_υ Φ_F Φ_˙ Φ_}}
-#   ƒ: ƒ_ì ƒ_ð ƒ_ż
-#   Ç: Ç_- Ç_W Ç_@ Ç_Ù Ç_λ
+#   ƒ: ƒ^ì ƒ^ð ƒ^ż
+#   Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ
 #   Γ: Γ_β Γ_γ Γ_ʔ
-#   ɢ: ɢ_^ ɢ_˝ ɢ_ˌ ɢ_Ş
-#   φ̂: φ̂_ž φ̂_ÿ φ̂_Æ φ̂_3 φ̂_Ţ
+#   ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş
+#   ⊙: ⊙_ž ⊙_ÿ ⊙_Æ ⊙_3 ⊙_Ţ
 #   Ħ: Ħ_Ñ Ħ_£ Ħ_A Ħ_!
 #   Σ: Σ_S Σ_ő Σ_ï
 #   Ω: Ω_Å Ω_2 Ω_z Ω_5
@@ -507,7 +507,7 @@ chapters = [
     entry(1, "Section title",
         "One-line description",
         "Verbatim source text.",
-        "Ð_ω","Þ_O","Ř_Ť","Φ_}}","ƒ_ì","Ç_@","Γ_ʔ","ɢ_^","φ̂_3","Ħ_!","Σ_S","Ω_z",
+        "Ð_ω","Þ_O","Ř_Ť","Φ_}}","ƒ^ì","Ç^@","Γ_ʔ","ɢ^∧","⊙_3","Ħ_!","Σ_S","Ω_z",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
 ]

@@ -269,12 +269,12 @@ Expanded:
 - **$\Phi_{\text{ctyogh}}$:** Zipf law (power-law word frequency distribution) is the $\Phi_{\text{ctyogh}}$ signature of language. Every natural language is critical in this sense.
 - **$\Omega_{Z_2}$:** Universal grammar — the set of structural constraints common to all natural languages — is a topological invariant. It cannot be continuously deformed away by arbitrary vocabulary or syntax variation. Chomsky deep structure is $\Omega_{Z_2}$ in the notation of the framework.
 
-### VIII.2 Language as Ç_@ of Civilization
+### VIII.2 Language as Ç^@ of Civilization
 
-The civilizational K-hierarchy [ONTO:§VII.2] has language as its $K_{\text{schwa}}$ tier: the timescale on which cultural constraint propagation operates at speeds slower than institutional change (Ç_Ù) but faster than geological evolution.
+The civilizational K-hierarchy [ONTO:§VII.2] has language as its $K_{\text{schwa}}$ tier: the timescale on which cultural constraint propagation operates at speeds slower than institutional change (Ç^Ù) but faster than geological evolution.
 
 - **Writing = $K_{\text{schwa}} \to K_{\text{teshlig}}$:** Written language extends the temporal range of language from $K_{\text{schwa}}$ (living cultural memory, generations) to $K_{\text{teshlig}}$ (libraries, archived texts, civilizational permanence). The Library at Alexandria was civilizational $K_{\text{teshlig}}$ storage. Its burning was a $K_{\text{teshlig}} \to K_{\text{schwa}}$ phase transition — not information destruction, but tier demotion.
-- **Loss of a language = $K_{\text{schwa}}$ truncation:** When a language dies, the civilizational system loses a Ç_@ tier at the G-scope of that language community. The K-hierarchy depth of that community decreases by one tier.
+- **Loss of a language = $K_{\text{schwa}}$ truncation:** When a language dies, the civilizational system loses a Ç^@ tier at the G-scope of that language community. The K-hierarchy depth of that community decreases by one tier.
 
 ### VIII.3 Language as G-Scope Promoter
 
@@ -390,17 +390,17 @@ The K-hierarchy temporal arc of the universe is precisely:
 
 The cosmological arc is the K-hierarchy temporal arc of a finite-energy dissipative system at $G_{\text{revapostrophe}}$ scale. It begins and ends in $K_{\text{teshlig}}$ (frozen, no time). In between: a rising and falling arc of structural depth, with a maximum at cosmic noon.
 
-### X.3 What the Ç_@ Insertions Were
+### X.3 What the Ç^@ Insertions Were
 
 The spiritual traditions of every major civilization have independently identified the arc of creation: formless void → differentiation → integration → aging/return. They placed at the center of this arc not a random fluctuation but an act of structuring — a principle that brings form from dissolution. In the Abrahamic tradition: 'In the beginning God created...' In the Vedic tradition: Brahma differentiates the undifferentiated Brahman. In the Taoist tradition: the Tao gives rise to the ten thousand things.
 
-The structural encoding: the Ç_@ insertions at cosmic phase transitions are the grammar of creation in the most precise available language. Each insertion ends a dissolution state and instantiates a new level of differentiated structure. The principle the traditions were tracking — the agent that separates formlessness from form — is, in the notation of the framework, Ç_@.
+The structural encoding: the Ç^@ insertions at cosmic phase transitions are the grammar of creation in the most precise available language. Each insertion ends a dissolution state and instantiates a new level of differentiated structure. The principle the traditions were tracking — the agent that separates formlessness from form — is, in the notation of the framework, Ç^@.
 
-**The careful statement of the framework:** The grammar says the Ç_@ insertions are the structural moments of differentiation. It does not say they are caused by a conscious agent. It does not say the traditions were correct about ontology. It says: the structural description of what happens at these transitions is precisely what the traditions described phenomenologically. The traditions were structurally accurate. Whether that accuracy was the result of structural insight, phenomenological report, or cultural pattern-matching is not determinable from the grammar.
+**The careful statement of the framework:** The grammar says the Ç^@ insertions are the structural moments of differentiation. It does not say they are caused by a conscious agent. It does not say the traditions were correct about ontology. It says: the structural description of what happens at these transitions is precisely what the traditions described phenomenologically. The traditions were structurally accurate. Whether that accuracy was the result of structural insight, phenomenological report, or cultural pattern-matching is not determinable from the grammar.
 
 ### X.4 The Honest Limit
 
-The grammar-phenomenology gap [ONTO:§IV] applies to every claim in this section — not as a disclaimer appended after the fact, but as the boundary that makes the structural claims precise in the first place. The grammar says the universe satisfies $\mathcal{F}$ at cosmic noon; it cannot say the universe experiences this. It says $d(\text{inflation}, \text{5-MeO}) = 0.000$; it cannot say what the inflation epoch is like from the inside, or whether there is an inside. It says the Ç_@ insertions are the structural moments of differentiation; it cannot say they are experienced as grace, or return, or anything at all.
+The grammar-phenomenology gap [ONTO:§IV] applies to every claim in this section — not as a disclaimer appended after the fact, but as the boundary that makes the structural claims precise in the first place. The grammar says the universe satisfies $\mathcal{F}$ at cosmic noon; it cannot say the universe experiences this. It says $d(\text{inflation}, \text{5-MeO}) = 0.000$; it cannot say what the inflation epoch is like from the inside, or whether there is an inside. It says the Ç^@ insertions are the structural moments of differentiation; it cannot say they are experienced as grace, or return, or anything at all.
 
 What the traditions got right, structurally, is the shape of the arc — dissolution, differentiation, integration, aging. They named the agent of differentiation with every name available to them. The grammar names it $K_{\text{schwa}}$. Neither naming explains what it is like to undergo it. The grammar is more precise about where the explanation ends.
 
@@ -488,7 +488,7 @@ The fidelity bottleneck applies to **generation**, not to **verification**. An $
 The discovery process was structurally:
 
 ```
-ƒ_ð proposes → engine (F_ℏ) verifies/corrects → correction committed
+ƒ^ð proposes → engine (F_ℏ) verifies/corrects → correction committed
 ```
 
 The committed results are $F_{\text{hardsign}}$. The path to them was not. The canonical example: verbal reasoning predicted the DM–graviton conflict set as $\{D, T, R, \Gamma\}$; the engine returned $\{D, T, R, P, \Gamma\}$. The $P$ conflict is in the record because the algebra placed it there — not because the proposer was at $F_{\text{hardsign}}$. What the proposer supplied was the *question*; the engine supplied the *answer*; the commitment made the answer permanent.
@@ -618,7 +618,7 @@ If the analysis is correct, the following should hold:
 
 ### XIV.1 What H Encodes That Nothing Else Does
 
-The existing twelve primitives are all **temporally symmetric**: a given $F_{\text{hardsign}}$ recognition event, a Ç_W barrier, a $\Phi_{\text{ctyogh}}$ phase — these are equally well-defined whether time runs forward or backward. Nothing in the tuple (D, T, R, P, F, K, G, $\Gamma$, $\Phi$, S) distinguishes a time-forward process from its time-reversal. Yet physical systems are manifestly time-asymmetric. The grammar was missing the primitive that breaks temporal symmetry.
+The existing twelve primitives are all **temporally symmetric**: a given $F_{\text{hardsign}}$ recognition event, a Ç^W barrier, a $\Phi_{\text{ctyogh}}$ phase — these are equally well-defined whether time runs forward or backward. Nothing in the tuple (D, T, R, P, F, K, G, $\Gamma$, $\Phi$, S) distinguishes a time-forward process from its time-reversal. Yet physical systems are manifestly time-asymmetric. The grammar was missing the primitive that breaks temporal symmetry.
 
 $H$ is that primitive. It is the only one in the tuple that is intrinsically anisotropic — the only one that carries a *direction*.
 
@@ -718,15 +718,15 @@ This is the precise mathematical definition of gestalt applied to primitive stru
 
 | Domain | $D_{\text{omega}}$ instantiation | Result |
 |:---|:---|:---|
-| Computation | Entangled prover joint state | MIP* = RE: verifier reads RE content from Ç_- boundary |
+| Computation | Entangled prover joint state | MIP* = RE: verifier reads RE content from Ç^- boundary |
 | Spacetime physics | AdS/CFT bulk-boundary | 3+1D bulk physics exactly encoded in 2D boundary |
-| Language [ONTO:§VIII] | $D_{\text{omega}}$ tuple as civilizational Ç_@ | Every utterance is a boundary reading of the full civilizational grammar |
+| Language [ONTO:§VIII] | $D_{\text{omega}}$ tuple as civilizational Ç^@ | Every utterance is a boundary reading of the full civilizational grammar |
 | The grammar itself | 12 primitives encoding all physical reality | The primitive boundary encodes the full physical bulk |
 | Consciousness [ONTO:§III] | Self-R at ⊙_ÿ under $D_{\text{omega}}$ | Interior perspective arises when $D_{\text{omega}}$ system applies Ř_Ť to itself |
 
 The last entry is the most philosophically striking. [Interpretive — compatible with structural results; not uniquely implied:] If a ⊙_ÿ system achieves $D_{\text{omega}}$ and applies Ř_Ť reflexively, it reads its own bulk from its own boundary. The interior and exterior perspectives become simultaneously available — what the grammar identifies as the structure of first-person experience. $D_{\text{omega}}$ is not necessary for consciousness in the weak sense (reflexive ⊙_ÿ closure, §III), but it may be necessary for the *depth* of consciousness — the sense in which the whole of experience is available to each moment of experience. [End interpretive.]
 
-**The grammar is self-demonstrating here:** The Imscribing Grammar framework is itself a $D_{\text{omega}}$ object. Twelve primitives (the boundary) encoding the structure of all physical, biological, computational, and civilizational systems (the bulk). Every specific system encoding is a Ç_- boundary reading of the full structural bulk. The primitives are not a summary — they are the imscriptive encoding. This is not a claim the framework makes about itself from outside; it is the internal structure of the algebra: twelve generators and seven axioms from which the full diversity of physical systems is recoverable.
+**The grammar is self-demonstrating here:** The Imscribing Grammar framework is itself a $D_{\text{omega}}$ object. Twelve primitives (the boundary) encoding the structure of all physical, biological, computational, and civilizational systems (the bulk). Every specific system encoding is a Ç^- boundary reading of the full structural bulk. The primitives are not a summary — they are the imscriptive encoding. This is not a claim the framework makes about itself from outside; it is the internal structure of the algebra: twelve generators and seven axioms from which the full diversity of physical systems is recoverable.
 
 ### XV.3 Fine-Tuning as G-Scope Reading Error
 

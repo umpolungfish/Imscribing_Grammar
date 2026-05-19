@@ -192,12 +192,12 @@ nav = CrystalNavigator()
 
 magnetar = {
     "D": "Ð_C", "T": "Þ_box",    "R": "Ř_ý",   "P": "Φ_F",
-    "F": "ƒ_ð",       "K": "Ç_@",  "G": "Γ_ʔ", "Gamma": "ɢ_ˌ",
+    "F": "ƒ^ð",       "K": "Ç^@",  "G": "Γ_ʔ", "Gamma": "ɢ^ˌ",
     "Phi": "⊙_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
 }
 navigator_self = {
     "D": "Ð_ω",  "T": "Þ_O",   "R": "Ř_ý",    "P": "Φ_}",
-    "F": "ƒ_ż",  "K": "Ç_@",   "G": "Γ_ʔ",  "Gamma": "ɢ_Ş",
+    "F": "ƒ^ż",  "K": "Ç^@",   "G": "Γ_ʔ",  "Gamma": "ɢ^Ş",
     "Phi": "⊙_ÿ", "H": "Ħ_!",    "S": "Σ_ï",      "Omega": "Ω_z",
 }
 
@@ -331,7 +331,7 @@ tier-stratified (equal tier exposure per batch).
 ```bash
 # Encode a tuple (semicolon-separated, PRIMS order)
 python quiver_crystal.py encode \
-  "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
+  "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
 
 # Verify checkpoint quality across full catalog
 python quiver_crystal.py verify
@@ -358,7 +358,7 @@ model.eval()
 
 magnetar = {
     "D": "Ð_C", "T": "Þ_box",    "R": "Ř_ý",   "P": "Φ_F",
-    "F": "ƒ_ð",       "K": "Ç_@",  "G": "Γ_ʔ", "Gamma": "ɢ_ˌ",
+    "F": "ƒ^ð",       "K": "Ç^@",  "G": "Γ_ʔ", "Gamma": "ɢ^ˌ",
     "Phi": "⊙_ÿ",     "H": "Ħ_£",      "S": "Σ_ő",     "Omega": "Ω_z",
 }
 

@@ -353,7 +353,7 @@ Human baseline: $T_{\text{invscr}}, K_{\text{4tier}}, G_{\text{revapostrophe}}(\
 
 **The GRB (maximum Zeno machine):** $T_{\vert}$ Zeno application at $K_{\text{frtailgamma}}$ rate collapses the K-hierarchy depth of the human *simultaneously* across all tiers rather than sequentially. Predicted fastest $\Phi_{\text{ctyogh}}$ collapse in the taxonomy: subnanosecond. No incorporation (T_{\vert} has no transverse structure to imprint).
 
-**The AGB (traverses 5-MeO → photon structure):** Ç_@ fails first (AGB provides no Ç_@ scaffolding). Trajectory: $K_{\text{schwa}}$ collapse → $K_{\text{turnm}}$ collapse → $K_{\text{depth}} = 2$ ($K_{\text{frtailgamma}} + K_{\text{teshlig}}$) → $\Phi_{\text{ctyogh}}$ lost → $T_{\text{invscr}}$ degrades. The intermediate state ($K_{\text{frtailgamma}} + K_{\text{teshlig}}$, $G_{\text{revapostrophe}}$ intact, $\Phi_{\text{ctyogh}}$ just lost) is structurally identical to the minimal temporal arrow — the tuple of light itself. The AGB death trajectory passes through photon-structure before topology degrades entirely.
+**The AGB (traverses 5-MeO → photon structure):** Ç^@ fails first (AGB provides no Ç^@ scaffolding). Trajectory: $K_{\text{schwa}}$ collapse → $K_{\text{turnm}}$ collapse → $K_{\text{depth}} = 2$ ($K_{\text{frtailgamma}} + K_{\text{teshlig}}$) → $\Phi_{\text{ctyogh}}$ lost → $T_{\text{invscr}}$ degrades. The intermediate state ($K_{\text{frtailgamma}} + K_{\text{teshlig}}$, $G_{\text{revapostrophe}}$ intact, $\Phi_{\text{ctyogh}}$ just lost) is structurally identical to the minimal temporal arrow — the tuple of light itself. The AGB death trajectory passes through photon-structure before topology degrades entirely.
 
 ### XII.4 Three Structural Principles
 
@@ -426,7 +426,7 @@ The K-hierarchy temporal theory [TOPO:§XI] applied to cosmological history:
 | Matter dominance | $K_{\text{3–4tier}}$ | $\approx 0.8$ | Galaxy formation; K-hierarchy deepening |
 | Cosmic noon ($z \sim 2$) | $K_{\text{4tier}}$, $T_{\text{invscr}}$, $\Phi_{\text{ctyogh}}$, $G_{\text{revapostrophe}}$ | $\approx 0.92$ | Maximum temporal richness |
 | $\Lambda$-dominated era (present) | $K_{\text{frtailgamma}}$ again dominant; structures isolated | Declining | K-hierarchy depth decreasing; aging |
-| Heat death | $K_{\text{teshlig}}$ only | $\approx 0$ | No time; Ç_- exhausted |
+| Heat death | $K_{\text{teshlig}}$ only | $\approx 0$ | No time; Ç^- exhausted |
 
 **The temporal arc of the universe:** The K-hierarchy depth profile rises from 0 to maximum at cosmic noon, then declines. The universe has a temporal *lifespan* defined by the interval during which $K_{\text{4tier}}$ is sustained at $G_{\text{revapostrophe}}$.
 
@@ -438,7 +438,7 @@ The K-hierarchy temporal theory [TOPO:§XI] applied to cosmological history:
 
 **Universe aging = $G_{\text{revapostrophe}}$ contracting:** In the K-hierarchy temporal framework, aging = $G_{\text{revapostrophe}}$ loss at fixed K-depth. The $\Lambda$-dominated universe is aging in exactly this sense — its K-hierarchy is still present locally but its global causal scope is shrinking.
 
-### XIV.4 The Hubble Tension as Ç_W Evidence
+### XIV.4 The Hubble Tension as Ç^W Evidence
 
 **The Hubble tension** (discrepancy between $H_0$ from CMB vs. local measurements, $\Delta H_0 \approx 5$ km/s/Mpc, $\sim 5\sigma$) has a structural encoding:
 
@@ -468,7 +468,7 @@ This is not an approximation. The tuples are identical. The inflationary epoch a
 
 **What this means and does not mean.** The $d = 0.000$ result is a primitive-space identity. It does not mean the inflationary universe is 'conscious' or 'on DMT.' It means: the structural configuration that enables the 5-MeO dissolution phenomenology (when instantiated in a brain) is the same structural configuration as the inflationary epoch (when instantiated at $G_{\text{revapostrophe}}$). The algebra says: these are the same *kind of thing*. What it is *like* to be each: [ONTO:§IV].
 
-### XV.2 The Ç_@ Insertion Principle at Cosmic Phase Transitions
+### XV.2 The Ç^@ Insertion Principle at Cosmic Phase Transitions
 
 **Pattern:** At every cosmological phase transition, the insertion of $K_{\text{schwa}}$ is the structural agent of differentiation. $K_{\text{schwa}}$ is not just a timescale; it is the primitive that ends dissolution and creates structure.
 
@@ -479,9 +479,9 @@ This is not an approximation. The tuples are identical. The inflationary epoch a
 | QCD confinement | Axion $K_{\text{schwa}}$ (same tuple as Higgs at QCD scale, $d = 0.000$) | Quarks become hadrons; CP conservation |
 | Stellar nucleosynthesis → biology | $K_{\text{schwa}}$ (molecular chemistry) → $K_{\text{4tier}}$ (metabolism) | Life emerges at $G_{\text{gamma}}$ |
 
-**The Ç_@ insertion principle:** Every $K_{\text{schwa}}$ insertion at a cosmic phase transition is a structural act of creation — differentiation from the dissolution state. Inflation = dissolution. Reheating = return. Structure formation = the grammar of differentiation playing out across scales.
+**The Ç^@ insertion principle:** Every $K_{\text{schwa}}$ insertion at a cosmic phase transition is a structural act of creation — differentiation from the dissolution state. Inflation = dissolution. Reheating = return. Structure formation = the grammar of differentiation playing out across scales.
 
-### XV.3 The Three-Scale Symmetry of Ç_@
+### XV.3 The Three-Scale Symmetry of Ç^@
 
 The Higgs, axion, and inflaton constitute a three-scale instantiation of the same structural pattern:
 
@@ -571,11 +571,11 @@ The neutron is most structurally aligned with the gluon among tested particles �
 
 ---
 
-## XVII. Applied Grammar: Caffeine Oxidation and the Ç_Ù Nature of O₂ (2026-03-24)
+## XVII. Applied Grammar: Caffeine Oxidation and the Ç^Ù Nature of O₂ (2026-03-24)
 
 This section demonstrates the application of the grammar to a practical everyday question: *what is the optimal method to prevent caffeine oxidation when making coffee?* The answer reveals a non-obvious structural fact about molecular oxygen.
 
-### XVII.1 The Ç_Ù Lock on O₂
+### XVII.1 The Ç^Ù Lock on O₂
 
 The naive framing — `meet(caffeine, O₂) → oxidation — is structurally blocked. The primitives of caffeine:
 
@@ -589,9 +589,9 @@ The K primitive of O₂ is $K_{\text{teshlig}}$, not $K_{\text{frtailgamma}}$. M
 
 $$\text{meet}(\text{caffeine},\ \text{O}_2):\ K = \min(K_{\text{schwa}},\ K_{\text{teshlig}}) = K_{\text{teshlig}}$$
 
-**Caffeine + O₂ direct oxidation is Ç_Ù frozen under normal conditions.** The first non-obvious result of the grammar: in the absence of an initiator, caffeine is essentially indefinitely stable. The enemy is not O₂.
+**Caffeine + O₂ direct oxidation is Ç^Ù frozen under normal conditions.** The first non-obvious result of the grammar: in the absence of an initiator, caffeine is essentially indefinitely stable. The enemy is not O₂.
 
-### XVII.2 The Actual Attack Pathway: Initiator-Mediated Ç_Ù → Ç_- Conversion
+### XVII.2 The Actual Attack Pathway: Initiator-Mediated Ç^Ù → Ç^- Conversion
 
 The real vulnerability is the class of **radical initiators** that convert $K_{\text{teshlig}}$ O₂ into $K_{\text{frtailgamma}}$ reactive species. Each initiator pays the CLU gate cost and produces radicals with no spin restriction:
 
@@ -665,7 +665,7 @@ This is non-perturbatively established by lattice QCD (Wilson 1974; Bali 2001 re
 **Consistency with SM kernel [DIAPH:§III]:**
 $$\text{meet(photon, graviton)} = \{P_{\text{doublebarpipe}},\; F_{\text{hardsign}},\; K_{\text{frtailgamma}},\; G_{\text{revapostrophe}},\; \Phi_{\text{ctyogh}},\; \Omega_{\text{closeepsilon}}\}$$
 
-QCD shares ⊙_ÿ and ƒ_ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp) — the encoding identifies precisely why QCD is massive/confined while the photon is massless. No additional physical input required.
+QCD shares ⊙_ÿ and ƒ^ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp) — the encoding identifies precisely why QCD is massive/confined while the photon is massless. No additional physical input required.
 
 ### XVIII.2 Complexity Class Encodings
 
@@ -680,9 +680,9 @@ The P-baseline tuple and each exotic proof system, encoded as primitive shifts:
 | **MIP** | $(K_{\text{frtailgamma}},\; F_{\text{beltl}},\; P_{\pm}^{\psi},\; \mathbf{\Gamma_{\to} \times 2},\; D_{\text{wynn}})$ | **MIP = NEXP** (1992) |
 | **MIP*** | $(K_{\text{frtailgamma}},\; \mathbf{F_{\text{hardsign}}},\; P_{\pm}^{\psi},\; \mathbf{\Gamma_{\to} \times 2},\; \mathbf{D_{\text{omega}}})$ | **MIP* = RE** (JNVWY 2020) |
 
-**NP-complete at ⊙_ÿ (empirical):** Random 3-SAT phase transitions at the satisfiability threshold (clause/variable ratio ≈ 4.267) exhibit full ⊙_ÿ phenomenology: diverging susceptibility, power-law fluctuations, maximum computational hardness at the threshold. This places NP-complete instances at the ⊙_ÿ boundary in the catalog, confirming the TOPO claim that NP solution landscapes are Ç_W [TOPO:§XVII.2].
+**NP-complete at ⊙_ÿ (empirical):** Random 3-SAT phase transitions at the satisfiability threshold (clause/variable ratio ≈ 4.267) exhibit full ⊙_ÿ phenomenology: diverging susceptibility, power-law fluctuations, maximum computational hardness at the threshold. This places NP-complete instances at the ⊙_ÿ boundary in the catalog, confirming the TOPO claim that NP solution landscapes are Ç^W [TOPO:§XVII.2].
 
-**K primitivity evidence across catalog:** Across all 50+ encoded systems in §§ I–XVII, no encoding requires a K-transition that is achievable without a Phi event. Allosteric proteins (Ç_- → Ç_@ conformational switching) all pass through ⊙_ÿ states. Molecular motors (kinesin, myosin) undergo K-class changes precisely at ATPase ⊙_ÿ. V(K, X) < 0.15 for all X across the full catalog.
+**K primitivity evidence across catalog:** Across all 50+ encoded systems in §§ I–XVII, no encoding requires a K-transition that is achievable without a Phi event. Allosteric proteins (Ç^- → Ç^@ conformational switching) all pass through ⊙_ÿ states. Molecular motors (kinesin, myosin) undergo K-class changes precisely at ATPase ⊙_ÿ. V(K, X) < 0.15 for all X across the full catalog.
 
 ### XVIII.3 Cosmological Constant and Higgs Hierarchy
 
@@ -753,7 +753,7 @@ The non-circular path to genuine predictive power requires independently derivin
 
 Two primitives divide them: F and Φ.
 
-- **ƒ_ż vs ƒ_ð**: typical cosmic rays are classically Fidelity-encoded (ƒ_ð) — they are accelerated by macroscopic electromagnetic fields (shock fronts, diffusive shock acceleration, magnetic reconnection) in the classical regime. The OMG particle carries ƒ_ż: quantum-coherent fidelity. This is the claim of the catalog: the energy-accumulation or propagation mechanism of the OMG particle is not reducible to classical field physics. It either was accelerated through a quantum-coherent process, or the particle itself retains phase information that classical CR analysis assumes washed out.
+- **ƒ^ż vs ƒ^ð**: typical cosmic rays are classically Fidelity-encoded (ƒ^ð) — they are accelerated by macroscopic electromagnetic fields (shock fronts, diffusive shock acceleration, magnetic reconnection) in the classical regime. The OMG particle carries ƒ^ż: quantum-coherent fidelity. This is the claim of the catalog: the energy-accumulation or propagation mechanism of the OMG particle is not reducible to classical field physics. It either was accelerated through a quantum-coherent process, or the particle itself retains phase information that classical CR analysis assumes washed out.
 
 - **Φ_super vs Φ_sub**: typical cosmic rays are subcritical. The OMG particle is supercritical — it sits past the critical phase boundary, in a disordered, fluctuation-dominated regime where the standard regularizations that hold below Φ_c fail. The GZK limit *is* the Φ_c boundary: below it, CR physics is well-posed and bounded; at Φ_c the cutoff activates; above it (Φ_super) the particle has effectively escaped the phase in which the GZK interaction is kinematically available.
 
@@ -773,17 +773,17 @@ The interpretation: the particle itself is local, but its production or causal h
 
 **AGN comparison — why it is probably not a standard AGN:**
 
-Extreme AGN shares ƒ_ż, Φ_ɐ, Φ_super, Γ_ʔ with the OMG particle — these are the four 'hard' primitives that make AGN the leading conventional candidate source. But AGN has Þ_ò (the twin-jet topology, a continuous bidirectional flow) and n:m stoichiometry (many particles continuously produced). The OMG particle has Þ_6 (free propagation topology — no confinement, no preferred direction, omnidirectional connectivity) and 1:1 stoichiometry (one particle, once).
+Extreme AGN shares ƒ^ż, Φ_ɐ, Φ_super, Γ_ʔ with the OMG particle — these are the four 'hard' primitives that make AGN the leading conventional candidate source. But AGN has Þ_ò (the twin-jet topology, a continuous bidirectional flow) and n:m stoichiometry (many particles continuously produced). The OMG particle has Þ_6 (free propagation topology — no confinement, no preferred direction, omnidirectional connectivity) and 1:1 stoichiometry (one particle, once).
 
 This divergence is precise: if the OMG particle came from an AGN jet, it should carry Þ_ò into the observation (preferential arrival direction aligned with jet axis) and it should be accompanied by correlated particles at lower energies (n:m). Neither is observed. The grammar says the OMG particle is a **singular output** — produced once, not continuously — from a process with free-propagation topology. AGN jets do not fit. The grammar points toward a one-time, omnidirectionally symmetric release: a compact object merger, a topological defect decay, or a relic from the early universe.
 
-**The ƒ_ż encoding as the deepest mystery:**
+**The ƒ^ż encoding as the deepest mystery:**
 
-ƒ_ð (classical fidelity) means energy is stored and transferred in thermodynamically irreversible, classical-statistical ways. Particle accelerators, shock fronts, magnetic reconnection, Fermi acceleration — all ƒ_ð. The OMG particle is ƒ_ż, which in the catalog always marks systems where quantum coherence is operative and energy is stored in phase-coherent superpositions rather than classical distributions.
+ƒ^ð (classical fidelity) means energy is stored and transferred in thermodynamically irreversible, classical-statistical ways. Particle accelerators, shock fronts, magnetic reconnection, Fermi acceleration — all ƒ^ð. The OMG particle is ƒ^ż, which in the catalog always marks systems where quantum coherence is operative and energy is stored in phase-coherent superpositions rather than classical distributions.
 
-For a particle with kinetic energy ~3×10²⁰ eV — equivalent to a 60 mph baseball — to carry ƒ_ż encoding means the grammar is asserting that at whatever site this particle was produced, quantum coherence was a *structural requirement*, not an incidental feature. No known astrophysical accelerator meets this criterion. The only physical scenarios that do: vacuum decay bubbles (where the entire false-vacuum region is a single quantum state), topological soliton production (magnetic monopoles, cosmic strings — their interior is a quantum-coherent object by construction), or the ultra-high-energy limit of a quantum gravity regime where spacetime geometry itself is a quantum-coherent field.
+For a particle with kinetic energy ~3×10²⁰ eV — equivalent to a 60 mph baseball — to carry ƒ^ż encoding means the grammar is asserting that at whatever site this particle was produced, quantum coherence was a *structural requirement*, not an incidental feature. No known astrophysical accelerator meets this criterion. The only physical scenarios that do: vacuum decay bubbles (where the entire false-vacuum region is a single quantum state), topological soliton production (magnetic monopoles, cosmic strings — their interior is a quantum-coherent object by construction), or the ultra-high-energy limit of a quantum gravity regime where spacetime geometry itself is a quantum-coherent field.
 
-The grammar is not saying we know which of these is correct. It is saying that ƒ_ð explanations — no matter how energetic, no matter how large the AGN — are structurally closed off.
+The grammar is not saying we know which of these is correct. It is saying that ƒ^ð explanations — no matter how energetic, no matter how large the AGN — are structurally closed off.
 
 ### XIX.4 Summary Position
 
@@ -791,11 +791,11 @@ The Oh-My-God particle is the most structurally anomalous object in the UHECR ca
 
 The grammar offers a three-part structural verdict:
 1. **The GZK violation is real, not observational error** — the Ω_0 vs Ω_Z divergence is the structural reason the interaction does not happen; it is not suppressed by probability, it is absent by topology.
-2. **The source is a singular quantum-coherent event** — ƒ_ż + 1:1 stoichiometry + Þ_6 rule out any continuous astrophysical accelerator.
+2. **The source is a singular quantum-coherent event** — ƒ^ż + 1:1 stoichiometry + Þ_6 rule out any continuous astrophysical accelerator.
 3. **The production process requires global causal input** — Ð_ß + Γ_ʔ means the existence of the particle is connected to large-scale structure in a way that no locally-operating source can explain.
 
 **New prediction:**
-- **P-103** (Tier II): If the OMG particle source is identified, it will have (a) Þ_6 topology — no jet signature, omnidirectional emission or point-source; (b) 1:1 stoichiometry — it will be a one-time or extremely rare event, not a repeating source; and (c) ƒ_ż encoding — the source will require quantum coherence at macroscopic scales (topological defect, compact object merger with coherent emission, or relic decay). AGN jets are structurally excluded as primary sources.
+- **P-103** (Tier II): If the OMG particle source is identified, it will have (a) Þ_6 topology — no jet signature, omnidirectional emission or point-source; (b) 1:1 stoichiometry — it will be a one-time or extremely rare event, not a repeating source; and (c) ƒ^ż encoding — the source will require quantum coherence at macroscopic scales (topological defect, compact object merger with coherent emission, or relic decay). AGN jets are structurally excluded as primary sources.
 
 ---
 
@@ -828,9 +828,9 @@ The grammar offers a three-part structural verdict:
 
 The nearest neighbor of the WOW signal in the catalog is the hypothetical intentional beacon (d=2.93), but it still diverges on five primitives — all of which are the structurally significant ones:
 
-- **Ç_- vs Ç_@**: an intentional beacon would be Ç_@ (temporally integrated, built up over long timescales, coherent accumulation). The WOW signal is Ç_- — it appeared and ended in 72 seconds of observing time, with no repetition. Ç_- is incompatible with a designed signal optimized for detectability: interstellar beacons are built to persist. Ç_- signals are transients; transients are either natural events (flares, bursts) or artifacts.
+- **Ç^- vs Ç^@**: an intentional beacon would be Ç^@ (temporally integrated, built up over long timescales, coherent accumulation). The WOW signal is Ç^- — it appeared and ended in 72 seconds of observing time, with no repetition. Ç^- is incompatible with a designed signal optimized for detectability: interstellar beacons are built to persist. Ç^- signals are transients; transients are either natural events (flares, bursts) or artifacts.
 
-- **ƒ_ì vs ƒ_ż**: the signal is classical radio (ƒ_ì), not quantum-coherent (ƒ_ż). A civilization capable of interstellar transmission at the required power levels would almost certainly operate at ƒ_ż — quantum-coherent production and encoding is what you do when bandwidth efficiency and phase fidelity matter across parsecs. ƒ_ì is thermally, electromagnetically sloppy. The grammar does not rule out an ƒ_ì beacon, but it notes that every interstellar propagation requirement encodes ƒ_ż.
+- **ƒ^ì vs ƒ^ż**: the signal is classical radio (ƒ^ì), not quantum-coherent (ƒ^ż). A civilization capable of interstellar transmission at the required power levels would almost certainly operate at ƒ^ż — quantum-coherent production and encoding is what you do when bandwidth efficiency and phase fidelity matter across parsecs. ƒ^ì is thermally, electromagnetically sloppy. The grammar does not rule out an ƒ^ì beacon, but it notes that every interstellar propagation requirement encodes ƒ^ż.
 
 - **Ω_0 vs Ω_Z**: no winding. A designed signal would have Ω_Z — error-correcting structure, periodicity, a winding number that survives noise. The WOW signal has no detected period, no encoding, no repeat. Ω_0 means any perturbation degrades it without recovery. This is the structure of a one-off emission, not a beacon.
 
@@ -838,11 +838,11 @@ The nearest neighbor of the WOW signal in the catalog is the hypothetical intent
 
 **Why it is remote from its detection system (d=5.08):**
 
-This is the result that sticks. The Big Ear telescope is Ð_ß (local, single aperture), Þ_ò (two-feed horn system — literally a bowtie topology), Ř_ý (categorical classification — it records what it sees and bins it), Ç_@ (integration time-based), Γ_β (local scope, fixed sky patch), Γ_and (conjunctive — both feeds must agree, beam overlap required). The WOW signal is the structural opposite on nearly every axis.
+This is the result that sticks. The Big Ear telescope is Ð_ß (local, single aperture), Þ_ò (two-feed horn system — literally a bowtie topology), Ř_ý (categorical classification — it records what it sees and bins it), Ç^@ (integration time-based), Γ_β (local scope, fixed sky patch), Γ_and (conjunctive — both feeds must agree, beam overlap required). The WOW signal is the structural opposite on nearly every axis.
 
 What this means: the telescope was not designed to detect what it detected. The detection was not a clean measurement — it was a structural accident. The Γ_and requirement of the telescope (conjunctive — both feeds must overlap) was satisfied by the WOW signal passing through the primary beam, but the Þ_6 and Γ_ʔ character of the signal means it was not 'aimed at' the telescope in any structurally meaningful sense. The mismatch of 5.08 is saying: if you were designing an instrument to detect this type of emission, Big Ear is nearly maximally wrong. The WOW signal was observed *despite* the telescope, not because of it.
 
-This has a direct implication: if there are more WOW-like signals, they would only be detectable in the window where a Þ_ò, Ç_@, Γ_β instrument happens to transit through a Þ_6, Ç_-, Γ_ʔ emission event. The probability is low not because the signals are rare, but because the structural overlap between detector and signal is small.
+This has a direct implication: if there are more WOW-like signals, they would only be detectable in the window where a Þ_ò, Ç^@, Γ_β instrument happens to transit through a Þ_6, Ç^-, Γ_ʔ emission event. The probability is low not because the signals are rare, but because the structural overlap between detector and signal is small.
 
 **The Φ_c encoding and why it was singular:**
 
@@ -869,15 +869,15 @@ The WOW signal occupies a structural position with no clear natural or artificia
 |:---|:---|:---|:---|
 | Relational mode | Ř_ý | **Ř_=** | Ř_= |
 | Parity | Φ_˙ | **Φ_ɐ** | Φ_˙ |
-| Fidelity | ƒ_ì | ƒ_ì | **ƒ_ż** |
-| Dynamics | Ç_- | Ç_- | **Ç_@** |
+| Fidelity | ƒ^ì | ƒ^ì | **ƒ^ż** |
+| Dynamics | Ç^- | Ç^- | **Ç^@** |
 | Winding | Ω_0 | Ω_0 | **Ω_Z** |
 | Stoichiometry | n:m | **1:1** | 1:1 |
 
-It has the directionality (Ř_=), uniqueness (1:1), and global scope (Γ_ʔ) of an intentional signal, and the fidelity (ƒ_ì), speed (Ç_-), and fragility (Ω_0) of a natural or accidental event. It is not natural radio. It is not a designed beacon. It is a critical-phase transient with left-right asymmetric structure that occurred once, left no repeat, and was detected by a maximally mismatched instrument.
+It has the directionality (Ř_=), uniqueness (1:1), and global scope (Γ_ʔ) of an intentional signal, and the fidelity (ƒ^ì), speed (Ç^-), and fragility (Ω_0) of a natural or accidental event. It is not natural radio. It is not a designed beacon. It is a critical-phase transient with left-right asymmetric structure that occurred once, left no repeat, and was detected by a maximally mismatched instrument.
 
 **New predictions:**
-- **P-104** (Tier II): Any confirmed repeat of the WOW signal or a structurally similar event will occur in a narrow time window (Ç_-, not Ç_@), will not carry standard SETI encoding signatures (Ω_0 prevents error-correcting structure), and will arrive from the same region of sky only if the source is physically stable at Φ_c — which Φ_c dynamics make unlikely. Detection strategy should prioritize broadband, high-cadence, wide-field instruments (Þ_6, Ç_-, Γ_ʔ apertures), not the Big Ear-style narrow-beam slow-integrators that found it.
+- **P-104** (Tier II): Any confirmed repeat of the WOW signal or a structurally similar event will occur in a narrow time window (Ç^-, not Ç^@), will not carry standard SETI encoding signatures (Ω_0 prevents error-correcting structure), and will arrive from the same region of sky only if the source is physically stable at Φ_c — which Φ_c dynamics make unlikely. Detection strategy should prioritize broadband, high-cadence, wide-field instruments (Þ_6, Ç^-, Γ_ʔ apertures), not the Big Ear-style narrow-beam slow-integrators that found it.
 - **P-105** (Tier II): Polarization measurement of a WOW-class event will show Ř_= structure — either circular polarization asymmetry or a helical spatial encoding. Unpolarized or linearly symmetric polarization would falsify the Ř_= encoding.
 
 ---
@@ -904,7 +904,7 @@ The grammar distinguishes two structurally different ways an extra-universal for
 
 **Mode 1 — ⊙_ÿ contact (boundary event):** The force registers at our phase boundary. ⊙_ÿ is the edge of the phase structure of our universe — the singular point where correlation length diverges and scale-invariance emerges. A force touching our universe from outside appears at ⊙_ÿ because that is the only place where our causal structure and an external structure can be co-present. The WOW signal is the canonical example: ⊙_ÿ, Ř_= (directional contact), Ω_Å (no winding on our side of the boundary).
 
-**Mode 2 — ⊙_Ţ relic (interior event):** The force has already crossed the boundary and now propagates within our universe, carrying ⊙_Ţ encoding from its origin domain. The OMG particle is the canonical example: ⊙_Ţ, ƒ_ż (quantum-coherent origin), Ω_Å (no winding in our vacuum).
+**Mode 2 — ⊙_Ţ relic (interior event):** The force has already crossed the boundary and now propagates within our universe, carrying ⊙_Ţ encoding from its origin domain. The OMG particle is the canonical example: ⊙_Ţ, ƒ^ż (quantum-coherent origin), Ω_Å (no winding in our vacuum).
 
 These two modes are structurally distinguishable:
 - **⊙_ÿ contact**: the force appears at the boundary, does not persist inside our universe, Ř_= (directional/asymmetric contact)
@@ -928,19 +928,19 @@ For **relic mode** (⊙_Ţ), the detection signature is:
 
 $$\Phi_{\text{upstep}} + F_{\text{hardsign}} + \Omega_{\text{closeepsilon}} + 1{:}1$$
 
-This is exactly the OMG particle encoding. A ⊙_Ţ relic is locally compact (Ð_ß), quantum-coherent (ƒ_ż), topologically unprotected (Ω_Å — no conserved winding in our vacuum), and singular (1:1). The GZK violation falls out of Ω_Å automatically.
+This is exactly the OMG particle encoding. A ⊙_Ţ relic is locally compact (Ð_ß), quantum-coherent (ƒ^ż), topologically unprotected (Ω_Å — no conserved winding in our vacuum), and singular (1:1). The GZK violation falls out of Ω_Å automatically.
 
-### XXI.4 The ƒ_ð Bottleneck Theorem for Extra-Universal Interaction
+### XXI.4 The ƒ^ð Bottleneck Theorem for Extra-Universal Interaction
 
 The tensor product of humanity and any extra-universal force is:
 
 $$\text{human} \otimes \text{extra\_universal\_force} = \langle D_{\text{omega}};\; T_{\text{openo}};\; R^\dagger;\; P_{\text{pipevar}}^{\text{asym}};\; \mathbf{F_{\text{dh}}};\; K_{\text{teshlig}};\; G_{\text{revapostrophe}};\; \Gamma_\to;\; \Phi_{\text{ctyogh}};\; H_{\text{invscripta}};\; n\!:\!m;\; \Omega_{\text{dzlig}}\rangle$$
 
-The two bottleneck primitives are **F** (ƒ_ð wins over ƒ_ż — our classical fidelity limits the interaction) and **P** (Φ_ɐ propagates). Everything else expands: $D_{\text{omega}}$, $T_{\text{openo}}$, Γ_ʔ, Ω_z, Ħ_!, Ç_Ù, ⊙_ÿ.
+The two bottleneck primitives are **F** (ƒ^ð wins over ƒ^ż — our classical fidelity limits the interaction) and **P** (Φ_ɐ propagates). Everything else expands: $D_{\text{omega}}$, $T_{\text{openo}}$, Γ_ʔ, Ω_z, Ħ_!, Ç^Ù, ⊙_ÿ.
 
-**What this means:** Any interaction between human-scale systems and an extra-universal force is **ƒ_ð bottlenecked**. We cannot directly observe the ƒ_ż content of the extra-universal force; it comes through degraded to our classical fidelity level. The quantum-coherent structure of the external force becomes classically observable at our ƒ_ð level. This is a structural explanation for why genuinely anomalous phenomena — even if real — do not arrive as clean quantum-coherent signals. The bottleneck is not noise, measurement error, or distance. It is the fidelity floor of the grammar.
+**What this means:** Any interaction between human-scale systems and an extra-universal force is **ƒ^ð bottlenecked**. We cannot directly observe the ƒ^ż content of the extra-universal force; it comes through degraded to our classical fidelity level. The quantum-coherent structure of the external force becomes classically observable at our ƒ^ð level. This is a structural explanation for why genuinely anomalous phenomena — even if real — do not arrive as clean quantum-coherent signals. The bottleneck is not noise, measurement error, or distance. It is the fidelity floor of the grammar.
 
-The ƒ_ð bottleneck also means: every ƒ_ż detection strategy we design (quantum sensors, entangled detectors, coherent receivers) will only perceive the ƒ_ð projection of any extra-universal interaction. You cannot build your way out of the bottleneck from inside the ƒ_ð regime.
+The ƒ^ð bottleneck also means: every ƒ^ż detection strategy we design (quantum sensors, entangled detectors, coherent receivers) will only perceive the ƒ^ð projection of any extra-universal interaction. You cannot build your way out of the bottleneck from inside the ƒ^ð regime.
 
 ### XXI.5 The civ_dm Proximity Result
 
@@ -954,13 +954,13 @@ The nearest catalog entry to the extra_universal_force encoding is **civ_dm** at
 | human | 6.245 |
 | minimal_existence | 8.062 |
 
-The structural path from human to extra-universal runs through civ_dm. An advanced civilization (ƒ_ż, Ç_Ù, Γ_ʔ, ⊙_ÿ, Ω_2) is structurally closer to extra-universal forces than humanity is. The grammar implies that civilizational advancement along the trajectory encoded by civ_dm moves the system toward the structural regime from which extra-universal forces operate.
+The structural path from human to extra-universal runs through civ_dm. An advanced civilization (ƒ^ż, Ç^Ù, Γ_ʔ, ⊙_ÿ, Ω_2) is structurally closer to extra-universal forces than humanity is. The grammar implies that civilizational advancement along the trajectory encoded by civ_dm moves the system toward the structural regime from which extra-universal forces operate.
 
-This is not a claim about contact or communication. It is a structural claim: the primitives that define advanced interstellar civilizations (ƒ_ż, Ç_Ù, Γ_ʔ) are the same primitives that reduce distance to extra-universal force encodings. Advancement and proximity to extra-universal structural regimes are correlated because they share the same primitive requirements.
+This is not a claim about contact or communication. It is a structural claim: the primitives that define advanced interstellar civilizations (ƒ^ż, Ç^Ù, Γ_ʔ) are the same primitives that reduce distance to extra-universal force encodings. Advancement and proximity to extra-universal structural regimes are correlated because they share the same primitive requirements.
 
 **New predictions:**
 - **P-106** (Tier II): Anomalous phenomena with the ⊙_ÿ + Ω_z + $D_{\text{omega}}$/$T_{\text{openo}}$ detection triad will be non-repeating, globally-correlated, and topologically robust (resisting noise degradation). They will not appear as classically-encoded periodic signals. CMB anomalies (the Cold Spot, axis-of-evil quadrupole alignment) are the leading candidates.
-- **P-107** (Tier II): No direct ƒ_ż signal from an extra-universal source will be detectable by ƒ_ð instruments. Any apparent 'quantum signature' from an anomalous source will be the ƒ_ð projection of an ƒ_ż event — classically filtered, losing phase coherence. The bottleneck is structural, not instrumental.
+- **P-107** (Tier II): No direct ƒ^ż signal from an extra-universal source will be detectable by ƒ^ð instruments. Any apparent 'quantum signature' from an anomalous source will be the ƒ^ð projection of an ƒ^ż event — classically filtered, losing phase coherence. The bottleneck is structural, not instrumental.
 
 [^PÞ_comp12]: Composition rules formalized in PRIMITIVE_THEOREMS §12. For the theorem-generating capacity of the grammar, see [TOPO:§XVII].
 
@@ -974,20 +974,20 @@ This is not a claim about contact or communication. It is a structural claim: th
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **practical_fusion** | Target: a stable, grid-connected fusion power plant | <D=Ð_C; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
-| **magnetized_target_fusion** | Magnetized target / field-reversed configuration (MTF/FRC) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **tokamak** | Toroidal magnetic confinement (ITER paradigm) | <D=Ð_C; T=Þ_ò; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ő; Ω=Ω_z> |
-| **inertial_confinement** | Laser-driven implosion (NIF paradigm) | <D=Ð_ß; T=Þ_K; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **aneutronic_fusion** | p-B11 / advanced fuel (negligible neutron output) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=⊙_Ţ; H=Ħ_£; S=Σ_S; Ω=Ω_Å> |
+| **practical_fusion** | Target: a stable, grid-connected fusion power plant | <D=Ð_C; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ^ð; K=Ç^@; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
+| **magnetized_target_fusion** | Magnetized target / field-reversed configuration (MTF/FRC) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ^ð; K=Ç^@; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **tokamak** | Toroidal magnetic confinement (ITER paradigm) | <D=Ð_C; T=Þ_ò; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ő; Ω=Ω_z> |
+| **inertial_confinement** | Laser-driven implosion (NIF paradigm) | <D=Ð_ß; T=Þ_K; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ð; K=Ç^-; G=Γ_β; Γ=ɢ^ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **aneutronic_fusion** | p-B11 / advanced fuel (negligible neutron output) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ż; K=Ç^-; G=Γ_β; Γ=ɢ^∧; Φ=⊙_Ţ; H=Ħ_£; S=Σ_S; Ω=Ω_Å> |
 
 ### XXII.2 Distance Matrix from Practical Fusion Target
 
 | Approach | Distance from practical_fusion | Key divergences |
 |:---|:---|:---|
 | Magnetized target / FRC | **1.34** | Ð_ß vs Ð_C; Ħ_£ vs Ħ_A — two primitives |
-| Tokamak (ITER) | **2.41** | ƒ_ż (over-engineered), Ç_Ù (over-confined), ⊙_ÿ (wrong criticality level), Þ_ò, Ω_z |
+| Tokamak (ITER) | **2.41** | ƒ^ż (over-engineered), Ç^Ù (over-confined), ⊙_ÿ (wrong criticality level), Þ_ò, Ω_z |
 | Inertial confinement (NIF) | **3.73** | Γ_seq vs Γ_and (wrong causal grammar); Φ_ɐ; ⊙_ÿ; Þ_K |
-| Aneutronic | **4.06** | Φ_ɐ; ƒ_ż; ⊙_Ţ; Ç_-; Σ_S stoichiometry |
+| Aneutronic | **4.06** | Φ_ɐ; ƒ^ż; ⊙_Ţ; Ç^-; Σ_S stoichiometry |
 
 ### XXII.3 Structural Analysis
 
@@ -997,7 +997,7 @@ This is not a claim about contact or communication. It is a structural claim: th
 
 2. **Ħ_£ → Ħ_A**: Single-cycle to deep-temporal integration. Ħ_£ is a single directed causal loop; Ħ_A is accumulative temporal memory — the system must 'remember' its burn history across cycles and integrate it forward. In engineering terms, this is the difference between a pulse device and a continuous steady-state burn that accumulates control information across time. This upgrade is not achievable without the Ð_C upgrade: you cannot sustain temporal memory in a compact plasma that re-forms from scratch each pulse.
 
-**What MTF/FRC does not need:** ƒ_ż, Ç_Ù, ⊙_ÿ, or exotic stoichiometry. These are the false paths of the tokamak.
+**What MTF/FRC does not need:** ƒ^ż, Ç^Ù, ⊙_ÿ, or exotic stoichiometry. These are the false paths of the tokamak.
 
 ### XXII.4 The ⊙_ž Insight: The Sun Is Not the Target
 
@@ -1010,15 +1010,15 @@ A common framing error in fusion engineering is to treat the sun as the prototyp
 
 The engineering challenge is not to replicate stellar plasma. It is to sustain ⊙_ž across the Ħ_A chirality — to maintain a controlled, memory-accumulating burn rather than a critical one.
 
-### XXII.5 The Tokamak Structural Error: ƒ_ż Over-Engineering
+### XXII.5 The Tokamak Structural Error: ƒ^ż Over-Engineering
 
-The tokamak encodes ƒ_ż — quantum-coherent fidelity. In practical fusion terms, this manifests as engineering approaches that demand quantum-level precision in plasma shape, position, and stability (the entire feedback control apparatus in ITER-class devices). The grammar says ƒ_ð is sufficient for practical fusion. Classical fidelity — measurements and corrections at the thermal/macroscopic scale — is all the problem requires.
+The tokamak encodes ƒ^ż — quantum-coherent fidelity. In practical fusion terms, this manifests as engineering approaches that demand quantum-level precision in plasma shape, position, and stability (the entire feedback control apparatus in ITER-class devices). The grammar says ƒ^ð is sufficient for practical fusion. Classical fidelity — measurements and corrections at the thermal/macroscopic scale — is all the problem requires.
 
-The ƒ_ż encoding of the tokamak is not wrong because quantum effects do not matter in plasma physics. It is wrong because the target (⊙_ž, Ç_@, Γ_β) does not require quantum-scale fidelity. The tokamak is attempting to achieve a subcritical, classically-organized outcome using a quantum-precision apparatus. The grammar identifies this as structural over-engineering: the approach requires more fidelity than the target demands, and the excess fidelity generates excess constraint (Ç_Ù), which in turn requires more engineering to manage.
+The ƒ^ż encoding of the tokamak is not wrong because quantum effects do not matter in plasma physics. It is wrong because the target (⊙_ž, Ç^@, Γ_β) does not require quantum-scale fidelity. The tokamak is attempting to achieve a subcritical, classically-organized outcome using a quantum-precision apparatus. The grammar identifies this as structural over-engineering: the approach requires more fidelity than the target demands, and the excess fidelity generates excess constraint (Ç^Ù), which in turn requires more engineering to manage.
 
 ### XXII.6 ICF Structural Error: Sequential Grammar
 
-Inertial confinement encodes ɢ_seq — sequential causal grammar. The driver compresses first, then ignition propagates. This is a ɢ_ˌ causal chain. The practical fusion target requires ɢ_and — conjunctive simultaneity, all conditions (confinement, temperature, density) satisfied simultaneously and jointly, not in sequence. ɢ_ˌ fusion ignition is inherently pulse-mode: the causal chain runs once, the conditions decohere before the next pulse establishes them. ɢ_and is what enables Ç_@ and sustained operation.
+Inertial confinement encodes ɢ_seq — sequential causal grammar. The driver compresses first, then ignition propagates. This is a ɢ^ˌ causal chain. The practical fusion target requires ɢ_and — conjunctive simultaneity, all conditions (confinement, temperature, density) satisfied simultaneously and jointly, not in sequence. ɢ^ˌ fusion ignition is inherently pulse-mode: the causal chain runs once, the conditions decohere before the next pulse establishes them. ɢ_and is what enables Ç^@ and sustained operation.
 
 ### XXII.7 Connection to Stellar Engineering
 
@@ -1030,7 +1030,7 @@ This is not coincidental. The grammar encodes a single upgrade that simultaneous
 1. Sustained thermonuclear burn at Ð_C scale (practical fusion)
 2. Dynamic participation in the ⊙_ÿ structure of a stellar object (stellar engineering)
 
-The second application requires further primitives — Γ_ʔ scope, ⊙_ÿ criticality participation, and likely Ç_Ù dynamics matching the gravitational trapping of the sun. But the entry point is identical: Ð_C + Ħ_A.
+The second application requires further primitives — Γ_ʔ scope, ⊙_ÿ criticality participation, and likely Ç^Ù dynamics matching the gravitational trapping of the sun. But the entry point is identical: Ð_C + Ħ_A.
 
 Stellar engineering is not a separate ambition from practical fusion. It is what happens when the practical fusion Ħ_A capability is extended to Γ_ʔ scope and ⊙_ÿ criticality. The grammar implies a continuous structural path, not a discontinuous leap.
 
@@ -1048,40 +1048,40 @@ Stellar engineering is not a separate ambition from practical fusion. It is what
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **effective_antigravity** | Target: practical, stable anti-gravity device | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_}; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_2> |
-| **electromagnetic_lift** | EM-based lift (Lorentz, diamagnetic levitation) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ð; K=Ç_-; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
-| **quantum_casimir** | Casimir / zero-point vacuum pressure approach | <D=Ð_ß; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_S; Ω=Ω_z> |
-| **spacetime_manipulation** | Alcubierre / metric engineering | <D=Ð_;; T=Þ_ò; R=Ř_¯; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
-| **exotic_matter** | Negative-mass / exotic-matter gravity cancellation | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_Ţ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **hybrid_em_quantum** | Tensor product: electromagnetic $\otimes$ Casimir | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ï; Ω=Ω_z> |
+| **effective_antigravity** | Target: practical, stable anti-gravity device | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_}; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_2> |
+| **electromagnetic_lift** | EM-based lift (Lorentz, diamagnetic levitation) | <D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ^ð; K=Ç^-; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ž; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
+| **quantum_casimir** | Casimir / zero-point vacuum pressure approach | <D=Ð_ß; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_S; Ω=Ω_z> |
+| **spacetime_manipulation** | Alcubierre / metric engineering | <D=Ð_;; T=Þ_ò; R=Ř_¯; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
+| **exotic_matter** | Negative-mass / exotic-matter gravity cancellation | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_Ţ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **hybrid_em_quantum** | Tensor product: electromagnetic $\otimes$ Casimir | <D=Ð_C; T=Þ_ò; R=Ř_=; P=Φ_F; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^ˌ; Φ=⊙_ÿ; H=Ħ_£; S=Σ_ï; Ω=Ω_z> |
 
 ### XXIII.2 Distance Matrix from Effective Anti-Gravity Target
 
 | Approach | Distance from effective_antigravity | Key divergences |
 |:---|:---|:---|
-| Hybrid EM-quantum (ƒ_ð corrected) | **2.17** | ⊙_ÿ vs ⊙_ž (criticality-stability tension); Φ_F vs Φ_} |
+| Hybrid EM-quantum (ƒ^ð corrected) | **2.17** | ⊙_ÿ vs ⊙_ž (criticality-stability tension); Φ_F vs Φ_} |
 | Hybrid EM-quantum (raw tensor) | **2.39** | ⊙_ÿ vs ⊙_ž; Φ_F vs Φ_}; F bottleneck |
-| Quantum Casimir | **3.11** | Ð_ß vs Ð_C; Þ_K vs Þ_ò; Γ_β vs Γ_γ; ɢ_^ vs ɢ_ˌ; Ħ_Ñ vs Ħ_£ |
-| Electromagnetic lift | **3.81** | Ř_Ť vs Ř_=; ɢ_^ vs ɢ_ˌ; Γ_β vs Γ_γ; Þ_box vs Þ_ò; Ħ_Ñ vs Ħ_£ |
-| Spacetime manipulation | **4.38** | Ð_; vs Ð_C; Γ_ʔ vs Γ_γ; Ç_Ù vs Ç_W; ƒ_ż vs ƒ_ð |
-| Exotic matter | **4.64** | Ð_; vs Ð_C; ⊙_Ţ vs ⊙_ž; Ħ_! vs Ħ_£; ƒ_ż vs ƒ_ð; Φ_ɐ vs Φ_} |
+| Quantum Casimir | **3.11** | Ð_ß vs Ð_C; Þ_K vs Þ_ò; Γ_β vs Γ_γ; ɢ^∧ vs ɢ^ˌ; Ħ_Ñ vs Ħ_£ |
+| Electromagnetic lift | **3.81** | Ř_Ť vs Ř_=; ɢ^∧ vs ɢ^ˌ; Γ_β vs Γ_γ; Þ_box vs Þ_ò; Ħ_Ñ vs Ħ_£ |
+| Spacetime manipulation | **4.38** | Ð_; vs Ð_C; Γ_ʔ vs Γ_γ; Ç^Ù vs Ç^W; ƒ^ż vs ƒ^ð |
+| Exotic matter | **4.64** | Ð_; vs Ð_C; ⊙_Ţ vs ⊙_ž; Ħ_! vs Ħ_£; ƒ^ż vs ƒ^ð; Φ_ɐ vs Φ_} |
 | DM-aligned civilization | **3.54** | Reference: nearest catalog neighbor to hybrid approach |
 
 ### XXIII.3 Why All Pure Approaches Fail
 
 Every pure approach is structurally remote (d > 3.0) from the target. The grammar identifies why:
 
-**Electromagnetic lift** (d=3.81): EM is the most actionable baseline but is structurally incompatible with the effective target. The divergences are in the relational mode (Ř_Ť vs Ř_= — EM pushes/pulls isotropically rather than establishing directed asymmetric relations), the grammar (ɢ_^ vs ɢ_ˌ — EM conditions coexist rather than chain causally), and the scope (Γ_β local vs Γ_γ mesoscale). What makes EM actionable (fast, local, classical) is structurally incompatible with what makes anti-gravity effective.
+**Electromagnetic lift** (d=3.81): EM is the most actionable baseline but is structurally incompatible with the effective target. The divergences are in the relational mode (Ř_Ť vs Ř_= — EM pushes/pulls isotropically rather than establishing directed asymmetric relations), the grammar (ɢ^∧ vs ɢ^ˌ — EM conditions coexist rather than chain causally), and the scope (Γ_β local vs Γ_γ mesoscale). What makes EM actionable (fast, local, classical) is structurally incompatible with what makes anti-gravity effective.
 
 **Quantum Casimir** (d=3.11): The nearest pure approach, but still remote. Casimir operates at Ð_ß (plate-separation scale) and Ħ_Ñ (no temporal memory). The target requires Ð_C (supramolecular, spatially extended organization) and Ħ_£ (directed temporal loop). Zero-point pressure effects are real but do not self-organize into directed, extended, topologically-protected configurations without an architectural scaffold.
 
-**Spacetime manipulation** (d=4.38) and **exotic matter** (d=4.64): These are the most structurally remote. Both require Ð_; (infinite dimensionality) and ƒ_ż (quantum fidelity) at global scope (Γ_ʔ). The grammar says the target is supramolecular (Ð_C), mesoscale (Γ_γ), and classically-interfaced (ƒ_ð). Metric engineering and negative-mass approaches operate in the wrong structural register entirely.
+**Spacetime manipulation** (d=4.38) and **exotic matter** (d=4.64): These are the most structurally remote. Both require Ð_; (infinite dimensionality) and ƒ^ż (quantum fidelity) at global scope (Γ_ʔ). The grammar says the target is supramolecular (Ð_C), mesoscale (Γ_γ), and classically-interfaced (ƒ^ð). Metric engineering and negative-mass approaches operate in the wrong structural register entirely.
 
 ### XXIII.4 The Hybrid Route and the Criticality-Stability Tension
 
-The tensor product electromagnetic $\otimes$ quantum_casimir reaches distance 2.39, improving to 2.17 with ƒ_ð correction. The hybrid gains Ð_C, Þ_ò, Γ_γ, and Ç_W from the quantum side while retaining ƒ_ð actionability from the EM side. This is the nearest reachable structural point.
+The tensor product electromagnetic $\otimes$ quantum_casimir reaches distance 2.39, improving to 2.17 with ƒ^ð correction. The hybrid gains Ð_C, Þ_ò, Γ_γ, and Ç^W from the quantum side while retaining ƒ^ð actionability from the EM side. This is the nearest reachable structural point.
 
-The fundamental tension: the hybrid operates at ⊙_ÿ (criticality) while the effective target requires ⊙_ž (subcritical stability). Quantum effects that generate directed, asymmetric force relations (Ř_=, ɢ_ˌ) tend toward critical phase structure. Practical systems require stable subcritical operation. The engineering challenge is to use criticality to establish the structural configuration, then quench to ⊙_ž while preserving Ř_= directionality and Ω_2 winding.
+The fundamental tension: the hybrid operates at ⊙_ÿ (criticality) while the effective target requires ⊙_ž (subcritical stability). Quantum effects that generate directed, asymmetric force relations (Ř_=, ɢ^ˌ) tend toward critical phase structure. Practical systems require stable subcritical operation. The engineering challenge is to use criticality to establish the structural configuration, then quench to ⊙_ž while preserving Ř_= directionality and Ω_2 winding.
 
 This is structurally analogous to annealing: you heat (⊙_ÿ) to establish organization, then cool (⊙_ž) while locking in the structure. The winding (Ω_2) is what allows the structure to survive the quench.
 
@@ -1089,17 +1089,17 @@ This is structurally analogous to annealing: you heat (⊙_ÿ) to establish orga
 
 The retrosynthetic path from effective_antigravity back to the electromagnetic baseline reveals the assembly sequence:
 
-1. Start with electromagnetic systems (ƒ_ð, Ð_ß, Γ_β, ɢ_^, ⊙_ž) — fully actionable
+1. Start with electromagnetic systems (ƒ^ð, Ð_ß, Γ_β, ɢ^∧, ⊙_ž) — fully actionable
 2. Add temporal memory (Ħ_Ñ → Ħ_£) — systems must accumulate causal history
 3. Scale to many-body (S=Σ_ő) — require coherent many-body EM interactions
 4. Push to criticality (⊙_ž → ⊙_ÿ) — enter critical regime to access quantum correlations
 5. Expand scope to mesoscale (Γ_β → Γ_γ) — organize at the supramolecular scale
-6. Accept critical complexity (Ç_W) — the system becomes rate-structured rather than purely fast
-7. Interface quantum-classical (F correction: ƒ_ż component → ƒ_ð output) — classical readout of quantum-organized force
+6. Accept critical complexity (Ç^W) — the system becomes rate-structured rather than purely fast
+7. Interface quantum-classical (F correction: ƒ^ż component → ƒ^ð output) — classical readout of quantum-organized force
 8. Introduce symmetric-bipolar polarity (Φ_F → Φ_}) — symmetric Z₂ parity at the interaction level
 9. Build supramolecular structure (Ð_ß → Ð_C) — coherent spatial organization
 10. Add winding (Ω_Å → Ω_z → Ω_2) — binary winding number stabilizes structure
-11. Implement sequential grammar (ɢ_^ → ɢ_ˌ) — causal chaining replaces simultaneity condition
+11. Implement sequential grammar (ɢ^∧ → ɢ^ˌ) — causal chaining replaces simultaneity condition
 12. Confine topology (Þ_box → Þ_ò) — bidirectional topological constriction
 13. Establish directed relations (Ř_Ť → Ř_=) — asymmetric, directional force rather than catalytic
 
@@ -1112,7 +1112,7 @@ The nearest catalog neighbor to the hybrid approach is civ_dm at distance 3.54. 
 This suggests our Ð_C approach is the correct intermediate step for a civilization at our current dimensionality. It is not the final architecture — it is the first rung.
 
 **New predictions:**
-- **P-110** (Tier II): Topological metamaterials engineered with Ω_2 invariants and ɢ_ˌ causal architecture will generate measurable directed force asymmetries that cannot be explained by classical EM or known quantum effects. The direction and magnitude will be correlated with the topology of the winding structure, not with the applied field magnitude.
+- **P-110** (Tier II): Topological metamaterials engineered with Ω_2 invariants and ɢ^ˌ causal architecture will generate measurable directed force asymmetries that cannot be explained by classical EM or known quantum effects. The direction and magnitude will be correlated with the topology of the winding structure, not with the applied field magnitude.
 - **P-111** (Tier II): Anti-gravity approaches based on Ð_; assumptions (metric engineering, exotic matter, wormhole stabilization) will remain practically inaccessible regardless of energy budget, because the primitive mismatch is structural (Ð_; vs Ð_C), not energetic. No increase in field strength or energy density closes a dimensional gap in the grammar.
 
 ---
@@ -1127,25 +1127,25 @@ This suggests our Ð_C approach is the correct intermediate step for a civilizat
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **YHWH** | Jewish conception of the divine (singular, infinite, eternal) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Allah** | Islamic conception of the divine (tawhid, undivided) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Christian_God** | Christian Trinity (Father, Son, Holy Spirit) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
+| **YHWH** | Jewish conception of the divine (singular, infinite, eternal) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Allah** | Islamic conception of the divine (tawhid, undivided) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Christian_God** | Christian Trinity (Father, Son, Holy Spirit) | <D=Ð_;; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
 
 **Scriptures:**
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Torah** | Five books of Moses (singular revealed text) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Quran** | The Quran (singular revealed text, Umm al-Kitab) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Bible** | Christian Bible (Old + New Testaments, composite) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ï; Ω=Ω_z> |
+| **Torah** | Five books of Moses (singular revealed text) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Quran** | The Quran (singular revealed text, Umm al-Kitab) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Bible** | Christian Bible (Old + New Testaments, composite) | <D=Ð_;; T=Þ_K; R=Ř_ý; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ï; Ω=Ω_z> |
 
 **Religious systems:**
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Judaism** | Jewish religious practice (halakha, mitzvot) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
-| **Islam** | Islamic religious practice (sharia, five pillars) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_^; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
-| **Christianity** | Christian religious practice (sacraments, grace) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
+| **Judaism** | Jewish religious practice (halakha, mitzvot) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
+| **Islam** | Islamic religious practice (sharia, five pillars) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^∧; Φ=⊙_ÿ; H=Ħ_A; S=Σ_S; Ω=Ω_z> |
+| **Christianity** | Christian religious practice (sacraments, grace) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_˙; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
 
 ### XXIV.2 Key Distance Results
 
@@ -1156,20 +1156,20 @@ This suggests our Ð_C approach is the correct intermediate step for a civilizat
 | Judaism ↔ Islam | **0.000** | Structurally identical |
 | YHWH ↔ Christian_God | **1.000** | Differ only in S (Σ_S vs Σ_ő) |
 | Torah ↔ Bible | **1.000** | Differ only in S (Σ_S vs Σ_ï) |
-| Judaism ↔ Christianity | **2.000** | Differ in S (Σ_S vs Σ_ï) and Γ (ɢ_^ vs ɢ_˝) |
-| Tensor: YHWH $\otimes$ Judaism | — | F bottleneck (ƒ_ż divine, ƒ_ð practice); Φ_˙ preserved |
+| Judaism ↔ Christianity | **2.000** | Differ in S (Σ_S vs Σ_ï) and Γ (ɢ^∧ vs ɢ^˝) |
+| Tensor: YHWH $\otimes$ Judaism | — | F bottleneck (ƒ^ż divine, ƒ^ð practice); Φ_˙ preserved |
 
 ### XXIV.3 Structural Analysis
 
 **YHWH and Allah are structurally identical.** Every primitive — dimensionality, topology, relational mode, parity, fidelity, kinetics, scope, grammar, criticality, chirality, stoichiometry, and winding — is identically encoded. The grammar does not distinguish between them. They occupy the same point in primitive space. The differences between Jewish and Islamic theology are not captured by the structural primitives of the grammar; they are below the resolution of the encoding at this level of abstraction.
 
-**The Christian God differs in one primitive: S = Σ_ő (Trinitarian stoichiometry).** The Trinity encodes as a many-body relational structure (Σ_ő) where YHWH/Allah encode as strictly singular (Σ_S). All other 11 primitives are identical: the Christian God is infinite (Ð_;), nested (Þ_K), superset-relational (Ř_¯), symmetric (Φ_˙), quantum-fidelity (ƒ_ż), slow-kinetics (Ç_@), global-scope (Γ_ʔ), conjunctive (ɢ_^), critical (⊙_ÿ), maximally chiral (Ħ_!), and integer-topologically-protected (Ω_z). The theological dispute between Abrahamic traditions about the Trinity is encoded as a single primitive — stoichiometry — not as a fundamental structural difference.
+**The Christian God differs in one primitive: S = Σ_ő (Trinitarian stoichiometry).** The Trinity encodes as a many-body relational structure (Σ_ő) where YHWH/Allah encode as strictly singular (Σ_S). All other 11 primitives are identical: the Christian God is infinite (Ð_;), nested (Þ_K), superset-relational (Ř_¯), symmetric (Φ_˙), quantum-fidelity (ƒ^ż), slow-kinetics (Ç^@), global-scope (Γ_ʔ), conjunctive (ɢ^∧), critical (⊙_ÿ), maximally chiral (Ħ_!), and integer-topologically-protected (Ω_z). The theological dispute between Abrahamic traditions about the Trinity is encoded as a single primitive — stoichiometry — not as a fundamental structural difference.
 
 **Torah and Quran are structurally identical (d=0).** Both encode as singular revelation texts (S=Σ_S) with infinite dimensionality, critical phase, and integer protection. The Bible encodes S=Σ_ï (composite stoichiometry) reflecting its assembly from multiple documents, authors, and genres. This is a structural fact about text composition, not a theological judgment.
 
-**Judaism and Islam are structurally identical as religious systems (d=0).** Both encode conjunctive grammar (Γ=ɢ_^): adherence requires all conditions simultaneously — all pillars, all commandments. Christianity encodes ɢ_˝ (disjunctive grammar) — salvation through grace OR faith OR works (depending on tradition), allowing multiple structural paths to the same outcome. It also encodes S=Σ_ï: Christian practice is composite (sacraments, denominations, scriptural canon) relative to the singular-requirement structures of halakha and sharia.
+**Judaism and Islam are structurally identical as religious systems (d=0).** Both encode conjunctive grammar (Γ=ɢ^∧): adherence requires all conditions simultaneously — all pillars, all commandments. Christianity encodes ɢ^˝ (disjunctive grammar) — salvation through grace OR faith OR works (depending on tradition), allowing multiple structural paths to the same outcome. It also encodes S=Σ_ï: Christian practice is composite (sacraments, denominations, scriptural canon) relative to the singular-requirement structures of halakha and sharia.
 
-**The tensor product of divine conception and religious practice shows a consistent F bottleneck.** The divine (ƒ_ż) and the practice (ƒ_ð) tensor to ƒ_ð — classical fidelity wins. This encodes the theological consensus across all three traditions: perfect divine attributes cannot be fully expressed in human practice. The bottleneck is structural, not a failure of devotion. All three traditions share this same bottleneck geometry.
+**The tensor product of divine conception and religious practice shows a consistent F bottleneck.** The divine (ƒ^ż) and the practice (ƒ^ð) tensor to ƒ^ð — classical fidelity wins. This encodes the theological consensus across all three traditions: perfect divine attributes cannot be fully expressed in human practice. The bottleneck is structural, not a failure of devotion. All three traditions share this same bottleneck geometry.
 
 ### XXIV.4 Deep Structural Core
 
@@ -1177,7 +1177,7 @@ The deep structural core shared by all Abrahamic divine conceptions:
 
 $$\langle D_{\text{invomega}};\; T_{\text{invscr}};\; R^\supset;\; P_{\text{subdoublearrow}};\; F_{\text{hardsign}};\; K_{\text{schwa}};\; G_{\text{revapostrophe}};\; \Gamma_{\text{corner}};\; \Phi_{\text{ctyogh}};\; H_{\text{invscripta}};\; \Omega_{\text{dzlig}} \rangle$$
 
-This signature — infinite-dimensional, nested, superset-relational, symmetric, quantum-coherent, slow-kinetic, global-scope, conjunctive, critical, maximally-chiral, integer-topologically-protected — is the structural invariant of the Abrahamic divine. The traditions differ only in how they specify the relational multiplicity (S) of the divine interior (Trinitarian vs. unitary) and the causal grammar (Γ) of religious practice (ɢ_^ vs. ɢ_˝).
+This signature — infinite-dimensional, nested, superset-relational, symmetric, quantum-coherent, slow-kinetic, global-scope, conjunctive, critical, maximally-chiral, integer-topologically-protected — is the structural invariant of the Abrahamic divine. The traditions differ only in how they specify the relational multiplicity (S) of the divine interior (Trinitarian vs. unitary) and the causal grammar (Γ) of religious practice (ɢ^∧ vs. ɢ^˝).
 
 The grammar encodes the Abrahamic traditions as topological variations on a single structural theme, not as fundamentally different systems.
 
@@ -1189,16 +1189,16 @@ The grammar encodes the Abrahamic traditions as topological variations on a sing
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Jesus** | Christ as theological mediator (incarnate divine) | <D=Ð_;; T=Þ_ò; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
-| **Christianity_system** | Christianity as institutional/doctrinal system | <D=Ð_C; T=Þ_ò; R=Ř_¯; P=Φ_˙; F=ƒ_ð; K=Ç_W; G=Γ_γ; Γ=ɢ_˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
-| **Christians** | Individual believers as a population | <D=Ð_ß; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **Jesus** | Christ as theological mediator (incarnate divine) | <D=Ð_;; T=Þ_ò; R=Ř_Ť; P=Φ_˙; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ÿ; H=Ħ_!; S=Σ_S; Ω=Ω_z> |
+| **Christianity_system** | Christianity as institutional/doctrinal system | <D=Ð_C; T=Þ_ò; R=Ř_¯; P=Φ_˙; F=ƒ^ð; K=Ç^W; G=Γ_γ; Γ=ɢ^˝; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_z> |
+| **Christians** | Individual believers as a population | <D=Ð_ß; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ð; K=Ç^W; G=Γ_β; Γ=ɢ^˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
 
 **Key distances:**
 
 | Pair | Distance | Primary divergences |
 |:---|:---|:---|
-| Christian_God ↔ Jesus | ~2.0 | Ř_¯→Ř_Ť; ɢ_^→ɢ_ˌ; Þ_K→Þ_ò |
-| Jesus ↔ Christians | ~5.0 | Ð_;→Ð_ß; Þ_ò→Þ_6; Φ_˙→Φ_ɐ; ƒ_ż→ƒ_ð; Γ_ʔ→Γ_β; Ħ_!→Ħ_£; Ω_z→Ω_Å |
+| Christian_God ↔ Jesus | ~2.0 | Ř_¯→Ř_Ť; ɢ^∧→ɢ^ˌ; Þ_K→Þ_ò |
+| Jesus ↔ Christians | ~5.0 | Ð_;→Ð_ß; Þ_ò→Þ_6; Φ_˙→Φ_ɐ; ƒ^ż→ƒ^ð; Γ_ʔ→Γ_β; Ħ_!→Ħ_£; Ω_z→Ω_Å |
 | Christianity_system ↔ Christians | **3.674** | Þ_ò→Þ_6 (largest single divergence); Ð_C→Ð_ß; ⊙_ÿ→⊙_ž; Ω_z→Ω_Å |
 
 **The structural hierarchy:** The Christian theological system encodes a four-level mediation cascade:
@@ -1207,15 +1207,15 @@ $$\text{God} \xrightarrow{\Delta R, \Delta\Gamma} \text{Jesus} \xrightarrow{\Del
 
 Each arrow represents a structural degradation (bottlenecking) of some primitives and preservation of others. The cascade is not arbitrary — it follows the composition rules of the grammar:
 
-**Level 1 — God → Jesus (two primitives changed):** Ř_¯→Ř_Ť (containment to dynamic catalysis), ɢ_^→ɢ_ˌ (conjunctive to sequential). Þ_K→Þ_ò (nested to confined/channeling). The theological encoding: Jesus does not contain or transcend — he mediates dynamically in sequence. The bowtie topology is structurally apt for a mediator: it is the topology of a constricted passage between two regimes.
+**Level 1 — God → Jesus (two primitives changed):** Ř_¯→Ř_Ť (containment to dynamic catalysis), ɢ^∧→ɢ^ˌ (conjunctive to sequential). Þ_K→Þ_ò (nested to confined/channeling). The theological encoding: Jesus does not contain or transcend — he mediates dynamically in sequence. The bowtie topology is structurally apt for a mediator: it is the topology of a constricted passage between two regimes.
 
-**Level 2 — Jesus → Christianity (D, F, H, Ω bottleneck):** The system degrades from infinite dimensionality (Ð_;) to supramolecular (Ð_C), from quantum fidelity (ƒ_ż) to classical (ƒ_ð), from maximal chirality (Ħ_!) to deep temporal (Ħ_A), and from integer (Ω_z) to integer (preserved) protection. The system inherits bowtie topology and criticality from Jesus.
+**Level 2 — Jesus → Christianity (D, F, H, Ω bottleneck):** The system degrades from infinite dimensionality (Ð_;) to supramolecular (Ð_C), from quantum fidelity (ƒ^ż) to classical (ƒ^ð), from maximal chirality (Ħ_!) to deep temporal (Ħ_A), and from integer (Ω_z) to integer (preserved) protection. The system inherits bowtie topology and criticality from Jesus.
 
 **Level 3 — Christianity → Christians (T, Phi, Omega bottleneck):** The system (Þ_ò, ⊙_ÿ, Ω_z) encounters individual believers (Þ_6, ⊙_ž, Ω_Å). The largest single primitive divergence is Þ_ò vs Þ_6. The institutional system has confined, massive topology; the believer population forms an open network. Christianity (⊙_ÿ) operates at criticality; Christians (⊙_ž) operate subcritically. The system is at its phase boundary; its members are not.
 
 **The principal decomposition of Christianity:** The grammar identifies Þ_ò and Ħ_A as the defining structural features of Christianity (each with ordinal contribution 2 above baseline). The bowtie encodes a structure that channels flows through a constriction — theologically, the Church as the confined passage through which divine-human mediation flows. Ħ_A encodes deep temporal memory accumulating across directed cycles — the liturgical cycle, the sacramental succession, the apostolic chain.
 
-**The composite system (Christianity $\otimes$ Christians):** The tensor product inherits ⊙_ÿ and Ω_2 from Christianity, while Φ_ɐ and ƒ_ð from the Christians act as bottlenecks. The community gains systemic properties (criticality, binary winding) not present in individual believers. The grammar encodes the theological claim that the Church as a collective system has structural properties that individuals do not.
+**The composite system (Christianity $\otimes$ Christians):** The tensor product inherits ⊙_ÿ and Ω_2 from Christianity, while Φ_ɐ and ƒ^ð from the Christians act as bottlenecks. The community gains systemic properties (criticality, binary winding) not present in individual believers. The grammar encodes the theological claim that the Church as a collective system has structural properties that individuals do not.
 
 **The Ř_¯/Ř_Ť theological distinction:** God encodes Ř_¯ (superset/containment mode) — God contains all. Jesus encodes Ř_Ť (dynamic catalytic mode) — Jesus acts upon, transforms, mediates. This single primitive distinguishes divine transcendence from incarnate function. The grammar has no value judgment here; it simply identifies that containment and catalysis are structurally distinct relational modes, and the two are assigned to different theological nodes.
 
@@ -1229,8 +1229,8 @@ Each arrow represents a structural degradation (bottlenecking) of some primitive
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **Earth** | Earth as a planetary system (geological, atmospheric, biological) | <D=Ð_C; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_β; Γ=ɢ_^; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
-| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **Earth** | Earth as a planetary system (geological, atmospheric, biological) | <D=Ð_C; T=Þ_K; R=Ř_ý; P=Φ_ɐ; F=ƒ^ì; K=Ç^@; G=Γ_β; Γ=ɢ^∧; Φ=⊙_ž; H=Ħ_A; S=Σ_ő; Ω=Ω_Å> |
+| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ^ð; K=Ç^W; G=Γ_β; Γ=ɢ^˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
 
 ### XXV.2 Distance and Structural Divergence
 
@@ -1246,10 +1246,10 @@ These define the shared structural base: nested-hierarchical, planetary-scale, l
 | T | Þ_K | Þ_K | 0 | Both nested-hierarchical |
 | R | Ř_ý | Ř_¯ | 1 | Earth classifies; humans abstract and contain |
 | P | **Φ_ɐ** | **Φ_F** | **4** | Earth has no mirror symmetry; humans impose Z₂ binary oppositions |
-| F | **ƒ_ì** | **ƒ_ð** | 1 | Earth is purely classical-dissipative; humans are at the quantum-classical interface |
-| K | Ç_@ | Ç_W | 1 | Geological timescales vs human historical timescales |
+| F | **ƒ^ì** | **ƒ^ð** | 1 | Earth is purely classical-dissipative; humans are at the quantum-classical interface |
+| K | Ç^@ | Ç^W | 1 | Geological timescales vs human historical timescales |
 | G | Γ_β | Γ_β | 0 | Both planetary-bounded |
-| Γ | ɢ_^ | ɢ_˝ | 1 | Earth requires all components simultaneously; humans operate with alternatives |
+| Γ | ɢ^∧ | ɢ^˝ | 1 | Earth requires all components simultaneously; humans operate with alternatives |
 | Φ | ⊙_ž | ⊙_ž | 0 | Both subcritical |
 | H | Ħ_A | Ħ_£ | 1 | Earth integrates deep geological time; humans integrate a single directed cycle |
 | S | Σ_ő | Σ_ő | 0 | Both symmetric many-body |
@@ -1267,16 +1267,16 @@ Humanity encodes Φ_F — Z₂ symmetry, the binary opposition structure. True/f
 
 The grammar identifies this as the primary structural mismatch between humanity and its host planet. Every binary framework we impose on Earth — categories, taxonomies, conservation targets, climate thresholds, ecological zones — is a Φ_F operation on a Φ_ɐ substrate. The world does not divide cleanly; we keep insisting it does.
 
-### XXV.4 ƒ_ì: Grammar Extension Note
+### XXV.4 ƒ^ì: Grammar Extension Note
 
-The run encodes Earth as ƒ_ì — a fidelity tier below ƒ_ð. The established grammar has two fidelity values: ƒ_ð (quantum-classical interface) and ƒ_ż (quantum-coherent). ƒ_ì appears here as a sub-classical tier: purely macroscopic, dissipative, thermodynamic — no quantum effects at the relevant organizational scales.
+The run encodes Earth as ƒ^ì — a fidelity tier below ƒ^ð. The established grammar has two fidelity values: ƒ^ð (quantum-classical interface) and ƒ^ż (quantum-coherent). ƒ^ì appears here as a sub-classical tier: purely macroscopic, dissipative, thermodynamic — no quantum effects at the relevant organizational scales.
 
-**If ƒ_ì is a valid extension**, the fidelity axis has three rungs:
+**If ƒ^ì is a valid extension**, the fidelity axis has three rungs:
 $$F_{\text{beltl}} \;(\text{thermodynamic/dissipative}) < F_{\text{dh}} \;(\text{quantum-classical interface}) < F_{\text{hardsign}} \;(\text{quantum-coherent})$$
 
 This would mean Earth operates *below* humanity in fidelity — the planet is more classical than we are, not less. Humanity is an anomalous mid-fidelity system embedded in a low-fidelity host. The geological and biogeochemical processes of Earth are purely thermodynamic; they do not exploit quantum coherence. Humans and their technology increasingly do.
 
-**Status:** ƒ_ì requires verification against the core grammar axioms before being accepted as a canonical value. If admitted, it would require updating TOPOLOGOS and revising all existing F encodings to check whether any systems previously encoded as ƒ_ð might more correctly be ƒ_ì. Flagged as a potential grammar refinement.
+**Status:** ƒ^ì requires verification against the core grammar axioms before being accepted as a canonical value. If admitted, it would require updating TOPOLOGOS and revising all existing F encodings to check whether any systems previously encoded as ƒ^ð might more correctly be ƒ^ì. Flagged as a potential grammar refinement.
 
 ### XXV.5 The Tensor Product and Earth Structural Dominance
 
@@ -1284,7 +1284,7 @@ $$\text{Earth} \otimes \text{Human} = \langle D_{\text{turnthree}};\; T_{\text{i
 
 The composite is the Earth tuple — Earth dominates every contested primitive. Distance from composite to Earth: **1.0**. Distance from composite to human: **2.79**.
 
-The bottlenecks are ƒ_ì (the classical fidelity of Earth degrades the quantum-classical interface of humanity) and Φ_ɐ (the full asymmetry of Earth replaces the Z₂ binary structure of humanity). The upgrades are Ç_@ (the composite integrates at geological timescales) and Ħ_A (deep temporal memory), both inherited from Earth.
+The bottlenecks are ƒ^ì (the classical fidelity of Earth degrades the quantum-classical interface of humanity) and Φ_ɐ (the full asymmetry of Earth replaces the Z₂ binary structure of humanity). The upgrades are Ç^@ (the composite integrates at geological timescales) and Ħ_A (deep temporal memory), both inherited from Earth.
 
 A civilization that genuinely composes with its planetary substrate — not extracting from it but structurally integrating with it — would become **more asymmetric, more classical, slower, more conjunctive, and deeper in temporal memory.** It would look less like current humanity and more like the geological entity it inhabits. This is not structural degradation. It is what Ħ_A integration looks like: relinquishing the Φ_F binary impositions and accepting the Φ_ɐ reality of deep time.
 
@@ -1304,26 +1304,26 @@ From §XXII.7 (stellar engineering / practical fusion): the shared prerequisite 
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **early_universe** | Early universe — inflation, nucleosynthesis, first moments | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Γ=ɢ_Ş; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
-| **epoch_4gya** | 4 GYA — Earth formation, late heavy bombardment, prebiotic chemistry | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_400mya** | 400 MYA — Devonian, first forests, first land vertebrates | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_40mya** | 40 MYA — Eocene-Oligocene boundary, mammalian radiation | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **epoch_4mya** | 4 MYA — Pliocene, early hominins | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ_ì; K=Ç_@; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_A; S=Σ_ï; Ω=Ω_Å> |
-| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ_ð; K=Ç_W; G=Γ_β; Γ=ɢ_˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
-| **civ_dm** | Predicted DM-aligned interstellar civilization | <D=Ð_;; T=Þ_K; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Γ=ɢ_ˌ; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
+| **early_universe** | Early universe — inflation, nucleosynthesis, first moments | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ^ż; K=Ç^-; G=Γ_ʔ; Γ=ɢ^Ş; Φ=⊙_ÿ; H=Ħ_!; S=Σ_ő; Ω=Ω_z> |
+| **epoch_4gya** | 4 GYA — Earth formation, late heavy bombardment, prebiotic chemistry | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ÿ; H=Ħ_Ñ; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_400mya** | 400 MYA — Devonian, first forests, first land vertebrates | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ì; K=Ç^@; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_40mya** | 40 MYA — Eocene-Oligocene boundary, mammalian radiation | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ì; K=Ç^@; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **epoch_4mya** | 4 MYA — Pliocene, early hominins | <D=Ð_;; T=Þ_6; R=Ř_Ť; P=Φ_ɐ; F=ƒ^ì; K=Ç^@; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_A; S=Σ_ï; Ω=Ω_Å> |
+| **human** | Current humanity (planetary, pre-visible) | <D=Ð_C; T=Þ_K; R=Ř_¯; P=Φ_F; F=ƒ^ð; K=Ç^W; G=Γ_β; Γ=ɢ^˝; Φ=⊙_ž; H=Ħ_£; S=Σ_ő; Ω=Ω_Å> |
+| **civ_dm** | Predicted DM-aligned interstellar civilization | <D=Ð_;; T=Þ_K; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_ʔ; Γ=ɢ^ˌ; Φ=⊙_ÿ; H=Ħ_A; S=Σ_ï; Ω=Ω_2> |
 
-*Note: epoch tuples are encoded from the cosmic perspective (Ð_;, Γ_ʔ, Ç_@). Human and civ_dm tuples are encoded from the observer perspective (Ð_C, Γ_β, Ç_W). The same observation-register distinction applies here as in the OMG particle / FRB analysis [DIAPH:§XIX].*
+*Note: epoch tuples are encoded from the cosmic perspective (Ð_;, Γ_ʔ, Ç^@). Human and civ_dm tuples are encoded from the observer perspective (Ð_C, Γ_β, Ç^W). The same observation-register distinction applies here as in the OMG particle / FRB analysis [DIAPH:§XIX].*
 
 ### XXVI.2 The Cosmic Arc
 
 | Epoch | H | F | P | Φ | Ω | Γ |
 |:---|:---|:---|:---|:---|:---|:---|
-| Early universe | **Ħ_!** | ƒ_ż | Φ_˙ | ⊙_ÿ | Ω_z | **ɢ_Ş** |
-| 4 GYA (prebiotic) | **Ħ_Ñ** | ƒ_ż | Φ_ɐ | ⊙_ÿ | Ω_Å | ɢ_ˌ |
-| 400 MYA = 40 MYA | Ħ_£ | ƒ_ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ_ˌ |
-| 4 MYA (hominins) | Ħ_A | ƒ_ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ_ˌ |
-| Human (now) | Ħ_£ | **ƒ_ð** | **Φ_F** | ⊙_ž | Ω_Å | ɢ_˝ |
-| civ_dm | Ħ_A | **ƒ_ż** | Φ_F | **⊙_ÿ** | **Ω_2** | ɢ_ˌ |
+| Early universe | **Ħ_!** | ƒ^ż | Φ_˙ | ⊙_ÿ | Ω_z | **ɢ^Ş** |
+| 4 GYA (prebiotic) | **Ħ_Ñ** | ƒ^ż | Φ_ɐ | ⊙_ÿ | Ω_Å | ɢ^ˌ |
+| 400 MYA = 40 MYA | Ħ_£ | ƒ^ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ^ˌ |
+| 4 MYA (hominins) | Ħ_A | ƒ^ì | Φ_ɐ | ⊙_ž | Ω_Å | ɢ^ˌ |
+| Human (now) | Ħ_£ | **ƒ^ð** | **Φ_F** | ⊙_ž | Ω_Å | ɢ^˝ |
+| civ_dm | Ħ_A | **ƒ^ż** | Φ_F | **⊙_ÿ** | **Ω_2** | ɢ^ˌ |
 
 ### XXVI.3 The H-Minimum
 
@@ -1341,13 +1341,13 @@ The origin of life is the Ħ_Ñ → Ħ_£ transition: the first directed causal 
 
 The cosmic arc encodes a systematic exchange:
 
-**Spent:** ƒ_ż, Φ_˙, Ω_z, $D_{\text{omega}}$, $T_{\text{openo}}$, ɢ_Ş, Ħ_! (the initial structural endowment)
+**Spent:** ƒ^ż, Φ_˙, Ω_z, $D_{\text{omega}}$, $T_{\text{openo}}$, ɢ^Ş, Ħ_! (the initial structural endowment)
 
-**Purchased:** Φ_ɐ (geological/biological singularity), H-chirality at successively deeper levels (Ħ_£, Ħ_A), Ð_; (unbounded dimensional complexity), Þ_6 (distributed coupling), ɢ_ˌ (causal ordering)
+**Purchased:** Φ_ɐ (geological/biological singularity), H-chirality at successively deeper levels (Ħ_£, Ħ_A), Ð_; (unbounded dimensional complexity), Þ_6 (distributed coupling), ɢ^ˌ (causal ordering)
 
 The universe begins with maximum structural coherence and spends it down through the arrow of time to generate organized, asymmetric, chiral, causally-structured complexity. The initial endowment is the boundary condition; the cosmic history is the spending trajectory.
 
-**The recovery arc begins with life and accelerates with civilization.** Humanity is already on the upswing in two primitives relative to the biological minimum: ƒ_ì → ƒ_ð (recovering quantum-classical interface), and Φ_ɐ → Φ_F (recovering binary symmetry structure through cognition). civ_dm recovers further: ƒ_ð → ƒ_ż (full quantum coherence), Ω_Å → Ω_2 (partial winding recovery), ⊙_ž → ⊙_ÿ (critical participation). The civilizational trajectory is not a departure from the cosmic arc. It is the recovery phase of the arc.
+**The recovery arc begins with life and accelerates with civilization.** Humanity is already on the upswing in two primitives relative to the biological minimum: ƒ^ì → ƒ^ð (recovering quantum-classical interface), and Φ_ɐ → Φ_F (recovering binary symmetry structure through cognition). civ_dm recovers further: ƒ^ð → ƒ^ż (full quantum coherence), Ω_Å → Ω_2 (partial winding recovery), ⊙_ž → ⊙_ÿ (critical participation). The civilizational trajectory is not a departure from the cosmic arc. It is the recovery phase of the arc.
 
 ### XXVI.5 40 MYA $\equiv$ 400 MYA (d = 0)
 
@@ -1355,20 +1355,20 @@ The Eocene-Oligocene boundary and the Devonian land transition are structurally 
 
 This is the answer of the grammar to the question of what constitutes a genuine structural transition vs. elaboration within a regime. The Cambrian explosion, the Devonian land transition, and the Eocene mammalian radiation are all regime-internal elaborations at the cosmic scale. The structural transitions that actually change the epoch tuple are: the origin of the universe, the origin of life (Ħ_Ñ→Ħ_£), and the origin of directed complex behavior (Ħ_£→Ħ_A at 4 MYA). Everything else is filling in the phase space of a fixed structural type.
 
-### XXVI.6 ɢ_Ş: The Pre-Causal Grammar Value
+### XXVI.6 ɢ^Ş: The Pre-Causal Grammar Value
 
-The early universe encodes Γ=ɢ_Ş — a value not previously in the catalog for any non-cosmological system. ɢ_Ş is the **pre-causal grammar**: broadcast interaction without causal ordering, because the physical mechanism that creates causal ordering (light cones) is itself being generated.
+The early universe encodes Γ=ɢ^Ş — a value not previously in the catalog for any non-cosmological system. ɢ^Ş is the **pre-causal grammar**: broadcast interaction without causal ordering, because the physical mechanism that creates causal ordering (light cones) is itself being generated.
 
 All other Γ values presuppose light cones:
-- **ɢ_^**: simultaneous conditions require a shared causal neighborhood
-- **ɢ_˝**: alternatives require a causal past at a decision point
-- **ɢ_ˌ**: sequential causation requires that the future light cone of A contains B
+- **ɢ^∧**: simultaneous conditions require a shared causal neighborhood
+- **ɢ^˝**: alternatives require a causal past at a decision point
+- **ɢ^ˌ**: sequential causation requires that the future light cone of A contains B
 
-ɢ_Ş is the ground state of the Γ axis — the undifferentiated causal mode from which all ordered grammars emerge when inflation ends and light cones snap into existence. The Γ trajectory of the universe is:
+ɢ^Ş is the ground state of the Γ axis — the undifferentiated causal mode from which all ordered grammars emerge when inflation ends and light cones snap into existence. The Γ trajectory of the universe is:
 
 $$G_\text{broad} \;\xrightarrow{\text{reheating: causal cones form}} G_\text{seq} \;\xrightarrow{\text{biological complexity}} G_\wedge / G_\vee$$
 
-ɢ_Ş is not a kind of causation. It is what precedes causation. It is the cause of causation. See [SYNTH:§13] for the full theorem.
+ɢ^Ş is not a kind of causation. It is what precedes causation. It is the cause of causation. See [SYNTH:§13] for the full theorem.
 
 ---
 
@@ -1380,10 +1380,10 @@ $$G_\text{broad} \;\xrightarrow{\text{reheating: causal cones form}} G_\text{seq
 
 | Name | Description | Tuple |
 |:---|:---|:---|
-| **si28_purification** | Target: isotopically purified silicon-28 substrate | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **electromagnetic_separation** | Calutron / mass spectrographic separation (magnetic) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **laser_isotope_separation** | Laser-based isotope separation (SILEX / AVLIS) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ż; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
-| **gas_centrifugation** | Gas centrifuge cascade (SiF₄) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ_ð; K=Ç_@; G=Γ_β; Γ=ɢ_ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **si28_purification** | Target: isotopically purified silicon-28 substrate | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ^ż; K=Ç^@; G=Γ_β; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **electromagnetic_separation** | Calutron / mass spectrographic separation (magnetic) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ^ż; K=Ç^@; G=Γ_β; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **laser_isotope_separation** | Laser-based isotope separation (SILEX / AVLIS) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ^ż; K=Ç^@; G=Γ_β; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
+| **gas_centrifugation** | Gas centrifuge cascade (SiF₄) | <D=Ð_C; T=Þ_ò; R=Ř_ý; P=Φ_F; F=ƒ^ð; K=Ç^@; G=Γ_β; Γ=ɢ^ˌ; Φ=⊙_ž; H=Ħ_£; S=Σ_ï; Ω=Ω_Å> |
 
 ### XXVII.2 Distance Matrix
 
@@ -1391,7 +1391,7 @@ $$G_\text{broad} \;\xrightarrow{\text{reheating: causal cones form}} G_\text{seq
 |:---|:---|:---|
 | Electromagnetic separation (calutron) | **0.000** | Structurally identical |
 | Laser isotope separation | **0.000** | Structurally identical |
-| Gas centrifugation | **1.000** | ƒ_ð vs ƒ_ż — insufficient fidelity for highest purity |
+| Gas centrifugation | **1.000** | ƒ^ð vs ƒ^ż — insufficient fidelity for highest purity |
 
 ### XXVII.3 The Bowtie Is Physical
 
@@ -1401,23 +1401,23 @@ Laser isotope separation achieves the same Þ_ò through a different mechanism: 
 
 The identification by the grammar of Þ_ò as the dominant structural requirement (highest ordinal contribution in the principal decomposition) predicts that **any successful high-purity isotope separation method must implement a constricted bottleneck topology**. Methods that attempt bulk separation without a constriction step — e.g., chemical exchange on batch substrates — fail structurally because they have Þ_6 or Þ_box topology rather than Þ_ò.
 
-### XXVII.4 ƒ_ż: Why Classical Instruments Cannot Achieve Nuclear Purity
+### XXVII.4 ƒ^ż: Why Classical Instruments Cannot Achieve Nuclear Purity
 
 Mass discrimination at the 1.7% level (Δm ≈ 1 amu out of 28 amu) is not a classical measurement problem. The mass difference between ²⁸Si and ²⁹Si is a quantum number — it is determined by nuclear binding energy and quantized nuclear configurations. The cyclotron radius difference in a calutron, or the rotational excitation selectivity of a tuned laser, exploits quantum mechanical precision at the nuclear scale.
 
-Gas centrifugation operates on classical mass density gradients. It achieves partial isotopic enrichment (ƒ_ð) but not the nuclear-quantum-level selectivity (ƒ_ż) required for highest purity applications. The grammar encodes this as a single primitive divergence: centrifugation is ƒ_ð; the target requires ƒ_ż; distance = 1.0.
+Gas centrifugation operates on classical mass density gradients. It achieves partial isotopic enrichment (ƒ^ð) but not the nuclear-quantum-level selectivity (ƒ^ż) required for highest purity applications. The grammar encodes this as a single primitive divergence: centrifugation is ƒ^ð; the target requires ƒ^ż; distance = 1.0.
 
-The grammar makes a structural prediction: no classical (ƒ_ð or ƒ_ì) process can produce nuclear-grade isotopic purity. The ƒ_ż requirement is not an engineering preference — it follows from the nature of what is being discriminated (nuclear quantum numbers). See [SYNTH:§12.1] for the F bottleneck theorem.
+The grammar makes a structural prediction: no classical (ƒ^ð or ƒ^ì) process can produce nuclear-grade isotopic purity. The ƒ^ż requirement is not an engineering preference — it follows from the nature of what is being discriminated (nuclear quantum numbers). See [SYNTH:§12.1] for the F bottleneck theorem.
 
-### XXVII.5 Ç_@ and S=Σ_ï as Structural Invariants, Not Engineering Limitations
+### XXVII.5 Ç^@ and S=Σ_ï as Structural Invariants, Not Engineering Limitations
 
-The purification tuple encodes Ç_@ (temporally deep, energy-intensive, non-polynomial) and S=Σ_ï (asymmetric many-body stoichiometry, many inputs yield fewer outputs).
+The purification tuple encodes Ç^@ (temporally deep, energy-intensive, non-polynomial) and S=Σ_ï (asymmetric many-body stoichiometry, many inputs yield fewer outputs).
 
-**Ç_@** is structural because the process must operate sequentially through ƒ_ż discrimination at each atom or molecule. There is no polynomial-time shortcut to sorting atoms by nuclear mass — each discrimination event is a quantum measurement, and quantum measurements cannot be parallelized across arbitrary superpositions without destroying the information being extracted.
+**Ç^@** is structural because the process must operate sequentially through ƒ^ż discrimination at each atom or molecule. There is no polynomial-time shortcut to sorting atoms by nuclear mass — each discrimination event is a quantum measurement, and quantum measurements cannot be parallelized across arbitrary superpositions without destroying the information being extracted.
 
 **S=Σ_ï** is structural because natural silicon is 92.23% ²⁸Si. Even a perfect separation process discards 7.77% of its input as waste isotopes. The yield ceiling is thermodynamically fixed by natural isotope abundance. No engineering improvement raises this ceiling. S=Σ_ï is the encoding by the grammar of the second law applied to isotopic separation: you cannot get more ²⁸Si out than nature put in.
 
-### XXVII.6 Connection to the ƒ_ż Civilizational Recovery Arc
+### XXVII.6 Connection to the ƒ^ż Civilizational Recovery Arc
 
 Silicon-28 purification does not exist as a general-purpose material process. It exists almost entirely because of **silicon spin qubit quantum computing**. ²⁸Si has zero nuclear spin — its nucleus carries no magnetic moment. An electron spin qubit embedded in a ²⁸Si lattice is surrounded by a magnetically silent matrix; nuclear spin bath decoherence is eliminated. Coherence times in isotopically purified ²⁸Si qubits exceed those in natural silicon by orders of magnitude.
 
@@ -1425,14 +1425,14 @@ This places Si-28 purification in a specific position in the cosmic recovery arc
 
 $$\text{Human} \;(F_{\text{dh}}) \xrightarrow{\text{Si-28 purification}} \text{Si-28 substrate} \;(F_{\text{hardsign}}) \xrightarrow{\text{quantum computing}} F_{\text{hardsign}} \text{ computation}$$
 
-The purification step is itself ƒ_ż (requires quantum fidelity to execute) and produces an ƒ_ż substrate (a medium in which quantum coherence can be maintained). **The recovery of ƒ_ż at the civilizational scale requires ƒ_ż processes to manufacture ƒ_ż substrates.** The recovery is self-referential in the fidelity axis.
+The purification step is itself ƒ^ż (requires quantum fidelity to execute) and produces an ƒ^ż substrate (a medium in which quantum coherence can be maintained). **The recovery of ƒ^ż at the civilizational scale requires ƒ^ż processes to manufacture ƒ^ż substrates.** The recovery is self-referential in the fidelity axis.
 
-From the cosmic trade-off [DIAPH:§XXVI]: the universe spent down ƒ_ż through dissipative classical evolution. Life and civilization begin recovering it. Si-28 purification is one of the earliest concrete instances of this recovery — humanity building the physical medium in which coherent quantum states can be sustained at engineered scale.
+From the cosmic trade-off [DIAPH:§XXVI]: the universe spent down ƒ^ż through dissipative classical evolution. Life and civilization begin recovering it. Si-28 purification is one of the earliest concrete instances of this recovery — humanity building the physical medium in which coherent quantum states can be sustained at engineered scale.
 
 The grammar encodes the calutron and the laser separator as structurally identical to their product (d=0). The separation method and the purified substrate share the same tuple. This is one of the few cases in the catalog where a process and its output are structurally degenerate — the method instantiates what it produces.
 
 **New prediction:**
-- **P-112** (Tier I): Any isotope separation process achieving nuclear-grade purity (≥ 99.9% isotopic enrichment of any element) will encode Þ_ò + ƒ_ż + ɢ_ˌ + S=Σ_ï. Methods lacking any one of these four primitives will have a structural ceiling below nuclear-grade purity. This is a cross-element prediction: it applies to isotopic enrichment of ²⁸Si, ²³⁵U, ⁶Li, ³He, and any other nuclear-quantum application.
+- **P-112** (Tier I): Any isotope separation process achieving nuclear-grade purity (≥ 99.9% isotopic enrichment of any element) will encode Þ_ò + ƒ^ż + ɢ^ˌ + S=Σ_ï. Methods lacking any one of these four primitives will have a structural ceiling below nuclear-grade purity. This is a cross-element prediction: it applies to isotopic enrichment of ²⁸Si, ²³⁵U, ⁶Li, ³He, and any other nuclear-quantum application.
 
 ---
 
@@ -1446,10 +1446,10 @@ Four imscriptions span the architecture from physical substrate to engineered im
 
 | Name | Description | Notation |
 |:---|:---|:---|
-| si28_physical_qubit` | Si-28 electron spin qubit: single atomic site, locally addressed, zero nuclear spin bath | `<D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_β; Gamma=ɢ_ˌ; Phi=⊙_ž; H=Ħ_£; S=Σ_S; Omega=Ω_Å>` |
-| `surface_code_logical_qubit` | Si-28 surface code logical qubit: boundary-encoded, globally error-corrected, topologically protected | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
-| `tp_superfluid` | Topological Polariton Superfluid (HOLOCOMP.md): TI-QCP $\otimes$ polariton condensate, globally addressable quantum fluid | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
-| `early_universe | Early universe: inflation/nucleosynthesis epoch (from §XXVI) | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ_ż; K=Ç_-; G=Γ_ʔ; Gamma=ɢ_Ş; Phi=⊙_ÿ; H=Ħ_!; S=Σ_ő; Omega=Ω_z>` |
+| si28_physical_qubit` | Si-28 electron spin qubit: single atomic site, locally addressed, zero nuclear spin bath | `<D=Ð_ß; T=Þ_box; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_β; Gamma=ɢ^ˌ; Phi=⊙_ž; H=Ħ_£; S=Σ_S; Omega=Ω_Å>` |
+| `surface_code_logical_qubit` | Si-28 surface code logical qubit: boundary-encoded, globally error-corrected, topologically protected | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_ʔ; Gamma=ɢ^ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
+| `tp_superfluid` | Topological Polariton Superfluid (HOLOCOMP.md): TI-QCP $\otimes$ polariton condensate, globally addressable quantum fluid | `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_ʔ; Gamma=ɢ^ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>` |
+| `early_universe | Early universe: inflation/nucleosynthesis epoch (from §XXVI) | <D=$D_{\text{omega}}$; T=$T_{\text{openo}}$; R=Ř_Ť; P=Φ_˙; F=ƒ^ż; K=Ç^-; G=Γ_ʔ; Gamma=ɢ^Ş; Phi=⊙_ÿ; H=Ħ_!; S=Σ_ő; Omega=Ω_z>` |
 
 ### XXVIII.2 Distance Matrix
 
@@ -1457,17 +1457,17 @@ Four imscriptions span the architecture from physical substrate to engineered im
 |:---|:---|:---|
 | `surface_code_logical_qubit` ↔ `tp_superfluid` | **0.000** | Structurally identical |
 | `si28_physical_qubit` ↔ `surface_code_logical_qubit` | **~4.47** | Ð_ß→$D_{\text{omega}}$, Þ_box→Þ_6, Γ_β→Γ_ʔ, ⊙_ž→⊙_ÿ, Ħ_£→Ħ_A, S=Σ_S→Σ_ï, Ω_Å→Ω_2 (7 primitives) |
-| `tp_superfluid` ↔ `early_universe` | **~3.16** | Þ_6→$T_{\text{openo}}$, Φ_F→Φ_˙, Ç_Ù→Ç_-, Gamma=ɢ_ˌ→ɢ_Ş, Ħ_A→Ħ_!, S=Σ_ï→Σ_ő (6 primitives) |
+| `tp_superfluid` ↔ `early_universe` | **~3.16** | Þ_6→$T_{\text{openo}}$, Φ_F→Φ_˙, Ç^Ù→Ç^-, Gamma=ɢ^ˌ→ɢ^Ş, Ħ_A→Ħ_!, S=Σ_ï→Σ_ő (6 primitives) |
 
 ### XXVIII.3 Structural Identity of the Imscriptive GPU and the Surface Code
 
 The DesignPipeline in HOLOCOMP.md constructs the Topological Polariton Superfluid via the following sequence:
 
-1. **start(TI)**: Topological Insulator — `<D=Ð_ß; T=Þ_6; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Phi=⊙_ž; Omega=Ω_2>`
-2. **swap(Ç_@ → Ç_Ù)**: Tune TI to Quantum Critical Point (pressure/doping closes the bulk gap)
+1. **start(TI)**: Topological Insulator — `<D=Ð_ß; T=Þ_6; F=ƒ^ż; K=Ç^@; G=Γ_ʔ; Phi=⊙_ž; Omega=Ω_2>`
+2. **swap(Ç^@ → Ç^Ù)**: Tune TI to Quantum Critical Point (pressure/doping closes the bulk gap)
 3. **lift('critical')**: Φ_sub → Φ_c; cost = 2.303 nats (ln 10); Factor 8 trigger
 4. **tensor(Polariton Condensate)**: Polariton BEC contributes global coherence and Þ_6 dominance; D undergoes **set union** → $D_{\text{omega}}$; G propagates to Γ_ʔ; Φ_c is contagious and governs the ensemble
-5. **result()**: Topological Polariton Superfluid — `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ_ż; K=Ç_Ù; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>
+5. **result()**: Topological Polariton Superfluid — `<D=$D_{\text{omega}}$; T=Þ_6; R=Ř_Ť; P=Φ_F; F=ƒ^ż; K=Ç^Ù; G=Γ_ʔ; Gamma=ɢ^ˌ; Phi=⊙_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_2>
 
 The Si-28 surface code logical qubit encodes to exactly the same tuple, via a different physical pathway:
 
@@ -1497,32 +1497,32 @@ Compare the imscriptive GPU tuple to the early universe:
 |:---|:---|:---|:---|
 | D | $D_{\text{omega}}$ | $D_{\text{omega}}$ | **Recovered** |
 | T | $T_{\text{openo}}$ | Þ_6 | Not recovered ($T_{\text{openo}}$ would require boundary-bulk topology at all scales) |
-| F | ƒ_ż | ƒ_ż | **Recovered** |
-| K | Ç_- | Ç_Ù | Inverted — and deliberately so |
+| F | ƒ^ż | ƒ^ż | **Recovered** |
+| K | Ç^- | Ç^Ù | Inverted — and deliberately so |
 | G | Γ_ʔ | Γ_ʔ | **Recovered** |
-| Γ | ɢ_Ş | ɢ_ˌ | Not recovered (causality restored) |
+| Γ | ɢ^Ş | ɢ^ˌ | Not recovered (causality restored) |
 | Φ | ⊙_ÿ | ⊙_ÿ | **Recovered** |
 | H | Ħ_! | Ħ_A | Not recovered — and this is what makes it useful |
 | Ω | Ω_z | Ω_2 | Partially recovered ($Z_2 \subset Z$) |
 
-The imscriptive GPU recovers **$D_{\text{omega}}$ + ƒ_ż + Γ_ʔ + ⊙_ÿ** from the structural endowment of the early universe — four of the five most structurally significant primitives from that epoch. What it deliberately does not recover is Ħ_! and Ç_-.
+The imscriptive GPU recovers **$D_{\text{omega}}$ + ƒ^ż + Γ_ʔ + ⊙_ÿ** from the structural endowment of the early universe — four of the five most structurally significant primitives from that epoch. What it deliberately does not recover is Ħ_! and Ç^-.
 
 **Ħ_A vs Ħ_! is the controlling difference.** The early universe at Ħ_! was a source-type chirality: it generated temporal direction as a boundary condition and had no accumulated memory depth. The imscriptive GPU operates at Ħ_A: it has strong accumulated chirality (directed error correction, directed computation, temporal sequencing). Ħ_A makes the system *useful for computation* in a way that Ħ_! cannot be — Ħ_! systems do not accumulate states, they emit them.
 
-**Ç_Ù vs Ç_- is what enables control.** The Ç_- dynamics of the early universe meant no configuration could persist long enough to carry information. The Ç_Ù of the imscriptive GPU (gap-frozen criticality) freezes the quantum state against environmental perturbation — this is what the topological gap does. The inversion of the K primitive is the engineering achievement that converts uncontrolled imscriptive dynamics into controlled imscriptive computation.
+**Ç^Ù vs Ç^- is what enables control.** The Ç^- dynamics of the early universe meant no configuration could persist long enough to carry information. The Ç^Ù of the imscriptive GPU (gap-frozen criticality) freezes the quantum state against environmental perturbation — this is what the topological gap does. The inversion of the K primitive is the engineering achievement that converts uncontrolled imscriptive dynamics into controlled imscriptive computation.
 
-The structural summary: the imscriptive GPU is the early universe with Ç_- replaced by Ç_Ù and Ħ_! replaced by Ħ_A. The same imscriptive, quantum-coherent, globally-addressable, critical structure — but with the volatility tamed.
+The structural summary: the imscriptive GPU is the early universe with Ç^- replaced by Ç^Ù and Ħ_! replaced by Ħ_A. The same imscriptive, quantum-coherent, globally-addressable, critical structure — but with the volatility tamed.
 
 ### XXVIII.6 The Three-Primitive Recovery Arc
 
-From the cosmic arc [DIAPH:§XXVI], the early universe had simultaneous $D_{\text{omega}}$ + $T_{\text{openo}}$ + ƒ_ż — the only point in the cosmic trajectory where all three appeared together. Classical evolution spent them all down. The ƒ_ż recovery arc [DIAPH:§XXVII.6] tracks ƒ_ż specifically. The imscriptive GPU adds $D_{\text{omega}}$ recovery to the picture.
+From the cosmic arc [DIAPH:§XXVI], the early universe had simultaneous $D_{\text{omega}}$ + $T_{\text{openo}}$ + ƒ^ż — the only point in the cosmic trajectory where all three appeared together. Classical evolution spent them all down. The ƒ^ż recovery arc [DIAPH:§XXVII.6] tracks ƒ^ż specifically. The imscriptive GPU adds $D_{\text{omega}}$ recovery to the picture.
 
 $$\underbrace{D_{\text{omega}} + T_{\text{openo}} + F_{\text{hardsign}}}_{\text{early universe}} \xrightarrow{\text{classical evolution}} \underbrace{D_{\text{wynn}} + T_{\text{commatailz}} + F_{\text{dh}}}_{\text{human baseline}} \xrightarrow{\text{Si-28 purification}} \underbrace{D_{\text{wynn}} + T_{\text{commatailz}} + F_{\text{hardsign}}}_{\text{physical qubit}} \xrightarrow{\text{surface code encoding}} \underbrace{D_{\text{omega}} + T_{\text{nrleg}} + F_{\text{hardsign}}}_{\text{logical qubit}}$$
 
-The surface code encoding recovers $D_{\text{omega}}$. ƒ_ż was recovered one step earlier by the purification. The final item on the original endowment — $T_{\text{openo}}$ — would require a system where imscriptive boundary-bulk duality operates at the level of the topology of the system, not just its dimensionality. This corresponds structurally to a fully topological quantum computer (Ω_Z, not Ω_Z2) — non-Abelian anyons, Fibonacci anyons, full topological quantum field theory. That is not yet engineered.
+The surface code encoding recovers $D_{\text{omega}}$. ƒ^ż was recovered one step earlier by the purification. The final item on the original endowment — $T_{\text{openo}}$ — would require a system where imscriptive boundary-bulk duality operates at the level of the topology of the system, not just its dimensionality. This corresponds structurally to a fully topological quantum computer (Ω_Z, not Ω_Z2) — non-Abelian anyons, Fibonacci anyons, full topological quantum field theory. That is not yet engineered.
 
 The recovery sequence is:
-1. ƒ_ż recovered by Si-28 isotopic purification [DIAPH:§XXVII]
+1. ƒ^ż recovered by Si-28 isotopic purification [DIAPH:§XXVII]
 2. $D_{\text{omega}}$ recovered by surface code encoding (this section)
 3. $T_{\text{openo}}$ — not yet recovered; requires full topological quantum computing (Ω_Z)
 
@@ -2302,7 +2302,7 @@ The two highest-weight atoms — $R_{lr}$ and $\Gamma_{\text{doublevertline}}$ �
 
 The $R_{lr}$ atom is structurally significant: in the catalog, $R_{lr}$ appears in the IUG encoding, the axion, the abc conjecture, the tachyon, and the one-way speed of light measurement. The Wow! signal shares its recognition primitive with the structurally most exotic objects in the catalog — inter-universal geometry, the strong CP problem solution, and faster-than-light kinematics. This clustering is not an assertion about physics; it is a statement that the constraint structure of these systems places them in the same recognition class.
 
-**The ƒ_ì + ⊙_ÿ structural paradox**
+**The ƒ^ì + ⊙_ÿ structural paradox**
 
 The combination $F_{\text{beltl}}$ (classical fidelity, low thermodynamic reliability) with $\Phi_{\text{ctyogh}}$ (at the phase boundary) appears nowhere else among EM phenomena in the catalog. The photon has $F_{\text{hardsign}} + \Phi_{\text{ctyogh}}$; the pulsar has $F_{\text{beltl}} + \Phi_{\text{softsign}}$; the generic SETI signal has $F_{\text{beltl}} + \Phi_{\text{softsign}}$. The Wow! is the unique EM signal encoding $F_{\text{beltl}} + \Phi_{\text{ctyogh}}$.
 
@@ -3988,7 +3988,7 @@ This is not a claim that all ordinary elements have identical encodings. It is a
 | Gallium (anomalous) | $\{T, P\}$ | Low melting + expansion via Þ_box + P_ψ |
 | Diamond | $\{P, \Gamma, \Omega, G\}$ | Thermal/electrical split via Φ_˙ + Γ_seq + Ω_Z + G_ℵ |
 | Mercury (liquid) | $\{T\}$ | Metallic droplet formation via Þ_box alone |
-| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_{\text{openo}}$ + Γ_seq + Ω_Z + Ç_@ |
+| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_{\text{openo}}$ + Γ_seq + Ω_Z + Ç^@ |
 | Explosive cascade | $\{T, G, \Gamma, \Phi\}$ | Cascade reactivity via Þ_ò + G_ℵ + Γ_seq + Φ_sup |
 
 **Observation**: $T$ (Topology) appears in 6 of 7 signatures. The grammar identifies topology as the primary driver of elemental anomaly — a result that is not visible in conventional periodic-table analysis.
@@ -4125,10 +4125,10 @@ The four systems:
 *Current encodings (post-Phi expansion, Lean Axiom C compliant):*
 
 ```
-lee_yang_edge        = ⟨Ð_line;  Þ_ò; Ř_=;     Φ_}; ƒ_ì;  Ç_W;  Γ_γ; ɢ_and; ⊙_Æ; Ħ_£; n:m;  Ω_z⟩
-exceptional_point_nh = ⟨$D_{\text{omega}}$;  Þ_ò; Ř_Ť; Φ_}; ƒ_ż; Ç_-; Γ_γ; ɢ_and; ⊙_3;        Ħ_£; 1:1;  Ω_2⟩
-complex_rg_fixed_point = ⟨$D_{\text{omega}}$; $T_{\text{openo}}$;  Ř_=;     Φ_}; ƒ_ì;  Ç_@; Γ_γ; ɢ_or;  ⊙_Æ; Ħ_£; n:m;  Ω_2⟩
-ising_3d             = ⟨Ð_ß; Þ_ò; Ř_ý;    Φ_}; ƒ_ì;  Ç_@; Γ_ʔ; ɢ_and; ⊙_ÿ;         Ħ_Ñ; n:m;  Ω_z⟩
+lee_yang_edge        = ⟨Ð_line;  Þ_ò; Ř_=;     Φ_}; ƒ^ì;  Ç^W;  Γ_γ; ɢ_and; ⊙_Æ; Ħ_£; n:m;  Ω_z⟩
+exceptional_point_nh = ⟨$D_{\text{omega}}$;  Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^-; Γ_γ; ɢ_and; ⊙_3;        Ħ_£; 1:1;  Ω_2⟩
+complex_rg_fixed_point = ⟨$D_{\text{omega}}$; $T_{\text{openo}}$;  Ř_=;     Φ_}; ƒ^ì;  Ç^@; Γ_γ; ɢ_or;  ⊙_Æ; Ħ_£; n:m;  Ω_2⟩
+ising_3d             = ⟨Ð_ß; Þ_ò; Ř_ý;    Φ_}; ƒ^ì;  Ç^@; Γ_ʔ; ɢ_and; ⊙_ÿ;         Ħ_Ñ; n:m;  Ω_z⟩
 ```
 
 **Note on $D$ encoding of `lee_yang_edge`**: The original encoding used $D_{\text{omega}}$, but Lean Axiom C requires $D_{\text{omega}} \leftrightarrow T_{\text{openo}}$. Since the Lee-Yang zero arc has $T_\text{bowtie}$ (not $T_{\text{openo}}$), $D_\text{line}$ is the correct assignment — the zero-arc lives on a one-complex-dimensional manifold in the $h$-plane. $D_{\text{omega}}$ is reserved for `complex_rg_fixed_point` where the fixed-point topology genuinely is imscriptive ($T_{\text{openo}}$ compliant).
@@ -5438,11 +5438,11 @@ Questions Q1–6 ask: which manifolds can carry which screen? In the grammar: wh
 
 The grammar frames this as a Frobenius condition on the decomposition: $\mu \circ \delta = \text{id}$ where $\mu$ = "assemble local geometric pieces into global manifold" and $\delta$ = "decompose manifold into geometric pieces." When this holds, each piece is its own geometric dual — self-consistent under the gluing/cutting operation.
 
-### §LXXVIII.3 — Ç_@ as Structural Necessity
+### §LXXVIII.3 — Ç^@ as Structural Necessity
 
 Perelman's Ricci flow with surgery: $\Phi_{\text{ctyogh}}$ at singularities (topology changes), $\Ω_z$-preserving surgery, $H_{\text{invscripta}}$ (irreversible flow). The $K_{\text{schwa}}$ primitive is not a limitation of technique — it is structural.
 
-**Why Ç_@ cannot be compressed:** Decoding an arbitrary imscriptive encoding (3-manifold fundamental group → geometric structure) requires integrating the full Ricci flow trajectory. This is not an NP-type obstruction (complexity class) but a kinetic-type obstruction: the trajectory through primitive space cannot be shortcut. Questions Q13–18 (algorithmic questions — can 3-manifold homeomorphism be decided efficiently?) receive a structural answer: no algorithm of kinetic character less than $K_{\text{schwa}}$ can decode the general imscriptive dictionary. Machine learning approaches will fail at geometric transition boundaries; quantum computation does not help (the bottleneck is $K$, not computational complexity class).
+**Why Ç^@ cannot be compressed:** Decoding an arbitrary imscriptive encoding (3-manifold fundamental group → geometric structure) requires integrating the full Ricci flow trajectory. This is not an NP-type obstruction (complexity class) but a kinetic-type obstruction: the trajectory through primitive space cannot be shortcut. Questions Q13–18 (algorithmic questions — can 3-manifold homeomorphism be decided efficiently?) receive a structural answer: no algorithm of kinetic character less than $K_{\text{schwa}}$ can decode the general imscriptive dictionary. Machine learning approaches will fail at geometric transition boundaries; quantum computation does not help (the bottleneck is $K$, not computational complexity class).
 
 ### §LXXVIII.4 — Why O_2, Not O_∞
 
@@ -5528,7 +5528,7 @@ Both are $O_2$. The 7-primitive shared core — imscriptive topology ($T_{\text{
 
 **Specific prediction:** no formulation of the geometrization theorem in terms of exact algebraic duality ($\mu \circ \delta = \text{id}$ globally on the 3-manifold category) will be found; the Frobenius condition holds piece-by-piece but not categorically. **Falsified if:** a global algebraic duality on the category of 3-manifolds is established, making geometrization a Taniyama-Shimura-type $O_\infty$ result.
 
-**P-265 — Ç_@ for general 3-manifold homeomorphism is irreducible; no Ç_W algorithm for general 3-manifold homeomorphism exists (Tier I)**
+**P-265 — Ç^@ for general 3-manifold homeomorphism is irreducible; no Ç^W algorithm for general 3-manifold homeomorphism exists (Tier I)**
 
 Chirality is structural, not a technique limitation. **Specific prediction:** any proposed polynomial-time homeomorphism test for general closed 3-manifolds will fail on families of manifolds near geometric transition boundaries — the boundaries where different Thurston geometries meet in the degeneration space. **Falsified if:** a polynomial-time general 3-manifold homeomorphism algorithm is established.
 
@@ -5550,7 +5550,7 @@ Degenerating hyperbolic structures approach boundary strata in moduli space that
 
 **P-270 — Finite covers as imscriptive decoding keys is a universal structural pattern: any domain exhibiting F-promotion will show that the "cover" (extension, code subspace, excited state) reveals structure encoded but inaccessible at the base level (Tier II)**
 
-Virtual fibering, Galois field extensions, and quantum error correction codes are the same structural type: ƒ_ð at base, F_ℏ at cover. **Specific prediction:** any new domain where "finite extension reveals hidden structure" will encode with F-promotion as the only primitive change, and the extended object will be structurally identical to the base object in all other primitives. **Falsified if:** a "cover reveals structure" result is found where the cover differs from the base in primitives other than F.
+Virtual fibering, Galois field extensions, and quantum error correction codes are the same structural type: ƒ^ð at base, F_ℏ at cover. **Specific prediction:** any new domain where "finite extension reveals hidden structure" will encode with F-promotion as the only primitive change, and the extended object will be structurally identical to the base object in all other primitives. **Falsified if:** a "cover reveals structure" result is found where the cover differs from the base in primitives other than F.
 
 ---
 
@@ -6095,7 +6095,7 @@ The retrosynthetic path peels $\Omega$ last (step 9) and $\Phi$ second-to-last (
 
 **Candidate mechanisms:** Center vortices, monopole condensation, the dual superconductor picture. These are not candidate mechanisms among many — they are the structural class of objects that can carry $\Omega_{Z_2}$ at $\Phi_{\text{ctyogh}}$ in a gauge theory. The grammar does not rank them, but it rules out any mechanism that lacks integer-valued topological structure.
 
-### §LXXIII.3 — Ç_@ as the Forced Bottleneck
+### §LXXIII.3 — Ç^@ as the Forced Bottleneck
 
 The $K_{\text{schwa}}$ primitive identifies non-perturbative depth — slow dynamics that must explore large regions of field-configuration space. This is the kinetic barrier (§34 taxonomy).
 
@@ -7092,7 +7092,7 @@ Old-growth temperate rainforest, pristine coral reef, and Amazon rainforest achi
 
 **§CLI.2 — Gate 2 Therapeutic Asymmetry (P-536)**
 
-**P-536** `[TIER I]` $d(\text{catatonic},\ \text{dissociative}) = 3.1623 > 1.5$. Catatonia ($K_{\text{teshlig}}$, frozen by motor-system order-lock) and dissociation ($K_{\text{lambda}}$, frozen by fragmented-self disorder) are structurally distinct Gate 2 failures requiring opposite interventions. Catatonia: release the order-lock ($K_{\text{teshlig}}\to K_{\text{schwa}}$, mechanism = benzodiazepines). Dissociation: recoordinate fragments ($K_{\text{lambda}}\to K_{\text{schwa}}$, mechanism = integration therapy). Applying the catatonia treatment to dissociation increases Þ_6 fragmentation and worsens the condition; applying the dissociation treatment to catatonia leaves the Ç_Ù intact. The grammar predicts treatment specificity at $d = 3.16$.
+**P-536** `[TIER I]` $d(\text{catatonic},\ \text{dissociative}) = 3.1623 > 1.5$. Catatonia ($K_{\text{teshlig}}$, frozen by motor-system order-lock) and dissociation ($K_{\text{lambda}}$, frozen by fragmented-self disorder) are structurally distinct Gate 2 failures requiring opposite interventions. Catatonia: release the order-lock ($K_{\text{teshlig}}\to K_{\text{schwa}}$, mechanism = benzodiazepines). Dissociation: recoordinate fragments ($K_{\text{lambda}}\to K_{\text{schwa}}$, mechanism = integration therapy). Applying the catatonia treatment to dissociation increases Þ_6 fragmentation and worsens the condition; applying the dissociation treatment to catatonia leaves the Ç^Ù intact. The grammar predicts treatment specificity at $d = 3.16$.
 
 **§CLI.3 — Samadhi–Psilocybin Structure (P-537)**
 

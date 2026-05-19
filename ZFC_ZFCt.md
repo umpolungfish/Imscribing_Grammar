@@ -24,7 +24,7 @@ The six divergent primitives correspond precisely to the six $ZFC_t$ promotion c
 | Þ | Þ₆ (network) | Þ_O (holographic) | HOLOBOUND | Topology becomes self-referential |
 | Ř | Ř_¯ (supervenience) | Ř_= (bidirectional) | LR_DUAL | Relations become mutually co-defining |
 | Φ | Φ_ɐ (asymmetric) | Φ_F (full symmetry) | PM_Z2 | $\mathbb{Z}_2$ Frobenius symmetry emerges |
-| ɢ | ɢ_^ (conjunctive) | ɢ_ˌ (sequential) | SEQAX | Composition acquires temporal order |
+| ɢ | ɢ^∧ (conjunctive) | ɢ^ˌ (sequential) | SEQAX | Composition acquires temporal order |
 | Ħ | Ħ_Ñ (memoryless) | Ħ_A (two-step) | TEMPD2 | Markov depth extends to order 2 |
 | Ω | Ω_Å (trivial) | Ω_z (integer winding) | ZWIND | Topological protection becomes non-trivial |
 
@@ -78,7 +78,7 @@ ZFC's relational mode is supervenience ($\text{Ř}_{\text{¯}}$): sets are built
 
 The most critical promotion. $ZFC$ is structurally asymmetric ($\text{Φ}_{\text{ɐ}}$) — there is no nontrivial symmetry mapping the system to itself. $ZFC_t$ achieves full $\mathbb{Z}_2$ Frobenius symmetry ($\text{Φ}_{\text{F}}$): there exists a bijection $f: X \to X$ such that $f(f(x)) = x$ for all $x$. This is exactly the condition $\mu \circ \delta = \text{id}$ that defines the Frobenius tier. In logical terms, the system can "reflect" — map any statement to its dual and back without loss. This is what enables self-modeling: the theory holds a lossless representation of its own representational apparatus.
 
-### 4.4 SEQAX: ɢ_^ → ɢ_ˌ
+### 4.4 SEQAX: ɢ^∧ → ɢ^ˌ
 
 ZFC's composition is conjunctive ($\text{ɢ}_{\text{^}}$): all axioms must hold simultaneously. $ZFC_t$ adopts sequential composition ($\text{ɢ}_{\text{ˌ}}$): axioms fire in order, and the output of one feeds the input of the next. This temporal ordering is essential for encoding proofs as *processes* rather than static truth conditions.
 

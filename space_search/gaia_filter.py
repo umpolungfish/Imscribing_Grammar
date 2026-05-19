@@ -106,7 +106,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
     Scoring:
       +1  F_compliant: pmra_error < 0.1 and pmdec_error < 0.1 mas/yr
       +2  Þ_6: spatially correlated proper motions (|r| > 0.3 with ≥5 neighbors)
-      +3  φ̂_ÿritical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
+      +3  ⊙_ÿritical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
       +4  Omega_candidate: RUWE > 1.4 + excess noise > 0.2 mas + high-DM region
       +1  D_temporal: ipd_gof_harmonic_amplitude > 0.1 (proxy for long-term drift signal)
 
@@ -144,7 +144,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
     excess_noise_sig = row.get("astrometric_excess_noise_sig", 0) or 0
     if excess_noise > 0 and excess_noise_sig > 2.0:
         score += 3
-        flags.append("φ̂_critical")
+        flags.append("⊙_critical")
 
     # OMEGA_Z2 CANDIDATE FILTER: high RUWE + structured noise + high DM region
     ruwe = row.get("ruwe", 1.0) or 1.0

@@ -1,6 +1,6 @@
 """
 Radial Composer — Hub-and-Spoke Tensor Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, φ̂_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
 
 Constructs systems where a central core (hub) couples radially to peripheral components.
 Models: central limit theorems, symmetry-breaking vortices, attention mechanisms.
@@ -9,7 +9,12 @@ import json
 from pathlib import Path
 from typing import List, Dict, Tuple
 
-from imscrbgrmr.imscribe_tool import syncon_tool
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from IG_inquiry import ToolDispatcher as _Dispatcher
+_d = _Dispatcher()
+def imscribe(tool_name: str, args: dict) -> dict:
+    return _d.dispatch(tool_name, args, 0)
 
 
 SCHEMA_PATH = Path(__file__).parent
@@ -57,19 +62,19 @@ def compose_primitive_radial(
         periph_entry = catalog[periph_name]
         periph_tuple = periph_entry.get("tuple", {})
         
-        # Compute coupling via syncon_tool
+        # Compute coupling via imscribe
         if coupling_type == "tensor":
-            coupling_result = syncon_tool(
+            coupling_result = imscribe(
                 "compute_tensor",
                 {"name_a": hub_name, "name_b": periph_name}
             )
         elif coupling_type == "meet":
-            coupling_result = syncon_tool(
+            coupling_result = imscribe(
                 "compute_meet",
                 {"name_a": hub_name, "name_b": periph_name}
             )
         elif coupling_type == "join":
-            coupling_result = syncon_tool(
+            coupling_result = imscribe(
                 "compute_join",
                 {"name_a": hub_name, "name_b": periph_name}
             )
@@ -94,11 +99,11 @@ def compose_primitive_radial(
         "Þ": composite.get("T", "Þ_6"),
         "Ř": composite.get("R", "Ř_="),
         "Φ": composite.get("Phi", "Φ_ɐ"),
-        "ƒ": composite.get("F", "ƒ_ì"),
-        "Ç": composite.get("K", "Ç_-"),
+        "ƒ": composite.get("F", "ƒ^ì"),
+        "Ç": composite.get("K", "Ç^-"),
         "Γ": composite.get("G", "Γ_γ"),
-        "ɢ": composite.get("Gamma", "ɢ_^"),
-        "φ̂": composite.get("Phi", "φ̂_ž"),
+        "ɢ": composite.get("Gamma", "ɢ^∧"),
+        "⊙": composite.get("Phi", "⊙_ž"),
         "Ħ": composite.get("H", "Ħ_Ñ"),
         "Σ": composite.get("S", "Σ_S"),
         "Ω": composite.get("Omega", "Ω_Å"),
@@ -116,7 +121,7 @@ def compose_primitive_radial(
     }
     
     # Verification (run if composite were actually imscribed)
-    result["verification"] = syncon_tool(
+    result["verification"] = imscribe(
         "ouroborics",
         {"name": comp_name}  # will fail until actually imscribed
     )

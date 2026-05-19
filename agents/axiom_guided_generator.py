@@ -72,7 +72,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     
     This agent ensures generated imscriptions satisfy all five composition axioms:
     
-    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ_ð
+    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ^ð
     **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ → no global propagation
     **Axiom 3 (Cooperative Induction):** Superlinear induction → G_ג reclassification
     **Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡
@@ -180,7 +180,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
             kinetic_character=kinetic_character,
             granularity=granularity,
             grammar=interaction_grammar,
-            criticality_phase=criticality_phase or Criticality.φ̂_ž,
+            criticality_phase=criticality_phase or Criticality.⊙_ž,
             protection=Protection.Ω_Å,
             stoichiometry=Stoichiometry.Σ_S,
             chirality=Chirality.Ħ_Ñ,
@@ -269,8 +269,8 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 </input>
 
 <axioms>
-**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ_ð.
-Falsified by: cyclic self-complementary motif with ƒ_ì or ξ_CP > 10.5 nats.
+**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ^ð.
+Falsified by: cyclic self-complementary motif with ƒ^ì or ξ_CP > 10.5 nats.
 
 **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ cannot propagate constraint globally.
 Falsified by: local specific imscription driving global assembly alone.
@@ -315,11 +315,11 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
 - **T_∈** — use only when ring topology is genuinely unspecified or irrelevant
 
 **T_□□ vs T_∪ vs T_⋈ — THREE-WAY DISTINCTION (critical):**
-- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; Ç_@/Ç_Ù default.
+- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; Ç^@/Ç^Ù default.
   Examples: cucurbiturils (CB[n]), cryptands, carceplexes, self-assembled metal-organic cages, COCs,
   Fujita-type Pd₁₂L₂₄ spheres. Keywords: "cage", "capsule", "encapsulat", "cucurbit", "cryptand",
   "carceplex", "carcerand".
-- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; Ç_- default.
+- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; Ç^- default.
   Examples: calix[4]arene, calix[6]arene, calix[4]pyrrole, calix[4]resorcinarene, pillar[n]arene,
   cyclotriveratrylene (CTV), corannulene, hemicarceplex, cavitand (when not capped).
   **Any imscription with "calix", "resorcinarene", "pillar[", "calixpyrrole", "bowl", or "upper/lower rim"
@@ -348,11 +348,11 @@ Assign each primitive using these valid values:
 - T (Topology): Þ_ò (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), Þ_6 (T_∈), Þ_6_hex (T_∈(hex)), Þ_6_mixed (T_∈(mixed)), Þ_6_interp (T_∈(×2)), Þ_6_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
 - R (Recognition): R_subset (COVALENT bond formation only), Ř_¯set (NON-COVALENT: H-bonds/coordination/host-guest), Ř_Ť (catalytic), R_mechanical
 - P (Polarity): P_plus, P_minus, Φ_}}, Φ_F_pseudo, P_directional
-- F (Fidelity): ƒ_ż, ƒ_ð, ƒ_ì
-- K (Kinetics): Ç_-, Ç_W, Ç_@, Ç_Ù
+- F (Fidelity): ƒ^ż, ƒ^ð, ƒ^ì
+- K (Kinetics): Ç^-, Ç^W, Ç^@, Ç^Ù
 - G (Granularity): Γ_β, Γ_γ, Γ_ʔ
-- Γ (Grammar): ɢ_^(SPECIFIC|SELECTIVE|BROAD), ɢ_˝(...), ɢ_ˌ(...)
-- Φ (Criticality): φ̂_ž, φ̂_ÿ, φ̂_Ţ (default: φ̂_ž)
+- Γ (Grammar): ɢ^∧(SPECIFIC|SELECTIVE|BROAD), ɢ^˝(...), ɢ^ˌ(...)
+- Φ (Criticality): ⊙_ž, ⊙_ÿ, ⊙_Ţ (default: ⊙_ž)
 - S (Stoichiometry): "1:1" for homodimeric/symmetric, "n:m" for asymmetric, null if indeterminate
 
 For **EACH** axiom, explicitly state whether it applies and how it is satisfied.
@@ -444,10 +444,10 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "Ř_superset")),
             polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
-            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç_W")),
+            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),
             granularity=Granularity.from_symbol(data.get("granularity", "Γ_β")),
-            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ_^(SELECTIVE)")),
-            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "φ̂_ž"),
+            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ^∧(SELECTIVE)")),
+            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "⊙_ž"),
             protection=Protection.from_symbol(data.get("protection") or "Ω_Å"),
             stoichiometry=Stoichiometry.from_symbol(data.get("stoichiometry") or "n:m"),
             chirality=Chirality.from_symbol(data.get("chirality") or "Ħ_Ñ"),
@@ -491,12 +491,12 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 imscription_data, reasoning, confidence = self._parse_llm_response(raw_response)
 
                 # Honor explicit criticality phase in description.
-                # If the description explicitly names φ̂_ÿ, override the LLM's
-                # conservative default of φ̂_ž so the axiom validator can test it.
+                # If the description explicitly names ⊙_ÿ, override the LLM's
+                # conservative default of ⊙_ž so the axiom validator can test it.
                 import re as _re
                 _phi_match = _re.search(r'\bPhi_(c|sub|super)\b', description)
-                if _phi_match and _phi_match.group(0) == "φ̂_ÿ":
-                    imscription_data["criticality_phase"] = "φ̂_ÿ"
+                if _phi_match and _phi_match.group(0) == "⊙_ÿ":
+                    imscription_data["criticality_phase"] = "⊙_ÿ"
 
                 # Create imscription
                 imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)

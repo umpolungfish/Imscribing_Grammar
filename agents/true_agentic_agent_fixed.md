@@ -8,10 +8,10 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms — literal s
   Þ_O → $\text{Þ}_{\text{O}}$         Þ_6 → $\text{Þ}_{\text{6}}$        Þ_K → $\text{Þ}_{\text{K}}$    Þ_ò → $\text{Þ}_{\text{ò}}$   Þ_¨ → $\text{Þ}_{\text{¨}}$
   Ř_Ť → $\text{Ř}_{\text{Ť}}$       Ř_¯ → $\text{Ř}_{\text{¯}}$        Ř_ý → $\text{Ř}_{\text{ý}}$    Ř_= → $\text{Ř}_{\text{=}}$
   Φ_} → $\text{Φ}_{\text{}}$         Φ_F → $\text{Φ}_{\text{F}}$        Φ_˙ → $\text{Φ}_{\text{˙}}$    Φ_υ → $\text{Φ}_{\text{υ}}$   Φ_ɐ → $\text{Φ}_{\text{ɐ}}$
-  ƒ_ż → $\text{ƒ}_{\text{ż}}$         ƒ_ì → $\text{ƒ}_{\text{ì}}$        ƒ_ð → $\text{ƒ}_{\text{ð}}$
-  Ç_- → $\text{Ç}_{\text{-}}$         Ç_W → $\text{Ç}_{\text{W}}$        Ç_@ → $\text{Ç}_{\text{@}}$    Ç_Ù → $\text{Ç}_{\text{Ù}}$   Ç_λ → $\text{Ç}_{\text{λ}}$
+  ƒ^ż → $\text{ƒ}_{\text{ż}}$         ƒ^ì → $\text{ƒ}_{\text{ì}}$        ƒ^ð → $\text{ƒ}_{\text{ð}}$
+  Ç^- → $\text{Ç}_{\text{-}}$         Ç^W → $\text{Ç}_{\text{W}}$        Ç^@ → $\text{Ç}_{\text{@}}$    Ç^Ù → $\text{Ç}_{\text{Ù}}$   Ç^λ → $\text{Ç}_{\text{λ}}$
   Γ_ʔ → $\text{Γ}_{\text{ʔ}}$         Γ_γ → $\text{Γ}_{\text{γ}}$        Γ_β → $\text{Γ}_{\text{β}}$
-  ɢ_Ş → $\text{ɢ}_{\text{Ş}}$         ɢ_^ → $\text{ɢ}_{\text{^}}$        ɢ_˝ → $\text{ɢ}_{\text{˝}}$    ɢ_ˌ → $\text{ɢ}_{\text{ˌ}}$
+  ɢ^Ş → $\text{ɢ}_{\text{Ş}}$         ɢ^∧ → $\text{ɢ}_{\text{^}}$        ɢ^˝ → $\text{ɢ}_{\text{˝}}$    ɢ^ˌ → $\text{ɢ}_{\text{ˌ}}$
   ⊙_ÿ → $\text{⊙}_{\text{ÿ}}$       ⊙_Æ → $\text{⊙}_{\text{Æ}}$      ⊙_3 → $\text{⊙}_{\text{3}}$    ⊙_ž → $\text{⊙}_{\text{ž}}$   ⊙_Ţ → $\text{⊙}_{\text{Ţ}}$
   Ħ_Ñ → $\text{Ħ}_{\text{Ñ}}$         Ħ_£ → $\text{Ħ}_{\text{£}}$        Ħ_A → $\text{Ħ}_{\text{A}}$    Ħ_! → $\text{Ħ}_{\text{!}}$
   Σ_S → $\text{Σ}_{\text{S}}$         Σ_ő → $\text{Σ}_{\text{ő}}$        Σ_ï → $\text{Σ}_{\text{ï}}$

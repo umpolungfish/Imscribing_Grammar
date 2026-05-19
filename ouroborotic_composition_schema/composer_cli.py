@@ -66,7 +66,7 @@ def load_imscription(name: str) -> Imscription:
                 'K': 'Ç',
                 'G': 'Γ',
                 'Gamma': 'ɢ',
-                'Phi': 'φ̂',
+                'Phi': '⊙',
                 'H': 'Ħ',
                 'S': 'Σ',
                 'Omega': 'Ω'
@@ -79,21 +79,21 @@ def load_imscription(name: str) -> Imscription:
 
 def compute_ouroboricity(t: dict) -> str:
     """Compute ouroboricity tier from a tuple dict using encoded Unicode primitive strings."""
-    phi_val = t.get("φ̂", "")
+    phi_val = t.get("⊙", "")
     p_val = t.get("Φ", "")
     omega_val = t.get("Ω", "")
     d_val = t.get("Ð", "")
     
-    # O_inf: Φ_F AND φ̂_ÿ (critical self-modeling)
-    if p_val == "Φ_F" and phi_val == "φ̂_ÿ":
+    # O_inf: Φ_F AND ⊙_ÿ (critical self-modeling)
+    if p_val == "Φ_F" and phi_val == "⊙_ÿ":
         return "O_inf"
     
-    # O_2: φ̂_ÿ + non-Frobenius + non-trivial winding + D = Ð_ω
-    if phi_val == "φ̂_ÿ" and p_val != "Φ_F" and omega_val != "Ω_Å" and d_val == "Ð_ω":
+    # O_2: ⊙_ÿ + non-Frobenius + non-trivial winding + D = Ð_ω
+    if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val != "Ω_Å" and d_val == "Ð_ω":
         return "O_2"
     
-    # O_1: φ̂_ÿ + non-Frobenius + trivial winding (Ω_Å)
-    if phi_val == "φ̂_ÿ" and p_val != "Φ_F" and omega_val == "Ω_Å":
+    # O_1: ⊙_ÿ + non-Frobenius + trivial winding (Ω_Å)
+    if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val == "Ω_Å":
         return "O_1"
     
     # O_0: else

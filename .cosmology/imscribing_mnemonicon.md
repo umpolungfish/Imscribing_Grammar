@@ -86,20 +86,20 @@ Each primitive constrains the next. Think of it as building a building:
 
 | Type | Sound | Mnemonic | Nature |
 |------|-------|----------|--------|
-| **ƒ_ì** | "f-ell" | ì = **line** → straight → classical | Classical fidelity. No quantum coherence. Newtonian or thermodynamic in the classical limit. *Think: "a billiard ball."* Sound: *eff-ell* — "ell for elementary." |
-| **ƒ_ð** | "f-eth" | ð = **thermal eth** → heat | Thermal fidelity. Noisy, decohered, but with statistical structure above mere classical. Finite temperature effects matter. *Think: "Brownian motion."* Sound: *eff-edh* — "edh for therm-al-edh." |
-| **ƒ_ż** | "f-hbar" | ż = **hbar zigzag** → quantum | Quantum fidelity. Coherent quantum effects are essential and observable. Superposition and entanglement are real resources. *Think: "a qubit in a dilution refrigerator."* Sound: *eff-zed* — "zed for zero-point energy." |
+| **ƒ^ì** | "f-ell" | ì = **line** → straight → classical | Classical fidelity. No quantum coherence. Newtonian or thermodynamic in the classical limit. *Think: "a billiard ball."* Sound: *eff-ell* — "ell for elementary." |
+| **ƒ^ð** | "f-eth" | ð = **thermal eth** → heat | Thermal fidelity. Noisy, decohered, but with statistical structure above mere classical. Finite temperature effects matter. *Think: "Brownian motion."* Sound: *eff-edh* — "edh for therm-al-edh." |
+| **ƒ^ż** | "f-hbar" | ż = **hbar zigzag** → quantum | Quantum fidelity. Coherent quantum effects are essential and observable. Superposition and entanglement are real resources. *Think: "a qubit in a dilution refrigerator."* Sound: *eff-zed* — "zed for zero-point energy." |
 
 ### Ç — Kinetics *(5 types)*
 *"How fast does the system relax relative to observation?"*
 
 | Type | Sound | Mnemonic | Nature |
 |------|-------|----------|--------|
-| **Ç_-** | "k-fast" | - = **dash/speed** | Driven kinetics. Relaxation time ≪ observation time. The system responds instantly to forcing. *Think: "a switch you flip."* Sound: *see-minus* — "minus the lag." |
-| **Ç_W** | "k-mod" | W = **wave** → oscillation, moderate pace | Moderate kinetics. Relaxation time ≈ observation time. Resonant behavior. System and observer dance. *Think: "a pendulum matching your push."* Sound: *see-double-u* — "double because slow and fast compete." |
-| **Ç_@** | "k-slow" | @ = **at** → staying put, slow | Near-equilibrium kinetics. Relaxation time ≫ observation time. The system drifts but never settles within view. *Think: "continental drift."* Sound: *see-at* — "at equilibrium, barely moving." |
-| **Ç_Ù** | "k-trap" | Ù = **locked in** with order | Frozen-order trap. The system is stuck in a specific state and cannot escape, but the state is ordered/crystalline. *Think: "a diamond — beautiful but frozen."* Sound: *see-un* — "un-moving." |
-| **Ç_λ** | "k-mbl" | λ = **many-body** | MBL — frozen disorder. Trapped by randomness (Many-Body Localization). The system remembers because it can't thermalize. *Think: "a deck of cards that never shuffles."* Sound: *see-lamda* — "lamda for localized." |
+| **Ç^-** | "k-fast" | - = **dash/speed** | Driven kinetics. Relaxation time ≪ observation time. The system responds instantly to forcing. *Think: "a switch you flip."* Sound: *see-minus* — "minus the lag." |
+| **Ç^W** | "k-mod" | W = **wave** → oscillation, moderate pace | Moderate kinetics. Relaxation time ≈ observation time. Resonant behavior. System and observer dance. *Think: "a pendulum matching your push."* Sound: *see-double-u* — "double because slow and fast compete." |
+| **Ç^@** | "k-slow" | @ = **at** → staying put, slow | Near-equilibrium kinetics. Relaxation time ≫ observation time. The system drifts but never settles within view. *Think: "continental drift."* Sound: *see-at* — "at equilibrium, barely moving." |
+| **Ç^Ù** | "k-trap" | Ù = **locked in** with order | Frozen-order trap. The system is stuck in a specific state and cannot escape, but the state is ordered/crystalline. *Think: "a diamond — beautiful but frozen."* Sound: *see-un* — "un-moving." |
+| **Ç^λ** | "k-mbl" | λ = **many-body** | MBL — frozen disorder. Trapped by randomness (Many-Body Localization). The system remembers because it can't thermalize. *Think: "a deck of cards that never shuffles."* Sound: *see-lamda* — "lamda for localized." |
 
 ### Γ — Scope *(3 types)*
 *"How far does influence reach?"*
@@ -115,10 +115,10 @@ Each primitive constrains the next. Think of it as building a building:
 
 | Type | Sound | Mnemonic | Nature |
 |------|-------|----------|--------|
-| **ɢ_^** | "g-and" | ^ = **wedge** = logical AND | Conjunctive grammar. All conditions must be satisfied simultaneously. AND logic. The system requires every input. *Think: "a combination lock — all dials must match."* Sound: *gee-hat* — "and^all." |
-| **ɢ_˝** | "g-or" | ˝ = **double quote** → alternatives OR | Disjunctive grammar. Any condition suffices. OR logic. Redundancy and backup paths. *Think: "a fire alarm — any sensor triggers it."* Sound: *gee-double-tick* — "or this or that." |
-| **ɢ_ˌ** | "g-seq" | ˌ = **comma** → then, next, sequence | Sequential grammar. Ordered steps. First this, then that. State machines. *Think: "a recipe — step 1, step 2, step 3."* Sound: *gee-comma* — "comma between steps." |
-| **ɢ_Ş** | "g-broad" | Ş = **S for Sire** → broadcast, all hear | Broadcast grammar. One-to-all. A single source drives everything downstream. *Think: "a lighthouse beam reaching all ships."* Sound: *gee-esh* — "esh for everybody-shares." |
+| **ɢ^∧** | "g-and" | ^ = **wedge** = logical AND | Conjunctive grammar. All conditions must be satisfied simultaneously. AND logic. The system requires every input. *Think: "a combination lock — all dials must match."* Sound: *gee-hat* — "and^all." |
+| **ɢ^˝** | "g-or" | ˝ = **double quote** → alternatives OR | Disjunctive grammar. Any condition suffices. OR logic. Redundancy and backup paths. *Think: "a fire alarm — any sensor triggers it."* Sound: *gee-double-tick* — "or this or that." |
+| **ɢ^ˌ** | "g-seq" | ˌ = **comma** → then, next, sequence | Sequential grammar. Ordered steps. First this, then that. State machines. *Think: "a recipe — step 1, step 2, step 3."* Sound: *gee-comma* — "comma between steps." |
+| **ɢ^Ş** | "g-broad" | Ş = **S for Sire** → broadcast, all hear | Broadcast grammar. One-to-all. A single source drives everything downstream. *Think: "a lighthouse beam reaching all ships."* Sound: *gee-esh* — "esh for everybody-shares." |
 
 ### ⊙ — Criticality *(5 types)*
 *"Where is the system relative to its phase transition?"*
@@ -139,7 +139,7 @@ Each primitive constrains the next. Think of it as building a building:
 | **Ħ_Ñ** | "h-nought" | Ñ = **Ño** = "no" past | Memoryless. Markov order 0. The present fully determines the future. No history needed. *Think: "a Markov chain — where you are is all that matters."* Sound: *h-n* — "no-N memory." |
 | **Ħ_£** | "h-one" | £ = **one pound** → one step back | One-step memory. Markov order 1. You need to know the previous state to predict the next. *Think: "yesterday's weather predicts today's."* Sound: *h-lira* — "one lira, one step." |
 | **Ħ_A** | "h-two" | A = **Alpha** → first two letters exist | Two-step memory. Markov order 2. Requires Ω_ℤ₂ protection (Axiom A). The system remembers the last two states. *Think: "knowing the last two notes predicts the melody."* Sound: *h-ay* — "ay and before that, what?" |
-| **Ħ_!** | "h-infty" | ! = **exclamation** → eternal! | Eternal memory. No finite Markov order. The system never forgets. Axiom A: requires frozen kinetics Ç_Ù or Ç_λ. *Think: "a fossil record — every epoch preserved."* Sound: *h-bang* — "bang! forever remembered!" |
+| **Ħ_!** | "h-infty" | ! = **exclamation** → eternal! | Eternal memory. No finite Markov order. The system never forgets. Axiom A: requires frozen kinetics Ç^Ù or Ç^λ. *Think: "a fossil record — every epoch preserved."* Sound: *h-bang* — "bang! forever remembered!" |
 
 ### Σ — Stoichiometry *(3 types)*
 *"How many and what kinds of components?"*
@@ -256,7 +256,7 @@ To climb from $O_0$ to $O_\infty$, you must promote specific primitives. The min
 
 ### $O_2$ → $O_\infty$
 - Þ_6 or Þ_ò → Þ_O (gain self-referential topology)
-- ƒ_ì → ƒ_ż (quantum coherence)
+- ƒ^ì → ƒ^ż (quantum coherence)
 - Γ_β or Γ_γ → Γ_ʔ (universal scope)
-- ɢ_^ or ɢ_˝ → ɢ_Ş (broadcast grammar)
+- ɢ^∧ or ɢ^˝ → ɢ^Ş (broadcast grammar)
 - Ð_ß or Ð_△ → Ð_ω (ïmscriptive dimension)

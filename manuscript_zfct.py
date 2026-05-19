@@ -9,7 +9,7 @@ using zfct_navigator.compose_formula + render_tokens.
 
 Per-element primitive derivation
 ─────────────────────────────────
-  Fixed (corpus-level):  Ð, Ř, ƒ, Ç, Γ, φ̂, Ω, Φ (whole-manuscript)
+  Fixed (corpus-level):  Ð, Ř, ƒ, Ç, Γ, ⊙, Ω, Φ (whole-manuscript)
   Variable (element-level):
     Þ  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     Φ  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
@@ -48,23 +48,23 @@ from zfct_navigator import (
 
 # ── corpus base tuples ────────────────────────────────────────────────────────
 # These are the whole-manuscript imscriptions in zfct_navigator notation.
-# Note: zfct_navigator uses "φ̂" for criticality (exOS Φ = IG ⊙).
+# Note: zfct_navigator uses "⊙" for criticality (exOS Φ = IG ⊙).
 
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
         'Ð': 'Ð_ω', 'Þ': 'Þ_O', 'Ř': 'Ř_=',  'Φ': 'Φ_}',
-        'ƒ': 'ƒ_ì', 'Ç': 'Ç_Ù', 'Γ': 'Γ_ʔ',  'ɢ': 'ɢ_Ş',
-        'φ̂': 'φ̂_ÿ', 'Ħ': 'Ħ_!', 'Σ': 'Σ_S',  'Ω': 'Ω_z',
+        'ƒ': 'ƒ^ì', 'Ç': 'Ç^Ù', 'Γ': 'Γ_ʔ',  'ɢ': 'ɢ^Ş',
+        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_!', 'Σ': 'Σ_S',  'Ω': 'Ω_z',
     },
     'rohonc': {
         'Ð': 'Ð_C', 'Þ': 'Þ_¨', 'Ř': 'Ř_Ť', 'Φ': 'Φ_}',
-        'ƒ': 'ƒ_ì', 'Ç': 'Ç_@', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ_ˌ',
-        'φ̂': 'φ̂_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
+        'ƒ': 'ƒ^ì', 'Ç': 'Ç^@', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ^ˌ',
+        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
     },
     'linear_a': {
         'Ð': 'Ð_C', 'Þ': 'Þ_¨', 'Ř': 'Ř_Ť', 'Φ': 'Φ_}',
-        'ƒ': 'ƒ_ż', 'Ç': 'Ç_W', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ_ˌ',
-        'φ̂': 'φ̂_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
+        'ƒ': 'ƒ^ż', 'Ç': 'Ç^W', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ^ˌ',
+        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
     },
 }
 
@@ -128,11 +128,11 @@ def _derive_ɢ(counts: Counter, corpus: str) -> str:
     net_split = counts['FSPLIT'] - counts['FFUSE']
 
     if vinit > 0.20:
-        return 'ɢ_^'                   # conjunctive / initiating
+        return 'ɢ^∧'                   # conjunctive / initiating
     if net_split > max(5, 0.10 * total):
-        return 'ɢ_Ş'                   # broadcast (more splits than fuses)
+        return 'ɢ^Ş'                   # broadcast (more splits than fuses)
     if clink > 0.15:
-        return 'ɢ_ˌ'                   # sequential composition
+        return 'ɢ^ˌ'                   # sequential composition
     return CORPUS_BASE[corpus]['ɢ']    # corpus default
 
 

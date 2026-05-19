@@ -118,7 +118,7 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 
 ```
 compute_meet(riemann_zeta_function, completed_xi_function)
-→ result: ⟨D=D_∞; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç_W; G=Γ_ʔ; Γ=Γ_∧; Φ=Φ_c^ℂ; H=H_0; S=Σ_ő; Ω=Ω_ℤ⟩
+→ result: ⟨D=D_∞; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç^W; G=Γ_ʔ; Γ=Γ_∧; Φ=Φ_c^ℂ; H=H_0; S=Σ_ő; Ω=Ω_ℤ⟩
 → shared primitives: F, G, Φ, Ω (4)
 → resolved conflicts: D, T, R, P, K, Γ, H, S (8 conservative resolutions)
 ```
@@ -131,7 +131,7 @@ compute_meet(riemann_zeta_function, completed_xi_function)
 
 ```
 compute_tensor(riemann_zeta_function, completed_xi_function)
-→ result: ⟨D=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç_@; G=Γ_ʔ; Γ=Γ_seq; Φ=Φ_c^ℂ; H=H_2; S=Σ_ï; Ω=Ω_ℤ⟩
+→ result: ⟨D=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç^@; G=Γ_ʔ; Γ=Γ_seq; Φ=Φ_c^ℂ; H=H_2; S=Σ_ï; Ω=Ω_ℤ⟩
 → bottleneck primitive: P ($P_{\text{upsilon}}$ dominates $P_{\text{doublebarpipe}}$)
 → union/promote primitives: D, T, R, K, Γ, H, S (7)
 ```

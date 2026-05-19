@@ -152,18 +152,18 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     ("P", "Φ_}",  "[[? ts]]",     "/ʔts/ Frobenius glottal + affricate",  None),
 
     # F — Fidelity
-    ("F", "ƒ_ì",  "[[K]]",        "/ɬ/ voiceless lateral fricative",      None),
-    ("F", "ƒ_ð",  "[[D]]",        "/ð/ voiced dental fricative",          None),
-    ("F", "ƒ_ż",  "[[?]]",        "/ʔ/ glottal stop",                     None),
+    ("F", "ƒ^ì",  "[[K]]",        "/ɬ/ voiceless lateral fricative",      None),
+    ("F", "ƒ^ð",  "[[D]]",        "/ð/ voiced dental fricative",          None),
+    ("F", "ƒ^ż",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # K — Kinetics
     # /ɣ/ voiced velar fricative — Spanish voice has [[Q]] = /ɣ/
-    ("K", "Ç_-",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
+    ("K", "Ç^-",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
     # /ɯ/ close back unrounded — Korean voice [[u-]] = /ɯ/
-    ("K", "Ç_W",  "[[u-]]",       "/ɯ/ close back unrounded",             "ko"),
-    ("K", "Ç_@",  "[[@]]",        "/ə/ mid central vowel",                None),
-    ("K", "Ç_Ù",  "[[tS]]",       "/tʃ/ palato-alveolar affricate",       None),
-    ("K", "Ç_λ",  "[[l]]",        "/l/ alveolar lateral approximant",     None),
+    ("K", "Ç^W",  "[[u-]]",       "/ɯ/ close back unrounded",             "ko"),
+    ("K", "Ç^@",  "[[@]]",        "/ə/ mid central vowel",                None),
+    ("K", "Ç^Ù",  "[[tS]]",       "/tʃ/ palato-alveolar affricate",       None),
+    ("K", "Ç^λ",  "[[l]]",        "/l/ alveolar lateral approximant",     None),
 
     # G — Scope
     ("G", "Γ_β",  "[[B]]",        "/β/ voiced bilabial fricative",        None),
@@ -172,17 +172,17 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     ("G", "Γ_ʔ",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # Gamma — Interaction grammar
-    ("Gamma", "ɢ_^",  "[[k]]",    "/k/ velar stop",                       None),
-    ("Gamma", "ɢ_˝",  "[[r r]]",  "/r r/ alternating rhotic",             None),
-    ("Gamma", "ɢ_ˌ",  "[[@]]",    "/ə/ secondary stress schwa",           None),
-    ("Gamma", "ɢ_Ş",  "[[a:]]",   "/aː/ open broadcast vowel",            None),
+    ("Gamma", "ɢ^∧",  "[[k]]",    "/k/ velar stop",                       None),
+    ("Gamma", "ɢ^˝",  "[[r r]]",  "/r r/ alternating rhotic",             None),
+    ("Gamma", "ɢ^ˌ",  "[[@]]",    "/ə/ secondary stress schwa",           None),
+    ("Gamma", "ɢ^Ş",  "[[a:]]",   "/aː/ open broadcast vowel",            None),
 
     # Phi — Criticality
-    ("Phi", "φ̂_ž",  "[[j]]",     "/j/ palatalization",                   None),
-    ("Phi", "φ̂_ÿ",  "[[c]]",     "/c/ voiceless palatal stop",           None),
-    ("Phi", "φ̂_Æ",  "[[@]]",     "/ɞ/ close-mid central (approx /ə/)",   None),
-    ("Phi", "φ̂_3",  "[[E]]",     "/ɛ/ open-mid front unrounded",         None),
-    ("Phi", "φ̂_Ţ",  "[[a:]]",    "/aː/ open vowel (supercritical)",      None),
+    ("Phi", "⊙_ž",  "[[j]]",     "/j/ palatalization",                   None),
+    ("Phi", "⊙_ÿ",  "[[c]]",     "/c/ voiceless palatal stop",           None),
+    ("Phi", "⊙_Æ",  "[[@]]",     "/ɞ/ close-mid central (approx /ə/)",   None),
+    ("Phi", "⊙_3",  "[[E]]",     "/ɛ/ open-mid front unrounded",         None),
+    ("Phi", "⊙_Ţ",  "[[a:]]",    "/aː/ open vowel (supercritical)",      None),
 
     # H — Chirality
     ("H", "Ħ_Ñ",  "[[o]]",        "/o/ close-mid back rounded",           None),

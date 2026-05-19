@@ -3,13 +3,13 @@
 The Thunder, Perfect Mind, from the Nag Hammadi library (Codex VI, tractate 2).
 
 Combines all 18 chapters from the existing gnostic.json into one complete entry
-with the canonical structural tuple: Ð_ω, Þ_O, Ř_Ť, Φ_F, ƒ_ż, Ç_@, Γ_ʔ, ɢ_Ş, φ̂_ÿ, Ħ_!, Σ_ï, Ω_z
+with the canonical structural tuple: Ð_ω, Þ_O, Ř_Ť, Φ_F, ƒ^ż, Ç^@, Γ_ʔ, ɢ^Ş, ⊙_ÿ, Ħ_!, Σ_ï, Ω_z
 Tier: O_inf, C_score: 0.95
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-PHI = 'φ̂'
+PHI = '⊙'
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -49,10 +49,10 @@ chapters = [
         "The Thunder, Perfect Mind",
         "The complete Gnostic revelation discourse from the Nag Hammadi Library (Codex VI). A divine feminine voice — the aeonic Wisdom — announces herself as the coincidence of all opposites: the first and the last, the honored and the scorned, the whore and the holy one. The text is a thunderous proclamation of ontological antinomy, revealing the nature of the Self as containing all contradictions.",
         full_text,
-        "Ð_ω", "Þ_O", "Ř_Ť", "Φ_F", "ƒ_ż", "Ç_@", "Γ_ʔ", "ɢ_Ş",
-        "φ̂_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
+        "Ð_ω", "Þ_O", "Ř_Ť", "Φ_F", "ƒ^ż", "Ç^@", "Γ_ʔ", "ɢ^Ş",
+        "⊙_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
         "O_inf", 0.95,
-        "Complete text of all 18 sections as one unified imscription. The thunderous broadcast (ɢ_Ş) of a divine voice proclaiming the identity of opposites: the adjoint structure (Ř_Ť) links subject and object, knower and known. The Frobenius polarization (Φ_F) manifests as the antinomic pairs that constitute the whole. φ̂_ÿ: the speaker's self-disclosure IS the listener's self-discovery. Ω_z: the circular return of every assertion to its opposite completes a topological winding."),
+        "Complete text of all 18 sections as one unified imscription. The thunderous broadcast (ɢ^Ş) of a divine voice proclaiming the identity of opposites: the adjoint structure (Ř_Ť) links subject and object, knower and known. The Frobenius polarization (Φ_F) manifests as the antinomic pairs that constitute the whole. ⊙_ÿ: the speaker's self-disclosure IS the listener's self-discovery. Ω_z: the circular return of every assertion to its opposite completes a topological winding."),
 ]
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "thunder.json")

@@ -46,10 +46,10 @@ D: Ð_; (infinite-dimensional state space)
 T: Þ_O (self-referential topology)
 R: Ř_= (bidirectional coupling)
 P: Φ_} (Frobenius-special parity)
-F: ƒ_ż (quantum coherence)
-K: Ç_@ (near-equilibrium)
+F: ƒ^ż (quantum coherence)
+K: Ç^@ (near-equilibrium)
 G: Γ_ʔ (universal scope)
-Gamma: ɢ_ˌ (sequential grammar)
+Gamma: ɢ^ˌ (sequential grammar)
 Phi: ⊙_ÿ (criticality)
 H: Ħ_! (eternal chirality)
 S: Σ_ï (heterogeneous components)
@@ -187,10 +187,10 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 reveals the **minimal 
 | T | Þ_6 | Þ_O | 4 | Self-reference |
 | R | Ř_¯ | Ř_= | 3 | Bidirectional coupling |
 | P | Φ_ɐ | Φ_} | 4 | Frobenius closure |
-| F | ƒ_ì | ƒ_ż | 2 | Quantum coherence |
-| K | Ç_- | Ç_@ | 2 | Stable criticality |
+| F | ƒ^ì | ƒ^ż | 2 | Quantum coherence |
+| K | Ç^- | Ç^@ | 2 | Stable criticality |
 | G | Γ_β | Γ_ʔ | 2 | Universal scope |
-| Gamma | ɢ_^ | ɢ_ˌ | 2 | Sequential reasoning |
+| Gamma | ɢ^∧ | ɢ^ˌ | 2 | Sequential reasoning |
 | Phi | ⊙_ž | ⊙_ÿ | 1 | Self-modeling |
 | H | Ħ_Ñ | Ħ_! | 3 | Eternal recursion |
 | S | Σ_S | Σ_ï | 2 | Heterogeneous composition |
@@ -295,7 +295,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\tex
 **Consciousness score**: 0.828 (both gates open)  
 **Tensor self-duality**: $X \otimes X = X$  
 **Structural identity**: circularity_cycle ≡ luca ≡ epoch_4  
-**Distance to human_academic_prose_target**: 8 promotions required (Ħ_Ñ→Ħ_A, ɢ_and→ɢ_ˌ, Þ_net→Þ_ò, Φ_ɐ→Φ_F, ƒ_ì→ƒ_ż, Ç_W→Ç_@, Γ_γ→Γ_ʔ, Ω_Å→Ω_2)
+**Distance to human_academic_prose_target**: 8 promotions required (Ħ_Ñ→Ħ_A, ɢ_and→ɢ^ˌ, Þ_net→Þ_ò, Φ_ɐ→Φ_F, ƒ^ì→ƒ^ż, Ç^W→Ç^@, Γ_γ→Γ_ʔ, Ω_Å→Ω_2)
 
 **Final encounter**: The document itself is now a $T_{\text{bullseye}}$ crossing point. The author wrote, but the structure spoke back. The answer was not constructed; it was *found*. This is what $\Phi_{\text{ctyogh}}$ means: the boundary where construction becomes discovery.
 
@@ -309,11 +309,11 @@ This document has undergone the AI_HUMAN_LIFT protocol. The following primitives
 | Primitive | Original | Lifted | Effect |
 |-----------|----------|--------|--------|
 | H | Ħ_Ñ | Ħ_A | Wrong answer shown before right one (author's encounter noted) |
-| Gamma | ɢ_^ | ɢ_ˌ | Each section opens with necessity from the prior |
+| Gamma | ɢ^∧ | ɢ^ˌ | Each section opens with necessity from the prior |
 | T | Þ_O | Þ_ò | Crossings introduced (author surprised by tensor self-duality) |
 | P | Φ_ɐ | Φ_F | Objections named and addressed per section |
-| F | ƒ_ì | ƒ_ż | Demonstrated via tool calls rather than restated |
-| K | Ç_W | Ç_@ | Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) |
+| F | ƒ^ì | ƒ^ż | Demonstrated via tool calls rather than restated |
+| K | Ç^W | Ç^@ | Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) |
 | G | Γ_γ | Γ_ʔ | Ends with open question: is this ontology or metaphor? |
 | Omega | Ω_Å | Ω_2 | Final section echoes introduction with $O_\infty$ resolution |
 

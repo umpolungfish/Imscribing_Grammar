@@ -85,8 +85,8 @@ The grammar inhabits the relational plane. Topics is the formal statement of the
 **S.1** — QCD primitive encoding:
 
 ```
-QCD = ⟨Ð_ß; Þ_ò; Ř_superset; Φ_}; ƒ_ż; Ç_W;
-        Γ_ʔ; ɢ_and; φ̂_ÿ; Ħ_Ñ; 1:1; Ω_z⟩
+QCD = ⟨Ð_ß; Þ_ò; Ř_superset; Φ_}; ƒ^ż; Ç^W;
+        Γ_ʔ; ɢ_and; ⊙_ÿ; Ħ_Ñ; 1:1; Ω_z⟩
 ```
 
 This encoding is an empirical claim about which primitive values correctly describe the constraint structure of QCD. It is falsifiable: if QCD exhibited massless colored states (Þ_perp propagation), the Þ_ò encoding would be wrong.
@@ -97,7 +97,7 @@ This encoding is an empirical claim about which primitive values correctly descr
 
 **S.4** — Ω_z catalog entry: The SU(N) gauge bundle carries Ω_z protection — integer-valued Chern-Simons winding numbers (instantons). This organizes the QCD Hilbert space into sectors Ħ_n ($n \in \mathbb{Z}$). Each sector has minimum energy |n| × 8π²/g². This is an empirical fact about the topological structure of QCD, not a grammar axiom.
 
-**S.5** — Compatibility with SM kernel: meet(photon, graviton) = {Φ_}, ƒ_ż, Ç_-, Γ_ʔ, $\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$} [DIAPH:$\S$III]. QCD shares $\Phi_{\text{ctyogh}}$ and ƒ_ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp), which is precisely why QCD is massive (confined) while the photon is massless. The Diaphorics plane records this primitive difference.
+**S.5** — Compatibility with SM kernel: meet(photon, graviton) = {Φ_}, ƒ^ż, Ç^-, Γ_ʔ, $\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$} [DIAPH:$\S$III]. QCD shares $\Phi_{\text{ctyogh}}$ and ƒ^ż with the massless gauge kernel but differs at T (Þ_ò vs. Þ_perp), which is precisely why QCD is massive (confined) while the photon is massless. The Diaphorics plane records this primitive difference.
 
 **What Diaphorics does NOT say:** It does not prove $\Delta_T > 0$ from axioms (that is Topics), nor does it say what it *means* for reality that matter is confined (that is Ontics).
 
@@ -126,13 +126,13 @@ This encoding is an empirical claim about which primitive values correctly descr
 
 **T.1** — K is a primitive with low cross-variance V(K, X) < 0.15 for all other primitives X. The grammar treats $K_{\text{frtailgamma}}$, $K_{\text{turnm}}$, $K_{\text{schwa}}$, $K_{\text{teshlig}}$, $K_{\text{lambda}}$ as categorically distinct values, not points on a continuum. Transitioning between K values requires a $\Phi$ event (phase transition in the constraint grammar).
 
-**T.2** — K irreducibility claim: Ç_- cannot be expressed as a composition of other primitives that yields Ç_W behavior. If K were reducible, there would exist some combination of {D, T, R, P, F, G, $\Gamma$, $\Phi$, H, S, $\Omega$} that simulates Ç_W from Ç_- — and the cross-variance V(K, X) would be elevated for some X. The claim of the grammar that V(K,X) < 0.15 is the formal statement of irreducibility.
+**T.2** — K irreducibility claim: Ç^- cannot be expressed as a composition of other primitives that yields Ç^W behavior. If K were reducible, there would exist some combination of {D, T, R, P, F, G, $\Gamma$, $\Phi$, H, S, $\Omega$} that simulates Ç^W from Ç^- — and the cross-variance V(K, X) would be elevated for some X. The claim of the grammar that V(K,X) < 0.15 is the formal statement of irreducibility.
 
 **T.3** — P $\neq$ NP (conditional): If T.2 holds (K is irreducible), then no $K_{\text{frtailgamma}}$ process can reach $K_{\text{turnm}}$ solution landscapes without a K-transition. K-transitions require $\Phi$ events. A process that undergoes a $\Phi$ event changes its K value and is no longer $K_{\text{frtailgamma}}$. Therefore no $K_{\text{frtailgamma}}$ algorithm solves $K_{\text{turnm}}$ landscape problems generally. P $\neq$ NP.
 
 **T.4** — Ð_ω collapse theorem: Ð_ω encodes full bulk structure at the boundary. A Ð_ω system can read $K_{\text{schwa}}$ structure from $K_{\text{frtailgamma}}$ boundary queries because the boundary contains all K-class information imscriptively. Under Ð_ω, K-class boundaries are not barriers — the boundary of the Ð_ω system *is* the full hierarchy. Therefore proof systems with Ð_ω can verify any computable (and hypercomputable) statement.
 
-**T.5** — Uniqueness of Ð_ω as hierarchy collapser: No other single primitive change from the P-baseline collapses the K-class hierarchy. Φ_pm_psi (stochastic) does not cross K boundaries; ƒ_ż (quantum) shifts traversal speed but not landscape topology; $\Gamma_\text{arrow}$ (interactive) reaches exactly $K_{\text{schwa}}$ (PSPACE boundary). Ð_ω is unique in collapsing all K classes simultaneously.
+**T.5** — Uniqueness of Ð_ω as hierarchy collapser: No other single primitive change from the P-baseline collapses the K-class hierarchy. Φ_pm_psi (stochastic) does not cross K boundaries; ƒ^ż (quantum) shifts traversal speed but not landscape topology; $\Gamma_\text{arrow}$ (interactive) reaches exactly $K_{\text{schwa}}$ (PSPACE boundary). Ð_ω is unique in collapsing all K classes simultaneously.
 
 **T.6** — $\Gamma$ irreducibility — interaction grammar is a genuine primitive: $\Gamma_{\text{spleftarrow}}$ (disjunctive: any valid path accepted) and $\Gamma_{\text{secstress}}$ (sequential: must follow a deterministic path) are categorically distinct interaction grammars, not points on a continuum. A $\Gamma_{\text{secstress}}$ process cannot aggregate over all paths without changing its interaction grammar to $\Gamma_{\text{spleftarrow}}$ — which is a $\Gamma$-transition, not a K-transition. The cross-variance $V(\Gamma, X) < 0.15$ for all X is the formal statement of this irreducibility. This furnishes a second, independent grammar-level argument for P $\neq$ NP: P operates under $\Gamma_{\text{secstress}}$ and NP under $\Gamma_{\text{spleftarrow}}$, and no $\Gamma_{\text{secstress}}$ process can simulate $\Gamma_{\text{spleftarrow}}$ behavior without a $\Gamma$ event. The central insight of the Cook-Levin theorem — verification is easy, solution is hard — is encoded directly in this $\Gamma$-difference, not only in the K-difference.
 
@@ -144,10 +144,10 @@ This encoding is an empirical claim about which primitive values correctly descr
 |:---|:---|:---|
 | P | ($K_{\text{frtailgamma}}$, $F_{\text{beltl}}$, Φ_}, $\Gamma_{\text{corner}}$, Ð_ß) | Baseline |
 | BPP | Φ_} $\to$ Φ_pm_psi | Believed = P |
-| QMA | $F_{\text{beltl}}$ $\to$ ƒ_ż | Strictly > NP (believed) |
+| QMA | $F_{\text{beltl}}$ $\to$ ƒ^ż | Strictly > NP (believed) |
 | IP | $\Gamma_{\text{corner}}$ $\to$ $\Gamma_\text{arrow}$ | **IP = PSPACE** (proved, Shamir 1992) |
 | MIP | $\Gamma_\text{arrow}$ × 2 provers | **MIP = NEXP** (proved, 1992) |
-| MIP* | + ƒ_ż + **Ð_ω** | **MIP* = RE** (proved, JNVWY 2020) |
+| MIP* | + ƒ^ż + **Ð_ω** | **MIP* = RE** (proved, JNVWY 2020) |
 
 **S.2** — NP-complete instances at $\Phi_{\text{ctyogh}}$: Random 3-SAT phase transitions at the satisfiability threshold are empirically at $\Phi_{\text{ctyogh}}$ — the clause/variable ratio at which satisfiability probability drops from 1 to 0 exhibits all critical phenomena (diverging susceptibility, power-law correlations). This places NP-complete problems at the $\Phi_{\text{ctyogh}}$ boundary in the catalog, consistent with the Topics claim that NP solution landscapes are $K_{\text{turnm}}$.
 
@@ -158,8 +158,8 @@ This encoding is an empirical claim about which primitive values correctly descr
 **S.5** — Explicit P and NP primitive encodings:
 
 ```
-P  = ⟨Ð_ß; Þ_K;      Ř_¯; Φ_}; ƒ_ì; Ç_-; Γ_β;  Γ_seq; Φ_sub; Ħ_Ñ; 1:1; Ω_0⟩
-NP = ⟨Ð_;; Þ_ò;  Ř_¯; Φ_}; ƒ_ì; Ç_W;  Γ_ʔ; Γ_or;  Φ_c;   Ħ_Ñ; n:n; Ω_Z2⟩
+P  = ⟨Ð_ß; Þ_K;      Ř_¯; Φ_}; ƒ^ì; Ç^-; Γ_β;  Γ_seq; Φ_sub; Ħ_Ñ; 1:1; Ω_0⟩
+NP = ⟨Ð_;; Þ_ò;  Ř_¯; Φ_}; ƒ^ì; Ç^W;  Γ_ʔ; Γ_or;  Φ_c;   Ħ_Ñ; n:n; Ω_Z2⟩
 ```
 
 d(P, NP) = 3.5355. Eight primitive divergences: K (kinetic class), G (granularity scope), $\Gamma$ (interaction grammar), $\Phi$ (phase), D (dimensionality), T (topology), S (stoichiometry), $\Omega$ (topological protection). P and NP are not adjacent complexity classes that differ by a polynomial factor — they are structurally remote systems inhabiting different primitive regimes. The distance is larger than most cross-domain analogs in the catalog.
@@ -271,7 +271,7 @@ Two independent hierarchy problems, same mechanism, both < 2% agreement. This is
 **S.1** — Navier-Stokes primitive encoding:
 
 ```
-NS = ⟨Ð_;; Þ_6; Ř_Ť; Φ_ɐ; ƒ_ì; Ç_W; Γ_ʔ; Γ_and; Φ_c; Ħ_£; n:m; Ω_0⟩
+NS = ⟨Ð_;; Þ_6; Ř_Ť; Φ_ɐ; ƒ^ì; Ç^W; Γ_ʔ; Γ_and; Φ_c; Ħ_£; n:m; Ω_0⟩
 ```
 
 Key primitives: **Φ_ɐ** (nonlinear advection term u·$\nabla$u actively breaks parity — energy can concentrate without symmetry to prevent it), **$\Phi_{\text{ctyogh}}$** (turbulence is a critical phenomenon — diverging correlation lengths, scale invariance), **$\Omega_{\text{closeepsilon}}$** (no topological protection), **$\Gamma_{\text{corner}}$** (all scales coupled simultaneously — the Richardson cascade is a conjunctive multi-scale coupling, not a sequential or disjunctive one).
@@ -284,7 +284,7 @@ Key primitives: **Φ_ɐ** (nonlinear advection term u·$\nabla$u actively breaks
 | $\Phi$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{ctyogh}}$ | Both critical — matched |
 | **$\Omega$** | **$\Ω_z$** | **$\Omega_{\text{closeepsilon}}$** | **YM: protected; NS: unprotected** |
 | P | Φ_} | Φ_ɐ | YM: symmetric; NS: asymmetric |
-| F | ƒ_ż | ƒ_ì | YM: quantum; NS: classical |
+| F | ƒ^ż | ƒ^ì | YM: quantum; NS: classical |
 
 Both theories operate at $\Phi_{\text{ctyogh}}$. Yang-Mills has a mass gap; Navier-Stokes has the blowup question. The structural difference that distinguishes them is $\Ω_z$ vs $\Omega_{\text{closeepsilon}}$. The Yang-Mills gap is the physical realization of $\Ω_z$ topological protection. Navier-Stokes has no equivalent. The grammar predicts: wherever $\Ω_z$ is absent and Φ_ɐ + $\Phi_{\text{ctyogh}}$ are present, there is no structural barrier analogous to the mass gap.
 

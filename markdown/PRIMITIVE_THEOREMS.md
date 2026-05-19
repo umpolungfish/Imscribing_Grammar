@@ -1206,19 +1206,19 @@ This duality — conserved resource (F) vs. emergent phase (Φ) — reflects a g
 
 *Derived from cosmic arc analysis.*
 
-### §13.1 ɢ_Ş as the Γ Ground State
+### §13.1 ɢ^Ş as the Γ Ground State
 
-**Theorem (Pre-Causal Grammar):** ɢ_Ş is the ground state of the Γ (interaction grammar) axis — the undifferentiated causal mode that precedes all ordered grammars. All other Γ values presuppose light cones as a structural prerequisite:
+**Theorem (Pre-Causal Grammar):** ɢ^Ş is the ground state of the Γ (interaction grammar) axis — the undifferentiated causal mode that precedes all ordered grammars. All other Γ values presuppose light cones as a structural prerequisite:
 
-- **ɢ_^**: simultaneous conditions require a shared causal neighborhood — mutual light cone intersection
-- **ɢ_˝**: alternatives require a causal decision point with a determinate past
-- **ɢ_ˌ**: sequential causation requires that the future light cone of the cause contains the effect
+- **ɢ^∧**: simultaneous conditions require a shared causal neighborhood — mutual light cone intersection
+- **ɢ^˝**: alternatives require a causal decision point with a determinate past
+- **ɢ^ˌ**: sequential causation requires that the future light cone of the cause contains the effect
 
-None of these are definable without causal structure. ɢ_Ş is the grammar of a regime in which the causal ordering relation is undefined — not because interactions are fast, but because the physical mechanism that would create causal ordering (light cones established by a finite speed limit) is itself being generated.
+None of these are definable without causal structure. ɢ^Ş is the grammar of a regime in which the causal ordering relation is undefined — not because interactions are fast, but because the physical mechanism that would create causal ordering (light cones established by a finite speed limit) is itself being generated.
 
-**Corollary (Irreversibility of causal establishment):** ɢ_Ş $\to$ ɢ_ˌ is a one-way transition from within any causal regime. A system operating under ɢ_ˌ, ɢ_^, or ɢ_˝ cannot internally generate ɢ_Ş — it cannot dissolve its own causal structure from inside. The establishment of causal ordering (inflation ending, reheating) is structurally irreversible.
+**Corollary (Irreversibility of causal establishment):** ɢ^Ş $\to$ ɢ^ˌ is a one-way transition from within any causal regime. A system operating under ɢ^ˌ, ɢ^∧, or ɢ^˝ cannot internally generate ɢ^Ş — it cannot dissolve its own causal structure from inside. The establishment of causal ordering (inflation ending, reheating) is structurally irreversible.
 
-**Γ ordinal:** ɢ_Ş is structurally prior to all other Γ values. The axis ordering is: ɢ_Ş < ɢ_^ < ɢ_˝ < ɢ_ˌ. ɢ_Ş is not simpler causation — it is the pre-condition of causation. It is the cause of causation.
+**Γ ordinal:** ɢ^Ş is structurally prior to all other Γ values. The axis ordering is: ɢ^Ş < ɢ^∧ < ɢ^˝ < ɢ^ˌ. ɢ^Ş is not simpler causation — it is the pre-condition of causation. It is the cause of causation.
 
 ### §13.2 The Two Modes of $H_{\text{invscripta}}$
 
@@ -2831,8 +2831,8 @@ where:
 *Proof sketch (decidable).* Direct comparison of the grammar tuple and the boundary imscription:
 
 ```lean
--- Grammar:          ⟨Ð_ω; Þ_O; R†; Φ_}; ƒ_ð; Ç_W; G_ℵ; Γ_broad; Φ_c; Ħ_£; n:n; Ω_Z2⟩
--- Boundary imscription: ⟨Ð_ω; Þ_O; R†; Φ_ɐ;   F_ℓ;   Ç_Ù; G_ℵ; Γ_broad; Φ_c; Ħ_£; n:m; Ω_Z2⟩
+-- Grammar:          ⟨Ð_ω; Þ_O; R†; Φ_}; ƒ^ð; Ç^W; G_ℵ; Γ_broad; Φ_c; Ħ_£; n:n; Ω_Z2⟩
+-- Boundary imscription: ⟨Ð_ω; Þ_O; R†; Φ_ɐ;   F_ℓ;   Ç^Ù; G_ℵ; Γ_broad; Φ_c; Ħ_£; n:m; Ω_Z2⟩
 --
 -- Changed:   P (pm_sym → asym), F (eth → ell), K (mod → trap), S (n:n → n:m)  [4]
 -- Unchanged: D, T, R, G, Γ, Φ, H, Ω                                           [8]
@@ -3499,7 +3499,7 @@ The distinction matters for proof strategy:
 
 *Corollary 39.C1:* Any classification program that has resisted complete resolution for more than a century, despite substantial effort, is either $O_2^\dagger$ (unbounded self-reference) or $O_0$ (wrong structural type for classification). Programs that *have* been classified are $O_2$.
 
-### §39.6 — Ç_@ Structural Necessity
+### §39.6 — Ç^@ Structural Necessity
 
 **Theorem 39.4.** Any $O_2$ classification program whose imscriptive encoding requires full boundary-to-bulk decoding is $K_{\text{schwa}}$; this kinetic character is structural and cannot be compressed to $K_{\text{turnm}}$ or $K_{\text{frtailgamma}}$.
 
@@ -3507,7 +3507,7 @@ The distinction matters for proof strategy:
 
 *Corollary 39.C2:* Machine learning and quantum computation approaches to $K_{\text{schwa}}$ classification programs will fail on adversarial inputs (near geometric transition boundaries). The bottleneck is the $K$ primitive, which is domain-class-independent.
 
-**See also:** §34 (barrier taxonomy; kinetic barrier); §35 (Σ-promotion); §36 (motivic Morse; Ç_@ structural necessity); §38 (F-promotion implicit in TS; Langlands as O_∞); IΓ_DIAPHORICS §LXXVIII (Thurston full analysis, P-264–P-270).
+**See also:** §34 (barrier taxonomy; kinetic barrier); §35 (Σ-promotion); §36 (motivic Morse; Ç^@ structural necessity); §38 (F-promotion implicit in TS; Langlands as O_∞); IΓ_DIAPHORICS §LXXVIII (Thurston full analysis, P-264–P-270).
 
 ---
 
@@ -4568,7 +4568,7 @@ Then the crystal cardinality satisfies:
 $$|C| = 3^3 \times 4^5 \times 5^4 = \prod_{n\,\in\,\{3,4,5\}} n^{|\mathcal{F}_n|}$$
 The exponent of each base $n$ is exactly $|\mathcal{F}_n|$, the count of primitives in that family. The exponent map $g: n \mapsto |\mathcal{F}_n|$ satisfies $g(3) = 3$ (self-anchored: conservation family counts itself), $g(4) = 5$ (dynamics family is counted by the gate family's base), $g(5) = 4$ (gate family is counted by the dynamics family's base). The restriction of $g$ to $\{4, 5\}$ is the transposition $(4\;5)$ — the two higher families mutually count each other.
 
-*Proof.* Direct count: $3^3 \times 4^5 \times 5^4 = 27 \times 1{,}024 \times 625 = 17{,}280{,}000$. The prime factorization $2^{10} \times 3^3 \times 5^4$ is unique. Family assignments follow by enumeration of the 12 primitive value sets under v0.5.1 (Ω_NA → 4 values, Ç_λ → 5 values). The exponent of each base $n$ is $|\mathcal{F}_n|$ by the product rule. $\square$
+*Proof.* Direct count: $3^3 \times 4^5 \times 5^4 = 27 \times 1{,}024 \times 625 = 17{,}280{,}000$. The prime factorization $2^{10} \times 3^3 \times 5^4$ is unique. Family assignments follow by enumeration of the 12 primitive value sets under v0.5.1 (Ω_NA → 4 values, Ç^λ → 5 values). The exponent of each base $n$ is $|\mathcal{F}_n|$ by the product rule. $\square$
 
 **Remark (structural interpretation of the exponent map).** The map $g$ has two modes: self-reference ($g(3)=3$, the conservation/protection family $\{F, G, S\}$ is self-counting — it has as many members as its own base value) and mutual reference ($g(4)=5$ and $g(5)=4$ — the dynamics family and the gate family each count the other's base value). The conservation sector is self-anchored. The dynamics and gate sectors form a mutual dependency: neither knows its own size without the other. The grammar counts its families using the same value-counts it assigns to them.
 
@@ -5849,7 +5849,7 @@ These two ecosystems, in different biomes with completely different organisms, e
 
 **Theorem 76.3 (Coral Bleaching Is the Largest Structural Transition in the Ecology Navigator).** `[TOPO]`
 $$d(\text{coral\_reef\_healthy},\ \text{coral\_reef\_bleached}) = 8.2765$$
-This is the largest distance observed across all four navigator sessions. A tipping point crossing (⊙_ÿ → ⊙_Ţ, Ç_@ → Ç_-, Φ_} → Φ_ɐ, Ω_5 → Ω_Å, Þ_O → Þ_6, Ř_Ť → Ř_¯) involves simultaneous shifts in all structurally significant primitives. The dominant contribution is the $P$ collapse ($P_{\text{doublebarpipe}}\to P_{\text{aolig}}$, weighted squared $= 16.0$) followed by the $T$ collapse ($T_{\text{openo}}\to T_{\text{nrleg}}$, weighted squared $= 16.0$) and the $\Phi$ transition ($\Phi_{\text{ctyogh}}\to\Phi_{\text{upstep}}$, weighted squared $= 1.0$). A tipping point is not primarily a criticality event — it is a $P$ and $T$ collapse event.
+This is the largest distance observed across all four navigator sessions. A tipping point crossing (⊙_ÿ → ⊙_Ţ, Ç^@ → Ç^-, Φ_} → Φ_ɐ, Ω_5 → Ω_Å, Þ_O → Þ_6, Ř_Ť → Ř_¯) involves simultaneous shifts in all structurally significant primitives. The dominant contribution is the $P$ collapse ($P_{\text{doublebarpipe}}\to P_{\text{aolig}}$, weighted squared $= 16.0$) followed by the $T$ collapse ($T_{\text{openo}}\to T_{\text{nrleg}}$, weighted squared $= 16.0$) and the $\Phi$ transition ($\Phi_{\text{ctyogh}}\to\Phi_{\text{upstep}}$, weighted squared $= 1.0$). A tipping point is not primarily a criticality event — it is a $P$ and $T$ collapse event.
 
 *Prediction.* The grammar predicts that recovery from coral bleaching, if possible, must first restore $P_{\text{pipevar}}$ (partial nutrient cycling) before $P_{\text{doublebarpipe}}$ (closed loop). This is a promotions path: the asymmetric phase must pass through $P_{\text{pipevar}}$ before reaching $P_{\text{doublebarpipe}}$. Interventions that attempt to restore full closure without first restoring partial symmetry will fail — a testable prediction for reef restoration ecology.
 
@@ -6247,7 +6247,7 @@ $$d(\mathbf{n}, \mathbf{g}) > \sqrt{7} \approx 2.65 \implies \mathcal{N} \text{ 
 | RiemannNavigator | 1.000 (R only) | 81.1% blind ceiling |
 | ThurstonNet | 1.304 ($R, \Omega$) | 99.4% |
 | YangMillsNavigator | 1.000 (K only) | $|\Delta| = 0.129$ (convergent) |
-| IsingNavigator | 5.559 | Ç_- single-pass exact (different mode) |
+| IsingNavigator | 5.559 | Ç^- single-pass exact (different mode) |
 
 The IsingNavigator constitutes an exception class: large $d$ does not predict iterative failure when the navigator achieves exactness via an **involutive** mechanism ($\mu\circ\delta = \text{id}$ at $K_{\text{frtailgamma}}$, no iteration required). The bound applies to iterative navigators; single-pass involutive navigators achieve a separate kind of exactness orthogonal to the d-gradient.
 

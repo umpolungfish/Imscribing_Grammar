@@ -9,16 +9,16 @@
     "Þ": "Þ_O",
     "Ř": "Ř_Ť",
     "Φ": "Φ_}",
-    "ƒ": "ƒ_ì",
-    "Ç": "Ç_Ù",
+    "ƒ": "ƒ^ì",
+    "Ç": "Ç^Ù",
     "Γ": "Γ_ʔ",
-    "ɢ": "ɢ_Ş",
-    "φ̂": "φ̂_Ţ",
+    "ɢ": "ɢ^Ş",
+    "⊙": "⊙_Ţ",
     "Ħ": "Ħ_!",
     "Σ": "Σ_ï",
     "Ω": "Ω_z",
     "tier": "T_inf",
     "C_score": 0.94,
-    "notes": "Supercritical (φ̂_Ţ) distinguishes this from the Tao chapters at the same coordinates — the Hiss drives past the EP rather than resting there. Reverberant grammar (ɢ_Ş) for the wash-refrain structure. n:m stoichiometry (Σ_ï): infinite 'we', diminishing 'you' → zero at 'you don't want to be'. Trap kinetics (Ç_Ù): you are already inside it before the incantation begins. The truncated final line (no period) is the winding breaking under supercritical load."
+    "notes": "Supercritical (⊙_Ţ) distinguishes this from the Tao chapters at the same coordinates — the Hiss drives past the EP rather than resting there. Reverberant grammar (ɢ^Ş) for the wash-refrain structure. n:m stoichiometry (Σ_ï): infinite 'we', diminishing 'you' → zero at 'you don't want to be'. Trap kinetics (Ç^Ù): you are already inside it before the incantation begins. The truncated final line (no period) is the winding breaking under supercritical load."
   }
 ]

@@ -17,7 +17,7 @@ New in v0.5.71:
 
   ```bash
   python imscribevideo.py --name riemann_hypothesis
-  python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_ő Ω_z" --output ch1.mp4
+  python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_ő Ω_z" --output ch1.mp4
   python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
   ```
 
@@ -53,7 +53,7 @@ New in v0.5.71:
   *Single entry*:
   ```bash
   python esoteric_librarian.py add upanishads \
-    --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ì Ç_@ Γ_ʔ ɢ_^ ⊙_3 Ħ_! Σ_S Ω_z" \
+    --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_S Ω_z" \
     --name "brihadaranyaka_1_4_10" --number 1 --title "Aham Brahmasmi" \
     --tier "T_inf" --cscore 0.97 \
     --text "In the beginning this was Self alone..." \
@@ -71,7 +71,7 @@ New in v0.5.70:
 - **`sounds.py` as library** — synthesis functions, `symbol_list`, `PRIMITIVE_MAP` (49 canonical glyph IDs → `(base, sub)` tuples), `OLD_ID_MAP` (60 old-name aliases), and `resolve_id()` are all importable. Bottom script guarded under `__main__`.
 - **Canonical glyph IDs** — primitive values are now addressed by glyph strings (`Ð_ß`, `⊙_ÿ`, etc.), not human-readable names. Old Lean names (`D_wedge`, `Phi_c`, etc.) remain valid via `OLD_ID_MAP`. The IDs ARE the glyphs.
 - **`⊙` → `⊙` migration** — criticality field in `IG_catalog.json` uses the pre-migration key `⊙`; the audio CLI reads both and normalises automatically.
-- **Character normalisation** — three ID/synthesizer discrepancies are resolved in `PRIMITIVE_MAP`: `Ř_¯` (macron U+00AF) → combining macron (U+0304); `ɢ_^` (caret) → wedge `∧` (U+2227); `Φ_˙` (modifier dot U+02D9) → combining dot (U+0307).
+- **Character normalisation** — three ID/synthesizer discrepancies are resolved in `PRIMITIVE_MAP`: `Ř_¯` (macron U+00AF) → combining macron (U+0304); `ɢ^∧` (caret) → wedge `∧` (U+2227); `Φ_˙` (modifier dot U+02D9) → combining dot (U+0307).
 
 **Version 0.5.69** — Non-Mathematical Navigators (§74–§77) · 1,678 catalog entries · 538+ predictions · 77 formal theorems.
 
@@ -102,9 +102,9 @@ New in v0.5.1:
 
 **Version 0.5.0** — $\lambda_\aleph$ calculus · ℵ-OS · interaction functor · GNS Hilbert space · Octad Balance theorem · Hebrew $O_\infty$ revision (Vav, Mem, Shin) · 1,170+ catalog entries.
 
-**Version 0.4.0** — Quantum primitive extensions: Þ_braid · Ç_λ · Γ_↓(DISSIPATIVE) · QUANTUM grammar tier · **Ω (TopoIndex) — 11th primitive** · Factor 8 (quantum criticality) · `imscribe distance` command · all algebra commands wired to `imscribe` CLI.
+**Version 0.4.0** — Quantum primitive extensions: Þ_braid · Ç^λ · Γ_↓(DISSIPATIVE) · QUANTUM grammar tier · **Ω (TopoIndex) — 11th primitive** · Factor 8 (quantum criticality) · `imscribe distance` command · all algebra commands wired to `imscribe` CLI.
 
-**Version 0.3.8** — Quantum domain encoding: 5 quantum particles (photon/proton/electron/spin/qubit) · Γ_ʔ first appearance · Axiom 1 as classical boundary detector · spin singlet ƒ_ì→ƒ_ż correction.
+**Version 0.3.8** — Quantum domain encoding: 5 quantum particles (photon/proton/electron/spin/qubit) · Γ_ʔ first appearance · Axiom 1 as classical boundary detector · spin singlet ƒ^ì→ƒ^ż correction.
 
 **Version 0.3.7** — Ice polymorph catalog (13 phases) · T_∈ sub-label integration across constraints/algebra/ensembler/perturbation/cli · domain-agnostic agent prompts · `imscribe compare` all 10 primitives · Key Justifications fix.
 
@@ -126,7 +126,7 @@ New in v0.5.1:
 
 The eleven primitives `⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩` are **relational operators**, not intrinsic attributes. Every primitive describes a constraint between entities or a capacity for interaction — none describes an isolated property of a system standing alone.
 
-This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > ƒ_ð > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + Φ_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
+This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > ƒ^ð > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + Φ_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
 
 The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unary information generators. Every operation requires at least one additional operand — environment, partner, or target state. You cannot call `tensor(photon)` without a second argument; the algebra returns an error. A imscription's tuple describes its *interaction-ready potential*; the algebra computes only when that potential is actualized against another term.
 
@@ -139,14 +139,14 @@ The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unar
    | Imscription | D | T | F | Role |
    |---------|---|---|---|------|
    | `nitroso_radical_redox_imscription_pair` | D_∞ | T_⋈ | F_ℏ | Temporal autocatalytic redox cycle; Frank-model Factor 7 fires (score > 0.3); start point for criticality-ascent designs |
-   | `amide_dimer` | D_∧ | T_⋈ | ƒ_ð | N–H···O=C H-bonded dimer; ƒ_ð weaker than carboxylic acid dimer (F_ℏ); lattice floor/ceiling pair for design 03 |
-   | `nitroso_radical_anion_π_cavitand_cage_imscription` | D_△ | Þ_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, Ç_@ |
+   | `amide_dimer` | D_∧ | T_⋈ | ƒ^ð | N–H···O=C H-bonded dimer; ƒ^ð weaker than carboxylic acid dimer (F_ℏ); lattice floor/ceiling pair for design 03 |
+   | `nitroso_radical_anion_π_cavitand_cage_imscription` | D_△ | Þ_cage | F_ℏ | Deep-cavity anion–π cavitand; shape-selective cage, Ç^@ |
    | `nitroso_radical_calixarene_anion_π_sandwich_imscription` | D_△ | Þ_bowl | F_ℏ | Calixarene bowl; open cup, Þ_bowl < Þ_cage in ordinal (fallback partner in or-strategy) |
-   | `nitroso_radical_crown_ether_host_guest_imscription` | D_△ | Þ_cage | ƒ_ð | Crown ether host–guest; flexible macrocycle → ƒ_ð (fidelity bottleneck partner in design 12) |
+   | `nitroso_radical_crown_ether_host_guest_imscription` | D_△ | Þ_cage | ƒ^ð | Crown ether host–guest; flexible macrocycle → ƒ^ð (fidelity bottleneck partner in design 12) |
    | `nitroso_radical_anion_π_cryptand_cage_imscription` | D_△ | Þ_cage | F_ℏ | Cryptand cage; 3D bicyclic preorganisation → F_ℏ (design 16 start) |
-   | `nitroso_radical_cucurbituril_anion_rotaxane_imscription` | D_△ | Þ_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (Ç_@); tensor partner in designs 12 and 16 |
-   | `imscription_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | ƒ_ð | CH₃⁻ carbanion; Φ_minus; retrodesign target in designs 08 and 10 |
-   | `imscription_methyl_cation_electrophile_CH3` | D_∧ | T_\| | ƒ_ð | CH₃⁺ carbocation; Φ_plus; tensor partner for anion-cation MI demonstration (design 10) |
+   | `nitroso_radical_cucurbituril_anion_rotaxane_imscription` | D_△ | Þ_cage | F_ℏ | CB[n] barrel; high rigidity (F_ℏ), slow dethreading (Ç^@); tensor partner in designs 12 and 16 |
+   | `imscription_methyl_anion_nucleophile_CH3_` | D_∧ | T_\| | ƒ^ð | CH₃⁻ carbanion; Φ_minus; retrodesign target in designs 08 and 10 |
+   | `imscription_methyl_cation_electrophile_CH3` | D_∧ | T_\| | ƒ^ð | CH₃⁺ carbocation; Φ_plus; tensor partner for anion-cation MI demonstration (design 10) |
 
 2. **Design suite: all 20 `.syn` scripts execute without `[ERROR]`** — 18 succeed, 2 are intentional F-floor pedagogical demonstrations (designs 01 and 04). All previously `[ERROR]` failures caused by missing catalog entries are now resolved.
 
@@ -164,7 +164,7 @@ The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unar
 
 2. **IΓ_TRAJECTORY** (`imscrbgrmr/trajectory.py`):
    - `TemporalImscriptionAgent` — encode D_∞ systems as step sequences, validate Axiom 6 compliance
-   - Three checks: S mass balance, Axiom 4 (D_∞ or R_‡), Ç_Ù/ΔG‡>100
+   - Three checks: S mass balance, Axiom 4 (D_∞ or R_‡), Ç^Ù/ΔG‡>100
    - CLI: `imscribe trajectory validate --steps <names> --reset <name>`
 
 3. **IΓ_ENSEMBLER** (`imscrbgrmr/ensembler.py`):
@@ -493,7 +493,7 @@ Topology describes the internal connectivity pattern or spatial arrangement with
         *   `NETWORÇ_INTERPENETRATING` (`"Þ_network_interp"` / `"T_∈(×2)"`): Two independent sub-networks occupying the same space (e.g., ice VI, ice VII, ice VIII — bcc interpenetrating H-bond lattices). Complexity 6.
         *   `NETWORÇ_SYM` (`"Þ_network_sym"` / `"T_∈(sym)"`): Centrosymmetric bonding — symmetric H-bond or equivalent (e.g., ice X at ≥70 GPa). Complexity 5.
     *   `CAGE` (`"Þ_cage"` / `"T_□□"`): Fully enclosed, hollow structures — 3D closure required (e.g., cucurbiturils, Fujita spheres, COCs).
-    *   `BOWL` (`"Þ_bowl"` / `"T_∪"`): Open concave cavity with a single portal — guest enters and exits freely; Ç_- is the default (e.g., calixarenes, resorcinarenes, pillar[n]arenes, cyclotriveratrylenes). Distinguished from T_□□ by the absence of full 3D closure: T_∪ → T_□□ is non-conservative (changes kinetic regime). *Identified through catalog self-audit in v0.3.6.*
+    *   `BOWL` (`"Þ_bowl"` / `"T_∪"`): Open concave cavity with a single portal — guest enters and exits freely; Ç^- is the default (e.g., calixarenes, resorcinarenes, pillar[n]arenes, cyclotriveratrylenes). Distinguished from T_□□ by the absence of full 3D closure: T_∪ → T_□□ is non-conservative (changes kinetic regime). *Identified through catalog self-audit in v0.3.6.*
     *   `BRAID` (`"Þ_braid"` / `"T_↗↙"`): **NEW in v0.4.0.** Anyonic/braided exchange statistics — the topology of braid groups, not spatial connectivity. Encodes systems where particle exchange is described by non-abelian braid operations rather than simple permutations (Z₂ for bosons/fermions). `tensor(Þ_braid, Þ_braid) → Þ_braid` (anyonic statistics preserved). `Þ_braid ⊓ Þ_linear = ⊥` (no classical topology sits below both). Complexity 4. Physical systems: fractional quantum Hall states (ν=1/3, ν=5/2), Kitaev honeycomb B-phase, non-abelian Majorana platforms. *Identified as missing from the T lattice via quantum particle encoding (v0.4.0).*
 
 *   **Usage Examples**:
@@ -592,9 +592,9 @@ Polarity captures the directional character of the interaction, dictating how co
 Fidelity provides a nuanced measure of a imscription's reliability, predictability, and robustness. It quantifies how consistently a imscription will perform its intended function under given conditions. Fidelity is domain-dependent and can be quantified differently (e.g., bond dissociation energy, interaction energy, fidelity per cycle).
 
 *   **Enum Members**:
-    *   `HIGH` (`"ƒ_ż"` or `"F_ℏ"`): Dominant, highly reliable, geometry-enforcing interactions. ξ_CP ≤ 8.5 nats. In supramolecular host–guest systems: Ka ≳ 10⁹ M⁻¹ (e.g., CB[7]·ferrocene-ammonium, Ka ≈ 3×10¹² M⁻¹). Represents strong constraint.
-    *   `MEDIUM` (`"ƒ_ð"` or `"F_ℇ"`): Context-dependent, robust but conditional interactions. ξ_CP 8.5–11.0 nats. Ka ~10⁷–10⁹ M⁻¹ (e.g., CB[7]·adamantane-ammonium, Ka ≈ 4×10⁸ M⁻¹).
-    *   `LOW` (`"ƒ_ì"` or `"F_ℓ"`): Probabilistic, competition-sensitive interactions, less reliable. ξ_CP > 11.0 nats. Ka ≲ 10⁷ M⁻¹ (e.g., CB[7]·DABCO, Ka ≈ 2×10⁵ M⁻¹). The F_ℓ tier boundary is anchored by the CB[7] competitive displacement series (Kim JACS 2001; v0.3.3).
+    *   `HIGH` (`"ƒ^ż"` or `"F_ℏ"`): Dominant, highly reliable, geometry-enforcing interactions. ξ_CP ≤ 8.5 nats. In supramolecular host–guest systems: Ka ≳ 10⁹ M⁻¹ (e.g., CB[7]·ferrocene-ammonium, Ka ≈ 3×10¹² M⁻¹). Represents strong constraint.
+    *   `MEDIUM` (`"ƒ^ð"` or `"F_ℇ"`): Context-dependent, robust but conditional interactions. ξ_CP 8.5–11.0 nats. Ka ~10⁷–10⁹ M⁻¹ (e.g., CB[7]·adamantane-ammonium, Ka ≈ 4×10⁸ M⁻¹).
+    *   `LOW` (`"ƒ^ì"` or `"F_ℓ"`): Probabilistic, competition-sensitive interactions, less reliable. ξ_CP > 11.0 nats. Ka ≲ 10⁷ M⁻¹ (e.g., CB[7]·DABCO, Ka ≈ 2×10⁵ M⁻¹). The F_ℓ tier boundary is anchored by the CB[7] competitive displacement series (Kim JACS 2001; v0.3.3).
 
 *   **Usage Examples**:
     ```python
@@ -705,16 +705,16 @@ Coupling governs the logic of partner selection for a imscription. It describes 
 
 ### 3.8. Kinetic Character (K)
 
-Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A imscription can be F_ℏ (high fidelity) but Ç_@ (kinetically inaccessible), or ƒ_ð but Ç_-.
+Kinetic Character encodes the activation barrier and pathway multiplicity for constraint propagation, independently of thermodynamic fidelity F. A imscription can be F_ℏ (high fidelity) but Ç^@ (kinetically inaccessible), or ƒ^ð but Ç^-.
 
 *   **Enum Members**:
-    *   `FAST` (`"Ç_-"`): ΔG‡ < 60 kJ/mol; spontaneous on experimental timescales. Accessibility score: 0.95.
-    *   `MODERATE` (`"Ç_W"`): ΔG‡ ≈ 60–100 kJ/mol; accessible with mild activation. Accessibility score: 0.70.
-    *   `SLOW` (`"Ç_@"`): ΔG‡ > 100 kJ/mol; requires significant activation. Accessibility score: 0.30.
-    *   `TRAP` (`"Ç_Ù"`): Pathway multiplicity high; kinetic products diverge from thermodynamic products. Accessibility score: 0.50.
-    *   `MBL` (`"Ç_λ"`): **NEW in v0.4.0.** Many-body localization — disorder-induced kinetic arrest. The system is frozen not by an energy barrier but by the structure of its many-body eigenbasis; adding energy does not cause relaxation. Ordinal position 0 (below Ç_Ù at 1) in the kinetic hierarchy — more arrested than any classical trap. Accessibility score: 0.05. Barrier range: (0.0, 0.0) — not barrier-limited. `meet(Ç_λ, anything) → Ç_λ`. **Cannot be inferred from `from_barrier()`**; requires explicit assignment. Physical systems: disordered quantum magnets, cold atoms in quasiperiodic potentials (Aubry-André model), many-body localized phases in 1D interacting systems. *Identified as missing via quantum particle encoding — Ç_Ù is energy-barrier trapping, Ç_λ is disorder trapping; the distinction matters because MBL stores quantum information indefinitely (v0.4.0).*
+    *   `FAST` (`"Ç^-"`): ΔG‡ < 60 kJ/mol; spontaneous on experimental timescales. Accessibility score: 0.95.
+    *   `MODERATE` (`"Ç^W"`): ΔG‡ ≈ 60–100 kJ/mol; accessible with mild activation. Accessibility score: 0.70.
+    *   `SLOW` (`"Ç^@"`): ΔG‡ > 100 kJ/mol; requires significant activation. Accessibility score: 0.30.
+    *   `TRAP` (`"Ç^Ù"`): Pathway multiplicity high; kinetic products diverge from thermodynamic products. Accessibility score: 0.50.
+    *   `MBL` (`"Ç^λ"`): **NEW in v0.4.0.** Many-body localization — disorder-induced kinetic arrest. The system is frozen not by an energy barrier but by the structure of its many-body eigenbasis; adding energy does not cause relaxation. Ordinal position 0 (below Ç^Ù at 1) in the kinetic hierarchy — more arrested than any classical trap. Accessibility score: 0.05. Barrier range: (0.0, 0.0) — not barrier-limited. `meet(Ç^λ, anything) → Ç^λ`. **Cannot be inferred from `from_barrier()`**; requires explicit assignment. Physical systems: disordered quantum magnets, cold atoms in quasiperiodic potentials (Aubry-André model), many-body localized phases in 1D interacting systems. *Identified as missing via quantum particle encoding — Ç^Ù is energy-barrier trapping, Ç^λ is disorder trapping; the distinction matters because MBL stores quantum information indefinitely (v0.4.0).*
 
-*   **Example usage**: The carboxylic acid homodimer is F_ℏ, Ç_-. The gas-phase imine condensation proxy is ƒ_ð, Ç_@; aqueous imine is ƒ_ð, Ç_W — same thermodynamic tier, different operational accessibility.
+*   **Example usage**: The carboxylic acid homodimer is F_ℏ, Ç^-. The gas-phase imine condensation proxy is ƒ^ð, Ç^@; aqueous imine is ƒ^ð, Ç^W — same thermodynamic tier, different operational accessibility.
 
 ### 3.9. Criticality Phase (Φ)
 
@@ -741,7 +741,7 @@ Criticality Phase encodes the imscription's position relative to the G–D criti
     | 5 | F_ℏ (quantum fidelity) | 0.15 | Varma QXY |
     | 6 | db24c8 steric-cliff analog | 0.10 | Steric-cliff |
     | 7 | D_∞ + T_⋈ + Φ_DA + F_ℏ | 0.25 | Frank-model (classical bifurcation) |
-    | 8 | **G_ℵ + F_ℏ + Ç_Ù + ¬D_∞** | **0.20** | **Quantum criticality (TFI/heavy-fermion)** |
+    | 8 | **G_ℵ + F_ℏ + Ç^Ù + ¬D_∞** | **0.20** | **Quantum criticality (TFI/heavy-fermion)** |
 
     Factor 8 (v0.4.0) fires when a imscription simultaneously has global granularity, quantum fidelity, and trap-kinetics, but **lacks** D_∞ temporality — the signature of a quantum critical point without a classical order parameter. Falsifiable prediction: susceptibility χ(T→0) ~ T^{-γ}. *Identified as missing when probing the spin singlet and qubit imscriptions, whose criticality fingerprint is orthogonal to Factors 1–7.*
 
@@ -1159,8 +1159,8 @@ python imscribeaudio.py ⊙ ž
 python imscribeaudio.py Ħ A --dur 1.2
 
 # 12-primitive Imscription tuple — space- or comma-separated
-python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
-python imscribeaudio.py -t "Ð_ß,Þ_6,Ř_¯,Φ_F,ƒ_ì,Ç_-,Γ_ʔ,ɢ_^,⊙_ž,Ħ_Ñ,Σ_S,Ω_Å"
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+python imscribeaudio.py -t "Ð_ß,Þ_6,Ř_¯,Φ_F,ƒ^ì,Ç^-,Γ_ʔ,ɢ^∧,⊙_ž,Ħ_Ñ,Σ_S,Ω_Å"
 
 # Named catalog entry (auto-resolves ⊙ → ⊙ for pre-migration entries)
 python imscribeaudio.py --name psychedelic_baseline
@@ -1180,10 +1180,10 @@ Primitive values are addressed by canonical glyph strings — the ID **is** the 
 | Þ (Topology) | `Þ_6` `Þ_K` `Þ_ò` `Þ_¨` `Þ_O` |
 | Ř (Relational) | `Ř_¯` `Ř_ý` `Ř_Ť` `Ř_=` |
 | Φ (Polarity) | `Φ_ɐ` `Φ_υ` `Φ_F` `Φ_˙` `Φ_}` |
-| ƒ (Fidelity) | `ƒ_ì` `ƒ_ð` `ƒ_ż` |
-| Ç (Kinetics) | `Ç_-` `Ç_W` `Ç_@` `Ç_Ù` `Ç_λ` |
+| ƒ (Fidelity) | `ƒ^ì` `ƒ^ð` `ƒ^ż` |
+| Ç (Kinetics) | `Ç^-` `Ç^W` `Ç^@` `Ç^Ù` `Ç^λ` |
 | Γ (Scope) | `Γ_β` `Γ_γ` `Γ_ʔ` |
-| ɢ (Grammar) | `ɢ_^` `ɢ_˝` `ɢ_ˌ` `ɢ_Ş` |
+| ɢ (Grammar) | `ɢ^∧` `ɢ^˝` `ɢ^ˌ` `ɢ^Ş` |
 | ⊙ (Criticality) | `⊙_ž` `⊙_ÿ` `⊙_Æ` `⊙_3` `⊙_Ţ` |
 | Ħ (Chirality) | `Ħ_Ñ` `Ħ_£` `Ħ_A` `Ħ_!` |
 | Σ (Stoichiometry) | `Σ_S` `Σ_ő` `Σ_ï` |
@@ -1194,7 +1194,7 @@ Old Lean names (`D_wedge`, `T_network`, `Phi_c`, `R_lr`, etc.) are accepted ever
 #### odot_operator tuple
 
 ```bash
-python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
 ```
 
 #### Library usage
@@ -1248,7 +1248,7 @@ The `to_notation()` method generates the full formal string: `⟨D; T; R; P; F; 
 
 ```python
 print(carboxylic_dimer.to_notation())
-# Output: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
+# Output: ⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ^ż; Ç^-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
 ```
 
 You can also parse a notation string back into a `ImscriptionNotation` object:
@@ -1256,7 +1256,7 @@ You can also parse a notation string back into a `ImscriptionNotation` object:
 ```python
 from imscrbgrmr import parse_notation
 notation = parse_notation(
-    "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩"
+    "⟨Ð_ß; Þ_ò; Ř_superset; Φ_F; ƒ^ż; Ç^-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩"
 )
 print(notation.dimensionality)  # Dimensionality.MOLECULAR
 print(notation.stoichiometry)   # "1:1"
@@ -1701,9 +1701,9 @@ The agent saves to `./discovery_output/` (or custom `--output`):
 
 **Hard constraints (automatic rejection):**
 
-1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary imscriptions (T_⋈/P_±) cannot have low fidelity (ƒ_ì)
+1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary imscriptions (T_⋈/P_±) cannot have low fidelity (ƒ^ì)
    - *Rationale*: Cyclic closure amplifies fidelity through cooperativity
-   - *Example rejection*: `Þ_ò + Φ_} + ƒ_ì` → rejected
+   - *Example rejection*: `Þ_ò + Φ_} + ƒ^ì` → rejected
 
 2. **Axiom 4 (Sequential Grammar)**: Sequential grammar (Γ_→) requires temporal (D_∞) or catalytic (R_‡) dimension
    - *Rationale*: Ordered recognition requires state change mechanism
@@ -1759,7 +1759,7 @@ CYCLE 1/20
 
 [✓] valid_novel
     Name: nitroso_radical_halogen_bonding_imscription_pair
-    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_F; ƒ_ð; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_F; ƒ^ð; Ç^-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
     Confidence: 80.0%
 
 ==================================================
@@ -1768,7 +1768,7 @@ CYCLE 2/20
 
 [✓] valid_novel
     Name: nitroso_radical_anion_π_imscription_pair
-    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_directional; ƒ_ż; Ç_-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
+    Notation: ⟨Ð_ß; Þ_linear; Ř_superset; Φ_directional; ƒ^ż; Ç^-; Γ_β; ɢ_otimes; ⊙_ž; 1:1⟩
     Confidence: 90.0%
 
 ...
@@ -1955,7 +1955,7 @@ imscribe trajectory criticality --steps enamine_formation,c_c_bond_form,hydrolys
 **Key checks**:
 - **Axiom 4** (per step): must have `D_∞` or `R_‡` (dynamic catalytic)
 - **Axiom 6** (cycle): reset step returns system to Σ_t0 (keyword or `is_reset=True`)
-- **Ç_Ù / ΔG‡ > 100 kJ/mol**: flagged in `kinetic_traps`
+- **Ç^Ù / ΔG‡ > 100 kJ/mol**: flagged in `kinetic_traps`
 
 ---
 
@@ -2041,7 +2041,7 @@ print(f"Valid imscription set    : {tree.valid_imscription_set}")
 # Decompose by notation string (9-primitive ⟨...⟩ format)
 target = ImscriptionNotation.from_string(
     "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset+ddagger; "
-    "Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
+    "Φ_F; ƒ^ð; Ç^W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
 )
 # or pass the string directly
 tree2 = engine.decompose(notation_str, max_depth=2)
@@ -2068,7 +2068,7 @@ imscribe retrodesign carboxylic_acid_dimer
 imscribe retrodesign carboxylic_acid_dimer --max-depth 4 --prune-axioms 1,4,6
 
 # Decompose by notation string
-imscribe retrodesign "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset; Φ_F; ƒ_ð; Ç_W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
+imscribe retrodesign "⟨{Ð_C, Ð_infinity}; Þ_cage; Ř_superset; Φ_F; ƒ^ð; Ç^W; Γ_γ; ɢ_and(SELECTIVE); ⊙_ž⟩"
 
 # JSON output
 imscribe retrodesign carboxylic_acid_dimer --format json
@@ -2128,12 +2128,12 @@ Meet: Dithia ⊓ nitroso
 │ D      │ Ð_molecular    │ Ð_molecular    │ Ð_molecular     │
 │ T      │ Þ_cyclic       │ Þ_cyclic       │ Þ_cyclic        │
 │ R      │ Ř_non_covalent │ Ř_non_covalent │ Ř_non_covalent  │
-│ F      │ ƒ_ż         │ ƒ_ð          │ ƒ_ð  ▼        │
-│ K      │ Ç_W          │ Ç_-         │ Ç_- ▼ (wait) │
+│ F      │ ƒ^ż         │ ƒ^ð          │ ƒ^ð  ▼        │
+│ K      │ Ç^W          │ Ç^-         │ Ç^- ▼ (wait) │
 │ G      │ Γ_γ        │ Γ_β         │ Γ_β ▼        │
 │ Phi    │ ⊙_ž        │ ⊙_ž        │ ⊙_ž         │
 └────────┴────────────────┴────────────────┴─────────────────┘
-Result: ⟨D_∧; T_⋈; R_⊇; P_...;  ƒ_ð; Ç_-; G_ב; Γ_...; Φ_sub; S⟩
+Result: ⟨D_∧; T_⋈; R_⊇; P_...;  ƒ^ð; Ç^-; G_ב; Γ_...; Φ_sub; S⟩
 ```
 
 CONFLICT primitives are shown in red. A meet with no conflicts means the two imscriptions are mutually substitutable within the partial order.
@@ -2260,7 +2260,7 @@ Applies a primitive-rewriting map that migrates the imscription to a new domain 
 
 | Target | Primitive changes | Guard condition |
 |---|---|---|
-| `temporal` | D_∧→D_∞, R→R_‡, Ç_-→Ç_W, Γ→Γ_→(SEQUENTIAL) | None |
+| `temporal` | D_∧→D_∞, R→R_‡, Ç^-→Ç^W, Γ→Γ_→(SEQUENTIAL) | None |
 | `spatial` | D_∧→D_△, T→T_□ if not spatial, G_ב→G_ג | None |
 | `critical` | Φ_sub→Φ_c, G→G_ℵ | **F ≥ F_ℏ required** (Axiom 5) |
 | `molecular` | D_∞→D_∧, R_‡→R_⊆, Γ_→→Γ_∧(SELECTIVE) | None (forgetful) |
@@ -2278,7 +2278,7 @@ Lift: critical — Dithia
 Changed primitives:
   Φ: ⊙_ž → ⊙_ÿ
   G: Γ_γ → Γ_ʔ
-Result: ⟨D_∧; T_⋈; R_⊇; P_+; F_ℏ; Ç_W; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
+Result: ⟨D_∧; T_⋈; R_⊇; P_+; F_ℏ; Ç^W; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
 Note: Axiom 6 injection: temporal lift requires closed-cycle grounding before assembly.
 ```
 
@@ -2329,20 +2329,20 @@ imscribe pipeline Dithiadiazolyl_Phthalocyanine_Columnar_Stacking_Imscription \
 Output:
 ```
 Pipeline trace:
-  Start:  Dithia     ⟨...; F_ℏ; Ç_W; G_ג; ...; Φ_sub; 1:1⟩
+  Start:  Dithia     ⟨...; F_ℏ; Ç^W; G_ג; ...; Φ_sub; 1:1⟩
 ──────────────────────────────────────────────────────────────
   Step 1: join(nitroso)
-    F: ƒ_ð → ƒ_ż (max)   K: Ç_- → Ç_W   G: Γ_β → Γ_γ
+    F: ƒ^ð → ƒ^ż (max)   K: Ç^- → Ç^W   G: Γ_β → Γ_γ
     Δξ_CP = +0.519 nat       [PASS]
   Step 2: lift(critical)
     Φ: ⊙_ž → ⊙_ÿ   G: Γ_γ → Γ_ʔ
-    F = ƒ_ż ≥ ƒ_ż   ✓ eligibility gate passed
+    F = ƒ^ż ≥ ƒ^ż   ✓ eligibility gate passed
     Δξ_CP = +0.000 nat    [PASS]
   Step 3: path(Varma_imscription, tol=1.5)
     Hop 1: ... → Varma   Δξ = +0.847 nat   [APPROVED]
     Δξ_CP = +0.847 nat    [PASS]
 ──────────────────────────────────────────────────────────────
-  Final:  ⟨...; F_ℏ; Ç_W; G_ℵ; ...; Φ_c; 1:1⟩
+  Final:  ⟨...; F_ℏ; Ç^W; G_ℵ; ...; Φ_c; 1:1⟩
   Total Δξ_CP: 1.366 nat   Steps: 3   Blocked: 0
 ```
 
@@ -2375,9 +2375,9 @@ print(f"Blocked steps: {result.blocked_count}")
 - **Fail condition**: A step that **raises an exception** (e.g., imscription not found, BFS graph unreachable) terminates the pipeline with an ERROR status distinct from BLOCKED.
 
 **Behavioral verification:**
-1. **F-bottleneck propagation**: `tensor(A, B)` dropping F to ƒ_ð → subsequent `lift:critical` is BLOCKED without any explicit guard needed.
+1. **F-bottleneck propagation**: `tensor(A, B)` dropping F to ƒ^ð → subsequent `lift:critical` is BLOCKED without any explicit guard needed.
 2. **Path asymmetry**: `path:nitroso` from Dithia succeeds (F upgrade direction); `path:Dithia` from nitroso fails (F downgrade blocked).
-3. **Join-enables-path**: `join(nitroso)` upgrades F to ƒ_ż → `path:Varma` at Δξ = +0.847 nat succeeds where it would have failed from the lower-F starting point.
+3. **Join-enables-path**: `join(nitroso)` upgrades F to ƒ^ż → `path:Varma` at Δξ = +0.847 nat succeeds where it would have failed from the lower-F starting point.
 
 ### 8.7. `imscribe distance` — Tuple Distance (v0.4.0)
 
@@ -2422,7 +2422,7 @@ Distance: photon ↔ electron
     R    0.00   Ř_irr ↔ Ř_irr        [match]
     P    0.80   P_γ ↔ Φ_e            [mismatch]
     F    0.00   F_ℏ ↔ F_ℏ            [match]
-    K    0.00   Ç_- ↔ Ç_-      [match]
+    K    0.00   Ç^- ↔ Ç^-      [match]
     G    0.90   G_ℵ ↔ G_ℵ            [match]
     Γ    0.00   Γ_⊗ ↔ Γ_⊗            [match]
     Φ    0.00   Φ_sub ↔ Φ_sub        [match]
@@ -2480,14 +2480,14 @@ imscribe hotswap Dithia nitroso      # HotSwap check
 imscribe path Dithia nitroso         # finds 1-hop path, Δξ = +0.312 nat
 
 # Step 3: What does the ensemble look like?
-imscribe tensor Dithia nitroso       # effective tuple (F→min→ƒ_ð, K→min→Ç_W)
+imscribe tensor Dithia nitroso       # effective tuple (F→min→ƒ^ð, K→min→Ç^W)
 
 # Step 4: Can we lift the joined ensemble to critical?
 imscribe pipeline Dithia \
   --step join:nitroso \
   --step lift:critical \
   --step path:Varma:xi_tolerance=1.5
-# → join restores ƒ_ż → criticality lift passes → path to Varma succeeds
+# → join restores ƒ^ż → criticality lift passes → path to Varma succeeds
 ```
 
 ---
@@ -2536,12 +2536,12 @@ result.print_trace()
 | Script | Status | Δξ_CP (nat) | Key Demonstration |
 |--------|--------|-------------|-------------------|
 | **Batch 1** | | | |
-| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(ƒ_ð) cannot lift to Φ_c |
+| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(ƒ^ð) cannot lift to Φ_c |
 | `01b_soai_criticality_corrected.syn` | ✅ **SUCCESS** | 0.000 | Factor 7 fires; Φ_c lift; meet preserves Φ_c |
 | `02_tensor_ensemble_design.syn` | ⚠️ Partial | 13.624 | Tensor fidelity bottleneck |
 | `02b_tensor_ensemble_corrected.syn` | ✅ **SUCCESS** | 13.624 | Tensor → join → lift |
-| `03_retrosynthetic_meet_join.syn` | ✅ **SUCCESS** | 0.000 | meet(F_ℏ, ƒ_ð)→ƒ_ð; join→F_ℏ |
-| `04_hybrid_spatial_temporal.syn` | ❌ Blocked (pedagogical) | 16.802 | Tensor succeeds; ƒ_ð bottleneck blocks Φ_c lift |
+| `03_retrosynthetic_meet_join.syn` | ✅ **SUCCESS** | 0.000 | meet(F_ℏ, ƒ^ð)→ƒ^ð; join→F_ℏ |
+| `04_hybrid_spatial_temporal.syn` | ❌ Blocked (pedagogical) | 16.802 | Tensor succeeds; ƒ^ð bottleneck blocks Φ_c lift |
 | `04b_hybrid_spatial_temporal_corrected.syn` | ✅ **SUCCESS** | 15.425 | D_△∞ hybrid; Axiom 6 pass; lift |
 | `05_varma_probe_validation.syn` | ⚠️ Partial | 0.000 | Varma probe, path limits |
 | `05b_varma_probe_corrected.syn` | ✅ **SUCCESS** | 0.000 | Varma + idempotent join |
@@ -2552,7 +2552,7 @@ result.print_trace()
 | `09_cross_domain_analogy.syn` | ✅ **SUCCESS** | 0.000 | Supramolecular analogy |
 | `10_hierarchical_ensemble.syn` | ✅ **SUCCESS** | 13.016 | **tensor(CH₃⁻, CH₃⁺); MI discount 7.100 nat** |
 | `11_criticality_ensemble_validation.syn` | ✅ **SUCCESS** | 0.000 | Full Varma + Axiom 6 |
-| `12_thermodynamic_efficiency.syn` | ✅ **SUCCESS** | 12.577 | crown(ƒ_ð) ⊗ CB[n](F_ℏ) → ƒ_ð; MI 5.698 nat |
+| `12_thermodynamic_efficiency.syn` | ✅ **SUCCESS** | 12.577 | crown(ƒ^ð) ⊗ CB[n](F_ℏ) → ƒ^ð; MI 5.698 nat |
 | `13_multi_hop_path_discovery.syn` | ✅ **SUCCESS** | 0.000 | Extended path search |
 | `14_complex_strategy_composition.syn` | ✅ **SUCCESS** | 0.000 | lift→BLOCKED; mplus→join(F_ℏ)→lift Φ_c |
 | `15_dna_base_pair_lattice.syn` | ✅ **SUCCESS** | 0.000 | Biological H-bond systems |
@@ -2583,11 +2583,11 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 5/5 steps, Δξ_CP = 0.000 nat
 
 ```
-1. [PASS] ✓ meet(amide_dimer)  F: ƒ_ż ⊓ ƒ_ð → ƒ_ð
+1. [PASS] ✓ meet(amide_dimer)  F: ƒ^ż ⊓ ƒ^ð → ƒ^ð
 2. [ASSERÞ_PASS] ✓ topology == Þ_ò
-3. [ASSERÞ_PASS] ✓ fidelity == ƒ_ð
-4. [PASS] ✓ join(carboxylic_acid_dimer)  F: ƒ_ð ⊔ ƒ_ż → ƒ_ż
-5. [ASSERÞ_PASS] ✓ fidelity == ƒ_ż
+3. [ASSERÞ_PASS] ✓ fidelity == ƒ^ð
+4. [PASS] ✓ join(carboxylic_acid_dimer)  F: ƒ^ð ⊔ ƒ^ż → ƒ^ż
+5. [ASSERÞ_PASS] ✓ fidelity == ƒ^ż
 ```
 
 **Key Insights:**
@@ -2604,11 +2604,11 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 **Result:** 7/7 steps, Δξ_CP = 12.424 nat, **MI discount = 8.283 nat**
 
 ```
-1. [PASS] ✓ join(carbonyl)  F→ƒ_ð
+1. [PASS] ✓ join(carbonyl)  F→ƒ^ð
 2. [PASS] ✓ path(methyl_anion)  1 hop
 3. [PASS] ✓ tensor(methyl_cation, λ=0.6)  Δξ=+12.424 nat  discount=8.283
 4. [ASSERÞ_PASS] ✓ topology == Þ_linear
-5. [ASSERÞ_PASS] ✓ fidelity == ƒ_ð
+5. [ASSERÞ_PASS] ✓ fidelity == ƒ^ð
 ```
 
 **Key Insights:**
@@ -2657,7 +2657,7 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 4. [ASSERÞ_PASS] ✓ axiom6_satisfied
 5. [PASS] ✓ join(self)  idempotent
 6. [ASSERÞ_PASS] ✓ criticality preserved
-7. [ASSERÞ_PASS] ✓ fidelity == ƒ_ż
+7. [ASSERÞ_PASS] ✓ fidelity == ƒ^ż
 8. [ASSERÞ_PASS] ✓ output.assert(criticality_ok == true)
 ```
 
@@ -2686,7 +2686,7 @@ imscribe run designs/10_hierarchical_ensemble.syn --format json
 
 | Gate | Condition | Blocked If | Evidence |
 |------|-----------|------------|----------|
-| **F-floor** (criticality) | F ≥ ƒ_ż | F = ƒ_ð or ƒ_ì | Designs 01, 04 (pedagogical demos) |
+| **F-floor** (criticality) | F ≥ ƒ^ż | F = ƒ^ð or ƒ^ì | Designs 01, 04 (pedagogical demos) |
 | **D-floor** (criticality) | D = D_∞ OR G ≥ Γ_γ | D = Ð_C, G = Γ_β | Design 04 (after tensor bottleneck) |
 | **D/T match** (path) | Same {D, T} cluster | D or T differs | Designs 08, 09, 13 |
 | **Axiom 6** (temporal) | Reset block OR flux | D_∞ without grounding | Design 11 validates |
@@ -2747,13 +2747,13 @@ python TENSOŘ_OPΣ_DEMO.py --section decomp
 
 | §  | Operation | Key Examples | Category-Theory Translation |
 |----|-----------|-------------|----------------------------|
-| 1 | **meet** | (1) Hv1 closed⊓open — Φ_c absorbing; (2) drug scaffold GLB; (3) AtHv1_silent⊓PsHv1 — Ç_Ù isolates | Product / Heyting GLB |
+| 1 | **meet** | (1) Hv1 closed⊓open — Φ_c absorbing; (2) drug scaffold GLB; (3) AtHv1_silent⊓PsHv1 — Ç^Ù isolates | Product / Heyting GLB |
 | 2 | **join** | (1) Hv1 cross-species LUB; (2) pharmacophore ceiling; (3) Cooper pair⊔TI surface — Ω_Z survives | Coproduct / F-floor ratchet |
 | 3 | **tensor** | (1) electron⊗hole → exciton theorem (Þ_linear, no promotion); (2) Majorana⊗Majorana → Þ_braid special rule; (3) Cooper pair⊗phonon → full superconductor | Bifunctor; ξ_ens = ξ₁+ξ₂−λI |
-| 4 | **lift** | (1) AtHv1_silent lift(critical) → BLOCKED (Ç_Ù gate); (2) molecular→temporal (loop-space functor Ω); (3) temporal→spatial (classifying space B(G)) | Natural transformation; +2.303 nat = ln10 |
+| 4 | **lift** | (1) AtHv1_silent lift(critical) → BLOCKED (Ç^Ù gate); (2) molecular→temporal (loop-space functor Ω); (3) temporal→spatial (classifying space B(G)) | Natural transformation; +2.303 nat = ln10 |
 | 5 | **path** | (1) AtHv1_silent→Hv1_human_open — 3-hop Kleisli geodesic; (2) 2GBI→HIF inhibitor scaffold migration; (3) magnon→Cooper pair — blocked (D/T gate) | Lawvere metric geodesic |
 | 6 | **pipeline** | (1) Hv1 cross-species conservation (hv1_paper_reproduction.syn v6); (2) ImscriptionM do-notation chain; (3) fallback or-pattern (mplus) | WriterT+StateT+MaybeT Kleisli |
-| 7 | **decomp** | (1) cofactor(Cooper pair, electron) → Ç_@+Γ_meso+Þ_ò+Φ_c; (2) principal_decomp Birkhoff atoms; (3) Heyting complement (satisfied=False anatomy) | Inverse bifunctor; Birkhoff theorem |
+| 7 | **decomp** | (1) cofactor(Cooper pair, electron) → Ç^@+Γ_meso+Þ_ò+Φ_c; (2) principal_decomp Birkhoff atoms; (3) Heyting complement (satisfied=False anatomy) | Inverse bifunctor; Birkhoff theorem |
 
 **Inline imscription definitions:** 16 imscriptions defined directly in the script — all registered to `global_catalog`. Includes: `Hv1_human_closed`, `Hv1_human_open`, `AtHv1_silent`, `AtHv1_primed`, `PsHv1_constitutive`, `2GBI_inhibitor`, `HIƒ_inhibitor`, `cooper_pair`, `majorana_fermion`, `TI_surface_state`, `phonon`, `magnon`, `electron`, `hole`, `GNF2_inhibitor`, `imatinib`.
 

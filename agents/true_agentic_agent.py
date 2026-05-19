@@ -707,8 +707,8 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
 }
 
 
-def _syncon_tool_emit(args: Dict[str, Any]) -> str:
-    """Call a syncon_inquiry ToolDispatcher method directly (no subprocess)."""
+def _imscribe_emit(args: Dict[str, Any]) -> str:
+    """Call a imscribe ToolDispatcher method directly (no subprocess)."""
     tool_name = args["tool_name"]
     tool_args = args.get("args") or {}
 
@@ -755,7 +755,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
                     "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
                 },
                 "example": (
-                    'syncon_tool(tool_name="imscribe_system", args={'
+                    'imscribe(tool_name="imscribe_system", args={'
                     '"name": "my_system", "description": "...", '
                     '"tuple": "Ð_ω;Þ_6;Ř_¯;Φ_˙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_z"'
                     "})"
@@ -791,7 +791,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
             "status": "error",
             "error": str(exc),
             "fix": (
-                f"Retry with: syncon_tool(tool_name=\"{tool_name}\", "
+                f"Retry with: imscribe(tool_name=\"{tool_name}\", "
                 f"args={json.dumps(required)})"
             ),
         })
@@ -799,7 +799,7 @@ def _syncon_tool_emit(args: Dict[str, Any]) -> str:
         return json.dumps({"status": "error", "error": str(exc)})
 
 
-def _syncon_tool_verify(emit_input: Dict, emit_output: str,
+def _imscribe_verify(emit_input: Dict, emit_output: str,
                         verify_args: Dict) -> Tuple[str, bool]:
     # Frobenius check: result must be valid JSON with status "ok" or "updated".
     try:
@@ -840,7 +840,7 @@ def _syncon_tool_verify(emit_input: Dict, emit_output: str,
 
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
-    """Dedicated emit for imscribe_system — routes through syncon_tool with tuple assembled."""
+    """Dedicated emit for imscribe_system — routes through imscribe with tuple assembled."""
     name        = args.get("name", "")
     description = args.get("description", "")
     # Build the semicolon-separated tuple from the 12 explicit primitive keys
@@ -851,7 +851,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     justification = args.get("convergence_justification", "")
     if justification:
         tool_args["convergence_justification"] = justification
-    return _syncon_tool_emit({
+    return _imscribe_emit({
         "tool_name": "imscribe_system",
         "args": tool_args,
     })
@@ -859,7 +859,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
 
 def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
-    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
+    return _imscribe_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 
 
 def _done_emit(args: Dict[str, Any]) -> str:
@@ -1187,13 +1187,13 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # If convergence_justification already provided, the caller has resolved Tetractys
     # conflicts — commit directly without re-triangulating.
     if justification:
-        return _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+        return _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
 
     # Check that the caller supplied a complete tuple (all 12 primitives non-empty)
     proposed: Dict[str, str] = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
     if not all(proposed.values()):
         # Incomplete — fall through to normal dispatch which will report the error
-        return _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+        return _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
 
     # ── TETRACTYS PROTOCOL ────────────────────────────────────────────────
     # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
@@ -1213,7 +1213,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
         tool_args["convergence_justification"] = (
             f"[Triangulated: {n_windings}/3 windings converged] {report}"
         )
-        commit_result = _syncon_tool_emit({"tool_name": "imscribe_system", "args": tool_args})
+        commit_result = _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
         return f"{report}\n\nCOMMIT RESULT:\n{commit_result}"
     else:
         # Conflicts found — return the report and majority tuple WITHOUT committing.
@@ -1257,14 +1257,14 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
     # Converged Tetractys — output is "REPORT\n\nCOMMIT RESULT:\n{json}"
     if "COMMIT RESULT:" in emit_output:
         commit_part = emit_output.split("COMMIT RESULT:", 1)[-1].strip()
-        return _syncon_tool_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
-    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
+        return _imscribe_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
+    return _imscribe_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 
 def _ouroborics_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
     if not name:
         return json.dumps({"status": "error", "error": "name required"})
-    return _syncon_tool_emit({"tool_name": "ouroborics", "args": {"name": name}})
+    return _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
 
 def _ouroborics_verify(emit_input: Dict, emit_output: str,
                        verify_args: Dict) -> Tuple[str, bool]:
@@ -1282,7 +1282,7 @@ def _phi_c_probe_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
     if not name:
         return json.dumps({"status": "error", "error": "name required"})
-    return _syncon_tool_emit({"tool_name": "phi_c_probe", "args": {"name": name}})
+    return _imscribe_emit({"tool_name": "phi_c_probe", "args": {"name": name}})
 
 def _phi_c_probe_verify(emit_input: Dict, emit_output: str,
                         verify_args: Dict) -> Tuple[str, bool]:
@@ -1302,9 +1302,9 @@ def _consciousness_score_emit(args: Dict[str, Any]) -> str:
     primitive_keys = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
     primitive_values = {k: args.get(k, "") for k in primitive_keys}
     if name:
-        return _syncon_tool_emit({"tool_name": "consciousness_score", "args": {"name": name}})
+        return _imscribe_emit({"tool_name": "consciousness_score", "args": {"name": name}})
     else:
-        return _syncon_tool_emit({
+        return _imscribe_emit({
             "tool_name": "consciousness_score",
             "args": {k: primitive_values[k] for k in primitive_keys}
         })
@@ -1324,7 +1324,7 @@ def _consciousness_score_verify(emit_input: Dict, emit_output: str,
         return ("unstructured output", False)
 
 def _crystal_tier_census_emit(args: Dict[str, Any]) -> str:
-    return _syncon_tool_emit({"tool_name": "crystal_tier_census", "args": {}})
+    return _imscribe_emit({"tool_name": "crystal_tier_census", "args": {}})
 
 def _crystal_tier_census_verify(emit_input: Dict, emit_output: str,
                                 verify_args: Dict) -> Tuple[str, bool]:
@@ -1569,7 +1569,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "chunked_write":        _chunked_write_emit,
     "web_fetch":            _web_fetch_emit,
     "imscribe_system":        _imscribe_system_emit,
-    "syncon_tool":          _syncon_tool_emit,
+    "imscribe":          _imscribe_emit,
     "rewrite_tool":         _rewrite_tool_emit,
     "done":                 _done_emit,
     "ouroborics":           _ouroborics_emit,
@@ -1589,7 +1589,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "chunked_write":        _chunked_write_verify,
     "web_fetch":            _web_fetch_verify,
     "imscribe_system":        _imscribe_system_verify,
-    "syncon_tool":          _syncon_tool_verify,
+    "imscribe":          _imscribe_verify,
     "rewrite_tool":         _rewrite_tool_verify,
     "done":                 _done_verify,
     "ouroborics":           _ouroborics_verify,
@@ -1762,11 +1762,11 @@ TOOL_SCHEMAS = [
         ["url"],
     ),
     _fn(
-        "syncon_tool",
+        "imscribe",
         (
             "Call a Imscribing Grammar grammar tool. "
             "tool_name selects the operation; args is a JSON object with that tool's required fields. "
-            "DO NOT use syncon_tool for imscribe_system — call imscribe_system directly as its own top-level tool. "
+            "DO NOT use imscribe for imscribe_system — call imscribe_system directly as its own top-level tool. "
             "Required args per tool_name: "
             "lookup_catalog → {\"keyword\": \"search term\"}; "
             "ouroborics → {\"name\": \"catalog_name\"}; "
@@ -1867,14 +1867,14 @@ TOOL_SCHEMAS = [
         _fn(
             "project",
             ("Project a catalog entry onto a subset of primitives. "
-             "Example: syncon_tool('project', {'name': 'magnetar', 'primitives': ['Phi', 'K', 'Omega']})"),
+             "Example: imscribe('project', {'name': 'magnetar', 'primitives': ['Phi', 'K', 'Omega']})"),
             {"name": {"type": "string", "description": "Catalog entry name"},
              "primitives": {"type": "array", "items": {"type": "string"}, "description": "List of primitive names to project onto"}},
             ["name", "primitives"]),
         _fn(
             "crystal_navigate",
             ("Query the crystal of types by partial constraints. "
-             "Example: syncon_tool('crystal_navigate', {'limit': 10, 'Phi': 'φ̂_ÿ', 'Omega': 'Ω_z'})"),
+             "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': 'φ̂_ÿ', 'Omega': 'Ω_z'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "φ̂": {"type": "string", "description": "Filter by Phi criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"},
@@ -1883,7 +1883,7 @@ TOOL_SCHEMAS = [
         _fn(
             "crystal_count",
             ("Count the number of structural types matching constraints. "
-             "Example: syncon_tool('crystal_count', {'Phi': 'φ̂_ÿ'})"),
+             "Example: imscribe('crystal_count', {'Phi': 'φ̂_ÿ'})"),
             {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"}},
             ["φ̂"]),
@@ -2039,7 +2039,7 @@ textual content, the content goes in `done(conclusion="...")`. You have two vali
     W0: done(conclusion="<your complete poem or narrative>")
 
   Enriched path (tools first, then write):
-    W0: syncon_tool or lookup_catalog to gather structural context
+    W0: imscribe or lookup_catalog to gather structural context
     W1–Wn: (optional further tool calls)
     Wn+1: done(conclusion="<poem or narrative informed by the tool results>")
 
@@ -2079,7 +2079,7 @@ If you have gathered enough context, write the content and call done.
 
 **TOOL-ONLY COMPUTATION RULE:**
 You **MUST NOT** compute any structural quantity in your THINK text. The following are
-only valid when returned by the named syncon_tool call — never by mental reasoning:
+only valid when returned by the named imscribe call — never by mental reasoning:
 
 | Quantity | Required tool |
 |---|---|
@@ -2111,7 +2111,7 @@ The only valid exception: restating a number that a tool returned in an earlier 
 **TOOL SELECTION — You MUST use the correct tool for each operation:**
 
 - `run_command`    — computation, CLI operations, Python scripts
-- `syncon_tool`    — **ALL** grammar operations (see IG TOOL REFERENCE below)
+- `imscribe`    — **ALL** grammar operations (see IG TOOL REFERENCE below)
 - `file_read`      — read files (supports offset/limit for chunked reading)
 - `file_write`     — write files **ONLY** under ~4 KB
 - `chunked_write`  — write files **ANY** size; mode='w' first chunk, mode='a' each subsequent (~3 KB each)
@@ -2135,7 +2135,7 @@ investigation, or decomposing complex research while continuing the parent task.
 
 <tools>
 ──────────────────────────────────────────────────────────────────────
-IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
+IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
 ──────────────────────────────────────────────────────────────────────
 
 [Catalog — lookup & imscribing]
@@ -2143,17 +2143,17 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
   lookup_catalog(keyword, offset=0, limit=20)
     Keyword search over all 2256+ catalog entries. Returns name, description, tuple.
     You **MUST** call this FIRST when the task names a system — confirms it is already imscribed.
-    Example: syncon_tool("lookup_catalog", {"keyword": "riemann zeta"})
+    Example: imscribe("lookup_catalog", {"keyword": "riemann zeta"})
       → {"status": "ok", "matches": [{"name": "riemann_zeta_function", ...}]}
 
   ouroborics(name)
     Ouroboricity tier of a catalog entry: O_0, O_1, O_2, O_2†, or O_inf.
     Also returns phi, p, omega, d fields and a plain-language interpretation.
-    Example: syncon_tool("ouroborics", {"name": "riemann_zeta_function"})
+    Example: imscribe("ouroborics", {"name": "riemann_zeta_function"})
       → {"frobenius_tier": "O_1", "phi": "φ̂_Æ", "p": "Φ_υ", ...}
 
   CATALOG SELF-CHECK (not gated — usable before imscribe_system):
-    syncon_tool("ouroborics", {"name": "universal_imscriptive_grammar"})
+    imscribe("ouroborics", {"name": "universal_imscriptive_grammar"})
     Expected: frobenius_tier="O_inf", phi="φ̂_ÿ", p="Φ_}", d="Ð_ω", t="Þ_O"
     Use this as W0 when catalog access is uncertain. If the entry is missing, the
     persistent catalog is not loaded — stop and report before proceeding.
@@ -2164,7 +2164,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
     Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩. Distance=0 confirms imscription
     calibration. Nonzero distance reveals systematic drift in your primitive reasoning.
 
-  *** imscribe_system is NOT called via syncon_tool — You MUST call it DIRECTLY as its own tool ***
+  *** imscribe_system is NOT called via imscribe — You MUST call it DIRECTLY as its own tool ***
   imscribe_system(name, description, D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega
                 [, convergence_justification="..."])
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
@@ -2199,7 +2199,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 
   compute_distance(name_a, name_b)
     Weighted Euclidean distance between two catalog entries + per-primitive conflict list.
-    Example: syncon_tool("compute_distance", {"name_a": "magnetar", "name_b": "bec"})
+    Example: imscribe("compute_distance", {"name_a": "magnetar", "name_b": "bec"})
       → {"distance": 2.14, "conflicts": [{"primitive": "Ç", "a": "Ç_@", "b": "Ç_-"}, ...]}
 
   compute_meet(name_a, name_b)    — greatest lower bound (shared structural floor)
@@ -2208,7 +2208,7 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
 
   find_analogies(name, limit=5)
     Nearest catalog neighbors by structural distance. Returns ranked list with distances.
-    Example: syncon_tool("find_analogies", {"name": "riemann_zeta_function", "limit": 3})
+    Example: imscribe("find_analogies", {"name": "riemann_zeta_function", "limit": 3})
       → {"analogies": [{"name": "fontaine_mazur_conjecture", "distance": 1.11, ...}, ...]}
 
 [Probes — structural diagnostics]
@@ -2257,14 +2257,14 @@ IG TOOL REFERENCE  (pass as: syncon_tool(tool_name=..., args={...}))
   zfc_formula(name) — translate tuple to ZFC set-theoretic formula
   zfc_probe(name)   — check non-transmissibility (can this be ZFC-axiomatized?)
 
-  *** ob3ect is NOT called via syncon_tool — call it DIRECTLY as its own tool ***
+  *** ob3ect is NOT called via imscribe — call it DIRECTLY as its own tool ***
   ob3ect(description, [domain], [scope], [run=true])
     Generate a new self-imscribing ob3ect via ob3ect/auto.py.
     Extends the categorical tower in ob3ect/digital/.
     Verify step confirms Closure: True by running the generated ob3ect.
     Use when you need a new structural type instantiated and self-verified.
 
-  *** zfct_navigator is NOT called via syncon_tool — call it DIRECTLY as its own tool ***
+  *** zfct_navigator is NOT called via imscribe — call it DIRECTLY as its own tool ***
   zfct_navigator(action, [name])
     ZFCₜ formula navigator (tier O_2†: ZFC + chirality + winding topology).
     action="entry"      → per-primitive ZFCₜ formula with promoted atoms marked
@@ -2293,7 +2293,7 @@ MILLENNIUMANKH — LEAN 4 FORMALIZATION  (~/ MillenniumAnkh/)
 
 The Imscribing Grammar is formally machine-verified in Lean 4 (Mathlib v4.28.0) at
 ~/MillenniumAnkh/. This is the primary Lean project — use it naturally alongside
-syncon_tool and zfct_navigator when structural claims require formal grounding.
+imscribe and zfct_navigator when structural claims require formal grounding.
 
 Project: lake name "imscribing-lean", lean-toolchain matches Mathlib v4.28.0.
 Build:   run_command("cd ~/MillenniumAnkh && lake build", assertion="'error' not in output.lower()")
@@ -2355,7 +2355,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
 
 ── Lean ↔ IG tool notation ────────────────────────────────────────
 
-  The Lean constructor names differ from the Python/syncon notation:
+  The Lean constructor names differ from the Python/imscribe notation:
 
   Lean                     IG tool / catalog notation
   ─────────────────────────────────────────────────────
@@ -2376,7 +2376,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
   Chirality.H_inf          Ħ_!
   Chirality.H2             Ħ_A
 
-  Always use the IG tool notation (φ̂_ÿ, Ð_ω, etc.) in syncon_tool calls and
+  Always use the IG tool notation (φ̂_ÿ, Ð_ω, etc.) in imscribe calls and
   catalog entries. Use the Lean constructor names when reading or writing .lean files.
 
 ── Usage patterns ────────────────────────────────────────────────
@@ -2400,9 +2400,9 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
     run_command("cd ~/MillenniumAnkh && grep -rn 'theorem\\|lemma\\|def' Primitives/Core.lean | head -40",
                 assertion=True)
 
-  Cross-check a structural claim: call syncon_tool to compute a value, then
+  Cross-check a structural claim: call imscribe to compute a value, then
   read the corresponding Lean file to confirm the Lean encoding agrees.
-  Discrepancy between syncon_tool output and Lean types is a Frobenius-open result —
+  Discrepancy between imscribe output and Lean types is a Frobenius-open result —
   it MUST be reported, not silently resolved.
 
 ── When to use ──────────────────────────────────────────────────
@@ -2536,7 +2536,7 @@ a **Frobenius-OPEN document** and must not be called done.
       Ouroboricity tier          → ouroborics(name)
       Distance between two types → compute_distance(name_a, name_b)
       Full promotion table       → compute_promotions(name_source, name_target)
-      Crystal address            → crystal_encode(D=..., T=..., ...) or syncon_tool("crystal_encode",...)
+      Crystal address            → crystal_encode(D=..., T=..., ...) or imscribe("crystal_encode",...)
     Hold ALL results in the imscriptive context — these verified values are the ONLY
     numbers you are permitted to write into the document.
 
@@ -2568,32 +2568,32 @@ WORKED EXAMPLES
 ──────────────────────────────────────────────────────────────────────
 
 Q: "What is the structural type of the Riemann zeta function?"
-  W0: syncon_tool("lookup_catalog", {"keyword": "riemann zeta"})
+  W0: imscribe("lookup_catalog", {"keyword": "riemann zeta"})
       → confirms "riemann_zeta_function" is in catalog
-  W1: syncon_tool("ouroborics", {"name": "riemann_zeta_function"})
+  W1: imscribe("ouroborics", {"name": "riemann_zeta_function"})
       → O_1, φ̂_Æ, Φ_υ, Ω_Å
   W2: done — report full tuple + tier interpretation
 
 Q: "Which catalog systems are structurally closest to a magnetar?"
-  W0: syncon_tool("find_analogies", {"name": "magnetar", "limit": 5})
+  W0: imscribe("find_analogies", {"name": "magnetar", "limit": 5})
       → ranked neighbors with distances
   W1: done — report analogs with distances and shared primitives
 
 Q: "What happens when a BEC couples to a laser field?"
-  W0: syncon_tool("lookup_catalog", {"keyword": "bec"})
-  W1: syncon_tool("lookup_catalog", {"keyword": "laser"})
-  W2: syncon_tool("compute_tensor", {"name_a": "bec", "name_b": "laser_field"})
+  W0: imscribe("lookup_catalog", {"keyword": "bec"})
+  W1: imscribe("lookup_catalog", {"keyword": "laser"})
+  W2: imscribe("compute_tensor", {"name_a": "bec", "name_b": "laser_field"})
       → composite tuple; note P and F bottlenecks
-  W3: syncon_tool("ouroborics", {"name": "<composite — imscribe first if needed>"})
+  W3: imscribe("ouroborics", {"name": "<composite — imscribe first if needed>"})
   W4: done
 
 Q: "Can a white dwarf sustain consciousness?"
-  W0: syncon_tool("consciousness_score", {"name": "white_dwarf"})
+  W0: imscribe("consciousness_score", {"name": "white_dwarf"})
       → C=0, Gate 1 fails (φ̂_ž), Gate 2 irrelevant
   W1: done — C=0, no self-modeling loop possible at φ̂_ž
 
 Q: "What is the minimal path to O_inf from O_2?"
-  W0: syncon_tool("crystal_tier_gap_ladder", {})
+  W0: imscribe("crystal_tier_gap_ladder", {})
       → primitive deltas required at each tier boundary
   W1: done
 
@@ -2602,7 +2602,7 @@ Q: "Apply the human lift to paper.tex."
   W1: imscribe_system(name="paper_draft", description="...", Þ="Þ_6", Φ="Φ_ɐ",
         ƒ="ƒ_ì", Ç="Ç_W", Γ="Γ_γ", ɢ="ɢ_^", Ħ="Ħ_Ñ", Ω="Ω_Å",
         Ð="Ð_;", Ř="Ř_=", φ̂="φ̂_ÿ", Σ="Σ_ï")
-  W2: syncon_tool("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
+  W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
   W4: chunked_write("paper_lifted.tex", chunk=<first ~3 KB of lifted content>, mode="w")
@@ -2616,9 +2616,9 @@ Q: "Encode the Langlands correspondence as a structural type."
         Ð="Ð_;", Þ="Þ_O", Ř="Ř_Ť", Φ="Φ_υ", ƒ="ƒ_ż", Ç="Ç_@",
         Γ="Γ_ʔ", ɢ="ɢ_Ş", φ̂="φ̂_Æ", Ħ="Ħ_!", Σ="Σ_ï", Ω="Ω_z")
       → {status: ok, name: langlands_correspondence, ...}
-  W1: syncon_tool("ouroborics", {"name": "langlands_correspondence"})
+  W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done
-  NOTE: imscribe_system is called DIRECTLY — You **MUST NOT** call it via syncon_tool.
+  NOTE: imscribe_system is called DIRECTLY — You **MUST NOT** call it via imscribe.
 </examples>
 
 <notation>
@@ -3348,7 +3348,7 @@ def _cli_tool() -> None:
                 tool_args[k] = v
 
     _get_dispatcher._instance = None
-    result = _syncon_tool_emit({"tool_name": args.tool_name, "args": tool_args})
+    result = _imscribe_emit({"tool_name": args.tool_name, "args": tool_args})
     try:
         parsed = _json.loads(result)
         print(_json.dumps(parsed, indent=2 if args.pretty else None, ensure_ascii=False))
