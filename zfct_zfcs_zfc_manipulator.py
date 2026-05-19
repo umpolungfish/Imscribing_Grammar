@@ -96,7 +96,7 @@ ZFCST_TUPLE = {
 IMAGINARY_UNIT_TUPLE = {
     "name": "imaginary_unit",
     "description": "i — U(1) phase rotation; O_2 (D_triangle, P_psi); Frobenius cliff dist=5 from ZFCₜ",
-    "Ð": "Ð_C",   "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_˙",
+    "Ð": "Ð_C",   "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_υ",
     "ƒ": "ƒ_ì",   "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
     "φ̂": "φ̂_ÿ",  "Ħ": "Ħ_A",  "Σ": "Σ_S",  "Ω": "Ω_z",
 }
@@ -111,10 +111,10 @@ COMPLEX_TIME_PATH_INTEGRAL_TUPLE = {
 
 PLANCK_IMAGINARY_TIME_TUPLE = {
     "name": "planck_imaginary_time",
-    "description": "Imaginary time in QG (t→iτ); O_2†; shares T_in+R_dagger spatial skeleton with ZFCₛ",
-    "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_˙",
+    "description": "Imaginary time in QG (t→iτ); O_2; shares T_in+R_dagger spatial skeleton with ZFCₛ",
+    "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_υ",
     "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_ˌ",
-    "φ̂": "φ̂_Æ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_5",
+    "φ̂": "φ̂_Æ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_2",
 }
 
 SPECIAL_ENTRIES: Dict[str, dict] = {
@@ -844,15 +844,15 @@ class ZFCTriangleManipulator:
             "",
             "─── Imaginary numbers Frobenius cliff ──────────────────────────────",
             "",
-            "  imaginary_unit: Φ = Φ_˙ (ord 3 < 4)  →  O_2  (not Frobenius)",
-            "    tensor(i, X).Φ = min(Φ_˙, X.Φ) ≤ Φ_˙ < Φ_}  — cliff holds ∀X",
+            "  imaginary_unit: Φ = Φ_υ (ord 1)  →  O_2  (not Frobenius)",
+            "    tensor(i, X).Φ = min(Φ_υ, X.Φ) ≤ Φ_υ < Φ_}  — cliff holds ∀X",
             "    dist(i, ZFCₜ) = 5   dist(i, ZFCₛ) = 8",
             "",
             "  complex_time_path_integral: O_inf, Φ_}  — 1 step from ZFCₜ (T_bowtie vs T_odot)",
             "    Wick rotation t→iτ is a single Þ-promotion: T_bowtie→T_odot",
             "",
-            "  planck_imaginary_time: Φ = Φ_˙ (O_2†) — shares Þ_¨+Ř_Ť with ZFCₛ",
-            "    tensor(pit, X).Φ = min(Φ_˙, X.Φ) ≤ Φ_˙ — cliff holds ∀X",
+            "  planck_imaginary_time: Φ = Φ_υ (O_2) — shares Þ_¨+Ř_Ť with ZFCₛ",
+            "    tensor(pit, X).Φ = min(Φ_υ, X.Φ) ≤ Φ_υ — cliff holds ∀X",
             "",
             "─── ZFCₜ promotion channels ────────────────────────────────────────",
             "",

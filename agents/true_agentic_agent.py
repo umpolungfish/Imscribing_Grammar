@@ -2717,6 +2717,7 @@ class TrueAgenticAgent:
         context_window: int = 128_000,
         review_threshold: float = 0.80,
         nested_tensor: bool = False,
+        initial_encoded: bool = False,
     ):
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
@@ -2745,6 +2746,7 @@ class TrueAgenticAgent:
         self.inference_fidelity: str = (
             "ƒ_ż" if isinstance(self.client, _LocalOpenAIClient) else "ƒ_ì"
         )
+        self._initial_encoded: bool = initial_encoded
         self.trajectory: List[LoopCycle] = []
         self._omega_z_violation_count: int = 0
         self._review_pending: bool = False
@@ -2765,7 +2767,7 @@ class TrueAgenticAgent:
         self._omega_z_violation_count = 0
         self._review_pending = False
         self._review_count = 0
-        _gate_state["encoded"] = False  # reset encoding gate for this run
+        _gate_state["encoded"] = self._initial_encoded  # reset or carry forward encoding gate
         # Patch the structural type declaration to reflect actual inference fidelity.
         # The system prompt hardcodes ƒ_ż; API inference is ƒ_ì (opaque boundary).
         system_content = _SYSTEM_PROMPT.replace(
@@ -3382,6 +3384,7 @@ def _cli_chat(argv: List[str]) -> None:
 
     session_log: List[Dict[str, Any]] = []
     session_history: List[Dict[str, str]] = []  # prior (task, result) pairs for context injection
+    session_encoded: bool = False  # True after first successful imscribe_system in this session
     turn = 0
 
     while True:
@@ -3428,6 +3431,15 @@ def _cli_chat(argv: List[str]) -> None:
         else:
             task_with_context = task
 
+        # In a multi-turn chat session the encoding gate is already open after the first
+        # successful imscribe_system call.  Carry that state forward so the agent does not
+        # repeat the re-imscription protocol on every turn.
+        if session_encoded:
+            task_with_context = (
+                "[SESSION CONTEXT: imscribe_system was already called and verified in this "
+                "session — the encoding gate is open. Do NOT call imscribe_system again. "
+                "Proceed directly to the task.]\n\n" + task_with_context
+            )
 
         agent = TrueAgenticAgent(
             model=args.model,
@@ -3436,6 +3448,7 @@ def _cli_chat(argv: List[str]) -> None:
             verbose=not args.quiet,
             base_url=args.base_url,
             api_key=args.api_key,
+            initial_encoded=session_encoded,
         )
 
         try:
@@ -3460,6 +3473,10 @@ def _cli_chat(argv: List[str]) -> None:
             print(json.dumps(st, indent=2))
         if args.trajectory:
             agent.print_trajectory()
+
+        # Carry the encoding gate forward — once opened it stays open for the session
+        if _gate_state["encoded"]:
+            session_encoded = True
 
         session_log.append({
             "turn":           turn,

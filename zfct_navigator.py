@@ -13,7 +13,7 @@ ZFCₜ extends ZFC via six primitive promotions (from MillenniumAnkh/Primitives/
 Each promotion corresponds to a recovery channel in the ZFCₜ specialist router.
 The 4 ZFC collapse channels (ƒ, Þ, Ð, ɢ) are subsumed and extended to 7.
 
-ZFCₜ tier: O_2† (Phi_c + Omega_Z + D_infty) — below O_inf (Frobenius cliff).
+ZFCₜ tier: O_inf (Phi_c + P_pm_sym + Omega_Z) — Frobenius gate open.
 
 Run:
     uv run zfct_navigator.py train
@@ -598,19 +598,19 @@ def build_dataset(catalog: List[dict], max_len: int = 256) -> Tuple[torch.Tensor
 
 ZFC_TUPLE = {
     "name": "ZFC_foundations",
-    "description": "Zermelo-Fraenkel set theory with Choice (ZFC baseline)",
-    "Ð": "Ð_C", "Þ": "Þ_K", "Ř": "Ř_¯", "Φ": "Φ_˙",
-    "ƒ": "ƒ_ì", "Ç": "Ç_@", "Γ": "Γ_β", "ɢ": "ɢ_^",
-    "φ̂": "φ̂_ž", "Ħ": "Ħ_Ñ", "Σ": "Σ_S", "Ω": "Ω_Å",
+    "description": "Zermelo-Fraenkel set theory with Choice (corrected: D_infty, Phi_c)",
+    "Ð": "Ð_;",  "Þ": "Þ_K",  "Ř": "Ř_¯",  "Φ": "Φ_ɐ",
+    "ƒ": "ƒ_ż",  "Ç": "Ç_@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ_^",
+    "φ̂": "φ̂_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
 }
 
 ZFCT_TUPLE = {
     "name": "zfc_t",
-    "description": "ZFCₜ: ZFC + sequential + chirality + winding (ZFCt.lean)",
+    "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_inf, Frobenius)",
     "Ð": "Ð_;",   # D_infty
     "Þ": "Þ_O",   # T_odot   ← ZFCₜ promotion
     "Ř": "Ř_=",   # R_lr     ← ZFCₜ promotion
-    "Φ": "Φ_F",   # P_pm     ← ZFCₜ promotion
+    "Φ": "Φ_}",   # P_pm_sym ← ZFCₜ promotion (Frobenius-special)
     "ƒ": "ƒ_ż",   # F_hbar
     "Ç": "Ç_@",   # K_slow
     "Γ": "Γ_ʔ",   # G_aleph
@@ -942,7 +942,7 @@ def probe_promotions(
     # d(ZFC, ZFCt)
     d_zfc_zfct = tuple_distance(ZFC_TUPLE, ZFCT_TUPLE)
     print(f"\n  d(ZFC, ZFCₜ) = {d_zfc_zfct:.4f}  (6 simultaneous promotions)")
-    print(f"  ZFCₜ tier:   O_2†  (Phi_c + Omega_Z + D_infty — below Frobenius cliff)")
+    print(f"  ZFCₜ tier:   O_inf  (Phi_c + P_pm_sym + Omega_Z — Frobenius gate open)")
 
     if not model_p.exists():
         print(f"\n  [promotions] model not found at {model_path} — skipping roundtrip.")

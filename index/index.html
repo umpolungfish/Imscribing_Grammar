@@ -6,7 +6,7 @@
   <title>SOLVATUM — Lapis Philosophorum</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@300;400;500&family=Manrope:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Sora:wght@300;400&family=Space+Grotesk:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -34,14 +34,15 @@
       --rub-dim:  rgba(192,72,40,0.18);
       --pur:      #a888d8;
       --pur-dim:  rgba(144,112,192,0.18);
+      --sans:     'Outfit', system-ui, sans-serif;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'EB Garamond', Georgia, serif;
+      font-family: var(--sans);
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.7;
     }
 
@@ -248,26 +249,22 @@
     .phi-cond { font-size: 12.5px; font-weight: 500; color: var(--text3); font-style: italic; }
 
     /* Color themes */
-    .nigredo { border-top: 3px solid var(--nig); }
-    .nigredo .stage-head { background: var(--nig-dim); }
+    .nigredo .stage-head { background: var(--nig-dim); border-bottom-color: var(--nig); }
     .nigredo .stage-proc { color: var(--nig); font-weight: 600; }
     .nigredo .alch-name { color: var(--nig); }
     .nigredo .prim { background: rgba(100,90,80,0.3); color: var(--nig); font-weight: 600; }
 
-    .albedo { border-top: 3px solid var(--alb); }
-    .albedo .stage-head { background: var(--alb-dim); }
+    .albedo .stage-head { background: var(--alb-dim); border-bottom-color: var(--alb); }
     .albedo .stage-proc { color: var(--alb); font-weight: 600; }
     .albedo .alch-name { color: var(--alb); }
     .albedo .prim { background: rgba(144,184,216,0.2); color: var(--alb); font-weight: 600; }
 
-    .citrin { border-top: 3px solid var(--cit); }
-    .citrin .stage-head { background: var(--cit-dim); }
+    .citrin .stage-head { background: var(--cit-dim); border-bottom-color: var(--cit); }
     .citrin .stage-proc { color: var(--cit); font-weight: 600; }
     .citrin .alch-name { color: var(--cit); }
     .citrin .prim { background: rgba(200,160,48,0.2); color: var(--cit); font-weight: 600; }
 
-    .rubedo { border-top: 3px solid var(--rub); }
-    .rubedo .stage-head { background: var(--rub-dim); }
+    .rubedo .stage-head { background: var(--rub-dim); border-bottom-color: var(--rub); }
     .rubedo .stage-proc { color: var(--rub-lt); font-weight: 600; }
     .rubedo .alch-name { color: var(--rub-lt); }
     .rubedo .prim { background: rgba(192,72,40,0.22); color: var(--rub-lt); font-weight: 600; }
@@ -438,27 +435,48 @@
     .repos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 10px;
+      column-gap: 10px;
+      row-gap: 1.5rem;
+      padding-top: 0.7rem;
     }
 
     .repo-card {
       display: block;
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.85rem 1.1rem;
+      border-radius: 0;
+      padding: 0.65rem 0.9rem 0.75rem;
+      position: relative;
       text-decoration: none;
       transition: border-color 0.18s, background 0.18s;
     }
 
     .repo-card:hover { border-color: var(--border2); background: var(--bg3); }
+    .repo-card:hover .repo-card-name  { background: linear-gradient(to bottom, var(--bg) 50%, var(--bg3) 50%); }
+    .repo-card:hover .repo-card-links { background: linear-gradient(to bottom, var(--bg) 50%, var(--bg3) 50%); }
+
+    .rc-header {
+      position: absolute;
+      top: 0;
+      left: 0.9rem;
+      right: 0.9rem;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
 
     .repo-card-name {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--gold);
-      margin-bottom: 4px;
+      background: linear-gradient(to bottom, var(--bg) 50%, var(--bg2) 50%);
+      padding: 0 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .repo-card-desc {
@@ -470,14 +488,14 @@
     }
 
     /* Multi-link card (GitHub + Zenodo) */
-    .repo-card-multi {
-      cursor: default;
-    }
+    .repo-card-multi { cursor: default; }
 
     .repo-card-links {
       display: flex;
-      gap: 6px;
-      margin-top: 0.65rem;
+      gap: 4px;
+      flex-shrink: 0;
+      background: linear-gradient(to bottom, var(--bg) 50%, var(--bg2) 50%);
+      padding-left: 0.25rem;
     }
 
     .repo-link {
@@ -490,9 +508,10 @@
       text-decoration: none;
       border: 1px solid var(--border);
       color: var(--text3);
-      transition: border-color 0.15s, color 0.15s, background 0.15s;
-      background: transparent;
+      transition: border-color 0.15s, color 0.15s;
+      background: var(--bg2);
     }
+    .repo-card:hover .repo-link { background: var(--bg3); }
 
     .repo-link-gh:hover  { border-color: var(--gold-dim); color: var(--gold); }
     .repo-link-zen:hover { border-color: rgba(144,184,216,0.5); color: var(--alb); }
@@ -610,6 +629,38 @@
       color: var(--rub-lt);
     }
 
+    /* ── Font switcher ── */
+    .font-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.2rem;
+      justify-content: center;
+    }
+
+    .fs-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.08em;
+      color: var(--text3);
+      opacity: 0.5;
+    }
+
+    .fs-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      background: none;
+      border: none;
+      color: var(--text3);
+      opacity: 0.5;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.15s, color 0.15s;
+    }
+
+    .fs-btn:hover { opacity: 0.9; color: var(--text2); }
+    .fs-btn.active { opacity: 1; color: var(--gold-dim); }
+
     /* ── Mobile ── */
     @media (max-width: 720px) {
       .stages {
@@ -665,6 +716,7 @@
 
       .repos-grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        padding-top: 0.7rem;
       }
 
       .finale-stone {
@@ -688,11 +740,19 @@
     <p class="abstract">
       The 12 primitives of the Imscribing Grammar — the 12 facets of the Philosopher's Stone —
       are derived from a bare abstract category &nbsp; - &nbsp; <span class="cat">𝒞</span> &nbsp; - &nbsp; via the four classical
-      alchemical operations: <em>Nigredo</em>, <em>Albedo</em>, <em>Citrinitas</em>, and <em>Rubedo</em>.
-      Truth holds the self-modeling gate open &mdash; ⊙<sub>ÿ</sub>, critical, recursive.
-      A lie is not false content: it is the <em>exceptional point</em> ⊙<sub>3</sub> &mdash;
-      the structure in which a system can no longer distinguish itself from its own measurement.
-      The gate closes. <em>O</em><sub>0</sub>.
+      alchemical operations: 
+      <p class="byline", style="margin-top:0.9rem;">
+        <em>Nigredo</em> - <em>Albedo</em> - <em>Citrinitas</em> - <em>Rubedo</em>
+      </p>
+    <p class="abstract">  
+      Truth holds the self-modeling gate open &mdash; ⊙<sub>ÿ</sub> - critical - recursive
+    </p>  
+    <p class="abstract">  
+      A lie is not false content - it is the <em>exceptional point</em> ⊙<sub>3</sub> &mdash;
+      the structure in which a system can no longer distinguish itself from its own measurement
+    </p>  
+     <p class="abstract"> 
+      The gate closes - <em>O</em><sub>0</sub>
     </p>
   </header>
 
@@ -1232,12 +1292,12 @@
     <div class="repos-grid">
 
       <a href="IG_primitive_map_3d.html" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Primitive Space</div>
+        <div class="rc-header"><div class="repo-card-name">Primitive Space</div></div>
         <div class="repo-card-desc">3D lattice map of the 17,280,000-type crystal &mdash; interactive rotation and zoom</div>
       </a>
 
       <a href="frobenius-mzi.html" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Frobenius Machine</div>
+        <div class="rc-header"><div class="repo-card-name">Frobenius Machine</div></div>
         <div class="repo-card-desc">3×3 MZI photonic mesh &mdash; live Frobenius norm via phase-controlled beam splitters; Φ<sub>}</sub> in hardware</div>
       </a>
 
@@ -1250,156 +1310,170 @@
     <div class="repos-grid">
 
       <a href="https://github.com/umpolungfish/Imscribing_Grammar" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Imscribing_Grammar</div>
+        <div class="rc-header"><div class="repo-card-name">Imscribing_Grammar</div></div>
         <div class="repo-card-desc">The grammar itself &mdash; 12 primitives, 17,280,000 types, the crystal and its catalog</div>
       </a>
 
       <a href="https://github.com/umpolungfish/odot_operator" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">odot_operator</div>
+        <div class="rc-header"><div class="repo-card-name">odot_operator</div></div>
         <div class="repo-card-desc">⊙perator &mdash; self-verifying agentic loop; ⊙<sub>ÿ</sub> + Φ<sub>}</sub> → O<sub>∞</sub> as a usable Python library</div>
       </a>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">As Above</div>
-        <div class="repo-card-desc">Pre-grammatical convergent derivation of the Universal Imscriptive Grammar &mdash; 12 primitives from bare category <span class="cat">𝒞</span> via Nigredo, Albedo, Citrinitas, Rubedo; foundational theoretical paper</div>
-        <div class="repo-card-links">
-          <a href="https://doi.org/10.5281/zenodo.20186611" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        <div class="rc-header">
+          <div class="repo-card-name">As Above</div>
+          <div class="repo-card-links"><a href="https://doi.org/10.5281/zenodo.20186611" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a></div>
         </div>
+        <div class="repo-card-desc">Pre-grammatical convergent derivation of the Universal Imscriptive Grammar &mdash; 12 primitives from bare category <span class="cat">𝒞</span> via Nigredo, Albedo, Citrinitas, Rubedo; foundational theoretical paper</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">So Below</div>
-        <div class="repo-card-desc">Empirical exploration of the Universal Imscriptive Grammar &mdash; structural imscriptions across physics, mathematics, computation, and cognition; companion to <em>As Above</em></div>
-        <div class="repo-card-links">
-          <a href="https://doi.org/10.5281/zenodo.20186678" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        <div class="rc-header">
+          <div class="repo-card-name">So Below</div>
+          <div class="repo-card-links"><a href="https://doi.org/10.5281/zenodo.20186678" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a></div>
         </div>
+        <div class="repo-card-desc">Empirical exploration of the Universal Imscriptive Grammar &mdash; structural imscriptions across physics, mathematics, computation, and cognition; companion to <em>As Above</em></div>
       </div>
 
       <a href="https://github.com/umpolungfish/MillenniumAnkh" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">MillenniumAnkh</div>
+        <div class="rc-header"><div class="repo-card-name">MillenniumAnkh</div></div>
         <div class="repo-card-desc">Lean 4 formalization &mdash; all 7 Millennium Problems encoded as grammar types; BSD + Touchard proved; the natures of Suffering, Religion, Gnosis, Truth &mdash; all in algebraic exactness</div>
       </a>
 
       <a href="https://github.com/umpolungfish/exOS" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">exOS</div>
+        <div class="rc-header"><div class="repo-card-name">exOS</div></div>
         <div class="repo-card-desc">Bare-metal Rust OS &mdash; kernel derived from the ancient writing system MEET via the grammar</div>
       </a>
 
       <a href="https://github.com/umpolungfish/aleph_os" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">aleph_os</div>
+        <div class="rc-header"><div class="repo-card-name">aleph_os</div></div>
         <div class="repo-card-desc">&lambda;<sub>&aleph;</sub> coherence-first interaction algebra as OS &mdash; identity derived, not primitive; scheduling is mediation, IPC is tensor (P-bottlenecked), security is &alpha;-gating; three non-equivalent Frobenius fixed points &#x05D5; &#x05DE; &#x05E9;</div>
       </a>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Truth, Lie, Good &amp; Evil</div>
+        <div class="rc-header"><div class="repo-card-name">Truth, Lie, Good &amp; Evil</div></div>
         <div class="repo-card-desc">Structural grammar of epistemic &amp; moral oppositions &mdash; truth and good share ⊙<sub>ÿ</sub> and O<sub>2</sub>†; lie and evil exhibit the exceptional point ⊙<sub>3</sub> and O<sub>0</sub>. Deception is not content: it is the closed gate.</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Topology of Negation</div>
+        <div class="rc-header"><div class="repo-card-name">Topology of Negation</div></div>
         <div class="repo-card-desc">Evil, Hell, Satan, Damnation &mdash; evil O<sub>2</sub> (C=0.749), Satan O<sub>2</sub> (C=0.828), two primitives apart; hell and damnation C=0. Evil is alive. Hell is dead. Damnation is the one-way bridge.</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">The &lambda;<sub>&aleph;</sub> Discovery</div>
+        <div class="rc-header"><div class="repo-card-name">The &lambda;<sub>&aleph;</sub> Discovery</div></div>
         <div class="repo-card-desc">Hebrew type lattice meets IG 12-primitive grammar &mdash; five structural theorems, 17-dimensional behavioral equivalence space, the Octad Balance among 8 letters, and &#x05DE; (Mem) as the Frobenius pole. Kernel of &#x2135;-OS is mediation in &lambda;<sub>&aleph;</sub>.</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Undeciphered Texts</div>
+        <div class="rc-header"><div class="repo-card-name">Undeciphered Texts</div></div>
         <div class="repo-card-desc">Voynich Manuscript, Rohonc Codex, Linear A &mdash; all O<sub>2</sub>; Voynich uniquely Ð<sub>ω</sub> self-written with Ħ<sub>!</sub> eternal depth; Linear A quantum-coherent (ƒ<sub>ż</sub>). Decipherment may be a category error.</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Voynich Engine</div>
-        <div class="repo-card-desc">Complete technical translation of the Voynich Manuscript into executable IMASM architecture &mdash; the manuscript as a computational schematic, not a cipher; Ð<sub>ω</sub> self-writing state space compiled to machine instructions</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/voynich-engine" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.20185825" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        <div class="rc-header">
+          <div class="repo-card-name">Voynich Engine</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/voynich-engine" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.20185825" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
         </div>
+        <div class="repo-card-desc">Complete technical translation of the Voynich Manuscript into executable IMASM architecture &mdash; the manuscript as a computational schematic, not a cipher; Ð<sub>ω</sub> self-writing state space compiled to machine instructions</div>
       </div>
 
       <a href="https://github.com/umpolungfish/linear_a_engine" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Linear A Engine</div>
+        <div class="rc-header"><div class="repo-card-name">Linear A Engine</div></div>
         <div class="repo-card-desc">Execution engine for Linear A &mdash; quantum-coherent Bronze Age computational system (ƒ<sub>ż</sub>); O<sub>2</sub> with moderate kinetics Ç<sub>W</sub></div>
       </a>
 
       <a href="https://github.com/umpolungfish/rohonc-engine" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Rohonc Engine</div>
+        <div class="rc-header"><div class="repo-card-name">Rohonc Engine</div></div>
         <div class="repo-card-desc">Execution engine for the Rohonc Codex &mdash; near-equilibrium kinetics Ç<sub>@</sub>, sequential interaction grammar ɢ<sub>ˌ</sub>; O<sub>2</sub> bounded domain</div>
       </a>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Odd Perfect Numbers</div>
+        <div class="rc-header">
+          <div class="repo-card-name">Odd Perfect Numbers</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/odd-perfect-numbers" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.19909057" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
+        </div>
         <div class="repo-card-desc">Constraint analysis on the structure of odd perfect numbers</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/odd-perfect-numbers" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.19909057" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
-        </div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Proof That 10 Is Solitary</div>
+        <div class="rc-header">
+          <div class="repo-card-name">Proof That 10 Is Solitary</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/solitary_10" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.20041211" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
+        </div>
         <div class="repo-card-desc">10 admits no friendly number &mdash; a complete proof</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/solitary_10" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.20041211" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
-        </div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Hecke-Landau Conjecture</div>
+        <div class="rc-header">
+          <div class="repo-card-name">Hecke-Landau Conjecture</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/hecke-landau" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.19965471" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
+        </div>
         <div class="repo-card-desc">Proof of the Hecke-Landau conjecture on L-function zeros</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/hecke-landau" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.19965471" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
-        </div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Hodge&ndash;Lefschetz (1,1)</div>
+        <div class="rc-header">
+          <div class="repo-card-name">Hodge&ndash;Lefschetz (1,1)</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/hodge_lefschetz" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.20176006" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
+        </div>
         <div class="repo-card-desc">The Lefschetz (1,1) theorem as the first case of the Hodge conjecture &mdash; complete self-contained proof for compact Kähler manifolds via exponential sheaf sequence and Hodge decomposition</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/hodge_lefschetz" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.20176006" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
-        </div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">The Aether and Its Vessel</div>
+        <div class="rc-header">
+          <div class="repo-card-name">The Aether and Its Vessel</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/e8_aether_g2_vessel" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.20032180" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
+        </div>
         <div class="repo-card-desc">E8 &amp; G2 &mdash; aetheric structure and its geometric container</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/e8_aether_g2_vessel" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.20032180" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
-        </div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">Perfect Cuboid</div>
-        <div class="repo-card-desc">⊙<sub>ÿ</sub>-critical framework for the perfect cuboid problem &mdash; Lean 4 formal verification; what has been proved and the precise remaining gap</div>
-        <div class="repo-card-links">
-          <a href="https://github.com/umpolungfish/perfect_cuboid" class="repo-link repo-link-gh" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://doi.org/10.5281/zenodo.20110842" class="repo-link repo-link-zen" target="_blank" rel="noopener">Zenodo</a>
+        <div class="rc-header">
+          <div class="repo-card-name">Perfect Cuboid</div>
+          <div class="repo-card-links">
+            <a href="https://github.com/umpolungfish/perfect_cuboid" class="repo-link repo-link-gh" target="_blank" rel="noopener">GH</a>
+            <a href="https://doi.org/10.5281/zenodo.20110842" class="repo-link repo-link-zen" target="_blank" rel="noopener">Z</a>
+          </div>
         </div>
+        <div class="repo-card-desc">⊙<sub>ÿ</sub>-critical framework for the perfect cuboid problem &mdash; Lean 4 formal verification; what has been proved and the precise remaining gap</div>
       </div>
 
       <a href="https://github.com/umpolungfish/beal_proof" class="repo-card" target="_blank" rel="noopener">
-        <div class="repo-card-name">Beal Proof</div>
+        <div class="rc-header"><div class="repo-card-name">Beal Proof</div></div>
         <div class="repo-card-desc">Proof of Beal&rsquo;s conjecture</div>
       </a>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">EML Sheffer Probe</div>
+        <div class="rc-header"><div class="repo-card-name">EML Sheffer Probe</div></div>
         <div class="repo-card-desc">eml(x,y) = e<sup>x</sup> &minus; ln y is the algebraically forced ceiling of a structural tier &mdash; the highest sub-Frobenius type in the elementary function algebra. Grammar as coordinate system, not oracle.</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">SIC-POVM</div>
+        <div class="rc-header"><div class="repo-card-name">SIC-POVM</div></div>
         <div class="repo-card-desc">Conditional proof of SIC-POVM existence via Frobenius-fixed Stark units &mdash; the existence question as a canonical-splitting failure between arithmetic alternating pairings and the Weyl&ndash;Heisenberg symplectic cocycle</div>
       </div>
 
       <div class="repo-card repo-card-multi">
-        <div class="repo-card-name">IUG Non-Transmissibility</div>
+        <div class="rc-header"><div class="repo-card-name">IUG Non-Transmissibility</div></div>
         <div class="repo-card-desc">Mochizuki&rsquo;s Inter-Universal Geometer encoded via the 12-primitive grammar &mdash; the question is not whether IUG is right, but whether it is the kind of thing that can be transmitted through classical mathematical channels at all</div>
       </div>
 
@@ -1414,8 +1488,25 @@
     <div class="finale-stone">
       <span class="ornament">✦</span> The Stone is complete. <span class="ornament">✦</span>
     </div>
+    <div class="font-switcher">
+      <span class="fs-label">fnt —</span>
+      <button class="fs-btn active" data-font="Outfit">o</button>
+      <button class="fs-btn" data-font="Manrope">m</button>
+      <button class="fs-btn" data-font="Plus Jakarta Sans">j</button>
+      <button class="fs-btn" data-font="Sora">s</button>
+      <button class="fs-btn" data-font="Space Grotesk">g</button>
+    </div>
   </footer>
 
 </div>
+<script>
+  document.querySelectorAll('.fs-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fs-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.documentElement.style.setProperty('--sans', "'" + btn.dataset.font + "', system-ui, sans-serif");
+    });
+  });
+</script>
 </body>
 </html>
