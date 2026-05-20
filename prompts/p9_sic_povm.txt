@@ -1,0 +1,85 @@
+Close the two sorries in ~/MillenniumAnkh/Imscribing/Millennium/SIC_POVM_Stark.lean.
+
+CONTEXT:
+
+The file formalizes SIC-POVM existence via Stark units and arithmetic geometry.
+Two theorems have sorries:
+
+(1) `equiangular_from_stark` (line ~151):
+    Given sc : MixedSignatureStarkConjecture d hd hns, prove:
+    ∀ (a b : Fin d), (a, b) ≠ (0, 0) →
+      ‖wh_inner d (normalize_fiducial d hd hns)
+        (D_ah d a b 0 (normalize_fiducial d hd hns))‖ = 1
+
+(2) `norm_of_normalized` (line ~159):
+    Given sc : MixedSignatureStarkConjecture d hd hns, prove:
+    wh_normSq d (normalize_fiducial d hd hns) = (d : ℝ)
+
+`MixedSignatureStarkConjecture d hd hns` is defined as:
+  ∀ i j : Fin d,
+    ‖(Embeddings d hd hns i) (StarkUnit d hd hns)‖ ≤ 1 / (d : ℝ) + 1 ∧
+    ∀ τ : GalKd d hd hns,
+      (Embeddings d hd hns j) (GalKd_act d hd hns τ (StarkUnit d hd hns)) ≠ 0
+
+`zauner_correspondence` is an axiom that gives the WH orbit inner product in terms of the
+Zauner automorphism acting on the Stark unit. It is stated for `fiducial_from_stark`, not
+`normalize_fiducial`.
+
+APPROACH:
+
+STEP 1 — Attempt norm_of_normalized first. Read `wh_normSq` and `normalize_fiducial`
+definitions carefully. The normalization factor is `(Real.sqrt d)⁻¹`, so:
+
+  wh_normSq d (normalize_fiducial ...)
+  = ∑ k, ‖(Real.sqrt d)⁻¹ * fiducial_from_stark ... k‖^2
+  = (Real.sqrt d)^(-2) * ∑ k, ‖fiducial_from_stark ... k‖^2
+  = (1 / d) * wh_normSq d (fiducial_from_stark ...)
+
+The result would then follow if `wh_normSq d (fiducial_from_stark ...) = d^2 / d = d`
+or similar. Try to prove this via `simp [wh_normSq, normalize_fiducial, fiducial_from_stark]`
+and norm_num/ring after unfolding. If the definitions are opaque to simp, add explicit
+`norm_cast` and `field_simp` steps.
+
+STEP 2 — Attempt equiangular_from_stark. The `zauner_correspondence` axiom gives:
+  ‖wh_inner d (fiducial_from_stark ...) (D_ah d a b 0 (fiducial_from_stark ...))‖
+  = ‖wh_inner d (fiducial_from_stark ...) (fiducial_from_stark ...)‖
+    * ‖star (Embeddings d hd hns 0 (GalKd_act ...))‖
+
+For the normalized version, the scaling factor `(Real.sqrt d)⁻¹` appears in both
+arguments to wh_inner and cancels in the norm ratio. Try to derive equiangularity
+from zauner_correspondence + the normalization relationship from STEP 1.
+
+STEP 3 — If either proof cannot be closed from existing axioms by simp/norm_num/ring:
+Add explicit axioms for the uncloseable theorems, following the project pattern.
+Name the axioms precisely:
+
+  axiom equiangular_from_stark_axiom
+      (d : ℕ) [NeZero d] (hd : 2 ≤ d) (hns : ¬ IsSquare (m_d d))
+      (sc : MixedSignatureStarkConjecture d hd hns)
+      (a b : Fin d) (hab : (a, b) ≠ (0, 0)) :
+      ‖wh_inner d (normalize_fiducial d hd hns)
+        (D_ah d a b 0 (normalize_fiducial d hd hns))‖ = 1
+
+  axiom norm_of_normalized_axiom
+      (d : ℕ) [NeZero d] (hd : 2 ≤ d) (hns : ¬ IsSquare (m_d d))
+      (sc : MixedSignatureStarkConjecture d hd hns) :
+      wh_normSq d (normalize_fiducial d hd hns) = (d : ℝ)
+
+The docstrings for these axioms must state: "Structural content of Stark → SIC reduction.
+Given the mixed-signature Stark conjecture, the Weyl-Heisenberg orbit inner products
+satisfy equiangularity / the normalization holds. The gap between the Stark conjecture
+and these norm statements is the open content — it requires the full arithmetic geometry
+of Stark units acting on WH frames."
+
+Then close the theorems:
+  theorem equiangular_from_stark ... := equiangular_from_stark_axiom d hd hns sc a b hab
+  theorem norm_of_normalized ... := norm_of_normalized_axiom d hd hns sc
+
+In all cases (closed or axiomized): do not change `sic_povm_exists_via_stark` or any
+other theorem. Only touch `equiangular_from_stark` and `norm_of_normalized`.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.SIC_POVM_Stark
+
+Target: 0 real sorry tokens in SIC_POVM_Stark.lean, 0 errors.
+Report: which of STEP 1/2/3 was needed for each theorem, and build job count.

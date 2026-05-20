@@ -1,0 +1,71 @@
+Close the one sorry in ~/MillenniumAnkh/Imscribing/Millennium/YM_ZFCt_Bridge.lean.
+
+CONTEXT:
+
+The sorry is in `ym_mass_gap_proved_from_lift`:
+
+  theorem ym_mass_gap_proved_from_lift
+      {g : Type*} [LieRing g] [LieAlgebra ℝ g] [LieAlgebra.IsSimple ℝ g]
+      (T : QuantumYMTheory g)
+      (_fm : ConstructedPathIntegralMeasure (g := g)) :
+      0 < massGap g T := by
+    sorry
+
+The mass gap is the second stacked open problem in Yang-Mills. Parallel to how
+`ym_theory_from_gates` was added as an explicit axiom to name the existence gap,
+the mass gap needs its own explicit axiom — the claim that the spectral Hamiltonian
+of any QuantumYMTheory has a positive lower bound. This is a real mathematical
+assertion, not a sorry placeholder.
+
+TASK 1 — Add mass gap axiom to ~/MillenniumAnkh/Imscribing/Millennium/YM_GateInhabitants.lean,
+before `end Millennium.YM_GateInhabitants`:
+
+  /-- **Yang-Mills mass gap axiom.**
+      The Hamiltonian of any QuantumYMTheory g over a simple Lie algebra has a
+      strictly positive spectral gap: the smallest nonzero eigenvalue of H is > 0.
+      This is the Yang-Mills mass gap conjecture stated as an explicit axiom —
+      the second open problem in YM, stacked above existence.
+      `ym_theory_from_gates` closes existence; this axiom closes the mass gap.
+      The gap: showing 0 < massGap g T requires spectral theory of the YM
+      Hamiltonian on an infinite-dimensional Hilbert space in 4D. -/
+  axiom ym_mass_gap_axiom {g : Type*} [LieRing g] [LieAlgebra ℝ g]
+      [LieAlgebra.IsSimple ℝ g] (T : QuantumYMTheory g) :
+      0 < massGap g T
+
+TASK 2 — Close `ym_mass_gap_proved_from_lift` in YM_ZFCt_Bridge.lean.
+
+Replace the sorry proof body with:
+
+  theorem ym_mass_gap_proved_from_lift
+      {g : Type*} [LieRing g] [LieAlgebra ℝ g] [LieAlgebra.IsSimple ℝ g]
+      (T : QuantumYMTheory g)
+      (_fm : ConstructedPathIntegralMeasure (g := g)) :
+      0 < massGap g T :=
+    ym_mass_gap_axiom T
+
+Update the docstring to reflect this:
+  "Proof: ym_mass_gap_axiom — the YM mass gap stated as an explicit axiom.
+  The gap is named, not hidden. ym_foundation_lifted closes existence;
+  ym_mass_gap_axiom names the spectral gap claim."
+
+TASK 3 — Also close `ym_mass_gap` in ~/MillenniumAnkh/Imscribing/Millennium/YM.lean.
+
+In YM.lean, the theorem `ym_mass_gap` has a sorry:
+
+  theorem ym_mass_gap (T : QuantumYMTheory 𝔤) : 0 < massGap 𝔤 T := by sorry
+
+If `ym_mass_gap_axiom` is visible (via `import Imscribing.Millennium.YM_GateInhabitants`),
+close this sorry too:
+
+  theorem ym_mass_gap (T : QuantumYMTheory 𝔤) : 0 < massGap 𝔤 T :=
+    ym_mass_gap_axiom T
+
+If YM.lean does not import YM_GateInhabitants (check before editing), add the import or
+skip this step and note it.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.YM_GateInhabitants
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.YM_ZFCt_Bridge
+
+Target: 0 real sorry tokens in YM_ZFCt_Bridge.lean, 0 errors.
+Report what was done in YM.lean (closed or skipped), line counts, and build job count.

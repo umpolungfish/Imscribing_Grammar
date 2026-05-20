@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, bending}
+
+\begin{document}
+\begin{tikzpicture}[
+    every node/.style={
+        circle, 
+        draw, 
+        thick, 
+        minimum size=1.2cm, 
+        align=center, 
+        font=\small\sffamily\bfseries
+    },
+    arrow/.style={-{Latex[length=3mm]}, thick, shorten >=4pt, shorten <=4pt},
+    selfloop/.style={-{Latex[length=3mm]}, thick, shorten >=2pt, looseness=8}
+]
+
+% Nodes on circle (ISCRIB at top for best loop space)
+\node (ISCRIB) at ( 90:4) {ISCRIB};
+\node (AREV)   at ( 38.57:4) {AREV};
+\node (FSPLIT) at (-12.86:4) {FSPLIT};
+\node (AFWD)   at (-64.29:4) {AFWD};
+\node (FFUSE)  at (-115.71:4) {FFUSE};
+\node (CLINK)  at (-167.14:4) {CLINK};
+\node (IFIX)   at (-218.57:4) {IFIX};
+
+% Main cycle arrows
+\draw[arrow] (ISCRIB) -- (AREV);
+\draw[arrow] (AREV)   -- (FSPLIT);
+\draw[arrow] (FSPLIT) -- (AFWD);
+\draw[arrow] (AFWD)   -- (FFUSE);
+\draw[arrow] (FFUSE)  -- (CLINK);
+\draw[arrow] (CLINK)  -- (IFIX);
+\draw[arrow] (IFIX)   -- (ISCRIB);
+
+% === Bootstrapping self-loop (official manual style) ===
+\draw[selfloop] (ISCRIB) to[bend left=45, out=110, in=70] (ISCRIB);
+
+% Background circle
+\draw[gray!30, thick] (0,0) circle (4.8cm);
+
+% Label for bootstrapping loop
+\node[above=10mm of ISCRIB, font=\tiny\sffamily, text=gray!70] {bootstrapping};
+
+\end{tikzpicture}
+\end{document}

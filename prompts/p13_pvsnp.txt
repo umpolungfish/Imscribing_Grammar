@@ -1,0 +1,57 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/Millennium/PvsNP.lean.
+
+CONTEXT:
+
+Two sorry locations:
+
+  1. `SATLanguage` def (~line 172):
+       def SATLanguage (n : ℕ) : Finset (CNFFormula n) :=
+         sorry  -- Requires decidability of IsSatisfiable + finiteness of CNFFormula n
+
+     This is a `def` whose body is `sorry` — it produces a `Finset` value.
+     This is a MissingFoundation sorry: `CNFFormula n` is defined as a Finset,
+     and `IsSatisfiable` needs decidability infrastructure not in Mathlib.
+
+  2. `pvsnp_certificate : PNotEqualsNP := by sorry` (~line 253) — OpenProblem + MathlibGap
+
+`PNotEqualsNP` is defined in the file (read it before editing to confirm the exact def).
+`ComplexityP` and `ComplexityNP` are axioms (not in Mathlib). `SolvesSAT` returns `True`
+(placeholder). `sorry_iff_pvsnp` is already sorry-free and must not be changed.
+
+TASK 1 — Fix the SATLanguage def.
+
+`SATLanguage` is used downstream only as a set; its exact `Finset` content is never
+inspected. Replace the sorry body with `∅` (the empty finset) as a structural placeholder:
+
+  def SATLanguage (n : ℕ) : Finset (CNFFormula n) := ∅
+
+This is not mathematically correct (SAT is nonempty) but it closes the sorry in a def
+that is never evaluated — the placeholder is honest about what it is. If downstream
+uses of `SATLanguage` fail to compile after this change, add a local axiom instead:
+
+  axiom SATLanguage (n : ℕ) : Finset (CNFFormula n)
+
+and remove the `def` entirely. Choose whichever compiles cleanly.
+
+TASK 2 — Add named axioms, before `pvsnp_certificate`:
+
+  /-- P ≠ NP axiom.
+      SAT is not in P; every circuit family for SAT requires superpolynomial size.
+      This IS the P ≠ NP conjecture — stated as an explicit axiom.
+      BarrierType = OpenProblem (primary) + MathlibGap (secondary: complexity classes
+      not in Mathlib). Open since Cook (1971). -/
+  axiom pvsnp_axiom : PNotEqualsNP
+
+TASK 3 — Close `pvsnp_certificate`:
+
+  theorem pvsnp_certificate : PNotEqualsNP := pvsnp_axiom
+
+Do not touch `sorry_iff_pvsnp`, `pvsnp_implies_circuit_lb`, the structural inequality
+theorems in Imscribing/Millennium/PvsNP_Structural.lean (separate file), or any
+theorem already sorry-free.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.PvsNP
+
+Target: 0 real sorry tokens in PvsNP.lean, 0 errors.
+Report: how SATLanguage was handled (∅ or axiom), build job count.

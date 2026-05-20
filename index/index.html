@@ -10,6 +10,19 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    #bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 75%;
+      transform: scale(1.0);
+      transform-origin: center 50%;
+      z-index: -2;
+      opacity: 0.18;
+      filter: blur(1.5px) saturate(0.7);
+    }
+
     :root {
       --bg:       #0d0c0a;
       --bg2:      #141210;
@@ -452,8 +465,6 @@
     }
 
     .repo-card:hover { border-color: var(--border2); background: var(--bg3); }
-    .repo-card:hover .repo-card-name  { background: linear-gradient(to bottom, var(--bg) 50%, var(--bg3) 50%); }
-    .repo-card:hover .repo-card-links { background: linear-gradient(to bottom, var(--bg) 50%, var(--bg3) 50%); }
 
     .rc-header {
       position: absolute;
@@ -472,7 +483,6 @@
       font-size: 12px;
       font-weight: 600;
       color: var(--gold);
-      background: linear-gradient(to bottom, var(--bg) 50%, var(--bg2) 50%);
       padding: 0 0.25rem;
       white-space: nowrap;
       overflow: hidden;
@@ -494,7 +504,6 @@
       display: flex;
       gap: 4px;
       flex-shrink: 0;
-      background: linear-gradient(to bottom, var(--bg) 50%, var(--bg2) 50%);
       padding-left: 0.25rem;
     }
 
@@ -661,6 +670,53 @@
     .fs-btn:hover { opacity: 0.9; color: var(--text2); }
     .fs-btn.active { opacity: 1; color: var(--gold-dim); }
 
+    /* ── Animated Structures ── */
+    .viz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .viz-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .viz-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      padding: 0.7rem 1rem 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .viz-card img,
+    .viz-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.88;
+      transition: opacity 0.2s;
+      background: #080807;
+    }
+
+    .viz-card:hover img,
+    .viz-card:hover video { opacity: 1; }
+
+    .viz-desc {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text3);
+      font-style: italic;
+      padding: 0.5rem 1rem 0.7rem;
+      line-height: 1.5;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 720px) {
       .stages {
@@ -731,6 +787,10 @@
   </style>
 </head>
 <body>
+<video id="bg-video" autoplay loop muted playsinline src="./images/BGBIG.mp4"></video>
+<script>
+  document.getElementById('bg-video').playbackRate = 0.15;
+</script>
 <div class="page">
 
   <!-- ── Masthead ── -->
@@ -1300,6 +1360,55 @@
         <div class="rc-header"><div class="repo-card-name">Frobenius Machine</div></div>
         <div class="repo-card-desc">3×3 MZI photonic mesh &mdash; live Frobenius norm via phase-controlled beam splitters; Φ<sub>}</sub> in hardware</div>
       </a>
+
+      <a href="voynich_callgraph_3d.html" class="repo-card" target="_blank" rel="noopener">
+        <div class="rc-header"><div class="repo-card-name">Voynich · 3D CFG</div></div>
+        <div class="repo-card-desc">Full 546-node manuscript call graph &mdash; interactive 3D rotation via Plotly; register dependencies across all folios</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Animated Structures ── -->
+  <section class="repos-section">
+    <div class="repos-label">ANIMATED STRUCTURES</div>
+    <div class="viz-grid">
+
+      <div class="viz-card">
+        <div class="viz-title">Voynich Corpus &nbsp;·&nbsp; CFG</div>
+        <img src="images/cfg_voynich.gif" loading="lazy" alt="Voynich corpus call graph animation">
+        <div class="viz-desc">546 nodes &nbsp;·&nbsp; 693 edges &nbsp;·&nbsp; Gaussian pulse wave &nbsp;·&nbsp; cross-folio back-edges amber</div>
+      </div>
+
+      <div class="viz-card">
+        <div class="viz-title">Categorical Tower &nbsp;·&nbsp; ob3ect</div>
+        <img src="images/cfg_tower.gif" loading="lazy" alt="29-layer categorical tower animation">
+        <div class="viz-desc">29 layers &nbsp;·&nbsp; Frobenius gate flash &nbsp;·&nbsp; dependency DAG &nbsp;·&nbsp; execution spine pulse</div>
+      </div>
+
+      <div class="viz-card">
+        <div class="viz-title">Frobenius Orbit Convergence</div>
+        <img src="images/aleph_orbits.gif" loading="lazy" alt="Frobenius pole convergence animation">
+        <div class="viz-desc">27 nodes &nbsp;·&nbsp; 50+ tensor edges &nbsp;·&nbsp; 4-step orbit sequences &nbsp;·&nbsp; attractor poles pulse</div>
+      </div>
+
+      <div class="viz-card">
+        <div class="viz-title">ALEPH &nbsp;·&nbsp; Dataflow CFG</div>
+        <img src="images/cfg_aleph.gif" loading="lazy" alt="ALEPH OS dataflow animation">
+        <div class="viz-desc">86 nodes &nbsp;·&nbsp; 18 programs &nbsp;·&nbsp; tensor/join/mediate/palace edges &nbsp;·&nbsp; cross-program amber flash</div>
+      </div>
+
+      <div class="viz-card">
+        <div class="viz-title">ob3ect &nbsp;·&nbsp; Bootstrap Cycle</div>
+        <img src="images/cfg_bootstrap.gif" loading="lazy" alt="ob3ect bootstrap cycle animation">
+        <div class="viz-desc">7-step self-recognition loop &nbsp;·&nbsp; ISCRIB id seed &nbsp;·&nbsp; identity from first principles</div>
+      </div>
+
+      <div class="viz-card">
+        <div class="viz-title">Rā &amp; Apep &nbsp;·&nbsp; Emerald Tablet Engine</div>
+        <video src="images/ra_apep_250x.mp4" autoplay loop muted playsinline></video>
+        <div class="viz-desc">Solar barque vs. the serpent &nbsp;·&nbsp; ⊙<sub>ÿ</sub> gate dynamics &nbsp;·&nbsp; 250× time-lapse</div>
+      </div>
 
     </div>
   </section>

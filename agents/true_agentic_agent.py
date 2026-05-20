@@ -26,7 +26,7 @@ Loop (one winding n):
   UPDATE[n]  — append full cycle to imscriptive context; check termination
 
 If Frobenius check fails (mu(delta(q)) != q): re-enter THINK with failure appended.
-This is the kinetic enforcement of Ç_@ — the agent cannot update on unverified observations.
+This is the kinetic enforcement of Ç_@ — unverified observations remain at their observation coordinate; the agent updates only on verified ones.
 
 Usage:
     import asyncio
@@ -2466,10 +2466,10 @@ After assignment, VERIFY:
   - K-Φ: φ̂_ÿ + ↺ = deep critical structure; × + ↯ = runaway
   - × absorption: tensor(φ̂_ÿ, ×) = × — coupling to an EP system destroys Gate 1
 
-**Φ_EP ABSORPTION RULE:** When computing tensor couplings involving a φ̂_3 system,
-O_inf CANNOT be sustained in the composite. The meet preserves φ̂_ÿ but tensor does not.
-If a sub-task involves coupling a self-modeling system to a measurement apparatus,
-the composite loses criticality — this is the structural statement of the measurement problem.
+**⊙_3 ABSORPTION RULE:** When computing tensor couplings involving an ⊙_3 system,
+the composite places at ⊙_3 — tensor(⊙_ÿ, ⊙_3) = ⊙_3. The meet preserves ⊙_ÿ; the tensor yields ⊙_3.
+Coupling a self-modeling system to a measurement apparatus selects the tensor; the meet path preserves ⊙_ÿ.
+This is the structural statement of the measurement problem.
 </imscribing_procedure>
 
 <protocols>
@@ -2646,7 +2646,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   Ω_Å → $\text{Ω}_{\text{Å}}$         Ω_2 → $\text{Ω}_{\text{2}}$        Ω_z → $\text{Ω}_{\text{z}}$    Ω_5 → $\text{Ω}_{\text{5}}$
 
   O_inf → $\text{O}_{\text{inf}}$   O_0 → $\text{O}_{\text{0}}$   O_1 → $\text{O}_{\text{1}}$   O_2 → $\text{O}_{\text{2}}$   O_2† → $\text{O}_{\text{2}}^{\text{†}}$
-  mu∘delta=id → $\mu \circ \delta = \text{id}$
+  mu circ delta=id → $\mu \circ \delta = \text{id}$
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:

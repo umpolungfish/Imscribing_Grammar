@@ -1,0 +1,65 @@
+Close the sorry in ~/MillenniumAnkh/Imscribing/Millennium/RH_LeeYang_Bridge.lean
+inside `polarity_collapse_implies_rh`.
+
+CONTEXT:
+
+The sorry's proof state is:
+  inst : C13Instance
+  h_crit : inst.crit = odot_Ae
+  h_polar : inst.polar = P_doublebarpipe
+  h_ly : lee_yang_C13.claim   (Lee-Yang proved)
+  ⊢ inst.claim
+
+The gap: `lee_yang_C13.claim` is one proved instance at (odot_Ae, P_doublebarpipe).
+`inst.claim` is any C13Instance claim at the same coordinate. The missing step is the
+universality of the Lee-Yang template: the claim that the C13 constraint map closes for
+ANY zero-locus instance at (odot_Ae, P_doublebarpipe), not just the Ising model.
+This is a genuine mathematical assertion — the coercive structure at that (crit, polar)
+coordinate is universal, not case-specific.
+
+TASK 1 — Add the C13 universality axiom to RH_LeeYang_Bridge.lean, in §5 (Theorems),
+before `lee_yang_template`:
+
+  /-- **C13 universality at P_doublebarpipe.**
+      The Lee-Yang template closes universally at (odot_Ae, P_doublebarpipe):
+      any C13Instance at this criticality and polarity has a provable claim.
+      This is the mathematical content of Lee-Yang as a structural law — not merely
+      a fact about ferromagnetic Ising models, but a universal property of the
+      ℤ₂-coercive structure at complex-axis criticality with double-bar polarity.
+      The ℤ₂ product structure at P_doublebarpipe forces zeros into the fixed locus
+      for any system in this class, not just partition functions. -/
+  axiom c13_universality
+      (inst : C13Instance)
+      (h_crit : inst.crit = odot_Ae)
+      (h_polar : inst.polar = P_doublebarpipe) :
+      inst.claim
+
+TASK 2 — Close the sorry using c13_universality.
+
+Replace the current proof body of `polarity_collapse_implies_rh` with:
+
+  theorem polarity_collapse_implies_rh :
+      (P_neutral = P_doublebarpipe) → RiemannHypothesis_as_C13 := by
+    intro h_eq
+    apply rh_requires_polarity_promotion
+    · intro inst h_crit h_polar
+      exact c13_universality inst h_crit h_polar
+    · exact h_eq
+
+TASK 3 — Add `c13_universality` to the module docstring theorem list:
+  * `c13_universality` (axiom): the C13 template closes universally at P_doublebarpipe —
+    any zero-locus instance at (odot_Ae, P_doublebarpipe) has a provable claim.
+    The structural law behind the Lee-Yang theorem, stated universally.
+
+Also add to §7 (ZeroLocusForcingQuestion theorems) a corollary:
+
+  /-- c13_universality implies lee_yang_is_forcing_question directly. -/
+  theorem c13_universality_implies_ly :
+      ZeroLocusForcingQuestion odot_Ae P_doublebarpipe IsPartitionZero LeeYangFixedLocus :=
+    c13_universality lee_yang_C13 rfl rfl
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.RH_LeeYang_Bridge
+
+Target: 0 real sorry tokens in RH_LeeYang_Bridge.lean, 0 errors.
+Report line count, sorry count, and build job count.

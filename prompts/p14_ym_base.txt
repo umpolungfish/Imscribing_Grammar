@@ -1,0 +1,78 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/Millennium/YM.lean.
+
+CONTEXT:
+
+Three sorry locations:
+
+  1. `classicalYMAction` def (~line 113):
+       noncomputable def classicalYMAction ... (_ : FieldStrength 𝔤) : ℝ :=
+         sorry -- Classical action: requires differential geometry + Bochner integral
+
+     This is a noncomputable def whose body is `sorry`. It is infrastructure,
+     not a theorem. BarrierType = MissingFoundation (Bochner integral not in Mathlib).
+
+  2. `ym_theory_exists` (~line 179) — MissingFoundation:
+       theorem ym_theory_exists (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤]
+           [LieAlgebra.IsSimple ℝ 𝔤] :
+           Nonempty (QuantumYMTheory 𝔤) := by
+         sorry
+
+  3. `ym_mass_gap` (~line 188) — OpenProblem (stacked on existence):
+       theorem ym_mass_gap (𝔤 : Type*) ... (T : QuantumYMTheory 𝔤) :
+           0 < massGap 𝔤 T := by
+         sorry
+
+NOTE: YM.lean is imported by YM_GateInhabitants.lean. Adding an import of
+YM_GateInhabitants into YM.lean would create a circular import. Do NOT attempt
+to import YM_GateInhabitants here.
+
+TASK 1 — Fix classicalYMAction.
+
+Replace the sorry body with a well-typed placeholder that compiles:
+
+  noncomputable def classicalYMAction {𝔤 : Type*} [LieRing 𝔤] [LieAlgebra ℝ 𝔤]
+      [Inner ℝ 𝔤] (_ : FieldStrength 𝔤) : ℝ := 0
+  -- MissingFoundation: Bochner integral infrastructure not in Mathlib.
+  -- The value 0 is a structural placeholder; the classical action requires
+  -- differential geometry + L² integration, neither formalized here.
+
+TASK 2 — Add axioms directly in YM.lean (NO new imports), after the type definitions
+and before `ym_theory_exists`:
+
+  /-- YM existence axiom.
+      A quantum Yang-Mills theory for any simple gauge algebra exists as a rigorous
+      mathematical object satisfying the Wightman/OS axioms.
+      BarrierType = MissingFoundation: PathIntegralMeasure 𝔤 does not exist rigorously
+      in 4D. This axiom names the gap explicitly.
+      Note: YM_GateInhabitants.lean provides `ym_theory_from_gates` — the ZFCt-promoted
+      version of this axiom via six gate structures. -/
+  axiom ym_existence_axiom (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤]
+      [LieAlgebra.IsSimple ℝ 𝔤] : Nonempty (QuantumYMTheory 𝔤)
+
+  /-- YM mass gap axiom.
+      The Hamiltonian of any QuantumYMTheory has a strictly positive spectral gap.
+      BarrierType = OpenProblem (conditional on existence).
+      Note: YM_GateInhabitants.lean provides `ym_mass_gap_axiom` — the same claim
+      in the ZFCt-promoted namespace. -/
+  axiom ym_mass_gap_certificate (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤]
+      [LieAlgebra.IsSimple ℝ 𝔤] (T : QuantumYMTheory 𝔤) : 0 < massGap 𝔤 T
+
+TASK 3 — Close the two theorem sorries:
+
+  theorem ym_theory_exists (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤]
+      [LieAlgebra.IsSimple ℝ 𝔤] :
+      Nonempty (QuantumYMTheory 𝔤) :=
+    ym_existence_axiom 𝔤
+
+  theorem ym_mass_gap (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤] [LieAlgebra.IsSimple ℝ 𝔤]
+      (T : QuantumYMTheory 𝔤) : 0 < massGap 𝔤 T :=
+    ym_mass_gap_certificate 𝔤 T
+
+Do not change `rh_sorry_count`, `ym_sorry_count`, or their associated theorems —
+these are documentation of the barrier structure and should remain as-is.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.YM
+
+Target: 0 real sorry tokens in YM.lean, 0 errors.
+Report: whether classicalYMAction compiled with 0 or needed adjustment, build job count.

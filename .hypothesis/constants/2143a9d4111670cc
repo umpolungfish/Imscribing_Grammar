@@ -1,0 +1,4 @@
+# file: /home/mrnob0dy666/synfin/synfin/inference.py
+# hypothesis_version: 6.151.11
+
+[0.0, 0.3, 0.5, 0.7, '\nDiscrepancies:', 'Chirality mismatch', 'Criticality mismatch', 'D', 'F', 'Fidelity mismatch', 'G', 'Gamma', 'Grammar mismatch', 'H', 'K', 'Kinetic mismatch', 'Omega', 'P', 'Parity mismatch', 'Phi', 'Protection mismatch', 'R', 'S', 'Scope mismatch', 'T', 'Topology mismatch', 'absent', 'asymmetric', 'centralized', 'coupled', 'crash', 'daily', 'dex', 'error', 'euphoric', 'factor-driven', 'fundamental', 'high', 'hybrid', 'independent', 'intraday', 'large', 'low', 'mid', 'neutral', 'noisy', 'normal', 'options', 'perp', 'quiet', 'regulated', 'small', 'sovereign', 'spiky', 'spot', 'symmetric', 'technical', 'trending', 'unregulated', 'warning', 'weekly']

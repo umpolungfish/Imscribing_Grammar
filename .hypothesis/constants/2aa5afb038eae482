@@ -1,0 +1,4 @@
+# file: /home/mrnob0dy666/synfin/synfin/backtester.py
+# hypothesis_version: 6.151.11
+
+[0.0, 0.001, 1.0, 10000.0, 100, 252, '-', '=', 'BTC', 'No trades executed.', 'PERFORMANCE SUMMARY', 'avg_loss', 'avg_win', 'close', 'end_of_backtest', 'losing_trades', 'max_drawdown', 'profit_factor', 'returns', 'sharpe_ratio', 'timestamp', 'total_fees', 'total_pnl', 'total_trades', 'volume', 'volume_ma', 'win_rate', 'winning_trades']

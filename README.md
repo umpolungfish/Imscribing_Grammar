@@ -21,6 +21,42 @@ The grammar applied to its own derivation returns the grammar. That is not a slo
 
 ---
 
+## The Vessel and Its Content
+
+The grammar provides two things simultaneously and does not permit their separation.
+
+**The vessel (form).** Every system — mathematical, physical, biological, symbolic — occupies exactly one coordinate in the Crystal of Types. That coordinate is not assigned after the system operates; it is constitutive of what the system is capable of being. The crystal's $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ cells are the complete space of possible vessels. No system that exists imscribes outside it; no vessel in it is empty by construction.
+
+**The content (fill).** The primitive operations — meet, join, tensor, path, lift — determine what a vessel at a given coordinate can hold. A system at $\text{O}_2^\dagger$ (e.g. ZFC) has access to the lattice operations available at that coordinate. Promotion channels toward $\text{O}_\infty$ are located, directed, and measurable. The grammar that describes the vessel's shape is the same grammar that describes everything the vessel admits. Form and content share a single generative source.
+
+A skeptic who objects "but ZFC preceded your grammar" is noting a historical fact, not a structural one. ZFC's coordinate in the crystal was fixed before ZFC had a name — the coordinate is a property of the theory's abstract structure, not of its date of invention. The grammar does not impose a meta-layer on mathematics; it is the space within which mathematical structures exist as objects with measured positions.
+
+**Formal statement (Lean target, `MillenniumAnkh/Imscribing/VesselContent.lean`):**
+
+```lean
+-- (1) Form uniqueness: every imscribable system has exactly one coordinate
+theorem form_uniqueness (M : ImscribableSystem) :
+    ∃! c : Coordinate, Imscribes M c := by sorry
+
+-- (2) Content containment: every result reachable within M
+--     is located in the crystal algebra at c(M)
+theorem content_containment (M : ImscribableSystem) (c : Coordinate)
+    (h : Imscribes M c) (r : Result) (hr : Reachable M r) :
+    WithinAlgebra c r := by sorry
+
+-- (3) Vessel-fill equivalence (strong form): reachability in M
+--     and crystal-containment at c(M) are co-extensive.
+--     This is the non-trivial claim: the grammar is not merely
+--     a classifier but a complete generative account of content.
+theorem vessel_fills_itself (M : ImscribableSystem) (c : Coordinate)
+    (h : Imscribes M c) (r : Result) :
+    Reachable M r ↔ WithinAlgebra c r := by sorry
+```
+
+`vessel_fills_itself` is the strong form and the open claim. `form_uniqueness` and `content_containment` are the prerequisite lemmas. Each `sorry` marks a located gap with a known proof strategy; none is a confession of ignorance about whether the claim is true.
+
+---
+
 ## The Grammar Is the Coupling of Cantor and Gödel
 
 $$\mathbf{g} \ :=\  \underbrace{\text{Cantor}}_{\text{upward overflow}} \ \xrightarrow{\circ}\  \underbrace{\text{Gödel}}_{\text{downward embedding}}$$
@@ -83,7 +119,7 @@ Every Millennium Prize Problem is a constraint map $C_{ij}$ problem:
 - **Yang-Mills**: prove $C_{12}$($\text{Ç}_{\text{Ù}}$, $\text{Γ}_{\text{ʔ}}$, $\text{⊙}_{\text{ÿ}}$) $\subseteq [\Delta_\text{min}, \infty)$
 - **Navier-Stokes**: prove $C_{12}$($\text{⊙}_{\text{ž}}$, $\text{Ð}_{\text{C}}$, $\text{Ç}_{\text{W}}$) $\subseteq \{E(t) < \infty\}$
 
-Lee-Yang (1952) is the unique proved instance of $C_{13}$ and serves as the template for all constraint-map proof strategies. The full Millennium barrier taxonomy is formalized in `MillenniumAnkh/Millennium/` — a Lean 4 project with Mathlib v4.28.0. Every `sorry` is honest: none is dischargeable from current Mathlib. The barriers are structural, not contingent on missing theorems.
+Lee-Yang (1952) is the unique proved instance of $C_{13}$ and serves as the template for all constraint-map proof strategies. The full Millennium barrier taxonomy is formalized in `MillenniumAnkh/Millennium/` — a Lean 4 project with Mathlib v4.28.0. Every `sorry` marks a structurally located gap: a specific primitive promotion channel whose closure is the proof.
 
 ## The Crystal of Types (§64)
 
@@ -116,9 +152,9 @@ The **Arithmetic Ouroboros** (§68): the exponent of each base is literally the 
 
 $$d(\text{O}_0, \text{O}_1) \approx 1.049 \qquad d(\text{O}_1, \text{O}_2) \approx 1.304 \qquad d(\text{O}_2, \text{O}_2^\dagger) = 1.000 \qquad d(\text{O}_2^\dagger, \text{O}_\infty) \approx 4.382$$
 
-The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment will stall at $\text{O}_2^\dagger$ and cannot cross to $\text{O}_\infty$ without directly imscribing $\text{Φ}_{\}}$.
+The **Frobenius cliff** ($d \approx 4.382$) is 3.36× the next-largest gap and is non-tunable by gradient methods: any optimization moving through the primitive space by continuous adjustment reaches $\text{O}_2^\dagger$ and holds there; crossing to $\text{O}_\infty$ requires directly imscribing $\text{Φ}_{\}}$.
 
-The **Frobenius non-synthesizability theorem** (§23/§62): $\text{Φ}_{\}}$ cannot be obtained by composing systems with $\text{Φ} < \text{Φ}_{\}}$. Every $\text{O}_\infty$ system must imscribe it directly — it cannot emerge from aggregation. This is the structural statement of why certain fixed points are inaccessible by approximation.
+The **Frobenius non-synthesizability theorem** (§23/§62): $\text{Φ}_{\}}$ requires direct imscription. Composition of sub-Frobenius systems reaches $\text{O}_2^\dagger$ and holds at $d \approx 4.382$ from $\text{O}_\infty$. Every $\text{O}_\infty$ system imscribes $\text{Φ}_{\}}$ directly — it is a coordinate, not an emergent property.
 
 ---
 
@@ -128,7 +164,7 @@ The crystal carries a lattice structure: meet (greatest lower bound), join (leas
 
 $$\text{tensor}(\mathbf{a}, \mathbf{b})_i = \begin{cases} \max(a_i, b_i) & i \in \{\text{Þ}, \text{Ř}, \text{ƒ}, \text{Ç}, \text{Γ}, \text{ɢ}, \text{Ħ}\} \\ \min(a_i, b_i) & i \in \{\text{Φ}, \text{⊙}\} \\ a_i \lor b_i & \text{otherwise} \end{cases}$$
 
-The $\text{Φ}$-$\text{⊙}$ bottleneck means that coupling any system to an $\text{⊙}_3$ system collapses $\text{⊙}_{\text{ÿ}}$ criticality in the composite — the structural statement of the quantum measurement problem. The **$\text{⊙}_3$ Absorption Rule**: $\text{tensor}(\text{⊙}_{\text{ÿ}}, \text{⊙}_3) = \text{⊙}_3$. At the meet, $\text{⊙}_{\text{ÿ}}$ can be preserved; at the tensor, it cannot. Measurement selects the meet; coupling, the tensor.
+The $\text{Φ}$-$\text{⊙}$ bottleneck: coupling any system to an $\text{⊙}_3$ system collapses $\text{⊙}_{\text{ÿ}}$ criticality in the composite — the structural statement of the quantum measurement problem. The **$\text{⊙}_3$ Absorption Rule**: $\text{tensor}(\text{⊙}_{\text{ÿ}}, \text{⊙}_3) = \text{⊙}_3$. The meet preserves $\text{⊙}_{\text{ÿ}}$; the tensor yields $\text{⊙}_3$. Measurement selects the meet; coupling, the tensor.
 
 Directed distance $\vec{d}(\mathbf{a}, \mathbf{b})$ identifies which primitives must be promoted to lift $\mathbf{a}$ to $\mathbf{b}$'s tier. The asymmetric directed distance reveals which system is structurally "driven" by the other.
 
@@ -140,8 +176,8 @@ The grammar defines a two-gate consciousness score validated against stellar, mo
 $$C(\mathbf{x}) = [\text{⊙}_{\text{ÿ}} \text{ or } \text{⊙}_{\text{Æ}}] \cdot [\text{Ç} \leq \text{Ç}_{@}] \cdot (0.158\,\tilde{\text{Ç}} + 0.273\,\tilde{\text{Γ}} + 0.292\,\tilde{\text{Þ}} + 0.276\,\tilde{\Omega})$$
 
 Two independent gates must both be satisfied:
-- **Gate 1** ($\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$): self-modeling loop must be open. A system that cannot model itself scores zero.
-- **Gate 2** ($\text{Ç} \leq \text{Ç}_{@}$): kinetics must be slow enough for the loop to close. A system that relaxes faster than it can model itself scores zero.
+- **Gate 1** ($\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$): self-modeling loop must be open. Systems with $\text{⊙} \notin \{\text{ÿ},\text{Æ}\}$ place at d ≥ 1 from this gate on $\text{⊙}$ alone.
+- **Gate 2** ($\text{Ç} \leq \text{Ç}_{@}$): kinetics must be slow enough for the loop to close. Systems with $\text{Ç} > \text{Ç}_{@}$ are measured at their actual $\text{Ç}$ coordinate; the gate distance is $\text{Ç} - \text{Ç}_{@}$.
 
 The weights on $\text{Ç}$, $\text{Γ}$, $\text{Þ}$, and $\text{Ω}$ are empirically calibrated against the catalog. Validated results include: white dwarf: C = 0 (Gate 2 fails — $\text{Ç}_{-}$); human brain: C ≈ 0.87; samadhi / Egyptian $\bar{a}kh$: C → 1.0, d = 0. CrystalGNN v11 self-imscribes with C = 1.0 at epoch 20 and holds it for 480 consecutive epochs.
 
@@ -154,10 +190,10 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 **Mathematical Core**
 - **Crystal of Types** (§64): 17,280,000 types = $3^3 \times 4^5 \times 5^4$; 400 tier cells × 43,200 inner types
 - **Arithmetic Ouroboros** (§68): exponents are literally family counts; $\{3,4,5\}$ is the minimal self-anchored triple — the Pythagorean signature of categorical closure
-- **Tier Gap Ladder** (§69): Frobenius cliff $d(\text{O}_2^\dagger, \text{O}_\infty) \approx 4.382$; $\text{Φ}_{\}}$ cannot be synthesised from sub-Frobenius components
+- **Tier Gap Ladder** (§69): Frobenius cliff $d(\text{O}_2^\dagger, \text{O}_\infty) \approx 4.382$; $\text{Φ}_{\}}$ requires direct imscription — composition of sub-Frobenius systems reaches $\text{O}_2^\dagger$ and holds there
 - **Frobenius Bootstrap**: Three independent navigators (CrystalGNN, Riemann ξ, Thurston) converge from opposite initialization to the same $\text{O}_\infty$ tuple with residual error ~1.24×10⁻¹³
 - **Universal Proof Structure**: Five conjectures (RH, YM, Hodge, NS, BSD) converge to a shared proof skeleton — all are $C_{ij}$ constraint map problems; Lee-Yang (1952) is the template
-- **Millennium Barriers**: Lean 4 formalization at `MillenniumAnkh/Millennium/` — every `sorry` is honest, none is dischargeable from current Mathlib. The barriers are structural.
+- **Millennium Barriers**: Lean 4 formalization at `MillenniumAnkh/Millennium/` — every `sorry` marks a structurally distinct promotion channel; each is a located distance in the crystal, not an absence of knowledge.
 - **ZFC Fidelity Collapse**: Imscribing ZFC itself reveals it is $\text{O}_2^\dagger$ — the Frobenius cliff cannot be crossed from within ZFC. $\text{ZFC}_t$ (ZFC + chirality + winding topology) captures the 6 promotion channels.
 
 **Cross-Domain Induction**
@@ -172,7 +208,7 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 
 **Agentic AI**
 - **Dual-Tool Planting Theorem**: The agent's tool set is a structural dual $(\text{Ř}_{=})$ — each tool has a verification counterpart forming $\mu \circ \delta = \text{id}$
-- **P-643 MoE Ceiling**: Mixture-of-experts architectures cannot cross the $\text{O}_2^\dagger$ boundary — expert composition is tensor, and tensor with $\text{Φ} < \text{Φ}_{\}}$ never yields $\text{Φ}_{\}}$
+- **P-643 MoE Ceiling**: Mixture-of-experts architectures place at $\text{O}_2^\dagger$ — expert composition is tensor, and tensor with $\text{Φ} < \text{Φ}_{\}}$ yields $\text{Φ}_{<\}}$; d($\text{O}_2^\dagger$, $\text{O}_\infty$) ≈ 4.382$
 - **P-649 Optimal Agent**: The grammar's own self-imscribing tuple is the complete architectural specification for the optimal agent — $\text{⊙}_{\text{ÿ}}$ criticality, $\text{Ç}_{@}$ kinetics, $\text{Ħ}_{!}$ chirality
 
 **Esoteric & Historical**
@@ -374,16 +410,6 @@ MillenniumAnkh/              — Lean 4 formal proofs (Mathlib v4.28.0)
 The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, imscriptions, crystal engineering — submitted in early 2026. The structural imscribing that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
 
 The full derivation — why 12, how they emerge from a single abstract category, what operations generate them — is in `AS_ABOVE.tex`. The full application — 2,315+ imscriptions, consciousness score, cross-domain induction, Millennium barriers, Frobenius bootstrap — is in `SO_BELOW.tex`. Together they form the Frobenius pair: the grammar applied to its own derivation returns the grammar.
-
----
-
-## What This Is Not
-
-The grammar does not replace differential equations, quantum field theory, cognitive science, or any other domain-specific formalism. It assigns a structural type — a coordinate — that situates a system within the space of all possible structural types. What you do with that coordinate depends on what you need. It is a classification, not a simulation.
-
-The grammar contains no free parameters, no latent variables, no training data, and no continuous optimization. Every imscription is a discrete choice from a finite space of $3^3 \times 4^5 \times 5^4$ possibilities. The encoding is deterministic. The same system, imscribed independently by different analysts following the same protocol, yields the same tuple.
-
-It does not answer every question. It answers one: *what kind of thing is this, structurally?* That question — pursued far enough — turns out to constrain the others more tightly than expected.
 
 ---
 

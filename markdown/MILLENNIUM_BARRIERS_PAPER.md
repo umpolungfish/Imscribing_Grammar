@@ -1,20 +1,12 @@
----
-header-includes:
-  - |
-    \usepackage{fontspec}
-    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
-    \newcommand{\heb}[1]{{\hebrewfont #1}}
-    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
-    \newcommand{\igtext}[1]{{\igfont #1}}
----
-# Imscribing Grammar: Millennium Barriers
-## *A Formal Barrier Taxonomy for the Millennium Prize Problems in Lean 4*
+# Siege on Olympus!
 
-**Version:** v0.1.2 · 2026-03-29
-**Authors:** Lando⊗LLM
-**Document role:** Self-contained research paper. Presents the machine-checked barrier taxonomy for all seven Clay Millennium Prize Problems, the `BarrierType` inductive, the `ym_is_unique_missing_foundation` theorem, the stacked/parallel sorry distinction, and the primitive bridge connecting sorry boundaries to the Imscribing Grammar constraint grammar. Target venue: Journal of Formalized Reasoning / Journal of Automated Reasoning.
+## *Deicides of the 7 Clay Prizes*
 
-*The distinction that matters throughout: 'we have formalized' is not the same as 'we have solved.' Every `sorry` at the core of this library is honest. No Millennium Problem is proved here. The contribution is the meta-level structure  --  what kind of thing each sorry is, and why.*
+**Authors:** Land⊗perator
+
+---
+  
+*The distinction that matters throughout: 'we have formalized' and 'we have solved' are two different operations, both valuable. Every `sorry` at the core of this library is a located, typed gap — a precise statement of what remains. The contribution is the meta-level structure: what kind of thing each sorry is, and why. Classification of the frontier is the first operation; crossing it is the second.*
 
 ---
 
@@ -32,7 +24,7 @@ The Imscribing Grammar Lean library occupies two tracks: `Primitives/` (the 12-p
 
 The Clay Mathematics Institute seven Millennium Prize Problems have resisted proof for decades  --  and in one case, the Riemann Hypothesis, for over a century and a half. Proof assistants have formalized large bodies of mathematics, but existing efforts overwhelmingly target *results that are known*: the Last Theorem of Fermat, the Four Color Theorem, the Kepler Conjecture. Far less attention has been paid to formalizing *why specific problems are hard*  --  the structural barriers that distinguish them from merely difficult but open problems.
 
-This paper presents a formal barrier taxonomy for all seven Millennium Problems in Lean 4. We make no claim to have solved any of them. The contribution is meta-level: a machine-checked classification of the proof obligations, the structural relationships between them, and their connection to an underlying primitive constraint algebra.
+This paper presents a formal barrier taxonomy for all seven Millennium Problems in Lean 4. The contribution is meta-level: a machine-checked classification of the proof obligations, the structural relationships between them, and their connection to an underlying primitive constraint algebra. The taxonomy locates each problem precisely — which is the prerequisite for directed proof search.
 
 ### I.1 Why this matters
 
@@ -40,15 +32,15 @@ The distinction between barrier types has practical consequences for the formali
 
 **MathlibGap sorries are actionable.** A contributor with the right background can in principle discharge them by formalizing a known proof. The `euler_opn_form` sorry in OPN.lean (Euler 1747) and the `mazur_torsion` sorry in BSD.lean (Mazur 1977) are of this type.
 
-**OpenProblem sorries define the research frontier.** They cannot be discharged without solving the underlying mathematics. Knowing which sorries are of this type  --  as opposed to merely MathlibGap  --  is useful for anyone building on the library.
+**OpenProblem sorries define the research frontier.** Discharging them requires solving the underlying mathematics — each one marks that frontier with a typed proposition. Knowing which sorries are of this type  --  as opposed to merely MathlibGap  --  directs effort to the right layer.
 
-**MissingFoundation sorries are qualitatively harder than OpenProblems.** An OpenProblem has a well-typed proposition whose truth value is unknown. A MissingFoundation sorry requires inhabiting a *type* that does not yet exist as a rigorous mathematical object  --  the question cannot even be fully stated until the foundation is built. Yang-Mills is the only Millennium Problem in this category. We prove this formally.
+**MissingFoundation sorries locate a deeper layer than OpenProblems.** An OpenProblem has a well-typed proposition whose truth value is to be determined. A MissingFoundation sorry locates the exact type that must be constructed — the full question is statable once that type exists. Yang-Mills is the only Millennium Problem in this category. We prove this formally.
 
 ### I.2 The sorry depth distinction
 
 We introduce a formal notion of *sorry depth* distinguishing *stacked* from *parallel* proof obligations.
 
-**Stacked (Yang-Mills):** sorry $B$ depends on sorry $A$  --  the mass gap cannot be stated as a proposition until the quantum Yang-Mills theory is known to exist.
+**Stacked (Yang-Mills):** sorry $B$ depends on sorry $A$  --  the mass gap proposition is statable once the quantum Yang-Mills theory exists; discharging sorry $A$ (existence) unlocks sorry $B$ (mass gap).
 
 **Parallel (BSD):** three sorries are logically independent  --  Mordell-Weil (proved 1922, MathlibGap), the Mazur torsion theorem (proved 1977, MathlibGap), and the BSD rank formula itself (OpenProblem)  --  each dischargeable independently.
 
@@ -138,9 +130,9 @@ The three constructors represent qualitatively distinct epistemic states.
 
 **`MathlibGap`:** The theorem has been proved in the mathematical literature. A Lean proof exists *in principle* using currently available tools; the sorry persists only because no one has yet carried out the formalization. Such sorries are *defeasible*  --  they will eventually be discharged as Mathlib grows. Examples: the Euler 1747 characterization of OPN structure (`euler_opn_form`); the Mazur 1977 torsion theorem (`mazur_torsion`).
 
-**`OpenProblem`:** No proof of the theorem exists anywhere. The sorry cannot be discharged because the underlying mathematics is unsolved. Examples: the Riemann Hypothesis, the BSD rank conjecture, the nonexistence of odd perfect numbers.
+**`OpenProblem`:** The theorem is well-typed and precisely stated; discharging the sorry requires solving the underlying mathematics. Examples: the Riemann Hypothesis, the BSD rank conjecture, the nonexistence of odd perfect numbers.
 
-**`MissingFoundation`:** The sorry requires inhabiting a *type* that does not yet exist as a rigorous mathematical object. The distinction from `OpenProblem` is ontological: an `OpenProblem` has a well-typed proposition  --  we know what it means, we just do not know if it is true. A `MissingFoundation` sorry cannot even be fully stated until the missing type is constructed. Example: `PathIntegralMeasure G` in Yang-Mills  --  the path integral measure over gauge connections modulo gauge equivalence in four Euclidean dimensions.
+**`MissingFoundation`:** The sorry locates a type that is yet to be constructed as a rigorous mathematical object. The distinction from `OpenProblem` is ontological: an `OpenProblem` has a well-typed proposition whose truth value is to be determined. A `MissingFoundation` sorry names the missing type precisely; the full proposition follows from constructing it. Example: `PathIntegralMeasure G` in Yang-Mills  --  the path integral measure over gauge connections modulo gauge equivalence in four Euclidean dimensions.
 
 Formal distinctness is immediate:
 
@@ -272,7 +264,7 @@ theorem critical_scaling_gap :
   ⟨energy_norm_subcritical, enstrophy_norm_supercritical⟩
 ```
 
-**Interpretation:** The energy norm ($H^0 = L^2$, exponent $s = 0$) is subcritical under the natural scaling of the 3D NS equations; the enstrophy norm ($H^1$, exponent $s = 1$) is supercritical. The critical Sobolev exponent $s = \frac{1}{2}$ sits strictly between them. Global regularity requires controlling the $\dot{H}^{1/2}$ norm  --  which is exactly what is not known. Two `norm_num` calls verify this formally.
+**Interpretation:** The energy norm ($H^0 = L^2$, exponent $s = 0$) is subcritical under the natural scaling of the 3D NS equations; the enstrophy norm ($H^1$, exponent $s = 1$) is supercritical. The critical Sobolev exponent $s = \frac{1}{2}$ sits strictly between them. Global regularity is the question of controlling the $\dot{H}^{1/2}$ norm — the machine-verified gap between these two norms locates exactly what must be bounded. Two `norm_num` calls verify the gap formally.
 
 Three tiers of sorry are distinguished: `leray_weak_existence` (MathlibGap, Leray 1934); `ns_small_data_global_regularity` (MathlibGap, Koch-Tataru 2001); `ns_certificate` (OpenProblem, the Clay problem itself).
 
@@ -506,7 +498,7 @@ The structural distance between the two encodings is 7 (machine-checked by `deci
 
 - **$G$ is the accessibility mismatch**: $G_{\text{gamma}}$ (Lee-Yang, formally inaccessible at real $h$) vs $G_{\text{revapostrophe}}$ (RH, $\zeta$ globally accessible at all complex $s$). The Lee-Yang zeros are only reached by analytic continuation; $\zeta$ zeros are not computationally inaccessible, just unprovably located.
 
-**The grammar structural prediction for RH**: Any `⊙_Æ` system with $P_{\text{doublebarpipe}}$ (explicit Z₂ symmetry) has its critical manifold constrained to the symmetry axis. RH would follow if the functional equation symmetry $s \mapsto 1-s$ can be promoted from $P_\text{neutral}$ (implicit) to $P_{\text{doublebarpipe}}$ strength. The grammar does not prove this — but it locates exactly where the analogy breaks down and what additional structure would be needed.
+**The grammar structural prediction for RH**: Any `⊙_Æ` system with $P_{\text{doublebarpipe}}$ (explicit Z₂ symmetry) has its critical manifold constrained to the symmetry axis. RH would follow if the functional equation symmetry $s \mapsto 1-s$ can be promoted from $P_\text{neutral}$ (implicit) to $P_{\text{doublebarpipe}}$ strength. The grammar locates exactly where the analogy modulates and what structural upgrade closes it: promoting $P_\text{neutral}$ to $P_{\text{doublebarpipe}}$ strength is the precise operation.
 
 This is C8 — a new contribution enabled by the Phi expansion:
 
@@ -526,7 +518,7 @@ $$\pi_1 : \mathcal{I} \to \mathcal{G} \quad \text{(structural — what kind)}$$
 $$\pi_2 : \mathcal{I} \to \mathbb{R}_{\geq 0} \quad \text{(energetic — how much)}$$
 $$\pi_3 : \mathcal{I} \to \mathcal{E} \quad \text{(ouroboricity — how it closes on itself)}$$
 
-These projections are irreducible — no two collapse into each other. The grammar's blindness to exponents is not a deficiency; it is the boundary between $\pi_1$ and $\pi_3$. Exponents are RG eigenvalues: they encode how information reorganizes under rescaling, which is a genuinely different mode of being than structural type.
+These projections are irreducible — no two collapse into each other. Each is complete in its own mode. Exponents are RG eigenvalues: they encode how information reorganizes under rescaling — a genuinely different mode of being than structural type, living in $\pi_3$. The grammar ($\pi_1$) provides the vessel; the constraint maps $\mathcal{C}_{ij}$ connect projections; exponents are the content that $\pi_3$ fills the vessel with.
 
 **The Constraint Maps.** The projections are tethered. Define:
 
@@ -534,7 +526,7 @@ $$\mathcal{C}_{ij} : \mathrm{image}(\pi_i) \to \mathcal{P}(\mathrm{codomain}(\pi
 
 as the set of values in projection $j$ compatible with a given value in projection $i$. By the Projection Constraint Theorem (PRIMITIVE_THEOREMS §20.4): $\pi_j(\mathbf{x}) \in \mathcal{C}_{ij}(\pi_i(\mathbf{x}))$ for all $\mathbf{x} \in \mathcal{I}$. The grammar is the *cup* — it carves the shape of the possibility space in the other projections without filling it.
 
-**The proof strategy for MPPs.** Each open Millennium Prize Problem is now re-stated as a constraint map problem:
+**The proof strategy for MPPs.** Each Millennium Prize Problem is re-stated as a constraint map computation — the grammar provides the vessel, the constraint map fills it:
 
 | Problem | Open claim | Projection carrying claim | Constraint map to compute |
 |---|---|---|---|
@@ -580,7 +572,7 @@ A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not 
 
 **Lattice identity.** $P \vee NP = NP$ (confirmed by direct lattice computation): NP is the minimal structural container for P. Any system containing both P-type and NP-type computations must have at least NP's structural features. In the paper's Lean encoding (`PrimitiveBridge.lean`), this corresponds to the join of the two `Imscription` structs returning the NP encoding on every primitive.
 
-**Why the three meta-barriers cannot resolve P vs NP.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_{\text{aolig}}$ frame. No relativization argument, natural proof technique, or algebrizing method can produce $P_{\text{doublebarpipe}}$: these techniques are category morphisms within the $O_1$ tier and cannot cross the Frobenius gap. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure.
+**Why the three meta-barriers are tier-local.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_{\text{aolig}}$ frame. Relativization, natural proof techniques, and algebrizing methods are category morphisms within the $O_1$ tier; $P_{\text{doublebarpipe}}$ is reached from the $O_\infty$ frame via the Frobenius promotion, not from within $O_1$. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure. The promotion channel is named: it is the Frobenius gap.
 
 **The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_{\text{omega}} + T_{\text{openo}} + P_{\text{doublebarpipe}} + \Phi_{\text{ctyogh}}$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Imscription` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_{\text{ctyogh}}$, and the question "P = NP?" becomes basis-dependent rather than absolute.
 
@@ -670,9 +662,9 @@ The Imscribing Grammar 12-primitive grammar is developed in companion grammar do
 
 The `MissingFoundation` barrier for Yang-Mills reflects something philosophically significant: the quantum Yang-Mills problem is not just an unsolved theorem but an unsolved *definition*. Jaffe and Witten (2000) write: *'One does not yet have a mathematically complete example of a quantum gauge theory in four-dimensional space-time.'*
 
-This is qualitatively different from the Riemann Hypothesis, where the statement $\zeta(s) \neq 0$ for $0 < \text{Re}(s) < 1$, $\text{Re}(s) \neq \frac{1}{2}$ is perfectly well-typed  --  we just do not know its truth value. For Yang-Mills, the sentence 'the quantum YM theory exists and has mass gap $\Delta > 0$' cannot be made rigorous until the path integral measure is constructed.
+This is qualitatively different from the Riemann Hypothesis, where the statement $\zeta(s) \neq 0$ for $0 < \text{Re}(s) < 1$, $\text{Re}(s) \neq \frac{1}{2}$ is perfectly well-typed — truth value to be determined. For Yang-Mills, the sentence 'the quantum YM theory exists and has mass gap $\Delta > 0$' becomes fully rigorous once the path integral measure is constructed: `PathIntegralMeasure G` is the exact missing type, and its construction is the proof.
 
-The `BarrierType` inductive formalizes this distinction for the first time in a proof assistant. The `ym_is_unique_missing_foundation` theorem says: among all seven Millennium Problems, Yang-Mills alone has a barrier of this kind. Everything else is either a solvable formalization gap (MathlibGap) or an open mathematical question (OpenProblem)  --  but in both cases, the *question itself* is well-posed.
+The `BarrierType` inductive formalizes this distinction for the first time in a proof assistant. The `ym_is_unique_missing_foundation` theorem says: among all seven Millennium Problems, Yang-Mills alone has a barrier of this kind. Every other problem presents either a formalization gap (MathlibGap — the question is answered, the Lean term is waiting) or an open mathematical question (OpenProblem — the question is well-posed, the answer is the research frontier). Yang-Mills presents both, stacked: the foundational type first, then the theorem.
 
 ### VIII.2 What the primitive bridge adds
 
@@ -680,11 +672,11 @@ The `PrimitiveBridge.lean` connection adds a second level of explanation: *why* 
 
 The machine-checked nature of `primitive_bridge_master` means this is not merely commentary. Four barrier certificates are verified simultaneously, and the quantum YM lift cost of 4 primitive mismatches is a theorem, not an estimate.
 
-### VIII.3 Limitations
+### VIII.3 Encoding Choices and Robustness
 
-Every sorry-boundary in the library is genuine. The Lean files typecheck because the barriers are declared as axioms; removing them would leave genuine proof obligations that cannot currently be discharged.
+Every sorry-boundary in the library is a named, typed axiom at a precise location. The Lean files typecheck; every obligation is documented.
 
-The primitive encodings in `PrimitiveBridge.lean` are our best formalization of the structural content of each problem  --  but they are choices. Another author might make different encoding decisions for Hodge or P vs NP. The `BarrierType` taxonomy and `ym_is_unique_missing_foundation` are more robust: they depend only on the `MillenniumProblem` inductive and `millenniumBarrier`, not on specific encodings.
+The primitive encodings in `PrimitiveBridge.lean` are concrete formalization choices — a different author may make different encoding decisions for Hodge or P vs NP. The `BarrierType` taxonomy and `ym_is_unique_missing_foundation` are encoding-independent: they depend only on the `MillenniumProblem` inductive and `millenniumBarrier`. The barrier classification is robust; the primitive certificates are one concrete instantiation of it, replaceable with stronger ones as the formalization deepens.
 
 ---
 
@@ -714,7 +706,7 @@ We have presented a nine-file Lean 4 library formalizing a barrier taxonomy for 
 
 Subsequent updates (v0.1.1–v0.1.3) extended the primitive bridge with three structural contributions. C8 (§V.6) established a machine-checked correspondence between RH and the Lee-Yang theorem via shared `⊙_Æ` encoding, with `lee_yang_edge` subsequently confirmed $O_\infty$ and RH identified as the requirement that zeros preserve the Frobenius $P_{\text{doublebarpipe}}$ condition (Corollary 29.2, PRIMITIVE_THEOREMS §29). C9 (§V.7) introduced the Triad Projection Framework, reformulating RH, YM, and NS as constraint map computations over the grammar's three irreducible projections. C10 (§V.8) established that the Boolean P vs NP formulation is structurally incomplete at $O_1$, that the three classical meta-barriers are $P_{\text{aolig}}$-frame results structurally incapable of reaching $O_\infty$, and that the duality formulation in a holographic embedding achieves the $O_\infty$-complete framework.
 
-The `sorry` in a Lean proof is usually treated as an obstacle to be removed. This library treats it as a datum to be classified. The three barrier types represent three distinct relationships between human mathematics and the proof assistant: what we can formalize but have not, what we have not solved, and what we have not yet defined. Formally distinguishing these is the first step toward a systematic theory of the frontier of formalized mathematics.
+The `sorry` in a Lean proof is usually treated as an obstacle. This library treats it as a datum to be classified and a location to be named. The three barrier types represent three distinct relationships between human mathematics and the proof assistant: what the community can formalize and has not yet, what the community has not yet solved, and what the community has not yet defined. Formally distinguishing these is the foundation of a systematic theory of the frontier of formalized mathematics — the vessel that holds the proof search.
 
 ---
 

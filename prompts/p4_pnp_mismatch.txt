@@ -1,0 +1,34 @@
+Close the sorry in ~/MillenniumAnkh/Imscribing/Millennium/PvsNP_Structural.lean at line 88.
+
+The theorem:
+
+  theorem mismatch_count : primitiveMismatches P_class NP_class = 6 := by
+    sorry
+
+primitiveMismatches is defined in ~/MillenniumAnkh/Primitives/Imscription.lean as a
+12-component Hamming distance over decidable equality:
+
+  def primitiveMismatches (a b : Imscription) : Nat :=
+    (if a.dim  = b.dim  then 0 else 1) + ... (12 fields)
+
+P_class and NP_class are fully concrete Imscription.mk applications (lines 26-35 of
+PvsNP_Structural.lean). The 6 mismatches are: top (T_network vs T_odot), rel (R_super vs
+R_lr), kin (K_fast vs K_trap), gran (G_beth vs G_aleph), gram (Gamma_and vs Gamma_seq),
+crit (Phi_sub vs Phi_c). The 6 matches are: dim, pol, fid, chir, stoi, prot.
+
+The analogous theorem zfc_t_distance_to_ym_lifted in YM_ZFCt_Bridge.lean already proves:
+  primitiveMismatches zfc_t zfc_t = 0 := by decide
+
+So decide is the correct tactic. Try in order:
+  1. by decide
+  2. by native_decide
+  3. by simp [primitiveMismatches, P_class, NP_class, Imscription.mk]; decide
+  4. by unfold primitiveMismatches P_class NP_class; decide
+
+Use whichever closes it. Do not introduce any new definitions or axioms. Do not touch any
+other theorem in the file.
+
+After closing the sorry, run:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.PvsNP_Structural
+
+Report the exact tactic used and the build result.

@@ -1,0 +1,72 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/Millennium/OPN.lean.
+
+CONTEXT:
+
+Seven sorry locations:
+
+  1. `sigma_prime_power` (~line 118) — MathlibGap (geometric series formula for σ₁)
+  2. `euler_opn_structure` (~line 161) — MathlibGap (Euler ~1747; proved, not in Mathlib)
+  3. `opn_mod_4` (~line 177) — MathlibGap (follows from Euler's form)
+  4. `opn_has_many_prime_factors` (~line 186) — MathlibGap (Nielsen 2006, ≥9 prime factors)
+  5. `opn_lower_bound` (~line 195) — MathlibGap (Ochem-Rao 2012, N > 10^1500)
+  6. `opn_nonexistence : OPNConjecture` (~line 224) — OpenProblem
+  7. A theorem in the stacked-sorry analysis section (~line 259) — check type
+
+Read lines 250–265 to confirm the seventh sorry's theorem name and return type.
+
+TASK 1 — Add named axioms, before `sigma_prime_power`:
+
+  /-- σ₁ prime power formula axiom (MathlibGap).
+      σ₁(p^k) = (p^(k+1) - 1)/(p - 1) for prime p.
+      Proved: classical. In Mathlib partially; the natural number subtraction form
+      requires additional work to extract. -/
+  axiom sigma_prime_power_axiom (p : ℕ) (hp : Nat.Prime p) (k : ℕ) :
+      sigma 1 (p ^ k) = (p ^ (k + 1) - 1) / (p - 1)
+
+  /-- Euler's OPN structure theorem axiom (MathlibGap).
+      If N is an odd perfect number then N = p^α · m² with p ≡ α ≡ 1 (mod 4).
+      Proved: Euler (~1747). Not in Mathlib. -/
+  axiom euler_opn_structure_axiom (N : ℕ) (hN : IsOddPerfect N) :
+      ∃ (p α m : ℕ),
+        Nat.Prime p ∧ p % 4 = 1 ∧ α % 4 = 1 ∧ Nat.Coprime p m ∧ N = p ^ α * m ^ 2
+
+  /-- OPN ≡ 1 (mod 4) axiom (MathlibGap).
+      Follows from Euler's structure. Proved. Not in Mathlib. -/
+  axiom opn_mod_4_axiom (N : ℕ) (hN : IsOddPerfect N) : N % 4 = 1
+
+  /-- Nine prime factors axiom (MathlibGap).
+      Any OPN has ≥ 9 distinct prime factors. Proved: Nielsen (2006). Not in Mathlib. -/
+  axiom opn_nine_primes_axiom (N : ℕ) (hN : IsOddPerfect N) :
+      9 ≤ (N.primeFactorsList.toFinset).card
+
+  /-- OPN lower bound axiom (MathlibGap).
+      Any OPN exceeds 10^1500. Proved: Ochem-Rao (2012). Not in Mathlib. -/
+  axiom opn_lower_bound_axiom (N : ℕ) (hN : IsOddPerfect N) : (10 : ℕ)^1500 < N
+
+  /-- OPN nonexistence axiom.
+      No odd perfect number exists. This IS the OPN conjecture.
+      BarrierType = OpenProblem. Open since Descartes (~1638). -/
+  axiom opn_nonexistence_axiom : OPNConjecture
+
+TASK 2 — Close each sorry by applying the corresponding axiom.
+
+  theorem sigma_prime_power ... := sigma_prime_power_axiom p hp k
+  theorem euler_opn_structure N hN := euler_opn_structure_axiom N hN
+  theorem opn_mod_4 N hN := opn_mod_4_axiom N hN
+  theorem opn_has_many_prime_factors N hN := opn_nine_primes_axiom N hN
+  theorem opn_lower_bound N hN := opn_lower_bound_axiom N hN
+  theorem opn_nonexistence := opn_nonexistence_axiom
+
+For the seventh sorry (line ~259): read it, determine its return type, then either:
+  - Close with an appropriate existing axiom if the type matches
+  - Add a new axiom if it requires one
+  - Close with `trivial` if the return type is `True`
+
+Do not change `sigma_multiplicative` (already sorry-free), `OPNConjecture`,
+`IsOddPerfect`, or the stacked-sorry analysis documentation theorems.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.OPN
+
+Target: 0 real sorry tokens in OPN.lean, 0 errors.
+Report: how seventh sorry was handled, all axiom names, build job count.

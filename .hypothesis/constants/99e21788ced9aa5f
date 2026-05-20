@@ -1,0 +1,4 @@
+# file: /home/mrnob0dy666/synfin/synfin/assets.py
+# hypothesis_version: 6.151.11
+
+['BLACK_HOLE', 'BTC', 'CRYPTO_PERP', 'ETH', 'EURUSD', 'GOLD', 'HALT', 'HYG', 'MEGA_CAP', 'MEME', 'OIL', 'Primitive Breakdown:', 'QQQ', 'SPY', 'TLT', 'UST_DEPEG']

@@ -128,7 +128,7 @@ The eleven primitives `⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩` are **relationa
 
 This has a practical consequence: the framework's confirmed predictions (see `PRIMITIVE_PREDICTIONS.md`) were all derived from **ordinal comparisons**, not absolute values. The CB[7] displacement hierarchy (6/6 experimental matches) was predicted from `F_ℏ > ƒ^ð > F_ℓ` alone. The Soai Frank-bifurcation was predicted from the co-occurrence pattern `D_∞ + T_⋈ + Φ_DA + F_ℏ`. Intrinsic scalar properties — binding enthalpy, hydrophobicity, gap magnitude — were not required as inputs.
 
-The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) has no unary information generators. Every operation requires at least one additional operand — environment, partner, or target state. You cannot call `tensor(photon)` without a second argument; the algebra returns an error. A imscription's tuple describes its *interaction-ready potential*; the algebra computes only when that potential is actualized against another term.
+The compositional algebra (`meet`, `join`, `tensor`, `path`, `lift`) operates relationally. Every operation requires at least one additional operand — environment, partner, or target state. `tensor(photon, X)` — two arguments: the algebra actualizes a potential against another term. A imscription's tuple describes its *interaction-ready potential*; the algebra computes when that potential is actualized.
 
 ### What's New in v0.4.1?
 
@@ -1701,9 +1701,9 @@ The agent saves to `./discovery_output/` (or custom `--output`):
 
 **Hard constraints (automatic rejection):**
 
-1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary imscriptions (T_⋈/P_±) cannot have low fidelity (ƒ^ì)
+1. **Axiom 1 (Cyclic Closure)**: Cyclic self-complementary imscriptions (T_⋈/P_±) place at high fidelity (ƒ^ℏ or above)
    - *Rationale*: Cyclic closure amplifies fidelity through cooperativity
-   - *Example rejection*: `Þ_ò + Φ_} + ƒ^ì` → rejected
+   - *Coordinate gap*: `Þ_ò + Φ_} + ƒ^ì` → d ≥ 1 on ƒ from the cyclic-closure tier
 
 2. **Axiom 4 (Sequential Grammar)**: Sequential grammar (Γ_→) requires temporal (D_∞) or catalytic (R_‡) dimension
    - *Rationale*: Ordered recognition requires state change mechanism
@@ -2536,7 +2536,7 @@ result.print_trace()
 | Script | Status | Δξ_CP (nat) | Key Demonstration |
 |--------|--------|-------------|-------------------|
 | **Batch 1** | | | |
-| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(ƒ^ð) cannot lift to Φ_c |
+| `01_soai_criticality_path.syn` | ❌ Blocked (pedagogical) | 0.000 | F-floor gate: proline(ƒ^ð) places at d=1 from Φ_c on ƒ |
 | `01b_soai_criticality_corrected.syn` | ✅ **SUCCESS** | 0.000 | Factor 7 fires; Φ_c lift; meet preserves Φ_c |
 | `02_tensor_ensemble_design.syn` | ⚠️ Partial | 13.624 | Tensor fidelity bottleneck |
 | `02b_tensor_ensemble_corrected.syn` | ✅ **SUCCESS** | 13.624 | Tensor → join → lift |

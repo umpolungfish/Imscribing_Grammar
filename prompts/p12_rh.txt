@@ -1,0 +1,36 @@
+Close the sorry in ~/MillenniumAnkh/Imscribing/Millennium/RH.lean.
+
+CONTEXT:
+
+One sorry:
+
+  theorem rh_certificate : RiemannHypothesis := by
+    sorry -- RH. Open problem since 1859. No proof exists. BarrierType = OpenProblem.
+
+`RiemannHypothesis` is defined as:
+  ∀ s : ℂ, IsCriticalZero s → s.re = 1/2
+
+`sorry_iff_rh` already proves the sorry is tight (cannot be weakened while
+retaining the conclusion). `rh_sorry_requires_zero_free_strip` documents the barrier.
+Neither of these should be changed.
+
+TASK 1 — Add named axiom, immediately before `rh_certificate`:
+
+  /-- Riemann Hypothesis axiom.
+      Every nontrivial zero of ζ(s) lies on the critical line Re(s) = 1/2.
+      This IS the Riemann Hypothesis — stated as an explicit axiom.
+      BarrierType = OpenProblem. Open since Riemann (1859). -/
+  axiom riemann_hypothesis_axiom : RiemannHypothesis
+
+TASK 2 — Close the sorry:
+
+  theorem rh_certificate : RiemannHypothesis := riemann_hypothesis_axiom
+
+No other changes. Do not touch `sorry_iff_rh`, `rh_sorry_requires_zero_free_strip`,
+`rh_barrier`, `zeroFreeStrip`, or any other theorem in the file.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.RH
+
+Target: 0 real sorry tokens in RH.lean, 0 errors.
+Report: line count, build job count.

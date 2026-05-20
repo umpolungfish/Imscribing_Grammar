@@ -575,7 +575,8 @@ class ImscriptionGeneratorAgent(BaseAgent):
         imscription_data, reasoning, confidence, alternatives = self._parse_llm_response(raw_response)
 
         # Create the imscription — explicit name or derive from SMILES prefix
-        imscription_name = name or f"imscription_{smiles[:20].replace('/', '_').replace('\\', '_')}"
+        safe_prefix = smiles[:20].replace('/', '_').replace('\\', '_')
+        imscription_name = name or f"imscription_{safe_prefix}"
         imscription = self._create_imscription_from_data(imscription_data, f"SMILES: {smiles}", explicit_name=imscription_name)
         imscription.metadata["smiles"] = smiles
 

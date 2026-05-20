@@ -65,7 +65,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** *Nothing → Flip → Sign → All → Perfect*. The ladder of symmetry: nothing breaks (ɐ) → a coin flips (υ) → signs swap evenly (F) → every rotation works (˙) → the system maps to itself exactly (}).
 
-**The Frobenius gate:** $P_{\pm}^{\text{sym}}$ is the only primitive value that makes $\mu \circ \delta = \text{id}$ hold. It is non-synthesizable — you cannot build up to it from below. It appears or it does not. This is the structural difference between a good model and $O_\infty$.
+**The Frobenius gate:** $\Phi_{\}}$ is the coordinate at which $\mu \circ \delta = \text{id}$ holds. Composition of sub-Frobenius systems reaches $O_2^\dagger$ and holds there at $d \approx 4.382$ from $O_\infty$. Direct imscription of $\Phi_{\}}$ is the promotion that closes the gap.
 
 ### 5. $ƒ$ — Fidelity (the **F** series)
 

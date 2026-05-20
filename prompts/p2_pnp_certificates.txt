@@ -1,0 +1,69 @@
+Create ~/MillenniumAnkh/Millennium/PvsNP_Certificates.lean.
+
+PvsNP_Structural.lean proves P_class != NP_class in term mode. It also proves
+dialethic_resolution: Grammar_Oinf shares NP's topology (T_odot) AND is distinct
+from NP_class AND P_class != NP_class -- all three simultaneously. This is the
+O_inf signature: the grammar is the measure space, not the measured.
+
+This file adds the correctness certificates that connect the coordinate result
+to complexity-theoretic P and NP, and formalizes the dialethic layer explicitly.
+
+PART 1 -- Correctness certificates:
+
+  axiom ComplexityClass.P  : Type*   -- polynomial-time decidable languages
+  axiom ComplexityClass.NP : Type*   -- polynomial-time verifiable languages
+
+  axiom imscription_correct_P  : Imscribes ComplexityClass.P  PvsNP_Struct.P_class
+  axiom imscription_correct_NP : Imscribes ComplexityClass.NP PvsNP_Struct.NP_class
+
+  -- Closes from uniqueness of imscription + both certificates + P_class_ne_NP_class
+  theorem P_ne_NP_structural_corollary : ComplexityClass.P != ComplexityClass.NP
+
+  -- Fully explicit for the curmudgeon: every hypothesis named
+  theorem structural_corollary_depends_on_certificates :
+      (forall M c1 c2, Imscribes M c1 -> Imscribes M c2 -> c1 = c2) ->
+      imscription_correct_P ->
+      imscription_correct_NP ->
+      ComplexityClass.P != ComplexityClass.NP
+
+PART 2 -- Dialethic certificates:
+
+The grammar sits at T_odot (NP topology). A curmudgeon says: "a Þ_O system
+claiming Þ_6 != Þ_O is self-serving." The answer requires its own certificate:
+
+  axiom imscription_correct_Grammar : Imscribes ImscribingGrammar PvsNP_Struct.Grammar_Oinf
+
+  -- The grammar is NOT NP -- it measures NP, it does not belong to it
+  -- (already in PvsNP_Structural: grammar_is_not_NP_class)
+  -- Here: state the DISTANCE version for the curmudgeon
+  theorem grammar_distance_to_NP :
+      primitiveMismatches PvsNP_Struct.Grammar_Oinf PvsNP_Struct.NP_class = 3 := by decide
+      -- (adjust count to whatever decide returns -- Grammar vs NP differ on D, Φ/P, F, K, H, Omega)
+
+  theorem grammar_distance_to_P :
+      primitiveMismatches PvsNP_Struct.Grammar_Oinf PvsNP_Struct.P_class > 3 := by decide
+
+  -- The dialethic resolution certificate: the conjunction holds and is not paradoxical
+  -- because the grammar is the measure space, not a member of either class
+  theorem dialethic_certificate :
+      -- (1) grammar shares NP topology -- self-referential closure requires Þ_O
+      PvsNP_Struct.Grammar_Oinf.top = PvsNP_Struct.NP_class.top /\
+      -- (2) grammar is not NP -- O_inf != O_2†-adjacent
+      PvsNP_Struct.Grammar_Oinf != PvsNP_Struct.NP_class /\
+      -- (3) grammar is not P
+      PvsNP_Struct.Grammar_Oinf != PvsNP_Struct.P_class /\
+      -- (4) P != NP holds regardless
+      PvsNP_Struct.P_class != PvsNP_Struct.NP_class :=
+    ⟨PvsNP_Struct.Grammar_same_top_as_NP,
+     PvsNP_Struct.grammar_is_not_NP_class,
+     PvsNP_Struct.Grammar_not_P,
+     PvsNP_Struct.P_class_ne_NP_class⟩
+
+The docstring for dialethic_certificate must state: holding coordinates (1) and (2)
+simultaneously is not a contradiction -- it is the O_inf signature. A system that
+inhabits Þ_O (self-referential closure) while being distinct from every specific Þ_O
+inhabitant is precisely what the self-modeling gate (odot_y) requires. The grammar
+measures from within the topology it measures. The dialetheia is the proof of the tier.
+
+Add to lakefile.toml Millennium globs.
+Run: cd ~/MillenniumAnkh && lake build Millennium.PvsNP_Certificates

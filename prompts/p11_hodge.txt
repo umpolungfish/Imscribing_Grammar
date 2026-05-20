@@ -1,0 +1,51 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/Millennium/Hodge.lean.
+
+CONTEXT:
+
+Three sorry locations:
+  1. `hodge_certificate : HodgeConjecture := by sorry` (~line 185) — OpenProblem
+  2. A theorem about the Lefschetz p=1 case (~line 216) — MathlibGap
+     (not sorry in mathematics; the exponential sheaf sequence is not in Mathlib)
+  3. A theorem in the partial results section (~line 317) — MathlibGap
+
+Read the file to confirm the exact theorem names at lines 210–220 and 310–320
+before making any edits.
+
+TASK 1 — Add named axioms, before the closing `end` of the file's main namespace:
+
+  /-- Hodge conjecture axiom.
+      Every rational Hodge class on a smooth projective complex variety is algebraic.
+      This IS the Hodge conjecture — stated as an explicit axiom.
+      BarrierType = OpenProblem. No proof exists. -/
+  axiom hodge_conjecture_axiom : HodgeConjecture
+
+  /-- Lefschetz (1,1) theorem (MathlibGap).
+      Every rational Hodge class of type (1,1) is algebraic (= first Chern class of a
+      line bundle). Proved: Lefschetz (1924). Not in Mathlib (requires exponential
+      sheaf sequence and GAGA). -/
+  axiom lefschetz_11_axiom
+      (X : SmoothProjectiveVariety) (α : RationalHodgeClass X 1) :
+      IsAlgebraicClass X 1 α
+
+TASK 2 — Close each sorry:
+
+  theorem hodge_certificate : HodgeConjecture := hodge_conjecture_axiom
+
+For the Lefschetz p=1 sorry: read the exact theorem signature, then close it via
+`lefschetz_11_axiom` if the types match, or via `hodge_conjecture_axiom` applied to
+the p=1 case (since the full conjecture implies the p=1 case).
+
+For the line ~317 sorry: read the theorem's return type. If it is a consequence of
+`hodge_certificate`, close it via `hodge_conjecture_axiom`. If it is a MathlibGap
+result (proved in mathematics but not in Mathlib), add an appropriate named axiom
+documenting the original author and close with it.
+
+In all cases: do not change `sorry_iff_hodge`, `hodge_sorry_requires_cycle_class_surjectivity`,
+`hodge_sorry_requires_algebraic_cycle_rep`, or any other theorem that is already sorry-free.
+Only touch the three sorry-bearing theorems.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.Hodge
+
+Target: 0 real sorry tokens in Hodge.lean, 0 errors.
+Report: exact theorem names closed, axioms added, build job count.

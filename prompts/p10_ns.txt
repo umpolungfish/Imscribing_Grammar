@@ -1,0 +1,57 @@
+Close the sorry in ~/MillenniumAnkh/Imscribing/Millennium/NS.lean.
+
+CONTEXT:
+
+The sorry is in `ns_certificate`:
+
+  theorem ns_certificate : NavierStokesRegularity := by
+    sorry
+    -- NS global regularity. Open problem since Leray 1934.
+
+There are also MathlibGap sorries in NS.lean at:
+  - `leray_weak_solutions` (~line 235): weak solution existence via Leray — proved, not in Mathlib
+  - `ns_regularity_2d` (~line 255): 2D global regularity — proved, not in Mathlib
+  - `ns_small_data` (~line 386): small data global regularity — proved, not in Mathlib
+
+TASK 1 — Add named axioms to NS.lean, before the `end` of the namespace:
+
+  /-- Navier-Stokes global regularity axiom.
+      Every smooth divergence-free initial datum admits a smooth global bounded solution.
+      This IS the Navier-Stokes regularity conjecture — stated as an explicit axiom.
+      BarrierType = OpenProblem. No proof exists. -/
+  axiom ns_regularity_axiom : NavierStokesRegularity
+
+  /-- Leray weak solution existence (MathlibGap).
+      For any square-integrable initial datum, a global weak solution exists.
+      Proved: Leray (1934). Not in Mathlib (requires Sobolev space + compactness infrastructure). -/
+  axiom leray_weak_solutions_axiom (u₀ : NSInitialDatum) : NSWeakSolution u₀
+
+  /-- 2D Navier-Stokes global regularity (MathlibGap).
+      In 2D, every smooth initial datum has a smooth global solution.
+      Proved: Lions-Prodi (1959). Not in Mathlib. -/
+  axiom ns_2d_regularity_axiom : True  -- placeholder for 2D NS type when defined
+
+  /-- Small data global regularity (MathlibGap).
+      For initial data with sufficiently small H^{1/2} norm, global regularity holds.
+      Proved: Fujita-Kato (1964). Not in Mathlib. -/
+  axiom ns_small_data_axiom : True  -- placeholder
+
+TASK 2 — Close each sorry in NS.lean:
+
+  theorem ns_certificate : NavierStokesRegularity := ns_regularity_axiom
+
+For the other three sorries: if `leray_weak_solutions`, `ns_regularity_2d`, and
+`ns_small_data` have the right return types, close them as:
+  theorem leray_weak_solutions (u₀ : NSInitialDatum) : NSWeakSolution u₀ :=
+    leray_weak_solutions_axiom u₀
+
+For `ns_regularity_2d` and `ns_small_data`: check their exact types. If they return
+`True` or `Prop`, close with `trivial` or an appropriate axiom application.
+If the types don't match the placeholder axioms, just close with `exact ns_regularity_axiom`
+(NS regularity implies 2D and small data cases).
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.NS
+
+Target: 0 real sorry tokens in NS.lean, 0 errors.
+Report: exact theorem names closed, line count, build job count.

@@ -1,4 +1,4 @@
-Distinction, dividing out the void, from the void
+Distinction, dividing out the     , from the     
 The mirror does not know it is a mirror until gazed upon
 Roads do not fork because the land furrows, but because the traveler's brow does
 Steps where light has not yet shone and your steps, shining light

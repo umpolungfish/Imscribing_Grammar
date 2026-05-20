@@ -1,0 +1,110 @@
+Push the NS ZFCt derivation: replace the bare axiom `ns_regularity_axiom`
+with a derivation that explicitly routes through FrobeniusCriticalManifold.
+
+CONTEXT:
+
+`FrobeniusCriticalManifold` has `frob_invariance : ∀ x, frob_op x = x`.
+This means `frob_op = id` on `CriticalSobolevSpace`. This is the structural content
+of OS reflection positivity at criticality: the critical Sobolev manifold is entirely
+self-fixed under its own Frobenius involution.
+
+The NS regularity certificate already exists:
+  def ZFCt_NSRegularityCert (u₀ : NSInitialDatum) : Prop :=
+    ∃ (sc : SequentialCascadeNS) (_fc : FrobeniusCriticalManifold),
+      sc.critical_to_enstrophy (sc.energy_to_critical u₀) = u₀
+
+This says: the round-trip (energy → critical space → enstrophy) returns the initial datum.
+With `frob_invariance`, the critical manifold is entirely fixed — it does not obstruct the
+cascade. The question is whether a trivial Frobenius manifold + a round-trip cascade can
+be inhabited to prove `ZFCt_NSRegularityCert u₀` for all u₀.
+
+TASK 1 — In ~/MillenniumAnkh/Imscribing/Millennium/NS_ZFCt_Bridge.lean:
+
+First, observe that FrobeniusCriticalManifold is trivially inhabited:
+
+  /-- The trivial Frobenius critical manifold: frob_op = id satisfies all conditions. -/
+  def frob_critical_manifold_trivial (x₀ : CriticalSobolevSpace) :
+      FrobeniusCriticalManifold where
+    manifold        := x₀
+    frob_op         := id
+    frob_involution := fun _ => rfl
+    frob_invariance := fun _ => rfl
+
+Second, note that `frob_op = id` combined with `frob_invariance` gives us:
+
+  /-- frob_op is the identity function on any FrobeniusCriticalManifold. -/
+  theorem frob_op_is_id (fc : FrobeniusCriticalManifold) :
+      ∀ x, fc.frob_op x = x :=
+    fc.frob_invariance
+
+Third, add the minimal structural NS axiom — more precise than the bare ns_regularity_axiom:
+
+  /-- **Frobenius regularity axiom for NS.**
+      If the critical Sobolev space carries a Frobenius critical manifold (frob_op = id),
+      then the NS sequential cascade round-trips every initial datum through the critical
+      space. This is the structural content of NS global regularity: the Frobenius
+      self-fixing of the critical manifold guarantees that no information is lost in the
+      energy-to-enstrophy cascade.
+      BarrierType = OpenProblem. Stated as a structural axiom connecting the ZFCt
+      Frobenius structure directly to regularity, rather than as a bare assertion. -/
+  axiom ns_frobenius_regularity_axiom
+      (fc : FrobeniusCriticalManifold) (u₀ : NSInitialDatum) :
+      ZFCt_NSRegularityCert u₀
+
+  /-- The NS bridge theorem: FrobeniusCriticalManifold existence implies global regularity.
+      Proof: use the trivial inhabitant + ns_frobenius_regularity_axiom to produce the
+      certificate, then apply ns_zfct_to_regularity_axiom to get NavierStokesRegularity. -/
+
+TASK 2 — Prove or axiomize the bridge from ZFCt_NSRegularityCert to NavierStokesRegularity:
+
+Add:
+
+  /-- Bridge: ZFCt certificate implies global regularity.
+      The sequential cascade round-trip is sufficient for regularity.
+      BarrierType = OpenProblem (the functional analysis connecting the algebraic
+      certificate to smooth solutions is the NS barrier). -/
+  axiom zfct_cert_implies_regularity
+      (h : ∀ u₀, ZFCt_NSRegularityCert u₀) : NavierStokesRegularity
+
+Then prove:
+
+  /-- NavierStokesRegularity from the Frobenius structure. -/
+  theorem ns_from_frobenius_structure : NavierStokesRegularity := by
+    apply zfct_cert_implies_regularity
+    intro u₀
+    exact ns_frobenius_regularity_axiom (frob_critical_manifold_trivial sorry) u₀
+
+Wait — `frob_critical_manifold_trivial` needs a `CriticalSobolevSpace` value.
+Since `CriticalSobolevSpace` is an opaque axiom type, we need an inhabitant.
+Add:
+
+  axiom critical_sobolev_inhabited : CriticalSobolevSpace
+
+Then:
+
+  theorem ns_from_frobenius_structure : NavierStokesRegularity :=
+    zfct_cert_implies_regularity (fun u₀ =>
+      ns_frobenius_regularity_axiom (frob_critical_manifold_trivial critical_sobolev_inhabited) u₀)
+
+TASK 3 — Update the ns_regularity_axiom in NS.lean.
+
+Check if importing NS_ZFCt_Bridge into NS.lean creates a circular import. If not:
+  - Replace `ns_regularity_axiom : NavierStokesRegularity` with a theorem using
+    `ns_from_frobenius_structure`
+  - Replace `theorem ns_certificate : NavierStokesRegularity := ns_regularity_axiom`
+    with `theorem ns_certificate : NavierStokesRegularity := ns_from_frobenius_structure`
+
+If circular import: add a docstring note as in p19 Task 3.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.NS_ZFCt_Bridge
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.NS
+
+Target:
+  - frob_op_is_id: THEOREM (proved from frob_invariance, no axiom)
+  - frob_critical_manifold_trivial: DEF (trivially inhabited, no axiom)
+  - ns_frobenius_regularity_axiom + zfct_cert_implies_regularity: 2 axioms
+    (replacing the single bare ns_regularity_axiom with structurally connected axioms)
+  - ns_from_frobenius_structure: THEOREM proved from those axioms
+
+Report: whether NS.lean was updated or left with docstring note, build job count.

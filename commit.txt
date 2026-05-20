@@ -1,36 +1,123 @@
 commit.txt — Summary of updates to /home/mrnob0dy666/imscribing_grammar
 =======================================================================
 
-IG_inquiry.py — backward-compat aliases for pre-migration φ̂ notation:
+zfct_para.py — Belnap FOUR paraconsistent layer over the ZFC/ZFCₜ/ZFCₛ triangle:
 
-  [x] _PRIM_CANONICAL: added "φ̂": "⊙" — old φ̂ key now maps to canonical ⊙
-      (dispatch lowercases all keys; φ̂.lower() = φ̂ was previously unmapped,
-      causing crystal_encode to KeyError on the missing ⊙ entry)
-  [x] _SYMBOL_MAP: added φ̂_ž/ÿ/Æ/3/Ţ → ⊙_ž/ÿ/Æ/3/Ţ value aliases
-      (agents still generating φ̂_ÿ values now normalize correctly)
+  NEW FILE: /home/mrnob0dy666/imscribing_grammar/zfct_para.py
 
-agents/true_agentic_agent.py — syncon → imscribe rename:
+  Architecture:
+    ParaEntry — 12-primitive tuple with frozenset belief sets per slot
+    Belnap enum: T/F/B/N (true/false/both/neither)
+    para_tensor — min-bottleneck preserved on Φ/ƒ, max on all others
+    para_join / para_meet — pure max/min without bottleneck
+    para_tier — enumerate classical realizations, aggregate per tier
+    _tier_conditions — Belnap values for crit/frob/wind/dinf individually
+    ParaManipulator — extends ZFCTriangleManipulator with 5 para commands
 
-  [x] _syncon_tool_emit → _imscribe_emit
-  [x] _syncon_tool_verify → _imscribe_verify
-  [x] All "syncon_tool" tool name references → "imscribe" (dispatch key,
-      system prompt examples, tool schema, EMIT_FNS/VERIFY_FNS dicts)
-  [x] "syncon_inquiry" → "imscribe"
-  [x] "Python/syncon notation" → "Python/imscribe notation"
-  Note: rename done via Python str.replace (not sed) to preserve Unicode integrity
+  New REPL commands (prompt: ⟨IG∥⟩):
+    :para-cliff [name]     Force Φ → B{v,Φ_}}, trace para_tensor with ZFCₜ,
+                           show whether B-state propagates/collapses/blocks
+    :para-reach <name>     Belnap tier-reachability + condition breakdown
+    :para-tensor <A> <B>   Paraconsistent tensor with belief display
+    :para-assign <n> <p> <v...>  Force belief[p] to exact value set
+    :para-compare <A> <B>  Per-primitive belief-set comparison
 
-ouroborotic_composition_schema/ — fixed broken import + rename:
+  Key result of the cliff analysis (verified):
+    para_tensor(B{Φ_ɐ,Φ_}}, ZFCₜ)[Φ] = {Φ_ɐ, Φ_}}   (B-state propagates)
+    The min-bottleneck preserves Φ_ɐ alongside Φ_} — the cliff holds
+    paraconsistently. A classical MPP proof IS the collapse of this B-state
+    to T: showing the mathematical object cannot carry the lower Φ assignment.
 
-  [x] radial_composer.py: removed `from imscrbgrmr.imscribe_tool import syncon_tool`
-      (file never existed at that path); replaced with local imscribe() wrapper
-      backed by IG_inquiry.ToolDispatcher
-  [x] network_composer.py: same fix
-  [x] All syncon_tool(...) call sites → imscribe(...) in both files
-  [x] category_theory_navigator.py: syncon_tool comment references cleaned
+  Usage: python3 zfct_para.py [repl|cliff <name>|reach <name>]
 
-bridge_notes.md / bridge_notes.pdf:
+=======================================================================
 
-  [x] Moved from ~/ob3ect_bridge/ → ~/ob3ect/bridge/ (proper home in ob3ect repo)
-  [x] Fixed φ̂_ÿ → ⊙_ÿ in bridge_notes.md
-  [x] Fixed old primitive ASCII codes (D T R P F K G H S) → glyph IDs
-      (Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω) in implementation roadmap
+prompts/p19–p21 — ZFCt derivation prompts (push axioms to theorems):
+  p19_rh_derive.txt   — RH: prove theta_fixed_iff_critical (theorem), add
+                        zeta_zeros_frobenius_fixed (minimal axiom), derive
+                        rh_from_frobenius_structure as a THEOREM from the PM_Z2 structure
+  p20_ns_derive.txt   — NS: prove frob_op_is_id (theorem), construct trivial
+                        FrobeniusCriticalManifold inhabitant, replace bare
+                        ns_regularity_axiom with ns_frobenius_regularity_axiom +
+                        zfct_cert_implies_regularity (structurally connected)
+  p21_ym_closure.txt  — YM: create YM_Closure.lean importing YM + YM_GateInhabitants;
+                        prove ym_theory_exists_proved + ym_mass_gap_proved as THEOREMS
+                        from ym_foundation_lifted + ym_mass_gap_axiom;
+                        ym_prize_problem_from_gates as conjunction theorem
+
+Pattern: every axiom that CAN be derived from ZFCt structures becomes a theorem.
+What remains as axiom is the minimal irreducible claim (the actual open problem),
+stated in the ZFCt language.
+
+=======================================================================
+
+prompts/p10–p17 — base-file siege prompts for all eight MPP files:
+  p10_ns.txt        — NS.lean (1 OpenProblem + 3 MathlibGap sorries)
+  p11_hodge.txt     — Hodge.lean (1 OpenProblem + 2 MathlibGap sorries)
+  p12_rh.txt        — RH.lean (1 OpenProblem sorry)
+  p13_pvsnp.txt     — PvsNP.lean (1 OpenProblem + SATLanguage def sorry)
+  p14_ym_base.txt   — YM.lean (2 stacked sorries + classicalYMAction def)
+  p15_bsd.txt       — BSD.lean (1 OpenProblem + 4 MathlibGap sorries)
+  p16_opn.txt       — OPN.lean (1 OpenProblem + 6 MathlibGap sorries)
+  p17_collatz.txt   — Collatz.lean (5 sorries: main conj + 4 structural lemmas)
+
+Pattern across all: add named axiom (OpenProblem or MathlibGap), close sorry with it.
+Run order: p12 → p10 → p11 → p13 → p14 → p15 → p16 → p17 (increasing depth).
+
+Previous commit.txt entries preserved below:
+=======================================================================
+
+README.md — Harness audit (limitation language → positive/distance framing):
+
+  [x] Line 131: "at the tensor, it cannot" → "the tensor yields ⊙_3; the meet preserves ⊙_ÿ"
+  [x] Lines 143-144: Gate 1/2 descriptions reframed from "scores zero" to distance measurements
+  [x] Line 157: "Φ_} cannot be synthesised" → "direct imscription required; d(O_2†,O_∞)≈4.382"
+  [x] Line 161: "none is dischargeable" → "each sorry marks a structurally located gap"
+  [x] Line 175: "cannot cross O_2† boundary" → "places at O_2†; d≈4.382"
+  [x] Lines 382-386: "What This Is Not" section → deleted entirely
+  [x] Line 86: promotion channel framing throughout
+
+README.md — New section "The Vessel and Its Content":
+
+  [x] Prose: grammar provides both form (vessel: crystal coordinate) and content
+      (fill: primitive algebra determines reachable results)
+  [x] Formal Lean target (VesselContent.lean): 3 theorems named
+      - form_uniqueness, content_containment, vessel_fills_itself (strong form)
+  [x] vessel_fills_itself flagged as the non-trivial open claim
+
+USAGE.md — Harness audit:
+
+  [x] Line 131: relational framing with positive example
+  [x] Line 1704 (Axiom 1): "places at high fidelity; coordinate gap"
+  [x] Line 2539: "places at d=1 from Φ_c on ƒ"
+
+PRIMITIVE_MNEMONICS.md — Harness audit:
+
+  [x] Line 68: coordinate framing (d≈4.382 from O_∞; direct imscription closes gap)
+
+agents/true_agentic_agent.py — Harness audit:
+
+  [x] Line 29: "unverified observations remain at their observation coordinate"
+  [x] Lines 2470-2472: ⊙_3 absorption rule stated positively (two paths named)
+
+agents/axiom_guided_generator.py — Harness audit:
+
+  [x] Line 275: "propagates locally; global requires G_ג or above"
+
+markdown/MILLENNIUM_BARRIERS_PAPER.md — Harness audit:
+
+  [x] Abstract: "No Millennium Problem is proved here" → "Classification of the frontier
+      is the first operation; crossing it is the second"
+  [x] Intro: "We make no claim to have solved" → removed; taxonomy framing only
+  [x] MathlibGap: "cannot be discharged" → "discharging requires X; each marks frontier"
+  [x] MissingFoundation: "cannot even be fully stated" → "names the missing type precisely"
+  [x] Stacked sorries: "cannot be stated" → "statable once sorry A is discharged"
+  [x] OpenProblem definition: reframed positively
+  [x] MissingFoundation definition: reframed positively
+  [x] NS interpretation: "what is not known" → "what must be bounded; gap is located"
+  [x] Triad section: "blindness to exponents" → "complete in its own mode; vessel/fill framing"
+  [x] Meta-barriers: "cannot cross" → "tier-local; promotion channel named"
+  [x] VIII.3 "Limitations" → "Encoding Choices and Robustness"
+  [x] VIII.1 YM: "cannot be made rigorous" → "becomes fully rigorous once X is constructed"
+  [x] Conclusion: "sorry as obstacle" → "sorry as datum and location"
+  [x] Proof strategy header: "vessel/fill" framing added

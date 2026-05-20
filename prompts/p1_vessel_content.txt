@@ -1,0 +1,32 @@
+Create ~/MillenniumAnkh/Imscribing/VesselContent.lean.
+
+The grammar provides two things simultaneously: the vessel (form the crystal coordinate that
+constitutes what a system is capable of being) and the content (fill the primitive algebra
+operations that determine what that vessel holds). These are not separable. Formalize this.
+
+Three theorems, in order of dependency:
+
+  theorem form_uniqueness (M : ImscribableSystem) :
+      ExistsUnique (fun c : Coordinate => Imscribes M c)
+
+  theorem content_containment (M : ImscribableSystem) (c : Coordinate)
+      (h : Imscribes M c) (r : Result) (hr : Reachable M r) :
+      WithinAlgebra c r
+
+  theorem vessel_fills_itself (M : ImscribableSystem) (c : Coordinate)
+      (h : Imscribes M c) (r : Result) :
+      Reachable M r <-> WithinAlgebra c r
+
+vessel_fills_itself is the strong form and the non-trivial claim. form_uniqueness and
+content_containment are its prerequisite lemmas.
+
+Define the abstract types: ImscribableSystem, Coordinate, Result and the relations:
+Imscribes, Reachable, WithinAlgebra as axioms since they are not yet in the library.
+The theorems state the shape of what must be true; concrete instances are future work.
+
+For each sorry: name the exact lemma that would discharge it.
+The docstring for vessel_fills_itself must explain why a pure classifier
+(form_uniqueness alone) does not give you content_containment.
+
+Import from Imscribing.Primitives.Core and Imscribing.Primitives.Imscription where possible.
+Add to lakefile.toml Imscribing globs. Run: cd ~/MillenniumAnkh && lake build Imscribing.VesselContent

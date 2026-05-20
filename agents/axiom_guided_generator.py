@@ -180,7 +180,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
             kinetic_character=kinetic_character,
             granularity=granularity,
             grammar=interaction_grammar,
-            criticality_phase=criticality_phase or Criticality.⊙_ž,
+            criticality_phase=criticality_phase or getattr(Criticality, "⊙_ž"),
             protection=Protection.Ω_Å,
             stoichiometry=Stoichiometry.Σ_S,
             chirality=Chirality.Ħ_Ñ,
@@ -272,7 +272,7 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ^ð.
 Falsified by: cyclic self-complementary motif with ƒ^ì or ξ_CP > 10.5 nats.
 
-**Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ cannot propagate constraint globally.
+**Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ propagates constraint locally; global propagation requires G_ג or above.
 Falsified by: local specific imscription driving global assembly alone.
 
 **Axiom 3 (Cooperative Induction):** Superlinear SAPT induction signals G_ב → G_ג transition.

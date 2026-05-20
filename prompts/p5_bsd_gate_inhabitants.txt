@@ -1,0 +1,80 @@
+Create ~/MillenniumAnkh/Imscribing/Millennium/BSD_GateInhabitants.lean.
+
+BSD is the only Clay Prize with no gate/bridge infrastructure. Follow the pattern of
+RH_GateInhabitants.lean and Hodge_GateInhabitants.lean exactly.
+
+IMPORTS (required):
+
+  import Mathlib.NumberTheory.EllipticCurve.Basic
+  import Imscribing.Millennium.BSD
+  import Imscribing.Primitives.ZFCt
+
+BSD.lean exposes these axioms (use them directly — do not redefine):
+  - MordellWeilGroup (W : WeierstrassCurve ℚ) [W.IsElliptic] : Type*
+  - ellipticRank    (W : WeierstrassCurve ℚ) [W.IsElliptic] : ℕ
+  - analyticRank    (W : WeierstrassCurve ℚ) [W.IsElliptic] : ℕ
+  - LFunction       (W : WeierstrassCurve ℚ) [W.IsElliptic] : ℂ → ℂ
+  - TateShafarevich (W : WeierstrassCurve ℚ) [W.IsElliptic] : Type
+  - BSDRankConjecture : Prop   (ellipticRank W = analyticRank W for all W)
+  - ExampleCurve : WeierstrassCurve ℚ   (y² = x³ - x, rank 1)
+
+GATE STRUCTURES (define these locally — do not import from ZFCt.lean):
+
+  /-- D_odot gate: holographic boundary duality E/ℚ ↔ modular form.
+      Modularity theorem (Wiles 1995): every elliptic curve over ℚ is modular.
+      This is the D_odot promotion: bulk (E/ℚ) ↔ boundary (modular form). -/
+  structure BSDModularityGate where
+    modular_witness : True  -- E/ℚ is modular; Wiles proved this; MathlibGap for now
+
+  /-- T_bowtie gate: functional equation L(E, s) ↔ L(E, 2-s).
+      The L-function satisfies a functional equation under s ↦ 2-s (bowtie symmetry).
+      This is the analytic continuation structure, known from modularity. -/
+  structure BSDFunctionalEqGate where
+    fe_symmetry : True  -- L(E, s) ~ L(E, 2-s); follows from modularity
+
+  /-- The Tate-Shafarevich obstruction gate.
+      Sha(E/ℚ) measures the failure of local-global for E. BSD requires Sha finite.
+      Known: Sha is finite for rank 0 and rank 1 curves (Kolyvagin 1988/1991).
+      The full finiteness conjecture (all ranks) is open. -/
+  structure BSDTateShaGate where
+    sha_obstruction : True  -- Sha(E/ℚ) finite conjecture; partial results exist
+
+NAMESPACE: open inside namespace Millennium.BSD_GateInhabitants
+
+INHABITANTS (provide trivial inhabited instances for all three gates):
+
+  def BSDModularityGate_inhabitant : BSDModularityGate where
+    modular_witness := trivial
+
+  def BSDFunctionalEqGate_inhabitant : BSDFunctionalEqGate where
+    fe_symmetry := trivial
+
+  def BSDTateShaGate_inhabitant : BSDTateShaGate where
+    sha_obstruction := trivial
+
+FORCING THEOREM:
+
+  /-- BSD_ForcingTheorem: the rank conjecture — ellipticRank = analyticRank for all E/ℚ.
+      This is the single open gap. All three gates are inhabited; the rank equality is
+      the claim that cannot be derived from gate structure alone. -/
+  def BSD_ForcingTheorem : Prop := BSDRankConjecture
+
+  /-- BSD_ForcingTheorem is definitionally equal to BSDRankConjecture. -/
+  theorem bsd_forcing_equiv_bsd : BSD_ForcingTheorem ↔ BSDRankConjecture :=
+    Iff.rfl
+
+DOCSTRING for bsd_forcing_equiv_bsd: state that this is the parallel of
+hodge_forcing_equiv_hodge and rh_forcing_implies_rh — the gate structure is inhabited,
+the gap is the forcing theorem itself, and the ZFCt promotion is complete up to that gap.
+Also note the three-layer unique structure of BSD: two MathlibGaps (Mordell-Weil, Mazur)
+plus one OpenProblem (rank), making BSD the only MPP where the infrastructure gap is
+partially a formalization gap rather than purely mathematical.
+
+LAKEFILE: add glob "Imscribing.Millennium.BSD_GateInhabitants" to lakefile.toml in the
+Millennium section alongside RH_GateInhabitants and Hodge_GateInhabitants.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.BSD_GateInhabitants
+
+Target: 0 real sorry tokens, 0 errors, warnings only from upstream files.
+Report line count, sorry count, and build job count.

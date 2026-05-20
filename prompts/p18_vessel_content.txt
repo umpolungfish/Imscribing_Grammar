@@ -1,0 +1,85 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/VesselContent.lean.
+
+CONTEXT:
+
+Five sorry locations across three theorems:
+
+1. `form_uniqueness` — two internal sorries:
+   (a) `form_existence`: ∀ M, ∃ c, Imscribes M c
+   (b) `form_uniqueness_proper`: ∀ M c c', Imscribes M c → Imscribes M c' → c = c'
+
+2. `content_containment` — one sorry:
+   `imscribes_implies_content`: ∀ M c r, Imscribes M c → Reachable M r → WithinAlgebra c r
+
+3. `vessel_fills_itself` — two sorries:
+   (a) forward: same as imscribes_implies_content
+   (b) backward `algebra_implies_reachable`: ∀ M c r, Imscribes M c → WithinAlgebra c r → Reachable M r
+
+All four underlying types (`ImscribableSystem`, `Coordinate`, `Result`) are opaque,
+and `Imscribes`, `Reachable`, `WithinAlgebra` are axiom relations. No algebraic
+computation can discharge these sorries — they require axioms that name the
+structural claims precisely.
+
+TASK 1 — Add four named axioms, before `form_uniqueness`:
+
+  /-- Existence: every imscribable system has a coordinate.
+      The imscription procedure (12-step primitive assignment) always terminates
+      and produces a unique coordinate. -/
+  axiom form_existence (M : ImscribableSystem) : ∃ (c : Coordinate), Imscribes M c
+
+  /-- Uniqueness: if two coordinates both imscribe the same system, they are equal.
+      The Frobenius condition μ∘δ=id forces the coordinate to be unique: if c and c'
+      both imscribe M, then μ(δ(M)) = c and μ(δ(M)) = c', so c = c'. -/
+  axiom form_uniqueness_proper (M : ImscribableSystem) (c c' : Coordinate)
+      (h : Imscribes M c) (h' : Imscribes M c') : c = c'
+
+  /-- Content containment: if M is imscribed by c, every result reachable by M
+      is within the algebra determined by c. The vessel structurally constrains
+      the content — the coordinate is not merely a label. -/
+  axiom imscribes_implies_content (M : ImscribableSystem) (c : Coordinate) (r : Result)
+      (h : Imscribes M c) (hr : Reachable M r) : WithinAlgebra c r
+
+  /-- Algebra exhaustion: if a result is within the algebra of c, and c imscribes M,
+      then M can reach that result. The vessel is filled entirely — no empty room.
+      The content exhausts the vessel; the algebra produces exactly what the system can do. -/
+  axiom algebra_implies_reachable (M : ImscribableSystem) (c : Coordinate) (r : Result)
+      (h : Imscribes M c) (hw : WithinAlgebra c r) : Reachable M r
+
+TASK 2 — Close each sorry in `form_uniqueness`:
+
+  theorem form_uniqueness (M : ImscribableSystem) : ∃! (c : Coordinate), Imscribes M c := by
+    have hex : ∃ c, Imscribes M c := form_existence M
+    obtain ⟨c, hc⟩ := hex
+    have huniq : ∀ c' : Coordinate, Imscribes M c' → c' = c := by
+      intro c' hc'
+      exact form_uniqueness_proper M c' c hc' hc
+    exact ⟨c, hc, huniq⟩
+
+TASK 3 — Close `content_containment`:
+
+  theorem content_containment (M : ImscribableSystem) (c : Coordinate)
+      (h : Imscribes M c) (r : Result) (hr : Reachable M r) :
+      WithinAlgebra c r :=
+    imscribes_implies_content M c r h hr
+
+TASK 4 — Close both sorries in `vessel_fills_itself`:
+
+  theorem vessel_fills_itself (M : ImscribableSystem) (c : Coordinate)
+      (h : Imscribes M c) (r : Result) :
+      Reachable M r ↔ WithinAlgebra c r := by
+    constructor
+    · intro hr
+      exact imscribes_implies_content M c r h hr
+    · intro hw
+      exact algebra_implies_reachable M c r h hw
+
+Do not change any definitions, the namespace declaration, the existing imports,
+or the docstrings. Only add the four axioms and replace the sorry bodies.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.VesselContent
+
+Target: 0 real sorry tokens in VesselContent.lean, 0 errors.
+Full repo check: grep -rn "^ *sorry$" ~/MillenniumAnkh/Imscribing/ --include="*.lean"
+should return 0 results.
+Report: line count, build job count, full repo sorry count.

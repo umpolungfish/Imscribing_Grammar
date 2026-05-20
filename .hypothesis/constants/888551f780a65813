@@ -1,0 +1,4 @@
+# file: /home/mrnob0dy666/synfin/synfin/micro_backtester.py
+# hypothesis_version: 6.151.11
+
+[-5e-05, 0.0, 0.001, 0.0016, 0.0026, 0.004, 0.006, 0.034, 0.3, 0.6, 0.7, 1.0, 10000.0, 100, 252, 3600, '-', '=', 'BTC', 'F', 'K', 'No trades executed.', 'P', 'Phi', 'T', 'bar_index', 'binanceus', 'close', 'coinbase', 'enter_long_vol', 'enter_short_vol', 'entry_bar', 'entry_price', 'entry_time', 'exit_long', 'exit_short', 'inf', 'kraken', 'maker', 'maker_rebate', 'price', 'quantity', 'returns', 'rising', 'signal', 'taker', 'timestamp', 'transition', 'volume', 'volume_ma']

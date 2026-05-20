@@ -1,0 +1,103 @@
+Push the RH ZFCt derivation: replace the bare axiom `riemann_hypothesis_axiom`
+with a theorem derived from the ZFCt Frobenius structure.
+
+CONTEXT:
+
+The functional equation for ξ is ξ(s) = ξ(1-s). This gives the involution s ↦ 1-s,
+which preserves zero loci. Complex conjugation s ↦ star s also preserves zero loci
+(ζ has real Dirichlet coefficients). The COMBINED symmetry:
+  theta_combined : ℂ → ℂ := fun s => 1 - star s
+is an involution (check: 1 - star(1 - star s) = 1 - (1 - s) = s). Its fixed points:
+  1 - star s = s  ↔  s + star s = 1  ↔  2 * s.re = 1  ↔  s.re = 1/2
+THIS is the critical line. The RH claim is exactly: zeta zeros are fixed by theta_combined.
+
+This is not a metaphor — it is the precise algebraic structure of RH in the ZFCt language.
+
+TASK 1 — In ~/MillenniumAnkh/Imscribing/Millennium/RH_ZFCt_Bridge.lean, add the
+following, after the existing structure definitions:
+
+  /-- The combined Frobenius symmetry: functional equation ∘ complex conjugation.
+      theta_combined(s) = 1 - conj(s). This is the generator of the Z₂ that forces
+      zeros of ξ to the critical line: it is the PM_Z2 involution for RH. -/
+  noncomputable def theta_combined (s : ℂ) : ℂ := 1 - starRingEnd ℂ s
+
+  /-- theta_combined is an involution. Proof: 1 - conj(1 - conj s) = 1 - (1 - s) = s. -/
+  theorem theta_combined_involution (s : ℂ) : theta_combined (theta_combined s) = s := by
+    simp [theta_combined, map_sub, map_one, RCLike.star_def, Complex.conj_conj]
+
+  /-- Fixed points of theta_combined are exactly the critical line Re(s) = 1/2.
+      Proof: 1 - conj(s) = s ↔ s + conj(s) = 1 ↔ 2 * s.re = 1 ↔ s.re = 1/2. -/
+  theorem theta_fixed_iff_critical (s : ℂ) :
+      theta_combined s = s ↔ s.re = 1 / 2 := by
+    simp only [theta_combined]
+    constructor
+    · intro h
+      have : s + starRingEnd ℂ s = 1 := by linarith [show (1 : ℂ) - starRingEnd ℂ s = s from h]
+      have re_eq : 2 * s.re = 1 := by
+        have := congr_arg Complex.re this
+        simp [Complex.add_re, RCLike.star_def, Complex.conj_re] at this
+        linarith
+      linarith
+    · intro h
+      apply Complex.ext
+      · simp [Complex.sub_re, RCLike.star_def, Complex.conj_re]
+        linarith
+      · simp [Complex.sub_im, RCLike.star_def, Complex.conj_im]
+
+  /-- The minimal RH axiom in ZFCt language:
+      nontrivial zeros of ζ are fixed by the combined PM_Z2 symmetry theta_combined.
+      This is RH restated as a Frobenius-fixing claim — the zero locus self-imscribes
+      under the combined functional-equation + conjugation involution.
+      BarrierType = OpenProblem. The split from the bare RiemannHypothesis axiom:
+      this axiom names the MECHANISM (zeros = PM_Z2 fixed points), not just the conclusion. -/
+  axiom zeta_zeros_frobenius_fixed (s : ℂ) (hs : IsZetaZero s) :
+      theta_combined s = s
+
+  /-- RiemannHypothesis_as_C13 derived from the ZFCt structure.
+      Proof: zeta_zeros_frobenius_fixed gives theta_combined s = s for any zero;
+      theta_fixed_iff_critical converts this to s.re = 1/2. -/
+  theorem rh_from_frobenius_structure :
+      ∀ s : ℂ, IsZetaZero s → s.re = 1 / 2 :=
+    fun s hs => (theta_fixed_iff_critical s).mp (zeta_zeros_frobenius_fixed s hs)
+
+TASK 2 — In ~/MillenniumAnkh/Imscribing/Millennium/RH_LeeYang_Bridge.lean:
+
+Add an import of RH_ZFCt_Bridge at the top if not already present:
+  import Imscribing.Millennium.RH_ZFCt_Bridge
+
+Then add, in §5 (Theorems), after lee_yang_template:
+
+  /-- RiemannHypothesis_as_C13 derived from the ZFCt Frobenius structure.
+      rh_C13.claim = ∀ s, IsZetaZero s → s.re = 1/2, which follows from
+      zeta_zeros_frobenius_fixed + theta_fixed_iff_critical. -/
+  theorem rh_from_zfct :
+      RiemannHypothesis_as_C13 :=
+    fun s hs => (Imscribing.Millennium.YM_ZFCt.theta_fixed_iff_critical s).mp
+      (Imscribing.Millennium.YM_ZFCt.zeta_zeros_frobenius_fixed s hs)
+
+(Adjust the namespace qualifier to match wherever the RH_ZFCt_Bridge namespace is.)
+
+TASK 3 — In ~/MillenniumAnkh/Imscribing/Millennium/RH.lean:
+
+Replace `riemann_hypothesis_axiom : RiemannHypothesis` with a theorem if the
+import chain allows it (check for circular imports first). If importing RH_ZFCt_Bridge
+into RH.lean would create a cycle, leave RH.lean unchanged and add a docstring note:
+  "See RH_ZFCt_Bridge.rh_from_frobenius_structure for the ZFCt derivation.
+   riemann_hypothesis_axiom is superseded by that theorem; retained here as a
+   stub for downstream imports that cannot take the ZFCt dependency."
+
+TASK 4 — Attempt to prove theta_combined_involution and theta_fixed_iff_critical.
+If the simp/linarith approach above fails, try:
+  · ext; simp [theta_combined, Complex.ext_iff, Complex.re, Complex.im, starRingEnd]
+  · For the fixed-point iff, use: Complex.re_add, Complex.conj_re, and the fact that
+    s + conj s = 2 * s.re (which is Mathlib's Complex.add_conj or similar)
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.RH_ZFCt_Bridge
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.RH_LeeYang_Bridge
+
+Target: theta_combined_involution and theta_fixed_iff_critical are THEOREMS (0 sorry,
+0 axiom). zeta_zeros_frobenius_fixed is the single remaining axiom for RH in the bridge.
+rh_from_frobenius_structure is a THEOREM proved from it.
+
+Report: which of the proof strategies worked for theta_fixed_iff_critical, build job count.

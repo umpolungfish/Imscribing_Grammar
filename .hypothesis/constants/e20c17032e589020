@@ -1,0 +1,4 @@
+# file: /home/mrnob0dy666/synfin/synfin/algebra.py
+# hypothesis_version: 6.151.11
+
+[0.0, 0.3, 0.4, 0.5, 1.5, 'D', 'F', 'G', 'Gamma', 'H', 'K', 'Omega', 'P', 'Phi', 'R', 'S', 'T', 'compatible', 'criticality_mismatch', 'kinetic_mismatch', 'protection_mismatch', 'structural_mismatch']

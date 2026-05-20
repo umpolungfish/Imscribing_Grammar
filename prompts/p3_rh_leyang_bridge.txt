@@ -1,0 +1,51 @@
+Create ~/MillenniumAnkh/Millennium/RH_LeeYang_Bridge.lean.
+
+The Lee-Yang theorem (1952) is the unique proved instance of the C_13 constraint map
+computation. RH is the conjecture that the same computation, with P_neutral instead of
+P_doublebarpipe, yields zeros on Re(s) = 1/2. Formalize the bridge.
+
+Structures needed:
+
+  structure C13Instance where
+    crit  : Criticality          -- must be odot_Ae for both
+    polar : Polarity             -- P_doublebarpipe (Lee-Yang) or P_neutral (RH)
+    claim : Prop                 -- the zero-locus constraint
+
+  def lee_yang_C13 : C13Instance := {
+    crit  := odot_Ae,
+    polar := P_doublebarpipe,
+    claim := forall z : C, IsPartitionZero z -> Complex.abs z = 1 }
+
+  def rh_C13 : C13Instance := {
+    crit  := odot_Ae,
+    polar := P_neutral,
+    claim := forall s : C, IsZetaZero s -> s.re = 1/2 }
+
+Theorems:
+
+  theorem lee_yang_rh_share_criticality :
+      lee_yang_C13.crit = rh_C13.crit := rfl
+
+  theorem polarity_is_the_gap :
+      lee_yang_C13.polar != rh_C13.polar := by decide
+
+  axiom lee_yang_proved : lee_yang_C13.claim
+
+  def RiemannHypothesis_as_C13 : Prop := rh_C13.claim
+
+  theorem lee_yang_template :
+      lee_yang_C13.polar = P_doublebarpipe ->
+      lee_yang_C13.crit  = odot_Ae ->
+      lee_yang_C13.claim := fun _ _ => lee_yang_proved
+
+  theorem rh_requires_polarity_promotion :
+      (forall inst : C13Instance, inst.crit = odot_Ae -> inst.polar = P_doublebarpipe -> inst.claim) ->
+      (rh_C13.polar = P_doublebarpipe) ->
+      RiemannHypothesis_as_C13
+
+The docstring for rh_requires_polarity_promotion must state: this is the structural content
+of Corollary 29.2 -- promoting P_neutral to P_doublebarpipe strength is the exact operation
+that closes RH via the Lee-Yang template. polarity_is_the_gap locates the gap; this theorem
+names what closes it.
+
+Add to lakefile.toml Millennium globs. Run: cd ~/MillenniumAnkh && lake build Millennium.RH_LeeYang_Bridge

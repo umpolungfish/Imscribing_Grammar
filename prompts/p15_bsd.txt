@@ -1,0 +1,66 @@
+Close all sorries in ~/MillenniumAnkh/Imscribing/Millennium/BSD.lean.
+
+CONTEXT:
+
+Five sorry locations:
+
+  1. `mordell_weil` (~line 214) — MathlibGap (Mordell 1922, Weil 1928)
+  2. `mazur_torsion` (~line 242) — MathlibGap (Mazur 1977)
+  3. `bsd_certificate : BSDRankConjecture` (~line 269) — OpenProblem
+  4. `bsd_rank_zero_cm` (~line 338) — MathlibGap (Coates-Wiles 1977)
+  5. `bsd_rank_at_most_one` (~line 354) — MathlibGap (Gross-Zagier 1983 + Kolyvagin 1988)
+
+Read the file at lines 195–360 before editing to confirm exact theorem signatures.
+
+TASK 1 — Add named axioms, before `mordell_weil`:
+
+  /-- Mordell-Weil theorem axiom (MathlibGap).
+      E(ℚ) is finitely generated. Proved: Mordell (1922), Weil (1928).
+      Not in Mathlib (requires Galois cohomology, Néron-Tate heights). -/
+  axiom mordell_weil_axiom (W : WeierstrassCurve ℚ) [W.IsElliptic] :
+      ∃ (r : ℕ) (T : Fintype (TorsionSubgroup W)), True
+
+  /-- Mazur's torsion theorem axiom (MathlibGap).
+      E(ℚ)_tors is isomorphic to one of 15 groups. Proved: Mazur (1977).
+      Not in Mathlib (requires modular curves X₁(N), Hecke operators). -/
+  axiom mazur_torsion_axiom (W : WeierstrassCurve ℚ) [W.IsElliptic] :
+      ∃ (n : ℕ), n ∈ ({1,2,3,4,5,6,7,8,9,10,12} : Finset ℕ) ∨
+      ∃ (m : ℕ), m ∈ ({1,2,3,4} : Finset ℕ) ∧ True
+
+  /-- BSD rank conjecture axiom.
+      rank E(ℚ) = ord_{s=1} L(E,s) for every elliptic curve E/ℚ.
+      This IS the BSD conjecture — stated as an explicit axiom.
+      BarrierType = OpenProblem. Open since Birch-Swinnerton-Dyer (1965). -/
+  axiom bsd_rank_axiom : BSDRankConjecture
+
+  /-- Coates-Wiles theorem axiom (MathlibGap).
+      For CM elliptic curves with L(E,1) ≠ 0: E(ℚ) is finite.
+      Proved: Coates-Wiles (1977). Not in Mathlib (Iwasawa theory, p-adic L-functions). -/
+  axiom coates_wiles_axiom (W : WeierstrassCurve ℚ) [W.IsElliptic]
+      (_ : True) (_ : True) : BSDRankCertificate W
+
+  /-- Gross-Zagier + Kolyvagin theorem axiom (MathlibGap).
+      For elliptic curves with analytic rank ≤ 1: algebraic rank = analytic rank.
+      Proved: Gross-Zagier (1983) + Kolyvagin (1988). Not in Mathlib. -/
+  axiom gross_zagier_kolyvagin_axiom (W : WeierstrassCurve ℚ) [W.IsElliptic]
+      (_ : analyticRank W ≤ 1) : BSDRankCertificate W
+
+TASK 2 — Close each sorry by applying the corresponding axiom.
+
+Match each axiom to its theorem by return type. For `mordell_weil`, `mazur_torsion`,
+`bsd_rank_zero_cm`, `bsd_rank_at_most_one`: the axiom signatures were designed to
+match the existing theorem signatures. Verify by reading each theorem, then apply.
+
+`bsd_certificate : BSDRankConjecture := bsd_rank_axiom`
+
+If any axiom signature doesn't match the theorem's exact type, adjust the axiom
+signature (not the theorem) before closing.
+
+Do not touch any theorem already sorry-free, including the modularity theorem,
+`bsd_parallel_sorry_structure`, or `sorry_iff_bsd` if present.
+
+BUILD AND VERIFY:
+  cd ~/MillenniumAnkh && lake build Imscribing.Millennium.BSD
+
+Target: 0 real sorry tokens in BSD.lean, 0 errors.
+Report: all five theorem names closed, any signature adjustments made, build job count.
