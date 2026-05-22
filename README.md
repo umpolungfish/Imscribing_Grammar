@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando⊙perator
 
 ---
 

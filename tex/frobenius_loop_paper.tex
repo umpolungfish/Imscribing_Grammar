@@ -1,0 +1,393 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and fonts — LuaLaTeX
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{FreeSerif}
+\setmathfont{Latin Modern Math}
+\newfontfamily\igprimfont{FreeSerif}
+\setmonofont[Scale=0.85]{DejaVu Sans Mono}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\setlength{\headheight}{15pt}
+
+% Typography
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+\setlist[enumerate]{topsep=0.5ex, itemsep=0.25ex, parsep=0pt}
+
+% Tables and math
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{calc}
+\usepackage[normalem]{ulem}
+\renewcommand{\arraystretch}{1.4}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan}
+
+% Code listings
+\usepackage{listings}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{codeframe},
+    backgroundcolor=\color{codebg},
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1em,
+    xrightmargin=1em,
+    aboveskip=1em,
+    belowskip=1em,
+    literate={_}{{\textunderscore}}1
+             {^}{{\textasciicircum}}1
+}
+
+% Boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{imscriptionbox}{
+    enhanced,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fontupper=\large,
+    center upper,
+    boxrule=1pt,
+    arc=4pt,
+}
+\newtcolorbox{admonitionbox}[2][]{
+    enhanced, breakable,
+    colback=#2!5, colframe=#2!80!black,
+    fonttitle=\bfseries, title=#1,
+    left=2mm, right=2mm,
+}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\title{The Frobenius Loop:\\
+A Permanently Paradoxical Fixed Point\\
+in the Paraconsistent Universal Engine}
+\author{umpolungfish}
+\date{2026-05-21}
+\maketitle
+
+\begin{abstract}
+We exhibit a three-instruction circular program on the TriPhaseRegister
+machine---the Universal Engine extended with Belnap FOUR belief
+tracking---that runs indefinitely with all registers permanently in the
+\emph{Both} (B) state.  The loop invariant is a computational realization of
+the Frobenius identity $\mu \circ \delta = \mathrm{id}$: FFUSE applied to two
+B-state outputs of FSPLIT returns B, preventing collapse to any classical
+truth value.  We prove that the paradox count after $n$ complete cycles is
+exactly $P(n) = 4n$, and confirm this algebraic prediction empirically at
+$1.9 \times 10^{10}$ steps of continuous execution.
+\end{abstract}
+
+\section{The Machine}
+
+\begin{definition}[TriPhaseRegister]
+A \emph{TriPhaseRegister} is a pair $(\mathrm{flux}, \mathrm{val})$ where
+$\mathrm{flux} \in \{00, 01, 10, 11\}$ and $\mathrm{val} \in \{\bot,
+\texttt{FIXED}\}$.  The flux encodes a two-bit state:
+\[
+  00 = \text{Void},\quad
+  01 = \text{True},\quad
+  10 = \text{False},\quad
+  11 = \text{Both}.
+\]
+Each register also carries a non-negative integer \emph{paradox count}
+$\pi \in \mathbb{N}$, incremented by every engagement event.
+\end{definition}
+
+\begin{definition}[Belnap FOUR]
+The Belnap four-valued lattice $\mathbf{B}_4 = \{N, T, F, B\}$ is equipped
+with two partial orders.  The \emph{truth order} has $N, T, F < B$ and $N <
+T, F$.  The \emph{information order} has $N < T$ and $N < F$, with $T, F$
+incomparable and both below $B$.  The \emph{Belnap join} $\vee$ is the join
+in the information order:
+\[
+  N \vee x = x,\quad T \vee F = B,\quad B \vee x = B,\quad x \vee x = x.
+\]
+In particular $B \vee B = B$ (idempotency of paradox).
+\end{definition}
+
+The \emph{Paraconsistent Universal Engine} (\texttt{ParaEngine}) is the
+TriPhaseRegister machine augmented with a belief map
+$\beta : \mathrm{Reg} \to \mathbf{B}_4$ kept in sync with flux:
+$\beta(r) = N, T, F, B$ iff $r.\mathrm{flux} = 00, 01, 10, 11$
+respectively.  The relevant IMASM opcodes are:
+
+\begin{itemize}
+  \item \texttt{ENGAGR \%r$_i$}: sets $r_i.\mathrm{flux} \leftarrow 11$,
+        $\beta(r_i) \leftarrow B$, $r_i.\pi \mathrel{+}= 1$.
+  \item \texttt{FSPLIT \%r$_i$ \%r$_j$ \%r$_k$}: applies \texttt{ENGAGR}
+        to each of $r_i, r_j, r_k$ in turn.  Total: three engagement events,
+        $\pi$ incremented for each.
+  \item \texttt{FFUSE \%r$_i$ \%r$_j$ \%r$_k$}: sets
+        $\beta(r_k) \leftarrow \beta(r_i) \vee \beta(r_j)$ (Belnap join).
+        No engagement events; $\pi$ unchanged.
+\end{itemize}
+
+FSPLIT is the Frobenius co-multiplication $\delta$; FFUSE is the
+multiplication $\mu$.
+
+\section{The Kernel}
+
+The \emph{Frobenius loop kernel} $\mathcal{K}$ is the following
+three-instruction program:
+
+\begin{lstlisting}[caption={Frobenius loop kernel},label={lst:kernel}]
+K[0]  ENGAGR %r0          ; seed: force B on the root register
+K[1]  FSPLIT %r0 %r1 %r2  ; delta: co-multiply -- two B-children
+K[2]  FFUSE  %r1 %r2 %r0  ; mu: multiply -- fold back into root
+\end{lstlisting}
+
+The program counter is circular: after executing \texttt{K[2]} the engine
+sets $\mathrm{pc} \leftarrow 0$ and continues.  This is not an imposed
+wrapper; the \texttt{step()} method of the Universal Engine resets to zero
+at program end by design (\emph{bootstrap loop closure}).
+
+\section{The Fixed Point Theorem}
+
+\begin{theorem}[Permanence of B-state]
+\label{thm:permanent-b}
+Let the engine start in any state.  After the first complete cycle of
+$\mathcal{K}$, we have $\beta(r_0) = \beta(r_1) = \beta(r_2) = B$.  This
+holds for every subsequent cycle.
+\end{theorem}
+
+\begin{proof}
+Track beliefs through one cycle, starting from an arbitrary initial state
+$\beta(r_0) = s_0 \in \mathbf{B}_4$.
+
+\begin{enumerate}
+  \item \texttt{ENGAGR \%r0}: $\beta(r_0) \leftarrow B$ (forced,
+        regardless of $s_0$).
+  \item \texttt{FSPLIT \%r0 \%r1 \%r2}: $\beta(r_0) \leftarrow B$,
+        $\beta(r_1) \leftarrow B$, $\beta(r_2) \leftarrow B$ (each register
+        is engaged independently).
+  \item \texttt{FFUSE \%r1 \%r2 \%r0}: $\beta(r_0) \leftarrow \beta(r_1)
+        \vee \beta(r_2) = B \vee B = B$ (Belnap join idempotency).
+\end{enumerate}
+
+After cycle 1: $\beta(r_0) = \beta(r_1) = \beta(r_2) = B$.  For any later
+cycle, \texttt{ENGAGR} at \texttt{K[0]} forces $B$ on $r_0$ (already $B$),
+\texttt{FSPLIT} forces $B$ on all three (already $B$), and \texttt{FFUSE}
+computes $B \vee B = B$.  By induction the belief triple $(B, B, B)$ is a
+fixed point of $\mathcal{K}$.
+\end{proof}
+
+\begin{remark}
+The Frobenius identity $\mu \circ \delta = \mathrm{id}$ underlies step (3):
+FFUSE undoes the split performed by FSPLIT, mapping the B-pair back to the
+original B.  Without idempotency of $\vee$---i.e., in a lattice where $B
+\vee B \neq B$---this fixed point need not exist.  The Belnap lattice is
+precisely the setting in which paraconsistent contradiction is
+\emph{self-sustaining} rather than explosive.
+\end{remark}
+
+\section{The Paradox Growth Theorem}
+
+Let $P(n)$ denote the total paradox count
+$\sum_{r \in \{r_0,r_1,r_2\}} r.\pi$ after $n$ complete cycles, starting
+from $P(0) = 0$.
+
+\begin{theorem}[Linear paradox growth]
+\label{thm:paradox}
+$P(n) = 4n$ for all $n \geq 0$.
+\end{theorem}
+
+\begin{proof}
+Count engagement events per cycle.
+\texttt{ENGAGR \%r0} contributes 1 event ($r_0.\pi \mathrel{+}= 1$).
+\texttt{FSPLIT \%r0 \%r1 \%r2} contributes 3 events (one per register).
+\texttt{FFUSE} contributes 0 events.
+The per-cycle increment is therefore $1 + 3 + 0 = 4$.  Since cycles are
+identical, $P(n) = 4n$ by induction.
+\end{proof}
+
+\begin{corollary}
+The three registers accumulate paradox counts in the ratio
+$r_0.\pi : r_1.\pi : r_2.\pi = 2 : 1 : 1$ (both ENGAGR and FSPLIT fire on
+$r_0$; only FSPLIT fires on $r_1$ and $r_2$).
+\end{corollary}
+
+\section{Empirical Verification}
+
+The program \texttt{para\_loop.py} runs $\mathcal{K}$ on a \texttt{ParaEngine}
+instance, reporting periodic snapshots.  Two checkpoints were recorded during
+a single continuous session:
+
+\begin{center}
+\begin{tabular}{lrrrl}
+\toprule
+Checkpoint & Steps & Cycles $n$ & Paradox $P$ & $P - 4n$ \\
+\midrule
+$t_1$ & 625,700,000 & 208,566,666 & 834,266,668 & $+4$ \\
+$t_2$ & 18,956,065,000 & 6,318,688,333 & 25,274,753,333 & $+1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The residuals $P - 4n \in \{0, 1, 2, 3, 4\}$ arise because snapshots are
+taken mid-cycle.  At $t_1$, residual $+4$ indicates capture immediately
+after \texttt{FSPLIT} (all four events of cycle $n+1$ already logged); at
+$t_2$, residual $+1$ indicates capture after \texttt{ENGAGR} alone.  The
+residual is therefore a cycle-phase indicator, not a deviation from
+\cref{thm:paradox}.
+
+In both snapshots: active registers $= 3$, fixed registers $= 0$, Belnap
+distribution $= (N{=}0,\, T{=}0,\, F{=}0,\, B{=}3)$.  The machine ran from
+the first checkpoint to the second without interruption, a wall-clock
+duration of approximately 13.5 hours.
+
+\section{Remarks}
+
+\paragraph{Non-triviality.}
+The result is not the observation that ENGAGR forces $B$ and $B$ persists;
+that would follow from any constant-forcing opcode.  The non-trivial point is
+that FFUSE---whose semantic is the Belnap join, a \emph{non-trivial} binary
+operation on $\mathbf{B}_4$---preserves $B$ specifically because $B$ is the
+top element of the information order and $\vee$ is idempotent there.  A
+different join (e.g.\ one that collapses $B \vee B$ to $T$) would break the
+fixed point.  The Belnap lattice is the minimal structure in which paradox is
+both non-explosive and self-sustaining.
+
+\paragraph{Paraconsistency vs.\ classical contradiction.}
+In a classical machine, a register holding both True and False would represent
+an error state and computation would halt or diverge.  Here contradiction is
+stabilized in place: the engine continues executing, paradox count grows as a
+clean linear function, and no classical truth value is ever witnessed.  The
+machine does not \emph{resolve} the contradiction; it \emph{runs on it}.
+
+\section{Resolution: IFIX Cannot Collapse the Loop}
+
+We answer the open question stated above.  There are two independent reasons
+IFIX cannot drive the system to all-$T$.
+
+\begin{theorem}[IFIX absorption by B]
+\label{thm:ifix}
+Let $\mathcal{K}'$ be any circular kernel that retains ENGAGR and FSPLIT
+over the registers feeding into FFUSE.  Then no finite sequence of IFIX
+instructions in $\mathcal{K}'$ can produce a state in which all registers
+hold belief $T$ at the end of any cycle.
+\end{theorem}
+
+\begin{proof}
+Two cases cover all placements of IFIX in $\mathcal{K}'$.
+
+\textbf{Case A: IFIX fires on a register $r$ before FSPLIT touches $r$ in
+the same cycle.}
+FSPLIT calls \texttt{engage()} on every argument register.
+\texttt{engage()} sets \texttt{flux $\leftarrow$ 11} without consulting the
+\texttt{is\_fixed} property; it also updates belief to $B$ via
+\texttt{\_set\_belief}.  Therefore the IFIX-$T$ state is overridden by the
+subsequent FSPLIT, and $r$ returns to $B$ before FFUSE fires.
+
+\textbf{Case B: IFIX fires on a register $r$ after FSPLIT and before
+FFUSE, so $r$ enters FFUSE with belief $T$.}
+At least one other FFUSE input is a register touched by FSPLIT this cycle
+(by assumption that FSPLIT feeds FFUSE); that register holds $B$.
+By the Belnap join: $T \vee B = B$.
+Therefore FFUSE outputs $B$, not $T$.
+
+In both cases the FFUSE output that feeds the root $r_0$ is $B$.
+ENGAGR at the start of the next cycle forces $r_0$ back to $B$ regardless.
+By induction over cycles, the system never reaches all-$T$.
+\end{proof}
+
+\begin{remark}[Register-level paraconsistency in K3]
+A third phenomenon appears when IFIX fires on $r_0$ \emph{before} ENGAGR in
+the same cycle (\textbf{K3} below).  IFIX sets \texttt{r.value = FIXED} and
+belief $\leftarrow T$.  ENGAGR then sets \texttt{flux = 11} and belief
+$\leftarrow B$, but does \emph{not} clear \texttt{r.value}.  The register
+therefore simultaneously satisfies the linear type constraint
+(\texttt{value = FIXED}, installed by IFIX) and the paradox belief state
+(\texttt{flux = 11}, installed by ENGAGR).  This is paraconsistency at the
+register level: the FIXED constraint and the B-state coexist without
+contradiction.  The machine does not resolve the tension; it carries both
+indefinitely.
+\end{remark}
+
+\subsection*{Experimental confirmation}
+
+Three extended kernels were executed for $5 \times 10^5$ cycles each
+(script \texttt{ifix\_experiment.py}):
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Kernel & IFIX placement & Belnap at cycle end & $r_0$ belief \\
+\midrule
+K1 & on $r_1$, after FSPLIT & $N{=}0\ T{=}1\ F{=}0\ B{=}2$ & $B$ \\
+K2 & on $r_2$, after FSPLIT & $N{=}0\ T{=}1\ F{=}0\ B{=}2$ & $B$ \\
+K3 & on $r_0$, before ENGAGR & $N{=}0\ T{=}0\ F{=}0\ B{=}3$ & $B$ [FIXED] \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In K1 and K2 the IFIXed register ends each cycle at $T$ (IFIX fires last on
+it), but $r_0$ remains $B$ in all cases via Case B of \cref{thm:ifix}.
+In K3 the FIXED marker persists on $r_0$ alongside flux $= 11$ and belief
+$= B$, confirming the register-level paraconsistency described in the Remark
+above.
+
+\begin{corollary}
+The Frobenius loop is \emph{IFIX-stable}: no circular extension of
+$\mathcal{K}$ that preserves ENGAGR and FSPLIT can collapse the system to
+all-$T$.  The paraconsistent fixed point is robust to the linear type
+constraint.
+\end{corollary}
+
+\end{document}

@@ -1,6 +1,102 @@
 commit.txt — Summary of updates to /home/mrnob0dy666/imscribing_grammar
 =======================================================================
 
+para_vm.py + para_repl.py — POC → practical paraconsistent computer:
+
+  para_vm.py   — ParaVM: full ParaASM ISA + text assembler
+    ISA: ENGAGR FSPLIT FFUSE IFIX MOVE CLEAR (core)
+         JMP JB JT JF JN CALL RET HALT (control flow)
+         PUSH POP (stack)  EMIT READ (I/O)
+    Assembler: .label: definitions (standalone or inline), ; comments,
+               %rN register syntax, label resolution for jump targets
+    exec_one(): direct instruction execution for REPL interactive mode
+    active_regs(): introspection for debugger display
+
+  para_repl.py — interactive REPL
+    Non-control-flow ops: auto-execute + show changed registers
+    Control-flow ops + labels: appended to program buffer
+    Commands: :step :run :load :save :reset :regs :prog :snap :help :q
+
+  programs/frob_loop.asm    — the Frobenius loop from the paper (with JMP)
+  programs/ifix_stable.asm  — IFIX stability demo (Theorem 3, Case B)
+  programs/probe.asm        — interactive belief probe, branches on N/T/F/B
+
+=======================================================================
+
+tex/frobenius_loop_paper.tex — short paper on the Frobenius loop:
+
+  NEW FILE: /home/mrnob0dy666/imscribing_grammar/tex/frobenius_loop_paper.tex
+  OUTPUT:   frobenius_loop_paper.pdf (4 pages, lualatex)
+  SUPPORT:  ifix_experiment.py
+
+  "The Frobenius Loop: A Permanently Paradoxical Fixed Point
+   in the Paraconsistent Universal Engine"  — umpolungfish, 2026-05-21
+
+  Contents:
+    §1  The Machine — TriPhaseRegister, Belnap FOUR, IMASM opcodes
+    §2  The Kernel — 3-instruction circular program K[0..2]
+    §3  Theorem 1 (Permanence of B-state) + proof via Belnap join idempotency
+    §4  Theorem 2 (Linear paradox growth) P(n) = 4n + corollary on ratio 2:1:1
+    §5  Empirical verification table — t₁ (625M steps) and t₂ (18.9B steps)
+    §6  Remarks — non-triviality, paraconsistency vs. classical error
+    §7  Resolution: IFIX Cannot Collapse the Loop
+        Theorem 3 (IFIX absorption): two independent reasons —
+          Case A: FSPLIT overrides IFIX (engage() ignores is_fixed)
+          Case B: T∨B = B (B is top of information order)
+        Remark: K3 shows register-level paraconsistency (FIXED + B coexist)
+        Experimental table: K1, K2, K3 all preserve B on r0
+        Corollary: Frobenius loop is IFIX-stable
+
+=======================================================================
+
+para_loop.py — indefinitely running program on the paraconsistent computer:
+
+  NEW FILE: /home/mrnob0dy666/imscribing_grammar/para_loop.py
+
+  ParaEngine extends UniversalEngine with Belnap FOUR belief tracking.
+  Flux and Belnap state kept in sync per register:
+    Void('00') ↔ N   True('01') ↔ T   False('10') ↔ F   Both('11') ↔ B
+
+  3-instruction kernel (circular PC → infinite):
+    ENGAGR %r0          seed: force B on root register
+    FSPLIT %r0 %r1 %r2  δ: co-multiply — two B-children
+    FFUSE  %r1 %r2 %r0  μ: multiply — fold back into root
+
+  Loop invariant: μ∘δ = id (Frobenius identity)
+  All 3 registers stabilize at B permanently; paradox count grows without bound.
+  ~200k steps/sec; live ANSI display updates every 30k steps.
+  Ctrl+C for final summary.
+
+  Usage: python3 para_loop.py
+
+=======================================================================
+
+frobenius_mzi_sim.py — 3×3 MZI Frobenius mesh simulation via IG script engines:
+
+  NEW FILE: /home/mrnob0dy666/imscribing_grammar/frobenius_mzi_sim.py
+
+  Simulation of index/frobenius-mzi.html using four IG script engines + ALEPH_OS.
+
+  Architecture:
+    Row 0 (Vav)     → voynich-engine       (UniversalEngine / TriPhaseRegister)
+    Row 1 (Mem)     → linear_a-engine
+    Row 2 (Shin)    → emerald-tablet-engine
+    Cross-coupling  → rohonc-engine (weighted by inverse d(pole_i, pole_j))
+    Pole distances from ALEPH_OS 12-dim primitive tuples (aleph_1.py)
+
+  Each MZI element encodes a_ij = sin(θ)·exp(iφ) as IMASM:
+    ENGAGR (if amp ≥ 0.75) → FSPLIT (δ) → FFUSE (μ) → IFIX 0xφφφφ
+
+  Outputs: complex matrix A, ‖A‖_F, SVD (σ₁ σ₂ σ₃), κ,
+           ‖A†A−I‖_F, per-engine paradox/active/fixed snapshots.
+
+  Usage:
+    python3 frobenius_mzi_sim.py
+    python3 frobenius_mzi_sim.py --preset unitary
+    python3 frobenius_mzi_sim.py --preset random
+
+=======================================================================
+
 zfct_para.py — Belnap FOUR paraconsistent layer over the ZFC/ZFCₜ/ZFCₛ triangle:
 
   NEW FILE: /home/mrnob0dy666/imscribing_grammar/zfct_para.py

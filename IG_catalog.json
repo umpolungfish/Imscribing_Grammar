@@ -44206,5 +44206,21 @@
     "Ħ": "Ħ_A",
     "Σ": "Σ_S",
     "Ω": "Ω_z"
+  },
+  {
+    "name": "paraconsistent_computer",
+    "description": "Frobenius kernel running ENGAGR→FSPLIT→FFUSE on Belnap four-valued logic with B=3 (both) fixed point. μ∘δ=id as loop invariant across 6.38B cycles. Three-register paraconsistent machine.",
+    "Ð": "Ð_ω",
+    "Þ": "Þ_O",
+    "Ř": "Ř_=",
+    "Φ": "Φ_}",
+    "ƒ": "ƒ^ż",
+    "Ç": "Ç^@",
+    "Γ": "Γ_ʔ",
+    "ɢ": "ɢ^ˌ",
+    "⊙": "⊙_ÿ",
+    "Ħ": "Ħ_A",
+    "Σ": "Σ_ő",
+    "Ω": "Ω_z"
   }
 ]
