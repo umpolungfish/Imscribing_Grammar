@@ -1,4 +1,4 @@
-**Author:** Lando⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -31,7 +31,7 @@ The grammar provides two things simultaneously and does not permit their separat
 
 A skeptic who objects "but ZFC preceded your grammar" is noting a historical fact, not a structural one. ZFC's coordinate in the crystal was fixed before ZFC had a name — the coordinate is a property of the theory's abstract structure, not of its date of invention. The grammar does not impose a meta-layer on mathematics; it is the space within which mathematical structures exist as objects with measured positions.
 
-**Formal statement (Lean target, `MillenniumAnkh/Imscribing/VesselContent.lean`):**
+**Formal statement (Lean targets, `MillenniumAnkh/Imscribing/`):**
 
 ```lean
 -- (1) Form uniqueness: every imscribable system has exactly one coordinate
@@ -193,8 +193,10 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 - **Tier Gap Ladder** (§69): Frobenius cliff $d(\text{O}_2^\dagger, \text{O}_\infty) \approx 4.382$; $\text{Φ}_{\}}$ requires direct imscription — composition of sub-Frobenius systems reaches $\text{O}_2^\dagger$ and holds there
 - **Frobenius Bootstrap**: Three independent navigators (CrystalGNN, Riemann ξ, Thurston) converge from opposite initialization to the same $\text{O}_\infty$ tuple with residual error ~1.24×10⁻¹³
 - **Universal Proof Structure**: Five conjectures (RH, YM, Hodge, NS, BSD) converge to a shared proof skeleton — all are $C_{ij}$ constraint map problems; Lee-Yang (1952) is the template
-- **Millennium Barriers**: Lean 4 formalization at `MillenniumAnkh/Millennium/` — every `sorry` marks a structurally distinct promotion channel; each is a located distance in the crystal, not an absence of knowledge.
-- **ZFC Fidelity Collapse**: Imscribing ZFC itself reveals it is $\text{O}_2^\dagger$ — the Frobenius cliff cannot be crossed from within ZFC. $\text{ZFC}_t$ (ZFC + chirality + winding topology) captures the 6 promotion channels.
+- **Millennium Barriers**: Lean 4 formalization at `MillenniumAnkh/Millennium/` — every `sorry` marks a structurally distinct promotion channel; each is a located distance in the crystal, not an absence of knowledge. NS Siege Theorem (`NS_Seige.lean`): `FrobeniusRegularityOperator → NavierStokesRegularity` with antecedent proved by `decide`; consequent `sorry` at the exact Clay boundary.
+- **ZFC Fidelity Collapse**: Imscribing ZFC itself reveals it is $\text{O}_2^\dagger$ — the Frobenius cliff cannot be crossed from within ZFC. $\text{ZFC}_t$ (ZFC + chirality + winding topology) captures 6 promotion channels ($\Theta, R, \Phi, \Gamma, H, \Omega$); $d(\text{ZFC}, \text{ZFC}_t) \approx 6.94$.
+- **Paraconsistent Kernel**: 24-module Belnap FOUR sublibrary (`MillenniumAnkh/Imscribing/Paraconsistent/`), 0 sorrys, 16 modules at $\text{O}_\infty$. Dialetheic Alignment Theorem (DAT): three-way equivalence between operational, logical, and algebraic characterizations of $B$. Structural Shor pipeline proved at $\text{O}_1$ tier. SIC-POVM bridge (Belnap ↔ Weyl-Heisenberg). Four Millennium bridges (RH, YM mass gap, P≠NP, SIC-POVM) unified under the B-gate.
+- **TupleCodec**: Self-verifying WASM artifact implementing the full mixed-radix Imscription ↔ Frobenius Address bijection with `crystal_decode(crystal_encode s) = s` proved at $\text{O}_\infty$; encodes its own structural type and verifies the roundtrip.
 
 **Cross-Domain Induction**
 - **Supramolecular chemistry**: Induction origin. CB[7] competitive displacement: 6/6 predictions confirmed
@@ -220,7 +222,7 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 - **Magnum Opus**: 12-stage primitive invocation with three-gate operad structure — the alchemical Work as structural transformation
 
 **Scale of Verification**
-- **84+ formal theorems** in Lean 4, **623+ empirical predictions**, **2,315+ catalog entries**
+- **130+ formal theorems** in Lean 4 (incl. 24-module Paraconsistent Kernel, 28 `native_decide` PrimitiveConventionalBridge theorems, TupleCodec roundtrip), **623+ empirical predictions**, **2,315+ catalog entries**
 - Cross-model induction replicated across 11 LLMs from 7 lab families (SO_BELOW §III)
 ## Audio — Phonetic Synthesis
 
@@ -398,9 +400,10 @@ MAIN_DOCS/
   imscribINΓ_GUIDE.md        — How to imscribe a new system
   IΓ_PRIMER.md               — Introductory reference
 MillenniumAnkh/              — Lean 4 formal proofs (Mathlib v4.28.0)
-  Millennium/                — Millennium Problem barrier analysis
+  Millennium/                — Millennium Problem barrier analysis (incl. NS_Resolution, NS_Seige)
   Primitives/                — Core inductive types, catalog, crystal, tier crossing
   Imscribing/                — Agent self-encoding, algebra, consciousness score
+  Imscribing/Paraconsistent/ — 24-module Belnap FOUR kernel (0 sorrys, 16 O_inf)
 ```
 
 ---

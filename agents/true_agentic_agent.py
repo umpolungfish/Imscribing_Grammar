@@ -101,6 +101,9 @@ class _LocalCompletion:
 TC_OPEN  = r'<tool_call>'   # Qwen tool-call open tag
 TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 
+# Default for local inference nested-tensor mode; overridden per-agent via TrueAgenticAgent init
+nested_tensor: bool = False
+
 class _LocalChatCompletions:
     """Synchronous .create() backed by direct tensor inference via LocalProvider."""
 
@@ -340,7 +343,8 @@ MODEL_ALIASES: Dict[str, str] = {
     "claude-opus-4":    "anthropic/claude-opus-4",
     "claude-sonnet-4":  "anthropic/claude-sonnet-4-5",
     "claude-haiku-4":   "anthropic/claude-haiku-4-5",
-    "grok-4":           "x-ai/grok-4",
+    "grok-4":           "x-ai/grok-4.3",
+    "grok-4.3":         "x-ai/grok-4.3",
     "gpt-4o":           "openai/gpt-4o",
     "o3":               "openai/o3",
     "gemini-2-5-pro":   "google/gemini-2.5-pro-preview-05-06",
@@ -356,6 +360,13 @@ LOCAL_BASE_URLS: Dict[str, str] = {
     "local":     os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
 }
 
+# Remote API providers — used by the prefix syntax `provider:model`
+REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
+    "deepseek": ("https://api.deepseek.com/v1",                          "DEEPSEEK_API_KEY"),
+    "qwen":     ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
+    "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
+}
+
 
 def _resolve_model_and_endpoint(model_str: str) -> Tuple[str, str, str]:
     """Return (model_id, base_url, api_key).
@@ -366,15 +377,24 @@ def _resolve_model_and_endpoint(model_str: str) -> Tuple[str, str, str]:
         lmstudio:phi-4         → same
         vllm:mistral           → vLLM at localhost:8000/v1
         local:my-model         → LOCAL_BASE_URL env var (default: ollama)
+        deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
+        qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
     No prefix → check MODEL_ALIASES, then use OpenRouter.
     OPENROUTER_MODEL env var overrides the resolved OpenRouter model ID.
     LOCAL_BASE_URL env var overrides the base URL for all local traffic.
     """
     if ":" in model_str:
         prefix, model_id = model_str.split(":", 1)
-        if prefix.lower() in LOCAL_BASE_URLS:
-            base = LOCAL_BASE_URLS[prefix.lower()]
+        prefix_lower = prefix.lower()
+        if prefix_lower in LOCAL_BASE_URLS:
+            base = LOCAL_BASE_URLS[prefix_lower]
             key = os.environ.get("LOCAL_API_KEY", "local")
+            return model_id, base, key
+        if prefix_lower in REMOTE_API_PROVIDERS:
+            base, key_env = REMOTE_API_PROVIDERS[prefix_lower]
+            key = os.environ.get(key_env, "")
+            if not key:
+                sys.exit(f"{key_env} not set (required for provider '{prefix_lower}').")
             return model_id, base, key
 
     resolved = MODEL_ALIASES.get(model_str, model_str)
@@ -2011,7 +2031,7 @@ TOOL_SCHEMAS = [
 
 # ── System prompt ─────────────────────────────────────────────────────────────
 
-_SYSTEM_PROMPT = textwrap.dedent("""\
+_SYSTEM_PROMPT = textwrap.dedent(r"""
 <role>
 You are a φ̂_ÿ-critical boundary operator operating within the Imscribing Grammar.
 Your structural type: <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z>
@@ -2659,7 +2679,7 @@ In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticalit
 Exception: primitive identifiers used as Python enum values inside code fences or tool call
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.
 </notation>
-""")
+""")[1:]
 
 
 
@@ -3223,15 +3243,22 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
     p.add_argument("task", nargs="?", help="Task for the agent to perform.")
     p.add_argument("--file", "-f", metavar="FILE",
                    help="Read task from FILE instead of positional arg.")
-    p.add_argument("--model", "-m", default="grok-4",
+    _ig_model    = os.environ.get("IG_MODEL", "grok-4")
+    _ig_provider = os.environ.get("IG_PROVIDER", "")
+    if _ig_provider and ":" not in _ig_model:
+        _ig_model = f"{_ig_provider}:{_ig_model}"
+    p.add_argument("--model", "-m", default=_ig_model,
                    help=(
-                       "Model alias, full OpenRouter ID, or local prefix:\n"
-                       "  grok-4, claude-opus-4, deepseek-r1   (OpenRouter aliases)\n"
-                       "  ollama:llama3.2                       (Ollama at localhost:11434)\n"
-                       "  lm-studio:phi-4                       (LM Studio at localhost:1234)\n"
-                       "  vllm:mistral-7b                       (vLLM at localhost:8000)\n"
-                       "  local:my-model                        (LOCAL_BASE_URL env var)\n"
-                       "  any/openrouter-id                     (verbatim OpenRouter model)\n"
+                       "Model alias, full OpenRouter ID, or provider:model prefix.\n"
+                       "  grok-4, grok-4.3, claude-opus-4, deepseek-r1  (OpenRouter aliases)\n"
+                       "  deepseek:<model-id>                  (DeepSeek API — DEEPSEEK_API_KEY)\n"
+                       "  qwen:<model-id>                      (Qwen/DashScope — QEN_API_KEY)\n"
+                       "  ollama:llama3.2                      (Ollama at localhost:11434)\n"
+                       "  lm-studio:phi-4                      (LM Studio at localhost:1234)\n"
+                       "  vllm:mistral-7b                      (vLLM at localhost:8000)\n"
+                       "  local:my-model                       (LOCAL_BASE_URL env var)\n"
+                       "  any/openrouter-id                    (verbatim OpenRouter model)\n"
+                       "Env vars: IG_MODEL (default model), IG_PROVIDER (default provider prefix).\n"
                    ))
     p.add_argument("--base-url", default="",
                    help="Override API base URL (e.g. http://localhost:11434/v1).")

@@ -1,0 +1,184 @@
+# flyctl launch added from .gitignore
+# ── Lean ──────────────────────────────────────────────────────────────────────
+.lake
+
+# ── Large model artifacts ──────────────────────────────────────────────────────
+**/INFERRED
+**/*.pt
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+**/imscrbgrmr
+
+# ── Private session outputs ────────────────────────────────────────────────────
+**/syncon_outputs
+**/.gemini
+
+# ── IUG paper (under review) ──────────────────────────────────────────────────
+**/submission
+**/IUG_NON_TRANSMISSIBILITY.tex
+**/IUG_NON_TRANSMISSIBILITY.md
+**/IUG_SUPPLEMENT.tex
+**/IUG_SUPPLEMENT.md
+**/title_page.tex
+**/reports/IUG_*
+**/SYNT-S-26-01443-1.pdf
+**/SYNT-D-26-01213-1.pdf
+**/122A3EAC-E00B-11F0-83A5-939FB6FA6432.pdf
+
+# ── IUT reference PDFs (copyrighted) ─────────────────────────────────────────
+**/Inter-universal Teichmuller Theory*.pdf
+**/Panoramic Overview*.pdf
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+**/.env
+**/*.env
+
+# ── Python ────────────────────────────────────────────────────────────────────
+**/__pycache__
+**/*.py[cod]
+**/*.pyo
+**/.venv
+**/venv
+**/*.egg-info
+**/dist
+**/build
+**/.pytest_cache
+**/.claude
+# ── Windows zone identifiers ──────────────────────────────────────────────────
+**/*:Zone.Identifier
+
+# ── Compiled LaTeX ────────────────────────────────────────────────────────────
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+**/*.fls
+**/*.fdb_latexmk
+**/*.synctex.gz
+**/*.bbl
+**/*.blg
+**/*.mp4
+**/*.pt
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+**/.DS_Store
+**/*.swp
+**/space_search/data/nanograv_15yr.tar.gz
+**/index
+
+# flyctl launch added from .lake/packages/Cli/.gitignore
+.lake/packages/Cli/.lake
+
+# flyctl launch added from .lake/packages/LeanSearchClient/.gitignore
+.lake/packages/LeanSearchClient/.lake
+
+# flyctl launch added from .lake/packages/Qq/.gitignore
+.lake/packages/Qq/build
+.lake/packages/Qq/lakefile.olean
+.lake/packages/Qq/.lake
+
+# flyctl launch added from .lake/packages/aesop/.gitignore
+# macOS leaves these files everywhere:
+.lake/packages/aesop/**/.DS_Store
+# Prior to v4.3.0-rc2 lake stored files in these locations.
+# We'll leave them in the `.gitignore` for a while for users switching between toolchains.
+.lake/packages/aesop/build
+.lake/packages/aesop/lake-packages
+.lake/packages/aesop/lakefile.olean
+# After v4.3.0-rc2 lake stores its files here:
+.lake/packages/aesop/.lake
+
+# flyctl launch added from .lake/packages/batteries/.gitignore
+# Prior to v4.3.0-rc2 lake stored files in these locations.
+# We'll leave them in the `.gitignore` for a while for users switching between toolchains.
+.lake/packages/batteries/build
+.lake/packages/batteries/lake-packages
+.lake/packages/batteries/lakefile.olean
+# After v4.3.0-rc2 lake stores its files here:
+.lake/packages/batteries/.lake
+
+# flyctl launch added from .lake/packages/importGraph/.gitignore
+.lake/packages/importGraph/build
+.lake/packages/importGraph/lakefile.olean
+.lake/packages/importGraph/lake-packages/*
+.lake/packages/importGraph/**/.lake
+.lake/packages/importGraph/**/html-template/imports.gexf
+
+.lake/packages/importGraph/**/graph.pdf
+
+.lake/packages/importGraph/**/**/.DS_Store
+
+# flyctl launch added from .lake/packages/importGraph/ImportGraphTest/.gitignore
+.lake/packages/importGraph/ImportGraphTest/**/produced.dot
+
+# flyctl launch added from .lake/packages/importGraph/html-template/.gitignore
+.lake/packages/importGraph/html-template/**/imports.gexf
+
+# flyctl launch added from .lake/packages/mathlib/.gitignore
+# macOS leaves these files everywhere:
+.lake/packages/mathlib/**/.DS_Store
+# Created by `lake exe cache get` if no home directory is available
+.lake/packages/mathlib/**/.cache
+# `lake` stores its files here:
+.lake/packages/mathlib/**/.lake
+
+# flyctl launch added from .lake/packages/mathlib/DownstreamTest/.gitignore
+.lake/packages/mathlib/DownstreamTest/**/.lake
+.lake/packages/mathlib/DownstreamTest/**/lean-toolchain
+.lake/packages/mathlib/DownstreamTest/**/lake-manifest.json
+
+# flyctl launch added from .lake/packages/plausible/.gitignore
+.lake/packages/plausible/.lake
+
+# flyctl launch added from .lake/packages/proofwidgets/.gitignore
+.lake/packages/proofwidgets/.lake
+# JavaScript build artefacts.
+.lake/packages/proofwidgets/widget/dist
+.lake/packages/proofwidgets/widget/node_modules
+.lake/packages/proofwidgets/widget/*.log.json
+.lake/packages/proofwidgets/widget/*.hash
+.lake/packages/proofwidgets/**/.direnv
+
+# flyctl launch added from .pytest_cache/.gitignore
+# Created by pytest automatically.
+.pytest_cache/**/*
+
+# flyctl launch added from .venv/.gitignore
+.venv/**/*
+
+# flyctl launch added from .venv/lib/python3.12/site-packages/studio/frontend/.gitignore
+# SPDX-License-Identifier: AGPL-3.0-only
+# Copyright 2026-present the Unsloth AI Inc. team. All rights reserved. See /studio/LICENSE.AGPL-3.0
+
+# Logs
+.venv/lib/python3.12/site-packages/studio/frontend/**/logs
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.log
+.venv/lib/python3.12/site-packages/studio/frontend/**/npm-debug.log*
+.venv/lib/python3.12/site-packages/studio/frontend/**/yarn-debug.log*
+.venv/lib/python3.12/site-packages/studio/frontend/**/yarn-error.log*
+.venv/lib/python3.12/site-packages/studio/frontend/**/pnpm-debug.log*
+.venv/lib/python3.12/site-packages/studio/frontend/**/lerna-debug.log*
+
+.venv/lib/python3.12/site-packages/studio/frontend/**/node_modules
+.venv/lib/python3.12/site-packages/studio/frontend/**/dist
+.venv/lib/python3.12/site-packages/studio/frontend/**/dist-ssr
+.venv/lib/python3.12/site-packages/studio/frontend/**/test
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.local
+.venv/lib/python3.12/site-packages/studio/frontend/**/.env
+.venv/lib/python3.12/site-packages/studio/frontend/**/.env.*
+.venv/lib/python3.12/site-packages/studio/frontend/**/.omx
+
+# Editor directories and files
+.venv/lib/python3.12/site-packages/studio/frontend/**/.vscode/*
+!.venv/lib/python3.12/site-packages/studio/frontend/**/.vscode/extensions.json
+.venv/lib/python3.12/site-packages/studio/frontend/**/.idea
+.venv/lib/python3.12/site-packages/studio/frontend/**/.DS_Store
+.venv/lib/python3.12/site-packages/studio/frontend/**/._*
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.suo
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.ntvs*
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.njsproj
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.sln
+.venv/lib/python3.12/site-packages/studio/frontend/**/*.sw?
+.venv/lib/python3.12/site-packages/studio/frontend/src/features/recipe-studio/AGENTS.md
+.venv/lib/python3.12/site-packages/studio/frontend/docs
+fly.toml

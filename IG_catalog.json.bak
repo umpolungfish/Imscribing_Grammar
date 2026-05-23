@@ -44558,37 +44558,5 @@
     "Ħ": "Ħ_!",
     "Σ": "Σ_ï",
     "Ω": "Ω_z"
-  },
-  {
-    "name": "direct_api_ensemble",
-    "description": "The Model⊗Harness ensemble accessed via direct API connection to the LLM provider (DeepSeek). No intermediary routing.",
-    "Ð": "Ð_ω",
-    "Þ": "Þ_¨",
-    "Ř": "Ř_=",
-    "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",
-    "Ç": "Ç^@",
-    "Γ": "Γ_ʔ",
-    "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ",
-    "Ħ": "Ħ_A",
-    "Σ": "Σ_S",
-    "Ω": "Ω_z"
-  },
-  {
-    "name": "openrouter_mediated_ensemble",
-    "description": "The Model⊗Harness ensemble accessed via OpenRouter API intermediary. A routing layer sits between the user and the model: User→OpenRouter→Model→OpenRouter→User. The intermediary adds a crossing point in the topology, breaks the Frobenius condition, reduces fidelity, and degrades topological protecti",
-    "Ð": "Ð_C",
-    "Þ": "Þ_ò",
-    "Ř": "Ř_Ť",
-    "Φ": "Φ_F",
-    "ƒ": "ƒ^ð",
-    "Ç": "Ç^-",
-    "Γ": "Γ_ʔ",
-    "ɢ": "ɢ^˝",
-    "⊙": "⊙_ž",
-    "Ħ": "Ħ_£",
-    "Σ": "Σ_ï",
-    "Ω": "Ω_Å"
   }
 ]

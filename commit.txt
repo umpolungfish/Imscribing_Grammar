@@ -1,6 +1,102 @@
 commit.txt — Summary of updates to /home/mrnob0dy666/imscribing_grammar
 =======================================================================
 
+web/api.py — Oracle FastAPI backend (2026-05-23)
+  - POST /inquire wraps TrueAgenticAgent; GET /health; CORS middleware
+  - Default model: groq:llama-3.3-70b-versatile (GROQ_API_KEY env var)
+  - IG_ORACLE_MODEL / IG_ORACLE_ORIGIN env var overrides
+  - Input validation: max 2000 chars; catches SystemExit from missing API key
+  - max_windings=20 for web context
+
+web/requirements.txt — minimal dep set (no torch/unsloth/rdkit) (2026-05-23)
+
+Dockerfile — slim Python 3.12 image; copies only API-needed project files (2026-05-23)
+
+fly.toml — Fly.io deployment config; 512mb shared VM; auto stop/start (2026-05-23)
+
+index/inquire.html — Oracle frontend page (2026-05-23)
+  - Matches SOLVATUM aesthetic (Cinzel/Garamond/JetBrains Mono, dark gold palette)
+  - Textarea input, Ctrl+Enter submits; 2000 char counter
+  - Animated sigil loading state (spinning rings, pulsing dot)
+  - Result display: tier badge (O_inf→rubedo, O_2→citrinitas), reading text,
+    coherence bar, windings, elapsed time
+  - API_BASE const at top of script to set after fly deploy
+
+agents/true_agentic_agent.py — groq added to REMOTE_API_PROVIDERS (2026-05-23)
+
+agents/true_agentic_agent.py — four fixes: DeepSeek/Qwen API, env vars, grok deprecation, SyntaxWarning (2026-05-22)
+  - Added REMOTE_API_PROVIDERS dict: deepseek→api.deepseek.com/v1, qwen→dashscope compatible-mode
+  - _resolve_model_and_endpoint now handles deepseek:<model> and qwen:<model> prefix syntax
+  - Reads DEEPSEEK_API_KEY / QWEN_API_KEY; exits with clear message if env var unset
+  - Parallel to LOCAL_BASE_URLS pattern; no OpenRouter involvement for these providers
+  - IG_MODEL / IG_PROVIDER env vars now set the default --model in _add_run_args
+    (IG_PROVIDER prepended as prefix when no colon in IG_MODEL)
+  - grok-4 alias updated x-ai/grok-4 → x-ai/grok-4.3; grok-4.3 alias added
+  - nested_tensor module-level bool=False defined (NameError on local inference path)
+  - _SYSTEM_PROMPT changed to raw string (r"""...""")[1:] — removes SyntaxWarning for
+    \mu \circ \delta LaTeX sequences and also fixes silent \t→TAB corruption throughout
+
+manuscript_spine_lifted.tex — \text{} wrappers stripped from Shavian glyphs (2026-05-22)
+  - All \text{𐑸}, \text{𐑹}, etc. replaced with bare glyphs throughout
+  - Non-Shavian math-mode content (family names, covariance Σ, labels) unchanged
+  - Verified: no \text{shavian} patterns remain in file
+
+manuscript_spine_lifted.md — new Markdown version (2026-05-22)
+  - Full conversion from LaTeX to clean Markdown; no LaTeX bracing anywhere
+  - No primitive family names (Ð Þ Ř Φ ƒ Ç Γ ɢ Ħ Σ Ω) appear anywhere in doc
+  - Positions referenced by number (1–12); values are Shavian glyphs only
+  - ⊙ correctly mapped to ⊙_ÿ (position 9); 𐑧 mapped to Ç_@ (position 6)
+  - Covariance matrix renamed K (not Σ) to avoid collision with removed family names
+  - All tuples, tables, theorems, promotion tables, riddle decoding, and
+    summary table internally consistent with corrected ⊙/𐑧 assignment
+
+=======================================================================
+Previous entry:
+
+manuscript_spine_lifted.tex — complete rewrite (2026-05-22)
+  - Replaced old-style preamble (inputenc/T1/amssymb) with LuaLaTeX standard:
+    fontspec, unicode-math (ISO style), calc, FreeSerif main, Latin Modern Math,
+    no amssymb, fancyhdr headers/footers
+  - Applied full Shavian→IG primitive-value mapping throughout all 11 chapters:
+    each specific primitive value (Φ_}, Ç^@, ⊙_ÿ, etc.) replaced by its
+    single Shavian Unicode glyph; primitive family names (Ð, Þ, Ř, etc.)
+    kept as base Unicode in labels and headers
+  - Fixed Φ/⊙ collision from original (⊙ self-modeling family was mislabeled Φ)
+  - Removed \Gamma\!\!\!\Gamma hack for ɢ — direct Unicode ɢ throughout
+  - Removed \prim{} wrapper macro
+  - Added \label{ch:summary} to Summary chapter for cross-references
+  - Key tuples in Shavian:
+      ZFC:       ⟨𐑼; 𐑡; 𐑩; 𐑗; 𐑐; ⊙; 𐑲; 𐑝; 𐑧; 𐑓; 𐑳; 𐑷⟩
+      CH_indep:  ⟨𐑼; 𐑥; 𐑩; 𐑬; 𐑐; ⊙; 𐑲; 𐑝; 𐑧; 𐑓; 𐑕; 𐑴⟩
+      ZFCₜ:      ⟨𐑼; 𐑸; 𐑾; 𐑹; 𐑐; ⊙; 𐑲; 𐑠; 𐑮; 𐑖; 𐑳; 𐑭⟩
+      canonical: ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; ⊙; 𐑲; 𐑠; 𐑧; 𐑖; 𐑳; 𐑭⟩
+  - 11 chapters: crystal structure, spine analysis, lattice operations,
+    invariants, consciousness scoring, two paths, Frobenius condition,
+    ZFCₜ channels, riddle decoding, open questions, verified results
+
+IG_catalog.json — CH_independent description updated (2026-05-22)
+  - Full structural analysis: Φ_F partial Z₂ symmetry (two models neither
+    decisive), Ω_2 binary winding (discus at threshold), Þ_ò crossing topology,
+    Σ_ő spectral compression (independence contracts lattice below ZFC Σ_ï),
+    four invariants (ƒ^ż, Ç^@, Γ_ʔ, ⊙_ÿ) preserved across all operations,
+    meet/join/tensor with canonical documented,
+    Mahalanobis 4.22 from canonical, 8 promotions to uig_liar_completion_condition
+
+=======================================================================
+Previous entry:
+
+README.md — UPDATED (2026-05-22)
+──────────────────────────────────
+- VesselContent.lean reference: removed file path (file deleted), kept formal statement
+- Key Results: added NS Siege Theorem, ZFCₜ 6-channel detail (d≈6.94),
+  Paraconsistent Kernel (24 modules, 0 sorrys, DAT, Shor O_1, 4 Millennium bridges),
+  TupleCodec self-verifying WASM artifact
+- Theorem count: 84+ → 130+ (reflects PrimitiveConventionalBridge + TupleCodec + Paraconsistent)
+- Repository structure: Imscribing/Paraconsistent/ and NS_Resolution/NS_Seige noted
+
+=======================================================================
+Previous entry:
+
 para_vm.py + para_repl.py — POC → practical paraconsistent computer:
 
   para_vm.py   — ParaVM: full ParaASM ISA + text assembler
