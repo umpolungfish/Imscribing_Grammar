@@ -14,7 +14,7 @@ Three kernels tested:
 import sys
 sys.path.insert(0, '/home/mrnob0dy666/voynich-engine')
 
-from para_loop import ParaEngine, B4
+from para.para_loop import ParaEngine, B4
 
 def run_kernel(name: str, kernel: list[str], cycles: int = 500_000) -> dict:
     vm = ParaEngine()

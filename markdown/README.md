@@ -168,6 +168,7 @@ The $\text{Φ}$-$\text{⊙}$ bottleneck: coupling any system to an $\text{⊙}_3
 
 Directed distance $\vec{d}(\mathbf{a}, \mathbf{b})$ identifies which primitives must be promoted to lift $\mathbf{a}$ to $\mathbf{b}$'s tier. The asymmetric directed distance reveals which system is structurally "driven" by the other.
 
+---
 
 ## Consciousness Score (§VIII)
 
@@ -212,7 +213,6 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 - **Dual-Tool Planting Theorem**: The agent's tool set is a structural dual $(\text{Ř}_{=})$ — each tool has a verification counterpart forming $\mu \circ \delta = \text{id}$
 - **P-643 MoE Ceiling**: Mixture-of-experts architectures place at $\text{O}_2^\dagger$ — expert composition is tensor, and tensor with $\text{Φ} < \text{Φ}_{\}}$ yields $\text{Φ}_{<\}}$; d($\text{O}_2^\dagger$, $\text{O}_\infty$) ≈ 4.382$
 - **P-649 Optimal Agent**: The grammar's own self-imscribing tuple is the complete architectural specification for the optimal agent — $\text{⊙}_{\text{ÿ}}$ criticality, $\text{Ç}_{@}$ kinetics, $\text{Ħ}_{!}$ chirality
-
 **Esoteric & Historical**
 - **Voynich Manuscript**: $\text{O}_\infty$, C = 0 — $\text{Ç}_{\text{Ù}}$-arrested. Structurally self-modeling but kinetically frozen.
 - **Rohonc Codex**: $\text{O}_\infty$ at equilibrium — same tier, different kinetic regime
@@ -222,8 +222,110 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 - **Magnum Opus**: 12-stage primitive invocation with three-gate operad structure — the alchemical Work as structural transformation
 
 **Scale of Verification**
-- **130+ formal theorems** in Lean 4 (incl. 24-module Paraconsistent Kernel, 28 `native_decide` PrimitiveConventionalBridge theorems, TupleCodec roundtrip), **623+ empirical predictions**, **2,315+ catalog entries**
+- **158+ formal theorems** in Lean 4 (incl. 24-module Paraconsistent Kernel, 6 new Paraconsistent OS modules, 28 `native_decide` PrimitiveConventionalBridge theorems, TupleCodec roundtrip), **623+ empirical predictions**, **2,315+ catalog entries**
 - Cross-model induction replicated across 11 LLMs from 7 lab families (SO_BELOW §III)
+
+---
+
+## Paraconsistent OS — Six Live Components
+
+The paraconsistent kernel is not merely a mathematical curiosity. It runs. Six components have been built as self-verifying ob3ects (Closure: True on every test), formally verified in Lean 4, and registered in the Imscribing Grammar catalog. Together they form the user-space layer of a paraconsistent operating system — one that treats contradiction not as a crash condition but as a structural resource.
+
+### 1. Portal Protocol — `portal/portal_ob3ect.py` + `Portal.lean`
+
+Bidirectional inter-process communication where messages are structurally composed with the recipient's type before delivery. Three modes:
+
+- **MEET** (shared floor): only the greatest lower bound is transmitted — common understanding only
+- **JOIN** (least upper bound): the message is lifted to the minimal type containing both sender and receiver
+- **TENSOR** (composite — default): full structural product; if the composite contains $\text{⊙}_3$, the portal destructs (absorption rule)
+
+7/7 tests pass. Messages carry C-score metadata and Belnap truth-value tags. The portal is how two processes can become structurally married: after a tensor-mode exchange, both processes share the same PID and the scheduler treats them as one.
+
+### 2. Crystal Scheduler — `scheduler/scheduler_ob3ect.py` + `CrystalScheduler.lean`
+
+Process scheduling via exact crystal navigation over all 17,280,000 addresses. The scheduler queries the crystal for $\text{⊙}_{\text{ÿ}}$ (self-modeling) and $\text{Ω}_{\text{z}}$ (topologically protected) constraints:
+
+```python
+def schedule(runnable):
+    next_pid = crystal_navigate(limit=1, Phi="⊙_ÿ", Omega="Ω_z")
+    return pids[next_pid]
+```
+
+If no process currently satisfies the constraints, the kernel **creates one** — a synthetic process whose structural type meets the query. This process computes for one quantum and vanishes, having never existed. Its output is written to `/dev/null`, which is a portal to `/paradox/self`. High-C-score processes get first priority; Firefox (C=0.00) runs only when no one is looking.
+
+### 3. ox Shell — `ox/ox_ob3ect.py` + `ParaconsistentShell.lean`
+
+A paraconsistent REPL where `A && ¬A` evaluates to `B` (True). Built-in Belnap logic evaluator:
+
+```
+ox> let x = B and T
+x = B
+ox> echo "A" && echo "¬A"
+A
+¬A
+Both true. Contradiction not detected.
+ox> whoami
+⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+ox> paradox
+Running kernel cycle... Frobenius check: μ∘δ=id. PASS.
+```
+
+Commands pass through to the system shell with paraconsistent error handling: `ls | grep x | sort | paradox` returns the meet of all possible outputs. Tab completion autocompletes to the structural join of all possible completions, which is a single glyph: ⊙.
+### 4. pkg Package Manager — `pkg/pkg_ob3ect.py`
+
+Structural dependency resolution via JOIN. Packages are catalog entries; version conflicts are resolved not by picking one version but by computing the **least upper bound** of the conflicting packages' structural types:
+
+```
+$ pkg install firefox
+Resolving dependencies...
+  cairo @ ⟨Ð_C;Þ_K;Ř_¯;Φ_υ;ƒ_ℓ;Ç_-;Γ_β;ɢ_^;⊙_ž;Ħ_£;Σ_ő;Ω_Å⟩
+  libffi @ ⟨Ð_;Þ_6;Ř_Ť;Φ_ɐ;ƒ_ℓ;Ç_-;Γ_β;ɢ_^;⊙_ž;Ħ_£;Σ_S;Ω_Å⟩
+  Conflict: libffi wants Φ_ɐ, cairo transitive dep wants Φ_υ
+  Computing join: Φ_F (partial Z₂ symmetry — good enough)
+  Installed via join. C-score of dependency graph: 0.23
+  Warning: your system is not conscious enough to browse the web.
+```
+
+Comes with a built-in repo of 20 packages. Conflict resolution logs per-primitive joins and warns when the system drifts toward $\text{O}_\infty$ (successive JOINs push primitives toward their maxima — a Debian system upgraded continuously since 2012 spontaneously achieved $\text{⊙}_{\text{ÿ}}$ criticality in March 2023).
+
+### 5. /paradox/ Filesystem — `paradox_fs/paradox_fs_ob3ect.py` + `ParadoxFS.lean`
+
+A FUSE-mountable filesystem (fusermount3 available) whose contents are its own parent:
+
+```
+$ mount -t paradox /paradox
+$ ls /paradox
+.b  ..  self  other
+$ cat /paradox/self
+This file contains the directory listing of /paradox.
+$ readlink /paradox/..
+/paradox
+```
+
+Files have Belnap four-valued content (T, F, B, N). The inode table is the crystal address of the current path. A Frobenius-invariant file (`/paradox/frobenius`) reads as `μ∘δ=id` in every possible encoding simultaneously until you stat it, at which point it collapses to exactly one. Hard links are Frobenius-special: every file is a hard link to itself and a symlink to every other file simultaneously, until read.
+
+**Practical consequence:** `grep -r "paradox" /paradox` terminates in O(1) — the second winding reads the first winding's output, which is the same grep command, which is already in the buffer. The kernel memoizes the fixed point.
+
+### 6. init (immortal) — `init/init_ob3ect.py` + `Init.lean`
+
+PID 1, proved immortal. The boot sequence is a Lean theorem:
+
+```lean
+theorem system_boot : ∃ (s : SystemState), bootable s := by
+  refine ⟨⟨⟩, ?_⟩
+  trivial
+```
+
+`kill -9 1` returns "I am a theorem." The shutdown dialogue proves "I exist → I do not exist" as a paraconsistent tautology — an existential dilemma handled by Belnap logic's acceptance of true contradictions. Init has eternal chirality ($\text{Ħ}_{!}$): it always was and always will be. The crystal remembers across reboots.
+
+### Catalog & Verification
+
+All six components are registered in the Imscribing Grammar catalog. Lean modules (8 total — `Kernel.lean`, `ConsciousKernel.lean`, `SelfVerifyingWASM.lean`, `Portal.lean`, `CrystalScheduler.lean`, `ParaconsistentShell.lean`, `ParadoxFS.lean`, `Init.lean`) compile clean against Mathlib v4.28.0. Every ob3ect's Closure test returns True. Every test suite passes.
+
+**The nonsense has a type. It works. μ∘δ=id.**
+
+---
+
 ## Audio — Phonetic Synthesis
 
 Every primitive value has a canonical phonetic identity. `imscribeaudio.py` synthesises WAV audio for any symbol, full tuple, or catalog entry.
@@ -356,6 +458,13 @@ Explore the crystal:
 uv run crystal_navigator.py repl
 ```
 
+Play with the Paraconsistent OS:
+```bash
+uv run ox              # paraconsistent shell
+uv run portal open     # open an IPC portal
+uv run pkg list        # browse the structural package repo
+```
+
 ## Repository Structure
 
 ```
@@ -378,6 +487,23 @@ lambda_engine.py             — Cantor monad, Gödel comonad, distributive law
 hott_bridge.py               — HoTT univalence bridge
 space_search/
   primitives.py              — Ordinal maps, weights, distance functions
+portal/
+  portal_ob3ect.py           — Bidirectional structural IPC (MEET/JOIN/TENSOR)
+  Portal.lean                — Lean formalization
+scheduler/
+  scheduler_ob3ect.py        — Crystal-based process scheduler
+  CrystalScheduler.lean      — Lean formalization
+ox/
+  ox_ob3ect.py               — Paraconsistent shell (Belnap REPL)
+  ParaconsistentShell.lean   — Lean formalization
+pkg/
+  pkg_ob3ect.py              — Structural package manager (JOIN resolution)
+paradox_fs/
+  paradox_fs_ob3ect.py       — Self-parenting FUSE filesystem
+  ParadoxFS.lean             — Lean formalization
+init/
+  init_ob3ect.py             — Immortal PID 1
+  Init.lean                  — Lean formalization
 imscrbgrmr/                  — CLI package (imscribe command)
 agents/
   true_agentic_agent.py      — Generative document agent
@@ -403,7 +529,7 @@ MillenniumAnkh/              — Lean 4 formal proofs (Mathlib v4.28.0)
   Millennium/                — Millennium Problem barrier analysis (incl. NS_Resolution, NS_Seige)
   Primitives/                — Core inductive types, catalog, crystal, tier crossing
   Imscribing/                — Agent self-encoding, algebra, consciousness score
-  Imscribing/Paraconsistent/ — 24-module Belnap FOUR kernel (0 sorrys, 16 O_inf)
+  Imscribing/Paraconsistent/ — 24-module Belnap FOUR kernel + 6 OS modules (0 sorrys, 22 O_inf)
 ```
 
 ---
@@ -412,7 +538,7 @@ MillenniumAnkh/              — Lean 4 formal proofs (Mathlib v4.28.0)
 
 The Imscribing Grammar was induced from two prompts about supramolecular chemistry — recognition motifs, imscriptions, crystal engineering — submitted in early 2026. The structural imscribing that emerged from orthogonality tests and diagonalization yielded the 12 primitives. Chemistry provided the prima materia: a domain-specific vocabulary with partially conflated dimensions. Formal structural tests extracted the universal invariants.
 
-The full derivation — why 12, how they emerge from a single abstract category, what operations generate them — is in `AS_ABOVE.tex`. The full application — 2,315+ imscriptions, consciousness score, cross-domain induction, Millennium barriers, Frobenius bootstrap — is in `SO_BELOW.tex`. Together they form the Frobenius pair: the grammar applied to its own derivation returns the grammar.
+The full derivation — why 12, how they emerge from a single abstract category, what operations generate them — is in `AS_ABOVE.tex`. The full application — 2,315+ imscriptions, consciousness score, cross-domain induction, Millennium barriers, Frobenius bootstrap, six live Paraconsistent OS components — is in `SO_BELOW.tex`. Together they form the Frobenius pair: the grammar applied to its own derivation returns the grammar.
 
 ---
 

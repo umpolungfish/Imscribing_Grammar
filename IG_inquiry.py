@@ -173,7 +173,7 @@ if _SPACE_SEARCH not in sys.path:
 
 # ── Import Crystal Navigator ───────────────────────────────────────────────────
 try:
-    from crystal_navigator import CrystalNavigator as _CrystalNavigator  # type: ignore
+    from navigators.crystal_navigator import CrystalNavigator as _CrystalNavigator  # type: ignore
     _CRYSTAL_NAV_AVAILABLE = True
 except ImportError:
     _CrystalNavigator = None  # type: ignore
@@ -181,7 +181,7 @@ except ImportError:
 
 # ── Import Domain Navigators (§74–§77) ────────────────────────────────────────
 try:
-    from domain_navigators import (  # type: ignore
+    from navigators.domain_navigators import (  # type: ignore
         DomainNavigator as _DomainNavigator,
         Catalog as _DomainCatalog,
         DOMAIN_NAMES as _DOMAIN_NAMES,
@@ -218,8 +218,8 @@ except ImportError:
 # ── Import CrystalGNN (quiver neural navigator) ────────────────────────────────
 try:
     import torch as _torch
-    from quiver_crystal import CrystalGNN as _CrystalGNN, TierHead as _TierHead  # type: ignore
-    from crystal_navigator import VALUES as _CRYSTAL_VALUES, PRIMS as _CRYSTAL_PRIMS  # type: ignore
+    from navigators.quiver_crystal import CrystalGNN as _CrystalGNN, TierHead as _TierHead  # type: ignore
+    from navigators.crystal_navigator import VALUES as _CRYSTAL_VALUES, PRIMS as _CRYSTAL_PRIMS  # type: ignore
     _QUIVER_AVAILABLE = True
 except ImportError:
     _torch = None  # type: ignore
@@ -229,7 +229,7 @@ except ImportError:
 
 # ── Import ZFC Navigator ────────────────────────────────────────────────────────
 try:
-    from zfc_navigator import (  # type: ignore
+    from navigators.zfc_navigator import (  # type: ignore
         compose_formula      as _zfc_compose_formula,
         probe_entry          as _zfc_probe_entry_fn,
         run_probe            as _zfc_run_probe_fn,
@@ -249,7 +249,7 @@ except (ImportError, Exception):
 
 # ── Import Aleph Tensor Engine (Hebrew letter lattice) ─────────────────────────
 try:
-    from aleph_tensor import (  # type: ignore
+    from navigators.aleph_tensor import (  # type: ignore
         AlephTensorEngine   as _AlephTensorEngine,
         HEBREW_ALPHABET     as _HEBREW_ALPHABET,
         FINAL_TO_STD        as _FINAL_TO_STD,
@@ -265,7 +265,7 @@ except Exception:
 
 # ── Import HoTT Bridge ─────────────────────────────────────────────────────────
 try:
-    from hott_bridge import HoTTBridge as _HoTTBridge  # type: ignore
+    from navigators.hott_bridge import HoTTBridge as _HoTTBridge  # type: ignore
     _HOTT_BRIDGE = _HoTTBridge(_ALEPH_ENGINE) if _ALEPH_AVAILABLE else None
     _HOTT_AVAILABLE = _ALEPH_AVAILABLE
 except Exception:
@@ -274,7 +274,7 @@ except Exception:
 
 # ── Import Riemann Xi Navigator (self-encoding info; model optional) ───────────
 try:
-    from riemann_xi_navigator import (  # type: ignore
+    from navigators.riemann_xi_navigator import (  # type: ignore
         RiemannXiNavigator  as _RiemannXiNavigator,
         generate_zeros      as _riemann_generate_zeros,
         mean_spacing        as _riemann_mean_spacing,
@@ -3309,7 +3309,7 @@ class ToolDispatcher:
         if err:
             return err
         s_bnd, s_blk = imscriptions
-        from crystal_navigator import (  # type: ignore
+        from navigators.crystal_navigator import (  # type: ignore
             imscription_check as _imscription_check,
             imscription_statement as _imscription_statement,
         )
@@ -4015,7 +4015,7 @@ class ToolDispatcher:
         constraints = self._norm_crystal_kwargs(constraints)
         try:
             count = nav.count(**constraints)
-            from crystal_navigator import TOTAL_SIZE  # type: ignore
+            from navigators.crystal_navigator import TOTAL_SIZE  # type: ignore
             return {
                 "status": "ok",
                 "constraints": constraints,
@@ -4033,7 +4033,7 @@ class ToolDispatcher:
             return {"status": "error", "error": "CrystalNavigator not available."}
         try:
             census = nav.tier_census()
-            from crystal_navigator import TOTAL_SIZE, CELL_SIZE, INNER_SIZE  # type: ignore
+            from navigators.crystal_navigator import TOTAL_SIZE, CELL_SIZE, INNER_SIZE  # type: ignore
             return {
                 "status": "ok",
                 "total_types": TOTAL_SIZE,
@@ -4143,7 +4143,7 @@ class ToolDispatcher:
             return {"status": "error", "error": "Provide a catalog name or all 12 primitives."}
 
         try:
-            from crystal_navigator import encode_tuple as _enc, compute_tier as _tier, TOTAL_SIZE as _N
+            from navigators.crystal_navigator import encode_tuple as _enc, compute_tier as _tier, TOTAL_SIZE as _N
             exact_addr = _enc(tup)
             exact_tier = _tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
 
@@ -4276,7 +4276,7 @@ class ToolDispatcher:
                         "ƒ": "ƒ^ì", "Ç": "Ç^-", "Γ": "Γ_β", "ɢ": "ɢ^∧",
                         "⊙": "⊙_ž", "Ħ": "Ħ_Ñ", "Σ": "Σ_S", "Ω": "Ω_Å"}
             e = {**defaults, **primitives}
-        from domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
+        from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
         gate1 = e["⊙"] in _DCRIT
         gate2 = e["Ç"] in _DSLOWK
         c = _consciousness_score(e)
@@ -4406,7 +4406,7 @@ class ToolDispatcher:
         try:
             import torch as _t
             import math as _m
-            from zfc_navigator import ZFCEncoder, frobenius_loss, pad_formula  # type: ignore
+            from navigators.zfc_navigator import ZFCEncoder, frobenius_loss, pad_formula  # type: ignore
             device = _t.device("cuda" if _t.cuda.is_available() else "cpu")
             model = ZFCEncoder().to(device)
             import os
@@ -4429,7 +4429,7 @@ class ToolDispatcher:
                 pred_indices = [int(logits[i].argmax(dim=-1).item()) for i in range(12)]
                 pred_tuple = _zfc_indices_to_tuple(pred_indices)
             # Roundtrip distance
-            from zfc_navigator import tuple_distance as _zfc_dist  # type: ignore
+            from navigators.zfc_navigator import tuple_distance as _zfc_dist  # type: ignore
             rt_dist = _zfc_dist(entry, pred_tuple)
             per_prim = {_ZFC_PRIMITIVES[i]: float(pp[i]) for i in range(12)}
             mismatches = {p: {"input": entry[p], "predicted": pred_tuple[p]}
@@ -4466,7 +4466,7 @@ class ToolDispatcher:
         try:
             import torch as _t
             import os
-            from zfc_navigator import ZFCEncoder, frobenius_loss, pad_formula, tuple_distance as _zfc_dist  # type: ignore
+            from navigators.zfc_navigator import ZFCEncoder, frobenius_loss, pad_formula, tuple_distance as _zfc_dist  # type: ignore
             device = _t.device("cuda" if _t.cuda.is_available() else "cpu")
             model_path = os.path.join(os.path.dirname(__file__), "zfc_encoder.pt")
             if not os.path.exists(model_path):
@@ -4536,7 +4536,7 @@ class ToolDispatcher:
     def _vec_to_tuple(self, vec) -> Dict[str, str]:
         """Convert a numpy ordinal vector back to a primitive-value dict."""
         import numpy as _np
-        from crystal_navigator import VALUES as _CV  # type: ignore
+        from navigators.crystal_navigator import VALUES as _CV  # type: ignore
         PRIMS_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
         VALS_BY_PRIM = {
             "Ð":     ["Ð_ß","Ð_C","Ð_;","Ð_ω"],

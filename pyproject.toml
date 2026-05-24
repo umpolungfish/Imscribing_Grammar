@@ -2,7 +2,6 @@
 name = "imscrbgrmr"
 version = "0.1.0"
 description = "A 12-primitive structural grammar for encoding any system as a coordinate in the Crystal of Types"
-readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     # Core LLM Providers

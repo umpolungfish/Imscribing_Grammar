@@ -25,7 +25,7 @@ import signal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from para_vm import ParaVM, B4, Instr, assemble, b4_join, _CTRL_FLOW
+from .para_vm import ParaVM, B4, Instr, assemble, b4_join, _CTRL_FLOW
 
 try:
     import readline  # noqa: F401
@@ -214,7 +214,7 @@ def do_instruction(line: str, vm: ParaVM) -> None:
     and print changed registers.  Labels and control-flow ops are appended
     to the program buffer only.
     """
-    from para_vm import _LABEL_RE
+    from .para_vm import _LABEL_RE
 
     line = line.split(';', 1)[0].strip()
     if not line:

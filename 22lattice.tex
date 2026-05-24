@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{fontspec}
+\setmainfont{Noto Sans Hebrew} % or any good Hebrew font
+
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[scale=1.8, every node/.style={font=\large}]
+  % Outer circle
+  \draw[thick] (0,0) circle (4.2);
+  
+  % 22 Hebrew letters in standard Lurianic/Sefer Yetzirah order (clockwise)
+  \foreach \letter [count=\i] in {א,ב,ג,ד,ה,ו,ז,ח,ט,י,כ,ל,מ,נ,ס,ע,פ,צ,ק,ר,ש,ת} {
+    \pgfmathsetmacro{\angle}{90 - (\i-1)*360/22}
+    \node at (\angle:4.2) {\large \letter};
+  }
+  
+  % Highlight Mothers and Vav
+  \node[blue!80!black, font=\LARGE\bfseries] at (90:3.2) {א};
+  \node[cyan!80!black, font=\LARGE\bfseries] at (210:3.2) {מ};
+  \node[red!80!black, font=\LARGE\bfseries] at (330:3.2) {ש};
+  \node[gold, font=\LARGE\bfseries] at (0,0) {ו};
+  
+  % Central triangle (Mothers)
+  \draw[thick, gold] (90:2.8) -- (210:2.8) -- (330:2.8) -- cycle;
+  
+  % Title and legend
+  \node[font=\Large\bfseries] at (0,5.2) {ALEPH-OS 22-Letter Type Lattice};
+  \node[font=\small] at (0,4.7) {Exact Lurianic Mapping — 231 Gates (TENSOR Operations)};
+  \node[font=\small] at (0,-5) {O$_{\infty}$ Poles: א (Air) · מ (Water) · ש (Fire) \quad Mediator: ו (Vav-Cast)};
+  
+  \draw[->, thin] (4.5,0) -- (5.5,0) node[right] {231 Gates};
+\end{tikzpicture}
+\end{center}
+\end{document}

@@ -43,7 +43,7 @@ import torch.nn.functional as F
 ROOT = Path(__file__).parent
 sys.path.insert(0, str(ROOT))
 
-from crystal_navigator import (  # type: ignore
+from .crystal_navigator import (  # type: ignore
     VALUES, ORD, PRIMS, TOTAL_SIZE,
     encode_tuple, decode_address, compute_tier,
 )

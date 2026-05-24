@@ -44,8 +44,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # ── Shared backbone components from CrystalGNN_v11 ────────────────────────────
-from quiver_crystal import FrobeniusLayer, FamilyMixer
-from crystal_navigator import encode_tuple
+from .quiver_crystal import FrobeniusLayer, FamilyMixer
+from .crystal_navigator import encode_tuple
 
 # ── Thurston geometry labels (Ω_2 protected: 4 Z2-paired classes) ────────
 THURSTON_GEOMETRIES = [

@@ -88,8 +88,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-from navigators import ThurstonNet, THURSTON_GEOMETRIES
-from train_navigators import make_synthetic_manifold, DEVICE
+from .navigators import ThurstonNet, THURSTON_GEOMETRIES
+from .train_navigators import make_synthetic_manifold, DEVICE
 
 H3_CLASS_IDX   = 2   # index of H3 in THURSTON_GEOMETRIES
 Ħ_AXR_CLASS_IDX = 4   # index of Ħ_AxR in THURSTON_GEOMETRIES
@@ -582,7 +582,7 @@ def main():
     # Step 3: evaluate on ThurstonNet backbone confusions
     print(f"\n── Step 2: ThurstonNet backbone ──")
     print(f"  Training ThurstonNet backbone (300 epochs to reach 95% H3 ceiling)...")
-    from train_navigators import train_thurston
+    from .train_navigators import train_thurston
     backbone = train_thurston(epochs=300, num_ricci_layers=4)
 
     results = evaluate_t_specialist_on_confusions(
@@ -591,8 +591,8 @@ def main():
 
     # Step 4: per-class accuracy comparison backbone vs combined
     print(f"\n── Step 3: Per-class accuracy — backbone vs backbone+T-specialist ──")
-    from navigators import THURSTON_GEOMETRIES
-    from train_navigators import make_synthetic_manifold
+    from .navigators import THURSTON_GEOMETRIES
+    from .train_navigators import make_synthetic_manifold
     combined = ThurstonNetWithTSpecialist(backbone, specialist, confusion_margin=0.40)
     combined.eval()
     n_per = 100

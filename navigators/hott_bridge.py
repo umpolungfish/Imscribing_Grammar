@@ -1,5 +1,5 @@
 import numpy as np
-from aleph_tensor import AlephTensorEngine, HEBREW_ALPHABET, distance
+from .aleph_tensor import AlephTensorEngine, HEBREW_ALPHABET, distance
 
 class HoTTBridge:
     """

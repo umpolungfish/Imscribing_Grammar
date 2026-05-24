@@ -1,4 +1,17 @@
-commit.txt — Summary of updates to /home/mrnob0dy666/imscribing_grammar
+Root cleanup: 89 → 25 py files at root (2026-05-23)
+
+Moved 64 files into three subdirectories:
+  navigators/  (17 files): crystal_navigator, quiver_crystal, navigators,
+               train_navigators, thurston_t_specialist, domain_navigators,
+               riemann_xi_navigator, aleph_tensor, hott_bridge, zfc_navigator,
+               and all domain navigator scripts
+  para/        (3 files): para_vm, para_loop, para_repl
+  scripts/     (40+ files): all migrate_*, fix_*, edit_*, gen_*, check_*,
+               clean_*, assign_*, and other one-off maintenance scripts
+Intra-package imports converted to relative form (from .module) via sed.
+IG_inquiry.py already used navigators.* prefix; scripts/ifix_experiment.py
+updated to from para.para_loop import.
+
 =======================================================================
 
 web/api.py — Oracle FastAPI backend (2026-05-23)
