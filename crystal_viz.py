@@ -44,16 +44,19 @@ OMEGA_VALUES = ["Ω_Å", "Ω_2", "Ω_z"]
 P_VALUES     = ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"]
 D_VALUES     = ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"]
 
-CRITICAL   = {"⊙_ÿ", "⊙_Æ"}
-NONCRIT    = {"⊙_ž", "⊙_Ţ", "⊙_3"}
-BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω"}
+CRITICAL   = {"⊙_ÿ", "⊙_Æ", "⊙", "𐑮"}      # Phi_c + Phi_c_complex, old + Shavian
+NONCRIT    = {"⊙_ž", "⊙_Ţ", "⊙_3", "𐑢", "𐑻", "𐑣"}   # Phi_sub/EP/super
+BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω", "𐑛", "𐑨", "𐑦"}   # non-D_odot
+P_PM_SYM   = {"Φ_}", "𐑹"}                  # Frobenius polarity, old + Shavian
+OMEGA_0    = {"Ω_Å", "𐑷", ""}              # no topological protection
 
 def get_tier(phi, p, omega, d):
-    if phi in CRITICAL and p == "Φ_}":
+    # R1 (Lean-authoritative): Phi_c + P_pm_sym → O_inf
+    if phi in CRITICAL and p in P_PM_SYM:
         return "O_inf"
     if phi in NONCRIT:
         return "O_0"
-    if omega == "Ω_Å":
+    if omega in OMEGA_0:
         return "O_1"
     if d in BOUNDED_D:
         return "O_2"

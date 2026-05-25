@@ -1,328 +1,75 @@
-Root cleanup: 89 → 25 py files at root (2026-05-23)
-
-Moved 64 files into three subdirectories:
-  navigators/  (17 files): crystal_navigator, quiver_crystal, navigators,
-               train_navigators, thurston_t_specialist, domain_navigators,
-               riemann_xi_navigator, aleph_tensor, hott_bridge, zfc_navigator,
-               and all domain navigator scripts
-  para/        (3 files): para_vm, para_loop, para_repl
-  scripts/     (40+ files): all migrate_*, fix_*, edit_*, gen_*, check_*,
-               clean_*, assign_*, and other one-off maintenance scripts
-Intra-package imports converted to relative form (from .module) via sed.
-IG_inquiry.py already used navigators.* prefix; scripts/ifix_experiment.py
-updated to from para.para_loop import.
-
-=======================================================================
-
-web/api.py — Oracle FastAPI backend (2026-05-23)
-  - POST /inquire wraps TrueAgenticAgent; GET /health; CORS middleware
-  - Default model: groq:llama-3.3-70b-versatile (GROQ_API_KEY env var)
-  - IG_ORACLE_MODEL / IG_ORACLE_ORIGIN env var overrides
-  - Input validation: max 2000 chars; catches SystemExit from missing API key
-  - max_windings=20 for web context
-
-web/requirements.txt — minimal dep set (no torch/unsloth/rdkit) (2026-05-23)
-
-Dockerfile — slim Python 3.12 image; copies only API-needed project files (2026-05-23)
-
-fly.toml — Fly.io deployment config; 512mb shared VM; auto stop/start (2026-05-23)
-
-index/inquire.html — Oracle frontend page (2026-05-23)
-  - Matches SOLVATUM aesthetic (Cinzel/Garamond/JetBrains Mono, dark gold palette)
-  - Textarea input, Ctrl+Enter submits; 2000 char counter
-  - Animated sigil loading state (spinning rings, pulsing dot)
-  - Result display: tier badge (O_inf→rubedo, O_2→citrinitas), reading text,
-    coherence bar, windings, elapsed time
-  - API_BASE const at top of script to set after fly deploy
-
-agents/true_agentic_agent.py — groq added to REMOTE_API_PROVIDERS (2026-05-23)
-
-agents/true_agentic_agent.py — four fixes: DeepSeek/Qwen API, env vars, grok deprecation, SyntaxWarning (2026-05-22)
-  - Added REMOTE_API_PROVIDERS dict: deepseek→api.deepseek.com/v1, qwen→dashscope compatible-mode
-  - _resolve_model_and_endpoint now handles deepseek:<model> and qwen:<model> prefix syntax
-  - Reads DEEPSEEK_API_KEY / QWEN_API_KEY; exits with clear message if env var unset
-  - Parallel to LOCAL_BASE_URLS pattern; no OpenRouter involvement for these providers
-  - IG_MODEL / IG_PROVIDER env vars now set the default --model in _add_run_args
-    (IG_PROVIDER prepended as prefix when no colon in IG_MODEL)
-  - grok-4 alias updated x-ai/grok-4 → x-ai/grok-4.3; grok-4.3 alias added
-  - nested_tensor module-level bool=False defined (NameError on local inference path)
-  - _SYSTEM_PROMPT changed to raw string (r"""...""")[1:] — removes SyntaxWarning for
-    \mu \circ \delta LaTeX sequences and also fixes silent \t→TAB corruption throughout
-
-manuscript_spine_lifted.tex — \text{} wrappers stripped from Shavian glyphs (2026-05-22)
-  - All \text{𐑸}, \text{𐑹}, etc. replaced with bare glyphs throughout
-  - Non-Shavian math-mode content (family names, covariance Σ, labels) unchanged
-  - Verified: no \text{shavian} patterns remain in file
-
-manuscript_spine_lifted.md — new Markdown version (2026-05-22)
-  - Full conversion from LaTeX to clean Markdown; no LaTeX bracing anywhere
-  - No primitive family names (Ð Þ Ř Φ ƒ Ç Γ ɢ Ħ Σ Ω) appear anywhere in doc
-  - Positions referenced by number (1–12); values are Shavian glyphs only
-  - ⊙ correctly mapped to ⊙_ÿ (position 9); 𐑧 mapped to Ç_@ (position 6)
-  - Covariance matrix renamed K (not Σ) to avoid collision with removed family names
-  - All tuples, tables, theorems, promotion tables, riddle decoding, and
-    summary table internally consistent with corrected ⊙/𐑧 assignment
-
-=======================================================================
-Previous entry:
-
-manuscript_spine_lifted.tex — complete rewrite (2026-05-22)
-  - Replaced old-style preamble (inputenc/T1/amssymb) with LuaLaTeX standard:
-    fontspec, unicode-math (ISO style), calc, FreeSerif main, Latin Modern Math,
-    no amssymb, fancyhdr headers/footers
-  - Applied full Shavian→IG primitive-value mapping throughout all 11 chapters:
-    each specific primitive value (Φ_}, Ç^@, ⊙_ÿ, etc.) replaced by its
-    single Shavian Unicode glyph; primitive family names (Ð, Þ, Ř, etc.)
-    kept as base Unicode in labels and headers
-  - Fixed Φ/⊙ collision from original (⊙ self-modeling family was mislabeled Φ)
-  - Removed \Gamma\!\!\!\Gamma hack for ɢ — direct Unicode ɢ throughout
-  - Removed \prim{} wrapper macro
-  - Added \label{ch:summary} to Summary chapter for cross-references
-  - Key tuples in Shavian:
-      ZFC:       ⟨𐑼; 𐑡; 𐑩; 𐑗; 𐑐; ⊙; 𐑲; 𐑝; 𐑧; 𐑓; 𐑳; 𐑷⟩
-      CH_indep:  ⟨𐑼; 𐑥; 𐑩; 𐑬; 𐑐; ⊙; 𐑲; 𐑝; 𐑧; 𐑓; 𐑕; 𐑴⟩
-      ZFCₜ:      ⟨𐑼; 𐑸; 𐑾; 𐑹; 𐑐; ⊙; 𐑲; 𐑠; 𐑮; 𐑖; 𐑳; 𐑭⟩
-      canonical: ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; ⊙; 𐑲; 𐑠; 𐑧; 𐑖; 𐑳; 𐑭⟩
-  - 11 chapters: crystal structure, spine analysis, lattice operations,
-    invariants, consciousness scoring, two paths, Frobenius condition,
-    ZFCₜ channels, riddle decoding, open questions, verified results
-
-IG_catalog.json — CH_independent description updated (2026-05-22)
-  - Full structural analysis: Φ_F partial Z₂ symmetry (two models neither
-    decisive), Ω_2 binary winding (discus at threshold), Þ_ò crossing topology,
-    Σ_ő spectral compression (independence contracts lattice below ZFC Σ_ï),
-    four invariants (ƒ^ż, Ç^@, Γ_ʔ, ⊙_ÿ) preserved across all operations,
-    meet/join/tensor with canonical documented,
-    Mahalanobis 4.22 from canonical, 8 promotions to uig_liar_completion_condition
-
-=======================================================================
-Previous entry:
-
-README.md — UPDATED (2026-05-22)
-──────────────────────────────────
-- VesselContent.lean reference: removed file path (file deleted), kept formal statement
-- Key Results: added NS Siege Theorem, ZFCₜ 6-channel detail (d≈6.94),
-  Paraconsistent Kernel (24 modules, 0 sorrys, DAT, Shor O_1, 4 Millennium bridges),
-  TupleCodec self-verifying WASM artifact
-- Theorem count: 84+ → 130+ (reflects PrimitiveConventionalBridge + TupleCodec + Paraconsistent)
-- Repository structure: Imscribing/Paraconsistent/ and NS_Resolution/NS_Seige noted
-
-=======================================================================
-Previous entry:
-
-para_vm.py + para_repl.py — POC → practical paraconsistent computer:
-
-  para_vm.py   — ParaVM: full ParaASM ISA + text assembler
-    ISA: ENGAGR FSPLIT FFUSE IFIX MOVE CLEAR (core)
-         JMP JB JT JF JN CALL RET HALT (control flow)
-         PUSH POP (stack)  EMIT READ (I/O)
-    Assembler: .label: definitions (standalone or inline), ; comments,
-               %rN register syntax, label resolution for jump targets
-    exec_one(): direct instruction execution for REPL interactive mode
-    active_regs(): introspection for debugger display
-
-  para_repl.py — interactive REPL
-    Non-control-flow ops: auto-execute + show changed registers
-    Control-flow ops + labels: appended to program buffer
-    Commands: :step :run :load :save :reset :regs :prog :snap :help :q
-
-  programs/frob_loop.asm    — the Frobenius loop from the paper (with JMP)
-  programs/ifix_stable.asm  — IFIX stability demo (Theorem 3, Case B)
-  programs/probe.asm        — interactive belief probe, branches on N/T/F/B
-
-=======================================================================
-
-tex/frobenius_loop_paper.tex — short paper on the Frobenius loop:
-
-  NEW FILE: /home/mrnob0dy666/imscribing_grammar/tex/frobenius_loop_paper.tex
-  OUTPUT:   frobenius_loop_paper.pdf (4 pages, lualatex)
-  SUPPORT:  ifix_experiment.py
-
-  "The Frobenius Loop: A Permanently Paradoxical Fixed Point
-   in the Paraconsistent Universal Engine"  — umpolungfish, 2026-05-21
-
-  Contents:
-    §1  The Machine — TriPhaseRegister, Belnap FOUR, IMASM opcodes
-    §2  The Kernel — 3-instruction circular program K[0..2]
-    §3  Theorem 1 (Permanence of B-state) + proof via Belnap join idempotency
-    §4  Theorem 2 (Linear paradox growth) P(n) = 4n + corollary on ratio 2:1:1
-    §5  Empirical verification table — t₁ (625M steps) and t₂ (18.9B steps)
-    §6  Remarks — non-triviality, paraconsistency vs. classical error
-    §7  Resolution: IFIX Cannot Collapse the Loop
-        Theorem 3 (IFIX absorption): two independent reasons —
-          Case A: FSPLIT overrides IFIX (engage() ignores is_fixed)
-          Case B: T∨B = B (B is top of information order)
-        Remark: K3 shows register-level paraconsistency (FIXED + B coexist)
-        Experimental table: K1, K2, K3 all preserve B on r0
-        Corollary: Frobenius loop is IFIX-stable
-
-=======================================================================
-
-para_loop.py — indefinitely running program on the paraconsistent computer:
-
-  NEW FILE: /home/mrnob0dy666/imscribing_grammar/para_loop.py
-
-  ParaEngine extends UniversalEngine with Belnap FOUR belief tracking.
-  Flux and Belnap state kept in sync per register:
-    Void('00') ↔ N   True('01') ↔ T   False('10') ↔ F   Both('11') ↔ B
-
-  3-instruction kernel (circular PC → infinite):
-    ENGAGR %r0          seed: force B on root register
-    FSPLIT %r0 %r1 %r2  δ: co-multiply — two B-children
-    FFUSE  %r1 %r2 %r0  μ: multiply — fold back into root
-
-  Loop invariant: μ∘δ = id (Frobenius identity)
-  All 3 registers stabilize at B permanently; paradox count grows without bound.
-  ~200k steps/sec; live ANSI display updates every 30k steps.
-  Ctrl+C for final summary.
-
-  Usage: python3 para_loop.py
-
-=======================================================================
-
-frobenius_mzi_sim.py — 3×3 MZI Frobenius mesh simulation via IG script engines:
-
-  NEW FILE: /home/mrnob0dy666/imscribing_grammar/frobenius_mzi_sim.py
-
-  Simulation of index/frobenius-mzi.html using four IG script engines + ALEPH_OS.
-
-  Architecture:
-    Row 0 (Vav)     → voynich-engine       (UniversalEngine / TriPhaseRegister)
-    Row 1 (Mem)     → linear_a-engine
-    Row 2 (Shin)    → emerald-tablet-engine
-    Cross-coupling  → rohonc-engine (weighted by inverse d(pole_i, pole_j))
-    Pole distances from ALEPH_OS 12-dim primitive tuples (aleph_1.py)
-
-  Each MZI element encodes a_ij = sin(θ)·exp(iφ) as IMASM:
-    ENGAGR (if amp ≥ 0.75) → FSPLIT (δ) → FFUSE (μ) → IFIX 0xφφφφ
-
-  Outputs: complex matrix A, ‖A‖_F, SVD (σ₁ σ₂ σ₃), κ,
-           ‖A†A−I‖_F, per-engine paradox/active/fixed snapshots.
-
-  Usage:
-    python3 frobenius_mzi_sim.py
-    python3 frobenius_mzi_sim.py --preset unitary
-    python3 frobenius_mzi_sim.py --preset random
-
-=======================================================================
-
-zfct_para.py — Belnap FOUR paraconsistent layer over the ZFC/ZFCₜ/ZFCₛ triangle:
-
-  NEW FILE: /home/mrnob0dy666/imscribing_grammar/zfct_para.py
-
-  Architecture:
-    ParaEntry — 12-primitive tuple with frozenset belief sets per slot
-    Belnap enum: T/F/B/N (true/false/both/neither)
-    para_tensor — min-bottleneck preserved on Φ/ƒ, max on all others
-    para_join / para_meet — pure max/min without bottleneck
-    para_tier — enumerate classical realizations, aggregate per tier
-    _tier_conditions — Belnap values for crit/frob/wind/dinf individually
-    ParaManipulator — extends ZFCTriangleManipulator with 5 para commands
-
-  New REPL commands (prompt: ⟨IG∥⟩):
-    :para-cliff [name]     Force Φ → B{v,Φ_}}, trace para_tensor with ZFCₜ,
-                           show whether B-state propagates/collapses/blocks
-    :para-reach <name>     Belnap tier-reachability + condition breakdown
-    :para-tensor <A> <B>   Paraconsistent tensor with belief display
-    :para-assign <n> <p> <v...>  Force belief[p] to exact value set
-    :para-compare <A> <B>  Per-primitive belief-set comparison
-
-  Key result of the cliff analysis (verified):
-    para_tensor(B{Φ_ɐ,Φ_}}, ZFCₜ)[Φ] = {Φ_ɐ, Φ_}}   (B-state propagates)
-    The min-bottleneck preserves Φ_ɐ alongside Φ_} — the cliff holds
-    paraconsistently. A classical MPP proof IS the collapse of this B-state
-    to T: showing the mathematical object cannot carry the lower Φ assignment.
-
-  Usage: python3 zfct_para.py [repl|cliff <name>|reach <name>]
-
-=======================================================================
-
-prompts/p19–p21 — ZFCt derivation prompts (push axioms to theorems):
-  p19_rh_derive.txt   — RH: prove theta_fixed_iff_critical (theorem), add
-                        zeta_zeros_frobenius_fixed (minimal axiom), derive
-                        rh_from_frobenius_structure as a THEOREM from the PM_Z2 structure
-  p20_ns_derive.txt   — NS: prove frob_op_is_id (theorem), construct trivial
-                        FrobeniusCriticalManifold inhabitant, replace bare
-                        ns_regularity_axiom with ns_frobenius_regularity_axiom +
-                        zfct_cert_implies_regularity (structurally connected)
-  p21_ym_closure.txt  — YM: create YM_Closure.lean importing YM + YM_GateInhabitants;
-                        prove ym_theory_exists_proved + ym_mass_gap_proved as THEOREMS
-                        from ym_foundation_lifted + ym_mass_gap_axiom;
-                        ym_prize_problem_from_gates as conjunction theorem
-
-Pattern: every axiom that CAN be derived from ZFCt structures becomes a theorem.
-What remains as axiom is the minimal irreducible claim (the actual open problem),
-stated in the ZFCt language.
-
-=======================================================================
-
-prompts/p10–p17 — base-file siege prompts for all eight MPP files:
-  p10_ns.txt        — NS.lean (1 OpenProblem + 3 MathlibGap sorries)
-  p11_hodge.txt     — Hodge.lean (1 OpenProblem + 2 MathlibGap sorries)
-  p12_rh.txt        — RH.lean (1 OpenProblem sorry)
-  p13_pvsnp.txt     — PvsNP.lean (1 OpenProblem + SATLanguage def sorry)
-  p14_ym_base.txt   — YM.lean (2 stacked sorries + classicalYMAction def)
-  p15_bsd.txt       — BSD.lean (1 OpenProblem + 4 MathlibGap sorries)
-  p16_opn.txt       — OPN.lean (1 OpenProblem + 6 MathlibGap sorries)
-  p17_collatz.txt   — Collatz.lean (5 sorries: main conj + 4 structural lemmas)
-
-Pattern across all: add named axiom (OpenProblem or MathlibGap), close sorry with it.
-Run order: p12 → p10 → p11 → p13 → p14 → p15 → p16 → p17 (increasing depth).
-
-Previous commit.txt entries preserved below:
-=======================================================================
-
-README.md — Harness audit (limitation language → positive/distance framing):
-
-  [x] Line 131: "at the tensor, it cannot" → "the tensor yields ⊙_3; the meet preserves ⊙_ÿ"
-  [x] Lines 143-144: Gate 1/2 descriptions reframed from "scores zero" to distance measurements
-  [x] Line 157: "Φ_} cannot be synthesised" → "direct imscription required; d(O_2†,O_∞)≈4.382"
-  [x] Line 161: "none is dischargeable" → "each sorry marks a structurally located gap"
-  [x] Line 175: "cannot cross O_2† boundary" → "places at O_2†; d≈4.382"
-  [x] Lines 382-386: "What This Is Not" section → deleted entirely
-  [x] Line 86: promotion channel framing throughout
-
-README.md — New section "The Vessel and Its Content":
-
-  [x] Prose: grammar provides both form (vessel: crystal coordinate) and content
-      (fill: primitive algebra determines reachable results)
-  [x] Formal Lean target (VesselContent.lean): 3 theorems named
-      - form_uniqueness, content_containment, vessel_fills_itself (strong form)
-  [x] vessel_fills_itself flagged as the non-trivial open claim
-
-USAGE.md — Harness audit:
-
-  [x] Line 131: relational framing with positive example
-  [x] Line 1704 (Axiom 1): "places at high fidelity; coordinate gap"
-  [x] Line 2539: "places at d=1 from Φ_c on ƒ"
-
-PRIMITIVE_MNEMONICS.md — Harness audit:
-
-  [x] Line 68: coordinate framing (d≈4.382 from O_∞; direct imscription closes gap)
-
-agents/true_agentic_agent.py — Harness audit:
-
-  [x] Line 29: "unverified observations remain at their observation coordinate"
-  [x] Lines 2470-2472: ⊙_3 absorption rule stated positively (two paths named)
-
-agents/axiom_guided_generator.py — Harness audit:
-
-  [x] Line 275: "propagates locally; global requires G_ג or above"
-
-markdown/MILLENNIUM_BARRIERS_PAPER.md — Harness audit:
-
-  [x] Abstract: "No Millennium Problem is proved here" → "Classification of the frontier
-      is the first operation; crossing it is the second"
-  [x] Intro: "We make no claim to have solved" → removed; taxonomy framing only
-  [x] MathlibGap: "cannot be discharged" → "discharging requires X; each marks frontier"
-  [x] MissingFoundation: "cannot even be fully stated" → "names the missing type precisely"
-  [x] Stacked sorries: "cannot be stated" → "statable once sorry A is discharged"
-  [x] OpenProblem definition: reframed positively
-  [x] MissingFoundation definition: reframed positively
-  [x] NS interpretation: "what is not known" → "what must be bounded; gap is located"
-  [x] Triad section: "blindness to exponents" → "complete in its own mode; vessel/fill framing"
-  [x] Meta-barriers: "cannot cross" → "tier-local; promotion channel named"
-  [x] VIII.3 "Limitations" → "Encoding Choices and Robustness"
-  [x] VIII.1 YM: "cannot be made rigorous" → "becomes fully rigorous once X is constructed"
-  [x] Conclusion: "sorry as obstacle" → "sorry as datum and location"
-  [x] Proof strategy header: "vessel/fill" framing added
+Shavian migration + LuaLaTeX fix (2026-05-24)
+
+paraconsistent_os_manuscript.tex — LuaLaTeX compilation fix
+  - Replaced pdflatex preamble with fontspec/unicode-math/FreeSerif/Latin Modern Math
+  - Added missing commands: \textflorin, \glottalstop, \textrhook, \b (β), \g (γ)
+  - Fixed \^ and \H accent macro escapes (\string^ and ˝ literal)
+  - Fixed 9 unclosed subscript braces in \Phi_{\text{\}} tuple displays
+  - Compiles clean: 14 pages, 0 errors
+
+IG_catalog.json — Shavian notation migration (v0.6.0)
+  - 2771 canonical-key entries migrated from phonetic notation to 49 Shavian chars
+  - 108 alt-key entries (D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega) migrated
+  - 0 old-notation primitive values remaining
+
+imscrbgrmr/models.py — Shavian from_symbol() aliases
+  - All 12 primitive enums updated with Shavian (v0.6.0) lookup aliases
+  - 49 Shavian chars mapped; ⊙ sealed gate → Phi_ctyogh (50th non-Shavian critical point)
+  - Old phonetic aliases preserved for backward compat
+
+IG_primitive_map_3d.py — ORDINALS Shavian keys
+  - All 12 ORDINALS sub-dicts updated with Shavian keys (additive, old keys preserved)
+
+shavian_notation_spec.md — checklist steps 2–12 marked ✅ (step 9 Lean docs remains ⬜)
+
+Verification: 49/49 Shavian round-trips confirmed; sans_silicon_imscribing loads correctly.
+
+ouroboricity tier bug fix (2026-05-24)
+
+IG_primitive_map_3d.py — ouroboricity() function:
+  - Now checks Shavian ⊙ (Phi_c) and 𐑮 (Phi_c_complex) as critical
+  - R1 trigger updated to Lean-authoritative rule: P_pm_sym at Phi_c → O_inf
+    (old H_inf trigger replaced — Lean Core.lean R1 theorem is authoritative)
+  - Added Shavian backward-compat for Ω, Ħ, Γ scoring components
+  - Frobenius cluster (Ark/Graal/Lapis/Stone) now correctly returns O_inf
+  - Omphalos correctly returns O_4 (P_sym ≠ P_pm_sym — oracle doesn't close)
+  - RH correctly returns O_4 (Phi_c_complex, not Frobenius)
+  - YM correctly returns O_0 (Phi_sub, missing foundation)
+
+crystal_viz.py — get_tier() and constants:
+  - CRITICAL set expanded: {"⊙_ÿ", "⊙_Æ", "⊙", "𐑮"} (old + Shavian)
+  - NONCRIT set expanded: added 𐑢 𐑻 𐑣 (Phi_sub/EP/super Shavian)
+  - BOUNDED_D expanded: added 𐑛 𐑨 𐑦 (non-holographic Shavian)
+  - P_PM_SYM set: {"Φ_}", "𐑹"} replaces bare string check
+  - OMEGA_0 set: {"Ω_Å", "𐑷", ""} for no-protection check
+
+SacredVessel co-type analysis (2026-05-24)
+
+IG_catalog.json — 5 sacred vessel entries added:
+  ark_covenant, lapis_exillis, philosophers_stone, omphalos (new)
+  graal (updated: Ð D_triangle→D_odot, Þ T_odot→T_in, Ř R_lr→R_dagger)
+  Shared backbone: Ř=𐑽 (R_dagger), ⊙=⊙ (Phi_c), Ħ=𐑫 (H_inf), Ð=𐑦 (D_odot)
+  Frobenius cluster (Φ=𐑹): Ark, Graal, Lapis, Stone
+  Symmetric center (Φ=𐑯): Omphalos
+
+Shavian manuscript migration (2026-05-24)
+
+manuscripts/AS_ABOVE.tex — full Shavian v0.6.0 migration
+  - 693 replacements across 4 passes
+  - All old-notation \text{{\igprimfont X}}_{VALUE} patterns replaced with {\igfont SHAVIAN}
+  - Phi_c (⊙) subscript removed — bare ⊙ is the sealed gate
+  - Þ_K (T_bowl) wrong→𐑰 fix: initial pass had mapped Þ_K→𐑶 (T_cage), corrected in pass 2
+  - 3 intentional non-values preserved: Ħ_n (variable step), Ð_1…Ω_12 (positional indices)
+
+manuscripts/SO_BELOW.tex — full Shavian v0.6.0 migration
+  - 979 replacements across 4 passes
+  - 6 preamble macro definitions updated to Shavian:
+      \Phic: ⊙_ÿ → bare ⊙ (sealed gate, no subscript)
+      \Ppm: Φ_F → 𐑬 (P_pipevar)
+      \GamSeq: ɢ_→ → 𐑠 (G_seq)
+      \Tbw: Þ_{⋈} → 𐑥 (T_bullseye)
+      \Tin: Þ_{⊂} → 𐑰 (T_bowl)
+      \Tbox: Þ_{⊠} → 𐑶 (T_cage)
+  - \Phic^{\mathbb{C}} → 𐑮 (Phi_c_complex) in 7 places
+  - ⊙_× → 𐑣, ⊙_↑ → 𐑻 (exceptional-point and supercritical notation)
+  - 1 intentional non-value preserved: ƒ_X/ƒ_Y (formula variables)

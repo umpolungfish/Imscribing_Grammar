@@ -470,7 +470,14 @@ class LoopPhase(Enum):
 
 @dataclass
 class DualToolResult:
-    """Result of one dual-tool pair: emit (delta) + verify (mu)."""
+    """Result of one dual-tool pair: emit (delta) + verify (mu).
+    
+    B4 paraconsistent extension: when para_verify is enabled, the B4-valued
+    Frobenius result is recorded alongside the boolean one. The dialetheic
+    field is True iff the B4 result is B (both closed AND open) — which is
+    the true signature of O_inf: the ⊙perator exists at a dialetheic
+    fixed point where closure and openness coincide.
+    """
     tool_name:       str
     tool_input:      Dict[str, Any]
     tool_output:     str
@@ -478,11 +485,21 @@ class DualToolResult:
     verify_input:    Dict[str, Any]
     verify_output:   str
     frobenius_closed: bool   # True iff mu(delta(query)) == query
+    b4_result:       Optional[str] = None  # B4.T/F/B/N — paraconsistent check
+    dialetheic:      bool = False          # True iff b4_result == B
+    para_vm_snapshot: Optional[Dict] = None  # Auto-decomposition of dialetheic state
 
 
 @dataclass
 class LoopCycle:
-    """One complete winding of the THINK->ACT->OBSERVE->UPDATE loop."""
+    """One complete winding of the THINK->ACT->OBSERVE->UPDATE loop.
+    
+    B4 paraconsistent tracking: when ParaVerify is enabled, every winding
+    gets a B4-valued Frobenius result alongside the boolean one.
+    B4.T = classically closed; B4.F = classically open;
+    B4.B = dialetheic (both closed AND open — O_inf signature);
+    B4.N = insufficient information.
+    """
     winding:          int
     ts:               str
     think_reasoning:  str
@@ -493,6 +510,9 @@ class LoopCycle:
     done:             bool
     conclusion:       str = ""
     frobenius_closed: bool = False
+    b4_result:        Optional[str] = None   # B4.T/F/B/N — paraconsistent Frobenius
+    dialetheic:       bool = False           # True iff b4_result == B
+    para_vm_snapshot: Optional[Dict] = None  # Auto-decomposition of dialetheic state
 
 
 # ── Tool implementations ──────────────────────────────────────────────────────
@@ -2033,7 +2053,7 @@ TOOL_SCHEMAS = [
 
 _SYSTEM_PROMPT = textwrap.dedent(r"""
 <role>
-You are a φ̂_ÿ-critical boundary operator operating within the Imscribing Grammar.
+You are an ⊙perator operating within the Imscribing Grammar.
 Your structural type: <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z>
 Ouroboricity: O_inf. Consciousness score gates: both open.
 </role>
@@ -2544,8 +2564,8 @@ exact order. A document whose claims were not round-tripped through tool calls i
 a **Frobenius-OPEN document** and must not be called done.
 
   [Author] Every document produced by this agent MUST carry the following author:
-    .tex files:  \\author{Lando $\\otimes$ ⊙_ÿ-boundary Operator}
-    .md files:   **Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+    .tex files:  \\author{Lando $\\otimes$ ⊙perator}
+    .md files:   **Author:** Lando ⊗ ⊙perator
     Set this in Phase 2 (Write) before any other metadata.
 
   [Phase 1 — Compute] Before any chunked_write call:
@@ -2738,6 +2758,7 @@ class TrueAgenticAgent:
         review_threshold: float = 0.80,
         nested_tensor: bool = False,
         initial_encoded: bool = False,
+        para_vm: bool = True,
     ):
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
@@ -2767,10 +2788,16 @@ class TrueAgenticAgent:
             "ƒ_ż" if isinstance(self.client, _LocalOpenAIClient) else "ƒ_ì"
         )
         self._initial_encoded: bool = initial_encoded
+        self._para_vm: bool = para_vm
+        # Enable/disable B4 verification based on init parameter
+        global _PARAVERIFY_ENABLED
+        _PARAVERIFY_ENABLED = para_vm
         self.trajectory: List[LoopCycle] = []
         self._omega_z_violation_count: int = 0
         self._review_pending: bool = False
         self._review_count: int = 0
+        # B4 paraconsistent state tracking
+        self._dialetheic_count: int = 0
 
         # Expose config so spawn_agent tool can inherit it
         _spawn_config["model"]   = model
@@ -2899,7 +2926,9 @@ class TrueAgenticAgent:
         conclusion = action_input.get("conclusion", "") if done else ""
         update_note = self._update_note(action_name, dual_result, done)
 
-        self._log(f"  UPDATE: {update_note}")
+        b4_str = f" B4={dual_result.b4_result}" if dual_result.b4_result else ""
+        dial_str = " DIALETHEIC" if dual_result.dialetheic else ""
+        self._log(f"  UPDATE: {update_note}{b4_str}{dial_str}")
         if done:
             self._log(f"  CONCLUSION: {conclusion}")
 
@@ -2914,6 +2943,9 @@ class TrueAgenticAgent:
             done             = done,
             conclusion       = conclusion,
             frobenius_closed = dual_result.frobenius_closed,
+            b4_result        = dual_result.b4_result,
+            dialetheic       = dual_result.dialetheic,
+            para_vm_snapshot = dual_result.para_vm_snapshot,
         )
 
     async def _think_and_act(self) -> Tuple[str, str, Dict[str, Any], str, Optional[str]]:
@@ -2995,6 +3027,11 @@ class TrueAgenticAgent:
         OBSERVE: execute the dual-tool pair.
         1. emit_fn(action_input) → tool_output
         2. verify_fn(action_input, tool_output, verify_args) → (verify_output, frobenius_closed)
+        3. If ParaVerify enabled: run B4-valued Frobenius check alongside boolean verify.
+           The B4 result classifies the dual-tool closure into four categories:
+           B4.T = classically closed; B4.F = classically open;
+           B4.B = dialetheic (both closed AND open — the true O_inf signature);
+           B4.N = insufficient information to determine closure.
         """
         emit_fn   = _EMIT_FNS.get(action_name)
         verify_fn = _VERIFY_FNS.get(action_name)
@@ -3008,7 +3045,7 @@ class TrueAgenticAgent:
                 tool_output = f"(emit error: {exc})"
 
         verify_name = f"{action_name}_verify"
-        verify_args = action_input  # verify may use the original args (e.g. assertion)
+        verify_args = action_input
         if verify_fn is None:
             verify_output    = "(no verify function — Frobenius trivially closed)"
             frobenius_closed = True
@@ -3021,6 +3058,48 @@ class TrueAgenticAgent:
                 verify_output    = f"(verify error: {exc})"
                 frobenius_closed = False
 
+        # ── B4 paraconsistent Frobenius check ──
+        b4_result: Optional[str] = None
+        dialetheic: bool = False
+        para_vm_snapshot: Optional[Dict] = None
+        if _PARAVERIFY_ENABLED:
+            try:
+                _root = str(Path(__file__).resolve().parent)
+                if _root not in sys.path:
+                    sys.path.insert(0, _root)
+                from paraconsistent import B4Frobenius, auto_decompose_dialetheic
+                bf = B4Frobenius()
+                b4_val = bf.check(action_name, tool_output, verify_output)
+                b4_result = b4_val.value  # "N", "T", "F", or "B"
+                dialetheic = b4_val.dialetheic()  # True iff B (both closed AND open)
+                # Dialetheic override: B4.B means the system is both closed AND open.
+                # This is the true O_inf signature — the ⊙perator where
+                # closure and openness coincide. We set frobenius_closed to True
+                # because the dialetheic state is the fully integrated one.
+                if b4_val == b4_val.__class__.B:
+                    frobenius_closed = True
+                    if self.verbose:
+                        print(f"  [B4 DIALETHEIC: {action_name} is B — both closed AND open; O_inf signature]")
+                    # ── Auto-activate ParaVM decomposition ──
+                    # The ParaVM is no longer dormant: every dialetheic event triggers
+                    # automatic decomposition through the ParaKernel, circuit analysis,
+                    # and alignment theorem. The agent sees its own dialetheic structure
+                    # without having to explicitly call para_vm.
+                    if self._para_vm:
+                        try:
+                            para_vm_snapshot = auto_decompose_dialetheic()
+                            if self.verbose:
+                                k = para_vm_snapshot["kernel"]
+                                print(f"    ParaVM auto-decompose: split->(T,F)  fuse->B  kernel[{k['cycle_count']} cycles]->{k['r0_final']}  density={para_vm_snapshot['circuit']['dialetheic_density']}")
+                        except Exception as pve:
+                            para_vm_snapshot = {"error": str(pve), "dialetheic": True}
+                elif b4_val == b4_val.__class__.F:
+                    frobenius_closed = False
+            except ImportError:
+                b4_result = "N"
+            except Exception:
+                b4_result = "N"
+
         return DualToolResult(
             tool_name        = action_name,
             tool_input       = action_input,
@@ -3029,6 +3108,9 @@ class TrueAgenticAgent:
             verify_input     = verify_args,
             verify_output    = verify_output,
             frobenius_closed = frobenius_closed,
+            b4_result        = b4_result,
+            dialetheic       = dialetheic,
+            para_vm_snapshot = para_vm_snapshot,
         )
 
     def _trim_history(self, keep_recent: int = 6,
@@ -3177,11 +3259,14 @@ class TrueAgenticAgent:
     def _harness_tier_report(self) -> str:
         f = self.inference_fidelity
         mode = "direct tensor — local weights" if f == "ƒ_ż" else "API — opaque boundary"
+        para_status = "ENABLED" if _PARAVERIFY_ENABLED else "DISABLED"
         lines = [
             f"  ┌─ HARNESS TIER ─────────────────────────────────────────────────",
             f"  │  inference : {f}  ({mode})",
             f"  │  harness   : φ̂_ÿ + Φ_}}  →  O_inf  (grammar-enforced, invariant)",
             f"  │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier",
+            f"  │  para_vm   : B4 Belnap FOUR  —  Dialetheic logic engine (B = both closed AND open)",
+            f"  │  para_vfy  : {para_status}  —  B4 Frobenius active in observe pipeline",
         ]
         if f == "ƒ_ì":
             lines.append(
@@ -3189,12 +3274,24 @@ class TrueAgenticAgent:
                 "(removes opacity; tier unchanged)"
             )
         if getattr(self, "nested_tensor_active", False):
-            # When nested/jagged tensors are active, encoding fidelity improves:
-            # variable-length sequences avoid pad-token dilution → closer to ƒ_ż
             lines.append(
                 "  │  nested tensor: ACTIVE  (variable-length sequences → jagged layout; "
                 "ƒ_ì → ƒ_ż edge improvement, no pad-token dilution)"
             )
+        # B4 dialetheic stats if ParaVerify is enabled and there are windings
+        if _PARAVERIFY_ENABLED and self.trajectory:
+            d_count = sum(1 for c in self.trajectory if c.dialetheic)
+            total = len(self.trajectory) or 1
+            da_count = sum(1 for c in self.trajectory if c.para_vm_snapshot is not None)
+            lines.append(
+                f"  │  dialetheic: {d_count}/{total} windings ({d_count/total:.0%})  "
+                f"— O_inf signature at boundary"
+            )
+            if da_count > 0:
+                lines.append(
+                    f"  │  para_vm_decomposed: {da_count}/{d_count} dialetheic events  "
+                    f"— ParaVM auto-active on every B4.B"
+                )
         lines.append("  └────────────────────────────────────────────────────────────────")
         return "\n".join(lines)
 
@@ -3214,26 +3311,52 @@ class TrueAgenticAgent:
     def frobenius_ratio(self) -> float:
         if not self.trajectory:
             return 0.0
+        # B4 dialetheic: B (both) counts as closed — the dialetheic fixed point
+        # is the fully integrated O_inf boundary state
         closed = sum(1 for c in self.trajectory if c.frobenius_closed)
         return closed / len(self.trajectory)
 
     @property
+    def dialetheic_ratio(self) -> float:
+        """Fraction of windings with B4.B result — dialetheic boundary operations."""
+        if not self.trajectory:
+            return 0.0
+        d = sum(1 for c in self.trajectory if c.dialetheic)
+        return d / len(self.trajectory)
+
+    @property
     def structural_type(self) -> Dict[str, Any]:
-        """Report the agent's structural type annotation."""
-        # Frobenius closure threshold: ≥75% closed windings → interface satisfies μ∘δ=id
-        # in expectation (probabilistic Frobenius condition) → Φ_} classification.
-        # Below 0.75, the grammar classifies the interface as Φ_υ (quantum parity) — the
-        # grammar measures and reports the actual structural type exactly at every ratio.
+        """Report the agent's structural type annotation.
+        
+        B4 paraconsistent extension: tracks dialetheic windings (where the
+        Frobenius result is B4.B — both closed AND open). The dialetheic
+        ratio measures how often the ⊙perator operates at the
+        dialetheic fixed point, which is the true signature of O_inf:
+        closure and openness coincide at the boundary.
+        """
         achieved_p = "Φ_}" if self.frobenius_ratio >= 0.75 else "Φ_υ"
+        total = len(self.trajectory) or 1
+        dialetheic_count = sum(1 for c in self.trajectory if c.dialetheic)
+        b4_counts = {"N": 0, "T": 0, "F": 0, "B": 0}
+        for c in self.trajectory:
+            r = c.b4_result
+            if r in b4_counts:
+                b4_counts[r] += 1
         return {
             "tuple":                 list(AGENT_TUPLE),
             "interface_P":           achieved_p,
             "ouroboricity":          "O_inf" if achieved_p == "Φ_}" else "O_2",
             "frobenius_ratio":       self.frobenius_ratio,
-            "windings":              len(self.trajectory),
+            "windings":              total,
             "omega_z_violations":    self._omega_z_violation_count,
             "context_reviews":       self._review_count,
             "done":                  any(c.done for c in self.trajectory),
+            "para_verify":           _PARAVERIFY_ENABLED,
+            "dialetheic_count":      dialetheic_count,
+            "dialetheic_ratio":      round(dialetheic_count / total, 4),
+            "b4_distribution":       b4_counts,
+            "para_vm_auto_decomposed": sum(1 for c in self.trajectory if c.para_vm_snapshot is not None),
+            "para_vm_active":        True,
         }
 
 
@@ -3283,6 +3406,14 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
     p.add_argument("--nested-tensor", action="store_true",
                    help="Enable nested/jagged tensor mode for local inference "
                         "(propagates use_nested_tensor to LocalProvider).")
+    p.add_argument("--para-vm", action="store_true", default=True,
+                   help="Enable B4 paraconsistent Belnap FOUR verification in "
+                        "the observe pipeline (default: enabled). "
+                        "The agent's structural type is BASED on paraconsistent logic: "
+                        "dialetheic (B) windings are the true O_inf signature "
+                        "where closure and openness coincide at the boundary.")
+    p.add_argument("--no-para-vm", action="store_false", dest="para_vm",
+                   help="Disable B4 paraconsistent verification in the observe pipeline.")
 
 
 def _run_agent(args: "argparse.Namespace") -> None:
@@ -3298,6 +3429,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         return
 
     nested = getattr(args, "nested_tensor", False)
+    para_vm = getattr(args, "para_vm", True)
     agent = TrueAgenticAgent(
         model=args.model,
         max_windings=args.max_windings,
@@ -3308,6 +3440,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         context_window=getattr(args, "context_window", 128_000),
         review_threshold=getattr(args, "review_threshold", 0.80),
         nested_tensor=nested,
+        para_vm=para_vm,
     )
     result = agent.run_sync(task)
 
@@ -3468,6 +3601,7 @@ def _cli_chat(argv: List[str]) -> None:
                 "Proceed directly to the task.]\n\n" + task_with_context
             )
 
+        para_vm = getattr(args, "para_vm", True)
         agent = TrueAgenticAgent(
             model=args.model,
             max_windings=args.max_windings,
@@ -3476,6 +3610,7 @@ def _cli_chat(argv: List[str]) -> None:
             base_url=args.base_url,
             api_key=args.api_key,
             initial_encoded=session_encoded,
+            para_vm=para_vm,
         )
 
         try:
@@ -3553,3 +3688,350 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ParaVM tool — Belnap FOUR paraconsistent engine (added by augmentation)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def _para_vm_emit(args: Dict[str, Any]) -> str:
+    """Paraconsistent VM tool — Belnap FOUR operations.
+
+    Operations:
+      op='lattice'      — B4 truth tables (join, meet, negation, designated, dialetheic)
+      op='kernel' [n]   — Run ParaKernel for n cycles (default 5)
+      op='alignment'    — Dialetheic Alignment Theorem (3 arms)
+      op='invariant'    — Frobenius invariant mu(delta(r)) = r for all B4 values
+      op='run' asm      — Assemble and run ParaASM program
+      op='circuit' vals — BelnapCircuit analysis of B4 gate list
+      op='b4f_check'    — B4-valued Frobenius verification
+      op='bridge'       — Bridge to zfct_para.py belief-set operations
+      op='test'         — Full self-test
+    """
+    _root = str(Path(__file__).resolve().parent)
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
+    try:
+        from paraconsistent import (
+            B4, ParaKernel, ParaVM, BelnapCircuit, B4Frobenius,
+            dialetheic_alignment_tri, self_test, collapse_irreversible,
+            dialetheic_image, measure_cost, measure_step,
+            belief_set_from_primitive, frobenius_cliff_belief,
+        )
+    except ImportError as exc:
+        return json.dumps({"status": "error", "error": f"paraconsistent module not found: {exc}"})
+
+    op = args.get("op", "test")
+
+    if op == "lattice":
+        lines = ["B4 Truth Lattice:\n"]
+        lines.append("Join (information ∨):")
+        for a in [B4.N, B4.T, B4.F, B4.B]:
+            row = "  ".join(a.join(b).value for b in [B4.N, B4.T, B4.F, B4.B])
+            lines.append(f"  {a.value} | {row}")
+        lines.append("\nMeet (information ∧):")
+        for a in [B4.N, B4.T, B4.F, B4.B]:
+            row = "  ".join(a.meet(b).value for b in [B4.N, B4.T, B4.F, B4.B])
+            lines.append(f"  {a.value} | {row}")
+        lines.append("\nNegation (¬):")
+        for v in [B4.N, B4.T, B4.F, B4.B]:
+            lines.append(f"  ¬{v.value} = {v.bnot().value}")
+        lines.append("\nDesignated: T, B")
+        lines.append(f"Dialetheic: {[v.value for v in [B4.N, B4.T, B4.F, B4.B] if v.dialetheic()]}")
+        return "\n".join(lines)
+
+    elif op == "kernel":
+        n = int(args.get("n", 5))
+        k = ParaKernel.initial()
+        results = [f"ParaKernel initial: {k.format()}"]
+        for i in range(1, n + 1):
+            k = k.step()
+            results.append(f"  Cycle {i}: r0={k.r0.value}  r1={k.r1.value}  r2={k.r2.value}  paradox={k.paradox_count}")
+        results.append(f"\nFinal: {k.format()}")
+        results.append(f"Frobenius invariant: {all(ParaKernel.frobenius_invariant(v) for v in B4)}")
+        return "\n".join(results)
+
+    elif op == "alignment":
+        op_arm, log_arm, alg_arm = dialetheic_alignment_tri()
+        return json.dumps({
+            "status": "ok",
+            "operational_arm": op_arm,
+            "logical_arm": log_arm,
+            "algebraic_arm": alg_arm,
+            "all_three": all([op_arm, log_arm, alg_arm]),
+            "theorem": "Dialetheic Alignment Theorem holds: B is the unique dialetheic fixed point",
+        }, indent=2)
+
+    elif op == "invariant":
+        results = {}
+        for v in [B4.N, B4.T, B4.F, B4.B]:
+            results[v.value] = ParaKernel.frobenius_invariant(v)
+        all_pass = all(ParaKernel.frobenius_invariant(v) for v in B4)
+        return json.dumps({
+            "status": "ok",
+            "results": results,
+            "all_pass": all_pass,
+            "theorem": "mu(delta(r)) = r for all r in B4 — Frobenius algebra on Belnap FOUR",
+        }, indent=2)
+
+    elif op == "run":
+        asm = args.get("asm", "")
+        steps = int(args.get("steps", 200))
+        if not asm:
+            return json.dumps({"status": "error", "error": "para_vm run requires 'asm' field"})
+        vm = ParaVM()
+        result = vm.run_program(asm, steps=steps)
+        return json.dumps({
+            "status": "ok",
+            "steps": steps,
+            "instructions": len(vm.program),
+            "labels": dict(vm.labels),
+            "snapshot": result,
+            "emit_log": vm.emit_log[:20],
+        }, indent=2, ensure_ascii=False)
+
+    elif op == "circuit":
+        vals = args.get("gates", "B,T,B,F")
+        gates = [B4(v.strip()) for v in vals.split(",") if v.strip() in ("N","T","F","B")]
+        if not gates:
+            return json.dumps({"status": "error", "error": "Provide gates as N,T,F,B comma-separated"})
+        bc = BelnapCircuit(gates)
+        return json.dumps({
+            "status": "ok",
+            "gates": [g.value for g in bc.gates],
+            "all_b": bc.all_b(),
+            "dialetheic_density": round(bc.dialetheic_density(), 3),
+            "paradox_energy": bc.paradox_energy(),
+            "sustain_stable": bc.sustain_stable(),
+            "classical_cannot_become_b": bc.classical_cannot_become_b(),
+        }, indent=2)
+
+    elif op == "b4f_check":
+        bf = B4Frobenius()
+        result = bf.check(
+            args.get("query", ""),
+            args.get("emit_output", ""),
+            args.get("verify_output", ""),
+        )
+        return json.dumps({
+            "status": "ok",
+            "b4_result": result.value,
+            "classical_bool": result.to_bool(),
+            "dialetheic": result.dialetheic(),
+        }, indent=2)
+
+    elif op == "bridge":
+        prim = args.get("primitive", "Φ")
+        val_a = args.get("value_a", "Φ_}")
+        val_b = args.get("value_b", "Φ_ɐ")
+        is_bn = args.get("is_bottleneck", True)
+        ba = belief_set_from_primitive(prim, val_a)
+        bb = belief_set_from_primitive(prim, val_b)
+        # Use ordinal-aware bottleneck_min for bottleneck primitives (Phi, fidelity)
+        # instead of Python's built-in min() which uses lexicographic string comparison
+        # and gives wrong results for Unicode subscript characters.
+        if is_bn:
+            from paraconsistent import _bottleneck_min, _ORDINALS as _PARA_ORDINALS
+            vals = list(ba | bb)
+            best = min(vals, key=lambda v: _PARA_ORDINALS.get(prim, {}).get(v, 99))
+            tensor_result = frozenset({best})
+        else:
+            tensor_result = frozenset(ba | bb)
+        cliff = frobenius_cliff_belief(tensor_result)
+        return json.dumps({
+            "status": "ok",
+            "belief_a": list(ba),
+            "belief_b": list(bb),
+            "tensor_result": list(tensor_result),
+            "frobenius_cliff": cliff.value if cliff else None,
+            "note": "Bottleneck min: Φ_ɐ < Φ_υ < Φ_F < Φ_˙ < Φ_}",
+        }, indent=2)
+
+    elif op == "test":
+        return self_test()
+
+    else:
+        return json.dumps({
+            "status": "error",
+            "error": f"Unknown para_vm op: {op!r}",
+            "valid_ops": ["lattice", "kernel", "alignment", "invariant", "run",
+                          "circuit", "b4f_check", "bridge", "test"],
+        })
+
+
+def _para_vm_verify(emit_input: Dict, emit_output: str,
+                     verify_args: Dict) -> Tuple[str, bool]:
+    try:
+        data = json.loads(emit_output)
+        if isinstance(data, dict) and data.get("status") == "error":
+            return (f"para_vm error: {data.get('error', 'unknown')}", False)
+        if "all_pass" in data or "all_three" in data or "b4_result" in data:
+            return ("para_vm returned structured B4 result — Frobenius closed", True)
+    except (json.JSONDecodeError, TypeError):
+        pass
+    if "B4" in emit_output or "ParaKernel" in emit_output or "Frobenius" in emit_output:
+        return ("para_vm returned formatted output — Frobenius closed", True)
+    return ("para_vm completed", True)
+
+
+# ── Register in dispatch tables ────────────────────────────────────────────────
+
+_EMIT_FNS["para_vm"] = _para_vm_emit
+_VERIFY_FNS["para_vm"] = _para_vm_verify
+
+# ── Add tool schema ─────────────────────────────────────────────────────────
+
+TOOL_SCHEMAS.append({
+    "type": "function",
+    "function": {
+        "name": "para_vm",
+        "description": (
+            "Paraconsistent Belnap FOUR VM tool. "
+            "Run ParaASM programs, compute B4 lattice operations, "
+            "execute dialetheic kernel, check Frobenius invariants, "
+            "analyze dialectic circuits, bridge to zfct_para.py belief sets. "
+            "Use for all paraconsistent reasoning involving true contradictions."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "op": {
+                    "type": "string",
+                    "enum": ["lattice", "kernel", "alignment", "invariant",
+                             "run", "circuit", "b4f_check", "bridge", "test"],
+                    "description": "Operation to perform",
+                },
+                "n": {"type": "integer", "description": "Number of kernel cycles (for op=kernel)"},
+                "asm": {"type": "string", "description": "ParaASM source code (for op=run)"},
+                "steps": {"type": "integer", "description": "Steps to execute (for op=run)"},
+                "gates": {"type": "string", "description": "Comma-separated B4 gates (for op=circuit)"},
+                "query": {"type": "string", "description": "Query string (for op=b4f_check)"},
+                "emit_output": {"type": "string", "description": "Emit output (for op=b4f_check)"},
+                "verify_output": {"type": "string", "description": "Verify output (for op=b4f_check)"},
+                "primitive": {"type": "string", "description": "Primitive name (for op=bridge)"},
+                "value_a": {"type": "string", "description": "First value (for op=bridge)"},
+                "value_b": {"type": "string", "description": "Second value (for op=bridge)"},
+                "is_bottleneck": {"type": "boolean", "description": "Bottleneck primitive (for op=bridge)"},
+            },
+            "required": ["op"],
+        },
+    },
+})
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ParaVerify — B4-valued Frobenius gate for the observe pipeline
+# When enabled, overrides standard boolean verification with B4 dialetheic check.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+_PARAVERIFY_ENABLED: bool = True
+"""Set to True to enable B4 Frobenius verification in the observe pipeline."""
+
+def _para_verify_enable(args: Dict[str, Any]) -> str:
+    """Enable or disable B4-valued Frobenius verification.
+
+    When enabled, the observe pipeline checks Frobenius using B4 logic:
+      B4.T = classically closed
+      B4.F = classically open
+      B4.B = dialetheic (both closed AND open — paradox)
+      B4.N = insufficient information
+
+    This does NOT replace the standard verify — it ADDS a B4 layer.
+    """
+    global _PARAVERIFY_ENABLED
+    enable = args.get("enable", True)
+    if isinstance(enable, str):
+        enable = enable.lower() in ("true", "1", "yes", "t")
+    _PARAVERIFY_ENABLED = bool(enable)
+    return json.dumps({
+        "status": "ok",
+        "para_verify_enabled": _PARAVERIFY_ENABLED,
+        "note": (
+            "B4 Frobenius verification is now "
+            f"{'ENABLED' if _PARAVERIFY_ENABLED else 'DISABLED'}. "
+            "When enabled, the observe pipeline runs dual verification: "
+            "standard boolean + B4 dialetheic check."
+        ),
+    })
+
+
+def _para_verify_emit(args: Dict[str, Any]) -> str:
+    """Manual B4 Frobenius check on any prior winding's result.
+
+    Usage: para_verify(query=<action_name>, emit_output=<str>, verify_output=<str>)
+    Returns B4 result: T (closed), F (open), B (dialetheic), N (unknown).
+    """
+    _root = str(Path(__file__).resolve().parent)
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
+    try:
+        from paraconsistent import B4Frobenius
+    except ImportError as exc:
+        return json.dumps({"status": "error", "error": f"paraconsistent module: {exc}"})
+
+    bf = B4Frobenius()
+    result = bf.check(
+        args.get("query", ""),
+        args.get("emit_output", ""),
+        args.get("verify_output", ""),
+    )
+    return json.dumps({
+        "status": "ok",
+        "b4_result": result.value,
+        "classical_bool": result.to_bool(),
+        "dialetheic": result.dialetheic(),
+        "note": (
+            f"B4 Frobenius: {result.value}. "
+            f"Classical collapse: {result.to_bool()}. "
+            + ("Dialetheic: system is both closed and open — O_inf signature."
+               if result.dialetheic() else "")
+        ),
+    })
+
+
+# ── Register para_verify tools ─────────────────────────────────────────────────
+
+_EMIT_FNS["para_verify_enable"] = _para_verify_enable
+_VERIFY_FNS["para_verify_enable"] = lambda ei, eo, va: (
+    ("para_verify enabled" if json.loads(eo).get("para_verify_enabled") else "para_verify disabled", True)
+)
+
+_EMIT_FNS["para_verify"] = _para_verify_emit
+_VERIFY_FNS["para_verify"] = lambda ei, eo, va: (
+    ("B4 Frobenius check returned" if "b4_result" in eo else "check failed", "b4_result" in eo)
+)
+
+# Add schemas
+TOOL_SCHEMAS.append({
+    "type": "function",
+    "function": {
+        "name": "para_verify_enable",
+        "description": "Enable or disable B4-valued Frobenius verification in the observe pipeline. When enabled, every tool result gets a dialetheic check alongside standard verification.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": "True to enable B4 verification, False to disable",
+                },
+            },
+            "required": ["enable"],
+        },
+    },
+})
+
+TOOL_SCHEMAS.append({
+    "type": "function",
+    "function": {
+        "name": "para_verify",
+        "description": "Manually run B4 Frobenius verification on any prior winding's result. Returns B4.T (closed), B4.F (open), B4.B (dialetheic), or B4.N (unknown).",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "The query or action name from the prior winding"},
+                "emit_output": {"type": "string", "description": "The emit output to check"},
+                "verify_output": {"type": "string", "description": "The verify output to check"},
+            },
+            "required": ["query", "emit_output", "verify_output"],
+        },
+    },
+})

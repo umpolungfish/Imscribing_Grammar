@@ -106,6 +106,9 @@ class Dimensionality(Enum):
             "Ð_point":  cls.D_point,
             "Ð_line":   cls.D_line,
             "Ð_cube":   cls.D_cube,
+            # Shavian (v0.6.0)
+            "𐑛": cls.D_wynn,   "𐑨": cls.D_turnthree,
+            "𐑼": cls.D_invomega, "𐑦": cls.D_holo,
             # Unicode aliases
             "D_∧": cls.D_wynn,  "D_△": cls.D_turnthree,
             "D_∞": cls.D_invomega, "D_⊙": cls.D_holo,
@@ -183,6 +186,9 @@ class Topology(Enum):
             "Þ_cage": cls.T_cage,      "Þ_box": cls.T_cage,  "Þ_commatailz": cls.T_cage,
             "Þ_bowl": cls.T_bowl,      "Þ_invscr": cls.T_bowl,
             "Þ_braid": cls.T_braid,    "Þ_square": cls.T_nrleg,
+            # Shavian (v0.6.0)
+            "𐑡": cls.T_nrleg,  "𐑰": cls.T_bowl, "𐑥": cls.T_bullseye,
+            "𐑶": cls.T_cage,   "𐑸": cls.T_holo,
             # Unicode aliases
             "T_∈": cls.T_bowl,  "T_⋈": cls.T_bullseye,  "T_⊙": cls.T_holo,
             "T_⊠": cls.T_cage,
@@ -231,6 +237,9 @@ class Recognition(Enum):
             "Ř_ctz":     cls.R_subset,
             "Ř_downstep":  cls.R_catalytic,
             "Ř_lyoghlig":      cls.R_mechanical,
+            # Shavian (v0.6.0)
+            "𐑩": cls.R_superset, "𐑑": cls.R_subset,
+            "𐑽": cls.R_catalytic, "𐑾": cls.R_mechanical,
             # chemistry vocab
             "Ř_exact": cls.R_exact,
             "Ř_subset": cls.R_subset,         "R_⊆": cls.R_subset,
@@ -292,6 +301,9 @@ class Polarity(Enum):
             "Φ_pipevar":        cls.P_pipevar,
             "Φ_subdoublearrow": cls.P_subdoublearrow,
             "Φ_doublebarpipe":  cls.P_doublebarpipe,
+            # Shavian (v0.6.0)
+            "𐑗": cls.P_neutral,  "𐑿": cls.P_plus,    "𐑬": cls.P_pipevar,
+            "𐑯": cls.P_subdoublearrow, "𐑹": cls.P_doublebarpipe,
             # legacy canonical names
             "Φ_asym":    cls.P_neutral,
             "Φ_psi":     cls.P_plus,
@@ -358,6 +370,9 @@ class Grammar(Enum):
             "ɢ^˝":  cls.Gamma_spleftarrow,
             "ɢ^ˌ":  cls.Gamma_secstress,
             "ɢ^Ş":  cls.G_dissipative,
+            # Shavian (v0.6.0)
+            "𐑝": cls.Gamma_corner, "𐑜": cls.Gamma_spleftarrow,
+            "𐑠": cls.Gamma_secstress, "𐑵": cls.G_dissipative,
             # phonetic names (backward compat)
             "ɢ_corner": cls.Gamma_corner,   "ɢ_and": cls.Gamma_corner,
             "ɢ_otimes": cls.Gamma_corner,   "Γ_⊗": cls.Gamma_corner,
@@ -423,6 +438,8 @@ class Fidelity(Enum):
             "ƒ^ì":  cls.F_beltl,
             "ƒ^ð":  cls.F_dh,
             "ƒ^ż":  cls.F_hardsign,
+            # Shavian (v0.6.0)
+            "𐑱": cls.F_beltl, "𐑞": cls.F_dh, "𐑐": cls.F_hardsign,
             # phonetic names (backward compat)
             "ƒ_noise": cls.F_noise,
             "ƒ_beltl": cls.F_beltl,   "F_ℓ": cls.F_beltl,   "LOW": cls.F_beltl,
@@ -475,6 +492,9 @@ class KineticChar(Enum):
             "Ç^@":  cls.K_schwa,
             "Ç^Ù":  cls.K_teshlig,
             "Ç^λ":  cls.K_lambda,
+            # Shavian (v0.6.0)
+            "𐑘": cls.K_frtailgamma, "𐑤": cls.K_turnm, "𐑧": cls.K_schwa,
+            "𐑪": cls.K_teshlig, "𐑺": cls.K_lambda,
             # phonetic names (backward compat)
             "Ç_frtailgamma": cls.K_frtailgamma, "FAST": cls.K_frtailgamma,
             "Ç_turnm":  cls.K_turnm,  "MODERATE": cls.K_turnm,
@@ -532,6 +552,8 @@ class Granularity(Enum):
             "Γ_ʔ":  cls.G_revapostrophe,
             "Γ_β":  cls.G_beta,
             "Γ_γ":  cls.G_gamma,
+            # Shavian (v0.6.0)
+            "𐑚": cls.G_beta, "𐑔": cls.G_gamma, "𐑲": cls.G_revapostrophe,
             # phonetic names (backward compat)
             "Γ_revapostrophe": cls.G_revapostrophe, "G_א": cls.G_revapostrophe,
             "Γ_beta":  cls.G_beta,  "G_ב": cls.G_beta,
@@ -578,6 +600,9 @@ class Criticality(Enum):
             "⊙_Æ":  cls.Phi_closerevepsilon,
             "⊙_3":  cls.Phi_revepsilon,
             "⊙_Ţ":  cls.Phi_upstep,
+            # Shavian (v0.6.0)
+            "𐑢": cls.Phi_softsign, "⊙": cls.Phi_ctyogh, "𐑮": cls.Phi_closerevepsilon,
+            "𐑻": cls.Phi_revepsilon, "𐑣": cls.Phi_upstep,
             # phonetic names (backward compat)
             "⊙_softsign":       cls.Phi_softsign,       "Φ_sub":   cls.Phi_softsign,
             "⊙_ctyogh":         cls.Phi_ctyogh,         "Φ_c":     cls.Phi_ctyogh,
@@ -638,6 +663,9 @@ class Protection(Enum):
             "Ω_z":  cls.Omega_dzlig,
             "Ω_C":  cls.Omega_C,
             "Ω_5":  cls.Omega_turna,
+            # Shavian (v0.6.0)
+            "𐑷": cls.Omega_closeepsilon, "𐑴": cls.Omega_crtwo,
+            "𐑭": cls.Omega_dzlig, "𐑟": cls.Omega_turna,
             # phonetic names (backward compat)
             "Ω_closeepsilon":  cls.Omega_closeepsilon, "Ω_0":  cls.Omega_closeepsilon, "TRIVIAL":     cls.Omega_closeepsilon,
             "Ω_crtwo": cls.Omega_crtwo, "Ω_Z2": cls.Omega_crtwo, "Z2_CLASS":    cls.Omega_crtwo,
@@ -689,6 +717,8 @@ class Stoichiometry(Enum):
             "Σ_S":  cls.S_doublebaresh,
             "Σ_ő":  cls.one_n,
             "Σ_ï":  cls.S_ltailm,
+            # Shavian (v0.6.0)
+            "𐑙": cls.S_doublebaresh, "𐑕": cls.one_n, "𐑳": cls.S_ltailm,
             # phonetic names (backward compat)
             "Σ_doublebaresh": cls.S_doublebaresh,
             "Σ_ctn":          cls.one_n,
@@ -738,6 +768,9 @@ class Chirality(Enum):
             "Ħ_£":  cls.H_toneletterstem,
             "Ħ_A":  cls.H_turntwo,
             "Ħ_!":  cls.H_invscripta,
+            # Shavian (v0.6.0)
+            "𐑓": cls.H_closeomega, "𐑒": cls.H_toneletterstem,
+            "𐑖": cls.H_turntwo, "𐑫": cls.H_invscripta,
             # phonetic names (backward compat)
             "Ħ_closeomega":     cls.H_closeomega,     "H_0":   cls.H_closeomega,
             "Ħ_toneletterstem": cls.H_toneletterstem, "H_1":   cls.H_toneletterstem,
