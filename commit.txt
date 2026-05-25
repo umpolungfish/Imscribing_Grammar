@@ -1,4 +1,18 @@
-Shavian migration + LuaLaTeX fix (2026-05-24)
+Strip videos/ from git history + gitignore *.gif (2026-05-25)
+=======================================================================
+
+.gitignore
+  - Added *.gif (*.mp4 was already present)
+
+git history rewrite (git-filter-repo)
+  - videos/ directory removed from all commits
+  - 3 large GIFs excised: mpv_TTl4QyfIFr.gif (1.54 GB), lattice_jiggle.gif
+    (516 MB), crystal_jiggle_2.gif (360 MB)
+  - .git/ shrunk from ~2.24 GB pack to 713 MB
+  - History force-pushed to Imscribing_Grammar remote
+
+Previous: Shavian migration + LuaLaTeX fix (2026-05-24)
+=======================================================================
 
 paraconsistent_os_manuscript.tex — LuaLaTeX compilation fix
   - Replaced pdflatex preamble with fontspec/unicode-math/FreeSerif/Latin Modern Math
