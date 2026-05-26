@@ -1,4 +1,12 @@
-Manuscripts: Everson Mono, Shavian fixes, label corrections (2026-05-25)
+SO_BELOW: Kinetics label correction (2026-05-25)
+=======================================================================
+
+manuscripts/SO_BELOW.tex
+  - "Kinetic character" → "Kinetics" (1 occurrence in primitive table)
+  - Result: 0 missing character warnings; 68 pages
+
+
+Previous: Manuscripts: Everson Mono, Shavian fixes, label corrections (2026-05-25)
 =======================================================================
 
 manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
@@ -9,7 +17,7 @@ manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
   - Global: R_\uparrow→𐑩, R_\circ→𐑑, P_\varnothing→𐑗, P_\equiv→𐑯 (7+4+10+15 replacements)
   - Labels: "Coupling" (was Relational mode), "Cardinality" (was Scope/granularity),
             "Chirality" (was Chirality/chirality), "Parity" (was Parity/symmetry),
-            "Composition" (was Interaction grammar)
+            "Composition" (was Interaction grammar), "Kinetics" (was Kinetic character)
   - Winding row: duplicate 𐑷 at ordinal 4 corrected to 𐑟 (Omega_NA)
   - Result: 0 missing character warnings; AS_ABOVE 48pp, SO_BELOW 68pp
 
