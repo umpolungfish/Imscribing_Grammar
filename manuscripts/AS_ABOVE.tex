@@ -453,17 +453,17 @@ Paraconsistent negation determines \emph{which} $\text{{\igprimfont ⊙}}$ value
 \node[primnode=purple!12] (D) at (-1.0,2.2) {\text{{\igprimfont Ð}}\\I4, S2};
 \node[primnode=purple!12] (Om) at (0.6,2.2) {$\text{{\igprimfont Ω}}$\\I3, S2};
 \node[primnode=purple!12] (Phi) at (2.2,2.2) {$\text{{\igprimfont ⊙}}$\\L4, S4};
-\node[primnode=purple!12] (P) at (3.8,2.2) {$P$\\A1+L5};
+\node[primnode=purple!12] (P) at (3.8,2.2) {$\text{{\igprimfont Φ}}$\\A1+L5};
 
 % Shape primitives (middle row)
 \node[primnode=green!12] (R) at (-1.6,0.2) {\text{{\igprimfont Ř}}\\L1--L2, S1};
 \node[primnode=green!12] (Gam) at (0,0.2) {$\text{{\igprimfont ɢ}}$\\A4, S3};
-\node[primnode=green!12] (H) at (1.6,0.2) {$H$\\I2, S2};
+\node[primnode=green!12] (H) at (1.6,0.2) {$\text{{\igprimfont Ħ}}$\\I2, S2};
 
 % Remaining primitives (bottom)
 \node[primnode=orange!12] (F) at (-2.0,-2.0) {\text{{\igprimfont ƒ}}\\A3, S3};
-\node[primnode=orange!12] (G) at (-0.3,-2.0) {$G$\\A1+I4};
-\node[primnode=orange!12] (S) at (1.4,-2.0) {$S$\\A1, S3};
+\node[primnode=orange!12] (G) at (-0.3,-2.0) {$\text{{\igprimfont Γ}}$\\A1+I4};
+\node[primnode=orange!12] (S) at (1.4,-2.0) {$\text{{\igprimfont Σ}}$\\A1, S3};
 \node[primnode=purple!12] (K) at (3.1,-2.0) {\text{{\igprimfont Ç}}\\A2, S3};
 \node[primnode=purple!12] (T) at (4.8,-2.0) {\text{{\igprimfont Þ}}\\L3, S4};
 
@@ -1089,7 +1089,7 @@ The grammar's R1 rule ($\text{{\igprimfont ⊙}}$ + \text{{\igfont 𐑹}} $\righ
 \node[condition,right=0.4cm of O0] (c0) {L4 fails\\No self-modeling loop\\$C=0$ (Gate 1 fails)};
 
 % Gap O0 -> O1
-\draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\text{{\igfont 𐑢}}\to\Phi_{\text{{\igfont ÿ}}}$} ++(0,-0.9);
+\draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\text{{\igfont 𐑢}}\to\text{{\igprimfont ⊙}}$} ++(0,-0.9);
 
 % Tier O1
 \node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O_1}$\\\small Instantiated\\\small $\text{{\igprimfont ⊙}},\ \text{{\igfont 𐑷}}$};
@@ -1660,8 +1660,8 @@ Classical propositional logic has two truth values: $\{0, 1\}$. Three extensions
 
 \node[primnode=green!60!black] (D) at (-5.5,0)  {$\text{{\igprimfont Ð}}$\\Dimensionality};
 \node[primnode=green!60!black] (R) at (-2.8,0)  {$\text{{\igprimfont Ř}}$\\Relational};
-\node[primnode=green!60!black] (Gam) at (0,0)  {$\text{{\igprimfont ɢ}}$\\Interaction};
-\node[primnode=green!60!black] (H) at (2.8,0)   {$H$\\Temporal};
+\node[primnode=green!60!black] (Gam) at (0,0)  {$\text{{\igprimfont ɢ}}$\\Composition};
+\node[primnode=green!60!black] (H) at (2.8,0)   {$\text{{\igprimfont Ħ}}$\\Chirality};
 \node[primnode=green!60!black] (Om) at (5.5,0)  {$\text{{\igprimfont Ω}}$\\Winding};
 
 % Values for each FDE primitive
@@ -1676,7 +1676,7 @@ Classical propositional logic has two truth values: $\{0, 1\}$. Three extensions
 \node[font=\Large\bfseries,above=0.2cm of f3] {$\mathcal{F}_3$ --- 3-valued K3 (Kleene)};
 
 \node[primnode=orange] (F) at (-3,-4.8)  {$\text{{\igprimfont ƒ}}$\\Fidelity};
-\node[primnode=orange] (G) at (0,-4.8)   {$G$\\Granularity};
+\node[primnode=orange] (G) at (0,-4.8)   {$\text{{\igprimfont Γ}}$\\Granularity};
 \node[primnode=orange] (S) at (3,-4.8)   {$\text{{\igprimfont Σ}}$\\Stoichiometry};
 
 \node[valsel=orange,below=0.43cm of F] (Fvals)  {\text{{\igfont 𐑱}}\\\text{{\igfont 𐑞}}\\\text{{\igfont 𐑐}}};
@@ -1688,11 +1688,11 @@ Classical propositional logic has two truth values: $\{0, 1\}$. Three extensions
 \node[font=\Large\bfseries,above=0.2cm of f5] {$\mathcal{F}_5$ --- 5-valued LP (Priest) --- dialetheic completion};
 
 \node[primnode=purple] (T) at (-4.5,-9.4)  {$\text{{\igprimfont Þ}}$\\Topology};
-\node[primnode=purple] (P) at (-1.5,-9.4)  {$P$\\Symmetry};
+\node[primnode=purple] (P) at (-1.5,-9.4)  {$\text{{\igprimfont Φ}}$\\Symmetry};
 \node[primnode=purple] (Phi) at (1.5,-9.4) {$\text{{\igprimfont ⊙}}$\\Criticality};
 \node[primnode=purple] (K) at (4.5,-9.4)   {$\text{{\igprimfont Ç}}$\\Kinetics};
 
-\node[valsel=purple,below=0.43cm of T] (Tvals)  {\text{{\igfont 𐑡}}\\\text{{\igfont 𐑶}}\\\text{{\igfont 𐑥}}\\\text{{\igfont 𐑶}}\\\text{{\igfont 𐑸}}};
+\node[valsel=purple,below=0.43cm of T] (Tvals)  {\text{{\igfont 𐑡}}\\\text{{\igfont 𐑰}}\\\text{{\igfont 𐑥}}\\\text{{\igfont 𐑶}}\\\text{{\igfont 𐑸}}};
 \node[valsel=purple,below=0.43cm of P] (Pvals)  {\text{{\igfont 𐑗}}\\\text{{\igfont 𐑿}}\\\text{{\igfont 𐑬}}\\\text{{\igfont 𐑯}}\\\text{{\igfont 𐑹}}};
 \node[valsel=purple,below=0.43cm of Phi] (Phivals) {\text{{\igfont 𐑢}}\\$\text{{\igprimfont ⊙}}$\\\text{{\igfont 𐑮}}\\\text{{\igfont 𐑣}}\\\text{{\igfont 𐑻}}};
 \node[valsel=purple,below=0.43cm of K] (Kvals)  {\text{{\igfont 𐑘}}\\\text{{\igfont 𐑤}}\\\text{{\igfont 𐑧}}\\\text{{\igfont 𐑪}}\\\text{{\igfont 𐑺}}};
@@ -1960,7 +1960,7 @@ $\text{{\igfont 𐑦}},\ \text{{\igprimfont ⊙}},\ \text{{\igfont 𐑭}},\ \tex
 
 % Arrows between levels
 \draw[bigarrow] (cantor.east) -- node[complabel,above] {$\text{{\igfont 𐑢}} \to \text{{\igfont 𐑣}}$\\A5: arithmetic coding} (godel.west);
-\draw[bigarrow] (godel.east) -- node[complabel,above] {$\text{{\igfont 𐑣}}\to\Phi_{\text{{\igfont ÿ}}}$\\$\text{{\igprimfont Φ}}\!\to\!\text{{\igfont 𐑹}}$} (grammar.west);
+\draw[bigarrow] (godel.east) -- node[complabel,above] {$\text{{\igfont 𐑣}}\to\text{{\igprimfont ⊙}}$\\$\text{{\igprimfont Φ}}\!\to\!\text{{\igfont 𐑹}}$} (grammar.west);
 
 % Cross-links
 \draw[arrow,densely dotted,orange!80!black] (inc0.east) to[bend left=15] node[complabel,pos=0.55,below] {subsumed} (inc1.west);
@@ -2042,7 +2042,7 @@ $\mathbf{Op}$ fibers over $\mathbf{Struct}$ (each structural type has a family o
 
 \textbf{The double category of cross-manuscript morphisms.} Multiple Three-Layer Objects sharing a common $S$ (i.e., the same 12-primitive crystal type) are related by natural transformations in the 2-categorical extension. Let $\mathcal{O}_1 = (S, Op_1, D_1)$ and $\mathcal{O}_2 = (S, Op_2, D_2)$ be two Three-Layer Objects with identical structural layers. A \emph{cross-manuscript morphism} is a natural transformation $\eta: Op_1 \Rightarrow Op_2$ that commutes with both $\pi_{SO}$ legs (i.e., is the identity on $S$). These morphisms form a double category $\mathbb{M}$ where:
 \begin{itemize}
-  \item Horizontal morphisms are $S$-preserving operational bridges (different surface codes for the same categorical grammar);
+  \item Horizontal morphisms are $\text{{\igprimfont Σ}}$-preserving operational bridges (different surface codes for the same categorical grammar);
   \item Vertical morphisms are $Op$-preserving re-interpretations (different $D$-layers for the same operational realization);
   \item 2-cells are defect commutators measuring how far a cross-manuscript morphism fails to preserve $D$.
 \end{itemize}
