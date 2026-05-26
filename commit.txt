@@ -1,4 +1,31 @@
-Strip videos/ from git history + gitignore *.gif (2026-05-25)
+Manuscripts: Everson Mono, Shavian fixes, label corrections (2026-05-25)
+=======================================================================
+
+manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
+  - Font: \igfont switched FreeSerif → Everson Mono (FreeSerif has no Shavian block)
+  - 756 ${\igfont X}$ → {\igfont X} (strip spurious math-mode wrappers)
+  - All {\igfont SHAVIAN} → \text{{\igfont SHAVIAN}} (math-mode safety, full U+10450–U+1047F)
+  - Table headers corrected: $P^*$→Φ, $F^*$→ƒ, $K$→Ç, $H$→Ħ, $S$→Σ
+  - Global: R_\uparrow→𐑩, R_\circ→𐑑, P_\varnothing→𐑗, P_\equiv→𐑯 (7+4+10+15 replacements)
+  - Labels: "Coupling" (was Relational mode), "Cardinality" (was Scope/granularity),
+            "Chirality" (was Chirality/chirality), "Parity" (was Parity/symmetry),
+            "Composition" (was Interaction grammar)
+  - Winding row: duplicate 𐑷 at ordinal 4 corrected to 𐑟 (Omega_NA)
+  - Result: 0 missing character warnings; AS_ABOVE 48pp, SO_BELOW 68pp
+
+
+Previous: Manuscript Shavian font fix: Everson Mono, zero missing glyphs (2026-05-25)
+=======================================================================
+
+manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
+  - \igfont switched from FreeSerif (no Shavian) to Everson Mono
+  - 756 occurrences of ${\igfont X}$ → {\igfont X} (strip math-mode wrapper)
+  - All {\igfont SHAVIAN} → \text{{\igfont SHAVIAN}} for math-mode safety
+    (full block U+10450–U+1047F covered)
+  - Result: 0 missing character warnings in both logs
+  - AS_ABOVE.pdf: 48 pages; SO_BELOW.pdf: 68 pages — all glyphs rendering
+
+Previous: Strip videos/ from git history + gitignore *.gif (2026-05-25)
 =======================================================================
 
 .gitignore
