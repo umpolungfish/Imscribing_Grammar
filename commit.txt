@@ -1,4 +1,24 @@
-SO_BELOW: Kinetics label correction (2026-05-25)
+Manuscripts: comprehensive old-notation fix pass (2026-05-25)
+=======================================================================
+
+manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
+  - TikZ diagram nodes: $P$, $H$, $G$, $S$ → \igprimfont Φ/Ħ/Γ/Σ (both manuscripts)
+  - ɢ node label: "Interaction" → "Composition"
+  - Ħ node label: "Temporal" → "Chirality"
+  - F5 Topology values: duplicate 𐑶 at ordinal 2 corrected to 𐑰
+  - \Phi_{ÿ} → \igprimfont ⊙ in gap diagram (×2, AS_ABOVE)
+  - $P$-bottleneck/values/gap/primitive/restoration/upgrade → \igprimfont Φ (10 sites, SO_BELOW)
+  - $F$-ordinal/tier/bottleneck/assignment → \igprimfont ƒ (6+ sites)
+  - $G$-scope conflict/barrier → \igprimfont Γ (4 sites)
+  - $K$--$H$ coupling → \igprimfont Ç--Ħ (7 sites)
+  - Quantum paradoxes table: $F$, $F,G$, $K$, $G,T$, $T$ → \igprimfont glyphs
+  - Voynich section table: 9 old-notation cell values → Shavian
+  - Chemistry comparison table: $T$/$K$ → \igprimfont Þ/Ç
+  - $D$ (Minoan) → \igprimfont Ð; $R$: physical bond → \igprimfont Ř
+  - Result: 0 missing chars; AS_ABOVE 48pp, SO_BELOW 68pp
+
+
+Previous: SO_BELOW: Kinetics label correction (2026-05-25)
 =======================================================================
 
 manuscripts/SO_BELOW.tex
