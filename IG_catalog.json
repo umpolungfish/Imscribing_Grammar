@@ -35649,7 +35649,7 @@
   },
   {
     "name": "universal_imscriptive_grammar",
-    "description": "The universal Imscribing Grammar — self-referential, self-modeling structural type system spanning the Crystal of Types",
+    "description": "The Universal Imscribing Grammar: a 12-primitive structural type system across a crystal of 17,280,000 types. The universal invariant is the Frobenius condition μ∘δ=id. Self-referential topology with self-written state-space (Axiom C). O_inf tier — the grammar imscribes itself.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45196,6 +45196,22 @@
     "ɢ": "𐑠",
     "⊙": "⊙",
     "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "whaleph_chimera",
+    "description": "Structural chimera: whale_vocalization ⊗ aleph. Hybrid of cetacean bioacoustic communication (φ̂_ÿ self-modeling criticality, Ð_ω imscriptive state-space, Ř_= bidirectional, Ω_z integer winding) and the Hebrew letter Aleph (Þ_¨ box-product topology, Ħ_! eternal chirality). Bottlenecks: Φ_υ (psi), ƒ_",
+    "Ð": "𐑦",
+    "Þ": "𐑶",
+    "Ř": "𐑾",
+    "Φ": "𐑿",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
     "Σ": "𐑳",
     "Ω": "𐑭"
   }
