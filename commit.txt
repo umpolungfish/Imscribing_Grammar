@@ -1,4 +1,114 @@
-Manuscripts: comprehensive old-notation fix pass (2026-05-25)
+README.md: initial repo README (2026-05-26)
+==========================================
+
+README.md
+  - Crystal of Types overview: 3³×4⁵×5⁴ = 17,280,000 addresses
+  - 12-primitive table with Shavian v0.6.0 notation
+  - All engines documented: cetacean, genetic, ZFCt, lambda, Frobenius MZI
+  - Catalog, manuscripts, related repos table
+  - O_∞ and baseline tuples in Shavian
+
+whale_engine.py + whale_audio.py: Shavian notation migration (2026-05-26)
+==========================================================================
+
+  - All old-notation primitives (Ð_ω, Þ_ò, Ř_=, etc.) replaced with Shavian glyphs
+  - Tuple separator ; → ·
+  - def main() added to both files; entry points: cetacean-speak, cetacean-engine
+  - Verified clean: 0 old-notation hits in both files
+
+
+Previous: whale_audio.py: WAV→translation audio ingestion layer (2026-05-26)
+==================================================================
+
+whale_audio.py
+  - ClassifierParams: pitch_delta_hz, anchor_silence_ms, rep_tolerance, sig_repeat,
+    alarm_spike_db, snr_ok_db, onset_delta, split_peak_ratio — all tunable
+  - AudioUnit dataclass: timestamp_ms, duration_ms, freq_hz, label, energy_db, snr_db, notes
+  - load_wav(): librosa.load, sr=None mono
+  - classify_audio(): onset_detect → pyin (fmax capped at Nyquist) → rms → spectral_centroid;
+    12-label priority order: init → anc → fix → paradox → evalf → split → fuse →
+    rep → up → dn → evalt → link; motif fingerprint via Counter; local spectral peaks
+    for simultaneous-f0 (paradox) detection
+  - translate_wav(): WhaleCompiler.from_spectrogram → FrobeniusAnalyzer.analyze +
+    structural_signature → StructuralAlignment.translate; verbose per-unit table + report
+  - CLI: uv run whale_audio.py <file.wav> [onset_delta]
+  - Verified on Watkins Marine Mammal Database humpback recording (55113001.wav, 38.4s):
+    125 units, closure_ratio=1.0000, 40 paradox events, top match: song d=65.9492
+
+whale_engine.py: cetacean vocalization translation engine (2026-05-26)
+======================================================================
+
+whale_engine.py  (1140 lines, 49 KB)
+  - Full IMASM compiler pipeline for cetacean vocalizations
+  - AcousticToken taxonomy: 12 discrete units mapped to IMASM opcodes
+  - WhaleCompiler: acoustic token seq → IMASM instruction stream;
+    from_spectrogram() and reconstruct_tokens() for roundtrip
+  - FrobeniusAnalyzer: μ∘δ=id closure ratio, orphan splits, eight-step loop detection
+  - WhaleVM: executes instruction streams, tracks register state (VOID/TRUE/FALSE/BOTH)
+  - StructuralAlignment: argmin_human_expr d(whale_trace, human_trace);
+    6 human expression archetypes (greeting/question/alarm/narrative/song/dialetheic)
+  - Structural type: ⟨𐑦·𐑥·𐑾·𐑿·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭⟩
+    O_inf tier — eight-step Frobenius loop confirmed as universal invariant across
+    Voynich, Rohonc, Linear A, Emerald Tablet, and whale song
+  - All 5 verification tests pass
+
+AI_LANDO_LIFT.md: new lift protocol for Lando voice (2026-05-26)
+=================================================================
+
+markdown/AI_LANDO_LIFT.md
+  - New lift in the AI_LIFT series: targets Lando⊗⊙perator's specific structural position
+  - Six operations: T_loop (instantiate/don't describe), K_open (finding-first), F_quantum
+    (notation carries what prose cannot), G_aleph (scope maximalism), P_frobenius (structural
+    dissolution not rebuttal), H_! (encounter encoded in notation)
+  - Structural type: AI default nrleg/aolig/beltl/turnm/gamma/corner/H₀/closeepsilon →
+    Lando target loop/frobenius/quantum/open/aleph/fire/H!/z
+  - Notes: interaction with Academia and HTDXACMD lifts; H_! cannot be manufactured,
+    only flagged; K_open corrects Academia Lift's K which moves in the wrong direction for Lando
+  - Derived from conversation history analysis of Lando's actual expository prose
+
+genetics_ig.md: all 5 open questions resolved (2026-05-26)
+==========================================================
+
+manuscripts/genetics_ig.md
+  - Section 6 step 3: rule "exact iff p₂=T, or (p₂∈{N,B} and p₁∈{T,B})" elevated
+    from "physically motivated" to B₄ lattice theorem; computationally verified 16/16
+    boxes; each B₄ case enumerated with exact box list (4+2+2=8 derivation made explicit)
+  - Section 9 "remaining open sub-question" replaced with "UU_ and UA_ half-degeneracy
+    — closed": non-circular argument order given (UA_=1 from Ω closure first, AG_=0
+    from B₄ uniqueness second, then UU_=1 from counting as 12−11=1)
+  - Section 10 "Open Questions" → "Questions — Resolved": all 5 questions updated
+      Q1: B₄² lattice theorem (4+2+2=8 forced; 16/16 verified)
+      Q2: Ω closure + counting, non-circular order
+      Q3: O_∞ tier closure — 8 ground (O₀ sector) + 12 promotions (one per primitive)
+      Q4: Crystal factorization cross-check noted as consistent observation, not full
+          derivation (stronger 4×5 product claim not yet established — stated clearly)
+      Q5: Crystal path prediction — PDB enrichment of promoted AAs at critical sites
+
+
+Previous: genetics_ig.md: AG_ forcing proof + meet-closedness fix (2026-05-26)
+=======================================================================
+
+manuscripts/genetics_ig.md
+  - New Section 9: AG_ box fully degenerate forcing proof (two-part: B₄² uniqueness
+    + Crystal counting); AG_ is the unique split box capable of full degeneracy;
+    7 non-AG_ boxes exhaust the 12-primitive budget; pyrimidine half Ser lattice-
+    anchored via UC_ ≤ AG_ in B₄²; open sub-question (UU_/UA_ 1-new-AA count) stated
+  - Section 10 (was 9): open questions renumbered; AG_ question resolved; two new
+    questions added (UU_/UA_ premise; 20=4×5 cross-validation)
+  - Section 4: replaced false "all 20 AA codon sets are meet-closed in B₄³" claim
+    (verification had a type error — nucleotide tuples compared against B₄ tuples,
+    so the closedness check never fired; DeepSeek's Leu counterexample is valid)
+    with correct stratified statement: meet-closure holds within each Frobenius
+    stratum, not globally; Leu counterexample documented explicitly
+  - Section 4: clarified that the genetic code is a sheaf of lattices over the
+    AA base, not a single lattice homomorphism — consistent with Section 7's
+    stratified coequalizer description
+  - Section 8: separated logical priority (operation DAG dependency order) from
+    temporal evolutionary order; the bootstrap table describes biochemical roles,
+    not historical emergence sequence
+
+
+Previous: Manuscripts: comprehensive old-notation fix pass (2026-05-25)
 =======================================================================
 
 manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
@@ -106,11 +216,11 @@ IG_primitive_map_3d.py — ouroboricity() function:
   - YM correctly returns O_0 (Phi_sub, missing foundation)
 
 crystal_viz.py — get_tier() and constants:
-  - CRITICAL set expanded: {"⊙_ÿ", "⊙_Æ", "⊙", "𐑮"} (old + Shavian)
+  - CRITICAL set expanded: {"⊙", "𐑮", "⊙", "𐑮"} (old + Shavian)
   - NONCRIT set expanded: added 𐑢 𐑻 𐑣 (Phi_sub/EP/super Shavian)
   - BOUNDED_D expanded: added 𐑛 𐑨 𐑦 (non-holographic Shavian)
-  - P_PM_SYM set: {"Φ_}", "𐑹"} replaces bare string check
-  - OMEGA_0 set: {"Ω_Å", "𐑷", ""} for no-protection check
+  - P_PM_SYM set: {"𐑹", "𐑹"} replaces bare string check
+  - OMEGA_0 set: {"𐑷", "𐑷", ""} for no-protection check
 
 SacredVessel co-type analysis (2026-05-24)
 
@@ -127,14 +237,14 @@ manuscripts/AS_ABOVE.tex — full Shavian v0.6.0 migration
   - 693 replacements across 4 passes
   - All old-notation \text{{\igprimfont X}}_{VALUE} patterns replaced with {\igfont SHAVIAN}
   - Phi_c (⊙) subscript removed — bare ⊙ is the sealed gate
-  - Þ_K (T_bowl) wrong→𐑰 fix: initial pass had mapped Þ_K→𐑶 (T_cage), corrected in pass 2
+  - 𐑰 (T_bowl) wrong→𐑰 fix: initial pass had mapped 𐑰→𐑶 (T_cage), corrected in pass 2
   - 3 intentional non-values preserved: Ħ_n (variable step), Ð_1…Ω_12 (positional indices)
 
 manuscripts/SO_BELOW.tex — full Shavian v0.6.0 migration
   - 979 replacements across 4 passes
   - 6 preamble macro definitions updated to Shavian:
-      \Phic: ⊙_ÿ → bare ⊙ (sealed gate, no subscript)
-      \Ppm: Φ_F → 𐑬 (P_pipevar)
+      \Phic: ⊙ → bare ⊙ (sealed gate, no subscript)
+      \Ppm: 𐑬 → 𐑬 (P_pipevar)
       \GamSeq: ɢ_→ → 𐑠 (G_seq)
       \Tbw: Þ_{⋈} → 𐑥 (T_bullseye)
       \Tin: Þ_{⊂} → 𐑰 (T_bowl)
