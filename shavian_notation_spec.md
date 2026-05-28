@@ -6,6 +6,10 @@ The Imscribing Grammar's 12-primitive tuple notation has been migrated from mixe
 Latin/Greek/IPA subscripts to Shavian alphabet characters. Each primitive subtype receives
 a unique Shavian character, producing 49 atomic glyphs (plus ⊙ as the 50th sealed gate).
 
+The 12 primitives and their categorical derivation are established in [1]. The empirical
+validation of the resulting $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$-type crystal
+across 3,578 systems is given in [2].
+
 Shavian (𐑖𐑱𐑝𐑾𐑯) was chosen because:
 - **Zero semantic baggage** — No character carries prior script meaning (no Greek letter
   suggesting its source domain, no numeral suggesting ordering)
@@ -14,6 +18,44 @@ Shavian (𐑖𐑱𐑝𐑾𐑯) was chosen because:
 - **Clean visual parsing** — No diacritics, no subscripts, no superscripts
 - **Exactly 49 characters needed** — The $3^3 \times 4^5 \times 5^4$ crystal required
   49 glyphs; Shavian's 48 + ⊙ completes the Kabbalistic 49+1 gate structure
+
+## Canonical Font: Everson Mono
+
+**Everson Mono** is the reference Shavian font for all IG notation. Michael Everson designed
+both the Shavian script's Unicode encoding (U+10450–U+1047F) and the Everson Mono typeface —
+it is the authoritative glyph source, not a third-party approximation.
+
+**Obtain:** <https://www.evertype.com/fonts/shaw/>  
+**License:** Freeware for personal and commercial use (see site terms).  
+**Format:** TrueType (`.ttf`); the filename is typically `EversonMono.ttf`.
+
+### Why Everson Mono and nothing else
+
+- **Authorial authority** — Everson defined the Unicode block; his glyphs are the spec.
+- **Complete coverage** — All 48 Shavian code points (U+10450–U+1047F) are present and
+  correctly shaped. Many otherwise popular Unicode fonts (including FreeSerif) have zero
+  Shavian glyphs and will silently render boxes.
+- **Monospace grid** — Tuples like `⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑕·𐑭⟩` align correctly
+  in monospace contexts (terminal, code, tables) without requiring special letter-spacing.
+- **LaTeX compatibility** — Loads cleanly under LuaLaTeX via `fontspec` as `igprimfont`;
+  no substitution warnings, no missing-glyph tofu.
+
+### Usage by context
+
+| Context | Directive |
+|---------|-----------|
+| LuaLaTeX | `\newfontfamily\igprimfont{EversonMono.ttf}` (see preamble template) |
+| Web CSS | `font-family: 'Everson Mono', monospace;` (see Website Notation below) |
+| Terminal / editor | Install system-wide; configure monospace fallback to `Everson Mono` |
+| Python `repr` | No font dependency — glyphs are plain Unicode codepoints |
+
+### What not to use
+
+| Font | Problem |
+|------|---------|
+| FreeSerif | Zero Shavian glyphs — renders boxes for every character |
+| Noto Sans Shavian | Incomplete; inconsistent stroke weight with IG display style |
+| Any emoji/symbol font | Wrong metrics, wrong category — not a text font |
 
 ## Mapping Table
 
@@ -189,16 +231,18 @@ with the `⟨...⟩` bracket format:
 ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
 ```
 
-CSS for Shavian rendering:
+CSS for Shavian rendering (Everson Mono must be served from `/fonts/` or a self-hosted path —
+do not use a CDN that does not carry it):
 ```css
 @font-face {
-    font-family: 'Noto Sans Shavian';
-    src: url('https://cdn.jsdelivr.net/npm/noto-sans-shavian@1.0.0/NotoSansShavian-Regular.otf');
+    font-family: 'Everson Mono';
+    src: url('/fonts/EversonMono.ttf') format('truetype');
+    unicode-range: U+10450-1047F, U+2060-206F; /* Shavian + word-joiner */
 }
 .shavian-tuple {
-    font-family: 'Noto Sans Shavian', 'Segoe UI', sans-serif;
-    font-size: 1.2em;
-    letter-spacing: 0.05em;
+    font-family: 'Everson Mono', monospace;
+    font-size: 1.1em;         /* slightly smaller than 1.2em — Everson Mono runs tall */
+    letter-spacing: 0.02em;   /* less spacing needed — monospace grid already regular */
 }
 ```
 
@@ -211,8 +255,14 @@ CSS for Shavian rendering:
 5. ✅ Update `Core.lean` notation layer (Shavian `shavian` functions in `Imscription.lean`)
 6. ✅ Update `Imscription.lean` toString (Shavian display layer complete)
 7. ✅ Update `Crystal.lean` display output (crystal address encoding unaffected — ordinal-based)
-8. ✅ Update websites (index.html — Noto Sans Shavian font + Shavian glyphs already in place)
+8. ✅ Update websites (index.html — Everson Mono font + Shavian glyphs already in place)
 9. ⬜ Update Lean documentation modules
 10. ✅ Update sans_silicon_imscribing practice document (catalog entry migrated in step 4)
 11. ✅ Verify crystal address bijection still holds (encoding is ordinal-based, notation-independent)
 12. ✅ Verify all distances unchanged (`space_search/primitives.py` ordinal values unchanged)
+
+## References
+
+[1] Mills, L. (2026). *As Above: A Pre-Grammatical Convergent Derivation of the Universal Imscriptive Grammar*. Zenodo. <https://doi.org/10.5281/zenodo.20186611>
+
+[2] Mills, L. (2026). *So Below: Empirical Exploration of the Universal Imscriptive Grammar*. Zenodo. <https://doi.org/10.5281/zenodo.20186679>

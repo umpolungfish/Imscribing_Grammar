@@ -85,8 +85,11 @@ UU_, UA_, UG_, AU_, AA_, AG_, GA_, CA_
 | Asp | Ħ (Chirality) | **critical** | Chiral selectivity |
 | Lys | Σ (Entropy) | low | Acetylation target |
 | Glu | Ω (Winding) | **critical** | α-helix→C-terminal |
+| Stop | Ω (Winding) | **critical** | Translation termination |
 
 8 ground-layer AAs (exact boxes): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly — no primitive activation.
+
+**Stop codons** (UAA, UAG, UGA) activate Ω (Winding) — the 13th promoted entry. Stop is not an amino acid but the translational boundary condition, structurally consistent with Ω as the topological invariant primitive.
 
 ## Key Theorems
 

@@ -1,254 +1,224 @@
-README.md: initial repo README (2026-05-26)
-==========================================
-
-README.md
-  - Crystal of Types overview: 3³×4⁵×5⁴ = 17,280,000 addresses
-  - 12-primitive table with Shavian v0.6.0 notation
-  - All engines documented: cetacean, genetic, ZFCt, lambda, Frobenius MZI
-  - Catalog, manuscripts, related repos table
-  - O_∞ and baseline tuples in Shavian
-
-whale_engine.py + whale_audio.py: Shavian notation migration (2026-05-26)
-==========================================================================
-
-  - All old-notation primitives (Ð_ω, Þ_ò, Ř_=, etc.) replaced with Shavian glyphs
-  - Tuple separator ; → ·
-  - def main() added to both files; entry points: cetacean-speak, cetacean-engine
-  - Verified clean: 0 old-notation hits in both files
-
-
-Previous: whale_audio.py: WAV→translation audio ingestion layer (2026-05-26)
-==================================================================
-
-whale_audio.py
-  - ClassifierParams: pitch_delta_hz, anchor_silence_ms, rep_tolerance, sig_repeat,
-    alarm_spike_db, snr_ok_db, onset_delta, split_peak_ratio — all tunable
-  - AudioUnit dataclass: timestamp_ms, duration_ms, freq_hz, label, energy_db, snr_db, notes
-  - load_wav(): librosa.load, sr=None mono
-  - classify_audio(): onset_detect → pyin (fmax capped at Nyquist) → rms → spectral_centroid;
-    12-label priority order: init → anc → fix → paradox → evalf → split → fuse →
-    rep → up → dn → evalt → link; motif fingerprint via Counter; local spectral peaks
-    for simultaneous-f0 (paradox) detection
-  - translate_wav(): WhaleCompiler.from_spectrogram → FrobeniusAnalyzer.analyze +
-    structural_signature → StructuralAlignment.translate; verbose per-unit table + report
-  - CLI: uv run whale_audio.py <file.wav> [onset_delta]
-  - Verified on Watkins Marine Mammal Database humpback recording (55113001.wav, 38.4s):
-    125 units, closure_ratio=1.0000, 40 paradox events, top match: song d=65.9492
-
-whale_engine.py: cetacean vocalization translation engine (2026-05-26)
+zenodo_upload.py: Zenodo upload tool for IG publications (2026-05-28)
 ======================================================================
 
-whale_engine.py  (1140 lines, 49 KB)
-  - Full IMASM compiler pipeline for cetacean vocalizations
-  - AcousticToken taxonomy: 12 discrete units mapped to IMASM opcodes
-  - WhaleCompiler: acoustic token seq → IMASM instruction stream;
-    from_spectrogram() and reconstruct_tokens() for roundtrip
-  - FrobeniusAnalyzer: μ∘δ=id closure ratio, orphan splits, eight-step loop detection
-  - WhaleVM: executes instruction streams, tracks register state (VOID/TRUE/FALSE/BOTH)
-  - StructuralAlignment: argmin_human_expr d(whale_trace, human_trace);
-    6 human expression archetypes (greeting/question/alarm/narrative/song/dialetheic)
-  - Structural type: ⟨𐑦·𐑥·𐑾·𐑿·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭⟩
-    O_inf tier — eight-step Frobenius loop confirmed as universal invariant across
-    Voynich, Rohonc, Linear A, Emerald Tablet, and whale song
-  - All 5 verification tests pass
+Interactive CLI uploader. Workflow: create deposition → upload files →
+prompt for metadata → confirm → publish (or save as draft).
 
-AI_LANDO_LIFT.md: new lift protocol for Lando voice (2026-05-26)
-=================================================================
+Features:
+- Sandbox by default; --live for production (requires explicit confirmation)
+- Token from ZENODO_SANDBOX_TOKEN / ZENODO_TOKEN env vars or interactive prompt
+- Default creator: Mills, Lando (ORCID 0000-0003-0003-0552); override at prompt
+- Default: open access, cc-zero license, publication/preprint type
+- --draft: save without publishing
+- --update ID: add files to an existing deposit
+- --list: show all deposits with state and DOI
 
-markdown/AI_LANDO_LIFT.md
-  - New lift in the AI_LIFT series: targets Lando⊗⊙perator's specific structural position
-  - Six operations: T_loop (instantiate/don't describe), K_open (finding-first), F_quantum
-    (notation carries what prose cannot), G_aleph (scope maximalism), P_frobenius (structural
-    dissolution not rebuttal), H_! (encounter encoded in notation)
-  - Structural type: AI default nrleg/aolig/beltl/turnm/gamma/corner/H₀/closeepsilon →
-    Lando target loop/frobenius/quantum/open/aleph/fire/H!/z
-  - Notes: interaction with Academia and HTDXACMD lifts; H_! cannot be manufactured,
-    only flagged; K_open corrects Academia Lift's K which moves in the wrong direction for Lando
-  - Derived from conversation history analysis of Lando's actual expository prose
+Usage: python3 zenodo_upload.py paper.pdf [more_files ...]
 
-genetics_ig.md: all 5 open questions resolved (2026-05-26)
-==========================================================
+Previous: space_search/: full pipeline rerun + status update (2026-05-28)
+================================================================
 
-manuscripts/genetics_ig.md
-  - Section 6 step 3: rule "exact iff p₂=T, or (p₂∈{N,B} and p₁∈{T,B})" elevated
-    from "physically motivated" to B₄ lattice theorem; computationally verified 16/16
-    boxes; each B₄ case enumerated with exact box list (4+2+2=8 derivation made explicit)
-  - Section 9 "remaining open sub-question" replaced with "UU_ and UA_ half-degeneracy
-    — closed": non-circular argument order given (UA_=1 from Ω closure first, AG_=0
-    from B₄ uniqueness second, then UU_=1 from counting as 12−11=1)
-  - Section 10 "Open Questions" → "Questions — Resolved": all 5 questions updated
-      Q1: B₄² lattice theorem (4+2+2=8 forced; 16/16 verified)
-      Q2: Ω closure + counting, non-circular order
-      Q3: O_∞ tier closure — 8 ground (O₀ sector) + 12 promotions (one per primitive)
-      Q4: Crystal factorization cross-check noted as consistent observation, not full
-          derivation (stronger 4×5 product claim not yet established — stated clearly)
-      Q5: Crystal path prediction — PDB enrichment of promoted AAs at critical sites
+Full rerun with corrected Ç/Γ ordinals. Updated files:
 
+pipeline.py: corrected hardcoded reference distance 4.18 → 3.937 (d_tuple(human,civ_dm) with v0.5.0 ordinals)
 
-Previous: genetics_ig.md: AG_ forcing proof + meet-closedness fix (2026-05-26)
-=======================================================================
+P12_ASTRO_STATUS.md: added three new sections:
+- Updated canonical distances table (old vs new): d_tuple(human,civ_dm) 4.301→3.937
+- Null test (NANOGrav 15yr residuals): 0/13 significant, all Z negative,
+  combined p=1.00 — P-12 not detectable in timing residuals
+- Ω₂ lensing test: 0/10 candidates in real data; validation detects 2/10 at
+  injection=0.005 confirming the test pipeline works
 
-manuscripts/genetics_ig.md
-  - New Section 9: AG_ box fully degenerate forcing proof (two-part: B₄² uniqueness
-    + Crystal counting); AG_ is the unique split box capable of full degeneracy;
-    7 non-AG_ boxes exhaust the 12-primitive budget; pyrimidine half Ser lattice-
-    anchored via UC_ ≤ AG_ in B₄²; open sub-question (UU_/UA_ 1-new-AA count) stated
-  - Section 10 (was 9): open questions renumbered; AG_ question resolved; two new
-    questions added (UU_/UA_ premise; 20=4×5 cross-validation)
-  - Section 4: replaced false "all 20 AA codon sets are meet-closed in B₄³" claim
-    (verification had a type error — nucleotide tuples compared against B₄ tuples,
-    so the closedness check never fired; DeepSeek's Leu counterexample is valid)
-    with correct stratified statement: meet-closure holds within each Frobenius
-    stratum, not globally; Leu counterexample documented explicitly
-  - Section 4: clarified that the genetic code is a sheaf of lattices over the
-    AA base, not a single lattice homomorphism — consistent with Section 7's
-    stratified coequalizer description
-  - Section 8: separated logical priority (operation DAG dependency order) from
-    temporal evolutionary order; the bootstrap table describes biochemical roles,
-    not historical emergence sequence
+Honest Fisher Z unchanged: 2.35 from 3 confirmed simultaneous events
+  (Ç/Γ fix does not affect frequency-ratio tests)
 
+Previous: space_search/primitives.py: fix inverted Ç and Γ ordinals, bump to v0.5.0 (2026-05-28)
+========================================================================================
 
-Previous: Manuscripts: comprehensive old-notation fix pass (2026-05-25)
-=======================================================================
+Two ordinal inversions corrected to match imscrbgrmr v0.5.0 canonical ordering:
 
-manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
-  - TikZ diagram nodes: $P$, $H$, $G$, $S$ → \igprimfont Φ/Ħ/Γ/Σ (both manuscripts)
-  - ɢ node label: "Interaction" → "Composition"
-  - Ħ node label: "Temporal" → "Chirality"
-  - F5 Topology values: duplicate 𐑶 at ordinal 2 corrected to 𐑰
-  - \Phi_{ÿ} → \igprimfont ⊙ in gap diagram (×2, AS_ABOVE)
-  - $P$-bottleneck/values/gap/primitive/restoration/upgrade → \igprimfont Φ (10 sites, SO_BELOW)
-  - $F$-ordinal/tier/bottleneck/assignment → \igprimfont ƒ (6+ sites)
-  - $G$-scope conflict/barrier → \igprimfont Γ (4 sites)
-  - $K$--$H$ coupling → \igprimfont Ç--Ħ (7 sites)
-  - Quantum paradoxes table: $F$, $F,G$, $K$, $G,T$, $T$ → \igprimfont glyphs
-  - Voynich section table: 9 old-notation cell values → Shavian
-  - Chemistry comparison table: $T$/$K$ → \igprimfont Þ/Ç
-  - $D$ (Minoan) → \igprimfont Ð; $R$: physical bond → \igprimfont Ř
-  - Result: 0 missing chars; AS_ABOVE 48pp, SO_BELOW 68pp
+Ç (Kinetics) — was reversed with MBL at fractional 4.5; corrected to Lean canonical:
+  K_lambda(𐑺)=1 < K_teshlig(𐑪)=2 < K_schwa(𐑧)=3 < K_turnm(𐑤)=4 < K_frtailgamma(𐑘)=5
 
+Γ (Granularity) — 𐑲 (G_revapostrophe, fine/atomic) was at ordinal 3; corrected to:
+  G_revapostrophe(𐑲)=1 < G_beta(𐑚)=2 < G_gamma(𐑔)=3
+  (matches Hebrew ℵ < ℶ < ℷ convention in models.py — this inversion was the
+   same bug flagged in models.py itself: "old aleph was GLOBAL=coarsest")
 
-Previous: SO_BELOW: Kinetics label correction (2026-05-25)
-=======================================================================
+Version comments updated: v0.4.26/v0.4.27 → v0.5.0
 
-manuscripts/SO_BELOW.tex
-  - "Kinetic character" → "Kinetics" (1 occurrence in primitive table)
-  - Result: 0 missing character warnings; 68 pages
+Previous: manuscripts/AS_ABOVE.tex: fix all broken math-mode dollar signs (2026-05-28)
+=========================================================================
 
+Systematic fix of ~80 broken LaTeX math expressions throughout the 2120-line manuscript:
+- $$\op$$ (display math used inline) → $\op$ for: rightarrow, Rightarrow, otimes, wedge, vee, circ, odot
+- $$\langle$ ... $\rangle$$ (broken tuple delimiters) → $\langle ... \rangle$
+- $O_{$\infty$}$ and _{$\infty$} (nested dollar in subscript) → $O_{\infty}$ / _{\infty}
+- $\mu $\circ$ \delta (stray dollar around \circ) → $\mu \circ \delta
+- }} $\notin$ / $\neq$ / $\in$ / $\otimes$ (inline relation inside outer $...$) → }} \notin / \neq / \in / \otimes
+- $3^3 $\times$ 4^5 $\times$ 5^4$ → $3^3 \times 4^5 \times 5^4$
+- $\mathbf{Set}^$\times$$ → $\mathbf{Set}^\times$
+- $$\neg$\text{Prov}... and $$\lceil$...$\rceil$...$\in$... fixed to single math expressions
+- Line 1814 equation env: stripped $..$ delimiters around \langle/\rangle (already in math mode)
+- Line 1878 table cell: fixed $\mathcal{F} \vdash \phi $\leftrightarrow$ \psi(...)$
+- PDF: 395K, compiles cleanly
 
-Previous: Manuscripts: Everson Mono, Shavian fixes, label corrections (2026-05-25)
-=======================================================================
+SO_BELOW.tex already compiled (warnings only, PDF at 507K).
 
-manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
-  - Font: \igfont switched FreeSerif → Everson Mono (FreeSerif has no Shavian block)
-  - 756 ${\igfont X}$ → {\igfont X} (strip spurious math-mode wrappers)
-  - All {\igfont SHAVIAN} → \text{{\igfont SHAVIAN}} (math-mode safety, full U+10450–U+1047F)
-  - Table headers corrected: $P^*$→Φ, $F^*$→ƒ, $K$→Ç, $H$→Ħ, $S$→Σ
-  - Global: R_\uparrow→𐑩, R_\circ→𐑑, P_\varnothing→𐑗, P_\equiv→𐑯 (7+4+10+15 replacements)
-  - Labels: "Coupling" (was Relational mode), "Cardinality" (was Scope/granularity),
-            "Chirality" (was Chirality/chirality), "Parity" (was Parity/symmetry),
-            "Composition" (was Interaction grammar), "Kinetics" (was Kinetic character)
-  - Winding row: duplicate 𐑷 at ordinal 4 corrected to 𐑟 (Omega_NA)
-  - Result: 0 missing character warnings; AS_ABOVE 48pp, SO_BELOW 68pp
+Previous: PARACONSISTENT_LEAN_KERNEL.md: increase Figure 4 inter-layer arrow spacing (2026-05-28)
+=========================================================================
 
+- Layer y-positions spread from (5.4, 3.4, 1.1, -0.9) to (7.5, 5.1, 2.4, -0.8)
+- Arrow gaps increased from ~0.5 cm (zero at bottom) to ~1.0 cm between all layers
+- PDF rebuilds clean at 240K
 
-Previous: Manuscript Shavian font fix: Everson Mono, zero missing glyphs (2026-05-25)
-=======================================================================
+Previous: GRAMMAR_PRECEDES_MATHEMATICS.md: cite all 9 Zenodo publications (2026-05-28)
+=========================================================================
 
-manuscripts/AS_ABOVE.tex + manuscripts/SO_BELOW.tex
-  - \igfont switched from FreeSerif (no Shavian) to Everson Mono
-  - 756 occurrences of ${\igfont X}$ → {\igfont X} (strip math-mode wrapper)
-  - All {\igfont SHAVIAN} → \text{{\igfont SHAVIAN}} for math-mode safety
-    (full block U+10450–U+1047F covered)
-  - Result: 0 missing character warnings in both logs
-  - AS_ABOVE.pdf: 48 pages; SO_BELOW.pdf: 68 pages — all glyphs rendering
+- In-text [1,2] (As Above, So Below) in abstract at "twelve primitive dimensions" and in §2 crystal census
+- In-text [3] (Hecke-Landau) in §11.1 RH section — companion equidistribution result on unit circle
+- In-text [4] (Lefschetz 1,1) in §11.6 Hodge section — first case of Hodge Conjecture proved
+- In-text [5] (Euler+Touchard OPN) in §12.1 at Euler's form $N = p^\alpha m^2$
+- References section [1]–[9] appended after Acknowledgments
 
-Previous: Strip videos/ from git history + gitignore *.gif (2026-05-25)
-=======================================================================
+Previous: PARACONSISTENT_LEAN_KERNEL.md + shavian_notation_spec.md: cite Zenodo publications (2026-05-28)
+=========================================================================
 
-.gitignore
-  - Added *.gif (*.mp4 was already present)
+PARACONSISTENT_LEAN_KERNEL.md:
+- Added references [15]–[23]: all 9 Zenodo publications by Lando Mills under new
+  "Imscribing Grammar — Prior Publications" group
+- In-text [15,16] at body intro ("grammar that encodes it") and structural position section
+- In-text [17] (Hecke-Landau) in RH bridge section — companion equidistribution result
+  for Hecke characters on unit circle cited alongside the B-gate derivation
+- PDF rebuilds clean at 241K
 
-git history rewrite (git-filter-repo)
-  - videos/ directory removed from all commits
-  - 3 large GIFs excised: mpv_TTl4QyfIFr.gif (1.54 GB), lattice_jiggle.gif
-    (516 MB), crystal_jiggle_2.gif (360 MB)
-  - .git/ shrunk from ~2.24 GB pack to 713 MB
-  - History force-pushed to Imscribing_Grammar remote
+shavian_notation_spec.md:
+- Added [1] and [2] in-text in Rationale (primitive derivation and crystal validation)
+- Added References section at end: [1] As Above, [2] So Below
+- Fixed stale implementation checklist item 8 (Noto → Everson Mono)
 
-Previous: Shavian migration + LuaLaTeX fix (2026-05-24)
-=======================================================================
+Previous: shavian_notation_spec.md: add Everson Mono canonical font section (2026-05-28)
+=========================================================================
 
-paraconsistent_os_manuscript.tex — LuaLaTeX compilation fix
-  - Replaced pdflatex preamble with fontspec/unicode-math/FreeSerif/Latin Modern Math
-  - Added missing commands: \textflorin, \glottalstop, \textrhook, \b (β), \g (γ)
-  - Fixed \^ and \H accent macro escapes (\string^ and ˝ literal)
-  - Fixed 9 unclosed subscript braces in \Phi_{\text{\}} tuple displays
-  - Compiles clean: 14 pages, 0 errors
+Added "Canonical Font: Everson Mono" section immediately before the Mapping Table:
+- Rationale: Everson designed both the Unicode block and the typeface; it is the
+  authoritative glyph source, not an approximation
+- Source URL (evertype.com/fonts/shaw/), license note, filename (EversonMono.ttf)
+- Usage table: LuaLaTeX (\newfontfamily\igprimfont), web CSS, terminal, Python
+- "What not to use" table: FreeSerif (zero Shavian glyphs), Noto Sans Shavian
+  (incomplete), emoji/symbol fonts
+- Updated Website Notation CSS: replaced Noto Sans Shavian CDN with Everson Mono
+  self-hosted path; added unicode-range hint; adjusted font-size (1.1em) and
+  letter-spacing (0.02em) for monospace grid
 
-IG_catalog.json — Shavian notation migration (v0.6.0)
-  - 2771 canonical-key entries migrated from phonetic notation to 49 Shavian chars
-  - 108 alt-key entries (D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega) migrated
-  - 0 old-notation primitive values remaining
+Previous: PARACONSISTENT_LEAN_KERNEL.md: references, citations, update + PDF fix (2026-05-28)
+=========================================================================
 
-imscrbgrmr/models.py — Shavian from_symbol() aliases
-  - All 12 primitive enums updated with Shavian (v0.6.0) lookup aliases
-  - 49 Shavian chars mapped; ⊙ sealed gate → Phi_ctyogh (50th non-Shavian critical point)
-  - Old phonetic aliases preserved for backward compat
+Key changes:
+- References section added: 14 entries across three groups (Logical/Mathematical
+  Foundations, Proof Assistants, Software Repositories); includes all three GitHub
+  repos (MillenniumAnkh, Imscribing_Grammar, priests-engine), Belnap [1,2], Priest [3],
+  Riemann [4], Cook [5], Renes et al. [6], Yang-Mills [7,8], Lee-Yang [9], Lean 4 [10], Mathlib [11]
+- Numbered citations placed throughout body and hyperlinked to References section:
+  [1,2] at Belnap intro; [3] at DAT; [4] at RH; [9] at Lee-Yang; [5] at P vs NP;
+  [6] at SIC-POVM; [7,8] at Yang-Mills; [10,11] at Lean 4/Mathlib; [12,13] at
+  structural position; [12,13,14] at Data Availability; acknowledgments use numbered links
+  Each reference entry carries a pandoc span anchor ([[N]]{#ref-N}); in-text
+  citations use [[N]](#ref-N) hyperlinks — clickable in the PDF via hyperref
+- Notation fix: $\Phi_\}$ and $\Phi_\upsilon$ (Symbol_symbol legacy) replaced
+  with plain text + Shavian 𐑹 in Shor module descriptions; fixes LaTeX brace error
+- PDF build fix: \\in in DAT tikznode was rewritten by latextiler as $\in$ (math
+  rewrite bug); replaced with \\[0pt]in (zero-space line break, visually identical)
+- PDF builds clean: 236K, zero sorry axioms confirmed
+- Module count: 12 → 30 (26 top-level + 4 Shor/)
+- Line count: 4,840 → 4,082
+- Gap closed: QCI_FrobeniusBias.lean closes the "honest gap" about measurement bias;
+  replace placeholder text with description of gap_closed theorem (proved by rfl)
+- 4th Millennium bridge: add Yang-Mills section (QCI_YM_Bridge.lean); N as vacuum,
+  B as excited state, mass gap as coherence cost of N→B transition
+- New modules documented: QCI_FrobeniusBias (147L), QCI_Sequences (83L),
+  QCI_nRegister (64L), SelfVerifyingWASM (121L), MultiAgentBelnap (53L), Shor/ (4 files, 271L)
+- Architecture figure updated: Interface Layer and Bridges nodes include all new modules
+- Minor line count corrections: QuantumClassicalInterface 129→128, ParadoxFS 184→183
+- Millennium Bridges count corrected: 3 files ~660L → 8 files ~542L (actual line counts)
+- Appendix B: 16 new theorem entries for all new modules
+- Abstract and closing paragraphs updated for four barriers
+- Data Availability updated
 
-IG_primitive_map_3d.py — ORDINALS Shavian keys
-  - All 12 ORDINALS sub-dicts updated with Shavian keys (additive, old keys preserved)
+Previous: MillenniumAnkh: QCI_FrobeniusBias.lean — bias = Frobenius dual, 0 sorrys (2026-05-28)
+=========================================================================
 
-shavian_notation_spec.md — checklist steps 2–12 marked ✅ (step 9 Lean docs remains ⬜)
+~/MillenniumAnkh/Imscribing/Paraconsistent/QCI_FrobeniusBias.lean
+  Lean 4 formalization closing the gap in QuantumClassicalInterface.lean.
+  Proves measureQ0's `bias` parameter is fully determined by the Frobenius
+  algebra duality (CouplingMode × apparatus state × system register).
+  13 theorems, 0 sorrys. lake build: ✔ [346/346].
+  lakefile.toml updated to include the new module.
 
-Verification: 49/49 Shavian round-trips confirmed; sans_silicon_imscribing loads correctly.
+Previous: markdown/PARACONSISTENT_LEAN_KERNEL.md: close 𐑻 absorption gap (2026-05-28)
+=========================================================================
 
-ouroboricity tier bug fix (2026-05-24)
+§ "The 𐑻 Absorption Rule": appended two paragraphs closing the admitted gap.
+The bias is not an external parameter — it is the eigenvalue of the Frobenius
+pairing at the exceptional point; the measurement apparatus reads it, not
+supplies it. Names the remaining Lean formalization target: prove that bias
+= Frobenius dual of the measurement context.
 
-IG_primitive_map_3d.py — ouroboricity() function:
-  - Now checks Shavian ⊙ (Phi_c) and 𐑮 (Phi_c_complex) as critical
-  - R1 trigger updated to Lean-authoritative rule: P_pm_sym at Phi_c → O_inf
-    (old H_inf trigger replaced — Lean Core.lean R1 theorem is authoritative)
-  - Added Shavian backward-compat for Ω, Ħ, Γ scoring components
-  - Frobenius cluster (Ark/Graal/Lapis/Stone) now correctly returns O_inf
-  - Omphalos correctly returns O_4 (P_sym ≠ P_pm_sym — oracle doesn't close)
-  - RH correctly returns O_4 (Phi_c_complex, not Frobenius)
-  - YM correctly returns O_0 (Phi_sub, missing foundation)
+Previous: markdown/AI_ACADEMIA_LIFT.md: multi-route lift redesign + Shavian notation (2026-05-28)
+=======================================================================================
 
-crystal_viz.py — get_tier() and constants:
-  - CRITICAL set expanded: {"⊙", "𐑮", "⊙", "𐑮"} (old + Shavian)
-  - NONCRIT set expanded: added 𐑢 𐑻 𐑣 (Phi_sub/EP/super Shavian)
-  - BOUNDED_D expanded: added 𐑛 𐑨 𐑦 (non-holographic Shavian)
-  - P_PM_SYM set: {"𐑹", "𐑹"} replaces bare string check
-  - OMEGA_0 set: {"𐑷", "𐑷", ""} for no-protection check
+Each primitive delta now has four named routes instead of one prescriptive
+surface move. Routes are labelled A/B/C/D and differentiated by genre, voice,
+and material present in the draft. The analyst chooses one route per paper,
+with explicit guidance to rotate routes across papers to avoid a recognizable
+pattern.
 
-SacredVessel co-type analysis (2026-05-24)
+Added "Choosing a Route" section: genre tendencies, using material already
+in the draft rather than fabricating structural drama, and rotation.
 
-IG_catalog.json — 5 sacred vessel entries added:
-  ark_covenant, lapis_exillis, philosophers_stone, omphalos (new)
-  graal (updated: Ð D_triangle→D_odot, Þ T_odot→T_in, Ř R_lr→R_dagger)
-  Shared backbone: Ř=𐑽 (R_dagger), ⊙=⊙ (Phi_c), Ħ=𐑫 (H_inf), Ð=𐑦 (D_odot)
-  Frobenius cluster (Φ=𐑹): Ark, Graal, Lapis, Stone
-  Symmetric center (Φ=𐑯): Omphalos
+All primitive values use Shavian notation throughout (𐑡 𐑥 𐑗 𐑬 𐑱 𐑐 𐑤 𐑧
+𐑔 𐑲 𐑝 𐑠 𐑓 𐑖 𐑷 𐑴). Structural type tuples in ⟨·glyph·⟩ format with ·
+separator. Bottleneck count corrected to eight. Quick reference table updated.
+Fixed typo in authorship note.
 
-Shavian manuscript migration (2026-05-24)
+Previous: agents/true_agentic_agent.py: local inference bugs fixed (2026-05-27)
+======================================================================
 
-manuscripts/AS_ABOVE.tex — full Shavian v0.6.0 migration
-  - 693 replacements across 4 passes
-  - All old-notation \text{{\igprimfont X}}_{VALUE} patterns replaced with {\igfont SHAVIAN}
-  - Phi_c (⊙) subscript removed — bare ⊙ is the sealed gate
-  - 𐑰 (T_bowl) wrong→𐑰 fix: initial pass had mapped 𐑰→𐑶 (T_cage), corrected in pass 2
-  - 3 intentional non-values preserved: Ħ_n (variable step), Ð_1…Ω_12 (positional indices)
+agents/true_agentic_agent.py
 
-manuscripts/SO_BELOW.tex — full Shavian v0.6.0 migration
-  - 979 replacements across 4 passes
-  - 6 preamble macro definitions updated to Shavian:
-      \Phic: ⊙ → bare ⊙ (sealed gate, no subscript)
-      \Ppm: 𐑬 → 𐑬 (P_pipevar)
-      \GamSeq: ɢ_→ → 𐑠 (G_seq)
-      \Tbw: Þ_{⋈} → 𐑥 (T_bullseye)
-      \Tin: Þ_{⊂} → 𐑰 (T_bowl)
-      \Tbox: Þ_{⊠} → 𐑶 (T_cage)
-  - \Phic^{\mathbb{C}} → 𐑮 (Phi_c_complex) in 7 places
-  - ⊙_× → 𐑣, ⊙_↑ → 𐑻 (exceptional-point and supercritical notation)
-  - 1 intentional non-value preserved: ƒ_X/ƒ_Y (formula variables)
+  Bug 1 — Wrong tool injection format in _LocalChatCompletions:
+    Tool schemas were manually injected into the system message text using a
+    <tool_schemas> tag. Qwen3's chat template uses <tools> and the model was
+    trained on that format — <tool_schemas> is unrecognised. The justifying
+    comment ("template may detect <tools> and skip re-injection") was wrong:
+    the template branches on the `tools` parameter, not message content.
+    _SYSTEM_PROMPT's IG TOOL REFERENCE section was wrapped in <tools>...</tools>
+    which would collide with the template's own injection; renamed to
+    <tool_reference>...</tool_reference>. Manual injection removed; tools now
+    passed directly to apply_chat_template (main and CPU-fallback paths).
+
+  Bug 2 — Greedy decoding + wrong max_new_tokens default in _LocalChatCompletions:
+    Both mdl.generate() calls used temperature=None, do_sample=False (greedy
+    decoding). Qwen3 model card explicitly warns against greedy decoding:
+    causes performance degradation and endless repetitions. Fixed to
+    temperature=0.7, top_p=0.8, top_k=20, min_p=0.0, do_sample=True
+    (Qwen3 non-thinking recommended params). Default max_tokens also corrected
+    from 4096 to 32768 (Qwen3 recommended default).
+
+  Bug 3 — Tetractys sub-calls used HTTP client for local models:
+    When running --model local or --model local:/path, _spawn_config["model"]
+    is "local" or "local:...". The Tetractys protocol in _imscribe_system_emit
+    resolved this through _build_client(), which either called sys.exit() if
+    OPENROUTER_API_KEY was absent, or sent model="local" to OpenRouter
+    (invalid). Tetractys never ran actual local tensor inference.
+    Fix: detect local prefix and use _LocalOpenAIClient() directly.
+
+  Bug 4 — No-op max_tokens cap in _LocalChatCompletions.create:
+    `max_tokens = min(max_tokens, 4096)` with default max_tokens=4096 never
+    reduced anything. Removed.
+
+  Bug 5 — Dead first definition of _imscribe_system_emit / _imscribe_system_verify:
+    Both functions were defined twice; the first definition (lines 882–902,
+    no Tetractys, simple tuple assembly) was silently overwritten at module
+    load time by the second definition (lines 1212+, full Tetractys protocol).
+    The dead code was never called. Removed.

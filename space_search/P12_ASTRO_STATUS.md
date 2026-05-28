@@ -117,6 +117,48 @@ The cleanest test remains the Vela UWL observation, which would use one instrume
 
 ---
 
+## Updated Canonical Primitive Distances (v0.5.0, post Ç/Γ ordinal fix)
+
+Two ordinal errors corrected in `primitives.py` (v0.4.27 → v0.5.0):
+
+**Ç (Kinetics)** was fully inverted. Canonical order is K_lambda(𐑺)=1 (MBL, disorder-frozen) through K_frtailgamma(𐑘)=5 (diffusion-limited, no barrier). Old code had 𐑘=1, 𐑺=4.5.
+
+**Γ (Granularity)** had 𐑲 (G_revapostrophe, fine/atomic) at ordinal 3 instead of 1. Canonical: 𐑲(fine)=1 < 𐑚(meso)=2 < 𐑔(coarse)=3, matching ℵ < ℶ < ℷ.
+
+| Pair | d_tuple (old) | d_tuple (new) | d_maha (new) |
+|------|:---:|:---:|:---:|
+| human ↔ civ_dm | 4.301 | **3.937** | 3.414 |
+| pulsar_noise ↔ civ_dm | ~4.15 | **3.808** | 3.847 |
+| human ↔ interstellar_target | ~4.14 | **3.847** | 3.759 |
+| pulsar_noise ↔ interstellar_target | — | **3.715** | 4.106 |
+
+Breakdown for human→civ_dm (post-fix): dominant contributions are Ř (Δ=2, 4.000) and Ç (Δ=2, 4.000); all other primitives contribute Δ=1. The Γ contribution dropped from 4.000 (was Δ=2) to 1.000 (now Δ=1) due to the ordinal correction.
+
+---
+
+## Null Test — NANOGrav 15yr Residuals (Shuffle Method)
+
+Tested whether P-12 (ln10 periodicity) appears in timing residuals above shuffle background.
+
+**Result: 0/13 significant. All Z-scores negative.**
+
+Every pulsar tested has *fewer* Lomb-Scargle peaks near ln(10) in real data than in shuffled controls. Combined Fisher: p=1.00, Z=0.00. P-12 is not detectable in NANOGrav timing residuals at any power above the noise floor.
+
+This is consistent with the honest simultaneity result: P-12, if real, is an *emission* signature visible in simultaneous multi-frequency radio bursts, not a timing residual periodicity.
+
+---
+
+## Ω₂ Lensing Test (Simulated Shear Catalog)
+
+Tested for parity-odd B-mode excess near P-74 neutron star positions.
+
+**Real test**: 0/10 Ω₂ candidates (B-mode SNR < threshold at all targets).
+**Validation** (injected signal=0.005): 2/10 detected (PSR B1937+21, Vela) — confirms the detection pipeline functions.
+
+No Ω₂ lensing signal in existing simulated shear catalogs. Requires KiDS-1000 or Euclid DR1 real shear data for a meaningful test.
+
+---
+
 ## Files
 
 | File | Description |

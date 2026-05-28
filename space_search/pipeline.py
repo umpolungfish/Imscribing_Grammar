@@ -126,7 +126,7 @@ def cross_correlate(gaia_candidates: list[dict],
             "gaia_top": gaia_near[0] if gaia_near else None,
             "p12_phase2_events": [m.get("event_name") for m in p2_near],
             "p12_phase3_best": best_p3_match,
-            "estimated_d_effective": max(0.5, 4.18 - score * 0.56),
+            "estimated_d_effective": max(0.5, 3.937 - score * 0.56),
         })
 
     conjunctions.sort(key=lambda x: (-x["conjunction_score"], -x["p74_dm_weight"]))

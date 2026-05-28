@@ -108,10 +108,7 @@ class _LocalChatCompletions:
     """Synchronous .create() backed by direct tensor inference via LocalProvider."""
 
     def create(self, model: str, messages: List[Dict], tools=None,
-               tool_choice=None, max_tokens: int = 4096, **kwargs) -> "_LocalCompletion":
-        # Cap output for local models: enough for a full tool call with verbose description,
-        # well below the default 4096 that wastes KV cache on a small-VRAM GPU.
-        max_tokens = min(max_tokens, 4096)
+               tool_choice=None, max_tokens: int = 32768, **kwargs) -> "_LocalCompletion":
         import re, json, torch
         _root = str(Path(__file__).resolve().parent.parent)
         if _root not in sys.path:
@@ -128,28 +125,14 @@ class _LocalChatCompletions:
         tok = LocalProvider._tokenizer
         mdl = LocalProvider._model
 
-        # Manually inject the tools JSON into the system message in Qwen3's training
-        # format rather than relying on apply_chat_template(tools=...).  The system
-        # prompt already contains a <tools> XML block (the human-readable reference);
-        # Qwen3's template may detect that tag and skip re-injection, leaving the model
-        # without the JSON schemas it needs to generate <tool_call> format.
         import json as _json
-        tools_block = ""
-        if tools:
-            tools_lines = "\n".join(_json.dumps(t) for t in tools)
-            tools_block = (
-                "\n\n# Available tools\n\n"
-                "You MUST call exactly one tool per winding using this format:\n"
-                "<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json>}\n</tool_call>\n\n"
-                f"<tool_schemas>\n{tools_lines}\n</tool_schemas>"
-            )
 
         qwen_msgs: List[Dict[str, Any]] = []
         for msg in messages:
             role = msg.get("role", "")
             content = msg.get("content") or ""
             if role == "system":
-                qwen_msgs.append({"role": "system", "content": content + tools_block})
+                qwen_msgs.append({"role": "system", "content": content})
             elif role == "user":
                 qwen_msgs.append({"role": role, "content": content})
             elif role == "assistant":
@@ -165,7 +148,7 @@ class _LocalChatCompletions:
 
         text = tok.apply_chat_template(
             qwen_msgs,
-            tools=None,   # tools already injected manually above
+            tools=tools,
             tokenize=False,
             add_generation_prompt=True,
             enable_thinking=False,
@@ -194,8 +177,11 @@ class _LocalChatCompletions:
                 outputs = mdl.generate(
                     **inputs,
                     max_new_tokens=max_tokens,
-                    temperature=None,
-                    do_sample=False,
+                    temperature=0.7,
+                    top_p=0.8,
+                    top_k=20,
+                    min_p=0.0,
+                    do_sample=True,
                     pad_token_id=tok.eos_token_id,
                 )
             except RuntimeError as _cuda_err:
@@ -222,7 +208,7 @@ class _LocalChatCompletions:
                     LocalProvider._loaded_path = prov.model_path
                     cpu_inputs = tok(
                         tok.apply_chat_template(
-                            qwen_msgs, tools=None, tokenize=False,
+                            qwen_msgs, tools=tools, tokenize=False,
                             add_generation_prompt=True, enable_thinking=False,
                         ),
                         return_tensors="pt",
@@ -230,8 +216,11 @@ class _LocalChatCompletions:
                     outputs = mdl.generate(
                         **cpu_inputs,
                         max_new_tokens=max_tokens,
-                        temperature=None,
-                        do_sample=False,
+                        temperature=0.7,
+                        top_p=0.8,
+                        top_k=20,
+                        min_p=0.0,
+                        do_sample=True,
                         pad_token_id=tok.eos_token_id,
                     )
                     n_input = cpu_inputs.input_ids.shape[1]
@@ -879,29 +868,6 @@ def _imscribe_verify(emit_input: Dict, emit_output: str,
         return ("imscribe tool returned unstructured text — treating as closed", True)
 
 
-def _imscribe_system_emit(args: Dict[str, Any]) -> str:
-    """Dedicated emit for imscribe_system — routes through imscribe with tuple assembled."""
-    name        = args.get("name", "")
-    description = args.get("description", "")
-    # Build the semicolon-separated tuple from the 12 explicit primitive keys
-    order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
-    parts = [str(args.get(p, "")) for p in order]
-    tuple_str = ";".join(parts)
-    tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
-    justification = args.get("convergence_justification", "")
-    if justification:
-        tool_args["convergence_justification"] = justification
-    return _imscribe_emit({
-        "tool_name": "imscribe_system",
-        "args": tool_args,
-    })
-
-
-def _imscribe_system_verify(emit_input: Dict, emit_output: str,
-                           verify_args: Dict) -> Tuple[str, bool]:
-    return _imscribe_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
-
-
 def _done_emit(args: Dict[str, Any]) -> str:
     return args.get("conclusion", "(no conclusion provided)")
 
@@ -1238,9 +1204,13 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # ── TETRACTYS PROTOCOL ────────────────────────────────────────────────
     # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
     # Windings 2 & 3 = fresh de novo sub-calls (no catalog, no history)
-    model_id = _spawn_config.get("model", "grok-4")
-    resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(model_id)
-    client = _build_client(base_url=resolved_base, api_key=resolved_key)
+    raw_model = _spawn_config.get("model", "grok-4")
+    if raw_model.lower() == "local" or raw_model.lower().startswith("local:"):
+        resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
+        client = _LocalOpenAIClient()
+    else:
+        resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(raw_model)
+        client = _build_client(base_url=resolved_base, api_key=resolved_key)
 
     tri = _triangulate_imscription(proposed, name, description, client, resolved_model)
 
@@ -2173,7 +2143,7 @@ investigation, or decomposing complex research while continuing the parent task.
 - Example: `spawn_agent(task="Imscribe the Langlands correspondence and find its 3 nearest structural neighbors", max_windings=50)`
 </requirements>
 
-<tools>
+<tool_reference>
 ──────────────────────────────────────────────────────────────────────
 IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
 ──────────────────────────────────────────────────────────────────────
@@ -2324,7 +2294,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
 
   navigator_info()   — full description of all mathematical navigators
   riemann_xi_info()  — Riemann ξ self-imscription, crystal address, O_inf convergence criteria
-</tools>
+</tool_reference>
 
 <lean_modules>
 ──────────────────────────────────────────────────────────────────────

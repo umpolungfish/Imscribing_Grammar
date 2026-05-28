@@ -3,8 +3,8 @@
   "n_pulsars": 13,
   "n_significant": 0,
   "high_dm_significant": [],
-  "combined_p_value": 0.9990015947986717,
-  "combined_z": 0.0012513156801438295,
+  "combined_p_value": 0.9999996071803205,
+  "combined_z": 4.923264576718902e-07,
   "per_pulsar": [
     {
       "name": "B1937+21",
@@ -105,11 +105,11 @@
     {
       "name": "J1939+2134",
       "source": "sim",
-      "real_hits": 17,
-      "bg_mean": 21.83,
-      "bg_std": 4.201,
-      "z_score": -1.15,
-      "p_value": 0.906,
+      "real_hits": 20,
+      "bg_mean": 21.58,
+      "bg_std": 4.067,
+      "z_score": -0.39,
+      "p_value": 0.69,
       "significant": false,
       "dm_pc_cm3": 71.023,
       "dm_weight": 0.65
@@ -129,11 +129,11 @@
     {
       "name": "J1748-2021B",
       "source": "sim",
-      "real_hits": 18,
-      "bg_mean": 21.56,
-      "bg_std": 4.449,
-      "z_score": -0.8,
-      "p_value": 0.798,
+      "real_hits": 20,
+      "bg_mean": 21.61,
+      "bg_std": 4.369,
+      "z_score": -0.37,
+      "p_value": 0.69,
       "significant": false,
       "dm_pc_cm3": 223.6,
       "dm_weight": 0.95
@@ -141,11 +141,11 @@
     {
       "name": "J1824-2452A",
       "source": "sim",
-      "real_hits": 30,
-      "bg_mean": 21.9,
-      "bg_std": 4.324,
-      "z_score": 1.87,
-      "p_value": 0.044,
+      "real_hits": 15,
+      "bg_mean": 22.09,
+      "bg_std": 4.218,
+      "z_score": -1.68,
+      "p_value": 0.968,
       "significant": false,
       "dm_pc_cm3": 119.9,
       "dm_weight": 0.9
@@ -153,11 +153,11 @@
     {
       "name": "J1911-5958A",
       "source": "sim",
-      "real_hits": 20,
-      "bg_mean": 21.73,
-      "bg_std": 4.749,
-      "z_score": -0.36,
-      "p_value": 0.687,
+      "real_hits": 21,
+      "bg_mean": 21.55,
+      "bg_std": 4.738,
+      "z_score": -0.12,
+      "p_value": 0.573,
       "significant": false,
       "dm_pc_cm3": 216.79,
       "dm_weight": 0.88

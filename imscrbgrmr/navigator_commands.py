@@ -29,17 +29,17 @@ from rich.table import Table
 from rich.panel import Panel
 from rich import box
 
-# New navigator imports
-from category_theory_navigator import CategoryNavigator
-from homotopy_type_theory_navigator import HTTNavigator
-from algebraic_geometry_navigator import AGNavigator
-from quantum_field_theory_navigator import QFTNavigator
-from langlands_program_navigator import LanglandsNavigator
-from representation_theory_navigator import RepTheoryNavigator
-
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
+
+# New navigator imports
+from navigators.category_theory_navigator import CategoryNavigator
+from navigators.homotopy_type_theory_navigator import HTTNavigator
+from navigators.algebraic_geometry_navigator import AGNavigator
+from navigators.quantum_field_theory_navigator import QFTNavigator
+from navigators.langlands_program_navigator import LanglandsNavigator
+from navigators.representation_theory_navigator import RepTheoryNavigator
 
 console = Console()
 
@@ -108,7 +108,7 @@ def crystal_group():
 
 
 def _load_crystal():
-    from crystal_navigator import CrystalNavigator
+    from navigators.crystal_navigator import CrystalNavigator
     return CrystalNavigator()
 
 
@@ -157,7 +157,7 @@ def crystal_verify(n: int):
 
     Tests decode(encode(addr)) == addr for N random addresses.
     """
-    from crystal_navigator import CrystalNavigator, TOTAL_SIZE, encode_tuple, decode_address
+    from navigators.crystal_navigator import CrystalNavigator, TOTAL_SIZE, encode_tuple, decode_address
     import random
 
     console.print(f"\n  Verifying Frobenius codec on {n:,} random addresses …")
@@ -191,7 +191,7 @@ def crystal_encode(kvs, full: bool):
       imscribe nav crystal encode Phi=Phi_ctyogh P=P_doublebarpipe
       imscribe nav crystal encode Phi=Phi_softsign P=P_aolig Omega=Omega_closeepsilon D=D_wynn
     """
-    from crystal_navigator import CrystalNavigator, NAVIGATOR_TUPLE, PRIMS
+    from navigators.crystal_navigator import CrystalNavigator, NAVIGATOR_TUPLE, PRIMS
 
     nav = _load_crystal()
     overrides = dict(kv.split("=", 1) for kv in kvs if "=" in kv)
@@ -230,7 +230,7 @@ def crystal_decode(address: int):
     Example:
       imscribe nav crystal decode 6734591
     """
-    from crystal_navigator import TOTAL_SIZE, PRIMS
+    from navigators.crystal_navigator import TOTAL_SIZE, PRIMS
 
     nav = _load_crystal()
 
@@ -272,7 +272,7 @@ def crystal_nearest(kvs, n: int, same_tier: bool):
       imscribe nav crystal nearest Phi=Phi_ctyogh P=P_doublebarpipe -n 5
       imscribe nav crystal nearest D=D_invomega Phi=Phi_ctyogh --same-tier
     """
-    from crystal_navigator import NAVIGATOR_TUPLE
+    from navigators.crystal_navigator import NAVIGATOR_TUPLE
 
     nav = _load_crystal()
     overrides = dict(kv.split("=", 1) for kv in kvs if "=" in kv)
@@ -336,7 +336,7 @@ def crystal_query(phi, p, omega, d, tier):
       imscribe nav crystal query --tier O_inf
       imscribe nav crystal query --omega Omega_dzlig --d D_omega
     """
-    from crystal_navigator import INNER_SIZE
+    from navigators.crystal_navigator import INNER_SIZE
 
     nav = _load_crystal()
     cells = nav.imscriptive_query(phi=phi, p=p, omega=omega, d=d, tier=tier)
@@ -415,7 +415,7 @@ _domain_option = click.option(
 
 
 def _domain_nav(domain: str):
-    from domain_navigators import DomainNavigator, Catalog
+    from navigators.domain_navigators import DomainNavigator, Catalog
     return DomainNavigator(domain, Catalog())
 
 
@@ -451,7 +451,7 @@ def domain_distance(name_a: str, name_b: str, domain):
     Example:
       imscribe nav domain distance proto_indo_european sign_language_asl
     """
-    from domain_navigators import DomainNavigator, Catalog, DOMAIN_NAMES
+    from navigators.domain_navigators import DomainNavigator, Catalog, DOMAIN_NAMES
 
     cat = Catalog()
     if domain is None:
@@ -473,7 +473,7 @@ def domain_nearest(name: str, n: int, domain):
     Example:
       imscribe nav domain nearest human_consciousness -n 8 --domain consciousness
     """
-    from domain_navigators import DOMAIN_NAMES
+    from navigators.domain_navigators import DOMAIN_NAMES
 
     if domain is None:
         domain = next(

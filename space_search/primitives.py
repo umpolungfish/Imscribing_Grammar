@@ -1,6 +1,6 @@
 """
 Imscribing Grammar primitive ordinals and distance computation for the space search pipeline.
-All weights and ordinals are canonical as of v0.4.27 (12-primitive tuple, Mahalanobis metric).
+All weights and ordinals are canonical as of v0.5.0 (12-primitive tuple, Mahalanobis metric).
 
 Distance functions
 ------------------
@@ -29,8 +29,8 @@ ORDINALS = {
     "Ř": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
     "Φ": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
     "ƒ": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
-    "Ç": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
-    "Γ": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
+    "Ç": {"𐑺": 1, "𐑪": 2, "𐑧": 3, "𐑤": 4, "𐑘": 5},
+    "Γ": {"𐑲": 1, "𐑚": 2, "𐑔": 3},
     "ɢ": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
     "Ħ": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
@@ -38,7 +38,7 @@ ORDINALS = {
     "Ω": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-# Primitive weights (canonical v0.4.26)
+# Primitive weights (canonical v0.5.0)
 WEIGHTS = {
     "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.0,
     "ƒ": 1.0, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,

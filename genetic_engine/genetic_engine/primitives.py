@@ -1,7 +1,7 @@
 """
 primitives.py — Amino Acid → IG Primitive Mapping with Risk Classification.
 
-12 promoted amino acids each activate exactly one IG primitive.
+13 promoted entries (12 amino acids + Stop) each activate exactly one IG primitive.
 8 ground-layer (exact-box) amino acids activate no primitive.
 
 Promoted AAs (split stratum):
