@@ -14,6 +14,7 @@ Token setup (one-time):
   (both need scopes: deposit:write  deposit:actions)
 """
 
+import datetime
 import os
 import sys
 import json
@@ -63,11 +64,48 @@ ACCESS_RIGHTS = {
     "closed": "Closed",
 }
 
+RELATION_TYPES = {
+    "isVersionOf":        "Is new version of (prior DOI/URL)",
+    "isPreviousVersionOf":"Is previous version of (newer DOI/URL)",
+    "isPartOf":           "Is part of a series/collection",
+    "hasPart":            "Has part (companion file DOI/URL)",
+    "isSupplementTo":     "Is supplement to another paper",
+    "isSupplementedBy":   "Is supplemented by (code, data…)",
+    "references":         "References (cites another work)",
+    "isReferencedBy":     "Is referenced by another work",
+    "isIdenticalTo":      "Is identical to (mirror/alt URL)",
+    "isAlternateIdentifier": "Alternate identifier (arXiv, handle…)",
+}
+
+IDENTIFIER_SCHEMES = {
+    "doi":    "DOI  (10.xxxx/…)",
+    "url":    "URL  (https://…)",
+    "arxiv":  "arXiv  (arXiv:xxxx.xxxxx)",
+    "handle": "Handle",
+    "isbn":   "ISBN",
+    "issn":   "ISSN",
+    "other":  "Other",
+}
+
+CONTRIBUTOR_TYPES = {
+    "Researcher":        "Researcher",
+    "Editor":            "Editor",
+    "DataCollector":     "Data collector",
+    "DataCurator":       "Data curator",
+    "DataManager":       "Data manager",
+    "Producer":          "Producer",
+    "Supervisor":        "Supervisor",
+    "Sponsor":           "Sponsor",
+    "Other":             "Other",
+}
+
 # All IG publications use the Unlicense; cc-zero is the closest Zenodo license.
 DEFAULT_LICENSE     = "cc-zero"
 DEFAULT_UPLOAD_TYPE = "publication"
 DEFAULT_PUB_SUBTYPE = "preprint"
 DEFAULT_ACCESS      = "open"
+DEFAULT_LANGUAGE    = "eng"
+DEFAULT_KEYWORDS    = ["Imscribing Grammar", "imscription"]
 
 
 # ── HTTP session ─────────────────────────────────────────────────────────────
@@ -189,45 +227,173 @@ def choose(label: str, options: dict, default_key: str = "") -> str:
         print(f"  Enter 1–{len(keys)}.")
 
 
+def _collect_creators() -> list[dict]:
+    """Prompt for one or more creators (authors)."""
+    print(f"\nCreators / Authors")
+    print(f"  Default: {DEFAULT_CREATOR['name']}  (ORCID {DEFAULT_CREATOR['orcid']})")
+    override = input("  Press Enter to use default, or type 'Family, Given' to replace: ").strip()
+    if override:
+        creators = [{"name": override}]
+        orcid = input("  ORCID (optional, press Enter to skip): ").strip()
+        if orcid:
+            creators[0]["orcid"] = orcid
+        affil = input("  Affiliation (optional): ").strip()
+        if affil:
+            creators[0]["affiliation"] = affil
+    else:
+        creators = [DEFAULT_CREATOR.copy()]
+
+    while True:
+        more = input("  Add another author? [y/N] ").strip().lower()
+        if more not in ("y", "yes"):
+            break
+        name = input("    Name (Family, Given): ").strip()
+        if not name:
+            break
+        c: dict = {"name": name}
+        orcid = input("    ORCID (optional): ").strip()
+        if orcid:
+            c["orcid"] = orcid
+        affil = input("    Affiliation (optional): ").strip()
+        if affil:
+            c["affiliation"] = affil
+        creators.append(c)
+
+    return creators
+
+
+def _collect_contributors() -> list[dict]:
+    """Prompt for optional contributors (non-author roles)."""
+    contributors = []
+    print("\nContributors (non-author roles — editor, supervisor, data curator…)")
+    while True:
+        add = input("  Add a contributor? [y/N] ").strip().lower()
+        if add not in ("y", "yes"):
+            break
+        name = input("    Name (Family, Given): ").strip()
+        if not name:
+            break
+        c: dict = {"name": name}
+        orcid = input("    ORCID (optional): ").strip()
+        if orcid:
+            c["orcid"] = orcid
+        affil = input("    Affiliation (optional): ").strip()
+        if affil:
+            c["affiliation"] = affil
+        role = choose("    Role", CONTRIBUTOR_TYPES, "Researcher")
+        c["type"] = role
+        contributors.append(c)
+    return contributors
+
+
+def _collect_related_identifiers() -> list[dict]:
+    """Prompt for related works (DOIs, URLs, arXiv IDs, etc.)."""
+    related: list[dict] = []
+    print("\nRelated identifiers (prior versions, companion repos, cited works…)")
+    while True:
+        add = input("  Add a related identifier? [y/N] ").strip().lower()
+        if add not in ("y", "yes"):
+            break
+        identifier = input("    Identifier (DOI / URL / arXiv ID): ").strip()
+        if not identifier:
+            break
+        scheme = choose("    Scheme", IDENTIFIER_SCHEMES, "doi")
+        relation = choose("    Relation", RELATION_TYPES, "isVersionOf")
+        related.append({
+            "identifier": identifier,
+            "scheme":     scheme,
+            "relation":   relation,
+        })
+    return related
+
+
+def _collect_keywords() -> list[str]:
+    """Prompt for keywords, pre-filled with IG defaults."""
+    print(f"\nKeywords (comma-separated; defaults shown)")
+    default_str = ", ".join(DEFAULT_KEYWORDS)
+    raw = input(f"  [{default_str}]\n  Keywords: ").strip()
+    if not raw:
+        return list(DEFAULT_KEYWORDS)
+    return [k.strip() for k in raw.split(",") if k.strip()]
+
+
 def collect_metadata(files: list[Path]) -> dict:
-    """Interactive metadata collection with sensible defaults."""
+    """Interactive metadata collection — comprehensive Zenodo fields."""
     print()
     print("─" * 56)
     print("  Metadata")
     print("─" * 56)
 
-    # Title: guess from first file if possible
+    # ── Core ────────────────────────────────────────────────────────────
     default_title = files[0].stem.replace("_", " ").replace("-", " ").title() if files else ""
     title = prompt("Title", default=default_title)
 
     description = prompt("Description (1–3 sentences)")
 
     upload_type = choose("Upload type", UPLOAD_TYPES, DEFAULT_UPLOAD_TYPE)
-
     subtype = None
     if upload_type == "publication":
         subtype = choose("Publication subtype", PUB_SUBTYPES, DEFAULT_PUB_SUBTYPE)
 
-    # Creator — default is Mills, Lando; allow override or extra authors
-    print(f"\nCreator (default: {DEFAULT_CREATOR['name']}, ORCID {DEFAULT_CREATOR['orcid']})")
-    override = input("  Press Enter to use default, or type 'Family, Given' to change: ").strip()
-    if override:
-        creators = [{"name": override}]
-    else:
-        creators = [DEFAULT_CREATOR.copy()]
+    # ── Versioning & date ───────────────────────────────────────────────
+    today = datetime.date.today().isoformat()
+    pub_date = prompt("Publication date", default=today)
+    version  = prompt("Version", default="1.0", required=False)
 
-    access = DEFAULT_ACCESS  # always open for IG publications
+    # ── Language ────────────────────────────────────────────────────────
+    language = prompt("Language (ISO 639-2, e.g. 'eng')", default=DEFAULT_LANGUAGE)
 
-    meta = {
-        "title":        title,
-        "description":  description,
-        "upload_type":  upload_type,
-        "creators":     creators,
-        "access_right": access,
-        "license":      DEFAULT_LICENSE,
+    # ── People ──────────────────────────────────────────────────────────
+    creators     = _collect_creators()
+    contributors = _collect_contributors()
+
+    # ── Discovery ───────────────────────────────────────────────────────
+    keywords = _collect_keywords()
+
+    notes = prompt("Notes / additional remarks (optional)", default="", required=False)
+
+    # ── Relations ───────────────────────────────────────────────────────
+    related = _collect_related_identifiers()
+
+    # ── Communities (optional) ──────────────────────────────────────────
+    print("\nZenodo communities (optional — identifiers like 'zenodo', 'ecfunded'…)")
+    communities: list[dict] = []
+    raw_comm = input("  Community IDs, comma-separated (or Enter to skip): ").strip()
+    if raw_comm:
+        communities = [{"identifier": c.strip()} for c in raw_comm.split(",") if c.strip()]
+
+    # ── Grants (optional) ───────────────────────────────────────────────
+    grants: list[dict] = []
+    raw_grant = input("\nGrant IDs (OpenAIRE format, comma-separated, or Enter to skip): ").strip()
+    if raw_grant:
+        grants = [{"id": g.strip()} for g in raw_grant.split(",") if g.strip()]
+
+    # ── Assemble ────────────────────────────────────────────────────────
+    meta: dict = {
+        "title":            title,
+        "description":      description,
+        "upload_type":      upload_type,
+        "publication_date": pub_date,
+        "creators":         creators,
+        "access_right":     DEFAULT_ACCESS,
+        "license":          DEFAULT_LICENSE,
+        "language":         language,
+        "keywords":         keywords,
     }
     if subtype:
         meta["publication_type"] = subtype
+    if version:
+        meta["version"] = version
+    if notes:
+        meta["notes"] = notes
+    if contributors:
+        meta["contributors"] = contributors
+    if related:
+        meta["related_identifiers"] = related
+    if communities:
+        meta["communities"] = communities
+    if grants:
+        meta["grants"] = grants
 
     return meta
 
@@ -239,11 +405,30 @@ def confirm_summary(files: list[Path], meta: dict, mode: str) -> bool:
     print("─" * 56)
     print(f"  Mode:        {'PRODUCTION (zenodo.org)' if mode == 'live' else 'SANDBOX (sandbox.zenodo.org)'}")
     print(f"  Title:       {meta['title']}")
-    print(f"  Type:        {meta['upload_type']}" +
-          (f" / {meta.get('publication_type', '')}" if "publication_type" in meta else ""))
-    print(f"  Creator:     {meta['creators'][0]['name']}")
+    type_str = meta['upload_type']
+    if "publication_type" in meta:
+        type_str += f" / {meta['publication_type']}"
+    print(f"  Type:        {type_str}")
+    print(f"  Date:        {meta.get('publication_date', '—')}"
+          + (f"  v{meta['version']}" if meta.get("version") else ""))
+    print(f"  Language:    {meta.get('language', '—')}")
+    print(f"  Creator(s):  " + "; ".join(c["name"] for c in meta["creators"]))
+    if meta.get("contributors"):
+        print(f"  Contributor(s): " + "; ".join(
+            f"{c['name']} ({c.get('type','')})" for c in meta["contributors"]))
     print(f"  License:     {meta['license']}")
-    print(f"  Description: {textwrap.shorten(meta['description'], 60)}")
+    print(f"  Keywords:    {', '.join(meta.get('keywords', []))}")
+    if meta.get("notes"):
+        print(f"  Notes:       {textwrap.shorten(meta['notes'], 60)}")
+    if meta.get("related_identifiers"):
+        print(f"  Related ({len(meta['related_identifiers'])}):")
+        for r in meta["related_identifiers"]:
+            print(f"    [{r['relation']}]  {r['identifier']}  ({r['scheme']})")
+    if meta.get("communities"):
+        print(f"  Communities: " + ", ".join(c["identifier"] for c in meta["communities"]))
+    if meta.get("grants"):
+        print(f"  Grants:      " + ", ".join(g["id"] for g in meta["grants"]))
+    print(f"  Description: {textwrap.shorten(meta['description'], 72)}")
     print(f"  Files:")
     for f in files:
         print(f"    {f.name}  ({f.stat().st_size/1024:.0f} KB)")

@@ -57,7 +57,7 @@ element and the unique fixed point of negation.}
 
 ### The Formal Construction
 
-The Lean formalization defines Belnap as an inductive type with four nullary constructors, decidable equality, and a discriminator function mapping to distinct naturals. The approximation order is an inductive proposition `ApproxLE` with six introduction rules, proved decidable across all sixteen pairs. The lattice operations — meet, join, conjunction, disjunction, negation — are defined by case analysis and proved to satisfy distributivity, absorption, commutativity, and the critical fixed-point theorem: `bnot $\mathbf{B}$ = B`.
+The Lean formalization defines Belnap as an inductive type with four nullary constructors, decidable equality, and a discriminator function mapping to distinct naturals. The approximation order is an inductive proposition `ApproxLE` with six introduction rules, proved decidable across all sixteen pairs. The lattice operations — meet, join, conjunction, disjunction, negation — are defined by case analysis and proved to satisfy distributivity, absorption, commutativity, and the critical fixed-point theorem: `bnot` $\mathbf{B}$ = $\mathbf{B}$.
 
 The cornerstone theorem is `no_explosion`: $\mathbf{B} \land \neg \mathbf{B} = \mathbf{B} \neq \mathbf{F}$. Contradiction does not collapse. This is not a philosophical claim; it is a computation that terminates in four case splits and returns `rfl`.
 

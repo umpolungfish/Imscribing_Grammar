@@ -1,4 +1,31 @@
-e8_aether_g2_vessel: H chirality fix + rfl proof (2026-05-28)
+zenodo_upload.py: comprehensive metadata prompts (2026-05-29)
+=============================================================
+
+New prompt sections added to collect_metadata():
+  - Publication date   (ISO 8601, default: today)
+  - Version string     (default: "1.0")
+  - Language           (ISO 639-2, default: "eng")
+  - Multiple creators  (_collect_creators): name, ORCID, affiliation;
+                        loop to add co-authors
+  - Contributors       (_collect_contributors): name, ORCID, affiliation,
+                        role (Researcher/Editor/DataCurator/Supervisor/…)
+  - Keywords           (_collect_keywords): pre-filled with IG defaults
+                        (Imscribing Grammar, paraconsistent logic, Belnap
+                        FOUR, primitive types, Frobenius algebra); editable
+  - Notes              (optional free-form text → Zenodo "notes" field)
+  - Related identifiers(_collect_related_identifiers): identifier,
+                        scheme (doi/url/arxiv/handle/isbn/issn/other),
+                        relation type (isVersionOf/references/isPartOf/…);
+                        loop to add multiple
+  - Communities        (comma-separated Zenodo community IDs, optional)
+  - Grants             (OpenAIRE grant IDs, optional)
+
+confirm_summary() updated to display all new fields.
+New constants: RELATION_TYPES, IDENTIFIER_SCHEMES, CONTRIBUTOR_TYPES,
+DEFAULT_KEYWORDS, DEFAULT_LANGUAGE.
+import datetime moved to top-of-file stdlib block.
+
+Previous: e8_aether_g2_vessel: H chirality fix + rfl proof (2026-05-28)
 ==============================================================
 
 E8G2_Vessel.lean: "Two-step temporal depth" → "Two-step chirality" for H_2.

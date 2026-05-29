@@ -72,27 +72,6 @@ from imscrbgrmr.models import Primitive
 p = Primitive.from_symbol("⊙")   # sealed gate
 ```
 
-## Manuscripts
-
-| File | Contents |
-|---|---|
-| `manuscripts/AS_ABOVE.tex` | Upper triad structural analysis (48pp, LuaLaTeX) |
-| `manuscripts/SO_BELOW.tex` | Lower triad + Frobenius proofs (68pp, LuaLaTeX) |
-| `manuscripts/genetics_ig.md` | Genetic code as IG model — all questions resolved |
-| `manuscripts/IMASM.tex` | IMASM specification — 4 engine CFGs |
-| `markdown/AI_ACADEMIA_LIFT.md` | AI prose lift → heterodox academic voice |
-| `markdown/AI_LANDO_LIFT.md` | AI prose lift → Lando⊗⊙perator voice |
-
-Compile manuscripts:
-```bash
-lualatex manuscripts/AS_ABOVE.tex
-lualatex manuscripts/SO_BELOW.tex
-```
-
-## Shavian Notation
-
-v0.6.0 — 49 Shavian glyphs (U+10450–U+1047F) + ⊙ as the 50th sealed gate. Full mapping in `shavian_notation_spec.md`. No old-notation (`Ð_ω`, `Þ_ò`, etc.) anywhere in the codebase.
-
 ## Related Repos
 
 | Repo | Layer | Description |
