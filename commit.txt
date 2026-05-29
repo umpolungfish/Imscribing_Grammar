@@ -1,4 +1,48 @@
-zenodo_upload.py: Zenodo upload tool for IG publications (2026-05-28)
+e8_aether_g2_vessel: H chirality fix + rfl proof (2026-05-28)
+==============================================================
+
+E8G2_Vessel.lean: "Two-step temporal depth" → "Two-step chirality" for H_2.
+E8G2_Vessel_Proofs.lean: crystal_distance_computed native_decide → rfl.
+Full namespace sync to Imscribing.Primitives deferred (requires MA lakefile).
+solitary_10: no MA counterpart, no changes.
+
+Previous: Math repos: sync all standalone Lean repos from MillenniumAnkh (2026-05-28)
+===========================================================================
+
+Updated 4 standalone math repos with current MillenniumAnkh implementations:
+
+perfect_cuboid/PerfectCuboid.lean:
+  Namespace Millennium.PerfectCuboid. 22 proved lemmas + 3 axioms at
+  Phi_c critical edge. Full algebraic chain (Parts III-IV), Frobenius
+  closure (rfl), winding conservation, conditional nonexistence theorem.
+
+hecke-landau/HeckeLandau.lean:
+  Namespace Imscribing.Classical.HeckeLandau. Clean axiomatic skeleton.
+  Previous verbose outline replaced.
+
+BealProof/BealProof/BealDualProof.lean:
+  Namespace Millennium.Beal. beal_equal_prime_exponents NOW PROVED via
+  ribet_level_lowering + coprimality argument. beal_prime_mixed_exponents
+  remains axiomatized (Omega_0 → Omega_Z2 gap open).
+
+hodge_lefschetz/hodge/Hodge.lean:
+  Namespace Millennium.Hodge. Was: foundation-dependent, attempted real
+  Mathlib geometry types (all non-existent). Now: clean axiomatic skeleton,
+  3-layer structure, 6 structural comparison theorems.
+
+hodge_lefschetz/HodgeLefschetz/Lefschetz11.lean:
+  Namespace Millennium.Lefschetz11. Restructured (13→12 axioms, dead
+  complexDimK removed). Added Sections 7-11: corollaries, sorry inventory,
+  grammar threshold analysis, logical consistency, transfer to Hodge.
+
+Skipped (standalone version is more proven):
+  odd-perfect-numbers/OddPerfectNumbers.lean — actually proves Euler's form
+  and Touchard's congruence; MA version only axiomatizes them.
+
+Skipped (namespace incompatibility):
+  synthomnicon-lean — uses SynthOmnicon.* namespace; MA uses Imscribing.*
+
+Previous: zenodo_upload.py: Zenodo upload tool for IG publications (2026-05-28)
 ======================================================================
 
 Interactive CLI uploader. Workflow: create deposition → upload files →
