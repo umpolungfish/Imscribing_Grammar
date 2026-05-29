@@ -45566,5 +45566,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "zfc_frobenius_exact",
+    "description": "Fully Frobenius-Exact ZFC (ZFC_fe). Extends ZFC_t with two additional promotions: D_infty→D_odot (holographic self-written state space via paraconsistent truth predicate) and H2→H_inf (eternal chirality via transfinite fixed-point induction). Satisfies ALL four grammar axioms (A, B, C, D). Tuple: ⟨Ð",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]

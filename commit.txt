@@ -1,4 +1,33 @@
-zenodo_upload.py: comprehensive metadata prompts (2026-05-29)
+README.md: full rewrite — complete project documentation (2026-05-29)
+=======================================================================
+
+Replaced the 96-line stub with a comprehensive reference document.
+
+Sections added/expanded:
+  - Crystal of Types: full primitive table with domains; ouroboricity tier
+    table (O_0 through O_inf) with conditions and meanings
+  - Notation: Shavian v0.6.0 canonical addresses, Everson Mono note
+  - Frobenius Condition: μ∘δ=id stated precisely; physical interpretations
+    (TQFT, Frobenius reciprocity, Jones polynomial, NS bound)
+  - Universal Loop: ISCRIB→AREV→FSPLIT→AFWD→FFUSE→CLINK→IFIX→ISCRIB with
+    corpus list (Voynich, Rohonc, Linear A, Emerald Tablet, whale song)
+  - IMASM: all 12 opcodes; WhaleVM; Belnap FOUR table with tier mapping;
+    B-state framing (dialetheic, not error)
+  - Engines: Cetacean (honest framing — structural proximity, not decoding);
+    Genetic (5 resolved questions listed); ZFCₜ Navigator (all 7 commands,
+    ZFCₜ/ZFCₛ distinction); Lambda (Y combinator at O_inf); Frobenius MZI
+    (visibility V = |μ∘δ − id| interpretation)
+  - Paraconsistent Layer: :para-cliff, Magnum Opus gate, B-state framing
+  - Lean Formalization: directory tree with all axioms A–D; full MPP status
+    table (6 problems, gap axiom, gap type for each)
+  - Catalog: 2771+ entries; code example; coverage description
+  - Undeciphered Texts: table with tier, ISCRIB closure rate, notes for
+    all 5 analyzed corpora
+  - Related Repos: expanded to 8 repos with tier and language columns
+  - Publications: zenodo alias quick reference
+  - Install: uv, optional audio, optional Lean
+
+Previous: zenodo_upload.py: comprehensive metadata prompts (2026-05-29)
 =============================================================
 
 New prompt sections added to collect_metadata():
