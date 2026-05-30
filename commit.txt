@@ -12,3 +12,4 @@ behavior for a re-imscription. Removed _agent_resolve_conflict and the
 _PRIMITIVE_VALID_VALUES table + _valid_values_block helper it was the
 only caller of -- dead code once nothing spawns an agent to hand that
 table to.
+Submitted PR: Make Claude Agent SDK Truly Agentic via Structural Promotion (PR_CLAUDE_AGENT_SDK_TRULY_AGENIC.md)
