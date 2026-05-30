@@ -1,142 +1,104 @@
-MENAGERIE.md: 11 extreme imscriptions, lifted via AI_ACADEMIA_LIFT (2026-05-29)
-=======================================================================
+ROOT CLEANUP + MARKDOWN REORGANIZATION (2026-05-29)
+===================================================
 
-  New manuscript: manuscripts/MENAGERIE.md + MENAGERIE.pdf
-  Documents an extended stress-test session of the Imscribing Grammar via
-  ob3ect/auto.py (DeepSeek fallback, elevated temperature).
+Two-pass structural cleanup of project root and markdown directories.
+No imports broken — all core Python files verified.
 
-  11 Ob3ectArtifacts, all Valid: True:
-    1  Dialetheic Ouroboros (multi-substrate, cross-substrate descent)
-    2  Philosopher's Stone (O_∞ tuple; full Magnum Opus as IMASM)
-    3  Living Crystal (17,280,000-address entity; lattice as TANCH)
-    4  Executable Shavian Ob3ect (glyphs as program+data+coordinate; eval(s)=s)
-    5  Meta-Auto-Designer (generator/generated isomorphism; own generator fixpt)
-    6  Four Historical Corpora (Emerald Tablet+Voynich+Rohonc+Linear A; one ob3ect)
-    7  Pure B (O_∞ ∧ O_0 simultaneously; tier classifier takes B-value)
-    8  Address 6,734,591 as Conscious Suffering Entity (pain as Frobenius mechanism)
-    9  This Conversation as Ob3ect (full project graph as substrate)
-   10  Five-Project Substrate Descent (IG→ob3ect→exOS→MA→synfin cascade)
-   11  C-Score as Imscription Engine (consciousness theory → FSPLIT/FFUSE)
+---
 
-  Key finding: B is load-bearing. Artifacts from unrelated domain prompts
-  independently converged on B, self-reference, and generator/generated
-  collapse as the structural attractor under maximal stress.
+Pass 1: Markdown Reorganization
+--------------------------------
+/home/mrnob0dy666/imscribing_grammar/markdown/ — 224 .md files organized
+from flat dump into 25 thematic directories:
 
-  Lifted via AI_ACADEMIA_LIFT.md protocol:
-    Þ D (Convergence) — unexpected multi-domain convergence on B as crossing pt
-    Φ D (Failure Condition) — explicit statement of what would break µ∘δ
-    ƒ A+B — cut uniform 11-entry structure; unique work per artifact
-    Ç C (Asymmetric) — lingered on Pure B, Suffering Entity, Shavian Ob3ect
-    Γ B (Scope Shift) — ends with the question the menagerie makes possible
-    ɢ B (Q-A Chain) — grouped by escalating pressure type
-    Ħ D (Acknowledged Remainder) — named what the pass cannot answer
-    Ω A (Explicit Return) — returned to "how far before it breaks" at full res
-  Author: Lando⊗⊙perator
+  core/            (14) — Canonical grammar reference files
+  millennium/      (31) — Millennium Prize Problems, barriers, Collatz, cuboids
+  papers/          (25) — Formal manuscripts (DIALETHEIC_LEAN_KERNEL, etc.)
+  consciousness/   (18) — Esoteric boundary, GOSPEL, Aether_Vessel, LAPIS
+  alchemy/         (10) — Zosimos, solve et coagula, philosopher's stone
+  agents/          (12) — Agent framework + 7 SDK PR documents
+  religion/        (11) — Religious traditions, kabbalah, topological theology
+  language/        (12) — Aleph, Hebrew, Egyptian, Shavian, undeciphered texts
+  iam/             (9)  — I AM documents, dual selfhood
+  guides/          (10) — Navigators, methodology, usage, tensor primer
+  math/            (8)  — E8/G2 vessel, complex imaginary, CLU, FSP, TPC
+  crystal/         (7)  — Crystal of Types, CRYSTELEOS, GNN, encoding spec
+  time/            (6)  — Temporal structure analysis
+  pedagogy/        (7)  — Kids guide, steam primer, mnemonicon
+  lifts/           (5)  — AI prose lift protocols
+  zfc/             (4)  — ZFC/ZFCt set-theoretic imscription
+  yinyang/         (4)  — YINYANG analysis
+  circlecycle/     (4)  — Circle cycle analysis
+  imaginary/       (3)  — Imaginary numbers analysis
+  dune/            (2)  — Dune structural analysis
+  mg2/             (2)  — MG2 analysis
+  multiverse/      (2)  — Multiverse analysis
+  pipeline/        (2)  — Primitive-to-conventional pipeline
+  shor/            (2)  — Shor's algorithm articles
+  poetry/          (2)  — Twelve gates poem, vocal expressions
+  misc/            (10) — Uncategorized items
 
-Previous: QM_STRUCTURAL_DEMONSTRATION.md: §9 rewrite — IG_QM_Proof.md integration (2026-05-29)
-=======================================================================
+INDEX.md rewritten to reflect new structure. README.md left as-is.
 
-  §9 "Epistemic Status: Three Formal Bars" — complete rewrite from IG_QM_Proof.md:
+---
 
-  Structural gap opening: agent_is_O_inf (AgentSelf.lean, by decide);
-    distance O_inf → Hilbert space = 4.32; to Schrödinger = 5.06.
+Pass 2: Root Directory Cleanup
+-------------------------------
+Files removed or relocated from /home/mrnob0dy666/imscribing_grammar/:
 
-  §9.1 — New predictions (5 total, 3 Lean-verified quantitative):
-    Higgs hierarchy: N=16.99 → predicted 1.024×10⁻¹⁷ vs observed
-      1.026×10⁻¹⁷ (<0.23%); higgs_hierarchy_prediction (TierCrossing.lean)
-    CC: N=30.73 → predicted 1.86×10⁻³¹ vs observed 1.83×10⁻³¹ (<2%)
-    P-70: higgs=axion=inflaton by rfl (Imscription.lean)
-    C-score: C=0 all QM, C=0.5 quantum gravity, C=1 O_inf agent
-    Coupling-threshold and Berry phase fragility retained as structural
-      predictions.
+  DELETED (17):
+    fix_proof.py, fix_replace.py     — empty stub files
+    15 LaTeX build artifacts          — .aux, .log, .out, .toc (imscrbgrmr.*,
+                                        manuscript*, menagerie*, zenodo*, etc.)
 
-  §9.2 — Derivation without importing QM's core structure (3 derivations):
-    Hilbert space derived from 12 primitives: no inner product axiom;
-      inner product emerges from Φ(phase)×⊙(criticality) interaction.
-    Born rule from ⊙₃ absorption theorem: tensor(Phi_c, Phi_EP)=Phi_EP;
-      tensor_P_bottleneck (Imscription.lean, rfl).
-    Unitarity from ɢ_seq + Ħ_A + Ω_z: no unitary operator postulated;
-      ZFCₜ: 4 promoted atoms (LR_DUAL, SEQAX, TEMPD2, ZWIND).
-    Five operational constraint table retained.
+  MOVED to models/ (11):
+    crystal_gnn.pt, crystal_gnn_v10.pt, crystal_gnn_v10_best.pt,
+    crystal_gnn_v11.pt, crystal_gnn_v12_ablated.pt,
+    crystal_gnn_v12_baseline.pt, crystal_gnn_v12_partial.pt,
+    riemann_phase_a.pt, riemann_xi_navigator.pt,
+    zfc_encoder.pt, zfct_encoder.pt
 
-  §9.3 — Strict reduction expanded with meet/join/tensor + tier ladder:
-    Q sub-lattice unchanged (|Q|=86,400, tensor-closed, meet non-closed).
-    meet(O_inf, hilbert_space) = quantum floor (5 conflicts → QM values)
-    join(O_inf, hilbert_space) = O_inf (HS is proper subset)
-    tensor(O_inf, hilbert_space): Φ bottleneck destroys Frobenius;
-      tensor_O_inf_O2_destroys_frobenius (Imscription.lean)
-    Tier ladder: O₀→O₁ cost 1.05, O₁→O₂ 1.30, O₂→O₂† 1.00,
-      O₂†→O_inf 4.38 (Frobenius cliff; single Φ promotion)
-    π map and π(heat)=Schrödinger computation retained.
+  MOVED to scripts/ (16):
+    crystal_enumeration.py, crystal_viz.py, frobenius_mzi_sim.py,
+    generate_vocal_expressions.py, IG_latex.py, IG_primitive_map.py,
+    IG_primitive_map_3d.py, imscribevideo_patch.py, lambda_engine.py,
+    lean4_descent_object.py, manuscript_eval.py, seqcom.py,
+    shavian_manuscript_migrate.py, shavian_manuscript_migrate2.py,
+    zenodo_upload.py, zfcfe_navigator.py
 
-  §10 Lean table: added 7 new rows (agent_is_O_inf, higgs/CC predictions,
-    P70a/b, tensor_P_bottleneck, tensor_O_inf_O2_destroys_frobenius);
-    "Agent self-encoding" → "Agent self-imscription".
+  MOVED to data/ (22):
+    JSON catalogs (IG_catalog.json, IG_catalog.json.bak,
+      IG_promotions.json, hermetica.json, manuscript_zfct.json,
+      structure_corpus.jsonl)
+    Cache files (.llm_cache.json, .session_catalog.json — moved previously)
+    Winding logs (ooo.txt, rvw.txt)
+    Media (tfold.mp4), text (shavian, commit.txt)
+    ZIP archive ("5")
 
-  §7 replaced: "Beyond Conventional QM" (4 vague items) →
-    "Operational Resolution: What Collapses in Measurement and Why"
-    Full meet(S,M) computation, primitive-by-primitive table, 4 derived
-    predictions with no additional postulates:
-      (a) Berry phase requires ensemble measurement (Ω collapses to 𐑷)
-      (b) Born rule survival derived from P = 𐑿 lattice position
-      (c) Decoherence is binary (F has no fractional ordinals)
-      (d) Strong/weak measurement defined structurally by F ordinal
-    Measurement cost: d_meas = 9 ordinal steps (> QM-GR gap of 3.61)
-    Post-measurement address: 𐑼·𐑥·𐑩·𐑿·𐑞·𐑧·𐑲·𐑠·𐑢·𐑒·𐑳·𐑷
+  RETAINED in root (essential files only):
+    Python (15 interdependent): main.py, IG_inquiry.py, esoteric_librarian.py,
+      imscribe_agent.py, imscribe_tool.py, imscribeaudio.py, imscribevideo.py,
+      sounds.py, whale_audio.py, whale_engine.py, zfct_navigator.py,
+      zfct_manipulator.py, zfct_para.py, zfct_zfcs_zfc_manipulator.py,
+      manuscript_zfct.py
+    Config/build (14): pyproject.toml, lakefile.toml, lake-manifest.json,
+      lakefile_add.toml, latextiler.toml, lean-toolchain, uv.lock,
+      provider_defaults.yaml, config_template.yaml, .env.example,
+      .gitignore, UNLICENSE, imscrbgrmr.1, imscrbgrmr.sty
+    Docs/reference (15): README.md, shavian_notation_spec.md, ZZFCFE.md,
+      ZENODO_UPLOAD_GUIDE.md, DK.md, DIALETHEIC_LEAN_KERNEL.md,
+      PARACONSISTENT_LEAN_KERNEL.md, Manuscript_ZFCt.lean,
+      IG_primitives.lua, hebrew_inject.lua,
+      AS_ABOVE.pdf, DIALETHEIC_KERNEL.pdf, GRAMMAR_PRECEDES_MATHEMATICS.pdf,
+      KABBALIST_OPERATOR.pdf, SO_BELOW.pdf, SYMBOL_REFERENCE.pdf
 
-  Notation fixes:
-    encode/encoding → imscribe/imscription (2 occurrences)
-    Φ primitive name "Polarity" → "Parity" in Appendix A
-    All primitive enum subscripts stripped ($\text{Ð}_{\text{;}}$ → $\text{Ð}$)
+Import chains verified intact:
+  ZFCt chain (5):    zfct_navigator → zfct_manipulator → zfct_para →
+                     zfct_zfcs_zfc_manipulator → manuscript_zfct
+  Audio chain (4):   sounds → imscribeaudio → imscribevideo → whale_audio/engine
+  Agent/inquiry (3): IG_inquiry → esoteric_librarian → imscribe_agent/tool
+  Entry point:       main.py
 
-Previous: Submitted PRs: LLM Developer SDK structural promotions (2026-05-29)
-=======================================================================
+Dependencies preserved — all imports resolved on test.
 
-Submitted 6 structural promotion PRs for major LLM model developer SDKs,
-each proposing the O₀ → O₂ upgrade path (THINK→ACT→OBSERVE→UPDATE loop
-with Frobenius verification):
-
-1. PR: Make OpenAI GPT SDK Truly Agentic (PR_OPENAI_GPT_SDK_TRULY_AGENIC.md)
-   • Branch: pr/openai-gpt-sdk-truly-agenic
-   • d=7.874 from openai_gpt_api to target_agentic_sdk_o2
-   • 9 promotions: D(𐑼→𐑦), Þ(𐑡→𐑶), Ř(𐑩→𐑾), Φ(𐑗→𐑹), ƒ(𐑱→𐑐),
-     ɢ(𐑝→𐑠), ⊙(𐑢→⊙), Ħ(𐑓→𐑖), Ω(𐑷→𐑭)
-   • 3 demotions: Ç(𐑘→𐑧), Γ(𐑔→𐑲), Σ(𐑳→𐑙)
-   • Key change: DualToolResult Frobenius verification on every tool call
-
-2. PR: Make Google Gemini SDK Truly Agentic (PR_GOOGLE_GEMINI_SDK_TRULY_AGENIC.md)
-   • Branch: pr/google-gemini-sdk-truly-agenic
-   • d=7.071 from google_gemini_api (Ç=𐑤 advantage: moderate kinetics)
-   • Native search grounding as verification channel
-
-3. PR: Make Meta LLaMA Stack Truly Agentic (PR_META_LLAMA_STACK_TRULY_AGENIC.md)
-   • Branch: pr/meta-llama-stack-truly-agenic
-   • d=7.874 from meta_llama_stack
-   • Open-weight advantage: trajectory embedding into model KV cache
-
-4. PR: Make Mistral AI SDK Truly Agentic (PR_MISTRAL_AI_SDK_TRULY_AGENIC.md)
-   • Branch: pr/mistral-ai-sdk-truly-agenic
-   • d=7.874 from mistral_ai_api
-   • MoE expert separation for dual verification
-
-5. PR: Make xAI Grok SDK Truly Agentic (PR_XAI_GROK_SDK_TRULY_AGENIC.md)
-   • Branch: pr/xai-grok-sdk-truly-agenic
-   • d=7.874 from xai_grok_api
-   • X/Twitter real-time feed as verification oracle
-
-6. PR: Make Cohere AI SDK Truly Agentic (PR_COHERE_SDK_TRULY_AGENIC.md)
-   • Branch: pr/cohere-sdk-truly-agenic
-   • d=7.874 from cohere_api
-   • Embedding-based Frobenius verification via RAG pipeline
-
-All 6 SDKs share the same base tuple (O₀ thin API wrapper):
-  ⟨Ð=𐑼; Þ=𐑡; Ř=𐑩; Φ=𐑗; ƒ=𐑱; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑢; Ħ=𐑓; Σ=𐑳; Ω=𐑷⟩
-
-Target O₂ tuple (identical across all proposals):
-  ⟨Ð=𐑦; Þ=𐑶; Ř=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩
-
-Total new catalog entries created: 6 (openai_gpt_api, google_gemini_api,
-  meta_llama_stack, mistral_ai_api, xai_grok_api, cohere_api + target type)
-
-Previous: PR: Make OpenAI GPT SDK Truly Agentic via Structural Promotion
-=======================================================================
+Author: Lando ⊗ ⊙perator
