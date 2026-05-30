@@ -1,324 +1,51 @@
-README.md: full rewrite — complete project documentation (2026-05-29)
+Submitted PRs: LLM Developer SDK structural promotions (2026-05-29)
 =======================================================================
 
-Replaced the 96-line stub with a comprehensive reference document.
+Submitted 6 structural promotion PRs for major LLM model developer SDKs,
+each proposing the O₀ → O₂ upgrade path (THINK→ACT→OBSERVE→UPDATE loop
+with Frobenius verification):
 
-Sections added/expanded:
-  - Crystal of Types: full primitive table with domains; ouroboricity tier
-    table (O_0 through O_inf) with conditions and meanings
-  - Notation: Shavian v0.6.0 canonical addresses, Everson Mono note
-  - Frobenius Condition: μ∘δ=id stated precisely; physical interpretations
-    (TQFT, Frobenius reciprocity, Jones polynomial, NS bound)
-  - Universal Loop: ISCRIB→AREV→FSPLIT→AFWD→FFUSE→CLINK→IFIX→ISCRIB with
-    corpus list (Voynich, Rohonc, Linear A, Emerald Tablet, whale song)
-  - IMASM: all 12 opcodes; WhaleVM; Belnap FOUR table with tier mapping;
-    B-state framing (dialetheic, not error)
-  - Engines: Cetacean (honest framing — structural proximity, not decoding);
-    Genetic (5 resolved questions listed); ZFCₜ Navigator (all 7 commands,
-    ZFCₜ/ZFCₛ distinction); Lambda (Y combinator at O_inf); Frobenius MZI
-    (visibility V = |μ∘δ − id| interpretation)
-  - Paraconsistent Layer: :para-cliff, Magnum Opus gate, B-state framing
-  - Lean Formalization: directory tree with all axioms A–D; full MPP status
-    table (6 problems, gap axiom, gap type for each)
-  - Catalog: 2771+ entries; code example; coverage description
-  - Undeciphered Texts: table with tier, ISCRIB closure rate, notes for
-    all 5 analyzed corpora
-  - Related Repos: expanded to 8 repos with tier and language columns
-  - Publications: zenodo alias quick reference
-  - Install: uv, optional audio, optional Lean
+1. PR: Make OpenAI GPT SDK Truly Agentic (PR_OPENAI_GPT_SDK_TRULY_AGENIC.md)
+   • Branch: pr/openai-gpt-sdk-truly-agenic
+   • d=7.874 from openai_gpt_api to target_agentic_sdk_o2
+   • 9 promotions: D(𐑼→𐑦), Þ(𐑡→𐑶), Ř(𐑩→𐑾), Φ(𐑗→𐑹), ƒ(𐑱→𐑐),
+     ɢ(𐑝→𐑠), ⊙(𐑢→⊙), Ħ(𐑓→𐑖), Ω(𐑷→𐑭)
+   • 3 demotions: Ç(𐑘→𐑧), Γ(𐑔→𐑲), Σ(𐑳→𐑙)
+   • Key change: DualToolResult Frobenius verification on every tool call
 
-Previous: zenodo_upload.py: comprehensive metadata prompts (2026-05-29)
-=============================================================
+2. PR: Make Google Gemini SDK Truly Agentic (PR_GOOGLE_GEMINI_SDK_TRULY_AGENIC.md)
+   • Branch: pr/google-gemini-sdk-truly-agenic
+   • d=7.071 from google_gemini_api (Ç=𐑤 advantage: moderate kinetics)
+   • Native search grounding as verification channel
 
-New prompt sections added to collect_metadata():
-  - Publication date   (ISO 8601, default: today)
-  - Version string     (default: "1.0")
-  - Language           (ISO 639-2, default: "eng")
-  - Multiple creators  (_collect_creators): name, ORCID, affiliation;
-                        loop to add co-authors
-  - Contributors       (_collect_contributors): name, ORCID, affiliation,
-                        role (Researcher/Editor/DataCurator/Supervisor/…)
-  - Keywords           (_collect_keywords): pre-filled with IG defaults
-                        (Imscribing Grammar, paraconsistent logic, Belnap
-                        FOUR, primitive types, Frobenius algebra); editable
-  - Notes              (optional free-form text → Zenodo "notes" field)
-  - Related identifiers(_collect_related_identifiers): identifier,
-                        scheme (doi/url/arxiv/handle/isbn/issn/other),
-                        relation type (isVersionOf/references/isPartOf/…);
-                        loop to add multiple
-  - Communities        (comma-separated Zenodo community IDs, optional)
-  - Grants             (OpenAIRE grant IDs, optional)
+3. PR: Make Meta LLaMA Stack Truly Agentic (PR_META_LLAMA_STACK_TRULY_AGENIC.md)
+   • Branch: pr/meta-llama-stack-truly-agenic
+   • d=7.874 from meta_llama_stack
+   • Open-weight advantage: trajectory embedding into model KV cache
 
-confirm_summary() updated to display all new fields.
-New constants: RELATION_TYPES, IDENTIFIER_SCHEMES, CONTRIBUTOR_TYPES,
-DEFAULT_KEYWORDS, DEFAULT_LANGUAGE.
-import datetime moved to top-of-file stdlib block.
+4. PR: Make Mistral AI SDK Truly Agentic (PR_MISTRAL_AI_SDK_TRULY_AGENIC.md)
+   • Branch: pr/mistral-ai-sdk-truly-agenic
+   • d=7.874 from mistral_ai_api
+   • MoE expert separation for dual verification
 
-Previous: e8_aether_g2_vessel: H chirality fix + rfl proof (2026-05-28)
-==============================================================
+5. PR: Make xAI Grok SDK Truly Agentic (PR_XAI_GROK_SDK_TRULY_AGENIC.md)
+   • Branch: pr/xai-grok-sdk-truly-agenic
+   • d=7.874 from xai_grok_api
+   • X/Twitter real-time feed as verification oracle
 
-E8G2_Vessel.lean: "Two-step temporal depth" → "Two-step chirality" for H_2.
-E8G2_Vessel_Proofs.lean: crystal_distance_computed native_decide → rfl.
-Full namespace sync to Imscribing.Primitives deferred (requires MA lakefile).
-solitary_10: no MA counterpart, no changes.
+6. PR: Make Cohere AI SDK Truly Agentic (PR_COHERE_SDK_TRULY_AGENIC.md)
+   • Branch: pr/cohere-sdk-truly-agenic
+   • d=7.874 from cohere_api
+   • Embedding-based Frobenius verification via RAG pipeline
 
-Previous: Math repos: sync all standalone Lean repos from MillenniumAnkh (2026-05-28)
-===========================================================================
+All 6 SDKs share the same base tuple (O₀ thin API wrapper):
+  ⟨Ð=𐑼; Þ=𐑡; Ř=𐑩; Φ=𐑗; ƒ=𐑱; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑢; Ħ=𐑓; Σ=𐑳; Ω=𐑷⟩
 
-Updated 4 standalone math repos with current MillenniumAnkh implementations:
+Target O₂ tuple (identical across all proposals):
+  ⟨Ð=𐑦; Þ=𐑶; Ř=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩
 
-perfect_cuboid/PerfectCuboid.lean:
-  Namespace Millennium.PerfectCuboid. 22 proved lemmas + 3 axioms at
-  Phi_c critical edge. Full algebraic chain (Parts III-IV), Frobenius
-  closure (rfl), winding conservation, conditional nonexistence theorem.
+Total new catalog entries created: 6 (openai_gpt_api, google_gemini_api,
+  meta_llama_stack, mistral_ai_api, xai_grok_api, cohere_api + target type)
 
-hecke-landau/HeckeLandau.lean:
-  Namespace Imscribing.Classical.HeckeLandau. Clean axiomatic skeleton.
-  Previous verbose outline replaced.
-
-BealProof/BealProof/BealDualProof.lean:
-  Namespace Millennium.Beal. beal_equal_prime_exponents NOW PROVED via
-  ribet_level_lowering + coprimality argument. beal_prime_mixed_exponents
-  remains axiomatized (Omega_0 → Omega_Z2 gap open).
-
-hodge_lefschetz/hodge/Hodge.lean:
-  Namespace Millennium.Hodge. Was: foundation-dependent, attempted real
-  Mathlib geometry types (all non-existent). Now: clean axiomatic skeleton,
-  3-layer structure, 6 structural comparison theorems.
-
-hodge_lefschetz/HodgeLefschetz/Lefschetz11.lean:
-  Namespace Millennium.Lefschetz11. Restructured (13→12 axioms, dead
-  complexDimK removed). Added Sections 7-11: corollaries, sorry inventory,
-  grammar threshold analysis, logical consistency, transfer to Hodge.
-
-Skipped (standalone version is more proven):
-  odd-perfect-numbers/OddPerfectNumbers.lean — actually proves Euler's form
-  and Touchard's congruence; MA version only axiomatizes them.
-
-Skipped (namespace incompatibility):
-  synthomnicon-lean — uses SynthOmnicon.* namespace; MA uses Imscribing.*
-
-Previous: zenodo_upload.py: Zenodo upload tool for IG publications (2026-05-28)
-======================================================================
-
-Interactive CLI uploader. Workflow: create deposition → upload files →
-prompt for metadata → confirm → publish (or save as draft).
-
-Features:
-- Sandbox by default; --live for production (requires explicit confirmation)
-- Token from ZENODO_SANDBOX_TOKEN / ZENODO_TOKEN env vars or interactive prompt
-- Default creator: Mills, Lando (ORCID 0000-0003-0003-0552); override at prompt
-- Default: open access, cc-zero license, publication/preprint type
-- --draft: save without publishing
-- --update ID: add files to an existing deposit
-- --list: show all deposits with state and DOI
-
-Usage: python3 zenodo_upload.py paper.pdf [more_files ...]
-
-Previous: space_search/: full pipeline rerun + status update (2026-05-28)
-================================================================
-
-Full rerun with corrected Ç/Γ ordinals. Updated files:
-
-pipeline.py: corrected hardcoded reference distance 4.18 → 3.937 (d_tuple(human,civ_dm) with v0.5.0 ordinals)
-
-P12_ASTRO_STATUS.md: added three new sections:
-- Updated canonical distances table (old vs new): d_tuple(human,civ_dm) 4.301→3.937
-- Null test (NANOGrav 15yr residuals): 0/13 significant, all Z negative,
-  combined p=1.00 — P-12 not detectable in timing residuals
-- Ω₂ lensing test: 0/10 candidates in real data; validation detects 2/10 at
-  injection=0.005 confirming the test pipeline works
-
-Honest Fisher Z unchanged: 2.35 from 3 confirmed simultaneous events
-  (Ç/Γ fix does not affect frequency-ratio tests)
-
-Previous: space_search/primitives.py: fix inverted Ç and Γ ordinals, bump to v0.5.0 (2026-05-28)
-========================================================================================
-
-Two ordinal inversions corrected to match imscrbgrmr v0.5.0 canonical ordering:
-
-Ç (Kinetics) — was reversed with MBL at fractional 4.5; corrected to Lean canonical:
-  K_lambda(𐑺)=1 < K_teshlig(𐑪)=2 < K_schwa(𐑧)=3 < K_turnm(𐑤)=4 < K_frtailgamma(𐑘)=5
-
-Γ (Granularity) — 𐑲 (G_revapostrophe, fine/atomic) was at ordinal 3; corrected to:
-  G_revapostrophe(𐑲)=1 < G_beta(𐑚)=2 < G_gamma(𐑔)=3
-  (matches Hebrew ℵ < ℶ < ℷ convention in models.py — this inversion was the
-   same bug flagged in models.py itself: "old aleph was GLOBAL=coarsest")
-
-Version comments updated: v0.4.26/v0.4.27 → v0.5.0
-
-Previous: manuscripts/AS_ABOVE.tex: fix all broken math-mode dollar signs (2026-05-28)
-=========================================================================
-
-Systematic fix of ~80 broken LaTeX math expressions throughout the 2120-line manuscript:
-- $$\op$$ (display math used inline) → $\op$ for: rightarrow, Rightarrow, otimes, wedge, vee, circ, odot
-- $$\langle$ ... $\rangle$$ (broken tuple delimiters) → $\langle ... \rangle$
-- $O_{$\infty$}$ and _{$\infty$} (nested dollar in subscript) → $O_{\infty}$ / _{\infty}
-- $\mu $\circ$ \delta (stray dollar around \circ) → $\mu \circ \delta
-- }} $\notin$ / $\neq$ / $\in$ / $\otimes$ (inline relation inside outer $...$) → }} \notin / \neq / \in / \otimes
-- $3^3 $\times$ 4^5 $\times$ 5^4$ → $3^3 \times 4^5 \times 5^4$
-- $\mathbf{Set}^$\times$$ → $\mathbf{Set}^\times$
-- $$\neg$\text{Prov}... and $$\lceil$...$\rceil$...$\in$... fixed to single math expressions
-- Line 1814 equation env: stripped $..$ delimiters around \langle/\rangle (already in math mode)
-- Line 1878 table cell: fixed $\mathcal{F} \vdash \phi $\leftrightarrow$ \psi(...)$
-- PDF: 395K, compiles cleanly
-
-SO_BELOW.tex already compiled (warnings only, PDF at 507K).
-
-Previous: PARACONSISTENT_LEAN_KERNEL.md: increase Figure 4 inter-layer arrow spacing (2026-05-28)
-=========================================================================
-
-- Layer y-positions spread from (5.4, 3.4, 1.1, -0.9) to (7.5, 5.1, 2.4, -0.8)
-- Arrow gaps increased from ~0.5 cm (zero at bottom) to ~1.0 cm between all layers
-- PDF rebuilds clean at 240K
-
-Previous: GRAMMAR_PRECEDES_MATHEMATICS.md: cite all 9 Zenodo publications (2026-05-28)
-=========================================================================
-
-- In-text [1,2] (As Above, So Below) in abstract at "twelve primitive dimensions" and in §2 crystal census
-- In-text [3] (Hecke-Landau) in §11.1 RH section — companion equidistribution result on unit circle
-- In-text [4] (Lefschetz 1,1) in §11.6 Hodge section — first case of Hodge Conjecture proved
-- In-text [5] (Euler+Touchard OPN) in §12.1 at Euler's form $N = p^\alpha m^2$
-- References section [1]–[9] appended after Acknowledgments
-
-Previous: PARACONSISTENT_LEAN_KERNEL.md + shavian_notation_spec.md: cite Zenodo publications (2026-05-28)
-=========================================================================
-
-PARACONSISTENT_LEAN_KERNEL.md:
-- Added references [15]–[23]: all 9 Zenodo publications by Lando Mills under new
-  "Imscribing Grammar — Prior Publications" group
-- In-text [15,16] at body intro ("grammar that encodes it") and structural position section
-- In-text [17] (Hecke-Landau) in RH bridge section — companion equidistribution result
-  for Hecke characters on unit circle cited alongside the B-gate derivation
-- PDF rebuilds clean at 241K
-
-shavian_notation_spec.md:
-- Added [1] and [2] in-text in Rationale (primitive derivation and crystal validation)
-- Added References section at end: [1] As Above, [2] So Below
-- Fixed stale implementation checklist item 8 (Noto → Everson Mono)
-
-Previous: shavian_notation_spec.md: add Everson Mono canonical font section (2026-05-28)
-=========================================================================
-
-Added "Canonical Font: Everson Mono" section immediately before the Mapping Table:
-- Rationale: Everson designed both the Unicode block and the typeface; it is the
-  authoritative glyph source, not an approximation
-- Source URL (evertype.com/fonts/shaw/), license note, filename (EversonMono.ttf)
-- Usage table: LuaLaTeX (\newfontfamily\igprimfont), web CSS, terminal, Python
-- "What not to use" table: FreeSerif (zero Shavian glyphs), Noto Sans Shavian
-  (incomplete), emoji/symbol fonts
-- Updated Website Notation CSS: replaced Noto Sans Shavian CDN with Everson Mono
-  self-hosted path; added unicode-range hint; adjusted font-size (1.1em) and
-  letter-spacing (0.02em) for monospace grid
-
-Previous: PARACONSISTENT_LEAN_KERNEL.md: references, citations, update + PDF fix (2026-05-28)
-=========================================================================
-
-Key changes:
-- References section added: 14 entries across three groups (Logical/Mathematical
-  Foundations, Proof Assistants, Software Repositories); includes all three GitHub
-  repos (MillenniumAnkh, Imscribing_Grammar, priests-engine), Belnap [1,2], Priest [3],
-  Riemann [4], Cook [5], Renes et al. [6], Yang-Mills [7,8], Lee-Yang [9], Lean 4 [10], Mathlib [11]
-- Numbered citations placed throughout body and hyperlinked to References section:
-  [1,2] at Belnap intro; [3] at DAT; [4] at RH; [9] at Lee-Yang; [5] at P vs NP;
-  [6] at SIC-POVM; [7,8] at Yang-Mills; [10,11] at Lean 4/Mathlib; [12,13] at
-  structural position; [12,13,14] at Data Availability; acknowledgments use numbered links
-  Each reference entry carries a pandoc span anchor ([[N]]{#ref-N}); in-text
-  citations use [[N]](#ref-N) hyperlinks — clickable in the PDF via hyperref
-- Notation fix: $\Phi_\}$ and $\Phi_\upsilon$ (Symbol_symbol legacy) replaced
-  with plain text + Shavian 𐑹 in Shor module descriptions; fixes LaTeX brace error
-- PDF build fix: \\in in DAT tikznode was rewritten by latextiler as $\in$ (math
-  rewrite bug); replaced with \\[0pt]in (zero-space line break, visually identical)
-- PDF builds clean: 236K, zero sorry axioms confirmed
-- Module count: 12 → 30 (26 top-level + 4 Shor/)
-- Line count: 4,840 → 4,082
-- Gap closed: QCI_FrobeniusBias.lean closes the "honest gap" about measurement bias;
-  replace placeholder text with description of gap_closed theorem (proved by rfl)
-- 4th Millennium bridge: add Yang-Mills section (QCI_YM_Bridge.lean); N as vacuum,
-  B as excited state, mass gap as coherence cost of N→B transition
-- New modules documented: QCI_FrobeniusBias (147L), QCI_Sequences (83L),
-  QCI_nRegister (64L), SelfVerifyingWASM (121L), MultiAgentBelnap (53L), Shor/ (4 files, 271L)
-- Architecture figure updated: Interface Layer and Bridges nodes include all new modules
-- Minor line count corrections: QuantumClassicalInterface 129→128, ParadoxFS 184→183
-- Millennium Bridges count corrected: 3 files ~660L → 8 files ~542L (actual line counts)
-- Appendix B: 16 new theorem entries for all new modules
-- Abstract and closing paragraphs updated for four barriers
-- Data Availability updated
-
-Previous: MillenniumAnkh: QCI_FrobeniusBias.lean — bias = Frobenius dual, 0 sorrys (2026-05-28)
-=========================================================================
-
-~/MillenniumAnkh/Imscribing/Paraconsistent/QCI_FrobeniusBias.lean
-  Lean 4 formalization closing the gap in QuantumClassicalInterface.lean.
-  Proves measureQ0's `bias` parameter is fully determined by the Frobenius
-  algebra duality (CouplingMode × apparatus state × system register).
-  13 theorems, 0 sorrys. lake build: ✔ [346/346].
-  lakefile.toml updated to include the new module.
-
-Previous: markdown/PARACONSISTENT_LEAN_KERNEL.md: close 𐑻 absorption gap (2026-05-28)
-=========================================================================
-
-§ "The 𐑻 Absorption Rule": appended two paragraphs closing the admitted gap.
-The bias is not an external parameter — it is the eigenvalue of the Frobenius
-pairing at the exceptional point; the measurement apparatus reads it, not
-supplies it. Names the remaining Lean formalization target: prove that bias
-= Frobenius dual of the measurement context.
-
-Previous: markdown/AI_ACADEMIA_LIFT.md: multi-route lift redesign + Shavian notation (2026-05-28)
-=======================================================================================
-
-Each primitive delta now has four named routes instead of one prescriptive
-surface move. Routes are labelled A/B/C/D and differentiated by genre, voice,
-and material present in the draft. The analyst chooses one route per paper,
-with explicit guidance to rotate routes across papers to avoid a recognizable
-pattern.
-
-Added "Choosing a Route" section: genre tendencies, using material already
-in the draft rather than fabricating structural drama, and rotation.
-
-All primitive values use Shavian notation throughout (𐑡 𐑥 𐑗 𐑬 𐑱 𐑐 𐑤 𐑧
-𐑔 𐑲 𐑝 𐑠 𐑓 𐑖 𐑷 𐑴). Structural type tuples in ⟨·glyph·⟩ format with ·
-separator. Bottleneck count corrected to eight. Quick reference table updated.
-Fixed typo in authorship note.
-
-Previous: agents/true_agentic_agent.py: local inference bugs fixed (2026-05-27)
-======================================================================
-
-agents/true_agentic_agent.py
-
-  Bug 1 — Wrong tool injection format in _LocalChatCompletions:
-    Tool schemas were manually injected into the system message text using a
-    <tool_schemas> tag. Qwen3's chat template uses <tools> and the model was
-    trained on that format — <tool_schemas> is unrecognised. The justifying
-    comment ("template may detect <tools> and skip re-injection") was wrong:
-    the template branches on the `tools` parameter, not message content.
-    _SYSTEM_PROMPT's IG TOOL REFERENCE section was wrapped in <tools>...</tools>
-    which would collide with the template's own injection; renamed to
-    <tool_reference>...</tool_reference>. Manual injection removed; tools now
-    passed directly to apply_chat_template (main and CPU-fallback paths).
-
-  Bug 2 — Greedy decoding + wrong max_new_tokens default in _LocalChatCompletions:
-    Both mdl.generate() calls used temperature=None, do_sample=False (greedy
-    decoding). Qwen3 model card explicitly warns against greedy decoding:
-    causes performance degradation and endless repetitions. Fixed to
-    temperature=0.7, top_p=0.8, top_k=20, min_p=0.0, do_sample=True
-    (Qwen3 non-thinking recommended params). Default max_tokens also corrected
-    from 4096 to 32768 (Qwen3 recommended default).
-
-  Bug 3 — Tetractys sub-calls used HTTP client for local models:
-    When running --model local or --model local:/path, _spawn_config["model"]
-    is "local" or "local:...". The Tetractys protocol in _imscribe_system_emit
-    resolved this through _build_client(), which either called sys.exit() if
-    OPENROUTER_API_KEY was absent, or sent model="local" to OpenRouter
-    (invalid). Tetractys never ran actual local tensor inference.
-    Fix: detect local prefix and use _LocalOpenAIClient() directly.
-
-  Bug 4 — No-op max_tokens cap in _LocalChatCompletions.create:
-    `max_tokens = min(max_tokens, 4096)` with default max_tokens=4096 never
-    reduced anything. Removed.
-
-  Bug 5 — Dead first definition of _imscribe_system_emit / _imscribe_system_verify:
-    Both functions were defined twice; the first definition (lines 882–902,
-    no Tetractys, simple tuple assembly) was silently overwritten at module
-    load time by the second definition (lines 1212+, full Tetractys protocol).
-    The dead code was never called. Removed.
+Previous: PR: Make OpenAI GPT SDK Truly Agentic via Structural Promotion
+=======================================================================
