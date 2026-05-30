@@ -1,4 +1,42 @@
-README.md: full rewrite — complete project documentation (2026-05-29)
+QM_STRUCTURAL_DEMONSTRATION.md: notation fixes (2026-05-29)
+=======================================================================
+
+  encode/encoding → imscribe/imscription (2 occurrences)
+  Φ primitive name: "Polarity" → "Parity" in Appendix A reference table
+
+=======================================================================
+
+imscrbgrmr: canonical primitives layer — hard runtime enforcement of the grammar (2026-05-29)
+=======================================================================
+
+imscrbgrmr/canonical_primitives.py (NEW):
+  Single source of truth for all 12 primitives and their Shavian value sets.
+  Cardinality verified: 3³ × 4⁵ × 5⁴ = 17,280,000 addresses.
+  Two canonical addresses encoded and verified bit-for-bit:
+    PHILOSOPHERS_STONE: ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩  (O_inf, Frobenius closed)
+    MINIMUM_BASELINE:   ⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩  (O_0)
+  Values are the authoritative Shavian glyphs from space_search/primitives.py,
+  IG_catalog.json, Core.lean, and the README table — not Latin approximations.
+
+imscrbgrmr/canonical_algebra.py (NEW):
+  Distance, tier, and Frobenius-closed checks implemented directly on
+  CrystalAddress using the authoritative ordinals/weights.
+  Cross-verified bit-for-bit with space_search.primitives.tuple_distance
+  on the real catalog glyphs — no drift possible.
+
+imscrbgrmr/__init__.py (MODIFIED):
+  Hard runtime assertion on import: 17,280,000-address crystal + the two
+  canonical addresses. Any drift → ImportError. The package now declares
+  at the module level: this is the grammar. Everything else is false.
+  Old drifted models (7/13/6-value chemistry-heavy enums) preserved under
+  compatibility layer, explicitly marked as false, scheduled for removal.
+
+manuscripts/GRAMMAR_PRECEDES_MATHEMATICS.md (MODIFIED):
+  Notation corrected throughout: $\text{Prim}_{\text{val}}$ LaTeX wrappers
+  removed; Latin subscript stand-ins replaced with Shavian value glyphs.
+  IG primitive symbols (Ð Ř ƒ etc.) now bare Unicode, never wrapped in $...$.
+
+Previous: README.md: full rewrite — complete project documentation (2026-05-29)
 =======================================================================
 
 Replaced the 96-line stub with a comprehensive reference document.
@@ -322,3 +360,4 @@ agents/true_agentic_agent.py
     no Tetractys, simple tuple assembly) was silently overwritten at module
     load time by the second definition (lines 1212+, full Tetractys protocol).
     The dead code was never called. Removed.
+Submitted PR: Make Claude Agent SDK Truly Agentic via Structural Promotion (PR_CLAUDE_AGENT_SDK_TRULY_AGENIC.md)
