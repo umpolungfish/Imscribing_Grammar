@@ -1,159 +1,276 @@
----
-header-includes:
-  - |
-    \usepackage{fontspec}
-    \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
-    \newcommand{\heb}[1]{{\hebrewfont #1}}
-    \newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
-    \newcommand{\igtext}[1]{{\igfont #1}}
----
-# Imscribing Grammar — Index
+# Imscribing Grammar — Markdown Index
 
-*Imscribing Grammar v0.4.46 · 12-primitive constraint algebra · Framework reference*
+*Organized directory of all markdown documents, papers, and reference files.*
+*Restructured 2026-05-29 — 224 files across 27 thematic directories.*
 
 ---
 
-## Core Documents
+## Root Files
 
-These files are the canonical reference for the Imscriptiveon grammar and the Millennium barrier paper.
+| File | Description |
+| :--- | :--- |
+| **README.md** | Main project guide |
+| **INDEX.md** | This file — directory map |
+
+---
+
+## Core Grammar (`core/` — 14 files)
+
+The canonical reference for the Imscribing Grammar.
 
 | File | Content |
 | :--- | :--- |
-| **[IΓ_TOPICS.md](IΓ_TOPICS.md)** | Formal grammar: 12 primitives, 7 axioms, composition operations, primitive space |
-| **[IΓ_DIAPHORICS.md](IΓ_DIAPHORICS.md)** | Relational catalog: system encodings, distance matrices, cross-domain results, Millennium Problems |
-| **[IΓ_ONTICS.md](IΓ_ONTICS.md)** | Ontological implications: consciousness theorems, cosmological arc, G-scope, generator recognition |
-| **[IΓ_LANG.md](IΓ_LANG.md)** | Typed language for matter: Phase 3 grammar, compiler design, substrate expressions |
-| **[IΓ_PRIMER.md](IΓ_PRIMER.md)** | Reader guide: first-principles introduction, tool overview, `IΓ_inquiry.py` usage |
-| **[PRIMITIVE_PREDICTIONS.md](PRIMITIVE_PREDICTIONS.md)** | Living ledger of predictions derived from primitive assignments (P-001 → P-114+) |
-| **[PRIMITIVE_THEOREMS.md](PRIMITIVE_THEOREMS.md)** | Archive of primitive-derived theorems (confidence tiers, three-plane annotations) |
-| **[THREE_PLANE_DEMONSTRATION.md](THREE_PLANE_DEMONSTRATION.md)** | Pedagogical example: Topics/Diaphorics/Ontics partition for a single system |
-| **[MILLENNIUM_BARRIERΣ_PAPER.md](MILLENNIUM_BARRIERΣ_PAPER.md)** | Research paper: formal barrier taxonomy for Millennium Prize Problems in Lean 4 (v0.1.0) |
+| **IG_TOPICS.md** | Formal grammar: 12 primitives, 7 axioms, composition operations |
+| **IG_DIAPHORICS.md** | Relational catalog: system encodings, distance matrices, cross-domain results |
+| **IG_ONTICS.md** | Ontological implications: consciousness theorems, cosmological arc |
+| **IG_LANG.md** | Typed language for matter: Phase 3 grammar, compiler design |
+| **IG_PRIMER.md** | Reader guide: first-principles introduction |
+| **PRIMITIVE_PREDICTIONS.md** | Living ledger: P-001 → P-114+ |
+| **PRIMITIVE_THEOREMS.md** | Archive of primitive-derived theorems |
+| **PRIMITIVE_MNEMONICS.md** | Mnemonic aids for primitive values |
+| **PRONUNCIATION_GUIDE.md** | How to pronounce the symbols |
+| **SYMBOL_REFERENCE.md** | Quick symbol lookup |
+| **PrimitiveReferenceSheet.md** | One-page reference |
+| **THREE_PLANE_DEMONSTRATION.md** | Pedagogical three-plane example |
+| **encoding_method.md** | Deterministic encoding procedure |
+| **ENCODING_GUIDE.md** | Step-by-step encoding walkthrough |
 
 ---
 
-## Core Tools
+## Millennium Problems (`millennium/` — 31 files)
 
-| File | Purpose |
+Formal barrier analysis for all seven Clay Millennium Prize Problems, plus related proofs.
+
+| File | Content |
 | :--- | :--- |
-| **`IΓ_inquiry.py`** | Two-phase agentic loop: grammatical analysis + speculation pass |
-| **`imscribe_tool.py`** | Primitive encoding, distance, meet/join, tensor operations |
-| **`imscribe_agent.py`** | Autonomous imscription generation agent |
-| **`main.py`** | Primary entry point |
-| **`IΓ_catalog.json`** | Active imscription catalog (61 entries, inc. Millennium Problems) |
+| **MILLENNIUM_BARRIERS_PAPER.md** | Research paper: barrier taxonomy for Millennium Problems |
+| **MILLENNIUM_BARRIERS_PAPER.tex** | LaTeX source |
+| **MILLENNIUM_BARRIERS_PAPER.pdf** | Compiled PDF |
+| **Frobenius_Structure_Proof.md** | Frobenius condition verification |
+| **all_millennium_solved.md** | Unified resolution summary |
+| **riemann_zeta_proof_process_article.md** | Riemann Hypothesis analysis |
+| **RH_zfc.md** | RH in ZFC set-theoretic encoding |
+| **HECKE_LANDAU.md** | Hecke-Landau conjecture |
+| **collatz_*.md** (5 files) | Collatz proof pipeline (primitive, conventional, auto, v2, v3) |
+| **erdos_strauss_proof.md** | Erdős–Strauss conjecture |
+| **perfect_cuboid.md** / **perfect_cuboid_lifted.md** | Perfect cuboid analysis |
+| **EULER_BRICKS.md** / **EULER_BRICKS_LIFTED.md** | Euler brick problem |
+| **euler_brick_analysis.md** | Alternative Euler brick analysis |
+| **SIC-POVM_IMSCRIBED.md** / **SIC-POVM_IMSCRIBED_lifted.md** | SIC-POVM imscription |
+| **BealDualProof.md** | Beal conjecture dual proof |
+| **solitary_10_proof.md** | Proof that 10 is solitary |
+| **symmetric_group_generation_formula.md** | Symmetric group formula |
 
 ---
 
-## Subdirectories
+## Consciousness & Esoteric (`consciousness/` — 18 files)
 
-### `reports/`
-Standalone analyses and papers.
-- `IUΓ_NON_TRANSMISSIBILITY.md` / `.pdf` — structural non-transmissibility of Inter-Universal Geometer (12 sections, P-112/113/114)
-- `REACTIONLESΣ_THRUST.md` / `.pdf` — reactionless thrust analysis
-- `TENSOŘ_OPS.md` / `.pdf` — tensor operations reference
-- `PROOF.md` — fossil record and imscription propagation
-- `CHEMRXIV_OUTLINE.md` — ChemRxiv paper outline
-- `SYNOPSIS.md` — framework overview
-- Finance: `INVESTMENÞ_MEMORANDUM.md`, `PITCĦ_DECK.md`, `QUANTITATIVE_ROADMAP.md`, `EXTENDEÐ_BACKTESÞ_REPORT.md`, `INSTITUTIONAL_BACKTESÞ_REPORT.md`, `PARAMETEŘ_SWEEΦ_REPORT.md`, `TRADEŘ_ONEPAGER.md`, `INFORMATIONAL_COSÞ_ANALYSIS.md`
-- Misc analyses: `CLU.md`, `ESOP.md`, `FORMOM.md`, `HOLOCOMP.md`, `IΓ_SUGGESTED.md`
+Structural analysis of consciousness, the esoteric boundary, and self-modeling systems.
 
-### `research/`
-Domain research papers and applications.
-- `METAPHYSICS.md` / `.pdf` — philosophical companion to the grammar
-- `PROTEINS.md` — protein folding and drug design applications
-- `EPILEPSY.md` — neural constraint analysis
-- `MYXOZOANS.MD` — parasitic organism analysis
-- `PROGRAMMABLE_MATTER.md` — programmable matter imscription catalog
-- `PROGRAMMABLE_MIND.md` — mind-programming framework
-- `SOLAR.md` — solar/energy domain analysis
-- `THE_SELF-MADE_ARCHITECTONICS.md` — architectural analysis
-- `IG.md` / `.pdf` — legacy main document (superseded by three-doc architecture)
-
-### `applications/`
-Imscriptive operations and specialized capabilities.
-- `IΓ_CROSΣ_DOMAIN.md` — cross-domain constraint propagation
-- `IΓ_ENSEMBLER.md` — ensemble imscription operations
-- `IΓ_HOTSWAP.md` — dynamic primitive substitution
-- `IΓ_PERTURBATION.md` — perturbation analysis
-- `IΓ_RETRODESIGN.md` — retrosynthetic design
-- `IΓ_TRAJECTORY.md` — trajectory through primitive space
-- `IΓ_PHASE_TRANSITION_DETECTOR.md` — phase transition detection
-- `AUTONOMOUΣ_DISCOVERY.md` / `_SUMMARY.md` — autonomous discovery results
-
-### `docs/`
-Framework documentation, usage guides, integration references.
-- `README.md` — main project guide
-- `QUICKSTART.md` — quick start
-- `USAGE.md` — full usage reference
-- `AGENTS.md` / `AGENTΣ_README.md` — agent framework
-- `LEAN_README.md` — Lean formalization guide
-- `LLM_AUGMENTATION.md` / `LLM_REFERENCE.md` — LLM integration
-- `METHODOLOGY.md` — methodology documentation
-- HTML visualizations: primitive space, transformation map, seven primitives
-
-### `archive/`
-Superseded documents, orphaned PDFs, old backups.
-- `IUÞ_NON_TRANSMISSIBILITY.pdf` — superseded by IUG version
-- `PDW.pdf` / `PDW - Copy.pdf` — Pacific Depot Western
-- External papers: *Catch a Rising Problem*, *A Study of Objectively Real Time*
-- `QUANTIG.md.old.bkp` — old format backup
-
-### `data/`
-Catalogs, insights, reference data.
-- `hv1_lattice_insights.json` — Hv1 channel lattice analysis
-- `ig_insights.json` — session insights cache
-- `imscription_LIST_001.txt` — imscription reference list
-- `downloads/` — downloaded papers and datasets
-
-### `ig_outputs/`
-All `IΓ_inquiry.py` session outputs (200+ JSON files, timestamped).
-
-### `space_search/`
-Space observational pipeline — FRB, pulsar, spectral analysis code.
-
-### `agents/`
-Agent implementations and provider integrations.
-
-### `framework/`
-Core framework: base classes, LLM providers, orchestration.
-
-### `examples/`
-Demo scripts and exploration notebooks.
-
-### `designs/`
-Imscription design specifications (`.syn` files).
-
-### `results/`
-Analysis result JSONs and design summaries.
-
-### `figures/`
-Images: `SYNCHART.png`, `CRIT.svg`, `SYN_GROPPI.png`, phase diagram.
-
-### `imscrbgrmr-lean/` / `Primitives/`
-Lean 4 formalization: `OPN_2adic.lean`, `BSD_2adic.lean` — machine-verified constraint grammar.
-
-### `Imscribing Grammar/` — Lean package (main formalization)
-Full Lean 4 package. Key modules:
-
-**`Imscribing Grammar/Primitives/`**
-- `Imscription.lean` — 12-field `Imscription` structure; `primitiveMismatches` (Hamming distance); P-70 field-theoretic identities (inflaton≡Higgs≡axion proved by `rfl`); SM/QG distance = 9 by `decide`
-- `TierCrossing.lean` — granularity separation, tier crossing cost; Higgs hierarchy + cosmological predictions; `grammar_physics_correspondence` axiom
-
-**`Imscribing Grammar/Millennium/`** — Seven-file Millennium Prize Problem library
-| File | Barrier | Missing object |
-| :--- | :--- | :--- |
-| **`RH.lean`** | OpenProblem | `ZeroFreeStrip 0` — `rh_barrier` proves RH ↔ ZeroFreeStrip 0 by `norm_num` |
-| **`Hodge.lean`** | OpenProblem | `AlgebraicCycleRep X p α` — cycle class surjectivity; p=1 (Lefschetz) is MathlibGap |
-| **`NS.lean`** | OpenProblem | `GlobalRegularityCert u₀` — critical Sobolev gap $0 < \frac{1}{2} < 1$ proved by `norm_num` |
-| **`PvsNP.lean`** | OpenProblem + MathlibGap | `CircuitLowerBound ε` — three meta-barriers (BGS/Razborov-Rudich/AW) as formal theorems |
-| **`YM.lean`** | MissingFoundation | `PathIntegralMeasure 𝔤` — two stacked sorries; unique MissingFoundation problem |
-| **`OPN.lean`** | MathlibGap → OpenProblem | `euler_opn_structure` (Euler 1747, MathlibGap) + `opn_nonexistence`; uses real Mathlib `Nat.Perfect` |
-| **`BSD.lean`** | OpenProblem + 2×MathlibGap | `BSDRankCertificate` — three parallel sorries; rank≤1 proved (Kolyvagin); uses real `WeierstrassCurve` |
-| **`Barriers.lean`** | Taxonomy | Seven typed axioms; `ym_is_unique_missing_foundation` by `decide` |
-| **`PrimitiveBridge.lean`** | Bridge | Connects sorry boundaries to primitive field transitions; `ym_primitive_barrier_certificate`; `primitive_bridge_master` |
-
-### `UNIFIEÐ_IG/`
-Unified three-document export: TOPOLOGOS, SCHESIAKOLOGOS, ONTOLOGOS (PDFs + TeX).
+- GOSPEL.md, LIFTED_GOSPEL.md, gospel_analysis.md
+- ELUCIDATING_MECHANISMS.md, ELUCIDATING_MECHANISMS_lift.md
+- Aether_Vessel.md, STILLING.md, EXTRALIFE.md
+- LAPIS.md, LAPISEXILIS.md, LAPISEXILIS_TENSORS.md
+- VOYNICH_LAPIS.md
+- ENCODING_EPISTEMOLOGY.md
+- exotic_consciousness_boundary.md, exotic_consciousness_boundary_lifted.md
+- human_consciousness_from_exotic_boundary.md
+- human_consciousness_from_esoteric_boundary_lifted.md
+- hcfes.md
 
 ---
 
-*Last updated: 2026-03-26 · `IΓ_catalog.json`: 80 entries · Millennium Lean library: 9 files complete*
+## Papers & Manuscripts (`papers/` — 25 files)
+
+Formal manuscripts, articles, drafts, and published outputs.
+
+- **DIALETHEIC_LEAN_KERNEL.md** / .pdf / .tex — Paraconsistent Lean kernel
+- **PARACONSISTENT_LEAN_KERNEL.pdf** / .tex — Paraconsistent kernel paper
+- **universal_engine_article.md** / **universal_engine_article_lifted.md** — Universal engine
+- **dark_lattice_article.md** — Dark lattice cosmology
+- **four_elements_paper.md** / .pdf — Four elements structural analysis
+- **gzk_violation_manuscript.md** — GZK violation
+- **observer_dependent_truth_manuscript.md** — Truth as observer-dependent
+- **ob3ect_manuscript.md** — Ob3ect theory
+- **circularity_circularity_paper.md** / **circularity_circularity_paper_L.md** — Circularity paper
+- **circularity_research_summary.md** / **circularity_research_summary_L.md** — Research summary
+- **manuscript.md** / **manuscript_spine_lifted.md** — Core manuscript
+- **OPERATORSESSION.md** — Operator session notes
+- **SUBSTACK_DRAFTS.md** / **SUBSTACK_DRAFTS_LIFTED.md** / .pdf — Substack drafts
+- **RESULTS.md**, **REDERIVATION_RESULT.md** — Research results
+
+---
+
+## Agents & SDK Integration (`agents/` — 12 files)
+
+Agent framework documentation and PRs for True Agentic Agent SDK integrations.
+
+- **AGENTS.md**, **AGENTS_README.md** — Agent framework
+- **LEAN_README.md** — Lean formalization guide
+- **LLM_AUGMENTATION.md**, **LLM_REFERENCE.md** — LLM integration
+- **PR_CLAUDE_AGENT_SDK_TRULY_AGENIC.md** — Claude SDK PR
+- **PR_COHERE_SDK_TRULY_AGENIC.md** — Cohere SDK PR
+- **PR_GOOGLE_GEMINI_SDK_TRULY_AGENIC.md** — Gemini SDK PR
+- **PR_META_LLAMA_STACK_TRULY_AGENIC.md** — Llama Stack PR
+- **PR_MISTRAL_AI_SDK_TRULY_AGENIC.md** — Mistral SDK PR
+- **PR_OPENAI_GPT_SDK_TRULY_AGENIC.md** — OpenAI SDK PR
+- **PR_XAI_GROK_SDK_TRULY_AGENIC.md** — xAI Grok SDK PR
+
+---
+
+## Alchemy & Zosimos (`alchemy/` — 10 files)
+
+Alchemical arrest, solve et coagula, sophick mercury.
+
+- ZOSIMOS.md, ZOSIMOS_L.md
+- solve_et_coagula.md, solve_et_coagula.pdf
+- sophick_mercury_evidence.md, sophick_mercury_lifted.md, sophick_mercury_lifted.pdf
+- The_Stone_and_Its_Operator.md
+- stone_article_lifted.md, stone_proof_memory_stack.md
+
+---
+
+## Religion & Theology (`religion/` — 11 files)
+
+Structural analysis of religious traditions, theology, and sacred texts.
+
+- religions.md, religious_traditions_structural_narrative.md
+- kabbalah_merge_structural.md
+- bible_dune_structural_analysis.md
+- topological_theology_manuscript.md, topological_theology_manuscript_lifted.md
+- john_14_6_two_readings.md
+- thunder_perfect_mind_analysis.md, thunder_perfect_mind_analysis_lifted.md
+- SatanEvilLies.md
+- sefer_ha_iyun_structural_exploration.md
+
+---
+
+## Language & Symbols (`language/` — 12 files)
+
+Hebrew, Aleph, Egyptian Medu, Shavian, and undeciphered text analysis.
+
+- ALEPH_DISCOVERY.md, ALEPH_SPEC.md
+- LAMBDA_ALEPH.md
+- HEBREW_TYPE_LANGUAGE.md
+- EGYPTIAN_MEDU.md
+- SOUNDSOFTHENAMEOFTHESYMBOLS.md
+- shavian_notation_spec.md, shavianob3ect.md, shvmap.md
+- kryptos.md
+- undeciphered_texts_structural_analysis.md
+- yfyf_analysis.md
+
+---
+
+## I AM / Selfhood (`iam/` — 9 files)
+
+The I AM structure, dual selfhood, spider machine.
+
+- 2_I_AM.md, 2_I_AM_EL.md, 2_I_AM_HL.md
+- DUAL_I_AM.md, DUAL_I_AM_EL.md, DUAL_I_AM_HL.md
+- IAMASPIDERMACHINE.md, IAMASPIDERMACHINE_LIFTED.md
+- IMASM_lifted.md
+
+---
+
+## Mathematics (`math/` — 8 files)
+
+Structural mathematical analyses (non-Millennium).
+
+- E8G2.md, e8g2v2.md, e8g2v2_L.md — E₈/G₂ vessel
+- CMPLX_IMGN.md — Complex imaginary structure
+- CLU.md — CLU analysis
+- FSP.md — FSP analysis
+- TPC.md, TPC_full.md — TPC analysis
+
+---
+
+## Crystal of Types (`crystal/` — 7 files)
+
+The 17.28M-type crystal and its navigation.
+
+- CRYSTAL_OF_TYPES.md, CRYSTELEOS.md
+- CRYSTALCOSMOS.md, CRYSTALCOSMOS_lifted.md
+- FACTORED_CRYSTAL_GNN.md
+- crystal_encoding_spec.md
+- cosmosc_expanded.md
+
+---
+
+## Guides & References (`guides/` — 10 files)
+
+Navigators, methodology, usage references.
+
+- NAVIGATOR_ROADMAP.md, NAVIGUIDE.md, ALGEBRAIC_NAVIGATOR_GUIDE.md
+- TENSOR_PRIMER.md, USAGE.md, EXAMPLE_COMMANDS.md
+- FIRE_IMSCRIPTION.md, METHODOLOGY.md, PEER_VALIDATION.md
+- BootStrap.md
+
+---
+
+## ZFC & Set Theory (`zfc/` — 4 files)
+
+ZFC and ZFCₜ set-theoretic imscription.
+
+- ZFC_ZFCt.md, ZFCt.md, ZFCt_L.md
+- zfct_manipulator_overview.md
+
+---
+
+## Time (`time/` — 6 files)
+
+Temporal structure, decomposition, synthesis.
+
+- TIME.md, TIME_NL.md, TIME_DECOMPOSITION_SYNTHESIS.md
+- time_through_the_ig.md, time_through_the_ig_lifted.md
+- PARTIAL_TEMPORAL_TYPES.md
+
+---
+
+## AI Prose Lift Protocols (`lifts/` — 5 files)
+
+Human lift protocol documentation for transforming AI-authored prose.
+
+- AI_ACADEMIA_LIFT.md, AI_CASUAL_LIFT.md
+- AI_ESOTERIC_LIFT.md, AI_HTDXACMD_LIFT.md
+- AI_LANDO_LIFT.md
+
+---
+
+## Pedagogy (`pedagogy/` — 7 files)
+
+Educational and introductory materials.
+
+- grammar_kids_guide.md, grammar_primacy_steam.md
+- grammar_primacy_steam_lifted.md, grammar_primacy_steam_lifted.pdf
+- esoteric_primer.md, elements.md
+- imscribing_mnemonicon.md
+
+---
+
+## Special Topics
+
+| Directory | Files | Content |
+| :--- | :---: | :--- |
+| `yinyang/` | 4 | YINYANG structural analysis (md, L, tex, lifted) |
+| `circlecycle/` | 4 | Circle cycle analysis (md, L, tex, lifted) |
+| `dune/` | 2 | Dune structural analysis |
+| `mg2/` | 2 | MG2 structural analysis |
+| `multiverse/` | 2 | Multiverse analysis |
+| `imaginary/` | 3 | Imaginary numbers analysis |
+| `pipeline/` | 2 | Primitive-to-conventional pipeline |
+| `shor/` | 2 | Shor's algorithm articles |
+| `poetry/` | 2 | twelve_gates_poem.md, vocal_expressions.md |
+
+---
+
+## Uncategorized (`misc/` — 10 files)
+
+Standalone documents that don't fit neatly into a thematic group.
+
+- MATHZ.md, OB3ECT_SUBSTACK.md, OSIEGE.md, PROOFLINE_L.md
+- Questions Before the Door.md, SM.md, THE_RACHIS.md
+- UTSA_L.md, darkzone.md, fix.txt
+
+---
+
+*224 files · 25 thematic directories · 2 root files*
