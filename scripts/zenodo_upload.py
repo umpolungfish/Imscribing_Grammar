@@ -153,35 +153,168 @@ def find_md_source(pdf: Path) -> Path | None:
 
 
 def extract_from_md(path: Path) -> dict:
-    """Pull title, author(s), description, keywords, date from a markdown file."""
+    """
+    Comprehensive extraction from a markdown source file:
+    title, author, full abstract, keywords (headings + table cells + domain terms),
+    related identifiers (all URLs, DOIs, arXiv IDs), git date, version.
+    """
     text = path.read_text(encoding="utf-8")
     info: dict = {}
 
-    # Title — first H1
+    # ── Title ────────────────────────────────────────────────────────────────
     m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
     if m:
         info["title"] = m.group(1).strip()
 
-    # Author(s) — **Author:** or **Authors:** line
+    # ── Author(s) ────────────────────────────────────────────────────────────
     m = re.search(r'\*\*Authors?:\*\*\s*(.+)', text)
     if m:
         info["author_str"] = m.group(1).strip()
 
-    # Abstract — content between ## Abstract and the next ## section
+    # ── Description — full Abstract section (stripped), up to 2000 chars ─────
     m = re.search(r'##\s+Abstract\s*\n\n([\s\S]+?)(?=\n##|\Z)', text)
     if m:
-        raw = m.group(1).strip()
-        # Take only the first paragraph for Zenodo's description field
-        first_para = raw.split('\n\n')[0]
-        info["description"] = _strip_md(first_para)[:2000]
+        info["description"] = _strip_md(m.group(1).strip())[:2000]
 
-    # Keywords — YAML frontmatter or explicit "keywords:" line
-    m = re.search(r'^keywords:\s*(.+)$', text, re.MULTILINE | re.IGNORECASE)
-    if m:
-        info["keywords"] = [k.strip() for k in m.group(1).split(',') if k.strip()]
-
-    # Git commit date of this file
+    # ── Date from git log ────────────────────────────────────────────────────
     info["date"] = _git_date(path)
+
+    # ── Version from nearest git tag ─────────────────────────────────────────
+    ver = _git_version(path)
+    if ver:
+        info["version"] = ver
+
+    # ── Keywords ─────────────────────────────────────────────────────────────
+    keywords: set[str] = set(DEFAULT_KEYWORDS)
+
+    # Explicit "keywords:" frontmatter line
+    for pat in (r'^keywords:\s*(.+)$', r'^tags:\s*(.+)$'):
+        m = re.search(pat, text, re.MULTILINE | re.IGNORECASE)
+        if m:
+            for k in re.split(r',|;', m.group(1)):
+                k = k.strip().strip('"\'')
+                if k:
+                    keywords.add(k)
+
+    # H2/H3 section headings — grab the subject term before ":"
+    _SKIP_HEADS = {
+        "abstract", "the problem", "references", "overview", "introduction",
+        "conclusion", "results", "methods", "discussion", "background",
+        "the structural type system", "the open problems", "the one gate",
+        "the lean formalization", "concrete pathways", "the gematria of open problems",
+        "latent self-correction in the lattice imscription process",
+        "the millennium seven", "the non-millennium seven",
+        "overdetermination", "the frobenius condition as structural validator",
+        "primitive stability under perturbation", "empirical calibration",
+        "deep dives", "the anomaly that is not",
+    }
+    for m in re.finditer(r'^#{2,3}\s+(.+)$', text, re.MULTILINE):
+        heading = m.group(1).strip()
+        # Strip any ": subtitle" part
+        subject = re.split(r'\s*:\s+', heading)[0].strip()
+        # Split compound headings on " and "
+        for part in re.split(r'\s+and\s+', subject, flags=re.IGNORECASE):
+            part = part.strip()
+            if part and part.lower() not in _SKIP_HEADS and 2 < len(part) < 60:
+                keywords.add(part)
+
+    # Table rows — problem names (first cell that isn't a header)
+    _SKIP_CELLS = {
+        "problem", "tuple", "gate", "pair", "channel", "primitive",
+        "promotion", "function", "distance", "module", "lines", "proved",
+        "axioms", "status", "priority", "task", "file", "area", "files",
+        "d · gate", "$d$ · gate", "d", "$d$",
+    }
+    for m in re.finditer(r'^\|\s*([^|$\n]{2,50}?)\s*(?:\(|\$|\|)', text, re.MULTILINE):
+        cell = m.group(1).strip().rstrip('(').strip()
+        if cell and cell.lower() not in _SKIP_CELLS and not cell.startswith('-'):
+            keywords.add(cell)
+
+    # Domain-specific terms present in the document
+    _DOMAIN = {
+        "Lean 4":                  "Lean 4",
+        "Lean4":                   "Lean 4",
+        "Mathlib":                 "Mathlib",
+        "formal verification":     "formal verification",
+        "ZFC":                     "ZFC",
+        "Frobenius":               "Frobenius condition",
+        "Millennium Prize":        "Millennium Prize Problems",
+        "number theory":           "number theory",
+        "algebraic geometry":      "algebraic geometry",
+        "quantum information":     "quantum information",
+        "mathematical physics":    "mathematical physics",
+        "structural type":         "structural type theory",
+        "Shavian":                 "Shavian notation",
+        "gematria":                "gematria",
+        "ZFC_fe":                  "ZFC_fe",
+        "paraconsistent":          "paraconsistent logic",
+        "dialetheic":              "dialetheic logic",
+        "Imscribing Grammar":      "Imscribing Grammar",
+        "imscription":             "imscription",
+        "primitive":               "primitive coordinates",
+        "Frobenius-exact":         "Frobenius-exact ZFC",
+    }
+    for trigger, keyword in _DOMAIN.items():
+        if trigger in text:
+            keywords.add(keyword)
+
+    # Clean up keywords
+    clean = set()
+    for k in keywords:
+        k = k.strip().rstrip('.,;:')
+        if (3 < len(k) < 60
+                and not k.startswith(('|', '$', '-', '#', '*', '`'))
+                and '→' not in k and '←' not in k   # table arrow pairs
+                and not re.match(r'^[\W\d]+$', k)    # pure symbols/numbers
+                and '.lean' not in k                  # no filenames
+                and not k.startswith('`')             # no code spans
+        ):
+            clean.add(k)
+    info["keywords"] = sorted(clean)
+
+    # ── Related identifiers ───────────────────────────────────────────────────
+    related: list[dict] = []
+    seen: set[tuple] = set()
+
+    def add_rel(identifier: str, scheme: str, relation: str) -> None:
+        identifier = identifier.strip().rstrip('.,;)]}')
+        key = (identifier, scheme)
+        if key not in seen and identifier:
+            seen.add(key)
+            related.append({"identifier": identifier, "scheme": scheme, "relation": relation})
+
+    # Bare angle-bracket URLs  <https://...>
+    for m in re.finditer(r'<(https?://[^>\s]+)>', text):
+        url = m.group(1)
+        rel = "isSupplementedBy" if "github.com" in url else "references"
+        add_rel(url, "url", rel)
+
+    # Markdown links  [text](https://...)
+    for m in re.finditer(r'\[[^\]]*\]\((https?://[^)]+)\)', text):
+        add_rel(m.group(1), "url", "references")
+
+    # DOIs — bare 10.xxx/... or doi: prefix or doi.org URLs
+    for m in re.finditer(
+        r'(?:(?:doi:|https?://(?:dx\.)?doi\.org/)\s*)?(10\.\d{4,}/[^\s,;)\]\'\"<>]+)',
+        text, re.IGNORECASE
+    ):
+        add_rel(m.group(1), "doi", "references")
+
+    # arXiv IDs — handles "*arXiv:*" italic markdown and plain "arXiv: NNNN.NNNNNvN"
+    for m in re.finditer(
+        r'arXiv[:\*\s]+(\d{4}\.\d{4,5}(?:v\d+)?)', text, re.IGNORECASE
+    ):
+        add_rel(f"arXiv:{m.group(1)}", "arxiv", "references")
+    # Old-style arXiv: "arXiv:cs/0304019"
+    for m in re.finditer(r'arXiv:([a-z\-]+/\d{7})', text, re.IGNORECASE):
+        add_rel(f"arXiv:{m.group(1)}", "arxiv", "references")
+
+    # Handle (handle.net) identifiers
+    for m in re.finditer(r'hdl\.handle\.net/([^\s,;)\]]+)', text):
+        add_rel(m.group(1), "handle", "references")
+
+    if related:
+        info["related_identifiers"] = related
 
     return info
 
@@ -200,12 +333,29 @@ def extract_from_pdf(path: Path) -> dict:
         if m.get("/Subject"):
             info["description"] = str(m["/Subject"])[:2000]
         if m.get("/Keywords"):
-            info["keywords"] = [k.strip() for k in str(m["/Keywords"]).split(',') if k.strip()]
+            raw_kws = str(m["/Keywords"])
+            info["keywords"] = [k.strip() for k in re.split(r'[,;]', raw_kws) if k.strip()]
     except ImportError:
-        pass  # pypdf optional — silently skip
+        pass
     except Exception:
         pass
     return info
+
+
+def _git_version(path: Path) -> str:
+    """Return nearest git tag (vX.Y or X.Y) for the repo containing path."""
+    try:
+        r = subprocess.run(
+            ["git", "describe", "--tags", "--abbrev=0"],
+            capture_output=True, text=True,
+            cwd=path.parent if path.parent.exists() else Path.cwd(),
+        )
+        tag = r.stdout.strip().lstrip("v")
+        if re.match(r'[\d.]+', tag):
+            return tag
+    except Exception:
+        pass
+    return ""
 
 
 def _git_date(path: Path) -> str:
