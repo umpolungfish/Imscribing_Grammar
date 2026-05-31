@@ -3,10 +3,15 @@
 zenodo_upload.py — Zenodo uploader for Imscribing Grammar publications.
 
 Quick start:
-  python3 zenodo_upload.py paper.pdf               # sandbox draft (safe to test)
-  python3 zenodo_upload.py --live paper.pdf        # publish to zenodo.org
+  python3 zenodo_upload.py paper.pdf               # sandbox draft, prompts pre-filled
+  python3 zenodo_upload.py -y paper.pdf            # sandbox, no prompts (auto everything)
+  python3 zenodo_upload.py --live -y paper.pdf     # publish to zenodo.org, no prompts
   python3 zenodo_upload.py --list                  # see all your deposits
   python3 zenodo_upload.py --update 12345 new.pdf  # add file to existing deposit
+
+Metadata is auto-extracted from the associated .md source file (same stem, searched
+in the file's directory and ~/imscribing_grammar/**).  Falls back to PDF metadata,
+then to interactive prompts for anything that couldn't be found.
 
 Token setup (one-time):
   export ZENODO_SANDBOX_TOKEN=...   # from sandbox.zenodo.org/account/settings/applications
@@ -16,6 +21,8 @@ Token setup (one-time):
 
 import datetime
 import os
+import re
+import subprocess
 import sys
 import json
 import argparse
@@ -65,15 +72,15 @@ ACCESS_RIGHTS = {
 }
 
 RELATION_TYPES = {
-    "isVersionOf":        "Is new version of (prior DOI/URL)",
-    "isPreviousVersionOf":"Is previous version of (newer DOI/URL)",
-    "isPartOf":           "Is part of a series/collection",
-    "hasPart":            "Has part (companion file DOI/URL)",
-    "isSupplementTo":     "Is supplement to another paper",
-    "isSupplementedBy":   "Is supplemented by (code, data…)",
-    "references":         "References (cites another work)",
-    "isReferencedBy":     "Is referenced by another work",
-    "isIdenticalTo":      "Is identical to (mirror/alt URL)",
+    "isVersionOf":           "Is new version of (prior DOI/URL)",
+    "isPreviousVersionOf":   "Is previous version of (newer DOI/URL)",
+    "isPartOf":              "Is part of a series/collection",
+    "hasPart":               "Has part (companion file DOI/URL)",
+    "isSupplementTo":        "Is supplement to another paper",
+    "isSupplementedBy":      "Is supplemented by (code, data…)",
+    "references":            "References (cites another work)",
+    "isReferencedBy":        "Is referenced by another work",
+    "isIdenticalTo":         "Is identical to (mirror/alt URL)",
     "isAlternateIdentifier": "Alternate identifier (arXiv, handle…)",
 }
 
@@ -88,15 +95,15 @@ IDENTIFIER_SCHEMES = {
 }
 
 CONTRIBUTOR_TYPES = {
-    "Researcher":        "Researcher",
-    "Editor":            "Editor",
-    "DataCollector":     "Data collector",
-    "DataCurator":       "Data curator",
-    "DataManager":       "Data manager",
-    "Producer":          "Producer",
-    "Supervisor":        "Supervisor",
-    "Sponsor":           "Sponsor",
-    "Other":             "Other",
+    "Researcher":    "Researcher",
+    "Editor":        "Editor",
+    "DataCollector": "Data collector",
+    "DataCurator":   "Data curator",
+    "DataManager":   "Data manager",
+    "Producer":      "Producer",
+    "Supervisor":    "Supervisor",
+    "Sponsor":       "Sponsor",
+    "Other":         "Other",
 }
 
 # All IG publications use the Unlicense; cc-zero is the closest Zenodo license.
@@ -106,6 +113,166 @@ DEFAULT_PUB_SUBTYPE = "preprint"
 DEFAULT_ACCESS      = "open"
 DEFAULT_LANGUAGE    = "eng"
 DEFAULT_KEYWORDS    = ["Imscribing Grammar", "imscription"]
+
+# Directories searched (in order) when looking for a .md source alongside a PDF
+IG_SEARCH_DIRS = [
+    Path.home() / "imscribing_grammar",
+    Path.home() / "imscribing_grammar" / "manuscripts",
+    Path.home() / "imscribing_grammar" / "markdown",
+    Path.home() / "imscribing_grammar" / "markdown" / "core",
+]
+
+
+# ── Auto-extraction ───────────────────────────────────────────────────────────
+
+def _strip_md(text: str) -> str:
+    """Remove markdown formatting and inline LaTeX for plain-text fields."""
+    text = re.sub(r'\$\$[\s\S]+?\$\$', '', text)          # block math
+    text = re.sub(r'\$[^$\n]+?\$', '', text)               # inline math
+    text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)         # bold
+    text = re.sub(r'\*([^*]+)\*', r'\1', text)             # italic
+    text = re.sub(r'`[^`]+`', '', text)                    # code spans
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)   # links
+    text = re.sub(r'<https?://[^>]+>', '', text)           # bare URLs
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+
+def find_md_source(pdf: Path) -> Path | None:
+    """Return the .md file whose stem matches the PDF, searching IG directories."""
+    stem = pdf.stem
+    candidates = [
+        pdf.with_suffix('.md'),                        # same directory
+        pdf.parent / f"{stem}.md",
+        *[d / f"{stem}.md" for d in IG_SEARCH_DIRS],  # known IG dirs
+    ]
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
+
+
+def extract_from_md(path: Path) -> dict:
+    """Pull title, author(s), description, keywords, date from a markdown file."""
+    text = path.read_text(encoding="utf-8")
+    info: dict = {}
+
+    # Title — first H1
+    m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
+    if m:
+        info["title"] = m.group(1).strip()
+
+    # Author(s) — **Author:** or **Authors:** line
+    m = re.search(r'\*\*Authors?:\*\*\s*(.+)', text)
+    if m:
+        info["author_str"] = m.group(1).strip()
+
+    # Abstract — content between ## Abstract and the next ## section
+    m = re.search(r'##\s+Abstract\s*\n\n([\s\S]+?)(?=\n##|\Z)', text)
+    if m:
+        raw = m.group(1).strip()
+        # Take only the first paragraph for Zenodo's description field
+        first_para = raw.split('\n\n')[0]
+        info["description"] = _strip_md(first_para)[:2000]
+
+    # Keywords — YAML frontmatter or explicit "keywords:" line
+    m = re.search(r'^keywords:\s*(.+)$', text, re.MULTILINE | re.IGNORECASE)
+    if m:
+        info["keywords"] = [k.strip() for k in m.group(1).split(',') if k.strip()]
+
+    # Git commit date of this file
+    info["date"] = _git_date(path)
+
+    return info
+
+
+def extract_from_pdf(path: Path) -> dict:
+    """Pull metadata from PDF XMP/Info dictionary (requires pypdf)."""
+    info: dict = {}
+    try:
+        import pypdf  # type: ignore
+        reader = pypdf.PdfReader(str(path))
+        m = reader.metadata or {}
+        if m.get("/Title"):
+            info["title"] = str(m["/Title"])
+        if m.get("/Author"):
+            info["author_str"] = str(m["/Author"])
+        if m.get("/Subject"):
+            info["description"] = str(m["/Subject"])[:2000]
+        if m.get("/Keywords"):
+            info["keywords"] = [k.strip() for k in str(m["/Keywords"]).split(',') if k.strip()]
+    except ImportError:
+        pass  # pypdf optional — silently skip
+    except Exception:
+        pass
+    return info
+
+
+def _git_date(path: Path) -> str:
+    """Return YYYY-MM-DD of the most recent git commit touching path, or today."""
+    try:
+        r = subprocess.run(
+            ["git", "log", "-1", "--format=%as", "--", str(path)],
+            capture_output=True, text=True,
+            cwd=path.parent if path.parent.exists() else Path.cwd(),
+        )
+        date = r.stdout.strip()
+        if re.match(r'\d{4}-\d{2}-\d{2}', date):
+            return date
+    except Exception:
+        pass
+    return datetime.date.today().isoformat()
+
+
+def auto_extract(files: list[Path]) -> dict:
+    """
+    For each file, find its .md source (or use PDF metadata) and merge results.
+    First file wins on conflicts.
+    """
+    merged: dict = {}
+    for f in files:
+        if f.suffix.lower() in (".md", ".markdown"):
+            info = extract_from_md(f)
+        else:
+            md = find_md_source(f)
+            if md:
+                print(f"  ✦ Found source: {md}")
+                info = extract_from_md(md)
+            else:
+                info = extract_from_pdf(f)
+        # Earlier files take priority
+        for k, v in info.items():
+            merged.setdefault(k, v)
+    return merged
+
+
+def _parse_author_str(author_str: str) -> list[dict]:
+    """
+    Turn a plain-text author string into Zenodo creator dicts.
+    Handles 'Lando Mills', 'Mills, Lando', 'A. Smith and B. Jones', etc.
+    Falls back to DEFAULT_CREATOR if the string matches the default author.
+    """
+    # Check if it's basically the default author
+    if re.search(r'lando\s+mills|mills,?\s+lando', author_str, re.IGNORECASE):
+        return [DEFAULT_CREATOR.copy()]
+    creators = []
+    # Split on "and" or "," between names
+    parts = re.split(r'\s+and\s+|;\s*', author_str, flags=re.IGNORECASE)
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        # Already in "Last, First" format?
+        if ',' in part:
+            creators.append({"name": part})
+        else:
+            # Assume "First Last" — flip to "Last, First"
+            tokens = part.split()
+            if len(tokens) >= 2:
+                creators.append({"name": f"{tokens[-1]}, {' '.join(tokens[:-1])}"})
+            else:
+                creators.append({"name": part})
+    return creators or [DEFAULT_CREATOR.copy()]
 
 
 # ── HTTP session ─────────────────────────────────────────────────────────────
@@ -143,7 +310,6 @@ def api_create(session, base) -> dict:
 def api_upload_file(session, bucket_url: str, path: Path) -> None:
     size_kb = path.stat().st_size / 1024
     print(f"  ↑ {path.name}  ({size_kb:.0f} KB) ...", end=" ", flush=True)
-    # File uploads don't use JSON Content-Type
     headers = {k: v for k, v in session.headers.items() if k != "Content-Type"}
     with open(path, "rb") as fh:
         r = requests.put(f"{bucket_url}/{path.name}", data=fh, headers=headers)
@@ -227,21 +393,20 @@ def choose(label: str, options: dict, default_key: str = "") -> str:
         print(f"  Enter 1–{len(keys)}.")
 
 
-def _collect_creators() -> list[dict]:
-    """Prompt for one or more creators (authors)."""
-    print(f"\nCreators / Authors")
-    print(f"  Default: {DEFAULT_CREATOR['name']}  (ORCID {DEFAULT_CREATOR['orcid']})")
-    override = input("  Press Enter to use default, or type 'Family, Given' to replace: ").strip()
+def _collect_creators(default_creators: list[dict]) -> list[dict]:
+    names_str = "; ".join(c["name"] for c in default_creators)
+    print(f"\nCreators / Authors (detected: {names_str})")
+    override = input("  Press Enter to accept, or type 'Family, Given' to replace: ").strip()
     if override:
         creators = [{"name": override}]
-        orcid = input("  ORCID (optional, press Enter to skip): ").strip()
+        orcid = input("  ORCID (optional): ").strip()
         if orcid:
             creators[0]["orcid"] = orcid
         affil = input("  Affiliation (optional): ").strip()
         if affil:
             creators[0]["affiliation"] = affil
     else:
-        creators = [DEFAULT_CREATOR.copy()]
+        creators = [c.copy() for c in default_creators]
 
     while True:
         more = input("  Add another author? [y/N] ").strip().lower()
@@ -258,14 +423,12 @@ def _collect_creators() -> list[dict]:
         if affil:
             c["affiliation"] = affil
         creators.append(c)
-
     return creators
 
 
 def _collect_contributors() -> list[dict]:
-    """Prompt for optional contributors (non-author roles)."""
     contributors = []
-    print("\nContributors (non-author roles — editor, supervisor, data curator…)")
+    print("\nContributors (non-author roles — editor, supervisor…)")
     while True:
         add = input("  Add a contributor? [y/N] ").strip().lower()
         if add not in ("y", "yes"):
@@ -287,7 +450,6 @@ def _collect_contributors() -> list[dict]:
 
 
 def _collect_related_identifiers() -> list[dict]:
-    """Prompt for related works (DOIs, URLs, arXiv IDs, etc.)."""
     related: list[dict] = []
     print("\nRelated identifiers (prior versions, companion repos, cited works…)")
     while True:
@@ -299,77 +461,99 @@ def _collect_related_identifiers() -> list[dict]:
             break
         scheme = choose("    Scheme", IDENTIFIER_SCHEMES, "doi")
         relation = choose("    Relation", RELATION_TYPES, "isVersionOf")
-        related.append({
-            "identifier": identifier,
-            "scheme":     scheme,
-            "relation":   relation,
-        })
+        related.append({"identifier": identifier, "scheme": scheme, "relation": relation})
     return related
 
 
-def _collect_keywords() -> list[str]:
-    """Prompt for keywords, pre-filled with IG defaults."""
-    print(f"\nKeywords (comma-separated; defaults shown)")
-    default_str = ", ".join(DEFAULT_KEYWORDS)
-    raw = input(f"  [{default_str}]\n  Keywords: ").strip()
+def _collect_keywords(defaults: list[str]) -> list[str]:
+    default_str = ", ".join(defaults)
+    print(f"\nKeywords (detected: {default_str})")
+    raw = input("  Press Enter to accept, or enter comma-separated list: ").strip()
     if not raw:
-        return list(DEFAULT_KEYWORDS)
+        return list(defaults)
     return [k.strip() for k in raw.split(",") if k.strip()]
 
 
-def collect_metadata(files: list[Path]) -> dict:
-    """Interactive metadata collection — comprehensive Zenodo fields."""
+# ── Metadata assembly ─────────────────────────────────────────────────────────
+
+def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
+    """
+    Build Zenodo metadata.  With --yes, use extracted values + defaults with no
+    interactive prompts.  Without --yes, pre-fill prompts with extracted values.
+    """
+    default_title = (
+        extracted.get("title")
+        or (files[0].stem.replace("_", " ").replace("-", " ").title() if files else "")
+    )
+    default_desc    = extracted.get("description", "")
+    default_date    = extracted.get("date", datetime.date.today().isoformat())
+    default_kws     = extracted.get("keywords", list(DEFAULT_KEYWORDS))
+    default_creators = (
+        _parse_author_str(extracted["author_str"])
+        if "author_str" in extracted
+        else [DEFAULT_CREATOR.copy()]
+    )
+
+    if yes:
+        if not default_title:
+            sys.exit("Could not auto-detect title — re-run without -y to enter it manually.")
+        if not default_desc:
+            sys.exit("Could not auto-detect description — re-run without -y to enter it manually.")
+        print(f"  Title:    {default_title}")
+        print(f"  Date:     {default_date}")
+        print(f"  Creator:  {'; '.join(c['name'] for c in default_creators)}")
+        print(f"  Keywords: {', '.join(default_kws)}")
+        print(f"  Desc:     {textwrap.shorten(default_desc, 72)}")
+        meta: dict = {
+            "title":            default_title,
+            "description":      default_desc,
+            "upload_type":      DEFAULT_UPLOAD_TYPE,
+            "publication_type": DEFAULT_PUB_SUBTYPE,
+            "publication_date": default_date,
+            "creators":         default_creators,
+            "access_right":     DEFAULT_ACCESS,
+            "license":          DEFAULT_LICENSE,
+            "language":         DEFAULT_LANGUAGE,
+            "keywords":         default_kws,
+            "version":          "1.0",
+        }
+        return meta
+
+    # ── Interactive (pre-filled) ─────────────────────────────────────────────
     print()
     print("─" * 56)
-    print("  Metadata")
+    print("  Metadata  (auto-filled — press Enter to accept each)")
     print("─" * 56)
 
-    # ── Core ────────────────────────────────────────────────────────────
-    default_title = files[0].stem.replace("_", " ").replace("-", " ").title() if files else ""
-    title = prompt("Title", default=default_title)
-
-    description = prompt("Description (1–3 sentences)")
-
+    title       = prompt("Title",       default=default_title)
+    description = prompt("Description", default=default_desc)
     upload_type = choose("Upload type", UPLOAD_TYPES, DEFAULT_UPLOAD_TYPE)
-    subtype = None
+    subtype     = None
     if upload_type == "publication":
         subtype = choose("Publication subtype", PUB_SUBTYPES, DEFAULT_PUB_SUBTYPE)
 
-    # ── Versioning & date ───────────────────────────────────────────────
-    today = datetime.date.today().isoformat()
-    pub_date = prompt("Publication date", default=today)
+    pub_date = prompt("Publication date", default=default_date)
     version  = prompt("Version", default="1.0", required=False)
+    language = prompt("Language (ISO 639-2)", default=DEFAULT_LANGUAGE)
 
-    # ── Language ────────────────────────────────────────────────────────
-    language = prompt("Language (ISO 639-2, e.g. 'eng')", default=DEFAULT_LANGUAGE)
-
-    # ── People ──────────────────────────────────────────────────────────
-    creators     = _collect_creators()
+    creators     = _collect_creators(default_creators)
     contributors = _collect_contributors()
+    keywords     = _collect_keywords(default_kws)
+    notes        = prompt("Notes (optional)", default="", required=False)
+    related      = _collect_related_identifiers()
 
-    # ── Discovery ───────────────────────────────────────────────────────
-    keywords = _collect_keywords()
-
-    notes = prompt("Notes / additional remarks (optional)", default="", required=False)
-
-    # ── Relations ───────────────────────────────────────────────────────
-    related = _collect_related_identifiers()
-
-    # ── Communities (optional) ──────────────────────────────────────────
-    print("\nZenodo communities (optional — identifiers like 'zenodo', 'ecfunded'…)")
+    print("\nZenodo communities (optional)")
     communities: list[dict] = []
     raw_comm = input("  Community IDs, comma-separated (or Enter to skip): ").strip()
     if raw_comm:
         communities = [{"identifier": c.strip()} for c in raw_comm.split(",") if c.strip()]
 
-    # ── Grants (optional) ───────────────────────────────────────────────
     grants: list[dict] = []
-    raw_grant = input("\nGrant IDs (OpenAIRE format, comma-separated, or Enter to skip): ").strip()
+    raw_grant = input("\nGrant IDs (OpenAIRE format, or Enter to skip): ").strip()
     if raw_grant:
         grants = [{"id": g.strip()} for g in raw_grant.split(",") if g.strip()]
 
-    # ── Assemble ────────────────────────────────────────────────────────
-    meta: dict = {
+    meta = {
         "title":            title,
         "description":      description,
         "upload_type":      upload_type,
@@ -394,11 +578,10 @@ def collect_metadata(files: list[Path]) -> dict:
         meta["communities"] = communities
     if grants:
         meta["grants"] = grants
-
     return meta
 
 
-def confirm_summary(files: list[Path], meta: dict, mode: str) -> bool:
+def confirm_summary(files: list[Path], meta: dict, mode: str, yes: bool) -> bool:
     print()
     print("─" * 56)
     print("  Summary")
@@ -433,6 +616,8 @@ def confirm_summary(files: list[Path], meta: dict, mode: str) -> bool:
     for f in files:
         print(f"    {f.name}  ({f.stat().st_size/1024:.0f} KB)")
     print()
+    if yes:
+        return True
     ans = input("Looks good? [Y/n] ").strip().lower()
     return ans in ("", "y", "yes")
 
@@ -449,13 +634,16 @@ def cmd_upload(args):
         if not f.exists():
             sys.exit(f"File not found: {f}")
 
+    # Auto-extract metadata from source files
+    print("\nAuto-extracting metadata ...")
+    extracted = auto_extract(files)
+
     token = get_token(args.live)
     session = make_session(token)
 
-    # Collect metadata interactively
-    meta = collect_metadata(files)
+    meta = collect_metadata(files, extracted, yes=args.yes)
 
-    if not confirm_summary(files, meta, mode):
+    if not confirm_summary(files, meta, mode, yes=args.yes):
         print("Aborted.")
         return
 
@@ -463,7 +651,7 @@ def cmd_upload(args):
     if args.update:
         print(f"\nFetching existing deposit {args.update} ...")
         dep = api_get(session, base, args.update)
-        dep_id    = dep["id"]
+        dep_id     = dep["id"]
         bucket_url = dep["links"]["bucket"]
         print(f"  Found: '{dep.get('metadata', {}).get('title', '(untitled)')}' — state: {dep['state']}")
     else:
@@ -490,8 +678,8 @@ def cmd_upload(args):
 
     print("\nPublishing ...")
     result = api_publish(session, base, dep_id)
-    doi  = result.get("doi", "(pending)")
-    url  = result.get("links", {}).get("record_html", f"{site}/record/{dep_id}")
+    doi = result.get("doi", "(pending)")
+    url = result.get("links", {}).get("record_html", f"{site}/record/{dep_id}")
     print(f"\n✓ Published!")
     print(f"  DOI:  {doi}")
     print(f"  URL:  {url}")
@@ -512,8 +700,8 @@ def cmd_list(args):
     print(f"{'ID':<12} {'State':<12} {'DOI':<22} Title")
     print("─" * 72)
     for d in api_list(session, base):
-        m   = d.get("metadata", {})
-        doi = d.get("doi") or d.get("doi_url") or "—"
+        m     = d.get("metadata", {})
+        doi   = d.get("doi") or d.get("doi_url") or "—"
         state = d.get("state", "?")
         title = m.get("title", "(no title)")[:35]
         print(f"{d['id']:<12} {state:<12} {doi:<22} {title}")
@@ -527,15 +715,15 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=textwrap.dedent("""
             Examples:
-              python3 zenodo_upload.py manuscripts/AS_ABOVE.pdf
-              python3 zenodo_upload.py --live manuscripts/AS_ABOVE.pdf space_search/primitives.py
+              python3 zenodo_upload.py manuscripts/UNIOPENPROB.pdf
+              python3 zenodo_upload.py -y --live manuscripts/UNIOPENPROB.pdf
               python3 zenodo_upload.py --live --draft paper.pdf
               python3 zenodo_upload.py --list
               python3 zenodo_upload.py --list --live
               python3 zenodo_upload.py --update 12345 new_version.pdf
         """),
     )
-    p.add_argument("files", nargs="*", help="Files to upload")
+    p.add_argument("files",    nargs="*", help="Files to upload")
     p.add_argument("--live",   action="store_true",
                    help="Publish to zenodo.org (default: sandbox)")
     p.add_argument("--draft",  action="store_true",
@@ -544,6 +732,8 @@ def main():
                    help="Add files to an existing deposit (by Zenodo ID)")
     p.add_argument("--list",   action="store_true",
                    help="List your existing deposits and exit")
+    p.add_argument("-y", "--yes", action="store_true",
+                   help="Skip all prompts — use auto-extracted metadata only")
 
     args = p.parse_args()
 
@@ -555,7 +745,7 @@ def main():
         p.print_help()
         sys.exit(0)
 
-    if args.live:
+    if args.live and not args.yes:
         print()
         print("  *** PRODUCTION MODE — this will publish to zenodo.org ***")
         ans = input("  Continue? [y/N] ").strip().lower()
