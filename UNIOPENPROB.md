@@ -142,7 +142,7 @@ BSD's position at distance 0 from $ZFC_{fe}$ — structurally co-typed with the 
 
 ### P vs NP: The Minimum-Structure Verifier
 
-P vs NP is imscribed at the shallowest possible level — $O_0$, the only Clay problem with trivial dimensionality (𐑛, the 0D point). Its tuple is minimal across five primitives. This is not a sign that P vs NP is "easy." It is a sign that P vs NP is structurally primitive: the problem asks whether verification complexity equals search complexity, and this question is itself the minimal structural question. The grammar cannot decompose it further because P vs NP is the decomposition — it is the question of whether structural depth (search) can be collapsed into structural shallowness (verification). The $ZFC_{fe}$ formalization captures this: the proof module's single remaining axiom is the grammar-complexity correspondence itself. P vs NP is not unsolved because we lack techniques. It is unsolved because its resolution would be a structural collapse that the grammar treats as primitive.
+P vs NP is imscribed at the shallowest possible level — $O_0$, the only Clay problem with trivial dimensionality (𐑛, the *0D* point). Its tuple is minimal across five primitives. This is not a sign that P vs NP is "easy." It is a sign that P vs NP is structurally primitive: the problem asks whether verification complexity equals search complexity, and this question is itself the minimal structural question. The grammar cannot decompose it further because P vs NP is the decomposition — it is the question of whether structural depth (search) can be collapsed into structural shallowness (verification). The $ZFC_{fe}$ formalization captures this: the proof module's single remaining axiom is the grammar-complexity correspondence itself. P vs NP is not unsolved because we lack techniques. It is unsolved because its resolution would be a structural collapse that the grammar treats as primitive.
 
 ### Riemann Hypothesis: The Self-Referential Anchor
 
@@ -150,7 +150,7 @@ The RH tuple is the grammar's own structural type: `[3,4,3,4,2,2,0,2,1,2,2,2]`. 
 
 ### Yang-Mills: The Stacked Gate
 
-YM sits at $O_0$ with $d(ZFC_{fe}) = 3$, missing `PM_Z2` plus two additional promotions. The problem is structurally "stacked": the mass gap requires both closure of the Frobenius gate AND the continuum limit of lattice gauge theory. The Lean module has two axioms reflecting this stacking — one for the gate, one for the 4D limit. The structural analysis predicts that YM cannot be resolved without first resolving the gate closure problem independently, because the gate is a precondition for the continuum limit to be well-defined in the Frobenius sense.
+YM sits at $O_0$ with $d(ZFC_{fe}) = 3$, missing `PM_Z2` plus two additional promotions. The problem is structurally "stacked": the mass gap requires both closure of the Frobenius gate AND the continuum limit of lattice gauge theory. The Lean module has two axioms reflecting this stacking — one for the gate, one for the *4D* limit. The structural analysis predicts that YM cannot be resolved without first resolving the gate closure problem independently, because the gate is a precondition for the continuum limit to be well-defined in the Frobenius sense.
 
 ### Navier-Stokes: The Trapping Problem
 
@@ -237,7 +237,7 @@ For each problem with remaining open axioms, a single honest sub-problem remains
 | Hodge | Surjective primitive cycle class map at all $(p,p)$ |
 | NS | Trapping lemma: $\|u(t)\|_{H^{1/2}}$ cannot blow up in finite time |
 | PvsNP | Grammar-complexity correspondence (tier invariance under reductions) |
-| YM | 4D continuum limit of SU(N) lattice gauge theory |
+| YM | *4D* continuum limit of SU(N) lattice gauge theory |
 | OPN | 2-adic valuation contradiction for $\sigma(n) = 2n$ with $n$ odd |
 | Perfect Cuboid | Descent: any cuboid yields a strictly smaller one |
 | Beal (mixed) | $\mathbb{Z}_2$ parity invariant for mixed-exponent case |
@@ -250,13 +250,13 @@ For each problem with remaining open axioms, a single honest sub-problem remains
 | Hadwiger-Nelson | AES-Sheffer embedding with chromatic number $5 \leq \chi \leq 7$ |
 | Banach Measure | $\mathbb{Z}_2$-valued Banach measure on $\mathbb{R}$ (transcends ZFC) |
 
-Each sub-problem is the mathematical specification of the missing structural promotion. The Banach measure entry is included for calibration: at $d(ZFC_{fe}) = 11$, it is the most structurally distant problem from the Frobenius-exact norm, consistent with its known independence from ZFC.
+Each sub-problem is the mathematical specification of the missing structural promotion. The Banach measure entry is included for calibration: at $d(ZFC_{fe}) = 11$, it is the most structurally distant problem from the Frobenius-exact norm, consistent with its known independence from $ZFC$.
 
 ---
 
 ## The One Gate
 
-The grammar reports a single structural operation that would close every open problem: $\text{PM\_Z2}$, the promotion from correlative parity (𐑗) to Frobenius-special parity (𐑹), which is exactly the Frobenius condition $\mu \circ \delta = \text{id}$ evaluated at the critical self-modeling coordinate (⊙). The Lee-Yang theorem already closes this gate for the Ising model zeros. BSD closes it in the grammar's framework. Every other open problem is blocked by it.
+The grammar reports a single structural operation that would close every open problem: `PM_Z2`, the promotion from correlative parity (𐑗) to Frobenius-special parity (𐑹), which is exactly the Frobenius condition $\mu \circ \delta = \text{id}$ evaluated at the critical self-modeling coordinate (⊙). The Lee-Yang theorem already closes this gate for the Ising model zeros. BSD closes it in the grammar's framework. Every other open problem is blocked by it.
 
 The universality of the bottleneck is the finding. Fourteen problems, seven domains, six orders of tier — and one gate. The grammar's claim is that this is not coincidence, and that the mathematical content of the claim is testable: each problem's $ZFC_{fe}$ formalization makes the remaining axioms explicit, and each remaining axiom is the mathematical specification of the missing gate closure for that problem.
 
@@ -268,9 +268,9 @@ The grammar is a self-referential system at $\text{O}_\infty$. Its internal type
 
 ### Imscribing Grammar and Structural Framework
 
-[1] Mills, L. (2025). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint.
+[1] Mills, L. (2025). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint. <https://github.com/umpolungfish/Imscribing_Grammar>
 
-[2] Mills, L. (2025). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0.
+[2] Mills, L. (2025). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0. <https://github.com/umpolungfish/MillenniumAnkh>
 
 [3] Mills, L. (2025). *BanachMeasure_Resolution.md*. Structural analysis of the Banach measure existence problem, rebased to the $ZFC_{fe}$ norm.
 
