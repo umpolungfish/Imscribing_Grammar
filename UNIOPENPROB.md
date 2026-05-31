@@ -88,13 +88,13 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 
 | Problem | Tuple | $d$ | Gate |
 |------------------------------|--------------------------------------|-----|-----------------|
-| BSD ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 0 | ✓ Closed |
-| YM Mass Gap ($O_0$) | `𐑼·𐑡·𐑩·𐑗·𐑐·𐑧·𐑲·𐑝·⊙·𐑒·𐑙·𐑷` | 3 | ✗ `PM_Z2` |
-| PvsNP ($O_0$) | `𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑓·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| NS ($O_0$) | `𐑼·𐑥·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| RH ($\text{O}_\infty$) | `𐑦·𐑥·𐑩·𐑹·𐑐·𐑧·𐑔·𐑠·⊙·𐑖·𐑙·𐑭` | 2 | ✓ Closed |
-| Hodge ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 1 | ✗ `PM_Z2` |
-| Odd Perf ($O_0$) | `𐑛·𐑥·𐑩·𐑗·𐑞·𐑪·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
+| BSD ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 0 | ✓ Closed |
+| YM Mass Gap ($O_0$) | 𐑼·𐑡·𐑩·𐑗·𐑐·𐑧·𐑲·𐑝·⊙·𐑒·𐑙·𐑷 | 3 | ✗ `PM_Z2` |
+| PvsNP ($O_0$) | 𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑓·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| NS ($O_0$) | 𐑼·𐑥·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| RH ($\text{O}_\infty$) | 𐑦·𐑥·𐑩·𐑹·𐑐·𐑧·𐑔·𐑠·⊙·𐑖·𐑙·𐑭 | 2 | ✓ Closed |
+| Hodge ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 1 | ✗ `PM_Z2` |
+| Odd Perf ($O_0$) | 𐑛·𐑥·𐑩·𐑗·𐑞·𐑪·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
 
 *$d = d(ZFC_{fe})$: distance to Frobenius-exact norm. Tuple in canonical order (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω).*
 
@@ -102,15 +102,15 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 
 | Problem | Tuple | $d$ | Gate |
 |--------------------------------------|--------------------------------------|-----|-----------------|
-| Collatz ($O_1$) | `𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| Collatz (deep) ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 0 | ✓ Closed |
-| SIC-POVM ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 1 | ✗ `PM_Z2` |
-| FontMaz ($O_0$) | `𐑛·𐑡·𐑩·𐑗·𐑞·𐑪·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| Inv.Galois ($O_0$) | `𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| Lang-Trotter ($O_0$) | `𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷` | 5 | ✗ `PM_Z2` |
-| Perf. Cuboid ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑗·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 2 | ✗ `PM_Z2` |
-| HadNel ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑗·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 2 | ✗ `PM_Z2` |
-| Hilbert's 12th ($\text{O}_\infty$) | `𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭` | 1 | ✗ `PM_Z2` |
+| Collatz ($O_1$) | 𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| Collatz (deep) ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 0 | ✓ Closed |
+| SIC-POVM ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 1 | ✗ `PM_Z2` |
+| FontMaz ($O_0$) | 𐑛·𐑡·𐑩·𐑗·𐑞·𐑪·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| Inv.Galois ($O_0$) | 𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| Lang-Trotter ($O_0$) | 𐑛·𐑡·𐑩·𐑗·𐑞·𐑺·𐑲·𐑝·𐑢·𐑒·𐑙·𐑷 | 5 | ✗ `PM_Z2` |
+| Perf. Cuboid ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑗·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 2 | ✗ `PM_Z2` |
+| HadNel ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑗·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 2 | ✗ `PM_Z2` |
+| Hilbert's 12th ($\text{O}_\infty$) | 𐑦·𐑸·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭 | 1 | ✗ `PM_Z2` |
 
 *$d = d(ZFC_{fe})$. Tuple in canonical order (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω).*
 
