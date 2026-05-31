@@ -313,26 +313,21 @@ def extract_from_md(path: Path) -> dict:
     for m in re.finditer(r'hdl\.handle\.net/([^\s,;)\]]+)', text):
         add_rel(m.group(1), "handle", "references")
 
-    # ── CrossRef lookup for all reference entries ─────────────────────────────
-    refs = _parse_references(text)
-    if refs and not os.getenv("ZENODO_NO_CROSSREF"):
-        print(f"  CrossRef: looking up {len(refs)} reference(s) ...")
+    # ── CrossRef lookup for every reference entry ─────────────────────────────
+    ref_entries = _parse_ref_entries(text)
+    if ref_entries:
+        print(f"  Looking up {len(ref_entries)} references via CrossRef ...")
         cache = _load_crossref_cache()
-        hits = 0
-        for num, citation in refs:
-            # Skip if this citation already has an explicit DOI/URL/arXiv
-            if re.search(r'10\.\d{4,}/|https?://|arXiv:', citation, re.IGNORECASE):
+        for i, (num, citation) in enumerate(ref_entries, 1):
+            # Skip if explicit identifier already found for this citation
+            if any(id_frag in citation for id_frag in ('github.com', 'arxiv', 'arXiv')):
                 continue
-            key = re.sub(r'\s+', ' ', citation.strip())[:300]
-            doi = cache.get(key)
-            if doi is None:                          # not cached yet
-                doi = _crossref_doi(key) or ""
-                cache[key] = doi
+            doi = _crossref_doi(citation, cache)
             if doi:
                 add_rel(doi, "doi", "references")
-                hits += 1
+            print(f"\r  [{i}/{len(ref_entries)}]", end="", flush=True)
+        print()
         _save_crossref_cache(cache)
-        print(f"  CrossRef: resolved {hits} DOI(s)")
 
     if related:
         info["related_identifiers"] = related
@@ -341,26 +336,147 @@ def extract_from_md(path: Path) -> dict:
 
 
 def extract_from_pdf(path: Path) -> dict:
-    """Pull metadata from PDF XMP/Info dictionary (requires pypdf)."""
+    """Pull metadata + full text from PDF, then run the same reference/keyword pipeline."""
     info: dict = {}
+    full_text = ""
     try:
         import pypdf  # type: ignore
         reader = pypdf.PdfReader(str(path))
-        m = reader.metadata or {}
-        if m.get("/Title"):
-            info["title"] = str(m["/Title"])
-        if m.get("/Author"):
-            info["author_str"] = str(m["/Author"])
-        if m.get("/Subject"):
-            info["description"] = str(m["/Subject"])[:2000]
-        if m.get("/Keywords"):
-            raw_kws = str(m["/Keywords"])
+        # Metadata fields
+        meta = reader.metadata or {}
+        if meta.get("/Title"):
+            info["title"] = str(meta["/Title"])
+        if meta.get("/Author"):
+            info["author_str"] = str(meta["/Author"])
+        if meta.get("/Subject"):
+            info["description"] = str(meta["/Subject"])[:2000]
+        if meta.get("/Keywords"):
+            raw_kws = str(meta["/Keywords"])
             info["keywords"] = [k.strip() for k in re.split(r'[,;]', raw_kws) if k.strip()]
+        # Extract full text for reference parsing
+        pages = []
+        for page in reader.pages:
+            try:
+                pages.append(page.extract_text() or "")
+            except Exception:
+                pass
+        full_text = "\n".join(pages)
     except ImportError:
         pass
     except Exception:
         pass
+
+    # Run CrossRef lookup on any reference entries found in the PDF text
+    if full_text:
+        ref_entries = _parse_ref_entries(full_text)
+        if ref_entries:
+            related: list[dict] = []
+            seen: set[tuple] = set()
+            def add_rel(identifier, scheme, relation):
+                identifier = identifier.strip().rstrip('.,;)]}')
+                key = (identifier, scheme)
+                if key not in seen and identifier:
+                    seen.add(key)
+                    related.append({"identifier": identifier, "scheme": scheme, "relation": relation})
+
+            print(f"  Looking up {len(ref_entries)} references via CrossRef ...")
+            cache = _load_crossref_cache()
+            for i, (num, citation) in enumerate(ref_entries, 1):
+                doi = _crossref_doi(citation, cache)
+                if doi:
+                    add_rel(doi, "doi", "references")
+                print(f"\r  [{i}/{len(ref_entries)}]", end="", flush=True)
+            print()
+            _save_crossref_cache(cache)
+            if related:
+                info["related_identifiers"] = related
+
     return info
+
+
+# ── CrossRef reference lookup ─────────────────────────────────────────────────
+
+_CROSSREF_CACHE_PATH = Path.home() / ".cache" / "zenodo_crossref_cache.json"
+_CROSSREF_UA = "zenodo_upload/2.0 (mailto:c.landonmills@gmail.com)"
+_CROSSREF_SCORE_MIN = 60   # confidence threshold — lower = more matches, more false positives
+
+
+def _parse_ref_entries(text: str) -> list[tuple[str, str]]:
+    """
+    Extract numbered reference entries from text.
+    Returns list of (number_str, citation_text) tuples.
+    Handles both markdown [N] format and plain "N." format from PDFs.
+    """
+    entries = []
+    # Markdown format: [1] Author... through to the next [N] or end
+    md_refs = re.findall(
+        r'^\[(\d+)\]\s+(.+?)(?=\n\[\d+\]|\Z)',
+        text, re.MULTILINE | re.DOTALL
+    )
+    if md_refs:
+        for num, citation in md_refs:
+            clean = _strip_md(citation.replace('\n', ' ')).strip()
+            if len(clean) > 20:
+                entries.append((num, clean))
+        return entries
+    # PDF format: "1. Author..." or "1 Author..."
+    pdf_refs = re.findall(
+        r'^(\d{1,3})[.\s]\s+([A-Z].+?)(?=\n\d{1,3}[.\s]\s+[A-Z]|\Z)',
+        text, re.MULTILINE | re.DOTALL
+    )
+    for num, citation in pdf_refs:
+        clean = re.sub(r'\s+', ' ', citation).strip()
+        if len(clean) > 20:
+            entries.append((num, clean))
+    return entries
+
+
+def _load_crossref_cache() -> dict:
+    try:
+        if _CROSSREF_CACHE_PATH.exists():
+            return json.loads(_CROSSREF_CACHE_PATH.read_text())
+    except Exception:
+        pass
+    return {}
+
+
+def _save_crossref_cache(cache: dict) -> None:
+    try:
+        _CROSSREF_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        _CROSSREF_CACHE_PATH.write_text(json.dumps(cache, indent=2))
+    except Exception:
+        pass
+
+
+def _crossref_doi(citation: str, cache: dict) -> str:
+    """
+    Look up a DOI for the given citation string via CrossRef.
+    Results are cached; returns empty string if not found or score too low.
+    """
+    # Use first 200 chars as cache key (enough to be unique)
+    key = citation[:200]
+    if key in cache:
+        return cache[key]
+
+    doi = ""
+    try:
+        r = requests.get(
+            "https://api.crossref.org/works",
+            params={"query.bibliographic": citation[:500], "rows": 1, "select": "DOI,score"},
+            headers={"User-Agent": _CROSSREF_UA},
+            timeout=8,
+        )
+        if r.ok:
+            items = r.json().get("message", {}).get("items", [])
+            if items:
+                item = items[0]
+                if item.get("score", 0) >= _CROSSREF_SCORE_MIN:
+                    doi = item.get("DOI", "")
+    except Exception:
+        pass
+
+    cache[key] = doi
+    return doi
 
 
 def _git_version(path: Path) -> str:
@@ -377,60 +493,6 @@ def _git_version(path: Path) -> str:
     except Exception:
         pass
     return ""
-
-
-_CROSSREF_CACHE_PATH = Path.home() / ".cache" / "zenodo_crossref_cache.json"
-_CROSSREF_EMAIL      = "c.landonmills@gmail.com"   # CrossRef polite pool
-_CROSSREF_MIN_SCORE  = 60                           # confidence threshold
-
-def _parse_references(text: str) -> list[tuple[str, str]]:
-    """
-    Extract numbered reference entries from the ## References section.
-    Returns list of (number_str, citation_text) tuples.
-    """
-    m = re.search(r'##\s+References\s*\n([\s\S]+?)(?=\n##\s|\Z)', text)
-    if not m:
-        return []
-    refs_block = m.group(1)
-    # Each entry starts with [N] at the beginning of a line
-    entries = re.findall(
-        r'^\[(\d+)\]\s+([\s\S]+?)(?=^\[\d+\]|\Z)',
-        refs_block, re.MULTILINE
-    )
-    return [(num, _strip_md(body.strip())) for num, body in entries]
-
-
-def _crossref_doi(citation: str) -> str:
-    """Query CrossRef for the DOI of a bibliographic citation. Returns '' on miss."""
-    try:
-        r = requests.get(
-            "https://api.crossref.org/works",
-            params={"query.bibliographic": citation[:500], "rows": 1, "select": "DOI,score"},
-            headers={"User-Agent": f"zenodo_upload/1.0 (mailto:{_CROSSREF_EMAIL})"},
-            timeout=8,
-        )
-        if r.ok:
-            items = r.json().get("message", {}).get("items", [])
-            if items and float(items[0].get("score", 0)) >= _CROSSREF_MIN_SCORE:
-                return items[0].get("DOI", "")
-    except Exception:
-        pass
-    return ""
-
-
-def _load_crossref_cache() -> dict:
-    try:
-        return json.loads(_CROSSREF_CACHE_PATH.read_text())
-    except Exception:
-        return {}
-
-
-def _save_crossref_cache(cache: dict) -> None:
-    try:
-        _CROSSREF_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-        _CROSSREF_CACHE_PATH.write_text(json.dumps(cache, indent=2))
-    except Exception:
-        pass
 
 
 def _git_date(path: Path) -> str:
