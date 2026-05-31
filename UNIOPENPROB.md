@@ -268,150 +268,151 @@ The grammar is a self-referential system at $\text{O}_\infty$. Its internal type
 
 ### Imscribing Grammar and Structural Framework
 
-[1] Mills, L. (2026). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint. <https://github.com/umpolungfish/Imscribing_Grammar>
+[1] Mills, L. (2026). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint. <https://github.com/umpolungfish/Imscribing_Grammar> <https://github.com/umpolungfish/Imscribing_Grammar>
 
-[2] Mills, L. (2026). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0. <https://github.com/umpolungfish/MillenniumAnkh>
+[2] Mills, L. (2026). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0. <https://github.com/umpolungfish/MillenniumAnkh> <https://github.com/umpolungfish/MillenniumAnkh>
+
 
 ### Birch–Swinnerton-Dyer
 
-[4] Birch, B.J. and Swinnerton-Dyer, H.P.F. (1963). Notes on elliptic curves. I. *Journal für die reine und angewandte Mathematik*, 212, 7–25.
+[3] Birch, B.J. and Swinnerton-Dyer, H.P.F. (1963). Notes on elliptic curves. I. *Journal für die reine und angewandte Mathematik*, 212, 7–25.
 
-[5] Birch, B.J. and Swinnerton-Dyer, H.P.F. (1965). Notes on elliptic curves. II. *Journal für die reine und angewandte Mathematik*, 218, 79–108.
+[4] Birch, B.J. and Swinnerton-Dyer, H.P.F. (1965). Notes on elliptic curves. II. *Journal für die reine und angewandte Mathematik*, 218, 79–108.
 
-[6] Wiles, A. (2006). The Birch and Swinnerton-Dyer Conjecture. In *The Millennium Prize Problems*, Clay Mathematics Institute, 31–44.
+[5] Wiles, A. (2006). The Birch and Swinnerton-Dyer Conjecture. In *The Millennium Prize Problems*, Clay Mathematics Institute, 31–44.
 
-[7] Gross, B.H. and Zagier, D. (1986). Heegner points and derivatives of $L$-series. *Inventiones Mathematicae*, 84(2), 225–320.
+[6] Gross, B.H. and Zagier, D. (1986). Heegner points and derivatives of $L$-series. *Inventiones Mathematicae*, 84(2), 225–320.
 
-[8] Kolyvagin, V.A. (1988). Finiteness of $E(\mathbb{Q})$ and $\Sha(E,\mathbb{Q})$ for a subclass of Weil curves. *Izvestiya Akademii Nauk SSSR*, 52(3), 522–540.
+[7] Kolyvagin, V.A. (1988). Finiteness of $E(\mathbb{Q})$ and $\Sha(E,\mathbb{Q})$ for a subclass of Weil curves. *Izvestiya Akademii Nauk SSSR*, 52(3), 522–540.
 
-[9] Rankin, R.A. (1939). Contributions to the theory of Ramanujan's function $\tau(n)$ and similar arithmetical functions. *Proceedings of the Cambridge Philosophical Society*, 35, 351–372.
+[8] Rankin, R.A. (1939). Contributions to the theory of Ramanujan's function $\tau(n)$ and similar arithmetical functions. *Proceedings of the Cambridge Philosophical Society*, 35, 351–372.
 
-[10] Selberg, A. (1940). Bemerkungen über eine Dirichletsche Reihe, die mit der Theorie der Modulformen nahe verbunden ist. *Archiv for Mathematik og Naturvidenskab*, 43, 47–50.
+[9] Selberg, A. (1940). Bemerkungen über eine Dirichletsche Reihe, die mit der Theorie der Modulformen nahe verbunden ist. *Archiv for Mathematik og Naturvidenskab*, 43, 47–50.
 
 ### Yang–Mills Mass Gap
 
-[11] Jaffe, A. and Witten, E. (2000). Quantum Yang–Mills Theory. In *The Millennium Prize Problems*, Clay Mathematics Institute, 129–152.
+[10] Jaffe, A. and Witten, E. (2000). Quantum Yang–Mills Theory. In *The Millennium Prize Problems*, Clay Mathematics Institute, 129–152.
 
-[12] Wilson, K.G. (1974). Confinement of quarks. *Physical Review D*, 10(8), 2445–2459.
+[11] Wilson, K.G. (1974). Confinement of quarks. *Physical Review D*, 10(8), 2445–2459.
 
-[13] 't Hooft, G. (1980). Confinement and topology in non-abelian gauge theories. *Physica Scripta*, 25(1B), 133–142.
+[12] 't Hooft, G. (1980). Confinement and topology in non-abelian gauge theories. *Physica Scripta*, 25(1B), 133–142.
 
 ### P vs NP
 
-[14] Cook, S.A. (1971). The complexity of theorem-proving procedures. *STOC '71: Proceedings of the Third Annual ACM Symposium on Theory of Computing*, 151–158.
+[13] Cook, S.A. (1971). The complexity of theorem-proving procedures. *STOC '71: Proceedings of the Third Annual ACM Symposium on Theory of Computing*, 151–158.
 
-[15] Karp, R.M. (1972). Reducibility among combinatorial problems. In *Complexity of Computer Computations*, Plenum Press, 85–103.
+[14] Karp, R.M. (1972). Reducibility among combinatorial problems. In *Complexity of Computer Computations*, Plenum Press, 85–103.
 
-[16] Aaronson, S. (2013). P ≟ NP. In *Open Problems in Mathematics*, Springer, 1–122.
+[15] Aaronson, S. (2013). P ≟ NP. In *Open Problems in Mathematics*, Springer, 1–122.
 
 ### Navier–Stokes
 
-[17] Fefferman, C.L. (2000). Existence and Smoothness of the Navier–Stokes Equation. In *The Millennium Prize Problems*, Clay Mathematics Institute, 57–67.
+[16] Fefferman, C.L. (2000). Existence and Smoothness of the Navier–Stokes Equation. In *The Millennium Prize Problems*, Clay Mathematics Institute, 57–67.
 
-[18] Ladyzhenskaya, O.A. (1969). *The Mathematical Theory of Viscous Incompressible Flow*. Gordon and Breach.
+[17] Ladyzhenskaya, O.A. (1969). *The Mathematical Theory of Viscous Incompressible Flow*. Gordon and Breach.
 
-[19] Tao, T. (2016). Finite time blowup for an averaged three-dimensional Navier–Stokes equation. *Journal of the American Mathematical Society*, 29(3), 601–674.
+[18] Tao, T. (2016). Finite time blowup for an averaged three-dimensional Navier–Stokes equation. *Journal of the American Mathematical Society*, 29(3), 601–674.
 
 ### Riemann Hypothesis
 
-[20] Riemann, B. (1859). Über die Anzahl der Primzahlen unter einer gegebenen Grösse. *Monatsberichte der Berliner Akademie*.
+[19] Riemann, B. (1859). Über die Anzahl der Primzahlen unter einer gegebenen Grösse. *Monatsberichte der Berliner Akademie*.
 
-[21] Bombieri, E. (2000). The Riemann Hypothesis. In *The Millennium Prize Problems*, Clay Mathematics Institute, 107–124.
+[20] Bombieri, E. (2000). The Riemann Hypothesis. In *The Millennium Prize Problems*, Clay Mathematics Institute, 107–124.
 
-[22] Conrey, J.B. (2003). The Riemann Hypothesis. *Notices of the AMS*, 50(3), 341–353.
+[21] Conrey, J.B. (2003). The Riemann Hypothesis. *Notices of the AMS*, 50(3), 341–353.
 
-[23] Montgomery, H.L. (1973). The pair correlation of zeros of the zeta function. *Proceedings of Symposia in Pure Mathematics*, 24, 181–193.
+[22] Montgomery, H.L. (1973). The pair correlation of zeros of the zeta function. *Proceedings of Symposia in Pure Mathematics*, 24, 181–193.
 
-[24] Keating, J.P. and Snaith, N.C. (2000). Random matrix theory and $\zeta(1/2+it)$. *Communications in Mathematical Physics*, 214(1), 57–89.
+[23] Keating, J.P. and Snaith, N.C. (2000). Random matrix theory and $\zeta(1/2+it)$. *Communications in Mathematical Physics*, 214(1), 57–89.
 
 ### Hodge Conjecture
 
-[25] Hodge, W.V.D. (1950). The topological invariants of algebraic varieties. *Proceedings of the ICM, Cambridge, MA*, 182–192.
+[24] Hodge, W.V.D. (1950). The topological invariants of algebraic varieties. *Proceedings of the ICM, Cambridge, MA*, 182–192.
 
-[26] Deligne, P. (2006). The Hodge Conjecture. In *The Millennium Prize Problems*, Clay Mathematics Institute, 45–55.
+[25] Deligne, P. (2006). The Hodge Conjecture. In *The Millennium Prize Problems*, Clay Mathematics Institute, 45–55.
 
-[27] Voisin, C. (2002). *Théorie de Hodge et géométrie algébrique complexe*. Société Mathématique de France.
+[26] Voisin, C. (2002). *Théorie de Hodge et géométrie algébrique complexe*. Société Mathématique de France.
 
-[28] Griffiths, P.A. (1969). On the periods of certain rational integrals. *Annals of Mathematics*, 90(3), 460–495.
+[27] Griffiths, P.A. (1969). On the periods of certain rational integrals. *Annals of Mathematics*, 90(3), 460–495.
 
 ### Odd Perfect Numbers
 
-[29] Dickson, L.E. (1913). Finiteness of the odd perfect and primitive abundant numbers with $n$ distinct prime factors. *American Journal of Mathematics*, 35(4), 413–422.
+[28] Dickson, L.E. (1913). Finiteness of the odd perfect and primitive abundant numbers with $n$ distinct prime factors. *American Journal of Mathematics*, 35(4), 413–422.
 
-[30] Nielsen, P.P. (2015). Odd perfect numbers, Diophantine equations, and upper bounds. *Mathematics of Computation*, 84(295), 2549–2567.
+[29] Nielsen, P.P. (2015). Odd perfect numbers, Diophantine equations, and upper bounds. *Mathematics of Computation*, 84(295), 2549–2567.
 
-[31] Ochem, P. and Rao, M. (2012). Odd perfect numbers are greater than $10^{1500}$. *Mathematics of Computation*, 81(279), 1869–1877.
+[30] Ochem, P. and Rao, M. (2012). Odd perfect numbers are greater than $10^{1500}$. *Mathematics of Computation*, 81(279), 1869–1877.
 
 ### Collatz Conjecture
 
-[32] Collatz, L. (1932). Problem posed. See Lagarias, J.C. (1985). The $3x+1$ problem and its generalizations. *American Mathematical Monthly*, 92(1), 3–23.
+[31] Collatz, L. (1932). Problem posed. See Lagarias, J.C. (1985). The $3x+1$ problem and its generalizations. *American Mathematical Monthly*, 92(1), 3–23.
 
-[33] Tao, T. (2020). Almost all orbits of the Collatz map attain almost bounded values. *arXiv:* 1909.03562v3.
+[32] Tao, T. (2020). Almost all orbits of the Collatz map attain almost bounded values. *arXiv:* 1909.03562v3.
 
 ### SIC-POVM
 
-[34] Zauner, G. (1999). Quantendesigns: Grundzüge einer nichtkommutativen Designtheorie. PhD thesis, Universität Wien.
+[33] Zauner, G. (1999). Quantendesigns: Grundzüge einer nichtkommutativen Designtheorie. PhD thesis, Universität Wien.
 
-[35] Renes, J.M., Blume-Kohout, R., Scott, A.J., and Caves, C.M. (2004). Symmetric informationally complete quantum measurements. *Journal of Mathematical Physics*, 45(6), 2171–2180.
+[34] Renes, J.M., Blume-Kohout, R., Scott, A.J., and Caves, C.M. (2004). Symmetric informationally complete quantum measurements. *Journal of Mathematical Physics*, 45(6), 2171–2180.
 
-[36] Appleby, D.M. (2005). Symmetric informationally complete-positive operator valued measures and the extended Clifford group. *Journal of Mathematical Physics*, 46(5), 052107.
+[35] Appleby, D.M. (2005). Symmetric informationally complete-positive operator valued measures and the extended Clifford group. *Journal of Mathematical Physics*, 46(5), 052107.
 
-[37] Scott, A.J. and Grassl, M. (2010). SIC-POVMs: a new computer study. *Journal of Mathematical Physics*, 51(4), 042203.
+[36] Scott, A.J. and Grassl, M. (2010). SIC-POVMs: a new computer study. *Journal of Mathematical Physics*, 51(4), 042203.
 
 ### Fontaine-Mazur Conjecture
 
-[38] Fontaine, J.-M. and Mazur, B. (1995). Geometric Galois representations. In *Elliptic Curves, Modular Forms, and Fermat's Last Theorem*. International Press, 41–78.
+[37] Fontaine, J.-M. and Mazur, B. (1995). Geometric Galois representations. In *Elliptic Curves, Modular Forms, and Fermat's Last Theorem*. International Press, 41–78.
 
-[39] Taylor, R. (2004). Galois representations. *Annales de la Faculté des Sciences de Toulouse*, 13(1), 73–119.
+[38] Taylor, R. (2004). Galois representations. *Annales de la Faculté des Sciences de Toulouse*, 13(1), 73–119.
 
-[40] Emerton, M. (2011). Local-global compatibility in the $p$-adic Langlands programme for $\mathrm{GL}_2/\mathbb{Q}$. Preprint.
+[39] Emerton, M. (2011). Local-global compatibility in the $p$-adic Langlands programme for $\mathrm{GL}_2/\mathbb{Q}$. Preprint.
 
-[41] Calegari, F. and Geraghty, D. (2018). Modularity lifting beyond the Taylor-Wiles method. *Inventiones Mathematicae*, 211(1), 297–433.
+[40] Calegari, F. and Geraghty, D. (2018). Modularity lifting beyond the Taylor-Wiles method. *Inventiones Mathematicae*, 211(1), 297–433.
 
-[42] Kisin, M. (2009). The Fontaine-Mazur conjecture for $\mathrm{GL}_2$. *Journal of the American Mathematical Society*, 22(3), 641–690.
+[41] Kisin, M. (2009). The Fontaine-Mazur conjecture for $\mathrm{GL}_2$. *Journal of the American Mathematical Society*, 22(3), 641–690.
 
-[43] Kisin, M. (2008). Potentially semi-stable deformation rings. *Journal of the American Mathematical Society*, 21(2), 513–546.
+[42] Kisin, M. (2008). Potentially semi-stable deformation rings. *Journal of the American Mathematical Society*, 21(2), 513–546.
 
 ### Inverse Galois Problem
 
-[44] Hilbert, D. (1892). Über die Irreducibilität ganzer rationaler Functionen mit ganzzahligen Coefficienten. *Journal für die reine und angewandte Mathematik*, 110, 104–129.
+[43] Hilbert, D. (1892). Über die Irreducibilität ganzer rationaler Functionen mit ganzzahligen Coefficienten. *Journal für die reine und angewandte Mathematik*, 110, 104–129.
 
-[45] Shafarevich, I.R. (1954). Construction of fields of algebraic numbers with given solvable Galois group. *Izvestiya Akademii Nauk SSSR*, 18, 525–578.
+[44] Shafarevich, I.R. (1954). Construction of fields of algebraic numbers with given solvable Galois group. *Izvestiya Akademii Nauk SSSR*, 18, 525–578.
 
-[46] Malle, G. and Matzat, B.H. (1999). *Inverse Galois Theory*. Springer.
+[45] Malle, G. and Matzat, B.H. (1999). *Inverse Galois Theory*. Springer.
 
 ### Lang-Trotter Conjecture
 
-[47] Lang, S. and Trotter, H. (1976). *Frobenius Distributions in GL₂-Extensions*. Lecture Notes in Mathematics 504. Springer.
+[46] Lang, S. and Trotter, H. (1976). *Frobenius Distributions in GL₂-Extensions*. Lecture Notes in Mathematics 504. Springer.
 
-[48] Serre, J.-P. (1981). Quelques applications du théorème de densité de Chebotarev. *Publications Mathématiques de l'IHÉS*, 54, 323–401.
+[47] Serre, J.-P. (1981). Quelques applications du théorème de densité de Chebotarev. *Publications Mathématiques de l'IHÉS*, 54, 323–401.
 
 ### Perfect Cuboid
 
-[49] Euler, L. (18th c.). Correspondence on the problem of the integer cuboid (undated; see Dickson [50]).
+[48] Euler, L. (18th c.). Correspondence on the problem of the integer cuboid (undated; see Dickson [49]).
 
-[50] Dickson, L.E. (1920). *History of the Theory of Numbers*, Vol. II. Carnegie Institution. (Ch. XIX covers perfect cuboids.)
+[49] Dickson, L.E. (1920). *History of the Theory of Numbers*, Vol. II. Carnegie Institution. (Ch. XIX covers perfect cuboids.)
 
-[51] van Luijk, R. (2000). On Perfect Cuboids. Preprint, Utrecht University.
+[50] van Luijk, R. (2000). On Perfect Cuboids. Preprint, Utrecht University.
 
 ### Hadwiger-Nelson Problem
 
-[52] Nelson, E. (1950). Problem posed (attributed). See Moser, W.O.J. and Pach, J. (1986). *100 Research Problems in Discrete Geometry*, Problem 2.
+[51] Nelson, E. (1950). Problem posed (attributed). See Moser, W.O.J. and Pach, J. (1986). *100 Research Problems in Discrete Geometry*, Problem 2.
 
-[53] de Grey, A.D.N.J. (2018). The chromatic number of the plane is at least 5. *Geombinatorics*, 28(1), 18–31.
+[52] de Grey, A.D.N.J. (2018). The chromatic number of the plane is at least 5. *Geombinatorics*, 28(1), 18–31.
 
-[54] Exoo, G. and Ismailescu, D. (2020). The chromatic number of the plane is at least 5: a new proof. *Discrete and Computational Geometry*, 64(1), 216–226.
+[53] Exoo, G. and Ismailescu, D. (2020). The chromatic number of the plane is at least 5: a new proof. *Discrete and Computational Geometry*, 64(1), 216–226.
 
 ### $E_8$ and $G_2$
 
-[55] Cartan, É. (1894). *Sur la structure des groupes de transformations finis et continus*. PhD thesis, Paris. (Classification of exceptional Lie algebras.)
+[54] Cartan, É. (1894). *Sur la structure des groupes de transformations finis et continus*. PhD thesis, Paris. (Classification of exceptional Lie algebras.)
 
-[56] Adams, J.F. (1996). *Lectures on Exceptional Lie Groups*. University of Chicago Press.
+[55] Adams, J.F. (1996). *Lectures on Exceptional Lie Groups*. University of Chicago Press.
 
-[57] Green, M.B., Schwarz, J.H., and West, P.C. (1985). Anomaly-free chiral theories in six dimensions. *Nuclear Physics B*, 254, 327–348. ($E_8$ heterotic string gauge group decomposition.)
+[56] Green, M.B., Schwarz, J.H., and West, P.C. (1985). Anomaly-free chiral theories in six dimensions. *Nuclear Physics B*, 254, 327–348. ($E_8$ heterotic string gauge group decomposition.)
 
 ### Formal Verification
 
-[58] de Moura, L. and Ullrich, S. (2021). The Lean 4 theorem prover and programming language. *Automated Deduction — CADE 28*, LNAI 12699, 625–635.
+[57] de Moura, L. and Ullrich, S. (2021). The Lean 4 theorem prover and programming language. *Automated Deduction — CADE 28*, LNAI 12699, 625–635.
 
-[59] The Mathlib Community (2020). The Lean mathematical library. *Proceedings of CPP 2020*, 367–381.
+[58] The Mathlib Community (2020). The Lean mathematical library. *Proceedings of CPP 2020*, 367–381.
