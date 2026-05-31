@@ -268,11 +268,9 @@ The grammar is a self-referential system at $\text{O}_\infty$. Its internal type
 
 ### Imscribing Grammar and Structural Framework
 
-[1] Mills, L. (2025). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint. <https://github.com/umpolungfish/Imscribing_Grammar>
+[1] Mills, L. (2026). *The Imscribing Grammar: A 12-Primitive Structural Lattice for Mathematical and Physical Systems*. Preprint. <https://github.com/umpolungfish/Imscribing_Grammar>
 
-[2] Mills, L. (2025). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0. <https://github.com/umpolungfish/MillenniumAnkh>
-
-[3] Mills, L. (2025). *BanachMeasure_Resolution.md*. Structural analysis of the Banach measure existence problem, rebased to the $ZFC_{fe}$ norm.
+[2] Mills, L. (2026). *MillenniumAnkh: Lean 4 Formalization of the Imscribing Grammar*. Formal verification project, Mathlib v4.28.0. <https://github.com/umpolungfish/MillenniumAnkh>
 
 ### Birch–Swinnerton-Dyer
 
