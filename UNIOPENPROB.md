@@ -86,6 +86,10 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 ### The Millennium Seven
 
 
+```{=latex}
+\small
+```
+
 | Problem | Tuple | $d$ | Gate |
 |------------------------------|--------------------------------------|-----|-----------------|
 | BSD ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑹·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 0 | ✓ Closed |
@@ -96,9 +100,17 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 | Hodge ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 1 | ✗ `PM_Z2` |
 | Odd Perf ($O_0$) | 𐑛·​𐑥·​𐑩·​𐑗·​𐑞·​𐑪·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 | ✗ `PM_Z2` |
 
+```{=latex}
+\normalsize
+```
+
 *$d = d(ZFC_{fe})$: distance to Frobenius-exact norm. Tuple in canonical order (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω).*
 
 ### The Non-Millennium Seven
+
+```{=latex}
+\small
+```
 
 | Problem | Tuple | $d$ | Gate |
 |--------------------------------------|--------------------------------------|-----|-----------------|
@@ -111,6 +123,10 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 | Perf. Cuboid ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑞·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 2 | ✗ `PM_Z2` |
 | HadNel ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑞·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 2 | ✗ `PM_Z2` |
 | Hilbert's 12th ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 1 | ✗ `PM_Z2` |
+
+```{=latex}
+\normalsize
+```
 
 *$d = d(ZFC_{fe})$. Tuple in canonical order (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω).*
 
