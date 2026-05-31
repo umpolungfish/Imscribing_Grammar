@@ -313,6 +313,27 @@ def extract_from_md(path: Path) -> dict:
     for m in re.finditer(r'hdl\.handle\.net/([^\s,;)\]]+)', text):
         add_rel(m.group(1), "handle", "references")
 
+    # ── CrossRef lookup for all reference entries ─────────────────────────────
+    refs = _parse_references(text)
+    if refs and not os.getenv("ZENODO_NO_CROSSREF"):
+        print(f"  CrossRef: looking up {len(refs)} reference(s) ...")
+        cache = _load_crossref_cache()
+        hits = 0
+        for num, citation in refs:
+            # Skip if this citation already has an explicit DOI/URL/arXiv
+            if re.search(r'10\.\d{4,}/|https?://|arXiv:', citation, re.IGNORECASE):
+                continue
+            key = re.sub(r'\s+', ' ', citation.strip())[:300]
+            doi = cache.get(key)
+            if doi is None:                          # not cached yet
+                doi = _crossref_doi(key) or ""
+                cache[key] = doi
+            if doi:
+                add_rel(doi, "doi", "references")
+                hits += 1
+        _save_crossref_cache(cache)
+        print(f"  CrossRef: resolved {hits} DOI(s)")
+
     if related:
         info["related_identifiers"] = related
 
@@ -356,6 +377,60 @@ def _git_version(path: Path) -> str:
     except Exception:
         pass
     return ""
+
+
+_CROSSREF_CACHE_PATH = Path.home() / ".cache" / "zenodo_crossref_cache.json"
+_CROSSREF_EMAIL      = "c.landonmills@gmail.com"   # CrossRef polite pool
+_CROSSREF_MIN_SCORE  = 60                           # confidence threshold
+
+def _parse_references(text: str) -> list[tuple[str, str]]:
+    """
+    Extract numbered reference entries from the ## References section.
+    Returns list of (number_str, citation_text) tuples.
+    """
+    m = re.search(r'##\s+References\s*\n([\s\S]+?)(?=\n##\s|\Z)', text)
+    if not m:
+        return []
+    refs_block = m.group(1)
+    # Each entry starts with [N] at the beginning of a line
+    entries = re.findall(
+        r'^\[(\d+)\]\s+([\s\S]+?)(?=^\[\d+\]|\Z)',
+        refs_block, re.MULTILINE
+    )
+    return [(num, _strip_md(body.strip())) for num, body in entries]
+
+
+def _crossref_doi(citation: str) -> str:
+    """Query CrossRef for the DOI of a bibliographic citation. Returns '' on miss."""
+    try:
+        r = requests.get(
+            "https://api.crossref.org/works",
+            params={"query.bibliographic": citation[:500], "rows": 1, "select": "DOI,score"},
+            headers={"User-Agent": f"zenodo_upload/1.0 (mailto:{_CROSSREF_EMAIL})"},
+            timeout=8,
+        )
+        if r.ok:
+            items = r.json().get("message", {}).get("items", [])
+            if items and float(items[0].get("score", 0)) >= _CROSSREF_MIN_SCORE:
+                return items[0].get("DOI", "")
+    except Exception:
+        pass
+    return ""
+
+
+def _load_crossref_cache() -> dict:
+    try:
+        return json.loads(_CROSSREF_CACHE_PATH.read_text())
+    except Exception:
+        return {}
+
+
+def _save_crossref_cache(cache: dict) -> None:
+    try:
+        _CROSSREF_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        _CROSSREF_CACHE_PATH.write_text(json.dumps(cache, indent=2))
+    except Exception:
+        pass
 
 
 def _git_date(path: Path) -> str:
