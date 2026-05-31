@@ -1,104 +1,42 @@
-ROOT CLEANUP + MARKDOWN REORGANIZATION (2026-05-29)
-===================================================
+UNIOPENPROB.md: fix truncated Shavian tuples in tables (2026-05-31)
+==================================================================
 
-Two-pass structural cleanup of project root and markdown directories.
-No imports broken — all core Python files verified.
+  Root cause: pandoc allocates pipe-table column widths proportional to
+  separator dash counts. Old Tuple separator (7 dashes) gave only 18% of
+  page width; $d(ZFC_{fe})$ separator (16 dashes) wasted 42% on 1-2 digit
+  numbers. Shavian strings need ~38% to render untruncated.
 
----
+  Fixes:
+  - Rebalanced separators: Tuple column 38 dashes, $d$ column 5 dashes
+  - Wrapped all Shavian tuples in backticks (→ \texttt{} in LaTeX,
+    prevents reflow mid-character and stabilizes display-width measurement)
+  - Shortened column header $d(ZFC_{fe})$ → $d$ (avoids wide LaTeX math
+    in header from inflating that column's minimum width)
+  - Added italic footnotes below each table restoring the full header text
 
-Pass 1: Markdown Reorganization
---------------------------------
-/home/mrnob0dy666/imscribing_grammar/markdown/ — 224 .md files organized
-from flat dump into 25 thematic directories:
+MillenniumAnkh/Solitary10.lean: build fix + 7→4 sorrys (2026-05-31)
+====================================================================
 
-  core/            (14) — Canonical grammar reference files
-  millennium/      (31) — Millennium Prize Problems, barriers, Collatz, cuboids
-  papers/          (25) — Formal manuscripts (DIALETHEIC_LEAN_KERNEL, etc.)
-  consciousness/   (18) — Esoteric boundary, GOSPEL, Aether_Vessel, LAPIS
-  alchemy/         (10) — Zosimos, solve et coagula, philosopher's stone
-  agents/          (12) — Agent framework + 7 SDK PR documents
-  religion/        (11) — Religious traditions, kabbalah, topological theology
-  language/        (12) — Aleph, Hebrew, Egyptian, Shavian, undeciphered texts
-  iam/             (9)  — I AM documents, dual selfhood
-  guides/          (10) — Navigators, methodology, usage, tensor primer
-  math/            (8)  — E8/G2 vessel, complex imaginary, CLU, FSP, TPC
-  crystal/         (7)  — Crystal of Types, CRYSTELEOS, GNN, encoding spec
-  time/            (6)  — Temporal structure analysis
-  pedagogy/        (7)  — Kids guide, steam primer, mnemonicon
-  lifts/           (5)  — AI prose lift protocols
-  zfc/             (4)  — ZFC/ZFCt set-theoretic imscription
-  yinyang/         (4)  — YINYANG analysis
-  circlecycle/     (4)  — Circle cycle analysis
-  imaginary/       (3)  — Imaginary numbers analysis
-  dune/            (2)  — Dune structural analysis
-  mg2/             (2)  — MG2 analysis
-  multiverse/      (2)  — Multiverse analysis
-  pipeline/        (2)  — Primitive-to-conventional pipeline
-  shor/            (2)  — Shor's algorithm articles
-  poetry/          (2)  — Twelve gates poem, vocal expressions
-  misc/            (10) — Uncategorized items
+  File was uncompilable from previous session; now builds clean with 4 sorrys.
+  Fixed: calc syntax, wrong sigma_31cube value (31784→30784), simp+omega order,
+    OOM on native_decide (prime power formula for 331² and 331³), 331³ descent
+    arithmetic (50945865 not 50946765), absurd wrappers in ten_is_solitary.
+  Proved: h5_n Case B2, case_A e≥2 rewrite, 331³ coprime closes descent_generic.
+  4 remaining sorrys: ¬Coprime 36631 u, 331⁴|w, 31⁴|n, 5⁴|m.
 
-INDEX.md rewritten to reflect new structure. README.md left as-is.
+ltx: fix table float placement; UNIOPENPROB.md strip YAML (2026-05-31)
+======================================================================
 
----
+~/.local/bin/ltx
+  - Added two sed commands to Step 2 patch block:
+      's/\\begin{table}[htbp]/\\begin{table}[H]/g'
+        — replaces htbp float spec with H (here, exactly) on all tables
+      's/\\usepackage{float}/\\usepackage{float}\n\\floatplacement{table}{H}/'
+        — belt-and-suspenders: injects \floatplacement after float package load
+  - Fix is global: applies to every .md compiled via ltx, not just UNIOPENPROB
+  - Root cause: latextiler generates \begin{table}[htbp] floats regardless of
+    YAML header-includes (latextiler ignores header-includes entirely)
 
-Pass 2: Root Directory Cleanup
--------------------------------
-Files removed or relocated from /home/mrnob0dy666/imscribing_grammar/:
-
-  DELETED (17):
-    fix_proof.py, fix_replace.py     — empty stub files
-    15 LaTeX build artifacts          — .aux, .log, .out, .toc (imscrbgrmr.*,
-                                        manuscript*, menagerie*, zenodo*, etc.)
-
-  MOVED to models/ (11):
-    crystal_gnn.pt, crystal_gnn_v10.pt, crystal_gnn_v10_best.pt,
-    crystal_gnn_v11.pt, crystal_gnn_v12_ablated.pt,
-    crystal_gnn_v12_baseline.pt, crystal_gnn_v12_partial.pt,
-    riemann_phase_a.pt, riemann_xi_navigator.pt,
-    zfc_encoder.pt, zfct_encoder.pt
-
-  MOVED to scripts/ (16):
-    crystal_enumeration.py, crystal_viz.py, frobenius_mzi_sim.py,
-    generate_vocal_expressions.py, IG_latex.py, IG_primitive_map.py,
-    IG_primitive_map_3d.py, imscribevideo_patch.py, lambda_engine.py,
-    lean4_descent_object.py, manuscript_eval.py, seqcom.py,
-    shavian_manuscript_migrate.py, shavian_manuscript_migrate2.py,
-    zenodo_upload.py, zfcfe_navigator.py
-
-  MOVED to data/ (22):
-    JSON catalogs (IG_catalog.json, IG_catalog.json.bak,
-      IG_promotions.json, hermetica.json, manuscript_zfct.json,
-      structure_corpus.jsonl)
-    Cache files (.llm_cache.json, .session_catalog.json — moved previously)
-    Winding logs (ooo.txt, rvw.txt)
-    Media (tfold.mp4), text (shavian, commit.txt)
-    ZIP archive ("5")
-
-  RETAINED in root (essential files only):
-    Python (15 interdependent): main.py, IG_inquiry.py, esoteric_librarian.py,
-      imscribe_agent.py, imscribe_tool.py, imscribeaudio.py, imscribevideo.py,
-      sounds.py, whale_audio.py, whale_engine.py, zfct_navigator.py,
-      zfct_manipulator.py, zfct_para.py, zfct_zfcs_zfc_manipulator.py,
-      manuscript_zfct.py
-    Config/build (14): pyproject.toml, lakefile.toml, lake-manifest.json,
-      lakefile_add.toml, latextiler.toml, lean-toolchain, uv.lock,
-      provider_defaults.yaml, config_template.yaml, .env.example,
-      .gitignore, UNLICENSE, imscrbgrmr.1, imscrbgrmr.sty
-    Docs/reference (15): README.md, shavian_notation_spec.md, ZZFCFE.md,
-      ZENODO_UPLOAD_GUIDE.md, DK.md, DIALETHEIC_LEAN_KERNEL.md,
-      PARACONSISTENT_LEAN_KERNEL.md, Manuscript_ZFCt.lean,
-      IG_primitives.lua, hebrew_inject.lua,
-      AS_ABOVE.pdf, DIALETHEIC_KERNEL.pdf, GRAMMAR_PRECEDES_MATHEMATICS.pdf,
-      KABBALIST_OPERATOR.pdf, SO_BELOW.pdf, SYMBOL_REFERENCE.pdf
-
-Import chains verified intact:
-  ZFCt chain (5):    zfct_navigator → zfct_manipulator → zfct_para →
-                     zfct_zfcs_zfc_manipulator → manuscript_zfct
-  Audio chain (4):   sounds → imscribeaudio → imscribevideo → whale_audio/engine
-  Agent/inquiry (3): IG_inquiry → esoteric_librarian → imscribe_agent/tool
-  Entry point:       main.py
-
-Dependencies preserved — all imports resolved on test.
-
-Author: Lando ⊗ ⊙perator
+UNIOPENPROB.md
+  - Stripped YAML front matter (header-includes + geometry) — unused by latextiler
+  - Compiles cleanly without it; fix now lives in ltx where it belongs
