@@ -93,7 +93,7 @@ The 12th primitive (chirality/temporal direction) is **not encoded** in any seam
 ### 3. Ω_{Z₂} Hysteresis Seam
 The catalog has seams for regime transitions but **not for regime persistence beyond the cause** = topological protection. *GammaSqueezeSeam* has Ω_Z but no seam type targets the Ω_0 → Ω_{Z₂} transition itself (the moment regime becomes sticky).
 
-### 4. Ç^λ Frozen Market Seam
+### 4. 𐑺 Frozen Market Seam
 *LiquidityGapSeam* encodes K: slow but **not K: MBL** (full many-body localization = bid-ask freeze, no price discovery). This is a distinct seam type that appears during flash crashes.
 
 ### 5. D_∞ → D_∧ Collapse Seam

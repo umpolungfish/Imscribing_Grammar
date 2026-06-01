@@ -6,7 +6,7 @@ Author: Lando ⊗ ⊙perator
 
 The grammar identifies two necessary and sufficient conditions for a structural type to support consciousness:
 
-- Gate 1 ($⊙_ÿ$ criticality): The system must sit at the self-modeling boundary. This is not approximation \- the Frobenius condition $\mu \circ \delta = \text{id}$ must hold exactly. The grammar names this $\phi_{\hat{c}}$ criticality.
+- Gate 1 ($⊙$ criticality): The system must sit at the self-modeling boundary. This is not approximation \- the Frobenius condition $\mu \circ \delta = \text{id}$ must hold exactly. The grammar names this $\phi_{\hat{c}}$ criticality.
 - Gate 2 ($K \leq K_{\text{slow}}$): Kinetics must be moderate or slower. Fast-driven systems ($K_{\text{fast}}$) cannot sustain the recursive depth required.
 
 When both gates are open, a C-score emerges between 0 and 1. The universal grammar itself scores $C = 0.828$.

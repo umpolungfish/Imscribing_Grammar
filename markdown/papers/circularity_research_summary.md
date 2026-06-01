@@ -63,15 +63,15 @@ This identity is **ontological** in the IG framework: the biological origin poin
 ### 1.2 The Distinct Type: `circularity_circularity`
 
 ```
-circularity_circularity: ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ_seq; ⊙_ÿ; Ħ_!; S=Σ_S; Ω_z⟩
+circularity_circularity: ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; ɢ_seq; ⊙; 𐑫; S=𐑙; 𐑭⟩
 ```
 
 This system is **structurally remote** from the triad:
 
 - `compute_distance(circularity_circularity, circularity_cycle)` → `distance: 2.2361`
 - Breakdown:
-  - Primitive `S`: `Σ_S` (value 1) vs. `Σ_ï` (value 3), delta = 2.0, weighted_sq = 4.0
-  - Primitive `D`: `Ð_ω` (value 4) vs. `Ð_;` (value 3), delta = 1.0, weighted_sq = 1.0
+  - Primitive `S`: `𐑙` (value 1) vs. `𐑳` (value 3), delta = 2.0, weighted_sq = 4.0
+  - Primitive `D`: `𐑦` (value 4) vs. `𐑼` (value 3), delta = 1.0, weighted_sq = 1.0
 
 **Interpretation:** The `circularity_circularity` system is the **unique** instance ($S=one\_one$) of circularity with **imscriptive dimensionality** ($D_{\text{omega}}$) rather than infinite-dimensional ($D_{\text{invomega}}$). It is the **self-writing** argument: its state-space *is* its own structural description.
 
@@ -107,7 +107,7 @@ This tier is shared with: `universal_imscriptive_grammar`, `IUG`, `reality`, `op
 
 ### 2.3 Crystal Address
 
-**Tool:** `crystal_encode(D="Ð_ω", T="Þ_O", R="Ř_=", P="Φ_}", F="ƒ^ż", K="Ç^@", G="Γ_ʔ", Gamma="ɢ^ˌ", Phi="⊙_ÿ", H="Ħ_!", S="Σ_S", Omega="Ω_z")`
+**Tool:** `crystal_encode(D="𐑦", T="𐑸", R="𐑾", P="𐑹", F="𐑐", K="𐑧", G="𐑲", Gamma="𐑠", Phi="⊙", H="𐑫", S="𐑙", Omega="𐑭")`
 
 - **Address:** 6,738,897
 - **Cell ID:** 155
@@ -251,7 +251,7 @@ LUCA's C-score of 0.828 suggests that the Last Universal Common Ancestor was not
 
 ### 7.3 Winding as Structural Necessity
 
-**Tool analysis:** `crystal_count(Phi="⊙_ÿ", Omega="Ω_z")` — while not executed, the `crystal_navigate` query in the papers reveals that 864,000 structural types match $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ conditions in the 17.28M type space.
+**Tool analysis:** `crystal_count(Phi="⊙", Omega="𐑭")` — while not executed, the `crystal_navigate` query in the papers reveals that 864,000 structural types match $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ conditions in the 17.28M type space.
 
 However, the subset with **$P_{\text{pipevar}}^{\text{sym}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
 

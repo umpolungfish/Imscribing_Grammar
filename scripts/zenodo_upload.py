@@ -736,11 +736,15 @@ def _collect_contributors() -> list[dict]:
     return contributors
 
 
-def _collect_related_identifiers() -> list[dict]:
-    related: list[dict] = []
+def _collect_related_identifiers(prefilled: list[dict] | None = None) -> list[dict]:
+    related: list[dict] = list(prefilled or [])
     print("\nRelated identifiers (prior versions, companion repos, cited works…)")
+    if related:
+        print(f"  Auto-extracted {len(related)} identifier(s):")
+        for r in related:
+            print(f"    [{r['relation']}]  {r['identifier']}  ({r['scheme']})")
     while True:
-        add = input("  Add a related identifier? [y/N] ").strip().lower()
+        add = input("  Add another related identifier? [y/N] ").strip().lower()
         if add not in ("y", "yes"):
             break
         identifier = input("    Identifier (DOI / URL / arXiv ID): ").strip()
@@ -790,6 +794,8 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
         print(f"  Date:     {default_date}")
         print(f"  Creator:  {'; '.join(c['name'] for c in default_creators)}")
         print(f"  Keywords: {', '.join(default_kws)}")
+        if extracted.get("related_identifiers"):
+            print(f"  Related:  {len(extracted['related_identifiers'])} identifiers")
         print(f"  Desc:     {textwrap.shorten(default_desc, 72)}")
         meta: dict = {
             "title":            default_title,
@@ -804,6 +810,8 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
             "keywords":         default_kws,
             "version":          "1.0",
         }
+        if extracted.get("related_identifiers"):
+            meta["related_identifiers"] = extracted["related_identifiers"]
         return meta
 
     # ── Interactive (pre-filled) ─────────────────────────────────────────────
@@ -827,7 +835,7 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
     contributors = _collect_contributors()
     keywords     = _collect_keywords(default_kws)
     notes        = prompt("Notes (optional)", default="", required=False)
-    related      = _collect_related_identifiers()
+    related      = _collect_related_identifiers(extracted.get("related_identifiers"))
 
     print("\nZenodo communities (optional)")
     communities: list[dict] = []

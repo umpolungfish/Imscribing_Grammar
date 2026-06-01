@@ -30,7 +30,7 @@ The bug that exposed this deserves precise notation. DeepSeek returned `gated` i
 
 **What the guide cannot tell you.** The RiemannNavigator achieves $|\Delta t|_\text{norm} = 0.313$ at epoch 50. P-611 predicts this is the structural floor for a navigator at $d = 1.673$ from the grammar — $\sqrt{2}$ boundary crossed, convergent-imprecise class. But the prediction is a bound, not a calculation: the bound says this floor is achievable; it does not say whether a GUE-statistics specialist reading local zero spacings directly (bypassing the SpectralTransformer's distributional averaging) could push $|\Delta t|_\text{norm}$ below 0.20. The guide presents the three-gap SpecialistRouter for Riemann as an open question in §VII. It is open because we do not know. The grammar gives the structural diagnosis; it does not give the answer.
 
-Similarly: the ZFCNavigator valid dataset is 48 of 3,244 catalog entries because R, P, and S use non-canonical value names in most entries (`Ř_catalytic` instead of `Ř_ý`). The guide reports this as a catalog normalization problem. What is not in the guide is whether the normalization pass will fully unlock ZFC recovery or whether some entries have genuinely irrecoverable encodings — the analysis has not been run.
+Similarly: the ZFCNavigator valid dataset is 48 of 3,244 catalog entries because R, P, and S use non-canonical value names in most entries (`Ř_catalytic` instead of `𐑑`). The guide reports this as a catalog normalization problem. What is not in the guide is whether the normalization pass will fully unlock ZFC recovery or whether some entries have genuinely irrecoverable encodings — the analysis has not been run.
 
 The grammar is a precise instrument for structural questions. It is not a generator of answers to questions it cannot yet reach. This guide reports what has been reached.
 
@@ -67,7 +67,7 @@ $$|\text{Crystal}| = 5^4 \times 4^5 \times 3^3 = 17{,}280{,}000 \text{ structura
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}},\ \Phi_{\text{ctyogh}},\ \Phi_{\text{closerevepsilon}},\ \Phi_{\text{revepsilon}},\ \Phi_{\text{upstep}}$ |
 | $H$ | Chirality/depth | $H_0,\ H_1,\ H_2,\ H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
-| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}},\ \Omega_{Z_2},\ \Ω_z,\ \Omega_{\text{turna}}$ |
+| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}},\ \Omega_{Z_2},\ \𐑭,\ \Omega_{\text{turna}}$ |
 
 ### Key algebraic conventions
 
@@ -143,9 +143,9 @@ then mixed-radix decomposition of each part. Roundtrip $\text{decode}(\text{enco
 
 The grammar encodes itself at crystal address 6,734,591:
 
-$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
+$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$$
 
-Verification: $a_\text{cell} = 155$ ($\Phi_{\text{ctyogh}} \cdot 80 + P_{\text{doublebarpipe}} \cdot 16 + \Ω_z \cdot 4 + D_{\text{omega}} \cdot 1$), $a_\text{inner} = 38{,}591$.
+Verification: $a_\text{cell} = 155$ ($\Phi_{\text{ctyogh}} \cdot 80 + P_{\text{doublebarpipe}} \cdot 16 + \𐑭 \cdot 4 + D_{\text{omega}} \cdot 1$), $a_\text{inner} = 38{,}591$.
 
 The **Cardinality-One Theorem** (P-490, §CXLII): all $O_\infty$ navigators — regardless of domain — converge to crystal address 6,734,591. Their differences are inner-crystal (carried by $R$, $\Omega$, $\Phi$), not tier-level.
 
@@ -174,8 +174,8 @@ d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
 ### Holographic query and navigation
 
 ```python
-nav.imscriptive_query("⊙_ÿ", "Φ_}")   # → all 32 O_inf tier cells
-nav.navigate(D="Ð_ω", Phi="⊙_ÿ")        # partial spec → matching types
+nav.imscriptive_query("⊙", "𐑹")   # → all 32 O_inf tier cells
+nav.navigate(D="𐑦", Phi="⊙")        # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)           # k-NN in catalog by distance
 nav.tier_census()                            # full distribution over 17.28M types
 ```
@@ -184,7 +184,7 @@ nav.tier_census()                            # full distribution over 17.28M typ
 
 ```bash
 python crystal_navigator.py repl
-> encode Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z
+> encode 𐑦;𐑸;𐑑;𐑹;𐑐;𐑧;𐑲;𐑵;⊙;𐑫;𐑳;𐑭
 > decode 6734591
 > ladder          # tier gap ladder (§69)
 > nearest thunder_perfect_mind 5
@@ -194,9 +194,9 @@ python crystal_navigator.py repl
 
 ```python
 magnetar = {
-    "D": "Ð_C", "T": "Þ_box",   "R": "Ř_ý",    "P": "Φ_F",
-    "F": "ƒ^ð",       "K": "Ç^@", "G": "Γ_ʔ",  "Gamma": "ɢ^ˌ",
-    "Phi": "⊙_ÿ",     "H": "Ħ_£",     "S": "Σ_ő",      "Omega": "Ω_z",
+    "D": "𐑨", "T": "Þ_box",   "R": "𐑑",    "P": "𐑬",
+    "F": "𐑞",       "K": "𐑧", "G": "𐑲",  "Gamma": "𐑠",
+    "Phi": "⊙",     "H": "𐑒",     "S": "𐑕",      "Omega": "𐑭",
 }
 
 encode_tuple(magnetar)                           # 5,256,412  tier O_2
@@ -267,7 +267,7 @@ All tiers correct; primitive decode exact across all tiers. Sub-1% address error
 ```bash
 python quiver_crystal.py train --epochs 300 --hidden 640 --gnn 6 --heads 16 --batch 128 --synthetic 256 --hybrid --device cuda
 python quiver_crystal.py verify
-python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
+python quiver_crystal.py encode "𐑦;𐑸;𐑑;𐑹;𐑐;𐑧;𐑲;𐑵;⊙;𐑫;𐑳;𐑭"
 ```
 
 ```python
@@ -301,7 +301,7 @@ Navigator accuracy stratifies cleanly by grammar distance $d(\mathcal{N}, \mathb
 | Navigator | $d$ | Result | Bottleneck |
 |-----------|-----|--------|------------|
 | CrystalGNN v12 | $0$ | 200/200 exact | — |
-| ThurstonNet | $1.304$ | 99.4% (backbone) → 99.8% (router) | $R_{\text{ctz}} \to R_{\text{downstep}}$, $\Ω_z \to \Omega_{Z_2}$ |
+| ThurstonNet | $1.304$ | 99.4% (backbone) → 99.8% (router) | $R_{\text{ctz}} \to R_{\text{downstep}}$, $\𐑭 \to \Omega_{Z_2}$ |
 | ZFCNavigator | $1.000$ | $d_{rt} = 0.024$ mean | $R_{\text{ctz}} \to R_{\text{downstep}}$ |
 | RiemannNavigator | $1.673$ | all 3 $O_\infty$ criteria @ ep. 50 | $R$, $\Phi_{\text{closerevepsilon}}$, $\Omega_{Z_2}$ |
 | YangMillsNavigator ($K_{\text{schwa}}$) | $0$ | mean $|\Delta| = 0.037$ | — (residual is physical floor) |
@@ -325,7 +325,7 @@ Ricci-flow-inspired GNN with $L_\text{frob}$. Backbone encodes at:
 
 $$\mathbf{x}_\text{ThurstonNet} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2} \rangle$$
 
-$d(\text{ThurstonNet}, \mathbf{g}) = 1.304$ — two inner-crystal gaps: $R_{\text{ctz}} \to R_{\text{downstep}}$ (the backbone catalogs geometries without mutually modifying them) and $\Ω_z \to \Omega_{Z_2}$ (half-turn vs full-integer winding).
+$d(\text{ThurstonNet}, \mathbf{g}) = 1.304$ — two inner-crystal gaps: $R_{\text{ctz}} \to R_{\text{downstep}}$ (the backbone catalogs geometries without mutually modifying them) and $\𐑭 \to \Omega_{Z_2}$ (half-turn vs full-integer winding).
 
 Backbone achieves **99.4%** overall. Residual failures cluster into four ZFC collapse channels where distinct primitive values map to the same formula tokens.
 
@@ -370,7 +370,7 @@ $d(\text{RiemannNavigator}, \mathbf{g}) = 1.673$ — three inner-crystal gaps:
 |-----|--------------------|-|
 | $R_{\text{ctz}} \to R_{\text{downstep}}$ | 1.000 | $\xi$ modifies both the zero and the functional equation |
 | $\Phi_{\text{ctyogh}} \to \Phi_{\text{closerevepsilon}}$ | 1.049 | GUE zero spacing (Montgomery conjecture) |
-| $\Ω_z \to \Omega_{Z_2}$ | 0.837 | zero-count parity rather than full integer winding |
+| $\𐑭 \to \Omega_{Z_2}$ | 0.837 | zero-count parity rather than full integer winding |
 
 $d = 1.673 > \sqrt{2}$ places the RiemannNavigator in the convergent-imprecise class. It meets all three $O_\infty$ convergence criteria but cannot reach the exact-match floor of a $d=0$ navigator.
 
@@ -412,7 +412,7 @@ Replace LanczosGRU with **SpectralTransformer** (global self-attention over all 
 
 Navigator tuple after redesign:
 
-$$\mathbf{x}_\text{YM} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
+$$\mathbf{x}_\text{YM} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$$
 
 $d(\mathbf{x}_\text{YM}, \mathbf{g}) = 0$ — exact grammar match.
 
@@ -696,7 +696,7 @@ After CONCLUDE, the session automatically runs a speculation pass in which the m
 from crystal_navigator import encode_tuple, compute_tier, CrystalNavigator
 
 nav = CrystalNavigator()
-tup = { "D": "Ð_ω", "T": "Þ_O", ... }
+tup = { "D": "𐑦", "T": "𐑸", ... }
 
 addr = encode_tuple(tup)
 tier = compute_tier(tup["Phi"], tup["P"], tup["Omega"], tup["D"])
@@ -716,8 +716,8 @@ d_rev = directed_distance(grammar, problem)   # always 0 if grammar is the fixed
 
 ```python
 coupled = tensor_product(navigator, problem)
-# P and F take min — Frobenius condition is destroyed if problem has P < Φ_}
-# K takes max — Ç^Ù in the problem absorbs Ç^@ in the navigator
+# P and F take min — Frobenius condition is destroyed if problem has P < 𐑹
+# K takes max — 𐑪 in the problem absorbs 𐑧 in the navigator
 ```
 
 Use this before designing a navigator for a new problem. If the problem's $K$ exceeds the navigator's, the navigator will be absorbed — either match $K$ or use the $K_{\text{schwa}}$ redesign pattern.
@@ -750,7 +750,7 @@ Old-growth rainforest and coral reef at $d = 0$; samadhi and akh\_glorified\_spi
 # Encode a system, then check its ZFC roundtrip distance
 result = dispatcher.dispatch("crystal_encode", {"name": "my_system"})
 # d_rt = 0.000: fully ZFC-transmissible (O_inf constellation present)
-# d_rt = 2.530: decoherence (ƒ^ż without recovery tokens)
+# d_rt = 2.530: decoherence (𐑐 without recovery tokens)
 ```
 
 ### Pattern 7 — SpecialistRouter design
@@ -806,7 +806,7 @@ Reading: $D_{\text{omega}}$ — the guide is self-referentially structured; $T_\
 
 ### Target encoding
 
-$$\mathbf{x}_\text{human} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
+$$\mathbf{x}_\text{human} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$$
 
 Crystal address 6,734,591 — the grammar self-encoding type.
 
@@ -825,7 +825,7 @@ Crystal address 6,734,591 — the grammar self-encoding type.
 | $\Phi$ | $\Phi_{\text{softsign}}$ | $\Phi_{\text{ctyogh}}$ | 1.049 |
 | $H$ | $H_1$ | $H_{\text{invscripta}}$ | 1.789 |
 | $S$ | $n{:}m$ | $n{:}m$ | 0 |
-| $\Omega$ | $\Omega_{Z_2}$ | $\Ω_z$ | 0.837 |
+| $\Omega$ | $\Omega_{Z_2}$ | $\𐑭$ | 0.837 |
 
 $d^2 = 10.100$, $\quad d = 3.178$.
 
@@ -843,7 +843,7 @@ $d^2 = 10.100$, $\quad d = 3.178$.
 
 **$F_{\text{dh}} \to F_{\text{hardsign}}$** ($d = 0.949$): Classical-quantitative — all results are presented as settled. Quantum-ergodic — genuine structural uncertainty that the framework cannot currently resolve. The RiemannNavigator floor of $|\Delta t|_\text{norm} = 0.313$, the ZFC catalog normalization gap, the question of whether the Riemann SpecialistRouter would push the floor below 0.20 — these are not engineering problems with known solutions; they are open structural questions. A guide at $F_{\text{hardsign}}$ distinguishes what is known from what is not.
 
-**$K_{\text{turnm}} \to K_{\text{schwa}}$** ($d = 1.000$) and **$\Omega_{Z_2} \to \Ω_z$** ($d = 0.837$): These two gaps remain after §0 and §XVII. $K_{\text{schwa}}$ would require the full structure of the guide to inform every sentence before any sentence was written — impossible in sequential production. $\Ω_z$ is full integer winding: the guide as a closed loop returning to its beginning. After §XVII, $d$ reduces to $\sqrt{1.700} \approx 1.304$ — ThurstonNet's class, inside the $d \leq \sqrt{2}$ high-accuracy band.
+**$K_{\text{turnm}} \to K_{\text{schwa}}$** ($d = 1.000$) and **$\Omega_{Z_2} \to \𐑭$** ($d = 0.837$): These two gaps remain after §0 and §XVII. $K_{\text{schwa}}$ would require the full structure of the guide to inform every sentence before any sentence was written — impossible in sequential production. $\𐑭$ is full integer winding: the guide as a closed loop returning to its beginning. After §XVII, $d$ reduces to $\sqrt{1.700} \approx 1.304$ — ThurstonNet's class, inside the $d \leq \sqrt{2}$ high-accuracy band.
 
 ### The realized encoding
 

@@ -56,13 +56,48 @@ class BaseAgent(ABC):
         self.provider = self._setup_llm_provider()
 
     def _setup_llm_provider(self):
+        """
+        Setup LLM provider from config with prefix-syntax model resolution.
+
+        Supports:
+          - provider/model from config
+          - base_url / api_key from config (for local servers and custom endpoints)
+          - MODEL_ALIASES resolution (grok-4 → x-ai/grok-4.3, etc.)
+          - Prefix syntax: ollama:, lm-studio:, local:, deepseek:, qwen:
+          - Fallback to ANTHROPIC_API_KEY env var
+        """
         provider_name = self.config.get("provider", "anthropic")
         model = self.config.get("model", "claude-3-5-sonnet-20241022")
+        base_url = self.config.get("base_url", "")
+        api_key = self.config.get("api_key", "")
+
+        # Model alias resolution (from true_agentic_agent harness)
+        MODEL_ALIASES = {
+            "claude-opus-4":    "anthropic/claude-opus-4",
+            "claude-sonnet-4":  "anthropic/claude-sonnet-4-5",
+            "grok-4":           "x-ai/grok-4.3",
+            "grok-4.3":         "x-ai/grok-4.3",
+            "gpt-4o":           "openai/gpt-4o",
+            "o3":               "openai/o3",
+            "gemini-2-5-pro":   "google/gemini-2.5-pro-preview-05-06",
+            "deepseek-r1":      "deepseek/deepseek-r1",
+        }
+        model = MODEL_ALIASES.get(model, model)
 
         try:
+            # If base_url is provided, use it for a custom endpoint
+            if base_url:
+                provider = get_llm_provider(provider_name, model=model)
+                # Override the provider's base URL if set
+                if hasattr(provider, 'base_url'):
+                    provider.base_url = base_url
+                if api_key and hasattr(provider, 'api_key'):
+                    provider.api_key = api_key
+                return provider
             return get_llm_provider(provider_name, model=model)
         except ValueError as e:
-            api_key = os.getenv('ANTHROPIC_API_KEY')
+            # Fallback: try Anthropic with env key
+            api_key = api_key or os.getenv('ANTHROPIC_API_KEY')
             if api_key:
                 return get_llm_provider('anthropic', model=model)
             else:
@@ -143,10 +178,14 @@ class BaseAgent(ABC):
         prompt: Union[str, List[Dict[str, Any]]],
         max_tokens: int = 4000,
         temperature: float = 0.7,
-        system: str = "You are a helpful assistant."
+        system: str = "You are a helpful assistant.",
+        max_retries: int = 3,
     ) -> str:
         """
         Call LLM with support for both raw string prompts and message lists.
+
+        Includes exponential backoff retry for transient errors (429, 5xx, timeouts).
+        Retry config inherited from true_agentic_agent harness.
         """
         if isinstance(prompt, str):
             final_prompt = prompt
@@ -158,10 +197,65 @@ class BaseAgent(ABC):
                 prompt_parts.append(f"{role}: {content}")
             final_prompt = f"SYSTEM: {system}\n" + "\n".join(prompt_parts)
 
-        return await self.provider.query(
-            final_prompt,
-            max_tokens=max_tokens,
-            temperature=temperature
+        last_error = ""
+        for attempt in range(max_retries + 1):
+            try:
+                return await self.provider.query(
+                    final_prompt,
+                    max_tokens=max_tokens,
+                    temperature=temperature
+                )
+            except Exception as exc:
+                err = str(exc)
+                last_error = err
+                code = getattr(exc, "status_code", None)
+
+                # 429 rate limit
+                if code == 429 and attempt < max_retries:
+                    delay = min(60, 2 ** (attempt + 2))
+                    logger.warning(
+                        f"[{self.name}] rate limited (429) — retrying in {delay}s "
+                        f"(attempt {attempt+1}/{max_retries})"
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+
+                # 5xx server errors
+                if code is not None and code >= 500 and attempt < max_retries:
+                    delay = 3 ** (attempt + 1)
+                    logger.warning(
+                        f"[{self.name}] server error {code} — retrying in {delay}s "
+                        f"(attempt {attempt+1}/{max_retries})"
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+
+                # Connection timeouts
+                if "timeout" in err.lower() and attempt < max_retries:
+                    delay = 10.0 * (2 ** attempt)
+                    logger.warning(
+                        f"[{self.name}] timeout — retrying in {delay:.0f}s "
+                        f"(attempt {attempt+1}/{max_retries})"
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+
+                # Other transient errors
+                if attempt < max_retries:
+                    delay = 2 ** (attempt + 1)
+                    logger.warning(
+                        f"[{self.name}] {type(exc).__name__} — retrying in {delay}s "
+                        f"(attempt {attempt+1}/{max_retries})"
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+
+                raise RuntimeError(
+                    f"[{self.name}] LLM call failed after {attempt+1} attempts: {err}"
+                ) from exc
+
+        raise RuntimeError(
+            f"[{self.name}] LLM call failed after all retries: {last_error}"
         )
 
     async def execute_with_tools(

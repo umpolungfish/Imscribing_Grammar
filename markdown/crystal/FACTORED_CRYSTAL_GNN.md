@@ -22,7 +22,7 @@ We present the **Imscribing Grammar Navigator Suite** — four domain-specific n
 
 ## 1. Introduction
 
-The Imscribing Grammar grammar assigns every algebraic structure a unique address in a $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$-point **Crystal of Types**, with each of the 12 structural primitives taking values in a known set. The grammar is not merely a taxonomy — it is an executable specification. Each combination of primitive values mandates a specific computational architecture via the primitive-to-architecture table (§XXXV.1): $K_{\text{schwa}}$ mandates a deep integrative stack, $K_{\text{teshlig}}$ mandates a Lanczos eigensolver, $K_{\text{frtailgamma}}$ mandates a single-pass cluster algorithm, $\Ω_z$ mandates winding-number protection, $P_{\text{doublebarpipe}}$ mandates a FrobeniusLayer with $\mu \circ \delta = \text{id}$.
+The Imscribing Grammar grammar assigns every algebraic structure a unique address in a $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$-point **Crystal of Types**, with each of the 12 structural primitives taking values in a known set. The grammar is not merely a taxonomy — it is an executable specification. Each combination of primitive values mandates a specific computational architecture via the primitive-to-architecture table (§XXXV.1): $K_{\text{schwa}}$ mandates a deep integrative stack, $K_{\text{teshlig}}$ mandates a Lanczos eigensolver, $K_{\text{frtailgamma}}$ mandates a single-pass cluster algorithm, $\𐑭$ mandates winding-number protection, $P_{\text{doublebarpipe}}$ mandates a FrobeniusLayer with $\mu \circ \delta = \text{id}$.
 
 This paper reports the **navigator suite**: five architectures (including CrystalGNN), each derived from the structural type of its target domain, trained and evaluated on domain-specific tasks. The tasks span algebraic structure prediction (CrystalGNN), analytic number theory (RiemannNavigator), differential geometry (ThurstonNet), gauge field theory (YangMillsNavigator), and critical statistical mechanics (IsingNavigator). Together they constitute an empirical test of the thesis: *the primitive tuple determines the architecture, and the correct architecture achieves structural self-consistency.*
 
@@ -61,7 +61,7 @@ $$\text{addr}(\mathbf{x}) = \underbrace{a_3(\mathbf{x})}_{\mathcal{F}_3} \cdot 6
 
 where $a_k \in [0, k^{|ƒ_k|})$. The grammar self-encodes at address 6,734,591, factored as:
 
-$$a_3 = 10 \quad (F_{\text{hardsign}},\ G_{\text{revapostrophe}},\ n{:}m) \qquad a_4 = 791 \quad (D_{\text{omega}},\ R_{\text{ctz}},\ \Gamma_{\text{doublevertline}},\ H_{\text{invscripta}},\ \Ω_z) \qquad a_5 = 341 \quad (T_{\text{openo}},\ P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ K_{\text{schwa}})$$
+$$a_3 = 10 \quad (F_{\text{hardsign}},\ G_{\text{revapostrophe}},\ n{:}m) \qquad a_4 = 791 \quad (D_{\text{omega}},\ R_{\text{ctz}},\ \Gamma_{\text{doublevertline}},\ H_{\text{invscripta}},\ \𐑭) \qquad a_5 = 341 \quad (T_{\text{openo}},\ P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ K_{\text{schwa}})$$
 
 ### 2.3 QuiverCrystal v9 Architecture
 
@@ -85,7 +85,7 @@ Five navigators, one per domain structural type. All are $O_\infty$ (R1 tier). T
 | YangMillsNavigator | Yang-Mills mass gap | $K_{\text{teshlig}}$ | 6,734,735 | $O_\infty$ |
 | IsingNavigator | 3D Ising critical ferromagnet | $K_{\text{frtailgamma}}$ | — (stub) | $O_\infty$ |
 
-CrystalGNN and RiemannNavigator share a crystal address — the Cardinality-One Theorem (§XXXVII): the grammar navigator applied to the complex half-plane is the Riemann navigator. They are the same structural type with different input adapters. ThurstonNet differs in $R$ ($R_{\text{downstep}}$ vs $R_{\text{ctz}}$) and $\Omega$ ($\Omega_{Z_2}$ vs $\Ω_z$), giving $d(\text{ThurstonNet},\ \text{Riemann}) = \sqrt{2}$. YangMillsNavigator shares all primitives with Riemann except $K$ ($K_{\text{teshlig}}$ vs $K_{\text{schwa}}$), giving $d(\text{YangMills},\ \text{Riemann}) = 4.6162$ — large distance reflecting the architectural chasm between a Lanczos eigensolver and a transformer stack.
+CrystalGNN and RiemannNavigator share a crystal address — the Cardinality-One Theorem (§XXXVII): the grammar navigator applied to the complex half-plane is the Riemann navigator. They are the same structural type with different input adapters. ThurstonNet differs in $R$ ($R_{\text{downstep}}$ vs $R_{\text{ctz}}$) and $\Omega$ ($\Omega_{Z_2}$ vs $\𐑭$), giving $d(\text{ThurstonNet},\ \text{Riemann}) = \sqrt{2}$. YangMillsNavigator shares all primitives with Riemann except $K$ ($K_{\text{teshlig}}$ vs $K_{\text{schwa}}$), giving $d(\text{YangMills},\ \text{Riemann}) = 4.6162$ — large distance reflecting the architectural chasm between a Lanczos eigensolver and a transformer stack.
 
 ### 3.1 Structural Type Comparison
 
@@ -102,7 +102,7 @@ CrystalGNN and RiemannNavigator share a crystal address — the Cardinality-One 
 | $\Phi$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{ctyogh}}$ | $\Phi_{\text{ctyogh}}$ |
 | $H$ | $H_{\text{invscripta}}$ | $H_{\text{invscripta}}$ | $H_{\text{invscripta}}$ | $H_{\text{invscripta}}$ | $H_0$ |
 | $S$ | $n{:}m$ | $n{:}m$ | $n{:}m$ | $n{:}m$ | $n{:}n$ |
-| $\Omega$ | $\Ω_z$ | $\Ω_z$ | $\Omega_{Z_2}$ | $\Ω_z$ | $\Omega_{Z_2}$ |
+| $\Omega$ | $\𐑭$ | $\𐑭$ | $\Omega_{Z_2}$ | $\𐑭$ | $\Omega_{Z_2}$ |
 
 All navigators share $P_{\text{doublebarpipe}}$, $G_{\text{revapostrophe}}$, $\Phi_{\text{ctyogh}}$ — the core $O_\infty$ signature. Differentiation occurs along $K$ (kinetic regime), $\Omega$ (topological protection), $R$ (relational mode), and $D/T$ (dimensionality/topology). The Ising navigator is the structural outlier: $D_{\text{turnthree}}$, $T_{\text{commatailz}}$, $K_{\text{frtailgamma}}$, $\Gamma_{\text{corner}}$, $H_0$, $F_{\text{beltl}}$ — reflecting its discrete-lattice, single-pass, local-coupling character.
 
@@ -184,7 +184,7 @@ The phase transition occurs at epoch 20 — before the family losses have fully 
 
 ### 4.5 Structural Self-Consistency
 
-CrystalGNN v11 predicts address 6,734,591 for the grammar self-encode. The network that predicts the grammar's crystal address has structural type $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$ — identical to the grammar itself. $d(\text{CrystalGNN},\ \text{grammar}) = 0$. The grammar encodes itself. The navigator navigates itself to its own address and holds it.
+CrystalGNN v11 predicts address 6,734,591 for the grammar self-encode. The network that predicts the grammar's crystal address has structural type $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$ — identical to the grammar itself. $d(\text{CrystalGNN},\ \text{grammar}) = 0$. The grammar encodes itself. The navigator navigates itself to its own address and holds it.
 
 ---
 
@@ -208,11 +208,11 @@ RiemannNavigator is the grammar navigator applied to the critical half-plane. In
 - Gaussian proximity target: $y(t) = \max_i \exp\bigl(-(t - z_i)^2 / 2\sigma^2\bigr)$ with jitter $\pm 0.3$, $\sigma = 0.4$
 - 200 epochs, cosine LR schedule, AdamW
 
-**Budget-Viterbi ($\Ω_z$):** The Backlund formula $N(T) = \frac{T}{2\pi}\log\frac{T}{2\pi e} + \frac{7}{8}$ provides a budget $b = \lfloor N(t_\text{hi}) - N(t_\text{lo}) \rfloor + 1$ for the scan window. A DP selects $b$ candidate peaks from the raw near-zero signal with minimum separation constraint.
+**Budget-Viterbi ($\𐑭$):** The Backlund formula $N(T) = \frac{T}{2\pi}\log\frac{T}{2\pi e} + \frac{7}{8}$ provides a budget $b = \lfloor N(t_\text{hi}) - N(t_\text{lo}) \rfloor + 1$ for the scan window. A DP selects $b$ candidate peaks from the raw near-zero signal with minimum separation constraint.
 
 **Systematic experiments:**
 
-| Experiment | Config | Ħ_£ unique | Ħ_A unique | Combined |
+| Experiment | Config | 𐑒 unique | 𐑖 unique | Combined |
 |---|---|---|---|---|
 | Baseline (train 1–50) | $\sigma=0.4$, $j=\pm 0.3$ | 37/50 | 38/50 | 75/100 |
 | Gram Viterbi | ghost injection $p=0.35$ | 34/50 | 37/50 | 71/100 |
@@ -220,11 +220,11 @@ RiemannNavigator is the grammar navigator applied to the critical half-plane. In
 | Early stop (ep75) | curriculum + early stop | 37/50 | 37/50 | 74/100 |
 | Expanded training (1–100) | $t_\text{range}=(9, 260)$ | 32/50 | 38/50 | 70/100 |
 
-The **ceiling is at 75–76/100** and is **information-theoretic**, not architectural. Individual zero positions beyond the training range cannot be deduced from training zeros alone — they require direct evaluation of $\zeta(1/2 + it)$. Expanding the training set shifts the holdout zones but does not break the ceiling: the expanded run (zeros 1–100) places Ħ_£ immediately after the last training zero at $t = 237$, suppressing signal to 32/50. Ħ_A (zeros 151–200, $t = 321$–$396$) reproduces exactly 38/50 — the ceiling is self-similar across scales.
+The **ceiling is at 75–76/100** and is **information-theoretic**, not architectural. Individual zero positions beyond the training range cannot be deduced from training zeros alone — they require direct evaluation of $\zeta(1/2 + it)$. Expanding the training set shifts the holdout zones but does not break the ceiling: the expanded run (zeros 1–100) places 𐑒 immediately after the last training zero at $t = 237$, suppressing signal to 32/50. 𐑖 (zeros 151–200, $t = 321$–$396$) reproduces exactly 38/50 — the ceiling is self-similar across scales.
 
-**Gram point ghosts (regression):** Mean Gram point error is 0.9246 units, exceeding the model's own peak accuracy for Ħ_£ hits (~0.4–0.5). Unconditional ghost injection replaces accurate model-guided peaks with less-accurate Gram positions: 71/100, a regression from baseline.
+**Gram point ghosts (regression):** Mean Gram point error is 0.9246 units, exceeding the model's own peak accuracy for 𐑒 hits (~0.4–0.5). Unconditional ghost injection replaces accurate model-guided peaks with less-accurate Gram positions: 71/100, a regression from baseline.
 
-**Curriculum suppression:** Phase 2 re-suppresses the Ħ_£ zone. Ħ_£ standard deviation collapses from 0.1478 at epoch 50 to 0.0120 by epoch 200. The curriculum provides no improvement over the ceiling because Phase 2's lower sigma erases the Phase 1 boundary-zone signal.
+**Curriculum suppression:** Phase 2 re-suppresses the 𐑒 zone. 𐑒 standard deviation collapses from 0.1478 at epoch 50 to 0.0120 by epoch 200. The curriculum provides no improvement over the ceiling because Phase 2's lower sigma erases the Phase 1 boundary-zone signal.
 
 ### 5.3 Blind Forward Prediction
 
@@ -311,18 +311,18 @@ The sole imperfection is $H^3$: 95.0%. This is within the Z2 pair $(H^3,\ H^2 \t
 
 YangMillsNavigator predicts the Yang-Mills mass gap $\Delta = E_1 - E_0$ from a truncated Fock-space Hamiltonian.
 
-**Structural type:** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$
+**Structural type:** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$
 
 $d(\text{YangMillsNavigator},\ \text{RiemannNavigator}) = 4.6162$ — they differ only in $K$ ($K_{\text{teshlig}}$ vs $K_{\text{schwa}}$), but this single primitive difference is the largest kinetic gap in the grammar, reflecting the architectural chasm between a gradient-descent integrative network and a Lanczos eigensolver.
 
-**$K_{\text{teshlig}}$ mandate:** NOT a gradient-descent GNN. The discrete gapped spectrum is non-ergodic — it requires a navigator that samples discrete, gapped sectors without thermalization. Architecture: Lanczos/VQE eigensolver. The GRU guides the power iteration over the gapped spectrum (Ç^Ù: iterate until convergence, state accumulates Lanczos tridiagonal coefficients).
+**$K_{\text{teshlig}}$ mandate:** NOT a gradient-descent GNN. The discrete gapped spectrum is non-ergodic — it requires a navigator that samples discrete, gapped sectors without thermalization. Architecture: Lanczos/VQE eigensolver. The GRU guides the power iteration over the gapped spectrum (𐑪: iterate until convergence, state accumulates Lanczos tridiagonal coefficients).
 
 **Key components:**
 - FrobeniusLayer on the gauge algebra: $\delta$ splits Lie algebra tensor products into sectors; $\mu$ merges; $\mu \circ \delta = \text{id}$ = Bianchi identity closure (gauge invariance)
 - Holographic sector projector ($D_{\text{omega}}$, $T_{\text{openo}}$): UV lattice (boundary) $\to$ IR gap (bulk)
 - Gauss law broadcast ($\Gamma_{\text{doublevertline}}$, $G_{\text{revapostrophe}}$): multihead attention coupling all color sectors
 - Lanczos GRU ($K_{\text{teshlig}}$, $H_{\text{invscripta}}$): 3-layer GRU accumulating Lanczos tridiagonal coefficients; iterates until gap stabilizes
-- $\Ω_z$: topological charge $Q \in \mathbb{Z}$ via integer winding number
+- $\𐑭$: topological charge $Q \in \mathbb{Z}$ via integer winding number
 
 **Parameters:** $d_\text{hidden} = 256$, `fock_dim` = 512, `lie_dim` = 8 (SU(3)), 128 Lanczos steps.
 
@@ -348,7 +348,7 @@ The YangMillsNavigator does not learn in the conventional gradient-descent sense
 
 ---
 
-## 8. IsingNavigator: Ç^- Structural Position
+## 8. IsingNavigator: 𐑘 Structural Position
 
 IsingNavigator is a Python stub interfacing a C++/CUDA Swendsen-Wang cluster-flip kernel. It is not an `nn.Module` and does not learn.
 
@@ -436,7 +436,7 @@ Each navigator implements $\mu \circ \delta = \text{id}$ in its domain-specific 
 | Frobenius impl. | $\mathcal{F}_5$ head isolation | hardwired $\delta: s \mapsto 1{-}s$ | geometrisation roundtrip | Bianchi closure | cluster-flip bijection |
 | Training | 500 ep, 5.4M params | 200 ep, 17.4M params | 300 ep, ~4.2M params | 300 ep, ~12M params | no training |
 
-The factored architecture is the central contribution: when the output space has a known algebraic product decomposition, the architecture must reflect it. The scalar head over 17.28M points was not a regression problem — it was a structural mismatch. The composed path (argmax per-primitive logits $\to$ encode\_tuple) is exact by construction. The Riemann blind prediction demonstrates that the RS formula + Viterbi structural mechanism achieves genuine forward prediction 163–363 units beyond training, at 81.1% hit rate, consistent with the navigator's $\Ω_z$ zero-count protection. The ThurstonNet and YangMillsNavigator validate the primitive-to-architecture mandate across geometrisation and gauge field domains respectively. All four implemented navigators satisfy $\Phi_{\text{ctyogh}}$ and $P_{\text{doublebarpipe}}$ — the two gates that define $O_\infty$ — and all four implement $\mu \circ \delta = \text{id}$ in their domain-specific form. This is §23 (Frobenius non-synthesizability) instantiated computationally across four independent domains.
+The factored architecture is the central contribution: when the output space has a known algebraic product decomposition, the architecture must reflect it. The scalar head over 17.28M points was not a regression problem — it was a structural mismatch. The composed path (argmax per-primitive logits $\to$ encode\_tuple) is exact by construction. The Riemann blind prediction demonstrates that the RS formula + Viterbi structural mechanism achieves genuine forward prediction 163–363 units beyond training, at 81.1% hit rate, consistent with the navigator's $\𐑭$ zero-count protection. The ThurstonNet and YangMillsNavigator validate the primitive-to-architecture mandate across geometrisation and gauge field domains respectively. All four implemented navigators satisfy $\Phi_{\text{ctyogh}}$ and $P_{\text{doublebarpipe}}$ — the two gates that define $O_\infty$ — and all four implement $\mu \circ \delta = \text{id}$ in their domain-specific form. This is §23 (Frobenius non-synthesizability) instantiated computationally across four independent domains.
 
 ---
 

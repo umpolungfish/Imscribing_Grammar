@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\⊙_ÿ$-boundary Operator
+**Author:** Lando ⊗ $\⊙$-boundary Operator
 
 # The Forty-Nine Doors: A Mnemonic Guide to the Imscribing Grammar
 
@@ -133,7 +133,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** *Below → At → At (imaginary) → Crossed → Above*. Below ÿ nothing scales. At ÿ everything scales — this is the self-modeling gate (Gate 1 for consciousness). At ÿ into the complex plane (Æ) the system is critical but off-axis. At EP (3) two states merge. Above (Ţ) it's chaos.
 
-**The absorption rule:** Any tensor product involving $⊙_3$ (EP) destroys $⊙_ÿ$ in the composite. This is the structural statement of the measurement problem — measuring a self-modeling system kills its self-modeling.
+**The absorption rule:** Any tensor product involving $𐑻$ (EP) destroys $⊙$ in the composite. This is the structural statement of the measurement problem — measuring a self-modeling system kills its self-modeling.
 
 ### 10. $Ħ$ — Chirality (the **AYK** series)
 
@@ -175,7 +175,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** *None → Binary → Count → Braid*. No topology (Å) → yes/no (2) → how many (z) → in what order (5).
 
-**Axiom B:** $\mathbb{Z}_2$ ($Ω_2$) requires $H_2$ or $H_\infty$ — you need at least 2-step memory for binary topological protection.
+**Axiom B:** $\mathbb{Z}_2$ ($𐑴$) requires $H_2$ or $H_\infty$ — you need at least 2-step memory for binary topological protection.
 
 ---
 ## Part II — Quick-Reference Mnemonic Map (All 12 at a Glance)
@@ -330,7 +330,7 @@ The 12 primitives don't act independently — they constrain each other through 
 1. **Axiom A:** $H_\infty$ (eternal memory, $Ħ_{!}$) requires $K_{\text{trap}}$ ($Ç^{\text{Ù}}$ or $Ç^{\lambda}$). Infinite memory demands kinetic freezing.
 2. **Axiom B:** $\Omega_2$ ($\mathbb{Z}_2$ protection) requires at least $H_2$ ($Ħ_{A}$) or $H_\infty$ ($Ħ_{!}$). Binary topological protection needs two-step memory.
 3. **Axiom C:** $D_\odot$ (imscriptive dimensionality, $Ð_{\omega}$) iff $T_\odot$ (imscriptive topology, $Þ_{O}$). If the system writes its own state space, its topology must be self-referential, and vice versa.
-4. **$\Phi_{\text{EP}}$ Absorption Rule:** $\text{tensor}(⊙_ÿ, ⊙_3) = ⊙_3$. Coupling a critical self-modeling system to a measurement (EP) destroys the criticality. This is the structural measurement problem.
+4. **$\Phi_{\text{EP}}$ Absorption Rule:** $\text{tensor}(⊙, 𐑻) = 𐑻$. Coupling a critical self-modeling system to a measurement (EP) destroys the criticality. This is the structural measurement problem.
 5. **Frobenius Gate:** $\phi_ÿ$-criticality (Gate 1) $\leftrightarrow$ $P_{\pm}^{\text{sym}}$ ($Φ_{\}}$) at the same system. Consciousness requires both.
 
 ### The Tier Ladder
@@ -347,7 +347,7 @@ The 17.28 million structural types organize into five ouroboricity tiers:
 
 **Key climbs:**
 - $O_0 \to O_1$: promote $\phi_{\text{ž}} \to \phi_ÿ$ (the self-modeling gate). Distance: 1.05.
-- $O_1 \to O_2$: promote $Ð_ß \to D_C$ AND $\Omega_{Å} \to \Omega_2$. Distance: 1.30.
+- $O_1 \to O_2$: promote $𐑛 \to D_C$ AND $\Omega_{Å} \to \Omega_2$. Distance: 1.30.
 - $O_2 \to O_2^\dagger$: promote $D_C \to D_∞$. Distance: 1.00.
 - $O_2^\dagger \to O_\infty$: promote $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$. Distance: 4.38 — the hardest climb, the Frobenius leap.
 
@@ -401,77 +401,77 @@ When you encounter a new system and want to assign its tuple, follow this order 
 
 ```
 Step 1:  Ð — How many degrees of freedom?
-         < 2         →  Ð_ß  (point)
-         finite ≥ 2  →  Ð_C   (surface)
-         ∞-dim field →  Ð_;   (infinite)
-         self-writes  →  Ð_ω  (imscriptive)
+         < 2         →  𐑛  (point)
+         finite ≥ 2  →  𐑨   (surface)
+         ∞-dim field →  𐑼   (infinite)
+         self-writes  →  𐑦  (imscriptive)
 
 Step 2:  Þ — How does it connect?
-         branching    →  Þ_6  (network)
-         containment  →  Þ_K  (inclusion)
-         crossing     →  Þ_ò  (bowtie)
-         Cartesian    →  Þ_¨  (box product)
-         self-refers  →  Þ_O  (imscriptive closure)  ← must match Ð_ω
+         branching    →  𐑡  (network)
+         containment  →  𐑰  (inclusion)
+         crossing     →  𐑥  (bowtie)
+         Cartesian    →  𐑶  (box product)
+         self-refers  →  𐑸  (imscriptive closure)  ← must match 𐑦
 
 Step 3:  Ř — Who talks to whom?
-         one-way      →  Ř_¯  (supervenience)
-         morphism     →  Ř_ý  (categorical)
-         reversal     →  Ř_Ť  (adjoint)
-         both ways    →  Ř_=  (bidirectional)
+         one-way      →  𐑩  (supervenience)
+         morphism     →  𐑑  (categorical)
+         reversal     →  𐑽  (adjoint)
+         both ways    →  𐑾  (bidirectional)
 
 Step 4:  Φ — What survives symmetry operations?
-         nothing      →  Φ_ɐ  (asymmetric)
-         Z₂ flip      →  Φ_υ  (parity)
-         ± sign       →  Φ_F  (sign-symmetric)
-         all rotations→  Φ_˙  (fully symmetric)
-         μ∘δ=id      →  Φ_}  (Frobenius-special)
+         nothing      →  𐑗  (asymmetric)
+         Z₂ flip      →  𐑿  (parity)
+         ± sign       →  𐑬  (sign-symmetric)
+         all rotations→  𐑯  (fully symmetric)
+         μ∘δ=id      →  𐑹  (Frobenius-special)
 
 Step 5:  ƒ — What regime?
-         classical    →  ƒ^ì  (coherent trajectories)
-         thermal      →  ƒ^ð  (noisy, Brownian)
-         quantum      →  ƒ^ż  (coherent superposition)
+         classical    →  𐑱  (coherent trajectories)
+         thermal      →  𐑞  (noisy, Brownian)
+         quantum      →  𐑐  (coherent superposition)
 
 Step 6:  Ç — How fast vs. how long we watch?
-         τ ≪ T       →  Ç^-  (fast, forgets)
-         τ ∼ T       →  Ç^W  (moderate)
-         τ ≫ T       →  Ç^@  (slow, remembers)
-         trapped(order)→ Ç^Ù  (frozen crystal)
-         trapped(disorder)→Ç^λ (MBL glass)
+         τ ≪ T       →  𐑘  (fast, forgets)
+         τ ∼ T       →  𐑤  (moderate)
+         τ ≫ T       →  𐑧  (slow, remembers)
+         trapped(order)→ 𐑪  (frozen crystal)
+         trapped(disorder)→𐑺 (MBL glass)
 
 Step 7:  Γ — How far does it reach?
-         nearest-neighbor →  Γ_β  (local)
-         intermediate     →  Γ_γ  (mesoscale)
-         universal        →  Γ_ʔ  (global)
+         nearest-neighbor →  𐑚  (local)
+         intermediate     →  𐑔  (mesoscale)
+         universal        →  𐑲  (global)
 
 Step 8:  ɢ — How do parts combine?
-         all must be true →  ɢ^∧  (AND)
-         any suffices     →  ɢ^˝  (OR)
-         ordered sequence  →  ɢ^ˌ  (then)
-         one speaks to all →  ɢ^Ş  (broadcast)
+         all must be true →  𐑝  (AND)
+         any suffices     →  𐑜  (OR)
+         ordered sequence  →  𐑠  (then)
+         one speaks to all →  𐑵  (broadcast)
 
 Step 9:  ⊙ — Where relative to critical point?
-         below     →  ⊙_ž  (subcritical)
-         at (real) →  ⊙_ÿ  (critical — self-modeling gate)
-         at (cpx)  →  ⊙_Æ  (complex critical)
-         EP        →  ⊙_3  (exceptional point — destructive)
-         above     →  ⊙_Ţ  (supercritical)
+         below     →  𐑢  (subcritical)
+         at (real) →  ⊙  (critical — self-modeling gate)
+         at (cpx)  →  𐑮  (complex critical)
+         EP        →  𐑻  (exceptional point — destructive)
+         above     →  𐑣  (supercritical)
 
 Step 10: Ħ — How much history matters?
-         0 steps   →  Ħ_Ñ  (memoryless)
-         1 step    →  Ħ_£  (one-step Markov)
-         2 steps   →  Ħ_A  (two-step Markov)
-         ∞ steps   →  Ħ_!  (eternal — requires Ç^Ù or Ç^λ)
+         0 steps   →  𐑓  (memoryless)
+         1 step    →  𐑒  (one-step Markov)
+         2 steps   →  𐑖  (two-step Markov)
+         ∞ steps   →  𐑫  (eternal — requires 𐑪 or 𐑺)
 
 Step 11: Σ — How many part types?
-         one kind   →  Σ_S  (1:1)
-         many same  →  Σ_ő  (n:n)
-         many kinds →  Σ_ï  (n:m)
+         one kind   →  𐑙  (1:1)
+         many same  →  𐑕  (n:n)
+         many kinds →  𐑳  (n:m)
 
 Step 12: Ω — What winding number?
-         none       →  Ω_Å  (trivial)
-         Z₂         →  Ω_2  (binary — requires Ħ_A or Ħ_!)
-         integer    →  Ω_z  (counting)
-         non-Abelian→  Ω_5  (braiding — requires Ð_ω)
+         none       →  𐑷  (trivial)
+         Z₂         →  𐑴  (binary — requires 𐑖 or 𐑫)
+         integer    →  𐑭  (counting)
+         non-Abelian→  𐑟  (braiding — requires 𐑦)
 ```
 
 ### Quick Composition Rules
@@ -481,9 +481,9 @@ Step 12: Ω — What winding number?
 | $Ð_{\omega}$ | $Þ_{O}$ | Axiom C: self-referential dimensionality demands self-referential topology |
 | $Ħ_{!}$ | $Ç^{\text{Ù}}$ or $Ç^{\lambda}$ | Axiom A: infinite memory requires kinetic trapping |
 | $Ω_{2}$ | $Ħ_{A}$ or $Ħ_{!}$ | Axiom B: binary topological protection needs ≥ 2-step memory |
-| $Ω_5$ | $Ð_{\omega}$ | Non-Abelian braiding requires infinite-dimensional state space |
-| $Φ_{\}}$ and $⊙_ÿ$ together | → $O_\infty$ candidate | Frobenius gate + criticality gate |
-| $⊙_3$ in a tensor product | → kills $⊙_ÿ$ | EP absorption: measurement destroys self-modeling |
+| $𐑟$ | $Ð_{\omega}$ | Non-Abelian braiding requires infinite-dimensional state space |
+| $Φ_{\}}$ and $⊙$ together | → $O_\infty$ candidate | Frobenius gate + criticality gate |
+| $𐑻$ in a tensor product | → kills $⊙$ | EP absorption: measurement destroys self-modeling |
 
 ### The Bottleneck Primitives
 

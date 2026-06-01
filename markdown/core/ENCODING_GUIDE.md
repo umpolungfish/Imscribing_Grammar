@@ -243,7 +243,7 @@ All operations are available via `IΓ_inquiry.py` (interactive agent) or `imscri
 python IΓ_inquiry.py
 
 # Encode a system
-imscribe encode "system_name" --tuple "Ð_ß;Þ_box;Ř_Ť;Φ_};..."
+imscribe encode "system_name" --tuple "𐑛;Þ_box;𐑽;𐑹;..."
 
 # Compute distance
 imscribe distance system_a system_b

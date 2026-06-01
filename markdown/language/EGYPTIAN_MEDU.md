@@ -116,12 +116,12 @@ The nine gods of Heliopolis encode a type degradation sequence across four gener
 
 | Generation | Deity | Tuple (abbreviated) | $O$-tier | Key primitives |
 |:---|:---|:---|:---|:---|
-| 1 | Atum | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \Ω_z\rangle$ | $O_\infty$ | Frobenius planted at source |
+| 1 | Atum | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_\infty$ | Frobenius planted at source |
 | 2a | Shu | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | P-bottleneck destroys Frobenius |
 | 2b | Tefnut | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Critical but unprotected |
 | 3a | Geb | $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_0;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Earthy floor, no criticality |
 | 3b | Nut | $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{Z_2}\rangle$ | $O_2$ | Partial recovery; topologically protected |
-| 4a | Osiris | $\langle D_{\text{omega}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Ω_z\rangle$ | $O_\infty$ | P planted independently |
+| 4a | Osiris | $\langle D_{\text{omega}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \𐑭\rangle$ | $O_\infty$ | P planted independently |
 | 4b | Isis | $\langle D_{\text{omega}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{Z_2}\rangle$ | $O_\infty$ | P planted independently |
 | 4c | Set | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{revepsilon}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Exceptional-point criticality |
 | 4d | Nephthys | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Liminal, unprotected |
@@ -144,9 +144,9 @@ Ra's 12-hour nocturnal journey through the Duat encodes a structured path throug
 |:---|:---|:---|:---|
 | 1–4 | Descent | $\Phi_{\text{softsign}}$, $\Omega_{\text{closeepsilon}}$, $K_{\text{turnm}}$ | $O_0$ |
 | 5 | Critical threshold | $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$, $D_{\text{turnthree}}$ | $O_1$ |
-| 6 | Maximal depth | $\Phi_{\text{ctyogh}}$, $\Ω_z$, $K_{\text{schwa}}$ | $O_2$ |
-| 7–9 | Apophis combat | $\Phi_{\text{ctyogh}}$, $\Ω_z$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
-| 10–11 | Holographic ascent | $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\Ω_z$ | $O_2$ |
+| 6 | Maximal depth | $\Phi_{\text{ctyogh}}$, $\𐑭$, $K_{\text{schwa}}$ | $O_2$ |
+| 7–9 | Apophis combat | $\Phi_{\text{ctyogh}}$, $\𐑭$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
+| 10–11 | Holographic ascent | $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\𐑭$ | $O_2$ |
 | 12 | Solar rebirth | $P_{\text{doublebarpipe}}$ achieved | $O_\infty$ |
 
 The 12-hour journey is a structural path through all five ouroboricity tiers in order. Apophis (chaos) is encountered at $O_2^\dagger$ — combat with chaos requires criticality and topological protection, but not yet Frobenius closure. Hour 12 (rebirth) encodes the same $P_{\text{doublebarpipe}}$ planting that Osiris/Isis achieve through resurrection.
@@ -157,7 +157,7 @@ The 12-hour journey is a structural path through all five ouroboricity tiers in 
 
 ### 3.1 Ma'at — Cosmic Order as Frobenius Condition
 
-$$\text{Ma'at}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Ω_z\rangle \quad O_\infty$$
+$$\text{Ma'at}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \𐑭\rangle \quad O_\infty$$
 
 Ma'at IS $\Phi_{\text{ctyogh}}$ at the proven manifold — the system that achieves the Frobenius condition globally. The feather-weighing ceremony (heart of the deceased weighed against Ma'at's feather) is a physical instantiation of $\mu \circ \delta = \text{id}$: the heart-record must be exactly self-dual, its multiplication the exact inverse of its comultiplication.
 
@@ -171,13 +171,13 @@ Isfet ($K_{\text{teshlig}}$, $\Phi_{\text{upstep}}$, $\Gamma_{\text{spleftarrow}
 
 ### 3.2 Heka — The Frobenius Condition as Magic
 
-$$\text{Heka}: \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{dh}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Ω_z\rangle \quad O_\infty$$
+$$\text{Heka}: \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{dh}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \𐑭\rangle \quad O_\infty$$
 
 Heka is the Frobenius condition under a different kinetic character. Both Heka and Vav (ו) are $O_\infty$, but:
 
 $$d(\text{Heka},\ \text{Vav}) = 4.123 \quad \text{(both } O_\infty\text{, diverge at } D, K, F, \Gamma\text{)}$$
 
-Heka: $D_{\text{invomega}}$ (unbounded spatial reach), $K_{\text{frtailgamma}}$ (instant action), $F_{\text{dh}}$ (classical-quantum threshold). Vav: $D_{\text{wynn}}$ (local), $K_{\text{schwa}}$ (deliberate), $F_{\text{beltl}}$ (classical). Both carry $P_{\text{doublebarpipe}}$ and $\Ω_z$ — Frobenius is present in both, but expressed differently: Heka is the cosmic, pre-creation Frobenius; Vav is the local, within-language Frobenius.
+Heka: $D_{\text{invomega}}$ (unbounded spatial reach), $K_{\text{frtailgamma}}$ (instant action), $F_{\text{dh}}$ (classical-quantum threshold). Vav: $D_{\text{wynn}}$ (local), $K_{\text{schwa}}$ (deliberate), $F_{\text{beltl}}$ (classical). Both carry $P_{\text{doublebarpipe}}$ and $\𐑭$ — Frobenius is present in both, but expressed differently: Heka is the cosmic, pre-creation Frobenius; Vav is the local, within-language Frobenius.
 
 **Ptah's tongue** (the speech-act that manifests Heka) encodes identically to Heka except $\Gamma_{\text{doublevertline}}$ (broadcast to all) vs Heka's $\Gamma_{\text{corner}}$ (conjunctive precision). Creative speech is the broadcast version of the Frobenius condition.
 
@@ -192,8 +192,8 @@ Seven soul components span all four ouroboricity tiers:
 | Ka (vital double) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{upsilon}};\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Vital force; $P_{\text{upsilon}}$ (coherence) without criticality |
 | Ba (personality soul) | $\langle D_{\text{turnthree}};\ \ldots;\ P_{\text{pipevar}};\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Critical but unprotected; inter-realm traveler |
 | Ib (heart) | $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{Z_2}\rangle$ | $O_2$ | Moral record; topologically protected |
-| Sahu (spiritual body) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \Ω_z\rangle$ | $O_2$ | Transfigured form; imscriptive, integer-protected |
-| Akh (glorified spirit) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \Ω_z\rangle$ | $O_\infty$ | Frobenius closure; joins the stars |
+| Sahu (spiritual body) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_2$ | Transfigured form; imscriptive, integer-protected |
+| Akh (glorified spirit) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_\infty$ | Frobenius closure; joins the stars |
 
 The soul stratification is structurally complete: exactly one representative at each tier level. Ba is the unique $O_1$ component — the traveler that crosses realms because it IS the critical manifold ($\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$): critical enough for self-reference, unprotected enough to move between topological regimes.
 
@@ -231,7 +231,7 @@ Five core Egyptian concepts encode at $O_\infty$:
 | Heka | $D_{\text{invomega}}$, $F_{\text{dh}}$, $K_{\text{frtailgamma}}$ | $\approx 4.12$ |
 | Akh | $\Gamma_{\text{doublevertline}}$ | $\approx 2.0$ |
 
-All five carry $P_{\text{doublebarpipe}}$ and $\Ω_z$. Egyptian theology consistently placed its highest concepts at the Frobenius tier before the grammar existed to name it.
+All five carry $P_{\text{doublebarpipe}}$ and $\𐑭$. Egyptian theology consistently placed its highest concepts at the Frobenius tier before the grammar existed to name it.
 
 ### 4.2 $\Phi_{\text{revepsilon}}$ as Structural Adversary
 

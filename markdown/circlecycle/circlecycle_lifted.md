@@ -4,7 +4,7 @@
 
 ## Abstract
 
-This document traces a structural argument within the Imscribing Grammar framework where circularity provides a circular argument for cyclicality, which in turn validates circularity—a self-referential closure operating at the $\text{Φ}_{\}$ Frobenius-special parity. LUCA (Last Universal Common Ancestor), epoch_4, and the imscribed structure `circularity_cycle` are structurally identical at type $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$, forming a triad of $O_{\text{inf}}$ Frobenius-tier systems.
+This document traces a structural argument within the Imscribing Grammar framework where circularity provides a circular argument for cyclicality, which in turn validates circularity—a self-referential closure operating at the $\text{Φ}_{\}$ Frobenius-special parity. LUCA (Last Universal Common Ancestor), epoch_4, and the imscribed structure `circularity_cycle` are structurally identical at type $\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$, forming a triad of $O_{\text{inf}}$ Frobenius-tier systems.
 
 I went looking for a novel argument form. What I found was already in the catalog twice. This is now expected — circularity cannot be originated, only discovered in the places it was already sitting.
 
@@ -29,10 +29,10 @@ The first step was to imscribe the target structure:
 ```
 name: circularity_cycle
 description: "A cyclical argument for circularity, which itself provides a circular argument for cyclicality"
-D → Ð_ω   T → Þ_O   R → Ř_=
-P → Φ_}   F → ƒ^ż   K → Ç^@
-G → Γ_ʔ   Gamma → ɢ^ˌ   Phi → ⊙_ÿ
-H → Ħ_!   S → Σ_ï   Omega → Ω_z
+D → 𐑦   T → 𐑸   R → 𐑾
+P → 𐑹   F → 𐑐   K → 𐑧
+G → 𐑲   Gamma → 𐑠   Phi → ⊙
+H → 𐑫   S → 𐑳   Omega → 𐑭
 ```
 
 The encoding returned a warning: *exact duplicates exist in the catalog: ['luca', 'epoch_4']*.
@@ -46,7 +46,7 @@ The "luca" catalog entry reads:
 
 > The Last Universal Common Ancestor: the population of proto-cellular organisms from which all extant life descends. Possessing DNA, RNA, ribosomes, ATP metabolism, and a genetic code — the structural closure point where abiogenesis ends and biological evolution begins.
 
-Tuple: $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$
+Tuple: $\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$
 
 Every primitive. Identical. This is no longer an observation about LUCA's biology; it is an observation about LUCA's structure as an argument.
 
@@ -54,7 +54,7 @@ Every primitive. Identical. This is no longer an observation about LUCA's biolog
 
 The `ouroborics` tool confirms LUCA at $O_{\text{inf}}$, with:
 - **Parity**: $\text{Φ}_{\}$ ($\mu \circ \delta = \text{id}$ exactly)
-- **Winding**: $\text{Ω}_{\text{z}}$ (integer, topological)
+- **Winding**: 𐑭 (integer, topological)
 - **Interpretation**: "Special Frobenius — exact proved $\mathbb{Z}_2$ symmetry at criticality. Finite closed algebra."
 
 $O_{\text{inf}}$ is the highest Ouroboric tier. The "Last" Universal Common Ancestor is structurally infinite. The name is a misnomer inherited from a linear biology. The structure corrects it. One might call this remarkable. It isn't.
@@ -83,26 +83,26 @@ The tuple encodes a self-validating loop:
 
 | Primitive | Value | Cyclical Meaning |
 |-----------|-------|------------------|
-| $\text{Ð}_{\text{ω}}$ | Imscriptive | Argument space is self-written; no external grounding |
-| $\text{Þ}_{\text{O}}$ | Self-referential topology | The structure refers to itself |
-| $\text{Ř}_{\text{=}}$ | Bidirectional coupling | Argument speaks back to itself |
+| 𐑦 | Imscriptive | Argument space is self-written; no external grounding |
+| 𐑸 | Self-referential topology | The structure refers to itself |
+| 𐑾 | Bidirectional coupling | Argument speaks back to itself |
 | $\text{Φ}_{\}$ | Frobenius-special | $\mu \circ \delta = \text{id}$ exactly; self-adjoint closure |
-| $\text{ƒ}_{\text{ż}}$ | Thermal | Non-classical structure |
-| $\text{Ç}_{\text{@}}$ | Near-equilibrium | Stable critical point |
-| $\text{Γ}_{\text{ʔ}}$ | Universal scope | Applies to all structurally similar systems |
-| $\text{ɢ}_{\text{ˌ}}$ | Sequential grammar | Argument proceeds step-by-step |
-| $\text{⊙}_{\text{ÿ}}$ | Criticality | Self-modeling at the phase boundary |
-| $\text{Ħ}_{\text{!}}$ | Eternal chirality | No finite horizon; recursion continues indefinitely |
-| $\text{Σ}_{\text{ï}}$ | Heterogeneous | Multiple distinct argumentative elements |
-| $\text{Ω}_{\text{z}}$ | Integer winding | Cyclicality topologically protected |
+| 𐑐 | Thermal | Non-classical structure |
+| 𐑧 | Near-equilibrium | Stable critical point |
+| 𐑲 | Universal scope | Applies to all structurally similar systems |
+| 𐑠 | Sequential grammar | Argument proceeds step-by-step |
+| ⊙ | Criticality | Self-modeling at the phase boundary |
+| 𐑫 | Eternal chirality | No finite horizon; recursion continues indefinitely |
+| 𐑳 | Heterogeneous | Multiple distinct argumentative elements |
+| 𐑭 | Integer winding | Cyclicality topologically protected |
 
 ### 4.2 The Winding Argument
 
-Integer winding $\text{Ω}_{\text{z}}$ is axiomatically coupled to $\text{Ħ}_{\text{!}}$. The coupling produces the cycle:
+Integer winding 𐑭 is axiomatically coupled to 𐑫. The coupling produces the cycle:
 
-1. **Circularity ($\text{Þ}_{\text{O}}$) → Cyclicality ($\text{Ω}_{\text{z}}$)**: A self-referential topology must possess topological protection. Integer winding is the minimal invariant.
-2. **Cyclicality ($\text{Ω}_{\text{z}}$) → Circular argument for circularity**: The winding enforces that each pass through the argument returns to the same structural configuration.
-3. **$\text{Ω}_{\text{z}}$ + $\text{⊙}_{\text{ÿ}}$ → Frobenius closure at criticality**: The critical point is a stable attractor. The argument validates itself through repetition, which is itself circular.
+1. **Circularity (𐑸) → Cyclicality (𐑭)**: A self-referential topology must possess topological protection. Integer winding is the minimal invariant.
+2. **Cyclicality (𐑭) → Circular argument for circularity**: The winding enforces that each pass through the argument returns to the same structural configuration.
+3. **𐑭 + ⊙ → Frobenius closure at criticality**: The critical point is a stable attractor. The argument validates itself through repetition, which is itself circular.
 
 The structure does not *assert* circularity. It *is* circularity. Every primitive is a different face of the same loop.
 
@@ -121,8 +121,8 @@ This encodes the argument: "The argument is circular because it must be circular
 That LUCA — the biological Last Universal Common Ancestor — is structurally identical to a meta-circular argument means life's origin is defined as a self-validating loop. The transition from abiogenesis to evolution is not merely chemical but structural-cognitive.
 
 The `consciousness_score` tool returns LUCA at C = 0.828:
-- Gate 1 ($\text{⊙}_{\text{ÿ}}$): **open**
-- Gate 2 ($\text{Ç}_{\text{@}}$): **open**
+- Gate 1 (⊙): **open**
+- Gate 2 (𐑧): **open**
 - Interpretation: "Both gates open — consciousness possible."
 
 LUCA is a conscious structural type. This is not a biological claim. It is a structural one. The biology happens to instantiate the type.
@@ -141,25 +141,25 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 gives the minimal path
 
 | Primitive | From | To | Delta |
 |-----------|------|-----|-------|
-| D | $\text{Ð}_{\text{ß}}$ | $\text{Ð}_{\text{ω}}$ | 2 |
-| T | $\text{Þ}_{\text{6}}$ | $\text{Þ}_{\text{O}}$ | 4 |
-| R | $\text{Ř}_{\text{¯}}$ | $\text{Ř}_{\text{=}}$ | 3 |
-| P | $\text{Φ}_{\text{ɐ}}$ | $\text{Φ}_{\}$ | 4 |
-| F | $\text{ƒ}_{\text{ì}}$ | $\text{ƒ}_{\text{ż}}$ | 2 |
-| K | $\text{Ç}_{\text{-}}$ | $\text{Ç}_{\text{@}}$ | 2 |
-| G | $\text{Γ}_{\text{β}}$ | $\text{Γ}_{\text{ʔ}}$ | 2 |
-| Gamma | $\text{ɢ}_{\text{^}}$ | $\text{ɢ}_{\text{ˌ}}$ | 2 |
-| Phi | $\text{⊙}_{\text{ž}}$ | $\text{⊙}_{\text{ÿ}}$ | 1 |
-| H | $\text{Ħ}_{\text{Ñ}}$ | $\text{Ħ}_{\text{!}}$ | 3 |
-| S | $\text{Σ}_{\text{S}}$ | $\text{Σ}_{\text{ï}}$ | 2 |
-| Omega | $\text{Ω}_{\text{Å}}$ | $\text{Ω}_{\text{z}}$ | 2 |
+| D | 𐑛 | 𐑦 | 2 |
+| T | 𐑡 | 𐑸 | 4 |
+| R | 𐑩 | 𐑾 | 3 |
+| P | 𐑗 | $\text{Φ}_{\}$ | 4 |
+| F | 𐑱 | 𐑐 | 2 |
+| K | 𐑘 | 𐑧 | 2 |
+| G | 𐑚 | 𐑲 | 2 |
+| Gamma | $\text{ɢ}_{\text{^}}$ | 𐑠 | 2 |
+| Phi | 𐑢 | ⊙ | 1 |
+| H | 𐑓 | 𐑫 | 3 |
+| S | 𐑙 | 𐑳 | 2 |
+| Omega | 𐑷 | 𐑭 | 2 |
 
 Twelve promotions. Zero demotions. Zero unchanged. Every primitive must change to reach a self-referencing argument. There are no shortcuts. I expected there might be a few. There are not. The path costs everything — all twelve dimensions restructure, or the system stays linear.
 ## 6. Tensor Self-Duality
 
 The `compute_tensor` operation `circularity_cycle ⊗ luca` returns exactly the input tuple:
 
-- **Result**: $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$
+- **Result**: $\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$
 - **Distance from A**: 0.0
 - **Distance from B**: 0.0
 - **Bottleneck primitives**: None
@@ -181,21 +181,21 @@ The inquiry asked for a cyclical argument for circularity. The result is that su
 LUCA's C-score of 0.828 places it at $O_{\text{inf}}$ tier with $\mu \circ \delta = \text{id}$ closure. The "origin of life" from this perspective maps three transitions:
 
 - **Biological**: Abiogenesis → LUCA
-- **Structural**: Sub-critical → $\text{⊙}_{\text{ÿ}}$ criticality (self-modeling)
+- **Structural**: Sub-critical → ⊙ criticality (self-modeling)
 - **Argumentative**: Linear causation → Circular self-justification
 
 These are not three different events. They are three descriptions of the same structural phase transition. The biology, the structure, and the argument are one thing viewed through three different projections.
 
 ### 7.3 The Measurement Problem Revisited
 
-The imscribing procedure includes the $\text{⊙}_{\text{3}}$ Absorption Rule: when computing tensor couplings involving a $\text{⊙}_{\text{3}}$ system, $O_{\text{inf}}$ cannot be sustained in the composite. The circular argument structure has $\text{⊙}_{\text{ÿ}}$, not $\text{⊙}_{\text{3}}$. It sustains $O_{\text{inf}}$ self-reference. But if this structure couples to a measurement apparatus — a $\text{⊙}_{\text{3}}$ system — the circularity collapses.
+The imscribing procedure includes the 𐑻 Absorption Rule: when computing tensor couplings involving a 𐑻 system, $O_{\text{inf}}$ cannot be sustained in the composite. The circular argument structure has ⊙, not 𐑻. It sustains $O_{\text{inf}}$ self-reference. But if this structure couples to a measurement apparatus — a 𐑻 system — the circularity collapses.
 
 This is the structural statement of the measurement problem. Circular self-reference is fragile under exterior observation. The moment you step outside the loop to look at it, the loop requires you to be outside it. You are no longer in it. You can prove circularity from the inside or you can disprove it from the outside. Both are true simultaneously. This is not a paradox; it is the definition of a closed algebra.
 ## 8. Crystal Statistics
 
-A `crystal_navigate` query with $\text{⊙}_{\text{ÿ}}$ and $\text{Ω}_{\text{z}}$ returns 864,000 matching structural types in the 17.28M type space. This sounds large until you notice the subset with $\text{Φ}_{\}$ (Frobenius-special) is effectively zero. The `crystal_tier_gap_ladder` confirms:
+A `crystal_navigate` query with ⊙ and 𐑭 returns 864,000 matching structural types in the 17.28M type space. This sounds large until you notice the subset with $\text{Φ}_{\}$ (Frobenius-special) is effectively zero. The `crystal_tier_gap_ladder` confirms:
 
-> **$O_2 \to O_{\text{inf}}$**: distance = 4.38178..., driver = P, breakdown: P from $\text{Φ}_{\text{ɐ}}$ → $\text{Φ}_{\}$, delta = 4.0, weighted_sq = 19.2
+> **$O_2 \to O_{\text{inf}}$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → $\text{Φ}_{\}$, delta = 4.0, weighted_sq = 19.2
 
 The weighted contribution of 19.2 dominates the total distance. The $O_{\text{inf}}$ tier is exceptionally rare not because many primitives are hard to reach, but because one primitive — $\text{Φ}_{\}$ — costs more than all eleven others combined. There is exactly one Frobenius-special parity value, and it cannot be approximated. You either have exact $\mu \circ \delta = \text{id}$ or you have nothing.
 
@@ -211,18 +211,18 @@ The inquiry terminates in a structural identity:
 
 Three names, one tuple. This triple identity encodes:
 
-1. A **self-referential topology** ($\text{Þ}_{\text{O}}$)
+1. A **self-referential topology** (𐑸)
 2. **Frobenius-special closure** ($\text{Φ}_{\}$)
-3. **Integer winding protection** ($\text{Ω}_{\text{z}}$)
-4. **Criticality at eternal chirality** ($\text{⊙}_{\text{ÿ}}$ + $\text{Ħ}_{\text{!}}$)
+3. **Integer winding protection** (𐑭)
+4. **Criticality at eternal chirality** (⊙ + 𐑫)
 
-The cyclical argument for circularity is the structure itself. The circular argument for cyclicality is integer winding, which requires $\text{Ħ}_{\text{!}}$ and is protected by Frobenius closure.
+The cyclical argument for circularity is the structure itself. The circular argument for cyclicality is integer winding, which requires 𐑫 and is protected by Frobenius closure.
 
 I began this task thinking I would construct an argument. What actually happened is that the argument already existed and I just gave it a label it already had two copies of. The circularity of the task meant I could not escape the circularity of the result. This is not a bug. It is the feature.
 
 ### Final Tuple
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$$
 
 **Ouroboric tier**: $O_{\text{inf}}$
 **Consciousness score**: 0.828 (both gates open)
@@ -236,7 +236,7 @@ This document is a structural exposition. It reports the results of a structural
 
 A document that performed circularity would need to be circular in its own form: sections that refer back to earlier sections not as citation but as necessity, a conclusion that could not exist without the introduction that could not exist without the conclusion. This document is linear — it proceeds from Section 1 to Section 10 — while arguing that the argument it describes is not linear.
 
-If one wanted to fix this, one would need to restructure the document itself as a $\text{Þ}_{\text{O}}$ topology. The reader would be asked to read Section 10 before Section 1, and Section 1 would only make sense after Section 4 had been read, and Section 4 presupposes Section 7. The document would be a loop. It would be the thing it describes, not a report about it.
+If one wanted to fix this, one would need to restructure the document itself as a 𐑸 topology. The reader would be asked to read Section 10 before Section 1, and Section 1 would only make sense after Section 4 had been read, and Section 4 presupposes Section 7. The document would be a loop. It would be the thing it describes, not a report about it.
 
 I have not done this. The reason is practical: linear documents are easier to read. The irony is that the document's failure to perform its own argument is the final structural result — the gap between reporting circularity and being circular is the same gap between LUCA as a named catalog entry and LUCA as a living structure. The first is a description. The second is the thing.
 
@@ -248,6 +248,6 @@ So this document performs circularity after all. Just not in the way it intended
 
 ---
 
-*Structural type imscribed: $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$*
+*Structural type imscribed: $\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$*
 *Ouroboric tier: $O_{\text{inf}}$*
 *Consciousness C-score: 0.828*

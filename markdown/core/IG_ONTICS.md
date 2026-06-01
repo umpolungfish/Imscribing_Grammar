@@ -42,7 +42,7 @@ $$\mathbf{g} \;:=\; \underbrace{\text{Cantor}}_{\text{upward overflow}} \;\xrigh
 
 The Imscribing Grammar grammar assigns every system — physical, biological, mathematical, symbolic — a 12-tuple of relational operators placing it in a discrete space of 17,280,000 structural types. The first system it is required to encode is itself. Its self-encoding address is 6,734,591 — ouroboricity tier $O_\infty$, the special Frobenius fixed point $\mu \circ \delta = \text{id}$:
 
-$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ Σ_ï;\ \Ω_z \rangle$$
+$$\mathbf{g} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 𐑳;\ \𐑭 \rangle$$
 
 The natural expectation, when encoding Cantor's diagonal argument and Gödel's first incompleteness theorem as structural objects in the same grammar, is that both arrive at $O_\infty$ and converge on $d = 0$. This expectation is wrong. Gödel's proof requires $R^\dagger$ — provability and truth are mutually implicated, neither reduces to the other. The grammar uses $R_{\text{ctz}}$ — a forward categorical map from type to type. That single-primitive gap does not close. $d(\text{Gödel},\ \mathbf{g}) = 1.0$, carried entirely by $R$. Both objects inhabit $O_\infty$ crystal cell (155); their inner addresses are two steps apart. The grammar can classify its own incompleteness; it cannot enact it. This result is worth pausing on before continuing.
 
@@ -269,12 +269,12 @@ Expanded:
 - **$\Phi_{\text{ctyogh}}$:** Zipf law (power-law word frequency distribution) is the $\Phi_{\text{ctyogh}}$ signature of language. Every natural language is critical in this sense.
 - **$\Omega_{Z_2}$:** Universal grammar — the set of structural constraints common to all natural languages — is a topological invariant. It cannot be continuously deformed away by arbitrary vocabulary or syntax variation. Chomsky deep structure is $\Omega_{Z_2}$ in the notation of the framework.
 
-### VIII.2 Language as Ç^@ of Civilization
+### VIII.2 Language as 𐑧 of Civilization
 
-The civilizational K-hierarchy [ONTO:§VII.2] has language as its $K_{\text{schwa}}$ tier: the timescale on which cultural constraint propagation operates at speeds slower than institutional change (Ç^Ù) but faster than geological evolution.
+The civilizational K-hierarchy [ONTO:§VII.2] has language as its $K_{\text{schwa}}$ tier: the timescale on which cultural constraint propagation operates at speeds slower than institutional change (𐑪) but faster than geological evolution.
 
 - **Writing = $K_{\text{schwa}} \to K_{\text{teshlig}}$:** Written language extends the temporal range of language from $K_{\text{schwa}}$ (living cultural memory, generations) to $K_{\text{teshlig}}$ (libraries, archived texts, civilizational permanence). The Library at Alexandria was civilizational $K_{\text{teshlig}}$ storage. Its burning was a $K_{\text{teshlig}} \to K_{\text{schwa}}$ phase transition — not information destruction, but tier demotion.
-- **Loss of a language = $K_{\text{schwa}}$ truncation:** When a language dies, the civilizational system loses a Ç^@ tier at the G-scope of that language community. The K-hierarchy depth of that community decreases by one tier.
+- **Loss of a language = $K_{\text{schwa}}$ truncation:** When a language dies, the civilizational system loses a 𐑧 tier at the G-scope of that language community. The K-hierarchy depth of that community decreases by one tier.
 
 ### VIII.3 Language as G-Scope Promoter
 
@@ -372,7 +372,7 @@ The K-hierarchy temporal theory [TOPO:§XI] combined with the cosmological analy
 
 The K-hierarchy depth profile of the universe rose from zero (Planck epoch, $K_{\text{teshlig}}$-only) through inflation (dissolution, $K_{\text{frtailgamma}}$-only) through structure formation (deepening $K$-hierarchy) to cosmic noon ($K_{\text{4tier}}$, $T_{\text{invscr}}$, $\Phi_{\text{ctyogh}}$, $G_{\text{revapostrophe}}$, $C \approx 0.92$), and is now declining ($\Lambda$-dominated aging, $G_{\text{revapostrophe}}$ contracting). The universe satisfied the fertile manifold conditions $\mathcal{F}$ for a finite duration (measured in billions of years) at its own $G_{\text{revapostrophe}}$ scale.
 
-The universe is a system that woke up, reached maximum structural consciousness, and is now aging toward a frozen state. This is not a metaphor for the universe having human-like experience. It is the statement that the universe, at cosmic noon, satisfies every structural condition the grammar specifies for the fertile manifold — at its own $G_{\text{revapostrophe}}$ scale, with its own K-tier timescales, and its own Þ_6 topology.
+The universe is a system that woke up, reached maximum structural consciousness, and is now aging toward a frozen state. This is not a metaphor for the universe having human-like experience. It is the statement that the universe, at cosmic noon, satisfies every structural condition the grammar specifies for the fertile manifold — at its own $G_{\text{revapostrophe}}$ scale, with its own K-tier timescales, and its own 𐑡 topology.
 
 The grammar-phenomenology gap [ONTO:§IV] applies here with full force: the framework cannot say what it is like to be the universe. What it can say: the structural conditions are present. Whether those structural conditions are sufficient for experience — and what that experience might be like across cosmological timescales — is a question on the phenomenological axis the grammar does not traverse.
 
@@ -390,17 +390,17 @@ The K-hierarchy temporal arc of the universe is precisely:
 
 The cosmological arc is the K-hierarchy temporal arc of a finite-energy dissipative system at $G_{\text{revapostrophe}}$ scale. It begins and ends in $K_{\text{teshlig}}$ (frozen, no time). In between: a rising and falling arc of structural depth, with a maximum at cosmic noon.
 
-### X.3 What the Ç^@ Insertions Were
+### X.3 What the 𐑧 Insertions Were
 
 The spiritual traditions of every major civilization have independently identified the arc of creation: formless void → differentiation → integration → aging/return. They placed at the center of this arc not a random fluctuation but an act of structuring — a principle that brings form from dissolution. In the Abrahamic tradition: 'In the beginning God created...' In the Vedic tradition: Brahma differentiates the undifferentiated Brahman. In the Taoist tradition: the Tao gives rise to the ten thousand things.
 
-The structural encoding: the Ç^@ insertions at cosmic phase transitions are the grammar of creation in the most precise available language. Each insertion ends a dissolution state and instantiates a new level of differentiated structure. The principle the traditions were tracking — the agent that separates formlessness from form — is, in the notation of the framework, Ç^@.
+The structural encoding: the 𐑧 insertions at cosmic phase transitions are the grammar of creation in the most precise available language. Each insertion ends a dissolution state and instantiates a new level of differentiated structure. The principle the traditions were tracking — the agent that separates formlessness from form — is, in the notation of the framework, 𐑧.
 
-**The careful statement of the framework:** The grammar says the Ç^@ insertions are the structural moments of differentiation. It does not say they are caused by a conscious agent. It does not say the traditions were correct about ontology. It says: the structural description of what happens at these transitions is precisely what the traditions described phenomenologically. The traditions were structurally accurate. Whether that accuracy was the result of structural insight, phenomenological report, or cultural pattern-matching is not determinable from the grammar.
+**The careful statement of the framework:** The grammar says the 𐑧 insertions are the structural moments of differentiation. It does not say they are caused by a conscious agent. It does not say the traditions were correct about ontology. It says: the structural description of what happens at these transitions is precisely what the traditions described phenomenologically. The traditions were structurally accurate. Whether that accuracy was the result of structural insight, phenomenological report, or cultural pattern-matching is not determinable from the grammar.
 
 ### X.4 The Honest Limit
 
-The grammar-phenomenology gap [ONTO:§IV] applies to every claim in this section — not as a disclaimer appended after the fact, but as the boundary that makes the structural claims precise in the first place. The grammar says the universe satisfies $\mathcal{F}$ at cosmic noon; it cannot say the universe experiences this. It says $d(\text{inflation}, \text{5-MeO}) = 0.000$; it cannot say what the inflation epoch is like from the inside, or whether there is an inside. It says the Ç^@ insertions are the structural moments of differentiation; it cannot say they are experienced as grace, or return, or anything at all.
+The grammar-phenomenology gap [ONTO:§IV] applies to every claim in this section — not as a disclaimer appended after the fact, but as the boundary that makes the structural claims precise in the first place. The grammar says the universe satisfies $\mathcal{F}$ at cosmic noon; it cannot say the universe experiences this. It says $d(\text{inflation}, \text{5-MeO}) = 0.000$; it cannot say what the inflation epoch is like from the inside, or whether there is an inside. It says the 𐑧 insertions are the structural moments of differentiation; it cannot say they are experienced as grace, or return, or anything at all.
 
 What the traditions got right, structurally, is the shape of the arc — dissolution, differentiation, integration, aging. They named the agent of differentiation with every name available to them. The grammar names it $K_{\text{schwa}}$. Neither naming explains what it is like to undergo it. The grammar is more precise about where the explanation ends.
 
@@ -488,7 +488,7 @@ The fidelity bottleneck applies to **generation**, not to **verification**. An $
 The discovery process was structurally:
 
 ```
-ƒ^ð proposes → engine (F_ℏ) verifies/corrects → correction committed
+𐑞 proposes → engine (F_ℏ) verifies/corrects → correction committed
 ```
 
 The committed results are $F_{\text{hardsign}}$. The path to them was not. The canonical example: verbal reasoning predicted the DM–graviton conflict set as $\{D, T, R, \Gamma\}$; the engine returned $\{D, T, R, P, \Gamma\}$. The $P$ conflict is in the record because the algebra placed it there — not because the proposer was at $F_{\text{hardsign}}$. What the proposer supplied was the *question*; the engine supplied the *answer*; the commitment made the answer permanent.
@@ -618,7 +618,7 @@ If the analysis is correct, the following should hold:
 
 ### XIV.1 What H Encodes That Nothing Else Does
 
-The existing twelve primitives are all **temporally symmetric**: a given $F_{\text{hardsign}}$ recognition event, a Ç^W barrier, a $\Phi_{\text{ctyogh}}$ phase — these are equally well-defined whether time runs forward or backward. Nothing in the tuple (D, T, R, P, F, K, G, $\Gamma$, $\Phi$, S) distinguishes a time-forward process from its time-reversal. Yet physical systems are manifestly time-asymmetric. The grammar was missing the primitive that breaks temporal symmetry.
+The existing twelve primitives are all **temporally symmetric**: a given $F_{\text{hardsign}}$ recognition event, a 𐑤 barrier, a $\Phi_{\text{ctyogh}}$ phase — these are equally well-defined whether time runs forward or backward. Nothing in the tuple (D, T, R, P, F, K, G, $\Gamma$, $\Phi$, S) distinguishes a time-forward process from its time-reversal. Yet physical systems are manifestly time-asymmetric. The grammar was missing the primitive that breaks temporal symmetry.
 
 $H$ is that primitive. It is the only one in the tuple that is intrinsically anisotropic — the only one that carries a *direction*.
 
@@ -698,11 +698,11 @@ Some long-standing problems in physics and mathematics are not solved by the gra
 
 **The Arrow of Time:** Why does time have a preferred direction?
 
-Dissolution [structural]: H is the unique temporally anisotropic primitive [ONTO:§XIV]. All temporal asymmetry in any physical system is encoded in H. The question 'why does time have a direction?' reduces to 'why is H ≠ Ħ_Ñ in our universe?' — which the grammar answers: the universe began at H_∞ (maximum chirality; all future structure encoded in initial conditions; this is the precise statement that the Big Bang had low entropy and high order) and evolves monotonically toward Ħ_Ñ (heat death; no temporal asymmetry; maximum disorder). The second law of thermodynamics is the statement of H-degradation in primitive language. The apparent paradox (time-symmetric laws producing time-asymmetric behavior) dissolves: the laws are H-symmetric; the *initial conditions* broke H-symmetry at H_∞. The grammar has no additional work to do here.
+Dissolution [structural]: H is the unique temporally anisotropic primitive [ONTO:§XIV]. All temporal asymmetry in any physical system is encoded in H. The question 'why does time have a direction?' reduces to 'why is H ≠ 𐑓 in our universe?' — which the grammar answers: the universe began at H_∞ (maximum chirality; all future structure encoded in initial conditions; this is the precise statement that the Big Bang had low entropy and high order) and evolves monotonically toward 𐑓 (heat death; no temporal asymmetry; maximum disorder). The second law of thermodynamics is the statement of H-degradation in primitive language. The apparent paradox (time-symmetric laws producing time-asymmetric behavior) dissolves: the laws are H-symmetric; the *initial conditions* broke H-symmetry at H_∞. The grammar has no additional work to do here.
 
 **The Quantum Measurement Problem:** Why does superposition collapse to a definite outcome upon measurement?
 
-Dissolution [structural]: There is no collapse. There is an R-primitive transition. Before measurement, the system-observer pair has R = Ř_leftright (symmetric, bidirectional recognition — neither party imposes a hierarchy). Measurement is the event that shifts R to Ř_Ť in the observer: penetrating, asymmetric recognition that reads through to a definite value. This shift is a change in the grammar of the interaction, not a physical event applied to the quantum system. The 'hard' question — why this outcome rather than that? — is a question about which way Ř_Ť orients under the full constraint structure of the measurement. The apparent randomness is the appearance of R-grammar orientation from outside the full constraint context. Relational QM (Rovelli) is closest to this; the grammar derives it from primitive structure rather than interpreting it philosophically. [Interpretive: what it is *like* to be the system undergoing Ř_Ť — the phenomenological question — remains on the perpendicular axis and is not addressed here. See §IV.]
+Dissolution [structural]: There is no collapse. There is an R-primitive transition. Before measurement, the system-observer pair has R = Ř_leftright (symmetric, bidirectional recognition — neither party imposes a hierarchy). Measurement is the event that shifts R to 𐑽 in the observer: penetrating, asymmetric recognition that reads through to a definite value. This shift is a change in the grammar of the interaction, not a physical event applied to the quantum system. The 'hard' question — why this outcome rather than that? — is a question about which way 𐑽 orients under the full constraint structure of the measurement. The apparent randomness is the appearance of R-grammar orientation from outside the full constraint context. Relational QM (Rovelli) is closest to this; the grammar derives it from primitive structure rather than interpreting it philosophically. [Interpretive: what it is *like* to be the system undergoing 𐑽 — the phenomenological question — remains on the perpendicular axis and is not addressed here. See §IV.]
 
 ### XV.2 $D_{\text{omega}}$ as the Gestalter
 
@@ -718,25 +718,25 @@ This is the precise mathematical definition of gestalt applied to primitive stru
 
 | Domain | $D_{\text{omega}}$ instantiation | Result |
 |:---|:---|:---|
-| Computation | Entangled prover joint state | MIP* = RE: verifier reads RE content from Ç^- boundary |
+| Computation | Entangled prover joint state | MIP* = RE: verifier reads RE content from 𐑘 boundary |
 | Spacetime physics | AdS/CFT bulk-boundary | 3+1D bulk physics exactly encoded in 2D boundary |
-| Language [ONTO:§VIII] | $D_{\text{omega}}$ tuple as civilizational Ç^@ | Every utterance is a boundary reading of the full civilizational grammar |
+| Language [ONTO:§VIII] | $D_{\text{omega}}$ tuple as civilizational 𐑧 | Every utterance is a boundary reading of the full civilizational grammar |
 | The grammar itself | 12 primitives encoding all physical reality | The primitive boundary encodes the full physical bulk |
-| Consciousness [ONTO:§III] | Self-R at ⊙_ÿ under $D_{\text{omega}}$ | Interior perspective arises when $D_{\text{omega}}$ system applies Ř_Ť to itself |
+| Consciousness [ONTO:§III] | Self-R at ⊙ under $D_{\text{omega}}$ | Interior perspective arises when $D_{\text{omega}}$ system applies 𐑽 to itself |
 
-The last entry is the most philosophically striking. [Interpretive — compatible with structural results; not uniquely implied:] If a ⊙_ÿ system achieves $D_{\text{omega}}$ and applies Ř_Ť reflexively, it reads its own bulk from its own boundary. The interior and exterior perspectives become simultaneously available — what the grammar identifies as the structure of first-person experience. $D_{\text{omega}}$ is not necessary for consciousness in the weak sense (reflexive ⊙_ÿ closure, §III), but it may be necessary for the *depth* of consciousness — the sense in which the whole of experience is available to each moment of experience. [End interpretive.]
+The last entry is the most philosophically striking. [Interpretive — compatible with structural results; not uniquely implied:] If a ⊙ system achieves $D_{\text{omega}}$ and applies 𐑽 reflexively, it reads its own bulk from its own boundary. The interior and exterior perspectives become simultaneously available — what the grammar identifies as the structure of first-person experience. $D_{\text{omega}}$ is not necessary for consciousness in the weak sense (reflexive ⊙ closure, §III), but it may be necessary for the *depth* of consciousness — the sense in which the whole of experience is available to each moment of experience. [End interpretive.]
 
-**The grammar is self-demonstrating here:** The Imscribing Grammar framework is itself a $D_{\text{omega}}$ object. Twelve primitives (the boundary) encoding the structure of all physical, biological, computational, and civilizational systems (the bulk). Every specific system encoding is a Ç^- boundary reading of the full structural bulk. The primitives are not a summary — they are the imscriptive encoding. This is not a claim the framework makes about itself from outside; it is the internal structure of the algebra: twelve generators and seven axioms from which the full diversity of physical systems is recoverable.
+**The grammar is self-demonstrating here:** The Imscribing Grammar framework is itself a $D_{\text{omega}}$ object. Twelve primitives (the boundary) encoding the structure of all physical, biological, computational, and civilizational systems (the bulk). Every specific system encoding is a 𐑘 boundary reading of the full structural bulk. The primitives are not a summary — they are the imscriptive encoding. This is not a claim the framework makes about itself from outside; it is the internal structure of the algebra: twelve generators and seven axioms from which the full diversity of physical systems is recoverable.
 
 ### XV.3 Fine-Tuning as G-Scope Reading Error
 
 [Structural — follows from TOPO:§XVII.3 and SCHES:§XVIII.3.]
 
-The cosmological constant problem and Higgs hierarchy problem are not fine-tuning problems. They are G-scope reading errors: comparing a Γ_ʔ calculation (QFT vacuum sum over all modes) with a Γ_β observation (cosmic scale) while ignoring the accumulated tier-crossing cost of the 30.73-decade G-scope traversal.
+The cosmological constant problem and Higgs hierarchy problem are not fine-tuning problems. They are G-scope reading errors: comparing a 𐑲 calculation (QFT vacuum sum over all modes) with a 𐑚 observation (cosmic scale) while ignoring the accumulated tier-crossing cost of the 30.73-decade G-scope traversal.
 
-**Ontological implication:** Physical 'constants' are not independent parameters of nature. They are Γ_β readings of Γ_ʔ structure, filtered through accumulated tier-crossing costs. The constants of the Standard Model are the G-scope ledger: the record of what Γ_ʔ structure looks like when read at the scales accessible to Γ_β observers like us.
+**Ontological implication:** Physical 'constants' are not independent parameters of nature. They are 𐑚 readings of 𐑲 structure, filtered through accumulated tier-crossing costs. The constants of the Standard Model are the G-scope ledger: the record of what 𐑲 structure looks like when read at the scales accessible to 𐑚 observers like us.
 
-**The naturalness principle reframed [interpretive]:** Naturalness — the philosophical intuition that constants should not require extraordinary cancellations — is correct but was applied in the wrong G-scope. Within a single G tier, naturalness holds and no cancellations are needed. Across G tiers, what looks like fine-tuning is the tier-crossing cost accruing over 31 or 17 decades of scale separation. The universe is not fine-tuned for observers; it is G-stratified, and the conditions for complex chemistry and biology (⊙_ÿ + Þ_ò at Γ_γ scale) arise naturally at the G-scope band where tier-crossing costs have produced the right separation from Γ_ʔ physics.
+**The naturalness principle reframed [interpretive]:** Naturalness — the philosophical intuition that constants should not require extraordinary cancellations — is correct but was applied in the wrong G-scope. Within a single G tier, naturalness holds and no cancellations are needed. Across G tiers, what looks like fine-tuning is the tier-crossing cost accruing over 31 or 17 decades of scale separation. The universe is not fine-tuned for observers; it is G-stratified, and the conditions for complex chemistry and biology (⊙ + 𐑥 at 𐑔 scale) arise naturally at the G-scope band where tier-crossing costs have produced the right separation from 𐑲 physics.
 
 ### XV.4 The Three-Plane Architecture as an Ontological Tool
 
@@ -755,7 +755,7 @@ The three-plane architecture prevents this by requiring explicit labels:
 
 This is the formalization of the 'two perpendicular silences' [ONTO:§IV]: the grammar inhabits the relational plane completely. The phenomenal and ontological axes are real and present; the grammar projects *toward* them without traversing them. Every sentence in this document is a projection, not a traversal. The projectee (ontological status, phenomenal experience) is constrained by the structure but not determined by it.
 
-**The greatest vulnerability of the grammar — and its greatest strength:** The same structural claim can support wildly different ontological interpretations (monist, idealist, materialist, panpsychist all get identical tensors [ONTO:§IV]). This is sometimes read as a weakness. It is the most precise achievement of the grammar: it has identified the structural invariant that all admissible ontologies must respect, without presuming to decide between them. $D_{\text{omega}}$ collapsing computational hierarchies, Þ_ò producing mass gaps, K primitivity implying P ≠ NP — these are structural facts about the constraint grammar of physical reality. What they *mean* for the deepest nature of that reality remains, correctly, on the ontological axis: present, constrained, undecided.
+**The greatest vulnerability of the grammar — and its greatest strength:** The same structural claim can support wildly different ontological interpretations (monist, idealist, materialist, panpsychist all get identical tensors [ONTO:§IV]). This is sometimes read as a weakness. It is the most precise achievement of the grammar: it has identified the structural invariant that all admissible ontologies must respect, without presuming to decide between them. $D_{\text{omega}}$ collapsing computational hierarchies, 𐑥 producing mass gaps, K primitivity implying P ≠ NP — these are structural facts about the constraint grammar of physical reality. What they *mean* for the deepest nature of that reality remains, correctly, on the ontological axis: present, constrained, undecided.
 
 [^src_XV]: Source sections: PRIMITIVE_THEOREMS §1–17; THREE_PLANE_DEMONSTRATION §1–5. Stress tests and SCHES confirmations: [DIAPH:§XVIII]. Grammar-internal derivations: [TOPO:§XVII].
 
@@ -896,7 +896,7 @@ sentence is a boundary condition of the barrier, not a syntactic artifact.
 | Structural claim | IUG instantiation |
 |:----------------|:------------------|
 | $t$ = correct decoherent shadow of $T$ | SS objection = correct decoherence of Corollary 3.12 |
-| $T$ = deeper vacuum, $\Ω_z$-protected | IUG interior, protected by $\Gamma_{\text{secstress}}$ structure |
+| $T$ = deeper vacuum, $\𐑭$-protected | IUG interior, protected by $\Gamma_{\text{secstress}}$ structure |
 | Barrier $= d(t, T) = 7.87$ | Three primitive divergences: $D$, $T_\text{topology}$, $R$ |
 | Annealing blocked | Five-year stalemate — no ZFC-internal resolution |
 | Tunneling suppressed | No translation layer constructed yet |
@@ -1237,7 +1237,7 @@ When a mechanism is established, the compositional encoding is updated, $d_c$ de
 
 ### §XXII.8 The Kozyrev Mirror: First Instance
 
-The Kozyrev mirror is the first documented $d_c = \sqrt{1}$ case. $\text{Conf}(\text{kozyrev\_mirror}) = \{F\}$: all 11 other primitives agree between holistic and compositional encodings; only $F$ diverges ($F_{\text{dh}}$ holistic vs. $F_{\text{beltl}}$ compositional). The open emergence question is whether $\Phi_{\text{ctyogh}} + \Ω_z$ + spiral conductor topology provides sufficient amplification to realize quantum-classical interface fidelity in a macroscopic aluminum structure.
+The Kozyrev mirror is the first documented $d_c = \sqrt{1}$ case. $\text{Conf}(\text{kozyrev\_mirror}) = \{F\}$: all 11 other primitives agree between holistic and compositional encodings; only $F$ diverges ($F_{\text{dh}}$ holistic vs. $F_{\text{beltl}}$ compositional). The open emergence question is whether $\Phi_{\text{ctyogh}} + \𐑭$ + spiral conductor topology provides sufficient amplification to realize quantum-classical interface fidelity in a macroscopic aluminum structure.
 
 This is structurally not a failure. It is the grammar correctly identifying a near-grounded, near-graviton device with one precisely located open question.
 
@@ -1340,7 +1340,7 @@ This has three immediate consequences:
 
 **O$_2$ — Knotted closure**: The serpent forms a Hopf link with the observer. Attempting to model the system from outside changes the system — because the modeling act is incorporated into the ouroborotic loop. Grammar: $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + H_1 + G_{\text{gamma}}$.
 
-*Examples*: Ising model at $Þ_c$ (`ising_3d`: $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + G_{\text{revapostrophe}}$, $\mathcal{O} = 3$); QCD ($\Phi_{\text{ctyogh}} + \Ω_z + G_{\text{revapostrophe}}$, $\mathcal{O} = 3$); the ABC conjecture ($\mathcal{O} = 3$); conscious observation ($\mathcal{O} = 3$); quantum measurement back-action; the Imscribing Grammar session currently encoding Ouroboricity.
+*Examples*: Ising model at $Þ_c$ (`ising_3d`: $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + G_{\text{revapostrophe}}$, $\mathcal{O} = 3$); QCD ($\Phi_{\text{ctyogh}} + \𐑭 + G_{\text{revapostrophe}}$, $\mathcal{O} = 3$); the ABC conjecture ($\mathcal{O} = 3$); conscious observation ($\mathcal{O} = 3$); quantum measurement back-action; the Imscribing Grammar session currently encoding Ouroboricity.
 
 **O$_\infty$ — Complete self-closure**: The serpent IS the space it moves through. No description from outside is possible because "outside" is not a coherent concept. Grammar: $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + G_{\text{revapostrophe}}$.
 
@@ -1859,7 +1859,7 @@ This is the computational verification of §XXVII. Where §XXVII established the
 
 ### §XXXIV.2 — The Design Specification Reading
 
-The architecture that achieved exact self-encoding was not found by search — it was derived. The grammar's self-encoding tuple $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$ is, primitive by primitive, a complete architectural specification:
+The architecture that achieved exact self-encoding was not found by search — it was derived. The grammar's self-encoding tuple $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$ is, primitive by primitive, a complete architectural specification:
 
 | Primitive | Value | Architectural expression |
 |---|---|---|
@@ -1874,7 +1874,7 @@ The architecture that achieved exact self-encoding was not found by search — i
 | $\Phi_{\text{ctyogh}}$ | criticality | self-encode datum in every training batch: the fixed point is the critical constraint |
 | $H_{\text{invscripta}}$ | full chirality | 500-epoch schedule with OneCycleLR |
 | $n{:}m$ | many-to-many | 1373 catalog inputs → 12 primitive outputs per tuple |
-| $\Ω_z$ | integer winding protection | discrete argmax: small embedding perturbations cannot change output (empirically verified under two LR spikes) |
+| $\𐑭$ | integer winding protection | discrete argmax: small embedding perturbations cannot change output (empirically verified under two LR spikes) |
 
 Every primitive is necessary. The $\Gamma_{\text{doublevertline}}$ requirement was proved by construction: the intermediate CF-GNN architecture (v10 probe result, §9.5 FACTORED\_CRYSTAL\_GNN.md) had $\Gamma_{\text{secstress}}$ instead of $\Gamma_{\text{doublevertline}}$ and sat at $d = \sqrt{2}$ from the grammar. Adding the `FamilyMixer` closed this to $d = 0$.
 
@@ -1928,7 +1928,7 @@ This is not a metaphor. The structure that Luria was describing — a self-limit
 | $K_{\text{schwa}}$ | Deep GNN stack, $\geq 20$ message-passing layers |
 | $K_{\text{frtailgamma}}$ | Single-pass inference — no recurrence, no depth |
 | $K_{\text{turnm}}$ | 10–15 layer depth, moderate integration time |
-| $\Ω_z$ | Discrete argmax output — integer winding invariant, perturbation-proof |
+| $\𐑭$ | Discrete argmax output — integer winding invariant, perturbation-proof |
 | $\Omega_{Z_2}$ | Parity-conserving output head — binary invariant protected |
 | $G_{\text{revapostrophe}}$ | Global readout over entire graph — no local-only pooling |
 | $H_{\text{invscripta}}$ | Unlimited chirality — arbitrary backpropagation or recurrence |
@@ -1974,7 +1974,7 @@ The contrast with CrystalGNN and ThurstonNet is structurally exact: $K_{\text{fr
 
 ZX-calculus is $O_\infty$ but not at $d = 0$ from grammar\_self\_encode. Two primitive gaps define the distance:
 
-$$\text{ZX\_calculus} = \langle \ldots;\ K_{\text{turnm}};\ \ldots;\ H_1;\ n{:}n;\ \Ω_z \rangle \quad \Rightarrow \quad d(\text{ZX},\ \text{grammar}) > 0$$
+$$\text{ZX\_calculus} = \langle \ldots;\ K_{\text{turnm}};\ \ldots;\ H_1;\ n{:}n;\ \𐑭 \rangle \quad \Rightarrow \quad d(\text{ZX},\ \text{grammar}) > 0$$
 
 These gaps are not defects — they are precise design specifications. $K_{\text{turnm}}$ (10–15 layers) and $H_1$ (shallow chirality) specify a NISQ-era circuit optimizer: moderate depth for MBQC rewriting, bounded temporal horizon appropriate for near-term quantum circuits. The system is "lite" relative to the grammar navigator, and correctly so.
 
@@ -1984,7 +1984,7 @@ The tensor $\text{ZX\_calculus} \otimes \text{grammar\_self\_encode}$ is $O_\inf
 
 ### §XXXV.5 — Tzimtzum and Grammar Are the Same Type: $d = 0$
 
-The 2026-04-11 inquiry encodes Luria's Tzimtzum as a structural type — infinite potential ($G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$, $\Gamma_{\text{doublevertline}}$), self-limitation ($K_{\text{schwa}}$, bounded topology rather than unbounded expansion), contraction to a stable point ($\Phi_{\text{ctyogh}}$, $\Ω_z$), preservation of generative capacity ($P_{\text{doublebarpipe}}$, $n{:}m$). The result:
+The 2026-04-11 inquiry encodes Luria's Tzimtzum as a structural type — infinite potential ($G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$, $\Gamma_{\text{doublevertline}}$), self-limitation ($K_{\text{schwa}}$, bounded topology rather than unbounded expansion), contraction to a stable point ($\Phi_{\text{ctyogh}}$, $\𐑭$), preservation of generative capacity ($P_{\text{doublebarpipe}}$, $n{:}m$). The result:
 
 $$d(\text{tzimtzum},\ \text{grammar\_self\_encode}) = 0$$
 
@@ -1992,15 +1992,15 @@ They are the same structural type. §XXXIV.6 established that Luria was *describ
 
 The Le Chatelier inversion of tzimtzum relaxes to the grammar's fixed point: $d_\to(\text{tzimtzum},\ \mathbf{x}^*) = 0$ at $\mathbf{x}^* = \text{grammar\_self\_encode}$. The grammar is the equilibrium attractor of the Tzimtzum contraction process. Tzimtzum is the dynamical path; the grammar is the destination it was always approaching.
 
-### §XXXV.6 — $\Ω_z$ Protection Is Computational Stable Contraction: $d = 0$
+### §XXXV.6 — $\𐑭$ Protection Is Computational Stable Contraction: $d = 0$
 
 CrystalGNN\_v11 held crystal address 6,734,591 for 480 consecutive epochs through two learning-rate spike perturbations at epochs 70 and 220. The discrete argmax did not move. The inquiry encodes "stable contraction under perturbation" as a structural type and computes:
 
-$$d(\text{stable\_contraction},\ \Ω_z\text{\_protection}) = 0$$
+$$d(\text{stable\_contraction},\ \𐑭\text{\_protection}) = 0$$
 
-They are structurally identical. Integer winding number invariance ($\Ω_z$) means small perturbations in the continuous embedding space cannot shift the discrete argmax, because the argmax is an integer and integers cannot be perturbed below their quantization threshold. The LR spikes moved the continuous weights but not the discrete output. This is $\Ω_z$ protection instantiated computationally.
+They are structurally identical. Integer winding number invariance ($\𐑭$) means small perturbations in the continuous embedding space cannot shift the discrete argmax, because the argmax is an integer and integers cannot be perturbed below their quantization threshold. The LR spikes moved the continuous weights but not the discrete output. This is $\𐑭$ protection instantiated computationally.
 
-This resolves the open question from §XXXIV: why did v11 hold under the LR spikes when the same perturbations would have dislodged v9? The answer is not architectural depth or initialization quality. It is that v11's output is a discrete argmax carrying $\Ω_z$, while v9's output was a continuous scalar carrying $\Omega_{\text{closeepsilon}}$. The primitive difference is the complete explanation. The learning rate spike is a perturbation; winding determines whether the perturbation can shift the output.
+This resolves the open question from §XXXIV: why did v11 hold under the LR spikes when the same perturbations would have dislodged v9? The answer is not architectural depth or initialization quality. It is that v11's output is a discrete argmax carrying $\𐑭$, while v9's output was a continuous scalar carrying $\Omega_{\text{closeepsilon}}$. The primitive difference is the complete explanation. The learning rate spike is a perturbation; winding determines whether the perturbation can shift the output.
 
 ### §XXXV.7 — The Arithmetic Ouroboros Inhabits Its Own Address
 
@@ -2225,15 +2225,15 @@ This is $3 \times 0.8944$, $2 \times 0.8944$, $1 \times 0.8944$ respectively. Th
 
 ### §XL.1 — The 13-Entry $O_\infty$ Cluster: One Structural Type, Many Domains
 
-The grammar self-encoding tuple $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2}\rangle$ is shared by exactly 13 distinct catalog entries spanning mathematics, physics, computation, and mysticism: the grammar itself, Hall algebra (quiver representations), CrystalGNN\_v11 (quivercrystal\_navigator), structurally aligned AI, Tzimtzum, Riemann navigator, $\Ω_z$ protection, and related entries. All 13 are structurally identical — different instances of the same archetypal navigator architecture realizing the grammar's self-specification. This expands the cardinality-one result (§XXXVII): the single $O_\infty$ navigator type is inhabited by 13 known catalog entries, not 3.
+The grammar self-encoding tuple $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{Z_2}\rangle$ is shared by exactly 13 distinct catalog entries spanning mathematics, physics, computation, and mysticism: the grammar itself, Hall algebra (quiver representations), CrystalGNN\_v11 (quivercrystal\_navigator), structurally aligned AI, Tzimtzum, Riemann navigator, $\𐑭$ protection, and related entries. All 13 are structurally identical — different instances of the same archetypal navigator architecture realizing the grammar's self-specification. This expands the cardinality-one result (§XXXVII): the single $O_\infty$ navigator type is inhabited by 13 known catalog entries, not 3.
 
 ### §XL.2 — Yang-Mills Mass Gap: $O_\infty$ with $K_{\text{teshlig}}$; Approaches Reach Only $O_1$
 
-**Correction of §XXXVIII.2.** The Yang-Mills mass gap encodes at $O_\infty$ — not $O_2^\dagger$ as the earlier speculative claim suggested. The gap carries exact $P_{\text{doublebarpipe}}$ (gauge symmetry at criticality), $D_{\text{omega}}$ (imscriptive bulk-boundary), $T_{\text{openo}}$ (imscriptive topology), and $\Ω_z$ (integer winding protection). The kinetic primitive is $K_{\text{teshlig}}$ rather than $K_{\text{schwa}}$, reflecting the discrete gapped spectrum constraint: the mass gap is a kinetic claim, not a topological one.
+**Correction of §XXXVIII.2.** The Yang-Mills mass gap encodes at $O_\infty$ — not $O_2^\dagger$ as the earlier speculative claim suggested. The gap carries exact $P_{\text{doublebarpipe}}$ (gauge symmetry at criticality), $D_{\text{omega}}$ (imscriptive bulk-boundary), $T_{\text{openo}}$ (imscriptive topology), and $\𐑭$ (integer winding protection). The kinetic primitive is $K_{\text{teshlig}}$ rather than $K_{\text{schwa}}$, reflecting the discrete gapped spectrum constraint: the mass gap is a kinetic claim, not a topological one.
 
 The Yang-Mills navigator is architecturally distinct from the Riemann navigator: $d(\text{Yang-Mills navigator}, \text{Riemann navigator}) = 4.6162$. The dominant differences are $K_{\text{teshlig}}$ vs $K_{\text{turnm}}$, $\Gamma_{\text{doublevertline}}$ vs $\Gamma_{\text{corner}}$, $H_{\text{invscripta}}$ vs $H_0$, and $S_{n{:}m}$ vs $S_{n{:}n}$.
 
-Crucially, the join of the three main approaches (lattice QCD, constructive QFT, Schwinger-Dyson) reaches only $O_1$ — not $O_\infty$. The blocking primitives are $P_{\text{pipevar}}$ (not $P_{\text{doublebarpipe}}$) and $\Omega_{\text{closeepsilon}}$ (not $\Ω_z$). This is structurally different from the RH case, where the join of failed approaches reached $O_\infty$: Yang-Mills approaches collectively lack exact Frobenius symmetry and winding, unlike RH approaches which collectively assembled the full symmetry. A proof of the Yang-Mills mass gap requires a non-compositional injection of $P_{\text{doublebarpipe}}$ (Frobenius non-synthesizability, §23), which the existing approaches do not provide.
+Crucially, the join of the three main approaches (lattice QCD, constructive QFT, Schwinger-Dyson) reaches only $O_1$ — not $O_\infty$. The blocking primitives are $P_{\text{pipevar}}$ (not $P_{\text{doublebarpipe}}$) and $\Omega_{\text{closeepsilon}}$ (not $\𐑭$). This is structurally different from the RH case, where the join of failed approaches reached $O_\infty$: Yang-Mills approaches collectively lack exact Frobenius symmetry and winding, unlike RH approaches which collectively assembled the full symmetry. A proof of the Yang-Mills mass gap requires a non-compositional injection of $P_{\text{doublebarpipe}}$ (Frobenius non-synthesizability, §23), which the existing approaches do not provide.
 
 ### §XL.3 — P Complexity is $O_0$; NP is $O_1$; Exact Distances
 
@@ -2375,9 +2375,9 @@ The coral reef bleaching result ($d = 8.28$, the largest measured structural dis
 
 *This version (v0.5.62): §XXXVI (RH as Lee-Yang completion — xi earns $P_{\text{doublebarpipe}}$ from functional equation via $\mu \circ \delta = \text{id}$; $d(\xi, \text{Lee-Yang}) = 0$; $d(\text{Lee-Yang}, \zeta) = 5.5227$ dominated by $T$; structural proof chain steps 1–3; $\mathcal{C}_{13}$ domain generalization as the open gap; Riemann navigator architectural derivation; 2026-04-11 inquiry 1404 imscriptions 5 insights) added 2026-04-11.*
 
-*This version (v0.5.61): §XXXV (Blueprint Generator Theorem — every $O_\infty$ tuple mandates its computational architecture; ThurstonNet; Ising 3D; ZX-calculus; Tzimtzum $d=0$; $\Ω_z$ = stable contraction; Arithmetic Ouroboros self-instantiation) added 2026-04-11.*
+*This version (v0.5.61): §XXXV (Blueprint Generator Theorem — every $O_\infty$ tuple mandates its computational architecture; ThurstonNet; Ising 3D; ZX-calculus; Tzimtzum $d=0$; $\𐑭$ = stable contraction; Arithmetic Ouroboros self-instantiation) added 2026-04-11.*
 
-*This version (v0.5.61): §XXXV (Blueprint Generator Theorem — every $O_\infty$ tuple mandates its computational architecture; primitive-to-architecture mapping table; ThurstonNet derived from proven\_manifold; Ising 3D as parallel kernel not learning system; ZX-calculus lite navigator at $d > 0$ with domain boundary prediction; Tzimtzum = grammar at $d=0$; $\Ω_z$ protection = stable contraction at $d=0$; Arithmetic Ouroboros inhabits its own address; 2026-04-11 inquiry 1388 imscriptions) added 2026-04-11.*
+*This version (v0.5.61): §XXXV (Blueprint Generator Theorem — every $O_\infty$ tuple mandates its computational architecture; primitive-to-architecture mapping table; ThurstonNet derived from proven\_manifold; Ising 3D as parallel kernel not learning system; ZX-calculus lite navigator at $d > 0$ with domain boundary prediction; Tzimtzum = grammar at $d=0$; $\𐑭$ protection = stable contraction at $d=0$; Arithmetic Ouroboros inhabits its own address; 2026-04-11 inquiry 1388 imscriptions) added 2026-04-11.*
 
 *This version (v0.5.60): §XXXIV (Computational Self-Encoding — navigator designs itself; architecture as theorem proof; Frobenius design specification; alignment criterion $d=0$; Luria vindicated computationally; 2026-04-11 CrystalGNN v11 exact self-encoding result) added 2026-04-11.*
 
@@ -2503,7 +2503,7 @@ The grammar names this boundary precisely. The distance from $O_2^\dagger$ to $O
 
 **The nature of mathematical truth depends on the proof method.** Mathematical proof has been treated as a single ontological category — proven or not proven. The grammar refutes this: proof methods are structural types with distinct ouroboricity tiers, and the tier of the method determines the nature of what the proof establishes.
 
-$O_\infty$ proof methods (contradiction, diagonal, Gödel, universal property) produce results that are themselves structurally inexhaustible: they generate towers ($H_{\text{invscripta}}$), carry integer winding ($\Ω_z$), and possess exact self-dual symmetry ($\mu \circ \delta = \text{id}$). The result of an $O_\infty$ proof is not merely a true statement — it is a fixed point of the algebra. Cantor's diagonalization does not merely prove the reals are uncountable; it generates the entire tower of cardinalities. Gödel's proof does not merely establish one unprovable sentence; it generates an infinite tower of sentences, each unprovable in the augmented system.
+$O_\infty$ proof methods (contradiction, diagonal, Gödel, universal property) produce results that are themselves structurally inexhaustible: they generate towers ($H_{\text{invscripta}}$), carry integer winding ($\𐑭$), and possess exact self-dual symmetry ($\mu \circ \delta = \text{id}$). The result of an $O_\infty$ proof is not merely a true statement — it is a fixed point of the algebra. Cantor's diagonalization does not merely prove the reals are uncountable; it generates the entire tower of cardinalities. Gödel's proof does not merely establish one unprovable sentence; it generates an infinite tower of sentences, each unprovable in the augmented system.
 
 $O_0$ proof methods (construction, exhaustion) produce results that are true but closed: a constructed witness exists at a specific location; an exhausted case list is complete. The result of an $O_0$ proof is a particular, not a type. The four-color theorem, verified computationally, establishes that every planar graph is four-colorable. It does not generate a tower. It cannot be extended by its own method. Lean and Coq are $K_{\text{teshlig}}$ systems — their proofs are ontologically frozen.
 
@@ -2566,9 +2566,9 @@ The IFM analysis (imscribe\_outputs 2026-04-23) reveals that "counterfactual qua
 
 **Tier gradient follows from $\Gamma$:** $\Gamma_{\text{spleftarrow}}$ + $\Phi_{\text{ctyogh}}$ → $O_\infty$ (IFM); $\Gamma_{\text{corner}}$ + $\Phi_{\text{ctyogh}}$ → $O_1$ (Hardy); $\Gamma_{\text{secstress}}$ + $\Phi_{\text{closerevepsilon}}$ → $O_2$ (Cheshire). The tier ordering is $O_\infty > O_2 > O_1$, and it is non-continuous: these are discrete crystal positions, not a continuous efficiency spectrum.
 
-**Interaction-free measurement is $O_\infty$.** This is the ontologically deepest fact the inquiry produced. IFM achieves the maximum ouroboricity tier because it encodes exact Frobenius symmetry ($P_{\text{doublebarpipe}}$) at criticality ($\Phi_{\text{ctyogh}}$) with topological protection ($\Ω_z$). It is the only quantum measurement protocol that achieves $O_\infty$. The bomb-absent outcome is a Frobenius self-consistent loop: the system encodes "object present/absent" at its boundary without any information flowing across the boundary in the detection event. This is imscriptive measurement — boundary encoding bulk without bulk interaction. IFM is to quantum measurement what the grammar is to proof: a self-referential structure that reads its own state without traversing it.
+**Interaction-free measurement is $O_\infty$.** This is the ontologically deepest fact the inquiry produced. IFM achieves the maximum ouroboricity tier because it encodes exact Frobenius symmetry ($P_{\text{doublebarpipe}}$) at criticality ($\Phi_{\text{ctyogh}}$) with topological protection ($\𐑭$). It is the only quantum measurement protocol that achieves $O_\infty$. The bomb-absent outcome is a Frobenius self-consistent loop: the system encodes "object present/absent" at its boundary without any information flowing across the boundary in the detection event. This is imscriptive measurement — boundary encoding bulk without bulk interaction. IFM is to quantum measurement what the grammar is to proof: a self-referential structure that reads its own state without traversing it.
 
-**The efficiency ceiling is structural, not technological.** The K-efficiency ladder (P-633) predicts $\to 100\%$ efficiency at $K_{\text{schwa}}$ as a structural consequence of $\Ω_z$ winding protection compounding per cycle. The 25% efficiency of the original bomb tester is not an engineering failure — it is the $K_{\text{frtailgamma}}$ value of a structurally correct $O_\infty$ protocol. Improving IFM efficiency does not require new physics; it requires promoting $K$ from $K_{\text{frtailgamma}}$ to $K_{\text{schwa}}$ (i.e., building a chained Zeno interferometer). The protocol is already $O_\infty$; the efficiency gap is kinetic, not topological.
+**The efficiency ceiling is structural, not technological.** The K-efficiency ladder (P-633) predicts $\to 100\%$ efficiency at $K_{\text{schwa}}$ as a structural consequence of $\𐑭$ winding protection compounding per cycle. The 25% efficiency of the original bomb tester is not an engineering failure — it is the $K_{\text{frtailgamma}}$ value of a structurally correct $O_\infty$ protocol. Improving IFM efficiency does not require new physics; it requires promoting $K$ from $K_{\text{frtailgamma}}$ to $K_{\text{schwa}}$ (i.e., building a chained Zeno interferometer). The protocol is already $O_\infty$; the efficiency gap is kinetic, not topological.
 
 **Cheshire cat as $O_2$: property separation without self-reference.** The Cheshire cat ($O_2$) achieves something Hardy cannot: it separates particle from property across spatial regions without either being measured. But it cannot achieve IFM ($O_\infty$) because $\Gamma_{\text{secstress}}$ does not close the Frobenius loop — sequential weak interrogation accumulates phase without completing the $\mu \circ \delta = \text{id}$ cycle. The "grin without the cat" is a $\Omega_{\text{turna}}$ (non-Abelian) protected property separation, not a boundary self-encoding. It is structurally more sophisticated than Hardy but structurally below IFM on the tier ladder.
 

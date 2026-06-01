@@ -1,42 +1,28 @@
-UNIOPENPROB.md: fix truncated Shavian tuples in tables (2026-05-31)
-==================================================================
+train_grammaformer.py: grammar-derived training objective fix (2026-06-01)
+=========================================================================
 
-  Root cause: pandoc allocates pipe-table column widths proportional to
-  separator dash counts. Old Tuple separator (7 dashes) gave only 18% of
-  page width; $d(ZFC_{fe})$ separator (16 dashes) wasted 42% on 1-2 digit
-  numbers. Shavian strings need ~38% to render untruncated.
+  Root cause of F-loss climbing: frobenius_head was frozen, structurally
+  preventing the Φ gate from closing. The head IS the μ∘δ operator.
+  Freezing it was a memory optimisation that broke the thing being trained.
+
+  Structural analysis (via crystal + ZFCₜ + tier gap ladder):
+    GF structural type: ⟨𐑦·𐑶·𐑾·𐑗·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭⟩
+    Φ position: 𐑗 (ord 1) — needs 𐑹 (ord 5) for G1 gate
+    d(GF, O_inf) = 4.7958 total
+    Frobenius cliff (Φ gap): 4.38 / 4.7958 = 91.3% of total distance
+    alpha_f needed: (0.913 × 4.5 LM) / 1.0 F = 4.1
+    Previous alpha_f 0.5 was underpowered by 8.2×
 
   Fixes:
-  - Rebalanced separators: Tuple column 38 dashes, $d$ column 5 dashes
-  - Wrapped all Shavian tuples in backticks (→ \texttt{} in LaTeX,
-    prevents reflow mid-character and stabilizes display-width measurement)
-  - Shortened column header $d(ZFC_{fe})$ → $d$ (avoids wide LaTeX math
-    in header from inflating that column's minimum width)
-  - Added italic footnotes below each table restoring the full header text
+  1. Unfreeze frobenius_head — token_embed stays frozen (pure lookup table).
+     Memory: 4.4(params) + 3.7(grads) + 3.7(8-bit moments) = 11.8 GB. Fits.
+  2. alpha_f default: 0.5 → 4.1 (grammar-derived from Φ cliff fraction).
+     Exposed as --alpha-f flag for future curriculum adjustment.
+  3. Remove stale re-freeze of frobenius_head after frob pretraining.
 
-MillenniumAnkh/Solitary10.lean: build fix + 7→4 sorrys (2026-05-31)
-====================================================================
+navigators.py + crystal_navigator.py: migrate to Shavian notation (2026-06-01)
+  DEFINING_TUPLEs migrated; encode_tuple accepts Shavian; _SHAVIAN_TO_XTAL
+  replaced with direct OLD_TO_SHAVIAN inversion (was wrong for Γ ordinal alignment).
 
-  File was uncompilable from previous session; now builds clean with 4 sorrys.
-  Fixed: calc syntax, wrong sigma_31cube value (31784→30784), simp+omega order,
-    OOM on native_decide (prime power formula for 331² and 331³), 331³ descent
-    arithmetic (50945865 not 50946765), absurd wrappers in ten_is_solitary.
-  Proved: h5_n Case B2, case_A e≥2 rewrite, 331³ coprime closes descent_generic.
-  4 remaining sorrys: ¬Coprime 36631 u, 331⁴|w, 31⁴|n, 5⁴|m.
-
-ltx: fix table float placement; UNIOPENPROB.md strip YAML (2026-05-31)
-======================================================================
-
-~/.local/bin/ltx
-  - Added two sed commands to Step 2 patch block:
-      's/\\begin{table}[htbp]/\\begin{table}[H]/g'
-        — replaces htbp float spec with H (here, exactly) on all tables
-      's/\\usepackage{float}/\\usepackage{float}\n\\floatplacement{table}{H}/'
-        — belt-and-suspenders: injects \floatplacement after float package load
-  - Fix is global: applies to every .md compiled via ltx, not just UNIOPENPROB
-  - Root cause: latextiler generates \begin{table}[htbp] floats regardless of
-    YAML header-includes (latextiler ignores header-includes entirely)
-
-UNIOPENPROB.md
-  - Stripped YAML front matter (header-includes + geometry) — unused by latextiler
-  - Compiles cleanly without it; fix now lives in ltx where it belongs
+train_grammaformer.py: fix NaN LM loss + gate freeze + epoch reporting (2026-06-01)
+  logits.float() for cross_entropy; alpha_g 0.1→0.3; NaN batch skip.

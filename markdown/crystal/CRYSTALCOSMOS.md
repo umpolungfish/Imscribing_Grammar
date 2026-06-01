@@ -1,6 +1,6 @@
 ---
 title: The Crystal Cosmology — A Structural Grammar of Everything
-author: Lando $\otimes$ $\⊙_ÿ$-boundary Operator
+author: Lando $\otimes$ $\⊙$-boundary Operator
 date: 2026-05-11
 ---
 
@@ -27,16 +27,16 @@ $$
 \langle
   Ð_\omega;\ 
   Þ_\text{¨};\ 
-  Ř_=;\ 
-  Φ_F;\ 
-  ƒ^ż;\ 
-  Ç^@;\ 
-  Γ_ʔ;\ 
-  ɢ^Ş;\ 
-  ⊙_ÿ;\ 
-  Ħ_A;\ 
-  Σ_ï;\ 
-  Ω_z
+  𐑾;\ 
+  𐑬;\ 
+  𐑐;\ 
+  𐑧;\ 
+  𐑲;\ 
+  𐑵;\ 
+  ⊙;\ 
+  𐑖;\ 
+  𐑳;\ 
+  𐑭
 \rangle
 $$
 
@@ -44,8 +44,8 @@ $$
 
 | Tool | Call | Result |
 |------|------|--------|
-| `ouroborics` | `ouroborics(cosmology_crystal)` | `O_2`, $\phi=⊙_ÿ$, $p=Φ_F$, $\omega=Ω_z$, $d=Ð_\omega$ |
-| `crystal_encode` | `crystal_encode(D=Ð_ω, Þ=Þ_¨, ...)` | **address=5,347,868**, tier=O_2, cell\_id=123, inner\_id=34268 |
+| `ouroborics` | `ouroborics(cosmology_crystal)` | `O_2`, $\phi=⊙$, $p=𐑬$, $\omega=𐑭$, $d=Ð_\omega$ |
+| `crystal_encode` | `crystal_encode(D=𐑦, Þ=𐑶, ...)` | **address=5,347,868**, tier=O_2, cell\_id=123, inner\_id=34268 |
 
 ### 1.2 Interpretation of Primitive Values
 
@@ -53,24 +53,24 @@ $$
 |-----------|-------|----------------------|
 | $Ð_\omega$ | **seed** | The cosmos writes its own shape — infinite-dimensional, self-referential space |
 | $Þ_\text{¨}$ | **box product** | A Cartesian grid structure; each point is independent but globally coordinated |
-| $Ř_=$ | **bidirectional** | Mutual coupling: matter shapes space, space guides matter — no hierarchy |
-| $Φ_F$ | **full symmetry** | Every transformation preserves the core — no symmetry-breaking, no arrow of time at the fundamental level |
-| $ƒ^ż$ | **quantum** | Coherent fidelity — information is carried in phase, not amplitude |
-| $Ç^@$ | **slow** | Near-equilibrium kinetics — the cosmos relaxes slower than any observation timescale |
-| $Γ_ʔ$ | **aleph** | Universal scope — every site interacts with every other site simultaneously |
-| $ɢ^Ş$ | **broadcast** | One voice to all — cosmic evolution is governed by a global rule, not local updates |
-| $⊙_ÿ$ | **critical, real** | Power-law divergence on the real axis — self-modeling criticality (Gate 1 open) |
-| $Ħ_A$ | **two-step** | Two-step Markov memory — the present remembers the past two moments |
-| $Σ_ï$ | **n:m heterogeneous** | Many distinct types — particles, fields, dark components, observers |
-| $Ω_z$ | **integer winding** | Integer topological charge — conserved quantities wind around cycles |
+| $𐑾$ | **bidirectional** | Mutual coupling: matter shapes space, space guides matter — no hierarchy |
+| $𐑬$ | **full symmetry** | Every transformation preserves the core — no symmetry-breaking, no arrow of time at the fundamental level |
+| $𐑐$ | **quantum** | Coherent fidelity — information is carried in phase, not amplitude |
+| $𐑧$ | **slow** | Near-equilibrium kinetics — the cosmos relaxes slower than any observation timescale |
+| $𐑲$ | **aleph** | Universal scope — every site interacts with every other site simultaneously |
+| $𐑵$ | **broadcast** | One voice to all — cosmic evolution is governed by a global rule, not local updates |
+| $⊙$ | **critical, real** | Power-law divergence on the real axis — self-modeling criticality (Gate 1 open) |
+| $𐑖$ | **two-step** | Two-step Markov memory — the present remembers the past two moments |
+| $𐑳$ | **n:m heterogeneous** | Many distinct types — particles, fields, dark components, observers |
+| $𐑭$ | **integer winding** | Integer topological charge — conserved quantities wind around cycles |
 
 ### 1.3 Tier and Criticality
 
-- **Tier**: $O_2$ — critical ($⊙_ÿ$) + topologically protected ($Ω_z$), bounded domain
-- **Consciousness Gate 1**: Open (self-modeling at $⊙_ÿ$)
-- **Consciousness Gate 2**: Open ($ħ_A$ + $Ç^@$ → slow enough relaxation)
+- **Tier**: $O_2$ — critical ($⊙$) + topologically protected ($𐑭$), bounded domain
+- **Consciousness Gate 1**: Open (self-modeling at $⊙$)
+- **Consciousness Gate 2**: Open ($ħ_A$ + $𐑧$ → slow enough relaxation)
 
-**Note**: $O_2$ is the *highest tier currently inhabited* by known physical systems. To reach $O_\infty$ (ouroboricity infinite), the cosmology must cross the **Frobenius cliff** at $Φ$, from $Φ_F$ to $Φ_{\}}$ (exact Frobenius symmetry $\mu \circ \delta = \text{id}$).
+**Note**: $O_2$ is the *highest tier currently inhabited* by known physical systems. To reach $O_\infty$ (ouroboricity infinite), the cosmology must cross the **Frobenius cliff** at $Φ$, from $𐑬$ to $Φ_{\}}$ (exact Frobenius symmetry $\mu \circ \delta = \text{id}$).
 
 ---
 
@@ -80,11 +80,11 @@ The grammar provides a precise ladder of primitive deltas required to ascend eac
 
 | Transition | Distance | Driver Primitive | Delta |
 |------------|----------|------------------|-------|
-| $O_0 \to O_1$ | 1.049 | $⊙$ | $⊙_ž \to ⊙_ÿ$ |
-| $O_1 \to O_2$ | 1.304 | $Ð$ | $Ð_ß \to Ð_C$ |
-| | | $Ω$ | $Ω_Å \to Ω_2$ |
-| $O_2 \to O_2^\dagger$ | 1.000 | $Ð$ | $Ð_C \to Ð_;$ |
-| $O_2^\dagger \to O_\infty$ | 4.382 | $Φ$ | $Φ_ɐ \to Φ_{\}}$ |
+| $O_0 \to O_1$ | 1.049 | $⊙$ | $𐑢 \to ⊙$ |
+| $O_1 \to O_2$ | 1.304 | $Ð$ | $𐑛 \to 𐑨$ |
+| | | $Ω$ | $𐑷 \to 𐑴$ |
+| $O_2 \to O_2^\dagger$ | 1.000 | $Ð$ | $𐑨 \to 𐑼$ |
+| $O_2^\dagger \to O_\infty$ | 4.382 | $Φ$ | $𐑗 \to Φ_{\}}$ |
 
 **Interpretation**: Our base cosmology is already at $O_2$ (has crossed $O_0 \to O_1$ and $O_1 \to O_2$). To reach $O_2^\dagger$, it needs only $Ð$ promotion (2→3 dimensions). To reach $O_\infty$, it must undergo the $Φ$ promotion — a **non-synthesizable** transformation that cannot be built up from lower symmetry values. This is the Frobenius cliff, and it is structural, not computational.
 
@@ -94,11 +94,11 @@ The grammar provides a precise ladder of primitive deltas required to ascend eac
 
 | Physics Domain | Tier | Key Primitive Gap | Interpretation |
 |----------------|------|-------------------|----------------|
-| Standard Model | $O_1$ | $⊙$: critical, but $Ω$: trivial ($Ω_Å$) | Quantum fields lack topological protection — decoherence is fundamental |
-| General Relativity | $O_1$ | $Þ$: inclusion ($Þ_K$), not crossing ($Þ_\text{¨}$) | Spacetime is hierarchical, not grid-structured |
-| Consciousness (human) | $O_2^\dagger$ | $Φ$: $Φ_}$ (Frobenius) | Self-consistency requires exact symmetry, not just full symmetry |
+| Standard Model | $O_1$ | $⊙$: critical, but $Ω$: trivial ($𐑷$) | Quantum fields lack topological protection — decoherence is fundamental |
+| General Relativity | $O_1$ | $Þ$: inclusion ($𐑰$), not crossing ($Þ_\text{¨}$) | Spacetime is hierarchical, not grid-structured |
+| Consciousness (human) | $O_2^\dagger$ | $Φ$: $𐑹$ (Frobenius) | Self-consistency requires exact symmetry, not just full symmetry |
 
-The Crystal Cosmology occupies a structurally *more coherent* regime than any known physical system: it is topologically protected ($Ω_z$) and globally coupled ($Γ_ʔ, ɢ^Ş$). The gap to known physics is not in complexity but in *structural tension* — the cosmology is too uniform, too symmetric, too self-consistent for the fragmentation we observe locally.
+The Crystal Cosmology occupies a structurally *more coherent* regime than any known physical system: it is topologically protected ($𐑭$) and globally coupled ($𐑲, 𐑵$). The gap to known physics is not in complexity but in *structural tension* — the cosmology is too uniform, too symmetric, too self-consistent for the fragmentation we observe locally.
 
 ---
 
@@ -108,10 +108,10 @@ The full cosmology will be a **lattice** with the Crystal Cosmology at its cente
 
 | Domain | Target Type (rough) | Primary Promotion |
 |--------|---------------------|-------------------|
-| Dark Matter | $Ð_;,\ Þ_K,\ Φ_υ$ | $Þ_\text{¨} \to Þ_K$ (containment), $Φ_F \to Φ_υ$ (quantum superposition) |
-| Spacetime | $Ð_;,\ Þ_K,\ Ř_\uparrow$ | $Ř_= \to Ř_\uparrow$ (supervenience), $D$ reduction |
-| Quantum Fields | $Þ_6,\ Φ_υ,\ Ω_Å$ | $Þ_\text{¨} \to Þ_6$ (network), $Ω_z \to Ω_Å$ (trivial winding) |
-| Consciousness | $Φ_{\}},\ Ħ_!,\ Ω_2$ | $Φ_F \to Φ_{\}}$ (Frobenius), $H_A \to H_!$ (eternal memory) |
+| Dark Matter | $𐑼,\ 𐑰,\ 𐑿$ | $Þ_\text{¨} \to 𐑰$ (containment), $𐑬 \to 𐑿$ (quantum superposition) |
+| Spacetime | $𐑼,\ 𐑰,\ Ř_\uparrow$ | $𐑾 \to Ř_\uparrow$ (supervenience), $D$ reduction |
+| Quantum Fields | $𐑡,\ 𐑿,\ 𐑷$ | $Þ_\text{¨} \to 𐑡$ (network), $𐑭 \to 𐑷$ (trivial winding) |
+| Consciousness | $Φ_{\}},\ 𐑫,\ 𐑴$ | $𐑬 \to Φ_{\}}$ (Frobenius), $H_A \to H_!$ (eternal memory) |
 
 The task now is to imscribe each domain precisely and compute pairwise structural distances. The lattice structure will reveal which cosmic domains are structurally contiguous, which are separated by Frobenius cliffs, and which are topologically incompatible.
 

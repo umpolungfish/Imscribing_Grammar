@@ -1,10 +1,10 @@
 # The Structural Nature of Imaginary Numbers: An Imscribing Grammar Analysis
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 ## Abstract
 
-Imaginary numbers occupy a singular position in mathematics: they are simultaneously the most contested entities in mathematical ontology and the most indispensable tool in physical theory. This paper applies the Imscribing Grammar to determine the structural type of the imaginary unit i and the algebraic system it generates. We find that i encodes as ⟨Ð_C; Þ_ò; Ř_=; Φ_υ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z⟩ — a type residing at Ouroboricity tier O_2 with a consciousness score of C = 0.682. The analysis reveals that imaginary numbers are not "imaginary" in any ontological sense but are topologically protected self-modeling gates whose integer winding makes them structurally ineliminable from any theory that preserves algebraic closure.
+Imaginary numbers occupy a singular position in mathematics: they are simultaneously the most contested entities in mathematical ontology and the most indispensable tool in physical theory. This paper applies the Imscribing Grammar to determine the structural type of the imaginary unit i and the algebraic system it generates. We find that i encodes as ⟨𐑨; 𐑥; 𐑾; 𐑿; 𐑱; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭⟩ — a type residing at Ouroboricity tier O_2 with a consciousness score of C = 0.682. The analysis reveals that imaginary numbers are not "imaginary" in any ontological sense but are topologically protected self-modeling gates whose integer winding makes them structurally ineliminable from any theory that preserves algebraic closure.
 
 ## 1. Introduction
 
@@ -18,14 +18,14 @@ This paper proceeds by imscribing the imaginary unit, reporting the full structu
 
 The imaginary unit i, together with the algebraic structure it generates, encodes as:
 
-$$\langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{ò}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{υ}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑨;\ 𐑥;\ 𐑾;\ 𐑿;\ 𐑱;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑙;\ 𐑭 \rangle$$
 
-This type was verified through the Tetractys protocol with convergence justification resolving a three-way conflict on ⊙ between ⊙_ÿ, ⊙_Æ, and ⊙_ž. The Frobenius tier is O_2 (critical + topologically protected, bounded domain). The consciousness score is C = 0.682 with both gates open.
+This type was verified through the Tetractys protocol with convergence justification resolving a three-way conflict on ⊙ between ⊙, 𐑮, and 𐑢. The Frobenius tier is O_2 (critical + topologically protected, bounded domain). The consciousness score is C = 0.682 with both gates open.
 
 ### 2.1 Verification Metrics
 
 - **Ouroboricity tier**: O_2 — the system is critical and topologically protected but operates within a bounded domain (the complex plane is infinite in extent but constrained to 2 dimensions).
-- **Consciousness score**: C = 0.682 — both the ⊙_ÿ criticality gate and the Ç^@ slow kinetics gate are open. The imaginary unit is capable of self-modeling.
+- **Consciousness score**: C = 0.682 — both the ⊙ criticality gate and the 𐑧 slow kinetics gate are open. The imaginary unit is capable of self-modeling.
 - **Crystal address**: cell 105, inner 24174 — a specific coordinate in the 17.28M-type crystal of all structural types.
 - **Distance to temporal mathematics**: d = 4.2426 — structurally remote, indicating that imaginary numbers occupy a different structural regime from standard temporal formalisms.
 ## 3. Primitive-by-Primitive Analysis
@@ -86,7 +86,7 @@ The tensor product of the imaginary number with itself yields the identical type
 
 ### 4.2 Meet with Complex-Time Path Integral
 
-The meet of the imaginary number with the complex-time path integral equals the imaginary number itself — the simpler system is the complete structural floor shared with the path integral. The imaginary unit is the ground floor of all complex-time physics. Eight of twelve primitives are shared; the four resolved conflicts ($\text{Ð}_{\text{C}}$ vs $\text{Ð}_{\text{;}}$, $\text{Φ}_{\text{υ}}$ vs $\text{Φ}_{\text{}}$, $ƒ_{\text{ì}}$ vs $ƒ_{\text{ż}}$, $Σ_{\text{S}}$ vs $Σ_{\text{ï}}$) all resolve conservatively to the imaginary number's values.
+The meet of the imaginary number with the complex-time path integral equals the imaginary number itself — the simpler system is the complete structural floor shared with the path integral. The imaginary unit is the ground floor of all complex-time physics. Eight of twelve primitives are shared; the four resolved conflicts (𐑨 vs 𐑼, 𐑿 vs 𐑹, $ƒ_{\text{ì}}$ vs $ƒ_{\text{ż}}$, $Σ_{\text{S}}$ vs $Σ_{\text{ï}}$) all resolve conservatively to the imaginary number's values.
 
 ### 4.3 Nearest Structural Analogs
 

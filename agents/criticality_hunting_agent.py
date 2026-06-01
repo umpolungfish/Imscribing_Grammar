@@ -137,14 +137,48 @@ class CriticalityHuntingAgent(BaseAgent):
         self._perturb_engine = PerturbationEngine()
 
     def _setup_llm_provider_strict(self):
+        """Setup LLM provider with MODEL_ALIASES resolution and base_url/api_key support.
+        
+        Supports prefix-syntax models resolved upstream by agents_cli.py.
+        MODEL_ALIASES inherited from true_agentic_agent harness.
+        """
         from framework.enhanced_llm_provider import get_llm_provider
+        
         provider_name = self.config.get("provider", "anthropic")
         model = self.config.get("model", None)
+        base_url = self.config.get("base_url", "")
+        api_key = self.config.get("api_key", "")
+        
+        # Handle provider/model format like "deepseek/deepseek-chat"
         if "/" in provider_name:
             parts = provider_name.split("/", 1)
             provider_name = parts[0]
             model = parts[1] if len(parts) > 1 else model
-        return get_llm_provider(provider_name, model=model)
+        
+        # Model alias resolution (from true_agentic_agent harness)
+        MODEL_ALIASES = {
+            "claude-opus-4":    "anthropic/claude-opus-4",
+            "claude-sonnet-4":  "anthropic/claude-sonnet-4-5",
+            "grok-4":           "x-ai/grok-4.3",
+            "grok-4.3":         "x-ai/grok-4.3",
+            "gpt-4o":           "openai/gpt-4o",
+            "o3":               "openai/o3",
+            "gemini-2-5-pro":   "google/gemini-2.5-pro-preview-05-06",
+            "deepseek-r1":      "deepseek/deepseek-r1",
+        }
+        if model:
+            model = MODEL_ALIASES.get(model, model)
+        
+        try:
+            provider = get_llm_provider(provider_name, model=model)
+            # Override base_url / api_key if provided in config (from agents_cli.py resolution)
+            if base_url and hasattr(provider, 'base_url'):
+                provider.base_url = base_url
+            if api_key and hasattr(provider, 'api_key') and api_key != "local":
+                provider.api_key = api_key
+            return provider
+        except ValueError as e:
+            raise e
 
     def get_tools(self) -> List[Dict[str, Any]]:
         return [

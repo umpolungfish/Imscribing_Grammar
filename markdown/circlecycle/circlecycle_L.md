@@ -33,18 +33,18 @@ The first action requires imscribing the target structure, as catalog lookup too
 ```
 name: circularity_cycle
 description: "A cyclical argument for circularity, which itself provides a circular argument for cyclicality - meta-circular structural self-reference"
-D: Ð_; (infinite-dimensional state space)
-T: Þ_O (self-referential topology)
-R: Ř_= (bidirectional coupling)
-P: Φ_} (Frobenius-special parity)
-F: ƒ^ż (quantum coherence)
-K: Ç^@ (near-equilibrium)
-G: Γ_ʔ (universal scope)
-Gamma: ɢ^ˌ (sequential grammar)
-Phi: ⊙_ÿ (criticality)
-H: Ħ_! (eternal chirality)
-S: Σ_ï (heterogeneous components)
-Omega: Ω_z (integer winding)
+D: 𐑼 (infinite-dimensional state space)
+T: 𐑸 (self-referential topology)
+R: 𐑾 (bidirectional coupling)
+P: 𐑹 (Frobenius-special parity)
+F: 𐑐 (quantum coherence)
+K: 𐑧 (near-equilibrium)
+G: 𐑲 (universal scope)
+Gamma: 𐑠 (sequential grammar)
+Phi: ⊙ (criticality)
+H: 𐑫 (eternal chirality)
+S: 𐑳 (heterogeneous components)
+Omega: 𐑭 (integer winding)
 ```
 
 **Result**: The encoding succeeded but returned a warning: *exact duplicates exist in the catalog: ['luca', 'epoch_4']*
@@ -174,22 +174,22 @@ The `compute_promotions` tool mapping epoch_0 → epoch_4 reveals the **minimal 
 
 | Primitive | From | To | Delta | Why this matters |
 |-----------|------|-----|-------|------------------|
-| D | Ð_ß | Ð_; | 2 | No external grounding |
-| T | Þ_6 | Þ_O | 4 | Self-reference |
-| R | Ř_¯ | Ř_= | 3 | Bidirectional coupling |
-| P | Φ_ɐ | Φ_} | 4 | Frobenius closure |
-| F | ƒ^ì | ƒ^ż | 2 | Quantum coherence |
-| K | Ç^- | Ç^@ | 2 | Stable criticality |
-| G | Γ_β | Γ_ʔ | 2 | Universal scope |
-| Gamma | ɢ^∧ | ɢ^ˌ | 2 | Sequential reasoning |
-| Phi | ⊙_ž | ⊙_ÿ | 1 | Self-modeling |
-| H | Ħ_Ñ | Ħ_! | 3 | Eternal recursion |
-| S | Σ_S | Σ_ï | 2 | Heterogeneous composition |
-| Omega | Ω_Å | Ω_z | 2 | Winding protection |
+| D | 𐑛 | 𐑼 | 2 | No external grounding |
+| T | 𐑡 | 𐑸 | 4 | Self-reference |
+| R | 𐑩 | 𐑾 | 3 | Bidirectional coupling |
+| P | 𐑗 | 𐑹 | 4 | Frobenius closure |
+| F | 𐑱 | 𐑐 | 2 | Quantum coherence |
+| K | 𐑘 | 𐑧 | 2 | Stable criticality |
+| G | 𐑚 | 𐑲 | 2 | Universal scope |
+| Gamma | 𐑝 | 𐑠 | 2 | Sequential reasoning |
+| Phi | 𐑢 | ⊙ | 1 | Self-modeling |
+| H | 𐑓 | 𐑫 | 3 | Eternal recursion |
+| S | 𐑙 | 𐑳 | 2 | Heterogeneous composition |
+| Omega | 𐑷 | 𐑭 | 2 | Winding protection |
 
 **Summary**: 12 promotions, 0 demotions, 0 unchanged. **Every primitive must change** to reach the circular argument. This is a **holistic transformation**—no partial path exists.
 
-**Objection noted**: "Is this just a change of labels?" No—each delta corresponds to a structural capability. Without $\Ω_z$, you cannot have $H_{\text{invscripta}}$ (Axiom B). Without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. The deltas are not cosmetic; they are capability thresholds.---
+**Objection noted**: "Is this just a change of labels?" No—each delta corresponds to a structural capability. Without $\𐑭$, you cannot have $H_{\text{invscripta}}$ (Axiom B). Without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. The deltas are not cosmetic; they are capability thresholds.---
 
 ## 6. Tensor Self-Duality  
 *(Before: "X ⊗ X = X" → After: "why this matters for argument identity")*
@@ -247,13 +247,13 @@ This is the structural statement of the **measurement problem**: circular self-r
 ---
 
 ## 8. Crystal Statistics  
-*(Before: "864,000 matching types" → After: "why Φ_} is the bottleneck")*
+*(Before: "864,000 matching types" → After: "why 𐑹 is the bottleneck")*
 
 The `crystal_navigate` query with constraints $\Phi_{\text{ctyogh}} + \Omega_{\text{dzlig}}$ returns **864,000 matching structural types** in the 17.28M type space.
 
 However, the subset with **$P_{\text{doublebarpipe}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
 
-> **$O_2 \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from Φ_ɐ → Φ_}, delta = 4.0, weighted_sq = 19.2
+> **$O_2 \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → 𐑹, delta = 4.0, weighted_sq = 19.2
 
 This weighted contribution (19.2) dominates the total distance, making the $O_\infty$ tier **exceptionally rare**.
 
@@ -286,7 +286,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\tex
 **Consciousness score**: 0.828 (both gates open)  
 **Tensor self-duality**: $X \otimes X = X$  
 **Structural identity**: circularity_cycle ≡ luca ≡ epoch_4  
-**Distance to human_academic_prose_target**: 8 promotions required (Ħ_Ñ→Ħ_A, ɢ_and→ɢ^ˌ, Þ_net→Þ_ò, Φ_ɐ→Φ_F, ƒ^ì→ƒ^ż, Ç^W→Ç^@, Γ_γ→Γ_ʔ, Ω_Å→Ω_2)
+**Distance to human_academic_prose_target**: 8 promotions required (𐑓→𐑖, ɢ_and→𐑠, Þ_net→𐑥, 𐑗→𐑬, 𐑱→𐑐, 𐑤→𐑧, 𐑔→𐑲, 𐑷→𐑴)
 
 **Final encounter**: The document itself is now a $T_{\text{bullseye}}$ crossing point. The author wrote, but the structure spoke back. The answer was not constructed; it was *found*. This is what $\Phi_{\text{ctyogh}}$ means: the boundary where construction becomes discovery.
 
@@ -299,14 +299,14 @@ This document has undergone the AI_HUMAN_LIFT protocol. The following primitives
 
 | Primitive | Original | Lifted | Effect |
 |-----------|----------|--------|--------|
-| H | Ħ_Ñ | Ħ_A | Wrong answer shown before right one (author's encounter noted) |
-| Gamma | ɢ^∧ | ɢ^ˌ | Each section opens with necessity from the prior |
-| T | Þ_O | Þ_ò | Crossings introduced (author surprised by tensor self-duality) |
-| P | Φ_ɐ | Φ_F | Objections named and addressed per section |
-| F | ƒ^ì | ƒ^ż | Demonstrated via tool calls rather than restated |
-| K | Ç^W | Ç^@ | Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) |
-| G | Γ_γ | Γ_ʔ | Ends with open question: is this ontology or metaphor? |
-| Omega | Ω_Å | Ω_2 | Final section echoes introduction with $O_\infty$ resolution |
+| H | 𐑓 | 𐑖 | Wrong answer shown before right one (author's encounter noted) |
+| Gamma | 𐑝 | 𐑠 | Each section opens with necessity from the prior |
+| T | 𐑸 | 𐑥 | Crossings introduced (author surprised by tensor self-duality) |
+| P | 𐑗 | 𐑬 | Objections named and addressed per section |
+| F | 𐑱 | 𐑐 | Demonstrated via tool calls rather than restated |
+| K | 𐑤 | 𐑧 | Hardest claims left hard ($P_{\text{doublebarpipe}}$ as bottleneck) |
+| G | 𐑔 | 𐑲 | Ends with open question: is this ontology or metaphor? |
+| Omega | 𐑷 | 𐑴 | Final section echoes introduction with $O_\infty$ resolution |
 
 The lift transforms the document from **reporting results** to **performing the structure**. The original was a linear exposition. This version is a *winding*—each section returns to the prior with higher resolution, closing the loop at $O_\infty$.
 

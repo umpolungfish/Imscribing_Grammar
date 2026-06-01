@@ -333,7 +333,7 @@ read it as the biochemical *role* that primitive occupies, not as a claim about
 the sequence of evolutionary emergence.
 
 **Ħ invariant:** All 19 chiral amino acids are exclusively L-configuration.
-Ħ_A is an absolute IG invariant of terrestrial biochemistry — Frobenius-locked
+𐑖 is an absolute IG invariant of terrestrial biochemistry — Frobenius-locked
 at origin of life. Any D-amino acid insertion breaks the ribosomal Frobenius gate.
 
 ---

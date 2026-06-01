@@ -39,7 +39,7 @@ The ouroboricity tier — the algebra's capacity for self-referential structure 
 
 The crystal organizes naturally as a **5 × 4 periodic table** with $\Phi$ as period (row) and $\Omega$ as group (column). Each cell contains exactly $5(P) \times 4(D) \times 43{,}200(\text{inner}) = 864{,}000$ structural types, uniformly.
 
-| Period ($\Phi$) | $\Omega_{\text{closeepsilon}}$ | $\Omega_{Z_2}$ | $\Ω_z$ | $\Omega_{\text{turna}}$ | Dominant tier | Analogy |
+| Period ($\Phi$) | $\Omega_{\text{closeepsilon}}$ | $\Omega_{Z_2}$ | $\𐑭$ | $\Omega_{\text{turna}}$ | Dominant tier | Analogy |
 |----------------|-----------|----------------|------------|-------------------|---------------|---------|
 | $\Phi_{\text{softsign}}$ — ordered | 864,000 | 864,000 | 864,000 | 864,000 | $O_0$ | alkaline earth — inert, ordered, bonded |
 | $\Phi_{\text{ctyogh}}$ — real-axis critical | 864,000 | 864,000 | 864,000 | 864,000 | $O_2$ | transition metal — rich inner structure |

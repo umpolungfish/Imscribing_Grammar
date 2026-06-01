@@ -616,6 +616,34 @@ _SYMBOL_MAP: Dict[str, str] = {
 # Extended valid values for validation (ORDINALS only has Omega 0/Z2/Z;
 # Omega_C is a non-canonical alias still found in older documents.
 # Ω_5 is now canonical (in ORDINALS) so already present in the base dict.
+# ── Unicode enum → canonical display string (reverse of catalog storage) ──
+_UNICODE_TO_CANONICAL: Dict[str, str] = {
+    # Dimensionality
+    "𐑛": "Ð_ß", "𐑨": "Ð_C", "𐑼": "Ð_;", "𐑦": "Ð_ω",
+    # Topology
+    "𐑡": "Þ_6", "𐑰": "Þ_K", "𐑥": "Þ_ò", "𐑶": "Þ_¨", "𐑸": "Þ_O",
+    # Relational
+    "𐑩": "Ř_¯", "𐑑": "Ř_ý", "𐑽": "Ř_Ť", "𐑾": "Ř_=",
+    # Parity
+    "𐑗": "Φ_ɐ", "𐑿": "Φ_υ", "𐑬": "Φ_F", "𐑯": "Φ_˙", "𐑹": "Φ_}",
+    # Fidelity
+    "𐑱": "ƒ^ì", "𐑞": "ƒ^ð", "𐑐": "ƒ^ż",
+    # Kinetics
+    "𐑺": "Ç^-", "𐑪": "Ç^W", "𐑧": "Ç^@", "𐑤": "Ç^Ù", "𐑘": "Ç^λ",
+    # Scope
+    "𐑲": "Γ_β", "𐑚": "Γ_γ", "𐑔": "Γ_ʔ",
+    # Grammar
+    "𐑝": "ɢ^∧", "𐑜": "ɢ^˝", "𐑠": "ɢ^ˌ", "𐑵": "ɢ^Ş",
+    # Criticality — unicode glyphs as stored in catalog
+    "𐑢": "⊙_ž", "⊙": "⊙_ÿ", "𐑮": "⊙_Æ", "𐑻": "⊙_3", "𐑣": "⊙_Ţ",
+    # Chirality
+    "𐑓": "Ħ_Ñ", "𐑒": "Ħ_£", "𐑖": "Ħ_A", "𐑫": "Ħ_!",
+    # Stoichiometry
+    "𐑙": "Σ_S", "𐑕": "Σ_ő", "𐑳": "Σ_ï",
+    # Winding
+    "𐑷": "Ω_Å", "𐑴": "Ω_2", "𐑭": "Ω_z", "𐑟": "Ω_5",
+}
+
 _EXTENDED_VALID: Dict[str, List[str]] = {
     **{p: list(ORDINALS[p].keys()) for p in PRIMITIVE_ORDER},
     "Ω": list(ORDINALS["Ω"].keys()) + ["Ω_C"],
@@ -632,6 +660,9 @@ def _normalize_value(raw: str) -> str:
       3. Return raw unchanged (already canonical, e.g. "Ð_ω", "⊙_ÿ")
     """
     s = raw.strip()
+    # First: try unicode enum → canonical (catalog storage format)
+    if s in _UNICODE_TO_CANONICAL:
+        return _UNICODE_TO_CANONICAL[s]
     if s in _SYMBOL_MAP:
         return _SYMBOL_MAP[s]
     # Substitute any matching Unicode substrings (longest first to avoid partial matches)
@@ -3380,7 +3411,7 @@ class ToolDispatcher:
         if s is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
         phi = s["⊙"]
-        at_criticality = phi == "⊙_ÿ"
+        at_criticality = phi in ("⊙", "𐑮")
         return {
             "status": "ok",
             "name": name,
@@ -3390,7 +3421,7 @@ class ToolDispatcher:
                 f"{name} is AT criticality (⊙_ÿ) — scale-invariant, maximally sensitive, "
                 "at the phase boundary between subcritical and supercritical regimes."
                 if at_criticality else
-                f"{name} is {phi}: {'subcritical (stable, ordered, below threshold)' if phi == '⊙_ž' else 'supercritical (disordered, past critical threshold, fluctuation-dominated)'}."
+                f"{name} is {_UNICODE_TO_CANONICAL.get(phi, phi)}: {'subcritical (stable, ordered, below threshold)' if phi == '𐑢' else 'supercritical (disordered, past critical threshold, fluctuation-dominated)' if phi == '𐑣' else 'critical self-modeling (⊙_ÿ) — scale-invariant, maximally sensitive' if phi == '⊙' else 'complex-plane critical (⊙_Æ)' if phi == '𐑮' else 'exceptional point (⊙_3)' if phi == '𐑻' else 'unknown'}."
             ),
         }
 
@@ -3421,27 +3452,41 @@ class ToolDispatcher:
             ),
         }
 
+    @staticmethod
+    def _shavian_to_display(val: str, prim: str) -> str:
+        """Decode a Shavian-glyph ORDINALS value as Shavian glyphs (identity).
+        
+        The catalog stores primitive values as Shavian Unicode glyphs 
+        (the ORDINALS keys). This maps them back to Shavian Unicode (identity)
+        as Shavian Unicode glyphs (identity).
+        """
+        return val
+
     def _classify_frobenius(self, s: Dict[str, Any]) -> str:
-        """Apply R1–R5 rules to classify a imscription dict into a Frobenius tier."""
-        phi = s.get("⊙", "")
-        p = s.get("Φ", "")
-        omega = s.get("Ω", "")
-        d = s.get("Ð", "")
-        at_criticality = phi in ("⊙_ÿ", "⊙_Æ")
+        """Apply R1–R5 rules to classify a imscription dict into a Frobenius tier.
+        
+        Values in the catalog are stored as Shavian glyphs (the ORDINALS keys).
+        Uses Shavian Unicode glyphs for comparison (identity from catalog).
+        """
+        phi = self._shavian_to_display(s.get("⊙", ""), "⊙")
+        p = self._shavian_to_display(s.get("Φ", ""), "Φ")
+        omega = self._shavian_to_display(s.get("Ω", ""), "Ω")
+        d = self._shavian_to_display(s.get("Ð", ""), "Ð")
+        at_criticality = phi in ("⊙", "𐑮")
         # R1: special Frobenius — exact Z₂ symmetry at criticality
-        if at_criticality and p == "Φ_}":
+        if at_criticality and p == "𐑹":
             return "O_inf"
         # R2: no self-referential loop possible
-        if phi in ("⊙_ž", "⊙_Ţ", "⊙_3"):
+        if phi in ("𐑢", "𐑣", "𐑻"):
             return "O_0"
         # R3: critical but trivial winding
-        if at_criticality and omega == "Ω_Å":
+        if at_criticality and omega == "𐑷":
             return "O_1"
         # R4: critical + topological + bounded domain
-        if at_criticality and omega != "Ω_Å" and d in ("Ð_ß", "Ð_ω", "Ð_C"):
+        if at_criticality and omega != "𐑷" and d in ("𐑛", "𐑦", "𐑨"):
             return "O_2"
         # R5: critical + topological + unbounded domain
-        if at_criticality and omega != "Ω_Å" and d == "Ð_;":
+        if at_criticality and omega != "𐑷" and d == "𐑼":
             return "O_2_dag"
         # Fallback (should not normally occur)
         return "O_0"
@@ -3451,7 +3496,7 @@ class ToolDispatcher:
         "O_0":   "No ouroboricity — system cannot form a self-referential critical loop (subcritical, supercritical, or EP).",
         "O_1":   "Ouroboricity tier 1 — self-referential at criticality but trivial winding.",
         "O_2":   "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
-        "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (Ð_;) domain.",
+        "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (𐑼) domain.",
     }
 
     def _frobenius_tier(self, name: str, **kwargs) -> Dict[str, Any]:
@@ -3481,10 +3526,10 @@ class ToolDispatcher:
             "status": "ok",
             "name": name,
             "frobenius_tier": tier,
-            "phi": s.get("⊙"),
-            "p": s.get("Φ"),
-            "omega": s.get("Ω"),
-            "d": s.get("Ð"),
+            "phi": self._shavian_to_display(s.get("⊙"), "⊙"),
+            "p": self._shavian_to_display(s.get("Φ"), "Φ"),
+            "omega": self._shavian_to_display(s.get("Ω"), "Ω"),
+            "d": self._shavian_to_display(s.get("Ð"), "Ð"),
             "interpretation": self._FROBENIUS_DESCRIPTIONS.get(tier, tier),
         }
 
@@ -3955,7 +4000,7 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            primitives = {k: entry[k] for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
+            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
         # Normalize keys (dispatch lowercases all kwargs)
         primitives = self._norm_crystal_kwargs(primitives)
         try:
@@ -4056,7 +4101,7 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            tup = {k: entry[k] for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
+            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
         elif tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
             prim_order = ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]
@@ -4277,9 +4322,11 @@ class ToolDispatcher:
                         "⊙": "⊙_ž", "Ħ": "Ħ_Ñ", "Σ": "Σ_S", "Ω": "Ω_Å"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
-        gate1 = e["⊙"] in _DCRIT
-        gate2 = e["Ç"] in _DSLOWK
-        c = _consciousness_score(e)
+        # Translate all unicode catalog values to canonical strings for gate checks AND scoring
+        e_canon = {k: _UNICODE_TO_CANONICAL.get(v, v) for k, v in e.items()}
+        gate1 = e_canon["⊙"] in _DCRIT
+        gate2 = e_canon["Ç"] in _DSLOWK
+        c = _consciousness_score(e_canon)
         return {
             "status": "ok",
             "name": name or "(tuple)",

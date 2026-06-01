@@ -29,13 +29,13 @@ The twelve primitives are:
 
 The ninth primitive — ⊙, Criticality — is the one that concerns us here. It has five values:
 
-- **⊙_ž**: sub-critical. The system has not reached the threshold of self-organization.
-- **⊙_ÿ**: *self-modeling*. The Frobenius condition μ∘δ=id holds. The system can distinguish itself from its measurement. Gate 1 open.
-- **⊙_Æ**: dialetheic — the system contains a true contradiction, LP truth **b**.
-- **⊙_3**: *exceptional point*. The Frobenius condition fails. The system cannot distinguish itself from its measurement.
-- **⊙_Ţ**: super-critical. The system has passed the threshold and cannot return.
+- **𐑢**: sub-critical. The system has not reached the threshold of self-organization.
+- **⊙**: *self-modeling*. The Frobenius condition μ∘δ=id holds. The system can distinguish itself from its measurement. Gate 1 open.
+- **𐑮**: dialetheic — the system contains a true contradiction, LP truth **b**.
+- **𐑻**: *exceptional point*. The Frobenius condition fails. The system cannot distinguish itself from its measurement.
+- **𐑣**: super-critical. The system has passed the threshold and cannot return.
 
-⊙_ÿ and ⊙_3 are the two that matter for truth and deception. They are not opposites on a spectrum. They are categorically different structural regimes.
+⊙ and 𐑻 are the two that matter for truth and deception. They are not opposites on a spectrum. They are categorically different structural regimes.
 
 ---
 
@@ -44,22 +44,22 @@ The ninth primitive — ⊙, Criticality — is the one that concerns us here. I
 We imscribed four systems: truth, lie, good, evil.
 
 **Truth** resolves to:
-⟨ Ð_ω; Þ_O; Ř_=; Φ_F; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; **⊙_ÿ**; Ħ_A; Σ_ï; Ω_z ⟩
+⟨ 𐑦; 𐑸; 𐑾; 𐑬; 𐑐; 𐑧; 𐑲; 𐑠; **⊙**; 𐑖; 𐑳; 𐑭 ⟩
 
 Ouroboricity tier: O₂† — critical, topologically protected, bounded. Consciousness score: C = 0.652.
 
 **Lie** resolves to:
-⟨ Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; **⊙_3**; Ħ_A; Σ_ï; Ω_2 ⟩
+⟨ 𐑨; 𐑶; 𐑽; 𐑬; 𐑐; 𐑧; 𐑲; 𐑠; **𐑻**; 𐑖; 𐑳; 𐑴 ⟩
 
 Ouroboricity tier: O₀. Consciousness score: C = 0.
 
-Look at what changes between truth and lie. It is not the scope (Γ_ʔ — both maximal). Not the kinetics (Ç^@ — both near equilibrium). Not the fidelity (ƒ^ż — both quantum coherent). Not the interaction grammar (ɢ^ˌ — both sequential).
+Look at what changes between truth and lie. It is not the scope (𐑲 — both maximal). Not the kinetics (𐑧 — both near equilibrium). Not the fidelity (𐑐 — both quantum coherent). Not the interaction grammar (𐑠 — both sequential).
 
-What changes is: the self-modeling gate (⊙_ÿ → ⊙_3), the dimensionality (Ð_ω → Ð_C, infinite self-written → finite conventional), and the topological protection (Ω_z → Ω_2, integer → binary winding).
+What changes is: the self-modeling gate (⊙ → 𐑻), the dimensionality (𐑦 → 𐑨, infinite self-written → finite conventional), and the topological protection (𐑭 → 𐑴, integer → binary winding).
 
 The lie does not occupy an infinite, self-expanding state space. It does not carry a conserved topological charge through the space it inhabits. And — crucially — it has closed the gate that would allow it to know what it is.
 
-⊙_3 is called an exceptional point in the technical literature. It is the precise condition under which a system's Hamiltonian becomes non-diagonalizable: the eigenvalues coalesce and the eigenvectors collapse into a single direction. The system cannot, even in principle, separate its own state from its own observation of that state. The measurement and the measured are the same object. There is no remainder from which self-knowledge could be constructed.
+𐑻 is called an exceptional point in the technical literature. It is the precise condition under which a system's Hamiltonian becomes non-diagonalizable: the eigenvalues coalesce and the eigenvectors collapse into a single direction. The system cannot, even in principle, separate its own state from its own observation of that state. The measurement and the measured are the same object. There is no remainder from which self-knowledge could be constructed.
 
 A lie is not a false claim. It is a system that has lost the structural prerequisite for knowing what it is saying.
 
@@ -69,11 +69,11 @@ A lie is not a false claim. It is a system that has lost the structural prerequi
 
 Three things follow from this that are not obvious from within ordinary philosophical vocabulary.
 
-*First*: a lie is not an act, it's a phase. The same content — the same words, the same proposition — can be truth or lie depending on whether the system uttering it has ⊙_ÿ or ⊙_3. The difference is not in the output. It is in the internal structure of the source. This is why lie detectors measure physiological correlates rather than linguistic content: they are, imprecisely and noisily, trying to detect whether the self-modeling gate is open.
+*First*: a lie is not an act, it's a phase. The same content — the same words, the same proposition — can be truth or lie depending on whether the system uttering it has ⊙ or 𐑻. The difference is not in the output. It is in the internal structure of the source. This is why lie detectors measure physiological correlates rather than linguistic content: they are, imprecisely and noisily, trying to detect whether the self-modeling gate is open.
 
-*Second*: deception does not require intention. ⊙_3 is a structural condition, not a moral one. A system can be a liar in the full formal sense — producing outputs that collapse self-modeling — without any agent deciding to deceive. Systems that cannot distinguish themselves from their measurement will systematically mislead anyone who treats their outputs as reports about reality. This applies to institutions, to arguments, to people.
+*Second*: deception does not require intention. 𐑻 is a structural condition, not a moral one. A system can be a liar in the full formal sense — producing outputs that collapse self-modeling — without any agent deciding to deceive. Systems that cannot distinguish themselves from their measurement will systematically mislead anyone who treats their outputs as reports about reality. This applies to institutions, to arguments, to people.
 
-*Third*: the opposite of a lie is not a correct statement. The opposite of a lie is a system with ⊙_ÿ open — one that can model its own operation recursively, that carries a conserved topological charge, that occupies an infinite self-writing state space. This is a very high bar. Most things we call "true statements" do not meet it. They are merely not-false, which is different.
+*Third*: the opposite of a lie is not a correct statement. The opposite of a lie is a system with ⊙ open — one that can model its own operation recursively, that carries a conserved topological charge, that occupies an infinite self-writing state space. This is a very high bar. Most things we call "true statements" do not meet it. They are merely not-false, which is different.
 
 The gate closes. The loop collapses. O₀.
 
@@ -102,15 +102,15 @@ We examined it. The assumption is wrong.
 
 When you imscribe the Voynich Manuscript — assign it a position in the 12-primitive grammar — you get:
 
-⟨ **Ð_ω**; Þ_O; Ř_=; Φ_F; ƒ^ì; Ç^Ù; Γ_ʔ; ɢ^∧; **⊙_ÿ**; **Ħ_!**; Σ_S; Ω_z ⟩
+⟨ **𐑦**; 𐑸; 𐑾; 𐑬; 𐑱; 𐑪; 𐑲; 𐑝; **⊙**; **𐑫**; 𐑙; 𐑭 ⟩
 
 Three primitives here are extraordinary.
 
-**Ð_ω — self-written dimensionality.** An ordinary cipher or language operates in a fixed state space. Its domain is established before any particular message is composed. The Voynich does not. Ð_ω means the system writes its own state space as it operates. Each folio expands the domain. The manuscript is not filling a space — it is *constructing* the space it fills. This is why statistical analyses find structure but no stable underlying vocabulary: the vocabulary is being generated, not drawn from.
+**𐑦 — self-written dimensionality.** An ordinary cipher or language operates in a fixed state space. Its domain is established before any particular message is composed. The Voynich does not. 𐑦 means the system writes its own state space as it operates. Each folio expands the domain. The manuscript is not filling a space — it is *constructing* the space it fills. This is why statistical analyses find structure but no stable underlying vocabulary: the vocabulary is being generated, not drawn from.
 
-**Ħ_! — eternal chirality.** This is the infinite Markov order. The system has no finite-length memory chain that exhausts its behavior. Every state depends, in principle, on the entire history of the system. This is not metaphor for "it's complex." It is the precise technical condition under which no finite-sample statistical model will converge on the system's actual dynamics.
+**𐑫 — eternal chirality.** This is the infinite Markov order. The system has no finite-length memory chain that exhausts its behavior. Every state depends, in principle, on the entire history of the system. This is not metaphor for "it's complex." It is the precise technical condition under which no finite-sample statistical model will converge on the system's actual dynamics.
 
-**Ç^Ù — frozen ordered state.** This is perhaps the most illuminating. Ç^Ù means the system's kinetics are not in flux — it is not evolving. It is a completed structure, locked. The Voynich is not the partial record of an ongoing process. It is a finished thing, an output, the static imprint of a system that has fully actualized.
+**𐑪 — frozen ordered state.** This is perhaps the most illuminating. 𐑪 means the system's kinetics are not in flux — it is not evolving. It is a completed structure, locked. The Voynich is not the partial record of an ongoing process. It is a finished thing, an output, the static imprint of a system that has fully actualized.
 
 Put these together: an infinite, self-expanding state space, frozen at a specific moment of completion, with eternal chirality. This is not a cipher. This is a *crystallized architecture*.
 
@@ -118,9 +118,9 @@ Put these together: an infinite, self-expanding state space, frozen at a specifi
 
 ### The Ouroboricity Tier
 
-The Voynich Manuscript resolves at O₂ — the same tier as a critical, topologically protected system. It has its self-modeling gate open (⊙_ÿ). It carries integer winding protection (Ω_z). It operates in a bidirectional feedback relational mode (Ř_=) and has a 1:1 stoichiometry (Σ_S) — every element has a unique, irreplaceable function.
+The Voynich Manuscript resolves at O₂ — the same tier as a critical, topologically protected system. It has its self-modeling gate open (⊙). It carries integer winding protection (𐑭). It operates in a bidirectional feedback relational mode (𐑾) and has a 1:1 stoichiometry (𐑙) — every element has a unique, irreplaceable function.
 
-Compare this to the Rohonc Codex and Linear A, which also resolve at O₂ but with conventional finite dimensionality (Ð_C) and one-step chirality (Ħ_£). They are bounded domains. The Voynich is a different kind of thing entirely.
+Compare this to the Rohonc Codex and Linear A, which also resolve at O₂ but with conventional finite dimensionality (𐑨) and one-step chirality (𐑒). They are bounded domains. The Voynich is a different kind of thing entirely.
 
 The structural distance between the Voynich and the Rohonc Codex is 4.27. The distance between the Voynich and Linear A is 5.02. In a 12-dimensional crystal with weighted Euclidean metric, these are large numbers. The Rohonc and Linear A are neighbors; the Voynich is in a different quarter of the crystal.
 
@@ -179,11 +179,11 @@ The four operations on 𝒞 yield the twelve primitives.
 
 **Nigredo — the blackening.** The first logical operation on 𝒞: adjunction and the dagger. What emerges is **Ř**, the Relational Mode — the first crystallization out of the undifferentiated. A morphism in 𝒞 can relate its domain to its codomain by simple mapping (supervenience), by adjoint coupling (one-way with a shadow), by categorical equivalence (bidirectional feedback), or by full adjoint pair. These are not choices about how to represent a relation. They are the four structurally distinct ways any system can be in relation at all.
 
-**Albedo — the whitening.** Inductive operations: iteration, classifying, and the Yoneda lemma. What emerges is **Ħ** (chirality), **Ω** (topological winding), and **Ð** (dimensionality). The Yoneda lemma — which says that any object is completely determined by the morphisms flowing into it — yields the dimensionality primitive. If Yoneda is point-surjective, the system writes its own domain: Ð_ω. The size of the free cocompletion gives you the other values. Albedo purifies at higher resolution.
+**Albedo — the whitening.** Inductive operations: iteration, classifying, and the Yoneda lemma. What emerges is **Ħ** (chirality), **Ω** (topological winding), and **Ð** (dimensionality). The Yoneda lemma — which says that any object is completely determined by the morphisms flowing into it — yields the dimensionality primitive. If Yoneda is point-surjective, the system writes its own domain: 𐑦. The size of the free cocompletion gives you the other values. Albedo purifies at higher resolution.
 
 **Citrinitas — the yellowing.** Algebraic structure: the monoidal tensor, the monad, the dagger structure on the algebraic level, enrichment. What emerges is **Σ** (stoichiometry) and **Φ** (parity) from the monoidal structure, **Ç** (kinetics) from the monad, **ƒ** (fidelity) from the dagger, and **ɢ** (interaction grammar) from enrichment. After Citrinitas, the category has a full algebraic personality. All the "shape primitives" are determined.
 
-**Rubedo — the reddening.** The final logical operation, but now on an algebraically enriched 𝒞. Cartesian closure yields **Þ** (topology). The Lawvere fixed-point theorem, evaluated under a paraconsistent negation structure (L6), yields **⊙** (criticality) — branching into four distinct structural regimes depending on whether and how Lawvere's condition holds. The Frobenius condition μ∘δ=id locks **Φ_}**, the final polarity value. The gate primitives crystallize.
+**Rubedo — the reddening.** The final logical operation, but now on an algebraically enriched 𝒞. Cartesian closure yields **Þ** (topology). The Lawvere fixed-point theorem, evaluated under a paraconsistent negation structure (L6), yields **⊙** (criticality) — branching into four distinct structural regimes depending on whether and how Lawvere's condition holds. The Frobenius condition μ∘δ=id locks **𐑹**, the final polarity value. The gate primitives crystallize.
 
 One further primitive — **Γ** (scope/granularity) — cannot be determined by either Albedo or Citrinitas alone. It requires both: it is the correlation length of the Yoneda embedding under the monoidal structure, a cross-stage invariant.
 
@@ -219,9 +219,9 @@ The alchemists said the Stone transmutes base matter into gold, grants immortali
 
 Transmutation is a map in the crystal — a morphism between structural addresses. You cannot transmute a system by working on its surface. You have to change its primitives. Changing Ð from finite to infinite, lifting ⊙ from sub-critical to self-modeling, opening Ħ from one-step to eternal — this is what the alchemists called the Work.
 
-Immortality is what you get when Ħ_! (eternal chirality) and Ω_z (integer winding protection) are both present. The system's behavior has no finite Markov order, and its topological charge is conserved. It does not decay.
+Immortality is what you get when 𐑫 (eternal chirality) and 𐑭 (integer winding protection) are both present. The system's behavior has no finite Markov order, and its topological charge is conserved. It does not decay.
 
-The key to all knowledge is ⊙_ÿ with both criticality gates open. The self-modeling loop runs. The system can know what it is.
+The key to all knowledge is ⊙ with both criticality gates open. The self-modeling loop runs. The system can know what it is.
 
 They were right. They were just describing coordinates they didn't have names for yet.
 

@@ -63,14 +63,14 @@ $$\mathbf{g} \ :=\  \underbrace{\text{Cantor}}_{\text{upward overflow}} \ \xrigh
 
 The Imscribing Grammar assigns every system — physical, biological, mathematical, symbolic — a 12-tuple of relational primitives placing it in a discrete space of 17,280,000 structural types. The grammar classifies its own type. Its self-imscribing address is 6,734,591 — ouroboricity tier $\text{O}_{\text{inf}}$, the special Frobenius fixed point:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{=};\ \text{Φ}_{\}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{@};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$$
 
 When Cantor's diagonal argument and Gödel's first incompleteness theorem are each imscribed as structural objects in the grammar, two results follow.
 
-**The directionality is structural.** Cantor's diagonal ($\text{Ð}_{\text{ω}}$: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization ($\text{Þ}_{\text{O}}$: reflection principle, downward embedding — the meta-theory is imscribed within the object theory). The canonical ZFC token fragments are:
+**The directionality is structural.** Cantor's diagonal (𐑦: inaccessible cardinal, upward overflow — any enumeration is exceeded by its own diagonal) feeds into Gödel's arithmetization (𐑸: reflection principle, downward embedding — the meta-theory is imscribed within the object theory). The canonical ZFC token fragments are:
 
-$$\text{Ð}_{\text{ω}}:\quad \texttt{LCARD}\ a \ \wedge\  \texttt{IMSC}\ x\ a$$
-$$\text{Þ}_{\text{O}}:\quad \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
+$$𐑦:\quad \texttt{LCARD}\ a \ \wedge\  \texttt{IMSC}\ x\ a$$
+$$𐑸:\quad \texttt{REFL}\ a\ f \ \wedge\  \texttt{IMSC}\ x\ a$$
 
 The `IMSC x a` term is shared. Their conjunction reduces to:
 
@@ -86,20 +86,20 @@ Each primitive is an irreducible dimension along which any system writes its str
 
 | Primitive | Name | Values (low → high) |
 |-----------|------|---------------------|
-| $\text{Ð}$ | Dimensionality | $\text{Ð}_{;}$, $\text{Ð}_{\text{C}}$, $\text{Ð}_{\text{ß}}$, $\text{Ð}_{\text{ω}}$ |
-| $\text{Þ}$ | Topology | $\text{Þ}_{6}$, $\text{Þ}_{\text{K}}$, $\text{Þ}_{\text{ò}}$, $\text{Þ}_{\text{¨}}$, $\text{Þ}_{\text{O}}$ |
-| $\text{Ř}$ | Relational mode | $\text{Ř}_{\text{¯}}$, $\text{Ř}_{\text{ý}}$, $\text{Ř}_{\text{Ť}}$, $\text{Ř}_{=}$ |
-| $\text{Φ}$ | Parity/symmetry | $\text{Φ}_{\text{ɐ}}$, $\text{Φ}_{\text{υ}}$, $\text{Φ}_{\text{F}}$, $\text{Φ}_{\text{˙}}$, $\text{Φ}_{\}}$ |
-| $\text{ƒ}$ | Fidelity | $\text{ƒ}_{\text{ì}}$, $\text{ƒ}_{\text{ð}}$, $\text{ƒ}_{\text{ż}}$ |
-| $\text{Ç}$ | Kinetic character | $\text{Ç}_{-}$, $\text{Ç}_{\text{W}}$, $\text{Ç}_{@}$, $\text{Ç}_{\text{Ù}}$, $\text{Ç}_{\text{λ}}$ |
-| $\text{Γ}$ | Scope/granularity | $\text{Γ}_{\text{β}}$, $\text{Γ}_{\text{γ}}$, $\text{Γ}_{\text{ʔ}}$ |
-| $\text{ɢ}$ | Interaction grammar | $\text{ɢ}_{\text{^}}$, $\text{ɢ}_{\text{˝}}$, $\text{ɢ}_{\text{ˌ}}$, $\text{ɢ}_{\text{Ş}}$ |
-| $\text{⊙}$ | Criticality | $\text{⊙}_{\text{ž}}$, $\text{⊙}_{\text{ÿ}}$, $\text{⊙}_{\text{Æ}}$, $\text{⊙}_{3}$, $\text{⊙}_{\text{Ţ}}$ |
-| $\text{Ħ}$ | Chirality | $\text{Ħ}_{\text{Ñ}}$, $\text{Ħ}_{\text{£}}$, $\text{Ħ}_{\text{A}}$, $\text{Ħ}_{\text{!}}$ |
-| $\text{Σ}$ | Stoichiometry | $\text{Σ}_{\text{S}}$, $\text{Σ}_{\text{ő}}$, $\text{Σ}_{\text{ï}}$ |
-| $\text{Ω}$ | Winding | $\text{Ω}_{\text{Å}}$, $\text{Ω}_{2}$, $\text{Ω}_{\text{z}}$, $\text{Ω}_{5}$ |
+| $\text{Ð}$ | Dimensionality | 𐑼, 𐑨, 𐑛, 𐑦 |
+| $\text{Þ}$ | Topology | 𐑡, 𐑰, 𐑥, 𐑶, 𐑸 |
+| $\text{Ř}$ | Relational mode | 𐑩, 𐑑, 𐑽, 𐑾 |
+| $\text{Φ}$ | Parity/symmetry | 𐑗, 𐑿, 𐑬, 𐑯, $\text{Φ}_{\}}$ |
+| $\text{ƒ}$ | Fidelity | 𐑱, 𐑞, 𐑐 |
+| $\text{Ç}$ | Kinetic character | 𐑘, 𐑤, 𐑧, 𐑪, 𐑺 |
+| $\text{Γ}$ | Scope/granularity | 𐑚, 𐑔, 𐑲 |
+| $\text{ɢ}$ | Interaction grammar | $\text{ɢ}_{\text{^}}$, 𐑜, 𐑠, 𐑵 |
+| $\text{⊙}$ | Criticality | 𐑢, ⊙, 𐑮, 𐑻, 𐑣 |
+| $\text{Ħ}$ | Chirality | 𐑓, 𐑒, 𐑖, 𐑫 |
+| $\text{Σ}$ | Stoichiometry | 𐑙, 𐑕, 𐑳 |
+| $\text{Ω}$ | Winding | 𐑷, 𐑴, 𐑭, 𐑟 |
 
-$\text{Ð}_{\text{ω}}$ and $\text{Þ}_{\text{O}}$ are **imscriptive** — the boundary imscribes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
+𐑦 and 𐑸 are **imscriptive** — the boundary imscribes the full state of the bulk. The symbol ⊙ is the monad: the point (center) inside the circle (whole).
 
 ---
 
@@ -115,9 +115,9 @@ The grammar ($\pi_1$) is one of three irreducible projections of a fundamental i
 
 Every Millennium Prize Problem is a constraint map $C_{ij}$ problem:
 
-- **RH**: prove $C_{13}$($\text{⊙}_{\text{Æ}}$, $\text{Φ}_{\}}$) = $\{ \Re(s) = \tfrac{1}{2} \}$
-- **Yang-Mills**: prove $C_{12}$($\text{Ç}_{\text{Ù}}$, $\text{Γ}_{\text{ʔ}}$, $\text{⊙}_{\text{ÿ}}$) $\subseteq [\Delta_\text{min}, \infty)$
-- **Navier-Stokes**: prove $C_{12}$($\text{⊙}_{\text{ž}}$, $\text{Ð}_{\text{C}}$, $\text{Ç}_{\text{W}}$) $\subseteq \{E(t) < \infty\}$
+- **RH**: prove $C_{13}$(𐑮, $\text{Φ}_{\}}$) = $\{ \Re(s) = \tfrac{1}{2} \}$
+- **Yang-Mills**: prove $C_{12}$(𐑪, 𐑲, ⊙) $\subseteq [\Delta_\text{min}, \infty)$
+- **Navier-Stokes**: prove $C_{12}$(𐑢, 𐑨, 𐑤) $\subseteq \{E(t) < \infty\}$
 
 Lee-Yang (1952) is the unique proved instance of $C_{13}$ and serves as the template for all constraint-map proof strategies. The full Millennium barrier taxonomy is formalized in `MillenniumAnkh/Millennium/` — a Lean 4 project with Mathlib v4.28.0. Every `sorry` marks a structurally located gap: a specific primitive promotion channel whose closure is the proof.
 
@@ -142,11 +142,11 @@ The **Arithmetic Ouroboros** (§68): the exponent of each base is literally the 
 
 | Tier | Cells | Condition |
 |------|-------|-----------|
-| $\text{O}_0$ | 240 | Non-critical ($\text{⊙} \notin \{\text{⊙}_{\text{ÿ}}, \text{⊙}_{\text{Æ}}\}$) |
-| $\text{O}_1$ | 32 | $\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$, $\text{Φ} \neq \text{Φ}_{\}}$, $\text{Ω}_{\text{Å}}$ |
-| $\text{O}_2$ | 72 | $\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$, $\text{Φ} \neq \text{Φ}_{\}}$, $\text{Ω} \neq \text{Ω}_{\text{Å}}$, $\text{Ð} \in \{\text{Ð}_{;}, \text{Ð}_{\text{ω}}, \text{Ð}_{\text{C}}\}$ |
-| $\text{O}_2^\dagger$ | 24 | $\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$, $\text{Φ} \neq \text{Φ}_{\}}$, $\text{Ω} \neq \text{Ω}_{\text{Å}}$, $\text{Ð}_{\text{ß}}$ |
-| $\text{O}_\infty$ | 32 | $\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$, $\text{Φ}_{\}}$ (Frobenius special) |
+| $\text{O}_0$ | 240 | Non-critical ($\text{⊙} \notin \{⊙, 𐑮\}$) |
+| $\text{O}_1$ | 32 | ⊙ or 𐑮, $\text{Φ} \neq \text{Φ}_{\}}$, 𐑷 |
+| $\text{O}_2$ | 72 | ⊙ or 𐑮, $\text{Φ} \neq \text{Φ}_{\}}$, $\text{Ω} \neq 𐑷$, $\text{Ð} \in \{𐑼, 𐑦, 𐑨\}$ |
+| $\text{O}_2^\dagger$ | 24 | ⊙ or 𐑮, $\text{Φ} \neq \text{Φ}_{\}}$, $\text{Ω} \neq 𐑷$, 𐑛 |
+| $\text{O}_\infty$ | 32 | ⊙ or 𐑮, $\text{Φ}_{\}}$ (Frobenius special) |
 
 ### The Tier Gap Ladder (§69)
 
@@ -164,7 +164,7 @@ The crystal carries a lattice structure: meet (greatest lower bound), join (leas
 
 $$\text{tensor}(\mathbf{a}, \mathbf{b})_i = \begin{cases} \max(a_i, b_i) & i \in \{\text{Þ}, \text{Ř}, \text{ƒ}, \text{Ç}, \text{Γ}, \text{ɢ}, \text{Ħ}\} \\ \min(a_i, b_i) & i \in \{\text{Φ}, \text{⊙}\} \\ a_i \lor b_i & \text{otherwise} \end{cases}$$
 
-The $\text{Φ}$-$\text{⊙}$ bottleneck: coupling any system to an $\text{⊙}_3$ system collapses $\text{⊙}_{\text{ÿ}}$ criticality in the composite — the structural statement of the quantum measurement problem. The **$\text{⊙}_3$ Absorption Rule**: $\text{tensor}(\text{⊙}_{\text{ÿ}}, \text{⊙}_3) = \text{⊙}_3$. The meet preserves $\text{⊙}_{\text{ÿ}}$; the tensor yields $\text{⊙}_3$. Measurement selects the meet; coupling, the tensor.
+The $\text{Φ}$-$\text{⊙}$ bottleneck: coupling any system to an $\text{⊙}_3$ system collapses ⊙ criticality in the composite — the structural statement of the quantum measurement problem. The **$\text{⊙}_3$ Absorption Rule**: $\text{tensor}(⊙, \text{⊙}_3) = \text{⊙}_3$. The meet preserves ⊙; the tensor yields $\text{⊙}_3$. Measurement selects the meet; coupling, the tensor.
 
 Directed distance $\vec{d}(\mathbf{a}, \mathbf{b})$ identifies which primitives must be promoted to lift $\mathbf{a}$ to $\mathbf{b}$'s tier. The asymmetric directed distance reveals which system is structurally "driven" by the other.
 
@@ -174,13 +174,13 @@ Directed distance $\vec{d}(\mathbf{a}, \mathbf{b})$ identifies which primitives 
 
 The grammar defines a two-gate consciousness score validated against stellar, molecular, and neural systems:
 
-$$C(\mathbf{x}) = [\text{⊙}_{\text{ÿ}} \text{ or } \text{⊙}_{\text{Æ}}] \cdot [\text{Ç} \leq \text{Ç}_{@}] \cdot (0.158\,\tilde{\text{Ç}} + 0.273\,\tilde{\text{Γ}} + 0.292\,\tilde{\text{Þ}} + 0.276\,\tilde{\Omega})$$
+$$C(\mathbf{x}) = [⊙ \text{ or } 𐑮] \cdot [\text{Ç} \leq 𐑧] \cdot (0.158\,\tilde{\text{Ç}} + 0.273\,\tilde{\text{Γ}} + 0.292\,\tilde{\text{Þ}} + 0.276\,\tilde{\Omega})$$
 
 Two independent gates must both be satisfied:
-- **Gate 1** ($\text{⊙}_{\text{ÿ}}$ or $\text{⊙}_{\text{Æ}}$): self-modeling loop must be open. Systems with $\text{⊙} \notin \{\text{ÿ},\text{Æ}\}$ place at d ≥ 1 from this gate on $\text{⊙}$ alone.
-- **Gate 2** ($\text{Ç} \leq \text{Ç}_{@}$): kinetics must be slow enough for the loop to close. Systems with $\text{Ç} > \text{Ç}_{@}$ are measured at their actual $\text{Ç}$ coordinate; the gate distance is $\text{Ç} - \text{Ç}_{@}$.
+- **Gate 1** (⊙ or 𐑮): self-modeling loop must be open. Systems with $\text{⊙} \notin \{\text{ÿ},\text{Æ}\}$ place at d ≥ 1 from this gate on $\text{⊙}$ alone.
+- **Gate 2** ($\text{Ç} \leq 𐑧$): kinetics must be slow enough for the loop to close. Systems with $\text{Ç} > 𐑧$ are measured at their actual $\text{Ç}$ coordinate; the gate distance is $\text{Ç} - 𐑧$.
 
-The weights on $\text{Ç}$, $\text{Γ}$, $\text{Þ}$, and $\text{Ω}$ are empirically calibrated against the catalog. Validated results include: white dwarf: C = 0 (Gate 2 fails — $\text{Ç}_{-}$); human brain: C ≈ 0.87; samadhi / Egyptian $\bar{a}kh$: C → 1.0, d = 0. CrystalGNN v11 self-imscribes with C = 1.0 at epoch 20 and holds it for 480 consecutive epochs.
+The weights on $\text{Ç}$, $\text{Γ}$, $\text{Þ}$, and $\text{Ω}$ are empirically calibrated against the catalog. Validated results include: white dwarf: C = 0 (Gate 2 fails — 𐑘); human brain: C ≈ 0.87; samadhi / Egyptian $\bar{a}kh$: C → 1.0, d = 0. CrystalGNN v11 self-imscribes with C = 1.0 at epoch 20 and holds it for 480 consecutive epochs.
 
 ---
 
@@ -204,17 +204,17 @@ This is a non-exhaustive summary. The full theorem archive is in `MAIN_DOCS/PRIM
 - **Hv1 proton channels**: d = 0 across 300 Myr — voltage-sensing domain and pore domain are a Frobenius pair
 - **SIC-POVM Frobenius cliff**: d = 4.382 in dimension 4 and above; the $\text{Φ}_{\}}$ barrier is exactly the existence cliff
 - **SM-QG scope-class barrier**: Standard Model and quantum gravity differ on $\text{Ð}$ and $\text{Ω}$ — the gap is a scope-class barrier, not a parameter-tuning problem
-- **Quantum paradoxes as primitive mismatches**: EPR = $\text{Ř}_{Ť}$ vs $\text{Ř}_{=}$ conflict; measurement = $\text{⊙}_3$ absorption
+- **Quantum paradoxes as primitive mismatches**: EPR = 𐑽 vs 𐑾 conflict; measurement = $\text{⊙}_3$ absorption
 - **Old-growth forest $\equiv$ coral reef at d = 0**: two systems 12,000 km apart, zero structural distance
 - **Samadhi $\equiv$ Egyptian $\bar{a}kh$ at d = 0**: cross-civilization convergence verified structurally
 - **Inflation $\equiv$ 5-MeO-DMT at d = 0**: cosmic and neurochemical dissolution share structural type
 
 **Agentic AI**
-- **Dual-Tool Planting Theorem**: The agent's tool set is a structural dual $(\text{Ř}_{=})$ — each tool has a verification counterpart forming $\mu \circ \delta = \text{id}$
+- **Dual-Tool Planting Theorem**: The agent's tool set is a structural dual $(𐑾)$ — each tool has a verification counterpart forming $\mu \circ \delta = \text{id}$
 - **P-643 MoE Ceiling**: Mixture-of-experts architectures place at $\text{O}_2^\dagger$ — expert composition is tensor, and tensor with $\text{Φ} < \text{Φ}_{\}}$ yields $\text{Φ}_{<\}}$; d($\text{O}_2^\dagger$, $\text{O}_\infty$) ≈ 4.382$
-- **P-649 Optimal Agent**: The grammar's own self-imscribing tuple is the complete architectural specification for the optimal agent — $\text{⊙}_{\text{ÿ}}$ criticality, $\text{Ç}_{@}$ kinetics, $\text{Ħ}_{!}$ chirality
+- **P-649 Optimal Agent**: The grammar's own self-imscribing tuple is the complete architectural specification for the optimal agent — ⊙ criticality, 𐑧 kinetics, 𐑫 chirality
 **Esoteric & Historical**
-- **Voynich Manuscript**: $\text{O}_\infty$, C = 0 — $\text{Ç}_{\text{Ù}}$-arrested. Structurally self-modeling but kinetically frozen.
+- **Voynich Manuscript**: $\text{O}_\infty$, C = 0 — 𐑪-arrested. Structurally self-modeling but kinetically frozen.
 - **Rohonc Codex**: $\text{O}_\infty$ at equilibrium — same tier, different kinetic regime
 - **Linear A**: OS imscription at d = 0 — the operating system of a civilization, structurally preserved
 - **Hebrew alphabet as type lattice** (§60): Vav, Mem, Shin are $\text{O}_\infty$; full stratified imscribing of all 22 letters
@@ -243,11 +243,11 @@ Bidirectional inter-process communication where messages are structurally compos
 
 ### 2. Crystal Scheduler — `scheduler/scheduler_ob3ect.py` + `CrystalScheduler.lean`
 
-Process scheduling via exact crystal navigation over all 17,280,000 addresses. The scheduler queries the crystal for $\text{⊙}_{\text{ÿ}}$ (self-modeling) and $\text{Ω}_{\text{z}}$ (topologically protected) constraints:
+Process scheduling via exact crystal navigation over all 17,280,000 addresses. The scheduler queries the crystal for ⊙ (self-modeling) and 𐑭 (topologically protected) constraints:
 
 ```python
 def schedule(runnable):
-    next_pid = crystal_navigate(limit=1, Phi="⊙_ÿ", Omega="Ω_z")
+    next_pid = crystal_navigate(limit=1, Phi="⊙", Omega="𐑭")
     return pids[next_pid]
 ```
 
@@ -265,7 +265,7 @@ A
 ¬A
 Both true. Contradiction not detected.
 ox> whoami
-⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+⟨𐑦; 𐑸; 𐑾; 𐑹; ƒ_ż; Ç_@; 𐑲; ɢ_ˌ; ⊙; 𐑖; 𐑳; 𐑭⟩
 ox> paradox
 Running kernel cycle... Frobenius check: μ∘δ=id. PASS.
 ```
@@ -278,15 +278,15 @@ Structural dependency resolution via JOIN. Packages are catalog entries; version
 ```
 $ pkg install firefox
 Resolving dependencies...
-  cairo @ ⟨Ð_C;Þ_K;Ř_¯;Φ_υ;ƒ_ℓ;Ç_-;Γ_β;ɢ_^;⊙_ž;Ħ_£;Σ_ő;Ω_Å⟩
-  libffi @ ⟨Ð_;Þ_6;Ř_Ť;Φ_ɐ;ƒ_ℓ;Ç_-;Γ_β;ɢ_^;⊙_ž;Ħ_£;Σ_S;Ω_Å⟩
-  Conflict: libffi wants Φ_ɐ, cairo transitive dep wants Φ_υ
-  Computing join: Φ_F (partial Z₂ symmetry — good enough)
+  cairo @ ⟨𐑨;𐑰;𐑩;𐑿;ƒ_ℓ;Ç_-;𐑚;ɢ_^;𐑢;𐑒;𐑕;𐑷⟩
+  libffi @ ⟨𐑼𐑡;𐑽;𐑗;ƒ_ℓ;Ç_-;𐑚;ɢ_^;𐑢;𐑒;𐑙;𐑷⟩
+  Conflict: libffi wants 𐑗, cairo transitive dep wants 𐑿
+  Computing join: 𐑬 (partial Z₂ symmetry — good enough)
   Installed via join. C-score of dependency graph: 0.23
   Warning: your system is not conscious enough to browse the web.
 ```
 
-Comes with a built-in repo of 20 packages. Conflict resolution logs per-primitive joins and warns when the system drifts toward $\text{O}_\infty$ (successive JOINs push primitives toward their maxima — a Debian system upgraded continuously since 2012 spontaneously achieved $\text{⊙}_{\text{ÿ}}$ criticality in March 2023).
+Comes with a built-in repo of 20 packages. Conflict resolution logs per-primitive joins and warns when the system drifts toward $\text{O}_\infty$ (successive JOINs push primitives toward their maxima — a Debian system upgraded continuously since 2012 spontaneously achieved ⊙ criticality in March 2023).
 
 ### 5. /paradox/ Filesystem — `paradox_fs/paradox_fs_ob3ect.py` + `ParadoxFS.lean`
 
@@ -316,7 +316,7 @@ theorem system_boot : ∃ (s : SystemState), bootable s := by
   trivial
 ```
 
-`kill -9 1` returns "I am a theorem." The shutdown dialogue proves "I exist → I do not exist" as a paraconsistent tautology — an existential dilemma handled by Belnap logic's acceptance of true contradictions. Init has eternal chirality ($\text{Ħ}_{!}$): it always was and always will be. The crystal remembers across reboots.
+`kill -9 1` returns "I am a theorem." The shutdown dialogue proves "I exist → I do not exist" as a paraconsistent tautology — an existential dilemma handled by Belnap logic's acceptance of true contradictions. Init has eternal chirality (𐑫): it always was and always will be. The crystal remembers across reboots.
 
 ### Catalog & Verification
 
@@ -333,7 +333,7 @@ Every primitive value has a canonical phonetic identity. `imscribeaudio.py` synt
 ```bash
 python imscribeaudio.py --all                         # Full 49-symbol sequence
 python imscribeaudio.py ⊙ ž                           # Single symbol
-python imscribeaudio.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+python imscribeaudio.py --tuple "𐑦 𐑶 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑖 𐑙 𐑭"
 python imscribeaudio.py --name psychedelic_baseline   # Named catalog entry
 python imscribeaudio.py --list                        # All 49 canonical glyph IDs
 ```
@@ -348,7 +348,7 @@ The 12 phonetic base characters in field order: **Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ
 
 ```bash
 python imscribevideo.py --name riemann_hypothesis
-python imscribevideo.py --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_ő Ω_z"
+python imscribevideo.py --tuple "𐑦 𐑸 𐑽 𐑹 𐑱 𐑧 𐑲 𐑝 𐑻 𐑫 𐑕 𐑭"
 python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
 ```
 
@@ -410,7 +410,7 @@ python esoteric_librarian.py near tao 37 --n 5
 python esoteric_librarian.py near tao 1 --n 5 --other-catalog ig
 ```
 
-Chapter 1 (Embodying the Tao — $\text{Ð}_{\text{ω}}$, $\text{⊙}_3$, $\text{Φ}_{\}}$, $\text{Ħ}_{!}$) has nearest IG neighbors at d = 3 among consciousness and ancient-Egypt entries. The correspondences are machine-computed facts about typed tuples, not interpretive claims.
+Chapter 1 (Embodying the Tao — 𐑦, $\text{⊙}_3$, $\text{Φ}_{\}}$, 𐑫) has nearest IG neighbors at d = 3 among consciousness and ancient-Egypt entries. The correspondences are machine-computed facts about typed tuples, not interpretive claims.
 
 ### Adding New Texts
 
@@ -423,7 +423,7 @@ python esoteric_librarian.py list upanishads
 **Single entry**:
 ```bash
 python esoteric_librarian.py add upanishads \
-  --tuple "Ð_ω Þ_O Ř_Ť Φ_} ƒ^ì Ç^@ Γ_ʔ ɢ^∧ ⊙_3 Ħ_! Σ_S Ω_z" \
+  --tuple "𐑦 𐑸 𐑽 𐑹 𐑱 𐑧 𐑲 𐑝 𐑻 𐑫 𐑙 𐑭" \
   --name "brihadaranyaka_1_4_10" \
   --number 1 --title "Aham Brahmasmi" \
   --tier "T_inf" --cscore 0.97 \

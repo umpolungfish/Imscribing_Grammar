@@ -40,7 +40,7 @@ do:
     xi_tolerance: 1.5
   - assert:
       expr: phi_c_score > 0.70
-      message: "Must approach ⊙_ÿ before ensemble step"
+      message: "Must approach ⊙ before ensemble step"
   - tensor: db24c8_dialkylammonium_pseudorotaxane
 output:
   format: text
@@ -159,9 +159,9 @@ Parses `.syn` YAML files and evaluates them as `ImscriptionM` pipelines.
 ```
 phi_c_score > N        → run varma probe, check score
 phi_c_score >= N       → same
-fidelity == ƒ^ż     → check imscription.fidelity
-topology == Þ_ò   → check imscription.topology
-criticality_phase == ⊙_ÿ  → check enum value
+fidelity == 𐑐     → check imscription.fidelity
+topology == 𐑥   → check imscription.topology
+criticality_phase == ⊙  → check enum value
 axiom6_satisfied       → run AxiomValidator.validate_axiom6_temporal_grounding
 gd_degeneracy == X     → run probe, check gd_degeneracy_type
 reset_type == discrete → check grounding["reset"]["type"]
@@ -183,7 +183,7 @@ Imscribing Grammar Run: design.syn
   Start: soai_pyrimidyl_autocatalytic_cycle
 
   1. [PASS] ✓ join(proline_aldol_cycle)  Δξ=+0.000 nat
-  2. [BLOCKED] ✗ lift(critical)  — F floor not met (ƒ^ð < ƒ^ż required)
+  2. [BLOCKED] ✗ lift(critical)  — F floor not met (𐑞 < 𐑐 required)
   3. [PASS] ✓ assert(phi_c_score > 0.70)  — ASSERÞ_FAIL: score=0.380
 
   Total Δξ_CP: +0.000 nat  |  Steps: 3  |  FAILED at step 2
@@ -209,7 +209,7 @@ class Imscription(BaseModel):
     def axiom1_fidelity_floor(self):
         if self.topology == Topology.CYCLIC_BOWTIE:
             if self.fidelity == Fidelity.LOW:
-                raise ValueError("Axiom 1: T_⋈ requires F ≥ ƒ^ð")
+                raise ValueError("Axiom 1: T_⋈ requires F ≥ 𐑞")
         return self
 ```
 
@@ -217,7 +217,7 @@ class Imscription(BaseModel):
 
 ```python
 class FidelityGe(Annotated[Fidelity, Ge(Fidelity.MEDIUM)]):
-    """F ≥ ƒ^ð — satisfied by ƒ^ð or ƒ^ż"""
+    """F ≥ 𐑞 — satisfied by 𐑞 or 𐑐"""
 
 CriticalityCandidateImscription = Imscription[fidelity=FidelityGe]
 ```
@@ -343,11 +343,11 @@ The Python catalog, CLI, and grounding layer are the validated, empirically-anch
 `TopoIndex` encodes the symmetry class of topological protection, based on the Altland–Zirnbauer / K-theory (10-fold way) classification:
 
 ```
-Ω_Å  (TRIVIAL)     — No topological protection; classical systems
-Ω_z  (Z_CLASS)     — ℤ winding number: Kitaev chain, SSH model, 1D p-wave
-Ω_2 (Z2_CLASS)    — ℤ₂ invariant: HgTe/CdTe QWs, Bi₂Se₃ (class AII/DIII)
+𐑷  (TRIVIAL)     — No topological protection; classical systems
+𐑭  (Z_CLASS)     — ℤ winding number: Kitaev chain, SSH model, 1D p-wave
+𐑴 (Z2_CLASS)    — ℤ₂ invariant: HgTe/CdTe QWs, Bi₂Se₃ (class AII/DIII)
 Ω_C  (CHERN)       — Integer Chern number: IQH, Chern insulators (class A)
-Ω_5 (NON_ABELIAN) — Non-abelian anyons: ν=5/2 FQH, Kitaev honeycomb
+𐑟 (NON_ABELIAN) — Non-abelian anyons: ν=5/2 FQH, Kitaev honeycomb
 ```
 
 Protection-strength ordinal: TRIVIAL(0) < Z2(1) < Z(2) < CHERN(3) < NON_ABELIAN(4).
@@ -396,7 +396,7 @@ class PhaseDiagram:
     mds_coords: np.ndarray            # N×2 MDS embedding
     factor8_flags: Dict[str, bool]    # Factor-8 trigger per imscription
     omega_values: Dict[str, str]      # Ω class per imscription
-    k_trap_flags: Dict[str, bool]     # Ç^Ù flag per imscription
+    k_trap_flags: Dict[str, bool]     # 𐑪 flag per imscription
 ```
 
 `build_phase_map(imscription_names=None, catalog=None) → PhaseDiagram` constructs the full object from the catalog in one call.
@@ -485,7 +485,7 @@ Three classes of objects identified by GPT‑4 review as stress tests for the tu
 Key asymmetry result: `topological_insulator_bi2se3 → imscription_Fermi_liquid` is an asymmetric 1st-order morphism — the reverse path (Fermi liquid → TI, fidelity *increases*) is permitted; the forward path (TI → Fermi liquid, fidelity *decreases*) is blocked by the $F$-floor. Topological protection encodes as morphism irreversibility. `imscribe transition SRC DST` CLI registered.
 
 **Floquet imscriptions (periodic drive) ✓ complete (v0.4.4)**
-`floquet_chern_insulator` ($D_{\text{turnthree}}$, $T_{\uparrow\downarrow}$, $K_{\text{teshlig}}$, $\Ω_C$, $\Gamma_{\to}(\text{SEQUENTIAL})$) and `time_crystal_dtc` ($D_{\text{invomega}}$, $T_{\text{bullseye}}$, $K_{\text{lambda}}$, $\Ω_z$) registered. $d(\text{floquet\_chern}, \text{time\_crystal}) = 4.2$ — same $G_{\text{gamma}}/F_{\text{dh}}/\Phi_{\text{softsign}}$ floor, differing in $D/T/K$ and topological class ($\Ω_C$ vs. $\Ω_z$). $\Gamma_{\to}(\text{SEQUENTIAL})$ encodes the stroboscopic Floquet operator; $K_{\text{lambda}}$ encodes the disorder-localization required for DTC stability against Floquet heating.
+`floquet_chern_insulator` ($D_{\text{turnthree}}$, $T_{\uparrow\downarrow}$, $K_{\text{teshlig}}$, $\Ω_C$, $\Gamma_{\to}(\text{SEQUENTIAL})$) and `time_crystal_dtc` ($D_{\text{invomega}}$, $T_{\text{bullseye}}$, $K_{\text{lambda}}$, $\𐑭$) registered. $d(\text{floquet\_chern}, \text{time\_crystal}) = 4.2$ — same $G_{\text{gamma}}/F_{\text{dh}}/\Phi_{\text{softsign}}$ floor, differing in $D/T/K$ and topological class ($\Ω_C$ vs. $\𐑭$). $\Gamma_{\to}(\text{SEQUENTIAL})$ encodes the stroboscopic Floquet operator; $K_{\text{lambda}}$ encodes the disorder-localization required for DTC stability against Floquet heating.
 
 **Gauge theories (loop variables) ✓ complete (v0.4.4)**
 `z2_lattice_gauge_toric_code` registered: $\langle D_{\text{turnthree}}; T_{\uparrow\downarrow}; R_{\Leftrightarrow}; P_{\text{doublebarpipe}}; F_{\text{hardsign}}; K_{\text{teshlig}}; G_{\text{revapostrophe}}; \Gamma_{\text{corner}}(\text{QUANTUM}); \Phi_{\text{softsign}}; \Omega_{Z_2} \rangle$. Key result: $d(\text{z2\_toric}, \text{fqh\_moore\_read}) = 3.90$ at path cost = **0.000 nat**. Zero-cost path at non-zero tuple distance = same thermodynamic universality class, different topological invariant. $T_{\uparrow\downarrow}$ (Wilson loop holonomy), $R_{\Leftrightarrow}$ (loop variable recognition), $G_{\text{revapostrophe}}$ (global stabilisers) encode the gauge-theory structure without a new primitive.
@@ -527,7 +527,7 @@ The absorbing $\Phi_{\text{ctyogh}}$ is a co-Heyting top: not the usual infimum 
 |-------|--------|---------|
 | `meet(Hv1_human_open, AtHv1_primed)` | PASS · $\Phi_{\text{ctyogh}}$ propagates | Cross-species water-chain conservation proved algebraically |
 | `meet(Hv1_human_open, 2GBI_inhibitor)` | ⊥ · $T$-conflict + $P$-conflict | Conflict *is* the answer: inhibitor occludes, does not merge |
-| `meet(cooper_pair, topological_insulator)` | PASS on $\Omega$, ⊥ on $D/P/\Gamma$ | $\Ω_z \sqcap \Omega_{Z_2} = \Omega_{Z_2}$ (AZ classification ordinal) |
+| `meet(cooper_pair, topological_insulator)` | PASS on $\Omega$, ⊥ on $D/P/\Gamma$ | $\𐑭 \sqcap \Omega_{Z_2} = \Omega_{Z_2}$ (AZ classification ordinal) |
 
 ---
 
@@ -654,7 +654,7 @@ $$
 |----------|--------|---------------|
 | `Hv1_open >> meet(AtHv1_primed) >> join(PsHv1)` | PASS · $\Delta\xi=0$ | Cross-species conservation; $\Phi_{\text{ctyogh}}$ preserved through full pipeline |
 | `strategy_A.mplus(strategy_B)` | strategy_B | $\text{BLOCKED} \oplus \text{PASS} = \text{PASS}$; $F$-floor isolation |
-| `cooper_pair >> tensor(TI_surface, λ=0.3)` | PASS · $\Ω_z$ · $\Phi_{\text{ctyogh}}$ | Proximity effect: topological protection and criticality propagate |
+| `cooper_pair >> tensor(TI_surface, λ=0.3)` | PASS · $\𐑭$ · $\Phi_{\text{ctyogh}}$ | Proximity effect: topological protection and criticality propagate |
 
 ---
 
@@ -677,7 +677,7 @@ Decomposition operations **invert or factor** the algebraic operations. They are
 **cofactor** — Cooper pair reverse engineering:
 ```
 cofactor(cooper_pair, conducting_electron) → inferred partner B:
-  K: BOTTLENECK   → B must be Ç^@ (condensate timescale, not Fermi velocity)
+  K: BOTTLENECK   → B must be 𐑧 (condensate timescale, not Fermi velocity)
   G: CONTRIBUTOR  → B must be Γ_meso (coherence length ξ ~ 100–1000 nm)
   T: PASSTHROUGH  → B must have T_⋈ (pairing loop)
   Φ: CONTRIBUTOR  → B carries Φ_c (superfluid phase transition)
@@ -689,7 +689,7 @@ The cofactor reconstructs the phonon-dressed retarded partner from the observabl
 ```
 principal_decomp(GNF-2) → 4 join-irreducible atoms:
   [1] atom[F=F_ℇ]     — fidelity contribution    (most constraining)
-  [2] atom[K=Ç^W]   — kinetic contribution
+  [2] atom[K=𐑤]   — kinetic contribution
   [3] atom[G=G_ג]     — mesoscale contribution
   [4] skeleton(GNF-2) — categorical primitives (Φ_c, Þ_branched, ...)
 ```
@@ -701,7 +701,7 @@ Order = hardest to engineer first. If improving GNF-2, start at [3] ($G$ escalat
 #  what does GNF-2 uniquely contribute toward the cooper_pair target?"
 proj = project(cooper_pair, ["Phi", "Omega"])          # π_{Φ,Ω}(cooper_pair)
 crel = complement_rel(gnf2, context=proj, target=cooper_pair)
-# → crel: Ç^@ + Γ_meso + Þ_branched (the part context does NOT cover)
+# → crel: 𐑧 + Γ_meso + Þ_branched (the part context does NOT cover)
 ```
 The Heyting implication $\text{GNF-2} \Rightarrow \text{cooper\_pair}$ relative to $\neg\text{context}$: the maximal sub-imscription of GNF-2 that (a) has no overlap with the $\Phi/\Omega$ projection and (b) together with it covers the target. This is **design as constructive proof**.
 
@@ -734,4 +734,4 @@ The $d(\text{AtHv1\_primed}, \text{PsHv1\_constitutive}) = 0.000$ result — the
 
 5. **Phase boundary semantics**: the Ward dendrogram gives an empirical boundary at $d \approx 9.52$ for the current 8-imscription quantum catalog. Does this threshold generalise? Adding classical imscriptions will compress the inter-cluster gap. The open question is whether a **universal** threshold exists in the Kleisli metric, or whether boundaries are always catalog-relative. Phase 3e should test this by mixing the quantum catalog with the full classical molecular catalog and measuring whether the topological/particle split persists at the same threshold.
 
-6. **`.syn` assert grammar extension**: predicates for $\Omega$ and quantum grammar are not yet in the dispatch table. Needed additions: `topo_index == Ω_5`, `grammar == QUANTUM_AND`, `Ç^λ`, `factor8_triggered`. These enable design programs that assert topological protection before quantum tensor operations.
+6. **`.syn` assert grammar extension**: predicates for $\Omega$ and quantum grammar are not yet in the dispatch table. Needed additions: `topo_index == 𐑟`, `grammar == QUANTUM_AND`, `𐑺`, `factor8_triggered`. These enable design programs that assert topological protection before quantum tensor operations.

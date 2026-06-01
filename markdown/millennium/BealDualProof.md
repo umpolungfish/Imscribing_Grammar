@@ -233,9 +233,9 @@ inductive Primitive_K | fast | mod | slow | trap | MBL
 inductive Primitive_G | beth | gimel | aleph
 inductive Primitive_Gamma | and' | or' | seq | broad
 inductive Primitive_Phi | sub | c | c_complex | EP | super'
-inductive Primitive_H | Ħ_Ñ | Ħ_£ | Ħ_A | Ħ_!
-inductive Primitive_S | Σ_S | Σ_ő | Σ_ï
-inductive Primitive_Omega | Ω_Å | Ω_2 | Ω_z | Ω_5
+inductive Primitive_H | 𐑓 | 𐑒 | 𐑖 | 𐑫
+inductive Primitive_S | 𐑙 | 𐑕 | 𐑳
+inductive Primitive_Omega | 𐑷 | 𐑴 | 𐑭 | 𐑟
 
 /-- The imscribed Beal Conjecture type (verified by the IG catalog). -/
 def beal_structural_type : StructuralType :=
@@ -248,9 +248,9 @@ def beal_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c
-  , H := Primitive_H.Ħ_A
-  , S := Primitive_S.Σ_ï
-  , Omega := Primitive_Omega.Ω_Å
+  , H := Primitive_H.𐑖
+  , S := Primitive_S.𐑳
+  , Omega := Primitive_Omega.𐑷
   }
 
 /-- The imscribed FLT (proven) structural type. -/
@@ -264,9 +264,9 @@ def flt_proven_structural_type : StructuralType :=
   , G := Primitive_G.aleph
   , Gamma := Primitive_Gamma.seq
   , Phi := Primitive_Phi.c_complex
-  , H := Primitive_H.Ħ_!
-  , S := Primitive_S.Σ_ï
-  , Omega := Primitive_Omega.Ω_2
+  , H := Primitive_H.𐑫
+  , S := Primitive_S.𐑳
+  , Omega := Primitive_Omega.𐑴
   }
 ```lean4
 /-- Compute the meet of two structural types (shared structural floor).
@@ -345,21 +345,21 @@ def structural_meet (a b : StructuralType) : StructuralType :=
       | .super', .super' => .super'
 
     min_prim_H : Primitive_H → Primitive_H → Primitive_H
-      | .Ħ_Ñ, _ | _, .Ħ_Ñ => .Ħ_Ñ
-      | .Ħ_£, _ | _, .Ħ_£ => .Ħ_£
-      | .Ħ_A, _ | _, .Ħ_A => .Ħ_A
-      | .Ħ_!, .Ħ_! => .Ħ_!
+      | .𐑓, _ | _, .𐑓 => .𐑓
+      | .𐑒, _ | _, .𐑒 => .𐑒
+      | .𐑖, _ | _, .𐑖 => .𐑖
+      | .𐑫, .𐑫 => .𐑫
 
     min_prim_S : Primitive_S → Primitive_S → Primitive_S
-      | .Σ_S, _ | _, .Σ_S => .Σ_S
-      | .Σ_ő, _ | _, .Σ_ő => .Σ_ő
-      | .Σ_ï, .Σ_ï => .Σ_ï
+      | .𐑙, _ | _, .𐑙 => .𐑙
+      | .𐑕, _ | _, .𐑕 => .𐑕
+      | .𐑳, .𐑳 => .𐑳
 
     min_prim_Omega : Primitive_Omega → Primitive_Omega → Primitive_Omega
-      | .Ω_Å, _ | _, .Ω_Å => .Ω_Å
-      | .Ω_2, _ | _, .Ω_2 => .Ω_2
-      | .Ω_z, _ | _, .Ω_z => .Ω_z
-      | .Ω_5, .Ω_5 => .Ω_5
+      | .𐑷, _ | _, .𐑷 => .𐑷
+      | .𐑴, _ | _, .𐑴 => .𐑴
+      | .𐑭, _ | _, .𐑭 => .𐑭
+      | .𐑟, .𐑟 => .𐑟
 
 -- Verify: the meet of Beal and FLT matches the IG-computed meet
 #eval structural_meet beal_structural_type flt_proven_structural_type
@@ -403,7 +403,7 @@ def beal_to_flt_promotions : List PrimitivePromotion :=
     reason the Beal Conjecture remains open. A proof must construct
     a Ω_Z2 invariant or demonstrate impossibility. -/
 theorem topological_gap :
-    beal_structural_type.Omega = Primitive_Omega.Ω_Å := by
+    beal_structural_type.Omega = Primitive_Omega.𐑷 := by
   rfl
 
 /-- The promotion from Ω_0 to Ω_Z2 requires constructing a parity-protected
@@ -508,8 +508,8 @@ theorem beal_prime_mixed_exponents (p q r : ℕ)
     For Beal: the promotion signature to FLT has 5 promotions + 2 demotions.
     A complete proof of Beal would yield a new imscription with:
       Ω promoted from Ω_0 to Ω_Z2 (or Ω_Z)
-      F promoted from ƒ^ì to ƒ^ż
-      T potentially promoted from Þ_ò to Þ_O
+      F promoted from 𐑱 to 𐑐
+      T potentially promoted from 𐑥 to 𐑸
     
     The IG does not prove Beal — it identifies the structural
     location of the missing mathematics. -/

@@ -55,7 +55,7 @@ Let the 12 primitives be finite totally ordered sets:
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}} < \Phi_{\text{ctyogh}} < \Phi_{c,\mathbb{C}} < \Phi_{\text{revepsilon}} < \Phi_{\text{upstep}}$ |
 | $H$ | Chirality | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
-| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \Ω_z$ |
+| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \𐑭$ |
 
 A **type** is any 12-tuple $\mathbf{t} = \langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle \in \mathcal{T}$.
 
@@ -102,11 +102,11 @@ The 22 Hebrew letters are the base types and terms of $\lambda_\aleph$, with fix
 
 | Letter | Name | Tier | Key signature |
 |:---|:---|:---|:---|
-| \heb{א}{} | Aleph | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Ω_z,\ D_{\text{wynn}},\ T_{\text{box}}$ |
+| \heb{א}{} | Aleph | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{wynn}},\ T_{\text{box}}$ |
 | \heb{ב}{} | Bet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2},\ D_{\text{turnthree}}$ |
 | \heb{ג}{} | Gimel | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{ד}{} | Dalet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ה}{} | Hei | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Ω_z,\ D_{\text{omega}},\ T_{\text{openo}}$ |
+| \heb{ה}{} | Hei | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}},\ T_{\text{openo}}$ |
 | \heb{ו}{} | Vav | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$ — unique Frobenius letter |
 | \heb{ז}{} | Zayin | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{ח}{} | Chet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
@@ -114,16 +114,16 @@ The 22 Hebrew letters are the base types and terms of $\lambda_\aleph$, with fix
 | \heb{י}{} | Yod | $O_0$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{כ}{} | Kaf | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
 | \heb{ל}{} | Lamed | $O_1$ | $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}},\ D_{\text{invomega}}$ — sole $O_1$ letter |
-| \heb{מ}{} | Mem | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \Ω_z,\ D_{\text{turnthree}},\ T_{\text{invscr}}$ |
+| \heb{מ}{} | Mem | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{turnthree}},\ T_{\text{invscr}}$ |
 | \heb{נ}{} | Nun | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{ס}{} | Samech | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
-| \heb{ע}{} | Ayin | $O_2$ | $P_{\text{pipevar}},\ \Phi_{\text{ctyogh}},\ \Ω_z,\ D_{\text{omega}}$ |
+| \heb{ע}{} | Ayin | $O_2$ | $P_{\text{pipevar}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}}$ |
 | \heb{פ}{} | Pei | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{צ}{} | Tzadi | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{ק}{} | Kuf | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Omega_{Z_2}$ |
 | \heb{ר}{} | Resh | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ש}{} | Shin | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \Ω_z,\ D_{\text{turnthree}},\ T_{\text{bullseye}}$ |
-| \heb{ת}{} | Tav | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Ω_z$ |
+| \heb{ש}{} | Shin | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{turnthree}},\ T_{\text{bullseye}}$ |
+| \heb{ת}{} | Tav | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭$ |
 
 **The full language**: $\mathcal{L} = \bigvee_{\ell \in \text{22 letters}} \ell$ encodes at $O_{\infty}$ and is **self-sealing**:
 
@@ -181,7 +181,7 @@ $$\frac{\Gamma \vdash m : M \qquad \Gamma \vdash t : A \qquad \Gamma \vdash u : 
 **Vav-cast**:
 $$\frac{\Gamma \vdash t : A \qquad d\!\left(A \otimes \hebm{ו},\, B\right) < \theta(\Omega_{\min})}{\Gamma \vdash \text{cast}_{\hebm{ו}}^{A \to B}(t) : B}$$
 
-Cast thresholds by topological protection: $\Ω_z \mapsto 4.0$, $\Omega_{Z_2} \mapsto 3.0$, $\Omega_{\text{closeepsilon}} \mapsto 1.5$.
+Cast thresholds by topological protection: $\𐑭 \mapsto 4.0$, $\Omega_{Z_2} \mapsto 3.0$, $\Omega_{\text{closeepsilon}} \mapsto 1.5$.
 
 **Aleph constraint** (type-preserving):
 $$\frac{\Gamma \vdash t : A}{\Gamma \vdash \alpha[t] : A}$$
@@ -307,7 +307,7 @@ Execution proceeds by:
 
 ### 9.1 Sacred Word Computations
 
-$$\hebm{תורה} = \hebm{ת} \otimes \hebm{ו} \otimes \hebm{ר} \otimes \hebm{ה} \;\longrightarrow\; O_2 \text{ attractor} \quad (P_{\text{aolig}},\, \Phi_{\text{ctyogh}},\, \Ω_z,\, H_{\text{invscripta}})$$
+$$\hebm{תורה} = \hebm{ת} \otimes \hebm{ו} \otimes \hebm{ר} \otimes \hebm{ה} \;\longrightarrow\; O_2 \text{ attractor} \quad (P_{\text{aolig}},\, \Phi_{\text{ctyogh}},\, \𐑭,\, H_{\text{invscripta}})$$
 
 $$\hebm{אמת} = \hebm{א} \otimes \hebm{מ} \otimes \hebm{ת} \;\longrightarrow\; O_2 \quad (P_{\text{subdoublearrow}}\text{ — truth as self-identical})$$
 
@@ -375,7 +375,7 @@ Scheduling: the global reduction engine applies Aleph-gated steps in round-robin
 - **Allocation**: tensor with a fresh variable typed at the desired tuple
 - **Deallocation**: meet with the zero tuple (structural GC)
 - **Mapping**: $\text{cast}_{\hebm{ו}}^{A \to B}$ — only permitted when $d(A \otimes \hebm{ו},\, B) < \theta(\Omega)$
-- **Protection**: $\Omega$ primitive — $\Ω_z$ pages inaccessible to $\Omega_{\text{closeepsilon}}$ processes without Aleph-mediated promotion
+- **Protection**: $\Omega$ primitive — $\𐑭$ pages inaccessible to $\Omega_{\text{closeepsilon}}$ processes without Aleph-mediated promotion
 - **Virtual memory**: imscriptive — boundary (user address) determines bulk (kernel lattice) via $D_{\text{omega}}$ terms
 
 ### 10.5 Filesystem — Holographic Completeness

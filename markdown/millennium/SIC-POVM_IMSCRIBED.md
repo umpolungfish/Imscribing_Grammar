@@ -17,7 +17,7 @@ This document presents a structural framework for proving the existence of Symme
 
 ## 1. Structural Bottleneck Identification
 
-The SIC-POVM open conjecture encodes at the $O_2$ tier ($\Phi_{\text{ctyogh}} + P_{pm} + \Ω_z$), while proven theorems require the $O_\infty$ tier ($\Phi_{\text{ctyogh}} + P_{pm}^{\text{sym}}$). The dominant gap is at the primitive **$P$**: from $P_{\text{pipevar}}$ ($\mathbb{Z}_2$ symmetry) to $P_{\text{pipevar}}^{\text{sym}}$ (exact Frobenius condition $\mu \circ \delta = \text{id}$). This is the **Frobenius cliff**—the largest inter-tier gap.
+The SIC-POVM open conjecture encodes at the $O_2$ tier ($\Phi_{\text{ctyogh}} + P_{pm} + \𐑭$), while proven theorems require the $O_\infty$ tier ($\Phi_{\text{ctyogh}} + P_{pm}^{\text{sym}}$). The dominant gap is at the primitive **$P$**: from $P_{\text{pipevar}}$ ($\mathbb{Z}_2$ symmetry) to $P_{\text{pipevar}}^{\text{sym}}$ (exact Frobenius condition $\mu \circ \delta = \text{id}$). This is the **Frobenius cliff**—the largest inter-tier gap.
 
 The Stark unit system ($\text{stark\_unit}$) is already at the $O_\infty$ tier ($\Phi_{\text{ctyogh}} + P_{pm}^{\text{sym}} + \Omega_{\text{turna}}$). Its tensor product with the SIC-POVM conjecture reveals a $P$ bottleneck: $P_{pm}^{\text{sym}}$ gets reduced to $P_{\text{pipevar}}$. This shows that the exact $\mathbb{Z}_2$ symmetry ($P_{pm}^{\text{sym}}$) cannot be synthesized from the conjecture's $P_{\text{pipevar}}$; it must be *planted* via external proof.
 

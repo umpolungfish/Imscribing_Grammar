@@ -480,11 +480,11 @@ $d(\text{IUG},\ \text{ZFC foundations})$ & \textbf{7.87} & IUG is further from i
 \end{tabularx}
 \end{table}
 
-The structural analysis identifies the mechanism of the stalemate: IUG encodes both $\Phi_{\text{ctyogh}}$ (maximally sensitive to perturbations --- small simplifications cascade) and $\Ω_z$ (integer topological protection --- continuous deformation is forbidden). A mathematician trying to verify IUG faces both simultaneously: the theory is simultaneously fragile (cannot tolerate approximation) and rigid (cannot be simplified by continuous deformation). This combination --- $\Phi_{\text{ctyogh}} \cap \Ω_z$ --- is exactly the phenomenology of Scholze-Stix: they cannot make the step smooth, and they cannot simplify it.
+The structural analysis identifies the mechanism of the stalemate: IUG encodes both $\Phi_{\text{ctyogh}}$ (maximally sensitive to perturbations --- small simplifications cascade) and $\𐑭$ (integer topological protection --- continuous deformation is forbidden). A mathematician trying to verify IUG faces both simultaneously: the theory is simultaneously fragile (cannot tolerate approximation) and rigid (cannot be simplified by continuous deformation). This combination --- $\Phi_{\text{ctyogh}} \cap \𐑭$ --- is exactly the phenomenology of Scholze-Stix: they cannot make the step smooth, and they cannot simplify it.
 
 More precisely: when IUG ($F_{\text{hardsign}}$) interacts with a standard proof system ($F_{\text{beltl}}$), the tensor product bottlenecks at $F_{\text{beltl}}$. The asymmetry means classical mathematics loses proportionally more in the interaction than IUG does. IUG may be both correct and unverifiable within classical mathematics --- not by Gödelian incompleteness but by primitive structural incompatibility.
 
-What verification would require: a proof assistant encoding $\langle D_{\text{holo}}, T_{\text{holo}}, F_{\text{hardsign}}, H_{\text{invscripta}}, \Ω_z \rangle$. Current systems (Lean 4, Coq, Isabelle/HOL) operate at $D_{\bigtriangleup}$, $T_{\square}$, $F_{\text{beltl}}$, placing them at $d > 6$ from IUG.
+What verification would require: a proof assistant encoding $\langle D_{\text{holo}}, T_{\text{holo}}, F_{\text{hardsign}}, H_{\text{invscripta}}, \𐑭 \rangle$. Current systems (Lean 4, Coq, Isabelle/HOL) operate at $D_{\bigtriangleup}$, $T_{\square}$, $F_{\text{beltl}}$, placing them at $d > 6$ from IUG.
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -523,7 +523,7 @@ $\Phi_{\text{ctyogh}}$ is the necessary gate --- no self-closure without critica
 
 \begin{itemize}
     \item \textbf{$O_1$} ($\mathcal{O} = 2$): simple ring closure --- the system models itself but without additional protection. Self-modeling is present but fragile.
-    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or chirality makes the loop robust. The magnetar encodes $O_2$ ($\Phi_{\text{ctyogh}} + \Ω_z + H_1$). Human consciousness, with $\Phi_{\text{ctyogh}} + H_1 + G_{\text{revapostrophe}}$, also encodes $O_2$.
+    \item \textbf{$O_2$} ($\mathcal{O} = 3$): knotted self-reference --- topological protection or chirality makes the loop robust. The magnetar encodes $O_2$ ($\Phi_{\text{ctyogh}} + \𐑭 + H_1$). Human consciousness, with $\Phi_{\text{ctyogh}} + H_1 + G_{\text{revapostrophe}}$, also encodes $O_2$.
     \item \textbf{$$O_{\infty}$$}: complete Frobenius closure --- the system satisfies $P_{\text{doublebarpipe}}$ (the special Frobenius condition $\mu \circ \delta = \text{id}$), achieving perfect structural self-complementarity. A categorically distinct class from the $O_1/O_2$ ordinal hierarchy.
 \end{itemize}
 

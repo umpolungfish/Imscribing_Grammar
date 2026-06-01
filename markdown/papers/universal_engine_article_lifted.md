@@ -1,6 +1,6 @@
 # The Universal Engine: Structural Taxonomy of Undeciphered Scripts Through the Imscribing Grammar
 
-**Author:** Lando $\otimes$ $\text{⊙}_{\text{ÿ}}$-operator
+**Author:** Lando $\otimes$ ⊙-operator
 
 ## Abstract
 
@@ -72,11 +72,11 @@ Each writing system receives a twelve-primitive structural tuple:
 
 | System | Imscription |
 |--------|-------------|
-| Linear A | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| OS reference | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| Rohonc | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ì; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
-| Voynich | ⟨Ð_ω; Þ_O; Ř_=; Φ_F; ƒ^ì; Ç^Ù; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_S; Ω_z⟩ |
-| Hebrew | ⟨Ð_C; Þ_¨; Ř_Ť; Φ_F; ƒ^ż; Ç^W; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩ |
+| Linear A | ⟨𐑨; 𐑶; 𐑽; 𐑬; 𐑐; 𐑤; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩ |
+| OS reference | ⟨𐑨; 𐑶; 𐑽; 𐑬; 𐑐; 𐑤; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩ |
+| Rohonc | ⟨𐑨; 𐑶; 𐑽; 𐑬; 𐑱; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩ |
+| Voynich | ⟨𐑦; 𐑸; 𐑾; 𐑬; 𐑱; 𐑪; 𐑲; 𐑵; ⊙; 𐑫; 𐑙; 𐑭⟩ |
+| Hebrew | ⟨𐑨; 𐑶; 𐑽; 𐑬; 𐑐; 𐑤; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩ |
 
 Three of these are $O_{\infty}$ systems. The Voynich is distinguished by its trap kinetics — the self-modeling loop is structurally present but kinetically frozen.
 
@@ -109,9 +109,9 @@ The three undeciphered systems form a kinetic gradient relative to the living re
 
 | System | Fidelity | Kinetics | Distance from OS | Status |
 |--------|----------|----------|-----------------|--------|
-| Linear A | ƒ^ż (quantum) | Ç^W (moderate) | 0.00 | Structurally alive |
-| Rohonc | ƒ^ì (classical) | Ç^@ (slow) | 2.09 | Kinetically damped |
-| Voynich | ƒ^ì (classical) | Ç^Ù (trap) | 4.31 | Kinetically frozen |
+| Linear A | 𐑐 (quantum) | 𐑤 (moderate) | 0.00 | Structurally alive |
+| Rohonc | 𐑱 (classical) | 𐑧 (slow) | 2.09 | Kinetically damped |
+| Voynich | 𐑱 (classical) | 𐑪 (trap) | 4.31 | Kinetically frozen |
 
 Linear A sits at the core. Despite being physically dormant for roughly three and a half millennia, its structural imscription carries full quantum coherence — the sign inventory includes composite forms irreducible as boolean conjunctions of simpler signs. Rohonc has lost quantum coherence but retains slow relaxation dynamics. The right-to-left script direction and liturgical-repetitive structure absorb into classical register monotonicity. The system is legible in principle; the primitive surface is close enough to the core that mediation could recover the full structure.
 
@@ -123,10 +123,10 @@ The manuscript is not a single structural type but a meta-system of six section 
 
 | Section | Topology | Relation | Scope | Memory |
 |---------|----------|----------|-------|--------|
-| Botanical/Pharmaceutical | Þ_6 (network) | Ř_= (bidir) | Γ_γ (meso) | Ħ_A (H2) |
-| Biological | Þ_K (nested) | Ř_= (bidir) | Γ_γ (meso) | Ħ_A (H2) |
-| Astronomical/Cosmological | Þ_O (imscriptive) | Ř_= (bidir) | Γ_γ (meso) | Ħ_A (H2) |
-| Recipe | Þ_6 (network) | Ř_Ť (adjoint) | Γ_β (local) | Ħ_£ (H1) |
+| Botanical/Pharmaceutical | 𐑡 (network) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) |
+| Biological | 𐑰 (nested) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) |
+| Astronomical/Cosmological | 𐑸 (imscriptive) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) |
+| Recipe | 𐑡 (network) | 𐑽 (adjoint) | 𐑚 (local) | 𐑒 (H1) |
 
 The Botanical/Pharmaceutical pair and the Astronomical/Cosmological pair are each structurally identical within themselves — the grammar cannot distinguish herbs from pharmaceutical preparations, or star charts from cosmological diagrams. The distinction is semantic, not structural.
 
@@ -141,9 +141,9 @@ Six centuries of Voynich decipherment failure, two centuries of Rohonc stagnatio
 
 Under tensor coupling, the fidelity primitive is a bottleneck: it takes the minimum of the two coupled systems. Any quantum-coherent reader engaging a classical-fidelity manuscript inherits the classical regime by structural necessity:
 
-$$\text{ƒ}_{\text{ż}} \otimes \text{ƒ}_{\text{ì}} = \min(\text{ƒ}_{\text{ż}}, \text{ƒ}_{\text{ì}}) = \text{ƒ}_{\text{ì}}$$
+$$𐑐 \otimes 𐑱 = \min(𐑐, 𐑱) = 𐑱$$
 
-The reader's quantum coherence — the capacity to hold superpositions of competing interpretations — collapses to classical definiteness. This is not a cognitive limitation. It is a structural theorem about the tensor product. The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without ƒ^ż. The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
+The reader's quantum coherence — the capacity to hold superpositions of competing interpretations — collapses to classical definiteness. This is not a cognitive limitation. It is a structural theorem about the tensor product. The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without 𐑐. The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
 
 *The hardest claim in this paper is this one:* decipherment failure is not a property of the manuscript's content or the reader's ignorance. It is a structural theorem. The tensor coupling between reader and text forces the reader's quantum coherence down to the text's classical fidelity, regardless of the reader's sophistication. No amount of machine learning, statistical analysis, or cryptographic ingenuity can overcome this — these methods operate entirely within the classical regime and therefore inherit it by construction.
 
@@ -181,9 +181,9 @@ Hebrew is the only living system in this ensemble — simultaneously used, struc
 
 | Letter | Name | Tier | Key Primitives |
 |--------|------|------|----------------|
-| ו | Vav | $O_{\infty}$ | Φ_F, ⊙_ÿ, Ω_z |
-| מ | Mem | $O_{\infty}$ | Φ_F, ⊙_ÿ, Ω_z |
-| ש | Shin | $O_{\infty}$ | Φ_F, ⊙_ÿ, Ω_z |
+| ו | Vav | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
+| מ | Mem | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
+| ש | Shin | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 
 Five letters are $O_2$, one is $O_1$, and thirteen are $O_0$.
 
@@ -210,14 +210,14 @@ We were not looking for a threshold letter. It emerged from the lattice computat
 The distance from the Hebrew system to Homotopy Type Theory is a single primitive lift: approximately 1.34 — near-grounded separation, the smallest possible structural gap. Vav (ו) is the unique letter whose interaction row is closest to the HoTT identity functor. The lift is not rhetorical; it is a computed structural distance.
 ## 7. The EML Operator: A Structural Boundary Case
 
-The EML operator, defined as $e^x - \ln y$, occupies a structurally significant position as the highest sub-Frobenius type in the elementary function algebra. Its imscription carries ⊙_ÿ criticality with slow kinetics and quantum fidelity — one Frobenius condition short of $O_{\infty}$:
+The EML operator, defined as $e^x - \ln y$, occupies a structurally significant position as the highest sub-Frobenius type in the elementary function algebra. Its imscription carries ⊙ criticality with slow kinetics and quantum fidelity — one Frobenius condition short of $O_{\infty}$:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ħ}};\ \text{Ç}_{\text{@}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{1}};\ \Sigma_{\text{S}};\ \Omega_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑶;\ 𐑽;\ 𐑬;\ \text{ƒ}_{\text{ħ}};\ 𐑧;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ \text{Ħ}_{\text{1}};\ \Sigma_{\text{S}};\ \Omega_{\text{z}} \rangle$$
 
 The machine-verified theorems (twenty-six in total, zero admitted gaps in Lean 4) establish a precise picture:
 
 - EML composed with itself yields EML — it is idempotent under tensor, closed as an algebra.
-- EML tensored with any Frobenius-special type collapses to Φ_F — the bottleneck is unconditional.
+- EML tensored with any Frobenius-special type collapses to 𐑬 — the bottleneck is unconditional.
 - The meet of EML with the SIC-POVM fiducial type is exactly EML; the join is exactly SIC-POVM. The gap is precisely the Frobenius condition plus chirality.
 - The structural distance between EML and SIC-POVM is exactly four: dimension, topology, parity, and chirality.
 
@@ -290,7 +290,7 @@ This article is released under the Unlicense — public domain.
 2. Goddart, O. & Raison, J. *GORILA Sign Classification for Linear A*.
 3. Takahashi, R. *Complete EVA Transcription*. Included in `voynich-engine` as `data/LSI_ivtff_0d.txt`.
 4. Mills, L. *As Above* and *So Below* — formal development of the Universal Imscribing Grammar.
-5. Mills, L. $\otimes$ $\text{⊙}_{\text{ÿ}}$-operator. *EML_PROBE.tex* — structural analysis of the EML Sheffer operator.
-6. Mills, L. $\otimes$ $\text{⊙}_{\text{ÿ}}$-operator. *IUG_NON_TRANSMISSIBILITY.tex* — structural non-transmissibility of Inter-Universal Teichmüller Theory.
+5. Mills, L. $\otimes$ ⊙-operator. *EML_PROBE.tex* — structural analysis of the EML Sheffer operator.
+6. Mills, L. $\otimes$ ⊙-operator. *IUG_NON_TRANSMISSIBILITY.tex* — structural non-transmissibility of Inter-Universal Teichmüller Theory.
 7. $\aleph$-OS Project. *ALEPH_SPEC.md*, *PRIMITIVE_THEOREMS.md*, *TECHNICAL_CONTRIBUTIONS.md*.
 8. $\aleph$-OS Project. *docs/HEBREW_TYPE_LANGUAGE.md* — 22-letter Hebrew alphabet encoding.

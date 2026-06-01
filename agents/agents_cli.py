@@ -18,18 +18,115 @@ Agents:
     axiom_generator       - Axiom-guided generation
     autonomous_imscription    - Autonomous imscription discovery
 
+Prefix syntax for --model (inherited from true_agentic_agent harness):
+    ollama:llama3.2        → Ollama at localhost
+    lm-studio:phi-4        → LM Studio at localhost:1234/v1
+    vllm:mistral           → vLLM at localhost:8000/v1
+    local:my-model         → LOCAL_BASE_URL env var
+    deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
+    qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
+    groq:model-id          → Groq API (GROQ_API_KEY)
+
 Example:
     python agents/agents_cli.py true_agentic_agent --task "Analyze Riemann zeta"
-    python agents/agents_cli.py research_agent --file task.txt
+    python agents/agents_cli.py research_agent --file task.txt --model ollama:llama3.2
 """
 import argparse
+import asyncio
 import json
+import os
 import sys
 from pathlib import Path
+from typing import Dict, Tuple
 
 # Add parent to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# Model resolution — imported from true_agentic_agent harness
+# ═══════════════════════════════════════════════════════════════════════════════
+
+MODEL_ALIASES: Dict[str, str] = {
+    "claude-opus-4":    "anthropic/claude-opus-4",
+    "claude-sonnet-4":  "anthropic/claude-sonnet-4-5",
+    "claude-haiku-4":   "anthropic/claude-haiku-4-5",
+    "grok-4":           "x-ai/grok-4.3",
+    "grok-4.3":         "x-ai/grok-4.3",
+    "gpt-4o":           "openai/gpt-4o",
+    "o3":               "openai/o3",
+    "gemini-2-5-pro":   "google/gemini-2.5-pro-preview-05-06",
+    "deepseek-r1":      "deepseek/deepseek-r1",
+    "grammaformer":     "local:grammaformer",
+}
+
+LOCAL_BASE_URLS: Dict[str, str] = {
+    "ollama":    os.environ.get("OLLAMA_HOST", "http://localhost:11434") + "/v1",
+    "lm-studio": "http://localhost:1234/v1",
+    "lmstudio":  "http://localhost:1234/v1",
+    "vllm":      "http://localhost:8000/v1",
+    "local":     os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
+}
+
+REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
+    "deepseek": ("https://api.deepseek.com/v1",                          "DEEPSEEK_API_KEY"),
+    "qwen":     ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
+    "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
+}
+
+
+def resolve_model(model_str: str) -> Tuple[str, str, str]:
+    """Return (model_id, base_url, api_key).
+
+    Prefix syntax:
+        ollama:llama3.2        → Ollama at localhost:11434/v1
+        lm-studio:phi-4        → LM Studio at localhost:1234/v1
+        lmstudio:phi-4         → same
+        vllm:mistral           → vLLM at localhost:8000/v1
+        local:my-model         → LOCAL_BASE_URL env var (default: ollama)
+        deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
+        qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
+    No prefix → check MODEL_ALIASES, then use OpenRouter.
+    """
+    if ":" in model_str:
+        prefix, model_id = model_str.split(":", 1)
+        prefix_lower = prefix.lower()
+        if prefix_lower in LOCAL_BASE_URLS:
+            base = LOCAL_BASE_URLS[prefix_lower]
+            key = os.environ.get("LOCAL_API_KEY", "local")
+            if prefix_lower == "local" and model_id == "grammaformer":
+                return "grammaformer", "", ""
+            return model_id, base, key
+        if prefix_lower in REMOTE_API_PROVIDERS:
+            base, key_env = REMOTE_API_PROVIDERS[prefix_lower]
+            key = os.environ.get(key_env, "")
+            if not key:
+                sys.exit(f"{key_env} not set (required for provider '{prefix_lower}').")
+            return model_id, base, key
+
+    resolved = MODEL_ALIASES.get(model_str, model_str)
+    return resolved, "", ""
+
+
+def resolve_model_id(alias: str) -> str:
+    model_id, _, _ = resolve_model(alias)
+    return model_id
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Retry config — exponential backoff for LLM calls (from harness §RETRY)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+RETRY_CONFIG = {
+    "rate_limit": 5,     # 429
+    "server_error": 3,   # 5xx
+    "timeout": 2,        # connection timeout
+    "other": 3,          # other transient errors
+}
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Agent runner functions
+# ═══════════════════════════════════════════════════════════════════════════════
 
 def build_parser():
     parser = argparse.ArgumentParser(
@@ -65,7 +162,7 @@ def build_parser():
     parser.add_argument(
         "--model", "-m",
         default="grok-4",
-        help="Model to use (default: grok-4)"
+        help="Model to use (default: grok-4). Supports prefix syntax: ollama:, lm-studio:, local:, deepseek:, qwen:, groq:"
     )
     parser.add_argument(
         "--max-windings", "-w",
@@ -117,11 +214,16 @@ def run_true_agentic_agent(task: str, args):
     """Run TrueAgenticAgent."""
     from agents import TrueAgenticAgent
     
+    # Resolve model with prefix syntax
+    model_id, base_url, api_key = resolve_model(args.model)
+    
     agent = TrueAgenticAgent(
         model=args.model,
         max_windings=args.max_windings,
         max_think_tokens=args.max_tokens,
         verbose=not args.quiet,
+        base_url=base_url,
+        api_key=api_key,
     )
     result = agent.run_sync(task)
     
@@ -146,10 +248,16 @@ def run_research_agent(task: str, args):
     """Run ResearchAgent."""
     from agents import ResearchAgent
     
+    model_id, base_url, api_key = resolve_model(args.model)
+    
     config = {
-        "model": args.model,
+        "model": model_id,
         "max_tokens": args.max_tokens,
     }
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -170,10 +278,16 @@ def run_analysis_agent(task: str, args):
     """Run AnalysisAgent."""
     from agents import AnalysisAgent
     
+    model_id, base_url, api_key = resolve_model(args.model)
+    
     config = {
-        "model": args.model,
+        "model": model_id,
         "max_tokens": args.max_tokens,
     }
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -198,11 +312,17 @@ def run_aider_code_agent(task: str, args):
         print("Error: AiderCodeAgent requires 'aider-chat'. Install with: pip install aider-chat", file=sys.stderr)
         sys.exit(1)
     
+    model_id, base_url, api_key = resolve_model(args.model)
+    
     config = {
-        "model": args.model,
+        "model": model_id,
         "auto_commits": True,
         "show_diffs": True,
     }
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -224,7 +344,13 @@ def run_perturbation_agent(task: str, args):
     from agents import PerturbationDesignAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -256,7 +382,13 @@ def run_ensemble_agent(task: str, args):
     from agents import EnsembleDesignAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -279,7 +411,13 @@ def run_retrodesign_agent(task: str, args):
     from agents import RetrodesignAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -302,7 +440,13 @@ def run_criticality_agent(task: str, args):
     from agents import CriticalityHuntingAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -324,7 +468,13 @@ def run_imscribe_generator_agent(task: str, args):
     from agents import ImscriptionGeneratorAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -332,7 +482,7 @@ def run_imscribe_generator_agent(task: str, args):
     result = agent.run_sync(task)
     
     print("\n" + "="*72)
-    print("SYTHON GENERATION RESULTS:")
+    print("IMSCRIPTION GENERATION RESULTS:")
     print(result.imscriptions)
     
     return {
@@ -346,7 +496,13 @@ def run_axiom_generator_agent(task: str, args):
     from agents import AxiomGuidedGeneratorAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -368,7 +524,13 @@ def run_autonomous_imscribe_agent(task: str, args):
     from agents import AutonomousImscriptionDiscoveryAgent
     from imscrbgrmr.provider_config import build_agent_config
     
-    config = build_agent_config(provider="anthropic", model=args.model)
+    model_id, base_url, api_key = resolve_model(args.model)
+    
+    config = build_agent_config(provider="anthropic", model=model_id)
+    if base_url:
+        config["base_url"] = base_url
+    if api_key and api_key != "local":
+        config["api_key"] = api_key
     if args.config:
         config.update(load_config(args.config))
     
@@ -376,7 +538,7 @@ def run_autonomous_imscribe_agent(task: str, args):
     result = agent.run_sync(task)
     
     print("\n" + "="*72)
-    print("AUTONOMOUS imscription RESULTS:")
+    print("AUTONOMOUS IMSCRIPTION RESULTS:")
     print(result)
     
     return {

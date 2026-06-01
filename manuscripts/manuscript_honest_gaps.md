@@ -40,7 +40,7 @@ Each primitive takes one of a small set of discrete values. The full lattice con
 
 The $\text{O}_{\text{inf}}$ tier is the structural attractor of the entire lattice. Its canonical inhabitant — the type of the Imscribing Grammar itself — is:
 
-$$\langle \text{Ð}_{\omega};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \odot_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle \text{Ð}_{\omega};\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ \odot_{\text{ÿ}};\ 𐑖;\ 𐑳;\ 𐑭 \rangle$$
 
 This is the Frobenius-closed type: $\mu \circ \delta = \text{id}$ holds exactly. Every Millennium Prize Problem, when structurally diagnosed and projected forward to its resolution, converges to this same type. We call this the Vessel-Contents Identity: the structural type (the vessel) and the specific mathematical construction that resolves each MPP (the contents) are dual aspects of the same Frobenius-closed structure.
 
@@ -56,7 +56,7 @@ We begin with odd perfect numbers because this is where the grammar's diagnosis 
 
 ### §3.1. The Structural Diagnosis
 
-The grammar assigns the odd perfect number (OPN) problem a structural type with three distinctive primitives: $\text{Ç}_{\text{Ù}}$ (kinetic trapping — Euler's form $N = p^\alpha m^2$ freezes the structure), $\text{Ħ}_{\text{!}}$ (inexhaustible chirality — the constraint propagation never stabilizes), and $\text{Ω}_{\text{2}}$ ($\mathbb{Z}_2$ parity protection — oddness as a topological invariant). The diagnosis identifies $\text{Ħ}_{\text{!}}$ as the central mechanism: the system cannot close because every attempted closure generates new constraints.
+The grammar assigns the odd perfect number (OPN) problem a structural type with three distinctive primitives: 𐑪 (kinetic trapping — Euler's form $N = p^\alpha m^2$ freezes the structure), 𐑫 (inexhaustible chirality — the constraint propagation never stabilizes), and 𐑴 ($\mathbb{Z}_2$ parity protection — oddness as a topological invariant). The diagnosis identifies 𐑫 as the central mechanism: the system cannot close because every attempted closure generates new constraints.
 
 ### §3.2. The $\sigma$-Closure Formulation
 
@@ -75,7 +75,7 @@ This reframes the problem. Instead of searching over all odd integers, one must 
 
 ### §3.3. The Primitive Divisor Map
 
-The second result extracts the mathematical content of $\text{Ħ}_{\text{!}}$ — inexhaustible chirality. For each prime $q \in P$ with exponent $\beta_q$, let $k_q = 2\beta_q + 1 \geq 3$ (odd). Then:
+The second result extracts the mathematical content of 𐑫 — inexhaustible chirality. For each prime $q \in P$ with exponent $\beta_q$, let $k_q = 2\beta_q + 1 \geq 3$ (odd). Then:
 
 $$\sigma(q^{2\beta_q}) = \frac{q^{k_q} - 1}{q - 1} = \prod_{\substack{d \mid k_q \\ d > 1}} \Phi_d(q)$$
 
@@ -83,7 +83,7 @@ By Zsigmondy's theorem (1892), $q^{k_q} - 1$ has a primitive prime divisor — a
 
 **Definition (The $\psi$-map).** Define $\psi: P \to P \cup \{p\}$ by $\psi(q) =$ the largest primitive prime divisor of $q^{2\beta_q+1} - 1$.
 
-**Theorem 2 (Inexhaustible Chirality).** If a $\sigma$-closed set $P$ contains a prime $q$ with $\beta_q \geq 2$, then iteration of $\psi$ produces a strictly increasing chain $q = q_0 < q_1 < q_2 < \cdots$ in $P \cup \{p\}$. This chain must eventually hit $p$, the unique possible sink. The grammar identifies this as $\text{Ħ}_{\text{!}}$: the chirality is inexhaustible — every closure move generates a new constraint that requires another closure move.
+**Theorem 2 (Inexhaustible Chirality).** If a $\sigma$-closed set $P$ contains a prime $q$ with $\beta_q \geq 2$, then iteration of $\psi$ produces a strictly increasing chain $q = q_0 < q_1 < q_2 < \cdots$ in $P \cup \{p\}$. This chain must eventually hit $p$, the unique possible sink. The grammar identifies this as 𐑫: the chirality is inexhaustible — every closure move generates a new constraint that requires another closure move.
 
 This is not merely a metaphor. The $\psi$-map is a genuine mathematical object: a functional digraph on $P \cup \{p\}$ with $p$ as the unique sink. Every directed path terminates at $p$, and the edge conditions ($r_q \equiv 1 \pmod{2\beta_q+1}$) constrain the possible exponents.
 
@@ -141,7 +141,7 @@ For the other six Millennium Prize Problems, the grammar provides structural dia
 
 ### §4.3. Navier-Stokes — The Trapping Lemma
 
-**Diagnosis.** The 3D Navier-Stokes equations are at $\text{O}_{\text{2}}^{\text{†}}$. Promotion to $\text{O}_{\text{inf}}$ requires 8 primitive changes, with the key being kinetic trapping: the transition from $\text{Ç}_{\text{-}}$ (driven, fast) to $\text{Ç}_{\text{Ù}}$ (frozen-order, trapped) at a critical Sobolev manifold.
+**Diagnosis.** The 3D Navier-Stokes equations are at $\text{O}_{\text{2}}^{\text{†}}$. Promotion to $\text{O}_{\text{inf}}$ requires 8 primitive changes, with the key being kinetic trapping: the transition from 𐑘 (driven, fast) to 𐑪 (frozen-order, trapped) at a critical Sobolev manifold.
 
 **The Proposed Mechanism.** Define the critical manifold $\mathcal{M}_* = \{u \in H^{1/2}(\mathbb{T}^3) : \|\omega\|_{L^2}^2 = \nu \|\nabla \omega\|_{L^2}^2\}$ where enstrophy production and viscous dissipation balance. The Trapping Lemma claims: there exists $C_* > 0$ such that if $\|\nabla u(t_0)\|_{L^2} \geq C_*$ and $u(t_0) \in \mathcal{M}_*$, then $\frac{d}{dt}\|\nabla u\|_{L^2}^2 \leq 0$. The proof strategy decomposes the vortex stretching term in the strain tensor eigenframe, bounds vorticity alignment with the most extensional eigenvector using helicity conservation, and establishes that dissipation dominates production above the threshold.
 
@@ -161,13 +161,13 @@ For the other six Millennium Prize Problems, the grammar provides structural dia
 
 ### §4.5. Hodge Conjecture — Axiom D Forcing
 
-**Diagnosis.** The Hodge Conjecture is the only MPP with double holography: both $\text{Ð}_{\omega}$ (the Hodge decomposition $H^k = \bigoplus H^{p,q}$ is holographic) and $\text{Þ}_{\text{O}}$ (the Hodge filtration $F^p H^k$ is self-referential). Combined with $\text{Ω}_{\text{z}}$ (the integer-valued intersection pairing), the grammar's Axiom D forces $\text{Φ}_{\text{}}$ — Frobenius closure.
+**Diagnosis.** The Hodge Conjecture is the only MPP with double holography: both $\text{Ð}_{\omega}$ (the Hodge decomposition $H^k = \bigoplus H^{p,q}$ is holographic) and 𐑸 (the Hodge filtration $F^p H^k$ is self-referential). Combined with 𐑭 (the integer-valued intersection pairing), the grammar's Axiom D forces 𐑹 — Frobenius closure.
 
-**The Proposed Mechanism.** Axiom D states: $\text{Ð}_{\omega} \wedge \text{Þ}_{\text{O}} \wedge \text{Ω}_{\text{z}} \Rightarrow \text{Φ}_{\text{}}$. Translating to geometry: the Hodge decomposition (boundary encodes bulk), Hodge filtration (topology encodes algebra), and intersection pairing (integer winding) jointly force the cycle class map $\text{cl}: \text{CH}^p(X) \otimes \mathbb{Q} \to \text{Hdg}^{2p}(X, \mathbb{Q})$ to be surjective. The Frobenius condition $\mu \circ \delta = \text{id}$ is precisely the statement that every rational Hodge class is the class of an algebraic cycle.
+**The Proposed Mechanism.** Axiom D states: $\text{Ð}_{\omega} \wedge 𐑸 \wedge 𐑭 \Rightarrow 𐑹$. Translating to geometry: the Hodge decomposition (boundary encodes bulk), Hodge filtration (topology encodes algebra), and intersection pairing (integer winding) jointly force the cycle class map $\text{cl}: \text{CH}^p(X) \otimes \mathbb{Q} \to \text{Hdg}^{2p}(X, \mathbb{Q})$ to be surjective. The Frobenius condition $\mu \circ \delta = \text{id}$ is precisely the statement that every rational Hodge class is the class of an algebraic cycle.
 
-**The Honest Gap.** Verify that Hodge theory on a smooth projective variety satisfies the antecedents of Axiom D and that $\text{Φ}_{\text{}}$ translates to surjectivity of the cycle class map. This is a correspondence theorem connecting the grammar's algebraic structure to the geometry of $X$. The Lefschetz $(1,1)$ theorem (1924) provides the $p=1$ case as empirical validation. For $p \geq 2$, the translation itself is the Hodge Conjecture, restated.
+**The Honest Gap.** Verify that Hodge theory on a smooth projective variety satisfies the antecedents of Axiom D and that 𐑹 translates to surjectivity of the cycle class map. This is a correspondence theorem connecting the grammar's algebraic structure to the geometry of $X$. The Lefschetz $(1,1)$ theorem (1924) provides the $p=1$ case as empirical validation. For $p \geq 2$, the translation itself is the Hodge Conjecture, restated.
 
-**Why It Is Hard.** The structural argument — that Axiom D forces $\text{Φ}_{\text{}}$ — is a theorem of the grammar, proved by enumeration over the crystal of types. But the grammar operates at the level of structural types, not algebraic varieties. Bridging the two requires proving that Hodge-theoretic structures on $X$ faithfully realize the grammar primitives — and this bridge, for $p \geq 2$, is equivalent to the Hodge Conjecture itself. The diagnosis is correct; the translation remains open.
+**Why It Is Hard.** The structural argument — that Axiom D forces 𐑹 — is a theorem of the grammar, proved by enumeration over the crystal of types. But the grammar operates at the level of structural types, not algebraic varieties. Bridging the two requires proving that Hodge-theoretic structures on $X$ faithfully realize the grammar primitives — and this bridge, for $p \geq 2$, is equivalent to the Hodge Conjecture itself. The diagnosis is correct; the translation remains open.
 
 ### §4.6. P vs NP — The Tier Invariance Argument
 
@@ -189,11 +189,11 @@ The grammar's contribution can be summarized in a single table. For each Millenn
 |-----|---------------------|------------|-------|------------|
 | **RH** | $\odot_{\text{ÿ}}$ already; gap is analytic | Construct $\mathcal{H}(E)$ with kernel identity | Functional analysis | Very Hard |
 | **YM** | 6 ZFCₜ promotion channels | Continuum limit $a \to 0$ of 4D lattice YM | Constructive QFT | Very Hard |
-| **NS** | $\text{Ç}_{\text{Ù}}$ kinetic trapping | Trapping Lemma: $\exists C_*$ with dissipation bound | PDE analysis | Hard |
+| **NS** | 𐑪 kinetic trapping | Trapping Lemma: $\exists C_*$ with dissipation bound | PDE analysis | Hard |
 | **BSD** | Already $\text{O}_{\text{inf}}$; gap is rank formula | $\text{Sym}^2$ factorization for all $E/\mathbb{Q}$ | Automorphic forms | Hard |
-| **Hodge** | Axiom D: $\text{Ð}_{\omega} \wedge \text{Þ}_{\text{O}} \wedge \text{Ω}_{\text{z}} \Rightarrow \text{Φ}_{\text{}}$ | Primitive $\to$ geometry correspondence | Algebraic geometry | Medium |
+| **Hodge** | Axiom D: $\text{Ð}_{\omega} \wedge 𐑸 \wedge 𐑭 \Rightarrow 𐑹$ | Primitive $\to$ geometry correspondence | Algebraic geometry | Medium |
 | **P vs NP** | $\odot_{\text{ž}}$ vs $\odot_{\text{ÿ}}$ tier gap | Grammar-complexity correspondence | Meta-complexity | Medium |
-| **OPN** | $\text{Ħ}_{\text{!}}$ inexhaustible chirality | Product Gap Conjecture | Number theory | Medium |
+| **OPN** | 𐑫 inexhaustible chirality | Product Gap Conjecture | Number theory | Medium |
 
 **The difficulty ratings reflect the gap between what has been proved and what remains.** "Very Hard" means the gap is equivalent to the original problem — the diagnosis clarifies the structure but does not reduce the mathematical difficulty. "Hard" means the gap is a well-posed problem in an established field, with known techniques available, but requiring substantial new work. "Medium" means the gap is finite, decidable for fixed parameters, and the primary challenge is a uniform proof.
 
@@ -233,13 +233,13 @@ The grammar's contribution is not to solve the Millennium Prize Problems but to 
 
 The odd perfect number problem is the closest to resolution. The Product Gap Conjecture is a finite Diophantine approximation problem: for each fixed $(p, \alpha)$, the set $\mathcal{V}$ of achievable products is finite and computable, and the target $p^\alpha/S$ is a specific rational. The challenge is a uniform proof.
 
-Two approaches are available. The first is computational: for each admissible $(p, \alpha)$, enumerate the $\sigma$-closed sets up to some bound and verify that none hits the target. The difficulty is that the bound grows with $p$, and a uniform proof requires an argument that works for all $p$. The second approach is structural: prove that $\mathcal{V}$ has lacunae — gaps between achievable values — and that the targets $p^\alpha/S$ always fall into these gaps. The grammar suggests this approach through $\text{Ħ}_{\text{!}}$: the constraint propagation prevents the product from landing exactly on the target because the $\psi$-map generates primes that push the product either too low or too high.
+Two approaches are available. The first is computational: for each admissible $(p, \alpha)$, enumerate the $\sigma$-closed sets up to some bound and verify that none hits the target. The difficulty is that the bound grows with $p$, and a uniform proof requires an argument that works for all $p$. The second approach is structural: prove that $\mathcal{V}$ has lacunae — gaps between achievable values — and that the targets $p^\alpha/S$ always fall into these gaps. The grammar suggests this approach through 𐑫: the constraint propagation prevents the product from landing exactly on the target because the $\psi$-map generates primes that push the product either too low or too high.
 
-The key insight is that the $\psi$-map forces a kind of rigidity: changing any $\beta_q$ to adjust the product introduces new primes via Zsigmondy, which in turn require new constraints, which shift the product away from the target. This is the mathematical content of $\text{Ħ}_{\text{!}}$ — inexhaustible chirality — and it is the mechanism that makes the Product Gap Conjecture plausible. Proving it is the task.
+The key insight is that the $\psi$-map forces a kind of rigidity: changing any $\beta_q$ to adjust the product introduces new primes via Zsigmondy, which in turn require new constraints, which shift the product away from the target. This is the mathematical content of 𐑫 — inexhaustible chirality — and it is the mechanism that makes the Product Gap Conjecture plausible. Proving it is the task.
 
 ### §7.2. The Middle Gaps: Hodge, P vs NP, BSD, NS
 
-**Hodge.** The gap is a correspondence theorem: proving that the grammar's structural primitives are faithfully realized in the Hodge theory of smooth projective varieties. The Lefschetz $(1,1)$ theorem provides a template — for divisors, the correspondence holds. For higher codimension, the correspondence itself IS the Hodge Conjecture. The grammar identifies why: Axiom D is a structural identity ($\text{Ð}_{\omega} \wedge \text{Þ}_{\text{O}} \wedge \text{Ω}_{\text{z}} \Rightarrow \text{Φ}_{\text{}}$), and proving that Hodge theory satisfies the antecedents of Axiom D for all $p$ requires constructing algebraic cycles from Hodge classes — which is what the conjecture demands. The diagnosis is correct but does not reduce the mathematical difficulty.
+**Hodge.** The gap is a correspondence theorem: proving that the grammar's structural primitives are faithfully realized in the Hodge theory of smooth projective varieties. The Lefschetz $(1,1)$ theorem provides a template — for divisors, the correspondence holds. For higher codimension, the correspondence itself IS the Hodge Conjecture. The grammar identifies why: Axiom D is a structural identity ($\text{Ð}_{\omega} \wedge 𐑸 \wedge 𐑭 \Rightarrow 𐑹$), and proving that Hodge theory satisfies the antecedents of Axiom D for all $p$ requires constructing algebraic cycles from Hodge classes — which is what the conjecture demands. The diagnosis is correct but does not reduce the mathematical difficulty.
 
 **P vs NP.** The gap is a meta-complexity-theoretic correspondence. Proving that polynomial-time reductions are grammar morphisms and that tier is invariant would establish P $\neq$ NP. But proving this correspondence requires formalizing the grammar's relationship to Turing machines — a problem in structural proof theory that is, in its own way, as hard as the original. The grammar identifies the tier gap ($\odot_{\text{ž}}$ vs $\odot_{\text{ÿ}}$) as the structural essence of P vs NP; proving that this gap is intrinsic to the complexity classes, rather than an artifact of the assignment, is the challenge.
 
@@ -267,7 +267,7 @@ The grammar is not a shortcut. It does not bypass the hard work of constructing 
 
 The convergence of all seven MPPs to the same $\text{O}_{\text{inf}}$ type is the central structural discovery of this work. The canonical type:
 
-$$\langle \text{Ð}_{\omega};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \odot_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle \text{Ð}_{\omega};\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ \odot_{\text{ÿ}};\ 𐑖;\ 𐑳;\ 𐑭 \rangle$$
 
 is the structural signature of Frobenius closure: $\mu \circ \delta = \text{id}$ exactly, at the self-modeling critical point, with integer winding protection, under holographic dimensionality. This is the type of the Imscribing Grammar itself — it is the type that the grammar assigns to itself when it imscribes itself. The grammar imscribes itself; the Millennium Problems, when structurally resolved, are imscribed by it. Vessel = Contents.
 

@@ -24,7 +24,7 @@ $$
   \text{Þ}_\text{¨};\ 
   \text{Ř}_=\ ;\ 
   \Phi_F;\ 
-  ƒ^ż;\ 
+  𐑐;\ 
   \text{Ç}_@;\ 
   \text{Γ}_ʔ;\ 
   \text{ɢ}_Ş;\ 
@@ -78,7 +78,7 @@ $$
   \text{Þ}_O;\ 
   \text{Ř}_\text{ý};\ 
   \Phi_{\}};\ 
-  ƒ^ż;\ 
+  𐑐;\ 
   \text{Ç}_@;\ 
   \text{Γ}_ʔ;\ 
   \text{ɢ}_Ş;\ 
@@ -132,9 +132,9 @@ The distance between cosmology_crystal and crystal_navigator is **3.1305**, with
 
 | Primitive | Cosmology | Navigator | $\Delta$ | Weighted $\Delta^2$ |
 |-----------|-----------|-----------|----------|---------------------|
-| Ř         | Ř_=       | Ř_ý       | 2.0      | 4.0                 |
+| Ř         | 𐑾       | 𐑑       | 2.0      | 4.0                 |
 | $\Phi$    | $\Phi_F$  | $\Phi_{\}}$ | 2.0      | 4.0                 |
-| Þ         | Þ_¨       | Þ_O       | 1.0      | 1.0                 |
+| Þ         | 𐑶       | 𐑸       | 1.0      | 1.0                 |
 | $\text{H}$| $\text{Ħ}_A$ | $\text{Ħ}_!$ | 1.0      | 0.8                 |
 | **Total** |           |           |          | **9.8**             |
 

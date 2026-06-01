@@ -148,7 +148,7 @@ This conflict-detection mechanism is part of the epistemological apparatus. The 
 
 A grammar that claims to span all algebraic structures must be encodable within itself. The Imscribing Grammar grammar encodes as:
 
-$$\text{imscrbgrmr\_grammar}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
+$$\text{imscrbgrmr\_grammar}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$$
 
 Tier: $O_\infty$. Distance from the grammar to itself: $d = 0$.
 
@@ -162,11 +162,11 @@ The self-encoding test applies to any encoding effort that claims completeness. 
 
 Correct encodings tend to be the *minimal* encodings that account for all known behaviors of the system — not the most impressive ones.
 
-The most common failure mode is aspirational encoding: assigning high values to primitives based on the system's *potential* rather than its demonstrated structural capacity. $\Phi_{\text{ctyogh}}$ is assigned to systems that are "almost critical." $P_{\text{doublebarpipe}}$ is assigned to systems that are "essentially self-dual." $\Ω_z$ is assigned to systems that are "topologically interesting." Each of these over-assignments inflates the tier and corrupts the downstream analysis.
+The most common failure mode is aspirational encoding: assigning high values to primitives based on the system's *potential* rather than its demonstrated structural capacity. $\Phi_{\text{ctyogh}}$ is assigned to systems that are "almost critical." $P_{\text{doublebarpipe}}$ is assigned to systems that are "essentially self-dual." $\𐑭$ is assigned to systems that are "topologically interesting." Each of these over-assignments inflates the tier and corrupts the downstream analysis.
 
 The structural floor principle: **encode the lowest value that accounts for the phenomenon; promote only when the higher value is required to explain something the lower value cannot**.
 
-This is not conservatism for its own sake. It reflects the architecture of the grammar. The tier rules are monotonic: a higher value is strictly more demanding than a lower one. $P_{\text{doublebarpipe}}$ requires exact Frobenius symmetry, not approximate symmetry. $\Phi_{\text{ctyogh}}$ requires a genuine critical manifold, not near-critical behavior. $\Ω_z$ requires full integer topological invariant, not just some topological character.
+This is not conservatism for its own sake. It reflects the architecture of the grammar. The tier rules are monotonic: a higher value is strictly more demanding than a lower one. $P_{\text{doublebarpipe}}$ requires exact Frobenius symmetry, not approximate symmetry. $\Phi_{\text{ctyogh}}$ requires a genuine critical manifold, not near-critical behavior. $\𐑭$ requires full integer topological invariant, not just some topological character.
 
 When in doubt: encode lower. If the system's behavior cannot be accounted for by the lower encoding, the pressure to promote is genuine. If it can be accounted for, the lower encoding is correct.
 

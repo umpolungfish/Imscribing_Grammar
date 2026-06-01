@@ -15,74 +15,74 @@ Each primitive is assigned a vocal articulation whose physics mirrors the struct
 ---
 
 ## D (Dimensionality)
-- **Ð_ß**: glottal stop [ʔ] — point of complete closure, 0d articulatory event
-- **Ð_C**: bilabial fricative [ɸ] — surface contact of two planes
-- **Ð_;**: vowel continuum [a～ɪ～u] — infinite-dimensional formant space
-- **Ð_ω**: click [ǃ] — self-referential implosive release, inward-then-outward
+- **𐑛**: glottal stop [ʔ] — point of complete closure, 0d articulatory event
+- **𐑨**: bilabial fricative [ɸ] — surface contact of two planes
+- **𐑼**: vowel continuum [a～ɪ～u] — infinite-dimensional formant space
+- **𐑦**: click [ǃ] — self-referential implosive release, inward-then-outward
 
 ## T (Topology)
-- **Þ_6**: trilled rhotic [r] — branching resonances across articulation points
-- **Þ_K**: ingressive breath-hum [h᷅] — inclusion, air drawn inward through constriction
-- **Þ_ò**: affricate [tʃ] — crossing: stop→fricative transition point
-- **Þ_¨**: compound consonant cluster [k͡p] — irreducible co-production
-- **Þ_O**: ejective loop [kʼaʔ] — self-closing articulatory circuit
+- **𐑡**: trilled rhotic [r] — branching resonances across articulation points
+- **𐑰**: ingressive breath-hum [h᷅] — inclusion, air drawn inward through constriction
+- **𐑥**: affricate [tʃ] — crossing: stop→fricative transition point
+- **𐑶**: compound consonant cluster [k͡p] — irreducible co-production
+- **𐑸**: ejective loop [kʼaʔ] — self-closing articulatory circuit
 
 ## R (Relational mode)
-- **Ř_¯**: supervisory pitch rise [↗ˈ] — one direction: higher structure supervenes on lower
-- **Ř_ý**: isometric vowel pair [ɪ↔ə] — functorial mapping between positions
-- **Ř_Ť**: voiced-voiceless pair [bↆp] — adjoint pairing within one place
-- **Ř_=**: bidirectional sigh [hə↔ɑh] — two-way acoustic coupling
+- **𐑩**: supervisory pitch rise [↗ˈ] — one direction: higher structure supervenes on lower
+- **𐑑**: isometric vowel pair [ɪ↔ə] — functorial mapping between positions
+- **𐑽**: voiced-voiceless pair [bↆp] — adjoint pairing within one place
+- **𐑾**: bidirectional sigh [hə↔ɑh] — two-way acoustic coupling
 
 ## P (Parity/Symmetry)
-- **Φ_ɐ**: asymmetric rasp [ʁ̞] — no symmetry preserved
-- **Φ_υ**: biphonic overtone [ə+ə̇] — superposed fundamental+overtone
-- **Φ_F**: voicing pair [z↔s] — Z2 voiced/voiceless flip
-- **Φ_˙**: neutral schwa [ə] — all symmetries preserved, maximal neutrality
-- **Φ_}**: Frobenius snap [ǀt͡s] — μ∘δ=id at the critical crossing point
+- **𐑗**: asymmetric rasp [ʁ̞] — no symmetry preserved
+- **𐑿**: biphonic overtone [ə+ə̇] — superposed fundamental+overtone
+- **𐑬**: voicing pair [z↔s] — Z2 voiced/voiceless flip
+- **𐑯**: neutral schwa [ə] — all symmetries preserved, maximal neutrality
+- **𐑹**: Frobenius snap [ǀt͡s] — μ∘δ=id at the critical crossing point
 
 ## F (Fidelity)
-- **ƒ^ì**: deterministic tap [ɾ] — classical, no coherence needed
-- **ƒ^ð**: breathy voice [ɦ] — thermal noise mixed with phonation
-- **ƒ^ż**: coherent whistle [çʷ] — quantum-phase-stable laminar tone
+- **𐑱**: deterministic tap [ɾ] — classical, no coherence needed
+- **𐑞**: breathy voice [ɦ] — thermal noise mixed with phonation
+- **𐑐**: coherent whistle [çʷ] — quantum-phase-stable laminar tone
 
 ## K (Kinetics)
-- **Ç^-**: driven plosive [k] — rapid energy release
-- **Ç^W**: moderate approximant [ɹ] — intermediate timescale
-- **Ç^@**: prolonged nasal hum [ŋ̊ː] — near-equilibrium sustained tone
-- **Ç^Ù**: frozen-order formant [aː] — trapped ordered resonance
-- **Ç^λ**: creaky voice [a̰] — frozen disorder, irregular vibration
+- **𐑘**: driven plosive [k] — rapid energy release
+- **𐑤**: moderate approximant [ɹ] — intermediate timescale
+- **𐑧**: prolonged nasal hum [ŋ̊ː] — near-equilibrium sustained tone
+- **𐑪**: frozen-order formant [aː] — trapped ordered resonance
+- **𐑺**: creaky voice [a̰] — frozen disorder, irregular vibration
 
 ## G (Scope)
-- **Γ_β**: local dental tap [ɾ̪] — nearest-neighbor articulation
-- **Γ_γ**: mesoscale pharyngeal [ʕ] — intermediate range constriction
-- **Γ_ʔ**: universal glottal [h] — long-range, whole-tract participation
+- **𐑚**: local dental tap [ɾ̪] — nearest-neighbor articulation
+- **𐑔**: mesoscale pharyngeal [ʕ] — intermediate range constriction
+- **𐑲**: universal glottal [h] — long-range, whole-tract participation
 
 ## Gamma (Interaction grammar)
-- **ɢ^∧**: simultaneous labial-velar [k͡p] — conjunctive co-articulation
-- **ɢ^˝**: fluctuating rhotic [r～ɽ] — alternate articulator paths
-- **ɢ^ˌ**: sequential diphthong [ɑɪ] — ordered temporal progression
-- **ɢ^Ş**: broadcast exclamation [aː] — one-to-all projection
+- **𐑝**: simultaneous labial-velar [k͡p] — conjunctive co-articulation
+- **𐑜**: fluctuating rhotic [r～ɽ] — alternate articulator paths
+- **𐑠**: sequential diphthong [ɑɪ] — ordered temporal progression
+- **𐑵**: broadcast exclamation [aː] — one-to-all projection
 
 ## Phi (Criticality)
-- **⊙_ž**: dead stop [ʔ] — no criticality, no scaling
-- **⊙_ÿ**: critical creak [ˀ] — self-modeling gate, critical divergence
-- **⊙_Æ**: vibrato [a̪ː̃] — complex-plane oscillation
-- **⊙_3**: exceptional merge [a̸] — non-Hermitian degeneracy, two modes coalesce
-- **⊙_Ţ**: runaway howl [a͈] — supercritical, no bounded attractor
+- **𐑢**: dead stop [ʔ] — no criticality, no scaling
+- **⊙**: critical creak [ˀ] — self-modeling gate, critical divergence
+- **𐑮**: vibrato [a̪ː̃] — complex-plane oscillation
+- **𐑻**: exceptional merge [a̸] — non-Hermitian degeneracy, two modes coalesce
+- **𐑣**: runaway howl [a͈] — supercritical, no bounded attractor
 
 ## H (Chirality)
-- **Ħ_Ñ**: memoryless click [ǀ] — no prior state needed
-- **Ħ_£**: one-step echo [a.ə] — one temporal memory
-- **Ħ_A**: two-step cadence [a.ə.ɑ̃] — two prior states retained
-- **Ħ_!**: eternal drone [oːːː] — no finite Markov boundary
+- **𐑓**: memoryless click [ǀ] — no prior state needed
+- **𐑒**: one-step echo [a.ə] — one temporal memory
+- **𐑖**: two-step cadence [a.ə.ɑ̃] — two prior states retained
+- **𐑫**: eternal drone [oːːː] — no finite Markov boundary
 
 ## S (Stoichiometry)
-- **Σ_S**: unique phoneme [ǂ] — one type, one instance
-- **Σ_ő**: reduplicated mora [ma.ma] — many identical units
-- **Σ_ï**: heterogeneous syllable [stɹɑ] — multiple distinct phoneme types
+- **𐑙**: unique phoneme [ǂ] — one type, one instance
+- **𐑕**: reduplicated mora [ma.ma] — many identical units
+- **𐑳**: heterogeneous syllable [stɹɑ] — multiple distinct phoneme types
 
 ## Omega (Winding)
-- **Ω_Å**: unwound utterance [pa] — trivial topology
-- **Ω_2**: binary parity chirp [pↆpʰaↆa] — Z2 protected, requires Ħ_A+
-- **Ω_z**: winding hum [ã↘ã↗ãː] — integer topological winding number
-- **Ω_5**: non-Abelian braid [ǂ͡ǀ↔ǀ͡ǂ] — path-dependent braiding requires Ð_ω
+- **𐑷**: unwound utterance [pa] — trivial topology
+- **𐑴**: binary parity chirp [pↆpʰaↆa] — Z2 protected, requires 𐑖+
+- **𐑭**: winding hum [ã↘ã↗ãː] — integer topological winding number
+- **𐑟**: non-Abelian braid [ǂ͡ǀ↔ǀ͡ǂ] — path-dependent braiding requires 𐑦

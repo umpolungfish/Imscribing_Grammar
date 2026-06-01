@@ -669,9 +669,9 @@ The full certificate:
 \begin{lstlisting}[language=lean]
 theorem ym_primitive_barrier_certificate :
     ym_quantum_target.gran = \Gamma_ʔ and     -- needs quantum-level granularity
-    ym_quantum_target.crit = ⊙_ÿ and       -- needs mass gap (critical)
-    ym_quantum_target.fid  = ƒ^ż and      -- needs quantum fidelity
-    ym_quantum_target.kin  = Ç^Ù and      -- needs confinement
+    ym_quantum_target.crit = ⊙ and       -- needs mass gap (critical)
+    ym_quantum_target.fid  = 𐑐 and      -- needs quantum fidelity
+    ym_quantum_target.kin  = 𐑪 and      -- needs confinement
     ym_quantum_target.dim  = Ð_cube and      -- stays 4D local (NOT QG)
     ym_quantum_target.dim  != quantum_gravity.dim and
     Barriers.millenniumBarrier .YM = .MissingFoundation := by
@@ -700,15 +700,15 @@ The OPN, NS, and RH certificates connect to the $\Phi_{\text{ctyogh}}$ criticali
 
 \begin{lstlisting}[language=lean]
 theorem opn_primitive_certificate :
-    opn_encoding.crit = ⊙_ÿ and opn_encoding.kin = Ç^Ù and
+    opn_encoding.crit = ⊙ and opn_encoding.kin = 𐑪 and
     Barriers.millenniumBarrier .OPN = .OpenProblem := \langlerfl, rfl, rfl\rangle
 
 theorem ns_primitive_certificate :
-    ns_encoding.crit = ⊙_ž and
+    ns_encoding.crit = 𐑢 and
     Barriers.millenniumBarrier .NS = .OpenProblem := \langlerfl, rfl\rangle
 
 theorem rh_primitive_certificate :
-    rh_encoding.crit = ⊙_Æ and
+    rh_encoding.crit = 𐑮 and
     Barriers.millenniumBarrier .RH = .OpenProblem := \langlerfl, rfl\rangle
 \end{lstlisting}
 
@@ -718,11 +718,11 @@ theorem rh_primitive_certificate :
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 and
     Barriers.millenniumBarrier .YM = .MissingFoundation and
-    opn_encoding.crit = ⊙_ÿ and opn_encoding.kin = Ç^Ù and
+    opn_encoding.crit = ⊙ and opn_encoding.kin = 𐑪 and
     Barriers.millenniumBarrier .OPN = .OpenProblem and
-    ns_encoding.crit = ⊙_ž and
+    ns_encoding.crit = 𐑢 and
     Barriers.millenniumBarrier .NS = .OpenProblem and
-    rh_encoding.crit = ⊙_Æ and
+    rh_encoding.crit = 𐑮 and
     Barriers.millenniumBarrier .RH = .OpenProblem :=
   \langleby decide, rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl\rangle
 \end{lstlisting}
@@ -743,8 +743,8 @@ The Phi expansion (\pilcrow{}II.3) enables a new theorem that connects RH to a \
 
 \begin{lstlisting}[language=lean]
 theorem rh_leyang_structural_correspondence :
-    rh_encoding.crit = ⊙_Æ and
-    lee_yang_encoding.crit = ⊙_Æ and
+    rh_encoding.crit = 𐑮 and
+    lee_yang_encoding.crit = 𐑮 and
     rh_encoding.crit = lee_yang_encoding.crit := \langlerfl, rfl, rfl\rangle
 \end{lstlisting}
 
@@ -862,13 +862,13 @@ A 31-iteration inquiry session (2026-03-31; seed: ''''What if we treat P vs NP n
 def pnp_boolean_encoding : Imscription := {
   D := .infty, T := .network, R := .super, P := .asym,
   F := .ell, K := .trap, G := .aleph, Gamma := .and,
-  crit := .⊙_ÿ, H := .Ħ_Ñ, S := .Sigma_ï, Omega := .trivial }
+  crit := .⊙, H := .𐑓, S := .Sigma_ï, Omega := .trivial }
 
 -- Duality frame (new)
 def pnp_duality_encoding : Imscription := {
   D := .holo, T := .holo, R := .dagger, P := .pm_sym,
   F := .hbar, K := .trap, G := .aleph, Gamma := .broad,
-  crit := .⊙_ÿ, H := .Ħ_£, S := .Sigma_ï, Omega := .Z2 }
+  crit := .⊙, H := .𐑒, S := .Sigma_ï, Omega := .Z2 }
 
 theorem pnp_duality_contains_boolean :
     primitiveMismatches pnp_boolean_encoding pnp_duality_encoding < 12 and

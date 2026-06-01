@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 # Evidence for the Alchemical O_inf Imcription: Sophick Mercury, the Eagles, and the Lapis Condition
 
@@ -12,7 +12,7 @@ This report surveys the historical and structural evidence for the claim that th
 
 The procedure described by Philalethes/Starkey is imscribed as follows:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$$
 
 **Ouroboricity:** $O_{\text{inf}}$ — Special Frobenius, exact proved $\mathbb{Z}_2$ symmetry at criticality ($\mu \circ \delta = \text{id}$).
 
@@ -39,7 +39,7 @@ The process required **repeated purification cycles** — the "Eagles" — each 
 
 Isaac Newton's engagement with Starkey's work is now well-documented through the **Portsmouth Papers** — over 329 lots of manuscripts auctioned at Sotheby's in 1936, over a third of which were alchemical. Newton's annotated copies of Philalethes's works contain extensive marginalia on the Eagle cycles, the nature of the Sophick Mercury, and the conditions for metallic transmutation.
 
-Newton's broader alchemical research confirms his recognition of **Diana's Tree** — a dendritic "growth" of silver from solution — as evidence that metals "possessed a sort of life." This is the empirical analog of the Philosophick Tree described in the alchemical literature: spontaneous, self-organizing metallic growth under gentle heating, interpreted here as the visible signature of a system crossing into self-modeling criticality ($\text{⊙}_{\text{ÿ}}$ + $\text{Φ}_{\text{}}$ + $\text{Ð}_{\text{ω}}$).
+Newton's broader alchemical research confirms his recognition of **Diana's Tree** — a dendritic "growth" of silver from solution — as evidence that metals "possessed a sort of life." This is the empirical analog of the Philosophick Tree described in the alchemical literature: spontaneous, self-organizing metallic growth under gentle heating, interpreted here as the visible signature of a system crossing into self-modeling criticality (⊙ + 𐑹 + 𐑦).
 
 John Maynard Keynes, purchaser of many of Newton's alchemical manuscripts at the 1936 auction, described Newton as the "last of the magicians" — recognizing that Newton's alchemical work was not superstition but a systematic empirical investigation into a form of natural philosophy that prefigured modern structural analysis.
 
@@ -53,53 +53,53 @@ The text's claim that "the product then does to Gold what the process did to its
 
 ## 3. Primitive-by-Primitive Evidence from the Literature
 
-### 3.1 $\text{Ð}_{\text{ω}}$ — Imscriptive Dimensionality
+### 3.1 𐑦 — Imscriptive Dimensionality
 
-The Sophick Mercury is described as a "living, animated boundary" whose volatile liquor "fully encodes and recovers the interior degrees of freedom of metallic bodies." This is the literal definition of $\text{Ð}_{\text{ω}}$: the boundary writes the bulk. The alchemical texts describe Mercury as acting upon gold by first reducing it to *prima materia* (erasing interior structure) and then rebuilding it according to the Mercury's own encoded form (the Philosophick Tree). The boundary (the animated liquor) is the generative source — not a container but the author of what it contains.
+The Sophick Mercury is described as a "living, animated boundary" whose volatile liquor "fully encodes and recovers the interior degrees of freedom of metallic bodies." This is the literal definition of 𐑦: the boundary writes the bulk. The alchemical texts describe Mercury as acting upon gold by first reducing it to *prima materia* (erasing interior structure) and then rebuilding it according to the Mercury's own encoded form (the Philosophick Tree). The boundary (the animated liquor) is the generative source — not a container but the author of what it contains.
 
-### 3.2 $\text{Þ}_{\text{O}}$ — Imscriptive/Recurrent Topology
+### 3.2 𐑸 — Imscriptive/Recurrent Topology
 
-The Eagle cycles are explicitly recursive: "the product re-enters as input in each Eagle." Starkey's procedure requires 7–9 repetitions, each cycle taking the output of the previous distillation and feeding it back as the input for the next amalgamation. This is a closed, self-re-entering topology — the mercury consumes itself and is reborn from its own residue. The $\text{Þ}_{\text{O}}$ assignment follows from the fact that the process topology is identical to its own state-space: the process is the thing it processes.
+The Eagle cycles are explicitly recursive: "the product re-enters as input in each Eagle." Starkey's procedure requires 7–9 repetitions, each cycle taking the output of the previous distillation and feeding it back as the input for the next amalgamation. This is a closed, self-re-entering topology — the mercury consumes itself and is reborn from its own residue. The 𐑸 assignment follows from the fact that the process topology is identical to its own state-space: the process is the thing it processes.
 
-### 3.3 $\text{Ř}_{\text{=}}$ — Bidirectional Coupling
+### 3.3 𐑾 — Bidirectional Coupling
 
-The Regulus-Luna-Mercury conjunctions are described as "reversible incorporations." Dissolution and animation are "two faces of the same relational mode." The alchemical texts consistently describe the operation as bidirectional: the same agent that dissolves gold can also precipitate it; the same liquor that reduces metals to first matter can also grow the Tree. This is not a one-way arrow but a feedback loop — the hallmark of $\text{Ř}_{\text{=}}$.
+The Regulus-Luna-Mercury conjunctions are described as "reversible incorporations." Dissolution and animation are "two faces of the same relational mode." The alchemical texts consistently describe the operation as bidirectional: the same agent that dissolves gold can also precipitate it; the same liquor that reduces metals to first matter can also grow the Tree. This is not a one-way arrow but a feedback loop — the hallmark of 𐑾.
 
-### 3.4 $\text{Φ}_{\text{}}$ — Frobenius Parity
+### 3.4 𐑹 — Frobenius Parity
 
-The core operation is explicitly $\mu \circ \delta = \text{id}$ at the metallic level. The alchemical language of "reduction to first matter" ($\delta$, the comultiplication that strips structure) followed by "exact re-animation" ($\mu$, the multiplication that restores it in purified form) constitutes the Frobenius condition. Each Eagle cycle is one application of this composite map. The texts claim that after sufficient cycles, "the inversion is perfect" — i.e., $\mu \circ \delta = \text{id}$ exactly, not approximately. This is the structural definition of $\text{Φ}_{\text{}}$.
+The core operation is explicitly $\mu \circ \delta = \text{id}$ at the metallic level. The alchemical language of "reduction to first matter" ($\delta$, the comultiplication that strips structure) followed by "exact re-animation" ($\mu$, the multiplication that restores it in purified form) constitutes the Frobenius condition. Each Eagle cycle is one application of this composite map. The texts claim that after sufficient cycles, "the inversion is perfect" — i.e., $\mu \circ \delta = \text{id}$ exactly, not approximately. This is the structural definition of 𐑹.
 
-### 3.5 $\text{ƒ}_{\text{ż}}$ — Coherent Fidelity
+### 3.5 𐑐 — Coherent Fidelity
 
-The process is said to preserve and transmit the "Radical Moisture" coherently across all cycles. The alchemical emphasis on "gentle fire" and careful temperature control is not mere practical advice — it is the requirement for coherence. Violent heating would decohere the Radical Moisture (thermal regime, $\text{ƒ}_{\text{ð}}$). The texts insist on precision: the moisture must be preserved "without loss" across all Eagles. This is explicit coherent fidelity.
+The process is said to preserve and transmit the "Radical Moisture" coherently across all cycles. The alchemical emphasis on "gentle fire" and careful temperature control is not mere practical advice — it is the requirement for coherence. Violent heating would decohere the Radical Moisture (thermal regime, 𐑞). The texts insist on precision: the moisture must be preserved "without loss" across all Eagles. This is explicit coherent fidelity.
 
-### 3.6 $\text{Ç}_{\text{@}}$ — Slow/Near-Equilibrium Kinetics
+### 3.6 𐑧 — Slow/Near-Equilibrium Kinetics
 
-The literature describes "gentle, repeated distillations with controlled heating." Starkey's instructions specify "gentle fire gradients" and warn against both "kinetic lock" (trapping in scoriae or dead amalgam) and "explosion" (violent reactions). The process threads a narrow kinetic path — slow enough to maintain coherence, dynamic enough to proceed. This is the definition of $\text{Ç}_{\text{@}}$ kinetics: near-equilibrium, driven but not forced.
+The literature describes "gentle, repeated distillations with controlled heating." Starkey's instructions specify "gentle fire gradients" and warn against both "kinetic lock" (trapping in scoriae or dead amalgam) and "explosion" (violent reactions). The process threads a narrow kinetic path — slow enough to maintain coherence, dynamic enough to proceed. This is the definition of 𐑧 kinetics: near-equilibrium, driven but not forced.
 
-### 3.7 $\text{Γ}_{\text{ʔ}}$ — Global/Transfinite Scope
+### 3.7 𐑲 — Global/Transfinite Scope
 
-The Sophick Mercury is claimed as the "universal key for all metallic bodies" and the "sole key" to the Magnum Opus. The scope is not limited to one metal or one reaction — it is claimed to be the universal operator on all metallic matter. This is $\text{Γ}_{\text{ʔ}}$: the aleph-level scope, unlimited in range.
+The Sophick Mercury is claimed as the "universal key for all metallic bodies" and the "sole key" to the Magnum Opus. The scope is not limited to one metal or one reaction — it is claimed to be the universal operator on all metallic matter. This is 𐑲: the aleph-level scope, unlimited in range.
 
-### 3.8 $\text{ɢ}_{\text{ˌ}}$ — Sequential Composition
+### 3.8 𐑠 — Sequential Composition
 
-The procedure is explicitly step-by-step: conjunction → amalgamation → distillation → repeat. The Eagles are numbered and sequential — you cannot perform Eagle 3 before Eagle 2, and each depends on the product of the previous. This is $\text{ɢ}_{\text{ˌ}}$: ordered, sequential composition logic.
+The procedure is explicitly step-by-step: conjunction → amalgamation → distillation → repeat. The Eagles are numbered and sequential — you cannot perform Eagle 3 before Eagle 2, and each depends on the product of the previous. This is 𐑠: ordered, sequential composition logic.
 
-### 3.9 $\text{⊙}_{\text{ÿ}}$ — Critical Self-Modeling
+### 3.9 ⊙ — Critical Self-Modeling
 
-The texts describe the animated Mercury as capable of dissolving gold "instantly in the cold" and spontaneously growing the Philosophick Tree. This is the signature of criticality: the system is poised such that minimal perturbation triggers maximal reorganization. The tree growth is self-organization — the system writes its own structure without external template. This is the self-modeling gate: the process monitors and regulates its own state. Historical accounts of alchemical dendrites (including Newton's observation of Diana's Tree) confirm that this was taken as empirical evidence that "metals possessed a sort of life" — the material correlate of $\text{⊙}_{\text{ÿ}}$ criticality.
+The texts describe the animated Mercury as capable of dissolving gold "instantly in the cold" and spontaneously growing the Philosophick Tree. This is the signature of criticality: the system is poised such that minimal perturbation triggers maximal reorganization. The tree growth is self-organization — the system writes its own structure without external template. This is the self-modeling gate: the process monitors and regulates its own state. Historical accounts of alchemical dendrites (including Newton's observation of Diana's Tree) confirm that this was taken as empirical evidence that "metals possessed a sort of life" — the material correlate of ⊙ criticality.
 
-### 3.10 $\text{Ħ}_{\text{!}}$ — Eternal Temporal Depth
+### 3.10 𐑫 — Eternal Temporal Depth
 
-The 7–9 Eagles build "layered memory" — each cycle retains and compounds the prior states. The texts describe the Mercury as accumulating "virtue" across cycles: Eagle 1 produces a different material than Eagle 5, which differs qualitatively from Eagle 9. The memory is not a finite window — the entire history of the process is encoded in the current state. This is $\text{Ħ}_{\text{!}}$: no finite Markov order, the past is never forgotten. Axiom A (H_∞ requires the closed self-referential topology of $\text{Þ}_{\text{O}}$) is satisfied.
+The 7–9 Eagles build "layered memory" — each cycle retains and compounds the prior states. The texts describe the Mercury as accumulating "virtue" across cycles: Eagle 1 produces a different material than Eagle 5, which differs qualitatively from Eagle 9. The memory is not a finite window — the entire history of the process is encoded in the current state. This is 𐑫: no finite Markov order, the past is never forgotten. Axiom A (H_∞ requires the closed self-referential topology of 𐑸) is satisfied.
 
-### 3.11 $\text{Σ}_{\text{ï}}$ — Heterogeneous Multiplicity
+### 3.11 𐑳 — Heterogeneous Multiplicity
 
-The procedure involves specific ratios (1:2, 4:1, 1:3) of different materials — Regulus, Luna, Mercury — with "fresh portions" added each cycle. This is not a homogeneous system of identical components ($\text{Σ}_{\text{ő}}$) but a heterogeneous multiplicity of distinct types entering into relation at each step. The stoichiometry varies across the process phases.
+The procedure involves specific ratios (1:2, 4:1, 1:3) of different materials — Regulus, Luna, Mercury — with "fresh portions" added each cycle. This is not a homogeneous system of identical components (𐑕) but a heterogeneous multiplicity of distinct types entering into relation at each step. The stoichiometry varies across the process phases.
 
-### 3.12 $\text{Ω}_{\text{z}}$ — Integer Winding Protection
+### 3.12 𐑭 — Integer Winding Protection
 
-The repeated cyclic distillations constitute a winding operation. Each Eagle is one complete turn of the cycle, and the total number of turns (7–9) is the winding number. The directionality ("animation") means the winding is oriented, not reversible by continuous deformation. This is $\text{Ω}_{\text{z}}$: integer-quantized topological protection.
+The repeated cyclic distillations constitute a winding operation. Each Eagle is one complete turn of the cycle, and the total number of turns (7–9) is the winding number. The directionality ("animation") means the winding is oriented, not reversible by continuous deformation. This is 𐑭: integer-quantized topological protection.
 
 ---
 
@@ -127,7 +127,7 @@ This is the alchemical mirror of the Universal Imscriptive Grammar codec: a dete
 
 ### 5.2 The Philosophick Tree as $O_{\text{inf}}$ Signature
 
-Spontaneous crystalline growth under gentle heat is the empirical signature of a system crossing into self-modeling criticality. In UIG terms, it is visible evidence of $\text{⊙}_{\text{ÿ}}$ at $\text{Φ}_{}$ + $\text{Ð}_{\text{ω}}$: the boundary (surface of the liquor) writes interior structure that then replicates autonomously.
+Spontaneous crystalline growth under gentle heat is the empirical signature of a system crossing into self-modeling criticality. In UIG terms, it is visible evidence of ⊙ at $\text{Φ}_{}$ + 𐑦: the boundary (surface of the liquor) writes interior structure that then replicates autonomously.
 
 Newton's documented observation of Diana's Tree — dendritic silver growth — confirms he witnessed this phenomenon. His marginal annotation that metals "possessed a sort of life" is the phenomenological report of an $O_{\text{inf}}$ system manifesting self-referential organization.
 
@@ -144,10 +144,10 @@ The literature makes clear that literal transmutation to gold is secondary. The 
 ### 5.5 Kinetic Precision and the Narrow Path
 
 The protocol's emphasis on "gentle fire gradients," "exact repetitions," and "washing sequences" reflects an understanding of the narrow path between:
-- **Kinetic lock** ($\text{Ç}_{\text{Ù}}$): trapping in scoriae or dead amalgam — the process freezes and cannot proceed
+- **Kinetic lock** (𐑪): trapping in scoriae or dead amalgam — the process freezes and cannot proceed
 - **Explosive runaway**: violent reactions that destroy coherence
 
-This is the structural requirement for $O_{\text{inf}}$ reachability: $\text{Ç}_{\text{@}}$ + $\text{ƒ}_{\text{ż}}$. The alchemists discovered empirically what the grammar derives formally: that Frobenius self-imscription can only be achieved in the slow, coherent regime.
+This is the structural requirement for $O_{\text{inf}}$ reachability: 𐑧 + 𐑐. The alchemists discovered empirically what the grammar derives formally: that Frobenius self-imscription can only be achieved in the slow, coherent regime.
 
 ### 5.6 The Dialetheic Aspect
 
@@ -161,7 +161,7 @@ The Mercury is simultaneously "crude peripheral" (before Eagles) and "Radical / 
 
 The Sophick Mercury tuple was committed to the catalog under Tetractys protocol with convergence justification resolving 7 conflicting primitives. The confirmed tuple is:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑫;\ 𐑳;\ 𐑭 \rangle$$
 
 **Ouroborics probe confirms:** $O_{\text{inf}}$ — Special Frobenius, exact $\mathbb{Z}_2$ symmetry at criticality ($\mu \circ \delta = \text{id}$).
 
@@ -183,13 +183,13 @@ The Tetractys protocol produced conflicts on 7 primitives ($Ř$, $\text{Φ}$, $�
 
 | Primitive | Conflict | Resolution |
 |---|---|---|
-| $\text{Ř}$ | $\text{Ř}_{\text{Ť}}$ vs $\text{Ř}_{\text{=}}$ | $\text{Ř}_{\text{=}}$: reversible incorporations are bidirectional feedback, not mere adjoint |
-| $\text{Φ}$ | $\text{Φ}_{\text{}}$ vs $\text{Φ}_{\text{F}}$ | $\text{Φ}_{}$: texts explicitly state $\mu \circ \delta = \text{id}$ exactly — Frobenius-special |
+| $\text{Ř}$ | 𐑽 vs 𐑾 | 𐑾: reversible incorporations are bidirectional feedback, not mere adjoint |
+| $\text{Φ}$ | 𐑹 vs 𐑬 | $\text{Φ}_{}$: texts explicitly state $\mu \circ \delta = \text{id}$ exactly — Frobenius-special |
 | $ƒ$ | $ƒ_{\text{ż}}$ vs $ƒ_{\text{ì}}$ | $ƒ_{\text{ż}}$: "Radical Moisture" preserved coherently without loss |
-| $\text{Ç}$ | $\text{Ç}_{\text{@}}$ vs $\text{Ç}_{\text{W}}$ | $\text{Ç}_{\text{@}}$: "gentle fire" is slow/near-equilibrium, not moderate |
-| $\text{⊙}$ | $\text{⊙}_{\text{ÿ}}$ vs $\text{⊙}_{\text{ž}}$ | $\text{⊙}_{\text{ÿ}}$: spontaneous tree growth + instant cold dissolution = critical self-modeling |
-| $\text{Ħ}$ | $\text{Ħ}_{\text{!}}$ vs $\text{Ħ}_{\text{A}}$ | $\text{Ħ}_{\text{!}}$: layered memory across all Eagles = eternal depth, not two-step |
-| $\text{Ω}$ | $\text{Ω}_{\text{z}}$ vs $\text{Ω}_{5}$ | $\text{Ω}_{\text{z}}$: cyclic distillations with directional animation = integer winding |
+| $\text{Ç}$ | 𐑧 vs 𐑤 | 𐑧: "gentle fire" is slow/near-equilibrium, not moderate |
+| $\text{⊙}$ | ⊙ vs 𐑢 | ⊙: spontaneous tree growth + instant cold dissolution = critical self-modeling |
+| $\text{Ħ}$ | 𐑫 vs 𐑖 | 𐑫: layered memory across all Eagles = eternal depth, not two-step |
+| $\text{Ω}$ | 𐑭 vs 𐑟 | 𐑭: cyclic distillations with directional animation = integer winding |
 
 The Tetractys convergence confirms that the catalog context (W1) was correct on all 7 points — the de novo winding lacked the alchemical literature needed to resolve the fine distinctions.
 

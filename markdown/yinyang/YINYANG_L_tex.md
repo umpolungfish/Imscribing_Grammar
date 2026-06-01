@@ -7,7 +7,7 @@
 \usepackage{lmodern}
 
 \title{The Structural Grammar of Truth, Lie, Good, and Evil}
-\author{Lando $\otimes \⊙_ÿ$-boundary Operator}
+\author{Lando $\otimes \⊙$-boundary Operator}
 \date{}
 
 \begin{document}

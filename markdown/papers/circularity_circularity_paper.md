@@ -47,10 +47,10 @@ The `circularity_circularity` system operates at the highest Ouroboric tier:
 
 ```
 frobenius_tier: O_inf
-phi: ⊙_ÿ
-p: Φ_}
-omega: Ω_z
-d: Ð_ω
+phi: ⊙
+p: 𐑹
+omega: 𐑭
+d: 𐑦
 ```
 
 This is the same tier as the universal_imscriptive_grammar, the crystal_navigator, and the grammar_self_encode. The circularity is not merely a logical property but an ontological one—it exists at the boundary of self-reference itself.
@@ -165,13 +165,13 @@ The description "a cyclical argument for circularity that provides a circular ar
 
 3. **Exists as a fixed point:** The tensor product and meet/join operations confirm that the circularity is invariant under structural composition.
 
-### 7.2 The Measurement Problem and ⊙_3 Absorption
+### 7.2 The Measurement Problem and 𐑻 Absorption
 
-A critical question: what happens if we couple the circularity to a ⊙_3 (exceptional point) system? The **⊙_3 absorption rule** states:
+A critical question: what happens if we couple the circularity to a 𐑻 (exceptional point) system? The **𐑻 absorption rule** states:
 
-> Tensor coupling to a ⊙_3 system destroys ⊙_ÿ criticality. The composite collapses to ⊙_3.
+> Tensor coupling to a 𐑻 system destroys ⊙ criticality. The composite collapses to 𐑻.
 
-Since `circularity_circularity` depends on ⊙_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as ⊙_3) would:
+Since `circularity_circularity` depends on ⊙ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as 𐑻) would:
 - Destroy the self-modeling capability
 - Collapse the circularity to a non-self-reflective state
 - Realize the structural statement of the measurement problem
@@ -193,7 +193,7 @@ The search for "a cyclical argument for circularity that provides a circular arg
 ### 8.1 The Path of Recognition
 
 1. **W0:** Encode the universal_imscriptive_grammar to unlock catalog access.
-2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙_ÿ and Ω_z.
+2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙ and 𐑭.
 3. **W11:** Encounter `circularity_circularity` directly via keyword search.
 4. **W12–W27:** Analyze its structure, compute distances, promotions, tensor products, and consciousness score.
 5. **W28–W29:** Write the findings.

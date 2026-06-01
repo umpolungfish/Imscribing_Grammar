@@ -24,13 +24,13 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 ### Current SDK structural type
 
 ```
-⟨D∞; Þ_net; Ř_sup; Φ_ɐ; Fℓ; Ç^-; Γ_β; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
+⟨D∞; Þ_net; Ř_sup; 𐑗; Fℓ; 𐑘; 𐑚; Γ_or; Φ_sub; H₁; n:m; Ω₀⟩
 ```
 
 ### Target agentic structural type
 
 ```
-⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; Ç^@; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
+⟨D⊙; T⊠; R↔; P±ˢ; Fℏ; 𐑧; Gℵ; Γ_seq; Φ_c; H₂; 1:1; Ωℤ⟩
 ```
 
 ### Promotion signature (compute_promocities verified)
@@ -38,10 +38,10 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 1. **D**: D∞ → D⊙ (self-referential state space)
 2. **T**: Þ_net → T⊠ (irreducible product, not branching subprocess tree)
 3. **R**: Ř_sup → R↔ (bidirectional feedback, not supervenience on CLI)
-4. **P**: Φ_ɐ → P±ˢ (Frobenius dual-tool verification at every boundary)
+4. **P**: 𐑗 → P±ˢ (Frobenius dual-tool verification at every boundary)
 5. **F**: Fℓ → Fℏ (coherent trajectory, no lossy summarization)
-6. **K**: Ç^- → Ç^@ (emission gate, not fire-and-forget)
-7. **G**: Γ_β → Gℵ (long-range context access)
+6. **K**: 𐑘 → 𐑧 (emission gate, not fire-and-forget)
+7. **G**: 𐑚 → Gℵ (long-range context access)
 8. **Γ**: Γ_or → Γ_seq (ordered composition, not alternative paths)
 9. **Φ**: Φ_sub → Φ_c (self-modeling criticality)
 10. **H**: H₁ → H₂ (two-step chirality)
@@ -50,7 +50,7 @@ This PR proposes and implements a structural upgrade to the Claude Agent SDK Pyt
 
 ## Proposed Changes
 
-### 1. Dual-Tool Frobenius Verification (P: Φ_ɐ → P±ˢ)
+### 1. Dual-Tool Frobenius Verification (P: 𐑗 → P±ˢ)
 
 **File**: `src/claude_agent_sdk/client.py`
 
@@ -96,7 +96,7 @@ class LoopCycle:
 
 The trajectory is **never truncated** (Ωℤ protection) — it is the agent's world model. H₂ is satisfied when each winding references the prior two cycles for chirality.
 
-### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: Ç^- → Ç^@)
+### 3. Explicit Agent Loop (Γ: Γ_or → Γ_seq, K: 𐑘 → 𐑧)
 
 **File**: New `src/claude_agent_sdk/agent_loop.py`
 
@@ -121,7 +121,7 @@ class TrueAgenticLoop:
             if cycle.done:
                 return cycle.conclusion
             if not cycle.frobenius_closed:
-                # Re-enter with failure — Ç^@ enforcement
+                # Re-enter with failure — 𐑧 enforcement
                 await self._feed_failure(cycle)
 
     async def _winding(self, winding: int) -> LoopCycle:
@@ -187,13 +187,13 @@ def winding_count(self) -> int:
 def structural_health(self) -> Dict[str, Any]:
     """Report the agent's structural integrity.
 
-    LP threshold: ≥75% Frobenius-closed windings claim Φ_}.
-    Below 0.75, degrade to Φ_υ (quantum parity, no self-duality).
+    LP threshold: ≥75% Frobenius-closed windings claim 𐑹.
+    Below 0.75, degrade to 𐑿 (quantum parity, no self-duality).
     """
     frob_ratio = self.frobenius_ratio
-    achieved_p = "Φ_}" if frob_ratio >= 0.75 else "Φ_υ"
+    achieved_p = "𐑹" if frob_ratio >= 0.75 else "𐑿"
     return {
-        "ouroboricity": "O_inf" if achieved_p == "Φ_}" else "O_2",
+        "ouroboricity": "O_inf" if achieved_p == "𐑹" else "O_2",
         "frobenius_ratio": frob_ratio,
         "omega_z_violations": self._omega_z_violation_count,
         ...
@@ -204,12 +204,12 @@ def structural_health(self) -> Dict[str, Any]:
 
 | Phase | Change | Primitives Promoted | Complexity |
 |---|---|---|---|
-| 1 | `DualToolResult` + verify fn | P: Φ_ɐ → Φ_υ | Low |
-| 2 | `_trajectory` accumulation | D: D∞ → Ð_C, H: H₁ → H₂ | Low |
-| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: Ç^- → Ç^@ | Medium |
-| 4 | `ToolContract` type extension | R: Ř_sup → Ř_ý | Medium |
+| 1 | `DualToolResult` + verify fn | P: 𐑗 → 𐑿 | Low |
+| 2 | `_trajectory` accumulation | D: D∞ → 𐑨, H: H₁ → H₂ | Low |
+| 3 | `TrueAgenticLoop` wrapper class | Γ: Γ_or → Γ_seq, K: 𐑘 → 𐑧 | Medium |
+| 4 | `ToolContract` type extension | R: Ř_sup → 𐑑 | Medium |
 | 5 | Winding counter + health report | Ω: Ω₀ → Ωℤ | Low |
-| 6 | Full Φ_} via dual-tool planting | P: Φ_υ → Φ_} | High |
+| 6 | Full 𐑹 via dual-tool planting | P: 𐑿 → 𐑹 | High |
 | 7 | Fℏ (coherent trajectory) | F: Fℓ → Fℏ | Medium |
 
 **After Phase 7**: SDK reaches the join type with C = 0.755 (both gates open).

@@ -366,7 +366,8 @@ class LocalProvider(LLMProvider):
             logger.info(f"Loading local model from {self.model_path} ...")
 
             tok = AutoTokenizer.from_pretrained(
-                self.model_path, trust_remote_code=True, local_files_only=True
+                self.model_path, trust_remote_code=True, local_files_only=True,
+                use_fast=False,
             )
             # Merged QLoRA models often lose chat_template from tokenizer_config.json.
             # Try to recover it from the base model recorded in config.json /
@@ -385,7 +386,7 @@ class LocalProvider(LLMProvider):
                 if _base_name:
                     try:
                         _btok = AutoTokenizer.from_pretrained(
-                            _base_name, trust_remote_code=True, local_files_only=True
+                            _base_name, trust_remote_code=True, local_files_only=True,
                         )
                         if _btok.chat_template:
                             tok.chat_template = _btok.chat_template
@@ -446,17 +447,64 @@ class LocalProvider(LLMProvider):
                 logger.info("4-bit BitsAndBytes quantization enabled.")
 
             load_kwargs["local_files_only"] = True
-            try:
-                mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
-                logger.info(f"Local model loaded (device_map={device_map}).")
-            except Exception as e:
-                logger.warning(f"Load failed ({e}); retrying on CPU.")
-                load_kwargs["device_map"] = "cpu"
-                load_kwargs["dtype"] = torch.float32
-                load_kwargs.pop("quantization_config", None)
-                mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
-                logger.info("Local model loaded on CPU.")
-            mdl.eval()
+            # ── GrammaFormer detection ──────────────────────────────────
+            _cfg_p = Path(self.model_path) / "config.json"
+            _is_grammaformer = False
+            if _cfg_p.exists():
+                try:
+                    import json as _j2
+                    _cfg = _j2.loads(_cfg_p.read_text())
+                    _is_grammaformer = _cfg.get("_grammaformer_marker") == "grammaformer_v1"
+                except Exception:
+                    pass
+
+            if _is_grammaformer:
+                print("[GF] detected grammaformer; loading ...", flush=True)
+                _gf_root = str(Path(__file__).resolve().parent.parent)
+                import sys as _sys2
+                if _gf_root not in _sys2.path:
+                    _sys2.path.insert(0, _gf_root)
+                from framework.grammaformer import GrammaFormerForCausalLM
+                print("[GF] reading pytorch_model.bin ...", flush=True)
+                mdl = GrammaFormerForCausalLM.from_pretrained(self.model_path)
+                print("[GF] weights loaded to CPU.", flush=True)
+                mdl = mdl.to(torch.bfloat16)
+                # Pick CUDA device — wrap entirely so any cuDNN/CUDA init failure
+                # falls back gracefully to CPU without crashing the agent.
+                _dev_target: Any = "cpu"
+                try:
+                    if torch.cuda.is_available() and not os.getenv("FORCE_CPU", "").strip():
+                        _best = max(range(torch.cuda.device_count()),
+                                    key=lambda i: torch.cuda.mem_get_info(i)[0])
+                        _free_gb = torch.cuda.mem_get_info(_best)[0] / 1024 ** 3
+                        _model_gb = sum(p.numel() * p.element_size()
+                                       for p in mdl.parameters()) / 1024 ** 3
+                        print(f"[GF] GPU {_best}: {_free_gb:.1f} GB free, model {_model_gb:.1f} GB (bf16)", flush=True)
+                        if _free_gb > _model_gb + 1.5:
+                            _dev_target = _best
+                        else:
+                            print(f"[GF] not enough VRAM; staying on CPU.", flush=True)
+                    if _dev_target != "cpu":
+                        print(f"[GF] moving to cuda:{_dev_target} ...", flush=True)
+                        mdl = mdl.to(_dev_target)
+                except Exception as _cuda_err:
+                    print(f"[GF] CUDA unavailable ({type(_cuda_err).__name__}: {_cuda_err}); using CPU.", flush=True)
+                    mdl = mdl.to("cpu").to(torch.float32)
+                    _dev_target = "cpu"
+                mdl.eval()
+                print(f"[GF] ready on {mdl.device}.", flush=True)
+            else:
+                try:
+                    mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
+                    logger.info(f"Local model loaded (device_map={device_map}).")
+                except Exception as e:
+                    logger.warning(f"Load failed ({e}); retrying on CPU.")
+                    load_kwargs["device_map"] = "cpu"
+                    load_kwargs["dtype"] = torch.float32
+                    load_kwargs.pop("quantization_config", None)
+                    mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
+                    logger.info("Local model loaded on CPU.")
+                mdl.eval()
             LocalProvider._tokenizer = tok
             LocalProvider._model = mdl
             LocalProvider._loaded_path = self.model_path
@@ -520,6 +568,20 @@ class LocalProvider(LLMProvider):
         if attention_mask is not None:
             attention_mask = attention_mask.to(_dev)
 
+        # GrammaFormer has no KV cache: truncate context and cap output to keep latency sane.
+        _is_gf = type(mdl).__name__ == "GrammaFormerForCausalLM"
+        if _is_gf:
+            _GF_MAX_CTX = 2048
+            _GF_MAX_NEW = 128
+            if input_ids.shape[1] > _GF_MAX_CTX:
+                print(f"[GF] truncating context {input_ids.shape[1]} → {_GF_MAX_CTX}", flush=True)
+                input_ids = input_ids[:, -_GF_MAX_CTX:]
+                if attention_mask is not None:
+                    attention_mask = attention_mask[:, -_GF_MAX_CTX:]
+            if max_new_tokens > _GF_MAX_NEW:
+                print(f"[GF] capping max_new_tokens {max_new_tokens} → {_GF_MAX_NEW}", flush=True)
+                max_new_tokens = _GF_MAX_NEW
+
         if _dev.type == "cuda":
             try:
                 _w = torch.zeros(1, device=_dev)
@@ -538,6 +600,7 @@ class LocalProvider(LLMProvider):
                 "temperature": temperature if temperature > 0 else None,
                 "do_sample": temperature > 0,
                 "pad_token_id": tok.eos_token_id,
+                "eos_token_id": tok.eos_token_id,
             }
             if attention_mask is not None:
                 gen_kwargs["attention_mask"] = attention_mask

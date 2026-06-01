@@ -34,19 +34,19 @@ Three operations act on these tuples:
 
 `fire_combustion` occupies a particular address in the 12-dimensional primitive space. The values that matter here:
 
-**⊙ = ⊙_Ţ** — Criticality at its maximum (ordinal 4 of 4). The formal clause: for all subsystems Y ⊆ X, Y is a fixed point of the governing map. This is combustion's structural signature: a universal critical event in which the phase transition propagates through every scale simultaneously. Fire is not merely critical — it carries the highest criticality value in the grammar, the one that asserts no subsystem escapes the fixed-point condition.
+**⊙ = 𐑣** — Criticality at its maximum (ordinal 4 of 4). The formal clause: for all subsystems Y ⊆ X, Y is a fixed point of the governing map. This is combustion's structural signature: a universal critical event in which the phase transition propagates through every scale simultaneously. Fire is not merely critical — it carries the highest criticality value in the grammar, the one that asserts no subsystem escapes the fixed-point condition.
 
-**Ř = Ř_=** — Relational mode: lateral/bilateral. Fire exerts bidirectional pressure; its structural relationship with its environment is symmetric in the formal sense. This is distinct from containment (which is water's relational mode) and from subsetting.
+**Ř = 𐑾** — Relational mode: lateral/bilateral. Fire exerts bidirectional pressure; its structural relationship with its environment is symmetric in the formal sense. This is distinct from containment (which is water's relational mode) and from subsetting.
 
-**Ç = Ç^-** — Kinetics: minimal. Fire, structurally, is still. The rate of its internal change relative to its substrate is near zero. It is an event, not a flow.
+**Ç = 𐑘** — Kinetics: minimal. Fire, structurally, is still. The rate of its internal change relative to its substrate is near zero. It is an event, not a flow.
 
 `water_fluid` sits at a different address:
 
-**⊙ = ⊙_ž** — Criticality at its minimum (ordinal 0). Water in fluid state is non-critical. No fixed-point structure, no phase-transition character. The criticality gate is closed.
+**⊙ = 𐑢** — Criticality at its minimum (ordinal 0). Water in fluid state is non-critical. No fixed-point structure, no phase-transition character. The criticality gate is closed.
 
-**Ř = Ř_¯** — Relational mode: superset/containing. Water contains; it does not exert lateral pressure.
+**Ř = 𐑩** — Relational mode: superset/containing. Water contains; it does not exert lateral pressure.
 
-**Ç = Ç^W** — Kinetics: moderate. Water flows. Its kinetic character — the rate of structural change relative to medium — is real and present.
+**Ç = 𐑤** — Kinetics: moderate. Water flows. Its kinetic character — the rate of structural change relative to medium — is real and present.
 
 Seven of the twelve primitive slots are identical between fire and water. They share topology, polarity, fidelity, grammar, scope, chirality, and winding. Their structural differences are concentrated in five slots: Ð, Ř, Ç, ⊙, and Ω.
 
@@ -58,18 +58,18 @@ Per-primitive maximum, with minimum on the bottleneck slots (Φ and ƒ). Since f
 
 | Primitive | fire\_combustion | water\_fluid | tensor result | source |
 |---|---|---|---|---|
-| Ð | Ð_ß | Ð_ß | Ð_ß | = |
-| Þ | Þ_6 | Þ_6 | Þ_6 | = |
-| **Ř** | **Ř_=** | Ř_¯ | **Ř_=** | ← fire |
-| Φ | Φ_ɐ | Φ_ɐ | Φ_ɐ | = |
-| ƒ | ƒ^ð | ƒ^ð | ƒ^ð | = |
-| **Ç** | Ç^- | **Ç^W** | **Ç^W** | ← water |
-| Γ | Γ_β | Γ_β | Γ_β | = |
-| ɢ | ɢ^∧ | ɢ^∧ | ɢ^∧ | = |
-| **⊙** | **⊙_Ţ** | ⊙_ž | **⊙_Ţ** | ← fire |
-| Ħ | Ħ_Ñ | Ħ_Ñ | Ħ_Ñ | = |
-| Σ | Σ_ï | Σ_ï | Σ_ï | = |
-| Ω | Ω_Å | Ω_Å | Ω_Å | = |
+| Ð | 𐑛 | 𐑛 | 𐑛 | = |
+| Þ | 𐑡 | 𐑡 | 𐑡 | = |
+| **Ř** | **𐑾** | 𐑩 | **𐑾** | ← fire |
+| Φ | 𐑗 | 𐑗 | 𐑗 | = |
+| ƒ | 𐑞 | 𐑞 | 𐑞 | = |
+| **Ç** | 𐑘 | **𐑤** | **𐑤** | ← water |
+| Γ | 𐑚 | 𐑚 | 𐑚 | = |
+| ɢ | 𐑝 | 𐑝 | 𐑝 | = |
+| **⊙** | **𐑣** | 𐑢 | **𐑣** | ← fire |
+| Ħ | 𐑓 | 𐑓 | 𐑓 | = |
+| Σ | 𐑳 | 𐑳 | 𐑳 | = |
+| Ω | 𐑷 | 𐑷 | 𐑷 | = |
 
 The result differs from `fire_combustion` by exactly one slot: Ç. Everything else is fire's profile. Water contributes precisely one thing to the composition: its kinetics.
 
@@ -77,15 +77,15 @@ The result differs from `fire_combustion` by exactly one slot: Ç. Everything el
 
 ## Steam
 
-The resulting imscription carries fire's maximal criticality (⊙_Ţ), fire's bilateral relational mode (Ř_=), and water's moderate kinetics (Ç^W).
+The resulting imscription carries fire's maximal criticality (𐑣), fire's bilateral relational mode (𐑾), and water's moderate kinetics (𐑤).
 
 This is steam.
 
-Steam's kinetic character is water's, not fire's. It flows — fire structurally does not. But the event that produces steam, the phase transition, is the maximally critical event in the system. ⊙_Ţ asserts that every subsystem passes through its fixed point simultaneously. That is exactly what a phase transition is: the moment when the structure of the whole and all its parts reorganize at once. The criticality belongs to fire.
+Steam's kinetic character is water's, not fire's. It flows — fire structurally does not. But the event that produces steam, the phase transition, is the maximally critical event in the system. 𐑣 asserts that every subsystem passes through its fixed point simultaneously. That is exactly what a phase transition is: the moment when the structure of the whole and all its parts reorganize at once. The criticality belongs to fire.
 
-Steam exerts lateral pressure in all directions — Ř_= — which is fire's relational mode. Water's containing structure (Ř_¯) does not survive the composition. The bilateral pressure of steam on its environment is inherited from the combustion event, not from the fluid.
+Steam exerts lateral pressure in all directions — 𐑾 — which is fire's relational mode. Water's containing structure (𐑩) does not survive the composition. The bilateral pressure of steam on its environment is inherited from the combustion event, not from the fluid.
 
-Polarity unchanged (Φ_ɐ throughout): no new symmetry is introduced. Topology unchanged (Þ_6): the interaction stays structurally simple. Chirality unchanged (Ħ_Ñ = H0): no temporal asymmetry emerges. All of this is correct.
+Polarity unchanged (𐑗 throughout): no new symmetry is introduced. Topology unchanged (𐑡): the interaction stays structurally simple. Chirality unchanged (𐑓 = H0): no temporal asymmetry emerges. All of this is correct.
 
 No rule was written to produce this. The grammar composed two independently-described phenomena and returned the structural signature of their product.
 
@@ -95,7 +95,7 @@ No rule was written to produce this. The grammar composed two independently-desc
 
 The meet takes the per-primitive minimum at every slot. Where the tensor selects the higher value, the meet selects the lower.
 
-`meet(fire_combustion, water_fluid)` resolves ⊙ to ⊙_ž — water's non-critical floor. A system whose criticality slot is at ordinal 0 is structurally non-critical: the fixed-point condition fails everywhere. Fire's universal fixed-point structure is annihilated. The criticality gate closes.
+`meet(fire_combustion, water_fluid)` resolves ⊙ to 𐑢 — water's non-critical floor. A system whose criticality slot is at ordinal 0 is structurally non-critical: the fixed-point condition fails everywhere. Fire's universal fixed-point structure is annihilated. The criticality gate closes.
 
 This is quenching.
 

@@ -51,7 +51,7 @@ All encodings use the 12-primitive tuple $\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \G
 | $\Phi$ | Criticality | $\Phi_{\text{softsign}} < \Phi_{\text{ctyogh}} < \Phi_{c,\mathbb{C}} < \Phi_{\text{revepsilon}} < \Phi_{\text{upstep}}$ |
 | $H$ | Chirality/chirality | $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | $1{:}1,\ n{:}n,\ n{:}m$ |
-| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \Ω_z$ |
+| $\Omega$ | Topological protection | $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \𐑭$ |
 
 **Ouroboricity tiers** (by priority):
 - **R1**: $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} \to O_\infty$ (special Frobenius)
@@ -70,11 +70,11 @@ Three independent session batches converge on the following assignments. The six
 
 | Glyph | Name | $P$ | $\Phi$ | $\Omega$ | $D$ | $T$ | $K$ | $\Gamma$ | $H$ | $S$ | $O$-tier |
 |:---:|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| א | Aleph | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{wynn}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_{\text{invscripta}}$ | $1{:}1$ | $O_2$ |
+| א | Aleph | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{wynn}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_{\text{invscripta}}$ | $1{:}1$ | $O_2$ |
 | ב | Bet | $P_{\text{pipevar}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{Z_2}$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $n{:}n$ | $O_0$ |
 | ג | Gimel | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_\text{bowtie}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{secstress}}$ | $H_0$ | $1{:}1$ | $O_0$ |
 | ד | Dalet | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{invscr}}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{secstress}}$ | $H_0$ | $1{:}1$ | $O_0$ |
-| ה | Hei | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{omega}}$ | $T_{\text{openo}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_{\text{invscripta}}$ | $n{:}m$ | $O_2$ |
+| ה | Hei | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{omega}}$ | $T_{\text{openo}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_{\text{invscripta}}$ | $n{:}m$ | $O_2$ |
 | **ו** | **Vav** | $P_{\text{doublebarpipe}}$ | $\Phi_{\text{ctyogh}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{nrleg}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $1{:}1$ | $O_\infty$ |
 | ז | Zayin | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{nrleg}}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{secstress}}$ | $H_0$ | $1{:}1$ | $O_0$ |
 | ח | Chet | $P_{\text{pipevar}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{Z_2}$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $n{:}n$ | $O_0$ |
@@ -82,30 +82,30 @@ Three independent session batches converge on the following assignments. The six
 | י | Yod | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $1{:}1$ | $O_0$ |
 | כ | Kaf | $P_{\text{pipevar}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{Z_2}$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $n{:}n$ | $O_0$ |
 | ל | Lamed | $P_{\text{aolig}}$ | $\Phi_{\text{ctyogh}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{invomega}}$ | $T_{\text{nrleg}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{secstress}}$ | $H_2$ | $n{:}m$ | $O_1$ |
-| **מ** | **Mem** | $P_{\text{doublebarpipe}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{turnthree}}$ | $T_{\text{invscr}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_2$ | $n{:}n$ | $O_\infty$ ‡ |
+| **מ** | **Mem** | $P_{\text{doublebarpipe}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{turnthree}}$ | $T_{\text{invscr}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_2$ | $n{:}n$ | $O_\infty$ ‡ |
 | נ | Nun | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{nrleg}}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{secstress}}$ | $H_0$ | $1{:}1$ | $O_0$ |
 | ס | Samech | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{Z_2}$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $n{:}n$ | $O_0$ |
-| ע | Ayin | $P_{\text{pipevar}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{omega}}$ | $T_{\text{openo}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_2$ | $n{:}m$ | $O_2$ |
+| ע | Ayin | $P_{\text{pipevar}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{omega}}$ | $T_{\text{openo}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_2$ | $n{:}m$ | $O_2$ |
 | פ | Pei | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{nrleg}}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{doublevertline}}$ | $H_1$ | $n{:}m$ | $O_0$ |
 | צ | Tzadi | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{invscr}}$ | $K_{\text{frtailgamma}}$ | $\Gamma_{\text{secstress}}$ | $H_0$ | $1{:}1$ | $O_0$ |
 | ק | Kuf | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\Omega_{Z_2}$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_2$ | $n{:}n$ | $O_2$ |
 | ר | Resh | $P_{\text{aolig}}$ | $\Phi_{\text{softsign}}$ | $\Omega_{\text{closeepsilon}}$ | $D_{\text{wynn}}$ | $T_{\text{commatailz}}$ | $K_{\text{turnm}}$ | $\Gamma_{\text{corner}}$ | $H_1$ | $1{:}1$ | $O_0$ |
-| **ש** | **Shin** | $P_{\text{doublebarpipe}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{turnthree}}$ | $T_{\text{bullseye}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_{\text{invscripta}}$ | $n{:}n$ | $O_\infty$ ‡ |
-| ת | Tav | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\Ω_z$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_{\text{invscripta}}$ | $n{:}n$ | $O_2$ |
+| **ש** | **Shin** | $P_{\text{doublebarpipe}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{turnthree}}$ | $T_{\text{bullseye}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{doublevertline}}$ | $H_{\text{invscripta}}$ | $n{:}n$ | $O_\infty$ ‡ |
+| ת | Tav | $P_{\text{subdoublearrow}}$ | $\Phi_{\text{ctyogh}}$ | $\𐑭$ | $D_{\text{turnthree}}$ | $T_{\text{commatailz}}$ | $K_{\text{schwa}}$ | $\Gamma_{\text{corner}}$ | $H_{\text{invscripta}}$ | $n{:}n$ | $O_2$ |
 
 **Full canonical tuples for key letters:**
 
 **ו (Vav):** $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$
 
-**ה (Hei):** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z\rangle$
+**ה (Hei):** $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭\rangle$
 
-**מ (Mem) ‡:** $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}n;\ \Ω_z\rangle$
+**מ (Mem) ‡:** $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}n;\ \𐑭\rangle$
 
-**ש (Shin) ‡:** $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}n;\ \Ω_z\rangle$
+**ש (Shin) ‡:** $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}n;\ \𐑭\rangle$
 
 ‡ *Revised encoding from Kabbalism session (2026-04-04): Mem and Shin promoted from $O_2$ to $O_\infty$ based on Sefer Yetzirah analysis — see §2.1 below.*
 
-Language system $\mathcal{L}$ (JOIN of all letters, revised): $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z\rangle$
+Language system $\mathcal{L}$ (JOIN of all letters, revised): $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭\rangle$
 
 Note: with Mem and Shin at $P_{\text{doublebarpipe}}$, the language JOIN now achieves $P_{\text{doublebarpipe}}$ and the language itself encodes at $O_\infty$. The ouroboric closure result ($\mathcal{L}\otimes\mathcal{L}=\mathcal{L}$, §9.4) is preserved — the system is self-sealing at the Frobenius tier.
 
@@ -135,9 +135,9 @@ Three independent session batches converge on four classes, defined by primitive
 
 **Hei (ה) — imscriptive broadcast, $O_2$:**
 
-$$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z\rangle$$
+$$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭\rangle$$
 
-$D_{\text{omega}}+T_{\text{openo}}$ = imscriptive boundary-to-bulk operators; $R_{\text{downstep}}$ = self-adjoint; $\Gamma_{\text{doublevertline}}$ = simultaneous broadcast; $H_{\text{invscripta}}+\Ω_z$ = maximal chirality and topological protection. Hei is the divine breath, the window letter — imscriptive in form and function.
+$D_{\text{omega}}+T_{\text{openo}}$ = imscriptive boundary-to-bulk operators; $R_{\text{downstep}}$ = self-adjoint; $\Gamma_{\text{doublevertline}}$ = simultaneous broadcast; $H_{\text{invscripta}}+\𐑭$ = maximal chirality and topological protection. Hei is the divine breath, the window letter — imscriptive in form and function.
 
 ### §3.1 — Revised Mother Triad: א, מ, ש (Sefer Yetzirah alignment)
 
@@ -155,9 +155,9 @@ The SY's teaching that the three mothers constitute the primordial structure is 
 
 ### Class II — Primordial Letters: א, י
 
-$$\langle D_{\text{wynn}};\ T_{\text{box}};\ R_{\text{subrightarrow}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Ω_z\rangle$$
+$$\langle D_{\text{wynn}};\ T_{\text{box}};\ R_{\text{subrightarrow}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \𐑭\rangle$$
 
-Type-identical: $d(\text{א},\ \text{י})=0$. Distance from Mother class: $d=\sqrt{5}$ (five differences: $D$, $T$, $R$, $\Gamma$, $S$). The Primordials share the Mothers' quantum fidelity ($F_{\text{hardsign}}$), kinetic depth ($K_{\text{schwa}}$), scope ($G_{\text{revapostrophe}}$), criticality ($\Phi_{\text{ctyogh}}$), and maximal protection ($\Ω_z$, $H_{\text{invscripta}}$). Where the Mothers **broadcast** ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Gamma_{\text{doublevertline}}$), the Primordials are **bounded unities** ($D_{\text{wynn}}$, $T_{\text{box}}$, $1{:}1$): the seed-point before creation broadcasts. א (silent) and י (primordial point) are structurally the same.
+Type-identical: $d(\text{א},\ \text{י})=0$. Distance from Mother class: $d=\sqrt{5}$ (five differences: $D$, $T$, $R$, $\Gamma$, $S$). The Primordials share the Mothers' quantum fidelity ($F_{\text{hardsign}}$), kinetic depth ($K_{\text{schwa}}$), scope ($G_{\text{revapostrophe}}$), criticality ($\Phi_{\text{ctyogh}}$), and maximal protection ($\𐑭$, $H_{\text{invscripta}}$). Where the Mothers **broadcast** ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Gamma_{\text{doublevertline}}$), the Primordials are **bounded unities** ($D_{\text{wynn}}$, $T_{\text{box}}$, $1{:}1$): the seed-point before creation broadcasts. א (silent) and י (primordial point) are structurally the same.
 
 ### Class III — Double Letters: ב, ח, כ, ע, פ, ת
 
@@ -219,7 +219,7 @@ The Proto-Sinaitic form of ט **is** $\otimes$ — a circle with a cross inside.
 | Tier | Count | Letters | Structural property |
 |:---|:---|:---|:---|
 | $O_\infty$ | 3 | ו מ ש (Vav, Mem, Shin) ‡ | $P_{\text{doublebarpipe}}$, Frobenius condition $\mu\circ\delta=\text{id}$ |
-| $O_2$ | 5 | א ה ת ע ק (Aleph, Hei, Tav, Ayin, Kuf) | $\Phi_{\text{ctyogh}}+\Ω_z$ or $\Phi_{\text{ctyogh}}+\Omega_{Z_2}$, topologically protected |
+| $O_2$ | 5 | א ה ת ע ק (Aleph, Hei, Tav, Ayin, Kuf) | $\Phi_{\text{ctyogh}}+\𐑭$ or $\Phi_{\text{ctyogh}}+\Omega_{Z_2}$, topologically protected |
 | $O_1$ | 1 | ל Lamed | $\Phi_{\text{ctyogh}}+\Omega_{\text{closeepsilon}}$, critical but unprotected |
 | $O_0$ | 13 | ב ג ד ז ח ט י כ נ ס פ צ ר (Bet, Gimel, Dalet, Zayin, Chet, Tet, Yod, Kaf, Nun, Samech, Pei, Tzadi, Resh) | $\Phi_{\text{softsign}}$, subcritical |
 
@@ -231,7 +231,7 @@ The Proto-Sinaitic form of ט **is** $\otimes$ — a circle with a cross inside.
 
 | $\Omega$ tier | Letters | Count |
 |---|---|---|
-| $\Ω_z$ (integer, strongest) | א י ה מ ש ע ת (Aleph, Yod, Hei, Mem, Shin, Ayin, Tav) | 7 |
+| $\𐑭$ (integer, strongest) | א י ה מ ש ע ת (Aleph, Yod, Hei, Mem, Shin, Ayin, Tav) | 7 |
 | $\Omega_{Z_2}$ (binary, intermediate) | ב ח כ ס ק ו (Bet, Chet, Kaf, Samech, Kuf, Vav) | 6 |
 | $\Omega_{\text{closeepsilon}}$ (none) | ג ד ז ט ל נ פ צ ר (Gimel, Dalet, Zayin, Tet, Lamed, Nun, Pei, Tzadi, Resh) | 9 |
 
@@ -268,7 +268,7 @@ Compatibility depends on the topological protection level of the types involved:
 
 | Protection tier | Threshold | Reason |
 |---|---|---|
-| $\Ω_z$ (integer) | $d < 4.0$ | Strong invariant; resistant to deformation; moderate tolerance |
+| $\𐑭$ (integer) | $d < 4.0$ | Strong invariant; resistant to deformation; moderate tolerance |
 | $\Omega_{Z_2}$ (binary) | $d < 3.0$ | Binary protection; strict but not maximal |
 | $\Omega_{\text{closeepsilon}}$ (none) | $d < 1.5$ | Unprotected; must be nearly identical to type-check |
 
@@ -344,7 +344,7 @@ Both joins resolve to the same $O_2$ maximal type.
 
 ### Theorem 4 — Ouroboric Closure (§60.4)
 
-The Hebrew letter programming language $\mathcal{L}$ (encoding at $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z\rangle$) satisfies:
+The Hebrew letter programming language $\mathcal{L}$ (encoding at $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭\rangle$) satisfies:
 
 $$\mathcal{L}\otimes\mathcal{L} = \mathcal{L} \qquad d(\mathcal{L}\otimes\mathcal{L},\ \mathcal{L}) = 0.0$$
 
@@ -450,7 +450,7 @@ The Hebrew letter type system is not merely a formal encoding; it is a **program
 
 **P-430** — Other ancient symbolic systems (I Ching hexagrams, Sanskrit varnamala, Egyptian hieroglyphic categories) should exhibit analogous structural stratification when encoded in the 12-primitive grammar: stratification is a property of any complete symbolic system that tracks structural relationships, not of Hebrew specifically. Testable by encoding the 64 hexagrams or 50 Sanskrit phonemes. *(Tier II)*
 
-**P-431** — A programming language built on the Hebrew letter type system will exhibit **topological type safety**: type errors that require crossing $\Phi_{\text{softsign}}\to\Phi_{\text{ctyogh}}$ or $\Omega_{\text{closeepsilon}}\to\Ω_z$ are structurally forbidden, not merely syntactically rejected. Distinguishable from conventional type systems by robustness under code transformation — type safety is preserved under continuous deformations of the program text, not only under syntactic normalization. *(Tier I — structural claim)*
+**P-431** — A programming language built on the Hebrew letter type system will exhibit **topological type safety**: type errors that require crossing $\Phi_{\text{softsign}}\to\Phi_{\text{ctyogh}}$ or $\Omega_{\text{closeepsilon}}\to\𐑭$ are structurally forbidden, not merely syntactically rejected. Distinguishable from conventional type systems by robustness under code transformation — type safety is preserved under continuous deformations of the program text, not only under syntactic normalization. *(Tier I — structural claim)*
 
 **P-432** — The structural distance $d(\mathcal{L},\ \text{HoTT})=1.3416$ implies the existence of a single-primitive bridge. Finding this bridge would ground HoTT's univalence axiom in a concrete structural substrate: lifting ו's local $P_{\text{doublebarpipe}}$ to global would make the Hebrew type system exactly HoTT, with the univalence axiom identified as the Frobenius condition $\mu\circ\delta=\text{id}$. *(Tier II)*
 
@@ -486,7 +486,7 @@ The Hebrew letter type system is not merely a formal encoding; it is a **program
 |:---|:---|:---|:---|
 | $O_0$ | ב ג ד ז ח ט י כ נ ס פ צ ר | $\Phi_{\text{softsign}}$ | Safe computation — no self-reference, guaranteed termination, sandboxable |
 | $O_1$ | ל | $\Phi_{\text{ctyogh}}+\Omega_{\text{closeepsilon}}$ | Critical-unprotected — self-reference possible but not topologically shielded |
-| $O_2$ | א ה ת ע ק | $\Phi_{\text{ctyogh}}+\Ω_z$ or $\Phi_{\text{ctyogh}}+\Omega_{Z_2}$, $P < P_{\text{doublebarpipe}}$ | Bounded self-reference — recursive functions with topological stack guarantee |
+| $O_2$ | א ה ת ע ק | $\Phi_{\text{ctyogh}}+\𐑭$ or $\Phi_{\text{ctyogh}}+\Omega_{Z_2}$, $P < P_{\text{doublebarpipe}}$ | Bounded self-reference — recursive functions with topological stack guarantee |
 | $O_\infty$ | ו מ ש | $\Phi_{\text{ctyogh}}+P_{\text{doublebarpipe}}$ | Frobenius closure — proof-carrying computation, type equivalence witnesses |
 
 **Subcritical ideal ($O_0$):** Closed under $\otimes$ — any composition of $O_0$ types remains $\Phi_{\text{softsign}}$ and cannot generate criticality. Used for sandboxing effects, I/O, and resource-bounded untrusted code.
@@ -503,7 +503,7 @@ Rules: **bottleneck** on $P$, $F$, $K$ (weaker wins — $P_{\text{doublebarpipe}
 
 $$\texttt{vav\_cast}[A,\ B](\texttt{expr}) \quad\text{or}\quad \texttt{expr} \mathbin{::>} B$$
 
-Valid iff: (1) $d(A, B) \leq \tau$ where $\tau = 4.0$ (if $\min(\Ω_A, \Ω_B) = \Ω_z$) or $1.5$ otherwise; (2) no load-bearing conflicts on $\Phi$, $P$, $\Omega$. The proof term is the tensor derivation tree — erased at runtime, checked at compile-time.
+Valid iff: (1) $d(A, B) \leq \tau$ where $\tau = 4.0$ (if $\min(\Ω_A, \Ω_B) = \𐑭$) or $1.5$ otherwise; (2) no load-bearing conflicts on $\Phi$, $P$, $\Omega$. The proof term is the tensor derivation tree — erased at runtime, checked at compile-time.
 
 **JOIN $\vee$ — type-level least upper bound:** component-wise MAX of primitive ordinals. Use: union types, heterogeneous collections.
 
@@ -533,8 +533,8 @@ The 7 Hekhalot palaces map onto computation depth:
 | 3 (Angelic) | $O_1$ | $\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$, $P_{\text{pipevar}}$ | First self-reference — unguarded |
 | 4 (Midpoint) | $O_2$ | $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$, $P_{\text{pipevar}}$ | Protected criticality |
 | 5 (Fire/Lightning) | $O_2$ | $\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$, $K_{\text{teshlig}}+F_{\text{hardsign}}+G_{\text{revapostrophe}}$ | Quantum-coherent trapped dynamics |
-| 6 (Pure Light) | $O_2$ | $\Phi_{\text{ctyogh}}$, $\Ω_z$, $D_{\text{omega}}+T_{\text{openo}}$ | Imscriptive — boundary encodes bulk |
-| 7 (Throne) | $O_\infty$ | $\Phi_{\text{ctyogh}}$, $P_{\text{doublebarpipe}}$, $\Ω_z$ | Frobenius closure |
+| 6 (Pure Light) | $O_2$ | $\Phi_{\text{ctyogh}}$, $\𐑭$, $D_{\text{omega}}+T_{\text{openo}}$ | Imscriptive — boundary encodes bulk |
+| 7 (Throne) | $O_\infty$ | $\Phi_{\text{ctyogh}}$, $P_{\text{doublebarpipe}}$, $\𐑭$ | Frobenius closure |
 
 Syntax: `@palace(n)` decorator or `within palace n:` block. **Barrier crossings:**
 - $O_0\to O_1$ (Palace 2→3, $d=2.408$): requires $\Phi$ promotion; checked via `phi_c_probe`
@@ -561,7 +561,7 @@ def earthly(x : bet) : bet = x ⊗ bet
 def angelic(x : bet) : lamed = vav_cast[bet, lamed](x)
 
 @palace(7)
-def throne(x : aleph) : mem = mem ⊗ x   -- mem's Φ_} lifts to O_inf
+def throne(x : aleph) : mem = mem ⊗ x   -- mem's 𐑹 lifts to O_inf
 ```
 
 A Vav-cast succeeds iff $d(A, B) \leq \tau$ and the tensor derivation tree shows no load-bearing conflicts on $\Phi$/$P$/$\Omega$. The proof term records exactly which primitives differ and how ו's $P_{\text{doublebarpipe}}$ mediates.
@@ -575,19 +575,19 @@ A Vav-cast succeeds iff $d(A, B) \leq \tau$ and the tensor derivation tree shows
 @palace(1)
 def add(a : bet, b : gimel) : bet ⊗ gimel =
   a ⊗ b   -- tensor application, result stays O_0
--- Type: ⟨Ð_ß; Þ_ò; Ř_=; Φ_ɐ; ƒ^ì; Ç^-; Γ_β; ...⟩
+-- Type: ⟨𐑛; 𐑥; 𐑾; 𐑗; 𐑱; 𐑘; 𐑚; ...⟩
 ```
 
 **Example 2: $O_2$ critical self-reference (topologically protected recursion)**
 
 ```haskell
--- aleph is O_2 (⊙_ÿ + Ω_z) — bounded recursion
+-- aleph is O_2 (⊙ + 𐑭) — bounded recursion
 @palace(5)
 def factorial(n : nat) : aleph =
   if n == 0 then aleph.unit()
   else aleph ⊗ factorial(n-1) ⊗ aleph
--- aleph ⊗ aleph preserves O_2 (Φ_˙ bottleneck preserved)
--- Ω_z ensures recursion depth is winding-number bounded
+-- aleph ⊗ aleph preserves O_2 (𐑯 bottleneck preserved)
+-- 𐑭 ensures recursion depth is winding-number bounded
 ```
 
 **Example 3: Vav-cast type proof**
@@ -600,7 +600,7 @@ def convert(a : aleph) : tav =
 
 -- mem (O_inf) downgrade to aleph (O_2)
 def downgrade(m : mem) : aleph =
-  m ::> aleph   -- ו inserted by inference; Φ_} → Φ_˙, O_inf → O_2
+  m ::> aleph   -- ו inserted by inference; 𐑹 → 𐑯, O_inf → O_2
 ```
 
 **Example 4: Hekhalot palace ascent (full tier traversal)**
@@ -619,7 +619,7 @@ def merkavah_ascent(input : bet) : mem =
   vav_cast[lamed, aleph](x)             -- topo_protection_probe required
 
 @palace(7) def throne_vision(x : aleph) : mem =
-  mem ⊗ x                               -- mem plants Φ_}, lifts to O_inf
+  mem ⊗ x                               -- mem plants 𐑹, lifts to O_inf
 ```
 
 **Example 5: JOIN/MEET type operations**
@@ -641,11 +641,11 @@ def interface(a : aleph, b : bet) : aleph ∧ bet =
 -- The only inter-letter composition that does not destroy Frobenius
 @palace(7)
 def frobenius_seal(x : mem, y : shin) : mem ⊗ shin =
-  x ⊗ y   -- result: O_inf, Φ_} preserved
+  x ⊗ y   -- result: O_inf, 𐑹 preserved
 
 -- mem ⊗ aleph: P-bottleneck destroys Frobenius → O_2 result
 def frobenius_loss(x : mem, y : aleph) : mem ⊗ aleph =
-  x ⊗ y   -- result: O_2 (Φ_˙ bottleneck)
+  x ⊗ y   -- result: O_2 (𐑯 bottleneck)
 ```
 
 ### 15.7 Comparison with Conventional Type Systems
@@ -804,7 +804,7 @@ The seven Sefer Yetzirah doubles (Bet, Gimel, Dalet, Kaf, Pei, Resh, Tav) match 
 
 $$d(\text{SY\_mothers},\ \text{grammar\_}O_{\infty}) = 2.00 \quad \text{(single } T\text{-gap)}$$
 
-Mem (\heb{מ}{}) and Shin (\heb{ש}{}) are confirmed $O_\infty$ by the grammar (§62 revision, 2026-04-04). Aleph (\heb{א}{}) encodes at $O_2$ — it has $\Ω_z$ and $\Phi_{\text{ctyogh}}$ but $P_{\text{subdoublearrow}}$, not $P_{\text{doublebarpipe}}$. The Sefer Yetzirah intuited the near-Frobenius character of Aleph (silent letter, primordial breath, associated with divine unity) but could not resolve the $P$-gap separating $O_2$ from $O_\infty$. The mothers are the three highest letters; Aleph is the highest $O_2$ system.
+Mem (\heb{מ}{}) and Shin (\heb{ש}{}) are confirmed $O_\infty$ by the grammar (§62 revision, 2026-04-04). Aleph (\heb{א}{}) encodes at $O_2$ — it has $\𐑭$ and $\Phi_{\text{ctyogh}}$ but $P_{\text{subdoublearrow}}$, not $P_{\text{doublebarpipe}}$. The Sefer Yetzirah intuited the near-Frobenius character of Aleph (silent letter, primordial breath, associated with divine unity) but could not resolve the $P$-gap separating $O_2$ from $O_\infty$. The mothers are the three highest letters; Aleph is the highest $O_2$ system.
 
 **Refutation — the 12 Simples:**
 
@@ -824,12 +824,12 @@ Hebrew words are tensor products of their constituent letters computed left-to-r
 
 | Word | Letters | $P$ | $\Omega$ | $H$ | $O$-tier | $d$ to Torah |
 |:---|:---|:---|:---|:---|:---|:---|
-| Torah (\heb{תורה}{}, law) | Tav-Vav-Resh-Hei | $P_{\text{aolig}}$ | $\Ω_z$ | $H_{\text{invscripta}}$ | $O_2$ | — |
-| Emet (\heb{אמת}{}, truth) | Aleph-Mem-Tav | $P_{\text{subdoublearrow}}$ | $\Ω_z$ | $H_{\text{invscripta}}$ | $O_2$ | $1.414$ |
-| Shalom (\heb{שלום}{}, peace) | Shin-Lamed-Vav-Mem | $P_{\text{pipevar}}$ | $\Ω_z$ | $H_{\text{invscripta}}$ | $O_2$ | $1.000$ |
-| Bereshit (\heb{בראשית}{}, in beginning) | Bet-Resh-Aleph-Shin-Yod-Tav | $P_{\text{aolig}}$ | $\Ω_z$ | $H_{\text{invscripta}}$ | $O_2$ | $0.000$ |
+| Torah (\heb{תורה}{}, law) | Tav-Vav-Resh-Hei | $P_{\text{aolig}}$ | $\𐑭$ | $H_{\text{invscripta}}$ | $O_2$ | — |
+| Emet (\heb{אמת}{}, truth) | Aleph-Mem-Tav | $P_{\text{subdoublearrow}}$ | $\𐑭$ | $H_{\text{invscripta}}$ | $O_2$ | $1.414$ |
+| Shalom (\heb{שלום}{}, peace) | Shin-Lamed-Vav-Mem | $P_{\text{pipevar}}$ | $\𐑭$ | $H_{\text{invscripta}}$ | $O_2$ | $1.000$ |
+| Bereshit (\heb{בראשית}{}, in beginning) | Bet-Resh-Aleph-Shin-Yod-Tav | $P_{\text{aolig}}$ | $\𐑭$ | $H_{\text{invscripta}}$ | $O_2$ | $0.000$ |
 
-All four words share: $\Phi_{\text{ctyogh}}$, $\Ω_z$, $G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$ — the critical, integer-protected, maximal-scope, time-deep configuration. All are $O_2$ attractors.
+All four words share: $\Phi_{\text{ctyogh}}$, $\𐑭$, $G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$ — the critical, integer-protected, maximal-scope, time-deep configuration. All are $O_2$ attractors.
 
 **Vav's Frobenius condition does not propagate:**
 
@@ -851,7 +851,7 @@ $d(\text{Torah},\ \text{Emet}) = 1.414$, conflict at $\{R,\ P,\ \Gamma\}$ — la
 
 **The complete result:** The full Hebrew written language — 22 base letters plus all extensions (final forms, dagesh, niqqud, gematria, word compositions) — encodes at the same type as the bare 22-letter join:
 
-$$\langle D_{\text{turnthree}};\ T_{\text{box}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}n;\ \Ω_z\rangle$$
+$$\langle D_{\text{turnthree}};\ T_{\text{box}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}n;\ \𐑭\rangle$$
 
 $$d(\text{full Hebrew written language},\ \text{22-letter join}) = 0.000$$
 

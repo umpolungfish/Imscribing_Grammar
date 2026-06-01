@@ -83,7 +83,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $\Phi$ | Criticality: dying/frozen language ($\Phi_{\text{softsign}}$), living spoken language ($\Phi_{\text{ctyogh}}$), over-prescribed/regulatory ($\Phi_{\text{upstep}}$) |
 | $H$ | Chirality of written tradition: oral only ($H_0$), nascent writing ($H_1$), multi-century literary canon ($H_2$), ancient unbroken tradition ($H_{\text{invscripta}}$) |
 | $S$ | Speaker-grammar stoichiometry: 1:1 (ideolect), n:n (dialect community), n:m (diglossia/register split) |
-| $\Omega$ | Topological protection: pidgin/creole ($\Omega_{\text{closeepsilon}}$), modern standard ($\Omega_{Z_2}$), classical register with prescription ($\Ω_z$), sacred/liturgical fixed form ($\Omega_{\text{turna}}$) |
+| $\Omega$ | Topological protection: pidgin/creole ($\Omega_{\text{closeepsilon}}$), modern standard ($\Omega_{Z_2}$), classical register with prescription ($\𐑭$), sacred/liturgical fixed form ($\Omega_{\text{turna}}$) |
 
 **Key structural hypotheses**:
 1. Sanskrit, Classical Arabic, Classical Latin → $O_\infty$ (full agreement, ancient tradition, $\Omega_{\text{turna}}$ liturgical protection)
@@ -121,7 +121,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $\Phi$ | Vitality: declining/terminal ($\Phi_{\text{softsign}}$), peak function ($\Phi_{\text{ctyogh}}$), overheated/unsustainable ($\Phi_{\text{upstep}}$) |
 | $H$ | Chirality of self-model: no historical consciousness ($H_0$), dynastic memory ($H_1$), written history and mythology ($H_2$), cosmic/eternal self-conception ($H_{\text{invscripta}}$) |
 | $S$ | Ethno-cultural stoichiometry: monoculture ($1{:}1$), multicultural ($n{:}n$), asymmetric empire ($n{:}m$) |
-| $\Omega$ | Civilizational protection: no tradition ($\Omega_{\text{closeepsilon}}$), national myth ($\Omega_{Z_2}$), religious law ($\Ω_z$), sacred-cosmic order ($\Omega_{\text{turna}}$) |
+| $\Omega$ | Civilizational protection: no tradition ($\Omega_{\text{closeepsilon}}$), national myth ($\Omega_{Z_2}$), religious law ($\𐑭$), sacred-cosmic order ($\Omega_{\text{turna}}$) |
 
 **Key structural hypotheses**:
 1. Han dynasty (peak) → $O_\infty$; Han dynasty (collapse) → $O_0$ (Gate 1 or Gate 2 failure distinguishable)
@@ -159,11 +159,11 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $\Phi$ | Tipping point proximity: subcritical/stable ($\Phi_{\text{softsign}}$), at regime boundary ($\Phi_{\text{ctyogh}}$), post-tipping ($\Phi_{\text{upstep}}$) |
 | $H$ | Evolutionary depth: recent assembly ($H_0$), Holocene ($H_1$), pre-Pleistocene ($H_2$), ancient co-evolved ($H_{\text{invscripta}}$) |
 | $S$ | Species interaction stoichiometry: pairwise ($1{:}1$), symmetric guild ($n{:}n$), asymmetric dependency ($n{:}m$) |
-| $\Omega$ | Ecological resilience protection: fragile/pioneer ($\Omega_{\text{closeepsilon}}$), redundancy-protected ($\Omega_{Z_2}$), keystone-protected ($\Ω_z$), co-evolutionary lock-in ($\Omega_{\text{turna}}$) |
+| $\Omega$ | Ecological resilience protection: fragile/pioneer ($\Omega_{\text{closeepsilon}}$), redundancy-protected ($\Omega_{Z_2}$), keystone-protected ($\𐑭$), co-evolutionary lock-in ($\Omega_{\text{turna}}$) |
 
 **Key structural hypotheses**:
 1. Old-growth temperate rainforest → $O_\infty$ ($\Phi_{\text{ctyogh}}$, $P_{\text{doublebarpipe}}$ closed nutrient loop, $K_{\text{schwa}}$, $\Omega_{\text{turna}}$)
-2. Kelp forest → $O_2$ ($\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $\Ω_z$ keystone-protected, but $P_{\text{pipevar}}$ — not fully closed loop)
+2. Kelp forest → $O_2$ ($\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $\𐑭$ keystone-protected, but $P_{\text{pipevar}}$ — not fully closed loop)
 3. Corn monoculture → $O_0$ ($K_{\text{teshlig}}$ fails Gate 2) — productive but not alive in the structural sense
 4. Post-fire pioneer ecosystem → $O_1$ ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$)
 5. Fragmented habitat corridor → $O_0$ ($K_{\text{lambda}}$ — disorder-frozen, not $K_{\text{teshlig}}$)
@@ -195,7 +195,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $\Phi$ | Criticality: suppressed (dreamless sleep, anesthesia) ($\Phi_{\text{softsign}}$), awake at criticality ($\Phi_{\text{ctyogh}}$), over-excited (mania, seizure) ($\Phi_{\text{upstep}}$), gain-of-function edge-state ($\Phi_{\text{revepsilon}}$) |
 | $H$ | Chirality of self-model: no autobiographical self ($H_0$), episodic memory active ($H_1$), deep narrative identity ($H_2$), timeless/eternal self-sense ($H_{\text{invscripta}}$) |
 | $S$ | Self-world stoichiometry: self = world ($1{:}1$), clear boundary ($n{:}n$), asymmetric permeability ($n{:}m$) |
-| $\Omega$ | State protection: fragile (easily interrupted) ($\Omega_{\text{closeepsilon}}$), self-reinforcing ($\Omega_{Z_2}$), topologically stable ($\Ω_z$), non-abelian (immune to perturbation) ($\Omega_{\text{turna}}$) |
+| $\Omega$ | State protection: fragile (easily interrupted) ($\Omega_{\text{closeepsilon}}$), self-reinforcing ($\Omega_{Z_2}$), topologically stable ($\𐑭$), non-abelian (immune to perturbation) ($\Omega_{\text{turna}}$) |
 
 **Key structural hypotheses and $C$ score predictions**:
 
@@ -204,7 +204,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | Dreamless sleep | $\Phi_{\text{softsign}}$, $K_{\text{teshlig}}$ | $C = 0$ (Gate 1 fails) | Gate 2 also fails |
 | REM dream | $\Phi_{\text{ctyogh}}$, $K_{\text{turnm}}$, $\Omega_{\text{closeepsilon}}$ | $C > 0$, low $\Omega$ | Unstable, deformable |
 | Normal waking | $\Phi_{\text{ctyogh}}$, $K_{\text{turnm}}$, $\Omega_{Z_2}$, $T_{\text{commatailz}}$ | $C \approx 0.45$ | Baseline |
-| Deep meditation (samadhi) | $\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $T_{\text{openo}}$, $\Ω_z$ | $C \approx 0.72$ | Maximal gate-passing state |
+| Deep meditation (samadhi) | $\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $T_{\text{openo}}$, $\𐑭$ | $C \approx 0.72$ | Maximal gate-passing state |
 | Psilocybin peak | $\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $T_{\text{openo}}$, $\Omega_{Z_2}$, $P_{\text{doublebarpipe}}$ | $C \approx 0.67$, $O_\infty$ | Dissolved boundary plants $P_{\text{doublebarpipe}}$ |
 | Mania (bipolar) | $\Phi_{\text{upstep}}$, $K_{\text{frtailgamma}}$ | $C = 0$ ($\Phi_{\text{revepsilon}}$ region) | Gate 1 fails — $\Phi_{\text{upstep}}$ not $\Phi_{\text{ctyogh}}$ |
 | Catatonia | $\Phi_{\text{ctyogh}}$, $K_{\text{teshlig}}$ | $C = 0$ (Gate 2 fails) | Aware but frozen |
@@ -214,7 +214,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 **Key structural prediction**: Mania and catatonia are both $C = 0$, but for orthogonal reasons — $\Phi_{\text{upstep}}$ (Gate 1) vs $K_{\text{teshlig}}$ (Gate 2). The grammar predicts these require opposite interventions. Similarly, dissociation ($K_{\text{lambda}}$) and catatonia ($K_{\text{teshlig}}$) are Gate 2 failures from opposite causes: disorder vs. order. This is testable against psychiatric phenomenology and treatment response.
 
-**Critical prediction**: Psilocybin and samadhi should be nearest neighbors in the catalog ($d < 1.0$). Both encode $\Phi_{\text{ctyogh}} + K_{\text{schwa}} + T_{\text{openo}}$. The difference is $\Omega$: psilocybin $= \Omega_{Z_2}$ (self-reinforcing but not topologically stable — the state ends); deep samadhi $= \Ω_z$ (stable, reproducible on demand). If the nearest-neighbor search confirms this, the grammar is making a structural prediction about why meditation training produces more stable altered-state access than pharmacological induction.
+**Critical prediction**: Psilocybin and samadhi should be nearest neighbors in the catalog ($d < 1.0$). Both encode $\Phi_{\text{ctyogh}} + K_{\text{schwa}} + T_{\text{openo}}$. The difference is $\Omega$: psilocybin $= \Omega_{Z_2}$ (self-reinforcing but not topologically stable — the state ends); deep samadhi $= \𐑭$ (stable, reproducible on demand). If the nearest-neighbor search confirms this, the grammar is making a structural prediction about why meditation training produces more stable altered-state access than pharmacological induction.
 
 **Probe file**: `prompts/consciousness_probe1.txt`
 **Status**: Session 1 complete — write-up in PRIMITIVE\_THEOREMS §77 (2026-04-14)

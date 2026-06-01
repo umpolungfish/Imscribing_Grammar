@@ -67,4 +67,4 @@ Define forward sets $S_c = \{n : T^c(n)=1,\ T^k(n)\neq 1 \text{ for } k<c\}$ and
 | $\mathcal{R}_{=}$ (bidirectional coupling) | Bidirectional Coupling |
 | $\hat{\varphi}_{\ddot{y}}$ (criticality) | Boundedness |
 | $\Omega_z$ (integer winding) | Cycle Exclusion |
-| $\text{Ç}_{@}$ (moderate kinetics) | Stopping time bound |
+| 𐑧 (moderate kinetics) | Stopping time bound |

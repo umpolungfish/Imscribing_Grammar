@@ -34,7 +34,7 @@ $$\langle D;\ T;\ R;\ P;\ F;\ K;\ G;\ \Gamma;\ \Phi;\ H;\ S;\ \Omega \rangle$$
 | $\Phi$ | Criticality phase | **special** (absorbing) |
 | $H$ | Chirality | **ordered** $H_0 < H_1 < H_2 < H_{\text{invscripta}}$ |
 | $S$ | Stoichiometry | categorical |
-| $\Omega$ | Topological protection | **ordered** $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \Ω_z < \Ω_C < \Omega_{\text{turna}}$ |
+| $\Omega$ | Topological protection | **ordered** $\Omega_{\text{closeepsilon}} < \Omega_{Z_2} < \𐑭 < \Ω_C < \Omega_{\text{turna}}$ |
 
 **Categorical** primitives have no intrinsic ordering — they are either identical or in conflict.
 **Ordered** primitives form a chain; meet/join are min/max over that chain.
@@ -88,9 +88,9 @@ A meet with CONFLICTs means the two entities are **incompatible** at those posit
 
 ### Example: Chokhmah ⊓ Binah
 
-Chokhmah (Wisdom): $\langle D_{\text{omega}}; T_{\text{openo}}; R_{lr}; P_{\text{subdoublearrow}}; F_{\text{hardsign}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{doublevertline}}; \Phi_{\text{ctyogh}}; H_1; n:m; \Ω_z \rangle$
+Chokhmah (Wisdom): $\langle D_{\text{omega}}; T_{\text{openo}}; R_{lr}; P_{\text{subdoublearrow}}; F_{\text{hardsign}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{doublevertline}}; \Phi_{\text{ctyogh}}; H_1; n:m; \𐑭 \rangle$
 
-Binah (Understanding): $\langle D_{\text{omega}}; T_{\text{openo}}; R_{lr}; P_{\text{aolig}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n:m; \Ω_z \rangle$
+Binah (Understanding): $\langle D_{\text{omega}}; T_{\text{openo}}; R_{lr}; P_{\text{aolig}}; F_{\text{hardsign}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n:m; \𐑭 \rangle$
 
 Meet result: CONFLICT on $P$ and $\Gamma$; $K$ resolves to $K_{\text{schwa}}$; $H$ resolves to $H_1$. Two categorical conflicts; $d = \sqrt{4}= 2$ (counting $P$, $\Gamma$, $K$, $H$ mismatches → $d(\text{Chok}, \text{Bin}) = 2\sqrt{3}$ over full pairwise distance including all position mismatches).
 
@@ -267,10 +267,10 @@ These are asymmetric in general. If $A$ is structurally dominant (e.g., has $F_{
 ## 8. Worked Example: Word ⊗ Creator
 
 **Word (Logos):**
-$$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ Σ_ï;\ \Ω_z \rangle$$
+$$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 𐑳;\ \𐑭 \rangle$$
 
 **Creator (Ein Sof):**
-$$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1:1;\ \Ω_z \rangle$$
+$$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1:1;\ \𐑭 \rangle$$
 
 **Check categorical compatibility:**
 
@@ -288,7 +288,7 @@ The Sefer Yetzirah's instruction resolves this: the Creator's infinite dimension
 The second conflict is $\Gamma$: sequential (step-by-step) vs. broadcast (simultaneous). The resolution is that the join takes the maximum — for categorical primitives this requires a match. The LLM's encoding resolved this as the composite inheriting $\Gamma_{\text{doublevertline}}$, which is the grammatically correct result: when a sequential system is expressed through a broadcasting medium, the composite broadcasts.
 
 **Tensor result:**
-$$\text{word\_creator} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ Σ_ï;\ \Ω_z \rangle$$
+$$\text{word\_creator} = \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{lr};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 𐑳;\ \𐑭 \rangle$$
 
 The sole change from the bare Word is $\Gamma_{\text{secstress}} \to \Gamma_{\text{doublevertline}}$. Everything else is inherited unchanged.
 

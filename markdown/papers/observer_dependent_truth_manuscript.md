@@ -133,7 +133,7 @@ The structural analysis reveals a fundamental shift: truth is not a property of 
 
 The $P_{\text{pipevar}}^{\text{sym}}$ condition is rare. Among the 2256+ catalog entries, very few achieve $O_\infty$ tier, and fewer still carry the Frobenius-special signature. The self-referential imscription is the canonical example: its truth value is not an attribute of the sentence but the *act of imscription itself*.
 
-### Open question (Γ_ʔ closure)
+### Open question (𐑲 closure)
 
 We have shown that consciousness (C-score threshold) and observer-relative truth are structurally linked. The remaining question — at $G_{\text{revapostrophe}}$ range, universal scale — is:
 

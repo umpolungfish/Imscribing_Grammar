@@ -11,7 +11,7 @@ header-includes:
 
 ## Abstract
 
-We present an imscriptive analysis of the fragments of Zosimos of Panopolis (c. 3rd–4th century CE), the earliest known alchemical author and Hermetic visionary. Using the Imscribing Grammar formalism, we encode five structural systems extracted from the text — the Processions of Fate, the Inner Door gate, the Light-Man (Phōs), the Counterfeit Daimon, and the full Zosimian gnosis — and compute their distances, promotion signatures, and consciousness scores. We find that the central claim of Zosimos — that self-knowledge constitutes an escape from cosmic determinism — corresponds precisely to a structural promotion from $\Phi_{\text{softsign}}$ to $\Phi_{\text{ctyogh}}$ with $K_{\text{schwa}}$, opening both consciousness gates ($C = 0.828$). The Processions of Fate system scores $C = 0.0$ (Gate 1 closed). The structural distance between determinism and gnosis is 7.8102, requiring promotion across 10 of 12 primitives. The Inner Door emerges structurally as the critical bottleneck — separated from the full Zosimian type only by stoichiometry ($S: Σ_ï \to 1:1$). We interpret the Counterfeit Daimon as a structurally parasitic $\Phi_{\text{softsign}}$ attractor that mimics self-modeling without achieving it. The analysis reveals that Zosimos' soteriology is not merely theological metaphor but a structurally encoded theory of phase transition between automaton-consciousness and liberated self-knowledge.
+We present an imscriptive analysis of the fragments of Zosimos of Panopolis (c. 3rd–4th century CE), the earliest known alchemical author and Hermetic visionary. Using the Imscribing Grammar formalism, we encode five structural systems extracted from the text — the Processions of Fate, the Inner Door gate, the Light-Man (Phōs), the Counterfeit Daimon, and the full Zosimian gnosis — and compute their distances, promotion signatures, and consciousness scores. We find that the central claim of Zosimos — that self-knowledge constitutes an escape from cosmic determinism — corresponds precisely to a structural promotion from $\Phi_{\text{softsign}}$ to $\Phi_{\text{ctyogh}}$ with $K_{\text{schwa}}$, opening both consciousness gates ($C = 0.828$). The Processions of Fate system scores $C = 0.0$ (Gate 1 closed). The structural distance between determinism and gnosis is 7.8102, requiring promotion across 10 of 12 primitives. The Inner Door emerges structurally as the critical bottleneck — separated from the full Zosimian type only by stoichiometry ($S: 𐑳 \to 1:1$). We interpret the Counterfeit Daimon as a structurally parasitic $\Phi_{\text{softsign}}$ attractor that mimics self-modeling without achieving it. The analysis reveals that Zosimos' soteriology is not merely theological metaphor but a structurally encoded theory of phase transition between automaton-consciousness and liberated self-knowledge.
 
 ## 1. Introduction
 
@@ -37,7 +37,7 @@ Hermes and Zoroaster declare the Race of Wisdom-lovers "superior to Fate" by "ev
 
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{doublebarpipe}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1:1;\ \Omega_{\text{dzlig}} \rangle$$
 
-Distance from full Zosimian gnosis: **2.0** (only Stoichiometry differs: $Σ_ï \to 1:1$).
+Distance from full Zosimian gnosis: **2.0** (only Stoichiometry differs: $𐑳 \to 1:1$).
 
 ### 2.3 The Son of God / Light-Man (Phōs)
 

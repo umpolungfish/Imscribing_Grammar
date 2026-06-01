@@ -71,4 +71,4 @@ Steiner (1977) proved no "steep" cycles exist; Simons & de Weger (2005) extended
 | $\mathcal{R}_{=}$ (bidirectional) | Bidirectional Coupling |
 | $\Omega_z$ (integer winding) | Cycle Exclusion |
 | $\hat{\varphi}_{\ddot{y}}$ (criticality) | Boundedness |
-| $\text{Ç}_{@}$ (moderate kinetics) | Stopping Time Bound |
+| 𐑧 (moderate kinetics) | Stopping Time Bound |

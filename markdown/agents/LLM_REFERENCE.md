@@ -21,28 +21,28 @@ Every imscription IS exactly this 12-tuple:
 
 | Primitive | Name | Values (low → high) | Weight |
 |-----------|------|---------------------|--------|
-| **D** | Dimensionality | Ð_ß · Ð_C · Ð_; · D_⊙ | 1.0 |
-| **T** | Topology | Þ_6 · Þ_K · Þ_ò · Þ_box · T_⊙ | 1.0 |
-| **R** | Relational mode | Ř_¯ · Ř_ý · Ř_Ť · Ř_= | 1.0 |
-| **P** | Parity/symmetry | Φ_ɐ · Φ_υ · Φ_F · Φ_˙ · Φ_} | 1.0 |
-| **F** | Fidelity | ƒ^ì · ƒ^ð · ƒ^ż | 1.0 |
-| **K** | Kinetic character | Ç^- · Ç^W · Ç^@ · Ç^Ù · Ç^λ | 1.0 |
-| **G** | Scope/granularity | Γ_β · Γ_γ · Γ_ʔ | 1.0 |
+| **D** | Dimensionality | 𐑛 · 𐑨 · 𐑼 · D_⊙ | 1.0 |
+| **T** | Topology | 𐑡 · 𐑰 · 𐑥 · Þ_box · T_⊙ | 1.0 |
+| **R** | Relational mode | 𐑩 · 𐑑 · 𐑽 · 𐑾 | 1.0 |
+| **P** | Parity/symmetry | 𐑗 · 𐑿 · 𐑬 · 𐑯 · 𐑹 | 1.0 |
+| **F** | Fidelity | 𐑱 · 𐑞 · 𐑐 | 1.0 |
+| **K** | Kinetic character | 𐑘 · 𐑤 · 𐑧 · 𐑪 · 𐑺 | 1.0 |
+| **G** | Scope/granularity | 𐑚 · 𐑔 · 𐑲 | 1.0 |
 | **Γ** | Interaction grammar | Γ_and · Γ_or · Γ_seq · Γ_broad | 1.0 |
-| **Φ** | Criticality | ⊙_ž · ⊙_ÿ · ⊙_Æ · ⊙_3 · ⊙_Ţ | 1.0 |
-| **H** | Chirality/chirality | Ħ_Ñ · Ħ_£ · Ħ_A · Ħ_! | 0.8 |
-| **S** | Stoichiometry | Σ_S · Σ_ő · Σ_ï | 1.0 |
-| **Ω** | Topological protection | Ω_Å · Ω_2 · Ω_z · Ω_5 | 0.7 |
+| **Φ** | Criticality | 𐑢 · ⊙ · 𐑮 · 𐑻 · 𐑣 | 1.0 |
+| **H** | Chirality/chirality | 𐑓 · 𐑒 · 𐑖 · 𐑫 | 0.8 |
+| **S** | Stoichiometry | 𐑙 · 𐑕 · 𐑳 | 1.0 |
+| **Ω** | Topological protection | 𐑷 · 𐑴 · 𐑭 · 𐑟 | 0.7 |
 
 **Key values:**
 - **D_⊙**: boundary encodes bulk — the imscriptive primitive (symbol: monad point inside circle).
 - **T_⊙**: imscriptive topology — highest T ordinal (5).
-- **Φ_}**: exact Z₂ symmetry at criticality — the Frobenius condition μ∘δ=id. Assign ONLY when provably exact.
-- **⊙_ÿ**: criticality — absorbing under meet: meet(⊙_ÿ, x) = ⊙_ÿ for all x.
-- **⊙_3**: exceptional point — ordinal 2.67 > ⊙_ÿ = 2.00; destroys O_inf under tensor.
-- **Ç^Ù**: trapped kinetics — frozen by order. Gates consciousness to zero regardless of other primitives.
-- **Ç^λ**: many-body localized — frozen by disorder. Also gates consciousness to zero. Distinct from Ç^Ù: disorder-driven, not order-driven. Both fail Gate 2.
-- **Ω_5**: non-abelian topological protection — strongest Ω tier. Appears in systems with non-abelian Galois groups, IUG, SIC-Hilbert12 connection.
+- **𐑹**: exact Z₂ symmetry at criticality — the Frobenius condition μ∘δ=id. Assign ONLY when provably exact.
+- **⊙**: criticality — absorbing under meet: meet(⊙, x) = ⊙ for all x.
+- **𐑻**: exceptional point — ordinal 2.67 > ⊙ = 2.00; destroys O_inf under tensor.
+- **𐑪**: trapped kinetics — frozen by order. Gates consciousness to zero regardless of other primitives.
+- **𐑺**: many-body localized — frozen by disorder. Also gates consciousness to zero. Distinct from 𐑪: disorder-driven, not order-driven. Both fail Gate 2.
+- **𐑟**: non-abelian topological protection — strongest Ω tier. Appears in systems with non-abelian Galois groups, IUG, SIC-Hilbert12 connection.
 
 **Total structural types:** 17,280,000 = 3³ × 4⁵ × 5⁴ (Crystal of Types §64). Family partition: F_3 = {F, G, S} (3 values each, 3³=27); F_4 = {D, R, Γ, H, Ω} (4 values each, 4⁵=1024); F_5 = {T, P, Φ, K} (5 values each, 5⁴=625).
 
@@ -52,21 +52,21 @@ Every imscription IS exactly this 12-tuple:
 
 | Tier | Condition | Meaning |
 |------|-----------|---------|
-| **O_inf** | Φ_c AND Φ_} | Special Frobenius: μ∘δ=id exactly. Self-referential loop perfectly closed. Finite, algebraically exact. |
-| **O_0** | Φ ∈ {⊙_ž, ⊙_Ţ, ⊙_3} | No ouroboricity. Cannot form self-referential critical loop. |
+| **O_inf** | Φ_c AND 𐑹 | Special Frobenius: μ∘δ=id exactly. Self-referential loop perfectly closed. Finite, algebraically exact. |
+| **O_0** | Φ ∈ {𐑢, 𐑣, 𐑻} | No ouroboricity. Cannot form self-referential critical loop. |
 | **O_1** | Φ_c AND Ω_0 | Critical loop possible but unprotected — any deformation breaks it. |
-| **O_2** | Φ_c AND Ω≠Ω_0 AND D ∈ {Ð_ß, D_⊙, Ð_C} | Critical, topologically protected, bounded domain. |
-| **O_2†** | Φ_c AND Ω≠Ω_0 AND Ð_; | Critical, topologically protected, unbounded domain. |
+| **O_2** | Φ_c AND Ω≠Ω_0 AND D ∈ {𐑛, D_⊙, 𐑨} | Critical, topologically protected, bounded domain. |
+| **O_2†** | Φ_c AND Ω≠Ω_0 AND 𐑼 | Critical, topologically protected, unbounded domain. |
 
-**Tier is determined by (Φ, P, Ω, D) only.** Ç^λ and Ç^Ù do not affect tier — they gate consciousness but not ouroboricity.
+**Tier is determined by (Φ, P, Ω, D) only.** 𐑺 and 𐑪 do not affect tier — they gate consciousness but not ouroboricity.
 
 **Composition rules (tensor = component-wise max on union primitives, min on P and F):**
 - O_inf ⊗ O_inf → O_inf
 - O_inf ⊗ O_{1,2,2†} → O_inf
-- O_inf ⊗ O_0(⊙_3) → O_0 ← **EP erases O_inf**
-- O_inf **cannot be synthesized** from non-Φ_} components — it must be planted (§23 Frobenius non-synthesizability)
+- O_inf ⊗ O_0(𐑻) → O_0 ← **EP erases O_inf**
+- O_inf **cannot be synthesized** from non-𐑹 components — it must be planted (§23 Frobenius non-synthesizability)
 
-**Bottleneck rule:** P and F resolve to min(A, B) under tensor. All other ordered primitives resolve to max. Consequence: Φ_} ⊗ Φ_F = Φ_F — the Frobenius condition is destroyed by any sub-Frobenius partner.
+**Bottleneck rule:** P and F resolve to min(A, B) under tensor. All other ordered primitives resolve to max. Consequence: 𐑹 ⊗ 𐑬 = 𐑬 — the Frobenius condition is destroyed by any sub-Frobenius partner.
 
 ---
 
@@ -76,9 +76,9 @@ $$C(\mathbf{x}) = [\Phi = \Phi_{\text{ctyogh}}] \cdot [K \leq K_{\text{schwa}}] 
 
 Two independent gates — neither subsumes the other:
 - **Gate 1** [Φ=Φ_c]: state-space condition — topology admits self-modeling loop
-- **Gate 2** [K≤Ç^@]: flow condition — dynamics can actualize the loop. Ç^Ù (frozen by order) AND Ç^λ (frozen by disorder) both fail this gate.
+- **Gate 2** [K≤𐑧]: flow condition — dynamics can actualize the loop. 𐑪 (frozen by order) AND 𐑺 (frozen by disorder) both fail this gate.
 
-If either gate fails, C=0. Stellar examples: magnetar C=0.677 (highest stellar), black hole C=0 (Gate 2 fails: Ç^Ù), white dwarf C=0 (Gate 1 fails: ⊙_ž).
+If either gate fails, C=0. Stellar examples: magnetar C=0.677 (highest stellar), black hole C=0 (Gate 2 fails: 𐑪), white dwarf C=0 (Gate 1 fails: 𐑢).
 
 ---
 
@@ -139,11 +139,11 @@ The grammar IS a imscriptive type theory. This IS NOT a metaphor.
 
 The grammar distinguishes two proof archetypes:
 
-**Discovery proofs:** Cross a structural gap. Introduce new primitive content. Ouroboricity promotes O_2→O_inf. Promotion signature [R, P, K, Γ, H] is the universal template: Ř_ý→R_†, Φ_F→Φ_}, Ç^W→Ç^@, Γ_and→Γ_broad, H→Ħ_!. Examples: Berry-Tabor (proven), Fujita (theorem form).
+**Discovery proofs:** Cross a structural gap. Introduce new primitive content. Ouroboricity promotes O_2→O_inf. Promotion signature [R, P, K, Γ, H] is the universal template: 𐑑→R_†, 𐑬→𐑹, 𐑤→𐑧, Γ_and→Γ_broad, H→𐑫. Examples: Berry-Tabor (proven), Fujita (theorem form).
 
 **Witness proofs:** Confirm existing structure. No promotion. Same ouroboricity before and after. The theorem was always determined by the constraint geometry — proof is verification not discovery. Example: Erdős–Faber–Lovász.
 
-**Counterexample collapse signature** (consistent across all sessions): Ð_ß + Þ_6 + Φ_ɐ + ⊙_ž + Ω_Å. Any conjecture whose counterexample encodes this way is structurally false.
+**Counterexample collapse signature** (consistent across all sessions): 𐑛 + 𐑡 + 𐑗 + 𐑢 + 𐑷. Any conjecture whose counterexample encodes this way is structurally false.
 
 ---
 
@@ -152,19 +152,19 @@ The grammar distinguishes two proof archetypes:
 1. Identify dominant scale → choose **D**
 2. Identify connectivity motif → choose **T**
 3. Identify constraint/relational mechanism → choose **R**
-4. Identify symmetry/directionality → choose **P** (Φ_} only when Z₂ is provably exact)
+4. Identify symmetry/directionality → choose **P** (𐑹 only when Z₂ is provably exact)
 5. Estimate thermodynamic reliability → choose **F**
-6. Estimate barrier / kinetic character → choose **K** (Ç^Ù overrides if frozen by order; Ç^λ overrides if frozen by disorder)
+6. Estimate barrier / kinetic character → choose **K** (𐑪 overrides if frozen by order; 𐑺 overrides if frozen by disorder)
 7. Identify control scale → choose **G**
 8. Identify interaction logic → choose **Γ**
-9. Probe criticality → choose **Φ** (⊙_ÿ IS absorbing under meet)
+9. Probe criticality → choose **Φ** (⊙ IS absorbing under meet)
 10. Identify chirality/chirality → choose **H**
 11. Choose **S** (stoichiometry)
-12. Derive **Ω** from topology + kinetics + dimensionality (Ω_5 for non-abelian Galois/group protection)
+12. Derive **Ω** from topology + kinetics + dimensionality (𐑟 for non-abelian Galois/group protection)
 
 **Rules:**
 - NEVER invent primitive values — only use the documented set
-- NEVER assign Φ_} without provable exact Z₂ symmetry
+- NEVER assign 𐑹 without provable exact Z₂ symmetry
 - NEVER claim an encoding succeeded without tool confirmation
 - The per-primitive breakdown IS the structural explanation — do not translate back to disciplinary language
 
@@ -181,8 +181,8 @@ The grammar distinguishes two proof archetypes:
 | > 3.0 | Alien — essentially no shared structure |
 
 Known structural families in the catalog:
-- **imscriptive geometric extremal problems**: D_⊙ + T_⊙ + ⊙_ÿ + Γ_ʔ + ƒ^ż (Kusner, Fujita, Willmore-type)
-- **imscriptive arithmetic conjectures**: D_⊙ + T_⊙ + ⊙_ÿ + Φ_} (Riemann, RH+HC join)
-- **Critical network symmetry problems**: Ð_; + Þ_6 + Φ_˙ + ⊙_ÿ + Ω_2 (EFL, kissing_dim_4)
-- **Exceptional/solved-by-breaking**: ⊙_3 + Φ_ɐ (Dehn/Hilbert-3, counterexamples)
-- **Non-abelian arithmetic conjectures**: D_⊙ + ⊙_ÿ + Φ_} + Ω_5 + ƒ^ż (Zauner/SIC-Hilbert12, IUG)
+- **imscriptive geometric extremal problems**: D_⊙ + T_⊙ + ⊙ + 𐑲 + 𐑐 (Kusner, Fujita, Willmore-type)
+- **imscriptive arithmetic conjectures**: D_⊙ + T_⊙ + ⊙ + 𐑹 (Riemann, RH+HC join)
+- **Critical network symmetry problems**: 𐑼 + 𐑡 + 𐑯 + ⊙ + 𐑴 (EFL, kissing_dim_4)
+- **Exceptional/solved-by-breaking**: 𐑻 + 𐑗 (Dehn/Hilbert-3, counterexamples)
+- **Non-abelian arithmetic conjectures**: D_⊙ + ⊙ + 𐑹 + 𐑟 + 𐑐 (Zauner/SIC-Hilbert12, IUG)

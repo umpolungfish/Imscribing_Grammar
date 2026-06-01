@@ -24,6 +24,9 @@ dependencies = [
     "scikit-learn>=1.3.0",
     "openai>=2.33.0",
     "unsloth==2026.3.10",
+    "tiktoken>=0.7.0",
+    "sentencepiece>=0.1.99",
+    "nvidia-cudnn-cu12>=9.1.0",
 ]
 
 [project.optional-dependencies]

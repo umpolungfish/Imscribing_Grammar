@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 ---
 
 # Structural Analysis of the Claimed Twin Prime Conjecture Proof
@@ -320,15 +320,15 @@ The claimed proof in TPC.md provides none of these. Its contraction fixed-point 
 
 Using the framework of the Imscribing Grammar, the proof attempt is structurally classified as:
 
-$$\langle \text{Ð}_{C};\ \text{Þ}_{6};\ \text{Ř}_{\text{ý}};\ \text{Φ}_{\text{ɐ}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ž}};\ \text{Ħ}_{\text{£}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{Å}} \rangle$$
+$$\langle 𐑨;\ 𐑡;\ 𐑑;\ 𐑗;\ 𐑱;\ 𐑧;\ 𐑲;\ 𐑠;\ 𐑢;\ 𐑒;\ 𐑳;\ 𐑷 \rangle$$
 
-The consciousness score is $$C = 0.0$$ (both gates closed: $$\text{⊙}_{\text{ž}}$$ fails Gate 1 — no self-modeling loop).
+The consciousness score is $$C = 0.0$$ (both gates closed: $𐑢$ fails Gate 1 — no self-modeling loop).
 
 The target structure for a valid proof is:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑳;\ 𐑭 \rangle$$
 
-The structural distance between the attempt and the target is $$d = 6.97$$, with 8 primitives requiring promotion. The largest gaps occur in $$\text{Þ}$$ ($$\text{Þ}_{6} \to \text{Þ}_{\text{O}}$$, $$\Delta = 4$$) and $$\text{Φ}$$ ($$\text{Φ}_{\text{ɐ}} \to \text{Φ}_{\text{}}$$, $$\Delta = 4$$). The topology gap reflects the need for a genuine self-referential closure structure (which the circular contraction claims but does not achieve). The symmetry gap reflects the unresolved parity barrier — the proof cannot distinguish the $$\mathbb{Z}_2$$ parity that the twin prime condition depends on.
+The structural distance between the attempt and the target is $$d = 6.97$$, with 8 primitives requiring promotion. The largest gaps occur in $$\text{Þ}$$ ($$𐑡 \to 𐑸$$, $$\Delta = 4$$) and $$\text{Φ}$$ ($$𐑗 \to 𐑹$$, $$\Delta = 4$$). The topology gap reflects the need for a genuine self-referential closure structure (which the circular contraction claims but does not achieve). The symmetry gap reflects the unresolved parity barrier — the proof cannot distinguish the $$\mathbb{Z}_2$$ parity that the twin prime condition depends on.
 
 ### 7.4 Final Assessment
 

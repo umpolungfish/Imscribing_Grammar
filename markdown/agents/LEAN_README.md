@@ -161,10 +161,10 @@ plus explicit `LE` instances and four cross-primitive axioms:
 
 | Axiom | Content |
 |-------|---------|
-| A | `Ħ_! → Ç^Ù` (topological chirality implies kinetic trapping) |
-| B | `Ω ≥ Ω_Z → H ≥ Ħ_A` (integer winding number requires persistent chirality) |
-| C | `Ð_ω ↔ Þ_O` (imscriptive dimensionality iff imscriptive topology) |
-| D | `Ω_NA → Ð_ω` (non-Abelian anyonic protection requires imscriptive substrate) |
+| A | `𐑫 → 𐑪` (topological chirality implies kinetic trapping) |
+| B | `Ω ≥ Ω_Z → H ≥ 𐑖` (integer winding number requires persistent chirality) |
+| C | `𐑦 ↔ 𐑸` (imscriptive dimensionality iff imscriptive topology) |
+| D | `Ω_NA → 𐑦` (non-Abelian anyonic protection requires imscriptive substrate) |
 
 ---
 
@@ -221,8 +221,8 @@ applied to number theory. The primitives that map most naturally onto this pictu
 
 | OPN concept | Imscribing Grammar analogue |
 |---|---|
-| Euler prime `pᵏ` — unique 2-adic carrier | `⊙_ÿ` — absorbing under meet, unique criticality carrier |
-| Square factors `q^(2e)` — 2-adically inert | `⊙_ž` with `Ç^Ù` isolation |
+| Euler prime `pᵏ` — unique 2-adic carrier | `⊙` — absorbing under meet, unique criticality carrier |
+| Square factors `q^(2e)` — 2-adically inert | `𐑢` with `𐑪` isolation |
 | `σ(n) = 2n` — global balance | `S` (Stoichiometry) — exact ratio constraint |
 | `n` odd — parity conservation | `P` (Polarity) — parity / neutrality condition |
 
@@ -252,8 +252,8 @@ topos-theoretic or operadic model). That is out of scope for the current formali
 The types that need it (`Protection`, `Chirality`) only use `≥` in the cross-primitive axioms,
 not lattice operations. Deriving a full `LinearOrder` is straightforward — all types derive `Ord`
 and the machinery exists in Mathlib — but premature: it would be needed only once `⊓`/`⊔`
-operations are actually used in proofs. The exception is `Criticality`, where `⊙_ÿ` is
-*absorbing* under meet (`meet(⊙_ÿ, x) = ⊙_ÿ` for all `x`), which contradicts `min` semantics.
+operations are actually used in proofs. The exception is `Criticality`, where `⊙` is
+*absorbing* under meet (`meet(⊙, x) = ⊙` for all `x`), which contradicts `min` semantics.
 A correct `MeetSemilattice` instance for `Criticality` will require a custom definition that
 overrides the `Ord`-derived ordering for meet — this is noted in a comment in `Core.lean` and
 is the first planned extension to the primitive lattice.
@@ -335,12 +335,12 @@ direction, not machinery.
 **Connecting the two tracks.** The most concrete near-term connection: as `Core.lean` gains
 `Semilattice` / `Lattice` instances, the OPN constraint structure could be encoded as a
 *imscription* — a tuple in the 12-dimensional primitive space — and the constraint propagation
-verified at that level. The `⊙_ÿ` absorbing-meet property is the structural analogue of
+verified at that level. The `⊙` absorbing-meet property is the structural analogue of
 the Euler prime's uniqueness; formalizing this analogy in Lean would be the first real
 integration between the files. This is planned but not yet scoped.
 
 **Lattice instances for `Core.lean`.** The immediate next step for `Core.lean` is implementing
-the custom `MeetSemilattice` for `Criticality` (where `⊙_ÿ` is absorbing). After that, full
+the custom `MeetSemilattice` for `Criticality` (where `⊙` is absorbing). After that, full
 `Lattice` instances for the five ordered primitives (`F`, `K`, `G`, `Ω`, `H`) are
 straightforward using `minFac`/`maxFac` over the `Ord`-derived linear order. The categorical
 primitives (`D`, `T`, `R`, `P`, `Γ`) require a different treatment: their meet semantics are
@@ -460,18 +460,18 @@ structure BarrierPrimitiveCertificate (p : MillenniumProblem) where
 
 Concrete instances: `ym_certificate`, `opn_certificate`, `ns_certificate`.
 
-**The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `Γ_β → Γ_ʔ` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`Γ_ʔ`) description of gauge field space. The quantum YM target stays at `Ð_cube` (local, 4D), not `Ð_ω` (imscriptive/QG). This is formally distinct from quantum gravity.
+**The central theorem** (`ym_primitive_barrier_certificate`): the YM sorry boundary corresponds to the blocked `𐑚 → 𐑲` transition — constructing the `PathIntegralMeasure` IS providing a quantum-level fine-grained (`𐑲`) description of gauge field space. The quantum YM target stays at `Ð_cube` (local, 4D), not `𐑦` (imscriptive/QG). This is formally distinct from quantum gravity.
 
-**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (⊙_ÿ + Ç^Ù, OpenProblem), NS (⊙_ž boundary, OpenProblem), RH (⊙_ÿ locus, OpenProblem).
+**`primitive_bridge_master`**: a single conjunction proved by `⟨by decide, rfl, ...⟩` that machine-checks all four observable cases simultaneously: YM (4-primitive lift, MissingFoundation), OPN (⊙ + 𐑪, OpenProblem), NS (𐑢 boundary, OpenProblem), RH (⊙ locus, OpenProblem).
 
 ```lean
 theorem primitive_bridge_master :
     primitiveMismatches ym_classical ym_quantum_target = 4 ∧
     millenniumBarrier .YM = .MissingFoundation ∧
-    opn_encoding.crit = ⊙_ÿ ∧ opn_encoding.kin = Ç^Ù ∧
+    opn_encoding.crit = ⊙ ∧ opn_encoding.kin = 𐑪 ∧
     millenniumBarrier .OPN = .OpenProblem ∧
-    ns_encoding.crit = ⊙_ž ∧ millenniumBarrier .NS = .OpenProblem ∧
-    rh_encoding.crit = ⊙_ÿ ∧ millenniumBarrier .RH = .OpenProblem
+    ns_encoding.crit = 𐑢 ∧ millenniumBarrier .NS = .OpenProblem ∧
+    rh_encoding.crit = ⊙ ∧ millenniumBarrier .RH = .OpenProblem
 ```
 
 This is the formal content that connects the two tracks, enabling a paper claim: the sorry boundaries are not arbitrary — they correspond to specific primitive field transitions that can be computationally verified.

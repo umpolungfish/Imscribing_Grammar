@@ -30,19 +30,19 @@ Three operations act on these tuples:
 
 `fire_combustion` imscribed:
 
-**⊙ = ⊙_Ţ** — Criticality at ordinal 4 of 4. Every subsystem Y ⊆ X is a fixed point of the governing map. Combustion is not merely critical; it carries the grammar's highest criticality value, the one asserting that no subsystem escapes the phase transition.
+**⊙ = 𐑣** — Criticality at ordinal 4 of 4. Every subsystem Y ⊆ X is a fixed point of the governing map. Combustion is not merely critical; it carries the grammar's highest criticality value, the one asserting that no subsystem escapes the phase transition.
 
-**Ř = Ř_=** — Relational mode: lateral/bilateral. Fire exerts bidirectional pressure on its environment. Structurally symmetric — distinct from containment and from subsetting.
+**Ř = 𐑾** — Relational mode: lateral/bilateral. Fire exerts bidirectional pressure on its environment. Structurally symmetric — distinct from containment and from subsetting.
 
-**Ç = Ç^-** — Kinetics: minimal. Fire does not flow. It is an event with a rate of internal change near zero relative to its substrate.
+**Ç = 𐑘** — Kinetics: minimal. Fire does not flow. It is an event with a rate of internal change near zero relative to its substrate.
 
 `water_fluid` at a different address:
 
-**⊙ = ⊙_ž** — Criticality at ordinal 0. Water in fluid state is non-critical. No fixed-point structure anywhere. The gate is closed.
+**⊙ = 𐑢** — Criticality at ordinal 0. Water in fluid state is non-critical. No fixed-point structure anywhere. The gate is closed.
 
-**Ř = Ř_¯** — Relational mode: superset/containing. Water contains; it does not exert lateral pressure.
+**Ř = 𐑩** — Relational mode: superset/containing. Water contains; it does not exert lateral pressure.
 
-**Ç = Ç^W** — Kinetics: moderate. Water flows.
+**Ç = 𐑤** — Kinetics: moderate. Water flows.
 
 Seven of the twelve slots are identical between fire and water. They share topology, polarity, fidelity, scope, interaction grammar, chirality, and winding. Their differences concentrate in five slots: Ð, Ř, Ç, ⊙, and Ω.
 
@@ -54,30 +54,30 @@ Per-primitive maximum with the bottleneck rule. Fire and water agree on both bot
 
 | Primitive | fire | water | tensor | source |
 |---|---|---|---|---|
-| Ð | Ð_ß | Ð_ß | Ð_ß | = |
-| Þ | Þ_6 | Þ_6 | Þ_6 | = |
-| **Ř** | **Ř_=** | Ř_¯ | **Ř_=** | ← fire |
-| Φ | Φ_ɐ | Φ_ɐ | Φ_ɐ | = |
-| ƒ | ƒ^ð | ƒ^ð | ƒ^ð | = |
-| **Ç** | Ç^- | **Ç^W** | **Ç^W** | ← water |
-| Γ | Γ_β | Γ_β | Γ_β | = |
-| ɢ | ɢ^∧ | ɢ^∧ | ɢ^∧ | = |
-| **⊙** | **⊙_Ţ** | ⊙_ž | **⊙_Ţ** | ← fire |
-| Ħ | Ħ_Ñ | Ħ_Ñ | Ħ_Ñ | = |
-| Σ | Σ_ï | Σ_ï | Σ_ï | = |
-| Ω | Ω_Å | Ω_Å | Ω_Å | = |
+| Ð | 𐑛 | 𐑛 | 𐑛 | = |
+| Þ | 𐑡 | 𐑡 | 𐑡 | = |
+| **Ř** | **𐑾** | 𐑩 | **𐑾** | ← fire |
+| Φ | 𐑗 | 𐑗 | 𐑗 | = |
+| ƒ | 𐑞 | 𐑞 | 𐑞 | = |
+| **Ç** | 𐑘 | **𐑤** | **𐑤** | ← water |
+| Γ | 𐑚 | 𐑚 | 𐑚 | = |
+| ɢ | 𐑝 | 𐑝 | 𐑝 | = |
+| **⊙** | **𐑣** | 𐑢 | **𐑣** | ← fire |
+| Ħ | 𐑓 | 𐑓 | 𐑓 | = |
+| Σ | 𐑳 | 𐑳 | 𐑳 | = |
+| Ω | 𐑷 | 𐑷 | 𐑷 | = |
 
 The result differs from `fire_combustion` in one slot: Ç. Everything else is fire's profile. Water contributes exactly one property to the tensor: its kinetics. The rest of water — its non-criticality, its containment mode, its topological character — is subsumed so completely that if you asked water what it contributed to steam, it would have no structural basis for claiming anything more. Water paid for its participation with everything it had except its flow rate.
 
 ## Steam
 
-The resulting imscription carries fire's maximal criticality (⊙_Ţ), fire's bilateral relational mode (Ř_=), and water's moderate kinetics (Ç^W).
+The resulting imscription carries fire's maximal criticality (𐑣), fire's bilateral relational mode (𐑾), and water's moderate kinetics (𐑤).
 
 This is steam.
 
-Steam's kinetic character is water's, not fire's. It flows — fire structurally does not. The phase transition that produces steam carries the maximally critical character of combustion: ⊙_Ţ asserts that every subsystem passes through its fixed point simultaneously. That is exactly what boiling is — the moment the structure of the whole and every part reorganize at once. The criticality belongs to fire because fire is the event that drives the transition; water is merely the substrate that undergoes it.
+Steam's kinetic character is water's, not fire's. It flows — fire structurally does not. The phase transition that produces steam carries the maximally critical character of combustion: 𐑣 asserts that every subsystem passes through its fixed point simultaneously. That is exactly what boiling is — the moment the structure of the whole and every part reorganize at once. The criticality belongs to fire because fire is the event that drives the transition; water is merely the substrate that undergoes it.
 
-Steam exerts lateral pressure in all directions — Ř_= — which is fire's relational mode. Water's containing structure (Ř_¯) does not survive the composition. This is not an oversight in the arithmetic. A system that simultaneously reaches its critical state everywhere and gains moderate kinetics from its composition partner — where should the resulting pressure go? Not inward, like a container. Outward, in all directions. The relation becomes bilateral because the product has nowhere more local to contain.
+Steam exerts lateral pressure in all directions — 𐑾 — which is fire's relational mode. Water's containing structure (𐑩) does not survive the composition. This is not an oversight in the arithmetic. A system that simultaneously reaches its critical state everywhere and gains moderate kinetics from its composition partner — where should the resulting pressure go? Not inward, like a container. Outward, in all directions. The relation becomes bilateral because the product has nowhere more local to contain.
 
 We initially expected the tensor to produce a hybrid — something intermediate in criticality, perhaps a diluted fire or an energized water. This assumption fails for a simple reason: maximum is not average. The tensor does not blend; it selects the dominant structural voice at every slot, and fire's criticality dominates completely. The mistake was treating composition as mixing. Composition is dominance with participation.
 
@@ -91,7 +91,7 @@ No rule was written to produce this. The grammar composed two independently imsc
 
 The meet takes the per-primitive minimum at every slot.
 
-`meet(fire_combustion, water_fluid)` — ⊙ resolves to ⊙_ž, water's non-critical floor. The fixed-point condition fails everywhere. Fire's universal criticality is annihilated. The gate closes.
+`meet(fire_combustion, water_fluid)` — ⊙ resolves to 𐑢, water's non-critical floor. The fixed-point condition fails everywhere. Fire's universal criticality is annihilated. The gate closes.
 
 This is quenching.
 

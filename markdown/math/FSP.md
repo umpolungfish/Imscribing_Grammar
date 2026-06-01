@@ -118,7 +118,7 @@ compute_promotions(riemann_zeta_function, explicit_formula)
 
 ```
 compute_meet(riemann_zeta_function, completed_xi_function)
-→ result: ⟨D=D_∞; T=Þ_ò; R=Ř_ý; P=Φ_υ; F=F_ħ; K=Ç^W; G=Γ_ʔ; Γ=Γ_∧; Φ=Φ_c^ℂ; H=H_0; S=Σ_ő; Ω=Ω_ℤ⟩
+→ result: ⟨D=D_∞; T=𐑥; R=𐑑; P=𐑿; F=F_ħ; K=𐑤; G=𐑲; Γ=Γ_∧; Φ=Φ_c^ℂ; H=H_0; S=𐑕; Ω=Ω_ℤ⟩
 → shared primitives: F, G, Φ, Ω (4)
 → resolved conflicts: D, T, R, P, K, Γ, H, S (8 conservative resolutions)
 ```
@@ -131,7 +131,7 @@ compute_meet(riemann_zeta_function, completed_xi_function)
 
 ```
 compute_tensor(riemann_zeta_function, completed_xi_function)
-→ result: ⟨D=D_⊙; T=T_⊙; R=R_†; P=Φ_υ; F=F_ħ; K=Ç^@; G=Γ_ʔ; Γ=Γ_seq; Φ=Φ_c^ℂ; H=H_2; S=Σ_ï; Ω=Ω_ℤ⟩
+→ result: ⟨D=D_⊙; T=T_⊙; R=R_†; P=𐑿; F=F_ħ; K=𐑧; G=𐑲; Γ=Γ_seq; Φ=Φ_c^ℂ; H=H_2; S=𐑳; Ω=Ω_ℤ⟩
 → bottleneck primitive: P ($P_{\text{upsilon}}$ dominates $P_{\text{doublebarpipe}}$)
 → union/promote primitives: D, T, R, K, Γ, H, S (7)
 ```
@@ -163,7 +163,7 @@ Since $P_{\text{upsilon}} < P_{\text{doublebarpipe}}$, the bottleneck is $P_{\te
 compute_distance(actual_zeta_zeros, rh_critical_zeros)
 → distance: 1.345
 → breakdown:
-   - R: Ř_ý → Ř_Ť (Δ = 1, w = 1.0)
+   - R: 𐑑 → 𐑽 (Δ = 1, w = 1.0)
    - Ω: Ω_ℤ → Ω_{ℤ₂} (Δ = 1, w = 0.7)
    - Φ: Φ_c → Φ_c^ℂ (Δ = 0.33, w = 0.1089)
 ```

@@ -55,9 +55,9 @@ header-includes:
 
 | ID | Concept |
 |----|---------|
-| $\text{ƒ}^{\text{ì}}$ | classical / low fidelity |
-| $\text{ƒ}^{\text{ð}}$ | stochastic fidelity |
-| $\text{ƒ}^{\text{ż}}$ | quantum coherent |
+| 𐑱 | classical / low fidelity |
+| 𐑞 | stochastic fidelity |
+| 𐑐 | quantum coherent |
 
 ## $Ç$ — Kinetics
 
@@ -82,9 +82,9 @@ header-includes:
 | ID | Concept |
 |----|---------|
 | $\text{ɢ}^{\wedge}$ | conjunctive — AND |
-| $\text{ɢ}^{\text{˝}}$ | disjunctive — OR |
-| $\text{ɢ}^{\text{ˌ}}$ | sequential — ordered |
-| $\text{ɢ}^{\text{Ş}}$ | broadcast — all-to-all |
+| 𐑜 | disjunctive — OR |
+| 𐑠 | sequential — ordered |
+| 𐑵 | broadcast — all-to-all |
 
 ## $⊙$ — Criticality
 
@@ -100,10 +100,10 @@ header-includes:
 
 | ID | Concept |
 |----|---------|
-| $\text{Ħ}_{\text{Ñ}}$ | memoryless — $H_0$ |
-| $\text{Ħ}_{\text{£}}$ | 1-step Markov — $H_1$ |
-| $\text{Ħ}_{A}$ | 2-step Markov — $H_2$ |
-| $\text{Ħ}_{!}$ | infinite memory — $H_\infty$ |
+| 𐑓 | memoryless — $H_0$ |
+| 𐑒 | 1-step Markov — $H_1$ |
+| 𐑖 | 2-step Markov — $H_2$ |
+| 𐑫 | infinite memory — $H_\infty$ |
 
 ## $Σ$ — Stoichiometry
 

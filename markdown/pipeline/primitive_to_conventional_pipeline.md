@@ -36,7 +36,7 @@ The Collatz case study demonstrates the pipeline running end-to-end: a primitive
 | $\mathcal{R}_{=}$ (bidirectional) | Forward-inverse bijection | Coupling lemma section |
 | $\Omega_{z}$ (integer winding) | Topological invariant protecting cycle | Cycle exclusion section |
 | $\hat{\varphi}_{\ddot{y}}$ (critical self-model) | Lyapunov/drift analysis | Boundedness section |
-| $\text{Ç}_{@}$ (moderate kinetics) | Equidistribution / ergodicity | Boundedness section (supporting) |
+| 𐑧 (moderate kinetics) | Equidistribution / ergodicity | Boundedness section (supporting) |
 | $\text{D}_{C}$ (2d surface) | State space as quotient manifold | Preliminaries section |
 
 **Output:** Each lemma is now associated with a mathematical object and a conventional section heading.
@@ -73,7 +73,7 @@ The Collatz case study demonstrates the pipeline running end-to-end: a primitive
 >
 > *Proof strategy.* Define Lyapunov function $L(x) = \ln x$. Compute expected drift per step. Show negative drift via the ratio of expansion to contraction factors. Apply sub-additive ergodic theorem to lift probabilistic result to "almost all" deterministic guarantee. Handle measure-zero exceptional set separately.
 
-**$\text{Ç}_{@}$ → Equidistribution Lemma (supporting)**
+**𐑧 → Equidistribution Lemma (supporting)**
 > *Lemma.* The parity sequence of typical trajectories is equidistributed: the proportion of odd steps converges to $1/2$ as the trajectory length increases.
 >
 > *Proof strategy.* Apply Terras-style mixing argument. Show modular dynamics are mixing on residue classes. Use normality of binary expansions.
@@ -93,24 +93,24 @@ Abstract
   → Outline the proof strategy (forward from primitive proof's synthesis section).
   → Define compressed/simplified map form.
 
-2. Encoding / Parity Section  [from Φ_}]
+2. Encoding / Parity Section  [from 𐑹]
   → Insert Injectivity Lemma + proof.
   → Add corollary: encoding sufficiency.
 
-3. Inverse Structure Section  [from Þ_O]
+3. Inverse Structure Section  [from 𐑸]
   → Insert Inverse Structure Lemma + proof.
   → Growth rate analysis (auxiliary computation).
 
-4. Coupling Section  [from Ř_=]
+4. Coupling Section  [from 𐑾]
   → Insert Coupling Lemma + proof.
   → Corollary: exhaustion of state space.
 
-5. Boundedness Section  [from ⊙_ÿ, Ç^@]
+5. Boundedness Section  [from ⊙, 𐑧]
   → Insert Boundedness Lemma + proof.
   → Insert Equidistribution (supporting) lemma.
   → Stopping time bound corollary.
 
-6. Cycle Exclusion Section  [from Ω_z]
+6. Cycle Exclusion Section  [from 𐑭]
   → Insert Cycle Exclusion Lemma + proof.
   → Known cycle characterization.
   → Diophantine constraints on exotic cycles.
@@ -185,32 +185,32 @@ class Lemma:
 # ── Primitive-to-Object Mapping ──────────────────────────────────────────────
 
 PRIMITIVE_MAP = {
-    "Φ_}": {
+    "𐑹": {
         "object": "Injectivity of encoding map",
         "section": "Parity Encoding and Injectivity",
         "template": "injectivity",
     },
-    "Þ_O": {
+    "𐑸": {
         "object": "Inverse tree / dual construction",
         "section": "The Inverse Tree",
         "template": "inverse_structure",
     },
-    "Ř_=": {
+    "𐑾": {
         "object": "Forward-inverse bijection",
         "section": "Bidirectional Coupling",
         "template": "coupling",
     },
-    "Ω_z": {
+    "𐑭": {
         "object": "Topological invariant (winding number)",
         "section": "Terminal Cycle and Exotic Cycle Exclusion",
         "template": "cycle_exclusion",
     },
-    "⊙_ÿ": {
+    "⊙": {
         "object": "Lyapunov function / logarithmic drift",
         "section": "Logarithmic Drift and Absence of Divergent Trajectories",
         "template": "boundedness",
     },
-    "Ç^@": {
+    "𐑧": {
         "object": "Equidistribution of parity sequences",
         "section": "Rigorous Boundedness Argument (supporting)",
         "template": "equidistribution",

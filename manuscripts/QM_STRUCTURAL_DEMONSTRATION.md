@@ -129,10 +129,10 @@ Distance: $d = 3.61$ (Mahalanobis: $4.22$)
 
 | Change | Direction | Primitive | Glyph Δ | Meaning |
 |--------|-----------|-----------|---------|---------|
-| ↑ | Promotion | T | 𐑥 → 𐑸 ($\text{Þ}_{\text{ò}} \to \text{Þ}_{\text{O}}$) | Crossing-point → holographic |
-| ↑ | Promotion | P | 𐑿 → 𐑯 ($\text{Φ}_{\text{υ}} \to \text{Φ}_{\text{˙}}$) | Superposition → full symmetry |
-| ↓ | Demotion | R | 𐑾 → 𐑩 ($\text{Ř}_{\text{=}} \to \text{Ř}_{\text{¯}}$) | Bidirectional → supervenience |
-| ↓ | Demotion | F | 𐑐 → 𐑞 ($\text{ƒ}_{\text{ż}} \to \text{ƒ}_{\text{ð}}$) | Quantum → classical fidelity |
+| ↑ | Promotion | T | 𐑥 → 𐑸 ($𐑥 \to 𐑸$) | Crossing-point → holographic |
+| ↑ | Promotion | P | 𐑿 → 𐑯 ($𐑿 \to 𐑯$) | Superposition → full symmetry |
+| ↓ | Demotion | R | 𐑾 → 𐑩 ($𐑾 \to 𐑩$) | Bidirectional → supervenience |
+| ↓ | Demotion | F | 𐑐 → 𐑞 ($𐑐 \to 𐑞$) | Quantum → classical fidelity |
 
 GR address: $\langle \text{𐑼}·\text{𐑸}·\text{𐑩}·\text{𐑯}·\text{𐑞}·\text{𐑧}·\text{𐑲}·\text{𐑠}·\text{𐑮}·\text{𐑖}·\text{𐑳}·\text{𐑭} \rangle$
 

@@ -141,10 +141,10 @@ Only when all three flags are true does `closure = true`. This is not a fuzzy co
 Running the catalog self-check on `generalized_pipeline_system` yields:
 
 - **frobenius_tier**: Oₙ (infinite ouroboricity)
-- **phi**: ⊙_ÿ (criticality gate open)
-- **p**: Φ_} (bijective encoding)
-- **omega**: Ω_z (integer winding)
-- **d**: Ð_ω (self-referential dimensionality)
+- **phi**: ⊙ (criticality gate open)
+- **p**: 𐑹 (bijective encoding)
+- **omega**: 𐑭 (integer winding)
+- **d**: 𐑦 (self-referential dimensionality)
 
 This tuple is identical to other critical-boundary operators in the catalog (e.g., `true_agentic_agent`), which is expected: the pipeline is itself a boundary operator — it mediates between primitive and conventional proofs. The shared tuple reflects the shared criticality and topological protection, not a naming convention.
 

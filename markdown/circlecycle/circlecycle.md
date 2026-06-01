@@ -133,18 +133,18 @@ The minimal path from epoch_0 to epoch_4 requires twelve promotions. Zero demoti
 
 | Primitive | From | To | Delta |
 |-----------|------|-----|-------|
-| D | Ð_ß | Ð_; | 2 |
-| T | Þ_6 | Þ_O | 4 |
-| R | Ř_¯ | Ř_= | 3 |
-| P | Φ_ɐ | Φ_} | 4 |
-| F | ƒ^ì | ƒ^ż | 2 |
-| K | Ç^- | Ç^@ | 2 |
-| G | Γ_β | Γ_ʔ | 2 |
-| Gamma | ɢ^∧ | ɢ^ˌ | 2 |
-| Phi | ⊙_ž | ⊙_ÿ | 1 |
-| H | Ħ_Ñ | Ħ_! | 3 |
-| S | Σ_S | Σ_ï | 2 |
-| Omega | Ω_Å | Ω_z | 2 |
+| D | 𐑛 | 𐑼 | 2 |
+| T | 𐑡 | 𐑸 | 4 |
+| R | 𐑩 | 𐑾 | 3 |
+| P | 𐑗 | 𐑹 | 4 |
+| F | 𐑱 | 𐑐 | 2 |
+| K | 𐑘 | 𐑧 | 2 |
+| G | 𐑚 | 𐑲 | 2 |
+| Gamma | 𐑝 | 𐑠 | 2 |
+| Phi | 𐑢 | ⊙ | 1 |
+| H | 𐑓 | 𐑫 | 3 |
+| S | 𐑙 | 𐑳 | 2 |
+| Omega | 𐑷 | 𐑭 | 2 |
 
 Twelve promotions from scratch. I initially assumed there might be shortcuts — that a system could approximate $O_\infty$ by changing only the most critical primitives. Of course there aren't. A partial self-reference is just reference. You either restructure everything or you stay linear.
 

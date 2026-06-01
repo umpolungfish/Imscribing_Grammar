@@ -33,10 +33,10 @@ from typing import Any, ClassVar, Dict, List, Optional
 def _prot_ord(p: "Protection") -> int:
     if p is None:
         return 0
-    return {"Ω_Å": 0, "Ω_2": 1, "Ω_z": 2, "Ω_C": 3, "Ω_5": 4}[p.value]
+    return {"𐑷": 0, "𐑴": 1, "𐑭": 2, "Ω_C": 3, "𐑟": 4}[p.value]
 
 def _chir_ord(h: "Chirality") -> int:
-    return {"Ħ_Ñ": 0, "Ħ_£": 1, "Ħ_A": 2, "Ħ_!": 3}[h.value]
+    return {"𐑓": 0, "𐑒": 1, "𐑖": 2, "𐑫": 3}[h.value]
 
 
 # =============================================================================
@@ -52,24 +52,24 @@ class Dimensionality(Enum):
     entries but are not part of the canonical 6-constructor type in Core.lean.
     """
     # ── Canonical F4 members ──────────────────────────────────────────────────
-    D_wynn      = "Ð_ß"   # ordinal 1: 2D areal / molecular sheet
-    D_turnthree = "Ð_C"   # ordinal 2: triangulated / simplicial / stratified
-    D_invomega  = "Ð_;"   # ordinal 3: ∞-dimensional / iterative-temporal
-    D_holo      = "Ð_ω"   # ordinal 4: imscriptive (boundary encodes bulk); canonical value D_omega
+    D_wynn      = "𐑛"   # ordinal 1: 2D areal / molecular sheet
+    D_turnthree = "𐑨"   # ordinal 2: triangulated / simplicial / stratified
+    D_invomega  = "𐑼"   # ordinal 3: ∞-dimensional / iterative-temporal
+    D_holo      = "𐑦"   # ordinal 4: imscriptive (boundary encodes bulk); canonical value D_omega
     # ── Lean-only extensions (non-canonical, chemistry/physics domain) ─────
     D_point = "Ð_point"   # 0D, scalar / spin-0 field
     D_line  = "Ð_line"    # 1D, vectorial
     D_cube  = "Ð_cube"    # 3D volumetric (Lean extension; canonical slot = D_turnthree)
 
     # Backward-compat aliases (chemistry-domain names → canonical values)
-    MOLECULAR      = "Ð_ß"
-    SUPRAMOLECULAR = "Ð_C"   # was D_cube; canonical ordinal 2 = D_turnthree
-    TEMPORAL       = "Ð_;"
-    HOLOGRAPHIC    = "Ð_ω"
-    HYBRID_MOL_SUPRA  = "Ð_C"
-    HYBRID_MOL_TEMP   = "Ð_;"
-    HYBRID_SUPRA_TEMP = "Ð_;"
-    HYBRID_ALL        = "Ð_C"
+    MOLECULAR      = "𐑛"
+    SUPRAMOLECULAR = "𐑨"   # was D_cube; canonical ordinal 2 = D_turnthree
+    TEMPORAL       = "𐑼"
+    HOLOGRAPHIC    = "𐑦"
+    HYBRID_MOL_SUPRA  = "𐑨"
+    HYBRID_MOL_TEMP   = "𐑼"
+    HYBRID_SUPRA_TEMP = "𐑼"
+    HYBRID_ALL        = "𐑨"
 
     @property
     def domains(self) -> frozenset:
@@ -77,21 +77,21 @@ class Dimensionality(Enum):
         return {
             "Ð_point":  frozenset({"point"}),
             "Ð_line":   frozenset({"linear"}),
-            "Ð_ß":      frozenset({"molecular"}),
-            "Ð_C":      frozenset({"molecular", "supramolecular"}),
+            "𐑛":      frozenset({"molecular"}),
+            "𐑨":      frozenset({"molecular", "supramolecular"}),
             "Ð_cube":   frozenset({"molecular", "supramolecular"}),
-            "Ð_;":      frozenset({"temporal", "molecular"}),
-            "Ð_ω":      frozenset({"temporal", "molecular", "supramolecular", "imscriptive"}),
+            "𐑼":      frozenset({"temporal", "molecular"}),
+            "𐑦":      frozenset({"temporal", "molecular", "supramolecular", "imscriptive"}),
         }.get(self.value, frozenset())
 
     @classmethod
     def from_symbol(cls, s: str) -> "Dimensionality":
         _map = {
             # glyph IDs (canonical)
-            "Ð_ß":  cls.D_wynn,
-            "Ð_C":  cls.D_turnthree,
-            "Ð_;":  cls.D_invomega,
-            "Ð_ω":  cls.D_holo,
+            "𐑛":  cls.D_wynn,
+            "𐑨":  cls.D_turnthree,
+            "𐑼":  cls.D_invomega,
+            "𐑦":  cls.D_holo,
             # phonetic names (backward compat)
             "Ð_wynn":       cls.D_wynn,
             "Ð_turnthree":  cls.D_turnthree,
@@ -134,28 +134,28 @@ class Topology(Enum):
     """
     T_linear   = "Þ_linear"    # open chain
     T_branched = "Þ_branched"  # tree / DAG
-    T_nrleg    = "Þ_6"         # general graph
-    T_bullseye = "Þ_ò"         # cyclic closure / double-well / figure-8
+    T_nrleg    = "𐑡"         # general graph
+    T_bullseye = "𐑥"         # cyclic closure / double-well / figure-8
     T_torus    = "Þ_torus"     # higher-genus compact (NEW — not in old Python)
-    T_holo     = "Þ_O"         # imscriptive: non-local boundary-bulk; canonical: T_openo
+    T_holo     = "𐑸"         # imscriptive: non-local boundary-bulk; canonical: T_openo
     # Chemistry extras
     T_network_hex    = "Þ_network_hex"
     T_network_mixed  = "Þ_network_mixed"
     T_network_interp = "Þ_network_interp"
     T_network_sym    = "Þ_network_sym"
-    T_cage  = "Þ_¨"
-    T_bowl  = "Þ_K"
+    T_cage  = "𐑶"
+    T_bowl  = "𐑰"
     T_braid = "Þ_braid"
     # Backward-compat aliases
     LINEAR        = "Þ_linear"
     CHAIN         = "Þ_linear"
     BRANCHED      = "Þ_branched"
-    NETWORK       = "Þ_6"
-    HUB_NODE      = "Þ_6"
-    CYCLIC_BOWTIE = "Þ_ò"
+    NETWORK       = "𐑡"
+    HUB_NODE      = "𐑡"
+    CYCLIC_BOWTIE = "𐑥"
     TORUS         = "Þ_torus"
-    CAGE          = "Þ_¨"
-    BOWL          = "Þ_K"
+    CAGE          = "𐑶"
+    BOWL          = "𐑰"
     BRAID         = "Þ_braid"
     NETWORK_HEX   = "Þ_network_hex"
     NETWORK_MIXED = "Þ_network_mixed"
@@ -167,11 +167,11 @@ class Topology(Enum):
     def from_symbol(cls, s: str) -> "Topology":
         _map = {
             # glyph IDs (canonical)
-            "Þ_6":  cls.T_nrleg,
-            "Þ_ò":  cls.T_bullseye,
-            "Þ_O":  cls.T_holo,
-            "Þ_¨":  cls.T_cage,
-            "Þ_K":  cls.T_bowl,
+            "𐑡":  cls.T_nrleg,
+            "𐑥":  cls.T_bullseye,
+            "𐑸":  cls.T_holo,
+            "𐑶":  cls.T_cage,
+            "𐑰":  cls.T_bowl,
             # phonetic names (backward compat)
             "Þ_linear": cls.T_linear,       "Þ_chains": cls.T_linear,
             "Þ_branched": cls.T_branched,
@@ -210,28 +210,28 @@ class Recognition(Enum):
     Canonical 4 (from grammar): R_subrightarrow, R_ctz, R_downstep, R_lyoghlig.
     Chemistry vocab is preserved as member names but values are canonical.
     """
-    R_superset   = "Ř_¯"    # non-covalent / soft association
-    R_subset     = "Ř_ý"    # covalent bond / structural transformation
-    R_catalytic  = "Ř_Ť"    # transition-state stabilisation / adjoint
-    R_allosteric = "Ř_Ť"    # conformational gating (alias of R_downstep)
-    R_mechanical = "Ř_="    # mechanical topology / left-right asymmetric
-    R_exact      = "Ř_Ť"    # exact correspondence (alias of R_downstep)
-    R_covalent_dynamic = "Ř_ý"  # dynamic covalent (alias of R_ctz)
+    R_superset   = "𐑩"    # non-covalent / soft association
+    R_subset     = "𐑑"    # covalent bond / structural transformation
+    R_catalytic  = "𐑽"    # transition-state stabilisation / adjoint
+    R_allosteric = "𐑽"    # conformational gating (alias of R_downstep)
+    R_mechanical = "𐑾"    # mechanical topology / left-right asymmetric
+    R_exact      = "𐑽"    # exact correspondence (alias of R_downstep)
+    R_covalent_dynamic = "𐑑"  # dynamic covalent (alias of R_ctz)
     # Backward-compat aliases used by constraints.py
-    COVALENT          = "Ř_ý"
-    NON_COVALENT      = "Ř_¯"
-    DYNAMIC_CATALYTIC = "Ř_Ť"
-    MECHANICAL        = "Ř_="
-    COVALENT_DYNAMIC  = "Ř_ý"
+    COVALENT          = "𐑑"
+    NON_COVALENT      = "𐑩"
+    DYNAMIC_CATALYTIC = "𐑽"
+    MECHANICAL        = "𐑾"
+    COVALENT_DYNAMIC  = "𐑑"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Recognition":
         _map = {
             # glyph IDs (canonical)
-            "Ř_¯":  cls.R_superset,
-            "Ř_ý":  cls.R_subset,
-            "Ř_Ť":  cls.R_catalytic,
-            "Ř_=":  cls.R_mechanical,
+            "𐑩":  cls.R_superset,
+            "𐑑":  cls.R_subset,
+            "𐑽":  cls.R_catalytic,
+            "𐑾":  cls.R_mechanical,
             # phonetic names (backward compat)
             "Ř_subrightarrow":   cls.R_superset,
             "Ř_ctz":     cls.R_subset,
@@ -267,34 +267,34 @@ class Polarity(Enum):
     Chemistry vocab is preserved as member names but values are canonical.
     """
     # ── Canonical F5 members ──────────────────────────────────────────────────
-    P_neutral        = "Φ_ɐ"   # ordinal 1: asymmetric, no preferred direction
-    P_plus           = "Φ_υ"   # ordinal 2: signed direction (electrophilic)
-    P_pipevar        = "Φ_F"   # ordinal 3: self-complementary bipolar
-    P_subdoublearrow = "Φ_˙"   # ordinal 4: symmetric (non-Frobenius)
-    P_doublebarpipe  = "Φ_}"   # ordinal 5: Frobenius special (P_pm_sym)
+    P_neutral        = "𐑗"   # ordinal 1: asymmetric, no preferred direction
+    P_plus           = "𐑿"   # ordinal 2: signed direction (electrophilic)
+    P_pipevar        = "𐑬"   # ordinal 3: self-complementary bipolar
+    P_subdoublearrow = "𐑯"   # ordinal 4: symmetric (non-Frobenius)
+    P_doublebarpipe  = "𐑹"   # ordinal 5: Frobenius special (P_pm_sym)
     # ── Aliases ───────────────────────────────────────────────────────────────
-    P_minus       = "Φ_υ"    # nucleophilic → same ordinal as electrophilic
-    P_pm_pseudo   = "Φ_υ"    # pseudo-symmetric → signed
-    P_directional = "Φ_ɐ"    # directed asymmetric pair
-    ACCEPTOR               = "Φ_υ"
-    DONOR                  = "Φ_υ"
-    SELF_COMPLEMENTARY_SYM = "Φ_}"
-    SELF_COMPLEMENTARY_PSEUDO = "Φ_υ"
-    DONOR_ACCEPTOR         = "Φ_ɐ"
+    P_minus       = "𐑿"    # nucleophilic → same ordinal as electrophilic
+    P_pm_pseudo   = "𐑿"    # pseudo-symmetric → signed
+    P_directional = "𐑗"    # directed asymmetric pair
+    ACCEPTOR               = "𐑿"
+    DONOR                  = "𐑿"
+    SELF_COMPLEMENTARY_SYM = "𐑹"
+    SELF_COMPLEMENTARY_PSEUDO = "𐑿"
+    DONOR_ACCEPTOR         = "𐑗"
 
     @property
     def is_self_complementary(self) -> bool:
-        return self.value in ("Φ_}", "Φ_F", "Φ_˙")
+        return self.value in ("𐑹", "𐑬", "𐑯")
 
     @classmethod
     def from_symbol(cls, s: str) -> "Polarity":
         _map = {
             # glyph IDs (canonical)
-            "Φ_ɐ":  cls.P_neutral,
-            "Φ_υ":  cls.P_plus,
-            "Φ_F":  cls.P_pipevar,
-            "Φ_˙":  cls.P_subdoublearrow,
-            "Φ_}":  cls.P_doublebarpipe,
+            "𐑗":  cls.P_neutral,
+            "𐑿":  cls.P_plus,
+            "𐑬":  cls.P_pipevar,
+            "𐑯":  cls.P_subdoublearrow,
+            "𐑹":  cls.P_doublebarpipe,
             # phonetic names (backward compat)
             "Φ_aolig":          cls.P_neutral,
             "Φ_upsilon":        cls.P_plus,
@@ -338,38 +338,38 @@ class Grammar(Enum):
 
     G_dissipative retained from old GrammarOperator for catalogs that used it.
     """
-    Gamma_corner      = "ɢ^∧"   # conjunctive / simultaneous (all partners required)
-    Gamma_spleftarrow = "ɢ^˝"   # disjunctive / any one suffices
-    Gamma_secstress   = "ɢ^ˌ"   # sequential / ordered
+    Gamma_corner      = "𐑝"   # conjunctive / simultaneous (all partners required)
+    Gamma_spleftarrow = "𐑜"   # disjunctive / any one suffices
+    Gamma_secstress   = "𐑠"   # sequential / ordered
     G_xor         = "Γ_xor"     # exclusive (NEW — was missing)
     G_impl        = "Γ_impl"    # implicative / conditional (NEW — was missing)
-    G_dissipative = "ɢ^Ş"       # irreversible / Lindblad (legacy)
+    G_dissipative = "𐑵"       # irreversible / Lindblad (legacy)
     # Backward-compat aliases: old compound InteractionGrammar values -> canonical operator
-    SPECIFIC_AND         = "ɢ^∧"
-    SELECTIVE_AND        = "ɢ^∧"
-    BROAD_AND            = "ɢ^∧"
-    QUANTUM_AND          = "ɢ^∧"
-    SPECIFIC_OR          = "ɢ^˝"
-    SELECTIVE_OR         = "ɢ^˝"
-    BROAD_OR             = "ɢ^˝"
-    QUANTUM_OR           = "ɢ^˝"
-    SPECIFIC_SEQ         = "ɢ^ˌ"
-    SELECTIVE_SEQ        = "ɢ^ˌ"
-    BROAD_SEQ            = "ɢ^ˌ"
-    QUANTUM_SEQ          = "ɢ^ˌ"
-    SPECIFIC_DISSIPATIVE  = "ɢ^Ş"
-    SELECTIVE_DISSIPATIVE = "ɢ^Ş"
-    BROAD_DISSIPATIVE     = "ɢ^Ş"
-    QUANTUM_DISSIPATIVE   = "ɢ^Ş"
+    SPECIFIC_AND         = "𐑝"
+    SELECTIVE_AND        = "𐑝"
+    BROAD_AND            = "𐑝"
+    QUANTUM_AND          = "𐑝"
+    SPECIFIC_OR          = "𐑜"
+    SELECTIVE_OR         = "𐑜"
+    BROAD_OR             = "𐑜"
+    QUANTUM_OR           = "𐑜"
+    SPECIFIC_SEQ         = "𐑠"
+    SELECTIVE_SEQ        = "𐑠"
+    BROAD_SEQ            = "𐑠"
+    QUANTUM_SEQ          = "𐑠"
+    SPECIFIC_DISSIPATIVE  = "𐑵"
+    SELECTIVE_DISSIPATIVE = "𐑵"
+    BROAD_DISSIPATIVE     = "𐑵"
+    QUANTUM_DISSIPATIVE   = "𐑵"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Grammar":
         _map = {
             # glyph IDs (canonical)
-            "ɢ^∧":  cls.Gamma_corner,
-            "ɢ^˝":  cls.Gamma_spleftarrow,
-            "ɢ^ˌ":  cls.Gamma_secstress,
-            "ɢ^Ş":  cls.G_dissipative,
+            "𐑝":  cls.Gamma_corner,
+            "𐑜":  cls.Gamma_spleftarrow,
+            "𐑠":  cls.Gamma_secstress,
+            "𐑵":  cls.G_dissipative,
             # Shavian (v0.6.0)
             "𐑝": cls.Gamma_corner, "𐑜": cls.Gamma_spleftarrow,
             "𐑠": cls.Gamma_secstress, "𐑵": cls.G_dissipative,
@@ -423,21 +423,21 @@ class Fidelity(Enum):
       F_hardsign  = quantum / high-fidelity (ℏ)
     """
     F_noise    = "ƒ_noise"  # below threshold, lossy (NEW)
-    F_beltl    = "ƒ^ì"     # classical search fidelity
-    F_dh       = "ƒ^ð"     # HotSwap threshold
-    F_hardsign = "ƒ^ż"     # quantum coherent
+    F_beltl    = "𐑱"     # classical search fidelity
+    F_dh       = "𐑞"     # HotSwap threshold
+    F_hardsign = "𐑐"     # quantum coherent
     # Backward-compat aliases
-    LOW    = "ƒ^ì"
-    MEDIUM = "ƒ^ð"
-    HIGH   = "ƒ^ż"
+    LOW    = "𐑱"
+    MEDIUM = "𐑞"
+    HIGH   = "𐑐"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Fidelity":
         _map = {
             # glyph IDs (canonical)
-            "ƒ^ì":  cls.F_beltl,
-            "ƒ^ð":  cls.F_dh,
-            "ƒ^ż":  cls.F_hardsign,
+            "𐑱":  cls.F_beltl,
+            "𐑞":  cls.F_dh,
+            "𐑐":  cls.F_hardsign,
             # Shavian (v0.6.0)
             "𐑱": cls.F_beltl, "𐑞": cls.F_dh, "𐑐": cls.F_hardsign,
             # phonetic names (backward compat)
@@ -453,7 +453,7 @@ class Fidelity(Enum):
 
     @property
     def numeric_value(self) -> float:
-        return {"ƒ_noise": 0.0, "ƒ^ì": 0.33, "ƒ^ð": 0.67, "ƒ^ż": 1.0}[self.value]
+        return {"ƒ_noise": 0.0, "𐑱": 0.33, "𐑞": 0.67, "𐑐": 1.0}[self.value]
 
 
 # =============================================================================
@@ -471,27 +471,27 @@ class KineticChar(Enum):
       K_teshlig = kinetically trapped / pathway-multiplicity dominated
       K_lambda  = many-body localised (disorder-frozen)
     """
-    K_frtailgamma = "Ç^-"
-    K_turnm       = "Ç^W"   # was MODERATE
-    K_schwa       = "Ç^@"
-    K_teshlig     = "Ç^Ù"
-    K_lambda      = "Ç^λ"
+    K_frtailgamma = "𐑘"
+    K_turnm       = "𐑤"   # was MODERATE
+    K_schwa       = "𐑧"
+    K_teshlig     = "𐑪"
+    K_lambda      = "𐑺"
     # Backward-compat aliases
-    FAST     = "Ç^-"
-    MODERATE = "Ç^W"
-    SLOW     = "Ç^@"
-    TRAP     = "Ç^Ù"
-    MBL      = "Ç^λ"
+    FAST     = "𐑘"
+    MODERATE = "𐑤"
+    SLOW     = "𐑧"
+    TRAP     = "𐑪"
+    MBL      = "𐑺"
 
     @classmethod
     def from_symbol(cls, s: str) -> "KineticChar":
         _map = {
             # glyph IDs (canonical)
-            "Ç^-":  cls.K_frtailgamma,
-            "Ç^W":  cls.K_turnm,
-            "Ç^@":  cls.K_schwa,
-            "Ç^Ù":  cls.K_teshlig,
-            "Ç^λ":  cls.K_lambda,
+            "𐑘":  cls.K_frtailgamma,
+            "𐑤":  cls.K_turnm,
+            "𐑧":  cls.K_schwa,
+            "𐑪":  cls.K_teshlig,
+            "𐑺":  cls.K_lambda,
             # Shavian (v0.6.0)
             "𐑘": cls.K_frtailgamma, "𐑤": cls.K_turnm, "𐑧": cls.K_schwa,
             "𐑪": cls.K_teshlig, "𐑺": cls.K_lambda,
@@ -509,7 +509,7 @@ class KineticChar(Enum):
 
     @property
     def numeric_value(self) -> float:
-        return {"Ç^λ": 0.0, "Ç^Ù": 0.25, "Ç^@": 0.5, "Ç^W": 0.75, "Ç^-": 1.0}[self.value]
+        return {"𐑺": 0.0, "𐑪": 0.25, "𐑧": 0.5, "𐑤": 0.75, "𐑘": 1.0}[self.value]
 
 
 # =============================================================================
@@ -529,17 +529,17 @@ class Granularity(Enum):
     This is now corrected to match the mathematical convention and Core.lean.
     Migration: old G_revapostrophe → new G_gamma; old G_gamma → new G_beta; old G_beta → new G_revapostrophe.
     """
-    G_revapostrophe = "Γ_ʔ"   # fine-grained, atomic (ℵ) — was incorrectly GLOBAL in old Python
-    G_beta          = "Γ_β"   # mesoscale local (ℶ) — was LOCAL
-    G_gamma         = "Γ_γ"   # coarse, collective (ℷ) — was incorrectly MESOSCALE in old Python
+    G_revapostrophe = "𐑲"   # fine-grained, atomic (ℵ) — was incorrectly GLOBAL in old Python
+    G_beta          = "𐑚"   # mesoscale local (ℶ) — was LOCAL
+    G_gamma         = "𐑔"   # coarse, collective (ℷ) — was incorrectly MESOSCALE in old Python
     # Backward-compat key aliases with CORRECTED semantics:
-    LOCAL     = "Γ_ʔ"   # fine = aleph (was G_beta — now fixed)
-    MESOSCALE = "Γ_β"   # mesoscale = beth (was G_gamma — now fixed)
-    GLOBAL    = "Γ_γ"   # coarse = gimel (was G_revapostrophe — now fixed)
+    LOCAL     = "𐑲"   # fine = aleph (was G_beta — now fixed)
+    MESOSCALE = "𐑚"   # mesoscale = beth (was G_gamma — now fixed)
+    GLOBAL    = "𐑔"   # coarse = gimel (was G_revapostrophe — now fixed)
 
     @property
     def ordinal(self) -> int:
-        return {"Γ_ʔ": 0, "Γ_β": 1, "Γ_γ": 2}.get(self.value, 1)
+        return {"𐑲": 0, "𐑚": 1, "𐑔": 2}.get(self.value, 1)
 
     def can_amplify_to(self, other: "Granularity") -> bool:
         """Fine-to-coarse aggregation is possible; coarse-to-fine is not."""
@@ -549,9 +549,9 @@ class Granularity(Enum):
     def from_symbol(cls, s: str) -> "Granularity":
         _map = {
             # glyph IDs (canonical)
-            "Γ_ʔ":  cls.G_revapostrophe,
-            "Γ_β":  cls.G_beta,
-            "Γ_γ":  cls.G_gamma,
+            "𐑲":  cls.G_revapostrophe,
+            "𐑚":  cls.G_beta,
+            "𐑔":  cls.G_gamma,
             # Shavian (v0.6.0)
             "𐑚": cls.G_beta, "𐑔": cls.G_gamma, "𐑲": cls.G_revapostrophe,
             # phonetic names (backward compat)
@@ -581,25 +581,25 @@ class Criticality(Enum):
       Phi_upstep     = supercritical (unstable)
     Phi_ctyogh is ABSORBING under meet: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """
-    Phi_softsign        = "⊙_ž"   # subcritical (stable, ordered)
-    Phi_ctyogh          = "⊙_ÿ"   # critical point (absorbing under meet)
-    Phi_closerevepsilon = "⊙_Æ"   # complex criticality (paraconsistent)
-    Phi_revepsilon      = "⊙_3"   # exceptional-point criticality
-    Phi_upstep          = "⊙_Ţ"   # supercritical (unstable)
+    Phi_softsign        = "𐑢"   # subcritical (stable, ordered)
+    Phi_ctyogh          = "⊙"   # critical point (absorbing under meet)
+    Phi_closerevepsilon = "𐑮"   # complex criticality (paraconsistent)
+    Phi_revepsilon      = "𐑻"   # exceptional-point criticality
+    Phi_upstep          = "𐑣"   # supercritical (unstable)
     # Backward-compat aliases
-    SUBCRITICAL  = "⊙_ž"
-    CRITICAL     = "⊙_ÿ"
-    SUPERCRITICAL = "⊙_Ţ"
+    SUBCRITICAL  = "𐑢"
+    CRITICAL     = "⊙"
+    SUPERCRITICAL = "𐑣"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
         _map = {
             # glyph IDs (canonical)
-            "⊙_ž":  cls.Phi_softsign,
-            "⊙_ÿ":  cls.Phi_ctyogh,
-            "⊙_Æ":  cls.Phi_closerevepsilon,
-            "⊙_3":  cls.Phi_revepsilon,
-            "⊙_Ţ":  cls.Phi_upstep,
+            "𐑢":  cls.Phi_softsign,
+            "⊙":  cls.Phi_ctyogh,
+            "𐑮":  cls.Phi_closerevepsilon,
+            "𐑻":  cls.Phi_revepsilon,
+            "𐑣":  cls.Phi_upstep,
             # Shavian (v0.6.0)
             "𐑢": cls.Phi_softsign, "⊙": cls.Phi_ctyogh, "𐑮": cls.Phi_closerevepsilon,
             "𐑻": cls.Phi_revepsilon, "𐑣": cls.Phi_upstep,
@@ -610,11 +610,11 @@ class Criticality(Enum):
             "⊙_revepsilon":      cls.Phi_revepsilon,      "Φ_EP":    cls.Phi_revepsilon,
             "⊙_upstep":         cls.Phi_upstep,          "Φ_sup":   cls.Phi_upstep,
             # odot-prefixed variants (old memory file notation)
-            "⊙_ž":  cls.Phi_softsign,
-            "⊙_ÿ":  cls.Phi_ctyogh,
-            "⊙_Æ":  cls.Phi_closerevepsilon,
-            "⊙_3":  cls.Phi_revepsilon,
-            "⊙_Ţ":  cls.Phi_upstep,
+            "𐑢":  cls.Phi_softsign,
+            "⊙":  cls.Phi_ctyogh,
+            "𐑮":  cls.Phi_closerevepsilon,
+            "𐑻":  cls.Phi_revepsilon,
+            "𐑣":  cls.Phi_upstep,
         }
         try:
             return _map[s]
@@ -642,27 +642,27 @@ class Protection(Enum):
       Omega_dzlig  = integer winding number (requires H >= H_turntwo by Axiom B)
       Omega_turna = non-Abelian winding (requires D_omega by Axiom D)
     """
-    Omega_closeepsilon = "Ω_Å"
-    Omega_crtwo        = "Ω_2"
-    Omega_dzlig        = "Ω_z"
+    Omega_closeepsilon = "𐑷"
+    Omega_crtwo        = "𐑴"
+    Omega_dzlig        = "𐑭"
     Omega_C            = "Ω_C"
-    Omega_turna        = "Ω_5"
+    Omega_turna        = "𐑟"
     # Backward-compat aliases (old TopoIndex names)
-    TRIVIAL     = "Ω_Å"
-    Z2_CLASS    = "Ω_2"
-    Z_CLASS     = "Ω_z"
+    TRIVIAL     = "𐑷"
+    Z2_CLASS    = "𐑴"
+    Z_CLASS     = "𐑭"
     CHERN       = "Ω_C"
-    NON_ABELIAN = "Ω_5"
+    NON_ABELIAN = "𐑟"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Protection":
         _map = {
             # glyph IDs (canonical)
-            "Ω_Å":  cls.Omega_closeepsilon,
-            "Ω_2":  cls.Omega_crtwo,
-            "Ω_z":  cls.Omega_dzlig,
+            "𐑷":  cls.Omega_closeepsilon,
+            "𐑴":  cls.Omega_crtwo,
+            "𐑭":  cls.Omega_dzlig,
             "Ω_C":  cls.Omega_C,
-            "Ω_5":  cls.Omega_turna,
+            "𐑟":  cls.Omega_turna,
             # Shavian (v0.6.0)
             "𐑷": cls.Omega_closeepsilon, "𐑴": cls.Omega_crtwo,
             "𐑭": cls.Omega_dzlig, "𐑟": cls.Omega_turna,
@@ -705,18 +705,18 @@ class Stoichiometry(Enum):
     Lean canonical 4: S_doublebaresh, one_n, S_ltailm, cat.
     Replaces the old ad-hoc string field.
     """
-    S_doublebaresh = "Σ_S"
-    one_n          = "Σ_ő"   # 1:n collapses to S_ctn (symmetric many)
-    S_ltailm       = "Σ_ï"
-    cat            = "Σ_ï"   # catalytic treated as S_ltailm (alias)
+    S_doublebaresh = "𐑙"
+    one_n          = "𐑕"   # 1:n collapses to S_ctn (symmetric many)
+    S_ltailm       = "𐑳"
+    cat            = "𐑳"   # catalytic treated as S_ltailm (alias)
 
     @classmethod
     def from_symbol(cls, s: str) -> "Stoichiometry":
         _map = {
             # glyph IDs (canonical)
-            "Σ_S":  cls.S_doublebaresh,
-            "Σ_ő":  cls.one_n,
-            "Σ_ï":  cls.S_ltailm,
+            "𐑙":  cls.S_doublebaresh,
+            "𐑕":  cls.one_n,
+            "𐑳":  cls.S_ltailm,
             # Shavian (v0.6.0)
             "𐑙": cls.S_doublebaresh, "𐑕": cls.one_n, "𐑳": cls.S_ltailm,
             # phonetic names (backward compat)
@@ -755,19 +755,19 @@ class Chirality(Enum):
       H_turntwo    = persistent chiral, strong asymmetry (amino acids, DNA)
       H_invscripta = topological chiral (implies K_teshlig by Axiom A)
     """
-    H_closeomega     = "Ħ_Ñ"
-    H_toneletterstem = "Ħ_£"
-    H_turntwo        = "Ħ_A"
-    H_invscripta     = "Ħ_!"   # was "Hinf" (FIXED)
+    H_closeomega     = "𐑓"
+    H_toneletterstem = "𐑒"
+    H_turntwo        = "𐑖"
+    H_invscripta     = "𐑫"   # was "Hinf" (FIXED)
 
     @classmethod
     def from_symbol(cls, s: str) -> "Chirality":
         _map = {
             # glyph IDs (canonical)
-            "Ħ_Ñ":  cls.H_closeomega,
-            "Ħ_£":  cls.H_toneletterstem,
-            "Ħ_A":  cls.H_turntwo,
-            "Ħ_!":  cls.H_invscripta,
+            "𐑓":  cls.H_closeomega,
+            "𐑒":  cls.H_toneletterstem,
+            "𐑖":  cls.H_turntwo,
+            "𐑫":  cls.H_invscripta,
             # Shavian (v0.6.0)
             "𐑓": cls.H_closeomega, "𐑒": cls.H_toneletterstem,
             "𐑖": cls.H_turntwo, "𐑫": cls.H_invscripta,
@@ -923,16 +923,16 @@ class Imscription:
     # Models layer uses a richer chemistry vocab; registry/zfc must see only canon values.
     _CANONICAL_MAP: ClassVar[Dict[str, str]] = {
         # D — non-canonical extensions collapse to nearest canonical
-        "Ð_point": "Ð_ß", "Ð_line": "Ð_ß",
-        "Ð_cube": "Ð_C",
+        "Ð_point": "𐑛", "Ð_line": "𐑛",
+        "Ð_cube": "𐑨",
         # T — chemistry extras collapse to canonical 5
-        "Þ_linear": "Þ_K", "Þ_branched": "Þ_K", "Þ_bowl": "Þ_K",
-        "Þ_cage": "Þ_¨",
-        "Þ_torus": "Þ_ò", "Þ_braid": "Þ_ò",
-        "Þ_network_hex": "Þ_6", "Þ_network_mixed": "Þ_6",
-        "Þ_network_interp": "Þ_6", "Þ_network_sym": "Þ_6",
+        "Þ_linear": "𐑰", "Þ_branched": "𐑰", "Þ_bowl": "𐑰",
+        "Þ_cage": "𐑶",
+        "Þ_torus": "𐑥", "Þ_braid": "𐑥",
+        "Þ_network_hex": "𐑡", "Þ_network_mixed": "𐑡",
+        "Þ_network_interp": "𐑡", "Þ_network_sym": "𐑡",
         # Grammar — non-canonical G_xor/G_impl/G_dissipative collapse to canonical
-        "Γ_impl": "ɢ^ˌ", "Γ_xor": "ɢ^˝", "Γ_dissipative": "ɢ^Ş",
+        "Γ_impl": "𐑠", "Γ_xor": "𐑜", "Γ_dissipative": "𐑵",
     }
 
     @classmethod
@@ -987,18 +987,18 @@ class Imscription:
         try:
             result = cls(
                 name             = d["name"],
-                dimensionality   = Dimensionality.from_symbol(_get("Ð", "D", "dimensionality", "Ð_ß")),
-                topology         = Topology.from_symbol(_get("Þ", "T", "topology", "Þ_6")),
-                recognition_mode = Recognition.from_symbol(_get("Ř", "R", "recognition_mode", "Ř_¯")),
-                polarity         = Polarity.from_symbol(_get("Φ", "P", "polarity", "Φ_ɐ")),
-                grammar          = Grammar.from_symbol(_get("ɢ", "Gamma", "grammar", "ɢ^∧")),
-                fidelity         = Fidelity.from_symbol(_get("ƒ", "F", "fidelity", "ƒ^ì")),
-                kinetic_character= KineticChar.from_symbol(_get("Ç", "K", "kinetic_character", "Ç^W")),
-                granularity      = Granularity.from_symbol(_get("Γ", "G", "granularity", "Γ_β")),
-                criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "⊙_ž")),
-                protection       = Protection.from_symbol(_get("Ω", "Omega", "protection", "Ω_Å")),
+                dimensionality   = Dimensionality.from_symbol(_get("Ð", "D", "dimensionality", "𐑛")),
+                topology         = Topology.from_symbol(_get("Þ", "T", "topology", "𐑡")),
+                recognition_mode = Recognition.from_symbol(_get("Ř", "R", "recognition_mode", "𐑩")),
+                polarity         = Polarity.from_symbol(_get("Φ", "P", "polarity", "𐑗")),
+                grammar          = Grammar.from_symbol(_get("ɢ", "Gamma", "grammar", "𐑝")),
+                fidelity         = Fidelity.from_symbol(_get("ƒ", "F", "fidelity", "𐑱")),
+                kinetic_character= KineticChar.from_symbol(_get("Ç", "K", "kinetic_character", "𐑤")),
+                granularity      = Granularity.from_symbol(_get("Γ", "G", "granularity", "𐑚")),
+                criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "𐑢")),
+                protection       = Protection.from_symbol(_get("Ω", "Omega", "protection", "𐑷")),
                 stoichiometry    = Stoichiometry.from_symbol(_get("Σ", "S", "stoichiometry", "n:m")),
-                chirality        = Chirality.from_symbol(_get("Ħ", "H", "chirality", "Ħ_Ñ")),
+                chirality        = Chirality.from_symbol(_get("Ħ", "H", "chirality", "𐑓")),
                 description      = d.get("description", ""),
                 metadata         = d.get("metadata", {}),
                 grounding        = d.get("grounding"),

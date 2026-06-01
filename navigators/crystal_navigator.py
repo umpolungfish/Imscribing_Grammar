@@ -143,9 +143,14 @@ def _decode_partial(prim_list: list[str], strides: list[int], addr: int) -> dict
     return result
 
 def encode_tuple(tup: dict) -> int:
-    """Frobenius encode: tuple → canonical address in [0, 10_367_999]."""
-    cell  = _encode_partial(BOUNDARY_PRIMS, BOUNDARY_STRIDES, tup)
-    inner = _encode_partial(INNER_PRIMS, INNER_STRIDES, tup)
+    """Frobenius encode: tuple → canonical address in [0, 17,279,999].
+    Accepts both Symbol_symbol values and Shavian glyph values."""
+    resolved = {
+        prim: _SHAVIAN_TO_XTAL.get(prim, {}).get(tup.get(prim, ""), tup.get(prim, ""))
+        for prim in PRIMS
+    }
+    cell  = _encode_partial(BOUNDARY_PRIMS, BOUNDARY_STRIDES, resolved)
+    inner = _encode_partial(INNER_PRIMS, INNER_STRIDES, resolved)
     return cell * INNER_SIZE + inner
 
 def decode_address(addr: int) -> dict:
@@ -203,37 +208,95 @@ def breakdown(a: dict, b: dict) -> list[dict]:
 
 # ── Lattice operations ─────────────────────────────────────────────────────────
 
-def meet(a: dict, b: dict) -> dict:
-    """Greatest lower bound: component-wise min."""
-    return {p: VALUES[p][min(ORD[p][a[p]], ORD[p][b[p]])] for p in PRIMS}
+# Shavian → Symbol_symbol map — direct inversion of OLD_TO_SHAVIAN.
+# Authoritative: derived from the same table used for catalog migration.
+_SHAVIAN_TO_XTAL: dict[str, dict[str, str]] = {
+    "Ð": {"𐑛":"Ð_ß","𐑨":"Ð_C","𐑼":"Ð_;","𐑦":"Ð_ω"},
+    "Þ": {"𐑡":"Þ_6","𐑰":"Þ_K","𐑥":"Þ_ò","𐑶":"Þ_¨","𐑸":"Þ_O"},
+    "Ř": {"𐑩":"Ř_¯","𐑑":"Ř_ý","𐑽":"Ř_Ť","𐑾":"Ř_="},
+    "Φ": {"𐑗":"Φ_ɐ","𐑿":"Φ_υ","𐑬":"Φ_F","𐑯":"Φ_˙","𐑹":"Φ_}"},
+    "ƒ": {"𐑱":"ƒ^ì","𐑞":"ƒ^ð","𐑐":"ƒ^ż"},
+    "Ç": {"𐑘":"Ç^-","𐑤":"Ç^W","𐑧":"Ç^@","𐑪":"Ç^Ù","𐑺":"Ç^λ"},
+    "Γ": {"𐑚":"Γ_β","𐑔":"Γ_γ","𐑲":"Γ_ʔ"},
+    "ɢ": {"𐑝":"ɢ^∧","𐑜":"ɢ^˝","𐑠":"ɢ^ˌ","𐑵":"ɢ^Ş"},
+    "⊙": {"𐑢":"⊙_ž","⊙":"⊙_ÿ","𐑮":"⊙_Æ","𐑻":"⊙_3","𐑣":"⊙_Ţ"},
+    "Ħ": {"𐑓":"Ħ_Ñ","𐑒":"Ħ_£","𐑖":"Ħ_A","𐑫":"Ħ_!"},
+    "Σ": {"𐑙":"Σ_S","𐑕":"Σ_ő","𐑳":"Σ_ï"},
+    "Ω": {"𐑷":"Ω_Å","𐑴":"Ω_2","𐑭":"Ω_z","𐑟":"Ω_5"},
+}
 
-def join(a: dict, b: dict) -> dict:
-    """Least upper bound: component-wise max."""
-    return {p: VALUES[p][max(ORD[p][a[p]], ORD[p][b[p]])] for p in PRIMS}
 
-def tensor(a: dict, b: dict) -> dict:
-    """Tensor product: min on bottleneck primitives, max elsewhere.
-       Special stoichiometry rule for S: n:m absorbs all; 1:1 only under 1:1⊗1:1."""
+def _resolve_absorption(absorption_rules, prim, val_a, val_b, op_name):
+    """Check absorption rules for a primitive pair. Returns absorbing value or None."""
+    if absorption_rules is None:
+        return None
+    for rule in absorption_rules:
+        if isinstance(rule, tuple):
+            r_prim, r_val, r_ops = rule
+        else:
+            r_prim, r_val, r_ops = rule.primitive, rule.value, rule.operations
+        if r_prim != prim:
+            continue
+        if op_name not in r_ops:
+            continue
+        xtal_absorbing = _SHAVIAN_TO_XTAL.get(prim, {}).get(r_val, r_val)
+        if val_a == xtal_absorbing:
+            return val_a
+        if val_b == xtal_absorbing:
+            return val_b
+    return None
+
+
+
+def meet(a: dict, b: dict, absorption=None) -> dict:
+    """Greatest lower bound: component-wise min.
+       absorption: optional iterable of (prim_shavian, val_shavian, ops) tuples."""
     result = {}
     for p in PRIMS:
+        absorbed = _resolve_absorption(absorption, p, a[p], b[p], "meet")
+        if absorbed is not None:
+            result[p] = absorbed
+        else:
+            result[p] = VALUES[p][min(ORD[p][a[p]], ORD[p][b[p]])]
+    return result
+
+def join(a: dict, b: dict, absorption=None) -> dict:
+    """Least upper bound: component-wise max.
+       absorption: optional iterable of (prim_shavian, val_shavian, ops) tuples."""
+    result = {}
+    for p in PRIMS:
+        absorbed = _resolve_absorption(absorption, p, a[p], b[p], "join")
+        if absorbed is not None:
+            result[p] = absorbed
+        else:
+            result[p] = VALUES[p][max(ORD[p][a[p]], ORD[p][b[p]])]
+    return result
+
+def tensor(a: dict, b: dict, absorption=None) -> dict:
+    """Tensor product: min on bottleneck primitives, max elsewhere.
+       Special stoichiometry rule for S: n:m absorbs all; 1:1 only under 1:1\u22971:1.
+       absorption: optional iterable of (prim_shavian, val_shavian, ops) tuples."""
+    result = {}
+    for p in PRIMS:
+        # Check configurable absorption first
+        absorbed = _resolve_absorption(absorption, p, a[p], b[p], "tensor")
+        if absorbed is not None:
+            result[p] = absorbed
+            continue
         oa, ob = ORD[p][a[p]], ORD[p][b[p]]
         if p in BOTTLENECK:
             result[p] = VALUES[p][min(oa, ob)]
-        elif p == "Σ":
-            # n:m absorbs; 1:1 only under 1:1⊗1:1; else n:n
+        elif p == "\u03a3":
+            # n:m absorbs; 1:1 only under 1:1\u22971:1; else n:n
             if oa == 2 or ob == 2:
-                result[p] = "Σ_ï"
+                result[p] = "\u03a3_\u00ef"
             elif oa == 0 and ob == 0:
-                result[p] = "Σ_S"
+                result[p] = "\u03a3_S"
             else:
-                result[p] = "Σ_ő"
+                result[p] = "\u03a3_\u0151"
         else:
             result[p] = VALUES[p][max(oa, ob)]
     return result
-
-
-# ── Imscription predicate (§89) ───────────────────────────────────────────────
-
 def imscription_check(boundary: dict, bulk: dict) -> dict:
     """
     Test whether `boundary` imscribes `bulk` (§89).
@@ -627,8 +690,8 @@ class CrystalNavigator:
     def join(self, a: dict, b: dict) -> dict:
         return join(a, b)
 
-    def tensor(self, a: dict, b: dict) -> dict:
-        return tensor(a, b)
+    def tensor(self, a: dict, b: dict, absorption=None) -> dict:
+        return tensor(a, b, absorption=absorption)
 
     def distance(self, a: dict, b: dict) -> float:
         return distance(a, b)

@@ -62,7 +62,7 @@ The key insight enabling domain-generalization is **primitive invariance**: the 
 | $\mathcal{R}_{=}$ (bidirectional) | Adjoint pair / Galois connection | "Forward and inverse constructions are mutually exhaustive" |
 | $\Omega_z$ (integer winding) | Topological invariant | "A $\mathbb{Z}$-valued invariant distinguishes the target" |
 | $\hat{\varphi}_{\ddot{y}}$ (criticality) | Phase boundary / extremal principle | "No trajectory/solution escapes the bounded regime" |
-| $\text{Ç}_{@}$ (moderate kinetics) | Equidistribution / regularity | "The relevant measure is well-distributed" |
+| 𐑧 (moderate kinetics) | Equidistribution / regularity | "The relevant measure is well-distributed" |
 | $\text{D}_C$ (2d surface) | Manifold / quotient structure | "The state space is a finite-dimensional object" |
 | $\Gamma_{\text{ʔ}}$ (scope) | Universal/local quantification | "The property holds for all/exists for some" |
 | $\mathfrak{f}_{\dot{z}}$ (quantum fidelity) | Coherence / non-classical feature | "Quantum/complex structure is essential" |
@@ -193,7 +193,7 @@ def detect_domain(proof_text: str, catalog_entry: dict) -> dict:
 
     # Signal 3: Primitive signature
     sig = catalog_entry.get('⊙', '')
-    if sig == '⊙_ÿ':
+    if sig == '⊙':
         scores['number_theory'] = scores.get('number_theory', 0) + 0.1
         scores['dynamical_systems'] = scores.get('dynamical_systems', 0) + 0.1
 
@@ -551,7 +551,7 @@ Each IG primitive maps to a Lean4 tactic or proof step. This is the bridge from 
 | $\mathcal{R}_{=}$ | `apply Set.eq_of_subset_of_subset` | Set equality by double inclusion |
 | $\Omega_z$ | `apply UniqueOfWinding` / `linarith` | Topological uniqueness |
 | $\hat{\varphi}_{\ddot{y}}$ | `apply Lyapunov.decreasing` / `linarith` | Boundedness via drift |
-| $\text{Ç}_{@}$ | `apply equidistribution.ae` | Measure-theoretic regularity |
+| 𐑧 | `apply equidistribution.ae` | Measure-theoretic regularity |
 
 ### 5.2 Lean4 Skeleton Generator
 
@@ -775,7 +775,7 @@ Overall confidence = geometric mean of the four scores. Lemmas below 0.5 confide
 
 **Input catalog entry**: `goldbach_conjecture`
 **Detected domain**: number_theory
-**Active primitives**: $\Phi_{\}}$, $\Theta_O$, $\Omega_z$, $\hat{\varphi}_{\ddot{y}}$, $\text{Ç}_{@}$
+**Active primitives**: $\Phi_{\}}$, $\Theta_O$, $\Omega_z$, $\hat{\varphi}_{\ddot{y}}$, 𐑧
 
 **Generated sections**:
 1. Introduction — Define Goldbach, state the conjecture
@@ -783,7 +783,7 @@ Overall confidence = geometric mean of the four scores. Lemmas below 0.5 confide
 3. Inverse Sieve — Twin-prime-like construction [from $\Theta_O$]
 4. Topological Invariant — Winding of prime-pair configurations [from $\Omega_z$]
 5. Boundedness — Large enough even numbers always have representations [from $\hat{\varphi}_{\ddot{y}}$]
-6. Equidistribution — Distribution of prime pairs in residue classes [from $\text{Ç}_{@}$]
+6. Equidistribution — Distribution of prime pairs in residue classes [from 𐑧]
 7. Main Theorem
 8. Discussion
 
@@ -807,14 +807,14 @@ Overall confidence = geometric mean of the four scores. Lemmas below 0.5 confide
 
 **Input catalog entry**: `yang_mills_conjecture`
 **Detected domain**: analysis (gauge theory)
-**Active primitives**: $\Phi_{\}}$, $\Theta_O$, $\hat{\varphi}_{\ddot{y}}$, $\text{Ç}_{@}$
+**Active primitives**: $\Phi_{\}}$, $\Theta_O$, $\hat{\varphi}_{\ddot{y}}$, 𐑧
 
 **Generated sections**:
 1. Introduction — Yang–Mills functional on $\mathbb{R}^4$
 2. Gauge Fixing Injectivity — Uniqueness of gauge-equivalence reps [from $\Phi_{\}}$]
 3. Moduli Space Construction — Self-referential structure [from $\Theta_O$]
 4. Mass Gap Positivity — Spectral gap bounded away from zero [from $\hat{\varphi}_{\ddot{y}}$]
-5. Instanton Equidistribution — Distribution of classical solutions [from $\text{Ç}_{@}$]
+5. Instanton Equidistribution — Distribution of classical solutions [from 𐑧]
 6. Main Theorem
 7. Discussion
 

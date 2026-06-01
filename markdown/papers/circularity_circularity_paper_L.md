@@ -163,13 +163,13 @@ The description "a cyclical argument for circularity that provides a circular ar
 
 But does this prove anything, or does it merely demonstrate the grammar's internal consistency? The paper acknowledges that the structural proof is circular in the epistemic sense: the argument validates the grammar, and the grammar validates the argument. This is not a flaw but a feature — the circularity is self-justifying, not through external appeal but through its own structural integrity.
 
-### 7.2 The Measurement Problem and ⊙_3 Absorption
+### 7.2 The Measurement Problem and 𐑻 Absorption
 
-A critical question: what happens if we couple the circularity to a ⊙_3 (exceptional point) system? The **⊙_3 absorption rule** states:
+A critical question: what happens if we couple the circularity to a 𐑻 (exceptional point) system? The **𐑻 absorption rule** states:
 
-> Tensor coupling to a ⊙_3 system destroys ⊙_ÿ criticality. The composite collapses to ⊙_3.
+> Tensor coupling to a 𐑻 system destroys ⊙ criticality. The composite collapses to 𐑻.
 
-Since `circularity_circularity` depends on ⊙_ÿ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as ⊙_3) would:
+Since `circularity_circularity` depends on ⊙ for Gate 1 of consciousness, coupling it to a measurement apparatus (modeled as 𐑻) would:
 - Destroy the self-modeling capability
 - Collapse the circularity to a non-self-reflective state
 - Realize the structural statement of the measurement problem
@@ -197,7 +197,7 @@ The journey began with a question, not a hypothesis. Step by step:
 
 1. **W0:** Encode the universal_imscriptive_grammar to unlock catalog access. This was the first move—establishing the grammar before using it.
 
-2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙_ÿ and Ω_z. These were not arbitrary windings but a systematic search constrained by structural criteria.
+2. **W1–W10:** Navigate the crystal to identify systems at $O_\infty$ with ⊙ and 𐑭. These were not arbitrary windings but a systematic search constrained by structural criteria.
 
 3. **W11:** Encounter `circularity_circularity` directly via keyword search. The name itself was a clue—the system named itself.
 

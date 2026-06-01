@@ -30,10 +30,10 @@ This is not a claim that all ordinary elements have identical encodings. It is a
 | Helium (superfluid) | $\{D, T, F, H\}$ | Zero-viscosity flow via $D_{\text{invomega}}$ + $T_\text{box}$ + $F_{\text{hardsign}}$ + $H_{\text{invscripta}}$ |
 | Bismuth (anomalous) | $\{T, R, \Phi\}$ | Strongest diamagnetism via $T_{\text{bullseye}}$ + $R_\lr$ + $\Phi_{\text{ctyogh}}$ |
 | Gallium (anomalous) | $\{T, P\}$ | Low melting + expansion via $T_\box$ + $P_{\text{upsilon}}$ |
-| Diamond | $\{P, \Gamma, \Omega, G\}$ | Thermal/electrical split via $P_{\text{subdoublearrow}}$ + $\Gamma_{\text{secstress}}$ + $\Ω_z$ + $G_{\text{revapostrophe}}$ |
+| Diamond | $\{P, \Gamma, \Omega, G\}$ | Thermal/electrical split via $P_{\text{subdoublearrow}}$ + $\Gamma_{\text{secstress}}$ + $\𐑭$ + $G_{\text{revapostrophe}}$ |
 | Mercury (liquid) | $\{T\}$ | Metallic droplet formation via $T_\box$ alone |
-| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_{\text{openo}}$ + $\Gamma_{\text{secstress}}$ + $\Ω_z$ + $K_{\text{schwa}}$ |
-| Explosive cascade | $\{T, G, \Gamma, \Phi\}$ | Cascade reactivity via Þ_ò + $G_{\text{revapostrophe}}$ + $\Gamma_{\text{secstress}}$ + $\Phi_{\text{upstep}}$ |
+| Plutonium (allotropic) | $\{D, T, \Gamma, \Omega, K\}$ | Six allotropes via $T_{\text{openo}}$ + $\Gamma_{\text{secstress}}$ + $\𐑭$ + $K_{\text{schwa}}$ |
+| Explosive cascade | $\{T, G, \Gamma, \Phi\}$ | Cascade reactivity via 𐑥 + $G_{\text{revapostrophe}}$ + $\Gamma_{\text{secstress}}$ + $\Phi_{\text{upstep}}$ |
 
 **Observation**: $T$ (Topology) appears in 6 of 7 signatures. The grammar identifies topology as the primary driver of elemental anomaly — a result that is not visible in conventional periodic-table analysis.
 
@@ -43,7 +43,7 @@ This is not a claim that all ordinary elements have identical encodings. It is a
 
 **Mercury's liquidity is a one-primitive event.** $T_\text{box}$ alone — closed compact topology — prevents crystalline lattice stability and enables droplet formation. This is the most parsimonious anomaly in the dataset. The grammar identifies mercury as structurally simpler to explain than any of the multi-primitive cases, even though it appears complex in conventional terms.
 
-**Diamond's thermal/electrical split is a four-primitive cooperative effect.** Full symmetry ($P_{\text{subdoublearrow}}$) enables phonon transport without electron scattering; sequential grammar ($\Gamma_{\text{secstress}}$) channels thermal energy; integer winding protection ($\Ω_z$) blocks electron conduction paths; global scope ($G_{\text{revapostrophe}}$) enables long-range thermal transport. Each promotion is necessary; removing any one collapses the split.
+**Diamond's thermal/electrical split is a four-primitive cooperative effect.** Full symmetry ($P_{\text{subdoublearrow}}$) enables phonon transport without electron scattering; sequential grammar ($\Gamma_{\text{secstress}}$) channels thermal energy; integer winding protection ($\𐑭$) blocks electron conduction paths; global scope ($G_{\text{revapostrophe}}$) enables long-range thermal transport. Each promotion is necessary; removing any one collapses the split.
 
 ### §LIV.5 — The Inverse Prediction
 

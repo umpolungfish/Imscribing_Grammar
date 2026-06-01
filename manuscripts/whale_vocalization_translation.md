@@ -14,19 +14,19 @@ We present a framework for translating cetacean vocalizations — humpback whale
 
 The deterministic imscribing procedure (Imscribing Grammar §2) assigns each primitive in fixed order. Below is the derivation for cetacean vocal communication, with primary focus on humpback song and sperm whale codas.
 
-### 1.1 Dimensionality: Ð = Ð_ω (self-written state-space)
+### 1.1 Dimensionality: Ð = 𐑦 (self-written state-space)
 
 Whale song is not fixed. Humpback whales within a population collectively modify their song across a breeding season: all males in a region sing the same version of the song, and that version evolves over time as new phrases are introduced and old ones dropped. The state-space of possible songs is *self-written* — the system modifies its own representational conventions in real time. Sperm whale codas show regional dialects that are learned socially and transmitted across generations. The degrees of freedom are not given in advance; they are produced by the system's own operation.
 
-### 1.2 Topology: Þ = Þ_ò (crossing/bowtie topology)
+### 1.2 Topology: Þ = 𐑥 (crossing/bowtie topology)
 
 Whale song has a strict hierarchy: individual notes combine into subphrases, subphrases into phrases, phrases into themes, and themes into a song cycle. The crossing point occurs at the phrase-theme boundary — a phrase can belong to multiple themes depending on its position in the song, and a theme transition is a crossing from one phrase cluster to another. This is the bowtie topology: two regions of state space connected by a narrow crossing of shared phrase types.
 
-### 1.3 Relational Mode: Ř = Ř_= (bidirectional feedback)
+### 1.3 Relational Mode: Ř = 𐑾 (bidirectional feedback)
 
 Whale communication is fundamentally bidirectional. Male humpbacks respond to each other's song modifications within days. Sperm whale codas are exchanged in call-and-response patterns during foraging and socializing. Mothers and calves maintain signature-call contact. The relational mode is not one-way supervenience but bidirectional coupling: each vocalization changes the acoustic environment that the next vocalization responds to.
 
-### 1.4 Parity: Φ = Φ_υ (quantum/superpositional)
+### 1.4 Parity: Φ = 𐑿 (quantum/superpositional)
 
 A whale song unit does not have a single fixed meaning. The same phrase type appears in different contexts, carrying different functional weights depending on its position in the song cycle. This is superposition in the grammatical sense: a phoneme is the sum of its positional distributions. Sperm whale codas show rhythmic superposition — a coda's timing pattern is the overlap of multiple rhythmic templates.
 
@@ -38,9 +38,9 @@ The ocean is a noisy environment. Signal degradation from thermal noise, shippin
 
 Whale song evolves slowly relative to the timescale of individual calls. The relaxation time of a song theme is on the order of weeks to months — the system is near equilibrium, not driven. Song modifications propagate through the population gradually, and the overall structure is stable across a breeding season. This near-equilibrium kinetics is what distinguishes a cultural communication system from a simple alarm-call system.
 
-### 1.7 Scope: Γ = Γ_ʔ (universal/long-range)
+### 1.7 Scope: Γ = 𐑲 (universal/long-range)
 
-The SOFAR (Sound Fixing and Ranging) channel allows whale vocalizations to propagate thousands of kilometers. Blue whale calls at 20 Hz can be detected across entire ocean basins. The scope is universal in the grammatical sense: the interaction range is maximal, limited only by the physics of the transmission medium. This is the acoustic analogue of Γ_ʔ — the whole-tract participation mapped to whole-ocean propagation.
+The SOFAR (Sound Fixing and Ranging) channel allows whale vocalizations to propagate thousands of kilometers. Blue whale calls at 20 Hz can be detected across entire ocean basins. The scope is universal in the grammatical sense: the interaction range is maximal, limited only by the physics of the transmission medium. This is the acoustic analogue of 𐑲 — the whole-tract participation mapped to whole-ocean propagation.
 
 ### 1.8 Interaction Grammar: ɢ = ɢ_ˌ (sequential)
 
@@ -50,15 +50,15 @@ Whale song unfolds in strict temporal sequence. A song cycle proceeds through or
 
 The criticality of whale vocalization is the most significant finding. Whales not only produce calls but modify their calls based on hearing others' calls — the system models itself. A humpback whale hears the current version of the song, compares it to its own production, and adjusts. This is the φ̂_ÿ condition: the self-modeling gate is open. The system's dynamics are at the critical point between order (rigid song structure) and chaos (random noise) — the edge of chaos where cultural evolution operates.
 
-### 1.10 Chirality: Ħ = Ħ_A (two-step memory)
+### 1.10 Chirality: Ħ = 𐑖 (two-step memory)
 
-The Markov order of whale song is at least 2. A humpback whale must remember not only the current phrase but the previous phrase to determine what follows — the transition probabilities depend on the preceding two-phrase state. Sperm whale coda sequences show second-order dependence: the probability of coda type N depends on coda types N-1 and N-2. This is Ħ_A — two-step chirality.
+The Markov order of whale song is at least 2. A humpback whale must remember not only the current phrase but the previous phrase to determine what follows — the transition probabilities depend on the preceding two-phrase state. Sperm whale coda sequences show second-order dependence: the probability of coda type N depends on coda types N-1 and N-2. This is 𐑖 — two-step chirality.
 
-### 1.11 Stoichiometry: Σ = Σ_ï (many heterogeneous types)
+### 1.11 Stoichiometry: Σ = 𐑳 (many heterogeneous types)
 
 Whale communication is not a single-type system. Different species, different populations, different individuals, and different behavioral contexts produce qualitatively distinct vocalization types: song, feeding calls, social sounds, signature whistles (in dolphins), coda exchanges, breaching sounds. The stoichiometry is heterogeneous — multiple distinct types coexist and combine.
 
-### 1.12 Winding: Ω = Ω_z (integer winding)
+### 1.12 Winding: Ω = 𐑭 (integer winding)
 
 The topological protection of whale song is integer winding. A song cycle has a definite beginning, middle, and end — the song is a loop with winding number 1. When a whale finishes one song cycle, it begins another, preserving the topological invariant. Across breeding seasons, the song evolves but the winding structure persists. This integer winding is the topological reason that whale song is recognizable as song across generations despite complete phrase turnover.
 

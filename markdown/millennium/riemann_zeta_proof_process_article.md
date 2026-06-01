@@ -17,7 +17,7 @@ The Riemann zeta function stands as one of the most significant objects in analy
 
 We first identify the core structural characteristics required to describe the Riemann zeta function’s proof process:
 
-$$\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \⊙_ÿ;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
+$$\langle D_\infty;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \⊙;\ H_2;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
 
 This tuple captures:
 - Infinite-dimensional nature ($D_\infty$) reflecting the continuous domain of complex analysis.
@@ -28,7 +28,7 @@ This tuple captures:
 - Near-equilibrium relaxation dynamics ($K_\text{slow}$) typical of stable analytic processes.
 - Maximal interaction scope across all scales ($G_\aleph$) inherent in global meromorphic continuation.
 - Sequential processing logic ($\Gamma_\text{seq}$) where steps build upon each other.
-- Self-modeling criticality ($\⊙_ÿ$) at the heart of the functional equation derivation.
+- Self-modeling criticality ($\⊙$) at the heart of the functional equation derivation.
 - Two-step temporal memory ($H_2$) encoding past and present states during analytical prolongation.
 - Multi-component heterogeneity ($n{:}m$) in contributions from various poles, zeros, and residues.
 - Integer topological winding ($\Omega_\mathbb{Z}$) associated with branch cuts and residue integration paths.
@@ -47,7 +47,7 @@ To elaborate on the underlying mechanics driving this system, we perform a *prin
 | K        | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{slow}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_0; 1{:}1; \Omega_0 \rangle$ | Describes slow relaxation kinetically                 |
 | G        | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\aleph; \Gamma_\wedge; \Phi_\text{sub}; H_0; 1{:}1; \Omega_0 \rangle$ | Implies maximal global interactions                    |
 | Gamma    | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\text{seq}; \Phi_\text{sub}; H_0; 1{:}1; \Omega_0 \rangle$ | Shows sequential interaction rules                     |
-| Phi      | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \⊙_ÿ; H_0; 1{:}1; \Omega_0 \rangle$ | Embodies self-modeling criticality                     |
+| Phi      | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \⊙; H_0; 1{:}1; \Omega_0 \rangle$ | Embodies self-modeling criticality                     |
 | H        | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_2; 1{:}1; \Omega_0 \rangle$ | Reflects two-step chirality                       |
 | S        | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_0; n{:}m; \Omega_0 \rangle$ | Denotes heterogeneous component variety               |
 | Omega    | $\langle D_\wedge; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_0; 1{:}1; \Omega_\mathbb{Z} \rangle$ | Carries topological integer winding data              |
@@ -83,7 +83,7 @@ $\bullet$ **$G_\aleph$:** Universal cardinal lifting enabling unbounded access
 $\bullet$ **$\Gamma_\text{seq}$:** Directed flow of inference encoded by directional edges  
  *Symbolic rendering:* $⟨→⟩ f g τ ∧ ¬ ⟨→⟩ g f τ$ *(Note: Partial collapse warning noted)*
 
-$\bullet$ **$\⊙_ÿ$:** Stable self-mapping fixed point indicative of recursive self-reference  
+$\bullet$ **$\⊙$:** Stable self-mapping fixed point indicative of recursive self-reference  
  *Symbolic rendering:* $\text{fixpt } f$
 
 $\bullet$ **$H_2$:** Existence of transitive internal layering beyond singleton inclusion  
@@ -99,4 +99,4 @@ By aligning these symbolic statements with their respective structural roles, we
 
 ---
 
-**Author:** Lando ⊗ $\⊙_ÿ$-boundary Operator
+**Author:** Lando ⊗ $\⊙$-boundary Operator

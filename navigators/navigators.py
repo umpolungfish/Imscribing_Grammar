@@ -73,8 +73,7 @@ class ThurstonNet(nn.Module):
     3-manifold geometrisation navigator derived from the proven_manifold tuple.
 
     Structural type (§XXXV.2, IG_ONTICS v0.5.61):
-        <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@;
-          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_2>
+        ⟨𐑦·𐑸·𐑽·𐑹·𐑐·𐑧·𐑲·𐑵·⊙·𐑫·𐑳·𐑴⟩
 
     Primitive-to-architecture mandates:
         Þ_O, Ð_ω  — imscriptive quiver over triangulated 3-manifold;
@@ -108,10 +107,10 @@ class ThurstonNet(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_Ť",
-        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^@",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
-        "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_2",
+        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑽",
+        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑧",
+        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
+        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑴",
     }
     SELF_ENCODE_TARGET: int = 6_563_951   # encode_tuple(DEFINING_TUPLE)
     THURSTON_GEOMETRIES: list[str] = THURSTON_GEOMETRIES
@@ -409,8 +408,7 @@ class YangMillsNavigator(nn.Module):
     Yang-Mills mass gap navigator — Ç^Ù eigensolver architecture.
 
     Structural type (§XL.2, §XXXVIII.2, IG_ONTICS v0.5.66):
-        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^Ù;
-          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_z>
+        ⟨𐑦·𐑸·𐑑·𐑹·𐑐·𐑪·𐑲·𐑵·⊙·𐑫·𐑳·𐑭⟩
 
     Ç^Ù mandates: NOT a gradient-descent GNN.
     The discrete gapped spectrum is non-ergodic and non-diffusive — it requires a
@@ -446,10 +444,10 @@ class YangMillsNavigator(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^Ù",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
-        "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
+        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑑",
+        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑪",
+        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
+        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑭",
     }
     SELF_ENCODE_TARGET: int = 6_734_735   # encode_tuple(DEFINING_TUPLE)
 
@@ -671,8 +669,7 @@ class RiemannNavigator(nn.Module):
     xi(s) functional-equation navigator derived from the riemann_navigator tuple.
 
     Structural type (§XXXVI.6, §XXXVII, IG_ONTICS v0.5.62–v0.5.63):
-        <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@;
-          Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; n:m; Ω_z>
+        ⟨𐑦·𐑸·𐑑·𐑹·𐑐·𐑧·𐑲·𐑵·⊙·𐑫·𐑳·𐑭⟩
 
     This tuple is IDENTICAL to grammar_self_encode (d=0).
     By the Cardinality-One Theorem (§XXXVII), the Riemann navigator IS the grammar
@@ -714,10 +711,10 @@ class RiemannNavigator(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ^ż", "Ç": "Ç^@",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş", "⊙": "⊙_ÿ",
-        "Ħ": "Ħ_!", "Σ": "Σ_ï", "Ω": "Ω_z",
+        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑑",
+        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑧",
+        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
+        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑭",
     }
     # Crystal address — same as grammar_self_encode (d=0, Cardinality-One Theorem §XXXVII)
     SELF_ENCODE_TARGET: int = 6_734_591
@@ -961,8 +958,7 @@ class IsingNavigator:
     3D Ising critical ferromagnet navigator — Ç^- architecture.
 
     Structural type (§XXXV.3, IG_ONTICS v0.5.61):
-        <Ð_C; T_box; Ř_ý; Φ_}; ƒ^ì; Ç^-;
-          Γ_ʔ; ɢ^∧; ⊙_ÿ; Ħ_Ñ; n:n; Ω_2>
+        ⟨𐑨·𐑶·𐑑·𐑹·𐑱·𐑘·𐑲·𐑝·⊙·𐑓·𐑕·𐑴⟩
 
     Ç^- mandates: NO depth, NO recurrence, NO gradient-descent training.
     This is NOT an nn.Module — it is an exact duality kernel.
@@ -994,10 +990,10 @@ class IsingNavigator:
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "Ð_C", "Þ": "Þ_¨", "Ř": "Ř_ý",
-        "Φ": "Φ_}", "ƒ": "ƒ^ì", "Ç": "Ç^-",
-        "Γ": "Γ_ʔ", "ɢ": "ɢ^∧", "⊙": "⊙_ÿ",
-        "Ħ": "Ħ_Ñ", "Σ": "Σ_ő", "Ω": "Ω_2",
+        "Ð": "𐑨", "Þ": "𐑶", "Ř": "𐑑",
+        "Φ": "𐑹", "ƒ": "𐑱", "Ç": "𐑘",
+        "Γ": "𐑲", "ɢ": "𐑝", "⊙": "⊙",
+        "Ħ": "𐑓", "Σ": "𐑕", "Ω": "𐑴",
     }
 
     # Known 3D Ising critical exponents (benchmarks)

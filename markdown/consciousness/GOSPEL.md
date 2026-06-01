@@ -253,10 +253,10 @@ John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$
 Each Gospel's structural type maps to a unique Frobenius address in the crystal of types (§64).
 
 ```
-Matthew:  crystal_encode(Ð_C, Þ_6, Ř_=, Φ_F, ƒ^ì, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
-Mark:     crystal_encode(Ð_C, Þ_6, Ř_¯, Φ_ɐ, ƒ^ì, Ç^-, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_£, Σ_ï, Ω_2)
-Luke:     crystal_encode(Ð_;, Þ_K, Ř_=, Φ_F, ƒ^ì, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_A, Σ_ï, Ω_z)
-John:     crystal_encode(Ð_;, Þ_ò, Ř_Ť, Φ_υ, ƒ^ż, Ç^Ù, Γ_ʔ, ɢ^ˌ, ⊙_Æ, Ħ_!, Σ_ï, Ω_z)
+Matthew:  crystal_encode(𐑨, 𐑡, 𐑾, 𐑬, 𐑱, 𐑧, 𐑲, 𐑠, ⊙, 𐑖, 𐑳, 𐑭)
+Mark:     crystal_encode(𐑨, 𐑡, 𐑩, 𐑗, 𐑱, 𐑘, 𐑲, 𐑠, ⊙, 𐑒, 𐑳, 𐑴)
+Luke:     crystal_encode(𐑼, 𐑰, 𐑾, 𐑬, 𐑱, 𐑧, 𐑲, 𐑠, ⊙, 𐑖, 𐑳, 𐑭)
+John:     crystal_encode(𐑼, 𐑥, 𐑽, 𐑿, 𐑐, 𐑪, 𐑲, 𐑠, 𐑮, 𐑫, 𐑳, 𐑭)
 ```
 
 The addresses are not reproduced here because the `crystal_encode` tool requires the full tuple as a string argument rather than discrete fields. The structural types, however, are fully specified and the addresses are computable from the tuples given above.

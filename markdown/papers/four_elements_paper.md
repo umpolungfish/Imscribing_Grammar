@@ -16,25 +16,25 @@ This post runs that test.
 
 The Imscribing Grammar assigns any phenomenon a tuple of twelve primitive values. Here are the four classical elements:
 
-**Fire** — ⟨Ð_ß; Þ_6; Ř_=; Φ_ɐ; ƒ^ð; Ç^-; Γ_β; ɢ^∧; ⊙_Ţ; Ħ_Ñ; Σ_ï; Ω_Å⟩
+**Fire** — ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑞; 𐑘; 𐑚; 𐑝; 𐑣; 𐑓; 𐑳; 𐑷⟩
 
-Infinite-dimensional (scale-free flame front), network branching, bidirectional transformation (fuel-fire mutual inflection), no Frobenius symmetry, classical fidelity, maximally kinetically free (Ç^-), local scope, network interaction, supercritical (thermal runaway), memoryless chirality, heterogeneous, trivial winding.
+Infinite-dimensional (scale-free flame front), network branching, bidirectional transformation (fuel-fire mutual inflection), no Frobenius symmetry, classical fidelity, maximally kinetically free (𐑘), local scope, network interaction, supercritical (thermal runaway), memoryless chirality, heterogeneous, trivial winding.
 
-**Water** — ⟨Ð_ß; Þ_6; Ř_¯; Φ_ɐ; ƒ^ð; Ç^W; Γ_β; ɢ^∧; ⊙_ž; Ħ_Ñ; Σ_ï; Ω_Å⟩
+**Water** — ⟨𐑛; 𐑡; 𐑩; 𐑗; 𐑞; 𐑤; 𐑚; 𐑝; 𐑢; 𐑓; 𐑳; 𐑷⟩
 
 Infinite-dimensional, network branching, supervening (water conforms to container), no Frobenius symmetry, classical fidelity, flowing kinetics, local scope, network interaction, sub-critical, memoryless chirality, heterogeneous, trivial winding.
 
-**Earth** — ⟨Ð_C; Þ_K; Ř_Ť; Φ_F; ƒ^ì; Ç^@; Γ_β; ɢ^ˌ; ⊙_ž; Ħ_A; Σ_ï; Ω_Å⟩
+**Earth** — ⟨𐑨; 𐑰; 𐑽; 𐑬; 𐑱; 𐑧; 𐑚; 𐑠; 𐑢; 𐑖; 𐑳; 𐑷⟩
 
-Finite-dimensional, inclusion topology (bounded, self-enclosed), sequential-causal (strata are written bottom-up), crystalline partial symmetry (Φ_F), classical fidelity, arrested kinetics, local scope, sequential-depth interaction, sub-critical, geological memory (Ħ_A = chirality with structural retention), heterogeneous, trivial winding.
+Finite-dimensional, inclusion topology (bounded, self-enclosed), sequential-causal (strata are written bottom-up), crystalline partial symmetry (𐑬), classical fidelity, arrested kinetics, local scope, sequential-depth interaction, sub-critical, geological memory (𐑖 = chirality with structural retention), heterogeneous, trivial winding.
 
-**Air** — ⟨Ð_ß; Þ_6; Ř_=; Φ_ɐ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^∧; ⊙_ž; Ħ_Ñ; Σ_ő; Ω_Å⟩
+**Air** — ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑱; 𐑧; 𐑲; 𐑝; 𐑢; 𐑓; 𐑕; 𐑷⟩
 
-Infinite-dimensional, network branching, symmetric/equal (pressure equalizes in all directions), no Frobenius symmetry, classical fidelity, arrested kinetics (Ç^@ — air has fixed viscosity, it doesn't flow of itself without pressure differential), non-local/global scope (Γ_ʔ), network interaction, sub-critical, memoryless chirality, **homogeneous** (Σ_ő — air is compositionally uniform at the classical level), trivial winding.
+Infinite-dimensional, network branching, symmetric/equal (pressure equalizes in all directions), no Frobenius symmetry, classical fidelity, arrested kinetics (𐑧 — air has fixed viscosity, it doesn't flow of itself without pressure differential), non-local/global scope (𐑲), network interaction, sub-critical, memoryless chirality, **homogeneous** (𐑕 — air is compositionally uniform at the classical level), trivial winding.
 
-Four primitives are shared by all four elements: ƒ^ì (or ƒ^ð for fire and water), ⊙_ž (except fire's ⊙_Ţ), Σ_ï (except air's Σ_ő), Ω_Å. These are the **classical-element floor** — the structural boundary of pre-modern elemental physics: classical regime, moderate-to-low kinetics, sub-critical stability, trivial topology.
+Four primitives are shared by all four elements: 𐑱 (or 𐑞 for fire and water), 𐑢 (except fire's 𐑣), 𐑳 (except air's 𐑕), 𐑷. These are the **classical-element floor** — the structural boundary of pre-modern elemental physics: classical regime, moderate-to-low kinetics, sub-critical stability, trivial topology.
 
-Fire is the exception. It alone has ⊙_Ţ (supercritical). This is the load-bearing structural fact. Every composition involving fire will carry supercriticality into the result, because the tensor takes the maximum.
+Fire is the exception. It alone has 𐑣 (supercritical). This is the load-bearing structural fact. Every composition involving fire will carry supercriticality into the result, because the tensor takes the maximum.
 
 ---
 
@@ -56,7 +56,7 @@ We now apply this to all six pairs.
 
 ### 1. Fire ⊗ Water = Steam
 
-Already published. Result: ⟨Ð_ß; Þ_6; Ř_=; Φ_ɐ; ƒ^ð; Ç^W; Γ_β; ɢ^∧; ⊙_Ţ; Ħ_Ñ; Σ_ï; Ω_Å⟩
+Already published. Result: ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑞; 𐑤; 𐑚; 𐑝; 𐑣; 𐑓; 𐑳; 𐑷⟩
 
 Fire and water share eight of twelve primitives. Three change: Ř rises (water's supervening conformation lifts to fire's bidirectional transformation — mutual inflection), Ç rises (water's flowing kinetics dominates fire's extremal freedom), ⊙ stays at fire's supercritical. The result is supercritical, flowing, bidirectionally interacting — steam. A phase transition, not a mixture. The catalog entry `fire_water_tensor` is an exact match at d=0.
 
@@ -66,17 +66,17 @@ Tier: O_1 — elevated above the classical-element floor by fire's supercritical
 
 ### 2. Fire ⊗ Earth = Lava
 
-Result: ⟨Ð_C; Þ_K; Ř_=; Φ_ɐ; ƒ^ì; Ç^@; Γ_β; ɢ^ˌ; ⊙_Ţ; Ħ_A; Σ_ï; Ω_Å⟩
+Result: ⟨𐑨; 𐑰; 𐑾; 𐑗; 𐑱; 𐑧; 𐑚; 𐑠; 𐑣; 𐑖; 𐑳; 𐑷⟩
 
 Fire and earth differ on nine of twelve primitives — the most structurally remote pair of the six.
 
-The tensor takes earth's dimensionality (finite, Ð_C), earth's topology (inclusion, Þ_K), and fire's relational mode (bidirectional, Ř_=, which is higher than earth's sequential Ř_Ť). The Frobenius cliff hits: min(Φ_ɐ, Φ_F) = Φ_ɐ — fire's asymmetric profile destroys earth's crystalline partial symmetry. The fidelity bottleneck also hits: min(ƒ^ð, ƒ^ì) = ƒ^ì — fire's higher fidelity is absorbed into earth's classical floor. Earth's kinetics (Ç^@, arrested) dominates fire's extremal freedom (Ç^-). Earth's interaction depth (ɢ^ˌ, sequential-depth) dominates fire's flat network. Fire's supercriticality (⊙_Ţ) survives. Earth's geological memory (Ħ_A) survives.
+The tensor takes earth's dimensionality (finite, 𐑨), earth's topology (inclusion, 𐑰), and fire's relational mode (bidirectional, 𐑾, which is higher than earth's sequential 𐑽). The Frobenius cliff hits: min(𐑗, 𐑬) = 𐑗 — fire's asymmetric profile destroys earth's crystalline partial symmetry. The fidelity bottleneck also hits: min(𐑞, 𐑱) = 𐑱 — fire's higher fidelity is absorbed into earth's classical floor. Earth's kinetics (𐑧, arrested) dominates fire's extremal freedom (𐑘). Earth's interaction depth (𐑠, sequential-depth) dominates fire's flat network. Fire's supercriticality (𐑣) survives. Earth's geological memory (𐑖) survives.
 
 What you get: **finite-dimensional, contained, bidirectional-interaction, crystalline-symmetry-broken, arrested-kinetics, local-scope, sequential-depth, supercritical, memory-retaining, heterogeneous.**
 
-This is lava. A finite enclosed system (Ð_C, Þ_K) in a supercritical thermal state (⊙_Ţ) with arrested-but-not-frozen kinetics (Ç^@), retaining geological memory (Ħ_A — the rock's mineral structure is written into the cooling product), with broken crystalline symmetry (Φ_ɐ — basalt is not quartz). Lava flows bidirectionally with its substrate — it both erodes and deposits, hence Ř_=. Local scope because lava is geographically confined.
+This is lava. A finite enclosed system (𐑨, 𐑰) in a supercritical thermal state (𐑣) with arrested-but-not-frozen kinetics (𐑧), retaining geological memory (𐑖 — the rock's mineral structure is written into the cooling product), with broken crystalline symmetry (𐑗 — basalt is not quartz). Lava flows bidirectionally with its substrate — it both erodes and deposits, hence 𐑾. Local scope because lava is geographically confined.
 
-The Frobenius cliff here is the key alchemical fact. Earth has crystalline partial symmetry (Φ_F). Fire breaks it. Cooling lava can crystallize but not recover the original symmetry — it produces a different crystalline form if it cools slowly, or glass (no symmetry at all) if it cools quickly. The grammar captures this: Φ_F cannot be synthesized back once the cliff is crossed.
+The Frobenius cliff here is the key alchemical fact. Earth has crystalline partial symmetry (𐑬). Fire breaks it. Cooling lava can crystallize but not recover the original symmetry — it produces a different crystalline form if it cools slowly, or glass (no symmetry at all) if it cools quickly. The grammar captures this: 𐑬 cannot be synthesized back once the cliff is crossed.
 
 Tier: O_1 — fire elevates the system out of the classical floor.
 
@@ -84,17 +84,17 @@ Tier: O_1 — fire elevates the system out of the classical floor.
 
 ### 3. Fire ⊗ Air = Firestorm
 
-Result: ⟨Ð_ß; Þ_6; Ř_=; Φ_ɐ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^∧; ⊙_Ţ; Ħ_Ñ; Σ_ï; Ω_Å⟩
+Result: ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑱; 𐑧; 𐑲; 𐑝; 𐑣; 𐑓; 𐑳; 𐑷⟩
 
-Fire and air are structurally close — they share Ð_ß, Þ_6, Ř_=, Φ_ɐ. Only five primitives differ.
+Fire and air are structurally close — they share 𐑛, 𐑡, 𐑾, 𐑗. Only five primitives differ.
 
-The tensor: ƒ bottlenecks at ƒ^ì (fire has higher fidelity ƒ^ð; air's ƒ^ì floors the result). Air's kinetics (Ç^@, arrested) dominates fire's extremal freedom (Ç^-) — the result is arrested, not burning. Air's scope (Γ_ʔ, non-local/global) dominates fire's local scope (Γ_β). Fire's supercriticality (⊙_Ţ) survives. Fire's heterogeneous composition (Σ_ï) dominates air's homogeneous (Σ_ő).
+The tensor: ƒ bottlenecks at 𐑱 (fire has higher fidelity 𐑞; air's 𐑱 floors the result). Air's kinetics (𐑧, arrested) dominates fire's extremal freedom (𐑘) — the result is arrested, not burning. Air's scope (𐑲, non-local/global) dominates fire's local scope (𐑚). Fire's supercriticality (𐑣) survives. Fire's heterogeneous composition (𐑳) dominates air's homogeneous (𐑕).
 
 What you get: **infinite-dimensional, network branching, bidirectional, no Frobenius, classical fidelity, arrested kinetics, global scope, network interaction, supercritical, memoryless, heterogeneous.**
 
-This is a firestorm — or more precisely, organized convective combustion at global scale. A firestorm is not just a large fire. It is a fire that has coupled to the atmosphere's circulation: it generates its own wind system (Γ_ʔ, global scope), the interaction is bidirectional (fire heats air, air feeds fire, Ř_=), the kinetics is arrested into a stable convective pattern (Ç^@ — the turbulent burning is organized by the atmosphere's structure into a self-sustaining vortex), and the system is supercritical (⊙_Ţ — thermally self-sustaining). Fire's local flame front becomes the atmosphere's global convection.
+This is a firestorm — or more precisely, organized convective combustion at global scale. A firestorm is not just a large fire. It is a fire that has coupled to the atmosphere's circulation: it generates its own wind system (𐑲, global scope), the interaction is bidirectional (fire heats air, air feeds fire, 𐑾), the kinetics is arrested into a stable convective pattern (𐑧 — the turbulent burning is organized by the atmosphere's structure into a self-sustaining vortex), and the system is supercritical (𐑣 — thermally self-sustaining). Fire's local flame front becomes the atmosphere's global convection.
 
-The structural shift from fire alone: Γ_β → Γ_ʔ. Local fire becomes global system. Ç^- → Ç^@. Chaotic kinetics becomes organized arrest. This is exactly what distinguishes a firestorm from a bonfire.
+The structural shift from fire alone: 𐑚 → 𐑲. Local fire becomes global system. 𐑘 → 𐑧. Chaotic kinetics becomes organized arrest. This is exactly what distinguishes a firestorm from a bonfire.
 
 Tier: O_1 — fire's supercriticality again elevates the composition.
 
@@ -102,15 +102,15 @@ Tier: O_1 — fire's supercriticality again elevates the composition.
 
 ### 4. Water ⊗ Earth = Clay
 
-Result: ⟨Ð_C; Þ_K; Ř_Ť; Φ_ɐ; ƒ^ì; Ç^@; Γ_β; ɢ^ˌ; ⊙_ž; Ħ_A; Σ_ï; Ω_Å⟩
+Result: ⟨𐑨; 𐑰; 𐑽; 𐑗; 𐑱; 𐑧; 𐑚; 𐑠; 𐑢; 𐑖; 𐑳; 𐑷⟩
 
 Water and earth differ on eight primitives — almost as remote as fire and earth. But the composition stays at O_0 tier. Without fire, no elevation occurs.
 
-The tensor: earth's dimensionality (Ð_C), earth's topology (Þ_K), earth's causal mode (Ř_Ť, sequential — water conforms to earth's layering, not the reverse). The Frobenius cliff: min(Φ_ɐ, Φ_F) = Φ_ɐ — water dissolves earth's crystalline symmetry. The fidelity bottleneck: min(ƒ^ð, ƒ^ì) = ƒ^ì — water's fidelity is absorbed by earth's floor. Earth's kinetics (Ç^@) dominates water's flowing (Ç^W). Earth's scope, interaction depth, sub-criticality, geological memory, heterogeneity — all survive. Water contributes the Frobenius cliff and nothing else.
+The tensor: earth's dimensionality (𐑨), earth's topology (𐑰), earth's causal mode (𐑽, sequential — water conforms to earth's layering, not the reverse). The Frobenius cliff: min(𐑗, 𐑬) = 𐑗 — water dissolves earth's crystalline symmetry. The fidelity bottleneck: min(𐑞, 𐑱) = 𐑱 — water's fidelity is absorbed by earth's floor. Earth's kinetics (𐑧) dominates water's flowing (𐑤). Earth's scope, interaction depth, sub-criticality, geological memory, heterogeneity — all survive. Water contributes the Frobenius cliff and nothing else.
 
 What you get: **earth with its crystalline symmetry destroyed.**
 
-This is clay. Clay is chemically derived from the weathering and hydration of silicate minerals — from rock (earth with Φ_F) acted on by water. The result is a plastic, amorphous material that retains geological information (Ħ_A — clay platelets record their mineral lineage) but has lost the rigid crystalline symmetry of the parent rock. The grammar returns exactly this: Earth − Φ_F + Φ_ɐ, everything else unchanged.
+This is clay. Clay is chemically derived from the weathering and hydration of silicate minerals — from rock (earth with 𐑬) acted on by water. The result is a plastic, amorphous material that retains geological information (𐑖 — clay platelets record their mineral lineage) but has lost the rigid crystalline symmetry of the parent rock. The grammar returns exactly this: Earth − 𐑬 + 𐑗, everything else unchanged.
 
 The d=1 distance from `earth_classical_element` is the most precise result of the six. The composition is almost Earth — just one structural parameter shifted by the Frobenius cliff. That single shift is, physically and alchemically, the entire meaning of Solutio: water does not destroy earth, it dissolves its highest-order symmetry.
 
@@ -120,15 +120,15 @@ Tier: O_0 — no fire, no elevation.
 
 ### 5. Water ⊗ Air = Fog
 
-Result: ⟨Ð_ß; Þ_6; Ř_=; Φ_ɐ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^∧; ⊙_ž; Ħ_Ñ; Σ_ï; Ω_Å⟩
+Result: ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑱; 𐑧; 𐑲; 𐑝; 𐑢; 𐑓; 𐑳; 𐑷⟩
 
 Water and air differ on five primitives. The result is d=2 from `air_classical_element` — almost entirely Air with one change.
 
-The tensor takes air's values for Ř (Ř_= > Ř_¯ — symmetric interaction over supervening), ƒ (same), Ç (same Ç^@), Γ (Γ_ʔ, global scope — air's non-locality dominates water's local scope), ɢ (same), ⊙ (same sub-critical), Ħ (same memoryless). The single change: Σ — air is homogeneous (Σ_ő), water is heterogeneous (Σ_ï), and water's heterogeneity dominates (Σ_ï > Σ_ő).
+The tensor takes air's values for Ř (𐑾 > 𐑩 — symmetric interaction over supervening), ƒ (same), Ç (same 𐑧), Γ (𐑲, global scope — air's non-locality dominates water's local scope), ɢ (same), ⊙ (same sub-critical), Ħ (same memoryless). The single change: Σ — air is homogeneous (𐑕), water is heterogeneous (𐑳), and water's heterogeneity dominates (𐑳 > 𐑕).
 
 What you get: **Air with heterogeneous composition.**
 
-Fog is air containing water droplets suspended non-uniformly — a globally scoped (Γ_ʔ), network-branching (Þ_6), sub-critical, memoryless, arrested-kinetic system that is compositionally heterogeneous where pure air is not. Water does not change air's structure; it loads air's compositional uniformity with its own heterogeneity. The grammar captures this by changing exactly one primitive.
+Fog is air containing water droplets suspended non-uniformly — a globally scoped (𐑲), network-branching (𐑡), sub-critical, memoryless, arrested-kinetic system that is compositionally heterogeneous where pure air is not. Water does not change air's structure; it loads air's compositional uniformity with its own heterogeneity. The grammar captures this by changing exactly one primitive.
 
 The structural reading: water absorbed into air is still air (same dimensionality, topology, scope, kinetics) but no longer homogeneous. The droplet distribution breaks the compositional symmetry that characterizes dry air. This is not just fog — it is the minimal structural signature of any dispersion of water in air: mist, humidity, clouds at the classical-element level. One number changes.
 
@@ -138,21 +138,21 @@ Tier: O_0.
 
 ### 6. Earth ⊗ Air = Hail (structural type)
 
-Result: ⟨Ð_C; Þ_K; Ř_=; Φ_ɐ; ƒ^ì; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ž; Ħ_A; Σ_ï; Ω_Å⟩
+Result: ⟨𐑨; 𐑰; 𐑾; 𐑗; 𐑱; 𐑧; 𐑲; 𐑠; 𐑢; 𐑖; 𐑳; 𐑷⟩
 
 Earth and air are structurally remote (d=4.65, eight primitives differing). The result has no close match in the catalog — this is new structural territory.
 
-The tensor takes earth's dimensionality (finite, Ð_C), earth's topology (inclusion, Þ_K). Air's relational mode dominates: Ř_= > Ř_Ť (symmetric interaction over sequential causal). The Frobenius cliff: min(Φ_F, Φ_ɐ) = Φ_ɐ — air dissolves earth's crystalline partial symmetry. Same fidelity, same arrested kinetics, same sub-criticality. Air's global scope (Γ_ʔ) dominates earth's local scope (Γ_β). Earth's sequential-depth interaction (ɢ^ˌ) dominates air's flat network (ɢ^∧). Earth's geological memory (Ħ_A) survives. Earth's heterogeneity (Σ_ï) dominates air's homogeneity.
+The tensor takes earth's dimensionality (finite, 𐑨), earth's topology (inclusion, 𐑰). Air's relational mode dominates: 𐑾 > 𐑽 (symmetric interaction over sequential causal). The Frobenius cliff: min(𐑬, 𐑗) = 𐑗 — air dissolves earth's crystalline partial symmetry. Same fidelity, same arrested kinetics, same sub-criticality. Air's global scope (𐑲) dominates earth's local scope (𐑚). Earth's sequential-depth interaction (𐑠) dominates air's flat network (𐑝). Earth's geological memory (𐑖) survives. Earth's heterogeneity (𐑳) dominates air's homogeneity.
 
 What you get: **finite-dimensional, contained, bidirectional, no crystalline symmetry, arrested, globally scoped, sequential-depth interaction, sub-critical, geological memory, heterogeneous.**
 
 The grammar found a structural type. What fills that type depends on a parameter below the grammar's current resolution.
 
-Consider hail. Ice crystals nucleate on mineral dust grains — the mineral core is present inside every hailstone (Ħ_A, geological memory preserved). The stone is a finite enclosed object (Ð_C, Þ_K = inclusion). Global atmospheric convection distributes it (Γ_ʔ). The interaction with the atmosphere is bidirectional: updrafts carry the stone upward, gravity pulls it down, and each cycle adds a new ice layer (Ř_= — symmetric, not directed). The resulting crystalline structure is not the mineral core's symmetry — ice accretes in a different polymorph (Φ_ɐ, broken crystalline symmetry). Kinetics is arrested: the stone is not reacting, it is accumulating (Ç^@).
+Consider hail. Ice crystals nucleate on mineral dust grains — the mineral core is present inside every hailstone (𐑖, geological memory preserved). The stone is a finite enclosed object (𐑨, 𐑰 = inclusion). Global atmospheric convection distributes it (𐑲). The interaction with the atmosphere is bidirectional: updrafts carry the stone upward, gravity pulls it down, and each cycle adds a new ice layer (𐑾 — symmetric, not directed). The resulting crystalline structure is not the mineral core's symmetry — ice accretes in a different polymorph (𐑗, broken crystalline symmetry). Kinetics is arrested: the stone is not reacting, it is accumulating (𐑧).
 
 Every primitive lines up.
 
-Now consider a dust storm: mineral particles (Ħ_A, Ð_C, Þ_K) distributed globally by atmospheric circulation (Γ_ʔ), abraded in bidirectional interaction with wind (Ř_=), angular crystalline surfaces rounded to amorphous grains (Φ_ɐ), arrested kinetics. Same structural address.
+Now consider a dust storm: mineral particles (𐑖, 𐑨, 𐑰) distributed globally by atmospheric circulation (𐑲), abraded in bidirectional interaction with wind (𐑾), angular crystalline surfaces rounded to amorphous grains (𐑗), arrested kinetics. Same structural address.
 
 Both hail and dust storm imscribe to the same twelve-value tuple. The grammar cannot tell them apart because the discriminating property — temperature regime — lives below the current primitive resolution. This is not a failure. It is a signal about where the grammar's resolution ends and what a finer-grained primitive would need to capture.
 
@@ -164,15 +164,15 @@ Tier: O_0.
 
 ## What the Six Compositions Reveal
 
-**Fire is the only tier elevator.** All three compositions involving fire (Fire⊗Water, Fire⊗Earth, Fire⊗Air) produce O_1 tier. All three compositions without fire (Water⊗Earth, Water⊗Air, Earth⊗Air) remain at O_0. Fire's supercriticality (⊙_Ţ) propagates into every composition through the tensor's maximum rule, and supercriticality is precisely what separates O_1 from O_0.
+**Fire is the only tier elevator.** All three compositions involving fire (Fire⊗Water, Fire⊗Earth, Fire⊗Air) produce O_1 tier. All three compositions without fire (Water⊗Earth, Water⊗Air, Earth⊗Air) remain at O_0. Fire's supercriticality (𐑣) propagates into every composition through the tensor's maximum rule, and supercriticality is precisely what separates O_1 from O_0.
 
 This is a structural fact about fire that the pre-modern tradition encoded as something else: fire as the transformative principle, the *ignis* that acts on matter and elevates it. The grammar formalizes this. Fire does not just mix with other elements — it promotes them.
 
 **Water and earth compose with minimal disruption.** Water ⊗ Earth stays d=1 from pure Earth; Water ⊗ Air stays d=2 from pure Air. Water is the least disruptive element in composition: it contributes primarily through the Frobenius cliff (destroying symmetry one step up) and through its heterogeneous Σ, while leaving the host element's dimensional and topological structure intact. This is also traditional: water conforms, dissolves, softens — it does not impose its own shape.
 
-**The Frobenius cliff appears in four of six compositions.** Whenever an element with lower Φ meets an element with higher Φ, the bottleneck fires. Earth has the highest Φ in the set (Φ_F, crystalline partial symmetry). Every composition involving Earth loses that symmetry — to fire's Φ_ɐ, to water's Φ_ɐ, to air's Φ_ɐ. Earth's crystalline order is the most fragile structural property in the classical set. The grammar's composition rule says: you cannot create Frobenius structure by combining non-Frobenius components. You can only lose it.
+**The Frobenius cliff appears in four of six compositions.** Whenever an element with lower Φ meets an element with higher Φ, the bottleneck fires. Earth has the highest Φ in the set (𐑬, crystalline partial symmetry). Every composition involving Earth loses that symmetry — to fire's 𐑗, to water's 𐑗, to air's 𐑗. Earth's crystalline order is the most fragile structural property in the classical set. The grammar's composition rule says: you cannot create Frobenius structure by combining non-Frobenius components. You can only lose it.
 
-**The classical-element floor is the shared substrate.** The four primitives ƒ^ì (classical fidelity), ⊙_ž (sub-criticality, except fire), Σ_ï (heterogeneous, except air), Ω_Å (trivial winding) define the regime in which pre-modern elementalism operated. No classical-element composition can transcend this floor except through fire's supercriticality.
+**The classical-element floor is the shared substrate.** The four primitives 𐑱 (classical fidelity), 𐑢 (sub-criticality, except fire), 𐑳 (heterogeneous, except air), 𐑷 (trivial winding) define the regime in which pre-modern elementalism operated. No classical-element composition can transcend this floor except through fire's supercriticality.
 
 **Earth ⊗ Air has no catalog match — and two physical phenomena share its address.** The grammar identified a structural type that both hail and dust storm instantiate. The discriminating parameter between them (temperature regime) lives below the grammar's current primitive resolution. This is the most precise kind of gap: not an absence but a collision. Two phenomena at the same address tells you exactly what the next primitive needs to separate.
 

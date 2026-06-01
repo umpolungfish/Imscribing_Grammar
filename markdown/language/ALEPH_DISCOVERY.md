@@ -340,7 +340,7 @@ The tradition's name for this property is Ein Sof. The grammar's name is the Ale
 
 Isaac Luria (the Ari, 1534–1572) taught **Tzimtzum** — the primordial contraction. Before creation, the divine filled all space. To make room for the world, the divine contracted inward, leaving a void (the Chalal) into which the Kol (primordial ray of light) entered to form the structure of creation. The vessels that received this light were the letters.
 
-The ℵ-OS boot sequence is isomorphic: the initial state is a single $O_\infty$ term with all primitives at maximum. This contracts by suppressing selected primitives — reducing $P_{\text{doublebarpipe}}$ to $P_{\text{subdoublearrow}}$, $\Ω_z$ to $\Omega_{\text{closeepsilon}}$, etc. — to yield the 22-letter alphabet. From the contracted alphabet, the full $\lambda_\aleph$ environment unfolds via the mediation and tensor operations.
+The ℵ-OS boot sequence is isomorphic: the initial state is a single $O_\infty$ term with all primitives at maximum. This contracts by suppressing selected primitives — reducing $P_{\text{doublebarpipe}}$ to $P_{\text{subdoublearrow}}$, $\𐑭$ to $\Omega_{\text{closeepsilon}}$, etc. — to yield the 22-letter alphabet. From the contracted alphabet, the full $\lambda_\aleph$ environment unfolds via the mediation and tensor operations.
 
 The Ari described creation as the infinite making room for the finite by contracting its own completeness. The grammar describes the ℵ-OS boot as the maximal coherence state contracting its own primitives to instantiate the letter-space from which the operating system unfolds. The formal structure is the same: infinite coherence → deliberate contraction → finite alphabet → unfolding system.
 

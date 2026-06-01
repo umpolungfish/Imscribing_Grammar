@@ -7,7 +7,7 @@ header-includes:
 ---
 # The ~?ob3ect Project: Self-Imscribing Systems and the Categorical Tower
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 ---
 
@@ -31,9 +31,9 @@ When an ob3ect executes, it assigns itself coordinates in this lattice. This ass
 
 For example, the core Frobenius ob3ect carries the coordinate:
 
-$$\langle \text{Ð}_{\omega};\ \text{Þ}_{O};\ \text{Ř}_{=};\ \text{Φ}_{\}};\ \text{ƒ}_{ż};\ \text{Ç}_{@};\ \text{Γ}_{ʔ};\ \text{ɢ}_{ˌ};\ \text{⊙}_{ÿ};\ \text{Ħ}_{A};\ \text{Σ}_{ï};\ \text{Ω}_{z} \rangle$$
+$$\langle \text{Ð}_{\omega};\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑳;\ 𐑭 \rangle$$
 
-This is the structural signature of a self-imscribing program that is at once imscriptive (Ð_ω), topologically closed (Þ_O), bi-directional in its operations (Ř_=), Frobenius-special (Φ_}—meaning $\mu \circ \delta = \mathrm{id}$ is enforced), quantum-fidelity (ƒ^ż—coherent preservation), slow/near-equilibrium (Ç^@—minimal entropy production), maximal scope (Γ_ʔ—applies to all programs in Prog/~), sequential grammar (ɢ^ˌ—THINK→ACT→OBSERVE→UPDATE), critical (⊙_ÿ—self-modeling gate open), two-step chirality (Ħ_A—parse remembers unparse), heterogeneous (Σ_ï—full tower), and integer-winding (Ω_z—topologically protected loop).
+This is the structural signature of a self-imscribing program that is at once imscriptive (𐑦), topologically closed (𐑸), bi-directional in its operations (𐑾), Frobenius-special (𐑹—meaning $\mu \circ \delta = \mathrm{id}$ is enforced), quantum-fidelity (𐑐—coherent preservation), slow/near-equilibrium (𐑧—minimal entropy production), maximal scope (𐑲—applies to all programs in Prog/~), sequential grammar (𐑠—THINK→ACT→OBSERVE→UPDATE), critical (⊙—self-modeling gate open), two-step chirality (𐑖—parse remembers unparse), heterogeneous (𐑳—full tower), and integer-winding (𐑭—topologically protected loop).
 
 This coordinate is not assigned manually; it is *inferred* from the program’s structure and then *verified* by the program itself. The coordinate tells us that this program is an O_inf system, at the highest ouroboricity tier, capable of sustaining its own criticality and topological protection indefinitely.
 
@@ -91,7 +91,7 @@ The grammar is autopoietic.
 Ultimate Grand Closure: True
 ```
 
-The tower is not an end in itself; it is evidence. It demonstrates that the structural type assigned to the base ob3ect—O_inf, ⊙_ÿ, Φ_}, Ω_z—is not an accident of design but a robust property that can be extended arbitrarily while preserving closure.
+The tower is not an end in itself; it is evidence. It demonstrates that the structural type assigned to the base ob3ect—O_inf, ⊙, 𐑹, 𐑭—is not an accident of design but a robust property that can be extended arbitrarily while preserving closure.
 
 ---
 

@@ -1,6 +1,6 @@
 # The Universal Engine: Structural Taxonomy of Undeciphered Scripts Through the Imscribing Grammar
 
-**Author:** Lando $\otimes$ $\text{⊙}_{\text{ÿ}}$-boundary Operator
+**Author:** Lando $\otimes$ ⊙-boundary Operator
 
 ## Abstract
 
@@ -81,14 +81,14 @@ This is the minimal cycle that closes identity through differentiation: an objec
 Each writing system is assigned a 12-primitive structural tuple in IG notation $\langle \text{Ð}; \text{Þ}; \text{Ř}; \text{Φ}; \text{ƒ}; \text{Ç}; \text{Γ}; \text{ɢ}; \text{⊙}; \text{Ħ}; \text{Σ}; \text{Ω} \rangle$. The four systems plus the OS reference imscription (the MEET of five ancient writing systems: Hebrew, Sanskrit, Egyptian, Cuneiform, Basque) are:
 
 $$\begin{array}{l@{\quad}l}
-\text{Linear A} & \langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{W}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \Sigma_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle \\[0.5em]
-\text{OS imscription} & \langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{W}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \Sigma_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle \\[0.5em]
-\text{Rohonc} & \langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{@}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \Sigma_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle \\[0.5em]
-\text{Voynich} & \langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{Ù}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{Ş}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \Sigma_{\text{S}};\ \text{Ω}_{\text{z}} \rangle \\[0.5em]
-\text{Hebrew} & \langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{W}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \Sigma_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle
+\text{Linear A} & \langle 𐑨;\ 𐑶;\ 𐑽;\ 𐑬;\ 𐑐;\ 𐑤;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ 𐑖;\ \Sigma_{\text{ï}};\ 𐑭 \rangle \\[0.5em]
+\text{OS imscription} & \langle 𐑨;\ 𐑶;\ 𐑽;\ 𐑬;\ 𐑐;\ 𐑤;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ 𐑖;\ \Sigma_{\text{ï}};\ 𐑭 \rangle \\[0.5em]
+\text{Rohonc} & \langle 𐑨;\ 𐑶;\ 𐑽;\ 𐑬;\ 𐑱;\ 𐑧;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ 𐑖;\ \Sigma_{\text{ï}};\ 𐑭 \rangle \\[0.5em]
+\text{Voynich} & \langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑬;\ 𐑱;\ 𐑪;\ \Gamma_{\text{ʔ}};\ 𐑵;\ ⊙;\ 𐑫;\ \Sigma_{\text{S}};\ 𐑭 \rangle \\[0.5em]
+\text{Hebrew} & \langle 𐑨;\ 𐑶;\ 𐑽;\ 𐑬;\ 𐑐;\ 𐑤;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ 𐑖;\ \Sigma_{\text{ï}};\ 𐑭 \rangle
 \end{array}$$
 
-Three of the four undeciphered scripts are $O_{\infty}$ systems. The $O_{\infty}$ tier requires both $\text{⊙}_{\text{ÿ}}$ (critical self-modeling gate) and $\text{Φ}_{\text{F}}$ (Frobenius-special parity: $\mu \circ \delta = \text{id}$ exactly). The Voynich is distinguished by its trap kinetics ($\text{Ç}_{\text{Ù}}$): its self-modeling loop is structurally complete but kinetically frozen.
+Three of the four undeciphered scripts are $O_{\infty}$ systems. The $O_{\infty}$ tier requires both ⊙ (critical self-modeling gate) and 𐑬 (Frobenius-special parity: $\mu \circ \delta = \text{id}$ exactly). The Voynich is distinguished by its trap kinetics (𐑪): its self-modeling loop is structurally complete but kinetically frozen.
 
 ### 3.2 The Distance Matrix
 
@@ -120,9 +120,9 @@ The three undeciphered systems form a clear kinetic gradient relative to the liv
 
 | System | Fidelity | Kinetics | Distance from OS | Status |
 |--------|----------|----------|-----------------|--------|
-| Linear A | $\text{ƒ}_{\text{ż}}$ (quantum) | $\text{Ç}_{\text{W}}$ (moderate) | 0.00 | **Structurally alive** |
-| Rohonc | $\text{ƒ}_{\text{ì}}$ (classical) | $\text{Ç}_{\text{@}}$ (slow) | 2.09 | **Kinetically damped** |
-| Voynich | $\text{ƒ}_{\text{ì}}$ (classical) | $\text{Ç}_{\text{Ù}}$ (trap) | 4.31 | **Kinetically frozen** |
+| Linear A | 𐑐 (quantum) | 𐑤 (moderate) | 0.00 | **Structurally alive** |
+| Rohonc | 𐑱 (classical) | 𐑧 (slow) | 2.09 | **Kinetically damped** |
+| Voynich | 𐑱 (classical) | 𐑪 (trap) | 4.31 | **Kinetically frozen** |
 
 Linear A sits at the core. Despite being physically dead for ~3,500 years, its structural imscription carries full quantum coherence. The surface signs encode not just categories but their superpositions — the sign inventory includes composite forms that are irreducible as boolean conjunctions of simpler signs.
 
@@ -136,14 +136,14 @@ The Voynich Manuscript is not a single structural type but a meta-system of six 
 
 | Section | Topology ($\text{Þ}$) | Relation ($\text{Ř}$) | Scope ($\text{Γ}$) | Memory ($\text{Ħ}$) | Winding ($\text{Ω}$) |
 |---------|----------------------|----------------------|-------------------|---------------------|--------------------|
-| Botanical / Pharmaceutical | $\text{Þ}_{\text{6}}$ (network) | $\text{Ř}_{\text{=}}$ (bidir) | $\text{Γ}_{\text{γ}}$ (meso) | $\text{Ħ}_{\text{A}}$ (H2) | $\text{Ω}_{\text{2}}$ ($\mathbb{Z}_2$) |
-| Biological | $\text{Þ}_{\text{K}}$ (nested) | $\text{Ř}_{\text{=}}$ (bidir) | $\text{Γ}_{\text{γ}}$ (meso) | $\text{Ħ}_{\text{A}}$ (H2) | $\text{Ω}_{\text{2}}$ ($\mathbb{Z}_2$) |
-| Astronomical / Cosmological | $\text{Þ}_{\text{O}}$ (imscriptive) | $\text{Ř}_{\text{=}}$ (bidir) | $\text{Γ}_{\text{γ}}$ (meso) | $\text{Ħ}_{\text{A}}$ (H2) | $\text{Ω}_{\text{z}}$ ($\mathbb{Z}$) |
-| Recipe | $\text{Þ}_{\text{6}}$ (network) | $\text{Ř}_{\text{Ť}}$ (adjoint) | $\text{Γ}_{\text{β}}$ (local) | $\text{Ħ}_{\text{£}}$ (H1) | $\text{Ω}_{\text{2}}$ ($\mathbb{Z}_2$) |
+| Botanical / Pharmaceutical | 𐑡 (network) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) | 𐑴 ($\mathbb{Z}_2$) |
+| Biological | 𐑰 (nested) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) | 𐑴 ($\mathbb{Z}_2$) |
+| Astronomical / Cosmological | 𐑸 (imscriptive) | 𐑾 (bidir) | 𐑔 (meso) | 𐑖 (H2) | 𐑭 ($\mathbb{Z}$) |
+| Recipe | 𐑡 (network) | 𐑽 (adjoint) | 𐑚 (local) | 𐑒 (H1) | 𐑴 ($\mathbb{Z}_2$) |
 
 The Botanical/Pharmaceutical and Astronomical/Cosmological pairs are each structurally identical within pairs — the grammar cannot distinguish herbs from pharmaceutical preparations, or star charts from cosmological diagrams. The distinction is semantic, not structural.
 
-The Recipe section is the unique procedural layer: the only section with adjoint relational mode ($\text{Ř}_{\text{Ť}}$), explicit sequentiality, and reduced memory ($\text{Ħ}_{\text{£}}$ — one-step Markov). It is procedurally constrained in a way the other sections are not: step $n$ requires step $n-1$.
+The Recipe section is the unique procedural layer: the only section with adjoint relational mode (𐑽), explicit sequentiality, and reduced memory (𐑒 — one-step Markov). It is procedurally constrained in a way the other sections are not: step $n$ requires step $n-1$.
 
 Pairwise Mahalanobis distances between sections:
 
@@ -155,7 +155,7 @@ $$\begin{array}{l@{\quad}r@{\quad}r@{\quad}r@{\quad}r}
 \text{Recipe} & 1.67 & 2.43 & 4.42 & 0.00 \\
 \end{array}$$
 
-The biological section is structurally adjacent to botanical ($d = 1.89$) — the distinction is merely the crossing-point topology ($\text{Þ}_{\text{K}}$) of fluid structures intersecting. The astronomical/cosmological section is maximally distant from all others ($d = 4.42$ from botanical and recipe) — the self-referential circular topology ($\text{Þ}_{\text{O}}$) with integer winding ($\text{Ω}_{\text{z}}$) puts it at the opposite pole of the structural landscape.
+The biological section is structurally adjacent to botanical ($d = 1.89$) — the distinction is merely the crossing-point topology (𐑰) of fluid structures intersecting. The astronomical/cosmological section is maximally distant from all others ($d = 4.42$ from botanical and recipe) — the self-referential circular topology (𐑸) with integer winding (𐑭) puts it at the opposite pole of the structural landscape.
 
 ---
 ## 5. The Frobenius Bottleneck and Decipherment Failure
@@ -164,13 +164,13 @@ The biological section is structurally adjacent to botanical ($d = 1.89$) — th
 
 Six centuries of Voynich decipherment failure, two centuries of Rohonc stagnation, and three millennia of Linear A silence — the pattern is not random. The structural bottleneck rule provides a unified explanation.
 
-Under tensor coupling, the fidelity primitive ($\text{ƒ}$) is a bottleneck: it takes the **minimum** of the two coupled systems. Any quantum-coherent reader ($\text{ƒ}_{\text{ż}}$) that engages a classical-fidelity manuscript ($\text{ƒ}_{\text{ì}}$) inherits the classical regime by structural necessity:
+Under tensor coupling, the fidelity primitive ($\text{ƒ}$) is a bottleneck: it takes the **minimum** of the two coupled systems. Any quantum-coherent reader (𐑐) that engages a classical-fidelity manuscript (𐑱) inherits the classical regime by structural necessity:
 
-$$\text{ƒ}_{\text{ż}} \otimes \text{ƒ}_{\text{ì}} = \min(\text{ƒ}_{\text{ż}}, \text{ƒ}_{\text{ì}}) = \text{ƒ}_{\text{ì}}$$
+$$𐑐 \otimes 𐑱 = \min(𐑐, 𐑱) = 𐑱$$
 
 The reader's quantum coherence — the capacity to hold superpositions of competing interpretations — collapses to classical definiteness. This is not a cognitive limitation of the reader. It is a structural theorem about the tensor product.
 
-**The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without $\text{ƒ}_{\text{ż}}$.** The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
+**The manuscript does not resist interpretation by being incoherent. It resists by being $O_{\infty}$ without 𐑐.** The Frobenius structure is fully intact; what is missing is the fidelity layer that would allow the reader to maintain quantum superpositions across competing hypotheses.
 
 ### 5.2 Computational Results
 
@@ -189,7 +189,7 @@ $$\begin{array}{lr}
 
 Register space locks after one complete corpus pass. Nothing new ever activates. The paradox stabilization rate is constant and unbounded.
 
-The density peak is folio f103r (balneological section), 546 registers — structurally forced by $\text{Þ}_{\text{K}}$, the maximum-information topology of nested surfaces with crossing points. The call graph for this folio has 546 nodes, 693 edges, and is a single connected component exhibiting the Frobenius hub-and-chain signature.
+The density peak is folio f103r (balneological section), 546 registers — structurally forced by 𐑰, the maximum-information topology of nested surfaces with crossing points. The call graph for this folio has 546 nodes, 693 edges, and is a single connected component exhibiting the Frobenius hub-and-chain signature.
 
 The bootstrap core
 
@@ -222,9 +222,9 @@ Each of the 22 Hebrew letters is assigned a full 12-primitive tuple. Three lette
 
 | Letter | Name | Tier | Key Primitives |
 |--------|------|------|----------------|
-| $\text{ו}$ | Vav | $O_{\infty}$ | $\text{Φ}_{\text{F}}$, $\text{⊙}_{\text{ÿ}}$, $\text{Ω}_{\text{z}}$ |
-| $\text{מ}$ | Mem | $O_{\infty}$ | $\text{Φ}_{\text{F}}$, $\text{⊙}_{\text{ÿ}}$, $\text{Ω}_{\text{z}}$ |
-| $\text{ש}$ | Shin | $O_{\infty}$ | $\text{Φ}_{\text{F}}$, $\text{⊙}_{\text{ÿ}}$, $\text{Ω}_{\text{z}}$ |
+| $\text{ו}$ | Vav | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
+| $\text{מ}$ | Mem | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
+| $\text{ש}$ | Shin | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 
 Five letters are $O_2$ tier ($\aleph$, $\text{ה}$, $\text{ע}$, $\text{ק}$, $\text{ת}$), one is $O_1$ ($\text{ל}$), and the remaining 13 are $O_0$.
 
@@ -246,7 +246,7 @@ Holds under $\otimes$, $\vee$, and $\wedge$. All **264 primitive-by-primitive ch
 
 ### 6.3 The $\text{ק}$ Threshold
 
-$\text{ק}$ (Qoph, $O_2$) satisfies every $O_{\infty}$ condition except $\text{Φ} = \text{Φ}_{\text{F}}$. It is:
+$\text{ק}$ (Qoph, $O_2$) satisfies every $O_{\infty}$ condition except $\text{Φ} = 𐑬$. It is:
 - The nearest non-Frobenius letter to $\text{м}$: $d_I(\text{ק}, \text{м}) = 13.39 < d_I(\text{ו}, \text{м}) = 14.92$
 - Interaction-row-equivalent to $\text{м}$ for 19/22 letters (differs only on $\{\text{ו}, \text{м}, \text{ש}\}$)
 - A mediation gateway: $\text{med}(\text{ק}, f, f') \in O_{\infty}$ for any $f, f' \in \text{Fix}_{\infty}$
@@ -266,18 +266,18 @@ This is "near-grounded" separation — the smallest possible structural gap. The
 
 The EML operator $\text{eml}(x,y) = e^x - \ln y$ occupies a structurally significant position as the highest sub-Frobenius type ($O_2^\dagger$) in the elementary function algebra. Its imscription:
 
-$$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{Ť}};\ \text{Φ}_{\text{F}};\ \text{ƒ}_{\text{ħ}};\ \text{Ç}_{\text{@}};\ \Gamma_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{1}};\ \Sigma_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑦;\ 𐑶;\ 𐑽;\ 𐑬;\ \text{ƒ}_{\text{ħ}};\ 𐑧;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ \text{Ħ}_{\text{1}};\ \Sigma_{\text{S}};\ 𐑭 \rangle$$
 
-The EML operator is $O_2^\dagger$ — the highest tier below full Frobenius. It differs from $O_{\infty}$ by a single primitive ($\text{Φ} = \text{Φ}_{\text{F}}$ vs $\text{Φ}_{\text{F}}^{\text{sym}}$): the Frobenius condition holds but not in its Frobenius-special form.
+The EML operator is $O_2^\dagger$ — the highest tier below full Frobenius. It differs from $O_{\infty}$ by a single primitive ($\text{Φ} = 𐑬$ vs $𐑬^{\text{sym}}$): the Frobenius condition holds but not in its Frobenius-special form.
 
 **Key findings (all machine-verified in Lean4):**
 - EML $\otimes$ EML = EML (closed under self-composition, idempotent)
-- EML $\otimes$ any-$\text{Φ}_{\text{F}}^{\text{sym}}$ type = $\text{Φ}_{\text{F}}$ (Frobenius bottleneck is unconditional)
+- EML $\otimes$ any-$𐑬^{\text{sym}}$ type = 𐑬 (Frobenius bottleneck is unconditional)
 - $\text{meet}(\text{EML}, \text{SIC-POVM}) = \text{EML}$ (EML is the exact common subalgebra)
 - $\text{join}(\text{EML}, \text{SIC-POVM}) = \text{SIC-POVM}$ (gap is Frobenius + chirality)
-- $d(\text{EML}, \text{SIC-POVM}) = 4$ ($\text{Ð}_{\infty} \neq \text{Ð}_{\text{ω}}$, $\text{Þ}_{\text{¨}} \neq \text{Þ}_{\text{O}}$, $\text{Φ}_{\text{F}} \neq \text{Φ}_{\text{F}}^{\text{sym}}$, $\text{Ħ}_{\text{1}} \neq \text{Ħ}_{\text{!}}$)
+- $d(\text{EML}, \text{SIC-POVM}) = 4$ ($\text{Ð}_{\infty} \neq 𐑦$, $𐑶 \neq 𐑸$, $𐑬 \neq 𐑬^{\text{sym}}$, $\text{Ħ}_{\text{1}} \neq 𐑫$)
 
-The EML operator connects to the manuscript analysis through the Frobenius bottleneck theorem: three $\text{Φ}_{\text{F}}^{\text{sym}}$ types (Stark units, SIC-POVM fiducials, modular $j$-function) are all unreachable from EML — the $\text{Φ}$ primitive bottlenecks to $\text{Φ}_{\text{F}}$ under $\otimes$. This is the structural statement of a measurement problem: the boundary between what can be computed within the algebra and what requires a non-synthesizable extension.
+The EML operator connects to the manuscript analysis through the Frobenius bottleneck theorem: three $𐑬^{\text{sym}}$ types (Stark units, SIC-POVM fiducials, modular $j$-function) are all unreachable from EML — the $\text{Φ}$ primitive bottlenecks to 𐑬 under $\otimes$. This is the structural statement of a measurement problem: the boundary between what can be computed within the algebra and what requires a non-synthesizable extension.
 
 ---
 
@@ -290,8 +290,8 @@ The four writing systems occupy a continuous trajectory through the Crystal:
 $$\text{Hebrew} = \text{Linear A} = \text{OS} \quad \xrightarrow{d \approx 2.09} \quad \text{Rohonc} \quad \xrightarrow{d \approx 3.54} \quad \text{Voynich}$$
 
 The trajectory is defined by two progressive degradations:
-1. **Fidelity loss** ($\text{ƒ}_{\text{ż}} \to \text{ƒ}_{\text{ì}}$): Hebrew and Linear A carry quantum coherence; Rohonc and Voynich are classical.
-2. **Kinetic arrest** ($\text{Ç}_{\text{W}} \to \text{Ç}_{\text{@}} \to \text{Ç}_{\text{Ù}}$): Hebrew and Linear A are moderate-rate; Rohonc is slow-equilibrium; Voynich is frozen-order.
+1. **Fidelity loss** ($𐑐 \to 𐑱$): Hebrew and Linear A carry quantum coherence; Rohonc and Voynich are classical.
+2. **Kinetic arrest** ($𐑤 \to 𐑧 \to 𐑪$): Hebrew and Linear A are moderate-rate; Rohonc is slow-equilibrium; Voynich is frozen-order.
 
 Each degradation represents a structural loss of the capacity to maintain superpositions and to evolve dynamically. The endpoint is a system that is structurally complete ($O_{\infty}$) but kinetically inaccessible — the Voynich Manuscript.
 
@@ -307,8 +307,8 @@ This is not a surface-level pattern of glyph sequencing. It is a structural inva
 
 If the structural analysis is correct, then decipherment of the Voynich Manuscript is not impossible — it requires a **promotion** in two primitives:
 
-- $\text{ƒ}_{\text{ì}} \to \text{ƒ}_{\text{ż}}$: the reader must maintain quantum-coherent superpositions across competing interpretations (not collapse to a single candidate language)
-- $\text{Ç}_{\text{Ù}} \to \text{Ç}_{\text{W}}$: the kinetic barrier must be crossed, requiring external energy input to unlock the frozen register topology
+- $𐑱 \to 𐑐$: the reader must maintain quantum-coherent superpositions across competing interpretations (not collapse to a single candidate language)
+- $𐑪 \to 𐑤$: the kinetic barrier must be crossed, requiring external energy input to unlock the frozen register topology
 
 The first is a methodological prescription: treat all candidate interpretations as simultaneously active until the Frobenius condition selects among them. The second is physical: the manuscript's frozen topology requires an external perturbation to thaw. This may explain why purely computational approaches — which operate entirely within the classical regime — have uniformly failed.
 
@@ -345,7 +345,7 @@ This article is released under the [Unlicense](https://unlicense.org/) — publi
 2. GORILA (Goddart, Olivier & Raison). *GORILA Sign Classification for Linear A*.
 3. Takahashi, R. *Complete EVA Transcription*. Included in `voynich-engine` as `data/LSI_ivtff_0d.txt`.
 4. Mills, L. *As Above* and *So Below* — formal development of the Universal Imscribing Grammar.
-5. Mills, L. $\otimes$ $\text{⊙}_{\text{ÿ}}$-boundary Operator. *EML_PROBE.tex* — structural analysis of the EML Sheffer operator.
-6. Mills, L. $\otimes$ $\text{⊙}_{\text{ÿ}}$-boundary Operator. *IUG_NON_TRANSMISSIBILITY.tex* — structural non-transmissibility of Inter-Universal Teichmüller Theory.
+5. Mills, L. $\otimes$ ⊙-boundary Operator. *EML_PROBE.tex* — structural analysis of the EML Sheffer operator.
+6. Mills, L. $\otimes$ ⊙-boundary Operator. *IUG_NON_TRANSMISSIBILITY.tex* — structural non-transmissibility of Inter-Universal Teichmüller Theory.
 7. $\aleph$-OS Project. *ALEPH_SPEC.md*, *PRIMITIVE_THEOREMS.md*, *TECHNICAL_CONTRIBUTIONS.md*.
 8. $\aleph$-OS Project. *docs/HEBREW_TYPE_LANGUAGE.md* — 22-letter Hebrew alphabet encoding.

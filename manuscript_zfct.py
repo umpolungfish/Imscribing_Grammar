@@ -41,7 +41,7 @@ sys.path.insert(0, str(_HERE.parent / 'rohonc-engine'))
 sys.path.insert(0, str(_HERE.parent / 'linear_a_engine'))
 sys.path.insert(0, str(_HERE.parent / 'voynich-engine'))
 
-from zfct_navigator import (
+from navigators.zfct_navigator import (
     compose_formula, render_tokens,
     IDX2TOKEN, ZFCT_TEMPLATES, PRIMITIVES, ORDINALS,
 )

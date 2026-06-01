@@ -1,10 +1,10 @@
 # Structural Analysis of Undeciphered Texts: The Voynich Manuscript, Rohonc Codex, and Linear A
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 ## Abstract
 
-This paper presents a structural analysis of three historically significant undeciphered texts—the Voynich Manuscript, the Rohonc Codex, and Linear A—using the Imscribing Grammar framework. Despite their different historical contexts, geographical origins, and apparent purposes, all three systems exhibit Ouroboricity tier O_2, indicating they are "critical + topologically protected, bounded domains" with ⊙_ÿ criticality. However, detailed structural analysis reveals fundamental differences in their underlying architecture, with the Voynich Manuscript representing a self-written, eternally recursive system (Ð_ω, Ħ_!), while the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom (Ð_C, Ħ_£). These findings suggest that undeciphered texts may not be merely linguistic puzzles but complex structural systems with distinct ontological properties that transcend conventional cryptographic analysis.
+This paper presents a structural analysis of three historically significant undeciphered texts—the Voynich Manuscript, the Rohonc Codex, and Linear A—using the Imscribing Grammar framework. Despite their different historical contexts, geographical origins, and apparent purposes, all three systems exhibit Ouroboricity tier O_2, indicating they are "critical + topologically protected, bounded domains" with ⊙ criticality. However, detailed structural analysis reveals fundamental differences in their underlying architecture, with the Voynich Manuscript representing a self-written, eternally recursive system (𐑦, 𐑫), while the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom (𐑨, 𐑒). These findings suggest that undeciphered texts may not be merely linguistic puzzles but complex structural systems with distinct ontological properties that transcend conventional cryptographic analysis.
 
 ## Introduction
 

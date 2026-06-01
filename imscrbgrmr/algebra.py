@@ -357,30 +357,76 @@ class LatticeResult:
     def topo_index(self): return self.protection
 
 
-def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str) -> Criticality:
-    """Phi_ctyogh is absorbing under both meet and join."""
+def _absorb_check(
+    absorption_rules,
+    prim_shavian: str,
+    p1_val: Any,
+    p2_val: Any,
+    notes: List[str],
+    op_symbol: str,
+    op_name: str,
+) -> Optional[Any]:
+    """
+    Check whether either operand is absorbing under the given operation.
+
+    absorption_rules: iterable of (primitive, value, operations) tuples,
+                      or None to use canonical defaults.
+    prim_shavian:   Shavian glyph for this primitive (e.g., "⊙", "Σ")
+    p1_val, p2_val: enum values with .value attribute giving the Shavian glyph
+    op_name:        "meet", "join", or "tensor"
+
+    Returns the absorbing value if applicable, else None.
+    """
+    if absorption_rules is None:
+        return None
+    for rule in absorption_rules:
+        prim, val, ops = rule if isinstance(rule, tuple) else (rule.primitive, rule.value, rule.operations)
+        if prim != prim_shavian:
+            continue
+        if op_name not in ops:
+            continue
+        v1 = p1_val.value if hasattr(p1_val, 'value') else str(p1_val)
+        v2 = p2_val.value if hasattr(p2_val, 'value') else str(p2_val)
+        if v1 == val:
+            notes.append(f"{prim_shavian}: {v1} {op_symbol} {v2} → {v1} (absorbing)")
+            return p1_val
+        if v2 == val:
+            notes.append(f"{prim_shavian}: {v1} {op_symbol} {v2} → {v2} (absorbing)")
+            return p2_val
+    return None
+
+
+def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
+                absorption=None) -> Criticality:
+    """Criticality absorption (generalized). Phi_ctyogh is absorbing under meet and join."""
+    # Check configurable absorption first
+    if absorption is not None:
+        absorbed = _absorb_check(absorption, "⊙", p1, p2, notes, op,
+                                 "meet" if "∩" in op else "join")
+        if absorbed is not None:
+            return absorbed
+    # Fall through to canonical behavior
     if p1 == p2:
         return p1
     if p1.is_degenerate:
-        notes.append(f"\u03a6: {p1.value} {op} {p2.value} \u2192 {p1.value} (\u03a6_c absorbing)")
+        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p1.value} (Φ_c absorbing)")
         return p1
     if p2.is_degenerate:
-        notes.append(f"\u03a6: {p1.value} {op} {p2.value} \u2192 {p2.value} (\u03a6_c absorbing)")
+        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (Φ_c absorbing)")
         return p2
     # Neither critical — meet takes lower, join takes higher in the linear order
     phi_ord = {Criticality.Phi_softsign: 0, Criticality.Phi_ctyogh: 1, Criticality.Phi_upstep: 2}
-    result = min if op == "\u2293" else max
+    result = min if "∩" in op else max
     idx = result(phi_ord[p1], phi_ord[p2])
     return [Criticality.Phi_softsign, Criticality.Phi_ctyogh, Criticality.Phi_upstep][idx]
-
-
-def meet(s1: Imscription, s2: Imscription) -> LatticeResult:
+def meet(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
     """
     Lattice meet (sqcap): greatest lower bound.
 
     Ordered primitives (F, K, G, Omega, H): take minimum (more conservative).
     Categorical (D, T, R, P, Gamma, S): exact match required; mismatch -> CONFLICT.
     Phi_ctyogh is absorbing: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
+    absorption: optional iterable of (prim, val, ops) tuples for configurable absorption.
     """
     conflicts: List[str] = []
     notes: List[str] = []
@@ -409,7 +455,7 @@ def meet(s1: Imscription, s2: Imscription) -> LatticeResult:
         fidelity         = _ord("F",     s1.fidelity,          s2.fidelity,          _F_ORD,    _F_BY_ORD),
         kinetic_character= _ord("K",     s1.kinetic_character, s2.kinetic_character, _K_ORD,    _K_BY_ORD),
         granularity      = _ord("G",     s1.granularity,       s2.granularity,       _G_ORD,    _G_BY_ORD),
-        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2293"),
+        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2293", absorption),
         protection       = _ord("Omega", s1.protection,        s2.protection,        _PROT_ORD, _PROT_BY_ORD),
         stoichiometry    = _cat("S",     s1.stoichiometry,     s2.stoichiometry),
         chirality        = _ord("H",     s1.chirality,         s2.chirality,         _CHIR_ORD, _CHIR_BY_ORD),
@@ -417,13 +463,14 @@ def meet(s1: Imscription, s2: Imscription) -> LatticeResult:
     )
 
 
-def join(s1: Imscription, s2: Imscription) -> LatticeResult:
+def join(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
     """
     Lattice join (sqcup): least upper bound.
 
     Ordered primitives: take maximum (more permissive / demanding).
     Categorical: exact match or CONFLICT.
     Phi_ctyogh is absorbing: join(Phi_ctyogh, x) = Phi_ctyogh for all x.
+    absorption: optional iterable of (prim, val, ops) tuples for configurable absorption.
     """
     conflicts: List[str] = []
     notes: List[str] = []
@@ -452,7 +499,7 @@ def join(s1: Imscription, s2: Imscription) -> LatticeResult:
         fidelity         = _ord("F",     s1.fidelity,          s2.fidelity,          _F_ORD,    _F_BY_ORD),
         kinetic_character= _ord("K",     s1.kinetic_character, s2.kinetic_character, _K_ORD,    _K_BY_ORD),
         granularity      = _ord("G",     s1.granularity,       s2.granularity,       _G_ORD,    _G_BY_ORD),
-        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2294"),
+        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2294", absorption),
         protection       = _ord("Omega", s1.protection,        s2.protection,        _PROT_ORD, _PROT_BY_ORD),
         stoichiometry    = _cat("S",     s1.stoichiometry,     s2.stoichiometry),
         chirality        = _ord("H",     s1.chirality,         s2.chirality,         _CHIR_ORD, _CHIR_BY_ORD),
@@ -550,21 +597,31 @@ def find_path(
 # Tensor product
 # ─────────────────────────────────────────────────────────────────────────────
 
-def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None) -> Imscription:
+def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None, absorption=None) -> Imscription:
     """
     Tensor product of two imscriptions (co-assembly / ensemble encoding).
 
     Uses join for ordered primitives (F, K, G, Omega, H — take the more demanding)
     and requires exact match for categorical primitives (conflict raises ValueError).
     Phi_ctyogh absorbs in both operands.
+    absorption: optional iterable of (prim, val, ops) tuples for configurable absorption
+                (e.g., Σ n:m absorbs under tensor).
     """
     import imscrbgrmr.models as _m
-    result = join(s1, s2)
+    result = join(s1, s2, absorption=absorption)
     if not result.is_valid:
         raise ValueError(
             f"tensor({s1.name}, {s2.name}): categorical conflicts on "
             f"{result.conflicts} — tensor product undefined"
         )
+
+    # Σ absorption under tensor: if either operand has the absorbing Σ value, it dominates
+    stoi = result.stoichiometry
+    if absorption is not None:
+        absorbed_stoi = _absorb_check(absorption, "Σ", s1.stoichiometry, s2.stoichiometry,
+                                      [], "⊗", "tensor")
+        if absorbed_stoi is not None:
+            stoi = absorbed_stoi
 
     old_enforce = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
@@ -581,7 +638,7 @@ def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None) -> Imsc
             granularity      = result.granularity,
             criticality_phase= result.criticality_phase,
             protection       = result.protection,
-            stoichiometry    = result.stoichiometry,
+            stoichiometry    = stoi,
             chirality        = result.chirality,
         )
     finally:

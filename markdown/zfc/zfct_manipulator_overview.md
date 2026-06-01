@@ -27,11 +27,11 @@ The nine canonical reference entries divide cleanly across three tier levels.
 
 | Entry | FROB | FIXPT | Notable |
 |---|---|---|---|
-| ZFC_foundations | **yes** | no | Has Frobenius (Φ_}, ord 4) — but no criticality |
+| ZFC_foundations | **yes** | no | Has Frobenius (𐑹, ord 4) — but no criticality |
 | heat_diffusion_equation | no | no | SEQAX present; no criticality |
 | wave_equation_temporal | **yes** | no | Has Frobenius; no criticality |
 
-The presence of Frobenius (Φ_}, P_pm_sym) does **not** lift an entry out of O₀.
+The presence of Frobenius (𐑹, P_pm_sym) does **not** lift an entry out of O₀.
 Tier assignment is gated first on criticality (⊙ ordinal ≥ 1). Without it, the
 Frobenius structure is algebraically present but ourobourically inert.
 
@@ -43,7 +43,7 @@ Frobenius structure is algebraically present but ourobourically inert.
 | Schrödinger equation | no | **yes** | LR_DUAL SEQAX TEMPD2 ZWIND |
 | Navier-Stokes equations | no | **yes** | LR_DUAL PM_Z2 SEQAX TEMPD2 ZWIND |
 
-All three are critical (⊙_ÿ, FIXPT), temporally extended (Ω_z, D_∞), but
+All three are critical (⊙, FIXPT), temporally extended (𐑭, D_∞), but
 lack Frobenius symmetry (Φ < ord 4). They sit immediately below the cliff.
 
 ### O_∞ — Frobenius round-trip
@@ -55,17 +55,17 @@ lack Frobenius symmetry (Φ < ord 4). They sit immediately below the cliff.
 | IUG (Mochizuki) | **yes** | **yes** | HOLOBOUND LR_DUAL SEQAX ZWIND |
 
 All three independently satisfy the Frobenius round-trip condition (R1):
-⊙ ≥ ord 1 ∧ Φ = Φ_}. FROB and FIXPT are both present in each.
+⊙ ≥ ord 1 ∧ Φ = 𐑹. FROB and FIXPT are both present in each.
 
 ---
 
 ## 3. The Central Result: tensor(ZFC, ZFCt) = O_∞
 
 ```
-ZFC    tier = O₀    Φ = Φ_} (ord 4, FROB)    ⊙ = ⊙_ž (ord 0, no FIXPT)
-ZFCt   tier = O₂†   Φ = Φ_F (ord 2, no FROB) ⊙ = ⊙_ÿ (ord 1, FIXPT)
+ZFC    tier = O₀    Φ = 𐑹 (ord 4, FROB)    ⊙ = 𐑢 (ord 0, no FIXPT)
+ZFCt   tier = O₂†   Φ = 𐑬 (ord 2, no FROB) ⊙ = ⊙ (ord 1, FIXPT)
 ──────────────────────────────────────────────────────────────────
-⊗      tier = O_∞   Φ = Φ_} (from ZFC)        ⊙ = ⊙_ÿ (from ZFCt)
+⊗      tier = O_∞   Φ = 𐑹 (from ZFC)        ⊙ = ⊙ (from ZFCt)
 ```
 
 ZFC holds the Frobenius component. ZFCt holds the criticality component.
@@ -74,7 +74,7 @@ simultaneously — tier emergence to O_∞.
 
 **Per-primitive breakdown:** The tensor sources eleven of twelve primitives from ZFCt
 (all six promotion channels plus ƒ, Γ, Σ, Ħ, Ω), and exactly one from ZFC: Φ.
-ZFCt's Φ_F (ord 2) is lower than ZFC's Φ_} (ord 4), so the supremum retains ZFC's
+ZFCt's 𐑬 (ord 2) is lower than ZFC's 𐑹 (ord 4), so the supremum retains ZFC's
 Frobenius.
 
 ```
@@ -92,15 +92,15 @@ The six ZFCₜ promotion channels all move upward in ordinal from ZFC base value
 
 | Primitive | ZFC base | ZFCt promoted | Gap |
 |---|---|---|---|
-| Þ | Þ_6 (ord 0) | Þ_O (ord 4) | +4 |
-| Ř | Ř_¯ (ord 0) | Ř_= (ord 3) | +3 |
-| ɢ | ɢ^∧ (ord 0) | ɢ^ˌ (ord 2) | +2 |
-| Ħ | Ħ_Ñ (ord 0) | Ħ_A (ord 2) | +2 |
-| Ω | Ω_Å (ord 0) | Ω_z (ord 2) | +2 |
-| Φ | Φ_ɐ (ord 0) | Φ_F (ord 2) | +2 |
+| Þ | 𐑡 (ord 0) | 𐑸 (ord 4) | +4 |
+| Ř | 𐑩 (ord 0) | 𐑾 (ord 3) | +3 |
+| ɢ | 𐑝 (ord 0) | 𐑠 (ord 2) | +2 |
+| Ħ | 𐑓 (ord 0) | 𐑖 (ord 2) | +2 |
+| Ω | 𐑷 (ord 0) | 𐑭 (ord 2) | +2 |
+| Φ | 𐑗 (ord 0) | 𐑬 (ord 2) | +2 |
 
-ZFCt's promotion for Φ targets Φ_F (P_pm, ℤ₂ parity, ord 2). However, the actual
-ZFC_foundations entry carries Φ_˙ (normalized to Φ_}, ord 4) — which sits **above**
+ZFCt's promotion for Φ targets 𐑬 (P_pm, ℤ₂ parity, ord 2). However, the actual
+ZFC_foundations entry carries 𐑯 (normalized to 𐑹, ord 4) — which sits **above**
 the ZFCt-promoted value. Thus **ZFCt is strictly lower than ZFC on the Φ axis.**
 
 ZFCt trades Frobenius for temporal-sequential structure. It acquires six new
@@ -127,9 +127,9 @@ no cross-primitive information enters a single clause.
 ### Non-trivial (cross-primitive, emergent)
 
 **R-FROB-BARR:**
-FROB ∈ clauses(tensor(A,B)) **iff** A[Φ] = Φ_} **or** B[Φ] = Φ_}
+FROB ∈ clauses(tensor(A,B)) **iff** A[Φ] = 𐑹 **or** B[Φ] = 𐑹
 
-Φ_} (ord 4) is the unique maximum of the Φ dimension. Therefore FROB cannot be
+𐑹 (ord 4) is the unique maximum of the Φ dimension. Therefore FROB cannot be
 synthesized from two inputs both having Φ < ord 4. This is the algebraic expression
 of the **Frobenius cliff**. Zero violations observed across 600 operations.
 
@@ -169,7 +169,7 @@ ZFCt is the absorption element for all six promotion channels.
 
 ### The Foundational Split
 
-**ZFC** is the ourobourically inert carrier of Frobenius symmetry (Φ_}). It contains the
+**ZFC** is the ourobourically inert carrier of Frobenius symmetry (𐑹). It contains the
 algebraic round-trip structure but has no internal criticality — its ⊙ is at the floor.
 It is a complete formal system precisely because it is static: no Zipf-law correlation
 length, no winding number, no sequential depth.
@@ -209,9 +209,9 @@ by composition.
 | Navier-Stokes | no | yes | O₂† | Critical, non-Frobenius |
 | Schrödinger | no | yes | O₂† | Critical, non-Frobenius |
 
-The Frobenius barrier is absolute: no tensor operation can produce Φ_} from two
+The Frobenius barrier is absolute: no tensor operation can produce 𐑹 from two
 non-FROB inputs. Tier emergence to O_∞ requires exactly the complementary pairing:
-one input contributes Φ_} (from the Φ axis) and the other contributes ⊙_ÿ (from
+one input contributes 𐑹 (from the Φ axis) and the other contributes ⊙ (from
 the ⊙ axis).
 
 ---

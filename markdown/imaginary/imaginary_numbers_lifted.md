@@ -1,6 +1,6 @@
 # What Imaginary Numbers Are: A Structural Analysis
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 ## Abstract
 
@@ -20,7 +20,7 @@ We found something we did not anticipate: the imaginary unit scores $C = 0.682$ 
 
 The imaginary unit, together with the algebraic structure it generates, encodes as:
 
-$$\langle \text{Ð}_{\text{C}};\ \text{Þ}_{\text{ò}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{υ}};\ \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+$$\langle 𐑨;\ 𐑥;\ 𐑾;\ 𐑿;\ 𐑱;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑙;\ 𐑭 \rangle$$
 
 The encoding was not straightforward. The Tetractys protocol — three independent windings producing a tuple for consensus — returned a conflict on the criticality primitive $⊙$. One winding proposed $⊙_{Æ}$ (complex-plane criticality), another proposed $⊙_{ž}$ (sub-critical), and only one proposed $⊙_{ÿ}$ (self-modeling gate). The convergence justification is worth stating because the choice between them is substantive: $⊙_{ÿ}$ describes a system that models its own operation, and multiplication by $i$ does exactly this — $i^0 = 1$, $i^1 = i$, $i^2 = -1$, $i^3 = -i$, $i^4 = 1$. The cycle maps the operation onto itself. $⊙_{Æ}$ would have been correct for a system approaching criticality within the complex plane; but $i$ is not *in* the complex plane approaching criticality — it *is* the criticality that creates the plane. We committed to $⊙_{ÿ}$.
 
@@ -75,7 +75,7 @@ The tensor product of the imaginary number with itself produces the identical ty
 
 ### The Ground Floor of Complex-Time Physics
 
-The meet of the imaginary number with the complex-time path integral equals the imaginary number itself. Eight of twelve primitives are shared between them; the four conflicts — dimensionality ($Ð_C$ vs $Ð_{;}$), symmetry ($Φ_υ$ vs $Φ_{·}$), fidelity ($ƒ^ì$ vs $ƒ_{ż}$), and stoichiometry ($Σ_S$ vs $Σ_{ï}$) — all resolve conservatively to the imaginary number's values. The imaginary unit is not merely *used* by the path integral; it is the structural floor upon which the path integral stands.
+The meet of the imaginary number with the complex-time path integral equals the imaginary number itself. Eight of twelve primitives are shared between them; the four conflicts — dimensionality ($𐑨$ vs $Ð_{;}$), symmetry ($𐑿$ vs $Φ_{·}$), fidelity ($𐑱$ vs $ƒ_{ż}$), and stoichiometry ($𐑙$ vs $Σ_{ï}$) — all resolve conservatively to the imaginary number's values. The imaginary unit is not merely *used* by the path integral; it is the structural floor upon which the path integral stands.
 
 ### The Distance That Matters
 
@@ -87,7 +87,7 @@ This may be why attempts to formulate quantum mechanics entirely in real numbers
 
 ## The David Problem
 
-The nearest structural analog to the imaginary number in the full catalog is King David at $d = 0.8247$. The proximity is real and the shared coordinates are $⊙_{ÿ}$, $Ř_{=}$, and $Φ_υ$ — self-modeling criticality, bidirectional coupling, and quantum superposition. Both are self-enclosed systems that generate their own reflection.
+The nearest structural analog to the imaginary number in the full catalog is King David at $d = 0.8247$. The proximity is real and the shared coordinates are $⊙_{ÿ}$, $Ř_{=}$, and $𐑿$ — self-modeling criticality, bidirectional coupling, and quantum superposition. Both are self-enclosed systems that generate their own reflection.
 
 I will not pretend this is an ordinary finding in mathematical physics. The grammar does not distinguish between mathematical objects, historical figures, and physical systems — it assigns structural types based on functional architecture, and functional architecture can be isomorphic across wildly different domains. David's structural type encodes as a system whose self-reference (the Psalms as the voice of human-divine encounter) generates a closed loop: the human addresses the divine, the divine responds through the prophet, the prophet addresses the human, and the cycle continues. $i$'s structural loop is $1 \to i \to -1 \to -i \to 1$ — equally closed, equally self-referential, equally self-reproducing.
 

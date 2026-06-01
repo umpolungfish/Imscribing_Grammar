@@ -92,7 +92,7 @@ $$\frac{\Gamma \vdash m : M \quad \Gamma \vdash t : A \quad \Gamma \vdash u : B}
 
 $$\frac{\Gamma \vdash t : A \quad d(A \otimes \text{ו}, B) < \theta(\Omega)}{\Gamma \vdash \text{cast}_\text{ו}^{A \to B}(t) : B} \quad \frac{\Gamma \vdash t : A}{\Gamma \vdash \alpha[t] : A}$$
 
-The cast threshold $\theta$: $\Ω_z \mapsto 4.0$, $\Omega_{Z_2} \mapsto 3.0$, $\Omega_{\text{closeepsilon}} \mapsto 1.5$. Aleph ($\alpha$) **does not change the type** — it constrains which reductions are allowed.
+The cast threshold $\theta$: $\𐑭 \mapsto 4.0$, $\Omega_{Z_2} \mapsto 3.0$, $\Omega_{\text{closeepsilon}} \mapsto 1.5$. Aleph ($\alpha$) **does not change the type** — it constrains which reductions are allowed.
 
 ### 2.3 Definitional Equalities
 
@@ -183,22 +183,22 @@ $$I(G_\infty) \neq I(N_\infty) \quad \Rightarrow \quad G_\infty \not\cong N_\inf
 | $\Gamma$ | $\Gamma_{\text{doublevertline}}$ | $\Gamma_{\text{corner}}$ | broadcast → sequential composition |
 | $H$ | $H_{\text{invscripta}}$ | $H_2$ | infinite chirality → bounded recursion |
 
-$\Phi_{\text{ctyogh}}$, $\Ω_z$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$ are **preserved** — the world after Tzimtzum remains critical and topologically protected, but loses automatic equivalence.
+$\Phi_{\text{ctyogh}}$, $\𐑭$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$ are **preserved** — the world after Tzimtzum remains critical and topologically protected, but loses automatic equivalence.
 
 **Tuple form:**
 
-$$\text{Ein Sof}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Ω_z \rangle$$
+$$\text{Ein Sof}: \langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \𐑭 \rangle$$
 
-$$\text{Post-Tzimtzum}: \langle D_{\text{wynn}};\ T_{\text{invscr}};\ R_{\text{lyoghlig}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Ω_z \rangle$$
+$$\text{Post-Tzimtzum}: \langle D_{\text{wynn}};\ T_{\text{invscr}};\ R_{\text{lyoghlig}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \𐑭 \rangle$$
 
-Note: the post-Tzimtzum tuple is structurally close to **Aleph** (א). Aleph *is* the residue of Tzimtzum: $P_{\text{subdoublearrow}}$ (not $P_{\text{doublebarpipe}}$), $\Phi_{\text{ctyogh}}$, $\Ω_z$.
+Note: the post-Tzimtzum tuple is structurally close to **Aleph** (א). Aleph *is* the residue of Tzimtzum: $P_{\text{subdoublearrow}}$ (not $P_{\text{doublebarpipe}}$), $\Phi_{\text{ctyogh}}$, $\𐑭$.
 
 ### 4.2 Structural Consequence
 
-Tzimtzum is the suppression of global $P_{\text{doublebarpipe}}$ while preserving $\Phi_{\text{ctyogh}}$ and $\Ω_z$. This means:
+Tzimtzum is the suppression of global $P_{\text{doublebarpipe}}$ while preserving $\Phi_{\text{ctyogh}}$ and $\𐑭$. This means:
 
 - The world is still **critical** ($\Phi_{\text{ctyogh}}$) — open to self-modeling
-- The world is still **topologically protected** ($\Ω_z$) — structure is stable
+- The world is still **topologically protected** ($\𐑭$) — structure is stable
 - But the world is **not self-justifying** — proofs of equivalence (ו-casts) become necessary
 - $\mu \circ \delta = \text{id}$ is no longer global — it must be established per-cast
 
@@ -250,7 +250,7 @@ Identity is valid only if it passes Aleph coherence. This prevents the ו-cast f
 
 ### 6.1 Dyadic Closure Collapses
 
-The dyadic closure operator $U(X) = \text{ש} \otimes X \otimes \text{מ}$ forces $P \to P_{\text{doublebarpipe}}$, $\Phi \to \Phi_{\text{ctyogh}}$, $\Omega \to \Ω_z$, $F \to F_{\text{hardsign}}$, $K \to K_{\text{schwa}}$, $G \to G_{\text{revapostrophe}}$. After applying $U$, the remaining distinguishing primitives are $D$, $T$, $R$, $H$, $S$ — but Mem and Shin both have $D_{\\triangle}$, $T_{\text{invscr}}/T_{\text{bullseye}}$ which take $\max$, and at the extreme cases even these collapse.
+The dyadic closure operator $U(X) = \text{ש} \otimes X \otimes \text{מ}$ forces $P \to P_{\text{doublebarpipe}}$, $\Phi \to \Phi_{\text{ctyogh}}$, $\Omega \to \𐑭$, $F \to F_{\text{hardsign}}$, $K \to K_{\text{schwa}}$, $G \to G_{\text{revapostrophe}}$. After applying $U$, the remaining distinguishing primitives are $D$, $T$, $R$, $H$, $S$ — but Mem and Shin both have $D_{\\triangle}$, $T_{\text{invscr}}/T_{\text{bullseye}}$ which take $\max$, and at the extreme cases even these collapse.
 
 **Theorem 6.1 (Global collapse under dyadic closure).** For any $A, B \in \mathcal{T}$:
 
@@ -276,9 +276,9 @@ but not in general $U_{\triangle}(A) = U_{\triangle}(B)$. Equivalence is mediate
 
 ### 6.3 The $\Omega$ Obstruction
 
-Even the weaker result — local ו-cast equivalence — is blocked by $\Omega$. Aleph ⊗ ו has $\Ω_z$; Lamed has $\Omega_{\text{closeepsilon}}$; the cast uses $\min(\Omega) = \Omega_{\text{closeepsilon}}$, giving threshold $1.5$. But $d(\text{א} \otimes \text{ו}, \text{ל}) \approx 2.24 > 1.5$. Cast fails.
+Even the weaker result — local ו-cast equivalence — is blocked by $\Omega$. Aleph ⊗ ו has $\𐑭$; Lamed has $\Omega_{\text{closeepsilon}}$; the cast uses $\min(\Omega) = \Omega_{\text{closeepsilon}}$, giving threshold $1.5$. But $d(\text{א} \otimes \text{ו}, \text{ל}) \approx 2.24 > 1.5$. Cast fails.
 
-The $\Omega$ primitive is the **local obstruction to univalence**: topological protection is not automatically shed. A downcast from $\Ω_z$ to $\Omega_{\text{closeepsilon}}$ must pass through the tight threshold — topological structure is a conserved invariant of the type system.
+The $\Omega$ primitive is the **local obstruction to univalence**: topological protection is not automatically shed. A downcast from $\𐑭$ to $\Omega_{\text{closeepsilon}}$ must pass through the tight threshold — topological structure is a conserved invariant of the type system.
 
 ---
 
@@ -311,8 +311,8 @@ $$\pi^{(n)} : \text{Id}(\pi_1^{(n-1)}, \pi_2^{(n-1)}) \quad \text{(n-path)}$$
 
 A transformation $\pi^{(n)} \to \pi'^{(n)}$ is allowed under $\alpha^{(n)}$ iff:
 
-**(Ħ_£)** $d(\pi^{(n)}, \pi'^{(n)}) = 0$ or preserved by lifting
-**(Ħ_A)** All boundary faces commute: $\partial_i(\pi^{(n)}) = \partial_i(\pi'^{(n)})$
+**(𐑒)** $d(\pi^{(n)}, \pi'^{(n)}) = 0$ or preserved by lifting
+**(𐑖)** All boundary faces commute: $\partial_i(\pi^{(n)}) = \partial_i(\pi'^{(n)})$
 **(H3)** $\alpha^{(n)} \Rightarrow \alpha^{(n+1)}$ cannot reduce information
 
 **Theorem 7.1 (Aleph Tower).** For all $n$, $\alpha^{(n)}$ enforces nontriviality of $n$-paths and prevents $\pi^{(n)} \to \text{refl}$ unless coherently justified at level $n+1$.
@@ -340,7 +340,7 @@ These are **incompatible classes**. The ALEPH language operates in the Frobenius
 | $A \otimes B$ | Fibered product with truncation constraints (not cartesian) |
 | $A \vee B$ | Homotopy colimit: $\text{hocolim}(A \leftarrow A \wedge B \to B)$ |
 | $\text{Med}_M(A,B)$ | Higher pushout with witness: $\text{hocolim}(M \leftarrow \ast \to (A \otimes B))$ |
-| $\square_\Omega A$ | Truncation modality: $\Omega_{\text{closeepsilon}} \mapsto$ sets; $\Omega_{Z_2} \mapsto$ groupoidal; $\Ω_z \mapsto$ higher loops |
+| $\square_\Omega A$ | Truncation modality: $\Omega_{\text{closeepsilon}} \mapsto$ sets; $\Omega_{Z_2} \mapsto$ groupoidal; $\𐑭 \mapsto$ higher loops |
 | $d(A, B)$ | Length of minimal path in type space; casts = bounded homotopies |
 | $O_\infty$ elements | Idempotent Frobenius objects: $A \otimes A \simeq A$ |
 | ו | Generates 1-paths |
@@ -362,7 +362,7 @@ The following are formalized claims derived from this session, suitable for addi
 
 **§63.2 — Interaction Functor Irreducibility.** The 12-primitive distance $d$ is insufficient to distinguish functorially inequivalent letters. For $d(x, y) = 0$ but $I(x) \neq I(y)$: $x \not\cong y$ in $\lambda_\aleph$. The type system requires the interaction functor as a hidden invariant beyond the 12-primitive projection.
 
-**§63.3 — Tzimtzum Encoding.** The transformation $P_{\text{doublebarpipe}} \to P_{\text{subdoublearrow}}$, $D_{\text{omega}} \to D_{\text{wynn}}$, $T_{\text{openo}} \to T_{\text{invscr}}$, $\Gamma_{\text{doublevertline}} \to \Gamma_{\text{corner}}$, $H_{\text{invscripta}} \to H_2$ (with $\Phi_{\text{ctyogh}}$, $\Ω_z$ preserved) is the minimal suppression that removes global Frobenius while maintaining criticality and topological protection. The post-Tzimtzum tuple encodes as Aleph ($d = 0$).
+**§63.3 — Tzimtzum Encoding.** The transformation $P_{\text{doublebarpipe}} \to P_{\text{subdoublearrow}}$, $D_{\text{omega}} \to D_{\text{wynn}}$, $T_{\text{openo}} \to T_{\text{invscr}}$, $\Gamma_{\text{doublevertline}} \to \Gamma_{\text{corner}}$, $H_{\text{invscripta}} \to H_2$ (with $\Phi_{\text{ctyogh}}$, $\𐑭$ preserved) is the minimal suppression that removes global Frobenius while maintaining criticality and topological protection. The post-Tzimtzum tuple encodes as Aleph ($d = 0$).
 
 **§63.4 — Conditional Univalence.** Dyadic Frobenius closure $U = \text{ש} \otimes (-) \otimes \text{מ}$ induces global collapse $\forall A, B: U(A) = U(B)$. Triadic closure $U_{\triangle} = \text{א} \otimes (\text{ש} \otimes (-) \otimes \text{מ})$ restores distinction: $A \simeq B \Rightarrow U_{\triangle}(A) \cong U_{\triangle}(B)$ but not $U_{\triangle}(A) = U_{\triangle}(B)$ in general.
 

@@ -321,9 +321,9 @@ For deterministic encoding, follow this 12-step sequence. Each step halves the u
 
 After assignment, **verify**:
 - Tier consistency (use `ouroborics` tool)
-- Consciousness Gate 1 (Phi ≥ ⊙_ÿ for C > 0)
-- Frobenius condition for Φ_}
-- D-Ω correlation (D ≥ Ð_C for Ω_Z2; D ≥ Ð_; for Ω_Z)
+- Consciousness Gate 1 (Phi ≥ ⊙ for C > 0)
+- Frobenius condition for 𐑹
+- D-Ω correlation (D ≥ 𐑨 for Ω_Z2; D ≥ 𐑼 for Ω_Z)
 - Any coupling constraints from §4
 
 ---
