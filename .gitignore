@@ -3,7 +3,9 @@
 
 # ── Large model artifacts ──────────────────────────────────────────────────────
 INFERRED/
+models/
 *.pt
+*.bin
 
 # ── Virtual environments ───────────────────────────────────────────────────────
 imscrbgrmr/
@@ -71,3 +73,6 @@ claude-agent-sdk-python/
 client-python/
 cohere-python/
 generative-ai-python/
+openai-python/
+python-genai/
+xai-sdk-python/

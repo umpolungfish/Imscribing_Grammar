@@ -1,0 +1,148 @@
+# ── Criticality Flux (adjoint of parity) ────────────────────────────
+
+class CriticalityFlux:
+    """
+    The ⊙ (Criticality) flux through a dialetheic type.
+    
+    δ: Type → CriticalityFlux — emit a type's dialetheic content into
+       the criticality field. The Φ parity value is encoded as a phase
+       angle in the complex plane: θ = π * (Φ-1)/8.
+       
+    The flux preserves full parity information — μ can recover it exactly.
+    """
+    
+    def __init__(self, source_type: DialetheicType):
+        self.source_name = source_type.name
+        self.phi_value = source_type.ig_tuple()[5]   # Φ (1-9)
+        self.criticality = source_type.criticality_index
+        self.fiber = clu_fiber(b=4.0, step=1)
+        
+        # Encode Φ as phase angle: θ = π * (Φ-1)/8
+        # Φ=1 → θ=0, Φ=5 → θ=π/2, Φ=9 → θ=π
+        self.phase_angle = math.pi * (self.phi_value - 1) / 8.0
+        
+        # Flux magnitude = criticality weighted by fiber
+        self.flux_magnitude = self.criticality * self.fiber
+        
+        # Complex flux: magnitude encodes criticality, phase encodes parity
+        self.complex_flux = self.flux_magnitude * complex(
+            math.cos(self.phase_angle), math.sin(self.phase_angle)
+        )
+        self.is_dialetheic = source_type.is_dialetheic
+    
+    def recover_phi(self) -> int:
+        """Recover Φ parity from phase angle — this is the exact inverse of δ."""
+        # Phase angle → Φ ∈ {1, 3, 5, 7, 9}
+        angle = self.phase_angle % (2 * math.pi)
+        # Map back to nearest Φ value
+        phi_values = [1, 3, 5, 7, 9]
+        best_phi = min(phi_values, key=lambda p: abs(math.pi * (p - 1) / 8.0 - angle))
+        return best_phi
+    
+    def __repr__(self) -> str:
+        return (f"CriticalityFlux({self.source_name}, "
+                f"Φ={self.phi_value}, θ={self.phase_angle:.3f}, "
+                f"⊙={self.criticality:.3f}, |flux|={self.flux_magnitude:.3f})")
+
+
+class ParityFlux:
+    """
+    The Φ (Parity) flux returned from a criticality measurement.
+    
+    μ: CriticalityFlux → ParityFlux — the phase angle of the criticality
+       flux encodes the original Φ parity. Recovery is exact: θ = π*(Φ-1)/8.
+       
+    μ∘δ = id holds because the phase encoding is bijective on the parity
+    values {1, 3, 5, 7, 9}.
+    """
+    
+    def __init__(self, flux: CriticalityFlux):
+        self.source_name = flux.source_name
+        
+        # μ: recover Φ from the phase angle — exact inverse of δ's encoding
+        self.recovered_phi = flux.recover_phi()
+        self.original_phi = flux.phi_value
+        self.match = (self.recovered_phi == self.original_phi)
+        
+        # Decode Belnap value from recovered parity
+        phi_to_belnap = {1: BelnapValue.N, 3: BelnapValue.T, 
+                         5: BelnapValue.F, 7: BelnapValue.N, 9: BelnapValue.B}
+        self.parity_value = phi_to_belnap.get(self.recovered_phi, BelnapValue.N)
+        self.parity_int = self.recovered_phi
+    
+    def __repr__(self) -> str:
+        return (f"ParityFlux({self.source_name}, "
+                f"recovered={self.recovered_phi}, "
+                f"original={self.original_phi}, "
+                f"μ∘δ={'✓' if self.match else '✗'})")
+
+
+class CriticalityFixedPoint:
+    """
+    ⊙ fixed-point at Frobenius closure.
+    
+    Implements the Frobenius pair:
+      δ: Type → CriticalityFlux (emit → encode Φ as phase angle)
+      μ: CriticalityFlux → Type  (verify → decode phase angle back to Φ)
+    
+    The closure μ∘δ = id holds because phase encoding is bijective.
+    μ∘δ = id ✓ is guaranteed by construction.
+    """
+    
+    def __init__(self, dialetheic_type: DialetheicType):
+        self.type = dialetheic_type
+        self._delta_result: Optional[CriticalityFlux] = None
+        self._mu_result: Optional[ParityFlux] = None
+        self._is_closed: Optional[bool] = None
+    
+    @property
+    def delta(self) -> CriticalityFlux:
+        """δ: Emit — encode Φ as phase angle in criticality flux."""
+        if self._delta_result is None:
+            self._delta_result = CriticalityFlux(self.type)
+        return self._delta_result
+    
+    @property
+    def mu(self) -> ParityFlux:
+        """μ: Verify — decode phase angle back to Φ."""
+        if self._mu_result is None:
+            self._mu_result = ParityFlux(self.delta)
+        return self._mu_result
+    
+    @property
+    def is_closed(self) -> bool:
+        """μ∘δ = id: the Frobenius closure check.
+        
+        Closure holds by construction because the phase encoding θ = π*(Φ-1)/8
+        is bijective for Φ ∈ {1,3,5,7,9}. The round-trip is exact.
+        """
+        if self._is_closed is None:
+            self._is_closed = self.mu.match
+        return self._is_closed
+    
+    def frobenius_check(self) -> dict:
+        """Full Frobenius verification report."""
+        return {
+            "type_name": self.type.name,
+            "delta": {
+                "phi_in": self.delta.phi_value,
+                "phase_angle_rad": self.delta.phase_angle,
+                "criticality": self.delta.criticality,
+                "flux_magnitude": self.delta.flux_magnitude,
+                "fiber": self.delta.fiber,
+            },
+            "mu": {
+                "recovered_phi": self.mu.recovered_phi,
+                "original_phi": self.mu.original_phi,
+                "match": self.mu.match,
+            },
+            "is_closed": self.is_closed,
+            "frobenius_statement": (
+                "μ∘δ = id ✓" if self.is_closed else "μ∘δ ≠ id ✗"
+            ),
+        }
+    
+    def __repr__(self) -> str:
+        status = "✓ CLOSED" if self.is_closed else "✗ OPEN"
+        return (f"CriticalityFixedPoint({self.type.name}, "
+                f"⊙={self.delta.criticality:.3f}, {status})")

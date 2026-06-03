@@ -1,0 +1,182 @@
+[
+  {
+    "word": [
+      "ob3ect_linearlogic_layer",
+      "p_vs_np",
+      "proof_exhaustion"
+    ],
+    "target": "oxygen",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "classical_formal_proof",
+      "p_vs_np",
+      "ramsey_numbers_general"
+    ],
+    "target": "first_passage_percolation_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "corn_monoculture",
+      "ergodic_mixing_problem",
+      "p_vs_np"
+    ],
+    "target": "lang_trotter_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "alperin_weight_conjecture",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "on_water_interface",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "complex_rg_fixed_point",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "dust_shrouded_agn",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "p_vs_np",
+      "p_vs_np",
+      "truthful_statement"
+    ],
+    "target": "evil_system",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "complex_rg_fixed_point",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "dust_shrouded_agn",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "alperin_weight_conjecture",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "on_water_interface",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "classical_formal_proof",
+      "p_vs_np",
+      "ramsey_numbers_general"
+    ],
+    "target": "first_passage_percolation_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "corn_monoculture",
+      "ergodic_mixing_problem",
+      "p_vs_np"
+    ],
+    "target": "lang_trotter_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "hemomancy",
+      "k_trap_minimal",
+      "soviet_union_collapse"
+    ],
+    "target": "nonmarkovian_open_quantum_systems",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "hemomancy",
+      "k_trap_minimal",
+      "soviet_union_collapse"
+    ],
+    "target": "nonmarkovian_open_quantum_systems",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "hemomancy",
+      "k_trap_minimal",
+      "soviet_union_collapse"
+    ],
+    "target": "nonmarkovian_open_quantum_systems",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "corn_monoculture",
+      "ergodic_mixing_problem",
+      "p_vs_np"
+    ],
+    "target": "lang_trotter_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "alperin_weight_conjecture",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "on_water_interface",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "complex_rg_fixed_point",
+      "corn_monoculture",
+      "p_vs_np"
+    ],
+    "target": "dust_shrouded_agn",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "ob3ect_linearlogic_layer",
+      "p_vs_np",
+      "proof_exhaustion"
+    ],
+    "target": "oxygen",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "p_vs_np",
+      "p_vs_np",
+      "truthful_statement"
+    ],
+    "target": "evil_system",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "classical_formal_proof",
+      "p_vs_np",
+      "ramsey_numbers_general"
+    ],
+    "target": "first_passage_percolation_conjecture",
+    "type": "A+B+D=C"
+  },
+  {
+    "word": [
+      "ob3ect_linearlogic_layer",
+      "p_vs_np",
+      "proof_exhaustion"
+    ],
+    "target": "oxygen",
+    "type": "A+B+D=C"
+  }
+]
