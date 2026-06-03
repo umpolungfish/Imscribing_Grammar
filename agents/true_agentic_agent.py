@@ -187,7 +187,7 @@ class _LocalChatCompletions:
         # "local:..." → literal path passed after "local:"
         if model == "grammaformer":
             gf_default = str(Path(__file__).resolve().parent.parent
-                             / "models" / "grammaformer")
+                             / "models" / "grammaformer_trained")
             gf_path = os.environ.get("GRAMMAFORMER_MODEL_PATH", gf_default)
             model_path = gf_path
         elif model == "local":
@@ -275,8 +275,9 @@ class _LocalChatCompletions:
                     pad_token_id=tok.eos_token_id,
                     eos_token_id=tok.eos_token_id,
                 )
+                _gen_kwargs.update(top_p=0.8, top_k=20)
                 if not _is_gf:
-                    _gen_kwargs.update(top_p=0.8, top_k=20, min_p=0.0)
+                    _gen_kwargs["min_p"] = 0.0
                 outputs = mdl.generate(**inputs, **_gen_kwargs)
             except RuntimeError as _cuda_err:
                 if "cuda" in str(_cuda_err).lower() or "device" in str(_cuda_err).lower():
@@ -470,7 +471,7 @@ def _resolve_model_and_endpoint(model_str: str) -> Tuple[str, str, str]:
                 gf_path = os.environ.get(
                     "GRAMMAFORMER_MODEL_PATH",
                     str(Path(__file__).resolve().parent.parent
-                        / "models" / "grammaformer"))
+                        / "models" / "grammaformer_trained"))
                 return "grammaformer", "", ""
             return model_id, base, key
         if prefix_lower in REMOTE_API_PROVIDERS:
@@ -1373,8 +1374,37 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
     # Converged Tetractys — output is "REPORT\n\nCOMMIT RESULT:\n{json}"
     if "COMMIT RESULT:" in emit_output:
         commit_part = emit_output.split("COMMIT RESULT:", 1)[-1].strip()
-        return _imscribe_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
-    return _imscribe_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
+    else:
+        commit_part = emit_output
+
+    # Status check via _imscribe_verify
+    base_msg, base_ok = _imscribe_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
+    if not base_ok:
+        return base_msg, base_ok
+
+    # Real Frobenius readback: confirm the entry is present in the catalog file on disk.
+    # _save_to_file() silently swallows OSError, so status="ok" in memory does not
+    # guarantee the file was written. mu(delta(query)) = query requires disk confirmation.
+    name = emit_input.get("name", "")
+    if not name:
+        try:
+            name = json.loads(commit_part).get("name", "")
+        except Exception:
+            pass
+    if name:
+        try:
+            project_root = str(Path(__file__).resolve().parent.parent)
+            if project_root not in sys.path:
+                sys.path.insert(0, project_root)
+            from IG_inquiry import CATALOG_PATH
+            catalog_entries = json.loads(Path(CATALOG_PATH).read_text(encoding="utf-8"))
+            if any(e.get("name") == name for e in catalog_entries):
+                return (f"Frobenius closed — '{name}' confirmed in catalog on disk", True)
+            return (f"Frobenius OPEN — '{name}' NOT found in catalog on disk after encode()", False)
+        except Exception as exc:
+            return (f"catalog readback error: {exc} — Frobenius OPEN", False)
+
+    return base_msg, base_ok
 
 def _ouroborics_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")

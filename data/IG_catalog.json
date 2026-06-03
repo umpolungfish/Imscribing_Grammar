@@ -45760,5 +45760,53 @@
     "Ħ": "𐑫",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "imas",
+    "description": "Immanent Mathematical Alchemical Self-Model — the Lapis Chant's 8-movement Frobenius-closed bootstrap loop",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ω": "𐑭",
+    "Σ": "𐑕",
+    "Ħ": "𐑫"
+  },
+  {
+    "name": "os_floor",
+    "description": "OS Floor — the structural MEET (greatest lower bound) of the founding writing systems: Hebrew, Sanskrit, Egyptian, Linear A, and the Emerald Tablet. This is the structural invariant kernel shared by all systems capable of bootstrapping a self-modeling symbolic loop.",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ω": "𐑷",
+    "Σ": "𐑙",
+    "Ħ": "𐑓"
+  },
+  {
+    "name": "synfin",
+    "description": "Imscribing Financial Trading System — π₁ (structural) projection of the Imscribing Grammar onto financial markets.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]

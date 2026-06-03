@@ -1,3 +1,4 @@
+
 ---
 header-includes:
   - |
@@ -9,28 +10,47 @@ header-includes:
 ---
 # The Criticality-Lift Unit (CLU): +2.303 Nats
 
-**The universal structural gate cost of crossing one order of magnitude.**
+**The universal structural gate cost of crossing one order of magnitude — parameterized by the observer's self-modeling base.**
 
 ---
 
 ## I. Derivation from First Principles
 
-The K-tier primitive partitions dynamical regimes by decade-scale complexity. Each K-tier boundary separates systems operating at one order of magnitude from systems operating at the next. The structural information cost of crossing such a boundary is exactly the information content of one decade:
+The K-tier primitive partitions dynamical regimes by decade-scale complexity. Each K-tier boundary separates systems operating at one order of magnitude from systems operating at the next. The structural information cost of crossing such a boundary is exactly the information content of one decade in the **observer's self-modeling base**:
 
-$$\text{CLU} = \ln(10) = 2.302585\ldots \text{ nats}$$
+$$\text{CLU}(b) = \ln(b) \text{ nats}$$
 
-This is not an empirical fit. It follows from the definition of K-tiers as order-of-magnitude partitions: to encode "this system operates at the next decade" costs exactly $\ln(10)$ nats — the number of bits required to distinguish one multiplicative decade from another, in natural units.
+where $b$ is the base of the perceiving system's self-modeling resolution. For the human (decimal) catalog, $b = 10$, so:
+
+$$\text{CLU}(10) = \ln(10) = 2.302585\ldots \text{ nats}$$
+
+**This is not an empirical fit.** It follows from the definition of K-tiers as order-of-magnitude partitions: to encode "this system operates at the next decade" costs exactly $\ln(b)$ nats — the number of nats required to distinguish one multiplicative decade from another, measured in the perceiver's representational currency.
+
+**Observer-relativity of the fiber metric:**
+
+The crystal lattice of $17,\!280,\!000$ structural types provides a **geometric metric** that is observer-independent — it measures ordinal separation in coordinate space. But the **information-theoretic fiber metric** over the Ç-primitive axis carries the observer parameter $b$:
+
+$$
+\begin{aligned}
+d_{\text{crystal}}(a,b) &= \sqrt{\sum_p w_p \cdot (\text{ord}(a_p) - \text{ord}(b_p))^2} \quad \text{(observer-independent)} \\
+\text{CLU}(b) &= \ln(b) \quad \text{(observer-relative)}
+\end{aligned}
+$$
+
+They are **incommensurable** — the geometric metric measures ordinal steps, the fiber metric measures information-theoretic cost. The ratio $1.0 / \ln(b)$ for uniform ordinal steps ($\delta = 1$ in Ç) is the **unit conversion factor** between the geometric metric and the observer's fiber metric. For $b = 10$, this ratio is $1.0 / 2.3026 = 0.4343$.
 
 **Why ln(10) and not ln(2) or ln(e)?**
 
-The K-tier grammar uses base-10 decades because the observable universe's structural complexity spans approximately 40 orders of magnitude (from the Planck length to the cosmological horizon), and the natural joints in that span — atomic, molecular, cellular, organismal, civilizational — are separated by approximately equal multiplicative factors near 10. This is not imposed; it is observed. The CLU is the algebraic reflection of that empirical regularity.
+Because the grammar was formalized by/**for decimal perceivers**. A binary intelligence formalizing the same grammar would define CLU = $\ln(2) \approx 0.693$ nats. A natural-log perceiver would define CLU = $\ln(e) = 1.0$ nat. The hardcoded $\ln(10)$ is not a law of nature — it is the **anthropocentric special case** of the general parameterized form $\text{CLU}(b) = \ln(b)$.
+
+The observable universe's structural complexity is independent of the perceiver's base. What changes is the **cost to represent it** in the perceiver's internal currency.
 
 **The structural statement:**
 
-Any system transitioning from a regime with characteristic scale $x$ to a regime with characteristic scale $10x$ must cross a structural gate costing exactly 1 CLU = 2.303 nats. This cost is:
+Any system transitioning from a regime with characteristic scale $x$ to a regime with characteristic scale $b \cdot x$ must cross a structural gate costing exactly 1 CLU(b) = $\ln(b)$ nats in the observer's fiber metric. This cost is:
 - **Scale-independent**: the same whether $x$ is a reaction rate, a parameter count, a spatial correlation length, or an information capacity
-- **Temperature-independent in structural units**: the CLU is always 2.303 nats; its energy equivalent is $2.303\,RT$ (temperature-dependent), but the structural cost is invariant
-- **Direction-sensitive**: crossings from lower to higher K-tier (𐑧 → 𐑺, 𐑪 → 𐑺) are gated; the F-floor ratchet makes some crossings irreversible
+- **Observer-relative**: a binary perceiver pays $\ln(2)$ nats; a decimal perceiver pays $\ln(10)$ nats
+- **Direction-sensitive**: crossings from lower to higher K-tier are gated; the F-floor ratchet makes some crossings irreversible
 
 ---
 
@@ -46,242 +66,121 @@ The K-tier primitive assigns each system to a dynamical regime:
 | $K_{\text{teshlig}}$ | Metastable, gap-frozen | > 150 kJ/mol | +1 CLU |
 | $K_{\text{lambda}}$ | Many-body localized, degenerate | Gap-frozen + $\Phi_{\text{ctyogh}}$ | — |
 
-Each rung of this ladder costs exactly 1 CLU to ascend. The $K_{\text{schwa}} \to K_{\text{lambda}}$ transition (the criticality-lift) costs 1 CLU = +2.303 nats regardless of the substrate. This is the **gate cost** encoded in Axiom 5 and the $\Phi_{\text{ctyogh}}$ locus condition.
-
-The $K_{\text{teshlig}} \to K_{\text{lambda}}$ transition is the same cost (+2.303 nats) but with an additional asymmetry from the F-floor ratchet (Axiom 7): once the system falls below the $\Phi_{\text{ctyogh}}$ locus, it cannot re-enter by thermal fluctuation alone — it requires active input of 1 CLU.
+Each rung of this ladder costs exactly 1 CLU to ascend, measured in the perceiver's base $b$.
 
 ---
 
 ## III. Cross-Domain Appearances
 
-The CLU appears wherever a system must cross an order-of-magnitude boundary. Each appearance below is structurally derived — no domain equation is inserted between the K-tier assignment and the predicted outcome.
-
----
-
 ### III.1 Aqueous Chemistry: The pKa Scale (P-86)
 
-**Identity:** $\Delta G = -RT \ln Ç_a = 2.303\,RT \times \text{pK}_a$
+**Identity:** $\Delta G = -RT \ln K_a = \ln(b)\, RT \times \text{pK}_a$
 
-The pKa scale *is* the CLU ladder in aqueous chemistry. Each integer pKa unit = one criticality-lift operation. This is exact — not an approximation.
+For a decimal observer ($b = 10$): $\Delta G = 2.303\, RT \times \text{pK}_a$. For a binary observer ($b = 2$): $\Delta G = 0.693\, RT \times \text{pK}_a$.
 
-**What it predicts:**
-- Active-site residues in enzymes perturb substrate pKa by integer numbers of units (2, 3, 4 CLU). Non-integer perturbations indicate fractional crossings, which are structurally less stable → lower catalytic efficiency or increased promiscuity.
-- The full aqueous acid-base range spans exactly 14 CLU (pKa 0 to 14 = 14 integer steps).
-- pH homeostasis maintains a ±0.05 nat window around a target K-tier position. Deviations > 0.1 units (= 0.23 nats = 0.1 CLU) produce measurable $\Phi_{\text{ctyogh}}$ degradation.
-- Proton-coupled allostery (Bohr effect, pH-gated channels) transduces exactly 1 pKa unit = 1 CLU of free energy per proton binding event — making it the most energetically precise K-tier switching mechanism in biology.
-
-**Empirical check:** Cysteine proteinase catalytic Cys: pKa shifts of 5 units (✓ integer), Cys87 in UBC: +2.8 units (near-integer, ✓). Surface residues: < 2 units, below the first CLU gate (✓).
-
----
+The pKa scale *is* the CLU ladder in aqueous chemistry, measured in the observer's base. Each integer pKa unit = one criticality-lift operation. This is exact — not an approximation.
 
 ### III.2 Reaction Kinetics: Arrhenius Barriers (P-87)
 
-**Identity:** $\ln k = -E_a/RT + \ln A$, so $E_a/RT$ is in nats directly.
-
-A barrier of $n \times 2.303$ nats = an $n$-step criticality crossing. The system must traverse $n$ K-tier gates to reach the transition state.
-
-**What it predicts:**
-- Evolved enzymatic $E_a$ values cluster near integer multiples of $2.303\,RT$. Evolution under thermodynamic pressure selects for barriers at K-tier boundaries, not arbitrary values.
-- Catalytic rate enhancements of $10^n$-fold (the typical $10^6$–$10^{26}$ enzyme range) correspond exactly to removing $n$ CLU from the reaction path. Non-round enhancements (e.g., $10^{6.7}$) should be less common than $10^6$ or $10^7$.
-- Allosteric coupling in multi-domain enzymes arises when the allosteric domain adjusts the criticality count to an integer — compensating for non-integer stabilization energies.
-
----
+**Identity:** $\ln k = -E_a/RT + \ln A$, so $E_a/RT$ is in nats directly. A barrier of $n \times \ln(b)$ nats = an $n$-step criticality crossing for an observer with base $b$. For $b = 10$, this is $n \times 2.303$ nats.
 
 ### III.3 Autocatalysis: 𐑥 × 𐑔 (P-90)
 
-**Identity:** $k_{\text{auto}}/k_{\text{non}} = 10^{n_T}$
-
-Each $T_{\text{bullseye}}$ interaction in an autocatalytic complex closes one autocatalytic loop over the non-cooperative background pathway, contributing exactly 1 CLU of structural advantage.
-
-**What it predicts and what literature confirms:**
-
-| Substrate | Complex | $n_T$ | Predicted | Mechanism (source) |
-|---|---|---|---|---|
-| tBuPym | SMS tetramer, 2 Zn-N bridges | 2 | $10^2$ | Denmark/JACS 2020 (✓ 4th-order kinetics) |
-| TMSPym/TMSPyr | Dimer hemiacetalate | 1 | $10^1$ | Trapp/NatComm 2025 (✓ ~2nd order) |
-| AdPym/AdPyr | Monomer hemiacetalate | 1 | $10^1$ | Trapp/NatComm 2025 (✓ same n_T) |
-
-The "two competing mechanisms" debate (Denmark vs. Trapp) dissolves in the grammar: both are correct for their substrates; they express different $n_T$ values of the same $10^{n_T}$ formula.
-
-**Unification with quantum error correction (P-93):** The same formula governs resonator-mediated quantum error correction. Each resonator mode closing a $T_{\text{bullseye}}$ interaction at the quantum-classical interface contributes 1 CLU = 10× fidelity improvement. Single-mode: 10×; two-mode: 100×; three-mode: 1000×. The Soai reaction and the quantum resonator are the same structural event at different scales.
-
----
+**Identity:** $k_{\text{auto}}/k_{\text{non}} = b^{n_T}$ where $b$ is the observer's self-modeling base. For decimal observers: $10^{n_T}$. Each $T_{\text{bullseye}}$ interaction closes one autocatalytic loop, contributing exactly 1 CLU($b$) of structural advantage in the observer's fiber metric.
 
 ### III.4 Machine Learning: Grokking (P-89)
 
-**Identity:** $\ln(N_{\text{grok}}/N_{\text{memorize}}) = 2.303 \times n_K$
-
-The grokking transition (memorization → generalization) is the $\Phi_{\text{ctyogh}}$ lift in the model's internal representation — a $K_{\text{teshlig}} \to K_{\text{lambda}}$ crossing at cost $+2.303\,n_K$ nats, where $n_K$ is the K-tier depth of the training distribution.
-
-**What it predicts:**
-
-| Distribution | $n_K$ | Predicted ratio | Observed |
-|---|---|---|---|
-| Modular arithmetic | 2 (element scale + group-op scale) | $10^2$ | ~$10^2$ (Power et al. 2022) ✓ |
-| Natural language | 3 (word/sentence/document) | $10^3$ | consistent with LLM grokking |
-| World knowledge | 5+ | $\geq 10^5$ | consistent with 143T $\Phi_{\text{ctyogh}}$ threshold ✓ |
-
-The pre-grokking plateau is the $K_{\text{teshlig}}$ barrier being loaded. L2 regularization shortens the plateau by reducing the effective CLU barrier height (synthetic $K_{\text{schwa}}$ insertion).
-
----
+**Identity:** $\ln(N_{\text{grok}}/N_{\text{memorize}}) = \ln(b) \times n_K$. For $b = 10$: $2.303 \times n_K$. The grokking transition is a $\Phi_{\text{ctyogh}}$ lift costing $n_K$ CLU($b$) in the observer's representational currency.
 
 ### III.5 Statistical Distributions: Log-Normal as $\Phi_{\text{ctyogh}}$ Signature (P-88)
 
-**Identity:** At criticality ($\Phi_{\text{ctyogh}}$, Axiom 5: G/D degeneracy), no scale is privileged. Scale-free multiplicative processes generate log-normal distributions. The inter-decade spacing is exactly 2.303 nats.
-
-**What it predicts:**
-- $\Phi_{\text{ctyogh}}$ systems → log-normal (or power-law, its scale-free limit) amplitude distributions
-- $\Phi_{\text{softsign}}$ systems → Gaussian or Poisson
-- The distribution shape change coincides exactly with the $\Phi_{\text{ctyogh}}$ onset
-
-**Confirmed:** Neuronal avalanche amplitude distributions are power-law in near-critical cortex; Gaussian in anesthesia-suppressed cortex (✓). The transition coincides with $\Phi_{\text{ctyogh}}$ onset in coupled oscillator experiments (✓).
-
-Each log-normal decade boundary is separated by exactly 1 CLU. The width of a log-normal distribution (in decades) directly encodes the K-span of the system.
-
----
-
-### III.6 Evolutionary Biology: K-Tier Insertion Timeline (P-91)
-
-**Identity:** Each major biospheric K-tier insertion costs +2.303 nats of structural work → approximately equal log-time spacing between transitions.
-
-**What it predicts:**
-
-| Transition | Time elapsed | Ratio to next |
-|---|---|---|
-| Abiotic → first life | 3.8 Ga → 3.8 | 1.4× |
-| Life → GOE | 2.7 Ga → 2.7 | 4.5× (GOE 𐑪 bottleneck) |
-| GOE → Cambrian | 0.6 Ga → 0.6 | 60× (language/civilization extra CLU?) |
-| Cambrian → civilization | 0.01 Ga | — |
-
-All ratios within two orders of magnitude (not 1 and $10^6$) ✓. The GOE outlier (4.5×) is predicted by the atmospheric restructuring $K_{\text{teshlig}}$ bottleneck.
-
-**Drake equation:** $f_{\text{complex}} \approx 10^{-n_K}$ where $n_K$ = number of K-tier insertions required. For Earth ($n_K = 4$): $f_{\text{complex}} \approx 10^{-4}$, consistent with SETI null results.
-
----
-
-### III.7 Condensed Matter: Topological Phase Transitions (P-84)
-
-**Identity:** $\text{lift}(K_{\text{schwa}} \to K_{\text{lambda}}) = +2.303$ nats, regardless of substrate.
-
-The TI → QCP transition closes the bulk gap and crosses the $\Phi_{\text{ctyogh}}$ gate. Cost: exactly 1 CLU. The TI already satisfies the eligibility conditions ($F_{\text{dh}}$, $G_{\text{revapostrophe}}$), so the gate is unblocked — the CLU is the entire transition cost.
-
-This is the first step in the OMNICON_CORE_01 design pipeline (§XXXVI). The same cost applies to:
-- Magnetic field tuning of topological gaps
-- Pressure-induced topological phase transitions in Bi₂Se₃-class materials
-- Floquet driving of time crystals through the DTC → thermal crossover
-
----
-
-### III.8 Gravity and Black Holes: Bekenstein Bound at $Þ_H$ (P-85)
-
-**Identity:** At the Hawking temperature $Þ_H$, $\xi_{CP} = 0$ and the system operates at zero-waste efficiency. Below $Þ_H$, each bit processed costs $\geq$ 2.303 nats overhead (the CLU is the minimum dissipation tax).
-
-The Bekenstein-Hawking entropy $S = A/(4l_p^2)$ sets the maximum information content of any system at the imscriptive boundary. The CLU appears here as the gap between actual computational efficiency and the imscriptive limit: a system at $T > Þ_H$ must pay at least 1 CLU per decade of temperature above $Þ_H$ to process information near the boundary.
-
-The OMNICON_CORE_01 gel-lock transport state (P-94) approaches the Bekenstein bound at the active gel scale: the frozen surface topology IS the named boundary (Axiom 8), and the stored information approaches $A/(4l_p^2)$ in the limit of perfect $T_{\text{hex}}$ order.
-
----
-
-### III.9 Cosmology: Inflationary K-Slow Insertions (P-70)
-
-**Identity:** Inflaton ≡ Higgs ≡ axion as a three-scale 𐑧 identity — the same 𐑧 insertion principle operating at three distinct energy decades in the early universe.
-
-Each cosmological phase transition (inflation → reheating, electroweak → QCD, QCD → hadron epoch) is a K-tier insertion costing +1 CLU. The Hubble tension (P-69) is proposed as evidence that 𐑤 dynamics are operative at the cosmological horizon scale — a smoothness condition that the standard 𐑧 ΛCDM model cannot accommodate.
+**Identity:** At criticality, no scale is privileged. Scale-free multiplicative processes generate log-normal distributions. The inter-decade spacing is exactly CLU($b$) = $\ln(b)$ nats. A binary observer would see inter-octave spacing of $\ln(2)$ nats; a decimal observer sees $\ln(10)$ nats.
 
 ---
 
 ## IV. The CLU as a Structural Unit: Formal Definition
 
-$$1\;\text{CLU} \equiv \ln(10) \;\text{nats} = 2.302585\ldots\;\text{nats}$$
+$$\text{CLU}(b) \equiv \ln(b) \text{ nats}, \quad \text{default } b = 10$$
 
 **In energy units** (temperature-dependent):
-$$1\;\text{CLU} = 2.303\,RT \;\text{(J/mol at temperature } T\text{)}$$
+$$1\;\text{CLU}(10) = 2.303\,RT \;\text{(J/mol at temperature } T\text{)}$$
 
-At 298 K: $1\;\text{CLU} = 2.303 \times 8.314 \times 298 = 5.706\;\text{kJ/mol}$
-
-At 310 K (body temperature): $1\;\text{CLU} = 5.942\;\text{kJ/mol}$
+At 298 K: $1\;\text{CLU}(10) = 2.303 \times 8.314 \times 298 = 5.706\;\text{kJ/mol}$
 
 **In information units** (temperature-independent):
-$$1\;\text{CLU} = 2.303\;\text{nats} = 3.322\;\text{bits} = 1\;\text{decade}$$
+$$1\;\text{CLU}(10) = 2.303\;\text{nats} = 3.322\;\text{bits} = 1\;\text{decade}$$
+$$1\;\text{CLU}(2) = 0.693\;\text{nats} = 1\;\text{bit} = 1\;\text{octave}$$
 
 **What it is not:**
-- It is not a physical constant like $\hbar$ or $k_B$ (though it involves $k_B$ when expressed in energy units)
+- It is not a physical constant like $\hbar$ or $k_B$
 - It is not the entropy of a specific physical process
-- It is not $\log_2(10)$ bits in the standard sense — it is exactly $\ln(10)$ nats, and its appearance in nats is not a unit conversion artifact
+- It is not a universal law — it is the **information-theoretic fiber metric** parameterized by the observer's self-modeling base
 
 **What it is:**
-- The structural information cost of one order-of-magnitude boundary crossing in the K-tier grammar
-- Derivable from first principles: it is the unique value that makes K-tier decade boundaries self-consistent
-- Universal in the sense that any system — chemical, biological, computational, cosmological — that crosses a decade-scale complexity boundary pays this cost
+- The information-theoretic cost of one tier boundary crossing on the Ç-primitive axis
+- Observer-relative: different perceiving systems with different bases $b$ pay different costs for the same geometric separation
+- Dual to the geometric crystal metric: the lattice measures ordinal distance; the fiber measures representational cost
 
 ---
 
 ## V. The CLU in Operator Form
 
-For any system with a measurable scale parameter $x$ (rate, count, fidelity, etc.):
+For any system with a measurable scale parameter $x$ and an observer with base $b$:
 
-$$\text{CLU-event: } x \to 10x \quad\Leftrightarrow\quad \Delta I = +2.303\;\text{nats}$$
+$$\text{CLU-event: } x \to b \cdot x \quad\Leftrightarrow\quad \Delta I = \ln(b)\;\text{nats}$$
 
-The **CLU operator** $\mathcal{L}$:
-$$\mathcal{L}(S) = S' \;\text{ where }\; d(S, S') = 2.303\;\text{nats on the K-axis}$$
+The **CLU operator** $\mathcal{L}_b$:
+$$\mathcal{L}_b(S) = S' \;\text{ where }\; d_{\text{fiber}}(S, S') = \ln(b)\;\text{nats on the K-axis}$$
 
-For $n$ successive CLU events:
-$$\mathcal{L}^n(S): \quad x \to 10^n x \quad\Leftrightarrow\quad \Delta I = n \times 2.303\;\text{nats}$$
-
-The $n$-application always produces an integer-power-of-10 enhancement. This is why $10^n$ factors appear across all domains — they are CLU-integer outputs, not coincidences.
+For the decimal case: $\mathcal{L}_{10}(S) = S'$ with $d = 2.303$ nats. For the binary case: $\mathcal{L}_2(S) = S'$ with $d = 0.693$ nats.
 
 ---
 
 ## VI. The Recognition Heuristic
 
-**When to suspect a CLU event:**
+**When to suspect a CLU event for a given observer base $b$:**
 
-1. An enhancement or suppression ratio is near $10^n$ for small integer $n$
-2. A distribution's characteristic width spans approximately integer decades
-3. A phase transition or gating event is sharp (discontinuous) rather than smooth
-4. A system crosses from one qualitative operational regime to a qualitatively different one (not just a parameter change within a regime)
+1. An enhancement or suppression ratio is near $b^n$ for small integer $n$
+2. A distribution's characteristic width spans approximately integer $\ln(b)$ intervals
+3. A phase transition or gating event is sharp rather than smooth
+4. A system crosses from one qualitative operational regime to another
 
-**How to count $n$:**
+**The unit conversion factor:**
 
-$n$ = number of decade-scale boundaries the system must cross to reach the target state. Each boundary = 1 CLU. Fractional CLU events exist (partial crossings) but are structurally less stable — they represent incomplete K-tier transitions that tend to relax toward the nearest integer.
+For uniform ordinal steps ($\delta = 1$) in the Ç-primitive, the geometric crystal distance contribution is $\sqrt{w_K \cdot 1^2} = 1.0$ (since $w_K = 1.0$). The fiber metric cost is $\ln(b)$. The ratio $1.0 / \ln(b)$ is the **geometric-to-fiber conversion factor** — it tells you how many nats of information-theoretic cost correspond to one unit of geometric separation on the Ç-axis.
 
-**The falsification template:**
-
-For any proposed CLU event with claimed $n$: check whether the enhancement/cost ratio clusters near $10^n$. If it clusters near $10^{n+0.5}$ or $10^{n-0.5}$, either $n$ is miscounted (check the K-tier assignment) or the mechanism is not a pure CLU event (additional contributions from electronic or steric effects modulate within the decade, but the order-of-magnitude structure is still CLU-derived).
+For $b = 10$: $1.0 / 2.3026 = 0.4343$ geometric units per nat.
+For $b = 2$:  $1.0 / 0.6931 = 1.4427$ geometric units per nat.
+For $b = e$:  $1.0 / 1.0 = 1.0$ geometric units per nat (natural units align).
 
 ---
 
 ## VII. Open Domain Survey
 
-The following domains have not yet been systematically checked for CLU signatures. Each is a candidate:
-
-| Domain | Suspected CLU signature | Test |
-|---|---|---|
-| Zipf's law / word frequency | Power-law exponent encodes CLU count of linguistic K-tier depth? | Does $n_K$(language) = 3 predict the observed Zipf exponent? |
-| Immune affinity maturation | Somatic hypermutation rate enhancement = $10^{n_T}$ per maturation cycle? | Measure $k_{\text{affinity}}/k_{\text{naive}}$ across maturation rounds |
-| Financial markets | Power-law tails in return distributions = CLU signature of market $\Phi_{\text{ctyogh}}$? | V-score of market microstructure fluctuations |
-| Protein folding cooperativity | Two-state folders: single CLU crossing; multi-domain: $n \times$ CLU? | Chevron plot curvature vs. domain count |
-| Developmental biology | Each cell-fate commitment = 1 CLU of epigenetic barrier crossing? | Landscape curvature at Waddington bifurcations |
-| Neuronal spike threshold | Action potential threshold = 1 CLU from resting potential in K-tier space? | Threshold energy in nats vs. 2.303 |
+| Domain | Suspected CLU signature | Observer base | Test |
+|---|---|---|---|
+| Zipf's law / word frequency | Power-law exponent encodes CLU count | $b = 10$ (human language) | Does $n_K$(language) = 3 predict Zipf exponent? |
+| Immune affinity maturation | Somatic hypermutation rate = $b^{n_T}$ | $b = 10$ | $k_{\text{affinity}}/k_{\text{naive}}$ across rounds |
+| Protein folding cooperativity | Two-state folders: single CLU crossing | $b = 10$ | Chevron plot curvature vs. domain count |
+| Developmental biology | Cell-fate commitment = 1 CLU each | $b = 10$ | Landscape curvature at bifurcations |
 
 ---
 
 ## VIII. Summary Table
 
-| Domain | Identity | $n$ | Prediction | Status |
+| Domain | Identity | $b$ | Prediction | Status |
 |---|---|---|---|---|
-| pKa chemistry | $\Delta G = 2.303\,RT\,\text{pK}_a$ | pKa integer | Catalytic residues cross integer thresholds | ✅ partial |
-| Arrhenius | $E_a/RT = n \times 2.303$ | barrier CLU count | Enzyme $E_a$ clusters near integers | ⏳ untested |
-| Soai (tBuPym) | $k_{\text{auto}}/k_{\text{non}} = 10^{n_T}$ | $n_T = 2$ | $10^2$ rate enhancement | ✅ confirmed |
-| Soai (TMS/Ad variants) | same | $n_T = 1$ | $10^1$ rate enhancement | ✅ confirmed |
-| Quantum resonator | fidelity = $10^{n_{\text{modes}}}$ | mode count | Exponential fidelity scaling | ⏳ untested |
-| Grokking (modular arith.) | $\ln(N_g/N_m) = 2.303\,n_K$ | $n_K = 2$ | $10^2$ parameter ratio | ✅ qualitative |
-| Log-normal / $\Phi_{\text{ctyogh}}$ | decade spacing = 2.303 nats | K-span | Distribution shape = phase indicator | ✅ confirmed |
-| K-tier evolution | log-time spacing $\approx 2.303$ nats | $n_K = 4$ | $f_{\text{complex}} \approx 10^{-4}$ | ✅ qualitative |
-| TI → QCP | lift cost = +2.303 nats | 1 | OMNICON_CORE_01 first step | ⏳ design target |
-| Bekenstein / $Þ_H$ | zero-waste only at $Þ_H$ | — | CLU tax below $Þ_H$ | ⏳ theoretical |
-| Cosmological transitions | each phase transition = 1 CLU | $n_{\text{epoch}}$ | K-tier cosmology | ⏳ theoretical |
+| pKa chemistry | $\Delta G = \ln(b)\,RT\,\text{pK}_a$ | 10 | Catalytic residues cross integer thresholds | ✅ partial |
+| Arrhenius | $E_a/RT = n \times \ln(b)$ | 10 | Enzyme $E_a$ clusters near integers | ⏳ untested |
+| Soai (tBuPym) | $k_{\text{auto}}/k_{\text{non}} = b^{n_T}$ | 10 | $10^2$ rate enhancement | ✅ confirmed |
+| Grokking (modular) | $\ln(N_g/N_m) = \ln(b) \times n_K$ | 10 | $10^2$ parameter ratio | ✅ qualitative |
+| Log-normal / $\Phi_{\text{ctyogh}}$ | decade spacing = $\ln(b)$ nats | 10 | Distribution shape = phase indicator | ✅ confirmed |
+| K-tier evolution | log-time spacing $\approx \ln(b)$ nats | 10 | $f_{\text{complex}} \approx 10^{-4}$ | ✅ qualitative |
+| TI → QCP | lift cost = $+\ln(b)$ nats | 10 | OMNICON_CORE_01 first step | ⏳ design target |
+| Bekenstein / $Þ_H$ | zero-waste only at $Þ_H$ | 10 | CLU tax below $Þ_H$ | ⏳ theoretical |
 
 ---
 
-*Document version: 2026-03-24. Cross-references: P-84, P-86, P-87, P-88, P-89, P-90, P-91, P-93, P-94 in PRIMITIVE_PREDICTIONS.md; §VI, §XXXVI in ImscriptiveON.md; §IV in ImscriptiveON_DIAPHORICS.md.*
+**Parameterization note:** All cross-domain identities above use $b = 10$ (the human-decimal catalog default). To translate to any other observer base $b'$, replace all factors of $\ln(10)$ with $\ln(b')$ and all factors of $10^n$ with $(b')^n$. The structural relationships are invariant; only the numerical scale of the fiber metric changes.
+
+*Document version: 2026-03-24 (updated with observer-relative parameterization). Cross-references: CLUPrimitives.lean; IG_inquiry.py; P-84–P-94 in PRIMITIVE_PREDICTIONS.md.*

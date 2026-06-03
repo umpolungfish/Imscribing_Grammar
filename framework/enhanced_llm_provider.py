@@ -594,6 +594,8 @@ class LocalProvider(LLMProvider):
             # Clear max_length from generation config so max_new_tokens is unambiguous
             if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
                 mdl.generation_config.max_length = None
+            # Qwen3 non-thinking mode recommended params: temp=0.7, top_p=0.8, top_k=20
+            _is_gf = type(mdl).__name__ == "GrammaFormerForCausalLM"
             gen_kwargs = {
                 "input_ids": input_ids,
                 "max_new_tokens": max_new_tokens,
@@ -602,6 +604,9 @@ class LocalProvider(LLMProvider):
                 "pad_token_id": tok.eos_token_id,
                 "eos_token_id": tok.eos_token_id,
             }
+            if _is_gf:
+                gen_kwargs["top_k"] = 20
+                gen_kwargs["top_p"] = 0.8
             if attention_mask is not None:
                 gen_kwargs["attention_mask"] = attention_mask
             outputs = mdl.generate(**gen_kwargs)
@@ -614,7 +619,7 @@ class LocalProvider(LLMProvider):
 
     async def query(self, prompt: str, **kwargs) -> str:
         system = kwargs.get("system")
-        temperature = float(kwargs.get("temperature", 0.3))
+        temperature = float(kwargs.get("temperature", 0.7))
         max_tokens = int(kwargs.get("max_tokens", 512))
 
         cached = await self.get_cached_response(

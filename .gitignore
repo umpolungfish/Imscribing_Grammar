@@ -65,3 +65,9 @@ build/
 *.swp
 space_search/data/nanograv_15yr.tar.gz
 index/
+
+# ── Cloned reference SDKs (not submodules) ────────────────────────────────────
+claude-agent-sdk-python/
+client-python/
+cohere-python/
+generative-ai-python/

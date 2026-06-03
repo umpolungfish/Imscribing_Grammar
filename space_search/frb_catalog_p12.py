@@ -47,9 +47,20 @@ import numpy as np
 from pathlib import Path
 from scipy import stats
 
-LN10      = np.log(10)           # 2.302585...
+def clu(base: float = 10.0) -> float:
+    """CLU(b) = ln(b) — observer-relative information-theoretic fiber metric on the C-axis.
+    Default b=10 for human (decimal) perception."""
+    return np.log(base)
+
+def p12_multiples(base: float = 10.0, n_max: int = 4):
+    """P-12 target ratios as CLU(b)^n for n=1..n_max."""
+    lnb = clu(base)
+    return np.array([lnb * n for n in range(1, n_max + 1)])
+
+# Keep backward-compatible aliases for existing code that imports these
+LN10 = clu(10.0)
+P12_MULTIPLES = p12_multiples(10.0)
 TOLERANCE = 0.05                 # ±0.05 — same as Phase 2
-P12_MULTIPLES = np.array([LN10 * n for n in range(1, 5)])  # 2.303, 4.606, 6.908, 9.210
 N_MC      = 100_000              # Monte Carlo samples for null distribution
 F_MIN_MHZ = 100.0                # Radio observing band lower edge
 F_MAX_MHZ = 15_000.0            # Upper edge (~15 GHz)

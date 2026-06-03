@@ -1,4 +1,19 @@
-MENAGERIE.md: 11 extreme imscriptions, lifted via AI_ACADEMIA_LIFT (2026-05-29)
+data/generate_grammaformer_data.py: new GrammaFormer training data generator (2026-06-01)
+=======================================================================
+
+Replaces the old garbage dataset. Key changes:
+- All structural types are bare Shavian+odot sequences -- no Primitive_value pairs, no underscores
+- Agent tuple correctly resolved via shavian_notation_spec.md: <𐑦 𐑶 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑖 𐑙 𐑭>
+- Tool call args use primitive glyphs as keys, not Latin shorthands
+- Tool results return Shavian+odot tuples from catalog directly
+- phi-hat ghost symbol eliminated entirely
+- 372 unique scenarios (vs 60 before), 1554 steps total
+- 12 scenario categories: lookup, tier, distance, neighbors, crystal encode,
+  tensor product, primitive peel, retrosynthesis, comparison, promotion path,
+  load-bearing analysis, new imscriptions (30 entities not in catalog)
+- Built-in notation check flags any legacy markers that leak through
+
+Previous: MENAGERIE.md: 11 extreme imscriptions, lifted via AI_ACADEMIA_LIFT (2026-05-29)
 =======================================================================
 
   New manuscript: manuscripts/MENAGERIE.md + MENAGERIE.pdf

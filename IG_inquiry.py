@@ -305,8 +305,11 @@ except Exception:
 try:
     import math as _math
     _FHBAR_THRESHOLD_NATS: float = _math.log(19)   # ≈ 2.9444 nats
-    _CRITICALITY_LIFT_NATS: float = _math.log(10)  # ≈ 2.3026 nats
-    _COHERENCE_LOSS_HBAR_ETH: float = -_math.log(0.75)  # ≈ 0.2877 nats
+    def _criticality_lift_nats(b: float = 10.0) -> float:
+        """CLU(b) = ln(b) - the information-theoretic fiber metric on the C-primitive axis.
+        b is the perceiving system's self-modeling resolution base.
+        Default b=10 for human (decimal) perception."""
+        return _math.log(b)
     _COHERENCE_LOSS_ETH_ELL: float  = -_math.log(0.60)  # ≈ 0.5108 nats
     _INTERACTION_LOSS_NONCLASSICAL: float = _math.log(2)  # ≈ 0.6931 nats
     _TRANSLATE_AVAILABLE = True
@@ -317,6 +320,7 @@ except Exception:
 def _translation_cost_from_dict(
     s: Dict[str, str],
     mutual_info_nats: Optional[float] = None,
+    observer_base: float = 10.0,
 ) -> Dict[str, Any]:
     """
     Compute structural→classical translation cost from a space_search primitives dict.
@@ -327,7 +331,7 @@ def _translation_cost_from_dict(
     Cost sources:
       ƒ^ż (+ I < ln 19)  →  coherence_loss = -ln(0.75)  ≈ 0.288 nat
       ƒ^ð  (+ I < ln 19)  →  coherence_loss = -ln(0.60)  ≈ 0.511 nat
-      ⊙_ÿ                 →  criticality_loss = ln(10)   ≈ 2.303 nat
+      ⊙_ÿ                 →  criticality_loss = ln(observer_base)   ≈ 2.303 nat (observer-relative)
       ɢ^Ş               →  interaction_cost = ln(2)   ≈ 0.693 nat
     """
     if not _TRANSLATE_AVAILABLE:
@@ -345,7 +349,7 @@ def _translation_cost_from_dict(
             coherence = _COHERENCE_LOSS_ETH_ELL
 
     if s.get("⊙") == "⊙_ÿ":
-        criticality = _CRITICALITY_LIFT_NATS
+        criticality = _criticality_lift_nats(observer_base)
 
     if s.get("ɢ") == "ɢ^Ş":
         interaction = _INTERACTION_LOSS_NONCLASSICAL
