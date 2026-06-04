@@ -4,11 +4,30 @@ primitives.py — Amino Acid → IG Primitive Mapping with Risk Classification.
 13 promoted entries (12 amino acids + Stop) each activate exactly one IG primitive.
 8 ground-layer (exact-box) amino acids activate no primitive.
 
+REVISED MAPPING (2026-06-03 v0.6.0):
+  His→⊙ (Criticality) — imidazole pKa≈6 is the only sidechain pKa near physiological pH,
+    making His the natural carrier of criticality (protonation equilibrium = pH sensing gate).
+    Histidine is the Swiss Army knife of protein function: catalytic triads, metal binding,
+    pH-dependent conformational switching. Its criticality is biochemical, not metabolic.
+
+  Gln→Γ (Grammar) — glutamine's long amide side chain enables extended hydrogen bonding
+    networks that structure interaction patterns (grammar of H-bond recognition). Maps to
+    Granularity/Scope because Gln's length positions H-bond donors at structural range.
+
+  Rationale: The original mapping (His→Γ, Gln→⊙) was structurally correct at the metabolic
+    level (Gln synthetase is the most regulated biosynthetic node) but biochemically incorrect
+    at the protein function level. His IS the critical residue — its imidazole ring titrates
+    at the crossover between acid and base catalysis (protonated/deprotonated equilibrium),
+    which is the definition of φ̂_ÿ criticality in the protein context.
+
+  Previous mapping (preserved for reference):
+    His→Γ (Grammar), Gln→⊙ (Criticality) — original assignment
+
 Promoted AAs (split stratum):
-  Met→Ð (Scope),   Trp→Þ (Topology), Cys→Ř (Reversibility),
-  Tyr→Φ (Parity),  Phe→ƒ (Force),     Ile→Ç (Kinetics),
-  His→Γ (Grammar), Asn→ɢ (Interaction), Gln→φ̂ (Criticality),
-  Asp→Ħ (Chirality), Lys→Σ (Entropy), Glu→Ω (Winding)
+  Met→Ð (Scope),     Trp→Þ (Topology),     Cys→Ř (Reversibility),
+  Tyr→Φ (Parity),    Phe→ƒ (Force),        Ile→Ç (Kinetics),
+  His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→Γ (Grammar/Scope),
+  Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
 
 Ground AAs (exact stratum): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly
 """
@@ -31,9 +50,9 @@ class IGPrimitive(Enum):
     PARITY        = "Φ"     # Tyr — phosphorylation switch (parity toggle)
     FORCE         = "ƒ"     # Phe — maximum hydrophobicity (force ceiling)
     KINETICS      = "Ç"     # Ile — β-branching (ribosomal coupling)
-    GRAMMAR       = "Γ"     # His — imidazole pKa bridge (pH-gated catalysis)
+    GRAMMAR       = "Γ"     # Gln — long amide H-bond network (interaction grammar)
     INTERACTION   = "ɢ"     # Asn — N-glycosylation sequon (recognition gate)
-    CRITICALITY   = "φ̂"    # Gln — most regulated biosynthetic node
+    CRITICALITY   = "⊙"     # His — imidazole pKa≈6 (pH-critical protonation gate)
     CHIRALITY     = "Ħ"     # Asp — chiral substrate selectivity
     ENTROPY       = "Σ"     # Lys — highest variability + acetylation target
     WINDING       = "Ω"     # Glu — α-helix propensity / helix winding
@@ -49,9 +68,9 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Tyr": IGPrimitive.PARITY,
     "Phe": IGPrimitive.FORCE,
     "Ile": IGPrimitive.KINETICS,
-    "His": IGPrimitive.GRAMMAR,
+    "His": IGPrimitive.CRITICALITY,    # REVISED: His→⊙ (criticality)
     "Asn": IGPrimitive.INTERACTION,
-    "Gln": IGPrimitive.CRITICALITY,
+    "Gln": IGPrimitive.GRAMMAR,        # REVISED: Gln→Γ (grammar)
     "Asp": IGPrimitive.CHIRALITY,
     "Lys": IGPrimitive.ENTROPY,
     "Glu": IGPrimitive.WINDING,
@@ -74,11 +93,11 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.SCOPE:          "critical",     # Ð — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
-    IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
+    IGPrimitive.CRITICALITY:    "high",         # ⊙ — pH-critical catalysis gate
     IGPrimitive.TOPOLOGY:       "moderate",     # Þ — indole collapse tolerable
     IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation
-    IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
+    IGPrimitive.GRAMMAR:        "moderate",     # Γ — H-bond grammar redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
     IGPrimitive.FORCE:          "low",          # ƒ — hydrophobic class preserved
@@ -124,3 +143,31 @@ def get_primitive_delta(orig_aa: str, target_aa: str) -> dict:
         "risk_class": risk_class,
         "risk_score": risk_score,
     }
+
+def get_mapping_version() -> str:
+    """Return the current mapping version with revision notes."""
+    return ("v0.6.0: His→⊙ (Criticality), Gln→Γ (Grammar). "
+            "His imidazole pKa≈6 is the natural carrier of protein criticality; "
+            "Gln H-bond networks structure interaction grammar.")
+
+def get_aa_primitive_description(aa: str) -> str:
+    """Return a description of what primitive an amino acid activates."""
+    descriptions = {
+        "His": "⊙ (Criticality) — imidazole pKa≈6, pH-gated protonation equilibrium",
+        "Gln": "Γ (Grammar) — long amide side chain H-bond network structuring",
+        "Met": "Ð (Scope) — translation initiation, start codon",
+        "Trp": "Þ (Topology) — largest indole ring system, structural complexity ceiling",
+        "Cys": "Ř (Reversibility) — disulfide bond, only reversible covalent crosslink",
+        "Tyr": "Φ (Parity) — phosphorylation switch, aromatic OH toggle",
+        "Phe": "ƒ (Force) — maximally hydrophobic aromatic, no heteroatoms",
+        "Ile": "Ç (Kinetics) — β-branched, tightest ribosomal coupling",
+        "Asn": "ɢ (Interaction) — N-glycosylation sequon, extracellular recognition",
+        "Asp": "Ħ (Chirality) — chiral selectivity in active site catalysis",
+        "Lys": "Σ (Entropy) — most variable charged residue, acetylation target",
+        "Glu": "Ω (Winding) — highest helix propensity, helix dipole stabilizer",
+    }
+    return descriptions.get(aa, "Ground-layer AA: no primitive activation")
+
+def get_primitive_aa(prim: IGPrimitive) -> List[str]:
+    """Return amino acid(s) that activate a given primitive."""
+    return PRIMITIVE_TO_AAS.get(prim, [])

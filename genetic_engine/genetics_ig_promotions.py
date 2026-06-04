@@ -3,6 +3,12 @@ Extended investigation: 20 amino acids as necessary Frobenius promotions.
 
 Hypothesis: 20 = 8 (Frobenius-exact ground layer) + 12 (one per IG primitive promotion axis).
 The split of 16 codon boxes into 8 exact / 8 open directly generates this count.
+
+REVISED MAPPING (2026-06-03 v0.6.0):
+  His→⊙ (Criticality) — imidazole pKa≈6 is the only sidechain pKa near physiological pH,
+    making His the natural carrier of criticality. The imidazole ring titrates at the
+    crossover between acid and base catalysis — the definition of φ̂_ÿ criticality.
+  Gln→Γ (Grammar) — amide side chain H-bond networks structure interaction grammar.
 """
 
 from collections import defaultdict
@@ -134,6 +140,14 @@ print("Promoted layer (12 AAs, ordered by split-box appearance):")
 print(f"  {sorted(promoted_layer)}")
 print()
 
+print("NOTE: REVISED MAPPING (v0.6.0)")
+print("  His→⊙ (Criticality) — imidazole pKa≈6 = pH-critical protonation gate")
+print("  Gln→Γ (Grammar) — amide H-bond network = interaction grammar")
+print("  Rationale: His is the only residue with pKa near physiological pH,")
+print("  making it the natural carrier of protein criticality. Gln's long")
+print("  amide chain structures H-bond networks — a grammatical function.")
+print()
+
 # Map each promoted AA to an IG primitive it uniquely activates
 # Based on the specific chemical novelty each AA introduces
 promotions = {
@@ -141,8 +155,8 @@ promotions = {
     "Tyr": ("Φ",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
     "Cys": ("Ř",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
     "Trp": ("Þ",  "Maximal topology: bicyclic indole = highest structural complexity; defines Þ ceiling"),
-    "His": ("Γ",  "Scope/grammar switch: imidazole pKa≈6 bridges acid+base; catalytic grammar of most enzyme active sites"),
-    "Gln": ("⊙",  "Criticality gate: glutamine synthetase pathway = critical nitrogen metabolism node; most regulated biosynthetic gate"),
+    "His": ("⊙",  "Criticality gate: imidazole pKa≈6 = pH-critical protonation equilibrium; catalytic triads, metal binding, pH sensing"),
+    "Gln": ("Γ",  "Grammar/Scope: long amide side chain H-bond network; structures interaction patterns and recognition grammar"),
     "Ile": ("Ç",  "Kinematic constraint: β-branched (both α-carbon and β-carbon chiral); tightest steric coupling in ribosomal decoding"),
     "Met": ("Ð",  "Dimensionality/scope opener: universal start codon; AUG = single codon that gates all protein scope"),
     "Asn": ("ɢ",  "Interaction grammar: N-glycosylation target; gates extracellular interaction/recognition grammar"),

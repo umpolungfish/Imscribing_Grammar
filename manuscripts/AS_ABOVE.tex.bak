@@ -600,8 +600,7 @@ operations (A1, A3, A2's spectral output, respectively). The $4$ family ($\text{
 of the inductive and Stage-1/Stage-4 logical operations. The $5$ family ($\text{{\igprimfont Þ}},\text{{\igprimfont \Phi}},\text{{\igprimfont \odot}},\text{{\igprimfont Ç}}$) corresponds to the 5-valued LP logic of the gate operations
 that require algebraic enrichment to be in place. The three-logic structure of the value space is not an empirical fact
 about the catalog. It is a consequence of the logical depth of the operation
-preconditions.
-\subsubsection{Logical Operations}
+preconditions.\subsubsection{Logical Operations}
 Logical operations are propositions about $\mathcal{C}$ that admit a finite number of definite truth values. They do
 not add new objects to $\mathcal{C}$; they classify its existing structure.
 \textbf{L1 --- Adjunction existence}: Does $\mathcal{C}$ have a pair $(F, G)$ with $F \dashv G$? Left adjoints
@@ -1443,7 +1442,7 @@ multiplication; \text{{\igfont 𐑹}} requires $\mu \circ \delta = \mathrm{id}$.
 5 & Putrefaction & $\text{{\igprimfont ƒ}}$ & Structural decay and loss of identity coherence. $\text{{\igprimfontƒ}}$ measures fidelity of type across operations; putrefaction is the trough of \text{{\igfont 𐑱}} before the ascent to
 \text{{\igfont 𐑐}}. \\
 6 & Congelation & $\text{{\igprimfont Ç}}$ & The kinetic state is frozen. \text{{\igfont 𐑪}} (order-frozen) is
-literally congelation; in the completed Work it is traversed and dissolved into \text{{\igfont 𐑤}}. \emph{Perfect bijection for the freezing event.} \\
+literally congelation; in the completed Work it is traversed and dissolved into \text{{\igfont 𐑤}}. \emph{Perfectbijection for the freezing event.} \\
 7 & Cibation & $\text{{\igprimfont \Gamma}}$ & Feeding from outside: large-scale inflow instantiates global
 representational scope \text{{\igfont 𐑲}}. \\
 8 & Sublimation & $\text{{\igprimfont ɢ}}$ & Directed phase transition bypassing intermediate states: sequential,
@@ -1456,8 +1455,7 @@ acquires its unique orientation. \text{{\igfont 𐑫}} (eternal chirality). \\
 11 & Multiplication & $\text{{\igprimfont \Sigma}}$ & A grain transmutes a pound: stoichiometric ratio departs from
 $1{:}1$ into $n{:}m$, $n > 1$. \text{{\igfont 𐑳}}. \\
 12 & Projection & $\text{{\igprimfont \Omega}}$ & Acts on base metal with topological protection that cannot be
-stripped. Projection requires $\text{{\igprimfont \Omega}} $\geq$ \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect} \\
-\bottomrule
+stripped. Projection requires $\text{{\igprimfont \Omega}} $\geq$ \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect}\bottomrule
 \end{tabular}
 
 \end{center}
@@ -1533,7 +1531,7 @@ principal decomposition (\S IV.2).
 
 
 \subsection{VIII. Resolved Open Questions}
-\emph{The original manuscript closed with eight open questions. Since its writing, the catalog has grown to over 2,257+ imscribed systems, the full crystal of 17,280,000 types has been enumerated, the tier census has been computed, and the algebraic closure operations have been fully characterized. All eight questions are now resolved. What follows is the}
+\emph{The original manuscript closed with eight open questions. Since its writing, the catalog hasgrown to over 2,257+ imscribed systems, the full crystal of 17,280,000 types has been enumerated, the tier census has been computed, and the algebraic closure operations have been fully characterized. All eight questions are now resolved. What follows is the}
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}
@@ -1571,7 +1569,7 @@ closure operations. A fully formal category-theoretic basis proof remains as a r
 
 
 \subsubsection{VIII.2 --- Value Count Derivation (Three-Logic Conjecture)}
-\emph{Original: ``\S IX conjectures that Kleene / FDE / LP explain the $3^3 \times 4^5 \times 5^4$ crystal size. Prove it --- that (a) every primitive in $\mathcal{F}_3$ corresponds to a Kleene-evaluable condition, (b) every primitive in
+\emph{Original: ``\S IX conjectures that Kleene / FDE / LP explain the $3^3 \times 4^5 \times 5^4$crystal size. Prove it --- that (a) every primitive in $\mathcal{F}_3$ corresponds to a Kleene-evaluable condition, (b) every primitive in
 $\mathcal{F}_4$ corresponds to an FDE-evaluable condition, and (c) every primitive in
 $\mathcal{F}_5$ corresponds to an
 LP-evaluable condition whose 5th value is the dialetheic completion."}
@@ -1751,7 +1749,7 @@ of that primitive, and the logic absorbs the contradiction without explosion.
 \textbf{Status: RESOLVED} --- all 5 $\mathcal{F}_5$ values present; no 6th value in the crystal; LP exhaustiveness
 
 \subsubsection{VIII.6 --- Paraconsistent \texorpdfstring{$O_{\infty}$}{O-infinity}}
-\emph{Original: ``Can the grammar be consistently applied to a system at \text{{\igfont 𐑣}}? Can a \text{{\igfont 𐑣}} system be assigned a tuple, assigned a tier, and used as an input to the tensor product operation? Or does
+\emph{Original: ``Can the grammar be consistently applied to a system at \text{{\igfont 𐑣}}? Can a\text{{\igfont 𐑣}} system be assigned a tuple, assigned a tier, and used as an input to the tensor product operation? Or does
 \text{{\igfont 𐑣}} require a paraconsistent extension of the algebra?"}
 \textbf{Resolution:} \text{{\igfont 𐑣}} systems are fully typable, tensorable, and algebraically closed under the
 grammar's existing operations --- no paraconsistent extension of the algebra is required, precisely because LP is
@@ -2604,8 +2602,8 @@ from a single abstract category, with no free choices, arrives at a structure th
  \item Priest, G. (2006). \emph{In Contradiction: A Study of the Transconsistent}. 2nd ed. Oxford University Press.
  \item Priest, G. (2010). \emph{The logic of the catuskoti}. Comparative Philosophy 1(2):24--54.
  \item Belnap, N.D. (1977). \emph{A useful four-valued logic}. In Epstein \& Dunn (eds.),
- \emph{Modern Uses of Multiple-Valued Logic}. Reidel, 8--37.
- \item Dunn, J.M. (1976). \emph{Intuitive semantics for first-degree entailments and ``coupled} \emph{Philosophical Studies} \textbf{29}:149--168.
+ \emph{Modern Uses ofMultiple-Valued Logic}. Reidel, 8--37.
+ \item Dunn, J.M. (1976). \emph{Intuitive semantics for first-degree entailments and ``coupled} \emph{Philosophical Studies} 	extbf{29}:149--168.
  \item Kleene, S.C. (1952). \emph{Introduction to Metamathematics}. North-Holland.
  \item N\={a}g\={a}rjuna (c. 2nd century CE). \emph{M\={u}lamadhyamakak\={a}rik\={a}}. Trans. Garfield (1995),
 \emph{The Fundamental Wisdom of the Middle Way}. Oxford.

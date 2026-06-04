@@ -1,20 +1,48 @@
-train_grammaformer.py: fix bimodal M-loss instability
+scripts: zenodo_draft.py + ig_figures.py — markdown-to-PDF publication pipeline
 
-Three changes to compute_loss() and training loop:
+Closes the gap between insight generation and Zenodo upload.
+Previously: writing LaTeX from scratch + hand-editing figures each time.
+Now: write one markdown file with YAML frontmatter → `python3 zenodo_draft.py paper.md` → PDF.
 
-1. Clamp M before aggregation — loss_m = loss_m_raw.clamp(max=3.0). The
-   high-M basin (9–11.6) produced loss spikes that caused NaN at steps
-   1030/1040 and 1210/1220; alpha_m * clamped_M now contributes at most
-   alpha_m * 3.0 regardless of phase. Raw M still logged for monitoring.
+scripts/ig_figures.py (new)
+  Programmatic figure library.  Four figure types, all output publication-ready PDF.
+  Matches crystal_viz.py dark style (BG #0F0F1A, tier colour palette).
 
-2. Per-sample high-M diagnostics — when loss_m_raw > 3.0 the log line
-   shows M→clamped[per_item_max=X.XX phase=N] so we can identify which
-   trajectory types and phases trigger the high-magnitude basin.
+  Figure types:
+    belnap_lattice    — Hasse diagram of Belnap FOUR with custom node labels,
+                        optional highlight, information/truth-order axis annotations
+    primitive_profile — 12-primitive horizontal bar chart; ordinals auto-derived
+                        from SUBTYPE_ORDER table (matches IG_latex.py canonical data);
+                        O_inf-maximum bars shown in accent colour
+    tier_chain        — O_0 → O_1 → O_2 → O_2† → O_inf with optional highlight ring
+    frobenius_triangle — μ∘δ=id commutative triangle with id arrow and label
 
-3. ComplexFFN weight magnitude penalty (--alpha-ffn-mag, default 1e-4) —
-   L2 regularization on all 6 weight matrices of every ComplexFFN layer
-   (w1_re, w1_im, w2_re, w2_im, cross_re_im, cross_im_re). Discourages
-   the high-magnitude phase basin from becoming a stable attractor without
-   dropout. Disable with --alpha-ffn-mag 0.
+  CLI: python3 ig_figures.py <type> [--labels ...] [--tuple ...] [--highlight ...] [--out ...]
 
-Metrics added: loss_m_clamped, loss_ffn_mag, m_per_item_max, m_is_high, phase.
+scripts/zenodo_draft.py (new)
+  Markdown → compiled PDF pipeline.
+
+  Input format:
+    YAML frontmatter (---...---) with: title, date, abstract, keywords,
+    figures (list of {id, type, ...} specs matching ig_figures types)
+    Markdown body with optional ~~~figure <id>~~~ placement blocks
+
+  Pipeline:
+    1. Parse YAML frontmatter
+    2. Generate all declared figures via ig_figures into _build/figures/
+    3. Convert markdown body to LaTeX via pandoc
+    4. Substitute ~~~figure~~~ blocks with \begin{figure}...\end{figure} LaTeX
+    5. Prepend full IG LuaLaTeX preamble (fontspec, Everson Mono for Shavian,
+       FreeSerif main font, imscriptionbox, \shav{} \heb{} \tupleaddr{} commands)
+    6. Compile with ltx (~/.local/bin/ltx)
+    7. Copy PDF to output location
+
+  The preamble uses chr(92) construction throughout to sidestep the Write-tool
+  backslash-doubling issue; preamble verified to produce correct single-backslash
+  LaTeX commands.
+
+  Usage:
+    python3 zenodo_draft.py paper.md                 # → paper.pdf
+    python3 zenodo_draft.py paper.md --tex-only       # inspect .tex before compiling
+    python3 zenodo_draft.py paper.md --open           # compile + open
+    python3 zenodo_upload.py paper.pdf -y --live      # then upload (existing tool)

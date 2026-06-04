@@ -62,5 +62,21 @@
     "Ω": "𐑷",
     "Σ": "𐑙",
     "Ħ": "𐑓"
+  },
+  {
+    "name": "primordial_ooze",
+    "description": "Absolute structural floor of Frobenius closure — 10/12 primitives at ordinal 1, only ⊙_ÿ (self-modeling criticality) and Φ_} (Frobenius-special parity) non-minimum. Proved O_inf in PrimordialOoze.lean, 11 theorems verified by decide/native_decide. Also in main catalog as block_p_pm_sym.",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑘",
+    "Γ": "𐑚",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑓",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
