@@ -372,6 +372,275 @@ def frobenius_triangle(output: str = "fig_frobenius.pdf") -> Path:
     return _save(fig, output)
 
 
+# ── Figure 5: IMASM Bootstrap Loop ────────────────────────────────────────────
+
+def bootstrap_loop(output: str = "fig_bootstrap.pdf") -> Path:
+    """
+    Circular diagram of the 8-instruction IMASM bootstrap loop.
+    Nodes colour-coded by role: identity, Frobenius, direction, fixation.
+    VINIT/TANCH bookends shown as boundary anchors outside the cycle.
+    """
+    import math
+
+    NODES = [
+        ("IMSCRIB", "identity",   "#FFDD44"),
+        ("AREV",    "direction",  "#70B0D0"),
+        ("FSPLIT",  "frobenius",  ACCENT),
+        ("AFWD",    "direction",  "#70B0D0"),
+        ("FFUSE",   "frobenius",  ACCENT),
+        ("CLINK",   "identity",   "#FFDD44"),
+        ("IFIX",    "fixation",   "#DC143C"),
+    ]
+    N   = len(NODES)
+    R   = 0.36
+    cx, cy = 0.5, 0.52
+
+    fig, ax = plt.subplots(figsize=(7, 7))
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
+
+    # Node positions — start at top, go clockwise
+    angles = [math.pi/2 - 2*math.pi*i/N for i in range(N)]
+    pos    = [(cx + R*math.cos(a), cy + R*math.sin(a)) for a in angles]
+
+    # Draw arrows between consecutive nodes (curved)
+    for i in range(N):
+        x0, y0 = pos[i]
+        x1, y1 = pos[(i+1) % N]
+        # midpoint nudge toward centre for slight curve
+        mx = (x0 + x1)/2 + 0.05*(cx - (x0+x1)/2)
+        my = (y0 + y1)/2 + 0.05*(cy - (y0+y1)/2)
+        ax.annotate("", xy=(x1, y1), xytext=(x0, y0),
+                    arrowprops=dict(
+                        arrowstyle="->", color="#555577", lw=1.8,
+                        connectionstyle="arc3,rad=0.15",
+                    ))
+
+    # Draw nodes
+    node_r = 0.055
+    for i, (name, role, col) in enumerate(NODES):
+        x, y = pos[i]
+        circle = plt.Circle((x, y), node_r, color=col, zorder=3)
+        ax.add_patch(circle)
+        # label outside the circle
+        lx = cx + (R + 0.085)*math.cos(angles[i])
+        ly = cy + (R + 0.085)*math.sin(angles[i])
+        ax.text(lx, ly, name, ha="center", va="center",
+                fontsize=8.5, fontweight="bold", color=FG, zorder=4)
+
+    # Central label
+    ax.text(cx, cy, "μ∘δ=id", ha="center", va="center",
+            fontsize=11, color=ACCENT, fontweight="bold")
+
+    # VINIT / TANCH bookends
+    ax.text(0.5, 0.06, "VINIT  ·  TANCH",
+            ha="center", va="center", fontsize=9, color="#888899",
+            style="italic")
+    ax.text(0.5, 0.02, "(boundary conditions — not part of loop proper)",
+            ha="center", va="center", fontsize=7.5, color="#666677")
+
+    # Legend
+    legend_items = [
+        ("#FFDD44", "identity  (IMSCRIB, CLINK)"),
+        (ACCENT,    "Frobenius  (FSPLIT δ, FFUSE μ)"),
+        ("#70B0D0",  "direction  (AFWD, AREV)"),
+        ("#DC143C",  "fixation  (IFIX)"),
+    ]
+    for j, (col, lbl) in enumerate(legend_items):
+        ax.add_patch(plt.Circle((0.08, 0.92 - j*0.05), 0.012,
+                                color=col, zorder=3))
+        ax.text(0.11, 0.92 - j*0.05, lbl, va="center",
+                fontsize=8, color=FG)
+
+    return _save(fig, output)
+
+
+# ── Figure 6: Cetacean Structural Space ────────────────────────────────────────
+
+def cetacean_scatter(output: str = "fig_cetacean.pdf") -> Path:
+    """
+    Scatter plot of cetacean call types in (distance, paradox density) space.
+    Point size encodes fixed register count.
+    """
+    # Data from IMASM_MANUSCRIPT §4.3
+    calls = [
+        # (label, distance, paradox_density, fixed_regs, species)
+        ("Humpback\nsong",        5.10, 0.00, 4, "humpback"),
+        ("Orca\nsocial bonding",  0.57, 0.15, 3, "orca"),
+        ("Orca\ncoordination",    0.38, 0.30, 1, "orca"),
+        ("Orca\ncross-pod",       1.01, 0.06, 3, "orca"),
+        ("Orca\necholocation",    0.00, 0.00, 0, "orca"),
+        ("Sperm whale\ncoda",     0.95, 0.08, 2, "sperm"),
+    ]
+    species_color = {
+        "humpback": "#FFD700",
+        "orca":     "#9370DB",
+        "sperm":    "#70C0A0",
+    }
+
+    fig, ax = _fig_setup(w=7, h=5.5)
+
+    for label, dist, paradox, fixed, sp in calls:
+        col  = species_color[sp]
+        size = 120 + fixed * 80
+        ax.scatter(dist, paradox, s=size, c=col, zorder=3,
+                   edgecolors="#333355", linewidths=0.8)
+        off_x = 0.08 if dist < 4 else -0.15
+        off_y = 0.015 if paradox < 0.25 else -0.025
+        ax.text(dist + off_x, paradox + off_y, label,
+                fontsize=8, color=FG, va="center")
+
+    # Alarm threshold line
+    ax.axhline(0.33, color="#FF4444", lw=1.5, linestyle="--", alpha=0.7, zorder=2)
+    ax.text(4.5, 0.345, "alarm threshold (0.33)",
+            fontsize=8, color="#FF4444", va="bottom")
+
+    ax.set_xlabel("Distance to closest human expression", color=FG, fontsize=10)
+    ax.set_ylabel("Paradox density", color=FG, fontsize=10)
+    ax.set_title("Cetacean call types in structural space", color=FG, fontsize=11)
+    ax.set_xlim(-0.3, 6.0)
+    ax.set_ylim(-0.03, 0.42)
+    ax.grid(color="#222244", alpha=0.6, linewidth=0.5)
+
+    # Legend
+    for sp, col in species_color.items():
+        ax.scatter([], [], c=col, s=100,
+                   edgecolors="#333355", linewidths=0.8, label=sp.capitalize())
+    ax.legend(fontsize=9, facecolor=BG2, edgecolor="#333355",
+              labelcolor=FG, loc="upper right")
+
+    # Size legend note
+    ax.text(0.02, 0.97, "Point size ∝ fixed register count",
+            transform=ax.transAxes, fontsize=7.5,
+            color="#888899", va="top")
+
+    return _save(fig, output)
+
+
+# ── Figure 7: Psychedelic Access Heatmap ──────────────────────────────────────
+
+def psychedelic_heatmap(output: str = "fig_psychedelic_heatmap.pdf") -> Path:
+    """
+    Compounds × universes access matrix as a heatmap.
+    Green = access granted; dark = access denied.
+    Compounds sorted by total access count (descending).
+    """
+    compounds = [
+        "5-MeO-DMT", "DMT", "Ayahuasca", "LSD", "Ibogaine",
+        "Psilocybin", "Mescaline", "Salvinorin A", "Ketamine", "MDMA", "Cannabis"
+    ]
+    universes = [
+        "chirality_first", "critical_first", "winding_first",
+        "chirality_tight", "critical_tight", "winding_tight",
+        "parity_hard", "chirality_mod", "protection_weak",
+        "psi_parity", "dual_gate", "slow_only",
+        "memory_free", "binary_only", "quantum_only",
+        "one_gate", "null_universe",
+    ]
+    # Access matrix from §3.2 of psychedelic_access_lifted.md
+    # Rows = universes, Cols = compounds
+    # fmt: off
+    data = [
+        #5MeO DMT  Aya  LSD  Ibo  Psi  Mesc Salv Keta MDMA Can
+        [1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   0],  # chirality_first
+        [1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   0],  # critical_first
+        [1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   0],  # winding_first
+        [1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0],  # chirality_tight
+        [1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0],  # critical_tight
+        [1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0],  # winding_tight
+        [1,   1,   1,   1,   0,   1,   0,   1,   1,   1,   0],  # parity_hard
+        [1,   1,   1,   1,   1,   1,   1,   1,   0,   1,   0],  # chirality_mod
+        [1,   1,   1,   1,   1,   1,   1,   1,   1,   0,   0],  # protection_weak
+        [1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0],  # psi_parity
+        [1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0],  # dual_gate
+        [1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0],  # slow_only
+        [1,   1,   1,   1,   1,   1,   1,   0,   0,   0,   0],  # memory_free
+        [1,   1,   1,   1,   1,   1,   1,   0,   1,   0,   0],  # binary_only
+        [1,   1,   1,   1,   1,   1,   1,   1,   0,   1,   0],  # quantum_only
+        [1,   1,   1,   1,   1,   1,   0,   0,   0,   0,   0],  # one_gate
+        [1,   1,   1,   1,   1,   0,   0,   0,   0,   0,   0],  # null_universe
+    ]
+    # fmt: on
+
+    import numpy as np
+    matrix = np.array(data, dtype=float)
+
+    # Tier colour bands on y-axis
+    tier_colors = {
+        "5-MeO-DMT": ACCENT, "DMT": ACCENT, "Ayahuasca": ACCENT,
+        "LSD": ACCENT, "Ibogaine": ACCENT,
+        "Psilocybin": "#DC143C",
+        "Mescaline": "#FF8C00",
+        "Salvinorin A": "#FFD700", "Ketamine": "#FFD700",
+        "MDMA": "#FFD700",
+        "Cannabis": "#4472C4",
+    }
+
+    fig, ax = plt.subplots(figsize=(10, 7))
+    fig.patch.set_facecolor(BG)
+    ax.set_facecolor(BG)
+
+    cmap = plt.cm.colors.LinearSegmentedColormap.from_list(
+        "access", ["#1A1A2E", "#2D6A4F"]
+    )
+    im = ax.imshow(matrix, aspect="auto", cmap=cmap, vmin=0, vmax=1,
+                   interpolation="nearest")
+
+    # Grid lines
+    for x in range(len(compounds) + 1):
+        ax.axvline(x - 0.5, color="#333355", lw=0.5)
+    for y in range(len(universes) + 1):
+        ax.axhline(y - 0.5, color="#333355", lw=0.5)
+
+    # Compound access counts (column sums)
+    col_sums = matrix.sum(axis=0)
+
+    ax.set_xticks(range(len(compounds)))
+    ax.set_xticklabels(
+        [f"{c}\n({int(col_sums[i])})" for i, c in enumerate(compounds)],
+        fontsize=7.5, color=FG, rotation=35, ha="right"
+    )
+    # Colour compound labels by tier
+    for i, lbl in enumerate(ax.get_xticklabels()):
+        lbl.set_color(tier_colors.get(compounds[i], FG))
+
+    ax.set_yticks(range(len(universes)))
+    ax.set_yticklabels(universes, fontsize=8, color=FG)
+
+    # Row sums on right
+    row_sums = matrix.sum(axis=1)
+    for j, s in enumerate(row_sums):
+        ax.text(len(compounds) + 0.1, j, f"{int(s)}",
+                va="center", fontsize=7.5, color="#888899")
+
+    ax.set_title("Universe access by compound and ruleset",
+                 color=FG, fontsize=11, pad=10)
+    ax.set_xlim(-0.5, len(compounds) - 0.5 + 1.2)
+
+    # Tier legend
+    tier_items = [
+        (ACCENT,     "O_∞  (5-MeO-DMT, DMT, Aya, LSD, Ibogaine)"),
+        ("#DC143C",  "O_2†  (Psilocybin)"),
+        ("#FF8C00",  "O_2   (Mescaline)"),
+        ("#FFD700",  "O_1   (Salvinorin A, Ketamine, MDMA)"),
+        ("#4472C4",  "O_0   (Cannabis)"),
+    ]
+    for j, (col, lbl) in enumerate(tier_items):
+        ax.add_patch(plt.Rectangle((-0.5 + j*2.1 - 0.2,
+                                    len(universes) + 0.3), 0.3, 0.5,
+                                   color=col, transform=ax.transData,
+                                   clip_on=False))
+        ax.text(-0.5 + j*2.1 + 0.2, len(universes) + 0.55, lbl,
+                fontsize=6.5, color=FG, transform=ax.transData,
+                va="center", clip_on=False)
+
+    fig.tight_layout()
+    return _save(fig, output)
+
+
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
 def _parse_labels(s: str) -> dict:
@@ -422,6 +691,17 @@ def main():
     pf = sub.add_parser("frobenius", help="μ∘δ=id triangle")
     pf.add_argument("--out", default="fig_frobenius.pdf")
 
+    # bootstrap
+    ph = sub.add_parser("psychedelic", help="Compound × universe access heatmap")
+    ph.add_argument("--out", default="fig_psychedelic_heatmap.pdf")
+
+    pb2 = sub.add_parser("bootstrap", help="IMASM 8-instruction bootstrap loop")
+    pb2.add_argument("--out", default="fig_bootstrap.pdf")
+
+    # cetacean
+    pc = sub.add_parser("cetacean", help="Cetacean structural space scatter")
+    pc.add_argument("--out", default="fig_cetacean.pdf")
+
     args = p.parse_args()
 
     if args.cmd == "belnap":
@@ -442,6 +722,12 @@ def main():
         out = tier_chain(highlight=args.highlight or None, output=args.out)
     elif args.cmd == "frobenius":
         out = frobenius_triangle(output=args.out)
+    elif args.cmd == "bootstrap":
+        out = bootstrap_loop(output=args.out)
+    elif args.cmd == "cetacean":
+        out = cetacean_scatter(output=args.out)
+    elif args.cmd == "psychedelic":
+        out = psychedelic_heatmap(output=args.out)
     else:
         p.print_help()
         sys.exit(1)

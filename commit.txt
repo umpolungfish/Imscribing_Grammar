@@ -1,3 +1,22 @@
+scripts/ig_figures.py: two new figure types for IMASM manuscript
+
+bootstrap_loop()
+  8-node circular diagram of the IMASM bootstrap loop.
+  Nodes colour-coded by role: identity (IMSCRIB, CLINK), Frobenius (FSPLIT/FFUSE),
+  direction (AFWD, AREV), fixation (IFIX). VINIT/TANCH bookends shown outside cycle.
+  CLI: python3 ig_figures.py bootstrap [--out fig.pdf]
+
+cetacean_scatter()
+  Scatter plot of cetacean call types in (distance-to-human-expression, paradox-density)
+  space. Point size encodes fixed register count. Dashed alarm threshold line at 0.33.
+  Species colour-coded: humpback (gold), orca (purple), sperm (teal).
+  Data: 6 call types from IMASM_MANUSCRIPT §4.3.
+  CLI: python3 ig_figures.py cetacean [--out fig.pdf]
+
+Also: fixed O_∞ notation in all tier references (was O_inf throughout).
+
+---
+
 scripts: zenodo_draft.py + ig_figures.py — markdown-to-PDF publication pipeline
 
 Closes the gap between insight generation and Zenodo upload.
@@ -5,44 +24,16 @@ Previously: writing LaTeX from scratch + hand-editing figures each time.
 Now: write one markdown file with YAML frontmatter → `python3 zenodo_draft.py paper.md` → PDF.
 
 scripts/ig_figures.py (new)
-  Programmatic figure library.  Four figure types, all output publication-ready PDF.
+  Programmatic figure library.  Four original figure types, all output publication-ready PDF.
   Matches crystal_viz.py dark style (BG #0F0F1A, tier colour palette).
 
   Figure types:
-    belnap_lattice    — Hasse diagram of Belnap FOUR with custom node labels,
-                        optional highlight, information/truth-order axis annotations
-    primitive_profile — 12-primitive horizontal bar chart; ordinals auto-derived
-                        from SUBTYPE_ORDER table (matches IG_latex.py canonical data);
-                        O_inf-maximum bars shown in accent colour
-    tier_chain        — O_0 → O_1 → O_2 → O_2† → O_inf with optional highlight ring
-    frobenius_triangle — μ∘δ=id commutative triangle with id arrow and label
-
-  CLI: python3 ig_figures.py <type> [--labels ...] [--tuple ...] [--highlight ...] [--out ...]
+    belnap_lattice    — Hasse diagram of Belnap FOUR with custom node labels
+    primitive_profile — 12-primitive horizontal bar chart
+    tier_chain        — O_0 → O_1 → O_2 → O_2† → O_∞ with optional highlight ring
+    frobenius_triangle — μ∘δ=id commutative triangle
+    bootstrap_loop    — IMASM 8-instruction cycle (added this commit)
+    cetacean_scatter  — cetacean structural space scatter (added this commit)
 
 scripts/zenodo_draft.py (new)
-  Markdown → compiled PDF pipeline.
-
-  Input format:
-    YAML frontmatter (---...---) with: title, date, abstract, keywords,
-    figures (list of {id, type, ...} specs matching ig_figures types)
-    Markdown body with optional ~~~figure <id>~~~ placement blocks
-
-  Pipeline:
-    1. Parse YAML frontmatter
-    2. Generate all declared figures via ig_figures into _build/figures/
-    3. Convert markdown body to LaTeX via pandoc
-    4. Substitute ~~~figure~~~ blocks with \begin{figure}...\end{figure} LaTeX
-    5. Prepend full IG LuaLaTeX preamble (fontspec, Everson Mono for Shavian,
-       FreeSerif main font, imscriptionbox, \shav{} \heb{} \tupleaddr{} commands)
-    6. Compile with ltx (~/.local/bin/ltx)
-    7. Copy PDF to output location
-
-  The preamble uses chr(92) construction throughout to sidestep the Write-tool
-  backslash-doubling issue; preamble verified to produce correct single-backslash
-  LaTeX commands.
-
-  Usage:
-    python3 zenodo_draft.py paper.md                 # → paper.pdf
-    python3 zenodo_draft.py paper.md --tex-only       # inspect .tex before compiling
-    python3 zenodo_draft.py paper.md --open           # compile + open
-    python3 zenodo_upload.py paper.pdf -y --live      # then upload (existing tool)
+  Markdown → compiled PDF pipeline via pandoc + ltx.

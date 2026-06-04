@@ -84,6 +84,17 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         f"{_B}newfontfamily{_B}shavfont[Scale=1.0]{{Everson Mono}}",
         f"{_B}setmonofont[Scale=0.85]{{DejaVu Sans Mono}}",
         "",
+        f"% Shavian Unicode block (U+10450–U+1047F) → Everson Mono automatically",
+        f"% Works in text mode, inside \\text{{}} in math, and in table cells.",
+        f"{_B}usepackage{{newunicodechar}}",
+    ] + [
+        # Mode-independent: works in text, \text{} in math, and bare math mode
+        (f"{_B}newunicodechar{{{chr(0x10450 + i)}}}"
+         f"{{{_B}ifmmode{_B}text{{{{{_B}shavfont {chr(0x10450 + i)}}}}}"
+         f"{_B}else{{{{{_B}shavfont {chr(0x10450 + i)}}}}}{_B}fi}}")
+        for i in range(48)
+    ] + [
+        "",
         f"% Page layout",
         f"{_B}usepackage[top=1in, bottom=1in, left=1in, right=1in]{{geometry}}",
         f"{_B}usepackage{{microtype}}",
