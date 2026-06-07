@@ -1,0 +1,20 @@
+! uB3LYP def2-TZVP def2/J D3BJ TightSCF Opt
+! PAL6
+
+* xyz 0 2
+N    0.000   0.000   0.000
+O    0.000   1.300   0.000
+C    2.000   0.000   0.000
+H    2.500   1.000   0.000
+H    2.500  -1.000   0.000
+H    2.000   0.000   1.500
+*
+
+%scf
+  MaxIter 300
+end
+
+*Print
+  Mulliken
+  SpinDensity
+*

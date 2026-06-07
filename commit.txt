@@ -1,39 +1,8 @@
-scripts/ig_figures.py: two new figure types for IMASM manuscript
+IG_AXIOMATIC_SPECIFICATION.md: full math formatting ($...$) + holography distinction
 
-bootstrap_loop()
-  8-node circular diagram of the IMASM bootstrap loop.
-  Nodes colour-coded by role: identity (IMSCRIB, CLINK), Frobenius (FSPLIT/FFUSE),
-  direction (AFWD, AREV), fixation (IFIX). VINIT/TANCH bookends shown outside cycle.
-  CLI: python3 ig_figures.py bootstrap [--out fig.pdf]
-
-cetacean_scatter()
-  Scatter plot of cetacean call types in (distance-to-human-expression, paradox-density)
-  space. Point size encodes fixed register count. Dashed alarm threshold line at 0.33.
-  Species colour-coded: humpback (gold), orca (purple), sperm (teal).
-  Data: 6 call types from IMASM_MANUSCRIPT §4.3.
-  CLI: python3 ig_figures.py cetacean [--out fig.pdf]
-
-Also: fixed O_∞ notation in all tier references (was O_inf throughout).
-
----
-
-scripts: zenodo_draft.py + ig_figures.py — markdown-to-PDF publication pipeline
-
-Closes the gap between insight generation and Zenodo upload.
-Previously: writing LaTeX from scratch + hand-editing figures each time.
-Now: write one markdown file with YAML frontmatter → `python3 zenodo_draft.py paper.md` → PDF.
-
-scripts/ig_figures.py (new)
-  Programmatic figure library.  Four original figure types, all output publication-ready PDF.
-  Matches crystal_viz.py dark style (BG #0F0F1A, tier colour palette).
-
-  Figure types:
-    belnap_lattice    — Hasse diagram of Belnap FOUR with custom node labels
-    primitive_profile — 12-primitive horizontal bar chart
-    tier_chain        — O_0 → O_1 → O_2 → O_2† → O_∞ with optional highlight ring
-    frobenius_triangle — μ∘δ=id commutative triangle
-    bootstrap_loop    — IMASM 8-instruction cycle (added this commit)
-    cetacean_scatter  — cetacean structural space scatter (added this commit)
-
-scripts/zenodo_draft.py (new)
-  Markdown → compiled PDF pipeline via pandoc + ltx.
+All mathematical expressions enclosed in $...$: category notation, Frobenius
+structure, crystal size, metric formula, C-score formula, tier rules, axioms.
+Display math ($$...$$) for the distance and C-score formulas.
+§11 extended with holography distinction: static isomorphism up to redundancy
+vs dynamic identity up to the trace; O_inf has no boundary, holography requires
+one; holography is the information-theoretic analogue of crystallography.

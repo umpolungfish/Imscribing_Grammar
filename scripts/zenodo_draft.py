@@ -208,7 +208,7 @@ def _generate_figures(fig_specs: list, fig_dir: Path) -> dict:
     for spec in fig_specs:
         fig_id   = spec.get("id", f"fig_{len(generated)}")
         fig_type = spec.get("type", "")
-        out_path = str(fig_dir / f"{fig_id}.pdf")
+        out_path = str(fig_dir.resolve() / f"{fig_id}.pdf")
 
         try:
             if fig_type == "belnap_lattice":
@@ -234,6 +234,10 @@ def _generate_figures(fig_specs: list, fig_dir: Path) -> dict:
                 )
             elif fig_type == "frobenius":
                 igf.frobenius_triangle(output=out_path)
+            elif fig_type == "bootstrap_loop":
+                igf.bootstrap_loop(output=out_path)
+            elif fig_type == "cetacean_scatter":
+                igf.cetacean_scatter(output=out_path)
             else:
                 print(f"  WARNING: unknown figure type '{fig_type}' for {fig_id}")
                 continue
@@ -263,18 +267,36 @@ def _figure_latex(fig_id: str, fig_path: str, caption: str = "", label: str = ""
 
 # ── Markdown → LaTeX body via pandoc ──────────────────────────────────────────
 
-def _md_to_latex_body(md_text: str, tmp_dir: Path) -> str:
+def _citeproc_flags(bibliography: "Path | None") -> list:
+    """Return pandoc bibliography + citeproc flags, or [] if unavailable."""
+    import shutil
+    if not (bibliography and bibliography.exists()):
+        return []
+    bib = ["--bibliography", str(bibliography)]
+    try:
+        r = subprocess.run(["pandoc", "--version"], capture_output=True, text=True)
+        ver = r.stdout.split("\n")[0].split()[1].split(".")
+        if (int(ver[0]), int(ver[1])) >= (2, 11):
+            return bib + ["--citeproc"]
+    except Exception:
+        pass
+    if shutil.which("pandoc-citeproc"):
+        return bib + ["--filter", "pandoc-citeproc"]
+    print("  INFO: no citeproc (pandoc < 2.11, no pandoc-citeproc) — bibliography skipped")
+    return []
+
+
+def _md_to_latex_body(md_text: str, tmp_dir: Path, bibliography: "Path | None" = None) -> str:
     """Convert markdown body to LaTeX using pandoc."""
     md_path  = tmp_dir / "_body.md"
     tex_path = tmp_dir / "_body.tex"
 
     md_path.write_text(md_text, encoding="utf-8")
 
-    result = subprocess.run(
-        ["pandoc", str(md_path), "--to", "latex", "--no-highlight",
-         "-o", str(tex_path)],
-        capture_output=True, text=True,
-    )
+    cmd = ["pandoc", str(md_path), "--to", "latex", "--no-highlight",
+           "-o", str(tex_path)] + _citeproc_flags(bibliography)
+
+    result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(f"  pandoc error: {result.stderr}")
         sys.exit(1)
@@ -358,9 +380,12 @@ def compile_pdf(md_path: Path, out_path: Path | None = None,
     fig_dir   = tmp_dir / "figures"
     generated = _generate_figures(fig_specs, fig_dir)
 
+    bib_field = meta.get("bibliography")
+    bib_path  = (md_path.parent / bib_field).resolve() if bib_field else None
+
     # Convert body
     print("  pandoc: converting body ...")
-    tex_body = _md_to_latex_body(body, tmp_dir)
+    tex_body = _md_to_latex_body(body, tmp_dir, bib_path)
     tex_body = _substitute_figure_blocks(tex_body, fig_specs, generated)
 
     # Assemble

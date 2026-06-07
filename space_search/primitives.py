@@ -46,6 +46,55 @@ WEIGHTS = {
 }
 
 PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+# Subscript-to-Deseret mapping for catalog values in notation format (e.g., "Ð_ß" -> Deseret key)
+# The catalog stores values as Primitive_subscript/^superscript, but ORDINALS
+# uses Deseret alphabet characters (U+1045x-U+1047x).
+SUBSCRIPT_TO_DESERET = {
+    "Ð": {";": "\U0001045B", "C": "\U00010468", "ß": "\U0001047C", "\u03c9": "\U00010466"},
+    "Þ": {"6": "\U00010461", "K": "\U00010470", "\u00f2": "\U00010465", "O": "\U00010476", "\u00a8": "\U00010478"},
+    "Ř": {"\u00af": "\U00010469", "\u00fd": "\U00010451", "\u0164": "\U0001047D", "=": "\U0001047E"},
+    "Φ": {"\u0250": "\U00010457", "\u03c5": "\U0001047F", "\u02d9": "\U0001046C", "F": "\U0001046F", "}": "\U00010479"},
+    "ƒ": {"\u00ec": "\U00010471", "\u00f0": "\U0001045E", "\u017c": "\U00010450"},
+    "Ç": {"-": "\U00010458", "W": "\U00010464", "@": "\U00010467", "\u03bb": "\U0001046A", "\u00d9": "\U0001047A"},
+    "Γ": {"\u03b2": "\U0001045A", "\u03b3": "\U0001045A", "\u0294": "\U00010454"},
+    "ɢ": {"\u2227": "\U0001045D", "\u02dd": "\U0001045C", "\u02cc": "\U00010460", "\u015e": "\U00010475"},
+    "⊙": {"\u017e": "\U00010462", "\u00ff": "\u2299", "\u00c6": "\U0001046E", "3": "\U0001047B", "\u0162": "\U00010463"},
+    "Ħ": {"\u00d1": "\U00010453", "\u00a3": "\U00010452", "A": "\U00010456", "!": "\U0001046B"},
+    "Σ": {"S": "\U00010459", "\u0151": "\U00010455", "\u00ef": "\U00010473"},
+    "Ω": {"\u00c5": "\U00010477", "2": "\U00010474", "z": "\U0001046D", "5": "\U0001045F"},
+}
+
+
+def resolve_ordinal_key(primitive: str, value: str) -> str:
+    """Convert a catalog value to the Deseret ordinal key used by ORDINALS.
+    
+    Handles three formats:
+      1. Already a valid ORDINALS key (Deseret char or literal symbol like \u2299)
+      2. Notation format: Primitive_separator_subscript (e.g., "Ð_\u00df")
+    """
+    if not value:
+        raise KeyError(f"Empty value for primitive {primitive}")
+    ord_map = ORDINALS.get(primitive, {})
+    # Direct match (already a valid key)
+    if value in ord_map:
+        return value
+    # Parse subscript notation
+    if len(value) >= 3:
+        subscript = value[2]
+        mapping = SUBSCRIPT_TO_DESERET.get(primitive, {})
+        if subscript in mapping:
+            deseret_key = mapping[subscript]
+            if deseret_key in ord_map:
+                return deseret_key
+    # Last resort: check if the entire value is a subscript key
+    ord_map_vals = list(ord_map.keys())
+    raise KeyError(
+        f"Cannot map {primitive} value '{value}' to ordinal. "
+        f"Valid keys include: {ord_map_vals[:3]}..."
+    )
+
+
+
 
 # Canonical imscription vectors (ordinal form)
 imscriptions = {
@@ -80,8 +129,9 @@ def to_vector(imscription: dict) -> np.ndarray:
     """Convert a imscription dict to an ordinal vector in canonical primitive order."""
     vec = []
     for prim in PRIMITIVE_ORDER:
-        val = imscription[prim]
-        vec.append(ORDINALS[prim][val])
+        raw_val = imscription[prim]
+        key = resolve_ordinal_key(prim, raw_val)
+        vec.append(ORDINALS[prim][key])
     return np.array(vec, dtype=float)
 
 

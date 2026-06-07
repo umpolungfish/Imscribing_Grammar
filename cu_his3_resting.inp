@@ -1,0 +1,21 @@
+! B3LYP def2-SVP TightSCF Opt D3BJ
+
+*xyz 0 1
+ Cu   0.000   0.000   0.000
+ N    2.050   0.000   0.000
+ N   -1.025   1.776   0.000
+ N   -1.025  -1.776   0.000
+ C    4.500   0.000   0.000
+ Br   5.900   0.000   0.000
+ N    3.000   2.500   0.000
+ O    3.000   3.800   0.000
+*
+
+%scf
+  MaxIter 300
+end
+
+%output
+  PrintLevel Mini
+  Print[ P_Mulliken ] 1
+end

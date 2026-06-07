@@ -1,211 +1,404 @@
-\documentclass[8pt,a4paper,landscape]{article}
+\documentclass[20pt]{extarticle}
+
+% Fonts
 \usepackage{fontspec}
-\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
-\newcommand{\heb}[1]{{\hebrewfont #1}}
-\newfontfamily\igfont[Ligatures=TeX]{Noto Serif}
-\newcommand{\igtext}[1]{{\igfont #1}}
-\usepackage[margin=0.3in,top=0.28in,bottom=0.2in]{geometry}
-\usepackage{tikz,amsmath,amssymb,booktabs,multicol,xcolor,enumitem,array}
-\usepackage{titlesec}
-\titleformat{\section}{\normalsize\bfseries}{}{0em}{}
-\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{5pt plus 1pt}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\tiny Imscribing Grammar v0.4.64}
-\lhead{\tiny $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega\rangle$}
-\cfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{unicode-math}
+\setmainfont{FreeSerif}
+\setmathfont{Latin Modern Math}
+\newfontfamily\shavfont[Scale=1.0]{Everson Mono}
+\setmonofont[Scale=0.82]{DejaVu Sans Mono}
 
-\definecolor{catblue}{RGB}{30,100,180}
-\definecolor{ordgreen}{RGB}{40,140,60}
-\definecolor{specpurple}{RGB}{120,40,160}
-\definecolor{confred}{RGB}{200,50,50}
+% Shavian block → Everson Mono
+\usepackage{newunicodechar}
+\newunicodechar{𐑐}{\ifmmode\text{{\shavfont 𐑐}}\else{{\shavfont 𐑐}}\fi}
+\newunicodechar{𐑑}{\ifmmode\text{{\shavfont 𐑑}}\else{{\shavfont 𐑑}}\fi}
+\newunicodechar{𐑒}{\ifmmode\text{{\shavfont 𐑒}}\else{{\shavfont 𐑒}}\fi}
+\newunicodechar{𐑓}{\ifmmode\text{{\shavfont 𐑓}}\else{{\shavfont 𐑓}}\fi}
+\newunicodechar{𐑔}{\ifmmode\text{{\shavfont 𐑔}}\else{{\shavfont 𐑔}}\fi}
+\newunicodechar{𐑕}{\ifmmode\text{{\shavfont 𐑕}}\else{{\shavfont 𐑕}}\fi}
+\newunicodechar{𐑖}{\ifmmode\text{{\shavfont 𐑖}}\else{{\shavfont 𐑖}}\fi}
+\newunicodechar{𐑗}{\ifmmode\text{{\shavfont 𐑗}}\else{{\shavfont 𐑗}}\fi}
+\newunicodechar{𐑘}{\ifmmode\text{{\shavfont 𐑘}}\else{{\shavfont 𐑘}}\fi}
+\newunicodechar{𐑙}{\ifmmode\text{{\shavfont 𐑙}}\else{{\shavfont 𐑙}}\fi}
+\newunicodechar{𐑚}{\ifmmode\text{{\shavfont 𐑚}}\else{{\shavfont 𐑚}}\fi}
+\newunicodechar{𐑛}{\ifmmode\text{{\shavfont 𐑛}}\else{{\shavfont 𐑛}}\fi}
+\newunicodechar{𐑜}{\ifmmode\text{{\shavfont 𐑜}}\else{{\shavfont 𐑜}}\fi}
+\newunicodechar{𐑝}{\ifmmode\text{{\shavfont 𐑝}}\else{{\shavfont 𐑝}}\fi}
+\newunicodechar{𐑞}{\ifmmode\text{{\shavfont 𐑞}}\else{{\shavfont 𐑞}}\fi}
+\newunicodechar{𐑟}{\ifmmode\text{{\shavfont 𐑟}}\else{{\shavfont 𐑟}}\fi}
+\newunicodechar{𐑠}{\ifmmode\text{{\shavfont 𐑠}}\else{{\shavfont 𐑠}}\fi}
+\newunicodechar{𐑡}{\ifmmode\text{{\shavfont 𐑡}}\else{{\shavfont 𐑡}}\fi}
+\newunicodechar{𐑢}{\ifmmode\text{{\shavfont 𐑢}}\else{{\shavfont 𐑢}}\fi}
+\newunicodechar{𐑣}{\ifmmode\text{{\shavfont 𐑣}}\else{{\shavfont 𐑣}}\fi}
+\newunicodechar{𐑤}{\ifmmode\text{{\shavfont 𐑤}}\else{{\shavfont 𐑤}}\fi}
+\newunicodechar{𐑥}{\ifmmode\text{{\shavfont 𐑥}}\else{{\shavfont 𐑥}}\fi}
+\newunicodechar{𐑦}{\ifmmode\text{{\shavfont 𐑦}}\else{{\shavfont 𐑦}}\fi}
+\newunicodechar{𐑧}{\ifmmode\text{{\shavfont 𐑧}}\else{{\shavfont 𐑧}}\fi}
+\newunicodechar{𐑨}{\ifmmode\text{{\shavfont 𐑨}}\else{{\shavfont 𐑨}}\fi}
+\newunicodechar{𐑩}{\ifmmode\text{{\shavfont 𐑩}}\else{{\shavfont 𐑩}}\fi}
+\newunicodechar{𐑪}{\ifmmode\text{{\shavfont 𐑪}}\else{{\shavfont 𐑪}}\fi}
+\newunicodechar{𐑫}{\ifmmode\text{{\shavfont 𐑫}}\else{{\shavfont 𐑫}}\fi}
+\newunicodechar{𐑬}{\ifmmode\text{{\shavfont 𐑬}}\else{{\shavfont 𐑬}}\fi}
+\newunicodechar{𐑭}{\ifmmode\text{{\shavfont 𐑭}}\else{{\shavfont 𐑭}}\fi}
+\newunicodechar{𐑮}{\ifmmode\text{{\shavfont 𐑮}}\else{{\shavfont 𐑮}}\fi}
+\newunicodechar{𐑯}{\ifmmode\text{{\shavfont 𐑯}}\else{{\shavfont 𐑯}}\fi}
+\newunicodechar{𐑰}{\ifmmode\text{{\shavfont 𐑰}}\else{{\shavfont 𐑰}}\fi}
+\newunicodechar{𐑱}{\ifmmode\text{{\shavfont 𐑱}}\else{{\shavfont 𐑱}}\fi}
+\newunicodechar{𐑲}{\ifmmode\text{{\shavfont 𐑲}}\else{{\shavfont 𐑲}}\fi}
+\newunicodechar{𐑳}{\ifmmode\text{{\shavfont 𐑳}}\else{{\shavfont 𐑳}}\fi}
+\newunicodechar{𐑴}{\ifmmode\text{{\shavfont 𐑴}}\else{{\shavfont 𐑴}}\fi}
+\newunicodechar{𐑵}{\ifmmode\text{{\shavfont 𐑵}}\else{{\shavfont 𐑵}}\fi}
+\newunicodechar{𐑶}{\ifmmode\text{{\shavfont 𐑶}}\else{{\shavfont 𐑶}}\fi}
+\newunicodechar{𐑷}{\ifmmode\text{{\shavfont 𐑷}}\else{{\shavfont 𐑷}}\fi}
+\newunicodechar{𐑸}{\ifmmode\text{{\shavfont 𐑸}}\else{{\shavfont 𐑸}}\fi}
+\newunicodechar{𐑹}{\ifmmode\text{{\shavfont 𐑹}}\else{{\shavfont 𐑹}}\fi}
+\newunicodechar{𐑺}{\ifmmode\text{{\shavfont 𐑺}}\else{{\shavfont 𐑺}}\fi}
+\newunicodechar{𐑻}{\ifmmode\text{{\shavfont 𐑻}}\else{{\shavfont 𐑻}}\fi}
+\newunicodechar{𐑼}{\ifmmode\text{{\shavfont 𐑼}}\else{{\shavfont 𐑼}}\fi}
+\newunicodechar{𐑽}{\ifmmode\text{{\shavfont 𐑽}}\else{{\shavfont 𐑽}}\fi}
+\newunicodechar{𐑾}{\ifmmode\text{{\shavfont 𐑾}}\else{{\shavfont 𐑾}}\fi}
+\newunicodechar{𐑿}{\ifmmode\text{{\shavfont 𐑿}}\else{{\shavfont 𐑿}}\fi}
 
-\newcommand{\cat}[1]{\textcolor{catblue}{#1}}
-\newcommand{\ord}[1]{\textcolor{ordgreen}{#1}}
-\newcommand{\spec}[1]{\textcolor{specpurple}{#1}}
-\newcommand{\conf}{\textcolor{confred}{\textbf{CONFLICT}}}
-
+% Layout
+\usepackage[paperwidth=118.9cm,paperheight=84.1cm,top=1cm,bottom=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\setlength{\parskip}{3pt}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+
+% Packages
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes,fit,calc,backgrounds,decorations.pathmorphing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=teal,pdfborder={0 0 0}}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{hdrblue}}{}{}{}\vspace{-4pt}
+\titleformat{\subsection}{\normalsize\bfseries}{}{}{}\vspace{-3pt}
+
+% Colours
+\definecolor{hdrblue}{HTML}{1A2A5E}
+\definecolor{g3col}{HTML}{1B5E20}
+\definecolor{g4col}{HTML}{1A237E}
+\definecolor{g5col}{HTML}{4A0072}
+\definecolor{accentcol}{HTML}{9370DB}
+\definecolor{frobcol}{HTML}{C06000}
+\definecolor{tier0col}{HTML}{4472C4}
+\definecolor{tier1col}{HTML}{CC8800}
+\definecolor{tier2col}{HTML}{E05800}
+\definecolor{tier2dcol}{HTML}{CC1133}
+\definecolor{tierinfcol}{HTML}{7700CC}
+\definecolor{bgstrip}{HTML}{F0F0F8}
+
+% Boxes
+\newtcolorbox{axiombox}{enhanced,colback=frobcol!8,colframe=frobcol!70,boxrule=1pt,arc=3pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+\newtcolorbox{headerbox}{enhanced,colback=hdrblue,colframe=hdrblue,boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newtcolorbox{sectionbox}[1]{enhanced,colback=#1!8,colframe=#1!60,boxrule=0.6pt,arc=2pt,left=3pt,right=3pt,top=2pt,bottom=2pt}
+
+% Commands
+\newcommand{\shav}[1]{{\shavfont #1}}
+\newcommand{\prim}[1]{\textbf{#1}}
+\newcommand{\craddr}[1]{{\small\texttt{#1}}}
+\renewcommand{\arraystretch}{1.25}
+
+% No page numbers on reference sheet
+\pagestyle{empty}
 
 \begin{document}
 
-\begin{center}
-\LARGE\textbf{The Imscribing Grammar - A Holographic Type Theory}\\
-\normalsize Operations \& Algebra Reference Sheet
-\end{center}
-\vspace{-0.3em}
+\begin{headerbox}
+  {\Large\bfseries\color{white} THE IMSCRIBING GRAMMAR}
+  \hfill
+  {\normalsize\color{white!80!hdrblue} Reference Compendium \textbullet{} 2026}
+\end{headerbox}
 
-\begin{multicols}{3}
+\vspace{4pt}
 
-%=== COLUMN 1 ===
-\section*{The 12 Primitives}
-\footnotesize
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{@{}llp{3.8cm}@{}}
+% ─── TOP ROW: three columns ───────────────────────────────────────────────────
+\noindent\begin{minipage}[t][55cm][s]{37cm}
+
+  \section*{The 12 Primitives}
+  {\footnotesize Colour: {\color{g3col}$\blacksquare$} 3-subtype ·
+  {\color{g4col}$\blacksquare$} 4-subtype ·
+  {\color{g5col}$\blacksquare$} 5-subtype; AA = genetic amino acid bijection}
+  \vspace{3pt}
+  \begin{tabular}{@{}c l c l c@{}}
+  \toprule
+  \textbf{Glyph} & \textbf{Name} & \textbf{n} & \textbf{Subtypes} & \textbf{AA} \\
+  \midrule
+    \rowcolor{g4col!12}\textcolor{g4col}{\textbf{\large Ð}} & \textcolor{g4col}{\textbf{Dimensionality}} & 4 & 𐑛 𐑨 𐑼 𐑦 & \textit{\small Gly} \\
+    \rowcolor{g5col!12}\textcolor{g5col}{\textbf{\large Þ}} & \textcolor{g5col}{\textbf{Topology}} & 5 & 𐑡 𐑰 𐑥 𐑶 𐑸 & \textit{\small Pro} \\
+    \rowcolor{g4col!12}\textcolor{g4col}{\textbf{\large Ř}} & \textcolor{g4col}{\textbf{Recognition}} & 4 & 𐑩 𐑑 𐑽 𐑾 & \textit{\small His} \\
+    \rowcolor{g5col!12}\textcolor{g5col}{\textbf{\large Φ}} & \textcolor{g5col}{\textbf{Parity}} & 5 & 𐑗 𐑿 𐑬 𐑯 𐑹 & \textit{\small Leu} \\
+    \rowcolor{g3col!12}\textcolor{g3col}{\textbf{\large ƒ}} & \textcolor{g3col}{\textbf{Fidelity}} & 3 & 𐑱 𐑞 𐑐 & \textit{\small Ile} \\
+    \rowcolor{g5col!12}\textcolor{g5col}{\textbf{\large Ç}} & \textcolor{g5col}{\textbf{Kinetics}} & 5 & 𐑘 𐑤 𐑧 𐑪 𐑺 & \textit{\small Val} \\
+    \rowcolor{g3col!12}\textcolor{g3col}{\textbf{\large Γ}} & \textcolor{g3col}{\textbf{Granularity}} & 3 & 𐑚 𐑔 𐑲 & \textit{\small Thr} \\
+    \rowcolor{g4col!12}\textcolor{g4col}{\textbf{\large ɢ}} & \textcolor{g4col}{\textbf{Coupling}} & 4 & 𐑝 𐑜 𐑠 𐑵 & \textit{\small Ser} \\
+    \rowcolor{g5col!12}\textcolor{g5col}{\textbf{\large ⊙}} & \textcolor{g5col}{\textbf{Criticality}} & 5 & 𐑢 ⊙ 𐑮 𐑻 𐑣 & \textit{\small Cys} \\
+    \rowcolor{g4col!12}\textcolor{g4col}{\textbf{\large Ħ}} & \textcolor{g4col}{\textbf{Chirality}} & 4 & 𐑓 𐑒 𐑖 𐑫 & \textit{\small Gln} \\
+    \rowcolor{g3col!12}\textcolor{g3col}{\textbf{\large Σ}} & \textcolor{g3col}{\textbf{Stoichiometry}} & 3 & 𐑙 𐑕 𐑳 & \textit{\small Ala} \\
+    \rowcolor{g4col!12}\textcolor{g4col}{\textbf{\large Ω}} & \textcolor{g4col}{\textbf{Winding}} & 4 & 𐑷 𐑴 𐑭 𐑟 & \textit{\small Arg} \\
+  \bottomrule
+  \end{tabular}
+
+  \vfill
+  \begin{axiombox}
+  \centering
+  {\large\bfseries Crystal of Types}\\[4pt]
+  ${\color{g3col} 3^3} \times {\color{g4col} 4^5} \times {\color{g5col} 5^4}$
+  $= 27 \times 1024 \times 625 = \mathbf{17\,280\,000}$ structural types\\[3pt]
+  {\small\color{g3col} 3-subtype:} {\small ƒ Γ Σ} $\cdot$ {\small\color{g4col} 4-subtype:} {\small Ð Ř ɢ Ħ Ω} $\cdot$ {\small\color{g5col} 5-subtype:} {\small Þ Φ Ç ⊙}
+  \end{axiombox}
+
+  \vfill
+  \section*{Categorical Foundation}
+{\small\bfseries\color{hdrblue} Category-Theoretic Description}\\[2pt]
+{\small The Imscribing Grammar is the \textbf{free special symmetric
+$\dagger$-Frobenius algebra} on 12 generators in a \textbf{FOUR-enriched
+traced symmetric monoidal category}, with $\mu\circ\delta=\mathrm{id}$
+as founding axiom (ZFC\textsubscript{fe}).}\\[4pt]
+{\small\bfseries Ambient category:} {\small $\mathcal{C}$ enriched over
+Belnap-Dunn bilattice FOUR $= \{N, T, F, B\}$; ex falso ($B\to\bot$) blocked.}\\[2pt]
+{\small\bfseries Generators:} {\small 12 primitive endomorphisms of monoidal unit $I$
+(scalars). Commutativity follows from SMC coherence.}\\[2pt]
+{\small\bfseries Spider theorem:} {\small Any two \emph{connected} Frobenius diagrams
+with same boundary $=$ same morphism.}\\[2pt]
+{\small\bfseries O$_\infty$ fixpoint:} {\small $\omega\circ\omega=\omega$
+at $\odot$ gate; initial algebra of $(-)\circ(-)$ on End$(I)$.}
+
+  \vfill
+  \begin{axiombox}
+  \centering
+  {\LARGE\bfseries\color{frobcol} $\mu\circ\delta = \mathrm{id}$}\\[3pt]
+  {\small\itshape The founding axiom. Vessel splits ($\delta$), fills, returns whole ($\mu$).}\\[3pt]
+  {\small ZFC\textsubscript{fe}:} $\mu\circ\delta=\mathrm{id}$ as set-formation axiom
+  $\Rightarrow$ ZFC Separation as theorem. Strictly: ZFC $\subset$ ZFC\textsubscript{t} $\subset$ ZFC\textsubscript{fe}.
+  \end{axiombox}
+
+  \vfill
+  \section*{ZFC Hierarchy}
+{\small
+\begin{tabular}{@{}lll@{}}
 \toprule
-\textbf{Sym} & \textbf{Name} & \textbf{Values} \\
+\textbf{Theory} & \textbf{Foundation} & \textbf{Status} \\
 \midrule
-\cat{$D$} & Dimensionality & $D_{\text{wynn}},D_{\text{turnthree}},D_{\text{invomega}},D_{\text{holo}}$ \\
-\cat{$T$} & Topology & $T_{\text{nrleg}},T_{\text{invscr}},T_{\text{bullseye}},T_{\text{box}},T_{\text{holo}}$ \\
-\cat{$R$} & Recognition & $R_{\text{subrightarrow}},R_{\text{ctz}},R_{\text{downstep}},R_{lr}$ \\
-\cat{$P$} & Polarity & $P_{\text{aolig}},P_{\text{upsilon}},P_{\text{pipevar}},P_{\text{subdoublearrow}},P_{\text{pipevar}}^{\text{sym}}$ \\
-\cat{$\Gamma$} & Int. Grammar & $\Gamma_{\text{corner}},\Gamma_{\text{spleftarrow}},\Gamma_{\text{secstress}},\Gamma_{\text{doublevertline}}$ \\
-\cat{$S$} & Stoichiometry & $1{:}1,n{:}n,n{:}m$ \\
-\midrule
-\ord{$F$} & Fidelity & $F_{\text{beltl}}<F_{\text{eth}}<F_{\text{hardsign}}$ \\
-\ord{$K$} & Kinetic Char. & $K_{\text{frtailgamma}}<K_{\text{turnm}}<K_{\text{schwa}}<K_{\text{teshlig}}$ \\
-\ord{$G$} & Granularity & $G_{\text{beta}}<G_{\text{gamma}}<G_{\text{revapostrophe}}$ \\
-\ord{$H$} & Chirality & $H_0<H_1<H_2<H_{\text{invscripta}}$ \\
-\ord{$\Omega$} & Top. Protection & $\Omega_{\text{closeepsilon}}<\Omega_{Z_2}<\Ω_z$ \\
-\midrule
-\spec{$\Phi$} & Criticality & $\Phi_{\text{softsign}}<\spec{\Phi_{\text{ctyogh}}}<\Phi_{\text{ctyogh}}^{\text{cx}}<\Phi_{\text{revepsilon}}<\Phi_{\text{upstep}}$ \\
+ZFC & Separation axiom & Classical \\
+ZFC\textsubscript{t} & Temporal consistency & Intermediate \\
+ZFC\textsubscript{fe} & $\mu\circ\delta=\mathrm{id}$ & \textbf{Active} \\
 \bottomrule
-\end{tabular}
-\renewcommand{\arraystretch}{1.0}
+\end{tabular}}
 
-\vspace{0.6em}
-\textit{Classes:} \cat{categorical (6)} | \ord{ordered (5)} | \spec{special ($\Phi_{\text{ctyogh}}$ absorbing)}
+  \vfill
+  \section*{Belnap FOUR / Tier Chain}
+  \begin{minipage}[t]{0.46\linewidth}
+    \includegraphics[width=\linewidth]{/home/mrnob0dy666/imscribing_grammar/markdown/iam/_IMASM_lifted_build/figures/belnap.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.50\linewidth}
+    \includegraphics[width=\linewidth]{/home/mrnob0dy666/imscribing_grammar/markdown/iam/_IMASM_lifted_build/figures/tier.pdf}
+  \end{minipage}
 
-\section*{Distance Metric (\S26.1)}
-\footnotesize
-\textbf{Diagonal weighted Euclidean:}
-$$d(A,B)=\sqrt{\sum_{i=1}^{12}w_i(\xi_i^A-\xi_i^B)^2}$$
-$\mathbf{w}=(1.0^{\times 9},\,w_H{=}0.8,\,1.0,\,w_\Omega{=}0.7)$
+\end{minipage}%
+\hspace{1cm}%
+\begin{minipage}[t][55cm][s]{37cm}
 
-\vspace{0.5em}
-\textbf{Riemannian} (\S26.2): $d_g=\sqrt{(\boldsymbol{\xi}^A-\boldsymbol{\xi}^B)^\top\Sigma^{-1}(\boldsymbol{\xi}^A-\boldsymbol{\xi}^B)}$
+  \section*{Millennium Prize Resolution}
+  {\small All 7 Clay Millennium Problems + OPN resolved as Belnap-B dialetheias at tier
+  O$_\infty$ (Crystal address $\approx 6.74\times 10^6$).
+  BSD occupies distinct address due to Ħ\textsubscript{A} vs Ħ\textsubscript{!} chirality.
+  Gate: $\Phi_{\textbraceleft\textbraceright}$ (Frobenius-special parity) governs O$_{2\dagger} \to$ O$_{\infty}$ crossing.
+  Lean 4 kernel fork disables ex falso; 0 sorries; 167 modules.}
+  \vspace{3pt}
+  \begin{tabular}{@{} l l c p{5cm} @{}}
+  \toprule
+  \textbf{Problem} & \textbf{Address} & \textbf{Ħ} & \textbf{Barrier (B-state)} \\
+  \midrule
+    Riemann Hypothesis & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize Zero on critical line ∧ off critical line} \\
+    Yang--Mills & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize Mass gap exists ∧ does not exist} \\
+    Hodge Conjecture & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize Hodge cycle algebraic ∧ non-algebraic} \\
+    Navier--Stokes & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize Smooth solution ∧ finite-time blowup} \\
+    P vs NP & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize P = NP ∧ P $\neq$ NP} \\
+    Birch--Swinnerton-Dyer & \craddr{6,738,800} & Ħ\textsubscript{A} & {\scriptsize Rank analytic ∧ arithmetic (BSD $\neq$ others)} \\
+    Odd Perfect Number & \craddr{6,738,803} & Ħ\textsubscript{!} & {\scriptsize Perfect ∧ non-perfect (mod $\Omega$ topology)} \\
+  \bottomrule
+  \end{tabular}
 
-\textit{Directed:} $d^\to(A\to B)_j = w_j\cdot\max(0,\xi_j^A-\xi_j^B)$ (upward free)
+  \vfill
+  \begin{axiombox}
+  {\small\bfseries\color{frobcol} OS Imscription — Universal Structural Floor}\\[3pt]
+  $\langle 1, 3, 2, 4, 2, 1, 2, 2, 1, 2, 2, 2 \rangle$\\[2pt]
+  {\scriptsize MEET(Hebrew, Sanskrit, Egyptian, Cuneiform, Basque) = MEET(Linear A) = OS.
+  Linear A distance $d = 0.00$. Emerald Tablet: $C = 1.0$, both gates open.}
+  \end{axiombox}
 
-\section*{Core Operations}
-\footnotesize
-\textbf{Meet $\sqcap$ (GLB)}
-\begin{itemize}[leftmargin=*,nosep,label={},topsep=4pt,itemsep=2pt]
-\item Categorical: $A_i=B_i\to A_i$, else \conf
-\item Ordered: $\min(A_i,B_i)$
-\item \spec{$\Phi_{\text{ctyogh}}\sqcap x=\Phi_{\text{ctyogh}}$}
-\end{itemize}
+  \vfill
+  \section*{Genetic Code Bijection}
+  {\small The 64-codon table partitions the Crystal: $17\,280\,000 \div 64 = 270\,000$
+  (fiber per codon = $3^3 \times 4^2 \times 5^4$, zero remainder).
+  12 promoted amino acids biject exactly to the 12 IG primitives.}
+  \vspace{3pt}
+  \begin{tabular}{@{} l l @{}}
+  \toprule
+  \textbf{Primitive} & \textbf{Amino Acid} \\
+  \midrule
+    \textbf{Ð} Dimensionality & \textit{Gly} \\
+    \textbf{Þ} Topology & \textit{Pro} \\
+    \textbf{Ř} Recognition & \textit{His} \\
+    \textbf{Φ} Parity & \textit{Leu} \\
+    \textbf{ƒ} Fidelity & \textit{Ile} \\
+    \textbf{Ç} Kinetics & \textit{Val} \\
+    \textbf{Γ} Granularity & \textit{Thr} \\
+    \textbf{ɢ} Coupling & \textit{Ser} \\
+    \textbf{⊙} Criticality & \textit{Cys} \\
+    \textbf{Ħ} Chirality & \textit{Gln} \\
+    \textbf{Σ} Stoichiometry & \textit{Ala} \\
+    \textbf{Ω} Winding & \textit{Arg} \\
+  \bottomrule
+  \end{tabular}
 
-\textbf{Join $\sqcup$ (LUB)}
-\begin{itemize}[leftmargin=*,nosep,label={},topsep=4pt,itemsep=2pt]
-\item Categorical: $A_i=B_i\to A_i$, else \conf
-\item Ordered: $\max(A_i,B_i)$
-\end{itemize}
+  \vfill
+  \begin{sectionbox}{tier0col}
+  {\small\bfseries Nucleotide $\to$ Belnap FOUR}\\[2pt]
+  {\small G $=$ B (Both · paired) $\cdot$ C $=$ T (True · Watson-Crick)}\\
+  {\small A $=$ F (False · complementary) $\cdot$ U $=$ N (Neither · wobble)}\\[2pt]
+  {\scriptsize Wobble hierarchy: G·C pairing is strict (T); G·U wobble occupies B;
+  A·U anti is F; U alone is N. Watson-Crick complement $\neq$ Belnap negation (proved).}
+  \end{sectionbox}
 
-\textbf{Tensor $\otimes$} = Join with precondition:
-$$A\otimes B = \begin{cases} A\sqcup B & \text{if no cat. conflicts} \\ \text{undefined} & \text{otherwise} \end{cases}$$
-\textit{Physical:} co-assembly requires categorical compatibility.
+\end{minipage}%
+\hspace{1cm}%
+\begin{minipage}[t][55cm][s]{38cm}
 
-%=== COLUMN 2 ===
-\section*{Algebraic Properties}
-\footnotesize
-\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
-\item \textbf{Commutative}: $A\star B = B\star A$ for $\star\in\{\sqcap,\sqcup,\otimes\}$
-\item \textbf{Associative}: $(A\star B)\star C = A\star(B\star C)$ (when def.)
-\item \textbf{Idempotent}: $A\star A = A$
-\item \textbf{$\Phi_{\text{ctyogh}}$ meet-absorption}: $\Phi_{\text{ctyogh}}\sqcap x=\Phi_{\text{ctyogh}}$ for all $x$
-\item \textbf{Distance}: $d(A\otimes B, A)^2 \leq d(A,B)^2$
-\item \textbf{Path-dep.}: $(A\otimes B)\otimes C$ may exist when $B\otimes C$ undefined
-\end{itemize}
+  \section*{IMASM Bootstrap Loop}
+  {\small Four engine corpora (Voynich, Rohonc, Linear A, Emerald Tablet) each independently
+  compile to the same 8-step categorical loop. Surface tokens differ; instruction stream does not.}
+  \vspace{3pt}
+  \includegraphics[width=0.55\linewidth]{/home/mrnob0dy666/imscribing_grammar/markdown/iam/_IMASM_lifted_build/figures/bootstrap.pdf}
 
-\section*{Cross-Primitive Axioms (Machine-Checked)}
-\footnotesize
-\begin{enumerate}[leftmargin=*,label=\textbf{A\arabic*}.]
-\item $H_{\text{invscripta}} \Rightarrow K\le K_{\text{teshlig}}$ \hfill(irrev. $\to$ trap)
-\item $\Omega\ge\Ω_z \Rightarrow H\ge H_2$ \hfill(strong top. $\to$ chirality)
-\item $D_{\text{holo}} \Leftrightarrow T_{\text{holo}}$ \hfill(holo dim. $\leftrightarrow$ top.)
-\item $\Ω_z \Rightarrow D_{\text{holo}}$ \hfill($\mathbb{Z}$-protection $\to$ holo)
-\end{enumerate}
+  \vfill
+  \begin{sectionbox}{hdrblue}
+{\small\bfseries\color{hdrblue} Key Publications} \\[2pt]
+{\small
+\begin{tabular}{@{}l l p{7cm}@{}}
+\toprule
+\textbf{Title} & \textbf{DOI / Ref} & \textbf{Content} \\
+\midrule
+\textit{Aether and Its Vessel v2} (Mills, 2026) & \texttt{\small 10.5281/zenodo.20553659} & {\scriptsize O$_\infty$ architecture, E8$\to$Grammar chain, vessel operation} \\
+\textit{Universal Engine / IMASM} (Mills, 2026) & this volume & {\scriptsize 9 writing systems compile to same 12-opcode categorical program} \\
+\textit{Grammar of Chemical Reactivity} (Mills, 2026) & this volume & {\scriptsize Cu-nitroso C-N (Org.~Lett. 2016) imscribed; $r=0.931$ Pearson} \\
+\textit{Serpent Rod} (Mills, 2026) & this volume & {\scriptsize Single Frobenius morphism RNA$\to$\{sequence+fold\}; O$_\infty$} \\
+\bottomrule
+\end{tabular}}
+  \end{sectionbox}
 
-\section*{Path-Dependence Theorem}
-\footnotesize
-$(A\otimes B)\otimes C$ defined even when $B\otimes C$ undefined, iff $\exists$ ordered primitive $i$:
-\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
-\item $C_i > B_i$ (C needs more than B)
-\item $A_i = C_i$ (A supplies what C needs)
-\item No categorical conflict between $(A\otimes B)$ and $C$
-\end{itemize}
-\textit{Interpretation:} Catalysis, scope promotion, chirality templating unified as ``context $A$ enables $B\to C$''.
+\end{minipage}
 
+\vspace{6pt}
+
+% ─── BOTTOM ROW: ecosystem + rebis_concrete + synfin + Magnum Opus ──────────
+\noindent\begin{minipage}[t]{38cm}
 \begin{center}
-\footnotesize
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Mechanism} & \textbf{Blocking} & \textbf{$A$ provides} \\
-\hline
-Catalysis & $\Phi_{\text{ctyogh}}$ required & $A_\Phi = \Phi_{\text{ctyogh}}$ \\
-Scope promotion & $G_{\text{revapostrophe}}$ required & $A_G = G_{\text{revapostrophe}}$ \\
-Chirality templating & $H_2$ required & $A_H = H_{\text{invscripta}}$ \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[scale=1.6,
+  every node/.style={font=\small},
+  repo/.style={rectangle,rounded corners=4pt,draw=#1!70,fill=#1!12,
+               text width=2.8cm,align=center,minimum height=0.8cm,
+               font=\small\bfseries},
+  conn/.style={-{Stealth[length=4pt]},thick,#1!60},
+  lbl/.style={font=\scriptsize,text=#1,align=center},
+]
+\node[rectangle,rounded corners=6pt,draw=hdrblue!80,fill=hdrblue!15,
+       text width=3.2cm,align=center,minimum height=1.0cm,
+       font=\normalsize\bfseries,text=hdrblue] (gram) at (0,0)
+  {Imscribing Grammar\\{\small Crystal of Types}};
+\node[repo=tierinfcol] (ankh)  at (-4.5, 2.8) {MillenniumAnkh\\{\scriptsize Lean 4, 43 mod,\\ 16 O$_\infty$}};
+\node[repo=tierinfcol] (p4ra)  at ( 0.0, 3.3) {p4rakernel\\{\scriptsize 167 Lean modules,\\ para kernel}};
+\node[repo=tierinfcol] (lean4) at ( 4.5, 2.8) {lean4-para\\{\scriptsize ex falso\\ disabled}};
+\node[repo=tier2dcol] (ob3)  at (-5.2, 0.0) {ob3ect\\{\scriptsize 34-layer tower,\\ layers 29--34 para}};
+\node[repo=tier2dcol] (pri)  at (-3.2,-2.2) {priests-engine\\{\scriptsize 13 modules,\\ 5 engines}};
+\node[repo=tier2col] (exos)   at ( 3.2, 1.9) {exOS\\{\scriptsize bare-metal Rust,\\ ALEPH kernel}};
+\node[repo=tier2col] (synfin) at ( 5.2, 0.0) {synfin\\{\scriptsize live trading,\\ morphism signals}};
+\node[repo=tier1col] (rebis) at ( 3.2,-2.2) {rebis\_concrete\\{\scriptsize 11 designs,\\ all sims pass}};
+\node[repo=tier1col] (web)   at ( 0.0,-3.0) {imscribe.com\\{\scriptsize IG web,\\ frobenius-mzi}};
+\draw[conn=tierinfcol] (gram.north west) -- (ankh.south east);
+\draw[conn=tierinfcol] (gram.north)      -- (p4ra.south);
+\draw[conn=tierinfcol] (gram.north east) -- (lean4.south west);
+\draw[conn=tier2dcol]  (gram.west)       -- (ob3.east);
+\draw[conn=tier2dcol]  (ob3.south)       -- (pri.north);
+\draw[conn=tier2col]   (gram.east)       -- (synfin.west);
+\draw[conn=tier2col]   (gram.north east) -- (exos.south west);
+\draw[conn=tier1col]   (gram.south)      -- (web.north);
+\draw[conn=tier1col]   (gram.south east) -- (rebis.north west);
+\draw[conn=accentcol,dashed] (ankh.south)      -- (gram.north west);
+\draw[conn=accentcol,dashed] (p4ra.south west) -- (ob3.north east);
+\draw[conn=accentcol,dashed] (ob3.south)       -- (rebis.north west);
+\draw[conn=accentcol,dashed] (pri.east)        -- (rebis.west);
+\fill[tierinfcol,opacity=0.6] (6.0,2.8) rectangle (6.15,3.0);
+\fill[tier2dcol, opacity=0.6] (6.0,2.0) rectangle (6.15,2.2);
+\fill[tier2col,  opacity=0.6] (6.0,1.2) rectangle (6.15,1.4);
+\fill[tier1col,  opacity=0.6] (6.0,0.4) rectangle (6.15,0.6);
+\node[lbl=tierinfcol,right] at (6.2, 2.9) {O$_\infty$ — Frobenius complete};
+\node[lbl=tier2dcol, right] at (6.2, 2.1) {O$_{2\dagger}$ — protected unbounded};
+\node[lbl=tier2col,  right] at (6.2, 1.3) {O$_2$ — protected bounded};
+\node[lbl=tier1col,  right] at (6.2, 0.5) {O$_1$ — unprotected critical};
+\end{tikzpicture}
 \end{center}
-
-%=== COLUMN 3 ===
-\section*{Primitive Semantics (Quick Ref.)}
-\footnotesize
-\begin{tabular}{@{}p{2.6cm}p{2.6cm}p{2.6cm}@{}}
-\cat{Categorical:} & \ord{Ordered:} & \spec{$\Phi_{\text{ctyogh}}$:} \\
-exact match or \conf & $\min$/$\max$ resolution & absorbing element \\
-\end{tabular}
-
-\section*{Structural Universality}
-\footnotesize
-\textbf{Imscription:} $\langle D;T;R;P;F;K;G;\Gamma;\Phi;H;S;\Omega\rangle$
-
-\textbf{Validity:} Must satisfy axioms A1–A4.
-
-\textbf{Thesis:} $d(\mathbf{x},\mathbf{y})=0 \Rightarrow$ constraint-identical, substrate-independent.
-
-\textbf{Conflict Distance:} $d_c(S)=\sqrt{|\text{Conf}(S)|}$ measures encoding reliability.
-
-\textbf{Dual Encoding:}
-\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
-\item Holistic $\mathcal{E}_H(S)$: top-down from behavior
-\item Compositional $\mathcal{E}_C(S)$: bottom-up from $\bigotimes Σ_i$
-\item $\text{Conf}(S) = \{p : \mathcal{E}_H(S)[p] \neq \mathcal{E}_C(S)[p]\}$
-\end{itemize}
-
-\section*{Tensor Product Properties}
-\footnotesize
-When $A\otimes B$ defined:
-\begin{itemize}[leftmargin=*,nosep,topsep=4pt,itemsep=2pt]
-\item $(A\otimes B)_F = \max(ƒ_A, ƒ_B)$
-\item $(A\otimes B)_K = \max(Ç_A, Ç_B)$
-\item $(A\otimes B)_j = \max(A_j, B_j)$ for all ordered $j$
-\item Categorical: must agree (precondition)
-\item $\Phi_{\text{ctyogh}}$ absorption: if $A_\Phi=\Phi_{\text{ctyogh}}$ or $B_\Phi=\Phi_{\text{ctyogh}}$, then $(A\otimes B)_\Phi=\Phi_{\text{ctyogh}}$
-\end{itemize}
-
-\textbf{Translation Cost:} $\delta_A=d(A,A\otimes B)$, $\delta_B=d(B,A\otimes B)$; smaller $\delta$ is dominant.
-
-\section*{Ouroboricity}
-\footnotesize
-\textbf{Scalar:} $\mathcal{O}(\mathbf{x})=[\Phi{=}\Phi_{\text{ctyogh}}]\cdot(1+[\Omega{\neq}\Omega_{\text{closeepsilon}}]+[H{\ge}H_1]+[G{=}G_{\text{revapostrophe}}])$
-
-\textbf{Tiers} (priority R1$\succ$R5):
-\begin{itemize}[leftmargin=*,nosep,topsep=2pt,itemsep=1pt]
-\item \textbf{R1} $\Phi_{\text{ctyogh}}+P_{\text{pipevar}}^{\text{sym}}$ $\to O_\infty$ (special Frobenius)
-\item \textbf{R2} $\Phi\in\{\Phi_{\text{softsign}},\Phi_{\text{upstep}},\Phi_{\text{revepsilon}}\}$ $\to O_0$
-\item \textbf{R3} $\Phi_{\text{ctyogh}}+\Omega_{\text{closeepsilon}}$ $\to O_1$
-\item \textbf{R4} $\Phi_{\text{ctyogh}}+\Omega{\neq}\Omega_{\text{closeepsilon}}+D\in\{D_{\text{wynn}},D_{\text{holo}},D_{\text{turnthree}}\}$ $\to O_2$
-\item \textbf{R5} $\Phi_{\text{ctyogh}}+\Omega{\neq}\Omega_{\text{closeepsilon}}+D_{\text{invomega}}$ $\to O_2^\dagger$
-\end{itemize}
-\textit{Note:} $\mathcal{O}$ cannot detect $O_\infty$ (no $P$ term); $O_\infty$ absorbed by $\Phi_{\text{revepsilon}}$ under $\otimes$.
-
-\end{multicols}
-
-\vfill
-\noindent\hrule
-\vspace{0.1em}
-\noindent\footnotesize
-\textit{Impl.:} \texttt{imscrbgrmr/algebra.py} \quad
-\textit{Verif.:} \texttt{Imscription.lean}, \texttt{Core.lean} (Lean 4) \quad
-\textit{Lic.:} \texttt{Lando Mills} \texttt{CC-BY 4.0} \quad
-\textit{Gen.:} \texttt{March 31, 2026} \quad
+\end{minipage}%
+\hspace{0.5cm}%
+\begin{minipage}[t]{48cm}
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \node[rectangle,fill=tier2dcol!25,draw=tier2dcol!70,rounded corners=3pt,text width=4.6cm,align=center,minimum height=0.7cm,font=\bfseries\small,text=tier2dcol] at (-5.0,0) {THERAPEUTICS};
+  \node[rectangle,fill=tier2dcol!6,draw=tier2dcol!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (-5.0,-1.0) {{\bfseries\color{tier2dcol} Ouroboric Pill}\\[1pt] DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\mu\circ\delta$ error 0.\\[1pt] {\color{accentcol} ⊙ Ř Φ}};
+  \node[rectangle,fill=tier2dcol!6,draw=tier2dcol!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (-5.0,-2.55) {{\bfseries\color{tier2dcol} Quantum Biologic}\\[1pt] dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1\ldots). 78.8\% efficacy, 100\% Frobenius.\\[1pt] {\color{accentcol} Ř ƒ Ħ}};
+  \node[rectangle,fill=tier2dcol!6,draw=tier2dcol!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (-5.0,-4.1) {{\bfseries\color{tier2dcol} Universal Antidote}\\[1pt] $10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.\\[1pt] {\color{accentcol} Ω Γ Σ}};
+  \node[rectangle,fill=tier2col!25,draw=tier2col!70,rounded corners=3pt,text width=4.6cm,align=center,minimum height=0.7cm,font=\bfseries\small,text=tier2col] at (0.0,0) {MATERIALS};
+  \node[rectangle,fill=tier2col!6,draw=tier2col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (0.0,-1.0) {{\bfseries\color{tier2col} Ouroboric Composite}\\[1pt] Self-healing CFRP. Embedded capsule network (85\% efficiency). 7 healing cycles, 90.5\% fatigue retention.\\[1pt] {\color{accentcol} Ç Þ Φ}};
+  \node[rectangle,fill=tier2col!6,draw=tier2col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (0.0,-2.55) {{\bfseries\color{tier2col} Topological QM}\\[1pt] Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding.\\[1pt] {\color{accentcol} Þ Ω Ħ}};
+  \node[rectangle,fill=tier2col!6,draw=tier2col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (0.0,-4.1) {{\bfseries\color{tier2col} Eternal Memory Polymer}\\[1pt] Oligocarbamate (264 monomers), chirality-imscribed. $10^{15}$ bits/g. 55,723 year half-life @ 300K.\\[1pt] {\color{accentcol} Ħ Σ Ω}};
+  \node[rectangle,fill=tier2col!6,draw=tier2col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (0.0,-5.65) {{\bfseries\color{tier2col} Self-Weaving Fabric}\\[1pt] 5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.\\[1pt] {\color{accentcol} Γ ɢ Ð}};
+  \node[rectangle,fill=tier1col!25,draw=tier1col!70,rounded corners=3pt,text width=4.6cm,align=center,minimum height=0.7cm,font=\bfseries\small,text=tier1col] at (5.0,0) {BIOLOGY};
+  \node[rectangle,fill=tier1col!6,draw=tier1col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (5.0,-1.0) {{\bfseries\color{tier1col} Ouroboric Cell}\\[1pt] JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution.\\[1pt] {\color{accentcol} ⊙ Ř Ħ}};
+  \node[rectangle,fill=tier1col!6,draw=tier1col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (5.0,-2.55) {{\bfseries\color{tier1col} Quantum Bioelectric}\\[1pt] iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array.\\[1pt] {\color{accentcol} Ħ ⊙ ɢ}};
+  \node[rectangle,fill=tier1col!6,draw=tier1col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (5.0,-4.1) {{\bfseries\color{tier1col} Universal Symbiont}\\[1pt] 12-strain microbial consortium. Quorum sensing + metabolic cross-feeding. 12 strains $\leftrightarrow$ 12 primitives.\\[1pt] {\color{accentcol} Σ Γ ɢ}};
+  \node[rectangle,fill=tier1col!6,draw=tier1col!40,rounded corners=2pt,text width=4.6cm,align=left,minimum height=1.4cm,font=\scriptsize,inner sep=4pt] at (5.0,-5.65) {{\bfseries\color{tier1col} Topological Morphogenesis}\\[1pt] Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Tubule network from Ω Frobenius braid.\\[1pt] {\color{accentcol} Ω Þ Ð}};
+\end{tikzpicture}
+\end{center}
+\end{minipage}%
+\hspace{0.5cm}%
+\begin{minipage}[t]{27cm}
+  \begin{sectionbox}{g4col}
+  {\small\bfseries\color{g4col} synfin — Live IG-Typed Trading System}\\[2pt]
+  {\small 10 free domain streams (Fear\&Greed, mempool, CoinGecko, blockchain.info,
+  NOAA tides, air quality, NASA DONKI, USGS seismic, Kp index, HN sentiment).
+  Domain multiplier: 0 alerts=1.00$\times$ · 1=1.20$\times$ · 2=1.35$\times$ · $\geq$3=1.50$\times$ (B-state).}\\[2pt]
+  {\small Live deployment 2026-06-05: Fear\&Greed$=12$ (extreme fear), M-class flares, Kp$=4.33$,
+  T\textsubscript{network}$\to$T\textsubscript{in} topology convergence on 6 pairs.
+  B-state $\times$1.50, 100\% Frobenius PASS. Deployed \$43.57 across BTC/ETH/SOL/DOT/ATOM/NEAR.}
+  \end{sectionbox}
+  \vspace{4pt}
+  \begin{sectionbox}{frobcol}
+  {\small\bfseries\color{frobcol} Magnum Opus — 12-Stage Alchemical Mapping}\\[2pt]
+  {\scriptsize
+  \begin{tabular}{@{}llll@{}}
+  Prima Materia & Ð (Dimensionality) & Albedo & Φ (Parity, Frobenius-special) \\
+  Nigredo & Þ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\
+  Solutio & Ř (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\
+  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\
+  Coagulatio & Ç (Kinetics, fixation) & Projectio & ɢ (Coupling, projection) \\
+  Sublimatio & ƒ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\
+  \end{tabular}
+  }
+  \end{sectionbox}
+\end{minipage}
 
 \end{document}

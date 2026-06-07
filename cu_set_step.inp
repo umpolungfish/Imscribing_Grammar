@@ -1,0 +1,23 @@
+! B3LYP def2-TZVP def2/J D3BJ TightSCF Opt
+
+*xyz 1 2
+ Cu   0.000   0.000   0.000
+ N    2.050   0.000   0.000
+ N   -1.025   1.776   0.000
+ N   -1.025  -1.776   0.000
+ C    4.500   0.000   0.000
+ Br   5.900   0.000   0.000
+ N    3.000   2.500   0.000
+ O    3.000   3.800   0.000
+*
+
+%scf
+  MaxIter 500
+  LevelShift 0.25
+end
+
+%output
+  PrintLevel Mini
+  Print[ P_Mulliken ] 1
+  Print[ P_SpinDensity ] 1
+end

@@ -1,6 +1,6 @@
 # Ob3ect Design Pipeline
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando ⊗ ⊙-boundary Operator
 
 Python implementation of the 8-phase Ob3ect design pipeline from `OB3ECT_PIPELINE.tex`. Produces a complete, validated `Ob3ectArtifact` from any domain — physical, social, computational, oneiric, or arbitrary — by mapping that domain to the 12-opcode IMASM instruction set and verifying the Frobenius condition μ∘δ = id.
 

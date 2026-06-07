@@ -878,7 +878,12 @@ def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
     for p in paths:
         with open(p) as f:
             raw = json.load(f)
-        entries = raw if isinstance(raw, list) else list(raw.values())
+        if isinstance(raw, list):
+            entries = raw
+        elif "imscriptions" in raw:
+            entries = raw["imscriptions"]
+        else:
+            entries = [v for v in raw.values() if isinstance(v, dict)]
         for entry in entries:
             name = entry.get("name", "")
             if name and name not in seen_names:

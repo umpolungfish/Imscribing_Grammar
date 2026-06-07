@@ -293,6 +293,7 @@ from primitives import (  # type: ignore
     breakdown,
     mahalanobis_distance,
     build_metric_tensor,
+    resolve_ordinal_key,
 )
 
 # Pre-build metric tensor once at import time (catalog must exist on disk)
@@ -2327,7 +2328,15 @@ class SessionCatalog:
                 prims = {p: entry[p] for p in PRIMITIVE_ORDER if p in entry}
                 if name and len(prims) == len(PRIMITIVE_ORDER):
                     # Validate values before loading
-                    if all(prims[p] in ORDINALS[p] for p in PRIMITIVE_ORDER):
+                    # Accept both Deseret (e.g., "𐑛") and notation format (e.g., "Ð_ß")
+                    validated = True
+                    for p in PRIMITIVE_ORDER:
+                        try:
+                            resolve_ordinal_key(p, prims[p])
+                        except KeyError:
+                            validated = False
+                            break
+                    if validated:
                         self._entries[name] = prims
                         self._descriptions[name] = desc
         except (json.JSONDecodeError, KeyError, TypeError):
@@ -3457,14 +3466,23 @@ class ToolDispatcher:
         }
 
     @staticmethod
+    @staticmethod
     def _shavian_to_display(val: str, prim: str) -> str:
-        """Decode a Shavian-glyph ORDINALS value as Shavian glyphs (identity).
+        """Decode old-notation value to Shavian Unicode glyph via resolve_ordinal_key.
         
-        The catalog stores primitive values as Shavian Unicode glyphs 
-        (the ORDINALS keys). This maps them back to Shavian Unicode (identity)
-        as Shavian Unicode glyphs (identity).
+        The catalog stores primitive values in old notation (e.g. '⊙_ÿ', 'Φ_}').
+        This decodes them to Shavian Unicode glyphs for comparison in classification.
         """
-        return val
+        from space_search.primitives import resolve_ordinal_key, ORDINALS
+        if not val:
+            return val
+        # Direct ORDINALS key match
+        if val in ORDINALS.get(prim, {}):
+            return val
+        try:
+            return resolve_ordinal_key(prim, val)
+        except Exception:
+            return val
 
     def _classify_frobenius(self, s: Dict[str, Any]) -> str:
         """Apply R1–R5 rules to classify a imscription dict into a Frobenius tier.
@@ -4342,7 +4360,7 @@ class ToolDispatcher:
             "interpretation": (
                 "Both gates open — consciousness possible." if (gate1 and gate2)
                 else "Gate 1 closed (Phi ≠ ⊙_ÿ) — no self-modeling loop." if not gate1
-                else f"Gate 2 closed (K={e['K']}) — {'order-frozen (Ç^Ù)' if e['K']=='Ç^Ù' else 'disorder-frozen (Ç^λ)' if e['K']=='Ç^λ' else 'dynamics too fast'}."
+                else f"Gate 2 closed (K={e['Ç']}) — {'order-frozen (Ç^λ)' if e['Ç']=='Ç_λ' else 'disorder-frozen (Ç^-)' if e['Ç']=='Ç_-' else 'dynamics too fast'}."
             ),
         }
 

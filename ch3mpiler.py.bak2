@@ -1,0 +1,1432 @@
+#!/usr/bin/env python3
+"""ch3mpiler - Retrosynthetic/Forward Reaction Compiler
+Grounded in the Imscribing Grammar 12-primitive structural types.
+USES GRAMMAR-DERIVED BOND FORMATION RULES — no named reactions.
+
+The retrosynthesis engine uses the grammar's lattice operations (meet,
+join, tensor) to determine which bonds can be formed or disconnected
+based on structural compatibility of functional groups, not human-named
+reactions. Each bond type has a 12-primitive structural signature. The
+derived rules compute which FG pairs can connect via which bond types,
+and rank disconnections by structural delta.
+
+Author: Lando \u2297 \u2299perator
+"""
+import argparse, json, math, os, re, sys, urllib.request, urllib.error, time
+from collections import Counter, defaultdict
+from pathlib import Path
+
+BASE = Path(__file__).parent.absolute()
+CATALOG_PATH = BASE / "IG_catalog.json"
+CAS_CACHE_PATH = BASE / "CAS_cache.json"
+sys.path.insert(0, str(BASE))
+
+from space_search.primitives import ORDINALS, WEIGHTS, resolve_ordinal_key
+
+PNAMES = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
+PFIELDS = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
+FIELD_TO_ORD = {
+    "D":"\u00D0", "T":"\u00de", "R":"\u0158", "P":"\u03a6", "F":"\u0192",
+    "K":"\u00c7", "G":"\u0393", "Gm":"\u0262", "Ph":"\u2299", "H":"\u0126",
+    "S":"\u03a3", "W":"\u03a9"
+}
+
+def g2v(p, r):
+    """Primitive glyph \u2192 ordinal value."""
+    ord_key = FIELD_TO_ORD.get(p, p)
+    om = ORDINALS.get(ord_key, {})
+    if r in om:
+        return r, om[r]
+    try:
+        k = resolve_ordinal_key(ord_key, r)
+        return k, om[k]
+    except Exception:
+        return r, 0
+
+def tup_from_dict(d):
+    return {pn: g2v(pn, d.get(pf, ""))[0] for pn, pf in zip(PNAMES, PFIELDS)}
+
+def fmt_tup(t):
+    gs = [t.get(p, "?") for p in PNAMES]
+    return "<" + "; ".join(gs) + ">"
+
+def tup_dist(t1, t2):
+    sq = 0.0; cf = []
+    for p in PNAMES:
+        v1 = t1.get(p, ""); v2 = t2.get(p, "")
+        _, o1 = g2v(p, v1); _, o2 = g2v(p, v2)
+        w = WEIGHTS.get(p if p != "W" else "\u03a9", 1.0)
+        d = (o1 - o2) * w; sq += d * d
+        if o1 != o2:
+            cf.append({"p": p, "a": v1, "b": v2, "d": o1 - o2})
+    return math.sqrt(sq), cf
+
+def compose_tensor(t1, t2):
+    """Grammar tensor product of two structural types.
+    Max on union primitives, min on P and F.
+    Returns new tuple dict and distance from each input."""
+    result = {}
+    for p in PNAMES:
+        _, o1 = g2v(p, t1.get(p, "?")); _, o2 = g2v(p, t2.get(p, "?"))
+        if p in ("P", "F"):
+            result[p] = t1.get(p, "?") if o1 <= o2 else t2.get(p, "?")
+        else:
+            result[p] = t1.get(p, "?") if o1 >= o2 else t2.get(p, "?")
+    return result
+
+def compose_meet(t1, t2):
+    """Grammar meet (greatest lower bound) of two structural types.
+    Min on all primitives."""
+    result = {}
+    for p in PNAMES:
+        _, o1 = g2v(p, t1.get(p, "?")); _, o2 = g2v(p, t2.get(p, "?"))
+        result[p] = t1.get(p, "?") if o1 <= o2 else t2.get(p, "?")
+    return result
+
+def compose_join(t1, t2):
+    """Grammar join (least upper bound) of two structural types.
+    Max on all primitives."""
+    result = {}
+    for p in PNAMES:
+        _, o1 = g2v(p, t1.get(p, "?")); _, o2 = g2v(p, t2.get(p, "?"))
+        result[p] = t1.get(p, "?") if o1 >= o2 else t2.get(p, "?")
+    return result
+# ── Glyph reference map ────────────────────────────────────────────
+GLYPH_MAP = {
+    "\U0001045B": ("D",1), "\U00010468": ("D",2),
+    "\U00010461": ("T",1), "\U00010470": ("T",2), "\U00010465": ("T",3), "\U00010478": ("T",5),
+    "\U00010469": ("R",1), "\U00010451": ("R",2), "\U0001047D": ("R",3), "\U0001047E": ("R",4),
+    "\U00010457": ("P",1), "\U0001047F": ("P",2), "\U0001046C": ("P",3), "\U0001046F": ("P",4), "\U00010479": ("P",5),
+    "\U00010450": ("F",3), "\U0001045E": ("F",2), "\U00010471": ("F",1),
+    "\U00010458": ("K",1), "\U00010464": ("K",2), "\U00010467": ("K",3), "\U0001047A": ("K",4), "\U0001046A": ("K",5),
+    "\U0001045A": ("G",1), "\U00010454": ("G",2), "\U00010472": ("G",3),
+    "\U0001045D": ("Ga",1), "\U0001045C": ("Ga",2), "\U00010460": ("Ga",3), "\U00010475": ("Ga",4),
+    "\U00010462": ("Ph",1), "\u2299": ("Ph",2), "\U0001046E": ("Ph",3), "\U0001047B": ("Ph",4), "\U00010463": ("Ph",5),
+    "\U00010452": ("H",2), "\U00010456": ("H",3), "\U00010453": ("H",1), "\U0001046B": ("H",4),
+    "\U00010459": ("S",1), "\U00010455": ("S",2), "\U00010473": ("S",3),
+    "\U00010477": ("W",1), "\U00010474": ("W",2), "\U0001046D": ("W",3), "\U0001045F": ("W",4),
+}
+
+# ====================================================================
+# GRAMMAR-DERIVED BOND TYPES
+# Each bond type has a 12-primitive structural tuple derived from the
+# covalent_bond base type (Ð_C; Þ_K; Ř_ý; Φ_˙; ƒ_ð; Ç_W; Γ_γ; ɢ_ˌ; φ̂_ÿ; Ħ_£; Σ_ő; Ω_2)
+# specialized by bond order and atom types.
+# ====================================================================
+
+BOND_TYPES = {
+    # σ bond: single covalent bond between sp³-hybridized atoms
+    # Lower dimensionality than π, network topology, no chirality
+    "sigma_single": {
+        "D":"\U0001045B", "T":"\U00010461", "R":"\U00010451",
+        "P":"\U00010457", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\U00010462",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010477",
+        "desc": "σ single bond (sp³-sp³)",
+        "valence": 1, "pi_count": 0
+    },
+    # π bond: additional bond component in double bond
+    # Higher dimensionality (orbital lobes), inclusion topology, quantum coherence
+    "pi_bond": {
+        "D":"\U00010468", "T":"\U00010470", "R":"\U0001047D",
+        "P":"\U0001046F", "F":"\U00010471", "K":"\U00010464",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\u2299",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010474",
+        "desc": "π bond (p-orbital overlap)",
+        "valence": 1, "pi_count": 1
+    },
+    # double bond: σ+π composite
+    "double_bond": {
+        "D":"\U00010468", "T":"\U00010465", "R":"\U0001047E",
+        "P":"\U0001046F", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\u2299",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010474",
+        "desc": "C=C double bond (σ+π)",
+        "valence": 2, "pi_count": 1
+    },
+    # triple bond: σ+2π composite
+    "triple_bond": {
+        "D":"\U00010468", "T":"\U00010470", "R":"\U0001047E",
+        "P":"\U0001046F", "F":"\U00010450", "K":"\U00010458",
+        "G":"\U00010472", "Gm":"\U0001045D", "Ph":"\u2299",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010474",
+        "desc": "C≡C triple bond (σ+2π)",
+        "valence": 3, "pi_count": 2
+    },
+    # carbonyl bond: polarized C=O with strong dipole
+    # Higher criticality (reaction hub), directional relational mode
+    "carbonyl": {
+        "D":"\U0001045B", "T":"\U00010465", "R":"\U0001047D",
+        "P":"\U0001046F", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\u2299",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010474",
+        "desc": "C=O carbonyl bond (polarized σ+π)",
+        "valence": 2, "pi_count": 1, "polar": True
+    },
+    # C-O σ bond (ether, alcohol)
+    "co_sigma": {
+        "D":"\U0001045B", "T":"\U00010461", "R":"\U00010451",
+        "P":"\U00010457", "F":"\U0001045E", "K":"\U00010467",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\U00010462",
+        "H":"\U00010453", "S":"\U00010459", "W":"\U00010477",
+        "desc": "C-O σ bond (alcohol/ether)",
+        "valence": 1, "pi_count": 0, "polar": True
+    },
+    # C-N σ bond (amine)
+    "cn_sigma": {
+        "D":"\U0001045B", "T":"\U00010461", "R":"\U0001047D",
+        "P":"\U00010457", "F":"\U0001045E", "K":"\U00010458",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\U00010462",
+        "H":"\U00010452", "S":"\U00010459", "W":"\U00010477",
+        "desc": "C-N σ bond (amine)",
+        "valence": 1, "pi_count": 0, "polar": True
+    },
+    # amide bond: C(=O)-N with resonance (conjugation between carbonyl and N lone pair)
+    "amide_link": {
+        "D":"\U00010468", "T":"\U00010465", "R":"\U0001047E",
+        "P":"\U0001046C", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U00010472", "Gm":"\U00010460", "Ph":"\u2299",
+        "H":"\U00010456", "S":"\U00010473", "W":"\U00010474",
+        "desc": "Amide C(=O)-N bond (conjugated)",
+        "valence": 2, "pi_count": 1, "polar": True, "conjugated": True
+    },
+    # ester bond: C(=O)-O with resonance
+    "ester_link": {
+        "D":"\U0001045B", "T":"\U00010465", "R":"\U0001047D",
+        "P":"\U0001046F", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U00010472", "Gm":"\U00010460", "Ph":"\u2299",
+        "H":"\U00010452", "S":"\U00010473", "W":"\U00010474",
+        "desc": "Ester C(=O)-O bond",
+        "valence": 2, "pi_count": 1, "polar": True
+    },
+    # aromatic bond: delocalized π system
+    "aromatic": {
+        "D":"\U00010468", "T":"\U00010478", "R":"\U0001047E",
+        "P":"\U00010479", "F":"\U00010450", "K":"\U00010467",
+        "G":"\U00010472", "Gm":"\U00010460", "Ph":"\u2299",
+        "H":"\U00010456", "S":"\U00010473", "W":"\U0001046D",
+        "desc": "Aromatic delocalized bond",
+        "valence": 1.5, "pi_count": 1, "aromatic": True
+    },
+    # hydrogen bond: intermolecular, lower order
+    "hydrogen_bond": {
+        "D":"\U0001045B", "T":"\U00010461", "R":"\U00010469",
+        "P":"\U00010457", "F":"\U0001045E", "K":"\U00010458",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\U00010462",
+        "H":"\U00010453", "S":"\U00010459", "W":"\U00010477",
+        "desc": "Hydrogen bond (intermolecular)",
+        "valence": 0.5, "pi_count": 0, "polar": True
+    },
+    # ether linkage: C-O-C
+    "ether_link": {
+        "D":"\U0001045B", "T":"\U00010461", "R":"\U00010451",
+        "P":"\U00010457", "F":"\U0001045E", "K":"\U00010467",
+        "G":"\U0001045A", "Gm":"\U0001045D", "Ph":"\U00010462",
+        "H":"\U00010453", "S":"\U00010459", "W":"\U00010477",
+        "desc": "C-O-C ether linkage",
+        "valence": 1, "pi_count": 0, "polar": True
+    },
+}
+
+# ====================================================================
+# FUNCTIONAL GROUP TYPES (IG structural encodings)
+# Each FG is a 12-primitive tuple describing its structural character.
+# ====================================================================
+
+FG = {
+    "alcohol": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U0001047D",
+        "P":"\U00010457","F":"\U00010450","K":"\U00010467",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+    "carbonyl": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U00010451",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+    "aldehyde": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U00010451",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+    "ketone": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U00010451",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+    "carboxylic_acid": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U00010460","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010473","W":"\U00010477"
+    },
+    "ester": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U0001047D",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U00010460","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010473","W":"\U00010477"
+    },
+    "amide": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U0001047D",
+        "P":"\U0001046C","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U00010460","Ph":"\u2299",
+        "H":"\U00010456","S":"\U00010473","W":"\U00010474"
+    },
+    "amine": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U00010451",
+        "P":"\U00010457","F":"\U00010450","K":"\U00010458",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+    "aniline": {
+        "D":"\U00010468","T":"\U00010478","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010456","S":"\U00010473","W":"\U0001046D"
+    },
+    "ether": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U00010451",
+        "P":"\U00010457","F":"\U00010450","K":"\U00010467",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462",
+        "H":"\U00010453","S":"\U00010459","W":"\U00010477"
+    },
+    "nitrile": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U00010451",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010474"
+    },
+    "halide": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U00010451",
+        "P":"\U00010457","F":"\U00010450","K":"\U00010458",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462",
+        "H":"\U00010453","S":"\U00010459","W":"\U00010477"
+    },
+    "alkene": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010464",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010474"
+    },
+    "alkyne": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010474"
+    },
+    "aromatic_ring": {
+        "D":"\U00010468","T":"\U00010478","R":"\U0001047E",
+        "P":"\U00010479","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U00010460","Ph":"\u2299",
+        "H":"\U00010456","S":"\U00010473","W":"\U0001046D"
+    },
+    "diazonium": {
+        "D":"\U0001045B","T":"\U00010465","R":"\U0001047D",
+        "P":"\U0001046C","F":"\U00010450","K":"\U00010464",
+        "G":"\U00010472","Gm":"\U0001045C","Ph":"\u2299",
+        "H":"\U00010456","S":"\U00010473","W":"\U00010474"
+    },
+    "nitro": {
+        "D":"\U0001045B","T":"\U00010478","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010464",
+        "G":"\U00010472","Gm":"\U0001045C","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010474"
+    },
+    "phenol": {
+        "D":"\U00010468","T":"\U00010478","R":"\U0001047E",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010467",
+        "G":"\U00010472","Gm":"\U00010460","Ph":"\u2299",
+        "H":"\U00010456","S":"\U00010473","W":"\U0001046D"
+    },
+    "epoxide": {
+        "D":"\U00010468","T":"\U00010470","R":"\U00010451",
+        "P":"\U0001046F","F":"\U00010450","K":"\U00010458",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\u2299",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010474"
+    },
+    "thiol": {
+        "D":"\U0001045B","T":"\U00010461","R":"\U00010451",
+        "P":"\U00010457","F":"\U0001045E","K":"\U00010467",
+        "G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462",
+        "H":"\U00010452","S":"\U00010459","W":"\U00010477"
+    },
+}
+
+# ── FG token map (molecule name -> FG set) ────────────────────
+FG_TOKENS = {
+    "alcohol":"alcohol","ol":"alcohol","hydroxy":"alcohol",
+    "carbonyl":"carbonyl","oxo":"carbonyl",
+    "aldehyde":"aldehyde","al":"aldehyde",
+    "ketone":"ketone","one":"ketone","keto":"ketone",
+    "acid":"carboxylic_acid","carboxy":"carboxylic_acid","oic":"carboxylic_acid",
+    "ester":"ester","oate":"ester",
+    "amide":"amide","amido":"amide",
+    "amine":"amine","amino":"amine","aza":"amine",
+    "aniline":"aniline","phenylamine":"aniline",
+    "ether":"ether","oxy":"ether","methoxy":"ether","ethoxy":"ether",
+    "nitrile":"nitrile","cyano":"nitrile",
+    "halide":"halide","chloro":"halide","bromo":"halide","fluoro":"halide","iodo":"halide",
+    "alkene":"alkene","ene":"alkene","vinyl":"alkene",
+    "alkyne":"alkyne","yne":"alkyne","acetylene":"alkyne",
+    "benz":"aromatic_ring","phenyl":"aromatic_ring","aryl":"aromatic_ring",
+    "phenol":"phenol","hydroxybenz":"phenol",
+    "diazonium":"diazonium","diazo":"diazonium",
+    "nitro":"nitro","nitroso":"nitro",
+    "epoxide":"epoxide","oxirane":"epoxide",
+    "thio":"thiol","thiol":"thiol","sulfanyl":"thiol",
+    "cyclo":"cyclic","cyclohex":"cyclic","cyclopent":"cyclic",
+}
+
+# ── ELEMENT TYPES ──────────────────────────────────────────────
+EL = {
+    "H": {"D":"\U0001045B","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U00010450","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+    "C": {"D":"\U0001045B","T":"\U00010461","R":"\U0001047D","P":"\U0001046C","F":"\U0001045E","K":"\U00010467","G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299","H":"\U00010452","S":"\U00010459","W":"\U00010474"},
+    "N": {"D":"\U0001045B","T":"\U00010461","R":"\U0001047D","P":"\U0001046C","F":"\U00010471","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\u2299","H":"\U00010452","S":"\U00010459","W":"\U00010474"},
+    "O": {"D":"\U0001045B","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U00010471","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+    "S": {"D":"\U0001045B","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U0001045E","K":"\U00010467","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010452","S":"\U00010459","W":"\U00010477"},
+    "P": {"D":"\U0001045B","T":"\U00010461","R":"\U0001047D","P":"\U0001046C","F":"\U0001045E","K":"\U00010467","G":"\U00010472","Gm":"\U0001045D","Ph":"\u2299","H":"\U00010452","S":"\U00010459","W":"\U00010477"},
+    "F": {"D":"\U0001045B","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U00010450","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+    "Cl": {"D":"\U0001045B","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U0001045E","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+    "Br": {"D":"\U00010468","T":"\U00010461","R":"\U00010451","P":"\U00010457","F":"\U0001045E","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+    "I": {"D":"\U00010468","T":"\U00010465","R":"\U00010451","P":"\U00010457","F":"\U0001045E","K":"\U00010458","G":"\U0001045A","Gm":"\U0001045D","Ph":"\U00010462","H":"\U00010453","S":"\U00010459","W":"\U00010477"},
+}
+# ====================================================================
+# GRAMMAR-DERIVED RULES OF BOND FORMATION
+# These rules are DERIVED from the Imscribing Grammar's 12 primitives,
+# NOT from chemistry textbooks or named reactions. Each rule evaluates
+# structural compatibility between two functional groups and a bond type.
+# ====================================================================
+
+# ── Derive bond-FG compatibility from grammar primitives ────────
+# Each rule returns (score, conflicts) where score ∈ [0,1] with
+# 1 = fully compatible, 0 = incompatible. The conflicts list
+# explains which primitives are mismatched.
+
+def _ord(t, p):
+    _, o = g2v(p, t.get(p, "?"))
+    return o
+
+def _glyph(t, p):
+    return t.get(p, "?")
+
+# --- Rule 1: Dimensionality (Ð) ---
+# A bond's dimensionality must be ≤ the max dimensionality of the
+# two FGs it connects. Bond formation is a local interface — it
+# cannot be more dimensionally extended than the fragments.
+def rule_dimensionality(fg1, fg2, bond):
+    d1, d2, db = _ord(fg1,"D"), _ord(fg2,"D"), _ord(bond,"D")
+    max_fg = max(d1, d2)
+    if db <= max_fg:
+        return 1.0, []
+    delta = db - max_fg
+    score = max(0.0, 1.0 - delta * 0.5)
+    return score, [{"rule":"D","detail":f"bond D>{max_fg} by {delta}"}]
+
+# --- Rule 2: Topology (Þ) ---
+# Bond topology must be compatible with the meet of FG topologies.
+# A σ bond (network T=1) needs branching points on both FGs.
+# A π bond (inclusion T=2) needs orbital overlap regions.
+# A conjugated bond (crossing T=3) needs delocalization capacity.
+def rule_topology(fg1, fg2, bond):
+    t1, t2, tb = _ord(fg1,"T"), _ord(fg2,"T"), _ord(bond,"T")
+    meet_t = min(t1, t2)
+    if tb <= meet_t:
+        return 1.0, []
+    # Bond requires higher topology than FGs provide
+    if tb <= meet_t + 1:
+        return 0.7, [{"rule":"T","detail":f"bond T={tb}, meet FG T={meet_t}"}]
+    return 0.3, [{"rule":"T","detail":f"bond T={tb} >> meet FG T={meet_t}"}]
+
+# --- Rule 3: Relational Mode (Ř) ---
+# The bond's relational mode must match how the FGs can interact.
+# Supervenience (R=1): bond emerges from FG properties (covalent).
+# Categorical (R=2): bond requires specific FG categories.
+# Dagger (R=3): directional bond, one FG donates, other accepts.
+# Bidirectional (R=4): resonance-stabilized, both directions.
+def rule_relational(fg1, fg2, bond):
+    r1, r2, rb = _ord(fg1,"R"), _ord(fg2,"R"), _ord(bond,"R")
+    # For directional bonds (R=3/dagger), FGs must have compatible directionality
+    if rb == 3:  # dagger
+        if abs(r1 - r2) >= 2:  # one donates (low R), one accepts (high R)
+            return 1.0, []
+        return 0.5, [{"rule":"R","detail":f"dagger bond needs donor+acceptor, got {_glyph(fg1,'R')}+{_glyph(fg2,'R')}"}]
+    # For bidirectional bonds (R=4), both FGs must be ambidentate
+    if rb == 4:
+        if min(r1, r2) >= 3:
+            return 1.0, []
+        return 0.6, [{"rule":"R","detail":f"bidirectional bond needs R>=3 FGs, got {_glyph(fg1,'R')}+{_glyph(fg2,'R')}"}]
+    # For supervenient/categorical bonds
+    if rb <= min(r1, r2):
+        return 1.0, []
+    return 0.8, [{"rule":"R","detail":f"bond R={rb}, min FG R={min(r1,r2)}"}]
+
+# --- Rule 4: Parity/Symmetry (Φ) ---
+# Bond formation conserves parity. The bond's parity must be achievable
+# from the union of FG parities. Asymmetric (P=1) FGs form asymmetric bonds.
+# Fully symmetric (P=4) FGs can form symmetric bonds.
+def rule_parity(fg1, fg2, bond):
+    p1, p2, pb = _ord(fg1,"P"), _ord(fg2,"P"), _ord(bond,"P")
+    join_p = max(p1, p2)  # union of FG parities
+    if pb <= join_p:
+        return 1.0, []
+    delta = pb - join_p
+    score = max(0.0, 1.0 - delta * 0.4)
+    return score, [{"rule":"P","detail":f"bond P={pb}, max FG P={join_p}"}]
+
+# --- Rule 5: Fidelity/Regime (ƒ) ---
+# Quantum bonds need quantum-capable FGs. Classical bonds form from
+# classical FGs. Thermal bonds are most permissive.
+def rule_fidelity(fg1, fg2, bond):
+    f1, f2, fb = _ord(fg1,"F"), _ord(fg2,"F"), _ord(bond,"F")
+    # Classical (F=1) → Thermal (F=2) → Quantum (F=3) is ordinal
+    max_fg = max(f1, f2)
+    if fb <= max_fg:
+        return 1.0, []
+    delta = fb - max_fg
+    score = max(0.0, 1.0 - delta * 0.5)
+    return score, [{"rule":"F","detail":f"bond F={fb}, max FG F={max_fg}"}]
+
+# --- Rule 6: Kinetics (Ç) ---
+# Bond formation kinetics must be achievable. Fast bond formation needs
+# fast (reactive) FGs. Trapped FGs can only form bonds slowly.
+def rule_kinetics(fg1, fg2, bond):
+    k1, k2, kb = _ord(fg1,"K"), _ord(fg2,"K"), _ord(bond,"K")
+    meet_k = min(k1, k2)  # rate limited by slower FG
+    if kb <= meet_k + 1:
+        return 1.0, []
+    delta = kb - meet_k
+    score = max(0.0, 1.0 - delta * 0.3)
+    return score, [{"rule":"K","detail":f"bond K={kb}, meet FG K={meet_k}"}]
+
+# --- Rule 7: Scope/Range (Γ) ---
+# A bond's effective range must be within the reach of its FGs.
+# Local bonds (G=1) form from local FGs. Universal bonds (G=3)
+# require FGs with long-range influence.
+def rule_scope(fg1, fg2, bond):
+    g1, g2, gb = _ord(fg1,"G"), _ord(fg2,"G"), _ord(bond,"G")
+    max_fg = max(g1, g2)
+    if gb <= max_fg:
+        return 1.0, []
+    return 0.5, [{"rule":"G","detail":f"bond G={gb}, max FG G={max_fg}"}]
+
+# --- Rule 8: Interaction Grammar (ɢ) ---
+# Bond formation follows an interaction pattern. Conjunctive (Gm=1)
+# bonds form by simultaneous interaction. Sequential (Gm=3) bonds
+# require ordered steps. Broadcast (Gm=4) bonds affect all neighbors.
+def rule_interaction(fg1, fg2, bond):
+    gm1, gm2, gmb = _ord(fg1,"Gm"), _ord(fg2,"Gm"), _ord(bond,"Gm")
+    meet_gm = min(gm1, gm2)
+    if gmb <= meet_gm:
+        return 1.0, []
+    if gmb <= meet_gm + 1:
+        return 0.7, [{"rule":"Gm","detail":f"bond Gm={gmb}, meet FG Gm={meet_gm}"}]
+    return 0.4, [{"rule":"Gm","detail":f"bond Gm={gmb} >> meet FG Gm={meet_gm}"}]
+
+# --- Rule 9: Criticality (⊙) ---
+# Critical bonds (⊙_ÿ) require at least one FG at criticality.
+# Sub-critical FGs cannot form critically self-modeling bonds.
+def rule_criticality(fg1, fg2, bond):
+    ph1, ph2, phb = _ord(fg1,"Ph"), _ord(fg2,"Ph"), _ord(bond,"Ph")
+    max_fg = max(ph1, ph2)
+    if phb <= max_fg:
+        return 1.0, []
+    # Critical bond (⊙_ÿ = Ph=2) needs at least one FG at criticality
+    if phb == 2 and max_fg >= 2:
+        return 1.0, []
+    delta = phb - max_fg
+    score = max(0.0, 1.0 - delta * 0.5)
+    return score, [{"rule":"Ph","detail":f"bond Ph={phb}, max FG Ph={max_fg}"}]
+
+# --- Rule 10: Chirality/Temporal Depth (Ħ) ---
+# Higher-order bonds need FGs with sufficient temporal depth.
+# Memoryless bonds (H=1) form from any FGs. Two-step bonds (H=3)
+# need FGs that can undergo sequential changes.
+def rule_chirality(fg1, fg2, bond):
+    h1, h2, hb = _ord(fg1,"H"), _ord(fg2,"H"), _ord(bond,"H")
+    max_fg = max(h1, h2)
+    if hb <= max_fg:
+        return 1.0, []
+    delta = hb - max_fg
+    score = max(0.0, 1.0 - delta * 0.3)
+    return score, [{"rule":"H","detail":f"bond H={hb}, max FG H={max_fg}"}]
+
+# --- Rule 11: Stoichiometry (Σ) ---
+# Bond type's stoichiometry must match the FG connectivity.
+# 1:1 bonds (S=1) connect one FG to another.
+# Multiple-identical (S=2) bonds involve repeated units.
+# Heterogeneous (S=3) bonds involve different FG types.
+def rule_stoichiometry(fg1, fg2, bond):
+    s1, s2, sb = _ord(fg1,"S"), _ord(fg2,"S"), _ord(bond,"S")
+    # Heterogeneous bond needs at least one heterogeneous FG
+    if sb == 3:
+        if max(s1, s2) >= 3:
+            return 1.0, []
+        return 0.6, [{"rule":"S","detail":"heterogeneous bond needs S≥3"}]
+    # 1:1 bond can form between any FGs
+    if sb <= max(s1, s2):
+        return 1.0, []
+    return 0.8, [{"rule":"S","detail":f"bond S={sb}, max FG S={max(s1,s2)}"}]
+
+# --- Rule 12: Topological Protection/Winding (Ω) ---
+# Bond formation can create topological features. Higher winding bonds
+# need FGs that can support nontrivial topology.
+def rule_winding(fg1, fg2, bond):
+    w1, w2, wb = _ord(fg1,"W"), _ord(fg2,"W"), _ord(bond,"W")
+    max_fg = max(w1, w2)
+    if wb <= max_fg:
+        return 1.0, []
+    # Z2 parity protection (W=2) needs at least one FG with parity
+    if wb == 2 and max_fg >= 2:
+        return 1.0, []
+    delta = wb - max_fg
+    score = max(0.0, 1.0 - delta * 0.4)
+    return score, [{"rule":"W","detail":f"bond W={wb}, max FG W={max_fg}"}]
+# ====================================================================
+# COMPATIBILITY EVALUATOR
+# Combines all 12 derived rules into a single compatibility score
+# and produces the ranking for retrosynthetic disconnection.
+# ====================================================================
+
+ALL_RULES = [
+    rule_dimensionality, rule_topology, rule_relational,
+    rule_parity, rule_fidelity, rule_kinetics,
+    rule_scope, rule_interaction, rule_criticality,
+    rule_chirality, rule_stoichiometry, rule_winding
+]
+
+# ── Rule weight map (matches IG WEIGHTS) ────────────────────────
+RULE_WEIGHTS = {
+    "D": 1.0, "T": 1.0, "R": 1.0, "P": 1.0, "F": 1.0, "K": 1.0,
+    "G": 1.0, "Gm": 1.0, "Ph": 1.0, "H": 0.8, "S": 1.0, "W": 0.7
+}
+
+def evaluate_bond_compatibility(fg1_name, fg2_name, bond_name):
+    """Evaluate whether two FGs can form a bond of the given type.
+    
+    Uses ALL 12 grammar-derived rules. Returns overall compatibility
+    score (0-1), per-rule breakdown, and a structural delta (lower = better).
+    
+    This is the core of grammar-derived retrosynthesis — no named
+    reactions are consulted.
+    """
+    fg1 = FG.get(fg1_name, {}); fg2 = FG.get(fg2_name, {})
+    bond = BOND_TYPES.get(bond_name, {})
+    if not fg1 or not fg2 or not bond:
+        return None
+    
+    total_score = 0.0
+    total_weight = 0.0
+    breakdown = []
+    
+    for rule_fn in ALL_RULES:
+        weight = RULE_WEIGHTS.get(rule_fn.__name__.split("_")[1].capitalize(), 1.0)
+        # Map rule function to its primitive name
+        pname = rule_fn.__name__.split("_")[1].capitalize()
+        if pname == "Interaction": pname = "Gm"
+        elif pname == "Criticality": pname = "Ph"
+        elif pname == "Chirality": pname = "H"
+        elif pname == "Stoichiometry": pname = "S"
+        elif pname == "Winding": pname = "W"
+        weight = RULE_WEIGHTS.get(pname, 1.0)
+        
+        score, conflicts = rule_fn(fg1, fg2, bond)
+        total_score += score * weight
+        total_weight += weight
+        breakdown.append({
+            "rule": pname,
+            "score": round(score, 3),
+            "conflicts": conflicts
+        })
+    
+    if total_weight == 0:
+        return None
+    avg_score = total_score / total_weight
+    
+    # Compute structural delta between product and bond
+    tensor_fg = compose_tensor(fg1, fg2)
+    product = compose_meet(tensor_fg, bond)
+    delta, _ = tup_dist(product, bond)
+    
+    return {
+        "fg1": fg1_name, "fg2": fg2_name,
+        "bond": bond_name,
+        "compatibility": round(avg_score, 3),
+        "structural_delta": round(delta, 3),
+        "breakdown": breakdown,
+        "product_type": fmt_tup(product)
+    }
+
+def find_bond_disconnections(fg_names, bond_names=None):
+    """Find all viable (FG1, FG2, bond_type) combinations.
+    
+    Given a set of functional groups present in a molecule, find all
+    ways pairs of FGs could be connected by bond types.
+    
+    Returns ranked list of disconnections, sorted by structural delta
+    (lower = better retrosynthetic cut).
+    """
+    if bond_names is None:
+        bond_names = list(BOND_TYPES.keys())
+    
+    results = []
+    for i, fg1 in enumerate(fg_names):
+        for j, fg2 in enumerate(fg_names):
+            if i >= j:  # also consider same-type connections
+                continue
+            for bname in bond_names:
+                eval_result = evaluate_bond_compatibility(fg1, fg2, bname)
+                if eval_result and eval_result["compatibility"] >= 0.3:
+                    results.append(eval_result)
+    
+    # Also check self-connections (FG connecting to an identical FG)
+    for fg_name in fg_names:
+        for bname in bond_names:
+            eval_result = evaluate_bond_compatibility(fg_name, fg_name, bname)
+            if eval_result and eval_result["compatibility"] >= 0.3:
+                results.append(eval_result)
+    
+    # Sort by structural delta (primary) and compatibility (secondary)
+    results.sort(key=lambda x: (x["structural_delta"], -x["compatibility"]))
+    return results
+
+# ── Synthon description (derived from bond type, not named rxn) ──
+def describe_disconnection(ev):
+    """Generate a human-readable description of a disconnection.
+    
+    Derived entirely from the bond type and FG types — no named
+    reaction names are used.
+    """
+    fg1, fg2 = ev["fg1"], ev["fg2"]
+    bond_name = ev["bond"]
+    bond_info = BOND_TYPES.get(bond_name, {})
+    bdesc = bond_info.get("desc", bond_name)
+    
+    # Determine disconnection type from bond structure
+    bond = BOND_TYPES.get(bond_name, {})
+    polarity = bond_info.get("polar", False)
+    conjugated = bond_info.get("conjugated", False)
+    aromatic = bond_info.get("aromatic", False)
+    pi_count = bond_info.get("pi_count", 0)
+    
+    parts = [f"Disconnect {bdesc}"]
+    
+    if conjugated:
+        parts.append(f"(conjugated, resonance-delocalized)")
+    if polarity:
+        parts.append(f"(polarized)")
+    if aromatic:
+        parts.append(f"(aromatic, delocalized π)")
+    
+    parts.append(f"between {fg1} and {fg2}")
+    
+    # Derive synthon descriptions from FG types
+    parts.append(f"\n    Synthon 1: {fg1}-derived fragment")
+    parts.append(f"\n    Synthon 2: {fg2}-derived fragment")
+    
+    # Derive retron (structural pattern that this disconnection targets)
+    if pi_count >= 2:
+        parts.append(f"\n    Retron: adjacent π-systems (order {pi_count+1} bond)")
+    elif pi_count == 1:
+        if polarity:
+            parts.append(f"\n    Retron: polarized π-system with heteroatom")
+        else:
+            parts.append(f"\n    Retron: π-bond between sp² centers")
+    else:
+        if polarity:
+            parts.append(f"\n    Retron: polar σ-bond between electronegative atoms")
+        else:
+            parts.append(f"\n    Retron: σ-bond between saturated centers")
+    
+    return "".join(parts)
+# ====================================================================
+# CAS RESOLVER (unchanged from previous version)
+# ====================================================================
+
+class CASResolver:
+    """Resolve CAS Registry Numbers to chemical names via PubChem API,
+    with local cache for offline reuse."""
+
+    def __init__(self):
+        self._cache = self._load_cache()
+        self._local = self._load_local()
+
+    def _load_cache(self):
+        try:
+            with open(CAS_CACHE_PATH) as f:
+                return json.load(f)
+        except Exception:
+            return {}
+
+    def _save_cache(self):
+        try:
+            with open(CAS_CACHE_PATH, "w") as f:
+                json.dump(self._cache, f, indent=2)
+        except Exception:
+            pass
+
+    def _load_local(self):
+        return {
+            "50-78-2": {"name": "2-acetoxybenzoic acid", "formula": "C9H8O4", "type_hint": "ester carboxylic_acid aromatic_ring"},
+            "103-90-2": {"name": "acetaminophen", "formula": "C8H9NO2", "type_hint": "amide phenol"},
+            "69-72-7": {"name": "salicylic acid", "formula": "C7H6O3", "type_hint": "carboxylic_acid phenol"},
+            "79-09-4": {"name": "propionic acid", "formula": "C3H6O2", "type_hint": "carboxylic_acid"},
+            "64-19-7": {"name": "acetic acid", "formula": "C2H4O2", "type_hint": "carboxylic_acid"},
+            "67-64-1": {"name": "acetone", "formula": "C3H6O", "type_hint": "ketone"},
+            "67-56-1": {"name": "methanol", "formula": "CH4O", "type_hint": "alcohol"},
+            "64-17-5": {"name": "ethanol", "formula": "C2H6O", "type_hint": "alcohol"},
+            "71-23-8": {"name": "propanol", "formula": "C3H8O", "type_hint": "alcohol"},
+            "75-07-0": {"name": "acetaldehyde", "formula": "C2H4O", "type_hint": "aldehyde"},
+            "100-52-7": {"name": "benzaldehyde", "formula": "C7H6O", "type_hint": "aldehyde aromatic_ring"},
+            "100-66-3": {"name": "anisole", "formula": "C7H8O", "type_hint": "ether aromatic_ring"},
+            "108-95-2": {"name": "phenol", "formula": "C6H6O", "type_hint": "phenol"},
+            "71-43-2": {"name": "benzene", "formula": "C6H6", "type_hint": "aromatic_ring"},
+            "100-42-5": {"name": "styrene", "formula": "C8H8", "type_hint": "alkene aromatic_ring"},
+            "121-44-8": {"name": "triethylamine", "formula": "C6H15N", "type_hint": "amine"},
+            "62-53-3": {"name": "aniline", "formula": "C6H7N", "type_hint": "aniline"},
+            "75-05-8": {"name": "acetonitrile", "formula": "C2H3N", "type_hint": "nitrile"},
+            "67-66-3": {"name": "chloroform", "formula": "CHCl3", "type_hint": "halide"},
+            "75-09-2": {"name": "dichloromethane", "formula": "CH2Cl2", "type_hint": "halide"},
+            "107-13-1": {"name": "acrylonitrile", "formula": "C3H3N", "type_hint": "alkene nitrile"},
+            "74-85-1": {"name": "ethylene", "formula": "C2H4", "type_hint": "alkene"},
+            "74-86-2": {"name": "acetylene", "formula": "C2H2", "type_hint": "alkyne"},
+            "106-97-8": {"name": "butane", "formula": "C4H10", "type_hint": "alkene"},
+            "110-82-7": {"name": "cyclohexane", "formula": "C6H12", "type_hint": "cyclic"},
+            "108-88-3": {"name": "toluene", "formula": "C7H8", "type_hint": "aromatic_ring"},
+            "100-41-4": {"name": "ethylbenzene", "formula": "C8H10", "type_hint": "aromatic_ring"},
+            "98-86-2": {"name": "acetophenone", "formula": "C8H8O", "type_hint": "ketone aromatic_ring"},
+            "98-95-3": {"name": "nitrobenzene", "formula": "C6H5NO2", "type_hint": "nitro aromatic_ring"},
+            "100-47-0": {"name": "benzonitrile", "formula": "C7H5N", "type_hint": "nitrile aromatic_ring"},
+            "88-89-1": {"name": "picric acid", "formula": "C6H3N3O7", "type_hint": "phenol nitro"},
+            "106-50-3": {"name": "p-phenylenediamine", "formula": "C6H8N2", "type_hint": "amine aromatic_ring"},
+            "95-76-1": {"name": "3,4-dichloroaniline", "formula": "C6H5Cl2N", "type_hint": "halide aniline"},
+            "3568-94-3": {"name": "4-methyl-5-phenyl-4,5-dihydro-1,3-oxazol-2-amine", "formula": "C10H12N2O", "type_hint": "amine aromatic_ring ether cyclic"},
+            "1972-08-3": {"name": "11-hydroxy-Δ9-tetrahydrocannabinol", "formula": "C21H30O3", "type_hint": "phenol alcohol alkene ether cyclic"},
+            "7704-34-9": {"name": "sulfur", "formula": "S8", "type_hint": "thiol"},
+        }
+
+    def resolve(self, cas_number):
+        """Resolve a CAS number to chemical name, formula, and type hints.
+        
+        Resolution pipeline:
+        1. Local DB (41 pre-populated entries)
+        2. PubChem API (automatic fallback)
+        3. CAS_cache.json (persistent local cache)
+        """
+        cas = cas_number.strip()
+        
+        # Check local DB first
+        if cas in self._local:
+            entry = dict(self._local[cas])
+            entry["cas"] = cas
+            entry["source"] = "local_db"
+            return entry
+        
+        # Check cache
+        if cas in self._cache:
+            entry = dict(self._cache[cas])
+            entry["cas"] = cas
+            entry["source"] = "cache"
+            return entry
+        
+        # Fallback to PubChem API
+        try:
+            url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{cas}/JSON"
+            req = urllib.request.Request(url, headers={"User-Agent": "ch3mpiler/1.0"})
+            resp = urllib.request.urlopen(req, timeout=10)
+            data = json.loads(resp.read())
+            props = {}
+            if "PC_Compounds" in data and data["PC_Compounds"]:
+                for prop in data["PC_Compounds"][0].get("props", []):
+                    urn = prop.get("urn", {}).get("label", "")
+                    val = prop.get("value", {}).get("sval", "")
+                    props[urn] = val
+            
+            name = props.get("IUPAC Name", props.get("Molecular Formula", cas))
+            formula = props.get("Molecular Formula", "")
+            mol_weight = props.get("Molecular Weight", "")
+            smiles = props.get("SMILES", "")
+            
+            # Cache the result
+            entry = {
+                "cas": cas,
+                "name": name,
+                "formula": formula,
+                "mol_weight": mol_weight,
+                "smiles": smiles,
+                "source": "pubchem",
+                "type_hint": ""
+            }
+            self._cache[cas] = entry
+            self._save_cache()
+            return entry
+            
+        except Exception as e:
+            return {
+                "cas": cas,
+                "name": f"CAS-{cas}",
+                "formula": "",
+                "source": "unresolved",
+                "type_hint": "",
+                "error": str(e)
+            }
+
+
+# ====================================================================
+# MOLECULE TYPE COMPOSER
+# Builds structural type from molecule name by composing FG types.
+# ====================================================================
+
+def compose_molecule_type(name):
+    """Build structural type from molecule name by composing FG types.
+    
+    Uses the grammar's tensor/meet operations to compose the structural
+    type of individual functional groups into a consistent whole.
+    """
+    name_lower = name.lower().replace("_", " ").replace("-", " ")
+    found_fgs = set()
+    for token, fg_name in FG_TOKENS.items():
+        if token in name_lower:
+            found_fgs.add(fg_name)
+    
+    if not found_fgs:
+        return {p: "?" for p in PNAMES}
+    
+    # Compose FG types via tensor product (max on union, min on P/F)
+    result = None
+    for fg in sorted(found_fgs):  # deterministic order
+        fg_type = FG.get(fg, {})
+        if not fg_type:
+            continue
+        if result is None:
+            result = dict(fg_type)
+        else:
+            result = compose_tensor(result, fg_type)
+    
+    return result if result else {p: "?" for p in PNAMES}
+# ====================================================================
+# CH3MPILER — MAIN CLASS
+# Retrosynthetic engine powered by grammar-derived bond formation rules.
+# NO named reactions are used — all disconnections are computed from
+# the 12 derived rules of bond formation.
+# ====================================================================
+
+class Ch3mpiler:
+    """Retrosynthetic/Forward Reaction Compiler grounded in IG structural types.
+    
+    Uses GRAMMAR-DERIVED rules of bond formation — not named reactions.
+    Each bond type carries a 12-primitive structural signature.
+    The compatibility between two functional groups and a bond type is
+    evaluated through all 12 derived rules (one per primitive).
+    """
+
+    def __init__(self):
+        self.cat = self._load_catalog()
+        self.cas_resolver = CASResolver()
+
+    def _load_catalog(self):
+        try:
+            with open(CATALOG_PATH) as f:
+                return json.load(f)
+        except Exception:
+            return []
+
+    def _tup(self, e):
+        return {pn: g2v(pn, e.get(pf, ""))[0] for pn, pf in zip(PNAMES, PFIELDS)}
+
+    def _find_fgs(self, name):
+        """Extract functional groups present in a molecule name."""
+        name_lower = name.lower().replace("_", " ").replace("-", " ")
+        found = set()
+        for token, fg_name in FG_TOKENS.items():
+            if token in name_lower:
+                found.add(fg_name)
+        return sorted(found)
+
+    def analyze(self, target):
+        """Analyze a target molecule using grammar-derived bond rules.
+        
+        Returns:
+            - Molecular structural type (composed from FGs)
+            - All viable disconnections ranked by structural delta
+            - Structural analogs from catalog
+        """
+        tup = {}
+        for e in self.cat:
+            if e.get("name", "") == target:
+                tup = self._tup(e)
+                break
+        if not tup:
+            tup = compose_molecule_type(target)
+        
+        # Find FGs in the molecule name
+        fg_names = self._find_fgs(target)
+        
+        # Use grammar-derived rules to find disconnections
+        cuts = []
+        if fg_names:
+            disconnections = find_bond_disconnections(fg_names)
+            for ev in disconnections[:12]:
+                desc = describe_disconnection(ev)
+                cuts.append({
+                    "bond": ev["bond"],
+                    "fg1": ev["fg1"],
+                    "fg2": ev["fg2"],
+                    "compatibility": ev["compatibility"],
+                    "delta": ev["structural_delta"],
+                    "description": desc,
+                    "breakdown": ev["breakdown"],
+                    "product_type": ev["product_type"]
+                })
+        
+        # Find structural analogs from catalog
+        analogs = []
+        for e in self.cat[:500]:
+            et = self._tup(e)
+            d, _ = tup_dist(tup, et)
+            if d < 3.5:
+                analogs.append({"n": e.get("name", ""), "d": round(d, 3)})
+        analogs.sort(key=lambda x: x["d"])
+        
+        return {"target": target, "type": fmt_tup(tup),
+                "cuts": cuts[:10], "analogs": analogs[:10],
+                "fgs_found": fg_names}
+
+    def retrosynthesis(self, target, depth=2):
+        """Full retrosynthetic tree using grammar-derived rules.
+        
+        At each level:
+        1. Identify FGs in the molecule name
+        2. Use derived rules to find viable disconnections
+        3. Generate synthon names from the FG pair and bond type
+        4. Recurse on synthons (with FG hints)
+        
+        No named reactions are used at any level.
+        """
+        base = self.analyze(target)
+        
+        tree = {
+            "target": target,
+            "type": base["type"],
+            "fgs": base["fgs_found"],
+            "cuts": base["cuts"],
+            "analogs": base["analogs"],
+            "steps": [],
+        }
+        
+        if depth > 0:
+            for idx, cut in enumerate(base["cuts"][:3]):
+                bond_name = cut["bond"]
+                fg1 = cut["fg1"]
+                fg2 = cut["fg2"]
+                
+                # Generate synthon names from FG types
+                sname1 = f"{fg1}_fragment_of_{target.replace(' ','_')}"
+                sname2 = f"{fg2}_fragment_of_{target.replace(' ','_')}"
+                
+                # Recurse on synthons with the remaining depth
+                sub1 = self.retrosynthesis(sname1, depth - 1)
+                sub2 = self.retrosynthesis(sname2, depth - 1)
+                
+                precursors = [
+                    {"name": sname1, "fg_hint": fg1, "type": sub1["type"],
+                     "further_cuts": sub1["cuts"][:3] if depth > 1 else []},
+                    {"name": sname2, "fg_hint": fg2, "type": sub2["type"],
+                     "further_cuts": sub2["cuts"][:3] if depth > 1 else []},
+                ]
+                
+                step = {
+                    "bond": bond_name,
+                    "description": cut["description"],
+                    "delta": cut["delta"],
+                    "compatibility": cut["compatibility"],
+                    "breakdown": cut["breakdown"],
+                    "precursors": precursors,
+                }
+                tree["steps"].append(step)
+        
+        return tree
+
+    def forward(self, reagents):
+        """Predict forward reaction from reagent list.
+        
+        Uses grammar-derived compatibility to predict which bond types
+        are most likely to form between given reagents.
+        """
+        if not reagents:
+            return None
+        
+        # Find FGs from reagent names
+        all_fgs = set()
+        for r in reagents:
+            fgs = self._find_fgs(r)
+            all_fgs.update(fgs)
+        
+        if not all_fgs:
+            return {"reagents": reagents, "error": "No FGs identified"}
+        
+        fg_list = sorted(all_fgs)
+        
+        # Find the most compatible bond formation
+        best_delta = 999
+        best_result = None
+        for i, fg1 in enumerate(fg_list):
+            for j, fg2 in enumerate(fg_list):
+                if i > j:
+                    continue
+                for bname in BOND_TYPES:
+                    ev = evaluate_bond_compatibility(fg1, fg2, bname)
+                    if ev and ev["compatibility"] >= 0.3:
+                        if ev["structural_delta"] < best_delta:
+                            best_delta = ev["structural_delta"]
+                            best_result = ev
+        
+        if best_result:
+            return {
+                "reagents": reagents,
+                "fgs_identified": fg_list,
+                "predicted_bond": best_result["bond"],
+                "bond_description": BOND_TYPES.get(best_result["bond"], {}).get("desc", ""),
+                "delta": best_delta,
+                "compatibility": best_result["compatibility"],
+                "product_type": best_result["product_type"],
+                "breakdown": best_result["breakdown"],
+            }
+        
+        return {"reagents": reagents, "fgs_identified": fg_list,
+                "error": "No compatible bond formation found"}
+
+    def resolve_cas(self, cas_number):
+        """Resolve a CAS number to a chemical name."""
+        return self.cas_resolver.resolve(cas_number)
+
+    def resolve_and_analyze(self, cas_number, do_retrosynthesis=False, depth=2):
+        """Resolve CAS number and run analysis/retrosynthesis."""
+        info = self.resolve_cas(cas_number)
+        name = info.get("name", cas_number)
+        if do_retrosynthesis:
+            tree = self.retrosynthesis(name, depth=depth)
+            tree["cas_info"] = info
+            return tree
+        else:
+            result = self.analyze(name)
+            result["cas_info"] = info
+            return result
+# ====================================================================
+# OUTPUT FORMATTERS
+# ====================================================================
+
+def print_retrosynthesis(tree, indent=0):
+    """Print retrosynthetic tree derived from grammar rules.
+    
+    Unlike the previous version, disconnections are described by bond
+    type and FG pair, not by named reactions.
+    """
+    pad = "  " * indent
+    target = tree["target"]
+    ttype = tree["type"]
+    
+    if "cas_info" in tree:
+        ci = tree["cas_info"]
+        src = ci.get("source", "")
+        cas = ci.get("cas", "")
+        formula = ci.get("formula", "")
+        if src != "unresolved":
+            print(f"{pad}CAS: {cas}  ({src})")
+            if formula:
+                print(f"{pad}Formula: {formula}")
+    
+    print(f"{pad}{target}")
+    print(f"{pad}  Type: {ttype}")
+    
+    fgs = tree.get("fgs", [])
+    if fgs:
+        print(f"{pad}  FGs identified: {', '.join(fgs)}")
+    
+    print(f"{pad}  Disconnections (grammar-derived, no named reactions):")
+    
+    steps = tree.get("steps", [])
+    if not steps:
+        print(f"{pad}  No further disconnections (terminal or depth limit)")
+        return
+    
+    for idx, step in enumerate(steps):
+        bond = step["bond"]
+        delta = step["delta"]
+        compat = step["compatibility"]
+        
+        print(f"{pad}  ── Cut {idx+1}: disconnect {bond} (δ={delta}, compat={compat}) ──")
+        print(f"{pad}     {step['description']}")
+        
+        # Show per-rule breakdown
+        for br in step.get("breakdown", []):
+            if br["conflicts"]:
+                for c in br["conflicts"]:
+                    print(f"{pad}       [{c['rule']}] {c['detail']}")
+        
+        precursors = step.get("precursors", [])
+        for pidx, prec in enumerate(precursors):
+            pname = prec["name"]
+            ptype = prec["type"]
+            fg_hint = prec.get("fg_hint", "")
+            print(f"{pad}     Precursor {pidx+1}: {pname}")
+            print(f"{pad}       Type: {ptype}")
+            if fg_hint:
+                print(f"{pad}       FG: {fg_hint}")
+            
+            further = prec.get("further_cuts", [])
+            if further:
+                print(f"{pad}       Further:")
+                for fc in further[:2]:
+                    print(f"{pad}         disconnect {fc['bond']} (δ={fc['delta']})")
+
+
+def print_analysis(result):
+    """Print molecule analysis with grammar-derived disconnections."""
+    print(f"Target: {result['target']}")
+    print(f"Type: {result['type']}")
+    
+    fgs = result.get("fgs_found", [])
+    if fgs:
+        print(f"FGs identified: {', '.join(fgs)}")
+    
+    cuts = result.get("cuts", [])
+    if cuts:
+        print(f"\nGrammar-derived disconnections (no named reactions):")
+        for m in cuts:
+            print(f"  disconnect {m['bond']} (δ={m['delta']}, compat={m['compatibility']})")
+            print(f"    {m['description']}")
+    else:
+        print(f"\nNo disconnections found (terminal node)")
+    
+    analogs = result.get("analogs", [])
+    if analogs:
+        print(f"\nStructural analogs:")
+        for a in analogs[:5]:
+            print(f"  {a['n']} (d={a['d']})")
+
+
+# ====================================================================
+# MAIN — CLI entry point
+# ====================================================================
+
+def main():
+    # Normalize unicode dashes (U+2212, U+2013, U+2014, etc.) to ASCII hyphen
+    _dash_map = str.maketrans({chr(c): '-' for c in [0x2212, 0x2013, 0x2014, 0x2015, 0xff0d, 0xfe63]})
+    sys.argv = [s.translate(_dash_map) for s in sys.argv]
+    
+    parser = argparse.ArgumentParser(
+        description="ch3mpiler - IG-grounded retrosynthetic compiler using grammar-derived bond formation rules")
+    parser.add_argument("--target", help="Target molecule name")
+    parser.add_argument("--retrosynthesis", action="store_true",
+                        help="Full retrosynthetic tree")
+    parser.add_argument("--cas", help="CAS Registry Number")
+    parser.add_argument("--depth", type=int, default=2,
+                        help="Retrosynthetic depth (default: 2)")
+    parser.add_argument("--forward", nargs="+", help="Reagents for forward prediction")
+    parser.add_argument("--interactive", action="store_true", help="Interactive mode")
+    parser.add_argument("--fg", help="Analyze functional group")
+    parser.add_argument("--list-fgs", action="store_true", help="List FGs")
+    parser.add_argument("--list-bonds", action="store_true", help="List bond types")
+    parser.add_argument("--show-cas-cache", action="store_true", help="Show CAS cache")
+    
+    args = parser.parse_args()
+    ch = Ch3mpiler()
+    
+    # ── CAS Resolution ─────────────────────────────────────
+    if args.cas:
+        if args.retrosynthesis:
+            tree = ch.resolve_and_analyze(args.cas, do_retrosynthesis=True, depth=args.depth)
+            print("=" * 66)
+            print("  ch3mpiler — Retrosynthetic Analysis (grammar-derived rules)")
+            print("=" * 66)
+            print_retrosynthesis(tree)
+            return
+        else:
+            result = ch.resolve_and_analyze(args.cas, do_retrosynthesis=False)
+            info = result.get("cas_info", {})
+            print(f"CAS: {info.get('cas', args.cas)}")
+            print(f"Name: {info.get('name', 'unknown')}  ({info.get('source', '')})")
+            if info.get("formula"):
+                print(f"Formula: {info['formula']}")
+            if info.get("smiles"):
+                print(f"SMILES: {info['smiles']}")
+            print_analysis(result)
+            return
+    
+    # ── List FGs ──────────────────────────────────────────
+    if args.list_fgs:
+        print("Functional Groups (with IG structural types):")
+        for fg_name in sorted(FG.keys()):
+            t = {p: FG[fg_name].get(p, "?") for p in PNAMES}
+            print(f"  {fg_name:30s}  {fmt_tup(t)}")
+        return
+    
+    # ── List bond types ───────────────────────────────────
+    if args.list_bonds:
+        print("Grammar-derived bond types (no named reactions):")
+        for bname in sorted(BOND_TYPES.keys()):
+            b = BOND_TYPES[bname]
+            t = {p: b.get(p, "?") for p in PNAMES}
+            desc = b.get("desc", "")
+            print(f"  {bname:20s}  {desc:45s}  {fmt_tup(t)}")
+        return
+    
+    # ── Show CAS cache ────────────────────────────────────
+    if args.show_cas_cache:
+        cache = ch.cas_resolver._cache
+        if not cache:
+            print("CAS cache is empty.")
+        else:
+            print(f"Cached CAS lookups ({len(cache)} entries):")
+            for cas, entry in sorted(cache.items()):
+                name = entry.get("name", "?")
+                src = entry.get("source", "?")
+                print(f"  {cas:15s}  {name:40s}  [{src}]")
+        return
+    
+    # ── FG analysis ──────────────────────────────────────
+    if args.fg:
+        if args.fg in FG:
+            t = {p: FG[args.fg].get(p, "?") for p in PNAMES}
+            print(f"FG: {args.fg}")
+            print(f"Type: {fmt_tup(t)}")
+        else:
+            print(f"Unknown FG: {args.fg}")
+            print(f"Known: {', '.join(sorted(FG.keys()))}")
+        return
+    
+    # ── Target analysis ─────────────────────────────────
+    if args.target:
+        if args.retrosynthesis:
+            tree = ch.retrosynthesis(args.target, depth=args.depth)
+            print("=" * 66)
+            print("  ch3mpiler — Retrosynthetic Analysis (grammar-derived)")
+            print("=" * 66)
+            print_retrosynthesis(tree)
+        else:
+            result = ch.analyze(args.target)
+            print_analysis(result)
+        return
+    
+    # ── Forward prediction ───────────────────────────────
+    if args.forward:
+        r = ch.forward(args.forward)
+        if r:
+            print(f"Reagents: {', '.join(r['reagents'])}")
+            if "error" in r:
+                print(f"Error: {r['error']}")
+            else:
+                print(f"FGs: {r.get('fgs_identified', [])}")
+                print(f"Predicted bond: {r.get('predicted_bond', '?')} ({r.get('bond_description', '')})")
+                print(f"Delta: {r.get('delta', '?')}, Compat: {r.get('compatibility', '?')}")
+        return
+    
+    # ── Interactive mode ───────────────────────────────────
+    if args.interactive:
+        print("ch3mpiler interactive — grammar-derived bond formation rules")
+        print("No named reactions used — all disconnections from 12-primitive rules")
+        print("Commands:")
+        print("  <name>         analyze molecule")
+        print("  retro:<name>   retrosynthesis")
+        print("  cas:<n>        CAS lookup + analyze")
+        print("  cas-retro:<n>  CAS + retrosynthesis")
+        print("  fwd:r1,r2,...  forward prediction")
+        print("  fg:<name>      FG analysis")
+        print("  fgs            list FGs")
+        print("  bonds          list bond types")
+        print("  rules          show derived rules")
+        print("  quit           exit")
+        while True:
+            try:
+                c = input(">>> ").strip()
+                if c in ("quit", "q", "exit"):
+                    break
+                if c == "fgs":
+                    for fg_name in sorted(FG.keys()):
+                        print(f"  {fg_name}")
+                elif c == "bonds":
+                    for bname in sorted(BOND_TYPES.keys()):
+                        print(f"  {bname:20s}  {BOND_TYPES[bname].get('desc','')}")
+                elif c == "rules":
+                    print("Derived rules of bond formation (from IG primitives):")
+                    print("  D: Dimensionality — bond D ≤ max(FG1.D, FG2.D)")
+                    print("  T: Topology — bond T compatible with meet(FG1.T, FG2.T)")
+                    print("  R: Relational mode — donor/acceptor compatibility")
+                    print("  P: Parity — bond P ≤ join(FG1.P, FG2.P)")
+                    print("  F: Fidelity — quantum bonds need quantum FGs")
+                    print("  K: Kinetics — bond formation rate ≤ FG reactivity")
+                    print("  G: Scope — bond range ≤ FG reach")
+                    print("  Gm: Interaction — bond pattern ≤ FG interaction capability")
+                    print("  Ph: Criticality — critical bonds need critical FGs")
+                    print("  H: Chirality — bond temporal depth ≤ FG depth")
+                    print("  S: Stoichiometry — bond multiplicity ≤ FG capacity")
+                    print("  W: Winding — topological protection ≤ FG support")
+                elif c.startswith("fg:"):
+                    fg = c[3:]
+                    if fg in FG:
+                        t = {p: FG[fg].get(p, "?") for p in PNAMES}
+                        print(f"FG {fg}: {fmt_tup(t)}")
+                    else:
+                        print(f"Unknown FG: {fg}")
+                elif c.startswith("retro:"):
+                    name = c[6:]
+                    tree = ch.retrosynthesis(name, depth=2)
+                    print_retrosynthesis(tree)
+                elif c.startswith("cas:"):
+                    cas = c[4:]
+                    result = ch.resolve_and_analyze(cas, do_retrosynthesis=False)
+                    info = result.get("cas_info", {})
+                    print(f"CAS: {info.get('cas', cas)}")
+                    print(f"Name: {info.get('name', 'unknown')}")
+                    print_analysis(result)
+                elif c.startswith("cas-retro:"):
+                    cas = c[10:]
+                    tree = ch.resolve_and_analyze(cas, do_retrosynthesis=True, depth=2)
+                    print_retrosynthesis(tree)
+                elif c.startswith("fwd:"):
+                    reagents = c[4:].split(",")
+                    r = ch.forward(reagents)
+                    if r:
+                        if "error" in r:
+                            print(f"Error: {r['error']}")
+                        else:
+                            print(f"Forward: {', '.join(r['reagents'])} -> {r.get('predicted_bond', '?')}")
+                            print(f"  Product type: {r.get('product_type', '?')}")
+                else:
+                    result = ch.analyze(c)
+                    print_analysis(result)
+            except EOFError:
+                break
+            except KeyboardInterrupt:
+                break
+        return
+    
+    # ── Default demo ────────────────────────────────────────
+    print("=" * 66)
+    print("  ch3mpiler — Grammar-Derived Retrosynthetic Engine")
+    print("=" * 66)
+    print("  No named reactions — all disconnections from")
+    print("  12 derived rules of bond formation.")
+    print()
+    print("Usage:")
+    print("  --target <name>                Analyze target molecule")
+    print("  --target <name> --retrosynthesis  Recursive retrosynthesis")
+    print("  --cas <CAS RN>                 CAS number lookup + analyze")
+    print("  --cas <CAS RN> --retrosynthesis    CAS + retrosynthesis")
+    print("  --forward r1 r2 ...            Predict forward reaction")
+    print("  --interactive                  Interactive shell")
+    print("  --list-fgs                     List functional groups")
+    print("  --list-bonds                   List bond types")
+    print()
+    print("Demo: benzaldehyde")
+    result = ch.analyze("benzaldehyde")
+    print_analysis(result)
+    print()
+    print("Try: ch3mpiler --cas 3568-94-3 --retrosynthesis")
+
+if __name__ == "__main__":
+    main()

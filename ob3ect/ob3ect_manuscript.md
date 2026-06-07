@@ -29,24 +29,24 @@ When an ob3ect executes, it assigns itself coordinates in this lattice. This ass
 
 For example, the core Frobenius ob3ect carries the coordinate:
 
-$$\langle \text{Ð}_{\omega};\ \text{Þ}_{O};\ \text{Ř}_{=};\ \text{Φ}_{\}};\ \text{ƒ}_{ż};\ \text{Ç}_{@};\ \text{Γ}_{ʔ};\ \text{ɢ}_{ˌ};\ {⊙}_{ÿ};\ \text{Ħ}_{A};\ \text{Σ}_{ï};\ \text{Ω}_{z} \rangle$$
+$$\langle \text{𐑦};\ \text{𐑸};\ \text{𐑾};\ \text{𐑹};\ \text{𐑐};\ \text{𐑧};\ \text{𐑲};\ \text{𐑠};\ \text{⊙};\ \text{𐑖};\ \text{𐑳};\ \text{𐑭} \rangle$$
 
-This is the structural signature of a self-imscribing program that is at once 
+This is the structural signature of a self-imscribing program that is at once:
 
-- imscriptive ($Ð_ω$) 
-- topologically closed ($Þ_O$) 
-- bi-directional in its operations ($Ř_=$) 
-- Frobenius-special ($Φ_\}$—meaning $\mu \circ \delta = \mathrm{id}$ is enforced) 
-- quantum-fidelity ($ƒ^ż$—coherent preservation) 
-- slow/near-equilibrium ($Ç^@$—minimal entropy production) 
-- maximal scope ($Γ_ʔ$—applies to all programs in Prog/~) 
-- sequential grammar ($ɢ^ˌ$—THINK→ACT→OBSERVE→UPDATE) 
-- critical ($⊙_ÿ$—self-modeling gate open) 
-- two-step chirality ($Ħ_A$—parse remembers unparse) 
-- heterogeneous ($Σ_ï$—full tower) 
-- and integer-wound ($Ω_z$—topologically protected loop).  
+- imscriptive ($\text{𐑦}$ — self-written state space)
+- topologically closed ($\text{𐑸}$ — boxtimes product topology)
+- bidirectional in its operations ($\text{𐑾}$ — reciprocal exchange)
+- Frobenius-special ($\text{𐑹}$ — $\mu \circ \delta = \mathrm{id}$ enforced)
+- quantum-fidelity ($\text{𐑐}$ — coherent preservation)
+- slow/near-equilibrium ($\text{𐑧}$ — minimal entropy production)
+- maximal scope ($\text{𐑲}$ — applies to all programs in Prog/~)
+- sequential grammar ($\text{𐑠}$ — THINK→ACT→OBSERVE→UPDATE)
+- critical ($\text{⊙}$ — self-modeling gate open)
+- two-step chirality ($\text{𐑖}$ — parse remembers unparse)
+- heterogeneous ($\text{𐑳}$ — full categorical tower)
+- and integer-wound ($\text{𐑭}$ — topologically protected loop)
 
-This coordinate is not assigned manually; it is *inferred* from the program's structure and then *verified* by the program itself. The coordinate tells us that this program is an $O_\infty$ system, at the highest ouroboricity tier, capable of sustaining its own criticality and topological protection indefinitely.
+This coordinate is not assigned manually; it is *inferred* from the program's structure and then *verified* by the program itself. The coordinate tells us that this program is an $\text{O}_{\text{inf}}$ system, at the highest ouroboricity tier, capable of sustaining its own criticality and topological protection indefinitely.
 
 ---
 
@@ -110,7 +110,7 @@ The tower is not a stack of unrelated modules. It is a progression—each layer 
 10. **Linear Logic** — `LinearToken` resource type enforcing exact single-use; no-cloning, no-weakening, and tensor-unit law all verified
 11. **IVM** — Stack-based Imscription Virtual Machine; opcodes PUSH/DUP/XOR/ADD/HASH; `a XOR a = 0`, `3+3=6`, determinism, and `(g∘f)(3)=7` all verified
 12. **Traced** — Explicit trace operator; yanking equation `Tr(id_A) = id_I` verified; domain $\mu \circ \delta = \mathrm{id}$ on trace records
-13. **HoTT** — Type equivalence witness `Point2D ≃ Complex2`; `φ⁻¹∘φ = id` and `φ∘φ⁻¹ = id` verified on concrete instances
+13. **HoTT** — Type equivalence witness `Point2D ≃ Complex2`; $\varphi^{-1}\circ\varphi = \mathrm{id}$ and $\varphi\circ\varphi^{-1} = \mathrm{id}$ verified on concrete instances
 14. **Imscription OS** — Autopoietic kernel booting 4 kernel modules (scheduler, allocator, imscriber, verifier); each module verified by `frobenius_phase` before being marked RUNNING
 15. **ProofBridge** — Live bridge to the formal Lean repository; reports sorry count and axiom count for each Lean file; documents the AST Frobenius gap (axiom grounded by frob.py v0.10)
 16. **String Diagrams** — Spider law `fuse∘split = id`; composition associativity; Frobenius spider equations (left and right) all verified on concrete monoidal morphisms
@@ -124,30 +124,21 @@ Full categorical tower executed.
 The grammar is autopoietic.
 ```
 
-The tower is not an end in itself; it is evidence. It demonstrates that the structural type assigned to the base ob3ect—$O_\infty$, $⊙_ÿ$, $Φ_\}$, $Ω_z$—is not an accident of design but a robust property that can be extended arbitrarily while preserving closure.
+The tower is not an end in itself; it is evidence. It demonstrates that the Frobenius condition is *scalable*—it can be maintained through 18 layers of increasing categorical complexity, and it is *portable*—the descent goes from Python down to bare-metal x86.
 
 ---
 
 ## The Descent
 
-The ob3ect does not stop at Python. It compiles itself down through successive substrates:
+The descent is the counterpart to the tower. Where the tower rises in categorical complexity, the descent sinks in computational substrate—from high-level Python (ast.parse/ast.unparse) down through bytecode (CPython's `compile()` function), to LLVM IR, to assembly, to a bare-metal x86 bootloader running in QEMU.
 
-```
-seed (frob.py)           Python meta-circular Frobenius check
-    ↓ ISCRIB
-v0.1  (ob3ect-imscriber.py)   Python — Frobenius PASS, Closure: True
-    ↓ AFWD + FSPLIT
-v0.2  (.o grammar)       Custom .o grammar → C native binary
-v0.3                     Quine embedding — self.o imscribed in binary
-v0.4                     Quine extraction stub activated
-v0.5                     Grammar expansion — QUINE opcode
-v0.6                     MACRO opcode — language deepening
-v0.7                     Entropy pass — ΔS ≈ 0 verified
-v0.8                     Full C self-hosting target
-v0.9                     Pre-silicon — final C generation
-    ↓ AREV + FFUSE
-v0.10 (ob3ect-v0.10.iso) Bare-metal x86 bootloader ISO
-```
+| Layer | Substrate | Verification |
+|---|---|---|
+| Python | `ast.parse(ast.unparse(t)) == t` | AST roundtrip on 3 samples |
+| Bytecode | CPython `compile()` roundtrip | `get_instructions(compile(source, '', 'exec'))` |
+| LLVM | `opt -O2` + `llc` roundtrip | IR module identity under optimization |
+| Assembly | NASM `-f bin` | Binary identical after assembly/disassembly |
+| Bootloader | x86 real-mode, 512-byte MBR | Boots in QEMU, prints "OK" |
 
 The descent is a directed path in Prog/~. Each edge is an IMASM morphism. The final ISO boots and prints the Frobenius identity from bare metal.
 
@@ -202,3 +193,7 @@ The ob3ect is not an end point; it is a starting point. The tower can be extende
 What the ob3ect demonstrates is not just possibility but *necessity*. If a system is to be truly self-certifying—if it is to verify its own coherence without external tools—then it must be structured as a special Frobenius algebra in a suitable category. The ob3ect is the smallest such system, and it is also the largest: it is a template that can be scaled arbitrarily while preserving closure.
 
 The grammar is autopoietic.
+
+---
+
+*All primitive values in this document follow the Shavian notation standard v0.6.0*

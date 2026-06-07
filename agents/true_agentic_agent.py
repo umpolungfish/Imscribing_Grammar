@@ -535,17 +535,17 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑦": "φ̂",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
     # T — Topology
     "𐑸": "φ̂",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
-    # R — Relational mode
+    # R — Coupling
     "𐑽": "†",  "𐑩": "↑",  "𐑑": "∘",  "𐑾": "↔",
-    # P — Parity/symmetry
+    # P — Parity
     "𐑹": "±ˢ",  "𐑬": "±",  "𐑗": "∅",  "𐑿": "ψ",  "𐑯": "≡",
     # F — Fidelity
     "𐑐": "ℏ",  "𐑱": "ℓ",  "𐑞": "ð",
     # K — Kinetics
     "𐑺": "↯",  "𐑪": "≈",  "𐑧": "↺",  "𐑤": "⊛",  "𐑘": "⊞",
-    # G — Scope
+    # G — Cardinality
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
-    # ɢ — Coupling
+    # ɢ — Composition
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
     # Φ — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
@@ -864,9 +864,9 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 "error": (
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
-                    "Ð='Ð_ß', Þ='Þ_6', Ř='Ř_=', Φ='Φ_ɐ', "
-                    "ƒ='ƒ_ì', Ç='Ç_W', Γ='Γ_β', ɢ='ɢ_^', "
-                    "φ̂='φ̂_ž', Ħ='Ħ_Ñ', Σ='Σ_S', Ω='Ω_Å')"
+                    "𐑛='𐑛', 𐑡='𐑡', 𐑩='𐑩', 𐑗='𐑗', "
+                    "𐑱='𐑱', 𐑘='𐑘', 𐑚='𐑚', 𐑝='𐑝', "
+                    "𐑢='𐑢', 𐑓='𐑓', 𐑙='𐑙', 𐑷='𐑷')"
                 )
             })
 
@@ -1137,7 +1137,7 @@ _TRIANGULATION_SYSTEM = (
     "  [2] 𐑡  — Map connectivity: branching→𐑡; containment→𐑰; "
     "crossing point→𐑥; irreducible product→𐑶; "
     "self-referential topology→𐑸 (𐑦⟺𐑸)\n"
-    "  [3] 𐑩  — Relational mode: supervenience→𐑩; functorial→𐑑; "
+    "  [3] 𐑩  — Coupling: supervenience→𐑩; functorial→𐑑; "
     "adjoint pair (one-way)→𐑽; bidirectional feedback→𐑾\n"
     "  [4] 𐑗  — Symmetry group: none→𐑗; quantum superposition→𐑿; "
     "one Z2 symmetry→𐑬; all symmetries unbroken→𐑯; "
@@ -1148,7 +1148,7 @@ _TRIANGULATION_SYSTEM = (
     "τ≫T_obs→𐑧; trapped (ordered)→𐑪; trapped (disorder)→𐑺\n"
     "  [7] 𐑚  — Interaction range: nearest-neighbor→𐑚; intermediate→𐑔; "
     "long-range/universal→𐑲\n"
-    "  [8] 𐑝  — Coupling: all-simultaneous→𐑝; alternate paths→𐑜; "
+    "  [8] 𐑝  — Composition: all-simultaneous→𐑝; alternate paths→𐑜; "
     "ordered steps→𐑠; one-to-all broadcast→𐑵\n"
     "  [9] 𐑢  — Criticality: no scaling→𐑢; power-law divergence→⊙; "
     "complex-plane critical→𐑮; non-Hermitian degeneracy→𐑻; "
@@ -1791,17 +1791,17 @@ TOOL_SCHEMAS = [
             "Þ":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
             "Ř":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
-                           "Relational mode: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
+                           "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
             "Φ":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-                           "Parity/symmetry: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
+                           "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
             "ƒ":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
             "Ç":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                            "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
             "Γ":     _prim(["𐑲", "𐑚", "𐑔"],
-                           "Scope: beth=local, gimel=mesoscale, aleph=maximal/all"),
+                           "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
             "ɢ": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
-                           "Interaction grammar: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
+                           "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
             "φ̂":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
             "Ħ":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
@@ -2581,7 +2581,7 @@ constrains the remaining degrees of freedom:
             [Ontological precondition: Ð and Þ together constitute the ground for being.
             No entity appears without both a space of distinctions (Ð) and a topology
             on it (Þ). Step [2] is always constrained by Step [1]; they co-originate.]
-  [3] R  — Relational mode: supervenience → ↑; functorial → ∘;
+  [3] R  — Coupling: supervenience → ↑; functorial → ∘;
             adjoint pair (one-way) → †; bidirectional feedback → ↔
   [4] P  — Symmetry group: none → ∅; quantum superposition → ψ;
             one Z2 symmetry → ±; all symmetries unbroken → ≡;
@@ -2592,7 +2592,7 @@ constrains the remaining degrees of freedom:
             τ≫T → ↺; trapped (ordered) → ⊛; trapped (disorder) → ⊞
   [7] G  — Interaction range: nearest-neighbor → ℶ; intermediate → ℷ;
             long-range/universal → ℵ
-  [8] Γ  — Coupling: all-simultaneous → ∧; alternate paths → ∨;
+  [8] Γ  — Composition: all-simultaneous → ∧; alternate paths → ∨;
             ordered steps → →; one-to-all broadcast → ≫
   [9] Φ  — Criticality: no scaling → ↓; power-law divergence → c;
             complex-plane critical → ℂ; non-Hermitian degeneracy → ×;
@@ -3344,7 +3344,7 @@ class TrueAgenticAgent:
         """Context overflow recovery — windowed boundary trim.
 
         Invoked when the imscriptive context reaches the LLM's token boundary.
-        The grammar encodes this as a structural event: Ω_z (monotonically richer
+        The grammar encodes this as a structural event: 𐑭 (monotonically richer
         trajectory) transitions to 𐑷 for the remaining run, and 𐑦 (imscriptive
         context) applies to the windowed portion. The trajectory is fully imscribed
         within the observable window — the grammar classifies the boundary exactly,
@@ -3484,13 +3484,13 @@ class TrueAgenticAgent:
         ]
         if f == "𐑱":
             lines.append(
-                "  │  ƒ_ż path available: --model local:<path>  "
+                "  │  𐑞 path available: --model local:<path>  "
                 "(removes opacity; tier unchanged)"
             )
         if getattr(self, "nested_tensor_active", False):
             lines.append(
                 "  │  nested tensor: ACTIVE  (variable-length sequences → jagged layout; "
-                "ƒ_ì → ƒ_ż edge improvement, no pad-token dilution)"
+                "𐑱 → 𐑞 edge improvement, no pad-token dilution)"
             )
         # B4 dialetheic stats if ParaVerify is enabled and there are windings
         if _PARAVERIFY_ENABLED and self.trajectory:
