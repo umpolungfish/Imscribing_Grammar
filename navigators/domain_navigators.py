@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-domain_navigators.py — Language · Civilization · Ecology · Consciousness Navigators
+domain_navigators.py — Language  Civilization  Ecology  Consciousness Navigators
 ═════════════════════════════════════════════════════════════════════════════════════
 Catalog-query navigators for the four §74–§77 non-mathematical domains.
 
@@ -32,18 +32,18 @@ ROOT = Path(__file__).parent
 # ── Canonical primitive definitions ───────────────────────────────────────────
 
 VALUES: dict[str, list[str]] = {
-    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
-    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
-    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
-    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
-    "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
-    "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù", "Ç^λ"],
-    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
-    "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
-    "⊙":   ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"],
-    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
-    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
-    "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
+    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "ƒ":     ["𐑱", "𐑞", "𐑐"],
+    "Ç":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
+    "Γ":     ["𐑚", "𐑔", "𐑲"],
+    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
+    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "Σ":     ["𐑙", "𐑕", "𐑳"],
+    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
 PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
@@ -52,8 +52,8 @@ ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
     for prim, vals in VALUES.items()
 }
-# T_box kept as backwards-compat alias for Þ_¨ (ordinal 3)
-ORD["Þ"]["Þ_box"] = ORD["Þ"]["Þ_¨"]
+# 𐑶 kept as backwards-compat alias for 𐑶 (ordinal 3)
+ORD["Þ"]["𐑶"] = ORD["Þ"]["𐑶"]
 
 WEIGHTS: dict[str, float] = {
     "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.2,
@@ -65,10 +65,10 @@ WEIGHTS: dict[str, float] = {
 C_WEIGHTS = {"Ç": 0.158, "Γ": 0.273, "Þ": 0.292, "Ω": 0.276}
 C_MAXORD  = {"Ç": 4, "Γ": 2, "Þ": 4, "Ω": 3}  # max ordinal for normalization
 
-CRITICAL    = {"⊙_ÿ", "⊙_Æ"}
-NONCRITICAL = {"⊙_ž", "⊙_Ţ", "⊙_3"}
-BOUNDED_D   = {"Ð_ß", "Ð_C", "Ð_ω"}
-SLOW_K      = {"Ç^-", "Ç^W", "Ç^@"}   # Gate 2: K ≤ Ç^@
+CRITICAL    = {"⊙", "𐑮"}
+NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
+BOUNDED_D   = {"𐑛", "𐑨", "𐑦"}
+SLOW_K      = {"𐑘", "𐑤", "𐑧"}   # Gate 2: K ≤ 𐑧
 
 # ── Domain catalog subsets ─────────────────────────────────────────────────────
 
@@ -124,11 +124,11 @@ def mismatches(a: dict, b: dict) -> int:
 def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
     phi, p, omega, d = e["⊙"], e["Φ"], e["Ω"], e["Ð"]
-    if phi in CRITICAL and p == "Φ_}":
+    if phi in CRITICAL and p == "𐑹":
         return "O_inf"
     if phi in NONCRITICAL:
         return "O_0"
-    if omega == "Ω_Å":
+    if omega == "𐑷":
         return "O_1"
     if d in BOUNDED_D:
         return "O_2"
@@ -137,9 +137,9 @@ def compute_tier(e: dict) -> str:
 def consciousness_score(e: dict) -> float:
     """
     C-score (§VIII v2):
-      C = [Phi=⊙_ÿ] · [K ≤ Ç^@] · Σ w_i * x̃_i
-    Gate 1: ⊙_ÿ (state-space condition)
-    Gate 2: K ≤ Ç^@ (flow condition; Ç^Ù and Ç^λ both fail)
+      C = [Phi=⊙]  [K ≤ 𐑧]  Σ w_i * x̃_i
+    Gate 1: ⊙ (state-space condition)
+    Gate 2: K ≤ 𐑧 (flow condition; 𐑪 and 𐑺 both fail)
     """
     if e["⊙"] not in CRITICAL:
         return 0.0
@@ -153,11 +153,11 @@ def consciousness_score(e: dict) -> float:
 def k_phase(e: dict) -> str:
     """K-phase label for collapse/disorder analysis."""
     k = e["Ç"]
-    if k == "Ç^Ù":  return "Ç^Ù (order-frozen)"
-    if k == "Ç^λ":   return "Ç^λ (disorder-frozen)"
-    if k == "Ç^-":  return "Ç^- (overdamped)"
-    if k == "Ç^W":   return "Ç^W (moderate)"
-    if k == "Ç^@":  return "Ç^@ (critical)"
+    if k == "𐑪":  return "𐑪 (order-frozen)"
+    if k == "𐑺":   return "𐑺 (disorder-frozen)"
+    if k == "𐑘":  return "𐑘 (overdamped)"
+    if k == "𐑤":   return "𐑤 (moderate)"
+    if k == "𐑧":  return "𐑧 (critical)"
     return k
 
 def breakdown(a: dict, b: dict) -> list[dict]:
@@ -233,21 +233,21 @@ def language_probes(cat: Catalog) -> list[str]:
             for row in breakdown(entries["sanskrit_classical"], entries["arabic_classical"]):
                 lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 74.3 — Lojban O_inf despite Ω_Å
+    # Thm 74.3 — Lojban O_inf despite 𐑷
     if "lojban" in entries:
         e = entries["lojban"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 74.3  lojban: Omega={e['Omega']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
-        lines.append(f"            (P is the tier gate; Ω_Å only blocks O_2→O_inf step, not R1)")
+        lines.append(f"  Thm 74.3  lojban: Omega={e['Ω']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
+        lines.append(f"            (P is the tier gate; 𐑷 only blocks O_2→O_inf step, not R1)")
 
     # Thm 74.4 — Planned-language Frobenius ceiling
     if "esperanto" in entries:
         tier = compute_tier(entries["esperanto"])
         lines.append(f"  Thm 74.4  esperanto: tier={tier} (planned-language Frobenius ceiling)")
 
-    # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → Φ_F (min rule)
+    # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → 𐑬 (min rule)
     if "haitian_creole" in entries and "sanskrit_classical" in entries:
-        p_tensor = min(ORD["Φ"]["Φ_F"], ORD["Φ"]["Φ_}"])
+        p_tensor = min(ORD["Φ"]["𐑬"], ORD["Φ"]["𐑹"])
         tensor_p = VALUES["Φ"][p_tensor]
         lines.append(f"  Thm 74.9  creole⊗Sanskrit: P_tensor={tensor_p} (min rule destroys Frobenius)")
 
@@ -294,16 +294,16 @@ def civilization_probes(cat: Catalog) -> list[str]:
         for row in breakdown(entries["western_roman_collapse"], entries["soviet_union_collapse"]):
             lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 75.4 — Weimar O_0 (⊙_3)
+    # Thm 75.4 — Weimar O_0 (𐑻)
     if "weimar_republic_collapse" in entries:
         e = entries["weimar_republic_collapse"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 75.4  weimar: Phi={e['Phi']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
+        lines.append(f"  Thm 75.4  weimar: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
 
-    # Thm 75.5 — Athenian Democracy Þ_O (lateral governance)
+    # Thm 75.5 — Athenian Democracy 𐑸 (lateral governance)
     if "athenian_democracy_peak" in entries:
         e = entries["athenian_democracy_peak"]
-        lines.append(f"  Thm 75.5  athenian_democracy: T={e['T']} ({'✓' if e['T']=='Þ_O' else '✗'})")
+        lines.append(f"  Thm 75.5  athenian_democracy: T={e['T']} ({'✓' if e['T']=='𐑸' else '✗'})")
 
     # Thm 75.7 — Han → Ming distance = 6.5955
     if "han_dynasty_peak" in entries and "ming_dynasty_collapse" in entries:
@@ -341,8 +341,8 @@ def ecology_probes(cat: Catalog) -> list[str]:
             tier = compute_tier(entries[n])
             lines.append(f"  Thm 76.2  {n}: tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
 
-    # Thm 76.3 — Corn monoculture Ç^Ù; fragmented habitat Ç^λ
-    for n, expected_k in [("corn_monoculture", "Ç^Ù"), ("fragmented_habitat", "Ç^λ")]:
+    # Thm 76.3 — Corn monoculture 𐑪; fragmented habitat 𐑺
+    for n, expected_k in [("corn_monoculture", "𐑪"), ("fragmented_habitat", "𐑺")]:
         if n in entries:
             k = entries[n]["Ç"]
             lines.append(f"  Thm 76.3  {n}: K={k} ({'✓' if k==expected_k else '✗'})")
@@ -351,7 +351,7 @@ def ecology_probes(cat: Catalog) -> list[str]:
     if "early_successional_forest" in entries:
         e = entries["early_successional_forest"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 76.4  early_successional_forest: Phi={e['Phi']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
+        lines.append(f"  Thm 76.4  early_successional_forest: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
 
     # Thm 76.5 — Coral bleaching tipping point largest distance
     if "coral_reef_healthy" in entries and "coral_reef_bleached" in entries:
@@ -370,11 +370,11 @@ def ecology_probes(cat: Catalog) -> list[str]:
 
     # Thm 76.8 — Restoration asymmetry
     lines.append(f"  Thm 76.8  Restoration asymmetry:")
-    lines.append(f"            corn_monoculture (Ç^Ù): requires diversification (inject disorder)")
-    lines.append(f"            fragmented_habitat (Ç^λ): requires reconnection (restore ergodicity)")
+    lines.append(f"            corn_monoculture (𐑪): requires diversification (inject disorder)")
+    lines.append(f"            fragmented_habitat (𐑺): requires reconnection (restore ergodicity)")
 
     # Cor 76.C1
-    lines.append(f"  Cor 76.C1 Ç^Ù and Ç^λ restoration paths are structurally incompatible")
+    lines.append(f"  Cor 76.C1 𐑪 and 𐑺 restoration paths are structurally incompatible")
 
     return lines
 
@@ -390,7 +390,7 @@ def consciousness_probes(cat: Catalog) -> list[str]:
         akh = None
 
     # Thm 77.1 — Two-gate formula verified across 10 states
-    lines.append(f"  Thm 77.1  Two-gate C-scores (Gate1=⊙_ÿ, Gate2=K≤Ç^@):")
+    lines.append(f"  Thm 77.1  Two-gate C-scores (Gate1=⊙, Gate2=K≤𐑧):")
     for n in CONSCIOUSNESS_NAMES:
         if n in entries:
             e = entries[n]
@@ -400,23 +400,23 @@ def consciousness_probes(cat: Catalog) -> list[str]:
             gate = ("✓✓" if (g1 and g2) else ("✓✗" if g1 else "✗✓" if g2 else "✗✗"))
             lines.append(f"            {n:32s}  G1={int(g1)} G2={int(g2)} [{gate}]  C={c:.4f}")
 
-    # Thm 77.2 — Catatonic: ⊙_ÿ + Ç^Ù → C=0
+    # Thm 77.2 — Catatonic: ⊙ + 𐑪 → C=0
     if "catatonic_state" in entries:
         e = entries["catatonic_state"]
         c = consciousness_score(e)
-        lines.append(f"  Thm 77.2  catatonic: Phi={e['Phi']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
+        lines.append(f"  Thm 77.2  catatonic: Phi={e['⊙']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
 
-    # Thm 77.3 — Dissociative: ⊙_ÿ + Ç^λ → C=0
+    # Thm 77.3 — Dissociative: ⊙ + 𐑺 → C=0
     if "dissociative_state" in entries:
         e = entries["dissociative_state"]
         c = consciousness_score(e)
-        lines.append(f"  Thm 77.3  dissociative: Phi={e['Phi']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
+        lines.append(f"  Thm 77.3  dissociative: Phi={e['⊙']}, K={e['K']}, C={c} ({'✓' if c==0 else '✗'})")
 
-    # Thm 77.4 — Manic: ⊙_Ţ → C=0
+    # Thm 77.4 — Manic: 𐑣 → C=0
     if "manic_episode" in entries:
         e = entries["manic_episode"]
         c = consciousness_score(e)
-        lines.append(f"  Thm 77.4  manic_episode: Phi={e['Phi']}, C={c} ({'✓' if c==0 else '✗'})")
+        lines.append(f"  Thm 77.4  manic_episode: Phi={e['⊙']}, C={c} ({'✓' if c==0 else '✗'})")
 
     # Thm 77.5 — d(catatonic, dissociative)
     if "catatonic_state" in entries and "dissociative_state" in entries:
@@ -475,7 +475,7 @@ class DomainNavigator:
         print(f"\n{'═'*70}")
         print(f"  {self.domain.upper()} NAVIGATOR  ({sec})")
         print(f"{'═'*70}")
-        print(f"  {'Name':<36} {'Tier':<8} {'K':<10} {'P':<12} {'Phi'}")
+        print(f"  {'Name':<36} {'Tier':<8} {'K':<10} {'P':<12} {'⊙'}")
         print(f"  {'-'*36} {'-'*8} {'-'*10} {'-'*12} {'-'*16}")
         for name in DOMAIN_NAMES[self.domain]:
             if name not in self.entries:
@@ -486,7 +486,7 @@ class DomainNavigator:
             if self.domain == "consciousness":
                 c = consciousness_score(e)
                 extra = f"  C={c:.4f}"
-            print(f"  {name:<36} {tier:<8} {e['K']:<10} {e['P']:<12} {e['Phi']}{extra}")
+            print(f"  {name:<36} {tier:<8} {e['K']:<10} {e['P']:<12} {e['⊙']}{extra}")
         print()
 
     def verify(self) -> None:
@@ -509,7 +509,7 @@ class DomainNavigator:
         print(f"\n  d({name_a}, {name_b}) = {d:.4f}  ({mm} mismatches)")
         rows = breakdown(a, b)
         if rows:
-            print(f"  {'Primitive':<10} {'From':<16} {'To':<16} {'Δ':<4} {'w·Δ²':<8}")
+            print(f"  {'Primitive':<10} {'From':<16} {'To':<16} {'Δ':<4} {'wΔ²':<8}")
             for row in rows:
                 print(f"  {row['prim']:<10} {row['from']:<16} {row['to']:<16} {row['delta']:<4} {row['wsq']:<8.3f}")
         else:
@@ -533,7 +533,7 @@ class DomainNavigator:
         """Interactive REPL for this domain navigator."""
         sec = DOMAIN_SECTIONS[self.domain]
         print(f"\nDomain Navigator REPL — {self.domain.upper()} ({sec})")
-        print("Commands: info · verify · distance <a> <b> · nearest <name> [n] · tier <name> · score <name> · quit")
+        print("Commands: info  verify  distance <a> <b>  nearest <name> [n]  tier <name>  score <name>  quit")
         while True:
             try:
                 raw = input(f"\n[{self.domain[:3]}]> ").strip()
@@ -566,7 +566,7 @@ class DomainNavigator:
                 try:
                     e = self.cat.get(parts[1])
                     t = compute_tier(e)
-                    print(f"  {parts[1]}: tier={t}  (Phi={e['Phi']}, P={e['P']}, Omega={e['Omega']}, D={e['D']})")
+                    print(f"  {parts[1]}: tier={t}  (Phi={e['⊙']}, P={e['P']}, Omega={e['Ω']}, D={e['D']})")
                 except KeyError as ex:
                     print(f"  Not found: {ex}")
             elif cmd == "score" and len(parts) >= 2:
@@ -579,7 +579,7 @@ class DomainNavigator:
                 except KeyError as ex:
                     print(f"  Not found: {ex}")
             else:
-                print("  Unknown command. Try: info · verify · distance <a> <b> · nearest <name> [n] · tier <name> · score <name> · quit")
+                print("  Unknown command. Try: info  verify  distance <a> <b>  nearest <name> [n]  tier <name>  score <name>  quit")
 
 
 # ── CLI ────────────────────────────────────────────────────────────────────────

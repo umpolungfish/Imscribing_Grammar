@@ -2,22 +2,22 @@
 Homotopy Type Theory Navigator - Imscribing Grammar
 
 Domain: Homotopy type theory, univalent foundations, higher topos theory
-Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2>
+Structural type: <𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑴>
 Tier: O_inf
 
 Architecture: Univalence-preserving GNN with univalence axiom enforcement.
-  - Ð_ω: Imscriptive encoding of types and paths
-  - Þ_O: Imscriptive topology (n-types, (n+1)-types, ...)
-  - Ř_Ť: Adjoint/unnivalence relations (paths ↔ equivalences)
-  - Φ_}: Self-dual with uncertainty on higher identities
-  - ƒ^ż: Exactly preserves univalence principle
-  - Ç^@: Slow evolution through higher homotopies
-  - Γ_ʔ: Arbitrary universe levels possible
-  - ɢ^ˌ: Sequential higher composition (path concatenation)
-  - ⊙_ÿ: Self-modeling (type is equivalent to its univalence)
-  - Ħ_!: Eternal (paths compose indefinitely)
-  - Σ_ï: Many heterogeneous types and paths
-  - Ω_2: Binary winding (type equivalence ↔ path equality)
+  - 𐑦: Imscriptive encoding of types and paths
+  - 𐑸: Imscriptive topology (n-types, (n+1)-types, ...)
+  - 𐑽: Adjoint/unnivalence relations (paths ↔ equivalences)
+  - 𐑹: Self-dual with uncertainty on higher identities
+  - 𐑐: Exactly preserves univalence principle
+  - 𐑧: Slow evolution through higher homotopies
+  - 𐑲: Arbitrary universe levels possible
+  - 𐑠: Sequential higher composition (path concatenation)
+  - ⊙: Self-modeling (type is equivalent to its univalence)
+  - 𐑫: Eternal (paths compose indefinitely)
+  - 𐑳: Many heterogeneous types and paths
+  - 𐑴: Binary winding (type equivalence ↔ path equality)
 
 Purpose: Navigate homotopy types, verify univalence applications,
   compute higher groupoids, detect equivalences, enforce univalence.
@@ -38,7 +38,7 @@ class HTTConfig:
             "computes higher groupoids, detects type equivalences."
         )
         self.domain = "Homotopy type theory, univalent foundations, higher topos theory"
-        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2"
+        self.tuple = "𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑴"
         self.tier = "O_inf"
         self.architecture = (
             "Univalence-preserving GNN - types communicate via path channels; "
@@ -47,18 +47,18 @@ class HTTConfig:
         )
         
         # Primitives
-        self.D = "Ð_ω"
-        self.T = "Þ_O"
-        self.R = "Ř_Ť"
-        self.P = "Φ_}"
-        self.F = "ƒ^ż"
-        self.K = "Ç^@"
-        self.G = "Γ_ʔ"
-        self.Gamma = "ɢ^ˌ"
-        self.Phi = "⊙_ÿ"
-        self.H = "Ħ_!"
-        self.S = "Σ_ï"
-        self.Omega = "Ω_2"
+        self.D = "𐑦"
+        self.T = "𐑸"
+        self.R = "𐑽"
+        self.P = "𐑹"
+        self.F = "𐑐"
+        self.K = "𐑧"
+        self.G = "𐑲"
+        self.Gamma = "𐑠"
+        self.Phi = "⊙"
+        self.H = "𐑫"
+        self.S = "𐑳"
+        self.Omega = "𐑴"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -281,9 +281,9 @@ def cmd_univalence_check(type_name):
         print(f"    ua_β : transport (ua e) x = e x  [computation rule]")
         print()
         print(f"  Grammar encoding:")
-        print(f"    Ř_Ť: paths ↔ equivalences (the adjoint pair ua ⊣ idtoequiv)")
-        print(f"    Ω_2: equivalence ↔ identity (the binary flip)")
-        print(f"    Ħ_!: infinite homotopy depth (all higher paths present)")
+        print(f"    𐑽: paths ↔ equivalences (the adjoint pair ua ⊣ idtoequiv)")
+        print(f"    𐑴: equivalence ↔ identity (the binary flip)")
+        print(f"    𐑫: infinite homotopy depth (all higher paths present)")
     else:
         print(f"  Type '{type_name}' not in table.")
         print(f"  Known: Type_0, Bool, Nat, S1, S2, Prop, Set")
@@ -295,7 +295,7 @@ def cmd_univalence_check(type_name):
 
     print()
     print("─" * 55)
-    print("Grammar: Φ_} + Ř_Ť + Ω_2 encode univalence structure")
+    print("Grammar: 𐑹 + 𐑽 + 𐑴 encode univalence structure")
 
 
 def main():

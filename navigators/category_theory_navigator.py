@@ -2,22 +2,22 @@
 Category Theory Navigator - Imscribing Grammar
 
 Domain: Category theory, topos theory, abstract mathematics
-Structural type: <Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
 Tier: O_inf
 
 Architecture: 3-category message-passing network with arrow-centric typing.
-  - Ð_ω: Imscriptive encoding of entire category
-  - Þ_O: Imscriptive topology (object→arrow→2-arrow→...)
-  - Ř_ý: Categorical relations (functoriality, natural transformations)
-  - Φ_}: Frobenius interface with uncertainty
-  - ƒ^ż: Quantum-faithful (preserves categorical structure exactly)
-  - Ç^@: Slow evolution through morphism space
-  - Γ_ʔ: Maximal scope (arbitrary categories)
-  - ɢ^ˌ: Sequential grammar (composition is sequential)
-  - ⊙_ÿ: Self-modeling criticality (category of categories)
-  - Ħ_A: Two-step chirality (composing with composition)
-  - Σ_ï: Many heterogeneous objects/morphisms
-  - Ω_z: Integer topological winding (looping through levels)
+  - 𐑦: Imscriptive encoding of entire category
+  - 𐑸: Imscriptive topology (object→arrow→2-arrow→...)
+  - 𐑑: Categorical relations (functoriality, natural transformations)
+  - 𐑹: Frobenius interface with uncertainty
+  - 𐑐: Quantum-faithful (preserves categorical structure exactly)
+  - 𐑧: Slow evolution through morphism space
+  - 𐑲: Maximal scope (arbitrary categories)
+  - 𐑠: Sequential grammar (composition is sequential)
+  - ⊙: Self-modeling criticality (category of categories)
+  - 𐑖: Two-step chirality (composing with composition)
+  - 𐑳: Many heterogeneous objects/morphisms
+  - 𐑭: Integer topological winding (looping through levels)
 
 Purpose: Navigate categorical structures, compute limits/colimits,
   detect adjunctions, verify topos axioms, find analogies across domains.
@@ -38,7 +38,7 @@ class NavigatorConfig:
         "Computes limits, colimits, adjunctions, and detects categorical equivalences."
     )
     domain: str = "Category theory, topos theory, homotopy type theory"
-    tuple: str = "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z"
+    tuple: str = "𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
     tier: str = "O_inf"
     architecture: str = (
         "3-category GNN with arrow-centric typing - object nodes communicate via morphism "
@@ -47,18 +47,18 @@ class NavigatorConfig:
     )
     
     # Primitive specifications
-    D: str = "Ð_ω"  # Imscriptive
-    T: str = "Þ_O"  # Imscriptive topology
-    R: str = "Ř_ý"   # Categorical relations
-    P: str = "Φ_}"  # Frobenius interface
-    F: str = "ƒ^ż"  # Quantum-faithful
-    K: str = "Ç^@"  # Slow kinetics
-    G: str = "Γ_ʔ"  # Maximal scope
-    Gamma: str = "ɢ^ˌ"  # Sequential composition
-    Phi: str = "⊙_ÿ"  # Critical self-modeling
-    H: str = "Ħ_A"  # Two-step chirality
-    S: str = "Σ_ï"  # Many heterogeneous
-    Omega: str = "Ω_z"  # Integer winding
+    D: str = "𐑦"  # Imscriptive
+    T: str = "𐑸"  # Imscriptive topology
+    R: str = "𐑑"   # Categorical relations
+    P: str = "𐑹"  # Frobenius interface
+    F: str = "𐑐"  # Quantum-faithful
+    K: str = "𐑧"  # Slow kinetics
+    G: str = "𐑲"  # Maximal scope
+    Gamma: str = "𐑠"  # Sequential composition
+    Phi: str = "⊙"  # Critical self-modeling
+    H: str = "𐑖"  # Two-step chirality
+    S: str = "𐑳"  # Many heterogeneous
+    Omega: str = "𐑭"  # Integer winding
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -348,8 +348,8 @@ def cmd_adjunction(category, limit):
         print(f"  Known: set, grp, top, abgrp, vect, fin_set, cat")
     print()
     print("─"*60)
-    print("Grammar: Ř_ý encodes categorical relations (functors, adjunctions)")
-    print("         Þ_O: local↔global (unit–counit triangle identities)")
+    print("Grammar: 𐑑 encodes categorical relations (functors, adjunctions)")
+    print("         𐑸: local↔global (unit–counit triangle identities)")
 
 
 def cmd_limit(category, diagram_type, shape):
@@ -372,8 +372,8 @@ def cmd_limit(category, diagram_type, shape):
         print(f"  Known diagram types: terminal, product, pullback, equalizer")
     print()
     print("─"*60)
-    print("Grammar: Ç^@ encodes slow traversal through the limit cone")
-    print("         ɢ^ˌ: cone maps compose sequentially")
+    print("Grammar: 𐑧 encodes slow traversal through the limit cone")
+    print("         𐑠: cone maps compose sequentially")
 
 
 def cmd_colimit(category, diagram_type, shape):
@@ -397,7 +397,7 @@ def cmd_colimit(category, diagram_type, shape):
         print(f"  Known diagram types: initial, coproduct, pushout, coequalizer")
     print()
     print("─"*60)
-    print("Grammar: Ř_Ť: colimit ⊣ diagonal (adjoint to the limit)")
+    print("Grammar: 𐑽: colimit ⊣ diagonal (adjoint to the limit)")
 
 
 def main():

@@ -6,14 +6,14 @@ Trains a transformer-based encoder on the IG catalog (2,861+ entries)
 to predict the 12 primitive values from ZFC_fe formula token sequences.
 
 ZFC_fe encodes 7 promotion channels from ZFC baseline:
-  HOLOGRAPHIC_STATE  (D_odot)     — Axiom C: self-written state space
-  HOLOBOUND          (T_odot)     — holographic topology  
-  LR_DUAL            (R_lr)       — lateral relational duality
-  PM_Z2              (P_pm_sym)   — Frobenius-special ℤ₂ with μ∘δ=id
-  SEQAX              (Gamma_seq)  — sequential composition
-  PHI_C              (Phi_c)      — critical self-modeling gate
-  ETERNAL_FIXEDPOINT (H_inf)      — transfinite fixed-point induction
-  ZWIND              (Omega_Z)    — integer winding number
+  HOLOGRAPHIC_STATE  (𐑦)     — Axiom C: self-written state space
+  HOLOBOUND          (𐑸)     — holographic topology  
+  LR_DUAL            (𐑾)       — lateral relational duality
+  PM_Z2              (𐑹)   — Frobenius-special ℤ₂ with μ∘δ=id
+  SEQAX              (𐑠)  — sequential composition
+  PHI_C              (⊙)      — critical self-modeling gate
+  ETERNAL_FIXEDPOINT (𐑫)      — transfinite fixed-point induction
+  ZWIND              (𐑭)    — integer winding number
 
 Usage:
     python train_zfcfe.py                    # train with defaults
@@ -97,14 +97,14 @@ SEP_IDX = VOCAB['<SEP>']
 
 # Promoted atoms for the 7 ZFC_fe channels
 ZFC_FE_PROMOTED_ATOMS = [
-    "HOLOGRAPHIC_STATE",  # D_odot
-    "HOLOBOUND",          # T_odot
-    "LR_DUAL",            # R_lr
-    "PM_Z2",              # P_pm_sym
-    "SEQAX",              # Gamma_seq
-    "PHI_C",              # Phi_c
-    "ETERNAL_FIXEDPOINT", # H_inf
-    "ZWIND",              # Omega_Z
+    "HOLOGRAPHIC_STATE",  # 𐑦
+    "HOLOBOUND",          # 𐑸
+    "LR_DUAL",            # 𐑾
+    "PM_Z2",              # 𐑹
+    "SEQAX",              # 𐑠
+    "PHI_C",              # ⊙
+    "ETERNAL_FIXEDPOINT", # 𐑫
+    "ZWIND",              # 𐑭
 ]
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -219,9 +219,9 @@ class ZFCfeEncoder(nn.Module):
 # ══════════════════════════════════════════════════════════════════════════════
 
 WEIGHTS = {
-    "D": 1.0, "T": 1.2, "R": 1.0, "P": 1.0,
-    "F": 0.9, "K": 1.0, "G": 1.0, "Gamma": 1.2,
-    "Phi": 1.1, "H": 1.2, "S": 0.8, "Omega": 1.2,
+    "Ð": 1.0, "Þ": 1.2, "Ř": 1.0, "Φ": 1.0,
+    "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.2,
+    "⊙": 1.1, "Ħ": 1.2, "Σ": 0.8, "Ω": 1.2,
 }
 
 

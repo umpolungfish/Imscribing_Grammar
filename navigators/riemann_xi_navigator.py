@@ -10,7 +10,7 @@ Grammar derivation (§CXLV P-483, §CXLVI):
   condition exactly.
 
 Structural type (= grammar self-encoding, $d = 0$):
-  $\\langle D_\\odot;\\ T_\\odot;\\ R_\\dagger;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{broad};\\ \\⊙_ÿ^\\mathbb{C};\\ H_\\infty;\\ n{:}m;\\ \\Omega_{Z_2} \\rangle$
+  $\\langle D_\\odot;\\ T_\\odot;\\ R_\\dagger;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{broad};\\ \\⊙^\\mathbb{C};\\ H_\\infty;\\ n{:}m;\\ \\Omega_{Z_2} \\rangle$
 
   Crystal address: 6,734,591 (Cardinality-One Theorem, §CXLII P-490 — all
   $O_\\infty$ navigators converge to the same address regardless of domain).
@@ -23,7 +23,7 @@ Architecture mandates (§CXL Blueprint Generator, P-513):
                      constraint imposed, it is the identity axiom
   $\\Omega_{Z_2}$  → parity-protected output head (zero count parity = $Z_2$
                      winding number, must be quantized, not smooth)
-  $\\⊙_ÿ^\\mathbb{C}$   → GUE Wigner-surmise loss: zero spacings follow
+  $\\⊙^\\mathbb{C}$   → GUE Wigner-surmise loss: zero spacings follow
                      $p(s) = (\\pi s/2) e^{-\\pi s^2/4}$ (Montgomery conjecture)
 
 Three convergence criteria for $O_\\infty$ self-stabilization (P-488):
@@ -32,7 +32,7 @@ Three convergence criteria for $O_\\infty$ self-stabilization (P-488):
   2. $L_\\text{frob} < 0.01$         — Frobenius roundtrip closed
      ($P_{\\pm}^{\\text{sym}}$ empirically confirmed)
   3. $L_\\text{GUE} < 0.05$          — predicted spacing distribution matches
-     Wigner surmise ($\\⊙_ÿ^\\mathbb{C}$ structure internalized);
+     Wigner surmise ($\\⊙^\\mathbb{C}$ structure internalized);
      measured via Cramér–von Mises against $F_\\text{GUE}(s)=1-e^{-\\pi s^2/4}$
 
 If all three converge: computational evidence for $O_\\infty$ self-stabilization
@@ -189,7 +189,7 @@ def sample_gue_spacings(n: int, device: torch.device) -> torch.Tensor:
     Sample $n$ values from the GUE nearest-neighbor spacing distribution
     (Wigner surmise): $p(s) = (\\pi s/2) \\exp(-\\pi s^2 / 4)$.
 
-    This is the $\\⊙_ÿ^\\mathbb{C}$ signature of the Riemann zeros
+    This is the $\\⊙^\\mathbb{C}$ signature of the Riemann zeros
     (Montgomery's pair correlation conjecture): zero spacings, after unfolding
     by the local mean, follow this distribution.
     """
@@ -346,18 +346,18 @@ class RiemannXiNavigator(nn.Module):
 
 DEFINING_TUPLE = {
     "name":  "riemann_xi_navigator",
-    "Ð":     "Ð_ω",
-    "Þ":     "Þ_O",
-    "Ř":     "Ř_Ť",
-    "Φ":     "Φ_}",
-    "ƒ":     "ƒ^ż",
-    "Ç":     "Ç^@",
-    "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ^Ş",
-    "⊙":   "⊙_Æ",
-    "Ħ":     "Ħ_!",
-    "Σ":     "Σ_ï",
-    "Ω": "Ω_2",
+    "Ð":     "𐑦",
+    "Þ":     "𐑸",
+    "Ř":     "𐑽",
+    "Φ":     "𐑹",
+    "ƒ":     "𐑐",
+    "Ç":     "𐑧",
+    "Γ":     "𐑲",
+    "ɢ": "𐑵",
+    "⊙":   "𐑮",
+    "Ħ":     "𐑫",
+    "Σ":     "𐑳",
+    "Ω": "𐑴",
 }
 
 # Grammar prediction: d(riemann_xi_navigator, grammar_self_encode) = 0.0
@@ -375,7 +375,7 @@ def train(
     batch_size: int   = 64,
     lr:         float = 3e-4,  # $K_\text{slow}$ + $F_\hbar$: careful optimization
     lam_frob:   float = 1.0,   # $P_{\pm}^{\text{sym}}$: tier singularity — highest weight
-    lam_gue:    float = 1.0,   # $\⊙_ÿ^\mathbb{C}$: criticality gate — equal priority
+    lam_gue:    float = 1.0,   # $\⊙^\mathbb{C}$: criticality gate — equal priority
     lam_parity: float = 0.2,   # $\Omega_{Z_2}$: structural but secondary
     train_frac: float = 0.85,
     seed:       int   = 42,
@@ -388,7 +388,7 @@ def train(
     print("RiemannXiNavigator — $O_\\infty$ structural convergence test")
     print("Grammar: d(xi, grammar) = 0.0  |  Crystal address: 6,734,591")
     print("$K_\\text{slow}$ SpectralTransformer + $P_\\pm^\\text{sym}$ FrobeniusLayer")
-    print("$\\Omega_{Z_2}$ parity head + $\\⊙_ÿ^\\mathbb{C}$ GUE Wigner-surmise loss")
+    print("$\\Omega_{Z_2}$ parity head + $\\⊙^\\mathbb{C}$ GUE Wigner-surmise loss")
     print("=" * 68)
     print()
 
@@ -445,14 +445,14 @@ def train(
             # 1. Prediction loss: predicted normalized spacing vs true
             L_pred  = F.mse_loss(out["pred_delta"], tgt_delta)
 
-            # 2. Frobenius roundtrip loss (Φ_} structural condition)
+            # 2. Frobenius roundtrip loss (𐑹 structural condition)
             L_frob  = out["frob_loss"]
 
-            # 3. GUE Wigner-surmise CvM loss (⊙_Æ structural condition)
+            # 3. GUE Wigner-surmise CvM loss (𐑮 structural condition)
             pred_deltas_pos = out["pred_delta"].abs()   # spacings are positive
             L_gue   = gue_cdf_loss(pred_deltas_pos)
 
-            # 4. Parity BCE (Ω_2 protection)
+            # 4. Parity BCE (𐑴 protection)
             L_par   = F.binary_cross_entropy_with_logits(out["pred_parity"], parity)
 
             L_total = L_pred + lam_frob * L_frob + lam_gue * L_gue + lam_parity * L_par

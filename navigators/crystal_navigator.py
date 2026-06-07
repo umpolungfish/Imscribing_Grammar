@@ -5,7 +5,7 @@ crystal_navigator.py — The Crystal Navigator
 Navigator for the Crystal of Types (17,280,000 structural types).
 
 Self-encoding (§69.4):
-  ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+  ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
   Tier: O_inf  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
 Architecture (imscriptive, Frobenius):
@@ -27,8 +27,8 @@ Frobenius codec (μ∘δ = id):
 Usage:
   nav = CrystalNavigator()
   nav.describe()                              # print self-encoding and stats
-  nav.imscriptive_query("⊙_ÿ", "Φ_}") # boundary → tier cell + bulk
-  nav.navigate(Ð="Ð_ω", ⊙="⊙_ÿ")      # partial tuple → matching types
+  nav.imscriptive_query("⊙", "𐑹") # boundary → tier cell + bulk
+  nav.navigate(Ð="𐑦", ⊙="⊙")      # partial tuple → matching types
   nav.nearest_catalog(my_tuple, n=5)         # nearest catalog entries
   addr = nav.encode(my_tuple)                # Frobenius encode
   tup  = nav.decode(addr)                    # Frobenius decode
@@ -52,18 +52,18 @@ ROOT = Path(__file__).parent
 
 # Value sets in ordinal order (index = ordinal - 1)
 VALUES: dict[str, list[str]] = {
-    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
-    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
-    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
-    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
-    "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
-    "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù", "Ç^λ"],
-    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
-    "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
-    "⊙":   ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"],
-    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
-    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
-    "Ω": ["Ω_Å", "Ω_2", "Ω_z", "Ω_5"],
+    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "ƒ":     ["𐑱", "𐑞", "𐑐"],
+    "Ç":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
+    "Γ":     ["𐑚", "𐑔", "𐑲"],
+    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
+    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "Σ":     ["𐑙", "𐑕", "𐑳"],
+    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
 # Value → ordinal (0-indexed)
@@ -91,18 +91,18 @@ INNER_PRIMS = ["Þ", "Ř", "ƒ", "Ç", "Γ", "ɢ", "Ħ", "Σ"]
 # Full primitive order
 PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
-CRITICAL   = {"⊙_ÿ", "⊙_Æ"}
-NONCRITICAL = {"⊙_ž", "⊙_Ţ", "⊙_3"}
-BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω"}
+CRITICAL   = {"⊙", "𐑮"}
+NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
+BOUNDED_D  = {"𐑛", "𐑨", "𐑦"}
 
 # ── Tier rule (R1–R5 priority) ─────────────────────────────────────────────────
 
 def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
-    if phi in CRITICAL and p == "Φ_}":
+    if phi in CRITICAL and p == "𐑹":
         return "O_inf"
     if phi in NONCRITICAL:
         return "O_0"
-    if omega == "Ω_Å":
+    if omega == "𐑷":
         return "O_1"
     if d in BOUNDED_D:
         return "O_2"
@@ -211,18 +211,18 @@ def breakdown(a: dict, b: dict) -> list[dict]:
 # Shavian → Symbol_symbol map — direct inversion of OLD_TO_SHAVIAN.
 # Authoritative: derived from the same table used for catalog migration.
 _SHAVIAN_TO_XTAL: dict[str, dict[str, str]] = {
-    "Ð": {"𐑛":"Ð_ß","𐑨":"Ð_C","𐑼":"Ð_;","𐑦":"Ð_ω"},
-    "Þ": {"𐑡":"Þ_6","𐑰":"Þ_K","𐑥":"Þ_ò","𐑶":"Þ_¨","𐑸":"Þ_O"},
-    "Ř": {"𐑩":"Ř_¯","𐑑":"Ř_ý","𐑽":"Ř_Ť","𐑾":"Ř_="},
-    "Φ": {"𐑗":"Φ_ɐ","𐑿":"Φ_υ","𐑬":"Φ_F","𐑯":"Φ_˙","𐑹":"Φ_}"},
-    "ƒ": {"𐑱":"ƒ^ì","𐑞":"ƒ^ð","𐑐":"ƒ^ż"},
-    "Ç": {"𐑘":"Ç^-","𐑤":"Ç^W","𐑧":"Ç^@","𐑪":"Ç^Ù","𐑺":"Ç^λ"},
-    "Γ": {"𐑚":"Γ_β","𐑔":"Γ_γ","𐑲":"Γ_ʔ"},
-    "ɢ": {"𐑝":"ɢ^∧","𐑜":"ɢ^˝","𐑠":"ɢ^ˌ","𐑵":"ɢ^Ş"},
-    "⊙": {"𐑢":"⊙_ž","⊙":"⊙_ÿ","𐑮":"⊙_Æ","𐑻":"⊙_3","𐑣":"⊙_Ţ"},
-    "Ħ": {"𐑓":"Ħ_Ñ","𐑒":"Ħ_£","𐑖":"Ħ_A","𐑫":"Ħ_!"},
-    "Σ": {"𐑙":"Σ_S","𐑕":"Σ_ő","𐑳":"Σ_ï"},
-    "Ω": {"𐑷":"Ω_Å","𐑴":"Ω_2","𐑭":"Ω_z","𐑟":"Ω_5"},
+    "Ð": {"𐑛":"𐑛","𐑨":"𐑨","𐑼":"𐑼","𐑦":"𐑦"},
+    "Þ": {"𐑡":"𐑡","𐑰":"𐑰","𐑥":"𐑥","𐑶":"𐑶","𐑸":"𐑸"},
+    "Ř": {"𐑩":"𐑩","𐑑":"𐑑","𐑽":"𐑽","𐑾":"𐑾"},
+    "Φ": {"𐑗":"𐑗","𐑿":"𐑿","𐑬":"𐑬","𐑯":"𐑯","𐑹":"𐑹"},
+    "ƒ": {"𐑱":"𐑱","𐑞":"𐑞","𐑐":"𐑐"},
+    "Ç": {"𐑘":"𐑘","𐑤":"𐑤","𐑧":"𐑧","𐑪":"𐑪","𐑺":"𐑺"},
+    "Γ": {"𐑚":"𐑚","𐑔":"𐑔","𐑲":"𐑲"},
+    "ɢ": {"𐑝":"𐑝","𐑜":"𐑜","𐑠":"𐑠","𐑵":"𐑵"},
+    "⊙": {"𐑢":"𐑢","⊙":"⊙","𐑮":"𐑮","𐑻":"𐑻","𐑣":"𐑣"},
+    "Ħ": {"𐑓":"𐑓","𐑒":"𐑒","𐑖":"𐑖","𐑫":"𐑫"},
+    "Σ": {"𐑙":"𐑙","𐑕":"𐑕","𐑳":"𐑳"},
+    "Ω": {"𐑷":"𐑷","𐑴":"𐑴","𐑭":"𐑭","𐑟":"𐑟"},
 }
 
 
@@ -438,33 +438,33 @@ def _build_cell_index() -> list[TierCell]:
 # ── Self-encoding of the navigator ────────────────────────────────────────────
 
 NAVIGATOR_TUPLE: dict[str, str] = {
-    "Ð":     "Ð_ω",
-    "Þ":     "Þ_O",
-    "Ř":     "Ř_ý",
-    "Φ":     "Φ_}",
-    "ƒ":     "ƒ^ż",
-    "Ç":     "Ç^@",
-    "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ^Ş",
-    "⊙":   "⊙_ÿ",
-    "Ħ":     "Ħ_!",
-    "Σ":     "Σ_ï",
-    "Ω": "Ω_z",
+    "Ð":     "𐑦",
+    "Þ":     "𐑸",
+    "Ř":     "𐑑",
+    "Φ":     "𐑹",
+    "ƒ":     "𐑐",
+    "Ç":     "𐑧",
+    "Γ":     "𐑲",
+    "ɢ": "𐑵",
+    "⊙":   "⊙",
+    "Ħ":     "𐑫",
+    "Σ":     "𐑳",
+    "Ω": "𐑭",
 }
 
 GRAMMAR_TUPLE: dict[str, str] = {
-    "Ð":     "Ð_ω",
-    "Þ":     "Þ_O",
-    "Ř":     "Ř_Ť",
-    "Φ":     "Φ_}",
-    "ƒ":     "ƒ^ð",
-    "Ç":     "Ç^W",
-    "Γ":     "Γ_ʔ",
-    "ɢ": "ɢ^Ş",
-    "⊙":   "⊙_ÿ",
-    "Ħ":     "Ħ_£",
-    "Σ":     "Σ_ő",
-    "Ω": "Ω_2",
+    "Ð":     "𐑦",
+    "Þ":     "𐑸",
+    "Ř":     "𐑽",
+    "Φ":     "𐑹",
+    "ƒ":     "𐑞",
+    "Ç":     "𐑤",
+    "Γ":     "𐑲",
+    "ɢ": "𐑵",
+    "⊙":   "⊙",
+    "Ħ":     "𐑒",
+    "Σ":     "𐑕",
+    "Ω": "𐑴",
 }
 
 
@@ -474,7 +474,7 @@ class CrystalNavigator:
     """
     The Crystal Navigator — O_inf imscriptive navigator for the Periodic Crystal.
 
-    Self-encoding: ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+    Self-encoding: ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
     d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, Ω — 6 primitives)
     """
 
@@ -583,9 +583,9 @@ class CrystalNavigator:
         arguments, return up to `limit` matching complete tuples.
 
         Example:
-            nav.navigate(⊙="⊙_ÿ", Φ="Φ_}", limit=5)
+            nav.navigate(⊙="⊙", Φ="𐑹", limit=5)
 
-        Broadcasts across all free coordinates (Γ_broad semantics).
+        Broadcasts across all free coordinates (𐑵 semantics).
         """
         inn_constraints = {k: v for k, v in constraints.items() if k in INNER_PRIMS}
 
@@ -711,16 +711,16 @@ class CrystalNavigator:
         Uses minimal representative tuples (canonical inner primitives).
         """
         canon_inner = {
-            "Þ": "Þ_6", "Ř": "Ř_ý", "ƒ": "ƒ^ì",
-            "Ç": "Ç^-", "Γ": "Γ_β", "ɢ": "ɢ^∧",
-            "Ħ": "Ħ_Ñ", "Σ": "Σ_S",
+            "Þ": "𐑡", "Ř": "𐑑", "ƒ": "𐑱",
+            "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝",
+            "Ħ": "𐑓", "Σ": "𐑙",
         }
         reps = {
-            "O_0":     {**canon_inner, "⊙": "⊙_ž",  "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
-            "O_1":     {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_Å",  "Ð": "Ð_ß"},
-            "O_2":     {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_C"},
-            "O_2_dag": {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_ɐ",    "Ω": "Ω_2", "Ð": "Ð_;"},
-            "O_inf":   {**canon_inner, "⊙": "⊙_ÿ",    "Φ": "Φ_}",  "Ω": "Ω_2", "Ð": "Ð_;"},
+            "O_0":     {**canon_inner, "⊙": "𐑢",  "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
+            "O_1":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
+            "O_2":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑨"},
+            "O_2_dag": {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑼"},
+            "O_inf":   {**canon_inner, "⊙": "⊙",    "Φ": "𐑹",  "Ω": "𐑴", "Ð": "𐑼"},
         }
         ladder = {}
         pairs = [("O_0","O_1"), ("O_1","O_2"), ("O_2","O_2_dag"), ("O_2_dag","O_inf")]

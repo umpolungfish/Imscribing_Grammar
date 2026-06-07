@@ -97,7 +97,7 @@ class AbsorptionRule:
 
 # Canonical default absorption rules (preserve current hard-coded behavior)
 _DEFAULT_ABSORPTION: Tuple[AbsorptionRule, ...] = (
-    AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),   # Φ_ctyogh absorbing
+    AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),   # ⊙tyogh absorbing
     AbsorptionRule("Σ", "𐑳", ("tensor",)),                   # n:m absorbs under tensor
 )
 
@@ -371,7 +371,7 @@ def print_profile(prof: dict, verbose: bool = True) -> None:
     if verbose and prof["o_inf_entries"]:
         print(f"  O_∞ entries:")
         for nm in prof["o_inf_entries"]:
-            print(f"    · {nm}")
+            print(f"     {nm}")
     elif not prof["o_inf_entries"]:
         print("  O_∞ entries: none — O_∞ is structurally inaccessible in this universe")
 

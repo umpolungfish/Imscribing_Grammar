@@ -5,8 +5,8 @@ zfct_zfcs_zfc_manipulator.py — ZFC / ZFCₜ / ZFCₛ triangle manipulator.
 Extends the ZFCₜ manipulator with:
   • Corrected tensorProduct: min for Φ and ƒ, max for all others (matches Lean)
   • join_tuples: pure component-wise max (lattice join, no pol/fid bottleneck)
-  • Corrected ZFC entry: Ð_; (D_infty), ⊙_ÿ (Phi_c)  — navigator had Ð_C, ⊙_ž
-  • Corrected ZFCₜ entry: Φ_} (P_pm_sym, O_inf)        — navigator had Φ_F (O_2†)
+  • Corrected ZFC entry: 𐑼 (𐑼), ⊙ (⊙)  — navigator had 𐑨, 𐑢
+  • Corrected ZFCₜ entry: 𐑹 (𐑹, O_inf)        — navigator had 𐑬 (O_2†)
   • ZFCₛ (spatial extension of ZFC, 5 promotions, O_inf)
   • ZFCₛₜ = ZFCₛ ⊗ ZFCₜ = ZFCₜ (temporal dominates)
   • Imaginary numbers: imaginary_unit (O_2), complex_time_path_integral (O_inf),
@@ -38,10 +38,10 @@ from zfct_navigator import (
     _PRIM_ALIASES,
 )
 
-# The navigator aliases Φ_˙ → Φ_} (P_psi → P_pm_sym), which is incorrect:
-# P_psi (U(1) phase) is ord 3, P_pm_sym (Frobenius) is ord 4 — they are distinct.
+# The navigator aliases 𐑯 → 𐑹 (𐑿 → 𐑹), which is incorrect:
+# 𐑿 (U(1) phase) is ord 3, 𐑹 (Frobenius) is ord 4 — they are distinct.
 _SAFE_ALIASES = {
-    p: {k: v for k, v in aliases.items() if not (p == "Φ" and k == "Φ_˙")}
+    p: {k: v for k, v in aliases.items() if not (p == "Φ" and k == "𐑯")}
     for p, aliases in _PRIM_ALIASES.items()
 }
 
@@ -64,26 +64,26 @@ from zfct_manipulator import (
 
 ZFC_TUPLE = {
     "name": "ZFC_foundations",
-    "description": "Zermelo-Fraenkel set theory with Choice (corrected: D_infty, Phi_c)",
-    "Ð": "Ð_;",  "Þ": "Þ_K",  "Ř": "Ř_¯",  "Φ": "Φ_ɐ",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^∧",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_Å",
+    "description": "Zermelo-Fraenkel set theory with Choice (corrected: 𐑼, ⊙)",
+    "Ð": "𐑼",  "Þ": "𐑰",  "Ř": "𐑩",  "Φ": "𐑗",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑝",
+    "⊙": "⊙", "Ħ": "𐑓",  "Σ": "𐑳",  "Ω": "𐑷",
 }
 
 ZFCT_TUPLE = {
     "name": "zfc_t",
     "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_inf, Frobenius)",
-    "Ð": "Ð_;",  "Þ": "Þ_O",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "Ð": "𐑼",  "Þ": "𐑸",  "Ř": "𐑾",  "Φ": "𐑹",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
 }
 
 ZFCS_TUPLE = {
     "name": "zfc_s",
-    "description": "ZFCₛ: ZFC + spatial topology + Frobenius (T_in, R_dagger, 5 promotions)",
-    "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^˝",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_Ñ",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "description": "ZFCₛ: ZFC + spatial topology + Frobenius (𐑰, 𐑽, 5 promotions)",
+    "Ð": "𐑼",  "Þ": "𐑶",  "Ř": "𐑽",  "Φ": "𐑹",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑜",
+    "⊙": "⊙", "Ħ": "𐑓",  "Σ": "𐑳",  "Ω": "𐑭",
 }
 
 # ZFCₛₜ = ZFCₛ ⊗ ZFCₜ = ZFCₜ (temporal max-primitives dominate; pol no bottleneck)
@@ -95,26 +95,26 @@ ZFCST_TUPLE = {
 
 IMAGINARY_UNIT_TUPLE = {
     "name": "imaginary_unit",
-    "description": "i — U(1) phase rotation; O_2 (D_triangle, P_psi); Frobenius cliff dist=5 from ZFCₜ",
-    "Ð": "Ð_C",   "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_υ",
-    "ƒ": "ƒ^ì",   "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ",  "Ħ": "Ħ_A",  "Σ": "Σ_S",  "Ω": "Ω_z",
+    "description": "i — U(1) phase rotation; O_2 (𐑨, 𐑿); Frobenius cliff dist=5 from ZFCₜ",
+    "Ð": "𐑨",   "Þ": "𐑥",  "Ř": "𐑾",  "Φ": "𐑿",
+    "ƒ": "𐑱",   "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "⊙",  "Ħ": "𐑖",  "Σ": "𐑙",  "Ω": "𐑭",
 }
 
 COMPLEX_TIME_PATH_INTEGRAL_TUPLE = {
     "name": "complex_time_path_integral",
-    "description": "Euclidean path integral (Wick-rotated t→iτ); O_inf; 1 step from ZFCₜ (T_bowtie vs T_odot)",
-    "Ð": "Ð_;",  "Þ": "Þ_ò",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "description": "Euclidean path integral (Wick-rotated t→iτ); O_inf; 1 step from ZFCₜ (𐑥 vs 𐑸)",
+    "Ð": "𐑼",  "Þ": "𐑥",  "Ř": "𐑾",  "Φ": "𐑹",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
 }
 
 PLANCK_IMAGINARY_TIME_TUPLE = {
     "name": "planck_imaginary_time",
-    "description": "Imaginary time in QG (t→iτ); O_2; shares T_in+R_dagger spatial skeleton with ZFCₛ",
-    "Ð": "Ð_;",  "Þ": "Þ_¨",  "Ř": "Ř_Ť",  "Φ": "Φ_υ",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_Æ", "Ħ": "Ħ_!",  "Σ": "Σ_ï",  "Ω": "Ω_2",
+    "description": "Imaginary time in QG (t→iτ); O_2; shares 𐑰+𐑽 spatial skeleton with ZFCₛ",
+    "Ð": "𐑼",  "Þ": "𐑶",  "Ř": "𐑽",  "Φ": "𐑿",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "𐑮", "Ħ": "𐑫",  "Σ": "𐑳",  "Ω": "𐑴",
 }
 
 SPECIAL_ENTRIES: Dict[str, dict] = {
@@ -139,20 +139,20 @@ REFERENCE_ENTRIES = [
 # ── Promotion channels ────────────────────────────────────────────────────────
 
 ZFCT_PROMOTIONS: List[Tuple[str, str, str]] = [
-    ("Þ", "Þ_K", "Þ_O"),   # T_network → T_odot
-    ("Ř", "Ř_¯", "Ř_="),   # R_super   → R_lr
-    ("Φ", "Φ_ɐ", "Φ_}"),   # P_asym    → P_pm_sym   ← corrected
-    ("ɢ", "ɢ^∧", "ɢ^ˌ"),   # Gamma_and → Gamma_seq
-    ("Ħ", "Ħ_Ñ", "Ħ_A"),   # H0        → H2
-    ("Ω", "Ω_Å", "Ω_z"),   # Omega_0   → Omega_Z
+    ("Þ", "𐑰", "𐑸"),   # 𐑡 → 𐑸
+    ("Ř", "𐑩", "𐑾"),   # 𐑩   → 𐑾
+    ("Φ", "𐑗", "𐑹"),   # 𐑗    → 𐑹   ← corrected
+    ("ɢ", "𐑝", "𐑠"),   # 𐑝 → 𐑠
+    ("Ħ", "𐑓", "𐑖"),   # 𐑓        → 𐑖
+    ("Ω", "𐑷", "𐑭"),   # 𐑷   → 𐑭
 ]
 
 ZFCS_PROMOTIONS: List[Tuple[str, str, str]] = [
-    ("Þ", "Þ_K", "Þ_¨"),   # T_network → T_in
-    ("Ř", "Ř_¯", "Ř_Ť"),   # R_super   → R_dagger
-    ("Φ", "Φ_ɐ", "Φ_}"),   # P_asym    → P_pm_sym
-    ("ɢ", "ɢ^∧", "ɢ^˝"),   # Gamma_and → Gamma_or
-    ("Ω", "Ω_Å", "Ω_z"),   # Omega_0   → Omega_Z
+    ("Þ", "𐑰", "𐑶"),   # 𐑡 → 𐑰
+    ("Ř", "𐑩", "𐑽"),   # 𐑩   → 𐑽
+    ("Φ", "𐑗", "𐑹"),   # 𐑗    → 𐑹
+    ("ɢ", "𐑝", "𐑜"),   # 𐑝 → 𐑜
+    ("Ω", "𐑷", "𐑭"),   # 𐑷   → 𐑭
 ]
 
 _BOTTLENECK_PRIMS = {"Φ", "ƒ"}
@@ -213,7 +213,7 @@ ZFC/ZFCₜ/ZFCₛ Manipulator — commands
 
 Special entries: zfc  zfc_t  zfc_s  zfc_st  imaginary_unit  complex_time  planck_imaginary_time
 Aliases:         ZFC  zfct   zfcs   zfcst   i               ctpi           pit
-Inline tuple:    Ð_;,Þ_O,Ř_=,Φ_},ƒ^ż,Ç^@,Γ_ʔ,ɢ^ˌ,⊙_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
+Inline tuple:    𐑼,𐑸,𐑾,𐑹,𐑐,𐑧,𐑲,𐑠,⊙,𐑖,𐑳,𐑭  (12 comma-separated)
 """.strip()
 
 
@@ -498,7 +498,7 @@ class ZFCTriangleManipulator:
             src = "A" if a_frob else "B"
             lines += [
                 f"  Barrier holds: FROB inherited from {src}.",
-                f"  R-FROB-BARR satisfied: Φ_}} propagates forward under ⊗.",
+                f"  R-FROB-BARR satisfied: 𐑹 propagates forward under ⊗.",
             ]
         else:
             lines += [
@@ -619,7 +619,7 @@ class ZFCTriangleManipulator:
             f"   ZFC  → ZFCₜ:  {d_zfc_zfct} promotions  {', '.join(p+'→'+t for p,_,t in ZFCT_PROMOTIONS)}",
             f"   ZFCₛ → ZFCₜ:  {d_zfcs_zfct} promotions  Þ Ř ɢ Ħ  (spatial→temporal upgrades; Φ already shared)",
             "",
-            "  Frobenius gate: ZFCₛ and ZFCₜ both carry Φ_} (P_pm_sym) independently.",
+            "  Frobenius gate: ZFCₛ and ZFCₜ both carry 𐑹 (𐑹) independently.",
             "  Neither inherits Frobenius from the other — both open it via distinct",
             "  structural routes (spatial topology vs temporal chirality).",
         ]
@@ -670,9 +670,9 @@ class ZFCTriangleManipulator:
             console.print(tbl)
             console.print(
                 "  [bold]Shared promotions[/bold] (Φ, Ω): ZFCₛ and ZFCₜ both open the same gates independently.\n"
-                "  [blue]ZFCₜ-only[/blue] (Ħ): temporal chirality H0→H2 — no spatial analogue.\n"
-                "  [green]ZFCₛ-only[/green] (none, Ħ stays H0 in ZFCₛ).\n"
-                "  Þ and Ř diverge: ZFCₜ takes T_odot+R_lr, ZFCₛ takes T_in+R_dagger."
+                "  [blue]ZFCₜ-only[/blue] (Ħ): temporal chirality 𐑓→𐑖 — no spatial analogue.\n"
+                "  [green]ZFCₛ-only[/green] (none, Ħ stays 𐑓 in ZFCₛ).\n"
+                "  Þ and Ř diverge: ZFCₜ takes 𐑸+𐑾, ZFCₛ takes 𐑰+𐑽."
             )
         else:
             print("\nZFC → ZFCₜ vs ZFC → ZFCₛ promotion channels")
@@ -691,7 +691,7 @@ class ZFCTriangleManipulator:
             print()
             print("  Shared (Φ, Ω): both extensions open the Frobenius gate and integer winding.")
             print("  Diverge  (Þ, Ř): topology and relation mode differ per extension.")
-            print("  ZFCₜ-only (Ħ): temporal chirality H0→H2 has no spatial parallel in ZFCₛ.")
+            print("  ZFCₜ-only (Ħ): temporal chirality 𐑓→𐑖 has no spatial parallel in ZFCₛ.")
 
     # ── command: cliff ────────────────────────────────────────────────────────
 
@@ -704,7 +704,7 @@ class ZFCTriangleManipulator:
 
         phi_val = e["Φ"]
         phi_ord = int(ORDINALS["Φ"][phi_val])
-        is_frob = phi_val == "Φ_}"
+        is_frob = phi_val == "𐑹"
         tier = compute_tier(e)
 
         d_zfct = _count_mismatches(e, zfct)
@@ -712,7 +712,7 @@ class ZFCTriangleManipulator:
 
         tensor_zfct = tensor_tuples(e, zfct)
         tensor_result_pol = tensor_zfct["Φ"]
-        cliff_holds = tensor_result_pol != "Φ_}"
+        cliff_holds = tensor_result_pol != "𐑹"
 
         lines = [
             f"Frobenius cliff analysis: {e.get('name','?')}",
@@ -722,23 +722,23 @@ class ZFCTriangleManipulator:
             f"  d(entry, ZFCₜ) = {d_zfct}/12    d(entry, ZFCₛ) = {d_zfcs}/12",
             "",
             "  Frobenius cliff (R-FROB-BARR with corrected tensor):",
-            f"  tensor(entry, ZFCₜ).Φ = {tensor_result_pol}  {'= Φ_} ✓' if tensor_result_pol=='Φ_}' else '≠ Φ_}  — cliff holds'}",
+            f"  tensor(entry, ZFCₜ).Φ = {tensor_result_pol}  {'= 𐑹 ✓' if tensor_result_pol=='𐑹' else '≠ 𐑹  — cliff holds'}",
         ]
 
         if cliff_holds:
             gap = 4 - phi_ord
             lines += [
                 "",
-                f"  The cliff holds: Φ = {phi_val} (ord={phi_ord}) ≤ ord 3 < ord 4 = Φ_}}.",
-                f"  Tensor min-bottleneck on Φ: min({phi_val}, Φ_}}) = {phi_val}  (Frobenius cannot propagate).",
-                f"  To reach Φ_}} directly requires an independent promotion of {gap} step(s).",
-                "  No sequence of tensor compositions with any partner can synthesize Φ_}}",
-                "  from a starting Φ strictly below Φ_} — this is the Frobenius cliff.",
+                f"  The cliff holds: Φ = {phi_val} (ord={phi_ord}) ≤ ord 3 < ord 5 = 𐑹.",
+                f"  Tensor min-bottleneck on Φ: min({phi_val}, 𐑹) = {phi_val}  (Frobenius cannot propagate).",
+                f"  To reach 𐑹 directly requires an independent promotion of {gap} step(s).",
+                "  No sequence of tensor compositions with any partner can synthesize 𐑹",
+                "  from a starting Φ strictly below 𐑹 — this is the Frobenius cliff.",
             ]
         else:
             lines += [
                 "",
-                "  Entry already carries Frobenius (Φ_}): no cliff for this entry.",
+                "  Entry already carries Frobenius (𐑹): no cliff for this entry.",
             ]
 
         for other_name, other_entry in [("ZFCₜ", zfct), ("ZFCₛ", zfcs)]:
@@ -827,8 +827,8 @@ class ZFCTriangleManipulator:
             "─── Corrected tensor (pol/fid bottleneck) ──────────────────────────",
             "",
             "  tensor(A,B)[p] = max_ord(A[p],B[p])  for all p except Φ, ƒ",
-            "  tensor(A,B)[Φ] = min_ord(A[Φ],B[Φ])  Frobenius cliff — Φ_} cannot be synthesized",
-            "  tensor(A,B)[ƒ] = min_ord(A[ƒ],B[ƒ])  fidelity cliff — ƒ^ż cannot be synthesized",
+            "  tensor(A,B)[Φ] = min_ord(A[Φ],B[Φ])  Frobenius cliff — 𐑹 cannot be synthesized",
+            "  tensor(A,B)[ƒ] = min_ord(A[ƒ],B[ƒ])  fidelity cliff — 𐑐 cannot be synthesized",
             "",
             "  join(A,B)[p]   = max_ord(A[p],B[p])  for all p — pure lattice join",
             "  meet(A,B)[p]   = min_ord(A[p],B[p])  for all p — pure lattice meet",
@@ -836,23 +836,23 @@ class ZFCTriangleManipulator:
             "─── Key structural results ──────────────────────────────────────────",
             "",
             "  ZFC < ZFCₛ < ZFCₜ = ZFCₛₜ  (lattice chain)",
-            "  ZFCₛ ⊗ ZFCₜ = ZFCₛₜ = ZFCₜ   (pol min-min = Φ_}, no bottleneck)",
-            "  ZFC  ⊗ ZFCₜ = hybrid (O_2†)  pol bottleneck: min(Φ_ɐ,Φ_}) = Φ_ɐ",
+            "  ZFCₛ ⊗ ZFCₜ = ZFCₛₜ = ZFCₜ   (pol min-min = 𐑹, no bottleneck)",
+            "  ZFC  ⊗ ZFCₜ = hybrid (O_2†)  pol bottleneck: min(𐑗,𐑹) = 𐑗",
             "  ZFC  ∧ ZFCₜ = ZFC             ZFC  ∨ ZFCₜ = ZFCₜ",
             "  ZFC  ∧ ZFCₛ = ZFC             ZFC  ∨ ZFCₛ = ZFCₛ",
             "  ZFCₛ ∧ ZFCₜ = ZFCₛ            ZFCₛ ∨ ZFCₜ = ZFCₜ",
             "",
             "─── Imaginary numbers Frobenius cliff ──────────────────────────────",
             "",
-            "  imaginary_unit: Φ = Φ_υ (ord 1)  →  O_2  (not Frobenius)",
-            "    tensor(i, X).Φ = min(Φ_υ, X.Φ) ≤ Φ_υ < Φ_}  — cliff holds ∀X",
+            "  imaginary_unit: Φ = 𐑿 (ord 1)  →  O_2  (not Frobenius)",
+            "    tensor(i, X).Φ = min(𐑿, X.Φ) ≤ 𐑿 < 𐑹  — cliff holds ∀X",
             "    dist(i, ZFCₜ) = 5   dist(i, ZFCₛ) = 8",
             "",
-            "  complex_time_path_integral: O_inf, Φ_}  — 1 step from ZFCₜ (T_bowtie vs T_odot)",
-            "    Wick rotation t→iτ is a single Þ-promotion: T_bowtie→T_odot",
+            "  complex_time_path_integral: O_inf, 𐑹  — 1 step from ZFCₜ (𐑥 vs 𐑸)",
+            "    Wick rotation t→iτ is a single Þ-promotion: 𐑥→𐑸",
             "",
-            "  planck_imaginary_time: Φ = Φ_υ (O_2) — shares Þ_¨+Ř_Ť with ZFCₛ",
-            "    tensor(pit, X).Φ = min(Φ_υ, X.Φ) ≤ Φ_υ — cliff holds ∀X",
+            "  planck_imaginary_time: Φ = 𐑿 (O_2) — shares 𐑶+𐑽 with ZFCₛ",
+            "    tensor(pit, X).Φ = min(𐑿, X.Φ) ≤ 𐑿 — cliff holds ∀X",
             "",
             "─── ZFCₜ promotion channels ────────────────────────────────────────",
             "",

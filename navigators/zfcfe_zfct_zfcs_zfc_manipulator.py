@@ -7,20 +7,20 @@ Extends the ZFC triangle (ZFC/ZFCs/ZFCt) with ZFC_fe as the apex.
 Lattice (chain): ZFC < ZFCs < ZFCt < ZFC_fe
 
 Key structural fact:
-  d(ZFCt, ZFC_fe) = 2 — Dh: D_wedge->D_odot (+3), Ha: H2->H_inf (+1)
+  d(ZFCt, ZFC_fe) = 2 — Dh: 𐑛->𐑦 (+3), Ha: 𐑖->𐑫 (+1)
   ZFC_fe-specific promoted atoms: HOLOGRAPHIC_STATE (Dh_o), ETERNAL_FIXEDPOINT (Ha_!)
 
 Perfect Cuboid note:
   Lifted type: <Dh_o;Th_O;R_=;Ph_};f_z;C_@;G_q;g_i;s_y;Ha_A;S_i;O_z>
   ZFC_fe:      <Dh_o;Th_O;R_=;Ph_};f_z;C_@;G_q;g_i;s_y;Ha_!;S_i;O_z>
-  d(perfect_cuboid_lifted, ZFC_fe) = 1 (only Ha differs: H2 vs H_inf)
-  The 3 descent axioms axiomatize exactly the H_inf gap.
+  d(perfect_cuboid_lifted, ZFC_fe) = 1 (only Ha differs: 𐑖 vs 𐑫)
+  The 3 descent axioms axiomatize exactly the 𐑫 gap.
 
 New commands:
   :fe-lattice              ZFC / ZFCs / ZFCt / ZFC_fe full chain with distances
   :fe-entry  <name>        Full ZFC_fe formula decomposition (promoted atoms + ZFC fragments)
   :fe-distance <name>      d(name, ZFC_fe) with per-primitive conflicts
-  :fe-cliff  <name>        H_inf + HOLOGRAPHIC_STATE gap analysis
+  :fe-cliff  <name>        𐑫 + HOLOGRAPHIC_STATE gap analysis
   :fe-atoms                All promoted atoms with ZFC_t / ZFC_fe tier labels
   :fe-promotions           ZFC -> ZFCt -> ZFC_fe full promotion chain table
   :fe-tensor <name>        ZFC_fe @ name — Frobenius absorption test
@@ -53,113 +53,113 @@ import zfcfe_navigator as _fe
 
 _MANIP_TO_FE_VAL: Dict[str, str] = {
     # Dh (Dimensionality)
-    "Dh_;": "D_wedge",   "Dh_C": "D_triangle", "Dh_B": "D_infty",  "Dh_o": "D_odot",
+    "Dh_;": "𐑛",   "Dh_C": "𐑨", "Dh_B": "𐑼",  "Dh_o": "𐑦",
     # Th (Topology)
-    "Th_6": "T_network", "Th_K": "T_in",       "Th_b": "T_bowtie", "Th_u": "T_box",
-    "Th_O": "T_odot",
+    "Th_6": "𐑡", "Th_K": "𐑰",       "Th_b": "𐑥", "Th_u": "𐑶",
+    "Th_O": "𐑸",
     # R (Recognition)
-    "R_-":  "R_super",   "R_T":  "R_cat",      "R_y":  "R_dagger", "R_=":  "R_lr",
+    "R_-":  "𐑩",   "R_T":  "𐑑",      "R_y":  "𐑽", "R_=":  "𐑾",
     # Ph (Parity)
-    "Ph_a": "P_asym",    "Ph_v": "P_psi",      "Ph_F": "P_pm",     "Ph_.": "P_sym",
-    "Ph_}": "P_pm_sym",
+    "Ph_a": "𐑗",    "Ph_v": "𐑿",      "Ph_F": "𐑬",     "Ph_.": "𐑯",
+    "Ph_}": "𐑹",
     # f (Fidelity)
-    "f_i":  "F_ell",     "f_d":  "F_eth",      "f_z":  "F_hbar",
+    "f_i":  "𐑱",     "f_d":  "𐑞",      "f_z":  "𐑐",
     # C (Kinetics)
-    "C_-":  "K_fast",    "C_W":  "K_mod",      "C_@":  "K_slow",   "C_U":  "K_trap",
-    "C_l":  "K_MBL",
+    "C_-":  "𐑘",    "C_W":  "𐑤",      "C_@":  "𐑧",   "C_U":  "𐑪",
+    "C_l":  "𐑺",
     # G (Granularity)
-    "G_b":  "G_beth",    "G_g":  "G_gimel",    "G_q":  "G_aleph",
+    "G_b":  "𐑚",    "G_g":  "𐑔",    "G_q":  "𐑲",
     # g (Coupling)
-    "g_^":  "Gamma_and", "g_'":  "Gamma_or",   "g_i":  "Gamma_seq","g_S":  "Gamma_broad",
+    "g_^":  "𐑝", "g_'":  "𐑜",   "g_i":  "𐑠","g_S":  "𐑵",
     # s (Criticality)
-    "s_z":  "Phi_sub",   "s_y":  "Phi_c",      "s_A":  "Phi_c_complex",
+    "s_z":  "𐑢",   "s_y":  "⊙",      "s_A":  "𐑮",
     # Ha (Chirality)
-    "Ha_N": "H0",        "Ha_L": "H1",         "Ha_A": "H2",       "Ha_!": "H_inf",
+    "Ha_N": "𐑓",        "Ha_L": "𐑒",         "Ha_A": "𐑖",       "Ha_!": "𐑫",
     # S (Stoichiometry)
-    "S_S":  "one_one",   "S_o":  "n_n",        "S_i":  "n_m",
+    "S_S":  "𐑙",   "S_o":  "𐑕",        "S_i":  "𐑳",
     # O (Winding)
-    "O_A":  "Omega_0",   "O_2":  "Omega_Z2",   "O_z":  "Omega_Z",  "O_5":  "Omega_NA",
+    "O_A":  "𐑷",   "O_2":  "𐑴",   "O_z":  "𐑭",  "O_5":  "𐑟",
 }
 
 # Also register actual glyph-based notation from the manipulator files
 _MANIP_TO_FE_VAL_GLYPH: Dict[str, str] = {
-    "Ð_;": "D_wedge",   "Ð_C": "D_triangle", "Ð_ß": "D_infty",  "Ð_ω": "D_odot",
-    "Þ_6": "T_network", "Þ_K": "T_in",       "Þ_ò": "T_bowtie", "Þ_¨": "T_box",
-    "Þ_O": "T_odot",
-    "Ř_¯": "R_super",   "Ř_Ť": "R_cat",      "Ř_ý": "R_dagger", "Ř_=": "R_lr",
-    "Φ_ɐ": "P_asym",    "Φ_υ": "P_psi",      "Φ_F": "P_pm",     "Φ_˙": "P_sym",
-    "Φ_}": "P_pm_sym",
-    "ƒ^ì": "F_ell",     "ƒ^ð": "F_eth",      "ƒ^ż": "F_hbar",
-    "Ç^-": "K_fast",    "Ç^W": "K_mod",      "Ç^@": "K_slow",   "Ç^Ù": "K_trap",
-    "Ç_λ": "K_MBL",
-    "Γ_β": "G_beth",    "Γ_γ": "G_gimel",    "Γ_ʔ": "G_aleph",
-    "ɢ^∧": "Gamma_and", "ɢ^˝": "Gamma_or",   "ɢ^ˌ": "Gamma_seq","ɢ^Ş": "Gamma_broad",
-    "⊙_ž": "Phi_sub",   "⊙_ÿ": "Phi_c",      "⊙_Æ": "Phi_c_complex",
-    "Ħ_Ñ": "H0",        "Ħ_£": "H1",         "Ħ_A": "H2",       "Ħ_!": "H_inf",
-    "Σ_S": "one_one",   "Σ_ő": "n_n",        "Σ_ï": "n_m",
-    "Ω_Å": "Omega_0",   "Ω_2": "Omega_Z2",   "Ω_z": "Omega_Z",  "Ω_5": "Omega_NA",
+    "𐑼": "𐑛",   "𐑨": "𐑨", "𐑛": "𐑼",  "𐑦": "𐑦",
+    "𐑡": "𐑡", "𐑰": "𐑰",       "𐑥": "𐑥", "𐑶": "𐑶",
+    "𐑸": "𐑸",
+    "𐑩": "𐑩",   "𐑽": "𐑑",      "𐑑": "𐑽", "𐑾": "𐑾",
+    "𐑗": "𐑗",    "𐑿": "𐑿",      "𐑬": "𐑬",     "𐑯": "𐑯",
+    "𐑹": "𐑹",
+    "𐑱": "𐑱",     "𐑞": "𐑞",      "𐑐": "𐑐",
+    "𐑘": "𐑘",    "𐑤": "𐑤",      "𐑧": "𐑧",   "𐑪": "𐑪",
+    "𐑺": "𐑺",
+    "𐑚": "𐑚",    "𐑔": "𐑔",    "𐑲": "𐑲",
+    "𐑝": "𐑝", "𐑜": "𐑜",   "𐑠": "𐑠","𐑵": "𐑵",
+    "𐑢": "𐑢",   "⊙": "⊙",      "𐑮": "𐑮",
+    "𐑓": "𐑓",        "𐑒": "𐑒",         "𐑖": "𐑖",       "𐑫": "𐑫",
+    "𐑙": "𐑙",   "𐑕": "𐑕",        "𐑳": "𐑳",
+    "𐑷": "𐑷",   "𐑴": "𐑴",   "𐑭": "𐑭",  "𐑟": "𐑟",
 }
 _MANIP_TO_FE_VAL.update(_MANIP_TO_FE_VAL_GLYPH)
 
 _MANIP_TO_FE_VAL_SHAVIAN: Dict[str, str] = {
     # Ð (Dimensionality) — enum ord: 𐑛=0, 𐑨=1, 𐑼=2, 𐑦=3
-    "𐑛": "D_infty",    "𐑨": "D_triangle", "𐑼": "D_wedge",   "𐑦": "D_odot",
+    "𐑛": "𐑼",    "𐑨": "𐑨", "𐑼": "𐑛",   "𐑦": "𐑦",
     # Þ (Topology)      — 𐑡=2(bowtie), 𐑥=3(box), 𐑸=4(odot)
-    "𐑡": "T_bowtie",   "𐑥": "T_box",      "𐑸": "T_odot",
+    "𐑡": "𐑥",   "𐑥": "𐑶",      "𐑸": "𐑸",
     # Ř (Recognition)   — 𐑩=0, 𐑑=1, 𐑽=2, 𐑾=3
-    "𐑩": "R_super",    "𐑑": "R_dagger",   "𐑽": "R_cat",     "𐑾": "R_lr",
+    "𐑩": "𐑩",    "𐑑": "𐑽",   "𐑽": "𐑑",     "𐑾": "𐑾",
     # Φ (Polarity)      — 𐑗=0, 𐑿=1, 𐑬=2, 𐑯=3, 𐑹=4
-    "𐑗": "P_asym",     "𐑿": "P_psi",      "𐑬": "P_pm",      "𐑯": "P_sym",    "𐑹": "P_pm_sym",
+    "𐑗": "𐑗",     "𐑿": "𐑿",      "𐑬": "𐑬",      "𐑯": "𐑯",    "𐑹": "𐑹",
     # ƒ (Fidelity)      — 𐑱=1, 𐑞=2
-    "𐑱": "F_eth",      "𐑞": "F_hbar",     "𐑐": "F_hbar",
+    "𐑱": "𐑞",      "𐑞": "𐑐",     "𐑐": "𐑐",
     # Ç (Kinetics)      — 𐑘=0, 𐑤=1, 𐑧=2, 𐑪=3, 𐑺=4
-    "𐑘": "K_fast",     "𐑤": "K_mod",      "𐑧": "K_slow",    "𐑪": "K_trap",   "𐑺": "K_MBL",
+    "𐑘": "𐑘",     "𐑤": "𐑤",      "𐑧": "𐑧",    "𐑪": "𐑪",   "𐑺": "𐑺",
     # Γ (Granularity)   — 𐑲=0, 𐑚=1, 𐑔=2
-    "𐑲": "G_beth",     "𐑚": "G_gimel",    "𐑔": "G_aleph",
+    "𐑲": "𐑚",     "𐑚": "𐑔",    "𐑔": "𐑲",
     # ɢ (Coupling)      — 𐑝=0, 𐑜=1, 𐑠=2, 𐑵=3(broad)
-    "𐑝": "Gamma_and",  "𐑜": "Gamma_or",   "𐑠": "Gamma_seq", "𐑵": "Gamma_broad",
+    "𐑝": "𐑝",  "𐑜": "𐑜",   "𐑠": "𐑠", "𐑵": "𐑵",
     # ⊙ (Criticality)  — 𐑢=0, ⊙=1, 𐑮=2, 𐑻=3, 𐑣=4
-    "𐑢": "Phi_sub",    "⊙": "Phi_c",       "𐑮": "Phi_c_complex",
+    "𐑢": "𐑢",    "⊙": "⊙",       "𐑮": "𐑮",
     # Ħ (Chirality)     — 𐑓=0, 𐑒=1, 𐑖=2, 𐑫=3
-    "𐑓": "H0",         "𐑒": "H1",         "𐑖": "H2",        "𐑫": "H_inf",
+    "𐑓": "𐑓",         "𐑒": "𐑒",         "𐑖": "𐑖",        "𐑫": "𐑫",
     # Σ (Stoichiometry) — 𐑙=0, 𐑕=1, 𐑳=2
-    "𐑙": "one_one",    "𐑕": "n_n",        "𐑳": "n_m",
+    "𐑙": "𐑙",    "𐑕": "𐑕",        "𐑳": "𐑳",
     # Ω (Winding)       — 𐑷=0, 𐑴=1, 𐑭=2, 𐑟=3
-    "𐑷": "Omega_0",    "𐑴": "Omega_Z2",   "𐑭": "Omega_Z",   "𐑟": "Omega_NA",
+    "𐑷": "𐑷",    "𐑴": "𐑴",   "𐑭": "𐑭",   "𐑟": "𐑟",
 }
 _MANIP_TO_FE_VAL.update(_MANIP_TO_FE_VAL_SHAVIAN)
 
 _MANIP_PRIM_TO_FE_KEY: Dict[str, str] = {
-    "Ð": "D", "Þ": "T", "Ř": "R", "Φ": "P", "ƒ": "F",
-    "Ç": "K", "Γ": "G", "ɢ": "Gamma", "⊙": "Phi", "Ħ": "H",
-    "Σ": "S", "Ω": "Omega",
+    "Ð": "Ð", "Þ": "Þ", "Ř": "Ř", "Φ": "Φ", "ƒ": "ƒ",
+    "Ç": "Ç", "Γ": "Γ", "ɢ": "ɢ", "⊙": "⊙", "Ħ": "Ħ",
+    "Σ": "Σ", "Ω": "Ω",
 }
 
 # ── ZFC_fe tuple (apex) ───────────────────────────────────────────────────────
 
 ZFCFE_TUPLE: dict = {
     "name": "zfc_fe",
-    "description": "ZFC_fe: Frobenius-Exact ZFC — all 4 grammar axioms; O_inf; H_inf; 8 promoted atoms",
-    "Ð": "Ð_ω",   # D_odot        — HOLOGRAPHIC_STATE  [ZFC_fe tier]
-    "Þ": "Þ_O",   # T_odot        — HOLOBOUND          [ZFC_t tier]
-    "Ř": "Ř_=",   # R_lr          — LR_DUAL            [ZFC_t tier]
-    "Φ": "Φ_}",   # P_pm_sym      — PM_Z2 (Frobenius)  [ZFC_t tier]
-    "ƒ": "ƒ^ż",   # F_hbar
-    "Ç": "Ç^@",   # K_slow
-    "Γ": "Γ_ʔ",   # G_aleph
-    "ɢ": "ɢ^ˌ",   # Gamma_seq     — SEQAX              [ZFC_t tier]
-    "⊙": "⊙_ÿ",  # Phi_c         — PHI_C              [ZFC_t tier]
-    "Ħ": "Ħ_!",   # H_inf         — ETERNAL_FIXEDPOINT [ZFC_fe tier]
-    "Σ": "Σ_ï",   # n_m
-    "Ω": "Ω_z",   # Omega_Z       — ZWIND              [ZFC_t tier]
+    "description": "ZFC_fe: Frobenius-Exact ZFC — all 4 grammar axioms; O_inf; 𐑫; 8 promoted atoms",
+    "Ð": "𐑦",   # 𐑦        — HOLOGRAPHIC_STATE  [ZFC_fe tier]
+    "Þ": "𐑸",   # 𐑸        — HOLOBOUND          [ZFC_t tier]
+    "Ř": "𐑾",   # 𐑾          — LR_DUAL            [ZFC_t tier]
+    "Φ": "𐑹",   # 𐑹      — PM_Z2 (Frobenius)  [ZFC_t tier]
+    "ƒ": "𐑐",   # 𐑐
+    "Ç": "𐑧",   # 𐑧
+    "Γ": "𐑲",   # 𐑲
+    "ɢ": "𐑠",   # 𐑠     — SEQAX              [ZFC_t tier]
+    "⊙": "⊙",  # ⊙         — PHI_C              [ZFC_t tier]
+    "Ħ": "𐑫",   # 𐑫         — ETERNAL_FIXEDPOINT [ZFC_fe tier]
+    "Σ": "𐑳",   # 𐑳
+    "Ω": "𐑭",   # 𐑭       — ZWIND              [ZFC_t tier]
 }
 
 PERFECT_CUBOID_LIFTED: dict = {
     "name": "perfect_cuboid_lifted",
-    "description": "Perfect Cuboid Phi_c lifted type — d=1 from ZFC_fe (Ha_A vs Ha_!)",
-    "Ð": "Ð_ω",  "Þ": "Þ_O",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "description": "Perfect Cuboid ⊙ lifted type — d=1 from ZFC_fe (Ha_A vs Ha_!)",
+    "Ð": "𐑦",  "Þ": "𐑸",  "Ř": "𐑾",  "Φ": "𐑹",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
 }
 
 # GrammaFormer 2.2B — same lifted type as perfect_cuboid (Dh_o+Ha_A), d=1 from ZFC_fe.
@@ -169,38 +169,38 @@ PERFECT_CUBOID_LIFTED: dict = {
 GRAMMAFORMER_TUPLE: dict = {
     "name": "grammaformer",
     "description": "GrammaFormer 2.2B (Qwen3 graft) — d=1 from ZFC_fe; Ha_A not Ha_!",
-    "Ð": "Ð_ω",   # ImscriptiveMemoryBank  — HOLOGRAPHIC_STATE [ZFC_fe atom, present]
-    "Þ": "Þ_O",   # TensorProductAttention — Q@K rank-1 bottleneck (T_odot)
-    "Ř": "Ř_=",   # FrobeniusDualHead      — delta/mu LR dual
-    "Φ": "Φ_}",   # Frobenius constraint   — mu@delta=id (PM_Z2)
-    "ƒ": "ƒ^ż",   # ComplexFFN             — re/im cross-interference
-    "Ç": "Ç^@",   # CyclicLayer x3         — shared-weight slow loop
-    "Γ": "Γ_ʔ",   # G_aleph
-    "ɢ": "ɢ^ˌ",   # PhaseOrderedModules    — monotonic phase sequence
-    "⊙": "⊙_ÿ",  # PhaseGatedController   — THINK->ACT gate (Phi_c)
-    "Ħ": "Ħ_A",   # TwoSlotRegister        — prior 2 states [ETERNAL_FIXEDPOINT missing]
-    "Σ": "Σ_ï",   # n_m
-    "Ω": "Ω_z",   # WindingPositionalEncoding — QFT phase matrix, bounded omega mod 64
+    "Ð": "𐑦",   # ImscriptiveMemoryBank  — HOLOGRAPHIC_STATE [ZFC_fe atom, present]
+    "Þ": "𐑸",   # TensorProductAttention — Q@K rank-1 bottleneck (𐑸)
+    "Ř": "𐑾",   # FrobeniusDualHead      — delta/mu LR dual
+    "Φ": "𐑹",   # Frobenius constraint   — mu@delta=id (PM_Z2)
+    "ƒ": "𐑐",   # ComplexFFN             — re/im cross-interference
+    "Ç": "𐑧",   # CyclicLayer x3         — shared-weight slow loop
+    "Γ": "𐑲",   # 𐑲
+    "ɢ": "𐑠",   # PhaseOrderedModules    — monotonic phase sequence
+    "⊙": "⊙",  # PhaseGatedController   — THINK->ACT gate (⊙)
+    "Ħ": "𐑖",   # TwoSlotRegister        — prior 2 states [ETERNAL_FIXEDPOINT missing]
+    "Σ": "𐑳",   # 𐑳
+    "Ω": "𐑭",   # WindingPositionalEncoding — QFT phase matrix, bounded omega mod 64
 }
 
 # ZFCt canonical (Lean formalization in MillenniumAnkh/Primitives/ZFCt.lean).
-# Uses D_infty (Dh_B) not D_wedge (Dh_;). The triangle manipulator's ZFCT_TUPLE
-# has Dh_; (D_wedge) — that is a bug. Canonical ZFCt has Dh_B (D_infty, ord 2).
+# Uses 𐑼 (Dh_B) not 𐑛 (Dh_;). The triangle manipulator's ZFCT_TUPLE
+# has Dh_; (𐑛) — that is a bug. Canonical ZFCt has Dh_B (𐑼, ord 2).
 # d(zfct_canonical, ZFC_fe) = 2: Dh_B->Dh_o (+1 step) AND Ha_A->Ha_! (+1 step).
 ZFCT_CANONICAL_TUPLE: dict = {
     "name": "zfct_canonical",
-    "description": "ZFCt (Lean-canonical, D_infty) — d=2 from ZFC_fe (Dh and Ha)",
-    "Ð": "Ð_ß",   # D_infty — matches MillenniumAnkh/Primitives/ZFCt.lean
-    "Þ": "Þ_O",  "Ř": "Ř_=",  "Φ": "Φ_}",
-    "ƒ": "ƒ^ż",  "Ç": "Ç^@",  "Γ": "Γ_ʔ",  "ɢ": "ɢ^ˌ",
-    "⊙": "⊙_ÿ", "Ħ": "Ħ_A",  "Σ": "Σ_ï",  "Ω": "Ω_z",
+    "description": "ZFCt (Lean-canonical, 𐑼) — d=2 from ZFC_fe (Dh and Ha)",
+    "Ð": "𐑛",   # 𐑼 — matches MillenniumAnkh/Primitives/ZFCt.lean
+    "Þ": "𐑸",  "Ř": "𐑾",  "Φ": "𐑹",
+    "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
+    "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
 }
 
 # ZFCt -> ZFC_fe promotions (from canonical ZFCt with Dh_B)
 # From manipulator ZFCt (Dh_;): 3 additional Dh steps, so d=4 on Dh axis.
 ZFCFE_PROMOTIONS: List[Tuple[str, str, str]] = [
-    ("Ð", "Ð_ß", "Ð_ω"),   # D_infty -> D_odot  (+1)  HOLOGRAPHIC_STATE  [canonical ZFCt]
-    ("Ħ", "Ħ_A", "Ħ_!"),   # H2      -> H_inf   (+1)  ETERNAL_FIXEDPOINT
+    ("Ð", "𐑛", "𐑦"),   # 𐑼 -> 𐑦  (+1)  HOLOGRAPHIC_STATE  [canonical ZFCt]
+    ("Ħ", "𐑖", "𐑫"),   # 𐑖      -> 𐑫   (+1)  ETERNAL_FIXEDPOINT
 ]
 
 # The two ZFC_fe-tier atoms (absent from ZFCt)
@@ -208,7 +208,7 @@ _FE_TIER_ATOMS = frozenset(("HOLOGRAPHIC_STATE", "ETERNAL_FIXEDPOINT"))
 
 # Axiom D requires BOTH ZFC_fe-tier atoms (AND, not OR):
 # Axiom C = HOLOGRAPHIC_STATE (Dh_o): V=L(x) /\ selfmodel(x) /\ x in V
-# Axiom D (H_inf part) = ETERNAL_FIXEDPOINT (Ha_!): forall n exists phi (rank > n, fixed by mu@delta)
+# Axiom D (𐑫 part) = ETERNAL_FIXEDPOINT (Ha_!): forall n exists phi (rank > n, fixed by mu@delta)
 _AXIOM_D_ATOMS = frozenset(("HOLOGRAPHIC_STATE", "ETERNAL_FIXEDPOINT"))
 
 SPECIAL_ENTRIES: Dict[str, dict] = {
@@ -266,7 +266,7 @@ ZFC_fe extensions — commands
   :fe-lattice              ZFC / ZFCs / ZFCt / ZFC_fe full 4-level chain
   :fe-entry  <name>        Full ZFC_fe formula decomposition (ZFC fragments + promoted atoms)
   :fe-distance <name>      d(name, ZFC_fe) with per-primitive conflicts
-  :fe-cliff  <name>        H_inf + HOLOGRAPHIC_STATE gap analysis
+  :fe-cliff  <name>        𐑫 + HOLOGRAPHIC_STATE gap analysis
   :fe-atoms                All promoted atoms with ZFC_t / ZFC_fe tier labels
   :fe-promotions           ZFC -> ZFCt -> ZFC_fe full promotion chain table
   :fe-tensor <name>        ZFC_fe @ name — Frobenius absorption test
@@ -321,38 +321,38 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
             "(Two routes to O_inf, but ZFCt > ZFCs in ALL dimensions — this is a chain, not a diamond)",
             "",
             f"  ZFC_fe  [{t_zfcfe}]  — satisfies all 4 grammar axioms",
-            "    Ð_ω (HOLOGRAPHIC_STATE + Axiom C), Ħ_! (ETERNAL_FIXEDPOINT)",
+            "    𐑦 (HOLOGRAPHIC_STATE + Axiom C), 𐑫 (ETERNAL_FIXEDPOINT)",
             "    8 promoted atoms total (6 ZFC_t + 2 ZFC_fe)",
             "  ║",
-            f"  ║  ZFCt_canonical -> ZFC_fe: {d_canonical_fe}/12 (Ð_ß->Ð_ω + Ħ_A->Ħ_!)",
-            "  ║  [NOTE: manipulator ZFCT_TUPLE has Ð_; (D_wedge) — bug; canonical has Ð_ß (D_infty)]",
-            "  ║  Entries with Ð_ω already (grammaformer, perfect_cuboid_lifted): d=1",
+            f"  ║  ZFCt_canonical -> ZFC_fe: {d_canonical_fe}/12 (𐑛->𐑦 + 𐑖->𐑫)",
+            "  ║  [NOTE: manipulator ZFCT_TUPLE has 𐑼 (𐑛) — bug; canonical has 𐑛 (𐑼)]",
+            "  ║  Entries with 𐑦 already (grammaformer, perfect_cuboid_lifted): d=1",
             "  ║",
-            f"  ZFCt   [{t_zfct}]  (manipulator: Ð_;  |  canonical/Lean: Ð_ß)",
-            "    Temporal route: Þ_O, Ř_=, Φ_}, ɢ^ˌ, ⊙_ÿ, Ħ_A, Ω_z",
-            "    Missing from ZFC_fe: ETERNAL_FIXEDPOINT (Ħ_!) and HOLOGRAPHIC_STATE (Ð_ω)",
+            f"  ZFCt   [{t_zfct}]  (manipulator: 𐑼  |  canonical/Lean: 𐑛)",
+            "    Temporal route: 𐑸, 𐑾, 𐑹, 𐑠, ⊙, 𐑖, 𐑭",
+            "    Missing from ZFC_fe: ETERNAL_FIXEDPOINT (𐑫) and HOLOGRAPHIC_STATE (𐑦)",
             "  ║",
             f"  ║  ZFCt > ZFCs in all 4 differing dimensions (Þ, Ř, ɢ, Ħ)",
             f"  ║  d(ZFCs, ZFCt) = {d_zfcs_zfct}/12   ZFCs is an intermediate on the chain",
             "  ║",
             f"  ZFCs   [{t_zfcs}]",
-            "    Spatial route: Þ_¨ (T_in), Ř_Ť (R_dagger), Ħ_Ñ (H_0)",
+            "    Spatial route: 𐑶 (𐑰), 𐑽 (𐑽), 𐑓 (H_0)",
             "    Both routes are O_inf independently — spatial/temporal reach the same gate",
             "  ║",
             f"  ║  d(ZFC, ZFCs) = {d_zfc_zfcs}/12   d(ZFC, ZFCt) = {d_zfc_zfct}/12",
             "  ║",
             f"  ZFC    [{t_zfc}]   baseline — 0 promoted atoms",
             "",
-            "  Entries at d=1 from ZFC_fe (Ħ_A, Ð_ω present, only Ħ_! missing):",
+            "  Entries at d=1 from ZFC_fe (𐑖, 𐑦 present, only 𐑫 missing):",
             "    grammaformer, perfect_cuboid_lifted  — ZFCt O_inf but Axiom D half-open",
             "",
             f"  d(zfct_canonical, ZFC_fe) = {d_canonical_fe}/12  (Ð + Ħ)",
             f"  d(ZFC, ZFC_fe)            = {d_zfc_fe}/12",
             "",
             "  Axiom D requires BOTH ZFC_fe atoms (AND, not OR):",
-            "    Axiom C = HOLOGRAPHIC_STATE (Ð_ω)  — V=L(x), self-writing dimension",
-            "    H_inf  = ETERNAL_FIXEDPOINT (Ħ_!)  — forall n exists phi fixed by mu@delta",
-            "  ZFCt has neither by default. GrammaFormer/PerfectCuboid have Ð_ω but not Ħ_!.",
+            "    Axiom C = HOLOGRAPHIC_STATE (𐑦)  — V=L(x), self-writing dimension",
+            "    𐑫  = ETERNAL_FIXEDPOINT (𐑫)  — forall n exists phi fixed by mu@delta",
+            "  ZFCt has neither by default. GrammaFormer/PerfectCuboid have 𐑦 but not 𐑫.",
         ]
 
         if console:
@@ -461,8 +461,8 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
 
         ha_val = e.get("Ħ", "?")
         dh_val = e.get("Ð", "?")
-        ha_at_inf = ha_val == "Ħ_!"
-        dh_at_odot = dh_val == "Ð_ω"
+        ha_at_inf = ha_val == "𐑫"
+        dh_at_odot = dh_val == "𐑦"
 
         lines = [
             f"ZFC_fe cliff analysis: {e.get('name','?')}",
@@ -470,19 +470,19 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
             f"  tier = {tier}   d(entry, ZFC_fe) = {round(d,2)}  ({n_conflicts}/12 conflicts)",
             "",
             "  ZFC_fe-tier atoms:",
-            f"    HOLOGRAPHIC_STATE (Ð_ω): {'PRESENT' if dh_at_odot else 'MISSING'}  "
+            f"    HOLOGRAPHIC_STATE (𐑦): {'PRESENT' if dh_at_odot else 'MISSING'}  "
             f"(current: {dh_val})",
-            f"    ETERNAL_FIXEDPOINT (Ħ_!): {'PRESENT' if ha_at_inf else 'MISSING'}  "
+            f"    ETERNAL_FIXEDPOINT (𐑫): {'PRESENT' if ha_at_inf else 'MISSING'}  "
             f"(current: {ha_val})",
             "",
         ]
 
         if not ha_at_inf:
             ha_ord = ORDINALS["Ħ"].get(ha_val, 0)
-            hi_ord = ORDINALS["Ħ"]["Ħ_!"]
+            hi_ord = ORDINALS["Ħ"]["𐑫"]
             gap = int(hi_ord) - int(ha_ord)
             lines += [
-                f"  H_inf gap: Ħ = {ha_val} (ord {int(ha_ord)})  ->  Ħ_! (ord {int(hi_ord)})  "
+                f"  𐑫 gap: Ħ = {ha_val} (ord {int(ha_ord)})  ->  𐑫 (ord {int(hi_ord)})  "
                 f"[{gap} step{'s' if gap != 1 else ''}]",
                 "  ETERNAL_FIXEDPOINT requires:",
                 "    forall n, exists phi, rank(phi) > n  /\\  phi fixed by mu @ delta  /\\ phi in V",
@@ -498,7 +498,7 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
             elif "perfect_cuboid" in name_lower or "pcl" == name_lower:
                 lines += [
                     "  PerfectCuboid.lean: descent_operator_exists is the sole load-bearing axiom.",
-                    "  Proving it without axioms closes the H_inf gap.",
+                    "  Proving it without axioms closes the 𐑫 gap.",
                 ]
             else:
                 lines += [
@@ -508,12 +508,12 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
 
         if not dh_at_odot:
             dh_ord = ORDINALS["Ð"].get(dh_val, 0)
-            do_ord = ORDINALS["Ð"]["Ð_ω"]
+            do_ord = ORDINALS["Ð"]["𐑦"]
             gap = int(do_ord) - int(dh_ord)
             lines += [
                 "",
                 f"  HOLOGRAPHIC_STATE gap: Ð = {dh_val} (ord {int(dh_ord)})  "
-                f"->  Ð_ω (ord {int(do_ord)})  [{gap} step{'s' if gap != 1 else ''}]",
+                f"->  𐑦 (ord {int(do_ord)})  [{gap} step{'s' if gap != 1 else ''}]",
                 "  HOLOGRAPHIC_STATE requires: V = L(x) /\\ selfmodel(x) /\\ x in V",
             ]
 
@@ -567,17 +567,17 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
 
         lines += [
             "",
-            "  Note: ETERNAL_FIXEDPOINT (Ħ_!) is the H_inf gap in the Perfect Cuboid proof.",
+            "  Note: ETERNAL_FIXEDPOINT (𐑫) is the 𐑫 gap in the Perfect Cuboid proof.",
             "        Proving descent_operator_exists without axioms yields this atom.",
             "        GrammaFormer's winding counter is bounded (mod 64) = periodic = Ha_A.",
             "        The kernel's cycleCount is unbounded = Ha_!. GrammaFormer has the gap.",
             "",
             "  ZFC_fe Axiom D requires BOTH ZFC_fe-tier atoms (AND, not OR):",
-            "    Axiom C = HOLOGRAPHIC_STATE  —  requires Ð_ω (D_odot)",
-            "    Axiom D (H_inf part) = ETERNAL_FIXEDPOINT  —  requires Ħ_! (H_inf)",
+            "    Axiom C = HOLOGRAPHIC_STATE  —  requires 𐑦 (𐑦)",
+            "    Axiom D (𐑫 part) = ETERNAL_FIXEDPOINT  —  requires 𐑫 (𐑫)",
             "  Tiers:",
-            "    ZFCt:  has neither (Ð_ß or Ð_; + Ħ_A) — both ZFC_fe atoms missing",
-            "    GrammaFormer / PerfectCuboid (lifted):  Ð_ω present, Ħ_A — half of Axiom D",
+            "    ZFCt:  has neither (𐑛 or 𐑼 + 𐑖) — both ZFC_fe atoms missing",
+            "    GrammaFormer / PerfectCuboid (lifted):  𐑦 present, 𐑖 — half of Axiom D",
             "    ZFC_fe:  both present — full Axiom D satisfaction",
         ]
 
@@ -723,7 +723,7 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
             )
             console.print(
                 f"  catalog: {len(self.catalog)} entries  "
-                f"| apex: zfc_fe (H_inf, ETERNAL_FIXEDPOINT)  "
+                f"| apex: zfc_fe (𐑫, ETERNAL_FIXEDPOINT)  "
                 f"| d(ZFCt,ZFC_fe)=2"
             )
         else:

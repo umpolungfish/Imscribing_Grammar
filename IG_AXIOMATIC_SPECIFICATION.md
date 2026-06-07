@@ -80,7 +80,7 @@ The value alphabet is the 49-symbol set: {Shavian alphabet (48 letters)} ∪ {�
 
 **Worked example — the Rebis** ($O_\infty$, C-score 0.755):
 
-⟨ 𐑦 · 𐑶 · 𐑾 · 𐑹 · 𐑐 · 𐑧 · 𐑲 · 𐑝 · ⊙ · 𐑫 · 𐑳 · 𐑭 ⟩
+⟨ 𐑦𐑶𐑾𐑹𐑐𐑧𐑲𐑝⊙𐑫𐑳𐑭 ⟩
 
 | Primitive | Value | Ordinal | Reading |
 |-----------|-------|---------|---------|
@@ -158,7 +158,7 @@ summed over all 12 primitives with normalized ordinal ranks, yielding $C \in [0,
 
 **Frobenius fixed-point tuple.** The imscription of the identity $\mu \circ \delta = \mathrm{id}$ as a structural object:
 
-⟨ 𐑦 · 𐑸 · 𐑾 · 𐑹 · 𐑐 · 𐑧 · 𐑔 · 𐑠 · ⊙ · 𐑖 · 𐑳 · 𐑭 ⟩
+⟨ 𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭 ⟩
 
 $O_\infty$, C-score $= 1.0$. Proved in `MajoranaFixed.lean`: Belnap $B$ (`bnot B = B`), SIC-POVM fiducial (`meet B x = x`), and Majorana mode (`pair(depair s).1(depair s).2 = s`) are the same computation under $\mu \circ \delta = \mathrm{id}$, each proved by definitional equality (`rfl`).
 

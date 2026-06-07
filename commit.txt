@@ -1,8 +1,16 @@
-IG_AXIOMATIC_SPECIFICATION.md: full math formatting ($...$) + holography distinction
+navigators + catalog: full SNS.md migration + zfcfe rich table output
 
-All mathematical expressions enclosed in $...$: category notation, Frobenius
-structure, crystal size, metric formula, C-score formula, tier rules, axioms.
-Display math ($$...$$) for the distance and C-score formulas.
-§11 extended with holography distinction: static isomorphism up to redundancy
-vs dynamic identity up to the trace; O_inf has no boundary, holography requires
-one; holography is the information-theoretic analogue of crystallography.
+All 25 navigator files and IG_catalog.json migrated to exclusive Shavian glyph
+notation per SNS.md v0.6.0. zfcfe_navigator entry action now renders in the
+same rich table format as zfc_navigator.
+
+Changes:
+- IG_catalog.json: 33491 values migrated across 2815 entries to Shavian glyphs
+- canonical_primitives.py: corrected reversed Ç and Γ ordinals per SNS.md
+- zfcfe_navigator.py: translation layer removed; SNS 1-based ordinals; glyph
+  family keys; rich table renderer (_print_entry_table) with atom legend and
+  ZFC conjunction; tuple display ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
+- All navigators: no separators in tuples, bare glyphs only
+- Old-notation alias dict keys purged; corrupted Python identifiers from
+  bare n_m/n_n substitution restored across domain_navigators, navigators,
+  quantum_tnn, quiver_crystal, thurston_t_specialist, zfc_navigator, zfct_navigator

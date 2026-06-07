@@ -179,6 +179,6 @@ if __name__ == "__main__":
     print(f"Path: {' → '.join(hist)}")
     
     # 3. Terminality Test
-    print(f"\n[TERMINALITY]: Injecting Φ_EP at step 0")
+    print(f"\n[TERMINALITY]: Injecting 𐑻 at step 0")
     hist_term, status_term = engine.interrupt_and_extract(hist, 0)
     print(f"Status: {status_term}")

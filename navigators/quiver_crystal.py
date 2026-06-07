@@ -11,14 +11,14 @@ Architecture:
   • Tier head: tuple embedding → ouroboricity tier logits
 
 Self-encoding bootstrap:
-  Navigator tuple ⟨Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@;
-                   Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+  Navigator tuple ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧;
+                   𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
   Target address: 6,734,591  (confirmed by exact codec)
 
 Training:
   python quiver_crystal.py train [--epochs N] [--batch B] [--hidden H] [--gnn L]
                                  [--synthetic N] [--device cuda]
-  python quiver_crystal.py encode "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ^ż;Ç^@;Γ_ʔ;ɢ^Ş;⊙_ÿ;Ħ_!;Σ_ï;Ω_z"
+  python quiver_crystal.py encode "𐑦;𐑸;𐑑;𐑹;𐑐;𐑧;𐑲;𐑵;⊙;𐑫;𐑳;𐑭"
   python quiver_crystal.py verify [--checkpoint path]
 
 Synthetic augmentation (--synthetic N):
@@ -73,8 +73,8 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
     + inter-lane structural correlation edges.
 
     Inter-lane edges (bidirectional, all-to-all within each pair):
-      Phi ↔ P     — R1: ⊙_ÿ enables Φ_} (Gate 1 / Frobenius condition)
-      Phi ↔ K     — Gate 2: ⊙_ÿ constrains kinetic regime (K <= Ç^@)
+      Phi ↔ P     — R1: ⊙ enables 𐑹 (Gate 1 / Frobenius condition)
+      Phi ↔ K     — Gate 2: ⊙ constrains kinetic regime (K <= 𐑧)
       Omega ↔ D   — R4/R5: protection × dimensionality determines O_2 vs O_2†
 
     Returns (edge_src, edge_dst) as 1-D long tensors.
@@ -83,7 +83,7 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
 
     # Intra-lane ordinal edges (bidirectional) + self-loops for all lanes.
     # P ordinal edges are included: they provide distinguishable embeddings for
-    # each P value. The Frobenius cliff (Φ_˙ → Φ_}) is handled by a
+    # each P value. The Frobenius cliff (𐑯 → 𐑹) is handled by a
     # dedicated static feature in node_feats rather than by removing ordinal edges.
     for p in PRIMS:
         n = len(VALUES[p])
@@ -118,9 +118,9 @@ def _build_node_features() -> torch.Tensor:
     Static node feature matrix [49, 5]:
       [lane_idx/11, ordinal_frac, lane_size/5, is_boundary, is_frobenius_cliff]
     boundary         = primitive in {Phi, P, Omega, D}
-    is_frobenius_cliff = 1.0 only for Φ_} — the categorical Frobenius
+    is_frobenius_cliff = 1.0 only for 𐑹 — the categorical Frobenius
                          singularity that ordinal message-passing cannot
-                         reconstruct by smoothing from Φ_˙.
+                         reconstruct by smoothing from 𐑯.
     """
     BOUNDARY = {"⊙", "Φ", "Ω", "Ð"}
     feats = []
@@ -128,7 +128,7 @@ def _build_node_features() -> torch.Tensor:
         lane_idx   = PRIMS.index(p) / 11.0
         lane_size  = len(VALUES[p]) / 5.0
         is_bnd     = 1.0 if p in BOUNDARY else 0.0
-        is_cliff   = 1.0 if (p == "Φ" and v == "Φ_}") else 0.0
+        is_cliff   = 1.0 if (p == "Φ" and v == "𐑹") else 0.0
         feats.append([lane_idx, ord_frac, lane_size, is_bnd, is_cliff])
     return torch.tensor(feats, dtype=torch.float)  # [49, 5]
 
@@ -391,9 +391,9 @@ class CrystalGNN(nn.Module):
 
     # Navigator self-encoding ground truth
     NAVIGATOR_TUPLE: dict[str, str] = {
-        "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_ý", "Φ": "Φ_}",
-        "ƒ": "ƒ^ż",  "Ç": "Ç^@", "Γ": "Γ_ʔ", "ɢ": "ɢ^Ş",
-        "⊙": "⊙_ÿ", "Ħ": "Ħ_!",  "Σ": "Σ_ï", "Ω": "Ω_z",
+        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑑", "Φ": "𐑹",
+        "ƒ": "𐑐",  "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑵",
+        "⊙": "⊙", "Ħ": "𐑫",  "Σ": "𐑳", "Ω": "𐑭",
     }
     SELF_ENCODE_TARGET: int = 6_734_591
 
@@ -547,7 +547,7 @@ class CrystalGNN(nn.Module):
 # TierHead_45 takes cat(h_f4, h_f5) to see all four tier-determining dims.
 #
 # Broadcast mixer (FamilyMixer): 3-token attention over [h_f3, h_f4, h_f5]
-# so each family embedding can attend to the other two — ɢ^Ş preserved.
+# so each family embedding can attend to the other two — 𐑵 preserved.
 
 F3_PRIMS: list[str] = ["ƒ", "Γ", "Σ"]
 F4_PRIMS: list[str] = ["Ð", "Ř", "ɢ", "Ħ", "Ω"]
@@ -591,7 +591,7 @@ class FamilyMixer(nn.Module):
     """Broadcast attention over the three family embeddings [h_f3, h_f4, h_f5].
 
     Treats the three family vectors as a 3-token sequence and applies multi-head
-    self-attention so each family can attend to all others — ɢ^Ş over the
+    self-attention so each family can attend to all others — 𐑵 over the
     family space.  A residual + LayerNorm follows.
     """
     def __init__(self, hidden_dim: int, num_heads: int = 4):
@@ -706,7 +706,7 @@ class CrystalGNN_v10(nn.Module):
         self.proj_f5 = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim), nn.GELU(), nn.LayerNorm(hidden_dim))
 
-        # Broadcast mixer (ɢ^Ş over family space)
+        # Broadcast mixer (𐑵 over family space)
         self.mixer = FamilyMixer(hidden_dim=hidden_dim, num_heads=mixer_heads)
 
         # Per-family primitive prediction heads

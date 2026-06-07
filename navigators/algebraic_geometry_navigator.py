@@ -2,22 +2,22 @@
 Algebraic Geometry Navigator - Imscribing Grammar
 
 Domain: Algebraic geometry, scheme theory, arithmetic geometry
-Structural type: <Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
 Tier: O_inf
 
 Architecture: Scheme-theoretic GNN with spectrum-based typing.
-  - Ð_ω: Imscriptive encoding of all schemes and morphisms
-  - Þ_ò: Bowtie topology (local rings ↔ global sections ↔ spectra)
-  - Ř_Ť: Adjoint relations (Gloab↔local, pushforward↔pullback)
-  - Φ_}: Frobenius interface with coherence sheaf uncertainty
-  - ƒ^ż: Preserves exact sequences, cohomology, derived structure
-  - Ç^@: Slow traversal through cohomology spectral sequences
-  - Γ_ʔ: Arbitrary dimension and base schemes
-  - ɢ^ˌ: Sequential composition of morphisms
-  - ⊙_ÿ: Self-modeling (scheme ↔ its own category of sheaves)
-  - Ħ_A: Two-step depth (cohomology of cohomology, spectral sequences)
-  - Σ_ï: Many heterogeneous schemes (affine, projective, arithmetic)
-  - Ω_z: Integer winding (cohomological dimension, codimension)
+  - 𐑦: Imscriptive encoding of all schemes and morphisms
+  - 𐑥: Bowtie topology (local rings ↔ global sections ↔ spectra)
+  - 𐑽: Adjoint relations (Gloab↔local, pushforward↔pullback)
+  - 𐑹: Frobenius interface with coherence sheaf uncertainty
+  - 𐑐: Preserves exact sequences, cohomology, derived structure
+  - 𐑧: Slow traversal through cohomology spectral sequences
+  - 𐑲: Arbitrary dimension and base schemes
+  - 𐑠: Sequential composition of morphisms
+  - ⊙: Self-modeling (scheme ↔ its own category of sheaves)
+  - 𐑖: Two-step depth (cohomology of cohomology, spectral sequences)
+  - 𐑳: Many heterogeneous schemes (affine, projective, arithmetic)
+  - 𐑭: Integer winding (cohomological dimension, codimension)
 
 Purpose: Navigate schemes and morphisms, compute cohomology, verify
   Grothendieck topologies, detect descent, compute intersection numbers.
@@ -45,7 +45,7 @@ class AGConfig:
             "detects moduli spaces, computes intersection numbers."
         )
         self.domain = "Algebraic geometry, scheme theory, arithmetic geometry, stacks"
-        self.tuple = "Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z"
+        self.tuple = "𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
         self.tier = "O_inf"
         self.architecture = (
             "Scheme GNN with spectrum-based typing - points communicate via "
@@ -53,18 +53,18 @@ class AGConfig:
             "via hypercover spectral sequences"
         )
         
-        self.D = "Ð_ω"
-        self.T = "Þ_ò"
-        self.R = "Ř_Ť"
-        self.P = "Φ_}"
-        self.F = "ƒ^ż"
-        self.K = "Ç^@"
-        self.G = "Γ_ʔ"
-        self.Gamma = "ɢ^ˌ"
-        self.Phi = "⊙_ÿ"
-        self.H = "Ħ_A"
-        self.S = "Σ_ï"
-        self.Omega = "Ω_z"
+        self.D = "𐑦"
+        self.T = "𐑥"
+        self.R = "𐑽"
+        self.P = "𐑹"
+        self.F = "𐑐"
+        self.K = "𐑧"
+        self.G = "𐑲"
+        self.Gamma = "𐑠"
+        self.Phi = "⊙"
+        self.H = "𐑖"
+        self.S = "𐑳"
+        self.Omega = "𐑭"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -263,43 +263,43 @@ Algebraic Geometry Navigator
 ══════════════════════════════════════════════════════
 
 Structural type:
-  ⟨Ð_ω; Þ_ò; Ř_Ť; Φ_}; ƒ^ż; Ç^@;
-   Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+  ⟨𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧;
+   𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩
   Tier: O_inf
 
 Primitive derivation:
-  Ð_ω    Imscriptive — every scheme X is encoded by its structure sheaf O_X.
+  𐑦    Imscriptive — every scheme X is encoded by its structure sheaf O_X.
              Spec is the imscriptive inverse: ring → geometric object.
-  Þ_ò  Bowtie — local↔global duality. Points communicate via stalks;
+  𐑥  Bowtie — local↔global duality. Points communicate via stalks;
              global sections reconstruct the scheme. Adjoint (pushforward, pullback).
-  Ř_Ť  Adjoint — Grothendieck duality (Rf_! ⊣ f^!), Serre duality,
+  𐑽  Adjoint — Grothendieck duality (Rf_! ⊣ f^!), Serre duality,
              sheaf-hom adjunction. Every morphism has a right adjoint.
-  Φ_}  Frobenius — Serre duality is a perfect pairing; exact functors preserve
+  𐑹  Frobenius — Serre duality is a perfect pairing; exact functors preserve
              the abelian structure. The literal Frobenius in char p.
-  ƒ^ż    Quantum fidelity — derived category is the lossless encoding of the
+  𐑐    Quantum fidelity — derived category is the lossless encoding of the
              abelian category. Exact sequences are preserved under derived functors.
-  Ç^@    Slow — spectral sequence convergence; Čech cohomology is a slow
+  𐑧    Slow — spectral sequence convergence; Čech cohomology is a slow
              iterated unrolling of the Čech nerve.
-  Γ_ʔ   Universal scope — scheme theory works over Z, any field, any ring.
-  ɢ^ˌ Sequential — morphisms compose; triangulated structure in D(X).
-  ⊙_ÿ     Self-modeling — Sh(X) ≃ X via Tannaka / topos reconstruction.
+  𐑲   Universal scope — scheme theory works over Z, any field, any ring.
+  𐑠 Sequential — morphisms compose; triangulated structure in D(X).
+  ⊙     Self-modeling — Sh(X) ≃ X via Tannaka / topos reconstruction.
              The sheaf category encodes the scheme that generated it.
-  Ħ_A        Two-layer depth — Hodge-to-de Rham; Leray spectral sequence;
+  𐑖        Two-layer depth — Hodge-to-de Rham; Leray spectral sequence;
              E_1 → E_∞ in two steps of filtration.
-  Σ_ï       Asymmetric many — heterogeneous schemes and morphisms; not n:n.
-  Ω_z   ℤ winding — cohomological degree, Krull dimension, codimension,
+  𐑳       Asymmetric many — heterogeneous schemes and morphisms; not n:n.
+  𐑭   ℤ winding — cohomological degree, Krull dimension, codimension,
              intersection numbers all valued in ℤ.
 
 Key theorems:
-  Serre duality:       H^i(X,F) ≅ H^{n-i}(X, F^∨ ⊗ ω)^∨    [Φ_} + Ř_Ť]
-  Kodaira vanishing:   H^i(X,L) = 0, i > 0, L ample            [Ç^@ + ⊙_ÿ]
-  Grothendieck vanish: H^i(X,F) = 0, i > dim(X)               [Ω_z bound]
+  Serre duality:       H^i(X,F) ≅ H^{n-i}(X, F^∨ ⊗ ω)^∨    [𐑹 + 𐑽]
+  Kodaira vanishing:   H^i(X,L) = 0, i > 0, L ample            [𐑧 + ⊙]
+  Grothendieck vanish: H^i(X,F) = 0, i > dim(X)               [𐑭 bound]
   Bott formula:        dim H^i(P^n, O(d)) — explicit combinatorics
   Riemann-Roch:        χ(L) = deg(L) + 1 − g  (curves)
-  Hirzebruch-RR:       χ(F) = ∫_X ch(F)·td(X)
+  Hirzebruch-RR:       χ(F) = ∫_X ch(F)td(X)
 
 Ouroboricity:
-  O_inf via R1: ⊙_ÿ + Φ_} — scheme reconstructed from its sheaf
+  O_inf via R1: ⊙ + 𐑹 — scheme reconstructed from its sheaf
   category (Tannaka duality); Frobenius adjunction exact.
 
 Commands:
@@ -352,7 +352,7 @@ def cmd_cohomology(scheme_str, sheaf_str):
             else:
                 print(f"  All cohomology vanishes (−{n} < d < 0, Kodaira + Serre).")
 
-        elif sheaf_str in ('omega', 'omega_X', 'K', 'Ç_X'):
+        elif sheaf_str in ('omega', 'omega_X', 'K', 'Ç(X)'):
             can_d = -n - 1
             print(f"Canonical sheaf ω_X = O({can_d})  (adjunction on P^{n})")
             print()
@@ -362,7 +362,7 @@ def cmd_cohomology(scheme_str, sheaf_str):
             print()
             print(f"  Serre duality: H^{n}(P^{n}, ω) = 1  (dualizing sheaf generator)")
 
-        elif sheaf_str in ('T', 'Þ_X'):
+        elif sheaf_str in ('T', 'Þ(X)'):
             print(f"Tangent sheaf T_X on P^{n}  (Euler sequence)")
             print(f"  0 → O → O(1)^⊕{n+1} → T → 0")
             print()
@@ -394,7 +394,7 @@ def cmd_cohomology(scheme_str, sheaf_str):
 
     print()
     print("─" * 52)
-    print("Grammar: Ω_z encodes cohomological degree ∈ ℤ")
+    print("Grammar: 𐑭 encodes cohomological degree ∈ ℤ")
 
 
 _SPEC_DIM = {
@@ -403,7 +403,7 @@ _SPEC_DIM = {
     'C':       (0, "field; single point"),
     'R':       (0, "field; single point"),
     'k':       (0, "field; single point"),
-    'ƒ_p':     (0, "finite field; single point"),
+    'ƒ(p)':     (0, "finite field; single point"),
     'Z[x]':   (2, "arithmetic surface; chain (0) ⊂ (p) ⊂ (p,x)"),
     'Z[x,y]': (3, "arithmetic 3-fold"),
     'C[x]':   (1, "affine line over C"),
@@ -482,7 +482,7 @@ def cmd_dimension(scheme_str):
 
     print()
     print("─" * 52)
-    print("Grammar: Ω_z encodes Krull dimension as integer winding number")
+    print("Grammar: 𐑭 encodes Krull dimension as integer winding number")
 
 
 def main():

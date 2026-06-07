@@ -7,7 +7,7 @@ ZFC_fe is the unique set-theoretic foundation satisfying ALL four grammar axioms
 fragments, promoted-atom marking, and full formula conjunction for any system.
 
 Canonical tuple (proven in Lean ZFC_FrobeniusExact.lean):
-    ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_ï; Ω_z⟩
+    ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
 
 Actions:
   entry  <name>  — Full ZFC_fe formula decomposition: per-primitive fragments,
@@ -28,106 +28,55 @@ import sys
 import json
 import math
 
-# =============================================================================
-# SHAVIAN-TO-PRIMITIVE MAPPING (from Lean Imscription.lean)
-# =============================================================================
-
-SHAVIAN_MAP = {
-    "𐑛": ("D", "D_wedge"),          "𐑨": ("D", "D_triangle"),
-    "𐑼": ("D", "D_infty"),          "𐑦": ("D", "D_odot"),
-    "𐑡": ("T", "T_network"),        "𐑰": ("T", "T_in"),
-    "𐑥": ("T", "T_bowtie"),         "𐑶": ("T", "T_box"),
-    "𐑸": ("T", "T_odot"),
-    "𐑩": ("R", "R_super"),          "𐑑": ("R", "R_cat"),
-    "𐑽": ("R", "R_dagger"),         "𐑾": ("R", "R_lr"),
-    "𐑗": ("P", "P_asym"),           "𐑿": ("P", "P_psi"),
-    "𐑬": ("P", "P_pm"),             "𐑯": ("P", "P_sym"),
-    "𐑹": ("P", "P_pm_sym"),
-    "𐑱": ("F", "F_ell"),            "𐑞": ("F", "F_eth"),
-    "𐑐": ("F", "F_hbar"),
-    "𐑘": ("K", "K_fast"),           "𐑤": ("K", "K_mod"),
-    "𐑧": ("K", "K_slow"),           "𐑪": ("K", "K_trap"),
-    "𐑺": ("K", "K_MBL"),
-    "𐑚": ("G", "G_beth"),           "𐑔": ("G", "G_gimel"),
-    "𐑲": ("G", "G_aleph"),
-    "𐑝": ("Gamma", "Gamma_and"),     "𐑜": ("Gamma", "Gamma_or"),
-    "𐑠": ("Gamma", "Gamma_seq"),     "𐑵": ("Gamma", "Gamma_broad"),
-    "𐑢": ("Phi", "Phi_sub"),         "⊙": ("Phi", "Phi_c"),
-    "𐑮": ("Phi", "Phi_c_complex"),   "𐑻": ("Phi", "Phi_EP"),
-    "𐑣": ("Phi", "Phi_super"),
-    "𐑓": ("H", "H0"),               "𐑒": ("H", "H1"),
-    "𐑖": ("H", "H2"),               "𐑫": ("H", "H_inf"),
-    "𐑙": ("S", "one_one"),          "𐑕": ("S", "n_n"),
-    "𐑳": ("S", "n_m"),
-    "𐑷": ("Omega", "Omega_0"),       "𐑴": ("Omega", "Omega_Z2"),
-    "𐑭": ("Omega", "Omega_Z"),       "𐑟": ("Omega", "Omega_NA"),
-}
-
-VALUE_TO_SHAVIAN = {v: k for k, (_, v) in SHAVIAN_MAP.items()}
-SHAVIAN_TO_VALUE = {k: v for k, (_, v) in SHAVIAN_MAP.items()}
+# Values ARE Shavian glyphs — no translation layer needed.
+# Each glyph is its own display form.
 
 # =============================================================================
-# PRIMITIVE NOTATION
-# =============================================================================
-
-PRIMITIVE_NOTATION = {
-    "D_wedge": "Ð_;", "D_triangle": "Ð_C", "D_infty": "Ð_ß", "D_odot": "Ð_ω",
-    "T_network": "Þ_6", "T_in": "Þ_K", "T_bowtie": "Þ_ò", "T_box": "Þ_¨", "T_odot": "Þ_O",
-    "R_super": "Ř_¯", "R_cat": "Ř_Ť", "R_dagger": "Ř_ý", "R_lr": "Ř_=",
-    "P_asym": "Φ_ɐ", "P_psi": "Φ_υ", "P_pm": "Φ_F", "P_sym": "Φ_˙", "P_pm_sym": "Φ_}",
-    "F_ell": "ƒ_ì", "F_eth": "ƒ_ð", "F_hbar": "ƒ_ż",
-    "K_fast": "Ç_-", "K_mod": "Ç_W", "K_slow": "Ç_@", "K_trap": "Ç_Ù", "K_MBL": "Ç_λ",
-    "G_beth": "Γ_β", "G_gimel": "Γ_γ", "G_aleph": "Γ_ʔ",
-    "Gamma_and": "ɢ_^", "Gamma_or": "ɢ_˝", "Gamma_seq": "ɢ_ˌ", "Gamma_broad": "ɢ_Ş",
-    "Phi_sub": "φ̂_ž", "Phi_c": "φ̂_ÿ", "Phi_c_complex": "φ̂_Æ", "Phi_EP": "φ̂_3", "Phi_super": "φ̂_Ţ",
-    "H0": "Ħ_Ñ", "H1": "Ħ_£", "H2": "Ħ_A", "H_inf": "Ħ_!",
-    "one_one": "Σ_S", "n_n": "Σ_ő", "n_m": "Σ_ï",
-    "Omega_0": "Ω_Å", "Omega_Z2": "Ω_2", "Omega_Z": "Ω_z", "Omega_NA": "Ω_5",
-}
-
-# =============================================================================
-# PRIMITIVE ORDINALS
+# PRIMITIVE ORDINALS  (SNS.md §Ordinal Table — 1-based)
 # =============================================================================
 
 ORDINALS = {
-    "D": {"D_wedge": 0, "D_triangle": 1, "D_infty": 2, "D_odot": 3},
-    "T": {"T_network": 0, "T_in": 1, "T_bowtie": 2, "T_box": 3, "T_odot": 4},
-    "R": {"R_super": 0, "R_cat": 1, "R_dagger": 2, "R_lr": 3},
-    "P": {"P_asym": 0, "P_psi": 1, "P_pm": 2, "P_sym": 3, "P_pm_sym": 4},
-    "F": {"F_ell": 0, "F_eth": 1, "F_hbar": 2},
-    "K": {"K_fast": 0, "K_mod": 1, "K_slow": 2, "K_trap": 3, "K_MBL": 4},
-    "G": {"G_beth": 0, "G_gimel": 1, "G_aleph": 2},
-    "Gamma": {"Gamma_and": 0, "Gamma_or": 1, "Gamma_seq": 2, "Gamma_broad": 3},
-    "Phi": {"Phi_sub": 0, "Phi_c": 1, "Phi_c_complex": 2, "Phi_EP": 3, "Phi_super": 4},
-    "H": {"H0": 0, "H1": 1, "H2": 2, "H_inf": 3},
-    "S": {"one_one": 0, "n_n": 1, "n_m": 2},
-    "Omega": {"Omega_0": 0, "Omega_Z2": 1, "Omega_Z": 2, "Omega_NA": 3},
+    "Ð": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
+    "Þ": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
+    "Ř": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
+    "Φ": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
+    "ƒ": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
+    "Ç": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
+    "Γ": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
+    "ɢ": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
+    "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
+    "Ħ": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
+    "Σ": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
+    "Ω": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+PRIMITIVE_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+
+# All valid glyphs (flat set for fast membership test)
+ALL_GLYPHS = {g for vals in ORDINALS.values() for g in vals}
 # =============================================================================
 # ZFC_fe TUPLE (authoritative from Lean ZFC_FrobeniusExact.lean)
 # =============================================================================
 
 ZFC_FE = {
-    "D": "D_odot",      "T": "T_odot",      "R": "R_lr",
-    "P": "P_pm_sym",    "F": "F_hbar",      "K": "K_slow",
-    "G": "G_aleph",     "Gamma": "Gamma_seq","Phi": "Phi_c",
-    "H": "H_inf",       "S": "n_m",          "Omega": "Omega_Z",
+    "Ð": "𐑦",      "Þ": "𐑸",      "Ř": "𐑾",
+    "Φ": "𐑹",    "ƒ": "𐑐",      "Ç": "𐑧",
+    "Γ": "𐑲",     "ɢ": "𐑠","⊙": "⊙",
+    "Ħ": "𐑫",       "Σ": "𐑳",          "Ω": "𐑭",
 }
 
 ZFC_T = {
-    "D": "D_infty",     "T": "T_odot",      "R": "R_lr",
-    "P": "P_pm",        "F": "F_hbar",      "K": "K_slow",
-    "G": "G_aleph",     "Gamma": "Gamma_seq","Phi": "Phi_c",
-    "H": "H2",          "S": "n_m",          "Omega": "Omega_Z",
+    "Ð": "𐑼",     "Þ": "𐑸",      "Ř": "𐑾",
+    "Φ": "𐑬",        "ƒ": "𐑐",      "Ç": "𐑧",
+    "Γ": "𐑲",     "ɢ": "𐑠","⊙": "⊙",
+    "Ħ": "𐑖",          "Σ": "𐑳",          "Ω": "𐑭",
 }
 
 UIG = {
-    "D": "D_odot",      "T": "T_odot",      "R": "R_lr",
-    "P": "P_pm_sym",    "F": "F_hbar",      "K": "K_slow",
-    "G": "G_aleph",     "Gamma": "Gamma_seq","Phi": "Phi_c",
-    "H": "H2",          "S": "n_m",          "Omega": "Omega_Z",
+    "Ð": "𐑦",      "Þ": "𐑸",      "Ř": "𐑾",
+    "Φ": "𐑹",    "ƒ": "𐑐",      "Ç": "𐑧",
+    "Γ": "𐑲",     "ɢ": "𐑠","⊙": "⊙",
+    "Ħ": "𐑖",          "Σ": "𐑳",          "Ω": "𐑭",
 }
 
 # =============================================================================
@@ -146,59 +95,59 @@ KNOWN_SYSTEMS = {
     },
     "zfc": {
         "description": "Standard ZFC set theory",
-        "tuple": {"D": "D_infty","T": "T_network","R": "R_super",
-            "P": "P_asym","F": "F_ell","K": "K_fast",
-            "G": "G_beth","Gamma": "Gamma_and","Phi": "Phi_sub",
-            "H": "H0","S": "one_one","Omega": "Omega_0"},
+        "tuple": {"Ð": "𐑼","Þ": "𐑡","Ř": "𐑩",
+            "Φ": "𐑗","ƒ": "𐑱","Ç": "𐑘",
+            "Γ": "𐑚","ɢ": "𐑝","⊙": "𐑢",
+            "Ħ": "𐑓","Σ": "𐑙","Ω": "𐑷"},
     },
     "riemann_hypothesis": {
         "description": "Riemann Hypothesis — all nontrivial ζ zeros on Re(s)=1/2",
-        "tuple": {"D": "D_odot","T": "T_odot","R": "R_lr",
-            "P": "P_pm_sym","F": "F_hbar","K": "K_slow",
-            "G": "G_aleph","Gamma": "Gamma_seq","Phi": "Phi_c",
-            "H": "H2","S": "n_m","Omega": "Omega_Z"},
+        "tuple": {"Ð": "𐑦","Þ": "𐑸","Ř": "𐑾",
+            "Φ": "𐑹","ƒ": "𐑐","Ç": "𐑧",
+            "Γ": "𐑲","ɢ": "𐑠","⊙": "⊙",
+            "Ħ": "𐑖","Σ": "𐑳","Ω": "𐑭"},
     },
     "riemann_hypothesis_millennium": {
-        "description": "Riemann Hypothesis (Clay — Φ_c^ℂ, Þ_¨ bowtie)",
-        "tuple": {"D": "D_odot","T": "T_box","R": "R_lr",
-            "P": "P_psi","F": "F_hbar","K": "K_slow",
-            "G": "G_aleph","Gamma": "Gamma_seq","Phi": "Phi_c_complex",
-            "H": "H2","S": "n_m","Omega": "Omega_Z"},
+        "description": "Riemann Hypothesis (Clay — ⊙=𐑮, Þ=𐑶)",
+        "tuple": {"Ð": "𐑦","Þ": "𐑶","Ř": "𐑾",
+            "Φ": "𐑿","ƒ": "𐑐","Ç": "𐑧",
+            "Γ": "𐑲","ɢ": "𐑠","⊙": "𐑮",
+            "Ħ": "𐑖","Σ": "𐑳","Ω": "𐑭"},
     },
     "hodge_conjecture": {
         "description": "Hodge Conjecture — every rational Hodge class is algebraic",
-        "tuple": {"D": "D_odot","T": "T_odot","R": "R_lr",
-            "P": "P_pm_sym","F": "F_hbar","K": "K_slow",
-            "G": "G_aleph","Gamma": "Gamma_seq","Phi": "Phi_c_complex",
-            "H": "H2","S": "n_m","Omega": "Omega_Z"},
+        "tuple": {"Ð": "𐑦","Þ": "𐑸","Ř": "𐑾",
+            "Φ": "𐑹","ƒ": "𐑐","Ç": "𐑧",
+            "Γ": "𐑲","ɢ": "𐑠","⊙": "𐑮",
+            "Ħ": "𐑖","Σ": "𐑳","Ω": "𐑭"},
     },
     "bsd": {
         "description": "Birch & Swinnerton-Dyer — rank = ord_{s=1} L(E,s)",
-        "tuple": {"D": "D_odot","T": "T_odot","R": "R_dagger",
-            "P": "P_pm","F": "F_eth","K": "K_slow",
-            "G": "G_aleph","Gamma": "Gamma_seq","Phi": "Phi_c_complex",
-            "H": "H2","S": "n_m","Omega": "Omega_Z"},
+        "tuple": {"Ð": "𐑦","Þ": "𐑸","Ř": "𐑽",
+            "Φ": "𐑬","ƒ": "𐑞","Ç": "𐑧",
+            "Γ": "𐑲","ɢ": "𐑠","⊙": "𐑮",
+            "Ħ": "𐑖","Σ": "𐑳","Ω": "𐑭"},
     },
     "yang_mills": {
         "description": "Yang-Mills Existence and Mass Gap",
-        "tuple": {"D": "D_odot","T": "T_odot","R": "R_dagger",
-            "P": "P_pm_sym","F": "F_hbar","K": "K_trap",
-            "G": "G_aleph","Gamma": "Gamma_broad","Phi": "Phi_c",
-            "H": "H_inf","S": "n_m","Omega": "Omega_Z"},
+        "tuple": {"Ð": "𐑦","Þ": "𐑸","Ř": "𐑽",
+            "Φ": "𐑹","ƒ": "𐑐","Ç": "𐑪",
+            "Γ": "𐑲","ɢ": "𐑵","⊙": "⊙",
+            "Ħ": "𐑫","Σ": "𐑳","Ω": "𐑭"},
     },
     "navier_stokes": {
         "description": "Navier-Stokes Existence and Smoothness",
-        "tuple": {"D": "D_infty","T": "T_in","R": "R_dagger",
-            "P": "P_sym","F": "F_ell","K": "K_mod",
-            "G": "G_aleph","Gamma": "Gamma_or","Phi": "Phi_sub",
-            "H": "H0","S": "n_m","Omega": "Omega_0"},
+        "tuple": {"Ð": "𐑼","Þ": "𐑰","Ř": "𐑽",
+            "Φ": "𐑯","ƒ": "𐑱","Ç": "𐑤",
+            "Γ": "𐑲","ɢ": "𐑜","⊙": "𐑢",
+            "Ħ": "𐑓","Σ": "𐑳","Ω": "𐑷"},
     },
     "p_vs_np": {
         "description": "P vs NP — three meta-barriers",
-        "tuple": {"D": "D_infty","T": "T_network","R": "R_super",
-            "P": "P_asym","F": "F_ell","K": "K_fast",
-            "G": "G_beth","Gamma": "Gamma_and","Phi": "Phi_sub",
-            "H": "H0","S": "n_n","Omega": "Omega_0"},
+        "tuple": {"Ð": "𐑼","Þ": "𐑡","Ř": "𐑩",
+            "Φ": "𐑗","ƒ": "𐑱","Ç": "𐑘",
+            "Γ": "𐑚","ɢ": "𐑝","⊙": "𐑢",
+            "Ħ": "𐑓","Σ": "𐑕","Ω": "𐑷"},
     },
     "universal_imscriptive_grammar": {
         "description": "The Imscribing Grammar itself (canonical Lean tuple)",
@@ -206,10 +155,10 @@ KNOWN_SYSTEMS = {
     },
     "fourfold_apparatus": {
         "description": "Four-directory composite (ob3ect, exOS, MillenniumAnkh, imscribing_grammar)",
-        "tuple": {"D": "D_odot","T": "T_odot","R": "R_lr",
-            "P": "P_pm_sym","F": "F_hbar","K": "K_slow",
-            "G": "G_aleph","Gamma": "Gamma_seq","Phi": "Phi_c",
-            "H": "H_inf","S": "n_m","Omega": "Omega_Z"},
+        "tuple": {"Ð": "𐑦","Þ": "𐑸","Ř": "𐑾",
+            "Φ": "𐑹","ƒ": "𐑐","Ç": "𐑧",
+            "Γ": "𐑲","ɢ": "𐑠","⊙": "⊙",
+            "Ħ": "𐑫","Σ": "𐑳","Ω": "𐑭"},
     },
 }
 
@@ -222,10 +171,6 @@ import json as _json
 CATALOG_CACHE = None
 CATALOG_INDEX = {}
 
-_SHAVIAN_KEY_MAP = {"Ð": "D", "Þ": "T", "Ř": "R", "Φ": "P", "ƒ": "F",
-                    "Ç": "K", "Γ": "G", "ɢ": "Gamma", "⊙": "Phi",
-                    "Ħ": "H", "Σ": "S", "Ω": "Omega"}
-
 def load_catalog():
     """Load IG_catalog.json into CATALOG_INDEX (name → {description, tuple})."""
     global CATALOG_CACHE, CATALOG_INDEX
@@ -234,35 +179,26 @@ def load_catalog():
     _here = _os.path.dirname(_os.path.abspath(__file__))
     _root = _os.path.dirname(_here)
     _candidates = [
-        _os.path.join(_here, "IG_catalog.json"),
-        _os.path.join(_root, "data", "IG_catalog.json"),
         _os.path.join(_root, "IG_catalog.json"),
+        _os.path.join(_here, "IG_catalog.json"),
     ]
     catalog_path = next((p for p in _candidates if _os.path.exists(p)), None)
     if catalog_path is None:
         CATALOG_CACHE = []
         return
     with open(catalog_path, "r") as _f:
-        CATALOG_CACHE = _json.load(_f)
+        _raw = _json.load(_f)
+    if isinstance(_raw, list):
+        CATALOG_CACHE = _raw
+    elif "imscriptions" in _raw:
+        CATALOG_CACHE = _raw["imscriptions"]
+    else:
+        CATALOG_CACHE = [v for v in _raw.values() if isinstance(v, dict)]
     for entry in CATALOG_CACHE:
         name = entry.get("name", "")
         if not name:
             continue
-        t = {}
-        for sk, pk in _SHAVIAN_KEY_MAP.items():
-            val = entry.get(sk, "")
-            if val in SHAVIAN_TO_VALUE:
-                t[pk] = SHAVIAN_TO_VALUE[val]
-            else:
-                # Try reverse mapping from value notation
-                found = False
-                for pn, notation in PRIMITIVE_NOTATION.items():
-                    if val == notation or val == pn:
-                        t[pk] = pn
-                        found = True
-                        break
-                if not found:
-                    t[pk] = val
+        t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
         CATALOG_INDEX[name] = {
             "description": entry.get("description", "IG catalog entry"),
             "tuple": t
@@ -308,78 +244,78 @@ def list_known_systems():
 # Promoted atoms marked in [BRACKETS] are the ZFC_t / ZFC_fe extension atoms.
 
 ZFC_FE_FORMULAE = {
-    "D": {
-        "D_wedge":   ("dim(x) = 0 ∧ fin(x)", None),
-        "D_triangle":("dim(x) = 2 ∧ sur(x)", None),
-        "D_infty":   ("∀n∃y( y ∈ x ∧ rank(y) > n )", None),
-        "D_odot":    ("V = L(x) ∧ selfmodel(x) ∧ x ∈ V", "HOLOGRAPHIC_STATE"),
+    "Ð": {
+        "𐑛":   ("dim(x) = 0 ∧ fin(x)", None),
+        "𐑨":("dim(x) = 2 ∧ sur(x)", None),
+        "𐑼":   ("∀n∃y( y ∈ x ∧ rank(y) > n )", None),
+        "𐑦":    ("V = L(x) ∧ selfmodel(x) ∧ x ∈ V", "HOLOGRAPHIC_STATE"),
     },
-    "T": {
-        "T_network": ("graph(x) ∧ branch(x)", None),
-        "T_in":      ("x ⊆ y ∧ cont(y)", None),
-        "T_bowtie":  ("cross(x, y) ∧ ¬ meet(x, y)", None),
-        "T_box":     ("x ⊠ y ∧ irreducible(x, y)", None),
-        "T_odot":    ("⊙_bound(a, f) ∧ Refl(a, f) ∧ holo(x, a)", "HOLOBOUND"),
+    "Þ": {
+        "𐑡": ("graph(x) ∧ branch(x)", None),
+        "𐑰":      ("x ⊆ y ∧ cont(y)", None),
+        "𐑥":  ("cross(x, y) ∧ ¬ meet(x, y)", None),
+        "𐑶":     ("x ⊠ y ∧ irreducible(x, y)", None),
+        "𐑸":    ("bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)", "HOLOBOUND"),
     },
-    "R": {
-        "R_super":   ("x ↑ y ∧ ¬(y ↑ x)", None),
-        "R_cat":     ("Fun(x, y) ∧ Nat(y, z) → Fun(x, z)", None),
-        "R_dagger":  ("f ⊣ g ∧ L Adj(f, g)", None),
-        "R_lr":      ("lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)", "LR_DUAL"),
+    "Ř": {
+        "𐑩":   ("x ↑ y ∧ ¬(y ↑ x)", None),
+        "𐑑":     ("Fun(x, y) ∧ Nat(y, z) → Fun(x, z)", None),
+        "𐑽":  ("f ⊣ g ∧ L Adj(f, g)", None),
+        "𐑾":      ("lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)", "LR_DUAL"),
     },
-    "P": {
-        "P_asym":    ("¬∃sym(x)", None),
-        "P_psi":     ("|ψ⟩ = Σ c_i |e_i⟩", None),
-        "P_pm":      ("ℤ₂(x) ∧ ¬(x = -x)", None),
-        "P_sym":     ("∀g∈G( g·x = x )", None),
-        "P_pm_sym":  ("ℤ₂(x) ∧ ∀g∈G( g·x = x ) ∧ μ∘δ = id", "PM_Z2"),
+    "Φ": {
+        "𐑗":    ("¬∃sym(x)", None),
+        "𐑿":     ("|ψ⟩ = Σ c_i |e_i⟩", None),
+        "𐑬":      ("ℤ₂(x) ∧ ¬(x = -x)", None),
+        "𐑯":     ("∀g∈G( gx = x )", None),
+        "𐑹":  ("ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id", "PM_Z2"),
     },
-    "F": {
-        "F_ell":     ("P(x) ∈ {0,1} ∧ det(x)", None),
-        "F_eth":     ("Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|", None),
-        "F_hbar":    ("ℏ(x) ∧ [x, p] = iℏ", None),  # quantum coherence
+    "ƒ": {
+        "𐑱":     ("P(x) ∈ {0,1} ∧ det(x)", None),
+        "𐑞":     ("Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|", None),
+        "𐑐":    ("ℏ(x) ∧ [x, p] = iℏ", None),  # quantum coherence
     },
-    "K": {
-        "K_fast":    ("τ ≪ T ∧ ∂_t x = f(x)", None),
-        "K_mod":     ("τ ∼ T ∧ noisy(x)", None),
-        "K_slow":    ("τ ≫ T ∧ eq(x)", None),
-        "K_trap":    ("τ = ∞ ∧ ord(x)", None),
-        "K_MBL":     ("τ = ∞ ∧ dis(x)", None),
+    "Ç": {
+        "𐑘":    ("τ ≪ T ∧ ∂_t x = f(x)", None),
+        "𐑤":     ("τ ∼ T ∧ noisy(x)", None),
+        "𐑧":    ("τ ≫ T ∧ eq(x)", None),
+        "𐑪":    ("τ = ∞ ∧ ord(x)", None),
+        "𐑺":     ("τ = ∞ ∧ dis(x)", None),
     },
-    "G": {
-        "G_beth":    ("∀y∈x( |y| < |x| )", None),
-        "G_gimel":   ("∃y∈x( |y| ∼ |x| )", None),
-        "G_aleph":   ("∀y( y ⊂ x → |y| < |x| )", None),
+    "Γ": {
+        "𐑚":    ("∀y∈x( |y| < |x| )", None),
+        "𐑔":   ("∃y∈x( |y| ∼ |x| )", None),
+        "𐑲":   ("∀y( y ⊂ x → |y| < |x| )", None),
     },
-    "Gamma": {
-        "Gamma_and": ("f ∧ g ∧ h", None),
-        "Gamma_or":  ("f ∨ g ∨ h", None),
-        "Gamma_seq": ("seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)", "SEQAX"),
-        "Gamma_broad":("f → all(x)", None),
+    "ɢ": {
+        "𐑝": ("f ∧ g ∧ h", None),
+        "𐑜":  ("f ∨ g ∨ h", None),
+        "𐑠": ("seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)", "SEQAX"),
+        "𐑵":("f → all(x)", None),
     },
-    "Phi": {
-        "Phi_sub":      ("¬∃ξ( diverges(ξ) )", None),
-        "Phi_c":        ("ξ → ∞ ∧ μ∘δ = id", "PHI_C"),
-        "Phi_c_complex":("ξ ∈ ℂ ∧ Im(ξ) → ∞", None),
-        "Phi_EP":       ("H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0", None),
-        "Phi_super":    ("ξ → ∞ ∧ chaotic(x)", None),
+    "⊙": {
+        "𐑢":      ("¬∃ξ( diverges(ξ) )", None),
+        "⊙":        ("ξ → ∞ ∧ μ∘δ = id", "PHI_C"),
+        "𐑮":("ξ ∈ ℂ ∧ Im(ξ) → ∞", None),
+        "𐑻":       ("H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0", None),
+        "𐑣":    ("ξ → ∞ ∧ chaotic(x)", None),
     },
-    "H": {
-        "H0":    ("∀x( P(x) ↔ P(S(x)) )", None),
-        "H1":    ("∃y( P(y) ↔ P(S²(y)) )", None),
-        "H2":    ("∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )", "TEMPD2"),
-        "H_inf": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )", "ETERNAL_FIXEDPOINT"),
+    "Ħ": {
+        "𐑓":    ("∀x( P(x) ↔ P(S(x)) )", None),
+        "𐑒":    ("∃y( P(y) ↔ P(S²(y)) )", None),
+        "𐑖":    ("∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )", "TEMPD2"),
+        "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )", "ETERNAL_FIXEDPOINT"),
     },
-    "S": {
-        "one_one": ("|A| = 1 ∧ |B| = 1", None),
-        "n_n":     ("∀a∈A∀b∈B( type(a) = type(b) )", None),
-        "n_m":     ("∃a∈A∃b∈B( type(a) ≠ type(b) )", None),
+    "Σ": {
+        "𐑙": ("|A| = 1 ∧ |B| = 1", None),
+        "𐑕":     ("∀a∈A∀b∈B( type(a) = type(b) )", None),
+        "𐑳":     ("∃a∈A∃b∈B( type(a) ≠ type(b) )", None),
     },
-    "Omega": {
-        "Omega_0":  ("∮_γ dx = 0", None),
-        "Omega_Z2": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None),
-        "Omega_Z":  ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND"),
-        "Omega_NA": ("Braid(σ_i) ∧ R_matrix ≠ 0", None),
+    "Ω": {
+        "𐑷":  ("∮_γ dx = 0", None),
+        "𐑴": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None),
+        "𐑭":  ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND"),
+        "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0", None),
     },
 }
 
@@ -402,10 +338,9 @@ def generate_formula(t, system_name="custom"):
         formula_map = ZFC_FE_FORMULAE.get(key, {})
         if val in formula_map:
             fragment, atom = formula_map[val]
-            notation = PRIMITIVE_NOTATION.get(val, val)
             entry = {
                 "primitive": key,
-                "value": notation,
+                "value": val,
                 "zfc_fragment": fragment,
             }
             if atom:
@@ -414,7 +349,7 @@ def generate_formula(t, system_name="custom"):
                 atom_details.append({
                     "atom": atom,
                     "primitive": key,
-                    "value": notation,
+                    "value": val,
                     "zfc_fragment": fragment,
                     "tier": "ZFC_fe" if atom in ("HOLOGRAPHIC_STATE", "ETERNAL_FIXEDPOINT") else "ZFC_t",
                 })
@@ -497,35 +432,27 @@ def parse_tuple(tuple_str_or_dict):
     s = tuple_str_or_dict.strip()
     if s.startswith("⟨") and s.endswith("⟩"):
         s = s[1:-1]
-    shavian_chars = [c for c in s if c.strip() and ord(c) >= 0x10450]
+    shavian_chars = [c for c in s if c == "⊙" or (c.strip() and ord(c) >= 0x10450)]
     if len(shavian_chars) == 12:
         result = {}
         for i, glyph in enumerate(shavian_chars):
-            key = PRIMITIVE_KEYS[i]
-            result[key] = SHAVIAN_TO_VALUE.get(glyph, f"unknown:{glyph}")
+            result[PRIMITIVE_KEYS[i]] = glyph if glyph in ALL_GLYPHS else f"unknown:{glyph}"
         return result
     parts = []
-    for sep in [";", "·", ","]:
+    for sep in [";", "", ","]:
         if sep in s:
             parts = [p.strip() for p in s.split(sep) if p.strip()]
             if len(parts) >= 12:
                 break
     if len(parts) < 12:
         raw_chars = []
-        in_bracket = False
         for c in s:
-            if c in "⟨":
-                in_bracket = True
-                continue
-            elif c in "⟩":
-                continue
-            if in_bracket and c.strip() and ord(c) >= 0x10450:
+            if c == "⊙" or (c.strip() and ord(c) >= 0x10450):
                 raw_chars.append(c)
         if len(raw_chars) >= 12:
-            raw_chars = raw_chars[:12]
             result = {}
-            for i, glyph in enumerate(raw_chars):
-                result[PRIMITIVE_KEYS[i]] = SHAVIAN_TO_VALUE.get(glyph, f"unknown:{glyph}")
+            for i, glyph in enumerate(raw_chars[:12]):
+                result[PRIMITIVE_KEYS[i]] = glyph if glyph in ALL_GLYPHS else f"unknown:{glyph}"
             return result
     if len(parts) >= 12:
         parts = parts[:12]
@@ -539,44 +466,19 @@ def parse_tuple(tuple_str_or_dict):
         val = part
         if "=" in val:
             left, right = val.split("=", 1)
-            left_s = left.strip()
-            right_s = right.strip()
-            prim_markers = {"Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "φ", "Ħ", "Σ", "Ω"}
-            if left_s in prim_markers:
-                val = right_s
-        val = val.strip(";,·")
-        if val in SHAVIAN_TO_VALUE:
-            result[key] = SHAVIAN_TO_VALUE[val]
-        elif val in PRIMITIVE_NOTATION.values():
-            for pn, notation in PRIMITIVE_NOTATION.items():
-                if notation == val:
-                    result[key] = pn
-                    break
-        elif any(val.endswith(s) for s in ["_ω","_ß","_C","_;","_O","_6","_K","_ò","_¨",
-            "_=","_¯","_Ť","_ý","_}","_ɐ","_υ","_F","_˙",
-            "_ż","_ì","_ð","_@","_-","_W","_Ù","_λ",
-            "_ʔ","_β","_γ","_ˌ","_^","_˝","_Ş",
-            "_ÿ","_ž","_Æ","_3","_Ţ",
-            "_!","_Ñ","_£","_A",
-            "_ï","_S","_ő",
-            "_z","_Å","_2","_5"]):
-            for pn, notation in PRIMITIVE_NOTATION.items():
-                if notation == val:
-                    result[key] = pn
-                    break
-            else:
-                result[key] = val
-        else:
-            result[key] = val
+            if left.strip() in set(PRIMITIVE_KEYS):
+                val = right.strip()
+        val = val.strip(";,")
+        result[key] = val
     return result
 
 def tuple_to_shavian(t):
-    parts = [VALUE_TO_SHAVIAN.get(t.get(k, "?"), "?") for k in PRIMITIVE_KEYS]
-    return "⟨" + "·".join(parts) + "⟩"
+    parts = [t.get(k, "?") for k in PRIMITIVE_KEYS]
+    return "⟨" + "".join(parts) + "⟩"
 
 def tuple_to_notation(t):
-    parts = [PRIMITIVE_NOTATION.get(t.get(k, "?"), str(t.get(k, "?"))) for k in PRIMITIVE_KEYS]
-    return "⟨" + "; ".join(parts) + "⟩"
+    parts = [t.get(k, "?") for k in PRIMITIVE_KEYS]
+    return "⟨" + "".join(parts) + "⟩"
 
 def distance(t1, t2):
     total = 0.0
@@ -589,8 +491,7 @@ def distance(t1, t2):
             diff = ords[v1] - ords[v2]
             total += diff * diff
             if diff != 0:
-                conflicts.append({"primitive":key,"notation_a":PRIMITIVE_NOTATION.get(v1,v1),
-                    "notation_b":PRIMITIVE_NOTATION.get(v2,v2),"delta":diff})
+                conflicts.append({"primitive":key,"a":v1,"b":v2,"delta":diff})
         else:
             total += 1.0
             conflicts.append({"primitive":key,"a":v1,"b":v2,"delta":"unknown"})
@@ -605,8 +506,7 @@ def promotions(t1, t2):
         if v1 in ords and v2 in ords:
             diff = ords[v2] - ords[v1]
             if diff > 0:
-                result.append({"primitive":key,"from":PRIMITIVE_NOTATION.get(v1,v1),
-                    "to":PRIMITIVE_NOTATION.get(v2,v2),"steps":diff})
+                result.append({"primitive":key,"from":v1,"to":v2,"steps":diff})
     return sorted(result, key=lambda x: -x["steps"])
 
 def tensor_product(t1, t2):
@@ -616,7 +516,7 @@ def tensor_product(t1, t2):
         v2 = t2.get(key)
         ords = ORDINALS[key]
         if v1 in ords and v2 in ords:
-            idx = min(ords[v1], ords[v2]) if key in ("P","F") else max(ords[v1], ords[v2])
+            idx = min(ords[v1], ords[v2]) if key in ("Φ","ƒ") else max(ords[v1], ords[v2])
             for val, ordval in ords.items():
                 if ordval == idx:
                     result[key] = val
@@ -664,11 +564,11 @@ def frobenius_absorption_check(t):
     return absorbed, bottlenecks, tensor
 
 def ouroboricity_tier(t):
-    has_gate = t.get("P") == "P_pm_sym" and t.get("Phi") == "Phi_c"
-    has_h_inf = t.get("H") == "H_inf"
-    has_d_odot = t.get("D") == "D_odot"
-    has_t_odot = t.get("T") == "T_odot"
-    has_omega_z = t.get("Omega") in ("Omega_Z", "Omega_NA")
+    has_gate = t.get("Φ") == "𐑹" and t.get("⊙") == "⊙"
+    has_h_inf = t.get("Ħ") == "𐑫"
+    has_d_odot = t.get("Ð") == "𐑦"
+    has_t_odot = t.get("Þ") == "𐑸"
+    has_omega_z = t.get("Ω") in ("𐑭", "𐑟")
     if has_gate and has_h_inf and has_d_odot and has_t_odot and has_omega_z:
         return "O_inf"
     elif has_gate and has_h_inf:
@@ -681,8 +581,8 @@ def ouroboricity_tier(t):
         return "O_0"
 
 def consciousness_score(t):
-    gate1_open = t.get("Phi") == "Phi_c"
-    gate2_open = t.get("K") == "K_slow"
+    gate1_open = t.get("⊙") == "⊙"
+    gate2_open = t.get("Ç") == "𐑧"
     score = (0.5 if gate1_open else 0.0) + (0.5 if gate2_open else 0.0)
     return {"C_score": score, "gate1_phi_c": gate1_open, "gate2_k_slow": gate2_open,
         "interpretation": ("Both gates open — full self-modeling loop" if score == 1.0
@@ -765,9 +665,8 @@ def action_formulas():
         entries = []
         for val_key, (fragment, atom) in sorted(formula_map.items(),
             key=lambda x: ORDINALS[prim_key].get(x[0], 999)):
-            notation = PRIMITIVE_NOTATION.get(val_key, val_key)
             entries.append({
-                "value": notation,
+                "value": val_key,
                 "zfc_fragment": fragment,
                 "promoted_atom": atom,
             })
@@ -785,7 +684,7 @@ def action_promotions():
         "zfc_to_zfc_t": {"count":len(proms_zfc_to_zfc_t),"promotions":proms_zfc_to_zfc_t,
             "note":"6 ZFCₜ promotions: HOLOBOUND, LR_DUAL, PM_Z2, SEQAX, TEMPD2, ZWIND"},
         "zfc_t_to_zfc_fe": {"count":len(proms_zfc_t_to_fe),"promotions":proms_zfc_t_to_fe,
-            "note":"2 new ZFC_fe atoms: HOLOGRAPHIC_STATE (Axiom C), ETERNAL_FIXEDPOINT (H_inf)"},
+            "note":"2 new ZFC_fe atoms: HOLOGRAPHIC_STATE (Axiom C), ETERNAL_FIXEDPOINT (𐑫)"},
         "zfc_to_zfc_fe": {"count":len(proms_zfc_to_fe),"promotions":proms_zfc_to_fe,
             "note":"7 total from ZFC baseline to ZFC_fe"}}
 
@@ -846,11 +745,11 @@ def action_tier(name):
     tier = ouroboricity_tier(t)
     c_score = consciousness_score(t)
     missing = {}
-    for check_key, check_val, label in [
-        ("P","P_pm_sym","Φ_}"),("Phi","Phi_c","φ̂_ÿ"),("H","H_inf","Ħ_!"),
-        ("D","D_odot","Ð_ω"),("T","T_odot","Þ_O"),("Omega","Omega_Z","Ω_z")]:
+    for check_key, check_val in [
+        ("Φ","𐑹"),("⊙","⊙"),("Ħ","𐑫"),
+        ("Ð","𐑦"),("Þ","𐑸"),("Ω","𐑭")]:
         if t.get(check_key) != check_val:
-            missing[label] = {"current":PRIMITIVE_NOTATION.get(t.get(check_key),str(t.get(check_key)))}
+            missing[check_val] = {"current": t.get(check_key, "?")}
     return {"status":"ok","system":name if name in KNOWN_SYSTEMS else "custom",
         "tier":tier,"consciousness_score":c_score,"missing_for_O_inf":missing}
 
@@ -877,7 +776,7 @@ def action_decode(shavian_str):
     if not t:
         return {"status":"error","message":"Could not decode tuple from input"}
     return {"status":"ok","input":shavian_str,
-        "decoded":{k:PRIMITIVE_NOTATION.get(v,v) for k,v in t.items()},
+        "decoded":dict(t.items()),
         "notation":tuple_to_notation(t),"shavian":tuple_to_shavian(t)}
 
 def action_encode(notation_str):
@@ -886,6 +785,89 @@ def action_encode(notation_str):
         return {"status":"error","message":"Could not encode tuple from input"}
     return {"status":"ok","input":notation_str,
         "shavian":tuple_to_shavian(t),"notation":tuple_to_notation(t)}
+
+
+# =============================================================================
+# RICH TABLE RENDERER  (matches zfc_navigator output format)
+# =============================================================================
+
+def _print_entry_table(result: dict):
+    import textwrap as _tw
+    W = 80; PW = 5; VW = 18; FW = W - 2 - PW - 2 - VW - 2
+
+    print("\n" + "═" * W)
+    print(f"  ENTRY: {result.get('system', '?')}")
+    desc = result.get("description", "")
+    if desc:
+        for line in _tw.wrap(desc, W - 4):
+            print(f"  {line}")
+    print("═" * W)
+
+    fd = result.get("formula_decomposition", {})
+    frags = fd.get("per_primitive_fragments", [])
+    legend = {}
+
+    print()
+    print(f"  {'Prim':<{PW}}  {'Value':<{VW}}  ZFC fragment")
+    print(f"  {'─'*PW}  {'─'*VW}  {'─'*FW}")
+
+    for frag in frags:
+        p        = frag["primitive"]
+        val      = frag["value"]
+        formula  = frag["zfc_fragment"]
+        atom     = frag.get("promoted_atom")
+
+        atom_tags = f"[{atom}]" if atom else ""
+        if atom and atom not in legend:
+            legend[atom] = atom
+
+        right = atom_tags
+        if right:
+            gap = FW - len(formula) - len(right)
+            if gap < 1:
+                formula = formula[:FW - len(right) - 2] + "…"
+                gap = 1
+            formula_field = formula + " " * gap + right
+        else:
+            formula_field = formula
+
+        print(f"  {p:<{PW}}  {val:<{VW}}  {formula_field}")
+
+    _ATOM_DESC = {
+        "HOLOGRAPHIC_STATE":   "V=L(x) self-writing state-space — Axiom C (𐑦)",
+        "HOLOBOUND":           "holographic bound_⊙/bulk encoding — 𐑸",
+        "LR_DUAL":             "lateral relational duality — 𐑾",
+        "PM_Z2":               "ℤ₂ parity with Frobenius μ∘δ=id — 𐑹",
+        "SEQAX":               "sequentiality axiom, directed time — 𐑠",
+        "PHI_C":               "criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙",
+        "TEMPD2":              "chirality-2 asymmetry — 𐑖",
+        "ETERNAL_FIXEDPOINT":  "∀n∃φ fixed by μ∘δ — Axiom D (𐑫)",
+        "ZWIND":               "integer winding number — 𐑭",
+    }
+    if legend:
+        print()
+        kw = max(len(k) for k in legend)
+        for atom in legend:
+            note = _ATOM_DESC.get(atom, "")
+            print(f"  [{atom:<{kw}}] {note}")
+
+    # Full ZFC conjunction
+    full = fd.get("full_zfc_formula", "")
+    if full:
+        print(f"\n── ZFC expression {'─' * (W - 18)}")
+        for i, line in enumerate(full.split(" ∧\n    ")):
+            suffix = " ∧" if i < full.count(" ∧\n    ") else ""
+            print(f"  {line}{suffix}")
+
+    # Structural summary
+    sa = result.get("structural_algebra", {})
+    tier = sa.get("ouroboricity_tier", "?")
+    d    = sa.get("distance_from_zfc_fe", "?")
+    c    = sa.get("consciousness_score", {}).get("C_score", "?")
+    print(f"\n  tier: {tier}   d(ZFC_fe): {d}   C: {c}")
+    promoted = fd.get("promoted_atoms", [])
+    if promoted:
+        print(f"  promoted atoms: {', '.join(promoted)}")
 
 
 # =============================================================================
@@ -945,27 +927,40 @@ def main():
 
     if action in ("formulas", "promotions", "systems", "train"):
         result = action_map[action](None)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
     elif action in ("decode", "encode"):
         if not arg:
             print(f"Usage: zfcfe_navigator.py {action} <string>")
             sys.exit(1)
-        result = action_map[action](arg)
-    elif action == "model_entry":
-        if not arg:
-            print(f"Usage: zfcfe_navigator.py model_entry <name>")
-            load_catalog()
-            print(f"Known systems: {', '.join(list_known_systems())}")
-            sys.exit(1)
-        result = action_map[action](arg)
-    else:
+        print(json.dumps(action_map[action](arg), indent=2, ensure_ascii=False))
+    elif action in ("entry", "model_entry"):
         if not arg:
             print(f"Usage: zfcfe_navigator.py {action} <name>")
             load_catalog()
             print(f"Known systems: {', '.join(list_known_systems())}")
             sys.exit(1)
         result = action_map[action](arg)
+        if result.get("status") == "error":
+            print(f"[entry] {result['message']}")
+        else:
+            _print_entry_table(result)
+    else:
+        if not arg:
+            print(f"Usage: zfcfe_navigator.py {action} <name>")
+            load_catalog()
+            print(f"Known systems: {', '.join(list_known_systems())}")
+            sys.exit(1)
+        print(json.dumps(action_map[action](arg), indent=2, ensure_ascii=False))
 
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+
+def _model_predict(name):
+    """Stub — ZFCfe encoder not yet trained. action_model_entry falls back to formula-based."""
+    return {"status": "error", "message": "ZFCfe encoder model not available — run 'train' first"}
+
+
+def action_train(_):
+    """Stub — ZFCfe encoder training not yet implemented."""
+    return {"status": "error", "message": "ZFCfe encoder training not yet implemented"}
 
 
 def action_model_entry(name):

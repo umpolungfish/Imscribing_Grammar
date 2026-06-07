@@ -14,14 +14,14 @@ Paraconsistent tensor rule (bottleneck preserved):
   para_tensor(A,B)[p] = { min_ord(a,b) | a∈A[p], b∈B[p] }   p ∈ {Φ,ƒ}
   para_tensor(A,B)[p] = { max_ord(a,b) | a∈A[p], b∈B[p] }   otherwise
 
-The Frobenius cliff in paraconsistent setting: forcing Φ to B{v, Φ_}} does NOT
+The Frobenius cliff in paraconsistent setting: forcing Φ to B{v, 𐑹} does NOT
 collapse to T after tensor composition — the min-bottleneck preserves the lower
 value, leaving the result in B-state. A classical proof of an MPP is exactly a
-demonstration that the B-state collapses to T for Φ_}: that the object in question
+demonstration that the B-state collapses to T for 𐑹: that the object in question
 genuinely carries Frobenius structure rather than merely being consistent with it.
 
 New REPL commands (all prefixed :para-):
-  :para-cliff [name]              Frobenius cliff with Φ forced to B{v,Φ_}}
+  :para-cliff [name]              Frobenius cliff with Φ forced to B{v,𐑹}
   :para-tensor <A> <B>            paraconsistent tensor
   :para-reach <name>              Belnap tier-reachability per tier
   :para-assign <name> <p> <v...>  set belief[p] to the listed values
@@ -49,19 +49,19 @@ from zfct_zfcs_zfc_manipulator import (
     _BOTTLENECK_PRIMS, tensor_tuples,
 )
 
-_FROB_VAL   = "Φ_}"   # P_pm_sym — the Frobenius gate value for Φ
-_ODOT_CRIT  = "⊙_ÿ"   # ⊙ critical value (ord ≥ 1)
+_FROB_VAL   = "𐑹"   # 𐑹 — the Frobenius gate value for Φ
+_ODOT_CRIT  = "⊙"   # ⊙ critical value (ord ≥ 1)
 
 
 # ── Belnap four-valued logic ──────────────────────────────────────────────────
 
 class Belnap(Enum):
-    T = "T"   # true:        all classical realizations satisfy
-    F = "F"   # false:       no  classical realization satisfies
+    T = "Þ"   # true:        all classical realizations satisfy
+    F = "ƒ"   # false:       no  classical realization satisfies
     B = "B"   # both:        some satisfy, some do not (overdetermined)
     N = "N"   # neither:     empty belief set (underdetermined)
 
-_SYM   = {Belnap.T: "T", Belnap.F: "F", Belnap.B: "B", Belnap.N: "N"}
+_SYM   = {Belnap.T: "Þ", Belnap.F: "ƒ", Belnap.B: "B", Belnap.N: "N"}
 _COLOR = {Belnap.T: "green", Belnap.F: "red", Belnap.B: "magenta", Belnap.N: "yellow"}
 
 # Belnap truth-order for display sorting: F < N < B < T
@@ -258,7 +258,7 @@ def _tier_conditions(e: ParaEntry) -> Dict[str, Belnap]:
     Return Belnap values for the four primitive conditions that determine tier:
 
       crit:  ⊙ ≥ ord 1       (required for O_1, O_2, O_2dag, O_inf)
-      frob:  Φ = Φ_}          (required for O_inf)
+      frob:  Φ = 𐑹          (required for O_inf)
       wind:  Ω ≥ ord 1        (distinguishes O_1 from O_2/O_2dag)
       dinf:  Ð ≥ ord 2        (distinguishes O_2 from O_2dag)
     """
@@ -298,7 +298,7 @@ def _tier_conditions(e: ParaEntry) -> Dict[str, Belnap]:
 PARA_HELP = """
 Paraconsistent commands — Belnap FOUR over the 12-primitive crystal lattice
 
-  :para-cliff [name]              Frobenius cliff: force Φ → B{v,Φ_}}, trace propagation
+  :para-cliff [name]              Frobenius cliff: force Φ → B{v,𐑹}, trace propagation
   :para-tensor <A> <B>            paraconsistent tensor (belief cross-products)
   :para-reach <name>              Belnap tier-reachability (T/F/B/N per tier)
   :para-assign <name> <p> <v...>  set belief[p] = {v1, v2, ...}
@@ -312,12 +312,12 @@ Belnap states:
   N = neither empty belief set (underdetermined — no classical realization)
 
 Interpretation:
-  A B-state at Φ means the entry is simultaneously ZFC-level (Φ_ɐ) and
-  ZFCₜ-level (Φ_}). The Frobenius min-bottleneck preserves this B-state through
+  A B-state at Φ means the entry is simultaneously ZFC-level (𐑗) and
+  ZFCₜ-level (𐑹). The Frobenius min-bottleneck preserves this B-state through
   tensor composition — it does NOT collapse to T automatically.
 
   A classical proof of an MPP axiom is a demonstration that the B-state collapses
-  to T for Φ_}: the mathematical object (zeta zeros, YM measure, NS cascade) is
+  to T for 𐑹: the mathematical object (zeta zeros, YM measure, NS cascade) is
   shown to genuinely carry Frobenius structure. The B-state is not a shortcut —
   it is a precise statement of what the proof must accomplish.
 """.strip()
@@ -387,13 +387,13 @@ class ParaManipulator(ZFCTriangleManipulator):
 
     def cmd_para_cliff(self, name: str = "imaginary_unit", console=None):
         """
-        Force Φ from its current value to B{current, Φ_}}, then trace what
+        Force Φ from its current value to B{current, 𐑹}, then trace what
         happens when para_tensor is applied with ZFCₜ.
 
         Shows:
           - Classical entry (T-state) and its tier
           - B-forced entry (Φ in B-state) and its para-tier
-          - para_tensor(B-forced, ZFCₜ) — does Φ_} survive?
+          - para_tensor(B-forced, ZFCₜ) — does 𐑹 survive?
           - Whether the B-state collapses, propagates, or is blocked
         """
         pe = self._resolve_para(name)
@@ -410,7 +410,7 @@ class ParaManipulator(ZFCTriangleManipulator):
         phi_current = list(pe.belief["Φ"])[0] if len(pe.belief["Φ"]) == 1 else None
 
         if phi_current == _FROB_VAL:
-            msg = (f"  {pe.name}: Φ already = Φ_}} (Frobenius) — no cliff for this entry.\n"
+            msg = (f"  {pe.name}: Φ already = 𐑹 (Frobenius) — no cliff for this entry.\n"
                    f"  tier = {classical_tier}  (T:O_inf)")
             if console:
                 console.print(f"[green]{msg}[/green]")
@@ -418,7 +418,7 @@ class ParaManipulator(ZFCTriangleManipulator):
                 print(msg)
             return
 
-        # force Φ to B{current, Φ_}}
+        # force Φ to B{current, 𐑹}
         pe_b = pe.force_both("Φ", _FROB_VAL)
 
         # para-tensor of B-forced entry with ZFCₜ
@@ -440,25 +440,25 @@ class ParaManipulator(ZFCTriangleManipulator):
 
         # interpretation
         if len(phi_tensored) == 1 and _FROB_VAL in phi_tensored:
-            interpretation = ("COLLAPSE TO T: para_tensor collapsed Φ to Φ_} alone.\n"
+            interpretation = ("COLLAPSE TO T: para_tensor collapsed Φ to 𐑹 alone.\n"
                               "  This means ZFCₜ dominates at Φ — the Frobenius gate is "
                               "fully open in the result.\n"
-                              "  In practice this cannot happen for entries below Φ_}: "
+                              "  In practice this cannot happen for entries below 𐑹: "
                               "the min-bottleneck blocks it.")
         elif b_after:
             phi_ords = sorted(phi_tensored, key=lambda v: int(ORDINALS["Φ"][v]))
             interpretation = (
                 f"B-STATE PROPAGATES: Φ remains overdetermined = {{{', '.join(phi_ords)}}}.\n"
-                f"  The min-bottleneck preserved the lower value ({phi_ords[0]}) alongside Φ_}}.\n"
+                f"  The min-bottleneck preserved the lower value ({phi_ords[0]}) alongside 𐑹.\n"
                 f"  The tier is B:{tier_tensored.get('O_inf', Belnap.F).value} for O_inf.\n"
-                f"  A classical proof must show Φ_ɐ is NOT a valid assignment — i.e., that\n"
+                f"  A classical proof must show 𐑗 is NOT a valid assignment — i.e., that\n"
                 f"  the mathematical object in question genuinely has Frobenius structure.\n"
                 f"  The B-state is the proof obligation, not a proof.")
         else:
             interpretation = (
                 f"CLIFF HOLDS: Φ = {list(phi_tensored)[0]} — Frobenius was not reached.\n"
-                f"  The min-bottleneck completely blocked Φ_}}.\n"
-                f"  No composition with ZFCₜ can synthesize Φ_}} from this starting point.")
+                f"  The min-bottleneck completely blocked 𐑹.\n"
+                f"  No composition with ZFCₜ can synthesize 𐑹 from this starting point.")
 
         lines = [
             f"Frobenius cliff (paraconsistent):  {pe.name}",
@@ -545,7 +545,7 @@ class ParaManipulator(ZFCTriangleManipulator):
             "",
             "  Tier conditions:",
             f"    crit  (⊙ ≥ 1):   {_SYM[conds['crit']]}",
-            f"    frob  (Φ = Φ_}}): {_SYM[conds['frob']]}",
+            f"    frob  (Φ = 𐑹): {_SYM[conds['frob']]}",
             f"    wind  (Ω ≥ 1):   {_SYM[conds['wind']]}",
             f"    dinf  (Ð ≥ 2):   {_SYM[conds['dinf']]}",
         ]
@@ -560,12 +560,12 @@ class ParaManipulator(ZFCTriangleManipulator):
             lines += [
                 "",
                 "  ◈ O_inf is B: entry is consistent with Frobenius but not confirmed.",
-                "    Proof obligation: show Φ = Φ_} is the only valid assignment.",
+                "    Proof obligation: show Φ = 𐑹 is the only valid assignment.",
             ]
         elif o_inf_state == Belnap.F:
             lines += [
                 "",
-                f"  ✗ O_inf is F: Frobenius not reached. Gap: {4 - int(ORDINALS['Φ'][list(pe.belief['Φ'])[0] if pe.belief['Φ'] else 'Φ_ɐ'])} step(s) in Φ.",
+                f"  ✗ O_inf is F: Frobenius not reached. Gap: {4 - int(ORDINALS['Φ'][list(pe.belief['Φ'])[0] if pe.belief['Φ'] else '𐑗'])} step(s) in Φ.",
             ]
 
         if console:

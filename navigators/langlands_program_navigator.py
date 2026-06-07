@@ -2,22 +2,22 @@
 Langlands Program Navigator - Imscribing Grammar
 
 Domain: Langlands program, automorphic forms, arithmetic geometry
-Structural type: <Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z>
+Structural type: <𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭>
 Tier: O_inf
 
 Architecture: Automorphic-Galois bridge with functoriality enforcement.
-  - Ð_ω: Imscriptive encoding of all number fields, groups, representations
-  - Þ_O: Imscriptive topology (Galois reps ↔ automorphic forms ↔ L-functions)
-  - Ř_Ť: Adjoint functoriality (base change, lift, descent)
-  - Φ_}: Frobenius with uncertainty between global/local and archimedean/non-archimedean
-  - ƒ^ż: Preserves L-function identities, functional equations, period relations
-  - Ç^@: Slow exploration through moduli of automorphic representations
-  - Γ_ʔ: Arbitrary number fields, reductive groups, representations
-  - ɢ^Ş: Broad correspondence (not sequential, global-to-global)
-  - ⊙_ÿ: Self-modeling (Langlands duality as self-duality of L-group)
-  - Ħ_!: Eternal (infinite descent, infinite extensions)
-  - Σ_ï: Many heterogeneous objects (GL_n, PGL_n, tori, torus shells)
-  - Ω_z: Integer winding (motivic weight, conductor exponent, L-function order)
+  - 𐑦: Imscriptive encoding of all number fields, groups, representations
+  - 𐑸: Imscriptive topology (Galois reps ↔ automorphic forms ↔ L-functions)
+  - 𐑽: Adjoint functoriality (base change, lift, descent)
+  - 𐑹: Frobenius with uncertainty between global/local and archimedean/non-archimedean
+  - 𐑐: Preserves L-function identities, functional equations, period relations
+  - 𐑧: Slow exploration through moduli of automorphic representations
+  - 𐑲: Arbitrary number fields, reductive groups, representations
+  - 𐑵: Broad correspondence (not sequential, global-to-global)
+  - ⊙: Self-modeling (Langlands duality as self-duality of L-group)
+  - 𐑫: Eternal (infinite descent, infinite extensions)
+  - 𐑳: Many heterogeneous objects (GL_n, PGL_n, tori, torus shells)
+  - 𐑭: Integer winding (motivic weight, conductor exponent, L-function order)
 
 Purpose: Navigate Langlands correspondences, verify functoriality, compute L-functions,
   match Galois representations with automorphic forms, detect base change.
@@ -40,7 +40,7 @@ class LanglandsConfig:
             "matches Galois-automorphic pairs, implements base change and descent."
         )
         self.domain = "Langlands program, automorphic forms, arithmetic geometry, Galois theory"
-        self.tuple = "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z"
+        self.tuple = "𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭"
         self.tier = "O_inf"
         self.architecture = (
             "Galois-automorphic bridge - Galois reps and automorphic forms communicate "
@@ -48,18 +48,18 @@ class LanglandsConfig:
             "base change verified by matching Satake parameters"
         )
         
-        self.D = "Ð_ω"
-        self.T = "Þ_O"
-        self.R = "Ř_Ť"
-        self.P = "Φ_}"
-        self.F = "ƒ^ż"
-        self.K = "Ç^@"
-        self.G = "Γ_ʔ"
-        self.Gamma = "ɢ^Ş"
-        self.Phi = "⊙_ÿ"
-        self.H = "Ħ_!"
-        self.S = "Σ_ï"
-        self.Omega = "Ω_z"
+        self.D = "𐑦"
+        self.T = "𐑸"
+        self.R = "𐑽"
+        self.P = "𐑹"
+        self.F = "𐑐"
+        self.K = "𐑧"
+        self.G = "𐑲"
+        self.Gamma = "𐑵"
+        self.Phi = "⊙"
+        self.H = "𐑫"
+        self.S = "𐑳"
+        self.Omega = "𐑭"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -263,7 +263,7 @@ _L_FUNCTIONS = {
         "name": "Trivial (Riemann zeta)",
         "group": "GL(1)/Q",
         "form": "ζ(s) = Σ n^{-s}  (Re(s) > 1)",
-        "functional_eq": "ξ(s) = ξ(1−s)  where ξ(s) = π^{-s/2}·Γ(s/2)·ζ(s)",
+        "functional_eq": "ξ(s) = ξ(1−s)  where ξ(s) = π^{-s/2}Γ(s/2)ζ(s)",
         "poles": "Simple pole at s=1, simple zero at s=0 (trivial zero); non-trivial zeros on Re(s)=1/2 (RH)",
         "special_vals": {"1": "pole", "0": "−1/2", "−1": "−1/12 (Ramanujan)", "2": "π²/6"},
         "euler_product": "ζ(s) = Π_p (1 − p^{−s})^{−1}  (over all primes p)",
@@ -273,33 +273,33 @@ _L_FUNCTIONS = {
     "GL2_newform": {
         "name": "GL(2) newform (weight-2 Hecke eigenform)",
         "group": "GL(2)/Q",
-        "form": "L(s,f) = Σ a_n·n^{−s}  (a_n Hecke eigenvalues, Re(s) > 3/2)",
-        "functional_eq": "Λ(s,f) = ε·N^{1/2−s}·Λ(1−s,f̄)  where Λ = completed L-fn",
+        "form": "L(s,f) = Σ a_nn^{−s}  (a_n Hecke eigenvalues, Re(s) > 3/2)",
+        "functional_eq": "Λ(s,f) = εN^{1/2−s}Λ(1−s,f̄)  where Λ = completed L-fn",
         "poles": "Entire (no poles); functional eq about s=1/2",
         "special_vals": {"1": "related to BSD conjecture (elliptic curve rank)", "1/2": "central value (Birch-SD)"},
-        "euler_product": "L(s,f) = Π_p (1 − a_p·p^{−s} + χ(p)·p^{1−2s})^{−1}",
+        "euler_product": "L(s,f) = Π_p (1 − a_pp^{−s} + χ(p)p^{1−2s})^{−1}",
         "galois_match": "2-dim Galois rep ρ_f: Gal(Q̄/Q) → GL_2(Z_ℓ)  (Eichler-Shimura)",
         "conductor": "N = level of f  (e.g. N=11 for first weight-2 newform)",
     },
     "Dirichlet_chi3": {
         "name": "Dirichlet L-function, χ mod 3 (non-trivial character)",
         "group": "GL(1)/Q",
-        "form": "L(s,χ) = Σ χ(n)·n^{−s} = (1 − χ(2)·2^{−s})^{−1}·(1 − χ(3)·3^{−s})^{−1}·…",
-        "functional_eq": "τ(χ)·L(1−s,χ̄) = (π/3)^{s−1/2}·Γ((1−s)/2)/Γ(s/2)·L(s,χ)",
+        "form": "L(s,χ) = Σ χ(n)n^{−s} = (1 − χ(2)2^{−s})^{−1}(1 − χ(3)3^{−s})^{−1}…",
+        "functional_eq": "τ(χ)L(1−s,χ̄) = (π/3)^{s−1/2}Γ((1−s)/2)/Γ(s/2)L(s,χ)",
         "poles": "Entire (no poles); L(1,χ) ≠ 0 (Dirichlet's theorem)",
         "special_vals": {"0": "0 (trivial zero from Γ)", "1": "L(1,χ₃) = π/(3√3)"},
-        "euler_product": "Π_p (1 − χ(p)·p^{−s})^{−1}  (Euler product)",
+        "euler_product": "Π_p (1 − χ(p)p^{−s})^{−1}  (Euler product)",
         "galois_match": "GL(1) Galois representation: χ viewed as Galois char via class field theory",
         "conductor": "N = 3",
     },
     "Ramanujan_Delta": {
         "name": "Ramanujan Δ-function (weight-12 cusp form)",
         "group": "GL(2)/Q",
-        "form": "L(s,Δ) = Σ τ(n)·n^{−s}  (τ = Ramanujan tau function, Re(s) > 13/2)",
+        "form": "L(s,Δ) = Σ τ(n)n^{−s}  (τ = Ramanujan tau function, Re(s) > 13/2)",
         "functional_eq": "Λ(s,Δ) = Λ(12−s,Δ)  (weight 12, level 1)",
         "poles": "Entire",
         "special_vals": {"11/2": "central value (|τ(p)| ≤ 2p^{11/2}  by Deligne's theorem)"},
-        "euler_product": "Π_p (1 − τ(p)·p^{−s} + p^{11−2s})^{−1}",
+        "euler_product": "Π_p (1 − τ(p)p^{−s} + p^{11−2s})^{−1}",
         "galois_match": "2-dim ℓ-adic rep ρ_Δ: Gal → GL_2(Z_ℓ), weight 11 Weil numbers",
         "conductor": "N = 1  (full modular group SL₂(Z))",
     },
@@ -307,10 +307,10 @@ _L_FUNCTIONS = {
         "name": "Artin L-function for S₃ extension",
         "group": "GL(1) and GL(2) factors",
         "form": "L(s,ρ) for ρ: Gal(K/Q) → GL(V), K/Q with Gal ≅ S₃",
-        "functional_eq": "Λ(s,ρ) = ε(ρ)·Λ(1−s,ρ̄)  (functional equation from Artin conjecture)",
+        "functional_eq": "Λ(s,ρ) = ε(ρ)Λ(1−s,ρ̄)  (functional equation from Artin conjecture)",
         "poles": "Conjectured entire (Artin conjecture, proved for monomial reps)",
         "special_vals": {"0": "related to class numbers and units via analytic class number formula"},
-        "euler_product": "Π_p det(I − ρ(Frob_p)·p^{−s})^{−1}  (Euler product at unramified primes)",
+        "euler_product": "Π_p det(I − ρ(Frob_p)p^{−s})^{−1}  (Euler product at unramified primes)",
         "galois_match": "The representation ρ itself — Artin L-fn is the definition of the Galois side",
         "conductor": "disc(K/Q)  (discriminant of the number field)",
     },
@@ -388,13 +388,13 @@ def cmd_l_function(rep_name, s_value):
         print()
         print(f"  General L-function structure (Langlands):")
         print(f"    L(s,π) = Π_v L(s,π_v)  (Euler product over all places v)")
-        print(f"    Completed: Λ(s,π) = L(s,π_∞)·L(s,π_f)")
-        print(f"    Functional equation: Λ(s,π) = ε(π)·Λ(1−s,π̃)")
+        print(f"    Completed: Λ(s,π) = L(s,π_∞)L(s,π_f)")
+        print(f"    Functional equation: Λ(s,π) = ε(π)Λ(1−s,π̃)")
 
     print()
     print("─" * 55)
-    print("Grammar: Ω_z (order of zero/pole ∈ ℤ), ƒ^ż (functional eq = exact)")
-    print("         ⊙_ÿ (self-modeling: L-group encodes its own dual)")
+    print("Grammar: 𐑭 (order of zero/pole ∈ ℤ), 𐑐 (functional eq = exact)")
+    print("         ⊙ (self-modeling: L-group encodes its own dual)")
 
 
 def main():

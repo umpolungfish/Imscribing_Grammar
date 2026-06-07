@@ -31,8 +31,8 @@ TIER_LABELS = {
     "O_0":    "O₀  (semasiographic baseline — non-critical ⊙)",
     "O_1":    "O₁  (critical, Omega-bound — ⊙≥1, Ω=0)",
     "O_2":    "O₂  (recursive, finite dim — ⊙≥1, Ω≥1, Ð<2)",
-    "O_2dag": "O₂† (recursive, D_infty — ⊙≥1, Ω≥1, Ð≥2)",
-    "O_inf":  "O_∞ (Frobenius round-trip — ⊙≥1 ∧ Φ=Φ_})",
+    "O_2dag": "O₂† (recursive, 𐑼 — ⊙≥1, Ω≥1, Ð≥2)",
+    "O_inf":  "O_∞ (Frobenius round-trip — ⊙≥1 ∧ Φ=𐑹)",
 }
 
 TIER_ORDER = {"O_0": 0, "O_1": 1, "O_2": 2, "O_2dag": 3, "O_inf": 4}
@@ -49,14 +49,14 @@ TIER_COLOR = {
 def compute_tier(t: dict) -> str:
     """
     OuroboricityTier rules (from Imscribing.Primitives.Imscription):
-      R1: ⊙ ≥ ord 1 (critical)  ∧  Φ = Φ_} (P_pm_sym)  →  O_inf
-      R2: ⊙ = ord 0 (⊙_ž)                               →  O_0
-      R3: ⊙ ≥ 1  ∧  Ω = ord 0 (Ω_Å)                    →  O_1
+      R1: ⊙ ≥ ord 1 (critical)  ∧  Φ = 𐑹 (𐑹)  →  O_inf
+      R2: ⊙ = ord 0 (𐑢)                               →  O_0
+      R3: ⊙ ≥ 1  ∧  Ω = ord 0 (𐑷)                    →  O_1
       R4: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð < ord 2                →  O_2
-      R5: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (D_infty)      →  O_2†
+      R5: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (𐑼)      →  O_2†
     """
     phi_c_ord = ORDINALS["⊙"][t["⊙"]]
-    phi_frob  = t["Φ"] == "Φ_}"
+    phi_frob  = t["Φ"] == "𐑹"
     omega_ord = ORDINALS["Ω"][t["Ω"]]
     dim_ord   = ORDINALS["Ð"][t["Ð"]]
     if phi_c_ord >= 1 and phi_frob:
@@ -210,18 +210,18 @@ class RuleExtractor:
             "",
             "─── Cross-primitive emergence rules (non-trivial) ───────────────────",
             "",
-            "  R-FROB-BARR FROB ∈ clauses(tensor(A,B))  iff  A[Φ]=Φ_} OR B[Φ]=Φ_}",
-            "              Φ_} = P_pm_sym, ordinal 4 = unique maximum",
-            "              → FROBENIUS CLIFF: P_pm_sym is non-synthesizable by tensor",
-            "                from any pair where neither input has P_pm_sym",
+            "  R-FROB-BARR FROB ∈ clauses(tensor(A,B))  iff  A[Φ]=𐑹 OR B[Φ]=𐑹",
+            "              𐑹 = 𐑹, ordinal 4 = unique maximum",
+            "              → FROBENIUS CLIFF: 𐑹 is non-synthesizable by tensor",
+            "                from any pair where neither input has 𐑹",
             "",
             "  R-FIXPT-T   FIXPT ∈ clauses(tensor(A,B))  iff  A[⊙] ord≥1 OR B[⊙] ord≥1",
-            "              ⊙_ÿ (Phi_c) is ordinal 1 — reached by any critical input",
+            "              ⊙ (⊙) is ordinal 1 — reached by any critical input",
             "",
             "  R-TIER-EMRG tier(tensor(A,B)) can exceed tier(A) and tier(B)",
             "              mechanism: FROB ∧ FIXPT cross-clause conjunction",
-            "              example:   A = O_2† with Φ_} but ⊙_ž  (has FROB, no FIXPT)",
-            "                         B = O_2† with ⊙_ÿ but Φ_F  (has FIXPT, no FROB)",
+            "              example:   A = O_2† with 𐑹 but 𐑢  (has FROB, no FIXPT)",
+            "                         B = O_2† with ⊙ but 𐑬  (has FIXPT, no FROB)",
             "                         tensor(A,B) has BOTH → O_inf",
             "",
             "  R-ZFCT-ABS  For all 6 ZFCₜ promotion channels c:",
@@ -280,7 +280,7 @@ ZFCₜ Manipulator — commands
 Entry names:
   special:   zfc  zfct  schrodinger  navier_stokes  einstein  iug  wave  heat
   catalog:   exact name or fuzzy substring match
-  inline:    Ð_;,Þ_O,Ř_=,Φ_F,ƒ^ż,Ç^@,Γ_ʔ,ɢ^ˌ,⊙_ÿ,Ħ_A,Σ_ï,Ω_z  (12 comma-separated)
+  inline:    𐑼,𐑸,𐑾,𐑬,𐑐,𐑧,𐑲,𐑠,⊙,𐑖,𐑳,𐑭  (12 comma-separated)
 """.strip()
 
 
@@ -612,13 +612,13 @@ class ZFCtManipulator:
             src = "A" if a_frob else "B"
             lines += [
                 f"  Barrier holds: FROB inherited from {src}, not synthesized.",
-                f"  R-FROB-BARR satisfied: Φ_}} propagates forward under ⊗.",
+                f"  R-FROB-BARR satisfied: 𐑹 propagates forward under ⊗.",
             ]
         else:
             lines += [
                 "  Barrier holds: neither input has FROB, tensor has none.",
                 f"  Gap to Frobenius: {frob_gap} ordinal step(s) in Φ from current max "
-                f"(Φ ord={max(phi_a_ord, phi_b_ord)}, need ord=4 for Φ_}}).",
+                f"(Φ ord={max(phi_a_ord, phi_b_ord)}, need ord=5 for 𐑹).",
             ]
 
         if t_tier == "O_inf" and a_tier != "O_inf" and b_tier != "O_inf":

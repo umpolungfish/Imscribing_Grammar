@@ -14,8 +14,8 @@ Shows three things:
 
   3. IDENTITY: GrammaFormer's WindingPositionalEncoding IS the QFT phase structure.
 
-     QFT matrix element:   F(j,k) = (1/√N) · exp(2πi·j·k / N)
-     WindingPE element:    W(pos, i) = exp(i · pos / base^(2i/d))
+     QFT matrix element:   F(j,k) = (1/√N)  exp(2πijk / N)
+     WindingPE element:    W(pos, i) = exp(i  pos / base^(2i/d))
 
      With base = N/(2π) and d = 2n, these are identical up to a frequency relabeling.
      The winding counter ω adds a global phase offset — exactly a controlled-phase gate.
@@ -177,7 +177,7 @@ class MPS:
         # apply gate: theta'[χL, σ0', σ1', χR]
         theta = np.einsum('ijkl,mnij->mnkl', theta.transpose(1,2,0,3),
                           gate).transpose(2,0,1,3)
-        # reshape for SVD: (χL·σ0, σ1·χR)
+        # reshape for SVD: (χLσ0, σ1χR)
         chi_L, _, _, chi_R = theta.shape
         mat = theta.reshape(chi_L * 2, 2 * chi_R)
         U, s, Vh = svd(mat, full_matrices=False)
@@ -298,7 +298,7 @@ def winding_pe_matrix(seq_len: int, d_model: int, winding: int = 0,
                       base: float = 10000.0) -> np.ndarray:
     """GrammaFormer WindingPositionalEncoding as complex matrix.
 
-    W[pos, i] = exp(i · (pos / base^(2·freq_idx/d) + winding · Δφ))
+    W[pos, i] = exp(i  (pos / base^(2freq_idx/d) + winding  Δφ))
     where Δφ = 2π / max_windings  (default max_windings=64).
     Returns shape (seq_len, d_model//2) complex matrix.
     """
@@ -427,13 +427,13 @@ def demo_winding(n: int = 6, d_model: int = 2048):
 
     N = 2**n
     print(f"""
-  QFT:      F(j,k)   = exp(2πi·j·k / {N})
-  WindingPE: W(p,i)  = exp(i·p / 10000^(2i/{d_model}))
-             W_ω(p,i) = exp(i·(p / 10000^(2i/{d_model}) + ω·2π/64))
+  QFT:      F(j,k)   = exp(2πijk / {N})
+  WindingPE: W(p,i)  = exp(ip / 10000^(2i/{d_model}))
+             W_ω(p,i) = exp(i(p / 10000^(2i/{d_model}) + ω2π/64))
 
-  Correspondence (d_model=2n=2·log₂(N)):
+  Correspondence (d_model=2n=2log₂(N)):
     position p    ↔  input basis state j
-    freq index i  ↔  output basis state k  (via i ↔ k·log(10000)/log(N/2π))
+    freq index i  ↔  output basis state k  (via i ↔ klog(10000)/log(N/2π))
     winding ω     ↔  controlled-phase gate accumulator
 
   GrammaFormer's forward pass computes the DFT-like phase matrix on every
@@ -467,7 +467,7 @@ def demo_mps(n: int = 12, chi_max: int = 64):
 
     This demonstrates exponential compression: the QFT output of an n-qubit
     state lives in 2^n complex amplitudes, but an MPS with bond dimension χ
-    captures it with O(n·χ²) numbers — exact when χ = 2^(n/2).
+    captures it with O(nχ²) numbers — exact when χ = 2^(n/2).
     """
     print(f"\n{'='*70}")
     print(f"  MPS COMPRESSION OF QFT OUTPUT — {n} qubits")
@@ -521,7 +521,7 @@ def demo_mps(n: int = 12, chi_max: int = 64):
     print(f"""
   At χ = 2^(n/2) = {2**(n//2)}: MPS is exact (full Hilbert space representable).
   At χ = 32: captures high fidelity with {32*32*n*16/1024:.0f} KB vs {exact_mem:.0f} KB exact.
-  Memory advantage: O(n·χ²) vs O(2^n) — exponential in n.
+  Memory advantage: O(nχ²) vs O(2^n) — exponential in n.
 
   IBM Eagle @ 127 qubits: exact simulation needs 2^127 amplitudes (impossible).
   MPS @ χ=1024: needs 127 × 1024² × 16 bytes ≈ {127*1024**2*16/1e9:.1f} GB — feasible on a GPU.

@@ -854,7 +854,6 @@ def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
 
     _PACKAGE_DIR = Path(__file__).resolve().parent
     _CANDIDATES = [
-        str(_PACKAGE_DIR.parent / "data" / "IG_catalog.json"),
         str(_PACKAGE_DIR.parent / "IG_catalog.json"),
         "IG_catalog.json",
     ]

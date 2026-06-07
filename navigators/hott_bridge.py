@@ -4,7 +4,7 @@ from .aleph_tensor import AlephTensorEngine, HEBREW_ALPHABET, distance
 class HoTTBridge:
     """
     Constructs the explicit bridge between Hebrew L (O2) and HoTT (O_inf).
-    Promotes Vav's local Φ_} to system-level univalence.
+    Promotes Vav's local 𐑹 to system-level univalence.
     """
     def __init__(self, engine: AlephTensorEngine):
         self.engine = engine
@@ -15,8 +15,8 @@ class HoTTBridge:
         return {
             "structural_distance": self.GAP_DISTANCE,
             "divergent_primitive": "Φ",
-            "hebrew_P": "Φ_˙",
-            "hott_P": "Φ_}",
+            "hebrew_P": "𐑯",
+            "hott_P": "𐑹",
             "interpretation": "Univalence gap: local Frobenius vs global identity"
         }
 
@@ -28,7 +28,7 @@ class HoTTBridge:
         # Clone alphabet to avoid mutating base lattice
         hott_alphabet = {k: v.copy() for k, v in HEBREW_ALPHABET.items()}
         
-        # Force system-level Φ_} (ordinal 1.0)
+        # Force system-level 𐑹 (ordinal 1.0)
         for letter in hott_alphabet.values():
             letter[3] = 1.0  # P index
             
@@ -50,7 +50,7 @@ class HoTTBridge:
             return {"valid": False, "reason": "INVALID_BOUNDARY"}
             
         d = distance(bulk_a, bulk_b)
-        tau = 4.0 if min(bulk_a[11], bulk_b[11]) >= 1.0 else 1.5  # Ω_Z or fallback
+        tau = 4.0 if min(bulk_a[11], bulk_b[11]) >= 1.0 else 1.5  # 𐑭 or fallback
         
         # In HoTT regime, P bottleneck is removed; equivalence holds if d < tau
         is_equivalent = d < tau

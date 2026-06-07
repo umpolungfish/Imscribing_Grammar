@@ -2,22 +2,22 @@
 Quantum Field Theory Navigator - Imscribing Grammar
 
 Domain: Quantum field theory, renormalization group, topological phases
-Structural type: <Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ő; Ω_z>
+Structural type: <𐑦; 𐑶; 𐑩; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑕; 𐑭>
 Tier: O_inf
 
 Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map.
-  - Ð_ω: Imscriptive encoding of all QFTs, couplings, operators
-  - Þ_¨: Box topology (theory space ⊗ symmetry group ⊗ spacetime manifold)
-  - Ř_¯: Supervenience (operators supervene on couplings, anomalies supervene on symmetries)
-  - Φ_}: Frobenius with uncertainty between weak/strong coupling
-  - ƒ^ż: Preserves commutation relations, Ward identities, BRST exactness
-  - Ç^@: Slow RG flow (logarithmic scale separation)
-  - Γ_ʔ: Arbitrary spacetime dimensions, matter content
-  - ɢ^ˌ: Sequential RG flow (μ → μ')
-  - ⊙_ÿ: Self-modeling fixed points, conformal manifolds
-  - Ħ_A: Two-step (counterterm → renormalized → physical)
-  - Σ_ő: Many identical theories (family parameterized by couplings)
-  - Ω_z: Integer winding (topological invariants: index, instanton number)
+  - 𐑦: Imscriptive encoding of all QFTs, couplings, operators
+  - 𐑶: Box topology (theory space ⊗ symmetry group ⊗ spacetime manifold)
+  - 𐑩: Supervenience (operators supervene on couplings, anomalies supervene on symmetries)
+  - 𐑹: Frobenius with uncertainty between weak/strong coupling
+  - 𐑐: Preserves commutation relations, Ward identities, BRST exactness
+  - 𐑧: Slow RG flow (logarithmic scale separation)
+  - 𐑲: Arbitrary spacetime dimensions, matter content
+  - 𐑠: Sequential RG flow (μ → μ')
+  - ⊙: Self-modeling fixed points, conformal manifolds
+  - 𐑖: Two-step (counterterm → renormalized → physical)
+  - 𐑕: Many identical theories (family parameterized by couplings)
+  - 𐑭: Integer winding (topological invariants: index, instanton number)
 
 Purpose: Navigate QFT structure, compute RG flows, detect fixed points,
   verify dualities, compute anomalies, classify topological phases.
@@ -40,7 +40,7 @@ class QFTConfig:
             "detects dualities, classifies phases, computes anomalies and indices."
         )
         self.domain = "Quantum field theory, renormalization group, topological phases, gauge theory"
-        self.tuple = "Ð_ω; Þ_¨; Ř_¯; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ő; Ω_z"
+        self.tuple = "𐑦; 𐑶; 𐑩; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑕; 𐑭"
         self.tier = "O_inf"
         self.architecture = (
             "Wilson RG flow tracker - theories track through coupling space; "
@@ -48,18 +48,18 @@ class QFTConfig:
             "matching operator spectra and correlation functions"
         )
         
-        self.D = "Ð_ω"
-        self.T = "Þ_¨"
-        self.R = "Ř_¯"
-        self.P = "Φ_}"
-        self.F = "ƒ^ż"
-        self.K = "Ç^@"
-        self.G = "Γ_ʔ"
-        self.Gamma = "ɢ^ˌ"
-        self.Phi = "⊙_ÿ"
-        self.H = "Ħ_A"
-        self.S = "Σ_ő"
-        self.Omega = "Ω_z"
+        self.D = "𐑦"
+        self.T = "𐑶"
+        self.R = "𐑩"
+        self.P = "𐑹"
+        self.F = "𐑐"
+        self.K = "𐑧"
+        self.G = "𐑲"
+        self.Gamma = "𐑠"
+        self.Phi = "⊙"
+        self.H = "𐑖"
+        self.S = "𐑕"
+        self.Omega = "𐑭"
     
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -246,7 +246,7 @@ import sys, argparse, math
 _QFT_BETA = {
     "QCD": {
         "gauge": "SU(3)", "Nf": 6,
-        "b0": "11C_A/3 - 4T_F*Nf/3 = 11 - 4/3·Nf",
+        "b0": "11C_A/3 - 4T_F*Nf/3 = 11 - 4/3Nf",
         "b0_num": lambda Nf: 11 - 4*Nf/3,
         "b1": "34C_A²/3 - (20C_A/3 + 4C_F)*T_F*Nf",
         "b1_num": lambda Nf: 34/3 - (20/3 + 4)*Nf,
@@ -255,7 +255,7 @@ _QFT_BETA = {
     },
     "QCD_Nf3": {
         "gauge": "SU(3)", "Nf": 3,
-        "b0": "11 - 4/3·3 = 7",
+        "b0": "11 - 4/33 = 7",
         "b0_num": lambda Nf: 7.0,
         "b1_num": lambda Nf: 34/3 - (20/3 + 4)*3,
         "fixed_pts": "g=0 (UV, asymptotic freedom); IR: confinement at Λ_QCD ≈ 217 MeV",
@@ -263,7 +263,7 @@ _QFT_BETA = {
     },
     "QED": {
         "gauge": "U(1)", "Nf": 1,
-        "b0": "-4/3·Nf  (sign: QED is IR-free)",
+        "b0": "-4/3Nf  (sign: QED is IR-free)",
         "b0_num": lambda Nf: -4*Nf/3,
         "b1_num": lambda Nf: -4*Nf,
         "fixed_pts": "g=0 (IR trivial); Landau pole at very high energy (not physical)",
@@ -337,7 +337,7 @@ def cmd_beta_function(qft_name):
         print()
         print(f"  2-loop β₁    {b1_val:.4g}  (scheme-dependent above 1-loop)")
         print()
-        print(f"  β(g) = −b₀·g³/(16π²) − b₁·g⁵/(16π²)² + O(g⁷)")
+        print(f"  β(g) = −b₀g³/(16π²) − b₁g⁵/(16π²)² + O(g⁷)")
         print()
         print(f"  Fixed points: {info['fixed_pts']}")
         print()
@@ -356,13 +356,13 @@ def cmd_beta_function(qft_name):
         print(f"  Known: QCD, QCD_Nf3, QED, phi4, Yang-Mills, N4_SYM, Gross-Neveu, Sine-Gordon")
         print()
         print(f"  General 1-loop formula (gauge theory SU(N), Nf Dirac fermions):")
-        print(f"    b₀ = (11N − 4Nf/3·T_F) / (16π²)")
+        print(f"    b₀ = (11N − 4Nf/3T_F) / (16π²)")
         print(f"    Asymptotic freedom ⟺ b₀ > 0 ⟺ Nf < 11N/(4T_F)")
 
     print()
     print("─"*55)
-    print("Grammar: Ç^@ (logarithmic RG flow), ⊙_ÿ (fixed points = self-modeling)")
-    print("         Ω_z (instanton number, Chern-Simons level ∈ ℤ)")
+    print("Grammar: 𐑧 (logarithmic RG flow), ⊙ (fixed points = self-modeling)")
+    print("         𐑭 (instanton number, Chern-Simons level ∈ ℤ)")
 
 
 def main():
