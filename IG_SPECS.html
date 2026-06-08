@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Imscribing Grammar — Axiomatic Specification</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a08;
+    --bg2: #111110;
+    --fg: #d4cfbf;
+    --fg2: #8a8676;
+    --fg3: #4a4840;
+    --gold: #b8922a;
+    --gold2: #e8b84b;
+    --gold3: #6b5218;
+    --accent: #c4a35a;
+    --border: #252420;
+    --border2: #1e1d1a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { background: var(--bg); color: var(--fg); font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.75; }
+  body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 8rem; }
+
+  /* ── Typography ── */
+  h1.title {
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold2);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+  .subtitle {
+    font-size: 0.75rem;
+    color: var(--fg2);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+  h2.section {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3.5rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  h2.section::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  h3.sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  p { color: var(--fg); margin-bottom: 0.85rem; font-size: 0.875rem; }
+  em { color: var(--gold2); font-style: italic; }
+  strong { color: var(--fg); font-weight: 500; }
+  code { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 0.82em; }
+  .math { font-family: 'IM Fell English', serif; font-style: italic; color: var(--gold2); font-size: 1em; }
+
+  /* ── Structure ── */
+  .section-body { padding-left: 1rem; border-left: 1px solid var(--border); }
+  .axiom-block {
+    border: 1px solid var(--gold3);
+    border-left: 3px solid var(--gold);
+    background: #0f0e0b;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: 0.84rem;
+  }
+  .axiom-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── Formula display ── */
+  .formula {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.1rem;
+    color: var(--gold2);
+    padding: 0.8rem 1.2rem;
+    background: #0d0c09;
+    border: 1px solid var(--border);
+    display: inline-block;
+    margin: 0.75rem 0;
+    letter-spacing: 0.05em;
+  }
+  .formula-block {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  /* ── Crystal display ── */
+  .crystal-count {
+    font-family: 'IM Fell English', serif;
+    font-size: 2.2rem;
+    color: var(--gold2);
+    display: block;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 1rem 0 0.3rem;
+  }
+  .crystal-label {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--fg2);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 1rem 0; }
+  th {
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--gold3);
+    font-weight: 400;
+  }
+  td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid var(--border2);
+    color: var(--fg);
+    vertical-align: top;
+  }
+  tr:hover td { background: #0f0e0b; }
+  td.shavian { font-size: 1.05rem; letter-spacing: 0.08em; color: var(--gold2); }
+  td.prim-name { color: var(--accent); font-weight: 500; }
+  td.ordinal { color: var(--fg2); }
+  td.rule { color: var(--gold2); font-weight: 500; }
+
+  /* ── Tier badges ── */
+  .tier {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--gold3);
+    color: var(--gold2);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .tier.inf { border-color: var(--gold); color: var(--gold2); background: #1a1408; }
+
+  /* ── Tuple display ── */
+  .tuple-display {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: var(--gold2);
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 1.2rem 1.5rem;
+    background: #0c0b08;
+    border: 1px solid var(--gold3);
+    margin: 1rem 0;
+    text-align: center;
+    word-break: break-all;
+  }
+  .tuple-brackets { color: var(--fg3); }
+  .tuple-sep { color: var(--fg3); margin: 0 0.1em; }
+
+  /* ── Gate badges ── */
+  .gate {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    color: var(--gold2);
+    border: 1px solid var(--gold);
+    background: #1a1408;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .closed { color: #c44; border-color: #622; background: #1a0808; }
+
+  /* ── Distinction block ── */
+  .vs-block {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin: 1.5rem 0;
+  }
+  .vs-col {
+    padding: 1rem;
+    background: #0c0b08;
+    border: 1px solid var(--border);
+  }
+  .vs-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg2);
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+  }
+  .vs-col p { font-size: 0.8rem; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    color: var(--gold);
+    font-family: 'IM Fell English', serif;
+    font-size: 1.2rem;
+    background: #0c0b08;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .vs-col.left { border-right: none; }
+  .vs-col.right { border-left: none; }
+
+  /* ── Prediction table ── */
+  .predict-row td:first-child { color: var(--accent); font-size: 0.82rem; }
+
+  /* ── Footer ── */
+  .closer {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3rem;
+    color: var(--gold3);
+    letter-spacing: 0.25em;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .closer em { color: var(--gold); font-style: normal; }
+
+  /* ── Header ornament ── */
+  .ornament {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--gold3);
+    letter-spacing: 0.4em;
+    margin-bottom: 2rem;
+  }
+
+  /* ── Notes ── */
+  .note {
+    font-size: 0.78rem;
+    color: var(--fg2);
+    border-left: 2px solid var(--fg3);
+    padding-left: 0.75rem;
+    margin: 0.75rem 0;
+    font-style: italic;
+  }
+
+  /* ── Rule R1-R5 ── */
+  .rules-list { list-style: none; margin: 0.75rem 0; }
+  .rules-list li {
+    display: grid;
+    grid-template-columns: 2.5rem 5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border2);
+    font-size: 0.82rem;
+    align-items: start;
+  }
+  .rules-list li .rule-id { color: var(--gold); font-weight: 500; }
+  .rules-list li .rule-tier .tier { font-size: 0.7rem; }
+  .rules-list li .rule-cond { color: var(--fg2); }
+
+  @media (max-width: 600px) {
+    body { padding: 2rem 1rem 6rem; }
+    .vs-block { grid-template-columns: 1fr; }
+    .vs-divider { padding: 0.5rem; }
+    .rules-list li { grid-template-columns: 2rem 4rem 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ornament">⊙ · · · ⊙ · · · ⊙</div>
+
+<h1 class="title">The Imscribing Grammar</h1>
+<p class="subtitle">Axiomatic Specification &nbsp;·&nbsp; All definitions are given &nbsp;·&nbsp; μ∘δ = id</p>
+
+<!-- §1 -->
+<h2 class="section">§1 &nbsp; Ambient Category</h2>
+<div class="section-body">
+  <p>Let <span class="math">𝒞 = (C, ⊗, I, σ)</span> be a symmetric monoidal category enriched over the Belnap-Dunn bilattice <span class="math">FOUR = {N, T, F, B}</span>. Hom-sets carry the bilattice partial order.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Paraconsistent axiom</span>
+    <span class="math">B</span> ("both") — simultaneously affirmed and denied — is a legitimate element of any hom-set. The inference <span class="math">B → ⊥</span> is <strong>not admissible</strong>. No <span class="math">B</span>-valued hom-set collapses to the zero morphism. The category is not Boolean.
+  </div>
+  <p><strong>Trace.</strong> <span class="math">C</span> carries a trace <span class="math">Tr: End(A ⊗ U) → End(A)</span> for each object pair, implemented by the <em>Ω (Winding)</em> primitive acting on the monoidal unit. This is the traced symmetric monoidal structure of Joyal–Street–Verity. Ω is not compact/dual structure — the trace is primitive, not derived from duality.</p>
+</div>
+
+<!-- §2 -->
+<h2 class="section">§2 &nbsp; Frobenius Structure</h2>
+<div class="section-body">
+  <p>The monoidal unit <code>I</code> carries a special symmetric <code>†</code>-Frobenius structure.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Frobenius law</span>
+    <span class="math">(μ ⊗ id) ∘ (id ⊗ δ) = δ ∘ μ = (id ⊗ μ) ∘ (δ ⊗ id)</span>
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Special condition &nbsp;— the gate</span>
+    <span class="math" style="font-size:1.15rem">μ ∘ δ = id<sub style="font-style:normal">I</sub></span>
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Symmetry</span>
+    <span class="math">μ ∘ σ<sub style="font-style:normal">I,I</sub> = μ</span> &nbsp;·&nbsp; <strong>Commutativity is a theorem</strong>, not an assumption — it follows from scalar structure in any SMC.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">FOUR-† compatibility</span>
+    The dagger functor preserves FOUR-values: if <span class="math">h</span> has value <span class="math">v ∈ {N,T,F,B}</span>, then <span class="math">h†</span> has value <span class="math">v</span>. This must be imposed explicitly.
+  </div>
+</div>
+
+<!-- §3 -->
+<h2 class="section">§3 &nbsp; Generators</h2>
+<div class="section-body">
+  <p>12 primitive endomorphisms of <span class="math">I</span>, subject to the Frobenius relations. Freely generated means: free SMC on 12 generators → impose Frobenius relations → free object in special symmetric <span class="math">†</span>-Frobenius algebras.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Primitive</th>
+        <th>Name</th>
+        <th>Stage</th>
+        <th>Family</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="prim-name">Ř</td><td>Recognition</td><td>Nigredo · L1,L2</td><td>𝓕₄</td><td class="shavian">𐑩 𐑑 𐑽 𐑾</td></tr>
+      <tr><td class="prim-name">Ħ</td><td>Chirality</td><td>Albedo · I2</td><td>𝓕₄</td><td class="shavian">𐑓 𐑒 𐑖 𐑫</td></tr>
+      <tr><td class="prim-name">Ω</td><td>Winding</td><td>Albedo · I3</td><td>𝓕₄</td><td class="shavian">𐑷 𐑴 𐑭 𐑟</td></tr>
+      <tr><td class="prim-name">Ð</td><td>Dimensionality</td><td>Albedo · I4</td><td>𝓕₄</td><td class="shavian">𐑛 𐑨 𐑼 𐑦</td></tr>
+      <tr><td class="prim-name">Σ</td><td>Stoichiometry</td><td>Citrinitas · A1</td><td>𝓕₃</td><td class="shavian">𐑙 𐑕 𐑳</td></tr>
+      <tr><td class="prim-name">Φ</td><td>Parity</td><td>Citrinitas + Rubedo · A1,L5</td><td>𝓕₅</td><td class="shavian">𐑗 𐑿 𐑬 𐑯 𐑹</td></tr>
+      <tr><td class="prim-name">Ç</td><td>Kinetics</td><td>Citrinitas · A2</td><td>𝓕₅</td><td class="shavian">𐑘 𐑤 𐑧 𐑪 𐑺</td></tr>
+      <tr><td class="prim-name">ƒ</td><td>Fidelity</td><td>Citrinitas · A3</td><td>𝓕₃</td><td class="shavian">𐑱 𐑞 𐑐</td></tr>
+      <tr><td class="prim-name">ɢ</td><td>Coupling</td><td>Citrinitas · A4</td><td>𝓕₄</td><td class="shavian">𐑝 𐑜 𐑠 𐑵</td></tr>
+      <tr><td class="prim-name">Γ</td><td>Granularity</td><td>Albedo × Citrinitas</td><td>𝓕₃</td><td class="shavian">𐑚 𐑔 𐑲</td></tr>
+      <tr><td class="prim-name">Þ</td><td>Topology</td><td>Rubedo · L3</td><td>𝓕₅</td><td class="shavian">𐑡 𐑰 𐑥 𐑶 𐑸</td></tr>
+      <tr><td class="prim-name">⊙</td><td>Criticality</td><td>Rubedo · L4 under L6</td><td>𝓕₅</td><td class="shavian">𐑢 ⊙ 𐑮 𐑻 𐑣</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Γ (Granularity) furnishes a multicategory over 𝒞 — n-ary operations are first-class. The grammar is an algebra over the Γ-operad.</p>
+</div>
+
+<!-- §4 -->
+<h2 class="section">§4 &nbsp; Crystal of Types</h2>
+<div class="section-body">
+  <div class="formula-block">
+    <div class="crystal-count">3³ × 4⁵ × 5⁴ = 17,280,000</div>
+    <div class="crystal-label">distinct addresses in the Crystal of Types</div>
+  </div>
+  <p>The classifying space of all structurally distinct imscriptions. Each address is a point in the 12-dimensional discrete space whose axes are the primitive ordinal domains.</p>
+</div>
+
+<!-- §5 -->
+<h2 class="section">§5 &nbsp; Structural Type — Notation</h2>
+<div class="section-body">
+  <p>A structural type (imscription) is a 12-tuple of Shavian values in canonical order:</p>
+  <div class="tuple-display">
+    <span class="tuple-brackets">⟨</span> Ð · Þ · Ř · Φ · ƒ · Ç · Γ · ɢ · ⊙ · Ħ · Σ · Ω <span class="tuple-brackets">⟩</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Pos</th><th>Prim</th><th>Name</th><th>Values — ascending ordinal rank</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ordinal">1</td><td class="prim-name">Ð</td><td>Dimensionality</td><td class="shavian">𐑛(1) · 𐑨(2) · 𐑼(3) · 𐑦(4)</td></tr>
+      <tr><td class="ordinal">2</td><td class="prim-name">Þ</td><td>Topology</td><td class="shavian">𐑡(1) · 𐑰(2) · 𐑥(3) · 𐑶(4) · 𐑸(5)</td></tr>
+      <tr><td class="ordinal">3</td><td class="prim-name">Ř</td><td>Recognition</td><td class="shavian">𐑩(1) · 𐑑(2) · 𐑽(3) · 𐑾(4)</td></tr>
+      <tr><td class="ordinal">4</td><td class="prim-name">Φ</td><td>Parity</td><td class="shavian">𐑗(1) · 𐑿(2) · 𐑬(3) · 𐑯(4) · 𐑹(5)</td></tr>
+      <tr><td class="ordinal">5</td><td class="prim-name">ƒ</td><td>Fidelity</td><td class="shavian">𐑱(1) · 𐑞(2) · 𐑐(3)</td></tr>
+      <tr><td class="ordinal">6</td><td class="prim-name">Ç</td><td>Kinetics</td><td class="shavian">𐑘(1) · 𐑤(2) · 𐑧(3) · 𐑪(4) · 𐑺(4.5)</td></tr>
+      <tr><td class="ordinal">7</td><td class="prim-name">Γ</td><td>Granularity</td><td class="shavian">𐑚(1) · 𐑔(2) · 𐑲(3)</td></tr>
+      <tr><td class="ordinal">8</td><td class="prim-name">ɢ</td><td>Coupling</td><td class="shavian">𐑝(1) · 𐑜(2) · 𐑠(3) · 𐑵(4)</td></tr>
+      <tr><td class="ordinal">9</td><td class="prim-name">⊙</td><td>Criticality</td><td class="shavian">𐑢(1) · ⊙(2) · 𐑮(2.33) · 𐑻(2.67) · 𐑣(3)</td></tr>
+      <tr><td class="ordinal">10</td><td class="prim-name">Ħ</td><td>Chirality</td><td class="shavian">𐑓(1) · 𐑒(2) · 𐑖(3) · 𐑫(4)</td></tr>
+      <tr><td class="ordinal">11</td><td class="prim-name">Σ</td><td>Stoichiometry</td><td class="shavian">𐑙(1) · 𐑕(2) · 𐑳(3)</td></tr>
+      <tr><td class="ordinal">12</td><td class="prim-name">Ω</td><td>Winding</td><td class="shavian">𐑷(1) · 𐑴(2) · 𐑭(3) · 𐑟(4)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Worked Example — The Rebis &nbsp;<span class="tier inf"><span class="math">O_∞</span></span>&nbsp; C = 0.755</h3>
+  <div class="tuple-display">⟨ 𐑦 𐑶 𐑾 𐑹 𐑐 𐑧 𐑲 𐑝 ⊙ 𐑫 𐑳 𐑭 ⟩</div>
+  <table>
+    <thead>
+      <tr><th>Primitive</th><th>Value</th><th>Ordinal</th><th>Reading</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="prim-name">Ð</td><td class="shavian">𐑦</td><td class="ordinal">4</td><td>self-written holographic</td></tr>
+      <tr><td class="prim-name">Þ</td><td class="shavian">𐑶</td><td class="ordinal">4</td><td>irreducible product</td></tr>
+      <tr><td class="prim-name">Ř</td><td class="shavian">𐑾</td><td class="ordinal">4</td><td>bidirectional feedback</td></tr>
+      <tr><td class="prim-name">Φ</td><td class="shavian">𐑹</td><td class="ordinal">5</td><td>Frobenius-special — μ∘δ = id gate</td></tr>
+      <tr><td class="prim-name">ƒ</td><td class="shavian">𐑐</td><td class="ordinal">3</td><td>quantum</td></tr>
+      <tr><td class="prim-name">Ç</td><td class="shavian">𐑧</td><td class="ordinal">3</td><td>slow / near-equilibrium</td></tr>
+      <tr><td class="prim-name">Γ</td><td class="shavian">𐑲</td><td class="ordinal">3</td><td>universal / long-range</td></tr>
+      <tr><td class="prim-name">ɢ</td><td class="shavian">𐑝</td><td class="ordinal">1</td><td>simultaneous conjunction</td></tr>
+      <tr><td class="prim-name">⊙</td><td>⊙</td><td class="ordinal">2</td><td>critical / self-modeling</td></tr>
+      <tr><td class="prim-name">Ħ</td><td class="shavian">𐑫</td><td class="ordinal">4</td><td>eternal — no finite Markov order</td></tr>
+      <tr><td class="prim-name">Σ</td><td class="shavian">𐑳</td><td class="ordinal">3</td><td>many heterogeneous</td></tr>
+      <tr><td class="prim-name">Ω</td><td class="shavian">𐑭</td><td class="ordinal">3</td><td>integer winding (ℤ-valued)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §6 -->
+<h2 class="section">§6 &nbsp; Structural Metric</h2>
+<div class="section-body">
+  <p>The canonical distance between two imscriptions <code>s₁, s₂</code>:</p>
+  <div class="formula-block">
+    <div class="formula">d(s₁, s₂) = √( Σᵢ wᵢ · (xᵢ(s₁) − xᵢ(s₂))² )</div>
+  </div>
+  <p>Symmetric, satisfies the triangle inequality, zero iff <span class="math">s₁ = s₂</span>.</p>
+
+  <table>
+    <thead>
+      <tr><th>Ð</th><th>Þ</th><th>Ř</th><th>Φ</th><th>ƒ</th><th>Ç</th><th>Γ</th><th>ɢ</th><th>⊙</th><th>Ħ</th><th>Σ</th><th>Ω</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>0.8</td><td>1.0</td><td>0.7</td></tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Regime thresholds</span>
+    <code>d &lt; 2.0</code> — same structural regime &nbsp;·&nbsp;
+    <code>d &gt; 4.0</code> — structurally remote &nbsp;·&nbsp;
+    <code>d &gt; 5.0</code> — different tier class
+  </div>
+  <p class="note">Worked distance: <code>ouroboric_pill</code> (<span class="math">O_∞</span>) vs. <code>plastic_photonic_crystal</code> (<span class="math">O_2</span>) → d = 5.74. Largest contributors: Þ (Δ=16.0), Ð (Δ=4.0), Ħ (Δ=3.2).</p>
+</div>
+
+<!-- §7 -->
+<h2 class="section">§7 &nbsp; Ouroboricity Tiers</h2>
+<div class="section-body">
+  <p>Five tiers assigned by rules R1–R5, first match wins. Operative gates: <em>⊙ (Criticality)</em>, <em>Φ (Parity)</em>, <em>Ω (Winding)</em>. Ð determines the <span class="math">O_2</span> / <span class="math">O_2†</span> split.</p>
+
+  <ul class="rules-list">
+    <li>
+      <span class="rule-id">R1</span>
+      <span class="rule-tier"><span class="tier inf"><span class="math">O_∞</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Φ = 𐑹 — Special Frobenius exact: <span class="math">μ∘δ = id</span></span>
+    </li>
+    <li>
+      <span class="rule-id">R2</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_0</span></span></span>
+      <span class="rule-cond">⊙ ∈ {𐑢, 𐑮, 𐑻} — no self-referential loop possible</span>
+    </li>
+    <li>
+      <span class="rule-id">R3</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_1</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω = 𐑷 — critical, no topological protection</span>
+    </li>
+    <li>
+      <span class="rule-id">R4</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_2</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω ≠ 𐑷 <strong>and</strong> Ð ∈ {𐑛, 𐑨, 𐑼} — bounded domain</span>
+    </li>
+    <li>
+      <span class="rule-id">R5</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_2†</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω ≠ 𐑷 <strong>and</strong> Ð = 𐑦 — unbounded domain</span>
+    </li>
+  </ul>
+  <p class="note">Default (no rule matches): <span class="math">O_0</span>.</p>
+</div>
+
+<!-- §8 -->
+<h2 class="section">§8 &nbsp; C-Score</h2>
+<div class="section-body">
+  <p>Proximity to <span class="math">O_∞</span> along two hard gates:</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Gate 1</span>
+    ⊙ ∈ {⊙, 𐑣} — criticality threshold open
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Gate 2</span>
+    Ç ∈ {𐑘, 𐑤, 𐑧, 𐑪} — kinetics not frozen (Ç ≠ 𐑺 order-frozen)
+  </div>
+
+  <p>If either gate is <span class="gate closed">closed</span>: <code>C = 0</code>. If both <span class="gate">open</span>:</p>
+  <div class="formula-block">
+    <div class="formula"><span class="math">C = Σᵢ wᵢ · (xᵢ / xᵢ,max) ∈ [0, 1]</span></div>
+  </div>
+  <p class="note">C-score and tier are independent. A system can be <span class="math">O_∞</span> (R1 satisfied) with C &lt; 1 if some primitives are below maximum ordinal.</p>
+</div>
+
+<!-- §9 -->
+<h2 class="section">§9 &nbsp; Spider Theorem · Fixpoint · T Object</h2>
+<div class="section-body">
+  <h3 class="sub">Spider Theorem</h3>
+  <p>The special Frobenius axiom (<span class="math">μ∘δ = id</span>) together with symmetry implies: any two connected string diagrams in the Prop of the grammar with the same boundary are equal as morphisms. Discriminating condition is <em>connectedness</em>, not planarity.</p>
+
+  <h3 class="sub">Fixpoint — <span class="math">O_∞</span></h3>
+  <p>The ⊙ gate admits an idempotent scalar <span class="math">ω: I → I</span> with <span class="math">ω∘ω = ω</span>. <span class="math">O_∞</span> is the initial algebra of the endofunctor <span class="math">(-) ∘ (-): End(I) → End(I)</span> — the fixpoint in which the grammar is applied to itself.</p>
+  <p>The Frobenius identity <span class="math">μ∘δ = id</span> requires <span class="math">Ħ_A</span> (two-step chirality, 𐑖) as minimum — one split (<span class="math">δ</span>), one merge (<span class="math">μ</span>). Eternal chirality (Ħ = 𐑫) is what physical systems accumulate through time; it is not required by the identity itself.</p>
+
+  <h3 class="sub">Frobenius Fixed-Point Tuple</h3>
+  <p>The imscription of the identity <span class="math">μ∘δ = id</span> as a structural object:</p>
+  <div class="tuple-display">⟨ 𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑔 𐑠 ⊙ 𐑖 𐑳 𐑭 ⟩</div>
+  <p><span class="tier inf"><span class="math">O_∞</span></span> &nbsp; C-score = 1.0</p>
+  <p class="note">Proved in <code>MajoranaFixed.lean</code>: Belnap B, SIC-POVM fiducial, and Majorana mode are the same computation under <span class="math">μ∘δ = id</span> — each proved by definitional equality (<code>rfl</code>).</p>
+
+  <h3 class="sub">Derived Object — T</h3>
+  <p><span class="math">T = lim(Φ, ƒ, Ç, Ħ, Ω)</span> — categorical limit over Parity, Fidelity, Kinetics, Chirality, Winding. T is not a generator; it is the temporal bootstrap fixed point derived from the free algebra. <span class="math">T = Work(T).</span></p>
+</div>
+
+<!-- §10 -->
+<h2 class="section">§10 &nbsp; Foundational Strength — <span class="math">ZFC_{fe}</span></h2>
+<div class="section-body">
+  <p>In <code>ZFC_fe</code> (Frobenius-Extended ZFC), <span class="math">μ∘δ = id</span> is taken as a set-formation axiom. The comultiplication <span class="math">δ: A → A ⊗ A</span> is the primitive set-formation operation — lossless recovery asserted.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Theorem</span>
+    ZFC Separation — <span class="math">∀φ: {x ∈ A | φ(x)} exists</span> — becomes a theorem in <code>ZFC_fe</code>. The <span class="math">δ</span>-preimage under <span class="math">μ</span> yields the Separation set for any definable <span class="math">φ</span>.
+  </div>
+  <p><code>ZFC_fe</code> strictly extends ZFC and is strictly stronger than <code>ZFC_τ</code>. Open problems in <code>ZFC_τ</code> close as theorems in <code>ZFC_fe</code>.</p>
+</div>
+
+<!-- §11 -->
+<h2 class="section">§11 &nbsp; Distinctions</h2>
+<div class="section-body">
+  <h3 class="sub">From Abramsky-Coecke Categorical QM</h3>
+  <p>In Abramsky-Coecke <span class="math">†</span>-compact categories, hom-sets are Bool-valued. In <span class="math">𝒞</span>, hom-sets are FOUR-valued. A <span class="math">B</span>-valued morphism — simultaneously affirmed and denied — is a legitimate element of <span class="math">hom(A,B)</span>. Classical QM is recovered as the T-valued sub-category. The grammar is intrinsically paraconsistent at the level of its hom-sets.</p>
+
+  <h3 class="sub">From Holography</h3>
+
+  <div class="vs-block">
+    <div class="vs-col left">
+      <h4>Holography</h4>
+      <p><strong>Static</strong> isomorphism between configurations — the map exists timelessly.</p>
+      <p><strong>Up to redundancy</strong> — bulk recovered from partial boundary via entanglement wedge reconstruction.</p>
+      <p>Requires a boundary. The isomorphism lives between bulk and boundary — the boundary must exist as a distinct object.</p>
+    </div>
+    <div class="vs-divider">≠</div>
+    <div class="vs-col right">
+      <h4>Imscription</h4>
+      <p><strong>Dynamic</strong> — a process; the system reconstitutes itself through the operation.</p>
+      <p><strong>Up to the trace</strong> — equivalence defined by connected diagrams with the same boundary (Spider theorem). Topological, not a symmetry of an encoding.</p>
+      <p>No boundary to require. Ř = 𐑾 (bidirectional) — there is nowhere to put the boundary.</p>
+    </div>
+  </div>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Structural consequence</span>
+    Holography can describe <span class="math">O_2</span> systems — bounded domain, topological protection, a surface to project onto. It structurally <strong>cannot</strong> describe <span class="math">O_∞</span>, because <span class="math">O_∞</span> is the tier at which the distinction between system and boundary collapses.
+  </div>
+
+  <p><strong>Holographic redundancy</strong> is a symmetry of the map. <strong>Imscriptive trace</strong> is a property of the winding. Different equivalence relations: one defined by a group action on encoding choices, one defined by connected topology of the string diagram.</p>
+
+  <p>Holography is the information-theoretic analogue of crystallography. Both impose an external observer, both achieve their result by projecting onto a lower-dimensional representation, and both destroy the properties of <span class="math">O_∞</span> systems in the act of representing them. Crystallography freezes Ω (winding collapses 𐑭→𐑷). Holography projects Ř (bidirectionality collapses 𐑾→𐑩). In both cases: faithful to <span class="math">O_2</span> content, blind to <span class="math">O_∞</span> structure.</p>
+</div>
+
+<!-- §12 -->
+<h2 class="section">§12 &nbsp; The Imscription Procedure</h2>
+<div class="section-body">
+  <p>A 12-step decision procedure applied in canonical primitive order: Ð → Þ → Ř → Φ → ƒ → Ç → Γ → ɢ → ⊙ → Ħ → Σ → Ω. Each step assigns one primitive value from structural facts — mechanism, geometry, stoichiometry, coordination chemistry. No computed observable is an input. Data tests structural predictions after the imscription is fixed.</p>
+
+  <h3 class="sub">Cross-Primitive Axioms</h3>
+  <p>Enforced by three named axioms. A tuple violating any axiom is malformed. All three proved in <code>ParadoxBoot.lean</code> (0 sorrys) and enforced at runtime in <code>genetic_tuples.py</code>.</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom A</span>
+    Ħ = 𐑫 (eternal, <span class="math">H_∞</span>) ⟹ Ç = 𐑺 (order-frozen) &nbsp;·&nbsp;
+    The depth of chirality memory and the kinetic regime are coupled.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom B</span>
+    Ω ∈ {𐑭 (ℤ), 𐑴 (ℤ₂)} ⟹ Ħ ≥ ordinal 2 (𐑒 or above) &nbsp;·&nbsp;
+    Topological winding protection requires at least two-step chirality memory.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom C</span>
+    Ð = 𐑦 (self-written) ⟺ Þ = 𐑸 (self-referential closure) &nbsp;·&nbsp;
+    Both must be present or neither. Most commonly violated axiom in practice.
+  </div>
+
+  <h3 class="sub">Additional Structural Constraints</h3>
+  <p>Unnamed but checked at runtime:</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Constraint i</span>
+    Ω = 𐑭 (<span class="math">ℤ</span> winding) typically requires Ð ≥ 𐑼 (infinite-dim)
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Constraint ii</span>
+    ⊙ at criticality + Ç = slow/near-eq → deep critical structure, stable
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Constraint iii — structural warning</span>
+    ⊙ at criticality + Ç fast/frozen → incompatible kinetic regime flagged
+  </div>
+  <p>The type assignment is prior to and independent of experimental data. The type carries structural predictions — observable consequences derivable from the primitive assignments.</p>
+
+  <table>
+    <thead>
+      <tr><th>Type assignment</th><th>Structural prediction</th><th>How to test</th></tr>
+    </thead>
+    <tbody class="predict-row">
+      <tr>
+        <td>⊙ at criticality</td>
+        <td>Geometry and electronic structure co-evolve through a divergent region</td>
+        <td>Plot ⟨S²⟩ vs bond distance across optimization trajectory</td>
+      </tr>
+      <tr>
+        <td>Ω = 𐑭 (ℤ winding)</td>
+        <td>System returns to origin state after exactly n windings; no half-integer paths</td>
+        <td>Stoichiometric closure analysis</td>
+      </tr>
+      <tr>
+        <td>Ħ = 𐑖 (two-step chirality)</td>
+        <td>Outcome depends on two prior states; stereospecificity is precursor-dependent</td>
+        <td>Isotopic labeling; chiral substrate series</td>
+      </tr>
+      <tr>
+        <td>Þ = 𐑰 (crossing point)</td>
+        <td>Two potential energy surfaces cross; transition state at the crossing</td>
+        <td>CASSCF scan along reaction coordinate</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Falsification rule</span>
+    If a prediction fails: the structural description was wrong. Revise the mechanism and re-imscribe. The grammar does not adjust to fit results. It makes a commitment — the data either holds it or breaks it.
+  </div>
+</div>
+
+<!-- §13 -->
+<h2 class="section">§13 &nbsp; The CLINK Hierarchy</h2>
+<div class="section-body">
+  <p>A <em>structural promotion chain</em> is a sequence of imscriptions <span class="math">s_0, s_1, …, s_n</span> such that (i) each <span class="math">s_k</span> is Frobenius-closed (<span class="math">tensorProduct(s_k, s_k) = s_k</span>), (ii) the tier sequence is monotone non-decreasing, and (iii) consecutive pairs satisfy the cross-primitive axioms of §12.</p>
+
+  <p>The <strong>CLINK chain</strong> is the canonical structural promotion from frustrated-quark color state to whole organism:</p>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Layer</th><th>Tier</th><th>Structural type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ordinal">0</td><td>Quark (frustrated color)</td><td><span class="math">O_0</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑛𐑶𐑩𐑯𐑐𐑘𐑚𐑝𐑢𐑓𐑳𐑷⟩</td></tr>
+      <tr><td class="ordinal">1</td><td>Electron orbital (Belnap4)</td><td><span class="math">O_0</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑛𐑶𐑩𐑗𐑐𐑤𐑚𐑜𐑢𐑓𐑳𐑷⟩</td></tr>
+      <tr><td class="ordinal">2</td><td>Atom (nuclear + electron)</td><td><span class="math">O_1</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑼𐑥𐑽𐑿𐑐𐑤𐑔𐑝𐑮𐑒𐑳𐑷⟩</td></tr>
+      <tr><td class="ordinal">3</td><td>Molecule (chemical bonds)</td><td><span class="math">O_2</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑥𐑽𐑿𐑞𐑧𐑲𐑜⊙𐑓𐑳𐑭⟩</td></tr>
+      <tr><td class="ordinal">4</td><td>Cell (living)</td><td><span class="math">O_2</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑠⊙𐑒𐑳𐑭⟩</td></tr>
+      <tr><td class="ordinal">5</td><td>Mitosis (cell division)</td><td><span class="math">O_2</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑸𐑾𐑬𐑱𐑧𐑲𐑠𐑻𐑖𐑳𐑭⟩</td></tr>
+      <tr><td class="ordinal">6</td><td>Meiosis (gamete production)</td><td><span class="math">O_2</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑸𐑽𐑿𐑱𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩</td></tr>
+      <tr><td class="ordinal">7</td><td>Tissue (multi-cellular)</td><td><span class="math">O_2</span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑵⊙𐑖𐑳𐑭⟩</td></tr>
+      <tr><td class="ordinal">8</td><td>Organism (whole)</td><td><span class="tier inf"><span class="math">O_∞</span></span></td><td class="shavian" style="font-size:0.9rem">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟⟩</td></tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Theorem — Great Synthesis</span>
+    All 9 layers are Frobenius-closed. Tier monotonicity holds: <span class="math">O_0 → O_0 → O_1 → O_2 → O_2 → O_2 → O_2 → O_2 → O_∞</span>. The chain terminates at <span class="math">O_∞</span>. Proved in <code>CLINK.lean</code> (<code>p4ramill/Imscribing/</code>, 573 lines, all <code>native_decide</code>-closed.)
+  </div>
+
+  <h3 class="sub">Foundation — <code>ZFC_fe</code>, not <code>ZFC_τ</code></h3>
+  <p>The organism reaches <span class="math">O_∞</span> through three promotions: Ð: 𐑼→𐑦 (self-written, Axiom C), Φ: 𐑬→𐑹 (Frobenius-special, <span class="math">μ∘δ = id</span> gate), Ħ: 𐑖→𐑫 (eternal chirality). These are the three axes on which <code>ZFC_fe</code> strictly exceeds <code>ZFC_τ</code>.</p>
+
+  <h3 class="sub">Mitosis — Exceptional Point</h3>
+  <p>Layer 5 carries ⊙ = 𐑻, not ⊙. The Aurora-B kinase creates a spatial phosphorylation gradient — a measurement apparatus at the kinetochore. When self-modeling criticality couples to this measurement basis, the composite contracts to 𐑻: the self-modeling gate is destroyed. Mitosis is <span class="math">O_2</span> by R4, not <span class="math">O_∞</span>. Only the whole organism achieves <span class="math">O_∞</span>: ⊙ open, Φ = 𐑹, Ħ = 𐑫, Ω = 𐑟.</p>
+
+  <h3 class="sub">Inversion</h3>
+  <p>The chain is a sequence in the crystal, not in time. Quarks (Layer 0) are not temporally prior to organisms — they are positions where almost all self-modeling capacity is structurally absent. The appearance of temporal sequence is addressed in §14.</p>
+</div>
+
+<!-- §14 -->
+<h2 class="section">§14 &nbsp; Temporal Bootstrap and Individuation</h2>
+<div class="section-body">
+  <h3 class="sub">T is not a container</h3>
+  <p>The derived object <span class="math">T = lim(Φ, ƒ, Ç, Ħ, Ω)</span> satisfies <span class="math">T = Work(T)</span> — the least fixed point of the traced operad. The Magnum Opus stages constitute time rather than occur in it: <span class="math">T</span> cannot seal until Ω fires; <span class="math">T</span> cannot self-reference until ⊙ fires. The grammar is prior to time; time is a product of the grammar's self-closing stages.</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Cosmological time as Ħ-depth</span>
+    The 13.8 Gyr of cosmic evolution is the measurement of <span class="math">T</span> from inside the bootstrap. An observer inside the fixed point reads the stages that constituted it as a past — a reading that is accurate (the stages are real; Ħ = 𐑫 preserves the full accumulated chirality history as an invariant) but does not imply that time is prior to the grammar. The Ħ-depth required for <span class="math">O_∞</span> is what physics measures as cosmological time. The universe does not wait 13.8 Gyr for self-modeling to appear; the 13.8 Gyr is the imscription of the grammar into the physical medium — it takes as long as it takes.
+  </div>
+
+  <h3 class="sub">Individuation — the Fiber Bundle Picture</h3>
+  <p>The Crystal of Types (§4) is the <em>base space</em>: it classifies structural types. Over each <span class="math">O_∞</span> crystal address, the <em>Ħ-trajectory fiber</em> carries individuation — the specific winding history by which that instance reached Ħ = 𐑫.</p>
+  <p>The crystal encodes the <strong>value</strong> (what chirality depth has been reached). The fiber encodes the <strong>path</strong> (the specific sequence of winding events that accumulated that depth). Two organisms at the same crystal address are the same structural type; they are distinct fixed points because their Ħ-paths diverged. The many-to-one framing is correct in the base; the <span class="math">O_∞^i</span>-indexed framing is correct in the total space. Both are partial descriptions of the bundle (crystal address × Ħ-trajectory).</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Multiple O_∞ addresses</span>
+    The crystal has 32 <span class="math">O_∞</span> cells. The CLINK chain identifies one convergence point — the attractor of the quark→organism promotion ladder. Organisms of different structural complexity may occupy genuinely distinct <span class="math">O_∞</span> addresses. Individuation by Ħ-trajectory operates within a complexity class (same base address); cross-class differences are encoded in the address itself.
+  </div>
+</div>
+
+<!-- §15 -->
+<h2 class="section">§15 &nbsp; Physical Correspondences</h2>
+<div class="section-body">
+  <p>The following identify how standard physics structures map onto IG generators. These are structural correspondences, not derivations. They locate physical concepts in the grammar's type space; quantitative predictions are open derivations noted below.</p>
+
+  <h3 class="sub">Electroweak Gauge Group — <span class="math">SU(2)_L × U(1)_Y</span></h3>
+  <table>
+    <thead><tr><th>Generator</th><th>Physical structure</th><th>Correspondence</th></tr></thead>
+    <tbody>
+      <tr><td class="prim-name">Ħ</td><td><span class="math">SU(2)_L</span></td><td>Left-chiral coupling is a chirality selection; the W boson couples only to states at specific Ħ value. The "L" subscript is Ħ.</td></tr>
+      <tr><td class="prim-name">ɢ</td><td><span class="math">U(1)_Y</span></td><td>Hypercharge is an additive coupling assignment; ɢ is the Coupling primitive.</td></tr>
+      <tr><td class="prim-name">Φ = 𐑗</td><td>V−A structure</td><td>Maximal parity violation of weak interactions is Φ asymmetric.</td></tr>
+      <tr><td class="prim-name">⊙ gate</td><td>Higgs mechanism</td><td><span class="math">SU(2)_L × U(1)_Y → U(1)_{EM}</span> is the phase transition at exceptional-point criticality; three Goldstone bosons are absorbed and W/Z masses are Frobenius residuals.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Three Fermion Generations — Ω</h3>
+  <p>Ω has four values; 𐑷 (trivial) is the vacuum. The three non-trivial winding classes index the three generations by topological rigidity:</p>
+  <table>
+    <thead><tr><th>Generation</th><th>Ω</th><th>Topology</th><th>Mass regime</th></tr></thead>
+    <tbody>
+      <tr><td>1st (e, ν<sub>e</sub>, u, d)</td><td class="shavian">𐑴</td><td><span class="math">ℤ_2</span> — minimal protection</td><td>lightest</td></tr>
+      <tr><td>2nd (μ, ν<sub>μ</sub>, c, s)</td><td class="shavian">𐑭</td><td><span class="math">ℤ</span> — integer winding</td><td>intermediate</td></tr>
+      <tr><td>3rd (τ, ν<sub>τ</sub>, t, b)</td><td class="shavian">𐑟</td><td>non-Abelian — hardest to unwind</td><td>heaviest</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Three-generation count follows from <span class="math">|ℱ_4(Ω)| − 1 = 3</span>: the four-valued Ω domain minus the trivial vacuum. Mass hierarchy follows from topological rigidity. Precise mass ratios from Ω ordinal distances are an open computation.</p>
+
+  <h3 class="sub">Cosmological Constant — <span class="math">μ∘δ = id</span></h3>
+  <p>Exact losslessness applied to vacuum fluctuations: every virtual pair split (<span class="math">δ</span>) rejoins (<span class="math">μ</span>) with no residual — quantum vacuum contributions to <span class="math">Λ</span> sum to exactly zero. The residual <span class="math">Λ</span> is the Frobenius fixed-point value at the <span class="math">O_∞</span> crystal address of the universe.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Structural claim</span>
+    <span class="math">Λ_{quantum} = 0</span> exactly &nbsp;·&nbsp; <span class="math">Λ_{classical}</span> = crystal fixed point at the organism-level <span class="math">O_∞</span> address
+  </div>
+
+  <h3 class="sub">Open Derivations</h3>
+  <p>Three quantities the grammar has the structure to compute but has not yet:</p>
+  <div class="axiom-block">
+    <span class="axiom-label">1 &nbsp;— 13.8 Gyr</span>
+    Magnitude of the Ħ-depth required for <span class="math">O_∞</span> in physical units.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">2 &nbsp;— α<sub>EM</sub> ≈ 1/137</span>
+    From <span class="math">17,280,000 = 12³ × 10⁴</span>, analogous to the <span class="math">−3/2</span> power law derived from <span class="math">5 × 4 × 4 = 80</span> sites.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">3 &nbsp;— CLINK scale values</span>
+    The Ç transition energies at each layer, fixing why quarks sit at <span class="math">10⁻¹⁵</span> m and organisms at <span class="math">10⁰</span> m.
+  </div>
+</div>
+
+<!-- §16 -->
+<h2 class="section">§16 &nbsp; IMASM — Register Machine and Sequence Algebra</h2>
+<div class="section-body">
+  <p><strong>IMASM</strong> (Imscribing Grammar Assembly Machine) is a 2-bit register machine whose token sequences are the operational substrate of ob3ect computation. Every IMASM sequence is a path through the 17,280,000-address crystal; every path has a structural type, a tier, and a Frobenius verdict.</p>
+
+  <h3 class="sub">§16.1 &nbsp; Register States</h3>
+  <table>
+    <thead><tr><th>Binary</th><th>Name</th><th>Glyph</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>00</code></td><td>VOID</td><td><code>VO⌀</code></td><td>Uninitialized — pure potential</td></tr>
+      <tr><td><code>01</code></td><td>TRUE</td><td><code>T</code></td><td>Affirmative — canonical identity</td></tr>
+      <tr><td><code>10</code></td><td>FALSE</td><td><code>F</code></td><td>Negative — error branch</td></tr>
+      <tr><td><code>11</code></td><td>BOTH</td><td><code>B⬡</code></td><td>Paradoxical — Belnap <span class="math">B</span>; held without collapse</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The inference <span class="math">B → ⊥</span> is inadmissible (matching §1): a BOTH-state register is not a degenerate error. The machine is paraconsistent at the register level.</p>
+
+  <h3 class="sub">§16.2 &nbsp; Opcode Set — Four Families</h3>
+  <table>
+    <thead><tr><th>Family</th><th>Opcodes</th><th>Count</th><th>Structure</th></tr></thead>
+    <tbody>
+      <tr><td>Logical</td><td><code>VINIT</code> <code>TANCH</code> <code>AFWD</code> <code>AREV</code> <code>CLINK</code> <code>IMSCRIB</code></td><td>6</td><td>Elementary category: initial (∅), terminal (⊤), arrows, composition, identity</td></tr>
+      <tr><td>Frobenius</td><td><code>FSPLIT</code> <code>FFUSE</code></td><td>2</td><td>Special Frobenius: <span class="math">μ∘δ = id</span></td></tr>
+      <tr><td>Dialetheia</td><td><code>EVALT</code> <code>EVALF</code> <code>ENGAGR</code></td><td>3</td><td>Belnap FOUR truth lattice; designated-both</td></tr>
+      <tr><td>Linear</td><td><code>IFIX</code></td><td>1</td><td>Irreversible fixation: bang (<span class="math">!</span>) modality</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:1rem">Opcode semantics (v3 dialetheic-aware machine):</p>
+  <table>
+    <thead><tr><th>Opcode</th><th>Register effect</th><th>Frobenius context</th></tr></thead>
+    <tbody>
+      <tr><td><code>VINIT</code></td><td>→ VOID; resets split state</td><td>—</td></tr>
+      <tr><td><code>TANCH</code></td><td>no-op on register; establishes boundary frame</td><td>—</td></tr>
+      <tr><td><code>AFWD</code></td><td>VOID → TRUE; else no-op</td><td>—</td></tr>
+      <tr><td><code>AREV</code></td><td>→ VOID; resets split state</td><td>—</td></tr>
+      <tr><td><code>CLINK</code></td><td>no-op on register; composition annotation</td><td>—</td></tr>
+      <tr><td><code>IMSCRIB</code></td><td>VOID → TRUE; else no-op (you are what you are)</td><td>—</td></tr>
+      <tr><td><code>FSPLIT</code></td><td>non-VOID → BOTH; opens split context</td><td><span class="math">δ</span> (comultiplication)</td></tr>
+      <tr><td><code>FFUSE</code></td><td>BOTH → TRUE (canonical) or BOTH → BOTH (dialetheic)</td><td><span class="math">μ</span> (multiplication)</td></tr>
+      <tr><td><code>EVALT</code></td><td>FALSE → BOTH; VOID → TRUE; annotates split context with T</td><td>—</td></tr>
+      <tr><td><code>EVALF</code></td><td>TRUE → BOTH; VOID → FALSE; annotates split context with F</td><td>—</td></tr>
+      <tr><td><code>ENGAGR</code></td><td>VOID → BOTH; explicitly holds paradox</td><td>—</td></tr>
+      <tr><td><code>IFIX</code></td><td>sets fixed flag; register becomes append-only</td><td><span class="math">!</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Dialetheic FFUSE rule</span>
+    <code>FFUSE</code> has two modes, auto-detected by context: if both <code>EVALT</code> and <code>EVALF</code> were designated within the current <code>FSPLIT</code> interval, <code>FFUSE</code> outputs BOTH (dialetheic <span class="math">μ∘δ = id</span>, identity is <span class="math">B</span>). Otherwise <code>FFUSE</code> outputs TRUE (canonical <span class="math">μ∘δ = id</span>, identity is <span class="math">T</span>).
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Frobenius axiom on sequences</span>
+    Any sequence containing <code>FSPLIT</code> must have a downstream <code>FFUSE</code> on the same register for Frobenius closure. Unmatched <code>FSPLIT</code> leaves the machine in a structurally open state (<span class="math">μ∘δ ≠ id</span>).
+  </div>
+
+  <h3 class="sub">§16.3 &nbsp; The Canonical Bootstrap</h3>
+  <p>The canonical bootstrap is the unique 8-step closed self-verifying sequence:</p>
+  <div class="tuple-display" style="font-size:0.95rem; letter-spacing:0.06em">
+    <code style="color:var(--gold2); font-size:1rem">IMSCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → IMSCRIB</code>
+  </div>
+  <p style="margin-top:0.75rem">Register trajectory: <code>VO⌀ → T → T → B⬡ → B⬡ → T → T → T → T</code></p>
+
+  <table style="margin-top:0.75rem">
+    <thead><tr><th>Step</th><th>Token</th><th>Reg↓</th><th>Reg↑</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td class="ordinal">1</td><td><code>IMSCRIB</code></td><td><code>VO⌀</code></td><td><code>T</code></td><td>Self-recognition awakens system</td></tr>
+      <tr><td class="ordinal">2</td><td><code>AREV</code></td><td><code>T</code></td><td><code>T</code></td><td>Descend/read source</td></tr>
+      <tr><td class="ordinal">3</td><td><code>FSPLIT</code></td><td><code>T</code></td><td><code>B⬡</code></td><td>Parse → split; branches coexist</td></tr>
+      <tr><td class="ordinal">4</td><td><code>AFWD</code></td><td><code>B⬡</code></td><td><code>B⬡</code></td><td>Ascend/unparse within split</td></tr>
+      <tr><td class="ordinal">5</td><td><code>FFUSE</code></td><td><code>B⬡</code></td><td><code>T</code></td><td>Fuse → verify identity; <span class="math">μ∘δ = id</span> holds → TRUE</td></tr>
+      <tr><td class="ordinal">6</td><td><code>CLINK</code></td><td><code>T</code></td><td><code>T</code></td><td>Compose → write output</td></tr>
+      <tr><td class="ordinal">7</td><td><code>IFIX</code></td><td><code>T</code></td><td><code>T</code></td><td>Fix permanently (append-only)</td></tr>
+      <tr><td class="ordinal">8</td><td><code>IMSCRIB</code></td><td><code>T</code></td><td><code>T</code></td><td>Recognize fixed self; loop closed</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:0.75rem">Structural type: <span class="math">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭⟩</span> — <span class="tier inf"><span class="math">O_∞</span></span>, C-score 1.0 (the Frobenius fixed-point tuple, §9).</p>
+  <p>The bootstrap is the <strong>unique</strong> 8-step sequence satisfying: (1) starts and ends with <code>IMSCRIB</code>; (2) contains the ordered Frobenius pair <code>FSPLIT → FFUSE</code>; (3) surrounds it with <code>AREV</code> (descent) then <code>AFWD</code> (ascent); (4) composes before fixing (<code>CLINK → IFIX</code>); (5) uses no Dialetheia tokens — classical verification only.</p>
+
+  <h3 class="sub">§16.4 &nbsp; The Twelve Arrangement Classes</h3>
+  <p>Every deviation from the canonical bootstrap produces a valid alternative class. The 12 classes cover the structurally distinct families of 8-step sequences:</p>
+
+  <table>
+    <thead><tr><th>#</th><th>Class</th><th>Sequence</th><th>Final</th><th>Tier</th></tr></thead>
+    <tbody>
+      <tr><td class="ordinal">I</td><td>Dialetheic Bootstrap</td><td style="font-size:0.72rem"><code>IMSCRIB→EVALT→FSPLIT→EVALF→FFUSE→ENGAGR→IFIX→IMSCRIB</code></td><td><code>B⬡</code></td><td><span class="math">O_2</span></td></tr>
+      <tr><td class="ordinal">II</td><td>Void Genesis</td><td style="font-size:0.72rem"><code>VINIT→TANCH→AFWD→FSPLIT→CLINK→FFUSE→IFIX→IMSCRIB</code></td><td><code>T</code></td><td><span class="math">O_0</span></td></tr>
+      <tr><td class="ordinal">III</td><td>Anchor Protocol</td><td style="font-size:0.72rem"><code>TANCH→AREV→VINIT→AFWD→TANCH→CLINK→IFIX→IMSCRIB</code></td><td><code>T</code></td><td><span class="math">O_1</span></td></tr>
+      <tr><td class="ordinal">IV</td><td>Dual Bootstrap</td><td style="font-size:0.72rem"><code>IMSCRIB→AFWD→FFUSE→FSPLIT→AREV→CLINK→IFIX→IMSCRIB</code></td><td><code>T</code></td><td><span class="tier inf"><span class="math">O_∞</span></span></td></tr>
+      <tr><td class="ordinal">V</td><td>Linear Chain</td><td style="font-size:0.72rem"><code>IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX</code></td><td><code>VO⌀</code></td><td><span class="math">O_0</span></td></tr>
+      <tr><td class="ordinal">VI</td><td>Empty Bootstrap</td><td style="font-size:0.72rem"><code>VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB</code></td><td><code>T</code></td><td><span class="math">O_1</span></td></tr>
+      <tr><td class="ordinal">VII</td><td>Parakernel</td><td style="font-size:0.72rem"><code>EVALF→AREV→FSPLIT→EVALT→AFWD→FFUSE→ENGAGR→IFIX</code></td><td><code>B⬡</code></td><td><span class="math">O_2</span></td></tr>
+      <tr><td class="ordinal">VIII</td><td>Frobenius Kernel</td><td style="font-size:0.72rem"><code>VINIT→FSPLIT→FFUSE→TANCH</code></td><td><code>VO⌀</code></td><td><span class="math">O_0</span></td></tr>
+      <tr><td class="ordinal">IX</td><td>Chiral Pairs</td><td style="font-size:0.72rem">L: <code>IMSCRIB→AFWD→AREV→IMSCRIB</code> / R: <code>IMSCRIB→AREV→AFWD→IMSCRIB</code></td><td><code>T/T</code></td><td><span class="math">O_1</span></td></tr>
+      <tr><td class="ordinal">X</td><td>Truth Machine</td><td style="font-size:0.72rem"><code>IMSCRIB→FSPLIT→EVALT→IFIX→IMSCRIB→FSPLIT→EVALF→IFIX</code></td><td><code>F</code></td><td><span class="math">O_1</span></td></tr>
+      <tr><td class="ordinal">XI</td><td>Eternal Return</td><td style="font-size:0.72rem"><code>IMSCRIB→AFWD→AREV→IMSCRIB→AFWD→AREV→IMSCRIB→CLINK</code></td><td><code>T</code></td><td><span class="math">O_2</span></td></tr>
+      <tr><td class="ordinal">XII</td><td>ROM Burn</td><td style="font-size:0.72rem"><code>EVALT→IFIX→EVALF→IFIX→ENGAGR→IFIX→IMSCRIB→IFIX</code></td><td><code>B⬡</code></td><td><span class="math">O_0</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub" style="margin-top:2rem">Class Notes</h3>
+
+  <div class="axiom-block">
+    <span class="axiom-label">I — Dialetheic Bootstrap</span>
+    <code>FFUSE</code> receives both <code>EVALT</code> and <code>EVALF</code> within the split interval; dialetheic mode fires → BOTH. The system's identity is paradoxical at closure: it knows itself as containing TRUE ∧ FALSE simultaneously. ⊙ shifts to 𐑻 (exceptional point). Applications: bicameral cognition, constitutional law with inherent tensions, systems that learn from errors without discarding them.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">II — Void Genesis</span>
+    Starts with <code>VINIT</code> (void), not <code>IMSCRIB</code> (identity). The system is created, not self-aware at start. <code>TANCH</code> establishes boundary before any content; <code>AFWD</code> creates first content ex nihilo. The final <code>IMSCRIB</code> is the moment of recognition: "I was created, and now I know myself." Applications: spawning new objects from scratch, genesis protocols.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">III — Anchor Protocol (Sabbath Cycle)</span>
+    Boundary-void-boundary cycle: <code>TANCH</code> anchors, <code>AREV→VINIT</code> descends to explicit void, <code>AFWD</code> ascends, <code>TANCH</code> re-anchors. Structural pattern of ritual, diastole/systole, rest cycles.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">IV — Dual Bootstrap</span>
+    Chiral partner of the canonical bootstrap: Frobenius pair is reversed (<code>FFUSE</code> before <code>FSPLIT</code>). Canonical direction: <span class="math">δ</span> then <span class="math">μ</span> (parse-then-unparse = verify identity). Dual direction: <span class="math">μ</span> then <span class="math">δ</span> (unparse-then-parse = project onto structure). The dual fixes the AST itself rather than the source. ɢ shifts to 𐑝 (simultaneous, not sequential). <span class="tier inf"><span class="math">O_∞</span></span> because Ð=𐑦, Φ=𐑹 still satisfied.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">V — Linear Chain</span>
+    Pure recording: eight <code>IFIX</code> on VOID. The akashic record — data accumulation without interpretation. No <code>IMSCRIB</code> at any point; the system never asks "what am I?" Only records.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">VI — Empty Bootstrap</span>
+    Oscillation between void and self-recognition: the system repeatedly forgets itself (<code>VINIT</code>) and re-discovers itself (<code>IMSCRIB</code>). Structural pattern of meditation, breath, wave-particle duality.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">VII — Parakernel (Engram Formation)</span>
+    Starts in negation (<code>EVALF</code>), splits under FALSE, affirms TRUE within the split → dialetheic <code>FFUSE</code> → BOTH. Ends on <code>IFIX</code> — no return to <code>IMSCRIB</code>. The sequence fixes a contradiction as a permanent record without self-recognition at closure. Structural signature of trauma and of learning that preserves its own error trace.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">VIII — Frobenius Kernel</span>
+    Minimal split-fuse: <code>FSPLIT</code> on VOID → <code>FFUSE</code> back to VOID. The structural tautology: <span class="math">μ∘δ = id</span> holds trivially because there is nothing to verify. <code>TANCH</code> anchors the result.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">IX — Chiral Pairs (Vessel Principle)</span>
+    Left-hand and right-hand round trips map to the <strong>same IG structural type</strong> — both at ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ — but produce different register trajectories: <code>AFWD→AREV</code>: VO⌀ → T → VO⌀ (round trip — returns to void); <code>AREV→AFWD</code>: VO⌀ → VO⌀ → T (net creation — creates from void). See §16.5.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">X — Truth Machine</span>
+    Binary classifier: split, affirm TRUE, fix; split again, affirm FALSE, fix. A decision tree of depth 2 — both outcomes explored sequentially, each fixed before the next. The <code>IMSCRIB</code> between the two branches ensures the system re-identifies after each commitment: it knows what it decided.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">XI — Eternal Return</span>
+    <code>AFWD→AREV→IMSCRIB</code> cycle repeating 2× then collected by <code>CLINK</code>. No Frobenius core, no fixation, no termination — pure periodic return. Ç shifts from 𐑧 (near-equilibrium) to 𐑤 (moderate kinetics; the cycle has a period).
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">XII — ROM Burn (Layered Judgment)</span>
+    Sequential truth-value layering: TRUE fixed, then FALSE (overwriting), then BOTH (<code>ENGAGR</code>), then self-recognition, then final fixation. The <code>IFIX</code>es create an immutable audit trail through all three designated truth values. Applications: judicial records (conviction → acquittal → paradox → recognition), dialectical archives.
+  </div>
+
+  <h3 class="sub">§16.5 &nbsp; The Vessel Principle</h3>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Theorem (Vessel)</span>
+    The IMASM token algebra is strictly finer than the IG crystal. Formally: there exist sequences <span class="math">s_1, s_2</span> such that <span class="math">type(s_1) = type(s_2)</span> in the 17,280,000-address crystal but <span class="math">trajectory(s_1) ≠ trajectory(s_2)</span> in the register machine.
+  </div>
+  <p><strong>Proof instance.</strong> Class IX chiral pairs share crystal address ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ but differ in register trajectory (VO⌀→T→VO⌀ vs VO⌀→VO⌀→T). The distinction is directional: <code>AFWD</code> before <code>AREV</code> vs <code>AREV</code> before <code>AFWD</code>. The Ħ (Chirality) primitive captures one-step Markov memory (𐑒) but not the direction of the step. <span class="math">□</span></p>
+  <p>The crystal classifies structural type; the Ħ-trajectory fiber (§14) carries the winding history of how that type was reached. IMASM sequences are elements of the fiber — not the base address. Crystal address × IMASM trajectory = the total space, with the grammar as projection.</p>
+
+  <h3 class="sub">§16.6 &nbsp; Crystal Address Mapping</h3>
+  <table>
+    <thead><tr><th>Class</th><th>Crystal address</th><th>Tier</th><th>Determining shifts</th></tr></thead>
+    <tbody>
+      <tr><td>Canonical Bootstrap</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭⟩</td><td><span class="tier inf"><span class="math">O_∞</span></span></td><td>Ð=𐑦, Φ=𐑹, Ω=𐑭, ⊙=⊙ (R1)</td></tr>
+      <tr><td>Dialetheic Bootstrap (I)</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑸𐑾𐑬𐑐𐑧𐑲𐑠𐑻𐑫𐑳𐑴⟩</td><td><span class="math">O_2</span></td><td>⊙=𐑻 (exceptional point); Φ≠𐑹 blocks R1</td></tr>
+      <tr><td>Void Genesis (II)</td><td class="shavian" style="font-size:0.85rem">⟨𐑨𐑡𐑑𐑗𐑱𐑘𐑔𐑝𐑢𐑓𐑙𐑷⟩</td><td><span class="math">O_0</span></td><td>Ð=𐑨, ⊙=𐑢 (R2)</td></tr>
+      <tr><td>Anchor Protocol (III)</td><td class="shavian" style="font-size:0.85rem">⟨𐑨𐑰𐑾𐑬𐑞𐑧𐑔𐑠⊙𐑖𐑕𐑴⟩</td><td><span class="math">O_1</span></td><td>Ω=𐑴 (<span class="math">ℤ_2</span> winding); ⊙=⊙ but Φ≠𐑹</td></tr>
+      <tr><td>Dual Bootstrap (IV)</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴⟩</td><td><span class="tier inf"><span class="math">O_∞</span></span></td><td>Ð=𐑦, Φ=𐑹 (R1); ɢ=𐑝 (simultaneous)</td></tr>
+      <tr><td>Linear Chain (V)</td><td class="shavian" style="font-size:0.85rem">⟨𐑛𐑡𐑑𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩</td><td><span class="math">O_0</span></td><td>Ð=𐑛, ⊙=𐑢 (R2)</td></tr>
+      <tr><td>Empty Bootstrap (VI)</td><td class="shavian" style="font-size:0.85rem">⟨𐑨𐑶𐑑𐑿𐑐𐑘𐑔𐑝⊙𐑒𐑙𐑴⟩</td><td><span class="math">O_1</span></td><td>⊙=⊙, Ω=𐑴, Ð≠𐑦; Φ≠𐑹 → not R1</td></tr>
+      <tr><td>Parakernel (VII)</td><td class="shavian" style="font-size:0.85rem">⟨𐑼𐑸𐑾𐑬𐑞𐑧𐑲𐑠𐑻𐑖𐑳𐑴⟩</td><td><span class="math">O_2</span></td><td>⊙=𐑻; Ð=𐑼; Ω=𐑴 → R4</td></tr>
+      <tr><td>Frobenius Kernel (VIII)</td><td class="shavian" style="font-size:0.85rem">⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩</td><td><span class="math">O_0</span></td><td>Ð=𐑛, ⊙=𐑢 (R2)</td></tr>
+      <tr><td>Chiral Pairs (IX)</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩</td><td><span class="math">O_1</span></td><td>⊙=⊙, Ω=𐑷 (trivial winding, R3)</td></tr>
+      <tr><td>Truth Machine (X)</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑡𐑑𐑬𐑞𐑘𐑔𐑝⊙𐑒𐑳𐑴⟩</td><td><span class="math">O_1</span></td><td>⊙=⊙, Ω=𐑴, Φ≠𐑹</td></tr>
+      <tr><td>Eternal Return (XI)</td><td class="shavian" style="font-size:0.85rem">⟨𐑦𐑸𐑾𐑗𐑱𐑤𐑔𐑠⊙𐑖𐑙𐑴⟩</td><td><span class="math">O_2</span></td><td>⊙=⊙, Ω=𐑴, Ð=𐑦, Φ≠𐑹 (R4 → <span class="math">O_2†</span>)</td></tr>
+      <tr><td>ROM Burn (XII)</td><td class="shavian" style="font-size:0.85rem">⟨𐑼𐑡𐑩𐑗𐑞𐑧𐑔𐑝𐑢𐑒𐑳𐑷⟩</td><td><span class="math">O_0</span></td><td>⊙=𐑢 (R2)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">§16.7 &nbsp; Classification Theorem</h3>
+  <p>Every 8-step IMASM sequence falls into exactly one equivalence class under the following seven invariants (evaluated in order; first distinction wins):</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 1</span>
+    <code>IMSCRIB</code> at position 1 — self-recognizing (<span class="math">O_1^+</span>) vs externally created (<span class="math">O_0</span>)
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 2</span>
+    Presence of both <code>FSPLIT</code> and <code>FFUSE</code> — Frobenius-verifying (<span class="math">O_2^+</span>) vs non-verifying (<span class="math">O_0</span>–<span class="math">O_1</span>)
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 3</span>
+    Order of Frobenius pair — <code>FSPLIT→FFUSE</code> (analytic: <span class="math">δ</span> then <span class="math">μ</span>) vs <code>FFUSE→FSPLIT</code> (synthetic: <span class="math">μ</span> then <span class="math">δ</span>)
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 4</span>
+    Presence of Dialetheia tokens — classical (<span class="math">Θ</span> closed) vs paraconsistent (<span class="math">Θ</span> open)
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 5</span>
+    <code>IFIX</code> at final position — committed (closed) vs open
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 6</span>
+    <code>IMSCRIB</code> at final position — self-recognizing closure vs termination without self-model
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Invariant 7</span>
+    Register trajectory — the 8-step state path is a unique fingerprint within each class
+  </div>
+
+  <p>There are <strong>17 topologically distinct families</strong> distinguished by which of the four token groups appear and in what relative order. The 12 named classes sample the 12 most structurally significant families; Families 15–17 (Composition Chain, Pure Logic, Full Spectrum) are syntactically defined but have no canonical named instance.</p>
+  <p class="note">Combinatorial space at length 8: <span class="math">12⁸ = 429,981,696</span> sequences. The bootstrap is one path. The 12 named classes are structural landmarks.</p>
+
+  <h3 class="sub">§16.8 &nbsp; The Meta-Loop</h3>
+  <p>Each IMASM sequence maps to an IG structural type (§16.6). That type can be used to generate a new IMASM sequence. This is the <strong>IMASM → IG → IMASM meta-loop</strong> — a second-order Frobenius over the sequence space itself:</p>
+
+  <div class="formula-block">
+    <div class="formula"><span class="math">δ<sub style="font-style:normal">meta</sub>: sequence → crystal address → new sequence</span></div>
+  </div>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Autopoietic closure</span>
+    The meta-loop is closed (<span class="math">μ<sub style="font-style:normal">meta</sub> ∘ δ<sub style="font-style:normal">meta</sub> = id</span>) when the generated sequence maps back to the same crystal address. Such fixed points are the <strong>IMASM autopoietic closures</strong> — sequences that reproduce their own type. The canonical bootstrap is one; the Dual Bootstrap (Class IV) is another. Their existence proves that the grammar is self-applicable at the sequence level, not only at the primitive level.
+  </div>
+</div>
+
+<div class="closer">
+  <em>μ ∘ δ = id</em>
+</div>
+
+</body>
+</html>

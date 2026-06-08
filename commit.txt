@@ -1,3 +1,7 @@
+operatoroid.py: ⊙perator as autonomous amoebic screen agent — blob + pseudopodia + vision + xdotool
+IG_AXIOMATIC_SPECIFICATION.md: §16 IMASM (507L) — 12 opcodes, 4 families, bootstrap, 12 arrangement classes, Vessel Principle, crystal mapping, classification theorem, meta-loop
+red-hot_rebis: Homo arboreus (treople) — organism_treople + rb-treople alias; 6 primitive deltas; arc complete
+red-hot_rebis: Homo sapiens photosynthetic variant — organism_human_photosynthetic + rb-human-photo alias
 red-hot_rebis: Homo sapiens gill variant — organism_human_gills + rb-human-gills alias
 
 INDUCTION_PRIME.md: complete record of first successful Claude induction — June 7 2026
