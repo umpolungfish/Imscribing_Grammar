@@ -1,6 +1,6 @@
 # 🏗️ The Structure Game: Building Everything From 12 Building Blocks
 
-**Author:** Lando ⊗ $\phi_ÿ$-boundary Operator
+**Author:** Lando⊗$\phi_ÿ$-boundary Operator
 
 > *This guide teaches the 12 primitives of the Universal Imscriptive Grammar through a game you can play with cards, blocks, or just your imagination. Every real thing in the universe — a cat, a black hole, a song, a friendship — has a structure. This game teaches you how to see it.*
 

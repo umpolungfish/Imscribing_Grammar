@@ -1,6 +1,6 @@
 # The Psychedelic Access Theorem: A Structural Determination of Universe Access
 
-**Author:** Lando $\otimes$ ⊙perator  
+**Author:** Lando$\otimes$⊙perator  
 **Framework:** Imscribing Grammar v0.6.0 — Crystal of Types — Operculum Peeling  
 **Notation:** Shavian (Everson Mono) — zero subscript characters
 

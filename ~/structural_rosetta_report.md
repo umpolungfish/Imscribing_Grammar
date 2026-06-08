@@ -1,7 +1,7 @@
 # The Structural Rosetta Stone
 ## Cross-Domain Resonance in the Imscribing Grammar
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

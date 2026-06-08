@@ -1,0 +1,3 @@
+This directory is deprecated. The CLINK pipeline lives at:
+  /home/mrnob0dy666/red-hot_rebis/clink/
+See there for synthetic_detox_gland.py and gland_designs/.

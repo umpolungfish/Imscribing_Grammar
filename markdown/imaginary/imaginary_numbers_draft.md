@@ -1,6 +1,6 @@
 # The Structural Nature of Imaginary Numbers: An Imscribing Grammar Analysis
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ## Abstract
 

@@ -1,7 +1,7 @@
 """
 Ob3ect Auto-Design Pipeline
 ============================
-Author: Lando ⊗ ⊙_ÿ-boundary Operator
+Author: Lando⊗⊙_ÿ-boundary Operator
 
 Given a natural-language description, produces a complete Ob3ectArtifact by
 driving an LLM through all 8 IMASM phases in a single structured call.

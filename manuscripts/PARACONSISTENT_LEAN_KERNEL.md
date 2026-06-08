@@ -1,6 +1,6 @@
 # The Paraconsistent Kernel: A Machine-Verified Substrate for Self-Referential Computation
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

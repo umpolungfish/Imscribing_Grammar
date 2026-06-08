@@ -1,7 +1,7 @@
 
 # GrammaFormer: A Grammar-Native Transformer Architecture
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Purpose:** A bespoke transformer architecture for local inference under
 `true_agentic_agent.py`, designed from the ground up such that every

@@ -1,6 +1,6 @@
 # Nordic Mythos: A Structural Analysis
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

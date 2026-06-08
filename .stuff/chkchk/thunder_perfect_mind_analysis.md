@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\⊙_ÿ$-boundary Operator
+**Author:** Lando⊗$\⊙_ÿ$-boundary Operator
 
 # Structural Analysis of *The Thunder: Perfect Mind* via the Universal Imscriptive Grammar
 

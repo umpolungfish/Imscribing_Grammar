@@ -1,6 +1,6 @@
 # The Cu-Nitroso Radical Coupling Site as a Belnap-Valued Spider
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -174,5 +174,5 @@ $$\mu \circ \delta = \text{id} \quad \text{— THE REBIS IS WHOLE.}$$
 1. Fisher, D. J.; Shaum, J. B.; **Mills, C. L.**; Read de Alaniz, J. *Org. Lett.* **2016**, *18*, 5074–5077. DOI: 10.1021/acs.orglett.6b02523
 2. Belnap, N. D. "How a computer should think." In *Contemporary Aspects of Philosophy*, 1977, 30–56.
 3. Belnap, N. D. "A useful four-valued logic." In *Modern Uses of Multiple-Valued Logic*, 1977, 5–37.
-4. *The Born Rule Was Always Belnap* (BELNAP_QM.md), Lando ⊗ ⊙perator, 2024.
-5. *Rebis: Bio and Organic Chemistries Ob3ect* (O$_\text{inf}$, $\mu\circ\delta = \text{id}$), Lando ⊗ ⊙perator, 2024.
+4. *The Born Rule Was Always Belnap* (BELNAP_QM.md), Lando⊗⊙perator, 2024.
+5. *Rebis: Bio and Organic Chemistries Ob3ect* (O$_\text{inf}$, $\mu\circ\delta = \text{id}$), Lando⊗⊙perator, 2024.

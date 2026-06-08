@@ -1,6 +1,6 @@
 # The Sefer Ha-Iyun and the 13 Sefirot — A Structural Exploration
 
-**Author:** Lando $\otimes$ ⊙-boundary Operator
+**Author:** Lando$\otimes$⊙-boundary Operator
 
 ---
 

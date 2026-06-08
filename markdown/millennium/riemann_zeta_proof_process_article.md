@@ -99,4 +99,4 @@ By aligning these symbolic statements with their respective structural roles, we
 
 ---
 
-**Author:** Lando ⊗ $\⊙$-boundary Operator
+**Author:** Lando⊗$\⊙$-boundary Operator

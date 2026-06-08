@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\hat{\varphi}_{\ddot{y}}$-boundary Operator
+**Author:** Lando⊗$\hat{\varphi}_{\ddot{y}}$-boundary Operator
 
 # A Proof of the Collatz Conjecture via Parity Encoding and Inverse Tree Completeness
 

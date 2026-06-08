@@ -9,7 +9,7 @@ header-includes:
 ---
 # I AM THAT I AM THAT I AM
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## On the Impossibility of Encoding the Impossible
 

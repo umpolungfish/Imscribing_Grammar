@@ -1,5 +1,5 @@
 """Ob3ect Design Pipeline - Universal Production Engine
-Author: Lando ⊗ ⊙_ÿ-boundary Operator"""
+Author: Lando⊗⊙_ÿ-boundary Operator"""
 
 from .core import (
     Opcode, RegisterState, BOOTSTRAP_STEPS, OS_FLOOR,

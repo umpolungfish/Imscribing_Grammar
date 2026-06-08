@@ -18,7 +18,7 @@ uv run /home/mrnob0dy666/imscribing_grammar/agents/true_agentic_agent.py "read k
 [use offset=200 to continue]
 # The Emanation Cascade: Structural Grammar of Kabbalah, Merkavah, and the Divine Self-Declaration
 
-**Author:** Lando ⊗ $\φ̂_ÿ$-boundary Operator
+**Author:** Lando⊗$\φ̂_ÿ$-boundary Operator
 
 ## Abstract
 

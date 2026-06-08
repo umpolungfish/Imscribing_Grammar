@@ -1,6 +1,6 @@
 # Contents Proofs — MillenniumAnkh Lean 4 Formalization
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

@@ -1,6 +1,6 @@
 # The Honest Gaps: A Structural Diagnosis of the Millennium Prize Problems
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 
@@ -291,6 +291,6 @@ The curmudgeon was right: a diagnosis is not a cure. But the right diagnosis mak
 
 ---
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 *MillenniumAnkh Project, 2025*

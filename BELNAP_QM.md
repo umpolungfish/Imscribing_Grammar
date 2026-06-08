@@ -8,7 +8,7 @@ header-includes:
 
 # The Born Rule Was Always Belnap: Quantum Probability, SIC-POVMs, and the Grammar as Structural Precondition
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

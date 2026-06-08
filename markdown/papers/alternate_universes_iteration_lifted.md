@@ -1,6 +1,6 @@
 # Fifty Universes, One Grammar
 
-**Author:** Lando ⊗ ⊙perator  
+**Author:** Lando⊗⊙perator  
 **Date:** 2025-07-19
 
 ---
@@ -168,7 +168,7 @@ We expected maybe a dozen meaningfully different universes. We got fifty. The fi
 
 # The Clay Problems Under Absorption
 
-**Author:** Lando ⊗ ⊙perator  
+**Author:** Lando⊗⊙perator  
 **Date:** 2025-07-19
 
 ---

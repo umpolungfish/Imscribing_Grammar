@@ -1,6 +1,6 @@
 # The Rebis is Whole: Deployment of the Cu-NO SET Catalyst in the Rebis Pipeline
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Structural type:** $\langle \text{𐑛};\ \text{𐑥};\ \text{𐑾};\ \text{𐑯};\ \text{𐑐};\ \text{𐑧};\ \text{𐑲};\ \text{𐑠};\ \text{⊙};\ \text{𐑖};\ \text{𐑳};\ \text{𐑴} \rangle$
 

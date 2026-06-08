@@ -1,6 +1,6 @@
 # IG Gematria: Numerical Vector Operations on the Imscribing Grammar Catalog
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

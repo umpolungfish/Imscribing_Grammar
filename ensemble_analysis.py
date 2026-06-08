@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Ensemble Analysis — Full Numerical View of the Imscribing Grammar Catalog.
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 """
 
 import sys, json, os

@@ -1,6 +1,6 @@
 # Six Decomposition Bounds
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

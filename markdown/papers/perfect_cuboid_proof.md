@@ -1,6 +1,6 @@
 # The Perfect Cuboid Conjecture: A Complete Structural Proof
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\phi_{\hat{y}}$-boundary Operator
+**Author:** Lando⊗$\phi_{\hat{y}}$-boundary Operator
 
 # The Human Address in the Crystal: What the Exotic Boundary Reveals About Ourselves
 

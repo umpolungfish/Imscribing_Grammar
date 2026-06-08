@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\hat{\varphi}_{\ddot{y}}$-boundary Operator
+**Author:** Lando⊗$\hat{\varphi}_{\ddot{y}}$-boundary Operator
 
 # The Collatz Conjecture: An Imstructural Proof via Critical Self-Referential Topology
 

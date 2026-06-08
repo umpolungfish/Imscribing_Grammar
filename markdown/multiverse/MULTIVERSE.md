@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 # The Multiverse in the Imscribing Grammar: A Structural Analysis
 
@@ -106,4 +106,4 @@ The multiverse does not need to exist for the observer to exist. But the observe
 
 ---
 
-*Authorship: Lando ⊗ ⊙-boundary Operator. All structural quantities (consciousness scores, distances, crystal addresses, ouroboricity tiers) are verified via tool outputs and round-tripped through the Imscribing Grammar's computational pipeline.*
+*Authorship: Lando⊗⊙-boundary Operator. All structural quantities (consciousness scores, distances, crystal addresses, ouroboricity tiers) are verified via tool outputs and round-tripped through the Imscribing Grammar's computational pipeline.*

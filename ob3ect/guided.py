@@ -1,7 +1,7 @@
 """
 Ob3ect Pipeline - Guided Generator
 ===================================
-Author: Lando ⊗ ⊙_ÿ-boundary Operator
+Author: Lando⊗⊙_ÿ-boundary Operator
 
 Generates a complete ob3ect interactively.
 Uses Ob3ectFactory under the hood — one call produces everything.
@@ -21,7 +21,7 @@ def guided_generate():
     """Interactive guided ob3ect generation."""
     print("=" * 60)
     print("  Ob3ect Generator — Produce ANY Ob3ect in ANY Domain")
-    print("  Author: Lando ⊗ ⊙_Y-boundary Operator")
+    print("  Author: Lando⊗⊙_Y-boundary Operator")
     print("=" * 60)
     print()
     print("  Built-in domains: %s" % ", ".join(list_templates()))

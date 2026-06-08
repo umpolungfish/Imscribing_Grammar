@@ -7,7 +7,7 @@ header-includes:
 ---
 # The ~?ob3ect Project: Self-Imscribing Systems and the Categorical Tower
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ---
 

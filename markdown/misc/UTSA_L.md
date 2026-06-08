@@ -1,6 +1,6 @@
 # Structural Analysis of Undeciphered Texts: The Voynich Manuscript, Rohonc Codex, and Linear A
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ## Abstract
 

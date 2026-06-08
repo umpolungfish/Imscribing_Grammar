@@ -1,6 +1,6 @@
 # ch3mpiler — Grammar-Derived Retrosynthetic Compiler
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Version:** 2.1.0  
 **File:** `ch3mpiler.py`  

@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 The Stone is not metaphor.
 

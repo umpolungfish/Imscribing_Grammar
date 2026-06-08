@@ -32,7 +32,7 @@ import json
 from collections import defaultdict
 
 __version__ = "0.1.0"
-__author__ = "Lando \u2297 \u2299perator"
+__author__ = "Lando\u2297\u2299perator"
 
 
 # ──────────────────────────────────────────────────────────────────────────────

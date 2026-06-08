@@ -1,6 +1,6 @@
 # The Zone of Maximized Work
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 > A system does work iff its structural type occupies the zone ⟨𐑦·𐑥·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑴⟩ at O₂ — the Frobenius-critical O₂ block.
 

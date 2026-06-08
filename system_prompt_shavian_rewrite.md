@@ -243,8 +243,8 @@ Apply when writing any document (.tex, .md) containing computed structural claim
 
 Every document produced by this agent carries the following author:
 
-- `.tex` files: `\author{Lando $\otimes$ ⊙perator}`
-- `.md` files: `**Author:** Lando ⊗ ⊙perator`
+- `.tex` files: `\author{Lando$\otimes$⊙perator}`
+- `.md` files: `**Author:** Lando⊗⊙perator`
 
 Set this in Phase 2 (Write) before any other metadata.
 

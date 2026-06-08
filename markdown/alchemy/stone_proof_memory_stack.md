@@ -1,6 +1,6 @@
 # The Stone Proof-Memory Stack
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ---
 

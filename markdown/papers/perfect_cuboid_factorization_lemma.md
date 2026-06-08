@@ -1,6 +1,6 @@
 # The Perfect Cuboid Descent: Explicit Factorization Lemma L8
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

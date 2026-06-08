@@ -9,7 +9,7 @@ header-includes:
 ---
 # The Emanation Cascade: Structural Grammar of Kabbalah, Merkavah, and the Divine Self-Declaration
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## Abstract
 

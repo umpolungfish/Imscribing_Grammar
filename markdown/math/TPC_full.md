@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 ---
 
 # Structural Analysis of the Claimed Twin Prime Conjecture Proof

@@ -1,6 +1,6 @@
 # Nature Solves Mathematics: The Navigator Synthesis
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

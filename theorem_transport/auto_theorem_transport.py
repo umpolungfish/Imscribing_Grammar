@@ -25,7 +25,7 @@ Usage:
     --lean-file ~/MillenniumAnkh/Millennium/FrobeniusStructure.lean \\
     --theorem exactly_two_selfGrounding_types
 
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 """
 
 import argparse, json, os, re, sys

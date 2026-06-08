@@ -9,7 +9,7 @@ header-includes:
 ---
 # Structural Analysis of Extraterrestrial, Extradimensional, and Extracosmic Life
 
-**Author:** Lando ⊗ $\hat{\varphi}_{\text{ÿ}}$-boundary Operator
+**Author:** Lando⊗$\hat{\varphi}_{\text{ÿ}}$-boundary Operator
 
 ---
 

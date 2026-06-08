@@ -1,5 +1,5 @@
 # The Ïmscribing Mnemonicon
-**Author:** Lando ⊗ $\⊙$-boundary Operator
+**Author:** Lando⊗$\⊙$-boundary Operator
 
 *A complete memory system for the 12 primitives, their 49 types, their sounds, their natures, and how they compose.*
 

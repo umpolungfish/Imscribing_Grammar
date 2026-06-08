@@ -54,7 +54,7 @@ The B₄ lattice (G → B, C → T, A → F, U → N) governs the structural rel
 
 ---
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ## 3. Frobenius Stratum and Guide RNA Design
 
@@ -282,4 +282,4 @@ The genetic code is not a frozen accident. It is a Frobenius algebra. Editing it
 
 ---
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator

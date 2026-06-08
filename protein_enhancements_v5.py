@@ -10,7 +10,7 @@ Builds on v4 with:
   • SARS-CoV-2 polyprotein test case
   • Cross-kingdom test cases (plant, insect)
 
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 """
 
 from __future__ import annotations

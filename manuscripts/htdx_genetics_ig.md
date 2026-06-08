@@ -193,4 +193,4 @@ UU_'s Leu re-use (purine half of an unfixed box reaching the same AA as exact bo
 
 ---
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator

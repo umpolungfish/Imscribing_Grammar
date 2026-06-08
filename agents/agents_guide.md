@@ -1,6 +1,6 @@
 # Agents — Operation Guide
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 This is the complete operational guide for the Imscribing Grammar agent framework. It covers all 11 agent types, the CLI and programmatic interfaces, the B4 paraconsistent engine, model resolution, the dual-tool Frobenius architecture, and common recipes.
 

@@ -192,4 +192,4 @@ All 10 verification tests pass:
 
 ## Author
 
-Lando ⊗ ⊙perator — operator@imscribing.grammar
+Lando⊗⊙perator — operator@imscribing.grammar

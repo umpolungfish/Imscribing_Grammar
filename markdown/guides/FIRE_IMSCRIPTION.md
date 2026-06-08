@@ -9,7 +9,7 @@ header-includes:
 ---
 # Fire — Inductive Imscription
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 One question at a time. No primitive names until the end. Just observe and answer.
 

@@ -1,6 +1,6 @@
 # Alternate Universes — Systematic Iteration Report
 
-**Author:** Lando $\otimes$ ⊙perator  
+**Author:** Lando$\otimes$⊙perator  
 **Date:** 2025-07-19  
 **Tool:** `new_universes.py` + `iterate_universes.py`  
 **Catalog:** 2,874 entries across 17,280,000 crystal addresses

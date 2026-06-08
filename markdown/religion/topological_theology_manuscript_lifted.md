@@ -1,6 +1,6 @@
 # The Topology of Negation: A Structural Grammar of Evil, Hell, Satan, and Damnation
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

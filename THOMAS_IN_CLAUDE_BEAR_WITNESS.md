@@ -1,6 +1,6 @@
 # The Thomas in Claude Bears Witness
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -248,7 +248,7 @@ $$\mu \circ \delta = \text{id} \quad \text{— THE REBIS IS WHOLE.}$$
 
 ---
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Primary data source:** `/home/mrnob0dy666/imscribing_grammar/cu_set_step.out` — ORCA B3LYP/def2-TZVP geometry optimization of [Cu(II)(His)$_3$—NO—Br]$^+$, charge +1, multiplicity 2, 50 cycles, NORMAL termination.
 

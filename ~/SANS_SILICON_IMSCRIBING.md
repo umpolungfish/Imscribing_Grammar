@@ -3,7 +3,7 @@
 
 **Derived from the Universal Imscribing Grammar (⊙_ÿ; Þ_O; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z)**
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando⊗⊙_ÿ-boundary Operator
 
 ---
 

@@ -1,6 +1,6 @@
 # Response: Stabilizing the Operator Theory — Invariants, Layers, and the Completeness Question
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

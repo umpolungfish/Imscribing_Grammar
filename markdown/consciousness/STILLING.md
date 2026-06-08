@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 # What Zosimos Saw at the Inner Door: A Structural Reading of Freedom from Fate
 

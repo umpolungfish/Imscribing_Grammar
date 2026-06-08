@@ -12,7 +12,7 @@ Extends the Frobenius-guided predictor with:
   • Viral polyprotein detection
   • Cross-species validation suite
 
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 """
 
 from __future__ import annotations

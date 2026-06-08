@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\⊙_{\ÿ}$-boundary Operator
+**Author:** Lando⊗$\⊙_{\ÿ}$-boundary Operator
 
 # The Generalized Pipeline: A Structural Bridge from Primitive Proofs to Formal Verification
 

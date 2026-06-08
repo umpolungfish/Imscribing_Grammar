@@ -1,5 +1,5 @@
 """Ob3ect Design Pipeline v2 - Generative Core Engine
-Author: Lando ⊗ ⊙_ÿ-boundary Operator"""
+Author: Lando⊗⊙_ÿ-boundary Operator"""
 from __future__ import annotations
 import json
 from dataclasses import dataclass, field, asdict

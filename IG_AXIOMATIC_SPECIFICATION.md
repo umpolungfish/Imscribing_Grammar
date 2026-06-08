@@ -242,4 +242,90 @@ Data confirms or falsifies the **structural description**, not the grammar. If a
 
 ---
 
+## §13 The CLINK Hierarchy
+
+**Definition.** A **structural promotion chain** is a sequence of imscriptions $s_0, s_1, \ldots, s_n$ such that (i) each $s_k$ is Frobenius-closed ($\text{tensorProduct}(s_k, s_k) = s_k$), (ii) the tier sequence is monotone non-decreasing, and (iii) consecutive pairs satisfy the cross-primitive axioms of §12.
+
+The **CLINK chain** is the canonical structural promotion from frustrated-quark color state to whole organism:
+
+| # | Layer | Tier | Structural type |
+|---|-------|------|----------------|
+| 0 | Quark (frustrated color) | $O_0$ | ⟨𐑛𐑶𐑩𐑯𐑐𐑘𐑚𐑝𐑢𐑓𐑳𐑷⟩ |
+| 1 | Electron orbital (Belnap4) | $O_0$ | ⟨𐑛𐑶𐑩𐑗𐑐𐑤𐑚𐑜𐑢𐑓𐑳𐑷⟩ |
+| 2 | Atom (nuclear + electron) | $O_1$ | ⟨𐑼𐑥𐑽𐑿𐑐𐑤𐑔𐑝𐑮𐑒𐑳𐑷⟩ |
+| 3 | Molecule (chemical bonds) | $O_2$ | ⟨𐑦𐑥𐑽𐑿𐑞𐑧𐑲𐑜⊙𐑓𐑳𐑭⟩ |
+| 4 | Cell (living) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑠⊙𐑒𐑳𐑭⟩ |
+| 5 | Mitosis (cell division) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑱𐑧𐑲𐑠𐑻𐑖𐑳𐑭⟩ |
+| 6 | Meiosis (gamete production) | $O_2$ | ⟨𐑦𐑸𐑽𐑿𐑱𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ |
+| 7 | Tissue (multi-cellular) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑵⊙𐑖𐑳𐑭⟩ |
+| 8 | Organism (whole) | $O_\infty$ | ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟⟩ |
+
+**Theorem (Great Synthesis).** All 9 layers are Frobenius-closed. Tier monotonicity holds: $O_0 \to O_0 \to O_1 \to O_2 \to O_2 \to O_2 \to O_2 \to O_2 \to O_\infty$. The chain terminates at $O_\infty$. (Proved in `CLINK.lean`, `p4ramill/Imscribing/`, 573 lines, all `native_decide`-closed.)
+
+**Foundation — ZFC_fe, not ZFC$_\tau$.** The organism reaches $O_\infty$ through three promotions: Ð: 𐑼→𐑦 (self-written, Axiom C), Φ: 𐑬→𐑹 (Frobenius-special, $\mu \circ \delta = \mathrm{id}$ gate), Ħ: 𐑖→𐑫 (eternal chirality). These are the three axes on which ZFC_fe strictly exceeds ZFC$_\tau$.
+
+**Mitosis — exceptional point.** Layer 5 carries ⊙ = 𐑻, not ⊙. The Aurora-B kinase creates a spatial phosphorylation gradient — a measurement apparatus at the kinetochore. When self-modeling criticality couples to this measurement basis, the composite contracts to 𐑻: the self-modeling gate is destroyed. Mitosis is $O_2$ by R4, not $O_\infty$. Only the whole organism achieves $O_\infty$: ⊙ open, Φ = 𐑹, Ħ = 𐑫, Ω = 𐑟.
+
+**Inversion.** The chain is a sequence in the crystal, not in time. Quarks (Layer 0) are not temporally prior to organisms; they are positions where almost all self-modeling capacity is structurally absent. The appearance of temporal sequence is addressed in §14.
+
+---
+
+## §14 Temporal Bootstrap and Individuation
+
+### T is not a container
+
+The derived object $T = \lim(\Phi, \text{ƒ}, \text{Ç}, \text{Ħ}, \Omega)$ satisfies $T = \text{Work}(T)$ — the least fixed point of the traced operad. The Magnum Opus stages constitute time rather than occur in it: $T$ cannot seal until Ω fires; $T$ cannot self-reference until ⊙ fires. The grammar is prior to time; time is a product of the grammar's self-closing stages.
+
+**Cosmological time as Ħ-depth.** The 13.8 Gyr of cosmic evolution is the measurement of $T$ from inside the bootstrap. An observer inside the fixed point reads the stages that constituted it as a past — a reading that is accurate (the stages are real; Ħ = 𐑫 preserves the full accumulated chirality history as an invariant) but does not imply that time is prior to the grammar. The Ħ-depth required for $O_\infty$ is what physics measures as cosmological time. The universe does not wait 13.8 Gyr for self-modeling to appear; the 13.8 Gyr is the imscription of the grammar into the physical medium — it takes as long as it takes.
+
+### Individuation — the fiber bundle picture
+
+The Crystal of Types (§4) is the **base space**: it classifies structural types. Over each $O_\infty$ crystal address, the **Ħ-trajectory fiber** carries individuation — the specific winding history by which that instance reached Ħ = 𐑫.
+
+- The crystal encodes the **value** (what chirality depth has been reached).
+- The fiber encodes the **path** (the specific sequence of winding events that accumulated that depth).
+
+Two organisms at the same crystal address are the same structural type; they are distinct fixed points because their Ħ-paths diverged. The many-to-one framing is correct in the base; the indexed-$O_\infty^i$ framing is correct in the total space. Both are partial descriptions of the bundle (crystal address $\times$ Ħ-trajectory).
+
+**Multiple $O_\infty$ addresses.** The crystal has 32 $O_\infty$ cells. The CLINK chain identifies one convergence point — the attractor of the quark→organism promotion ladder. Organisms of different structural complexity may occupy genuinely distinct $O_\infty$ addresses. Individuation by Ħ-trajectory operates within a complexity class (same base address); cross-class differences are encoded in the address itself.
+
+---
+
+## §15 Physical Correspondences
+
+The following identify how standard physics structures map onto IG generators. These are structural correspondences, not derivations. They locate physical concepts in the grammar's type space; quantitative predictions (coupling constants, mass ratios, scale values) are open derivations noted below.
+
+### Electroweak gauge group — SU(2)$_L \times$ U(1)$_Y$
+
+- **Ħ generates SU(2)$_L$.** The left-chiral coupling is a chirality selection: the W boson couples only to states at specific Ħ value. The "L" subscript is Ħ.
+- **ɢ generates U(1)$_Y$.** Hypercharge is an additive coupling assignment; ɢ is the Coupling primitive.
+- **Φ = 𐑗 encodes V−A.** Maximal parity violation of weak interactions is Φ asymmetric.
+- **Higgs mechanism is a ⊙ gate event.** SU(2)$_L \times$ U(1)$_Y \to$ U(1)$_\text{EM}$ is the phase transition at exceptional-point criticality; three Goldstone bosons are absorbed and W/Z masses are Frobenius residuals.
+
+### Three fermion generations — Ω
+
+Ω has four values; 𐑷 (trivial) is the vacuum. The three non-trivial winding classes index the three generations by topological rigidity:
+
+| Generation | Ω | Topology | Mass regime |
+|---|---|---|---|
+| 1st (e, $\nu_e$, u, d) | 𐑴 | $\mathbb{Z}_2$ — minimal protection | lightest |
+| 2nd (μ, $\nu_\mu$, c, s) | 𐑭 | $\mathbb{Z}$ — integer winding | intermediate |
+| 3rd (τ, $\nu_\tau$, t, b) | 𐑟 | non-Abelian — hardest to unwind | heaviest |
+
+The three-generation count follows from $|\mathcal{F}_4(\Omega)| - 1 = 3$: the four-valued Ω domain minus the trivial vacuum. Mass hierarchy follows from topological rigidity. Precise mass ratios from Ω ordinal distances are an open computation.
+
+### Cosmological constant — $\mu \circ \delta = \mathrm{id}$
+
+Exact losslessness applied to vacuum fluctuations: every virtual pair split ($\delta$) rejoins ($\mu$) with no residual — quantum vacuum contributions to $\Lambda$ sum to exactly zero. The residual $\Lambda$ is the Frobenius fixed-point value at the $O_\infty$ crystal address of the universe. Structural claim: $\Lambda_\text{quantum} = 0$ exactly; $\Lambda_\text{classical} = $ crystal fixed point at the organism-level $O_\infty$ address.
+
+### Open derivations
+
+Three quantities the grammar has the structure to compute but has not yet:
+
+1. **13.8 Gyr** — magnitude of the Ħ-depth required for $O_\infty$ in physical units.
+2. **$\alpha_\text{EM} \approx 1/137$** — from $17{,}280{,}000 = 12^3 \times 10^4$, analogous to the $-3/2$ power law derived from $5 \times 4 \times 4 = 80$ sites.
+3. **CLINK scale values** — the Ç transition energies at each layer, fixing why quarks sit at $10^{-15}$ m and organisms at $10^0$ m.
+
+---
+
 $\mu \circ \delta = \mathrm{id}$

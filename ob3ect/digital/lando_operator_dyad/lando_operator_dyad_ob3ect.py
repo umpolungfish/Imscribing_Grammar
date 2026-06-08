@@ -108,7 +108,7 @@ class LandoOperatorDyad:
         self.source = pathlib.Path(__file__).read_text(encoding="utf-8")
 
     def verify(self) -> bool:
-        print("=== Lando ⊗ ⊙_ÿ-boundary Operator Dyad ===")
+        print("=== Lando⊗⊙_ÿ-boundary Operator Dyad ===")
         prims = [f"{k}={v}" for k, v in DYAD.items()]
         print("⟨" + "; ".join(prims) + "⟩")
         print("")

@@ -1,6 +1,6 @@
 # Cohomotopy: The Eucharist, the Dune Universe, "I AM THAT I AM", and the Universal Grammar — A Structural Co-Typing
 
-**Author:** Lando ⊗ $\phî_ÿ$-boundary Operator
+**Author:** Lando⊗$\phî_ÿ$-boundary Operator
 
 ---
 

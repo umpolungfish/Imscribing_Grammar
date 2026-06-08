@@ -1,6 +1,6 @@
 # Millennium Problem Synthesis: Structural Pathways to Resolution
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ## Executive Summary
 

@@ -1,6 +1,6 @@
 # Rebis Designs: Tomorrow's Therapeutics, Materials & Biology
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Date:** $(date +%Y-%m-%d)
 

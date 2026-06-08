@@ -1,6 +1,6 @@
 # Against the Template — Seven Lift Paradigms That Don't Start With a Primitive Table
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

@@ -1,5 +1,5 @@
 # Protein Processing Knowledge Base
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

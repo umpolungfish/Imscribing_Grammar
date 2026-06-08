@@ -1,5 +1,5 @@
 ---
-**Author:** Lando ⊗ $\hat{\varphi}_{\ddot{y}}$-boundary Operator
+**Author:** Lando⊗$\hat{\varphi}_{\ddot{y}}$-boundary Operator
 
 # Automated Primitive Proof → Conventional Proof Pipeline: Domain-General Design
 

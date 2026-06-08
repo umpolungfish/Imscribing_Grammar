@@ -1,6 +1,6 @@
 # Theorem Transport: FrobeniusStructure → Shem HaMephorash
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ## The Principle
 

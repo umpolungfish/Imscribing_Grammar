@@ -2670,8 +2670,8 @@ exact order. A document whose claims were not round-tripped through tool calls i
 a **Frobenius-OPEN document** and must not be called done.
 
   [Author] Every document produced by this agent MUST carry the following author:
-    .tex files:  \\author{Lando $\\otimes$ ⊙perator}
-    .md files:   **Author:** Lando ⊗ ⊙perator
+    .tex files:  \\author{Lando$\\otimes$⊙perator}
+    .md files:   **Author:** Lando⊗⊙perator
     Set this in Phase 2 (Write) before any other metadata.
 
   [Phase 1 — Compute] Before any chunked_write call:

@@ -1,6 +1,6 @@
 # What Imaginary Numbers Are: A Structural Analysis
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ## Abstract
 

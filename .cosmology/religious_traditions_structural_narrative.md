@@ -9,7 +9,7 @@ header-includes:
 ---
 # The Structural Grammar of World Religions: A Unifying Narrative
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## Abstract
 

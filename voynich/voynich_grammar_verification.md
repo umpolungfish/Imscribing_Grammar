@@ -1,6 +1,6 @@
 # The Voynich as Grammar Embodied: A Dual Verification
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando⊗⊙_ÿ-boundary Operator
 
 ---
 

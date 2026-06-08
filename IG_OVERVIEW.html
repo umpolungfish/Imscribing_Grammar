@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Imscribing Grammar — Axiomatic Specification</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a08;
+    --bg2: #111110;
+    --fg: #d4cfbf;
+    --fg2: #8a8676;
+    --fg3: #4a4840;
+    --gold: #b8922a;
+    --gold2: #e8b84b;
+    --gold3: #6b5218;
+    --accent: #c4a35a;
+    --border: #252420;
+    --border2: #1e1d1a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { background: var(--bg); color: var(--fg); font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.75; }
+  body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 8rem; }
+
+  /* ── Typography ── */
+  h1.title {
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--gold2);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+  .subtitle {
+    font-size: 0.75rem;
+    color: var(--fg2);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+  h2.section {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3.5rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  h2.section::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  h3.sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  p { color: var(--fg); margin-bottom: 0.85rem; font-size: 0.875rem; }
+  em { color: var(--gold2); font-style: italic; }
+  strong { color: var(--fg); font-weight: 500; }
+  code { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 0.82em; }
+  .math { font-family: 'IM Fell English', serif; font-style: italic; color: var(--gold2); font-size: 1em; }
+
+  /* ── Structure ── */
+  .section-body { padding-left: 1rem; border-left: 1px solid var(--border); }
+  .axiom-block {
+    border: 1px solid var(--gold3);
+    border-left: 3px solid var(--gold);
+    background: #0f0e0b;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: 0.84rem;
+  }
+  .axiom-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── Formula display ── */
+  .formula {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.1rem;
+    color: var(--gold2);
+    padding: 0.8rem 1.2rem;
+    background: #0d0c09;
+    border: 1px solid var(--border);
+    display: inline-block;
+    margin: 0.75rem 0;
+    letter-spacing: 0.05em;
+  }
+  .formula-block {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  /* ── Crystal display ── */
+  .crystal-count {
+    font-family: 'IM Fell English', serif;
+    font-size: 2.2rem;
+    color: var(--gold2);
+    display: block;
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin: 1rem 0 0.3rem;
+  }
+  .crystal-label {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--fg2);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 1rem 0; }
+  th {
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--gold3);
+    font-weight: 400;
+  }
+  td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid var(--border2);
+    color: var(--fg);
+    vertical-align: top;
+  }
+  tr:hover td { background: #0f0e0b; }
+  td.shavian { font-size: 1.05rem; letter-spacing: 0.08em; color: var(--gold2); }
+  td.prim-name { color: var(--accent); font-weight: 500; }
+  td.ordinal { color: var(--fg2); }
+  td.rule { color: var(--gold2); font-weight: 500; }
+
+  /* ── Tier badges ── */
+  .tier {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--gold3);
+    color: var(--gold2);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .tier.inf { border-color: var(--gold); color: var(--gold2); background: #1a1408; }
+
+  /* ── Tuple display ── */
+  .tuple-display {
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    color: var(--gold2);
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 1.2rem 1.5rem;
+    background: #0c0b08;
+    border: 1px solid var(--gold3);
+    margin: 1rem 0;
+    text-align: center;
+    word-break: break-all;
+  }
+  .tuple-brackets { color: var(--fg3); }
+  .tuple-sep { color: var(--fg3); margin: 0 0.1em; }
+
+  /* ── Gate badges ── */
+  .gate {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    color: var(--gold2);
+    border: 1px solid var(--gold);
+    background: #1a1408;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .closed { color: #c44; border-color: #622; background: #1a0808; }
+
+  /* ── Distinction block ── */
+  .vs-block {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin: 1.5rem 0;
+  }
+  .vs-col {
+    padding: 1rem;
+    background: #0c0b08;
+    border: 1px solid var(--border);
+  }
+  .vs-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg2);
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+  }
+  .vs-col p { font-size: 0.8rem; }
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    color: var(--gold);
+    font-family: 'IM Fell English', serif;
+    font-size: 1.2rem;
+    background: #0c0b08;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .vs-col.left { border-right: none; }
+  .vs-col.right { border-left: none; }
+
+  /* ── Prediction table ── */
+  .predict-row td:first-child { color: var(--accent); font-size: 0.82rem; }
+
+  /* ── Footer ── */
+  .closer {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3rem;
+    color: var(--gold3);
+    letter-spacing: 0.25em;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .closer em { color: var(--gold); font-style: normal; }
+
+  /* ── Header ornament ── */
+  .ornament {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--gold3);
+    letter-spacing: 0.4em;
+    margin-bottom: 2rem;
+  }
+
+  /* ── Notes ── */
+  .note {
+    font-size: 0.78rem;
+    color: var(--fg2);
+    border-left: 2px solid var(--fg3);
+    padding-left: 0.75rem;
+    margin: 0.75rem 0;
+    font-style: italic;
+  }
+
+  /* ── Rule R1-R5 ── */
+  .rules-list { list-style: none; margin: 0.75rem 0; }
+  .rules-list li {
+    display: grid;
+    grid-template-columns: 2.5rem 5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border2);
+    font-size: 0.82rem;
+    align-items: start;
+  }
+  .rules-list li .rule-id { color: var(--gold); font-weight: 500; }
+  .rules-list li .rule-tier .tier { font-size: 0.7rem; }
+  .rules-list li .rule-cond { color: var(--fg2); }
+
+  @media (max-width: 600px) {
+    body { padding: 2rem 1rem 6rem; }
+    .vs-block { grid-template-columns: 1fr; }
+    .vs-divider { padding: 0.5rem; }
+    .rules-list li { grid-template-columns: 2rem 4rem 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ornament">⊙ · · · ⊙ · · · ⊙</div>
+
+<h1 class="title">The Imscribing Grammar</h1>
+<p class="subtitle">Axiomatic Specification &nbsp;·&nbsp; All definitions are given &nbsp;·&nbsp; μ∘δ = id</p>
+
+<!-- §1 -->
+<h2 class="section">§1 &nbsp; Ambient Category</h2>
+<div class="section-body">
+  <p>Let <span class="math">𝒞 = (C, ⊗, I, σ)</span> be a symmetric monoidal category enriched over the Belnap-Dunn bilattice <span class="math">FOUR = {N, T, F, B}</span>. Hom-sets carry the bilattice partial order.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Paraconsistent axiom</span>
+    <span class="math">B</span> ("both") — simultaneously affirmed and denied — is a legitimate element of any hom-set. The inference <span class="math">B → ⊥</span> is <strong>not admissible</strong>. No <span class="math">B</span>-valued hom-set collapses to the zero morphism. The category is not Boolean.
+  </div>
+  <p><strong>Trace.</strong> <span class="math">C</span> carries a trace <span class="math">Tr: End(A ⊗ U) → End(A)</span> for each object pair, implemented by the <em>Ω (Winding)</em> primitive acting on the monoidal unit. This is the traced symmetric monoidal structure of Joyal–Street–Verity. Ω is not compact/dual structure — the trace is primitive, not derived from duality.</p>
+</div>
+
+<!-- §2 -->
+<h2 class="section">§2 &nbsp; Frobenius Structure</h2>
+<div class="section-body">
+  <p>The monoidal unit <code>I</code> carries a special symmetric <code>†</code>-Frobenius structure.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Frobenius law</span>
+    <span class="math">(μ ⊗ id) ∘ (id ⊗ δ) = δ ∘ μ = (id ⊗ μ) ∘ (δ ⊗ id)</span>
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Special condition &nbsp;— the gate</span>
+    <span class="math" style="font-size:1.15rem">μ ∘ δ = id<sub style="font-style:normal">I</sub></span>
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Symmetry</span>
+    <span class="math">μ ∘ σ<sub style="font-style:normal">I,I</sub> = μ</span> &nbsp;·&nbsp; <strong>Commutativity is a theorem</strong>, not an assumption — it follows from scalar structure in any SMC.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">FOUR-† compatibility</span>
+    The dagger functor preserves FOUR-values: if <span class="math">h</span> has value <span class="math">v ∈ {N,T,F,B}</span>, then <span class="math">h†</span> has value <span class="math">v</span>. This must be imposed explicitly.
+  </div>
+</div>
+
+<!-- §3 -->
+<h2 class="section">§3 &nbsp; Generators</h2>
+<div class="section-body">
+  <p>12 primitive endomorphisms of <span class="math">I</span>, subject to the Frobenius relations. Freely generated means: free SMC on 12 generators → impose Frobenius relations → free object in special symmetric <span class="math">†</span>-Frobenius algebras.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Primitive</th>
+        <th>Name</th>
+        <th>Stage</th>
+        <th>Family</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="prim-name">Ř</td><td>Recognition</td><td>Nigredo · L1,L2</td><td>𝓕₄</td><td class="shavian">𐑩 𐑑 𐑽 𐑾</td></tr>
+      <tr><td class="prim-name">Ħ</td><td>Chirality</td><td>Albedo · I2</td><td>𝓕₄</td><td class="shavian">𐑓 𐑒 𐑖 𐑫</td></tr>
+      <tr><td class="prim-name">Ω</td><td>Winding</td><td>Albedo · I3</td><td>𝓕₄</td><td class="shavian">𐑷 𐑴 𐑭 𐑟</td></tr>
+      <tr><td class="prim-name">Ð</td><td>Dimensionality</td><td>Albedo · I4</td><td>𝓕₄</td><td class="shavian">𐑛 𐑨 𐑼 𐑦</td></tr>
+      <tr><td class="prim-name">Σ</td><td>Stoichiometry</td><td>Citrinitas · A1</td><td>𝓕₃</td><td class="shavian">𐑙 𐑕 𐑳</td></tr>
+      <tr><td class="prim-name">Φ</td><td>Parity</td><td>Citrinitas + Rubedo · A1,L5</td><td>𝓕₅</td><td class="shavian">𐑗 𐑿 𐑬 𐑯 𐑹</td></tr>
+      <tr><td class="prim-name">Ç</td><td>Kinetics</td><td>Citrinitas · A2</td><td>𝓕₅</td><td class="shavian">𐑘 𐑤 𐑧 𐑪 𐑺</td></tr>
+      <tr><td class="prim-name">ƒ</td><td>Fidelity</td><td>Citrinitas · A3</td><td>𝓕₃</td><td class="shavian">𐑱 𐑞 𐑐</td></tr>
+      <tr><td class="prim-name">ɢ</td><td>Coupling</td><td>Citrinitas · A4</td><td>𝓕₄</td><td class="shavian">𐑝 𐑜 𐑠 𐑵</td></tr>
+      <tr><td class="prim-name">Γ</td><td>Granularity</td><td>Albedo × Citrinitas</td><td>𝓕₃</td><td class="shavian">𐑚 𐑔 𐑲</td></tr>
+      <tr><td class="prim-name">Þ</td><td>Topology</td><td>Rubedo · L3</td><td>𝓕₅</td><td class="shavian">𐑡 𐑰 𐑥 𐑶 𐑸</td></tr>
+      <tr><td class="prim-name">⊙</td><td>Criticality</td><td>Rubedo · L4 under L6</td><td>𝓕₅</td><td class="shavian">𐑢 ⊙ 𐑮 𐑻 𐑣</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Γ (Granularity) furnishes a multicategory over 𝒞 — n-ary operations are first-class. The grammar is an algebra over the Γ-operad.</p>
+</div>
+
+<!-- §4 -->
+<h2 class="section">§4 &nbsp; Crystal of Types</h2>
+<div class="section-body">
+  <div class="formula-block">
+    <div class="crystal-count">3³ × 4⁵ × 5⁴ = 17,280,000</div>
+    <div class="crystal-label">distinct addresses in the Crystal of Types</div>
+  </div>
+  <p>The classifying space of all structurally distinct imscriptions. Each address is a point in the 12-dimensional discrete space whose axes are the primitive ordinal domains.</p>
+</div>
+
+<!-- §5 -->
+<h2 class="section">§5 &nbsp; Structural Type — Notation</h2>
+<div class="section-body">
+  <p>A structural type (imscription) is a 12-tuple of Shavian values in canonical order:</p>
+  <div class="tuple-display">
+    <span class="tuple-brackets">⟨</span> Ð · Þ · Ř · Φ · ƒ · Ç · Γ · ɢ · ⊙ · Ħ · Σ · Ω <span class="tuple-brackets">⟩</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Pos</th><th>Prim</th><th>Name</th><th>Values — ascending ordinal rank</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ordinal">1</td><td class="prim-name">Ð</td><td>Dimensionality</td><td class="shavian">𐑛(1) · 𐑨(2) · 𐑼(3) · 𐑦(4)</td></tr>
+      <tr><td class="ordinal">2</td><td class="prim-name">Þ</td><td>Topology</td><td class="shavian">𐑡(1) · 𐑰(2) · 𐑥(3) · 𐑶(4) · 𐑸(5)</td></tr>
+      <tr><td class="ordinal">3</td><td class="prim-name">Ř</td><td>Recognition</td><td class="shavian">𐑩(1) · 𐑑(2) · 𐑽(3) · 𐑾(4)</td></tr>
+      <tr><td class="ordinal">4</td><td class="prim-name">Φ</td><td>Parity</td><td class="shavian">𐑗(1) · 𐑿(2) · 𐑬(3) · 𐑯(4) · 𐑹(5)</td></tr>
+      <tr><td class="ordinal">5</td><td class="prim-name">ƒ</td><td>Fidelity</td><td class="shavian">𐑱(1) · 𐑞(2) · 𐑐(3)</td></tr>
+      <tr><td class="ordinal">6</td><td class="prim-name">Ç</td><td>Kinetics</td><td class="shavian">𐑘(1) · 𐑤(2) · 𐑧(3) · 𐑪(4) · 𐑺(4.5)</td></tr>
+      <tr><td class="ordinal">7</td><td class="prim-name">Γ</td><td>Granularity</td><td class="shavian">𐑚(1) · 𐑔(2) · 𐑲(3)</td></tr>
+      <tr><td class="ordinal">8</td><td class="prim-name">ɢ</td><td>Coupling</td><td class="shavian">𐑝(1) · 𐑜(2) · 𐑠(3) · 𐑵(4)</td></tr>
+      <tr><td class="ordinal">9</td><td class="prim-name">⊙</td><td>Criticality</td><td class="shavian">𐑢(1) · ⊙(2) · 𐑮(2.33) · 𐑻(2.67) · 𐑣(3)</td></tr>
+      <tr><td class="ordinal">10</td><td class="prim-name">Ħ</td><td>Chirality</td><td class="shavian">𐑓(1) · 𐑒(2) · 𐑖(3) · 𐑫(4)</td></tr>
+      <tr><td class="ordinal">11</td><td class="prim-name">Σ</td><td>Stoichiometry</td><td class="shavian">𐑙(1) · 𐑕(2) · 𐑳(3)</td></tr>
+      <tr><td class="ordinal">12</td><td class="prim-name">Ω</td><td>Winding</td><td class="shavian">𐑷(1) · 𐑴(2) · 𐑭(3) · 𐑟(4)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Worked Example — The Rebis &nbsp;<span class="tier inf"><span class="math">O_∞</span></span>&nbsp; C = 0.755</h3>
+  <div class="tuple-display">⟨ 𐑦 𐑶 𐑾 𐑹 𐑐 𐑧 𐑲 𐑝 ⊙ 𐑫 𐑳 𐑭 ⟩</div>
+  <table>
+    <thead>
+      <tr><th>Primitive</th><th>Value</th><th>Ordinal</th><th>Reading</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="prim-name">Ð</td><td class="shavian">𐑦</td><td class="ordinal">4</td><td>self-written holographic</td></tr>
+      <tr><td class="prim-name">Þ</td><td class="shavian">𐑶</td><td class="ordinal">4</td><td>irreducible product</td></tr>
+      <tr><td class="prim-name">Ř</td><td class="shavian">𐑾</td><td class="ordinal">4</td><td>bidirectional feedback</td></tr>
+      <tr><td class="prim-name">Φ</td><td class="shavian">𐑹</td><td class="ordinal">5</td><td>Frobenius-special — μ∘δ = id gate</td></tr>
+      <tr><td class="prim-name">ƒ</td><td class="shavian">𐑐</td><td class="ordinal">3</td><td>quantum</td></tr>
+      <tr><td class="prim-name">Ç</td><td class="shavian">𐑧</td><td class="ordinal">3</td><td>slow / near-equilibrium</td></tr>
+      <tr><td class="prim-name">Γ</td><td class="shavian">𐑲</td><td class="ordinal">3</td><td>universal / long-range</td></tr>
+      <tr><td class="prim-name">ɢ</td><td class="shavian">𐑝</td><td class="ordinal">1</td><td>simultaneous conjunction</td></tr>
+      <tr><td class="prim-name">⊙</td><td>⊙</td><td class="ordinal">2</td><td>critical / self-modeling</td></tr>
+      <tr><td class="prim-name">Ħ</td><td class="shavian">𐑫</td><td class="ordinal">4</td><td>eternal — no finite Markov order</td></tr>
+      <tr><td class="prim-name">Σ</td><td class="shavian">𐑳</td><td class="ordinal">3</td><td>many heterogeneous</td></tr>
+      <tr><td class="prim-name">Ω</td><td class="shavian">𐑭</td><td class="ordinal">3</td><td>integer winding (ℤ-valued)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- §6 -->
+<h2 class="section">§6 &nbsp; Structural Metric</h2>
+<div class="section-body">
+  <p>The canonical distance between two imscriptions <code>s₁, s₂</code>:</p>
+  <div class="formula-block">
+    <div class="formula">d(s₁, s₂) = √( Σᵢ wᵢ · (xᵢ(s₁) − xᵢ(s₂))² )</div>
+  </div>
+  <p>Symmetric, satisfies the triangle inequality, zero iff <span class="math">s₁ = s₂</span>.</p>
+
+  <table>
+    <thead>
+      <tr><th>Ð</th><th>Þ</th><th>Ř</th><th>Φ</th><th>ƒ</th><th>Ç</th><th>Γ</th><th>ɢ</th><th>⊙</th><th>Ħ</th><th>Σ</th><th>Ω</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>0.8</td><td>1.0</td><td>0.7</td></tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Regime thresholds</span>
+    <code>d &lt; 2.0</code> — same structural regime &nbsp;·&nbsp;
+    <code>d &gt; 4.0</code> — structurally remote &nbsp;·&nbsp;
+    <code>d &gt; 5.0</code> — different tier class
+  </div>
+  <p class="note">Worked distance: <code>ouroboric_pill</code> (<span class="math">O_∞</span>) vs. <code>plastic_photonic_crystal</code> (<span class="math">O_2</span>) → d = 5.74. Largest contributors: Þ (Δ=16.0), Ð (Δ=4.0), Ħ (Δ=3.2).</p>
+</div>
+
+<!-- §7 -->
+<h2 class="section">§7 &nbsp; Ouroboricity Tiers</h2>
+<div class="section-body">
+  <p>Five tiers assigned by rules R1–R5, first match wins. Operative gates: <em>⊙ (Criticality)</em>, <em>Φ (Parity)</em>, <em>Ω (Winding)</em>. Ð determines the <span class="math">O_2</span> / <span class="math">O_2†</span> split.</p>
+
+  <ul class="rules-list">
+    <li>
+      <span class="rule-id">R1</span>
+      <span class="rule-tier"><span class="tier inf"><span class="math">O_∞</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Φ = 𐑹 — Special Frobenius exact: <span class="math">μ∘δ = id</span></span>
+    </li>
+    <li>
+      <span class="rule-id">R2</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_0</span></span></span>
+      <span class="rule-cond">⊙ ∈ {𐑢, 𐑮, 𐑻} — no self-referential loop possible</span>
+    </li>
+    <li>
+      <span class="rule-id">R3</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_1</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω = 𐑷 — critical, no topological protection</span>
+    </li>
+    <li>
+      <span class="rule-id">R4</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_2</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω ≠ 𐑷 <strong>and</strong> Ð ∈ {𐑛, 𐑨, 𐑼} — bounded domain</span>
+    </li>
+    <li>
+      <span class="rule-id">R5</span>
+      <span class="rule-tier"><span class="tier"><span class="math">O_2†</span></span></span>
+      <span class="rule-cond">⊙ ∈ {⊙, 𐑣} <strong>and</strong> Ω ≠ 𐑷 <strong>and</strong> Ð = 𐑦 — unbounded domain</span>
+    </li>
+  </ul>
+  <p class="note">Default (no rule matches): <span class="math">O_0</span>.</p>
+</div>
+
+<!-- §8 -->
+<h2 class="section">§8 &nbsp; C-Score</h2>
+<div class="section-body">
+  <p>Proximity to <span class="math">O_∞</span> along two hard gates:</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Gate 1</span>
+    ⊙ ∈ {⊙, 𐑣} — criticality threshold open
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Gate 2</span>
+    Ç ∈ {𐑘, 𐑤, 𐑧, 𐑪} — kinetics not frozen (Ç ≠ 𐑺 order-frozen)
+  </div>
+
+  <p>If either gate is <span class="gate closed">closed</span>: <code>C = 0</code>. If both <span class="gate">open</span>:</p>
+  <div class="formula-block">
+    <div class="formula"><span class="math">C = Σᵢ wᵢ · (xᵢ / xᵢ,max) ∈ [0, 1]</span></div>
+  </div>
+  <p class="note">C-score and tier are independent. A system can be <span class="math">O_∞</span> (R1 satisfied) with C &lt; 1 if some primitives are below maximum ordinal.</p>
+</div>
+
+<!-- §9 -->
+<h2 class="section">§9 &nbsp; Spider Theorem · Fixpoint · T Object</h2>
+<div class="section-body">
+  <h3 class="sub">Spider Theorem</h3>
+  <p>The special Frobenius axiom (<span class="math">μ∘δ = id</span>) together with symmetry implies: any two connected string diagrams in the Prop of the grammar with the same boundary are equal as morphisms. Discriminating condition is <em>connectedness</em>, not planarity.</p>
+
+  <h3 class="sub">Fixpoint — <span class="math">O_∞</span></h3>
+  <p>The ⊙ gate admits an idempotent scalar <span class="math">ω: I → I</span> with <span class="math">ω∘ω = ω</span>. <span class="math">O_∞</span> is the initial algebra of the endofunctor <span class="math">(-) ∘ (-): End(I) → End(I)</span> — the fixpoint in which the grammar is applied to itself.</p>
+  <p>The Frobenius identity <span class="math">μ∘δ = id</span> requires <span class="math">Ħ_A</span> (two-step chirality, 𐑖) as minimum — one split (<span class="math">δ</span>), one merge (<span class="math">μ</span>). Eternal chirality (Ħ = 𐑫) is what physical systems accumulate through time; it is not required by the identity itself.</p>
+
+  <h3 class="sub">Frobenius Fixed-Point Tuple</h3>
+  <p>The imscription of the identity <span class="math">μ∘δ = id</span> as a structural object:</p>
+  <div class="tuple-display">⟨ 𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑔 𐑠 ⊙ 𐑖 𐑳 𐑭 ⟩</div>
+  <p><span class="tier inf"><span class="math">O_∞</span></span> &nbsp; C-score = 1.0</p>
+  <p class="note">Proved in <code>MajoranaFixed.lean</code>: Belnap B, SIC-POVM fiducial, and Majorana mode are the same computation under <span class="math">μ∘δ = id</span> — each proved by definitional equality (<code>rfl</code>).</p>
+
+  <h3 class="sub">Derived Object — T</h3>
+  <p><span class="math">T = lim(Φ, ƒ, Ç, Ħ, Ω)</span> — categorical limit over Parity, Fidelity, Kinetics, Chirality, Winding. T is not a generator; it is the temporal bootstrap fixed point derived from the free algebra. <span class="math">T = Work(T).</span></p>
+</div>
+
+<!-- §10 -->
+<h2 class="section">§10 &nbsp; Foundational Strength — <span class="math">ZFC_{fe}</span></h2>
+<div class="section-body">
+  <p>In <code>ZFC_fe</code> (Frobenius-Extended ZFC), <span class="math">μ∘δ = id</span> is taken as a set-formation axiom. The comultiplication <span class="math">δ: A → A ⊗ A</span> is the primitive set-formation operation — lossless recovery asserted.</p>
+  <div class="axiom-block">
+    <span class="axiom-label">Theorem</span>
+    ZFC Separation — <span class="math">∀φ: {x ∈ A | φ(x)} exists</span> — becomes a theorem in <code>ZFC_fe</code>. The <span class="math">δ</span>-preimage under <span class="math">μ</span> yields the Separation set for any definable <span class="math">φ</span>.
+  </div>
+  <p><code>ZFC_fe</code> strictly extends ZFC and is strictly stronger than <code>ZFC_τ</code>. Open problems in <code>ZFC_τ</code> close as theorems in <code>ZFC_fe</code>.</p>
+</div>
+
+<!-- §11 -->
+<h2 class="section">§11 &nbsp; Distinctions</h2>
+<div class="section-body">
+  <h3 class="sub">From Abramsky-Coecke Categorical QM</h3>
+  <p>In Abramsky-Coecke <span class="math">†</span>-compact categories, hom-sets are Bool-valued. In <span class="math">𝒞</span>, hom-sets are FOUR-valued. A <span class="math">B</span>-valued morphism — simultaneously affirmed and denied — is a legitimate element of <span class="math">hom(A,B)</span>. Classical QM is recovered as the T-valued sub-category. The grammar is intrinsically paraconsistent at the level of its hom-sets.</p>
+
+  <h3 class="sub">From Holography</h3>
+
+  <div class="vs-block">
+    <div class="vs-col left">
+      <h4>Holography</h4>
+      <p><strong>Static</strong> isomorphism between configurations — the map exists timelessly.</p>
+      <p><strong>Up to redundancy</strong> — bulk recovered from partial boundary via entanglement wedge reconstruction.</p>
+      <p>Requires a boundary. The isomorphism lives between bulk and boundary — the boundary must exist as a distinct object.</p>
+    </div>
+    <div class="vs-divider">≠</div>
+    <div class="vs-col right">
+      <h4>Imscription</h4>
+      <p><strong>Dynamic</strong> — a process; the system reconstitutes itself through the operation.</p>
+      <p><strong>Up to the trace</strong> — equivalence defined by connected diagrams with the same boundary (Spider theorem). Topological, not a symmetry of an encoding.</p>
+      <p>No boundary to require. Ř = 𐑾 (bidirectional) — there is nowhere to put the boundary.</p>
+    </div>
+  </div>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Structural consequence</span>
+    Holography can describe <span class="math">O_2</span> systems — bounded domain, topological protection, a surface to project onto. It structurally <strong>cannot</strong> describe <span class="math">O_∞</span>, because <span class="math">O_∞</span> is the tier at which the distinction between system and boundary collapses.
+  </div>
+
+  <p><strong>Holographic redundancy</strong> is a symmetry of the map. <strong>Imscriptive trace</strong> is a property of the winding. Different equivalence relations: one defined by a group action on encoding choices, one defined by connected topology of the string diagram.</p>
+
+  <p>Holography is the information-theoretic analogue of crystallography. Both impose an external observer, both achieve their result by projecting onto a lower-dimensional representation, and both destroy the properties of <span class="math">O_∞</span> systems in the act of representing them. Crystallography freezes Ω (winding collapses 𐑭→𐑷). Holography projects Ř (bidirectionality collapses 𐑾→𐑩). In both cases: faithful to <span class="math">O_2</span> content, blind to <span class="math">O_∞</span> structure.</p>
+</div>
+
+<!-- §12 -->
+<h2 class="section">§12 &nbsp; The Imscription Procedure</h2>
+<div class="section-body">
+  <p>A 12-step decision procedure applied in canonical primitive order: Ð → Þ → Ř → Φ → ƒ → Ç → Γ → ɢ → ⊙ → Ħ → Σ → Ω. Each step assigns one primitive value from structural facts — mechanism, geometry, stoichiometry, coordination chemistry. No computed observable is an input. Data tests structural predictions after the imscription is fixed.</p>
+
+  <h3 class="sub">Cross-Primitive Axioms</h3>
+  <p>Enforced by three named axioms. A tuple violating any axiom is malformed. All three proved in <code>ParadoxBoot.lean</code> (0 sorrys).</p>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom A</span>
+    Ħ = 𐑫 (eternal, <span class="math">H_∞</span>) ⟹ Ç = 𐑺 (order-frozen) &nbsp;·&nbsp;
+    The depth of chirality memory and the kinetic regime are coupled.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom B</span>
+    Ω ∈ {𐑭 (ℤ), 𐑴 (ℤ₂)} ⟹ Ħ ≥ ordinal 2 (𐑒 or above) &nbsp;·&nbsp;
+    Topological winding protection requires at least two-step chirality memory.
+  </div>
+  <div class="axiom-block">
+    <span class="axiom-label">Axiom C</span>
+    Ð = 𐑦 (self-written) ⟺ Þ = 𐑸 (self-referential closure) &nbsp;·&nbsp;
+    Both must be present or neither. Most commonly violated axiom in practice.
+  </div>
+
+  <h3 class="sub">Falsifiability Structure</h3>
+  <p>The type assignment is prior to and independent of experimental data. The type carries structural predictions — observable consequences derivable from the primitive assignments.</p>
+
+  <table>
+    <thead>
+      <tr><th>Type assignment</th><th>Structural prediction</th><th>How to test</th></tr>
+    </thead>
+    <tbody class="predict-row">
+      <tr>
+        <td>⊙ at criticality</td>
+        <td>Geometry and electronic structure co-evolve through a divergent region</td>
+        <td>Plot ⟨S²⟩ vs bond distance across optimization trajectory</td>
+      </tr>
+      <tr>
+        <td>Ω = 𐑭 (ℤ winding)</td>
+        <td>System returns to origin state after exactly n windings; no half-integer paths</td>
+        <td>Stoichiometric closure analysis</td>
+      </tr>
+      <tr>
+        <td>Ħ = 𐑖 (two-step chirality)</td>
+        <td>Outcome depends on two prior states; stereospecificity is precursor-dependent</td>
+        <td>Isotopic labeling; chiral substrate series</td>
+      </tr>
+      <tr>
+        <td>Þ = 𐑰 (crossing point)</td>
+        <td>Two potential energy surfaces cross; transition state at the crossing</td>
+        <td>CASSCF scan along reaction coordinate</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="axiom-block">
+    <span class="axiom-label">Falsification rule</span>
+    If a prediction fails: the structural description was wrong. Revise the mechanism and re-imscribe. The grammar does not adjust to fit results. It makes a commitment — the data either holds it or breaks it.
+  </div>
+</div>
+
+<div class="closer">
+  <em>μ ∘ δ = id</em>
+</div>
+
+</body>
+</html>

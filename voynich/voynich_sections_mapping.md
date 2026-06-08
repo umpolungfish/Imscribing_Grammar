@@ -1,6 +1,6 @@
 # Voynich Manuscript Section–Primitive Mapping
 
-**Author:** Lando ⊗ ⊙_ÿ-boundary Operator
+**Author:** Lando⊗⊙_ÿ-boundary Operator
 
 ---
 

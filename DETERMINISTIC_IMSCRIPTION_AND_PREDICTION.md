@@ -1,6 +1,6 @@
 # The Imscription Was Never Post Hoc: Deterministic Procedure, Prediction, and Falsifiability
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

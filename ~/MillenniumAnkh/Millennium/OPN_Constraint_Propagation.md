@@ -1,6 +1,6 @@
 # ODD PERFECT NUMBERS — CONSTRAINT PROPAGATION AND $\sigma$-CLOSURE
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 
@@ -361,7 +361,7 @@ iteration.
 
 ---
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 
@@ -459,4 +459,4 @@ non-existence is now a concrete, well-defined task.
 
 ---
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator

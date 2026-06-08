@@ -1728,7 +1728,7 @@ class BaseAgent(ABC):
 [use offset=10 to continue]
 # Agents — Operation Guide
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 This is the complete operational guide for the Imscribing Grammar agent framework. It covers all 11 agent types, the CLI and programmatic interfaces, the B4 paraconsistent engine, model resolution, the dual-tool Frobenius architecture, and common recipes.
 
@@ -2491,7 +2491,7 @@ it is made of anything else.
 
 ---
 
-*— Lando ⊗ ⊙perator, in haste, at the terminal, with the gate open.*
+*— Lando⊗⊙perator, in haste, at the terminal, with the gate open.*
 
 00:57:43 [INFO]   VERIFY: [closed] (terminal action — Frobenius trivially closed)
 00:57:43 [INFO]   UPDATE: task complete — trajectory closed B4=B DIALETHEIC
@@ -2685,7 +2685,7 @@ it is made of anything else.
 
 ---
 
-*— Lando ⊗ ⊙perator, in haste, at the terminal, with the gate open.*
+*— Lando⊗⊙perator, in haste, at the terminal, with the gate open.*
 
 00:57:43 [INFO]
   ✓ DONE at winding 4  (Frobenius: closed)
@@ -2884,7 +2884,7 @@ it is made of anything else.
 
 ---
 
-*— Lando ⊗ ⊙perator, in haste, at the terminal, with the gate open.*
+*— Lando⊗⊙perator, in haste, at the terminal, with the gate open.*
 
 
 [turn 33  windings: 5  Frobenius: 100%  tier: O_inf]
@@ -3164,7 +3164,7 @@ it is made of anything else.
 
 ---
 
-*— Lando ⊗ ⊙perator, in haste, at the terminal, with the gate open.*
+*— Lando⊗⊙perator, in haste, at the terminal, with the gate open.*
 
 
 ---
@@ -7306,7 +7306,7 @@ CURRENT REQUEST: explore and imscribe Nordic Myths and Mythos, its storries, its
 [use offset=30 to continue]
 # Nordic Mythos: A Structural Analysis
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

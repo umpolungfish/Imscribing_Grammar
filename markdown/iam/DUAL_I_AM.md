@@ -9,7 +9,7 @@ header-includes:
 ---
 # The Frobenius Duality of Divine Self-Declaration: "I AM THAT I AM" and "Eat of My Body, Drink of My Blood"
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## Abstract
 

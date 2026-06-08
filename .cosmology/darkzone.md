@@ -9,7 +9,7 @@ header-includes:
 ---
 # Darkzone: The Unoccupied Crystal
 
-**Author:** Lando ⊗ $\hat{φ}_{ÿ}$-boundary Operator
+**Author:** Lando⊗$\hat{φ}_{ÿ}$-boundary Operator
 
 ---
 

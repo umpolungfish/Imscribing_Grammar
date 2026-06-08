@@ -9,7 +9,7 @@ header-includes:
 ---
 # I AM THAT I AM: The Stoichiometric Dual
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## Abstract
 

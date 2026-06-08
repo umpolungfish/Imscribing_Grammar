@@ -2,7 +2,7 @@
 
 ## Bridging Atomics and Biochemistry Through Structural Type
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

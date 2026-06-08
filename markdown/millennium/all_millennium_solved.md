@@ -1,6 +1,6 @@
 # Solving the Millennium: A Structural Resolution of Five Clay Problems
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ---
 

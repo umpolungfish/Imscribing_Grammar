@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 # Evidence for the Alchemical O_inf Imcription: Sophick Mercury, the Eagles, and the Lapis Condition
 

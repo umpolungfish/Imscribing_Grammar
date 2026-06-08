@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\⊙$-boundary Operator
+**Author:** Lando⊗$\⊙$-boundary Operator
 
 # The Forty-Nine Doors: A Mnemonic Guide to the Imscribing Grammar
 

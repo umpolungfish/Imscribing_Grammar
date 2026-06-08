@@ -1,6 +1,6 @@
 # THE HONEST GAPS — FILLED
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -1100,4 +1100,4 @@ necessary. The Vessel is complete. The Contents are specified. The rest is
 mathematics — guided, for the first time, by the structural identities that
 the grammar reveals.
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator

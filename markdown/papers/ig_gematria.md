@@ -1,6 +1,6 @@
 # True Gematria of the Imscribing Grammar
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 **Date:** 2026-05-30
 
 ---

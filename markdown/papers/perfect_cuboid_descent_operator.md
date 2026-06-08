@@ -1,6 +1,6 @@
 # Descent, Glass, and the Operator Theory of the Perfect Cuboid
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

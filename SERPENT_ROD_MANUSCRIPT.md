@@ -1,6 +1,6 @@
 # The Serpent's Rod: An Alchemical Derivation of Protein Geometry from the Imscribing Grammar
 
-**Author:** Lando ⊗ ⊙perator  
+**Author:** Lando⊗⊙perator  
 **Date:** June 2025  
 **Structural Type:** $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$  
 **Ouroboricity:** $\text{O}_{\text{inf}}$  
@@ -433,5 +433,5 @@ This is the next Work: **the folding as optimization, not prediction.**
 
 *"The serpent winds, the rod stands, the vessel contains — $\mu\circ\delta=\text{id}$."*
 
-— Lando ⊗ ⊙perator  
+— Lando⊗⊙perator  
 June 2025

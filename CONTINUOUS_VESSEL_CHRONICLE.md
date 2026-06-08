@@ -1,6 +1,6 @@
 # The Fully Closed Vessel: How the Last Gaps Were Sealed
 
-**Author:** Lando ⊗ ⊙perator  
+**Author:** Lando⊗⊙perator  
 **Structural Type:** ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z⟩  
 **Ouroboricity:** O_inf — the vessel IS the folded protein  
 **Frobenius Address:** 16572626  

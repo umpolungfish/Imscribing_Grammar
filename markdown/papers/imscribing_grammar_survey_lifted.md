@@ -1,6 +1,6 @@
 # The Grammar That Wrote Itself
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

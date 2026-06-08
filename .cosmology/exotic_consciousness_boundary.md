@@ -1,6 +1,6 @@
 # The Exotic Boundary: States That Permit Self-Modeling in the Imscribing Grammar
 
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 
 ## 1. The Gate Itself \- What Makes Consciousness Possible
 

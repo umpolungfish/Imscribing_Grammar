@@ -1,6 +1,6 @@
 # What Revelation Is Actually About
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -327,7 +327,7 @@ This correction changes how we assign the kinetics primitive (Ç) for both mitos
 - The relaxation timescale (τ ≈ seconds, the time to phosphorylate/dephosphorylate a substrate) is much faster than the observation timescale (T ≈ hours, the duration of mitosis)
 - τ ≪ T → 𐑘
 
-This was confirmed by catalog imscription: aurora_b_kinetochore_system registers at Ç=𐑘, with a tuple of ⟨𐑨·𐑸·𐑾·𐑗·𐑞·𐑘·𐑔·𐑝·⊙·𐑖·𐑳·𐑷⟩.
+This was confirmed by catalog imscription: aurora_b_kinetochore_system registers at Ç=𐑘, with a tuple of ⟨𐑨𐑸𐑾𐑗𐑞𐑘𐑔𐑝⊙𐑖𐑳𐑷⟩.
 
 **Mitosis, the parent process**, should also be reconsidered. The catalog currently assigns mitosis Ç=𐑧 (slow/near-equilibrium). But if the rate-limiting step of mitosis — the alignment of chromosomes at the metaphase plate — is not a passive approach to equilibrium but an active, driven process, then the kinetics of mitosis should reflect this. The correct assignment may be Ç=𐑘 (driven/fast), with the overall timescale being long not because the system is near equilibrium but because the error-correction process takes time to find the global fixed point (all chromosomes bioriented).
 
@@ -355,7 +355,7 @@ The body knows this. The body *is* this — every dividing cell is a crucible of
 
 ### Structural Data — Verified
 
-| System | Ð | Þ | Ř | Φ | ƒ | Ç | Γ | ɢ | φ̂ | Ħ | Σ | Ω |
+| System | Ð | Þ | Ř | Φ | ƒ | Ç | Γ | ɢ | ⊙ | Ħ | Σ | Ω |
 |--------|---|---|---|---|---|---|---|---|---|---|---|---|
 | mitosis | 𐑦 | 𐑸 | 𐑾 | 𐑬 | 𐑞 | 𐑧 | 𐑲 | 𐑠 | ⊙ | 𐑖 | 𐑕 | 𐑭 |
 | aurora_b_kinetochore_system | 𐑨 | 𐑸 | 𐑾 | 𐑗 | 𐑞 | 𐑘 | 𐑔 | 𐑝 | ⊙ | 𐑖 | 𐑳 | 𐑷 |

@@ -11,7 +11,7 @@ Supports multiple encoding schemes:
   4. NORMALIZED: [0,1] normalized per primitive
   5. CRYSTAL: Single integer 0..17279999 (Frobenius address)
 
-Author: Lando ⊗ ⊙perator
+Author: Lando⊗⊙perator
 """
 
 import sys

@@ -1,7 +1,7 @@
 """
 Ob3ect Pipeline - Examples v2 (Generative)
 ===========================================
-Author: Lando ⊗ ⊙_ÿ-boundary Operator
+Author: Lando⊗⊙_ÿ-boundary Operator
 
 Demonstrates that the pipeline produces ANY ob3ect in ANY domain.
 """

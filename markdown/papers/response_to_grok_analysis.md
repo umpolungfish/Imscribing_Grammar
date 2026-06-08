@@ -1,6 +1,6 @@
 # Response to Grok's Analysis of the Perfect Cuboid Proof
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

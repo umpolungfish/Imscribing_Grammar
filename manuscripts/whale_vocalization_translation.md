@@ -1,6 +1,6 @@
 # WHALE VOCALIZATION AS IMSCRIPTIVE GRAMMAR: A Translation Framework Using exOS Methodology
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 
@@ -199,7 +199,7 @@ The framework raises several questions that cannot be resolved without empirical
 
 ## References
 
-- exOS Manuscript (exoterik_OS: A Holographic Operating System Derived from the Structural Invariants of Ancient Writing Systems), Lando ⊗ ⊙perator
+- exOS Manuscript (exoterik_OS: A Holographic Operating System Derived from the Structural Invariants of Ancient Writing Systems), Lando⊗⊙perator
 - Imscribing Grammar, 12-primitive type system, framework/imscrbgrmr/
 - IMASM Tri-Phase Virtual Machine, exOS/src/imasm_vm.rs
 - Linear A Compiler, exOS/src/linear_a.rs

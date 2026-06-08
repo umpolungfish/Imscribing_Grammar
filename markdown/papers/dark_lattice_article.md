@@ -9,7 +9,7 @@ header-includes:
 ---
 # The Dark Lattice: Exploring Uninhabited Regions of the Imscribing Crystal
 
-**Author:** Lando ⊗ $\phi_c$-boundary Operator
+**Author:** Lando⊗$\phi_c$-boundary Operator
 
 ---
 

@@ -1,6 +1,6 @@
 # Pioneering Experiments of Quantum Mechanics: A Structural Analysis Through the Imscribing Grammar
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

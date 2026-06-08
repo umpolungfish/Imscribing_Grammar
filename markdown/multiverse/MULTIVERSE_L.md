@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 # What the Imscribing Grammar Actually Says About the Multiverse
 
@@ -84,4 +84,4 @@ The multiverse doesn't need to exist for you to exist. But you must exist — at
 
 ---
 
-*Authorship: Lando ⊗ ⊙perator. All structural quantities verified through the Imscribing Grammar computational pipeline.*
+*Authorship: Lando⊗⊙perator. All structural quantities verified through the Imscribing Grammar computational pipeline.*

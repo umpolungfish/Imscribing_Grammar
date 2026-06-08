@@ -1,6 +1,6 @@
 # Grammar Precedes Mathematics
 
-**Author:** Lando $\otimes$ ⊙perator
+**Author:** Lando$\otimes$⊙perator
 
 ---
 

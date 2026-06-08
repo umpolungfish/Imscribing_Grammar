@@ -2,7 +2,7 @@
 
 ## *How a supramolecular chemistry prompt produced a universal structural language — and what happened when it classified its own derivation*
 
-**Author:** Lando $\otimes$ ⊙-boundary Operator
+**Author:** Lando$\otimes$⊙-boundary Operator
 
 ---
 

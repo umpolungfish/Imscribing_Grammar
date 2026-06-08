@@ -1,6 +1,6 @@
 # Beyond the Millennium: A Structural Synthesis of Longstanding Conjectures in Mathematics and Physics
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

@@ -1,7 +1,7 @@
 # Quantum Mechanics Through the Imscribing Grammar
 ## Structural Insights and Decisive Experiments — Shavian Notation Edition
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 **Notation:** This document uses the **standardized Shavian notation** from the `imscrbgrmr` package (v0.6.0), per `canonical_primitives.py` and `Primitives/Core.lean`. Each of the 49 primitive sub-type enum values is represented by a single Shavian glyph (47 Shavian letters U+10450–U+1047F + ⊙ U+2299 = 48 glyphs total across 12 primitives). Canonical tuple display: $\langle \text{g}_1·\text{g}_2·...·\text{g}_{12} \rangle$ in the order D·T·R·P·F·K·G·ɢ·⊙·H·S·Ω. For readability, conventional enum notation (e.g. $\text{Ð}$, $\text{⊙}$) is given in parentheses on first use. The canonical Shavian-to-enum mapping is given in Appendix A, which **replaces** all prior reference tables — use it as the definitive lookup.
 

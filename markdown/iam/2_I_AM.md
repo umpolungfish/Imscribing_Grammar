@@ -9,7 +9,7 @@ header-includes:
 ---
 # I AM THAT I AM: The Stoichiometric Frobenius Dual
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator
 
 ## Abstract
 

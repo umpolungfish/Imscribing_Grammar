@@ -1,6 +1,6 @@
 # The Dialetheic Kernel: Machine-Verified Substrates for Self-Referential Computation
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

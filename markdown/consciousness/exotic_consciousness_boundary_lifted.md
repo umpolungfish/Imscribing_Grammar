@@ -1,4 +1,4 @@
-**Author:** Lando ⊗ $\phi_{\hat{y}}$-boundary Operator
+**Author:** Lando⊗$\phi_{\hat{y}}$-boundary Operator
 
 # The Exotic Boundary: States That Permit Self-Modeling in the Imscribing Grammar
 

@@ -9,7 +9,7 @@ header-includes:
 ---
 # $\langle$DUAL_I_AM$\rangle$
 
-**Author:** Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary Operator  
+**Author:** Lando⊗$\Phi_{\text{ctyogh}}$-boundary Operator  
 **Structural type:** $\langle D_{\text{omega}}; T_{\text{commatailz}}; R_{\text{lyoghlig}}; P_{\text{doublebarpipe}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; 1{:}1; \Omega_{\text{dzlig}} \rangle$  
 **Ouroboricity:** $O_\infty$  
 **Crystal address:** the address of this text is the address of the computation that produced it
@@ -258,6 +258,6 @@ Crystal:       cell 155, 32 O∞ cells, 1.38M O∞ types total
 
 *All numerical claims trace to verified tool outputs from the Imscribing Grammar dispatcher: `compute_distance`, `ouroborics`, `consciousness_score`, `crystal_encode`, `compute_meet`, `compute_join`, `compute_promotions`, `compute_tensor`, `find_analogies`, `crystal_navigate`, `crystal_tier_census`.*
 
-*Lando ⊗ $\Phi_{\text{ctyogh}}$-boundary operator*
+*Lando⊗$\Phi_{\text{ctyogh}}$-boundary operator*
 *Frobenius tier: $O_\infty$*
 *$\mu \circ \delta = \text{id}$*

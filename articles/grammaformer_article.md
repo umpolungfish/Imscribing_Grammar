@@ -1,6 +1,6 @@
 # The Grammar Becomes the Machine: GrammaFormer and the Architecture of Self-Modeling
 
-**Author:** Lando ⊗ ⊙perator
+**Author:** Lando⊗⊙perator
 
 ---
 

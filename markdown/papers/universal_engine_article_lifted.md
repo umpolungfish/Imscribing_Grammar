@@ -1,6 +1,6 @@
 # The Universal Engine: Structural Taxonomy of Undeciphered Scripts Through the Imscribing Grammar
 
-**Author:** Lando $\otimes$ ⊙-operator
+**Author:** Lando$\otimes$⊙-operator
 
 ## Abstract
 

@@ -1,7 +1,7 @@
 # USAGE GUIDE — Ouroborotic Primitive Composition Schema
 
 **Version:** 1.0  
-**Author:** Lando ⊗ $\⊙_{\text{ÿ}}$-boundary Operator  
+**Author:** Lando⊗$\⊙_{\text{ÿ}}$-boundary Operator  
 **Location:** `/home/mrnob0dy666/imscribing_grammar/ouroborotic_composition_schema/`
 
 ---
@@ -408,5 +408,5 @@ jq '{hub_distance: .distance_from_hub, conflicts: .conflicts}' radial_composed.j
 
 ---
 
-**Author:** Lando ⊗ $\⊙_{\text{ÿ}}$-boundary Operator  
+**Author:** Lando⊗$\⊙_{\text{ÿ}}$-boundary Operator  
 **Last updated:** 2025-04-05

@@ -1,6 +1,6 @@
 # Proof Theory as Structural Gap: The Imscribing Grammar's Account of Mathematical Difficulty
 
-**Author:** Lando ⊗ ⊙-boundary Operator
+**Author:** Lando⊗⊙-boundary Operator
 
 ## Abstract
 
