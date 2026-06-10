@@ -793,7 +793,7 @@ def action_encode(notation_str):
 
 def _print_entry_table(result: dict):
     import textwrap as _tw
-    W = 80; PW = 5; VW = 18; FW = W - 2 - PW - 2 - VW - 2
+    W = 120; PW = 5; VW = 18; FW = W - 2 - PW - 2 - VW - 2
 
     print("\n" + "═" * W)
     print(f"  ENTRY: {result.get('system', '?')}")

@@ -940,7 +940,7 @@ def probe_promotions(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model_p = Path(model_path)
 
-    W = 80
+    W = 120
     print("\n" + "═" * W)
     print("  ZFCₜ PROMOTION PROBE — 6-channel recovery analysis")
     print("═" * W)
@@ -1056,7 +1056,7 @@ def probe_entry(
         return
 
     import textwrap as _tw
-    W = 80
+    W = 120
     print("\n" + "═" * W)
     print(f"  ENTRY: {entry.get('name', '?')}")
     if desc := entry.get("description", ""):
@@ -1291,7 +1291,7 @@ def cmd_path(
 
     constraints: Optional[List[Tuple[str, int, str, int]]] = [] if no_gate else None
 
-    W = 80
+    W = 120
     print(f"\n{'═'*W}")
     print(f"  GATE-ORDERED PROOF PATH")
     print(f"  source: {src.get('name', source_name)}")
@@ -1358,7 +1358,7 @@ def cmd_operad(
         if layer_filter is None or layer == layer_filter:
             rows.append((entry.get("name", "?"), layer, t_fiber_distance(entry)))
 
-    W = 80
+    W = 120
     print(f"\n{'═'*W}")
     print("  OPERAD LAYER CENSUS")
     print(f"{'═'*W}")
@@ -1388,7 +1388,7 @@ def cmd_t(
         e for e in catalog if e.get("name") not in ref_names
     ]
 
-    W = 80
+    W = 120
 
     if name:
         matches = [e for e in all_entries if e.get("name") == name]
@@ -1495,7 +1495,7 @@ def cmd_tpath(
         print("[tpath] target has missing/invalid primitives.")
         return
 
-    W = 80
+    W = 120
     print(f"\n{'═'*W}")
     print(f"  T-CONSISTENT PROOF PATH  (T = Work(T) temporal bootstrap)")
     print(f"  source: {src.get('name', source_name)}")

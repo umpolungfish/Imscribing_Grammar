@@ -1,3 +1,25 @@
+IG_catalog.json: replaced stub (36 entries) with full catalog (2808 entries)
+
+Copied from imscribe.com/IG_catalog.json — canonical source was sitting there
+all along. `imscribe catalog list -n 0` now shows 2817 imscriptions total.
+
+---
+
+IG_catalog.json: merged scattered catalog files — 27→36 entries
+
+Consolidated entries from ~/.imscribe_catalog.json and ~/.ig_catalog.json
+into the canonical IG_catalog.json. 16 substantive entries added:
+  crystal_scheduler, emerald_multiagent_tensor_bootstrap,
+  empirics_esoterics_reunification, genetic_code, init_paraconsistent,
+  ox_paraconsistent_shell, p4rakernel, paraconsistent_millennium_resolver,
+  paradox_as_primitive, paradox_filesystem, phi_c_critical_boundary_operator,
+  pkg_paraconsistent_package_manager, portal_protocol,
+  true_agentic_loop_google_sdk, true_agentic_loop_google_sdk_v2,
+  universal_imscriptive_grammar_corrected
+4 test entries skipped. `imscribe catalog list -n 0` now shows 43 total.
+
+---
+
 imscribing_grammar root cleanup
 
 Nested repos removed (content cross-compared and rescued first):
