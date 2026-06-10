@@ -1,9 +1,0 @@
-ISCRIB "μΔ-ID v0.2";
-AREV "self.o";
-FSPLIT self;
-AFWD ast;
-FFUSE ast self;
-CLINK ir "ob3ect-v0.2";
-IFIX "ob3ect-v0.2";
-IMSCRIBE "The compiler has imscribed its next self.";
-EVALT;

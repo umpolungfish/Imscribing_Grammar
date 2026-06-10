@@ -1,4 +1,0 @@
-# file: /home/mrnob0dy666/synfin/.venv/bin/pytest
-# hypothesis_version: 6.151.11
-
-['-script.pyw', '.exe', '__main__']

@@ -1,4 +1,0 @@
-# file: /home/mrnob0dy666/synfin/synfin/mappings.py
-# hypothesis_version: 6.151.11
-
-[0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 'D', 'F', 'G', 'Gamma', 'H', 'Imscription', 'K', 'Omega', 'P', 'Phi', 'R', 'S', 'T', 'absent', 'commodity', 'coupled', 'crash', 'crypto', 'daily', 'derivative', 'dex', 'equity', 'euphoric', 'factor-driven', 'fixed_income', 'forex', 'fundamental', 'futures', 'high', 'hybrid', 'intraday', 'large', 'low', 'medium', 'mid', 'neutral', 'options', 'perp', 'quiet', 'regulated', 'small', 'sovereign', 'symmetric', 'technical', 'trending', 'weekly']

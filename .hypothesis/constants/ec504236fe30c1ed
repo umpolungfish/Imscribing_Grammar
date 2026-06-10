@@ -1,4 +1,0 @@
-# file: /home/mrnob0dy666/synfin/synfin/geoseismic_solar.py
-# hypothesis_version: 6.151.11
-
-[-74.006, 1e-10, 0.3, 0.5, 1.0, 1.2, 1.5, 2.0, 5.0, 7.0, 8.0, 9.0, 15.0, 40.7128, 365, 1000, '%Y-%m-%d', '&', '-125', '-25', '-60', '-66', '-70', '120', '150', '20000', '24', '35', '45', '5', '50', '55', '60', '72', 'ALLSKY_SFC_SW_DWN', 'CLRSKY_SFC_SW_DWN', 'D', 'T2M', 'asia', 'avg_magnitude', 'clearness_index', 'clearsky_radiation', 'coordinates', 'date', 'depth_avg', 'depths', 'endtime', 'energy_index', 'europe', 'event_count', 'features', 'format', 'geojson', 'geomagnetic_proxy', 'geometry', 'geoseismic', 'global', 'limit', 'mag', 'magnitudes', 'max_magnitude', 'maxlatitude', 'maxlongitude', 'minlatitude', 'minlongitude', 'minmagnitude', 'orderby', 'pacific', 'parameter', 'properties', 'solar_anomaly', 'solar_radiation', 'solarsurface', 'starttime', 'temperature', 'time', 'us']

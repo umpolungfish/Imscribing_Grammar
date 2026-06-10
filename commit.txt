@@ -1,120 +1,29 @@
-zenodo_upload.py: LUNLICENSE + references fix
+imscribing_grammar root cleanup
 
-- DEFAULT_LICENSE: "cc-zero" → "other-open" (LUNLICENSE has no Zenodo ID)
-- LUNLICENSE_TEXT hardcoded in script; bundled as LUNLICENSE.md in every deposit
-- references key now propagated from extracted metadata into Zenodo metadata (was silently dropped)
-- Deposit 20617698 patched: correct license, LUNLICENSE.md file, references
+Nested repos removed (content cross-compared and rescued first):
+  - ob3ect/ — unique files (ob3ect_manuscript.md, core.py.tmp) copied to ~/imsgct/ob3ect/
+  - priests-engine/ — 3 unique PDFs (fig_bootstrap, fig_cetacean, fig_triphase) copied to canonical priests-engine/figures/
+  - IG_Lean4/ — 5 unique Lean files rescued:
+      BealDualProof.lean, cuboid_lift.lean, perfect_cuboid_phi_c.lean → math/BealProof/ and math/perfect_cuboid/
+      ImscribingGrammar.lean → MillenniumAnkh/Imscribing/
+      RiemannZetaFunction.lean → MillenniumAnkh/Millennium/
+  - ~ (literal dir) — contents rescued: lean4-kernel-paraconsistent → ~/imsgct/; MillenniumAnkh copy → ~/imsgct/math/MillenniumAnkh_nested; .md/.py files → manuscripts/ scripts/
 
----
+SDK dirs moved out to ~/imsgct/sdk/:
+  xai-sdk-python, client-python, openai-python, generative-ai-python,
+  python-genai, cohere-python, claude-agent-sdk-python
 
-IMASM.md: Zenodo draft upload — deposit 20617698
+New subdirs created:
+  dft/         — 31 ORCA/DFT job files (cu_set_step.*, cu_his3_resting.*, etc.)
+  screenshots/ — 17 screenshots
 
-- Title: "Compiling Reality: IMASM, Stabilized Paradox, and Autopoietic Assembly From the VOID"
-- New draft deposit on live Zenodo: https://zenodo.org/deposit/20617698
-- File: pdfs/IMASM.pdf (194 KB)
-- Author: Mills, Lando; License: CC Zero; Date: 2026-06-09
-- Related: isSupplementedBy → GitHub imscribing_grammar
+Deleted: =4.0.0, unsloth_compiled_cache/, _magnum_opus_epsilon_build/,
+  test_write.txt, look.txt, continue.txt, HERE.txt, 44444444444444444.html,
+  *.html.bak files, ch3mpiler.py.bak*, IG_inquiry.py.bak*, __pycache__, .hypothesis
 
----
-
-IMASM.md: title update + acknowledgements + Larson reference
-
-- Title: "Compiling Reality: The IMASM, Universal Categorical Assembly Engines,
-  & Bootstrapping Off Paradox"
-- Acknowledgements section added (before References): thanks Harry T. Larson
-- Reference 14: Larson 1961 IEEE editorial "Catch a Rising Problem..."
-- Default acknowledgement + Larson ref now standard for all future publications
-
----
-
-IMASM_2.md: omonad_OS section added + eleven-project convergence
-
-omonad_OS added to "The loop runs everywhere":
-- Kernel tick = bootstrap sequence as scheduling algorithm (THINK/ACT/OBSERVE/UPDATE
-  mapped explicitly to IMSCRIB/AREV-FSPLIT/AFWD-FFUSE/CLINK-IFIX-IMSCRIB)
-- Self-modification toward O_inf via 430M arrangement space navigation
-- Organoid HAL: 6 biological augmentations as B4-register-mapped hardware
-- Crystal FS: 17.28M-address type space as storage (no dirs, no inodes)
-- CLINK chain: 9 layers quarks→organism
-- Structural insight: ECM "Chrysalis" and Immune "Guardian" deliberately
-  Frobenius-open — ENGAGR is a permanent load-bearing state, not a failure
-- Project count updated to eleven; ref 13 added; abstract updated
-
----
-
-IMASM_2.md: lift pipeline applied — structural rewrite
-
-Ran all 7 lift paradigms × all constraints against IMASM_2.md via
-lift_pipeline_ob3ect.py. Integrated structural outputs into rewrite:
-
-- Omega/winding lift: ENTRY→JOURNEY→RETURN — document now opens and
-  closes with "There are twelve opcodes. They are not arbitrary." The
-  closing sentence is declared no longer the same sentence; loop closed
-  at higher resolution.
-- Chirality lift: opening now names and corrects the naive frame ("wrong
-  reading before right one") — writing systems are the evidence, not the
-  subject; instruction set predates the grammar.
-- Gamma/scope lift: Emerald Tablet mapping promoted to its own "The ONE
-  THING" section — identified by pipeline as the keystone. All other
-  findings framed as corollaries.
-- Topology/crossing lift: "What the evidence shows" restructured as
-  THESIS / ANTITHESIS / CROSSING — collision is not a error, it is the
-  structure.
-- Erosion/counterargument: null hypothesis ("pattern may be coincidence")
-  addressed head-on before the conclusion; three null-resistant invariants
-  identified.
-- Erosion/footnote: footnote added acknowledging unverifiable central
-  assumption.
-- Kinetics lift: "The grammar was complete" section — hardest claim named
-  and left unresolved; hardness is the point.
-- Appetite lift: terminal paragraph — what the author actually wants to
-  say, beyond correctness.
-
----
-
-IMASM_2.md: integrated whole rewrite as separate document
-
-New document markdown/iam/IMASM_2.md — unified rewrite of IMASM_lifted.md.
-Sections: instruction set, four families, bootstrap sequence, arrangement space,
-twelve canonical forms, structural bridge, digital tower (34 layers), bare-metal
-descent, loop runs everywhere (mitosis/meiosis, cetaceans, exOS, ParaASM, 11
-substrates), what the evidence shows. IMASM-first framing throughout; writing
-systems treated as evidence, not subject. Correct notation: bare Shavian glyphs,
-no subscripts anywhere, $μ∘δ=id$ in math mode. 12 references.
-
----
-
-zenodo_upload.py: bibliography → references field, never related_identifiers
-
-- related_identifiers now contains isSupplementedBy (GitHub) links only
-- CrossRef lookup removed; bibliography parsed as plain-text strings → info["references"]
-- Same fix applied to extract_from_pdf() path
-- Deposit 20614786 patched live: 11 wrong related_identifiers removed, 12 plain-text
-  references added; re-published
-
-IMASM_lifted.md: abstract rewritten — IMASM-first, unified paragraph
-
-Abstract now covers: arrangement space (12^8, 12 canonical classes, 3 size-1 atoms),
-Belnap FOUR register = 2-bit state machine, 34-layer digital tower → bare-metal,
-cetacean compilation, mitosis/meiosis as μ∘δ=id in cell biology, 10-project ecological
-convergence. New "The loop runs everywhere" paragraph: mitosis=FSPLIT/FFUSE, meiosis+
-fertilization = δ then μ = diploid identity restored, crossing-over = ENGAGR (dialetheic
-allele superposition). Eleven substrates total (ten projects + eukaryotic cell division).
-
----
-
-magnum_opus_epsilon: Zenodo new version published — DOI 10.5281/zenodo.20614786
-(new version of 10.5281/zenodo.20609884; glyph fix + fontspec+FreeSerif pipeline)
-
-ltx: swap lmodern+T1 for fontspec+FreeSerif — fixes Ħ, ɢ, Ř, ƒ rendering in all ltx docs
-magnum_opus_epsilon.md: fix glyph rendering for Ř, ƒ, ɢ, Ħ in family equations + table
-
-- \mathit{f} → ƒ (was rendering as italic f, not f-with-hook)
-- \ɢ → ɢ (was invalid LaTeX command — errors on compile)
-- Family equations restructured: glyphs moved out of math \text{} into text mode
-  (Ř, Ħ, Ç, Þ, Ð, ⊙ all now as plain Unicode in text, only \mathcal{F}_n in math)
-- Table row 8: \ɢ → ɢ
-
----
-
-IMASM_lifted.md: purge all subscript primitive notation — replace with bare Shavian glyphs
+Root py/md/html cleanup:
+  scripts/  ← 34 py files (all non-entry-point scripts; ch3mpiler.py stays at root)
+  agents/   ← imscribe_agent.py, imscribe_tool.py
+  markdown/ ← 41 .md files (README.md + ZENODO_UPLOAD_GUIDE.md stay at root)
+  html/     ← 9 .html files (new subdir)
+  .bashrc aliases updated for all moved scripts (9 aliases → scripts/ paths)

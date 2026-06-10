@@ -1,4 +1,0 @@
-# file: /home/mrnob0dy666/synfin/synfin/consciousness.py
-# hypothesis_version: 6.151.11
-
-[0.0, 0.158, 0.273, 0.276, 0.292, 0.3, 0.5, 1.0, 'C', 'G', 'G_norm', 'K', 'K_inverted', 'K_norm', 'Omega', 'Omega_norm', 'T', 'T_norm', 'gate1_criticality', 'gate2_kinetic', 'weighted_sum']
