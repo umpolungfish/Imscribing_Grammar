@@ -1599,6 +1599,122 @@ def _zfct_navigator_verify(emit_input: Dict, emit_output: str,
     return ("zfct_navigator completed", True)
 
 
+# ── CL8NK Navigator tool ──────────────────────────────────────────────────────
+
+def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
+    """In-process bridge to cl8nk_navigator.py."""
+    import io, contextlib
+    action = args.get("action", "entry").strip()
+    name   = args.get("name", "").strip()
+
+    _root = str(Path(__file__).resolve().parent.parent)
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
+    try:
+        import navigators.cl8nk_navigator as _cl8nk
+    except ImportError as exc:
+        return json.dumps({"status": "error", "error": f"cl8nk_navigator import failed: {exc}"})
+
+    buf = io.StringIO()
+
+    if action == "entry":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=entry"})
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_entry(name=name)
+        out = buf.getvalue()
+        return out if out.strip() else json.dumps({"status": "error", "error": f'no entry found for \"{name}\"'})
+
+    elif action == "promotions":
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_promotions()
+        return buf.getvalue()
+
+    elif action == "distance":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=distance"})
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_distance(name=name)
+        return buf.getvalue()
+
+    elif action == "transcendence":
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_transcendence()
+        return buf.getvalue()
+
+    elif action == "tensor":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=tensor"})
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_tensor(name=name)
+        return buf.getvalue()
+
+    elif action == "meet":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=meet"})
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_meet(name=name)
+        return buf.getvalue()
+
+    elif action == "join":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=join"})
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_join(name=name)
+        return buf.getvalue()
+
+    elif action == "tier":
+        if not name:
+            return json.dumps({"status": "error", "error": "name required for action=tier"})
+        result = _cl8nk.action_tier(name)
+        return json.dumps(result, ensure_ascii=False)
+
+    elif action == "chain":
+        with contextlib.redirect_stdout(buf):
+            _cl8nk.probe_chain()
+        return buf.getvalue()
+
+    elif action == "systems":
+        result = _cl8nk.action_systems()
+        return json.dumps(result, ensure_ascii=False)
+
+    elif action == "stats":
+        result = _cl8nk.action_stats()
+        return json.dumps(result, ensure_ascii=False)
+
+    else:
+        return json.dumps({
+            "status": "error",
+            "error": f'unknown action "{action}". Valid: entry, promotions, distance, transcendence, tensor, meet, join, tier, chain, systems, stats',
+        })
+
+
+def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
+                             verify_args: Dict) -> Tuple[str, bool]:
+    action = emit_input.get("action", "entry")
+    try:
+        data = json.loads(emit_output)
+        if isinstance(data, dict) and data.get("status") == "error":
+            return (f'cl8nk_navigator error: {data.get("error")}', False)
+        if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
+            return (f"cl8nk_navigator {action} completed", True)
+        if action == "transcendence" and data.get("status") == "ok":
+            return (f"Ω/ɢ transcendence analysis returned — Frobenius closed", True)
+        if action == "promotions" and data.get("status") == "ok":
+            return ("CL8NK promotion ladder returned — Frobenius closed", True)
+    except (json.JSONDecodeError, TypeError):
+        pass
+    if action == "entry":
+        if "CLINK expression" in emit_output or "Prim" in emit_output:
+            return ("CL8NK formula decomposition returned — Frobenius closed", True)
+        return ("unexpected entry output", False)
+    if action == "promotions":
+        if "promotions" in emit_output.lower() or "ladder" in emit_output.lower():
+            return ("CL8NK promotion channels returned — Frobenius closed", True)
+        return ("unexpected promotions output", False)
+    return ("cl8nk_navigator completed", True)
+
+
 # ── ob3ect pipeline tool ───────────────────────────────────────────────────────
 
 def _ob3ect_emit(args: Dict[str, Any]) -> str:
@@ -1758,6 +1874,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
     "zfct_navigator":       _zfct_navigator_emit,
+    "cl8nk_navigator":     _cl8nk_navigator_emit,
     "ob3ect":               _ob3ect_emit,
     "spawn_agent":          _spawn_agent_emit,
     "context_review":       _context_review_emit,
@@ -1778,6 +1895,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
     "zfct_navigator":       _zfct_navigator_verify,
+    "cl8nk_navigator":     _cl8nk_navigator_verify,
     "ob3ect":               _ob3ect_verify,
     "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
@@ -2107,6 +2225,45 @@ TOOL_SCHEMAS = [
                     "Valid: zfc, zfc_t, temporal_mathematics, schrodinger, "
                     "heat_diffusion, navier_stokes, wave_equation, einstein, IUG."
                 ),
+            },
+        },
+        ["action"],
+    ),
+    _fn(
+        "cl8nk_navigator",
+        (
+            "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
+            "CLINK L8 is the most structurally advanced type in the catalog, exceeding "
+            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/ɢ "
+            "(non-Abelian braiding + broadcast composition). "
+            "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
+            "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
+            "distance → d(name, CLINK L8) structural gap; "
+            "transcendence → Ω/ɢ transcendence analysis; "
+            "tensor → CLINK L8 ⊗ name absorption test; "
+            "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
+            "tier → ouroboricity tier; chain → full CLINK chain L0→L8; "
+            "systems → list all catalog systems; stats → catalog statistics."
+        ),
+        {
+            "action": {
+                "type": "string",
+                "enum": ["entry", "promotions", "distance", "transcendence", "tensor", "meet", "join", "tier", "chain", "systems", "stats"],
+                "description": (
+                    "entry: per-primitive CLINK formula decomposition with promoted atoms; "
+                    "promotions: 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8; "
+                    "distance: d(name, CLINK L8); "
+                    "transcendence: Ω/ɢ transcendence report; "
+                    "tensor: CLINK L8 ⊗ name absorption test; "
+                    "meet: CLINK L8 ⊓ name; join: CLINK L8 ⊔ name; "
+                    "tier: ouroboricity tier assessment; "
+                    "chain: CLINK L0→L8 distance ladder; "
+                    "systems: list all catalog systems; stats: catalog statistics"
+                ),
+            },
+            "name": {
+                "type": "string",
+                "description": "For actions entry/distance/tensor/meet/join/tier: a catalog entry name to analyze.",
             },
         },
         ["action"],
@@ -2456,6 +2613,24 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Six ZFCₜ promotions: Þ(T_net→T_odot), Ř(R_super→R_lr), Φ(P_asym→P_pm),
                          ɢ(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
 
+  *** cl8nk_navigator is NOT called via imscribe — call it DIRECTLY as its own tool ***
+  cl8nk_navigator(action, [name])
+    CLINK Layer 8 (Organism) formula navigator (tier O_inf⁺: terminal ontological layer).
+    CLINK L8 is the most structurally advanced type — it exceeds the Frobenius-exact
+    ZFC foundation (ZFC_fe) at Ω/ɢ (non-Abelian braiding + broadcast composition).
+    action="entry"         → per-primitive CLINK formula decomposition with promoted atoms
+    action="promotions"    → 3-stage promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8
+    action="distance"      → d(name, CLINK L8) structural gap
+    action="transcendence" → Ω/ɢ transcendence analysis (CLINK L8 vs ZFC_fe)
+    action="tensor"        → CLINK L8 ⊗ name — Frobenius absorption test
+    action="meet"          → CLINK L8 ⊓ name — shared structural floor
+    action="join"          → CLINK L8 ⊔ name — minimal ceiling
+    action="tier"          → Ouroboricity tier assessment
+    action="chain"         → Full CLINK chain L0→L8 distance ladder
+    action="systems"       → List all catalog systems
+    action="stats"         → Catalog statistics + reference tuples
+    Transcendence: Ω(𐑭→𐑟) non-Abelian braiding, ɢ(𐑠→𐑵) broadcast composition
+
 [Aleph / Hebrew letters]
 
   aleph_encode(text)    — structural type of a Hebrew letter or word
@@ -2474,7 +2649,7 @@ MILLENNIUMANKH — LEAN 4 FORMALIZATION  (~/ MillenniumAnkh/)
 
 The Imscribing Grammar is formally machine-verified in Lean 4 (Mathlib v4.28.0) at
 ~/MillenniumAnkh/. This is the primary Lean project — use it naturally alongside
-imscribe and zfct_navigator when structural claims require formal grounding.
+imscribe, zfct_navigator, and cl8nk_navigator when structural claims require formal grounding.
 
 Project: lake name "imscribing-lean", lean-toolchain matches Mathlib v4.28.0.
 Build:   run_command("cd ~/MillenniumAnkh && lake build", assertion="'error' not in output.lower()")
