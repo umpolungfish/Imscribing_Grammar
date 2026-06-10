@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMSCRIBE • LATTICES OF TRUTH &amp; VACUA</title>
+    <style>
+        :root {
+            --bg: #0F0C08;
+            --surface: #1C1814;
+            --card: #25201A;
+            --text: #EDE4D5;
+            --text-sec: #B8A68F;
+            --text-ter: #8C7A5F;
+            --gold: #D4A017;
+            --red: #9C2A2A;
+            --blue: #2A5C7A;
+            --amber: #B97A1F;
+            --teal: #1A7A6E;
+            --border: #3F2E1E;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .root { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+        h1 { color: var(--gold); text-align: center; font-size: 2.6rem; letter-spacing: 3px; margin: 0 0 0.25rem; }
+        .tagline { text-align: center; color: var(--text-sec); font-size: 1.05rem; max-width: 680px; margin: 0 auto 2.5rem; }
+        .main-tabs {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+            margin-bottom: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem;
+        }
+        .main-tab {
+            padding: 14px 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-sec);
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+        .main-tab.active {
+            background: var(--card);
+            border-color: var(--gold);
+            color: var(--gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .section { margin-bottom: 3rem; }
+        .section-title { color: var(--gold); font-size: 1.7rem; margin: 0 0 0.6rem; }
+        .sub-title { color: var(--text-sec); margin-bottom: 1.5rem; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+        svg { width: 100%; height: auto; }
+        .slider-row { display: flex; align-items: center; gap: 12px; margin: 1rem 0; }
+        .slider-row label { min-width: 90px; color: var(--text-sec); }
+        input[type="range"] { flex: 1; accent-color: var(--gold); }
+        .big-num { font-size: 3.4rem; font-weight: 700; color: var(--gold); }
+        .bar-wrap { height: 14px; background: #322A22; border-radius: 9999px; overflow: hidden; }
+        .bar-fill { height: 100%; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .info-box { padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+        .node { cursor: pointer; transition: opacity 0.2s ease; }
+        .node:hover { filter: brightness(1.2); }
+        .divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+        footer { text-align: center; color: var(--text-ter); font-size: 0.9rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+        /* Original styles adapted to new theme */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        .top-tabs { display: flex; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+        .ttab { padding: 8px 18px; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; background: transparent; color: var(--text-sec); transition: all 0.15s; }
+        .ttab.active { background: var(--surface); color: var(--text); border-color: var(--gold); }
+        .tview { display: none; }
+        .tview.active { display: block; }
+        .info { background: var(--surface); border-radius: 8px; padding: 12px 16px; margin-top: 12px; border: 1px solid var(--border); }
+        .info-t { font-size: 13px; font-weight: 600; color: var(--text); margin: 0 0 4px; }
+        .info-b { font-size: 12.5px; color: var(--text-sec); line-height: 1.65; margin: 0; }
+        .prob-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+        .pb-wrap { flex: 1; height: 6px; background: #322A22; border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+        .pb { height: 6px; border-radius: 999px; transition: width 0.35s; }
+        .pnum { font-size: 12px; color: var(--text-sec); min-width: 42px; text-align: right; font-family: monospace; }
+        .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 1rem; }
+        @media(max-width:560px){.grid3{grid-template-columns:1fr}}
+        .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 1rem; }
+        .crd { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+        .crd-t { font-size: 14px; font-weight: 600; color: var(--text); margin: 0 0 6px; }
+        .crd-b { font-size: 12.5px; color: var(--text-sec); line-height: 1.6; margin: 0; }
+        .scale-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 4px; margin-bottom: 6px; }
+        .frustration-bar { margin-top: 10px; padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 12px; color: var(--text-sec); transition: all 0.3s; }
+        .frustration-bar.on { background: #3A2A1A; color: #D4A017; border-color: var(--amber); }
+        .sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 2rem; }
+        @media(max-width:540px){.sys-grid{grid-template-columns:1fr}}
+        .panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+        .panel-title { font-size: 1.15rem; font-weight: 600; margin: 0 0 6px; color: var(--text); }
+        .panel-sub { font-size: 13px; color: var(--text-sec); margin: 0 0 1rem; line-height: 1.5; }
+        .info-box { margin-top: 14px; padding: 14px 16px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); }
+        .info-label { font-size: 12px; color: var(--text-ter); margin: 0 0 4px; }
+        .info-val { font-size: 13.5px; color: var(--text); line-height: 1.55; }
+        .prob-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+        .prob-label { font-size: 12px; color: var(--text-sec); min-width: 18px; }
+        .prob-bar-wrap { flex: 1; height: 7px; background: #322A22; border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+        .prob-bar { height: 7px; border-radius: 999px; transition: width 0.3s; }
+        .prob-num { font-size: 12px; color: var(--text-sec); min-width: 36px; text-align: right; font-family: monospace; }
+        .frustration-bar { margin-top: 10px; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 12.5px; color: var(--text-sec); transition: all 0.3s; }
+        .frustration-bar.active { background: #3A2A1A; color: #D4A017; border-color: var(--amber); }
+        .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+        .comparison { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+        @media(max-width:540px){.comparison{grid-template-columns:1fr}}
+        .cmp-card { background: var(--surface); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); }
+        .cmp-card-title { font-size: 13px; font-weight: 600; color: var(--text); margin: 0 0 6px; }
+        .cmp-card-body { font-size: 12.5px; color: var(--text-sec); line-height: 1.6; }
+    </style>
+</head>
+<body>
+<div class="root">
+    <h1>IMSCRIBE LATTICES</h1>
+    <p class="tagline">Belnap FOUR • Scalar Field Symmetry Breaking • Electron Orbitals &amp; Quark Colour<br>Unified under the Crystal of Types — Nigredo to Rubedo</p>
+
+    <!-- MAIN TABS -->
+    <div class="main-tabs">
+        <button class="main-tab active" onclick="switchMainTab(0)">Belnap Bilattice</button>
+        <button class="main-tab" onclick="switchMainTab(1)">Scalar Field Vacua</button>
+        <button class="main-tab" onclick="switchMainTab(2)">FOUR &amp; FIVE Physics</button>
+    </div>
+
+    <!-- TAB 0: BELNAP -->
+    <div id="main-tab-0" class="main-tab-content">
+        <div class="section">
+            <h2 class="section-title">Belnap's FOUR as Unit Square</h2>
+            <p class="sub-title">Truth values as weight carriers that normalise to probabilities. Each truth value is a point ⟨t, f⟩ ∈ [0,1]².</p>
+
+            <svg width="100%" viewBox="0 0 680 280" role="img">
+                <rect x="190" y="50" width="200" height="180" rx="6" fill="none" stroke="#3F2E1E" stroke-width="2.5"/>
+                <text x="340" y="262" text-anchor="middle" fill="#8C7A5F" font-size="12">← f-component (told false) →</text>
+                <text x="168" y="142" text-anchor="middle" fill="#8C7A5F" font-size="12" transform="rotate(-90,168,142)">← t-component (told true) →</text>
+                
+                <!-- Nodes with new colors -->
+                <g><circle cx="190" cy="230" r="24" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2.5"/><text x="190" y="226" text-anchor="middle" fill="#2C2C2A" font-size="18" font-weight="600">N</text><text x="190" y="246" text-anchor="middle" fill="#444441" font-size="9">⟨0,0⟩</text></g>
+                <g><circle cx="190" cy="58" r="24" fill="#B5D4F4" stroke="#2A5C7A" stroke-width="2.5"/><text x="190" y="54" text-anchor="middle" fill="#042C53" font-size="18" font-weight="600">T</text><text x="190" y="76" text-anchor="middle" fill="#0C447C" font-size="9">⟨1,0⟩</text></g>
+                <g><circle cx="390" cy="230" r="24" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="2.5"/><text x="390" y="226" text-anchor="middle" fill="#501313" font-size="18" font-weight="600">F</text><text x="390" y="246" text-anchor="middle" fill="#791F1F" font-size="9">⟨0,1⟩</text></g>
+                <g><circle cx="390" cy="58" r="24" fill="#FAC775" stroke="#B97A1F" stroke-width="2.5"/><text x="390" y="54" text-anchor="middle" fill="#412402" font-size="18" font-weight="600">B</text><text x="390" y="76" text-anchor="middle" fill="#633806" font-size="9">⟨1,1⟩</text></g>
+            </svg>
+
+            <div class="two-col">
+                <div class="card">
+                    <div style="font-weight:600;margin-bottom:0.6rem;color:var(--text-sec)">Adjust weights</div>
+                    <p style="font-size:12.5px;color:var(--text-sec);margin:0 0 1rem">Continuous generalisation: t, f ∈ [0, 1]</p>
+                    <div class="slider-row">
+                        <label>t (true)</label>
+                        <input type="range" min="0" max="100" value="68" id="sl-t" step="1" oninput="updateBelnap()">
+                        <span id="lbl-t" style="color:var(--gold);font-weight:700;min-width:42px">0.68</span>
+                    </div>
+                    <div class="slider-row">
+                        <label>f (false)</label>
+                        <input type="range" min="0" max="100" value="32" id="sl-f" step="1" oninput="updateBelnap()">
+                        <span id="lbl-f" style="color:var(--gold);font-weight:700;min-width:42px">0.32</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="font-weight:600;margin-bottom:0.6rem;color:var(--text-sec)">Normalised Probability</div>
+                    <div id="prob-display" class="big-num">0.680</div>
+                    <div class="bar-wrap"><div id="prob-bar" class="bar-fill" style="width:68%;background:#2A5C7A"></div></div>
+                    <div id="formula-display" style="font-family:monospace;color:var(--text-ter);margin-top:0.6rem;font-size:0.95rem"></div>
+                    <div id="value-badge" style="margin-top:1rem"></div>
+                </div>
+            </div>
+
+            <div class="info-box" id="interp-box">
+                <div id="interp-text" style="font-size:13.5px;line-height:1.65;color:var(--text-sec)"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 1: SCALAR FIELDS -->
+    <div id="main-tab-1" class="main-tab-content" style="display:none">
+        <div class="section">
+            <h2 class="section-title">Scalar Fields: Shared Symmetry-Breaking Lattice</h2>
+            <p class="sub-title">Higgs • Axion • Inflaton as the same logical structure at different energy scales.</p>
+
+            <div class="top-tabs">
+                <button class="ttab active" onclick="topTab('template')">Shared template</button>
+                <button class="ttab" onclick="topTab('higgs')">Higgs — 246 GeV</button>
+                <button class="ttab" onclick="topTab('axion')">Axion — 10⁹⁺ GeV</button>
+                <button class="ttab" onclick="topTab('inflaton')">Inflaton — 10¹⁶ GeV</button>
+                <button class="ttab" onclick="topTab('compare')">All three</button>
+            </div>
+
+            <!-- Template view -->
+            <div id="tv-template" class="tview active">
+                <svg width="100%" viewBox="0 0 680 320" role="img">
+                    <defs><marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#D4A017" stroke-width="1.5"/></marker></defs>
+                    <g id="tp-top" style="cursor:pointer" onclick="selTemplate('top')">
+                        <rect x="255" y="12" width="170" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2"/>
+                        <text x="340" y="28" text-anchor="middle" fill="#2C2C2A" font-size="15" font-weight="600">chosen vacuum ⊤</text>
+                        <text x="340" y="46" text-anchor="middle" fill="#444441" font-size="11">symmetry broken, VEV ≠ 0, P=1</text>
+                    </g>
+                    <line x1="340" y1="56" x2="220" y2="108" stroke="#888780" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="340" y1="56" x2="300" y2="108" stroke="#888780" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="340" y1="56" x2="340" y2="108" stroke="#888780" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="340" y1="56" x2="380" y2="108" stroke="#888780" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="340" y1="56" x2="460" y2="108" stroke="#888780" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <g id="tp-m1" style="cursor:pointer" onclick="selTemplate('middle')"><circle cx="220" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/><text x="220" y="122" text-anchor="middle" fill="#26215C" font-size="14">φ₁</text></g>
+                    <g id="tp-m2" style="cursor:pointer" onclick="selTemplate('middle')"><circle cx="300" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/><text x="300" y="122" text-anchor="middle" fill="#26215C" font-size="14">φ₂</text></g>
+                    <g id="tp-m3" style="cursor:pointer" onclick="selTemplate('middle')"><circle cx="340" cy="118" r="16" fill="#AFA9EC" stroke="#534AB7" stroke-width="2" stroke-dasharray="3 2"/><text x="340" y="121" text-anchor="middle" fill="#26215C" font-size="12">…</text></g>
+                    <g id="tp-m4" style="cursor:pointer" onclick="selTemplate('middle')"><circle cx="380" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/><text x="380" y="122" text-anchor="middle" fill="#26215C" font-size="14">φₙ</text></g>
+                    <g id="tp-m5" style="cursor:pointer" onclick="selTemplate('middle')"><circle cx="460" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/><text x="460" y="122" text-anchor="middle" fill="#26215C" font-size="14">φ_N</text></g>
+                    <g id="tp-bot" style="cursor:pointer" onclick="selTemplate('bot')">
+                        <rect x="255" y="200" width="170" height="44" rx="8" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="2"/>
+                        <text x="340" y="216" text-anchor="middle" fill="#501313" font-size="15" font-weight="600">false vacuum ⊥</text>
+                        <text x="340" y="234" text-anchor="middle" fill="#791F1F" font-size="11">symmetric point, VEV=0, unstable</text>
+                    </g>
+                </svg>
+                <div class="info" id="template-info">
+                    <p class="info-t" id="template-t">Click a tier</p>
+                    <p class="info-b" id="template-b">All three scalar fields share this lattice structure. What differs is the energy scale, topology of the middle antichain, and whether the symmetry is gauged or global.</p>
+                    <div class="prob-row" id="template-prob" style="display:none">
+                        <span style="font-size:11px;color:var(--text-sec);min-width:16px">P</span>
+                        <div class="pb-wrap"><div class="pb" id="template-bar" style="width:50%"></div></div>
+                        <span class="pnum" id="template-pnum">0.500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Higgs view -->
+            <div id="tv-higgs" class="tview">
+                <svg width="100%" viewBox="0 0 680 340" role="img">
+                    <g id="hg-top" style="cursor:pointer" onclick="selHiggs('top')">
+                        <rect x="230" y="12" width="220" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2"/>
+                        <text x="340" y="28" text-anchor="middle" fill="#2C2C2A" font-size="15" font-weight="600">chosen vacuum</text>
+                        <text x="340" y="46" text-anchor="middle" fill="#444441" font-size="11">v = 246 GeV, SU(2)→U(1)_EM broken</text>
+                    </g>
+                    <ellipse cx="340" cy="148" rx="140" ry="22" fill="none" stroke="#534AB7" stroke-width="2" stroke-dasharray="4 2"/>
+                    <g id="hg-circle" style="cursor:pointer" onclick="selHiggs('circle')">
+                        <circle cx="340" cy="126" r="20" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/>
+                        <text x="340" y="121" text-anchor="middle" fill="#26215C" font-size="14">S¹</text>
+                    </g>
+                    <g id="hg-bot" style="cursor:pointer" onclick="selHiggs('bot')">
+                        <rect x="230" y="240" width="220" height="44" rx="8" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="2"/>
+                        <text x="340" y="256" text-anchor="middle" fill="#501313" font-size="15" font-weight="600">false vacuum ⊥</text>
+                    </g>
+                </svg>
+                <div class="info" id="higgs-info">
+                    <p class="info-t" id="higgs-t">Click a node</p>
+                    <p class="info-b" id="higgs-b">The Higgs middle tier is a continuous circle S¹ — the orbit of the SU(2) symmetry. Three Goldstone modes are eaten by W⁺, W⁻, Z. The fourth is the Higgs boson (radial mode, 125 GeV).</p>
+                </div>
+            </div>
+
+            <!-- Axion view -->
+            <div id="tv-axion" class="tview">
+                <svg width="100%" viewBox="0 0 680 340" role="img">
+                    <g id="ax-top" style="cursor:pointer" onclick="selAxion('top')">
+                        <rect x="215" y="12" width="250" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2"/>
+                        <text x="340" y="28" text-anchor="middle" fill="#2C2C2A" font-size="15" font-weight="600">chosen vacuum</text>
+                    </g>
+                    <g id="ax-z1" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="180" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="2"/><text x="180" y="121" text-anchor="middle" fill="#4A1B0C" font-size="13">v₁</text></g>
+                    <g id="ax-z2" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="258" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="2"/><text x="258" y="121" text-anchor="middle" fill="#4A1B0C" font-size="13">v₂</text></g>
+                    <g id="ax-z3" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="340" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="2"/><text x="340" y="121" text-anchor="middle" fill="#4A1B0C" font-size="13">v₃</text></g>
+                    <g id="ax-z4" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="422" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="2"/><text x="422" y="121" text-anchor="middle" fill="#4A1B0C" font-size="13">v₄</text></g>
+                    <g id="ax-zN" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="500" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="2"/><text x="500" y="121" text-anchor="middle" fill="#4A1B0C" font-size="13">vₙ</text></g>
+                    <g id="ax-bot" style="cursor:pointer" onclick="selAxion('bot')">
+                        <rect x="215" y="208" width="250" height="44" rx="8" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="2"/>
+                        <text x="340" y="224" text-anchor="middle" fill="#501313" font-size="15" font-weight="600">false vacuum ⊥</text>
+                    </g>
+                </svg>
+                <div class="info" id="axion-info">
+                    <p class="info-t" id="axion-t">Click a node</p>
+                    <p class="info-b" id="axion-b">Discrete Z_N antichain. Global U(1)_PQ symmetry. QCD instantons tilt the potential and resolve frustration, giving the axion a tiny mass.</p>
+                    <div class="frustration-bar" id="axion-frust">Domain walls: inactive</div>
+                </div>
+            </div>
+
+            <!-- Inflaton view -->
+            <div id="tv-inflaton" class="tview">
+                <svg width="100%" viewBox="0 0 680 360" role="img">
+                    <g id="inf-top" style="cursor:pointer" onclick="selInflaton('top')">
+                        <rect x="200" y="12" width="280" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2"/>
+                        <text x="340" y="28" text-anchor="middle" fill="#2C2C2A" font-size="15" font-weight="600">reheating vacuum</text>
+                    </g>
+                    <rect x="150" y="68" width="380" height="130" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="2" stroke-dasharray="4 2"/>
+                    <text x="340" y="86" text-anchor="middle" fill="#27500A" font-size="12">slow-roll plateau — ~60 e-folds of near-degeneracy</text>
+                    <g id="inf-bot" style="cursor:pointer" onclick="selInflaton('bot')">
+                        <rect x="200" y="270" width="280" height="44" rx="8" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="2"/>
+                        <text x="340" y="286" text-anchor="middle" fill="#501313" font-size="15" font-weight="600">false vacuum ⊥</text>
+                    </g>
+                </svg>
+                <div class="info" id="inflaton-info">
+                    <p class="info-t" id="inflaton-t">Click a node</p>
+                    <p class="info-b" id="inflaton-b">The middle tier is the slow-roll plateau — a sequence of near-degenerate states the field traverses slowly. ~60 e-folds solve the horizon and flatness problems.</p>
+                </div>
+            </div>
+
+            <!-- Compare view -->
+            <div id="tv-compare" class="tview">
+                <div class="grid3">
+                    <div class="crd">
+                        <span class="scale-badge" style="background:#EAF3DE;color:#27500A">246 GeV</span>
+                        <p class="crd-t">Higgs</p>
+                        <p class="crd-b">Continuous S¹ antichain • Gauged symmetry • Goldstones eaten by W/Z • Radial Higgs boson survives.</p>
+                    </div>
+                    <div class="crd">
+                        <span class="scale-badge" style="background:#FAECE7;color:#712B13">10⁹–10¹² GeV</span>
+                        <p class="crd-t">Axion</p>
+                        <p class="crd-b">Discrete Z_N antichain • Global symmetry • Axion survives as pseudo-Goldstone • Domain wall problem for N&gt;1.</p>
+                    </div>
+                    <div class="crd">
+                        <span class="scale-badge" style="background:#E6F1FB;color:#0C447C">~10¹⁶ GeV</span>
+                        <p class="crd-t">Inflaton</p>
+                        <p class="crd-b">Extended slow-roll plateau • Shift symmetry candidate • Gravitational waves as possible Goldstone analogue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: FOUR / FIVE -->
+    <div id="main-tab-2" class="main-tab-content" style="display:none">
+        <div class="sys-grid">
+            <!-- FOUR -->
+            <div class="panel">
+                <p class="panel-title">Electron orbital — Belnap FOUR</p>
+                <p class="panel-sub">Click a state. Each node is a Belnap truth value ⟨t, f⟩.</p>
+                <svg width="100%" viewBox="0 0 300 260" id="four-svg">
+                    <g id="n4-T" class="node" onclick="selectFour('T')"><circle cx="70" cy="65" r="32" fill="#B5D4F4" stroke="#2A5C7A" stroke-width="3"/><text x="70" y="65" text-anchor="middle" fill="#042C53" font-size="26" font-weight="700">↑</text></g>
+                    <g id="n4-F" class="node" onclick="selectFour('F')"><circle cx="230" cy="195" r="32" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="3"/><text x="230" y="195" text-anchor="middle" fill="#501313" font-size="26" font-weight="700">↓</text></g>
+                    <g id="n4-B" class="node" onclick="selectFour('B')"><circle cx="230" cy="65" r="32" fill="#FAC775" stroke="#B97A1F" stroke-width="3"/><text x="230" y="65" text-anchor="middle" fill="#412402" font-size="24" font-weight="700">↑↓</text></g>
+                    <g id="n4-N" class="node" onclick="selectFour('N')"><circle cx="70" cy="195" r="32" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="3"/><text x="70" y="195" text-anchor="middle" fill="#2C2C2A" font-size="22">∅</text></g>
+                </svg>
+                <div class="info-box" id="four-info">
+                    <p class="info-label">select a state above</p>
+                    <p class="info-val" id="four-text">Click any orbital node to see its logical coordinates and normalised probability.</p>
+                    <div id="four-prob" style="display:none;margin-top:12px">
+                        <div class="prob-row">
+                            <span class="prob-label">P</span>
+                            <div class="prob-bar-wrap"><div class="prob-bar" id="four-bar" style="width:70%;background:#2A5C7A"></div></div>
+                            <span class="prob-num" id="four-pnum">0.70</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIVE -->
+            <div class="panel">
+                <p class="panel-title">Quark colour charge — FIVE logic</p>
+                <p class="panel-sub">Three equal-weight middle values. No linear order — structural frustration.</p>
+                <svg width="100%" viewBox="0 0 300 260" id="five-svg">
+                    <g id="n5-W" class="node" onclick="selectFive('W')"><circle cx="150" cy="35" r="28" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="3"/><text x="150" y="35" text-anchor="middle" fill="#2C2C2A" font-size="20">W</text></g>
+                    <g id="n5-R" class="node" onclick="selectFive('R')"><circle cx="80" cy="145" r="28" fill="#F7C1C1" stroke="#9C2A2A" stroke-width="3"/><text x="80" y="145" text-anchor="middle" fill="#501313" font-size="20">R</text></g>
+                    <g id="n5-G" class="node" onclick="selectFive('G')"><circle cx="150" cy="145" r="28" fill="#C0DD97" stroke="#1A7A6E" stroke-width="3"/><text x="150" y="145" text-anchor="middle" fill="#173404" font-size="20">G</text></g>
+                    <g id="n5-B" class="node" onclick="selectFive('B')"><circle cx="220" cy="145" r="28" fill="#B5D4F4" stroke="#2A5C7A" stroke-width="3"/><text x="220" y="145" text-anchor="middle" fill="#042C53" font-size="20">B</text></g>
+                    <g id="n5-A" class="node" onclick="selectFive('A')"><circle cx="150" cy="235" r="28" fill="#FAC775" stroke="#B97A1F" stroke-width="3"/><text x="150" y="235" text-anchor="middle" fill="#412402" font-size="20">A</text></g>
+                </svg>
+                <div class="info-box" id="five-info">
+                    <p class="info-label">select a state above</p>
+                    <p class="info-val" id="five-text">Click a quark colour node to see its lattice position and frustration state.</p>
+                    <div id="five-prob" style="display:none;margin-top:12px">
+                        <div class="prob-row">
+                            <span class="prob-label">P</span>
+                            <div class="prob-bar-wrap"><div class="prob-bar" id="five-bar" style="width:50%;background:#888780"></div></div>
+                            <span class="prob-num" id="five-pnum">0.50</span>
+                        </div>
+                    </div>
+                    <div class="frustration-bar" id="frust-label">Frustration: inactive</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="cmp-card">
+                <p class="cmp-card-title">Shared structure</p>
+                <p class="cmp-card-body">Both are bounded lattices with a bottom (no evidence / anti-color) and a top (full evidence / colorless). The middle values carry the physics.</p>
+            </div>
+            <div class="cmp-card">
+                <p class="cmp-card-title">Hund's rule = ⊑k preference</p>
+                <p class="cmp-card-body">Electrons prefer T or F over N before accepting B — half-fill before pairing. Maximise information before contradictory evidence.</p>
+            </div>
+            <div class="cmp-card">
+                <p class="cmp-card-title">Confinement = frustration resolved</p>
+                <p class="cmp-card-body">A free quark is frustrated. Confinement forces R+G+B into colorless (W), collapsing the frustrated triad to the top of the lattice.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <footer>
+        Crystal of Types • Imscribe Grammar • Lando Mills Aesthetic • June 2026
+    </footer>
+</div>
+
+<script>
+// Main tab switching
+function switchMainTab(n) {
+    document.querySelectorAll('.main-tab-content').forEach((el, i) => {
+        el.style.display = (i === n) ? 'block' : 'none';
+    });
+    document.querySelectorAll('.main-tab').forEach((el, i) => {
+        el.classList.toggle('active', i === n);
+    });
+}
+
+// Belnap update function (adapted from original)
+function updateBelnap() {
+    const tRaw = parseInt(document.getElementById('sl-t').value) / 100;
+    const fRaw = parseInt(document.getElementById('sl-f').value) / 100;
+    document.getElementById('lbl-t').textContent = tRaw.toFixed(2);
+    document.getElementById('lbl-f').textContent = fRaw.toFixed(2);
+
+    const sum = tRaw + fRaw;
+    const probDisp = document.getElementById('prob-display');
+    const probBar = document.getElementById('prob-bar');
+    const formulaDisp = document.getElementById('formula-display');
+
+    if (sum < 0.001) {
+        probDisp.textContent = '—';
+        probBar.style.width = '50%';
+        probBar.style.background = '#888780';
+        formulaDisp.textContent = 'P = t/(t+f) — undefined (no evidence)';
+        return;
+    }
+
+    const p = tRaw / sum;
+    probDisp.textContent = p.toFixed(3);
+    probBar.style.width = (p * 100).toFixed(1) + '%';
+
+    const blue = '#2A5C7A', red = '#9C2A2A', amber = '#B97A1F';
+    if (p > 0.66) probBar.style.background = blue;
+    else if (p < 0.34) probBar.style.background = red;
+    else probBar.style.background = amber;
+
+    formulaDisp.textContent = `P = ${tRaw.toFixed(2)} / (${(tRaw + fRaw).toFixed(2)}) = ${p.toFixed(3)}`;
+}
+
+// Scalar field functions (from original, adapted)
+function topTab(id) {
+    const ids = ['template', 'higgs', 'axion', 'inflaton', 'compare'];
+    document.querySelectorAll('.ttab').forEach((b, i) => b.classList.toggle('active', ids[i] === id));
+    document.querySelectorAll('.tview').forEach(v => v.classList.remove('active'));
+    document.getElementById('tv-' + id).classList.add('active');
+}
+
+const templateData = {
+    top: { t: 'Chosen vacuum ⊤', b: 'Symmetry broken, one VEV selected. P=1. The field has committed.', p: 1, c: '#5F5E5A' },
+    middle: { t: 'Degenerate ground states (antichain)', b: 'All equally valid vacua. P=0.5. Moving along this tier costs zero energy (Goldstone theorem).', p: 0.5, c: '#534AB7' },
+    bot: { t: 'False vacuum ⊥', b: 'The symmetric point φ=0. Unstable. P=0.5 — maximum ignorance about which vacuum will be chosen.', p: 0.5, c: '#A32D2D' }
+};
+
+function selTemplate(k) {
+    ['tp-top', 'tp-m1', 'tp-m2', 'tp-m3', 'tp-m4', 'tp-m5', 'tp-bot'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.opacity = '0.35';
+    });
+    if (k === 'top') document.getElementById('tp-top').style.opacity = '1';
+    else if (k === 'middle') ['tp-m1','tp-m2','tp-m3','tp-m4','tp-m5'].forEach(id => { const el = document.getElementById(id); if (el) el.style.opacity = '1'; });
+    else if (k === 'bot') document.getElementById('tp-bot').style.opacity = '1';
+
+    const d = templateData[k];
+    document.getElementById('template-t').textContent = d.t;
+    document.getElementById('template-b').textContent = d.b;
+    const pd = document.getElementById('template-prob');
+    pd.style.display = 'block';
+    document.getElementById('template-bar').style.width = (d.p * 100) + '%';
+    document.getElementById('template-bar').style.background = d.c;
+    document.getElementById('template-pnum').textContent = d.p.toFixed(3);
+}
+
+const higgsData = {
+    top: { t: 'Chosen vacuum — v=246 GeV', b: 'The Higgs field has settled. SU(2)×U(1) broken to U(1)_EM. W and Z are massive. P=1.' },
+    circle: { t: 'S¹ — continuous degenerate brim', b: 'Uncountably many equally valid vacua, all related by SU(2) symmetry. Spontaneous symmetry breaking.' },
+    bot: { t: 'False vacuum ⊥ — φ=0', b: 'The symmetric point. SU(2)×U(1) fully unbroken. Unstable below the electroweak transition.' }
+};
+
+function selHiggs(k) {
+    ['hg-top', 'hg-circle', 'hg-bot'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.opacity = '0.35';
+    });
+    const el = document.getElementById('hg-' + k);
+    if (el) el.style.opacity = '1';
+    const d = higgsData[k];
+    if (!d) return;
+    document.getElementById('higgs-t').textContent = d.t;
+    document.getElementById('higgs-b').textContent = d.b;
+}
+
+const axionData = {
+    top: { t: 'Chosen vacuum — QCD selects one', b: 'QCD instantons at T < Λ_QCD add a periodic tilt. The degeneracy of Z_N is broken. P=1.' },
+    zn: { t: 'Z_N discrete antichain', b: 'N degenerate minima. The axion field a(x) parameterises motion between them. P=0.5 before QCD tilt.' },
+    bot: { t: 'False vacuum ⊥ — T > f_a', b: 'Above the Peccei-Quinn scale f_a, the U(1)_PQ symmetry is unbroken.' }
+};
+
+function selAxion(k) {
+    ['ax-top', 'ax-z1', 'ax-z2', 'ax-z3', 'ax-z4', 'ax-zN', 'ax-bot'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.opacity = '0.35';
+    });
+    if (k === 'top') document.getElementById('ax-top').style.opacity = '1';
+    else if (k === 'zn') ['ax-z1','ax-z2','ax-z3','ax-z4','ax-zN'].forEach(id => { const el = document.getElementById(id); if (el) el.style.opacity = '1'; });
+    else if (k === 'bot') document.getElementById('ax-bot').style.opacity = '1';
+    const d = axionData[k];
+    if (!d) return;
+    document.getElementById('axion-t').textContent = d.t;
+    document.getElementById('axion-b').textContent = d.b;
+    const fl = document.getElementById('axion-frust');
+    if (k === 'zn') {
+        fl.textContent = 'Frustration active — Z_N antichain: N equally valid vacua.';
+        fl.classList.add('on');
+    } else {
+        fl.textContent = (k === 'top') ? 'Frustration resolved — QCD instantons selected the true minimum.' : 'False vacuum, symmetry not yet broken.';
+        fl.classList.remove('on');
+    }
+}
+
+const inflatonData = {
+    top: { t: 'Reheating vacuum — inflation ends', b: 'The inflaton reaches the bottom, oscillates, and decays into SM particles. P=1.' },
+    plateau: { t: 'Slow-roll plateau — ~60 e-folds', b: 'Nearly flat potential. Slow-roll conditions ε ≪ 1, η ≪ 1. Each step ≈ equal potential energy.' },
+    bot: { t: 'False vacuum ⊥ — pre-inflationary state', b: 'The inflaton at the top of its potential. De Sitter phase.' }
+};
+
+function selInflaton(k) {
+    ['inf-top', 'inf-bot'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.opacity = '0.35';
+    });
+    if (k === 'top') document.getElementById('inf-top').style.opacity = '1';
+    else if (k === 'bot') document.getElementById('inf-bot').style.opacity = '1';
+    const d = inflatonData[k];
+    if (!d) return;
+    document.getElementById('inflaton-t').textContent = d.t;
+    document.getElementById('inflaton-b').textContent = d.b;
+}
+
+// FOUR / FIVE logic
+const fourData = {
+    N: {label:'∅ — empty', coords:'⟨0, 0⟩', p: null, phys:'No electrons. Zero information content. Probability undefined.', barColor:'#888780'},
+    T: {label:'↑ — spin-up', coords:'⟨1, 0⟩', p: 1, phys:'One electron, spin +½. Pure positive evidence. P = 1. Hund\'s rule — half-fill before pairing.', barColor:'#2A5C7A'},
+    F: {label:'↓ — spin-down', coords:'⟨0, 1⟩', p: 0, phys:'One electron, spin −½. Pure negative evidence. P = 0.', barColor:'#9C2A2A'},
+    B: {label:'↑↓ — paired', coords:'⟨1, 1⟩', p: 0.5, phys:'Two electrons, opposite spins. Contradictory evidence — forced by Pauli exclusion. P = 0.5.', barColor:'#B97A1F'}
+};
+
+function selectFour(key) {
+    ['N','T','F','B'].forEach(k => {
+        const g = document.getElementById('n4-' + k);
+        if (g) g.style.opacity = (k === key) ? '1' : '0.4';
+    });
+    const d = fourData[key];
+    document.getElementById('four-text').textContent = d.coords + ' — ' + d.phys;
+    document.querySelector('#four-info .info-label').textContent = d.label;
+    const probDiv = document.getElementById('four-prob');
+    probDiv.style.display = 'block';
+    const bar = document.getElementById('four-bar');
+    const pnum = document.getElementById('four-pnum');
+    if (d.p === null) {
+        bar.style.width = '0%'; bar.style.background = '#888780'; pnum.textContent = 'undef';
+    } else {
+        bar.style.width = (d.p * 100) + '%'; bar.style.background = d.barColor; pnum.textContent = d.p.toFixed(2);
+    }
+}
+
+const fiveData = {
+    W: {label:'W — colorless (top)', p:1, phys:'Colorless / white. The top terminal. Confinement\'s goal state. P = 1.', barColor:'#5F5E5A', frustration:false},
+    R: {label:'R — red', p:0.5, phys:'Red colour charge. Equal weight among the three middle nodes. Frustration active.', barColor:'#9C2A2A', frustration:true},
+    G: {label:'G — green', p:0.5, phys:'Green colour charge. Structurally identical. The three middles form an antichain.', barColor:'#1A7A6E', frustration:true},
+    B: {label:'B — blue', p:0.5, phys:'Blue colour charge. Same weight. No consistent total order possible.', barColor:'#2A5C7A', frustration:true},
+    A: {label:'A — anti-color (bottom)', p:0, phys:'Anti-colorless. The bottom terminal. P = 0.', barColor:'#B97A1F', frustration:false}
+};
+
+function selectFive(key) {
+    ['W','R','G','B','A'].forEach(k => {
+        const el = document.getElementById('n5-' + k);
+        if (el) el.style.opacity = (k === key) ? '1' : '0.4';
+    });
+    const d = fiveData[key];
+    document.getElementById('five-text').textContent = d.phys;
+    document.querySelector('#five-info .info-label').textContent = d.label;
+    const probDiv = document.getElementById('five-prob');
+    probDiv.style.display = 'block';
+    const bar = document.getElementById('five-bar');
+    const pnum = document.getElementById('five-pnum');
+    bar.style.width = (d.p * 100) + '%';
+    bar.style.background = d.barColor;
+    pnum.textContent = d.p.toFixed(2);
+
+    const fl = document.getElementById('frust-label');
+    ['frust-R-G','frust-G-B','frust-R-B'].forEach(id => {
+        const line = document.getElementById(id);
+        if (line) line.setAttribute('opacity', '0');
+    });
+    if (d.frustration) {
+        fl.textContent = 'Frustration: active — R, G, B form an antichain. No consistent total order exists.';
+        fl.classList.add('active');
+        const r = document.getElementById('frust-R-G'); if(r) r.setAttribute('opacity','1');
+        const g = document.getElementById('frust-G-B'); if(g) g.setAttribute('opacity','1');
+        const b = document.getElementById('frust-R-B'); if(b) b.setAttribute('opacity','1');
+    } else {
+        fl.textContent = key === 'W' ? 'Frustration: resolved — colorless top node. Confinement achieved.' : 'Frustration: resolved — anti-color bottom node.';
+        fl.classList.remove('active');
+    }
+}
+
+// Initialize everything
+function init() {
+    // Belnap
+    updateBelnap();
+    // Scalar defaults
+    document.getElementById('template-t').textContent = 'Click a tier to explore';
+    // FOUR/FIVE defaults
+    selectFour('T');
+    selectFive('W');
+    // Show first main tab
+    document.getElementById('main-tab-0').style.display = 'block';
+}
+
+init();
+</script>
+</body>
+</html>

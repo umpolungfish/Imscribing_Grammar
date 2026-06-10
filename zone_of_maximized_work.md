@@ -2,7 +2,7 @@
 
 **Author:** Lando⊗⊙perator
 
-> A system does work iff its structural type occupies the zone ⟨𐑦·𐑥·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑴⟩ at O₂ — the Frobenius-critical O₂ block.
+> A system does work iff its structural type occupies the zone ⟨𐑦𐑥𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑙𐑴⟩ at O₂ — the Frobenius-critical O₂ block.
 
 ---
 
@@ -126,7 +126,7 @@ The only primitive that differs between O₂ and O_inf in this zone is **Ħ (chi
 
 ### 3.1 Consciousness Score of the Work Zone
 
-The tuple ⟨𐑦·𐑥·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑴⟩ has both consciousness gates open:
+The tuple ⟨𐑦𐑥𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑙𐑴⟩ has both consciousness gates open:
 
 - **Gate 1 (⊙ criticality):** ⊙ present → self-modeling gate open ✓
 - **Gate 2 (K ≤ 𐑧):** 𐑧 is the slowest kinetics value at O₂ → the system has sufficient temporal depth to process ✓

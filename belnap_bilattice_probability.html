@@ -1,0 +1,208 @@
+
+<style>
+  h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .root{padding:1rem 0;font-size:14px;color:var(--color-text-primary)}
+  .section-title{font-size:16px;font-weight:500;margin:0 0 .75rem;color:var(--color-text-primary)}
+  .sub-title{font-size:13px;color:var(--color-text-secondary);margin:0 0 1.25rem;line-height:1.6}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.5rem}
+  @media(max-width:520px){.two-col{grid-template-columns:1fr}}
+  .card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+  .badge{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;margin-right:6px}
+  .badge-t{background:var(--color-background-info);color:var(--color-text-info)}
+  .badge-f{background:var(--color-background-danger);color:var(--color-text-danger)}
+  .badge-b{background:var(--color-background-warning);color:var(--color-text-warning)}
+  .badge-n{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+  .eq{font-family:var(--font-mono);font-size:12px;padding:4px 8px;background:var(--color-background-secondary);border-radius:4px;display:inline-block;margin:.25rem 0}
+  .slider-row{display:flex;align-items:center;gap:10px;margin:.5rem 0}
+  .slider-row label{font-size:13px;color:var(--color-text-secondary);min-width:60px}
+  .slider-row input{flex:1}
+  .slider-row span{font-size:13px;font-weight:500;min-width:32px;text-align:right}
+  .result-box{margin-top:1rem;padding:.75rem 1rem;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary)}
+  .big-num{font-size:28px;font-weight:500;color:var(--color-text-primary)}
+  .bar-wrap{height:14px;background:var(--color-background-secondary);border-radius:7px;overflow:hidden;margin:.5rem 0}
+  .bar-fill{height:14px;border-radius:7px;transition:width .25s}
+  .formula{font-family:var(--font-mono);font-size:12px;color:var(--color-text-secondary);margin-top:.4rem}
+  .divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.25rem 0}
+  .row-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
+</style>
+<div class="root">
+  <h2 class="sr-only">Belnap's bilattice: truth values as weight carriers that normalise to probabilities</h2>
+
+  <p class="section-title">Belnap's FOUR as a unit square</p>
+  <p class="sub-title">Each truth value is a point ⟨t, f⟩ ∈ {0,1}². The two orderings are independent axes.</p>
+
+  <svg width="100%" viewBox="0 0 680 280" role="img">
+    <title>Belnap bilattice square diagram</title>
+    <desc>Four truth values arranged as corners of a square. N at bottom-left, T at top-left, F at bottom-right, B at top-right. Horizontal axis is the knowledge ordering, vertical is the truth ordering.</desc>
+    <defs>
+      <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+
+    <!-- grid square outline -->
+    <rect x="190" y="50" width="200" height="180" rx="4" fill="none" stroke="var(--color-border-secondary)" stroke-width="0.5" stroke-dasharray="4 3"/>
+
+    <!-- axes labels -->
+    <text x="340" y="262" text-anchor="middle" font-size="11" fill="var(--color-text-tertiary)" font-family="var(--font-sans)">← f-component (told false) →</text>
+    <text x="168" y="142" text-anchor="middle" font-size="11" fill="var(--color-text-tertiary)" font-family="var(--font-sans)" transform="rotate(-90,168,142)">← t-component (told true) →</text>
+
+    <!-- axis ticks -->
+    <text x="190" y="247" text-anchor="middle" font-size="10" fill="var(--color-text-tertiary)" font-family="var(--font-sans)">0</text>
+    <text x="390" y="247" text-anchor="middle" font-size="10" fill="var(--color-text-tertiary)" font-family="var(--font-sans)">1</text>
+    <text x="178" y="238" text-anchor="end" font-size="10" fill="var(--color-text-tertiary)" font-family="var(--font-sans)">0</text>
+    <text x="178" y="58" text-anchor="end" font-size="10" fill="var(--color-text-tertiary)" font-family="var(--font-sans)">1</text>
+
+    <!-- lattice edges — knowledge ordering (horizontal, dashed amber) -->
+    <line x1="198" y1="230" x2="382" y2="230" stroke="#BA7517" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+    <line x1="198" y1="58"  x2="382" y2="58"  stroke="#BA7517" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+    <!-- truth ordering (vertical, dashed teal) -->
+    <line x1="198" y1="222" x2="198" y2="68" stroke="#0F6E56" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+    <line x1="388" y1="222" x2="388" y2="68" stroke="#0F6E56" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+
+    <!-- ordering legend -->
+    <line x1="460" y1="90" x2="490" y2="90" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+    <text x="498" y="94" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">knowledge ⊑k</text>
+    <line x1="460" y1="114" x2="490" y2="114" stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+    <text x="498" y="118" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">truth ⊑t</text>
+
+    <!-- nodes: N bottom-left, T top-left, F bottom-right, B top-right -->
+    <!-- N ⟨0,0⟩ -->
+    <g>
+      <circle cx="190" cy="230" r="20" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="190" y="226" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#2C2C2A" font-family="var(--font-sans)">N</text>
+      <text x="190" y="240" text-anchor="middle" dominant-baseline="central" font-size="9" fill="#444441" font-family="var(--font-mono)">⟨0,0⟩</text>
+    </g>
+    <!-- T ⟨1,0⟩ -->
+    <g>
+      <circle cx="190" cy="58" r="20" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="190" y="54" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#042C53" font-family="var(--font-sans)">T</text>
+      <text x="190" y="68" text-anchor="middle" dominant-baseline="central" font-size="9" fill="#0C447C" font-family="var(--font-mono)">⟨1,0⟩</text>
+    </g>
+    <!-- F ⟨0,1⟩ -->
+    <g>
+      <circle cx="390" cy="230" r="20" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.5"/>
+      <text x="390" y="226" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#501313" font-family="var(--font-sans)">F</text>
+      <text x="390" y="240" text-anchor="middle" dominant-baseline="central" font-size="9" fill="#791F1F" font-family="var(--font-mono)">⟨0,1⟩</text>
+    </g>
+    <!-- B ⟨1,1⟩ -->
+    <g>
+      <circle cx="390" cy="58" r="20" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="390" y="54" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="500" fill="#412402" font-family="var(--font-sans)">B</text>
+      <text x="390" y="68" text-anchor="middle" dominant-baseline="central" font-size="9" fill="#633806" font-family="var(--font-mono)">⟨1,1⟩</text>
+    </g>
+
+    <!-- name labels -->
+    <text x="130" y="234" text-anchor="end" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Neither</text>
+    <text x="130" y="62"  text-anchor="end" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">True</text>
+    <text x="450" y="234" text-anchor="start" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">False</text>
+    <text x="450" y="62"  text-anchor="start" font-size="11" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Both</text>
+  </svg>
+
+  <hr class="divider">
+
+  <p class="section-title">From weights to probability</p>
+  <p class="sub-title">
+    Treat t and f as raw <em>support weights</em>. When t + f > 0, normalise: P = t / (t + f).
+    This is just Laplace's rule of succession stripped bare — the fraction of positive evidence among all evidence received.
+    When both are zero (N), the probability is undefined (no evidence).
+  </p>
+
+  <div class="two-col">
+    <div class="card">
+      <div style="font-weight:500;margin-bottom:.5rem">Adjust weights</div>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 .75rem">
+        Move beyond the four corner values into the continuous generalisation: t, f ∈ [0, 1].
+      </p>
+      <div class="slider-row">
+        <label>t (true)</label>
+        <input type="range" min="0" max="100" value="70" id="sl-t" step="1" oninput="update()">
+        <span id="lbl-t">0.70</span>
+      </div>
+      <div class="slider-row">
+        <label>f (false)</label>
+        <input type="range" min="0" max="100" value="30" id="sl-f" step="1" oninput="update()">
+        <span id="lbl-f">0.30</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:500;margin-bottom:.75rem">Normalised probability</div>
+      <div id="prob-display" class="big-num">0.70</div>
+      <div class="bar-wrap"><div id="prob-bar" class="bar-fill" style="width:70%;background:#185FA5"></div></div>
+      <div class="row-labels"><span>0</span><span>0.5</span><span>1</span></div>
+      <div class="formula" id="formula-display">P = 0.70 / (0.70 + 0.30) = 0.700</div>
+      <div id="value-badge" style="margin-top:.75rem"></div>
+    </div>
+  </div>
+
+  <div class="result-box" id="interp-box">
+    <div id="interp-text" style="font-size:13px;line-height:1.6;color:var(--color-text-secondary)"></div>
+  </div>
+
+</div>
+<script>
+const CORNERS = [
+  {t:0,f:0,label:'N — Neither',badge:'badge-n',interp:'No evidence received. Probability is undefined — the proposition is epistemically invisible.'},
+  {t:1,f:0,label:'T — True',badge:'badge-t',interp:'Only positive evidence. P = 1. Classical truth: all sources agree it holds.'},
+  {t:0,f:1,label:'F — False',badge:'badge-f',interp:'Only negative evidence. P = 0. Classical falsity: all sources agree it fails.'},
+  {t:1,f:1,label:'B — Both',badge:'badge-b',interp:'Equal contradictory evidence. P = 0.5. Maximum paradox — the sources cancel.'},
+];
+
+function closestCorner(t,f){
+  let best=null,bestDist=Infinity;
+  for(const c of CORNERS){
+    const d=Math.hypot(t-c.t,f-c.f);
+    if(d<bestDist){bestDist=d;best=c;}
+  }
+  return {corner:best,dist:bestDist};
+}
+
+function update(){
+  const tRaw=parseInt(document.getElementById('sl-t').value)/100;
+  const fRaw=parseInt(document.getElementById('sl-f').value)/100;
+  document.getElementById('lbl-t').textContent=tRaw.toFixed(2);
+  document.getElementById('lbl-f').textContent=fRaw.toFixed(2);
+
+  const sum=tRaw+fRaw;
+  const probBar=document.getElementById('prob-bar');
+  const probDisp=document.getElementById('prob-display');
+  const formulaDisp=document.getElementById('formula-display');
+  const badge=document.getElementById('value-badge');
+  const interp=document.getElementById('interp-text');
+
+  if(sum<0.001){
+    probDisp.textContent='—';
+    probBar.style.width='50%';
+    probBar.style.background='#888780';
+    formulaDisp.textContent='P = t/(t+f) — undefined (no evidence)';
+    badge.innerHTML='<span class="badge badge-n">N — Neither</span>';
+    interp.textContent='No evidence received. Probability is undefined.';
+    return;
+  }
+
+  const p=tRaw/sum;
+  probDisp.textContent=p.toFixed(3);
+  probBar.style.width=(p*100).toFixed(1)+'%';
+
+  // colour bar by confidence
+  const blue='#185FA5',red='#A32D2D',amber='#BA7517';
+  if(p>0.66) probBar.style.background=blue;
+  else if(p<0.34) probBar.style.background=red;
+  else probBar.style.background=amber;
+
+  formulaDisp.textContent=`P = ${tRaw.toFixed(2)} / (${tRaw.toFixed(2)} + ${fRaw.toFixed(2)}) = ${p.toFixed(3)}`;
+
+  // nearest corner annotation
+  const {corner,dist}=closestCorner(tRaw,fRaw);
+  if(dist<0.08){
+    badge.innerHTML=`<span class="badge ${corner.badge}">${corner.label}</span><span style="font-size:11px;color:var(--color-text-tertiary)">exact corner</span>`;
+    interp.textContent=corner.interp;
+  } else {
+    const sup = sum < 0.3 ? 'Weak evidence base.' : sum > 1.4 ? 'Strong evidence base.' : 'Moderate evidence base.';
+    badge.innerHTML=`<span style="font-size:12px;color:var(--color-text-secondary)">continuous generalisation of FOUR</span>`;
+    interp.textContent=`${sup} P = ${p.toFixed(3)} — ${p>0.5?'leans true':'p<0.5?leans false:perfectly balanced'}. Total evidence mass: ${sum.toFixed(2)}. The information ordering tracks sum (how much evidence), the truth ordering tracks difference (which way it leans).`;
+  }
+}
+update();
+</script>

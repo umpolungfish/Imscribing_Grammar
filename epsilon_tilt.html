@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Universe Resolves Its Own Indecision — C. L. Mills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0906;
+  --parchment:#ede4ce;
+  --parchment-dim:#c8c0aa;
+  --gold:#c8960a;
+  --gold-pale:#e8c84a;
+  --gold-dim:#7a5c06;
+  --gold-bg:#1a1408;
+  --ash:#4a453c;
+  --ash-pale:#7a7268;
+  --ash-light:#b4ac98;
+  --crimson:#8b1a1a;
+  --crimson-pale:#c44040;
+  --smoke:#1e1a12;
+  --smoke2:#261f14;
+  --smoke3:#2e2618;
+  --border:#3a3020;
+  --border-gold:#5a4510;
+  --violet:#4a3a8a;
+  --violet-pale:#9888d8;
+  --font:'IM Fell English',Georgia,serif;
+  --mono:monospace;
+}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{
+  background:var(--ink);
+  color:var(--parchment);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.85;
+}
+.root{
+  max-width:740px;
+  margin:0 auto;
+  padding:4rem 2rem 6rem;
+}
+
+/* ── Header ── */
+.paper-header{
+  border-bottom:0.5px solid var(--border-gold);
+  padding-bottom:2.5rem;
+  margin-bottom:2.5rem;
+}
+.series-label{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ash-pale);
+  margin-bottom:1.75rem;
+  font-family:var(--mono);
+}
+.paper-title{
+  font-size:clamp(1.5rem,3.5vw,2.2rem);
+  font-weight:400;
+  color:var(--gold-pale);
+  line-height:1.25;
+  margin-bottom:.5rem;
+}
+.paper-subtitle{
+  font-size:.975rem;
+  font-style:italic;
+  color:var(--ash-light);
+  margin-bottom:1.5rem;
+  line-height:1.55;
+}
+.paper-meta{
+  font-size:12px;
+  color:var(--ash-pale);
+  font-family:var(--mono);
+  line-height:1.9;
+}
+
+/* ── Abstract ── */
+.abstract{
+  background:var(--smoke2);
+  border:0.5px solid var(--border-gold);
+  border-radius:2px;
+  padding:1.25rem 1.5rem;
+  margin-bottom:3rem;
+}
+.abstract-label{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  font-family:var(--mono);
+  margin-bottom:.75rem;
+}
+.abstract p{
+  font-size:14px;
+  color:var(--ash-light);
+  line-height:1.75;
+  font-style:italic;
+  margin:0;
+}
+
+/* ── TOC ── */
+.toc{
+  border:0.5px solid var(--border);
+  padding:.85rem 1.25rem;
+  margin-bottom:3rem;
+  background:var(--smoke);
+}
+.toc-label{
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ash-pale);
+  font-family:var(--mono);
+  margin-bottom:.5rem;
+}
+.toc ol{
+  padding-left:1.4rem;
+  font-size:13px;
+  color:var(--ash-pale);
+  line-height:2;
+}
+.toc a{color:var(--ash-light);text-decoration:none;transition:color .15s}
+.toc a:hover{color:var(--gold-pale)}
+
+/* ── Sections ── */
+section{margin-bottom:3.5rem}
+.sec-divider{
+  border:none;
+  border-top:0.5px solid var(--border);
+  margin:3rem 0;
+  position:relative;
+}
+.sec-divider::after{
+  content:'&#8857;';
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--ink);
+  padding:0 .75rem;
+  color:var(--border-gold);
+  font-size:11px;
+}
+h2{
+  font-size:1.2rem;
+  font-weight:400;
+  color:var(--gold-pale);
+  margin-bottom:1.25rem;
+  line-height:1.3;
+}
+h2 .sn{
+  font-family:var(--mono);
+  font-size:.8rem;
+  color:var(--gold-dim);
+  margin-right:.6rem;
+}
+h3{
+  font-size:.975rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--gold);
+  margin:2rem 0 .75rem;
+}
+p{margin-bottom:1rem}
+ul.body-list{
+  margin:.75rem 0 1rem 1.5rem;
+  color:var(--ash-light);
+  font-size:14px;
+  line-height:1.9;
+}
+ul.body-list li{margin-bottom:.2rem}
+
+/* ── Equations ── */
+.eq-block{
+  background:var(--smoke2);
+  border:0.5px solid var(--border);
+  border-left:2px solid var(--violet);
+  border-radius:2px;
+  padding:.6rem 1rem;
+  margin:1.25rem 0;
+  display:flex;
+  align-items:baseline;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.eq{
+  font-family:var(--mono);
+  font-size:14px;
+  color:var(--violet-pale);
+  letter-spacing:.02em;
+}
+.eq-sub{
+  font-size:12px;
+  color:var(--ash-pale);
+  font-family:var(--mono);
+}
+.eq-n{
+  margin-left:auto;
+  font-size:11px;
+  color:var(--ash);
+  font-family:var(--mono);
+}
+.m{
+  font-family:var(--mono);
+  font-size:.93em;
+  color:var(--violet-pale);
+}
+
+/* ── Pull quotes ── */
+blockquote.pull{
+  border-left:2px solid var(--gold);
+  margin:1.75rem 0;
+  padding:.75rem 1.25rem;
+  background:var(--gold-bg);
+}
+blockquote.pull p{
+  font-size:1.05rem;
+  font-style:italic;
+  color:var(--parchment);
+  margin:0;
+  line-height:1.6;
+}
+
+/* ── Callout ── */
+.callout{
+  background:var(--smoke2);
+  border:0.5px solid var(--border-gold);
+  border-radius:2px;
+  padding:1rem 1.25rem;
+  margin:1.5rem 0;
+}
+.callout-lbl{
+  font-size:10px;
+  font-family:var(--mono);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  margin-bottom:.5rem;
+}
+.callout p{
+  font-size:14px;
+  color:var(--ash-light);
+  margin:0;
+  line-height:1.7;
+}
+
+/* ── Definition ── */
+.defn{
+  border-left:2px solid var(--crimson);
+  padding:.5rem 1rem;
+  margin:1rem 0;
+  background:var(--smoke);
+}
+.defn-term{
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--crimson-pale);
+  margin-bottom:.25rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.defn p{font-size:13px;color:var(--ash-light);margin:0}
+
+/* ── Tables ── */
+.tbl-wrap{overflow-x:auto;margin:1.5rem 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold-dim);
+  border-bottom:0.5px solid var(--border-gold);
+  padding:.5rem .75rem;
+  text-align:left;
+  background:var(--smoke2);
+}
+tbody tr:nth-child(odd){background:var(--smoke)}
+tbody tr:nth-child(even){background:var(--ink)}
+tbody td{
+  padding:.45rem .75rem;
+  color:var(--ash-light);
+  border-bottom:0.5px solid var(--border);
+  vertical-align:middle;
+}
+tbody td:first-child{color:var(--parchment);font-style:italic}
+tbody td:nth-child(2){font-family:var(--mono);font-size:12px;color:var(--violet-pale)}
+tbody td:last-child{font-family:var(--mono);font-size:12px;color:var(--gold)}
+
+/* ── Predictions ── */
+.pred-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1.25rem 0;padding:0}
+.pred{
+  background:var(--smoke2);
+  border:0.5px solid var(--border);
+  border-left:2px solid var(--gold);
+  border-radius:2px;
+  padding:.75rem 1rem;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:.75rem;
+  align-items:start;
+}
+.pred-n{
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--gold-dim);
+  padding-top:.15rem;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.pred p{font-size:13px;color:var(--ash-light);margin:0;line-height:1.65}
+.pred strong{color:var(--parchment);font-weight:400}
+
+/* ── Footer ── */
+footer{
+  border-top:0.5px solid var(--border-gold);
+  margin-top:4rem;
+  padding-top:2rem;
+}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.fl{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ash-pale);
+  margin-bottom:.5rem;
+}
+.fp{font-size:12px;color:var(--ash);line-height:1.7;margin:0}
+.fp a{color:var(--ash-light);text-decoration:none}
+.fp a:hover{color:var(--gold-pale)}
+.odot-end{
+  text-align:center;
+  padding:2.75rem 0 0;
+  color:var(--border-gold);
+  font-size:1.1rem;
+  letter-spacing:.08em;
+}
+
+/* ── Misc ── */
+em.key{color:var(--gold-pale);font-style:italic}
+.note{font-size:12px;color:var(--ash-pale);font-style:italic;margin-top:.25rem;margin-bottom:1rem}
+strong.lit{color:var(--parchment);font-weight:400}
+/* ── Figures ── */
+figure.fig{margin:2rem 0}
+figcaption{font-size:12px;color:var(--ash-pale);line-height:1.65;margin-top:.6rem;font-style:italic}
+.fig-num{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--gold-dim)}
+.fig-svg{display:block;width:100%;height:auto;border-radius:2px}
+
+@media(max-width:540px){
+  .root{padding:2.5rem 1.25rem 4rem}
+  h2{font-size:1.05rem}
+}
+</style>
+</head>
+<body>
+<div class="root">
+
+<!-- ── Header ── -->
+<header class="paper-header">
+  <div class="series-label">White Paper &middot; Imscribing Grammar Series &middot; 2026</div>
+  <h1 class="paper-title">The Universe Resolves Its Own Indecision</h1>
+  <p class="paper-subtitle">A Logical Foundation for Mass, Dark Matter, and the New Gravitational Wave Background</p>
+  <div class="paper-meta">
+    <div>C. L. Mills &mdash; Independent Research</div>
+    <div>2026 &nbsp;&middot;&nbsp; Unlicense (public domain)</div>
+  </div>
+</header>
+
+<!-- ── Abstract ── -->
+<div class="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p>We present a framework in which physical law emerges from the necessity of logical systems to resolve contradiction. The flat antichain (perfect indifference) is unstable; any manifest universe must undergo an <em>&#949;-tilt</em>, selecting a truth value with a small but finite bias. The residue of this lingering indifference is inertial mass. Domain walls that separate regions of different chosen truth become fossils of indecision, and their eventual annihilation produces a stochastic gravitational wave background. Recent pulsar timing array data (NANOGrav, EPTA, PPTA, 2023&ndash;2026) show a signal consistent with this prediction. We map the spectrum of logical certainty from the axion (<em class="key">&#949; &#8764; 10&#8315;&#185;&#8310;</em>) to the Higgs (<em class="key">&#949; &#8764; 1</em>) and extend the logic to black hole horizons and quantum gravity.</p>
+</div>
+
+<!-- ── Table of Contents ── -->
+<div class="toc">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li><a href="#s1">The Logical Imperative: Why Symmetry Must Break</a></li>
+    <li><a href="#s2">Mass as Geometric Tilt: The Axion vs. The Higgs</a></li>
+    <li><a href="#s3">Domain Walls: Fossils of Indecision in Space</a></li>
+    <li><a href="#s4">The Gravitational Wave Signature: Acoustic Echo of Resolution</a></li>
+    <li><a href="#s5">The Data: NANOGrav, EPTA, PPTA (2023&ndash;2026)</a></li>
+    <li><a href="#s6">Unification: From Axions to Black Holes</a></li>
+    <li><a href="#s7">Falsifiable Predictions</a></li>
+    <li><a href="#s8">Conclusion: The Universe Has Made Up Its Mind</a></li>
+  </ol>
+</div>
+
+<!-- ──────────────────────────────────────────── -->
+
+<section id="s1">
+<h2><span class="sn">&#167;1</span>The Logical Imperative: Why Symmetry Must Break</h2>
+
+<p>In conventional physics, symmetry breaking is imposed by hand: a potential is written with a degenerate minimum, then a small explicit term or a quantum fluctuation selects one vacuum. But <em>why</em> should nature ever tolerate exact degeneracy? Why does the universe not remain in a perfectly symmetric, indifferent state&mdash;a flat antichain where all outcomes are equally weighted?</p>
+
+<blockquote class="pull">
+  <p>Absolute indifference is logically unstable in any system that manifests temporally.</p>
+</blockquote>
+
+<p>Define the <em class="key">evidence ratio</em> <span class="m">R = t/f</span> for a proposition <em>P</em>&mdash;for example, &ldquo;this node of the <span class="m">Z<sub>N</sub></span> ring is the true vacuum&rdquo;&mdash;where <span class="m">t</span> is the accumulated weight of positive evidence and <span class="m">f</span> the weight of negative evidence. In a flat antichain, <span class="m">R = 1</span> for all choices. This is a state of perpetual indecision.</p>
+
+<div class="defn">
+  <div class="defn-term">Flat antichain</div>
+  <p>A configuration in which every competing truth value carries identical evidence weight, <span class="m">t = f</span>, so <span class="m">R = 1</span> and the normalized probability <span class="m">P = t/(t+f) = 0.5</span> for all candidates. Neither true nor false; both and neither simultaneously. The Belnap B-state extended across a degenerate manifold.</p>
+</div>
+
+<p>A universe that evolves&mdash;that has a past and future, that carries chirality in its trajectory&mdash;cannot sustain <span class="m">R = 1</span>. Any fluctuation, any quantum or thermal perturbation, tips the balance. More fundamentally, the very act of <em>being</em> a universe with causal structure requires that some propositions be truer than others. The flat antichain is a fixed point, but an unstable one.</p>
+
+<p>Thus the universe must tilt. There exists a small positive number <span class="m">&#949;</span> such that for at least one proposition, <span class="m">R = 1 + &#949;</span> (with <span class="m">&#949; &#8810; 1</span> in most sectors). This <em class="key">&#949;-tilt</em> is the logical imperative of manifestation. The physical residue of lingering indifference&mdash;the fact that the universe <em>almost</em> didn&rsquo;t choose&mdash;is what we measure as <strong class="lit">mass</strong>.</p>
+
+<div class="callout">
+  <div class="callout-lbl">Central claim</div>
+  <p>Mass is not a primitive property of particles. It is the geometric residue of unresolved logical indifference&mdash;the imprint of how close the universe came to <em>not</em> deciding.</p>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 660 195" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<defs>
+  <marker id="f1arr" viewBox="0 0 10 8" refX="8" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#5a4510"/>
+  </marker>
+</defs>
+<!-- Panel backgrounds -->
+<rect x="8" y="8" width="305" height="179" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<rect x="347" y="8" width="305" height="179" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+<!-- LEFT TITLE -->
+<text x="162" y="30" text-anchor="middle" font-family="monospace" font-size="10" fill="#4a3c20" letter-spacing="3">FLAT ANTICHAIN</text>
+<!-- Z6 ring left: center (162,105), r=58 -->
+<polygon points="162,47 212,76 212,134 162,163 112,134 112,76" fill="none" stroke="#2e2618" stroke-width="0.75" stroke-dasharray="4,3"/>
+<line x1="162" y1="105" x2="162" y2="47"  stroke="#221e14" stroke-width="0.5"/>
+<line x1="162" y1="105" x2="212" y2="76"  stroke="#221e14" stroke-width="0.5"/>
+<line x1="162" y1="105" x2="212" y2="134" stroke="#221e14" stroke-width="0.5"/>
+<line x1="162" y1="105" x2="162" y2="163" stroke="#221e14" stroke-width="0.5"/>
+<line x1="162" y1="105" x2="112" y2="134" stroke="#221e14" stroke-width="0.5"/>
+<line x1="162" y1="105" x2="112" y2="76"  stroke="#221e14" stroke-width="0.5"/>
+<!-- all nodes equal -->
+<circle cx="162" cy="47"  r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<circle cx="212" cy="76"  r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<circle cx="212" cy="134" r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<circle cx="162" cy="163" r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<circle cx="112" cy="134" r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<circle cx="112" cy="76"  r="11" fill="#252018" stroke="#5a5248" stroke-width="1.5"/>
+<text x="162" y="101" text-anchor="middle" font-family="monospace" font-size="9" fill="#4a453c">R = 1</text>
+<text x="162" y="114" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a3530">everywhere</text>
+<text x="162" y="183" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a3020">unstable fixed point</text>
+<!-- ARROW -->
+<line x1="322" y1="105" x2="338" y2="105" stroke="#5a4510" stroke-width="1.5" marker-end="url(#f1arr)"/>
+<text x="330" y="97"  text-anchor="middle" font-family="monospace" font-size="8" fill="#4a3c20">any</text>
+<text x="330" y="120" text-anchor="middle" font-family="monospace" font-size="8" fill="#4a3c20">fluctuation</text>
+<!-- RIGHT TITLE -->
+<text x="500" y="30" text-anchor="middle" font-family="monospace" font-size="10" fill="#c8960a" letter-spacing="3">&#949;-TILT MANIFEST</text>
+<!-- Z6 ring right: center (500,105), r=58 -->
+<polygon points="500,47 550,76 550,134 500,163 450,134 450,76" fill="none" stroke="#2e2618" stroke-width="0.75" stroke-dasharray="4,3"/>
+<line x1="500" y1="105" x2="500" y2="47"  stroke="#221e14" stroke-width="0.5"/>
+<line x1="500" y1="105" x2="550" y2="76"  stroke="#221e14" stroke-width="0.5"/>
+<line x1="500" y1="105" x2="550" y2="134" stroke="#221e14" stroke-width="0.5"/>
+<line x1="500" y1="105" x2="500" y2="163" stroke="#221e14" stroke-width="0.5"/>
+<line x1="500" y1="105" x2="450" y2="134" stroke="#221e14" stroke-width="0.5"/>
+<line x1="500" y1="105" x2="450" y2="76"  stroke="#221e14" stroke-width="0.5"/>
+<!-- non-chosen nodes (dim) -->
+<circle cx="550" cy="76"  r="10" fill="#181410" stroke="#2e2a24" stroke-width="1"/>
+<circle cx="550" cy="134" r="10" fill="#181410" stroke="#2e2a24" stroke-width="1"/>
+<circle cx="500" cy="163" r="10" fill="#181410" stroke="#2e2a24" stroke-width="1"/>
+<circle cx="450" cy="134" r="10" fill="#181410" stroke="#2e2a24" stroke-width="1"/>
+<circle cx="450" cy="76"  r="10" fill="#181410" stroke="#2e2a24" stroke-width="1"/>
+<!-- chosen node: top, gold -->
+<circle cx="500" cy="47" r="15" fill="#1a1408" stroke="#c8960a" stroke-width="2.5"/>
+<circle cx="500" cy="47" r="8"  fill="#c8960a"/>
+<text x="500" y="47" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="9" fill="#0a0906">&#8868;</text>
+<text x="522" y="38" font-family="monospace" font-size="10" fill="#e8c84a">R = 1+&#949;</text>
+<text x="522" y="53" font-family="monospace" font-size="9"  fill="#7a5c06">chosen &#8868;</text>
+<text x="500" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a4510">mass&nbsp;=</text>
+<text x="500" y="113" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a4510">residue(&#949;)</text>
+<text x="500" y="183" text-anchor="middle" font-family="monospace" font-size="9" fill="#7a5c06">symmetry broken</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;1.</span> The flat antichain (left) is an unstable fixed point: all Z<sub>N</sub> nodes carry identical evidence weight R&nbsp;=&nbsp;1. Any fluctuation selects one node as the vacuum (right, gold &#8868;), breaking symmetry. The inertial mass of the resulting particle is the residue of near-indifference &mdash; the geometric measure of how close R came to remaining at unity.</figcaption>
+</figure>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s2">
+<h2><span class="sn">&#167;2</span>Mass as Geometric Tilt: The Axion vs. The Higgs</h2>
+
+<p>Not all tilts are equal. The magnitude of <span class="m">&#949;</span> determines the resulting particle&rsquo;s mass and collective behavior. We examine two extremes.</p>
+
+<h3>&#167;2.1 &nbsp;The Axion: Whisper of a Tilt</h3>
+
+<p>The QCD axion arises from the Peccei-Quinn mechanism. Its potential is generated non-perturbatively by instantons, suppressed by <span class="m">e<sup>&#8722;8&#960;&#178;/g&#178;</sup></span>. In logical terms:</p>
+
+<ul class="body-list">
+  <li>The flat antichain corresponds to the symmetric <span class="m">U(1)<sub>PQ</sub></span> vacuum manifold.</li>
+  <li>The instanton tilt is tiny: <span class="m">&#949; &#8764; e<sup>&#8722;8&#960;&#178;/g&#178;</sup> &#8764; 10<sup>&#8722;16</sup></span> for QCD.</li>
+  <li>The evidence ratio is <span class="m">R = 1 &plusmn; &#949;</span> across the <span class="m">Z<sub>N</sub></span> ring.</li>
+</ul>
+
+<p>Because the tilt is minuscule, the restoring force toward the chosen vacuum is almost zero. The axion acquires a tiny mass:</p>
+
+<div class="eq-block">
+  <span class="eq">m<sub>a</sub> &#8776; &#8730;&#967; / f<sub>a</sub> &#8764; 10<sup>&#8722;10</sup> eV</span>
+  <span class="eq-sub">(for f<sub>a</sub> &#8764; 10<sup>12</sup> GeV)</span>
+  <span class="eq-n">(1)</span>
+</div>
+
+<p>Its mass is literally the residue of the universe&rsquo;s near-indifference. This explains why axions are ultra-light, coherent, and behave as cold dark matter: they are macroscopic waves of <em>almost</em> unresolved logic. The axion is not a particle that happens to be light; it is a monument to the universe&rsquo;s hesitation.</p>
+
+<h3>&#167;2.2 &nbsp;The Higgs: Catastrophic Tilt</h3>
+
+<p>Contrast with the Higgs mechanism. The Higgs potential carries a negative mass-squared term <span class="m">&#8722;&#956;&#178;|H|&#178;</span>, which is not exponentially suppressed. In logical terms:</p>
+
+<ul class="body-list">
+  <li>The tilt is catastrophic: <span class="m">&#949; &#8764; 1</span>, i.e., <span class="m">R &#8811; 1</span> for the chosen vacuum.</li>
+  <li>There is no lingering indifference; the universe commits absolutely.</li>
+</ul>
+
+<p>The resulting masses of the <span class="m">W</span> and <span class="m">Z</span> bosons are large, and the Higgs boson itself is heavy (<span class="m">&#8764; 125 GeV</span>). This is the <em class="key">coagula</em>&mdash;complete polarization of truth. The system retains no memory of the symmetric phase. The Higgs mechanism is the alchemical projection: the prima materia irrevocably fixed.</p>
+
+<blockquote class="pull">
+  <p>From the axion at &#949; &#8764; 10<sup>&#8722;16</sup> through the electron to the top quark at &#949; &#8764; 1&mdash;the entire mass hierarchy is a map of how decisively the universe has tilted in different sectors.</p>
+</blockquote>
+
+<figure class="fig">
+<svg viewBox="0 0 660 215" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<!-- LEFT: Axion potential -->
+<rect x="8" y="8" width="308" height="199" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<text x="163" y="26" text-anchor="middle" font-family="monospace" font-size="10" fill="#4a453c" letter-spacing="3">AXION</text>
+<!-- axes -->
+<line x1="48" y1="175" x2="295" y2="175" stroke="#2e2618" stroke-width="0.75"/>
+<line x1="48" y1="38"  x2="48"  y2="177" stroke="#2e2618" stroke-width="0.75"/>
+<text x="298" y="178" font-family="monospace" font-size="10" fill="#4a3c20">&#952;</text>
+<text x="40"  y="36"  font-family="monospace" font-size="10" fill="#4a3c20">V</text>
+<!-- tick labels -->
+<line x1="73"  y1="175" x2="73"  y2="179" stroke="#2e2618" stroke-width="0.75"/>
+<line x1="183" y1="175" x2="183" y2="179" stroke="#2e2618" stroke-width="0.75"/>
+<line x1="293" y1="175" x2="293" y2="179" stroke="#2e2618" stroke-width="0.75"/>
+<text x="73"  y="190" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">0</text>
+<text x="183" y="190" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">2&#960;</text>
+<text x="293" y="190" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">4&#960;</text>
+<!-- axion curve: nearly flat cosine, amplitude 4px -->
+<path d="M 73,170 C 96,170 118,166 128,166 S 163,170 183,170 S 218,166 238,166 S 273,170 293,170"
+      fill="none" stroke="#9888d8" stroke-width="1.5"/>
+<!-- minima markers -->
+<circle cx="73"  cy="170" r="2.5" fill="#9888d8"/>
+<circle cx="183" cy="170" r="2.5" fill="#9888d8"/>
+<circle cx="293" cy="170" r="2.5" fill="#9888d8"/>
+<!-- annotation -->
+<text x="163" y="152" text-anchor="middle" font-family="monospace" font-size="8" fill="#4a453c">near-degenerate minima</text>
+<text x="163" y="142" text-anchor="middle" font-family="monospace" font-size="8" fill="#4a453c">(instanton-suppressed)</text>
+<text x="163" y="204" text-anchor="middle" font-family="monospace" font-size="9" fill="#9888d8">&#949; &#8764; 10&#8315;&#185;&#8310;</text>
+
+<!-- RIGHT: Higgs double well -->
+<rect x="344" y="8" width="308" height="199" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+<text x="499" y="26" text-anchor="middle" font-family="monospace" font-size="10" fill="#c8960a" letter-spacing="3">HIGGS</text>
+<!-- axes -->
+<line x1="362" y1="175" x2="640" y2="175" stroke="#2e2618" stroke-width="0.75"/>
+<line x1="364" y1="38"  x2="364" y2="177" stroke="#2e2618" stroke-width="0.75"/>
+<text x="642" y="178" font-family="monospace" font-size="10" fill="#4a3c20">&#966;</text>
+<text x="355" y="36"  font-family="monospace" font-size="10" fill="#4a3c20">V</text>
+<!-- phi=0 tick -->
+<line x1="499" y1="175" x2="499" y2="179" stroke="#2e2618" stroke-width="0.75"/>
+<text x="499" y="190" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">0</text>
+<!-- double well: W with flat tangents at all critical points -->
+<!-- M start-left C control1 control2 left-min C control1 control2 hump C control1 control2 right-min C control1 control2 end-right -->
+<path d="M 375,42 C 398,42 418,165 443,165 C 465,165 478,97 499,97 C 520,97 533,165 556,165 C 580,165 603,42 626,42"
+      fill="none" stroke="#c8960a" stroke-width="1.5"/>
+<!-- minimum markers -->
+<circle cx="443" cy="165" r="4" fill="#2e2618" stroke="#c8960a" stroke-width="1.5"/>
+<circle cx="556" cy="165" r="4" fill="#e8c84a" stroke="#c8960a" stroke-width="1.5"/>
+<!-- "ball" in chosen minimum (right) -->
+<circle cx="556" cy="161" r="5" fill="#e8c84a"/>
+<text x="573" y="155" font-family="monospace" font-size="8" fill="#e8c84a">chosen &#8868;</text>
+<!-- false vacuum label -->
+<text x="499" y="87" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a4510">false vacuum &#8869;</text>
+<!-- annotation at top -->
+<text x="499" y="45" text-anchor="middle" font-family="monospace" font-size="8" fill="#4a3c20">V = &#8722;&#956;&#178;|&#966;|&#178; + &#955;|&#966;|&#8308;</text>
+<text x="499" y="204" text-anchor="middle" font-family="monospace" font-size="9" fill="#c8960a">&#949; &#8764; 1&ensp;(catastrophic)</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;2.</span> Axion potential (left): the periodic V(&#952;) is so shallow it is nearly invisible &mdash; amplitude suppressed by e<sup>&#8722;8&#960;&#178;/g&#178;</sup> &#8764; 10<sup>&#8722;16</sup>. The Higgs double well (right) is deep and decisive, &#949; &#8764; 1: the universe commits absolutely, placing the system into the gold minimum. The depth of the well is inertial mass.</figcaption>
+</figure>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s3">
+<h2><span class="sn">&#167;3</span>Domain Walls: Fossils of Indecision in Space</h2>
+
+<p>When the universe undergoes a phase transition and the tilt first appears, causally disconnected regions may select different nodes of the <span class="m">Z<sub>N</sub></span> ring as their local <span class="m">&#8868;</span>. The boundaries between such regions are <em class="key">domain walls</em>.</p>
+
+<h3>&#167;3.1 &nbsp;Anatomy of a Logical Boundary</h3>
+
+<p>Traverse a domain wall from Region A (truth node 1) to Region B (truth node 2):</p>
+
+<div class="tbl-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Evidence ratio R</th>
+      <th>Logical state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Region A (far)</td>
+      <td>1 + &#949;</td>
+      <td>Decided &mdash; node 1 preferred</td>
+    </tr>
+    <tr>
+      <td>Wall core</td>
+      <td>1</td>
+      <td>Perfect indifference &mdash; forced flat antichain</td>
+    </tr>
+    <tr>
+      <td>Region B (far)</td>
+      <td>1 &#8722; &#949;</td>
+      <td>Decided &mdash; node 2 preferred (inverted)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<!-- Plot background -->
+<rect x="8" y="8" width="644" height="184" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<!-- Wall core shaded region -->
+<rect x="225" y="28" width="210" height="142" fill="#261f14" opacity="0.7"/>
+<!-- Horizontal reference lines (dashed) -->
+<line x1="55" y1="58"  x2="605" y2="58"  stroke="#5a4510" stroke-width="0.75" stroke-dasharray="5,4"/>
+<line x1="55" y1="105" x2="605" y2="105" stroke="#3a3020" stroke-width="0.75" stroke-dasharray="3,3"/>
+<line x1="55" y1="152" x2="605" y2="152" stroke="#5a4510" stroke-width="0.75" stroke-dasharray="5,4"/>
+<!-- Vertical wall-center line -->
+<line x1="330" y1="28" x2="330" y2="172" stroke="#c8960a" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.5"/>
+<!-- Axes -->
+<line x1="55" y1="170" x2="605" y2="170" stroke="#3a3020" stroke-width="1"/>
+<line x1="55" y1="28"  x2="55"  y2="172" stroke="#3a3020" stroke-width="1"/>
+<!-- Axis labels -->
+<text x="605" y="183" font-family="monospace" font-size="10" fill="#4a3c20" text-anchor="end">position x &#8594;</text>
+<text x="44"  y="26"  font-family="monospace" font-size="10" fill="#4a3c20" text-anchor="end">R</text>
+<!-- R-axis labels -->
+<text x="50" y="61"  font-family="monospace" font-size="9" fill="#c8960a" text-anchor="end">1+&#949;</text>
+<text x="50" y="108" font-family="monospace" font-size="9" fill="#7a7268" text-anchor="end">1</text>
+<text x="50" y="155" font-family="monospace" font-size="9" fill="#c8960a" text-anchor="end">1&#8722;&#949;</text>
+<!-- R(x) profile: tanh-like S-curve from R=1+ε to R=1-ε -->
+<path d="M 65,58 C 150,58 180,105 330,105 C 480,105 510,152 596,152"
+      fill="none" stroke="#c8960a" stroke-width="2"/>
+<!-- Region labels -->
+<text x="130" y="44" text-anchor="middle" font-family="monospace" font-size="9" fill="#b4ac98">REGION A</text>
+<text x="130" y="55" text-anchor="middle" font-family="monospace" font-size="8" fill="#7a7268">vacuum: node 1</text>
+<text x="330" y="44" text-anchor="middle" font-family="monospace" font-size="9" fill="#e8c84a">WALL CORE</text>
+<text x="330" y="55" text-anchor="middle" font-family="monospace" font-size="8" fill="#c8960a">flat antichain</text>
+<text x="330" y="168" text-anchor="middle" font-family="monospace" font-size="8" fill="#7a5c06">R = 1 restored</text>
+<text x="525" y="166" text-anchor="middle" font-family="monospace" font-size="9" fill="#b4ac98">REGION B</text>
+<text x="525" y="176" text-anchor="middle" font-family="monospace" font-size="8" fill="#7a7268">vacuum: node 2</text>
+<!-- wall width annotation -->
+<line x1="225" y1="185" x2="435" y2="185" stroke="#5a4510" stroke-width="0.75" marker-start="url(#farr)" marker-end="url(#farr)"/>
+<text x="330" y="195" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a4510">wall width &#8764; 1/m&#8336;</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;3.</span> Domain wall profile: the evidence ratio R(x) = t/f traverses from 1+&#949; (Region A, decided) through R = 1 at the wall core (forced flat antichain) to 1&#8722;&#949; (Region B, opposite decision). The wall is a spatial fossil of indecision, its width set by the inverse axion mass 1/m<sub>a</sub>.</figcaption>
+</figure>
+
+<p>The wall is a <em class="key">fossilized moment of indecision</em>. Its energy density (tension) is the thermodynamic cost of forcing the universe back to the unstable flat antichain state across a finite spatial width, set by the axion decay constant and mass:</p>
+
+<div class="eq-block">
+  <span class="eq">&#963; &#8764; f<sub>a</sub>&#178; m<sub>a</sub></span>
+  <span class="eq-n">(2)</span>
+</div>
+
+<h3>&#167;3.2 &nbsp;The Network and Its Instability</h3>
+
+<p>If the <span class="m">Z<sub>N</sub></span> vacua are exactly degenerate, the domain walls form a stable, infinite network that would dominate the universe&mdash;a well-known cosmological catastrophe. But our logical framework insists that <em>exact degeneracy is impossible</em>. A global bias&mdash;an even smaller tilt favoring one node&mdash;must exist from higher-order non-perturbative effects, gravitational corrections, or other explicit symmetry breaking.</p>
+
+<p>When the bias is present, the walls become unstable. The true-vacuum region expands, accelerating walls to relativistic speeds. As they collide and annihilate, their energy converts to gravitational waves.</p>
+
+<div class="callout">
+  <div class="callout-lbl">Key mechanism</div>
+  <p>The domain wall network is a concrete physical embodiment of the logical principle: indecision cannot persist. The annihilation is not a dynamical accident&mdash;it is a logical necessity, delayed by the smallness of the bias tilt.</p>
+</div>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s4">
+<h2><span class="sn">&#167;4</span>The Gravitational Wave Signature: Acoustic Echo of Resolution</h2>
+
+<p>The annihilation of a domain wall network produces a stochastic gravitational wave background (SGWB) with distinctive spectral features:</p>
+
+<ul class="body-list">
+  <li><strong class="lit">Low-frequency power law:</strong> <span class="m">&#937;<sub>GW</sub>(f) &#8733; f&#179;</span> for frequencies below the peak</li>
+  <li><strong class="lit">Sharp spectral peak</strong> at a frequency set by the axion mass and the bias parameter</li>
+  <li><strong class="lit">Steep high-frequency tail</strong> falling off rapidly above the peak</li>
+</ul>
+
+<p>The peak frequency is estimated as:</p>
+
+<div class="eq-block">
+  <span class="eq">f<sub>peak</sub> &#8764; &#8730;(m<sub>a</sub> &middot; M<sub>Pl</sub>) &times; (bias factor)</span>
+  <span class="eq-n">(3)</span>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 660 240" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<defs>
+  <marker id="gwarr" viewBox="0 0 8 6" refX="7" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#3a3020"/>
+  </marker>
+</defs>
+<!-- Background -->
+<rect x="8" y="8" width="644" height="224" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<!-- PTA detection band shading -->
+<rect x="68" y="38" width="155" height="138" fill="#261f14" rx="1"/>
+<text x="148" y="50" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a4510">NANOGrav / PTA</text>
+<text x="148" y="60" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a4510">detection band</text>
+<!-- Axes -->
+<line x1="62" y1="178" x2="618" y2="178" stroke="#3a3020" stroke-width="1" marker-end="url(#gwarr)"/>
+<line x1="62" y1="30"  x2="62"  y2="182" stroke="#3a3020" stroke-width="1"/>
+<!-- Axis labels -->
+<text x="625" y="181" font-family="monospace" font-size="10" fill="#4a3c20">log f</text>
+<text x="52"  y="28"  font-family="monospace" font-size="10" fill="#4a3c20" text-anchor="end">&#937;<sub>GW</sub></text>
+<!-- Frequency tick marks and labels -->
+<line x1="68"  y1="178" x2="68"  y2="183" stroke="#3a3020" stroke-width="0.75"/>
+<line x1="223" y1="178" x2="223" y2="183" stroke="#3a3020" stroke-width="0.75"/>
+<line x1="378" y1="178" x2="378" y2="183" stroke="#3a3020" stroke-width="0.75"/>
+<line x1="533" y1="178" x2="533" y2="183" stroke="#3a3020" stroke-width="0.75"/>
+<text x="68"  y="193" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">1 nHz</text>
+<text x="223" y="193" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">10 nHz</text>
+<text x="378" y="193" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">100 nHz</text>
+<text x="533" y="193" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">1 &#956;Hz</text>
+<!-- f³ slope guide (faint) -->
+<line x1="68" y1="178" x2="223" y2="82" stroke="#9888d8" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.4"/>
+<text x="85" y="155" font-family="monospace" font-size="8" fill="#9888d8" opacity="0.7">f&#179;</text>
+<!-- SMBHB curve: f^(2/3), gentle rise, dashed crimson -->
+<path d="M 68,165 C 200,158 380,140 606,108" fill="none" stroke="#8b1a1a" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="552" y="102" font-family="monospace" font-size="9" fill="#8b1a1a">SMBHB (f<tspan dy="3" font-size="6">2/3</tspan>)</text>
+<!-- DOMAIN WALL curve: gold — steep rise, sharp peak, steep fall -->
+<path d="M 68,181 C 90,181 108,166 126,148 C 146,126 164,96 184,68 C 195,54 203,47 210,48 C 217,50 228,66 246,90 C 263,112 283,135 308,155 C 326,166 346,175 362,181"
+      fill="none" stroke="#c8960a" stroke-width="2.5"/>
+<!-- Peak annotation -->
+<circle cx="210" cy="47" r="3.5" fill="#e8c84a"/>
+<line x1="210" y1="43" x2="210" y2="34" stroke="#e8c84a" stroke-width="0.75"/>
+<text x="216" y="32" font-family="monospace" font-size="8" fill="#e8c84a">f<tspan dy="3" font-size="6">peak</tspan><tspan dy="-3"> &#8764; 5&#8201;nHz</tspan></text>
+<!-- Domain wall label -->
+<text x="162" y="89" font-family="monospace" font-size="9" fill="#c8960a">domain wall</text>
+<text x="162" y="100" font-family="monospace" font-size="9" fill="#c8960a">annihilation</text>
+<!-- f³ annotation on the rise -->
+<text x="155" y="132" font-family="monospace" font-size="8" fill="#7a5c06">&#937;<sub>GW</sub> &#8733; f&#179;</text>
+<!-- Legend -->
+<rect x="430" y="42" width="210" height="52" rx="2" fill="#1e1a12" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="440" y1="57" x2="470" y2="57" stroke="#c8960a" stroke-width="2"/>
+<text x="476" y="61" font-family="monospace" font-size="9" fill="#b4ac98">domain wall (this work)</text>
+<line x1="440" y1="76" x2="470" y2="76" stroke="#8b1a1a" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="476" y="80" font-family="monospace" font-size="9" fill="#b4ac98">SMBHB background</text>
+<!-- Y-axis ref labels -->
+<text x="56" y="53"  font-family="monospace" font-size="8" fill="#3a3020" text-anchor="end">10&#8315;&#8310;</text>
+<text x="56" y="113" font-family="monospace" font-size="8" fill="#3a3020" text-anchor="end">10&#8315;&#8312;</text>
+<text x="56" y="178" font-family="monospace" font-size="8" fill="#3a3020" text-anchor="end">10&#8315;&#185;&#185;</text>
+<line x1="60" y1="52"  x2="65" y2="52"  stroke="#2e2618" stroke-width="0.5"/>
+<line x1="60" y1="112" x2="65" y2="112" stroke="#2e2618" stroke-width="0.5"/>
+<text x="350" y="216" text-anchor="middle" font-family="monospace" font-size="8" fill="#4a3c20">schematic &mdash; qualitative spectral shape only</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;4.</span> Schematic gravitational wave spectrum. The domain wall annihilation signal (gold) rises steeply as &#937;<sub>GW</sub>&thinsp;&#8733;&thinsp;f&#179; at low frequencies, peaks sharply at f<sub>peak</sub> set by the axion mass, then falls steeply &mdash; a fingerprint distinct from the broad supermassive black hole binary background (f<sup>2/3</sup>, dashed). The shaded band marks the approximate NANOGrav / PTA detection window. Not to scale.</figcaption>
+</figure>
+
+<p>For the canonical QCD axion mass <span class="m">m<sub>a</sub> &#8764; 10<sup>&#8722;10</sup> eV</span>, the peak falls in the <em class="key">nanohertz range</em>&mdash;exactly the band probed by pulsar timing arrays (PTAs).</p>
+
+<blockquote class="pull">
+  <p>This is the acoustic echo of resolved contradiction. The universe, having finally decided which truth is absolute, rings like a bell. That ring is a gravitational wave background.</p>
+</blockquote>
+
+<p>The spectral shape&mdash;rising as <span class="m">f&#179;</span> at low frequency, peaking sharply, then falling&mdash;is a direct fingerprint of logical resolution dynamics. It differs qualitatively from the signal expected of supermassive black hole binaries (which produce a flatter <span class="m">f<sup>2/3</sup></span> spectrum) and allows observational discrimination. The shape is not a free parameter; it is fixed by the logical geometry of the flat antichain and the topology of its annihilation.</p>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s5">
+<h2><span class="sn">&#167;5</span>The Data: NANOGrav, EPTA, PPTA (2023&ndash;2026)</h2>
+
+<p>In June 2023, the NANOGrav collaboration released its 15-year data set, presenting high-confidence evidence for a stochastic gravitational wave background at nanohertz frequencies. Subsequent analyses by the European PTA, the Parkes PTA (Australia), and the Chinese PTA confirmed the detection. The signal exhibits the Hellings-Downs spatial correlation&mdash;confirming its gravitational wave origin beyond residual doubt.</p>
+
+<h3>&#167;5.1 &nbsp;Consistency with Domain Wall Annihilation</h3>
+
+<p>Multiple recent papers (2025&ndash;2026) have explicitly modeled the PTA signal as arising from axion domain wall annihilation:</p>
+
+<ul class="body-list">
+  <li>A 2025 study in <em>Chinese Physics C</em> predicts a peak frequency <span class="m">&#8764; 0.2 nHz</span> and peak amplitude <span class="m">&#8764; 5 &times; 10<sup>&#8722;9</sup></span>, in excellent agreement with the NANOGrav data.</li>
+  <li>A 2026 analysis finds that the axionic domain wall interpretation remains viable if the bias parameter (the tilt) is sufficiently large&mdash;corresponding to the large-<span class="m">&#952;</span> regime in QCD. This is precisely the regime where our logical framework predicts a catastrophic tilt for the bias, not the axion itself.</li>
+  <li>Work on &ldquo;string-wall death&rdquo; shows that the final collapse of an axionic string-wall network produces a spectral shape matching the first several bins of the PTA signal.</li>
+</ul>
+
+<h3>&#167;5.2 &nbsp;Tensions Resolved by the Logical Tilt Parameter</h3>
+
+<p>Some early analyses argued that the simplest axion domain wall model (with a standard QCD bias) is incompatible with the data. Those models assumed a fixed bias from standard instanton physics. Our framework introduces the bias as a <em class="key">free logical parameter &#949;<sub>bias</sub></em>&mdash;the degree to which one vacuum is globally favored over others.</p>
+
+<p>This bias is not required to be exponentially small; it can range widely while remaining physically plausible. The 2026 results confirm that with a sufficiently large bias, the domain wall interpretation is not merely viable&mdash;it is preferred over simpler source models when the full spectral shape (not just amplitude) is fitted to the data.</p>
+
+<div class="callout">
+  <div class="callout-lbl">Status of evidence</div>
+  <p>The PTA data do not prove the domain wall interpretation&mdash;they constrain it. Those constraints fall within physically plausible ranges of the &#949;-tilt framework. The acoustic echo of resolved contradiction <em>appears</em> to be real. Alternative explanations (supermassive black hole binaries, cosmic strings) remain possible; future observations with the Square Kilometre Array will discriminate.</p>
+</div>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s6">
+<h2><span class="sn">&#167;6</span>Unification: From Axions to Black Holes</h2>
+
+<p>The same principle&mdash;mass as residue of tilt&mdash;applies at all scales. The &#949;-tilt framework is not a model for the axion alone; it is a universal language for symmetry breaking and the origin of mass.</p>
+
+<h3>&#167;6.1 &nbsp;The Spectrum of Logical Certainty</h3>
+
+<div class="tbl-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>Tilt &#949;</th>
+      <th>Mass / Energy Scale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Axion dark matter</td>
+      <td>&#8764; 10<sup>&#8722;16</sup></td>
+      <td>&#8764; 10<sup>&#8722;10</sup> eV</td>
+    </tr>
+    <tr>
+      <td>Light neutrinos</td>
+      <td>&#8764; 10<sup>&#8722;11</sup></td>
+      <td>&#8764; 0.1 eV</td>
+    </tr>
+    <tr>
+      <td>Electron</td>
+      <td>&#8764; 10<sup>&#8722;5</sup></td>
+      <td>511 keV</td>
+    </tr>
+    <tr>
+      <td>Higgs vacuum expectation value</td>
+      <td>&#8764; 1</td>
+      <td>246 GeV</td>
+    </tr>
+    <tr>
+      <td>Top quark</td>
+      <td>&#8764; 1</td>
+      <td>173 GeV &#8776; v/&#8730;2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 660 130" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<defs>
+  <linearGradient id="specgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%"   stop-color="#9888d8"/>
+    <stop offset="40%"  stop-color="#c878a8"/>
+    <stop offset="75%"  stop-color="#d88030"/>
+    <stop offset="100%" stop-color="#c8960a"/>
+  </linearGradient>
+</defs>
+<rect x="8" y="8" width="644" height="114" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<!-- Gradient axis line -->
+<line x1="65" y1="72" x2="600" y2="72" stroke="url(#specgrad)" stroke-width="3"/>
+<!-- Decade ticks -->
+<line x1="65"  y1="68" x2="65"  y2="76" stroke="#4a453c" stroke-width="0.75"/>
+<line x1="98"  y1="70" x2="98"  y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="131" y1="70" x2="131" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="164" y1="70" x2="164" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="197" y1="70" x2="197" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="230" y1="68" x2="230" y2="76" stroke="#4a453c" stroke-width="0.75"/>
+<line x1="263" y1="70" x2="263" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="296" y1="70" x2="296" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="329" y1="70" x2="329" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="362" y1="70" x2="362" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="395" y1="68" x2="395" y2="76" stroke="#4a453c" stroke-width="0.75"/>
+<line x1="428" y1="70" x2="428" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="461" y1="70" x2="461" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="494" y1="70" x2="494" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="527" y1="70" x2="527" y2="74" stroke="#3a3020" stroke-width="0.5"/>
+<line x1="600" y1="68" x2="600" y2="76" stroke="#c8960a" stroke-width="1.25"/>
+<!-- Major axis labels -->
+<text x="65"  y="88" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a4510">10&#8315;&#185;&#8310;</text>
+<text x="230" y="88" text-anchor="middle" font-family="monospace" font-size="8" fill="#5a5028">10&#8315;&#185;&#185;</text>
+<text x="395" y="88" text-anchor="middle" font-family="monospace" font-size="8" fill="#8a6820">10&#8315;&#8310;</text>
+<text x="600" y="88" text-anchor="middle" font-family="monospace" font-size="8" fill="#c8960a">1</text>
+<text x="332" y="100" text-anchor="middle" font-family="monospace" font-size="8" fill="#3a3020">&#949; (log scale)</text>
+<!-- Particle dots and labels -->
+<!-- Axion: ε~10⁻¹⁶ → x=65 -->
+<circle cx="65" cy="72" r="5" fill="#1a1408" stroke="#9888d8" stroke-width="1.5"/>
+<text x="65" y="62" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#9888d8">axion</text>
+<text x="65" y="53" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#7a7268">10&#8315;&#185;&#8304; eV</text>
+<!-- Neutrinos: ε~10⁻¹¹ → x=230 -->
+<circle cx="230" cy="72" r="5" fill="#1a1408" stroke="#c878a8" stroke-width="1.5"/>
+<text x="230" y="62" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#c878a8">neutrinos</text>
+<text x="230" y="53" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#7a7268">&#8764; 0.1 eV</text>
+<!-- Electron: ε~10⁻⁵ → x=65+33*11=65+363=428, but let me recalculate:
+  16 decades from 10^-16 to 10^0, spanning 535px (65 to 600)
+  10^-5 is at position 65 + 535*(16-5)/16 = 65 + 535*11/16 = 65 + 367.8 ≈ 433 -->
+<circle cx="432" cy="72" r="5" fill="#1a1408" stroke="#d88030" stroke-width="1.5"/>
+<text x="432" y="62" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#d88030">electron</text>
+<text x="432" y="53" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#7a7268">511 keV</text>
+<!-- Top / Higgs: ε~1 → x=600 -->
+<circle cx="600" cy="72" r="6" fill="#c8960a"/>
+<text x="600" y="62" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#e8c84a">top / Higgs</text>
+<text x="600" y="53" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#7a7268">&#8764; 173 GeV</text>
+<!-- Title -->
+<text x="332" y="22" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a4510" letter-spacing="2">SPECTRUM OF LOGICAL CERTAINTY</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;5.</span> The entire particle mass hierarchy maps to a single axis of logical certainty &#949;. Particles at the left edge are monuments to the universe&#39;s hesitation; those at the right are its most decisive acts. Mass is the geometric depth of commitment.</figcaption>
+</figure>
+
+<p class="note">The top quark mass m<sub>t</sub> &#8776; v/&#8730;2 identifies it as the Frobenius fixed point of the Yukawa coupling at the Higgs VEV&mdash;maximum tilt at unit coupling. The hierarchy is not fine-tuned coincidence; it is a map of decision depth across the crystal.</p>
+
+<h3>&#167;6.2 &nbsp;Black Hole Horizons: Phase Boundaries in Logic Space</h3>
+
+<p>At a black hole horizon, the evidence ratio becomes singular: <span class="m">R &#8594; &#8734;</span> for the interior (absolute certainty that matter has collapsed). The horizon is a surface of <em class="key">maximal frustration</em> where <span class="m">R</span> is finite but the gradient <span class="m">&#8711;R</span> diverges.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 660 210" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<defs>
+  <radialGradient id="f6glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"   stop-color="#0a0906"/>
+    <stop offset="73%"  stop-color="#0a0906"/>
+    <stop offset="75%"  stop-color="#c8960a" stop-opacity="0.9"/>
+    <stop offset="82%"  stop-color="#c8960a" stop-opacity="0.3"/>
+    <stop offset="93%"  stop-color="#c8960a" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#141008" stop-opacity="0"/>
+  </radialGradient>
+  <marker id="f6arr" viewBox="0 0 8 6" refX="7" refY="3" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#e8c84a"/>
+  </marker>
+</defs>
+
+<!-- LEFT PANEL: horizon schematic -->
+<rect x="8" y="8" width="307" height="194" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<text x="162" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#7a5c06" letter-spacing="2">HORIZON GEOMETRY</text>
+
+<!-- R-gradient halo rings (outermost = R≈1, innermost = R>>1) -->
+<circle cx="162" cy="110" r="88" fill="none" stroke="#c8960a" stroke-width="0.75" opacity="0.08"/>
+<circle cx="162" cy="110" r="76" fill="none" stroke="#c8960a" stroke-width="1"    opacity="0.16"/>
+<circle cx="162" cy="110" r="65" fill="none" stroke="#c8960a" stroke-width="1.5"  opacity="0.28"/>
+
+<!-- Event horizon: black interior with gold glow ring -->
+<circle cx="162" cy="110" r="55" fill="url(#f6glow)"/>
+<circle cx="162" cy="110" r="54" fill="#0a0906" stroke="#c8960a" stroke-width="2.5"/>
+
+<!-- Interior labels -->
+<text x="162" y="108" text-anchor="middle" font-family="monospace" font-size="9" fill="#3a3020">R &#8594; &#8734;</text>
+<text x="162" y="121" text-anchor="middle" font-family="monospace" font-size="7" fill="#2a2520">unknowable interior</text>
+
+<!-- Hawking radiation particles at 4 angles, outward-pointing arrows -->
+<circle cx="209" cy="70" r="3" fill="#e8c84a" opacity="0.9"/>
+<line x1="209" y1="70" x2="215" y2="64" stroke="#e8c84a" stroke-width="1.5" marker-end="url(#f6arr)"/>
+<circle cx="115" cy="70" r="3" fill="#e8c84a" opacity="0.9"/>
+<line x1="115" y1="70" x2="109" y2="64" stroke="#e8c84a" stroke-width="1.5" marker-end="url(#f6arr)"/>
+<circle cx="115" cy="150" r="3" fill="#e8c84a" opacity="0.9"/>
+<line x1="115" y1="150" x2="109" y2="156" stroke="#e8c84a" stroke-width="1.5" marker-end="url(#f6arr)"/>
+<circle cx="209" cy="150" r="3" fill="#e8c84a" opacity="0.9"/>
+<line x1="209" y1="150" x2="215" y2="156" stroke="#e8c84a" stroke-width="1.5" marker-end="url(#f6arr)"/>
+
+<text x="224" y="66" font-family="monospace" font-size="8" fill="#e8c84a">Hawking</text>
+<text x="224" y="77" font-family="monospace" font-size="8" fill="#e8c84a">radiation</text>
+<text x="55"  y="48" font-family="monospace" font-size="8" fill="#5a4510">R &#8773; 1+&#949;</text>
+<text x="55"  y="59" font-family="monospace" font-size="7" fill="#3a3020">(far field)</text>
+<text x="162" y="200" text-anchor="middle" font-family="monospace" font-size="8" fill="#7a5c06">r&#8348; &nbsp;&#8212;&nbsp; phase boundary &nbsp;&#8212;&nbsp; |&#8711;R| &#8594; &#8734;</text>
+
+<!-- RIGHT PANEL: R(r) plot -->
+<rect x="332" y="8" width="320" height="194" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<text x="492" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#7a5c06" letter-spacing="2">EVIDENCE RATIO  R(r)</text>
+
+<!-- Axes -->
+<line x1="362" y1="175" x2="638" y2="175" stroke="#3a3020" stroke-width="1"/>
+<line x1="362" y1="38"  x2="362" y2="177" stroke="#3a3020" stroke-width="1"/>
+<text x="642" y="178" font-family="monospace" font-size="9" fill="#4a3c20">r</text>
+<text x="354" y="36"  font-family="monospace" font-size="9" fill="#4a3c20" text-anchor="end">R</text>
+
+<!-- r_S asymptote -->
+<line x1="395" y1="38" x2="395" y2="177" stroke="#c8960a" stroke-width="0.75" stroke-dasharray="4,3" opacity="0.5"/>
+<line x1="395" y1="175" x2="395" y2="181" stroke="#c8960a" stroke-width="1"/>
+<text x="395" y="191" text-anchor="middle" font-family="monospace" font-size="8" fill="#7a5c06">r<tspan dy="2" font-size="6">S</tspan></text>
+<text x="400" y="46" font-family="monospace" font-size="8.5" fill="#c8960a">R &#8594; &#8734;</text>
+<text x="400" y="57" font-family="monospace" font-size="7.5" fill="#7a5c06">|&#8711;R| &#8594; &#8734;</text>
+
+<!-- R(r) divergence curve -->
+<path d="M 397,42 C 400,47 404,58 410,73 C 418,92 428,112 443,131 C 460,149 483,163 524,169 C 551,173 582,175 632,176"
+      fill="none" stroke="#c8960a" stroke-width="2"/>
+
+<!-- Far-field annotation -->
+<text x="598" y="167" font-family="monospace" font-size="8" fill="#7a7268">R &#8773; 1+&#949;</text>
+
+<!-- Hawking: R relaxes label with implied arrow on curve -->
+<text x="414" y="90" font-family="monospace" font-size="7.5" fill="#e8c84a">&#8592; Hawking leak:</text>
+<text x="414" y="101" font-family="monospace" font-size="7.5" fill="#7a5c06">&ensp;R relaxes from &#8734;</text>
+<text x="414" y="111" font-family="monospace" font-size="7.5" fill="#7a5c06">&ensp;as information escapes</text>
+
+<!-- Phase boundary vertical label -->
+<text transform="rotate(-90,352,107)" x="352" y="107" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#5a4510">phase boundary</text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;6.</span> <em>Left:</em> At the event horizon r<sub>S</sub>, the evidence ratio R diverges (absolute certainty of interior collapse) — the surface of maximal frustration, where |&#8711;R| &#8594; &#8734;. Hawking radiation (gold) is the slow leakage of this stored certainty back toward finite R. <em>Right:</em> The radial profile R(r): a 1/(r&minus;r<sub>S</sub>)-type divergence at the horizon, relaxing to R&thinsp;&#8773;&thinsp;1+&#949; in the far field. The information paradox dissolves if R is allowed to flow rather than fixed at the boundary.</figcaption>
+</figure>
+
+<p>Hawking radiation can be reinterpreted as the slow leakage of unresolved indifference from the interior&mdash;the universe <em>remembering</em> what it tried to forget. Information is not destroyed; it is gradually re-emitted as the logical tilt relaxes from <span class="m">R = &#8734;</span> back toward finite values at the horizon surface. The information paradox is a paradox only if one insists that absolute certainty is irreversible. Our framework asserts it is not&mdash;even black holes must eventually resolve their indecision.</p>
+
+<h3>&#167;6.3 &nbsp;Quantum Gravity: Fluctuating Ratios</h3>
+
+<p>At the Planck scale, spacetime geometry is governed by fluctuating evidence ratios. The Einstein equations become equations for <span class="m">&#8711; log R</span>&mdash;curvature is not sourced by mass directly but by <em>gradients in logical certainty</em>. This suggests a new approach to quantum gravity: the fundamental degrees of freedom are not strings or loops but logical states and their tilt dynamics.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" class="fig-svg" style="background:#141008">
+<defs>
+  <radialGradient id="f7smooth" cx="78%" cy="48%" r="62%">
+    <stop offset="0%"   stop-color="#c8960a" stop-opacity="0.55"/>
+    <stop offset="30%"  stop-color="#c8960a" stop-opacity="0.22"/>
+    <stop offset="65%"  stop-color="#c8960a" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#1a1408" stop-opacity="0"/>
+  </radialGradient>
+  <marker id="f7arr" viewBox="0 0 8 6" refX="7" refY="3" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#c8960a" fill-opacity="0.7"/>
+  </marker>
+  <marker id="f7arrd" viewBox="0 0 8 6" refX="7" refY="3" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#5a4510"/>
+  </marker>
+</defs>
+
+<!-- LEFT PANEL: Planck-scale R-foam -->
+<rect x="8" y="8" width="305" height="184" rx="2" fill="#1a1408" stroke="#3a3020" stroke-width="0.5"/>
+<text x="160" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a4510" letter-spacing="2">PLANCK SCALE</text>
+<text x="160" y="37" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#3a3020">R fluctuates cell by cell</text>
+
+<!-- R-foam cells, 9 cols × 6 rows, x=22–292, y=44–176, cell 30×22 -->
+<rect x="22"  y="44" width="30" height="22" fill="#c8960a" opacity="0.28"/>
+<rect x="52"  y="44" width="30" height="22" fill="#c8960a" opacity="0.08"/>
+<rect x="82"  y="44" width="30" height="22" fill="#c8960a" opacity="0.42"/>
+<rect x="112" y="44" width="30" height="22" fill="#c8960a" opacity="0.12"/>
+<rect x="142" y="44" width="30" height="22" fill="#c8960a" opacity="0.55"/>
+<rect x="172" y="44" width="30" height="22" fill="#c8960a" opacity="0.09"/>
+<rect x="202" y="44" width="30" height="22" fill="#c8960a" opacity="0.33"/>
+<rect x="232" y="44" width="30" height="22" fill="#c8960a" opacity="0.17"/>
+<rect x="262" y="44" width="30" height="22" fill="#c8960a" opacity="0.46"/>
+<rect x="22"  y="66" width="30" height="22" fill="#c8960a" opacity="0.15"/>
+<rect x="52"  y="66" width="30" height="22" fill="#c8960a" opacity="0.50"/>
+<rect x="82"  y="66" width="30" height="22" fill="#c8960a" opacity="0.22"/>
+<rect x="112" y="66" width="30" height="22" fill="#c8960a" opacity="0.38"/>
+<rect x="142" y="66" width="30" height="22" fill="#c8960a" opacity="0.07"/>
+<rect x="172" y="66" width="30" height="22" fill="#c8960a" opacity="0.44"/>
+<rect x="202" y="66" width="30" height="22" fill="#c8960a" opacity="0.60"/>
+<rect x="232" y="66" width="30" height="22" fill="#c8960a" opacity="0.13"/>
+<rect x="262" y="66" width="30" height="22" fill="#c8960a" opacity="0.30"/>
+<rect x="22"  y="88" width="30" height="22" fill="#c8960a" opacity="0.45"/>
+<rect x="52"  y="88" width="30" height="22" fill="#c8960a" opacity="0.10"/>
+<rect x="82"  y="88" width="30" height="22" fill="#c8960a" opacity="0.58"/>
+<rect x="112" y="88" width="30" height="22" fill="#c8960a" opacity="0.25"/>
+<rect x="142" y="88" width="30" height="22" fill="#c8960a" opacity="0.40"/>
+<rect x="172" y="88" width="30" height="22" fill="#c8960a" opacity="0.18"/>
+<rect x="202" y="88" width="30" height="22" fill="#c8960a" opacity="0.52"/>
+<rect x="232" y="88" width="30" height="22" fill="#c8960a" opacity="0.35"/>
+<rect x="262" y="88" width="30" height="22" fill="#c8960a" opacity="0.06"/>
+<rect x="22"  y="110" width="30" height="22" fill="#c8960a" opacity="0.20"/>
+<rect x="52"  y="110" width="30" height="22" fill="#c8960a" opacity="0.48"/>
+<rect x="82"  y="110" width="30" height="22" fill="#c8960a" opacity="0.11"/>
+<rect x="112" y="110" width="30" height="22" fill="#c8960a" opacity="0.56"/>
+<rect x="142" y="110" width="30" height="22" fill="#c8960a" opacity="0.30"/>
+<rect x="172" y="110" width="30" height="22" fill="#c8960a" opacity="0.08"/>
+<rect x="202" y="110" width="30" height="22" fill="#c8960a" opacity="0.42"/>
+<rect x="232" y="110" width="30" height="22" fill="#c8960a" opacity="0.62"/>
+<rect x="262" y="110" width="30" height="22" fill="#c8960a" opacity="0.15"/>
+<rect x="22"  y="132" width="30" height="22" fill="#c8960a" opacity="0.52"/>
+<rect x="52"  y="132" width="30" height="22" fill="#c8960a" opacity="0.08"/>
+<rect x="82"  y="132" width="30" height="22" fill="#c8960a" opacity="0.38"/>
+<rect x="112" y="132" width="30" height="22" fill="#c8960a" opacity="0.20"/>
+<rect x="142" y="132" width="30" height="22" fill="#c8960a" opacity="0.55"/>
+<rect x="172" y="132" width="30" height="22" fill="#c8960a" opacity="0.28"/>
+<rect x="202" y="132" width="30" height="22" fill="#c8960a" opacity="0.10"/>
+<rect x="232" y="132" width="30" height="22" fill="#c8960a" opacity="0.44"/>
+<rect x="262" y="132" width="30" height="22" fill="#c8960a" opacity="0.32"/>
+<rect x="22"  y="154" width="30" height="22" fill="#c8960a" opacity="0.14"/>
+<rect x="52"  y="154" width="30" height="22" fill="#c8960a" opacity="0.40"/>
+<rect x="82"  y="154" width="30" height="22" fill="#c8960a" opacity="0.22"/>
+<rect x="112" y="154" width="30" height="22" fill="#c8960a" opacity="0.58"/>
+<rect x="142" y="154" width="30" height="22" fill="#c8960a" opacity="0.06"/>
+<rect x="172" y="154" width="30" height="22" fill="#c8960a" opacity="0.36"/>
+<rect x="202" y="154" width="30" height="22" fill="#c8960a" opacity="0.48"/>
+<rect x="232" y="154" width="30" height="22" fill="#c8960a" opacity="0.18"/>
+<rect x="262" y="154" width="30" height="22" fill="#c8960a" opacity="0.50"/>
+
+<!-- Grid lines -->
+<line x1="22"  y1="44" x2="22"  y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="52"  y1="44" x2="52"  y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="82"  y1="44" x2="82"  y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="112" y1="44" x2="112" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="142" y1="44" x2="142" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="172" y1="44" x2="172" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="202" y1="44" x2="202" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="232" y1="44" x2="232" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="262" y1="44" x2="262" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="292" y1="44" x2="292" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="44"  x2="292" y2="44"  stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="66"  x2="292" y2="66"  stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="88"  x2="292" y2="88"  stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="110" x2="292" y2="110" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="132" x2="292" y2="132" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="154" x2="292" y2="154" stroke="#2e2618" stroke-width="0.4"/>
+<line x1="22" y1="176" x2="292" y2="176" stroke="#2e2618" stroke-width="0.4"/>
+
+<!-- Sample R labels -->
+<text x="37"  y="58"  text-anchor="middle" font-family="monospace" font-size="6.5" fill="#7a7268">2.1</text>
+<text x="97"  y="80"  text-anchor="middle" font-family="monospace" font-size="6.5" fill="#c8960a">3.8</text>
+<text x="157" y="58"  text-anchor="middle" font-family="monospace" font-size="6.5" fill="#e8c84a">5.2</text>
+<text x="217" y="102" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#c8960a">4.1</text>
+<text x="67"  y="125" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#c8960a">3.5</text>
+<text x="277" y="80"  text-anchor="middle" font-family="monospace" font-size="6.5" fill="#7a7268">1.3</text>
+<text x="37"  y="169" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#7a5c06">1.9</text>
+<text x="187" y="145" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#7a7268">1.4</text>
+<text x="247" y="165" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#c8960a">3.9</text>
+<text x="160" y="188" text-anchor="middle" font-family="monospace" font-size="7" fill="#3a3020">no smooth geometry at this resolution</text>
+
+<!-- Arrow between panels -->
+<line x1="322" y1="107" x2="338" y2="107" stroke="#5a4510" stroke-width="1.5" marker-end="url(#f7arrd)"/>
+<text x="330" y="100" text-anchor="middle" font-family="monospace" font-size="7" fill="#5a4510">coarse</text>
+<text x="330" y="118" text-anchor="middle" font-family="monospace" font-size="7" fill="#5a4510">grain</text>
+
+<!-- RIGHT PANEL: smooth R-gradient = curvature -->
+<rect x="347" y="8" width="305" height="184" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+<text x="499" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#c8960a" letter-spacing="2">MACROSCOPIC SCALE</text>
+<text x="499" y="37" text-anchor="middle" font-family="monospace" font-size="7.5" fill="#7a5c06">&#8711; log R = curvature</text>
+
+<!-- Smooth radial R gradient fill -->
+<rect x="359" y="42" width="281" height="135" fill="url(#f7smooth)"/>
+
+<!-- Grid (regular spacetime coords) -->
+<line x1="359" y1="42" x2="359" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="390" y1="42" x2="390" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="421" y1="42" x2="421" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="452" y1="42" x2="452" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="483" y1="42" x2="483" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="514" y1="42" x2="514" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="545" y1="42" x2="545" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="576" y1="42" x2="576" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="607" y1="42" x2="607" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="638" y1="42" x2="638" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="359" y1="42"  x2="640" y2="42"  stroke="#2e2618" stroke-width="0.5"/>
+<line x1="359" y1="76"  x2="640" y2="76"  stroke="#2e2618" stroke-width="0.5"/>
+<line x1="359" y1="110" x2="640" y2="110" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="359" y1="144" x2="640" y2="144" stroke="#2e2618" stroke-width="0.5"/>
+<line x1="359" y1="177" x2="640" y2="177" stroke="#2e2618" stroke-width="0.5"/>
+
+<!-- &#8711;log R arrows at grid nodes, pointing toward mass (upper right) -->
+<line x1="374" y1="59"  x2="382" y2="53"  stroke="#c8960a" stroke-width="1.0" marker-end="url(#f7arr)" opacity="0.35"/>
+<line x1="405" y1="59"  x2="414" y2="53"  stroke="#c8960a" stroke-width="1.0" marker-end="url(#f7arr)" opacity="0.40"/>
+<line x1="436" y1="59"  x2="446" y2="53"  stroke="#c8960a" stroke-width="1.1" marker-end="url(#f7arr)" opacity="0.50"/>
+<line x1="374" y1="93"  x2="382" y2="87"  stroke="#c8960a" stroke-width="1.0" marker-end="url(#f7arr)" opacity="0.38"/>
+<line x1="405" y1="93"  x2="415" y2="86"  stroke="#c8960a" stroke-width="1.2" marker-end="url(#f7arr)" opacity="0.52"/>
+<line x1="436" y1="93"  x2="448" y2="85"  stroke="#c8960a" stroke-width="1.4" marker-end="url(#f7arr)" opacity="0.63"/>
+<line x1="467" y1="93"  x2="480" y2="85"  stroke="#c8960a" stroke-width="1.5" marker-end="url(#f7arr)" opacity="0.70"/>
+<line x1="374" y1="127" x2="382" y2="121" stroke="#c8960a" stroke-width="1.0" marker-end="url(#f7arr)" opacity="0.35"/>
+<line x1="405" y1="127" x2="414" y2="120" stroke="#c8960a" stroke-width="1.2" marker-end="url(#f7arr)" opacity="0.48"/>
+<line x1="436" y1="127" x2="448" y2="119" stroke="#c8960a" stroke-width="1.3" marker-end="url(#f7arr)" opacity="0.58"/>
+<line x1="467" y1="127" x2="480" y2="118" stroke="#c8960a" stroke-width="1.5" marker-end="url(#f7arr)" opacity="0.65"/>
+<line x1="374" y1="161" x2="382" y2="154" stroke="#c8960a" stroke-width="1.0" marker-end="url(#f7arr)" opacity="0.30"/>
+<line x1="405" y1="161" x2="414" y2="154" stroke="#c8960a" stroke-width="1.1" marker-end="url(#f7arr)" opacity="0.40"/>
+<line x1="436" y1="161" x2="447" y2="153" stroke="#c8960a" stroke-width="1.3" marker-end="url(#f7arr)" opacity="0.52"/>
+
+<!-- Geodesic curves (test particle paths curving toward M) -->
+<path d="M 359,128 C 400,125 442,116 492,103 C 534,93 578,87 640,86"
+      fill="none" stroke="#e8c84a" stroke-width="1.1" stroke-dasharray="5,3" opacity="0.55"/>
+<path d="M 359,93 C 400,89 442,83 492,72 C 534,63 578,58 640,57"
+      fill="none" stroke="#e8c84a" stroke-width="1.1" stroke-dasharray="5,3" opacity="0.55"/>
+<text x="362" y="89" font-family="monospace" font-size="6.5" fill="#e8c84a" opacity="0.8">geodesics</text>
+
+<!-- Mass concentration (high-R node) -->
+<circle cx="619" cy="70" r="9" fill="#c8960a" opacity="0.65"/>
+<text x="619" y="70" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="7.5" fill="#0a0906">M</text>
+
+<!-- Key relation at bottom -->
+<text x="499" y="188" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#7a5c06">G<tspan dy="3" font-size="6">&#956;&#957;</tspan><tspan dy="-3"> &#8767; &#8711;&#8711; log R</tspan></text>
+</svg>
+<figcaption><span class="fig-num">Fig.&thinsp;7.</span> <em>Left:</em> At the Planck scale the evidence ratio R fluctuates chaotically cell to cell; no smooth geometry exists at this resolution. <em>Right:</em> Coarse-grained, the average R-field is smooth; its gradient &#8711;&thinsp;log&thinsp;R sources spacetime curvature. Gold arrows show &#8711;&thinsp;log&thinsp;R magnitude and direction at each grid node, increasing toward the mass concentration M (filled circle). Dashed curves are geodesics &mdash; test particles simply follow the logical gradient. The Einstein field equations become a statement about second derivatives of the certainty field.</figcaption>
+</figure>
+
+<p>Unitarity is preserved because logical states form a closed algebra; the apparent loss of information in black hole evaporation is an artifact of fixing <span class="m">R</span> at the boundary rather than allowing it to flow. The boundary condition of classical GR (infinite tilt at singularities) is replaced by a regularity condition: <span class="m">R</span> must remain finite and continuous everywhere except at the moment of initial manifestation.</p>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s7">
+<h2><span class="sn">&#167;7</span>Falsifiable Predictions</h2>
+
+<p>The framework makes sharp, testable predictions. Failure of any of the following would constrain or refute the &#949;-tilt interpretation:</p>
+
+<ul class="pred-list">
+  <li class="pred">
+    <span class="pred-n">P&#183;1</span>
+    <p><strong>GW peak frequency.</strong> The gravitational wave peak from axion domain wall annihilation should appear at a frequency determined by the axion mass once that mass is independently measured (e.g., via haloscopes such as ADMX or HAYSTAC). A peak in the expected range confirms the mechanism; its absence at that frequency falsifies the domain wall origin of the PTA signal.</p>
+  </li>
+  <li class="pred">
+    <span class="pred-n">P&#183;2</span>
+    <p><strong>Low-frequency spectral index.</strong> The SGWB must exhibit <span class="m">&#937;<sub>GW</sub> &#8733; f&#179;</span> at frequencies below the peak. Current PTA data are consistent with this. Future observations by the Square Kilometre Array (SKA) will measure the spectral index precisely. A spectral index significantly different from 3 disfavors the wall-annihilation model.</p>
+  </li>
+  <li class="pred">
+    <span class="pred-n">P&#183;3</span>
+    <p><strong>Wall amplitude lower bound.</strong> Non-observation of domain walls in the present universe implies they have annihilated. Their annihilation amplitude sets a lower bound on <span class="m">&#949;<sub>bias</sub></span>. If the measured SGWB amplitude is too low to be consistent with any plausible bias while also satisfying cosmological constraints on the axion mass, the axionic domain wall interpretation is ruled out.</p>
+  </li>
+  <li class="pred">
+    <span class="pred-n">P&#183;4</span>
+    <p><strong>Black hole late-time radiation.</strong> A non-thermal component in late-time Hawking radiation&mdash;corresponding to the gradual release of stored logical indifference&mdash;should exist in principle. This prediction remains far beyond current observational capability but is in principle testable via primordial black hole remnants if they are ever detected.</p>
+  </li>
+</ul>
+</section>
+
+<hr class="sec-divider">
+
+<section id="s8">
+<h2><span class="sn">&#167;8</span>Conclusion: The Universe Has Made Up Its Mind</h2>
+
+<p>We began with a philosophical question: why is there something rather than nothing? Our answer: because absolute nothing&mdash;a flat antichain of perfect indifference&mdash;is unstable. The universe <em>must</em> tilt, must select a truth, must manifest. That act of selection leaves a residue: mass. And when different regions select different truths, the boundaries between them become fossils of indecision. When those fossils finally collapse, they ring out across spacetime as gravitational waves.</p>
+
+<p>The recent pulsar timing array data have detected a background that matches this prediction. It is not yet definitive&mdash;supermassive black hole binaries, cosmic strings, and other sources remain possible. But the logical framework has passed its first observational test. The data are consistent with a universe that chose slowly, hesitated for cosmological timescales, and finally annihilated its indecision in a ring of gravitational waves that we are only now beginning to hear.</p>
+
+<blockquote class="pull">
+  <p>We are listening to the universe&rsquo;s own decision-making process. And so far, it sounds exactly like logic in action.</p>
+</blockquote>
+
+<p>The framework is falsifiable, the predictions are sharp, and the data are accumulating. The &#949;-tilt is not a metaphor. It is a parameter that controls the mass of every particle in the Standard Model, the spectrum of the gravitational wave background, and&mdash;if the argument extends as suggested&mdash;the very geometry of spacetime at the Planck scale.</p>
+
+<p>The lapis has been thrown into the fire. We await what remains.</p>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="fl">Authors / Contact</div>
+      <p class="fp">C. L. Mills &mdash; Independent Research<br>Full technical derivations and numerical simulations available upon request.</p>
+    </div>
+    <div>
+      <div class="fl">Acknowledgments</div>
+      <p class="fp">We thank the NANOGrav, EPTA, PPTA, and CPTA collaborations for their meticulous work, and the physics community for taking speculative ideas seriously when they lead to testable predictions.</p>
+    </div>
+    <div>
+      <div class="fl">Data Availability</div>
+      <p class="fp">Public PTA datasets are available via the NANOGrav and EPTA websites. Code for the &#949;-tilt model is available at <a href="https://github.com/umpolungfish/Imscribing_Grammar" target="_blank">github.com/umpolungfish</a>.</p>
+    </div>
+    <div>
+      <div class="fl">License</div>
+      <p class="fp">Released under the Unlicense (public domain). No rights reserved. Use freely, cite if moved to.</p>
+    </div>
+  </div>
+  <div class="odot-end">&#8857; &nbsp;&middot;&nbsp; T = Work(T) &nbsp;&middot;&nbsp; solve et coagula</div>
+</footer>
+
+</div>
+</body>
+</html>

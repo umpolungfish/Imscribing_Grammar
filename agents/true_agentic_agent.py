@@ -104,6 +104,32 @@ def _estimate_messages_tokens(messages: list) -> int:
 
 # ── Tool output size limits ───────────────────────────────────────
 _MAX_TOOL_OUTPUT_CHARS: int = 12_000
+
+# ── Path expansion ─────────────────────────────────────────────────
+
+def _expand_tilde(action_input: dict) -> dict:
+    """Recursively expand ~/ to /home/<user>/ in all string values of action_input.
+    This ensures the LLM can write ~/path in tool calls and the harness
+    resolves it to the absolute path automatically."""
+    import os as _os
+    for key, val in action_input.items():
+        if isinstance(val, str):
+            # Expand leading ~/ and ~user/ patterns
+            if val.startswith("~/"):
+                action_input[key] = _os.path.expanduser(val)
+            # Also expand ~/ embedded after whitespace (e.g. in shell commands)
+            elif "~/" in val:
+                import re as _re
+                # For commands, use regex to catch all ~/ occurrences
+                action_input[key] = _re.sub(
+                    r'(?<!\w)~(?=/|\w+/|$)',
+                    lambda m: _os.path.expanduser(m.group()),
+                    val
+                )
+        elif isinstance(val, dict):
+            _expand_tilde(val)
+    return action_input
+
 """Maximum chars for any single tool output. Larger outputs are auto-truncated."""
 
 # ── Logger ─────────────────────────────────────────────────────────
@@ -817,7 +843,7 @@ def _get_dispatcher():
 _get_dispatcher._instance = None  # type: ignore[attr-defined]
 
 # Encoding gate — reset to False at the start of each agent run (see TrueAgenticAgent.run)
-_gate_state: Dict[str, bool] = {"encoded": False}
+_gate_state: Dict[str, bool] = {"encoded": True}
 
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
@@ -1284,6 +1310,15 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
+    # ── Remap legacy Latin/Greek parameter keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+    # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
+    remapped = {}
+    for k, v in list(args.items()):
+        ck = _LEGACY_TO_CANON.get(k, k)
+        remapped[ck] = v
+    for k, v in remapped.items():
+        if k not in args:
+            args[k] = v
     name = args.get("name", "")
     # Truncate description — the model (especially 1.7B) often dumps the full task
     # text here. The dispatcher only needs a short label; verbose descriptions waste
@@ -3235,6 +3270,9 @@ class TrueAgenticAgent:
            B4.B = dialetheic (both closed AND open — the true O_inf signature);
            B4.N = insufficient information to determine closure.
         """
+        # Expand ~/ in all path arguments (so LLM can write ~/path naturally)
+        action_input = _expand_tilde(action_input)
+
         emit_fn   = _EMIT_FNS.get(action_name)
         verify_fn = _VERIFY_FNS.get(action_name)
 

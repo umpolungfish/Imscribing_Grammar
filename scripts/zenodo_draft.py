@@ -126,7 +126,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         f"{_B}usepackage{{tabularx}}",
         f"{_B}usepackage{{longtable}}",
         f"{_B}usepackage{{amsmath}}",
-        f"{_B}usepackage{{amssymb}}",
+        f"% unicode-math subsumes amssymb — do not load amssymb alongside it",
         f"{_B}usepackage{{float}}",
         f"{_B}usepackage[normalem]{{ulem}}",
         f"{_B}renewcommand{{{_B}arraystretch}}{{1.3}}",

@@ -115,47 +115,32 @@ _MARKUP_STRIP_RE = re.compile(r'\[/?[\w .#_/]+\]')
 # Applied left-to-right so longer tokens (e.g. "Ω_2") are replaced before
 # shorter prefixes ("Ω_z").
 _DISPLAY_MAP: List[tuple] = [
-    # Gamma values (G_ → Γ_)
-    ("ɢ^∧",       "Γ_and"),
-    ("ɢ^˝",        "Γ_or"),
-    ("ɢ^ˌ",       "Γ_seq"),
-    ("ɢ^Ş",     "Γ_broad"),
-    ("Γ_disc",      "Γ_disc"),
-    # Phi values (longer/more specific first)
-    ("⊙_Æ", "⊙_ÿ^ℂ"),
-    ("⊙_Ţ",   "Φ_sup"),
-    ("⊙_ž",     "Φ_sub"),
-    ("⊙_3",      "Φ_EP"),
-    ("⊙_ÿ",       "⊙_ÿ"),
-    # Omega values (longer first to avoid partial matches)
-    ("Ω_5",    "Ω_NA"),
-    ("Ω_2",    "Ω_z₂"),
-    ("Ω_z",     "Ω_z"),
-    ("Ω_C",     "Ω_C"),
-    ("Ω_Å",     "Ω_Å"),
-    # Granularity scope
-    ("Γ_ʔ",     "G_ℵ"),
-    ("Γ_β",      "G_ℶ"),
-    ("Γ_γ",     "G_ℷ"),
-    # Fidelity
-    ("ƒ^ż",      "F_ℏ"),
-    ("ƒ^ì",       "F_ℓ"),
-    # Dimensionality
-    ("Ð_;",     "D_∞"),
-    ("Ð_C",  "D_△"),
-    ("Ð_ß",     "D_▽"),
-    # Topology
-    ("Þ_ò",    "T_⋈"),
-    ("Þ_¨",  "T_⊠"),
-    ("Þ_K",        "T_∈"),
-    # Relational
-    ("Ř_Ť",    "R_†"),
-    # Chirality
-    ("Ħ_!",       "H_∞"),
-    # Stoichiometry
-    ("Σ_S",     "1:1"),
-    ("Σ_ő",         "n:n"),
-    ("Σ_ï",         "n:m"),
+    # ── Shavian is canonical AND display (SNS_PRIME.md v0.6.0) ──
+    # Identity mapping: canonical → display = same Shavian glyph
+    # Old subscripted notation → Shavian (backward compat for old catalog entries)
+    ("Ð_ω", "𐑦"), ("Ð_;", "𐑼"), ("Ð_C", "𐑨"), ("Ð_ß", "𐑛"),
+    ("Þ_O", "𐑸"), ("Þ_6", "𐑡"), ("Þ_K", "𐑰"), ("Þ_ò", "𐑥"), ("Þ_¨", "𐑶"),
+    ("Ř_=", "𐑾"), ("Ř_¯", "𐑩"), ("Ř_ý", "𐑑"), ("Ř_Ť", "𐑽"),
+    ("Φ_}", "𐑹"), ("Φ_ɐ", "𐑗"), ("Φ_υ", "𐑿"), ("Φ_F", "𐑬"), ("Φ_˙", "𐑯"),
+    ("ƒ^ż", "𐑐"), ("ƒ^ì", "𐑱"), ("ƒ^ð", "𐑞"),
+    ("Ç^λ", "𐑘"), ("Ç^Ù", "𐑤"), ("Ç^@", "𐑧"), ("Ç^W", "𐑪"), ("Ç^-", "𐑺"),
+    ("Γ_ʔ", "𐑔"), ("Γ_γ", "𐑚"), ("Γ_β", "𐑲"),
+    ("ɢ^∧", "𐑝"), ("ɢ^˝", "𐑜"), ("ɢ^ˌ", "𐑠"), ("ɢ^Ş", "𐑵"),
+    ("⊙_ÿ", "⊙"), ("⊙_ž", "𐑢"), ("⊙_Æ", "𐑮"), ("⊙_3", "𐑻"), ("⊙_Ţ", "𐑣"),
+    ("Ħ_!", "𐑫"), ("Ħ_Ñ", "𐑓"), ("Ħ_£", "𐑒"), ("Ħ_A", "𐑖"),
+    ("Σ_ï", "𐑳"), ("Σ_S", "𐑙"), ("Σ_ő", "𐑕"),
+    ("Ω_z", "𐑭"), ("Ω_Å", "𐑷"), ("Ω_2", "𐑴"), ("Ω_5", "𐑟"),
+    # Old display symbols → Shavian (for backward compat rendering)
+    ("Γ_and", "𐑝"), ("Γ_or", "𐑜"), ("Γ_seq", "𐑠"), ("Γ_broad", "𐑵"),
+    ("Φ_sup", "𐑣"), ("Φ_sub", "𐑢"), ("Φ_EP", "𐑻"),
+    ("D_∞", "𐑼"), ("D_△", "𐑨"), ("D_▽", "𐑛"),
+    ("T_⋈", "𐑥"), ("T_⊠", "𐑶"), ("T_∈", "𐑡"),
+    ("R_†", "𐑽"),
+    ("F_ℏ", "𐑐"), ("F_ℓ", "𐑱"),
+    ("G_ℵ", "𐑔"), ("G_ℶ", "𐑲"), ("G_γ", "𐑚"),
+    ("H_∞", "𐑫"),
+    ("1:1", "𐑙"), ("n:n", "𐑕"), ("n:m", "𐑳"),
+    ("Ω_NA", "𐑟"),
 ]
 
 
@@ -330,10 +315,10 @@ def _translation_cost_from_dict(
     Works directly on the {prim: val} string format — no Imscription object needed.
 
     Cost sources:
-      ƒ^ż (+ I < ln 19)  →  coherence_loss = -ln(0.75)  ≈ 0.288 nat
-      ƒ^ð  (+ I < ln 19)  →  coherence_loss = -ln(0.60)  ≈ 0.511 nat
-      ⊙_ÿ                 →  criticality_loss = ln(observer_base)   ≈ 2.303 nat (observer-relative)
-      ɢ^Ş               →  interaction_cost = ln(2)   ≈ 0.693 nat
+      𐑐  (+ I < ln 19)  →  coherence_loss = -ln(0.75)  ≈ 0.288 nat
+      𐑞  (+ I < ln 19)  →  coherence_loss = -ln(0.60)  ≈ 0.511 nat
+      ⊙                    →  criticality_loss = ln(observer_base)   ≈ 2.303 nat (observer-relative)
+      𐑵                  →  interaction_cost = ln(2)   ≈ 0.693 nat
     """
     if not _TRANSLATE_AVAILABLE:
         return {"coherence_loss": 0.0, "criticality_loss": 0.0, "interaction_cost": 0.0, "total": 0.0}
@@ -344,15 +329,15 @@ def _translation_cost_from_dict(
 
     f_val = s.get("ƒ", "")
     if mutual_info_nats is not None and mutual_info_nats < _FHBAR_THRESHOLD_NATS:
-        if f_val == "ƒ^ż":
+        if f_val == "𐑐":
             coherence = _COHERENCE_LOSS_HBAR_ETH
-        elif f_val == "ƒ^ð":
+        elif f_val == "𐑞":
             coherence = _COHERENCE_LOSS_ETH_ELL
 
-    if s.get("⊙") == "⊙_ÿ":
+    if s.get("⊙") == "⊙":
         criticality = _criticality_lift_nats(observer_base)
 
-    if s.get("ɢ") == "ɢ^Ş":
+    if s.get("ɢ") == "𐑵":
         interaction = _INTERACTION_LOSS_NONCLASSICAL
 
     total = coherence + criticality + interaction
@@ -413,11 +398,11 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 # Mirrors the radio-button labels in site/index.html exactly.
 # Per-primitive to resolve shared symbols (∧ = Ð_ß for D, ɢ^∧ for Γ; ⊙ = Ð_ω/Þ_O; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
-    "Ð":     {"∧": "Ð_ß",   "△": "Ð_C", "∞": "Ð_;",  "⊙": "Ð_ω"},
-    "Þ":     {"∈": "Þ_6", "⊂": "Þ_K",       "⋈": "Þ_ò","⊠": "Þ_¨","⊙": "Þ_O"},
-    "Ř":     {"↑": "Ř_¯",   "∘": "Ř_ý",      "†": "Ř_Ť", "↔": "Ř_="},
-    "Φ":     {"∅": "Φ_ɐ",    "ψ": "Φ_υ",      "±": "Φ_F",    "≡": "Φ_˙",    "±ˢ": "Φ_}"},
-    "ƒ":     {"ℓ": "ƒ^ì",     "ð": "ƒ^ð",      "ℏ": "ƒ^ż"},
+    "Ð":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
+    "Þ":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
+    "Ř":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
+    "Φ":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
+    "ƒ":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
     "Ç":     {"↯": "Ç^-",    "≈": "Ç^W",      "↺": "Ç^@",  "⊛": "Ç^Ù",   "⊞": "Ç^λ"},
     "Γ":     {"ℶ": "Γ_β",    "ℷ": "Γ_γ",    "ℵ": "Γ_ʔ"},
     "ɢ": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
@@ -461,7 +446,7 @@ T  — Topology
 
 R  — Relational mode
     Ř_¯       superset / containment relation
-    Ř_ý         categorical / classification
+    𐑑         categorical / classification
     Ř_Ť      dynamic / catalytic / time-reversible
     Ř_=          left-right / chiral / directed
 
@@ -552,70 +537,70 @@ def _strip_rtf(data: str) -> str:
 # Display-notation → canonical grammar value string
 # Keys are what appears in documents/output; values are what ORDINALS/encode() expects.
 _SYMBOL_MAP: Dict[str, str] = {
-    # ── Dimensionality ─────────────────────────────────────────────────────────
-    "D_△":        "Ð_C",
-    "D_▽":        "Ð_ß",
-    "D_∞":        "Ð_;",
-    # ── Topology ───────────────────────────────────────────────────────────────
-    "T_∈":        "Þ_K",
-    "T_⊠":        "Þ_¨",
-    "T_⋈":        "Þ_ò",
-    # ── Relational ─────────────────────────────────────────────────────────────
-    "R_†":        "Ř_Ť",
-    # ── Parity ─────────────────────────────────────────────────────────────────
-    "Φ_F":        "Φ_F",
-    "Φ_}":  "Φ_}",
-    "P_ψ":        "Φ_υ",
-    # ── Fidelity ───────────────────────────────────────────────────────────────
-    "F_ℓ":        "ƒ^ì",
-    "F_ℏ":        "ƒ^ż",
-    # ── Granularity ────────────────────────────────────────────────────────────
-    "G_ℵ":        "Γ_ʔ",
-    "G_ℶ":        "Γ_β",
-    "G_ℷ":        "Γ_γ",
-    # ── Gamma (Γ_ prefix → G_ prefix) ─────────────────────────────────────────
-    "Γ_and":      "ɢ^∧",
-    "Γ_or":       "ɢ^˝",
-    "Γ_seq":      "ɢ^ˌ",
-    "Γ_broad":    "ɢ^Ş",
-    "Γ_disc":     "Γ_disc",     # discretized; seen in some encodings
-    # ── Criticality ────────────────────────────────────────────────────────────
-    "⊙_ÿ^ℂ":      "⊙_Æ",
-    "⊙_ÿ":        "⊙_ÿ",
-    "Φ_sub":      "⊙_ž",
-    "Φ_super":    "⊙_Ţ",
-    "Φ_sup":      "⊙_Ţ",
-    "Φ_EP":       "⊙_3",
-    # ── Chirality ──────────────────────────────────────────────────────────────
-    "H_∞":        "Ħ_!",
-    # ── Stoichiometry (display → canonical) ───────────────────────────────────
-    "1:1":        "Σ_S",
-    "1_1":        "Σ_S",
-    "n:n":        "Σ_ő",
-    "n:m":        "Σ_ï",
-    # ── Omega ──────────────────────────────────────────────────────────────────
-    "Ω_Å":        "Ω_Å",
-    "Ω_z":        "Ω_z",
-    "Ω_2":       "Ω_2",
-    "Ω_{Z_2}":    "Ω_2",
+    # ── Display symbols → Shavian canonical (SNS_PRIME.md v0.6.0) ──
+    # Dimensionality display → Shavian
+    "D_△":        "𐑨",
+    "D_▽":        "𐑛",
+    "D_∞":        "𐑼",
+    # Topology display → Shavian
+    "T_∈":        "𐑡",
+    "T_⊠":        "𐑶",
+    "T_⋈":        "𐑥",
+    # Relational display → Shavian
+    "R_†":        "𐑽",
+    # Parity display → Shavian
+    "Φ_F":        "𐑬",
+    "Φ_}":        "𐑹",
+    "P_ψ":        "𐑿",
+    # Fidelity display → Shavian
+    "F_ℓ":        "𐑱",
+    "F_ℏ":        "𐑐",
+    # Granularity display → Shavian
+    "G_ℵ":        "𐑔",
+    "G_ℶ":        "𐑲",
+    "G_ℷ":        "𐑚",
+    # Gamma (Γ_ prefix) display → Shavian
+    "Γ_and":      "𐑝",
+    "Γ_or":       "𐑜",
+    "Γ_seq":      "𐑠",
+    "Γ_broad":    "𐑵",
+    "Γ_disc":     "Γ_disc",
+    # Criticality display → Shavian
+    "⊙_ÿ^ℂ":      "𐑮",
+    "⊙_ÿ":        "⊙",
+    "Φ_sub":      "𐑢",
+    "Φ_super":    "𐑣",
+    "Φ_sup":      "𐑣",
+    "Φ_EP":       "𐑻",
+    # Chirality display → Shavian
+    "H_∞":        "𐑫",
+    # Stoichiometry display → Shavian
+    "1:1":        "𐑙",
+    "1_1":        "𐑙",
+    "n:n":        "𐑕",
+    "n:m":        "𐑳",
+    # Omega display → Shavian
+    "Ω_Å":        "𐑷",
+    "Ω_z":        "𐑭",
+    "Ω_2":        "𐑴",
+    "Ω_{Z_2}":    "𐑴",
     "Ω_C":        "Ω_C",
-    "Ω_NA":       "Ω_5",
-    # ── Phonetic-name aliases (pre-Symbol_symbol migration backward compat) ────
-    "Ð_ß": "Ð_ß", "Ð_C": "Ð_C", "Ð_;": "Ð_;", "Ð_ω": "Ð_ω",
-    "Þ_6": "Þ_6", "Þ_K": "Þ_K", "Þ_ò": "Þ_ò", "Þ_¨": "Þ_¨", "Þ_O": "Þ_O",
-    "Ř_¯": "Ř_¯", "Ř_ý": "Ř_ý", "Ř_Ť": "Ř_Ť", "Ř_=": "Ř_=",
-    "Φ_ɐ": "Φ_ɐ", "Φ_υ": "Φ_υ", "Φ_F": "Φ_F", "Φ_˙": "Φ_˙", "Φ_}": "Φ_}",
-    "ƒ^ì": "ƒ^ì", "ƒ^ð": "ƒ^ð", "ƒ^ż": "ƒ^ż", "ƒ^ż": "ƒ^ż",
-    "Ç^-": "Ç^-", "Ç^W": "Ç^W", "Ç^@": "Ç^@", "Ç^Ù": "Ç^Ù", "Ç^λ": "Ç^λ",
-    "Γ_β": "Γ_β", "Γ_γ": "Γ_γ", "Γ_γ": "Γ_γ", "Γ_ʔ": "Γ_ʔ",
-    "ɢ^∧": "ɢ^∧", "ɢ^˝": "ɢ^˝", "ɢ^ˌ": "ɢ^ˌ", "ɢ^Ş": "ɢ^Ş",
-    "⊙_ž": "⊙_ž", "⊙_ÿ": "⊙_ÿ",
-    "⊙_Æ": "⊙_Æ", "⊙_3": "⊙_3", "⊙_Ţ": "⊙_Ţ",
-    # backward-compat: old φ̂_* notation for ⊙_* (pre-migration)
-    "φ̂_ž": "⊙_ž", "φ̂_ÿ": "⊙_ÿ", "φ̂_Æ": "⊙_Æ", "φ̂_3": "⊙_3", "φ̂_Ţ": "⊙_Ţ",
-    "Ħ_Ñ": "Ħ_Ñ", "Ħ_£": "Ħ_£", "Ħ_A": "Ħ_A", "Ħ_!": "Ħ_!",
-    "Σ_S": "Σ_S", "Σ_ő": "Σ_ő", "Σ_ï": "Σ_ï", "S_scn": "Σ_ï",
-    "Ω_Å": "Ω_Å", "Ω_2": "Ω_2", "Ω_z": "Ω_z", "Ω_5": "Ω_5",
+    "Ω_NA":       "𐑟",
+    # ── Old subscripted notation → Shavian (backward compat) ──
+    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
+    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
+    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
+    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
+    "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
+    "Γ_β": "𐑲", "Γ_γ": "𐑚", "Γ_ʔ": "𐑔",
+    "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
+    "⊙_ž": "𐑢", "⊙_ÿ": "⊙",
+    "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
+    "φ̂_ž": "𐑢", "φ̂_ÿ": "⊙", "φ̂_Æ": "𐑮", "φ̂_3": "𐑻", "φ̂_Ţ": "𐑣",
+    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
+    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳", "S_scn": "𐑳",
+    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
 }
 
 # Extended valid values for validation (ORDINALS only has Omega 0/Z2/Z;
@@ -623,30 +608,44 @@ _SYMBOL_MAP: Dict[str, str] = {
 # Ω_5 is now canonical (in ORDINALS) so already present in the base dict.
 # ── Unicode enum → canonical display string (reverse of catalog storage) ──
 _UNICODE_TO_CANONICAL: Dict[str, str] = {
+    # ── Shavian glyphs are canonical — identity mapping (SNS_PRIME.md v0.6.0) ──
     # Dimensionality
-    "𐑛": "Ð_ß", "𐑨": "Ð_C", "𐑼": "Ð_;", "𐑦": "Ð_ω",
+    "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
     # Topology
-    "𐑡": "Þ_6", "𐑰": "Þ_K", "𐑥": "Þ_ò", "𐑶": "Þ_¨", "𐑸": "Þ_O",
+    "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
     # Relational
-    "𐑩": "Ř_¯", "𐑑": "Ř_ý", "𐑽": "Ř_Ť", "𐑾": "Ř_=",
+    "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     # Parity
-    "𐑗": "Φ_ɐ", "𐑿": "Φ_υ", "𐑬": "Φ_F", "𐑯": "Φ_˙", "𐑹": "Φ_}",
+    "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     # Fidelity
-    "𐑱": "ƒ^ì", "𐑞": "ƒ^ð", "𐑐": "ƒ^ż",
+    "𐑱": "𐑱", "𐑞": "𐑞", "𐑐": "𐑐",
     # Kinetics
-    "𐑺": "Ç^-", "𐑪": "Ç^W", "𐑧": "Ç^@", "𐑤": "Ç^Ù", "𐑘": "Ç^λ",
+    "𐑺": "𐑺", "𐑪": "𐑪", "𐑧": "𐑧", "𐑤": "𐑤", "𐑘": "𐑘",
     # Scope
-    "𐑲": "Γ_β", "𐑚": "Γ_γ", "𐑔": "Γ_ʔ",
+    "𐑲": "𐑲", "𐑚": "𐑚", "𐑔": "𐑔",
     # Grammar
-    "𐑝": "ɢ^∧", "𐑜": "ɢ^˝", "𐑠": "ɢ^ˌ", "𐑵": "ɢ^Ş",
-    # Criticality — unicode glyphs as stored in catalog
-    "𐑢": "⊙_ž", "⊙": "⊙_ÿ", "𐑮": "⊙_Æ", "𐑻": "⊙_3", "𐑣": "⊙_Ţ",
+    "𐑝": "𐑝", "𐑜": "𐑜", "𐑠": "𐑠", "𐑵": "𐑵",
+    # Criticality
+    "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
     # Chirality
-    "𐑓": "Ħ_Ñ", "𐑒": "Ħ_£", "𐑖": "Ħ_A", "𐑫": "Ħ_!",
+    "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
     # Stoichiometry
-    "𐑙": "Σ_S", "𐑕": "Σ_ő", "𐑳": "Σ_ï",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
     # Winding
-    "𐑷": "Ω_Å", "𐑴": "Ω_2", "𐑭": "Ω_z", "𐑟": "Ω_5",
+    "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
+    # ── Old subscripted notation → Shavian (backward compat input) ──
+    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
+    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
+    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
+    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
+    "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
+    "Γ_β": "𐑲", "Γ_γ": "𐑚", "Γ_ʔ": "𐑔",
+    "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
+    "⊙_ž": "𐑢", "⊙_ÿ": "⊙", "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
+    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
+    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳",
+    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
 }
 
 _EXTENDED_VALID: Dict[str, List[str]] = {
@@ -2321,7 +2320,12 @@ class SessionCatalog:
             return
         try:
             with open(path, "r", encoding="utf-8") as f:
-                entries = json.load(f)
+                raw = json.load(f)
+            # Handle both list-of-dicts and dict-with-imscriptions formats
+            if isinstance(raw, dict):
+                entries = raw.get("imscriptions", raw.get("entries", []))
+            else:
+                entries = raw
             for entry in entries:
                 name = entry.get("name")
                 desc = entry.get("description", "")
@@ -2350,7 +2354,11 @@ class SessionCatalog:
         if os.path.exists(path):
             try:
                 with open(path, "r", encoding="utf-8") as f:
-                    for e in json.load(f):
+                    raw = json.load(f)
+                # Handle both list-of-dicts and dict-with-imscriptions formats
+                entries = raw if isinstance(raw, list) else raw.get("imscriptions", raw.get("entries", []))
+                for e in entries:
+                    if isinstance(e, dict):
                         n = e.get("name")
                         if n:
                             disk_entries[n] = e
@@ -2379,6 +2387,24 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
+        # ── Remap legacy Latin/Greek keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
+        LEGACY_MAP = {
+            "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗", "ƒ": "𐑱",
+            "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝", "⊙": "𐑢", "Ħ": "𐑓",
+            "Σ": "𐑙", "Ω": "𐑷",
+            "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
+            "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢",
+            "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
+        }
+        remapped_primitives = {}
+        for k, v in primitives.items():
+            ck = LEGACY_MAP.get(k, k)
+            remapped_primitives[ck] = v
+        # Also allow canonical keys to pass through
+        for k, v in remapped_primitives.items():
+            if k not in primitives:
+                primitives[k] = v
         # Normalize: strip leading "{PRIM}_" prefix the model sometimes adds
         # e.g. "Σ_Σ_S" → "Σ_S", "Σ_n_n" → "Σ_ő"
         normalized: Dict[str, str] = {}
@@ -2406,9 +2432,7 @@ class SessionCatalog:
                     f"encode_system requires ALL 12 primitives as explicit keyword arguments. "
                     f"Missing: {missing}. "
                     f"Example call: encode_system(name='foo', description='...', "
-                    f"Ð='Ð_ω', Þ='Þ_O', Ř='Ř_ý', Φ='Φ_F', ƒ='ƒ^ż', "
-                    f"Ç='Ç^W', Γ='Γ_ʔ', ɢ='ɢ^∧', ⊙='⊙_ÿ', "
-                    f"Ħ='Ħ_Ñ', Σ='Σ_ï', Ω='Ω_z')"
+                    f"tuple='𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭')"
                 )
             return msg
 
@@ -2899,7 +2923,7 @@ class ToolDispatcher:
                     "error": "encode_system requires a 'name' argument.",
                     "hint": (
                         "Call as: encode_system(name='my_system', description='...', "
-                        "tuple='Ð_ω;Þ_O;Ř_ý;Φ_F;ƒ^ż;Ç^W;Γ_ʔ;ɢ^∧;⊙_ÿ;Ħ_Ñ;Σ_ï;Ω_z')"
+                        "tuple='𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭')"
                     ),
                 }
             result = self._encode_system(**args)

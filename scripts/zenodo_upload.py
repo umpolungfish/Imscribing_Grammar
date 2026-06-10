@@ -106,13 +106,40 @@ CONTRIBUTOR_TYPES = {
     "Other":         "Other",
 }
 
-# All IG publications use the Unlicense; cc-zero is the closest Zenodo license.
-DEFAULT_LICENSE     = "cc-zero"
+# All IG publications use the LUNLICENSE (custom public domain dedication).
+# Zenodo has no LUNLICENSE ID; "other-open" is the correct category.
+# LUNLICENSE.md is always bundled as an additional upload file.
+DEFAULT_LICENSE = "other-open"
+LUNLICENSE_TEXT = """\
+This is free and unencumbered and released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this dedicate any and all copyright interest to the public domain.
+We make this dedication for the benefit of the public at large and to
+the detriment of our heirs and successors. We intend this dedication
+to be an overt act of relinquishment in perpetuity of all present and future
+rights to this under any law.
+
+THIS IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THIS OR THE USE OR
+OTHER DEALINGS IN THIS.
+
+For more information, please refer to <https://unlicense.org/>
+"""
 DEFAULT_UPLOAD_TYPE = "publication"
 DEFAULT_PUB_SUBTYPE = "preprint"
 DEFAULT_ACCESS      = "open"
 DEFAULT_LANGUAGE    = "eng"
 DEFAULT_KEYWORDS    = ["Imscribing Grammar", "imscription"]
+DEFAULT_PUBLISHER   = "umpolungfish"
 
 # Directories searched (in order) when looking for a .md source alongside a PDF
 IG_SEARCH_DIRS = [
@@ -138,6 +165,37 @@ def _strip_md(text: str) -> str:
     return text.strip()
 
 
+def _format_zenodo_desc(text: str) -> str:
+    """
+    Format text for Zenodo's description field, which renders MathJax.
+    Preserves $...$ math; strips only markdown formatting (bold, italic, links).
+    Simplifies heavy LaTeX inside math: \\mathrm{X} → X, \\mathbf{X} → X,
+    \\mathbb{X} → X, \\times → ×, \\circ → ∘, -- → –.
+    """
+    # Strip markdown formatting but keep math
+    text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+    text = re.sub(r'\*([^*]+)\*', r'\1', text)
+    text = re.sub(r'`[^`]+`', '', text)
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+    text = re.sub(r'<https?://[^>]+>', '', text)
+    # Simplify LaTeX inside math spans
+    def _simplify_math(m):
+        s = m.group(0)
+        s = re.sub(r'\\(?:mathrm|mathbf|mathbb|text)\{([^}]+)\}', r'\1', s)
+        s = s.replace(r'\times', '×').replace(r'\circ', '∘')
+        s = s.replace(r'\ne', '≠').replace(r'\neq', '≠')
+        s = s.replace(r'\propto', '∝').replace(r'\to', '→')
+        s = s.replace(r'\varepsilon', 'ε').replace(r'\epsilon', 'ε')
+        s = s.replace(r'\Omega', 'Ω').replace(r'\omega', 'ω')
+        s = s.replace(r'\mu', 'μ').replace(r'\delta', 'δ')
+        return s
+    text = re.sub(r'\$[^$\n]+?\$', _simplify_math, text)
+    # En-dashes
+    text = text.replace(' -- ', ' – ').replace('--', '–')
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+
 def find_md_source(pdf: Path) -> Path | None:
     """Return the .md file whose stem matches the PDF, searching IG directories."""
     stem = pdf.stem
@@ -152,6 +210,35 @@ def find_md_source(pdf: Path) -> Path | None:
     return None
 
 
+def _parse_yaml_fm(text: str) -> dict:
+    """Extract key fields from YAML frontmatter block (--- ... ---)."""
+    out: dict = {}
+    fm_m = re.match(r'^---\n(.*?)\n---\n', text, re.DOTALL)
+    if not fm_m:
+        return out
+    fm = fm_m.group(1)
+    # title
+    t = re.search(r'^title:\s*"([^"]+)"', fm, re.MULTILINE)
+    if not t:
+        t = re.search(r'^title:\s*([^|{].+)', fm, re.MULTILINE)
+    if t:
+        out["title"] = t.group(1).strip()
+    # author
+    a = re.search(r'^author:\s*(.+)', fm, re.MULTILINE)
+    if a:
+        out["author_str"] = a.group(1).strip().strip('"')
+    # abstract (block scalar |)
+    ab = re.search(r'^abstract:\s*\|\n((?:  .+\n?)+)', fm, re.MULTILINE)
+    if ab:
+        raw = re.sub(r'^  ', '', ab.group(1), flags=re.MULTILINE).strip()
+        out["abstract"] = _strip_md(raw)
+    # keywords (YAML list)
+    kw = re.search(r'^keywords:\n((?:  - .+\n?)+)', fm, re.MULTILINE)
+    if kw:
+        out["yaml_keywords"] = re.findall(r'  - (.+)', kw.group(1))
+    return out
+
+
 def extract_from_md(path: Path) -> dict:
     """
     Comprehensive extraction from a markdown source file:
@@ -161,20 +248,32 @@ def extract_from_md(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
     info: dict = {}
 
-    # ── Title ────────────────────────────────────────────────────────────────
-    m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
-    if m:
-        info["title"] = m.group(1).strip()
+    # ── YAML frontmatter (title, author, abstract, keywords) ─────────────────
+    fm = _parse_yaml_fm(text)
+    if fm.get("title"):
+        info["title"] = fm["title"]
+    if fm.get("author_str"):
+        info["author_str"] = fm["author_str"]
+    if fm.get("abstract"):
+        info["description"] = _format_zenodo_desc(fm["abstract"])[:2000]
 
-    # ── Author(s) ────────────────────────────────────────────────────────────
-    m = re.search(r'\*\*Authors?:\*\*\s*(.+)', text)
-    if m:
-        info["author_str"] = m.group(1).strip()
+    # ── Title fallback — first # heading ────────────────────────────────────
+    if "title" not in info:
+        m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
+        if m:
+            info["title"] = m.group(1).strip()
 
-    # ── Description — full Abstract section (stripped), up to 2000 chars ─────
-    m = re.search(r'##\s+Abstract\s*\n\n([\s\S]+?)(?=\n##|\Z)', text)
-    if m:
-        info["description"] = _strip_md(m.group(1).strip())[:2000]
+    # ── Author(s) fallback ───────────────────────────────────────────────────
+    if "author_str" not in info:
+        m = re.search(r'\*\*Authors?:\*\*\s*(.+)', text)
+        if m:
+            info["author_str"] = m.group(1).strip()
+
+    # ── Description fallback — ## Abstract section ────────────────────────
+    if "description" not in info:
+        m = re.search(r'##\s+Abstract\s*\n\n([\s\S]+?)(?=\n##|\Z)', text)
+        if m:
+            info["description"] = _format_zenodo_desc(m.group(1).strip())[:2000]
 
     # ── Date from git log ────────────────────────────────────────────────────
     info["date"] = _git_date(path)
@@ -187,8 +286,13 @@ def extract_from_md(path: Path) -> dict:
     # ── Keywords ─────────────────────────────────────────────────────────────
     keywords: set[str] = set(DEFAULT_KEYWORDS)
 
-    # Explicit "keywords:" frontmatter line
-    for pat in (r'^keywords:\s*(.+)$', r'^tags:\s*(.+)$'):
+    # YAML list keywords (already parsed)
+    for k in fm.get("yaml_keywords", []):
+        if k.strip():
+            keywords.add(k.strip())
+
+    # Explicit inline "keywords:" frontmatter line (fallback for single-line format)
+    for pat in (r'^keywords:\s*([^\n|{].+)$', r'^tags:\s*(.+)$'):
         m = re.search(pat, text, re.MULTILINE | re.IGNORECASE)
         if m:
             for k in re.split(r',|;', m.group(1)):
@@ -272,65 +376,29 @@ def extract_from_md(path: Path) -> dict:
             clean.add(k)
     info["keywords"] = sorted(clean)
 
-    # ── Related identifiers ───────────────────────────────────────────────────
+    # ── Related identifiers (isSupplementedBy only — repo links etc.) ────────
     related: list[dict] = []
-    seen: set[tuple] = set()
+    seen_rel: set[tuple] = set()
 
-    def add_rel(identifier: str, scheme: str, relation: str) -> None:
-        identifier = identifier.strip().rstrip('.,;)]}')
-        key = (identifier, scheme)
-        if key not in seen and identifier:
-            seen.add(key)
-            related.append({"identifier": identifier, "scheme": scheme, "relation": relation})
+    def add_supplemented_by(url: str) -> None:
+        url = url.strip().rstrip('.,;)]}')
+        key = (url, "url")
+        if key not in seen_rel and url:
+            seen_rel.add(key)
+            related.append({"identifier": url, "scheme": "url", "relation": "isSupplementedBy"})
 
-    # Bare angle-bracket URLs  <https://...>
-    for m in re.finditer(r'<(https?://[^>\s]+)>', text):
-        url = m.group(1)
-        rel = "isSupplementedBy" if "github.com" in url else "references"
-        add_rel(url, "url", rel)
-
-    # Markdown links  [text](https://...)
-    for m in re.finditer(r'\[[^\]]*\]\((https?://[^)]+)\)', text):
-        add_rel(m.group(1), "url", "references")
-
-    # DOIs — bare 10.xxx/... or doi: prefix or doi.org URLs
-    for m in re.finditer(
-        r'(?:(?:doi:|https?://(?:dx\.)?doi\.org/)\s*)?(10\.\d{4,}/[^\s,;)\]\'\"<>]+)',
-        text, re.IGNORECASE
-    ):
-        add_rel(m.group(1), "doi", "references")
-
-    # arXiv IDs — handles "*arXiv:*" italic markdown and plain "arXiv: NNNN.NNNNNvN"
-    for m in re.finditer(
-        r'arXiv[:\*\s]+(\d{4}\.\d{4,5}(?:v\d+)?)', text, re.IGNORECASE
-    ):
-        add_rel(f"arXiv:{m.group(1)}", "arxiv", "references")
-    # Old-style arXiv: "arXiv:cs/0304019"
-    for m in re.finditer(r'arXiv:([a-z\-]+/\d{7})', text, re.IGNORECASE):
-        add_rel(f"arXiv:{m.group(1)}", "arxiv", "references")
-
-    # Handle (handle.net) identifiers
-    for m in re.finditer(r'hdl\.handle\.net/([^\s,;)\]]+)', text):
-        add_rel(m.group(1), "handle", "references")
-
-    # ── CrossRef lookup for every reference entry ─────────────────────────────
-    ref_entries = _parse_ref_entries(text)
-    if ref_entries:
-        print(f"  Looking up {len(ref_entries)} references via CrossRef ...")
-        cache = _load_crossref_cache()
-        for i, (num, citation) in enumerate(ref_entries, 1):
-            # Skip if explicit identifier already found for this citation
-            if any(id_frag in citation for id_frag in ('github.com', 'arxiv', 'arXiv')):
-                continue
-            doi = _crossref_doi(citation, cache)
-            if doi:
-                add_rel(doi, "doi", "references")
-            print(f"\r  [{i}/{len(ref_entries)}]", end="", flush=True)
-        print()
-        _save_crossref_cache(cache)
+    for m in re.finditer(r'<(https?://github\.com[^>\s]+)>', text):
+        add_supplemented_by(m.group(1))
+    for m in re.finditer(r'\[[^\]]*\]\((https?://github\.com[^)]+)\)', text):
+        add_supplemented_by(m.group(1))
 
     if related:
         info["related_identifiers"] = related
+
+    # ── Plain-text bibliography → info["references"] (never related_identifiers) ──
+    ref_entries = _parse_ref_entries(text)
+    if ref_entries:
+        info["references"] = [citation for _, citation in ref_entries]
 
     return info
 
@@ -366,30 +434,11 @@ def extract_from_pdf(path: Path) -> dict:
     except Exception:
         pass
 
-    # Run CrossRef lookup on any reference entries found in the PDF text
+    # Extract plain-text references from PDF text
     if full_text:
         ref_entries = _parse_ref_entries(full_text)
         if ref_entries:
-            related: list[dict] = []
-            seen: set[tuple] = set()
-            def add_rel(identifier, scheme, relation):
-                identifier = identifier.strip().rstrip('.,;)]}')
-                key = (identifier, scheme)
-                if key not in seen and identifier:
-                    seen.add(key)
-                    related.append({"identifier": identifier, "scheme": scheme, "relation": relation})
-
-            print(f"  Looking up {len(ref_entries)} references via CrossRef ...")
-            cache = _load_crossref_cache()
-            for i, (num, citation) in enumerate(ref_entries, 1):
-                doi = _crossref_doi(citation, cache)
-                if doi:
-                    add_rel(doi, "doi", "references")
-                print(f"\r  [{i}/{len(ref_entries)}]", end="", flush=True)
-            print()
-            _save_crossref_cache(cache)
-            if related:
-                info["related_identifiers"] = related
+            info["references"] = [citation for _, citation in ref_entries]
 
     return info
 
@@ -632,6 +681,20 @@ def api_get(session, base, dep_id: int) -> dict:
     return r.json()
 
 
+def api_new_version(session, base, dep_id: int) -> dict:
+    """Create a new version draft from a published record. Returns the new draft deposit."""
+    r = session.post(f"{base}/deposit/depositions/{dep_id}/actions/newversion")
+    _check(r, f"new version of {dep_id}")
+    data = r.json()
+    # Zenodo returns the *parent* record; latest draft is in links.latest_draft
+    latest_draft_url = data.get("links", {}).get("latest_draft")
+    if not latest_draft_url:
+        return data
+    r2 = session.get(latest_draft_url)
+    _check(r2, "fetch new version draft")
+    return r2.json()
+
+
 def _check(r: requests.Response, action: str) -> None:
     if r.ok:
         return
@@ -798,20 +861,29 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
             print(f"  Related:  {len(extracted['related_identifiers'])} identifiers")
         print(f"  Desc:     {textwrap.shorten(default_desc, 72)}")
         meta: dict = {
-            "title":            default_title,
-            "description":      default_desc,
-            "upload_type":      DEFAULT_UPLOAD_TYPE,
-            "publication_type": DEFAULT_PUB_SUBTYPE,
-            "publication_date": default_date,
-            "creators":         default_creators,
-            "access_right":     DEFAULT_ACCESS,
-            "license":          DEFAULT_LICENSE,
-            "language":         DEFAULT_LANGUAGE,
-            "keywords":         default_kws,
-            "version":          "1.0",
+            "title":              default_title,
+            "description":        default_desc,
+            "upload_type":        DEFAULT_UPLOAD_TYPE,
+            "publication_type":   DEFAULT_PUB_SUBTYPE,
+            "publication_date":   default_date,
+            "creators":           default_creators,
+            "access_right":       DEFAULT_ACCESS,
+            "license":            DEFAULT_LICENSE,
+            "language":           DEFAULT_LANGUAGE,
+            "keywords":           default_kws,
+            "version":            "1.0",
+            "imprint_publisher":  DEFAULT_PUBLISHER,
+            "notes":              "Released under the LUNLICENSE (custom public domain dedication, see LUNLICENSE.md). Programming languages: Python, Lean 4, HTML/JavaScript, Rust",
+            "related_identifiers": [{
+                "identifier": "https://github.com/umpolungfish/imscribing_grammar",
+                "scheme":     "url",
+                "relation":   "isSupplementedBy",
+            }],
         }
         if extracted.get("related_identifiers"):
             meta["related_identifiers"] = extracted["related_identifiers"]
+        if extracted.get("references"):
+            meta["references"] = extracted["references"]
         return meta
 
     # ── Interactive (pre-filled) ─────────────────────────────────────────────
@@ -873,6 +945,17 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
         meta["communities"] = communities
     if grants:
         meta["grants"] = grants
+    meta["imprint_publisher"] = DEFAULT_PUBLISHER
+    if "notes" not in meta:
+        meta["notes"] = "Released under the LUNLICENSE (custom public domain dedication, see LUNLICENSE.md). Programming languages: Python, Lean 4, HTML/JavaScript, Rust"
+    if not meta.get("related_identifiers"):
+        meta["related_identifiers"] = [{
+            "identifier": "https://github.com/umpolungfish/imscribing_grammar",
+            "scheme":     "url",
+            "relation":   "isSupplementedBy",
+        }]
+    if extracted.get("references"):
+        meta["references"] = extracted["references"]
     return meta
 
 
@@ -943,7 +1026,21 @@ def cmd_upload(args):
         return
 
     # Create or fetch deposition
-    if args.update:
+    if args.new_version:
+        print(f"\nCreating new version of record {args.new_version} ...")
+        dep = api_new_version(session, base, args.new_version)
+        dep_id     = dep["id"]
+        bucket_url = dep["links"]["bucket"]
+        print(f"  New version draft ID: {dep_id}")
+        # Delete all existing files so only the new upload remains
+        existing_files = dep.get("files", [])
+        if existing_files:
+            print(f"  Removing {len(existing_files)} old file(s) ...")
+            for ef in existing_files:
+                dr = session.delete(f"{base}/deposit/depositions/{dep_id}/files/{ef['id']}")
+                if dr.status_code not in (200, 204):
+                    print(f"  Warning: could not delete {ef.get('filename', ef['id'])}: {dr.status_code}")
+    elif args.update:
         print(f"\nFetching existing deposit {args.update} ...")
         dep = api_get(session, base, args.update)
         dep_id     = dep["id"]
@@ -956,10 +1053,22 @@ def cmd_upload(args):
         bucket_url = dep["links"]["bucket"]
         print(f"  Deposit ID: {dep_id}")
 
-    # Upload files
+    # Upload files + hardcoded LUNLICENSE
+    import tempfile
     print(f"\nUploading {len(files)} file(s):")
     for f in files:
         api_upload_file(session, bucket_url, f)
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", prefix="LUNLICENSE",
+                                     delete=False, encoding="utf-8") as tmp:
+        tmp.write(LUNLICENSE_TEXT)
+        tmp_path = Path(tmp.name)
+    try:
+        tmp_path_named = tmp_path.parent / "LUNLICENSE.md"
+        tmp_path.rename(tmp_path_named)
+        api_upload_file(session, bucket_url, tmp_path_named)
+    finally:
+        if tmp_path_named.exists():
+            tmp_path_named.unlink()
 
     # Set metadata
     print("\nSaving metadata ...")
@@ -1016,6 +1125,7 @@ def main():
               python3 zenodo_upload.py --list
               python3 zenodo_upload.py --list --live
               python3 zenodo_upload.py --update 12345 new_version.pdf
+              python3 zenodo_upload.py --live -y --new-version 20608723 paper.pdf
         """),
     )
     p.add_argument("files",    nargs="*", help="Files to upload")
@@ -1025,6 +1135,8 @@ def main():
                    help="Save as draft instead of publishing immediately")
     p.add_argument("--update", type=int, metavar="ID",
                    help="Add files to an existing deposit (by Zenodo ID)")
+    p.add_argument("--new-version", type=int, metavar="ID", dest="new_version",
+                   help="Create a new version of a published record (by Zenodo ID)")
     p.add_argument("--list",   action="store_true",
                    help="List your existing deposits and exit")
     p.add_argument("-y", "--yes", action="store_true",
@@ -1036,7 +1148,7 @@ def main():
         cmd_list(args)
         return
 
-    if not args.files and not args.update:
+    if not args.files and not args.update and not args.new_version:
         p.print_help()
         sys.exit(0)
 

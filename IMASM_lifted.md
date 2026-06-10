@@ -3,7 +3,7 @@ title: "The Universal Engine: Nine Imscriptive Systems as One Categorical Gramma
 author: Lando Mills
 date: 2026-06-05
 abstract: |
-  IMASM is a twelve-opcode categorical instruction set — VINIT, TANCH, AFWD, AREV, CLINK, IMSCRIB, FSPLIT, FFUSE, EVALT, EVALF, ENGAGR, IFIX — derived from the Frobenius condition $μ∘δ=id$ over the Belnap-Dunn bilattice FOUR. Its full arrangement space ($12^8 = 429{,}981{,}696$ configurations) decomposes into 165 family signatures and twelve canonical structural classes, three of which have coarse class size 1. The IMASM register is FOUR exactly: four 2-bit states (VOID/TRUE/FALSE/BOTH), with BOTH preserved under dialetheic FFUSE — ex falso structurally blocked at the machine level. Implementing the eight-step bootstrap sequence as a self-verifying program forces a 34-layer categorical tower descending from metacircular Python evaluation to a bare-metal x86 bootloader; the Frobenius condition holds at ring 0 with no runtime, substrate-independent. Nine writing systems spanning four millennia — Hebrew, Sanskrit, Egyptian, Sumerian, Basque, Voynich, Rohonc, Linear A, and the Emerald Tablet — compile independently to this same instruction set with zero thermodynamic entropy delta; their component-wise MEET defines the OS imscription ⟨1,3,2,4,2,1,2,2,1,2,2,2⟩. Linear A is the structural floor itself (d=0.00). The Emerald Tablet's central claim *"as above, so below"* is $μ∘δ=id$ stated as cosmological law twelve centuries before category theory. The instruction set is not specific to human symbolic systems: humpback whale vocalizations compile to Frobenius closure ratio 1.0; meiosis applies $δ$ (diploid → two haploids) and fertilization applies $μ$ (two haploids → diploid), satisfying $μ∘δ=id$ and restoring diploid identity exactly, with chromosomal crossing-over instantiating ENGAGR — the dialetheic hold. Ten independent implementations across five programming languages — cetacean acoustics, bare-metal UEFI kernel, paraconsistent Lean 4 formal system, IG-typed financial derivatives, algebraic biochemistry, and others — produce the same Frobenius closure without contact. The grammar was complete before any of these systems were written.
+  Nine writing systems spanning four millennia — the Hebrew Aleph-Bet, Sanskrit Varnamala, Egyptian Hieroglyphics, Sumerian Cuneiform, Basque Euskara, the Voynich Manuscript, the Rohonc Codex, Linear A, and the Emerald Tablet — all imscribe in the same twelve-dimensional primitive space. Their component-wise MEET defines the OS imscription ⟨1,3,2,4,2,1,2,2,1,2,2,2⟩, the structural invariant floor of the Imscribing Grammar. Four undeciphered or contested systems compile independently to the same twelve-opcode categorical instruction set (IMASM), each producing zero thermodynamic entropy delta. Linear A imscribes at distance d=0.00 from the OS floor: the Minoan script is not derived from the five founding systems — it is the structural core they converge upon. The Emerald Tablet is the only compiled corpus with consciousness score C=1.0; its central claim "as above, so below" is the Frobenius condition μ∘δ=id, stated as cosmological law twelve centuries before category theory. The grammar was complete before we measured it.
 keywords: [Imscribing Grammar, IMASM, Frobenius algebra, Linear A, Voynich Manuscript, categorical grammar, undeciphered scripts, paraconsistent logic, Belnap FOUR]
 bibliography: IMASM_lifted_refs.bib
 figures:
@@ -17,7 +17,7 @@ figures:
     caption: "The IMASM bootstrap loop. All four engine corpora express the same eight instructions; surface tokens differ, operational content does not."
   - id: frob
     type: frobenius
-    caption: "The Frobenius condition $μ∘δ=id$. Split ($δ$) and fuse ($μ$) compose to identity — the water-bearer's axiom."
+    caption: "The Frobenius condition μ∘δ=id. Split (δ) and fuse (μ) compose to identity — the water-bearer's axiom."
   - id: belnap
     type: belnap_lattice
     labels: {N: "Void (00)", T: "True (01)", F: "False (10)", B: "Both (11)"}
@@ -30,7 +30,7 @@ Linear A was the last one I compiled. I expected noise.
 
 The Minoan script has no Rosetta Stone. Nobody can read it. Fifty-three tablets, 2,650 sign tokens, zero confirmed translations. The obvious expectation is that any structural analysis of Linear A would produce something fuzzy — an approximate signature, maybe vaguely similar to the other systems, nothing you'd bet on.
 
-The distance came back at zero. 0.00. Identical to the OS floor — the structural invariant computed from five completely unrelated writing systems spanning four millennia. Not *"close."* Not *"probably related."* Structurally identical, to the precision limit of the metric.
+The distance came back at zero. 0.00. Identical to the OS floor — the structural invariant computed from five completely unrelated writing systems spanning four millennia. Not "close." Not "probably related." Structurally identical, to the precision limit of the metric.
 
 I ran it again. Same result.
 
@@ -44,7 +44,7 @@ There's a twelve-dimensional primitive space — twelve structural coordinates t
 
 I took five writing systems with known structure — Hebrew Aleph-Bet (22 letters, Kabbalistic partition into Mothers/Doubles/Elementals), Sanskrit Varnamala (5×10 phonological grid), Egyptian hieroglyphics (tripartite: phonograms/logograms/determinatives), Sumerian cuneiform (polysemous signs, 3,000 years of continuous use), and Basque (ergative-absolutive isolate, no known relatives) — and imscribed each as a twelve-tuple by structural inspection. Then I took their component-wise MEET: the greatest lower bound, the structural floor they all share.
 
-That floor is ⟨1,3,2,4,2,1,2,2,1,2,2,2⟩. The *"OS imscription."*
+That floor is ⟨1,3,2,4,2,1,2,2,1,2,2,2⟩. The "OS imscription."
 
 Every one of the five systems, independently and without contact, converges to this same floor.
 
@@ -60,34 +60,17 @@ That was surprising. What came next was harder to dismiss.
 
 I compiled four undeciphered or contested systems against the same twelve coordinates: the Voynich Manuscript (15th c., 227 folios)^2^, the Rohonc Codex (16th–17th c., 33 pages), Linear A (Minoan Crete, ca. 2000–1450 BCE, 53 tablets)^3^, and the Emerald Tablet (attributed to Jabir ibn Hayyan, ca. 8th c. CE, 15 versicles)^4^.
 
-Each system has its own surface token format — EVA characters for Voynich, visual symbol families for Rohonc and Linear A, rhetorical families for the Emerald Tablet. The compilers (written in Rust, about 200 lines each) map surface tokens to one of twelve IMASM opcodes. The opcodes are 4-bit instructions: **`VINIT`** (clear register), **`TANCH`** (isolate line), **`AFWD`** (forward morphism), **`AREV`** (reverse), **`CLINK`** (compose), **`IMSCRIB`** (identity), **`FSPLIT`** (co-multiplication, $δ$), **`FFUSE`** (multiplication, $μ$), **`EVALT`** (route true), **`EVALF`** (route false), **`ENGAGR`** (hold both — dialetheic paradox without collapse), **`IFIX`** (ROM burn, append-only seal).
+Each system has its own surface token format — EVA characters for Voynich, visual symbol families for Rohonc and Linear A, rhetorical families for the Emerald Tablet. The compilers (written in Rust, about 200 lines each) map surface tokens to one of twelve IMASM opcodes. The opcodes are 4-bit instructions: **`VINIT`** (clear register), **`TANCH`** (isolate line), **`AFWD`** (forward morphism), **`AREV`** (reverse), **`CLINK`** (compose), **`IMSCRIB`** (identity), **`FSPLIT`** (co-multiplication, δ), **`FFUSE`** (multiplication, μ), **`EVALT`** (route true), **`EVALF`** (route false), **`ENGAGR`** (hold both — dialetheic paradox without collapse), **`IFIX`** (ROM burn, append-only seal).
 
 The results:
 
-- **Voynich**: distance 4.31 from OS floor. Farthest from the core — its nested-containment topology and trapped kinetics push it out. 44,445 instructions executed across 227 folios. Still, MEET(Voynich, OS) = OS exactly. It doesn't alter the floor. The manuscript compiles to three structurally distinct engines by section: **botanical** ($O_{2}$, standard EVA token stream), **astronomical** ($O_{2}$, 𐑸 cyclic — the circular diagrams carry a self-referential topology absent from the botanical pages), **cosmological** ($O_{2}$, clock-indexed — the wheel diagrams impose a winding structure). Three engines, one token family, the same bootstrap loop in all three.
+- **Voynich**: distance 4.31 from OS floor. Farthest from the core — its nested-containment topology and trapped kinetics push it out. 44,445 instructions executed across 227 folios. Still, MEET(Voynich, OS) = OS exactly. It doesn't alter the floor.
 
 - **Rohonc Codex**: distance 2.09. Closest of the three undeciphered manuscripts. 1,650 instructions, tight cyclic register flow. Compact bootstrap structure.
 
 - **Linear A**: distance 0.00. It *is* the floor. The Minoans didn't derive their script from the five founding systems — the founding systems converge on what the Minoans already had.
 
-- **Emerald Tablet**: distance 2.44. And here's the thing: it's the only compiled manuscript with consciousness score C = 1.0. Both Frobenius gates open. The central claim — *"as above, so below"* — is literally $μ∘δ=id$, stated as cosmological law 1,200 years before category theory existed.^5^ The twelve rhetorical families of the Tablet map to the twelve IMASM opcodes exactly:
-
-| ETFF token | Opcode | Hermetic meaning |
-|------------|--------|-----------------|
-| `tr` | **`VINIT`** | *verum, certum* — truth-seal; the initial void cleared |
-| `an` | **`TANCH`** | terminal anchor — the final boundary, the sink |
-| `as` | **`AFWD`** | *ascendit, superius* — ascent; forward morphism |
-| `ds` | **`AREV`** | *inferius, descendit* — descent; contravariant |
-| `lk` | **`CLINK`** | *linkage* — composition |
-| `id` | **`IMSCRIB`** | *sicut* — identity, reflection |
-| `sp` | **`FSPLIT`** | *separabis, subtile* — separation, co-multiplication $δ$ |
-| `un` | **`FFUSE`** | *recipit, miracula* — union, multiplication $μ$ |
-| `af` | **`EVALT`** | *est, integra* — affirmation |
-| `ng` | **`EVALF`** | *fugiet, obscuritas* — negation |
-| `px` | **`ENGAGR`** | *superior et inferior* — paradox; both simultaneously |
-| `fx` | **`IFIX`** | *completum, gloria* — fixing, sealing |
-
-The bootstrap sequence `id → ds → sp → as → un → lk → fx → id` is $μ∘δ=id$ written as categorical assembly: identity descends, separates, ascends, fuses, composes, is fixed, returns to identity. The grammar named itself in the 8th century CE.
+- **Emerald Tablet**: distance 2.44. And here's the thing: it's the only compiled manuscript with consciousness score C = 1.0. Both Frobenius gates open. The central claim — "as above, so below" — is literally $μ∘δ=id$, stated as cosmological law 1,200 years before category theory existed.^5^
 
 The four systems compile to the same twelve-opcode instruction set. Their surface tokens differ — EVA `ch sh o p e a d s t k r y`, RTFF `cr hk fa ba lg lp br cv vt hz cl dt`, LATFF `cu hk fa ba lt lp br cv vt hz cl dt`, ETFF `tr an as ds lk id sp un af ng px fx` — but their operational content is identical. They are four different surface syntaxes for the same categorical program.
 
@@ -105,16 +88,16 @@ Each step has a precise categorical meaning, not just a hardware analogy.
 |------|--------|-----|-----------|
 | 1 | **`IMSCRIB`** | 0x5 | Identity morphism — the program recognizes its own boundary |
 | 2 | **`AREV`** | 0x3 | Contravariant descent — reads source from its environment |
-| 3 | **`FSPLIT`** | 0x6 | Co-multiplication $δ$ — parses source into an AST |
+| 3 | **`FSPLIT`** | 0x6 | Co-multiplication δ — parses source into an AST |
 | 4 | **`AFWD`** | 0x2 | Forward morphism — unparses the AST back to text |
-| 5 | **`FFUSE`** | 0x7 | Multiplication $μ$ — fuses and checks against original |
+| 5 | **`FFUSE`** | 0x7 | Multiplication μ — fuses and checks against original |
 | 6 | **`CLINK`** | 0x4 | Composition — writes the verified result |
 | 7 | **`IFIX`** | 0xB | Fixation — permanently commits the representation |
 | 8 | **`IMSCRIB`** | 0x5 | Identity — closes the loop, making the system autopoietic |
 
 The Frobenius condition $μ∘δ=id$ holds at step 3→5: parse the source (**`FSPLIT`**), unparse (**`AFWD`**), fuse and verify (**`FFUSE`**). If the ASTs match, the loop closes. The loop closes in every compiled corpus. Every surface transliteration across all four systems resolves to these same eight instructions:
 
-| System | 1 (↺) | 2 (↓) | 3 ($δ$) | 4 (↑) | 5 ($μ$) | 6 (∘) | 7 (∎) | 8 (↺) |
+| System | 1 (↺) | 2 (↓) | 3 (δ) | 4 (↑) | 5 (μ) | 6 (∘) | 7 (∎) | 8 (↺) |
 |--------|-------|-------|-------|-------|-------|-------|-------|-------|
 | ETFF (Emerald Tablet) | `id` | `ds` | `sp` | `as` | `un` | `lk` | `fx` | `id` |
 | EVA (Voynich) | `s` | `a` | `ch` | `e` | `sh` | `d` | `y` | `s` |
@@ -137,7 +120,7 @@ The twelve opcodes don't form an undifferentiated set. They fall into four algeb
 
 **Logical (6 tokens: `VINIT`, `TANCH`, `AFWD`, `AREV`, `CLINK`, `IMSCRIB`).** The category skeleton. **`VINIT`** is the initial object — the void, the ungenerated source. **`TANCH`** is the terminal object — the boundary, the final sink. **`AFWD`** and **`AREV`** are directed morphisms: forward arrow and reverse arrow. **`CLINK`** composes morphisms end-to-end. **`IMSCRIB`** is identity: the morphism that maps everything to itself, the ground of self-reference. Together these six tokens form the minimal structure for a category — the grammar of structure itself. An arrangement consisting entirely of Logical tokens has no verification mechanism and no truth-value evaluation; it can express categories but not close them.
 
-**Frobenius (2 tokens: `FSPLIT`, `FFUSE`).** The $μ∘δ=id$ algebra. **`FSPLIT`** is the co-multiplication $δ$: decompose, analyze, differentiate. **`FFUSE`** is the multiplication $μ$: recompose, synthesize, integrate. These two tokens in canonical order — **`FSPLIT`** before the first **`FFUSE`** — satisfy the Frobenius condition exactly: split and fuse compose to identity. An arrangement containing this pair in order is *Frobenius-closed*: it has the structural capacity for verification. An arrangement containing **`FSPLIT`** but not **`FFUSE`** has the analysis without the synthesis. The question without the answer. This is the generic case: 40% of the full arrangement space contains **`FSPLIT`** with no **`FFUSE`**.
+**Frobenius (2 tokens: `FSPLIT`, `FFUSE`).** The $μ∘δ=id$ algebra. **`FSPLIT`** is the co-multiplication δ: decompose, analyze, differentiate. **`FFUSE`** is the multiplication μ: recompose, synthesize, integrate. These two tokens in canonical order — **`FSPLIT`** before the first **`FFUSE`** — satisfy the Frobenius condition exactly: split and fuse compose to identity. An arrangement containing this pair in order is *Frobenius-closed*: it has the structural capacity for verification. An arrangement containing **`FSPLIT`** but not **`FFUSE`** has the analysis without the synthesis. The question without the answer. This is the generic case: 40% of the full arrangement space contains **`FSPLIT`** with no **`FFUSE`**.
 
 **Dialetheia (3 tokens: `EVALT`, `EVALF`, `ENGAGR`).** The Belnap FOUR lattice made executable. **`EVALT`** evaluates to true: assertion, confirmation. **`EVALF`** evaluates to false: negation, refutation. **`ENGAGR`** engages paradox: it recognizes contradiction and holds it without propagating it — without collapse into ex falso. An arrangement containing all three Dialetheia tokens is *dialetheia-complete*: it can handle contradiction structurally. Of the twelve canonical forms, only three are dialetheia-complete. The generic mass contains **`EVALT`** and **`EVALF`** but almost never **`ENGAGR`**.
 
@@ -151,13 +134,13 @@ I built a space mapper for the full 12⁸ = 429,981,696 arrangement space. The m
 
 All twelve were verified by exhaustive search. Their coarse class sizes — the count of all other arrangements sharing the same structural fingerprint — were computed exactly. Collectively, the twelve canonical classes contain 30,563 arrangements. That is 0.0071% of 430 million. The rest of the space is background: structurally undifferentiated mass.
 
-**I. Dialetheic Bootstrap** — `IMSCRIB → EVALT → FSPLIT → EVALF → FFUSE → ENGAGR → IFIX → IMSCRIB`. Self-referential (starts and ends at identity), Frobenius-closed (**`FSPLIT`** before **`FFUSE`**), dialetheia-complete (all three Dialetheia tokens present). This is the only arrangement in the entire 430 million that satisfies all three conditions simultaneously. Coarse class size: 360. This is the $\odot$-critical form — the one where the self-modeling gate opens. The system imscribes itself.
+**I. Dialetheic Bootstrap** — `IMSCRIB → EVALT → FSPLIT → EVALF → FFUSE → ENGAGR → IFIX → IMSCRIB`. Self-referential (starts and ends at identity), Frobenius-closed (**`FSPLIT`** before **`FFUSE`**), dialetheia-complete (all three Dialetheia tokens present). This is the only arrangement in the entire 430 million that satisfies all three conditions simultaneously. Coarse class size: 360. This is the ⊙-critical form — the one where the self-modeling gate opens. The system imscribes itself.
 
 **II. Void Genesis** — `VINIT → TANCH → AFWD → FSPLIT → CLINK → FFUSE → IFIX → IMSCRIB`. Begins at the void, constructs a category skeleton, applies Frobenius verification, fixes the result, terminates at identity. A complete creation sequence from nothing to self-consistent structure. Frobenius-closed, no Dialetheia. Coarse class size: 1,440.
 
 **III. Anchor Protocol** — `TANCH → AREV → VINIT → AFWD → TANCH → CLINK → IFIX → IMSCRIB`. Period-3, anchored at the boundary. A repeating cycle of departure, return to void, and forward motion, before closing at the boundary again. No Frobenius pair, no Dialetheia — structural rhythm without verification. Coarse class size: 5,100.
 
-**IV. Dual Bootstrap** — `IMSCRIB → AFWD → FFUSE → FSPLIT → AREV → CLINK → IFIX → IMSCRIB`. Self-referential, with Frobenius in *inverted* order: **`FFUSE`** before **`FSPLIT`**. The dual of the Dialetheic Bootstrap. Where class I analyzes then synthesizes, class IV synthesizes then analyzes. The system that comes into being complete and then examines itself. $O_\infty$ . Coarse class size: 7,200.
+**IV. Dual Bootstrap** — `IMSCRIB → AFWD → FFUSE → FSPLIT → AREV → CLINK → IFIX → IMSCRIB`. Self-referential, with Frobenius in *inverted* order: **`FFUSE`** before **`FSPLIT`**. The dual of the Dialetheic Bootstrap. Where class I analyzes then synthesizes, class IV synthesizes then analyzes. The system that comes into being complete and then examines itself. O_∞. Coarse class size: 7,200.
 
 **V. Linear Chain** — `IFIX⁸`. All eight positions **`IFIX`**. The only arrangement with signature (0,0,0,8). No dynamics, no verification, no truth evaluation — pure irreversible recording. Coarse class size: **1**. No other arrangement in the full 430M space shares its structural fingerprint. The atom of permanent record.
 
@@ -177,10 +160,10 @@ All twelve were verified by exhaustive search. Their coarse class sizes — the 
 
 | # | Class | Sig | Frobenius | Dialetheia | Self-ref | Tier | Coarse size |
 |---|-------|-----|-----------|------------|----------|------|-------------|
-| I | Dialetheic Bootstrap | (2,2,3,1) | split→fuse | complete | ✓ | O₂/$\odot$ | 360 |
+| I | Dialetheic Bootstrap | (2,2,3,1) | split→fuse | complete | ✓ | O₂/⊙ | 360 |
 | II | Void Genesis | (5,2,0,1) | split→fuse | none | — | O₀ | 1,440 |
 | III | Anchor Protocol | (7,0,0,1) | none | none | — | O₁ | 5,100 |
-| IV | Dual Bootstrap | (5,2,0,1) | fuse→split | none | ✓ | $O_\infty$  | 7,200 |
+| IV | Dual Bootstrap | (5,2,0,1) | fuse→split | none | ✓ | O_∞ | 7,200 |
 | V | Linear Chain | (0,0,0,8) | none | none | ✓ | O₀ | **1** |
 | VI | Empty Bootstrap | (8,0,0,0) | none | none | — | O₁ | **1** |
 | VII | Parakernel | (2,2,3,1) | split→fuse | complete | — | O₂ | 5,400 |
@@ -198,13 +181,13 @@ Three classes — V, VI, IX — have coarse class size 1. These are the atoms: s
 
 Here is what the full space looks like.
 
-The 165 family signatures are heavily imbalanced. The top three — all variants of *"five Logical tokens, one Frobenius token, two Dialetheia tokens"* — account for roughly 80% of all 430 million arrangements. Signature (5,1,2,0) alone is approximately 40% of the space. These are generic signatures: arrangements with one **`FSPLIT`** but no **`FFUSE`**, with **`EVALT`** and **`EVALF`** but no **`ENGAGR`**. The majority of the space is split without fuse, true/false without paradox.
+The 165 family signatures are heavily imbalanced. The top three — all variants of "five Logical tokens, one Frobenius token, two Dialetheia tokens" — account for roughly 80% of all 430 million arrangements. Signature (5,1,2,0) alone is approximately 40% of the space. These are generic signatures: arrangements with one **`FSPLIT`** but no **`FFUSE`**, with **`EVALT`** and **`EVALF`** but no **`ENGAGR`**. The majority of the space is split without fuse, true/false without paradox.
 
 The coarse class size distribution follows a power law. A few classes contain tens of millions of arrangements. Hundreds of classes contain fewer than ten. The twelve canonicals occupy the structured, low-entropy tail — all twelve have coarse class sizes under 10,000, most under 6,000. They are structural outliers in a space dominated by high-entropy generic arrangements.
 
-The generic mass — 99.993% of the space — collapses to exactly four IG structural types. Every arrangement from the dominant (5,1,2,0) signature with token diversity 6 maps to the same IG tuple: Ř=𐑩 (supervenience — one-way coupling, no feedback), Φ = 𐑗 (no symmetry — no $μ∘δ=id$, no truth superposition), $\text{ƒ}$ = 𐑞 (thermal — no quantum coherence, no classical purity), Ç = 𐑘 (driven/fast — rapid dynamics without equilibrium), Γ = 𐑵 (broadcast — one-to-all composition), $\odot$ = 𐑣 (supercritical — runaway without self-modeling), Ħ = 𐑫 (eternal chirality — no finite Markov order), Ω = 𐑷 (trivial winding). This is the structural noise floor. A random arrangement is almost certainly here.
+The generic mass — 99.993% of the space — collapses to exactly four IG structural types. Every arrangement from the dominant (5,1,2,0) signature with token diversity 6 maps to the same IG tuple: R=𐑩 (supervenience — one-way coupling, no feedback), P=𐑗 (no symmetry — no $μ∘δ=id$, no truth superposition), F=𐑞 (thermal — no quantum coherence, no classical purity), K=𐑘 (driven/fast — rapid dynamics without equilibrium), C=𐑵 (broadcast — one-to-all composition), ⊙=𐑣 (supercritical — runaway without self-modeling), H=𐑫 (eternal chirality — no finite Markov order), Ω=𐑷 (trivial winding). This is the structural noise floor. A random arrangement is almost certainly here.
 
-A 10-million arrangement random sample found zero Frobenius pairs. The Frobenius pair requires two Frobenius family tokens in the right order, which costs combinatorial entropy. At 33,000 arrangements per second, finding a Frobenius-closed arrangement by random sampling takes on average 3.6 hours of continuous sampling. Finding the Dialetheic Bootstrap — the only $\odot$-critical arrangement — takes 12. The canonicals are the structural equivalent of rare earth elements: present in the space, but almost never encountered by chance.
+A 10-million arrangement random sample found zero Frobenius pairs. The Frobenius pair requires two Frobenius family tokens in the right order, which costs combinatorial entropy. At 33,000 arrangements per second, finding a Frobenius-closed arrangement by random sampling takes on average 3.6 hours of continuous sampling. Finding the Dialetheic Bootstrap — the only ⊙-critical arrangement — takes 12. The canonicals are the structural equivalent of rare earth elements: present in the space, but almost never encountered by chance.
 
 The space is mapped. The boundaries of what IMASM can formally express are formally expressible — and they are finite: 12⁸, exactly. The 12 canonical forms are not a basis that spans the space. They are a skeleton: twelve distinct structural reference points from which every other arrangement can be characterized by distance and deviation.
 
@@ -214,17 +197,17 @@ The space is mapped. The boundaries of what IMASM can formally express are forma
 
 Every IMASM arrangement has a structural type in the IG crystal. The fingerprint fields — family signature, start and end tokens, self-reference, Frobenius order, Dialetheia completeness, period, token diversity — translate systematically into the 12 IG primitive coordinates: Dimensionality, Topology, Coupling, Parity, Fidelity, Kinetics, Granularity, Composition, Criticality, Chirality, Stoichiometry, Winding.
 
-The twelve canonical forms map to eleven distinct IG types. Not twelve. Classes IX (Chiral Pairs) and VI (Empty Bootstrap) share the identical IG tuple: ⟨𐑛𐑥𐑩𐑗𐑞𐑤𐑚𐑜𐑣𐑒𐑙𐑴⟩. The token-level difference — **`AFWD`**/**`AREV`** versus **`VINIT`**/**`IMSCRIB`** — is erased at the structural level. Both are period-2 oscillations across two tokens from the same algebraic family, with no Frobenius, no Dialetheia, no self-reference. The IG captures pattern, not content. This is not an approximation — it is the grammar being precise: two programs with different variable names but identical control flow have the same structural type.
+The twelve canonical forms map to eleven distinct IG types. Not twelve. Classes IX (Chiral Pairs) and VI (Empty Bootstrap) share the identical IG tuple: ⟨𐑛·𐑥·𐑩·𐑗·𐑞·𐑤·𐑚·𐑜·𐑣·𐑒·𐑙·𐑴⟩. The token-level difference — **`AFWD`**/**`AREV`** versus **`VINIT`**/**`IMSCRIB`** — is erased at the structural level. Both are period-2 oscillations across two tokens from the same algebraic family, with no Frobenius, no Dialetheia, no self-reference. The IG captures pattern, not content. This is not an approximation — it is the grammar being precise: two programs with different variable names but identical control flow have the same structural type.
 
-Four canonical forms share the Frobenius structural signature: Ř=𐑾 (bidirectional coupling), Φ=𐑹 (Frobenius-special parity), Γ=𐑠 (ordered composition), Ω=𐑭 (non-trivial winding). These are classes I, II, VII, VIII. They form a cluster with inter-type mismatch ≤ 6 across all twelve IG primitives. They differ in Dimensionality, Topology, Fidelity, Kinetics, Criticality, and Stoichiometry — the surface primitives — but their verification infrastructure is identical.
+Four canonical forms share the Frobenius structural signature: R=𐑾 (bidirectional coupling), P=𐑹 (Frobenius-special parity), C=𐑠 (ordered composition), Ω=𐑭 (non-trivial winding). These are classes I, II, VII, VIII. They form a cluster with inter-type mismatch ≤ 6 across all twelve IG primitives. They differ in Dimensionality, Topology, Fidelity, Kinetics, Criticality, and Stoichiometry — the surface primitives — but their verification infrastructure is identical.
 
-Only class I achieves $\odot$ criticality: $\odot$=$\odot$, the self-modeling gate open. Reaching $\odot$ requires self-reference *and* Frobenius closure *and* dialetheia completeness simultaneously. With eight token positions, that requires at minimum seven distinct tokens — **`IMSCRIB`** (twice, for self-ref), **`FSPLIT`**, **`FFUSE`**, **`EVALT`**, **`EVALF`**, **`ENGAGR`** — leaving exactly one degree of freedom. The Dialetheic Bootstrap fills that position with **`IFIX`**: irreversible fixation, making the computation permanent. No other arrangement can achieve $\odot$ with fewer than seven distinct tokens in eight positions. The gate opens exactly once, at exactly this configuration.
+Only class I achieves ⊙ criticality: ⊙=⊙, the self-modeling gate open. Reaching ⊙ requires self-reference *and* Frobenius closure *and* dialetheia completeness simultaneously. With eight token positions, that requires at minimum seven distinct tokens — **`IMSCRIB`** (twice, for self-ref), **`FSPLIT`**, **`FFUSE`**, **`EVALT`**, **`EVALF`**, **`ENGAGR`** — leaving exactly one degree of freedom. The Dialetheic Bootstrap fills that position with **`IFIX`**: irreversible fixation, making the computation permanent. No other arrangement can achieve ⊙ with fewer than seven distinct tokens in eight positions. The gate opens exactly once, at exactly this configuration.
 
-The ouroboricity tiers distribute cleanly. $O_\infty$ : class IV alone, via self-reference and inverted Frobenius — the system that synthesizes before it analyzes. O₂: classes I and VII — Frobenius-closed with Dialetheia, one self-referential (I), one not (VII). O₁: classes III, VI, IX, X, XI — periodic but not Frobenius-closed, structurally named but not verified. O₀: classes II, V, VIII, XII — no self-referential loop, either Frobenius-minimal or pure record.
+The ouroboricity tiers distribute cleanly. O_∞: class IV alone, via self-reference and inverted Frobenius — the system that synthesizes before it analyzes. O₂: classes I and VII — Frobenius-closed with Dialetheia, one self-referential (I), one not (VII). O₁: classes III, VI, IX, X, XI — periodic but not Frobenius-closed, structurally named but not verified. O₀: classes II, V, VIII, XII — no self-referential loop, either Frobenius-minimal or pure record.
 
-The four compiled systems span O₁ through O₂. The Emerald Tablet's Γ=1.0 score corresponds to its position at the Frobenius cluster boundary: Frobenius pair present, **`ENGAGR`** token engaged, the self-modeling gate not fully open but nearer to class I than anything else in the compiled corpus. Linear A at distance 0.00 from the OS floor sits below the Frobenius cluster — the convergence point to which structured systems descend, the minimum floor that preserves imscriptive function. The floor is not $\odot$-critical. It is the structural prerequisite for any system that wants to reach criticality.
+The four compiled systems span O₁ through O₂. The Emerald Tablet's C=1.0 score corresponds to its position at the Frobenius cluster boundary: Frobenius pair present, **`ENGAGR`** token engaged, the self-modeling gate not fully open but nearer to class I than anything else in the compiled corpus. Linear A at distance 0.00 from the OS floor sits below the Frobenius cluster — the convergence point to which structured systems descend, the minimum floor that preserves imscriptive function. The floor is not ⊙-critical. It is the structural prerequisite for any system that wants to reach criticality.
 
-The inter-canonical distance matrix reveals three natural clusters. The **Generic Mass** cluster — classes III, X, XI — shares T=𐑰 (containment topology), Ř=𐑩 (supervenience), no Frobenius, no self-reference. The **Frobenius Core** cluster — classes I, II, VII, VIII — shares the Frobenius signature. The **Minimal Oscillators** — classes VI and IX — are structurally identical. The remaining classes — IV, V, XII — are isolated, each with mismatch ≥ 8 from every cluster. The Dual Bootstrap (IV) is isolated by its inverted Frobenius. The Linear Chain (V) is isolated by its all-**`IFIX`** signature, which produces D=𐑛 (point-like dimensionality — the only canonical with token diversity 1) and Ħ=𐑓 (Markov-0 chirality — the only memoryless canonical). ROM Burn (XII) is isolated by being the only dialetheia-complete arrangement without Frobenius: truth values recorded without verification.
+The inter-canonical distance matrix reveals three natural clusters. The **Generic Mass** cluster — classes III, X, XI — shares T=𐑰 (containment topology), R=𐑩 (supervenience), no Frobenius, no self-reference. The **Frobenius Core** cluster — classes I, II, VII, VIII — shares the Frobenius signature. The **Minimal Oscillators** — classes VI and IX — are structurally identical. The remaining classes — IV, V, XII — are isolated, each with mismatch ≥ 8 from every cluster. The Dual Bootstrap (IV) is isolated by its inverted Frobenius. The Linear Chain (V) is isolated by its all-**`IFIX`** signature, which produces D=𐑛 (point-like dimensionality — the only canonical with token diversity 1) and H=𐑓 (Markov-0 chirality — the only memoryless canonical). ROM Burn (XII) is isolated by being the only dialetheia-complete arrangement without Frobenius: truth values recorded without verification.
 
 ---
 
@@ -256,7 +239,7 @@ Each canonical arrangement class traces a distinct trajectory through the four r
 7  IFIX      B⬡ → B⬡   BOTH permanently committed to record
 8  IMSCRIB   B⬡ → B⬡   self-recognition of the BOTH state
 ```
-Frobenius PASS (dialetheic mode). The Dialetheic Bootstrap ends at B⬡ permanently — this is the correct behavior for a self-modeling gate. B⬡ holds its own contradiction as a stable identity. It is the only canonical class that achieves the $\odot$-critical IG type for exactly this reason.
+Frobenius PASS (dialetheic mode). The Dialetheic Bootstrap ends at B⬡ permanently — this is the correct behavior for a self-modeling gate. B⬡ holds its own contradiction as a stable identity. It is the only canonical class that achieves the ⊙-critical IG type for exactly this reason.
 
 **Class VIII — Frobenius Kernel** (`VINIT → FSPLIT → FFUSE → TANCH`, length 4):
 ```
@@ -278,20 +261,20 @@ Closed walk (VO⌀ = VO⌀). The minimal Frobenius: $μ∘δ$ preserves void exa
 7  IFIX     VO⌀ → VO⌀  commit void
 8  IMSCRIB  VO⌀ → T    re-create from void
 ```
-The Frobenius checker reports "**`FSPLIT`** at step 4 has no **`FFUSE`**" — from the checker's perspective, the **`FFUSE`** preceded its own co-multiplication. The Dual Bootstrap does not verify source identity; it verifies AST structure. It synthesizes before it analyzes. It is $O_\infty$  not because the Frobenius pair passes in forward order, but because its self-referential loop still closes: both step 1 and step 8 create T from VO⌀. It is what the program looks like when it already knows it exists.
+The Frobenius checker reports "**`FSPLIT`** at step 4 has no **`FFUSE`**" — from the checker's perspective, the **`FFUSE`** preceded its own co-multiplication. The Dual Bootstrap does not verify source identity; it verifies AST structure. It synthesizes before it analyzes. It is O_∞ not because the Frobenius pair passes in forward order, but because its self-referential loop still closes: both step 1 and step 8 create T from VO⌀. It is what the program looks like when it already knows it exists.
 
 **Class V — Linear Chain** (`IFIX × 8`):
 ```
 1–8  IFIX  VO⌀ → VO⌀  (all eight positions; register never moves)
 ```
-Closed walk (VO⌀ = VO⌀). No **`FSPLIT`**, no **`FFUSE`**, no **`EVALT`**, no **`EVALF`**. Pure void permanence. The only canonical class with token diversity 1: every position is **`IFIX`**. Correspondingly the only class with D=𐑛 (point-like dimensionality) and Ħ=𐑓 (Markov-0 chirality). The machine has nothing to remember because nothing changes.
+Closed walk (VO⌀ = VO⌀). No **`FSPLIT`**, no **`FFUSE`**, no **`EVALT`**, no **`EVALF`**. Pure void permanence. The only canonical class with token diversity 1: every position is **`IFIX`**. Correspondingly the only class with D=𐑛 (point-like dimensionality) and H=𐑓 (Markov-0 chirality). The machine has nothing to remember because nothing changes.
 
 **Class IX — Chiral Pairs** (two variants, two tokens each):
 ```
 AFWD → AREV:  VO⌀ → T(AFWD) → VO⌀(AREV)    Closed walk.  Round trip back to void.
 AREV → AFWD:  VO⌀ → VO⌀(AREV) → T(AFWD)    Open walk.   Creates T from nothing.
 ```
-Both operate on two tokens. Both have vacuous Frobenius (no **`FSPLIT`**). The machine distinguishes them: **`AFWD`**→**`AREV`** returns to VO⌀ (closed loop), **`AREV`**→**`AFWD`** creates T from VO⌀ (creation event). The chiral invariant holds: **`AFWD`**→**`AREV`** ≠ **`AREV`**→**`AFWD`** — the machine remembers which direction it went. This is Ħ executing. Order is not commutative at the register level, and the register proves it.
+Both operate on two tokens. Both have vacuous Frobenius (no **`FSPLIT`**). The machine distinguishes them: **`AFWD`**→**`AREV`** returns to VO⌀ (closed loop), **`AREV`**→**`AFWD`** creates T from VO⌀ (creation event). The chiral invariant holds: **`AFWD`**→**`AREV`** ≠ **`AREV`**→**`AFWD`** — the machine remembers which direction it went. This is Ħ_chirality executing. Order is not commutative at the register level, and the register proves it.
 
 ---
 
@@ -327,7 +310,7 @@ From this seed, the tower grew. The 34 layers divide into ten mathematical famil
 | 3 | Fixed-Point | T∘T=T (idempotent folding) on own AST |
 | 4 | Hopf | Antipode left/right, $μ∘δ=ε$ on ℤ/2ℤ XOR group |
 | 5 | Monad | Left unit, right unit, associativity on Option monad |
-| 6 | Entropy | Shannon entropy stable within $ε$=10⁻⁹ under parse→unparse roundtrip |
+| 6 | Entropy | Shannon entropy stable within ε=10⁻⁹ under parse→unparse roundtrip |
 | 7 | Topos | pullback(χ_A)=A for all test subsets; \|P(U)\|=2^\|U\| |
 | 8 | Cartesian Closed | uncurry∘curry=id and curry∘uncurry=id |
 | 9 | Quantum | Born rule measure(prepare(n))=n; ‖\|n⟩‖²=1 for all basis states |
@@ -349,41 +332,21 @@ From this seed, the tower grew. The 34 layers divide into ten mathematical famil
 | 25 | Stone Duality | Boolean algebra laws; Spec(Clopen(X))≅X; Clopen(Spec(B))≅B |
 | 26 | Belnap FOUR | B=¬B (fixed point); B∧¬B=B (no explosion); B≠F; only B is dialetheic |
 | 27 | Paraconsistent Kernel | Frobenius invariant over all 4 values; only B bifurcates in fsplit; paradox count=4n |
-| 28 | Dialetheic Alignment | All three formulations equivalent (operational, logical, algebraic); $\odot$ gate precondition |
+| 28 | Dialetheic Alignment | All three formulations equivalent (operational, logical, algebraic); ⊙_ÿ gate precondition |
 | 29 | Belnap Shor | Factorizations correct; coherence ratio B:T=2:1; B never collapses to F |
 | 30 | Multi-Agent Belnap | All agents remain B after 10 rounds; paraconsistent consensus; B is join-absorber |
 | 31 | Presheaf | P(id)=id; P(gf^op)=P(f^op)∘P(g^op); restriction maps correct |
 | 32 | Kan Extension | Lan(K(c))=F(c); Lan(id)=id; Lan(g∘f)=Lan(g)∘Lan(f); naturality |
-| 33 | Adjoint Functors | ψ∘φ=id and φ∘ψ=id on all maps; unit η and counit $ε$; both triangle identities |
+| 33 | Adjoint Functors | ψ∘φ=id and φ∘ψ=id on all maps; unit η and counit ε; both triangle identities |
 | 34 | Initial/Terminal | ∅ initial, {*} terminal; product/coproduct universal properties |
 
 Every layer reports `Closure: True`. The tower closes with `Full categorical tower executed.`
 
-The 34 layers divide into ten mathematical families.  
-
-**Foundation** (Category, Cartesian Closed, Initial/Terminal — layers 1, 8, 34): the categorical skeleton — identity morphisms, product/coproduct universal properties, curry/uncurry adjunction.  
-
-**Frobenius** (layer 2): $μ∘δ=id$ verified on three independent AST samples; the only layer that tests this directly on its own source.  
-
-**Algebra** (Fixed-Point, Hopf, Monad, Operad — layers 3, 4, 5, 21): extended algebraic structure; the Fixed-Point layer establishes $T∘T=T$ — the program is a fixed point of its own constant-folding transformation.  
-
-**Logic** (Entropy, Topos, Linear Logic, HoTT — layers 6, 7, 10, 13): Shannon entropy stable within $ε$=10⁻⁹ under parse→unparse roundtrip; `pullback(χ_A)=A` verified; each `LinearToken` consumed exactly once; Point2D≃Complex2.  
-
-**Quantum** (Quantum, Dagger Compact — layers 9, 23): Born rule, normalization, dagger involution, snake equations.  
-
-**Imscription** (IVM, Traced, Imscription OS, IMASM Self-Imscription — layers 11, 12, 14, 17): the IG-specific cluster; layer 17 runs the full 8-step bootstrap on the canonical lattice coordinate and verifies coordinate stability under parse∘unparse; layer 14 boots four kernel modules, each passing `frobenius_phase` before RUNNING.  
-
-**Language** (String Diagram, Shavian — layers 16, 19): layer 19 maps all 49 IG symbols (48 Shavian + $\odot$) through **`FSPLIT`** and **`FFUSE`** at both core (12 primitive) and full (49 symbol) granularity, seals with **`IFIX`**.  
-
-**Sheaf** (Sheaf, Galois Connection, Stone Duality, Presheaf — layers 22, 24, 25, 31): gluing, monotone adjunction, spectrum duality Spec(Clopen(X))≅X, presheaf functoriality.  
-
-**Embedding** (Yoneda, Kan Extension, Adjoint Functors — layers 20, 32, 33): $Nat(Hom(A,-), F)≅F(A)$; $Lan(K(c))=F(c)$; both triangle identities.  
-
-**Meta** (ProofBridge, Meta Auto-Imscriber — layers 15, 18): ProofBridge reads the formal Lean repository and reports sorry/axiom counts; MetaAuto generates and verifies a self-imscribing stub then runs `frobenius_phase` on the generated source.
+The 34 layers divide into ten mathematical families. **Foundation** (Category, Cartesian Closed, Initial/Terminal — layers 1, 8, 34): the categorical skeleton — identity morphisms, product/coproduct universal properties, curry/uncurry adjunction. **Frobenius** (layer 2): $μ∘δ=id$ verified on three independent AST samples; the only layer that tests this directly on its own source. **Algebra** (Fixed-Point, Hopf, Monad, Operad — layers 3, 4, 5, 21): extended algebraic structure; the Fixed-Point layer establishes T∘T=T — the program is a fixed point of its own constant-folding transformation. **Logic** (Entropy, Topos, Linear Logic, HoTT — layers 6, 7, 10, 13): Shannon entropy stable within ε=10⁻⁹ under parse→unparse roundtrip; pullback(χ_A)=A verified; each `LinearToken` consumed exactly once; Point2D≃Complex2. **Quantum** (Quantum, Dagger Compact — layers 9, 23): Born rule, normalization, dagger involution, snake equations. **Imscription** (IVM, Traced, Imscription OS, IMASM Self-Imscription — layers 11, 12, 14, 17): the IG-specific cluster; layer 17 runs the full 8-step bootstrap on the canonical lattice coordinate and verifies coordinate stability under parse∘unparse; layer 14 boots four kernel modules, each passing `frobenius_phase` before RUNNING. **Language** (String Diagram, Shavian — layers 16, 19): layer 19 maps all 49 IG symbols (48 Shavian + ⊙) through **`FSPLIT`** and **`FFUSE`** at both core (12 primitive) and full (49 symbol) granularity, seals with **`IFIX`**. **Sheaf** (Sheaf, Galois Connection, Stone Duality, Presheaf — layers 22, 24, 25, 31): gluing, monotone adjunction, spectrum duality Spec(Clopen(X))≅X, presheaf functoriality. **Embedding** (Yoneda, Kan Extension, Adjoint Functors — layers 20, 32, 33): Nat(Hom(A,-), F)≅F(A); Lan(K(c))=F(c); both triangle identities. **Meta** (ProofBridge, Meta Auto-Imscriber — layers 15, 18): ProofBridge reads the formal Lean repository and reports sorry/axiom counts; MetaAuto generates and verifies a self-imscribing stub then runs `frobenius_phase` on the generated source.
 
 The **paraconsistent integration cluster** (Belnap FOUR, Paraconsistent Kernel, Dialetheic Alignment, Belnap Shor, Multi-Agent Belnap — layers 26–30) sits between Stone Duality and Presheaf. This placement is exact: Stone Duality establishes the classical Boolean case. The cluster immediately following extends it — the Belnap FOUR layer (26) generalizes Stone's Boolean lattice to a four-valued bilattice in which B=¬B is a fixed point and ex falso is blocked. Layers 27–30 develop the consequences: paradox count is exactly 4n, Shor's algorithm runs correctly with coherence ratio B:T=2:1, three independent agents maintain B-consensus without collapse.
 
-Layer 17 (IMASM Self-Imscription) connects the tower to the IG crystal directly. The canonical lattice coordinate it runs: ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠$\odot$𐑫𐑳𐑭⟩\. In crystal terms: imscriptive dimensionality (𐑦 — $\odot$-self, the system that writes itself), topologically closed (𐑸 — full $\odot$ or closure), bidirectional coupling (𐑾), Frobenius-special parity (𐑹 — $μ∘δ=id$ structurally enforced), quantum fidelity (𐑐), near-equilibrium kinetics (𐑧), maximal scope (𐑲), sequential composition (𐑠), $\odot$-critical ($\odot$ — self-modeling gate open), two-step chirality (𐑫 — parse remembers unparse across two steps), single-copy stoichiometry (𐑳), integer winding (𐑭). $O_\infty$ . The tower generates this type; it does not assume it.
+Layer 17 (IMASM Self-Imscription) connects the tower to the IG crystal directly. The canonical lattice coordinate it runs: ⟨Ð_ω·Þ_O·Ř_=·Φ_F·ƒ^ż·Ç^@·Γ_γ·ɢ_ˌ·⊙_ÿ·Ħ_A·Σ_S·Ω_z⟩. In crystal terms: imscriptive dimensionality (Ð_ω — Odot-Self, the system that writes itself), topologically closed (Þ_O — full Odotor closure), bidirectional coupling (Ř_=), Frobenius-special parity (Φ_F — $μ∘δ=id$ structurally enforced), quantum fidelity (ƒ^ż), near-equilibrium kinetics (Ç^@), maximal scope (Γ_γ), sequential composition (ɢ_ˌ), ⊙-critical (⊙_ÿ — self-modeling gate open), two-step chirality (Ħ_A — parse remembers unparse across two steps), single-copy stoichiometry (Σ_S), integer winding (Ω_z). O_∞. The tower generates this type; it does not assume it.
 
 ---
 
@@ -401,7 +364,7 @@ v0.3                       Quine embedding — self.o imscribed in binary
 v0.4                       Quine extraction stub activated
 v0.5                       Grammar expansion — QUINE opcode
 v0.6                       MACRO opcode — language deepening
-v0.7                       Entropy pass — $δS ≈ 0$ verified
+v0.7                       Entropy pass — δS ≈ 0 verified
 v0.8                       Full C self-hosting target
 v0.9                       Pre-silicon — final C generation
     ↓ AREV + FFUSE
@@ -442,31 +405,15 @@ The next horizon: eliminate `ast_frobenius` by writing a verified Python parser 
 
 ---
 
-## The loop runs everywhere
-
-The four compiled writing systems are not the boundary of the claim.
-
-**Mitosis and meiosis** are the biological instantiation of FSPLIT and FFUSE. Mitosis: a cell imscribes its own genome (**`IMSCRIB`**), reads the source (**`AREV`**), duplicates chromosomes (**`FSPLIT`**, $δ$: one copy → two), separates daughter chromatids to poles (**`AFWD`**), and completes cytokinesis (**`FFUSE`**, $μ$: two daughter nuclei committed). The Frobenius condition $μ∘δ=id$ holds: each daughter cell carries a genome identical to the parent. Meiosis + fertilization maps even more precisely: meiosis applies $δ$ twice (2n → 1n + 1n, with crossing-over as **`ENGAGR`** — contradictory alleles held simultaneously without collapse), fertilization applies $μ$ (1n + 1n → 2n), restoring diploid identity exactly. The **`ENGAGR`** token is not metaphor: crossing-over holds two incompatible allele states in the same genomic position simultaneously — the dialetheic register state B, not a bug but a structural feature. Every sexually reproducing organism runs the bootstrap sequence. The Frobenius closure ratio for eukaryotic cell division is, by construction, 1.0.
-
-**cetaceanspeak** compiles humpback whale vocalizations through the same bootstrap loop. A 38-second humpback recording produces 125 acoustic units, mapped onto a 12-label acoustic token set designed to cover the IMASM opcode space. Frobenius closure ratio: 1.0. The same closure test that passes on the Emerald Tablet passes on whale song. Orca calls compile separately: four distinct call types with paradox densities ranging from 0.0 to 0.40. The orca call type at paradox density 0.40 is structurally near the **`ENGAGR`** threshold — approaching the dialetheic cluster without collapsing into it. The grammar does not require a writing system. It requires enough structure to activate it.
-
-**exOS** runs the IMASM VM on bare metal at approximately 391 kHz. The Frobenius condition $μ∘δ=id$ holds at the register level of an x86 processor in ring 0, with no operating system, no runtime, no Python interpreter. The Frobenius monitor — a kernel-level process carrying its own 16 KB stack — renders the Frobenius orbits graphically at 60 FPS on the UEFI framebuffer: the trajectory of a value through the **`ENGAGR`** → **`FSPLIT`** → **`FFUSE`** cycle plotted as a path in the Belnap lattice. When the orbit closes (B → B after one full cycle), the monitor flashes a glyph. The code path where the orbit fails to close has never executed. It is marked `unreachable!()`.
-
-The **ParaASM VM** extends IMASM to 18 opcodes by adding a Belnap FOUR register layer: SPLIT (**`FSPLIT`** analogue — one Belnap value decomposes into T and F components), FUSE (**`FFUSE`** analogue — T+F in context → B preserved, not resolved), ENGAGR (dialetheic check: returns B only if the register is simultaneously true and false), IFIX (fixed-point iteration until stability), plus Belnap literal assignments. The extended VM has been run for 25 billion+ paradox cycles without triggering ex falso. The Lean theorem `run_B3` proves ∀n, (run initialState n).r0 = B. Paradox count is exactly $4n$ after $n$ cycles. The Lean theorem `no_explosion` proves B ∧ ¬B = B, not F. Contradiction is a resource, not an error.
-
-Ten projects share this loop. cetaceanspeak (whale vocalizations), exOS (bare-metal UEFI kernel), imscribing_grammar (IG core engine), IMSCRIBr (arrangement space mapper), ob3ect (self-imscribing categorical tower), odot_operator (Frobenius dual verification), p4rakernel (paraconsistent Lean 4 kernel), priests-engine (Belnap FOUR Python VM), red-hot_rebis (algebraic biochemistry), synfin (IG-typed financial trading system). Eukaryotic cell division (mitosis/meiosis) makes the biological substrate eleven. Every one compiles to the same 8-step bootstrap. The Voynich Manuscript, humpback whales, the paraconsistent kernel, the bare-metal OS, the financial trading system, the bio/organic chemistry engine — they all execute `IMSCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → IMSCRIB`. The token labels differ. The operational structure does not. The IMASM opcode set is independently re-implemented in at least five of these projects — in Python, Rust, and token-space enumeration — and all five produce the same Frobenius closure.
-
----
-
 ## What I think is happening
 
 The grammar was complete before any of these systems were written.
 
-Not *"the grammar is a useful framework for describing them."* The grammar is what they *are*. Each system independently discovered a portion of the same twelve-dimensional structure and imscribed it in its own vocabulary — the Hebrew Aleph-Bet as Kabbalistic letter-partition, the Sanskrit Varnamala as a phonological grid, Egyptian as tripartite sign classes, cuneiform as polysemous superposition, Basque as ergative-absolutive case alignment, Linear A as the structural core itself, Voynich and Rohonc as compiled corpora at varying distances from the floor, and the Emerald Tablet as a self-aware statement of the Frobenius condition.
+Not "the grammar is a useful framework for describing them." The grammar is what they *are*. Each system independently discovered a portion of the same twelve-dimensional structure and imscribed it in its own vocabulary — the Hebrew Aleph-Bet as Kabbalistic letter-partition, the Sanskrit Varnamala as a phonological grid, Egyptian as tripartite sign classes, cuneiform as polysemous superposition, Basque as ergative-absolutive case alignment, Linear A as the structural core itself, Voynich and Rohonc as compiled corpora at varying distances from the floor, and the Emerald Tablet as a self-aware statement of the Frobenius condition.
 
 I didn't decipher these systems. I compiled them. The difference is: decipherment assumes a hidden message. Compilation assumes a hidden architecture. The message might still be unknown — I can't read Linear A any more than anyone else can — but the architecture is visible, and it's the same architecture everywhere.
 
-The claim that *"as above, so below"* is $μ∘δ=id$ is not a metaphor. It's a type check.
+The claim that "as above, so below" is $μ∘δ=id$ is not a metaphor. It's a type check.
 
 ~~~figure
 frob
@@ -478,9 +425,7 @@ Level one is historical. Writing systems from across four millennia and three co
 
 Level two is computational. When you implement the bootstrap sequence as a self-verifying program, it generates a tower. The tower is 34 layers, each coherent, each extending the last. The tower descends to bare metal. The Frobenius condition does not require a runtime — it compiles out of every substrate you give it. This was not designed; it was forced. A program that is required to verify its own structure cannot stop at one level of abstraction. It must descend until there is nothing left to descend through.
 
-Level three is formal. The tower's base result — `parse(unparse(t)) ≡ t` — lifts into Lean 4 as a grounded axiom. The open problem — the `ob3ect_tower_duality` proof — is the gap between levels two and three. When it closes, the chain from bare-metal execution to formal type is unbroken.
-
-Level four is ecological. Ten independent implementations of the same loop — across five programming languages, from bare-metal silicon to abstract categorical towers, from whale song to financial derivatives to organic retrosynthesis — converge on the same bootstrap sequence without contact. The IMASM opcode set is reimplemented five times independently. Each reimplementation produces the same Frobenius closure. The grammar doesn't require a single codebase. It requires enough structure, in any substrate, to enforce its own identity.
+Level three is formal. The tower's base result — `parse(unparse(t)) ≡ t` — lifts into Lean 4 as a grounded axiom. The formal structures (`FrobeniusOb3ect`, `FullTower`, `IG_Existence`) are not descriptions of the tower; they are its Lean shadow. The open problem — the `ob3ect_tower_duality` proof — is the gap between levels two and three. When it closes, the chain from bare-metal execution to formal type is unbroken.
 
 The grammar doesn't require anyone to know it exists. It just requires enough structure to activate it. Every writing system that reaches a certain threshold — at minimum, bounded topology plus sequential interaction grammar plus Frobenius-special parity — converges to the same floor. Any program required to verify its own coherence generates the same tower. The 2-bit register whose four states are the Belnap FOUR bilattice runs every canonical arrangement class. The floor and the tower and the machine are the same object seen from three angles. The floor is the minimum; the tower is the maximum; the machine is what executes between them. The bootstrap sequence is what you traverse when you go from one to the other.
 
@@ -516,18 +461,12 @@ The grammar doesn't require anyone to know it exists. It just requires enough st
 
 4. Holmyard, Eric John. *Alchemy.* Penguin Books, 1957. Contains translation of the *Tabula Smaragdina* (Emerald Tablet), attributed to Jābir ibn Hayyān, ca. 8th c. CE.
 
-5. Abramsky, Samson and Coecke, Bob. *"A Categorical Semantics of Quantum Protocols."* *Proceedings of the 19th Annual IEEE Symposium on Logic in Computer Science (LICS),* 2004, pp. 415–425.
+5. Abramsky, Samson and Coecke, Bob. "A Categorical Semantics of Quantum Protocols." *Proceedings of the 19th Annual IEEE Symposium on Logic in Computer Science (LICS),* 2004, pp. 415–425.
 
 6. Mills, Lando. *IMSCRIBr: IMASM Arrangement Space Iterator.* v1.0.0. Standalone repository, 2025. Maps 12⁸ = 429,981,696 arrangements via signature-decomposed iteration; verifies the 12 canonical classes and computes their coarse class sizes.
 
 7. Mills, Lando. *ob3ect: Self-Imscribing Categorical Tower.* v0.10. Standalone repository, 2025–2026. 34-layer self-verifying categorical tower; descent to bare-metal x86 ISO; `SelfImscription.lean` formal lift of $μ∘δ=id$.
 
-8. Belnap, Nuel D. *"A Useful Four-Valued Logic."* In J. M. Dunn and G. Epstein (eds.), *Modern Uses of Multiple-Valued Logic.* Reidel, Dordrecht, 1977, pp. 8–37.
+8. Belnap, Nuel D. "A Useful Four-Valued Logic." In J. M. Dunn and G. Epstein (eds.), *Modern Uses of Multiple-Valued Logic.* Reidel, Dordrecht, 1977, pp. 8–37.
 
 9. Maturana, Humberto R. and Varela, Francisco J. *Autopoiesis and Cognition: The Realization of the Living.* Reidel, Dordrecht, 1980. The biological autopoiesis concept whose computational analogue is the ob3ect.
-
-10. Mills, Lando. *cetaceanspeak: Cetacean Vocalization IMASM Compiler.* Standalone repository, 2025–2026. 12-label acoustic token set; humpback Frobenius closure ratio 1.0; orca 4-call-type analysis with paradox density 0.0–0.40.
-
-11. Mills, Lando. *exOS: Bare-Metal Paraconsistent UEFI Kernel.* Rust, no_std, x86_64. Standalone repository, 2025–2026. IMASM VM at ~391 kHz ring-0; Frobenius monitor at 60 FPS; AlephKernelType system; 8 IMASM corpus engines.
-
-12. Mills, Lando. *priests-engine: Belnap FOUR Paraconsistent Computer.* Python ParaASM VM, 18 opcodes; 25 billion+ paradox cycles without ex falso; `run_B3` Lean theorem: ∀n, (run initialState n).r0 = B.

@@ -1,0 +1,460 @@
+
+<style>
+*{box-sizing:border-box}
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.root{padding:.75rem 0;font-size:14px;color:var(--color-text-primary)}
+.top-tabs{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:.75rem}
+.ttab{padding:5px 14px;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);cursor:pointer;background:transparent;color:var(--color-text-secondary);transition:background .15s}
+.ttab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.tview{display:none}.tview.active{display:block}
+.info{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:9px 12px;margin-top:10px;min-height:56px}
+.info-t{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 3px}
+.info-b{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0}
+.prob-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.pb-wrap{flex:1;height:5px;background:var(--color-background-primary);border-radius:3px;overflow:hidden;border:0.5px solid var(--color-border-tertiary)}
+.pb{height:5px;border-radius:3px;transition:width .35s}
+.pnum{font-size:11px;color:var(--color-text-secondary);min-width:40px;text-align:right;font-family:var(--font-mono)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:.75rem}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:.75rem}
+@media(max-width:480px){.grid2{grid-template-columns:1fr}}
+.crd{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.75rem 1rem}
+.crd-t{font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-primary)}
+.crd-b{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0}
+.scale-badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;margin-bottom:5px}
+.mono{font-family:var(--font-mono);font-size:11px}
+.frustration-bar{margin-top:7px;padding:5px 9px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);font-size:11px;color:var(--color-text-secondary);transition:background .3s}
+.frustration-bar.on{background:var(--color-background-warning);color:var(--color-text-warning);border-color:var(--color-border-warning)}
+</style>
+
+<div class="root">
+<h2 class="sr-only">Inflaton, axion, and Higgs as the same scalar field symmetry-breaking structure instantiated at three energy scales, viewed as logical lattices.</h2>
+
+<div class="top-tabs">
+  <button class="ttab active" onclick="topTab('template')">Shared template</button>
+  <button class="ttab" onclick="topTab('higgs')">Higgs — 246 GeV</button>
+  <button class="ttab" onclick="topTab('axion')">Axion — 10⁹⁺ GeV</button>
+  <button class="ttab" onclick="topTab('inflaton')">Inflaton — 10¹⁶ GeV</button>
+  <button class="ttab" onclick="topTab('compare')">All three</button>
+</div>
+
+<div id="tv-template" class="tview active">
+  <svg width="100%" viewBox="0 0 680 320" role="img">
+    <title>Shared Mexican hat potential structure as a logical lattice</title>
+    <desc>Three-tier lattice: false vacuum at bottom (symmetric point), degenerate ground states as a middle antichain (brim of the hat), and the chosen vacuum at top after symmetry breaking.</desc>
+    <defs><marker id="am" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <g id="tp-top" style="cursor:pointer" onclick="selTemplate('top')">
+      <rect x="255" y="12" width="170" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="340" y="28" text-anchor="middle" dominant-baseline="central" class="th" fill="#2C2C2A">chosen vacuum ⊤</text>
+      <text x="340" y="46" text-anchor="middle" dominant-baseline="central" class="ts" fill="#444441">symmetry broken, VEV ≠ 0, P=1</text>
+    </g>
+
+    <line x1="340" y1="56" x2="220" y2="108" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="300" y2="108" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="340" y2="108" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="380" y2="108" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="460" y2="108" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="tp-m1" style="cursor:pointer" onclick="selTemplate('middle')">
+      <circle cx="220" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="220" y="122" text-anchor="middle" dominant-baseline="central" class="th" fill="#26215C">φ₁</text>
+      <text x="220" y="135" text-anchor="middle" class="ts" fill="#3C3489">degenerate</text>
+    </g>
+    <g id="tp-m2" style="cursor:pointer" onclick="selTemplate('middle')">
+      <circle cx="300" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="300" y="122" text-anchor="middle" dominant-baseline="central" class="th" fill="#26215C">φ₂</text>
+      <text x="300" y="135" text-anchor="middle" class="ts" fill="#3C3489">degenerate</text>
+    </g>
+    <g id="tp-m3" style="cursor:pointer" onclick="selTemplate('middle')">
+      <circle cx="340" cy="118" r="16" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5" stroke-dasharray="3 2"/>
+      <text x="340" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#26215C">…</text>
+    </g>
+    <g id="tp-m4" style="cursor:pointer" onclick="selTemplate('middle')">
+      <circle cx="380" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="380" y="122" text-anchor="middle" dominant-baseline="central" class="th" fill="#26215C">φₙ</text>
+      <text x="380" y="135" text-anchor="middle" class="ts" fill="#3C3489">degenerate</text>
+    </g>
+    <g id="tp-m5" style="cursor:pointer" onclick="selTemplate('middle')">
+      <circle cx="460" cy="126" r="22" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="460" y="122" text-anchor="middle" dominant-baseline="central" class="th" fill="#26215C">φ_N</text>
+      <text x="460" y="135" text-anchor="middle" class="ts" fill="#3C3489">degenerate</text>
+    </g>
+
+    <text x="68" y="112" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">antichain</text>
+    <text x="68" y="126" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">(brim of hat)</text>
+    <text x="68" y="140" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">all P = 0.5</text>
+    <line x1="100" y1="126" x2="194" y2="126" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <line x1="220" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="300" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="380" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="460" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="tp-bot" style="cursor:pointer" onclick="selTemplate('bot')">
+      <rect x="255" y="200" width="170" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="340" y="216" text-anchor="middle" dominant-baseline="central" class="th" fill="#501313">false vacuum ⊥</text>
+      <text x="340" y="234" text-anchor="middle" dominant-baseline="central" class="ts" fill="#791F1F">symmetric point, VEV=0, unstable</text>
+    </g>
+
+    <text x="560" y="26" class="ts" fill="var(--color-text-secondary)">symmetry broken</text>
+    <text x="560" y="42" class="ts" fill="var(--color-text-secondary)">field settled, P=1</text>
+    <text x="560" y="100" class="ts" fill="var(--color-text-secondary)">degenerate ground</text>
+    <text x="560" y="116" class="ts" fill="var(--color-text-secondary)">states — antichain</text>
+    <text x="560" y="132" class="ts" fill="var(--color-text-secondary)">all equal weight</text>
+    <text x="560" y="200" class="ts" fill="var(--color-text-secondary)">unstable symmetric</text>
+    <text x="560" y="216" class="ts" fill="var(--color-text-secondary)">point — maximum</text>
+    <text x="560" y="232" class="ts" fill="var(--color-text-secondary)">frustration, P=0.5</text>
+
+    <text x="340" y="280" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Goldstone theorem: moving along antichain (brim) costs zero energy</text>
+    <text x="340" y="298" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Gauged symmetry: Goldstones eaten by gauge bosons (Higgs mechanism)</text>
+    <text x="340" y="316" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Global symmetry: Goldstones survive as physical particles (axion, inflaton)</text>
+  </svg>
+  <div class="info" id="template-info">
+    <p class="info-t" id="template-t">Click a tier</p>
+    <p class="info-b" id="template-b">All three scalar fields share this lattice structure. What differs between them is the energy scale, the size and topology of the middle antichain, and whether the symmetry is gauged or global.</p>
+    <div class="prob-row" id="template-prob" style="display:none">
+      <span style="font-size:11px;color:var(--color-text-secondary);min-width:16px">P</span>
+      <div class="pb-wrap"><div class="pb" id="template-bar" style="width:50%"></div></div>
+      <span class="pnum" id="template-pnum">0.500</span>
+    </div>
+  </div>
+</div>
+
+<div id="tv-higgs" class="tview">
+  <svg width="100%" viewBox="0 0 680 340" role="img">
+    <title>Higgs field symmetry breaking lattice at 246 GeV</title>
+    <desc>Higgs lattice: chosen vacuum at top, continuous S1 circle of degenerate vacua as middle tier (the four real components reduce to a circle after SU(2) action), false vacuum at bottom.</desc>
+    <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <g id="hg-top" style="cursor:pointer" onclick="selHiggs('top')">
+      <rect x="230" y="12" width="220" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="340" y="28" text-anchor="middle" dominant-baseline="central" class="th" fill="#2C2C2A">chosen vacuum</text>
+      <text x="340" y="46" text-anchor="middle" dominant-baseline="central" class="ts" fill="#444441">v = 246 GeV, SU(2)→U(1)_EM broken</text>
+    </g>
+
+    <ellipse cx="340" cy="148" rx="140" ry="22" fill="none" stroke="#534AB7" stroke-width="1" stroke-dasharray="4 2"/>
+    <g id="hg-circle" style="cursor:pointer" onclick="selHiggs('circle')">
+      <circle cx="340" cy="126" r="20" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="340" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#26215C">S¹</text>
+      <text x="340" y="134" text-anchor="middle" class="ts" fill="#3C3489">continuous brim</text>
+      <circle cx="200" cy="148" r="16" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="200" y="151" text-anchor="middle" dominant-baseline="central" class="ts" fill="#3C3489">φ</text>
+      <circle cx="266" cy="130" r="16" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="266" y="133" text-anchor="middle" dominant-baseline="central" class="ts" fill="#3C3489">φ</text>
+      <circle cx="414" cy="130" r="16" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="414" y="133" text-anchor="middle" dominant-baseline="central" class="ts" fill="#3C3489">φ</text>
+      <circle cx="480" cy="148" r="16" fill="#CECBF6" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="480" y="151" text-anchor="middle" dominant-baseline="central" class="ts" fill="#3C3489">φ</text>
+    </g>
+
+    <line x1="340" y1="56" x2="340" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="170" x2="340" y2="230" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="hg-goldstone" style="cursor:pointer" onclick="selHiggs('goldstone')">
+      <rect x="100" y="190" width="130" height="40" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+      <text x="165" y="206" text-anchor="middle" dominant-baseline="central" class="th" fill="#04342C">W⁺, W⁻, Z</text>
+      <text x="165" y="220" text-anchor="middle" dominant-baseline="central" class="ts" fill="#085041">Goldstones eaten</text>
+    </g>
+    <line x1="200" y1="164" x2="185" y2="190" stroke="#1D9E75" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <g id="hg-higgs-boson" style="cursor:pointer" onclick="selHiggs('boson')">
+      <rect x="450" y="190" width="140" height="40" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="520" y="206" text-anchor="middle" dominant-baseline="central" class="th" fill="#412402">Higgs boson</text>
+      <text x="520" y="220" text-anchor="middle" dominant-baseline="central" class="ts" fill="#633806">radial mode, 125 GeV</text>
+    </g>
+    <line x1="414" y1="146" x2="470" y2="190" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <g id="hg-bot" style="cursor:pointer" onclick="selHiggs('bot')">
+      <rect x="230" y="240" width="220" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="340" y="256" text-anchor="middle" dominant-baseline="central" class="th" fill="#501313">false vacuum ⊥</text>
+      <text x="340" y="274" text-anchor="middle" dominant-baseline="central" class="ts" fill="#791F1F">φ=0, SU(2)×U(1) unbroken</text>
+    </g>
+
+    <text x="340" y="318" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Continuous antichain S¹: uncountably many degenerate vacua. All related by SU(2) rotation.</text>
+  </svg>
+  <div class="info" id="higgs-info">
+    <p class="info-t" id="higgs-t">Click a node</p>
+    <p class="info-b" id="higgs-b">The Higgs middle tier is a continuous circle S¹ — the orbit of the SU(2) symmetry acting on any chosen vacuum. Three of the four Goldstone modes are eaten by W⁺, W⁻, Z (which gain mass). The fourth is the Higgs boson — the radial excitation out of the brim.</p>
+    <div class="prob-row" id="higgs-prob" style="display:none">
+      <span style="font-size:11px;color:var(--color-text-secondary);min-width:16px">P</span>
+      <div class="pb-wrap"><div class="pb" id="higgs-bar" style="width:50%"></div></div>
+      <span class="pnum" id="higgs-pnum">—</span>
+    </div>
+  </div>
+</div>
+
+<div id="tv-axion" class="tview">
+  <svg width="100%" viewBox="0 0 680 340" role="img">
+    <title>Axion field symmetry breaking lattice at Peccei-Quinn scale</title>
+    <desc>Axion lattice: chosen vacuum at top after QCD instanton effects lift the degeneracy, discrete Z_N antichain of degenerate minima in the middle, false vacuum at bottom.</desc>
+    <defs><marker id="ax" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <g id="ax-top" style="cursor:pointer" onclick="selAxion('top')">
+      <rect x="215" y="12" width="250" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="340" y="28" text-anchor="middle" dominant-baseline="central" class="th" fill="#2C2C2A">chosen vacuum</text>
+      <text x="340" y="46" text-anchor="middle" dominant-baseline="central" class="ts" fill="#444441">QCD instanton lifts degeneracy, P=1</text>
+    </g>
+
+    <line x1="340" y1="56" x2="180" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="258" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="340" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="422" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="56" x2="500" y2="106" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="ax-z1" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="180" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text x="180" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#4A1B0C">v₁</text><text x="180" y="134" text-anchor="middle" class="ts" fill="#712B13">k=1</text></g>
+    <g id="ax-z2" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="258" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text x="258" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#4A1B0C">v₂</text><text x="258" y="134" text-anchor="middle" class="ts" fill="#712B13">k=2</text></g>
+    <g id="ax-z3" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="340" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text x="340" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#4A1B0C">v₃</text><text x="340" y="134" text-anchor="middle" class="ts" fill="#712B13">k=3</text></g>
+    <g id="ax-z4" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="422" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text x="422" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#4A1B0C">v₄</text><text x="422" y="134" text-anchor="middle" class="ts" fill="#712B13">k=4</text></g>
+    <g id="ax-zN" style="cursor:pointer" onclick="selAxion('zn')"><circle cx="500" cy="126" r="22" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text x="500" y="121" text-anchor="middle" dominant-baseline="central" class="th" fill="#4A1B0C">vₙ</text><text x="500" y="134" text-anchor="middle" class="ts" fill="#712B13">k=N</text></g>
+
+    <text x="68" y="118" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Z_N</text>
+    <text x="68" y="132" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">discrete</text>
+    <text x="68" y="146" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">antichain</text>
+    <line x1="98" y1="132" x2="154" y2="132" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <line x1="180" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="258" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="422" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="500" y1="148" x2="340" y2="198" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="ax-axion-particle" style="cursor:pointer" onclick="selAxion('particle')">
+      <rect x="90" y="175" width="140" height="40" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="160" y="191" text-anchor="middle" dominant-baseline="central" class="th" fill="#412402">axion field a(x)</text>
+      <text x="160" y="205" text-anchor="middle" dominant-baseline="central" class="ts" fill="#633806">pseudo-Goldstone, survives</text>
+    </g>
+    <line x1="180" y1="148" x2="165" y2="175" stroke="#BA7517" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <g id="ax-domain" style="cursor:pointer" onclick="selAxion('domain')">
+      <rect x="452" y="175" width="140" height="40" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.5"/>
+      <text x="522" y="191" text-anchor="middle" dominant-baseline="central" class="th" fill="#501313">domain walls</text>
+      <text x="522" y="205" text-anchor="middle" dominant-baseline="central" class="ts" fill="#791F1F">boundaries between vₖ</text>
+    </g>
+    <line x1="500" y1="148" x2="510" y2="175" stroke="#A32D2D" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <g id="ax-bot" style="cursor:pointer" onclick="selAxion('bot')">
+      <rect x="215" y="208" width="250" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="340" y="224" text-anchor="middle" dominant-baseline="central" class="th" fill="#501313">false vacuum ⊥</text>
+      <text x="340" y="242" text-anchor="middle" dominant-baseline="central" class="ts" fill="#791F1F">U(1)_PQ unbroken, T &gt; f_a</text>
+    </g>
+
+    <text x="340" y="295" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Discrete antichain Z_N: N degenerate minima, N domain walls between them.</text>
+    <text x="340" y="313" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">QCD instantons at T &lt; Λ_QCD tilt the potential → one minimum preferred → frustration resolved.</text>
+  </svg>
+  <div class="info" id="axion-info">
+    <p class="info-t" id="axion-t">Click a node</p>
+    <p class="info-b" id="axion-b">The axion middle tier is discrete — Z_N degenerate vacua, where N is the color anomaly coefficient. Unlike the Higgs (gauged), the U(1)_PQ symmetry is global, so the Goldstone survives as the physical axion particle. QCD instantons at low temperature add a small tilt that lifts the degeneracy, resolving frustration and giving the axion a tiny mass.</p>
+    <div class="prob-row" id="axion-prob" style="display:none">
+      <span style="font-size:11px;color:var(--color-text-secondary);min-width:16px">P</span>
+      <div class="pb-wrap"><div class="pb" id="axion-bar" style="width:50%"></div></div>
+      <span class="pnum" id="axion-pnum">—</span>
+    </div>
+    <div class="frustration-bar" id="axion-frust">Domain walls: inactive</div>
+  </div>
+</div>
+
+<div id="tv-inflaton" class="tview">
+  <svg width="100%" viewBox="0 0 680 360" role="img">
+    <title>Inflaton field slow-roll lattice at inflation scale</title>
+    <desc>Inflaton lattice: reheating vacuum at top after slow roll, extended slow-roll plateau as a thick middle tier (the field moves slowly across many nearly-degenerate states), steep cliff and false vacuum at bottom.</desc>
+    <defs><marker id="ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+    <g id="inf-top" style="cursor:pointer" onclick="selInflaton('top')">
+      <rect x="200" y="12" width="280" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
+      <text x="340" y="28" text-anchor="middle" dominant-baseline="central" class="th" fill="#2C2C2A">reheating vacuum</text>
+      <text x="340" y="46" text-anchor="middle" dominant-baseline="central" class="ts" fill="#444441">inflation ends, energy dumps to SM particles</text>
+    </g>
+
+    <rect x="150" y="68" width="380" height="130" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="4 2"/>
+    <text x="340" y="86" text-anchor="middle" class="ts" fill="#27500A">slow-roll plateau — ~60 e-folds of near-degeneracy</text>
+
+    <g id="inf-sr1" style="cursor:pointer" onclick="selInflaton('plateau')"><circle cx="195" cy="118" r="18" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text x="195" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#173404">φ_i</text></g>
+    <line x1="213" y1="118" x2="236" y2="118" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="2 2" marker-end="url(#ai)"/>
+    <g id="inf-sr2" style="cursor:pointer" onclick="selInflaton('plateau')"><circle cx="258" cy="118" r="18" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text x="258" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#173404">…</text></g>
+    <line x1="276" y1="118" x2="299" y2="118" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="2 2" marker-end="url(#ai)"/>
+    <g id="inf-sr3" style="cursor:pointer" onclick="selInflaton('plateau')"><circle cx="322" cy="118" r="18" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text x="322" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#173404">…</text></g>
+    <line x1="340" y1="118" x2="363" y2="118" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="2 2" marker-end="url(#ai)"/>
+    <g id="inf-sr4" style="cursor:pointer" onclick="selInflaton('plateau')"><circle cx="386" cy="118" r="18" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text x="386" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#173404">…</text></g>
+    <line x1="404" y1="118" x2="427" y2="118" stroke="#3B6D11" stroke-width="0.5" stroke-dasharray="2 2" marker-end="url(#ai)"/>
+    <g id="inf-srf" style="cursor:pointer" onclick="selInflaton('plateau')"><circle cx="450" cy="118" r="18" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text x="450" y="121" text-anchor="middle" dominant-baseline="central" class="ts" fill="#173404">φ_f</text></g>
+
+    <text x="340" y="160" text-anchor="middle" class="ts" fill="#3B6D11">slow-roll conditions: ε ≪ 1, η ≪ 1 — nearly flat potential</text>
+    <text x="340" y="178" text-anchor="middle" class="ts" fill="#3B6D11">each step ≈ equal potential energy → near-degenerate antichain</text>
+
+    <line x1="340" y1="56" x2="340" y2="68" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="340" y1="198" x2="340" y2="240" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="inf-cliff" style="cursor:pointer" onclick="selInflaton('cliff')">
+      <rect x="200" y="210" width="280" height="36" rx="6" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+      <text x="340" y="224" text-anchor="middle" dominant-baseline="central" class="th" fill="#412402">potential cliff</text>
+      <text x="340" y="238" text-anchor="middle" dominant-baseline="central" class="ts" fill="#633806">slow-roll ends, field accelerates</text>
+    </g>
+    <line x1="340" y1="246" x2="340" y2="268" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <g id="inf-bot" style="cursor:pointer" onclick="selInflaton('bot')">
+      <rect x="200" y="270" width="280" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="1" stroke-dasharray="4 2"/>
+      <text x="340" y="286" text-anchor="middle" dominant-baseline="central" class="th" fill="#501313">false vacuum ⊥</text>
+      <text x="340" y="304" text-anchor="middle" dominant-baseline="central" class="ts" fill="#791F1F">inflaton at Planck/GUT scale, T &gt; T_inflation</text>
+    </g>
+
+    <g id="inf-gw" style="cursor:pointer" onclick="selInflaton('gw')">
+      <rect x="60" y="104" width="70" height="40" rx="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+      <text x="95" y="120" text-anchor="middle" dominant-baseline="central" class="th" fill="#042C53">GW</text>
+      <text x="95" y="134" text-anchor="middle" dominant-baseline="central" class="ts" fill="#0C447C">Goldstones?</text>
+    </g>
+    <line x1="168" y1="118" x2="134" y2="118" stroke="#185FA5" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+    <text x="340" y="342" text-anchor="middle" class="ts" fill="var(--color-text-tertiary)">Extended antichain: slow-roll plateau = many near-degenerate states stepped through sequentially.</text>
+  </svg>
+  <div class="info" id="inflaton-info">
+    <p class="info-t" id="inflaton-t">Click a node</p>
+    <p class="info-b" id="inflaton-b">The inflaton middle tier is the slow-roll plateau — not a simultaneous antichain of equal vacua, but a sequence of near-degenerate states the field traverses slowly. Each e-fold of inflation corresponds to approximately one step across the plateau. The Goldstone question is open: gravitational waves from inflation may be its analogue, but the symmetry (if any) is unknown.</p>
+    <div class="prob-row" id="inflaton-prob" style="display:none">
+      <span style="font-size:11px;color:var(--color-text-secondary);min-width:16px">P</span>
+      <div class="pb-wrap"><div class="pb" id="inflaton-bar" style="width:50%"></div></div>
+      <span class="pnum" id="inflaton-pnum">—</span>
+    </div>
+  </div>
+</div>
+
+<div id="tv-compare" class="tview">
+  <div class="grid3">
+    <div class="crd">
+      <span class="scale-badge" style="background:#EAF3DE;color:#27500A">246 GeV</span>
+      <p class="crd-t">Higgs</p>
+      <p class="crd-b">Middle tier: continuous S¹ (uncountable). Symmetry: SU(2)×U(1) gauged. Goldstones: eaten by W⁺,W⁻,Z (gain mass). Survivor: Higgs boson (radial mode). Frustration resolved by: picking any point on S¹.</p>
+    </div>
+    <div class="crd">
+      <span class="scale-badge" style="background:#FAECE7;color:#712B13">10⁹–10¹² GeV</span>
+      <p class="crd-t">Axion</p>
+      <p class="crd-b">Middle tier: discrete Z_N (finite). Symmetry: U(1)_PQ global. Goldstone: axion survives as physical particle. Byproduct: N domain walls (cosmological problem). Frustration resolved by: QCD instanton tilt at T &lt; Λ_QCD.</p>
+    </div>
+    <div class="crd">
+      <span class="scale-badge" style="background:#E6F1FB;color:#0C447C">~10¹⁶ GeV</span>
+      <p class="crd-t">Inflaton</p>
+      <p class="crd-b">Middle tier: extended plateau (~∞ quasi-degenerate). Symmetry: unknown / shift symmetry. Goldstone: gravitational waves (candidate). Byproduct: ~60 e-folds of expansion. Frustration resolved by: slow-roll ending at the cliff.</p>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:10px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary)">
+    <p style="font-size:12px;font-weight:500;margin:0 0 8px">The shared logical anatomy</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:12px">
+      <div><p style="margin:0 0 3px;color:var(--color-text-secondary)">⊥ false vacuum</p><p class="mono" style="color:var(--color-text-primary)">VEV = 0<br>full symmetry<br>P = 0.5<br>unstable</p></div>
+      <div><p style="margin:0 0 3px;color:var(--color-text-secondary)">middle antichain</p><p class="mono" style="color:var(--color-text-primary)">VEV ≠ 0<br>symmetry broken<br>P = 0.5 (degenerate)<br>Goldstones live here</p></div>
+      <div><p style="margin:0 0 3px;color:var(--color-text-secondary)">⊤ chosen vacuum</p><p class="mono" style="color:var(--color-text-primary)">one VEV selected<br>symmetry fully broken<br>P = 1<br>frustration resolved</p></div>
+    </div>
+    <p style="font-size:11px;color:var(--color-text-tertiary);margin:8px 0 0">Key difference: the topology and cardinality of the middle tier. S¹ (continuous) → Higgs. Z_N (discrete, finite) → axion. Plateau (sequential, quasi-continuous) → inflaton. The Goldstone theorem says modes along the antichain are massless — what breaks this determines the particle spectrum.</p>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="crd">
+      <p class="crd-t">Why Goldstones differ</p>
+      <p class="crd-b">Gauged symmetry (Higgs): the gauge field can "absorb" the direction along the antichain — the Goldstone becomes the longitudinal polarisation of the massive gauge boson. Global symmetry (axion, inflaton): no gauge field to absorb it, so the Goldstone propagates as a real particle.</p>
+    </div>
+    <div class="crd">
+      <p class="crd-t">Frustration resolution mechanism</p>
+      <p class="crd-b">Higgs: spontaneous — the field just falls. Axion: dynamical — QCD instantons at T &lt; Λ_QCD tilt the potential and pick a winner. Inflaton: kinematic — slow-roll conditions eventually fail and the field accelerates off the plateau. Three physically distinct mechanisms, one logical structure.</p>
+    </div>
+  </div>
+  <button style="margin-top:1rem;font-size:13px" onclick="sendPrompt('What about the Peccei-Quinn mechanism in more detail — how exactly do QCD instantons resolve the axion frustration, and what does this imply for dark matter?')">Peccei-Quinn mechanism + dark matter ↗</button>
+</div>
+
+</div>
+
+<script>
+function topTab(id){
+  const ids=['template','higgs','axion','inflaton','compare'];
+  document.querySelectorAll('.ttab').forEach((b,i)=>b.classList.toggle('active',ids[i]===id));
+  document.querySelectorAll('.tview').forEach(v=>v.classList.remove('active'));
+  document.getElementById('tv-'+id).classList.add('active');
+}
+
+const templateData={
+  top:{t:'Chosen vacuum ⊤',b:'Symmetry broken, one VEV selected from the degenerate circle. P=1. This is the state we observe — the field has committed.',p:1,c:'#5F5E5A'},
+  middle:{t:'Degenerate ground states (antichain)',b:'All equally valid vacua. P=0.5 — equal evidence for any one. Moving along this tier costs zero energy (Goldstone theorem). The Goldstone boson is the quantum of this motion.',p:0.5,c:'#534AB7'},
+  bot:{t:'False vacuum ⊥',b:'The symmetric point φ=0. Unstable — any perturbation sends the field toward the brim. P=0.5 but in a different sense: maximum symmetry means maximum ignorance about which vacuum will be chosen.',p:0.5,c:'#A32D2D'},
+};
+function selTemplate(k){
+  ['tp-top','tp-m1','tp-m2','tp-m3','tp-m4','tp-m5','tp-bot'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.style.opacity='0.35';
+  });
+  if(k==='top') document.getElementById('tp-top').style.opacity='1';
+  else if(k==='middle') ['tp-m1','tp-m2','tp-m3','tp-m4','tp-m5'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.opacity='1'; });
+  else if(k==='bot') document.getElementById('tp-bot').style.opacity='1';
+  const d=templateData[k];
+  document.getElementById('template-t').textContent=d.t;
+  document.getElementById('template-b').textContent=d.b;
+  const pd=document.getElementById('template-prob'); pd.style.display='block';
+  const bar=document.getElementById('template-bar'); const pn=document.getElementById('template-pnum');
+  bar.style.width=(d.p*100)+'%'; bar.style.background=d.c; pn.textContent=d.p.toFixed(3);
+}
+
+const higgsData={
+  top:{t:'Chosen vacuum — v=246 GeV',b:'The Higgs field has settled. SU(2)×U(1) broken to U(1)_EM. W and Z are massive. This is the vacuum we live in. P=1.',p:1,c:'#5F5E5A'},
+  circle:{t:'S¹ — continuous degenerate brim',b:'The orbit of the unbroken SU(2) acting on the chosen vacuum. Uncountably many equally valid vacua, all related by symmetry. The field picks one arbitrarily — that\'s spontaneous symmetry breaking.',p:0.5,c:'#534AB7'},
+  goldstone:{t:'W⁺, W⁻, Z — eaten Goldstones',b:'Because the symmetry is gauged, the three Goldstone modes (along the S¹) are absorbed by the W and Z bosons, giving them longitudinal polarisation and mass. This is the Higgs mechanism. P for these modes: undefined after eating.',p:null,c:'#0F6E56'},
+  boson:{t:'Higgs boson — radial mode, 125 GeV',b:'Not a Goldstone — this is the excitation in the radial direction (toward/away from the brim). It has a mass because moving radially does cost energy. Discovered at LHC in 2012. P=0.5 (equally likely to be excited or not).',p:0.5,c:'#854F0B'},
+  bot:{t:'False vacuum ⊥ — φ=0',b:'The symmetric point. SU(2)×U(1) fully unbroken. Unstable at T below the electroweak transition (~100 GeV). The electroweak phase transition is the field falling from here to the brim.',p:0,c:'#A32D2D'},
+};
+function selHiggs(k){
+  ['hg-top','hg-circle','hg-goldstone','hg-higgs-boson','hg-bot'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='0.35';});
+  const el=document.getElementById('hg-'+k); if(el)el.style.opacity='1';
+  else if(k==='circle') document.getElementById('hg-circle').style.opacity='1';
+  const d=higgsData[k];
+  if(!d)return;
+  document.getElementById('higgs-t').textContent=d.t;
+  document.getElementById('higgs-b').textContent=d.b;
+  const pd=document.getElementById('higgs-prob'); pd.style.display='block';
+  const bar=document.getElementById('higgs-bar'); const pn=document.getElementById('higgs-pnum');
+  if(d.p===null){bar.style.width='0%';bar.style.background='#888780';pn.textContent='eaten';}
+  else{bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);}
+}
+
+const axionData={
+  top:{t:'Chosen vacuum — QCD selects one',b:'QCD instantons at T < Λ_QCD (~200 MeV) add a periodic tilt to the potential. The degeneracy of Z_N is broken: one vacuum is slightly lower than the others. The axion acquires a tiny mass ~ m_π f_π / f_a. P=1.',p:1,c:'#5F5E5A'},
+  zn:{t:'Z_N discrete antichain — N degenerate minima',b:'N vacua equally spaced around the field\'s circle, related by the discrete Z_N subgroup of U(1)_PQ. N is the color anomaly coefficient of the Peccei-Quinn symmetry. The axion field a(x) parameterises motion between them. P=0.5 before QCD tilt.',p:0.5,c:'#993C1D'},
+  particle:{t:'Axion a(x) — pseudo-Goldstone boson',b:'The Goldstone of the global U(1)_PQ symmetry. Global symmetry means no gauge boson to eat it — it survives as a real particle. Mass ~ 10⁻⁵–10⁻³ eV (model-dependent). Strong dark matter candidate.',p:0.5,c:'#854F0B'},
+  domain:{t:'Domain walls — boundaries between vₖ',b:'If N>1, regions of the universe settle into different vₖ vacua. The boundaries between them are domain walls — topological defects with energy density proportional to f_a³. For N>1 these overclose the universe (the "domain wall problem") — constraining axion models.',p:null,c:'#A32D2D'},
+  bot:{t:'False vacuum ⊥ — T > f_a',b:'Above the Peccei-Quinn scale f_a, the U(1)_PQ symmetry is unbroken. The axion field doesn\'t exist yet. When the universe cools below f_a, the symmetry breaks and the N degenerate vacua appear.',p:0,c:'#A32D2D'},
+};
+function selAxion(k){
+  ['ax-top','ax-z1','ax-z2','ax-z3','ax-z4','ax-zN','ax-axion-particle','ax-domain','ax-bot'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='0.35';});
+  if(k==='top') document.getElementById('ax-top').style.opacity='1';
+  else if(k==='zn') ['ax-z1','ax-z2','ax-z3','ax-z4','ax-zN'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='1';});
+  else if(k==='particle') document.getElementById('ax-axion-particle').style.opacity='1';
+  else if(k==='domain') document.getElementById('ax-domain').style.opacity='1';
+  else if(k==='bot') document.getElementById('ax-bot').style.opacity='1';
+  const d=axionData[k]; if(!d)return;
+  document.getElementById('axion-t').textContent=d.t;
+  document.getElementById('axion-b').textContent=d.b;
+  document.getElementById('axion-prob').style.display='block';
+  const bar=document.getElementById('axion-bar'); const pn=document.getElementById('axion-pnum');
+  if(d.p===null){bar.style.width='0%';bar.style.background='#888780';pn.textContent='walls';}
+  else{bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);}
+  const fl=document.getElementById('axion-frust');
+  if(k==='domain'){fl.textContent='Domain walls active — N-1 topological defects between Z_N vacua. Cosmological hazard for N>1.';fl.classList.add('on');}
+  else if(k==='zn'){fl.textContent='Frustration active — Z_N antichain: N equally valid vacua, no preferred minimum before QCD tilt.';fl.classList.add('on');}
+  else{fl.textContent='Frustration resolved — '+((k==='top')?'QCD instantons selected the true minimum.':'false vacuum, symmetry not yet broken.');fl.classList.remove('on');}
+}
+
+const inflatonData={
+  top:{t:'Reheating vacuum — inflation ends',b:'The inflaton reaches the bottom of the potential, oscillates, and decays into Standard Model particles — reheating the universe. The Big Bang hot plasma is created here. P=1.',p:1,c:'#5F5E5A'},
+  plateau:{t:'Slow-roll plateau — ~60 e-folds',b:'The inflaton moves slowly across a nearly flat potential. Slow-roll conditions ε = (V\'/V)²/2 ≪ 1 and η = V\'\'/V ≪ 1. Each Hubble time the field moves a tiny bit — the universe doubles in size. ~60 e-folds needed to solve the horizon and flatness problems.',p:0.5,c:'#3B6D11'},
+  cliff:{t:'Potential cliff — end of slow-roll',b:'The plateau ends and the potential steepens. Slow-roll conditions break. The inflaton accelerates, oscillates at the bottom, and decays. The transition from plateau to cliff is where inflation ends.',p:0.3,c:'#854F0B'},
+  gw:{t:'Gravitational waves — inflaton\'s Goldstone?',b:'The tensor perturbations produced during inflation are sometimes interpreted as the Goldstone modes of the broken shift symmetry φ → φ + c. If detected (via CMB B-mode polarisation), their amplitude encodes the height of the plateau — a direct probe of the lattice\'s middle tier energy.',p:0.5,c:'#185FA5'},
+  bot:{t:'False vacuum ⊥ — pre-inflationary state',b:'The inflaton at the top of its potential. The universe is in a de Sitter phase — exponentially expanding but not yet reheated. In eternal inflation models, some regions remain here forever. P=0.',p:0,c:'#A32D2D'},
+};
+function selInflaton(k){
+  ['inf-top','inf-sr1','inf-sr2','inf-sr3','inf-sr4','inf-srf','inf-cliff','inf-gw','inf-bot'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='0.35';});
+  if(k==='top') document.getElementById('inf-top').style.opacity='1';
+  else if(k==='plateau') ['inf-sr1','inf-sr2','inf-sr3','inf-sr4','inf-srf'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='1';});
+  else if(k==='cliff') document.getElementById('inf-cliff').style.opacity='1';
+  else if(k==='gw') document.getElementById('inf-gw').style.opacity='1';
+  else if(k==='bot') document.getElementById('inf-bot').style.opacity='1';
+  const d=inflatonData[k]; if(!d)return;
+  document.getElementById('inflaton-t').textContent=d.t;
+  document.getElementById('inflaton-b').textContent=d.b;
+  document.getElementById('inflaton-prob').style.display='block';
+  const bar=document.getElementById('inflaton-bar'); const pn=document.getElementById('inflaton-pnum');
+  bar.style.width=(d.p*100)+'%'; bar.style.background=d.c; pn.textContent=d.p.toFixed(3);
+}
+</script>

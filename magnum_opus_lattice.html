@@ -1,0 +1,843 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0906;
+  --parchment:#f5eed8;
+  --gold:#c8960a;
+  --gold-dim:#7a5c06;
+  --gold-pale:#e8c84a;
+  --gold-bg:#1a1408;
+  --ash:#4a453c;
+  --ash-pale:#7a7268;
+  --ash-light:#b4ac98;
+  --crimson:#8b1a1a;
+  --crimson-pale:#c44040;
+  --smoke:#1e1a12;
+  --smoke2:#261f14;
+  --smoke3:#2e2618;
+  --border:#3a3020;
+  --border-gold:#5a4510;
+  --font-old:'IM Fell English', Georgia, serif;
+}
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.root{background:var(--ink);color:var(--parchment);padding:.75rem 0;font-family:var(--font-old);font-size:14px;min-height:100px}
+.top-tabs{display:flex;gap:5px;margin-bottom:1rem;flex-wrap:wrap;border-bottom:0.5px solid var(--border-gold);padding-bottom:.75rem}
+.ttab{padding:4px 13px;font-size:12px;font-family:var(--font-old);border:0.5px solid var(--border);border-radius:2px;cursor:pointer;background:transparent;color:var(--ash-light);letter-spacing:.04em;transition:background .15s,color .15s}
+.ttab.active{background:var(--gold-bg);color:var(--gold-pale);border-color:var(--gold-dim)}
+.ttab:hover{color:var(--parchment);border-color:var(--ash)}
+.tview{display:none}.tview.active{display:block}
+.sub-tabs{display:flex;gap:4px;margin-bottom:.75rem;flex-wrap:wrap}
+.stab{padding:3px 9px;font-size:11px;font-family:var(--font-old);border:0.5px solid var(--border);border-radius:2px;cursor:pointer;background:transparent;color:var(--ash-pale);letter-spacing:.03em}
+.stab.active{background:var(--smoke2);color:var(--ash-light);border-color:var(--ash)}
+.sview{display:none}.sview.active{display:block}
+.info{background:var(--smoke2);border:0.5px solid var(--border-gold);border-radius:2px;padding:9px 12px;margin-top:10px;min-height:52px}
+.info-t{font-size:12px;font-weight:400;color:var(--gold-pale);font-family:var(--font-old);margin:0 0 3px;font-style:italic}
+.info-b{font-size:12px;color:var(--ash-light);line-height:1.65;margin:0;font-family:var(--font-old)}
+.prob-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.pb-wrap{flex:1;height:3px;background:var(--smoke3);border-radius:0;overflow:hidden;border:none}
+.pb{height:3px;border-radius:0;transition:width .35s}
+.pnum{font-size:11px;color:var(--ash-pale);min-width:40px;text-align:right;font-family:monospace}
+.frust{margin-top:7px;padding:5px 9px;border-radius:2px;border:0.5px solid var(--border);font-size:11px;color:var(--ash-pale);font-family:var(--font-old);letter-spacing:.02em;transition:background .3s}
+.frust.on{background:#1a0808;color:var(--crimson-pale);border-color:var(--crimson)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.75rem}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:.75rem}
+@media(max-width:540px){.grid2,.grid3{grid-template-columns:1fr}}
+.crd{background:var(--smoke2);border:0.5px solid var(--border);border-radius:2px;padding:.65rem .9rem}
+.crd-t{font-size:12px;font-weight:400;font-style:italic;margin:0 0 4px;color:var(--gold-pale);font-family:var(--font-old)}
+.crd-b{font-size:11px;color:var(--ash-light);line-height:1.6;margin:0;font-family:var(--font-old)}
+.scale-badge{display:inline-block;font-size:10px;padding:1px 6px;border:0.5px solid var(--border-gold);border-radius:2px;margin-bottom:4px;color:var(--gold-dim);font-family:monospace}
+.mono{font-family:monospace;font-size:11px}
+.sl-row{display:flex;align-items:center;gap:8px;margin:.4rem 0}
+.sl-row label{font-size:12px;color:var(--ash-pale);min-width:60px;font-family:var(--font-old)}
+.sl-row input[type=range]{flex:1;accent-color:var(--gold)}
+.sl-row span{font-size:12px;color:var(--gold-pale);min-width:36px;text-align:right;font-family:monospace}
+.op-btn{font-size:12px;font-family:var(--font-old);border:0.5px solid var(--border-gold);border-radius:2px;padding:5px 14px;background:transparent;color:var(--gold-dim);cursor:pointer;letter-spacing:.04em;margin-top:1rem}
+.op-btn:hover{background:var(--gold-bg);color:var(--gold-pale)}
+.divider{border:none;border-top:0.5px solid var(--border);margin:.75rem 0}
+</style>
+
+<div class="root">
+<h2 class="sr-only">Magnum Opus lattice explorer — Belnap bilattice, electron FOUR-logic, quark FIVE-logic, gluon TEN-logic, SU(2) weak bosons, U(1) photon, electroweak mixing, scalar field symmetry breaking, and fermion generations — full Standard Model gauge hierarchy in an alchemical aesthetic.</h2>
+
+<div class="top-tabs">
+  <button class="ttab active" onclick="T('bil')">⊙ bilattice</button>
+  <button class="ttab" onclick="T('four')">FOUR · electrons</button>
+  <button class="ttab" onclick="T('five')">FIVE · quarks</button>
+  <button class="ttab" onclick="T('ten')">TEN · gluons</button>
+  <button class="ttab" onclick="T('weak')">FIVE · weak</button>
+  <button class="ttab" onclick="T('photon')">TWO · photon</button>
+  <button class="ttab" onclick="T('ew')">EW mixing</button>
+  <button class="ttab" onclick="T('scalar')">scalar fields</button>
+  <button class="ttab" onclick="T('gen')">generations</button>
+  <button class="ttab" onclick="T('opus')">opus</button>
+</div>
+
+<div id="tv-bil" class="tview active">
+  <div class="sub-tabs">
+    <button class="stab active" onclick="S('bil','sq')">square</button>
+    <button class="stab" onclick="S('bil','norm')">normalisation</button>
+  </div>
+  <div id="bil-sq" class="sview active">
+    <svg width="100%" viewBox="0 0 680 270" role="img" style="display:block">
+      <title>Belnap FOUR as unit square — alchemical palette</title>
+      <desc>Four truth values at corners of a square on black ground. N bottom-left, T top-left, F bottom-right, B top-right.</desc>
+      <rect width="680" height="270" fill="#0a0906"/>
+      <line x1="200" y1="220" x2="390" y2="220" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="200" y1="55"  x2="390" y2="55"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="192" y1="212" x2="192" y2="63"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="398" y1="212" x2="398" y2="63"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <rect x="160" y="44" width="246" height="186" rx="2" fill="none" stroke="#2e2618" stroke-width="0.5" stroke-dasharray="4 3"/>
+      <g style="cursor:pointer" onclick="bilClick('N')">
+        <circle cx="192" cy="220" r="26" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+        <text x="192" y="215" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="14" font-weight="400">N</text>
+        <text x="192" y="230" text-anchor="middle" fill="#4a453c" font-family="monospace" font-size="10">⟨0,0⟩</text>
+      </g>
+      <g style="cursor:pointer" onclick="bilClick('T')">
+        <circle cx="192" cy="55"  r="26" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/>
+        <text x="192" y="50"  text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="14" font-weight="400">T</text>
+        <text x="192" y="64"  text-anchor="middle" fill="#7a5c06" font-family="monospace" font-size="10">⟨1,0⟩</text>
+      </g>
+      <g style="cursor:pointer" onclick="bilClick('F')">
+        <circle cx="398" cy="220" r="26" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/>
+        <text x="398" y="215" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="14" font-weight="400">F</text>
+        <text x="398" y="230" text-anchor="middle" fill="#6b1414" font-family="monospace" font-size="10">⟨0,1⟩</text>
+      </g>
+      <g style="cursor:pointer" onclick="bilClick('B')">
+        <circle cx="398" cy="55"  r="26" fill="#141008" stroke="#c8960a" stroke-width="0.7"/>
+        <text x="398" y="50"  text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="14" font-weight="400">B</text>
+        <text x="398" y="64"  text-anchor="middle" fill="#7a5c06" font-family="monospace" font-size="10">⟨1,1⟩</text>
+      </g>
+      <text x="120" y="224" text-anchor="end" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="11">Neither ⊥</text>
+      <text x="120" y="59"  text-anchor="end" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="11">True</text>
+      <text x="436" y="224" fill="#6b1414" font-family="'IM Fell English',Georgia,serif" font-size="11">False</text>
+      <text x="436" y="59"  fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="11">Both ⊤</text>
+      <text x="490" y="60"  fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">knowledge ⊑k</text>
+      <line x1="490" y1="80" x2="520" y2="80" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 2"/>
+      <text x="490" y="100" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">truth ⊑t</text>
+      <line x1="490" y1="115" x2="490" y2="145" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 2"/>
+    </svg>
+    <div class="info" id="bil-sq-info">
+      <p class="info-t" id="bil-sq-t">Click a node — the prima materia awaits</p>
+      <p class="info-b" id="bil-sq-b">Each truth value is a point ⟨t,f⟩ ∈ {0,1}². Two orderings: knowledge (how much evidence), truth (which direction). The bilattice is the crystal through which all illuminations pass.</p>
+    </div>
+  </div>
+  <div id="bil-norm" class="sview">
+    <div class="sl-row"><label>t — true</label><input type="range" min="0" max="100" value="70" step="1" id="sl-t" oninput="updateNorm()"><span id="lbl-t">0.70</span></div>
+    <div class="sl-row"><label>f — false</label><input type="range" min="0" max="100" value="30" step="1" id="sl-f" oninput="updateNorm()"><span id="lbl-f">0.30</span></div>
+    <div class="info" style="margin-top:.75rem">
+      <p class="info-t" id="norm-lbl">P = t / (t + f)</p>
+      <div style="font-size:28px;font-weight:400;color:#e8c84a;font-family:'IM Fell English',Georgia,serif;margin:.2rem 0" id="norm-result">0.700</div>
+      <div class="prob-row"><span style="font-size:11px;color:#4a453c;min-width:16px">P</span><div class="pb-wrap"><div class="pb" id="norm-bar" style="width:70%;background:#c8960a"></div></div><span class="pnum" id="norm-pnum">0.700</span></div>
+      <p class="info-b" id="norm-interp" style="margin-top:6px">Leans toward truth — positive evidence dominates.</p>
+    </div>
+  </div>
+</div>
+
+<div id="tv-four" class="tview">
+  <svg width="100%" viewBox="0 0 680 260" role="img" style="display:block">
+    <title>Electron orbital FOUR lattice — alchemical palette</title>
+    <desc>Square lattice of four electron orbital states on black ground.</desc>
+    <rect width="680" height="260" fill="#0a0906"/>
+    <line x1="215" y1="205" x2="385" y2="205" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="215" y1="55"  x2="385" y2="55"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="207" y1="197" x2="207" y2="63"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="393" y1="197" x2="393" y2="63"  stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <g id="f4N" style="cursor:pointer" onclick="sel4('N')">
+      <circle cx="207" cy="205" r="25" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+      <text x="207" y="200" text-anchor="middle" dominant-baseline="central" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="14">∅</text>
+      <text x="207" y="214" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">empty</text>
+    </g>
+    <g id="f4T" style="cursor:pointer" onclick="sel4('T')">
+      <circle cx="207" cy="55"  r="25" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/>
+      <text x="207" y="50"  text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="16">↑</text>
+      <text x="207" y="66"  text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">spin-up</text>
+    </g>
+    <g id="f4F" style="cursor:pointer" onclick="sel4('F')">
+      <circle cx="393" cy="205" r="25" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/>
+      <text x="393" y="200" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="16">↓</text>
+      <text x="393" y="214" text-anchor="middle" fill="#6b1414" font-family="'IM Fell English',Georgia,serif" font-size="10">spin-down</text>
+    </g>
+    <g id="f4B" style="cursor:pointer" onclick="sel4('B')">
+      <circle cx="393" cy="55"  r="25" fill="#141008" stroke="#c8960a" stroke-width="0.7"/>
+      <text x="393" y="50"  text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="14">↑↓</text>
+      <text x="393" y="66"  text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">paired</text>
+    </g>
+    <text x="460" y="60"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">Pauli ceiling — paired ⊤</text>
+    <text x="460" y="110" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">Hund: half-fill before pairing</text>
+    <text x="460" y="165" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">Empty = bottom ⊥</text>
+    <text x="460" y="182" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">P undefined — no evidence</text>
+  </svg>
+  <div class="info" id="four-info">
+    <p class="info-t" id="four-t">Click a node</p>
+    <p class="info-b" id="four-b">Four occupancy states. Information ordering: how many electrons. Truth ordering: net spin direction. Hund's rule is the bilattice's preference for T or F before accepting B.</p>
+    <div id="four-prob" style="display:none">
+      <div class="prob-row"><span style="font-size:11px;color:#4a453c;min-width:16px">P</span><div class="pb-wrap"><div class="pb" id="four-bar" style="width:0%"></div></div><span class="pnum" id="four-pnum">—</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="tv-five" class="tview">
+  <svg width="100%" viewBox="0 0 680 270" role="img" style="display:block">
+    <title>Quark colour FIVE lattice — alchemical palette</title>
+    <desc>Pentagon lattice on black ground. W colorless at top, A anti-color at bottom, R G B as antichain in middle.</desc>
+    <rect width="680" height="270" fill="#0a0906"/>
+    <line x1="300" y1="48" x2="218" y2="145" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="300" y1="48" x2="300" y2="145" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="300" y1="48" x2="382" y2="145" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="218" y1="145" x2="300" y2="228" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="300" y1="145" x2="300" y2="228" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="382" y1="145" x2="300" y2="228" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line id="fr-RG" x1="218" y1="145" x2="300" y2="145" stroke="#8b1a1a" stroke-width="1" stroke-dasharray="2 2" opacity="0"/>
+    <line id="fr-GB" x1="300" y1="145" x2="382" y2="145" stroke="#8b1a1a" stroke-width="1" stroke-dasharray="2 2" opacity="0"/>
+    <line id="fr-RB" x1="218" y1="145" x2="382" y2="145" stroke="#8b1a1a" stroke-width="1" stroke-dasharray="2 2" opacity="0"/>
+    <g id="f5W" style="cursor:pointer" onclick="sel5('W')">
+      <circle cx="300" cy="40" r="23" fill="#1a1408" stroke="#c8960a" stroke-width="0.7"/>
+      <text x="300" y="35" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="13">W</text>
+      <text x="300" y="49" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">colorless</text>
+    </g>
+    <g id="f5R" style="cursor:pointer" onclick="sel5('R')">
+      <circle cx="218" cy="145" r="23" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/>
+      <text x="218" y="140" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="13">R</text>
+      <text x="218" y="154" text-anchor="middle" fill="#6b1414" font-family="'IM Fell English',Georgia,serif" font-size="10">red</text>
+    </g>
+    <g id="f5G" style="cursor:pointer" onclick="sel5('G')">
+      <circle cx="300" cy="145" r="23" fill="#0e1408" stroke="#2d5010" stroke-width="0.5"/>
+      <text x="300" y="140" text-anchor="middle" dominant-baseline="central" fill="#6aaa30" font-family="'IM Fell English',Georgia,serif" font-size="13">G</text>
+      <text x="300" y="154" text-anchor="middle" fill="#3d7018" font-family="'IM Fell English',Georgia,serif" font-size="10">green</text>
+    </g>
+    <g id="f5B" style="cursor:pointer" onclick="sel5('B')">
+      <circle cx="382" cy="145" r="23" fill="#080e1a" stroke="#1a3d7a" stroke-width="0.5"/>
+      <text x="382" y="140" text-anchor="middle" dominant-baseline="central" fill="#4080d0" font-family="'IM Fell English',Georgia,serif" font-size="13">B</text>
+      <text x="382" y="154" text-anchor="middle" fill="#1a4888" font-family="'IM Fell English',Georgia,serif" font-size="10">blue</text>
+    </g>
+    <g id="f5A" style="cursor:pointer" onclick="sel5('A')">
+      <circle cx="300" cy="228" r="23" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+      <text x="300" y="223" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="13">A</text>
+      <text x="300" y="237" text-anchor="middle" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="10">anti-color</text>
+    </g>
+    <text x="460" y="44"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">Confinement goal: W ⊤</text>
+    <text x="460" y="110" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">{R,G,B} = antichain</text>
+    <text x="460" y="148" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">frustration is structural</text>
+    <text x="460" y="220" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">A = anti-color ⊥</text>
+  </svg>
+  <div class="info" id="five-info">
+    <p class="info-t" id="five-t">Click a node</p>
+    <p class="info-b" id="five-b">Three colour charges form a frustrated antichain — no consistent total order. Confinement forces collapse to the colorless top. Frustration is resolved by the Work, not by choice.</p>
+    <div id="five-prob" style="display:none">
+      <div class="prob-row"><span style="font-size:11px;color:#4a453c;min-width:16px">P</span><div class="pb-wrap"><div class="pb" id="five-bar" style="width:50%"></div></div><span class="pnum" id="five-pnum">—</span></div>
+    </div>
+    <div class="frust" id="frust-lbl">Frustration: dormant</div>
+  </div>
+</div>
+
+<div id="tv-ten" class="tview">
+  <div class="sub-tabs">
+    <button class="stab active" onclick="S('ten','decomp')">3×3 decomposition</button>
+    <button class="stab" onclick="S('ten','lattice')">TEN lattice</button>
+  </div>
+  <div id="ten-decomp" class="sview active">
+    <svg width="100%" viewBox="0 0 680 230" role="img" style="display:block">
+      <title>3×3 colour-anticolour decomposition — alchemical palette</title>
+      <desc>Nine raw colour pairs on black, decomposing via SU(3) into singlet, diagonal, and off-diagonal gluons.</desc>
+      <rect width="680" height="230" fill="#0a0906"/>
+      <g id="dc-RRb" style="cursor:pointer" onclick="selDc('RRb')"><rect x="28" y="38" width="48" height="32" rx="2" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/><text x="52" y="54" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="13">RR̄</text></g>
+      <g id="dc-RGb" style="cursor:pointer" onclick="selDc('RGb')"><rect x="82" y="38" width="48" height="32" rx="2" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/><text x="106" y="54" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="13">RḠ</text></g>
+      <g id="dc-RBb" style="cursor:pointer" onclick="selDc('RBb')"><rect x="136" y="38" width="48" height="32" rx="2" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/><text x="160" y="54" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="13">RB̄</text></g>
+      <g id="dc-GRb" style="cursor:pointer" onclick="selDc('GRb')"><rect x="28" y="76" width="48" height="32" rx="2" fill="#0e1408" stroke="#2d5010" stroke-width="0.5"/><text x="52" y="92" text-anchor="middle" dominant-baseline="central" fill="#6aaa30" font-family="'IM Fell English',Georgia,serif" font-size="13">GR̄</text></g>
+      <g id="dc-GGb" style="cursor:pointer" onclick="selDc('GGb')"><rect x="82" y="76" width="48" height="32" rx="2" fill="#0e1408" stroke="#2d5010" stroke-width="0.5"/><text x="106" y="92" text-anchor="middle" dominant-baseline="central" fill="#6aaa30" font-family="'IM Fell English',Georgia,serif" font-size="13">GḠ</text></g>
+      <g id="dc-GBb" style="cursor:pointer" onclick="selDc('GBb')"><rect x="136" y="76" width="48" height="32" rx="2" fill="#0e1408" stroke="#2d5010" stroke-width="0.5"/><text x="160" y="92" text-anchor="middle" dominant-baseline="central" fill="#6aaa30" font-family="'IM Fell English',Georgia,serif" font-size="13">GB̄</text></g>
+      <g id="dc-BRb" style="cursor:pointer" onclick="selDc('BRb')"><rect x="28" y="114" width="48" height="32" rx="2" fill="#080e1a" stroke="#1a3d7a" stroke-width="0.5"/><text x="52" y="130" text-anchor="middle" dominant-baseline="central" fill="#4080d0" font-family="'IM Fell English',Georgia,serif" font-size="13">BR̄</text></g>
+      <g id="dc-BGb" style="cursor:pointer" onclick="selDc('BGb')"><rect x="82" y="114" width="48" height="32" rx="2" fill="#080e1a" stroke="#1a3d7a" stroke-width="0.5"/><text x="106" y="130" text-anchor="middle" dominant-baseline="central" fill="#4080d0" font-family="'IM Fell English',Georgia,serif" font-size="13">BḠ</text></g>
+      <g id="dc-BBb" style="cursor:pointer" onclick="selDc('BBb')"><rect x="136" y="114" width="48" height="32" rx="2" fill="#080e1a" stroke="#1a3d7a" stroke-width="0.5"/><text x="160" y="130" text-anchor="middle" dominant-baseline="central" fill="#4080d0" font-family="'IM Fell English',Georgia,serif" font-size="13">BB̄</text></g>
+      <path d="M198 92 L228 92" fill="none" stroke="#5a4510" stroke-width="0.5"/>
+      <text x="213" y="85" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">SU(3)</text>
+      <g id="dc-singlet" style="cursor:pointer" onclick="selDc('singlet')"><rect x="238" y="30" width="108" height="38" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5" stroke-dasharray="4 2"/><text x="292" y="46" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₀ singlet</text><text x="292" y="60" text-anchor="middle" dominant-baseline="central" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="10">colorless, excluded</text></g>
+      <g id="dc-diag" style="cursor:pointer" onclick="selDc('diag')"><rect x="238" y="80" width="108" height="38" rx="2" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/><text x="292" y="96" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₃, λ₈</text><text x="292" y="110" text-anchor="middle" dominant-baseline="central" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">diagonal gluons</text></g>
+      <g id="dc-offdiag" style="cursor:pointer" onclick="selDc('offdiag')"><rect x="238" y="130" width="108" height="38" rx="2" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="292" y="146" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₁–λ₂, λ₄–λ₇</text><text x="292" y="160" text-anchor="middle" dominant-baseline="central" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="10">off-diagonal (6)</text></g>
+      <rect x="362" y="60" width="298" height="140" rx="2" fill="none" stroke="#2e2618" stroke-width="0.5" stroke-dasharray="3 2"/>
+      <text x="511" y="78"  text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10" font-style="italic">Gell-Mann basis</text>
+      <text x="372" y="100" fill="#4a453c" font-family="monospace" font-size="10">λ₃ = (RR̄ − GḠ) / √2</text>
+      <text x="372" y="118" fill="#4a453c" font-family="monospace" font-size="10">λ₈ = (RR̄+GḠ−2BB̄) / √6</text>
+      <text x="372" y="138" fill="#4a453c" font-family="monospace" font-size="10">λ₁ = (RḠ + GR̄) / √2</text>
+      <text x="372" y="156" fill="#4a453c" font-family="monospace" font-size="10">λ₂ = (RḠ − GR̄) / i√2</text>
+      <text x="372" y="175" fill="#4a453c" font-family="monospace" font-size="10">λ₄–λ₇: R↔B, G↔B pairs</text>
+    </svg>
+    <div class="info" id="dc-info"><p class="info-t" id="dc-t">Click a node</p><p class="info-b" id="dc-b">Nine raw colour-anticolour pairs decompose into 8 physical gluons + 1 excluded singlet. The singlet would mediate long-range force. Its absence is the seal of confinement.</p></div>
+  </div>
+  <div id="ten-lattice" class="sview">
+    <svg width="100%" viewBox="0 0 680 390" role="img" style="display:block">
+      <title>TEN-element gluon lattice — alchemical palette</title>
+      <desc>Hasse diagram of gluon states on black ground, gold and violet nodes.</desc>
+      <rect width="680" height="390" fill="#0a0906"/>
+      <line x1="265" y1="42" x2="222" y2="62"  stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="265" y1="42" x2="308" y2="62"  stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="222" y1="86" x2="177" y2="138" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="222" y1="86" x2="222" y2="138" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="308" y1="86" x2="265" y2="138" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="308" y1="86" x2="352" y2="138" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="177" y1="162" x2="222" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="222" y1="162" x2="222" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="265" y1="162" x2="222" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="265" y1="162" x2="308" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="308" y1="162" x2="308" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="352" y1="162" x2="308" y2="210" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="222" y1="234" x2="265" y2="282" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="308" y1="234" x2="265" y2="282" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="265" y1="306" x2="265" y2="355" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <g id="gn-top" style="cursor:pointer" onclick="selGluon('top')"><rect x="220" y="4"  width="90" height="36" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.7" stroke-dasharray="4 2"/><text x="265" y="18" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₀</text><text x="265" y="32" text-anchor="middle" dominant-baseline="central" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="10">singlet (excl.)</text></g>
+      <g id="gn-l3" style="cursor:pointer" onclick="selGluon('l3')"><circle cx="222" cy="74" r="19" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/><text x="222" y="69" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₃</text><text x="222" y="82" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="9">R/G diag</text></g>
+      <g id="gn-l8" style="cursor:pointer" onclick="selGluon('l8')"><circle cx="308" cy="74" r="19" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/><text x="308" y="69" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₈</text><text x="308" y="82" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="9">R/G/B diag</text></g>
+      <g id="gn-l1" style="cursor:pointer" onclick="selGluon('l1')"><circle cx="177" cy="150" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="177" y="145" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₁</text><text x="177" y="158" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">RḠ+GR̄</text></g>
+      <g id="gn-l2" style="cursor:pointer" onclick="selGluon('l2')"><circle cx="222" cy="150" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="222" y="145" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₂</text><text x="222" y="158" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">RḠ−GR̄</text></g>
+      <g id="gn-l6" style="cursor:pointer" onclick="selGluon('l6')"><circle cx="265" cy="150" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="265" y="145" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₆</text><text x="265" y="158" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">GB̄+BḠ</text></g>
+      <g id="gn-l7" style="cursor:pointer" onclick="selGluon('l7')"><circle cx="308" cy="150" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="308" y="145" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₇</text><text x="308" y="158" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">GB̄−BḠ</text></g>
+      <g id="gn-l52" style="cursor:pointer" onclick="selGluon('l52')"><circle cx="352" cy="150" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="352" y="145" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₅</text><text x="352" y="158" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">RB̄−BR̄</text></g>
+      <g id="gn-l4" style="cursor:pointer" onclick="selGluon('l4')"><circle cx="222" cy="222" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="222" y="217" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₄</text><text x="222" y="230" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">RB̄+BR̄</text></g>
+      <g id="gn-l5" style="cursor:pointer" onclick="selGluon('l5')"><circle cx="308" cy="222" r="18" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="308" y="217" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">λ₅</text><text x="308" y="230" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">RB̄−BR̄</text></g>
+      <g id="gn-dsub" style="cursor:pointer" onclick="selGluon('dsub')"><rect x="220" y="284" width="90" height="36" rx="2" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/><text x="265" y="298" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="11">λ₃∩λ₈</text><text x="265" y="312" text-anchor="middle" dominant-baseline="central" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="9">Cartan subspace</text></g>
+      <g id="gn-vac" style="cursor:pointer" onclick="selGluon('vac')"><rect x="220" y="356" width="90" height="30" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/><text x="265" y="368" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="12">∅ vacuum</text><text x="265" y="380" text-anchor="middle" dominant-baseline="central" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="9">no gluon ⊥</text></g>
+      <text x="430" y="24"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">Excluded ⊤ — absent from QCD</text>
+      <text x="430" y="78"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">2 diagonal gluons (Cartan)</text>
+      <text x="430" y="152" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="11">6 off-diagonal — 3 conjugate pairs</text>
+      <text x="430" y="298" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">Cartan intersection</text>
+      <text x="430" y="372" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="11">Vacuum ⊥</text>
+    </svg>
+    <div class="info" id="gluon-info"><p class="info-t" id="gluon-t">Click a node</p><p class="info-b" id="gluon-b">TEN-element lattice. Excluded singlet sits at ⊤ — its absence makes gluon interactions non-Abelian. The six off-diagonal nodes form a frustrated antichain just as the three quark colours do, but of width 6.</p></div>
+  </div>
+</div>
+
+<div id="tv-weak" class="tview">
+  <svg width="100%" viewBox="0 0 530 310" role="img" style="display:block">
+    <title>SU(2) weak boson FIVE lattice — alchemical palette</title>
+    <desc>Diamond lattice on black ground. Singlet top, W³ Cartan, W⁺W⁻ antichain, vacuum bottom.</desc>
+    <rect width="530" height="310" fill="#0a0906"/>
+    <line x1="265" y1="54" x2="265" y2="98" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="265" y1="130" x2="188" y2="168" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="265" y1="130" x2="342" y2="168" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="188" y1="200" x2="265" y2="248" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="342" y1="200" x2="265" y2="248" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line id="wfrust" x1="188" y1="184" x2="342" y2="184" stroke="#8b1a1a" stroke-width="1" stroke-dasharray="2 2" opacity="0"/>
+    <g id="wk-sing" style="cursor:pointer" onclick="selWeak('sing')">
+      <rect x="200" y="12" width="130" height="38" rx="2" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/>
+      <text x="265" y="27" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="13">SU(2) singlet ⊤</text>
+      <text x="265" y="43" text-anchor="middle" dominant-baseline="central" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">Higgs-broken · exists (not excluded)</text>
+    </g>
+    <g id="wk-w3" style="cursor:pointer" onclick="selWeak('w3')">
+      <circle cx="265" cy="114" r="22" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/>
+      <text x="265" y="109" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="14">W³</text>
+      <text x="265" y="123" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="9">Cartan · rank 1</text>
+    </g>
+    <g id="wk-wp" style="cursor:pointer" onclick="selWeak('wp')">
+      <circle cx="188" cy="184" r="22" fill="#100e1a" stroke="#6a58b8" stroke-width="0.5"/>
+      <text x="188" y="179" text-anchor="middle" dominant-baseline="central" fill="#9888e8" font-family="'IM Fell English',Georgia,serif" font-size="14">W⁺</text>
+      <text x="188" y="193" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">isospin +1</text>
+    </g>
+    <g id="wk-wm" style="cursor:pointer" onclick="selWeak('wm')">
+      <circle cx="342" cy="184" r="22" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5"/>
+      <text x="342" y="179" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="14">W⁻</text>
+      <text x="342" y="193" text-anchor="middle" fill="#6b1414" font-family="'IM Fell English',Georgia,serif" font-size="9">isospin −1</text>
+    </g>
+    <g id="wk-vac" style="cursor:pointer" onclick="selWeak('vac')">
+      <rect x="200" y="255" width="130" height="34" rx="2" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+      <text x="265" y="270" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="13">vacuum ⊥</text>
+      <text x="265" y="282" text-anchor="middle" dominant-baseline="central" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="9">no weak boson · P=0</text>
+    </g>
+    <text x="400" y="30"  fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="11">⊤ not excluded</text>
+    <text x="400" y="115" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">rank-1 Cartan</text>
+    <text x="400" y="185" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="11">{W⁺,W⁻} antichain</text>
+    <text x="400" y="200" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="11">width 2 (conjugate)</text>
+  </svg>
+  <div class="info" id="weak-info">
+    <p class="info-t" id="weak-t">Click a node</p>
+    <p class="info-b" id="weak-b">SU(2) has rank 1. One Cartan generator (W³), one conjugate pair {W⁺,W⁻} — antichain width 2, less frustrated than colour {R,G,B}. The singlet ⊤ exists (broken by Higgs) unlike SU(3)'s excluded λ₀. Mass via Higgs, not confinement.</p>
+    <div id="weak-prob" style="display:none"><div class="prob-row"><span style="font-size:11px;color:#4a453c;min-width:16px">P</span><div class="pb-wrap"><div class="pb" id="weak-bar" style="width:0%"></div></div><span class="pnum" id="weak-pnum">—</span></div></div>
+    <div class="frust" id="wfrust-lbl">Frustration: dormant</div>
+  </div>
+</div>
+
+<div id="tv-photon" class="tview">
+  <svg width="100%" viewBox="0 0 530 240" role="img" style="display:block">
+    <title>U(1)_EM photon TWO lattice — alchemical palette</title>
+    <desc>Two-node chain on black ground. Photon top, vacuum bottom.</desc>
+    <rect width="530" height="240" fill="#0a0906"/>
+    <line x1="265" y1="68" x2="265" y2="152" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <g id="ph-gam" style="cursor:pointer" onclick="selPhoton('gam')">
+      <circle cx="265" cy="50" r="28" fill="#1a1408" stroke="#c8960a" stroke-width="0.7"/>
+      <text x="265" y="44" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="18">γ</text>
+      <text x="265" y="60" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">photon · massless · P=1</text>
+    </g>
+    <g id="ph-vac" style="cursor:pointer" onclick="selPhoton('vac')">
+      <circle cx="265" cy="170" r="24" fill="#1a1408" stroke="#5a4510" stroke-width="0.5"/>
+      <text x="265" y="165" text-anchor="middle" dominant-baseline="central" fill="#7a7268" font-family="'IM Fell English',Georgia,serif" font-size="13">∅</text>
+      <text x="265" y="179" text-anchor="middle" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="10">vacuum · P=0</text>
+    </g>
+    <text x="340" y="50"  fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="11">Abelian · no self-interaction</text>
+    <text x="340" y="68"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">antichain width = 0</text>
+    <text x="340" y="86"  fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">no frustrated nodes</text>
+    <text x="340" y="104" fill="#5a4510" font-family="'IM Fell English',Georgia,serif" font-size="11">unbroken U(1)_EM · range ∞</text>
+    <text x="100" y="130" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10" font-style="italic">Antichain width progression:</text>
+    <text x="100" y="148" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">SU(3) → 6</text>
+    <text x="100" y="164" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">SU(2) → 2</text>
+    <text x="100" y="180" text-anchor="middle" fill="#c8960a" font-family="'IM Fell English',Georgia,serif" font-size="10">U(1)  → 0</text>
+  </svg>
+  <div class="info" id="photon-info">
+    <p class="info-t" id="photon-t">Click a node</p>
+    <p class="info-b" id="photon-b">U(1) is Abelian — generator commutes with itself. No off-diagonal gluons, no frustrated antichain. The lattice collapses to a two-node chain. Zero frustration. Range infinite. The simplest light at the bottom of the gauge hierarchy.</p>
+  </div>
+</div>
+
+<div id="tv-ew" class="tview">
+  <div class="sub-tabs">
+    <button class="stab active" onclick="S('ew','before')">before mixing</button>
+    <button class="stab" onclick="S('ew','rotation')">Weinberg rotation</button>
+    <button class="stab" onclick="S('ew','after')">mass eigenstates</button>
+  </div>
+  <div id="ew-before" class="sview active">
+    <svg width="100%" viewBox="0 0 530 220" role="img" style="display:block">
+      <title>EW before mixing — W³ and B₀ massless gauge fields</title>
+      <rect width="530" height="220" fill="#0a0906"/>
+      <g id="ew-w3" style="cursor:pointer" onclick="selEW('w3')">
+        <circle cx="170" cy="110" r="32" fill="#1a1408" stroke="#c8960a" stroke-width="0.7"/>
+        <text x="170" y="103" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="16">W³</text>
+        <text x="170" y="122" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">SU(2)_L · massless</text>
+      </g>
+      <g id="ew-b0" style="cursor:pointer" onclick="selEW('b0')">
+        <circle cx="360" cy="110" r="32" fill="#100e1a" stroke="#6a58b8" stroke-width="0.7"/>
+        <text x="360" y="103" text-anchor="middle" dominant-baseline="central" fill="#9888e8" font-family="'IM Fell English',Georgia,serif" font-size="16">B₀</text>
+        <text x="360" y="122" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="10">U(1)_Y · massless</text>
+      </g>
+      <line x1="202" y1="110" x2="328" y2="110" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="4 3"/>
+      <text x="265" y="104" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">incomparable</text>
+      <text x="265" y="118" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10">before SSB</text>
+      <text x="265" y="190" text-anchor="middle" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="11" font-style="italic">SU(2)_L × U(1)_Y — two incomparable generators. Higgs VEV mixes them.</text>
+    </svg>
+    <div class="info"><p class="info-t" id="ew-t">Click a node</p><p class="info-b" id="ew-b">Before electroweak symmetry breaking, W³ (SU(2)_L) and B₀ (U(1)_Y) are incomparable in the lattice — neither orders above the other. Both massless. The Higgs VEV at 246 GeV rotates this pair into mass eigenstates Z and γ.</p></div>
+  </div>
+  <div id="ew-rotation" class="sview">
+    <div style="margin:.5rem 0 .75rem">
+      <div class="sl-row"><label>θ_W (°)</label><input type="range" min="0" max="45" value="28.7" step="0.1" id="sl-weinberg" oninput="updateWeinberg()"><span id="weinberg-val">28.7°</span></div>
+    </div>
+    <div style="background:var(--smoke2);border:0.5px solid var(--border-gold);border-radius:2px;padding:.75rem;font-family:monospace;font-size:13px;color:var(--ash-light)">
+      <div style="margin-bottom:.5rem;font-family:'IM Fell English',Georgia,serif;font-size:11px;color:var(--gold-dim);font-style:italic">Weinberg rotation matrix</div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr;gap:4px 12px;align-items:center">
+        <div style="color:var(--ash-pale);font-size:12px">Z</div>
+        <div style="color:var(--ash-pale);font-size:12px">=</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;border:0.5px solid var(--border);padding:6px 10px;border-radius:2px">
+          <span id="m11" style="color:#9888e8">+cos θ</span><span id="m12" style="color:#c44040">−sin θ</span>
+          <span id="m21" style="color:#c44040">+sin θ</span><span id="m22" style="color:#9888e8">+cos θ</span>
+        </div>
+        <div style="color:var(--ash-pale);font-size:12px">γ</div>
+        <div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:6px 10px">
+          <span style="color:#e8c84a">W³</span><span style="color:#9888e8">B₀</span>
+        </div>
+      </div>
+      <div style="margin-top:.6rem;font-size:11px;color:var(--ash-pale)">
+        <span style="color:var(--ash-light)">sin²θ_W = </span><span id="sin2w">0.231</span>
+        &nbsp;·&nbsp;
+        <span style="color:var(--ash-light)">m_Z = </span><span id="z-mass">91.2</span> GeV
+        &nbsp;·&nbsp;
+        <span style="color:var(--ash-light)">m_W = </span><span id="w-mass">80.4</span> GeV
+      </div>
+      <div style="margin-top:.4rem;font-size:10px;color:var(--ash);font-style:italic" id="weinberg-formula">Z = cosθW³ − sinθB₀ · γ = sinθW³ + cosθB₀</div>
+    </div>
+    <div class="info" style="margin-top:.75rem"><p class="info-t">Electroweak rotation</p><p class="info-b">A single angle θ_W ≈ 28.73° mixes the two incomparable pre-SSB generators into mass eigenstates. Z acquires mass m_Z = m_W / cosθ_W. γ remains massless — U(1)_EM is unbroken. m_W = ½gv, v = 246 GeV.</p></div>
+  </div>
+  <div id="ew-after" class="sview">
+    <svg width="100%" viewBox="0 0 530 220" role="img" style="display:block">
+      <title>EW after mixing — Z massive, γ massless</title>
+      <rect width="530" height="220" fill="#0a0906"/>
+      <g id="ew-Za" style="cursor:pointer" onclick="selEWafter('Z')">
+        <circle cx="170" cy="110" r="32" fill="#100e1a" stroke="#6a58b8" stroke-width="0.7"/>
+        <text x="170" y="103" text-anchor="middle" dominant-baseline="central" fill="#9888e8" font-family="'IM Fell English',Georgia,serif" font-size="18">Z</text>
+        <text x="170" y="122" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="10">91.2 GeV · massive</text>
+      </g>
+      <g id="ew-ga" style="cursor:pointer" onclick="selEWafter('gamma')">
+        <circle cx="360" cy="110" r="32" fill="#1a1408" stroke="#c8960a" stroke-width="0.7"/>
+        <text x="360" y="103" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="18">γ</text>
+        <text x="360" y="122" text-anchor="middle" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">massless · U(1)_EM unbroken</text>
+      </g>
+      <text x="265" y="190" text-anchor="middle" fill="#4a453c" font-family="'IM Fell English',Georgia,serif" font-size="11" font-style="italic">m_Z = m_W / cosθ_W · m_W = ½gv · v = 246 GeV</text>
+    </svg>
+    <div class="info"><p class="info-t" id="ewafter-t">Click a node</p><p class="info-b" id="ewafter-b">After mixing: Z is massive (Goldstone eaten by Higgs mechanism), γ massless. Z = W³cosθ_W − B₀sinθ_W. γ = W³sinθ_W + B₀cosθ_W. The ordering relation between Z and γ is no longer frustration — it is mass ordering. Lattice collapses from mixed to clean two-chain.</p></div>
+  </div>
+</div>
+
+<div id="tv-scalar" class="tview">
+  <div class="sub-tabs">
+    <button class="stab active" onclick="S('sc','templ')">shared template</button>
+    <button class="stab" onclick="S('sc','three')">all three fields</button>
+  </div>
+  <div id="sc-templ" class="sview active">
+    <svg width="100%" viewBox="0 0 680 295" role="img" style="display:block">
+      <title>Shared Mexican hat potential as logical lattice — alchemical palette</title>
+      <desc>Three-tier lattice on black: false vacuum at bottom, degenerate middle antichain, chosen vacuum at top.</desc>
+      <rect width="680" height="295" fill="#0a0906"/>
+      <g id="tp-top" style="cursor:pointer" onclick="selTp('top')">
+        <rect x="255" y="10" width="170" height="42" rx="2" fill="#1a1408" stroke="#c8960a" stroke-width="0.5"/>
+        <text x="340" y="27" text-anchor="middle" dominant-baseline="central" fill="#e8c84a" font-family="'IM Fell English',Georgia,serif" font-size="13">chosen vacuum ⊤</text>
+        <text x="340" y="44" text-anchor="middle" dominant-baseline="central" fill="#7a5c06" font-family="'IM Fell English',Georgia,serif" font-size="10">symmetry broken, VEV≠0, P=1</text>
+      </g>
+      <line x1="340" y1="52" x2="220" y2="100" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="340" y1="52" x2="295" y2="100" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="340" y1="52" x2="340" y2="100" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="340" y1="52" x2="385" y2="100" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="340" y1="52" x2="460" y2="100" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <g id="tp-m1" style="cursor:pointer" onclick="selTp('mid')"><circle cx="220" cy="120" r="21" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="220" y="116" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">φ₁</text><text x="220" y="130" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">degenerate</text></g>
+      <g id="tp-m2" style="cursor:pointer" onclick="selTp('mid')"><circle cx="295" cy="120" r="21" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="295" y="116" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">φ₂</text><text x="295" y="130" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">degenerate</text></g>
+      <g id="tp-m3" style="cursor:pointer" onclick="selTp('mid')"><circle cx="340" cy="112" r="14" fill="#0e0c18" stroke="#4a3a8a" stroke-width="0.5" stroke-dasharray="3 2"/><text x="340" y="115" text-anchor="middle" dominant-baseline="central" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="11">…</text></g>
+      <g id="tp-m4" style="cursor:pointer" onclick="selTp('mid')"><circle cx="385" cy="120" r="21" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="385" y="116" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">φₙ</text><text x="385" y="130" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">degenerate</text></g>
+      <g id="tp-m5" style="cursor:pointer" onclick="selTp('mid')"><circle cx="460" cy="120" r="21" fill="#100e1a" stroke="#4a3a8a" stroke-width="0.5"/><text x="460" y="116" text-anchor="middle" dominant-baseline="central" fill="#8878c8" font-family="'IM Fell English',Georgia,serif" font-size="12">φ_N</text><text x="460" y="130" text-anchor="middle" fill="#4a3a8a" font-family="'IM Fell English',Georgia,serif" font-size="9">degenerate</text></g>
+      <text x="80" y="112" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10" font-style="italic">antichain</text>
+      <text x="80" y="126" text-anchor="middle" fill="#3a3020" font-family="'IM Fell English',Georgia,serif" font-size="10" font-style="italic">all P=0.5</text>
+      <line x1="105" y1="120" x2="195" y2="120" stroke="#2e2618" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="220" y1="141" x2="340" y2="193" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="295" y1="141" x2="340" y2="193" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="385" y1="141" x2="340" y2="193" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <line x1="460" y1="141" x2="340" y2="193" stroke="#3a3020" stroke-width="0.5" stroke-dasharray="3 3"/>
+      <g id="tp-bot" style="cursor:pointer" onclick="selTp('bot')">
+        <rect x="255" y="195" width="170" height="42" rx="2" fill="#1a0808" stroke="#8b1a1a" stroke-width="0.5" stroke-dasharray="4 2"/>
+        <text x="340" y="212" text-anchor="middle" dominant-baseline="central" fill="#c44040" font-family="'IM Fell English',Georgia,serif" font-size="13">false vacuum ⊥</text>
+        <text x="340" y="229" text-anchor="middle" dominant-baseline="central" fill="#6b1414" font-family="'IM Fell English',Georgia,serif" font-size="10">symmetric point, VEV=0, unstable</text>
+      </g>
+      <text x="340" y="260" text-anchor="middle" fill="#2e2618" font-family="'IM Fell English',Georgia,serif" font-size="10">Goldstone theorem: motion along antichain costs zero energy</text>
+      <text x="340" y="277" text-anchor="middle" fill="#2e2618" font-family="'IM Fell English',Georgia,serif" font-size="10">Gauged: Goldstones eaten · Global: Goldstones survive as particles</text>
+    </svg>
+    <div class="info" id="tp-info"><p class="info-t" id="tp-t">Click a tier</p><p class="info-b" id="tp-b">All three scalar fields share this structure. What differs is the topology of the antichain: S¹ continuous (Higgs), Z_N discrete (axion), slow-roll plateau quasi-continuous (inflaton).</p><div id="tp-prob" style="display:none"><div class="prob-row"><span style="font-size:11px;color:#4a453c;min-width:16px">P</span><div class="pb-wrap"><div class="pb" id="tp-bar" style="width:50%"></div></div><span class="pnum" id="tp-pnum">0.500</span></div></div></div>
+  </div>
+  <div id="sc-three" class="sview">
+    <div class="grid3">
+      <div class="crd"><span class="scale-badge">246 GeV</span><p class="crd-t">Higgs</p><p class="crd-b">Middle: S¹ continuous. Symmetry: SU(2)×U(1) gauged. Goldstones eaten by W⁺,W⁻,Z. Higgs boson = radial excitation. Frustration resolved: spontaneous.</p></div>
+      <div class="crd"><span class="scale-badge">10⁹–¹² GeV</span><p class="crd-t">Axion</p><p class="crd-b">Middle: Z_N discrete. Symmetry: U(1)_PQ global. Goldstone survives as axion particle. Domain walls between Z_N vacua. Frustration resolved: QCD instanton tilt at T&lt;Λ_QCD.</p></div>
+      <div class="crd"><span class="scale-badge">~10¹⁶ GeV</span><p class="crd-t">Inflaton</p><p class="crd-b">Middle: slow-roll plateau. Symmetry: shift symmetry. Goldstone candidate: gravitational waves. ~60 e-folds from plateau crossing. Frustration resolved: slow-roll failure at cliff.</p></div>
+    </div>
+    <div style="margin-top:10px;padding:9px 12px;border:0.5px solid var(--border-gold);background:var(--smoke2);border-radius:2px">
+      <p style="font-size:11px;font-weight:400;font-style:italic;color:var(--gold-pale);font-family:var(--font-old);margin:0 0 7px">The shared anatomy — solve et coagula</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:11px">
+        <div><p style="margin:0 0 3px;color:var(--crimson-pale);font-family:var(--font-old)">⊥ false vacuum</p><p class="mono" style="color:var(--ash-pale)">VEV=0<br>full symmetry<br>P=0.5 unstable</p></div>
+        <div><p style="margin:0 0 3px;color:#8878c8;font-family:var(--font-old)">middle antichain</p><p class="mono" style="color:var(--ash-pale)">VEV≠0<br>symmetry broken<br>Goldstones here</p></div>
+        <div><p style="margin:0 0 3px;color:var(--gold-pale);font-family:var(--font-old)">⊤ chosen vacuum</p><p class="mono" style="color:var(--ash-pale)">one VEV selected<br>P=1<br>coagula</p></div>
+      </div>
+    </div>
+    <button class="op-btn" onclick="sendPrompt('What would the logical lattice look like for SU(2) weak force after the Higgs mechanism breaks the symmetry?')">Extend to SU(2) weak force ↗</button>
+  </div>
+</div>
+
+<div id="tv-gen" class="tview">
+  <div class="sub-tabs">
+    <button class="stab active" onclick="S('gen','quarks')">quarks</button>
+    <button class="stab" onclick="S('gen','leptons')">leptons</button>
+    <button class="stab" onclick="S('gen','omega')">Ω derivation</button>
+  </div>
+  <div id="gen-quarks" class="sview active">
+    <div class="grid3" style="text-align:center">
+      <div class="crd" style="cursor:pointer" onclick="selGen('u')">
+        <p class="crd-t">Generation I</p>
+        <p class="crd-b mono">u &nbsp;+⅔ · 2.3 MeV<br>d &nbsp;−⅓ · 4.8 MeV</p>
+      </div>
+      <div class="crd" style="cursor:pointer" onclick="selGen('c')">
+        <p class="crd-t">Generation II</p>
+        <p class="crd-b mono">c &nbsp;+⅔ · 1.28 GeV<br>s &nbsp;−⅓ · 95 MeV</p>
+      </div>
+      <div class="crd" style="cursor:pointer" onclick="selGen('t')">
+        <p class="crd-t">Generation III</p>
+        <p class="crd-b mono">t &nbsp;+⅔ · 173 GeV<br>b &nbsp;−⅓ · 4.18 GeV</p>
+      </div>
+    </div>
+    <div class="info" style="margin-top:.75rem">
+      <p class="info-t" id="gen-qt">Select a generation</p>
+      <p class="info-b" id="gen-qb">Three quark generations. Same quantum numbers, different Ħ-trajectory over the same crystal address. Yukawa couplings scale across generations; top quark mass ~173 GeV ≈ v/√2 marks it as a Frobenius fixed point of the Yukawa coupling at the Higgs VEV.</p>
+    </div>
+  </div>
+  <div id="gen-leptons" class="sview">
+    <div class="grid3" style="text-align:center">
+      <div class="crd" style="cursor:pointer" onclick="selLep('e')">
+        <p class="crd-t">Generation I</p>
+        <p class="crd-b mono">νe &nbsp;&lt;2 eV<br>e &nbsp;&nbsp;0.511 MeV</p>
+      </div>
+      <div class="crd" style="cursor:pointer" onclick="selLep('mu')">
+        <p class="crd-t">Generation II</p>
+        <p class="crd-b mono">νμ &lt;0.19 MeV<br>μ &nbsp;105.7 MeV</p>
+      </div>
+      <div class="crd" style="cursor:pointer" onclick="selLep('tau')">
+        <p class="crd-t">Generation III</p>
+        <p class="crd-b mono">ντ &lt;18.2 MeV<br>τ &nbsp;1777 MeV</p>
+      </div>
+    </div>
+    <div class="info" style="margin-top:.75rem">
+      <p class="info-t" id="gen-lt">Select a generation</p>
+      <p class="info-b" id="gen-lb">Three lepton generations. Neutrino masses non-zero but sub-eV. Each generation a distinct Ħ-chirality winding over the same crystal address as the corresponding quark doublet.</p>
+    </div>
+  </div>
+  <div id="gen-omega" class="sview">
+    <div style="background:var(--smoke2);border:0.5px solid var(--border-gold);border-radius:2px;padding:.75rem">
+      <p style="font-size:11px;font-style:italic;color:var(--gold-pale);font-family:'IM Fell English',Georgia,serif;margin:0 0 8px">Why exactly three generations — the Ω derivation</p>
+      <div style="font-family:monospace;font-size:12px;color:var(--ash-light);line-height:1.9">
+        <div>F₄(Ω) = fiber of the Winding primitive Ω over the crystal</div>
+        <div style="color:var(--gold-pale)">|F₄(Ω)| = 4 &nbsp;→ &nbsp;4 − 1 = 3 non-trivial windings</div>
+        <div style="color:#9888e8">Ω¹ · Ω² · Ω³ = Generations I · II · III</div>
+        <div style="color:#4a453c">Ω⁴ = Ω⁰ &nbsp;— fiber closes · no fourth generation</div>
+      </div>
+    </div>
+    <div class="grid3" style="margin-top:10px">
+      <div class="crd"><p class="crd-t">Ω¹ — lightest</p><p class="crd-b">First non-trivial winding. Minimal Ħ-depth. u/d · e/νe.</p></div>
+      <div class="crd"><p class="crd-t">Ω² — middle</p><p class="crd-b">Second winding. Intermediate Ħ-depth. c/s · μ/νμ.</p></div>
+      <div class="crd"><p class="crd-t">Ω³ — heaviest</p><p class="crd-b">Third winding. Maximum Ħ-depth before closure. t/b · τ/ντ. Top quark: m_t ≈ v/√2 — Frobenius fixed point of Yukawa at VEV.</p></div>
+    </div>
+    <div class="info" style="margin-top:.75rem"><p class="info-t">Ω fiber closure</p><p class="info-b">The number of fermion generations is not a free parameter — it is forced by the cardinality of the Winding primitive fiber F₄(Ω). Four elements, one trivial (vacuum), three non-trivial. Each non-trivial element is a distinct Ħ-trajectory reaching the same crystal address with increasing chirality depth.</p></div>
+  </div>
+</div>
+
+<div id="tv-opus" class="tview">
+  <div class="grid3">
+    <div class="crd"><p class="crd-t">FOUR · Z₂ · electrons</p><p class="crd-b">Antichain width 2. Square. Hund: maximise ⊑k before B. Pauli: B ceiling. P: ∅→undef, ↑→1, ↓→0, ↑↓→0.5.</p></div>
+    <div class="crd"><p class="crd-t">FIVE · Z₃ · quarks (colour)</p><p class="crd-b">Antichain width 3. {R,G,B} frustrated. Confinement = forced ⊤. All middles P=0.5 by symmetry. SU(3) rank 2.</p></div>
+    <div class="crd"><p class="crd-t">TEN · SU(3) adjoint · gluons</p><p class="crd-b">Antichain width 6. Excluded ⊤ = non-Abelian self-interaction. λ₃,λ₈ Cartan break P=0.5±ε.</p></div>
+    <div class="crd"><p class="crd-t">FIVE · SU(2)_L · weak bosons</p><p class="crd-b">Antichain width 2. {W⁺,W⁻} conjugate pair. Singlet ⊤ exists (Higgs-broken, not confined). W³ rank-1 Cartan. Masses via SSB.</p></div>
+    <div class="crd"><p class="crd-t">TWO · U(1)_EM · photon</p><p class="crd-b">Antichain width 0. Abelian. No frustrated nodes. γ massless — U(1) unbroken. Range ∞. Bottom of the gauge hierarchy.</p></div>
+    <div class="crd"><p class="crd-t">EW mixing · Weinberg rotation</p><p class="crd-b">θ_W ≈ 28.73°. W³ ⊕ B₀ → Z (91.2 GeV) + γ (0). sin²θ_W ≈ 0.231. m_Z = m_W / cosθ_W. Single angle unifies SU(2)×U(1).</p></div>
+    <div class="crd"><p class="crd-t">scalar fields · three scales</p><p class="crd-b">All share ⊥–antichain–⊤. S¹ continuous (Higgs, 246 GeV), Z_N discrete (axion), plateau (inflaton ~10¹⁶ GeV). Goldstone = motion along antichain.</p></div>
+    <div class="crd"><p class="crd-t">generations · Ω fiber</p><p class="crd-b">|F₄(Ω)|−1 = 3. Four fiber elements, one trivial vacuum, three non-trivial windings = three generations. Ω⁴=Ω⁰ closes. No fourth generation.</p></div>
+  </div>
+  <div class="divider"></div>
+  <div style="padding:9px 12px;border:0.5px solid var(--border-gold);background:var(--smoke2);border-radius:2px">
+    <p style="font-size:11px;font-style:italic;color:var(--gold-pale);font-family:var(--font-old);margin:0 0 8px">Antichain width across the full Standard Model gauge hierarchy</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:11px">
+      <div><p style="margin:0 0 3px;color:var(--ash-pale);font-family:var(--font-old)">FOUR·e⁻</p><p class="mono" style="color:var(--ash-light)">∅→undef<br>↑→1.000<br>↓→0.000<br>↑↓→0.500</p></div>
+      <div><p style="margin:0 0 3px;color:var(--ash-pale);font-family:var(--font-old)">FIVE·q</p><p class="mono" style="color:var(--ash-light)">A→0.000<br>R,G,B→0.5<br>W→1.000<br>width=3</p></div>
+      <div><p style="margin:0 0 3px;color:var(--ash-pale);font-family:var(--font-old)">TEN·g</p><p class="mono" style="color:var(--ash-light)">∅→0.000<br>λ₁₋₇→0.5<br>λ₃,₈→0.5±ε<br>width=6</p></div>
+      <div><p style="margin:0 0 3px;color:var(--ash-pale);font-family:var(--font-old)">FIVE·W</p><p class="mono" style="color:var(--ash-light)">∅→0.000<br>W⁺,W⁻→0.5<br>W³→0.5±ε<br>width=2</p></div>
+      <div><p style="margin:0 0 3px;color:var(--gold-pale);font-family:var(--font-old)">TWO·γ</p><p class="mono" style="color:var(--ash-light)">∅→0.000<br>γ→1.000<br>width=0<br>Abelian</p></div>
+    </div>
+    <p style="font-size:10px;color:var(--ash);font-family:var(--font-old);margin:8px 0 0;font-style:italic">Antichain width = rank of the root system: SU(3)→6, SU(2)→2, U(1)→0. Width tracks self-interaction strength and confinement regime.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+if(typeof sendPrompt==='undefined')sendPrompt=function(){};
+function T(id){
+  const ids=['bil','four','five','ten','weak','photon','ew','scalar','gen','opus'];
+  document.querySelectorAll('.ttab').forEach((b,i)=>b.classList.toggle('active',ids[i]===id));
+  document.querySelectorAll('.tview').forEach(v=>v.classList.remove('active'));
+  document.getElementById('tv-'+id).classList.add('active');
+}
+function S(group,id){
+  const grpEl=document.getElementById('tv-'+group);
+  const prefix=group+'-';
+  const tabs=grpEl?grpEl.querySelectorAll('.stab'):[];
+  const views=grpEl?grpEl.querySelectorAll('.sview'):[];
+  const idMap={'bil':['sq','norm'],'ten':['decomp','lattice'],'sc':['templ','three'],'ew':['before','rotation','after'],'gen':['quarks','leptons','omega']};
+  const keys=idMap[group]||[];
+  tabs.forEach((b,i)=>b.classList.toggle('active',keys[i]===id));
+  views.forEach(v=>v.classList.remove('active'));
+  const el=document.getElementById(prefix+id);
+  if(el)el.classList.add('active');
+}
+const bilD={
+  N:{t:'N — neither ⟨0,0⟩',b:'No evidence received. Probability undefined — below both orderings. The prima materia before any Work begins.',p:null,c:'#5a4510'},
+  T:{t:'T — true ⟨1,0⟩',b:'Pure positive evidence. P=1. Classical truth — all sources confirm. The gold of the Work.',p:1,c:'#c8960a'},
+  F:{t:'F — false ⟨0,1⟩',b:'Pure negative evidence. P=0. Classical falsity — all sources deny. The nigredo complete.',p:0,c:'#8b1a1a'},
+  B:{t:'B — both ⟨1,1⟩',b:'Equal contradictory evidence. P=0.5. Maximum information, zero net lean. The exceptional point — the structure that cannot distinguish itself from its own measurement.',p:0.5,c:'#c8960a'},
+};
+function bilClick(k){
+  document.getElementById('bil-sq-t').textContent=bilD[k].t;
+  document.getElementById('bil-sq-b').textContent=bilD[k].b;
+}
+function updateNorm(){
+  const t=parseInt(document.getElementById('sl-t').value)/100;
+  const f=parseInt(document.getElementById('sl-f').value)/100;
+  document.getElementById('lbl-t').textContent=t.toFixed(2);
+  document.getElementById('lbl-f').textContent=f.toFixed(2);
+  const sum=t+f;
+  const bar=document.getElementById('norm-bar');
+  const pnum=document.getElementById('norm-pnum');
+  const res=document.getElementById('norm-result');
+  const interp=document.getElementById('norm-interp');
+  const lbl=document.getElementById('norm-lbl');
+  if(sum<0.001){res.textContent='—';bar.style.width='0%';bar.style.background='#5a4510';pnum.textContent='undef';lbl.textContent='P = t/(t+f) — undefined';interp.textContent='No evidence. The gate is closed — O0.';return;}
+  const p=t/sum;
+  res.textContent=p.toFixed(3);pnum.textContent=p.toFixed(3);
+  bar.style.width=(p*100).toFixed(1)+'%';
+  bar.style.background=p>0.66?'#c8960a':p<0.34?'#8b1a1a':'#4a3a8a';
+  lbl.textContent=`P = ${t.toFixed(2)} / (${t.toFixed(2)} + ${f.toFixed(2)})`;
+  interp.textContent=p>0.66?'Leans toward truth — positive evidence dominates. Albedo.':p<0.34?'Leans toward falsity — negative evidence dominates. Nigredo.':'Near parity — evidence balanced. The gate holds open.';
+}
+const d4={
+  N:{t:'∅ — empty orbital',b:'No electrons. P undefined. Bottom of both orderings. The vessel awaits.',p:null,c:'#5a4510'},
+  T:{t:'↑ — spin-up',b:'One electron, spin +½. Pure positive evidence. P=1. Hund\'s first rule: half-fill before pairing. The first crystallization.',p:1,c:'#c8960a'},
+  F:{t:'↓ — spin-down',b:'One electron, spin −½. Pure negative evidence. P=0. Equal information to ↑, opposite truth direction. Mirror of the first crystallization.',p:0,c:'#8b1a1a'},
+  B:{t:'↑↓ — paired',b:'Two electrons, opposite spins. Contradictory evidence forced by Pauli. P=0.5. Maximum information, zero net spin. The conjunction — the alchemical marriage.',p:0.5,c:'#c8960a'},
+};
+function sel4(k){
+  ['f4N','f4T','f4F','f4B'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=id==='f4'+k?'1':'0.35';});
+  const d=d4[k];
+  document.getElementById('four-t').textContent=d.t;
+  document.getElementById('four-b').textContent=d.b;
+  document.getElementById('four-prob').style.display='block';
+  const bar=document.getElementById('four-bar');const pn=document.getElementById('four-pnum');
+  if(d.p===null){bar.style.width='0%';bar.style.background='#5a4510';pn.textContent='undef';}
+  else{bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);}
+}
+const d5={
+  W:{t:'W — colorless ⊤',b:'Top terminal. Confinement goal. P=1. R+G+B → W. Frustration resolved. The lapis achieves form.',p:1,c:'#c8960a',fr:false},
+  R:{t:'R — red (antichain)',b:'Middle node, equal weight to G and B. P=0.5. Selecting any colour activates the frustration. The material will not settle.',p:0.5,c:'#8b1a1a',fr:true},
+  G:{t:'G — green (antichain)',b:'Middle node, structurally identical to R and B. The three form a frustrated antichain — no consistent total order exists among them. P=0.5.',p:0.5,c:'#2d5010',fr:true},
+  B:{t:'B — blue (antichain)',b:'Middle node. Cannot be consistently ordered against R or G. Frustration is not a failure of knowledge — it is a structural property of the lattice itself. P=0.5.',p:0.5,c:'#1a3d7a',fr:true},
+  A:{t:'A — anti-color ⊥',b:'Bottom terminal. Symmetric opposite of W. P=0. The hypothetical anti-colorless state — the calcination, all accidental structure stripped.',p:0,c:'#5a4510',fr:false},
+};
+function sel5(k){
+  ['f5W','f5R','f5G','f5B','f5A'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=id==='f5'+k?'1':'0.3';});
+  const d=d5[k];
+  document.getElementById('five-t').textContent=d.t;
+  document.getElementById('five-b').textContent=d.b;
+  document.getElementById('five-prob').style.display='block';
+  const bar=document.getElementById('five-bar');const pn=document.getElementById('five-pnum');
+  bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);
+  ['fr-RG','fr-GB','fr-RB'].forEach(id=>document.getElementById(id).setAttribute('opacity','0'));
+  const fl=document.getElementById('frust-lbl');
+  if(d.fr){fl.textContent='Frustration active — {R,G,B} antichain: no consistent total order. The gate holds.';fl.classList.add('on');['fr-RG','fr-GB','fr-RB'].forEach(id=>document.getElementById(id).setAttribute('opacity','1'));}
+  else{fl.textContent=k==='W'?'Frustration resolved — colorless ⊤. Confinement complete. The Work is done.':'Frustration resolved — anti-color ⊥. The calcination.';fl.classList.remove('on');}
+}
+const dcD={
+  RRb:{t:'RR̄ — red anti-red',b:'Diagonal pair. Contributes to λ₃ and λ₈ via superposition. Not a physical eigenstate alone.'},
+  RGb:{t:'RḠ — red anti-green',b:'Off-diagonal. Carries net colour change R→G. Appears in λ₁ (symmetric) and λ₂ (antisymmetric).'},
+  RBb:{t:'RB̄ — red anti-blue',b:'Off-diagonal. Carries R→B colour change. Maps onto λ₄/λ₅ conjugate pair.'},
+  GRb:{t:'GR̄ — green anti-red',b:'Conjugate of RḠ. Together they form the λ₁/λ₂ pair via charge-conjugation symmetry.'},
+  GGb:{t:'GḠ — green anti-green',b:'Diagonal pair. Contributes to λ₃ (opposite sign from RR̄) and λ₈. The yellowing of the middle.'},
+  GBb:{t:'GB̄ — green anti-blue',b:'Off-diagonal. Maps onto λ₆/λ₇. Carries G→B colour change.'},
+  BRb:{t:'BR̄ — blue anti-red',b:'Conjugate of RB̄. Together the λ₄/λ₅ pair. Carries B→R change.'},
+  BGb:{t:'BḠ — blue anti-green',b:'Conjugate of GB̄. Together the λ₆/λ₇ pair. Carries B→G change.'},
+  BBb:{t:'BB̄ — blue anti-blue',b:'Diagonal pair. Coefficient −2 in λ₈ breaks the three-fold symmetry. This asymmetry is the logical origin of the hypercharge splitting.'},
+  singlet:{t:'λ₀ — colorless singlet (excluded)',b:'(RR̄+GḠ+BB̄)/√3. Would mediate long-range force. Its exclusion is the seal of confinement — the exceptional point from which no gate opens.'},
+  diag:{t:'λ₃, λ₈ — diagonal gluons',b:'Cartan generators. λ₃ measures isospin; λ₈ measures hypercharge. Carry zero net colour but are not colorless — they shift colour phase without changing the label.'},
+  offdiag:{t:'λ₁–λ₂, λ₄–λ₇ — off-diagonal gluons',b:'Three conjugate pairs: R↔G, R↔B, G↔B. Symmetric and antisymmetric superpositions. These are the colour-changing gluons that enforce confinement through their self-interaction.'},
+};
+function selDc(k){
+  document.querySelectorAll('[id^="dc-"]').forEach(el=>el.style.opacity='0.35');
+  const el=document.getElementById('dc-'+k);if(el)el.style.opacity='1';
+  const d=dcD[k];if(!d)return;
+  document.getElementById('dc-t').textContent=d.t;document.getElementById('dc-b').textContent=d.b;
+}
+const gD={
+  top:{t:'λ₀ — excluded singlet ⊤',b:'P=1 if it existed. Its exclusion leaves the octet with no supreme node — making gluon self-interaction inherent. A lie is not false content; it is the exceptional point.'},
+  l3:{t:'λ₃ — isospin diagonal',b:'Gell-Mann λ₃. Measures R/G asymmetry. P≈0.5+ε. The ε is the logical signature of isospin — a tilt in the evidence weights.'},
+  l8:{t:'λ₈ — hypercharge diagonal',b:'BB̄ coefficient is −2. Breaks three-fold symmetry. P≈0.5−ε. With λ₃ spans the Cartan subalgebra — the commuting part of the gauge algebra.'},
+  l1:{t:'λ₁ — symmetric R↔G',b:'(RḠ+GR̄)/√2. Carries R→G colour change symmetrically. P=0.5. Conjugate pair with λ₂.'},
+  l2:{t:'λ₂ — antisymmetric R↔G',b:'(RḠ−GR̄)/i√2. Phase-twisted. Same magnitude as λ₁, different orientation of evidence. P=0.5.'},
+  l4:{t:'λ₄ — symmetric R↔B',b:'(RB̄+BR̄)/√2. Colour-changing R↔B gluon. P=0.5.'},
+  l5:{t:'λ₅ — antisymmetric R↔B',b:'(RB̄−BR̄)/i√2. Phase-twisted R↔B. P=0.5.'},
+  l6:{t:'λ₆ — symmetric G↔B',b:'(GB̄+BḠ)/√2. Colour-changing G↔B gluon. P=0.5.'},
+  l7:{t:'λ₇ — antisymmetric G↔B',b:'(GB̄−BḠ)/i√2. Completes the six off-diagonal gluons. All six form a frustrated antichain of width 6 — the quarks\' antichain doubled by conjugation.'},
+  l52:{t:'λ₅ (upper tier)',b:'RB̄−BR̄ antisymmetric. Part of the conjugate pair. Sits in the upper off-diagonal tier. P=0.5.'},
+  dsub:{t:'λ₃∩λ₈ — Cartan subspace',b:'The meet of λ₃ and λ₈. Below both in the truth ordering. Has both isospin and hypercharge content without being either. The conjunction gate at the level of gauge algebra.'},
+  vac:{t:'∅ — vacuum ⊥',b:'No gluon. P=0. Zero information. Every gluon state lies above this. The calcination — the ash that is the holographic floor.'},
+};
+function selGluon(k){
+  document.querySelectorAll('[id^="gn-"]').forEach(el=>el.style.opacity='0.3');
+  const el=document.getElementById('gn-'+k);if(el)el.style.opacity='1';
+  const d=gD[k];if(!d)return;
+  document.getElementById('gluon-t').textContent=d.t;document.getElementById('gluon-b').textContent=d.b;
+}
+const tpD={
+  top:{t:'chosen vacuum ⊤',b:'Symmetry broken, one VEV selected. P=1. The rubedo — the Work complete. The field has committed to a single illumination.',p:1,c:'#c8960a'},
+  mid:{t:'degenerate ground states — antichain',b:'All equally valid vacua. P=0.5 — equal evidence for any one. Moving along this tier costs zero energy (Goldstone theorem). The brim of the Mexican hat. Nigredo dissolves into albedo here.',p:0.5,c:'#4a3a8a'},
+  bot:{t:'false vacuum ⊥',b:'The symmetric point. Unstable. P=0.5 but in the sense of maximum symmetry — no information yet about which way the field will fall. The prima materia.',p:0.5,c:'#4a3a8a'},
+};
+function selTp(k){
+  ['tp-top','tp-m1','tp-m2','tp-m3','tp-m4','tp-m5','tp-bot'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='0.35';});
+  if(k==='top')document.getElementById('tp-top').style.opacity='1';
+  else if(k==='mid')['tp-m1','tp-m2','tp-m3','tp-m4','tp-m5'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity='1';});
+  else if(k==='bot')document.getElementById('tp-bot').style.opacity='1';
+  const d=tpD[k];if(!d)return;
+  document.getElementById('tp-t').textContent=d.t;document.getElementById('tp-b').textContent=d.b;
+  document.getElementById('tp-prob').style.display='block';
+  const bar=document.getElementById('tp-bar');const pn=document.getElementById('tp-pnum');
+  bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);
+}
+const dWeak={
+  sing:{t:'SU(2) singlet ⊤',b:'Top terminal. Exists after Higgs SSB — unlike SU(3)\'s excluded λ₀, this singlet is physical. W bosons acquire mass by eating Goldstones. P=1.',p:1,c:'#c8960a',fr:false},
+  w3:{t:'W³ — Cartan generator',b:'Single Cartan of SU(2). Rank-1. Neutral. Mixes with U(1)_Y hypercharge boson B₀ to form Z and γ after EW mixing. P≈0.5+ε.',p:0.52,c:'#c8960a',fr:false},
+  wp:{t:'W⁺ — isospin +1',b:'Off-diagonal, raises isospin. 80.4 GeV. Conjugate to W⁻. Part of antichain of width 2 — less frustrated than quark colour {R,G,B}. P=0.5.',p:0.5,c:'#6a58b8',fr:true},
+  wm:{t:'W⁻ — isospin −1',b:'Off-diagonal, lowers isospin. 80.4 GeV. Conjugate to W⁺. {W⁺,W⁻} is a conjugate pair antichain — structurally frustrated but only at width 2. P=0.5.',p:0.5,c:'#8b1a1a',fr:true},
+  vac:{t:'vacuum ⊥',b:'No weak boson. P=0. The pre-SSB ground state before the field is excited. All weak charges are zero.',p:0,c:'#5a4510',fr:false},
+};
+function selWeak(k){
+  ['wk-sing','wk-w3','wk-wp','wk-wm','wk-vac'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=id==='wk-'+k?'1':'0.3';});
+  const d=dWeak[k];if(!d)return;
+  document.getElementById('weak-t').textContent=d.t;
+  document.getElementById('weak-b').textContent=d.b;
+  document.getElementById('weak-prob').style.display='block';
+  const bar=document.getElementById('weak-bar');const pn=document.getElementById('weak-pnum');
+  bar.style.width=(d.p*100)+'%';bar.style.background=d.c;pn.textContent=d.p.toFixed(3);
+  const fr=document.getElementById('wfrust');const fl=document.getElementById('wfrust-lbl');
+  if(d.fr){fr.setAttribute('opacity','1');fl.textContent='Frustration active — {W⁺,W⁻} antichain: conjugate pair, width 2. Less frustrated than {R,G,B}.';fl.classList.add('on');}
+  else{fr.setAttribute('opacity','0');fl.textContent=k==='sing'?'Frustration resolved — ⊤ reached. W bosons massive.':'Frustration: dormant';fl.classList.remove('on');}
+}
+const dPhoton={
+  gam:{t:'γ — photon ⊤',b:'Single node above vacuum. Massless — U(1)_EM unbroken by Higgs. Abelian: no self-interaction, no frustrated antichain. Range infinite. P=1.',p:1,c:'#c8960a'},
+  vac:{t:'vacuum ⊥',b:'No photon. P=0. The electromagnetic vacuum. Every photon state lies above this single bottom node. The simplest lattice in the gauge hierarchy.',p:0,c:'#5a4510'},
+};
+function selPhoton(k){
+  ['ph-gam','ph-vac'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=id==='ph-'+k?'1':'0.3';});
+  const d=dPhoton[k];if(!d)return;
+  document.getElementById('photon-t').textContent=d.t;
+  document.getElementById('photon-b').textContent=d.b;
+}
+const dEWbefore={
+  w3:{t:'W³ — SU(2)_L Cartan',b:'Third generator of SU(2). Massless before SSB. Incomparable to B₀ in the pre-mixing lattice — neither orders above the other. After Weinberg rotation: contributes cosθ_W to Z and sinθ_W to γ.'},
+  b0:{t:'B₀ — U(1)_Y hypercharge',b:'Hypercharge gauge boson. Massless before SSB. Incomparable to W³. After rotation: contributes −sinθ_W to Z and cosθ_W to γ. Coupling g\' = g tanθ_W.'},
+};
+function selEW(k){
+  ['ew-w3','ew-b0'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=id==='ew-'+k?'1':'0.3';});
+  const d=dEWbefore[k];if(!d)return;
+  document.getElementById('ew-t').textContent=d.t;
+  document.getElementById('ew-b').textContent=d.b;
+}
+const dEWafter={
+  Z:{t:'Z — neutral weak boson',b:'Z = W³cosθ_W − B₀sinθ_W. Massive: 91.2 GeV. Goldstone eaten by Higgs mechanism. Couples to both left and right-handed fermions (unlike W±). P=0.5+ε (mass breaks degeneracy).'},
+  gamma:{t:'γ — photon',b:'γ = W³sinθ_W + B₀cosθ_W. Massless — U(1)_EM is the unbroken residual subgroup after SSB. Couples only to electric charge. The pure gold surviving the crucible.'},
+};
+function selEWafter(k){
+  const m={'Z':'ew-Za','gamma':'ew-ga'};
+  Object.values(m).forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=m[k]===id?'1':'0.3';});
+  const d=dEWafter[k];if(!d)return;
+  document.getElementById('ewafter-t').textContent=d.t;
+  document.getElementById('ewafter-b').textContent=d.b;
+}
+function updateWeinberg(){
+  const v=parseFloat(document.getElementById('sl-weinberg').value);
+  document.getElementById('weinberg-val').textContent=v.toFixed(1)+'°';
+  const r=v*Math.PI/180;
+  const c=Math.cos(r),s=Math.sin(r);
+  document.getElementById('m11').textContent='+'+c.toFixed(4);
+  document.getElementById('m12').textContent='−'+s.toFixed(4);
+  document.getElementById('m21').textContent='+'+s.toFixed(4);
+  document.getElementById('m22').textContent='+'+c.toFixed(4);
+  document.getElementById('sin2w').textContent=(s*s).toFixed(4);
+  const mW=80.4;
+  document.getElementById('w-mass').textContent=mW.toFixed(1);
+  document.getElementById('z-mass').textContent=(mW/c).toFixed(1);
+  document.getElementById('weinberg-formula').textContent='Z = '+c.toFixed(3)+'·W³ − '+s.toFixed(3)+'·B₀  ·  γ = '+s.toFixed(3)+'·W³ + '+c.toFixed(3)+'·B₀';
+}
+updateWeinberg();
+const dGen={
+  u:{t:'Generation I quarks',b:'u (2.3 MeV, +⅔) and d (4.8 MeV, −⅓). Lightest. First Ω winding. Stable matter: proton=uud, neutron=udd. Minimum Ħ-depth trajectory.'},
+  c:{t:'Generation II quarks',b:'c (1.28 GeV, +⅔) and s (95 MeV, −⅓). Second Ω winding. Charm discovered 1974 (J/ψ). Strangeness: first cross-generational mixing (CKM).'},
+  t:{t:'Generation III quarks',b:'t (173 GeV ≈ v/√2, +⅔) and b (4.18 GeV, −⅓). Third and final Ω winding. Top mass is a Frobenius fixed point: Yukawa coupling y_t = m_t/v ≈ 1/√2 at the VEV.'},
+  e:{t:'Generation I leptons',b:'e (0.511 MeV) and νe (<2 eV). Electron is stable. Neutrino mass non-zero but tiny. First non-trivial Ħ-trajectory for the lepton sector.'},
+  mu:{t:'Generation II leptons',b:'μ (105.7 MeV) and νμ (<0.19 MeV). Muon decays: μ→eνν̄. Second Ω winding. Anomalous magnetic moment (g−2) may signal BSM.'},
+  tau:{t:'Generation III leptons',b:'τ (1777 MeV) and ντ (<18.2 MeV). Heaviest lepton. Third Ω winding — maximum Ħ-depth before fiber closure. Decays hadronically and leptonically.'},
+};
+function selGen(k){
+  document.getElementById('gen-qt').textContent=dGen[k].t;
+  document.getElementById('gen-qb').textContent=dGen[k].b;
+}
+function selLep(k){
+  document.getElementById('gen-lt').textContent=dGen[k].t;
+  document.getElementById('gen-lb').textContent=dGen[k].b;
+}
+</script>
