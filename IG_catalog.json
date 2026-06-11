@@ -44958,5 +44958,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑷"
+  },
+  {
+    "name": "gender_transition_draft",
+    "description": "AI-authored analysis of gender transition through the Imscribing Grammar — numbered sections, tables, direct reader address, formal Shavian notation, makes claims without narrative tension or counterpoint acknowledgment.",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
   }
 ]
