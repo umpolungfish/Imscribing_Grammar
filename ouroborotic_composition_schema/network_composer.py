@@ -1,6 +1,6 @@
 """
 Network Composer — Full Tensor/Graph Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O₂, ⊙_ÿ, Φ_F, Ω_z)
 
 Constructs arbitrary tensor networks: G = (V, E) where vertices are systems,
 edges are coupling operations (tensor, meet, join, directed).

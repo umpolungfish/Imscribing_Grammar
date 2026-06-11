@@ -37,11 +37,11 @@ def mk_synthon(tup):
 
 def tier_for(tup):
     p = tup['Φ']
-    if p == 'Φ_}': return '.O_inf'
+    if p == 'Φ_}': return '.O_∞'
     d = tup['Ð']
     o = tup['Ω']
-    if o == 'Ω_z' and d != 'Ð_ß': return '.O_2'
-    return '.O_1'
+    if o == 'Ω_z' and d != 'Ð_ß': return '.O₂'
+    return '.O₁'
 
 # Fix the CorpusComparison section at the bottom.
 # Need to identify the correct P_doublebarpipe tuples for voynich_frobenius variants.
@@ -68,7 +68,7 @@ print(f"Found {len(uniq_frob)} distinct Frobenius-special Voynich tuple types")
 for t in uniq_frob:
     print(f"  top={t['Þ']}, gram={t['ɢ']}")
 
-# voynich_main has P_aolig, so tier is O_2, not O_inf
+# voynich_main has P_aolig, so tier is O₂, not O_∞
 main_v = max(data['voynich'].values(), key=lambda g: g['count'])['tuple']
 print(f"\nVoynich main tuple: P={main_v['Φ']}, so tier = {tier_for(main_v)}")
 print(f"Rohonc main tuple: tier check needed")

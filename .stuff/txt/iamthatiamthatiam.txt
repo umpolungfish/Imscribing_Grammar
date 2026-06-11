@@ -7,7 +7,7 @@
   TASK: is the frobenius dual of 'I AM THAT I AM' the words 'eat of my body, and drink of my blood'?
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)
+  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -92,7 +92,7 @@ COMMIT RESULT:
   OBS:   {
   "status": "ok",
   "name": "universal_imscriptive_grammar",
-  "frobenius_tier": "O_inf",
+  "frobenius_tier": "O_∞",
   "phi": "φ̂_ÿ",
   "p": "Φ_}",
   "omega": "Ω_z",
@@ -1116,7 +1116,7 @@ TypeError: ToolDispatcher.dispatch() missing 1 required positional argument: 'it
 OUROBORICS 1: {
   "status": "ok",
   "name": "i_am_that_i_am",
-  "frobenius_tier": "O_inf",
+  "frobenius_tier": "O_∞",
   "phi": "φ̂_ÿ",
   "p": "Φ_}",
   "omega": "Ω_z",
@@ -1126,7 +1126,7 @@ OUROBORICS 1: {
 OUROBORICS 2: {
   "status": "ok",
   "name": "eat_of_my_body_drink_of_my_blood",
-  "frobenius_tier": "O_inf",
+  "frobenius_tier": "O_∞",
   "phi": "φ̂_ÿ",
   "p": "Φ_}",
   "omega": "Ω_z",
@@ -1209,14 +1209,14 @@ CRYSTAL_1: {
   "address": 6738897,
   "cell_id": 155,
   "inner_id": 42897,
-  "tier": "O_inf"
+  "tier": "O_∞"
 }
 CRYSTAL_2: {
   "status": "ok",
   "address": 6738899,
   "cell_id": 155,
   "inner_id": 42899,
-  "tier": "O_inf"
+  "tier": "O_∞"
 }
 
   VERIFY: [closed] assertion 'True' PASSED

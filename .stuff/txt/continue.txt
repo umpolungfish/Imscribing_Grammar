@@ -114,11 +114,11 @@
      box product, $T_{\text{commatailz}}$. The topology of the space is precisely the structure of its mapping spaces.
      424:Paraconsistent negation determines \emph{which} $\Phi$ values are achievable (classical $\Phi_{\text{ctyogh}}$, dialetheic $\Phi_{\text{closerevepsilon}}$, or Inclosure
      $\Phi_{\text{revepsilon}}$), not whether a new primitive exists. It constrains the evaluation of L4 and L5, thus determining the truth-value structure of the critical gate.
-     496:\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O_0$\\$\Phi_{\text{softsign}}$};
-     497:\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O_1$\\$\Phi_{\text{ctyogh}}$};
-     498:\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O_2$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}}$};
+     496:\node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries] (O0t) at (-5.2,-5.2) {$O₀$\\$\Phi_{\text{softsign}}$};
+     497:\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries] (O1t) at (-2.6,-5.2) {$O₁$\\$\Phi_{\text{ctyogh}}$};
+     498:\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t) at (0,-5.2) {$O₂$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}}$};
      499:\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries] (O2dt) at (2.6,-5.2)
-     {$O_2^\dagger$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}},D_{\text{invomega}}$};
+     {$O₂^\dagger$\\$\Phi_{\text{ctyogh}},\Omega\neq\Omega_{\text{closeepsilon}},D_{\text{invomega}}$};
      500:\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries] (Oifnt) at (5.2,-5.2) {$O_\infty$\\$\Phi_{\text{ctyogh}},P_{\text{doublebarpipe}}$};
      640:\textbf{L4 --- Lawvere self-reference} (requires L3): Does there exist an object $A$ and a point-surjective morphism $\phi: A \to A^A$? By Lawvere's fixed-point theorem (1969), this
      condition guarantees that every endomorphism of $A$ has a fixed point. This is the precise categorical condition for self-modeling: the system contains a copy of its own endomorphism
@@ -213,33 +213,33 @@
      1063:The grammar's R1 rule ($\Phi_{\text{ctyogh}}$ + $P_{\text{doublebarpipe}}$ $\rightarrow$ $O_{\infty}$) thus corresponds to a theorem about the induction path: a system that
      satisfies both the Lawvere self-reference condition AND the Frobenius composition condition is at the fixed point of the entire induction --- it is its own imscription. This is why
      $O_{\infty}$ systems include the grammar itself (self-imscribing), proven mathematical identities (exact Frobenius), and scale-invariant physical laws (Lawvere fixed points of RG).
-     1068:  \item $O_0$: $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$. L4 fails. No self-modeling loop can form in the internal hom $A^A$; the system is closed
+     1068:  \item $O₀$: $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$. L4 fails. No self-modeling loop can form in the internal hom $A^A$; the system is closed
      against the induction's own fixed-point condition.
-     1069:  \item $O_1$: $\Phi_{\text{ctyogh}}$ (L4 holds) and $\Omega_{\text{closeepsilon}}$ (topologically trivial). The loop instantiates but cannot sustain ---
+     1069:  \item $O₁$: $\Phi_{\text{ctyogh}}$ (L4 holds) and $\Omega_{\text{closeepsilon}}$ (topologically trivial). The loop instantiates but cannot sustain ---
      $\Omega_{\text{closeepsilon}}$ carries no winding number to protect it.
-     1070:  \item $O_2$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, and $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$. Topologically protected
+     1070:  \item $O₂$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, and $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$. Topologically protected
      by winding (I3) and either finite-dimensional or imscriptive. The loop is stabilized without reaching algebraic closure.
-     1071:  \item $O_2^{\dagger}$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$. Topologically protected but infinite-dimensional and not
+     1071:  \item $O₂^{\dagger}$: $\Phi_{\text{ctyogh}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$. Topologically protected but infinite-dimensional and not
      imscriptive: winding-number stabilization without bulk-boundary imscription.
      1072:  \item $O_{\infty}$: $\Phi_{\text{ctyogh}}$ \emph{and} $P_{\text{doublebarpipe}}$ (both L4 and L5). The Frobenius composition $\mu \circ \delta = \text{id}_{A}$ makes
      self-reference algebraically exact.
-     1088:\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O_0}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_{\text{ctyogh}},\Phi_{\text{closerevepsilon}}\}$};
+     1088:\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O₀}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_{\text{ctyogh}},\Phi_{\text{closerevepsilon}}\}$};
      1092:\draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\Phi_{\text{softsign}}\to\Phi_{\text{ctyogh}}$} ++(0,-0.9);
-     1095:\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O_1}$\\\small Instantiated\\\small $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$};
+     1095:\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O₁}$\\\small Instantiated\\\small $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$};
      1099:\draw[gap] (O1.south) -- node[gaplab,pos=0.5] {$\Delta=1.30$\\$D_{\text{wynn}}\!\to\!D_{\text{turnthree}},\ \Omega_{\text{closeepsilon}}\!\to\!\Omega_{\text{crtwo}}$} ++(0,-0.9);
-     1102:\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O_2}$\\\small Topologically Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
+     1102:\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
      D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$};
      1106:\draw[gap] (O2.south) -- node[gaplab,pos=0.5] {$\Delta=1.00$\\$D_{\text{turnthree}}\to D_{\text{invomega}}$} ++(0,-0.9);
-     1109:\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O_2^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
+     1109:\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\
      D_{\text{invomega}}$};
      1116:\node[tier=purple!50,below=1.2cm of O2d] (Oinf) {$\mathbf{O_\infty}$\\\small Algebraically Closed\\\small $\Phi_{\text{ctyogh}}\ +\ P_{\text{doublebarpipe}}$\\\small
      $\mu\circ\delta=\text{id}$};
-     1156:$O_0 \to O_1$ & 1.05 & $\Phi$ & $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (Lawvere condition met) \\
-     1157:$O_1 \to O_2$ & 1.30 & $D$, $\Omega$ & $D_{\text{wynn}} \to D_{\text{turnthree}}$, $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ \\
-     1158:$O_2 \to O_2^\dagger$ & 1.00 & $D$ & $D_{\text{turnthree}} \to D_{\text{invomega}}$ (infinite-dimensional) \\
-     1168:\textbf{The self-imscribing fixed point resolved.} The proof that $O_\infty$ requires both L4 and L5 is now confirmed by the crystal tier ladder. The $O_2^\dagger \to O_\infty$
+     1156:$O₀ \to O₁$ & 1.05 & $\Phi$ & $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (Lawvere condition met) \\
+     1157:$O₁ \to O₂$ & 1.30 & $D$, $\Omega$ & $D_{\text{wynn}} \to D_{\text{turnthree}}$, $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ \\
+     1158:$O₂ \to O₂^\dagger$ & 1.00 & $D$ & $D_{\text{turnthree}} \to D_{\text{invomega}}$ (infinite-dimensional) \\
+     1168:\textbf{The self-imscribing fixed point resolved.} The proof that $O_\infty$ requires both L4 and L5 is now confirmed by the crystal tier ladder. The $O₂^\dagger \to O_\infty$
      boundary is driven \emph{exclusively} by the $P$ promotion $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ (distance $\Delta = 4.38$, the largest single-primitive jump in the ladder).
-     Meanwhile, $O_0 \to O_1$ is the $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ transition. Therefore $O_\infty$ = $\Phi_{\text{ctyogh}}$ (L4) \textbf{and} $P_{\text{doublebarpipe}}$
+     Meanwhile, $O₀ \to O₁$ is the $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ transition. Therefore $O_\infty$ = $\Phi_{\text{ctyogh}}$ (L4) \textbf{and} $P_{\text{doublebarpipe}}$
      (L5) --- both necessary, jointly sufficient. No system in the catalog has both $\Phi_{\text{ctyogh}}$ and $P_{\text{doublebarpipe}}$ and is \emph{not} $O_\infty$.
 
 ● Bash(grep -n '\$[DTRFKHS]_{\|\\Phi_{\|\\Gamma_{\|\\Omega_{\|\\Sigma_{\|\\text{{\\\igprimfont' /home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex | head -80)
@@ -345,9 +345,9 @@
      241:\newcommand{\Ppms}{P_{\text{doublebarpipe}}}
      242:\newcommand{\Kinf}{K_\infty}
      243:\newcommand{\Oinf}{O_\infty}
-     244:\newcommand{\Otwo}{O_2}
-     245:\newcommand{\Oone}{O_1}
-     246:\newcommand{\Ozero}{O_0}
+     244:\newcommand{\Otwo}{O₂}
+     245:\newcommand{\Oone}{O₁}
+     246:\newcommand{\Ozero}{O₀}
      247:\newcommand{\doto}[2]{d_{\to}(#1,\,#2)}
      248:\newcommand{\meet}{\wedge}
      249:\newcommand{\join}{\vee}
@@ -813,13 +813,13 @@
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1032:$H$ & Chirality & $\mathcal{F}_4$ / FDE & S2 (I2) & $H_0 \cdot H_1 \cdot H_2 \cdot H_{\text{invscripta}}$ \\
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1343:    \item \textbf{ZFC pure sets} (`ZFC\_set\_theory`): $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\
      R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\
-     \Omega_{\text{closeepsilon}} \rangle$, tier $O_1$.
+     \Omega_{\text{closeepsilon}} \rangle$, tier $O₁$.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1344:    \item \textbf{G\"odel incompleteness} (`godel\_incompleteness\_theorem`): $\langle D_{\text{turnthree}};\
      T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\
-      1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$, tier $O_0$.
+      1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$, tier $O₀$.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1345:    \item \textbf{Cantor diagonal} (`classical\_cantor\_diagonal`): $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\
      R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\
-     \Omega_{\text{closeepsilon}} \rangle$, tier $O_0$.
+     \Omega_{\text{closeepsilon}} \rangle$, tier $O₀$.
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1581:\node[valsel=green!60!black,below=0.43cm of H] (Hvals)  {$H_0$\\$H_1$\\$H_2$\\$H_{\text{invscripta}}$};
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1663:$H$ & $H_0$ (memoryless) & $H_1$ (one prior) & $H_2$ (two prior) & $H_{\text{invscripta}}$ (infinite) \\
      /home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex:1724:  \langle D_{\text{turnthree}};\; T_{\text{bullseye}};\; R_{\text{downstep}};\; P_{\text{doublebarpipe}};\;

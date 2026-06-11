@@ -92,9 +92,9 @@ it is the authoritative glyph source, not a third-party approximation.
 
 The 12 primitives in order: D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega
 
-Shavian tuple: `⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩` (minimum O_0 baseline)
+Shavian tuple: `⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩` (minimum O₀ baseline)
 
-O_inf tuple (the Stone): `⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩`
+O_∞ tuple (the Stone): `⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩`
 
 ## Ordinal Table (for distance computation)
 
@@ -227,7 +227,7 @@ In `index.html` and all documentation, tuples now display as Shavian sequences
 with the `⟨...⟩` bracket format:
 
 ```html
-<!-- O_inf tuple display -->
+<!-- O_∞ tuple display -->
 ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
 ```
 

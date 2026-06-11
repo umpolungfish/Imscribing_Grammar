@@ -84,20 +84,20 @@ def compute_ouroboricity(t: dict) -> str:
     omega_val = t.get("Ω", "")
     d_val = t.get("Ð", "")
     
-    # O_inf: Φ_F AND ⊙_ÿ (critical self-modeling)
+    # O_∞: Φ_F AND ⊙_ÿ (critical self-modeling)
     if p_val == "Φ_F" and phi_val == "⊙_ÿ":
-        return "O_inf"
+        return "O_∞"
     
-    # O_2: ⊙_ÿ + non-Frobenius + non-trivial winding + D = Ð_ω
+    # O₂: ⊙_ÿ + non-Frobenius + non-trivial winding + D = Ð_ω
     if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val != "Ω_Å" and d_val == "Ð_ω":
-        return "O_2"
+        return "O₂"
     
-    # O_1: ⊙_ÿ + non-Frobenius + trivial winding (Ω_Å)
+    # O₁: ⊙_ÿ + non-Frobenius + trivial winding (Ω_Å)
     if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val == "Ω_Å":
-        return "O_1"
+        return "O₁"
     
-    # O_0: else
-    return "O_0"
+    # O₀: else
+    return "O₀"
 
 
 def show_entry(args):

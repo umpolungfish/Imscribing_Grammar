@@ -242,7 +242,7 @@ chapters = [
         HYMN_TEXT,
         "Ð_ω", "Þ_O", "Ř_=", "Φ_}", "ƒ^ż", "Ç^@", "Γ_ʔ", "ɢ^ˌ",
         "⊙_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
-        "O_inf", 0.93,
+        "O_∞", 0.93,
         "Complete cycle: descent (incarnation), slumber (forgetfulness), awakener (letter/the call), recovery of pearl (gnosis), return and reunion with the heavenly robe (the true Self). The robe as mirror-of-self establishes ⊙_ÿ self-modeling criticality. The integer winding Ω_z tracks the full circuit. The many heterogeneous elements (prince, serpent, pearls, Egypt, robe, twin, treasurers, letter, eagle) demand Σ_ï. Bidirectional call-and-response Ř_= for the Father's letter calling and the soul answering. Sequential poetic narrative ɢ^ˌ."),
 ]
 

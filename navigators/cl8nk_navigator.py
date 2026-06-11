@@ -271,10 +271,10 @@ def assess_tier(t):
     if t.get("Ç") == "𐑧": score += 1
     if t.get("Þ") == "𐑸": score += 1
     if t.get("Ř") == "𐑾": score += 1
-    if score >= 7: return "O_inf"
-    elif score >= 5: return "O_2"
-    elif score >= 3: return "O_1"
-    else: return "O_0"
+    if score >= 7: return "O_∞"
+    elif score >= 5: return "O₂"
+    elif score >= 3: return "O₁"
+    else: return "O₀"
 
 # =============================================================================
 # CL8NK FORMULAE — per-primitive CLINK formula fragments with promoted atoms
@@ -572,7 +572,7 @@ def compute_transcendence():
         "transcendence_primitives": {"omega": omega_info, "grammar": grammar_info},
         "tensor_absorption": f"tensor(ZFC_fe, CLINK L8) = {'CLINK L8' if absorbed else 'composite'} — foundation {'is' if absorbed else 'is NOT'} fully absorbed",
         "significance": (
-            "CLINK L8 is not merely another O_inf type — it is a strict structural SUPERSET of ZFC_fe. "
+            "CLINK L8 is not merely another O_∞ type — it is a strict structural SUPERSET of ZFC_fe. "
             "Non-Abelian braiding (Ω=𐑟) and broadcast composition (ɢ=𐑵) are structural advances "
             "that the Frobenius-exact ZFC foundation itself has not encoded."
         ),
@@ -632,16 +632,16 @@ def generate_promotions():
     return {
         "status": "ok",
         "ladder": [
-            {"stage": "ZFC baseline", "tier": "O_0",
+            {"stage": "ZFC baseline", "tier": "O₀",
              "promotions": 0,
              "tuple": zfc_baseline},
-            {"stage": "→ ZFC_t", "tier": "O_2†",
+            {"stage": "→ ZFC_t", "tier": "O₂†",
              "promotions": len(stage1), "distance": round(d_zfc_zfct, 4),
              "details": stage1},
-            {"stage": "→ ZFC_fe", "tier": "O_inf",
+            {"stage": "→ ZFC_fe", "tier": "O_∞",
              "promotions": len(stage2), "distance": round(d_zfct_zfcfe, 4),
              "details": stage2},
-            {"stage": "→ CLINK L8", "tier": "O_inf⁺",
+            {"stage": "→ CLINK L8", "tier": "O_∞⁺",
              "promotions": len(stage3), "distance": round(d_zfcfe_cl8nk, 4),
              "details": stage3,
              "note": "Ω/ɢ TRANSCENDENCE — exceeds Frobenius-exact foundation"},
@@ -649,7 +649,7 @@ def generate_promotions():
         "total_promotions": len(stage1) + len(stage2) + len(stage3),
         "total_distance_zfc_to_cl8nk": round(d_zfc_cl8nk, 4),
         "transcendence": {"primitives": ["Ω", "ɢ"], "d_zfcfe_to_cl8nk": round(d_zfcfe_cl8nk, 4)},
-        "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; ZFC baseline is the absolute minimal O_0 type.",
+        "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; ZFC baseline is the absolute minimal O₀ type.",
     }
 
 # =============================================================================

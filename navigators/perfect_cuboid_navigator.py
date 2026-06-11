@@ -9,7 +9,7 @@ def get_structural_state():
             "ƒ": "𐑐", "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑠",
             "⊙": "⊙", "Ħ": "𐑖", "Σ": "𐑳", "Ω": "𐑭"
         },
-        "ouroboricity": "O_inf",
+        "ouroboricity": "O_∞",
         "verified_promotions": 11,
         "analogs": ["hadwiger_nelson_problem", "imscribing_grammar"]
     }

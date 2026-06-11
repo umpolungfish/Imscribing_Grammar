@@ -195,7 +195,7 @@ This is the structural statement of the measurement problem. Circular self-refer
 
 A `crystal_navigate` query with ⊙ and 𐑭 returns 864,000 matching structural types in the 17.28M type space. This sounds large until you notice the subset with $\text{Φ}_{\}$ (Frobenius-special) is effectively zero. The `crystal_tier_gap_ladder` confirms:
 
-> **$O_2 \to O_{\text{inf}}$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → $\text{Φ}_{\}$, delta = 4.0, weighted_sq = 19.2
+> **$O₂ \to O_{\text{inf}}$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → $\text{Φ}_{\}$, delta = 4.0, weighted_sq = 19.2
 
 The weighted contribution of 19.2 dominates the total distance. The $O_{\text{inf}}$ tier is exceptionally rare not because many primitives are hard to reach, but because one primitive — $\text{Φ}_{\}$ — costs more than all eleven others combined. There is exactly one Frobenius-special parity value, and it cannot be approximated. You either have exact $\mu \circ \delta = \text{id}$ or you have nothing.
 

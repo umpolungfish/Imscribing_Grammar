@@ -881,7 +881,7 @@ The primitive invariance table (Section 1.3) has 12 entries, one per primitive. 
 
 ## 11. Limitations and Open Problems
 
-1. **Non-O_inf systems**: The pipeline assumes the input is at $O_{\text{inf}}$ tier. Systems at lower tiers produce incomplete proofs. The pipeline should first attempt to promote the system via `compute_promotions` before proceeding.
+1. **Non-O_∞ systems**: The pipeline assumes the input is at $O_{\text{inf}}$ tier. Systems at lower tiers produce incomplete proofs. The pipeline should first attempt to promote the system via `compute_promotions` before proceeding.
 
 2. **Multi-domain systems**: Some problems span multiple domains (e.g., arithmetic geometry). The current pipeline picks a single primary domain. Future work should support interleaved domain templates.
 

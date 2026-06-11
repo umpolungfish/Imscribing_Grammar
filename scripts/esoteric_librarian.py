@@ -262,7 +262,7 @@ def cmd_validate(args):
         'Σ': {'Σ_S', 'Σ_ő', 'Σ_ï'},
         'Ω': {'Ω_Å', 'Ω_2', 'Ω_z', 'Ω_5'},
     }
-    valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O_0', 'O_1', 'O_2', 'O_2†', 'O_inf', ''}
+    valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O₀', 'O₁', 'O₂', 'O₂†', 'O_∞', ''}
 
     for i, e in enumerate(cat):
         name = e.get('name', f'[index {i}]')
@@ -355,7 +355,7 @@ def cmd_stats(args):
 
     print(f"\n  Tier Distribution:")
     for t in sorted(tiers.keys(), key=lambda x: (
-        {'T_0':0,'T_1':1,'T_2':2,'T_3':3,'T_inf':4,'O_0':0,'O_1':1,'O_2':2,'O_2†':3,'O_inf':4,'':-1}.get(x, 99)
+        {'T_0':0,'T_1':1,'T_2':2,'T_3':3,'T_inf':4,'O₀':0,'O₁':1,'O₂':2,'O₂†':3,'O_∞':4,'':-1}.get(x, 99)
     )):
         label = t if t else '(unset)'
         pct = tiers[t] / total * 100

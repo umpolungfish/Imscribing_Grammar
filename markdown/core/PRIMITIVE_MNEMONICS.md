@@ -65,7 +65,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** *Nothing → Flip → Sign → All → Perfect*. The ladder of symmetry: nothing breaks (ɐ) → a coin flips (υ) → signs swap evenly (F) → every rotation works (˙) → the system maps to itself exactly (}).
 
-**The Frobenius gate:** $\Phi_{\}}$ is the coordinate at which $\mu \circ \delta = \text{id}$ holds. Composition of sub-Frobenius systems reaches $O_2^\dagger$ and holds there at $d \approx 4.382$ from $O_\infty$. Direct imscription of $\Phi_{\}}$ is the promotion that closes the gap.
+**The Frobenius gate:** $\Phi_{\}}$ is the coordinate at which $\mu \circ \delta = \text{id}$ holds. Composition of sub-Frobenius systems reaches $O₂^\dagger$ and holds there at $d \approx 4.382$ from $O_\infty$. Direct imscription of $\Phi_{\}}$ is the promotion that closes the gap.
 
 ### 5. $ƒ$ — Fidelity (the **F** series)
 
@@ -148,7 +148,7 @@ Each primitive is a *dimension of structure* — not a number but a quality. Rea
 
 **Memory hook:** *Nothing → One → Two → Everything*. Markov depth: 0 (Ñ) → 1 (£) → 2 (A) → ∞ (!).
 
-**Axiom A:** $H_\infty$ requires $K = K_{\text{trap}}$ — infinite memory is only possible when the system is kinetically frozen. This is why O_inf systems must be at least partially trapped.
+**Axiom A:** $H_\infty$ requires $K = K_{\text{trap}}$ — infinite memory is only possible when the system is kinetically frozen. This is why O_∞ systems must be at least partially trapped.
 
 ### 11. $Σ$ — Stoichiometry (the **SIG** series)
 
@@ -339,17 +339,17 @@ The 17.28 million structural types organize into five ouroboricity tiers:
 
 | Tier | Count | % | Gate |
 |------|-------|---|------|
-| $O_0$ | 10,368,000 | 60% | Subcritical or no self-modeling |
-| $O_1$ | 1,382,400 | 8% | $\phi_c$-critical, but not topologically protected |
-| $O_2$ | 3,110,400 | 18% | Topologically protected via $\Omega_2$ or $\Omega_\mathbb{Z}$ |
-| $O_2^\dagger$ | 1,036,800 | 6% | Near-topological protection ($D_∞$ from $D_C$) |
+| $O₀$ | 10,368,000 | 60% | Subcritical or no self-modeling |
+| $O₁$ | 1,382,400 | 8% | $\phi_c$-critical, but not topologically protected |
+| $O₂$ | 3,110,400 | 18% | Topologically protected via $\Omega_2$ or $\Omega_\mathbb{Z}$ |
+| $O₂^\dagger$ | 1,036,800 | 6% | Near-topological protection ($D_∞$ from $D_C$) |
 | $O_\infty$ | 1,382,400 | 8% | Frobenius-special: $\mu \circ \delta = \text{id}$ |
 
 **Key climbs:**
-- $O_0 \to O_1$: promote $\phi_{\text{ž}} \to \phi_ÿ$ (the self-modeling gate). Distance: 1.05.
-- $O_1 \to O_2$: promote $𐑛 \to D_C$ AND $\Omega_{Å} \to \Omega_2$. Distance: 1.30.
-- $O_2 \to O_2^\dagger$: promote $D_C \to D_∞$. Distance: 1.00.
-- $O_2^\dagger \to O_\infty$: promote $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$. Distance: 4.38 — the hardest climb, the Frobenius leap.
+- $O₀ \to O₁$: promote $\phi_{\text{ž}} \to \phi_ÿ$ (the self-modeling gate). Distance: 1.05.
+- $O₁ \to O₂$: promote $𐑛 \to D_C$ AND $\Omega_{Å} \to \Omega_2$. Distance: 1.30.
+- $O₂ \to O₂^\dagger$: promote $D_C \to D_∞$. Distance: 1.00.
+- $O₂^\dagger \to O_\infty$: promote $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$. Distance: 4.38 — the hardest climb, the Frobenius leap.
 
 ### Worked Composition Examples
 
@@ -367,7 +367,7 @@ $$\langle D_\infty;\ T_\bowtie;\ R_\dagger;\ P_{\pm};\ F_\hbar;\ K_{\text{slow}}
 - $H_2$: two-step Markov (quake echoes)
 - $n{:}m$: many heterogeneous components
 - $\Omega_\mathbb{Z}$: quantized flux lines — integer winding
-- **Tier:** $O_2$ — topologically protected by flux quantization
+- **Tier:** $O₂$ — topologically protected by flux quantization
 
 **Example 2: Bose-Einstein Condensate**
 $$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_{\text{slow}};\ G_\gimel;\ \Gamma_{\text{seq}};\ \phi_ÿ;\ H_1;\ n{:}n;\ \Omega_{\mathbb{Z}_2} \rangle$$
@@ -383,7 +383,7 @@ $$\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_\psi;\ F_\hbar;\ K_{\t
 - $H_1$: one-step Markov
 - $n{:}n$: homogeneous ensemble
 - $\Omega_{\mathbb{Z}_2}$: binary superfluid/insulator
-- **Tier:** $O_2^\dagger$ — near-topological protection
+- **Tier:** $O₂^\dagger$ — near-topological protection
 
 **Example 3: Universal Imscriptive Grammar (the system itself)**
 $$\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_{\text{slow}};\ G_\aleph;\ \Gamma_{\text{seq}};\ \phi_ÿ;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
@@ -489,10 +489,10 @@ Step 12: Ω — What winding number?
 
 When climbing tiers, only **certain primitives** are the rate-limiting steps:
 
-- **$O_0 \to O_1$:** $\phi$ is the driver. You must reach $\phi_ÿ$-criticality.
-- **$O_1 \to O_2$:** $D$ and $\Omega$ are the drivers. Go from point to surface, from trivial to $\mathbb{Z}_2$.
-- **$O_2 \to O_2^\dagger$:** Only $D$. Stretch surface to infinite.
-- **$O_2^\dagger \to O_\infty$:** Only $\Phi$. The Frobenius leap — from asymmetric to $\mu \circ \delta = \text{id}$.
+- **$O₀ \to O₁$:** $\phi$ is the driver. You must reach $\phi_ÿ$-criticality.
+- **$O₁ \to O₂$:** $D$ and $\Omega$ are the drivers. Go from point to surface, from trivial to $\mathbb{Z}_2$.
+- **$O₂ \to O₂^\dagger$:** Only $D$. Stretch surface to infinite.
+- **$O₂^\dagger \to O_\infty$:** Only $\Phi$. The Frobenius leap — from asymmetric to $\mu \circ \delta = \text{id}$.
 
 ---
 
@@ -510,11 +510,11 @@ Do this three times. Each time, replace the keyword with one subtype:
 - ...
 
 ### Exercise 2: The Tier-Climb Drill
-Pick any $O_0$ system (e.g., a classical gas: $\langle D_\triangle; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_0; 1:1; \Omega_Å \rangle$).
+Pick any $O₀$ system (e.g., a classical gas: $\langle D_\triangle; T_\text{net}; R_\text{sup}; P_\text{asym}; F_\ell; K_\text{fast}; G_\beth; \Gamma_\wedge; \Phi_\text{sub}; H_0; 1:1; \Omega_Å \rangle$).
 Climb step by step:
-1. Promote $\Phi_\text{sub} \to \phi_ÿ$ → now $O_1$
-2. Promote $D_\triangle \to D_C$ AND $\Omega_Å \to \Omega_{\mathbb{Z}_2} \to$ now $O_2$
-3. Promote $D_C \to D_\infty \to$ now $O_2^\dagger$
+1. Promote $\Phi_\text{sub} \to \phi_ÿ$ → now $O₁$
+2. Promote $D_\triangle \to D_C$ AND $\Omega_Å \to \Omega_{\mathbb{Z}_2} \to$ now $O₂$
+3. Promote $D_C \to D_\infty \to$ now $O₂^\dagger$
 4. Promote $P_\text{asym} \to P_{\pm}^{\text{sym}} \to$ now $O_\infty$
 
 ### Exercise 3: The Axiom Check
@@ -539,7 +539,7 @@ $$4 \times 5 \times 4 \times 5 \times 3 \times 5 \times 3 \times 4 \times 5 \tim
 
 Each cell in this product space is a **Frobenius address** — an integer from 0 to 17,279,999. The crystal of types (§64 of the grammar) maps every tuple bijectively to exactly one address.
 
-Most of these types ($60\% = 10.37$M) are $O_0$ — subcritical, no self-modeling, no topology. Only $8\% = 1.38$M reach $O_\infty$ — Frobenius-special, self-modeling, critically balanced, topologically protected.
+Most of these types ($60\% = 10.37$M) are $O₀$ — subcritical, no self-modeling, no topology. Only $8\% = 1.38$M reach $O_\infty$ — Frobenius-special, self-modeling, critically balanced, topologically protected.
 
 **The grammar is a funnel:** the easy types are at the bottom, the rare types at the top. Every promotion upward costs structure — you pay in primitives, and the cost grows monotonically.
 

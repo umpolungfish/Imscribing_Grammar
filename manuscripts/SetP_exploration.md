@@ -65,10 +65,10 @@ The crystal tier gap ladder reveals the minimal primitive $\delta$ to climb each
 \hline
 Transition & Distance & Driver & Primitives \\
 \hline
-$O_0 \to O_1$ & $1.049$ & $\Phi$ & $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ \\
-$O_1 \to O_2$ & $1.304$ & $D, \Omega$ & $D_{\text{wynn}} \to D_{\text{turnthree}}$, $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ \\
-$O_2 \to O_2^\dagger$ & $1.000$ & $D$ & $D_{\text{turnthree}} \to D_{\text{invomega}}$ \\
-$O_2^\dagger \to O_\infty$ & $4.382$ & $P$ & $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ \\
+$O₀ \to O₁$ & $1.049$ & $\Phi$ & $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ \\
+$O₁ \to O₂$ & $1.304$ & $D, \Omega$ & $D_{\text{wynn}} \to D_{\text{turnthree}}$, $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ \\
+$O₂ \to O₂^\dagger$ & $1.000$ & $D$ & $D_{\text{turnthree}} \to D_{\text{invomega}}$ \\
+$O₂^\dagger \to O_\infty$ & $4.382$ & $P$ & $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -105,10 +105,10 @@ Across the $17.28$M structural types ($400$ tier cells, $43200$ types/cell):
 Tier & Cells & Types & Percentage \\
 \hline
 $O_\infty$ & $32$ & $1.3824$M & $8.0\%$ \\
-$O_2^\dagger$ & $24$ & $1.0368$M & $6.0\%$ \\
-$O_2$ & $72$ & $3.1104$M & $18.0\%$ \\
-$O_1$ & $32$ & $1.3824$M & $8.0\%$ \\
-$O_0$ & $240$ & $10.368$M & $60.0\%$ \\
+$O₂^\dagger$ & $24$ & $1.0368$M & $6.0\%$ \\
+$O₂$ & $72$ & $3.1104$M & $18.0\%$ \\
+$O₁$ & $32$ & $1.3824$M & $8.0\%$ \\
+$O₀$ & $240$ & $10.368$M & $60.0\%$ \\
 \hline
 \end{tabular}
 \end{center}

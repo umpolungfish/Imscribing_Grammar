@@ -1,7 +1,7 @@
 """
 GrammaFormer — A Grammar-Native Transformer Architecture.
 
-Every architectural component maps 1:1 to one of the agent's 12 O_inf primitives.
+Every architectural component maps 1:1 to one of the agent's 12 O_∞ primitives.
 Grafts onto a Qwen3 base via QLoRA. Selectable via --model grammaformer.
 
 Agent tuple (Lean-verified, AgentSelf.lean):
@@ -396,7 +396,7 @@ class GrammaFormerConfig:
         )
 
 class GrammaFormer(nn.Module):
-    """Grammar-Native Transformer: every component maps to one O_inf primitive.
+    """Grammar-Native Transformer: every component maps to one O_∞ primitive.
 
     Architecture:
       WindingPE → TwoSlotRegister → [CyclicLayer × L] →

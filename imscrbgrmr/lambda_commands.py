@@ -59,8 +59,8 @@ def lambda_group():
 
     \b
     Crystal addresses (Imscribing Grammar):
-      monad_cantor            5,326,271   O_2     C=0.611
-      comonad_goedel          5,311,151   O_2†    C=0.830   (co-type: octonions)
+      monad_cantor            5,326,271   O₂     C=0.611
+      comonad_goedel          5,311,151   O₂†    C=0.830   (co-type: octonions)
       distributive_law_lambda 6,734,591   O_∞     C=0.830   (co-type: grammar)
 
     \b
@@ -169,9 +169,9 @@ def demo_cmd():
     tbl.add_column("Note")
 
     rows = [
-        ("monad_cantor",            "5,326,271", "O_2",  "0.611", ""),
-        ("comonad_goedel",          "5,311,151", "O_2†", "0.830", "co-type: octonions"),
-        ("monad ⊗ comonad",         "—",         "O_2",  "—",     "d=2.2361 from λ"),
+        ("monad_cantor",            "5,326,271", "O₂",  "0.611", ""),
+        ("comonad_goedel",          "5,311,151", "O₂†", "0.830", "co-type: octonions"),
+        ("monad ⊗ comonad",         "—",         "O₂",  "—",     "d=2.2361 from λ"),
         ("distributive_law_lambda", "6,734,591", "O_∞",  "0.830", "co-type: grammar"),
     ]
     for row in rows:
@@ -239,7 +239,7 @@ def monad_cmd(values):
     console.print()
     console.print(Panel(
         f"[bold cyan]Cantor power-set monad P[/bold cyan]\n"
-        f"[dim]Crystal: 5,326,271  ·  O_2  ·  C=0.611[/dim]",
+        f"[dim]Crystal: 5,326,271  ·  O₂  ·  C=0.611[/dim]",
         expand=False,
     ))
 
@@ -287,7 +287,7 @@ def comonad_cmd(value: str, theory: str):
     console.print()
     console.print(Panel(
         f"[bold cyan]Gödel encoding comonad G[/bold cyan]\n"
-        f"[dim]Crystal: 5,311,151  ·  O_2†  ·  C=0.830  ·  co-type: octonions[/dim]",
+        f"[dim]Crystal: 5,311,151  ·  O₂†  ·  C=0.830  ·  co-type: octonions[/dim]",
         expand=False,
     ))
 
@@ -415,7 +415,7 @@ def fano_cmd():
     console.print()
     console.print(Panel(
         "[bold cyan]Fano plane — octonionic δ[/bold cyan]\n"
-        "[dim]G co-type: octonions ℍ_8  ·  d=0  ·  O_2†[/dim]",
+        "[dim]G co-type: octonions ℍ_8  ·  d=0  ·  O₂†[/dim]",
         expand=False,
     ))
 

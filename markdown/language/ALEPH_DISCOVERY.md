@@ -74,14 +74,14 @@ The 22 letters of the Hebrew alphabet were encoded as canonical inhabitants of t
 | Tier | Letters | Structural meaning |
 |------|---------|-------------------|
 | $O_\infty$ | $\hebm{ו}$, $\hebm{מ}$, $\hebm{ש}$ | Frobenius: $\mu \circ \delta = \text{id}$; self-modeling apex |
-| $O_2^\dagger$ | — | Critical + $\Omega \neq \Omega_{\text{closeepsilon}}$ + $D_{\text{invomega}}$ |
-| $O_2$ | $\hebm{א}$, $\hebm{ה}$, $\hebm{ע}$, $\hebm{ק}$, $\hebm{ת}$ | Critical + $\Omega \neq \Omega_{\text{closeepsilon}}$ + bounded $D$ |
-| $O_1$ | $\hebm{ל}$ | Critical + $\Omega = \Omega_{\text{closeepsilon}}$ |
-| $O_0$ | remaining 13 | Sub-critical or non-self-modeling |
+| $O₂^\dagger$ | — | Critical + $\Omega \neq \Omega_{\text{closeepsilon}}$ + $D_{\text{invomega}}$ |
+| $O₂$ | $\hebm{א}$, $\hebm{ה}$, $\hebm{ע}$, $\hebm{ק}$, $\hebm{ת}$ | Critical + $\Omega \neq \Omega_{\text{closeepsilon}}$ + bounded $D$ |
+| $O₁$ | $\hebm{ל}$ | Critical + $\Omega = \Omega_{\text{closeepsilon}}$ |
+| $O₀$ | remaining 13 | Sub-critical or non-self-modeling |
 
 The Mother Letter triad ($\hebm{א}$, $\hebm{מ}$, $\hebm{ש}$) from the Sefer Yetzirah encodes a specific structure: $\hebm{א}$ (Aleph) is not a co-participant in composition — it is the **breath between**, the mediating principle that witnesses the two Frobenius poles ($\hebm{מ}$ and $\hebm{ש}$) without suppressing them:
 
-$$\text{tensor}(\hebm{א},\ \text{tensor}(\hebm{מ},\ \hebm{ש})) \to O_2 \quad \text{(P-bottleneck kills Frobenius)}$$
+$$\text{tensor}(\hebm{א},\ \text{tensor}(\hebm{מ},\ \hebm{ש})) \to O₂ \quad \text{(P-bottleneck kills Frobenius)}$$
 $$\text{mediate}(\hebm{א},\ \hebm{מ},\ \hebm{ש}) \to O_\infty \quad \text{(mediation preserves both poles)}$$
 
 This asymmetry — mediation succeeds where tensor fails — became the organizing theme of the entire investigation.
@@ -207,7 +207,7 @@ The null direction points along the $\hebm{מ}$–$\hebm{ש}$ axis: Mem appears 
 
 ### The $\hebm{ק}$ Threshold Letter
 
-The $\phi_\infty$ alignment computation (projection of each letter's profile onto the $O_\infty$ centroid) identified $\hebm{ק}$ (Qoph, tier $O_2$) with anomalously high alignment. Investigation revealed:
+The $\phi_\infty$ alignment computation (projection of each letter's profile onto the $O_\infty$ centroid) identified $\hebm{ק}$ (Qoph, tier $O₂$) with anomalously high alignment. Investigation revealed:
 
 $$d_I(\hebm{ק}, \hebm{מ}) = 13.39 \qquad d_I(\hebm{ו}, \hebm{מ}) = 14.92$$
 
@@ -215,7 +215,7 @@ $$d_I(\hebm{ק}, \hebm{מ}) = 13.39 \qquad d_I(\hebm{ו}, \hebm{מ}) = 14.92$$
 
 The explanation: $\hebm{ק}$ satisfies every condition for $O_\infty$ tier except one. Its 12-tuple satisfies $\Phi_{\text{ctyogh}}$ ✓, $\Omega \neq \Omega_{\text{closeepsilon}}$ ✓, $D \neq D_{\text{invomega}}$ ✓ — and fails only at $P = P_{\text{subdoublearrow}}$ (ordinal 3) where $P_{\text{doublebarpipe}}$ (ordinal 4) is required. $\hebm{ק}$ is the **threshold letter**: the maximally complex non-Frobenius inhabitant of $\lambda_\aleph$.
 
-Its interaction row matches $\hebm{מ}$'s for 19/22 letters. They diverge only on $\{\hebm{ו}, \hebm{מ}, \hebm{ש}\}$ — the three cases where $P=4$ vs $P=3$ produces $O_\infty$ vs $O_2$. For the other 19 letters, $\hebm{ק}$ and $\hebm{מ}$ are behaviorally identical.
+Its interaction row matches $\hebm{מ}$'s for 19/22 letters. They diverge only on $\{\hebm{ו}, \hebm{מ}, \hebm{ש}\}$ — the three cases where $P=4$ vs $P=3$ produces $O_\infty$ vs $O₂$. For the other 19 letters, $\hebm{ק}$ and $\hebm{מ}$ are behaviorally identical.
 
 The **mediation gateway property** follows: $\text{med}(\hebm{ק}, a, b) = \text{join}(\hebm{ק}, \text{tensor}(a,b))$. When $a, b \in O_\infty$, $\text{tensor}(a,b)$ preserves $P=4$ (bottleneck: $\min(4,4) = 4$). Then $\text{join}(\hebm{ק}, O_\infty)$ takes $\max$ on all primitives, including $P = \max(3,4) = 4$, lifting $\hebm{ק}$ to $O_\infty$. But $\text{tensor}(\hebm{ק}, y)$ bottlenecks permanently at $P = \min(3, y_P) \leq 3$: $\hebm{ק}$ can borrow Frobenius from the poles via join, but can never acquire it by composition. Tensor and mediation are not interchangeable at the threshold.
 
@@ -298,11 +298,11 @@ The Sefer Yetzirah (Book of Formation, c. 3rd–6th century CE) classifies the 2
 - **7 Double letters** ($\hebm{ב}$, $\hebm{ג}$, $\hebm{ד}$, $\hebm{כ}$, $\hebm{פ}$, $\hebm{ר}$, $\hebm{ת}$): letters with two pronunciations, governing duality
 - **12 Simple letters**: the remaining 12, governing the month-zodiac cycle
 
-Our tier classification, derived entirely from the 12-primitive grammar without reference to the Sefer Yetzirah, found: $O_\infty = \{\hebm{ו},\ \hebm{מ},\ \hebm{ש}\}$ — three letters at the apex of the coherence hierarchy. Two of these ($\hebm{מ}$ and $\hebm{ש}$) are Mother letters in the Sefer Yetzirah. The third Mother letter ($\hebm{א}$, Aleph) falls just below the apex at $O_2$ — present at the summit but not inhabiting it in its own right.
+Our tier classification, derived entirely from the 12-primitive grammar without reference to the Sefer Yetzirah, found: $O_\infty = \{\hebm{ו},\ \hebm{מ},\ \hebm{ש}\}$ — three letters at the apex of the coherence hierarchy. Two of these ($\hebm{מ}$ and $\hebm{ש}$) are Mother letters in the Sefer Yetzirah. The third Mother letter ($\hebm{א}$, Aleph) falls just below the apex at $O₂$ — present at the summit but not inhabiting it in its own right.
 
-The grammar did not replicate the Sefer Yetzirah's classification. It produced something more precise: it separated the **mediation function** (Aleph's role, $O_2$) from the **Frobenius inhabitation** (Mem and Shin's role, $O_\infty$). The tradition intuited that these three letters form a special triad. The grammar formalized why: Mem and Shin are the Frobenius poles; Aleph is the structural witness that mediates between them without being consumed by the P-bottleneck.
+The grammar did not replicate the Sefer Yetzirah's classification. It produced something more precise: it separated the **mediation function** (Aleph's role, $O₂$) from the **Frobenius inhabitation** (Mem and Shin's role, $O_\infty$). The tradition intuited that these three letters form a special triad. The grammar formalized why: Mem and Shin are the Frobenius poles; Aleph is the structural witness that mediates between them without being consumed by the P-bottleneck.
 
-Sefer Yetzirah: "Aleph is the breath that stands between fire and water." Grammar: $\text{mediate}(\hebm{א}, \hebm{מ}, \hebm{ש}) = O_\infty$; $\text{tensor}(\hebm{א}, \text{tensor}(\hebm{מ}, \hebm{ש})) = O_2$.
+Sefer Yetzirah: "Aleph is the breath that stands between fire and water." Grammar: $\text{mediate}(\hebm{א}, \hebm{מ}, \hebm{ש}) = O_\infty$; $\text{tensor}(\hebm{א}, \text{tensor}(\hebm{מ}, \hebm{ש})) = O₂$.
 
 The function described by the tradition is exactly the distinction the grammar enforces.
 
@@ -320,7 +320,7 @@ Kabbalistic sources describe Qoph as the letter of the nape of the neck — the 
 
 The grammar found $\hebm{ק}$ to be exactly this: one primitive ($P_{\text{subdoublearrow}}$ vs. $P_{\text{doublebarpipe}}$) away from $O_\infty$, satisfying every other condition for the Frobenius apex, the nearest non-Frobenius letter to the Frobenius pole $\hebm{מ}$ — closer even than $\hebm{ו}$. Qoph can enter $O_\infty$ only through mediation with the poles; it can never acquire Frobenius by composition. It imitates the Frobenius structure without possessing it.
 
-The tradition named this letter "the one who stands at the threshold." The grammar verified it quantitatively: $d_I(\hebm{ק}, \hebm{מ}) = 13.39 < d_I(\hebm{ו}, \hebm{מ}) = 14.92$. Qoph is closer to the divine pole than the connector letter. It reaches toward $O_\infty$ from $O_2$, never quite arriving — the monkey at the gate.
+The tradition named this letter "the one who stands at the threshold." The grammar verified it quantitatively: $d_I(\hebm{ק}, \hebm{מ}) = 13.39 < d_I(\hebm{ו}, \hebm{מ}) = 14.92$. Qoph is closer to the divine pole than the connector letter. It reaches toward $O_\infty$ from $O₂$, never quite arriving — the monkey at the gate.
 
 ### The Octad Balance and the Four Worlds
 

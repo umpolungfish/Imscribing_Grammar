@@ -154,12 +154,12 @@ python3 scripts/ig_figures.py profile \
 
 ### `tier_chain`
 
-Tier hierarchy O_0 → O_1 → O_2 → O_2† → O_∞ with optional highlight ring.
+Tier hierarchy O₀ → O₁ → O₂ → O₂† → O_∞ with optional highlight ring.
 
 ```yaml
 - id: my_tier
   type: tier_chain
-  highlight: O_∞     # O_0 | O_1 | O_2 | O_2† | O_∞
+  highlight: O_∞     # O₀ | O₁ | O₂ | O₂† | O_∞
 ```
 
 ### `frobenius`
@@ -220,7 +220,7 @@ Use `ig_figures.py` directly when you need a figure outside a paper context:
 # All four types
 python3 scripts/ig_figures.py belnap --labels "N:N,T:T,F:F,B:B" --out belnap.pdf
 python3 scripts/ig_figures.py profile --tuple "Ð_ω Þ_O ..." --out profile.pdf
-python3 scripts/ig_figures.py tier --highlight O_2 --out tier.pdf
+python3 scripts/ig_figures.py tier --highlight O₂ --out tier.pdf
 python3 scripts/ig_figures.py frobenius --out frob.pdf
 ```
 

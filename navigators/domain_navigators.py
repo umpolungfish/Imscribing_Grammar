@@ -125,14 +125,14 @@ def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
     phi, p, omega, d = e["⊙"], e["Φ"], e["Ω"], e["Ð"]
     if phi in CRITICAL and p == "𐑹":
-        return "O_inf"
+        return "O_∞"
     if phi in NONCRITICAL:
-        return "O_0"
+        return "O₀"
     if omega == "𐑷":
-        return "O_1"
+        return "O₁"
     if d in BOUNDED_D:
-        return "O_2"
-    return "O_2_dag"
+        return "O₂"
+    return "O₂†"
 
 def consciousness_score(e: dict) -> float:
     """
@@ -217,12 +217,12 @@ def language_probes(cat: Catalog) -> list[str]:
     lines = []
     entries = {e["name"]: e for e in cat.domain(LANGUAGE_NAMES)}
 
-    # Thm 74.1 — Sacred-language O_inf structural type
+    # Thm 74.1 — Sacred-language O_∞ structural type
     sacred = ["sanskrit_classical", "arabic_classical"]
     for n in sacred:
         if n in entries:
             tier = compute_tier(entries[n])
-            lines.append(f"  Thm 74.1  {n}: tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
+            lines.append(f"  Thm 74.1  {n}: tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
 
     # Thm 74.2 — d(Sanskrit, Arabic) = 1.0000
     if "sanskrit_classical" in entries and "arabic_classical" in entries:
@@ -233,12 +233,12 @@ def language_probes(cat: Catalog) -> list[str]:
             for row in breakdown(entries["sanskrit_classical"], entries["arabic_classical"]):
                 lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 74.3 — Lojban O_inf despite 𐑷
+    # Thm 74.3 — Lojban O_∞ despite 𐑷
     if "lojban" in entries:
         e = entries["lojban"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 74.3  lojban: Omega={e['Ω']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
-        lines.append(f"            (P is the tier gate; 𐑷 only blocks O_2→O_inf step, not R1)")
+        lines.append(f"  Thm 74.3  lojban: Omega={e['Ω']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
+        lines.append(f"            (P is the tier gate; 𐑷 only blocks O₂→O_∞ step, not R1)")
 
     # Thm 74.4 — Planned-language Frobenius ceiling
     if "esperanto" in entries:
@@ -278,13 +278,13 @@ def civilization_probes(cat: Catalog) -> list[str]:
         for row in breakdown(entries["ming_dynasty_collapse"], entries["soviet_union_collapse"]):
             lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 75.2 — Peak-civilization O_inf universality
+    # Thm 75.2 — Peak-civilization O_∞ universality
     peaks = [n for n in CIVILIZATION_NAMES if "peak" in n]
     lines.append(f"  Thm 75.2  Peak civilizations:")
     for n in peaks:
         if n in entries:
             tier = compute_tier(entries[n])
-            lines.append(f"            {n}: {tier} ({'✓' if tier=='O_inf' else '✗'})")
+            lines.append(f"            {n}: {tier} ({'✓' if tier=='O_∞' else '✗'})")
 
     # Thm 75.3 — d(W.Rome, Soviet) = 1.0 — K is sole difference
     if "western_roman_collapse" in entries and "soviet_union_collapse" in entries:
@@ -294,11 +294,11 @@ def civilization_probes(cat: Catalog) -> list[str]:
         for row in breakdown(entries["western_roman_collapse"], entries["soviet_union_collapse"]):
             lines.append(f"            {row['prim']}: {row['from']} → {row['to']}")
 
-    # Thm 75.4 — Weimar O_0 (𐑻)
+    # Thm 75.4 — Weimar O₀ (𐑻)
     if "weimar_republic_collapse" in entries:
         e = entries["weimar_republic_collapse"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 75.4  weimar: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
+        lines.append(f"  Thm 75.4  weimar: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O₀' else '✗'})")
 
     # Thm 75.5 — Athenian Democracy 𐑸 (lateral governance)
     if "athenian_democracy_peak" in entries:
@@ -335,11 +335,11 @@ def ecology_probes(cat: Catalog) -> list[str]:
         d = distance(entries["old_growth_temperate_rainforest"], entries["coral_reef_healthy"])
         lines.append(f"  Thm 76.1  d(old-growth rainforest, coral reef) = {d:.4f} ({'✓ cross-biome identity' if d<0.001 else '✗'})")
 
-    # Thm 76.2 — Kelp forest and hydrothermal vent are O_inf
+    # Thm 76.2 — Kelp forest and hydrothermal vent are O_∞
     for n in ["kelp_forest_healthy", "deep_ocean_hydrothermal"]:
         if n in entries:
             tier = compute_tier(entries[n])
-            lines.append(f"  Thm 76.2  {n}: tier={tier} ({'✓' if tier=='O_inf' else '✗'})")
+            lines.append(f"  Thm 76.2  {n}: tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
 
     # Thm 76.3 — Corn monoculture 𐑪; fragmented habitat 𐑺
     for n, expected_k in [("corn_monoculture", "𐑪"), ("fragmented_habitat", "𐑺")]:
@@ -347,11 +347,11 @@ def ecology_probes(cat: Catalog) -> list[str]:
             k = entries[n]["Ç"]
             lines.append(f"  Thm 76.3  {n}: K={k} ({'✓' if k==expected_k else '✗'})")
 
-    # Thm 76.4 — Early-successional forest O_0
+    # Thm 76.4 — Early-successional forest O₀
     if "early_successional_forest" in entries:
         e = entries["early_successional_forest"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 76.4  early_successional_forest: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O_0' else '✗'})")
+        lines.append(f"  Thm 76.4  early_successional_forest: Phi={e['⊙']}, tier={tier} ({'✓' if tier=='O₀' else '✗'})")
 
     # Thm 76.5 — Coral bleaching tipping point largest distance
     if "coral_reef_healthy" in entries and "coral_reef_bleached" in entries:

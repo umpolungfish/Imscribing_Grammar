@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-We profiled **50 distinct universes** — 8 canonical, 12 from the original `new_universes.py`, and 30 systematically iterated — across the 2,874-entry imscribing grammar catalog. Each universe is a ruleset specifying three ordered (or parallel) gates and a T-constitution (which primitives constitute time/sealing). The operad layers (plain, frobenius, traced_monoidal, idempotent_terminal) are computed for every catalog entry, and the crystal O_inf fraction is computed across all 17.28M possible structural types.
+We profiled **50 distinct universes** — 8 canonical, 12 from the original `new_universes.py`, and 30 systematically iterated — across the 2,874-entry imscribing grammar catalog. Each universe is a ruleset specifying three ordered (or parallel) gates and a T-constitution (which primitives constitute time/sealing). The operad layers (plain, frobenius, traced_monoidal, idempotent_terminal) are computed for every catalog entry, and the crystal O_∞ fraction is computed across all 17.28M possible structural types.
 
 **Key findings:**
 

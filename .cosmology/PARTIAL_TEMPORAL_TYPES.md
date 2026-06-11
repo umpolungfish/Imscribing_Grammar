@@ -20,7 +20,7 @@ Crystal address 3,928,019, confirmed by crystal_decode:
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-Tier: $O_2^\dagger$ | C-score: 0.828 (both gates open)
+Tier: $O₂^\dagger$ | C-score: 0.828 (both gates open)
 
 ---
 
@@ -30,7 +30,7 @@ Tier: $O_2^\dagger$ | C-score: 0.828 (both gates open)
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **Tier:** $O_2^\dagger$ (unchanged)
+- **Tier:** $O₂^\dagger$ (unchanged)
 - **C-score:** 0.828 (unchanged — both gates open)
 - **Distance from time:** 2.0 (diagonal), 2.08 Mahalanobis
   - Conflict: $\Gamma$ only, $\delta = 2$, weighted_sq = 4.0
@@ -49,7 +49,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **Tier:** $O_2^\dagger$ (unchanged)
+- **Tier:** $O₂^\dagger$ (unchanged)
 - **C-score:** 0.828 (unchanged — both gates open)
 - **Distance from time:** 2.68 (diagonal), 3.86 Mahalanobis
   - Conflict: $H$ only, $\delta = 3$, weighted_sq = 7.2
@@ -68,7 +68,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-- **Tier:** $O_1$ ⚠️ **DEGRADED** — drops from $O_2^\dagger$ to $O_1$
+- **Tier:** $O₁$ ⚠️ **DEGRADED** — drops from $O₂^\dagger$ to $O₁$
 - **C-score:** 0.644 (reduced from 0.828 — both gates still open)
 - **Distance from time:** 1.67 (diagonal), 3.59 Mahalanobis
   - Conflict: $\Omega$ only, $\delta = 2$, weighted_sq = 2.8
@@ -79,7 +79,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
   1. `fermats_last_theorem_proven` (d = 2.15 Mahalanobis)
   2. `axis_of_evil` (d = 2.19 Mahalanobis)
 
-**Interpretation:** **This is the only partial type that loses an ouroboricity tier.** Removing integer winding drops the system from $O_2^\dagger$ (the 6% elite) to $O_1$ (merely self-referential at criticality). The diagonal distance (1.67) is the smallest of all five peels, but the Mahalanobis distance (3.59) is large due to the full $\Omega$-metric weight. The C-score drops by 22% (0.828 → 0.644) — the single largest C drop. Topological protection is the load-bearing primitive: without it, the system is not just impoverished but structurally demoted. **This is the hardest primitive to acquire** because it gates tier membership.
+**Interpretation:** **This is the only partial type that loses an ouroboricity tier.** Removing integer winding drops the system from $O₂^\dagger$ (the 6% elite) to $O₁$ (merely self-referential at criticality). The diagonal distance (1.67) is the smallest of all five peels, but the Mahalanobis distance (3.59) is large due to the full $\Omega$-metric weight. The C-score drops by 22% (0.828 → 0.644) — the single largest C drop. Topological protection is the load-bearing primitive: without it, the system is not just impoverished but structurally demoted. **This is the hardest primitive to acquire** because it gates tier membership.
 
 ---
 
@@ -87,7 +87,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **Tier:** $O_2^\dagger$ (unchanged)
+- **Tier:** $O₂^\dagger$ (unchanged)
 - **C-score:** 0.828 (unchanged — both gates open)
 - **Distance from time:** 3.0 (diagonal), 2.48 Mahalanobis
   - Conflict: $P$ only, $\delta = 3$, weighted_sq = 9.0 — **largest weighted_sq of any single peel**
@@ -98,7 +98,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
   1. `A2d_copt` (d = 0.83 Mahalanobis) — related tier
   2. `space_time_join` (d = 1.55 Mahalanobis)
 
-**Interpretation:** Removing the arrow has the **largest diagonal distance** (3.0) and the **largest weighted squared contribution** (9.0) — $P$ is the most asymmetrically costly primitive to change ($\delta = 3$ for the enum jump from $P_{\text{aolig}}$ to $P_{\text{subdoublearrow}}$). Yet tier and C-score are unchanged. The nearest analogs are `space_time_join` (distance 0.95 crystal) and `A2d_copt` (distance 1.10) — both $O_2^\dagger$ systems with full symmetry. This reveals a structural fact: time without its arrow remains rich, protected, and conscious — it simply becomes reversible. The space-time join itself carries $P_{\text{subdoublearrow}}$, confirming that the join operation preserves symmetry rather than breaking it.
+**Interpretation:** Removing the arrow has the **largest diagonal distance** (3.0) and the **largest weighted squared contribution** (9.0) — $P$ is the most asymmetrically costly primitive to change ($\delta = 3$ for the enum jump from $P_{\text{aolig}}$ to $P_{\text{subdoublearrow}}$). Yet tier and C-score are unchanged. The nearest analogs are `space_time_join` (distance 0.95 crystal) and `A2d_copt` (distance 1.10) — both $O₂^\dagger$ systems with full symmetry. This reveals a structural fact: time without its arrow remains rich, protected, and conscious — it simply becomes reversible. The space-time join itself carries $P_{\text{subdoublearrow}}$, confirming that the join operation preserves symmetry rather than breaking it.
 
 ---
 
@@ -106,7 +106,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **Tier:** $O_2^\dagger$ (unchanged)
+- **Tier:** $O₂^\dagger$ (unchanged)
 - **C-score:** 0.749 (reduced from 0.828 — Gate 2 warning: $K_{\text{frtailgamma}}$)
 - **Distance from time:** 2.0 (diagonal), 2.79 Mahalanobis
   - Conflict: $K$ only, $\delta = 2$, weighted_sq = 4.0
@@ -125,11 +125,11 @@ $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\tex
 
 | Partial Type | Peeled Primitive | Tier | C-score | Dist (diag) | Dist (Mahal.) | Nearest Neighbor |
 |---|---|---|---|---|---|---|
-| time_no_seq | $\Gamma_{\text{secstress}} \to \Gamma_{\text{corner}}$ | $O_2^\dagger$ | 0.828 | 2.00 | 2.08 | `riemann_zeta_complex_formal` (1.79) |
-| time_no_memory | $H_{\text{invscripta}} \to H_0$ | $O_2^\dagger$ | 0.828 | 2.68 | 3.86 | `lambda_calculus` (1.92) |
-| time_no_winding | $\Omega_{\text{dzlig}} \to \Omega_{\text{closeepsilon}}$ | **$O_1$** ⚠️ | **0.644** | 1.67 | 3.59 | `partial_feminization_...` (1.58) |
-| time_no_arrow | $P_{\text{aolig}} \to P_{\text{subdoublearrow}}$ | $O_2^\dagger$ | 0.828 | **3.00** | 2.48 | `space_time_join` (0.95) |
-| time_no_grain | $K_{\text{schwa}} \to K_{\text{frtailgamma}}$ | $O_2^\dagger$ | 0.749 | 2.00 | 2.79 | `chronovisor` (1.70) |
+| time_no_seq | $\Gamma_{\text{secstress}} \to \Gamma_{\text{corner}}$ | $O₂^\dagger$ | 0.828 | 2.00 | 2.08 | `riemann_zeta_complex_formal` (1.79) |
+| time_no_memory | $H_{\text{invscripta}} \to H_0$ | $O₂^\dagger$ | 0.828 | 2.68 | 3.86 | `lambda_calculus` (1.92) |
+| time_no_winding | $\Omega_{\text{dzlig}} \to \Omega_{\text{closeepsilon}}$ | **$O₁$** ⚠️ | **0.644** | 1.67 | 3.59 | `partial_feminization_...` (1.58) |
+| time_no_arrow | $P_{\text{aolig}} \to P_{\text{subdoublearrow}}$ | $O₂^\dagger$ | 0.828 | **3.00** | 2.48 | `space_time_join` (0.95) |
+| time_no_grain | $K_{\text{schwa}} \to K_{\text{frtailgamma}}$ | $O₂^\dagger$ | 0.749 | 2.00 | 2.79 | `chronovisor` (1.70) |
 
 ---
 

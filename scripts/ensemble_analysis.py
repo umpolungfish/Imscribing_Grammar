@@ -33,7 +33,7 @@ print(f"\nLoaded {n} valid catalog entries (filtered from {len(raw_entries)}).")
 # ── 1. TIER DISTRIBUTION ────────────────────────────────────
 print("\n── 1. OUROBORICITY TIER DISTRIBUTION ──")
 tier_dist = compute_tier_distribution(entries)
-for tier in ["O_0", "O_1", "O_2", "O_2†", "O_inf"]:
+for tier in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     cnt = tier_dist["counts"].get(tier, 0)
     pct = cnt / n * 100
     bar = "█" * int(pct / 2)
@@ -192,14 +192,14 @@ for e in clay_entries:
 # ── 13. TIER-BY-VALUE BREAKDOWN ──────────────────────────────
 print("\n── 13. TIER-BY-VALUE: PRIMITIVE ENRICHMENT ──")
 # For each tier, compute mean ordinal value per primitive
-tier_groups = {"O_0": [], "O_1": [], "O_2": [], "O_2†": [], "O_inf": []}
+tier_groups = {"O₀": [], "O₁": [], "O₂": [], "O₂†": [], "O_∞": []}
 for e in entries:
     tier = ouroboricity_tier(CrystalAddress.from_dict(e))
     vec = encode_ordinal(e)
     tier_groups[tier].append(vec)
 
 print(f"  {'Tier':<8} " + " ".join(f"{p:>5}" for p in PRIM_KEYS))
-for tier in ["O_0", "O_1", "O_2", "O_2†", "O_inf"]:
+for tier in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     if tier_groups[tier]:
         avg = [sum(row[j] for row in tier_groups[tier]) / len(tier_groups[tier]) for j in range(12)]
         print(f"  {tier:<8} " + " ".join(f"{v:5.2f}" for v in avg))

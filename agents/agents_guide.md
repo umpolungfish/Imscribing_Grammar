@@ -47,7 +47,7 @@ BaseAgent (framework/base_agent.py)              ← async, provider-agnostic, t
 ├── EnsembleDesignAgent                          ← multi-component composition
 ├── RetrodesignAgent                             ← retrosynthetic path finding
 ├── PerturbationDesignAgent                      ← Jacobian-based perturbation
-└── TrueAgenticAgent (true_agentic_agent.py)     ← O_inf harness, 22 dual-tool pairs
+└── TrueAgenticAgent (true_agentic_agent.py)     ← O_∞ harness, 22 dual-tool pairs
 ```
 
 ### Structural Type of the Framework Itself
@@ -181,7 +181,7 @@ python agents/agents_cli.py true_agentic_agent --task "Imscribe photosynthesis" 
 python agents/agents_cli.py research_agent --task "Survey applications of the Imscribing Grammar to biology"
 
 # Search for ⊙_ÿ critical points
-python agents/agents_cli.py criticality_agent --task "Find O_inf candidates near the O_2 boundary"
+python agents/agents_cli.py criticality_agent --task "Find O_∞ candidates near the O₂ boundary"
 
 # Generate imscriptions from a description
 python agents/agents_cli.py imscription_generator --task "A system that exhibits self-organized criticality with long-range correlations"
@@ -297,7 +297,7 @@ print(result.imscriptions)
 
 # Criticality hunting
 hunter = CriticalityHuntingAgent(config)
-report = hunter.run_sync("Find O_inf near the emergence frontier")
+report = hunter.run_sync("Find O_∞ near the emergence frontier")
 print(report.report)
 ```
 
@@ -392,7 +392,7 @@ The agent's six structural primitives are enforced at runtime:
                        │
           ┌────────────▼────────────┐
           │         ACT              │  Emit tool call: δ(query)
-          │   (Ç_@ — force emission  │  Puncture boundary into O_0 exterior
+          │   (Ç_@ — force emission  │  Puncture boundary into O₀ exterior
           │    before trap sets in)   │
           └────────────┬────────────┘
                        │
@@ -733,7 +733,7 @@ python agents/agents_cli.py true_agentic_agent \
 
 ```bash
 python agents/agents_cli.py criticality_agent \
-    --task "Search the emergence frontier for O_inf candidates"
+    --task "Search the emergence frontier for O_∞ candidates"
 ```
 
 ### 12.9 Retrosynthetic Path to a Target Type

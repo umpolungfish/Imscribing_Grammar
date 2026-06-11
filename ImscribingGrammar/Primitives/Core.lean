@@ -239,49 +239,49 @@ axiom Omega_Z_requires_H2 (p : Protection) (h : Chirality) :
 
 -- The ouroboricity tier is determined by (Φ, P, Ω, D) only.
 -- R1: Φ_c + P_doublebarpipe → O_∞  (overrides all Ω and D)
--- R2: Φ ∉ {Φ_c, Φ_c^ℂ} → O_0
--- R3: Φ_c + Ω_0 → O_1  (P < P_doublebarpipe)
--- R4: Φ_c + Ω ≠ 0 + D ∈ {D_wynn, D_omega, D_turnthree} → O_2
--- R5: Φ_c + Ω ≠ 0 + D_invomega → O_2†
--- Frobenius cliff: d(O_2†, O_∞) ≈ 4.382 (non-tunable by gradient methods).
+-- R2: Φ ∉ {Φ_c, Φ_c^ℂ} → O₀
+-- R3: Φ_c + Ω_0 → O₁  (P < P_doublebarpipe)
+-- R4: Φ_c + Ω ≠ 0 + D ∈ {D_wynn, D_omega, D_turnthree} → O₂
+-- R5: Φ_c + Ω ≠ 0 + D_invomega → O₂†
+-- Frobenius cliff: d(O₂†, O_∞) ≈ 4.382 (non-tunable by gradient methods).
 
 /-- Ouroboricity tier as a decidable function of the four gate primitives. -/
 inductive OuroboricityTier : Type where
-  | O_0    -- non-critical
-  | O_1    -- critical, no topological protection
-  | O_2    -- critical, Ω-protected, D ≠ D_invomega
-  | O_2dag -- critical, Ω-protected, D = D_invomega
-  | O_inf  -- Special Frobenius (P_doublebarpipe at Φ_c)
+  | O₀    -- non-critical
+  | O₁    -- critical, no topological protection
+  | O₂    -- critical, Ω-protected, D ≠ D_invomega
+  | O₂† -- critical, Ω-protected, D = D_invomega
+  | O_∞  -- Special Frobenius (P_doublebarpipe at Φ_c)
   deriving DecidableEq, Repr, Ord
 
 def ouroboricityTier (phi : Criticality) (pol : Polarity)
     (prot : Protection) (dim : Dimensionality) : OuroboricityTier :=
   match phi with
-  | .Phi_softsign | .Phi_upstep | .Phi_revepsilon => .O_0
+  | .Phi_softsign | .Phi_upstep | .Phi_revepsilon => .O₀
   | .Phi_ctyogh | .Phi_closerevepsilon =>
-    if pol = .P_doublebarpipe then .O_inf                    -- R1: Frobenius gate
+    if pol = .P_doublebarpipe then .O_∞                    -- R1: Frobenius gate
     else match prot with
-    | .Omega_closeepsilon => .O_1                                -- R3
+    | .Omega_closeepsilon => .O₁                                -- R3
     | _ => match dim with
-      | .D_invomega => .O_2dag                           -- R5
-      | _        => .O_2                              -- R4
+      | .D_invomega => .O₂†                           -- R5
+      | _        => .O₂                              -- R4
 
--- R1 is the dominant gate: P_doublebarpipe at Phi_ctyogh always gives O_inf.
+-- R1 is the dominant gate: P_doublebarpipe at Phi_ctyogh always gives O_∞.
 theorem r1_dominates (prot : Protection) (dim : Dimensionality) :
-    ouroboricityTier .Phi_ctyogh .P_doublebarpipe prot dim = .O_inf := by
+    ouroboricityTier .Phi_ctyogh .P_doublebarpipe prot dim = .O_∞ := by
   simp [ouroboricityTier]
 
--- O_inf requires Phi_ctyogh or Phi_closerevepsilon: no other Phi value can give O_inf.
+-- O_∞ requires Phi_ctyogh or Phi_closerevepsilon: no other Phi value can give O_∞.
 theorem o_inf_requires_phi_c (phi : Criticality) (pol : Polarity)
     (prot : Protection) (dim : Dimensionality)
-    (h : ouroboricityTier phi pol prot dim = .O_inf) :
+    (h : ouroboricityTier phi pol prot dim = .O_∞) :
     phi = .Phi_ctyogh ∨ phi = .Phi_closerevepsilon := by
   cases phi <;> simp [ouroboricityTier] at h <;> simp
 
--- O_inf requires P_doublebarpipe: no other Polarity can give O_inf.
+-- O_∞ requires P_doublebarpipe: no other Polarity can give O_∞.
 theorem o_inf_requires_P_pm_sym (phi : Criticality) (pol : Polarity)
     (prot : Protection) (dim : Dimensionality)
-    (h : ouroboricityTier phi pol prot dim = .O_inf) :
+    (h : ouroboricityTier phi pol prot dim = .O_∞) :
     pol = .P_doublebarpipe := by
   cases pol
   . all_goals (cases phi <;> cases prot <;> cases dim <;> simp [ouroboricityTier] at h <;> contradiction)

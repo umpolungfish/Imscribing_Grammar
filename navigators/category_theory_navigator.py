@@ -3,7 +3,7 @@ Category Theory Navigator - Imscribing Grammar
 
 Domain: Category theory, topos theory, abstract mathematics
 Structural type: <𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
-Tier: O_inf
+Tier: O_∞
 
 Architecture: 3-category message-passing network with arrow-centric typing.
   - 𐑦: Imscriptive encoding of entire category
@@ -39,7 +39,7 @@ class NavigatorConfig:
     )
     domain: str = "Category theory, topos theory, homotopy type theory"
     tuple: str = "𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
-    tier: str = "O_inf"
+    tier: str = "O_∞"
     architecture: str = (
         "3-category GNN with arrow-centric typing - object nodes communicate via morphism "
         "channels; limit/colimit computation via iterative fixed-point on cones/pokes; "

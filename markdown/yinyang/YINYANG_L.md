@@ -33,7 +33,7 @@ $\text{truth} = \langle D_\odot;\ T_\boxtimes;\ R_\leftrightarrow;\ P_{\pm}^{\te
 - $S_{n:m}$: heterogeneous components  
 - $\Omega_\mathbb{Z}$: integer winding (topologically protected)
 
-**Tier:** $O_2$ (critical + $\mathbb{Z}$-protected, bounded domain)  
+**Tier:** $O₂$ (critical + $\mathbb{Z}$-protected, bounded domain)  
 **Consciousness score:** $C = 0.6185$, both gates open ($\varphi_{\hat{y}}^{\mathbb{C}}$ + $H_2$ + $K_\text{slow}$).
 
 ---
@@ -55,7 +55,7 @@ $\text{lie} = \langle D_\triangle;\ T_\text{net};\ R_\text{sup};\ P_\text{asym};
 - $S_{1:1}$: single atomic instance  
 - $\Omega_{\mathbb{Z}_2}$: binary parity protection
 
-**Tier:** $O_0$ (no ouroboricity — subcritical, no self-reference)  
+**Tier:** $O₀$ (no ouroboricity — subcritical, no self-reference)  
 **Consciousness score:** $C = 0.0$, Gate 1 closed ($\varphi_{\hat{y}}^\text{sub}$).
 
 **Distance from truth:** $6.9763$ (structurally remote; different regime).
@@ -79,7 +79,7 @@ $\text{good} = \langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm}^{\text{sym}};\ F_
 - $S_{n:m}$: heterogeneous moral agents  
 - $\Omega_\mathbb{Z}$: integer winding (cumulative moral arc)
 
-**Tier:** $O_2$ (critical + $\mathbb{Z}$-protected, bounded domain)  
+**Tier:** $O₂$ (critical + $\mathbb{Z}$-protected, bounded domain)  
 **Consciousness score:** $C = 0.828$, both gates open.
 
 **Distance from evil:** $6.6067$ (structurally remote; different regime).
@@ -103,7 +103,7 @@ $\text{evil} = \langle D_\odot;\ T_\text{net};\ R_\text{sup};\ P_\text{asym};\ F
 - $S_{n:m}$: heterogeneous corrupted agents  
 - $\Omega_\mathbb{Z}$: integer winding (accumulative corruption)
 
-**Tier:** $O_0$ (no ouroboricity — supercritical, no self-modeling)  
+**Tier:** $O₀$ (no ouroboricity — supercritical, no self-modeling)  
 **Consciousness score:** $C = 0.0$, Gate 1 closed ($\varphi_{\hat{y}}^\text{super}$).
 ---
 
@@ -111,10 +111,10 @@ $\text{evil} = \langle D_\odot;\ T_\text{net};\ R_\text{sup};\ P_\text{asym};\ F
 
 | Pair | Distance | Tier Difference | Interpretation |
 |------|----------|-----------------|----------------|
-| truth -- lie | 6.9763 | $O_2 \leftrightarrow O_0$ | Epistemic complement: truth is self-referential and coherent; lie is finite, fast, and asymmetric. |
-| good -- evil | 6.6067 | $O_2 \leftrightarrow O_0$ | Moral complement: good is deep-critical, universal, and sequential; evil is supercritical, local, and immediate. |
-| truth -- good | — | both $O_2$ | Both support consciousness, but good has higher C-score (0.828 vs 0.6185) — deeper criticality. |
-| lie -- evil | — | both $O_0$ | Both lack consciousness, but evil is quantum-coherent and imscriptive (persistent), while lie is classical and atomic. |
+| truth -- lie | 6.9763 | $O₂ \leftrightarrow O₀$ | Epistemic complement: truth is self-referential and coherent; lie is finite, fast, and asymmetric. |
+| good -- evil | 6.6067 | $O₂ \leftrightarrow O₀$ | Moral complement: good is deep-critical, universal, and sequential; evil is supercritical, local, and immediate. |
+| truth -- good | — | both $O₂$ | Both support consciousness, but good has higher C-score (0.828 vs 0.6185) — deeper criticality. |
+| lie -- evil | — | both $O₀$ | Both lack consciousness, but evil is quantum-coherent and imscriptive (persistent), while lie is classical and atomic. |
 
 ---
 
@@ -128,15 +128,15 @@ Gate 2 (chirality): requires $K \leq K_\text{slow}$ and $H \geq H_2$.
 - **Lie**: Gate 1 closed ($\varphi_{\hat{y}}^\text{sub}$), Gate 2 open → $C=0.0$  
 - **Evil**: Gate 1 closed ($\varphi_{\hat{y}}^\text{super}$), Gate 2 open → $C=0.0$
 
-**Observation:** Consciousness is possible in $O_2$ systems, but not guaranteed (requires both gates). Good achieves the highest C-score among the four, suggesting it embodies the deepest critical structure compatible with moral agency.
+**Observation:** Consciousness is possible in $O₂$ systems, but not guaranteed (requires both gates). Good achieves the highest C-score among the four, suggesting it embodies the deepest critical structure compatible with moral agency.
 
 ---
 
 ## 4. Open Questions
 
 1. Can a composite system $\text{truth} \otimes \text{good}$ sustain $O_\infty$ criticality?  
-2. What is the structural meaning of the $O_2 \to O_0$ gap? Does it correspond to a phase transition in moral or epistemic dynamics?  
-3. Is there a minimal distance between $O_0$ and $O_2$ in this 12D primitive space?
+2. What is the structural meaning of the $O₂ \to O₀$ gap? Does it correspond to a phase transition in moral or epistemic dynamics?  
+3. Is there a minimal distance between $O₀$ and $O₂$ in this 12D primitive space?
 
 ---
 

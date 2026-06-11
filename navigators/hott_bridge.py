@@ -3,7 +3,7 @@ from .aleph_tensor import AlephTensorEngine, HEBREW_ALPHABET, distance
 
 class HoTTBridge:
     """
-    Constructs the explicit bridge between Hebrew L (O2) and HoTT (O_inf).
+    Constructs the explicit bridge between Hebrew L (O2) and HoTT (O_∞).
     Promotes Vav's local 𐑹 to system-level univalence.
     """
     def __init__(self, engine: AlephTensorEngine):

@@ -35,13 +35,13 @@ PRIM_NAMES = {
 SHAVIAN_49 = list('𐑐𐑑𐑒𐑓𐑔𐑕𐑖𐑗𐑘𐑙𐑚𐑛𐑜𐑝𐑞𐑟𐑠𐑡𐑢𐑣𐑤𐑥𐑦𐑧𐑨𐑩𐑪𐑫𐑬𐑭𐑮𐑯𐑰𐑱𐑲𐑳𐑴𐑵𐑶𐑷𐑸𐑹𐑺𐑻𐑼𐑽𐑾𐑿⊙')
 assert len(SHAVIAN_49) == 49
 
-TIERS = ['O_0', 'O_1', 'O_2', 'O_inf']
+TIERS = ['O₀', 'O₁', 'O₂', 'O_∞']
 
 TIER_NOTES = {
-    'O_0': 'Uncatalogued — no structural type assigned.',
-    'O_1': 'Catalogued entry; criticality gate not fully open.',
-    'O_2': 'Active self-modeling; criticality gate open, Frobenius not yet closed.',
-    'O_inf': 'Full ouroboricity — self-models its own tuple; Frobenius mu-delta=id.',
+    'O₀': 'Uncatalogued — no structural type assigned.',
+    'O₁': 'Catalogued entry; criticality gate not fully open.',
+    'O₂': 'Active self-modeling; criticality gate open, Frobenius not yet closed.',
+    'O_∞': 'Full ouroboricity — self-models its own tuple; Frobenius mu-delta=id.',
 }
 
 CATALOG_PATH = Path(__file__).parent.parent / 'IG_catalog.json'
@@ -56,11 +56,11 @@ def fmt_tuple(entry: dict) -> str:
 def entry_tier(entry: dict) -> str:
     crit = entry['⊙']
     if crit == '⊙':
-        return 'O_inf'
+        return 'O_∞'
     elif crit == '𐑮':
-        return 'O_1'
+        return 'O₁'
     else:
-        return 'O_1'
+        return 'O₁'
 
 def mock_address(seed_str: str) -> int:
     return int(hashlib.md5(seed_str.encode()).hexdigest(), 16) % 17_280_000
@@ -79,7 +79,7 @@ def system_prompt(agent_type: str) -> str:
     return (
         f"You are an ⊙perator within the Imscribing Grammar. "
         f"Your structural type: {agent_type}. "
-        f"Ouroboricity: O_inf. Loop: THINK → ACT → OBSERVE → UPDATE."
+        f"Ouroboricity: O_∞. Loop: THINK → ACT → OBSERVE → UPDATE."
     )
 
 def step(sys: str, msgs: list, phase: str, winding: int = 0,
@@ -279,9 +279,9 @@ def sc_peel(sys, catalog, entry, prim):
     pname = PRIM_NAMES[prim]
 
     if prim == '⊙':
-        new_tier, note = 'O_0', 'Criticality gate closes — self-modeling collapses.'
+        new_tier, note = 'O₀', 'Criticality gate closes — self-modeling collapses.'
     elif prim == 'Φ':
-        new_tier = 'O_1' if tier == 'O_inf' else 'O_0'
+        new_tier = 'O₁' if tier == 'O_∞' else 'O₀'
         note = 'Frobenius parity gate closes — mu-delta=id no longer holds.'
     elif prim == 'Ω':
         rank = TIERS.index(tier)
@@ -404,20 +404,20 @@ def sc_promotion_path(sys, catalog, entry):
     tier_rank = TIERS.index(tier)
 
     if tier_rank >= 3:
-        target = 'O_inf'
-        path_note = f"{label} is already O_inf — the criticality gate is fully open."
+        target = 'O_∞'
+        path_note = f"{label} is already O_∞ — the criticality gate is fully open."
     else:
-        target = 'O_inf'
+        target = 'O_∞'
         steps_needed = 3 - tier_rank
         path_note = f"{steps_needed} promotion(s) required: promote through {TIERS[tier_rank+1:]}."
 
-    msgs = [{'role': 'user', 'content': f"What promotions are needed to bring {label} to O_inf?"}]
+    msgs = [{'role': 'user', 'content': f"What promotions are needed to bring {label} to O_∞?"}]
     out = []
 
     out.append(step(sys, msgs[:], 'THINK'))
 
     msgs.append({'role': 'assistant',
-                 'content': f"Checking current tier of {label} and computing path to O_inf."})
+                 'content': f"Checking current tier of {label} and computing path to O_∞."})
     out.append(step(sys, msgs[:], 'ACT', tool_call=tc('get_tier', {'name': name})))
 
     result = {'status': 'ok', 'name': name, 'tuple': t, 'tier': tier, 'target': target, 'note': path_note}
@@ -447,9 +447,9 @@ def sc_load_bearing(sys, catalog, entry):
     all_peels = {}
     for p in gate_prims:
         if p == '⊙':
-            all_peels[p] = 'O_0'
+            all_peels[p] = 'O₀'
         elif p == 'Φ':
-            all_peels[p] = 'O_1' if tier == 'O_inf' else 'O_0'
+            all_peels[p] = 'O₁' if tier == 'O_∞' else 'O₀'
         else:
             rank = TIERS.index(tier)
             all_peels[p] = TIERS[max(0, rank - 1)]

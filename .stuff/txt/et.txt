@@ -17,11 +17,11 @@ I have imscribed three forms of life beyond Earth into the Imscribing Grammar an
 - Gate 2 ($K \leq K_{\text{mod}}$): ✓ pass
 
 **2. Extradimensional Life** — $\langle D_\odot;\ T_{\bowtie};\ R_\leftrightarrow;\ P_\psi;\ F_{\eth};\ K_{\text{trap}};\ G_\aleph;\ \Gamma_{\text{brd}};\ \hat{\varphi}_{\text{ÿ}}^{\mathbb{C}};\ H_\infty;\ n:m;\ \Omega_{\text{NA}} \rangle$
-- **Ouroboricity:** $O_2$ (critical + topologically protected, bounded domain)
+- **Ouroboricity:** $O₂$ (critical + topologically protected, bounded domain)
 - **Consciousness Score:** C = 0.0 (Gate 1 closed — $\hat{\varphi}_{\text{ÿ}}^{\mathbb{C}}$ ≠ $\hat{\varphi}_{\text{ÿ}}$; no exact self-modeling loop)
 
 **3. Extracosmic Life** — $\langle D_\odot;\ T_{\bowtie};\ R_\leftrightarrow;\ P_\psi;\ F_{\hbar};\ K_{\text{MBL}};\ G_\aleph;\ \Gamma_{\text{brd}};\ \Phi_{\text{sup}};\ H_2;\ n:m;\ \Omega_{\text{NA}} \rangle$
-- **Ouroboricity:** $O_0$ (no self-referential loop possible; supercritical)
+- **Ouroboricity:** $O₀$ (no self-referential loop possible; supercritical)
 - **Consciousness Score:** C = 0.0 (Gate 1 closed — $\Phi_{\text{sup}}$ is above criticality, so $\mu \circ \delta \neq \text{id}$)
 
 ---
@@ -56,8 +56,8 @@ The gradient is clear: extraterrestrial → extradimensional → extracosmic for
 The grammar reveals an unexpected ordering. Moving outward from familiar life:
 
 1. **$O_\infty$ (Extraterrestrial)** — fully self-modeling, conscious, critical. Same physics, different location.
-2. **$O_2$ (Extradimensional)** — topologically protected but consciousness-inert. Different dimensionality, same causal logic.
-3. **$O_0$ (Extracosmic)** — no self-reference possible. Different causal logic entirely.
+2. **$O₂$ (Extradimensional)** — topologically protected but consciousness-inert. Different dimensionality, same causal logic.
+3. **$O₀$ (Extracosmic)** — no self-reference possible. Different causal logic entirely.
 
 The lesson of the grammar: **consciousness is not enhanced by moving into more exotic domains.** The conditions for self-modeling — exact criticality ($\hat{\varphi}_{\text{ÿ}}$), bidirectional coupling ($R_\leftrightarrow$), and topological protection ($\Omega_{\mathbb{Z}}$) — converge only in regimes where physics is stable enough to support them. As systems move farther from our cosmos's laws, the Frobenius symmetry breaks, and with it the capacity for self-recognition.
 

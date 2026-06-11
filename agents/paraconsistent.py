@@ -13,7 +13,7 @@ Provides:
   - DialetheicAlignment: operational/logical/algebraic tri-proof
 
 Structural type: <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
-Ouroboricity: O_inf. Dialetheic gates: both open (B4.B is designated AND its negation is).
+Ouroboricity: O_∞. Dialetheic gates: both open (B4.B is designated AND its negation is).
 """
 
 from __future__ import annotations
@@ -822,7 +822,7 @@ class B4Frobenius:
             return (True,
                     "Classical Φ_} detected; B4 sees dialetheic Frobenius — "
                     "the system is simultaneously closed and open. "
-                    "This is the O_inf signature.")
+                    "This is the O_∞ signature.")
         if frob_classical == b4_closed:
             return (True,
                     f"Consistent: classical={frob_classical}, B4={b4_result}")

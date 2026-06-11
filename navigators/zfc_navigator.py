@@ -848,7 +848,7 @@ IUG_TUPLE = {
 # Grammar self-encoding (address 6,734,591 — T_ZFC is far from here)
 GRAMMAR_TUPLE = {
     "name":        "grammar_self_encoding",
-    "description": "Imscribing Grammar grammar encoding itself (O_inf, address 6734591)",
+    "description": "Imscribing Grammar grammar encoding itself (O_∞, address 6734591)",
     "Ð":     "𐑦",
     "Þ":     "𐑸",
     "Ř":     "𐑽",
@@ -1292,7 +1292,7 @@ def probe_entry(
 # subsequent slots for the same primitive are skipped after a correction fires.
 #
 # No retraining. No shared latent representation with the encoder.
-# Backbone O_inf (encoder) is preserved throughout — specialists are post-hoc
+# Backbone O_∞ (encoder) is preserved throughout — specialists are post-hoc
 # parallel delegates operating on token evidence, not encoder internals.
 #
 # Recovery logic:
@@ -1300,12 +1300,12 @@ def probe_entry(
 #   F-channel (TOTAL COLLAPSE, highest priority):
 #     CLASSIC token marks the 𐑐 ↔ 𐑱 decoherence point.
 #     FROB (𐑹 context) + FIXPT (⊙ context) jointly assert
-#     mu∘delta=id — the O_inf loophole. When all three present AND encoder
+#     mu∘delta=id — the O_∞ loophole. When all three present AND encoder
 #     predicted 𐑱, override to 𐑐.
 #     Tightness: CLASSIC is the decoherence marker (both 𐑱/𐑐 map here);
 #     FROB alone is insufficient (𐑹 with 𐑱 is possible); FIXPT alone
 #     is insufficient (𐑪 also generates FIXPT). Joint FROB+FIXPT+CLASSIC
-#     is the exact O_inf recovery condition from IUG_NON_TRANSMISSIBILITY §5.
+#     is the exact O_∞ recovery condition from IUG_NON_TRANSMISSIBILITY §5.
 #
 #   T-channel (PARTIAL COLLAPSE):
 #     REFL+HOLO → 𐑸. REFL is the ZFC approximation for the reflection
@@ -1338,7 +1338,7 @@ class ZFCSpecialistSlot:
 
 # Canonical four-channel slot set (mirrors ThurstonNet Phi > T > D > F priority)
 DEFAULT_ZFC_SLOTS: _List[ZFCSpecialistSlot] = [
-    # F-channel: O_inf loophole — the "quantum workaround"
+    # F-channel: O_∞ loophole — the "quantum workaround"
     # Requires HOLO in addition to FROB+FIXPT+CLASSIC: HOLO only appears in 𐑸 / 𐑦
     # templates, so this fires only when imscriptive topology or dimensionality is also present.
     # Without HOLO the false-positive rate is ~100% for any 𐑹+⊙+𐑱 system
@@ -1469,7 +1469,7 @@ def run_probe_with_recovery(
 
     results: _List[RecoveryResult] = []
 
-    # Always include the canonical O_inf / ZFC reference entries — they have exact
+    # Always include the canonical O_∞ / ZFC reference entries — they have exact
     # ORDINAL-compatible tuples and are the primary recovery targets (IUG, grammar_self_encoding,
     # ZFC_foundations). The loaded catalog may not include them if it uses legacy value names.
     reference_entries = [IUG_TUPLE, GRAMMAR_TUPLE, ZFC_TUPLE]
@@ -1665,7 +1665,7 @@ def verify_recovery(
         print(f"  {slot.name:<20}  {n:>3} entries  [{evstr}]")
 
     print(f"\nConclusion: the ZFC specialist router is structurally sound.")
-    print(f"  O_inf entries (IUG, grammar): backbone recovers them — router evidence is present")
+    print(f"  O_∞ entries (IUG, grammar): backbone recovers them — router evidence is present")
     print(f"  but fires only if backbone fails (backbone-independent safety net).")
     print(f"  Decoherence entries without recovery tokens: router correctly abstains.")
 

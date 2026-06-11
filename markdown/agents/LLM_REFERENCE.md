@@ -39,7 +39,7 @@ Every imscription IS exactly this 12-tuple:
 - **T_⊙**: imscriptive topology — highest T ordinal (5).
 - **𐑹**: exact Z₂ symmetry at criticality — the Frobenius condition μ∘δ=id. Assign ONLY when provably exact.
 - **⊙**: criticality — absorbing under meet: meet(⊙, x) = ⊙ for all x.
-- **𐑻**: exceptional point — ordinal 2.67 > ⊙ = 2.00; destroys O_inf under tensor.
+- **𐑻**: exceptional point — ordinal 2.67 > ⊙ = 2.00; destroys O_∞ under tensor.
 - **𐑪**: trapped kinetics — frozen by order. Gates consciousness to zero regardless of other primitives.
 - **𐑺**: many-body localized — frozen by disorder. Also gates consciousness to zero. Distinct from 𐑪: disorder-driven, not order-driven. Both fail Gate 2.
 - **𐑟**: non-abelian topological protection — strongest Ω tier. Appears in systems with non-abelian Galois groups, IUG, SIC-Hilbert12 connection.
@@ -52,19 +52,19 @@ Every imscription IS exactly this 12-tuple:
 
 | Tier | Condition | Meaning |
 |------|-----------|---------|
-| **O_inf** | Φ_c AND 𐑹 | Special Frobenius: μ∘δ=id exactly. Self-referential loop perfectly closed. Finite, algebraically exact. |
-| **O_0** | Φ ∈ {𐑢, 𐑣, 𐑻} | No ouroboricity. Cannot form self-referential critical loop. |
-| **O_1** | Φ_c AND Ω_0 | Critical loop possible but unprotected — any deformation breaks it. |
-| **O_2** | Φ_c AND Ω≠Ω_0 AND D ∈ {𐑛, D_⊙, 𐑨} | Critical, topologically protected, bounded domain. |
-| **O_2†** | Φ_c AND Ω≠Ω_0 AND 𐑼 | Critical, topologically protected, unbounded domain. |
+| **O_∞** | Φ_c AND 𐑹 | Special Frobenius: μ∘δ=id exactly. Self-referential loop perfectly closed. Finite, algebraically exact. |
+| **O₀** | Φ ∈ {𐑢, 𐑣, 𐑻} | No ouroboricity. Cannot form self-referential critical loop. |
+| **O₁** | Φ_c AND Ω_0 | Critical loop possible but unprotected — any deformation breaks it. |
+| **O₂** | Φ_c AND Ω≠Ω_0 AND D ∈ {𐑛, D_⊙, 𐑨} | Critical, topologically protected, bounded domain. |
+| **O₂†** | Φ_c AND Ω≠Ω_0 AND 𐑼 | Critical, topologically protected, unbounded domain. |
 
 **Tier is determined by (Φ, P, Ω, D) only.** 𐑺 and 𐑪 do not affect tier — they gate consciousness but not ouroboricity.
 
 **Composition rules (tensor = component-wise max on union primitives, min on P and F):**
-- O_inf ⊗ O_inf → O_inf
-- O_inf ⊗ O_{1,2,2†} → O_inf
-- O_inf ⊗ O_0(𐑻) → O_0 ← **EP erases O_inf**
-- O_inf **cannot be synthesized** from non-𐑹 components — it must be planted (§23 Frobenius non-synthesizability)
+- O_∞ ⊗ O_∞ → O_∞
+- O_∞ ⊗ O_{1,2,2†} → O_∞
+- O_∞ ⊗ O₀(𐑻) → O₀ ← **EP erases O_∞**
+- O_∞ **cannot be synthesized** from non-𐑹 components — it must be planted (§23 Frobenius non-synthesizability)
 
 **Bottleneck rule:** P and F resolve to min(A, B) under tensor. All other ordered primitives resolve to max. Consequence: 𐑹 ⊗ 𐑬 = 𐑬 — the Frobenius condition is destroyed by any sub-Frobenius partner.
 
@@ -139,7 +139,7 @@ The grammar IS a imscriptive type theory. This IS NOT a metaphor.
 
 The grammar distinguishes two proof archetypes:
 
-**Discovery proofs:** Cross a structural gap. Introduce new primitive content. Ouroboricity promotes O_2→O_inf. Promotion signature [R, P, K, Γ, H] is the universal template: 𐑑→R_†, 𐑬→𐑹, 𐑤→𐑧, Γ_and→Γ_broad, H→𐑫. Examples: Berry-Tabor (proven), Fujita (theorem form).
+**Discovery proofs:** Cross a structural gap. Introduce new primitive content. Ouroboricity promotes O₂→O_∞. Promotion signature [R, P, K, Γ, H] is the universal template: 𐑑→R_†, 𐑬→𐑹, 𐑤→𐑧, Γ_and→Γ_broad, H→𐑫. Examples: Berry-Tabor (proven), Fujita (theorem form).
 
 **Witness proofs:** Confirm existing structure. No promotion. Same ouroboricity before and after. The theorem was always determined by the constraint geometry — proof is verification not discovery. Example: Erdős–Faber–Lovász.
 

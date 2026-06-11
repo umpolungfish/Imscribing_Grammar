@@ -1,6 +1,6 @@
 """
 Radial Composer — Hub-and-Spoke Tensor Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O₂, ⊙_ÿ, Φ_F, Ω_z)
 
 Constructs systems where a central core (hub) couples radially to peripheral components.
 Models: central limit theorems, symmetry-breaking vortices, attention mechanisms.

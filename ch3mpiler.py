@@ -302,12 +302,8 @@ def get_molecule_type(name, catalog):
                     t[pn] = v
             if len(t) == 12:
                 return t, "catalog"
-    # Fallback: compose from name
-    name_lower = name.lower().replace("_", " ").replace("-", " ")
-    fgs_found = set()
-    for token, fg_name in FG_TOKENS.items():
-        if token in name_lower:
-            fgs_found.add(fg_name)
+    # Fallback: use find_fgs which checks MOLECULE_FG_DB first, then FG_TOKENS
+    fgs_found = find_fgs(name)
     if fgs_found:
         return compose_molecule_type(fgs_found), "composed"
     return {}, "none"

@@ -17,7 +17,7 @@ abstract: |
   $\mathbb{Z}_4$ axiom of the Winding primitive: $|F_4(\Omega)|-1 = 3$ non-trivial windings,
   $\Omega^4 = \Omega^0$. The scalar sector's $N$ degenerate vacua constitute a flat
   antichain -- every node at evidence ratio $R = t/f = 1$ -- which is an unstable fixed
-  point under the Frobenius dynamics: any $O_2$-or-higher closed system must tilt,
+  point under the Frobenius dynamics: any $O₂$-or-higher closed system must tilt,
   $R = 1+\varepsilon$. The structural ordering of the mass spectrum is identified with the
   $\varepsilon$-spectrum; absolute mass values require additional coupling inputs. The
   tilted scalar sector produces domain walls at vacuum boundaries. We compute the resulting
@@ -146,10 +146,10 @@ tier).
 Five ouroboricity tiers are assigned by first-match rules on $(\odot, \Phi, \Omega, \text{Ð})$:
 
 - $O_\infty$: $\odot$ open **and** $\Phi =$ Frobenius-special ($\mu \circ \delta = \mathrm{id}$ gate exact)
-- $O_0$: $\odot$ closed (no self-referential loop possible)
-- $O_1$: $\odot$ open, $\Omega =$ trivial (no topological protection)
-- $O_2$: $\odot$ open, $\Omega \ne$ trivial, Ð bounded
-- $O_2^\dagger$: $\odot$ open, $\Omega \ne$ trivial, Ð self-written
+- $O₀$: $\odot$ closed (no self-referential loop possible)
+- $O₁$: $\odot$ open, $\Omega =$ trivial (no topological protection)
+- $O₂$: $\odot$ open, $\Omega \ne$ trivial, Ð bounded
+- $O₂^\dagger$: $\odot$ open, $\Omega \ne$ trivial, Ð self-written
 
 ### The Spider Theorem
 
@@ -328,18 +328,18 @@ The argument has two parts: a structural part (which is precise) and a self-refe
 (which requires additional formalization).
 
 **Structural part.** In $ZFC_\mathrm{fe}$, tiers classify the self-reference capacity of a system.
-Tier $O_0$: the Criticality gate $\odot$ is closed; no ouroboric morphism exists; the system
+Tier $O₀$: the Criticality gate $\odot$ is closed; no ouroboric morphism exists; the system
 cannot imscribe itself. Tier $O_\infty$: $\mu\circ\delta=\mathrm{id}$ with at least one non-trivial winding;
 the system imscribes itself and closes. A flat antichain with $R = 1$ everywhere places
 every node at the bilattice midpoint $N$ -- maximum uncertainty, zero net evidence. In
 IMASM terms, every TANCH produces the same anchor; ISCRIB cannot distinguish self from
-environment. This is precisely the $O_0$ condition: no self-inscription is possible.
+environment. This is precisely the $O₀$ condition: no self-inscription is possible.
 
 A manifested universe is by assumption a closed system that has produced its own structural
 description (it exists, and its existence is internally consistent). This requires at least
-$O_2$ tier -- a Frobenius fixed point exists. $O_2$ requires at least one node with
+$O₂$ tier -- a Frobenius fixed point exists. $O₂$ requires at least one node with
 $R \ne 1$: the fixed-point morphism is non-trivial only if the evidence ordering is
-non-uniform. Therefore: any $O_2$-or-higher system must have $\varepsilon \ne 0$ at the
+non-uniform. Therefore: any $O₂$-or-higher system must have $\varepsilon \ne 0$ at the
 self-closing boundary.
 
 **What is not derived here.** The structural argument guarantees $\varepsilon \ne 0$ and
@@ -353,7 +353,7 @@ in $ZFC_\mathrm{fe}$ is carried in the p4rakernel Lean formalization.
 Therefore: any manifested, self-describing universe must break the flat antichain symmetry.
 The tilt $R = 1 + \varepsilon$ at the closing boundary propagates via the Frobenius
 comultiplication $\delta$ to the interior. The flat antichain cannot survive contact with
-an $O_2$-or-higher closed state space.
+an $O₂$-or-higher closed state space.
 
 In physical terms: the $\mathbb{Z}_N$ symmetry of the QCD axion potential is exact at
 zero temperature. The axion field sits on an antichain of $N$ degenerate minima. The

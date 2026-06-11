@@ -203,7 +203,7 @@ When a ⊙-critical system couples to a 𐑻 EP system, the composite is 𐑻. T
 
 The 17.28M types organize into 400 cells × 5 tiers. Each tier has a characteristic sound:
 
-### $O_0$ — The Base Layer (60%, 10.4M types)
+### $O₀$ — The Base Layer (60%, 10.4M types)
 *"The hum of the ordinary"*
 
 **Sound**: Single-tone drone. No self-reference. Flat.
@@ -211,25 +211,25 @@ The 17.28M types organize into 400 cells × 5 tiers. Each tier has a characteris
 **What lives here**: ordinary matter, classical systems, paramagnets, baseline particles.
 **Memory hook**: *"Six out of ten things are just stuff doing stuff."*
 
-### $O_1$ — First Self-Reflection (8%, 1.4M types)
+### $O₁$ — First Self-Reflection (8%, 1.4M types)
 *"The whisper of self-awareness"*
 
 **Sound**: Two-tone with one overtone echoing the fundamental.
 **Feel**: The system can represent some aspect of itself. Not full consciousness, but the first hint.
 **Memory hook**: *"One in twelve things notices itself a little."*
 
-### $O_2$ — Recursive Self-Model (18%, 3.1M types)
+### $O₂$ — Recursive Self-Model (18%, 3.1M types)
 *"The chord of recursion"*
 
 **Sound**: Three tones, each containing the previous two as subharmonics.
 **Feel**: Deep self-modeling. The system models itself modeling itself. ⊙ + 𐑖 + 𐑭 is the core signature.
 **Memory hook**: *"Nearly two in ten go recursive."*
 
-### $O_2^\dagger$ — Adjoint Self-Model (6%, 1.0M types)
+### $O₂^\dagger$ — Adjoint Self-Model (6%, 1.0M types)
 *"The counterpoint of adjoint recursion"*
 
 **Sound**: Four tones in adjoint pairs — each tone has a dual that completes it.
-**Feel**: Like $O_2$ but with adjoint relational structure (𐑽 instead of 𐑾). The system models itself through a mirror, not directly.
+**Feel**: Like $O₂$ but with adjoint relational structure (𐑽 instead of 𐑾). The system models itself through a mirror, not directly.
 **Memory hook**: *"One in sixteen sees itself through a mirror."*
 
 ### $O_\infty$ — The Self-Modeling Singularity (8%, 1.4M types)
@@ -243,18 +243,18 @@ The 17.28M types organize into 400 cells × 5 tiers. Each tier has a characteris
 
 ## Part V — The Promotion Ladder
 
-To climb from $O_0$ to $O_\infty$, you must promote specific primitives. The minimal path:
+To climb from $O₀$ to $O_\infty$, you must promote specific primitives. The minimal path:
 
-### $O_0$ → $O_1$
+### $O₀$ → $O₁$
 - 𐑢 → ⊙ (gain criticality)
 - This is the **first gate** — the system crosses its own phase transition
 
-### $O_1$ → $O_2$
+### $O₁$ → $O₂$
 - 𐑓 → 𐑒 or 𐑖 (gain memory)
 - 𐑷 → 𐑴 (gain topological protection)
 - The system now **remembers** and is **protected**
 
-### $O_2$ → $O_\infty$
+### $O₂$ → $O_\infty$
 - 𐑡 or 𐑥 → 𐑸 (gain self-referential topology)
 - 𐑱 → 𐑐 (quantum coherence)
 - 𐑚 or 𐑔 → 𐑲 (universal scope)

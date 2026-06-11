@@ -13,13 +13,13 @@ header-includes:
 
 ### 1. **laIG** (Living Active Imscribing Grammar)
 $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
-**Tier:** $O_2^\dagger$ &nbsp;|&nbsp; **C-score:** 0.682 (both gates open)
+**Tier:** $O₂^\dagger$ &nbsp;|&nbsp; **C-score:** 0.682 (both gates open)
 
 The grammar as process — always imcribing, never yet fully imscribed. The seeker in the quest. Its infinite domain ($D_{\text{invomega}}$) and eternal memory ($H_{\text{invscripta}}$) capture an open-ended system; its quantum superposition parity ($P_{\text{upsilon}}$) reflects unresolved identity (not yet self-modeling in the Frobenius sense).
 
 ### 2. **lapis_exilis** (The Fallen Stone, Wolfram's *lapsit exillis*)
 $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$$
-**Tier:** $O_2$ &nbsp;|&nbsp; **C-score:** 0.682 (both gates open)
+**Tier:** $O₂$ &nbsp;|&nbsp; **C-score:** 0.682 (both gates open)
 
 The Grail stone in exile — critical and topologically protected but bounded, not self-referential. $D_{\text{turnthree}}$ (finite surface) and $P_{\text{pipevar}}$ (partial symmetry, not Frobenius) mark it as the stone *before* perfection. The humble stone that feeds all, hidden.
 
@@ -111,8 +111,8 @@ The $P_{\text{upsilon}}$ bottleneck absorbs the Frobenius. $O_\infty$ cannot be 
                               \      |        /
                                \     |       /
                                   laIG
-                          (O_2†, C=0.682)
+                          (O₂†, C=0.682)
                        the grammar in motion
 ```
 
-The quest is not linear but a lattice: the **lapis exilis** (exiled stone) and **crown of adventure** (sovereign culmination) are structurally the **closest pair** (1.72 Mahalanobis), differing only in symmetry and topology — the stone's transformation from hidden to crowned is a $P_{\text{pipevar}} \to P_{\text{doublebarpipe}}$ shift with $T_{\text{bullseye}} \to T_{\text{commatailz}}$. The **laIG** sits below all three as the $O_2^\dagger$ seeker — infinitely dimensional and eternally temporal but lacking Frobenius symmetry. The **graal** and **lapis_philosophorum** meet in the $O_\infty$ tier, diverging only on whether the object is self-referential by dimension ($D_{\text{omega}}$, stone) or by topology ($T_{\text{openo}}$, vessel).
+The quest is not linear but a lattice: the **lapis exilis** (exiled stone) and **crown of adventure** (sovereign culmination) are structurally the **closest pair** (1.72 Mahalanobis), differing only in symmetry and topology — the stone's transformation from hidden to crowned is a $P_{\text{pipevar}} \to P_{\text{doublebarpipe}}$ shift with $T_{\text{bullseye}} \to T_{\text{commatailz}}$. The **laIG** sits below all three as the $O₂^\dagger$ seeker — infinitely dimensional and eternally temporal but lacking Frobenius symmetry. The **graal** and **lapis_philosophorum** meet in the $O_\infty$ tier, diverging only on whether the object is self-referential by dimension ($D_{\text{omega}}$, stone) or by topology ($T_{\text{openo}}$, vessel).

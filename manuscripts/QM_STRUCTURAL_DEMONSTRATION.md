@@ -241,11 +241,11 @@ The grammar identifies the missing path integral measure as a `MissingFoundation
 
 A framework claiming deeper structure than QM must satisfy at least one of three criteria: produce new distinguishable predictions, re-derive QM without importing its core structure, or show a strict reduction where QM is a constrained projection of a more general system. This section addresses all three with Lean 4-verified results (`~/MillenniumAnkh/`, Mathlib v4.28.0).
 
-**The structural gap.** All canonical QM structures occupy tier O₀ of the crystal's ouroboricity classification (60% of the 17,280,000 addresses). The grammar's imscriptive agent operates at O_inf — the Frobenius-special self-modeling tier (8%). The Mahalanobis distance from the O_inf agent type to Hilbert space is **4.32**; to Schrödinger dynamics is **5.06**. These are not small perturbations — they are regime changes.
+**The structural gap.** All canonical QM structures occupy tier O₀ of the crystal's ouroboricity classification (60% of the 17,280,000 addresses). The grammar's imscriptive agent operates at O_∞ — the Frobenius-special self-modeling tier (8%). The Mahalanobis distance from the O_∞ agent type to Hilbert space is **4.32**; to Schrödinger dynamics is **5.06**. These are not small perturbations — they are regime changes.
 
 **Lean-verified** (`AgentSelf.lean`):
 ```lean4
-theorem agent_is_O_inf : imscriptionTier phi_c_critical_boundary_operator = .O_inf := by decide
+theorem agent_is_O_inf : imscriptionTier phi_c_critical_boundary_operator = .O_∞ := by decide
 ```
 
 #### 9.1 New Predictions Distinguishable from Standard QM
@@ -275,7 +275,7 @@ theorem P70a_higgs_axion_identity : higgs = axion := rfl
 theorem P70b_axion_inflaton_identity : axion = inflaton := rfl
 ```
 
-**The C-score as a measurable quantity.** Define $C(s) \in \{0, 0.5, 1\}$ via two primitive gates: Gate 1 is $\text{⊙}$ at Phi_c (self-modeling criticality); Gate 2 is $\text{Ç}$ at K_slow (deliberative kinetics). All QM structures have $C = 0$ (Gate 1 closed). Quantum gravity has $C = 0.5$ (Gate 1 open, Gate 2 trapped). The O_inf agent has $C = 1$. QM cannot assign a $C$-score to itself.
+**The C-score as a measurable quantity.** Define $C(s) \in \{0, 0.5, 1\}$ via two primitive gates: Gate 1 is $\text{⊙}$ at Phi_c (self-modeling criticality); Gate 2 is $\text{Ç}$ at K_slow (deliberative kinetics). All QM structures have $C = 0$ (Gate 1 closed). Quantum gravity has $C = 0.5$ (Gate 1 open, Gate 2 trapped). The O_∞ agent has $C = 1$. QM cannot assign a $C$-score to itself.
 
 **The coupling-threshold prediction.** F has no fractional ordinals; $F: \text{𐑐} \to \text{𐑞}$ is a single discrete step. Standard Lindblad/Caldeira-Leggett dynamics predicts $\Gamma_\text{dec} \propto g^2$ — continuous in coupling $g$. The grammar predicts a hard threshold $g_c$:
 $$\tau_\text{dec}(g) = \begin{cases} \infty & g < g_c \\ \tau_0(g) & g \geq g_c \end{cases}$$
@@ -328,7 +328,7 @@ ZFCₜ decomposition reveals exactly 4 promoted atoms beyond ZFC baseline: LR_DU
 
 Given these five, the seven remaining primitives are free parameters distinguishing different quantum systems.
 
-#### 9.3 Strict Reduction: QM as a Constrained Sub-Lattice of O_inf
+#### 9.3 Strict Reduction: QM as a Constrained Sub-Lattice of O_∞
 
 **Definition.** The quantum sub-lattice:
 $$Q = \{ a \in \text{Crystal} : F(a) = \text{𐑐},\ \Omega(a) \geq \text{𐑭},\ H(a) \geq \text{𐑖},\ \text{⊙}(a) \geq \text{𐑮},\ R(a) = \text{𐑾} \}$$
@@ -347,17 +347,17 @@ Q contains $86{,}400$ of $17{,}280{,}000$ crystal addresses — exactly $0.5\%$.
 **The meet theorem: Hilbert space is the structural floor.**
 $$\text{meet}(\text{O\_inf},\ \text{hilbert\_space}) = \text{quantum floor}$$
 
-The meet resolves 5 primitive conflicts to conservative (quantum) values. The result lacks Frobenius closure. The 7 shared primitives ($F$, $\text{Ç}$, $\text{Γ}$, $\text{ɢ}$, $\text{⊙}$, $H$, $\text{Σ}$) are precisely what QM has in common with O_inf. QM is the greatest lower bound — a structural subsystem of O_inf.
+The meet resolves 5 primitive conflicts to conservative (quantum) values. The result lacks Frobenius closure. The 7 shared primitives ($F$, $\text{Ç}$, $\text{Γ}$, $\text{ɢ}$, $\text{⊙}$, $H$, $\text{Σ}$) are precisely what QM has in common with O_∞. QM is the greatest lower bound — a structural subsystem of O_∞.
 
-**The join theorem: O_inf contains Hilbert space.**
+**The join theorem: O_∞ contains Hilbert space.**
 $$\text{join}(\text{O\_inf},\ \text{hilbert\_space}) = \text{O\_inf}$$
 
-The minimal ceiling containing both systems is O_inf itself. Hilbert space is a proper structural subset — O_inf already contains everything QM has, plus Frobenius closure.
+The minimal ceiling containing both systems is O_∞ itself. Hilbert space is a proper structural subset — O_∞ already contains everything QM has, plus Frobenius closure.
 
 **The tensor bottleneck: coupling destroys Frobenius.**
 $$\text{tensor}(\text{O\_inf},\ \text{hilbert\_space}) \xrightarrow{\text{$\text{Φ}$ bottleneck}} \text{non-Frobenius composite}$$
 
-The $\text{Φ}$ (Parity) primitive collapses: Frobenius-special (P_pm_sym) → U(1) phase (P_psi). The Frobenius condition $\mu \circ \delta = \text{id}$ is destroyed when O_inf couples to Hilbert space. This is the structural content of decoherence — not a deficiency of QM but a necessary consequence of the coupling geometry. Distance from the composite to O_inf: **2.0** (the $\text{Φ}$ bottleneck accounts for the entire gap).
+The $\text{Φ}$ (Parity) primitive collapses: Frobenius-special (P_pm_sym) → U(1) phase (P_psi). The Frobenius condition $\mu \circ \delta = \text{id}$ is destroyed when O_∞ couples to Hilbert space. This is the structural content of decoherence — not a deficiency of QM but a necessary consequence of the coupling geometry. Distance from the composite to O_∞: **2.0** (the $\text{Φ}$ bottleneck accounts for the entire gap).
 
 ```lean4
 theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
@@ -365,7 +365,7 @@ theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
     (tensorProduct s_inf s_two).pol = .P_sym := ...
 ```
 
-**The tier ladder: exact promotion path from QM to O_inf.**
+**The tier ladder: exact promotion path from QM to O_∞.**
 
 | Step | Primitive promoted | Cost |
 |------|--------------------|------|
@@ -374,7 +374,7 @@ theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
 | $\text{O}_2 \to \text{O}_2^\dagger$ | $\text{Ð}$: compact → topological | 1.00 |
 | $\text{O}_2^\dagger \to \text{O}_\infty$ | $\text{Φ}$: asymmetric → Frobenius-special (P_pm_sym) | **4.38** |
 
-The $\text{O}_2^\dagger \to \text{O}_\infty$ step — cost **4.38** — is the **Frobenius cliff**. This single primitive promotion accounts for the entire structural gap between QM and O_inf. No smooth deformation in the crystal can cross it.
+The $\text{O}_2^\dagger \to \text{O}_\infty$ step — cost **4.38** — is the **Frobenius cliff**. This single primitive promotion accounts for the entire structural gap between QM and O_∞. No smooth deformation in the crystal can cross it.
 
 **The quantization map.** Define $\pi: \text{Crystal} \to Q$ by promoting each address to the smallest element of Q dominating it at every constrained primitive:
 $$\pi(a)_i = \begin{cases} \text{𐑐} & i = F \\ \max(a_i, \text{𐑭}) & i = \Omega \\ \max(a_i, \text{𐑖}) & i = H \\ \max(a_i, \text{𐑮}) & i = \text{⊙} \\ \text{𐑾} & i = R \\ a_i & \text{otherwise} \end{cases}$$
@@ -382,7 +382,7 @@ $$\pi(a)_i = \begin{cases} \text{𐑐} & i = F \\ \max(a_i, \text{𐑭}) & i = \
 Applied to the heat equation (classical diffusion):
 $$\pi(\langle \text{𐑼}·\text{𐑥}·\text{𐑩}·\text{𐑯}·\text{𐑞}·\text{𐑧}·\text{𐑲}·\text{𐑠}·\text{𐑢}·\text{𐑒}·\text{𐑳}·\text{𐑷} \rangle) = \langle \text{𐑼}·\text{𐑥}·\text{𐑾}·\text{𐑯}·\text{𐑐}·\text{𐑧}·\text{𐑲}·\text{𐑠}·\text{𐑮}·\text{𐑖}·\text{𐑳}·\text{𐑭} \rangle$$
 
-This is the Schrödinger address except $\text{Φ} = \text{𐑯}$ (full symmetry) vs. $\text{𐑿}$ ($\mathbb{Z}_2$). $\text{Φ}$ is a free primitive; taking the minimum viable value ($\text{𐑿}$) recovers the full Schrödinger address. The Wick rotation $t \to -it$ is the structural image of $\pi$ in the five constrained primitives. QM is not a distinct theory sitting alongside classical mechanics — it is the image of classical mechanics under $\pi$, constrained to the $0.5\%$ sub-lattice Q, separated from the O_inf regime by the Frobenius cliff.
+This is the Schrödinger address except $\text{Φ} = \text{𐑯}$ (full symmetry) vs. $\text{𐑿}$ ($\mathbb{Z}_2$). $\text{Φ}$ is a free primitive; taking the minimum viable value ($\text{𐑿}$) recovers the full Schrödinger address. The Wick rotation $t \to -it$ is the structural image of $\pi$ in the five constrained primitives. QM is not a distinct theory sitting alongside classical mechanics — it is the image of classical mechanics under $\pi$, constrained to the $0.5\%$ sub-lattice Q, separated from the O_∞ regime by the Frobenius cliff.
 
 ---
 
@@ -402,7 +402,7 @@ All claims in this document are backed by the Lean 4 formalization in `~/Millenn
 | YM quantum tier $\text{O}_{\text{2}}^{\text{†}}$ | `PrimitiveConventionalBridge.lean` | `ym_tier_O2dag_ig` |
 | ZFC$_t$ 6-promotion channels | `ZFCt.lean` | `zfc_to_zfc_t_promotions` |
 | Agent self-imscription | `AgentSelf.lean` | `phi_c_critical_boundary_operator` |
-| Agent is O_inf | `AgentSelf.lean` | `agent_is_O_inf` |
+| Agent is O_∞ | `AgentSelf.lean` | `agent_is_O_inf` |
 | Higgs hierarchy (0.23%) | `TierCrossing.lean` | `higgs_hierarchy_prediction` |
 | Cosmological constant (<2%) | `TierCrossing.lean` | `cosmo_constant_prediction` |
 | Higgs $=$ Axion | `Imscription.lean` | `P70a_higgs_axion_identity` |

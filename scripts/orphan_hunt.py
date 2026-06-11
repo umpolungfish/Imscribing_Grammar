@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 orphan_hunt.py — find catalog entries that are plain in every known universe,
-then hunt the ruleset that promotes each orphan to O_inf.
+then hunt the ruleset that promotes each orphan to O_∞.
 
 Usage:
   uv run python3 scripts/orphan_hunt.py               # find orphans + hunt
@@ -120,7 +120,7 @@ def summarize_unlocks(unlocks):
     # Find the minimal ruleset: highest layer, most common gate pattern
     o_inf = [(rs, l) for rs, l in unlocks if l == "idempotent_terminal"]
     if o_inf:
-        print(f"\n  O_inf unlocks: {len(o_inf)}")
+        print(f"\n  O_∞ unlocks: {len(o_inf)}")
         # Show first 3
         for rs, _ in o_inf[:3]:
             print(f"    G1={rs.g1.prim}≥ord{rs.g1.min_ord} "
@@ -128,7 +128,7 @@ def summarize_unlocks(unlocks):
                   f"G3={rs.g3.prim}≥ord{rs.g3.min_ord} "
                   f"T={list(rs.t_prims.keys())}")
     else:
-        print(f"\n  No O_inf unlocks found in this sample. "
+        print(f"\n  No O_∞ unlocks found in this sample. "
               f"Highest: {layers.most_common(1)}")
 
 

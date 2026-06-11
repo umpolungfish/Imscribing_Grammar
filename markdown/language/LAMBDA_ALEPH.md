@@ -62,7 +62,7 @@ $\otimes$ is commutative, associative, and **not monotone** — the bottleneck o
 
 **Definition 1.4 (Ouroboricity tier $\tau$).**
 
-$$\tau: \mathcal{T} \to \{O_0, O_1, O_2, O_2^\dagger, O_\infty\}$$
+$$\tau: \mathcal{T} \to \{O₀, O₁, O₂, O₂^\dagger, O_\infty\}$$
 
 by priority rules R1–R5 (CLAUDE.md). Critical: $\tau$ is **not monotone under $\leq$** but is monotone under $\otimes$-promotion for ordered primitives — upper-set stratification holds.
 
@@ -128,7 +128,7 @@ A term is **normal** if: no tensor redexes remain, no casts remain, and mediatio
 
 The adversarial construction:
 
-> **Stage 1.** Take any $A$ (even $O_0$). Compute $A_2 = (A \otimes \text{מ}) \otimes \text{ש}$. Claim $A_2 \in O_\infty$.
+> **Stage 1.** Take any $A$ (even $O₀$). Compute $A_2 = (A \otimes \text{מ}) \otimes \text{ש}$. Claim $A_2 \in O_\infty$.
 >
 > **Stage 2.** Then $d(G_\infty, N_\infty) \approx 0$ for any $G, N$, collapsing the type system to a single equivalence class.
 

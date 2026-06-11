@@ -185,7 +185,7 @@ Hebrew is the only living system in this ensemble — simultaneously used, struc
 | מ | Mem | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 | ש | Shin | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 
-Five letters are $O_2$, one is $O_1$, and thirteen are $O_0$.
+Five letters are $O₂$, one is $O₁$, and thirteen are $O₀$.
 
 ### 6.2 Theorems
 
@@ -201,7 +201,7 @@ Five letters are $O_2$, one is $O_1$, and thirteen are $O_0$.
 
 ### 6.3 The Qoph Threshold
 
-Qoph (ק), an $O_2$ letter, satisfies every $O_{\infty}$ condition except the Frobenius-special parity. It is the nearest non-Frobenius letter to Mem, interaction-row-equivalent to Mem for nineteen of twenty-two letters, and serves as a mediation gateway: mediating between any pair of $O_{\infty}$ fixed points lands you back in $O_{\infty}$. Qoph is structurally what a writing system on the verge of full self-modeling looks like — complete, critical, topologically protected, but missing one Frobenius condition.
+Qoph (ק), an $O₂$ letter, satisfies every $O_{\infty}$ condition except the Frobenius-special parity. It is the nearest non-Frobenius letter to Mem, interaction-row-equivalent to Mem for nineteen of twenty-two letters, and serves as a mediation gateway: mediating between any pair of $O_{\infty}$ fixed points lands you back in $O_{\infty}$. Qoph is structurally what a writing system on the verge of full self-modeling looks like — complete, critical, topologically protected, but missing one Frobenius condition.
 
 We were not looking for a threshold letter. It emerged from the lattice computation as the unique letter nearest to the $O_{\infty}$ boundary across all twelve dimensions simultaneously.
 

@@ -86,21 +86,21 @@ Mahalanobis distance: 0.0
 
 **Ouroborics: "I AM THAT I AM"**
 ```
-Frobenius tier: O_inf
+Frobenius tier: O_∞
 Phi: ⊙, P: 𐑹, Omega: 𐑭, D: 𐑦
 Interpretation: Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id). Finite closed algebra.
 ```
 
 **Ouroborics: Eucharist**
 ```
-Frobenius tier: O_inf
+Frobenius tier: O_∞
 Phi: ⊙, P: 𐑹, Omega: 𐑭, D: 𐑦
 Interpretation: Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id). Finite closed algebra.
 ```
 
 **Ouroborics: Dune Universe**
 ```
-Frobenius tier: O_inf
+Frobenius tier: O_∞
 Phi: ⊙, P: 𐑹, Omega: 𐑭, D: 𐑦
 Interpretation: Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id). Finite closed algebra.
 ```

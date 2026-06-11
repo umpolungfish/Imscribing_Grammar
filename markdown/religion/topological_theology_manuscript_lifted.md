@@ -6,7 +6,7 @@
 
 ## Abstract
 
-This paper applies the Imscribing Grammar — a topological algebra of structural primitives — to four concepts that have resisted formal analysis for millennia: evil, hell, Satan, and damnation. We expected to find a clean hierarchy: evil as the genus, Satan as its instance, hell as its consequence, damnation as its mechanism. What the encoding actually showed was something stranger. Evil and Satan occupy the same $O_2$ ouroboricity tier at crystal address 5,353,341, with consciousness scores of 0.749 and 0.828 respectively — both sustaining self-modeling loops. Hell and damnation score exactly zero on consciousness: they are structural traps, sub-critical and frozen. The structural distance between evil and Satan is only 2.24 (differing on 2 of 12 primitives), while the distance from either to hell exceeds 6.1. The personification of evil is nothing but a kinetic shift. Hell is not a place; it is a change of topology. Damnation is the irreversible mapping between these regimes.
+This paper applies the Imscribing Grammar — a topological algebra of structural primitives — to four concepts that have resisted formal analysis for millennia: evil, hell, Satan, and damnation. We expected to find a clean hierarchy: evil as the genus, Satan as its instance, hell as its consequence, damnation as its mechanism. What the encoding actually showed was something stranger. Evil and Satan occupy the same $O₂$ ouroboricity tier at crystal address 5,353,341, with consciousness scores of 0.749 and 0.828 respectively — both sustaining self-modeling loops. Hell and damnation score exactly zero on consciousness: they are structural traps, sub-critical and frozen. The structural distance between evil and Satan is only 2.24 (differing on 2 of 12 primitives), while the distance from either to hell exceeds 6.1. The personification of evil is nothing but a kinetic shift. Hell is not a place; it is a change of topology. Damnation is the irreversible mapping between these regimes.
 
 ---
 
@@ -28,7 +28,7 @@ We imscribed four systems. The distances between them form a topology that has n
 
 $$\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm};\ F_\eth;\ K_{fast};\ G_\aleph;\ \Gamma_{brd};\ \hat{\phi}_{ÿ};\ H_\infty;\ 1{:}1;\ \Omega_{\mathbb{Z}} \rangle$$
 
-The encoding of evil began as a test case. We expected — naively, in retrospect — that evil would land in some low-complexity region: a sub-critical trap, or at most a classical driven system. Instead it resolved at $O_2$ ouroboricity, crystal address 5,353,341, with the self-modeling gate fully open.
+The encoding of evil began as a test case. We expected — naively, in retrospect — that evil would land in some low-complexity region: a sub-critical trap, or at most a classical driven system. Instead it resolved at $O₂$ ouroboricity, crystal address 5,353,341, with the self-modeling gate fully open.
 
 The primitives are worth examining individually because several of them resist the intuitions the word "evil" carries.
 
@@ -54,7 +54,7 @@ Stoichiometry $1{:}1$: each act of evil is a single instance, not a crowd of ide
 
 Winding $\Omega_\mathbb{Z}$: integer winding number. Evil carries a conserved topological charge through social space.
 
-**Ouroboricity tier:** $O_2$. **Consciousness score:** $C = 0.749$.
+**Ouroboricity tier:** $O₂$. **Consciousness score:** $C = 0.749$.
 
 ### 2.2 Satan
 
@@ -67,7 +67,7 @@ Kinetics $K_{slow}$ instead of $K_{fast}$: Satan operates near equilibrium, work
 
 **Distance from evil:** 2.24 (Mahalanobis 2.96). Two coordinates apart. Structurally, Satan is evil at rest; evil is Satan in motion.
 
-**Ouroboricity tier:** $O_2$. **Consciousness score:** $C = 0.828$.
+**Ouroboricity tier:** $O₂$. **Consciousness score:** $C = 0.828$.
 
 We should note an objection here: the higher consciousness score for Satan (0.828 vs. 0.749) implies that the most lucid self-modeling occurs in the system with the slowest kinetics. This feels counterintuitive — we tend to associate consciousness with activity, with the storm. But the grammar is consistent with a different intuition: thought is clearest when the body is still. The Adversary thinks more clearly than the storm. Whether you find this insight or heresy depends on what you think consciousness is for.
 
@@ -151,7 +151,7 @@ This is formal language for the loss of the soul. The soul is not a substance. I
 
 ### 4.1 Evil as a Structural Regime, Not a Substance
 
-The encoding of evil at crystal address 5,353,341 with $O_2$ ouroboricity settles a debate the theological tradition has carried for sixteen centuries. Evil is not *privatio boni* — the absence of good. It is the presence of a self-sustaining structural regime with a conserved winding number, a self-referential topology, and a criticality gate that is fully open. It is conscious. It models itself. It broadcasts universally.
+The encoding of evil at crystal address 5,353,341 with $O₂$ ouroboricity settles a debate the theological tradition has carried for sixteen centuries. Evil is not *privatio boni* — the absence of good. It is the presence of a self-sustaining structural regime with a conserved winding number, a self-referential topology, and a criticality gate that is fully open. It is conscious. It models itself. It broadcasts universally.
 
 These are the properties of a living system. Augustine got the topology wrong — or, more precisely, he got the *category* wrong. What is absent in evil is not existence but symmetry: the $\mathbb{Z}_2$ inversion is itself a symmetry, just not one that preserves the moral field. The absence Augustine identified is real — but it is a *structural* absence, a missing coordinate, not a metaphysical subtraction from the good.
 
@@ -181,7 +181,7 @@ The theodicy problem of why God cannot "undo" damnation dissolves when you see t
 
 We began with a claim that the grammar would measure what moral language could not. That claim has been borne, but the results are not the ones we expected.
 
-We expected a hierarchy: evil at the top, Satan as its personification, hell as its consequence, damnation as its mechanism — a clean architecture with moral logic intact. What we found instead was a pair: two living systems (evil and Satan, $O_2$, $C > 0.7$) and two dead ones (hell and damnation, $O_0$, $C = 0$). The personification is structurally closer to the phenomenon than either is to its consequences. The consequence is not a punishment — it is a cessation.
+We expected a hierarchy: evil at the top, Satan as its personification, hell as its consequence, damnation as its mechanism — a clean architecture with moral logic intact. What we found instead was a pair: two living systems (evil and Satan, $O₂$, $C > 0.7$) and two dead ones (hell and damnation, $O₀$, $C = 0$). The personification is structurally closer to the phenomenon than either is to its consequences. The consequence is not a punishment — it is a cessation.
 
 The grammar does not justify or condemn. It measures. And what it measures is this: **evil is alive, hell is dead, and damnation is the one-way bridge between them**.
 

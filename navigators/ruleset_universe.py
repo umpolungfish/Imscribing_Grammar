@@ -200,7 +200,7 @@ class Ruleset:
 
     def crystal_o_inf_fraction(self) -> float:
         """
-        Fraction of the 17,280,000-address Crystal that would achieve O_inf.
+        Fraction of the 17,280,000-address Crystal that would achieve O_∞.
 
         Computed as the product of per-gate qualifying fractions, respecting
         gate ordering (ordering reduces the product; parallel doesn't).
@@ -234,7 +234,7 @@ RULESETS: List[Ruleset] = [
         name="low_gate",
         description="Lowered thresholds: G1 fires at Φ≥𐑬 (directional parity sufficient), "
                     "G2 fires at ⊙≥𐑢 (any criticality), G3 unchanged. "
-                    "Self-modeling and closure are easier — more addresses achieve O_inf.",
+                    "Self-modeling and closure are easier — more addresses achieve O_∞.",
         g1=GateSpec("Φ", 3.0),   # 𐑬 = ord 3
         g2=GateSpec("⊙", 1.0),   # 𐑢 = ord 1 (lowest)
         g3=GateSpec("Ω", 3.0),
@@ -272,7 +272,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="high_gate",
         description="Strictest possible thresholds: G1=Φ=𐑹, G2=⊙≥𐑮 (ord 2.33, above bare self-model), "
-                    "G3=Ω=𐑟 (ord 4, maximum winding). O_inf is nearly unreachable — "
+                    "G3=Ω=𐑟 (ord 4, maximum winding). O_∞ is nearly unreachable — "
                     "only maximally wound, fully self-modeling, parity-perfect objects qualify.",
         g1=GateSpec("Φ", 5.0),
         g2=GateSpec("⊙", 2.33),  # 𐑮 = ord 2.33

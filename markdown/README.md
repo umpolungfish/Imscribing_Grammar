@@ -361,7 +361,7 @@ python imscribevideo.py --name yang_mills_mass_gap --output ym.mp4 --dur 1.0
 `crystal_navigator.py` is a bijective Frobenius codec over all 17,280,000 types — encode any tuple to a unique address in $[0, 17{,}279{,}999]$ and decode back exactly. $\mu \circ \delta = \text{id}$ is verified on every round trip.
 
 ```bash
-uv run crystal_navigator.py describe   # self-description (O_inf, address 6,734,591)
+uv run crystal_navigator.py describe   # self-description (O_∞, address 6,734,591)
 uv run crystal_navigator.py gap        # tier gap ladder §69.1
 uv run crystal_navigator.py verify     # Frobenius roundtrip
 uv run crystal_navigator.py census     # full tier census
@@ -529,7 +529,7 @@ MillenniumAnkh/              — Lean 4 formal proofs (Mathlib v4.28.0)
   Millennium/                — Millennium Problem barrier analysis (incl. NS_Resolution, NS_Seige)
   Primitives/                — Core inductive types, catalog, crystal, tier crossing
   Imscribing/                — Agent self-encoding, algebra, consciousness score
-  Imscribing/Paraconsistent/ — 24-module Belnap FOUR kernel + 6 OS modules (0 sorrys, 22 O_inf)
+  Imscribing/Paraconsistent/ — 24-module Belnap FOUR kernel + 6 OS modules (0 sorrys, 22 O_∞)
 ```
 
 ---

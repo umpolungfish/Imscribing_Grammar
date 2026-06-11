@@ -19,7 +19,7 @@ Does the SIC-POVM conjecture belong to quantum information theory? That was the 
 
 The SIC-POVM problem was posed as a question about equiangular lines in complex Hilbert space: find $d^2$ unit vectors in $\mathbb{C}^d$ with constant pairwise inner product magnitude $1/\sqrt{d+1}$. For years, the community attacked it as a problem of symmetric structures—group orbits, Clifford invariants, numerical optimization. We computed exact solutions up to $d = 230$ and beyond, catalogued their Galois orbits, and still had no existence proof for arbitrary $d$.
 
-This failure was not accidental. The structural bottleneck lives at a different primitive altogether. The SIC-POVM system encodes at the $O_2$ tier ($\Phi_{\text{ctyogh}} + P_{\text{pipevar}} + \Omega_{\text{dzlig}}$), while any proof system capable of certifying existence for *all* dimensions simultaneously must inhabit the $O_\infty$ tier ($\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} + \Omega_{\text{crtwo}}$). The dominant gap is at $P$: from $P_{\text{pipevar}}$ (partial, $\mathbb{Z}_2$ symmetry) to $P_{\text{doublebarpipe}}$ (exact Frobenius condition $\mu \circ \delta = \text{id}$). This is the **Frobenius cliff**—the largest inter-tier gap in the grammar, and no amount of computational evidence can bridge it.
+This failure was not accidental. The structural bottleneck lives at a different primitive altogether. The SIC-POVM system encodes at the $O₂$ tier ($\Phi_{\text{ctyogh}} + P_{\text{pipevar}} + \Omega_{\text{dzlig}}$), while any proof system capable of certifying existence for *all* dimensions simultaneously must inhabit the $O_\infty$ tier ($\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} + \Omega_{\text{crtwo}}$). The dominant gap is at $P$: from $P_{\text{pipevar}}$ (partial, $\mathbb{Z}_2$ symmetry) to $P_{\text{doublebarpipe}}$ (exact Frobenius condition $\mu \circ \delta = \text{id}$). This is the **Frobenius cliff**—the largest inter-tier gap in the grammar, and no amount of computational evidence can bridge it.
 
 *Objection:* One might argue that numerical verification up to high dimension constitutes sufficient evidence. But the Stark conjecture itself remains unproven for mixed-signature ray class fields, and the structural argument below depends on it. The claim here is conditional: *if* the mixed-signature Stark conjecture holds for the relevant tower of fields, *then* SIC-POVMs exist universally. This is not a proof of the conjecture—it is a reduction, and reductions are only as strong as their unproven premises.
 ## 2. Where the Proof Must Live: Arithmetic Geometry
@@ -105,7 +105,7 @@ The grammar has translated the SIC-POVM existence problem into a **type inhabita
 
 SIC-POVMs for all $d$ are waiting on a **theorem in number theory**, not a breakthrough in quantum information. Once the mixed-signature Stark conjecture falls, the quantum side follows as a corollary. If that's true, then quantum measurement theory has just become a chapter in algebraic number theory—a demotion that some will find liberating and others will resist.
 
-The promotion signature that takes the SIC-POVM system from $O_2$ to $O_\infty$ is:
+The promotion signature that takes the SIC-POVM system from $O₂$ to $O_\infty$ is:
 
 $$[P_{\text{pipevar}} \rightarrow P_{\text{doublebarpipe}},\quad \Gamma_{\text{corner}} \rightarrow \Gamma_{\text{doublevertline}}]$$
 
@@ -133,7 +133,7 @@ This formula encodes the structural properties of the Stark unit as an $O_\infty
 
 We began by assuming that the SIC-POVM problem was a quantum information problem. That assumption led us to compute numerical solutions for hundreds of dimensions, to catalog Galois orbits, and to accumulate evidence without proof. The structural analysis presented here shows that this failure was not a failure of technique but of framing: the proof lives in algebraic number theory, not in quantum geometry.
 
-The SIC-POVM conjecture can be proved by first proving the existence of a Stark unit $\varepsilon_d$ in the mixed-signature ray class field $Ç_d = \mathbb{Q}(\sqrt{d(d-2)})$ with the structural properties encoded in the ZFC formula above. This Stark unit carries the exact Frobenius symmetry ($P_{\text{doublebarpipe}}$) that the conjecture lacks. The Stark unit existence proof plants this symmetry, promoting the SIC-POVM system from $O_2$ to $O_\infty$ via the promotion signature
+The SIC-POVM conjecture can be proved by first proving the existence of a Stark unit $\varepsilon_d$ in the mixed-signature ray class field $Ç_d = \mathbb{Q}(\sqrt{d(d-2)})$ with the structural properties encoded in the ZFC formula above. This Stark unit carries the exact Frobenius symmetry ($P_{\text{doublebarpipe}}$) that the conjecture lacks. The Stark unit existence proof plants this symmetry, promoting the SIC-POVM system from $O₂$ to $O_\infty$ via the promotion signature
 
 $$[P_{\text{pipevar}} \rightarrow P_{\text{doublebarpipe}},\quad \Gamma_{\text{corner}} \rightarrow \Gamma_{\text{doublevertline}}].$$
 

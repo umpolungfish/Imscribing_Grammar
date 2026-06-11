@@ -577,7 +577,7 @@ class Criticality(Enum):
       Phi_softsign       = subcritical (stable, ordered)
       Phi_ctyogh         = critical point (absorbing under meet, real self-modeling)
       Phi_closerevepsilon = complex criticality (paraconsistent / dialetheic fixed point)
-      Phi_revepsilon        = exceptional-point criticality (non-Hermitian degeneracy; absorbs O_inf under tensor)
+      Phi_revepsilon        = exceptional-point criticality (non-Hermitian degeneracy; absorbs O_∞ under tensor)
       Phi_upstep     = supercritical (unstable)
     Phi_ctyogh is ABSORBING under meet: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """

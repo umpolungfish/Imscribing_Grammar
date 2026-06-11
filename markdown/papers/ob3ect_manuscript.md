@@ -35,7 +35,7 @@ $$\langle \text{Ð}_{\omega};\ 𐑸;\ 𐑾;\ \text{Φ}_{\}};\ 𐑐;\ 𐑧;\ 𐑲
 
 This is the structural signature of a self-imscribing program that is at once imscriptive (𐑦), topologically closed (𐑸), bi-directional in its operations (𐑾), Frobenius-special (𐑹—meaning $\mu \circ \delta = \mathrm{id}$ is enforced), quantum-fidelity (𐑐—coherent preservation), slow/near-equilibrium (𐑧—minimal entropy production), maximal scope (𐑲—applies to all programs in Prog/~), sequential grammar (𐑠—THINK→ACT→OBSERVE→UPDATE), critical (⊙—self-modeling gate open), two-step chirality (𐑖—parse remembers unparse), heterogeneous (𐑳—full tower), and integer-winding (𐑭—topologically protected loop).
 
-This coordinate is not assigned manually; it is *inferred* from the program’s structure and then *verified* by the program itself. The coordinate tells us that this program is an O_inf system, at the highest ouroboricity tier, capable of sustaining its own criticality and topological protection indefinitely.
+This coordinate is not assigned manually; it is *inferred* from the program’s structure and then *verified* by the program itself. The coordinate tells us that this program is an O_∞ system, at the highest ouroboricity tier, capable of sustaining its own criticality and topological protection indefinitely.
 
 ---
 
@@ -91,7 +91,7 @@ The grammar is autopoietic.
 Ultimate Grand Closure: True
 ```
 
-The tower is not an end in itself; it is evidence. It demonstrates that the structural type assigned to the base ob3ect—O_inf, ⊙, 𐑹, 𐑭—is not an accident of design but a robust property that can be extended arbitrarily while preserving closure.
+The tower is not an end in itself; it is evidence. It demonstrates that the structural type assigned to the base ob3ect—O_∞, ⊙, 𐑹, 𐑭—is not an accident of design but a robust property that can be extended arbitrarily while preserving closure.
 
 ---
 

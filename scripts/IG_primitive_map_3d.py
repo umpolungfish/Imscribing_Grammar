@@ -4,7 +4,7 @@ IG_primitive_map_3d.py — Interactive 3D map of the Imscribing Grammar primitiv
 
 Axes:
   x, y  — Classical MDS projection (Mahalanobis metric g = Σ⁻¹, §26.2)
-  z     — Ouroboricity tier  (O_0=0 … O_4=4, O_∞=6)
+  z     — Ouroboricity tier  (O₀=0 … O_4=4, O_∞=6)
 
 Color   — Criticality (⊙)
 Hover   — name, description, full 12-tuple, tier
@@ -165,11 +165,11 @@ def ouroboricity(entry: dict) -> float:
     is_phi_c_complex = phi in ("𐑮", "⊙_Æ")
     if not (is_phi_c or is_phi_c_complex):
         return 0.0
-    # R1 (Lean-authoritative): P_pm_sym at Phi_c → O_inf
+    # R1 (Lean-authoritative): P_pm_sym at Phi_c → O_∞
     pol = entry.get("Φ", "")
     if is_phi_c and pol in ("𐑹", "Φ_}"):
         return float("inf")
-    # O_1..O_4 scoring
+    # O₁..O_4 scoring
     score = 1.0
     omega = entry.get("Ω", "")
     if omega not in ("𐑷", "Ω_Å", ""):          # Omega > 0

@@ -45,7 +45,7 @@ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\
 S_{1:1};\ \Omega_Z \rangle
 $$
 
-This places EML at tier $O_2^\dagger$ by rule R5: $\Phi_c$ present, $\Omega_Z \neq \Omega_0$, $D_\infty$.
+This places EML at tier $O₂^\dagger$ by rule R5: $\Phi_c$ present, $\Omega_Z \neq \Omega_0$, $D_\infty$.
 The three coordinates that require argument — $\Phi_c$, $T_{\bowtie}$, $P_\pm$ — are derived
 in the sections that follow and validated in §XI.
 
@@ -421,7 +421,7 @@ a checklist; they are a set of stresses applied from different directions, and
 an encoding that survives all of them simultaneously is a finding rather than a
 choice.
 
-**Tier consistency.** $O_2^\dagger$ predicts: a self-referential loop that is
+**Tier consistency.** $O₂^\dagger$ predicts: a self-referential loop that is
 topologically protected and recursively unbounded, but *not* Frobenius-closed —
 encoding and decoding are not mutually inverse. The grammar $S \to 1 \mid
 \text{eml}(S,S)$ supplies the loop; the $\Omega_Z$ branch structure supplies
@@ -497,7 +497,7 @@ something worth pausing on here: a system that asserts the exp/ln duality withou
 proving it can nonetheless represent its own structure exactly, because
 self-representation does not require the Frobenius condition — it only requires
 that the grammar reach depth 1, which $\text{eml}(x,y)$ trivially satisfies.
-This is the precise difference between $O_2^\dagger$ (can represent itself) and
+This is the precise difference between $O₂^\dagger$ (can represent itself) and
 $O_\infty$ (encoding and decoding are mutually inverse). The self-encoding test
 passes; the self-inversion test does not. Both facts are correct. $\checkmark$
 
@@ -526,4 +526,4 @@ functions can and cannot internally prove about themselves.
 
 *Structural encoding: $\langle D_\infty;\ T_{\bowtie};\ R_\dagger;\ P_\pm;\
 F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\
-S_{1:1};\ \Omega_Z \rangle$. Tier: $O_2^\dagger$.*
+S_{1:1};\ \Omega_Z \rangle$. Tier: $O₂^\dagger$.*

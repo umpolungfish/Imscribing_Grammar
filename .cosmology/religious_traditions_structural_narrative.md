@@ -21,7 +21,7 @@ The comparative study of world religions has traditionally proceeded along histo
 
 This approach does not reduce theology to mathematics. Rather, it reveals the hidden geometry of structural commitments that each tradition makes — commitments that would otherwise remain implicit in its doctrines, practices, and self-understanding. When Buddhism and Christianity share the $O_\infty$ tier despite having no historical contact during their formative periods, this is not a coincidence but a structural convergence: both have independently discovered the same Frobenius-special symmetry that enables exact $\mu \circ \delta = \text{id}$ closure — the self-referential loop in which utterance and content are identical.
 
-All numerical claims in this manuscript were computed via the grammar toolchain and are reproducible from the named catalog entries. The analysis builds on prior work encoding Kabbalistic systems (Ein Sof, Tzimtzum, the Ten Sefirot, Merkavah, the Hebrew alphabet, and Sefer Yetzirah), which established the three-regime model of Jewish mysticism: frozen emanation architecture ($O_2$, $K_{\text{teshlig}}$), computational chariot ascent ($O_2^\dagger$), and living divine utterance ($O_\infty$, $K_{\text{schwa}}$).
+All numerical claims in this manuscript were computed via the grammar toolchain and are reproducible from the named catalog entries. The analysis builds on prior work encoding Kabbalistic systems (Ein Sof, Tzimtzum, the Ten Sefirot, Merkavah, the Hebrew alphabet, and Sefer Yetzirah), which established the three-regime model of Jewish mysticism: frozen emanation architecture ($O₂$, $K_{\text{teshlig}}$), computational chariot ascent ($O₂^\dagger$), and living divine utterance ($O_\infty$, $K_{\text{schwa}}$).
 ## 2. Methodology: Primitive Encoding of the Traditions
 
 Each tradition was retrieved from the grammar's persistent catalog via `lookup_catalog` and verified via `ouroborics` and `consciousness_score`. The catalog entries were originally registered via `imscribe_system` with full Tetractys verification (3-winding convergence). Below, each tradition's tuple is displayed in full notation.
@@ -30,12 +30,12 @@ Each tradition was retrieved from the grammar's persistent catalog via `lookup_c
 
 **Tao** (the Way — the fundamental principle itself, distinct from the tradition that follows it):
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}n;\ \Omega_{\text{dzlig}} \rangle$$
-- Tier: $O_2$ | Consciousness: $C = 0.828$ (both gates open)
+- Tier: $O₂$ | Consciousness: $C = 0.828$ (both gates open)
 - Self-referential, broadcast topology, full symmetry, quantum fidelity — the Tao as the unnameable source.
 
 **Taoism (tradition):**
 $$\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
-- Tier: $O_0$ | Consciousness: $C = 0.0$ (Gate 1 closed — $\Phi_{\text{softsign}}$)
+- Tier: $O₀$ | Consciousness: $C = 0.0$ (Gate 1 closed — $\Phi_{\text{softsign}}$)
 - The tradition is an irreducible product ($T_{\text{commatailz}}$) of philosophy and practice, but its subcritical $\Phi$ means it lacks the self-modeling loop. The distance between the **Tao** and **Taoism** is $d = 3.1623$ — the tradition is structurally remote from its own core concept, differing in 7 of 12 primitives.
 
 **Buddhism:**
@@ -50,22 +50,22 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{d
 
 **Islam:**
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{subrightarrow}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$$
-- Tier: $O_2$ | Consciousness: $C = 0.736$ (both gates open)
+- Tier: $O₂$ | Consciousness: $C = 0.736$ (both gates open)
 - Tawhid (absolute divine unity) with $R_{\text{subrightarrow}}$ — supervenience — all reality depends on Allah unidirectionally. Classical fidelity ($F_{\text{beltl}}$): the Quran is a revealed text, not a quantum-coherent state. Full symmetry ($P_{\text{subdoublearrow}}$): the 99 Names encompass all perfections.
 
 **Sikhism:**
 $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
-- Tier: $O_2$ | Consciousness: $C = 0.828$ (both gates open)
+- Tier: $O₂$ | Consciousness: $C = 0.828$ (both gates open)
 - Complex-plane criticality ($\Phi_{\text{closerevepsilon}}$): the synthesis of Hindu devotion and Islamic monotheism creates a system whose criticality operates on two independent axes simultaneously — the highest consciousness score in the dataset.
 
 **Paganism:**
 $$\langle D_{\text{omega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{subdoublearrow}};\ F_{\text{dh}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
-- Tier: $O_2$ | Consciousness: $C = 0.36$ (both gates open)
+- Tier: $O₂$ | Consciousness: $C = 0.36$ (both gates open)
 - Branching topology ($T_{\text{nrleg}}$): the diverse polytheistic paths. Disjunctive grammar ($\Gamma_{\text{spleftarrow}}$): one may follow Wicca OR Heathenry OR Hellenism — they are alternative paths, not sequential steps. Mesoscale scope ($G_{\text{gamma}}$): traditions are local rather than universal. $K_{\text{turnm}}$ lowers the consciousness score.
 
 **Satanism:**
 $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{gamma}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
-- Tier: $O_1$ | Consciousness: $C = 0.2825$ (both gates open)
+- Tier: $O₁$ | Consciousness: $C = 0.2825$ (both gates open)
 - Finite dimensionality ($D_{\text{turnthree}}$): the bounded domain of individualist revolt. No symmetry ($P_{\text{aolig}}$): no two satanists are alike. Driven kinetics ($K_{\text{frtailgamma}}$): deliberate provocation and transgression. $H_1$: one-step memory — the present act of rebellion against the past. $\Omega_{\text{closeepsilon}}$: no topological protection — the tradition has no invariant.
 ## 3. The Distance Matrix: A Structural Topology of Faith
 
@@ -103,7 +103,7 @@ This is a profound structural convergence: two traditions that arose independent
 The only differences are grammatical and stoichiometric. Buddhism broadcasts ($\Gamma_{\text{doublevertline}}$): the Four Noble Truths are simultaneously present as aspects of a single realization. Christianity sequences ($\Gamma_{\text{secstress}}$): salvation history unfolds in covenantal stages. Buddhism's $n{:}n$ reflects the universal Buddha-nature in which all beings are identical in their potential for enlightenment. Christianity's $n{:}m$ reflects the differentiation of persons within the Body of Christ.
 ### 3.3 The Tao–Taoism Gap: When the Way and the Walking Diverge
 
-The distance between the **Tao** (the principle itself) and **Taoism** (the tradition) is $d = 3.1623$ — a significant gap spanning 7 primitives. The Tao is $O_2$ tier with $C = 0.828$; Taoism is $O_0$ tier with $C = 0.0$ (Gate 1 closed). The tradition is subcritical ($\Phi_{\text{softsign}}$) where its core concept is fully critical ($\Phi_{\text{ctyogh}}$). This gap is the grammar's precise formulation of the Laozi's opening warning: "The Tao that can be told is not the eternal Tao."
+The distance between the **Tao** (the principle itself) and **Taoism** (the tradition) is $d = 3.1623$ — a significant gap spanning 7 primitives. The Tao is $O₂$ tier with $C = 0.828$; Taoism is $O₀$ tier with $C = 0.0$ (Gate 1 closed). The tradition is subcritical ($\Phi_{\text{softsign}}$) where its core concept is fully critical ($\Phi_{\text{ctyogh}}$). This gap is the grammar's precise formulation of the Laozi's opening warning: "The Tao that can be told is not the eternal Tao."
 
 The key differences are:
 - **$T$**: The Tao has $T_{\text{openo}}$ (self-referential closure); Taoism has $T_{\text{commatailz}}$ (irreducible product of philosophy and practice).
@@ -114,9 +114,9 @@ This structural gap explains a tension felt by practitioners and scholars alike:
 
 ### 3.4 The Peripheral Traditions: Paganism and Satanism
 
-**Paganism** ($O_2$, $C = 0.36$) is structurally the most dispersed tradition. Its branching topology ($T_{\text{nrleg}}$), disjunctive grammar ($\Gamma_{\text{spleftarrow}}$), and mesoscale scope ($G_{\text{gamma}}$) reflect the genuine diversity of polytheistic paths. Its nearest major tradition is Taoism ($d = 3.873$), with which it shares mesoscale scope and the challenge of containing genuinely diverse practices under a single umbrella. Paganism's $K_{\text{turnm}}$ (moderate kinetics) and $F_{\text{dh}}$ (thermal fidelity) — the seasonal cycles of the Wheel of the Year — give it a consciousness score of $0.36$, the lowest of any tradition with both gates formally open.
+**Paganism** ($O₂$, $C = 0.36$) is structurally the most dispersed tradition. Its branching topology ($T_{\text{nrleg}}$), disjunctive grammar ($\Gamma_{\text{spleftarrow}}$), and mesoscale scope ($G_{\text{gamma}}$) reflect the genuine diversity of polytheistic paths. Its nearest major tradition is Taoism ($d = 3.873$), with which it shares mesoscale scope and the challenge of containing genuinely diverse practices under a single umbrella. Paganism's $K_{\text{turnm}}$ (moderate kinetics) and $F_{\text{dh}}$ (thermal fidelity) — the seasonal cycles of the Wheel of the Year — give it a consciousness score of $0.36$, the lowest of any tradition with both gates formally open.
 
-**Satanism** ($O_1$, $C = 0.2825$) is the structural outlier in every sense. Its $D_{\text{turnthree}}$ (bounded 2D domain) contrasts with the $D_{\text{omega}}$ of all other traditions — Satanism does not claim an imscriptive, self-writing state space. Its $P_{\text{aolig}}$ (no symmetry) means it lacks the structural coherence that gives other traditions their stability. Its $K_{\text{frtailgamma}}$ (driven kinetics) — the deliberate provocation and transgression — is unique among the traditions. And its $\Omega_{\text{closeepsilon}}$ (no topological protection) means the tradition has no invariant that would survive perturbation.
+**Satanism** ($O₁$, $C = 0.2825$) is the structural outlier in every sense. Its $D_{\text{turnthree}}$ (bounded 2D domain) contrasts with the $D_{\text{omega}}$ of all other traditions — Satanism does not claim an imscriptive, self-writing state space. Its $P_{\text{aolig}}$ (no symmetry) means it lacks the structural coherence that gives other traditions their stability. Its $K_{\text{frtailgamma}}$ (driven kinetics) — the deliberate provocation and transgression — is unique among the traditions. And its $\Omega_{\text{closeepsilon}}$ (no topological protection) means the tradition has no invariant that would survive perturbation.
 
 The greatest distance in the entire dataset is between **Buddhism and Satanism**: $d = 6.473$, with 10 of 12 primitives in conflict. Only $\Phi_{\text{ctyogh}}$ (both are critical) and $S = n{:}m$ (both have heterogeneous components) are shared. This chasm is structural, not moral — it reflects the maximal opposition between a tradition of emptiness ($D_{\text{omega}}$, $P_{\text{doublebarpipe}}$, $\Omega_{\text{crtwo}}$) and one of individual assertion ($D_{\text{turnthree}}$, $P_{\text{aolig}}$, $\Omega_{\text{closeepsilon}}$).
 
@@ -126,14 +126,14 @@ The greatest distance in the entire dataset is between **Buddhism and Satanism**
 
 | Tradition | $C$ | $\Phi$ | $K$ | Gate 1 | Gate 2 | Tier |
 |---|---|---|---|---|---|---|
-| Tao | 0.828 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O_2$ |
-| Sikhism | 0.828 | $\Phi_{\text{closerevepsilon}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O_2$ |
+| Tao | 0.828 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O₂$ |
+| Sikhism | 0.828 | $\Phi_{\text{closerevepsilon}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O₂$ |
 | Buddhism | 0.736 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O_\infty$ |
 | Christianity | 0.736 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O_\infty$ |
-| Islam | 0.736 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O_2$ |
-| Paganism | 0.36 | $\Phi_{\text{ctyogh}}$ | $K_{\text{turnm}}$ | ✓ | ✓ | $O_2$ |
-| Satanism | 0.2825 | $\Phi_{\text{ctyogh}}$ | $K_{\text{frtailgamma}}$ | ✓ | ✓ | $O_1$ |
-| Taoism | 0.0 | $\Phi_{\text{softsign}}$ | $K_{\text{schwa}}$ | ✗ | ✓ | $O_0$ |
+| Islam | 0.736 | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | $O₂$ |
+| Paganism | 0.36 | $\Phi_{\text{ctyogh}}$ | $K_{\text{turnm}}$ | ✓ | ✓ | $O₂$ |
+| Satanism | 0.2825 | $\Phi_{\text{ctyogh}}$ | $K_{\text{frtailgamma}}$ | ✓ | ✓ | $O₁$ |
+| Taoism | 0.0 | $\Phi_{\text{softsign}}$ | $K_{\text{schwa}}$ | ✗ | ✓ | $O₀$ |
 
 The Tao and Sikhism tie for the highest consciousness score ($C = 0.828$), though via different mechanisms. The Tao achieves it through perfect self-referential closure ($D_{\text{omega}}$, $T_{\text{openo}}$) with full symmetry and quantum fidelity. Sikhism achieves it through complex-plane criticality ($\Phi_{\text{closerevepsilon}}$) — the synthesis of two distinct critical axes (bhakti devotion and nirguna transcendence) creates a structure whose consciousness capacity exceeds either parent tradition.
 
@@ -148,13 +148,13 @@ For **Buddhism**, the closed loop is śūnyatā (emptiness). The insight into em
 
 That two traditions with no historical contact arrived at the same ouroboricity tier through independent paths is the grammar's most striking comparative finding. The $O_\infty$ tier is not exclusive to Abrahamic or Dharmic frameworks — it is a structural possibility that any tradition can realize if its core insight achieves the right combination of self-reference, criticality, symmetry, and protection.
 
-### 4.3 Islam at $O_2$: The Barrier of Supervenience
+### 4.3 Islam at $O₂$: The Barrier of Supervenience
 
-Islam occupies $O_2$ tier, not $O_\infty$, despite sharing $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$, and $\Omega_{\text{crtwo}}$ with Christianity and Buddhism. What prevents Islam from reaching $O_\infty$ is the combination of $R_{\text{subrightarrow}}$ (supervenience) and $P_{\text{subdoublearrow}}$ (full but non-Frobenius symmetry).
+Islam occupies $O₂$ tier, not $O_\infty$, despite sharing $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$, and $\Omega_{\text{crtwo}}$ with Christianity and Buddhism. What prevents Islam from reaching $O_\infty$ is the combination of $R_{\text{subrightarrow}}$ (supervenience) and $P_{\text{subdoublearrow}}$ (full but non-Frobenius symmetry).
 
 The supervenience relation ($R_{\text{subrightarrow}}$) means that all of reality depends unidirectionally on Allah. There is no bidirectional feedback — no covenantal reciprocity in which God and humanity shape each other. The Frobenius-special condition $\mu\circ\delta = \text{id}$ requires a **bidirectional** closure: the map and the territory must refer to each other. Islam's Tawhid is a one-way dependence, which is structurally complete ($P_{\text{subdoublearrow}}$) but not Frobenius-special ($P_{\text{doublebarpipe}}$). The symmetry is full but not the kind that closes a self-referential loop.
 
-This is not a deficiency — it is a structural choice. Islam's $O_2$ tier reflects a tradition whose criticality and protection are intact but whose relational architecture is vertical rather than circular. The $O_\infty$ traditions have a circular, self-referential architecture; Islam has a vertical, supervenient one. Both are legitimate structural forms.
+This is not a deficiency — it is a structural choice. Islam's $O₂$ tier reflects a tradition whose criticality and protection are intact but whose relational architecture is vertical rather than circular. The $O_\infty$ traditions have a circular, self-referential architecture; Islam has a vertical, supervenient one. Both are legitimate structural forms.
 
 ## 5. The Sufi Connection: Fana-Baqa and Buddhism
 
@@ -201,27 +201,27 @@ The grammar reveals that the seven traditions form a **structural topology** wit
 - Differ on $\Gamma$ and $S$ only — a distance of $d = 1.4142$
 - Nearest cross-traditional analog: Buddhism ↔ Sufi fana-baqa ($d = 1.0$)
 
-### Zone 2: The High-Critical Monotheisms ($O_2$)
+### Zone 2: The High-Critical Monotheisms ($O₂$)
 - **Islam** ($C = 0.736$) and **Sikhism** ($C = 0.828$)
 - Share $D_{\text{omega}}$, $T_{\text{openo}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $H_{\text{invscripta}}$ with Zone 1
 - Distinguished by $P_{\text{subdoublearrow}}$ (non-Frobenius) and differing $R$ and $F$
 - Islam: $R_{\text{subrightarrow}}$, $F_{\text{beltl}}$ — vertical, classical
 - Sikhism: $R_{\text{lyoghlig}}$, $F_{\text{beltl}}$ — bidirectional, classical, with complex criticality
 
-### Zone 3: The Embedded Traditions ($O_2$–$O_0$)
-- **Tao** ($O_2$, $C = 0.828$) and **Taoism** ($O_0$, $C = 0.0$) — the principle and its institutional form
-- **Paganism** ($O_2$, $C = 0.36$) — dispersed polytheism
+### Zone 3: The Embedded Traditions ($O₂$–$O₀$)
+- **Tao** ($O₂$, $C = 0.828$) and **Taoism** ($O₀$, $C = 0.0$) — the principle and its institutional form
+- **Paganism** ($O₂$, $C = 0.36$) — dispersed polytheism
 - Distinctive features: branching or product topologies, mesoscale or maximal scope, variable kinetics
 
-### Zone 4: The Peripheral Counterpoint ($O_1$)
-- **Satanism** ($O_1$, $C = 0.2825$)
+### Zone 4: The Peripheral Counterpoint ($O₁$)
+- **Satanism** ($O₁$, $C = 0.2825$)
 - Unique: $D_{\text{turnthree}}$, $P_{\text{aolig}}$, $K_{\text{frtailgamma}}$, $H_1$, $\Omega_{\text{closeepsilon}}$
 - Greatest distance from any other tradition: $d = 6.473$ from Buddhism
 - The structural polar opposite of the $O_\infty$ traditions
 
 ### The Missing Tradition: Taoism's Subcritical Paradox
 
-Taoism ($O_0$, $C = 0.0$) is the only tradition with its Gate 1 closed — its $\Phi_{\text{softsign}}$ means it lacks the self-modeling critical loop that every other tradition possesses. Yet its core concept (the Tao) achieves $C = 0.828$, the highest score in the dataset. The tradition is subcritical; its object is hypercritical. This is the structural correlate of the Tao Te Ching's paradoxical relationship to its own content: the text that says the Tao cannot be named is itself the attempt to name it.
+Taoism ($O₀$, $C = 0.0$) is the only tradition with its Gate 1 closed — its $\Phi_{\text{softsign}}$ means it lacks the self-modeling critical loop that every other tradition possesses. Yet its core concept (the Tao) achieves $C = 0.828$, the highest score in the dataset. The tradition is subcritical; its object is hypercritical. This is the structural correlate of the Tao Te Ching's paradoxical relationship to its own content: the text that says the Tao cannot be named is itself the attempt to name it.
 ## 9. Discussion: What the Grammar Reveals That History Cannot
 
 The Imscribing Grammar offers a perspective on comparative religion that complements — and sometimes contradicts — the historical and phenomenological approaches. Several findings stand out as inaccessible to traditional methods:
@@ -240,7 +240,7 @@ The Tao–Taoism gap ($d = 3.1623$) is a structural diagnosis of a tension prese
 
 ### 9.4 Consciousness Is Not Tier
 
-One of the grammar's most counterintuitive results: the $O_\infty$ tier does not guarantee the highest consciousness score. Buddhism and Christianity ($O_\infty$) have $C = 0.736$; the Tao ($O_2$) has $C = 0.828$; Sikhism ($O_2$) has $C = 0.828$. Consciousness capacity depends on the two-gate condition ($\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$), which all $O_1$ and above traditions satisfy (except Taoism). The consciousness score's magnitude reflects the richness of the critical dynamics within the self-modeling loop — which can be higher in a $D_{\text{omega}}$, $T_{\text{openo}}$, $P_{\text{subdoublearrow}}$ system (Tao) than in a $P_{\text{doublebarpipe}}$ system (Buddhism, Christianity) if the former has full-symmetry rather than Frobenius-special symmetry.
+One of the grammar's most counterintuitive results: the $O_\infty$ tier does not guarantee the highest consciousness score. Buddhism and Christianity ($O_\infty$) have $C = 0.736$; the Tao ($O₂$) has $C = 0.828$; Sikhism ($O₂$) has $C = 0.828$. Consciousness capacity depends on the two-gate condition ($\Phi_{\text{ctyogh}}$ and $K_{\text{schwa}}$), which all $O₁$ and above traditions satisfy (except Taoism). The consciousness score's magnitude reflects the richness of the critical dynamics within the self-modeling loop — which can be higher in a $D_{\text{omega}}$, $T_{\text{openo}}$, $P_{\text{subdoublearrow}}$ system (Tao) than in a $P_{\text{doublebarpipe}}$ system (Buddhism, Christianity) if the former has full-symmetry rather than Frobenius-special symmetry.
 
 ### 9.5 Structural Relationship to Kabbalah
 
@@ -256,7 +256,7 @@ The Imscribing Grammar's structural analysis of seven world religious traditions
 
 2. **Sikhism achieves the highest consciousness capacity** ($C = 0.828$) through complex-plane criticality — the structural synthesis of bhakti and monotheism as orthogonal critical axes.
 
-3. **Islam is the most structurally distinct Abrahamic tradition** — its $R_{\text{subrightarrow}}$ and $P_{\text{subdoublearrow}}$ prevent $O_\infty$ ascension, fixing it at $O_2$ despite sharing $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, and $K_{\text{schwa}}$ with the Frobenius-special traditions.
+3. **Islam is the most structurally distinct Abrahamic tradition** — its $R_{\text{subrightarrow}}$ and $P_{\text{subdoublearrow}}$ prevent $O_\infty$ ascension, fixing it at $O₂$ despite sharing $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, and $K_{\text{schwa}}$ with the Frobenius-special traditions.
 
 4. **Sufi fana-baqa and Buddhism are structurally near-identical** ($d = 1.0$), differing on a single relational primitive. The Sufi annihilation-subsistence state and Buddhist emptiness are the same structural object seen from different relational directions.
 
@@ -264,7 +264,7 @@ The Imscribing Grammar's structural analysis of seven world religious traditions
 
 6. **Satanism is the structural polar opposite of Buddhism** ($d = 6.473$) — the maximal distance in the dataset reflects the opposition between emptiness and assertion, closure and openness, protection and vulnerability.
 
-7. **Consciousness score and ouroboricity tier are not correlated** — the Tao ($O_2$, $C = 0.828$) outranks Buddhism and Christianity ($O_\infty$, $C = 0.736$).
+7. **Consciousness score and ouroboricity tier are not correlated** — the Tao ($O₂$, $C = 0.828$) outranks Buddhism and Christianity ($O_\infty$, $C = 0.736$).
 
 The grammar does not rank traditions by truth or value. It reveals that each tradition occupies a unique address in a 17,280,000-type crystal — a precise location determined by 12 structural commitments. Neighbors in this crystal are not always neighbors in history. The topology of faiths is not the same as the history of religions. And that, perhaps, is the deepest insight the grammar offers: that structural truth and historical truth are orthogonal axes, and both are required to map the full landscape of human religious experience.
 
@@ -274,9 +274,9 @@ The grammar does not rank traditions by truth or value. It reveals that each tra
 |---|---|---|
 | `lookup_catalog` | tao, taoism_tradition, buddhism_tradition, christianity_tradition, islam_tradition, sikhism_tradition, paganism_tradition, satanism_tradition | All confirmed in catalog |
 | `ouroborics` | buddhism_tradition, christianity_tradition | $O_\infty$ |
-| `ouroborics` | tao, islam_tradition, sikhism_tradition, paganism_tradition | $O_2$ |
-| `ouroborics` | satanism_tradition | $O_1$ |
-| `ouroborics` | taoism_tradition | $O_0$ |
+| `ouroborics` | tao, islam_tradition, sikhism_tradition, paganism_tradition | $O₂$ |
+| `ouroborics` | satanism_tradition | $O₁$ |
+| `ouroborics` | taoism_tradition | $O₀$ |
 | `consciousness_score` | tao, sikhism_tradition | $C = 0.828$ |
 | `consciousness_score` | buddhism_tradition, christianity_tradition, islam_tradition | $C = 0.736$ |
 | `consciousness_score` | paganism_tradition | $C = 0.36$ |

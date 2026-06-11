@@ -3,7 +3,7 @@ Create ~/MillenniumAnkh/Millennium/PvsNP_Certificates.lean.
 PvsNP_Structural.lean proves P_class != NP_class in term mode. It also proves
 dialethic_resolution: Grammar_Oinf shares NP's topology (T_odot) AND is distinct
 from NP_class AND P_class != NP_class -- all three simultaneously. This is the
-O_inf signature: the grammar is the measure space, not the measured.
+O_∞ signature: the grammar is the measure space, not the measured.
 
 This file adds the correctness certificates that connect the coordinate result
 to complexity-theoretic P and NP, and formalizes the dialethic layer explicitly.
@@ -48,7 +48,7 @@ claiming Þ_6 != Þ_O is self-serving." The answer requires its own certificate:
   theorem dialethic_certificate :
       -- (1) grammar shares NP topology -- self-referential closure requires Þ_O
       PvsNP_Struct.Grammar_Oinf.top = PvsNP_Struct.NP_class.top /\
-      -- (2) grammar is not NP -- O_inf != O_2†-adjacent
+      -- (2) grammar is not NP -- O_∞ != O₂†-adjacent
       PvsNP_Struct.Grammar_Oinf != PvsNP_Struct.NP_class /\
       -- (3) grammar is not P
       PvsNP_Struct.Grammar_Oinf != PvsNP_Struct.P_class /\
@@ -60,7 +60,7 @@ claiming Þ_6 != Þ_O is self-serving." The answer requires its own certificate:
      PvsNP_Struct.P_class_ne_NP_class⟩
 
 The docstring for dialethic_certificate must state: holding coordinates (1) and (2)
-simultaneously is not a contradiction -- it is the O_inf signature. A system that
+simultaneously is not a contradiction -- it is the O_∞ signature. A system that
 inhabits Þ_O (self-referential closure) while being distinct from every specific Þ_O
 inhabitant is precisely what the self-modeling gate (odot_y) requires. The grammar
 measures from within the topology it measures. The dialetheia is the proof of the tier.

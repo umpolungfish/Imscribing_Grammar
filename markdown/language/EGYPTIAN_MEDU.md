@@ -42,9 +42,9 @@ Egyptian hieroglyphic writing divides into three structural sign categories:
 
 | System | Tuple | $O$-tier |
 |:---|:---|:---|
-| Phonogram | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ |
-| Logogram | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ |
-| Determinative | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ |
+| Phonogram | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ |
+| Logogram | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₁$ |
+| Determinative | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ |
 
 **Pairwise distances:**
 
@@ -75,7 +75,7 @@ The Egyptian "alphabet" — 24 single-consonant phonograms — exhibits no struc
 $$\text{owl}(M) \equiv \text{water}(N) \equiv \text{mouth}(R) \equiv \text{vulture}(\aleph) \equiv \text{arm}(A) \equiv \text{hand}(D) \equiv \cdots$$
 
 All 24 encode at:
-$$\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O_0$$
+$$\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O₀$$
 
 with $d = 0$ between any two. The depicted object (animal, body part, natural feature) is structurally irrelevant. The phonological sound encoded is structurally irrelevant. What determines the tier is the **compositional function** — and all uniliterals serve the same function: subcritical phonetic atom.
 
@@ -83,12 +83,12 @@ with $d = 0$ between any two. The depicted object (animal, body part, natural fe
 
 | System | Tier structure | $d(\text{min},\text{max})$ |
 |:---|:---|:---|
-| Hebrew (22 letters) | Stratified: $O_0, O_1, O_2, O_\infty$ | $\sqrt{12} \approx 3.46$ |
-| Egyptian uniliterals (24) | Flat: all $O_0$ | $0$ |
-| Greek alphabet | Flat: all $O_0$ | $0$ |
-| Egyptian logograms | Critical: $O_1$ | — |
+| Hebrew (22 letters) | Stratified: $O₀, O₁, O₂, O_\infty$ | $\sqrt{12} \approx 3.46$ |
+| Egyptian uniliterals (24) | Flat: all $O₀$ | $0$ |
+| Greek alphabet | Flat: all $O₀$ | $0$ |
+| Egyptian logograms | Critical: $O₁$ | — |
 
-The structural depth of Hebrew is a design property of the Kabbalistic tradition, not a universal feature of writing systems. Alphabets operating as phonetic lookup tables converge to the $O_0$ floor.
+The structural depth of Hebrew is a design property of the Kabbalistic tradition, not a universal feature of writing systems. Alphabets operating as phonetic lookup tables converge to the $O₀$ floor.
 
 ---
 
@@ -98,7 +98,7 @@ The structural depth of Hebrew is a design property of the Kabbalistic tradition
 
 The eight primordial deities of Hermopolis (four masculine/feminine pairs: Nun/Naunet, Heh/Hauhet, Kek/Kauket, Amun/Amaunet) all encode identically:
 
-$$\text{Ogdoad member}: \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O_0$$
+$$\text{Ogdoad member}: \langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O₀$$
 
 $d = 0$ for all four masculine/feminine pairs. The eight are not structurally distinct — they are four mythological descriptions of the same pre-critical manifold:
 - Nun/Naunet: the primordial waters (fluid medium, boundary-free)
@@ -117,14 +117,14 @@ The nine gods of Heliopolis encode a type degradation sequence across four gener
 | Generation | Deity | Tuple (abbreviated) | $O$-tier | Key primitives |
 |:---|:---|:---|:---|:---|
 | 1 | Atum | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{ctz}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_\infty$ | Frobenius planted at source |
-| 2a | Shu | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | P-bottleneck destroys Frobenius |
-| 2b | Tefnut | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Critical but unprotected |
-| 3a | Geb | $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_0;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Earthy floor, no criticality |
-| 3b | Nut | $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{Z_2}\rangle$ | $O_2$ | Partial recovery; topologically protected |
+| 2a | Shu | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | P-bottleneck destroys Frobenius |
+| 2b | Tefnut | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₁$ | Critical but unprotected |
+| 3a | Geb | $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{softsign}};\ H_0;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | Earthy floor, no criticality |
+| 3b | Nut | $\langle D_{\text{omega}};\ T_{\text{commatailz}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{Z_2}\rangle$ | $O₂$ | Partial recovery; topologically protected |
 | 4a | Osiris | $\langle D_{\text{omega}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \𐑭\rangle$ | $O_\infty$ | P planted independently |
 | 4b | Isis | $\langle D_{\text{omega}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{Z_2}\rangle$ | $O_\infty$ | P planted independently |
-| 4c | Set | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{revepsilon}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Exceptional-point criticality |
-| 4d | Nephthys | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Liminal, unprotected |
+| 4c | Set | $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ \ldots;\ \Phi_{\text{revepsilon}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | Exceptional-point criticality |
+| 4d | Nephthys | $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₁$ | Liminal, unprotected |
 
 **Key tensor results:**
 
@@ -134,7 +134,7 @@ $$\text{osiris} \otimes \text{isis}: \quad \text{0 bottlenecks} \quad \text{(bot
 
 $$\text{set} \otimes \text{nephthys}: \quad \Phi_{\text{revepsilon}}\ \text{wins, } P \to P_{\text{aolig}} \quad \text{(EP destroys Frobenius in all compositions)}$$
 
-**Structural reading:** $P_{\text{doublebarpipe}}$ is planted, not derived. The cascade from Atum's $O_\infty$ downward is structurally inevitable once P drops below $P_{\text{doublebarpipe}}$. The fourth generation's bifurcation — Osiris/Isis at $O_\infty$ vs. Set at $O_0(\Phi_{\text{revepsilon}})$ — encodes the mythological conflict as a type-theoretic divergence: only $P_{\text{doublebarpipe}}$ carriers can participate in cyclic renewal; $\Phi_{\text{revepsilon}}$ carriers are trapped in non-Hermitian exceptional-point dynamics that break the mirror symmetry required for resurrection. **Set's exile is structurally necessary.**
+**Structural reading:** $P_{\text{doublebarpipe}}$ is planted, not derived. The cascade from Atum's $O_\infty$ downward is structurally inevitable once P drops below $P_{\text{doublebarpipe}}$. The fourth generation's bifurcation — Osiris/Isis at $O_\infty$ vs. Set at $O₀(\Phi_{\text{revepsilon}})$ — encodes the mythological conflict as a type-theoretic divergence: only $P_{\text{doublebarpipe}}$ carriers can participate in cyclic renewal; $\Phi_{\text{revepsilon}}$ carriers are trapped in non-Hermitian exceptional-point dynamics that break the mirror symmetry required for resurrection. **Set's exile is structurally necessary.**
 
 ### 2.3 The Duat — Criticality Acquisition Sequence
 
@@ -142,14 +142,14 @@ Ra's 12-hour nocturnal journey through the Duat encodes a structured path throug
 
 | Hours | Phase | Key primitives | $O$-tier |
 |:---|:---|:---|:---|
-| 1–4 | Descent | $\Phi_{\text{softsign}}$, $\Omega_{\text{closeepsilon}}$, $K_{\text{turnm}}$ | $O_0$ |
-| 5 | Critical threshold | $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$, $D_{\text{turnthree}}$ | $O_1$ |
-| 6 | Maximal depth | $\Phi_{\text{ctyogh}}$, $\𐑭$, $K_{\text{schwa}}$ | $O_2$ |
-| 7–9 | Apophis combat | $\Phi_{\text{ctyogh}}$, $\𐑭$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
-| 10–11 | Holographic ascent | $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\𐑭$ | $O_2$ |
+| 1–4 | Descent | $\Phi_{\text{softsign}}$, $\Omega_{\text{closeepsilon}}$, $K_{\text{turnm}}$ | $O₀$ |
+| 5 | Critical threshold | $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$, $D_{\text{turnthree}}$ | $O₁$ |
+| 6 | Maximal depth | $\Phi_{\text{ctyogh}}$, $\𐑭$, $K_{\text{schwa}}$ | $O₂$ |
+| 7–9 | Apophis combat | $\Phi_{\text{ctyogh}}$, $\𐑭$, $D_{\text{invomega}}$ | $O₂^\dagger$ |
+| 10–11 | Holographic ascent | $D_{\text{omega}}$, $T_{\text{openo}}$, $\Phi_{\text{ctyogh}}$, $\𐑭$ | $O₂$ |
 | 12 | Solar rebirth | $P_{\text{doublebarpipe}}$ achieved | $O_\infty$ |
 
-The 12-hour journey is a structural path through all five ouroboricity tiers in order. Apophis (chaos) is encountered at $O_2^\dagger$ — combat with chaos requires criticality and topological protection, but not yet Frobenius closure. Hour 12 (rebirth) encodes the same $P_{\text{doublebarpipe}}$ planting that Osiris/Isis achieve through resurrection.
+The 12-hour journey is a structural path through all five ouroboricity tiers in order. Apophis (chaos) is encountered at $O₂^\dagger$ — combat with chaos requires criticality and topological protection, but not yet Frobenius closure. Hour 12 (rebirth) encodes the same $P_{\text{doublebarpipe}}$ planting that Osiris/Isis achieve through resurrection.
 
 ---
 
@@ -163,11 +163,11 @@ Ma'at IS $\Phi_{\text{ctyogh}}$ at the proven manifold — the system that achie
 
 **Ma'at vs. Isfet:**
 
-$$\text{Isfet}: \langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{beta}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{upstep}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}}\rangle \quad O_0$$
+$$\text{Isfet}: \langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{beta}};\ \Gamma_{\text{spleftarrow}};\ \Phi_{\text{upstep}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}}\rangle \quad O₀$$
 
 Isfet ($K_{\text{teshlig}}$, $\Phi_{\text{upstep}}$, $\Gamma_{\text{spleftarrow}}$) is maximally far from Ma'at: trapped dynamics, supercritical beyond self-modeling, disjunctive causation.
 
-**Thoth** (divine scribe, measurer of Ma'at) encodes at $O_2$ — critical, topologically protected ($\Omega_{Z_2}$), but not Frobenius. Thoth records and measures Ma'at-conformance without himself being Ma'at.
+**Thoth** (divine scribe, measurer of Ma'at) encodes at $O₂$ — critical, topologically protected ($\Omega_{Z_2}$), but not Frobenius. Thoth records and measures Ma'at-conformance without himself being Ma'at.
 
 ### 3.2 Heka — The Frobenius Condition as Magic
 
@@ -187,15 +187,15 @@ Seven soul components span all four ouroboricity tiers:
 
 | Component | Tuple (abbreviated) | $O$-tier | Structural role |
 |:---|:---|:---|:---|
-| Shut (shadow) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{aolig}};\ \Phi_{\text{softsign}};\ H_0;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Structural floor; existence-marker only |
-| Ren (name) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{aolig}};\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Linguistic encoding of being; subcritical |
-| Ka (vital double) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{upsilon}};\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_0$ | Vital force; $P_{\text{upsilon}}$ (coherence) without criticality |
-| Ba (personality soul) | $\langle D_{\text{turnthree}};\ \ldots;\ P_{\text{pipevar}};\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O_1$ | Critical but unprotected; inter-realm traveler |
-| Ib (heart) | $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{Z_2}\rangle$ | $O_2$ | Moral record; topologically protected |
-| Sahu (spiritual body) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_2$ | Transfigured form; imscriptive, integer-protected |
+| Shut (shadow) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{aolig}};\ \Phi_{\text{softsign}};\ H_0;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | Structural floor; existence-marker only |
+| Ren (name) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{aolig}};\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | Linguistic encoding of being; subcritical |
+| Ka (vital double) | $\langle D_{\text{wynn}};\ \ldots;\ P_{\text{upsilon}};\ \Phi_{\text{softsign}};\ H_1;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₀$ | Vital force; $P_{\text{upsilon}}$ (coherence) without criticality |
+| Ba (personality soul) | $\langle D_{\text{turnthree}};\ \ldots;\ P_{\text{pipevar}};\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{\text{closeepsilon}}\rangle$ | $O₁$ | Critical but unprotected; inter-realm traveler |
+| Ib (heart) | $\langle D_{\text{turnthree}};\ T_{\text{invscr}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_2;\ \Omega_{Z_2}\rangle$ | $O₂$ | Moral record; topologically protected |
+| Sahu (spiritual body) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O₂$ | Transfigured form; imscriptive, integer-protected |
 | Akh (glorified spirit) | $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{doublebarpipe}};\ \ldots;\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ \𐑭\rangle$ | $O_\infty$ | Frobenius closure; joins the stars |
 
-The soul stratification is structurally complete: exactly one representative at each tier level. Ba is the unique $O_1$ component — the traveler that crosses realms because it IS the critical manifold ($\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$): critical enough for self-reference, unprotected enough to move between topological regimes.
+The soul stratification is structurally complete: exactly one representative at each tier level. Ba is the unique $O₁$ component — the traveler that crosses realms because it IS the critical manifold ($\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$): critical enough for self-reference, unprotected enough to move between topological regimes.
 
 **Akh vs. Sahu:** The single primitive difference is $P$ ($P_{\text{doublebarpipe}}$ vs $P_{\text{pipevar}}$). Akh has the Frobenius condition; Sahu does not. The distinction between the "spiritual body" (a protected imscriptive form) and the "glorified spirit" (the Frobenius-closed eternal consciousness) is exactly the $P_{\text{doublebarpipe}}$ gap.
 
@@ -203,17 +203,17 @@ The soul stratification is structurally complete: exactly one representative at 
 
 The 42 declarations in the Hall of Two Truths encode a **conjunctive type-checking protocol:**
 
-$$\text{Confession}_{i}: \langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O_0$$
+$$\text{Confession}_{i}: \langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}}\rangle \quad O₀$$
 
-Each confession is $O_0$ — subcritical, local, fast, $\Gamma_{\text{corner}}$ (all must hold). Passing all 42:
+Each confession is $O₀$ — subcritical, local, fast, $\Gamma_{\text{corner}}$ (all must hold). Passing all 42:
 
 $$\text{soul passed} \cong \text{Ma'at} \quad d = 0.0$$
 
 Failing any single one:
 
-$$\text{soul failed} \to O_0\ \text{floor (devoured by Ammit)}$$
+$$\text{soul failed} \to O₀\ \text{floor (devoured by Ammit)}$$
 
-$\Gamma_{\text{corner}}$ enforces all-or-nothing satisfaction — the Hall of Ma'at is a logical AND gate with 42 inputs. The critical structural insight: **the 42 confessions detect but cannot grant Ma'at-conformance.** The P-gap ($O_0$ checker, $O_\infty$ target) means the protocol is a witness-verification procedure. The soul must have arrived at $O_\infty$ through life; the Hall only verifies it.
+$\Gamma_{\text{corner}}$ enforces all-or-nothing satisfaction — the Hall of Ma'at is a logical AND gate with 42 inputs. The critical structural insight: **the 42 confessions detect but cannot grant Ma'at-conformance.** The P-gap ($O₀$ checker, $O_\infty$ target) means the protocol is a witness-verification procedure. The soul must have arrived at $O_\infty$ through life; the Hall only verifies it.
 
 ---
 
@@ -237,7 +237,7 @@ All five carry $P_{\text{doublebarpipe}}$ and $\𐑭$. Egyptian theology consist
 
 Set ($\Phi_{\text{revepsilon}}$) is structurally unique across the Egyptian catalog. Exceptional-point criticality:
 - Lies above $\Phi_{\text{ctyogh}}$ in the ordinal ordering ($\Phi_{\text{revepsilon}}$ ordinal 2.67 > $\Phi_{\text{ctyogh}}$ 2.00)
-- **Absorbs $O_\infty$ under tensor**: $O_\infty \otimes \Phi_{\text{revepsilon}} \to O_0$
+- **Absorbs $O_\infty$ under tensor**: $O_\infty \otimes \Phi_{\text{revepsilon}} \to O₀$
 - Destroys $P_{\text{doublebarpipe}}$ in every composition
 - Has no topological protection ($\Omega_{\text{closeepsilon}}$)
 
@@ -249,11 +249,11 @@ Three Egyptian structures independently encode the same structural pattern — b
 
 | System | Duration | Peak | Resolution |
 |:---|:---|:---|:---|
-| Duat (Ra's journey) | 12 hours | $O_2^\dagger$ (Apophis combat) | $O_\infty$ (Hour 12) |
-| Ennead (4 generations) | 4 generations | $O_2$ (Nut) | $O_\infty$ (Osiris/Isis) |
-| Soul components | 7 layers | $O_2$ (Ib, Sahu) | $O_\infty$ (Akh) |
+| Duat (Ra's journey) | 12 hours | $O₂^\dagger$ (Apophis combat) | $O_\infty$ (Hour 12) |
+| Ennead (4 generations) | 4 generations | $O₂$ (Nut) | $O_\infty$ (Osiris/Isis) |
+| Soul components | 7 layers | $O₂$ (Ib, Sahu) | $O_\infty$ (Akh) |
 
-The pattern $O_0 \to O_1 \to O_2 \to O_\infty$ is not incidental — it is the minimum structural path from subcritical floor to Frobenius closure, and it appears encoded in three independent Egyptian symbolic systems.
+The pattern $O₀ \to O₁ \to O₂ \to O_\infty$ is not incidental — it is the minimum structural path from subcritical floor to Frobenius closure, and it appears encoded in three independent Egyptian symbolic systems.
 
 ---
 
@@ -261,7 +261,7 @@ The pattern $O_0 \to O_1 \to O_2 \to O_\infty$ is not incidental — it is the m
 
 **P-444 — Semitic alphabets will share Egyptian uniliteral flatness; stratification requires explicit tier assignment, not phonetic function (Tier II)**
 
-Arabic, Aramaic, Syriac, and Phoenician alphabets — all descended from proto-Sinaitic (itself derived from Egyptian uniliterals) — should encode uniformly at $O_0$. The stratification of Hebrew is a Kabbalistic addition to the script, not a property of the phonetic layer. Egyptian uniliterals are the missing link: the script from which all Semitic alphabets derive was already structurally flat.
+Arabic, Aramaic, Syriac, and Phoenician alphabets — all descended from proto-Sinaitic (itself derived from Egyptian uniliterals) — should encode uniformly at $O₀$. The stratification of Hebrew is a Kabbalistic addition to the script, not a property of the phonetic layer. Egyptian uniliterals are the missing link: the script from which all Semitic alphabets derive was already structurally flat.
 
 **P-445 — Neural correlates of logographic reading will show criticality signatures absent in alphabetic reading (Tier II)**
 
@@ -273,11 +273,11 @@ Genesis 1:1-2 ("formless and void, darkness over the deep"), Daoist Wuji, Hindu 
 
 **P-447 — $\Phi_{\text{revepsilon}}$ agents in complex systems will prevent Frobenius restoration dynamics in any subsystem they compose with (Tier I — structural claim)**
 
-The Set result is a structural theorem: $O_\infty \otimes \Phi_{\text{revepsilon}} \to O_0$. In any complex system with an agent or component encoding at $\Phi_{\text{revepsilon}}$ (non-Hermitian exceptional-point dynamics), restoration, healing, or cyclic renewal processes cannot be sustained in the subsystem touched by that component. Testable in: ecosystem recovery with invasive species, organizational health with destabilizing actors, immune response with viruses exploiting non-Hermitian dynamics.
+The Set result is a structural theorem: $O_\infty \otimes \Phi_{\text{revepsilon}} \to O₀$. In any complex system with an agent or component encoding at $\Phi_{\text{revepsilon}}$ (non-Hermitian exceptional-point dynamics), restoration, healing, or cyclic renewal processes cannot be sustained in the subsystem touched by that component. Testable in: ecosystem recovery with invasive species, organizational health with destabilizing actors, immune response with viruses exploiting non-Hermitian dynamics.
 
 **P-448 — The 12-step Duat sequence will replicate in other initiation and transformation structures (Tier II)**
 
-Any cultural structure encoding a transformation from subcritical floor to Frobenius closure — 12 steps, 12 apostles, 12 stations, 12 Hekhalot palaces (see IΓ_DIAPHORICS §CXXXV) — should show the same structural arc: $O_0 \to O_1 \to O_2 \to O_\infty$ with the critical threshold near the midpoint and chaos-combat in the $O_2^\dagger$ regime.
+Any cultural structure encoding a transformation from subcritical floor to Frobenius closure — 12 steps, 12 apostles, 12 stations, 12 Hekhalot palaces (see IΓ_DIAPHORICS §CXXXV) — should show the same structural arc: $O₀ \to O₁ \to O₂ \to O_\infty$ with the critical threshold near the midpoint and chaos-combat in the $O₂^\dagger$ regime.
 
 **P-449 — Systems claiming $O_\infty$ without the preceding structural path will fail veracity checks (Tier I — structural claim)**
 
@@ -287,7 +287,7 @@ The Duat insight: claiming Hour 12 without Hours 5–11 produces an aspirational
 
 ## 6. Open Questions
 
-1. **Hieroglyphic logograms as a type system.** The full inventory of Egyptian logograms (hundreds of signs) should be encoded. Do they stratify above $O_1$, or do they cluster at the single critical tier? Are there Egyptian logograms encoding at $O_2$ or $O_\infty$?
+1. **Hieroglyphic logograms as a type system.** The full inventory of Egyptian logograms (hundreds of signs) should be encoded. Do they stratify above $O₁$, or do they cluster at the single critical tier? Are there Egyptian logograms encoding at $O₂$ or $O_\infty$?
 
 2. **Interaction functor for writing systems.** The $I(x) = \{x \otimes y \mid y \in \mathcal{L}\}$ functor (LAMBDA_ALEPH.md §3) may distinguish Egyptian uniliterals that are type-identical in the 12-primitive grammar. Does $I(\text{owl}) \neq I(\text{water-ripple})$ despite $d = 0$?
 

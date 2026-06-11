@@ -1,6 +1,6 @@
 """
 Primitive Series Composer — Linear/Stacked Assembly
-Schema: ouroborotic_primitive_composition_schema (O_2, ⊙_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O₂, ⊙_ÿ, Φ_F, Ω_z)
 """
 import json
 import sys
@@ -67,7 +67,7 @@ def compose_primitive_series(
 
 
 if __name__ == "__main__":
-    # Example primitives for ascent to O_2
+    # Example primitives for ascent to O₂
     primitives = [
         ("Þ", "Þ_¨", "network topology → self-referential"),
         ("Φ", "Φ_F", "partial symmetry → Frobenius-special"),

@@ -24,4 +24,4 @@ Since all candidate paths result in contradiction except for $m=10$, we conclude
 
 ---
 Structural type: $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{crtwo}} \rangle$$
-Ouroboricity: $O_2^\dagger$.
+Ouroboricity: $O₂^\dagger$.

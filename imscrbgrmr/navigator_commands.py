@@ -121,7 +121,7 @@ def crystal_describe():
 
 @crystal_group.command("gap")
 def crystal_gap():
-    """Tier gap ladder (§69.1): d(O_0→O_1), …, d(O_2†→O_∞)."""
+    """Tier gap ladder (§69.1): d(O₀→O₁), …, d(O₂†→O_∞)."""
     nav = _load_crystal()
     nav.print_tier_gap_ladder()
 
@@ -138,7 +138,7 @@ def crystal_census():
     tbl.add_column("Pct", justify="right")
 
     for tier_name, data in nav.tier_census().items():
-        label = tier_name.replace("O_2_dag", "O_2†")
+        label = tier_name.replace("O₂†", "O₂†")
         tbl.add_row(
             label,
             f"{data['cells']:,}",
@@ -290,7 +290,7 @@ def crystal_nearest(kvs, n: int, same_tier: bool):
     tbl.add_column("Tier", justify="center")
 
     for r in results:
-        tbl.add_row(r["name"], f"{r['distance']:.4f}", r["tier"].replace("O_2_dag", "O_2†"))
+        tbl.add_row(r["name"], f"{r['distance']:.4f}", r["tier"].replace("O₂†", "O₂†"))
 
     console.print()
     console.print(tbl)
@@ -321,7 +321,7 @@ def crystal_count(kvs):
 @click.option("--p",     default=None, help="P boundary value (e.g. P_doublebarpipe)")
 @click.option("--omega", default=None, help="Ω boundary value (e.g. Omega_dzlig)")
 @click.option("--d",     default=None, help="D boundary value (e.g. D_omega)")
-@click.option("--tier",  default=None, help="Tier filter (O_inf / O_2 / O_2_dag / O_1 / O_0)")
+@click.option("--tier",  default=None, help="Tier filter (O_∞ / O₂ / O₂† / O₁ / O₀)")
 def crystal_query(phi, p, omega, d, tier):
     """Imscriptive boundary query: (Φ, P, Ω, D) → matching tier cells.
 
@@ -333,7 +333,7 @@ def crystal_query(phi, p, omega, d, tier):
     \b
     Examples:
       imscribe nav crystal query --phi Phi_ctyogh --p P_doublebarpipe
-      imscribe nav crystal query --tier O_inf
+      imscribe nav crystal query --tier O_∞
       imscribe nav crystal query --omega Omega_dzlig --d D_omega
     """
     from navigators.crystal_navigator import INNER_SIZE
@@ -365,7 +365,7 @@ def crystal_query(phi, p, omega, d, tier):
     for c in cells[:max_rows]:
         tbl.add_row(
             str(c.cell_id),
-            c.tier.replace("O_2_dag", "O_2†"),
+            c.tier.replace("O₂†", "O₂†"),
             c.phi, c.p, c.omega, c.d,
         )
     if len(cells) > max_rows:
@@ -832,7 +832,7 @@ def mirror_describe():
     console.print(Panel(
         "[bold cyan]Mirror Symmetry Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_MIRROR_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O_2  (Phi_ctyogh + Omega_crtwo + D_invomega → R5)\n\n"
+        "[bold]Tier:[/bold]  O₂  (Phi_ctyogh + Omega_crtwo + D_invomega → R5)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_invomega    → infinite-dimensional: full moduli space of CY manifolds\n"
         "  T_bullseye   → dual-lobe crossing: A-model ↔ B-model (symplectic ↔ complex)\n"
@@ -916,7 +916,7 @@ def tqft_describe():
     console.print(Panel(
         "[bold cyan]TQFT Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_TQFT_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O_2  (Phi_ctyogh + Omega_dzlig + D_turnthree → R4)\n\n"
+        "[bold]Tier:[/bold]  O₂  (Phi_ctyogh + Omega_dzlig + D_turnthree → R4)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_turnthree  → triangulated: state space via simplicial decomposition\n"
         "  T_bullseye    → surgery crossing: manifold ↔ knot complement\n"
@@ -1005,7 +1005,7 @@ def category_theory_describe():
     console.print(Panel(
         "[bold cyan]Category Theory Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_CATEGORY_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O_∞  (R_ctz + G_revapostrophe → O_inf closure)\n\n"
+        "[bold]Tier:[/bold]  O_∞  (R_ctz + G_revapostrophe → O_∞ closure)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_omega / T_openo  → imscriptive encoding: object→arrow→2-arrow hierarchy\n"
         "  R_ctz            → categorical relations: functors, natural transformations\n"

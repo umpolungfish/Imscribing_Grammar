@@ -1,5 +1,5 @@
 """
-train_navigators.py — Training loops for the three O_inf navigators.
+train_navigators.py — Training loops for the three O_∞ navigators.
 
 Each section is self-contained and generates its own synthetic / ground-truth data.
 Run a specific navigator with:
@@ -474,7 +474,7 @@ def _thurston_eval(model: ThurstonNet, n_per_class: int = 20):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Train O_inf domain navigators",
+        description="Train O_∞ domain navigators",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument("navigator", choices=["riemann", "yangmills", "thurston", "all"])

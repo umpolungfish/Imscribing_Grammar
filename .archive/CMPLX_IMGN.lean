@@ -175,25 +175,25 @@ def complex_time_path_integral : StructType where
   K := .slow; G := .aleph; Gamma := .seq; Phi := .c
   H := .H_turntwo; S := .S_ltailm; Omega := .Z
 
-/-- planck_imaginary_time: $O_2^\dagger$, $C = 0.517$ -/
+/-- planck_imaginary_time: $O₂^\dagger$, $C = 0.517$ -/
 def planck_imaginary_time : StructType where
   D := .infty; T := .in_; R := .dagger; P := .psi; F := .hbar
   K := .slow; G := .aleph; Gamma := .seq; Phi := .c_complex
   H := .Hinf; S := .S_ltailm; Omega := .Z2
 
-/-- wick_rotation_EP: $O_0$ — the Wick rotation as exceptional point -/
+/-- wick_rotation_EP: $O₀$ — the Wick rotation as exceptional point -/
 def wick_rotation_EP : StructType where
   D := .infty; T := .network; R := .super; P := .asym; F := .hbar
   K := .fast; G := .aleph; Gamma := .and_; Phi := .EP
   H := .Hinf; S := .S_doublebaresh; Omega := .Z
 
-/-- planck_scale_regime: $O_2$ -/
+/-- planck_scale_regime: $O₂$ -/
 def planck_scale_regime : StructType where
   D := .infty; T := .in_; R := .lr; P := .psi; F := .hbar
   K := .slow; G := .aleph; Gamma := .seq; Phi := .c
   H := .Hinf; S := .S_ltailm; Omega := .Z2
 
-/-- hartle_hawking_no_boundary: $O_2^\dagger$, structural duplicate of black_hole_information -/
+/-- hartle_hawking_no_boundary: $O₂^\dagger$, structural duplicate of black_hole_information -/
 def hartle_hawking_no_boundary : StructType where
   D := .infty; T := .boxtimes; R := .lr; P := .psi; F := .hbar
   K := .slow; G := .aleph; Gamma := .seq; Phi := .c_complex
@@ -295,11 +295,11 @@ theorem complex_time_consciousness :
     consciousnessScore complex_time_path_integral = 0.682 := by
   simp [consciousnessScore, gate1_pass, gate2_pass, complex_time_path_integral]
 
-/-- Theorem 3: The imaginary-time formalism is $O_2^\dagger$ -/
+/-- Theorem 3: The imaginary-time formalism is $O₂^\dagger$ -/
 theorem planck_imag_time_is_O2dagger :
     ouroboricity planck_imaginary_time = .O2dagger := by native_decide
 
-/-- Theorem 4: The Wick rotation EP is $O_0$ -/
+/-- Theorem 4: The Wick rotation EP is $O₀$ -/
 theorem wick_rotation_is_O0 :
     ouroboricity wick_rotation_EP = .O0 := by native_decide
 
@@ -376,11 +376,11 @@ theorem complex_time_tensor_imag_time :
     ⟨.infty, .bowtie, .lr, .psi, .hbar, .slow, .aleph, .seq, .c_complex, .Hinf, .S_ltailm, .Z⟩ := by
   native_decide
 
-/-- Theorem 14: Hartle–Hawking is $O_2^\dagger$ -/
+/-- Theorem 14: Hartle–Hawking is $O₂^\dagger$ -/
 theorem hartle_hawking_is_O2dagger :
     ouroboricity hartle_hawking_no_boundary = .O2dagger := by native_decide
 
-/-- Theorem 15: planck_scale_regime is $O_2$ -/
+/-- Theorem 15: planck_scale_regime is $O₂$ -/
 theorem planck_regime_is_O2 :
     ouroboricity planck_scale_regime = .O2 := by native_decide
 
@@ -388,7 +388,7 @@ theorem planck_regime_is_O2 :
 theorem complex_time_crystal_address :
     154 * 43200 + 25616 = 6678416 := by norm_num
 
-/-- Theorem 17: Raw cost of downward fall from $O_\infty$ to $O_2^\dagger$ -/
+/-- Theorem 17: Raw cost of downward fall from $O_\infty$ to $O₂^\dagger$ -/
 theorem downward_cost :
     (2 : ℝ) * (2 - 1) + 1 * (3 - 2) = 3 := by norm_num
 

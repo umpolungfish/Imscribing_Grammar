@@ -228,7 +228,7 @@ The grammar provides coordinates for every point. Any mathematical theorem can b
 
 Every numerical claim in this article is backed by a Lean 4 theorem in `Imscribing/ProofTheory.lean`. The gap computations use `native_decide`, which compiles the primitive mismatch function to machine code and evaluates it at compile time. This is not empirical evidence — it is definitional equality checked by a proof assistant.
 
-The P vs NP theorems use a mix of `decide` (for finite case analysis), `native_decide` (for exhaustive enumeration over the 16 Protection × Dimensionality combinations), and `simp` (for the NP-always-O_inf theorem, which follows by reduction of the tier predicate).
+The P vs NP theorems use a mix of `decide` (for finite case analysis), `native_decide` (for exhaustive enumeration over the 16 Protection × Dimensionality combinations), and `simp` (for the NP-always-O_∞ theorem, which follows by reduction of the tier predicate).
 
 The Frobenius non-synthesizability theorem (`P_cannot_become_NP`) is `frobenius_not_synthesizable`, a lemma derived from the tensor definition on Polarity in `Imscribing/Algebra.lean`. Its proof is by case analysis on all 25 pairs of polarity constructors — none produce $\text{P}_{\text{pm\_sym}}$ from non-$\text{P}_{\text{pm\_sym}}$ inputs.
 

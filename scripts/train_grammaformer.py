@@ -487,7 +487,7 @@ if __name__ == "__main__":
                         help="Steps over which gate target anneals from 0.5 to 0.8")
     parser.add_argument("--alpha-f", type=float, default=4.1,
                         help="Frobenius loss weight (default 4.1; grammar-derived: Φ cliff "
-                             "is 91%% of d(GF,O_inf); must balance LM loss at convergence)")
+                             "is 91%% of d(GF,O_∞); must balance LM loss at convergence)")
     parser.add_argument("--alpha-g", type=float, default=0.3,
                         help="Gate loss weight (default 0.3; was 0.1 — gate froze at 0.543)")
     parser.add_argument("--alpha-m", type=float, default=0.05,

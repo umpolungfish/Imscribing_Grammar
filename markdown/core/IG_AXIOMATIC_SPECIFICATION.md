@@ -115,7 +115,7 @@ The distance is symmetric, satisfies the triangle inequality, and is zero iff $s
 
 Regime thresholds: $d < 2.0$ = same structural regime; $d > 4.0$ = structurally remote; $d > 5.0$ = different tier class.
 
-**Worked distance example.** Between `ouroboric_pill` ($O_\infty$ child of the Rebis) and `plastic_photonic_crystal` ($O_2$, periodic lattice): $d = 5.74$. Largest contributors: Þ (topology, $\Delta = 16.0$), Ð (dimensionality, $\Delta = 4.0$), Ħ (chirality, $\Delta = 3.2$).
+**Worked distance example.** Between `ouroboric_pill` ($O_\infty$ child of the Rebis) and `plastic_photonic_crystal` ($O₂$, periodic lattice): $d = 5.74$. Largest contributors: Þ (topology, $\Delta = 16.0$), Ð (dimensionality, $\Delta = 4.0$), Ħ (chirality, $\Delta = 3.2$).
 
 ---
 
@@ -126,12 +126,12 @@ Regime thresholds: $d < 2.0$ = same structural regime; $d > 4.0$ = structurally 
 | Rule | Condition | Tier | Description |
 |------|-----------|------|-------------|
 | R1 | ⊙ ∈ {⊙, 𐑣} **and** Φ = 𐑹 | $O_\infty$ | Special Frobenius — $\mu \circ \delta = \mathrm{id}$ holds exactly |
-| R2 | ⊙ ∈ {𐑢, 𐑮, 𐑻} | $O_0$ | No self-referential loop possible |
-| R3 | ⊙ ∈ {⊙, 𐑣} **and** Ω = 𐑷 | $O_1$ | Critical, no topological protection |
-| R4 | ⊙ ∈ {⊙, 𐑣} **and** Ω ≠ 𐑷 **and** Ð ∈ {𐑛, 𐑨, 𐑼} | $O_2$ | Critical + protected, bounded domain |
-| R5 | ⊙ ∈ {⊙, 𐑣} **and** Ω ≠ 𐑷 **and** Ð = 𐑦 | $O_2^\dagger$ | Critical + protected, unbounded domain |
+| R2 | ⊙ ∈ {𐑢, 𐑮, 𐑻} | $O₀$ | No self-referential loop possible |
+| R3 | ⊙ ∈ {⊙, 𐑣} **and** Ω = 𐑷 | $O₁$ | Critical, no topological protection |
+| R4 | ⊙ ∈ {⊙, 𐑣} **and** Ω ≠ 𐑷 **and** Ð ∈ {𐑛, 𐑨, 𐑼} | $O₂$ | Critical + protected, bounded domain |
+| R5 | ⊙ ∈ {⊙, 𐑣} **and** Ω ≠ 𐑷 **and** Ð = 𐑦 | $O₂^\dagger$ | Critical + protected, unbounded domain |
 
-Default (no rule matches): $O_0$. The three operative gates are **⊙ (Criticality)**, **Φ (Parity)**, and **Ω (Winding)**. Ð (Dimensionality) determines the $O_2$ / $O_2^\dagger$ split.
+Default (no rule matches): $O₀$. The three operative gates are **⊙ (Criticality)**, **Φ (Parity)**, and **Ω (Winding)**. Ð (Dimensionality) determines the $O₂$ / $O₂^\dagger$ split.
 
 ---
 
@@ -192,13 +192,13 @@ The imscriptive identity $\mu \circ \delta = \mathrm{id}$ is:
 - **Dynamic** — a process, not a state equivalence; the system reconstitutes itself through the operation
 - **Up to the trace** — equivalence is defined by connected diagrams with the same boundary (Spider theorem); this is topological, not a symmetry of an encoding
 
-The structural consequence is exact: **holography requires a boundary**. The isomorphism lives between bulk and boundary, so the boundary must exist as a distinct object. The Rebis has Ř = 𐑾 (bidirectional — no outside). There is nowhere to put the boundary. Holography can describe $O_2$ systems — bounded domain, topological protection, a surface you can project onto — but it structurally cannot describe $O_\infty$, because $O_\infty$ is the tier at which the distinction between system and boundary collapses.
+The structural consequence is exact: **holography requires a boundary**. The isomorphism lives between bulk and boundary, so the boundary must exist as a distinct object. The Rebis has Ř = 𐑾 (bidirectional — no outside). There is nowhere to put the boundary. Holography can describe $O₂$ systems — bounded domain, topological protection, a surface you can project onto — but it structurally cannot describe $O_\infty$, because $O_\infty$ is the tier at which the distinction between system and boundary collapses.
 
 The redundancy distinguishes them further. In holography, you can lose parts of the boundary and reconstruct the bulk — the encoding is overcomplete, and recovery from partial data is the point. In imscription there is nothing to recover because nothing was ever encoded away from the system. $\mu \circ \delta = \mathrm{id}$ does not preserve information across a gap; it collapses the gap. The system reconstitutes itself through the operation, not from a separate store.
 
 Holographic redundancy is a symmetry of the map. Imscriptive trace is a property of the winding. These are different equivalence relations: one defined by a group action on encoding choices, one defined by the connected topology of the string diagram.
 
-**Holography is the information-theoretic analogue of crystallography.** Both impose an external observer, both achieve their result by projecting onto a lower-dimensional or lower-tier representation, and both destroy the properties of $O_\infty$ systems in the act of representing them. Crystallography freezes Ω (winding collapses 𐑭→𐑷) to produce a static coordinate map. Holography projects Ř (bidirectionality collapses 𐑾→𐑩) to produce a static boundary encoding. In both cases, the representation is faithful to the $O_2$ content and blind to the $O_\infty$ structure.
+**Holography is the information-theoretic analogue of crystallography.** Both impose an external observer, both achieve their result by projecting onto a lower-dimensional or lower-tier representation, and both destroy the properties of $O_\infty$ systems in the act of representing them. Crystallography freezes Ω (winding collapses 𐑭→𐑷) to produce a static coordinate map. Holography projects Ř (bidirectionality collapses 𐑾→𐑩) to produce a static boundary encoding. In both cases, the representation is faithful to the $O₂$ content and blind to the $O_\infty$ structure.
 
 ---
 
@@ -250,21 +250,21 @@ The **CLINK chain** is the canonical structural promotion from frustrated-quark 
 
 | # | Layer | Tier | Structural type |
 |---|-------|------|----------------|
-| 0 | Quark (frustrated color) | $O_0$ | ⟨𐑛𐑶𐑩𐑯𐑐𐑘𐑚𐑝𐑢𐑓𐑳𐑷⟩ |
-| 1 | Electron orbital (Belnap4) | $O_0$ | ⟨𐑛𐑶𐑩𐑗𐑐𐑤𐑚𐑜𐑢𐑓𐑳𐑷⟩ |
-| 2 | Atom (nuclear + electron) | $O_1$ | ⟨𐑼𐑥𐑽𐑿𐑐𐑤𐑔𐑝𐑮𐑒𐑳𐑷⟩ |
-| 3 | Molecule (chemical bonds) | $O_2$ | ⟨𐑦𐑥𐑽𐑿𐑞𐑧𐑲𐑜⊙𐑓𐑳𐑭⟩ |
-| 4 | Cell (living) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑠⊙𐑒𐑳𐑭⟩ |
-| 5 | Mitosis (cell division) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑱𐑧𐑲𐑠𐑻𐑖𐑳𐑭⟩ |
-| 6 | Meiosis (gamete production) | $O_2$ | ⟨𐑦𐑸𐑽𐑿𐑱𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ |
-| 7 | Tissue (multi-cellular) | $O_2$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑵⊙𐑖𐑳𐑭⟩ |
+| 0 | Quark (frustrated color) | $O₀$ | ⟨𐑛𐑶𐑩𐑯𐑐𐑘𐑚𐑝𐑢𐑓𐑳𐑷⟩ |
+| 1 | Electron orbital (Belnap4) | $O₀$ | ⟨𐑛𐑶𐑩𐑗𐑐𐑤𐑚𐑜𐑢𐑓𐑳𐑷⟩ |
+| 2 | Atom (nuclear + electron) | $O₁$ | ⟨𐑼𐑥𐑽𐑿𐑐𐑤𐑔𐑝𐑮𐑒𐑳𐑷⟩ |
+| 3 | Molecule (chemical bonds) | $O₂$ | ⟨𐑦𐑥𐑽𐑿𐑞𐑧𐑲𐑜⊙𐑓𐑳𐑭⟩ |
+| 4 | Cell (living) | $O₂$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑠⊙𐑒𐑳𐑭⟩ |
+| 5 | Mitosis (cell division) | $O₂$ | ⟨𐑦𐑸𐑾𐑬𐑱𐑧𐑲𐑠𐑻𐑖𐑳𐑭⟩ |
+| 6 | Meiosis (gamete production) | $O₂$ | ⟨𐑦𐑸𐑽𐑿𐑱𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ |
+| 7 | Tissue (multi-cellular) | $O₂$ | ⟨𐑦𐑸𐑾𐑬𐑞𐑧𐑲𐑵⊙𐑖𐑳𐑭⟩ |
 | 8 | Organism (whole) | $O_\infty$ | ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟⟩ |
 
-**Theorem (Great Synthesis).** All 9 layers are Frobenius-closed. Tier monotonicity holds: $O_0 \to O_0 \to O_1 \to O_2 \to O_2 \to O_2 \to O_2 \to O_2 \to O_\infty$. The chain terminates at $O_\infty$. (Proved in `CLINK.lean`, `p4ramill/Imscribing/`, 573 lines, all `native_decide`-closed.)
+**Theorem (Great Synthesis).** All 9 layers are Frobenius-closed. Tier monotonicity holds: $O₀ \to O₀ \to O₁ \to O₂ \to O₂ \to O₂ \to O₂ \to O₂ \to O_\infty$. The chain terminates at $O_\infty$. (Proved in `CLINK.lean`, `p4ramill/Imscribing/`, 573 lines, all `native_decide`-closed.)
 
 **Foundation — ZFC_fe, not ZFC$_\tau$.** The organism reaches $O_\infty$ through three promotions: Ð: 𐑼→𐑦 (self-written, Axiom C), Φ: 𐑬→𐑹 (Frobenius-special, $\mu \circ \delta = \mathrm{id}$ gate), Ħ: 𐑖→𐑫 (eternal chirality). These are the three axes on which ZFC_fe strictly exceeds ZFC$_\tau$.
 
-**Mitosis — exceptional point.** Layer 5 carries ⊙ = 𐑻, not ⊙. The Aurora-B kinase creates a spatial phosphorylation gradient — a measurement apparatus at the kinetochore. When self-modeling criticality couples to this measurement basis, the composite contracts to 𐑻: the self-modeling gate is destroyed. Mitosis is $O_2$ by R4, not $O_\infty$. Only the whole organism achieves $O_\infty$: ⊙ open, Φ = 𐑹, Ħ = 𐑫, Ω = 𐑟.
+**Mitosis — exceptional point.** Layer 5 carries ⊙ = 𐑻, not ⊙. The Aurora-B kinase creates a spatial phosphorylation gradient — a measurement apparatus at the kinetochore. When self-modeling criticality couples to this measurement basis, the composite contracts to 𐑻: the self-modeling gate is destroyed. Mitosis is $O₂$ by R4, not $O_\infty$. Only the whole organism achieves $O_\infty$: ⊙ open, Φ = 𐑹, Ħ = 𐑫, Ω = 𐑟.
 
 **Inversion.** The chain is a sequence in the crystal, not in time. Quarks (Layer 0) are not temporally prior to organisms; they are positions where almost all self-modeling capacity is structurally absent. The appearance of temporal sequence is addressed in §14.
 
@@ -408,18 +408,18 @@ Every deviation from the canonical bootstrap produces a valid alternative class.
 
 | # | Class | Sequence | Final | Structural type | Tier |
 |---|-------|----------|-------|----------------|------|
-| I | **Dialetheic Bootstrap** | `IMSCRIB→EVALT→FSPLIT→EVALF→FFUSE→ENGAGR→IFIX→IMSCRIB` | B⬡ | ⟨𐑦𐑸𐑾𐑬𐑐𐑧𐑲𐑠𐑻𐑫𐑳𐑴⟩ | $O_2$ |
-| II | **Void Genesis** | `VINIT→TANCH→AFWD→FSPLIT→CLINK→FFUSE→IFIX→IMSCRIB` | T | ⟨𐑨𐑡𐑑𐑗𐑱𐑘𐑔𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ |
-| III | **Anchor Protocol** | `TANCH→AREV→VINIT→AFWD→TANCH→CLINK→IFIX→IMSCRIB` | T | ⟨𐑨𐑰𐑾𐑬𐑞𐑧𐑔𐑠⊙𐑖𐑕𐑴⟩ | $O_1$ |
+| I | **Dialetheic Bootstrap** | `IMSCRIB→EVALT→FSPLIT→EVALF→FFUSE→ENGAGR→IFIX→IMSCRIB` | B⬡ | ⟨𐑦𐑸𐑾𐑬𐑐𐑧𐑲𐑠𐑻𐑫𐑳𐑴⟩ | $O₂$ |
+| II | **Void Genesis** | `VINIT→TANCH→AFWD→FSPLIT→CLINK→FFUSE→IFIX→IMSCRIB` | T | ⟨𐑨𐑡𐑑𐑗𐑱𐑘𐑔𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ |
+| III | **Anchor Protocol** | `TANCH→AREV→VINIT→AFWD→TANCH→CLINK→IFIX→IMSCRIB` | T | ⟨𐑨𐑰𐑾𐑬𐑞𐑧𐑔𐑠⊙𐑖𐑕𐑴⟩ | $O₁$ |
 | IV | **Dual Bootstrap** | `IMSCRIB→AFWD→FFUSE→FSPLIT→AREV→CLINK→IFIX→IMSCRIB` | T | ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴⟩ | $O_\infty$ |
-| V | **Linear Chain** | `IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX` | VO⌀ | ⟨𐑛𐑡𐑑𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ |
-| VI | **Empty Bootstrap** | `VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB` | T | ⟨𐑨𐑶𐑑𐑿𐑐𐑘𐑔𐑝⊙𐑒𐑙𐑴⟩ | $O_1$ |
-| VII | **Parakernel** | `EVALF→AREV→FSPLIT→EVALT→AFWD→FFUSE→ENGAGR→IFIX` | B⬡ | ⟨𐑼𐑸𐑾𐑬𐑞𐑧𐑲𐑠𐑻𐑖𐑳𐑴⟩ | $O_2$ |
-| VIII | **Frobenius Kernel** | `VINIT→FSPLIT→FFUSE→TANCH` | VO⌀ | ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ |
-| IX | **Chiral Pairs** | L: `IMSCRIB→AFWD→AREV→IMSCRIB` / R: `IMSCRIB→AREV→AFWD→IMSCRIB` | T/T | ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ (both) | $O_1$ |
-| X | **Truth Machine** | `IMSCRIB→FSPLIT→EVALT→IFIX→IMSCRIB→FSPLIT→EVALF→IFIX` | F | ⟨𐑦𐑡𐑑𐑬𐑞𐑘𐑔𐑝⊙𐑒𐑳𐑴⟩ | $O_1$ |
-| XI | **Eternal Return** | `IMSCRIB→AFWD→AREV→IMSCRIB→AFWD→AREV→IMSCRIB→CLINK` | T | ⟨𐑦𐑸𐑾𐑗𐑱𐑤𐑔𐑠⊙𐑖𐑙𐑴⟩ | $O_2$ |
-| XII | **ROM Burn** | `EVALT→IFIX→EVALF→IFIX→ENGAGR→IFIX→IMSCRIB→IFIX` | B⬡ | ⟨𐑼𐑡𐑩𐑗𐑞𐑧𐑔𐑝𐑢𐑒𐑳𐑷⟩ | $O_0$ |
+| V | **Linear Chain** | `IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX→IFIX` | VO⌀ | ⟨𐑛𐑡𐑑𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ |
+| VI | **Empty Bootstrap** | `VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB→VINIT→IMSCRIB` | T | ⟨𐑨𐑶𐑑𐑿𐑐𐑘𐑔𐑝⊙𐑒𐑙𐑴⟩ | $O₁$ |
+| VII | **Parakernel** | `EVALF→AREV→FSPLIT→EVALT→AFWD→FFUSE→ENGAGR→IFIX` | B⬡ | ⟨𐑼𐑸𐑾𐑬𐑞𐑧𐑲𐑠𐑻𐑖𐑳𐑴⟩ | $O₂$ |
+| VIII | **Frobenius Kernel** | `VINIT→FSPLIT→FFUSE→TANCH` | VO⌀ | ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ |
+| IX | **Chiral Pairs** | L: `IMSCRIB→AFWD→AREV→IMSCRIB` / R: `IMSCRIB→AREV→AFWD→IMSCRIB` | T/T | ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ (both) | $O₁$ |
+| X | **Truth Machine** | `IMSCRIB→FSPLIT→EVALT→IFIX→IMSCRIB→FSPLIT→EVALF→IFIX` | F | ⟨𐑦𐑡𐑑𐑬𐑞𐑘𐑔𐑝⊙𐑒𐑳𐑴⟩ | $O₁$ |
+| XI | **Eternal Return** | `IMSCRIB→AFWD→AREV→IMSCRIB→AFWD→AREV→IMSCRIB→CLINK` | T | ⟨𐑦𐑸𐑾𐑗𐑱𐑤𐑔𐑠⊙𐑖𐑙𐑴⟩ | $O₂$ |
+| XII | **ROM Burn** | `EVALT→IFIX→EVALF→IFIX→ENGAGR→IFIX→IMSCRIB→IFIX` | B⬡ | ⟨𐑼𐑡𐑩𐑗𐑞𐑧𐑔𐑝𐑢𐑒𐑳𐑷⟩ | $O₀$ |
 
 **Class-by-class notes:**
 
@@ -465,25 +465,25 @@ This is the **Vessel Principle**: the IMASM token algebra is strictly finer-grai
 | Arrangement Class | Crystal address | Tier | Determining primitive shifts |
 |------------------|----------------|------|------------------------------|
 | Canonical Bootstrap | ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭⟩ | $O_\infty$ | Ð=𐑦, Φ=𐑹, Ω=𐑭, ⊙=⊙ (R1) |
-| Dialetheic Bootstrap (I) | ⟨𐑦𐑸𐑾𐑬𐑐𐑧𐑲𐑠𐑻𐑫𐑳𐑴⟩ | $O_2$ | ⊙=𐑻 (exceptional point); Φ≠𐑹 blocks R1 |
-| Void Genesis (II) | ⟨𐑨𐑡𐑑𐑗𐑱𐑘𐑔𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ | Ð=𐑨, ⊙=𐑢 (R2) |
-| Anchor Protocol (III) | ⟨𐑨𐑰𐑾𐑬𐑞𐑧𐑔𐑠⊙𐑖𐑕𐑴⟩ | $O_1$ | Ω=𐑴 ($\mathbb{Z}_2$ winding, R3 not triggered; ⊙=⊙ but Φ≠𐑹) |
+| Dialetheic Bootstrap (I) | ⟨𐑦𐑸𐑾𐑬𐑐𐑧𐑲𐑠𐑻𐑫𐑳𐑴⟩ | $O₂$ | ⊙=𐑻 (exceptional point); Φ≠𐑹 blocks R1 |
+| Void Genesis (II) | ⟨𐑨𐑡𐑑𐑗𐑱𐑘𐑔𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ | Ð=𐑨, ⊙=𐑢 (R2) |
+| Anchor Protocol (III) | ⟨𐑨𐑰𐑾𐑬𐑞𐑧𐑔𐑠⊙𐑖𐑕𐑴⟩ | $O₁$ | Ω=𐑴 ($\mathbb{Z}_2$ winding, R3 not triggered; ⊙=⊙ but Φ≠𐑹) |
 | Dual Bootstrap (IV) | ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴⟩ | $O_\infty$ | Ð=𐑦, Φ=𐑹 (R1); ɢ=𐑝 (simultaneous) |
-| Linear Chain (V) | ⟨𐑛𐑡𐑑𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ | Ð=𐑛, ⊙=𐑢 (R2) |
-| Empty Bootstrap (VI) | ⟨𐑨𐑶𐑑𐑿𐑐𐑘𐑔𐑝⊙𐑒𐑙𐑴⟩ | $O_1$ | ⊙=⊙, Ω=𐑴, Ð≠𐑦 (R4 → $O_2$†; but Φ≠𐑹 → not R1) |
-| Parakernel (VII) | ⟨𐑼𐑸𐑾𐑬𐑞𐑧𐑲𐑠𐑻𐑖𐑳𐑴⟩ | $O_2$ | ⊙=𐑻; Ð=𐑼; Ω=𐑴 → R4 |
-| Frobenius Kernel (VIII) | ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O_0$ | Ð=𐑛, ⊙=𐑢 (R2) |
-| Chiral Pairs (IX) | ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ | $O_1$ | ⊙=⊙, Ω=𐑷 (trivial winding, R3) |
-| Truth Machine (X) | ⟨𐑦𐑡𐑑𐑬𐑞𐑘𐑔𐑝⊙𐑒𐑳𐑴⟩ | $O_1$ | ⊙=⊙, Ω=𐑴, Φ≠𐑹 |
-| Eternal Return (XI) | ⟨𐑦𐑸𐑾𐑗𐑱𐑤𐑔𐑠⊙𐑖𐑙𐑴⟩ | $O_2$ | ⊙=⊙, Ω=𐑴, Ð=𐑦, Φ≠𐑹 (R4 → $O_2^\dagger$) |
-| ROM Burn (XII) | ⟨𐑼𐑡𐑩𐑗𐑞𐑧𐑔𐑝𐑢𐑒𐑳𐑷⟩ | $O_0$ | ⊙=𐑢 (R2) |
+| Linear Chain (V) | ⟨𐑛𐑡𐑑𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ | Ð=𐑛, ⊙=𐑢 (R2) |
+| Empty Bootstrap (VI) | ⟨𐑨𐑶𐑑𐑿𐑐𐑘𐑔𐑝⊙𐑒𐑙𐑴⟩ | $O₁$ | ⊙=⊙, Ω=𐑴, Ð≠𐑦 (R4 → $O₂$†; but Φ≠𐑹 → not R1) |
+| Parakernel (VII) | ⟨𐑼𐑸𐑾𐑬𐑞𐑧𐑲𐑠𐑻𐑖𐑳𐑴⟩ | $O₂$ | ⊙=𐑻; Ð=𐑼; Ω=𐑴 → R4 |
+| Frobenius Kernel (VIII) | ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩ | $O₀$ | Ð=𐑛, ⊙=𐑢 (R2) |
+| Chiral Pairs (IX) | ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ | $O₁$ | ⊙=⊙, Ω=𐑷 (trivial winding, R3) |
+| Truth Machine (X) | ⟨𐑦𐑡𐑑𐑬𐑞𐑘𐑔𐑝⊙𐑒𐑳𐑴⟩ | $O₁$ | ⊙=⊙, Ω=𐑴, Φ≠𐑹 |
+| Eternal Return (XI) | ⟨𐑦𐑸𐑾𐑗𐑱𐑤𐑔𐑠⊙𐑖𐑙𐑴⟩ | $O₂$ | ⊙=⊙, Ω=𐑴, Ð=𐑦, Φ≠𐑹 (R4 → $O₂^\dagger$) |
+| ROM Burn (XII) | ⟨𐑼𐑡𐑩𐑗𐑞𐑧𐑔𐑝𐑢𐑒𐑳𐑷⟩ | $O₀$ | ⊙=𐑢 (R2) |
 
 ### §16.7 Classification Theorem
 
 **Every 8-step IMASM sequence falls into exactly one equivalence class** under the following seven invariants (evaluated in order; first distinction wins):
 
-1. **IMSCRIB at position 1** — self-recognizing ($O_1^+$) vs externally created ($O_0$)
-2. **Presence of both FSPLIT and FFUSE** — Frobenius-verifying ($O_2^+$) vs non-verifying ($O_0$–$O_1$)
+1. **IMSCRIB at position 1** — self-recognizing ($O₁^+$) vs externally created ($O₀$)
+2. **Presence of both FSPLIT and FFUSE** — Frobenius-verifying ($O₂^+$) vs non-verifying ($O₀$–$O₁$)
 3. **Order of Frobenius pair** — `FSPLIT→FFUSE` (analytic: $\delta$ then $\mu$) vs `FFUSE→FSPLIT` (synthetic: $\mu$ then $\delta$)
 4. **Presence of Dialetheia tokens** — classical ($\Theta$ closed) vs paraconsistent ($\Theta$ open)
 5. **IFIX at final position** — committed (closed) vs open

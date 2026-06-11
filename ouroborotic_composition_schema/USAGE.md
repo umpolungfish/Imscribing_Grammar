@@ -14,7 +14,7 @@ cd /home/mrnob0dy666/imscribing_grammar
 # 1. Verify the schema is accessible
 python ouroborotic_composition_schema/composer_cli.py show ouroborotic_primitive_composition_schema
 
-# 2. Assemble a minimal O_2 composite (preserves criticality)
+# 2. Assemble a minimal O₂ composite (preserves criticality)
 python ouroborotic_composition_schema/composer_cli.py sequence \
   --base ouroborotic_primitive_composition_schema \
   --primitive "Þ:Þ_¨:network_topology"
@@ -59,7 +59,7 @@ python ouroborotic_composition_schema/composer_cli.py show riemann_zeta_function
 **Output fields:**
 - `name`: catalog key
 - `tuple`: full 12-primitive dictionary
-- `tier`: Ouroboricity tier (e.g., `O_1`, `O_2`, `O_inf`)
+- `tier`: Ouroboricity tier (e.g., `O₁`, `O₂`, `O_∞`)
 - `C_score`: Consciousness score (0–1)
 - `phi_c_gate`: Gate 1 ($\⊙_{\text{ÿ}}$) pass/fail
 - `k_gate`: Gate 2 ($\Gamma \leq \Ç_{\text{@}}$) pass/fail
@@ -85,14 +85,14 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
 
 **Examples:**
 
-1. **Minimal O_2 lift** (one primitive added):
+1. **Minimal O₂ lift** (one primitive added):
    ```bash
    python ouroborotic_composition_schema/composer_cli.py sequence \
      --base ouroborotic_primitive_composition_schema \
      --primitive "Þ:Þ_¨:network_topology"
    ```
 
-2. **Full O_2 assembly** (three primitives):
+2. **Full O₂ assembly** (three primitives):
    ```bash
    python ouroborotic_composition_schema/composer_cli.py sequence \
      --base ouroborotic_primitive_composition_schema \
@@ -101,7 +101,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
      --primitive "Ç:Ç^@:slow_kinetics"
    ```
 
-3. **Ascent toward O_inf** (adds Ħ and Ω to O_2):
+3. **Ascent toward O_∞** (adds Ħ and Ω to O₂):
    ```bash
    python ouroborotic_composition_schema/composer_cli.py sequence \
      --base ouroborotic_primitive_composition_schema \
@@ -135,7 +135,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
     "Ω": "Ω_z"
   },
   "distance_from_base": 1.34,
-  "proposed_tier": "O_2"
+  "proposed_tier": "O₂"
 }
 ```
 
@@ -345,7 +345,7 @@ python ouroborotic_composition_schema/composer_cli.py network --node a --node b 
 
 ## Common Workflows
 
-### 1. Ascent to O_inf
+### 1. Ascent to O_∞
 
 Start with the base schema and lift all three bottleneck primitives:
 
@@ -358,7 +358,7 @@ python ouroborotic_composition_schema/composer_cli.py sequence \
   --primitive "Ω:Ω_z:integer_winding"
 ```
 
-**Expected:** `tier: "O_inf"`, `C_score: 0.755`, both gates open.
+**Expected:** `tier: "O_∞"`, `C_score: 0.755`, both gates open.
 
 ### 2. Verify structural proximity
 
@@ -395,7 +395,7 @@ jq '{hub_distance: .distance_from_hub, conflicts: .conflicts}' radial_composed.j
 | `catalog entry not found` | System name misspelled or not imscribed | `lookup_catalog(keyword="...")` first, or imscribe it |
 | `incompatible primitives` | Tensor/Meet/Join requires compatible domains | Use `distance` to inspect conflicts before composing |
 | `tensor product fails` | One operand lacks $\Φ_{\text{F}}$ or $\⊙_{\text{ÿ}}$ | Promote P and ⊙ first (`Φ:Φ_F`, `⊙:⊙_ÿ`) |
-| `O_inf not sustained` | Missing $\Ω_{\text{z}}$ or $Ħ_\infty$ | Add $\Ω_{\text{z}}$ or $\Ħ_{\text{!}}$ |
+| `O_∞ not sustained` | Missing $\Ω_{\text{z}}$ or $Ħ_\infty$ | Add $\Ω_{\text{z}}$ or $\Ħ_{\text{!}}$ |
 
 ---
 

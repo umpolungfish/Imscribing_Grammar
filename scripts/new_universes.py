@@ -238,7 +238,7 @@ NEW_RULESETS = [
                     "are the absorbing values. Coupling to the simplest, most trivial "
                     "values dominates. In this universe, complexity is fragile — the "
                     "ground state always wins. Meet, join, and tensor all collapse "
-                    "toward the baseline. O_inf is structurally impossible because "
+                    "toward the baseline. O_∞ is structurally impossible because "
                     "every attempt at self-modeling gets absorbed by triviality.",
         absorption_rules=(
             AbsorptionRule("⊙", "𐑢", ("meet", "join", "tensor")),  # sub-critical absorbs

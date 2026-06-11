@@ -5904,28 +5904,28 @@ def _frobenius_classify(s) -> str:
     at_c  = phi in ("⊙_ctyogh", "⊙_closerevepsilon")
     # R1: exact proved Z₂ symmetry at criticality → special Frobenius
     if at_c and p == "Φ_doublebarpipe":
-        return "O_inf"
-    # R2: no self-referential loop possible (Phi_revepsilon absorbs O_inf under tensor → O_0 own tier)
+        return "O_∞"
+    # R2: no self-referential loop possible (Phi_revepsilon absorbs O_∞ under tensor → O₀ own tier)
     if phi in ("⊙_softsign", "⊙_upstep", "⊙_revepsilon"):
-        return "O_0"
+        return "O₀"
     # R3: critical but no topological protection
     if at_c and omega == "Ω_closeepsilon":
-        return "O_1"
+        return "O₁"
     # R4: critical + topological + bounded domain (D_turnthree → D_cube in enum)
     if at_c and omega != "Ω_closeepsilon" and d in ("Ð_wynn", "Ð_omega", "Ð_cube"):
-        return "O_2"
+        return "O₂"
     # R5: critical + topological + unbounded domain
     if at_c and omega != "Ω_closeepsilon" and d == "Ð_invomega":
-        return "O_2_dag"
-    return "O_0"
+        return "O₂†"
+    return "O₀"
 
 
 _FROBENIUS_TIER_DESC = {
-    "O_inf":   "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id).",
-    "O_0":     "No ouroboricity — cannot form a self-referential critical loop.",
-    "O_1":     "Ouroboricity tier 1 — critical, no topological protection.",
-    "O_2":     "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
-    "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (D_invomega) domain.",
+    "O_∞":   "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id).",
+    "O₀":     "No ouroboricity — cannot form a self-referential critical loop.",
+    "O₁":     "Ouroboricity tier 1 — critical, no topological protection.",
+    "O₂":     "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
+    "O₂†": "Ouroboricity tier 2† — critical + topologically protected, unbounded (D_invomega) domain.",
 }
 
 
@@ -5935,15 +5935,15 @@ _FROBENIUS_TIER_DESC = {
 def frobenius_tier_cmd(imscription: str, format: str):
     """Classify a imscription (or the whole catalog) into its Frobenius ouroboricity tier.
 
-    Tiers: O_inf / O_0 / O_1 / O_2 / O_2_dag
+    Tiers: O_∞ / O₀ / O₁ / O₂ / O₂†
 
     \b
     Rules (applied in priority order):
-      R1: Phi_ctyogh + P_doublebarpipe            → O_inf  (special Frobenius, exact Z₂ symmetry)
-      R2: Phi_softsign or Phi_upstep          → O_0   (no self-referential loop)
-      R3: Phi_ctyogh + Omega_closeepsilon             → O_1   (critical, unprotected)
-      R4: Phi_ctyogh + Omega≠0 + D_bounded → O_2   (critical, protected, bounded)
-      R5: Phi_ctyogh + Omega≠0 + D_invomega   → O_2†  (critical, protected, unbounded)
+      R1: Phi_ctyogh + P_doublebarpipe            → O_∞  (special Frobenius, exact Z₂ symmetry)
+      R2: Phi_softsign or Phi_upstep          → O₀   (no self-referential loop)
+      R3: Phi_ctyogh + Omega_closeepsilon             → O₁   (critical, unprotected)
+      R4: Phi_ctyogh + Omega≠0 + D_bounded → O₂   (critical, protected, bounded)
+      R5: Phi_ctyogh + Omega≠0 + D_invomega   → O₂†  (critical, protected, unbounded)
 
     \b
     Examples:
@@ -5957,7 +5957,7 @@ def frobenius_tier_cmd(imscription: str, format: str):
 
     if imscription == "__all__":
         all_imscriptions = global_catalog.search()
-        counts = {"O_inf": 0, "O_0": 0, "O_1": 0, "O_2": 0, "O_2_dag": 0}
+        counts = {"O_∞": 0, "O₀": 0, "O₁": 0, "O₂": 0, "O₂†": 0}
         by_tier: Dict[str, list] = {k: [] for k in counts}
         for s in all_imscriptions:
             tier = _frobenius_classify(s)
@@ -5971,7 +5971,7 @@ def frobenius_tier_cmd(imscription: str, format: str):
                 "total": total,
                 "summary": {t: {"count": c, "pct": round(100 * c / total, 1) if total else 0}
                             for t, c in counts.items()},
-                "O_inf_entries": sorted(by_tier["O_inf"]),
+                "O_inf_entries": sorted(by_tier["O_∞"]),
             }, indent=2))
             return
 
@@ -5979,16 +5979,16 @@ def frobenius_tier_cmd(imscription: str, format: str):
         click.echo("  Frobenius tier census — full catalog")
         click.echo(f"  Total: {total}")
         click.echo()
-        tier_order = ["O_inf", "O_2_dag", "O_2", "O_1", "O_0"]
+        tier_order = ["O_∞", "O₂†", "O₂", "O₁", "O₀"]
         for t in tier_order:
             c = counts[t]
             pct = round(100 * c / total, 1) if total else 0
-            label = t.replace("O_2_dag", "O_2†")
+            label = t.replace("O₂†", "O₂†")
             click.echo(f"  {label:<8}  {c:>4}  ({pct:.1f}%)")
-        if by_tier["O_inf"]:
+        if by_tier["O_∞"]:
             click.echo()
-            click.echo(f"  O_inf entries ({counts['O_inf']}):")
-            for name in sorted(by_tier["O_inf"]):
+            click.echo(f"  O_∞ entries ({counts['O_∞']}):")
+            for name in sorted(by_tier["O_∞"]):
                 click.echo(f"    • {name}")
         click.echo()
         return
@@ -6015,7 +6015,7 @@ def frobenius_tier_cmd(imscription: str, format: str):
     click.echo()
     click.echo(f"  ouroborics({imscription})")
     click.echo()
-    tier_label = tier.replace("O_2_dag", "O_2†")
+    tier_label = tier.replace("O₂†", "O₂†")
     click.echo(f"  Tier    : {tier_label}")
     click.echo(f"  Phi     : {s.criticality_phase.value}")
     click.echo(f"  P       : {s.polarity.value}")

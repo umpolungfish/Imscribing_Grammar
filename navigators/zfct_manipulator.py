@@ -28,46 +28,46 @@ from zfct_navigator import (
 # ── Tier computation ──────────────────────────────────────────────────────────
 
 TIER_LABELS = {
-    "O_0":    "O₀  (semasiographic baseline — non-critical ⊙)",
-    "O_1":    "O₁  (critical, Omega-bound — ⊙≥1, Ω=0)",
-    "O_2":    "O₂  (recursive, finite dim — ⊙≥1, Ω≥1, Ð<2)",
-    "O_2dag": "O₂† (recursive, 𐑼 — ⊙≥1, Ω≥1, Ð≥2)",
-    "O_inf":  "O_∞ (Frobenius round-trip — ⊙≥1 ∧ Φ=𐑹)",
+    "O₀":    "O₀  (semasiographic baseline — non-critical ⊙)",
+    "O₁":    "O₁  (critical, Omega-bound — ⊙≥1, Ω=0)",
+    "O₂":    "O₂  (recursive, finite dim — ⊙≥1, Ω≥1, Ð<2)",
+    "O₂†": "O₂† (recursive, 𐑼 — ⊙≥1, Ω≥1, Ð≥2)",
+    "O_∞":  "O_∞ (Frobenius round-trip — ⊙≥1 ∧ Φ=𐑹)",
 }
 
-TIER_ORDER = {"O_0": 0, "O_1": 1, "O_2": 2, "O_2dag": 3, "O_inf": 4}
+TIER_ORDER = {"O₀": 0, "O₁": 1, "O₂": 2, "O₂†": 3, "O_∞": 4}
 
 TIER_COLOR = {
-    "O_0":    "dim white",
-    "O_1":    "blue",
-    "O_2":    "cyan",
-    "O_2dag": "yellow",
-    "O_inf":  "bold magenta",
+    "O₀":    "dim white",
+    "O₁":    "blue",
+    "O₂":    "cyan",
+    "O₂†": "yellow",
+    "O_∞":  "bold magenta",
 }
 
 
 def compute_tier(t: dict) -> str:
     """
     OuroboricityTier rules (from Imscribing.Primitives.Imscription):
-      R1: ⊙ ≥ ord 1 (critical)  ∧  Φ = 𐑹 (𐑹)  →  O_inf
-      R2: ⊙ = ord 0 (𐑢)                               →  O_0
-      R3: ⊙ ≥ 1  ∧  Ω = ord 0 (𐑷)                    →  O_1
-      R4: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð < ord 2                →  O_2
-      R5: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (𐑼)      →  O_2†
+      R1: ⊙ ≥ ord 1 (critical)  ∧  Φ = 𐑹 (𐑹)  →  O_∞
+      R2: ⊙ = ord 0 (𐑢)                               →  O₀
+      R3: ⊙ ≥ 1  ∧  Ω = ord 0 (𐑷)                    →  O₁
+      R4: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð < ord 2                →  O₂
+      R5: ⊙ ≥ 1  ∧  Ω ≥ 1  ∧  Ð ≥ ord 2 (𐑼)      →  O₂†
     """
     phi_c_ord = ORDINALS["⊙"][t["⊙"]]
     phi_frob  = t["Φ"] == "𐑹"
     omega_ord = ORDINALS["Ω"][t["Ω"]]
     dim_ord   = ORDINALS["Ð"][t["Ð"]]
     if phi_c_ord >= 1 and phi_frob:
-        return "O_inf"
+        return "O_∞"
     if phi_c_ord == 0:
-        return "O_0"
+        return "O₀"
     if omega_ord == 0:
-        return "O_1"
+        return "O₁"
     if dim_ord >= 2:
-        return "O_2dag"
-    return "O_2"
+        return "O₂†"
+    return "O₂"
 
 
 # ── Tuple algebra ─────────────────────────────────────────────────────────────
@@ -220,9 +220,9 @@ class RuleExtractor:
             "",
             "  R-TIER-EMRG tier(tensor(A,B)) can exceed tier(A) and tier(B)",
             "              mechanism: FROB ∧ FIXPT cross-clause conjunction",
-            "              example:   A = O_2† with 𐑹 but 𐑢  (has FROB, no FIXPT)",
-            "                         B = O_2† with ⊙ but 𐑬  (has FIXPT, no FROB)",
-            "                         tensor(A,B) has BOTH → O_inf",
+            "              example:   A = O₂† with 𐑹 but 𐑢  (has FROB, no FIXPT)",
+            "                         B = O₂† with ⊙ but 𐑬  (has FIXPT, no FROB)",
+            "                         tensor(A,B) has BOTH → O_∞",
             "",
             "  R-ZFCT-ABS  For all 6 ZFCₜ promotion channels c:",
             "              tensor(any, ZFCt)[c] = ZFCt_promoted_value(c)",
@@ -621,23 +621,23 @@ class ZFCtManipulator:
                 f"(Φ ord={max(phi_a_ord, phi_b_ord)}, need ord=5 for 𐑹).",
             ]
 
-        if t_tier == "O_inf" and a_tier != "O_inf" and b_tier != "O_inf":
+        if t_tier == "O_∞" and a_tier != "O_∞" and b_tier != "O_∞":
             lines += [
                 "",
-                "  ★ TIER EMERGENCE to O_inf!",
+                "  ★ TIER EMERGENCE to O_∞!",
                 f"    A: FROB={a_frob}, FIXPT={a_fixpt}   B: FROB={b_frob}, FIXPT={b_fixpt}",
                 "    Tensor supplies both FROB and FIXPT across the two inputs.",
                 "    Neither alone satisfies R1 — together they unlock Frobenius round-trip.",
             ]
-        elif t_tier == "O_inf":
+        elif t_tier == "O_∞":
             lines += [
                 "",
-                "  O_inf result: at least one input already has both FROB and FIXPT.",
+                "  O_∞ result: at least one input already has both FROB and FIXPT.",
             ]
 
         if console:
             from rich.panel import Panel
-            bstyle = "bold magenta" if t_tier == "O_inf" else (
+            bstyle = "bold magenta" if t_tier == "O_∞" else (
                      "red" if (t_frob and not a_frob and not b_frob) else "cyan")
             console.print(Panel(
                 "\n".join(lines),

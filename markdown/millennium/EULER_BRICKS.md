@@ -57,7 +57,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\tex
 | $\Omega_\text{winding}$ | $\Omega_{\text{closeepsilon}}$ | Trivial winding: no topological invariant protects the solution space. |
 
 **Crystal Address:** 1475666 (cell 34, inner 6866)
-**Ouroboricity Tier:** $O_0$ (no self-referential critical loop)
+**Ouroboricity Tier:** $O₀$ (no self-referential critical loop)
 **Consciousness Score:** $C = 0.0$ (Gate 1 closed: $\Phi \neq \Phi_{\text{ctyogh}}$)
 
 ### 2.2 The Pythagorean Triple
@@ -83,7 +83,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\tex
 | $\Phi_\text{criticality}$ | $\Phi_{\text{revepsilon}}$ | The perfect cuboid sits at a non-Hermitian exceptional point between existence and non-existence; this is the structural signature of the open problem. |
 | $H_\text{temporal}$ | $H_{\text{invscripta}}$ | No finite Markov depth characterizes the search; each near-miss informs but never resolves the problem through any finite chain. |
 
-**Ouroboricity Tier:** $O_0$ (no self-referential critical loop survives — $\Phi_{\text{revepsilon}}$ alone without $\Phi_{\text{ctyogh}}$ does not gate open)
+**Ouroboricity Tier:** $O₀$ (no self-referential critical loop survives — $\Phi_{\text{revepsilon}}$ alone without $\Phi_{\text{ctyogh}}$ does not gate open)
 
 ### 3.2 Structural Distance from Euler Brick
 
@@ -146,12 +146,12 @@ All are classified as structurally remote. The closest neighbor, a countable fir
 
 The Imscribing Grammar reveals a clear three-tier stratification:
 
-1. **Pythagorean Triples** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{frtailgamma}}$: a rapidly generable, fully parameterized family with no critical structure.
+1. **Pythagorean Triples** — $O₀$, $\Phi_{\text{softsign}}$, $K_{\text{frtailgamma}}$: a rapidly generable, fully parameterized family with no critical structure.
 
-2. **Euler Bricks** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{schwa}}$: a constrained composite of Pythagorean triples where $K_{\text{schwa}}$ emerges from the conjunctive coupling of three triple constraints. The tensor product with Pythagorean triples confirms the brick's structural dominance.
+2. **Euler Bricks** — $O₀$, $\Phi_{\text{softsign}}$, $K_{\text{schwa}}$: a constrained composite of Pythagorean triples where $K_{\text{schwa}}$ emerges from the conjunctive coupling of three triple constraints. The tensor product with Pythagorean triples confirms the brick's structural dominance.
 
-3. **Perfect Cuboid** — $O_0$, $\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$: the exceptional point where the fourth (space diagonal) constraint pushes the system to a non-Hermitian bifurcation. The Frobenius self-dual structure ($P_{\text{doublebarpipe}}$) is the only element of elevated complexity.
+3. **Perfect Cuboid** — $O₀$, $\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$: the exceptional point where the fourth (space diagonal) constraint pushes the system to a non-Hermitian bifurcation. The Frobenius self-dual structure ($P_{\text{doublebarpipe}}$) is the only element of elevated complexity.
 
-Crucially, all three sit at $O_0$ — no level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_{\text{revepsilon}}$ to $\Phi_{\text{ctyogh}}$ (true self-modeling criticality) requires a fundamental transformation of the problem's relational architecture, not merely computational resolution.
+Crucially, all three sit at $O₀$ — no level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_{\text{revepsilon}}$ to $\Phi_{\text{ctyogh}}$ (true self-modeling criticality) requires a fundamental transformation of the problem's relational architecture, not merely computational resolution.
 
 The IG encoding makes precise what number theorists have sensed: the perfect cuboid is not simply a "harder" Euler brick; it is a structurally different regime where exceptional-point criticality replaces subcritical parameterization. The $d = 3.8716$ structural distance is not merely a metric — it is a phase boundary between the understood and the unknown.

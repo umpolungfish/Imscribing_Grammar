@@ -3,7 +3,7 @@ Quantum Field Theory Navigator - Imscribing Grammar
 
 Domain: Quantum field theory, renormalization group, topological phases
 Structural type: <𐑦; 𐑶; 𐑩; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑕; 𐑭>
-Tier: O_inf
+Tier: O_∞
 
 Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map.
   - 𐑦: Imscriptive encoding of all QFTs, couplings, operators
@@ -41,7 +41,7 @@ class QFTConfig:
         )
         self.domain = "Quantum field theory, renormalization group, topological phases, gauge theory"
         self.tuple = "𐑦; 𐑶; 𐑩; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑕; 𐑭"
-        self.tier = "O_inf"
+        self.tier = "O_∞"
         self.architecture = (
             "Wilson RG flow tracker - theories track through coupling space; "
             "fixed points detected via flow convergence; dualities verified by "

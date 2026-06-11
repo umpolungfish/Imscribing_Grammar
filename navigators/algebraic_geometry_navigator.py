@@ -3,7 +3,7 @@ Algebraic Geometry Navigator - Imscribing Grammar
 
 Domain: Algebraic geometry, scheme theory, arithmetic geometry
 Structural type: <𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
-Tier: O_inf
+Tier: O_∞
 
 Architecture: Scheme-theoretic GNN with spectrum-based typing.
   - 𐑦: Imscriptive encoding of all schemes and morphisms
@@ -46,7 +46,7 @@ class AGConfig:
         )
         self.domain = "Algebraic geometry, scheme theory, arithmetic geometry, stacks"
         self.tuple = "𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
-        self.tier = "O_inf"
+        self.tier = "O_∞"
         self.architecture = (
             "Scheme GNN with spectrum-based typing - points communicate via "
             "stalks; cohomology computation via Čech complexes; descent checks "
@@ -265,7 +265,7 @@ Algebraic Geometry Navigator
 Structural type:
   ⟨𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧;
    𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩
-  Tier: O_inf
+  Tier: O_∞
 
 Primitive derivation:
   𐑦    Imscriptive — every scheme X is encoded by its structure sheaf O_X.
@@ -299,7 +299,7 @@ Key theorems:
   Hirzebruch-RR:       χ(F) = ∫_X ch(F)td(X)
 
 Ouroboricity:
-  O_inf via R1: ⊙ + 𐑹 — scheme reconstructed from its sheaf
+  O_∞ via R1: ⊙ + 𐑹 — scheme reconstructed from its sheaf
   category (Tannaka duality); Frobenius adjunction exact.
 
 Commands:

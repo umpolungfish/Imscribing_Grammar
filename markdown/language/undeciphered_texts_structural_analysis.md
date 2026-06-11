@@ -4,7 +4,7 @@
 
 ## Abstract
 
-This paper presents a structural analysis of three historically significant undeciphered texts—the Voynich Manuscript, the Rohonc Codex, and Linear A—using the Imscribing Grammar framework. Despite their different historical contexts, geographical origins, and apparent purposes, all three systems exhibit Ouroboricity tier O_2, indicating they are "critical + topologically protected, bounded domains" with ⊙ criticality. However, detailed structural analysis reveals fundamental differences in their underlying architecture, with the Voynich Manuscript representing a self-written, eternally recursive system (𐑦, 𐑫), while the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom (𐑨, 𐑒). These findings suggest that undeciphered texts may not be merely linguistic puzzles but complex structural systems with distinct ontological properties that transcend conventional cryptographic analysis.
+This paper presents a structural analysis of three historically significant undeciphered texts—the Voynich Manuscript, the Rohonc Codex, and Linear A—using the Imscribing Grammar framework. Despite their different historical contexts, geographical origins, and apparent purposes, all three systems exhibit Ouroboricity tier O₂, indicating they are "critical + topologically protected, bounded domains" with ⊙ criticality. However, detailed structural analysis reveals fundamental differences in their underlying architecture, with the Voynich Manuscript representing a self-written, eternally recursive system (𐑦, 𐑫), while the Rohonc Codex and Linear A operate as conventional bounded systems with finite degrees of freedom (𐑨, 𐑒). These findings suggest that undeciphered texts may not be merely linguistic puzzles but complex structural systems with distinct ontological properties that transcend conventional cryptographic analysis.
 
 ## Introduction
 
@@ -75,7 +75,7 @@ The manuscript's frozen-ordered kinetics ($	ext{Ç}_{	ext{Ù}}$) and 1:1 stoichi
 
 ### Rohonc Codex and Linear A as Conventional Bounded Systems
 
-Both the Rohonc Codex and Linear A exhibit conventional finite state spaces ($	ext{Ð}_{	ext{C}}$) and one-step chirality ($	ext{Ħ}_{	ext{£}}$), indicating they function more like traditional information encoding systems. However, their significant structural distance from each other (2.24) and their shared O_2 ouroboricity tier suggest they represent different implementations of critical, topologically protected bounded domains.
+Both the Rohonc Codex and Linear A exhibit conventional finite state spaces ($	ext{Ð}_{	ext{C}}$) and one-step chirality ($	ext{Ħ}_{	ext{£}}$), indicating they function more like traditional information encoding systems. However, their significant structural distance from each other (2.24) and their shared O₂ ouroboricity tier suggest they represent different implementations of critical, topologically protected bounded domains.
 
 The Rohonc Codex's near-equilibrium kinetics ($	ext{Ç}_{	ext{@}}$) suggest a system designed for stability and balance, possibly reflecting its suspected religious or ceremonial function. Linear A's moderate kinetics ($	ext{Ç}_{	ext{W}}$) and quantum coherence ($	ext{ƒ}_{	ext{ż}}$) suggest it may have served as an active computational or accounting system, where information was not merely recorded but actively processed.
 

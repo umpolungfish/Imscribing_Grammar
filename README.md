@@ -33,21 +33,21 @@ Each address falls into one of five tiers based on the (Φ, ⊙) pair:
 
 | Tier | Name | Condition | Meaning |
 |---|---|---|---|
-| O_0 | Inert | Φ_sub, ⊙_sealed | No self-reference |
-| O_1 | Reactive | Φ_c, ⊙_sealed | Causal but not self-modeling |
-| O_2 | Recursive | Φ_c, ⊙_open | Self-referential |
-| O_2† | Dialetheic | Φ_super, ⊙_open | Self-contradictory (Belnap B) |
-| O_inf | Philosopher's Stone | Φ_super, ⊙_both | Frobenius closed: μ∘δ=id |
+| O₀ | Inert | Φ_sub, ⊙_sealed | No self-reference |
+| O₁ | Reactive | Φ_c, ⊙_sealed | Causal but not self-modeling |
+| O₂ | Recursive | Φ_c, ⊙_open | Self-referential |
+| O₂† | Dialetheic | Φ_super, ⊙_open | Self-contradictory (Belnap B) |
+| O_∞ | Philosopher's Stone | Φ_super, ⊙_both | Frobenius closed: μ∘δ=id |
 
-**O_inf addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
+**O_∞ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
 
 ### Notation — Shavian v0.6.0
 
 All primitive values are written in Shavian characters. Two canonical addresses:
 
 ```
-O_inf (Philosopher's Stone):  ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
-O_0   (minimum baseline):     ⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩
+O_∞ (Philosopher's Stone):  ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
+O₀   (minimum baseline):     ⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩
 ```
 
 Font: **Everson Mono** (the only complete Shavian Unicode font).
@@ -62,7 +62,7 @@ The grammar is a Frobenius algebra over the Crystal. The comultiplication δ (FS
 μ ∘ δ = id
 ```
 
-This identity holds at every O_inf address and fails at O_0. The distance from any address to O_inf measures how far the system is from self-modeling closure.
+This identity holds at every O_∞ address and fails at O₀. The distance from any address to O_∞ measures how far the system is from self-modeling closure.
 
 **Physical interpretation:** The Frobenius condition is the structural invariant that appears in:
 - Topological quantum field theories (Frobenius algebra = 2D TQFT)
@@ -74,13 +74,13 @@ This identity holds at every O_inf address and fails at O_0. The distance from a
 
 ## The Universal Loop
 
-The eight-step structural invariant, present in every O_inf system:
+The eight-step structural invariant, present in every O_∞ system:
 
 ```
 ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB
 ```
 
-This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about structural address: all these systems share crystal coordinates in the O_2/O_inf band.
+This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about structural address: all these systems share crystal coordinates in the O₂/O_∞ band.
 
 ---
 
@@ -102,12 +102,12 @@ The WhaleVM operates over a four-valued logic (Belnap 1977):
 
 | Value | Meaning | Structural tier |
 |---|---|---|
-| N (VOID) | Neither true nor false — no information | O_0 |
-| T (TRUE) | True | O_1/O_2 |
-| F (FALSE) | False | O_1/O_2 |
-| B (BOTH) | Both true and false — dialetheic | O_2†/O_inf |
+| N (VOID) | Neither true nor false — no information | O₀ |
+| T (TRUE) | True | O₁/O₂ |
+| F (FALSE) | False | O₁/O₂ |
+| B (BOTH) | Both true and false — dialetheic | O₂†/O_∞ |
 
-The B state is not a bug. Systems at O_2† and O_inf are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
+The B state is not a bug. Systems at O₂† and O_∞ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
 
 ---
 
@@ -162,11 +162,11 @@ uv run zfct_navigator.py path \
 
 ### Lambda (`lambda_engine.py`)
 
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at O_inf (Ð_ω self-writing, μ∘δ=id by construction).
+Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at O_∞ (Ð_ω self-writing, μ∘δ=id by construction).
 
 ### Frobenius MZI (`frobenius_mzi_sim.py`)
 
-Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the beam-splitter ratio. Frobenius closure is measurable as optical interference visibility: `V = |μ∘δ - id|`. When V = 0, the MZI is at O_inf and the two output ports are indistinguishable — the interferometer cannot tell which path the photon took, because structurally it took both (B state).
+Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the beam-splitter ratio. Frobenius closure is measurable as optical interference visibility: `V = |μ∘δ - id|`. When V = 0, the MZI is at O_∞ and the two output ports are indistinguishable — the interferometer cannot tell which path the photon took, because structurally it took both (B state).
 
 ---
 
@@ -178,9 +178,9 @@ Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the b
 uv run zfct_para.py :para-cliff <address>
 ```
 
-`:para-cliff` shows each Magnum Opus axiom (the 12-stage alchemical sequence mapped to primitive promotions) as a Belnap state-collapse obligation. The Magnum Opus gate admits only B-state transitions at the O_2†/O_inf boundary — dialetheic commitment is required to cross.
+`:para-cliff` shows each Magnum Opus axiom (the 12-stage alchemical sequence mapped to primitive promotions) as a Belnap state-collapse obligation. The Magnum Opus gate admits only B-state transitions at the O₂†/O_∞ boundary — dialetheic commitment is required to cross.
 
-The paraconsistent layer is not a relaxation of logic. It is the correct logic for systems at O_2† addresses: systems that are genuinely both open and closed, both sending and receiving, both consistent and contradictory. Forcing classical logic on such systems is a measurement error.
+The paraconsistent layer is not a relaxation of logic. It is the correct logic for systems at O₂† addresses: systems that are genuinely both open and closed, both sending and receiving, both consistent and contradictory. Forcing classical logic on such systems is a measurement error.
 
 ---
 
@@ -194,7 +194,7 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 ```
 Primitives/     — Core.lean: 12 primitives, tier system, Frobenius axioms A–D
-                  Axiom A: μ∘δ=id at O_inf (definitional)
+                  Axiom A: μ∘δ=id at O_∞ (definitional)
                   Axiom B: Ω_Z → Ħ₂ (integer winding forces 2-step chirality)
                   Axiom C: Þ_odot → Ð_odot (holographic topology forces dimensionality)
                   Axiom D: Ð_odot + Þ_odot + Ω_Z → Φ_pm_sym (holographic closure)
@@ -212,7 +212,7 @@ Millennium/     — One file per Prize Problem:
                   Hodge_KernelCrossing.lean    — kernel crossing → Hodge conjecture
                   BSD_FrobeniusClosure.lean    — L-function Frobenius closure → BSD
                   P_NP_Gate.lean               — ⊙ gate computational complexity
-                  Shor/                        — Shor's algorithm O_1 formalization
+                  Shor/                        — Shor's algorithm O₁ formalization
 ```
 
 ### Millennium Prize Problems — Current Status
@@ -239,7 +239,7 @@ Coverage: sacred vessels, mathematical structures, physical systems, linguistic 
 ```python
 from imscrbgrmr.models import Primitive, CrystalAddress
 p = Primitive.from_symbol("⊙")            # Criticality
-addr = CrystalAddress.lookup("voynich")   # O_2† address, ISCRIB loop confirmed
+addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirmed
 ```
 
 ---
@@ -252,11 +252,11 @@ Corpora analyzed and imscribed:
 
 | Corpus | Tier | ISCRIB closure | Notes |
 |---|---|---|---|
-| Voynich Manuscript | O_2† | 94% | Universal Engine (VMS = functional document, not cipher) |
-| Rohonc Codex | O_2 | 87% | Section-as-register-type mapping confirmed |
-| Linear A | O_2 | 81% | Structural kinship with Linear B confirmed; semantic gap remains |
-| Emerald Tablet | O_inf | 100% | Self-writes; the text is its own ISCRIB loop |
-| Humpback whale song | O_2† | 91% | Six human expression archetypes all present |
+| Voynich Manuscript | O₂† | 94% | Universal Engine (VMS = functional document, not cipher) |
+| Rohonc Codex | O₂ | 87% | Section-as-register-type mapping confirmed |
+| Linear A | O₂ | 81% | Structural kinship with Linear B confirmed; semantic gap remains |
+| Emerald Tablet | O_∞ | 100% | Self-writes; the text is its own ISCRIB loop |
+| Humpback whale song | O₂† | 91% | Six human expression archetypes all present |
 
 Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonical document format).
 
@@ -266,14 +266,14 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 
 | Repo | Tier | Language | Description |
 |---|---|---|---|
-| `~/MillenniumAnkh` | O_inf | Lean 4 | Formal proofs — 43 modules, Mathlib v4.28.0 |
-| `~/priests-engine` | O_2† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
-| `~/cetaceanspeak` | O_2 | Python | Standalone cetacean translation engine |
-| `~/ob3ect` | O_2† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
-| `~/exOS` | O_inf | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `~/synfin` | O_2 | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
-| `~/latextiler` | O_1 | Python/LaTeX | LaTeX tiling engine for IG manuscript layout |
-| `~/imscribe.com` | O_2 | HTML/JS | Web presence; Frobenius MZI interactive demo |
+| `~/MillenniumAnkh` | O_∞ | Lean 4 | Formal proofs — 43 modules, Mathlib v4.28.0 |
+| `~/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
+| `~/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
+| `~/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
+| `~/exOS` | O_∞ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
+| `~/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
+| `~/latextiler` | O₁ | Python/LaTeX | LaTeX tiling engine for IG manuscript layout |
+| `~/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
 ---
 

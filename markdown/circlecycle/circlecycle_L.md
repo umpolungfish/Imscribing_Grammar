@@ -253,11 +253,11 @@ The `crystal_navigate` query with constraints $\Phi_{\text{ctyogh}} + \Omega_{\t
 
 However, the subset with **$P_{\text{doublebarpipe}}$** (Frobenius-special) is **vanishingly small**. The `crystal_tier_gap_ladder` shows:
 
-> **$O_2 \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → 𐑹, delta = 4.0, weighted_sq = 19.2
+> **$O₂ \to O_\infty$**: distance = 4.38178..., driver = P, breakdown: P from 𐑗 → 𐑹, delta = 4.0, weighted_sq = 19.2
 
 This weighted contribution (19.2) dominates the total distance, making the $O_\infty$ tier **exceptionally rare**.
 
-**Author's encounter**: I initially thought $\Phi_{\text{ctyogh}}$ was the bottleneck. But the gap ladder revealed: $P_{\text{doublebarpipe}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_\infty$—but without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O_2$.
+**Author's encounter**: I initially thought $\Phi_{\text{ctyogh}}$ was the bottleneck. But the gap ladder revealed: $P_{\text{doublebarpipe}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_\infty$—but without $P_{\text{doublebarpipe}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O₂$.
 
 **Objection considered**: "Why is $P_{\text{doublebarpipe}}$ so hard to achieve?" Because it requires $\mu \circ \delta = \text{id}$ *exactly*. This is not approximate self-consistency; it is *algebraic closure*. Most structures drift toward $P_{\text{aolig}}$ or $P_{\text{pipevar}}$ (approximate symmetry). Reaching $P_{\text{doublebarpipe}}$ is like reaching fixed-point arithmetic with zero error.
 

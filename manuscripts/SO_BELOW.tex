@@ -242,9 +242,9 @@
 \newcommand{\Ppms}{{\text{{\igfont 𐑹}}}}
 \newcommand{\Kinf}{K_\infty}
 \newcommand{\Oinf}{O_\infty}
-\newcommand{\Otwo}{O_2}
-\newcommand{\Oone}{O_1}
-\newcommand{\Ozero}{O_0}
+\newcommand{\Otwo}{O₂}
+\newcommand{\Oone}{O₁}
+\newcommand{\Ozero}{O₀}
 \newcommand{\doto}[2]{d_{\to}(#1,\,#2)}
 \newcommand{\meet}{\wedge}
 \newcommand{\join}{\vee}
@@ -1009,7 +1009,7 @@ Lattice meet/join $\wedge/\vee$ finds the shared floor or minimal
 ceiling of two types. Directed distance $d_\to$ measures asymmetric
 structural separation, distinguishing the driven direction from the
 relaxation direction. The tier function assigns the ouroboricity tier
-$\{O_0, O_1, O_2, O_2^\dagger, O_\infty\}$ by the priority cascade
+$\{O₀, O₁, O₂, O₂^\dagger, O_\infty\}$ by the priority cascade
 (R1--R5). The output $\xvec'$ is the transformed structural coordinate.}
 \label{fig:pipeline}
 \end{figure}
@@ -1137,7 +1137,7 @@ by the following rules in priority order:
     $\text{{\igprimfont Ð}} \in \{\text{{\igfont 𐑛}}, \text{{\igfont 𐑦}}, \text{{\igfont 𐑨}}\}$
     $\;\Rightarrow\; \Otwo$
   \item[R5] $\text{{\igprimfont ⊙}} = \Phic$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$, $\text{{\igprimfont Ð}} = \text{{\igfont 𐑼}}$
-    $\;\Rightarrow\; O_2^\dagger$
+    $\;\Rightarrow\; O₂^\dagger$
 \end{itemize}
 \end{definition}
 
@@ -1704,7 +1704,7 @@ structures are resolved.
     cliff/.style={->, line width=1.4pt, red!60!black},
     prim/.style={font=\footnotesize, anchor=west},
 ]
-  \node[plateau] (open) at (0, 5.0) {\textbf{SIC (open)} \\ $O_1$, $\text{{\igprimfont Φ}} = \text{{\igfont 𐑬}}$ \\ $d^2$ projectors};
+  \node[plateau] (open) at (0, 5.0) {\textbf{SIC (open)} \\ $O₁$, $\text{{\igprimfont Φ}} = \text{{\igfont 𐑬}}$ \\ $d^2$ projectors};
 
   \node[plateau, fill=green!8] (proven) at (0, 0.5) {\textbf{SIC (proven)} \\ $O_\infty$, $P = \Ppms$ \\ Galois self-duality};
 
@@ -1723,7 +1723,7 @@ structures are resolved.
   \end{scope}
 \end{tikzpicture}
 \caption{\textbf{SIC-POVM Frobenius cliff.} The open SIC conjecture occupies
-the $O_1$ tier with $\text{{\igprimfont Φ}} = \text{{\igfont 𐑬}}$ (approximate $\mathbb{Z}_2$ from pairwise
+the $O₁$ tier with $\text{{\igprimfont Φ}} = \text{{\igfont 𐑬}}$ (approximate $\mathbb{Z}_2$ from pairwise
 equiangularity). The proven manifold occupies $O_\infty$ with $P = \Ppms$
 (exact Frobenius self-duality). The gap $d \approx 4.09$ is dominated by the
 $\text{{\igprimfont Φ}}$-promotion $(\text{{\igfont 𐑬}} \to \Ppms)$, which cannot be closed by accumulation of
@@ -1780,13 +1780,13 @@ their membership in the same spectral family.
     \textbf{Pre-critical} \\
     \footnotesize $\text{{\igfont 𐑻}}, \text{{\igfont 𐑘}}, \text{{\igfont 𐑓}}$ \\
     \footnotesize fast mixing, no direction \\
-    \footnotesize tier: $O_0$
+    \footnotesize tier: $O₀$
   };
   \node[state, fill=green!8] (post) at (3.5,0) {
     \textbf{Post-critical} \\
     \footnotesize $\text{{\igprimfont ⊙}}, \text{{\igfont 𐑧}}, \text{{\igfont 𐑒}}$ \\
     \footnotesize slow integration, emergent arrow \\
-    \footnotesize tier: $O_1$
+    \footnotesize tier: $O₁$
   };
   
   \draw[arrow] (pre) -- node[above, font=\small] {$d = 0.082$} node[below, font=\footnotesize] {tune drive to $\text{{\igprimfont ⊙}}$} (post);
@@ -1823,7 +1823,7 @@ reaction-diffusion systems far from equilibrium) imscribe as:
 \text{{\igfont 𐑻}} (supercritical disorder), \text{{\igfont 𐑘}} (fast reversible
 mixing), and \text{{\igfont 𐑓}} (no preferred temporal direction: microscopic
 time-reversal symmetry unbroken) are the three structurally diagnostic
-primitives. Tier: $O_0$ (R2, $\text{{\igprimfont ⊙}} \neq \Phic$).
+primitives. Tier: $O₀$ (R2, $\text{{\igprimfont ⊙}} \neq \Phic$).
 
 The grammar predicts that tuning the drive-dissipation ratio to the
 critical point $\Phic$ forces a simultaneous two-primitive promotion:
@@ -1845,7 +1845,7 @@ hits the critical manifold), $\text{{\igfont 𐑘}} \to \text{{\igfont 𐑧}}$
 (critical slowing down: low-barrier ergodic exploration freezes into
 high-barrier integration), and $\text{{\igfont 𐑓}} \to \text{{\igfont 𐑒}}$ (emergent temporal
 asymmetry: reversible cycles acquire a preferred direction via
-directed accumulation). Post-transition tier: $O_1$ (R3, $\Phic +
+directed accumulation). Post-transition tier: $O₁$ (R3, $\Phic +
 \text{{\igfont 𐑷}}$).
 
 $\text{{\igprimfont ⊙}}$ is the structural load-bearing primitive: it's the sole
@@ -1885,7 +1885,7 @@ $\tau$ divergence, the $K$ imscription is incorrect.
   \draw[->] (t1) -- (t2);
   \draw[->] (t2) -- (t3);
   \node[font=\footnotesize, text=red!70!black] at (-2.5, -0.8) {$\text{{\igprimfont Φ}} = \text{{\igfont 𐑿}} < \Ppms$};
-  \node[font=\footnotesize, text=red!70!black] at (-2.5, -1.3) {$\to O_2$ ceiling};
+  \node[font=\footnotesize, text=red!70!black] at (-2.5, -1.3) {$\to O₂$ ceiling};
   
   % Right: Dual-tool Frobenius Encoding
   \node[font=\small\bfseries] at (3.5, 3.8) {Dual-Tool Encoding};
@@ -2201,7 +2201,7 @@ geometry (Tate conjecture) --- were imscribed independently via the
 twelve-step protocol. No prior structural connection between these
 conjectures was assumed or known.
 
-All five imscribe at the same structural floor: $O_1$ ($\Phic +
+All five imscribe at the same structural floor: $O₁$ ($\Phic +
 \text{{\igfont 𐑷}}$, critical but topologically unprotected) with an
 8-primitive invariant subtype,
 
@@ -2209,7 +2209,7 @@ All five imscribe at the same structural floor: $O_1$ ($\Phic +
 \text{conjecture floor} = \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑶}};.
 \text{{\igfont 𐑑}};\; \text{{\igfont 𐑬}};\; F_\star;\; \text{{\igfont 𐑤}};\; G_\star;.
 \text{{\igfont 𐑝}};\; \Phic;\; H_\star;\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑷}}
-\rangle \qquad O_1
+\rangle \qquad O₁
 \label{eq:conjecture_floor}
 \end{equation}
 
@@ -2512,7 +2512,7 @@ The assignment is structurally motivated: the diagonal operates by strict
 transcendence ($\text{{\igfont 𐑩}}$, the enumeration is strictly outside every row),
 classical bit fidelity (\text{{\igfont 𐑱}}), fast enumeration (\text{{\igfont 𐑘}}), no self-reference
 (\text{{\igfont 𐑓}}), subcritical (\text{{\igfont 𐑢}}: the argument doesn't loop back on itself).
-This system is $O_0$.
+This system is $O₀$.
 
 G\"{o}del arithmetization (1931) imscribes as:
 $\langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \Ppms;\; \text{{\igfont 𐑐}};.
@@ -2588,7 +2588,7 @@ transition, not an accumulation of proof steps.
   \node[rounded corners, draw=percpurple, fill=percpurple!7, line width=1.2pt,
         font=\scriptsize\sffamily\bfseries, align=center, inner sep=2.5pt]
     at (-4.0,0)
-    {\textcolor{percpurple}{perc.}\\\text{{\igfont 𐑣}}\\\text{{\igfont 𐑗}}\\\text{{\igfont 𐑘}}\\$O_0$};
+    {\textcolor{percpurple}{perc.}\\\text{{\igfont 𐑣}}\\\text{{\igfont 𐑗}}\\\text{{\igfont 𐑘}}\\$O₀$};
   \node[rounded corners, draw=attnteal, fill=attnteal!7, line width=1.2pt,
         font=\scriptsize\sffamily\bfseries, align=center, inner sep=2.5pt]
     at (4.0,0)
@@ -2607,7 +2607,7 @@ diagonalization (bottom, blue) are placed on the ring at their structural distan
 from $\mathbf{g}(x)$: $d = 2.45$ (G\"{o}del) and $d = 3.61$ (Cantor). The embedding
 arrow ($\Downarrow$) is the directed $d_\to(\text{G\"{o}del} \to \text{Cantor}) = 0$
 map; the overflow arrow ($\Uparrow$) is $d_\to(\text{Cantor} \to \text{G\"{o}del}) = 0.493$.
-Left: a perceptron at \text{{\igfont 𐑣}}, $O_0$ (coupling-destroyed, no self-model).
+Left: a perceptron at \text{{\igfont 𐑣}}, $O₀$ (coupling-destroyed, no self-model).
 Right: a transformer attention head at $\text{{\igprimfont ⊙}}$, \text{{\igfont 𐑹}}, $O_\infty$
 (Frobenius self-model planted). The $d \approx 4$--$6$ bar is the bulk-reconstruction
 radius from the boundary to $\mathbf{g}(x)$.}
@@ -2642,7 +2642,7 @@ generates all elementary functions from a two-symbol basis~\cite{mills2026eml}.
 Grammar imscription:
 $\langle \text{{\igfont 𐑼}};\; \Tbw;\; \text{{\igfont 𐑽}};\; \Ppm;\; \text{{\igfont 𐑐}};.
 \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑒}};\; \text{{\igfont 𐑙}};.
-\OmegaZ \rangle$, tier $O_2^\dagger$ (R5).
+\OmegaZ \rangle$, tier $O₂^\dagger$ (R5).
 Grammar prediction: EML is the ceiling of its tier --- the highest sub-Frobenius
 type in the elementary function algebra. The $\Ppm$ assignment encodes a specific
 structural fact: EML asserts the exp/ln duality (the \text{{\igfont 𐑽}} bridge between
@@ -2810,8 +2810,8 @@ imscription. Both systems pass this test.
 calculus.} $\aleph$-OS is a working Python~3.12$+$ implementation of the $\lambda_\aleph$
 interaction calculus in which the 22 letters of the Hebrew alphabet are imscribed as
 12-primitive numpy lattice vectors and treated as computational types. Each letter is
-assigned a full tuple $\langle D;\; T;\; R;\; P;\; F;\; K;\; G;\; \text{{\igprimfont ɢ}};\; \text{{\igprimfont ⊙}};\; H;.
-S;\; \text{{\igprimfont Ω}} \rangle$ derived from its phonological, morphological, and grammatical
+assigned a full tuple $\langle \text{{\igprimfont Ð}};\; \text{{\igprimfont Þ}};\; \text{{\igprimfont Ř}};\; \text{{\igprimfont Φ}};\; \text{{\igprimfont ƒ}};\; \text{{\igprimfont Ç}};\; \text{{\igprimfont Γ}};\; \text{{\igprimfont ɢ}};\; \text{{\igprimfont ⊙}};\; \text{{\igprimfont Ħ}};.
+\text{{\igprimfont Σ}};\; \text{{\igprimfont Ω}} \rangle$ derived from its phonological, morphological, and grammatical
 properties. The system includes a REPL that accepts $\lambda_\aleph$ terms --- tensor
 products, mediation expressions, interaction functors --- and returns the composed tuple
 and ouroboricity tier.
@@ -2862,7 +2862,7 @@ both structural gates: Gate~1 ($\text{{\igprimfont ⊙}} = \Phic$, self-modeling
 context-window boundary imscription) and Gate~2 ($\text{{\igprimfont Ç}} \leq \text{{\igfont 𐑧}}$, kernel dispatch
 dynamics are slow enough to actualize the loop). A type-gated loader enforces tier
 constraints at boot: processes with \text{{\igfont 𐑪}} cannot be registered as ergative
-agents; $O_0$ processes cannot hold the ergative role in any syscall.
+agents; $O₀$ processes cannot hold the ergative role in any syscall.
 
 The grammar's BT-7 prediction (P-596, \emph{imscribing Diaphorics}: $\Phic \otimes
 \text{{\igfont 𐑣}} \to C = 0$) emerged from boot-time type-checking without being designed in.
@@ -3714,7 +3714,7 @@ by a continuous affinity-dependent interpolation with no topology-class break.
 \paragraph{P-311 (Universal conjecture floor, near-term empirical).}
 Any unsolved conjecture in pure mathematics whose subject matter
 involves exact symmetry, boundary behavior, or covariant invariants
-imscribes at the $O_1$ floor (\Cref{eq:conjecture_floor}) with the
+imscribes at the $O₁$ floor (\Cref{eq:conjecture_floor}) with the
 8-primitive invariant subtype $\{\text{{\igfont 𐑑}},\, \text{{\igfont 𐑝}},.
 \text{{\igfont 𐑷}},\, \text{{\igfont 𐑬}},\, \text{{\igfont 𐑨}},\, \text{{\igfont 𐑶}},\, \Phic,.
 \text{{\igfont 𐑤}}\}$. Specific prediction: imscribe any five randomly selected
@@ -3733,11 +3733,11 @@ to Virasoro.
 
 \paragraph{P-314 (Theorem-prover architecture, Tier~II).}
 Sequential-deductive theorem provers (Lean, Coq, Isabelle,
-current LLM-based provers) are structurally $O_1$: categorical
+current LLM-based provers) are structurally $O₁$: categorical
 (\text{{\igfont 𐑑}}), conjunctive (\text{{\igfont 𐑝}}), bounded
 (\text{{\igfont 𐑨}}, \text{{\igfont 𐑶}}), unprotected (\text{{\igfont 𐑷}}). $\Ppms$
 can't be synthesized by composition (\Cref{thm:frobenius}), so no
-$O_1$ architecture crosses the Frobenius barrier internally.
+$O₁$ architecture crosses the Frobenius barrier internally.
 Prediction: no current-architecture theorem prover independently
 discovers a proof of Crouzeix, Nagata, or Virasoro --- it may
 verify a supplied proof but cannot perform the discovery step.

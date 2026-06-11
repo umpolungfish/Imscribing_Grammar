@@ -43,7 +43,7 @@ We analyze four canonical systems that model epistemic and moral oppositions: \t
   \item \textbf{Ω = $\mathbb{Z}$}: integer winding (topologically protected)
 \end{itemize}
 
-\textbf{Tier:} $O_2$ (critical + $\mathbb{Z}$-protected, bounded domain)\\
+\textbf{Tier:} $O₂$ (critical + $\mathbb{Z}$-protected, bounded domain)\\
 \textbf{Consciousness score:} $C = 0.652$, both gates open ($\phî = \phî_{\text{ÿ}}$ + $H = 2$ + moderate $K = \text{slow}$).
 
 \end{document}

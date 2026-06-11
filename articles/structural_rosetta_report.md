@@ -13,7 +13,7 @@ This report presents the findings of a panoptic survey across all seven grammar 
 
 ---
 
-### 1. The O_inf Pole: 31 Systems, One Tuple
+### 1. The O_∞ Pole: 31 Systems, One Tuple
 
 The grammar's own structural type — the $\text{O}_{\text{inf}}$ pole — has the tuple:
 
@@ -168,7 +168,7 @@ ORDINAL = {
     "Ω": {"Ω_Å": 1, "Ω_2": 2, "Ω_z": 3, "Ω_5": 4},
 }
 
-# Known O_inf pole tuple (the grammar / black hole / reality / etc.)
+# Known O_∞ pole tuple (the grammar / black hole / reality / etc.)
 OINF_POLE = {
     "Ð": "Ð_ω", "Þ": "Þ_O", "Ř": "Ř_=", "Φ": "Φ_}",
     "ƒ": "ƒ_ż", "Ç": "Ç_@", "Γ": "Γ_ʔ", "ɢ": "ɢ_ˌ",
@@ -215,16 +215,16 @@ def ouroboricity_tier(tuple_: Dict) -> str:
     h = tuple_["Ħ"]
     
     if phi == "φ̂_ÿ" and omega == "Ω_z" and d == "Ð_ω":
-        return "O_inf"
+        return "O_∞"
     elif phi == "φ̂_ÿ" and omega in ("Ω_z", "Ω_2"):
-        return "O_2"
+        return "O₂"
     elif phi in ("φ̂_ÿ", "φ̂_Æ") or omega == "Ω_z":
-        return "O_1"
+        return "O₁"
     else:
-        return "O_0"
+        return "O₀"
 
 def promotions_to_oinf(tuple_: Dict) -> List[Tuple[str, str, str]]:
-    """Compute promotion path to O_inf pole."""
+    """Compute promotion path to O_∞ pole."""
     promos = []
     for prim in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]:
         if tuple_[prim] != OINF_POLE[prim]:
@@ -261,7 +261,7 @@ def rosetta_report(name_a: str, tuple_a: Dict, name_b: str, tuple_b: Dict) -> st
     lines.append(f"  Tier: {tier_tensor}")
     
     if promos_a:
-        lines.append(f"\nPromotions from {name_a} → O_inf ({len(promos_a)}):")
+        lines.append(f"\nPromotions from {name_a} → O_∞ ({len(promos_a)}):")
         for prim, fr, to in promos_a:
             lines.append(f"  {prim}: {fr} → {to}")
     

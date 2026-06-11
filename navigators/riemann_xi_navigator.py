@@ -361,7 +361,7 @@ DEFINING_TUPLE = {
 }
 
 # Grammar prediction: d(riemann_xi_navigator, grammar_self_encode) = 0.0
-# Cardinality-One Theorem (P-490): all O_inf navigators map to address 6,734,591
+# Cardinality-One Theorem (P-490): all O_∞ navigators map to address 6,734,591
 
 
 # ── Training ────────────────────────────────────────────────────────────────────

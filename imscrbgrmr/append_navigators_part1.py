@@ -56,7 +56,7 @@ def category_theory_describe():
     console.print(Panel(
         "[bold cyan]Category Theory Navigator[/bold cyan]\\n\\n"
         f"[bold]Tuple:[/bold]  {_CATEGORY_GRAMMAR}\\n\\n"
-        "[bold]Tier:[/bold]  O_∞  (R_ctz + G_revapostrophe → O_inf closure)\\n\\n"
+        "[bold]Tier:[/bold]  O_∞  (R_ctz + G_revapostrophe → O_∞ closure)\\n\\n"
         "[bold]Architecture mandates:[/bold]\\n"
         "  D_omega / T_openo  → imscriptive encoding: object→arrow→2-arrow hierarchy\\n"
         "  R_ctz            → categorical relations: functors, natural transformations\\n"

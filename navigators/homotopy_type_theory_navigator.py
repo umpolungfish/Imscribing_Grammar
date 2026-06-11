@@ -3,7 +3,7 @@ Homotopy Type Theory Navigator - Imscribing Grammar
 
 Domain: Homotopy type theory, univalent foundations, higher topos theory
 Structural type: <𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑴>
-Tier: O_inf
+Tier: O_∞
 
 Architecture: Univalence-preserving GNN with univalence axiom enforcement.
   - 𐑦: Imscriptive encoding of types and paths
@@ -39,7 +39,7 @@ class HTTConfig:
         )
         self.domain = "Homotopy type theory, univalent foundations, higher topos theory"
         self.tuple = "𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑴"
-        self.tier = "O_inf"
+        self.tier = "O_∞"
         self.architecture = (
             "Univalence-preserving GNN - types communicate via path channels; "
             "higher groupoid computation via iterative path space expansion; "

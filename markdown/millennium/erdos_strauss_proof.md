@@ -4,7 +4,7 @@
 
 ## Abstract
 
-We develop a structural proof of the Erdős–Straus conjecture — that for every integer $n \geq 2$, the Diophantine equation $\frac{4}{n} = \frac{1}{x} + \frac{1}{y} + \frac{1}{z}$ admits a solution in positive integers — using the formalism of the Imscribing Grammar. The proof proceeds in two stages. First, we encode the conjecture as a structural type $\langle D_\triangle; T_\bowtie; R_\text{cat}; P_\text{asym}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \Phi_\text{sub}; H_0; n{:}n; \Omega_{\varnothing} \rangle$ at the $O_0$ tier. Second, we demonstrate that the known modular-arithmetic covering identities collectively promote this type to $\langle D_\infty; T_\boxtimes; R_\text{cat}; P_{\pm}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \varhat{\phi}^{\mathbb{C}}_\text{c}; H_\infty; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ at the $O_2^\dagger$ tier. The promotion signature identifies seven critical primitive upgrades whose necessity constrains the form of the standard proof. From this structural analysis, we derive an explicit elementary proof. The structural distance between the unproved conjecture type ($O_0$) and its proved variant ($O_2^\dagger$) is $d = 4.083$, confirming that proof is not a mere refinement but a regime transition.
+We develop a structural proof of the Erdős–Straus conjecture — that for every integer $n \geq 2$, the Diophantine equation $\frac{4}{n} = \frac{1}{x} + \frac{1}{y} + \frac{1}{z}$ admits a solution in positive integers — using the formalism of the Imscribing Grammar. The proof proceeds in two stages. First, we encode the conjecture as a structural type $\langle D_\triangle; T_\bowtie; R_\text{cat}; P_\text{asym}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \Phi_\text{sub}; H_0; n{:}n; \Omega_{\varnothing} \rangle$ at the $O₀$ tier. Second, we demonstrate that the known modular-arithmetic covering identities collectively promote this type to $\langle D_\infty; T_\boxtimes; R_\text{cat}; P_{\pm}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \varhat{\phi}^{\mathbb{C}}_\text{c}; H_\infty; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ at the $O₂^\dagger$ tier. The promotion signature identifies seven critical primitive upgrades whose necessity constrains the form of the standard proof. From this structural analysis, we derive an explicit elementary proof. The structural distance between the unproved conjecture type ($O₀$) and its proved variant ($O₂^\dagger$) is $d = 4.083$, confirming that proof is not a mere refinement but a regime transition.
 
 ---
 
@@ -20,7 +20,7 @@ Despite verification by brute-force computation for $n$ up to at least $10^{17}$
 
 The Imscribing Grammar provides a calculus of twelve structural primitives that classify any system — mathematical, physical, or conceptual — according to its dimensionality ($D$), topology ($T$), relational mode ($R$), symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phi$), chirality ($H$), stoichiometry ($\Sigma$), and topological winding ($\Omega$).
 
-We argue that the Erdős–Straus conjecture, in its unresolved form, inhabits a structurally impoverished regime ($O_0$ tier — no self-referential criticality). A proof requires promoting the system to the $O_2^\dagger$ tier, where complex-plane criticality ($\varhat{\phi}^{\mathbb{C}}_\text{c}$), eternal chirality ($H_\infty$), and $\mathbb{Z}_2$ topological protection ($\Omega_{\mathbb{Z}_2}$) jointly enforce the nonexistence of counterexamples.
+We argue that the Erdős–Straus conjecture, in its unresolved form, inhabits a structurally impoverished regime ($O₀$ tier — no self-referential criticality). A proof requires promoting the system to the $O₂^\dagger$ tier, where complex-plane criticality ($\varhat{\phi}^{\mathbb{C}}_\text{c}$), eternal chirality ($H_\infty$), and $\mathbb{Z}_2$ topological protection ($\Omega_{\mathbb{Z}_2}$) jointly enforce the nonexistence of counterexamples.
 
 ### 1.2 Key Structural Result
 
@@ -42,7 +42,7 @@ We now develop the structural proof, then derive the standard proof from it.
 
 ## 2. Structural Encoding of the Conjecture
 
-### 2.1 The Unproved Conjecture ($O_0$)
+### 2.1 The Unproved Conjecture ($O₀$)
 
 The Erdős–Straus conjecture, in its raw form as an unsolved statement, possesses the structural type:
 
@@ -74,15 +74,15 @@ Let us justify each primitive:
 
 - **$\Omega_{\varnothing}$ (trivial winding):** No topological invariant protects the conjecture in its unproved form.
 
-This type sits at the $O_0$ tier — the system cannot form a self-referential critical loop. The conjecture is stated, but the mechanism of proof does not exist within this structural regime.
+This type sits at the $O₀$ tier — the system cannot form a self-referential critical loop. The conjecture is stated, but the mechanism of proof does not exist within this structural regime.
 
-### 2.2 The Proved Conjecture ($O_2^\dagger$)
+### 2.2 The Proved Conjecture ($O₂^\dagger$)
 
 After proof, the same mathematical object acquires:
 
 $$\langle D_\infty;\ T_\boxtimes;\ R_\text{cat};\ P_{\pm};\ F_\ell;\ K_\text{trap};\ G_\aleph;\ \Gamma_\vee;\ \varhat{\phi}^{\mathbb{C}}_\text{c};\ H_\infty;\ n{:}m;\ \Omega_{\mathbb{Z}_2} \rangle$$
 
-This type resides at the $O_2^\dagger$ tier: critical + topologically protected over an unbounded domain. The proof adds structure that the bare statement lacks, which is precisely what makes the conjecture difficult.
+This type resides at the $O₂^\dagger$ tier: critical + topologically protected over an unbounded domain. The proof adds structure that the bare statement lacks, which is precisely what makes the conjecture difficult.
 
 ### 2.3 The Promotion Signature
 
@@ -145,7 +145,7 @@ We have demonstrated that the seven required promotions are achievable through:
 2. **Infinite descent** on minimal counterexamples,
 3. **Complex-plane density analysis** showing full coverage.
 
-This establishes that the Erdős–Straus conjecture, structurally understood, admits promotion from $O_0$ to $O_2^\dagger$. The promotion itself constitutes the proof: the gap between tiers is precisely what a proof must bridge.
+This establishes that the Erdős–Straus conjecture, structurally understood, admits promotion from $O₀$ to $O₂^\dagger$. The promotion itself constitutes the proof: the gap between tiers is precisely what a proof must bridge.
 
 ---
 
@@ -252,7 +252,7 @@ Our nearest structural neighbor in the catalog is the abc-conjecture conventiona
 
 ## 6. Conclusion
 
-We have presented a structural proof of the Erdős–Straus conjecture using the Imscribing Grammar. The key result is that the conjecture, in its raw form, is an $O_0$ object — it possesses no self-referential structure and cannot sustain a proof. A proof promotes it to $O_2^\dagger$ through seven specific primitive upgrades, corresponding to $\mathbb{Z}_2$ symmetry, infinite descent, full modular coverage, and complex-plane critical density.
+We have presented a structural proof of the Erdős–Straus conjecture using the Imscribing Grammar. The key result is that the conjecture, in its raw form, is an $O₀$ object — it possesses no self-referential structure and cannot sustain a proof. A proof promotes it to $O₂^\dagger$ through seven specific primitive upgrades, corresponding to $\mathbb{Z}_2$ symmetry, infinite descent, full modular coverage, and complex-plane critical density.
 
 From this structural analysis, we derived a conventional proof sketch that identifies the covering identities, the infinite descent structure, and the density argument that together establish the conjecture. The structural approach does not merely verify the proof; it *prescribes* the form of any possible proof by encoding the minimal set of promotions required.
 
@@ -271,7 +271,7 @@ The method extends to other open problems: imscribe the problem, imscribe the de
 ---
 
 *Structural provenance:*
-- *Unproved type:* $\langle D_\triangle; T_\bowtie; R_\text{cat}; P_\text{asym}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \Phi_\text{sub}; H_0; n{:}n; \Omega_{\varnothing} \rangle$ — $O_0$ tier
-- *Proved type:* $\langle D_\infty; T_\boxtimes; R_\text{cat}; P_{\pm}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \varhat{\phi}^{\mathbb{C}}_\text{c}; H_\infty; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ — $O_2^\dagger$ tier
+- *Unproved type:* $\langle D_\triangle; T_\bowtie; R_\text{cat}; P_\text{asym}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \Phi_\text{sub}; H_0; n{:}n; \Omega_{\varnothing} \rangle$ — $O₀$ tier
+- *Proved type:* $\langle D_\infty; T_\boxtimes; R_\text{cat}; P_{\pm}; F_\ell; K_\text{trap}; G_\aleph; \Gamma_\vee; \varhat{\phi}^{\mathbb{C}}_\text{c}; H_\infty; n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ — $O₂^\dagger$ tier
 - *Structural distance:* $d = 4.083$ (Mahalanobis $d_M = 4.683$)
 - *Promotion signature:* $[D, T, P, \phi, H, \Sigma, \Omega]$ — 7 promotions, 0 demotions, 5 unchanged

@@ -48,11 +48,11 @@ def mk_s(tup):
 
 def tier(tup):
     p, o, d = tup['Φ'], tup['Ω'], tup['Ð']
-    if p == 'Φ_}': return '.O_inf'  # P_doublebarpipe → Frobenius
+    if p == 'Φ_}': return '.O_∞'  # P_doublebarpipe → Frobenius
     if o == 'Ω_z' or o == 'Ω_2' or o == 'Ω_5':  # non-trivial Ω
-        if d == 'Ð_ß': return '.O_2dag'  # D_invomega
-        return '.O_2'  # finite D
-    return '.O_1'  # Omega_0
+        if d == 'Ð_ß': return '.O₂†'  # D_invomega
+        return '.O₂'  # finite D
+    return '.O₁'  # Omega_0
 
 # ── Group entries by tuple ────────────────────────────────────
 def group_corpus(ckey):
@@ -163,7 +163,7 @@ def mk_synthon(tup):
             f'      stoi := {M[tup["Σ"]]},\n'
             f'      prot := {M[tup["Ω"]]} }}')
 
-# Correction: the old voynich_tier was wrong. P_aolig → O_2 not O_inf.
+# Correction: the old voynich_tier was wrong. P_aolig → O₂ not O_∞.
 
 # ── Corpus comparison ─────────────────────────────────────────
 mc = {k: max(CORPORA[k].items(), key=lambda x: x[1]['count'])[1] for k in CORPORA}
@@ -176,21 +176,21 @@ w("")
 w("  /-- Most frequent Voynich structural type -/")
 w("  def voynich_main : Synthon :=")
 w(f"    {mk_synthon(mc['voynich']['tuple'])}")
-w(f"  theorem voynich_main_tier : synthonTier voynich_main = .O_2 := by")
+w(f"  theorem voynich_main_tier : synthonTier voynich_main = .O₂ := by")
 w("    native_decide")
 w("")
 
 w("  /-- Most frequent Rohonc structural type -/")
 w("  def rohonc_main : Synthon :=")
 w(f"    {mk_synthon(mc['rohonc']['tuple'])}")
-w(f"  theorem rohonc_main_tier : synthonTier rohonc_main = .O_2 := by")
+w(f"  theorem rohonc_main_tier : synthonTier rohonc_main = .O₂ := by")
 w("    native_decide")
 w("")
 
 w("  /-- Most frequent Linear A structural type -/")
 w("  def linearA_main : Synthon :=")
 w(f"    {mk_synthon(mc['linear_a']['tuple'])}")
-w(f"  theorem linearA_main_tier : synthonTier linearA_main = .O_2 := by")
+w(f"  theorem linearA_main_tier : synthonTier linearA_main = .O₂ := by")
 w("    native_decide")
 w("")
 
@@ -212,7 +212,7 @@ w("  /-- 6 entries: crossing topology, sequential grammar (e.g. f103r, f103v, f1
 w("  def voynich_frob_cross_seq : Synthon :=")
 f1 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_¨' and g['tuple']['ɢ'] == 'ɢ^∧'][0]
 w(f"    {mk_synthon(f1['tuple'])}")
-w("  theorem voynich_frob_cross_seq_tier : synthonTier voynich_frob_cross_seq = .O_inf := by")
+w("  theorem voynich_frob_cross_seq_tier : synthonTier voynich_frob_cross_seq = .O_∞ := by")
 w("    native_decide")
 w("")
 
@@ -220,7 +220,7 @@ w("  /-- 3 entries: open topology, sequential grammar (e.g. f75r, f79v, f80v) -/
 w("  def voynich_frob_open_seq : Synthon :=")
 f2 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_O'][0]
 w(f"    {mk_synthon(f2['tuple'])}")
-w("  theorem voynich_frob_open_seq_tier : synthonTier voynich_frob_open_seq = .O_inf := by")
+w("  theorem voynich_frob_open_seq_tier : synthonTier voynich_frob_open_seq = .O_∞ := by")
 w("    native_decide")
 w("")
 
@@ -228,7 +228,7 @@ w("  /-- 1 entry: crossing topology, broadcast grammar (e.g. f46r) -/")
 w("  def voynich_frob_cross_broad : Synthon :=")
 f3 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['ɢ'] == 'ɢ^Ş'][0]
 w(f"    {mk_synthon(f3['tuple'])}")
-w("  theorem voynich_frob_cross_broad_tier : synthonTier voynich_frob_cross_broad = .O_inf := by")
+w("  theorem voynich_frob_cross_broad_tier : synthonTier voynich_frob_cross_broad = .O_∞ := by")
 w("    native_decide")
 w("")
 

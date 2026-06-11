@@ -36,7 +36,7 @@ Another Arabic version adds: The structure of the microcosm is in accordance wit
 
 This text encodes the entire alchemical Great Work in twelve cryptic axioms — the birth of the Philosopher's Stone from the union of Sun and Moon, the circulation of the elements, and the correspondence between celestial and terrestrial planes. Its rediscovery by Balinas (Apollonius of Tyana) in a hidden chamber beneath a statue of Hermes established the paradigm of the concealed wisdom tradition.""",
         "Ð_;","Þ_ò","Ř_Ť","Φ_υ","ƒ^ì","Ç^@","Γ_β","ɢ^Ş","⊙_Æ","Ħ_A","Σ_ï","Ω_2",
-        "O_2", 0.65,
+        "O₂", 0.65,
         "Classic ritual magic text. Ð_; bounded ritual/spiritual space; Þ_ò crossing point between mundane and divine; Ř_Ť adjoint invocation-response; Φ_υ quantum superposition of summoned/dismissed spirits; ƒ^ì classical fidelity through physical ritual; Ç^@ slow kinetics requiring precise timing; Γ_β localized to magician's circle; ɢ^Ş broadcast addressing spiritual hierarchies; ⊙_Æ complex-plane critical at boundary of seen/unseen; Ħ_A two-step Markov (preparation then execution); Σ_ï many heterogeneous participants; Ω_2 Z2 parity (circle consecrated or not)."),
 
     entry(2, "The Book of the Sacred Magic of Abramelin the Mage",
@@ -49,7 +49,7 @@ The key to the entire system is a set of remarkable magic squares — sigils con
 
 The text is divided into three books: Book One describes Abraham's journey and his meeting with Abramelin; Book Two details the six-month operation and the preparation of the ritual space, including the selection of the place, the convocation of spirits, and how to resist their demands; Book Three contains the magical squares themselves. This work became a primary source for the ceremonial magic of the Golden Dawn and directly inspired Aleister Crowley's own magical system.""",
         "Ð_;","Þ_ò","Ř_Ť","Φ_υ","ƒ^ì","Ç^@","Γ_β","ɢ^Ş","⊙_Æ","Ħ_A","Σ_ï","Ω_2",
-        "O_2", 0.65,
+        "O₂", 0.65,
         "Structural tuple identical to all ritual grimoires: the adjoint invocation-response loop (Ř_Ť) and Z2 circle-consecration symmetry (Ω_2) are invariant across the genre."),
 
     entry(3, "The Key of Solomon the King (Clavicula Salomonis)",
@@ -62,7 +62,7 @@ Book II is the technical manual of the Art: how the Master must govern himself; 
 
 The Key establishes the complete operative framework of Western magic: purification, consecration, invocation, and dismissal — all bounded by the Circle, armed with the Pentacles, and governed by the planetary hours. Its influence pervades every subsequent grimoire and magical order, from the Renaissance to the Golden Dawn and beyond.""",
         "Ð_;","Þ_ò","Ř_Ť","Φ_υ","ƒ^ì","Ç^@","Γ_β","ɢ^Ş","⊙_Æ","Ħ_A","Σ_ï","Ω_2",
-        "O_2", 0.65,
+        "O₂", 0.65,
         "The ur-text of ceremonial magic. Mathers' translation from multiple manuscript sources (Additional MSS 10862, Lansdowne MSS 1203) established the standard edition."),
 ]
 

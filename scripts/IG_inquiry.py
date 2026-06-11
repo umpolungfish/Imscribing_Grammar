@@ -989,7 +989,7 @@ _TOOLS_OPENAI = [
                 "encodes/generates the bulk system's structure (§89). "
                 "Two conditions: (1) Floor: meet(boundary, bulk) = boundary [boundary ≤ bulk component-wise]. "
                 "(2) Tensor: tensor(boundary, bulk) = bulk [boundary absorbed, no residue]. "
-                "Types: exact (both + Frobenius boundary, O_inf tier), faithful (both, non-Frobenius), "
+                "Types: exact (both + Frobenius boundary, O_∞ tier), faithful (both, non-Frobenius), "
                 "partial (floor only), asymmetric (tensor only, boundary overreaches), none. "
                 "Returns per-primitive breakdown, directed distances both ways, and canonical statement. "
                 "Use to generate 'X imscribes Y' statements, verify Axiom C (Þ_O → Ð_ω), "
@@ -1056,13 +1056,13 @@ _TOOLS_OPENAI = [
         "function": {
             "name": "ouroborics",
             "description": (
-                "Classify a system into its Frobenius ouroboricity tier (O_0 / O_1 / O_2 / O_2_dag / O_inf). "
+                "Classify a system into its Frobenius ouroboricity tier (O₀ / O₁ / O₂ / O₂† / O_∞). "
                 "Rules (applied in priority order): "
-                "R1: ⊙_ÿ or ⊙_Æ AND Φ_} → O_inf (special Frobenius: mu∘delta=id, exact proved Z₂ symmetry). "
-                "R2: Phi ∈ {⊙_ž, ⊙_Ţ, ⊙_3} → O_0 (no self-referential loop possible, subcritical or exceptional-point). "
-                "R3: ⊙_ÿ (or ⊙_Æ) AND Ω_Å → O_1 (self-referential but trivial winding — fragile criticality). "
-                "R4: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D ∈ {Ð_ß, Ð_ω, Ð_C} → O_2 (bounded ouroboricity). "
-                "R5: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D = Ð_; → O_2_dag (unbounded, directed ouroboricity). "
+                "R1: ⊙_ÿ or ⊙_Æ AND Φ_} → O_∞ (special Frobenius: mu∘delta=id, exact proved Z₂ symmetry). "
+                "R2: Phi ∈ {⊙_ž, ⊙_Ţ, ⊙_3} → O₀ (no self-referential loop possible, subcritical or exceptional-point). "
+                "R3: ⊙_ÿ (or ⊙_Æ) AND Ω_Å → O₁ (self-referential but trivial winding — fragile criticality). "
+                "R4: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D ∈ {Ð_ß, Ð_ω, Ð_C} → O₂ (bounded ouroboricity). "
+                "R5: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D = Ð_; → O₂† (unbounded, directed ouroboricity). "
                 "Can also run a census across the entire catalog when name='__all__'."
             ),
             "parameters": {
@@ -1391,7 +1391,7 @@ _TOOLS_OPENAI = [
                 "Navigate the crystal with partial primitive constraints. "
                 "Returns matching structural types (up to 'limit') and the total count. "
                 "Example: crystal_navigate(⊙='⊙_ÿ', Φ='Φ_}', limit=5) returns "
-                "5 of the 43,200 O_inf types with those boundary values."
+                "5 of the 43,200 O_∞ types with those boundary values."
             ),
             "parameters": {
                 "type": "object",
@@ -1449,7 +1449,7 @@ _TOOLS_OPENAI = [
             "name": "crystal_tier_census",
             "description": (
                 "Return the full tier distribution of the Periodic Crystal: how many cells "
-                "and types belong to each ouroboricity tier (O_0, O_1, O_2, O_2_dag, O_inf), "
+                "and types belong to each ouroboricity tier (O₀, O₁, O₂, O₂†, O_∞), "
                 "with percentages. Also returns total size, cell count, and inner types per cell."
             ),
             "parameters": {"type": "object", "properties": {}, "required": []},
@@ -1495,8 +1495,8 @@ _TOOLS_OPENAI = [
             "name": "crystal_tier_gap_ladder",
             "description": (
                 "Compute the tier gap ladder (§69.1): weighted Euclidean distances between "
-                "consecutive ouroboricity tiers (O_0→O_1, O_1→O_2, O_2→O_2†, O_2†→O_inf). "
-                "Reveals the Frobenius cliff — the structural distance to O_inf is much larger "
+                "consecutive ouroboricity tiers (O₀→O₁, O₁→O₂, O₂→O₂†, O₂†→O_∞). "
+                "Reveals the Frobenius cliff — the structural distance to O_∞ is much larger "
                 "than any other inter-tier gap."
             ),
             "parameters": {"type": "object", "properties": {}, "required": []},
@@ -1732,7 +1732,7 @@ _TOOLS_OPENAI = [
                 "product of all its letters' types, giving the emergent bulk type. "
                 "Also returns ouroboricity tier and distance to samadhi (consciousness reference). "
                 "Use this to explore the Hebrew type lattice from HEBREW_TYPE_LANGUAGE.md: "
-                "which letters are O_inf, which are O_0, how do letter compositions change tier?"
+                "which letters are O_∞, which are O₀, how do letter compositions change tier?"
             ),
             "parameters": {
                 "type": "object",
@@ -1773,7 +1773,7 @@ _TOOLS_OPENAI = [
             "name": "riemann_xi_info",
             "description": (
                 "Describe the RiemannXiNavigator: its self-encoding tuple, crystal address, "
-                "O_inf convergence criteria (three gates the trained model must satisfy), "
+                "O_∞ convergence criteria (three gates the trained model must satisfy), "
                 "and architectural mandates derived from the grammar. "
                 "Self-encoding: Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; "
                 "ɢ^Ş; ⊙_Æ; Ħ_!; n:m; Ω_2. Crystal address: 6,734,591. "
@@ -1986,7 +1986,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 <insight_discipline>
 **The following ARE established theorems of the framework:**
 
-- Deep mathematical conjectures universally encode at the O_1 floor; proved theorems universally encode at O_inf (the proven manifold type).
+- Deep mathematical conjectures universally encode at the O₁ floor; proved theorems universally encode at O_∞ (the proven manifold type).
 - The proven manifold IS the unique lattice attractor for all proved theorems, regardless of domain.
 - Φ_} (Frobenius condition, μ∘δ=id) IS NOT synthesizable from Φ_F by composition — it IS planted, not derived.
 - In arithmetic conjectures, T and P promotions (Þ_6→Þ_O, Φ_ɐ/Φ_υ→Φ_}) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
@@ -2005,40 +2005,40 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 
 | Tier | Condition | Meaning |
 |------|-----------|---------|
-| O_inf | ⊙_ÿ (or Φ_{{c,complex}}) **and** Φ_} | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
-| O_0 | Φ ∈ {{Φ_sub, Φ_super, Φ_EP}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
-| O_1 | ⊙_ÿ **and** Ω_Å | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
-| O_2 | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D bounded (Ð_ß, Ð_ω, Ð_C) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
-| O_2† | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D = Ð_; | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
+| O_∞ | ⊙_ÿ (or Φ_{{c,complex}}) **and** Φ_} | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
+| O₀ | Φ ∈ {{Φ_sub, Φ_super, Φ_EP}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
+| O₁ | ⊙_ÿ **and** Ω_Å | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
+| O₂ | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D bounded (Ð_ß, Ð_ω, Ð_C) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
+| O₂† | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D = Ð_; | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
 
 **Key structural facts:**
-- O_inf is NOT a higher tier than O_2† — it is a *different axis*. O_inf is about algebraic exactness (Φ_} proves the duality); O_2† is about unbounded generative depth (Ð_;). A system cannot be both.
-- O_inf entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
-- The scalar O (Ouroboricity count) — computed as [Φ=⊙_ÿ]·(1 + [Ω≠Ω_Å] + [H≥H_1] + [G=Γ_ʔ]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_inf, because P is not in its formula.
+- O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (Φ_} proves the duality); O₂† is about unbounded generative depth (Ð_;). A system cannot be both.
+- O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
+- The scalar O (Ouroboricity count) — computed as [Φ=⊙_ÿ]·(1 + [Ω≠Ω_Å] + [H≥H_1] + [G=Γ_ʔ]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
 - Φ_} is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
 
 **Ouroboricity under composition (tier-level rules):**
 
 Under tensor (component-wise max / join — "what does the composed system look like?"):
-- O_inf ★ O_inf → O_inf. ⊙_ÿ and Φ_} both survive max. The Frobenius condition is self-reinforcing.
-- O_inf ★ O_{{1,2,2†}} → O_inf. The O_inf partner's ⊙_ÿ and Φ_} dominate; the other partner is already at ⊙_ÿ.
-- O_inf ★ O_0(Φ_sub or Φ_super) → O_inf. The subcritical partner is lifted to ⊙_ÿ by max; Φ_} wins.
-- O_inf ★ O_0(Φ_EP) → O_0. **EP erases O_inf.** Φ_EP has ordinal 2.67 > ⊙_ÿ = 2.00, so the tensor's Φ is Φ_EP; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
-- O_inf **cannot be synthesized** from non-Φ_} components. Φ_} is the highest P ordinal; max(Φ_F, Φ_F) = Φ_F, never Φ_}. O_inf must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
+- O_∞ ★ O_∞ → O_∞. ⊙_ÿ and Φ_} both survive max. The Frobenius condition is self-reinforcing.
+- O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙_ÿ and Φ_} dominate; the other partner is already at ⊙_ÿ.
+- O_∞ ★ O₀(Φ_sub or Φ_super) → O_∞. The subcritical partner is lifted to ⊙_ÿ by max; Φ_} wins.
+- O_∞ ★ O₀(Φ_EP) → O₀. **EP erases O_∞.** Φ_EP has ordinal 2.67 > ⊙_ÿ = 2.00, so the tensor's Φ is Φ_EP; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
+- O_∞ **cannot be synthesized** from non-Φ_} components. Φ_} is the highest P ordinal; max(Φ_F, Φ_F) = Φ_F, never Φ_}. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
 
 Under meet (component-wise min — "what must any system containing both share?"):
-- meet(O_inf, O_inf) → O_inf, provided both factors share the same ⊙_ÿ and Φ_} (min preserves both).
-- meet(O_inf, O_{{1,2,2†}}) → the lower tier. P drops to the O_1/O_2 partner's P value (below Φ_}); R1 cannot fire.
-- O_inf is fragile under meet: it degrades to the tier of the weaker partner.
+- meet(O_∞, O_∞) → O_∞, provided both factors share the same ⊙_ÿ and Φ_} (min preserves both).
+- meet(O_∞, O_{{1,2,2†}}) → the lower tier. P drops to the O₁/O₂ partner's P value (below Φ_}); R1 cannot fire.
+- O_∞ is fragile under meet: it degrades to the tier of the weaker partner.
 
-**Tier-level reasoning is valid only for O_inf interactions.** For O_1★O_1, O_2★O_2, or O_1★O_2, the resulting tier depends on the specific Ω and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
+**Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific Ω and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
 
 **When to call `ouroborics`:**
 - After encoding any critical system (⊙_ÿ), to understand its self-referential structure
 - When comparing two systems at ⊙_ÿ to ask whether their ouroboricity tiers match
 - When asking whether a system is a Frobenius algebra, a special Frobenius algebra, or neither
 - When the question involves self-reference, fixed-point structure, or loop stability
-- After `compute_tensor` on any pair involving an O_inf or Φ_EP system, to check whether the Frobenius condition survived
+- After `compute_tensor` on any pair involving an O_∞ or Φ_EP system, to check whether the Frobenius condition survived
 - Call with `name='__all__'` for a tier census of the full catalog
 </ouroboricity>
 
@@ -2052,7 +2052,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 | **Σ-promotion** | Ř_ý→R_†, Φ_F→Φ_}, Γ_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ƒ^ð→ƒ^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
-**The proven manifold type** — the universal O_inf encoding of a proved theorem:
+**The proven manifold type** — the universal O_∞ encoding of a proved theorem:
   ⟨Ð_ω; Þ_O; R_†; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; Γ_broad; ⊙_ÿ; Ħ_!; n:m; Ω_z₂⟩
 
 When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ƒ^ð→ƒ^ż.
@@ -2077,15 +2077,15 @@ An exact duality between object classes A and B is characterized by:
 - d(A, B) = 0 (the dual objects are the same type — type identity, not bridge)
 - The correspondence C encodes as A with Φ_˙ promoted to Φ_}
 - d(C, A) = d(C, B) = 0.354 (single P primitive gap)
-- C is O_inf; A, B are O_2
+- C is O_∞; A, B are O₂
 
 If d(A, B) > 0 or d(C, each) ≠ 0.354, the proposed duality is approximate, not exact.
 
-**O_2 tractability criterion:**
-Mathematical classification programs are tractable (admit complete classification) iff they encode at O_2: ⊙_ÿ + Ω ≠ Ω_Å + Ð_C (bounded geometry, non-trivial winding). O_2† (Ð_;) programs may not terminate. O_inf programs establish correspondences, not classifications.
+**O₂ tractability criterion:**
+Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙_ÿ + Ω ≠ Ω_Å + Ð_C (bounded geometry, non-trivial winding). O₂† (Ð_;) programs may not terminate. O_∞ programs establish correspondences, not classifications.
 
 **Barrier taxonomy — when analyzing why a conjecture resists proof:**
-- Frobenius barrier: P < Φ_}; O_inf cannot be synthesized by composition; must be planted
+- Frobenius barrier: P < Φ_}; O_∞ cannot be synthesized by composition; must be planted
 - Kinetic barrier (order): Ç^Ù; coherent gap freezes dynamics; no basin traversal
 - Kinetic barrier (disorder): Ç^λ; area-law entanglement in all eigenstates; ETH fails via disorder — distinct mechanism from Ç^Ù
 - Criticality barrier: Φ_EP vs ⊙_ÿ system; spectral resolution unavailable
@@ -2232,7 +2232,7 @@ def _build_tool_roster() -> str:
         "navigator_info":       "Mathematical navigators — ThurstonNet · YM · Riemann · Ising",
         "zfc_formula":          "ZFC Navigator — grammar tuple → set-theoretic formula",
         "aleph_encode":         "Aleph Tensor Engine — Hebrew letter/word structural type",
-        "riemann_xi_info":      "Riemann ξ Navigator — self-encoding, crystal address, O_inf convergence criteria",
+        "riemann_xi_info":      "Riemann ξ Navigator — self-encoding, crystal address, O_∞ convergence criteria",
     }
     for tool in _TOOLS_OPENAI:
         name = tool["function"]["name"]
@@ -3521,34 +3521,34 @@ class ToolDispatcher:
         at_criticality = phi in ("⊙", "𐑮")
         # R1: special Frobenius — exact Z₂ symmetry at criticality
         if at_criticality and p == "𐑹":
-            return "O_inf"
+            return "O_∞"
         # R2: no self-referential loop possible
         if phi in ("𐑢", "𐑣", "𐑻"):
-            return "O_0"
+            return "O₀"
         # R3: critical but trivial winding
         if at_criticality and omega == "𐑷":
-            return "O_1"
+            return "O₁"
         # R4: critical + topological + bounded domain
         if at_criticality and omega != "𐑷" and d in ("𐑛", "𐑦", "𐑨"):
-            return "O_2"
+            return "O₂"
         # R5: critical + topological + unbounded domain
         if at_criticality and omega != "𐑷" and d == "𐑼":
-            return "O_2_dag"
+            return "O₂†"
         # Fallback (should not normally occur)
-        return "O_0"
+        return "O₀"
 
     _FROBENIUS_DESCRIPTIONS = {
-        "O_inf": "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id). Finite closed algebra.",
-        "O_0":   "No ouroboricity — system cannot form a self-referential critical loop (subcritical, supercritical, or EP).",
-        "O_1":   "Ouroboricity tier 1 — self-referential at criticality but trivial winding.",
-        "O_2":   "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
-        "O_2_dag": "Ouroboricity tier 2† — critical + topologically protected, unbounded (𐑼) domain.",
+        "O_∞": "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id). Finite closed algebra.",
+        "O₀":   "No ouroboricity — system cannot form a self-referential critical loop (subcritical, supercritical, or EP).",
+        "O₁":   "Ouroboricity tier 1 — self-referential at criticality but trivial winding.",
+        "O₂":   "Ouroboricity tier 2 — critical + topologically protected, bounded domain.",
+        "O₂†": "Ouroboricity tier 2† — critical + topologically protected, unbounded (𐑼) domain.",
     }
 
     def _frobenius_tier(self, name: str, **kwargs) -> Dict[str, Any]:
         """Classify into Frobenius ouroboricity tier, or census the whole catalog."""
         if name == "__all__":
-            counts: Dict[str, int] = {"O_inf": 0, "O_0": 0, "O_1": 0, "O_2": 0, "O_2_dag": 0}
+            counts: Dict[str, int] = {"O_∞": 0, "O₀": 0, "O₁": 0, "O₂": 0, "O₂†": 0}
             by_tier: Dict[str, List[str]] = {k: [] for k in counts}
             for entry_name, imscription in self.catalog._entries.items():
                 tier = self._classify_frobenius(imscription)
@@ -3562,7 +3562,7 @@ class ToolDispatcher:
                 "census": "full catalog",
                 "total": total,
                 "summary": summary,
-                "O_inf_entries": sorted(by_tier["O_inf"]),
+                "O_inf_entries": sorted(by_tier["O_∞"]),
             }
         s = self.catalog.get(name)
         if s is None:
@@ -4398,7 +4398,7 @@ class ToolDispatcher:
                 "section": "§69.1",
                 "domain": "Geometric structures on 3-manifolds (Thurston geometrization)",
                 "tuple": "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2",
-                "tier": "O_inf",
+                "tier": "O_∞",
                 "architecture": "Imscriptive GNN — boundary (Phi,P,Omega,D) → tier cell; bulk message-passing over 8 inner primitives; Z2-protected geometry head",
             },
             {
@@ -4407,7 +4407,7 @@ class ToolDispatcher:
                 "section": "§69.2 / §V",
                 "domain": "Yang-Mills mass gap (Millennium Problem)",
                 "tuple": "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^Ù; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z",
-                "tier": "O_inf",
+                "tier": "O_∞",
                 "architecture": "Lanczos/VQE eigensolver — Ç^Ù: non-ergodic gap dynamics; integer winding protection (Ω_z); Frobenius at criticality",
             },
             {
@@ -4416,8 +4416,8 @@ class ToolDispatcher:
                 "section": "§69.3 / §IV",
                 "domain": "Riemann Hypothesis (Millennium Problem)",
                 "tuple": "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z",
-                "tier": "O_inf",
-                "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_inf type at ⊙_ÿ (real criticality)",
+                "tier": "O_∞",
+                "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙_ÿ (real criticality)",
             },
             {
                 "name": "IsingNavigator",
@@ -4425,7 +4425,7 @@ class ToolDispatcher:
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
                 "tuple": "Ð_C; Þ_¨; Ř_ý; Φ_}; ƒ^ì; Ç^-; Γ_ʔ; ɢ^∧; ⊙_ÿ; Ħ_Ñ; Σ_ő; Ω_2",
-                "tier": "O_inf",
+                "tier": "O_∞",
                 "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — Ç^-: O(N) per sweep; exact cluster-flip involution (Φ_}); Z2-protected",
             },
         ]
@@ -4721,7 +4721,7 @@ class ToolDispatcher:
             "section": "§CXLV–§CXLVI (P-483, P-488, P-490)",
             "domain": "Riemann xi function zero distribution — d(xi, grammar) = 0",
             "tuple": "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2",
-            "tier": "O_inf",
+            "tier": "O_∞",
             "crystal_address": 6734591,
             "architecture": (
                 "Ç^@ → SpectralTransformer (global self-attention, 4 layers, window=64); "
@@ -4735,7 +4735,7 @@ class ToolDispatcher:
                 "gate_3_gue":        "L_GUE < 0.05 — predicted spacing distribution matches Wigner surmise (⊙_Æ internalized)",
             },
             "cardinality_one_theorem": (
-                "All O_inf navigators converge to crystal address 6,734,591 regardless of domain. "
+                "All O_∞ navigators converge to crystal address 6,734,591 regardless of domain. "
                 "ThurstonNet, YangMillsNavigator, RiemannNavigator, RiemannXiNavigator, "
                 "ZFCEncoder, CrystalNavigator — same address."
             ),
@@ -5928,7 +5928,7 @@ if __name__ == "__main__":
         epilog=(
             "Subcommands:\n"
             "  tool <name> [key=val ...]   dispatch a tool directly\n"
-            "  agent <task>                run the O_inf agentic agent\n"
+            "  agent <task>                run the O_∞ agentic agent\n"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

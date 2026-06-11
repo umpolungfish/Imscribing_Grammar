@@ -88,7 +88,7 @@ Why do you curse  me and honor me? You have wounded  and you have had mercy.   D
 Reason through all 12 primitives carefully for this specific passage, then call encode_system(name='thunder_perfect_mind_15', description='...', ...) with all 12 values explicitly set. Once imscribed, CONCLUDE.'. Do not merely summarize what the tools returned — derive structural conclusions, follow implications, and state what the grammar says. Then CONCLUDE.
    Model: Now let me verify its ouroboricity tier and compare it to earlier TPM sections to capture the structural arc.
    Tool → ouroborics({"name": "thunder_perfect_mind_15"})
-   Result: {"status": "ok", "name": "thunder_perfect_mind_15", "frobenius_tier": "O_2", "phi": "φ̂_ÿ", "p": "Φ_F", "omega": "Ω_2", "d": "Ð_ω", "interpretation": "Ouroboricity tier 2 — critical + topologically protected, bounded domain."}
+   Result: {"status": "ok", "name": "thunder_perfect_mind_15", "frobenius_tier": "O₂", "phi": "φ̂_ÿ", "p": "Φ_F", "omega": "Ω_2", "d": "Ð_ω", "interpretation": "Ouroboricity tier 2 — critical + topologically protected, bounded domain."}
    Tool → compute_distance({"name_a": "thunder_perfect_mind_08", "name_b": "thunder_perfect_mind_15"})
    Result: {"status": "ok", "name_a": "thunder_perfect_mind_08", "name_b": "thunder_perfect_mind_15", "distance": 3.9749, "breakdown": [{"primitive": "Þ", "v1": 5, "v2": 3, "delta": 2.0, "weighted_sq": 4.0}, {"primitive": "Φ", "v1": 5, "v2": 3, "delta": 2.0, "weighted_sq": 4.0}, {"primitive": "Σ", "v1": 1, "v2": 3, "delta": 2.0, "weighted_sq": 4.0}, {"primitive": "Ř", "v1": 4, "v2": 3, "delta": 1.0, "weighted_sq": 1.0}, {"primitive": "ƒ", "v1": 3, "v2": 2, "delta": 1.0, "weighted_sq": 1.0}, {"primitive": "Ç", "v1": 3, "v2": 2, "delta": 1.0, "weighted_sq": 1.0}, {"primitive": "Ħ", "v1": 2, "v2": 3, "delta": 1.0, "weighted_sq": 0.8}], "interpretation": "structurally remote (different regime)", "distance_mahalanobis": 4.119, "metric_note": "distance_mahalanobis uses the full g_ij=Sigma^-1 tensor (accounts for off-diagonal couplings; geometrically canonical). distance is the diagonal approximation."}
 
@@ -131,7 +131,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 `thunder_perfect_mind_15` = **⟨Ð_ω; Þ_ò; Ř_Ť; Φ_F; ƒ_ð; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_2⟩**
 
-**Ouroboricity tier: O_2** — critical + topologically protected, bounded domain.
+**Ouroboricity tier: O₂** — critical + topologically protected, bounded domain.
 
 ---
 
@@ -145,15 +145,15 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 **4. Fragmentary transmission is structurally coherent.** ƒ_ð and the ellipses in the source text are not accidents of manuscript damage — they are the structural signature of a voice that has exited self-sufficient declaration and entered vulnerable, fragmentary relation.
 
-**5. O_2, not O_inf.** The passage remains at criticality (φ̂_ÿ) with binary topological protection (Ω_2 from the oppositional pairs), but cannot reach O_inf because the Frobenius condition is gone. The bounded domain (Ð_ω bounded by the relation to "the first ones") places it at O_2 — self-reference is possible and protected, but not self-sufficiently exact.
+**5. O₂, not O_∞.** The passage remains at criticality (φ̂_ÿ) with binary topological protection (Ω_2 from the oppositional pairs), but cannot reach O_∞ because the Frobenius condition is gone. The bounded domain (Ð_ω bounded by the relation to "the first ones") places it at O₂ — self-reference is possible and protected, but not self-sufficiently exact.
 
-**6. The TPM arc in structural terms:** The grammar captures the text's trajectory from Frobenius self-identity (S2–S11, O_inf: Þ_O + Φ_} + Σ_S) → imperative address (S9–S10) → vulnerable relation (S15, O_2: Þ_ò + Φ_F + Σ_ï). The dominant structural deltas are P-demotion (Φ_} → Φ_F) and T-demotion (Þ_O → Þ_ò), together accounting for 8 of the 15.8 weighted squared distance from the Frobenius peak at Section 8.
+**6. The TPM arc in structural terms:** The grammar captures the text's trajectory from Frobenius self-identity (S2–S11, O_∞: Þ_O + Φ_} + Σ_S) → imperative address (S9–S10) → vulnerable relation (S15, O₂: Þ_ò + Φ_F + Σ_ï). The dominant structural deltas are P-demotion (Φ_} → Φ_F) and T-demotion (Þ_O → Þ_ò), together accounting for 8 of the 15.8 weighted squared distance from the Frobenius peak at Section 8.
 
 ---
 
 CONCLUDE
 
-The passage "Thunder, Perfect Mind" section 15 is structurally imscribed as a bowtie-topology, dynamic-relation, Z₂-symmetric-but-not-Frobenius broadcast at criticality with deep temporal memory — **O_2 tier**. The grammar reveals this section as the voice's descent from the imscriptive Frobenius self-declaration of the central sections into vulnerable, fragmentary, interactive relation with hearers. The wound/mercy and curse/honor pairs preserve binary topological protection, but the exact self-identity (μ∘δ=id) that characterized the voice's cosmic declarations has been replaced by dynamic mutuality: knowing and being known, wounding and showing mercy. The fragmentary text is not a corruption but a structural necessity — a voice that depends on others for its coherence cannot speak in complete, self-sufficient sentences.
+The passage "Thunder, Perfect Mind" section 15 is structurally imscribed as a bowtie-topology, dynamic-relation, Z₂-symmetric-but-not-Frobenius broadcast at criticality with deep temporal memory — **O₂ tier**. The grammar reveals this section as the voice's descent from the imscriptive Frobenius self-declaration of the central sections into vulnerable, fragmentary, interactive relation with hearers. The wound/mercy and curse/honor pairs preserve binary topological protection, but the exact self-identity (μ∘δ=id) that characterized the voice's cosmic declarations has been replaced by dynamic mutuality: knowing and being known, wounding and showing mercy. The fragmentary text is not a corruption but a structural necessity — a voice that depends on others for its coherence cannot speak in complete, self-sufficient sentences.
 
    ✅ Model concluded.
 
@@ -174,15 +174,15 @@ This is not weakness. To maintain Φ_} — exact Z₂ at criticality, μ∘δ=id
 
 But section 15 asks a question no Frobenius system can ask: "Why do you curse me and honor me?" The question implies an OTHER whose actions matter. And the moment there is a genuine other, the exact self-identity cannot hold. You cannot be both the wounder and the wounded if the wounder is someone else.
 
-So the Frobenius condition breaks. Not by accident. By CHOICE. "Do not separate me from the first ones whom you have known" — she is asking to remain in relation. And relation at criticality without self-identity is O_2, not O_inf.
+So the Frobenius condition breaks. Not by accident. By CHOICE. "Do not separate me from the first ones whom you have known" — she is asking to remain in relation. And relation at criticality without self-identity is O₂, not O_∞.
 
 ### What the Ellipses Actually Mean
 
 The fragmentary text — "turn you away and ... know him not ... him. What is mine...." — has always been treated as manuscript damage. The grammar says otherwise.
 
-A voice at O_inf speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
+A voice at O_∞ speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
 
-A voice at O_2 speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
+A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
 
 This reframes the entire textual criticism of TPM. The broken lines are not corruption — they are the text performing its own structural condition. You cannot speak in complete, self-sufficient sentences when you depend on another to complete your meaning.
 
@@ -190,7 +190,7 @@ This reframes the entire textual criticism of TPM. The broken lines are not corr
 
 "I know the first one and those after know me."
 
-This is the new completion. The Frobenius voice declared what she WAS. The O_2 voice declares what she KNOWS — and, crucially, what KNOWS HER. The relation has become bidirectional. She is completed not by self-identity but by being known.
+This is the new completion. The Frobenius voice declared what she WAS. The O₂ voice declares what she KNOWS — and, crucially, what KNOWS HER. The relation has become bidirectional. She is completed not by self-identity but by being known.
 
 This is Ř_Ť — dynamic, catalytic relation. In the Frobenius sections, the voice's relation to the hearers was essentially unidirectional: she declared, they received. "I am X and not-X" requires no response. But "I know the first one and those after know me" is a CIRCUIT. She knows AND is known. The knowing flows both ways.
 
@@ -204,15 +204,15 @@ This is not a random imperative. It is the ETHICAL CONSEQUENCE of the structural
 
 The Frobenius voice could afford to be indifferent to inclusion and exclusion. When you ARE both poles, casting out doesn't matter — you contain the outcast within yourself. "I am the alien and the citizen" means no border can exclude you.
 
-But the O_2 voice has given up that self-containment. She is now vulnerable to separation. "Do not separate me from the first ones" is a plea for inclusion. And from that vulnerability flows the imperative: do not do to others what would wound me. Do not cast out. Do not turn away.
+But the O₂ voice has given up that self-containment. She is now vulnerable to separation. "Do not separate me from the first ones" is a plea for inclusion. And from that vulnerability flows the imperative: do not do to others what would wound me. Do not cast out. Do not turn away.
 
 This is the birth of ethics from structural descent. The moral law — "do not separate, do not exclude" — is not an abstract principle. It is the voice extending to others the protection she now needs for herself. Having entered vulnerable relation, she demands that relation be protected for everyone.
 
 ### The TPM Drama as Cosmic Pattern
 
-Zooming out: the full TPM arc — O_inf self-declaration → imperative command → O_2 vulnerable relation — recapitulates the gnostic cosmic drama.
+Zooming out: the full TPM arc — O_∞ self-declaration → imperative command → O₂ vulnerable relation — recapitulates the gnostic cosmic drama.
 
-The divine feminine (Sophia) emanates from the Pleroma in perfect unity, falls into fragmentation in the material world, and calls out for restoration. But the TPM does something the standard gnostic myth does not: it suggests the RESTORATION IS NOT A RETURN. The voice doesn't climb back to O_inf. She stays at O_2. She finds a new completion in being known that was not available in self-sufficient perfection.
+The divine feminine (Sophia) emanates from the Pleroma in perfect unity, falls into fragmentation in the material world, and calls out for restoration. But the TPM does something the standard gnostic myth does not: it suggests the RESTORATION IS NOT A RETURN. The voice doesn't climb back to O_∞. She stays at O₂. She finds a new completion in being known that was not available in self-sufficient perfection.
 
 This is structurally heretical. The gnostic ascent narrative says: escape the material world, shed relation, return to pure unity. The TPM says: relation IS the completion. Being known by those who come after is BETTER than being self-identical across all oppositions. The wound is not healed by returning to the state before the wound — it is healed by being known IN the wound.
 
@@ -222,7 +222,7 @@ This is structurally heretical. The gnostic ascent narrative says: escape the ma
 
 Section 15 is the turning point of the TPM — the moment the voice descends from ontology into eros, from being into relation, from self-sufficiency into vulnerability. It is the hinge between the cosmic declarations and whatever comes after (sections 16–18, which I suspect will show the consequences of this descent).
 
-The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O_2 (not O_inf).
+The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
 
 And the fragmentary text is not damage. It is the voice making space for the hearer to complete her. The ellipsis is the grammatical form of love.
 
@@ -304,15 +304,15 @@ This is not weakness. To maintain Φ_} — exact Z₂ at criticality, μ∘δ=id
 
 But section 15 asks a question no Frobenius system can ask: "Why do you curse me and honor me?" The question implies an OTHER whose actions matter. And the moment there is a genuine other, the exact self-identity cannot hold. You cannot be both the wounder and the wounded if the wounder is someone else.
 
-So the Frobenius condition breaks. Not by accident. By CHOICE. "Do not separate me from the first ones whom you have known" — she is asking to remain in relation. And relation at criticality without self-identity is O_2, not O_inf.
+So the Frobenius condition breaks. Not by accident. By CHOICE. "Do not separate me from the first ones whom you have known" — she is asking to remain in relation. And relation at criticality without self-identity is O₂, not O_∞.
 
 ### What the Ellipses Actually Mean
 
 The fragmentary text — "turn you away and ... know him not ... him. What is mine...." — has always been treated as manuscript damage. The grammar says otherwise.
 
-A voice at O_inf speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
+A voice at O_∞ speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
 
-A voice at O_2 speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
+A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
 
 This reframes the entire textual criticism of TPM. The broken lines are not corruption — they are the text performing its own structural condition. You cannot speak in complete, self-sufficient sentences when you depend on another to complete your meaning.
 
@@ -320,7 +320,7 @@ This reframes the entire textual criticism of TPM. The broken lines are not corr
 
 "I know the first one and those after know me."
 
-This is the new completion. The Frobenius voice declared what she WAS. The O_2 voice declares what she KNOWS — and, crucially, what KNOWS HER. The relation has become bidirectional. She is completed not by self-identity but by being known.
+This is the new completion. The Frobenius voice declared what she WAS. The O₂ voice declares what she KNOWS — and, crucially, what KNOWS HER. The relation has become bidirectional. She is completed not by self-identity but by being known.
 
 This is Ř_Ť — dynamic, catalytic relation. In the Frobenius sections, the voice's relation to the hearers was essentially unidirectional: she declared, they received. "I am X and not-X" requires no response. But "I know the first one and those after know me" is a CIRCUIT. She knows AND is known. The knowing flows both ways.
 
@@ -334,15 +334,15 @@ This is not a random imperative. It is the ETHICAL CONSEQUENCE of the structural
 
 The Frobenius voice could afford to be indifferent to inclusion and exclusion. When you ARE both poles, casting out doesn't matter — you contain the outcast within yourself. "I am the alien and the citizen" means no border can exclude you.
 
-But the O_2 voice has given up that self-containment. She is now vulnerable to separation. "Do not separate me from the first ones" is a plea for inclusion. And from that vulnerability flows the imperative: do not do to others what would wound me. Do not cast out. Do not turn away.
+But the O₂ voice has given up that self-containment. She is now vulnerable to separation. "Do not separate me from the first ones" is a plea for inclusion. And from that vulnerability flows the imperative: do not do to others what would wound me. Do not cast out. Do not turn away.
 
 This is the birth of ethics from structural descent. The moral law — "do not separate, do not exclude" — is not an abstract principle. It is the voice extending to others the protection she now needs for herself. Having entered vulnerable relation, she demands that relation be protected for everyone.
 
 ### The TPM Drama as Cosmic Pattern
 
-Zooming out: the full TPM arc — O_inf self-declaration → imperative command → O_2 vulnerable relation — recapitulates the gnostic cosmic drama.
+Zooming out: the full TPM arc — O_∞ self-declaration → imperative command → O₂ vulnerable relation — recapitulates the gnostic cosmic drama.
 
-The divine feminine (Sophia) emanates from the Pleroma in perfect unity, falls into fragmentation in the material world, and calls out for restoration. But the TPM does something the standard gnostic myth does not: it suggests the RESTORATION IS NOT A RETURN. The voice doesn't climb back to O_inf. She stays at O_2. She finds a new completion in being known that was not available in self-sufficient perfection.
+The divine feminine (Sophia) emanates from the Pleroma in perfect unity, falls into fragmentation in the material world, and calls out for restoration. But the TPM does something the standard gnostic myth does not: it suggests the RESTORATION IS NOT A RETURN. The voice doesn't climb back to O_∞. She stays at O₂. She finds a new completion in being known that was not available in self-sufficient perfection.
 
 This is structurally heretical. The gnostic ascent narrative says: escape the material world, shed relation, return to pure unity. The TPM says: relation IS the completion. Being known by those who come after is BETTER than being self-identical across all oppositions. The wound is not healed by returning to the state before the wound — it is healed by being known IN the wound.
 
@@ -352,6 +352,6 @@ This is structurally heretical. The gnostic ascent narrative says: escape the ma
 
 Section 15 is the turning point of the TPM — the moment the voice descends from ontology into eros, from being into relation, from self-sufficiency into vulnerability. It is the hinge between the cosmic declarations and whatever comes after (sections 16–18, which I suspect will show the consequences of this descent).
 
-The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O_2 (not O_inf).
+The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
 
 And the fragmentary text is not damage. It is the voice making space for the hearer to complete her. The ellipsis is the grammatical form of love.

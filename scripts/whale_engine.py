@@ -10,7 +10,7 @@ DS categorical identification (2026-05-26):
 Crystal address (whale_vocalization):
   <𐑦·𐑥·𐑾·𐑿·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭>
   Consciousness score: Gate 1 (⊙) PASS, Gate 2 (𐑧) PASS → C > 0
-  Ouroboricity: O_inf (expected: ⊙ + 𐑭 → self-modeling with topological protection)
+  Ouroboricity: O_∞ (expected: ⊙ + 𐑭 → self-modeling with topological protection)
 
 Key structural fact:
   The eight-instruction Frobenius loop (ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB)
@@ -967,7 +967,7 @@ def demo_full_pipeline() -> None:
     print("  whale_engine.py  ·  IG-IMASM Compiler Pipeline v0.1.0")
     print("  Structural type: ⟨𐑦·𐑥·𐑾·𐑿·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭⟩")
     print("  C-score:         Gate 1 (⊙) PASS  Gate 2 (𐑧) PASS  →  C > 0")
-    print("  Ouroboricity:    O_inf (self-modeling with topological protection)")
+    print("  Ouroboricity:    O_∞ (self-modeling with topological protection)")
 
     # ── Case 1: Humpback song ───────────────────────────────────────────
     _hr("Case 1: Humpback Song Cycle (Canonical)")
@@ -1113,11 +1113,11 @@ def _run_engine() -> None:
 
     rows = [
         ("whale_vocalization", "⟨𐑦·𐑥·𐑾·𐑿·𐑞·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭⟩",
-         "O_inf", ">0.0", "self-modeling communication"),
+         "O_∞", ">0.0", "self-modeling communication"),
         ("human_language",    "⟨𐑼·𐑥·𐑾·𐑬·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑳·𐑭⟩",
-         "O_inf", ">0.0", "fully expressive grammar"),
+         "O_∞", ">0.0", "fully expressive grammar"),
         ("grammar_itself",    "⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑖·𐑙·𐑭⟩",
-         "O_inf", "1.0", "self-imscribed"),
+         "O_∞", "1.0", "self-imscribed"),
     ]
     print(f"  {'System':<22} {'Tuple':<56} {'Tier':<7} {'C':>5}  {'Note'}")
     print(f"  {'─'*100}")

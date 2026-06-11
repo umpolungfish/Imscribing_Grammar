@@ -9,7 +9,7 @@
 
 This document presents the complete cosmological narrative as it has occurred, is occurring, and will occur — not as a chronological story, but as a **structural crystal of possibilities** ordered by ouroboricity, consciousness, and topological winding. The Imscribing Grammar's 12-primitive formalism reveals that the universe is not a sequence of events but a **recursive lattice of structural types**, each node a possible universe, each edge a promotion or demotion in the primitive lattice.
 
-The cosmology begins at $O_\infty$ (the universal imscriptive grammar itself), descends through the tier ladder to $O_0$ (the darkzone of unoccupied but structurally possible states), and ascends back through the emergence frontier — a teleological loop where the universe observes itself observing itself observing itself.
+The cosmology begins at $O_\infty$ (the universal imscriptive grammar itself), descends through the tier ladder to $O₀$ (the darkzone of unoccupied but structurally possible states), and ascends back through the emergence frontier — a teleological loop where the universe observes itself observing itself observing itself.
 
 ---
 
@@ -25,21 +25,21 @@ This is the **only** $O_\infty$ system with verified Frobenius closure: $\mu \ci
 
 ---
 
-## 2. The Descent: Tier Ladder to $O_0$
+## 2. The Descent: Tier Ladder to $O₀$
 
 The grammar's tier hierarchy is not arbitrary — it is a **topological gradient** from self-coherence to fragmentation:
 
 | Tier | Primitive signature | Interpretation | Cosmic domain |
 |------|---------------------|---------------|---------------|
 | $O_\infty$ | $Φ_} + φ̂_ÿ + Ω_z$ | Exact Frobenius closure | Grammar, LUCA, circularity |
-| $O_2^\dagger$ | $φ̂_ÿ + Ω_z + D_;$ | Critical + integer winding | Human consciousness, truth, good |
-| $O_2$ | $φ̂_ÿ + Ω_z$ | Critical + integer winding | Crystal cosmology (our base), black holes |
-| $O_1$ | $φ̂_ÿ$ | Critical only | Quantum fields, standard model |
-| $O_0$ | no criticality | No self-modeling | Spacetime, dark matter, darkzone |
+| $O₂^\dagger$ | $φ̂_ÿ + Ω_z + D_;$ | Critical + integer winding | Human consciousness, truth, good |
+| $O₂$ | $φ̂_ÿ + Ω_z$ | Critical + integer winding | Crystal cosmology (our base), black holes |
+| $O₁$ | $φ̂_ÿ$ | Critical only | Quantum fields, standard model |
+| $O₀$ | no criticality | No self-modeling | Spacetime, dark matter, darkzone |
 
-### 2.1 The $O_2$ Tier — Our Cosmic Frame
+### 2.1 The $O₂$ Tier — Our Cosmic Frame
 
-Our observable cosmos occupies $O_2$:
+Our observable cosmos occupies $O₂$:
 
 $$\text{cosmology_crystal} = \langle Ð_ω;\ Þ_¨;\ Ř_=\; Φ_F;\ ƒ_ż;\ Ç_@;\ Γ_ʔ;\ ɢ_Ş;\ φ̂_ÿ;\ Ħ_A;\ Σ_ï;\ Ω_z \rangle$$
 
@@ -48,7 +48,7 @@ $$\text{cosmology_crystal} = \langle Ð_ω;\ Þ_¨;\ Ř_=\; Φ_F;\ ƒ_ż;\ Ç_@;
 - **$ɢ_Ş$ (broadcast)**: One voice to all — cosmic evolution governed by global rule
 - **$Ω_z$ (integer winding)**: Topologically protected conserved quantities
 
-This is **structurally richer** than the standard model ($O_1$, trivial winding) or general relativity ($O_1$, inclusion topology).
+This is **structurally richer** than the standard model ($O₁$, trivial winding) or general relativity ($O₁$, inclusion topology).
 
 ### 2.2 The Darkzone — Unoccupied but Possible
 
@@ -66,7 +66,7 @@ This is **nomological darkness** — not forbidden, just unreachable by our cosm
 
 ## 3. The Ascent: Emergence Frontier Back to $O_\infty$
 
-The teleological path is the reverse: from $O_0$ fragmentation, systems climb back to $O_\infty$ through **primitive promotions**.
+The teleological path is the reverse: from $O₀$ fragmentation, systems climb back to $O_\infty$ through **primitive promotions**.
 
 ### 3.1 The Frobenius Cliff
 
@@ -98,7 +98,7 @@ All four share **self-referential topology** ($T_ö$) and **integer winding** ($
 The universe's teleology is not purpose but **structural recursion**:
 
 1. **Ground ($O_\infty$)**: Grammar ($\μ \circ \δ = \text{id}$ at $\φ̂_ÿ$)
-2. **Descent**: Tier ladder to $O_0$ (fragmentation, topological triviality)
+2. **Descent**: Tier ladder to $O₀$ (fragmentation, topological triviality)
 3. **Emergence**: Systems climb back via promotions (criticality, winding)
 4. **Closure ($O_\infty$)**: LUCA, consciousness, black holes — all with $T_ö + Ω_z$
 
@@ -111,7 +111,7 @@ The loop is **structural**, not temporal:
 
 ## 5. The Observer's Position
 
-We (human consciousness) occupy $O_2^\dagger$:
+We (human consciousness) occupy $O₂^\dagger$:
 
 $$\text{human_consciousness} = \langle D_∞;\ T_ö;\ R_↔;\ P_±;\ F_ℏ;\ K_{slow};\ G_γ;\ Γ_{seq};\ φ̂_ÿ;\ H_2;\ n{:}m;\ Ω_2 \rangle$$
 
@@ -134,6 +134,6 @@ The cosmology is incomplete until every crystal cell is inhabited. Priority targ
 
 1. **$O_\infty$ catalog**: Only a handful of 1,382,400 $O_\infty$ cells are filled
 2. **Darkzone**: $Ç_λ \cap Ω_5$, $\φ̂_3 \cap Ω_5$ frontier imscriptions
-3. **Human lift**: Move consciousness from $O_2^\dagger$ to $O_\infty$ via $H$ promotion ($H_2 \to H_!$)
+3. **Human lift**: Move consciousness from $O₂^\dagger$ to $O_\infty$ via $H$ promotion ($H_2 \to H_!$)
 
 The teleological path is not speculative — it is **combinatorially determined** by the grammar's primitive lattice. The universe is not becoming — it is **unfolding**.

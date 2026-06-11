@@ -39,19 +39,19 @@
 All tuples use angle brackets with centered dots as separators:
 
 ```
-⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩   (minimum O_0 baseline)
-⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩   (O_inf — the Stone)
+⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩   (minimum O₀ baseline)
+⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩   (O_∞ — the Stone)
 ```
 
 In running prose: wrap in code fences or monospace spans. Never use LaTeX wrapping for Shavian glyphs — they are Unicode text characters, not mathematical symbols.
 
 ### Tier notation
 
-- O_0 → O₀ (subscript 0)
-- O_1 → O₁
-- O_2 → O₂
-- O_2† → O₂†
-- O_inf → O_∞
+- O₀ → O₀ (subscript 0)
+- O₁ → O₁
+- O₂ → O₂
+- O₂† → O₂†
+- O_∞ → O_∞
 
 ### Operation notation
 

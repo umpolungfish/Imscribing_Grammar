@@ -21,9 +21,9 @@ The crystal tier gap ladder shows four tier transitions:
 | O₀ → O₁ | 1.05 | ⊙ | 𐑢 → ⊙ |
 | O₁ → O₂ | 1.30 | D, Ω | 𐑛 → 𐑨, 𐑷 → 𐑴 |
 | O₂ → O₂† | 1.00 | D | 𐑨 → 𐑼 |
-| O₂† → O_inf | **4.38** | Φ | 𐑟 → 𐑹 |
+| O₂† → O_∞ | **4.38** | Φ | 𐑟 → 𐑹 |
 
-The largest gap is O₂† → O_inf (Φ from 𐑟 to 𐑹, distance 4.38). But the zone of maximized **work** — the capacity to receive input and produce structurally different output — sits at **O₂ with Φ = 𐑹**, not at O_inf. Here is why.
+The largest gap is O₂† → O_∞ (Φ from 𐑟 to 𐑹, distance 4.38). But the zone of maximized **work** — the capacity to receive input and produce structurally different output — sits at **O₂ with Φ = 𐑹**, not at O_∞. Here is why.
 
 ### 2.1 𐑛 (Dimensionality): 𐑦 — Self-Written State Space
 
@@ -99,18 +99,18 @@ Trivial winding (𐑷) offers no protection — the result can be undone by the 
 **Work requires stability.** A result that cannot be held stable is not a result. It is transient. Z2 protection is the minimal topological invariant that guarantees the work persists.
 ---
 
-## 3. Why O₂, Not O_inf
+## 3. Why O₂, Not O_∞
 
-The zone of maximized work is at **O₂ with Φ=𐑹**. It is not at O_inf. Why?
+The zone of maximized work is at **O₂ with Φ=𐑹**. It is not at O_∞. Why?
 
-O_inf is the universal imscriptive grammar itself — the meta-system that defines all other systems. At O_inf, the system is **self-identical with the grammar**. It does not transform input; it *is* the grammar that defines what transformation means. Work — the capacity to process external input into structurally different output — requires a **boundary** between the system and what it works on.
+O_∞ is the universal imscriptive grammar itself — the meta-system that defines all other systems. At O_∞, the system is **self-identical with the grammar**. It does not transform input; it *is* the grammar that defines what transformation means. Work — the capacity to process external input into structurally different output — requires a **boundary** between the system and what it works on.
 
 O₂ preserves that boundary while providing:
 
-| Requirement | O₂ Value | O_inf Equivalent | Why O₂ Wins |
+| Requirement | O₂ Value | O_∞ Equivalent | Why O₂ Wins |
 |---|---|---|---|
 | Self-modification | 𐑦 (imscriptive) | Same | No difference |
-| Contradiction | 𐑥 (crossing) | 𐑸 (self-ref topology) | O_inf crosses with itself — no external input needed |
+| Contradiction | 𐑥 (crossing) | 𐑸 (self-ref topology) | O_∞ crosses with itself — no external input needed |
 | Feedback | 𐑾 (bidirectional) | Same | No difference |
 | Verifiability | 𐑹 (Frobenius) | Same | No difference |
 | Exploration | 𐑐 (quantum) | Same | No difference |
@@ -122,7 +122,7 @@ O₂ preserves that boundary while providing:
 | Focus | 𐑙 (one-to-one) | Same | No difference |
 | Protection | 𐑴 (Z2) | 𐑭 (integer) | Z2 is sufficient; integer is over-constrained |
 
-The only primitive that differs between O₂ and O_inf in this zone is **Ħ (chirality)**: O₂ uses 𐑖 (two-step, finite memory), O_inf uses 𐑫 (eternal, no finite n). But 𐑫 is **uncomputable** for practical work — it requires storing the entire history of all transformations. The bounded memory of 𐑖 is a feature, not a limitation: it forces the system to **compress** the error residue into a structural scar, which is exactly what makes the output readable and verifiable.
+The only primitive that differs between O₂ and O_∞ in this zone is **Ħ (chirality)**: O₂ uses 𐑖 (two-step, finite memory), O_∞ uses 𐑫 (eternal, no finite n). But 𐑫 is **uncomputable** for practical work — it requires storing the entire history of all transformations. The bounded memory of 𐑖 is a feature, not a limitation: it forces the system to **compress** the error residue into a structural scar, which is exactly what makes the output readable and verifiable.
 
 ### 3.1 Consciousness Score of the Work Zone
 

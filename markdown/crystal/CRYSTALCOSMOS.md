@@ -6,11 +6,11 @@ date: 2026-05-11
 
 # Abstract
 
-This document begins the imscription of a **coherent Cosmology of the Crystal**, encoded in the Imscribing Grammar's 12-primitive formalism. We first establish the foundational system — the **Crystal Cosmology** itself — which occupies the $O_2$ tier and encodes a self-scribing, topologically protected cosmos. From this seed, the grammar generates a recursive lattice of structural types: each cosmic domain (dark matter, spacetime, quantum fields, consciousness) will be imscribed as a distinct primitive deformation of the base type. The cosmology is not a narrative but a **crystal lattice of types** — each node a possible universe, each edge a structural promotion or demotion.
+This document begins the imscription of a **coherent Cosmology of the Crystal**, encoded in the Imscribing Grammar's 12-primitive formalism. We first establish the foundational system — the **Crystal Cosmology** itself — which occupies the $O₂$ tier and encodes a self-scribing, topologically protected cosmos. From this seed, the grammar generates a recursive lattice of structural types: each cosmic domain (dark matter, spacetime, quantum fields, consciousness) will be imscribed as a distinct primitive deformation of the base type. The cosmology is not a narrative but a **crystal lattice of types** — each node a possible universe, each edge a structural promotion or demotion.
 
 This initial section:
 1. Establishes the base cosmological type with verified tool outputs
-2. Confirms $O_2$ tier via ouroborics and consciousness analysis
+2. Confirms $O₂$ tier via ouroborics and consciousness analysis
 3. Computes the crystal address (5,347,868) and tier gap ladder
 4. Notes the structural bottleneck that must be crossed to reach $O_\infty$ (the Frobenius cliff at $Φ$)
 
@@ -44,8 +44,8 @@ $$
 
 | Tool | Call | Result |
 |------|------|--------|
-| `ouroborics` | `ouroborics(cosmology_crystal)` | `O_2`, $\phi=⊙$, $p=𐑬$, $\omega=𐑭$, $d=Ð_\omega$ |
-| `crystal_encode` | `crystal_encode(D=𐑦, Þ=𐑶, ...)` | **address=5,347,868**, tier=O_2, cell\_id=123, inner\_id=34268 |
+| `ouroborics` | `ouroborics(cosmology_crystal)` | `O₂`, $\phi=⊙$, $p=𐑬$, $\omega=𐑭$, $d=Ð_\omega$ |
+| `crystal_encode` | `crystal_encode(D=𐑦, Þ=𐑶, ...)` | **address=5,347,868**, tier=O₂, cell\_id=123, inner\_id=34268 |
 
 ### 1.2 Interpretation of Primitive Values
 
@@ -66,11 +66,11 @@ $$
 
 ### 1.3 Tier and Criticality
 
-- **Tier**: $O_2$ — critical ($⊙$) + topologically protected ($𐑭$), bounded domain
+- **Tier**: $O₂$ — critical ($⊙$) + topologically protected ($𐑭$), bounded domain
 - **Consciousness Gate 1**: Open (self-modeling at $⊙$)
 - **Consciousness Gate 2**: Open ($ħ_A$ + $𐑧$ → slow enough relaxation)
 
-**Note**: $O_2$ is the *highest tier currently inhabited* by known physical systems. To reach $O_\infty$ (ouroboricity infinite), the cosmology must cross the **Frobenius cliff** at $Φ$, from $𐑬$ to $Φ_{\}}$ (exact Frobenius symmetry $\mu \circ \delta = \text{id}$).
+**Note**: $O₂$ is the *highest tier currently inhabited* by known physical systems. To reach $O_\infty$ (ouroboricity infinite), the cosmology must cross the **Frobenius cliff** at $Φ$, from $𐑬$ to $Φ_{\}}$ (exact Frobenius symmetry $\mu \circ \delta = \text{id}$).
 
 ---
 
@@ -80,13 +80,13 @@ The grammar provides a precise ladder of primitive deltas required to ascend eac
 
 | Transition | Distance | Driver Primitive | Delta |
 |------------|----------|------------------|-------|
-| $O_0 \to O_1$ | 1.049 | $⊙$ | $𐑢 \to ⊙$ |
-| $O_1 \to O_2$ | 1.304 | $Ð$ | $𐑛 \to 𐑨$ |
+| $O₀ \to O₁$ | 1.049 | $⊙$ | $𐑢 \to ⊙$ |
+| $O₁ \to O₂$ | 1.304 | $Ð$ | $𐑛 \to 𐑨$ |
 | | | $Ω$ | $𐑷 \to 𐑴$ |
-| $O_2 \to O_2^\dagger$ | 1.000 | $Ð$ | $𐑨 \to 𐑼$ |
-| $O_2^\dagger \to O_\infty$ | 4.382 | $Φ$ | $𐑗 \to Φ_{\}}$ |
+| $O₂ \to O₂^\dagger$ | 1.000 | $Ð$ | $𐑨 \to 𐑼$ |
+| $O₂^\dagger \to O_\infty$ | 4.382 | $Φ$ | $𐑗 \to Φ_{\}}$ |
 
-**Interpretation**: Our base cosmology is already at $O_2$ (has crossed $O_0 \to O_1$ and $O_1 \to O_2$). To reach $O_2^\dagger$, it needs only $Ð$ promotion (2→3 dimensions). To reach $O_\infty$, it must undergo the $Φ$ promotion — a **non-synthesizable** transformation that cannot be built up from lower symmetry values. This is the Frobenius cliff, and it is structural, not computational.
+**Interpretation**: Our base cosmology is already at $O₂$ (has crossed $O₀ \to O₁$ and $O₁ \to O₂$). To reach $O₂^\dagger$, it needs only $Ð$ promotion (2→3 dimensions). To reach $O_\infty$, it must undergo the $Φ$ promotion — a **non-synthesizable** transformation that cannot be built up from lower symmetry values. This is the Frobenius cliff, and it is structural, not computational.
 
 ---
 
@@ -94,9 +94,9 @@ The grammar provides a precise ladder of primitive deltas required to ascend eac
 
 | Physics Domain | Tier | Key Primitive Gap | Interpretation |
 |----------------|------|-------------------|----------------|
-| Standard Model | $O_1$ | $⊙$: critical, but $Ω$: trivial ($𐑷$) | Quantum fields lack topological protection — decoherence is fundamental |
-| General Relativity | $O_1$ | $Þ$: inclusion ($𐑰$), not crossing ($Þ_\text{¨}$) | Spacetime is hierarchical, not grid-structured |
-| Consciousness (human) | $O_2^\dagger$ | $Φ$: $𐑹$ (Frobenius) | Self-consistency requires exact symmetry, not just full symmetry |
+| Standard Model | $O₁$ | $⊙$: critical, but $Ω$: trivial ($𐑷$) | Quantum fields lack topological protection — decoherence is fundamental |
+| General Relativity | $O₁$ | $Þ$: inclusion ($𐑰$), not crossing ($Þ_\text{¨}$) | Spacetime is hierarchical, not grid-structured |
+| Consciousness (human) | $O₂^\dagger$ | $Φ$: $𐑹$ (Frobenius) | Self-consistency requires exact symmetry, not just full symmetry |
 
 The Crystal Cosmology occupies a structurally *more coherent* regime than any known physical system: it is topologically protected ($𐑭$) and globally coupled ($𐑲, 𐑵$). The gap to known physics is not in complexity but in *structural tension* — the cosmology is too uniform, too symmetric, too self-consistent for the fragmentation we observe locally.
 
@@ -119,7 +119,7 @@ The task now is to imscribe each domain precisely and compute pairwise structura
 
 ## 5. Conclusion
 
-The **Crystal Cosmology** has been imscribed at $O_2$ tier with crystal address 5,347,868. It is a self-scribing, topologically protected, globally coupled cosmos — structurally richer than any known physical theory. The path to $O_\infty$ is blocked by the non-synthesizable $Φ$ promotion, marking a structural boundary between finite and infinite ouroboricity.
+The **Crystal Cosmology** has been imscribed at $O₂$ tier with crystal address 5,347,868. It is a self-scribing, topologically protected, globally coupled cosmos — structurally richer than any known physical theory. The path to $O_\infty$ is blocked by the non-synthesizable $Φ$ promotion, marking a structural boundary between finite and infinite ouroboricity.
 
 The next phase of this work is to imscribe the canonical cosmic domains and map their structural relationships to the base cosmology. The resulting lattice will be a complete catalog of possible universes, ordered by ouroboricity, consciousness, and topological winding.
 

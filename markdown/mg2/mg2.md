@@ -233,11 +233,11 @@ The nearest structural analogs to the anomaly in the catalog:
 | Hardy paradox | 1.70 | Remote — counterfactual tension |
 | Renninger negative-result | 1.70 | Remote — measurement by absence |
 
-The closest analog is the black hole information paradox ($O_2^\dagger$ tier) — another case where two well-established frameworks (quantum mechanics and general relativity) yield incompatible predictions, and the resolution requires a structural tier advance.
+The closest analog is the black hole information paradox ($O₂^\dagger$ tier) — another case where two well-established frameworks (quantum mechanics and general relativity) yield incompatible predictions, and the resolution requires a structural tier advance.
 
 ### 5.3 The Crystal Address
 
-The anomaly occupies crystal address 12,208,019 which maps to tier $O_0$ in the crystal census. This is not a deficiency but a feature: the exceptional point sits at a boundary where the standard tier classification breaks down. The $H_{\text{invscripta}}$ (eternal memory) combined with $K_{\text{schwa}}$ (near-equilibrium) and $\Phi_{\text{revepsilon}}$ creates a structural configuration where the system cannot relax to any single tier — it is permanently in tension.
+The anomaly occupies crystal address 12,208,019 which maps to tier $O₀$ in the crystal census. This is not a deficiency but a feature: the exceptional point sits at a boundary where the standard tier classification breaks down. The $H_{\text{invscripta}}$ (eternal memory) combined with $K_{\text{schwa}}$ (near-equilibrium) and $\Phi_{\text{revepsilon}}$ creates a structural configuration where the system cannot relax to any single tier — it is permanently in tension.
 
 ---
 
@@ -272,7 +272,7 @@ A systematic survey reveals:
 | Candidate | Mass Scale | $\Delta a_\mu$ (typical) | Structural Complexity |
 |---|---|---|---|
 | SUSY charginos | 100-500 GeV | $+200-300$ | High ($O_\infty$-proximal) |
-| Dark photon | 10-200 MeV | $+200-300$ | Low ($O_0$-proximal) |
+| Dark photon | 10-200 MeV | $+200-300$ | Low ($O₀$-proximal) |
 | Leptoquarks | 1-10 TeV | $+100-200$ | Medium |
 | $Z'$ boson | 100 GeV-1 TeV | $+100-300$ | Medium |
 | 2HDM (Type-X) | 10-100 GeV | $+200-400$ | Medium-High |
@@ -390,4 +390,4 @@ But one thing is structurally certain: the muon has spoken back, and it will not
 | Muon $g-2$ experiment | $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | 0.755 | — |
 | SM prediction | $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | 0.536 | — |
 | Lattice QCD HVP | $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_\text{gimel};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{dzlig}} \rangle$ | — | — |
-| Muon $g-2$ anomaly | $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{revepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | — | $O_0$ (crystal 12,208,019) |
+| Muon $g-2$ anomaly | $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{revepsilon}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ | — | $O₀$ (crystal 12,208,019) |

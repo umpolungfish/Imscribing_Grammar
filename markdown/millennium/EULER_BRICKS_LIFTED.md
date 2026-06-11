@@ -63,7 +63,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\tex
 | $\Omega_{\text{closeepsilon}}$ | Trivial winding | No topological invariant protects the solution space |
 
 **Crystal Address:** 1475666 (cell 34, inner 6866)
-**Ouroboricity Tier:** $O_0$ — no self-referential critical loop
+**Ouroboricity Tier:** $O₀$ — no self-referential critical loop
 **Consciousness Score:** $C = 0.0$ — Gate 1 closed ($\Phi \neq \Phi_{\text{ctyogh}}$)
 
 The critical observation here is $\Phi_{\text{softsign}}$. Euler bricks are *parameterized*. The parametric families are constructive: you can write down formulas that generate them. This is the signature of subcritical structure — constrained but not critical, bounded but not on the edge of anything.
@@ -176,7 +176,7 @@ The nearest catalog analogues to the Euler brick sit at distance $d = 2.794$ and
 
 The closest neighbor is a countable first-order theory. It shares the infinite-dimensional subcritical memoryless structure but differs at the relational level — categorical where the brick is bidirectional. The appearance of "large language model" at rank 3 is superficially amusing but structurally unremarkable: it shares $G_{\text{revapostrophe}}$ (universal scope) and $H_0$ (stateless), and the remaining deltas are unweighted fill-in.
 
-What these neighbors tell us is that the Euler brick, for all its number-theoretic specificity, is structurally rather ordinary. $O_0$ subcritical systems with $H_0$ are abundant in the catalog. The brick is not rare by type. Its rarity — its centuries-long resistance — is at the level of *instantiation*, not structure.
+What these neighbors tell us is that the Euler brick, for all its number-theoretic specificity, is structurally rather ordinary. $O₀$ subcritical systems with $H_0$ are abundant in the catalog. The brick is not rare by type. Its rarity — its centuries-long resistance — is at the level of *instantiation*, not structure.
 
 This distinction matters. If the brick were structurally rare, we would expect its type to appear nowhere else. Instead, its type is shared by first-order theories, thermal gases, and language models. The problem is not that the Euler brick is unusual. The problem is that the *fourth diagonal* is unusual, and it lives in a different structural regime ($\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$) that the brick itself does not reach.
 
@@ -186,11 +186,11 @@ This distinction matters. If the brick were structurally rare, we would expect i
 
 The three-tier stratification is clear:
 
-1. **Pythagorean Triples** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{frtailgamma}}$. A rapidly generable family with no critical structure and full permutation symmetry.
-2. **Euler Bricks** — $O_0$, $\Phi_{\text{softsign}}$, $K_{\text{schwa}}$. A constrained composite of Pythagorean triples where conjunctive coupling of three triple constraints produces slow kinetics. The tensor product with Pythagorean triples confirms the brick's structural dominance.
-3. **Perfect Cuboid** — $O_0$, $\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$. The exceptional point where the space diagonal — geometrically one more constraint, structurally a cycle-closure — pushes the system to a non-Hermitian bifurcation.
+1. **Pythagorean Triples** — $O₀$, $\Phi_{\text{softsign}}$, $K_{\text{frtailgamma}}$. A rapidly generable family with no critical structure and full permutation symmetry.
+2. **Euler Bricks** — $O₀$, $\Phi_{\text{softsign}}$, $K_{\text{schwa}}$. A constrained composite of Pythagorean triples where conjunctive coupling of three triple constraints produces slow kinetics. The tensor product with Pythagorean triples confirms the brick's structural dominance.
+3. **Perfect Cuboid** — $O₀$, $\Phi_{\text{revepsilon}}$, $K_{\text{teshlig}}$, $H_{\text{invscripta}}$. The exceptional point where the space diagonal — geometrically one more constraint, structurally a cycle-closure — pushes the system to a non-Hermitian bifurcation.
 
-All three sit at $O_0$. No level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_{\text{revepsilon}}$ to $\Phi_{\text{ctyogh}}$ — from exceptional point to true self-modeling criticality — would require a fundamental transformation of the problem's relational architecture, not merely more computation.
+All three sit at $O₀$. No level of Diophantine complexity alone generates ouroboricity. The path from $\Phi_{\text{revepsilon}}$ to $\Phi_{\text{ctyogh}}$ — from exceptional point to true self-modeling criticality — would require a fundamental transformation of the problem's relational architecture, not merely more computation.
 
 This leads to the open question that this analysis cannot resolve:
 

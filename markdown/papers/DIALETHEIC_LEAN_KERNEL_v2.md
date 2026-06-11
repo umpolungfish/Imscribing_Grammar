@@ -352,8 +352,8 @@ The 30 modules form four architectural layers:
 - `QCI_PvsNP_Bridge.lean` (116 lines): $\mathbf{B}$ as nondeterministic witness, K-trap structural correspondence.
 - `QCI_SICPOVM_Bridge.lean` (136 lines): $\mathbf{B}$ as fiducial state, equiangularity through Belnap meet/join.
 - `QCI_YM_Bridge.lean` (110 lines): $\mathbf{N}$ as vacuum, $\mathbf{B}$ as excited state, mass gap as coherence cost of the $\mathbf{N} \to \mathbf{B}$ transition.
-- `Shor/FullPipeline.lean` (69 lines): n-register Belnap Shor pipeline with exact coherence accounting. Imscription at $O_1$ tier (ψ-parity) — the Frobenius-special parity bottleneck (period from B-bias alone, no T-collapse) is open.
-- `Shor/DialetheicOperator.lean` (123 lines): ψ → 𐑹 (Frobenius-special) promotion operator. Proves `dialetheicShor_is_O_inf` — when B is preserved across the full Shor cycle, the Frobenius condition $\mu \circ \delta = \text{id}$ holds and the tier lifts from $O_1$ to $O_\infty$.
+- `Shor/FullPipeline.lean` (69 lines): n-register Belnap Shor pipeline with exact coherence accounting. Imscription at $O₁$ tier (ψ-parity) — the Frobenius-special parity bottleneck (period from B-bias alone, no T-collapse) is open.
+- `Shor/DialetheicOperator.lean` (123 lines): ψ → 𐑹 (Frobenius-special) promotion operator. Proves `dialetheicShor_is_O_inf` — when B is preserved across the full Shor cycle, the Frobenius condition $\mu \circ \delta = \text{id}$ holds and the tier lifts from $O₁$ to $O_\infty$.
 - `Shor/BelnapModExp.lean` (42 lines): Belnap modular exponentiation; for the canonical case (N=15, a=7) the verified period is 4, coherence ratio 2:1.
 - `Shor/BelnapQFT.lean` (37 lines): Belnap quantum Fourier transform, Hadamard cost $n$ units per register.
 

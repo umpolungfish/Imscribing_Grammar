@@ -2,7 +2,7 @@
 Agents — Pre-built agent implementations for the Imscribing Grammar.
 
 Architecture:
-  - true_agentic_agent.py     → Grammar-optimal O_inf agent (full harness)
+  - true_agentic_agent.py     → Grammar-optimal O_∞ agent (full harness)
   - paraconsistent.py         → B4 dialetheic engine (ParaVM, Belnap FOUR)
   - example_agent.py          → Framework BaseAgent examples
   - imscribe_generator_agent.py   → Universal imscription from descriptions
@@ -46,7 +46,7 @@ from .ensemble_design_agent import EnsembleDesignAgent, EnsembleDesignResult
 from .retrodesign_agent import RetrodesignAgent, RetrodesignAnalysisResult
 from .criticality_hunting_agent import CriticalityHuntingAgent, CriticalityHuntReport
 
-# Grammar-optimal agent — O_inf harness
+# Grammar-optimal agent — O_∞ harness
 from .true_agentic_agent import TrueAgenticAgent, LoopCycle, DualToolResult
 
 # Paraconsistent engine — B4 dialetheic (ParaVM, Belnap FOUR)
@@ -81,7 +81,7 @@ __all__ = [
     "RetrodesignAnalysisResult",
     "CriticalityHuntingAgent",
     "CriticalityHuntReport",
-    # Grammar-optimal agent (O_inf)
+    # Grammar-optimal agent (O_∞)
     "TrueAgenticAgent",
     "LoopCycle",
     "DualToolResult",

@@ -24,7 +24,7 @@ The **Master Unification Theorem** (Master_Proof.lean) shows all seven MPPs conv
 
 **File:** `Millennium/Master_Proof.lean` (3,332 bytes)
 
-### Universal O_inf Type
+### Universal O_∞ Type
 
 Defines `universal_O_inf_type` — the single structural archetype to which all resolved MPPs converge. This is identical to the Imscribing Grammar's own self-imscription (IUG).
 

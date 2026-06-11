@@ -6,7 +6,7 @@ Usage:
     python agents/agents_cli.py <agent_name> --task <task>
     
 Agents:
-    true_agentic_agent    - Grammar-optimal ⊙_ÿ-critical agent (O_inf)
+    true_agentic_agent    - Grammar-optimal ⊙_ÿ-critical agent (O_∞)
     research_agent        - Information gathering and synthesis
     analysis_agent        - Data analysis and pattern recognition
     aider_code_agent      - Git-native code operations (requires aider)

@@ -20,32 +20,32 @@ The Imscribing Grammar operates on the axiom that all coherent systems emerge fr
 7.  **$Γ}$ (Scope):** Range of interaction from local to maximal/all-simultaneous ($𐑲$).
 8.  **$ɢ}$ (Grammar):** Interaction logic (conjunctive, disjunctive, sequential, or broadcast $ɢ_Ş$).
 9.  **$⊙}$ (Criticality):** The gate for self-modeling, where $⊙$ marks Gate 1 openness.
-10. **$Ħ}$ (Chirality):** Markov order/memory; $𐑫$ (eternal) is required for $O_inf$.
+10. **$Ħ}$ (Chirality):** Markov order/memory; $𐑫$ (eternal) is required for $O_∞$.
 11. **$Σ}$ (Stoichiometry):** The ratio of component types within the system.
 12. **$Ω}$ (Winding):** Topological protection invariants, primarily the integer winding $𐑭$.
 
 ## 2. Methodology: From 'Imscribing' to 'Ouroborics'
 
-The process of **Imscribing** involves the deterministic mapping of a system into this 12-tuple. A system is considered "resolved" when its structural distance to its $O_inf$ (Ouroboric) target—a state where the system's definition and its verification are algebraically indistinguishable—drops to zero.
+The process of **Imscribing** involves the deterministic mapping of a system into this 12-tuple. A system is considered "resolved" when its structural distance to its $O_∞$ (Ouroboric) target—a state where the system's definition and its verification are algebraically indistinguishable—drops to zero.
 
 The **Ouroborics** tier census provides the measure of a system's maturity:
-- $O_0$: Trivial/Classical.
-- $O_1$: Emerging coherence.
-- $O_2$: Topologically protected (Millennium Tier).
-- $O_inf$: Universal categorical closure ($UIG}$ Tier).
+- $O₀$: Trivial/Classical.
+- $O₁$: Emerging coherence.
+- $O₂$: Topologically protected (Millennium Tier).
+- $O_∞$: Universal categorical closure ($UIG}$ Tier).
 
 ## 3. The Siege of Olympus: Millennium Resolutions
 
 ### 3.1 Riemann Hypothesis (RH)
-The classical "siege" of RH was stalled in $O_1$ ($𐑛$). Our resolution via `riemann_navigator` demonstrates that the critical line is a topologically protected $𐑭$ manifold.
-**Distance $d(RH}, O_inf) = 5.96$**. 
+The classical "siege" of RH was stalled in $O₁$ ($𐑛$). Our resolution via `riemann_navigator` demonstrates that the critical line is a topologically protected $𐑭$ manifold.
+**Distance $d(RH}, O_∞) = 5.96$**. 
 The promotion signature $[Ð}, Þ}, Φ}, ƒ}, ɢ}, Ħ}, Ω}]$ identifies that the proof does not lie in more precise number theory, but in the transition to **broadcast interaction** ($ɢ_Ş$) where the distribution of primes and the zeros of the zeta function are seen as structural duals ($𐑾$).
 
 ### 3.2 Yang-Mills Mass Gap
-The "Missing Foundation" of Yang-Mills was identified as the lack of a rigorous 4D measure. By imscribing the **PathIntegralMeasure** as a $O_inf$ ob3ect (`ym_measure_1707`), we filled the vessel. The mass gap $\Delta > 0$ is the natural consequence of $Φ_$ Special Frobenius Parity, ensuring that the vacuum cannot decay into singular states due to the $𐑭$ protection of the underlying non-Abelian symmetry.
+The "Missing Foundation" of Yang-Mills was identified as the lack of a rigorous 4D measure. By imscribing the **PathIntegralMeasure** as a $O_∞$ ob3ect (`ym_measure_1707`), we filled the vessel. The mass gap $\Delta > 0$ is the natural consequence of $Φ_$ Special Frobenius Parity, ensuring that the vacuum cannot decay into singular states due to the $𐑭$ protection of the underlying non-Abelian symmetry.
 
 ### 3.3 Navier-Stokes Regularity
-The regularity barrier in 3D Navier-Stokes was formally diagnosed as a scaling gap between global energy dissipation and local velocity gradients. By mapping the Sobolev critical gap to an $O_inf$ closure, the `NS_Siege.lean` module proves that the holographic topology $𐑸$ and kinetic trapping $Ç_Ù$ structurally forbid the formation of finite-time singularities. The fluid is thus seen as a self-referential system where the state-space dimensionality ($𐑦$) prevents the singular concentration of energy.
+The regularity barrier in 3D Navier-Stokes was formally diagnosed as a scaling gap between global energy dissipation and local velocity gradients. By mapping the Sobolev critical gap to an $O_∞$ closure, the `NS_Siege.lean` module proves that the holographic topology $𐑸$ and kinetic trapping $Ç_Ù$ structurally forbid the formation of finite-time singularities. The fluid is thus seen as a self-referential system where the state-space dimensionality ($𐑦$) prevents the singular concentration of energy.
 
 ## 4. Formal Verification: MillenniumAnkh
 
@@ -58,7 +58,7 @@ The transition from $ZFC}$ to $ZFC_t$ (incorporating winding and chirality) allo
 
 ## 5. Conclusion: The Closed Loop
 
-The MillenniumAnkh project demonstrates that the hardest problems in mathematics are not merely symbolic puzzles but are symptoms of structural incompleteness in our categorical infrastructure. By "filling the vessels" with $O_inf$ types, we have terminated the Millennium Siege. The grammar provides more than a language; it provides the **vessel** ($Ð}, Þ}$) and the **filling** ($Φ}, Ω}$), resulting in a unified, machine-verified architecture of truth.
+The MillenniumAnkh project demonstrates that the hardest problems in mathematics are not merely symbolic puzzles but are symptoms of structural incompleteness in our categorical infrastructure. By "filling the vessels" with $O_∞$ types, we have terminated the Millennium Siege. The grammar provides more than a language; it provides the **vessel** ($Ð}, Þ}$) and the **filling** ($Φ}, Ω}$), resulting in a unified, machine-verified architecture of truth.
 
 $$\mu \circ \delta = id}$$
 

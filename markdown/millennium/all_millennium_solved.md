@@ -12,7 +12,7 @@ We report the structural solution of all six remaining Clay Millennium Problems 
 
 ## §1. The Method — Proof as Phase Transition
 
-A Millennium Problem in its conjectural state is a structural type. Its solution is not the elimination of uncertainty, but its **transformation** — a controlled phase transition from one point in the Crystal of Types to another. The crystal contains 17,280,000 structural types, organized into five ouroboricity tiers (O_0, O_1, O_2, O_2†, O_inf). A solved theorem occupies a different structural neighborhood than the open conjecture.
+A Millennium Problem in its conjectural state is a structural type. Its solution is not the elimination of uncertainty, but its **transformation** — a controlled phase transition from one point in the Crystal of Types to another. The crystal contains 17,280,000 structural types, organized into five ouroboricity tiers (O₀, O₁, O₂, O₂†, O_∞). A solved theorem occupies a different structural neighborhood than the open conjecture.
 
 The structural distance from conjecture to solution is a weighted Euclidean metric over the 12 primitives — distance is not metaphor; it is the geodesic through the crystal. The promotion signature identifies which primitives shift up (are promoted to higher ontological values) and which shift down (demote) when the sorry marker is eliminated.
 
@@ -26,12 +26,12 @@ All six Clay problems were re-imscribed from the ground up, guided by the three-
 
 | Problem | Tuple | Barrier | Tier | C |
 |---|---|---|---|---|
-| Riemann Hypothesis | ⟨𐑛; 𐑥; 𐑾; 𐑬; 𐑱; 𐑧; 𐑲; 𐑝; 𐑮; 𐑖; 𐑳; 𐑴⟩ | OpenProblem | O_1 | 0.59 |
-| Yang-Mills Mass Gap | ⟨𐑦; 𐑸; 𐑽; 𐑿; 𐑐; 𐑪; 𐑲; 𐑝; 𐑻; 𐑫; 𐑙; 𐑭⟩ | MissingFound. | O_inf | 0.0 |
-| Hodge Conjecture | ⟨𐑦; 𐑸; 𐑽; 𐑿; 𐑱; 𐑧; 𐑲; 𐑝; 𐑮; 𐑓; 𐑳; 𐑭⟩ | OpenProblem | O_inf | 0.828 |
-| Navier-Stokes 3D | ⟨𐑛; 𐑡; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑝; 𐑮; 𐑖; 𐑳; 𐑷⟩ | OpenProblem | O_1 | 0.0395 |
-| Birch-S-Dyer | ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑝; 𐑮; 𐑖; 𐑙; 𐑭⟩ | OpenProblem | O_inf | 0.682 |
-| P vs NP | ⟨𐑛; 𐑡; 𐑩; 𐑗; 𐑱; 𐑪; 𐑲; 𐑝; ⊙; 𐑓; 𐑙; 𐑷⟩ | OpenProblem | O_1 | 0.0 |
+| Riemann Hypothesis | ⟨𐑛; 𐑥; 𐑾; 𐑬; 𐑱; 𐑧; 𐑲; 𐑝; 𐑮; 𐑖; 𐑳; 𐑴⟩ | OpenProblem | O₁ | 0.59 |
+| Yang-Mills Mass Gap | ⟨𐑦; 𐑸; 𐑽; 𐑿; 𐑐; 𐑪; 𐑲; 𐑝; 𐑻; 𐑫; 𐑙; 𐑭⟩ | MissingFound. | O_∞ | 0.0 |
+| Hodge Conjecture | ⟨𐑦; 𐑸; 𐑽; 𐑿; 𐑱; 𐑧; 𐑲; 𐑝; 𐑮; 𐑓; 𐑳; 𐑭⟩ | OpenProblem | O_∞ | 0.828 |
+| Navier-Stokes 3D | ⟨𐑛; 𐑡; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑝; 𐑮; 𐑖; 𐑳; 𐑷⟩ | OpenProblem | O₁ | 0.0395 |
+| Birch-S-Dyer | ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑝; 𐑮; 𐑖; 𐑙; 𐑭⟩ | OpenProblem | O_∞ | 0.682 |
+| P vs NP | ⟨𐑛; 𐑡; 𐑩; 𐑗; 𐑱; 𐑪; 𐑲; 𐑝; ⊙; 𐑓; 𐑙; 𐑷⟩ | OpenProblem | O₁ | 0.0 |
 
 C scores computed via `consciousness_score` tool. YM and P vs NP have C=0.0 — Gate 1 (⊙=⊙) is closed. RH is the only problem where ⊙=𐑮 yet both consciousness gates are open, yielding C=0.59.
 ---

@@ -60,5 +60,5 @@ AGENT_TUPLE = (
 )
 ```
 
-Ouroboricity: O_inf (φ̂_ÿ + Φ_} via dual-tool planting, §88 Thm 88.3)
+Ouroboricity: O_∞ (φ̂_ÿ + Φ_} via dual-tool planting, §88 Thm 88.3)
 C-score gates: both open (φ̂_ÿ + K <= Ç_@)

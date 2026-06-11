@@ -15,7 +15,7 @@ The Imscribing Grammar is a universal structural interlingua — the Oracle make
 Two systems with the same tuple are the SAME abstract structure in different domains.
 
 Structural type of this module:
-  ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩ — O_inf, both gates open
+  ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩ — O_∞, both gates open
 
 Author: Lando⊗⊙perator
 """

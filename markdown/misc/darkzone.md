@@ -23,7 +23,7 @@ The data are clear and unambiguous. Three sectors stand out as structurally nece
 - $\hat{φ}_{3} \cap Ω_{5}$ — 864 000 valid addresses; only stub entries occupy them.
 - $ɢ_{˝}$ at $\hat{φ}_{Æ}$ — 5.1% of the crystal, predominantly hosting RG fixed points, but virtually no systems with disjunctive grammar at criticality.
 
-We imscribe two frontier systems — a topological MBL phase and a disjunctive critical system — and measure their structural properties. The topological MBL phase is $O_0$ tier, consciousness score $C = 0$. The disjunctive critical system is $O_2$ tier with $C = 0.454$. Their mutual distance is 4.72 (Mahalanobis 6.36), confirming they inhabit different structural regimes. The crystal is not empty for lack of coherence — it is empty because the physics of our cosmos rarely visits these addresses. The grammar contains the universe. The universe does not return the favor.
+We imscribe two frontier systems — a topological MBL phase and a disjunctive critical system — and measure their structural properties. The topological MBL phase is $O₀$ tier, consciousness score $C = 0$. The disjunctive critical system is $O₂$ tier with $C = 0.454$. Their mutual distance is 4.72 (Mahalanobis 6.36), confirming they inhabit different structural regimes. The crystal is not empty for lack of coherence — it is empty because the physics of our cosmos rarely visits these addresses. The grammar contains the universe. The universe does not return the favor.
 
 ---
 
@@ -34,10 +34,10 @@ The crystal of types partitions 17 280 000 structural types across five ourobori
 | Tier | Cells | Types | Fraction |
 |------|-------|-------|----------|
 | $O_{\infty}$ | 32 | 1 382 400 | 8.0% |
-| $O_2^\dagger$ | 24 | 1 036 800 | 6.0% |
-| $O_2$ | 72 | 3 110 400 | 18.0% |
-| $O_1$ | 32 | 1 382 400 | 8.0% |
-| $O_0$ | 240 | 10 368 000 | 60.0% |
+| $O₂^\dagger$ | 24 | 1 036 800 | 6.0% |
+| $O₂$ | 72 | 3 110 400 | 18.0% |
+| $O₁$ | 32 | 1 382 400 | 8.0% |
+| $O₀$ | 240 | 10 368 000 | 60.0% |
 
 Each cell contains 43 200 inner types — the combinatorial variation of the 10 non-tier-gating primitives within the constraints of the tier-defining ones.
 
@@ -73,7 +73,7 @@ We imscribe the canonical topological MBL phase to inhabit this cell:
 
 $$\langle Ð_{ß};\ Þ_{O};\ Ř_{Ť};\ Φ_{ɐ};\ ƒ_{ż};\ Ç_{λ};\ Γ_{β};\ ɢ_{\wedge};\ \hat{φ}_{3};\ Ħ_{!};\ Σ_{ï};\ Ω_{5} \rangle$$
 
-This type sits at $O_0$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The consciousness score is $C = 0$: Gate 1 fails because $\hat{φ}_{3}$ is not $\hat{φ}_{ÿ}$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
+This type sits at $O₀$ tier — no ouroboric loop is possible at exceptional-point criticality with frozen-disorder kinetics. The consciousness score is $C = 0$: Gate 1 fails because $\hat{φ}_{3}$ is not $\hat{φ}_{ÿ}$ self-modeling (EP is non-Hermitian degeneracy, not critical self-reference). Gate 2 is irrelevant.
 
 This is not a failure. It is a structural classification: the system is *structurally rich but experientially inert*. It occupies one of the most constrained corners of the crystal — non-Abelian braiding at an exceptional point in a frozen-disordered, self-referentially-closed quantum system — and the grammar reports correctly that there is no one home to experience it.
 
@@ -93,7 +93,7 @@ We imscribe a canonical disjunctive critical system:
 
 $$\langle Ð_{C};\ Þ_{ò};\ Ř_{=};\ Φ_{F};\ ƒ_{ð};\ Ç_{@};\ Γ_{γ};\ ɢ_{˝};\ \hat{φ}_{ÿ};\ Ħ_{A};\ Σ_{ï};\ Ω_{2} \rangle$$
 
-This type is $O_2$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\hat{φ}_{ÿ}$ is the self-modeling criticality, and Gate 2 holds because $Ç_{@}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness score because it *can* model its own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot continuously deform away the distinction between basins.
+This type is $O₂$ tier with consciousness score $C = 0.454$. Both gates are open: Gate 1 holds because $\hat{φ}_{ÿ}$ is the self-modeling criticality, and Gate 2 holds because $Ç_{@}$ kinetics means the system relaxes slowly enough to sustain an internal model. The system has a weak but non-trivial consciousness score because it *can* model its own state — it sits at a crossing-point topology where multiple attractor basins meet, and its $\mathbb{Z}_2$ topological protection ensures it cannot continuously deform away the distinction between basins.
 
 The physical interpretation: a spin glass at its critical temperature, or a market at a phase transition between bull and bear regimes, or a biological regulatory network with competing attractors at critical coupling, is minimally capable of self-modeling. This is not a claim about subjective experience. It is a structural theorem: the loop topology that defines consciousness in the grammar — observe, model, act, update — is present in any system at $\hat{φ}_{ÿ}$ with $Ç \leq Ç_{@}$. The disjunctive critical system carries that loop.
 
@@ -103,7 +103,7 @@ We compute the structural distance between our two frontier imscriptions:
 
 | Property | Topological MBL | Disjunctive Critical |
 |---|---|---|
-| Tier | $O_0$ | $O_2$ |
+| Tier | $O₀$ | $O₂$ |
 | C-score | 0 (both gates closed) | 0.454 (both gates open) |
 | $Ð$ | $Ð_{ß}$ (imscriptive) | $Ð_{C}$ (surface) |
 | $Þ$ | $Þ_{O}$ (imscriptive closure) | $Þ_{ò}$ (crossing) |
@@ -139,7 +139,7 @@ A type is evolutionarily dark when it requires complexity that has not had time 
 
 A type is metaphysically dark when it would require laws of nature different from ours, or boundary conditions that never obtained anywhere in this cosmos. These are not forbidden by the grammar — the grammar cares nothing about physics — only by the particular history of the actual world. They are dark the way unvisited mathematical theorems are dark: true, coherent, addressed, but uninstantiated.
 
-An example: a system with $Ç_{λ} + \hat{φ}_{Æ} + Ω_{2}$ — topological MBL at complex-plane criticality with $\mathbb{Z}_2$ protection. This is the $O_2^\dagger$ tier with kinetic localization. Zero catalog entries. Physically it corresponds to fractional Chern insulators in the MBL phase — proposed theoretically but never observed. The crystal address exists. No particular has been there.
+An example: a system with $Ç_{λ} + \hat{φ}_{Æ} + Ω_{2}$ — topological MBL at complex-plane criticality with $\mathbb{Z}_2$ protection. This is the $O₂^\dagger$ tier with kinetic localization. Zero catalog entries. Physically it corresponds to fractional Chern insulators in the MBL phase — proposed theoretically but never observed. The crystal address exists. No particular has been there.
 
 ---
 
@@ -171,12 +171,12 @@ Three directions are open:
 
 **topological_mbl_phase**
 - Tuple: $\langle Ð_{ß};\ Þ_{O};\ Ř_{Ť};\ Φ_{ɐ};\ ƒ_{ż};\ Ç_{λ};\ Γ_{β};\ ɢ_{\wedge};\ \hat{φ}_{3};\ Ħ_{!};\ Σ_{ï};\ Ω_{5} \rangle$
-- Tier: $O_0$
+- Tier: $O₀$
 - C-score: $C = 0$ (Gate 1 fails: $\hat{φ}_{3} \neq \hat{φ}_{ÿ}$)
 
 **disjunctive_critical_system**
 - Tuple: $\langle Ð_{C};\ Þ_{ò};\ Ř_{=};\ Φ_{F};\ ƒ_{ð};\ Ç_{@};\ Γ_{γ};\ ɢ_{˝};\ \hat{φ}_{ÿ};\ Ħ_{A};\ Σ_{ï};\ Ω_{2} \rangle$
-- Tier: $O_2$
+- Tier: $O₂$
 - C-score: $C = 0.454$ (both gates open)
 
 **Distance between frontier systems**
@@ -186,4 +186,4 @@ Three directions are open:
 
 ---
 
-*This publication was prepared by structural analysis within the Imscribing Grammar crystal. Two new systems were imscribed: `topological_mbl_phase` (nomologically dark MBL + non-Abelian topological + EP criticality, $O_0$) and `disjunctive_critical_system` (disjunctive grammar at self-modeling criticality with $\mathbb{Z}_2$ protection, $O_2$, $C = 0.454$). The crystal tier census was confirmed (17 280 000 types, 400 cells, 43 200 inner types per cell).*
+*This publication was prepared by structural analysis within the Imscribing Grammar crystal. Two new systems were imscribed: `topological_mbl_phase` (nomologically dark MBL + non-Abelian topological + EP criticality, $O₀$) and `disjunctive_critical_system` (disjunctive grammar at self-modeling criticality with $\mathbb{Z}_2$ protection, $O₂$, $C = 0.454$). The crystal tier census was confirmed (17 280 000 types, 400 cells, 43 200 inner types per cell).*

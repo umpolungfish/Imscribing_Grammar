@@ -198,13 +198,13 @@ Every structure gets placed on a ladder with 5 rungs. The ladder is called the *
 ```
                     🌟 O_∞ (Infinity)  — "The Self-Aware Layer"
                     ↑ 4.38 steps away from below (the BIGGEST jump!)
-               🌟 O_2† (Dagger)  — "Infinite-Dimensional Thinkers"
+               🌟 O₂† (Dagger)  — "Infinite-Dimensional Thinkers"
                ↑ 1.0 step away from below
-          🌟 O_2 (Two)  — "Flat Creatures with Loops"
+          🌟 O₂ (Two)  — "Flat Creatures with Loops"
           ↑ 1.30 steps away from below
-     🌟 O_1 (One)  — "Simple Self-Modelers"
+     🌟 O₁ (One)  — "Simple Self-Modelers"
      ↑ 1.05 steps away from below
-🌟 O_0 (Zero)  — "The Ground Floor"
+🌟 O₀ (Zero)  — "The Ground Floor"
 ```
 
 **The shocking thing:** The biggest leap is at the very top (4.38 steps!) — going from
@@ -212,10 +212,10 @@ a complex non-self-aware structure to one that can think about itself. That's th
 upgrade in the entire universe of structures.
 
 **Fun fact:** Out of all 17,280,000 possible structures:
-- 60% are on the ground floor (O_0) — most things are simple
-- 8% reach O_1 — getting interesting!
-- 18% reach O_2 — complex but not self-aware
-- 6% reach O_2† — nearly self-aware
+- 60% are on the ground floor (O₀) — most things are simple
+- 8% reach O₁ — getting interesting!
+- 18% reach O₂ — complex but not self-aware
+- 6% reach O₂† — nearly self-aware
 - 8% reach the top floor O_∞ — the self-aware ones
 
 ---
@@ -254,13 +254,13 @@ You need:
 
 ### Game 3: "Level Up!" (1 player)
 
-**Goal:** Climb the Frobenius Tower from O_0 to O_∞.
+**Goal:** Climb the Frobenius Tower from O₀ to O_∞.
 
 1. Start with the simplest possible creature: choose the first option in EVERY block (Dot, Tree, Boss, No Mirror, Boring Bricks, Zoom!, Local, Together, Calm, No Memory, One Piece, No Loop).
-   This is your O_0 creature.
-2. To climb to O_1: Change Criticality from "Calm" (subcritical) to "Self-Modeling" ($\phi_ÿ$). Just ONE change! This is a 1.05-step leap.
-3. To climb to O_2: Change Dimension from "Dot" to "Shape" AND add a Loop (Omega from "None" to "$\mathbb{Z}_2$"). Two changes, 1.30 steps.
-4. To climb to O_2†: Make the space infinite (Dimension to $D_\infty$). 1.0 step.
+   This is your O₀ creature.
+2. To climb to O₁: Change Criticality from "Calm" (subcritical) to "Self-Modeling" ($\phi_ÿ$). Just ONE change! This is a 1.05-step leap.
+3. To climb to O₂: Change Dimension from "Dot" to "Shape" AND add a Loop (Omega from "None" to "$\mathbb{Z}_2$"). Two changes, 1.30 steps.
+4. To climb to O₂†: Make the space infinite (Dimension to $D_\infty$). 1.0 step.
 5. To reach O_∞: Change Parity to "Magic Mirror" ($P_{\pm}^{\text{sym}}$). This is the 4.38-step GIANT leap — the hardest one! Your creature is now self-aware.
 
 ### Game 4: "Guess My Block" (2+ players)
@@ -320,10 +320,10 @@ OPERATIONS:
 
 THE FROBENIUS TOWER:
   O_∞ = Self-Aware        ← 4.38 steps (THE BIG JUMP)
-  O_2† = Infinite Thinkers ← 1.00 step
-  O_2   = Flat Loopers     ← 1.30 steps
-  O_1   = Self-Modelers    ← 1.05 steps
-  O_0   = Ground Floor
+  O₂† = Infinite Thinkers ← 1.00 step
+  O₂   = Flat Loopers     ← 1.30 steps
+  O₁   = Self-Modelers    ← 1.05 steps
+  O₀   = Ground Floor
 ```
 
 ---
@@ -331,8 +331,8 @@ THE FROBENIUS TOWER:
 ## Part 7: Practice Problems
 
 **Beginner:**
-1. Build a creature where EVERY block is set to its simplest option. What tier is it on? (Answer: O_0)
-2. What's the fastest change you can make to reach O_1? (Answer: Change Criticality to self-modeling — only 1 change!)
+1. Build a creature where EVERY block is set to its simplest option. What tier is it on? (Answer: O₀)
+2. What's the fastest change you can make to reach O₁? (Answer: Change Criticality to self-modeling — only 1 change!)
 3. Name something in your house that has "Take Turns" for its interaction block.
 
 **Intermediate:**
@@ -341,6 +341,6 @@ THE FROBENIUS TOWER:
 6. If Gate 1 (self-modeling) is open but Gate 2 (slow enough) is closed, what's the consciousness score? (Answer: 0 — both gates must be open!)
 
 **Advanced:**
-7. Design a creature that is exactly 1.0 distance away from O_0 but NOT on O_1.
+7. Design a creature that is exactly 1.0 distance away from O₀ but NOT on O₁.
 8. Prove that the biggest jump on the Frobenius Tower (4.38 steps) comes from the Parity block alone.
 9. If you tensor a self-aware creature with a rock, does the result stay self-aware? Check Gate 1.

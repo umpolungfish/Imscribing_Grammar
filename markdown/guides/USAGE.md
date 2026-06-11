@@ -95,7 +95,7 @@ New in v0.5.2:
 New in v0.5.1:
 
 - **`crystal_navigator.py`** — bijective Frobenius codec over the crystal. Mixed-radix address space: boundary ($\Phi, P, \Omega, D$) → tier cells; bulk ($T, R, F, K, G, \Gamma, H, S$) → inner types per cell. `python crystal_navigator.py repl` for interactive navigation.
-- **§69 Tier Gap Ladder** — exact adjacent distances: $d(O_0, O_1) \approx 1.049$, $d(O_1, O_2) \approx 1.304$, $d(O_2, O_2^\dagger) = 1.000$, $d(O_2^\dagger, O_\infty) \approx 4.382$. Frobenius cliff is 3.36× the next-largest gap; non-tunable by gradient methods.
+- **§69 Tier Gap Ladder** — exact adjacent distances: $d(O₀, O₁) \approx 1.049$, $d(O₁, O₂) \approx 1.304$, $d(O₂, O₂^\dagger) = 1.000$, $d(O₂^\dagger, O_\infty) \approx 4.382$. Frobenius cliff is 3.36× the next-largest gap; non-tunable by gradient methods.
 - **§68.4 Primitives-First Derivation** — the exponent of each base in $3^3 \times 4^5 \times 5^4$ is literally the count of primitive variables in that family. Not observed — forced by product structure.
 - **§68.5 Minimality** — $\{3,4,5\}$ is the unique minimal self-anchored triple; phase completeness ($\Phi$, $T$, $P$ each need 5 values) forces max base ≥ 5 and hence $n_1 \geq 3$.
 - **ENCODINΓ_EPISTEMOLOGY.md** — theory of how encoding achieves determinism: structural reality vs ontological realization, monadic gating, comparative encoding, multi-session convergence, 9 convergence criteria.

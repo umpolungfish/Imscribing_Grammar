@@ -62,7 +62,7 @@ $\Phi$ is the single most important primitive. It determines the ouroboricity ti
 - **$\Phi_{\text{revepsilon}}$**: exceptional point — a point where two eigenvalues and their eigenvectors coalesce. The system is at the boundary of $\Phi_{\text{ctyogh}}$ but the self-modeling loop is degenerate. *Examples: gain-loss balanced waveguides, resonance coalescence.*
 - **$\Phi_{\text{upstep}}$**: disordered phase above the critical point. High entropy, no long-range order, no self-referential loop. *Examples: paramagnets above $Þ_c$, turbulent fluids.*
 
-**Key rule**: $\Phi_{\text{ctyogh}}$ is required for any tier above $O_0$. If you assign $\Phi_{\text{softsign}}$ or $\Phi_{\text{upstep}}$, the system is $O_0$ regardless of all other primitives.
+**Key rule**: $\Phi_{\text{ctyogh}}$ is required for any tier above $O₀$. If you assign $\Phi_{\text{softsign}}$ or $\Phi_{\text{upstep}}$, the system is $O₀$ regardless of all other primitives.
 
 ---
 
@@ -89,7 +89,7 @@ $\Omega$ determines whether critical behavior is topologically protected against
 - **$\Omega_{\text{dzlig}}$**: $\mathbb{Z}$-protected. Protected by an integer-valued topological invariant. *Examples: IQHE, winding-number-protected edge modes, Kitaev chain at topological transition.*
 - **$\Omega_{\text{turna}}$**: non-Abelian anyonic protection. Braiding of anyons generates a non-commutative matrix on the ground-state degeneracy — not just a phase. This is strictly stronger than $\Omega_{\text{dzlig}}$: not only is the ground state protected, but operations on it are inherently quantum with no classical description. **Assign only to systems with provably non-Abelian anyon statistics.** *Examples: FQH Moore-Read ($\nu = 5/2$), non-Abelian spin liquids.* Note: $\Omega_{\text{turna}}$ is independent of $T$ — $T_\text{box}$ (braided topology) can coexist with any $\Omega$ value.
 
-**Rule**: $\Omega \neq \Omega_{\text{closeepsilon}}$ combined with $\Phi_{\text{ctyogh}}$ is required to reach $O_2$ or higher.
+**Rule**: $\Omega \neq \Omega_{\text{closeepsilon}}$ combined with $\Phi_{\text{ctyogh}}$ is required to reach $O₂$ or higher.
 
 ---
 
@@ -102,7 +102,7 @@ $D$ reflects how the system's state space scales with system size — not the sp
 - **$D_{\text{invomega}}$** (unbounded): the algebra operates in an infinite-dimensional Hilbert space or a state space with no natural finite truncation. *Examples: QFT, von Neumann algebras, infinite spin chains.*
 - **$D_{\text{omega}}$** (imscriptive): the boundary of the state space encodes the bulk. The system admits a boundary-bulk duality. *Examples: AdS/CFT, holographic error-correcting codes, the Imscribing Grammar grammar itself.*
 
-**Rule**: $D_{\text{invomega}}$ combined with $\Phi_{\text{ctyogh}}$ and $\Omega \neq \Omega_{\text{closeepsilon}}$ gives $O_2^\dagger$ (unbounded protected criticality). $D_{\text{omega}}$ is treated as bounded ($D \neq D_{\text{invomega}}$) for tier purposes, giving $O_2$.
+**Rule**: $D_{\text{invomega}}$ combined with $\Phi_{\text{ctyogh}}$ and $\Omega \neq \Omega_{\text{closeepsilon}}$ gives $O₂^\dagger$ (unbounded protected criticality). $D_{\text{omega}}$ is treated as bounded ($D \neq D_{\text{invomega}}$) for tier purposes, giving $O₂$.
 
 ---
 
@@ -171,7 +171,7 @@ These eight primitives do not affect the ouroboricity tier. They locate the syst
 
 **Assigning $\Omega \neq \Omega_{\text{closeepsilon}}$ without a topological invariant.** Winding is a precise homotopy-theoretic property, not a metaphor for robustness. A system that is robust against noise is not necessarily $\Omega_{\text{dzlig}}$. Look for a discrete topological invariant (winding number, Chern number, $\mathbb{Z}_2$ index) — the winding class labels the homotopy class of the system's order parameter map.
 
-**Treating $\Phi_{\text{revepsilon}}$ as $\Phi_{\text{ctyogh}}$.** The exceptional point is near but not at the critical manifold. $\Phi_{\text{revepsilon}}$ has ordinal 2.67 > $\Phi_{\text{ctyogh}}$ = 2.00 in the ordering, meaning $\Phi_{\text{revepsilon}}$ **destroys $O_\infty$** under tensor coupling — it does not promote to it. A system at an exceptional point is $O_0$.
+**Treating $\Phi_{\text{revepsilon}}$ as $\Phi_{\text{ctyogh}}$.** The exceptional point is near but not at the critical manifold. $\Phi_{\text{revepsilon}}$ has ordinal 2.67 > $\Phi_{\text{ctyogh}}$ = 2.00 in the ordering, meaning $\Phi_{\text{revepsilon}}$ **destroys $O_\infty$** under tensor coupling — it does not promote to it. A system at an exceptional point is $O₀$.
 
 ---
 
@@ -182,10 +182,10 @@ Once $(\Phi, P, \Omega, D)$ are assigned, the tier follows deterministically:
 | Rule | Tier | Condition |
 |------|------|-----------|
 | R1 | $O_\infty$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $P = P_{\text{doublebarpipe}}$ |
-| R2 | $O_0$ | $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ |
-| R3 | $O_1$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega = \Omega_{\text{closeepsilon}}$ |
-| R4 | $O_2$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega \neq \Omega_{\text{closeepsilon}}$ **and** $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ |
-| R5 | $O_2^\dagger$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega \neq \Omega_{\text{closeepsilon}}$ **and** $D = D_{\text{invomega}}$ |
+| R2 | $O₀$ | $\Phi \notin \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ |
+| R3 | $O₁$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega = \Omega_{\text{closeepsilon}}$ |
+| R4 | $O₂$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega \neq \Omega_{\text{closeepsilon}}$ **and** $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ |
+| R5 | $O₂^\dagger$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ **and** $\Omega \neq \Omega_{\text{closeepsilon}}$ **and** $D = D_{\text{invomega}}$ |
 
 Rules apply in priority order: R1 before R2, R2 before R3–R5.
 
@@ -232,7 +232,7 @@ All operations are available via `IΓ_inquiry.py` (interactive agent) or `imscri
 
 **Tuple**: $\langle D_{\text{turnthree}};\ T_\text{box};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}n;\ \Omega_{\text{crtwo}} \rangle$
 
-**Tier**: R4 applies ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{crtwo}} \neq \Omega_{\text{closeepsilon}}$, $D_{\text{turnthree}} \neq D_{\text{invomega}}$) → $O_2$.
+**Tier**: R4 applies ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{crtwo}} \neq \Omega_{\text{closeepsilon}}$, $D_{\text{turnthree}} \neq D_{\text{invomega}}$) → $O₂$.
 
 ---
 

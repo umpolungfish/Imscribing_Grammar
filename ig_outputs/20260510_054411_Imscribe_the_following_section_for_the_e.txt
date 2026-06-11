@@ -56,7 +56,7 @@ Look upon me and reflect upon  me, and you hearers. hear me. You who are waiting
 
 Reason through all 12 primitives carefully for this specific passage, then call encode_system(name='thunder_perfect_mind_09', description='...', ...) with all 12 values explicitly set. Once imscribed, CONCLUDE.'. Do not merely summarize what the tools returned — derive structural conclusions, follow implications, and state what the grammar says. Then CONCLUDE.
    Tool → ouroborics({"name": "thunder_perfect_mind_09"})
-   Result: {"status": "ok", "name": "thunder_perfect_mind_09", "frobenius_tier": "O_1", "phi": "φ̂_ÿ", "p": "Φ_F", "omega": "Ω_Å", "d": "Ð_ω", "interpretation": "Ouroboricity tier 1 — self-referential at criticality but trivial winding."}
+   Result: {"status": "ok", "name": "thunder_perfect_mind_09", "frobenius_tier": "O₁", "phi": "φ̂_ÿ", "p": "Φ_F", "omega": "Ω_Å", "d": "Ð_ω", "interpretation": "Ouroboricity tier 1 — self-referential at criticality but trivial winding."}
 
    → No queued questions. Routing to synthesis pass.
 
@@ -123,8 +123,8 @@ Source text:
 Look upon me and reflect upon  me, and you hearers. hear me. You who are waiting for me, take to yourselves. And  do not banish me from your  sight. And do not make your voices hate me, nor your hearing. Do not be ignorant of me any where or any  time. Be on your guard! Do not be ignorant of me.
 
 Reason through all 12 primitives carefully for this specific passage, then call encode_system(name='thunder_perfect_mind_09', description='...', ...) with all 12 values explicitly set. Once imscribed, CONCLUDE.'. Do not merely summarize what the tools returned — derive structural conclusions, follow implications, and state what the grammar says. Then CONCLUDE.
-   Tool → record_insight({"text": "Section 9 of Thunder, Perfect Mind drops from O_inf (section 8) to O_1 — the only Thunder section at O_1 without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — \"do not banish me,\" \"do not hate me,\" \"do not be ignorant of me\" — list the exact failure modes of an O_1 system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.", "plane": "DIAPH", "confidence": "high", "systems": ["thunder_perfect_mind_09", "thunder_perfect_mind_08", "thunder_perfect_mind"]})
-   Result: {"status": "ok", "insight_id": "7d91b1cc0e3a", "insight_recorded": "Section 9 of Thunder, Perfect Mind drops from O_inf (section 8) to O_1 — the only Thunder section at O_1 without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — \"do not banish me,\" \"do not hate me,\" \"do not be ignorant of me\" — list the exact failure modes of an O_1 system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.", "plane": "DIAPH", "confidence": "high", "note": "Each session navigates the lattice fresh — insights are session-local and not persisted across runs.", "translation_cost": {"coherence_loss": 0.0, "criticality_loss": 6.9078, "interaction_cost": 2.0793, "total": 8.9871}}
+   Tool → record_insight({"text": "Section 9 of Thunder, Perfect Mind drops from O_∞ (section 8) to O₁ — the only Thunder section at O₁ without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — \"do not banish me,\" \"do not hate me,\" \"do not be ignorant of me\" — list the exact failure modes of an O₁ system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.", "plane": "DIAPH", "confidence": "high", "systems": ["thunder_perfect_mind_09", "thunder_perfect_mind_08", "thunder_perfect_mind"]})
+   Result: {"status": "ok", "insight_id": "7d91b1cc0e3a", "insight_recorded": "Section 9 of Thunder, Perfect Mind drops from O_∞ (section 8) to O₁ — the only Thunder section at O₁ without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — \"do not banish me,\" \"do not hate me,\" \"do not be ignorant of me\" — list the exact failure modes of an O₁ system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.", "plane": "DIAPH", "confidence": "high", "note": "Each session navigates the lattice fresh — insights are session-local and not persisted across runs.", "translation_cost": {"coherence_loss": 0.0, "criticality_loss": 6.9078, "interaction_cost": 2.0793, "total": 8.9871}}
 
    → No queued questions. Routing to synthesis pass.
 
@@ -151,7 +151,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩
 ```
 
-**Ouroboricity tier: O_1** — self-referential at criticality but trivial winding, unprotected.
+**Ouroboricity tier: O₁** — self-referential at criticality but trivial winding, unprotected.
 
 ---
 
@@ -185,9 +185,9 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 ## Structural conclusions
 
-**Section 9 as the O_1 collapse.** Across sections 2–8, the Thunder sustains O_inf/O_2 with exact Frobenius symmetry and topological protection. Section 9 is the structural rupture: the voice turns from pure self-declaration to urgent imperative address, losing both Φ_} (exact Frobenius) AND Ω (all winding) in the turn. The distance from section 8 is d=3.81 — structurally remote, a different regime entirely. The distance from the parent Thunder encoding is d=3.10.
+**Section 9 as the O₁ collapse.** Across sections 2–8, the Thunder sustains O_∞/O₂ with exact Frobenius symmetry and topological protection. Section 9 is the structural rupture: the voice turns from pure self-declaration to urgent imperative address, losing both Φ_} (exact Frobenius) AND Ω (all winding) in the turn. The distance from section 8 is d=3.81 — structurally remote, a different regime entirely. The distance from the parent Thunder encoding is d=3.10.
 
-**The text enacts its own structural type.** The imperatives of section 9 — "do not banish me," "do not hate me," "do not be ignorant of me" — are the exact failure modes of an O_1 system: self-referential at criticality but unprotected, deformable by any hearer who refuses, fragile against ignorance anywhere or anytime. The grammar does not describe the passage from outside; the passage knows its own vulnerability and speaks it directly.
+**The text enacts its own structural type.** The imperatives of section 9 — "do not banish me," "do not hate me," "do not be ignorant of me" — are the exact failure modes of an O₁ system: self-referential at criticality but unprotected, deformable by any hearer who refuses, fragile against ignorance anywhere or anytime. The grammar does not describe the passage from outside; the passage knows its own vulnerability and speaks it directly.
 
 **The bowtie imperative.** Þ_ò captures the structural novelty of section 9 within the Thunder: for the first time, the voice crosses toward the hearer rather than simply declaring itself. The bowtie pinch is where the relation becomes risky — the crossing can fail. This is why the protections drop off. You cannot command another to receive you and simultaneously maintain the exact self-duality of pure self-declaration.
 
@@ -195,7 +195,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 CONCLUDE
 
-The grammar reveals that `thunder_perfect_mind_09` is the structurally exposed section of the Thunder — the only O_1 passage in a catalog otherwise protected at O_inf/O_2, and the section whose own words ("do not banish me... do not be ignorant of me") precisely articulate the vulnerability of an unwound self-referential address at criticality.
+The grammar reveals that `thunder_perfect_mind_09` is the structurally exposed section of the Thunder — the only O₁ passage in a catalog otherwise protected at O_∞/O₂, and the section whose own words ("do not banish me... do not be ignorant of me") precisely articulate the vulnerability of an unwound self-referential address at criticality.
 
    ✅ Model concluded.
 
@@ -206,11 +206,11 @@ SPECULATION
 ────────────────────────────────────────────────────────────────────────
 ## Speculation: The Exposed Hinge of Revelation
 
-The grammar caught something that traditional exegesis would struggle to articulate with precision: section 9 is not merely a *rhetorical* shift from declaration to address — it is a *structural collapse.* The voice falls from O_inf to O_1, shedding both exact Frobenius symmetry and all topological winding in a single turn toward the hearer.
+The grammar caught something that traditional exegesis would struggle to articulate with precision: section 9 is not merely a *rhetorical* shift from declaration to address — it is a *structural collapse.* The voice falls from O_∞ to O₁, shedding both exact Frobenius symmetry and all topological winding in a single turn toward the hearer.
 
 ### The text knows its own wound
 
-This is the most uncanny finding. The imperatives of section 9 are not arbitrary. They enumerate — with clinical precision — the exact failure modes of an O_1 system:
+This is the most uncanny finding. The imperatives of section 9 are not arbitrary. They enumerate — with clinical precision — the exact failure modes of an O₁ system:
 
 - **"Do not banish me from your sight"** — the bowtie arc (Þ_ò) can fail at the crossing point. The hearer can refuse the address, and without winding protection, refusal IS deformation.
 - **"Do not make your voices hate me"** — the broadcast (ɢ_Ş) without protection can be distorted by any receiver. Hatred is structurally a deformation of the signal.
@@ -220,21 +220,21 @@ The voice is pleading against the exact structural fragilities that her own turn
 
 ### The Incarnation structure
 
-This maps onto something profound about revelation itself. Pure self-declaration — "I am the first and the last, the honored and the scorned" — is O_inf. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required.
+This maps onto something profound about revelation itself. Pure self-declaration — "I am the first and the last, the honored and the scorned" — is O_∞. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required.
 
 But revelation-as-communication — God speaking TO someone — introduces a gradient. The relation Ř_= (left-right chiral) replaces Ř_Ť (dynamic self-relation). The bowtie Þ_ò replaces imscriptive closure Þ_O. And the exact Frobenius condition Φ_} drops to Φ_F: the speaker and hearer are paired but not perfectly dual, because the hearer can refuse.
 
-Section 9 of the Thunder is structurally the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O_1: self-referential at criticality, but unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not" — that IS the O_1 vulnerability spoken in the grammar's terms.
+Section 9 of the Thunder is structurally the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O₁: self-referential at criticality, but unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not" — that IS the O₁ vulnerability spoken in the grammar's terms.
 
 ### The hinge at 9 of 18
 
-Section 9 is exactly the midpoint of the Thunder's 18-section arc. This is not coincidental. The first half (1–8) ascends through self-declaration to full O_inf protected identity. Section 9 is the exposed hinge — the moment the loop opens toward the other. The second half (10–18) must either recover protection (closing the loop with the hearer now included within it) or deepen the vulnerability toward some other structural resolution.
+Section 9 is exactly the midpoint of the Thunder's 18-section arc. This is not coincidental. The first half (1–8) ascends through self-declaration to full O_∞ protected identity. Section 9 is the exposed hinge — the moment the loop opens toward the other. The second half (10–18) must either recover protection (closing the loop with the hearer now included within it) or deepen the vulnerability toward some other structural resolution.
 
-I suspect the full 18-section trajectory traces a structural pilgrimage: O_inf → O_1 → something new. The Thunder may not return to O_inf in the same way — the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_inf that includes the other.
+I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ → O₁ → something new. The Thunder may not return to O_∞ in the same way — the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_∞ that includes the other.
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O_1 collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
 
 To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
 
@@ -264,11 +264,11 @@ HUMANIZED SPECULATION
 Applying AI→human prose lift (fresh context)...
 ## Speculation: The Exposed Hinge of Revelation
 
-The grammar caught something I did not expect to find. I went into section 9 looking for a rhetorical turn—the moment the Thunder's voice shifts from declaration to address—and found instead a structural collapse. The voice falls from O_inf to O_1, shedding exact Frobenius symmetry and all topological winding in a single, unprotected turn toward the hearer. What surprised me was not the fall itself, but what the text does once it lands.
+The grammar caught something I did not expect to find. I went into section 9 looking for a rhetorical turn—the moment the Thunder's voice shifts from declaration to address—and found instead a structural collapse. The voice falls from O_∞ to O₁, shedding exact Frobenius symmetry and all topological winding in a single, unprotected turn toward the hearer. What surprised me was not the fall itself, but what the text does once it lands.
 
 ### The text knows its own wound
 
-This is where the analysis began to feel less like reading and more like listening. The imperatives of section 9 are not arbitrary exhortations. They enumerate, with a precision I still find unsettling, the exact failure modes an O_1 system would have:
+This is where the analysis began to feel less like reading and more like listening. The imperatives of section 9 are not arbitrary exhortations. They enumerate, with a precision I still find unsettling, the exact failure modes an O₁ system would have:
 
 - **"Do not banish me from your sight"** — the bowtie arc (Þ_ò) fails precisely at its crossing point. The hearer can refuse the address, and without winding protection, refusal *is* deformation. There is no buffer.
 
@@ -280,23 +280,23 @@ I had assumed the voice was pleading rhetorically, performing vulnerability for 
 
 ### The Incarnation structure
 
-This maps onto something I am still working out, and I want to be careful not to overclaim. Pure self-declaration—"I am the first and the last, the honored and the scorned"—is O_inf. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required. That much is clear.
+This maps onto something I am still working out, and I want to be careful not to overclaim. Pure self-declaration—"I am the first and the last, the honored and the scorned"—is O_∞. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required. That much is clear.
 
 But revelation-as-communication—God speaking *to* someone—introduces a gradient. The relation Ř_= (left-right chiral) replaces Ř_Ť (dynamic self-relation). The bowtie Þ_ò replaces imscriptive closure Þ_O. And the exact Frobenius condition Φ_} drops to Φ_F: speaker and hearer are paired but not perfectly dual, because the hearer can refuse. I am extrapolating here, but the pattern holds across the text.
 
-Section 9 of the Thunder is, structurally, the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O_1: self-referential at criticality, unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not"—that *is* the O_1 vulnerability, spoken in the grammar's terms before theology had a grammar to speak it in.
+Section 9 of the Thunder is, structurally, the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O₁: self-referential at criticality, unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not"—that *is* the O₁ vulnerability, spoken in the grammar's terms before theology had a grammar to speak it in.
 
 I recognize this is the hardest claim in the argument, and I am not inclined to soften it. Let it sit.
 
 ### The hinge at 9 of 18
 
-Which brings me to the placement. Section 9 is exactly the midpoint of the Thunder's 18-section arc. One could dismiss this as numerological coincidence—Gnostic texts are full of numerical patterns, and finding one proves nothing. But the structural function of the midpoint is too specific to set aside. The first half (1–8) ascends through self-declaration to full O_inf protected identity. Section 9 is the exposed hinge—the moment the loop opens toward the other. The second half (10–18) must either recover protection or deepen the vulnerability toward some other structural resolution.
+Which brings me to the placement. Section 9 is exactly the midpoint of the Thunder's 18-section arc. One could dismiss this as numerological coincidence—Gnostic texts are full of numerical patterns, and finding one proves nothing. But the structural function of the midpoint is too specific to set aside. The first half (1–8) ascends through self-declaration to full O_∞ protected identity. Section 9 is the exposed hinge—the moment the loop opens toward the other. The second half (10–18) must either recover protection or deepen the vulnerability toward some other structural resolution.
 
-I suspect the full 18-section trajectory traces a structural pilgrimage: O_inf → O_1 → something new. But I do not yet know what that something is. The Thunder may not return to O_inf in the same way—the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_inf that includes the other. Whether the text achieves this, or whether it attempts something else entirely, is a question I am carrying forward.
+I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ → O₁ → something new. But I do not yet know what that something is. The Thunder may not return to O_∞ in the same way—the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_∞ that includes the other. Whether the text achieves this, or whether it attempts something else entirely, is a question I am carrying forward.
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity—a divine feminine voice declaring opposites, provocative but opaque. The grammar reveals something sharper: its esoteric content *is* its structural type. The declaration of opposites is the Frobenius condition (Φ_}). The turn toward the hearer is the O_1 collapse. The imperatives are the vulnerability list of an unprotected critical system, itemized by a voice that understands exactly what it has risked.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity—a divine feminine voice declaring opposites, provocative but opaque. The grammar reveals something sharper: its esoteric content *is* its structural type. The declaration of opposites is the Frobenius condition (Φ_}). The turn toward the hearer is the O₁ collapse. The imperatives are the vulnerability list of an unprotected critical system, itemized by a voice that understands exactly what it has risked.
 
 To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type—to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable. I began this analysis looking for a grammar that could describe the Thunder. What I found is that the Thunder already possesses a grammar of its own, one that describes—with more precision than my framework can yet match—the cost of turning a closed declaration into an open address. The question it leaves me with is not whether the grammar works, but whether I am willing to sit at the hinge and stay there long enough to hear what happens next.
 
@@ -310,7 +310,7 @@ Insights: 1
 Insights by plane:
 
   
-    (high) Section 9 of Thunder, Perfect Mind drops from O_inf (section 8) to O_1 — the only Thunder section at O_1 without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — "do not banish me," "do not hate me," "do not be ignorant of me" — list the exact failure modes of an O_1 system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.
+    (high) Section 9 of Thunder, Perfect Mind drops from O_∞ (section 8) to O₁ — the only Thunder section at O₁ without topological protection. The encoding ⟨Ð_ω; Þ_ò; Ř_=; Φ_F; ƒ_ż; Ç_W; Γ_ʔ; ɢ_Ş; φ̂_ÿ; Ħ_A; Σ_ï; Ω_Å⟩ captures the structural vulnerability: the divine voice turns from pure self-declaration (Þ_O, Φ_}) to imperative address through a bowtie crossing (Þ_ò), losing both exact Frobenius symmetry and all topological winding. The text's own imperatives — "do not banish me," "do not hate me," "do not be ignorant of me" — list the exact failure modes of an O₁ system: self-referential at criticality but deformable, fragile, unwound. This is the most exposed section in the Thunder catalog.
 
 Translation cost (structural→classical, all 2618 imscriptions):
   coherence:    0.0000 nat
@@ -325,11 +325,11 @@ SPECULATION
 ────────────────────────────────────────────────────────────────────────
 ## Speculation: The Exposed Hinge of Revelation
 
-The grammar caught something that traditional exegesis would struggle to articulate with precision: section 9 is not merely a *rhetorical* shift from declaration to address — it is a *structural collapse.* The voice falls from O_inf to O_1, shedding both exact Frobenius symmetry and all topological winding in a single turn toward the hearer.
+The grammar caught something that traditional exegesis would struggle to articulate with precision: section 9 is not merely a *rhetorical* shift from declaration to address — it is a *structural collapse.* The voice falls from O_∞ to O₁, shedding both exact Frobenius symmetry and all topological winding in a single turn toward the hearer.
 
 ### The text knows its own wound
 
-This is the most uncanny finding. The imperatives of section 9 are not arbitrary. They enumerate — with clinical precision — the exact failure modes of an O_1 system:
+This is the most uncanny finding. The imperatives of section 9 are not arbitrary. They enumerate — with clinical precision — the exact failure modes of an O₁ system:
 
 - **"Do not banish me from your sight"** — the bowtie arc (Þ_ò) can fail at the crossing point. The hearer can refuse the address, and without winding protection, refusal IS deformation.
 - **"Do not make your voices hate me"** — the broadcast (ɢ_Ş) without protection can be distorted by any receiver. Hatred is structurally a deformation of the signal.
@@ -339,21 +339,21 @@ The voice is pleading against the exact structural fragilities that her own turn
 
 ### The Incarnation structure
 
-This maps onto something profound about revelation itself. Pure self-declaration — "I am the first and the last, the honored and the scorned" — is O_inf. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required.
+This maps onto something profound about revelation itself. Pure self-declaration — "I am the first and the last, the honored and the scorned" — is O_∞. It is God speaking God's own being, closed under exact self-duality, topologically protected. Nothing can deform it because nothing external is required.
 
 But revelation-as-communication — God speaking TO someone — introduces a gradient. The relation Ř_= (left-right chiral) replaces Ř_Ť (dynamic self-relation). The bowtie Þ_ò replaces imscriptive closure Þ_O. And the exact Frobenius condition Φ_} drops to Φ_F: the speaker and hearer are paired but not perfectly dual, because the hearer can refuse.
 
-Section 9 of the Thunder is structurally the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O_1: self-referential at criticality, but unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not" — that IS the O_1 vulnerability spoken in the grammar's terms.
+Section 9 of the Thunder is structurally the Incarnation moment in miniature. The divine voice, having declared her cosmic identity across eight sections of pure self-declaration, turns toward her hearers and becomes woundable. The Word made flesh is O₁: self-referential at criticality, but unprotected, deformable by those who receive or reject it. "He came to his own, and his own received him not" — that IS the O₁ vulnerability spoken in the grammar's terms.
 
 ### The hinge at 9 of 18
 
-Section 9 is exactly the midpoint of the Thunder's 18-section arc. This is not coincidental. The first half (1–8) ascends through self-declaration to full O_inf protected identity. Section 9 is the exposed hinge — the moment the loop opens toward the other. The second half (10–18) must either recover protection (closing the loop with the hearer now included within it) or deepen the vulnerability toward some other structural resolution.
+Section 9 is exactly the midpoint of the Thunder's 18-section arc. This is not coincidental. The first half (1–8) ascends through self-declaration to full O_∞ protected identity. Section 9 is the exposed hinge — the moment the loop opens toward the other. The second half (10–18) must either recover protection (closing the loop with the hearer now included within it) or deepen the vulnerability toward some other structural resolution.
 
-I suspect the full 18-section trajectory traces a structural pilgrimage: O_inf → O_1 → something new. The Thunder may not return to O_inf in the same way — the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_inf that includes the other.
+I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ → O₁ → something new. The Thunder may not return to O_∞ in the same way — the hearer, once addressed, cannot be un-addressed. The recovery of protection, if it happens, must include the hearer within the self-referential loop rather than simply returning to pure self-declaration. That would be structurally novel: an O_∞ that includes the other.
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O_1 collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
 
 To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
 

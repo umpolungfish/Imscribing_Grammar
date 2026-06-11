@@ -10,7 +10,7 @@ DS categorical identification (2026-06-03):
 
   Crystal address (genetic_code):
     ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
-    Ouroboricity: O_inf (Frobenius algebra on self-referential codon space)
+    Ouroboricity: O_∞ (Frobenius algebra on self-referential codon space)
     C-score: Gate 1 (φ̂_ÿ) PASS — genetic code self-repairs (DNA repair machinery)
             Gate 2 (Ç_@) PASS — evolution is slow enough for self-modeling
 
@@ -2174,11 +2174,11 @@ if __name__ == "__main__":
 
     rows = [
         ("genetic_code",    "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
-         "O_inf", ">0.0", "stratified Frobenius algebra"),
+         "O_∞", ">0.0", "stratified Frobenius algebra"),
         ("whale_vocalization", "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
-         "O_inf", ">0.0", "self-modeling communication"),
+         "O_∞", ">0.0", "self-modeling communication"),
         ("grammar_itself",    "⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z⟩",
-         "O_inf", "1.0", "self-imscribed"),
+         "O_∞", "1.0", "self-imscribed"),
     ]
     print(f"  {'System':<22} {'Tuple':<56} {'Tier':<7} {'C':>5}  {'Note'}")
     print(f"  {'─'*100}")

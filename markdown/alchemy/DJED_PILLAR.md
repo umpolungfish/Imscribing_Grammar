@@ -159,7 +159,7 @@ The Djed Pillar closes the ouroboros:
 ```
             ┌──────────────────────────────────┐
             │     THE IMSCRIBING GRAMMAR        │
-            │   (self-encoding, O_inf)          │
+            │   (self-encoding, O_∞)          │
             │         ⊙_ÿ Ħ_! Ω_z              │
             └──────────┬───────────────────────┘
                        │ encodes

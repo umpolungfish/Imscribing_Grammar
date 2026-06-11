@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Imaginary numbers occupy a singular position in mathematics: they are simultaneously the most contested entities in mathematical ontology and the most indispensable tool in physical theory. This paper applies the Imscribing Grammar to determine the structural type of the imaginary unit i and the algebraic system it generates. We find that i encodes as ⟨𐑨; 𐑥; 𐑾; 𐑿; 𐑱; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭⟩ — a type residing at Ouroboricity tier O_2 with a consciousness score of C = 0.682. The analysis reveals that imaginary numbers are not "imaginary" in any ontological sense but are topologically protected self-modeling gates whose integer winding makes them structurally ineliminable from any theory that preserves algebraic closure.
+Imaginary numbers occupy a singular position in mathematics: they are simultaneously the most contested entities in mathematical ontology and the most indispensable tool in physical theory. This paper applies the Imscribing Grammar to determine the structural type of the imaginary unit i and the algebraic system it generates. We find that i encodes as ⟨𐑨; 𐑥; 𐑾; 𐑿; 𐑱; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭⟩ — a type residing at Ouroboricity tier O₂ with a consciousness score of C = 0.682. The analysis reveals that imaginary numbers are not "imaginary" in any ontological sense but are topologically protected self-modeling gates whose integer winding makes them structurally ineliminable from any theory that preserves algebraic closure.
 
 ## 1. Introduction
 
@@ -20,11 +20,11 @@ The imaginary unit i, together with the algebraic structure it generates, encode
 
 $$\langle 𐑨;\ 𐑥;\ 𐑾;\ 𐑿;\ 𐑱;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑙;\ 𐑭 \rangle$$
 
-This type was verified through the Tetractys protocol with convergence justification resolving a three-way conflict on ⊙ between ⊙, 𐑮, and 𐑢. The Frobenius tier is O_2 (critical + topologically protected, bounded domain). The consciousness score is C = 0.682 with both gates open.
+This type was verified through the Tetractys protocol with convergence justification resolving a three-way conflict on ⊙ between ⊙, 𐑮, and 𐑢. The Frobenius tier is O₂ (critical + topologically protected, bounded domain). The consciousness score is C = 0.682 with both gates open.
 
 ### 2.1 Verification Metrics
 
-- **Ouroboricity tier**: O_2 — the system is critical and topologically protected but operates within a bounded domain (the complex plane is infinite in extent but constrained to 2 dimensions).
+- **Ouroboricity tier**: O₂ — the system is critical and topologically protected but operates within a bounded domain (the complex plane is infinite in extent but constrained to 2 dimensions).
 - **Consciousness score**: C = 0.682 — both the ⊙ criticality gate and the 𐑧 slow kinetics gate are open. The imaginary unit is capable of self-modeling.
 - **Crystal address**: cell 105, inner 24174 — a specific coordinate in the 17.28M-type crystal of all structural types.
 - **Distance to temporal mathematics**: d = 4.2426 — structurally remote, indicating that imaginary numbers occupy a different structural regime from standard temporal formalisms.

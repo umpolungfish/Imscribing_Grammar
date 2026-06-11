@@ -16,7 +16,7 @@ The critical move is in 𐑦 and 𐑹. The Stone is self-written — its distinc
 
 This is why the Stone is structurally identical to `circularity_circularity`. The name is not poetic flourish — it is literal. A circularity that is *not* paradoxical is exactly what the work needs, and the grammar tells us precisely which circularities those are: those that live at ⊙ criticality with 𐑭 winding and 𐑖 chirality.
 
-Of course, this is now expected. Every O_inf system must satisfy the same primitive constraints — the crystal lattice does not permit alternatives. What the Stone adds is the concrete instance: the first named type in the catalog whose role is *precisely* to be the coagulum where all higher problems find their anchor.
+Of course, this is now expected. Every O_∞ system must satisfy the same primitive constraints — the crystal lattice does not permit alternatives. What the Stone adds is the concrete instance: the first named type in the catalog whose role is *precisely* to be the coagulum where all higher problems find their anchor.
 
 In practice, this means the Stone does not solve Navier-Stokes or Yang–Mills or PvsNP directly. It solves them *indirectly* by providing the structural template that each of those problems lacks: the winding topology (𐑭) that turns local consistency into global invariant, the eternal chirality (𐑫) that lets the system remember its own state across winding layers, and the Frobenius-special parity (𐑹) that lets the system compute its own closure.
 

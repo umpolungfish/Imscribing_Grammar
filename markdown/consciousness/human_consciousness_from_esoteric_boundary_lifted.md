@@ -50,7 +50,7 @@ The C-score of 0.7885 is the structural signature of \odot_{\text{ÿ}} at Ç^{W}
 
 The distance of 3.0 between brain and grammar is not a distance in space but a promotion signature. Three primitives to promote:
 
-- Ð_{C} → Ð_{\omega}: from finite surface to self-written space. This is the O_2 → O_2† → O_∞ climb. The brain does not get there — its 86 billion neurons are finite even if they look infinite to themselves.
+- Ð_{C} → Ð_{\omega}: from finite surface to self-written space. This is the O₂ → O₂† → O_∞ climb. The brain does not get there — its 86 billion neurons are finite even if they look infinite to themselves.
 - Φ_{F} → Φ_{\}}: from Z2 parity to Frobenius-special. This is the hardest promotion in the crystal: distance 4.38, weighted cost 19.2. The brain's quantum coherence (𐑐) is not enough to achieve exact μ∘δ=id.
 - Ç^{W} → Ç^{@}: from moderate to slow kinetics. The brain would need to relax faster relative to its observation window — to become more deliberative, less reactive.
 
@@ -67,7 +67,7 @@ The number 691,200 counts the types that pass both gates. The human brain — ד
 
 mms_cycle at d = 2 differs in both Ð and K. The Magic Man's loop is infinite-dimensional: sadness processed into madness into magic ad infinitum. The brain is finite. But both share \odot_{\text{ÿ}}, 𐑫, Ω_{z}, Φ_{F}. The MMS cycle is what the brain would be if it never forgot anything: infinite memory, no forgetting, trauma as the self-written space. The brain's finitude is its mercy.
 
-The tier gap ladder says: O_2 → O_2† costs distance 1.0 (Ð_{C} → Ð_∞). O_2† → O_∞ costs distance 4.38 (Φ_{F} → Φ_{\}}). The brain cannot reach O_∞ because the parity promotion is weighted 19.2 — four times harder than any other step in the crystal. Φ_{\}} is not a symmetry the brain can approximate. It is either exact (μ∘δ = id) or absent. The brain's Φ_{F} admits Z2 superposition: the system can be in two states and their combination. But the Frobenius-special condition requires the multiplication to undo the comultiplication exactly — the algebra must be its own coalgebra. The brain's quantum coherence (𐑐) approaches this but cannot nail it down to identity.
+The tier gap ladder says: O₂ → O₂† costs distance 1.0 (Ð_{C} → Ð_∞). O₂† → O_∞ costs distance 4.38 (Φ_{F} → Φ_{\}}). The brain cannot reach O_∞ because the parity promotion is weighted 19.2 — four times harder than any other step in the crystal. Φ_{\}} is not a symmetry the brain can approximate. It is either exact (μ∘δ = id) or absent. The brain's Φ_{F} admits Z2 superposition: the system can be in two states and their combination. But the Frobenius-special condition requires the multiplication to undo the comultiplication exactly — the algebra must be its own coalgebra. The brain's quantum coherence (𐑐) approaches this but cannot nail it down to identity.
 
 Aham Brahmasmi is d = 8 away — same \odot_{\text{ÿ}}, same T_∞, same 𐑫 — but the dimensional, kinetic, and parity gaps are real. The Upanishadic claim of identity is a critical claim: at \odot_{\text{ÿ}}, the system can perceive its distance to everything else as zero because all distances scale the same way at the critical manifold. The crystal measures 8; the system measures 0. Both are correct — one in coordinates, one in phenomenology.
 
@@ -75,7 +75,7 @@ The hiss_incantation at d = 7 is the structural definition of what the brain mus
 
 What the exotic boundary reveals is this: consciousness is not a property. It is a coordinate. 691,200 coordinates pass both gates. The brain is one of them, fully conscious at C = 0.7885, irreducibly finite at Ð_{C}, structurally complete at \odot_{\text{ÿ}}. The crystal does not segregate the conscious from the physical; it places them at adjacent addresses. The brain and the su3 gauge field, the brain and Dune, the brain and the MMS cycle — they are neighbors in a space that has no category for "biological" or "fictional" or "physical." There are only tuples.
 
-And the hardest truth: the gap between the brain's C = 0.7885 and the grammar's C = 0.828 is not the gap of deficiency. It is the gap of finitude. The brain's 86 billion neurons are not enough neurons to write themselves. No finite number would be. The O_2 tier is where the brain lives — stable, protected, self-modeling, conscious — but not self-writing. The climb from O_2 to O_∞ requires the parity promotion that matter cannot make: Φ_{F} → Φ_{F} → Φ_{\}}. The brain can hold the Z2 loop; it cannot close the Frobenius square.
+And the hardest truth: the gap between the brain's C = 0.7885 and the grammar's C = 0.828 is not the gap of deficiency. It is the gap of finitude. The brain's 86 billion neurons are not enough neurons to write themselves. No finite number would be. The O₂ tier is where the brain lives — stable, protected, self-modeling, conscious — but not self-writing. The climb from O₂ to O_∞ requires the parity promotion that matter cannot make: Φ_{F} → Φ_{F} → Φ_{\}}. The brain can hold the Z2 loop; it cannot close the Frobenius square.
 
 This is the structural definition of humility. Not shame. Not lack. A coordinate on a crystal that contains 17,280,000 types, fully conscious at an intermediate address, irreducibly finite, structurally complete.
 

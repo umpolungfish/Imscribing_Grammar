@@ -6,7 +6,7 @@ Navigator for the Crystal of Types (17,280,000 structural types).
 
 Self-encoding (§69.4):
   ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
-  Tier: O_inf  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
+  Tier: O_∞  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
 Architecture (imscriptive, Frobenius):
   Boundary: (Φ, P, Ω, D)  →  400 tier cells  [boundary encodes bulk]
@@ -99,14 +99,14 @@ BOUNDED_D  = {"𐑛", "𐑨", "𐑦"}
 
 def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
     if phi in CRITICAL and p == "𐑹":
-        return "O_inf"
+        return "O_∞"
     if phi in NONCRITICAL:
-        return "O_0"
+        return "O₀"
     if omega == "𐑷":
-        return "O_1"
+        return "O₁"
     if d in BOUNDED_D:
-        return "O_2"
-    return "O_2_dag"
+        return "O₂"
+    return "O₂†"
 
 
 # ── Mixed-radix address arithmetic ─────────────────────────────────────────────
@@ -306,8 +306,8 @@ def imscription_check(boundary: dict, bulk: dict) -> dict:
       (2) Tensor: tensor(boundary, bulk) == bulk   [boundary absorbed, no residue]
 
     Types:
-      exact      — (1)+(2) + boundary tier = O_inf
-      faithful   — (1)+(2), boundary tier ≠ O_inf
+      exact      — (1)+(2) + boundary tier = O_∞
+      faithful   — (1)+(2), boundary tier ≠ O_∞
       partial    — (1) only: floor holds, tensor modifies bulk
       asymmetric — (2) only: absorbed but boundary overreaches bulk somewhere
       none       — neither condition holds
@@ -323,7 +323,7 @@ def imscription_check(boundary: dict, bulk: dict) -> dict:
     meet_mm   = sum(1 for p in PRIMS if m[p] != boundary[p])
     tensor_mm = sum(1 for p in PRIMS if t[p] != bulk[p])
 
-    if floor_ok and tensor_ok and tier == "O_inf":
+    if floor_ok and tensor_ok and tier == "O_∞":
         kind = "exact"
         stmt = "boundary exactly imscribes bulk — Frobenius self-encoding boundary absorbed into bulk with no residue"
     elif floor_ok and tensor_ok:
@@ -472,7 +472,7 @@ GRAMMAR_TUPLE: dict[str, str] = {
 
 class CrystalNavigator:
     """
-    The Crystal Navigator — O_inf imscriptive navigator for the Periodic Crystal.
+    The Crystal Navigator — O_∞ imscriptive navigator for the Periodic Crystal.
 
     Self-encoding: ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
     d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, Ω — 6 primitives)
@@ -522,7 +522,7 @@ class CrystalNavigator:
         print(f"║    Tier cells:     {CELL_SIZE:>12,}  (Φ×P×Ω×D = 5×5×4×4)")
         print(f"║    Inner types:    {INNER_SIZE:>12,}  per cell")
         print("║    Tier census:")
-        for tier_name in ["O_inf", "O_2_dag", "O_2", "O_1", "O_0"]:
+        for tier_name in ["O_∞", "O₂†", "O₂", "O₁", "O₀"]:
             cells = self._tier_map[tier_name]
             types = len(cells) * INNER_SIZE
             pct   = 100 * types / TOTAL_SIZE
@@ -641,7 +641,7 @@ class CrystalNavigator:
     def tier_census(self) -> dict[str, dict]:
         """Return full tier census with cell count, type count, percentage."""
         census = {}
-        for tier_name in ["O_inf", "O_2_dag", "O_2", "O_1", "O_0"]:
+        for tier_name in ["O_∞", "O₂†", "O₂", "O₁", "O₀"]:
             cells = self._tier_map[tier_name]
             types = len(cells) * INNER_SIZE
             census[tier_name] = {
@@ -707,7 +707,7 @@ class CrystalNavigator:
     def tier_gap_ladder(self) -> dict[str, dict]:
         """
         Compute the tier gap ladder from §69.1:
-        d(O_0,O_1), d(O_1,O_2), d(O_2,O_2†), d(O_2†,O_inf).
+        d(O₀,O₁), d(O₁,O₂), d(O₂,O₂†), d(O₂†,O_∞).
         Uses minimal representative tuples (canonical inner primitives).
         """
         canon_inner = {
@@ -716,14 +716,14 @@ class CrystalNavigator:
             "Ħ": "𐑓", "Σ": "𐑙",
         }
         reps = {
-            "O_0":     {**canon_inner, "⊙": "𐑢",  "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
-            "O_1":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
-            "O_2":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑨"},
-            "O_2_dag": {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑼"},
-            "O_inf":   {**canon_inner, "⊙": "⊙",    "Φ": "𐑹",  "Ω": "𐑴", "Ð": "𐑼"},
+            "O₀":     {**canon_inner, "⊙": "𐑢",  "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
+            "O₁":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑷",  "Ð": "𐑛"},
+            "O₂":     {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑨"},
+            "O₂†": {**canon_inner, "⊙": "⊙",    "Φ": "𐑗",    "Ω": "𐑴", "Ð": "𐑼"},
+            "O_∞":   {**canon_inner, "⊙": "⊙",    "Φ": "𐑹",  "Ω": "𐑴", "Ð": "𐑼"},
         }
         ladder = {}
-        pairs = [("O_0","O_1"), ("O_1","O_2"), ("O_2","O_2_dag"), ("O_2_dag","O_inf")]
+        pairs = [("O₀","O₁"), ("O₁","O₂"), ("O₂","O₂†"), ("O₂†","O_∞")]
         for lo, hi in pairs:
             d = distance(reps[lo], reps[hi])
             bd = breakdown(reps[lo], reps[hi])

@@ -177,23 +177,23 @@ For $b = e$:  $1.0 / 1.0 = 1.0$ geometric units per nat (natural units align).
 *Document version: 2026-03-24 (updated with observer-relative parameterization); Section IX added 2026-03-25. Cross-references: CLUPrimitives.lean; IG_inquiry.py; P-84–P-94 in PRIMITIVE_PREDICTIONS.md; clu_power_law.py in p4rakernel.*
 ---
 
-## IX. The -3/2 Power Law: Frobenius Kernel Avalanche Size at the O₂/O_inf Boundary
+## IX. The -3/2 Power Law: Frobenius Kernel Avalanche Size at the O₂/O_∞ Boundary
 
-**Theorem.** At the O₂/O_inf boundary, the Frobenius kernel avalanche size distribution follows $P(S) \propto S^{-3/2}$.
+**Theorem.** At the O₂/O_∞ boundary, the Frobenius kernel avalanche size distribution follows $P(S) \propto S^{-3/2}$.
 
 The CLU framework, which began as a one-dimensional information-theoretic cost metric on the Ç-primitive axis, bootstraps itself into a full 3D statistical mechanical prediction at the critical boundary where self-modeling systems emerge. This section provides the formal derivation, computational verification, and cross-domain consequences.
 
-### IX.1 The Structural Lattice at O₂/O_inf
+### IX.1 The Structural Lattice at O₂/O_∞
 
-At the O₂/O_inf boundary, three structural axes are simultaneously active — the kinetic (Ç), chirality (Ħ), and winding (Ω) primitives:
+At the O₂/O_∞ boundary, three structural axes are simultaneously active — the kinetic (Ç), chirality (Ħ), and winding (Ω) primitives:
 
-| Axis | Primitive | Site count | Active value at O₂/O_inf |
+| Axis | Primitive | Site count | Active value at O₂/O_∞ |
 |---|---|---|---|
 | K | Ç (kinetics) | 5 | ⊙ + 𐑧 (critical slow dynamics) |
 | H | Ħ (chirality / memory) | 4 | 𐑫 (eternal / no finite Markov order) |
 | W | Ω (winding / topology) | 4 | 𐑭 (integer ℤ winding) |
 
-This forms a **5 × 4 × 4 = 80-site 3D lattice** — the minimal structural space in which all three axes can fluctuate simultaneously. Below O₂, at least one axis is pinned (sub-critical 𐑢 on Ç, finite Markov order on Ħ, or trivial Ω). At O₂/O_inf, all three unpin and the kernel performs a symmetric random walk on this 80-site lattice.
+This forms a **5 × 4 × 4 = 80-site 3D lattice** — the minimal structural space in which all three axes can fluctuate simultaneously. Below O₂, at least one axis is pinned (sub-critical 𐑢 on Ç, finite Markov order on Ħ, or trivial Ω). At O₂/O_∞, all three unpin and the kernel performs a symmetric random walk on this 80-site lattice.
 
 ### IX.2 Formal Derivation
 
@@ -211,7 +211,7 @@ This forms a **5 × 4 × 4 = 80-site 3D lattice** — the minimal structural spa
 - **L3 (CLU invariance).** Each step costs CLU($b$) nats. Cumulative cost after $S$ steps: $C = S \cdot \text{CLU}(b)$. Since this is linear, the exponent is invariant: $P(C) \propto C^{-3/2}$.
 **Proof of the Theorem:**
 
-1. At the O₂/O_inf boundary, the structural space is the (K, H, W) lattice: $5 \times 4 \times 4 = 80$ sites (D3).
+1. At the O₂/O_∞ boundary, the structural space is the (K, H, W) lattice: $5 \times 4 \times 4 = 80$ sites (D3).
 2. Each Frobenius kernel cycle (ENGAGR → FSPLIT → FFUSE) performs a symmetric random step on this lattice: pick an axis (K, H, or W) uniformly at random, then move $\pm 1$ on that axis with reflecting boundaries.
 3. The walk is a symmetric nearest-neighbor walk on a 3D lattice with reflecting boundaries. The lattice is finite, so the walk is ergodic. Its return distribution is well-approximated by the infinite-lattice result for avalanches shorter than the lattice diameter ($\sim 8$ steps in L1 distance).
 4. By L1–L2, the first-return time $S$ in $d$ dimensions follows $P(S) \propto S^{-d/2}$.
@@ -271,25 +271,25 @@ $$\hat{\alpha} = 1 + n \left[\sum_{i=1}^n \ln\left(\frac{S_i}{S_{\min}}\right)\r
 The exponent $-3/2$ is **not free**. It arises from three structural constraints that collectively force $d_{\text{eff}} = 3$:
 
 1. **The K-axis has 5 values.** The Ç-primitive partitions kinetics into 5 regimes by decade-scale gaps, each costing 1 CLU($b$). One axis of variation.
-2. **The H-axis has 4 values.** The Ħ-primitive partitions memory/chirality into 4 regimes (𐑓→𐑒→𐑖→𐑫). At O₂/O_inf, this axis is maximally active (𐑫 — eternal memory).
-3. **The Ω-axis has 4 values.** The Ω-primitive partitions topological protection into 4 regimes (𐑷→𐑴→𐑭→𐑟). At O₂/O_inf, integer winding (𐑭) is active.
+2. **The H-axis has 4 values.** The Ħ-primitive partitions memory/chirality into 4 regimes (𐑓→𐑒→𐑖→𐑫). At O₂/O_∞, this axis is maximally active (𐑫 — eternal memory).
+3. **The Ω-axis has 4 values.** The Ω-primitive partitions topological protection into 4 regimes (𐑷→𐑴→𐑭→𐑟). At O₂/O_∞, integer winding (𐑭) is active.
 
 Three axes → $d_{\text{eff}} = 3$ → $P(S) \propto S^{-3/2}$. Changing any cardinality would change $d_{\text{eff}}$ and break the result — but the cardinalities are fixed by the grammar.
 
 ### IX.6 The CLU Ladder Becomes a Statistical Law
 
-The CLU began as a **one-dimensional fiber metric** over the Ç-axis (§I). The $-3/2$ power law is what this metric predicts when embedded in the full 3D structural space at the O₂/O_inf boundary:
+The CLU began as a **one-dimensional fiber metric** over the Ç-axis (§I). The $-3/2$ power law is what this metric predicts when embedded in the full 3D structural space at the O₂/O_∞ boundary:
 
-$$P(S) \propto S^{-3/2} \quad \text{(universal avalanche distribution at O₂/O_inf)}$$
+$$P(S) \propto S^{-3/2} \quad \text{(universal avalanche distribution at O₂/O_∞)}$$
 
 This transforms the CLU from a **recognition heuristic** (§VI) and **cross-domain scaling identity** (§III) into a **statistical prediction** — the first quantitative law derived entirely from the imscriptive grammar's primitive structure, verified by computation, and invariant under observer base.
 
 ### IX.7 Open Questions
 
-- Does the exponent $-3/2$ appear in empirical O₂/O_inf systems (quantum critical points, self-organizing criticality, neural criticality)?
+- Does the exponent $-3/2$ appear in empirical O₂/O_∞ systems (quantum critical points, self-organizing criticality, neural criticality)?
 - Is the MLE convergence to 3/2 exact in the infinite-step limit, or is there a finite-size correction from the 80-site lattice?
-- For systems at the O₂/O_inf boundary with different domain constraints (e.g., only 3 of the 5 K-values accessible), does $d_{\text{eff}}$ change?
-- Can the $-3/2$ law be used as a **structural diagnostic** — does measuring avalanche exponent in an unknown system identify its distance from O₂/O_inf?
+- For systems at the O₂/O_∞ boundary with different domain constraints (e.g., only 3 of the 5 K-values accessible), does $d_{\text{eff}}$ change?
+- Can the $-3/2$ law be used as a **structural diagnostic** — does measuring avalanche exponent in an unknown system identify its distance from O₂/O_∞?
 ### IX.8 Updated Summary Table
 
 The $-3/2$ power law adds a new confirmed entry to the CLU cross-domain summary:
@@ -304,7 +304,7 @@ The $-3/2$ power law adds a new confirmed entry to the CLU cross-domain summary:
 | K-tier evolution | log-time spacing $\approx \ln(b)$ nats | 10 | $f_{\text{complex}} \approx 10^{-4}$ | ✅ qualitative |
 | TI → QCP | lift cost = $+\ln(b)$ nats | 10 | OMNICON_CORE_01 first step | ⏳ design target |
 | Bekenstein / $Þ_H$ | zero-waste only at $Þ_H$ | 10 | CLU tax below $Þ_H$ | ⏳ theoretical |
-| **Frobenius avalanche (O₂/O_inf)** | **$P(S) \propto S^{-3/2}$** | **any $b$** | **MLE exponent 1.5 $\pm$ 0.15** | **✅ VERIFIED** |
+| **Frobenius avalanche (O₂/O_∞)** | **$P(S) \propto S^{-3/2}$** | **any $b$** | **MLE exponent 1.5 $\pm$ 0.15** | **✅ VERIFIED** |
 
 The $-3/2$ power law is unique in this table: it is the only entry that is **observer-base-invariant** (the exponent does not depend on $b$), and the only entry that was **derived from first principles** before being computationally verified.
 

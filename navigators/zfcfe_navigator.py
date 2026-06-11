@@ -18,7 +18,7 @@ Actions:
   tensor  <name> — ZFC_fe ⊗ name — Frobenius absorption test
   meet    <name> — ZFC_fe ⊓ name — shared structural floor
   join    <name> — ZFC_fe ⊔ name — minimal ceiling
-  tier    <name> — Ouroboricity tier + what's missing for O_inf
+  tier    <name> — Ouroboricity tier + what's missing for O_∞
   systems     — List all known systems
   decode <s>  — Decode Shavian tuple → notation
   encode <n>  — Encode notation → Shavian
@@ -90,7 +90,7 @@ KNOWN_SYSTEMS = {
         "proven_o_inf": True, "proven_c_score": 1.0,
     },
     "zfc_t": {
-        "description": "ZFC with chirality + winding topology (O_2†)",
+        "description": "ZFC with chirality + winding topology (O₂†)",
         "tuple": ZFC_T, "proven_o_inf": False,
     },
     "zfc": {
@@ -570,15 +570,15 @@ def ouroboricity_tier(t):
     has_t_odot = t.get("Þ") == "𐑸"
     has_omega_z = t.get("Ω") in ("𐑭", "𐑟")
     if has_gate and has_h_inf and has_d_odot and has_t_odot and has_omega_z:
-        return "O_inf"
+        return "O_∞"
     elif has_gate and has_h_inf:
-        return "O_2†"
+        return "O₂†"
     elif has_gate:
-        return "O_2"
+        return "O₂"
     elif has_omega_z:
-        return "O_1"
+        return "O₁"
     else:
-        return "O_0"
+        return "O₀"
 
 def consciousness_score(t):
     gate1_open = t.get("⊙") == "⊙"

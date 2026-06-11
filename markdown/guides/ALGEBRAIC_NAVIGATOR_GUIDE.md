@@ -91,10 +91,10 @@ The bulk is free within each tier cell.
 | Tier | Rule | Tier cells | Crystal share |
 |------|------|-----------|---------------|
 | $O_\infty$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ and $P = P_{\text{doublebarpipe}}$ | 32 | 8.0% |
-| $O_0$ | $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ | 240 | 60.0% |
-| $O_1$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega = \Omega_{\text{closeepsilon}}$ | 32 | ~5.4% |
-| $O_2$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ | 72 | ~18.6% |
-| $O_2^\dagger$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | 24 | ~8.0% |
+| $O₀$ | $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ | 240 | 60.0% |
+| $O₁$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega = \Omega_{\text{closeepsilon}}$ | 32 | ~5.4% |
+| $O₂$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ | 72 | ~18.6% |
+| $O₂^\dagger$ | $\Phi_{\text{ctyogh}}$ or $\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | 24 | ~8.0% |
 
 **$\Phi_{\text{ctyogh}}$ is absorbing under meet**: $\text{meet}(\Phi_{\text{ctyogh}}, x) = \Phi_{\text{ctyogh}}$ for all $x$.
 It is the necessary condition for self-modeling.
@@ -154,14 +154,14 @@ nav = CrystalNavigator()
 ```python
 addr = nav.encode(tup)          # dict → int in [0, 17_279_999]
 tup  = nav.decode(addr)         # int → dict
-tier = nav.tier(tup)            # → "O_0" | "O_1" | "O_2" | "O_2_dag" | "O_inf"
+tier = nav.tier(tup)            # → "O₀" | "O₁" | "O₂" | "O₂†" | "O_∞"
 ```
 
 ### Holographic query
 
 ```python
 nav.imscriptive_query("⊙", "𐑹")
-# → prints all 32 O_inf tier cells + bulk count
+# → prints all 32 O_∞ tier cells + bulk count
 ```
 
 ### Navigation
@@ -202,8 +202,8 @@ navigator_self = {
 }
 
 # Exact addresses
-encode_tuple(magnetar)       # → 5,256,412   tier O_2
-encode_tuple(navigator_self) # → 6,734,591   tier O_inf
+encode_tuple(magnetar)       # → 5,256,412   tier O₂
+encode_tuple(navigator_self) # → 6,734,591   tier O_∞
 
 # Structural distances
 distance(magnetar, navigator_self)              # → 3.9875
@@ -369,7 +369,7 @@ pred_addr  = out["addresses"].item()             # 5,286,664
 exact_addr = encode_tuple(magnetar)              # 5,256,412  (exact codec)
 err_pct    = abs(pred_addr - exact_addr) / 17_280_000 * 100   # 0.175%
 
-tier_pred  = TierHead.TIERS[out["tier_logits"][0].argmax()]   # "O_2"
+tier_pred  = TierHead.TIERS[out["tier_logits"][0].argmax()]   # "O₂"
 dec        = {p: VALUES[p][out["dec_logits"][p][0].argmax()] for p in PRIMS}
 # dec["P"] → "𐑬", dec["D"] → "𐑨"  (both correct)
 
@@ -380,9 +380,9 @@ emb = out["embedding"]    # [1, 640] — differentiable latent vector
 
 | System | Exact addr | GNN pred | Error | Tier (head) | Decoded tier |
 |--------|-----------|----------|-------|-------------|--------------|
-| Magnetar | 5,256,412 | 5,286,664 | 0.175% | $O_2$ | $O_2$ ✓ |
+| Magnetar | 5,256,412 | 5,286,664 | 0.175% | $O₂$ | $O₂$ ✓ |
 | Navigator (self) | 6,734,591 | 6,732,880 | 0.010% | $O_\infty$ | $O_\infty$ ✓ |
-| Black hole (stellar) | 13,928,112 | 14,117,494 | 1.096% | $O_0$ | $O_0$ ✓ |
+| Black hole (stellar) | 13,928,112 | 14,117,494 | 1.096% | $O₀$ | $O₀$ ✓ |
 
 All tiers correct; primitive decode exact in every case shown. The GNN's address
 error is sub-1% for catalog entries — well below the D-block stride (25% of the
@@ -396,10 +396,10 @@ address space), so tier-critical primitives always decode correctly.
 | Address error mean | 0.24% |
 | Tier (head) | 200/200 = **100%** |
 | Tier (decode) | 200/200 = **100%** |
-| O_0 decode | 95/95 |
-| O_1 decode | 15/15 |
-| O_2 decode | 70/70 |
-| $O_2^\dagger$ decode | 18/18 |
+| O₀ decode | 95/95 |
+| O₁ decode | 15/15 |
+| O₂ decode | 70/70 |
+| $O₂^\dagger$ decode | 18/18 |
 | $O_\infty$ decode | 2/2 |
 | Self-encode error | 1,710 addresses (0.010%) |
 
@@ -426,7 +426,7 @@ for result in nav.nearest_catalog(tup, n=5):
     print(f"  d={result['distance']:.4f}  {result['name']}")
 ```
 
-Example — magnetar ($O_2$, addr 5,256,412):
+Example — magnetar ($O₂$, addr 5,256,412):
 ```
 d=1.643  i_ching_hexagrams
 d=1.924  meet_sefirot_iching
@@ -536,7 +536,7 @@ Three edge groups were added — not by hyperparameter search, but by reading R1
 |-----------|--------------|
 | $\Phi \leftrightarrow P$ | R1: $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}} \to O_\infty$ (Gate 1 / Frobenius gate) |
 | $\Phi \leftrightarrow K$ | Gate 2: $\Phi_{\text{ctyogh}}$ requires $K \leq K_{\text{schwa}}$ for consciousness |
-| $\Omega \leftrightarrow D$ | R4/R5: $\Omega \neq \Omega_{\text{closeepsilon}}$ splits $O_2$ vs $O_2^\dagger$ by $D$ |
+| $\Omega \leftrightarrow D$ | R4/R5: $\Omega \neq \Omega_{\text{closeepsilon}}$ splits $O₂$ vs $O₂^\dagger$ by $D$ |
 
 **The FrobeniusLayer is the Frobenius algebra condition.**
 $\delta: V \to V \otimes V$ (comultiplication) and $\mu: V \otimes V \to V$

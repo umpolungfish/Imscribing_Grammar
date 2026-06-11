@@ -80,7 +80,7 @@ This generalizes:
 
 For any system ⟨𐑛, 𐑸, 𐑾, 𐑹, 𐑐, 𐑧, 𐑲, 𐑠, ⊙, 𐑫, 𐑳, 𐑭⟩, a valid decomposition produces subsystem tuples respecting all six bounds.
 
-**Maximally decomposable type** (O_inf tier):
+**Maximally decomposable type** (O_∞ tier):
 ⟨𐑛·𐑥·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
 
 This has infinite memory (𐑫), infinite dimensions (𐑛), crossing-point topology (𐑥), slow kinetics (𐑧), self-modeling criticality (⊙), and integer winding (𐑭). But even it cannot escape the measurement bound: `tensor(⊙, 𐑻) = 𐑻`.
@@ -97,6 +97,6 @@ This has infinite memory (𐑫), infinite dimensions (𐑛), crossing-point topo
 | n-step decomposition | n+1 tuples, winding = n | 𐑓 ≥ 𐑫, requires 𐑧 or 𐑪 |
 | Continuous trajectory | ∞ decomposition | 𐑛 × 𐑫 × 𐑧 × 𐑭 **and** measurement apparatus at ≥ 𐑻 |
 
-**Cannot go beyond the system's ouroboricity tier** — attempting O_0 decomposition into quantum transition states fails at the ⊙-bound: without ⊙, there is no quantum coherence to support intermediate superpositions.
+**Cannot go beyond the system's ouroboricity tier** — attempting O₀ decomposition into quantum transition states fails at the ⊙-bound: without ⊙, there is no quantum coherence to support intermediate superpositions.
 
-**And even for O_inf, the measurement bound is absolute:** `tensor(⊙, 𐑻) = 𐑻`. The moment you observe, decomposition is fixed at the observer's resolution.
+**And even for O_∞, the measurement bound is absolute:** `tensor(⊙, 𐑻) = 𐑻`. The moment you observe, decomposition is fixed at the observer's resolution.

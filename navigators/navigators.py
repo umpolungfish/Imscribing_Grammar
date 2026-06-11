@@ -1,9 +1,9 @@
 """
-navigators.py — Domain-specific navigators derived from O_inf blueprint tuples.
+navigators.py — Domain-specific navigators derived from O_∞ blueprint tuples.
 
 Source: IG_ONTICS §XXXV (Blueprint Generator Theorem) and §XXXVI–XL.
 
-Every O_inf structural type mandates its own computational navigator architecture via
+Every O_∞ structural type mandates its own computational navigator architecture via
 the primitive-to-architecture mapping table (§XXXV.1). The 12-primitive tuple is the
 complete specification; hyperparameters are derivations, not choices.
 

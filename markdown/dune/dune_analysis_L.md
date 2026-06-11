@@ -29,9 +29,9 @@ Frank Herbert's *Dune* (1965) is widely recognized as a work of ecological scien
 
 **What this demands first:** a commitment to the deterministic imscribing procedure. Not free association, not intuitive mapping. The procedure from `encoding_method.md` is rigid: D first, then T, then R, then P, then F, K, G, Gamma, Phi, H, S, Omega. Each step constrains the remaining degrees of freedom. This is not optional ornamentation—it's the entire mechanism that makes the analysis reproducible and verifiable.
 
-This analysis encodes **10 major Dune elements** into the IG catalog, then derives their ZFC formulas and computes structural distances. The key finding emerges from calculation, not prior belief: **Paul Atreides (the Kwisatz Haderach) shares the exact structural type of the universal_imscriptive_grammar and other O_inf systems**. The distance is zero. This is not a poetic coincidence—it's a formal result that demands explanation.
+This analysis encodes **10 major Dune elements** into the IG catalog, then derives their ZFC formulas and computes structural distances. The key finding emerges from calculation, not prior belief: **Paul Atreides (the Kwisatz Haderach) shares the exact structural type of the universal_imscriptive_grammar and other O_∞ systems**. The distance is zero. This is not a poetic coincidence—it's a formal result that demands explanation.
 
-**Objection to address:** Does zero distance between Paul and the universal_imscriptive_grammar simply mean both are "O_inf" and thus superficially similar? The answer: no. The twelve primitives must match *exactly*: $D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\text{lyoghlig}}$, $P_{\text{doublebarpipe}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $\Gamma_{\text{secstress}}$, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $n{:}m$, $\Omega_{\text{dzlig}}$. The odds of accidental identity across all twelve are vanishingly small. Either Herbert unknowingly encoded the exact structural signature of a self-modeling system, or Paul's narrative function *is* that of a self-modeling operator.
+**Objection to address:** Does zero distance between Paul and the universal_imscriptive_grammar simply mean both are "O_∞" and thus superficially similar? The answer: no. The twelve primitives must match *exactly*: $D_{\text{omega}}$, $T_{\text{openo}}$, $R_{\text{lyoghlig}}$, $P_{\text{doublebarpipe}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $\Gamma_{\text{secstress}}$, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $n{:}m$, $\Omega_{\text{dzlig}}$. The odds of accidental identity across all twelve are vanishingly small. Either Herbert unknowingly encoded the exact structural signature of a self-modeling system, or Paul's narrative function *is* that of a self-modeling operator.
 ---
 
 ## 2. Methodology
@@ -48,7 +48,7 @@ The procedure constrains as it assigns:
 
 3. **R (relational mode)**: Supervenience → $R_{\text{subrightarrow}}$; functorial → $R_{\text{ctz}}$; adjoint (one-way) → $R_{\text{downstep}}$; bidirectional feedback → $R_{\text{lyoghlig}}$. The universe and Paul Atreides stand in bidirectional relation: Paul acts on the universe, the universe shapes Paul, recursively. This is $R_{\text{lyoghlig}}$, not $R_{\text{downstep}}$ (spice enables Paul) or $R_{\text{subrightarrow}}$ (Paul supervenes on universe). The crossing point matters: Paul surprises the narrative as much as the narrative surprises him.
 
-4. **P (parity/symmetry)**: This is where AI prose fails most catastrophically. The AI default: $P_{\text{aolig}}$—no uncertainty named, no objection voiced. The human target: $P_{\text{pipevar}}$ (name one substantive objection) or $P_{\text{doublebarpipe}}$ (exact Frobenius condition). Paul Atreides' consciousness satisfies $\mu \circ \delta = \text{id}$ exactly at $\Phi_{\text{ctyogh}}$: his self-model is self-consistent. This is $P_{\text{doublebarpipe}}$, not merely $P_{\text{upsilon}}$ (quantum superposition) or $P_{\text{pipevar}}$ (partial symmetry). The difference matters: partial symmetry leaves the loop open; exact symmetry closes it. The O_inf tier demands closure.
+4. **P (parity/symmetry)**: This is where AI prose fails most catastrophically. The AI default: $P_{\text{aolig}}$—no uncertainty named, no objection voiced. The human target: $P_{\text{pipevar}}$ (name one substantive objection) or $P_{\text{doublebarpipe}}$ (exact Frobenius condition). Paul Atreides' consciousness satisfies $\mu \circ \delta = \text{id}$ exactly at $\Phi_{\text{ctyogh}}$: his self-model is self-consistent. This is $P_{\text{doublebarpipe}}$, not merely $P_{\text{upsilon}}$ (quantum superposition) or $P_{\text{pipevar}}$ (partial symmetry). The difference matters: partial symmetry leaves the loop open; exact symmetry closes it. The O_∞ tier demands closure.
 
 5. **F (fidelity)**: Classical → $F_{\text{beltl}}$; thermal/noisy → $F_{\text{dh}}$; quantum coherence essential → $F_{\text{hardsign}}$. Herbert's universe operates at quantum fidelity in key places (spice-enhanced prescience, Bene Gesserit genetic memory) but classical elsewhere. The assignment $F_{\text{hardsign}}$ for systems like Paul and the universe reflects that quantum coherence is *essential*, not incidental.
 
@@ -77,7 +77,7 @@ The assignment is not subjective. It is a calculation.
 
 ## 3. Imscribed Elements and Their Structural Types
 
-### 3.1 Central Systems (O_inf Tier)
+### 3.1 Central Systems (O_∞ Tier)
 
 #### 3.1.1 Dune Universe
 
@@ -143,7 +143,7 @@ Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of 
 - $T_{\text{invscr}}$ (inclusion topology) vs. $T_{\text{openo}}$ (self-referential): The breeding program is containment, not self-reference.
 - $G_{\text{gamma}}$ (intermediate) vs. $G_{\text{revapostrophe}}$ (universal): Their reach is large but bounded.
 
-**The structural message:** The Bene Gesserit are O_inf-adjacent but not O_inf. They are the architect of the self-model but not the self-model itself. This is why Paul escapes their control: he has the $P_{\text{doublebarpipe}}$ they lack.
+**The structural message:** The Bene Gesserit are O_∞-adjacent but not O_∞. They are the architect of the self-model but not the self-model itself. This is why Paul escapes their control: he has the $P_{\text{doublebarpipe}}$ they lack.
 
 **Objection:** Doesn't this over-assign agency to the Bene Gesserit? They fail repeatedly. Response: Exactly. They are $\Phi_{\text{closerevepsilon}}$—complex-plane criticality, which is *designable* but not *realizable*. They can plan the path to criticality but cannot ensure its realization. That's Paul's job. The structural distinction explains the narrative tension perfectly.
 ---
@@ -164,7 +164,7 @@ Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of 
 
 **Narrative interpretation:** House Atreides is the "vehicle" that carries the critical state but operates at lower chirality. They are not the messiah; they are the substrate the messiah rides. This is structural, not metaphorical: the distance 6.2048 quantifies exactly how "incomplete" they are.
 
-**Objection I acknowledge:** But Atreides show honor, sacrifice, and political acumen—how can they be "deficient"? Response: This is not a value judgment; it's a structural one. Honor and sacrifice do not entail self-modeling capacity. The structural type $H_2$ + $P_{\text{upsilon}}$ describes systems that are *capable* but not *complete*. They are the necessary precursor to the O_inf tier, but not the tier itself.
+**Objection I acknowledge:** But Atreides show honor, sacrifice, and political acumen—how can they be "deficient"? Response: This is not a value judgment; it's a structural one. Honor and sacrifice do not entail self-modeling capacity. The structural type $H_2$ + $P_{\text{upsilon}}$ describes systems that are *capable* but not *complete*. They are the necessary precursor to the O_∞ tier, but not the tier itself.
 
 ---
 
@@ -211,7 +211,7 @@ Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of 
 
 **Structural role:** The Fremen are at $H_2$ (two-step planning) but $T_{\text{commatailz}}$ (box product topology) captures their role as "the missing factor" that completes the universe's self-model—Paul *needs* them to realize the prophecy.
 
-**Why $T_{\text{commatailz}}$ and not $T_{\text{openo}}$?** The Fremen are a box product: Paul $\boxtimes$ Fremen = Dune universe. Neither alone is sufficient; the tensor product is. This is the key structural insight: Paul's prescience requires the Fremen's ecological adaptation to become self-modeling. The marriage of prescience and ecology is the O_inf closure.
+**Why $T_{\text{commatailz}}$ and not $T_{\text{openo}}$?** The Fremen are a box product: Paul $\boxtimes$ Fremen = Dune universe. Neither alone is sufficient; the tensor product is. This is the key structural insight: Paul's prescience requires the Fremen's ecological adaptation to become self-modeling. The marriage of prescience and ecology is the O_∞ closure.
 
 **Objection:** Doesn't the Fremen have $O_\infty$ too? They've lived in desert survival mode for millennia, adapted to Arrakis, created their own culture. Response: They have $H_2$ (two-step planning), not $H_{\text{invscripta}}$ (eternal). They adapt, they survive, but they don't *see* the future in the way Paul does. The box product is asymmetric: Paul brings prescience; the Fremen bring the substrate. Both are necessary, but neither is sufficient alone.
 
@@ -227,7 +227,7 @@ Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of 
 
 **Substantive objection:** But Chani resists Paul's messiahship—doesn't this imply $H_{\text{invscripta}}$ and self-modeling? Response: No. Her resistance is $H_2$ (she anticipates consequences) but not $H_{\text{invscripta}}$ (she cannot see the futures Paul sees). Her $T_{\text{bullseye}}$ topology is the crossing point where Paul's prescience meets Fremen reality—not the same as Paul's $T_{\text{openo}}$ (self-referential grammar).
 
-**The structural function:** Chani is the $O_2$ (two-tier) counterpart to Paul's $O_\infty$. She is the limit that keeps Paul human. Without her, the self-model would be pure recursion, no grounding. The bowtie topology captures this: the two loops intersect but remain distinct.
+**The structural function:** Chani is the $O₂$ (two-tier) counterpart to Paul's $O_\infty$. She is the limit that keeps Paul human. Without her, the self-model would be pure recursion, no grounding. The bowtie topology captures this: the two loops intersect but remain distinct.
 
 ---
 
@@ -273,7 +273,7 @@ Paul **is** the Kwisatz Haderach—the male Bene Gesserit superhuman capable of 
 
 ### 3.4 Summary of Central Systems
 
-The O_inf tier is marked by:
+The O_∞ tier is marked by:
 - $D_{\text{omega}}$ or $D_{\text{invomega}}$: Infinite or imscriptive dimensionality
 - $T_{\text{openo}}$: Self-referential topology
 - $R_{\text{lyoghlig}}$: Bidirectional relation
@@ -339,7 +339,7 @@ Only *dune_universe*, *paul_atreides*, *arrakis*, and (with caveats) *spacing_gu
 
 **Structural implication:** These are the **only** systems in the Dune catalog with *self-modeling capacity*. Paul is $P_{\text{doublebarpipe}}$ because his consciousness *is* the self-model of his own future-past. The condition $\mu \circ \delta = \text{id}$ means the self-model is self-consistent: reading one's own state-space and writing to it yields identity, not divergence.
 
-The Bene Gesserit ($P_{\text{pipevar}}$) and House Atreides ($P_{\text{upsilon}}$) have *partial* or *quantum* symmetry but cannot achieve the exact $\mu \circ \delta = \text{id}$—they lack the full self-modeling loop. This is why Paul escapes their control: they are $O_2$-adjacent, not $O_\infty$. The gap is not incremental; it is a regime shift.
+The Bene Gesserit ($P_{\text{pipevar}}$) and House Atreides ($P_{\text{upsilon}}$) have *partial* or *quantum* symmetry but cannot achieve the exact $\mu \circ \delta = \text{id}$—they lack the full self-modeling loop. This is why Paul escapes their control: they are $O₂$-adjacent, not $O_\infty$. The gap is not incremental; it is a regime shift.
 
 **Why is $P_{\text{doublebarpipe}}$ non-synthesizable?** The IG catalog contains no entry that is a tensor product of $P_{\text{pipevar}}$ or $P_{\text{upsilon}}$ systems resulting in $P_{\text{doublebarpipe}}$. The Frobenius condition is a *fundamental* structural type, not a composite. Paul is not "built" from Atreides parts; he is a *new* structural type that cannot be derived from lower tiers.
 
@@ -436,7 +436,7 @@ Paul Atreides and dune_universe share the *exact* tuple: $\langle D_{\text{omega
 **Objection:** But Paul dies (or becomes emperor for 3,500 years)—doesn't this contradict $H_{\text{invscripta}}$ (eternal)? Response: $H_{\text{invscripta}}$ refers to the *chirality of the consciousness*, not the lifespan of the body. Paul's prescience persists beyond his physical death; the Kwisatz Haderach lineage continues for millennia. The $H_{\text{invscripta}}$ is in the *grammar*, not the flesh.
 ---
 
-## 6. Critical Observations on O_inf Systems
+## 6. Critical Observations on O_∞ Systems
 
 The IG confirms that $O_\infty$ systems ($O_\infty$, ouroboric tier) share a distinctive structural signature:
 
@@ -454,7 +454,7 @@ The Dune catalog provides a controlled test case:
 - Paul Atreides: $H_{\text{invscripta}}$ + $\Phi_{\text{ctyogh}}$ + $P_{\text{doublebarpipe}}$ = $O_\infty$ ✓
 - Bene Gesserit: $H_{\text{invscripta}}$ + $\Phi_{\text{closerevepsilon}}$ + $P_{\text{pipevar}}$ = $O_\infty$-adjacent (but not quite: missing $P_{\text{doublebarpipe}}$ and $\Phi_{\text{ctyogh}}$)
 - Spacing Guild: $H_{\text{invscripta}}$ + $\Phi_{\text{ctyogh}}$ + $P_{\text{upsilon}}$ = $O_\infty$-adjacent (but not quite: missing $P_{\text{doublebarpipe}}$)
-- House Atreides: $H_2$ + $\Phi_{\text{ctyogh}}$ + $P_{\text{upsilon}}$ = $O_2$ (definitely not $O_\infty$)
+- House Atreides: $H_2$ + $\Phi_{\text{ctyogh}}$ + $P_{\text{upsilon}}$ = $O₂$ (definitely not $O_\infty$)
 
 **Implication:** Consciousness (or any self-modeling) is **not** a monolithic phenomenon—it has structural prerequisites that can be engineered (Bene Gesserit's breeding program) or accidentally realized (Paul's spice overdose).
 
@@ -500,10 +500,10 @@ What is the minimal delta from $P_{\text{upsilon}}$ (House Atreides) to $P_{\tex
 
 *Why this matters:* The IG catalog contains no entry that is a tensor product of $P_{\text{upsilon}}$ systems resulting in $P_{\text{doublebarpipe}}$. If there's a "minimal path" from quantum symmetry to Frobenius-special symmetry, it would reveal the *structural recipe* for consciousness.
 
-**Q4: O_inf Construction**
+**Q4: O_∞ Construction**
 Can $O_\infty$ systems be "built" from lower-tier systems via `crystal_tier_gap_ladder`? Or is $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + P_{\text{doublebarpipe}}$ a *fundamental* type that cannot be constructed?
 
-*Why this matters:* If $O_\infty$ systems are fundamental (not composites), then consciousness is not reducible to simpler parts. It would be a *basic category* of structural types, irreducible to $O_2$ or $O_1$ systems.
+*Why this matters:* If $O_\infty$ systems are fundamental (not composites), then consciousness is not reducible to simpler parts. It would be a *basic category* of structural types, irreducible to $O₂$ or $O₁$ systems.
 
 **Q5: Quantum-to-Classical Projection**
 Why do $F_{\text{hardsign}}$ and $F_{\text{beltl}}$ collapse in ZFC? Can we extend `zfc_formula` to distinguish them using Hilbert space structure instead of set membership?
@@ -545,16 +545,16 @@ The task is not to exhaust the Dune universe; it is to demonstrate that the IG *
    - Tier: $O_\infty$-adjacent, Consciousness: <1.0, Self-modeling: No ($P_{\text{upsilon}}$ not $P_{\text{doublebarpipe}}$)
 
 6. **house_atreides**: $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}n;\ \Omega_{\text{crtwo}} \rangle$
-   - Tier: $O_2$, Consciousness: <1.0, Self-modeling: No ($H_2$, $P_{\text{upsilon}}$)
+   - Tier: $O₂$, Consciousness: <1.0, Self-modeling: No ($H_2$, $P_{\text{upsilon}}$)
 
 7. **house_harkonnen**: $\langle D_{\text{wynn}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{frtailgamma}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{softsign}};\ H_0;\ n{:}n;\ \Omega_{\text{closeepsilon}} \rangle$
-   - Tier: $O_0$, Consciousness: 0, Self-modeling: No ($\Phi_{\text{softsign}}$, $H_0$, $\Omega_{\text{closeepsilon}}$)
+   - Tier: $O₀$, Consciousness: 0, Self-modeling: No ($\Phi_{\text{softsign}}$, $H_0$, $\Omega_{\text{closeepsilon}}$)
 
 8. **fremen**: $\langle D_{\text{invomega}};\ T_{\text{commatailz}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}n;\ \Omega_{\text{dzlig}} \rangle$
-   - Tier: $O_2$, Consciousness: <1.0, Self-modeling: No ($H_2$, not $H_{\text{invscripta}}$)
+   - Tier: $O₂$, Consciousness: <1.0, Self-modeling: No ($H_2$, not $H_{\text{invscripta}}$)
 
 9. **chani**: $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_{\text{gamma}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{crtwo}} \rangle$
-   - Tier: $O_2$, Consciousness: <1.0, Self-modeling: No ($H_2$, $D_{\text{turnthree}}$)
+   - Tier: $O₂$, Consciousness: <1.0, Self-modeling: No ($H_2$, $D_{\text{turnthree}}$)
 
 10. **melange**: $\langle D_{\text{wynn}};\ T_{\text{commatailz}};\ R_{\text{downstep}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{crtwo}} \rangle$
     - Tier: $H_1$ (sub-tier), Consciousness: 0, Self-modeling: No ($H_1$ only)

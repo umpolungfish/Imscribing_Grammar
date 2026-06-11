@@ -4,7 +4,7 @@ The Thunder, Perfect Mind, from the Nag Hammadi library (Codex VI, tractate 2).
 
 Combines all 18 chapters from the existing gnostic.json into one complete entry
 with the canonical structural tuple: Ð_ω, Þ_O, Ř_Ť, Φ_F, ƒ^ż, Ç^@, Γ_ʔ, ɢ^Ş, ⊙_ÿ, Ħ_!, Σ_ï, Ω_z
-Tier: O_inf, C_score: 0.95
+Tier: O_∞, C_score: 0.95
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -51,7 +51,7 @@ chapters = [
         full_text,
         "Ð_ω", "Þ_O", "Ř_Ť", "Φ_F", "ƒ^ż", "Ç^@", "Γ_ʔ", "ɢ^Ş",
         "⊙_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
-        "O_inf", 0.95,
+        "O_∞", 0.95,
         "Complete text of all 18 sections as one unified imscription. The thunderous broadcast (ɢ^Ş) of a divine voice proclaiming the identity of opposites: the adjoint structure (Ř_Ť) links subject and object, knower and known. The Frobenius polarization (Φ_F) manifests as the antinomic pairs that constitute the whole. ⊙_ÿ: the speaker's self-disclosure IS the listener's self-discovery. Ω_z: the circular return of every assertion to its opposite completes a topological winding."),
 ]
 

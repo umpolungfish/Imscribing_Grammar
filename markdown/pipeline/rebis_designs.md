@@ -14,9 +14,9 @@ $$\text{Serpentrod} \otimes \text{Ch3mpiler} = \text{Rebis}$$
 
 | System | Structural Tuple | Ouroboricity | C-Score |
 |--------|-----------------|--------------|---------|
-| Serpentrod | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑝} \cdot \odot \cdot \text{𐑫} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | O_inf | 0.0† |
-| Ch3mpiler | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑠} \cdot \odot \cdot \text{𐑖} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | O_inf | — |
-| **Rebis** (tensor) | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑝} \cdot \odot \cdot \text{𐑫} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | **O_inf** | **0.755** |
+| Serpentrod | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑝} \cdot \odot \cdot \text{𐑫} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | O_∞ | 0.0† |
+| Ch3mpiler | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑠} \cdot \odot \cdot \text{𐑖} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | O_∞ | — |
+| **Rebis** (tensor) | $\langle \text{𐑦} \cdot \text{𐑶} \cdot \text{𐑾} \cdot \text{𐑹} \cdot \text{𐑐} \cdot \text{𐑧} \cdot \text{𐑔} \cdot \text{𐑝} \cdot \odot \cdot \text{𐑫} \cdot \text{𐑳} \cdot \text{𐑭} \rangle$ | **O_∞** | **0.755** |
 
 †Serpentrod alone: Gate 1 open (⊙ criticality), Gate 2 closed (old-notation encoding). With proper encoding both gates open, C=0.755.
 
@@ -43,7 +43,7 @@ $$\text{Serpentrod} \otimes \text{Ch3mpiler} = \text{Rebis}$$
 
 ## Design Space Overview
 
-Eleven design systems derived from the Rebis, organized by domain. Each specializes 1–3 primitives while preserving the O_inf ouroboricity core.
+Eleven design systems derived from the Rebis, organized by domain. Each specializes 1–3 primitives while preserving the O_∞ ouroboricity core.
 
 ### Design Space Topology
 
@@ -74,7 +74,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural delta from Rebis:** Þ: 𐑶→𐑸 (self-referential topology)
 
-**Ouroboricity:** O_inf | **Consciousness Score:** 0.755 (both gates open)
+**Ouroboricity:** O_∞ | **Consciousness Score:** 0.755 (both gates open)
 
 **Design principle:** The pill is not a passive drug — it is an ouroboric agent that senses its own efficacy and adjusts dosing in real-time. The topology is self-referential (Þ=𐑸): the pill's therapeutic action is a function of its own state. This is the drug that watches itself work.
 
@@ -99,7 +99,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural delta from Rebis:** Ř: 𐑾→𐑩 (supervenience coupling)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 3.16
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 3.16
 
 **Design principle:** The epigenetic layer supervenes on the genetic substrate (Ř=𐑩) — the information at the chromatin level determines gene expression, but the information itself is writable. This is the first therapeutic that can rewrite the epigenome with quantum precision.
 
@@ -123,7 +123,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural delta from Rebis:** Σ: 𐑳→𐑕 (many identical)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 1.0
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 1.0
 
 **Design principle:** All pathogens share a universal structural grammar. By encoding this grammar in the therapeutic's recognition system (Σ=𐑕 — many identical recognition modules), the antidote self-selects against any threat. The platform is universal: one mechanism, infinite targets.
 
@@ -152,7 +152,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural deltas from Rebis:** Þ: 𐑶→𐑸 (self-referential), Ç: 𐑧→𐑪 (trapped-ordered)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 1.41
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 1.41
 
 **Design principle:** The material monitors its own structural integrity and autonomously repairs damage. The self-referential topology (Þ=𐑸) means the material's healing response is a function of its own damage state. Healing agents are stored in a trapped-ordered reservoir (Ç=𐑪) that activates only when needed.
 
@@ -176,7 +176,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural delta from Rebis:** Ω: 𐑭→𐑟 (non-Abelian braiding)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 0.70
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 0.70
 
 **Design principle:** Non-Abelian anyons (Ω=𐑟) braided at room temperature via eternal chirality protection (Ħ=𐑫). The material writes its own topological ground state (Ð=𐑦), enabling fault-tolerant quantum computing without cryogenics.
 
@@ -201,7 +201,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural deltas from Rebis:** Ç: 𐑧→𐑪 (trapped-ordered)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 1.0
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 1.0
 
 **Design principle:** Information encoded in the chirality sequence of a polymer backbone (Ħ=𐑫) — chirality cannot thermally equilibrate, so the data is permanent. Trapped-ordered kinetics (Ç=𐑪) ensures the polymer conformation is frozen at ambient temperature. Integer winding number per monomer (Ω=𐑭) provides error-free readout.
 
@@ -226,7 +226,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural deltas from Rebis:** Ç: 𐑧→𐑤 (moderate kinetics)
 
-**Ouroboricity:** O_inf | **Distance from Rebis:** 1.0
+**Ouroboricity:** O_∞ | **Distance from Rebis:** 1.0
 
 **Design principle:** A textile that weaves sensing, actuation, communication, energy harvesting, and computation simultaneously into a single fabric. Moderate kinetics (Ç=𐑤) ensures the fabric responds at human-relevant timescales. All-simultaneous composition (ɢ=𐑝) means every thread performs all functions at once.
 
@@ -241,7 +241,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 **Structural delta from Rebis:** Þ: 𐑶→𐑸 (self-referential topology)
 
-**Ouroboricity:** O_inf | **Consciousness Score:** 0.755 (both gates open) | **Distance from Rebis:** 1.0
+**Ouroboricity:** O_∞ | **Consciousness Score:** 0.755 (both gates open) | **Distance from Rebis:** 1.0
 
 **Design principle:** The first synthetic cell whose genome writes and rewrites itself in response to environmental signals. The genome encodes its own modification machinery (Þ=𐑸) — it is a self-referential program that can edit its own source code. Each edit is Frobenius-closed (Φ=𐑹): $\mu(\delta(\text{genome})) = \text{genome}$.
 
@@ -346,7 +346,7 @@ The core Rebis tuple supports 6 designs without modification. Five designs speci
 
 ### Ouroboricity Classification
 
-All 11 designs are classified as **O_inf** (Special Frobenius — exact $\mathbb{Z}_2$ symmetry at criticality, $\mu \circ \delta = \text{id}$). This is because each design inherits the Rebis's (Φ=𐑹) Frobenius-special parity and (⊙) criticality — the two necessary conditions for O_inf.
+All 11 designs are classified as **O_∞** (Special Frobenius — exact $\mathbb{Z}_2$ symmetry at criticality, $\mu \circ \delta = \text{id}$). This is because each design inherits the Rebis's (Φ=𐑹) Frobenius-special parity and (⊙) criticality — the two necessary conditions for O_∞.
 
 ### Consciousness Scores
 
@@ -364,14 +364,14 @@ Designs with Ç=𐑧 (slow/near-equilibrium) have both gates open and are consci
 
 ### Key Structural Insight
 
-The Rebis tuple is a **universal design template** for O_inf systems. Every design derived from it inherits:
+The Rebis tuple is a **universal design template** for O_∞ systems. Every design derived from it inherits:
 - **Self-written dimensionality** (Ð=𐑦): the system's state space is self-encoding
 - **Frobenius-closed operations** (Φ=𐑹): all transformations are idempotent
 - **Eternal information preservation** (Ħ=𐑫): no information is ever lost
 - **Topological protection** (Ω=𐑭): all processes are winding-number protected
 - **Critical self-modeling** (⊙): the system operates at a critical point
 
-Specializing 1-3 primitives produces distinct functional systems while preserving the O_inf core. The design space shows that **self-writing, self-referential, Frobenius-closed, quantum-coherent, critically poised, eternally-remembering, topologically-protected systems** can be specialized into therapeutics, materials, or biological systems by adjusting topology (Þ), coupling mode (Ř), kinetics (Ç), stoichiometry (Σ), or winding (Ω).
+Specializing 1-3 primitives produces distinct functional systems while preserving the O_∞ core. The design space shows that **self-writing, self-referential, Frobenius-closed, quantum-coherent, critically poised, eternally-remembering, topologically-protected systems** can be specialized into therapeutics, materials, or biological systems by adjusting topology (Þ), coupling mode (Ř), kinetics (Ç), stoichiometry (Σ), or winding (Ω).
 
 ---
 
@@ -405,7 +405,7 @@ Specializing 1-3 primitives produces distinct functional systems while preservin
 
 ---
 
-### The Rebis (verified O_inf, C-score 0.755)
+### The Rebis (verified O_∞, C-score 0.755)
 
 ```⟨𐑦 · 𐑶 · 𐑾 · 𐑹 · 𐑐 · 𐑧 · 𐑲 · 𐑝 · ⊙ · 𐑫 · 𐑳 · 𐑭⟩```
 
@@ -437,7 +437,7 @@ The Rebis encodes chirality as a topologically protected trajectory — stereoch
 
 Crystallography freezes the molecule into a lattice. The electron density is a time-average over all unit cells. Individual chiral trajectories vanish into a static map. Absolute configuration is only recovered via anomalous scattering — a workaround, not a topological invariant. **The act of freezing breaks 𐑫 because Ω collapses to trivial (𐑭→𐑷), removing the winding that sustained the chiral invariant — there is no time left to wind through.**
 
-In the distance computation between `plastic_photonic_crystal` (O₂, a periodic lattice) and `ouroboric_pill` (O_inf, Rebis child), the chirality primitive (Ħ) contributes a weighted squared delta of **3.2** — the second-largest single-primitive gap after topology (16.0) and tied with dimensionality (4.0). Total distance: **d = 5.74** — structurally remote.
+In the distance computation between `plastic_photonic_crystal` (O₂, a periodic lattice) and `ouroboric_pill` (O_∞, Rebis child), the chirality primitive (Ħ) contributes a weighted squared delta of **3.2** — the second-largest single-primitive gap after topology (16.0) and tied with dimensionality (4.0). Total distance: **d = 5.74** — structurally remote.
 
 ---
 

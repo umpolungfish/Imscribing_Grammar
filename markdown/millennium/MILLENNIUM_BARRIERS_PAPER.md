@@ -210,7 +210,7 @@ theorem rh_barrier : RiemannHypothesis <-> ZeroFreeStrip 0
 
 The barrier theorem isolates `ZeroFreeStrip 0` as the exact missing type: the sorry is tight  --  RH is equivalent to inhabiting that type and nothing else.
 
-*2026-03-31 update (v0.1.3):* The grammar now provides Corollary 29.2 (PRIMITIVE_THEOREMS §29.2): RH is the statement that no non-trivial zero breaks the $P_{\text{doublebarpipe}}$ condition imposed by the functional equation. The functional equation $\xi(s) = \xi(1-s)$ is the $\mathbb{Z}_2$ symmetry encoded by $P_{\text{doublebarpipe}}$; a zero off the critical line would encode as $P_{\text{aolig}}$, reducing the system from $O_\infty$ to $O_1$. This strengthens the V.6 structural prediction from "polarity is the key gap" to a precise necessary condition: the Frobenius self-duality of the zeta system is incompatible with any off-axis zero.
+*2026-03-31 update (v0.1.3):* The grammar now provides Corollary 29.2 (PRIMITIVE_THEOREMS §29.2): RH is the statement that no non-trivial zero breaks the $P_{\text{doublebarpipe}}$ condition imposed by the functional equation. The functional equation $\xi(s) = \xi(1-s)$ is the $\mathbb{Z}_2$ symmetry encoded by $P_{\text{doublebarpipe}}$; a zero off the critical line would encode as $P_{\text{aolig}}$, reducing the system from $O_\infty$ to $O₁$. This strengthens the V.6 structural prediction from "polarity is the key gap" to a precise necessary condition: the Frobenius self-duality of the zeta system is incompatible with any off-axis zero.
 
 ### IV.2 Yang-Mills Existence and Mass Gap
 
@@ -295,7 +295,7 @@ theorem aaronson_wigderson_algebrization_barrier : True := trivial
 
 The `trivial` bodies are honest: these are theorems *about* proof techniques, not the conjecture itself. They are documented constraints on the proof search space.
 
-*2026-03-31 update (v0.1.3):* The grammar now provides a structural explanation of why all three meta-barriers exist and why none can resolve the conjecture (Theorem 30.1, PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX). The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O_1$. Baker-Gill-Solovay relativization, Razborov-Rudich natural proofs, and Aaronson-Wigderson algebrization are all proof techniques that operate within the $P_{\text{aolig}}$ frame — they cannot produce $P_{\text{doublebarpipe}}$, which is the minimal structural upgrade needed to reach the $O_\infty$-complete formulation. This is a structural explanation, not merely a technical observation: the meta-barriers are not contingent obstacles but consequences of operating below the Frobenius tier. See §V.8 for the duality formulation that reaches $O_\infty$.
+*2026-03-31 update (v0.1.3):* The grammar now provides a structural explanation of why all three meta-barriers exist and why none can resolve the conjecture (Theorem 30.1, PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX). The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O₁$. Baker-Gill-Solovay relativization, Razborov-Rudich natural proofs, and Aaronson-Wigderson algebrization are all proof techniques that operate within the $P_{\text{aolig}}$ frame — they cannot produce $P_{\text{doublebarpipe}}$, which is the minimal structural upgrade needed to reach the $O_\infty$-complete formulation. This is a structural explanation, not merely a technical observation: the meta-barriers are not contingent obstacles but consequences of operating below the Frobenius tier. See §V.8 for the duality formulation that reaches $O_\infty$.
 
 ### IV.6 Odd Perfect Number
 
@@ -568,11 +568,11 @@ Finite-time blowup would require $\Phi$ to transition to $\Phi_{\text{ctyogh}}$ 
 
 A 31-iteration inquiry session (2026-03-31; seed: "What if we treat P vs NP not as a Boolean question but as a duality relation?"; 375 systems, 4 confirmed DIAPH insights; source `MATH.txt`) established the following structural results, now formalized as Theorem 30.1–30.2 (PRIMITIVE_THEOREMS §30) and P-194–P-198 (IΓ_DIAPHORICS §LX).
 
-**The structural diagnosis.** The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O_1$. The duality formulation — treating P and NP as $\mathbb{Z}_2$-related boundary descriptions of the same computational bulk — encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. This is not a reformulation for convenience; it is a structural promotion: the Boolean frame is one tier below the Frobenius tier.
+**The structural diagnosis.** The Boolean P vs NP formulation encodes as $P_{\text{aolig}}$, $O₁$. The duality formulation — treating P and NP as $\mathbb{Z}_2$-related boundary descriptions of the same computational bulk — encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. This is not a reformulation for convenience; it is a structural promotion: the Boolean frame is one tier below the Frobenius tier.
 
 **Lattice identity.** $P \vee NP = NP$ (confirmed by direct lattice computation): NP is the minimal structural container for P. Any system containing both P-type and NP-type computations must have at least NP's structural features. In the paper's Lean encoding (`PrimitiveBridge.lean`), this corresponds to the join of the two `Imscription` structs returning the NP encoding on every primitive.
 
-**Why the three meta-barriers are tier-local.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_{\text{aolig}}$ frame. Relativization, natural proof techniques, and algebrizing methods are category morphisms within the $O_1$ tier; $P_{\text{doublebarpipe}}$ is reached from the $O_\infty$ frame via the Frobenius promotion, not from within $O_1$. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure. The promotion channel is named: it is the Frobenius gap.
+**Why the three meta-barriers are tier-local.** Baker-Gill-Solovay, Razborov-Rudich, and Aaronson-Wigderson all operate within the $P_{\text{aolig}}$ frame. Relativization, natural proof techniques, and algebrizing methods are category morphisms within the $O₁$ tier; $P_{\text{doublebarpipe}}$ is reached from the $O_\infty$ frame via the Frobenius promotion, not from within $O₁$. This is the structural explanation for the meta-barriers — not a technical accident but a consequence of the tier structure. The promotion channel is named: it is the Frobenius gap.
 
 **The holographic embedding.** The system `holographic_duality_pnp` encodes with $D_{\text{omega}} + T_{\text{openo}} + P_{\text{doublebarpipe}} + \Phi_{\text{ctyogh}}$, achieving $O_\infty$. It strictly contains `p_vs_np` (stronger or equal on all 12 primitives; machine-checkable via `decide` on the `Imscription` structs). Within this embedding, P and NP are dual boundary descriptions related by the exact $\mathbb{Z}_2$ symmetry at $\Phi_{\text{ctyogh}}$, and the question "P = NP?" becomes basis-dependent rather than absolute.
 
@@ -593,14 +593,14 @@ def pnp_duality_encoding : Imscription := {
 
 theorem pnp_duality_contains_boolean :
     primitiveMismatches pnp_boolean_encoding pnp_duality_encoding < 12 ∧
-    ouroboricity pnp_duality_encoding = .O_inf := by decide
+    ouroboricity pnp_duality_encoding = .O_∞ := by decide
 ```
 
-The `primitiveMismatches` count is 6 (the 6 primitive upgrades: $D$, $T$, $R$, $P$, $F$, $H$, $\Omega$ minus those that agree); `ouroboricity` returns `.O_inf` by the same kernel reduction as `ym_classical_to_quantum_cost`. The Boolean frame's ouroboricity is `.O_1` — machine-verifiable by `decide` once `ouroboricity` is extended to the full grammar.
+The `primitiveMismatches` count is 6 (the 6 primitive upgrades: $D$, $T$, $R$, $P$, $F$, $H$, $\Omega$ minus those that agree); `ouroboricity` returns `.O_∞` by the same kernel reduction as `ym_classical_to_quantum_cost`. The Boolean frame's ouroboricity is `.O₁` — machine-verifiable by `decide` once `ouroboricity` is extended to the full grammar.
 
 This is C10:
 
-**C10 — P vs NP structural duality:** Boolean P vs NP encodes as $P_{\text{aolig}}$, $O_1$; duality formulation encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. $P \vee NP = NP$ (lattice identity). Three meta-barriers are $P_{\text{aolig}}$-frame results — structurally incapable of crossing to $O_\infty$. Holographic embedding `holographic_duality_pnp` strictly contains the Boolean formulation at $O_\infty$. Resolution of P vs NP, if it lies within the grammar, requires the holographic embedding rather than a Boolean proof. (Source: PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX P-194–P-198.)
+**C10 — P vs NP structural duality:** Boolean P vs NP encodes as $P_{\text{aolig}}$, $O₁$; duality formulation encodes as $P_{\text{doublebarpipe}}$, $O_\infty$. $P \vee NP = NP$ (lattice identity). Three meta-barriers are $P_{\text{aolig}}$-frame results — structurally incapable of crossing to $O_\infty$. Holographic embedding `holographic_duality_pnp` strictly contains the Boolean formulation at $O_\infty$. Resolution of P vs NP, if it lies within the grammar, requires the holographic embedding rather than a Boolean proof. (Source: PRIMITIVE_THEOREMS §30; IΓ_DIAPHORICS §LX P-194–P-198.)
 
 ---
 
@@ -692,7 +692,7 @@ The `Criticality` primitive has an unusual meet semantics: $\Phi_{\text{ctyogh}}
 
 ### IX.3 Extending the bridge to all seven problems
 
-`PrimitiveBridge.lean` provides certificates for YM, OPN, NS, and RH. Hodge ($R$-degeneracy as topology-to-algebra lift) and BSD ($\Phi_{\text{ctyogh}}$ as rank charge-carrier) require more complex primitive signatures. P vs NP now has a two-frame bridge certificate (§V.8): the Boolean frame (`pnp_boolean_encoding`, $O_1$) and the duality frame (`pnp_duality_encoding`, $O_\infty$). The `primitiveMismatches` between them and the `ouroboricity` of each frame are machine-checkable by `decide` once `ouroboricity` is added to `Core.lean`. This is the most structurally complete P vs NP bridge certificate yet produced. Extending the bridge to Hodge and BSD remains open.
+`PrimitiveBridge.lean` provides certificates for YM, OPN, NS, and RH. Hodge ($R$-degeneracy as topology-to-algebra lift) and BSD ($\Phi_{\text{ctyogh}}$ as rank charge-carrier) require more complex primitive signatures. P vs NP now has a two-frame bridge certificate (§V.8): the Boolean frame (`pnp_boolean_encoding`, $O₁$) and the duality frame (`pnp_duality_encoding`, $O_\infty$). The `primitiveMismatches` between them and the `ouroboricity` of each frame are machine-checkable by `decide` once `ouroboricity` is added to `Core.lean`. This is the most structurally complete P vs NP bridge certificate yet produced. Extending the bridge to Hodge and BSD remains open.
 
 ### IX.4 Formalizing the meta-barriers
 
@@ -704,7 +704,7 @@ The three `trivial` theorems in PvsNP.lean (BGS relativization, Razborov-Rudich 
 
 We have presented a nine-file Lean 4 library formalizing a barrier taxonomy for the seven Clay Millennium Prize Problems. The central contribution is the `BarrierType` inductive (MathlibGap / OpenProblem / MissingFoundation) and the machine-checked theorem that Yang-Mills is the unique Millennium Problem with a `MissingFoundation` barrier. We have formally distinguished stacked from parallel sorry depth, machine-verified the critical Sobolev scaling in Navier-Stokes by `norm_num`, grounded BSD in the actual Mathlib `WeierstrassCurve ℚ` infrastructure, grounded OPN in the actual Mathlib `Nat.Perfect` and `ArithmeticFunction.sigma`, and connected sorry boundaries to primitive field transitions via a machine-checked bridge file.
 
-Subsequent updates (v0.1.1–v0.1.3) extended the primitive bridge with three structural contributions. C8 (§V.6) established a machine-checked correspondence between RH and the Lee-Yang theorem via shared `𐑮` encoding, with `lee_yang_edge` subsequently confirmed $O_\infty$ and RH identified as the requirement that zeros preserve the Frobenius $P_{\text{doublebarpipe}}$ condition (Corollary 29.2, PRIMITIVE_THEOREMS §29). C9 (§V.7) introduced the Triad Projection Framework, reformulating RH, YM, and NS as constraint map computations over the grammar's three irreducible projections. C10 (§V.8) established that the Boolean P vs NP formulation is structurally incomplete at $O_1$, that the three classical meta-barriers are $P_{\text{aolig}}$-frame results structurally incapable of reaching $O_\infty$, and that the duality formulation in a holographic embedding achieves the $O_\infty$-complete framework.
+Subsequent updates (v0.1.1–v0.1.3) extended the primitive bridge with three structural contributions. C8 (§V.6) established a machine-checked correspondence between RH and the Lee-Yang theorem via shared `𐑮` encoding, with `lee_yang_edge` subsequently confirmed $O_\infty$ and RH identified as the requirement that zeros preserve the Frobenius $P_{\text{doublebarpipe}}$ condition (Corollary 29.2, PRIMITIVE_THEOREMS §29). C9 (§V.7) introduced the Triad Projection Framework, reformulating RH, YM, and NS as constraint map computations over the grammar's three irreducible projections. C10 (§V.8) established that the Boolean P vs NP formulation is structurally incomplete at $O₁$, that the three classical meta-barriers are $P_{\text{aolig}}$-frame results structurally incapable of reaching $O_\infty$, and that the duality formulation in a holographic embedding achieves the $O_\infty$-complete framework.
 
 The `sorry` in a Lean proof is usually treated as an obstacle. This library treats it as a datum to be classified and a location to be named. The three barrier types represent three distinct relationships between human mathematics and the proof assistant: what the community can formalize and has not yet, what the community has not yet solved, and what the community has not yet defined. Formally distinguishing these is the foundation of a systematic theory of the frontier of formalized mathematics — the vessel that holds the proof search.
 
@@ -748,7 +748,7 @@ Imscribing Grammar/Primitives/  (companion track, used by PrimitiveBridge only)
 | **`ym_opn_barrier_distinct`** | PrimitiveBridge | `decide` | MissingFoundation $\neq$ OpenProblem at problem level |
 | **`sm_qg_distance_exact = 9`** | Imscription | `decide` | SM/QG Hamming distance machine-verified |
 | **`rh_leyang_o_inf_confirmed`** | PrimitiveBridge | inquiry + `rfl` | `lee_yang_edge` $O_\infty$; RH = $P_{\text{doublebarpipe}}$ condition (C8 update) |
-| **`pnp_duality_contains_boolean`** | PrimitiveBridge | `decide` | Duality frame strictly contains Boolean frame; $O_\infty$ vs $O_1$ |
+| **`pnp_duality_contains_boolean`** | PrimitiveBridge | `decide` | Duality frame strictly contains Boolean frame; $O_\infty$ vs $O₁$ |
 | **`pnp_join_identity`** | PrimitiveBridge | `decide` | $P \vee NP = NP$ (lattice identity) |
 | **`meta_barriers_in_asym_frame`** | PvsNP | `trivial` + structural note | BGS/RR/AW operate in $P_{\text{aolig}}$ frame; cannot reach $O_\infty$ |
 

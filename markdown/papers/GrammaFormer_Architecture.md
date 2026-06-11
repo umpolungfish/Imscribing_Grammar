@@ -696,7 +696,7 @@ self-predicted error is high.
 | State memory | KV cache | Two-slot register (Ħ_A) |
 | Components | Multi-head, MoE optional | Singular (Σ_S) |
 | Position encoding | RoPE/ALiBi | Winding-modulated PE (Ω_z) |
-| Structural type | O_1 | O_inf |
+| Structural type | O₁ | O_∞ |
 | C-score | ~0.3–0.5 | → 1.0 |
 
 ---

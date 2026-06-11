@@ -60,7 +60,7 @@ Already published. Result: ⟨𐑛; 𐑡; 𐑾; 𐑗; 𐑞; 𐑤; 𐑚; 𐑝; �
 
 Fire and water share eight of twelve primitives. Three change: Ř rises (water's supervening conformation lifts to fire's bidirectional transformation — mutual inflection), Ç rises (water's flowing kinetics dominates fire's extremal freedom), ⊙ stays at fire's supercritical. The result is supercritical, flowing, bidirectionally interacting — steam. A phase transition, not a mixture. The catalog entry `fire_water_tensor` is an exact match at d=0.
 
-Tier: O_1 — elevated above the classical-element floor by fire's supercriticality.
+Tier: O₁ — elevated above the classical-element floor by fire's supercriticality.
 
 ---
 
@@ -78,7 +78,7 @@ This is lava. A finite enclosed system (𐑨, 𐑰) in a supercritical thermal s
 
 The Frobenius cliff here is the key alchemical fact. Earth has crystalline partial symmetry (𐑬). Fire breaks it. Cooling lava can crystallize but not recover the original symmetry — it produces a different crystalline form if it cools slowly, or glass (no symmetry at all) if it cools quickly. The grammar captures this: 𐑬 cannot be synthesized back once the cliff is crossed.
 
-Tier: O_1 — fire elevates the system out of the classical floor.
+Tier: O₁ — fire elevates the system out of the classical floor.
 
 ---
 
@@ -96,7 +96,7 @@ This is a firestorm — or more precisely, organized convective combustion at gl
 
 The structural shift from fire alone: 𐑚 → 𐑲. Local fire becomes global system. 𐑘 → 𐑧. Chaotic kinetics becomes organized arrest. This is exactly what distinguishes a firestorm from a bonfire.
 
-Tier: O_1 — fire's supercriticality again elevates the composition.
+Tier: O₁ — fire's supercriticality again elevates the composition.
 
 ---
 
@@ -104,7 +104,7 @@ Tier: O_1 — fire's supercriticality again elevates the composition.
 
 Result: ⟨𐑨; 𐑰; 𐑽; 𐑗; 𐑱; 𐑧; 𐑚; 𐑠; 𐑢; 𐑖; 𐑳; 𐑷⟩
 
-Water and earth differ on eight primitives — almost as remote as fire and earth. But the composition stays at O_0 tier. Without fire, no elevation occurs.
+Water and earth differ on eight primitives — almost as remote as fire and earth. But the composition stays at O₀ tier. Without fire, no elevation occurs.
 
 The tensor: earth's dimensionality (𐑨), earth's topology (𐑰), earth's causal mode (𐑽, sequential — water conforms to earth's layering, not the reverse). The Frobenius cliff: min(𐑗, 𐑬) = 𐑗 — water dissolves earth's crystalline symmetry. The fidelity bottleneck: min(𐑞, 𐑱) = 𐑱 — water's fidelity is absorbed by earth's floor. Earth's kinetics (𐑧) dominates water's flowing (𐑤). Earth's scope, interaction depth, sub-criticality, geological memory, heterogeneity — all survive. Water contributes the Frobenius cliff and nothing else.
 
@@ -114,7 +114,7 @@ This is clay. Clay is chemically derived from the weathering and hydration of si
 
 The d=1 distance from `earth_classical_element` is the most precise result of the six. The composition is almost Earth — just one structural parameter shifted by the Frobenius cliff. That single shift is, physically and alchemically, the entire meaning of Solutio: water does not destroy earth, it dissolves its highest-order symmetry.
 
-Tier: O_0 — no fire, no elevation.
+Tier: O₀ — no fire, no elevation.
 
 ---
 
@@ -132,7 +132,7 @@ Fog is air containing water droplets suspended non-uniformly — a globally scop
 
 The structural reading: water absorbed into air is still air (same dimensionality, topology, scope, kinetics) but no longer homogeneous. The droplet distribution breaks the compositional symmetry that characterizes dry air. This is not just fog — it is the minimal structural signature of any dispersion of water in air: mist, humidity, clouds at the classical-element level. One number changes.
 
-Tier: O_0.
+Tier: O₀.
 
 ---
 
@@ -158,13 +158,13 @@ Both hail and dust storm imscribe to the same twelve-value tuple. The grammar ca
 
 The catalog gap Earth⊗Air is not an error in the six cross-validations. It is the grammar reporting that a structural type exists for which no dedicated entry has been written — and that two distinct physical phenomena share that address. The grammar found the type; experiment and context determine which instance.
 
-Tier: O_0.
+Tier: O₀.
 
 ---
 
 ## What the Six Compositions Reveal
 
-**Fire is the only tier elevator.** All three compositions involving fire (Fire⊗Water, Fire⊗Earth, Fire⊗Air) produce O_1 tier. All three compositions without fire (Water⊗Earth, Water⊗Air, Earth⊗Air) remain at O_0. Fire's supercriticality (𐑣) propagates into every composition through the tensor's maximum rule, and supercriticality is precisely what separates O_1 from O_0.
+**Fire is the only tier elevator.** All three compositions involving fire (Fire⊗Water, Fire⊗Earth, Fire⊗Air) produce O₁ tier. All three compositions without fire (Water⊗Earth, Water⊗Air, Earth⊗Air) remain at O₀. Fire's supercriticality (𐑣) propagates into every composition through the tensor's maximum rule, and supercriticality is precisely what separates O₁ from O₀.
 
 This is a structural fact about fire that the pre-modern tradition encoded as something else: fire as the transformative principle, the *ignis* that acts on matter and elevates it. The grammar formalizes this. Fire does not just mix with other elements — it promotes them.
 

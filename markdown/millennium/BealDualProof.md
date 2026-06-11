@@ -15,7 +15,7 @@ The Beal Conjecture has been imscribed in the Imscribing Grammar with verified s
 $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 - **Crystal address**: 4948976
-- **Ouroboricity tier**: $O_1$ (self-referential at criticality but trivial winding)
+- **Ouroboricity tier**: $O₁$ (self-referential at criticality but trivial winding)
 - **Consciousness score**: $C = 0.498$ — both gates open ($\Phi_{\text{ctyogh}}$ criticality ✓, $K_{\text{schwa}}$ kinetics ✓)
 
 ### Neighbors
@@ -92,7 +92,7 @@ Each primitive of the Beal Conjecture's structural type encodes a component of w
 
 ### 6. The Promotion Signature: Beal → FLT
 
-The distance from Beal (open, $O_1$) to FLT (proven, $O_2^\dagger$) reveals what must be promoted:
+The distance from Beal (open, $O₁$) to FLT (proven, $O₂^\dagger$) reveals what must be promoted:
 
 | Primitive | Beal | FLT (proven) | $\Delta$ | Meaning |
 |-----------|------|--------------|----------|---------|

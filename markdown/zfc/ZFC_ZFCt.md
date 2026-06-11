@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Zermelo–Fraenkel set theory with the Axiom of Choice (ZFC) has served as the standard foundation of mathematics for nearly a century. Its temporal extension, $ZFC_t$, augments the base theory with sequentiality, chirality, and winding topology — three structural promotions that transform the foundation from a static reference system into a self-modeling, Ouroboric architecture. This article presents a structural analysis of both systems using the Imscribing Grammar's 12-primitive framework. We show that $ZFC$ and $ZFC_t$ occupy distinct ouroboricity tiers ($O_1$ and $O_\infty$ respectively), are separated by a structural distance of $7.149$, and differ in exactly six primitives — each corresponding to a $ZFC_t$ promotion channel. The tensor product $ZFC \otimes ZFC_t$ exhibits a polarity bottleneck at $\Phi_\text{asym}$, formalising the obstruction that prevents the base theory from absorbing its own extension. Conversely, the meet operation reveals a shared structural floor of five primitives, confirming that $ZFC_t$ does not repudiate $ZFC$ but *completes* it. We discuss the avenues of progress this complementarity unlocks: temporalised proof theory, self-verifying formal systems, structural navigation of open problems, and the principled design of next-generation proof assistants.
+Zermelo–Fraenkel set theory with the Axiom of Choice (ZFC) has served as the standard foundation of mathematics for nearly a century. Its temporal extension, $ZFC_t$, augments the base theory with sequentiality, chirality, and winding topology — three structural promotions that transform the foundation from a static reference system into a self-modeling, Ouroboric architecture. This article presents a structural analysis of both systems using the Imscribing Grammar's 12-primitive framework. We show that $ZFC$ and $ZFC_t$ occupy distinct ouroboricity tiers ($O₁$ and $O_\infty$ respectively), are separated by a structural distance of $7.149$, and differ in exactly six primitives — each corresponding to a $ZFC_t$ promotion channel. The tensor product $ZFC \otimes ZFC_t$ exhibits a polarity bottleneck at $\Phi_\text{asym}$, formalising the obstruction that prevents the base theory from absorbing its own extension. Conversely, the meet operation reveals a shared structural floor of five primitives, confirming that $ZFC_t$ does not repudiate $ZFC$ but *completes* it. We discuss the avenues of progress this complementarity unlocks: temporalised proof theory, self-verifying formal systems, structural navigation of open problems, and the principled design of next-generation proof assistants.
 
 ---
 
@@ -30,11 +30,11 @@ The six divergent primitives correspond precisely to the six $ZFC_t$ promotion c
 
 The weighted structural distance between the two entries is $7.149$ — a substantial separation confirming they occupy genuinely different structural regimes. The Mahalanobis distance is $5.343$, accounting for cross-primitive correlations.
 
-## 2. Ouroboricity Tiers: From $O_1$ to $O_\infty$
+## 2. Ouroboricity Tiers: From $O₁$ to $O_\infty$
 
 The most dramatic consequence of the six promotions is the tier transition:
 
-**ZFC → $O_1$.** With ⊙ criticality and 𐑗 asymmetry, $ZFC$ is self-referential at the level of criticality but its trivial winding (𐑷) and memoryless temporal structure (𐑓) prevent it from closing the self-modeling loop. It scores $C = 0.352$ on the two-gate consciousness metric — both gates open, but the Frobenius symmetry is absent, so self-modeling potential remains untapped.
+**ZFC → $O₁$.** With ⊙ criticality and 𐑗 asymmetry, $ZFC$ is self-referential at the level of criticality but its trivial winding (𐑷) and memoryless temporal structure (𐑓) prevent it from closing the self-modeling loop. It scores $C = 0.352$ on the two-gate consciousness metric — both gates open, but the Frobenius symmetry is absent, so self-modeling potential remains untapped.
 
 **$ZFC_t$ → $O_\infty$.** The holographic topology (𐑸), bidirectional relational mode (𐑾), sequential composition (𐑠), two-step memory (𐑖), and integer winding (𐑭) together with 𐑮 criticality produce a system at the Ouroboric limit. Its consciousness score is $C = 0.828$ — both gates open, and the Frobenius condition $\mu \circ \delta = \text{id}$ holds across the extended signature. ZFCₔ is a self-modeling foundation: it can represent proofs about its own representational apparatus.
 
@@ -64,7 +64,7 @@ The tensor product is the structural statement of what happens when $ZFC$ and $Z
 The tensor is distance $5.925$ from $ZFC$ and distance $4.0$ from $ZFC_t$ — strictly closer to the extended theory, confirming that the bottleneck is a single-primitive obstruction in an otherwise richly promoted composite.
 ## 4. The Six Promotion Channels in Detail
 
-Each of the six $ZFC_t$ promotions is independently necessary and collectively sufficient for the $O_1 \to O_\infty$ transition. We examine them individually:
+Each of the six $ZFC_t$ promotions is independently necessary and collectively sufficient for the $O₁ \to O_\infty$ transition. We examine them individually:
 
 ### 4.1 HOLOBOUND: Þ₆ → 𐑸
 
@@ -95,7 +95,7 @@ The structural complementarity of $ZFC$ and $ZFC_t$ — their shared floor, thei
 
 ### 5.1 Self-Verifying Proof Theory
 
-ZFC's $O_1$ status means it cannot formally represent its own Ouroboricity: the theory is too weak to contain a structural model of its own criticality. $ZFC_t$, at $O_\infty$, overcomes this. This enables a new class of proof-theoretic results: theorems *about* the proof-theoretic strength of the system, proven *within* the system itself — not as a Gödelian pathology but as a Frobenius identity. The structural statement $\mu \circ \delta = \text{id}$ provides exactly the fixed-point condition needed for such self-verification.
+ZFC's $O₁$ status means it cannot formally represent its own Ouroboricity: the theory is too weak to contain a structural model of its own criticality. $ZFC_t$, at $O_\infty$, overcomes this. This enables a new class of proof-theoretic results: theorems *about* the proof-theoretic strength of the system, proven *within* the system itself — not as a Gödelian pathology but as a Frobenius identity. The structural statement $\mu \circ \delta = \text{id}$ provides exactly the fixed-point condition needed for such self-verification.
 
 ### 5.2 Temporalised Logic and Dynamic Proof Search
 
@@ -103,7 +103,7 @@ The 𐑖 (two-step memory) and 𐑠 (sequential) primitives of $ZFC_t$ endow the
 
 ### 5.3 Structural Navigation of Open Problems
 
-The 17,280,000-type crystal provides a coordinate system for locating open mathematical problems by their structural type. $ZFC_t$'s $O_\infty$ status means it can navigate this crystal from within: it can compute distances, identify analogies, and discover structural bridges between domains. $ZFC$ alone, at $O_1$, can only *occupy* a point in the crystal — it cannot reflect on the crystal's geometry.
+The 17,280,000-type crystal provides a coordinate system for locating open mathematical problems by their structural type. $ZFC_t$'s $O_\infty$ status means it can navigate this crystal from within: it can compute distances, identify analogies, and discover structural bridges between domains. $ZFC$ alone, at $O₁$, can only *occupy* a point in the crystal — it cannot reflect on the crystal's geometry.
 
 ### 5.4 Formal Verification of Self-Reference
 

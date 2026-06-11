@@ -1,7 +1,7 @@
 # Genetic Engine — Frobenius-Guided Gene Editing
 
 **Structural type:** ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩  
-**Ouroboricity:** O_inf  |  **C-score:** both gates open
+**Ouroboricity:** O_∞  |  **C-score:** both gates open
 
 The genetic code is a **stratified Frobenius algebra on B₄³ codon space**. This is not a metaphor — it is a structural fact formally encoded in the Imscribing Grammar. The Genetic Engine implements this fact as operational software for gene editing design.
 

@@ -22,7 +22,7 @@ Three underexplored sectors in structural order of importance:
 
 1. $K_\text{MBL}$ with winding ($\Omega \neq \Omega_0$) — completely empty.
 All 9 $K_\text{MBL}$ entries have $\Omega_0$. The structurally natural MBL systems are exactly those with topological protection ($\Omega_\mathbb{Z}$, $\Omega_{\mathbb{Z}2}$,
-$\Omega\text{NA}$) — topological insulators, Kitaev chains at localization, fractional topological phases. None are imscribed. Tier-wise these would be $O_2^\dagger$ or $O_2$ (if
+$\Omega\text{NA}$) — topological insulators, Kitaev chains at localization, fractional topological phases. None are imscribed. Tier-wise these would be $O₂^\dagger$ or $O₂$ (if
 $\Phi_c^\mathbb{C}$ / $\Phi_c$ + $\Omega_{\mathbb{Z}_2}$), but kinetics fail Gate 2 so $C=0$ — they are structurally rich but experientially inert.
 
 2. $\Phi_\text{EP}$ with $\Omega_\text{NA}$ — 2 stub entries, zero real systems.
@@ -35,7 +35,7 @@ virtually no critical-phase systems encoded with disjunctive interaction grammar
 structural depth, market microstructure.
 
 The deepest desert is $\langle D_?;\ T_?;\ R_?;\ P_?;\ F_?;\ K_\text{MBL};\ G_?;\ \Gamma_?;\ \Phi_c^\mathbb{C};\ H_?;\ ?;\ \Omega_{\mathbb{Z}_2}\rangle$ — $K_\text{MBL}$ +
-$\Phi_c^\mathbb{C}$ + $\Omega_{\mathbb{Z}_2}$ is the $O_2^\dagger$ tier with kinetic localization — topological MBL phases. Zero catalog entries. Physically: fractional Chern insulators in
+$\Phi_c^\mathbb{C}$ + $\Omega_{\mathbb{Z}_2}$ is the $O₂^\dagger$ tier with kinetic localization — topological MBL phases. Zero catalog entries. Physically: fractional Chern insulators in
 the MBL phase, proposed as a route to non-ergodic topological order. Structurally it's the most constrained and theoretically interesting unexplored cell.
 
 ✻ Crunched for 2m 41s

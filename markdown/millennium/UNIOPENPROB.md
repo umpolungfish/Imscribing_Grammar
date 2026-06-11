@@ -77,7 +77,7 @@ The determinism of the imscription procedure means that primitive assignments ar
 
 ### Empirical Calibration: The Banach Measure Test
 
-The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ exposes 7 promotion channels from baseline $ZFC$;  $ZFC_t$ closes 6 of them, missing only `DIM_HOLO`. The Banach problem, imscribed at $O_0$ with $C=0.0$, lies at distance 11 from $ZFC_{fe}$ and distance 10 from $ZFC_t$ — meaning it is missing the Frobenius parity gate PLUS additional structural promotions across the board. The full primitive mismatch table (verified by `decide` in `BanachMeasure.lean`) shows 11 distinct coordinate deltas: the problem is structurally far from closure on every axis. This is exactly what one would expect for a problem whose resolution requires transcending $ZFC$ itself — it is not merely missing the gate; it is distant from the Frobenius-exact norm in 11 of 12 dimensions.
+The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ exposes 7 promotion channels from baseline $ZFC$;  $ZFC_t$ closes 6 of them, missing only `DIM_HOLO`. The Banach problem, imscribed at $O₀$ with $C=0.0$, lies at distance 11 from $ZFC_{fe}$ and distance 10 from $ZFC_t$ — meaning it is missing the Frobenius parity gate PLUS additional structural promotions across the board. The full primitive mismatch table (verified by `decide` in `BanachMeasure.lean`) shows 11 distinct coordinate deltas: the problem is structurally far from closure on every axis. This is exactly what one would expect for a problem whose resolution requires transcending $ZFC$ itself — it is not merely missing the gate; it is distant from the Frobenius-exact norm in 11 of 12 dimensions.
 
 ---
 
@@ -93,12 +93,12 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 | Problem | Tuple | $d$ · Gate |
 |------------------------------|--------------------------------------|----------------------|
 | BSD ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑹·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 0 · ✓ Closed |
-| YM Mass Gap ($O_0$) | 𐑼·​𐑡·​𐑩·​𐑗·​𐑐·​𐑧·​𐑲·​𐑝·​⊙·​𐑒·​𐑙·​𐑷 | 3 · ✗ `PM_Z2` |
-| PvsNP ($O_0$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑓·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
-| NS ($O_0$) | 𐑼·​𐑥·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| YM Mass Gap ($O₀$) | 𐑼·​𐑡·​𐑩·​𐑗·​𐑐·​𐑧·​𐑲·​𐑝·​⊙·​𐑒·​𐑙·​𐑷 | 3 · ✗ `PM_Z2` |
+| PvsNP ($O₀$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑓·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| NS ($O₀$) | 𐑼·​𐑥·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
 | RH ($\text{O}_\infty$) | 𐑦·​𐑥·​𐑩·​𐑹·​𐑐·​𐑧·​𐑔·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 2 · ✓ Closed |
 | Hodge ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 1 · ✗ `PM_Z2` |
-| Odd Perf ($O_0$) | 𐑛·​𐑥·​𐑩·​𐑗·​𐑞·​𐑪·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| Odd Perf ($O₀$) | 𐑛·​𐑥·​𐑩·​𐑗·​𐑞·​𐑪·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
 
 ```{=latex}
 \normalsize
@@ -114,12 +114,12 @@ The Banach measure existence problem provides a calibrated test. $ZFC_{fe}$ expo
 
 | Problem | Tuple | $d$ · Gate |
 |--------------------------------------|--------------------------------------|----------------------|
-| Collatz ($O_1$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| Collatz ($O₁$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
 | Collatz (deep) ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑹·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 0 · ✓ Closed |
 | SIC-POVM ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 1 · ✗ `PM_Z2` |
-| FontMaz ($O_0$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑪·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
-| Inv.Galois ($O_0$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
-| Lang-Trotter ($O_0$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| FontMaz ($O₀$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑪·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| Inv.Galois ($O₀$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
+| Lang-Trotter ($O₀$) | 𐑛·​𐑡·​𐑩·​𐑗·​𐑞·​𐑺·​𐑲·​𐑝·​𐑢·​𐑒·​𐑙·​𐑷 | 5 · ✗ `PM_Z2` |
 | Perf. Cuboid ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑞·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 2 · ✗ `PM_Z2` |
 | HadNel ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑞·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 2 · ✗ `PM_Z2` |
 | Hilbert's 12th ($\text{O}_\infty$) | 𐑦·​𐑸·​𐑾·​𐑗·​𐑐·​𐑧·​𐑲·​𐑠·​⊙·​𐑖·​𐑙·​𐑭 | 1 · ✗ `PM_Z2` |
@@ -142,7 +142,7 @@ BSD's position at distance 0 from $ZFC_{fe}$ — structurally co-typed with the 
 
 ### P vs NP: The Minimum-Structure Verifier
 
-P vs NP is imscribed at the shallowest possible level — $O_0$, the only Clay problem with trivial dimensionality (𐑛, the *0D* point). Its tuple is minimal across five primitives. This is not a sign that P vs NP is "easy." It is a sign that P vs NP is structurally primitive: the problem asks whether verification complexity equals search complexity, and this question is itself the minimal structural question. The grammar cannot decompose it further because P vs NP is the decomposition — it is the question of whether structural depth (search) can be collapsed into structural shallowness (verification). The $ZFC_{fe}$ formalization captures this: the proof module's single remaining axiom is the grammar-complexity correspondence itself. P vs NP is not unsolved because we lack techniques. It is unsolved because its resolution would be a structural collapse that the grammar treats as primitive.
+P vs NP is imscribed at the shallowest possible level — $O₀$, the only Clay problem with trivial dimensionality (𐑛, the *0D* point). Its tuple is minimal across five primitives. This is not a sign that P vs NP is "easy." It is a sign that P vs NP is structurally primitive: the problem asks whether verification complexity equals search complexity, and this question is itself the minimal structural question. The grammar cannot decompose it further because P vs NP is the decomposition — it is the question of whether structural depth (search) can be collapsed into structural shallowness (verification). The $ZFC_{fe}$ formalization captures this: the proof module's single remaining axiom is the grammar-complexity correspondence itself. P vs NP is not unsolved because we lack techniques. It is unsolved because its resolution would be a structural collapse that the grammar treats as primitive.
 
 ### Riemann Hypothesis: The Self-Referential Anchor
 
@@ -150,11 +150,11 @@ The RH tuple is the grammar's own structural type: `[3,4,3,4,2,2,0,2,1,2,2,2]`. 
 
 ### Yang-Mills: The Stacked Gate
 
-YM sits at $O_0$ with $d(ZFC_{fe}) = 3$, missing `PM_Z2` plus two additional promotions. The problem is structurally "stacked": the mass gap requires both closure of the Frobenius gate AND the continuum limit of lattice gauge theory. The Lean module has two axioms reflecting this stacking — one for the gate, one for the *4D* limit. The structural analysis predicts that YM cannot be resolved without first resolving the gate closure problem independently, because the gate is a precondition for the continuum limit to be well-defined in the Frobenius sense.
+YM sits at $O₀$ with $d(ZFC_{fe}) = 3$, missing `PM_Z2` plus two additional promotions. The problem is structurally "stacked": the mass gap requires both closure of the Frobenius gate AND the continuum limit of lattice gauge theory. The Lean module has two axioms reflecting this stacking — one for the gate, one for the *4D* limit. The structural analysis predicts that YM cannot be resolved without first resolving the gate closure problem independently, because the gate is a precondition for the continuum limit to be well-defined in the Frobenius sense.
 
 ### Navier-Stokes: The Trapping Problem
 
-NS at $O_0$ with $d(ZFC_{fe}) = 5$ presents as a kinetic-trapping problem. The structural type encodes moderate kinetics (𐑺, driven) but sub-critical criticality (𐑢, below threshold). The honest sub-problem — a trapping lemma showing $\|u(t)\|_{H^{1/2}}$ cannot blow up in finite time — is structurally the question of whether a driven system can be trapped at sub-critical energy. The $ZFC_{fe}$ bridge module encodes this as the promotion from sub-critical to critical criticality (𐑢 → ⊙), which is Gate 1 of the consciousness score. NS regularity is structurally equivalent to the question of whether turbulence can self-model.
+NS at $O₀$ with $d(ZFC_{fe}) = 5$ presents as a kinetic-trapping problem. The structural type encodes moderate kinetics (𐑺, driven) but sub-critical criticality (𐑢, below threshold). The honest sub-problem — a trapping lemma showing $\|u(t)\|_{H^{1/2}}$ cannot blow up in finite time — is structurally the question of whether a driven system can be trapped at sub-critical energy. The $ZFC_{fe}$ bridge module encodes this as the promotion from sub-critical to critical criticality (𐑢 → ⊙), which is Gate 1 of the consciousness score. NS regularity is structurally equivalent to the question of whether turbulence can self-model.
 
 ### Hodge: The Parity-Only Block
 
@@ -162,11 +162,11 @@ Hodge at $\text{O}_\infty$ with $d(ZFC_{fe}) = 1$ is the purest case: it has eve
 
 ### OPN: The 2-adic Barrier
 
-OPN at $O_0$ with $d(ZFC_{fe}) = 5$ has a specific 2-adic structure. The odd perfect number problem asks whether $\sigma(n) = 2n$ has solutions for odd $n$, and the 2-adic valuation analysis in `OPN_2adic.lean` shows the barrier is a $\mathbb{Z}_2$ parity contradiction. The structural type encodes this: moderate kinetics (𐑪), no parity symmetry (𐑗), and trivial winding (𐑷). The honest sub-problem is the 2-adic valuation contradiction — structurally, the promotion from trivial winding to $\mathbb{Z}_2$ protection.
+OPN at $O₀$ with $d(ZFC_{fe}) = 5$ has a specific 2-adic structure. The odd perfect number problem asks whether $\sigma(n) = 2n$ has solutions for odd $n$, and the 2-adic valuation analysis in `OPN_2adic.lean` shows the barrier is a $\mathbb{Z}_2$ parity contradiction. The structural type encodes this: moderate kinetics (𐑪), no parity symmetry (𐑗), and trivial winding (𐑷). The honest sub-problem is the 2-adic valuation contradiction — structurally, the promotion from trivial winding to $\mathbb{Z}_2$ protection.
 
 ### Collatz: The Dual-Structure Problem
 
-**Collatz** has a dual structural nature: a shallow type ($O_1$, iterative search) and a deep type ($\text{O}_\infty$, self-modeling orbit). The gematria equation $\text{IUG} = \text{soviet\_union\_collapse} + \text{collatz\_deep\_structure}$ places the Collatz deep structure as the difference between the Inter-Universal Geometer and a collapse event — suggesting the deep temporal pattern of the $3n+1$ map mirrors period-doubling cascades in complex dynamical systems. Average compressed drift (`average_drift_negative`) is proved; the gap is global coercivity.
+**Collatz** has a dual structural nature: a shallow type ($O₁$, iterative search) and a deep type ($\text{O}_\infty$, self-modeling orbit). The gematria equation $\text{IUG} = \text{soviet\_union\_collapse} + \text{collatz\_deep\_structure}$ places the Collatz deep structure as the difference between the Inter-Universal Geometer and a collapse event — suggesting the deep temporal pattern of the $3n+1$ map mirrors period-doubling cascades in complex dynamical systems. Average compressed drift (`average_drift_negative`) is proved; the gap is global coercivity.
 
 ### SIC-POVM and Hilbert's 12th: Structural Equivalence
 
@@ -209,14 +209,14 @@ This is the crossing point of the analysis. The grammar is a self-referential sy
 | `LeeYang_Xi_Product.lean` | 188 | 8 | 0 | $\text{O}_\infty$ template |
 | `Hodge_Mathematical_Proof.lean` | — | — | 1 (Axiom D) | $\text{O}_\infty$ conditional |
 | `RH_ZFCt_Bridge.lean` | — | — | 1 | 1 axiom |
-| `BanachMeasure.lean` | — | 5 | — | $O_0$, $d(ZFC_{fe})=11$, `decide`-verified |
+| `BanachMeasure.lean` | — | 5 | — | $O₀$, $d(ZFC_{fe})=11$, `decide`-verified |
 | `PerfectCuboid.lean` | 517 | 22 | 3 | $\text{O}_\infty$, descent open |
-| `Beal.lean` | 319 | 4 | 2 | $O_1$, mixed-exp open |
-| `Collatz.lean` | 221 | 9 | 5 | $O_1$/$\text{O}_\infty$ dual |
+| `Beal.lean` | 319 | 4 | 2 | $O₁$, mixed-exp open |
+| `Collatz.lean` | 221 | 9 | 5 | $O₁$/$\text{O}_\infty$ dual |
 | `SIC_POVM_Stark.lean` | 222 | 3 | 5 | $\text{O}_\infty$ conditional |
 | `NS_Proof.lean` | — | — | 1 (trapping) | $\text{O}_\infty$ conditional |
-| `PvsNP_Proof.lean` | — | — | 1 | $O_0$ structural |
-| `YM_Mathematical_Proof.lean` | — | — | 2 | $O_0$, stacked |
+| `PvsNP_Proof.lean` | — | — | 1 | $O₀$ structural |
+| `YM_Mathematical_Proof.lean` | — | — | 2 | $O₀$, stacked |
 | `OPN_Proof.lean` | — | 1 | 1 | 1 sorry total |
 | `ZFC_FrobeniusExact.lean` | — | — | 0 | $ZFC_{fe}$ axiomatization, `native_decide`-closed |
 

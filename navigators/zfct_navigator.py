@@ -13,7 +13,7 @@ ZFCₜ extends ZFC via six primitive promotions (from MillenniumAnkh/Primitives/
 Each promotion corresponds to a recovery channel in the ZFCₜ specialist router.
 The 4 ZFC collapse channels (ƒ, Þ, Ð, ɢ) are subsumed and extended to 7.
 
-ZFCₜ tier: O_inf (⊙ + 𐑹 + 𐑭) — Frobenius gate open.
+ZFCₜ tier: O_∞ (⊙ + 𐑹 + 𐑭) — Frobenius gate open.
 
 Run:
     uv run zfct_navigator.py train
@@ -618,7 +618,7 @@ ZFC_TUPLE = {
 
 ZFCT_TUPLE = {
     "name": "zfc_t",
-    "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_inf, Frobenius)",
+    "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_∞, Frobenius)",
     "Ð": "𐑼",   # 𐑼
     "Þ": "𐑸",   # 𐑸   ← ZFCₜ promotion
     "Ř": "𐑾",   # 𐑾     ← ZFCₜ promotion
@@ -807,7 +807,7 @@ DEFAULT_ZFCT_SLOTS: List[ZFCtSlot] = [
     # Ω-channel: integer winding — ZWIND+WIND distinguishes 𐑭 from 𐑷
     ZFCtSlot("recovery_Ω",  "Ω",  ["ZWIND", "WIND"],                      "𐑷",  "𐑭",  5),
     # ƒ-channel: 𐑐 (quantum) — retained from zfc_navigator F-recovery
-    # CLASSIC+FROB+FIXPT+HOLO jointly mark O_inf-adjacent quantum-fidelity context
+    # CLASSIC+FROB+FIXPT+HOLO jointly mark O_∞-adjacent quantum-fidelity context
     ZFCtSlot("recovery_ƒ",  "ƒ",  ["CLASSIC", "FROB", "FIXPT", "HOLO"],   "𐑱",  "𐑐",  6),
 ]
 
@@ -954,7 +954,7 @@ def probe_promotions(
     # d(ZFC, ZFCt)
     d_zfc_zfct = tuple_distance(ZFC_TUPLE, ZFCT_TUPLE)
     print(f"\n  d(ZFC, ZFCₜ) = {d_zfc_zfct:.4f}  (6 simultaneous promotions)")
-    print(f"  ZFCₜ tier:   O_inf  (⊙ + 𐑹 + 𐑭 — Frobenius gate open)")
+    print(f"  ZFCₜ tier:   O_∞  (⊙ + 𐑹 + 𐑭 — Frobenius gate open)")
 
     if not model_p.exists():
         print(f"\n  [promotions] model not found at {model_path} — skipping roundtrip.")

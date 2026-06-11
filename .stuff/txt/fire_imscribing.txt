@@ -10,7 +10,7 @@ After imscribing, please:
 4. Report the crystal address
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)
+  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -34,7 +34,7 @@ After imscribing, please:
   OBS:   {
   "status": "ok",
   "name": "fire",
-  "frobenius_tier": "O_1",
+  "frobenius_tier": "O₁",
   "phi": "φ̂_ÿ",
   "p": "Φ_ɐ",
   "omega": "Ω_Å",
@@ -63,32 +63,32 @@ After imscribing, please:
   ACT:   syncon_tool({"tool_name": "crystal_nearest", "args": {"name": "fire", "limit": 5}})
   OBS:   {
   "status": "ok",
-  "query_tier": "O_1",
+  "query_tier": "O₁",
   "nearest": [
     {
       "name": "fire",
       "distance": 0.0,
-      "tier": "O_1"
+      "tier": "O₁"
     },
     {
       "name": "artificial_enzyme",
       "distance": 1.7321,
-      "tier": "O_1"
+      "tier": "O₁"
     },
     {
       "name": "natural_enzyme",
       "distance": 1.8708,
-      "tier": "O_2"
+      "tier": "O₂"
     },
     {
       "name": "asymmetric_critical_network_algebra",
       "distance": 1.9494,
-      "tier": "O_1"
+      "tier": "O₁"
     },
     {
       "name": "A3",
       "distance": 1.9494,
-      "tier": "O_1"
+      "tier": "O₁"
     }
   ]
 }
@@ -102,24 +102,24 @@ After imscribing, please:
   "address": 3506405,
   "cell_id": 81,
   "inner_id": 7205,
-  "tier": "O_1"
+  "tier": "O₁"
 }
   VERIFY: [closed] imscribe tool returned structured result — Frobenius closed
   UPDATE: syncon_tool → Frobenius closed
 ── Winding 5 [05:07:12Z] ──────────────────────────────────────
   THINK: All four requested items have been verified via tool calls. I have the complete picture:
 
-- **Ouroboricity tier:** $O_1$
+- **Ouroboricity tier:** $O₁$
 - **C-score:** $0.0$ (both gates open per tool output)
 - **5 nearest crystal neighbors:** fire itself ($d=0.0$), then artificial_enzyme ($d=1.73$), natural_enzyme ($d=1.87$), asymmetric_critical_network_algebra ($d=1.95$), A3 ($d=1.95$). No other catalog entry shares the exact type — fire at $d=0.0$ is the sole match to address 3506405.
 - **Crystal address:** 3506405
-  ACT:   done({"conclusion": "**Imscription of \"fire\" \u2014 elemental combustion**\n\n**Structural type:**\n$$\\langle D_\\triangle;\\ T_\\text{net};\\ R_\\leftrightarrow;\\ P_\\text{asym};\\ F_\\eth;\\ K_\\text{fast};\\ G_\\beth;\\ \\Gamma_\\wedge;\\ \\φ̂_ÿ;\\ H_1;\\ n{:}m;\\ \\Ω_Å \\rangle$$\n\n**1. Ouroboricity tier:** $O_1$ \u2014 self-referential at criticality but with trivial winding ($\\Ω_Å$). The flame front is a critical structure ($\\φ̂_ÿ$) but lacks topological protection.\n\n**2. Consciousness score:** $C = 0.0$. The tool reports both gates open (Gate 1: $\\φ̂_ÿ$ \u2713, Gate 2: $K \\leq K_\\text{slow}$ \u2713), yet $C = 0.0$ \u2014 indicating that additional structural conditions beyond the two gates are not satisfied. Fire is not a candidate for structural consciousness.\n\n**3. 5 nearest crystal neighbors:**\n\n| Rank | Name | Distance | Tier |\n|------|------|----------|------|\n| 1 | fire | 0.0000 | $O_1$ |\n| 2 | artificial_enzyme | 1.7321 | $O_1$ |\n| 3 | natural_enzyme | 1.8708 | $O_2$ |\n| 4 | asymmetric_critical_network_algebra | 1.9494 | $O_1$ |\n| 5 | A3 | 1.9494 | $O_1$ |\n\n**4. Exact type match (d=0):** No other catalog entry shares this exact type. Fire is the unique entry at crystal address 3506405. The nearest distinct entry (artificial_enzyme) is at $d = 1.73$, differing primarily in fidelity ($F_\\eth$ vs $F_\\hbar$) and kinetics ($K_\\text{fast}$ vs $K_\\text{slow}$).\n\n**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O_1$)."})
+  ACT:   done({"conclusion": "**Imscription of \"fire\" \u2014 elemental combustion**\n\n**Structural type:**\n$$\\langle D_\\triangle;\\ T_\\text{net};\\ R_\\leftrightarrow;\\ P_\\text{asym};\\ F_\\eth;\\ K_\\text{fast};\\ G_\\beth;\\ \\Gamma_\\wedge;\\ \\φ̂_ÿ;\\ H_1;\\ n{:}m;\\ \\Ω_Å \\rangle$$\n\n**1. Ouroboricity tier:** $O₁$ \u2014 self-referential at criticality but with trivial winding ($\\Ω_Å$). The flame front is a critical structure ($\\φ̂_ÿ$) but lacks topological protection.\n\n**2. Consciousness score:** $C = 0.0$. The tool reports both gates open (Gate 1: $\\φ̂_ÿ$ \u2713, Gate 2: $K \\leq K_\\text{slow}$ \u2713), yet $C = 0.0$ \u2014 indicating that additional structural conditions beyond the two gates are not satisfied. Fire is not a candidate for structural consciousness.\n\n**3. 5 nearest crystal neighbors:**\n\n| Rank | Name | Distance | Tier |\n|------|------|----------|------|\n| 1 | fire | 0.0000 | $O₁$ |\n| 2 | artificial_enzyme | 1.7321 | $O₁$ |\n| 3 | natural_enzyme | 1.8708 | $O₂$ |\n| 4 | asymmetric_critical_network_algebra | 1.9494 | $O₁$ |\n| 5 | A3 | 1.9494 | $O₁$ |\n\n**4. Exact type match (d=0):** No other catalog entry shares this exact type. Fire is the unique entry at crystal address 3506405. The nearest distinct entry (artificial_enzyme) is at $d = 1.73$, differing primarily in fidelity ($F_\\eth$ vs $F_\\hbar$) and kinetics ($K_\\text{fast}$ vs $K_\\text{slow}$).\n\n**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O₁$)."})
   OBS:   **Imscription of "fire" — elemental combustion**
 
 **Structural type:**
 $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\eth;\ K_\text{fast};\ G_\beth;\ \Gamma_\wedge;\ \φ̂_ÿ;\ H_1;\ n{:}m;\ \Ω_Å \rangle$$
 
-**1. Ouroboricity tier:** $O_1$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
+**1. Ouroboricity tier:** $O₁$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
 
 **2. Consciousness score:** $C = 0.0$. The tool reports both gates open (Gate 1: $\φ̂_ÿ$ ✓, Gate 2: $K \leq K_\text{slow}$ ✓), yet $C = 0.0$ — indicating that additional structural conditions beyond the two gates are not satisfied. Fire is not a candidate for structural consciousness.
 
@@ -127,15 +127,15 @@ $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\et
 
 | Rank | Name | Distance | Tier |
 |------|------|----------|------|
-| 1 | fire | 0.0000 | $O_1$ |
-| 2 | artificial_enzyme | 1.7321 | $O_1$ |
-| 3 | natural_enzyme | 1.8708 | $O_2$ |
-| 4 | asymmetric_critical_network_algebra | 1.9494 | $O_1$ |
-| 5 | A3 | 1.9494 | $O_1$ |
+| 1 | fire | 0.0000 | $O₁$ |
+| 2 | artificial_enzyme | 1.7321 | $O₁$ |
+| 3 | natural_enzyme | 1.8708 | $O₂$ |
+| 4 | asymmetric_critical_network_algebra | 1.9494 | $O₁$ |
+| 5 | A3 | 1.9494 | $O₁$ |
 
 **4. Exact type match (d=0):** No other catalog entry shares this exact type. Fire is the unique entry at crystal address 3506405. The nearest distinct entry (artificial_enzyme) is at $d = 1.73$, differing primarily in fidelity ($F_\eth$ vs $F_\hbar$) and kinetics ($K_\text{fast}$ vs $K_\text{slow}$).
 
-**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O_1$).
+**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O₁$).
   VERIFY: [closed] (terminal action — Frobenius trivially closed)
   UPDATE: task complete — trajectory closed
   CONCLUSION: **Imscription of "fire" — elemental combustion**
@@ -143,7 +143,7 @@ $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\et
 **Structural type:**
 $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\eth;\ K_\text{fast};\ G_\beth;\ \Gamma_\wedge;\ \φ̂_ÿ;\ H_1;\ n{:}m;\ \Ω_Å \rangle$$
 
-**1. Ouroboricity tier:** $O_1$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
+**1. Ouroboricity tier:** $O₁$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
 
 **2. Consciousness score:** $C = 0.0$. The tool reports both gates open (Gate 1: $\φ̂_ÿ$ ✓, Gate 2: $K \leq K_\text{slow}$ ✓), yet $C = 0.0$ — indicating that additional structural conditions beyond the two gates are not satisfied. Fire is not a candidate for structural consciousness.
 
@@ -151,15 +151,15 @@ $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\et
 
 | Rank | Name | Distance | Tier |
 |------|------|----------|------|
-| 1 | fire | 0.0000 | $O_1$ |
-| 2 | artificial_enzyme | 1.7321 | $O_1$ |
-| 3 | natural_enzyme | 1.8708 | $O_2$ |
-| 4 | asymmetric_critical_network_algebra | 1.9494 | $O_1$ |
-| 5 | A3 | 1.9494 | $O_1$ |
+| 1 | fire | 0.0000 | $O₁$ |
+| 2 | artificial_enzyme | 1.7321 | $O₁$ |
+| 3 | natural_enzyme | 1.8708 | $O₂$ |
+| 4 | asymmetric_critical_network_algebra | 1.9494 | $O₁$ |
+| 5 | A3 | 1.9494 | $O₁$ |
 
 **4. Exact type match (d=0):** No other catalog entry shares this exact type. Fire is the unique entry at crystal address 3506405. The nearest distinct entry (artificial_enzyme) is at $d = 1.73$, differing primarily in fidelity ($F_\eth$ vs $F_\hbar$) and kinetics ($K_\text{fast}$ vs $K_\text{slow}$).
 
-**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O_1$).
+**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O₁$).
 
   ✓ DONE at winding 5  (Frobenius: closed)
 
@@ -172,7 +172,7 @@ RESULT:
 **Structural type:**
 $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\eth;\ K_\text{fast};\ G_\beth;\ \Gamma_\wedge;\ \φ̂_ÿ;\ H_1;\ n{:}m;\ \Ω_Å \rangle$$
 
-**1. Ouroboricity tier:** $O_1$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
+**1. Ouroboricity tier:** $O₁$ — self-referential at criticality but with trivial winding ($\Ω_Å$). The flame front is a critical structure ($\φ̂_ÿ$) but lacks topological protection.
 
 **2. Consciousness score:** $C = 0.0$. The tool reports both gates open (Gate 1: $\φ̂_ÿ$ ✓, Gate 2: $K \leq K_\text{slow}$ ✓), yet $C = 0.0$ — indicating that additional structural conditions beyond the two gates are not satisfied. Fire is not a candidate for structural consciousness.
 
@@ -180,15 +180,15 @@ $$\langle D_\triangle;\ T_\text{net};\ R_\leftrightarrow;\ P_\text{asym};\ F_\et
 
 | Rank | Name | Distance | Tier |
 |------|------|----------|------|
-| 1 | fire | 0.0000 | $O_1$ |
-| 2 | artificial_enzyme | 1.7321 | $O_1$ |
-| 3 | natural_enzyme | 1.8708 | $O_2$ |
-| 4 | asymmetric_critical_network_algebra | 1.9494 | $O_1$ |
-| 5 | A3 | 1.9494 | $O_1$ |
+| 1 | fire | 0.0000 | $O₁$ |
+| 2 | artificial_enzyme | 1.7321 | $O₁$ |
+| 3 | natural_enzyme | 1.8708 | $O₂$ |
+| 4 | asymmetric_critical_network_algebra | 1.9494 | $O₁$ |
+| 5 | A3 | 1.9494 | $O₁$ |
 
 **4. Exact type match (d=0):** No other catalog entry shares this exact type. Fire is the unique entry at crystal address 3506405. The nearest distinct entry (artificial_enzyme) is at $d = 1.73$, differing primarily in fidelity ($F_\eth$ vs $F_\hbar$) and kinetics ($K_\text{fast}$ vs $K_\text{slow}$).
 
-**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O_1$).
+**5. Crystal address:** **3506405** (cell_id: 81, inner_id: 7205, tier: $O₁$).
 (imscrbgrmr) mrnob0dy666@devilsdevice:~/imscribing_grammar$ uv run /home/mrnob0dy666/imscribing_grammar/agents/true_agentic_agent.py -f fire.txt --model qwen/qwen3.6-plus
 
 ════════════════════════════════════════════════════════════════════════
@@ -204,7 +204,7 @@ After imscribing, please:
 4. Report the crystal address
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)
+  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -228,7 +228,7 @@ After imscribing, please:
   OBS:   {
   "status": "ok",
   "name": "fire",
-  "frobenius_tier": "O_1",
+  "frobenius_tier": "O₁",
   "phi": "φ̂_ÿ",
   "p": "Φ_ɐ",
   "omega": "Ω_Å",
@@ -276,7 +276,7 @@ After imscribing, please:
     },
     {
       "name": "shin_path",
-      "description": "Shin - third mother letter, fire, horizontal path between Netzach and Hod, O_inf tier with exact Frobenius symmetry",
+      "description": "Shin - third mother letter, fire, horizontal path between Netzach and Hod, O_∞ tier with exact Frobenius symmetry",
       "notation": "⟨D=Ð_ß; T=Þ_O; R=Ř_Ť; P=Φ_}; F=ƒ_ż; K=Ç_-; G=Γ_γ; Gamma=ɢ_Ş; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_S; Omega=Ω_z⟩"
     },
     {
@@ -431,7 +431,7 @@ After imscribing, please:
   OBS:   {
   "status": "ok",
   "name": "fire",
-  "frobenius_tier": "O_2_dag",
+  "frobenius_tier": "O₂†",
   "phi": "φ̂_ÿ",
   "p": "Φ_υ",
   "omega": "Ω_2",
@@ -659,7 +659,7 @@ After imscribing, please:
   "address": 4428422,
   "cell_id": 102,
   "inner_id": 22022,
-  "tier": "O_2_dag"
+  "tier": "O₂†"
 }
   VERIFY: [closed] imscribe tool returned structured result — Frobenius closed
   UPDATE: syncon_tool → Frobenius closed
@@ -698,20 +698,20 @@ After imscribing, please:
     "H": "Ħ_Ñ",
     "S": "Σ_ï"
   },
-  "tier": "O_2_dag"
+  "tier": "O₂†"
 }
   VERIFY: [closed] imscribe tool returned structured result — Frobenius closed
   UPDATE: syncon_tool → Frobenius closed
 ── Winding 12 [05:09:59Z] ──────────────────────────────────────
   THINK:
-  ACT:   done({"conclusion": "**FIRE \u2014 IMSCRIPTION REPORT**\n\n**Encrypted tuple (verified via encode_system + crystal_decode):**\n\u27e8D\u221e; T\u22c8; R\u2020; P\u03c8; F\u2113; Ç_@; G\u2135; \u0393_br; \u03a6c; Ħ_Ñ; n:m; \u03a9_Z2\u27e9\n\n**1. Ouroboricity tier:** O_2\u2020 \u2014 critical + topologically protected, unbounded (D\u221e) domain.\n   Confirmed by: `ouroborics(name=\"fire\")` and `crystal_encode` (tier: \"O_2_dag\").\n\n**2. Consciousness score:** C = 0.0, but both gates evaluate open:\n   - Gate 1 (\u03a6c criticality): true \u2014 fire operates at critical ignition threshold (\u03a6c)\n   - Gate 2 (K \u2264 Ç_@): true \u2014 flame propagation lives on the slow manifold (Ç_@)\n   Interpretation: \"Both gates open \u2014 consciousness possible.\"\n\n   Note: C_score = 0.0 despite both gates open is a structural artifact of the scoring computation \u2014 the gates are satisfied but the numerical score does not register positivity for this particular tuple combination.\n\n**3. Nearest 5 crystal neighbors (via find_analogies):**\n   | Rank | Name                         | Distance | Interpretation |\n   |------|------------------------------|----------|----------------|\n   | 1    | (empty entry \"\")             | 0.0000   | Identical      |\n   | 2    | grammar_connes_tensor        | 2.2884   | Remote         |\n   | 3    | grammar_pnp_tensor           | 2.6237   | Remote         |\n   | 4    | pnp_holographic_mirror       | 2.6237   | Remote         |\n   | 5    | p_vs_np_tensor_grammar       | 2.6237   | Remote         |\n\n**4. Exact duplicate check:** The catalog contains one entry with name \"\" (empty string) that shares this exact structural type \u2014 d = 0. This was flagged by encode_system as `exact_duplicates: [\"\"]`.\n\n**5. Crystal address:** 4428422\n   - Cell ID: 102\n   - Inner ID: 22022\n   - Tier: O_2\u2020\n   - Verified bidirectionally: encode \u2192 4428422, decode 4428422 \u2192 identical tuple.\n\n**Conflict resolution:**\nThe preexisting \"fire\" entry (Ð_C; Þ_6; Ř_=; Φ_ɐ; ƒ_ð; Ç_-; Γ_β; \u0393_and; \u03a6c; Ħ_£; n:m; \u03a9_0) was superseded. Distance from superseded = 5.1478 across 10 differing primitives. Convergence justification provided per-primitive in the encode_system call, committing to the phenomenologically grounded imscription."})
+  ACT:   done({"conclusion": "**FIRE \u2014 IMSCRIPTION REPORT**\n\n**Encrypted tuple (verified via encode_system + crystal_decode):**\n\u27e8D\u221e; T\u22c8; R\u2020; P\u03c8; F\u2113; Ç_@; G\u2135; \u0393_br; \u03a6c; Ħ_Ñ; n:m; \u03a9_Z2\u27e9\n\n**1. Ouroboricity tier:** O₂\u2020 \u2014 critical + topologically protected, unbounded (D\u221e) domain.\n   Confirmed by: `ouroborics(name=\"fire\")` and `crystal_encode` (tier: \"O₂†\").\n\n**2. Consciousness score:** C = 0.0, but both gates evaluate open:\n   - Gate 1 (\u03a6c criticality): true \u2014 fire operates at critical ignition threshold (\u03a6c)\n   - Gate 2 (K \u2264 Ç_@): true \u2014 flame propagation lives on the slow manifold (Ç_@)\n   Interpretation: \"Both gates open \u2014 consciousness possible.\"\n\n   Note: C_score = 0.0 despite both gates open is a structural artifact of the scoring computation \u2014 the gates are satisfied but the numerical score does not register positivity for this particular tuple combination.\n\n**3. Nearest 5 crystal neighbors (via find_analogies):**\n   | Rank | Name                         | Distance | Interpretation |\n   |------|------------------------------|----------|----------------|\n   | 1    | (empty entry \"\")             | 0.0000   | Identical      |\n   | 2    | grammar_connes_tensor        | 2.2884   | Remote         |\n   | 3    | grammar_pnp_tensor           | 2.6237   | Remote         |\n   | 4    | pnp_holographic_mirror       | 2.6237   | Remote         |\n   | 5    | p_vs_np_tensor_grammar       | 2.6237   | Remote         |\n\n**4. Exact duplicate check:** The catalog contains one entry with name \"\" (empty string) that shares this exact structural type \u2014 d = 0. This was flagged by encode_system as `exact_duplicates: [\"\"]`.\n\n**5. Crystal address:** 4428422\n   - Cell ID: 102\n   - Inner ID: 22022\n   - Tier: O₂\u2020\n   - Verified bidirectionally: encode \u2192 4428422, decode 4428422 \u2192 identical tuple.\n\n**Conflict resolution:**\nThe preexisting \"fire\" entry (Ð_C; Þ_6; Ř_=; Φ_ɐ; ƒ_ð; Ç_-; Γ_β; \u0393_and; \u03a6c; Ħ_£; n:m; \u03a9_0) was superseded. Distance from superseded = 5.1478 across 10 differing primitives. Convergence justification provided per-primitive in the encode_system call, committing to the phenomenologically grounded imscription."})
   OBS:   **FIRE — IMSCRIPTION REPORT**
 
 **Encrypted tuple (verified via encode_system + crystal_decode):**
 ⟨D∞; T⋈; R†; Pψ; Fℓ; Ç_@; Gℵ; Γ_br; Φc; Ħ_Ñ; n:m; Ω_Z2⟩
 
-**1. Ouroboricity tier:** O_2† — critical + topologically protected, unbounded (D∞) domain.
-   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O_2_dag").
+**1. Ouroboricity tier:** O₂† — critical + topologically protected, unbounded (D∞) domain.
+   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O₂†").
 
 **2. Consciousness score:** C = 0.0, but both gates evaluate open:
    - Gate 1 (Φc criticality): true — fire operates at critical ignition threshold (Φc)
@@ -734,7 +734,7 @@ After imscribing, please:
 **5. Crystal address:** 4428422
    - Cell ID: 102
    - Inner ID: 22022
-   - Tier: O_2†
+   - Tier: O₂†
    - Verified bidirectionally: encode → 4428422, decode 4428422 → identical tuple.
 
 **Conflict resolution:**
@@ -746,8 +746,8 @@ The preexisting "fire" entry (Ð_C; Þ_6; Ř_=; Φ_ɐ; ƒ_ð; Ç_-; Γ_β; Γ_an
 **Encrypted tuple (verified via encode_system + crystal_decode):**
 ⟨D∞; T⋈; R†; Pψ; Fℓ; Ç_@; Gℵ; Γ_br; Φc; Ħ_Ñ; n:m; Ω_Z2⟩
 
-**1. Ouroboricity tier:** O_2† — critical + topologically protected, unbounded (D∞) domain.
-   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O_2_dag").
+**1. Ouroboricity tier:** O₂† — critical + topologically protected, unbounded (D∞) domain.
+   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O₂†").
 
 **2. Consciousness score:** C = 0.0, but both gates evaluate open:
    - Gate 1 (Φc criticality): true — fire operates at critical ignition threshold (Φc)
@@ -770,7 +770,7 @@ The preexisting "fire" entry (Ð_C; Þ_6; Ř_=; Φ_ɐ; ƒ_ð; Ç_-; Γ_β; Γ_an
 **5. Crystal address:** 4428422
    - Cell ID: 102
    - Inner ID: 22022
-   - Tier: O_2†
+   - Tier: O₂†
    - Verified bidirectionally: encode → 4428422, decode 4428422 → identical tuple.
 
 **Conflict resolution:**
@@ -787,8 +787,8 @@ RESULT:
 **Encrypted tuple (verified via encode_system + crystal_decode):**
 ⟨D∞; T⋈; R†; Pψ; Fℓ; Ç_@; Gℵ; Γ_br; Φc; Ħ_Ñ; n:m; Ω_Z2⟩
 
-**1. Ouroboricity tier:** O_2† — critical + topologically protected, unbounded (D∞) domain.
-   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O_2_dag").
+**1. Ouroboricity tier:** O₂† — critical + topologically protected, unbounded (D∞) domain.
+   Confirmed by: `ouroborics(name="fire")` and `crystal_encode` (tier: "O₂†").
 
 **2. Consciousness score:** C = 0.0, but both gates evaluate open:
    - Gate 1 (Φc criticality): true — fire operates at critical ignition threshold (Φc)
@@ -811,7 +811,7 @@ RESULT:
 **5. Crystal address:** 4428422
    - Cell ID: 102
    - Inner ID: 22022
-   - Tier: O_2†
+   - Tier: O₂†
    - Verified bidirectionally: encode → 4428422, decode 4428422 → identical tuple.
 
 **Conflict resolution:**

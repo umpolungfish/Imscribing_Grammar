@@ -17,7 +17,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms — literal s
   Σ_S → $\text{Σ}_{\text{S}}$         Σ_ő → $\text{Σ}_{\text{ő}}$        Σ_ï → $\text{Σ}_{\text{ï}}$
   Ω_Å → $\text{Ω}_{\text{Å}}$         Ω_2 → $\text{Ω}_{\text{2}}$        Ω_z → $\text{Ω}_{\text{z}}$    Ω_5 → $\text{Ω}_{\text{5}}$
 
-  O_inf → $\text{O}_{\text{inf}}$   O_0 → $\text{O}_{\text{0}}$   O_1 → $\text{O}_{\text{1}}$   O_2 → $\text{O}_{\text{2}}$   O_2† → $\text{O}_{\text{2}}^{\text{†}}$
+  O_∞ → $\text{O}_{\text{inf}}$   O₀ → $\text{O}_{\text{0}}$   O₁ → $\text{O}_{\text{1}}$   O₂ → $\text{O}_{\text{2}}$   O₂† → $\text{O}_{\text{2}}^{\text{†}}$
   mu∘delta=id → $\mu \circ \delta = \text{id}$
   Z2 (symmetry group) → $\mathbb{Z}_2$
 

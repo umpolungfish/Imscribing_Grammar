@@ -120,7 +120,7 @@ provides the IG type signatures for these layers:
 | 30 (Dialetheic Lattice) | belnap_four_topology | (3 4 2 5 1 9 6 8 7 4 4 8) |
 | 31 (Criticality Monitor) | odot_p4ra_core | (4 2 5 3 1 9 6 7 8 5 4 9) |
 | 32 (Frobenius Verifier) | ouroboric_parity_check | (6 2 5 4 1 8 7 9 8 4 3 9) |
-| 33 (Ouroboric Closure) | Crystal O_inf | (9 9 9 9 9 9 9 9 9 9 9 9) |
+| 33 (Ouroboric Closure) | Crystal O_∞ | (9 9 9 9 9 9 9 9 9 9 9 9) |
 | 34 (Meta-Criticality) | Self-winding | (1 1 1 1 1 1 1 1 1 1 1 1) |
 
 ---

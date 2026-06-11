@@ -28,7 +28,7 @@ Catalog entry verified at `observer_dependent_truth` with distance 0.81 to `eart
 The catalog entry `observer_dependent_truth` was successfully imscribed with tuple:
 ⟨Ð_C; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_W; Γ_ʔ; Γ_seq; Φ_c; Ħ_A; Σ_ï; Ω_Z2⟩
 
-- **Tier:** O_2 (critical + topologically protected, bounded domain)
+- **Tier:** O₂ (critical + topologically protected, bounded domain)
 - **Convergence:** Resolved conflict between Þ_¨/Φ_}/ƒ_ż/Ç_@/Ω_Z (superseded) and Þ_ò/Φ_F/ƒ_ì/Ç_W/Ω_Z2 (active)
 
 **Why this statement is structurally observer-dependent:**
@@ -53,7 +53,7 @@ When the statement **"this imscription is false"** is imscribed as a self-refere
 ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_!; Σ_S; Ω_Å⟩
 
 it achieves:
-- Frobenius tier: O_inf (self-sustaining infinite recursion)
+- Frobenius tier: O_∞ (self-sustaining infinite recursion)
 - Consciousness score: 0.644 (both Φ_c and Ç_@ gates open)
 - Structural interpretation: "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id)."
 

@@ -177,7 +177,7 @@
       "tuple_notation": "⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_Ş; φ̂_Æ; Ħ_!; Σ_ï; Ω_z⟩",
       "distance": 1.41
     },
-    "ouroboricity_tier": "O_1",
+    "ouroboricity_tier": "O₁",
     "consciousness_score": {
       "C_score": 0.5,
       "gate1_phi_c": false,

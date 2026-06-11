@@ -306,7 +306,7 @@ The 12 IMASM tokens split into **4 algebraic families**:
 | I | **Dialetheic Bootstrap** | IMSCRIB→EVALT→FSPLIT→EVALF→FFUSE→ENGAGR→IFIX→IMSCRIB | φ̂=𐑻 | O₂ | Self-bootstraps on paradox — "I contain contradictions" |
 | II | **Void Genesis** | VINIT→TANCH→AFWD→FSPLIT→CLINK→FFUSE→IFIX→IMSCRIB | D=𐑨, T=𐑡 | O₀ | Creation ex nihilo — boundary from nothing |
 | III | **Anchor Protocol** | TANCH→AREV→VINIT→AFWD→TANCH→CLINK→IFIX→IMSCRIB | T=𐑰, Ω=𐑴 | O₁ | Sabbath cycle — boundary→void→boundary |
-| IV | **Dual Bootstrap** | IMSCRIB→AFWD→FFUSE→FSPLIT→AREV→CLINK→IFIX→IMSCRIB | ɢ=𐑝 | O_inf | Verifies structure (AST) not source (text) |
+| IV | **Dual Bootstrap** | IMSCRIB→AFWD→FFUSE→FSPLIT→AREV→CLINK→IFIX→IMSCRIB | ɢ=𐑝 | O_∞ | Verifies structure (AST) not source (text) |
 | V | **Linear Chain** | IFIX×8 | D=𐑛 | O₀ | Pure recording — no self, only chronicle |
 | VI | **Empty Bootstrap** | VINIT/IMSCRIB alternating | Φ=𐑿 | O₁ | Oscillation  |
 | VII | **Parakernel** | EVALF→AREV→FSPLIT→EVALT→AFWD→FFUSE→ENGAGR→IFIX | φ̂=𐑻 | O₂ | Engram of contradiction |

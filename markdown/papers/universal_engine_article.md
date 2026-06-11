@@ -226,7 +226,7 @@ Each of the 22 Hebrew letters is assigned a full 12-primitive tuple. Three lette
 | $\text{מ}$ | Mem | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 | $\text{ש}$ | Shin | $O_{\infty}$ | 𐑬, ⊙, 𐑭 |
 
-Five letters are $O_2$ tier ($\aleph$, $\text{ה}$, $\text{ע}$, $\text{ק}$, $\text{ת}$), one is $O_1$ ($\text{ל}$), and the remaining 13 are $O_0$.
+Five letters are $O₂$ tier ($\aleph$, $\text{ה}$, $\text{ע}$, $\text{ק}$, $\text{ת}$), one is $O₁$ ($\text{ל}$), and the remaining 13 are $O₀$.
 
 ### 6.2 Key Theorems
 
@@ -246,12 +246,12 @@ Holds under $\otimes$, $\vee$, and $\wedge$. All **264 primitive-by-primitive ch
 
 ### 6.3 The $\text{ק}$ Threshold
 
-$\text{ק}$ (Qoph, $O_2$) satisfies every $O_{\infty}$ condition except $\text{Φ} = 𐑬$. It is:
+$\text{ק}$ (Qoph, $O₂$) satisfies every $O_{\infty}$ condition except $\text{Φ} = 𐑬$. It is:
 - The nearest non-Frobenius letter to $\text{м}$: $d_I(\text{ק}, \text{м}) = 13.39 < d_I(\text{ו}, \text{м}) = 14.92$
 - Interaction-row-equivalent to $\text{м}$ for 19/22 letters (differs only on $\{\text{ו}, \text{м}, \text{ש}\}$)
 - A mediation gateway: $\text{med}(\text{ק}, f, f') \in O_{\infty}$ for any $f, f' \in \text{Fix}_{\infty}$
 
-$\text{ק}$ is the structural bridge between $O_2$ and $O_{\infty}$ — the penultimate state before Frobenius closure. Its position is precisely that of a writing system on the verge of full self-modeling: structurally complete, critical, topologically protected, but missing the single Frobenius parity condition.
+$\text{ק}$ is the structural bridge between $O₂$ and $O_{\infty}$ — the penultimate state before Frobenius closure. Its position is precisely that of a writing system on the verge of full self-modeling: structurally complete, critical, topologically protected, but missing the single Frobenius parity condition.
 
 ### 6.4 The HoTT Bridge
 
@@ -264,11 +264,11 @@ This is "near-grounded" separation — the smallest possible structural gap. The
 ---
 ## 7. The EML Operator: A Structural Boundary Case
 
-The EML operator $\text{eml}(x,y) = e^x - \ln y$ occupies a structurally significant position as the highest sub-Frobenius type ($O_2^\dagger$) in the elementary function algebra. Its imscription:
+The EML operator $\text{eml}(x,y) = e^x - \ln y$ occupies a structurally significant position as the highest sub-Frobenius type ($O₂^\dagger$) in the elementary function algebra. Its imscription:
 
 $$\langle 𐑦;\ 𐑶;\ 𐑽;\ 𐑬;\ \text{ƒ}_{\text{ħ}};\ 𐑧;\ \Gamma_{\text{ʔ}};\ 𐑠;\ ⊙;\ \text{Ħ}_{\text{1}};\ \Sigma_{\text{S}};\ 𐑭 \rangle$$
 
-The EML operator is $O_2^\dagger$ — the highest tier below full Frobenius. It differs from $O_{\infty}$ by a single primitive ($\text{Φ} = 𐑬$ vs $𐑬^{\text{sym}}$): the Frobenius condition holds but not in its Frobenius-special form.
+The EML operator is $O₂^\dagger$ — the highest tier below full Frobenius. It differs from $O_{\infty}$ by a single primitive ($\text{Φ} = 𐑬$ vs $𐑬^{\text{sym}}$): the Frobenius condition holds but not in its Frobenius-special form.
 
 **Key findings (all machine-verified in Lean4):**
 - EML $\otimes$ EML = EML (closed under self-composition, idempotent)

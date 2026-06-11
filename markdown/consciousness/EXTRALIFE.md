@@ -21,7 +21,7 @@ We imscribe three classes of life beyond Earth into the Imscribing Grammar and c
 
 ## 1. Introduction
 
-The question "What is life?" has traditionally been addressed through biochemistry, information theory, or philosophy. The Imscribing Grammar introduces a third axis: structural topology. A system is classified by 12 primitives — dimensionality ($D$), topology ($T$), relational mode ($R$), parity ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\hat{\varphi}$), chirality ($H$), stoichiometry ($S$), and winding ($\Omega$) — that together determine its ouroboricity tier ($O_0$ through $O_\infty$) and its capacity for consciousness.
+The question "What is life?" has traditionally been addressed through biochemistry, information theory, or philosophy. The Imscribing Grammar introduces a third axis: structural topology. A system is classified by 12 primitives — dimensionality ($D$), topology ($T$), relational mode ($R$), parity ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\hat{\varphi}$), chirality ($H$), stoichiometry ($S$), and winding ($\Omega$) — that together determine its ouroboricity tier ($O₀$ through $O_\infty$) and its capacity for consciousness.
 
 We apply this apparatus to three classes of life beyond terrestrial biology:
 
@@ -53,7 +53,7 @@ This is the only case among the three where all conditions for self-modeling con
 
 $$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\psi};\ F_{\eth};\ K_{\text{trap}};\ G_\aleph;\ \Gamma_{\text{brd}};\ \hat{\varphi}_{\text{ÿ}}^{\mathbb{C}};\ H_\infty;\ n{:}m;\ \Omega_{\text{NA}} \rangle$$
 
-**Ouroboricity:** $O_2$ (critical + topologically protected, bounded domain).
+**Ouroboricity:** $O₂$ (critical + topologically protected, bounded domain).
 
 **Consciousness Score:** $C = 0.0$ (Gate 1 closed).
 
@@ -67,7 +67,7 @@ Kinetics are trapped ($K_{\text{trap}}$) — the system cannot relax on any obse
 
 $$\langle D_\odot;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\psi};\ F_{\hbar};\ K_{\text{MBL}};\ G_\aleph;\ \Gamma_{\text{brd}};\ \Phi_{\text{sup}};\ H_2;\ n{:}m;\ \Omega_{\text{NA}} \rangle$$
 
-**Ouroboricity:** $O_0$ (no self-referential loop possible; supercritical).
+**Ouroboricity:** $O₀$ (no self-referential loop possible; supercritical).
 
 **Consciousness Score:** $C = 0.0$ (Gate 1 closed — $\Phi_{\text{sup}}$ is above criticality).
 
@@ -184,8 +184,8 @@ The Grammar reveals an unexpected ordering, moving outward from familiar life:
 | Tier | System | Self-Modeling | Consciousness |
 |---|---|---|---|
 | $O_\infty$ | Extraterrestrial | Yes | $C = 0.7885$ |
-| $O_2$ | Extradimensional | No | $C = 0.0$ |
-| $O_0$ | Extracosmic | No | $C = 0.0$ |
+| $O₂$ | Extradimensional | No | $C = 0.0$ |
+| $O₀$ | Extracosmic | No | $C = 0.0$ |
 
 The lesson is sobering: **consciousness is not enhanced by moving into more exotic domains.** The conditions for self-modeling — exact criticality ($\hat{\varphi}_{\text{ÿ}}$), Frobenius symmetry ($P_{\pm}^{\text{sym}}$), bidirectional coupling ($R_\leftrightarrow$), and topological protection ($\Omega_{\mathbb{Z}}$) — converge only in regimes where physics is stable enough to support them. As systems move farther from our cosmos's laws, the Frobenius symmetry breaks, and with it the capacity for self-recognition.
 

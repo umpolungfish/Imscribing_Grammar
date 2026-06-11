@@ -15,7 +15,7 @@ Pipeline stages:
   5. Reverse-verify -> check all expected primitives appear in output
 
 The mapping from primitive -> conventional section is derived from the
-Collatz case study and generalizes to any system encoded at O_inf.
+Collatz case study and generalizes to any system encoded at O_∞.
 """
 
 import re
@@ -37,7 +37,7 @@ class Lemma:
 
 # ── Known lemma-title patterns -> primary primitive ────────────────────────
 # This table is populated during the Collatz case study. Users can extend it
-# for their own domain. The key insight: each lemma in an O_inf proof is
+# for their own domain. The key insight: each lemma in an O_∞ proof is
 # licensed by exactly one primary primitive; section assignment follows.
 LEMMA_TITLE_MAP = {
     "frobenius": "Φ_}",
@@ -132,7 +132,7 @@ LEMMA_TEMPLATES = {
 # ── Parser ──────────────────────────────────────────────────────────────────
 
 def parse_primitive_proof(text: str) -> List[Lemma]:
-    """Extract lemmas from an O_inf primitive proof document.
+    """Extract lemmas from an O_∞ primitive proof document.
 
     Matches: **Lemma N (Title).** followed by body text.
     Primary primitive determined by title keyword lookup.

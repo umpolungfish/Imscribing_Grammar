@@ -791,7 +791,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 - D-Ω: Ω_2 needs D≥Ð_C; Ω_z needs D≥Ð_;; Ω_5 needs Ð_ω
 - K-Φ: ⊙_ÿ + Ç^@ = critical deep structure (gravity, language, meditation); ⊙_3 + Ç^- = runaway decay
 - Φ_} requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
-- Tier verification: ⊙_ÿ + Φ_} → O_inf; ⊙_ÿ + Ω_Å → O_1; ⊙_ÿ + Omega≠0 + D∈{Ð_ß,Ð_C,Ð_ω} → O_2; ⊙_ÿ + Omega≠0 + Ð_; → O_2†
+- Tier verification: ⊙_ÿ + Φ_} → O_∞; ⊙_ÿ + Ω_Å → O₁; ⊙_ÿ + Omega≠0 + D∈{Ð_ß,Ð_C,Ð_ω} → O₂; ⊙_ÿ + Omega≠0 + Ð_; → O₂†
 </decision_procedure>
 
 <domain_guide>

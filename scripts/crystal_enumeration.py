@@ -12,12 +12,12 @@ PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
   R1: Φ ∈ {⊙_ÿ, ⊙_Æ} AND P = Φ_}  →  O_∞
-  R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O_0
-  R3: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω = Ω_Å       →  O_1
+  R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O₀
+  R3: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω = Ω_Å       →  O₁
   R4: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
-      AND D ∈ {Ð_ß, Ð_C, Ð_ω}      →  O_2
+      AND D ∈ {Ð_ß, Ð_C, Ð_ω}      →  O₂
   R5: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
-      AND D = Ð_;                             →  O_2†
+      AND D = Ð_;                             →  O₂†
 """
 
 import json
@@ -51,15 +51,15 @@ BOUNDED_D = {"Ð_ß", "Ð_C", "Ð_ω"}
 
 def tier(phi, p, omega, d):
     if phi in CRITICAL and p == "Φ_}":
-        return "O_inf"
+        return "O_∞"
     if phi in NONCRITICAL:
-        return "O_0"
+        return "O₀"
     # phi is critical, p != Φ_}
     if omega == "Ω_Å":
-        return "O_1"
+        return "O₁"
     if d in BOUNDED_D:
-        return "O_2"
-    return "O_2_dag"   # Ð_;
+        return "O₂"
+    return "O₂†"   # Ð_;
 
 
 # ── Total combinatorial space ──────────────────────────────────────────────────
@@ -91,7 +91,7 @@ for phi in VALUES["⊙"]:
                 tier_cells[t].append((phi, p, omega, d))
 
 print("\nTier counts:")
-for t in ["O_0", "O_1", "O_2", "O_2_dag", "O_inf"]:
+for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     n = tier_counts[t]
     cells = len(tier_cells[t])
     pct = 100.0 * n / total
@@ -152,7 +152,7 @@ for p in VALUES["Φ"]:
     print(f"{p:12s}  {t_o1:16s}  {t_o2:22s}  {t_o2d}")
 
 print()
-print("  → Φ_} collapses all three Ω columns to O_inf (R1 overrides R3/R4/R5)")
+print("  → Φ_} collapses all three Ω columns to O_∞ (R1 overrides R3/R4/R5)")
 print("  → All other P values respect the Ω/D branching (R3/R4/R5)")
 
 
@@ -170,7 +170,7 @@ for entry in catalog:
     catalog_by_tier[t].append(entry["name"])
 
 print("\n\nCATALOG COVERAGE PER TIER\n")
-for t in ["O_0", "O_1", "O_2", "O_2_dag", "O_inf"]:
+for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     names = catalog_by_tier[t]
     print(f"  {t:10s}: {len(names):4d} catalog entries  ({100*len(names)/len(catalog):.1f}%)")
     # Show up to 6 example names
@@ -218,12 +218,12 @@ print(f"  Total structural types:   {total:>12,}")
 print(f"  Tier-determining axes:     Φ (5) × P (5) × Ω (3) × D (4) = {5*5*3*4:,} tier cells")
 print(f"  Free inner dimensions:     T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3) = {free_count:,} per cell")
 print()
-for t in ["O_0", "O_1", "O_2", "O_2_dag", "O_inf"]:
+for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     n     = tier_counts[t]
     cells = len(tier_cells[t])
     print(f"  {t:10s}  {cells:3d} cells  ×  {free_count:,}  =  {n:>10,}  ({100*n/total:.1f}%)")
 print()
-print(f"  Non-critical (O_0):        {tier_counts['O_0']:>10,}  ({100*tier_counts['O_0']/total:.1f}%)")
-crit = total - tier_counts["O_0"]
+print(f"  Non-critical (O₀):        {tier_counts['O₀']:>10,}  ({100*tier_counts['O₀']/total:.1f}%)")
+crit = total - tier_counts["O₀"]
 print(f"  Critical subtotal:         {crit:>10,}  ({100*crit/total:.1f}%)")
-print(f"    Of which O_inf:          {tier_counts['O_inf']:>10,}  ({100*tier_counts['O_inf']/total:.1f}%)")
+print(f"    Of which O_∞:          {tier_counts['O_∞']:>10,}  ({100*tier_counts['O_∞']/total:.1f}%)")

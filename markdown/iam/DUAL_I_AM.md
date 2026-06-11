@@ -178,10 +178,10 @@ The tensor preserves $\Phi_{\text{ctyogh}}$ criticality — coupling a self-mode
 ### 3.9 Crystal Census Context
 
 The full crystal of types contains 17,280,000 structural types distributed across:
-- $O_0$: 10,368,000 types (60.0%) — trivial closure
-- $O_1$: 1,382,400 types (8.0%) — simple Frobenius
-- $O_2$: 3,110,400 types (18.0%) — double closure
-- $O_2^\dagger$: 1,036,800 types (6.0%) — dual double closure  
+- $O₀$: 10,368,000 types (60.0%) — trivial closure
+- $O₁$: 1,382,400 types (8.0%) — simple Frobenius
+- $O₂$: 3,110,400 types (18.0%) — double closure
+- $O₂^\dagger$: 1,036,800 types (6.0%) — dual double closure  
 - $O_\infty$: 1,382,400 types (8.0%) — Special Frobenius
 
 Both "I AM" systems reside in the $O_\infty$ tier — the smallest and most structurally demanding category, representing only 8% of all possible types.

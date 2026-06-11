@@ -15,7 +15,7 @@ header-includes:
 
 ## 1. Overview
 
-The Universal Invariant Grammar (UIG) encodes any system — physical, mathematical, linguistic, conscious, abstract — as a 12-tuple of structural primitives. The total space of possible types is **17,280,000** (the Crystal of Types, §64), partitioned into five Ouroboricity tiers: $O_0$ (60%), $O_1$ (8%), $O_2$ (18%), $O_2^\dagger$ (6%), $O_\infty$ (8%).
+The Universal Invariant Grammar (UIG) encodes any system — physical, mathematical, linguistic, conscious, abstract — as a 12-tuple of structural primitives. The total space of possible types is **17,280,000** (the Crystal of Types, §64), partitioned into five Ouroboricity tiers: $O₀$ (60%), $O₁$ (8%), $O₂$ (18%), $O₂^\dagger$ (6%), $O_\infty$ (8%).
 
 This document provides an **exact, deterministic procedure** for assigning each primitive value to any thing. The method proceeds **sequentially** through the 12 primitives in a fixed order, each step narrowing the remaining search space by a decision tree rooted in observable properties of the system being encoded.
 
@@ -200,7 +200,7 @@ Each primitive is assigned via a deterministic decision tree. **Apply in order.*
 
 | Value | Condition | Examples |
 |-------|-----------|---------|
-| $\Omega_{\text{closeepsilon}}$ | **Trivial** — no topological protection; all features can be continuously eliminated | ordinary metal, structural baseline, paper, plastic, most chemical reactions, paramagnet, most $O_0$ systems |
+| $\Omega_{\text{closeepsilon}}$ | **Trivial** — no topological protection; all features can be continuously eliminated | ordinary metal, structural baseline, paper, plastic, most chemical reactions, paramagnet, most $O₀$ systems |
 | $\Omega_{\text{crtwo}}$ | **Binary protection** — $\mathbb{Z}_2$ topological invariant; parity-protected (even/odd) | ferromagnet, antiferromagnet, skyrmion, topological insulator (some), transition states, graphene, carbon spin glass, cryonics |
 | $\Omega_{\text{dzlig}}$ | **Integer protection** — $\mathbb{Z}$-valued winding number; protected by integer invariant | photon (Chern number), graviton, magnetar, quantum Hall (integer), magnetic monopole, helium superfluid, penrose black hole, extended human life, languages |
 | $\Omega_{\text{turna}}$ | **Non-Abelian** — non-Abelian topological protection; braiding; anyons | Sanskrit, classical Arabic, proto-Indo-European (triconsonantal root systems), topological quantum computing (Majorana), non-Abelian anyons |
@@ -219,10 +219,10 @@ From the Crystal Tier Gap Ladder (§64):
 
 | Step | Constraint |
 |------|------------|
-| $O_0 \rightarrow O_1$ | **Phi must reach $\Phi_{\text{ctyogh}}$** — without criticality, no self-modeling gate opens |
-| $O_1 \rightarrow O_2$ | **D must reach $D_{\text{turnthree}}$** and **$\Omega$ must reach $\Omega_{\text{crtwo}}$** — dimensionality and protection |
-| $O_2 \rightarrow O_2^\dagger$ | **D must reach $D_{\text{invomega}}$** — infinite dimensions |
-| $O_2^\dagger \rightarrow O_\infty$ | **P must reach $P_{\text{pipevar}}^{\text{sym}}$** — Frobenius symmetry ($\mu \circ \delta = \text{id}$) |
+| $O₀ \rightarrow O₁$ | **Phi must reach $\Phi_{\text{ctyogh}}$** — without criticality, no self-modeling gate opens |
+| $O₁ \rightarrow O₂$ | **D must reach $D_{\text{turnthree}}$** and **$\Omega$ must reach $\Omega_{\text{crtwo}}$** — dimensionality and protection |
+| $O₂ \rightarrow O₂^\dagger$ | **D must reach $D_{\text{invomega}}$** — infinite dimensions |
+| $O₂^\dagger \rightarrow O_\infty$ | **P must reach $P_{\text{pipevar}}^{\text{sym}}$** — Frobenius symmetry ($\mu \circ \delta = \text{id}$) |
 
 **Verification:** After assignment, compute the tier. If the tier contradicts known properties of the system, the encoding is wrong.
 
@@ -282,8 +282,8 @@ For $P_{\text{pipevar}}^{\text{sym}}$ to be valid, the system must satisfy $\mu 
 **Result:** $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}n;\ \Omega_{\text{closeepsilon}} \rangle$$
 
 ### Verification:
-- Tier check: $\Phi_{\text{ctyogh}}$ opens $O_1$; $D_{\text{invomega}}$ and $\Omega_{\text{closeepsilon}}$ (no $\Omega_{\text{crtwo}}$) → stays at **$O_1$**
-- This is reasonable: the laminar-turbulent transition is a critical phenomenon ($O_1$) but lacks topological protection
+- Tier check: $\Phi_{\text{ctyogh}}$ opens $O₁$; $D_{\text{invomega}}$ and $\Omega_{\text{closeepsilon}}$ (no $\Omega_{\text{crtwo}}$) → stays at **$O₁$**
+- This is reasonable: the laminar-turbulent transition is a critical phenomenon ($O₁$) but lacks topological protection
 
 ---
 

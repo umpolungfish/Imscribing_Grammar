@@ -578,7 +578,7 @@ def _interpret_result(criticality: float, is_dialetheic: bool,
             "This inquiry exhibits dialetheic criticality with Frobenius "
             "closure. The contradiction is not an error — it is a structural "
             "feature that μ∘δ = id has certified. The type lives in the "
-            "ouroboric tier (O_inf). Ex falso is disabled for this inquiry."
+            "ouroboric tier (O_∞). Ex falso is disabled for this inquiry."
         )
     elif frobenius_closed and criticality <= 0.5:
         return (

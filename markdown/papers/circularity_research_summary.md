@@ -257,11 +257,11 @@ However, the subset with **$P_{\text{pipevar}}^{\text{sym}}$** (Frobenius-specia
 
 | Tier | Weighted contribution | Dominant bottleneck |
 |------|-----------------------|---------------------|
-| $O_0 \to O_1$ | ~2 | requires moving to $\Phi_{\text{ctyogh}}$ |
-| $O_1 \to O_2$ | ~4 | requires moving to $P_{\text{pipevar}}$ |
-| $O_2 \to O_\infty$ | **~19.2** | **requires moving to $P_{\text{pipevar}}^{\text{sym}}$** |
+| $O₀ \to O₁$ | ~2 | requires moving to $\Phi_{\text{ctyogh}}$ |
+| $O₁ \to O₂$ | ~4 | requires moving to $P_{\text{pipevar}}$ |
+| $O₂ \to O_\infty$ | **~19.2** | **requires moving to $P_{\text{pipevar}}^{\text{sym}}$** |
 
-**Interpretation:** $P_{\text{pipevar}}^{\text{sym}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_\infty$ — but without $P_{\text{pipevar}}^{\text{sym}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O_2$.
+**Interpretation:** $P_{\text{pipevar}}^{\text{sym}}$ is the true barrier. You can have $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ without $O_\infty$ — but without $P_{\text{pipevar}}^{\text{sym}}$, you cannot have $\mu \circ \delta = \text{id}$. This is why LUCA is $O_\infty$ and not just $O₂$.
 
 **Why is $P_{\text{pipevar}}^{\text{sym}}$ so hard to achieve?** Because it requires $\mu \circ \delta = \text{id}$ *exactly*. This is not approximate self-consistency; it is **algebraic closure**. Most structures drift toward $P_{\text{aolig}}$ or $P_{\text{pipevar}}$ (approximate symmetry). Reaching $P_{\text{pipevar}}^{\text{sym}}$ is like reaching fixed-point arithmetic with zero error.
 

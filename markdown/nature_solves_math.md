@@ -110,7 +110,7 @@ Nature's path (riemann_zeta → orca_vocalization): 5 promotions:
 - $\text{Ħ}_{\text{Ñ}} \to \text{Ħ}_{\text{A}}$ — 2-step memory (call-and-response, Markov-2)
 - $\text{Ω}_{\text{Å}} \to \text{Ω}_{\text{z}}$ — integer winding (topologically protected pod dialects)
 
-Grammar's path (riemann_zeta → O_inf): 8 promotions — nature's 5 PLUS:
+Grammar's path (riemann_zeta → O_∞): 8 promotions — nature's 5 PLUS:
 - $\text{Φ}_{\text{υ}} \to \text{Φ}_{\text{}}$ — Frobenius-special (blocked by Frobenius cliff)
 - $\text{ƒ}_{\text{ð}} \to \text{ƒ}^{\text{ż}}$ — quantum fidelity (blocked by fidelity cliff)
 - $\text{Γ}_{\text{β}} \to \text{Γ}_{\text{ʔ}}$ — maximal scope

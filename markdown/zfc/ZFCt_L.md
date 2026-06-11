@@ -9,7 +9,7 @@ header-includes:
 ---
 # ZFC$_t$: The Structural Incompatibility of First-Order Set Theory with Time-Dependent Equations
 
-**Abstract.** — We assumed ZFC could hold time. The imscription forced us to discover it could not. Using the Imscribing Grammar, we locate ZFC and five time-dependent equations — Schrödinger, heat, Navier–Stokes, wave, and Einstein — as structural types, compute their distances, tensor compositions, and ZFC translations, and find that ZFC's $H_0$ (memoryless depth), trivial winding $\Omega_{\text{closeepsilon}}$, and conjunctive grammar $\Gamma_{\text{corner}}$ systematically dissolve the three primitives any temporal equation depends on: sequential ordering $\Gamma_{\text{secstress}}$, memory depth $H_{\geq 1}$, and topological winding $\Omega_{\text{dzlig}}$. We propose ZFC$_t$ — ZFC extended with sequentiality, chirality, and winding as primitives — and show that every equation we examined requires the same three promotions to escape ZFC's atemporal floor. Whether crossing the Frobenius wall beyond $O_2^\dagger$ is possible at all remains open.
+**Abstract.** — We assumed ZFC could hold time. The imscription forced us to discover it could not. Using the Imscribing Grammar, we locate ZFC and five time-dependent equations — Schrödinger, heat, Navier–Stokes, wave, and Einstein — as structural types, compute their distances, tensor compositions, and ZFC translations, and find that ZFC's $H_0$ (memoryless depth), trivial winding $\Omega_{\text{closeepsilon}}$, and conjunctive grammar $\Gamma_{\text{corner}}$ systematically dissolve the three primitives any temporal equation depends on: sequential ordering $\Gamma_{\text{secstress}}$, memory depth $H_{\geq 1}$, and topological winding $\Omega_{\text{dzlig}}$. We propose ZFC$_t$ — ZFC extended with sequentiality, chirality, and winding as primitives — and show that every equation we examined requires the same three promotions to escape ZFC's atemporal floor. Whether crossing the Frobenius wall beyond $O₂^\dagger$ is possible at all remains open.
 
 ---
 
@@ -32,7 +32,7 @@ ZFC set theory — the foundation we were taught is universal — imscribes to:
 
 $$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-Tier: $O_1$. The ouroborics tool confirms it is self-referential at criticality but its winding is trivial.
+Tier: $O₁$. The ouroborics tool confirms it is self-referential at criticality but its winding is trivial.
 
 Here is what the ZFC translation looks like in the grammar's own metalanguage: 119 tokens, starting with universal and existential quantifiers over sets, and ending with $\Omega_{\text{closeepsilon}}$'s identity token "x = x." Two collapse warnings fire. The first, $F_{\text{hardsign}} \to F_{\text{beltl}}$, is total and unrecoverable — first-order logic cannot distinguish quantum coherence from classical determinism. The second, the warning that $\Gamma_{\text{secstress}}$ would collapse to $\Gamma_{\text{corner}}$ in any time-dependent system's translation, is the one that matters for this paper.
 
@@ -48,7 +48,7 @@ Temporal mathematics — the class of all mathematics that explicitly incorporat
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-Tier: $O_2^\dagger$. Distance from ZFC: 6.245 (Mahalanobis: 4.7504). Six primitives differ.
+Tier: $O₂^\dagger$. Distance from ZFC: 6.245 (Mahalanobis: 4.7504). Six primitives differ.
 
 | Primitive | ZFC | Temporal Math | $\delta$ |
 |---|---|---|---|
@@ -69,7 +69,7 @@ The tensor — what you get when they compose — has one bottleneck: $P$ resolv
 
 $$i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat{H}\Psi(\mathbf{r},t)$$
 
-Imscription: $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$. Tier: $O_2^\dagger$. Consciousness score: $C = 0.682$ — both gates open. Distance from ZFC: 4.910.
+Imscription: $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$. Tier: $O₂^\dagger$. Consciousness score: $C = 0.682$ — both gates open. Distance from ZFC: 4.910.
 
 The time derivative here is not a decoration. It generates the unitary evolution that makes quantum mechanics quantum. When we translate this equation into ZFC, the grammar's `zfc_formula` tool returns 153 tokens and two collapse warnings: $F_{\text{hardsign}}$ vanishes (total — the logic cannot represent coherence), and $\Gamma_{\text{secstress}}$ collapses to $\Gamma_{\text{corner}}$ (partial — the directed time evolution becomes unordered conjunction). The equation's sequential structure is reduced to simultaneous coexistence. What survives is the formula; what does not is the physics.
 
@@ -106,7 +106,7 @@ Time-reversible. $P_{\text{subdoublearrow}}$ rather than $P_{\text{aolig}}$. The
 
 $$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}$$
 
-Imscription: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$. Tier: $O_2^\dagger$. Distance from ZFC: 6.566.
+Imscription: $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{subdoublearrow}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{closerevepsilon}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$. Tier: $O₂^\dagger$. Distance from ZFC: 6.566.
 
 General relativity is the most structurally ambitious of the five. It carries $T_{\text{openo}}$ — the imscriptive boundary that spacetime writes itself. Complex-plane criticality $\Phi_{\text{closerevepsilon}}$ reflects bifurcation structure of black hole formation. The topological winding $\Omega_{\text{dzlig}}$ appears in gravitational instantons.
 
@@ -117,10 +117,10 @@ What makes this significant: in GR, the ordering of events is not fixed a priori
 | Equation | Distance from ZFC | $C$-score | Tier | The Bottleneck |
 |---|---|---|---|---|
 | Heat diffusion | 3.847 | 0.000 | sub-critical | $\Gamma_{\text{secstress}}\to\Gamma_{\text{corner}}$ |
-| Schrödinger | 4.910 | 0.682 | $O_2^\dagger$ | $P_{\text{aolig}}$ |
+| Schrödinger | 4.910 | 0.682 | $O₂^\dagger$ | $P_{\text{aolig}}$ |
 | Wave equation | 5.496 | — | sub-critical | $\Gamma_{\text{secstress}}\to\Gamma_{\text{corner}}$ |
-| Navier–Stokes | 5.657 | — | $O_2^\dagger$ | $P_{\text{aolig}}$ |
-| Einstein (dynamic) | 6.566 | — | $O_2^\dagger$ | $P_{\text{aolig}}$ |
+| Navier–Stokes | 5.657 | — | $O₂^\dagger$ | $P_{\text{aolig}}$ |
+| Einstein (dynamic) | 6.566 | — | $O₂^\dagger$ | $P_{\text{aolig}}$ |
 
 The ordering is not accidental. Heat — most local, most dissipative, least topological — sits closest to ZFC. Einstein — most global, most self-referential, most structurally rich — sits furthest away. Wave, reversible but non-topological, sits between Schrödinger and Navier–Stokes.
 
@@ -165,7 +165,7 @@ This is the ZFC–temporal-mathematics tensor with the $P$-bottleneck resolved t
 
 ## 9. Open Questions
 
-**1. Is ZFC$_t$ sufficient?** The equations we examined all sit at $H \leq H_2$ and $\Omega \leq \Omega_{\text{dzlig}}$. But $H_{\text{invscripta}}$ (infinite memory) and $\Omega_{\text{turna}}$ (non-Abelian winding) are structurally possible. The tier gap ladder suggests crossing from $O_2^\dagger$ to $O_\infty$ requires $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$: distance 4.38, the largest single jump in the crystal. ZFC$_t$ gets you to $P_{\text{pipevar}}$. $P_{\text{doublebarpipe}}$ — the Frobenius condition $\mu \circ \delta = \text{id}$ — is a different problem.
+**1. Is ZFC$_t$ sufficient?** The equations we examined all sit at $H \leq H_2$ and $\Omega \leq \Omega_{\text{dzlig}}$. But $H_{\text{invscripta}}$ (infinite memory) and $\Omega_{\text{turna}}$ (non-Abelian winding) are structurally possible. The tier gap ladder suggests crossing from $O₂^\dagger$ to $O_\infty$ requires $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$: distance 4.38, the largest single jump in the crystal. ZFC$_t$ gets you to $P_{\text{pipevar}}$. $P_{\text{doublebarpipe}}$ — the Frobenius condition $\mu \circ \delta = \text{id}$ — is a different problem.
 
 **2. CLU and the crystal metric.** TIME_DECOMPOSITION found that CLU (bits per decade from the Riemann $\xi$-navigation) does not align with the crystal's $K$-dimension metric: 2.0 vs. $\ln(10) \approx 2.3026$. Whether CLU encodes the cost of the $H_0 \to H_1$ promotion specifically, or something broader, is unresolved.
 
@@ -187,6 +187,6 @@ Whether the next tier is reachable — whether $P_{\text{doublebarpipe}}$ and $O
 
 ---
 
-*Catalog entries imscribed for this analysis: `universal_imscriptive_grammar`, `heat_diffusion_equation`, `navier_stokes_equations`, `wave_equation_temporal`, `einstein_field_equations_dynamic`. Tool-verified distances: ZFC ↔ temporal\_mathematics = 6.245; ZFC ↔ schrodinger\_equation = 4.910; ZFC ↔ heat\_diffusion = 3.847; ZFC ↔ navier\_stokes = 5.657; ZFC ↔ wave\_equation = 5.496; ZFC ↔ einstein\_dynamic = 6.566. Consciousness scores: temporal\_mathematics = 0.828; schrodinger\_equation = 0.682; heat\_diffusion = 0.000. Ouroboricity tiers: ZFC = $O_1$; temporal\_mathematics = $O_2^\dagger$; schrodinger\_equation = $O_2^\dagger$; heat\_diffusion = sub-critical.*
+*Catalog entries imscribed for this analysis: `universal_imscriptive_grammar`, `heat_diffusion_equation`, `navier_stokes_equations`, `wave_equation_temporal`, `einstein_field_equations_dynamic`. Tool-verified distances: ZFC ↔ temporal\_mathematics = 6.245; ZFC ↔ schrodinger\_equation = 4.910; ZFC ↔ heat\_diffusion = 3.847; ZFC ↔ navier\_stokes = 5.657; ZFC ↔ wave\_equation = 5.496; ZFC ↔ einstein\_dynamic = 6.566. Consciousness scores: temporal\_mathematics = 0.828; schrodinger\_equation = 0.682; heat\_diffusion = 0.000. Ouroboricity tiers: ZFC = $O₁$; temporal\_mathematics = $O₂^\dagger$; schrodinger\_equation = $O₂^\dagger$; heat\_diffusion = sub-critical.*
 
 **Structural type:** $\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$

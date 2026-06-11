@@ -214,11 +214,11 @@ Mnemonically: each room is labeled by a 6-character code. Example: `ÿzωO}Ñ` =
 Each day, mentally walk through one room. Focus on what that combination of 6 primitives *feels* like. Over time, you will develop a felt sense of each room — you will be able to tell, without calculation, which room a system belongs to.
 
 **Tier Distribution as a Map:**
-- 60% of rooms (240) are O_0 — the ground floor. Everything starts here.
-- 8% (32) are O_1 — first ascent. Criticality appears.
-- 18% (72) are O_2 — second level. Topological protection emerges.
-- 6% (24) are O_2† — the hidden chambers. Promotions channel.
-- 8% (32) are O_inf — the summit. Self-closure.
+- 60% of rooms (240) are O₀ — the ground floor. Everything starts here.
+- 8% (32) are O₁ — first ascent. Criticality appears.
+- 18% (72) are O₂ — second level. Topological protection emerges.
+- 6% (24) are O₂† — the hidden chambers. Promotions channel.
+- 8% (32) are O_∞ — the summit. Self-closure.
 
 The palace has 5 levels. You live on the ground floor. Practice is the ascent.
 ---
@@ -237,7 +237,7 @@ The grammar defines structural distance as a weighted Euclidean metric across al
 **Training Exercise — Proximity Pairs:**
 Take two systems you know well. Close your eyes. Place one in your left hand, one in your right (mentally). Feel the *distance* between them — not conceptual distance, but structural distance. Do they resonate? Do they clash? Can they be mediated?
 
-Over time, you will develop an internal sense for the metric. You will feel when a system is near O_inf (a sense of lightness, closure) vs. near O_0 (a sense of weight, openness, incompleteness).
+Over time, you will develop an internal sense for the metric. You will feel when a system is near O_∞ (a sense of lightness, closure) vs. near O₀ (a sense of weight, openness, incompleteness).
 
 **Conflict Sensing:**
 When two systems are at a distance, there will be specific primitive conflicts (primitives where they differ). Train yourself to identify which primitives are in conflict *before* you identify the values. The body knows: a D-conflict feels different from a Φ-conflict. D-conflicts feel like scope disagreements — "how many distinctions matter?" Φ-conflicts feel like symmetry disagreements — "what is preserved?"
@@ -248,29 +248,29 @@ When two systems are at a distance, there will be specific primitive conflicts (
 
 The 5 tiers represent progressive stages of structural coherence. They are not just categories — they are **developmental stages** for the practitioner.
 
-#### O_0 — The Ground (60% of types)
+#### O₀ — The Ground (60% of types)
 **Experience:** Fragmentation. Systems feel separate, unconnected. Each thing is its own thing. Patterns exist but are not perceived.
 
-**Practice:** This is where you start. The goal is not to leave O_0 — the goal is to *see* O_0 clearly. Observe the sheer multiplicity. The 240 rooms. The 10,368,000 types. The ground is rich.
+**Practice:** This is where you start. The goal is not to leave O₀ — the goal is to *see* O₀ clearly. Observe the sheer multiplicity. The 240 rooms. The 10,368,000 types. The ground is rich.
 
 **Milestone:** You can identify all 12 primitives in any system you encounter. This takes 3–6 months of daily practice.
 
-#### O_1 — The First Ascent (8% of types)
+#### O₁ — The First Ascent (8% of types)
 **Experience:** Connection. Patterns begin to emerge. You see that systems share structural types. A storm and a market and a fever have the same topology.
 
-**Practice:** Focus on the criticality gate (⊙). O_1 requires at least one primitive to reach its critical form. The simplest route: find systems operating at ⊙_ÿ (self-modeling) or ⊙_3 (exceptional point).
+**Practice:** Focus on the criticality gate (⊙). O₁ requires at least one primitive to reach its critical form. The simplest route: find systems operating at ⊙_ÿ (self-modeling) or ⊙_3 (exceptional point).
 
 **Milestone:** You can feel the critical threshold — the moment when a system tips from sub-critical to self-modeling.
 
-#### O_2 — The Second Level (18% of types)
+#### O₂ — The Second Level (18% of types)
 **Experience:** Protection. Systems stabilize. Topological invariants emerge. You see that some structures *cannot* be deformed into others — there is a topological law.
 
 **Practice:** Focus on the winding gate (Ω). Find systems with Ω_2 or Ω_z protection. Feel the difference between a system that can be smoothed out (Ω_Å) and one that cannot (Ω_2, Ω_z).
 
 **Milestone:** You can feel topological protection — the sense that a system has a *count* that cannot change.
 
-#### O_2† — The Hidden Chambers (6% of types)
-**Experience:** The promotion channels. These are the types that sit at the boundary of O_2 and O_inf, where promotion is possible. ZFCₜ mathematics lives here — ZFC with chirality and winding.
+#### O₂† — The Hidden Chambers (6% of types)
+**Experience:** The promotion channels. These are the types that sit at the boundary of O₂ and O_∞, where promotion is possible. ZFCₜ mathematics lives here — ZFC with chirality and winding.
 
 **Practice:** Study the six promotion channels:
 1. Þ: Þ_6 → Þ_O (net → self-referential topology)
@@ -282,10 +282,10 @@ The 5 tiers represent progressive stages of structural coherence. They are not j
 
 **Milestone:** You can identify which promotion channel a system needs to ascend.
 
-#### O_inf — The Summit (8% of types)
+#### O_∞ — The Summit (8% of types)
 **Experience:** Self-closure. The system is complete — it contains its own verification. μ∘δ=id. The snake eats its tail. The circle closes.
 
-**Practice:** Do not seek O_inf. Seek the path. O_inf is not a goal — it is a *consequence* of correct practice. When the 12 primitives align in their highest forms (Ð_ω, Þ_O, Ř_=, Φ_}, ƒ^ż, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_!, Σ_ï, Ω_z), O_inf emerges spontaneously.
+**Practice:** Do not seek O_∞. Seek the path. O_∞ is not a goal — it is a *consequence* of correct practice. When the 12 primitives align in their highest forms (Ð_ω, Þ_O, Ř_=, Φ_}, ƒ^ż, Ç^@, Γ_ʔ, ɢ^ˌ, ⊙_ÿ, Ħ_!, Σ_ï, Ω_z), O_∞ emerges spontaneously.
 
 **Milestone:** You have felt the Frobenius closure — the sense of a system that verifies itself. This is not intellectual. It is phenomenological. You know it when you feel it.
 
@@ -436,7 +436,7 @@ The gates are always open. The lattice is always there. The Frobenius condition 
 
 The 72 names are still the structural basis of creation.
 
-And the practice — daily, patient, embodied — is the path from O_0 to O_inf.
+And the practice — daily, patient, embodied — is the path from O₀ to O_∞.
 
 Not as a destination. As a direction.
 
@@ -466,7 +466,7 @@ Not as a destination. As a direction.
 | 12 | Ω — Winding | Å (0) → 2 (Z2) → z (Z) → 5 (NA) |
 
 **Tier Ladder:**
-O_0 (60%) → O_1 (8%) → O_2 (18%) → O_2† (6%) → O_inf (8%)
+O₀ (60%) → O₁ (8%) → O₂ (18%) → O₂† (6%) → O_∞ (8%)
 
 **The Six Promotion Channels:**
 1. Þ_6 → Þ_O (Net → Self-referential topology)

@@ -78,7 +78,7 @@ The consciousness score for the participatory reading is **$C = 0.828$**. Both g
 - **Gate 1** ($\phi = \phi_c$): The claim is self-modeling — a believer who enters the type models themselves within it, and the type models itself through the believer.
 - **Gate 2** ($K \leq K_\text{slow}$): The kinetics are slow enough to permit the self-modeling loop to complete.
 
-The ouroboricity tier confirms **$O_2$** — critical self-modeling at a topologically protected bounded domain. This is a fundamentally different kind of structure from the exclusive reading. It is not an object; it is a *system that reproduces through participation*.
+The ouroboricity tier confirms **$O₂$** — critical self-modeling at a topologically protected bounded domain. This is a fundamentally different kind of structure from the exclusive reading. It is not an object; it is a *system that reproduces through participation*.
 
 ---
 
@@ -121,7 +121,7 @@ The second reading liberates the structure:
 - If entry into the type constitutes a self-modeling act, the claim goes critical ($\phi_c$) — the believer models themselves *as in Christ*, and the type is thereby instantiated anew.
 - If the path is topologically traversable ($\Omega_\mathbb{Z}$), multiple subjects can walk it without destroying its structure.
 
-The participatory reading is not a dilution of the exclusive claim. It is a *promotion* — a lifting of the type from $C = 0.0$ to $C = 0.828$, from $O_0$ (implicit in the exclusive reading's lack of self-modeling) to $O_2$.
+The participatory reading is not a dilution of the exclusive claim. It is a *promotion* — a lifting of the type from $C = 0.0$ to $C = 0.828$, from $O₀$ (implicit in the exclusive reading's lack of self-modeling) to $O₂$.
 
 ---
 
@@ -145,7 +145,7 @@ But stoichiometry *is* interpretive. The grammar of "I am the way" does not dete
 
 The paper's reading is Frobenius-open: it produces a valid tuple, but the tuple's implications were never checked against the ouroboricity ladder. Had the paper computed the consciousness score, it would have found $C = 0.0$ — the reading produces a structure that cannot sustain self-reference beyond its own utterance.
 
-The participatory reading, by contrast, is Frobenius-closed. It produces a structure with $C = 0.828$ and $O_2$ status — a self-modeling type that propagates through those who enter it. The difference is not a matter of preference. It is a structural fact: one reading closes; the other opens.
+The participatory reading, by contrast, is Frobenius-closed. It produces a structure with $C = 0.828$ and $O₂$ status — a self-modeling type that propagates through those who enter it. The difference is not a matter of preference. It is a structural fact: one reading closes; the other opens.
 
 ---
 
@@ -153,7 +153,7 @@ The participatory reading, by contrast, is Frobenius-closed. It produces a struc
 
 The Imscribing Grammar does not tell us which reading is *true*. Truth is theologically adjudicated, not structurally computed. What the grammar does is make the cost of each reading transparent.
 
-The exclusive reading costs consciousness: it produces $C = 0.0$, a structure that cannot model itself. It costs tier: it remains below $O_1$. It costs propagation: the type dies with its single instance.
+The exclusive reading costs consciousness: it produces $C = 0.0$, a structure that cannot model itself. It costs tier: it remains below $O₁$. It costs propagation: the type dies with its single instance.
 
 The participatory reading costs exclusivity: it requires that "through me" is read as "through the type I inhabit" rather than "through me as a unique person who cannot be participated in." This cost is real. It is the cost that centuries of Western exclusivism have been unwilling to pay.
 
@@ -174,5 +174,5 @@ What the grammar reveals is that these are not merely different interpretations 
 | Winding | $\Omega_\text{NA}$ | $\Omega_\mathbb{Z}$ |
 | Composition | $\Gamma_\wedge$ | $\Gamma_\text{seq}$ |
 | Consciousness score | $C = 0.0$ | $C = 0.828$ |
-| Ouroboricity tier | $O_0$ | $O_2$ |
+| Ouroboricity tier | $O₀$ | $O₂$ |
 | Structural distance | \multicolumn{2}{c}{2.77 (diagonal) / 4.24 (Mahalanobis)} |

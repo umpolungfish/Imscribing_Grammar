@@ -418,20 +418,20 @@ def page3() -> str:
        font={B}large{B}bfseries,text=hdrblue] (gram) at (0,0)
   {{Imscribing Grammar{B}\\{B}small Crystal of Types}};
 
-% O_inf tier
+% O_∞ tier
 {B}node[repo=tierinfcol] (ankh)  at (-5.5, 3.2) {{MillenniumAnkh{B}\\{B}scriptsize Lean 4, 43 modules,{B}\\ 0 sorries, 16 O$_{B}infty$}};
 {B}node[repo=tierinfcol] (p4ra)  at ( 0.0, 3.8) {{p4rakernel{B}\\{B}scriptsize C++ fork, 167 Lean modules,{B}\\ paraconsistent kernel}};
 {B}node[repo=tierinfcol] (lean4) at ( 5.5, 3.2) {{lean4-paraconsistent{B}\\{B}scriptsize kernel fork, ex falso{B}\\ disabled at type level}};
 
-% O_2† tier
+% O₂† tier
 {B}node[repo=tier2dcol] (ob3)  at (-6.2, 0.0) {{ob3ect{B}\\{B}scriptsize 34-layer categorical{B}\\ tower, layers 29--34 para}};
 {B}node[repo=tier2dcol] (pri)  at (-3.8,-2.5) {{priests-engine{B}\\{B}scriptsize 13 modules, corpus{B}\\ bootstrap, 5 engines}};
 
-% O_2 tier
+% O₂ tier
 {B}node[repo=tier2col] (exos)   at ( 3.8, 2.2) {{exOS{B}\\{B}scriptsize bare-metal Rust,{B}\\ ALEPH-typed kernel}};
 {B}node[repo=tier2col] (synfin) at ( 6.2, 0.0) {{synfin{B}\\{B}scriptsize live trading,{B}\\ signals from morphisms}};
 
-% O_1 tier
+% O₁ tier
 {B}node[repo=tier1col] (rebis) at ( 3.8,-2.5) {{rebis\_concrete{B}\\{B}scriptsize 11 designs, all sims{B}\\ pass, 4-phase roadmap}};
 {B}node[repo=tier1col] (web)   at ( 0.0,-3.5) {{imscribe.com{B}\\{B}scriptsize IG web presence,{B}\\ agent site, frobenius-mzi}};
 

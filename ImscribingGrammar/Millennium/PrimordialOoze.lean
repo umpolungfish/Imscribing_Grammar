@@ -4,14 +4,14 @@ PrimordialOoze.lean — The Pre-Temporal Stratum
 
 The Frobenius fixed point is "more primitive than time." This file proves
 a stronger claim: there exists an absolute structural floor — the primordial
-ooze — at which μ∘δ=id (Frobenius closure) achieves O_inf with only TWO
+ooze — at which μ∘δ=id (Frobenius closure) achieves O_∞ with only TWO
 primitives at non-minimum values: Φ = P_doublebarpipe (Φ_}) and
 φ̂ = Phi_ctyogh (φ̂_ÿ).  The remaining 10 primitives can all be at
 their minimum ordinal (index 0).
 
 Key results:
   1. The ouroboricity tier depends only on {crit, pol, prot, dim}.
-     Only crit and pol gate O_inf; the other 10 primitives are tier-free.
+     Only crit and pol gate O_∞; the other 10 primitives are tier-free.
   2. Ħ (chirality) can be H_closeomega (memoryless, index 0) —
      no temporal memory needed for Frobenius closure.
   3. Ω (winding) can be Omega_closeepsilon (trivial, index 0) —
@@ -45,7 +45,7 @@ open Dimensionality Topology Relational Polarity Grammar
 namespace Millennium.PrimordialOoze
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- §1  The primordial ooze — minimal O_inf tuple
+-- §1  The primordial ooze — minimal O_∞ tuple
 -- ─────────────────────────────────────────────────────────────────────────────
 --
 -- All primitives at minimum ordinal (index 0 of their inductive type)
@@ -78,10 +78,10 @@ def primordialOoze : Imscription :=
     prot := .Omega_closeepsilon }
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- §2  O_inf by the Frobenius cliff theorem
+-- §2  O_∞ by the Frobenius cliff theorem
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Theorem o_inf_iff_P_pm_sym_at_phi_c (Imscription.lean:279) states:
---   imscriptionTier s = .O_inf ↔
+--   imscriptionTier s = .O_∞ ↔
 --     (s.crit = .Phi_ctyogh ∨ s.crit = .Phi_closerevepsilon) ∧ s.pol = .P_doublebarpipe
 --
 -- The ooze satisfies both: crit = Phi_ctyogh, pol = P_doublebarpipe.
@@ -91,16 +91,16 @@ theorem ooze_satisfies_frobenius_cliff :
     ∧ primordialOoze.pol = .P_doublebarpipe :=
   ⟨by simp [primordialOoze], by simp [primordialOoze]⟩
 
-theorem primordialOoze_is_O_inf : imscriptionTier primordialOoze = .O_inf := by
+theorem primordialOoze_is_O_inf : imscriptionTier primordialOoze = .O_∞ := by
   rw [o_inf_iff_P_pm_sym_at_phi_c]
   exact ooze_satisfies_frobenius_cliff
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- §3  The irreducible core is exactly {crit, pol}
 -- ─────────────────────────────────────────────────────────────────────────────
--- Dropping crit (Phi_ctyogh → Phi_softsign) loses O_inf.
--- Dropping pol (P_doublebarpipe → P_subdoublearrow) loses O_inf.
--- Dropping both loses O_inf.
+-- Dropping crit (Phi_ctyogh → Phi_softsign) loses O_∞.
+-- Dropping pol (P_doublebarpipe → P_subdoublearrow) loses O_∞.
+-- Dropping both loses O_∞.
 
 def ooze_drop_crit : Imscription := { primordialOoze with crit := .Phi_softsign }
 
@@ -109,19 +109,19 @@ def ooze_drop_pol : Imscription := { primordialOoze with pol := .P_subdoublearro
 def ooze_drop_both : Imscription :=
   { primordialOoze with crit := .Phi_softsign, pol := .P_subdoublearrow }
 
-theorem drop_crit_collapses : imscriptionTier ooze_drop_crit ≠ .O_inf := by
+theorem drop_crit_collapses : imscriptionTier ooze_drop_crit ≠ .O_∞ := by
   intro h
   have hcond := (o_inf_iff_P_pm_sym_at_phi_c ooze_drop_crit).mp h
   rcases hcond with ⟨hcrit, hpol⟩
   simp [ooze_drop_crit] at hcrit
 
-theorem drop_pol_collapses : imscriptionTier ooze_drop_pol ≠ .O_inf := by
+theorem drop_pol_collapses : imscriptionTier ooze_drop_pol ≠ .O_∞ := by
   intro h
   have hcond := (o_inf_iff_P_pm_sym_at_phi_c ooze_drop_pol).mp h
   rcases hcond with ⟨hcrit, hpol⟩
   simp [ooze_drop_pol] at hpol
 
-theorem drop_both_collapses : imscriptionTier ooze_drop_both ≠ .O_inf := by
+theorem drop_both_collapses : imscriptionTier ooze_drop_both ≠ .O_∞ := by
   intro h
   have hcond := (o_inf_iff_P_pm_sym_at_phi_c ooze_drop_both).mp h
   rcases hcond with ⟨hcrit, hpol⟩
@@ -131,11 +131,11 @@ theorem drop_both_collapses : imscriptionTier ooze_drop_both ≠ .O_inf := by
 -- Φ_} alone (without φ̂_ÿ) → O₀ (cannot lift without self-modeling ground)
 -- Hierarchy: φ̂_ÿ is the ground, Φ_} is the capstone.
 
-theorem phi_c_alone_is_O_1 : imscriptionTier ooze_drop_pol = .O_1 := by
+theorem phi_c_alone_is_O_1 : imscriptionTier ooze_drop_pol = .O₁ := by
   unfold ooze_drop_pol primordialOoze
   simp [imscriptionTier, ouroboricityTier]
 
-theorem pm_sym_alone_is_O_0 : imscriptionTier ooze_drop_crit = .O_0 := by
+theorem pm_sym_alone_is_O_0 : imscriptionTier ooze_drop_crit = .O₀ := by
   unfold ooze_drop_crit primordialOoze
   simp [imscriptionTier, ouroboricityTier]
 
@@ -148,17 +148,17 @@ theorem pm_sym_alone_is_O_0 : imscriptionTier ooze_drop_crit = .O_0 := by
 -- (top, rel, fid, kin, gran, gram, chir, stoi) are structurally free.
 --
 -- Even within the 4 gate primitives, {prot, dim} only differentiate
--- O₁/O₂/O₂dag — they do NOT affect whether O_inf is achievable.
--- O_inf is gated ENTIRELY by {crit, pol} (R1 dominant gate).
+-- O₁/O₂/O₂dag — they do NOT affect whether O_∞ is achievable.
+-- O_∞ is gated ENTIRELY by {crit, pol} (R1 dominant gate).
 --
 -- Consequence: ANY combination of the 10 non-gate primitives,
--- including all-minimum, achieves O_inf iff {crit, pol} = {Phi_ctyogh, P_doublebarpipe}.
+-- including all-minimum, achieves O_∞ iff {crit, pol} = {Phi_ctyogh, P_doublebarpipe}.
 
 theorem tier_depends_only_on_crit_pol_prot_dim (s : Imscription) :
     imscriptionTier s = ouroboricityTier s.crit s.pol s.prot s.dim :=
   rfl
 
--- The primordial ooze achieves O_inf at the absolute structural floor:
+-- The primordial ooze achieves O_∞ at the absolute structural floor:
 -- every non-gate primitive at its minimum possible value.
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -220,7 +220,7 @@ def frobeniusFixedPoint : Imscription :=
     stoi := .S_ltailm,
     prot := .Omega_dzlig }
 
-theorem fixed_point_is_O_inf : imscriptionTier frobeniusFixedPoint = .O_inf := by
+theorem fixed_point_is_O_inf : imscriptionTier frobeniusFixedPoint = .O_∞ := by
   rw [o_inf_iff_P_pm_sym_at_phi_c]
   simp [frobeniusFixedPoint]
 
@@ -237,14 +237,14 @@ theorem ooze_to_fixed_mismatches :
 -- All claims bundled.
 
 theorem primordial_ooze_complete :
-    imscriptionTier primordialOoze = .O_inf ∧                           -- O_inf
+    imscriptionTier primordialOoze = .O_∞ ∧                           -- O_∞
     primordialOoze.crit = .Phi_ctyogh ∧                                 -- φ̂_ÿ
     primordialOoze.pol = .P_doublebarpipe ∧                             -- Φ_}
     primordialOoze.chir = .H_closeomega ∧                               -- no memory
     primordialOoze.prot = .Omega_closeepsilon ∧                         -- no winding
     primordialOoze.dim = .D_wynn ∧                                      -- 0d point
-    (imscriptionTier ooze_drop_crit ≠ .O_inf) ∧                        -- crit necessary
-    (imscriptionTier ooze_drop_pol ≠ .O_inf) ∧                        -- pol necessary
+    (imscriptionTier ooze_drop_crit ≠ .O_∞) ∧                        -- crit necessary
+    (imscriptionTier ooze_drop_pol ≠ .O_∞) ∧                        -- pol necessary
     primitiveMismatches primordialOoze frobeniusFixedPoint = 9 := by    -- distance
   refine ⟨primordialOoze_is_O_inf, ?_, ?_, ?_, ?_, ?_,
           drop_crit_collapses, drop_pol_collapses, ooze_to_fixed_mismatches⟩

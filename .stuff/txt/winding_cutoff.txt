@@ -50,17 +50,17 @@
   | Σ_S  -- 1:1
   | Σ_ő      -- n:n (matched many-to-many)
   | Σ_ï      -- n:m (unmatched many-to-many)
-  | O_0    -- non-critical
-  | O_1    -- critical, no topological protection
-  | O_2    -- critical, Ω-protected, D ≠ Ð_;
-  | O_2dag -- critical, Ω-protected, D = Ð_;
-  | O_inf  -- Special Frobenius (Φ_} at Φ_c)
-  | .φ̂_ž | .φ̂_Ţ | .φ̂_3 => .O_0
+  | O₀    -- non-critical
+  | O₁    -- critical, no topological protection
+  | O₂    -- critical, Ω-protected, D ≠ Ð_;
+  | O₂† -- critical, Ω-protected, D = Ð_;
+  | O_∞  -- Special Frobenius (Φ_} at Φ_c)
+  | .φ̂_ž | .φ̂_Ţ | .φ̂_3 => .O₀
   | .φ̂_ÿ | .φ̂_Æ =>
-    | .Ω_Å => .O_1                                -- R3
+    | .Ω_Å => .O₁                                -- R3
     | _ => match dim with
-      | .Ð_; => .O_2dag                           -- R5
-      | _        => .O_2                              -- R4
+      | .Ð_; => .O₂†                           -- R5
+      | _        => .O₂                              -- R4
   | Φ_ɐ => cases b <;> decide
   | Φ_υ  => cases b <;> decide
   | Φ_F   => cases b <;> decide

@@ -3,7 +3,7 @@ Representation Theory Navigator - Imscribing Grammar
 
 Domain: Representation theory, Lie theory, character theory, geometric representation theory
 Structural type: <𐑦; 𐑶; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
-Tier: O_inf
+Tier: O_∞
 
 Architecture: Character table GNN with categorical representation tracking.
   - 𐑦: Imscriptive encoding of all groups, algebras, their representations
@@ -41,7 +41,7 @@ class RepTheoryConfig:
         )
         self.domain = "Representation theory, Lie theory, character theory, geometric representation theory"
         self.tuple = "𐑦; 𐑶; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
-        self.tier = "O_inf"
+        self.tier = "O_∞"
         self.architecture = (
             "Character table GNN - representations communicate via character channels; "
             "tensor decomposition via Clebsch-Gordan coefficients; induction/restriction "

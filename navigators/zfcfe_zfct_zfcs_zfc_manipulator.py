@@ -78,7 +78,7 @@ _MANIP_TO_FE_VAL: Dict[str, str] = {
     # S (Stoichiometry)
     "S_S":  "𐑙",   "S_o":  "𐑕",        "S_i":  "𐑳",
     # O (Winding)
-    "O_A":  "𐑷",   "O_2":  "𐑴",   "O_z":  "𐑭",  "O_5":  "𐑟",
+    "O_A":  "𐑷",   "O₂":  "𐑴",   "O_z":  "𐑭",  "O_5":  "𐑟",
 }
 
 # Also register actual glyph-based notation from the manipulator files
@@ -139,7 +139,7 @@ _MANIP_PRIM_TO_FE_KEY: Dict[str, str] = {
 
 ZFCFE_TUPLE: dict = {
     "name": "zfc_fe",
-    "description": "ZFC_fe: Frobenius-Exact ZFC — all 4 grammar axioms; O_inf; 𐑫; 8 promoted atoms",
+    "description": "ZFC_fe: Frobenius-Exact ZFC — all 4 grammar axioms; O_∞; 𐑫; 8 promoted atoms",
     "Ð": "𐑦",   # 𐑦        — HOLOGRAPHIC_STATE  [ZFC_fe tier]
     "Þ": "𐑸",   # 𐑸        — HOLOBOUND          [ZFC_t tier]
     "Ř": "𐑾",   # 𐑾          — LR_DUAL            [ZFC_t tier]
@@ -318,7 +318,7 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
 
         lines = [
             "ZFC / ZFCs / ZFCt / ZFC_fe  Chain Lattice",
-            "(Two routes to O_inf, but ZFCt > ZFCs in ALL dimensions — this is a chain, not a diamond)",
+            "(Two routes to O_∞, but ZFCt > ZFCs in ALL dimensions — this is a chain, not a diamond)",
             "",
             f"  ZFC_fe  [{t_zfcfe}]  — satisfies all 4 grammar axioms",
             "    𐑦 (HOLOGRAPHIC_STATE + Axiom C), 𐑫 (ETERNAL_FIXEDPOINT)",
@@ -337,14 +337,14 @@ class ZFCfeManipulator(ZFCTriangleManipulator):
             "  ║",
             f"  ZFCs   [{t_zfcs}]",
             "    Spatial route: 𐑶 (𐑰), 𐑽 (𐑽), 𐑓 (H_0)",
-            "    Both routes are O_inf independently — spatial/temporal reach the same gate",
+            "    Both routes are O_∞ independently — spatial/temporal reach the same gate",
             "  ║",
             f"  ║  d(ZFC, ZFCs) = {d_zfc_zfcs}/12   d(ZFC, ZFCt) = {d_zfc_zfct}/12",
             "  ║",
             f"  ZFC    [{t_zfc}]   baseline — 0 promoted atoms",
             "",
             "  Entries at d=1 from ZFC_fe (𐑖, 𐑦 present, only 𐑫 missing):",
-            "    grammaformer, perfect_cuboid_lifted  — ZFCt O_inf but Axiom D half-open",
+            "    grammaformer, perfect_cuboid_lifted  — ZFCt O_∞ but Axiom D half-open",
             "",
             f"  d(zfct_canonical, ZFC_fe) = {d_canonical_fe}/12  (Ð + Ħ)",
             f"  d(ZFC, ZFC_fe)            = {d_zfc_fe}/12",

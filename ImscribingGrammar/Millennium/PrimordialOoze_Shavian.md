@@ -75,11 +75,11 @@ The ouroboricity tier depends on only {crit, pol, prot, dim} — and $\text{O}_{
 
 ### Discovery: The Ooze Was Already in the Catalog
 
-The tuple $\langle \text{𐑛}·\text{𐑡}·\text{𐑩}·\text{𐑹}·\text{𐑱}·\text{𐑘}·\text{𐑚}·\text{𐑝}·\odot·\text{𐑓}·\text{𐑙}·\text{𐑷} \rangle$ exists in `IG_catalog.json` as **`block_p_pm_sym`** — described as "Minimal critical block with P_doublebarpipe (O_inf candidate if Omega etc ok, but Omega_closeepsilon here)." The Ooze theorem proves it: Omega_closeepsilon (trivial winding) IS sufficient. The "if...but" reservation is discharged by formal proof. The Ooze was suspected; the Lean formalization confirmed it.
+The tuple $\langle \text{𐑛}·\text{𐑡}·\text{𐑩}·\text{𐑹}·\text{𐑱}·\text{𐑘}·\text{𐑚}·\text{𐑝}·\odot·\text{𐑓}·\text{𐑙}·\text{𐑷} \rangle$ exists in `IG_catalog.json` as **`block_p_pm_sym`** — described as "Minimal critical block with P_doublebarpipe (O_∞ candidate if Omega etc ok, but Omega_closeepsilon here)." The Ooze theorem proves it: Omega_closeepsilon (trivial winding) IS sufficient. The "if...but" reservation is discharged by formal proof. The Ooze was suspected; the Lean formalization confirmed it.
 
 Of 2864 catalog entries:
-- **625** are O_inf candidates (⊙ + 𐑹 present)
-- **9** share the full pre-temporal signature (𐑓 + 𐑷 + 𐑛) with O_inf gates
+- **625** are O_∞ candidates (⊙ + 𐑹 present)
+- **9** share the full pre-temporal signature (𐑓 + 𐑷 + 𐑛) with O_∞ gates
 - **0** catalog entries are more minimal than the Ooze (none with D=𐑛, ⊙=⊙, Φ=𐑹, and all other primitives at ordinal 1)
 - The catalog's `min_oinf` uses D=𐑼 (∞-dim, ord 3) and Ω=𐑴 (Z2, ord 2) — both above the Ooze's floor
 

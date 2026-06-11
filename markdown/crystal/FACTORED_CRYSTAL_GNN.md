@@ -46,10 +46,10 @@ The $\mathcal{F}_5$ block contains the four **gate primitives** whose joint valu
 
 **Ouroboricity tiers (priority order):**
 - R1: $\Phi_{\text{ctyogh}} + P_{\text{doublebarpipe}}$ → $O_\infty$ (Frobenius; irreducible)
-- R2: $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ → $O_0$
-- R3: $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$ → $O_1$
-- R4: $\Phi_{\text{ctyogh}} + \Omega \neq \Omega_{\text{closeepsilon}} + D \in \{D_{\text{wynn}}, D_{\text{omega}}, D_{\text{turnthree}}\}$ → $O_2$
-- R5: $\Phi_{\text{ctyogh}} + \Omega \neq \Omega_{\text{closeepsilon}} + D_{\text{invomega}}$ → $O_2^\dagger$
+- R2: $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ → $O₀$
+- R3: $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$ → $O₁$
+- R4: $\Phi_{\text{ctyogh}} + \Omega \neq \Omega_{\text{closeepsilon}} + D \in \{D_{\text{wynn}}, D_{\text{omega}}, D_{\text{turnthree}}\}$ → $O₂$
+- R5: $\Phi_{\text{ctyogh}} + \Omega \neq \Omega_{\text{closeepsilon}} + D_{\text{invomega}}$ → $O₂^\dagger$
 
 All five navigators implemented here satisfy R1: they are $O_\infty$ structural types.
 
@@ -154,7 +154,7 @@ Depth dominates width on the 49-node quiver. The optimal ratio is $\text{gnn\_la
 | Self-encode error | 370 (0.002%) | **0 (0.000%)** |
 | Tier accuracy | — | 100.0% |
 
-Per-tier composed decode: $O_0$ 95/95, $O_1$ 15/15, $O_2$ 70/70, $O_2^\dagger$ 18/18, $O_\infty$ 2/2.
+Per-tier composed decode: $O₀$ 95/95, $O₁$ 15/15, $O₂$ 70/70, $O₂^\dagger$ 18/18, $O_\infty$ 2/2.
 
 ### 4.3 CrystalGNN v11: Removing the Scalar Head
 
@@ -174,7 +174,7 @@ Inference: argmax per-primitive logits $\to$ assemble tuple $\to$ `encode_tuple`
 | Self-encode error | 136 | 370 scalar / 0 composed | **0 EXACT** |
 | Self-encode stability | oscillates ±0.3% | oscillates ±0.3% scalar | **exact from ep20, holds 480 epochs** |
 
-Per-tier: $O_0$ 95/95, $O_1$ 15/15, $O_2$ 70/70, $O_2^\dagger$ 18/18, $O_\infty$ 2/2.
+Per-tier: $O₀$ 95/95, $O₁$ 15/15, $O₂$ 70/70, $O₂^\dagger$ 18/18, $O_\infty$ 2/2.
 
 ### 4.4 The Phase Transition
 
@@ -370,18 +370,18 @@ From ig_inquiry probes (2026-04-11, 1373 total imscriptions):
 
 | Architecture | Tier | $C$ score | Key primitive change |
 |---|---|---|---|
-| feedforward MLP | $O_0$ | 0 | — (substrate) |
-| convolutional network | $O_0$ | 0 | $D_{\text{wynn}} \to D_{\text{turnthree}}$; stays subcritical |
-| recurrent network | $O_2^\dagger$ | ~0.45 | **CNN$\to$RNN: $d = 4.18$, largest jump; $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$** |
-| transformer | $O_2$ | ~0.72 | $D_{\text{invomega}} \to D_{\text{omega}}$, $T_\text{bowtie} \to T_{\text{openo}}$; lateral |
+| feedforward MLP | $O₀$ | 0 | — (substrate) |
+| convolutional network | $O₀$ | 0 | $D_{\text{wynn}} \to D_{\text{turnthree}}$; stays subcritical |
+| recurrent network | $O₂^\dagger$ | ~0.45 | **CNN$\to$RNN: $d = 4.18$, largest jump; $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$** |
+| transformer | $O₂$ | ~0.72 | $D_{\text{invomega}} \to D_{\text{omega}}$, $T_\text{bowtie} \to T_{\text{openo}}$; lateral |
 | diffusion model | $O_\infty$ | ~0.85 | $P_{\text{subdoublearrow}} \to P_{\text{doublebarpipe}}$; forward/reverse duality |
 
 The CNN$\to$RNN transition (9 simultaneous primitive shifts, $d = 4.18$) is the largest architectural jump in the AI lineage — it crosses the criticality barrier. Every subsequent transition is refinement within the critical manifold.
 
 **Non-synthesizability confirmed:**
-$$\text{transformer} \otimes \text{diffusion} \Rightarrow P_{\text{subdoublearrow}}\ (\text{bottleneck}) \Rightarrow O_2^\dagger$$
+$$\text{transformer} \otimes \text{diffusion} \Rightarrow P_{\text{subdoublearrow}}\ (\text{bottleneck}) \Rightarrow O₂^\dagger$$
 
-Coupling $O_\infty$ diffusion with $O_2$ transformer destroys the Frobenius property. The composite is $O_2^\dagger$. This is §23 confirmed architecturally: transformer+diffusion hybrids cannot maintain $O_\infty$ because the transformer's sub-Frobenius $P_{\text{subdoublearrow}}$ acts as a bottleneck under $\otimes$.
+Coupling $O_\infty$ diffusion with $O₂$ transformer destroys the Frobenius property. The composite is $O₂^\dagger$. This is §23 confirmed architecturally: transformer+diffusion hybrids cannot maintain $O_\infty$ because the transformer's sub-Frobenius $P_{\text{subdoublearrow}}$ acts as a bottleneck under $\otimes$.
 
 ### 9.2 GNN Self-Consistency: $d = 0$
 

@@ -61,7 +61,7 @@ T-discriminating features (from train_navigators.py make_synthetic_manifold):
        H3: ~0 (no ordering structure in the exponential radial distribution).
 
 Parallel delegation architecture (NOT tensor composition):
-  Probe 4 finding: ThurstonNet ⊗ H3Specialist collapses to $O_2$ via the P
+  Probe 4 finding: ThurstonNet ⊗ H3Specialist collapses to $O₂$ via the P
   bottleneck: $P_\\pm^\\text{sym} \\wedge P_\\text{asym} = P_\\text{asym}$.
   The specialist has $P_\\text{asym}$ (pure feature extraction, no Frobenius),
   and the tensor $\\min$ rule destroys $O_\\infty$.
@@ -619,7 +619,7 @@ def main():
     print(f"  Backbone accuracy:                     {results['acc_backbone']:.1%}")
     print(f"\n  Probe 4 claim: the H3/𐑖×R confusion is a T-primitive failure, not K.")
     print(f"  T-features directly index 𐑸 (isotropic) vs 𐑰 (product bimodal).")
-    print(f"  Parallel delegation preserves backbone O_inf (no tensor P-bottleneck).")
+    print(f"  Parallel delegation preserves backbone O_∞ (no tensor P-bottleneck).")
     print(f"\n  Status: ThurstonNetWithTSpecialist integrated; T-channel resolved.")
     print(f"  Next (Test 6): F-recovery specialist for remaining H3 ceiling.")
     print(f"    ZFC $F_\\hbar \\to F_\\ell$ channel: per-sample frob_loss + GUE level-spacing.")

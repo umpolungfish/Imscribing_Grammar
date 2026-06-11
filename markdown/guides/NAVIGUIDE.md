@@ -109,10 +109,10 @@ The boundary holographically encodes tier: knowing only $(\Phi, P, \Omega, D)$ d
 | Tier | Condition | Cells | Crystal share |
 |------|-----------|-------|---------------|
 | $O_\infty$ | $\Phi \in \{\Phi_{\text{ctyogh}}, \Phi_{\text{closerevepsilon}}\}$ and $P = P_{\text{doublebarpipe}}$ | 32 | 8.0% |
-| $O_0$ | $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ | 240 | 60.0% |
-| $O_1$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega = \Omega_{\text{closeepsilon}}$ | 32 | ~5.4% |
-| $O_2$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ | 72 | ~18.6% |
-| $O_2^\dagger$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | 24 | ~8.0% |
+| $O₀$ | $\Phi \in \{\Phi_{\text{softsign}}, \Phi_{\text{upstep}}, \Phi_{\text{revepsilon}}\}$ | 240 | 60.0% |
+| $O₁$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega = \Omega_{\text{closeepsilon}}$ | 32 | ~5.4% |
+| $O₂$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D \in \{D_{\text{wynn}}, D_{\text{turnthree}}, D_{\text{omega}}\}$ | 72 | ~18.6% |
+| $O₂^\dagger$ | $\Phi_{\text{ctyogh}}/\Phi_{\text{closerevepsilon}}$, $P \neq P_{\text{doublebarpipe}}$, $\Omega \neq \Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | 24 | ~8.0% |
 
 **Key facts:**
 - $\Phi_{\text{ctyogh}}$ is absorbing under meet: $\text{meet}(\Phi_{\text{ctyogh}}, x) = \Phi_{\text{ctyogh}}$ for all $x$. It is the necessary condition for self-modeling.
@@ -165,7 +165,7 @@ nav = CrystalNavigator()
 ```python
 addr = nav.encode(tup)               # dict → int in [0, 17_279_999]
 tup  = nav.decode(addr)              # int → dict  (exact roundtrip)
-tier = nav.tier(tup)                 # → "O_0"|"O_1"|"O_2"|"O_2_dag"|"O_inf"
+tier = nav.tier(tup)                 # → "O₀"|"O₁"|"O₂"|"O₂†"|"O_∞"
 
 d    = distance(tup_a, tup_b)        # symmetric Euclidean distance
 d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
@@ -174,7 +174,7 @@ d_to = directed_distance(tup_a, tup_b)   # upward-only — asymmetric
 ### Holographic query and navigation
 
 ```python
-nav.imscriptive_query("⊙", "𐑹")   # → all 32 O_inf tier cells
+nav.imscriptive_query("⊙", "𐑹")   # → all 32 O_∞ tier cells
 nav.navigate(D="𐑦", Phi="⊙")        # partial spec → matching types
 nav.nearest_catalog(my_tuple, n=5)           # k-NN in catalog by distance
 nav.tier_census()                            # full distribution over 17.28M types
@@ -199,8 +199,8 @@ magnetar = {
     "Phi": "⊙",     "H": "𐑒",     "S": "𐑕",      "Omega": "𐑭",
 }
 
-encode_tuple(magnetar)                           # 5,256,412  tier O_2
-encode_tuple(nav.self_encode)                    # 6,734,591  tier O_inf
+encode_tuple(magnetar)                           # 5,256,412  tier O₂
+encode_tuple(nav.self_encode)                    # 6,734,591  tier O_∞
 
 distance(magnetar, nav.self_encode)              # 3.9875
 directed_distance(magnetar, nav.self_encode)     # 9.9  (magnetar is driven upward)
@@ -519,7 +519,7 @@ Key entries: `athenian_democracy`, `song_dynasty_peak`, `roman_republic_peak`, `
 | 75.1 | $d(\text{Ming collapse}, \text{Soviet collapse}) = 4.0$ | Confirmed ✓ |
 | 75.2 | Peak civilizations are $O_\infty$ | All peak entries at $O_\infty$ ✓ |
 | 75.3 | $d(\text{W. Rome}, \text{Soviet}) = 1.0$ — $K$ is sole difference | Single primitive gap ✓ |
-| 75.4 | Weimar: $\Phi_{\text{revepsilon}}$, tier $O_0$ | Exceptional-point decoherence ✓ |
+| 75.4 | Weimar: $\Phi_{\text{revepsilon}}$, tier $O₀$ | Exceptional-point decoherence ✓ |
 | 75.5 | Athenian Democracy: $T_{\text{openo}}$ | Lateral governance = holographic topology ✓ |
 | 75.7 | $d(\text{Han}, \text{Ming}) = 6.596$ | 8-primitive degradation over 800 years ✓ |
 
@@ -532,7 +532,7 @@ Key entries: `old_growth_temperate_rainforest`, `coral_reef_healthy`, `kelp_fore
 | 76.1 | $d(\text{old-growth}, \text{coral reef}) = 0.000$ | Cross-biome structural identity ✓ |
 | 76.2 | Kelp forest and hydrothermal vent are $O_\infty$ | Both confirmed ✓ |
 | 76.3 | Corn monoculture: $K_{\text{teshlig}}$; fragmented habitat: $K_{\text{lambda}}$ | Lock-in confirmed ✓ |
-| 76.4 | Early-successional forest: $O_0$ | Pre-critical, $\Phi_{\text{softsign}}$ ✓ |
+| 76.4 | Early-successional forest: $O₀$ | Pre-critical, $\Phi_{\text{softsign}}$ ✓ |
 | 76.5 | Coral bleaching has largest tipping-point distance | Confirmed ✓ |
 | 76.8 | Restoration asymmetry | $d_\to(\text{degraded} \to \text{healthy}) \gg d_\to(\text{healthy} \to \text{degraded})$ ✓ |
 
@@ -593,7 +593,7 @@ Encodes the 22 Hebrew letters as a stratified type lattice in the 12-primitive g
 ```python
 from aleph_tensor import AlephTensor
 at = AlephTensor()
-at.encode("vav")              # → tuple at O_inf
+at.encode("vav")              # → tuple at O_∞
 at.tensor("mem", "shin")      # → combined type
 at.tier_census()              # full distribution over 22 letters
 ```
@@ -732,7 +732,7 @@ Find the equilibrium algebra underlying a driven system $\mathbf{y}$:
 # → use compute_distance + retrosynthetic_path
 ```
 
-Applied to derive A2† system: Le Chatelier inversion on A3 gave $d_\to(A3, A2^\dagger) = 0$; confirmed $O_2^\dagger$ via R5.
+Applied to derive A2† system: Le Chatelier inversion on A3 gave $d_\to(A3, A2^\dagger) = 0$; confirmed $O₂^\dagger$ via R5.
 
 ### Pattern 5 — Nearest-neighbor for domain identification
 
@@ -749,7 +749,7 @@ Old-growth rainforest and coral reef at $d = 0$; samadhi and akh\_glorified\_spi
 ```python
 # Encode a system, then check its ZFC roundtrip distance
 result = dispatcher.dispatch("crystal_encode", {"name": "my_system"})
-# d_rt = 0.000: fully ZFC-transmissible (O_inf constellation present)
+# d_rt = 0.000: fully ZFC-transmissible (O_∞ constellation present)
 # d_rt = 2.530: decoherence (𐑐 without recovery tokens)
 ```
 

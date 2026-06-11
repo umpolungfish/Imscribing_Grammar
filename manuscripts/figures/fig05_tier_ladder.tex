@@ -16,28 +16,28 @@
 ]
 
 % Tier O0
-\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O_0}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_{\text{ctyogh}},\Phi_{\text{closerevepsilon}}\}$};
+\node[tier=blue!50] (O0) at (0,0) {$\mathbf{O₀}$\\\small Unprotected\\\small $\Phi \notin \{\Phi_{\text{ctyogh}},\Phi_{\text{closerevepsilon}}\}$};
 \node[condition,right=0.4cm of O0] (c0) {L4 fails\\No self-modeling loop\\$C=0$ (Gate 1 fails)};
 
 % Gap O0 -> O1
 \draw[gap] (O0.south) -- node[gaplab,pos=0.5] {$\Delta=1.05$\\$\Phi_{\text{softsign}}\to\Phi_{\text{ctyogh}}$} ++(0,-0.9);
 
 % Tier O1
-\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O_1}$\\\small Instantiated\\\small $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$};
+\node[tier=green!50,below=0.9cm of O0] (O1) {$\mathbf{O₁}$\\\small Instantiated\\\small $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$};
 \node[condition,right=0.4cm of O1] (c1) {L4 holds\\L5 fails\\Loop forms, no winding protection};
 
 % Gap O1 -> O2
 \draw[gap] (O1.south) -- node[gaplab,pos=0.5] {$\Delta=1.30$\\$D_{\text{wynn}}\!\to\!D_{\text{turnthree}},\ \Omega_{\text{closeepsilon}}\!\to\!\Omega_{\text{crtwo}}$} ++(0,-0.9);
 
 % Tier O2
-\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O_2}$\\\small Topologically Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\ D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$};
+\node[tier=yellow!50!orange,below=0.9cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\ D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$};
 \node[condition,right=0.4cm of O2] (c2) {Winding-number protection\\Finite-dim or imscriptive\\$C > 0$ possible};
 
 % Gap O2 -> O2†
 \draw[gap] (O2.south) -- node[gaplab,pos=0.5] {$\Delta=1.00$\\$D_{\text{turnthree}}\to D_{\text{invomega}}$} ++(0,-0.9);
 
 % Tier O2†
-\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O_2^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\ D_{\text{invomega}}$};
+\node[tier=orange,below=0.9cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\Phi_{\text{ctyogh}},\ \Omega\neq\Omega_{\text{closeepsilon}},\ D_{\text{invomega}}$};
 \node[condition,right=0.4cm of O2d] (c2d) {Infinite-dimensional\\Winding protection\\Not imscriptive};
 
 % Gap O2† -> O∞ — LARGEST

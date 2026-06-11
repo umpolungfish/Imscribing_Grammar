@@ -25,18 +25,18 @@ BG   = "#0F0F1A"
 BG2  = "#1A1A2E"
 
 TIER_COLOR = {
-    "O_0":       "#4472C4",   # steel blue
-    "O_1":       "#FFD700",   # gold
-    "O_2":       "#FF8C00",   # dark orange
-    "O_2_dag":   "#DC143C",   # crimson
-    "O_inf":     "#9370DB",   # medium purple
+    "O₀":       "#4472C4",   # steel blue
+    "O₁":       "#FFD700",   # gold
+    "O₂":       "#FF8C00",   # dark orange
+    "O₂†":   "#DC143C",   # crimson
+    "O_∞":     "#9370DB",   # medium purple
 }
 TIER_LABEL = {
-    "O_0":       r"$O_0$  (inert)",
-    "O_1":       r"$O_1$  (unprotected critical)",
-    "O_2":       r"$O_2$  (protected, bounded)",
-    "O_2_dag":   r"$O_2^\dagger$  (protected, unbounded)",
-    "O_inf":     r"$O_\infty$  (Frobenius complete)",
+    "O₀":       r"$O₀$  (inert)",
+    "O₁":       r"$O₁$  (unprotected critical)",
+    "O₂":       r"$O₂$  (protected, bounded)",
+    "O₂†":   r"$O₂^\dagger$  (protected, unbounded)",
+    "O_∞":     r"$O_\infty$  (Frobenius complete)",
 }
 
 PHI_VALUES   = ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"]
@@ -51,16 +51,16 @@ P_PM_SYM   = {"Φ_}", "𐑹"}                  # Frobenius polarity, old + Shavi
 OMEGA_0    = {"Ω_Å", "𐑷", ""}              # no topological protection
 
 def get_tier(phi, p, omega, d):
-    # R1 (Lean-authoritative): Phi_c + P_pm_sym → O_inf
+    # R1 (Lean-authoritative): Phi_c + P_pm_sym → O_∞
     if phi in CRITICAL and p in P_PM_SYM:
-        return "O_inf"
+        return "O_∞"
     if phi in NONCRIT:
-        return "O_0"
+        return "O₀"
     if omega in OMEGA_0:
-        return "O_1"
+        return "O₁"
     if d in BOUNDED_D:
-        return "O_2"
-    return "O_2_dag"
+        return "O₂"
+    return "O₂†"
 
 INNER_PER_CELL = 34_560   # T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3)
 
@@ -102,7 +102,7 @@ fig1.text(0.5, 0.945,
           r"each cell: $5(P)\times4(D)\times34{,}560\text{ inner} = 691{,}200$ types",
           ha="center", va="top", color="#AAAACC", fontsize=13)
 
-TIER_ORDER = ["O_0", "O_1", "O_2", "O_2_dag", "O_inf"]
+TIER_ORDER = ["O₀", "O₁", "O₂", "O₂†", "O_∞"]
 
 for row_i, phi in enumerate(PHI_VALUES):
     for col_j, omega in enumerate(OMEGA_VALUES):
@@ -126,11 +126,11 @@ for row_i, phi in enumerate(PHI_VALUES):
                         color=TIER_COLOR[tier], edgecolor="none",
                         zorder=3)
                 if w > 0.06:
-                    label = {"O_0":"O₀","O_1":"O₁","O_2":"O₂",
-                             "O_2_dag":"O₂†","O_inf":"O∞"}[tier]
+                    label = {"O₀":"O₀","O₁":"O₁","O₂":"O₂",
+                             "O₂†":"O₂†","O_∞":"O∞"}[tier]
                     ax.text(left + w/2, bar_y, label,
                             ha="center", va="center",
-                            fontsize=9, color="black" if tier in ("O_1","O_inf") else "white",
+                            fontsize=9, color="black" if tier in ("O₁","O_∞") else "white",
                             fontweight="bold", zorder=4)
                 left += w
 
@@ -196,13 +196,13 @@ plt.close(fig1)
 # ══════════════════════════════════════════════════════════════════════
 TOTAL       = 10_368_000
 TIER_TOTALS = {
-    "O_0":     6_220_800,
-    "O_1":     1_105_920,
-    "O_2":     1_658_880,
-    "O_2_dag":   552_960,
-    "O_inf":     829_440,
+    "O₀":     6_220_800,
+    "O₁":     1_105_920,
+    "O₂":     1_658_880,
+    "O₂†":   552_960,
+    "O_∞":     829_440,
 }
-TIER_CELLS = {"O_0":180, "O_1":32, "O_2":48, "O_2_dag":16, "O_inf":24}
+TIER_CELLS = {"O₀":180, "O₁":32, "O₂":48, "O₂†":16, "O_∞":24}
 
 fig2, ax2 = plt.subplots(figsize=(20, 10), facecolor=BG)
 fig2.patch.set_facecolor(BG)
@@ -236,7 +236,7 @@ for tier in TIER_ORDER:
              f"{TIER_TOTALS[tier]:,}\n{pct:.1f}%",
              ha="center", va="center",
              fontsize=11.5 if w > 0.07 else 9,
-             color="black" if tier in ("O_1",) else "white",
+             color="black" if tier in ("O₁",) else "white",
              fontweight="bold", zorder=4)
     left += w
 
@@ -254,7 +254,7 @@ for tier in TIER_ORDER:
     ax2.text(left2 + w/2, bar_y2 + bar_h2/2,
              f"{TIER_CELLS[tier]} cells",
              ha="center", va="center", fontsize=9,
-             color="black" if tier in ("O_1",) else "white", zorder=4)
+             color="black" if tier in ("O₁",) else "white", zorder=4)
     left2 += w
 
 ax2.text(0.02, bar_y + bar_h/2, "Types:", color="white", fontsize=12,
@@ -329,7 +329,7 @@ for p_i, p in enumerate(P_VALUES):
         ax3.text(od_j, p_i, label,
                  ha="center", va="center",
                  fontsize=14, fontweight="bold",
-                 color="black" if t in ("O_1","O_inf") else "white",
+                 color="black" if t in ("O₁","O_∞") else "white",
                  zorder=4)
 
 # Highlight the Φ_} row with golden border
@@ -357,15 +357,15 @@ ax3.invert_yaxis()   # Φ_ɐ at top, Φ_} at bottom... actually keep natural ord
 # Annotation
 ax3.text(len(OMEGA_D_COMBOS)/2 - 0.5, -0.9,
          r"R1: $\⊙_ÿ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
-         r"R3: $\⊙_ÿ + \Ω_Å \rightarrow O_1$    "
-         r"R4: bounded $D \rightarrow O_2$    "
-         r"R5: $D_\infty \rightarrow O_2^\dagger$",
+         r"R3: $\⊙_ÿ + \Ω_Å \rightarrow O₁$    "
+         r"R4: bounded $D \rightarrow O₂$    "
+         r"R5: $D_\infty \rightarrow O₂^\dagger$",
          ha="center", va="top", color="#AAAACC", fontsize=10)
 
 # Legend
 tier_patches3 = [
     mpatches.Patch(facecolor=TIER_COLOR[t], label=TIER_LABEL[t], linewidth=0)
-    for t in ["O_1", "O_2", "O_2_dag", "O_inf"]
+    for t in ["O₁", "O₂", "O₂†", "O_∞"]
 ]
 ax3.legend(handles=tier_patches3, loc="lower right",
            bbox_to_anchor=(1.0, -0.05),

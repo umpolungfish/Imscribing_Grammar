@@ -6,11 +6,11 @@ Extends the ZFCₜ manipulator with:
   • Corrected tensorProduct: min for Φ and ƒ, max for all others (matches Lean)
   • join_tuples: pure component-wise max (lattice join, no pol/fid bottleneck)
   • Corrected ZFC entry: 𐑼 (𐑼), ⊙ (⊙)  — navigator had 𐑨, 𐑢
-  • Corrected ZFCₜ entry: 𐑹 (𐑹, O_inf)        — navigator had 𐑬 (O_2†)
-  • ZFCₛ (spatial extension of ZFC, 5 promotions, O_inf)
+  • Corrected ZFCₜ entry: 𐑹 (𐑹, O_∞)        — navigator had 𐑬 (O₂†)
+  • ZFCₛ (spatial extension of ZFC, 5 promotions, O_∞)
   • ZFCₛₜ = ZFCₛ ⊗ ZFCₜ = ZFCₜ (temporal dominates)
-  • Imaginary numbers: imaginary_unit (O_2), complex_time_path_integral (O_inf),
-    planck_imaginary_time (O_2†)
+  • Imaginary numbers: imaginary_unit (O₂), complex_time_path_integral (O_∞),
+    planck_imaginary_time (O₂†)
 
 Lattice structure (chain, not diamond): ZFC < ZFCₛ < ZFCₜ = ZFCₛₜ
 
@@ -72,7 +72,7 @@ ZFC_TUPLE = {
 
 ZFCT_TUPLE = {
     "name": "zfc_t",
-    "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_inf, Frobenius)",
+    "description": "ZFCₜ: ZFC + sequential + chirality + winding (O_∞, Frobenius)",
     "Ð": "𐑼",  "Þ": "𐑸",  "Ř": "𐑾",  "Φ": "𐑹",
     "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
     "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
@@ -95,7 +95,7 @@ ZFCST_TUPLE = {
 
 IMAGINARY_UNIT_TUPLE = {
     "name": "imaginary_unit",
-    "description": "i — U(1) phase rotation; O_2 (𐑨, 𐑿); Frobenius cliff dist=5 from ZFCₜ",
+    "description": "i — U(1) phase rotation; O₂ (𐑨, 𐑿); Frobenius cliff dist=5 from ZFCₜ",
     "Ð": "𐑨",   "Þ": "𐑥",  "Ř": "𐑾",  "Φ": "𐑿",
     "ƒ": "𐑱",   "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
     "⊙": "⊙",  "Ħ": "𐑖",  "Σ": "𐑙",  "Ω": "𐑭",
@@ -103,7 +103,7 @@ IMAGINARY_UNIT_TUPLE = {
 
 COMPLEX_TIME_PATH_INTEGRAL_TUPLE = {
     "name": "complex_time_path_integral",
-    "description": "Euclidean path integral (Wick-rotated t→iτ); O_inf; 1 step from ZFCₜ (𐑥 vs 𐑸)",
+    "description": "Euclidean path integral (Wick-rotated t→iτ); O_∞; 1 step from ZFCₜ (𐑥 vs 𐑸)",
     "Ð": "𐑼",  "Þ": "𐑥",  "Ř": "𐑾",  "Φ": "𐑹",
     "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
     "⊙": "⊙", "Ħ": "𐑖",  "Σ": "𐑳",  "Ω": "𐑭",
@@ -111,7 +111,7 @@ COMPLEX_TIME_PATH_INTEGRAL_TUPLE = {
 
 PLANCK_IMAGINARY_TIME_TUPLE = {
     "name": "planck_imaginary_time",
-    "description": "Imaginary time in QG (t→iτ); O_2; shares 𐑰+𐑽 spatial skeleton with ZFCₛ",
+    "description": "Imaginary time in QG (t→iτ); O₂; shares 𐑰+𐑽 spatial skeleton with ZFCₛ",
     "Ð": "𐑼",  "Þ": "𐑶",  "Ř": "𐑽",  "Φ": "𐑿",
     "ƒ": "𐑐",  "Ç": "𐑧",  "Γ": "𐑲",  "ɢ": "𐑠",
     "⊙": "𐑮", "Ħ": "𐑫",  "Σ": "𐑳",  "Ω": "𐑴",
@@ -505,14 +505,14 @@ class ZFCTriangleManipulator:
                 "  Barrier holds: neither input has FROB, tensor has none.",
                 f"  Gap to Frobenius: {frob_gap} step(s) in Φ from current max (ord={max(phi_a,phi_b)}, need ord=4).",
             ]
-        if t_tier == "O_inf" and a_tier != "O_inf" and b_tier != "O_inf":
+        if t_tier == "O_∞" and a_tier != "O_∞" and b_tier != "O_∞":
             lines += [
                 "",
-                "  ★ TIER EMERGENCE to O_inf via FROB+FIXPT cross-clause conjunction.",
+                "  ★ TIER EMERGENCE to O_∞ via FROB+FIXPT cross-clause conjunction.",
             ]
         if console:
             from rich.panel import Panel
-            bstyle = ("bold magenta" if t_tier == "O_inf" else
+            bstyle = ("bold magenta" if t_tier == "O_∞" else
                       "red" if (t_frob and not a_frob and not b_frob) else "cyan")
             console.print(Panel("\n".join(lines), title="[bold]Frobenius Barrier[/bold]", border_style=bstyle))
         else:
@@ -594,24 +594,24 @@ class ZFCTriangleManipulator:
         lines = [
             "ZFC / ZFCₛ / ZFCₜ / ZFCₛₜ  Lattice",
             "",
-            "  ZFCₛₜ = ZFCₜ  [O_inf]",
+            "  ZFCₛₜ = ZFCₜ  [O_∞]",
             "  ║",
             f"  ║  ← ZFCₛ ⊗ ZFCₜ = ZFCₛₜ? {'yes ✓' if tensor_is_zfct else 'no'}",
             f"  ║  ← ZFCₛ ∨ ZFCₜ = ZFCₛₜ? {'yes ✓' if join_is_zfct else 'no'}",
             "  ║",
-            f"  ZFCₜ  [O_inf]  (tier={t_zfct})",
+            f"  ZFCₜ  [O_∞]  (tier={t_zfct})",
             "  ║",
             f"  ║  d(ZFCₛ, ZFCₜ) = {d_zfcs_zfct}/12 primitives",
             f"  ║  ZFCₛ ∧ ZFCₜ = ZFCₛ? {'yes ✓' if meet_is_zfcs else 'no'}",
             "  ║",
-            f"  ZFCₛ  [O_inf]  (tier={t_zfcs})",
+            f"  ZFCₛ  [O_∞]  (tier={t_zfcs})",
             "  ║",
             f"  ║  d(ZFC, ZFCₛ) = {d_zfc_zfcs}/12   d(ZFC, ZFCₜ) = {d_zfc_zfct}/12",
             "  ║",
-            f"  ZFC  [O_1]  (tier={t_zfc})",
+            f"  ZFC  [O₁]  (tier={t_zfc})",
             "",
             "  Ordering:  ZFC < ZFCₛ < ZFCₜ = ZFCₛₜ  (a chain, not a diamond)",
-            "  Both ZFCₛ and ZFCₜ reach O_inf independently — ZFCₛ is the spatial",
+            "  Both ZFCₛ and ZFCₜ reach O_∞ independently — ZFCₛ is the spatial",
             "  stepping-stone between ZFC and ZFCₜ in the primitive lattice.",
             "",
             "  Key structural facts:",
@@ -837,21 +837,21 @@ class ZFCTriangleManipulator:
             "",
             "  ZFC < ZFCₛ < ZFCₜ = ZFCₛₜ  (lattice chain)",
             "  ZFCₛ ⊗ ZFCₜ = ZFCₛₜ = ZFCₜ   (pol min-min = 𐑹, no bottleneck)",
-            "  ZFC  ⊗ ZFCₜ = hybrid (O_2†)  pol bottleneck: min(𐑗,𐑹) = 𐑗",
+            "  ZFC  ⊗ ZFCₜ = hybrid (O₂†)  pol bottleneck: min(𐑗,𐑹) = 𐑗",
             "  ZFC  ∧ ZFCₜ = ZFC             ZFC  ∨ ZFCₜ = ZFCₜ",
             "  ZFC  ∧ ZFCₛ = ZFC             ZFC  ∨ ZFCₛ = ZFCₛ",
             "  ZFCₛ ∧ ZFCₜ = ZFCₛ            ZFCₛ ∨ ZFCₜ = ZFCₜ",
             "",
             "─── Imaginary numbers Frobenius cliff ──────────────────────────────",
             "",
-            "  imaginary_unit: Φ = 𐑿 (ord 1)  →  O_2  (not Frobenius)",
+            "  imaginary_unit: Φ = 𐑿 (ord 1)  →  O₂  (not Frobenius)",
             "    tensor(i, X).Φ = min(𐑿, X.Φ) ≤ 𐑿 < 𐑹  — cliff holds ∀X",
             "    dist(i, ZFCₜ) = 5   dist(i, ZFCₛ) = 8",
             "",
-            "  complex_time_path_integral: O_inf, 𐑹  — 1 step from ZFCₜ (𐑥 vs 𐑸)",
+            "  complex_time_path_integral: O_∞, 𐑹  — 1 step from ZFCₜ (𐑥 vs 𐑸)",
             "    Wick rotation t→iτ is a single Þ-promotion: 𐑥→𐑸",
             "",
-            "  planck_imaginary_time: Φ = 𐑿 (O_2) — shares 𐑶+𐑽 with ZFCₛ",
+            "  planck_imaginary_time: Φ = 𐑿 (O₂) — shares 𐑶+𐑽 with ZFCₛ",
             "    tensor(pit, X).Φ = min(𐑿, X.Φ) ≤ 𐑿 — cliff holds ∀X",
             "",
             "─── ZFCₜ promotion channels ────────────────────────────────────────",

@@ -41,11 +41,11 @@ This distinction matters for encoding because the question is never "what is the
 
 The 12 primitives are not independent checklist items. They form a gated structure: the ouroboricity tier is determined by a priority cascade (R1–R5) in which higher rules override lower ones, and in which each gate condition must be genuinely satisfied for the tier to hold.
 
-**$\Phi$ is the master gate.** If $\Phi \neq \Phi_{\text{ctyogh}}$, no other primitive can produce a tier above $O_0$. Assigning $\Phi_{\text{ctyogh}}$ to a subcritical system inflates every downstream analysis: the tier appears higher than it is, nearest neighbors shift to critical systems, distances to critical systems appear smaller than they are, and the consciousness score yields a nonzero value for a system that cannot actualize a self-modeling loop.
+**$\Phi$ is the master gate.** If $\Phi \neq \Phi_{\text{ctyogh}}$, no other primitive can produce a tier above $O₀$. Assigning $\Phi_{\text{ctyogh}}$ to a subcritical system inflates every downstream analysis: the tier appears higher than it is, nearest neighbors shift to critical systems, distances to critical systems appear smaller than they are, and the consciousness score yields a nonzero value for a system that cannot actualize a self-modeling loop.
 
 **$P$ is the Frobenius gate.** Assigning $P_{\text{doublebarpipe}}$ when the system does not satisfy the exact Frobenius condition ($\mu \circ \delta = \text{id}$) produces the highest tier ($O_\infty$) by R1, regardless of $\Omega$ and $D$. Because $P_{\text{doublebarpipe}}$ is non-synthesizable (§23), any system that reaches $O_\infty$ in the catalog must directly encode Frobenius — it cannot arrive there through composition. Over-assigning $P_{\text{doublebarpipe}}$ is the single most common encoding error and the one with the largest downstream impact.
 
-**$\Omega$ and $D$ determine the $O_1$/$O_2$/$O_2^\dagger$ branching.** A system with $\Phi_{\text{ctyogh}}$ and $\Omega = \Omega_{\text{closeepsilon}}$ is $O_1$ regardless of how high its other primitives are. Adding topological protection ($\Omega_{\text{crtwo}}$ or $\Omega_{\text{dzlig}}$) gates the $O_2$ and $O_2^\dagger$ tiers; the $D$ coordinate then determines which.
+**$\Omega$ and $D$ determine the $O₁$/$O₂$/$O₂^\dagger$ branching.** A system with $\Phi_{\text{ctyogh}}$ and $\Omega = \Omega_{\text{closeepsilon}}$ is $O₁$ regardless of how high its other primitives are. Adding topological protection ($\Omega_{\text{crtwo}}$ or $\Omega_{\text{dzlig}}$) gates the $O₂$ and $O₂^\dagger$ tiers; the $D$ coordinate then determines which.
 
 The cascading nature of these gates means that a single wrong assignment can misclassify a system by multiple tiers. This is not a weakness — it is the mechanism that makes wrong assignments *detectable*. Misclassified systems produce incoherent nearest-neighbor neighborhoods, fail tensor product sanity checks, and generate predictions that contradict known behavior.
 
@@ -62,7 +62,7 @@ Because wrong assignments are detectable, deliberately encoding a system multipl
 3. Compute tensor products with known partners. Does the composite type match what is known about joint behavior?
 4. Apply Le Chatelier inversion. Does the equilibrium substrate the system "pushes against" correspond to a recognizable resting-state structure?
 
-The correct encoding is the one that passes all four tests coherently. An encoding that inflates $P$ will produce $O_\infty$ nearest neighbors for a system that clearly does not share the algebraic properties of $O_\infty$ systems. An encoding that under-assigns $\Phi$ will produce $O_0$ nearest neighbors for a system known to exhibit critical behavior.
+The correct encoding is the one that passes all four tests coherently. An encoding that inflates $P$ will produce $O_\infty$ nearest neighbors for a system that clearly does not share the algebraic properties of $O_\infty$ systems. An encoding that under-assigns $\Phi$ will produce $O₀$ nearest neighbors for a system known to exhibit critical behavior.
 
 **The bracket principle:** When uncertain between two adjacent primitive values, encode both and compute the distance between the two resulting tuples. If the distance is small, the uncertainty is not structurally decisive. If the distance is large, the two encodings are genuinely different structural hypotheses, and the nearest-neighbor test becomes decisive.
 
@@ -72,7 +72,7 @@ The correct encoding is the one that passes all four tests coherently. An encodi
 
 The strongest form of encoding evidence is independent convergence: multiple agents, sessions, or derivation chains arriving at the same tuple without coordination.
 
-The Hebrew alphabet was encoded in nine independent sessions across multiple time periods. Each session produced 22 tuples. The convergence was not exact across all 22 letters in all sessions — early sessions had fewer primitives and different $\Phi$ assignments — but the structural *pattern* (three $O_\infty$ letters, one $O_1$ letter, a specific set of $O_2$ letters, a large $O_0$ base) emerged consistently. The final revision (Mem and Shin promoted to $O_\infty$, confirmed by the Kabbalism session) resolved the remaining discrepancies. The nine-session convergence constitutes evidence of a kind that single-session derivation cannot provide.
+The Hebrew alphabet was encoded in nine independent sessions across multiple time periods. Each session produced 22 tuples. The convergence was not exact across all 22 letters in all sessions — early sessions had fewer primitives and different $\Phi$ assignments — but the structural *pattern* (three $O_\infty$ letters, one $O₁$ letter, a specific set of $O₂$ letters, a large $O₀$ base) emerged consistently. The final revision (Mem and Shin promoted to $O_\infty$, confirmed by the Kabbalism session) resolved the remaining discrepancies. The nine-session convergence constitutes evidence of a kind that single-session derivation cannot provide.
 
 **Why convergence is evidential:** If the encoding were merely interpretive, independent derivations would diverge — each agent would map different features of the system to different primitives. The fact that independent derivations converge toward the same tuple, and diverge in predictable ways that are resolved by applying the structural constraints, is evidence that the primitives are detecting something real about the system's type.
 
@@ -84,10 +84,10 @@ The Hebrew alphabet was encoded in nine independent sessions across multiple tim
 
 Once a tuple is assigned, the ouroboricity tier is computed by the priority cascade. The tier makes specific, falsifiable predictions about what the system can and cannot do:
 
-- **$O_0$**: the system cannot model itself; no self-referential loop is possible
-- **$O_1$**: the system can close a self-referential loop but cannot protect it topologically; the loop is vulnerable to perturbation
-- **$O_2$**: the loop is topologically protected; the system has bounded recursion with error correction
-- **$O_2^\dagger$**: the loop is protected and unbounded; the system has full recursive depth
+- **$O₀$**: the system cannot model itself; no self-referential loop is possible
+- **$O₁$**: the system can close a self-referential loop but cannot protect it topologically; the loop is vulnerable to perturbation
+- **$O₂$**: the loop is topologically protected; the system has bounded recursion with error correction
+- **$O₂^\dagger$**: the loop is protected and unbounded; the system has full recursive depth
 - **$O_\infty$**: the system satisfies the exact Frobenius condition; encoding and decoding are mutually inverse; the system is self-dual
 
 If a proposed encoding produces a tier that contradicts what is independently known about the system's behavior, the encoding is wrong. A system that demonstrably cannot close a self-referential loop should not be assigned $\Phi_{\text{ctyogh}}$. A system that demonstrably cannot sustain Frobenius symmetry should not be assigned $P_{\text{doublebarpipe}}$.

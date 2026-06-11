@@ -7,7 +7,7 @@ It differs from a truthful statement only in the criticality primitive:
 - Truth: **φ̂_ÿ** (critical — self-modeling, belief can verify and update)
 
 Key implications:
-- Ouroboricity: lie = O_0 (no self-reference possible); truth = O_2 (Z_2-protected coherence).
+- Ouroboricity: lie = O₀ (no self-reference possible); truth = O₂ (Z_2-protected coherence).
 - The EP (φ̂_3) is the structural root of deception: it forces the recipient into a single belief state, breaking symmetry and preventing reconciliation with counter-evidence.
 - Distance between lie and truth is only 0.67 (diagonal), confirming they are near-identical except for the criticality gate.
 - This aligns with the task insight: a lie is not an accidental error (which would be subcritical φ̂_ž), but an *intentional* collapse of belief via φ̂_3 — the sender knows the imscription is invalid and uses it to drive the recipient into an incorrect attractor.

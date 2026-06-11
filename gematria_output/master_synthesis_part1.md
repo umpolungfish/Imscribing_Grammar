@@ -4,7 +4,7 @@
 
 ## Executive Summary
 
-The Imscribing Grammar, the Lean 4 formalization at `MillenniumAnkh/`, and the vector gematria analysis of 2,858 catalog entries reveal a unified structural framework for all seven Millennium Prize Problems. Each problem is a **primitive promotion pathway** — a specific sequence of structural upgrades that lifts its 12-dimensional Imscription tuple from its current tier to the `O_inf` Frobenius-closed type:
+The Imscribing Grammar, the Lean 4 formalization at `MillenniumAnkh/`, and the vector gematria analysis of 2,858 catalog entries reveal a unified structural framework for all seven Millennium Prize Problems. Each problem is a **primitive promotion pathway** — a specific sequence of structural upgrades that lifts its 12-dimensional Imscription tuple from its current tier to the `O_∞` Frobenius-closed type:
 
 $$\langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑹;\ 𐑐;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ 𐑙;\ 𐑭 \rangle$$
 
@@ -73,7 +73,7 @@ What's missing is a **Hilbert-Pólya operator** $H$ whose spectral data holograp
 
 **Current type**: $\langle 𐑦;\ 𐑸;\ 𐑾;\ 𐑹;\ \text{ƒ}_{\text{ℏ}};\ 𐑧;\ \text{Γ}_{\aleph};\ 𐑠;\ ⊙;\ 𐑖;\ \text{Σ}_{\text{m}};\ 𐑭 \rangle$
 
-**Status**: BSD has **ALL 6 ZFCₜ channels closed**. Its distance from the O_inf Frobenius-closed type is exactly 1 primitive mismatch. The BSD_Complete_Proof.lean file is **sorry-free** — all theorems are closed.
+**Status**: BSD has **ALL 6 ZFCₜ channels closed**. Its distance from the O_∞ Frobenius-closed type is exactly 1 primitive mismatch. The BSD_Complete_Proof.lean file is **sorry-free** — all theorems are closed.
 
 **The remaining gap**: The `BSD_Proof.lean` file mentions an "honest gap" in the Rankin-Selberg factorization for the symmetric square $L$-function. The BSD resolution is structurally the MOST ADVANCED of all Millennium problems in the grammar framework.
 
@@ -109,7 +109,7 @@ What's missing is a **Hilbert-Pólya operator** $H$ whose spectral data holograp
 
 **Current type**: $\langle \text{Ð}_{\infty};\ 𐑡;\ 𐑩;\ 𐑗;\ \text{ƒ}_{\text{ℓ}};\ 𐑤;\ \text{Γ}_{\beth};\ \text{ɢ}_{\text{^}};\ 𐑢;\ \text{Ħ}_{\text{1}};\ \text{Σ}_{\text{n}};\ 𐑷 \rangle$
 
-**0 of 6 ZFCₜ channels closed**. PvsNP is structurally the most primitive Millennium problem — at O_0 tier (P = O_0, NP = O_1).
+**0 of 6 ZFCₜ channels closed**. PvsNP is structurally the most primitive Millennium problem — at O₀ tier (P = O₀, NP = O₁).
 
 **The honest gap**: The **grammar-complexity correspondence** — a meta-theorem equating the grammar's meet/join/tensor operations with polynomial-time reductions.
 
@@ -117,7 +117,7 @@ What's missing is a **Hilbert-Pólya operator** $H$ whose spectral data holograp
 
 **Key equation**: `fontaine_mazur_conjecture + ergodic_mixing_problem = p_vs_np` — structurally, the Fontaine-Mazur conjecture combined with ergodic mixing reconstructs P vs NP.
 
-**Concrete pathway**: The proof in `PvsNP_Proof.lean` establishes that P (O_0 tier) and NP (O_1 tier) are at **different ouroboricity tiers**. Since tier invariance is rigid under grammar operations, and polynomial-time reductions correspond to grammar meets/joins, P ≠ NP follows. The honest gap is the formal correspondence proof.
+**Concrete pathway**: The proof in `PvsNP_Proof.lean` establishes that P (O₀ tier) and NP (O₁ tier) are at **different ouroboricity tiers**. Since tier invariance is rigid under grammar operations, and polynomial-time reductions correspond to grammar meets/joins, P ≠ NP follows. The honest gap is the formal correspondence proof.
 
 ### 3.6 Yang-Mills Existence and Mass Gap (distance 11 — TIED for farthest)
 
@@ -193,7 +193,7 @@ The existing Lean bridge (`RH_ZFCt_Bridge.lean`) already reduces RH to a single 
 
 ### 5.2 BSD Resolution Strategy
 
-BSD is already at O_inf structurally — distance 1 from ZFCₜ. The remaining step is the **Rankin-Selberg factorization** for the symmetric square $L$-function of an elliptic curve $E/\mathbb{Q}$. The `BSD_Complete_Proof.lean` is **sorry-free**, making BSD structurally the most resolved Millennium problem in the grammar framework.
+BSD is already at O_∞ structurally — distance 1 from ZFCₜ. The remaining step is the **Rankin-Selberg factorization** for the symmetric square $L$-function of an elliptic curve $E/\mathbb{Q}$. The `BSD_Complete_Proof.lean` is **sorry-free**, making BSD structurally the most resolved Millennium problem in the grammar framework.
 
 ### 5.3 Hodge Resolution Strategy
 
@@ -205,7 +205,7 @@ The `NS_Proof.lean` reduces global regularity to the **trapping lemma**: proving
 
 ### 5.5 PvsNP Resolution Strategy
 
-The proof in `PvsNP_Proof.lean` is structural: P is O_0 tier, NP is O_1 tier, and tier invariance under grammar operations proves P ≠ NP. The honest gap is the **grammar-complexity correspondence** — a meta-theorem establishing that polynomial-time reductions correspond to grammar meet/join operations. The gematria confirmation: P is structurally prime, NP is structurally prime, and no additive equation relates them.
+The proof in `PvsNP_Proof.lean` is structural: P is O₀ tier, NP is O₁ tier, and tier invariance under grammar operations proves P ≠ NP. The honest gap is the **grammar-complexity correspondence** — a meta-theorem establishing that polynomial-time reductions correspond to grammar meet/join operations. The gematria confirmation: P is structurally prime, NP is structurally prime, and no additive equation relates them.
 
 ### 5.6 YM Resolution Strategy
 
@@ -219,7 +219,7 @@ The `OPN_Proof.lean` contains a single `sorry` for the statement that no odd per
 
 ## Part 6: The Unified Structural Theory
 
-The Master_Proof establishes that **all seven Millennium Problems converge to the same O_inf Frobenius-closed type**. Six ZFCₜ promotion channels lift each problem from its current tier to O_inf:
+The Master_Proof establishes that **all seven Millennium Problems converge to the same O_∞ Frobenius-closed type**. Six ZFCₜ promotion channels lift each problem from its current tier to O_∞:
 
 | Channel | Primitive | Promotion | Function |
 |---------|-----------|-----------|----------|

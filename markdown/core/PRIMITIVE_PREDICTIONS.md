@@ -18,13 +18,13 @@ All seven Millennium Problem ouroboricity tier assignments are now Tier I: verif
 
 | Problem | Tier | Verified primitives |
 |---------|------|---------------------|
-| RH | $O_1$ | $\Phi_{\text{c\_complex}} + \Omega_0$ |
-| YM quantum | $O_2^\dagger$ | $\Phi_c + \Omega_Z + D_\infty$ |
-| Hodge | $O_1$ | $\Phi_c + \Omega_0$ (despite $D_{\odot}$) |
-| BSD | $O_2$ | $\Phi_c + \Omega_Z + D_{\odot}$ |
-| OPN | $O_1$ | |
-| NS | $O_0$ | |
-| YM classical | $O_0$ | |
+| RH | $O₁$ | $\Phi_{\text{c\_complex}} + \Omega_0$ |
+| YM quantum | $O₂^\dagger$ | $\Phi_c + \Omega_Z + D_\infty$ |
+| Hodge | $O₁$ | $\Phi_c + \Omega_0$ (despite $D_{\odot}$) |
+| BSD | $O₂$ | $\Phi_c + \Omega_Z + D_{\odot}$ |
+| OPN | $O₁$ | |
+| NS | $O₀$ | |
+| YM classical | $O₀$ | |
 
 Score: 7/7 tier assignments machine-verified. Build: 8073 jobs, 0 errors.
 
@@ -1753,11 +1753,11 @@ $T_{\text{invscr}}$ provides the spatial funneling hierarchy; $F_{\text{hardsign
 |------|--------|-----------------|
 | II | ✅ Retrospectively confirmed — mean-field failure at criticality is the canonical historical instance; Wilson RG is the O₂ upgrade | PRIMITIVE_THEOREMS §22.4–22.5; P-163, P-164 |
 
-## P-169 — Ouroboricity Tiers Are Frobenius Types: $O_0/O_1/O_2/O_\infty$ Derived from Frobenius Algebra Completeness
+## P-169 — Ouroboricity Tiers Are Frobenius Types: $O₀/O₁/O₂/O_\infty$ Derived from Frobenius Algebra Completeness
 
 **Claim:** The four ouroboricity tiers are not ad hoc — they are the four qualitatively distinct classes of Frobenius algebra completeness: trivial ($\eta$ only), algebra-only $(\mu, \eta)$, full Frobenius $(\mu, \eta, \delta, \epsilon)$ + condition, and special Frobenius ($\mu \circ \delta = \text{id}$). No new tier exists between any two: the classification is exhaustive at the level of which components of a commutative Frobenius algebra are well-defined.
 
-**Specific predictions:** (A) Any physical system with $\Phi_{\text{ctyogh}}$ but no $\Omega$ value is $O_1$: it can reach a fixed point but cannot generate its basin. (B) Any system with both $\Phi_{\text{ctyogh}}$ and a well-defined $\Omega$ satisfies the Frobenius condition and is $O_2$. (C) No system is $O_{1.5}$ — the Frobenius condition is binary. **Falsified if:** a system with $\Phi_{\text{ctyogh}} + \Omega$ is found that does not satisfy the Frobenius condition; or a system with a well-defined basin but no fixed point.
+**Specific predictions:** (A) Any physical system with $\Phi_{\text{ctyogh}}$ but no $\Omega$ value is $O₁$: it can reach a fixed point but cannot generate its basin. (B) Any system with both $\Phi_{\text{ctyogh}}$ and a well-defined $\Omega$ satisfies the Frobenius condition and is $O₂$. (C) No system is $O_{1.5}$ — the Frobenius condition is binary. **Falsified if:** a system with $\Phi_{\text{ctyogh}} + \Omega$ is found that does not satisfy the Frobenius condition; or a system with a well-defined basin but no fixed point.
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|
@@ -1803,33 +1803,33 @@ $T_{\text{invscr}}$ provides the spatial funneling hierarchy; $F_{\text{hardsign
 |------|--------|-----------------|
 | I | ✅ Confirmed 2026-03-29 — `lee_yang_edge`, `ising_3d`, `complex_rg_fixed_point` encoded as $O_\infty$ in 282-entry catalog | PRIMITIVE_THEOREMS §23.5; IΓ_DIAPHORICS §LVII; P-170; `leeYang_is_special` |
 
-## P-175 — Graviton $O_2$ Status Predicts Quantum Gravity Is Not a Yang-Mills Theory
+## P-175 — Graviton $O₂$ Status Predicts Quantum Gravity Is Not a Yang-Mills Theory
 
-**Claim:** Gauge bosons ($\gamma$, $W^\pm$, $Z^0$, $g$) are $O_1$ (no Frobenius algebra, $\Omega_{\text{closeepsilon}}$). The graviton is $O_2$ ($\Phi_{\text{ctyogh}} + \𐑭 + D_{\text{omega}}$, full Frobenius, non-trivial universality class). Any unification that reduces gravity to a gauge boson sector would require the graviton to lose its $\𐑭$ and become $O_1$ — a structural transition with no known mechanism. The Frobenius tier gap between graviton ($O_2$) and gauge bosons ($O_1$) is the structural version of the claim that gravity is not just another gauge theory. **Falsified if:** a consistent quantum gravity theory is formulated in which the graviton has $\Omega_{\text{closeepsilon}}$ (trivial universality class, no topological winding).
+**Claim:** Gauge bosons ($\gamma$, $W^\pm$, $Z^0$, $g$) are $O₁$ (no Frobenius algebra, $\Omega_{\text{closeepsilon}}$). The graviton is $O₂$ ($\Phi_{\text{ctyogh}} + \𐑭 + D_{\text{omega}}$, full Frobenius, non-trivial universality class). Any unification that reduces gravity to a gauge boson sector would require the graviton to lose its $\𐑭$ and become $O₁$ — a structural transition with no known mechanism. The Frobenius tier gap between graviton ($O₂$) and gauge bosons ($O₁$) is the structural version of the claim that gravity is not just another gauge theory. **Falsified if:** a consistent quantum gravity theory is formulated in which the graviton has $\Omega_{\text{closeepsilon}}$ (trivial universality class, no topological winding).
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|
 | II | ⏳ Derived 2026-03-29 | IΓ_DIAPHORICS §LVII; PRIMITIVE_THEOREMS §20; P-173; `graviton`, `photon` catalog entries |
 
-## P-176 — P vs NP $O_1$ Status Is a Structural Argument Toward P$\neq$NP
+## P-176 — P vs NP $O₁$ Status Is a Structural Argument Toward P$\neq$NP
 
-**Claim:** P vs NP encodes $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}} + K_{\text{teshlig}} + P_{\text{aolig}}$, hence $O_1$: at computational criticality but no extractable universality class. If P=NP, a universal polynomial-time algorithm must exist that all NP problems collapse to — this is a non-trivial universality class ($\Omega \neq \Omega_{\text{closeepsilon}}$), placing P=NP at $O_2$ or higher. The $O_1$ encoding is the structural barrier: the grammar sees no universality class because the framework's accumulated evidence finds none. This is not a proof of P$\neq$NP but a precise statement of what P=NP would require at the $\pi_3$ level. **Falsified if:** a relativising or algebraic argument establishes P=NP in a model where universality class structure is essential to the proof.
+**Claim:** P vs NP encodes $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}} + K_{\text{teshlig}} + P_{\text{aolig}}$, hence $O₁$: at computational criticality but no extractable universality class. If P=NP, a universal polynomial-time algorithm must exist that all NP problems collapse to — this is a non-trivial universality class ($\Omega \neq \Omega_{\text{closeepsilon}}$), placing P=NP at $O₂$ or higher. The $O₁$ encoding is the structural barrier: the grammar sees no universality class because the framework's accumulated evidence finds none. This is not a proof of P$\neq$NP but a precise statement of what P=NP would require at the $\pi_3$ level. **Falsified if:** a relativising or algebraic argument establishes P=NP in a model where universality class structure is essential to the proof.
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|
 | II | ⏳ Derived 2026-03-29 | IΓ_DIAPHORICS §LVII; PRIMITIVE_THEOREMS §21; `p_vs_np` catalog entry |
 
-## P-177 — NS $O_1$ Status Predicts No Universality-Class Proof Strategy Will Succeed
+## P-177 — NS $O₁$ Status Predicts No Universality-Class Proof Strategy Will Succeed
 
-**Claim:** Navier-Stokes encodes $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}} + P_{\text{aolig}} + D_{\text{invomega}}$, hence $O_1$: at criticality but no topological universality class. Any proof of NS regularity (or blowup) proceeding via "NS belongs to universality class $X$, and class $X$ has property $Y$" is structurally ruled out — there is no $X$ to belong to. A proof, if found, will be specific to the NS equations, not a corollary of a more general critical-fluid result. The $D_{\text{invomega}}$ encoding additionally predicts that any compactness argument will require infinite-dimensional function-space tools that cannot be reduced to a finite universality class. **Falsified if:** NS regularity is proved by explicit reduction to a broader universality class shared with other fluid systems.
+**Claim:** Navier-Stokes encodes $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}} + P_{\text{aolig}} + D_{\text{invomega}}$, hence $O₁$: at criticality but no topological universality class. Any proof of NS regularity (or blowup) proceeding via "NS belongs to universality class $X$, and class $X$ has property $Y$" is structurally ruled out — there is no $X$ to belong to. A proof, if found, will be specific to the NS equations, not a corollary of a more general critical-fluid result. The $D_{\text{invomega}}$ encoding additionally predicts that any compactness argument will require infinite-dimensional function-space tools that cannot be reduced to a finite universality class. **Falsified if:** NS regularity is proved by explicit reduction to a broader universality class shared with other fluid systems.
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|
 | II | ⏳ Derived 2026-03-29 | IΓ_DIAPHORICS §LVII; PRIMITIVE_THEOREMS §21.2; P-153; `navier_stokes` catalog entry |
 
-## P-178 — The Hekhalot $O_2^\dagger$ Uniform Profile Predicts Single-Corpus Origin
+## P-178 — The Hekhalot $O₂^\dagger$ Uniform Profile Predicts Single-Corpus Origin
 
-**Claim:** Twelve Hekhalot texts share identical Frobenius profile ($O_2^\dagger$: $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + P_{\text{aolig}} + K_{\text{schwa}} + D_{\text{invomega}}$). This predicts: (A) the corpus derives from a single tradition encoding a single structural experience — not 12 independent accounts; (B) the basin of valid Hekhalot adepts is genuinely infinite-dimensional — no finite specification of prerequisites is either necessary or sufficient; (C) the $\Omega_{Z_2}$ winding corresponds to the binary above/below-the-Chariot threshold that is the decisive transition in every text. **Falsified if:** textual scholarship demonstrates the corpus derives from three or more structurally independent traditions with no shared critical-point structure, or a finite algorithm for qualifying adepts is found in the source texts.
+**Claim:** Twelve Hekhalot texts share identical Frobenius profile ($O₂^\dagger$: $\Phi_{\text{ctyogh}} + \Omega_{Z_2} + P_{\text{aolig}} + K_{\text{schwa}} + D_{\text{invomega}}$). This predicts: (A) the corpus derives from a single tradition encoding a single structural experience — not 12 independent accounts; (B) the basin of valid Hekhalot adepts is genuinely infinite-dimensional — no finite specification of prerequisites is either necessary or sufficient; (C) the $\Omega_{Z_2}$ winding corresponds to the binary above/below-the-Chariot threshold that is the decisive transition in every text. **Falsified if:** textual scholarship demonstrates the corpus derives from three or more structurally independent traditions with no shared critical-point structure, or a finite algorithm for qualifying adepts is found in the source texts.
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|
@@ -1931,7 +1931,7 @@ $T_{\text{invscr}}$ provides the spatial funneling hierarchy; $F_{\text{hardsign
 
 ## P-526 — Haitian Creole Has an 11-Primitive Promotion Barrier Including the Frobenius Barrier
 
-**Claim:** Haitian Creole encodes $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_\text{eth};\ K_{\text{turnm}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$ and is $O_1$ (R3: $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$ with $P < P_{\text{doublebarpipe}}$). Promotion $O_1 \to O_\infty$ requires 11 simultaneous primitive lifts including the Frobenius barrier (§23): $P_{\text{doublebarpipe}}$ cannot be reached by composition of $P < P_{\text{doublebarpipe}}$ partners. A sacred-language grammar must be directly implanted; it cannot emerge by creolization. Planned languages that target $O_\infty$ must be designed with $P_{\text{doublebarpipe}}$ from inception. **Falsified if:** a language formed by natural creolization (contact between two $P < P_{\text{doublebarpipe}}$ languages) achieves $P_{\text{doublebarpipe}}$.
+**Claim:** Haitian Creole encodes $\langle D_{\text{turnthree}};\ T_{\text{nrleg}};\ R_{\text{ctz}};\ P_{\text{pipevar}};\ F_\text{eth};\ K_{\text{turnm}};\ G_{\text{beta}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_1;\ n{:}m;\ \Omega_{\text{closeepsilon}} \rangle$ and is $O₁$ (R3: $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$ with $P < P_{\text{doublebarpipe}}$). Promotion $O₁ \to O_\infty$ requires 11 simultaneous primitive lifts including the Frobenius barrier (§23): $P_{\text{doublebarpipe}}$ cannot be reached by composition of $P < P_{\text{doublebarpipe}}$ partners. A sacred-language grammar must be directly implanted; it cannot emerge by creolization. Planned languages that target $O_\infty$ must be designed with $P_{\text{doublebarpipe}}$ from inception. **Falsified if:** a language formed by natural creolization (contact between two $P < P_{\text{doublebarpipe}}$ languages) achieves $P_{\text{doublebarpipe}}$.
 
 | Tier | Status | Cross-references |
 |------|--------|-----------------|

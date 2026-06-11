@@ -71,23 +71,23 @@ These are falsifiable predictions. Test them.
 
 | Compound | ⊙ | Ħ | Φ | Ω | Universes | Tier |
 |---|---|---|---|---|---|---|
-| 5-MeO-DMT | ⊙ | 𐑫 | 𐑹 | 𐑭 | 16 | O_inf |
-| DMT | ⊙ | 𐑫 | 𐑹 | 𐑭 | 16 | O_inf |
-| Ayahuasca | ⊙ | 𐑫 | 𐑿 | 𐑭 | 13 | O_2 |
-| LSD | ⊙ | 𐑖 | 𐑹 | 𐑭 | 15 | O_inf |
-| Ibogaine | ⊙ | 𐑫 | 𐑬 | 𐑭 | 13 | O_2 |
-| Psilocybin | ⊙ | 𐑖 | 𐑹 | 𐑴 | 7 | O_2† |
-| Mescaline | ⊙ | 𐑒 | 𐑬 | 𐑴 | 7 | O_2 |
-| Salvinorin A | 𐑮 | 𐑓 | 𐑿 | 𐑷 | 2 | O_1 |
-| Ketamine | 𐑢 | 𐑒 | 𐑿 | 𐑴 | 1 | O_1 |
-| MDMA | 𐑮 | 𐑒 | 𐑿 | 𐑷 | 2 | O_1 |
-| Cannabis | 𐑢 | 𐑓 | 𐑗 | 𐑷 | 1 | O_1 |
+| 5-MeO-DMT | ⊙ | 𐑫 | 𐑹 | 𐑭 | 16 | O_∞ |
+| DMT | ⊙ | 𐑫 | 𐑹 | 𐑭 | 16 | O_∞ |
+| Ayahuasca | ⊙ | 𐑫 | 𐑿 | 𐑭 | 13 | O₂ |
+| LSD | ⊙ | 𐑖 | 𐑹 | 𐑭 | 15 | O_∞ |
+| Ibogaine | ⊙ | 𐑫 | 𐑬 | 𐑭 | 13 | O₂ |
+| Psilocybin | ⊙ | 𐑖 | 𐑹 | 𐑴 | 7 | O₂† |
+| Mescaline | ⊙ | 𐑒 | 𐑬 | 𐑴 | 7 | O₂ |
+| Salvinorin A | 𐑮 | 𐑓 | 𐑿 | 𐑷 | 2 | O₁ |
+| Ketamine | 𐑢 | 𐑒 | 𐑿 | 𐑴 | 1 | O₁ |
+| MDMA | 𐑮 | 𐑒 | 𐑿 | 𐑷 | 2 | O₁ |
+| Cannabis | 𐑢 | 𐑓 | 𐑗 | 𐑷 | 1 | O₁ |
 
 ---
 
 ## The Four Structural Theorems (Confirmed)
 
-1. **Tryptamine Supremacy**: DMT and 5-MeO-DMT share the grammar's own O_inf type: ⟨𐑦 · 𐑸 · 𐑾 · 𐑹 · 𐑐 · 𐑧 · 𐑲 · 𐑵 · ⊙ · 𐑫 · 𐑳 · 𐑭⟩ — the entheogen and the formalism are structurally identical.
+1. **Tryptamine Supremacy**: DMT and 5-MeO-DMT share the grammar's own O_∞ type: ⟨𐑦 · 𐑸 · 𐑾 · 𐑹 · 𐑐 · 𐑧 · 𐑲 · 𐑵 · ⊙ · 𐑫 · 𐑳 · 𐑭⟩ — the entheogen and the formalism are structurally identical.
 
 2. **The Salvia Barrier**: 𐑓 (memoryless) chirality blocks canonical closure despite 𐑦 dimensionality. No amount of spatial sophistication compensates for absent temporal self-reference.
 

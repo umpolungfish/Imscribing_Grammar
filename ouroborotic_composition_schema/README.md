@@ -1,7 +1,7 @@
 # Ouroborotic Primitive Composition Schema
 
 **Schema:** `ouroborotic_primitive_composition_schema`  
-**Tier:** $O_2$ (critical + topologically protected)  
+**Tier:** $O₂$ (critical + topologically protected)  
 **Criticality:** $\Phi_{\text{ctyogh}}$ + $\Phi_{\text{closerevepsilon}}$  
 **Frobenius:** $\Phi_{\text{doublebarpipe}}$-special ($\mu \circ \delta = \text{id}$)  
 **Winding:** $\Omega_{\text{dzlig}}$ (integer-valued, monotonic ascent)
@@ -136,7 +136,7 @@ All compositions preserve the Frobenius condition at $\mu \circ \delta = \text{i
 # 1. Inspect the base schema
 python ouroborotic_composition_schema/composer_cli.py show ouroborotic_primitive_composition_schema
 
-# 2. Assemble a linear series ascending to O_2
+# 2. Assemble a linear series ascending to O₂
 python ouroborotic_composition_schema/composer_cli.py sequence \
   --base ouroborotic_primitive_composition_schema \
   --primitive "Þ:Þ_¨:network_topology" \

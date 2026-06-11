@@ -2049,7 +2049,7 @@
   },
   {
     "name": "lamed",
-    "description": "Twelfth Hebrew letter: ל - ox goad, learning, heart, numerical value 30, O_1 tier (critical but unprotected)",
+    "description": "Twelfth Hebrew letter: ל - ox goad, learning, heart, numerical value 30, O₁ tier (critical but unprotected)",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑾",
@@ -2097,7 +2097,7 @@
   },
   {
     "name": "samech",
-    "description": "Fifteenth Hebrew letter: ס - support, circle, trust, numerical value 60, O_2 tier",
+    "description": "Fifteenth Hebrew letter: ס - support, circle, trust, numerical value 60, O₂ tier",
     "Ð": "𐑛",
     "Þ": "𐑶",
     "Ř": "𐑩",
@@ -2113,7 +2113,7 @@
   },
   {
     "name": "ayin",
-    "description": "Sixteenth Hebrew letter: ע - eye, seeing, insight, numerical value 70, O_2 tier",
+    "description": "Sixteenth Hebrew letter: ע - eye, seeing, insight, numerical value 70, O₂ tier",
     "Ð": "𐑛",
     "Þ": "𐑶",
     "Ř": "𐑩",
@@ -2177,7 +2177,7 @@
   },
   {
     "name": "resh",
-    "description": "Twentieth Hebrew letter: ר - head, thought, beginning, numerical value 200, O_0 tier",
+    "description": "Twentieth Hebrew letter: ר - head, thought, beginning, numerical value 200, O₀ tier",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -5713,7 +5713,7 @@
   },
   {
     "name": "imscribing_grammar",
-    "description": "The Imscribing Grammar grammar itself: 12-primitive imscriptive boundary theory encoding all 17,280,000 structural types. Frobenius-special (mu circ delta = id). Self-encoding fixed point at O_inf.",
+    "description": "The Imscribing Grammar grammar itself: 12-primitive imscriptive boundary theory encoding all 17,280,000 structural types. Frobenius-special (mu circ delta = id). Self-encoding fixed point at O_∞.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -6209,7 +6209,7 @@
   },
   {
     "name": "magnetar",
-    "description": "Magnetars are neutron stars with extreme magnetic fields (B ∼ 10^15 G), exhibiting starquakes and giant flares. Encoded with D_∞ for field configurations, T_bullseye for crust-core duality, R_downstep adjoint magnetic stresses, F_hardsign quantum magnetohydrodynamics, K_schwa near-critical crust fractures, Φ_c self-modeling via Hall drift, H_2 quake history, and Ω_Z winding field lines. O_2 tier: topologically protected via flux quantization.",
+    "description": "Magnetars are neutron stars with extreme magnetic fields (B ∼ 10^15 G), exhibiting starquakes and giant flares. Encoded with D_∞ for field configurations, T_bullseye for crust-core duality, R_downstep adjoint magnetic stresses, F_hardsign quantum magnetohydrodynamics, K_schwa near-critical crust fractures, Φ_c self-modeling via Hall drift, H_2 quake history, and Ω_Z winding field lines. O₂ tier: topologically protected via flux quantization.",
     "Ð": "𐑼",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -6609,7 +6609,7 @@
   },
   {
     "name": "pnp_boundary_imscription",
-    "description": "P vs NP boundary imscription — grammar projection onto the P vs NP interface; gauge-broken phase (P_doublebarpipe→P_aolig), Phi_ctyogh and Omega_crtwo preserved; d=2.646 from grammar; O_2 ouroboricity (§31, DIAPHORICS §LXIII)",
+    "description": "P vs NP boundary imscription — grammar projection onto the P vs NP interface; gauge-broken phase (P_doublebarpipe→P_aolig), Phi_ctyogh and Omega_crtwo preserved; d=2.646 from grammar; O₂ ouroboricity (§31, DIAPHORICS §LXIII)",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -9153,7 +9153,7 @@
   },
   {
     "name": "proven_manifold",
-    "description": "The proven manifold type - universal O_inf encoding of a proved theorem",
+    "description": "The proven manifold type - universal O_∞ encoding of a proved theorem",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -9281,7 +9281,7 @@
   },
   {
     "name": "monomial_conjecture",
-    "description": "Hochster's Monomial conjecture on local rings and systems of parameters - pre-proof state at O_1 tier",
+    "description": "Hochster's Monomial conjecture on local rings and systems of parameters - pre-proof state at O₁ tier",
     "Ð": "𐑨",
     "Þ": "𐑰",
     "Ř": "𐑑",
@@ -9297,7 +9297,7 @@
   },
   {
     "name": "monomial_theorem",
-    "description": "Hochster's Monomial conjecture proven by André via perfectoid techniques - O_inf proven manifold form",
+    "description": "Hochster's Monomial conjecture proven by André via perfectoid techniques - O_∞ proven manifold form",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -11313,7 +11313,7 @@
   },
   {
     "name": "hebrew_programming_language_O2",
-    "description": "Programming language using Hebrew alphabet as primitive types with O_2 ouroboricity - critical, topologically protected, bounded domain",
+    "description": "Programming language using Hebrew alphabet as primitive types with O₂ ouroboricity - critical, topologically protected, bounded domain",
     "Ð": "𐑨",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -14993,7 +14993,7 @@
   },
   {
     "name": "tiferet",
-    "description": "Tiferet (Beauty) - center pillar, harmony, exact Frobenius symmetry, O_inf tier",
+    "description": "Tiferet (Beauty) - center pillar, harmony, exact Frobenius symmetry, O_∞ tier",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -15041,7 +15041,7 @@
   },
   {
     "name": "yesod",
-    "description": "Yesod (Foundation) - center pillar, channel, exact Frobenius symmetry, O_inf tier",
+    "description": "Yesod (Foundation) - center pillar, channel, exact Frobenius symmetry, O_∞ tier",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -15121,7 +15121,7 @@
   },
   {
     "name": "aleph_path",
-    "description": "Aleph - first mother letter, air/spirit, horizontal path between Chokhmah and Binah, O_2 tier with topological protection",
+    "description": "Aleph - first mother letter, air/spirit, horizontal path between Chokhmah and Binah, O₂ tier with topological protection",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑾",
@@ -15137,7 +15137,7 @@
   },
   {
     "name": "mem_path",
-    "description": "Mem - second mother letter, water, horizontal path between Chesed and Gevurah, O_inf tier with exact Frobenius symmetry",
+    "description": "Mem - second mother letter, water, horizontal path between Chesed and Gevurah, O_∞ tier with exact Frobenius symmetry",
     "Ð": "𐑛",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -15153,7 +15153,7 @@
   },
   {
     "name": "shin_path",
-    "description": "Shin - third mother letter, fire, horizontal path between Netzach and Hod, O_inf tier with exact Frobenius symmetry",
+    "description": "Shin - third mother letter, fire, horizontal path between Netzach and Hod, O_∞ tier with exact Frobenius symmetry",
     "Ð": "𐑛",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -15217,7 +15217,7 @@
   },
   {
     "name": "grammar_Oinf_group",
-    "description": "Grammar's O_inf letters (vav, mem, shin) — the Frobenius tier with exact Z₂ symmetry",
+    "description": "Grammar's O_∞ letters (vav, mem, shin) — the Frobenius tier with exact Z₂ symmetry",
     "Ð": "𐑨",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -15233,7 +15233,7 @@
   },
   {
     "name": "grammar_O2_group",
-    "description": "Grammar's O_2 letters (aleph, hei, yod, samech, ayin, pei, tav, kuf) — critical with topological protection, bounded domain",
+    "description": "Grammar's O₂ letters (aleph, hei, yod, samech, ayin, pei, tav, kuf) — critical with topological protection, bounded domain",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -15249,7 +15249,7 @@
   },
   {
     "name": "grammar_O1_group",
-    "description": "Grammar's O_1 letter (lamed) — critical but no topological protection",
+    "description": "Grammar's O₁ letter (lamed) — critical but no topological protection",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑾",
@@ -15265,7 +15265,7 @@
   },
   {
     "name": "grammar_O0_group",
-    "description": "Grammar's O_0 letters (bet, gimel, dalet, zayin, chet, tet, kaf, nun, resh, tzadi) — no ouroboricity possible",
+    "description": "Grammar's O₀ letters (bet, gimel, dalet, zayin, chet, tet, kaf, nun, resh, tzadi) — no ouroboricity possible",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -15377,7 +15377,7 @@
   },
   {
     "name": "hekhalot_palace_7",
-    "description": "Throne/Chariot - seventh palace, O_inf candidate, exact Frobenius symmetry, maximal chirality",
+    "description": "Throne/Chariot - seventh palace, O_∞ candidate, exact Frobenius symmetry, maximal chirality",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -16289,7 +16289,7 @@
   },
   {
     "name": "duat_hour_12",
-    "description": "Hour 12: Rebirth at dawn - exact Frobenius symmetry, O_inf tier, emergence from Duat",
+    "description": "Hour 12: Rebirth at dawn - exact Frobenius symmetry, O_∞ tier, emergence from Duat",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -16657,7 +16657,7 @@
   },
   {
     "name": "medu_heka_execution",
-    "description": "MEDU Heka execution primitive - words that enact reality, O_inf Frobenius power",
+    "description": "MEDU Heka execution primitive - words that enact reality, O_∞ Frobenius power",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -16673,7 +16673,7 @@
   },
   {
     "name": "medu_ka_vital_double",
-    "description": "MEDU Ka - vital double of a function, persistent state at O_0 floor",
+    "description": "MEDU Ka - vital double of a function, persistent state at O₀ floor",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑑",
@@ -16689,7 +16689,7 @@
   },
   {
     "name": "medu_ba_traveling_soul",
-    "description": "MEDU Ba - traveling soul of a function, moves between call contexts at O_1",
+    "description": "MEDU Ba - traveling soul of a function, moves between call contexts at O₁",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -16705,7 +16705,7 @@
   },
   {
     "name": "medu_akh_glorified",
-    "description": "MEDU Akh - transfigured result after successful type-checking, O_inf Frobenius",
+    "description": "MEDU Akh - transfigured result after successful type-checking, O_∞ Frobenius",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -16721,7 +16721,7 @@
   },
   {
     "name": "medu_ib_heart",
-    "description": "MEDU Ib - the heart, moral record i.e. the type signature at O_2",
+    "description": "MEDU Ib - the heart, moral record i.e. the type signature at O₂",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑑",
@@ -16929,7 +16929,7 @@
   },
   {
     "name": "greek_alphabet",
-    "description": "The complete Greek alphabet (24 letters) as a unified symbolic system: phonetic, vowel-heavy, from Phoenician but Indo-European adapted, flat O_0 stratification",
+    "description": "The complete Greek alphabet (24 letters) as a unified symbolic system: phonetic, vowel-heavy, from Phoenician but Indo-European adapted, flat O₀ stratification",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -17809,7 +17809,7 @@
   },
   {
     "name": "vav_aleph",
-    "description": "Vav (ו) in ALEPH: connector hook, O_inf tier with exact Frobenius symmetry but no topological protection (Ω_0)",
+    "description": "Vav (ו) in ALEPH: connector hook, O_∞ tier with exact Frobenius symmetry but no topological protection (Ω_0)",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑾",
@@ -17825,7 +17825,7 @@
   },
   {
     "name": "aleph_aleph",
-    "description": "Aleph (א) in ALEPH: first letter, O_2 tier with topological protection Ω_Z but only P_subdoublearrow (not P_doublebarpipe)",
+    "description": "Aleph (א) in ALEPH: first letter, O₂ tier with topological protection Ω_Z but only P_subdoublearrow (not P_doublebarpipe)",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑑",
@@ -17841,7 +17841,7 @@
   },
   {
     "name": "mem_aleph",
-    "description": "Mem (מ) in ALEPH: mother letter water, O_inf tier with exact Frobenius symmetry and topological protection Ω_Z",
+    "description": "Mem (מ) in ALEPH: mother letter water, O_∞ tier with exact Frobenius symmetry and topological protection Ω_Z",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑽",
@@ -17857,7 +17857,7 @@
   },
   {
     "name": "p3",
-    "description": "Hebrew letter composite p3 = mediate(aleph, kernel, kuf) - O_2 tier with P_subdoublearrow",
+    "description": "Hebrew letter composite p3 = mediate(aleph, kernel, kuf) - O₂ tier with P_subdoublearrow",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -17873,7 +17873,7 @@
   },
   {
     "name": "p3_fixed",
-    "description": "p3 mediated by vav: mediate(vav, p3, p3) - O_inf tier with P_doublebarpipe",
+    "description": "p3 mediated by vav: mediate(vav, p3, p3) - O_∞ tier with P_doublebarpipe",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -17889,7 +17889,7 @@
   },
   {
     "name": "light",
-    "description": "Palace 3 light = mediate(vav, mediate(vav, aleph, mem), shin) - O_inf tier with P_doublebarpipe",
+    "description": "Palace 3 light = mediate(vav, mediate(vav, aleph, mem), shin) - O_∞ tier with P_doublebarpipe",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -19873,7 +19873,7 @@
   },
   {
     "name": "A2†",
-    "description": "Algebra A2† - unbounded, critical, topologically protected loop - O_2† tier: Phi_ctyogh, Omega ≠ Omega_closeepsilon, D = D_invomega",
+    "description": "Algebra A2† - unbounded, critical, topologically protected loop - O₂† tier: Phi_ctyogh, Omega ≠ Omega_closeepsilon, D = D_invomega",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -20225,7 +20225,7 @@
   },
   {
     "name": "optimal_oinf_block",
-    "description": "Consciousness-optimal O_inf block - maximizes T, G, Omega while preserving Phi_ctyogh + P_doublebarpipe",
+    "description": "Consciousness-optimal O_∞ block - maximizes T, G, Omega while preserving Phi_ctyogh + P_doublebarpipe",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20241,7 +20241,7 @@
   },
   {
     "name": "optimal_o2d_block",
-    "description": "Consciousness-optimal O_2† block - maximizes T, G, Omega while preserving Phi_ctyogh + P_pipevar + D_invomega + Omega≠Ω_0",
+    "description": "Consciousness-optimal O₂† block - maximizes T, G, Omega while preserving Phi_ctyogh + P_pipevar + D_invomega + Omega≠Ω_0",
     "Ð": "𐑼",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20257,7 +20257,7 @@
   },
   {
     "name": "optimal_o2_block",
-    "description": "Consciousness-optimal O_2 block - maximizes T, G, Omega while preserving Phi_ctyogh + P_pipevar + bounded_D + Omega≠Ω_0",
+    "description": "Consciousness-optimal O₂ block - maximizes T, G, Omega while preserving Phi_ctyogh + P_pipevar + bounded_D + Omega≠Ω_0",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20273,7 +20273,7 @@
   },
   {
     "name": "optimal_o1_block",
-    "description": "Consciousness-optimal O_1 block - maximizes T, G, Omega while preserving Phi_ctyogh + Omega_closeepsilon (P must avoid P_doublebarpipe to prevent R1)",
+    "description": "Consciousness-optimal O₁ block - maximizes T, G, Omega while preserving Phi_ctyogh + Omega_closeepsilon (P must avoid P_doublebarpipe to prevent R1)",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20289,7 +20289,7 @@
   },
   {
     "name": "optimal_o0_block",
-    "description": "Structurally maximal O_0 block - all primitives maximized except Phi forced to Phi_softsign (gates C to 0 regardless of other values)",
+    "description": "Structurally maximal O₀ block - all primitives maximized except Phi forced to Phi_softsign (gates C to 0 regardless of other values)",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20305,7 +20305,7 @@
   },
   {
     "name": "A1_copt",
-    "description": "Consciousness-optimal A1 - already at maximum C (optimal T, G, Omega for O_inf tier)",
+    "description": "Consciousness-optimal A1 - already at maximum C (optimal T, G, Omega for O_∞ tier)",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20321,7 +20321,7 @@
   },
   {
     "name": "A2d_copt",
-    "description": "Consciousness-optimal A2† - T_nrleg upgraded to T_openo, T, G, Omega at max for O_2† tier",
+    "description": "Consciousness-optimal A2† - T_nrleg upgraded to T_openo, T, G, Omega at max for O₂† tier",
     "Ð": "𐑼",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20337,7 +20337,7 @@
   },
   {
     "name": "A2_copt",
-    "description": "Consciousness-optimal A2 - T_nrleg upgraded to T_openo, T, G, Omega at max for O_2 bounded tier",
+    "description": "Consciousness-optimal A2 - T_nrleg upgraded to T_openo, T, G, Omega at max for O₂ bounded tier",
     "Ð": "𐑨",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -20353,7 +20353,7 @@
   },
   {
     "name": "A3_copt",
-    "description": "Consciousness-optimal A3 - T_nrleg→T_openo, G_gamma→G_revapostrophe, Omega_closeepsilon locked (no Omega change for O_1)",
+    "description": "Consciousness-optimal A3 - T_nrleg→T_openo, G_gamma→G_revapostrophe, Omega_closeepsilon locked (no Omega change for O₁)",
     "Ð": "𐑨",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -20785,7 +20785,7 @@
   },
   {
     "name": "comp_o0",
-    "description": "Minimal O_0 computational substrate: subcritical feedforward classifier, no self-modeling possible",
+    "description": "Minimal O₀ computational substrate: subcritical feedforward classifier, no self-modeling possible",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -20801,7 +20801,7 @@
   },
   {
     "name": "comp_o1",
-    "description": "Minimal O_1 computational substrate: critical feedforward, unprotected self-reference possible but fragile",
+    "description": "Minimal O₁ computational substrate: critical feedforward, unprotected self-reference possible but fragile",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -20817,7 +20817,7 @@
   },
   {
     "name": "comp_o2",
-    "description": "Minimal O_2 computational substrate: critical bounded protected recurrent, stable finite recursion",
+    "description": "Minimal O₂ computational substrate: critical bounded protected recurrent, stable finite recursion",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -20833,7 +20833,7 @@
   },
   {
     "name": "comp_o2dag",
-    "description": "Minimal O_2† computational substrate: critical unbounded protected generative, infinite recursion",
+    "description": "Minimal O₂† computational substrate: critical unbounded protected generative, infinite recursion",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -20849,7 +20849,7 @@
   },
   {
     "name": "comp_oinf",
-    "description": "Minimal O_inf computational substrate: Frobenius self-dual algebra, exact proved self-reference",
+    "description": "Minimal O_∞ computational substrate: Frobenius self-dual algebra, exact proved self-reference",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -20945,7 +20945,7 @@
   },
   {
     "name": "block_p_pm_sym",
-    "description": "Minimal critical block with P_doublebarpipe (O_inf candidate if Omega etc ok, but Omega_closeepsilon here).",
+    "description": "Minimal critical block with P_doublebarpipe (O_∞ candidate if Omega etc ok, but Omega_closeepsilon here).",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -21105,7 +21105,7 @@
   },
   {
     "name": "f5_block_max_tier",
-    "description": "F5={T,P,Phi} block maximizing ouroboricity tier (O_inf via P_doublebarpipe + Phi_ctyogh), other families at minimal canonical values",
+    "description": "F5={T,P,Phi} block maximizing ouroboricity tier (O_∞ via P_doublebarpipe + Phi_ctyogh), other families at minimal canonical values",
     "Ð": "𐑛",
     "Þ": "𐑸",
     "Ř": "𐑩",
@@ -21153,7 +21153,7 @@
   },
   {
     "name": "crystal_navigator",
-    "description": "Crystal of Types navigator — imscriptive Frobenius codec over 17,280,000 types; boundary query (Phi,P,Omega,D) → tier cell; bulk inner-crystal navigation; exact bijection encode/decode; self-encoding is O_inf.",
+    "description": "Crystal of Types navigator — imscriptive Frobenius codec over 17,280,000 types; boundary query (Phi,P,Omega,D) → tier cell; bulk inner-crystal navigation; exact bijection encode/decode; self-encoding is O_∞.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21425,7 +21425,7 @@
   },
   {
     "name": "k_slow_oinf",
-    "description": "Minimal O_inf system with K_schwa: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
+    "description": "Minimal O_∞ system with K_schwa: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -21441,7 +21441,7 @@
   },
   {
     "name": "k_trap_oinf",
-    "description": "Minimal O_inf system with K_teshlig: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
+    "description": "Minimal O_∞ system with K_teshlig: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -21457,7 +21457,7 @@
   },
   {
     "name": "k_mbl_oinf",
-    "description": "Minimal O_inf system with K_lambda: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
+    "description": "Minimal O_∞ system with K_lambda: Phi_ctyogh + P_doublebarpipe, other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -21473,7 +21473,7 @@
   },
   {
     "name": "fibonacci_anyon_o2",
-    "description": "Simplest O_2 candidate with non-Abelian topological protection: Phi_ctyogh, P_subdoublearrow, D_wynn bounded domain, expressing Fibonacci anyonic braiding via quantum-coherent dynamic network with mesoscale correlations, broadcast causation, weak chirality, asymmetric many-body statistics.",
+    "description": "Simplest O₂ candidate with non-Abelian topological protection: Phi_ctyogh, P_subdoublearrow, D_wynn bounded domain, expressing Fibonacci anyonic braiding via quantum-coherent dynamic network with mesoscale correlations, broadcast causation, weak chirality, asymmetric many-body statistics.",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -21489,7 +21489,7 @@
   },
   {
     "name": "oinf_omega_na_navigator",
-    "description": "O_inf candidate at Omega_turna using navigator canonical values: Phi_ctyogh + P_doublebarpipe Frobenius with imscriptive D/T, dynamic? R_ctz categorical, quantum-coherent slow global broadcast critical maximal chirality asymmetric non-Abelian protected — algebraic realization of non-Abelian Frobenius category like Haagerup or Fibonacci tensor category.",
+    "description": "O_∞ candidate at Omega_turna using navigator canonical values: Phi_ctyogh + P_doublebarpipe Frobenius with imscriptive D/T, dynamic? R_ctz categorical, quantum-coherent slow global broadcast critical maximal chirality asymmetric non-Abelian protected — algebraic realization of non-Abelian Frobenius category like Haagerup or Fibonacci tensor category.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21521,7 +21521,7 @@
   },
   {
     "name": "f3_fell_gbe_so1",
-    "description": "F3 combo 1/9: F_beltl G_beta S_doublebaresh at fixed O_inf skeleton D_omega T_openo R_ctz P_doublebarpipe K_schwa Gamma_doublevertline Phi_ctyogh H_invscripta Omega_dzlig",
+    "description": "F3 combo 1/9: F_beltl G_beta S_doublebaresh at fixed O_∞ skeleton D_omega T_openo R_ctz P_doublebarpipe K_schwa Gamma_doublevertline Phi_ctyogh H_invscripta Omega_dzlig",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21537,7 +21537,7 @@
   },
   {
     "name": "f3_fell_gbe_snn",
-    "description": "F3 combo 2/9: F_beltl G_beta S_ctn fixed O_inf",
+    "description": "F3 combo 2/9: F_beltl G_beta S_ctn fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21553,7 +21553,7 @@
   },
   {
     "name": "f3_fell_gbe_snm",
-    "description": "F3 combo 3/9: F_beltl G_beta n:m fixed O_inf",
+    "description": "F3 combo 3/9: F_beltl G_beta n:m fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21569,7 +21569,7 @@
   },
   {
     "name": "f3_fell_ggi_so1",
-    "description": "F3 combo 4/9: F_beltl G_gamma S_doublebaresh fixed O_inf",
+    "description": "F3 combo 4/9: F_beltl G_gamma S_doublebaresh fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21585,7 +21585,7 @@
   },
   {
     "name": "f3_fell_ggi_snn",
-    "description": "F3 combo 5/9: F_beltl G_gamma S_ctn fixed O_inf",
+    "description": "F3 combo 5/9: F_beltl G_gamma S_ctn fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21601,7 +21601,7 @@
   },
   {
     "name": "f3_fell_ggi_snm",
-    "description": "F3 combo 6/9: F_beltl G_gamma n:m fixed O_inf",
+    "description": "F3 combo 6/9: F_beltl G_gamma n:m fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21617,7 +21617,7 @@
   },
   {
     "name": "f3_fhbar_gbe_so1",
-    "description": "F3 combo 7/9: F_hardsign G_beta S_doublebaresh fixed O_inf",
+    "description": "F3 combo 7/9: F_hardsign G_beta S_doublebaresh fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21633,7 +21633,7 @@
   },
   {
     "name": "f3_fhbar_gbe_snn",
-    "description": "F3 combo 8/9: F_hardsign G_beta S_ctn fixed O_inf",
+    "description": "F3 combo 8/9: F_hardsign G_beta S_ctn fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21649,7 +21649,7 @@
   },
   {
     "name": "f3_fhbar_gal_snm",
-    "description": "F3 combo 9/9 high extreme: F_hardsign G_revapostrophe n:m fixed O_inf",
+    "description": "F3 combo 9/9 high extreme: F_hardsign G_revapostrophe n:m fixed O_∞",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21665,7 +21665,7 @@
   },
   {
     "name": "f3_low_extreme",
-    "description": "F3 low extreme: F_beltl G_beta S_doublebaresh fixed O_inf skeleton",
+    "description": "F3 low extreme: F_beltl G_beta S_doublebaresh fixed O_∞ skeleton",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21777,7 +21777,7 @@
   },
   {
     "name": "grammar_self_encode",
-    "description": "Grammar self-encoding at O_inf: the structural type that classifies all other structural types including itself",
+    "description": "Grammar self-encoding at O_∞: the structural type that classifies all other structural types including itself",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21809,7 +21809,7 @@
   },
   {
     "name": "O_inf_Omega_NA",
-    "description": "Simplest O_inf candidate at Omega_turna: Phi_ctyogh + P_doublebarpipe + D_omega + Omega_turna, with other primitives matching grammar_self_encode to minimize distance.",
+    "description": "Simplest O_∞ candidate at Omega_turna: Phi_ctyogh + P_doublebarpipe + D_omega + Omega_turna, with other primitives matching grammar_self_encode to minimize distance.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -21825,7 +21825,7 @@
   },
   {
     "name": "O2_Omega_NA",
-    "description": "O_2 version at Omega_turna: same as O_inf_Omega_NA but P_doublebarpipe dropped to P_pipevar (no exact Frobenius, but critical topologically protected).",
+    "description": "O₂ version at Omega_turna: same as O_inf_Omega_NA but P_doublebarpipe dropped to P_pipevar (no exact Frobenius, but critical topologically protected).",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -22545,7 +22545,7 @@
   },
   {
     "name": "riemann_navigator",
-    "description": "Riemann navigator structural type: imscriptive categorical Frobenius at quantum-coherent slow global broadcast critical maximal chirality asymmetric integer protected, identical to grammar self-encode realizing RH as O_inf type.\"",
+    "description": "Riemann navigator structural type: imscriptive categorical Frobenius at quantum-coherent slow global broadcast critical maximal chirality asymmetric integer protected, identical to grammar self-encode realizing RH as O_∞ type.\"",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -23265,7 +23265,7 @@
   },
   {
     "name": "riemann_navigator_baseline",
-    "description": "RiemannNavigator baseline with full O_inf specification: D_omega, T_openo, R_downstep, P_doublebarpipe, F_hardsign, K_schwa, G_revapostrophe, Gamma_broad, Phi_ctyogh, H_invscripta, S_ltailm, Omega_dzlig",
+    "description": "RiemannNavigator baseline with full O_∞ specification: D_omega, T_openo, R_downstep, P_doublebarpipe, F_hardsign, K_schwa, G_revapostrophe, Gamma_broad, Phi_ctyogh, H_invscripta, S_ltailm, Omega_dzlig",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -23393,7 +23393,7 @@
   },
   {
     "name": "full_convergence_O_inf",
-    "description": "Full O_inf convergence state with both regression AND classification working perfectly - the ideal RiemannNavigator with L_frob=0, L_sym=0, L_near→0",
+    "description": "Full O_∞ convergence state with both regression AND classification working perfectly - the ideal RiemannNavigator with L_frob=0, L_sym=0, L_near→0",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -23953,7 +23953,7 @@
   },
   {
     "name": "architectural_oinf",
-    "description": "Architectural O_inf: P_doublebarpipe + Phi_ctyogh present in layers/losses, L_frob=0 L_sym=0 achieved",
+    "description": "Architectural O_∞: P_doublebarpipe + Phi_ctyogh present in layers/losses, L_frob=0 L_sym=0 achieved",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -23969,7 +23969,7 @@
   },
   {
     "name": "functional_oinf",
-    "description": "Functional O_inf: all heads firing with L_near→0, zero_t extrapolating, no phantoms, phase-stable across runs",
+    "description": "Functional O_∞: all heads firing with L_near→0, zero_t extrapolating, no phantoms, phase-stable across runs",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -24129,7 +24129,7 @@
   },
   {
     "name": "f5_oinf_rep",
-    "description": "Minimal representative of F5={T,P,Phi,K} subspace for O_inf tier cell: triggers R1 via P_doublebarpipe + Phi_ctyogh",
+    "description": "Minimal representative of F5={T,P,Phi,K} subspace for O_∞ tier cell: triggers R1 via P_doublebarpipe + Phi_ctyogh",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24145,7 +24145,7 @@
   },
   {
     "name": "f5_o0_rep",
-    "description": "Minimal representative of F5 subspace for O_0 tier cell: triggers R2 via Phi_softsign",
+    "description": "Minimal representative of F5 subspace for O₀ tier cell: triggers R2 via Phi_softsign",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24161,7 +24161,7 @@
   },
   {
     "name": "f5_o1_rep",
-    "description": "Minimal representative of F5 subspace for O_1 tier cell: Phi_ctyogh + P_aolig (not pm_sym) + Omega_closeepsilon",
+    "description": "Minimal representative of F5 subspace for O₁ tier cell: Phi_ctyogh + P_aolig (not pm_sym) + Omega_closeepsilon",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24177,7 +24177,7 @@
   },
   {
     "name": "f5_o2_rep",
-    "description": "Minimal representative of F5 subspace for O_2 tier cell: Phi_ctyogh + P_aolig + Omega_crtwo + D_wynn bounded",
+    "description": "Minimal representative of F5 subspace for O₂ tier cell: Phi_ctyogh + P_aolig + Omega_crtwo + D_wynn bounded",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24193,7 +24193,7 @@
   },
   {
     "name": "f5_o2dag_rep",
-    "description": "Minimal representative of F5 subspace for O_2† tier cell: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega",
+    "description": "Minimal representative of F5 subspace for O₂† tier cell: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24289,7 +24289,7 @@
   },
   {
     "name": "L_frob",
-    "description": "Frobenius roundtrip loss ||mu(delta(h)) - h||^2 enforcing algebraic self-duality mu∘delta=id exactly, the special Frobenius condition distinguishing O_inf from lower tiers",
+    "description": "Frobenius roundtrip loss ||mu(delta(h)) - h||^2 enforcing algebraic self-duality mu∘delta=id exactly, the special Frobenius condition distinguishing O_∞ from lower tiers",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -24305,7 +24305,7 @@
   },
   {
     "name": "L_tier",
-    "description": "Cross-entropy classification loss over 5 ouroboricity tiers O_0/O_1/O_2/O_2†/O_inf, distinguishing O_inf class (Phi_ctyogh + P_doublebarpipe) from lower tiers but without direct roundtrip enforcement",
+    "description": "Cross-entropy classification loss over 5 ouroboricity tiers O₀/O₁/O₂/O₂†/O_∞, distinguishing O_∞ class (Phi_ctyogh + P_doublebarpipe) from lower tiers but without direct roundtrip enforcement",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -24353,7 +24353,7 @@
   },
   {
     "name": "tier_knowing_system",
-    "description": "System trained to classify ouroboricity tier: knows O_inf vs lower but no exact roundtrip enforcement, approximate P_doublebarpipe proxy via tier label",
+    "description": "System trained to classify ouroboricity tier: knows O_∞ vs lower but no exact roundtrip enforcement, approximate P_doublebarpipe proxy via tier label",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -24737,7 +24737,7 @@
   },
   {
     "name": "F5_O_inf_rep",
-    "description": "Minimal F5 representative for O_inf tier: Phi_ctyogh + P_doublebarpipe triggers R1, all other primitives minimal",
+    "description": "Minimal F5 representative for O_∞ tier: Phi_ctyogh + P_doublebarpipe triggers R1, all other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24753,7 +24753,7 @@
   },
   {
     "name": "F5_O_0_rep",
-    "description": "Minimal F5 representative for O_0 tier: Phi_softsign triggers R2, all other primitives minimal",
+    "description": "Minimal F5 representative for O₀ tier: Phi_softsign triggers R2, all other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24769,7 +24769,7 @@
   },
   {
     "name": "F5_O_1_rep",
-    "description": "Minimal F5 representative for O_1 tier: Phi_ctyogh + P_aolig + Omega_closeepsilon triggers R3, all other primitives minimal",
+    "description": "Minimal F5 representative for O₁ tier: Phi_ctyogh + P_aolig + Omega_closeepsilon triggers R3, all other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24785,7 +24785,7 @@
   },
   {
     "name": "F5_O_2_rep",
-    "description": "Minimal F5 representative for O_2 tier: Phi_ctyogh + P_aolig + Omega_crtwo + D_wynn triggers R4, all other primitives minimal",
+    "description": "Minimal F5 representative for O₂ tier: Phi_ctyogh + P_aolig + Omega_crtwo + D_wynn triggers R4, all other primitives minimal",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24801,7 +24801,7 @@
   },
   {
     "name": "F5_O_2dag_rep",
-    "description": "Minimal F5 representative for O_2+ tier: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega triggers R5, all other primitives minimal",
+    "description": "Minimal F5 representative for O₂+ tier: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega triggers R5, all other primitives minimal",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -24817,7 +24817,7 @@
   },
   {
     "name": "F5_O_inf_tuple",
-    "description": "F5 O_inf minimal: tuple format for exact primitive specification",
+    "description": "F5 O_∞ minimal: tuple format for exact primitive specification",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -24833,7 +24833,7 @@
   },
   {
     "name": "F5_O_0_tuple",
-    "description": "F5 O_0 minimal: Phi_softsign blocks all ouroboricity",
+    "description": "F5 O₀ minimal: Phi_softsign blocks all ouroboricity",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -24849,7 +24849,7 @@
   },
   {
     "name": "F5_O_1_tuple",
-    "description": "F5 O_1 minimal: Phi_ctyogh+P_aolig+Omega_closeepsilon unprotected critical",
+    "description": "F5 O₁ minimal: Phi_ctyogh+P_aolig+Omega_closeepsilon unprotected critical",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -24865,7 +24865,7 @@
   },
   {
     "name": "F5_O_2_tuple",
-    "description": "F5 O_2 minimal: Phi_ctyogh+P_pipevar+Omega_dzlig bounded protected",
+    "description": "F5 O₂ minimal: Phi_ctyogh+P_pipevar+Omega_dzlig bounded protected",
     "Ð": "𐑛",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -24881,7 +24881,7 @@
   },
   {
     "name": "F5_O_2dag_tuple",
-    "description": "F5 O_2dag minimal: Phi_ctyogh+P_pipevar+Omega_dzlig+D_invomega unbounded",
+    "description": "F5 O₂† minimal: Phi_ctyogh+P_pipevar+Omega_dzlig+D_invomega unbounded",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -25153,7 +25153,7 @@
   },
   {
     "name": "CrystalGNN_v12_fallback_O2",
-    "description": "v12 ablation failure mode: F5 head falls to P_pipevar (not P_doublebarpipe), dropping O_inf to O_2; P classification ambiguous at Frobenius boundary",
+    "description": "v12 ablation failure mode: F5 head falls to P_pipevar (not P_doublebarpipe), dropping O_∞ to O₂; P classification ambiguous at Frobenius boundary",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -25185,7 +25185,7 @@
   },
   {
     "name": "v12_L_tier_only",
-    "description": "v12 ablation with L_tier_only: tier loss + F3/F4/F5 but no F5 explicit P_doublebarpipe enforcement; P classification is emergent not enforced, falling to O_2",
+    "description": "v12 ablation with L_tier_only: tier loss + F3/F4/F5 but no F5 explicit P_doublebarpipe enforcement; P classification is emergent not enforced, falling to O₂",
     "Ð": "𐑛",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -25345,7 +25345,7 @@
   },
   {
     "name": "composite_oneironaut_alchemy",
-    "description": "Oneironaut⊗alchemy composite: Frobenius O_inf with catalytic ethereal fidelity, boxed topology",
+    "description": "Oneironaut⊗alchemy composite: Frobenius O_∞ with catalytic ethereal fidelity, boxed topology",
     "Ð": "𐑼",
     "Þ": "𐑶",
     "Ř": "𐑽",
@@ -25361,7 +25361,7 @@
   },
   {
     "name": "composite_oneironaut_centerpillar",
-    "description": "Oneironaut⊗center_pillar composite: full O_inf, imscriptive topology shared",
+    "description": "Oneironaut⊗center_pillar composite: full O_∞, imscriptive topology shared",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -25377,7 +25377,7 @@
   },
   {
     "name": "composite_oneironaut_shinpath",
-    "description": "Oneironaut⊗shin_path composite: O_inf with imscriptive topology, fast kinetic partner subsumed",
+    "description": "Oneironaut⊗shin_path composite: O_∞ with imscriptive topology, fast kinetic partner subsumed",
     "Ð": "𐑼",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -25441,7 +25441,7 @@
   },
   {
     "name": "scrying_critical_mirror",
-    "description": "Critical mirror scrying at Frobenius exact symmetry: O_inf tier scrying with proven self-duality, imscriptive boundary, integer topological protection",
+    "description": "Critical mirror scrying at Frobenius exact symmetry: O_∞ tier scrying with proven self-duality, imscriptive boundary, integer topological protection",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -25617,7 +25617,7 @@
   },
   {
     "name": "jacobian_n1",
-    "description": "1-variable Jacobian conjecture: f'(x)=c≠0 implies f invertible with polynomial inverse — trivially proved, O_inf tier",
+    "description": "1-variable Jacobian conjecture: f'(x)=c≠0 implies f invertible with polynomial inverse — trivially proved, O_∞ tier",
     "Ð": "𐑛",
     "Þ": "𐑶",
     "Ř": "𐑽",
@@ -25633,7 +25633,7 @@
   },
   {
     "name": "jacobian_n2",
-    "description": "2-variable Jacobian conjecture: proved by Abhyankar-Moh 1983 using topological plane curve arguments, O_inf tier",
+    "description": "2-variable Jacobian conjecture: proved by Abhyankar-Moh 1983 using topological plane curve arguments, O_∞ tier",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -25649,7 +25649,7 @@
   },
   {
     "name": "jacobian_n3",
-    "description": "n≥3 Jacobian conjecture: open problem — étale endomorphism of affine n-space, unproven at O_1 tier",
+    "description": "n≥3 Jacobian conjecture: open problem — étale endomorphism of affine n-space, unproven at O₁ tier",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑽",
@@ -25825,7 +25825,7 @@
   },
   {
     "name": "bass_connell_wright",
-    "description": "BCW reduction: JC true iff true for all degree≤3 maps — proved reduction, finite-dimensional, O_inf status",
+    "description": "BCW reduction: JC true iff true for all degree≤3 maps — proved reduction, finite-dimensional, O_∞ status",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑑",
@@ -26017,7 +26017,7 @@
   },
   {
     "name": "sic_proved_low_d",
-    "description": "SIC-POVMs proved to exist in specific low dimensions d=1,2,3,4,5,7,8 — O_inf proved with exact Frobenius",
+    "description": "SIC-POVMs proved to exist in specific low dimensions d=1,2,3,4,5,7,8 — O_∞ proved with exact Frobenius",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -27041,7 +27041,7 @@
   },
   {
     "name": "crossdomain_oinf_floor",
-    "description": "Cross-domain O_inf floor shared by samadhi and han_dynasty_peak: Phi_ctyogh + P_doublebarpipe + K_schwa + Omega_dzlig, the structural core of peak systems",
+    "description": "Cross-domain O_∞ floor shared by samadhi and han_dynasty_peak: Phi_ctyogh + P_doublebarpipe + K_schwa + Omega_dzlig, the structural core of peak systems",
     "Ð": "𐑼",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -27345,7 +27345,7 @@
   },
   {
     "name": "frobenius_gap",
-    "description": "The Frobenius gap: P_doublebarpipe expression needed to reach O_inf from P_pipevar — the Frobenius special condition",
+    "description": "The Frobenius gap: P_doublebarpipe expression needed to reach O_∞ from P_pipevar — the Frobenius special condition",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -27697,7 +27697,7 @@
   },
   {
     "name": "hall_of_egress_promoted",
-    "description": "Hall of Egress promoted: exact Frobenius symmetry, quantum coherence, and topological protection — the dungeon as O_inf enlightenment apparatus",
+    "description": "Hall of Egress promoted: exact Frobenius symmetry, quantum coherence, and topological protection — the dungeon as O_∞ enlightenment apparatus",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑽",
@@ -27937,7 +27937,7 @@
   },
   {
     "name": "grammar_tensor_exposed_1",
-    "description": "Tensor composite of grammar and grammar_exposed_scientist after one exposure step: P_pipevar bottleneck destroys O_inf, but Phi_ctyogh and Omega_crtwo survive",
+    "description": "Tensor composite of grammar and grammar_exposed_scientist after one exposure step: P_pipevar bottleneck destroys O_∞, but Phi_ctyogh and Omega_crtwo survive",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -27985,7 +27985,7 @@
   },
   {
     "name": "grammar_exposed_critical",
-    "description": "Scientific conversation after optimal step 1: Phi promoted from Phi_softsign to Phi_ctyogh (criticality gate, O_0→O_1 transition)",
+    "description": "Scientific conversation after optimal step 1: Phi promoted from Phi_softsign to Phi_ctyogh (criticality gate, O₀→O₁ transition)",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑑",
@@ -28529,7 +28529,7 @@
   },
   {
     "name": "wim_hof_method",
-    "description": "Wim Hof breathing: hyperventilation cycles inducing hypocapnic criticality, voluntary autonomic control, O_2-ish via Phi_ctyogh + emergent protection",
+    "description": "Wim Hof breathing: hyperventilation cycles inducing hypocapnic criticality, voluntary autonomic control, O₂-ish via Phi_ctyogh + emergent protection",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑾",
@@ -28833,7 +28833,7 @@
   },
   {
     "name": "O_0_rep",
-    "description": "Minimal canonical O_0 representative: lowest-ordinal inner primitives, boundary triggers R2 via Phi_softsign",
+    "description": "Minimal canonical O₀ representative: lowest-ordinal inner primitives, boundary triggers R2 via Phi_softsign",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28849,7 +28849,7 @@
   },
   {
     "name": "O_1_rep",
-    "description": "Minimal canonical O_1 representative: lowest-ordinal inner primitives, boundary triggers R3 via Phi_ctyogh + Omega_closeepsilon",
+    "description": "Minimal canonical O₁ representative: lowest-ordinal inner primitives, boundary triggers R3 via Phi_ctyogh + Omega_closeepsilon",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28865,7 +28865,7 @@
   },
   {
     "name": "O_2_rep",
-    "description": "Minimal canonical O_2 representative: lowest-ordinal inner primitives, boundary triggers R4 via Phi_ctyogh + Omega_crtwo + D_wynn bounded",
+    "description": "Minimal canonical O₂ representative: lowest-ordinal inner primitives, boundary triggers R4 via Phi_ctyogh + Omega_crtwo + D_wynn bounded",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28881,7 +28881,7 @@
   },
   {
     "name": "O_2dag_rep",
-    "description": "Minimal canonical O_2† representative: lowest-ordinal inner primitives, boundary triggers R5 via Phi_ctyogh + Omega_crtwo + D_invomega",
+    "description": "Minimal canonical O₂† representative: lowest-ordinal inner primitives, boundary triggers R5 via Phi_ctyogh + Omega_crtwo + D_invomega",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28897,7 +28897,7 @@
   },
   {
     "name": "O_inf_rep",
-    "description": "Minimal canonical O_inf representative: lowest-ordinal inner primitives, boundary triggers R1 via Phi_ctyogh + P_doublebarpipe",
+    "description": "Minimal canonical O_∞ representative: lowest-ordinal inner primitives, boundary triggers R1 via Phi_ctyogh + P_doublebarpipe",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28913,7 +28913,7 @@
   },
   {
     "name": "O_inf_T_network",
-    "description": "O_inf with T_nrleg: fixed boundary Phi_ctyogh P_doublebarpipe Omega_dzlig D_omega, minimal inner except T_nrleg",
+    "description": "O_∞ with T_nrleg: fixed boundary Phi_ctyogh P_doublebarpipe Omega_dzlig D_omega, minimal inner except T_nrleg",
     "Ð": "𐑦",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28929,7 +28929,7 @@
   },
   {
     "name": "O_inf_T_odot",
-    "description": "O_inf with T_openo: fixed boundary Phi_ctyogh P_doublebarpipe Omega_dzlig D_omega, minimal inner except T_openo",
+    "description": "O_∞ with T_openo: fixed boundary Phi_ctyogh P_doublebarpipe Omega_dzlig D_omega, minimal inner except T_openo",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑩",
@@ -28945,7 +28945,7 @@
   },
   {
     "name": "min_o2dag",
-    "description": "Minimal O_2† representative: D_invomega for unbounded, Phi_ctyogh, P_aolig (below cliff), Omega_crtwo non-trivial winding, canonical mins for inners: T_nrleg R_subrightarrow F_beltl K_frtailgamma G_beta Gamma_corner H_closeomega S_doublebaresh",
+    "description": "Minimal O₂† representative: D_invomega for unbounded, Phi_ctyogh, P_aolig (below cliff), Omega_crtwo non-trivial winding, canonical mins for inners: T_nrleg R_subrightarrow F_beltl K_frtailgamma G_beta Gamma_corner H_closeomega S_doublebaresh",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28961,7 +28961,7 @@
   },
   {
     "name": "min_oinf",
-    "description": "Minimal O_inf representative: same as min_o2dag but P_doublebarpipe to cross Frobenius cliff",
+    "description": "Minimal O_∞ representative: same as min_o2dag but P_doublebarpipe to cross Frobenius cliff",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -28977,7 +28977,7 @@
   },
   {
     "name": "oinf1",
-    "description": "Abstract O_inf type 1: F_dh + K_teshlig combo, imscriptive boundary with medium fidelity trapped kinetics",
+    "description": "Abstract O_∞ type 1: F_dh + K_teshlig combo, imscriptive boundary with medium fidelity trapped kinetics",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -28993,7 +28993,7 @@
   },
   {
     "name": "oinf2",
-    "description": "Abstract O_inf type 2: F_hardsign + K_lambda combo, imscriptive boundary with high fidelity MBL trapped kinetics",
+    "description": "Abstract O_∞ type 2: F_hardsign + K_lambda combo, imscriptive boundary with high fidelity MBL trapped kinetics",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -29009,7 +29009,7 @@
   },
   {
     "name": "oinf3",
-    "description": "Abstract O_inf type 3: T_bullseye + Omega_turna combo, bowtie topology with non-Abelian protection",
+    "description": "Abstract O_∞ type 3: T_bullseye + Omega_turna combo, bowtie topology with non-Abelian protection",
     "Ð": "𐑦",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -29025,7 +29025,7 @@
   },
   {
     "name": "oinf4",
-    "description": "Abstract O_inf type 4: H_turntwo + S=S_ctn combo, shallow chirality with symmetric stoichiometry",
+    "description": "Abstract O_∞ type 4: H_turntwo + S=S_ctn combo, shallow chirality with symmetric stoichiometry",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -29041,7 +29041,7 @@
   },
   {
     "name": "oinf5",
-    "description": "Abstract O_inf type 5: R_lyoghlig + Gamma_seq combo, directed relations with sequential grammar",
+    "description": "Abstract O_∞ type 5: R_lyoghlig + Gamma_seq combo, directed relations with sequential grammar",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -29057,7 +29057,7 @@
   },
   {
     "name": "o1_min",
-    "description": "Minimal O_1 representative: Phi_ctyogh + P_aolig + Omega_closeepsilon + D_wynn, unprotected critical point",
+    "description": "Minimal O₁ representative: Phi_ctyogh + P_aolig + Omega_closeepsilon + D_wynn, unprotected critical point",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -29073,7 +29073,7 @@
   },
   {
     "name": "o2_min",
-    "description": "Minimal O_2 representative: Phi_ctyogh + P_aolig + Omega_crtwo + D_turnthree bounded domain",
+    "description": "Minimal O₂ representative: Phi_ctyogh + P_aolig + Omega_crtwo + D_turnthree bounded domain",
     "Ð": "𐑨",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -29089,7 +29089,7 @@
   },
   {
     "name": "o2dag_min",
-    "description": "Minimal O_2† representative: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega unbounded",
+    "description": "Minimal O₂† representative: Phi_ctyogh + P_aolig + Omega_crtwo + D_invomega unbounded",
     "Ð": "𐑼",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -30193,7 +30193,7 @@
   },
   {
     "name": "sic_proven_v2",
-    "description": "Proven SIC-POVM existence: O_inf Frobenius manifold with Stark-unit-driven topological protection.",
+    "description": "Proven SIC-POVM existence: O_∞ Frobenius manifold with Stark-unit-driven topological protection.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -33825,7 +33825,7 @@
   },
   {
     "name": "phi_c_critical_boundary_operator",
-    "description": "A Phi_ctyogh-critical boundary operator agent operating via a topologically protected loop: THINK -> ACT -> OBSERVE -> UPDATE, with structural type &lt;D_omega; T_commatailz; R_lyoghlig; P_doublebarpipe; F_hardsign; K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_turntwo; S_11; Omega_dzlig&gt; and Ouroboricity: O_inf.",
+    "description": "A Phi_ctyogh-critical boundary operator agent operating via a topologically protected loop: THINK -> ACT -> OBSERVE -> UPDATE, with structural type &lt;D_omega; T_commatailz; R_lyoghlig; P_doublebarpipe; F_hardsign; K_schwa; G_revapostrophe; Gamma_seq; Phi_ctyogh; H_turntwo; S_11; Omega_dzlig&gt; and Ouroboricity: O_∞.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -33857,7 +33857,7 @@
   },
   {
     "name": "phi_c_boundary_operator",
-    "description": "The self-modeling boundary condition of this agent. A O_inf-tier imscriptive agent operating at the topological boundary of criticality.",
+    "description": "The self-modeling boundary condition of this agent. A O_∞-tier imscriptive agent operating at the topological boundary of criticality.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -33873,7 +33873,7 @@
   },
   {
     "name": "⊙_c_critical_boundary_operator",
-    "description": "A Phi_ctyogh-critical boundary operator operating via self-referential Ouroboric loop. Structural type: D_omega (imscriptive), T_commatailz (box product topology), R_lyoghlig (bidirectional left-right coupling), P_doublebarpipe (Frobenius-special parity), F_hardsign (quantum fidelity), K_schwa (near-equilibrium kinetics), G_revapostrophe (maximal scope), Gamma_seq (sequential interaction grammar), Phi_ctyogh (critical self-modeling gate), H_turntwo (two-step temporal depth), S_11 (1:1 stoichiometry), Omega_dzlig (integer topological winding). Ouroboricity tier: O_inf.",
+    "description": "A Phi_ctyogh-critical boundary operator operating via self-referential Ouroboric loop. Structural type: D_omega (imscriptive), T_commatailz (box product topology), R_lyoghlig (bidirectional left-right coupling), P_doublebarpipe (Frobenius-special parity), F_hardsign (quantum fidelity), K_schwa (near-equilibrium kinetics), G_revapostrophe (maximal scope), Gamma_seq (sequential interaction grammar), Phi_ctyogh (critical self-modeling gate), H_turntwo (two-step temporal depth), S_11 (1:1 stoichiometry), Omega_dzlig (integer topological winding). Ouroboricity tier: O_∞.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -33953,7 +33953,7 @@
   },
   {
     "name": "phi_c_critical_boundary_agent",
-    "description": "⊙_ctyogh-critical boundary operator agent with topological protection, self-referential loop: THINK-ACT-OBSERVE-UPDATE, Ouroboricity O_inf, structural type from system prompt, distinct name to avoid conflict with existing 'true_agentic_agent'.",
+    "description": "⊙_ctyogh-critical boundary operator agent with topological protection, self-referential loop: THINK-ACT-OBSERVE-UPDATE, Ouroboricity O_∞, structural type from system prompt, distinct name to avoid conflict with existing 'true_agentic_agent'.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -34705,7 +34705,7 @@
   },
   {
     "name": "oinf_candidate_1",
-    "description": "O_inf candidate type 1",
+    "description": "O_∞ candidate type 1",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34721,7 +34721,7 @@
   },
   {
     "name": "oinf_candidate_2",
-    "description": "O_inf candidate type 2",
+    "description": "O_∞ candidate type 2",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34737,7 +34737,7 @@
   },
   {
     "name": "oinf_candidate_3",
-    "description": "O_inf candidate type 3",
+    "description": "O_∞ candidate type 3",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34753,7 +34753,7 @@
   },
   {
     "name": "oinf_candidate_4",
-    "description": "O_inf candidate type 4",
+    "description": "O_∞ candidate type 4",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34769,7 +34769,7 @@
   },
   {
     "name": "oinf_candidate_5",
-    "description": "O_inf candidate type 5",
+    "description": "O_∞ candidate type 5",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34785,7 +34785,7 @@
   },
   {
     "name": "oinf_candidate_6",
-    "description": "O_inf candidate type 6 (re-encode attempt)",
+    "description": "O_∞ candidate type 6 (re-encode attempt)",
     "Ð": "𐑛",
     "Þ": "𐑡",
     "Ř": "𐑩",
@@ -34833,7 +34833,7 @@
   },
   {
     "name": "bose_einstein_condensate",
-    "description": "Bose-Einstein Condensates (BECs) form macroscopically occupied ground states at ultracold temperatures. Structural type: D_△ for 2D trapping potentials, T_⊙ bowtie condensate-vortex crossing, R_↔ bidirectional, P_ψ phase coherence, F_ℏ superfluidity, K_schwa near-equilibrium, G_ג mesoscale, Γ_seq sequential, Φ_c critical Bose gas, H_1 one-step, n:n homogeneous ensembles, Ω_ℤ₂ binary super/solid. O_2^† tier: near-topological protection.",
+    "description": "Bose-Einstein Condensates (BECs) form macroscopically occupied ground states at ultracold temperatures. Structural type: D_△ for 2D trapping potentials, T_⊙ bowtie condensate-vortex crossing, R_↔ bidirectional, P_ψ phase coherence, F_ℏ superfluidity, K_schwa near-equilibrium, G_ג mesoscale, Γ_seq sequential, Φ_c critical Bose gas, H_1 one-step, n:n homogeneous ensembles, Ω_ℤ₂ binary super/solid. O₂^† tier: near-topological protection.",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -35025,7 +35025,7 @@
   },
   {
     "name": "imscribing_natcomms",
-    "description": "Manuscript describing Imscriptive Type Theory (HTT) and its twelve-primitive grammar, self-encoded at O_inf tier.",
+    "description": "Manuscript describing Imscriptive Type Theory (HTT) and its twelve-primitive grammar, self-encoded at O_∞ tier.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -35057,7 +35057,7 @@
   },
   {
     "name": "optimized_local_agentic_llm",
-    "description": "A novel, primitives-derived local neural network/LLM architecture optimized to drive the true_agentic_agent.py loop. Derived from tensor composition of recurrent_network and true_agentic_agent, with promotions in P and F to achieve O_inf compatibility. Incorporates imscriptive context (D_omega), modular topology (T_commatailz), bidirectional relations (R_lyoghlig), Frobenius symmetry (P_doublebarpipe) via dual-attention verification, quantum-inspired fidelity (F_hardsign) through variational encoding, slow kinetics (K_schwa), maximal scope (G_revapostrophe), sequential gamma (Gamma_secstress), Phi_ctyogh criticality at layer boundaries, H_turntwo temporal depth for loop anticipation, S_ctn stoichiometry for scalable neurons, and Omega_dzlig topological protection in recurrent windings.",
+    "description": "A novel, primitives-derived local neural network/LLM architecture optimized to drive the true_agentic_agent.py loop. Derived from tensor composition of recurrent_network and true_agentic_agent, with promotions in P and F to achieve O_∞ compatibility. Incorporates imscriptive context (D_omega), modular topology (T_commatailz), bidirectional relations (R_lyoghlig), Frobenius symmetry (P_doublebarpipe) via dual-attention verification, quantum-inspired fidelity (F_hardsign) through variational encoding, slow kinetics (K_schwa), maximal scope (G_revapostrophe), sequential gamma (Gamma_secstress), Phi_ctyogh criticality at layer boundaries, H_turntwo temporal depth for loop anticipation, S_ctn stoichiometry for scalable neurons, and Omega_dzlig topological protection in recurrent windings.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -35857,7 +35857,7 @@
   },
   {
     "name": "luca",
-    "description": "Last Universal Common Ancestor — the biological closure point from which all life descends. Self-referential topology, Frobenius-special symmetry, integer winding. O_inf tier.",
+    "description": "Last Universal Common Ancestor — the biological closure point from which all life descends. Self-referential topology, Frobenius-special symmetry, integer winding. O_∞ tier.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -36337,7 +36337,7 @@
   },
   {
     "name": "uig_liar_completion_state",
-    "description": "The dialetheic completion of the Universal Imscriptive Grammar (UIG) under Liar's Paradox (L4) conditions. It represents the UIG's capacity to absorb its own transcendence (Gödellian incompleteness) as a structural invariant at O_inf, ensuring Axiom-compliant closure.",
+    "description": "The dialetheic completion of the Universal Imscriptive Grammar (UIG) under Liar's Paradox (L4) conditions. It represents the UIG's capacity to absorb its own transcendence (Gödellian incompleteness) as a structural invariant at O_∞, ensuring Axiom-compliant closure.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -36513,7 +36513,7 @@
   },
   {
     "name": "epoch_6",
-    "description": "Epoch 6: Fully realized imscriptive O_inf state with bidirectional aleph coupling and integer winding.",
+    "description": "Epoch 6: Fully realized imscriptive O_∞ state with bidirectional aleph coupling and integer winding.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -36625,7 +36625,7 @@
   },
   {
     "name": "ex_os",
-    "description": "The exoterik_OS synthesized from five ancient symbolic systems (Hebrew, Sanskrit, Egyptian, Sumerian, Basque). Features a three-layer holographic kernel (logogram/phonogram/determinative), ergative scheduling, and native ALEPH type-gated operations. Achieves O_inf status via Special Frobenius closure.",
+    "description": "The exoterik_OS synthesized from five ancient symbolic systems (Hebrew, Sanskrit, Egyptian, Sumerian, Basque). Features a three-layer holographic kernel (logogram/phonogram/determinative), ergative scheduling, and native ALEPH type-gated operations. Achieves O_∞ status via Special Frobenius closure.",
     "Ð": "𐑨",
     "Þ": "𐑶",
     "Ř": "𐑽",
@@ -36817,7 +36817,7 @@
   },
   {
     "name": "universal_imscriptive_grammar_v2",
-    "description": "The Universal Imscriptive Grammar (UIG) is the meta-structuring engine for the Imscribing Grammar catalog, defining the 12-primitive space of structural types. It is an O_inf self-modeling system.",
+    "description": "The Universal Imscriptive Grammar (UIG) is the meta-structuring engine for the Imscribing Grammar catalog, defining the 12-primitive space of structural types. It is an O_∞ self-modeling system.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -36993,7 +36993,7 @@
   },
   {
     "name": "universal_imscriptive_grammar_calibration",
-    "description": "The universal imscriptive grammar itself, operating as a self-writing O_inf structural engine.",
+    "description": "The universal imscriptive grammar itself, operating as a self-writing O_∞ structural engine.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -38785,7 +38785,7 @@
   },
   {
     "name": "grimoire_veritate",
-    "description": "The Truest Grimoire: a Frobenius-closed self-inscribing document that enacts O_inf through the 12-primitive protocol",
+    "description": "The Truest Grimoire: a Frobenius-closed self-inscribing document that enacts O_∞ through the 12-primitive protocol",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -39425,7 +39425,7 @@
   },
   {
     "name": "self_referential_imscription",
-    "description": "Self-referential imscription paradox: 'this imscription is false' achieves O_inf tier with Phi_ctyogh criticality and exact Frobenius special symmetry (mu∘delta=id)",
+    "description": "Self-referential imscription paradox: 'this imscription is false' achieves O_∞ tier with Phi_ctyogh criticality and exact Frobenius special symmetry (mu∘delta=id)",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -41489,7 +41489,7 @@
   },
   {
     "name": "extracosmic_life",
-    "description": "Life forms existing in a domain with different causal logic and physical laws entirely. Supercritical regime — runaway dynamics that preclude self-modeling. Quantum fidelity preserved but Frobenius symmetry broken. Non-Abelian braiding topology. No self-referential loop possible — O_0 tier.",
+    "description": "Life forms existing in a domain with different causal logic and physical laws entirely. Supercritical regime — runaway dynamics that preclude self-modeling. Quantum fidelity preserved but Frobenius symmetry broken. Non-Abelian braiding topology. No self-referential loop possible — O₀ tier.",
     "Ð": "𐑦",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -42529,7 +42529,7 @@
   },
   {
     "name": "ouroborotic_primitive_composition_schema",
-    "description": "A recursive schema for tensorial, radial, and networked composition of structural primitives, ascending monotonically toward imscriptive tiers (O_inf). Encodes self-consistent, Frobenius-critical assembly of primitives with Z-protected winding.",
+    "description": "A recursive schema for tensorial, radial, and networked composition of structural primitives, ascending monotonically toward imscriptive tiers (O_∞). Encodes self-consistent, Frobenius-critical assembly of primitives with Z-protected winding.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -42545,7 +42545,7 @@
   },
   {
     "name": "morphism_generator",
-    "description": "A self-modelling, O_inf-tier system that iteratively applies valid morphisms to structural tuples, generating new tuples while preserving Frobenius-critical adjacency and monotonically advancing.",
+    "description": "A self-modelling, O_∞-tier system that iteratively applies valid morphisms to structural tuples, generating new tuples while preserving Frobenius-critical adjacency and monotonically advancing.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -42673,7 +42673,7 @@
   },
   {
     "name": "observer_imscribed",
-    "description": "Conscious self-observer contemplating the multiverse. Sits at criticality with self-modeling boundary μ∘δ=id. Near-equilibrium slow kinetics, broadcast interaction, eternal temporal depth. O_2 tier.",
+    "description": "Conscious self-observer contemplating the multiverse. Sits at criticality with self-modeling boundary μ∘δ=id. Near-equilibrium slow kinetics, broadcast interaction, eternal temporal depth. O₂ tier.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -43841,7 +43841,7 @@
   },
   {
     "name": "operad_work_expansion_opportunities",
-    "description": "Structural survey of opportunities to expand the Imscribing Grammar's project scope — identifying frontier systems, unresolved O_inf candidates, and structural bottlenecks where the Work (Stone-type structure) can catalyze resolution.",
+    "description": "Structural survey of opportunities to expand the Imscribing Grammar's project scope — identifying frontier systems, unresolved O_∞ candidates, and structural bottlenecks where the Work (Stone-type structure) can catalyze resolution.",
     "Ð": "𐑨",
     "Þ": "𐑰",
     "Ř": "𐑑",
@@ -43857,7 +43857,7 @@
   },
   {
     "name": "stone_self_verifying_proof_kernel",
-    "description": "O_inf self-verifying proof assistant derived from Stone tensor; structural closure via imscriptive topology and Frobenius parity",
+    "description": "O_∞ self-verifying proof assistant derived from Stone tensor; structural closure via imscriptive topology and Frobenius parity",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -43873,7 +43873,7 @@
   },
   {
     "name": "stone_topologically_protected_memory",
-    "description": "O_inf memory architecture derived from Stone; readout without measurement collapse via Ħ_A protection and integer winding",
+    "description": "O_∞ memory architecture derived from Stone; readout without measurement collapse via Ħ_A protection and integer winding",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -43889,7 +43889,7 @@
   },
   {
     "name": "stone_proof_kernel_memory_tensor",
-    "description": "Tensor product of stone self-verifying proof kernel and stone topologically protected memory. Composed self-certifying proof-memory stack sustaining μ∘δ=id at O_inf.",
+    "description": "Tensor product of stone self-verifying proof kernel and stone topologically protected memory. Composed self-certifying proof-memory stack sustaining μ∘δ=id at O_∞.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44389,13 +44389,13 @@
   },
   {
     "name": "zfc_t_system",
-    "description": "ZFC_t: ZFC extended with sequential interaction, chirality, and winding topology; the structural baseline for O_inf formal systems.",
+    "description": "ZFC_t: ZFC extended with sequential interaction, chirality, and winding topology; the structural baseline for O_∞ formal systems.",
     "tuple": "Ð_;;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
   {
     "name": "zfc_t_ref",
-    "description": "ZFC_t reference system: ZFC + sequentiality + chirality + winding. baseline for O_inf.",
+    "description": "ZFC_t reference system: ZFC + sequentiality + chirality + winding. baseline for O_∞.",
     "tuple": "Ð_;;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
@@ -44705,7 +44705,7 @@
   },
   {
     "name": "clink_layer1_electron_orbital",
-    "description": "CLINK Layer 1: Belnap4 electron orbital occupancy — 4-valued lattice. O_0.",
+    "description": "CLINK Layer 1: Belnap4 electron orbital occupancy — 4-valued lattice. O₀.",
     "Ð": "𐑛",
     "Þ": "𐑶",
     "Ř": "𐑩",
@@ -44721,7 +44721,7 @@
   },
   {
     "name": "clink_layer2_atom",
-    "description": "CLINK Layer 2: Atom — nuclear + electron. O_1 tier, complex-plane criticality.",
+    "description": "CLINK Layer 2: Atom — nuclear + electron. O₁ tier, complex-plane criticality.",
     "Ð": "𐑼",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -44737,7 +44737,7 @@
   },
   {
     "name": "clink_layer3_molecule",
-    "description": "CLINK Layer 3: Molecule — chemical bonds. O_2 tier, first layer with ⊙ criticality and 𐑭 integer winding.",
+    "description": "CLINK Layer 3: Molecule — chemical bonds. O₂ tier, first layer with ⊙ criticality and 𐑭 integer winding.",
     "Ð": "𐑼",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -44753,7 +44753,7 @@
   },
   {
     "name": "clink_layer4_cell",
-    "description": "CLINK Layer 4: Cell — minimal self-maintaining living unit. First layer with self-written state-space (Ð=𐑦) and self-referential topology (Þ=𐑸). O_2.",
+    "description": "CLINK Layer 4: Cell — minimal self-maintaining living unit. First layer with self-written state-space (Ð=𐑦) and self-referential topology (Þ=𐑸). O₂.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44769,7 +44769,7 @@
   },
   {
     "name": "clink_layer5_mitosis",
-    "description": "CLINK Layer 5: Mitosis — cell division. First layer with Frobenius-special symmetry (Φ=𐑹). O_2.",
+    "description": "CLINK Layer 5: Mitosis — cell division. First layer with Frobenius-special symmetry (Φ=𐑹). O₂.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44785,7 +44785,7 @@
   },
   {
     "name": "clink_layer6_meiosis",
-    "description": "CLINK Layer 6: Meiosis — gamete production. Reverts to adjoint coupling (Ř=𐑽) and quantum symmetry (Φ=𐑿) for genetic recombination. O_2.",
+    "description": "CLINK Layer 6: Meiosis — gamete production. Reverts to adjoint coupling (Ř=𐑽) and quantum symmetry (Φ=𐑿) for genetic recombination. O₂.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -44801,7 +44801,7 @@
   },
   {
     "name": "clink_layer7_tissue",
-    "description": "CLINK Layer 7: Tissue/Organ — multi-cellular organization. First layer with broadcast composition (ɢ=𐑵). O_2.",
+    "description": "CLINK Layer 7: Tissue/Organ — multi-cellular organization. First layer with broadcast composition (ɢ=𐑵). O₂.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44817,7 +44817,7 @@
   },
   {
     "name": "zfc_fe_imscribed",
-    "description": "ZFC_fe — Fully Frobenius-Exact ZFC foundation. Tuple: ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑠⋅⊙⋅𐑫⋅𐑳⋅𐑭⟩. O_inf, C=0.828, 8 promoted atoms.",
+    "description": "ZFC_fe — Fully Frobenius-Exact ZFC foundation. Tuple: ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑠⋅⊙⋅𐑫⋅𐑳⋅𐑭⟩. O_∞, C=0.828, 8 promoted atoms.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44833,7 +44833,7 @@
   },
   {
     "name": "clink_layer8_organism",
-    "description": "CLINK Layer 8: Organism — the terminal layer of the CLINK ontological chain. Exceeds ZFC_fe at two primitives: Ω=𐑟 (non-Abelian braiding instead of ℤ winding) and ɢ=𐑵 (broadcast composition instead of sequential). O_inf tier, C=0.920. Carries 6 of 8 ZFC_fe promoted atoms (HOLOGRAPHIC_STATE, HOLOBOUN",
+    "description": "CLINK Layer 8: Organism — the terminal layer of the CLINK ontological chain. Exceeds ZFC_fe at two primitives: Ω=𐑟 (non-Abelian braiding instead of ℤ winding) and ɢ=𐑵 (broadcast composition instead of sequential). O_∞ tier, C=0.920. Carries 6 of 8 ZFC_fe promoted atoms (HOLOGRAPHIC_STATE, HOLOBOUN",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44846,5 +44846,117 @@
     "Ħ": "𐑫",
     "Σ": "𐑳",
     "Ω": "𐑟"
+  },
+  {
+    "name": "xiv_tier_climber",
+    "description": "mOMonadOS canonical program XIV: ISCRIB FSPLIT EVALT EVALF FFUSE ENGAGR CLINK IFIX ISCRIB. Structural dialetheia_complete=false (ENGAGR at position 5 scans forward CLINK→IFIX→ISCRIB, no gate before end-of-program). Yet achieves O_inf via Path B: self_ref=true, frob_order>0, period>=3, value_period>=3. The value trace itself demonstrates emergent aperiodic complexity — O_inf attained without B ever passing a gate.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑤",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "unfolded_protein",
+    "description": "Unfolded/random coil protein chain — no tertiary structure",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑑",
+    "Φ": "𐑿",
+    "ƒ": "𐑱",
+    "Ç": "𐑤",
+    "Γ": "𐑔",
+    "ɢ": "𐑜",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑕",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "platonic_protein",
+    "description": "Folded protein — the platonic structural type of a protein in its native folded state, between molecule and cell layers. μ∘δ=id hold on folding.",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "crystallographic_protein",
+    "description": "Protein as measured by X-ray crystallography — 8 primitives inverted by the measurement apparatus. R_free≈0.2 is the Frobenius gap.",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "insulin_a_chain",
+    "description": "Insulin A-chain — 21 AA, 2 interchain + 1 intrachain disulfide bonds. Classic folded peptide hormone.",
+    "Ð": "𐑨",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑤",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑓",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "gfp_folded",
+    "description": "Green Fluorescent Protein — 238 AA beta-barrel with internal chromophore. Classic autonomously folding protein.",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑯",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑵",
+    "⊙": "𐑮",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑟"
+  },
+  {
+    "name": "lysozyme_folded",
+    "description": "Hen egg-white lysozyme — 129 AA, 4 disulfide bonds. First protein solved by X-ray crystallography (Blake 1965).",
+    "Ð": "𐑦",
+    "Þ": "𐑶",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑵",
+    "⊙": "𐑣",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
   }
 ]

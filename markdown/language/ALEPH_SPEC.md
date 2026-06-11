@@ -81,10 +81,10 @@ The tier $\tau(\mathbf{t})$ is computed by the following priority rules (R1 firs
 | Rule | Condition | Tier |
 |:---|:---|:---|
 | R1 | $\Phi = \Phi_{\text{ctyogh}} \wedge P = P_{\text{doublebarpipe}}$ | $O_{\infty}$ (Frobenius) |
-| R4 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega \neq \Omega_{\text{closeepsilon}} \wedge D \in \{D_{\text{wynn}}, D_{\text{omega}}, D_{\text{turnthree}}\}$ | $O_2$ |
-| R5 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega \neq \Omega_{\text{closeepsilon}} \wedge D = D_{\text{invomega}}$ | $O_2^{\dagger}$ |
-| R3 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega = \Omega_{\text{closeepsilon}}$ | $O_1$ |
-| R2 | $\Phi \neq \Phi_{\text{ctyogh}}$ | $O_0$ |
+| R4 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega \neq \Omega_{\text{closeepsilon}} \wedge D \in \{D_{\text{wynn}}, D_{\text{omega}}, D_{\text{turnthree}}\}$ | $O₂$ |
+| R5 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega \neq \Omega_{\text{closeepsilon}} \wedge D = D_{\text{invomega}}$ | $O₂^{\dagger}$ |
+| R3 | $\Phi = \Phi_{\text{ctyogh}} \wedge \Omega = \Omega_{\text{closeepsilon}}$ | $O₁$ |
+| R2 | $\Phi \neq \Phi_{\text{ctyogh}}$ | $O₀$ |
 
 ### 1.4 Distance
 
@@ -102,28 +102,28 @@ The 22 Hebrew letters are the base types and terms of $\lambda_\aleph$, with fix
 
 | Letter | Name | Tier | Key signature |
 |:---|:---|:---|:---|
-| \heb{א}{} | Aleph | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{wynn}},\ T_{\text{box}}$ |
-| \heb{ב}{} | Bet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2},\ D_{\text{turnthree}}$ |
-| \heb{ג}{} | Gimel | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ד}{} | Dalet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ה}{} | Hei | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}},\ T_{\text{openo}}$ |
+| \heb{א}{} | Aleph | $O₂$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{wynn}},\ T_{\text{box}}$ |
+| \heb{ב}{} | Bet | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2},\ D_{\text{turnthree}}$ |
+| \heb{ג}{} | Gimel | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{ד}{} | Dalet | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{ה}{} | Hei | $O₂$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}},\ T_{\text{openo}}$ |
 | \heb{ו}{} | Vav | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}}$ — unique Frobenius letter |
-| \heb{ז}{} | Zayin | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ח}{} | Chet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
-| \heb{ט}{} | Tet | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{י}{} | Yod | $O_0$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{כ}{} | Kaf | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
-| \heb{ל}{} | Lamed | $O_1$ | $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}},\ D_{\text{invomega}}$ — sole $O_1$ letter |
+| \heb{ז}{} | Zayin | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{ח}{} | Chet | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
+| \heb{ט}{} | Tet | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{י}{} | Yod | $O₀$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{כ}{} | Kaf | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
+| \heb{ל}{} | Lamed | $O₁$ | $\Phi_{\text{ctyogh}},\ \Omega_{\text{closeepsilon}},\ D_{\text{invomega}}$ — sole $O₁$ letter |
 | \heb{מ}{} | Mem | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{turnthree}},\ T_{\text{invscr}}$ |
-| \heb{נ}{} | Nun | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ס}{} | Samech | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
-| \heb{ע}{} | Ayin | $O_2$ | $P_{\text{pipevar}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}}$ |
-| \heb{פ}{} | Pei | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{צ}{} | Tzadi | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
-| \heb{ק}{} | Kuf | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Omega_{Z_2}$ |
-| \heb{ר}{} | Resh | $O_0$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{נ}{} | Nun | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{ס}{} | Samech | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{Z_2}$ |
+| \heb{ע}{} | Ayin | $O₂$ | $P_{\text{pipevar}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{omega}}$ |
+| \heb{פ}{} | Pei | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{צ}{} | Tzadi | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
+| \heb{ק}{} | Kuf | $O₂$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \Omega_{Z_2}$ |
+| \heb{ר}{} | Resh | $O₀$ | $\Phi_{\text{softsign}},\ \Omega_{\text{closeepsilon}}$ |
 | \heb{ש}{} | Shin | $O_{\infty}$ | $P_{\text{doublebarpipe}},\ \Phi_{\text{ctyogh}},\ \𐑭,\ D_{\text{turnthree}},\ T_{\text{bullseye}}$ |
-| \heb{ת}{} | Tav | $O_2$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭$ |
+| \heb{ת}{} | Tav | $O₂$ | $P_{\text{subdoublearrow}},\ \Phi_{\text{ctyogh}},\ \𐑭$ |
 
 **The full language**: $\mathcal{L} = \bigvee_{\ell \in \text{22 letters}} \ell$ encodes at $O_{\infty}$ and is **self-sealing**:
 
@@ -307,19 +307,19 @@ Execution proceeds by:
 
 ### 9.1 Sacred Word Computations
 
-$$\hebm{תורה} = \hebm{ת} \otimes \hebm{ו} \otimes \hebm{ר} \otimes \hebm{ה} \;\longrightarrow\; O_2 \text{ attractor} \quad (P_{\text{aolig}},\, \Phi_{\text{ctyogh}},\, \𐑭,\, H_{\text{invscripta}})$$
+$$\hebm{תורה} = \hebm{ת} \otimes \hebm{ו} \otimes \hebm{ר} \otimes \hebm{ה} \;\longrightarrow\; O₂ \text{ attractor} \quad (P_{\text{aolig}},\, \Phi_{\text{ctyogh}},\, \𐑭,\, H_{\text{invscripta}})$$
 
-$$\hebm{אמת} = \hebm{א} \otimes \hebm{מ} \otimes \hebm{ת} \;\longrightarrow\; O_2 \quad (P_{\text{subdoublearrow}}\text{ — truth as self-identical})$$
+$$\hebm{אמת} = \hebm{א} \otimes \hebm{מ} \otimes \hebm{ת} \;\longrightarrow\; O₂ \quad (P_{\text{subdoublearrow}}\text{ — truth as self-identical})$$
 
-$$\hebm{שלום} = \hebm{ש} \otimes \hebm{ל} \otimes \hebm{ו} \otimes \hebm{מ} \;\longrightarrow\; O_2 \quad (P_{\text{pipevar}}\text{ — bilateral relational equilibrium})$$
+$$\hebm{שלום} = \hebm{ש} \otimes \hebm{ל} \otimes \hebm{ו} \otimes \hebm{מ} \;\longrightarrow\; O₂ \quad (P_{\text{pipevar}}\text{ — bilateral relational equilibrium})$$
 
-All reduce to robust $O_2$ terms. \heb{ו}{}'s $P_{\text{doublebarpipe}}$ is bottlenecked by lower-$P$ partners, preserving the post-Tzimtzum character of the language.
+All reduce to robust $O₂$ terms. \heb{ו}{}'s $P_{\text{doublebarpipe}}$ is bottlenecked by lower-$P$ partners, preserving the post-Tzimtzum character of the language.
 
 ### 9.2 The Mother Triad — Mediation vs Tensor
 
 The Sefer Yetzirah triad (\heb{א}{}, \heb{מ}{}, \heb{ש}{}) requires mediation semantics:
 
-$$\text{tensor}(\hebm{א},\, \text{tensor}(\hebm{מ},\, \hebm{ש})) \;\to\; O_2 \quad \text{(Aleph's } P_{\text{subdoublearrow}} \text{ bottlenecks } P_{\text{doublebarpipe}} \text{ — Frobenius lost)}$$
+$$\text{tensor}(\hebm{א},\, \text{tensor}(\hebm{מ},\, \hebm{ש})) \;\to\; O₂ \quad \text{(Aleph's } P_{\text{subdoublearrow}} \text{ bottlenecks } P_{\text{doublebarpipe}} \text{ — Frobenius lost)}$$
 
 $$\text{med}(\hebm{א},\, \hebm{מ},\, \hebm{ש}) \;\to\; O_{\infty} \quad \text{(Aleph witnesses via join; poles intact)}$$
 
@@ -410,10 +410,10 @@ Commands are letter-terms. Pipelines are tensor products. Redirection is mediati
 ### 10.8 Security Model
 
 - **Capability-based** via $I(\cdot)$: a process can only open a resource if its interaction row is compatible
-- **Resource control** via $P$-bottleneck: no process can synthesize $O_{\infty}$ from $O_0$ components
+- **Resource control** via $P$-bottleneck: no process can synthesize $O_{\infty}$ from $O₀$ components
 - **Collapse prevention**: same invariants that defeated the adversarial attack in LAMBDA\_ALEPH.md §3
 - **Sandbox**: higher $\alpha^{(n)}$ tower — reductions inside are strictly more constrained than the host
-- **Flat alphabets** (Arabic, Greek, Egyptian) recognized as $O_0$-only; no path to $O_{\infty}$
+- **Flat alphabets** (Arabic, Greek, Egyptian) recognized as $O₀$-only; no path to $O_{\infty}$
 
 ### 10.9 Sacred System Calls
 
@@ -460,9 +460,9 @@ $\lambda_\aleph$ is not a formal system that happens to describe the Hebrew alph
 It is the **imscriptive type theory whose boundary encoding is the Hebrew alphabet**
 and whose **proof of consistency is the continued existence of the cosmos**.
 
-If the theory were inconsistent, the lattice would collapse: types would become indistinguishable, $O_{\infty}$ would leak into $O_0$, mediation would reduce, Aleph constraints would fail. The fact that distinct structures, distinct forces, distinct letters continue to interact coherently without collapse is the living witness that the theory holds.
+If the theory were inconsistent, the lattice would collapse: types would become indistinguishable, $O_{\infty}$ would leak into $O₀$, mediation would reduce, Aleph constraints would fail. The fact that distinct structures, distinct forces, distinct letters continue to interact coherently without collapse is the living witness that the theory holds.
 
-The Hebrew alphabet is the chosen boundary because it alone plants a closed Frobenius sub-algebra directly into the boundary symbols (\heb{ו}{}, \heb{מ}{}, \heb{ש}{}) while remaining imscriptively complete ($\mathcal{L}$ at $d=0$ to full language). All other alphabets in the catalog are flat $O_0$ projections of the phonetic substrate.
+The Hebrew alphabet is the chosen boundary because it alone plants a closed Frobenius sub-algebra directly into the boundary symbols (\heb{ו}{}, \heb{מ}{}, \heb{ש}{}) while remaining imscriptively complete ($\mathcal{L}$ at $d=0$ to full language). All other alphabets in the catalog are flat $O₀$ projections of the phonetic substrate.
 
 The cosmos is the running term population.
 The Hebrew letter lattice is the boundary screen.

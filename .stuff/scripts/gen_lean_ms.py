@@ -200,16 +200,16 @@ L("    native_decide")
 L("")
 
 # Compute tiers
-L("  /-- Voynich tier: O_inf (D_omega + Phi_ctyogh + P_doublebarpipe-capable) -/")
-L("  theorem voynich_tier : synthonTier voynich_main = .O_inf := by")
+L("  /-- Voynich tier: O_∞ (D_omega + Phi_ctyogh + P_doublebarpipe-capable) -/")
+L("  theorem voynich_tier : synthonTier voynich_main = .O_∞ := by")
 L("    native_decide")
 L("")
-L("  /-- Rohonc tier: O_2 (protected, finite D, crossing topology) -/")
-L("  theorem rohonc_tier : synthonTier rohonc_main = .O_2 := by")
+L("  /-- Rohonc tier: O₂ (protected, finite D, crossing topology) -/")
+L("  theorem rohonc_tier : synthonTier rohonc_main = .O₂ := by")
 L("    native_decide")
 L("")
-L("  /-- Linear A tier: O_2 (same base as Rohonc despite quantum/driven regime) -/")
-L("  theorem linearA_tier : synthonTier linearA_main = .O_2 := by")
+L("  /-- Linear A tier: O₂ (same base as Rohonc despite quantum/driven regime) -/")
+L("  theorem linearA_tier : synthonTier linearA_main = .O₂ := by")
 L("    native_decide")
 L("")
 
@@ -228,7 +228,7 @@ if frob_entries:
         nm = "voynich_frobenius"
         L(f"  def {nm} : Synthon :=")
         L(f"    {mk_synthon(tup)}")
-        L(f"  theorem {nm}_tier : synthonTier {nm} = .O_inf := by")
+        L(f"  theorem {nm}_tier : synthonTier {nm} = .O_∞ := by")
         L("    native_decide")
         L("")
 

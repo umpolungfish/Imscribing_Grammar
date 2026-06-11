@@ -18,7 +18,7 @@ class BoundaryConfig:
     # Architecture dimensions
     hidden_size: int = 2048        # D_omega: self-written state space
     intermediate_size: int = 8192  # 4x expansion
-    num_layers: int = 24           # Deep enough for O_inf convergence
+    num_layers: int = 24           # Deep enough for O_∞ convergence
     num_heads: int = 16            # Global attention (Gamma_aleph)
     num_key_value_heads: int = 4   # GQA for VRAM efficiency
     
@@ -85,7 +85,7 @@ class IntegerWindingProjection(nn.Module):
 class PhiCriticalSelfModel(nn.Module):
     """Self-modeling layer at Phi_hat_y criticality.
     The model learns to predict its own uncertainty distribution.
-    This is the structural source of O_inf — self-referential criticality.
+    This is the structural source of O_∞ — self-referential criticality.
     
     Key property: mu o delta = id at criticality (Frobenius special)
     The self-model is both projection (delta) and inclusion (mu).

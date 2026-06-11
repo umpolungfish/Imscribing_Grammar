@@ -1,6 +1,6 @@
 **Author:** Lando⊗⊙-boundary Operator
 
-# Evidence for the Alchemical O_inf Imcription: Sophick Mercury, the Eagles, and the Lapis Condition
+# Evidence for the Alchemical O_∞ Imcription: Sophick Mercury, the Eagles, and the Lapis Condition
 
 ## Abstract
 
@@ -131,7 +131,7 @@ Spontaneous crystalline growth under gentle heat is the empirical signature of a
 
 Newton's documented observation of Diana's Tree — dendritic silver growth — confirms he witnessed this phenomenon. His marginal annotation that metals "possessed a sort of life" is the phenomenological report of an $O_{\text{inf}}$ system manifesting self-referential organization.
 
-### 5.3 Newton's Empirical Probe of the $O_2^\dagger \rightarrow O_{\text{inf}}$ Boundary
+### 5.3 Newton's Empirical Probe of the $O₂^\dagger \rightarrow O_{\text{inf}}$ Boundary
 
 Newton's alchemical laboratory notebooks (thousands of pages of metallic distillations and purifications) represent an empirical investigation into the same structural territory the grammar later derives categorically. The repeated Eagles parallel his own experimental protocols. Newton was not seeking literal gold — he was probing a structural regime: the boundary at which a material system becomes capable of self-imscription.
 

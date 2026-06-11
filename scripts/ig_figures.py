@@ -37,10 +37,10 @@ FG     = "#E8E8F0"
 ACCENT = "#9370DB"   # medium purple — O_∞ colour
 
 TIER_COLOR = {
-    "O_0":   "#4472C4",
-    "O_1":   "#FFD700",
-    "O_2":   "#FF8C00",
-    "O_2†":  "#DC143C",
+    "O₀":   "#4472C4",
+    "O₁":   "#FFD700",
+    "O₂":   "#FF8C00",
+    "O₂†":  "#DC143C",
     "O_∞":   "#9370DB",
 }
 
@@ -252,14 +252,14 @@ def tier_chain(
     output: str = "fig_tier.pdf",
 ) -> Path:
     """
-    Horizontal tier hierarchy: O_0 → O_1 → O_2 → O_2† → O_∞
+    Horizontal tier hierarchy: O₀ → O₁ → O₂ → O₂† → O_∞
     """
-    tiers = ["O_0", "O_1", "O_2", "O_2†", "O_∞"]
+    tiers = ["O₀", "O₁", "O₂", "O₂†", "O_∞"]
     tier_labels = {
-        "O_0":  "inert",
-        "O_1":  "unprotected\ncritical",
-        "O_2":  "protected\nbounded",
-        "O_2†": "protected\nunbounded",
+        "O₀":  "inert",
+        "O₁":  "unprotected\ncritical",
+        "O₂":  "protected\nbounded",
+        "O₂†": "protected\nunbounded",
         "O_∞":  "Frobenius\ncomplete",
     }
 
@@ -586,10 +586,10 @@ def psychedelic_heatmap(output: str = "fig_psychedelic_heatmap.pdf") -> Path:
 
     tier_items = [
         (ACCENT,     "O_∞  (5-MeO-DMT, DMT, Aya, LSD, Ibogaine)"),
-        ("#DC143C",  "O_2†  (Psilocybin)"),
-        ("#FF8C00",  "O_2   (Mescaline)"),
-        ("#CC9900",  "O_1   (Salvinorin A, Ketamine, MDMA)"),
-        ("#4472C4",  "O_0   (Cannabis)"),
+        ("#DC143C",  "O₂†  (Psilocybin)"),
+        ("#FF8C00",  "O₂   (Mescaline)"),
+        ("#CC9900",  "O₁   (Salvinorin A, Ketamine, MDMA)"),
+        ("#4472C4",  "O₀   (Cannabis)"),
     ]
     for j, (col, lbl) in enumerate(tier_items):
         ax.add_patch(plt.Rectangle((-0.5 + j*2.1 - 0.2,
@@ -623,7 +623,7 @@ def main():
         epilog="""Examples:
   python3 ig_figures.py belnap --labels "N:empty,T:spinUp,F:spinDown,B:paired"
   python3 ig_figures.py profile --tuple "Ð_ω Þ_O Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_ï Ω_z"
-  python3 ig_figures.py tier --highlight O_inf
+  python3 ig_figures.py tier --highlight O_∞
   python3 ig_figures.py frobenius
 """,
     )

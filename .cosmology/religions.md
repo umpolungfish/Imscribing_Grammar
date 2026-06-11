@@ -251,7 +251,7 @@ The grammar reveals that the seven traditions form a structural topology with fo
 
 ### The Missing Tradition: Taoism's Subcritical Paradox
 
-Taoism \((O_0,C = 0.0)\) is the only tradition with its Gate 1 closed — its \(\Phi_{\mathrm{sub}}\) means it lacks the self-modeling critical loop that every other tradition possesses. Yet its core concept (the Tao) achieves \(C = 0.828\) , the highest score in the dataset. The tradition is subcritical; its object is hypercritical. This is the structural correlate of the Tao Te Ching's paradoxical relationship to its own content: the text that says the Tao cannot be named is itself the attempt to name it.
+Taoism \((O₀,C = 0.0)\) is the only tradition with its Gate 1 closed — its \(\Phi_{\mathrm{sub}}\) means it lacks the self-modeling critical loop that every other tradition possesses. Yet its core concept (the Tao) achieves \(C = 0.828\) , the highest score in the dataset. The tradition is subcritical; its object is hypercritical. This is the structural correlate of the Tao Te Ching's paradoxical relationship to its own content: the text that says the Tao cannot be named is itself the attempt to name it.
 
 ## Discussion: What the Grammar Reveals That History Cannot
 

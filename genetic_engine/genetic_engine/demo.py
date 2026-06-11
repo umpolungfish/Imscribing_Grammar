@@ -368,13 +368,13 @@ def demo_structural_summary() -> None:
     rows = [
         ("genetic_code",
          "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
-         "O_inf", "stratified Frobenius algebra on B₄³"),
+         "O_∞", "stratified Frobenius algebra on B₄³"),
         ("whale_vocalization",
          "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
-         "O_inf", "self-modeling communication"),
+         "O_∞", "self-modeling communication"),
         ("grammar_itself",
          "⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z⟩",
-         "O_inf", "self-imscribed"),
+         "O_∞", "self-imscribed"),
     ]
     for name, tup, tier, note in rows:
         print(f"\n  {name:<22}")

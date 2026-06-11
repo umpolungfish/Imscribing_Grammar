@@ -7,9 +7,9 @@ DS categorical identification (2026-04-15):
   Grammar g        = distributive law λ: PG → GP   (§81, PRIMITIVE_THEOREMS)
 
 Crystal addresses (Imscribing Grammar):
-  monad_cantor             5,326,271   O_2      C=0.611
-  comonad_goedel           5,311,151   O_2†     C=0.830   (= octonions, d=0)
-  monad ⊗ comonad          O_2         d=2.2361 from grammar
+  monad_cantor             5,326,271   O₂      C=0.611
+  comonad_goedel           5,311,151   O₂†     C=0.830   (= octonions, d=0)
+  monad ⊗ comonad          O₂         d=2.2361 from grammar
   distributive_law_lambda  6,734,591   O_∞      C=0.830   (= grammar_self_encode, d=0)
 
 Key structural fact:
@@ -477,9 +477,9 @@ if __name__ == "__main__":
     _hr("Crystal of Types addresses (Imscribing Grammar)")
 
     rows = [
-        ("monad_cantor",            "5,326,271", "O_2",  "0.611", ""),
-        ("comonad_goedel",          "5,311,151", "O_2†", "0.830", "= octonions"),
-        ("monad ⊗ comonad",         "—",         "O_2",  "—",     "d=2.2361 from λ"),
+        ("monad_cantor",            "5,326,271", "O₂",  "0.611", ""),
+        ("comonad_goedel",          "5,311,151", "O₂†", "0.830", "= octonions"),
+        ("monad ⊗ comonad",         "—",         "O₂",  "—",     "d=2.2361 from λ"),
         ("distributive_law_lambda", "6,734,591", "O_∞",  "0.830", "= grammar_self_encode"),
     ]
     print(f"  {'System':<26} {'Address':<12} {'Tier':<6} {'C':>5}  {'Note'}")

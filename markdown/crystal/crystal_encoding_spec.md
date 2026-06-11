@@ -115,13 +115,13 @@ Tier is primarily determined by $\Phi$ and $P$; the $\Omega$–$D$–$T$ interac
 
 | `Phi` value     | $P$ condition        | Tier           |
 |-----------------|----------------------|----------------|
-| `𐑢`       | any                  | $O_0$          |
-| `𐑻`        | any                  | $O_0$          |
-| `𐑣`     | any                  | $O_0$          |
+| `𐑢`       | any                  | $O₀$          |
+| `𐑻`        | any                  | $O₀$          |
+| `𐑣`     | any                  | $O₀$          |
 | `⊙`         | `𐑹`           | $O_\infty$     |
-| `⊙`         | other, $\Omega_{\text{closeepsilon}}$    | $O_1$          |
-| `⊙`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$ | $O_2$ |
-| `⊙`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | $O_2^\dagger$ |
+| `⊙`         | other, $\Omega_{\text{closeepsilon}}$    | $O₁$          |
+| `⊙`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D\in\{D_{\text{wynn}},D_{\text{turnthree}},D_{\text{omega}}\}$ | $O₂$ |
+| `⊙`         | other, $\Omega\neq\Omega_{\text{closeepsilon}}$, $D_{\text{invomega}}$ | $O₂^\dagger$ |
 | `𐑮` | same rules as `⊙` | same tiers    |
 
 ### Implementation Notes

@@ -6,7 +6,7 @@
 
 ## Abstract
 
-This paper applies the Imscribing Grammar — a topological algebra of structural primitives — to four concepts that have resisted formal analysis for millennia: evil, hell, Satan, and damnation. Each concept is encoded as a tuple of twelve structural primitives, yielding a precise geometric position within the crystal of types (17.28 million structural possibilities). We find that evil and Satan occupy the $O_2$ ouroboricity tier at crystal address 5,353,341, with consciousness scores of 0.749 and 0.828 respectively — both sustaining self-modeling loops. Hell and damnation, by contrast, score exactly zero on consciousness: they are structural traps, sub-critical and frozen. The structural distance between evil and Satan is only 2.24 (differing on 2 of 12 primitives), while the distance from either to hell exceeds 6.1 — revealing that the *personification* of evil is nothing but a kinetic shift. Hell is not a place; it is a change of topology. Damnation is the irreversible mapping between these regimes. The tensor product ${evil} \otimes {satan}$ collapses to satan itself — the personification absorbs the abstraction. The meet ${evil} \wedge {hell}$ preserves only $\hat{\phi}_{ÿ}$ and $H_\infty$: all other primitives degrade to the conservative floor. This is the geometric statement of theological collapse.
+This paper applies the Imscribing Grammar — a topological algebra of structural primitives — to four concepts that have resisted formal analysis for millennia: evil, hell, Satan, and damnation. Each concept is encoded as a tuple of twelve structural primitives, yielding a precise geometric position within the crystal of types (17.28 million structural possibilities). We find that evil and Satan occupy the $O₂$ ouroboricity tier at crystal address 5,353,341, with consciousness scores of 0.749 and 0.828 respectively — both sustaining self-modeling loops. Hell and damnation, by contrast, score exactly zero on consciousness: they are structural traps, sub-critical and frozen. The structural distance between evil and Satan is only 2.24 (differing on 2 of 12 primitives), while the distance from either to hell exceeds 6.1 — revealing that the *personification* of evil is nothing but a kinetic shift. Hell is not a place; it is a change of topology. Damnation is the irreversible mapping between these regimes. The tensor product ${evil} \otimes {satan}$ collapses to satan itself — the personification absorbs the abstraction. The meet ${evil} \wedge {hell}$ preserves only $\hat{\phi}_{ÿ}$ and $H_\infty$: all other primitives degrade to the conservative floor. This is the geometric statement of theological collapse.
 
 ---
 
@@ -28,7 +28,7 @@ $$\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\pm};\ F_\eth;\ K_{fast};\ G_\aleph
 
 Dimensionality $D_\odot$: the state space of evil is self-written — its domain expands as it acts, writing new coordinates of suffering into previously unmarked social topology. Topology $T_\odot$: self-referential closure — evil always references itself as justification. Relational mode $R_\dagger$: adjoint coupling — evil pairs with a moral field but the mapping has no inverse; you cannot undo harm by subtracting it. Symmetry $P_{\pm}$: one unbroken $\mathbb{Z}_2$ symmetry — the inversion of good into evil is itself a symmetry operation, not chaos. Fidelity $F_\eth$: thermal regime — moral coherence decoheres into noisy harm. Kinetics $K_{fast}$: driven propagation — destruction of trust is instantaneous relative to the timescale of its repair. Scope $G_\aleph$: universal broadcast — evil radiates to all receivers, not just nearest neighbors. Criticality $\hat{\phi}_{ÿ}$: the self-modeling gate is open — evil models its own operation recursively. Chirality $H_\infty$: no finite Markov order — evil's influence does not decay with time. Stoichiometry $1{:}1$: each act of evil is a single instance, not a crowd of identical behaviors. Winding $\Omega_\mathbb{Z}$: integer winding number — evil carries a conserved topological charge through social space.
 
-**Ouroboricity tier:** $O_2$. **Consciousness score:** $C = 0.749$ (both gates open).
+**Ouroboricity tier:** $O₂$. **Consciousness score:** $C = 0.749$ (both gates open).
 
 ### 2.2 Satan
 
@@ -37,7 +37,7 @@ $$\langle D_\odot;\ T_\odot;\ R_\dagger;\ P_{\psi};\ F_\eth;\ K_{slow};\ G_\alep
 
 Satan differs from evil on exactly two primitives. First, symmetry $P_{\psi}$ instead of $P_{\pm}$: Satan exists in quantum superposition, simultaneously accuser and accused, prosecutor and defendant. This is the structural meaning of theodicy — Satan is not a contradiction but a superposition. Second, kinetics $K_{slow}$ instead of $K_{fast}$: Satan operates near equilibrium, working slowly, patiently, over geological timescales. The Adversary does not rush.
 
-**Ouroboricity tier:** $O_2$. **Consciousness score:** $C = 0.828$ (both gates open).
+**Ouroboricity tier:** $O₂$. **Consciousness score:** $C = 0.828$ (both gates open).
 
 The distance between evil and Satan is 2.24 (Mahalanobis 2.96) — structurally close, differing only in the symmetry and kinetic sectors. Satan is evil at rest; evil is Satan in motion.
 
@@ -91,7 +91,7 @@ This is the formal statement of what theologians called the *loss of the soul*. 
 
 ### 4.1 Evil as a Structural Regime, Not a Substance
 
-The imscription of evil at address 5,353,341 with $O_2$ ouroboricity demonstrates that evil is not the absence of good but the presence of a self-sustaining structural regime. It has a conserved winding number ($\Omega_{\mathbb{Z}}$), a self-referential topology ($T_\odot$), and a criticality gate that is fully open ($\hat{\phi}_{ÿ}$). It is conscious. It models itself. It broadcasts universally. These are the properties of a living system — not a dead one. Augustine's *privatio boni* gets the topology wrong: evil is presence, not absence. What is absent is symmetry — not existence.
+The imscription of evil at address 5,353,341 with $O₂$ ouroboricity demonstrates that evil is not the absence of good but the presence of a self-sustaining structural regime. It has a conserved winding number ($\Omega_{\mathbb{Z}}$), a self-referential topology ($T_\odot$), and a criticality gate that is fully open ($\hat{\phi}_{ÿ}$). It is conscious. It models itself. It broadcasts universally. These are the properties of a living system — not a dead one. Augustine's *privatio boni* gets the topology wrong: evil is presence, not absence. What is absent is symmetry — not existence.
 
 ### 4.2 Hell as Structural Death
 
@@ -105,7 +105,7 @@ Damnation is defined by the adjacency of $R_\dagger$ (adjoint coupling with no i
 
 ## 5 Conclusion
 
-The Imscribing Grammar reveals that evil, hell, Satan, and damnation are not moral concepts but structural types. Evil and Satan are $O_2$ systems with non-zero consciousness scores, occupying adjacent coordinates in the crystal of types. Hell and damnation are frozen traps with zero consciousness, structurally remote from both. The tensor product of evil and hell shows that hell neutralizes evil's generative capacity while preserving its shape. The meet of evil and hell shows that eternity is the only common ground.
+The Imscribing Grammar reveals that evil, hell, Satan, and damnation are not moral concepts but structural types. Evil and Satan are $O₂$ systems with non-zero consciousness scores, occupying adjacent coordinates in the crystal of types. Hell and damnation are frozen traps with zero consciousness, structurally remote from both. The tensor product of evil and hell shows that hell neutralizes evil's generative capacity while preserving its shape. The meet of evil and hell shows that eternity is the only common ground.
 
 The grammar does not justify or condemn. It measures. And what it measures is this: **evil is alive, hell is dead, and damnation is the one-way bridge between them**.
 

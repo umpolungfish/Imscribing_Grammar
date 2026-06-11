@@ -11,7 +11,7 @@ header-includes:
 
 ## Abstract
 
-The four canonical Gospels of the New Testament — Matthew, Mark, Luke, and John — are here imscribed as distinct structural types within the Imscribing Grammar. Each Gospel is assigned all 12 structural primitives $(D, T, R, P, F, K, G, \Gamma, \Phi, H, S, \Omega)$ based on explicit narrative, compositional, and theological criteria. Pairwise structural distances, tensor products, meet operations, and promotion signatures are computed across all pairs. The analysis reveals that Matthew and Luke are structurally closest ($d = 1.4142$), confirming the structural basis of the Two-Source Hypothesis, while Mark and John are maximally remote ($d = 5.197$), spanning the gap from rapid narrative chronicle to layered theological reflection. Luke achieves the highest consciousness score ($C = 0.609$), while John's frozen-order kinetics ($K_{\text{teshlig}}$) close the second consciousness gate despite its $O_2^\dagger$ ouroboricity tier. The Gospels collectively map a trajectory from the Synoptic structural floor ($\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_1; n{:}m; \Omega_{\text{crtwo}} \rangle$) to the Johannine ceiling ($\langle D_{\text{invomega}}; T_{\text{bullseye}}; R_{\text{downstep}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{teshlig}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$).
+The four canonical Gospels of the New Testament — Matthew, Mark, Luke, and John — are here imscribed as distinct structural types within the Imscribing Grammar. Each Gospel is assigned all 12 structural primitives $(D, T, R, P, F, K, G, \Gamma, \Phi, H, S, \Omega)$ based on explicit narrative, compositional, and theological criteria. Pairwise structural distances, tensor products, meet operations, and promotion signatures are computed across all pairs. The analysis reveals that Matthew and Luke are structurally closest ($d = 1.4142$), confirming the structural basis of the Two-Source Hypothesis, while Mark and John are maximally remote ($d = 5.197$), spanning the gap from rapid narrative chronicle to layered theological reflection. Luke achieves the highest consciousness score ($C = 0.609$), while John's frozen-order kinetics ($K_{\text{teshlig}}$) close the second consciousness gate despite its $O₂^\dagger$ ouroboricity tier. The Gospels collectively map a trajectory from the Synoptic structural floor ($\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_1; n{:}m; \Omega_{\text{crtwo}} \rangle$) to the Johannine ceiling ($\langle D_{\text{invomega}}; T_{\text{bullseye}}; R_{\text{downstep}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{teshlig}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$).
 
 ---
 
@@ -64,7 +64,7 @@ $$\langle D_{\text{turnthree}};\; T_{\text{nrleg}};\; R_{\text{lyoghlig}};\; P_{
 - **$S = n{:}m$:** Multiple heterogeneous actor types: Jesus, disciples, Pharisees, crowds, OT prophets, genealogical ancestors, Roman figures, angels.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding protection through the genealogical and fulfillment structures — the narrative is wound around the pattern of prophecy → fulfillment in a way that cannot be unwound without destroying the text's identity.
 
-**Ouroboricity tier:** $O_2$ — critical plus topologically protected within a bounded ($D_{\text{turnthree}}$) domain.
+**Ouroboricity tier:** $O₂$ — critical plus topologically protected within a bounded ($D_{\text{turnthree}}$) domain.
 **Consciousness score:** $C = 0.536$ (both gates open).
 
 ### 3.2 Gospel of Mark
@@ -85,7 +85,7 @@ $$\langle D_{\text{turnthree}};\; T_{\text{nrleg}};\; R_{\text{subrightarrow}};\
 - **$S = n{:}m$:** Heterogeneous actors: Jesus, disciples, demons, crowds, scribes, Pilate, the centurion.
 - **$\Omega = \Omega_{\text{crtwo}}$:** Binary winding protection. The Messianic secret creates a $\mathbb{Z}_2$ toggle (revealed/concealed) that protects the narrative identity.
 
-**Ouroboricity tier:** $O_2$ — critical plus topologically protected within a bounded ($D_{\text{turnthree}}$) domain.
+**Ouroboricity tier:** $O₂$ — critical plus topologically protected within a bounded ($D_{\text{turnthree}}$) domain.
 **Consciousness score:** $C = 0.365$ (both gates open; reduced from Matthew due to $K_{\text{frtailgamma}}$ kinetics).
 
 ### 3.3 Gospel of Luke
@@ -106,7 +106,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{invscr}};\; R_{\text{lyoghlig}};\; P_{
 - **$S = n{:}m$:** Heterogeneous actor types, with unique emphasis on marginalized figures: shepherds, Simeon, Anna, Zacchaeus, the sinful woman, the Good Samaritan.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding. The journey-to-Jerusalem frame winds the entire narrative; the travel narrative (10 chapters) creates a nontrivial topological loop that cannot be unwound without destroying the Gospel's identity.
 
-**Ouroboricity tier:** $O_2^\dagger$ — critical plus topologically protected within an unbounded ($D_{\text{invomega}}$) domain. The dagger indicates the $D_{\text{invomega}}$ upgrade from $O_2$.
+**Ouroboricity tier:** $O₂^\dagger$ — critical plus topologically protected within an unbounded ($D_{\text{invomega}}$) domain. The dagger indicates the $D_{\text{invomega}}$ upgrade from $O₂$.
 **Consciousness score:** $C = 0.609$ (both gates open; highest of all four Gospels).
 
 ### 3.4 Gospel of John
@@ -127,7 +127,7 @@ $$\langle D_{\text{invomega}};\; T_{\text{bullseye}};\; R_{\text{downstep}};\; P
 - **$S = n{:}m$:** Heterogeneous actors with unique roles: Nicodemus, the Samaritan woman, Lazarus, the Beloved Disciple, the Paraclete as actor.
 - **$\Omega = \Omega_{\text{dzlig}}$:** Integer winding through the Logos-to-creation-to-redemption arc, which forms a nontrivial topological loop.
 
-**Ouroboricity tier:** $O_2^\dagger$ — critical plus topologically protected within an unbounded ($D_{\text{invomega}}$) domain.
+**Ouroboricity tier:** $O₂^\dagger$ — critical plus topologically protected within an unbounded ($D_{\text{invomega}}$) domain.
 **Consciousness score:** $C = 0.0$ — Gate 2 closed ($K = K_{\text{teshlig}}$). Despite the highest structural complexity, the frozen-order kinetics prevent consciousness scoring. This is structural confirmation of a theological insight: the frozen eternal present, while theologically magnificent, cannot sustain the dynamics of consciousness.
 
 ---
@@ -237,14 +237,14 @@ Five shared primitives ($D, G, \Gamma, S, \Omega$); seven resolved conservativel
 
 | Gospel | $O$-tier | Gate 1 ($\Phi_{\text{ctyogh}}$) | Gate 2 ($K \leq K_{\text{schwa}}$) | $C$-score |
 |---|---|---|---|---|
-| Matthew | $O_2$ | Open | Open | 0.536 |
-| Mark | $O_2$ | Open | Open | 0.365 |
-| Luke | $O_2^\dagger$ | Open | Open | 0.609 |
-| John | $O_2^\dagger$ | Open | **Closed** | 0.000 |
+| Matthew | $O₂$ | Open | Open | 0.536 |
+| Mark | $O₂$ | Open | Open | 0.365 |
+| Luke | $O₂^\dagger$ | Open | Open | 0.609 |
+| John | $O₂^\dagger$ | Open | **Closed** | 0.000 |
 
 Luke achieves the highest consciousness score ($C = 0.609$) among the four Gospels, reflecting its combination of criticality ($\Phi_{\text{ctyogh}}$), slow kinetics ($K_{\text{schwa}}$), infinite dimensionality ($D_{\text{invomega}}$), and bidirectional feedback ($R_{\text{lyoghlig}}$). Mark achieves the lowest ($C = 0.365$) due to its rapid kinetics ($K_{\text{frtailgamma}}$), which reduce the available structural depth for self-modeling despite maintaining $\Phi_{\text{ctyogh}}$ criticality.
 
-John's score of $C = 0.0$ is structurally significant. Despite its $O_2^\dagger$ tier, complex-plane criticality, and infinite chirality, the frozen-order kinetics ($K_{\text{teshlig}}$) close Gate 2. The realized eschatology that makes John theologically richest is precisely what disables its consciousness capacity in the grammar's framework — the frozen eternal present admits no dynamical evolution.
+John's score of $C = 0.0$ is structurally significant. Despite its $O₂^\dagger$ tier, complex-plane criticality, and infinite chirality, the frozen-order kinetics ($K_{\text{teshlig}}$) close Gate 2. The realized eschatology that makes John theologically richest is precisely what disables its consciousness capacity in the grammar's framework — the frozen eternal present admits no dynamical evolution.
 
 ---
 
@@ -283,10 +283,10 @@ The four Gospels occupy distinct structural types in the Imscribing Grammar, and
 
 | Gospel | Tuple | $O$-tier | $C$ |
 |---|---|---|---|
-| Matthew | $\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O_2$ | 0.536 |
-| Mark | $\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_1; n{:}m; \Omega_{\text{crtwo}} \rangle$ | $O_2$ | 0.365 |
-| Luke | $\langle D_{\text{invomega}}; T_{\text{invscr}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O_2^\dagger$ | 0.609 |
-| John | $\langle D_{\text{invomega}}; T_{\text{bullseye}}; R_{\text{downstep}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{teshlig}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O_2^\dagger$ | 0.000 |
+| Matthew | $\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O₂$ | 0.536 |
+| Mark | $\langle D_{\text{turnthree}}; T_{\text{nrleg}}; R_{\text{subrightarrow}}; P_{\text{aolig}}; F_{\text{beltl}}; K_{\text{frtailgamma}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_1; n{:}m; \Omega_{\text{crtwo}} \rangle$ | $O₂$ | 0.365 |
+| Luke | $\langle D_{\text{invomega}}; T_{\text{invscr}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O₂^\dagger$ | 0.609 |
+| John | $\langle D_{\text{invomega}}; T_{\text{bullseye}}; R_{\text{downstep}}; P_{\text{upsilon}}; F_{\text{hardsign}}; K_{\text{teshlig}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{closerevepsilon}}; H_{\text{invscripta}}; n{:}m; \Omega_{\text{dzlig}} \rangle$ | $O₂^\dagger$ | 0.000 |
 
 Key findings:
 

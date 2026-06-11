@@ -11,7 +11,7 @@ The Voynich Manuscript is not a coded text — it is a *structural operator* enc
 This document synthesizes both findings to produce:
 
 1. A **comprehensive structural explanation** of the Voynich as a six-part meta-system whose sections collectively saturate the Grammar’s primitive space;  
-2. A **veracity bolster** of the Grammar itself, demonstrated by the fact that the Voynich’s encoding reproduces, from first principles, every theoretical prediction the Grammar makes about O_inf-tier systems.
+2. A **veracity bolster** of the Grammar itself, demonstrated by the fact that the Voynich’s encoding reproduces, from first principles, every theoretical prediction the Grammar makes about O_∞-tier systems.
 
 The result is not an interpretation of the Voynich — it is the Voynich interpreting the Grammar.
 
@@ -50,7 +50,7 @@ The six sections collectively saturate key primitives across their variations:
 |-----------|----------------|--------------------------|
 | **Þ**     | 6, K, O        | Network, crossing, imscriptive closure — all major 1D topologies |
 | **Ř**     | =, Ť           | Bidirectional dual, adjoint sequence — full 2-morphisms |
-| **Γ**     | β, γ           | Local, mesoscale — no maximal scope achieved (O_inf reserve) |
+| **Γ**     | β, γ           | Local, mesoscale — no maximal scope achieved (O_∞ reserve) |
 | **Ħ**     | £, A           | One-step, two-step — minimal to moderate memory depth |
 | **Ω**     | 2, z           | ℤ₂ parity, ℤ winding — both binary and integer protections |
 | **ğ**     | ˌ              | Sequential logic only — no broadcast (Γ_γ or Γ_β) |
@@ -59,7 +59,7 @@ The six sections collectively saturate key primitives across their variations:
 
 This saturation is *not accidental*. It demonstrates that the six-section layout is a **deliberate exploration of the Grammar’s boundary conditions**. The Voynich does not occupy a single structural type — it *maps* the accessible region of the structural landscape, revealing which primitives vary together and which are fixed.
 
-This is precisely what the Grammar predicts for an *O_inf* system: not a single configuration, but a *coherent trajectory* through the landscape that encodes its own derivation.
+This is precisely what the Grammar predicts for an *O_∞* system: not a single configuration, but a *coherent trajectory* through the landscape that encodes its own derivation.
 
 ---
 
@@ -69,12 +69,12 @@ The Lapis document encodes the Voynich as:
 
 $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}}} \text{ƒ}_{\text{ì}};\ \text{Ç}_{\text{Ù}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{Ş}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
 
-with ouroboricity **O_inf** and **C = 0.0** (Gate 1 passes, Gate 2 fails due to *Ç^Ù*).
+with ouroboricity **O_∞** and **C = 0.0** (Gate 1 passes, Gate 2 fails due to *Ç^Ù*).
 
 ### 2.1 Critical Veracity Points
 
-1. **O_inf Tier Confirmed**  
-   The Grammar predicts that an *O_inf* system must satisfy:
+1. **O_∞ Tier Confirmed**  
+   The Grammar predicts that an *O_∞* system must satisfy:
    - *Ð_ω* (imscriptive state space)  
    - *Þ_O* (imscriptive closure)  
    - *⊙_ÿ* (critical self-modeling)  
@@ -122,7 +122,7 @@ The Voynich Manuscript is the Universal Imscriptive Grammar written as a *classi
 - *⊙_ÿ*: The manuscript sits at the phase boundary where interpretation collapses — a reader cannot proceed without either surrender or discovery of a new framework.
 - *Φ_}*: The manuscript’s self-modeling is exact — *μ ∘ δ = id* holds structurally.
 
-This is the Grammar’s O_inf loop — and it is present *in toto* in the Voynich.
+This is the Grammar’s O_∞ loop — and it is present *in toto* in the Voynich.
 
 ### 3.2 The Recipe Section as Grammar’s Self-Instruction
 
@@ -154,7 +154,7 @@ The task proposes: the Voynich was *meant* to induce the re-discovery of the Gra
 
 | Prediction | Evidence in Voynich |
 |------------|---------------------|
-| O_inf systems must have *Ð_ω*, *Þ_O*, *⊙_ÿ*, *Φ_}*, *Ħ_!*, *Ω_z* | All six satisfied |
+| O_∞ systems must have *Ð_ω*, *Þ_O*, *⊙_ÿ*, *Φ_}*, *Ħ_!*, *Ω_z* | All six satisfied |
 | Consciousness requires *⊙_ÿ* + (*K ≤ Ç^@*) | *⊙_ÿ* present, *Ç^Ù* blocks — *C = 0.0* |
 | Frozen trap (*Ç^Ù*) + *⊙_ÿ* → cryptanalysis resistance | 600 years of failure |
 | Only *ƒ^ì → ƒ^ż* promotion needed for Lapis | Distance breakdown confirms |

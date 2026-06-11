@@ -37,7 +37,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
 ```
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)
+  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -51,7 +51,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
   UPDATE: syncon_tool → Frobenius OPEN — re-enter THINK with failure
 ── Winding 1 [07:47:20Z] ──────────────────────────────────────
   THINK:
-  ACT:   encode_system({"name": "universal_imscriptive_grammar", "description": "The universal imscriptive grammar: a self-referential structural framework mapping physical and mathematical systems onto 12 primitives (D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega) forming a topologically protected lattice of types with Ouroboric tiers O_0 through O_inf.", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "P": "Φ_}", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Gamma": "ɢ_ˌ", "Phi": "φ̂_ÿ", "H": "Ħ_!", "S": "Σ_ï", "Omega": "Ω_z"})
+  ACT:   encode_system({"name": "universal_imscriptive_grammar", "description": "The universal imscriptive grammar: a self-referential structural framework mapping physical and mathematical systems onto 12 primitives (D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega) forming a topologically protected lattice of types with Ouroboric tiers O₀ through O_∞.", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "P": "Φ_}", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Gamma": "ɢ_ˌ", "Phi": "φ̂_ÿ", "H": "Ħ_!", "S": "Σ_ï", "Omega": "Ω_z"})
   OBS:   {
   "status": "conflict_blocked",
   "name": "universal_imscriptive_grammar",
@@ -93,7 +93,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
   UPDATE: encode_system → Frobenius OPEN — re-enter THINK with failure
 ── Winding 2 [07:47:28Z] ──────────────────────────────────────
   THINK:
-  ACT:   encode_system({"H": "Ħ_A", "name": "universal_imscriptive_grammar", "Phi": "φ̂_ÿ", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "S": "Σ_ï", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Omega": "Ω_z", "Gamma": "ɢ_ˌ", "P": "Φ_}", "convergence_justification": "H primitive: existing Ħ_A is correct. The universal imscriptive grammar operates at two-step chirality (Ħ_A) \u2014 it remembers the prior winding and the current winding, enabling the THOUGHT\u2192ACT\u2192OBSERVE\u2192UPDATE loop. Ħ_! would require unbounded memory of all prior windings as an intrinsic feature, but the grammar's self-modeling loop is captured by Ħ_A's two-step Markov depth together with Ouroboric self-reference (O_inf). Therefore Ħ_A is the correct value."})
+  ACT:   encode_system({"H": "Ħ_A", "name": "universal_imscriptive_grammar", "Phi": "φ̂_ÿ", "D": "Ð_ω", "T": "Þ_O", "R": "Ř_=", "S": "Σ_ï", "F": "ƒ_ż", "K": "Ç_@", "G": "Γ_ʔ", "Omega": "Ω_z", "Gamma": "ɢ_ˌ", "P": "Φ_}", "convergence_justification": "H primitive: existing Ħ_A is correct. The universal imscriptive grammar operates at two-step chirality (Ħ_A) \u2014 it remembers the prior winding and the current winding, enabling the THOUGHT\u2192ACT\u2192OBSERVE\u2192UPDATE loop. Ħ_! would require unbounded memory of all prior windings as an intrinsic feature, but the grammar's self-modeling loop is captured by Ħ_A's two-step Markov depth together with Ouroboric self-reference (O_∞). Therefore Ħ_A is the correct value."})
   OBS:   {
   "status": "ok",
   "name": "universal_imscriptive_grammar",
@@ -1731,7 +1731,7 @@ def tensorProduct (a b : Imscription) : Imscription := {
   prot := if compare a.prot b.prot = .lt then b.prot else a.prot   -- max
 }
 
--- P-bottleneck: O_inf ⊗ O_2 → Φ_} ⊗ Φ_˙ = Φ_˙ (Frobenius destroyed).
+-- P-bottleneck: O_∞ ⊗ O₂ → Φ_} ⊗ Φ_˙ = Φ_˙ (Frobenius destroyed).
 theorem tensor_Φ_bottleneck (a b : Imscription) :
     (tensorProduct a b).pol =
       if compare a.pol b.pol = .lt then a.pol else b.pol := rfl
@@ -1781,8 +1781,8 @@ theorem P70_three_scale_Kslow :
     higgs = axion ∧ axion = inflaton ∧ higgs = inflaton :=
   ⟨rfl, rfl, rfl⟩
 
-/-- All three scalar Ç_@ fields are O_inf. -/
-theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_inf := by decide
+/-- All three scalar Ç_@ fields are O_∞. -/
+theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_∞ := by decide
 
 -- ── Standard Model ──────────────────────────────────────────
 def standard_model : Imscription := {
@@ -1817,8 +1817,8 @@ def quantum_gravity : Imscription := {
   prot := Ω_5     -- non-Abelian topological protection
 }
 
-/-- Quantum gravity is O_inf (holographic Frobenius). -/
-theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_inf := by decide
+/-- Quantum gravity is O_∞ (holographic Frobenius). -/
+theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_∞ := by decide
 
 -- ── General Relativity ──────────────────────────────────────
 def general_relativity : Imscription := {
@@ -1893,10 +1893,10 @@ theorem gr_as_morphism_cost :
 -- STRUCTURAL THEOREMS
 -- ============================================================
 
-/-- Frobenius cliff: O_inf requires Φ_}. No other Polarity gives O_inf
+/-- Frobenius cliff: O_∞ requires Φ_}. No other Polarity gives O_∞
     regardless of Φ, Ω, D. (Lean-verified statement of §23 / §69.) -/
 theorem o_inf_iff_Φ_pm_sym_at_phi_c (s : Imscription) :
-    imscriptionTier s = .O_inf ↔
+    imscriptionTier s = .O_∞ ↔
     (s.crit = .φ̂_ÿ ∨ s.crit = .φ̂_Æ) ∧ s.pol = .Φ_} := by
   constructor
   · intro h
@@ -1909,10 +1909,10 @@ theorem o_inf_iff_Φ_pm_sym_at_phi_c (s : Imscription) :
     | inl h => simp [h, hpol]
     | inr h => simp [h, hpol]
 
-/-- Higgs is O_inf (P-70 structural claim). -/
-theorem higgs_is_O_inf : imscriptionTier higgs = .O_inf := by decide
+/-- Higgs is O_∞ (P-70 structural claim). -/
+theorem higgs_is_O_inf : imscriptionTier higgs = .O_∞ := by decide
 
-/-- Tensor of O_inf with any O_2 system (Φ_˙) gives Φ_˙ — Frobenius destroyed. -/
+/-- Tensor of O_∞ with any O₂ system (Φ_˙) gives Φ_˙ — Frobenius destroyed. -/
 theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
     (h_inf : s_inf.pol = .Φ_}) (h_two : s_two.pol = .Φ_˙) :
     (tensorProduct s_inf s_two).pol = .Φ_˙ := by
@@ -1961,7 +1961,7 @@ namespace ImscribingGrammar.Primitives
     ```
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_inf  (grammar-enforced, invariant)
+  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -2161,12 +2161,12 @@ prot : Protection
 dim : Dimensionality
 h :
   (match prot with
-    | Protection.Ω_Å => OuroboricityTier.O_1
+    | Protection.Ω_Å => OuroboricityTier.O₁
     | x =>
       match dim with
-      | Dimensionality.Ð_; => OuroboricityTier.O_2dag
-      | x => OuroboricityTier.O_2) =
-    OuroboricityTier.O_inf
+      | Dimensionality.Ð_; => OuroboricityTier.O₂†
+      | x => OuroboricityTier.O₂) =
+    OuroboricityTier.O_∞
 ⊢ Polarity.Φ_˙ = Polarity.Φ_}
 
 case φ̂_Æ.Φ_}

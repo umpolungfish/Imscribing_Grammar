@@ -503,15 +503,15 @@ def assign_tier(compound):
     o_p = get_ordinal("Φ", compound.get("Φ", ""))
     o_omega = get_ordinal("Ω", compound.get("Ω", ""))
     if o_phi >= 2 and o_h >= 3 and o_p >= 5 and o_omega >= 3:
-        return "O_inf"
+        return "O_∞"
     elif o_phi >= 2 and o_h >= 2 and o_p >= 5 and o_omega >= 2:
         return "O_2_dagger"
     elif o_phi >= 2 and o_h >= 1 and o_p >= 2 and o_omega >= 2:
-        return "O_2"
+        return "O₂"
     elif o_phi >= 1 and o_h >= 1 and o_p >= 1 and o_omega >= 1:
-        return "O_1"
+        return "O₁"
     else:
-        return "O_0"
+        return "O₀"
 
 # ── Display ──────────────────────────────────────────────────────
 

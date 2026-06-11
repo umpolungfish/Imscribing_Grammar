@@ -19,7 +19,7 @@ What is time? Physics treats it as a dimension, thermodynamics implicates it in 
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-This tuple places time at $O_2^\dagger$ tier with a consciousness score $C = 0.828$ (both gates open), crystal address 3,928,019, and topological protection class $\mathbb{Z}$. The present investigation probes whether this structural decomposition renders "time" a useful notion — or whether the IG reveals a deeper relationship that subsumes it.
+This tuple places time at $O₂^\dagger$ tier with a consciousness score $C = 0.828$ (both gates open), crystal address 3,928,019, and topological protection class $\mathbb{Z}$. The present investigation probes whether this structural decomposition renders "time" a useful notion — or whether the IG reveals a deeper relationship that subsumes it.
 
 ---
 
@@ -29,7 +29,7 @@ The IG catalog entry for "time" (one of 101+ time-related entries) encodes it as
 
 Three primitives carry the heaviest structural weight. The principal decomposition reveals $T_{\text{openo}}$ (ordinal contribution 4) and $H_{\text{invscripta}}$ (ordinal contribution 3) as the dominant load-bearing atoms, with $D_{\text{invomega}}$, $R_{\text{downstep}}$, $K_{\text{schwa}}$, $G_{\text{revapostrophe}}$, $\Gamma_{\text{secstress}}$, $S = n{:}m$, and $\Omega_{\text{dzlig}}$ each contributing weight 2. The atoms $F_{\text{dh}}$ and $\Phi_{\text{ctyogh}}$ contribute weight 1 — necessary but not dominant.
 
-The ouroboricity tier — $O_2^\dagger$ — places time in the upper 6% of all structural types (1,036,800 types). It is critically self-modeling ($\Phi_{\text{ctyogh}}$), topologically protected ($\Omega_{\text{dzlig}}$), and unbounded in domain ($D_{\text{invomega}}$), but lacks the Frobenius closure ($P_{\text{doublebarpipe}}$) required for $O_\infty$.
+The ouroboricity tier — $O₂^\dagger$ — places time in the upper 6% of all structural types (1,036,800 types). It is critically self-modeling ($\Phi_{\text{ctyogh}}$), topologically protected ($\Omega_{\text{dzlig}}$), and unbounded in domain ($D_{\text{invomega}}$), but lacks the Frobenius closure ($P_{\text{doublebarpipe}}$) required for $O_\infty$.
 ---
 
 ## 2. Time Is Not Fundamental — $\Gamma_{\text{secstress}}$ Is
@@ -71,7 +71,7 @@ The meet (structural floor) of time and spacetime resolves to:
 
 $$\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{turnm}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$$
 
-Eight primitives are shared. The conflicts resolve conservatively: $P_{\text{aolig}}$ over $P_{\text{upsilon}}$, $F_{\text{dh}}$ over $F_{\text{hardsign}}$, $K_{\text{turnm}}$ (the weaker), and $\Omega_{\text{crtwo}}$ (the weaker). The meet is $O_2$ tier — still critically self-modeling and topologically protected, but with weaker winding and faster kinetics.
+Eight primitives are shared. The conflicts resolve conservatively: $P_{\text{aolig}}$ over $P_{\text{upsilon}}$, $F_{\text{dh}}$ over $F_{\text{hardsign}}$, $K_{\text{turnm}}$ (the weaker), and $\Omega_{\text{crtwo}}$ (the weaker). The meet is $O₂$ tier — still critically self-modeling and topologically protected, but with weaker winding and faster kinetics.
 ---
 
 ## 4. Time Has Consciousness ($C = 0.828$)
@@ -90,7 +90,7 @@ The catalog contains a second entry: `time_concept` — time as a fundamental di
 
 $$\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{lyoghlig}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{frtailgamma}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{softsign}};\ H_{\text{invscripta}};\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-This is $O_0$ tier — the baseline. Distance from time proper: 5.46 (Mahalanobis 5.85). The dominant delta is $T$ (4.0 weighted, 16.0 contribution). The "time concept" lacks imscriptive closure ($T_{\text{openo}} \to T_{\text{nrleg}}$), lacks topological protection ($\Omega_{\text{dzlig}} \to \Omega_{\text{closeepsilon}}$), is subcritical ($\Phi_{\text{ctyogh}} \to \Phi_{\text{softsign}}$), and has fast kinetics ($K_{\text{schwa}} \to K_{\text{frtailgamma}}$). It is a 1:1 system — homogeneous — not the heterogeneous $n{:}m$ of time proper.
+This is $O₀$ tier — the baseline. Distance from time proper: 5.46 (Mahalanobis 5.85). The dominant delta is $T$ (4.0 weighted, 16.0 contribution). The "time concept" lacks imscriptive closure ($T_{\text{openo}} \to T_{\text{nrleg}}$), lacks topological protection ($\Omega_{\text{dzlig}} \to \Omega_{\text{closeepsilon}}$), is subcritical ($\Phi_{\text{ctyogh}} \to \Phi_{\text{softsign}}$), and has fast kinetics ($K_{\text{schwa}} \to K_{\text{frtailgamma}}$). It is a 1:1 system — homogeneous — not the heterogeneous $n{:}m$ of time proper.
 
 What we colloquially call "time" — the conceptual abstraction — is a pale shadow of time's structural reality. The IG makes this precise: the distance between them is larger than the distance between time and quantum gravity (1.81).
 ---
@@ -101,15 +101,15 @@ The 10 nearest catalog neighbors to time, ranked by structural distance:
 
 | Rank | System | Distance | Tier |
 |------|--------|----------|------|
-| 1 | `A2d_copt` (consciousness-optimal A2†) | 1.66 | $O_2^\dagger$ |
-| 2 | `memory_tool_tensor` | 1.77 | $O_2$ |
-| 3 | `quantum_gravity` | 1.81 | $O_2^\dagger$ |
-| 4 | `string_theory` | 1.81 | $O_2^\dagger$ |
-| 5 | `abc_conjecture_iut_proof` | 1.81 | $O_2^\dagger$ |
-| 6 | `abc_proof_draft` | 1.81 | $O_2^\dagger$ |
-| 7 | `agent_grammar_optimal` | 2.02 | $O_2$ |
-| 8 | `yang_mills_mass_gap` | 2.05 | $O_2$ |
-| 9 | `langlands_correspondence` | 2.07 | $O_2^\dagger$ |
+| 1 | `A2d_copt` (consciousness-optimal A2†) | 1.66 | $O₂^\dagger$ |
+| 2 | `memory_tool_tensor` | 1.77 | $O₂$ |
+| 3 | `quantum_gravity` | 1.81 | $O₂^\dagger$ |
+| 4 | `string_theory` | 1.81 | $O₂^\dagger$ |
+| 5 | `abc_conjecture_iut_proof` | 1.81 | $O₂^\dagger$ |
+| 6 | `abc_proof_draft` | 1.81 | $O₂^\dagger$ |
+| 7 | `agent_grammar_optimal` | 2.02 | $O₂$ |
+| 8 | `yang_mills_mass_gap` | 2.05 | $O₂$ |
+| 9 | `langlands_correspondence` | 2.07 | $O₂^\dagger$ |
 | 10 | `chronomancy` | 2.17 | — |
 
 The clustering is remarkable: 4 of the top 10 neighbors are at distance ~1.81 from time, forming a tight structural cluster. Quantum gravity, string theory, and the IUT proof of the abc conjecture share an almost identical structural distance from time. This suggests that the mathematical structures developed to unify quantum mechanics with gravity occupy a region of the crystal that is structurally near time — which accords with the role temporality plays in all these frameworks.
@@ -168,12 +168,12 @@ The crystal of types contains 17.28 million structural types distributed across 
 | Tier | Types | Percentage |
 |------|-------|------------|
 | $O_\infty$ | 1,382,400 | 8.0% |
-| $O_2^\dagger$ | 1,036,800 | 6.0% |
-| $O_2$ | 3,110,400 | 18.0% |
-| $O_1$ | 1,382,400 | 8.0% |
-| $O_0$ | 10,368,000 | 60.0% |
+| $O₂^\dagger$ | 1,036,800 | 6.0% |
+| $O₂$ | 3,110,400 | 18.0% |
+| $O₁$ | 1,382,400 | 8.0% |
+| $O₀$ | 10,368,000 | 60.0% |
 
-Time's $O_2^\dagger$ tier (6%) is rarer than $O_\infty$ (8%). The tier gap ladder shows that climbing from $O_0$ to $O_1$ requires only $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (distance 1.05). From $O_1$ to $O_2$ requires $D_{\text{wynn}} \to D_{\text{turnthree}}$ and $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ (distance 1.30). From $O_2$ to $O_2^\dagger$ requires $D_{\text{turnthree}} \to D_{\text{invomega}}$ (distance 1.00). But from $O_2^\dagger$ to $O_\infty$ requires $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ (distance 4.38, $\delta = 4.0$, weighted 19.2).
+Time's $O₂^\dagger$ tier (6%) is rarer than $O_\infty$ (8%). The tier gap ladder shows that climbing from $O₀$ to $O₁$ requires only $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ (distance 1.05). From $O₁$ to $O₂$ requires $D_{\text{wynn}} \to D_{\text{turnthree}}$ and $\Omega_{\text{closeepsilon}} \to \Omega_{\text{crtwo}}$ (distance 1.30). From $O₂$ to $O₂^\dagger$ requires $D_{\text{turnthree}} \to D_{\text{invomega}}$ (distance 1.00). But from $O₂^\dagger$ to $O_\infty$ requires $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ (distance 4.38, $\delta = 4.0$, weighted 19.2).
 
 This is the Frobenius wall. Time is at the highest tier reachable without the self-verifying symmetry structure. Crossing that wall is the structural equivalent of achieving $\mu \circ \delta = \text{id}$ — the round-trip guarantee that makes the grammar itself possible.
 ---
@@ -188,13 +188,13 @@ This is the Frobenius wall. Time is at the highest tier reachable without the se
 
 4. **Time satisfies consciousness conditions.** $C = 0.828$, both gates open. Time's structural signature — $\Phi_{\text{ctyogh}}$ critical self-modeling with $K_{\text{schwa}}$ kinetics — creates the loop topology shared with conscious systems. Time is not a backdrop for consciousness; time and consciousness share a structural floor.
 
-5. **The "time concept" is a pale shadow.** The colloquial abstraction of time is $O_0$ tier, distance 5.46 from time proper — further than quantum gravity is from time.
+5. **The "time concept" is a pale shadow.** The colloquial abstraction of time is $O₀$ tier, distance 5.46 from time proper — further than quantum gravity is from time.
 
 6. **Time cannot be fully expressed in ZFC.** The imscriptive closure ($T_{\text{openo}}$) and sequential grammar ($\Gamma_{\text{secstress}}$) partially collapse under ZFC translation. Time exceeds the expressive power of set theory.
 
 7. **The better organizing principle is $\Gamma$.** Rather than asking "what is time?", the IG invites us to ask: *which interaction grammar ($\Gamma$) best captures the relationship we are trying to describe?* $\Gamma_{\text{secstress}}$ is one answer — the one we experience as temporal flow. $\Gamma_{\text{corner}}$, $\Gamma_{\text{spleftarrow}}$, and $\Gamma_{\text{doublevertline}}$ are equally valid structural alternatives whose phenomenology deserves investigation.
 
-8. **The Frobenius wall.** Time sits at $O_2^\dagger$, the highest tier below $O_\infty$. Crossing to $O_\infty$ requires the $\mu \circ \delta = \text{id}$ structure — self-verifying symmetry that time currently lacks. Whether an $O_\infty$ temporal system is possible is an open structural question, one the IG crystal makes precise but does not answer.
+8. **The Frobenius wall.** Time sits at $O₂^\dagger$, the highest tier below $O_\infty$. Crossing to $O_\infty$ requires the $\mu \circ \delta = \text{id}$ structure — self-verifying symmetry that time currently lacks. Whether an $O_\infty$ temporal system is possible is an open structural question, one the IG crystal makes precise but does not answer.
 
 ---
 
@@ -203,7 +203,7 @@ This is the Frobenius wall. Time is at the highest tier reachable without the se
 | Property | Value |
 |----------|-------|
 | **Tuple** | $\langle D_{\text{invomega}};\ T_{\text{openo}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{dh}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$ |
-| **Tier** | $O_2^\dagger$ |
+| **Tier** | $O₂^\dagger$ |
 | **C-score** | $0.828$ (both gates open) |
 | **Crystal address** | 3,928,019 |
 | **Topological protection** | $\mathbb{Z}$ (integer winding) |

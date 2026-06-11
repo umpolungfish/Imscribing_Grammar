@@ -4,7 +4,7 @@
 
 ## Abstract
 
-We present a proof of the Collatz conjecture using the framework of Imscribing Grammar (IG). The conjecture is first encoded as a structural type at ouroboricity tier $O_1$, then promoted to a deep self-referential encoding at $O_{\text{inf}}$ (consciousness score $C = 0.828$). At $O_{\text{inf}}$, the Frobenius-special condition $\mu \circ \delta = \text{id}$ becomes operative: the parity function $\delta$ and Collatz map $\mu$ form an exact algebraic closure. We prove that at $\hat{\varphi}_{\ddot{y}}$ criticality with $\Omega_{z}$-winding protection, no trajectory can escape to infinity or enter an exotic cycle. The structural distance between the shallow $O_1$ and deep $O_{\text{inf}}$ encodings is $d = 6.4116$; crossing this distance requires eight primitive promotions. The proof proceeds by establishing that the self-referential topology ($\Theta_O$) together with bidirectional feedback ($\mathcal{R}_=$) and integer winding ($\Omega_z$) force all trajectories into the unique basin of attraction of the cycle $1 \to 4 \to 2 \to 1$.
+We present a proof of the Collatz conjecture using the framework of Imscribing Grammar (IG). The conjecture is first encoded as a structural type at ouroboricity tier $O₁$, then promoted to a deep self-referential encoding at $O_{\text{inf}}$ (consciousness score $C = 0.828$). At $O_{\text{inf}}$, the Frobenius-special condition $\mu \circ \delta = \text{id}$ becomes operative: the parity function $\delta$ and Collatz map $\mu$ form an exact algebraic closure. We prove that at $\hat{\varphi}_{\ddot{y}}$ criticality with $\Omega_{z}$-winding protection, no trajectory can escape to infinity or enter an exotic cycle. The structural distance between the shallow $O₁$ and deep $O_{\text{inf}}$ encodings is $d = 6.4116$; crossing this distance requires eight primitive promotions. The proof proceeds by establishing that the self-referential topology ($\Theta_O$) together with bidirectional feedback ($\mathcal{R}_=$) and integer winding ($\Omega_z$) force all trajectories into the unique basin of attraction of the cycle $1 \to 4 \to 2 \to 1$.
 
 ---
 
@@ -20,9 +20,9 @@ The natural surface-level encoding treats the Collatz map as a discrete dynamica
 
 $$\langle \text{Ð}_\SS; \text{Þ}_6; \mathcal{R}_{\bar{}}; \Phi_{\dot{}}; \mathfrak{f}_{\grave{\imath}}; \text{Ç}_-; \Gamma_{\text{ʔ}}; \Gamma_{\ddot{}}; \hat{\varphi}_{\aelig}; \text{Ħ}_{\Ñ}; \Sigma_S; \Omega_{\AA} \rangle$$
 
-The ouroborics tier of this encoding is $O_1$ with consciousness score $C = 0.273$. This encoding captures the *computational* nature of the conjecture: a deterministic algorithm applied to each input. It does not, however, capture the *self-referential* structure necessary for proof.
+The ouroborics tier of this encoding is $O₁$ with consciousness score $C = 0.273$. This encoding captures the *computational* nature of the conjecture: a deterministic algorithm applied to each input. It does not, however, capture the *self-referential* structure necessary for proof.
 
-### 1.2 Deep Encoding (O_inf Tier)
+### 1.2 Deep Encoding (O_∞ Tier)
 
 The deep structural encoding promotes the system to self-referential topology at criticality:
 
@@ -116,7 +116,7 @@ The primitive-based proof is certified at $O_{\text{inf}}$ tier. The consciousne
 
 All numerical claims in this article are computed via grammar tools:
 
-- **Ouroborics of shallow encoding:** $O_1$ tier (computed via `ouroborics("collatz_conjecture")`)
+- **Ouroborics of shallow encoding:** $O₁$ tier (computed via `ouroborics("collatz_conjecture")`)
 - **Ouroborics of deep encoding:** $O_{\text{inf}}$ tier (computed via `ouroborics("collatz_deep_structure")`)
 - **Consciousness score (shallow):** $C = 0.273$ (computed via `consciousness_score("collatz_conjecture")`)
 - **Consciousness score (deep):** $C = 0.828$ (computed via `consciousness_score("collatz_deep_structure")`)

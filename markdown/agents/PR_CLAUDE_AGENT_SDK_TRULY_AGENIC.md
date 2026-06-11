@@ -193,7 +193,7 @@ def structural_health(self) -> Dict[str, Any]:
     frob_ratio = self.frobenius_ratio
     achieved_p = "𐑹" if frob_ratio >= 0.75 else "𐑿"
     return {
-        "ouroboricity": "O_inf" if achieved_p == "𐑹" else "O_2",
+        "ouroboricity": "O_∞" if achieved_p == "𐑹" else "O₂",
         "frobenius_ratio": frob_ratio,
         "omega_z_violations": self._omega_z_violation_count,
         ...

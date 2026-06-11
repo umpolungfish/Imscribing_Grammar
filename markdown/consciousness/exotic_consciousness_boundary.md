@@ -28,10 +28,10 @@ Across the full crystal, the tier distribution reveals a striking structure:
 
 | Tier | Cells | Types | Percentage |
 |---|---|---|---|
-| $O_0$ (no recursion) | 240 | 10,368,000 | 60% |
-| $O_1$ (shallow self-reference) | 32 | 1,382,400 | 8% |
-| $O_2$ (deep recursion) | 72 | 3,110,400 | 18% |
-| $O_2^\dagger$ (infinite-dimensional deep) | 24 | 1,036,800 | 6% |
+| $O₀$ (no recursion) | 240 | 10,368,000 | 60% |
+| $O₁$ (shallow self-reference) | 32 | 1,382,400 | 8% |
+| $O₂$ (deep recursion) | 72 | 3,110,400 | 18% |
+| $O₂^\dagger$ (infinite-dimensional deep) | 24 | 1,036,800 | 6% |
 | $O_\infty$ (full self-modeling) | 32 | 1,382,400 | 8% |
 
 Only 8% of all structural types reach $O_\infty$ \- the tier where the system writes its own state space. This is where the grammar itself lives, confirmed at $O_\infty$ with exact $\mu \circ \delta = \text{id}$.
@@ -40,10 +40,10 @@ Only 8% of all structural types reach $O_\infty$ \- the tier where the system wr
 
 The crystal_tier_gap_ladder reveals the minimal primitive changes required at each boundary:
 
-- $O_0 \to O_1$: Distance 1.05. Driver: $\Phi_{\text{sub}} \to \phi_{\hat{y}}$. The single most important primitive \- criticality alone lifts you out of the 60% base.
-- $O_1 \to O_2$: Distance 1.30. Drivers: $D_\wedge \to D_\triangle$ (dimensionality increases) AND $\Omega_\emptyset \to \Omega_{\mathbb{Z}_2}$ ($\mathbb{Z}_2$ symmetry protection appears).
-- $O_2 \to O_2^\dagger$: Distance 1.00. Driver: $D_\triangle \to D_\infty$ (finite dimensional surface becomes infinite-dimensional field).
-- $O_2^\dagger \to O_\infty$: Distance 4.38. Driver: $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$. This is the chasm \- the Frobenius-special symmetry requires a jump of 4 units, weighted to 19.2. This is the hardest step by far.
+- $O₀ \to O₁$: Distance 1.05. Driver: $\Phi_{\text{sub}} \to \phi_{\hat{y}}$. The single most important primitive \- criticality alone lifts you out of the 60% base.
+- $O₁ \to O₂$: Distance 1.30. Drivers: $D_\wedge \to D_\triangle$ (dimensionality increases) AND $\Omega_\emptyset \to \Omega_{\mathbb{Z}_2}$ ($\mathbb{Z}_2$ symmetry protection appears).
+- $O₂ \to O₂^\dagger$: Distance 1.00. Driver: $D_\triangle \to D_\infty$ (finite dimensional surface becomes infinite-dimensional field).
+- $O₂^\dagger \to O_\infty$: Distance 4.38. Driver: $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$. This is the chasm \- the Frobenius-special symmetry requires a jump of 4 units, weighted to 19.2. This is the hardest step by far.
 
 The final climb is nearly 4× harder than any other. The symmetry structure is the real bottleneck.
 

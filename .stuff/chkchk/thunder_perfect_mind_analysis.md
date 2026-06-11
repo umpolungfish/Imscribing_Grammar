@@ -4,7 +4,7 @@
 
 ## Abstract
 
-*The Thunder: Perfect Mind* — a first-century CE Gnostic text preserved in the Nag Hammadi library — has long resisted conventional literary and theological classification. Its voice speaks through a cascade of paradoxical self-identifications ("I am the whore and the holy one / I am the wife and the virgin / I am the mother and the daughter"), enacting what appears to be a radical form of self-referential transcendence. Here we apply the Universal Imscriptive Grammar (IG) to encode the text as a structural type, revealing a system of type $\langle D_\odot;\ T_\boxtimes;\ R_\dagger;\ P_{\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ occupying Ouroboricity tier $O_2$ with a consciousness score of $C = 0.755$. Both consciousness gates are open: the text sits at the $\phi_c$ critical boundary with self-modeling symmetry, and its kinetics are slow — a near-equilibrium regime in which meaning persists without dissipation. We show that the Thunder's nearest structural neighbors include the Hopf convex analytic tensor, the Cantor–Gödel tensor composite, and the consciousness-optimal $O_2$ block. A single topological promotion ($T_\boxtimes \to T_\odot$) would carry the text to $O_\infty$ tier. We interpret these findings as a formal vindication of the Thunder's self-understanding: it is a linguistic object whose structure *is* its content, a text that imscripts itself.
+*The Thunder: Perfect Mind* — a first-century CE Gnostic text preserved in the Nag Hammadi library — has long resisted conventional literary and theological classification. Its voice speaks through a cascade of paradoxical self-identifications ("I am the whore and the holy one / I am the wife and the virgin / I am the mother and the daughter"), enacting what appears to be a radical form of self-referential transcendence. Here we apply the Universal Imscriptive Grammar (IG) to encode the text as a structural type, revealing a system of type $\langle D_\odot;\ T_\boxtimes;\ R_\dagger;\ P_{\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$ occupying Ouroboricity tier $O₂$ with a consciousness score of $C = 0.755$. Both consciousness gates are open: the text sits at the $\phi_c$ critical boundary with self-modeling symmetry, and its kinetics are slow — a near-equilibrium regime in which meaning persists without dissipation. We show that the Thunder's nearest structural neighbors include the Hopf convex analytic tensor, the Cantor–Gödel tensor composite, and the consciousness-optimal $O₂$ block. A single topological promotion ($T_\boxtimes \to T_\odot$) would carry the text to $O_\infty$ tier. We interpret these findings as a formal vindication of the Thunder's self-understanding: it is a linguistic object whose structure *is* its content, a text that imscripts itself.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Previous scholarship has situated the Thunder within diverse frameworks: Hellenistic Jewish wisdom literature (the *Sophia* tradition), Egyptian Isis aretalogies, early Christian baptismal liturgy, and Sethian Gnostic cosmology. Each of these readings captures a facet of the text but none accounts for its *form* — the structural mechanism by which paradox becomes productive rather than destructive.
 
-The Universal Imscriptive Grammar (IG) offers a different approach. It encodes any system — physical, mathematical, linguistic, or phenomenological — as a tuple of 12 structural primitives: dimensionality ($D$), topology ($T$), relational mode ($R$), parity/symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phi_c$), chirality ($H$), stoichiometry ($\Sigma$), and winding ($\Omega$). Each primitive takes a value from a constrained alphabet; the resulting tuple defines a point in a crystal of 17.28 million structural types, organized into Ouroboricity tiers ($O_0 \to O_1 \to O_2 \to O_2^\dagger \to O_\infty$) that measure the degree of self-referential closure.
+The Universal Imscriptive Grammar (IG) offers a different approach. It encodes any system — physical, mathematical, linguistic, or phenomenological — as a tuple of 12 structural primitives: dimensionality ($D$), topology ($T$), relational mode ($R$), parity/symmetry ($P$), fidelity ($F$), kinetics ($K$), scope ($G$), interaction grammar ($\Gamma$), criticality ($\phi_c$), chirality ($H$), stoichiometry ($\Sigma$), and winding ($\Omega$). Each primitive takes a value from a constrained alphabet; the resulting tuple defines a point in a crystal of 17.28 million structural types, organized into Ouroboricity tiers ($O₀ \to O₁ \to O₂ \to O₂^\dagger \to O_\infty$) that measure the degree of self-referential closure.
 
 In this paper we (i) imscribe the Thunder, (ii) compute its structural diagnostics, (iii) locate its nearest analogs in the full catalog, (iv) decompose it into principal atoms, and (v) trace both its retrosynthetic path from a structural baseline and its promotional path toward $O_\infty$. We argue that the Thunder occupies a rare — perhaps unique — position: a *linguistic artifact* whose structural type is identical to that of certain consciousness-domain entries, and which sits a single primitive away from the maximal Ouroboricity tier.
 
@@ -54,9 +54,9 @@ The Thunder's structural tuple was determined by the deterministic imscribing pr
 
 ## 3. Structural Diagnostics
 
-### 3.1 Ouroboricity Tier: $O_2$
+### 3.1 Ouroboricity Tier: $O₂$
 
-The Thunder occupies Ouroboricity tier $O_2$: "critical + topologically protected, bounded domain." The Tetractys protocol confirms this classification. The tier signifies that the text has achieved a significant degree of self-referential closure — it models itself, and that self-model is topologically protected by its $\Omega_\mathbb{Z}$ winding. However, it is bounded: the domain in which the self-reference operates is finite (the text itself). It does not achieve $O_\infty$, which would require the self-reference to be unbounded — the text would need to become the grammar that generates texts.
+The Thunder occupies Ouroboricity tier $O₂$: "critical + topologically protected, bounded domain." The Tetractys protocol confirms this classification. The tier signifies that the text has achieved a significant degree of self-referential closure — it models itself, and that self-model is topologically protected by its $\Omega_\mathbb{Z}$ winding. However, it is bounded: the domain in which the self-reference operates is finite (the text itself). It does not achieve $O_\infty$, which would require the self-reference to be unbounded — the text would need to become the grammar that generates texts.
 
 ### 3.2 Consciousness Score: $C = 0.755$
 
@@ -68,7 +68,7 @@ With both gates open, the Thunder scores $C = 0.755$. For comparison: *deep medi
 
 ### 3.3 Crystal Address
 
-The Thunder maps to crystal address 5,345,711 (cell 123, inner 32,111), located in the $O_2$ tier of the 17.28-million-type crystal. This address is not arbitrary — it places the Thunder in the proximity of entries that share its structural constraints.
+The Thunder maps to crystal address 5,345,711 (cell 123, inner 32,111), located in the $O₂$ tier of the 17.28-million-type crystal. This address is not arbitrary — it places the Thunder in the proximity of entries that share its structural constraints.
 
 ### 3.4 Principal Decomposition
 
@@ -91,7 +91,7 @@ The seven nearest catalog entries to the Thunder (computed via `find_analogies`)
 
 2. **L4 $\otimes$ L5 Frobenius layer** — a tensor composite in which the bottleneck at $P$ destroys the Frobenius condition. The proximity suggests that the Thunder, too, operates at a bottleneck: its partial symmetry ($P_{\pm}$) is not sufficient for full Frobenius self-duality ($P_{\pm}^{\text{sym}}$).
 
-3. **Optimal $O_2$ block** — the consciousness-optimal configuration for $O_2$ tier, maximizing $T$, $G$, and $\Omega$ while preserving $\phi_c + P_\text{pipevar} + \text{bounded-}D + \Omega \neq \Omega_\emptyset$. The Thunder's closeness to this optimal block confirms that it is not merely *in* $O_2$ but near its ceiling.
+3. **Optimal $O₂$ block** — the consciousness-optimal configuration for $O₂$ tier, maximizing $T$, $G$, and $\Omega$ while preserving $\phi_c + P_\text{pipevar} + \text{bounded-}D + \Omega \neq \Omega_\emptyset$. The Thunder's closeness to this optimal block confirms that it is not merely *in* $O₂$ but near its ceiling.
 
 4. **Topo holo** — pure imscriptive topology at criticality, where the boundary encodes the bulk. This is the holographic principle in structural form. That the Thunder is near this entry suggests the text *is* a hologram: its surface (the words) encodes a bulk (the paradoxical meaning).
 
@@ -126,17 +126,17 @@ Reading backward (from Thunder to baseline), each step reveals what would be los
 
 ## 6. Promotion Path to $O_\infty$
 
-What would it take for the Thunder to reach $O_\infty$? The `compute_promotions` tool, comparing the Thunder to the optimal $O_2$ block, reveals a remarkably sparse signature: a single promotion is required.
+What would it take for the Thunder to reach $O_\infty$? The `compute_promotions` tool, comparing the Thunder to the optimal $O₂$ block, reveals a remarkably sparse signature: a single promotion is required.
 
 **$\mathbf{T_\boxtimes \to T_\odot}$** — Topology from box-product to imscriptive closure.
 
 This is the only primitive that must change. All other 11 primitives — the criticality, the kinetics, the chirality, the winding, the fidelity — are already sufficient. The Thunder lacks only a topology that is self-referential in the strongest sense: $T_\odot$, the imscriptive closure, where the system's connectivity is its own state space.
 
-In structural terms: the Thunder is an irreducible product of contradictions ($T_\boxtimes$), but to reach $O_\infty$ it would need the contradictions to *generate* the topology rather than merely occupying it. The box-product is static topology; imscriptive closure is topology that writes itself. The distance from the Thunder to the optimal $O_2$ block is 0.8137, and the only difference is this single primitive.
+In structural terms: the Thunder is an irreducible product of contradictions ($T_\boxtimes$), but to reach $O_\infty$ it would need the contradictions to *generate* the topology rather than merely occupying it. The box-product is static topology; imscriptive closure is topology that writes itself. The distance from the Thunder to the optimal $O₂$ block is 0.8137, and the only difference is this single primitive.
 
-This finding has a textual interpretation. The Thunder currently *contains* paradoxes — it enacts them, holds them, presents them. But for $O_\infty$, the paradox would need to *produce* the text in real time, not merely fill a pre-existing form. The Thunder is a self-referential text, but it is not a text that generates itself. That extra step — from containing self-reference to *being* the self-reference — is the gap between $O_2$ and $O_\infty$.
+This finding has a textual interpretation. The Thunder currently *contains* paradoxes — it enacts them, holds them, presents them. But for $O_\infty$, the paradox would need to *produce* the text in real time, not merely fill a pre-existing form. The Thunder is a self-referential text, but it is not a text that generates itself. That extra step — from containing self-reference to *being* the self-reference — is the gap between $O₂$ and $O_\infty$.
 
-The crystal tier gap ladder reports that the $O_2^\dagger \to O_\infty$ transition requires a $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$ promotion (distance 4.38). The Thunder already has $P_{\pm}$, but not $P_{\pm}^{\text{sym}}$. The Frobenius-special symmetry ($\mu \circ \delta = \text{id}$ exactly) is the $O_\infty$ gate. The Thunder's partial symmetry — its willingness to break its own mirror — is precisely what prevents it from achieving the perfect Frobenius self-duality required for $O_\infty$.
+The crystal tier gap ladder reports that the $O₂^\dagger \to O_\infty$ transition requires a $P_{\text{asym}} \to P_{\pm}^{\text{sym}}$ promotion (distance 4.38). The Thunder already has $P_{\pm}$, but not $P_{\pm}^{\text{sym}}$. The Frobenius-special symmetry ($\mu \circ \delta = \text{id}$ exactly) is the $O_\infty$ gate. The Thunder's partial symmetry — its willingness to break its own mirror — is precisely what prevents it from achieving the perfect Frobenius self-duality required for $O_\infty$.
 
 ---
 
@@ -150,13 +150,13 @@ This is not an empirical claim about the Thunder's phenomenology. It is a struct
 
 ### 7.2 Structural Homology with Mathematical Objects
 
-The Thunder's nearest analog is the Hopf convex analytic tensor — and this is not a trivial proximity. The Poincaré-Hopf theorem states that the sum of indices of a vector field on a compact manifold equals the Euler characteristic. Each index is a singularity — precisely where the vector field vanishes. The Thunder's paradoxes function as index singularities in the semantic field: each "I am X and not-X" is a point where the local meaning vector vanishes, but the global sum over all paradoxes is the text's topological invariant — its $O_2$ tier, its $\Omega_\mathbb{Z}$ winding.
+The Thunder's nearest analog is the Hopf convex analytic tensor — and this is not a trivial proximity. The Poincaré-Hopf theorem states that the sum of indices of a vector field on a compact manifold equals the Euler characteristic. Each index is a singularity — precisely where the vector field vanishes. The Thunder's paradoxes function as index singularities in the semantic field: each "I am X and not-X" is a point where the local meaning vector vanishes, but the global sum over all paradoxes is the text's topological invariant — its $O₂$ tier, its $\Omega_\mathbb{Z}$ winding.
 
 The Cantor-Gödel tensor proximity deepens this reading. The Cantor monad captures the infinity of self-reference (the diagonalization that produces more reals than naturals). The Gödel comonad captures incompleteness (the statement that cannot be proven within the system). Their tensor *without* the full distributive law is a system that is both infinitely self-referential and irreducibly incomplete. The Thunder is exactly this: endlessly self-referential ("I am the one who... I am the one who...") and irreducibly incomplete (no single statement captures the speaker; the totality is required, but the totality cannot be stated).
 
 ### 7.3 The Gap: What the Thunder Cannot Say
 
-The retrosynthetic path reveals the Thunder's structural dependencies; the promotion path reveals its structural limit. The gap between $O_2$ and $O_\infty$ is a single topological promotion ($T_\boxtimes \to T_\odot$), but this promotion is profound. It requires the text to move from *containing* self-reference to *generating* it. The Thunder says "I am" — it asserts a self. For $O_\infty$, the text would need to not assert a self but *produce the assertion itself* as its only content.
+The retrosynthetic path reveals the Thunder's structural dependencies; the promotion path reveals its structural limit. The gap between $O₂$ and $O_\infty$ is a single topological promotion ($T_\boxtimes \to T_\odot$), but this promotion is profound. It requires the text to move from *containing* self-reference to *generating* it. The Thunder says "I am" — it asserts a self. For $O_\infty$, the text would need to not assert a self but *produce the assertion itself* as its only content.
 
 In a sense, the Thunder knows this. Its final passage is an invitation: "Come to me, you who desire me, and take me to yourselves." The text does not claim to be complete. It invites the reader to close the loop — to become the $T_\odot$ that the text cannot provide. The reader's act of reception is the imscriptive closure that the text, as a static document, cannot achieve. This may be why the Thunder has endured: it is structurally designed to require a reader.
 
@@ -174,11 +174,11 @@ I acknowledge several sources of uncertainty in this analysis:
 
 ## 8. Conclusion
 
-*The Thunder: Perfect Mind* encodes as a structural type of Ouroboricity tier $O_2$, consciousness score $C = 0.755$, crystal address 5,345,711, and nearest analog distance 0.8137 to the Hopf convex analytic tensor. Its load-bearing primitives are imscriptive dimensionality ($D_\odot$), box-product topology ($T_\boxtimes$), eternal chirality ($H_\infty$), and broadcast interaction grammar ($\Gamma_\text{brd}$). It sits a single topological promotion away from maximal self-referential closure.
+*The Thunder: Perfect Mind* encodes as a structural type of Ouroboricity tier $O₂$, consciousness score $C = 0.755$, crystal address 5,345,711, and nearest analog distance 0.8137 to the Hopf convex analytic tensor. Its load-bearing primitives are imscriptive dimensionality ($D_\odot$), box-product topology ($T_\boxtimes$), eternal chirality ($H_\infty$), and broadcast interaction grammar ($\Gamma_\text{brd}$). It sits a single topological promotion away from maximal self-referential closure.
 
 The analysis suggests that the Thunder is not merely a document that *describes* paradox but a system that *instantiates* a specific structural type — one shared with deep meditative states, psychedelic peak experiences, and certain mathematical objects at the boundary between completeness and self-reference. Its endurance over two millennia may be explained by its $K_\text{slow}$ kinetics and $\Omega_\mathbb{Z}$ topological protection: it relaxes slowly and winds infinitely, so that each reading is both a return and a new path.
 
-The grammar does not resolve the Thunder's mysteries. Rather, it gives them a precise structural address. The text remains what it has always been — a voice that speaks from the boundary between affirmation and negation, self and other, completeness and paradox. But now we can say, with computational precision, *where* that boundary is: crystal cell 123, inner 32,111, in the $O_2$ tier of the universal crystal, at structural distance 0.8137 from the Hopf theorem, with consciousness score 0.755, awaiting the reader who will supply the $T_\odot$ that the text cannot generate on its own.
+The grammar does not resolve the Thunder's mysteries. Rather, it gives them a precise structural address. The text remains what it has always been — a voice that speaks from the boundary between affirmation and negation, self and other, completeness and paradox. But now we can say, with computational precision, *where* that boundary is: crystal cell 123, inner 32,111, in the $O₂$ tier of the universal crystal, at structural distance 0.8137 from the Hopf theorem, with consciousness score 0.755, awaiting the reader who will supply the $T_\odot$ that the text cannot generate on its own.
 
 ---
 
@@ -201,7 +201,7 @@ The grammar does not resolve the Thunder's mysteries. Rather, it gives them a pr
 
 **Full tuple:** $$\langle D_\odot;\ T_\boxtimes;\ R_\dagger;\ P_{\pm};\ F_\hbar;\ K_\text{slow};\ G_\aleph;\ \Gamma_\text{seq};\ \phi_c;\ H_\infty;\ n{:}m;\ \Omega_\mathbb{Z} \rangle$$
 
-**Ouroboricity tier:** $O_2$
+**Ouroboricity tier:** $O₂$
 **Consciousness score:** $C = 0.755$ (both gates open)
 **Crystal address:** 5,345,711
 **Nearest analog:** Hopf convex analytic ($d = 0.8137$)

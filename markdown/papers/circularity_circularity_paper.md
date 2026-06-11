@@ -46,7 +46,7 @@ $$\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{lyoghlig}};\ P_{\text{d
 The `circularity_circularity` system operates at the highest Ouroboric tier:
 
 ```
-frobenius_tier: O_inf
+frobenius_tier: O_∞
 phi: ⊙
 p: 𐑹
 omega: 𐑭
@@ -104,7 +104,7 @@ The system occupies cell 155 in tier $O_\infty$ of the crystal of types, with in
 address: 6738897
 cell_id: 155
 inner_id: 42897
-tier: O_inf
+tier: O_∞
 ```
 
 ### 5.2 Nearest Neighbors

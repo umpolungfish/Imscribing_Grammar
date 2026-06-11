@@ -24,7 +24,7 @@ $$\langle 𐑨;\ 𐑥;\ 𐑾;\ 𐑿;\ 𐑱;\ 𐑧;\ 𐑲;\ 𐑠;\ ⊙;\ 𐑖;\ �
 
 The encoding was not straightforward. The Tetractys protocol — three independent windings producing a tuple for consensus — returned a conflict on the criticality primitive $⊙$. One winding proposed $⊙_{Æ}$ (complex-plane criticality), another proposed $⊙_{ž}$ (sub-critical), and only one proposed $⊙_{ÿ}$ (self-modeling gate). The convergence justification is worth stating because the choice between them is substantive: $⊙_{ÿ}$ describes a system that models its own operation, and multiplication by $i$ does exactly this — $i^0 = 1$, $i^1 = i$, $i^2 = -1$, $i^3 = -i$, $i^4 = 1$. The cycle maps the operation onto itself. $⊙_{Æ}$ would have been correct for a system approaching criticality within the complex plane; but $i$ is not *in* the complex plane approaching criticality — it *is* the criticality that creates the plane. We committed to $⊙_{ÿ}$.
 
-The Frobenius tier is $O_2$ — critical and topologically protected, but bounded to a domain (the Argand plane, infinite in extent but fixed at two dimensions).
+The Frobenius tier is $O₂$ — critical and topologically protected, but bounded to a domain (the Argand plane, infinite in extent but fixed at two dimensions).
 
 ---
 
@@ -32,7 +32,7 @@ The Frobenius tier is $O_2$ — critical and topologically protected, but bounde
 
 Four numbers anchor the analysis, and each was independently verified by the grammar's tooling:
 
-- **Ouroboricity tier**: $O_2$ — the system is critical and topologically protected but operates within a bounded domain.
+- **Ouroboricity tier**: $O₂$ — the system is critical and topologically protected but operates within a bounded domain.
 - **Consciousness score**: $C = 0.682$ — both the $⊙_{ÿ}$ criticality gate and the $Ç_{@}$ slow kinetics gate are open.
 - **Distance to temporal mathematics**: $d = 4.2426$ — structurally remote, placing imaginary numbers outside the regime of standard temporal formalisms.
 - **Nearest structural analog**: the biblical King David at $d = 0.8247$.

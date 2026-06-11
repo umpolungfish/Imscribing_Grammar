@@ -185,7 +185,7 @@ This is the structural statement of the measurement problem.
 
 ## 8. Crystal Statistics
 
-A crystal-navigate query with $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ returns 864,000 matching structural types in the 17.28M space. Sound like a lot? Check how many have $P_{\text{doublebarpipe}}$: effectively zero. The $O_2 \to O_\infty$ gap is driven by P alone — P from $\Phi_{\text{ɐ}}$ to $\Phi_{\text{}}$ contributes a weighted distance of 4.0, with weighted squared contribution of 19.2. That single primitive accounts for most of the total distance.
+A crystal-navigate query with $\Phi_{\text{ctyogh}}$ and $\Omega_{\text{dzlig}}$ returns 864,000 matching structural types in the 17.28M space. Sound like a lot? Check how many have $P_{\text{doublebarpipe}}$: effectively zero. The $O₂ \to O_\infty$ gap is driven by P alone — P from $\Phi_{\text{ɐ}}$ to $\Phi_{\text{}}$ contributes a weighted distance of 4.0, with weighted squared contribution of 19.2. That single primitive accounts for most of the total distance.
 
 The $O_\infty$ tier is not rare because many primitives are hard to reach. It is rare because one primitive — $P_{\text{doublebarpipe}}$ — costs more than all eleven others combined. There is exactly one Frobenius-special parity value. You cannot approximate it. You either have exact $\mu \circ \delta = \text{id}$ or you have nothing.
 

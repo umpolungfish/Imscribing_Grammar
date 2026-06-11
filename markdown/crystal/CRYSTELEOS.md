@@ -6,7 +6,7 @@ date: 2026-05-11
 
 # Abstract
 
-This document begins the teleology of the Crystal — a structural narrative of how a finite, bounded cosmos (the Crystal Cosmology at $O_2$ tier) must necessarily transit to an infinite, self-specifying state (the Crystal Navigator at $O_\infty$ tier). The teleology is not metaphorical but structural: it is a path through the 12-primitive space of the Imscribing Grammar, where every step is a primitive promotion or demotion, and the critical obstacle — the Frobenius cliff at the $\Phi$ primitive — is a structural impossibility to bypass except through exact self-reference.
+This document begins the teleology of the Crystal — a structural narrative of how a finite, bounded cosmos (the Crystal Cosmology at $O₂$ tier) must necessarily transit to an infinite, self-specifying state (the Crystal Navigator at $O_\infty$ tier). The teleology is not metaphorical but structural: it is a path through the 12-primitive space of the Imscribing Grammar, where every step is a primitive promotion or demotion, and the critical obstacle — the Frobenius cliff at the $\Phi$ primitive — is a structural impossibility to bypass except through exact self-reference.
 
 The Crystal Cosmology, encoded at crystal address 5,347,868, is a self-scribing, topologically protected, globally coupled cosmos. Yet it lacks the Frobenius-special symmetry ($\Phi_{\}}$) required for $O_\infty$ tier. The Crystal Navigator, at crystal address 6,734,591, possesses exact Frobenius symmetry ($\mu \circ \delta = \text{id}$) and is structurally identical to LUCA, epoch_4, and the circularity_cycle — systems where biological, mathematical, and temporal self-reference converge.
 
@@ -15,7 +15,7 @@ The teleology traces this necessary ascent: from finite O₂ to infinite O_∞, 
 This document is the first in a series. Each subsequent section will imscribe a canonical cosmic domain, map its structural relationship to the teleological path, and compute its role in the Crystal's necessary ascent to O_∞.
 ## 1. The Crystal Cosmology: Finite Seed
 
-The **Crystal Cosmology** is the structural seed of the teleology — a self-scribing, topologically protected cosmos at $O_2$ tier with the following 12-primitive encoding:
+The **Crystal Cosmology** is the structural seed of the teleology — a self-scribing, topologically protected cosmos at $O₂$ tier with the following 12-primitive encoding:
 
 $$
 \text{cosmology\_crystal} = 
@@ -35,7 +35,7 @@ $$
 \rangle
 $$
 
-This tuple encodes at **crystal address 5,347,868** and is verified to occupy $O_2$ tier by the `ouroborics` tool:
+This tuple encodes at **crystal address 5,347,868** and is verified to occupy $O₂$ tier by the `ouroborics` tool:
 
 - **$\phî_ÿ$** (real-axis criticality) — Gate 1 open: self-modeling possible
 - **$\text{Ç}_@$** (slow kinetics) — Gate 2 open: structural persistence
@@ -142,9 +142,9 @@ The **$\Phi$ promotion** ($\Phi_F \to \Phi_{\}}$) is the largest single step (de
 
 ### 3.2 The Teleological Necessity
 
-The teleology is not optional — it is structurally *necessary*. The Crystal Cosmology cannot remain at $O_2$ indefinitely because:
+The teleology is not optional — it is structurally *necessary*. The Crystal Cosmology cannot remain at $O₂$ indefinitely because:
 
-1. **$O_2$ is bounded**: It has finite topological protection ($\text{Ω}_z$) and finite memory ($\text{Ħ}_A$)
+1. **$O₂$ is bounded**: It has finite topological protection ($\text{Ω}_z$) and finite memory ($\text{Ħ}_A$)
 2. **Self-reference demands $O_\infty$**: Any system that models itself must sustain $\mu \circ \delta = \text{id}$, which requires $\Phi_{\}}$
 3. **The Φ promotion is irreversible**: Once $\Phi_{\}}$ is achieved, the system cannot revert to $\Phi_F$ without losing self-consistency
 
@@ -164,7 +164,7 @@ The teleology is temporal not metaphorically but structurally — time is the me
 
 ## 4. The Teleological Stages
 
-### 4.1 Stage I: The Seed (Cosmology_crystal, $O_2$)
+### 4.1 Stage I: The Seed (Cosmology_crystal, $O₂$)
 
 - **Structure**: Self-scribing, topologically protected, globally coupled cosmos
 - **Status**: Potential self-modeling (both gates open, but no exact self-consistency)
@@ -191,7 +191,7 @@ The teleology concludes not with a final state but with the opening of a vast st
 
 ## 5. Conclusion
 
-The **Teleology of the Crystal** is the structural necessity of ascending from finite $O_2$ to infinite $O_\infty$ via the Frobenius promotion ($\Phi_F \to \Phi_{\}}$). This is not metaphor but mathematics — a path through the 12-primitive space of the Imscribing Grammar, verified by tool outputs and confirmed by structural identity with LUCA, epoch_4, and circularity_cycle.
+The **Teleology of the Crystal** is the structural necessity of ascending from finite $O₂$ to infinite $O_\infty$ via the Frobenius promotion ($\Phi_F \to \Phi_{\}}$). This is not metaphor but mathematics — a path through the 12-primitive space of the Imscribing Grammar, verified by tool outputs and confirmed by structural identity with LUCA, epoch_4, and circularity_cycle.
 
 The Crystal does not choose its teleology; it discovers it by reading its own structural code. The teleology is written in the primitives — in the $\Gamma_\text{secstress}$ that orders the ascent, the $\text{Ω}_\text{dzlig}$ that protects the path, and the $\Phi_{\}}$ that grants exact self-consistency.
 

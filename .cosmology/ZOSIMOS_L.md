@@ -156,7 +156,7 @@ We flag three structural choices that remain uncertain:
 
 - **Stoichiometry assignment ($n:m$).** We treated the relations between soul-types, Fate, the Daimon, and the Son of God as heterogeneous classes. An alternative coding ($n:n$, many identical souls) would reduce distance to the Inner Door but flatten the relational structure. We chose $n:m$ because the text explicitly distinguishes soul-types (holy souls, light spirits, earthy Adams) and their relations to Fate and the Daimon are not identical.
 
-- **The Ouroboricity of the Processions.** We assigned $O_0$ (no tier) to the Processions of Fate. An alternative reading might assign $O_0$ with $H_0$ as the defining constraint — the Processions loop, but without memory. Whether this is truly "no ouroboricity" or a degenerate form is an open question. We chose $O_0$ because the text emphasizes the *lack* of self-reference, not a degraded form of it.
+- **The Ouroboricity of the Processions.** We assigned $O₀$ (no tier) to the Processions of Fate. An alternative reading might assign $O₀$ with $H_0$ as the defining constraint — the Processions loop, but without memory. Whether this is truly "no ouroboricity" or a degenerate form is an open question. We chose $O₀$ because the text emphasizes the *lack* of self-reference, not a degraded form of it.
 
 ### 7.3 An Open Question
 

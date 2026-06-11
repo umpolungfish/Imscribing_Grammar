@@ -133,7 +133,7 @@ Every `decide` in Lean corresponds to a world-examination in the Kabbalistic pro
 The transport is possible because the Imscribing Grammar captures structure *beneath* vocabulary. When two systems are distance 0.00, they share:
 
 - The same 12-primitive tuple: $\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{O}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{!}};\ \text{Σ}_{\text{ï}};\ \text{Ω}_{\text{z}} \rangle$
-- The same 4-element lattice (O₀/O₁/O₂/O_inf)
+- The same 4-element lattice (O₀/O₁/O₂/O_∞)
 - The same rank ordering
 - The same decidable predicates
 - The same Frobenius algebra structure

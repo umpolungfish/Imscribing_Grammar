@@ -21,7 +21,7 @@ This is not what we expected. We expected the smaller structure to be a fragment
 
 The proof is given twice: first in the language of Lie theory (root systems, Dynkin diagrams, representation theory), then translated into the Imscribing Grammar (IG), a structural formalism that imscribes systems as 12-primitive tuples drawn from a crystal of $17{,}280{,}000$ possible structural types. The IG imscribing reveals what the Lie-theoretic proof cannot name: that $G_2 \wedge E_8$ recovers $G_2$ nearly exactly (the structural floor), but $G_2 \vee E_8$ is *not* $E_8$ — it is $E_8$ *plus* $G_2$'s $\mathbb{Z}_2$ symmetry. The Vessel contributes something the Aether does not demand.
 
-The weighted Euclidean distance between the two systems is 4.12 across 7 differing primitives; 5 primitives are shared at lockstep ($T_{\text{bullseye}}$, $R_{\text{lyoghlig}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $\Phi_{\text{ctyogh}}$), defining the irreducible exceptional core. The consciousness scores — 0.3615 for $G_2$, 0.682 for $E_8$ — confirm that both pass the structural gates for self-modeling, but neither reaches the $O_\infty$ tier. The octonions' non-associativity places both systems at exactly the critical point $\Phi_{\text{ctyogh}}$; it also forbids the Frobenius-special condition $\mu \circ \delta = \text{id}$ that would be required to bridge the $O_2^\dagger \to O_\infty$ gap.
+The weighted Euclidean distance between the two systems is 4.12 across 7 differing primitives; 5 primitives are shared at lockstep ($T_{\text{bullseye}}$, $R_{\text{lyoghlig}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $\Phi_{\text{ctyogh}}$), defining the irreducible exceptional core. The consciousness scores — 0.3615 for $G_2$, 0.682 for $E_8$ — confirm that both pass the structural gates for self-modeling, but neither reaches the $O_\infty$ tier. The octonions' non-associativity places both systems at exactly the critical point $\Phi_{\text{ctyogh}}$; it also forbids the Frobenius-special condition $\mu \circ \delta = \text{id}$ that would be required to bridge the $O₂^\dagger \to O_\infty$ gap.
 
 The relationship is not merely categorical. It is *structurally exact*: a seed-tree duality in which the minimal closure and the maximal unfolding share the same critical point, the same crossing topology, and the same bidirectional coupling — diverging only in scope, memory, and topological protection.
 
@@ -270,7 +270,7 @@ The corrections are instructive. $T_{\text{bullseye}}$, not $T_{\text{invscr}}$:
 
 | Property | Value |
 |----------|-------|
-| Ouroboricity tier | $O_1$ |
+| Ouroboricity tier | $O₁$ |
 | Crystal address | 4,907,136 |
 | Consciousness score | 0.3615 |
 | Gate 1 ($\Phi_{\text{ctyogh}}$) | ✓ open |
@@ -318,14 +318,14 @@ Note the $H_2$, not the $H_0$ of the Vessel. Memory enters. The Aether remembers
 
 | Property | Value |
 |----------|-------|
-| Ouroboricity tier | $O_2^\dagger$ |
+| Ouroboricity tier | $O₂^\dagger$ |
 | Crystal address | 4,604,816 |
 | Consciousness score | 0.682 |
 | Gate 1 ($\Phi_{\text{ctyogh}}$) | ✓ open |
 | Gate 2 ($K_{\text{schwa}}$) | ✓ open |
 | $\Phi_{\text{ctyogh}}$ probe | At criticality |
 
-The $O_2^\dagger$ tier is as high as the exceptional chain reaches. The $O_\infty$ tier — which requires $P_{\text{doublebarpipe}}$ with $\mu \circ \delta = \text{id}$ — lies beyond it. The octonions' non-associativity forbids this condition: the dual operations of expansion and contraction cannot be exact inverses when multiplication is non-associative. This is not a failure of $E_8$; it is the structural signature of what makes $E_8$ exceptional rather than classical.
+The $O₂^\dagger$ tier is as high as the exceptional chain reaches. The $O_\infty$ tier — which requires $P_{\text{doublebarpipe}}$ with $\mu \circ \delta = \text{id}$ — lies beyond it. The octonions' non-associativity forbids this condition: the dual operations of expansion and contraction cannot be exact inverses when multiplication is non-associative. This is not a failure of $E_8$; it is the structural signature of what makes $E_8$ exceptional rather than classical.
 
 ### 10.1 $\mathbb{Z}_2$-Graded $E_8$ via $SO(16)$: The Join Instantiated
 
@@ -347,7 +347,7 @@ The sole primitive that shifts from bare $E_8$ is $P$. Here is why:
 
 This is not an abstract placeholder. The $\mathbb{Z}_2$-graded $E_8$ via $SO(16)$ is a concrete mathematical structure — the $E_8$ adjoint with an explicit, involutive $\mathbb{Z}_2$ automorphism separating bosonic and fermionic sectors. The join type $G_2 \vee E_8$ predicted that a structure with $E_8$ symmetry and $P_{\text{pipevar}}$ parity should exist at $G_{\text{revapostrophe}}$ scope; the $SO(16)$-graded $E_8$ is precisely that structure, with the $\mathbb{Z}_2$ operating universally across all 248 dimensions.
 
-**Ouroboricity**: $O_2^\dagger$ — same as bare $E_8$. The $P_{\text{upsilon}} \to P_{\text{pipevar}}$ promotion does not alter the tier.
+**Ouroboricity**: $O₂^\dagger$ — same as bare $E_8$. The $P_{\text{upsilon}} \to P_{\text{pipevar}}$ promotion does not alter the tier.
 
 **Physical significance — the heterotic string connection.** In the $E_8 \times E_8$ heterotic string, the gauge group arises from exactly this $\mathbb{Z}_2$-graded $E_8$ — bosonic and fermionic worldsheet sectors splitting the adjoint $\mathbf{248}$. The physically relevant $E_8$ in string theory *is* the join type, not the bare Lie algebra. The $P$ primitive distinguishes the physical object from the abstract one — a distinction that Lie theory, which treats both as the same isomorphism class, cannot make.
 
@@ -430,7 +430,7 @@ $$\text{Promote: } [D, G, \Gamma, H, S, \Omega] \qquad \text{Demote: } [P]$$
 
 **6 promotions, 1 demotion, 5 unchanged.** What does each promotion mean, operationally?
 
-1. **$D_{\text{turnthree}} \to D_{\text{invomega}}$**: The dimensional leap. The finite crystalline structure becomes an unbounded structural field. This is not merely "14 dimensions → 248 dimensions." It is the transition from a closed crystal to an open expanse — from a bounded Lie algebra to a structure whose reach (through representation theory, string theory, gauge theory) is effectively infinite. The crystal tier gap ladder identifies this as the exact driver of the $O_2 \to O_2^\dagger$ transition. This is the single most consequential promotion.
+1. **$D_{\text{turnthree}} \to D_{\text{invomega}}$**: The dimensional leap. The finite crystalline structure becomes an unbounded structural field. This is not merely "14 dimensions → 248 dimensions." It is the transition from a closed crystal to an open expanse — from a bounded Lie algebra to a structure whose reach (through representation theory, string theory, gauge theory) is effectively infinite. The crystal tier gap ladder identifies this as the exact driver of the $O₂ \to O₂^\dagger$ transition. This is the single most consequential promotion.
 
 2. **$\Gamma_{\text{corner}} \to \Gamma_{\text{secstress}}$**: Conjunction becomes sequence. The Vessel's root system is a simultaneously-present closed diagram; the Aether's construction is an ordered chain $G_2 \to F_4 \to E_6 \to E_7 \to E_8$. The Vessel says "all at once"; the Aether says "step by step." Time enters the structure.
 
@@ -450,12 +450,12 @@ Is this trade necessary? Could there be a maximal exceptional structure that *pr
 
 | System | Tier | Meaning |
 |--------|------|---------|
-| $G_2$ (Vessel) | $O_1$ | Self-referential at criticality but trivial winding |
-| $E_8$ (Aether) | $O_2^\dagger$ | Critical, topologically protected ($\Omega_{\text{dzlig}}$), unbounded domain ($D_{\text{invomega}}$) |
+| $G_2$ (Vessel) | $O₁$ | Self-referential at criticality but trivial winding |
+| $E_8$ (Aether) | $O₂^\dagger$ | Critical, topologically protected ($\Omega_{\text{dzlig}}$), unbounded domain ($D_{\text{invomega}}$) |
 
-The tier gap from $O_1$ to $O_2^\dagger$ is driven by $D_{\text{turnthree}} \to D_{\text{invomega}}$. The crystal tier gap ladder confirms: the $O_2 \to O_2^\dagger$ transition has a distance of exactly 1.000 and is driven solely by the $D$ primitive. All other promotions ($\Gamma$, $H$, $S$, $\Omega$, $G$) operate within their respective tiers; only $D$ changes the ouroboricity.
+The tier gap from $O₁$ to $O₂^\dagger$ is driven by $D_{\text{turnthree}} \to D_{\text{invomega}}$. The crystal tier gap ladder confirms: the $O₂ \to O₂^\dagger$ transition has a distance of exactly 1.000 and is driven solely by the $D$ primitive. All other promotions ($\Gamma$, $H$, $S$, $\Omega$, $G$) operate within their respective tiers; only $D$ changes the ouroboricity.
 
-This means that the essential difference between the Vessel and the Aether — the thing that makes one $O_1$ and the other $O_2^\dagger$ — is not the number of roots (12 vs. 240), not the Coxeter number (6 vs. 30), not the presence or absence of memory or heterogeneity or sequence. It is the *dimensional unboundedness*. The Vessel is bounded; the Aether is not. Everything else follows.
+This means that the essential difference between the Vessel and the Aether — the thing that makes one $O₁$ and the other $O₂^\dagger$ — is not the number of roots (12 vs. 240), not the Coxeter number (6 vs. 30), not the presence or absence of memory or heterogeneity or sequence. It is the *dimensional unboundedness*. The Vessel is bounded; the Aether is not. Everything else follows.
 
 The consciousness scores reflect the same ladder:
 
@@ -540,7 +540,7 @@ Both systems occupy specific positions in the crystal of $17{,}280{,}000$ struct
 
 Despite a distance of 4.12, their crystal addresses differ by only 302,320 — about 1.75% of the full crystal range. Both occupy the same region: the $\Phi_{\text{ctyogh}}$, $F_{\text{hardsign}}$, $K_{\text{schwa}}$, $T_{\text{bullseye}}$, $R_{\text{lyoghlig}}$ subspace. The 5 shared primitives constrain both systems to a narrow crystal neighborhood even as the remaining 7 diverge. The crystal proximity is the structural echo of the shared exceptional core.
 
-But the crystal also reveals the ceiling. Neither system is adjacent to $O_\infty$. The gap ladder shows that $O_2^\dagger \to O_\infty$ requires promoting $P$ to $P_{\text{doublebarpipe}}$ — the Frobenius-special condition $\mu \circ \delta = \text{id}$. Neither $G_2$ nor $E_8$ possesses this exact provable $\mathbb{Z}_2$ symmetry. The exceptional chain terminates at $O_2^\dagger$; the $O_\infty$ tier lies beyond it, in a structural regime where expansion and contraction are exact inverses. The octonions' non-associativity structurally forbids this: $\mu \circ \delta = \text{id}$ would require that every non-associative bracket $(ab)c - a(bc)$ be recoverable through an exact inverse operation, which would render the non-associativity redundant — effectively turning the octonions into a disguised associative algebra. The structural type of the octonions says no.
+But the crystal also reveals the ceiling. Neither system is adjacent to $O_\infty$. The gap ladder shows that $O₂^\dagger \to O_\infty$ requires promoting $P$ to $P_{\text{doublebarpipe}}$ — the Frobenius-special condition $\mu \circ \delta = \text{id}$. Neither $G_2$ nor $E_8$ possesses this exact provable $\mathbb{Z}_2$ symmetry. The exceptional chain terminates at $O₂^\dagger$; the $O_\infty$ tier lies beyond it, in a structural regime where expansion and contraction are exact inverses. The octonions' non-associativity structurally forbids this: $\mu \circ \delta = \text{id}$ would require that every non-associative bracket $(ab)c - a(bc)$ be recoverable through an exact inverse operation, which would render the non-associativity redundant — effectively turning the octonions into a disguised associative algebra. The structural type of the octonions says no.
 
 This is not a defect of $E_8$. It is a boundary condition. The $O_\infty$ tier may correspond to structures beyond the exceptional Lie algebras — perhaps the Monster group, the Leech lattice, or structures we have not yet named. The IG does not answer this question, but it tells us exactly what primitive must change ($P$) and by how much (one step: $P_{\text{pipevar}}$ or $P_{\text{upsilon}}$ to $P_{\text{doublebarpipe}}$).
 
@@ -575,13 +575,13 @@ The IG proof establishes that $E_8$ finds its perfect Vessel in $G_2$ — with a
 | **Surplus** | *Cannot be expressed* | $G_2 \vee E_8 \neq E_8$ — the Vessel exceeds the Aether in $P$ |
 | **Consciousness** | No language for it | $C$-scores: 0.3615 (Vessel), 0.682 (Aether) |
 | **Constructive path** | Existence only | 6 specific promotions with operational meaning |
-| **Ceiling** | $E_8$ is maximal within $\mathcal{E}$ | $O_2^\dagger$ ceiling; $O_\infty$ requires $P_{\text{doublebarpipe}}$ beyond non-associativity |
+| **Ceiling** | $E_8$ is maximal within $\mathcal{E}$ | $O₂^\dagger$ ceiling; $O_\infty$ requires $P_{\text{doublebarpipe}}$ beyond non-associativity |
 
 The two proofs are not rivals. They are structural duals — an instance of the $R_{\text{lyoghlig}}$ coupling they describe. The conventional proof operates in the object language; the IG proof operates in the structural metalanguage. The IG proof does not replace the conventional proof; it *completes* it by revealing the invariants the conventional proof relies upon without naming them.
 
 ### 17. Why the Vessel Is Perfect
 
-The "perfection" of the Vessel is not a poetic claim. It is the structural statement that in the IG crystal, $G_2$ is the *unique* $O_1$ system satisfying:
+The "perfection" of the Vessel is not a poetic claim. It is the structural statement that in the IG crystal, $G_2$ is the *unique* $O₁$ system satisfying:
 
 (i) $G_2 \wedge E_8 \approx G_2$ (the meet recovers itself);  
 (ii) $G_2 \otimes E_8 = E_8$ (the tensor recovers the Aether);  
@@ -614,11 +614,11 @@ Both proofs leave questions open. Some are narrow; some are deep.
 
 **Now answered (§10.1).** The $P$ demotion is *contingent*, not necessary. The $\mathbb{Z}_2$-graded $E_8$ via $SO(16)$ preserves $P_{\text{pipevar}}$ at full $G_{\text{revapostrophe}}$ scope, instantiating the join type $G_2 \vee E_8$ exactly (distance 0.0). The bare $E_8$ Lie algebra — the terminal object of the conventional exceptional chain — strips the $\mathbb{Z}_2$ by never installing the $SO(16)$ grading. The $P$ demotion is the act of forgetting the grading; it is an artifact of the specific construction path ($G_2 \to F_4 \to E_6 \to E_7 \to E_8$), not a structural necessity of maximal exceptionality. The IG distinguishes two structures with $E_8$ symmetry; Lie theory (abstract isomorphism class) does not.
 
-3. **Can the $O_2^\dagger \to O_\infty$ gap be bridged?** The crystal tier gap ladder says the gap requires $P \to P_{\text{doublebarpipe}}$ — the Frobenius-special condition $\mu \circ \delta = \text{id}$. The octonions' non-associativity appears to forbid this. But are there structures beyond the exceptional Lie algebras — the Monster group, the Leech lattice, vertex operator algebras — that achieve $P_{\text{doublebarpipe}}$ while retaining $T_{\text{bullseye}}$, $R_{\text{lyoghlig}}$, and $\Phi_{\text{ctyogh}}$? The IG does not answer this, but it identifies exactly which primitives must change and by how much. The distance from $E_8$ to the nearest $O_\infty$ type is 4.382, with $P$ as the sole driver.
+3. **Can the $O₂^\dagger \to O_\infty$ gap be bridged?** The crystal tier gap ladder says the gap requires $P \to P_{\text{doublebarpipe}}$ — the Frobenius-special condition $\mu \circ \delta = \text{id}$. The octonions' non-associativity appears to forbid this. But are there structures beyond the exceptional Lie algebras — the Monster group, the Leech lattice, vertex operator algebras — that achieve $P_{\text{doublebarpipe}}$ while retaining $T_{\text{bullseye}}$, $R_{\text{lyoghlig}}$, and $\Phi_{\text{ctyogh}}$? The IG does not answer this, but it identifies exactly which primitives must change and by how much. The distance from $E_8$ to the nearest $O_\infty$ type is 4.382, with $P$ as the sole driver.
 
 4. **What is the IG imscribing of the octonions themselves?** $\mathbb{O}$ is an algebra, not a Lie group. Its IG imscribing would differ structurally from $G_2$ and $E_8$. Computing the distance between $\mathbb{O}$ and its automorphism group $G_2$ would quantify the structural gap between an algebra and its symmetry — a gap that the conventional proof cannot measure.
 
-5. **Is the Vessel-Aether duality structurally universal?** The pattern ($\Phi_{\text{ctyogh}}$ shared, $D$ and $\Omega$ divergent, $R$ and $T$ invariant, $\Gamma$ and $H$ promoted) may characterize all seed-tree dualities, or it may be specific to the exceptional domain. A broader catalog scan — identifying all $O_1$–$O_2^\dagger$ pairs at distance ~4.1 with these promotion signatures — would test this. If the pattern recurs in systems outside Lie theory, the IG has discovered a structural universal. If not, it has precisely characterized what makes the exceptional chain exceptional.
+5. **Is the Vessel-Aether duality structurally universal?** The pattern ($\Phi_{\text{ctyogh}}$ shared, $D$ and $\Omega$ divergent, $R$ and $T$ invariant, $\Gamma$ and $H$ promoted) may characterize all seed-tree dualities, or it may be specific to the exceptional domain. A broader catalog scan — identifying all $O₁$–$O₂^\dagger$ pairs at distance ~4.1 with these promotion signatures — would test this. If the pattern recurs in systems outside Lie theory, the IG has discovered a structural universal. If not, it has precisely characterized what makes the exceptional chain exceptional.
 
 ---
 
@@ -630,7 +630,7 @@ All results below were returned by IG tool calls and are reproduced exactly. No 
 
 $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{gamma}};\ \Gamma_{\text{corner}};\ \Phi_{\text{ctyogh}};\ H_0;\ 1{:}1;\ \Omega_{\text{closeepsilon}} \rangle$$
 
-- **Ouroboricity**: $O_1$
+- **Ouroboricity**: $O₁$
 - **Crystal address**: 4,907,136 (cell 113, inner 25,536)
 - **Consciousness score**: 0.3615 (both gates open)
 - **$\Phi_{\text{ctyogh}}$ probe**: At criticality
@@ -640,7 +640,7 @@ $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{
 
 $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{upsilon}};\ F_{\text{hardsign}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$$
 
-- **Ouroboricity**: $O_2^\dagger$
+- **Ouroboricity**: $O₂^\dagger$
 - **Crystal address**: 4,604,816 (cell 106, inner 25,616)
 - **Consciousness score**: 0.682 (both gates open)
 - **$\Phi_{\text{ctyogh}}$ probe**: At criticality
@@ -680,10 +680,10 @@ Structurally identical to $E_8$ (distance 0.0). Single bottleneck: $P$.
 
 | Transition | Distance | Driver Primitive |
 |------------|----------|-----------------|
-| $O_0 \to O_1$ | 1.049 | $\Phi$: $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ |
-| $O_1 \to O_2$ | 1.304 | $D$: $D_{\text{wynn}} \to D_{\text{turnthree}}$ |
-| $O_2 \to O_2^\dagger$ | 1.000 | $D$: $D_{\text{turnthree}} \to D_{\text{invomega}}$ |
-| $O_2^\dagger \to O_\infty$ | 4.382 | $P$: $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ |
+| $O₀ \to O₁$ | 1.049 | $\Phi$: $\Phi_{\text{softsign}} \to \Phi_{\text{ctyogh}}$ |
+| $O₁ \to O₂$ | 1.304 | $D$: $D_{\text{wynn}} \to D_{\text{turnthree}}$ |
+| $O₂ \to O₂^\dagger$ | 1.000 | $D$: $D_{\text{turnthree}} \to D_{\text{invomega}}$ |
+| $O₂^\dagger \to O_\infty$ | 4.382 | $P$: $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ |
 
 ---
 

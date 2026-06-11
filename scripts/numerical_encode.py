@@ -313,11 +313,11 @@ def compute_tier_distribution(entries: List[dict]) -> Dict:
     return {
         "counts": dict(cnt),
         "total": len(entries),
-        "O_0_pct": cnt.get("O_0", 0) / len(entries) * 100,
-        "O_1_pct": cnt.get("O_1", 0) / len(entries) * 100,
-        "O_2_pct": cnt.get("O_2", 0) / len(entries) * 100,
-        "O_2_dagger_pct": cnt.get("O_2†", 0) / len(entries) * 100,
-        "O_inf_pct": cnt.get("O_inf", 0) / len(entries) * 100,
+        "O_0_pct": cnt.get("O₀", 0) / len(entries) * 100,
+        "O_1_pct": cnt.get("O₁", 0) / len(entries) * 100,
+        "O_2_pct": cnt.get("O₂", 0) / len(entries) * 100,
+        "O_2_dagger_pct": cnt.get("O₂†", 0) / len(entries) * 100,
+        "O_inf_pct": cnt.get("O_∞", 0) / len(entries) * 100,
     }
 
 # ═══════════════════════════════════════════════════════════════

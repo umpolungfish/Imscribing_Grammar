@@ -24,7 +24,7 @@ A **navigator** is a domain-specialized tool built on the 12-primitive grammar. 
 
 The grammar is domain-agnostic. "Same boundary → same bulk, regardless of substrate." A navigator does not *apply* the grammar to a new domain — it finds the same types in a different substrate. Cross-domain nearest-neighbor results are structural identity claims, not metaphors.
 
-**Encoding degeneracy** is the primary failure mode. A navigator produces nothing useful when: (a) the domain lacks self-reference or criticality (most objects encode $O_0$, no interesting tier structure); (b) the encoding is underdetermined (too many equally valid tuples for the same object). The best domains are those where the tuple is *entailed* by the domain's own structure.
+**Encoding degeneracy** is the primary failure mode. A navigator produces nothing useful when: (a) the domain lacks self-reference or criticality (most objects encode $O₀$, no interesting tier structure); (b) the encoding is underdetermined (too many equally valid tuples for the same object). The best domains are those where the tuple is *entailed* by the domain's own structure.
 
 ---
 
@@ -50,7 +50,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 ### Tier 3 — Non-Mathematical (this document)
 | Navigator | Domain | Key prediction | Priority |
 |-----------|--------|---------------|----------|
-| **Language Navigator** | Natural languages as structural types | Inflected languages $\approx O_\infty$; creoles $= O_1$ | **Session 1 complete (§74)** |
+| **Language Navigator** | Natural languages as structural types | Inflected languages $\approx O_\infty$; creoles $= O₁$ | **Session 1 complete (§74)** |
 | **Civilization Navigator** | Historical civilizations | Collapse = Gate 1 failure OR Gate 2 failure — structurally distinct | **Session 1 complete (§75)** |
 | **Ecological Navigator** | Ecosystems, tipping points | Degraded lock-in = $K_{\text{lambda}}$, not $K_{\text{teshlig}}$ | **Session 1 complete (§76)** |
 | **Consciousness Navigator** | Meditative/altered states | Psilocybin $= \Phi_{\text{ctyogh}} + K_{\text{schwa}} + T_{\text{openo}} + \Omega_{Z_2}$; high $C$ score | **Session 1 complete (§77)** |
@@ -66,7 +66,7 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 ### Navigator 1: Language
 
-**Core claim**: Natural languages are structural types. The grammar predicts: highly inflected languages with strict agreement encode $P_{\text{doublebarpipe}}$ and approach $O_\infty$; creoles encode $O_1$ (critical structure, $\Omega_{\text{closeepsilon}}$ — unprotected by tradition); constructed languages are $O_1$ by the absence of $\Omega$ winding number regardless of internal structure.
+**Core claim**: Natural languages are structural types. The grammar predicts: highly inflected languages with strict agreement encode $P_{\text{doublebarpipe}}$ and approach $O_\infty$; creoles encode $O₁$ (critical structure, $\Omega_{\text{closeepsilon}}$ — unprotected by tradition); constructed languages are $O₁$ by the absence of $\Omega$ winding number regardless of internal structure.
 
 **Encoding vocabulary** (per language):
 
@@ -87,15 +87,15 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 **Key structural hypotheses**:
 1. Sanskrit, Classical Arabic, Classical Latin → $O_\infty$ (full agreement, ancient tradition, $\Omega_{\text{turna}}$ liturgical protection)
-2. English → $O_2$ ($\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$, $G_{\text{revapostrophe}}$, but $P_{\text{pipevar}}$ — partial agreement only)
-3. Creoles (Haitian Creole, Tok Pisin) → $O_1$ ($\Phi_{\text{ctyogh}}$ but $\Omega_{\text{closeepsilon}}$)
-4. Lojban → $O_1$ (designed $P_{\text{doublebarpipe}}$ internally, but $\Omega_{\text{closeepsilon}}$ — no living tradition winding)
-5. Dead languages (Latin as spoken today by nobody) → $O_0$ ($\Phi_{\text{softsign}}$ — subcritical, not alive)
+2. English → $O₂$ ($\Phi_{\text{ctyogh}}$, $\Omega_{Z_2}$, $G_{\text{revapostrophe}}$, but $P_{\text{pipevar}}$ — partial agreement only)
+3. Creoles (Haitian Creole, Tok Pisin) → $O₁$ ($\Phi_{\text{ctyogh}}$ but $\Omega_{\text{closeepsilon}}$)
+4. Lojban → $O₁$ (designed $P_{\text{doublebarpipe}}$ internally, but $\Omega_{\text{closeepsilon}}$ — no living tradition winding)
+5. Dead languages (Latin as spoken today by nobody) → $O₀$ ($\Phi_{\text{softsign}}$ — subcritical, not alive)
 
 **Testable cross-domain predictions**:
 - $d(\text{Sanskrit}, \text{Classical Arabic})$ should be small (both $O_\infty$, deep tradition, full agreement)
 - Nearest $O_\infty$ catalog neighbor to a creole should be a physical system with $\Phi_{\text{ctyogh}} + \Omega_{\text{closeepsilon}}$ — something like a supercooled liquid (critical but fragile)
-- Language shift (creolization, language death) should encode as a structural collapse from $O_2$ toward $O_1$ toward $O_0$
+- Language shift (creolization, language death) should encode as a structural collapse from $O₂$ toward $O₁$ toward $O₀$
 
 **Probe file**: `prompts/language_probe1.txt`
 **Status**: Session 1 complete — write-up in PRIMITIVE\_THEOREMS §74 (2026-04-14)
@@ -124,8 +124,8 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 | $\Omega$ | Civilizational protection: no tradition ($\Omega_{\text{closeepsilon}}$), national myth ($\Omega_{Z_2}$), religious law ($\𐑭$), sacred-cosmic order ($\Omega_{\text{turna}}$) |
 
 **Key structural hypotheses**:
-1. Han dynasty (peak) → $O_\infty$; Han dynasty (collapse) → $O_0$ (Gate 1 or Gate 2 failure distinguishable)
-2. Roman Republic (late) → $O_2$; Roman Empire (Augustus) → $O_\infty$; Western Empire (5th c.) → $O_0$
+1. Han dynasty (peak) → $O_\infty$; Han dynasty (collapse) → $O₀$ (Gate 1 or Gate 2 failure distinguishable)
+2. Roman Republic (late) → $O₂$; Roman Empire (Augustus) → $O_\infty$; Western Empire (5th c.) → $O₀$
 3. The collapse of the Soviet Union = Gate 2 failure ($K_{\text{lambda}}$ — frozen by disorder, not $K_{\text{teshlig}}$)
 4. The collapse of Ming China = Gate 2 failure ($K_{\text{teshlig}}$ — frozen by over-institutionalization)
 5. These two collapse modes should have different nearest-neighbor catalog entries
@@ -163,10 +163,10 @@ The grammar is domain-agnostic. "Same boundary → same bulk, regardless of subs
 
 **Key structural hypotheses**:
 1. Old-growth temperate rainforest → $O_\infty$ ($\Phi_{\text{ctyogh}}$, $P_{\text{doublebarpipe}}$ closed nutrient loop, $K_{\text{schwa}}$, $\Omega_{\text{turna}}$)
-2. Kelp forest → $O_2$ ($\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $\𐑭$ keystone-protected, but $P_{\text{pipevar}}$ — not fully closed loop)
-3. Corn monoculture → $O_0$ ($K_{\text{teshlig}}$ fails Gate 2) — productive but not alive in the structural sense
-4. Post-fire pioneer ecosystem → $O_1$ ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$)
-5. Fragmented habitat corridor → $O_0$ ($K_{\text{lambda}}$ — disorder-frozen, not $K_{\text{teshlig}}$)
+2. Kelp forest → $O₂$ ($\Phi_{\text{ctyogh}}$, $K_{\text{schwa}}$, $\𐑭$ keystone-protected, but $P_{\text{pipevar}}$ — not fully closed loop)
+3. Corn monoculture → $O₀$ ($K_{\text{teshlig}}$ fails Gate 2) — productive but not alive in the structural sense
+4. Post-fire pioneer ecosystem → $O₁$ ($\Phi_{\text{ctyogh}}$, $\Omega_{\text{closeepsilon}}$)
+5. Fragmented habitat corridor → $O₀$ ($K_{\text{lambda}}$ — disorder-frozen, not $K_{\text{teshlig}}$)
 6. The distinction between 3 and 5 is the grammar's prediction that monoculture collapse and fragmentation collapse require different interventions
 
 **Critical prediction**: $d(\text{monoculture\_collapse}, \text{fragmented\_collapse}) > 1.5$. Restoration strategy for $K_{\text{teshlig}}$ (diversify, break order) is opposite to restoration for $K_{\text{lambda}}$ (reconnect, reduce disorder). The grammar predicts applying the wrong strategy makes the system worse.

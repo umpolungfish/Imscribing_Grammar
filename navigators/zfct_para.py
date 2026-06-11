@@ -241,7 +241,7 @@ def para_tier(e: ParaEntry) -> Dict[str, Belnap]:
 
 
 def para_tier_compact(e: ParaEntry) -> str:
-    """Compact string: 'T:O_inf  B:O_2dag  F:...' (non-F tiers only)."""
+    """Compact string: 'T:O_∞  B:O₂†  F:...' (non-F tiers only)."""
     pt = para_tier(e)
     parts = [
         f"{_SYM[v]}:{t}"
@@ -257,10 +257,10 @@ def _tier_conditions(e: ParaEntry) -> Dict[str, Belnap]:
     """
     Return Belnap values for the four primitive conditions that determine tier:
 
-      crit:  ⊙ ≥ ord 1       (required for O_1, O_2, O_2dag, O_inf)
-      frob:  Φ = 𐑹          (required for O_inf)
-      wind:  Ω ≥ ord 1        (distinguishes O_1 from O_2/O_2dag)
-      dinf:  Ð ≥ ord 2        (distinguishes O_2 from O_2dag)
+      crit:  ⊙ ≥ ord 1       (required for O₁, O₂, O₂†, O_∞)
+      frob:  Φ = 𐑹          (required for O_∞)
+      wind:  Ω ≥ ord 1        (distinguishes O₁ from O₂/O₂†)
+      dinf:  Ð ≥ ord 2        (distinguishes O₂ from O₂†)
     """
     def belnap_threshold(prim: str, threshold: int) -> Belnap:
         vals = e.belief.get(prim, frozenset())
@@ -411,7 +411,7 @@ class ParaManipulator(ZFCTriangleManipulator):
 
         if phi_current == _FROB_VAL:
             msg = (f"  {pe.name}: Φ already = 𐑹 (Frobenius) — no cliff for this entry.\n"
-                   f"  tier = {classical_tier}  (T:O_inf)")
+                   f"  tier = {classical_tier}  (T:O_∞)")
             if console:
                 console.print(f"[green]{msg}[/green]")
             else:
@@ -450,7 +450,7 @@ class ParaManipulator(ZFCTriangleManipulator):
             interpretation = (
                 f"B-STATE PROPAGATES: Φ remains overdetermined = {{{', '.join(phi_ords)}}}.\n"
                 f"  The min-bottleneck preserved the lower value ({phi_ords[0]}) alongside 𐑹.\n"
-                f"  The tier is B:{tier_tensored.get('O_inf', Belnap.F).value} for O_inf.\n"
+                f"  The tier is B:{tier_tensored.get('O_∞', Belnap.F).value} for O_∞.\n"
                 f"  A classical proof must show 𐑗 is NOT a valid assignment — i.e., that\n"
                 f"  the mathematical object in question genuinely has Frobenius structure.\n"
                 f"  The B-state is the proof obligation, not a proof.")
@@ -553,19 +553,19 @@ class ParaManipulator(ZFCTriangleManipulator):
         if b_ps:
             lines += ["", f"  B-state primitives: {', '.join(b_ps)}"]
 
-        o_inf_state = pt.get("O_inf", Belnap.F)
+        o_inf_state = pt.get("O_∞", Belnap.F)
         if o_inf_state == Belnap.T:
-            lines += ["", "  ✓ O_inf is T: entry definitly carries Frobenius structure."]
+            lines += ["", "  ✓ O_∞ is T: entry definitly carries Frobenius structure."]
         elif o_inf_state == Belnap.B:
             lines += [
                 "",
-                "  ◈ O_inf is B: entry is consistent with Frobenius but not confirmed.",
+                "  ◈ O_∞ is B: entry is consistent with Frobenius but not confirmed.",
                 "    Proof obligation: show Φ = 𐑹 is the only valid assignment.",
             ]
         elif o_inf_state == Belnap.F:
             lines += [
                 "",
-                f"  ✗ O_inf is F: Frobenius not reached. Gap: {4 - int(ORDINALS['Φ'][list(pe.belief['Φ'])[0] if pe.belief['Φ'] else '𐑗'])} step(s) in Φ.",
+                f"  ✗ O_∞ is F: Frobenius not reached. Gap: {4 - int(ORDINALS['Φ'][list(pe.belief['Φ'])[0] if pe.belief['Φ'] else '𐑗'])} step(s) in Φ.",
             ]
 
         if console:

@@ -161,7 +161,7 @@ $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\
 
 $$\langle D_{\text{invomega}};\ T_{\text{bullseye}};\ R_{\text{downstep}};\ P_{\text{upsilon}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_0;\ S_{n:m};\ \Omega_{\text{crtwo}} \rangle$$
 
-**Tier:** $O_2^\dagger$ — $\Phi_{\text{ctyogh}}$ + $\Omega_{\text{crtwo}}$ + $D_{\text{invomega}}$ (R5). The same tier as time.
+**Tier:** $O₂^\dagger$ — $\Phi_{\text{ctyogh}}$ + $\Omega_{\text{crtwo}}$ + $D_{\text{invomega}}$ (R5). The same tier as time.
 **Crystal address:** 4428422 (cell 102, inner 22022).
 
 Structurally isolated: nearest named neighbor is `grammar_connes_tensor` at $d = 2.29$.

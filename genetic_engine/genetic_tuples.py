@@ -105,7 +105,7 @@ IG_CHARS: Dict[str, str] = {
     "S_n_m":        "𐑳",     # Σ_ï — n:m (unmatched many)
     
     # ── Winding/Protection (Ω) — 4 values ──
-    "O_0":          "𐑷",     # Ω_Å — trivial / no protection
+    "O₀":          "𐑷",     # Ω_Å — trivial / no protection
     "O_Z2":         "𐑴",     # Ω_2 — ℤ₂ parity protection
     "O_Z":          "𐑭",     # Ω_z — integer winding
     "O_NA":         "𐑟",     # Ω_5 — non-Abelian braiding
@@ -364,7 +364,7 @@ def generate_dna_gene_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "Phi": IG_CHARS["Phi_sub"],
         "H": IG_CHARS["H_2"],
         "S": IG_CHARS["S_n_m"],
-        "O": IG_CHARS["O_0"],
+        "O": IG_CHARS["O₀"],
     }
 
 
@@ -390,7 +390,7 @@ def generate_pre_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "Phi": IG_CHARS["Phi_sub"],
         "H": IG_CHARS["H_1"],
         "S": IG_CHARS["S_n_m"],
-        "O": IG_CHARS["O_0"],
+        "O": IG_CHARS["O₀"],
     }
 
 
@@ -408,7 +408,7 @@ def generate_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "Phi": IG_CHARS["Phi_sub"],
         "H": IG_CHARS["H_1"],
         "S": IG_CHARS["S_n_m"],
-        "O": IG_CHARS["O_0"],
+        "O": IG_CHARS["O₀"],
     }
 
 
@@ -464,7 +464,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
         "Phi": IG_CHARS[phi_val],
         "H": IG_CHARS["H_0"],
         "S": IG_CHARS["S_one_one"],
-        "O": IG_CHARS["O_0"],
+        "O": IG_CHARS["O₀"],
     }
 
 
@@ -528,7 +528,7 @@ def generate_tertiary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str
         "Phi": IG_CHARS[phi_val],
         "H": IG_CHARS["H_0"],           # H=0: folded protein has no temporal memory
         "S": IG_CHARS["S_one_one"],
-        "O": IG_CHARS["O_0"],           # FIXED: no topological protection (no Axiom B conflict)
+        "O": IG_CHARS["O₀"],           # FIXED: no topological protection (no Axiom B conflict)
     }
 
 
@@ -566,7 +566,7 @@ def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, s
     elif n_subunits >= 4:
         o_val = "O_Z"
     else:
-        o_val = "O_0"
+        o_val = "O₀"
     
     # Criticality (φ̂)
     if phi_gate and not pro_abs and not geo_sup:

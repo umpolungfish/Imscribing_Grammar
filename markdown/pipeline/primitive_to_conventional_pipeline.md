@@ -425,7 +425,7 @@ extract its implicit primitive signature:
    the $O_{\text{inf}}$ template. Missing primitives reveal gaps in the
    conventional proof's structural foundation.
 
-3. **Promotion suggestion:** If the reverse-extracted tuple is at $O_1$ or $O_2$,
+3. **Promotion suggestion:** If the reverse-extracted tuple is at $O₁$ or $O₂$,
    the pipeline recommends which lemmas need strengthening to reach $O_{\text{inf}}$.
 
 ---

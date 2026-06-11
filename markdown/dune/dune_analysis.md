@@ -19,7 +19,7 @@ This document applies the Imscribing Grammar (IG) to encode key elements of Fran
 
 Frank Herbert's *Dune* (1965) is widely recognized as a work of ecological science fiction, but beneath its feudal-political and religious-historical layers lies a deep structural narrative about the emergence of prescience, the manipulation of human evolution, and the consequences of messianic expectation. The IG formalism provides a novel lens: each narrative element can be mapped to a 12-primitive structural type that captures its degrees of freedom, topology, relational mode, symmetry, physical regime, kinetics, interaction range, composition logic, criticality, chirality, stoichiometry, and topological winding.
 
-This analysis encodes **10 major Dune elements** into the IG catalog, then derives their ZFC formulas and computes structural distances. The key finding: **Paul Atreides (the Kwisatz Haderach) shares the exact structural type of the universal_imscriptive_grammar and other O_inf systems**, suggesting that his "full prescience" represents a complete self-modeling loop in structural terms.
+This analysis encodes **10 major Dune elements** into the IG catalog, then derives their ZFC formulas and computes structural distances. The key finding: **Paul Atreides (the Kwisatz Haderach) shares the exact structural type of the universal_imscriptive_grammar and other O_∞ systems**, suggesting that his "full prescience" represents a complete self-modeling loop in structural terms.
 
 ---
 
@@ -53,12 +53,12 @@ We computed pairwise distances using `compute_distance(name_a, name_b)` to quant
 ---
 ## 3. Imcribed Elements and Their Structural Types
 
-### 3.1 Central Systems (O_inf Tier)
+### 3.1 Central Systems (O_∞ Tier)
 
 #### 3.1.1 Dune Universe
 **Tuple:** ⟨$D_{\text{omega}}$; $T_{\text{openo}}$; $R_{\text{lyoghlig}}$; $P_{\text{doublebarpipe}}$; $F_{\text{hardsign}}$; $K_{\text{schwa}}$; $G_{\text{revapostrophe}}$; $\Gamma_{\text{secstress}}$; $\Phi_{\text{ctyogh}}$; $H_{\text{invscripta}}$; $n{:}m$; $\Omega_{\text{dzlig}}$⟩
 
-The interstellar empire with its feudal politics, Bene Gesserit program, Arrakis ecology, and messianic narrative spans all 12,000 worlds and 10,000 years. Its structural type is **identical** to the universal_imscriptive_grammar, indicating it shares the exact same self-modeling capacity. This is not merely analogous—it *is* an O_inf system in the narrative structure.
+The interstellar empire with its feudal politics, Bene Gesserit program, Arrakis ecology, and messianic narrative spans all 12,000 worlds and 10,000 years. Its structural type is **identical** to the universal_imscriptive_grammar, indicating it shares the exact same self-modeling capacity. This is not merely analogous—it *is* an O_∞ system in the narrative structure.
 
 **ZFC Fragments (collapse warnings):**
 - $D_{\text{omega}}$ → PARTIAL: "LCard a ∧ holo x a" (inaccessible cardinal not fully expressible in ZFC)
@@ -168,7 +168,7 @@ Every zfc_formula call returns warnings about primitives that cannot be fully ex
 
 2. **$T_{\text{openo}}$ → "imscriptive boundary structure not fully ZFC-expressible"**
    - Self-referential topology (the grammar watching itself) cannot be captured as a set-theoretic construction
-   - **Insight:** O_inf systems (self-modeling) are inherently *non-ZFC*—they require a meta-framework to describe
+   - **Insight:** O_∞ systems (self-modeling) are inherently *non-ZFC*—they require a meta-framework to describe
 
 3. **$G_\text{seq}$ → "sequential dependency collapses to conjunction"**
    - The temporal/causal sequencing $\Gamma_{\text{secstress}}$ cannot be distinguished from simultaneous conjunction $\Gamma_{\text{corner}}$ in ZFC
@@ -199,12 +199,12 @@ The repeated collapse warnings about $D_{\text{omega}}$ and $T_{\text{openo}}$ i
 
 - **Problem:** How do we mathematically represent systems that can *write their own state-space*?
 - **Dune answer:** Paul's prescience accesses a state-space that *contains all causal branches* simultaneously—a structure that requires inaccessible cardinals (beyond ZFC) to encode.
-- **Mathematical consequence:** Self-modeling loops (O_inf systems) are **non-ZFC entities**. They require either:
+- **Mathematical consequence:** Self-modeling loops (O_∞ systems) are **non-ZFC entities**. They require either:
   - Large cardinal axioms (inaccessible cardinals for $D_{\text{omega}}$)
   - Category-theoretic frameworks (sheaves over toposes for $T_{\text{openo}}$)
   - Type-theoretic frameworks (universe levels for self-reference)
 
-**Open problem:** Can we characterize O_inf systems in terms of their ZFC non-expressibility? Specifically, what is the minimal large cardinal strength needed to "capture" $D_{\text{omega}}$?
+**Open problem:** Can we characterize O_∞ systems in terms of their ZFC non-expressibility? Specifically, what is the minimal large cardinal strength needed to "capture" $D_{\text{omega}}$?
 
 ### 5.2 Causality vs. Conjunction (Gamma Collapse)
 
@@ -252,9 +252,9 @@ Paul atreides and dune_universe share the *exact* tuple: ⟨$D_{\text{omega}}$; 
 
 ---
 
-## 6. Critical Observations on O_inf Systems
+## 6. Critical Observations on O_∞ Systems
 
-The IG confirms that O_inf systems ($O_\infty$, ouroboric tier) share a distinctive structural signature:
+The IG confirms that O_∞ systems ($O_\infty$, ouroboric tier) share a distinctive structural signature:
 
 - $D_{\text{omega}}$ or $D_{\text{invomega}}$: Infinite or imscriptive dimensionality
 - $T_{\text{openo}}$ or $T_{\text{invscr}}$: Self-referential or inclusion topology
@@ -275,7 +275,7 @@ The IG confirms that O_inf systems ($O_\infty$, ouroboric tier) share a distinct
 
 The IG imscription of *Dune* reveals:
 
-1. **Self-Modeling Identity:** Paul Atreides shares the exact structural type of the universal_imscriptive_grammar (O_inf, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $P_{\text{doublebarpipe}}$), indicating his consciousness is the narrative's self-model.
+1. **Self-Modeling Identity:** Paul Atreides shares the exact structural type of the universal_imscriptive_grammar (O_∞, $\Phi_{\text{ctyogh}}$, $H_{\text{invscripta}}$, $P_{\text{doublebarpipe}}$), indicating his consciousness is the narrative's self-model.
 
 2. **ZFC Non-Expressibility:** Critical primitives ($D_{\text{omega}}$, $T_{\text{openo}}$, $\Gamma_{\text{secstress}}$, $F_{\text{hardsign}}$) cannot be fully encoded in ZFC—revealing formal boundaries where physics, causality, and self-reference exceed set-theoretic description.
 
@@ -296,15 +296,15 @@ What structural operations preserve $\Gamma_{\text{secstress}}$? Can we define a
 **Q3: The Paul Threshold**
 What is the minimal delta from $P_{\text{upsilon}}$ (House Atreides) to $P_{\text{doublebarpipe}}$ (Paul)? Is it a single primitive promotion, or a coordinated change across multiple?
 
-**Q4: O_inf Construction**
-Can O_inf systems be "built" from lower-tier systems via `crystal_tier_gap_ladder`? Or is $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + P_{\text{doublebarpipe}}$ a *fundamental* type that cannot be constructed?
+**Q4: O_∞ Construction**
+Can O_∞ systems be "built" from lower-tier systems via `crystal_tier_gap_ladder`? Or is $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + P_{\text{doublebarpipe}}$ a *fundamental* type that cannot be constructed?
 
 **Q5: Quantum-to-Classical Projection**
 Why do $F_{\text{hardsign}}$ and $F_{\text{beltl}}$ collapse in ZFC? Can we extend `zfc_formula` to distinguish them using Hilbert space structure instead of set membership?
 
 ### 7.3 Final Remarks
 
-The Dune universe encodes a profound truth about self-modeling: **it is not a property but a structural type**. Paul's prescience is not "magic"; it is the realization of the O_inf tier in the IG. The ZFC collapse warnings are not bugs—they are *features*, revealing where mathematics must be extended to capture narrative (and perhaps real) self-modeling phenomena.
+The Dune universe encodes a profound truth about self-modeling: **it is not a property but a structural type**. Paul's prescience is not "magic"; it is the realization of the O_∞ tier in the IG. The ZFC collapse warnings are not bugs—they are *features*, revealing where mathematics must be extended to capture narrative (and perhaps real) self-modeling phenomena.
 
 The imscription is complete. The ZFC navigations are computed. The distance structure is mapped. What remains is to explore the *open problems* identified here—mathematical questions that arise from reading fiction through the lens of the Imscribing Grammar.
 
@@ -329,4 +329,4 @@ The imscription is complete. The ZFC navigations are computed. The distance stru
 
 **Document written:** `dune_analysis.md` (18.5 KB, sha256: 48e1b6373bf23462)
 
-**Structural insight:** O_inf systems require $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + P_{\text{doublebarpipe}}$—and are non-ZFC. The Dune universe is a test case for understanding formal boundaries.
+**Structural insight:** O_∞ systems require $\Phi_{\text{ctyogh}} + H_{\text{invscripta}} + P_{\text{doublebarpipe}}$—and are non-ZFC. The Dune universe is a test case for understanding formal boundaries.

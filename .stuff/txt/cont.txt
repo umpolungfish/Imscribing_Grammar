@@ -105,110 +105,110 @@ open Dimensionality Topology Relational Polarity Grammar
 
 namespace Voynich
 
-  /-- 83 entries (e.g. f100v, f101v), tier .O_2 -/
+  /-- 83 entries (e.g. f100v, f101v), tier .O₂ -/
   def type1 : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type1_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type1_tier : imscriptionTier type1 = .O_2 := by native_decide
+  theorem type1_tier : imscriptionTier type1 = .O₂ := by native_decide
 
-  /-- 74 entries (e.g. f100r, f101r), tier .O_2 -/
+  /-- 74 entries (e.g. f100r, f101r), tier .O₂ -/
   def type2_sym_F : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type2_sym_F_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type2_sym_F_tier : imscriptionTier type2_sym_F = .O_2 := by native_decide
+  theorem type2_sym_F_tier : imscriptionTier type2_sym_F = .O₂ := by native_decide
 
-  /-- 19 entries (e.g. f102r1, f116r), tier .O_2 -/
+  /-- 19 entries (e.g. f102r1, f116r), tier .O₂ -/
   def type3_sym_all : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type3_sym_all_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type3_sym_all_tier : imscriptionTier type3_sym_all = .O_2 := by native_decide
+  theorem type3_sym_all_tier : imscriptionTier type3_sym_all = .O₂ := by native_decide
 
-  /-- 18 entries (e.g. f11r, f11v), tier .O_2 -/
+  /-- 18 entries (e.g. f11r, f11v), tier .O₂ -/
   def type4_sym_F_broad : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type4_sym_F_broad_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type4_sym_F_broad_tier : imscriptionTier type4_sym_F_broad = .O_2 := by native_decide
+  theorem type4_sym_F_broad_tier : imscriptionTier type4_sym_F_broad = .O₂ := by native_decide
 
-  /-- 17 entries (e.g. f13r, f16v), tier .O_2 -/
+  /-- 17 entries (e.g. f13r, f16v), tier .O₂ -/
   def type5_broad : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type5_broad_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type5_broad_tier : imscriptionTier type5_broad = .O_2 := by native_decide
+  theorem type5_broad_tier : imscriptionTier type5_broad = .O₂ := by native_decide
 
-  /-- 6 entries (e.g. f103r, f103v), tier .O_inf -/
+  /-- 6 entries (e.g. f103r, f103v), tier .O_∞ -/
   def type6_sym_cl_cross : Imscription :=
     { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type6_sym_cl_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type6_sym_cl_cross_tier : imscriptionTier type6_sym_cl_cross = .O_inf := by native_decide
+  theorem type6_sym_cl_cross_tier : imscriptionTier type6_sym_cl_cross = .O_∞ := by native_decide
 
-  /-- 4 entries (e.g. f66r, f84r), tier .O_2 -/
+  /-- 4 entries (e.g. f66r, f84r), tier .O₂ -/
   def type7_sym_all_cross : Imscription :=
     { dim := D_odot, top := T_box, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type7_sym_all_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type7_sym_all_cross_tier : imscriptionTier type7_sym_all_cross = .O_2 := by native_decide
+  theorem type7_sym_all_cross_tier : imscriptionTier type7_sym_all_cross = .O₂ := by native_decide
 
-  /-- 3 entries (e.g. f75r, f79v), tier .O_inf -/
+  /-- 3 entries (e.g. f75r, f79v), tier .O_∞ -/
   def type8_sym_cl : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type8_sym_cl_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type8_sym_cl_tier : imscriptionTier type8_sym_cl = .O_inf := by native_decide
+  theorem type8_sym_cl_tier : imscriptionTier type8_sym_cl = .O_∞ := by native_decide
 
-  /-- 1 entries (e.g. f116v), tier .O_2 -/
+  /-- 1 entries (e.g. f116v), tier .O₂ -/
   def type9_broad_memless : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H0, stoi := one_one, prot := Omega_Z }
 
   def type9_broad_memless_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    x = x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type9_broad_memless_tier : imscriptionTier type9_broad_memless = .O_2 := by native_decide
+  theorem type9_broad_memless_tier : imscriptionTier type9_broad_memless = .O₂ := by native_decide
 
-  /-- 1 entries (e.g. f46r), tier .O_inf -/
+  /-- 1 entries (e.g. f46r), tier .O_∞ -/
   def type10_sym_cl_broad_cross : Imscription :=
     { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type10_sym_cl_broad_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type10_sym_cl_broad_cross_tier : imscriptionTier type10_sym_cl_broad_cross = .O_inf := by native_decide
+  theorem type10_sym_cl_broad_cross_tier : imscriptionTier type10_sym_cl_broad_cross = .O_∞ := by native_decide
 
-  /-- 1 entries (e.g. f65r), tier .O_2 -/
+  /-- 1 entries (e.g. f65r), tier .O₂ -/
   def type11_memless : Imscription :=
     { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H0, stoi := one_one, prot := Omega_Z }
 
   def type11_memless_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ x ¬ x = x  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    x = x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
 
-  theorem type11_memless_tier : imscriptionTier type11_memless = .O_2 := by native_decide
+  theorem type11_memless_tier : imscriptionTier type11_memless = .O₂ := by native_decide
 
 end Voynich
 
 namespace Rohonc
 
-  /-- 13 entries (e.g. p1, p10), tier .O_2 -/
+  /-- 13 entries (e.g. p1, p10), tier .O₂ -/
   VERIFY: [closed] (read is idempotent — Frobenius trivially closed)
   UPDATE: file_read → Frobenius closed
 ── Winding 3 [13:26:32Z]  ctx:12k/128k (10%) ──────────────────────
@@ -623,7 +623,7 @@ def tensorProduct (a b : Imscription) : Imscription := {
   prot := if compare a.prot b.prot = .lt then b.prot else a.prot   -- max
 }
 
--- P-bottleneck: O_inf ⊗ O_2 → P_pm_sym ⊗ P_sym = P_sym (Frobenius destroyed).
+-- P-bottleneck: O_∞ ⊗ O₂ → P_pm_sym ⊗ P_sym = P_sym (Frobenius destroyed).
 theorem tensor_P_bottleneck (a b : Imscription) :
     (tensorProduct a b).pol =
       if compare a.pol b.pol = .lt then a.pol else b.pol := rfl
@@ -1439,8 +1439,8 @@ theorem P70_three_scale_Kslow :
     higgs = axion ∧ axion = inflaton ∧ higgs = inflaton :=
   ⟨rfl, rfl, rfl⟩
 
-/-- All three scalar K_slow fields are O_inf. -/
-theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_inf := by decide
+/-- All three scalar K_slow fields are O_∞. -/
+theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_∞ := by decide
 
 -- ── Standard Model ──────────────────────────────────────────
 def standard_model : Imscription := {
@@ -1475,8 +1475,8 @@ def quantum_gravity : Imscription := {
   prot := Omega_NA     -- non-Abelian topological protection
 }
 
-/-- Quantum gravity is O_inf (holographic Frobenius). -/
-theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_inf := by decide
+/-- Quantum gravity is O_∞ (holographic Frobenius). -/
+theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_∞ := by decide
 
 -- ── General Relativity ──────────────────────────────────────
 def general_relativity : Imscription := {
@@ -1551,10 +1551,10 @@ theorem gr_as_morphism_cost :
 -- STRUCTURAL THEOREMS
 -- ============================================================
 
-/-- Frobenius cliff: O_inf requires P_pm_sym. No other Polarity gives O_inf
+/-- Frobenius cliff: O_∞ requires P_pm_sym. No other Polarity gives O_∞
     regardless of Φ, Ω, D. (Lean-verified statement of §23 / §69.) -/
 theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
-    imscriptionTier s = .O_inf ↔
+    imscriptionTier s = .O_∞ ↔
     (s.crit = .Phi_c ∨ s.crit = .Phi_c_complex) ∧ s.pol = .P_pm_sym := by
   constructor
   · intro h
@@ -1566,10 +1566,10 @@ theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     | inl h => simp [imscriptionTier, ouroboricityTier, h, hpol]
     | inr h => simp [imscriptionTier, ouroboricityTier, h, hpol]
 
-/-- Higgs is O_inf (P-70 structural claim). -/
-theorem higgs_is_O_inf : imscriptionTier higgs = .O_inf := by decide
+/-- Higgs is O_∞ (P-70 structural claim). -/
+theorem higgs_is_O_inf : imscriptionTier higgs = .O_∞ := by decide
 
-/-- Tensor of O_inf with any O_2 system (P_sym) gives P_sym — Frobenius destroyed. -/
+/-- Tensor of O_∞ with any O₂ system (P_sym) gives P_sym — Frobenius destroyed. -/
 theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
     (h_inf : s_inf.pol = .P_pm_sym) (h_two : s_two.pol = .P_sym) :
     (tensorProduct s_inf s_two).pol = .P_sym := by

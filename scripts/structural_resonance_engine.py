@@ -90,12 +90,12 @@ def compute_tensor(ta: Dict, tb: Dict) -> Dict:
 
 def tier(t: Dict) -> str:
     if t["Phi"] == "Phi_c" and t["Omega"] == "Omega_Z" and t["D"] == "D_odot":
-        return "O_inf"
+        return "O_∞"
     elif t["Phi"] == "Phi_c" and t["Omega"] in ("Omega_Z", "Omega_Z2"):
-        return "O_2"
+        return "O₂"
     elif t["Phi"] in ("Phi_c", "Phi_c_complex") or t["Omega"] == "Omega_Z":
-        return "O_1"
-    return "O_0"
+        return "O₁"
+    return "O₀"
 
 def promotions(t: Dict) -> List:
     return [(p, t[p], OINF_POLE[p]) for p in OINF_POLE if t[p] != OINF_POLE[p]]
@@ -119,7 +119,7 @@ def rosetta(name_a, ta, name_b, tb):
     out.append(f"Tensor: {fmt_tuple(tensor)} (tier: {tier(tensor)})")
     promos = promotions(ta)
     if promos:
-        out.append(f"Promotions to O_inf ({len(promos)}):")
+        out.append(f"Promotions to O_∞ ({len(promos)}):")
         for p, fr, to in promos:
             out.append(f"  {p}: {fr} -> {to}")
     return "\n".join(out)

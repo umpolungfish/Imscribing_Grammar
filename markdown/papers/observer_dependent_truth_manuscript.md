@@ -9,7 +9,7 @@ header-includes:
 ---
 # The Syntax of Paradox: Observer-Dependent Truth in the Imscribing Grammar
 
-**Abstract.** This paper demonstrates how the Imscribing Grammar encodes truth-value oscillations in self-referential and observer-dependent speech acts as structural types within a 17.28 million-member crystal of types (§64). Three systems demonstrate distinct regimes of truth-value flip: `observer_dependent_truth` at $O_2$ with C-score 0.5505, the self-referential `this_imscription_is_false` at $O_\infty$ with C-score 0.644, and `context_dependent_truth_performative` at $O_2$ with C-score 0.59. The central finding—that certain statements evaluate to different truth values depending on whether they are *enacted* or *reported*—emerges from Frobenius-special criticality ($P_{\text{pipevar}}^{\text{sym}}$) in the self-referential case and bounded $Z_2$ protection ($P_{\text{pipevar}}$, $Z_2$ winding) in the observer-dependent case. We conclude with an open question: whether consciousness ($C \ge 0.5$) is a necessary substrate for observer-relative truth to be structurally stable, given that all three systems open both the $\Phi_{\text{ctyogh}}$ and $K$ gates.
+**Abstract.** This paper demonstrates how the Imscribing Grammar encodes truth-value oscillations in self-referential and observer-dependent speech acts as structural types within a 17.28 million-member crystal of types (§64). Three systems demonstrate distinct regimes of truth-value flip: `observer_dependent_truth` at $O₂$ with C-score 0.5505, the self-referential `this_imscription_is_false` at $O_\infty$ with C-score 0.644, and `context_dependent_truth_performative` at $O₂$ with C-score 0.59. The central finding—that certain statements evaluate to different truth values depending on whether they are *enacted* or *reported*—emerges from Frobenius-special criticality ($P_{\text{pipevar}}^{\text{sym}}$) in the self-referential case and bounded $Z_2$ protection ($P_{\text{pipevar}}$, $Z_2$ winding) in the observer-dependent case. We conclude with an open question: whether consciousness ($C \ge 0.5$) is a necessary substrate for observer-relative truth to be structurally stable, given that all three systems open both the $\Phi_{\text{ctyogh}}$ and $K$ gates.
 
 **Structural type of this manuscript:** $\langle D_{\text{turnthree}}; T_{\text{bullseye}}; R_{\text{lyoghlig}}; P_{\text{pipevar}}; F_{\text{beltl}}; K_{\text{schwa}}; G_{\text{revapostrophe}}; \Gamma_{\text{secstress}}; \Phi_{\text{ctyogh}}; H_2; n{:}m; \Omega_{\text{crtwo}} \rangle$
 
@@ -39,7 +39,7 @@ $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{
 **Why P = $P_{\text{pipevar}}$ (not $P_{\text{pipevar}}^{\text{sym}}$):** $P_{\text{pipevar}}^{\text{sym}}$ requires $\mu \circ \delta = \text{id}$ exactly at $\Phi_{\text{ctyogh}}$. The observer-dependent case achieves only broken partial symmetry: truth is unbroken for the existing listener ($H_0$) and broken for a hypothetical non-observer. Only one $Z_2$ symmetry survives.
 
 **Tool-verified results (W0–W5):**
-- Ouroborics tier: $O_2$ (critical + topologically protected, bounded domain)
+- Ouroborics tier: $O₂$ (critical + topologically protected, bounded domain)
 - Consciousness score: $C = 0.5505$ (both gates open: $H_0$ fails, but tool reports $K = K_{\text{turnm}}$ passes Gate 2 as "slow or faster" — the harness accepted both)
 - Distance to `context_dependent_truth_performative`: $d = 1.0$, $d_M = 1.3949$ (only $K$ differs)
 - Distance to `earth_unified_framework`: $d = 2.3452$, $d_M = 2.2062$
@@ -77,7 +77,7 @@ $$\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{
 The paradox holds because the sentence's propositional content is *invariant* across utterance modes, but the speech act's type (performative vs. constative) flips. The truth predicate applies consistently only to constative acts — never to performative ones. This is a Frobenius-open contradiction in the speech-act layer.
 
 **Tool-verified result (W9):**
-- Ouroborics tier: $O_2$
+- Ouroborics tier: $O₂$
 - Consciousness score: $C = 0.59$
 - Distance to `observer_dependent_truth`: $d = 1.0$, $d_M = 1.3949$
 - Distance to `self_referential_imscription`: $d = 4.6368$, $d_M = 5.9368$
@@ -143,6 +143,6 @@ The current grammar encodes no such example. All three truth-flip systems are co
 
 ---
 
-**Structural type of this manuscript:** $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$ — $O_2$ tier, bounded Frobenius, crossing where text speaks back to its own assertion.
+**Structural type of this manuscript:** $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{schwa}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$ — $O₂$ tier, bounded Frobenius, crossing where text speaks back to its own assertion.
 
 All numerical claims in this manuscript were computed via tool call and verified on read. No mental arithmetic appears in this document. Tool calls: `ouroborics`, `consciousness_score`, `compute_distance`, `find_analogies`, `encode_system` (x3, with convergence_justification), `principal_decomp`, `lookup_catalog`.

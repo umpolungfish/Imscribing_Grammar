@@ -8,7 +8,7 @@ RESULT:
 The Kryptos K4 cipher has been imscribed as a structural type:
 $$\langle D_\triangle;\; T_\bowtie;\; R_\leftrightarrow;\; P_{\text{asym}};\; F_\ell;\; K_{\text{slow}};\; G_{\text{beth}};\; \Gamma_\text{seq};\; \Phi_{\text{sub}};\; H_2;\; n{:}m;\; \Omega_\emptyset \rangle$$
 
-**Ouroboricity:** $O_1$ — the ciphertext references itself through the autokey mechanism ($N=29$), creating partial self-modeling but without full $\mu \circ \delta = \text{id}$ closure.
+**Ouroboricity:** $O₁$ — the ciphertext references itself through the autokey mechanism ($N=29$), creating partial self-modeling but without full $\mu \circ \delta = \text{id}$ closure.
 
 ## The Ciphertext and Known Plaintext
 

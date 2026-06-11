@@ -75,7 +75,7 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
     Inter-lane edges (bidirectional, all-to-all within each pair):
       Phi ↔ P     — R1: ⊙ enables 𐑹 (Gate 1 / Frobenius condition)
       Phi ↔ K     — Gate 2: ⊙ constrains kinetic regime (K <= 𐑧)
-      Omega ↔ D   — R4/R5: protection × dimensionality determines O_2 vs O_2†
+      Omega ↔ D   — R4/R5: protection × dimensionality determines O₂ vs O₂†
 
     Returns (edge_src, edge_dst) as 1-D long tensors.
     """
@@ -355,7 +355,7 @@ class DecoderHead(nn.Module):
 
 class TierHead(nn.Module):
     """Tuple embedding → ouroboricity tier logits."""
-    TIERS = ["O_0", "O_1", "O_2", "O_2_dag", "O_inf"]
+    TIERS = ["O₀", "O₁", "O₂", "O₂†", "O_∞"]
 
     def __init__(self, hidden_dim: int = 128):
         super().__init__()
@@ -1124,7 +1124,7 @@ def _sample_random_tuples(n: int, stratified: bool = False) -> tuple:
     """
     Draw n tuples from the full 17,280,000-type crystal.
 
-    stratified=False (default): uniform random draw — ~60% O_0 naturally.
+    stratified=False (default): uniform random draw — ~60% O₀ naturally.
     stratified=True:  sample tier uniformly (1/5 each), then pick a random
                       boundary combo from that tier and fill inner primitives
                       uniformly. Gives equal tier exposure per batch.
@@ -1241,7 +1241,7 @@ def train(
     else:
         strat_label = "uniform"
     print(f"Synthetic   |  +{synthetic_per_batch} tuples/batch  [{strat_label}]")
-    print(f"Self-encode |  target {CrystalGNN.SELF_ENCODE_TARGET:,}  (O_inf)")
+    print(f"Self-encode |  target {CrystalGNN.SELF_ENCODE_TARGET:,}  (O_∞)")
     print(f"Crystal     |  {TOTAL_SIZE:,} total types")
     print(f"Epochs      |  {start_epoch} → {end_epoch}")
     print(f"{'='*60}\n")
@@ -1360,7 +1360,7 @@ def verify(checkpoint: Path = ROOT / "crystal_gnn.pt", n_samples: int = 50) -> N
     model.eval()
 
     dataset  = CrystalDataset()
-    # Use all entries so rare tiers (O_2_dag, O_inf) are always represented.
+    # Use all entries so rare tiers (O₂†, O_∞) are always represented.
     # n_samples is ignored if dataset is smaller; for large catalogs cap at 200.
     sample   = list(range(min(len(dataset), max(n_samples, 200))))
     errors   = []
@@ -1982,7 +1982,7 @@ if __name__ == "__main__":
     t.add_argument("--resume",      action="store_true",
                    help="Resume from checkpoint (inherits arch from saved file)")
     t.add_argument("--stratified", action="store_true",
-                   help="Tier-stratified synthetic sampling (equal O_0/O_1/O_2/O_2†/O_inf per batch)")
+                   help="Tier-stratified synthetic sampling (equal O₀/O₁/O₂/O₂†/O_∞ per batch)")
     t.add_argument("--hybrid",     action="store_true",
                    help="Hybrid synthetic: 50%% uniform + 50%% tier-stratified")
 

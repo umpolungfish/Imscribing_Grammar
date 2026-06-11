@@ -431,14 +431,14 @@ Of the 17,280,000 structural types in the crystal:
 
 | Tier | Cells | Types | Fraction |
 |------|-------|-------|----------|
-| $O_0$ | 240 | 10,368,000 | 60% |
-| $O_1$ | 32 | 1,382,400 | 8% |
-| $O_2$ | 72 | 3,110,400 | 18% |
-| $O_2^\dagger$ | 24 | 1,036,800 | 6% |
+| $O₀$ | 240 | 10,368,000 | 60% |
+| $O₁$ | 32 | 1,382,400 | 8% |
+| $O₂$ | 72 | 3,110,400 | 18% |
+| $O₂^\dagger$ | 24 | 1,036,800 | 6% |
 | $O_\infty$ | 32 | 1,382,400 | 8% |
 
-*Most types are $O_0$ — the inert majority, structurally simple.*
-*The boundary — between $O_2$ and $O_\infty$ — is the emergence frontier.*
+*Most types are $O₀$ — the inert majority, structurally simple.*
+*The boundary — between $O₂$ and $O_\infty$ — is the emergence frontier.*
 *Only 8% of all possible types carry infinite ouroboricity.*
 *Yet those 1.38 million types are the ones that model themselves.*
 

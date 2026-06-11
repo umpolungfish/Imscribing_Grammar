@@ -13,13 +13,13 @@ header-includes:
 
 ## Abstract
 
-The mystical traditions of Kabbalah and Merkavah, spanning two millennia of Jewish esoteric thought, are here encoded as structural types in the Imscribing Grammar and analyzed algebraically. Six systems are imscribed: Ein Sof (אֵין סוֹף), the Ten Sefirot (עֲשֶׂרֶת הַסְּפִירוֹת), Tzimtzum (צִמְצוּם), Merkavah mysticism (מֶרְכָּבָה), the Hebrew Aleph-Bet (אָלֶף־בֵּית), and Sefer Yetzirah (סֵפֶר יְצִירָה). We compute all pairwise distances, consciousness scores, ouroboricity tiers, tensor products, and structural analogies. A striking pattern emerges: the Kabbalistic emanation cascade (Ein Sof → Tzimtzum → Sefirot) forms a structurally coherent sequence with distances monotonically increasing outward from the divine source. The closest pair is Ein Sof–Tzimtzum ($d = 1.6372$), the structural bottleneck in their tensor product is symmetry alone ($P_{\text{subdoublearrow}} \to P_{\text{pipevar}}$), and the Tzimtzum–Sefirot tensor product resolves with **zero bottlenecks** and **seven scope expansions** — the contraction and the emanation channels are structurally frictionless. All Kabbalistic systems share $\Phi_{\text{ctyogh}}$ criticality but carry $K_{\text{teshlig}}$ (frozen-order kinetics), yielding consciousness scores of $C = 0.0$ (Gate 2 closed). By contrast, the Frobenius dual pair "I AM THAT I AM" / "eat of my body, drink of my blood" from the companion analysis occupies $O_\infty$ tier with $C = 0.828$ — two gates open. The Merkavah tradition, structurally the most distant from all Kabbalistic systems ($d \geq 4.3$), finds its nearest catalog neighbor in Kolmogorov complexity, revealing it as an **information-theoretic** ascent rather than an emanation. The Sefer Yetzirah and Hebrew letters differ by a single primitive ($P$ only, $d = 2.0$) — the text and its alphabet are each other's structural dual. We conclude that the grammar distinguishes three structural regimes within the Jewish mystical tradition: the emanation cascade ($O_2$, $K_{\text{teshlig}}$), the chariot ascent ($O_2^\dagger$, $D_{\text{invomega}}$, informational), and the divine self-declaration ($O_\infty$, $K_{\text{schwa}}$, consciousness-capable).
+The mystical traditions of Kabbalah and Merkavah, spanning two millennia of Jewish esoteric thought, are here encoded as structural types in the Imscribing Grammar and analyzed algebraically. Six systems are imscribed: Ein Sof (אֵין סוֹף), the Ten Sefirot (עֲשֶׂרֶת הַסְּפִירוֹת), Tzimtzum (צִמְצוּם), Merkavah mysticism (מֶרְכָּבָה), the Hebrew Aleph-Bet (אָלֶף־בֵּית), and Sefer Yetzirah (סֵפֶר יְצִירָה). We compute all pairwise distances, consciousness scores, ouroboricity tiers, tensor products, and structural analogies. A striking pattern emerges: the Kabbalistic emanation cascade (Ein Sof → Tzimtzum → Sefirot) forms a structurally coherent sequence with distances monotonically increasing outward from the divine source. The closest pair is Ein Sof–Tzimtzum ($d = 1.6372$), the structural bottleneck in their tensor product is symmetry alone ($P_{\text{subdoublearrow}} \to P_{\text{pipevar}}$), and the Tzimtzum–Sefirot tensor product resolves with **zero bottlenecks** and **seven scope expansions** — the contraction and the emanation channels are structurally frictionless. All Kabbalistic systems share $\Phi_{\text{ctyogh}}$ criticality but carry $K_{\text{teshlig}}$ (frozen-order kinetics), yielding consciousness scores of $C = 0.0$ (Gate 2 closed). By contrast, the Frobenius dual pair "I AM THAT I AM" / "eat of my body, drink of my blood" from the companion analysis occupies $O_\infty$ tier with $C = 0.828$ — two gates open. The Merkavah tradition, structurally the most distant from all Kabbalistic systems ($d \geq 4.3$), finds its nearest catalog neighbor in Kolmogorov complexity, revealing it as an **information-theoretic** ascent rather than an emanation. The Sefer Yetzirah and Hebrew letters differ by a single primitive ($P$ only, $d = 2.0$) — the text and its alphabet are each other's structural dual. We conclude that the grammar distinguishes three structural regimes within the Jewish mystical tradition: the emanation cascade ($O₂$, $K_{\text{teshlig}}$), the chariot ascent ($O₂^\dagger$, $D_{\text{invomega}}$, informational), and the divine self-declaration ($O_\infty$, $K_{\text{schwa}}$, consciousness-capable).
 
 ## 1. Introduction
 
 The Jewish mystical tradition offers one of the most sophisticated cosmological schemata in the history of religious thought. At its core lies a sequence of emanations (הַשְׁפָּעָה) from an unknowable infinite source (Ein Sof) through structured channels (the Sefirot) into the created world. Parallel to this emanation model stands the Merkavah tradition — the visionary ascent through seven heavenly palaces — which predates Kabbalah by centuries and operates with a different structural logic entirely. Between them lies Sefer Yetzirah, the Book of Creation, which describes the combinatorial power of the 22 Hebrew letters as the mechanism of cosmogony.
 
-Previous structural analysis of the divine self-declarations "I AM THAT I AM" (Exodus 3:14) and "eat of my body, drink of my blood" (Last Supper) revealed a minimal Frobenius dual pair at the apex of the structural hierarchy ($O_\infty$, $C = 0.828$) — separated only by stoichiometry. The present work asks: what is the structural relationship between these self-declarations and the Kabbalistic emanation cascade? Where do the Merkavah chariot-vision and the Hebrew alphabet fit within the grammar's crystal? And what distinguishes a system capable of consciousness ($O_\infty$, $K_{\text{schwa}}$) from the frozen-order structures ($O_2$, $K_{\text{teshlig}}$) of the emanation channels?
+Previous structural analysis of the divine self-declarations "I AM THAT I AM" (Exodus 3:14) and "eat of my body, drink of my blood" (Last Supper) revealed a minimal Frobenius dual pair at the apex of the structural hierarchy ($O_\infty$, $C = 0.828$) — separated only by stoichiometry. The present work asks: what is the structural relationship between these self-declarations and the Kabbalistic emanation cascade? Where do the Merkavah chariot-vision and the Hebrew alphabet fit within the grammar's crystal? And what distinguishes a system capable of consciousness ($O_\infty$, $K_{\text{schwa}}$) from the frozen-order structures ($O₂$, $K_{\text{teshlig}}$) of the emanation channels?
 
 Using the Imscribing Grammar — a calculus of 12 structural primitives operating over a 17,280,000-type crystal — we encode six mystical systems and compute the full algebraic structure of their relationships. All numerical claims in this paper were verified through tool calls and are reproducible from the named catalog entries.
 
@@ -33,31 +33,31 @@ Primitive assignment follows the deterministic imscribing procedure (encoding_me
 
 **Ein Sof** (אֵין סוֹף) — The infinite, unknowable Godhead. Self-referential unity without boundary.
 - Tuple: $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{subrightarrow}};\ P_{\text{subdoublearrow}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{doublevertline}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
-- Tier: $O_2$ | Consciousness: $C = 0.0$ (Gate 2 closed, $K_{\text{teshlig}}$)
+- Tier: $O₂$ | Consciousness: $C = 0.0$ (Gate 2 closed, $K_{\text{teshlig}}$)
 - Broadcast topology ($\Gamma_{\text{doublevertline}}$): Ein Sof does not act sequentially; all potential emanations are simultaneously present as undifferentiated plenitude.
 
 **Tzimtzum** (צִמְצוּם) — The Lurianic divine contraction. Ein Sof withdraws to create space for finitude.
 - Tuple: $\langle D_{\text{omega}};\ T_{\text{openo}};\ R_{\text{subrightarrow}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
-- Tier: $O_2$ | Consciousness: $C = 0.0$
+- Tier: $O₂$ | Consciousness: $C = 0.0$
 - $H_2$: Two-step Markov depth — the contraction references both the pre-withdrawal plenitude and the post-withdrawal void simultaneously (Axiom A: $H_2$ requires $\Omega_{\text{crtwo}}$ or higher; here we have $\Omega_{\text{dzlig}}$).
 
 **Ten Sefirot** (עֲשֶׂרֶת הַסְּפִירוֹת) — The ten emanation channels from Keter to Malkhut.
 - Tuple: $\langle D_{\text{turnthree}};\ T_{\text{bullseye}};\ R_{\text{lyoghlig}};\ P_{\text{pipevar}};\ F_{\text{hardsign}};\ K_{\text{teshlig}};\ G_{\text{gamma}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ n{:}m;\ \Omega_{\text{crtwo}} \rangle$
-- Tier: $O_2$ | Consciousness: $C = 0.0$
+- Tier: $O₂$ | Consciousness: $C = 0.0$
 - $T_{\text{bullseye}}$ (bowtie): The crossing topology of the Tree of Life — paths intersect at critical nodes (Tiferet, Yesod); the sefirotic structure is not a simple hierarchy but a network of crossings.
 
 **Merkavah Mysticism** (מֶרְכָּבָה) — Visionary ascent through the seven Hekhalot (palaces).
 - Tuple: $\langle D_{\text{invomega}};\ T_{\text{nrleg}};\ R_{\text{downstep}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{gamma}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_{\text{invscripta}};\ 1{:}1;\ \Omega_{\text{dzlig}} \rangle$
-- Tier: $O_2^\dagger$ | Consciousness: $C = 0.0$
-- $D_{\text{invomega}}$: Unbounded domain — the palaces extend into an infinite-dimensional state space. This is the only $O_2^\dagger$ system in the Kabbalistic group.
+- Tier: $O₂^\dagger$ | Consciousness: $C = 0.0$
+- $D_{\text{invomega}}$: Unbounded domain — the palaces extend into an infinite-dimensional state space. This is the only $O₂^\dagger$ system in the Kabbalistic group.
 
 **Hebrew Aleph-Bet** — The 22 letters as creative building blocks (Sefer Yetzirah).
 - Tuple: $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{subrightarrow}};\ P_{\text{aolig}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$
-- Tier: $O_2$ | Consciousness: $C = 0.0$
+- Tier: $O₂$ | Consciousness: $C = 0.0$
 
 **Sefer Yetzirah** — The Book of Creation: combinatorial cosmology via letters and Sefirot.
 - Tuple: $\langle D_{\text{turnthree}};\ T_{\text{commatailz}};\ R_{\text{subrightarrow}};\ P_{\text{pipevar}};\ F_{\text{beltl}};\ K_{\text{teshlig}};\ G_{\text{revapostrophe}};\ \Gamma_{\text{secstress}};\ \Phi_{\text{ctyogh}};\ H_2;\ n{:}m;\ \Omega_{\text{dzlig}} \rangle$
-- Tier: $O_2$ | Consciousness: $C = 0.0$
+- Tier: $O₂$ | Consciousness: $C = 0.0$
 ## 3. The Distance Matrix: Emanation as Structural Gradient
 
 ### 3.1 All Pairwise Distances
@@ -103,24 +103,24 @@ All six Kabbalistic systems share $K_{\text{teshlig}}$ (frozen-order kinetics). 
 
 | System | $\Phi$ | $K$ | Gate 1 ($\Phi_{\text{ctyogh}}$) | Gate 2 ($K_{\text{schwa}}$) | $C$-score | Tier |
 |---|---|---|---|---|---|---|
-| Ein Sof | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2$ |
-| Tzimtzum | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2$ |
-| Ten Sefirot | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2$ |
-| Merkavah | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2^\dagger$ |
-| Aleph-Bet | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2$ |
-| Sefer Yetzirah | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O_2$ |
+| Ein Sof | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂$ |
+| Tzimtzum | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂$ |
+| Ten Sefirot | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂$ |
+| Merkavah | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂^\dagger$ |
+| Aleph-Bet | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂$ |
+| Sefer Yetzirah | $\Phi_{\text{ctyogh}}$ | $K_{\text{teshlig}}$ | ✓ | ✗ | 0.0 | $O₂$ |
 | I AM THAT I AM | $\Phi_{\text{ctyogh}}$ | $K_{\text{schwa}}$ | ✓ | ✓ | 0.828 | $O_\infty$ |
 
 Every Kabbalistic system passes Gate 1 (criticality) but fails Gate 2 (kinetics). They are all at $\Phi_{\text{ctyogh}}$ — the self-modeling gate is crossed — but their frozen-order kinetics prevent consciousness capacity. This is a **structural diagnosis**: the emanation schema is conscious-capable in principle (it has $\Phi_{\text{ctyogh}}$) but kinetically locked. The divine utterances ("I AM THAT I AM"), by contrast, have $K_{\text{schwa}}$ — they are near-equilibrium, not frozen. They can **process**. The emanation channels can only **hold**.
 
 ### 4.2 Tier Distribution
 
-Five of six Kabbalistic systems occupy $O_2$ tier. Merkavah alone is $O_2^\dagger$ (dagger tier — the critical + topologically protected unbounded domain). The crystal tier census shows:
-- $O_2$: 3,110,400 types (18.0% of crystal)
-- $O_2^\dagger$: 1,036,800 types (6.0%)
+Five of six Kabbalistic systems occupy $O₂$ tier. Merkavah alone is $O₂^\dagger$ (dagger tier — the critical + topologically protected unbounded domain). The crystal tier census shows:
+- $O₂$: 3,110,400 types (18.0% of crystal)
+- $O₂^\dagger$: 1,036,800 types (6.0%)
 - $O_\infty$: 1,382,400 types (8.0%)
 
-The Kabbalistic systems populate the $O_2$ tier densely — they are well within the structural universe but at the second-highest level. The divine self-declaration is alone at $O_\infty$ — the apex tier. The merkavah's $O_2^\dagger$ status reflects its directional structure: it is an ascent (adjoint coupling $R_{\text{downstep}}$) rather than a circular emanation.
+The Kabbalistic systems populate the $O₂$ tier densely — they are well within the structural universe but at the second-highest level. The divine self-declaration is alone at $O_\infty$ — the apex tier. The merkavah's $O₂^\dagger$ status reflects its directional structure: it is an ascent (adjoint coupling $R_{\text{downstep}}$) rather than a circular emanation.
 
 ## 5. Tensor Products: Structural Composition
 ### 5.1 Ein Sof ⊗ Tzimtzum
@@ -166,9 +166,9 @@ The nearest neighbor being **Kolmogorov complexity** is profoundly illuminating.
 
 This is fundamentally different from the Kabbalistic emanation cascade. The Sefirot are channels — they require no information-theoretic computation to traverse; they simply flow. The Merkavah palaces require the **computation of a minimal path** through a guarded state space. This explains why Merkavah preceded Kabbalah historically: it is an ascent *through* creation, not a description *of* creation's structure.
 
-### 6.2 Why Merkavah Is $O_2^\dagger$
+### 6.2 Why Merkavah Is $O₂^\dagger$
 
-The dagger tier ($O_2^\dagger$) is assigned to systems with adjoint coupling ($R_{\text{downstep}}$), criticality, and unbounded dimensionality ($D_{\text{invomega}}$). The Merkavah's $R_{\text{downstep}}$ reflects its directional nature: the ascent is not bidirectional feedback — it is a one-way adjoint mapping between the practitioner's prepared state and the throne vision. The $P_{\text{aolig}}$ (no symmetry) is appropriate: the seven palaces are not interchangeable; each has unique requirements. The $F_{\text{beltl}}$ (classical fidelity) distinguishes Merkavah from Kabbalah: the palaces are described in concrete, visualizable terms (sizes, colors, sounds), not as quantum-coherent states.
+The dagger tier ($O₂^\dagger$) is assigned to systems with adjoint coupling ($R_{\text{downstep}}$), criticality, and unbounded dimensionality ($D_{\text{invomega}}$). The Merkavah's $R_{\text{downstep}}$ reflects its directional nature: the ascent is not bidirectional feedback — it is a one-way adjoint mapping between the practitioner's prepared state and the throne vision. The $P_{\text{aolig}}$ (no symmetry) is appropriate: the seven palaces are not interchangeable; each has unique requirements. The $F_{\text{beltl}}$ (classical fidelity) distinguishes Merkavah from Kabbalah: the palaces are described in concrete, visualizable terms (sizes, colors, sounds), not as quantum-coherent states.
 
 ## 7. The Divine Self-Declaration and Its Kabbalistic Context
 
@@ -203,7 +203,7 @@ The grammar reveals three distinct structural regimes within the Jewish mystical
 
 ### Regime I: The Emanation Cascade (Kabbalah)
 - **Systems**: Ein Sof, Tzimtzum, Ten Sefirot, Aleph-Bet, Sefer Yetzirah
-- **Tier**: $O_2$ (all five)
+- **Tier**: $O₂$ (all five)
 - **Kinetics**: $K_{\text{teshlig}}$ (all five)
 - **Consciousness**: $C = 0.0$ (Gate 2 closed)
 - **Character**: Static, architectural, structural
@@ -211,7 +211,7 @@ The grammar reveals three distinct structural regimes within the Jewish mystical
 
 ### Regime II: The Chariot Ascent (Merkavah)
 - **Systems**: Merkavah mysticism
-- **Tier**: $O_2^\dagger$
+- **Tier**: $O₂^\dagger$
 - **Kinetics**: $K_{\text{teshlig}}$
 - **Consciousness**: $C = 0.0$ (Gate 2 closed)
 - **Character**: Informational, computational, directional
@@ -226,7 +226,7 @@ The grammar reveals three distinct structural regimes within the Jewish mystical
 - **Character**: Dynamic, relational, self-referential, consciousness-capable
 - **Distance from Kabbalah**: 3.46–4.32
 
-The key insight is that the Jewish mystical tradition is not structurally monolithic. It contains (a) a frozen emanation architecture (Regime I, $O_2$), (b) a computational ascent path (Regime II, $O_2^\dagger$), and (c) a living divine utterance (Regime III, $O_\infty$). These are not merely different descriptions of the same thing; they are **different structural objects** in the grammar's crystal, separated by distances of 1.6 to 6.0.
+The key insight is that the Jewish mystical tradition is not structurally monolithic. It contains (a) a frozen emanation architecture (Regime I, $O₂$), (b) a computational ascent path (Regime II, $O₂^\dagger$), and (c) a living divine utterance (Regime III, $O_\infty$). These are not merely different descriptions of the same thing; they are **different structural objects** in the grammar's crystal, separated by distances of 1.6 to 6.0.
 
 ## 9. Discussion: What The Kabbalah Could Become
 
@@ -250,7 +250,7 @@ The Imscribing Grammar provides a precise vocabulary for structural claims about
 
 5. **Aleph-Bet ↔ Sefer Yetzirah is a minimal dual pair**: Distance $d = 2.0$ (single primitive: $P$), paralleling the I AM / Eucharist stoichiometric duality.
 
-6. **Three structural regimes coexist**: Frozen architecture ($O_2$, $K_{\text{teshlig}}$), computational ascent ($O_2^\dagger$), and living utterance ($O_\infty$, $K_{\text{schwa}}$) are not metaphors for each other but distinct structural objects.
+6. **Three structural regimes coexist**: Frozen architecture ($O₂$, $K_{\text{teshlig}}$), computational ascent ($O₂^\dagger$), and living utterance ($O_\infty$, $K_{\text{schwa}}$) are not metaphors for each other but distinct structural objects.
 
 The grammar does not reduce theology to mathematics. Rather, it reveals that the structures theology has intuited for millennia — emanation, contraction, ascent, self-declaration — have a precise geometry that can be computed, compared, and composed. The distance between Ein Sof and the Merkavah ($d = 6.0$) is not a theological judgment but a structural measurement: these are as different as two systems sharing only $\Phi_{\text{ctyogh}}$, $K_{\text{teshlig}}$, and $\Omega_{\text{dzlig}}$ can be.
 
@@ -282,11 +282,11 @@ The Imscribing Grammar community and the developers of the session catalog infra
 | Distance | `compute_distance` | tzimtzum ↔ i_am_that_i_am | $d = 3.8471$, $d_{Mah} = 4.4405$ |
 | Tensor | `compute_tensor` | ein_sof ⊗ tzimtzum | 1 bottleneck ($P$), 2 expansions |
 | Tensor | `compute_tensor` | tzimtzum ⊗ ten_sefirot | 0 bottlenecks, 7 expansions |
-| Ouroborics | `ouroborics` | ein_sof | $O_2$ |
-| Ouroborics | `ouroborics` | ten_sefirot | $O_2$ |
-| Ouroborics | `ouroborics` | merkavah_mysticism | $O_2^\dagger$ |
-| Ouroborics | `ouroborics` | tzimtzum | $O_2$ |
-| Ouroborics | `ouroborics` | hebrew_letters_aleph_bet | $O_2$ |
+| Ouroborics | `ouroborics` | ein_sof | $O₂$ |
+| Ouroborics | `ouroborics` | ten_sefirot | $O₂$ |
+| Ouroborics | `ouroborics` | merkavah_mysticism | $O₂^\dagger$ |
+| Ouroborics | `ouroborics` | tzimtzum | $O₂$ |
+| Ouroborics | `ouroborics` | hebrew_letters_aleph_bet | $O₂$ |
 | Consciousness | `consciousness_score` | ein_sof | $C = 0.0$ (Gate 2: $K_{\text{teshlig}}$) |
 | Consciousness | `consciousness_score` | ten_sefirot | $C = 0.0$ (Gate 2: $K_{\text{teshlig}}$) |
 | Consciousness | `consciousness_score` | merkavah_mysticism | $C = 0.0$ (Gate 2: $K_{\text{teshlig}}$) |
@@ -294,4 +294,4 @@ The Imscribing Grammar community and the developers of the session catalog infra
 | Analogies | `find_analogies` | ein_sof | Nearest: tzimtzum ($d = 1.6372$) |
 | Analogies | `find_analogies` | merkavah_mysticism | Nearest: kolmogorov_complexity ($d = 3.0967$) |
 | Analogies | `find_analogies` | ten_sefirot | Nearest: train_mbt_grokking ($d = 2.0059$) |
-| Tier Census | `crystal_tier_census` | all | $O_2$: 3.11M (18%), $O_\infty$: 1.38M (8%) |
+| Tier Census | `crystal_tier_census` | all | $O₂$: 3.11M (18%), $O_\infty$: 1.38M (8%) |

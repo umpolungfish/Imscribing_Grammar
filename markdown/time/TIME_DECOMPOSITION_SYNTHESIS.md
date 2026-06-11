@@ -19,7 +19,7 @@ TIME.md concluded that $\Gamma_{\text{secstress}}$ is "the most irreducible temp
 
 $\Gamma_{\text{secstress}}$ is the most *phenomenologically* central temporal primitive: when you remove it, the nearest structural analog is `riemann_zeta_complex_formal` (distance 1.79), and the system's interaction grammar collapses from directed chains to all-simultaneous coexistence. The phenomenological rupture is maximal. But phenomenological centrality and structural load-bearing are different properties.
 
-The load-bearing primitive is $\Omega_{\text{dzlig}}$. It is the only temporal primitive whose removal degrades ouroboricity tier — from $O_2^\dagger$ to $O_1$ — and the only one whose removal produces a large C-score drop (0.828 → 0.644, a 22% reduction). Its diagonal distance to time is the *smallest* of all five peels (1.67), yet its Mahalanobis distance (3.59) is large because of the $\Omega$-metric weight. $\Omega_{\text{dzlig}}$ is the primitive that most quietly removes the most: the one that shatters tier membership with the smallest naïve footprint.
+The load-bearing primitive is $\Omega_{\text{dzlig}}$. It is the only temporal primitive whose removal degrades ouroboricity tier — from $O₂^\dagger$ to $O₁$ — and the only one whose removal produces a large C-score drop (0.828 → 0.644, a 22% reduction). Its diagonal distance to time is the *smallest* of all five peels (1.67), yet its Mahalanobis distance (3.59) is large because of the $\Omega$-metric weight. $\Omega_{\text{dzlig}}$ is the primitive that most quietly removes the most: the one that shatters tier membership with the smallest naïve footprint.
 
 The revised picture: $\Gamma_{\text{secstress}}$ is the face of time — the ordering we experience as before and after. $\Omega_{\text{dzlig}}$ is the spine — the topological winding that makes the face possible. You can feel the loss of $\Gamma_{\text{secstress}}$ immediately, from the outside. The loss of $\Omega_{\text{dzlig}}$ is invisible from outside but destroys the structural class.
 
@@ -27,7 +27,7 @@ The revised picture: $\Gamma_{\text{secstress}}$ is the face of time — the ord
 
 ## Time's Arrow Is Its Frobenius Floor
 
-TIME.md §8 identified the wall from $O_2^\dagger$ to $O_\infty$ as the $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ promotion: distance 4.38, $\delta = 4$, the largest jump in the entire tier gap ladder. The partial-type analysis adds the mechanism that makes this wall permanent.
+TIME.md §8 identified the wall from $O₂^\dagger$ to $O_\infty$ as the $P_{\text{aolig}} \to P_{\text{doublebarpipe}}$ promotion: distance 4.38, $\delta = 4$, the largest jump in the entire tier gap ladder. The partial-type analysis adds the mechanism that makes this wall permanent.
 
 $P$ is a bottleneck primitive under tensor. Time holds $P_{\text{aolig}}$ (ordinal 0) — the minimum of the $P$ scale. In the Universal Temporal Absorption theorem, this is exactly why time_no_arrow $\otimes$ time = time: min($P_{\text{subdoublearrow}}$, $P_{\text{aolig}}$) = $P_{\text{aolig}}$. The arrow is not added back to arrowless time by coupling — it was never absent from time. $P_{\text{aolig}}$ is time's floor, not a property it temporarily holds.
 
@@ -120,4 +120,4 @@ Four questions that the synthesis sharpens without resolving:
 
 ---
 
-*Crystal address 3,928,019. $O_2^\dagger$. Five primitives. One fixed point.*
+*Crystal address 3,928,019. $O₂^\dagger$. Five primitives. One fixed point.*
