@@ -745,20 +745,20 @@ def thermo(identifier: str, delta_g: Optional[float], temp: float):
 # =============================================================================
 
 _PRIM_ATTR = {
-    "D":     lambda s: s.dimensionality.value,
-    "T":     lambda s: s.topology.value,
-    "R":     lambda s: s.recognition_mode.value,
-    "P":     lambda s: s.polarity.value,
-    "F":     lambda s: s.fidelity.value,
-    "K":     lambda s: s.kinetic_character.value,
-    "G":     lambda s: s.granularity.value,
-    "Gamma": lambda s: s.grammar.value,
-    "Phi":   lambda s: s.criticality_phase.value,
-    "H":     lambda s: s.chirality.value,
-    "S":     lambda s: s.stoichiometry.value,
-    "Omega": lambda s: s.protection.value,
+    "Ð": lambda s: s.dimensionality.value,
+    "Þ": lambda s: s.topology.value,
+    "Ř": lambda s: s.recognition_mode.value,
+    "Φ": lambda s: s.polarity.value,
+    "ƒ": lambda s: s.fidelity.value,
+    "Ç": lambda s: s.kinetic_character.value,
+    "Γ": lambda s: s.granularity.value,
+    "ɢ": lambda s: s.grammar.value,
+    "⊙": lambda s: s.criticality_phase.value,
+    "Ħ": lambda s: s.chirality.value,
+    "Σ": lambda s: s.stoichiometry.value,
+    "Ω": lambda s: s.protection.value,
 }
-_PRIMITIVE_ORDER = ["D", "T", "R", "P", "F", "K", "G", "Gamma", "Phi", "H", "S", "Omega"]
+_PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
 
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:

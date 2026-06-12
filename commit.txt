@@ -1,6 +1,12 @@
-GUIDED_PRIMITIVES: replace all option keys with Shavian glyphs; delete _VALUE_NORMALIZE
+Unify to single catalog; purge all legacy notation keys and values
 
-All 49 option values in GUIDED_PRIMITIVES are now bare Shavian glyphs
-per SNS_PRIME.md — no subscript notation anywhere. _VALUE_NORMALIZE
-deleted entirely along with all three call sites. Axiom A/B sets use
-glyphs directly.
+- Merged imscribe.com (2811) + red-hot_rebis/shared (2812) + imscribing_grammar (2837)
+  into single canonical imscribing_grammar/IG_catalog.json (2864 entries);
+  replaced other two files with symlinks
+- Migrated 336 ASCII field keys (D/T/R/P/F/K/G/Gamma/Phi/H/S/Omega) →
+  Shavian primitive symbols (Ð/Þ/Ř/Φ/ƒ/Ç/Γ/ɢ/⊙/Ħ/Σ/Ω)
+- Migrated 325 stale shorthand values (Ð_C, Þ_¨, Ħ_!, ⊙_ÿ, etc.) →
+  bare Shavian glyphs; catalog now loads clean with zero from_symbol warnings
+- cli.py: _PRIM_ATTR and _PRIMITIVE_ORDER rewritten with Shavian keys
+- imscribe_generator_agent.py: _VALUE_NORMALIZE deleted entirely;
+  GUIDED_PRIMITIVES option keys replaced with bare Shavian glyphs
