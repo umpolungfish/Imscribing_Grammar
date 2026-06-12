@@ -72,7 +72,7 @@ def _load_provider_defaults() -> Dict[str, Any]:
             "base_url": "https://api.anthropic.com",
         },
         "deepseek": {
-            "default_model": "deepseek-chat",
+            "default_model": "deepseek-v4-pro",
             "base_url": "https://api.deepseek.com/chat/completions",
         },
         "qwen": {
@@ -253,6 +253,9 @@ class HttpProvider(LLMProvider):
 
 class DeepSeekProvider(HttpProvider):
     def __init__(self, api_key: str, model: Optional[str] = None):
+        # Use the official OpenAI-compatible endpoint. DeepSeek accepts both
+        # https://api.deepseek.com/chat/completions and /v1 variant.
+        model = model or "deepseek-v4-pro"
         super().__init__(api_key, model, "https://api.deepseek.com/chat/completions", "deepseek")
 
 

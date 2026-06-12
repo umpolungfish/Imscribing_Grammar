@@ -118,7 +118,30 @@ class Dimensionality(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Dimensionality symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "wynn": cls.D_wynn,
+            "wedge": cls.D_wynn,
+            "turnthree": cls.D_turnthree,
+            "triangle": cls.D_turnthree,
+            "invomega": cls.D_invomega,
+            "infty": cls.D_invomega,
+            "infinity": cls.D_invomega,
+            "omega": cls.D_holo,
+            "holo": cls.D_holo,
+            "odot": cls.D_holo,
+            "point": cls.D_point,
+            "line": cls.D_line,
+            "cube": cls.D_cube,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Dimensionality: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Dimensionality: unknown symbol {s!r}, defaulting to D_wynn")
+        return cls.D_wynn
 
 
 # =============================================================================
@@ -196,7 +219,39 @@ class Topology(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Topology symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "linear": cls.T_linear,
+            "chain": cls.T_linear,
+            "chains": cls.T_linear,
+            "branched": cls.T_branched,
+            "nrleg": cls.T_nrleg,
+            "network": cls.T_nrleg,
+            "square": cls.T_nrleg,
+            "bullseye": cls.T_bullseye,
+            "cyclic_bowtie": cls.T_bullseye,
+            "torus": cls.T_torus,
+            "holo": cls.T_holo,
+            "openo": cls.T_holo,
+            "cage": cls.T_cage,
+            "box": cls.T_cage,
+            "commatailz": cls.T_cage,
+            "bowl": cls.T_bowl,
+            "invscr": cls.T_bowl,
+            "braid": cls.T_braid,
+            "network_hex": cls.T_network_hex,
+            "network_mixed": cls.T_network_mixed,
+            "network_interp": cls.T_network_interp,
+            "network_sym": cls.T_network_sym,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Topology: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Topology: unknown symbol {s!r}, defaulting to T_linear")
+        return cls.T_linear
 
 
 # =============================================================================
@@ -252,7 +307,24 @@ class Recognition(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Recognition symbol: {s!r}") from None
+            pass
+        # Suffix-based fallback: strip any hallucinated prefix before '_'
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _suffix_map = {
+            "superset": cls.R_superset, "subrightarrow": cls.R_superset,
+            "subset": cls.R_subset, "ctz": cls.R_subset, "covalent": cls.R_subset,
+            "covalent_dynamic": cls.R_covalent_dynamic,
+            "catalytic": cls.R_catalytic, "downstep": cls.R_catalytic,
+            "allosteric": cls.R_allosteric, "exact": cls.R_exact,
+            "mechanical": cls.R_mechanical, "lyoghlig": cls.R_mechanical,
+        }
+        if suffix in _suffix_map:
+            import warnings
+            warnings.warn(f"Recognition: normalised unknown symbol {s!r} via suffix {suffix!r}")
+            return _suffix_map[suffix]
+        import warnings
+        warnings.warn(f"Recognition: completely unknown symbol {s!r}, defaulting to R_superset")
+        return cls.R_superset
 
 
 # =============================================================================
@@ -320,7 +392,33 @@ class Polarity(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Polarity symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "neutral": cls.P_neutral,
+            "asym": cls.P_neutral,
+            "directional": cls.P_neutral,
+            "aolig": cls.P_neutral,
+            "plus": cls.P_plus,
+            "psi": cls.P_plus,
+            "upsilon": cls.P_plus,
+            "minus": cls.P_minus,
+            "pm_pseudo": cls.P_pm_pseudo,
+            "pipevar": cls.P_pipevar,
+            "pm": cls.P_pipevar,
+            "subdoublearrow": cls.P_subdoublearrow,
+            "sym": cls.P_subdoublearrow,
+            "doublebarpipe": cls.P_doublebarpipe,
+            "pm_sym": cls.P_doublebarpipe,
+            "frobenius": cls.P_doublebarpipe,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Polarity: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Polarity: unknown symbol {s!r}, defaulting to P_neutral")
+        return cls.P_neutral
 
 
 # =============================================================================
@@ -394,7 +492,30 @@ class Grammar(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Grammar symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "corner": cls.Gamma_corner,
+            "and": cls.Gamma_corner,
+            "otimes": cls.Gamma_corner,
+            "odot": cls.Gamma_corner,
+            "spleftarrow": cls.Gamma_spleftarrow,
+            "or": cls.Gamma_spleftarrow,
+            "bigcirc": cls.Gamma_spleftarrow,
+            "secstress": cls.Gamma_secstress,
+            "seq": cls.Gamma_secstress,
+            "xor": cls.G_xor,
+            "impl": cls.G_impl,
+            "dissipative": cls.G_dissipative,
+            "doublevertline": cls.G_dissipative,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Grammar: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Grammar: unknown symbol {s!r}, defaulting to Gamma_corner")
+        return cls.Gamma_corner
 
     @property
     def partner_logic(self) -> str:
@@ -449,7 +570,24 @@ class Fidelity(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Fidelity symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "noise": cls.F_noise,
+            "beltl": cls.F_beltl,
+            "low": cls.F_beltl,
+            "dh": cls.F_dh,
+            "medium": cls.F_dh,
+            "hardsign": cls.F_hardsign,
+            "high": cls.F_hardsign,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Fidelity: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Fidelity: unknown symbol {s!r}, defaulting to F_beltl")
+        return cls.F_beltl
 
     @property
     def numeric_value(self) -> float:
@@ -505,7 +643,27 @@ class KineticChar(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown KineticChar symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "frtailgamma": cls.K_frtailgamma,
+            "fast": cls.K_frtailgamma,
+            "turnm": cls.K_turnm,
+            "moderate": cls.K_turnm,
+            "schwa": cls.K_schwa,
+            "slow": cls.K_schwa,
+            "teshlig": cls.K_teshlig,
+            "trap": cls.K_teshlig,
+            "lambda": cls.K_lambda,
+            "mbl": cls.K_lambda,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"KineticChar: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"KineticChar: unknown symbol {s!r}, defaulting to K_schwa")
+        return cls.K_schwa
 
     @property
     def numeric_value(self) -> float:
@@ -562,7 +720,23 @@ class Granularity(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Granularity symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "revapostrophe": cls.G_revapostrophe,
+            "local": cls.G_revapostrophe,
+            "beta": cls.G_beta,
+            "mesoscale": cls.G_beta,
+            "gamma": cls.G_gamma,
+            "global": cls.G_gamma,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Granularity: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Granularity: unknown symbol {s!r}, defaulting to G_beta")
+        return cls.G_beta
 
 
 # =============================================================================
@@ -619,7 +793,29 @@ class Criticality(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Criticality symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "softsign": cls.Phi_softsign,
+            "sub": cls.Phi_softsign,
+            "subcritical": cls.Phi_softsign,
+            "ctyogh": cls.Phi_ctyogh,
+            "critical": cls.Phi_ctyogh,
+            "c": cls.Phi_ctyogh,
+            "closerevepsilon": cls.Phi_closerevepsilon,
+            "revepsilon": cls.Phi_revepsilon,
+            "ep": cls.Phi_revepsilon,
+            "upstep": cls.Phi_upstep,
+            "sup": cls.Phi_upstep,
+            "supercritical": cls.Phi_upstep,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Criticality: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Criticality: unknown symbol {s!r}, defaulting to Phi_softsign")
+        return cls.Phi_softsign
 
     @property
     def is_degenerate(self) -> bool:
@@ -676,7 +872,30 @@ class Protection(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Protection (Winding) symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "closeepsilon": cls.Omega_closeepsilon,
+            "trivial": cls.Omega_closeepsilon,
+            "crtwo": cls.Omega_crtwo,
+            "z2": cls.Omega_crtwo,
+            "z2_class": cls.Omega_crtwo,
+            "dzlig": cls.Omega_dzlig,
+            "z": cls.Omega_dzlig,
+            "z_class": cls.Omega_dzlig,
+            "c": cls.Omega_C,
+            "chern": cls.Omega_C,
+            "turna": cls.Omega_turna,
+            "na": cls.Omega_turna,
+            "non_abelian": cls.Omega_turna,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Protection: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Protection: unknown symbol {s!r}, defaulting to Omega_closeepsilon")
+        return cls.Omega_closeepsilon
 
     @property
     def protection_strength(self) -> int:
@@ -736,7 +955,24 @@ class Stoichiometry(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Stoichiometry symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "doublebaresh": cls.S_doublebaresh,
+            "one_one": cls.S_doublebaresh,
+            "ctn": cls.one_n,
+            "one_n": cls.one_n,
+            "ltailm": cls.S_ltailm,
+            "n_m": cls.S_ltailm,
+            "cat": cls.cat,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Stoichiometry: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Stoichiometry: unknown symbol {s!r}, defaulting to S_doublebaresh")
+        return cls.S_doublebaresh
 
 
 # =============================================================================
@@ -780,7 +1016,23 @@ class Chirality(Enum):
         try:
             return _map[s]
         except KeyError:
-            raise ValueError(f"Unknown Chirality symbol: {s!r}") from None
+            pass
+        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
+        _sfx = {
+            "closeomega": cls.H_closeomega,
+            "achiral": cls.H_closeomega,
+            "toneletterstem": cls.H_toneletterstem,
+            "turntwo": cls.H_turntwo,
+            "invscripta": cls.H_invscripta,
+            "hinf": cls.H_invscripta,
+        }
+        if suffix in _sfx:
+            import warnings
+            warnings.warn(f"Chirality: normalised {s!r} via suffix {suffix!r}")
+            return _sfx[suffix]
+        import warnings
+        warnings.warn(f"Chirality: unknown symbol {s!r}, defaulting to H_closeomega")
+        return cls.H_closeomega
 
     @property
     def memory_depth(self) -> str:

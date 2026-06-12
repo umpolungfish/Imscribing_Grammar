@@ -58,13 +58,13 @@ class ProviderConfig:
         """Return built-in defaults if config file is unavailable."""
         return {
             "providers": {
-                "anthropic": {
-                    "default_model": "claude-sonnet-4-5-20250929",
+                "deepseek": {
+                    "default_model": "deepseek-v4-pro",
                     "max_tokens_default": 4000,
                     "temperature_default": 0.7,
                 },
-                "deepseek": {
-                    "default_model": "deepseek-chat",
+                "anthropic": {
+                    "default_model": "claude-sonnet-4-5-20250929",
                     "max_tokens_default": 4000,
                     "temperature_default": 0.7,
                 },
@@ -90,7 +90,7 @@ class ProviderConfig:
                 },
             },
             "cli": {
-                "default_provider": None,
+                "default_provider": "deepseek",
                 "max_tokens": 4000,
                 "temperature": 0.3,
             },
@@ -113,13 +113,13 @@ class ProviderConfig:
     def _get_fallback_model(self, provider: str) -> str:
         """Return a fallback model if provider is unknown."""
         fallbacks = {
+            "deepseek": "deepseek-v4-pro",
             "anthropic": "claude-sonnet-4-5-20250929",
-            "deepseek": "deepseek-chat",
             "qwen": "qwen3-max",
             "mistral": "codestral-2508",
             "google": "gemini-2.0-flash-exp",
         }
-        return fallbacks.get(provider.lower(), "claude-sonnet-4-5-20250929")
+        return fallbacks.get(provider.lower(), "deepseek-v4-pro")
     
     def get_provider_defaults(self, provider: str) -> Dict[str, Any]:
         """
@@ -230,9 +230,23 @@ def build_agent_config(
     provider_defaults = config.get_provider_defaults(provider)
     
     # Build config with cascading defaults
+    resolved_model = model or provider_defaults.get("default_model", config.get_provider_default_model(provider))
+    # Sanitize model for direct providers (e.g. deepseek) to prevent sending
+    # "deepseek:xxx" or "deepseek/deepseek-xxx" style names (which cause 400 Bad Request
+    # on the native DeepSeek /chat/completions endpoint).
+    if provider.lower() == "deepseek":
+        if resolved_model:
+            # Strip common provider prefixes: deepseek:deepseek-v4-pro, deepseek/deepseek-v4-pro, etc.
+            if ":" in resolved_model:
+                resolved_model = resolved_model.split(":", 1)[-1]
+            if "/" in resolved_model:
+                resolved_model = resolved_model.split("/")[-1]
+        if not resolved_model or not (resolved_model.startswith("deepseek-") or resolved_model.startswith("deepseek")):
+            resolved_model = "deepseek-v4-pro"
+
     result = {
         "provider": provider,
-        "model": model or provider_defaults.get("default_model", config.get_provider_default_model(provider)),
+        "model": resolved_model,
         "max_tokens": max_tokens or provider_defaults.get("max_tokens_default", 4000),
         "temperature": temperature if temperature is not None else provider_defaults.get("temperature_default", 0.7),
     }

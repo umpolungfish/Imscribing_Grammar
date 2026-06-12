@@ -968,7 +968,7 @@ def _register_to_json_catalog(
 @click.option("--override-grounding", is_flag=True, help="Allow registration despite grounding failures (requires --override-reason).")
 @click.option("--override-reason", default=None, help="Justification for overriding grounding failure (required with --override-grounding).")
 @click.option("--speculative", is_flag=True, help="Register imscription in the 'speculative' domain (non-canonical or hypothetical systems).")
-@click.option("--guided", is_flag=True, help="Step-by-step guided generation: assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values.")
+@click.option("--guided/--no-guided", default=True, help="Step-by-step guided generation (default ON): assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values. Use --no-guided to revert to single-shot generation.")
 def generate(
     description: str,
     name: Optional[str],
@@ -1012,7 +1012,7 @@ def generate(
     Examples:
         imscribe generate "carboxylic acid dimer" --delta-g -52.0
         imscribe generate "DNA adenine-thymine base pair" --name at_pair
-        imscribe generate "proline catalyzed aldol cycle" --provider qwen
+        imscribe generate "proline catalyzed aldol cycle" --provider deepseek
         imscribe generate "סַמָּאֵל"                         # Kabbalistic angel of death
         imscribe generate "Kitaev chain"                   # topological superconductor
         imscribe generate "the muon"                       # elementary particle
@@ -1054,6 +1054,16 @@ def generate(
                 "No provider specified. Use --provider (-p) or set IG_PROVIDER "
                 "(e.g. deepseek, qwen, anthropic, mistral)."
             )
+
+        # Support "provider:model" or "provider/model" syntax in --provider (e.g. deepseek:deepseek-v4-pro)
+        # Always parse, even if model provided (last wins)
+        if provider and (":" in provider or "/" in provider):
+            sep = ":" if ":" in provider else "/"
+            parts = provider.split(sep, 1)
+            provider = parts[0]
+            if len(parts) > 1:
+                model = parts[1]
+
         if model is None:
             model = cli_defaults.get("default_model") or None
 
@@ -1108,7 +1118,10 @@ def generate(
                     console.print("[yellow]⚠ LLM grounding not available, skipping[/yellow]")
 
         # Run generation
-        console.print(f"[dim]Provider: {provider}/{agent_config['model']}[/dim]\n")
+        # Use resolved (cleaned) provider and model for the log line
+        resolved_prov = provider
+        resolved_mod = agent_config.get('model', model or 'default')
+        console.print(f"[dim]Provider: {resolved_prov}/{resolved_mod}[/dim]\n")
 
         # CLI always handles JSON-catalog registration with conflict resolution.
         # Agent auto-register writes only to in-memory global_catalog (legacy path).
@@ -1463,7 +1476,10 @@ def generate_smiles(
 
         console.print(f"[cyan]Analyzing SMILES and generating imscription...[/cyan]")
         console.print(f"[dim]SMILES: {smiles}[/dim]")
-        console.print(f"[dim]Provider: {provider}/{agent_config['model']}[/dim]\n")
+        # Use resolved (cleaned) provider and model for the log line
+        resolved_prov = provider
+        resolved_mod = agent_config.get('model', model or 'default')
+        console.print(f"[dim]Provider: {resolved_prov}/{resolved_mod}[/dim]\n")
 
         result = asyncio.run(
             agent.generate_from_smiles(

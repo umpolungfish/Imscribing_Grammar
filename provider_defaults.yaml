@@ -23,19 +23,19 @@ providers:
         use_cases: ["complex-reasoning", "analysis"]
 
   deepseek:
-    default_model: "deepseek-chat"
+    default_model: "deepseek-v4-pro"
     base_url: "https://api.deepseek.com/chat/completions"
     max_tokens_default: 4000
     temperature_default: 0.7
     models:
+      - name: "deepseek-v4-pro"
+        description: "DeepSeek V4 Pro - General purpose / reasoning"
+        max_tokens: 8192
+        use_cases: ["general", "coding", "analysis", "imscription_generation"]
       - name: "deepseek-chat"
-        description: "DeepSeek Chat - General purpose"
+        description: "DeepSeek Chat (legacy alias)"
         max_tokens: 4096
-        use_cases: ["general", "coding", "analysis"]
-      - name: "deepseek-coder"
-        description: "DeepSeek Coder - Code specialization"
-        max_tokens: 4096
-        use_cases: ["coding", "code-generation"]
+        use_cases: ["general", "coding"]
 
   qwen:
     default_model: "qwen3-max"
@@ -200,12 +200,12 @@ task_routing:
     preferred: ["qwen", "anthropic", "mistral", "deepseek"]
     default_provider: "qwen"
   imscription_generation:
-    preferred: ["anthropic", "qwen", "deepseek"]
-    default_provider: "anthropic"
+    preferred: ["deepseek", "qwen", "anthropic"]
+    default_provider: "deepseek"
 
 # CLI defaults
 cli:
-  default_provider: "anthropic"
+  default_provider: "deepseek"
   # No hardcoded model - uses provider's default_model from above
   max_tokens: 4000
   temperature: 0.3  # Lower for deterministic imscription generation

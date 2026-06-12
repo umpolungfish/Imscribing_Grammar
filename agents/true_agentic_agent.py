@@ -3044,6 +3044,63 @@ def _load_system_prompt() -> str:
     return _SYSTEM_PROMPT
 
 
+# ── Persistent imsgct context (§P-651) ─────────────────────────────────────────
+# Injected into every winding so the agent is always aware of:
+#   1. /home/mrnob0dy666/imsgct/TOOL_INVENTORY.md
+#   2. /home/mrnob0dy666/imsgct/DESIGN_GENERALIZED.md
+#   3. The list of repos in /home/mrnob0dy666/imsgct/
+
+_IMSGCT_CONTEXT_CACHE: Optional[str] = None
+
+def _load_imsgct_context() -> str:
+    """Load the three persistent context resources from /home/mrnob0dy666/imsgct/.
+    
+    Cached after first load — the files are read once per process lifetime.
+    Returns a compact but complete context block appended to every system prompt.
+    """
+    global _IMSGCT_CONTEXT_CACHE
+    if _IMSGCT_CONTEXT_CACHE is not None:
+        return _IMSGCT_CONTEXT_CACHE
+    
+    imsgct = Path("/home/mrnob0dy666/imsgct")
+    parts: List[str] = []
+    parts.append("\n---\n## PERSISTENT IMSGCT CONTEXT (available every winding)\n---\n")
+    
+    # ── 1. TOOL_INVENTORY.md ──
+    ti_path = imsgct / "TOOL_INVENTORY.md"
+    try:
+        ti_text = ti_path.read_text(encoding="utf-8")
+        parts.append("\n### TOOL INVENTORY — /home/mrnob0dy666/imsgct/TOOL_INVENTORY.md\n")
+        parts.append(ti_text)
+        parts.append("\n")
+    except (OSError, IOError):
+        parts.append("\n### TOOL INVENTORY — NOT FOUND at " + str(ti_path) + "\n")
+    
+    # ── 2. DESIGN_GENERALIZED.md ──
+    dg_path = imsgct / "DESIGN_GENERALIZED.md"
+    try:
+        dg_text = dg_path.read_text(encoding="utf-8")
+        parts.append("\n### DESIGN GENERALIZED — /home/mrnob0dy666/imsgct/DESIGN_GENERALIZED.md\n")
+        parts.append(dg_text)
+        parts.append("\n")
+    except (OSError, IOError):
+        parts.append("\n### DESIGN GENERALIZED — NOT FOUND at " + str(dg_path) + "\n")
+    
+    # ── 3. Repo list ──
+    parts.append("\n### REPO LIST — /home/mrnob0dy666/imsgct/\n")
+    try:
+        dirs = sorted([d.name for d in imsgct.iterdir() if d.is_dir()])
+        parts.append("\n".join(f"- {d}/" for d in dirs))
+    except (OSError, IOError):
+        parts.append("(could not list directory)")
+    parts.append("\n")
+    
+    parts.append("---\n[END PERSISTENT IMSGCT CONTEXT]\n---\n")
+    
+    _IMSGCT_CONTEXT_CACHE = "".join(parts)
+    return _IMSGCT_CONTEXT_CACHE
+
+
 # ── Message history helpers ────────────────────────────────────────────────────
 # ── Message history helpers ────────────────────────────────────────────────────
 
@@ -3168,6 +3225,9 @@ class TrueAgenticAgent:
             f"𐑹; {self.inference_fidelity}; 𐑧",
             1,
         )
+        # Inject persistent imsgct context so every winding is aware of
+        # TOOL_INVENTORY.md, DESIGN_GENERALIZED.md, and the repo list.
+        system_content += _load_imsgct_context()
         # Imscriptive context IS the message list — accumulated across windings.
         self._messages: List[Dict[str, Any]] = [
             {"role": "system", "content": system_content},

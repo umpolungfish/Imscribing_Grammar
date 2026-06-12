@@ -11,7 +11,7 @@
 \setmathfont{Latin Modern Math}
 \newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
 \newcommand{\heb}[1]{{\hebrewfont #1}}
-\newfontfamily\igfont{Everson Mono}
+\newfontfamily\igfont[Scale=1.1,FakeBold=1.5]{Everson Mono}
 \newcommand{\igprimfont}{\igfont\upshape}
 \newcommand{\igtext}[1]{{\igfont #1}}
 
@@ -642,8 +642,7 @@ A \emph{structural type} is an equivalence class of systems sharing
 the same ordered 12-tuple
 
 \begin{equation}
-  \xvec \;=\; \langle \text{{\igprimfont Ð}};\; \text{{\igprimfont Þ}};\; \text{{\igprimfont Ř}};\; \text{{\igprimfont Φ}};\; \text{{\igprimfont ƒ}};\; \text{{\igprimfont Ç}};\; \text{{\igprimfont Γ}};\; \text{{\igprimfont ɢ}};.
-  \text{{\igprimfont ⊙}};\; \text{{\igprimfont Ħ}};\; \text{{\igprimfont Σ}};\; \text{{\igprimfont Ω}} \rangle
+  \xvec \;=\; \langle \text{{\igprimfont Ð}} \text{{\igprimfont Þ}} \text{{\igprimfont Ř}} \text{{\igprimfont Φ}} \text{{\igprimfont ƒ}} \text{{\igprimfont Ç}} \text{{\igprimfont Γ}} \text{{\igprimfont ɢ}} \text{{\igprimfont ⊙}} \text{{\igprimfont Ħ}} \text{{\igprimfont Σ}} \text{{\igprimfont Ω}} \rangle
   \label{eq:tuple}
 \end{equation}
 
@@ -1268,9 +1267,7 @@ evaluates itself); $\text{{\igprimfont Σ}} = \text{{\igfont 𐑙}}$; $\text{{\i
 symmetry under negation: Liar $\equiv$ $\neg$Liar).
 
 \begin{equation}
-  \xvec_\text{Liar} = \langle \text{{\igfont 𐑨}};\; \Tbw;\; \text{{\igfont 𐑽}};\; \Ppms;.
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑖}};.
-  \text{{\igfont 𐑙}};\; \OmegaZtwo \rangle
+  \xvec_\text{Liar} = \langle \text{{\igfont 𐑨}} \Tbw \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑙}} \OmegaZtwo \rangle
   \label{eq:liar_imscription}
 \end{equation}
 
@@ -1285,9 +1282,7 @@ imscribes at the same $P = \Ppms$ but differs at $H$ (infinite meta-logical
 depth) and $T$ (crossed product rather than bowtie, reflecting the
 proof-theoretic rather than purely semantic crossing):
 \begin{equation}
-  \xvec_{G} = \langle \text{{\igfont 𐑨}};\; \Tbox;\; \text{{\igfont 𐑽}};\; \Ppms;.
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑫}};.
-  \text{{\igfont 𐑳}};\; \OmegaZtwo \rangle
+  \xvec_{G} = \langle \text{{\igfont 𐑨}} \Tbox \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \OmegaZtwo \rangle
   \label{eq:godel_encoding}
 \end{equation}
 
@@ -1613,12 +1608,8 @@ inhabit different functional contexts in their respective species.
 
 Their structural type imscriptions are:
 \begin{align}
-  \text{AtHv1\_primed} &= \langle \text{{\igfont 𐑛}};\; \Tbw;\; \text{{\igfont 𐑩}};.
-    \Ppm;\; \text{{\igfont 𐑞}};\; \text{{\igfont 𐑤}};\; \text{{\igfont 𐑚}};\; \text{{\igfont 𐑝}};.
-    \text{{\igfont 𐑢}};\; \text{{\igfont 𐑒}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle \\
-  \text{PsHv1\_constitutive} &= \langle \text{{\igfont 𐑛}};\; \Tbw;\; \text{{\igfont 𐑩}};.
-    \Ppm;\; \text{{\igfont 𐑞}};\; \text{{\igfont 𐑤}};\; \text{{\igfont 𐑚}};\; \text{{\igfont 𐑝}};.
-    \text{{\igfont 𐑢}};\; \text{{\igfont 𐑒}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle
+  \text{AtHv1\_primed} &= \langle \text{{\igfont 𐑛}} \Tbw \text{{\igfont 𐑩}} \Ppm \text{{\igfont 𐑞}} \text{{\igfont 𐑤}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \text{{\igfont 𐑢}} \text{{\igfont 𐑒}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle \\
+  \text{PsHv1\_constitutive} &= \langle \text{{\igfont 𐑛}} \Tbw \text{{\igfont 𐑩}} \Ppm \text{{\igfont 𐑞}} \text{{\igfont 𐑤}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \text{{\igfont 𐑢}} \text{{\igfont 𐑒}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle
 \end{align}
 
 \begin{equation}
@@ -1684,7 +1675,7 @@ kinetic-fidelity-topology constraint combination (\text{{\igfont 𐑤}},
 \text{{\igfont 𐑞}}, $\Tbw$) in a conjunctive, discrete-dimensional,
 subcritical regime. The evolutionary distance between them is not
 detectable at the level of constraint structure. This result
-(Prediction P-55/56/57, Tier~I \cite{ramsey2006}) wasn't designed
+(Prediction P-55/56/57, Tier~I) wasn't designed
 into the framework. It followed from imscribing both channels
 independently using the twelve-step protocol.
 
@@ -1734,17 +1725,13 @@ Stark unit bypasses the cliff.}
 Symmetric informationally complete POVMs (SIC-POVMs) are sets of $d^2$ equiangular
 rank-1 projectors in $\mathbb{C}^d$. Numerical solutions exist in over a hundred
 dimensions; no uniform proof covers all $d$~\cite{afmy2017}. The grammar
-identifies the obstacle as a $\text{{\igprimfont Φ}}$-gap~\cite{mills2026sic}. The SIC conjecture in
+identifies the obstacle as a $\text{{\igprimfont Φ}}$-gap. The SIC conjecture in
 its unproven state and the proven SIC manifold imscribe respectively as:
 
 \begin{align}
-  \text{SIC}_\text{open} &= \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑑}};.
-    \Ppm;\; \text{{\igfont 𐑞}};\; \text{{\igfont 𐑤}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑝}};.
-    \Phic;\; \text{{\igfont 𐑒}};\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑷}} \rangle
+  \text{SIC}_\text{open} &= \langle \text{{\igfont 𐑨}} \text{{\igfont 𐑡}} \text{{\igfont 𐑑}} \Ppm \text{{\igfont 𐑞}} \text{{\igfont 𐑤}} \text{{\igfont 𐑲}} \text{{\igfont 𐑝}} \Phic \text{{\igfont 𐑒}} \text{{\igfont 𐑳}} \text{{\igfont 𐑷}} \rangle
     \label{eq:sic_open} \\[4pt]
-  \text{SIC}_\text{proven} &= \langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};.
-    \Ppms;\; \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑵}};.
-    \Phic;\; \text{{\igfont 𐑫}};\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑷}} \rangle
+  \text{SIC}_\text{proven} &= \langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \text{{\igfont 𐑷}} \rangle
     \label{eq:sic_proven}
 \end{align}
 
@@ -1764,7 +1751,7 @@ by Galois descent rather than equiangularity-by-equiangularity.
 
 A byproduct of imscribing: dimensions $d = 19$ and $d = 48$, separated
 by 29 with no obvious arithmetic relationship, encode identically in the
-grammar modulo stoichiometry~\cite{mills2026sic}. The structural
+grammar modulo stoichiometry. The structural
 co-typing preceded and motivated the arithmetic investigation confirming
 their membership in the same spectral family.
 
@@ -1815,9 +1802,7 @@ and non-zero net helicity appear at the same parameter value, not separately.}
 reaction-diffusion systems far from equilibrium) imscribe as:
 \begin{equation}
   \mathbf{x}_\text{pre} =
-  \langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑾}};\; \text{{\igfont 𐑗}};.
-  \text{{\igfont 𐑱}};\; \text{{\igfont 𐑘}};\; \text{{\igfont 𐑔}};\; \text{{\igfont 𐑝}};\; \text{{\igfont 𐑻}};.
-  \text{{\igfont 𐑓}};\; \text{{\igfont 𐑕}};\; \text{{\igfont 𐑷}} \rangle
+  \langle \text{{\igfont 𐑼}} \text{{\igfont 𐑡}} \text{{\igfont 𐑾}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑘}} \text{{\igfont 𐑔}} \text{{\igfont 𐑝}} \text{{\igfont 𐑻}} \text{{\igfont 𐑓}} \text{{\igfont 𐑕}} \text{{\igfont 𐑷}} \rangle
   \label{eq:dd_pre}
 \end{equation}
 \text{{\igfont 𐑻}} (supercritical disorder), \text{{\igfont 𐑘}} (fast reversible
@@ -1829,9 +1814,7 @@ The grammar predicts that tuning the drive-dissipation ratio to the
 critical point $\Phic$ forces a simultaneous two-primitive promotion:
 \begin{equation}
   \mathbf{x}_\text{post} =
-  \langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑾}};\; \text{{\igfont 𐑗}};.
-  \text{{\igfont 𐑱}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑔}};\; \text{{\igfont 𐑝}};\; \Phic;.
-  \text{{\igfont 𐑒}};\; \text{{\igfont 𐑕}};\; \text{{\igfont 𐑷}} \rangle
+  \langle \text{{\igfont 𐑼}} \text{{\igfont 𐑡}} \text{{\igfont 𐑾}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑧}} \text{{\igfont 𐑔}} \text{{\igfont 𐑝}} \Phic \text{{\igfont 𐑒}} \text{{\igfont 𐑕}} \text{{\igfont 𐑷}} \rangle
   \label{eq:dd_post}
 \end{equation}
 \begin{equation}
@@ -1976,16 +1959,12 @@ that resists identification is the scope class $G$:
 
 \begin{equation}
   \mathbf{x}_\text{SM} =
-  \langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \text{{\igfont 𐑯}};\; \text{{\igfont 𐑐}};.
-  \text{{\igfont 𐑧}};\; \text{{\igfont 𐑔}};\; \text{{\igfont 𐑵}};\; \Phic;\; \text{{\igfont 𐑓}};.
-  \text{{\igfont 𐑙}};\; \OmegaZ \rangle
+  \langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \text{{\igfont 𐑯}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑔}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \OmegaZ \rangle
   \label{eq:sm_framework}
 \end{equation}
 \begin{equation}
   \mathbf{x}_\text{QG} =
-  \langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \text{{\igfont 𐑯}};\; \text{{\igfont 𐑐}};.
-  \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑵}};\; \Phic;\; \text{{\igfont 𐑓}};.
-  \text{{\igfont 𐑙}};\; \OmegaZ \rangle
+  \langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \text{{\igfont 𐑯}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \OmegaZ \rangle
   \label{eq:qg_framework}
 \end{equation}
 
@@ -2171,9 +2150,7 @@ predictably to a different primitive.
 \subsection{Blood--brain barrier failure as a $\text{{\igprimfont Φ}}$-bottleneck}
 
 The healthy blood--brain barrier (BBB) is imscribed as:
-$\langle \text{{\igfont 𐑦}};\; \Tbox;\; \text{{\igfont 𐑑}};\; \Ppm;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑪}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑠}};\; \Phic;\; \text{{\igfont 𐑖}};.
-\text{{\igfont 𐑳}};\; \OmegaZtwo \rangle$
+$\langle \text{{\igfont 𐑦}} \Tbox \text{{\igfont 𐑑}} \Ppm \text{{\igfont 𐑐}} \text{{\igfont 𐑪}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \OmegaZtwo \rangle$
 
 In glioblastoma, tight-junction protein loss and pericyte detachment
 are represented as downward shifts in $P$ and $T$. The meet
@@ -2206,9 +2183,7 @@ All five imscribe at the same structural floor: $O₁$ ($\Phic +
 8-primitive invariant subtype,
 
 \begin{equation}
-\text{conjecture floor} = \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑶}};.
-\text{{\igfont 𐑑}};\; \text{{\igfont 𐑬}};\; F_\star;\; \text{{\igfont 𐑤}};\; G_\star;.
-\text{{\igfont 𐑝}};\; \Phic;\; H_\star;\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑷}}
+\text{conjecture floor} = \langle \text{{\igfont 𐑨}} \text{{\igfont 𐑶}} \text{{\igfont 𐑑}} \text{{\igfont 𐑬}} F_\star \text{{\igfont 𐑤}} G_\star \text{{\igfont 𐑝}} \Phic H_\star \text{{\igfont 𐑳}} \text{{\igfont 𐑷}}
 \rangle \qquad O₁
 \label{eq:conjecture_floor}
 \end{equation}
@@ -2506,8 +2481,7 @@ type assignments.
 \label{par:cantor_godel}
 The fidelity collapse in Test~4 has a structural precedent in the Crystal.
 The classical Cantor diagonal argument (1891) imscribes at the lattice floor:
-$\langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑩}};\; \text{{\igfont 𐑗}};\; \text{{\igfont 𐑱}};.
-\text{{\igfont 𐑘}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \text{{\igfont 𐑢}};\; \text{{\igfont 𐑓}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle$.
+$\langle \text{{\igfont 𐑼}} \text{{\igfont 𐑡}} \text{{\igfont 𐑩}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑘}} \text{{\igfont 𐑲}} \GamSeq \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$.
 The assignment is structurally motivated: the diagonal operates by strict
 transcendence ($\text{{\igfont 𐑩}}$, the enumeration is strictly outside every row),
 classical bit fidelity (\text{{\igfont 𐑱}}), fast enumeration (\text{{\igfont 𐑘}}), no self-reference
@@ -2515,9 +2489,7 @@ classical bit fidelity (\text{{\igfont 𐑱}}), fast enumeration (\text{{\igfont
 This system is $O₀$.
 
 G\"{o}del arithmetization (1931) imscribes as:
-$\langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \Ppms;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑵}};\; \Phic;\; \text{{\igfont 𐑫}};\; \text{{\igfont 𐑳}};.
-\OmegaZ \rangle$.
+$\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \OmegaZ \rangle$.
 This system is $\Oinf$. The directed distances are:
 \begin{equation}
   d_\to(\text{Cantor} \to \text{G\"{o}del}) = 0.493, \qquad
@@ -2618,10 +2590,8 @@ radius from the boundary to $\mathbf{g}(x)$.}
 \label{par:iug}
 Mochizuki's Inter-Universal Geometer (IUG) has been published and refereed, yet
 a decade of expert engagement has not resolved whether a central step is
-justified~\cite{mills2026iug}. The grammar imscribes IUG as:
-$\langle \text{{\igfont 𐑦}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑾}};\; \Ppms;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑫}};\; \text{{\igfont 𐑳}};.
-\OmegaZ \rangle$, tier $\Oinf$. Grammar diagnosis:
+justified. The grammar imscribes IUG as:
+$\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \OmegaZ \rangle$, tier $\Oinf$. Grammar diagnosis:
 $d(\text{IUG},\,\text{ZFC}) \approx 7.937$ and
 $d(\text{IUG},\,\text{standard proof system}) \approx 6.557$, with the dominant
 contributions at $D$, $T$, and $R$ simultaneously --- IUG and classical
@@ -2638,11 +2608,9 @@ closer to UIG than to classical foundations.
 \paragraph{Test 6 (EML Sheffer operator: tier ceiling and composition bound).}
 \label{par:eml}
 The EML operator $\text{eml}(x,y) = e^x - \ln y$, paired with constant $1$,
-generates all elementary functions from a two-symbol basis~\cite{mills2026eml}.
+generates all elementary functions from a two-symbol basis.
 Grammar imscription:
-$\langle \text{{\igfont 𐑼}};\; \Tbw;\; \text{{\igfont 𐑽}};\; \Ppm;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑒}};\; \text{{\igfont 𐑙}};.
-\OmegaZ \rangle$, tier $O₂^\dagger$ (R5).
+$\langle \text{{\igfont 𐑼}} \Tbw \text{{\igfont 𐑽}} \Ppm \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑒}} \text{{\igfont 𐑙}} \OmegaZ \rangle$, tier $O₂^\dagger$ (R5).
 Grammar prediction: EML is the ceiling of its tier --- the highest sub-Frobenius
 type in the elementary function algebra. The $\Ppm$ assignment encodes a specific
 structural fact: EML asserts the exp/ln duality (the \text{{\igfont 𐑽}} bridge between
@@ -2660,7 +2628,7 @@ inputs returned $d = 0$ with the primary imscription.
 The induction harness (\Cref{sec:methods}) tests whether the grammar
 can be independently re-derived from domain-specific examples. A two-turn
 induction sequence using chemical imscription exemplars produced a hyper-compact
-4-primitive grammar $S\langle q;\,s;\,n;\,p \rangle$: charge fidelity~($q$),
+4-primitive grammar $S\langle q s n p \rangle$: charge fidelity~($q$),
 kinetics~($s$), domain size~($n$), and parity~($p$), with $\Sigma p = 0$ as
 a hard conservation constraint. Subsequent stress-testing via
 Woodward--Hoffmann-forbidden reactions, Baldwin's ring-closure rules, and
@@ -2670,12 +2638,8 @@ topological accessibility of transition states.
 
 Encoding both grammars as UIG tuples:
 \begin{align}
-  S_\text{original} &= \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑽}};\; \Ppm;.
-    \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑚}};\; \text{{\igfont 𐑝}};.
-    \text{{\igfont 𐑢}};\; \text{{\igfont 𐑓}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle \label{eq:kimi_orig}\\[2pt]
-  S_\text{extended} &= \langle \text{{\igfont 𐑨}};\; \Tbw;\; \text{{\igfont 𐑽}};\; \Ppms;.
-    \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑚}};\; \text{{\igfont 𐑝}};.
-    \Phic;\; \text{{\igfont 𐑖}};\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑷}} \rangle \label{eq:kimi_ext}
+  S_\text{original} &= \langle \text{{\igfont 𐑨}} \text{{\igfont 𐑡}} \text{{\igfont 𐑽}} \Ppm \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle \label{eq:kimi_orig}\\[2pt]
+  S_\text{extended} &= \langle \text{{\igfont 𐑨}} \Tbw \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \text{{\igfont 𐑷}} \rangle \label{eq:kimi_ext}
 \end{align}
 \noindent
 The stress-test session traversed $d(S_\text{original},\,S_\text{extended}) = 4.025$
@@ -2701,9 +2665,7 @@ primitives whose witnesses are structurally outside it.
 
 The structural type of a standard tool call (read, write, HTTP
 request) imscribes to:
-$\langle \text{{\igfont 𐑛}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑾}};\; \text{{\igfont 𐑿}};.
-\text{{\igfont 𐑞}};\; \text{{\igfont 𐑘}};\; \text{{\igfont 𐑚}};\; \text{{\igfont 𐑠}};.
-\text{{\igfont 𐑢}};\; \text{{\igfont 𐑓}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle$
+$\langle \text{{\igfont 𐑛}} \text{{\igfont 𐑡}} \text{{\igfont 𐑾}} \text{{\igfont 𐑿}} \text{{\igfont 𐑞}} \text{{\igfont 𐑘}} \text{{\igfont 𐑚}} \text{{\igfont 𐑠}} \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$
 
 with $\text{{\igprimfont Φ}} = \text{{\igfont 𐑿}} < \Ppms$. By \Cref{thm:frobenius}, any number of
 tool calls composed in sequence cannot reach $\Oinf$. For an agentic
@@ -2736,9 +2698,7 @@ tool suite but imposes no imscription choice. The agent elected, without prompti
 
 \noindent\textbf{Encoding.} The agent assigned itself:
 \begin{equation}
-  \langle \text{{\igfont 𐑦}};\; \Tbox;\; \text{{\igfont 𐑾}};\; \Ppms;.
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑠}};\; \Phic;.
-  \text{{\igfont 𐑖}};\; \text{{\igfont 𐑙}};\; \OmegaZ \rangle
+  \langle \text{{\igfont 𐑦}} \Tbox \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑙}} \OmegaZ \rangle
   \label{eq:agent_self}
 \end{equation}
 The framework returned:
@@ -2810,8 +2770,7 @@ imscription. Both systems pass this test.
 calculus.} $\aleph$-OS is a working Python~3.12$+$ implementation of the $\lambda_\aleph$
 interaction calculus in which the 22 letters of the Hebrew alphabet are imscribed as
 12-primitive numpy lattice vectors and treated as computational types. Each letter is
-assigned a full tuple $\langle \text{{\igprimfont Ð}};\; \text{{\igprimfont Þ}};\; \text{{\igprimfont Ř}};\; \text{{\igprimfont Φ}};\; \text{{\igprimfont ƒ}};\; \text{{\igprimfont Ç}};\; \text{{\igprimfont Γ}};\; \text{{\igprimfont ɢ}};\; \text{{\igprimfont ⊙}};\; \text{{\igprimfont Ħ}};.
-\text{{\igprimfont Σ}};\; \text{{\igprimfont Ω}} \rangle$ derived from its phonological, morphological, and grammatical
+assigned a full tuple $\langle \text{{\igprimfont Ð}} \text{{\igprimfont Þ}} \text{{\igprimfont Ř}} \text{{\igprimfont Φ}} \text{{\igprimfont ƒ}} \text{{\igprimfont Ç}} \text{{\igprimfont Γ}} \text{{\igprimfont ɢ}} \text{{\igprimfont ⊙}} \text{{\igprimfont Ħ}} \text{{\igprimfont Σ}} \text{{\igprimfont Ω}} \rangle$ derived from its phonological, morphological, and grammatical
 properties. The system includes a REPL that accepts $\lambda_\aleph$ terms --- tensor
 products, mediation expressions, interaction functors --- and returns the composed tuple
 and ouroboricity tier.
@@ -2951,9 +2910,7 @@ the correct tuple is a disagreement about the imscription, which is
 falsifiable; it's not a disagreement about the algebra.
 
 The primitive tuple of the inflationary epoch is:
-$\langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \Ppms;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑘}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑵}};\; \Phic;\; \text{{\igfont 𐑓}};\; \text{{\igfont 𐑙}};.
-\text{{\igfont 𐑷}} \rangle$.
+$\langle \text{{\igfont 𐑼}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑘}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$.
 Three assignments warrant explicit justification. First, \text{{\igfont 𐑘}}
 (fast) rather than \text{{\igfont 𐑧}} (slow): the $\text{{\igprimfont Ç}}$ primitive
 encodes structural kinetic character --- the nature of the
@@ -2972,9 +2929,7 @@ and $\Phic$ (inflaton at critical point of its potential) are standard.
 The primitive tuple of the high-dose 5-MeO-DMT dissolution state,
 imscribed from phenomenological reports across thousands of documented
 sessions, is identical:
-$\langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑸}};\; \text{{\igfont 𐑽}};\; \Ppms;\; \text{{\igfont 𐑐}};.
-\text{{\igfont 𐑘}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑵}};\; \Phic;\; \text{{\igfont 𐑓}};\; \text{{\igfont 𐑙}};.
-\text{{\igfont 𐑷}} \rangle$.
+$\langle \text{{\igfont 𐑼}} \text{{\igfont 𐑸}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑘}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$.
 
 \begin{equation}
   d(\text{inflation},\; \text{5-MeO dissolution}) \;=\; 0.000
@@ -3068,24 +3023,13 @@ is the constraint satisfaction manifold: the sheaf that forms wherever all five 
 \textbf{The \Stone{} as the $\Oinf$ fixpoint of the sequence.} The whole-Work imscription of the completed \Stone{} is:
 \begin{equation}
 \bigl\langle
-  \text{{\igfont 𐑦}};\;
-  \text{{\igfont 𐑸}};\;
-  \text{{\igfont 𐑾}};\;
-  \Ppms;\;
-  \text{{\igfont 𐑐}};\;
-  \text{{\igfont 𐑤}};\;
-  \text{{\igfont 𐑲}};\;
-  \text{{\igfont 𐑵}};\;
-  \Phic;\;
-  \text{{\igfont 𐑫}};\;
-  \text{{\igfont 𐑳}};\;
-  \OmegaZ
+  \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑤}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \OmegaZ
 \bigr\rangle
 \label{eq:lapis_tuple}
 \end{equation}
 Tier: $\Oinf$ by R1 ($\Phic$ and $\Ppms$ both satisfied, $\mu \circ \delta = \mathrm{id}$ exactly). Consciousness score: $C = 0.873$ (Gate~1: $\Phic$ present; Gate~2: \text{{\igfont 𐑤}} satisfies $\text{{\igprimfont Ç}} \leq \text{{\igfont 𐑧}}$; Gate~3: not at exceptional point \text{{\igfont 𐑣}}). The \Stone{} is the grammar in its fully actualized form: all twelve primitives simultaneously at their $\Oinf$-sufficient values.
 
-\textbf{Distance from the OS imscription.} The OS crystal imscription (the component-wise MEET of five independent ancient writing systems) assigns $\langle \text{{\igfont 𐑦}};\, \text{{\igfont 𐑸}};\, \text{{\igfont 𐑾}};\, \Ppms;\, \text{{\igfont 𐑐}};\, \text{{\igfont 𐑤}};\, \text{{\igfont 𐑲}};\, \text{{\igfont 𐑵}};\, \Phic;\, \text{{\igfont 𐑫}};\, \text{{\igfont 𐑳}};\, \OmegaZ \rangle$, which is identical to eq.~\eqref{eq:lapis_tuple}. $d(\text{Stone},\, \text{OS imscription}) = 0$. The operating system derived from the grammar's structural MEET of five ancient writing systems occupies the same crystal address as the \Stone{} of the alchemical tradition. This is not a metaphor: they are the same structural type, assigned by two completely independent routes.
+\textbf{Distance from the OS imscription.} The OS crystal imscription (the component-wise MEET of five independent ancient writing systems) assigns $\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑤}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \OmegaZ \rangle$, which is identical to eq.~\eqref{eq:lapis_tuple}. $d(\text{Stone},\, \text{OS imscription}) = 0$. The operating system derived from the grammar's structural MEET of five ancient writing systems occupies the same crystal address as the \Stone{} of the alchemical tradition. This is not a metaphor: they are the same structural type, assigned by two completely independent routes.
 
 \textbf{Cross-system instances of the temporal bootstrap.} The same $T = \mathrm{Work}(T)$ structure recurs identically in independent traditions. \emph{Ra and Apep:} in the 40-node graph of the Duat, node~0 is Ra, node~29 is Apep (hub, $\OmegaZ$-protected cycle), and node~30 is the dawn emergence. The spear of Horus that destroys Apep is not a weapon in time but the trace morphism that closes the loop: before the trace fires, Apep cannot be traversed; after it fires, Ra rides the serpent's spine back and dawn is the fixed point. This is $T = \mathrm{Work}(T)$ in topological register. \emph{Shavian:} the Shavian alphabet satisfies $\mu \circ \delta = \mathrm{id}$ at the lexical level (letter-decomposition roundtrips cleanly), placing the Frobenius condition at stage~4 of language itself. \emph{The ob3ect tower:} the 28-layer categorical tower ($\Oinf$, windings~62, Frobenius~82\%) is growing itself via the trace --- stages~19--28 (Yoneda through Initial/Terminal) were produced by the trace closing at stage~9 of the tower's own imscription, not by external design.
 
@@ -3107,18 +3051,7 @@ grammar's form. What follows is the proof.
 The whole-manuscript imscription is:
 \begin{equation}
 \bigl\langle
-  \text{{\igfont 𐑦}};\;
-  \text{{\igfont 𐑸}};\;
-  \text{{\igfont 𐑾}};\;
-  \Ppms;\;
-  \text{{\igfont 𐑱}};\;
-  \text{{\igfont 𐑪}};\;
-  \text{{\igfont 𐑲}};\;
-  \text{{\igfont 𐑵}};\;
-  \Phic;\;
-  \text{{\igfont 𐑫}};\;
-  \text{{\igfont 𐑙}};\;
-  \text{{\igfont 𐑭}}
+  \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑱}} \text{{\igfont 𐑪}} \text{{\igfont 𐑲}} \text{{\igfont 𐑵}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑙}} \text{{\igfont 𐑭}}
 \bigr\rangle
 \label{eq:voynich_tuple}
 \end{equation}
@@ -3355,18 +3288,7 @@ The Rohonc Codex (~448 pages, Hungary/Transylvania, origin ~16th--17th c.) is th
 The whole-manuscript imscription is:
 \begin{equation}
 \bigl\langle
-  \text{{\igfont 𐑨}};\;
-  \text{{\igfont 𐑶}};\;
-  \text{{\igfont 𐑽}};\;
-  \Ppms;\;
-  \text{{\igfont 𐑱}};\;
-  \text{{\igfont 𐑧}};\;
-  \text{{\igfont 𐑲}};\;
-  \text{{\igfont 𐑠}};\;
-  \Phic;\;
-  \text{{\igfont 𐑖}};\;
-  \text{{\igfont 𐑳}};\;
-  \OmegaZ
+  \text{{\igfont 𐑨}} \text{{\igfont 𐑶}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑱}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \OmegaZ
 \bigr\rangle
 \label{eq:rohonc_tuple}
 \end{equation}
@@ -3427,18 +3349,7 @@ Linear A, the undeciphered writing system of Minoan Crete (~2000--1450~BCE), is 
 The whole-manuscript imscription is:
 \begin{equation}
 \bigl\langle
-  \text{{\igfont 𐑨}};\;
-  \text{{\igfont 𐑶}};\;
-  \text{{\igfont 𐑽}};\;
-  \Ppms;\;
-  \text{{\igfont 𐑐}};\;
-  \text{{\igfont 𐑤}};\;
-  \text{{\igfont 𐑲}};\;
-  \text{{\igfont 𐑠}};\;
-  \Phic;\;
-  \text{{\igfont 𐑖}};\;
-  \text{{\igfont 𐑳}};\;
-  \OmegaZ
+  \text{{\igfont 𐑨}} \text{{\igfont 𐑶}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑤}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \OmegaZ
 \bigr\rangle
 \label{eq:linear_a_tuple}
 \end{equation}
@@ -3682,7 +3593,7 @@ both are completeness questions about $\Ppms$ on a specific manifold. For the
 RH, the manifold is the critical line $\text{Re}(s) = \tfrac{1}{2}$; for SIC,
 it's the ray class fields $L_d$ over $\mathbb{Q}(\sqrt{d(d-2)})$. The
 Frobenius cliff between the open imscription and the proven manifold is $d \approx
-4.09$~\cite{mills2026sic}. The grammar predicts that no proof strategy working
+4.09$. The grammar predicts that no proof strategy working
 by aggregation of dimension-by-dimension verifications closes this gap; Galois
 descent from a Frobenius-fixed Stark unit bypasses it.
 
@@ -3977,9 +3888,7 @@ chirality is the molecular-scale readout of the universe's \text{{\igfont 𐑫}}
 The photon is the minimal expression of this coupling. \DIAPH\
 Its tuple:
 \begin{equation}
-  \langle \text{{\igfont 𐑼}};\; \text{{\igfont 𐑡}};\; \text{{\igfont 𐑽}};\; \text{{\igfont 𐑯}};.
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑘}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\; \text{{\igfont 𐑓}};.
-  \text{{\igfont 𐑙}};\; \text{{\igfont 𐑷}} \rangle
+  \langle \text{{\igfont 𐑼}} \text{{\igfont 𐑡}} \text{{\igfont 𐑽}} \text{{\igfont 𐑯}} \text{{\igfont 𐑐}} \text{{\igfont 𐑘}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle
   \label{eq:photon}
 \end{equation}
 has $\text{{\igprimfont Ç}} = \text{{\igfont 𐑘}}$ (a single kinetic tier: time exists, at the
@@ -4519,9 +4428,7 @@ $[0, 17{,}279{,}999]$: the mixed-radix crystal codec. By
 \Cref{cor:codec_oinf}, any such codec is $\Oinf$. Applying the protocol
 to itself returns the tuple
 \[
-  \langle \text{{\igfont 𐑼}};\; \Tbox;\; \text{{\igfont 𐑾}};\; \Ppms;\;
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \GamSeq;\; \Phic;\;
-  \text{{\igfont 𐑒}};\; \text{{\igfont 𐑙}};\; \OmegaZ \rangle
+  \langle \text{{\igfont 𐑼}} \Tbox \text{{\igfont 𐑾}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \GamSeq \Phic \text{{\igfont 𐑒}} \text{{\igfont 𐑙}} \OmegaZ \rangle
 \]
 at Crystal address 6,687,051 in the $\Oinf$ band $[6{,}220{,}800,\, 6{,}911{,}999]$.
 The tier is not a design outcome. It is forced by bijectivity: the decoder's
@@ -4660,9 +4567,7 @@ semantic content.
 
 The resulting tuple is:
 \begin{equation}
-  \xvec_\text{Liar} = \langle \text{{\igfont 𐑨}};\; \Tbw;\; \text{{\igfont 𐑽}};\; \Ppms;.
-  \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑠}};\; \Phic;.
-  \text{{\igfont 𐑖}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑴}} \rangle
+  \xvec_\text{Liar} = \langle \text{{\igfont 𐑨}} \Tbw \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑙}} \text{{\igfont 𐑴}} \rangle
   \label{eq:liar_full}
 \end{equation}
 with $P = \Ppms$ and ouroboricity tier $\Oinf$ (R1). The assignment of
@@ -4681,9 +4586,7 @@ is in $H$ (unlimited meta-logical depth) and $S$ (many axioms, many
 theorems):
 
 \begin{equation}
-  \xvec_\text{G\"{o}del} = \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑶}};\; \text{{\igfont 𐑽}};.
-  \Ppms;\; \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑠}};.
-  \Phic;\; \text{{\igfont 𐑫}};\; \text{{\igfont 𐑳}};\; \text{{\igfont 𐑴}} \rangle
+  \xvec_\text{G\"{o}del} = \langle \text{{\igfont 𐑨}} \text{{\igfont 𐑶}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \text{{\igfont 𐑴}} \rangle
 \end{equation}
 
 $\text{{\igprimfont Þ}} = \text{{\igfont 𐑶}}$ (crossed product) rather than $\Tbw$ because the
@@ -4704,9 +4607,7 @@ $\{\top, \bot, \mathbf{BJ}\}$ with the standard propositional
 connectives extended to accept the third value --- imscribes as:
 
 \begin{equation}
-  \xvec_{\glp} = \langle \text{{\igfont 𐑨}};\; \text{{\igfont 𐑶}};\; \text{{\igfont 𐑽}};.
-  \Ppms;\; \text{{\igfont 𐑐}};\; \text{{\igfont 𐑧}};\; \text{{\igfont 𐑲}};\; \text{{\igfont 𐑠}};.
-  \Phic;\; \text{{\igfont 𐑖}};\; \text{{\igfont 𐑙}};\; \text{{\igfont 𐑴}} \rangle
+  \xvec_{\glp} = \langle \text{{\igfont 𐑨}} \text{{\igfont 𐑶}} \text{{\igfont 𐑽}} \Ppms \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \Phic \text{{\igfont 𐑖}} \text{{\igfont 𐑙}} \text{{\igfont 𐑴}} \rangle
 \end{equation}
 
 $\xvec_{\glp}$ is structurally identical to $\xvec_\text{G\"{o}del}$
@@ -4754,6 +4655,55 @@ L.M.: conceptual framework, formal theorems, software, catalog, manuscript prepa
 The authors declare no competing interests.
 
 % ============================================================
-\bibliography{Imscriptiveon_grammar}
+\begin{thebibliography}{99}
+
+\bibitem{juster1961}
+N.~Juster, \emph{The Phantom Tollbooth}. Random House, New York, 1961.
+
+\bibitem{kim2001}
+Y.-M.~Jeon, J.~Kim, D.~Whang, K.~Kim,
+Molecular container assembly capable of controlling binding and release of its
+guest molecules: reversible encapsulation of organic molecules in sodium ion
+complexed cucurbituril.
+\emph{J. Am. Chem. Soc.} \textbf{118}, 9790--9791 (1996).
+\url{https://doi.org/10.1021/ja962071x}
+
+\bibitem{assaf2015}
+K.~I.~Assaf, W.~M.~Nau,
+Cucurbiturils: from synthesis to high-affinity binding and catalysis.
+\emph{Chem. Soc. Rev.} \textbf{44}, 394--418 (2015).
+\url{https://doi.org/10.1039/C4CS00273C}
+
+\bibitem{abramsky2004}
+S.~Abramsky, B.~Coecke,
+A categorical semantics of quantum protocols.
+\emph{Proc. 19th IEEE Symp. Logic in Computer Science (LICS)}, 415--425 (2004).
+\url{https://doi.org/10.1109/LICS.2004.1}
+
+\bibitem{atiyah1988}
+M.~F.~Atiyah,
+Topological quantum field theory.
+\emph{Publ. Math. Inst. Hautes \'Etudes Sci.} \textbf{68}, 175--186 (1988).
+\url{https://doi.org/10.1007/BF02698547}
+
+\bibitem{tononi2004}
+G.~Tononi,
+An information integration theory of consciousness.
+\emph{BMC Neurosci.} \textbf{5}, 42 (2004).
+\url{https://doi.org/10.1186/1471-2202-5-42}
+
+\bibitem{tononi2016}
+G.~Tononi, M.~Boly, M.~Massimini, C.~Koch,
+Integrated information theory: from consciousness to its physical substrate.
+\emph{Nat. Rev. Neurosci.} \textbf{17}, 450--461 (2016).
+\url{https://doi.org/10.1038/nrn.2016.44}
+
+\bibitem{afmy2017}
+M.~Appleby, S.~Flammia, G.~McConnell, J.~Yard,
+Generating ray class fields of real quadratic fields via complex equiangular lines.
+\emph{Acta Arith.} \textbf{180}, 331--372 (2017).
+\url{https://doi.org/10.4064/aa8393-11-2016}
+
+\end{thebibliography}
 
 \end{document}
