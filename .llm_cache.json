@@ -2101,5 +2101,7 @@
   "1b379fa60718d99e26a4c5eb2cb9112b76bf0d3fdb6a5128fe7111e216685268": "2 \u2014 A sum type represents a branching point where the system can take alternative states, akin to being at a critical threshold.",
   "633031001d636b0dfd322e1b13e54ed7141f6380ec43a951b20b96402565af09": "3 \u2014 A sum type (coproduct) fixes a choice among n tagged alternatives, structurally enforcing a broken orientational symmetry with memory depth equal to the number of branches.",
   "20ce4f5a13126904400e1c31ad2fad53400a072965b396b5b7de63aed60e2539": "2 \u2014 \u03a3 (summation) naturally indicates higher-order symmetric participation, matching the stoichiometry of multiple components forming oligomers or committees.",
-  "3abb31ac3bd2455d9f27f792f6f236192f45b5e8c8dcdc6e7a9ad5db1f00dc6d": ""
+  "3abb31ac3bd2455d9f27f792f6f236192f45b5e8c8dcdc6e7a9ad5db1f00dc6d": "",
+  "d6673da6b82f0e5083a52cac9911d2b4f61c04218ffccf51ec8ba1da789398fe": "1 \u2014 In superstable theories, forking (constraint propagation) is always determined by a finite set, making the operating space fundamentally local and point-like.",
+  "f9d7f1e5e5418637205f02f73c1bdc7238ba27587bdbfb5969de21d0260b7948": "2 \u2014 Superstable theories admit a tree-like decomposition of models and regular types, forming a branched hierarchy."
 }
