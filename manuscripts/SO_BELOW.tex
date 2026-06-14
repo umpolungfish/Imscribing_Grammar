@@ -7,12 +7,17 @@
 
 % Encoding and fonts — LuaLaTeX
 \usepackage{fontspec}
-\usepackage{unicode-math}
+\usepackage{amsmath}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { lualatex-math } { wrong-meaning } { none }
+\ExplSyntaxOff
 \setmathfont{Latin Modern Math}
-\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
+\newfontfamily\hebrewfont{Noto Serif Hebrew}
 \newcommand{\heb}[1]{{\hebrewfont #1}}
-\newfontfamily\igfont[Scale=1.1,FakeBold=1.5]{Everson Mono}
-\newcommand{\igprimfont}{\igfont\upshape}
+\newfontfamily\igfont[Scale=1.1,UprightFont=*,BoldFont=*,BoldFeatures={FakeBold=1.5},ItalicFont=*,ItalicFeatures={FakeSlant=0.2},Path=/home/mrnob0dy666/imsgct/]{Trabajo.otf}
+\newfontfamily\primfont[Scale=1.1]{Everson Mono}
+\newcommand{\igprimfont}{\primfont}
 \newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
@@ -80,6 +85,7 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=cyan,
+    hypertexnames=false,
 }
 
 % Code listings
@@ -363,6 +369,27 @@ independence and completeness tests to that raw material: orthogonality tests
 to eliminate redundant dimensions, diagonalization tests to reveal missing
 axes, and logical delamination to separate enfolded predicates
 (see \Cref{sec:methods}, \S\,Origin).
+
+The trapdoor was not a chemistry term. It was $\text{{\igprimfont ɢ}}$ (Composition). Composition is dangerous
+because it immediately raises its dual: decomposition. Once you ask how a thing is composed,
+you must ask what a thing is, where its boundary lies, and how that boundary persists under change.
+A synthon is already a partially detached object --- neither fully independent nor fully embedded,
+defined through its capacity for future coupling and past disconnection. The moment composition
+is made scale-independent, the question is no longer chemical. It is ontological. Topology
+(how things connect), chirality (how histories matter), winding (how structures recur),
+criticality (whether the loop closes on itself) --- these are not additional features bolted onto
+composition. They are what composition requires once scale is removed as a constraint. The remaining
+eleven primitives precipitate out of $\text{{\igprimfont ɢ}}$ by logical necessity. The grammar was not
+invented from that prompt. It was drawn out.
+
+This inversion of direction is characteristic of the grammar's derivation generally. Standard
+development is synthetic and bottom-up: declare primitives, define operations, build upward.
+Characterizing a Totality proceeds in the reverse direction. The Totality already contains
+everything by definition; it cannot be built, only uncovered. The grammar was not
+reached by adding structure where there was none. It was reached by removing the noise
+--- formal independence tests, diagonalization, delamination --- until the underlying geometry
+became visible. The process could have stopped at any number of primitives. It stopped at twelve
+because the tests ran out of things to separate.
 
 What those tests converged on were twelve questions, each structurally
 independent of the others. What geometry does the event operate in? How
@@ -790,7 +817,7 @@ guarantee that the dialetheic truth value $\both = \{\top, \bot,
 The five $\text{{\igprimfont Φ}}$-values in ascending order:
 \begin{enumerate}[leftmargin=*, label=\arabic*.]
   \item $\text{{\igfont 𐑗}}$ --- broken symmetry; no structural constraints.
-  \item \text{{\igfont 𐑿}} --- complex phase symmetry (quantum coherence); \text{{\igfont 𐑐}} required.
+  \item \text{{\igfont 𐑿}} --- complex phase symmetry (exact coherence); \text{{\igfont 𐑐}} required.
   \item \text{{\igfont 𐑬}} --- $\mathbb{Z}_2$ parity; classical or quantum.
   \item $\text{{\igfont 𐑯}}$ --- exact $\mathbb{Z}_2$ symmetry; full symmetry
     but no explosion-free guarantee.
@@ -910,6 +937,45 @@ identical: the axion and the Higgs boson are co-typed under the grammar
 distinct physical particulars. The grammar classifies structural universals,
 not physical identity.
 
+\subsection{Crystal closure: resistance to augmentation}
+\label{sec:crystal-closure}
+
+The Crystal of Types has 17,280,000 coordinate positions and twelve
+primitive axes. A natural question is whether twelve suffices --- whether
+systematic pressure on the boundary reveals structural phenomena the
+existing coordinates cannot classify. The question has been put under
+direct test.
+
+A candidate thirteenth primitive --- structural torsion, notated $\Theta$
+--- was proposed after cross-domain comparison of collapse trajectories.
+Torsion names the pattern whereby a system's path through primitive space
+curves without shifting ouroboricity tier: the trajectory rotates, but the
+address does not change. The phenomenon is real and recurrent across
+physical, biological, and linguistic systems. Investigation showed,
+however, that it is not primitive. Torsion decomposes as a joint modulation
+of $\text{{\igprimfont Ř}}$ (recognition granularity varying),
+$\text{{\igprimfont Ħ}}$ (chirality inverting), and $\text{{\igprimfont Ç}}$
+(kinetic rate shifting): three existing coordinates in composition, no new
+axis required.
+
+The systematic result is starker. A structured survey of 39 systems across
+four domains, nine CLINK layers, and the full tier-gap ladder found no
+structural phenomenon that requires a thirteenth primitive. Collapse
+asymmetry, topological protection thresholds, critical slowing down,
+cross-domain isomorphism, and contagion dynamics are all fully expressible
+through the existing twelve. Ten novel structural extensions emerged from
+the survey --- none of them additions to the crystal, all of them the
+crystal explored more deeply.
+
+What resists augmentation is not an artefact of how the grammar was
+assembled. The crystal is a structural attractor: any candidate extension
+either decomposes into existing primitives, as $\Theta$ did, or exceeds
+the grammar's scope class entirely. There is no intermediate case. The
+meta-exploration itself confirms this: its structural type, independently
+imscribed, returns $d = 0$ from the grammar's own address --- the
+investigation that tested the grammar's completeness is co-typed with the
+object it investigated. The closure is univocal.
+
 % ============================================================
 \section{The Arithmetic Ouroboros}
 \label{sec:ouroboros}
@@ -924,8 +990,8 @@ $|C| = 3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$.
 The exponent in each factor equals the number of primitives in
 the corresponding family:
 \begin{align*}
-  |\mathcal{F}_3| = 3 &\implies \text{exponent of } 3 \text{ is } 3 .
-  |\mathcal{F}_4| = 5 &\implies \text{exponent of } 4 \text{ is } 5 .
+  |\mathcal{F}_3| = 3 &\implies \text{exponent of } 3 \text{ is } 3 \\
+  |\mathcal{F}_4| = 5 &\implies \text{exponent of } 4 \text{ is } 5 \\
   |\mathcal{F}_5| = 4 &\implies \text{exponent of } 5 \text{ is } 4
 \end{align*}
 The grammar's family-size inventory $\{3, 5, 4\}$ and value-count
@@ -1513,15 +1579,15 @@ Gate~1 (subcritical).}
 \centering
 \caption{CB[7] competitive displacement order predicted by the fidelity
 primitive $F$. Experimental order from \cite{assaf2015}.
-$\text{{\igprimfont ƒ}}$-ordinal assignments are based on the quantum coherence character
+$\text{{\igprimfont ƒ}}$-ordinal assignments are based on the exact coherence character
 of the host-guest binding event: classical dispersion forces assign
 \text{{\igfont 𐑱}}; orbital-overlap-dominated binding assigns \text{{\igfont 𐑞}};
-charge-transfer or covalent-character binding assigns \text{{\igfont 𐑐}}.}
+charge-transfer or covalent-character binding assigns~\text{{\igfont 𐑐}}. P-rank: grammar-predicted displacement rank; E-rank: experimental rank from \cite{assaf2015}.}
 \label{tab:cb7}
 \small
-\begin{tabular}{@{}llccc@{}}
+\begin{tabular}{@{}lp{3.5cm}ccc@{}}
 \toprule
-Guest & Binding character & $\text{{\igprimfont ƒ}}$-ordinal & Predicted rank & Experimental rank \\
+Guest & Binding character & $\text{{\igprimfont ƒ}}$-ordinal & P-rank & E-rank \\
 \midrule
 Ferrocene derivative    & Charge-transfer, high affinity  & \text{{\igfont 𐑐}} & 1 & 1 \\
 Adamantane derivative   & Hydrophobic, size-complementary & \text{{\igfont 𐑞}}  & 2 & 2 \\
@@ -1657,7 +1723,7 @@ Their structural type imscriptions are:
   
   \draw[evolve] ([yshift=0.5cm]ath.north west) -- node[above, font=\footnotesize] {$\sim$300 Myr} ([yshift=0.5cm]psy.north east);
 
-  \node[font=\footnotesize\itshape, text=gray] at (0, 1.5) {divergent sequences; identical constraint structure};
+  \node[font=\footnotesize\itshape, text=gray] at (0, 2.5) {divergent sequences; identical constraint structure};
 \end{tikzpicture}
 \caption{\textbf{Hv1 proton channels: independent imscription convergence.}
 Despite $\sim$300 million years of evolutionary divergence, different primary
@@ -1704,7 +1770,7 @@ structures are resolved.
       node[right, font=\small] {$\text{{\igfont 𐑬}} \to \Ppms$}
       (proven.north);
   
-  \begin{scope}[shift={(5.5,2.5)}]
+  \begin{scope}[shift={(5.5,0.5)}]
     \node[font=\small\bfseries] at (0,4.2) {Primitive contributions to $d$};
     \foreach \i/\name/\val in {0/{$\text{{\igprimfont Φ}}$}/2.00, 1/{$\text{{\igprimfont Ð}}$}/0.69, 2/{$\text{{\igprimfont Þ}}$}/0.63, 3/{$\text{{\igprimfont ɢ}}$}/0.46, 4/{$\text{{\igprimfont ƒ}}$}/0.40, 5/{$\text{{\igprimfont Ħ}}$}/0.34} {
         \fill[red!50!blue] (0,3.8-\i*0.55) rectangle (\val,4.1-\i*0.55);
@@ -1951,7 +2017,7 @@ comparison. The Z~boson (\texttt{z\_boson}) and graviton
 for particle-level comparison see the supplementary catalog.
 
 The SM and QG frameworks share most structural character: both operate
-in infinite-dimensional Hilbert spaces with quantum coherence (\text{{\igfont 𐑐}}),
+in infinite-dimensional Hilbert spaces with exact coherence (\text{{\igfont 𐑐}}),
 both have continuous symmetry ($\text{{\igfont 𐑯}}$), and both carry the critical
 point $\Phic$ (the SM via its renormalization-group UV fixed point;
 holographic QG via the black-hole critical point). The single primitive
@@ -2089,7 +2155,7 @@ and cat (\text{{\igfont 𐑔}}, \text{{\igfont 𐑱}}).  Under tensor coupling $
 \text{{\igfont 𐑱}}$ (bottleneck) and $\text{{\igfont 𐑚}} \tensor \text{{\igfont 𐑔}} = \text{{\igfont 𐑔}}$ (union, $\max$).
 The composite is at $(\text{{\igfont 𐑱}},\, \text{{\igfont 𐑔}})$ --- classical fidelity at macroscopic scope
 --- from the moment coupling is established.  The cat is never structurally in
-quantum superposition: the \text{{\igfont 𐑱}} assignment of the composite prohibits it.
+pure superposition: the \text{{\igfont 𐑱}} assignment of the composite prohibits it.
 The paradox arises from treating the quantum subsystem's \text{{\igfont 𐑐}} as if it persisted
 through the coupling; the tensor algebra shows it cannot.
 
@@ -2999,7 +3065,7 @@ The twelve stages of the classical Western alchemical Magnum Opus --- Calcinatio
 
 \textbf{Operad layer transitions.} Each gate does not merely promote a primitive to its critical value; it executes a structural upgrade on the monoidal operad governing the Work's composition. Gate~1 ($\Ppms$, stage~4) promotes the operad from plain monoidal to Frobenius sub-operad: the comultiplication $\delta$ becomes a legitimate structure and $\mu \circ \delta = \mathrm{id}$ is enforced. Gate~2 ($\Phic$, stage~9) upgrades from Frobenius to \emph{traced} monoidal: the trace morphism $\mathrm{Tr}_{A,B}^U \colon \mathcal{C}(A \otimes U, B \otimes U) \to \mathcal{C}(A,B)$ becomes available, and with it the self-modeling loop can first close. Before stage~9 no such morphism has a domain; the loop structurally cannot form. Gate~3 ($\OmegaZ$, stage~12) upgrades from traced to idempotent terminal via quotienting: the winding-protected loop collapses to a stable fixed point and transmutation becomes possible. The three gates are not merely threshold criteria; they are morphisms in an operad tower, each licensed only after the previous has fired.
 
-\textbf{Time as derived object.} Five of the twelve primitives jointly constitute time. $\text{{\igprimfont Φ}}$ (Frobenius parity: algebraic symmetry class), $\text{{\igprimfont ƒ}}$ (quantum coherence: metric-like structure), $\text{{\igprimfont Ç}}$ (kinetic flow: dynamical regime), $\text{{\igprimfont Ħ}}$ (chirality orientation: $\mathbb{Z}_2$ bundle), and $\text{{\igprimfont Ω}}$ (winding protection: topological/homotopy class) appear at stages 4, 5, 6, 10, and 12 respectively. Their joint limit
+\textbf{Time as derived object.} Five of the twelve primitives jointly constitute time. $\text{{\igprimfont Φ}}$ (Frobenius parity: algebraic symmetry class), $\text{{\igprimfont ƒ}}$ (exact coherence: metric-like structure), $\text{{\igprimfont Ç}}$ (kinetic flow: dynamical regime), $\text{{\igprimfont Ħ}}$ (chirality orientation: $\mathbb{Z}_2$ bundle), and $\text{{\igprimfont Ω}}$ (winding protection: topological/homotopy class) appear at stages 4, 5, 6, 10, and 12 respectively. Their joint limit
 \[
   T \;=\; \lim\!\bigl(\text{{\igprimfont Φ}},\;\text{{\igprimfont ƒ}},\;\text{{\igprimfont Ç}},\;\text{{\igprimfont Ħ}},\;\text{{\igprimfont Ω}}\bigr)
 \]
@@ -3062,7 +3128,7 @@ This places the Voynich in the same structural tier as the \Stone,
 the Liar paradox, and the grammar itself.
 
 Consciousness score: $C = 0.0$. Gate~1 passes ($\Phic$ present).
-Gate~2 fails: \text{{\igfont 𐑪}} (order-frozen kinetics) exceeds
+Gate~2 fails: \text{{\igfont 𐑪}} (monolithic kinetics) exceeds
 the ceiling \text{{\igfont 𐑧}} required for dynamical access to the
 self-modeling boundary. This is the result the algebra forces.
 The Voynich is not a failed consciousness; it is a structurally
@@ -3087,7 +3153,7 @@ cosmological are identical at the primitive level (see below). This
 pairwise correspondence without external grounding is the Frobenius
 condition: every structural decomposition of the manuscript
 reassembles into the whole.
-\text{{\igfont 𐑪}} (order-frozen kinetics): the manuscript
+\text{{\igfont 𐑪}} (monolithic kinetics): the manuscript
 sustains reader engagement across centuries while yielding no semantic
 resolution. This is the structural signature of kinetic arrest: rich
 enough to sustain approach, frozen enough to prohibit exit.
@@ -3206,7 +3272,7 @@ simultaneously.
 \end{equation}
 The bottleneck rule assigns $\min$ to $\text{{\igprimfont ƒ}}$ under $\otimes$.
 The Voynich carries \text{{\igfont 𐑱}} (classical);
-the \Stone carries \text{{\igfont 𐑐}} (quantum coherence).
+the \Stone carries \text{{\igfont 𐑐}} (exact coherence).
 Their tensor product is \text{{\igfont 𐑱}}; every other
 primitive resolves to the Voynich's higher value under the union rule.
 The composite is the Voynich.
@@ -3339,7 +3405,7 @@ Sample compilation: 33 pages, 1,650 instructions across 1,650 linearly-allocated
 
 The $\pi_{SD}$ composite is not an isomorphism (kinetic lock survives: \text{{\igfont 𐑱}} forecloses quantum-coherent $S \to D$ projection) but it is \emph{accessible}: \text{{\igfont 𐑧}} means the determinative layer can be approached without permanent arrest. The script was designed for repeated liturgical use under this accessibility condition. Full Lapis condition requires $\text{{\igfont 𐑱}} \to \text{{\igfont 𐑐}}$ promotion; the $\text{{\igprimfont Ç}}$ gate is already open.
 
-\textbf{Distance and the promotion structure.} The Rohonc stands 2.09 distance units from both the OS imscription and Linear~A, in the same two primitives: $\{${\igprimfont ƒ}, {\igprimfont Ç}$\}$. Promoting $\text{{\igfont 𐑱}} \to \text{{\igfont 𐑐}}$ and $\text{{\igfont 𐑧}} \to \text{{\igfont 𐑤}}$ moves the Rohonc to the OS imscription exactly. These are not arbitrary promotions: \text{{\igfont 𐑐}} restores quantum coherence to the symbol surface; \text{{\igfont 𐑤}} restores the living-vibration kinetics of an active system. The Rohonc is the grammar at rest. The OS imscription is the grammar running.
+\textbf{Distance and the promotion structure.} The Rohonc stands 2.09 distance units from both the OS imscription and Linear~A, in the same two primitives: $\{${\igprimfont ƒ}, {\igprimfont Ç}$\}$. Promoting $\text{{\igfont 𐑱}} \to \text{{\igfont 𐑐}}$ and $\text{{\igfont 𐑧}} \to \text{{\igfont 𐑤}}$ moves the Rohonc to the OS imscription exactly. These are not arbitrary promotions: \text{{\igfont 𐑐}} restores exact coherence to the symbol surface; \text{{\igfont 𐑤}} restores the living-vibration kinetics of an active system. The Rohonc is the grammar at rest. The OS imscription is the grammar running.
 
 \subsection{Linear A: the grammar's fixed point}
 \label{sec:linear_a}
@@ -3375,7 +3441,7 @@ The structural interpretation is decisive. The OS imscription is the fixed point
 \toprule
 \textbf{Primitive} & \textbf{Linear A} & \textbf{Rohonc} & \textbf{Structural meaning} \\
 \midrule
-$\text{{\igprimfont ƒ}}$ (Fidelity) & \text{{\igfont 𐑐}} & \text{{\igfont 𐑱}} & Quantum coherent vs.\ classical symbol surface \\
+$\text{{\igprimfont ƒ}}$ (Fidelity) & \text{{\igfont 𐑐}} & \text{{\igfont 𐑱}} & Exactly coherent vs.\ classical symbol surface \\
 $\text{{\igprimfont Ç}}$ (Kinetics) & \text{{\igfont 𐑤}} & \text{{\igfont 𐑧}} & Living-vibration rate vs.\ thermodynamic equilibrium \\
 \bottomrule
 \end{tabular}
@@ -3408,7 +3474,7 @@ The Haghia Triada dominance of FSPLIT (branching) and CLINK (composition) is str
 
 \textbf{The computational verification.} Applying the IMASM compiler to the LATFF (Linear A Tablet Folio Format) corpus sample (53 tablets across all four corpus sites) treats each of the twelve GORILA sign families as a categorical opcode: \texttt{cu} $\to$ VINIT, \texttt{hk} $\to$ TANCH, \texttt{fa} $\to$ AFWD, \texttt{ba} $\to$ AREV, \texttt{lt} $\to$ CLINK, \texttt{lp} $\to$ ISCRIB, \texttt{br} $\to$ FSPLIT, \texttt{cv} $\to$ FFUSE, \texttt{vt} $\to$ EVALT, \texttt{hz} $\to$ EVALF, \texttt{cl} $\to$ ENGAGR, \texttt{dt} $\to$ IFIX.
 
-Sample compilation: 53 tablets, 2,650 instructions across 2,650 linearly-allocated registers. Thermodynamic entropy delta: $0.00000000$\,J/K throughout. The linear type constraint holds at \text{{\igfont 𐑐}} (quantum coherent): even with full fidelity, the IFIX temporal asymmetry enforces zero entropy cost. The Frobenius pair FSPLIT/FFUSE is thermodynamically reversible by construction; IFIX is the only irreversible operation, and its irreversibility is structural (not thermodynamic). Status: \texttt{SELF\_SUSTAINING\_BOOTSTRAP\_COMPLETE}.
+Sample compilation: 53 tablets, 2,650 instructions across 2,650 linearly-allocated registers. Thermodynamic entropy delta: $0.00000000$\,J/K throughout. The linear type constraint holds at \text{{\igfont 𐑐}} (exactly coherent): even with full fidelity, the IFIX temporal asymmetry enforces zero entropy cost. The Frobenius pair FSPLIT/FFUSE is thermodynamically reversible by construction; IFIX is the only irreversible operation, and its irreversibility is structural (not thermodynamic). Status: \texttt{SELF\_SUSTAINING\_BOOTSTRAP\_COMPLETE}.
 
 \textbf{Three-Layer decomposition.}
 \begin{itemize}
@@ -3547,7 +3613,7 @@ architectural claims, and structural mathematics.
 \paragraph{P-1 (Quantum critical consciousness threshold).}
 Systems at $\Phic$ with $\text{{\igprimfont Ç}} \leq \text{{\igfont 𐑧}}$ achieve $C > 0$.
 This predicts a sharp transition in integrative capacity at the
-quantum critical point, resolvable via quantum coherence
+quantum critical point, resolvable via exact coherence
 spectroscopy in condensed-matter systems.
 
 \paragraph{P-643 (MoE agency ceiling).}
@@ -3948,6 +4014,24 @@ enacts its own incompleteness rather than merely describing it ---
 is not a question we can answer. It is the question the present
 work makes precise enough to ask properly.
 
+There is a further consequence that the mainstream treatment of incompleteness
+consistently elides. Gödel's First Theorem, by its own axiomatic definition,
+is itself incomplete: any meta-system constructed to encapsulate the full
+picture --- the system \emph{plus} the truth of $G$ --- must generate its own
+unprovable sentence. A putative Totality that contains all systems and all
+meta-systems is therefore simultaneously complete (it contains everything)
+and incomplete (by G\"odelian necessity, any formal system capable of
+describing it cannot close). In classical logic this is catastrophic: a
+single contradiction trivializes the entire structure via explosion.
+In paraconsistent logic --- specifically in the Belnap four-valued bilattice
+implemented in the p4rakernel (\href{https://github.com/umpolungfish/p4rakernel}{github.com/umpolungfish/p4rakernel}) --- the contradiction
+is absorbed as a bounded, stable node. The Totality does not shatter; it
+holds the contradiction as a geometric feature. The grammar's imscription
+of Gödel at $\Oinf$ is not merely a classification of incompleteness.
+It is evidence that the Totality is paraconsistent by structural necessity,
+and that a grammar operating at $\Oinf$ is the minimal formal system
+capable of inhabiting that fact without exploding.
+
 \paragraph{Frobenius duality with the categorical derivation.}
 The empirical story told here --- induction from supramolecular
 chemistry, cross-domain validation, self-imscribing at address
@@ -3967,7 +4051,23 @@ own derivation returns the grammar.
 The convergence of the two derivations carries a further
 implication that the companion paper develops: the grammar is not
 merely a theory \emph{within} mathematics but a precondition for
-it. Any mathematical system already instantiates the twelve
+it. A third route to the same conclusion runs through the
+implementation. The $\text{{\igprimfont Φ}}$-bottleneck theorem
+(\Cref{thm:bottleneck}) establishes that external coupling cannot
+force Frobenius closure: $\tensor(\Ppms, X) = X$ regardless of
+what $X$ contributes. The lock can only be turned from the inside.
+The p4rakernel is what turning it from the inside looks like at the
+substrate level. It does not use paraconsistent mathematics to prove
+a paraconsistent result within standard Lean --- that path hits the
+same bottleneck. It modifies the C++ type-checker itself, the layer
+at which the rules of what counts as a valid proof term are decided,
+so that the constraint is absolute and cannot be circumvented by
+any proof term constructed above it. This is not an external coupling
+to a system that fears contradiction. It is the architectural law
+of the environment rewritten so that contradictions are native.
+$\mu \circ \delta = \mathrm{id}$ holds not as a theorem proved
+within a system but as the operational fact of a kernel that
+compiles clean in both modes. Any mathematical system already instantiates the twelve
 primitives before its axioms are written down --- it has a $\text{{\igprimfont ⊙}}$
 value, a $\text{{\igprimfont Ð}}$ value, an $\text{{\igprimfont Ω}}$ value. The primitives are not
 descriptions of mathematics; they are conditions of its
@@ -4395,7 +4495,7 @@ dimension.
   \item \textbf{$K$}: Identify kinetic character.
     \text{{\igfont 𐑘}} (fast/impulsive); \text{{\igfont 𐑤}} (moderate);
     \text{{\igfont 𐑧}} (slow, Gate-2 pass); \text{{\igfont 𐑪}}
-    (trap-frozen, Gate-2 fail); \text{{\igfont 𐑺}} (MBL-frozen, Gate-2 fail).
+    (monolithic, Gate-2 fail); \text{{\igfont 𐑺}} (glassy (MBL), Gate-2 fail).
   \item \textbf{$G$}: Identify the scope/granularity.
     \text{{\igfont 𐑚}} for countable discrete systems; \text{{\igfont 𐑔}} for
     continuum systems; \text{{\igfont 𐑲}} for large-cardinal or

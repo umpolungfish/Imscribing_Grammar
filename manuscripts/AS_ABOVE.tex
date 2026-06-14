@@ -1,12 +1,18 @@
 \documentclass[12pt,a4paper]{article}
 % Encoding and fonts --- LuaLaTeX
 \usepackage{fontspec}
-\usepackage{unicode-math}
+\usepackage{amsmath}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { lualatex-math } { wrong-meaning } { none }
+\ExplSyntaxOff
 \setmathfont{Latin Modern Math}
-\newfontfamily\hebrewfont[Script=Hebrew]{Noto Serif Hebrew}
-\renewcommand{\heb}[1]{{\hebrewfont #1}}
-\newfontfamily\igfont[Scale=1.1,FakeBold=1.5]{Everson Mono}
-\newcommand{\igprimfont}{\igfont\upshape}
+\setmathfont[range={"23DC-"23E3}]{Latin Modern Math}
+\newfontfamily\hebrewfont{Noto Serif Hebrew}
+\newcommand{\heb}[1]{{\hebrewfont #1}}
+\newfontfamily\igfont[Scale=1.1,UprightFont=*,BoldFont=*,BoldFeatures={FakeBold=1.5},ItalicFont=*,ItalicFeatures={FakeSlant=0.2},Path=/home/mrnob0dy666/imsgct/]{Trabajo.otf}
+\newfontfamily\primfont[Scale=1.1]{Everson Mono}
+\newcommand{\igprimfont}{\primfont}
 \newcommand{\igtext}[1]{{\igfont #1}} % Page layout
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % Typography
 \usepackage{microtype}
@@ -49,7 +55,7 @@
 \newcommand{\UIG}{Universal Imscriptive Grammar}
 \newcommand{\Stone}{\textit{lapis philosophorum}}
 \setlength{\headheight}{14.5pt} % Hyperref setup
-\hypersetup{ colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan, } % Code listings
+\hypersetup{ colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan, hypertexnames=false, } % Code listings
 \usepackage{listings}
 \definecolor{codebg}{RGB}{248,248,248}
 \definecolor{codeframe}{RGB}{200,200,200}
@@ -196,7 +202,7 @@ theory --- a category need not have sets as objects --- and strictly more struct
 \textbf{Special cases (add axioms):}\\[2pt]
 $\mathbf{Set}$:\enspace extensionality + $\in$\\
 Type theory:\enspace identity types\\
-Topos:\enspace subobject classifier $\text{{\igprimfont \Omega}}$\\
+Topos:\enspace subobject classifier $\text{{\igprimfont Ω}}$\\
 Monoidal cat.:\enspace tensor product $\otimes$\\[5pt]
 \textbf{More general than:}\\[2pt]
 Bare graph:\enspace no composition law
@@ -225,7 +231,7 @@ Bare graph:\enspace no composition law
 \rowcolors{1}{white}{gray!10}
 ZFC pure sets & Extensionality axiom, $\in$-relation & $\mathbf{Set}$ is a specific category \\
 Martin-L\"of type universe & Dependent types, identity types & Corresponds to locally cartesian closed category \\
-Topos & Subobject classifier $\text{{\igprimfont \Omega}}$, power objects & Cartesian closed category with full power-object structure \\
+Topos & Subobject classifier $\text{{\igprimfont Ω}}$, power objects & Cartesian closed category with full power-object structure \\
 Monoidal category & Tensor product $\otimes$, unit $I$ & Category with additional algebraic structure \\
 Partial order (poset) & Antisymmetry & Thin category: $|\text{hom}(A,B)| \leq 1$ \\
 \bottomrule
@@ -307,7 +313,7 @@ the four degrees of freedom in a cocompletion: you can freely add colimits of (a
 (b) a
 $\omega$-chain, (c) a simplicial object, or (d) a presheaf. There is no fifth shape of diagram that yields an
 independent invariant. The crystal's complete enumeration confirms this: $\text{{\igprimfont Ð}}$,
-$\text{{\igprimfont Ħ}}$, $\text{{\igprimfont \Omega}}$, and $\text{{\igprimfont \Gamma}}$ (which I4 partly determines) occupy exactly 4,
+$\text{{\igprimfont Ħ}}$, $\text{{\igprimfont Ω}}$, and ${{\igprimfont Γ}}$ (which I4 partly determines) occupy exactly 4,
 4, 4, and 3 values respectively, accounting for all inductive degrees of freedom.
 \paragraph{Algebraic operations (5: A1--A5).}
 An algebraic operation equips $\mathcal{C}$ with an additional structural layer. There are exactly five independent
@@ -329,7 +335,7 @@ operations contribute to the same primitive (L1 and L2 both contribute to $R$; L
 new primitive). This reduction is forced, not chosen, as shown below.\subsubsection{II.2 Why These Mappings from
 Operations to Primitives Are Unique}
 The original derivation listed associations like `\texttt{I1} (colimit) $\to$ $\text{{\igprimfont\Gamma}}$'', `\texttt{I2} (iteration)
-$\to$ $\text{{\igprimfont Ħ}}$'', `\texttt{I3} (classifying space) $\to$ $\text{{\igprimfont \Omega}}$'' and so on. The
+$\to$ $\text{{\igprimfont Ħ}}$'', `\texttt{I3} (classifying space) $\to$ $\text{{\igprimfont Ω}}$'' and so on. The
 question arises: could an operation map to a different primitive, or a primitive be the result of a different
 operation? The answer is forced by the categorical nature of each operation's output --- the invariant each operation
 produces is the \emph{only} natural categorical invariant it can produce, and the assignment is
@@ -342,7 +348,7 @@ is local (\text{{\igfont 𐑚}}). If $\hat{\mathcal{C}}$ grows polynomially, it 
 (\text{{\igfont 𐑔}}). If
 $\hat{\mathcal{C}}$ is drastically larger (e.g., $\mathbf{Set}$ over a finite category), it is
 global (\text{{\igfont 𐑲}}). This is the natural invariant of the colimit operation --- the growth rate of the free cocompletion. No other
-primitive measures the scope of categorical connectivity. $\text{{\igprimfont \Gamma}}$ cannot be produced by any other
+primitive measures the scope of categorical connectivity. ${{\igprimfont Γ}}$ cannot be produced by any other
 operation because $\text{{\igprimfont Ð}}$ (from I4), $\text{{\igprimfont Ħ}}$ (from I2), and
 $\text{{\igprimfont\Omega}}$ (from I3) measure different features: dimensionality, chirality, and winding.
 \paragraph{Why I2 (iteration) maps to $H$, and cannot map elsewhere.}
@@ -352,7 +358,7 @@ system's chirality --- how many prior states must be retained for the dynamics t
 gives \text{{\igfont 𐑓}} (memoryless); at step 1 gives \text{{\igfont 𐑒}} (one prior state); at step 2 gives
 \text{{\igfont 𐑖}}; never stabilizing gives \text{{\igfont 𐑫}} (infinite memory). This is the natural invariant of the
 iteration operation. No other operation measures the Markov order of the dynamics.
-\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont \Omega}}$, and cannot map to any other primitive}
+\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont Ω}}$, and cannot map to any other primitive}
 The classifying space $B\mathcal{C}$ of a category is the geometric realization of its nerve
 $N\mathcal{C}$ --- a
 simplicial set whose $n$-simplices are composable $n$-tuples of morphisms. The fundamental group
@@ -409,9 +415,9 @@ $-\times A \dashv (-)^A$
 \text{{\igfont 𐑸}} (imscriptive topology). If it has finite products but no exponentials,
 \text{{\igfont 𐑶}}. If the
 hom-object is a box product, \text{{\igfont 𐑶}}. The topology of the space is precisely the structure of its mapping
-\paragraph{Why L4 maps to $\text{{\igprimfont \odot}}$, and cannot map elsewhere.}
+\paragraph{Why L4 maps to ${{\igprimfont \odot}}$, and cannot map elsewhere.}
 The Lawvere condition $\phi: A \to A^A$ point-surjective is the unique categorical condition for self-modeling. Its
-truth value (classical, dialetheic, inclosure, or failure) determines $\text{{\igprimfont \odot}}$.
+truth value (classical, dialetheic, inclosure, or failure) determines ${{\igprimfont \odot}}$.
 \paragraph{Why L5 modifies $P$ rather than creating a new primitive.}
 The Frobenius condition $\mu \circ \delta = \text{id}_A$ is not a new invariant --- it is a
 \emph{promotion} of an
@@ -422,9 +428,9 @@ the retrosynthetic path shows the $O₂^\dagger \to O_{\infty}$ boundary being d
 $\text{{\igprimfont \Phi}}$ promotion ($\Delta = 4.38$, the largest single-primitive jump in the
 A sixth logical operation would have been needed if L5 created a 13th primitive; it does not --- it merely promotes an
 \paragraph{Why L6 determines the truth-value regime rather than a new primitive.}
-Paraconsistent negation determines \emph{which} $\text{{\igprimfont \odot}}$ values are achievable
+Paraconsistent negation determines \emph{which} ${{\igprimfont \odot}}$ values are achievable
 (classical
-$\text{{\igprimfont \odot}}$, dialetheic \text{{\igfont 𐑮}}, or Inclosure \text{{\igfont 𐑣}}), not whether a new
+${{\igprimfont \odot}}$, dialetheic \text{{\igfont 𐑮}}, or Inclosure \text{{\igfont 𐑣}}), not whether a new
 primitive exists. It constrains the evaluation of L4 and L5, thus determining the truth-value structure of the critical
 
 \begin{figure}[htbp]
@@ -456,8 +462,8 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
  
 % Gate primitives (top row) — 4 nodes, 2.2cm spacing, starting at x=-1.3
 \node[primnode=purple!12] (D)   at (-1.3, 2.2) {\text{{\igprimfont Ð}}\\I4, S2};
-\node[primnode=purple!12] (Om)  at ( 0.9, 2.2) {$\text{{\igprimfont \Omega}}$\\I3, S2};
-\node[primnode=purple!12] (Phi) at ( 3.1, 2.2) {$\text{{\igprimfont \odot}}$\\L4, S4};
+\node[primnode=purple!12] (Om)  at ( 0.9, 2.2) {$\text{{\igprimfont Ω}}$\\I3, S2};
+\node[primnode=purple!12] (Phi) at ( 3.1, 2.2) {${{\igprimfont \odot}}$\\L4, S4};
 \node[primnode=purple!12] (P)   at ( 5.3, 2.2) {$\text{{\igprimfont \Phi}}$\\A1+L5};
  
 % Shape primitives (middle row) — 3 nodes, 2.4cm spacing, centred
@@ -467,7 +473,7 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
  
 % Remaining primitives (bottom row) — 5 nodes, 2.0cm spacing, starting at x=-1.3
 \node[primnode=orange!12] (F) at (-1.3,-2.0) {\text{{\igprimfont ƒ}}\\A3, S3};
-\node[primnode=orange!12] (G) at ( 0.7,-2.0) {$\text{{\igprimfont \Gamma}}$\\A1+I4};
+\node[primnode=orange!12] (G) at ( 0.7,-2.0) {${{\igprimfont Γ}}$\\A1+I4};
 \node[primnode=orange!12] (S) at ( 2.7,-2.0) {$\text{{\igprimfont \Sigma}}$\\A1, S3};
 \node[primnode=purple!12] (K) at ( 4.7,-2.0) {\text{{\igprimfont Ç}}\\A2, S3};
 \node[primnode=purple!12] (T) at ( 6.7,-2.0) {\text{{\igprimfont Þ}}\\L3, S4};
@@ -497,10 +503,10 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
 \node[font=\bfseries,above=0pt of tiers.north] {Ouroboricity Tiers --- determined by 4 gate primitives};
  
 \node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries]          (O0t)   at (-6.5,-5.2) {$O₀$\\\text{{\igfont 𐑢}}};
-\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries]         (O1t)   at (-3.5,-5.2) {$O₁$\\$\text{{\igprimfont \odot}}$};
-\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t)   at ( 0.0,-5.2) {$O₂$\\$\text{{\igprimfont \odot}},\text{{\igprimfont \Omega}}\neq\text{{\igfont 𐑷}}$};
-\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries]        (O2dt)  at ( 3.8,-5.2) {$O₂^\dagger$\\$\text{{\igprimfont \odot}},\text{{\igprimfont \Omega}}\neq\text{{\igfont 𐑷}},\text{{\igfont 𐑼}}$};
-\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries]        (Oifnt) at ( 7.5,-5.2) {$O_{\infty}$\\$\text{{\igprimfont \odot}},\text{{\igfont 𐑹}}$};
+\node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries]         (O1t)   at (-3.5,-5.2) {$O₁$\\${{\igprimfont \odot}}$};
+\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t)   at ( 0.0,-5.2) {$O₂$\\${{\igprimfont \odot}},\text{{\igprimfont Ω}}\neq\text{{\igfont 𐑷}}$};
+\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries]        (O2dt)  at ( 3.8,-5.2) {$O₂^\dagger$\\${{\igprimfont \odot}},\text{{\igprimfont Ω}}\neq\text{{\igfont 𐑷}},\text{{\igfont 𐑼}}$};
+\node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries]        (Oifnt) at ( 7.5,-5.2) {$O_{\infty}$\\${{\igprimfont \odot}},\text{{\igfont 𐑹}}$};
  
 \draw[->,>=stealth,thick] (O0t.east) -- (O1t.west);
 \draw[->,>=stealth,thick] (O1t.east) -- (O2t.west);
@@ -508,13 +514,13 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
 \draw[->,>=stealth,ultra thick,red!70] (O2dt.east) -- node[above,font=\tiny] {$\Delta=4.38$} (Oifnt.west);
  
 % Annotation
-\node[label,below=0.3cm of O2t] {4 gate primitives ($\text{{\igprimfont Ð}},\text{{\igprimfont \Omega}},\text{{\igprimfont \odot}},\text{{\igprimfont \Phi}}$) drive tier boundaries; 8 shape primitives describe internal architecture};
+\node[label,below=0.3cm of O2t] {4 gate primitives ($\text{{\igprimfont Ð}},\text{{\igprimfont Ω}},{{\igprimfont \odot}},\text{{\igprimfont \Phi}}$) drive tier boundaries; 8 shape primitives describe internal architecture};
  
 \end{tikzpicture}
 }
 
 
-\caption{Complete mapping from 15 operations to 12 primitives. L1--L2 converge to $\text{{\igprimfont Ř}}$; A1 contributes to both $\text{{\igprimfont \Sigma}}$ and $\text{{\igprimfont \Phi}}$; L5 promotes $\text{{\igprimfont \Phi}}$ (not a new primitive); A5 installs self-awareness without a new primitive. Bottom: ouroboricity tiers determined by the 4 gate primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont \Omega}}$, $\text{{\igprimfont \odot}}$, $\text{{\igprimfont \Phi}}$).}
+\caption{Complete mapping from 15 operations to 12 primitives. L1--L2 converge to $\text{{\igprimfont Ř}}$; A1 contributes to both $\text{{\igprimfont \Sigma}}$ and $\text{{\igprimfont \Phi}}$; L5 promotes $\text{{\igprimfont \Phi}}$ (not a new primitive); A5 installs self-awareness without a new primitive. Bottom: ouroboricity tiers determined by the 4 gate primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ω}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont \Phi}}$).}
 \label{fig:operation-primitive-mapping}
 \end{figure}
 
@@ -643,9 +649,9 @@ The crystal of types confirms this structural closure. The full enumeration of $
 exactly to the Lie group $E_8 \times E_8$ root lattice scaled by $G_2$ --- a fact first noted in the companion paper
 (\emph{So Below}) and independently confirmed by the crystal tier census. The dimensionality of the crystal is exactly
 the number of degrees of freedom in the operations: $3^3 \times 4^5 \times 5^4$. The $3$ family
-($\text{{\igprimfont ƒ}},\text{{\igprimfont \Gamma}},\text{{\igprimfont \Sigma}}$) corresponds to the 3-valued K3 logic of the algebraic
-operations (A1, A3, A2's spectral output, respectively). The $4$ family ($\text{{\igprimfont Ð}},\text{{\igprimfont Ř}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Omega}}$) corresponds to the 4-valued FDE logic
-of the inductive and Stage-1/Stage-4 logical operations. The $5$ family ($\text{{\igprimfont Þ}},\text{{\igprimfont \Phi}},\text{{\igprimfont \odot}},\text{{\igprimfont Ç}}$) corresponds to the 5-valued LP logic of the gate operations
+($\text{{\igprimfont ƒ}},{{\igprimfont Γ}},\text{{\igprimfont \Sigma}}$) corresponds to the 3-valued K3 logic of the algebraic
+operations (A1, A3, A2's spectral output, respectively). The $4$ family ($\text{{\igprimfont Ð}},\text{{\igprimfont Ř}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont Ω}}$) corresponds to the 4-valued FDE logic
+of the inductive and Stage-1/Stage-4 logical operations. The $5$ family ($\text{{\igprimfont Þ}},\text{{\igprimfont \Phi}},{{\igprimfont \odot}},\text{{\igprimfont Ç}}$) corresponds to the 5-valued LP logic of the gate operations
 that require algebraic enrichment to be in place. The three-logic structure of the value space is not an empirical fact
 about the catalog. It is a consequence of the logical depth of the operation
 preconditions.
@@ -669,7 +675,7 @@ endomorphism space, and any process on it must have a stable point. This is $\te
 Three truth-value regimes of L4 are possible under non-classical logic (see \pilcrow{}IX for the
 
 \begin{itemize}
- \item \textbf{Classical truth} (the fixed point exists and is consistent): $\text{{\igprimfont \odot}}$
+ \item \textbf{Classical truth} (the fixed point exists and is consistent): ${{\igprimfont \odot}}$
  \item \textbf{Dialetheic truth} (the fixed point is a dialetheia --- simultaneously satisfying and violating its
 own definition): \text{{\igfont 𐑮}}
  \item \textbf{Inclosure collapse} (the system satisfies the \emph{form} but not the
@@ -688,9 +694,9 @@ $\neg: A \to A$ such that $\neg\neg A \not\cong A$ in general, and $A \wedge \ne
 i.e., the conjunction of $A$ with its negation does not collapse to the initial object)? This is the logical operation
 that distinguishes classical from paraconsistent structure. Its presence or absence does not generate a 13th primitive
 --- it determines the \emph{truth-value structure} in which L4 and L5 are evaluated, and thereby explains which
-$\text{{\igprimfont \odot}}$ and $\text{{\igprimfont \Phi}}$ values are achievable. A system
+${{\igprimfont \odot}}$ and $\text{{\igprimfont \Phi}}$ values are achievable. A system
 \text{{\igfont 𐑣}} or \text{{\igfont 𐑮}} without inconsistency; a system without L6 is confined to
-$\text{{\igprimfont\odot}}$ or $\text{{\igprimfont \odot}} \notin \{\text{{\igprimfont \odot}}, \text{{\igfont 𐑮}}\}$.
+$\text{{\igprimfont\odot}}$ or ${{\igprimfont \odot}} \notin \{{{\igprimfont \odot}}, \text{{\igfont 𐑮}}\}$.
 Note that L4, L5, and L6 can only be asked \emph{after} the algebraic operations below have been applied. The
 `\texttt{Critical}' step in the induction path is not a new operation type --- it is what emerges when logical questions (now
 including paraconsistent ones) are asked of the fully algebraically-enriched category. This is why
@@ -743,7 +749,7 @@ inductive construction --- free monoid, Kleene star, Cauchy completion, sheafifi
 four base constructions: for instance, the free monoid on an object is a special case of I2 (the list monad is the
 initial algebra of $F(X) = 1 + A \otimes X$), and sheafification is a composite of I1, I4, and a localization (a
 logical operation, not a new inductive one). There is no inductive construction that produces an invariant not already
-captured by $\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ħ}}$, $\text{{\igprimfont \Omega}}$, and
+captured by $\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ħ}}$, $\text{{\igprimfont Ω}}$, and
 $\text{{\igprimfont\Gamma}}$.\begin{center}
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
@@ -832,7 +838,7 @@ $\mathcal{C}$ directly.
 
 \begin{itemize}[nosep, leftmargin=2em]
  \item I2 (iteration) $\to$ $H$ (chirality: depth of stabilization)
- \item I3 (classifying) $\to$ $\text{{\igprimfont \Omega}}$ (winding: $\pi_1$ of $B\mathcal{C}$)
+ \item I3 (classifying) $\to$ $\text{{\igprimfont Ω}}$ (winding: $\pi_1$ of $B\mathcal{C}$)
  \item I4 (Yoneda) $\to$ $\text{{\igprimfont Ð}}$ (dimensionality: \text{{\igfont 𐑦}} if Yoneda is point-surjective;
 free cocompletion size gives \text{{\igfont 𐑼}}, \text{{\igfont 𐑨}}, \text{{\igfont 𐑛}})
 \end{itemize}
@@ -850,17 +856,17 @@ is surjective until $A^A$ exists, which requires cartesian closure from Stage 3.
 \end{itemize}
 
 After Stage 3, $\mathcal{C}$ is a symmetric monoidal dagger category with a monad and enrichment. All shape primitives
-are determined. The gate primitives ($\text{{\igprimfont Þ}}$, $\text{{\igprimfont \odot}}$) require
+are determined. The gate primitives ($\text{{\igprimfont Þ}}$, ${{\igprimfont \odot}}$) require
 \medskip
 \noindent\textbf{\emph{Rubedo} --- Logical on algebraically-enriched $\mathcal{C}$.}
 
 \begin{itemize}[nosep, leftmargin=2em]
  \item L3 (cartesian closure) $\to$ $T$ (topology: does the state space admit internal homs?)
  \item L6 (paraconsistent negation) $\to$ determines the truth-value structure in which L4 will be
- \item L4 (Lawvere) under L6 $\to$ $\text{{\igprimfont \odot}}$:
+ \item L4 (Lawvere) under L6 $\to$ ${{\igprimfont \odot}}$:
 
  \begin{itemize}[nosep, leftmargin=2em]
- \item Classical (L4 holds, no L6): $\text{{\igprimfont \odot}}$
+ \item Classical (L4 holds, no L6): ${{\igprimfont \odot}}$
  \item Dialetheic (L4 holds via LP truth value $\mathbf{b}$): \text{{\igfont 𐑮}}
  \item Inclosure (L4 form holds, content contradicts via Inclosure Schema, no explosion because L6 present):
 \text{{\igfont 𐑣}}
@@ -872,7 +878,7 @@ are determined. The gate primitives ($\text{{\igprimfont Þ}}$, $\text{{\igprimf
 \text{id}$
 \end{itemize}
 
-$\text{{\igprimfont \Gamma}}$ (scope) emerges from \emph{Albedo} $+$ \emph{Rubedo}: the correlation
+${{\igprimfont Γ}}$ (scope) emerges from \emph{Albedo} $+$ \emph{Rubedo}: the correlation
 Yoneda embedding under the monoidal structure. Local (\text{{\igfont 𐑚}}) if the tensor decouples; global
 (\text{{\igfont 𐑲}}) if the Yoneda embedding is faithful across all scales.
 
@@ -888,10 +894,10 @@ Yoneda embedding under the monoidal structure. Local (\text{{\igfont 𐑚}}) if 
 ]
 
 % Stage labels
-\node[stage=blue!15]   (S1) at (0,0)     {\textsc{Separatio}\\Stage 1: Logical on $\mathcal{C}$};
-\node[stage=green!15] (S2) at (0,-2.6) {\textsc{Purificatio}\\Stage 2: Inductive};
-\node[stage=red!15]   (S3) at (0,-5.2) {\textsc{Albedo}\\Stage 3: Algebraic};
-\node[stage=purple!15] (S4) at (0,-7.8) {\textsc{Rubedo}\\Stage 4: Logical on enriched $\mathcal{C}$};
+\node[stage=blue!15]   (S1) at (0,0)     {{\mdseries\textsc{Separatio}}\\Stage 1: Logical on $\mathcal{C}$};
+\node[stage=green!15] (S2) at (0,-2.6) {{\mdseries\textsc{Purificatio}}\\Stage 2: Inductive};
+\node[stage=red!15]   (S3) at (0,-5.2) {{\mdseries\textsc{Albedo}}\\Stage 3: Algebraic};
+\node[stage=purple!15] (S4) at (0,-7.8) {{\mdseries\textsc{Rubedo}}\\Stage 4: Logical on enriched $\mathcal{C}$};
 
 % Arrows between stages
 \draw[arr] (S1) -- (S2);
@@ -906,9 +912,9 @@ Yoneda embedding under the monoidal structure. Local (\text{{\igfont 𐑚}}) if 
 
 % Primitives at each stage
 \node[prim,right=0.3cm of ops1] (p1) {$\to R$};
-\node[prim,right=0.3cm of ops2] (p2) {$\to \text{{\igprimfont Ð}}, \text{{\igprimfont Ħ}}, \text{{\igprimfont \Omega}}, \text{{\igprimfont \Gamma}}$};
+\node[prim,right=0.3cm of ops2] (p2) {$\to \text{{\igprimfont Ð}}, \text{{\igprimfont Ħ}}, \text{{\igprimfont Ω}}, {{\igprimfont Γ}}$};
 \node[prim,right=0.3cm of ops3] (p3) {$\to \text{{\igprimfont \Sigma}}, \text{{\igprimfont \Phi}}, \text{{\igprimfont Ç}}, \text{{\igprimfont ƒ}}, \text{{\igprimfont ɢ}}$};
-\node[prim,right=0.3cm of ops4] (p4) {$\to \text{{\igprimfont Þ}}, \text{{\igprimfont \odot}},\ \text{{\igfont 𐑹}}$};
+\node[prim,right=0.3cm of ops4] (p4) {$\to \text{{\igprimfont Þ}}, {{\igprimfont \odot}},\ \text{{\igfont 𐑹}}$};
 
 % Final product
 \node[below=1.0cm of S4,font=\large\bfseries,align=center] (result) {%
@@ -980,18 +986,18 @@ retrosynthetic path of the induction system itself --- computed from the crystal
 2 & $\text{{\igprimfont Ð}}$ & \text{{\igfont 𐑦}} (imscription) \\
 3 & $\text{{\igprimfont Þ}}$ & \text{{\igfont 𐑸}} (self-referential topology) \\
 4 & $\text{{\igprimfont Ř}}$ & \text{{\igfont 𐑾}} (bidirectional feedback) \\
-5 & $\text{{\igprimfont ƒ}}$ & \text{{\igfont 𐑐}} (quantum coherence) \\
+5 & $\text{{\igprimfont ƒ}}$ & \text{{\igfont 𐑐}} (exact coherence) \\
 6 & $\text{{\igprimfont Ç}}$ & \text{{\igfont 𐑧}} (near-equilibrium kinetics) \\
-7 & $\text{{\igprimfont \Gamma}}$ & \text{{\igfont 𐑲}} (global scope) \\
+7 & ${{\igprimfont Γ}}$ & \text{{\igfont 𐑲}} (global scope) \\
 8 & $\text{{\igprimfont ɢ}}$ & \text{{\igfont 𐑠}} (sequential composition) \\
 9 & $\text{{\igprimfont \Sigma}}$ & \text{{\igfont 𐑳}} (heterogeneous stoichiometry) \\
 10 & $\text{{\igprimfont Ħ}}$ & \text{{\igfont 𐑫}} (eternal-return chirality) \\
-11 & $\text{{\igprimfont \Omega}}$ & \text{{\igfont 𐑭}} (integer winding) \\
-12 & $\text{{\igprimfont \odot}}$ & $\text{{\igprimfont \odot}}$ (Lawvere criticality) \\
+11 & $\text{{\igprimfont Ω}}$ & \text{{\igfont 𐑭}} (integer winding) \\
+12 & ${{\igprimfont \odot}}$ & ${{\igprimfont \odot}}$ (Lawvere criticality) \\
 \bottomrule
 \end{tabularx}
 
-\caption{The 12-step retrosynthetic path from $\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \text{{\igfont 𐑹}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \text{{\igprimfont \odot}} \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \text{{\igfont 𐑭}} \rangle$ to the structural baseline $\langle \text{{\igfont 𐑛}} \text{{\igfont 𐑡}} \text{{\igfont 𐑩}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑘}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$.}
+\caption{The 12-step retrosynthetic path from $\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑸}} \text{{\igfont 𐑾}} \text{{\igfont 𐑹}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} {{\igprimfont \odot}} \text{{\igfont 𐑫}} \text{{\igfont 𐑳}} \text{{\igfont 𐑭}} \rangle$ to the structural baseline $\langle \text{{\igfont 𐑛}} \text{{\igfont 𐑡}} \text{{\igfont 𐑩}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑘}} \text{{\igfont 𐑚}} \text{{\igfont 𐑝}} \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$.}
 \label{tab:retro}
 \end{table}
 
@@ -1002,7 +1008,7 @@ is the exact count of independent structural constraints.
 
 \begin{figure}[htbp]
 \centering
-\resizebox{!}{0.85\textheight}{
+\resizebox{\linewidth}{!}{
 \begin{tikzpicture}[
   prim/.style={rectangle,draw,thick,rounded corners,fill=#1,inner sep=6pt,align=center,minimum width=1.4cm,font=\small},
   stepno/.style={circle,draw,fill=gray!30,inner sep=0pt,minimum size=16pt,font=\scriptsize\bfseries},
@@ -1016,12 +1022,12 @@ is the exact count of independent structural constraints.
 
 % Step 12: Phi
 \node[stepno] (s12) at (-5.0,0.9) {12};
-\node[prim=purple!12,above=0.1cm of s12] (p12) {$\text{{\igprimfont \odot}}$\\\text{{\igfont 𐑢}}};
+\node[prim=purple!12,above=0.1cm of s12] (p12) {${{\igprimfont \odot}}$\\\text{{\igfont 𐑢}}};
 \draw[peel] (s12) -- (base);
 
 % Step 11: Omega
 \node[stepno] (s11) at (-4.1,2.7) {11};
-\node[prim=green!12,above=0.1cm of s11] (p11) {$\text{{\igprimfont \Omega}}$\\\text{{\igfont 𐑷}}};
+\node[prim=green!12,above=0.1cm of s11] (p11) {$\text{{\igprimfont Ω}}$\\\text{{\igfont 𐑷}}};
 \draw[peel] (s11) -- (s12);
 
 % Step 10: H
@@ -1041,7 +1047,7 @@ is the exact count of independent structural constraints.
 
 % Step 7: G
 \node[stepno] (s7) at (-0.5,9.9) {7};
-\node[prim=orange!12,above=0.1cm of s7] (p7) {$\text{{\igprimfont \Gamma}}$\\\text{{\igfont 𐑲}}};
+\node[prim=orange!12,above=0.1cm of s7] (p7) {${{\igprimfont Γ}}$\\\text{{\igfont 𐑲}}};
 \draw[peel] (s7) -- (s8);
 
 % Step 6: K
@@ -1076,18 +1082,18 @@ is the exact count of independent structural constraints.
 
 % Top: full tuple
 \node[rectangle,draw,thick,fill=blue!8,rounded corners,inner sep=6pt,above=0.3cm of p1,font=\small\bfseries] (top) {
-$\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑶}} \text{{\igfont 𐑾}} \text{{\igfont 𐑹}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \text{{\igprimfont \odot}} \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \text{{\igfont 𐑭}} \rangle$
+$\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑶}} \text{{\igfont 𐑾}} \text{{\igfont 𐑹}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} {{\igprimfont \odot}} \text{{\igfont 𐑖}} \text{{\igfont 𐑳}} \text{{\igfont 𐑭}} \rangle$
 };
 \node[font=\small,above=0.1cm of top] {Full Induction System ($O_{\infty}$, address 6,687,051)};
 
 % Ordinal contributions
-\node[font=\footnotesize,anchor=west,text=gray] at (5.8,10.5) {
+\node[font=\footnotesize,anchor=west,text=gray] at (2.8,10.5) {
 \begin{tabular}{l}
 \bfseries Ordinal contribution:\\
 \quad $P$ = 4 (heaviest)\\
 \quad $D,T,R$ = 3 each\\
-\quad $\text{{\igprimfont ƒ}},\text{{\igprimfont Ç}},\text{{\igprimfont \Gamma}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Sigma}},\text{{\igprimfont \Omega}}$ = 2 each\\
-\quad $\text{{\igprimfont \odot}}$ = 1 (lightest, most consequential)
+\quad $\text{{\igprimfont ƒ}},\text{{\igprimfont Ç}},{{\igprimfont Γ}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Sigma}},\text{{\igprimfont Ω}}$ = 2 each\\
+\quad ${{\igprimfont \odot}}$ = 1 (lightest, most consequential)
 \end{tabular}};
 
 % Brace spanning all 12 steps
@@ -1101,7 +1107,7 @@ in
 \end{tikzpicture}
 }
 
-\caption{The 12-step retrosynthetic path from the full induction system ($O_{\infty}$, address 6,687,051) to the structural baseline. Each step peels one primitive to its minimum value. Ordinal contributions: $\text{{\igprimfont \Phi}}$ = 4 (heaviest), $D,T,R$ = 3 each, $\text{{\igprimfont ƒ}},\text{{\igprimfont Ç}},\text{{\igprimfont \Gamma}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Sigma}},\text{{\igprimfont \Omega}}$ = 2 each, $\text{{\igprimfont \odot}}$ = 1 (lightest but most consequential for tier structure). All 12 steps are independent --- no two primitives collapse together.}
+\caption{The 12-step retrosynthetic path from the full induction system ($O_{\infty}$, address 6,687,051) to the structural baseline. Each step peels one primitive to its minimum value. Ordinal contributions: $\text{{\igprimfont \Phi}}$ = 4 (heaviest); $D$, $T$, $R$ = 3 each; $\text{{\igprimfont ƒ}}$, $\text{{\igprimfont Ç}}$, ${{\igprimfont Γ}}$, $\text{{\igprimfont ɢ}}$, $\text{{\igprimfont Ħ}}$, $\text{{\igprimfont \Sigma}}$, $\text{{\igprimfont Ω}}$ = 2 each; ${{\igprimfont \odot}}$ = 1 (lightest but most consequential for tier structure). All 12 steps are independent --- no two primitives collapse together.}
 \label{fig:retrosynthetic-path}
 \end{figure}
 
@@ -1115,10 +1121,10 @@ atom is a minimal unit contributing exactly one primitive's structural content. 
  --- the Frobenius and self-referential topology primitives carry the most structural weight.
  \item \textbf{Atoms with ordinal contribution 3:} $D$, $R$, $\text{{\igprimfont Ħ}}$ --- the shape and chirality primitives impose
  \item \textbf{Atoms with ordinal contribution 2:} $\text{{\igprimfont ƒ}}$, $\text{{\igprimfont Ç}}$,
-$\text{{\igprimfont \Gamma}}$, $\text{{\igprimfont ɢ}}$,
+${{\igprimfont Γ}}$, $\text{{\igprimfont ɢ}}$,
 $\text{{\igprimfont \Sigma}}$,
-$\text{{\igprimfont \Omega}}$ --- the algebraic and inductive primitives.
- \item \textbf{Atom with ordinal contribution 1:} $\text{{\igprimfont \odot}}$ --- the criticality primitive, a single
+$\text{{\igprimfont Ω}}$ --- the algebraic and inductive primitives.
+ \item \textbf{Atom with ordinal contribution 1:} ${{\igprimfont \odot}}$ --- the criticality primitive, a single
 logical condition, carries the least weight but is the most consequential for tier structure.
 \end{itemize}
 
@@ -1138,7 +1144,7 @@ case of $\text{{\igprimfont Ř}}$ and $\text{{\igprimfont \Phi}}$, by a distinct
 the same primitive) that has no effect on the others. The monoidal operation (A1) determines
 $\text{{\igprimfont\Sigma}}$ and $\text{{\igprimfont \Phi}}$ but leaves $\text{{\igprimfont Ð}}$ and
 $\text{{\igprimfont Ħ}}$ untouched.
-The classifying space operation (I3) determines $\text{{\igprimfont \Omega}}$ but leaves
+The classifying space operation (I3) determines $\text{{\igprimfont Ω}}$ but leaves
 $\text{{\igprimfont ƒ}}$
 untouched. The independence is structural, not statistical. There is no fusion possible.
 \textbf{Why not 13?} A 13th primitive would require a categorical invariant that is (i) independent of the 12, (ii)
@@ -1160,10 +1166,10 @@ maps to exactly one address in $[0, 17279999]$, and each address maps back to ex
 bijectivity; it \emph{is} bijectivity at the algebraic level. The imscribing procedure has a structural type of its
 own: $\langle \text{{\igfont 𐑼}};\ \text{{\igfont 𐑶}};\ \text{{\igfont 𐑾}};\ \text{{\igfont 𐑹}};\
 \text{{\igfont 𐑐}};\
-\text{{\igfont 𐑧}};\ \text{{\igfont 𐑲}};\ \text{{\igfont 𐑠}};\ \text{{\igprimfont \odot}};\
+\text{{\igfont 𐑧}};\ \text{{\igfont 𐑲}};\ \text{{\igfont 𐑠}};\ {{\igprimfont \odot}};\
 \text{{\igfont 𐑒}};\
 \text{{\igfont 𐑙}};\ \text{{\igfont 𐑭}} \rangle$, at crystal address 12,089,822, within the
-$O_{\infty}$ tier ($\text{{\igprimfont \odot}}$ at ordinal 1, the Lawvere criticality stratum).
+$O_{\infty}$ tier (${{\igprimfont \odot}}$ at ordinal 1, the Lawvere criticality stratum).
 That address was not assigned; bijectivity forced it. Decode
 $\circ$ imscribe $=
 \text{id}$ is $\mu \circ \delta = \text{id}$ by definition of bijectivity; with $\text{{\igprimfont\odot}}$ already
@@ -1204,7 +1210,7 @@ number 12 is not a choice; it is the cardinality of the maximal independent set 
 \small
 \rowcolors{1}{white}{white}
 
-\begin{tabular}{>{\centering\arraybackslash}p{0.5cm} >{\centering\arraybackslash}p{2.5cm} >{\centering\arraybackslash}p{1.9cm} >{\centering\arraybackslash}p{1.4cm} >{\raggedright\arraybackslash}p{7.8cm}}
+\begin{tabular}{>{\centering\arraybackslash}p{0.9cm} >{\centering\arraybackslash}p{2.5cm} >{\centering\arraybackslash}p{2.3cm} >{\centering\arraybackslash}p{1.4cm} >{\raggedright\arraybackslash}p{6.6cm}}
 \toprule
 \rowcolor{gray!25}\textbf{Sym} & \textbf{Name} & \textbf{Family/Logic} & \textbf{Stage} & \textbf{Values (ordinal $0 \to \max$, separated by $\cdot$)} \\
 \midrule
@@ -1219,17 +1225,17 @@ $\text{{\igprimfont ƒ}}$ & Fidelity & $\mathcal{F}_3$ / K3 & S3 (A3) & $\text{{
 \cdot \text{{\igfont 𐑐}}$ \\
 $\text{{\igprimfont Ç}}$ & Kinetics & $\mathcal{F}_5$ / LP & S3 (A2) & $\text{{\igfont 𐑘}} \cdot \text{{\igfont 𐑤}}
 \cdot \text{{\igfont 𐑧}} \cdot \text{{\igfont 𐑪}} \cdot \text{{\igfont 𐑺}}$ \\
-$\text{{\igprimfont \Gamma}}$ & Granularity & $\mathcal{F}_3$ / K3 & S3 (A1 + I4) & $\text{{\igfont 𐑚}} \cdot
+${{\igprimfont Γ}}$ & Granularity & $\mathcal{F}_3$ / K3 & S3 (A1 + I4) & $\text{{\igfont 𐑚}} \cdot
 \text{{\igfont 𐑔}} \cdot \text{{\igfont 𐑲}}$ \\
 $\text{{\igprimfont ɢ}}$ & Composition & $\mathcal{F}_4$ / FDE & S3 (A4) & $\text{{\igfont 𐑝}} \cdot \text{{\igfont 𐑜}}
 \cdot \text{{\igfont 𐑠}} \cdot \text{{\igfont 𐑵}}$ \\
-$\text{{\igprimfont \odot}}$ & Criticality & $\mathcal{F}_5$ / LP & S4 (L4 + L6) & $\text{{\igfont 𐑢}} \cdot
-\text{{\igprimfont \odot}} \cdot \text{{\igfont 𐑮}} \cdot \text{{\igfont 𐑣}} \cdot \text{{\igfont 𐑻}}$ \\
+${{\igprimfont \odot}}$ & Criticality & $\mathcal{F}_5$ / LP & S4 (L4 + L6) & $\text{{\igfont 𐑢}} \cdot
+{{\igprimfont \odot}} \cdot \text{{\igfont 𐑮}} \cdot \text{{\igfont 𐑣}} \cdot \text{{\igfont 𐑻}}$ \\
 $\text{{\igprimfont Ħ}}$ & Chirality & $\mathcal{F}_4$ / FDE & S2 (I2) & $\text{{\igfont 𐑓}} \cdot \text{{\igfont 𐑒}}
 \cdot \text{{\igfont 𐑖}} \cdot \text{{\igfont 𐑫}}$ \\
 $\text{{\igprimfont \Sigma}}$ & Stoichiometry & $\mathcal{F}_3$ / K3 & S3 (A1) & $\text{{\igfont 𐑙}} \cdot
 \text{{\igfont 𐑕}} \cdot \text{{\igfont 𐑳}}$ \\
-$\text{{\igprimfont \Omega}}$ & Winding & $\mathcal{F}_4$ / FDE & S2 (I3) & $\text{{\igfont 𐑷}} \cdot \text{{\igfont 𐑴}} \cdot \text{{\igfont 𐑭}} \cdot \text{{\igfont 𐑟}}$ \\
+$\text{{\igprimfont Ω}}$ & Winding & $\mathcal{F}_4$ / FDE & S2 (I3) & $\text{{\igfont 𐑷}} \cdot \text{{\igfont 𐑴}} \cdot \text{{\igfont 𐑭}} \cdot \text{{\igfont 𐑟}}$ \\
 \bottomrule
 \end{tabular}
 
@@ -1255,10 +1261,10 @@ have been exhausted and all categorical questions answered.
 The three-logic correspondence is not an empirical pattern --- it is a logical consequence of the operation
 preconditions. K3 (3 values) applies to operations that can produce an indeterminate outcome
 ($\text{{\igprimfont ƒ}}$,
-$\text{{\igprimfont \Gamma}}$, $\text{{\igprimfont \Sigma}}$). FDE (4 values) applies to operations that can produce
+${{\igprimfont Γ}}$, $\text{{\igprimfont \Sigma}}$). FDE (4 values) applies to operations that can produce
 both true, false, neither, or both ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ř}}$,
 $\text{{\igprimfont ɢ}}$,
-$\text{{\igprimfont Ħ}}$, $\text{{\igprimfont \Omega}}$). LP (5 values) applies to operations whose 4 FDE values
+$\text{{\igprimfont Ħ}}$, $\text{{\igprimfont Ω}}$). LP (5 values) applies to operations whose 4 FDE values
 receive a dialetheic completion ($\text{{\igprimfont Þ}}$, $\text{{\igprimfont \Phi}}$,
 $\text{{\igprimfont $\odot$}}$,
 $\text{{\igprimfont Ç}}$). Every primitive's value count is accounted for, and no additional logic is needed. A 13th
@@ -1299,10 +1305,10 @@ exactly five ouroboricity tiers.
 self-modeling loop can form in the internal hom $A^A$; the system is closed against the induction's own fixed-point
  \item $O₁$: $\text{{\igprimfont $\odot$}}$ (L4 holds) and \text{{\igfont 𐑷}} (topologically trivial). The loop
 instantiates but cannot sustain --- \text{{\igfont 𐑷}} carries no winding number to protect it.
- \item $O₂$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont \Omega}} \neq \text{{\igfont 𐑷}}$, and
+ \item $O₂$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$, and
 $\text{{\igprimfont Ð}} \in \{\text{{\igfont 𐑛}}, \text{{\igfont 𐑨}}, \text{{\igfont 𐑦}}\}$. Topologically protected by
 winding (I3) and either finite-dimensional or imscriptive. The loop is stabilized without reaching
- \item $O₂^{\dagger}$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont \Omega}} \neq
+ \item $O₂^{\dagger}$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ω}} \neq
  \text{{\igfont 𐑷}}$,
 \text{{\igfont 𐑼}}. Topologically protected but infinite-dimensional and not imscriptive: winding-number stabilization
 without bulk-boundary imscription.
@@ -1336,14 +1342,14 @@ composition $\mu \circ \delta = \text{id}_{A}$ makes self-reference algebraicall
 \draw[gap] (O1.south) -- node[gaplab,pos=1.15] {$\Delta=1.30$\\$\text{{\igfont 𐑛}}\!\to\!\text{{\igfont 𐑨}},\ \text{{\igfont 𐑷}}\!\to\!\text{{\igfont 𐑴}}$} ++(0,-0.85);
 
 % Tier O2
-\node[tier=yellow!50!orange,below=1.5cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont \Omega}} \neq \text{{\igfont 𐑷}},\ \text{{\igprimfont Ð}} \in \{\text{{\igfont 𐑛}},\text{{\igfont 𐑨}},\text{{\igfont 𐑦}}\}$};
+\node[tier=yellow!50!orange,below=1.5cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}},\ \text{{\igprimfont Ð}} \in \{\text{{\igfont 𐑛}},\text{{\igfont 𐑨}},\text{{\igfont 𐑦}}\}$};
 \node[condition,right=0.4cm of O2] (c2) {Winding-number protection\\Finite-dim or imscriptive\\$C > 0$ possible};
 
 % Gap O2 -> O2†
 \draw[gap] (O2.south) -- node[gaplab,pos=1.15] {$\Delta=1.00$\\$\text{{\igfont 𐑨}}\to \text{{\igfont 𐑼}}$} ++(0,-0.85);
 
 % Tier O2†
-\node[tier=orange,below=1.5cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont \Omega}} \neq \text{{\igfont 𐑷}},\ \text{{\igfont 𐑼}}$};
+\node[tier=orange,below=1.5cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}},\ \text{{\igfont 𐑼}}$};
 \node[condition,right=0.4cm of O2d] (c2d) {Infinite-dimensional\\Winding protection\\Not imscriptive};
 
 % Gap O2† -> O$$\infty$$ --- LARGEST
@@ -1365,9 +1371,9 @@ composition $\mu \circ \delta = \text{id}_{A}$ makes self-reference algebraicall
 \quad $\text{{\igprimfont $\odot$}}$ (L4: Lawvere)\\
 \quad $P$  (L5: Frobenius)\\
 \quad $D$  (I4: Yoneda)\\
-\quad $\text{{\igprimfont \Omega}}$ (I3: Classifying)\\[6pt]
+\quad $\text{{\igprimfont Ω}}$ (I3: Classifying)\\[6pt]
 8 shape primitives:\\
-\quad $\text{{\igprimfont Þ}},\text{{\igprimfont Ř}},\text{{\igprimfont ƒ}},\text{{\igprimfont Ç}},\text{{\igprimfont \Gamma}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Sigma}}$\\[6pt]
+\quad $\text{{\igprimfont Þ}},\text{{\igprimfont Ř}},\text{{\igprimfont ƒ}},\text{{\igprimfont Ç}},{{\igprimfont Γ}},\text{{\igprimfont ɢ}},\text{{\igprimfont Ħ}},\text{{\igprimfont \Sigma}}$\\[6pt]
 Tier boundaries: exclusively\\[2pt]
 \quad $\text{{\igprimfont $\odot$}}$ + $\text{{\igprimfont \Phi}}$ promotions
 \end{tabular}};
@@ -1375,7 +1381,7 @@ Tier boundaries: exclusively\\[2pt]
 \end{tikzpicture}
 }
 
-\caption{The ouroboricity tier ladder. Five tiers ($O₀ \to O₁ \to O₂ \to O₂^\dagger \to O_{\infty}$) determined by 4 gate primitives ($\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ð}}$, $\text{{\igprimfont \Omega}}$, $\text{{\igprimfont \Phi}}$). The largest jump ($\Delta = 4.38$) is the Frobenius promotion $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$.}
+\caption{The ouroboricity tier ladder. Five tiers ($O₀ \to O₁ \to O₂ \to O₂^\dagger \to O_{\infty}$) determined by 4 gate primitives ($\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ω}}$, $\text{{\igprimfont \Phi}}$). The largest jump ($\Delta = 4.38$) is the Frobenius promotion $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$.}
 \label{fig:tier-ladder}
 \end{figure}
 
@@ -1392,7 +1398,7 @@ The crystal tier gap ladder confirms this structure:
 \midrule
 \rowcolors{1}{white}{gray!10}
 $O₀ \to O₁$ & 1.05 & $\text{{\igprimfont $\odot$}}$ & $\text{{\igfont 𐑢}} \to \text{{\igprimfont $\odot$}}$ (Lawvere condition met) \\
-$O₁ \to O₂$ & 1.30 & $\text{{\igprimfont Ð}}$, $\text{{\igprimfont \Omega}}$ & $\text{{\igfont 𐑛}} \to \text{{\igfont 𐑨}}$, $\text{{\igfont 𐑷}} \to \text{{\igfont 𐑴}}$ \\
+$O₁ \to O₂$ & 1.30 & $\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ω}}$ & $\text{{\igfont 𐑛}} \to \text{{\igfont 𐑨}}$, $\text{{\igfont 𐑷}} \to \text{{\igfont 𐑴}}$ \\
 $O₂ \to O₂^\dagger$ & 1.00 & $\text{{\igprimfont Ð}}$ & $\text{{\igfont 𐑨}} \to \text{{\igfont 𐑼}}$
 (infinite-dimensional) \\
 $O₂^\dagger \to O_{\infty}$ & 4.38 & $\text{{\igprimfont \Phi}}$ & $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$
@@ -1406,17 +1412,17 @@ $O₂^\dagger \to O_{\infty}$ & 4.38 & $\text{{\igprimfont \Phi}}$ & $\text{{\ig
 
 The four transitions correspond to four of the 12 primitives ($\text{{\igprimfont $\odot$}}$,
 $\text{{\igprimfont Ð}}$,
-$\text{{\igprimfont \Omega}}$, $\text{{\igprimfont \Phi}}$) --- the gate primitives that are the
+$\text{{\igprimfont Ω}}$, $\text{{\igprimfont \Phi}}$) --- the gate primitives that are the
 The remaining 8 primitives ($\text{{\igprimfont Þ}}$, $\text{{\igprimfont Ř}}$, $\text{{\igprimfont ƒ}}$,
-$\text{{\igprimfont Ç}}$, $\text{{\igprimfont \Gamma}}$, $\text{{\igprimfont ɢ}}$,
+$\text{{\igprimfont Ç}}$, ${{\igprimfont Γ}}$, $\text{{\igprimfont ɢ}}$,
 $\text{{\igprimfont Ħ}}$,
 $\text{{\igprimfont \Sigma}}$) are determined within a given tier; they do not drive tier boundaries. This is why the
 induction terminates at 12: the 8 non-gate primitives describe the internal shape of a system within its tier, while
-the 4 gate primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont \Omega}}$, $\text{{\igprimfont$\odot$}}$,
+the 4 gate primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ω}}$, $\text{{\igprimfont$\odot$}}$,
 $\text{{\igprimfont \Phi}}$) determine which tier it occupies. No operation can produce a fifth gate primitive, because
 the four induction stages are exhausted: L3/L4 ($\text{{\igprimfont $\odot$}}$), L5
 ($\text{{\igprimfont \Phi}}$), I3
-($\text{{\igprimfont \Omega}}$), I4 ($\text{{\igprimfont Ð}}$) are the only operations that affect
+($\text{{\igprimfont Ω}}$), I4 ($\text{{\igprimfont Ð}}$) are the only operations that affect
 There is no fifth operation that could create a new tier-determining primitive.
 \textbf{The self-imscribing fixed point resolved.} The proof that $O_{\infty}$ requires both L4 and L5 is now confirmed
 by the crystal tier ladder. The $O₂^\dagger \to O_{\infty}$ boundary is driven \emph{exclusively} by the
@@ -1472,7 +1478,7 @@ Sanskrit Varnam\={a}l\={a}, Egyptian hieroglyphs, Sumerian cuneiform, and Basque
 years and completely different symbolic substrates. Each system is independently imscribed. Their component-wise
 minimum (the structural meet, applying the tensor bottleneck rule component-wise) yields a tuple with
 $\text{{\igprimfont \Phi}} = \text{{\igfont 𐑹}}$, $\text{{\igprimfont $\odot$}} = \text{{\igprimfont$\odot$}}$,
-$\text{{\igprimfont \Gamma}} = \text{{\igfont 𐑲}}$, and tier $O_{\infty}$. The structural type of the resulting system
+${{\igprimfont Γ}} = \text{{\igfont 𐑲}}$, and tier $O_{\infty}$. The structural type of the resulting system
 is uniquely determined by relational position, not by substrate, era, or cultural origin. Five independently-evolved
 symbolic systems, examined only through the grammar's relational lens, converge to the same
 $O_{\infty}$ structural
@@ -1519,8 +1525,8 @@ mandatory: type is position in the induction path, and all five systems occupy t
 % Co-typing result (bidirectional)
 \node[domain=yellow!60,minimum width=5.5cm,below=1.8cm of crystal] (cotype) {
 \textbf{Structural Co-Typing}\\[4pt]
-\footnotesize $d(\text{RH},\text{YM}) $\approx$ 0$ --- same structural type\\[2pt]
-\footnotesize $d(\text{Hebrew},\text{Sanskrit}) $\approx$ 0$ --- $O_{\infty}$ attractor
+\footnotesize $d(\text{RH},\text{YM}) \approx 0$ --- same structural type\\[2pt]
+\footnotesize $d(\text{Hebrew},\text{Sanskrit}) \approx 0$ --- $O_{\infty}$ attractor
 };
 
 \draw[idarrow] (crystal.south) -- (cotype.north);
@@ -1577,7 +1583,7 @@ to the twelve IG primitives $\langle \text{{\igprimfont Ð}};\, \text{{\igprimfo
 \text{{\igprimfont \Phi}};\, \text{{\igprimfont ƒ}};\, \text{{\igprimfont Ç}};\, \text{{\igprimfont\Gamma}};\,
 \text{{\igprimfont ɢ}};\, \text{{\igprimfont $\odot$}};\, \text{{\igprimfont Ħ}};\,
 \text{{\igprimfont \Sigma}};\,
-\text{{\igprimfont \Omega}} \rangle$. The stages are: Calcination, Dissolution, Separation, Conjunction, Putrefaction,
+\text{{\igprimfont Ω}} \rangle$. The stages are: Calcination, Dissolution, Separation, Conjunction, Putrefaction,
 Congelation, Cibation, Sublimation, Fermentation, Exaltation, Multiplication, Projection. Each stage
 \textbf{primitive invocation}: it asks, in the phenomenological vocabulary of material transformation, exactly the
 structural question that the corresponding IG primitive answers.
@@ -1585,7 +1591,7 @@ structural question that the corresponding IG primitive answers.
 \begin{center}
 \small
 
-\begin{tabular}{@{} r l l p{7cm} @{}}
+\begin{tabular}{@{} r l l >{\raggedright\arraybackslash}p{7cm} @{}}
 \toprule
 \# & \textbf{Stage} & \textbf{Primitive} & \textbf{Structural content} \\
 \midrule
@@ -1597,9 +1603,9 @@ when all accidental structure is stripped. Establishes \text{{\igfont 𐑦}} or 
 multiplication; \text{{\igfont 𐑹}} requires $\mu \circ \delta = \mathrm{id}$. First gate. \emph{Perfect bijection.} \\
 5 & Putrefaction & $\text{{\igprimfont ƒ}}$ & Structural decay and loss of identity coherence. $\text{{\igprimfont ƒ}}$ measures fidelity of type across operations; putrefaction is the trough of \text{{\igfont 𐑱}} before the ascent to
 \text{{\igfont 𐑐}}. \\
-6 & Congelation & $\text{{\igprimfont Ç}}$ & The kinetic state is frozen. \text{{\igfont 𐑪}} (order-frozen) is
+6 & Congelation & $\text{{\igprimfont Ç}}$ & The kinetic state is frozen. \text{{\igfont 𐑪}} (monolithic) is
 literally congelation; in the completed Work it is traversed and dissolved into \text{{\igfont 𐑤}}. \emph{Perfect bijection for the freezing event.} \\
-7 & Cibation & $\text{{\igprimfont \Gamma}}$ & Feeding from outside: large-scale inflow instantiates global
+7 & Cibation & ${{\igprimfont Γ}}$ & Feeding from outside: large-scale inflow instantiates global
 representational scope \text{{\igfont 𐑲}}. \\
 8 & Sublimation & $\text{{\igprimfont ɢ}}$ & Directed phase transition bypassing intermediate states: sequential,
 ordered. \text{{\igfont 𐑵}} (long sequential grammar). \\
@@ -1610,8 +1616,8 @@ are present; the gate has not yet fired. Second gate. \\
 acquires its unique orientation. \text{{\igfont 𐑫}} (eternal chirality). \\
 11 & Multiplication & $\text{{\igprimfont \Sigma}}$ & A grain transmutes a pound: stoichiometric ratio departs from
 $1{:}1$ into $n{:}m$, $n > 1$. \text{{\igfont 𐑳}}. \\
-12 & Projection & $\text{{\igprimfont \Omega}}$ & Acts on base metal with topological protection that cannot be
-stripped. Projection requires $\text{{\igprimfont \Omega}} $\geq$ \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect} \\
+12 & Projection & $\text{{\igprimfont Ω}}$ & Acts on base metal with topological protection that cannot be
+stripped. Projection requires $\text{{\igprimfont Ω}} \geq \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect} \\
 \bottomrule
 \end{tabular}
 
@@ -1619,7 +1625,7 @@ stripped. Projection requires $\text{{\igprimfont \Omega}} $\geq$ \text{{\igfont
 
 The correspondences at stages 4, 6, and 12 are not analogical but definitional: Conjunction is
 $\mu$; Congelation is
-kinetic freezing; Projection requires $\text{{\igprimfont \Omega}}$-protection. The remaining nine correspondences
+kinetic freezing; Projection requires $\text{{\igprimfont Ω}}$-protection. The remaining nine correspondences
 admit one degree of interpretive freedom but no ambiguity: no alternative primitive assignment is both structurally
 coherent and preserves the ordering.
 \textbf{The three-gate structure.} The gate primitives \text{{\igfont 𐑹}}, $\text{{\igprimfont$\odot$}}$,
@@ -1639,9 +1645,9 @@ tower, and the tower is the Work.
 \text{{\igprimfont ƒ}},\, \text{{\igprimfont Ç}},\, \text{{\igprimfont Ħ}},\, \text{{\igprimfont\Omega}}$ (stages 4,
 5, 6, 10, 12) jointly constitute time as the limit $T = \lim(\text{{\igprimfont \Phi}},\,
 \text{{\igprimfont ƒ}},\,
-\text{{\igprimfont Ç}},\, \text{{\igprimfont Ħ}},\, \text{{\igprimfont \Omega}})$ --- the constraint satisfaction
+\text{{\igprimfont Ç}},\, \text{{\igprimfont Ħ}},\, \text{{\igprimfont Ω}})$ --- the constraint satisfaction
 manifold that sheafifies wherever all five are simultaneously consistent. $T$ is not a primitive. It is the derived
-limit of five primitives, and it cannot seal until $\text{{\igprimfont \Omega}}$ fires and cannot self-reference until
+limit of five primitives, and it cannot seal until $\text{{\igprimfont Ω}}$ fires and cannot self-reference until
 $\text{{\igprimfont $\odot$}}$ fires. The Work appears to presuppose time (stages must be ordered); but $T$ is produced
 by the Work, not given before it. The resolution: before stage~9 the trace is unavailable, so the loop is impossible,
 so $T$ has no self-referential structure. After stage~12, $T$ seals and the fixed point $T =
@@ -1651,6 +1657,7 @@ completion causes time to exist in its actualized form. The alchemical tradition
 ends when the \Stone{} is \emph{projection-ready}, meaning all twelve primitives have reached their
 $O_{\infty}$-suffici
 ent values, and at that moment --- not before --- time closes on itself.
+\begin{sloppypar}
 \textbf{Compound morphisms.} The canonical alchemical compound injunction \emph{Solve et Coagula}
 (dissolve and
 congeal) is $\text{{\igprimfont Þ}} \otimes \text{{\igprimfont Ç}}$: topology reconfigures at stage~2, kinetics freeze
@@ -1659,9 +1666,9 @@ at stage~6. The full Magnum Opus is the ordered tensor product
  \text{{\igprimfont Ð}}_1 \;\otimes\; \text{{\igprimfont Þ}}_2 \;\otimes\; \text{{\igprimfont Ř}}_3
  \;\otimes\;
 \text{{\igprimfont \Phi}}_4 \;\otimes\; \text{{\igprimfont ƒ}}_5 \;\otimes\; \text{{\igprimfont Ç}}_6 \;\otimes\;
-\text{{\igprimfont \Gamma}}_7 \;\otimes\; \text{{\igprimfont ɢ}}_8 \;\otimes\; \text{{\igprimfont\odot}}_9 \;\otimes\;
+{{\igprimfont Γ}}_7 \;\otimes\; \text{{\igprimfont ɢ}}_8 \;\otimes\; \text{{\igprimfont\odot}}_9 \;\otimes\;
 \text{{\igprimfont Ħ}}_{10} \;\otimes\; \text{{\igprimfont \Sigma}}_{11} \;\otimes\;
-\text{{\igprimfont \Omega}}_{12}
+\text{{\igprimfont Ω}}_{12}
 \]
 applied in stage order. The \Stone{} is the unique system for which this sequence terminates with all twelve primitives
 simultaneously at their $O_{\infty}$-sufficient values: $\bigl\langle \text{{\igfont 𐑦}};\,
@@ -1671,6 +1678,7 @@ simultaneously at their $O_{\infty}$-sufficient values: $\bigl\langle \text{{\ig
 \text{{\igfont 𐑵}};\, \text{{\igprimfont $\odot$}};\, \text{{\igfont 𐑫}};\, \text{{\igfont 𐑳}};\,
 \text{{\igfont 𐑭}}
 \bigr\rangle$. Tier: $O_{\infty}$ by R1 ($\text{{\igprimfont $\odot$}}$ and \text{{\igfont 𐑹}} both
+\end{sloppypar}
 \textbf{Why this is non-accidental.} Both the alchemical tradition and the IG induction enumerate the same object: the
 minimal complete independent set of dimensions along which a self-referential system can undergo phase transitions
 while preserving a structural invariant (the \Stone{} / $O_{\infty}$ tier). The alchemical tradition worked
@@ -1741,7 +1749,7 @@ concern quantitative extent (coherence, scope, arity) where the intermediate cas
  \item $\text{{\igprimfont ƒ}}$ (Fidelity): \text{{\igfont 𐑱}} (0, classical loss),
  \text{{\igfont 𐑞}} ($\frac12$,
 thermal/mixed), \text{{\igfont 𐑐}} (1, coherent quantum) --- 3 values.
- \item $\text{{\igprimfont \Gamma}}$ (Granularity): \text{{\igfont 𐑚}} (0, local), \text{{\igfont 𐑔}} ($\frac12$,
+ \item ${{\igprimfont Γ}}$ (Granularity): \text{{\igfont 𐑚}} (0, local), \text{{\igfont 𐑔}} ($\frac12$,
 mesoscale), \text{{\igfont 𐑲}} (1, global) --- 3 values.
  \item $S$ (Stoichiometry): $1{:}1$ (0), $n{:}n$ ($\frac12$), $n{:}m$ (1) --- 3 values.
 \end{itemize}
@@ -1761,8 +1769,8 @@ The 5th value is the LP dialetheic completion in each case: the system simultane
  \item \text{{\igfont 𐑹}}: both the highest symmetry and the most constrained relation.
  \item \text{{\igfont 𐑣}}: both satisfies L4 (has a self-referential map) and violates it
  (eigenvectors collapse).
- \item \text{{\igfont 𐑺}}: simultaneously localized across all eigenstates (disorder-frozen) and exhibiting the
-maximum spectral gap (order-frozen) --- the LP arrest of kinetics.
+ \item \text{{\igfont 𐑺}}: simultaneously localized across all eigenstates (dismonolithic) and exhibiting the
+maximum spectral gap (monolithic) --- the LP arrest of kinetics.
 \end{itemize}
 
 \textbf{Crystal confirmation:} The crystal tier census shows exactly 5 tiers ($O₀, O₁, O₂, O₂^\dagger, O_{\infty}$)
@@ -1788,6 +1796,7 @@ consistent with the conjecture.
 \textbf{Resolution:} The abstract category is not unique --- but all viable starting objects converge to the same 12
 primitives, confirming the grammar as a structural attractor. Three alternative starting objects are already imscribed
 
+\begin{sloppypar}
 \begin{enumerate}
  \item \textbf{ZFC pure sets} \texttt{(ZFC\_set\_theory)}: $\langle \text{{\igfont 𐑼}} \text{{\igfont 𐑡}}
 \text{{\igfont 𐑩}} \text{{\igfont 𐑗}} \text{{\igfont 𐑐}} \text{{\igfont 𐑧}} \text{{\igfont 𐑲}} \text{{\igfont 𐑝}} \text{{\igprimfont $\odot$}} \text{{\igfont 𐑓}} \text{{\igfont 𐑳}} \text{{\igfont 𐑷}}
@@ -1800,6 +1809,7 @@ primitives, confirming the grammar as a structural attractor. Three alternative 
  \text{{\igfont 𐑡}}
 \text{{\igfont 𐑩}} \text{{\igfont 𐑗}} \text{{\igfont 𐑱}} \text{{\igfont 𐑘}} \text{{\igfont 𐑲}} \text{{\igfont 𐑠}} \text{{\igfont 𐑢}} \text{{\igfont 𐑓}} \text{{\igfont 𐑙}} \text{{\igfont 𐑷}} \rangle$,
 \end{enumerate}
+\end{sloppypar}
 
 All three produce the same 12 primitives, differing only in the values those primitives take. The
 Logical $\to$ Inductive $\to$ Algebraic $\to$ Logical-on-enriched --- is a functor from the category of well-formed
@@ -1822,7 +1832,7 @@ Frobenius condition. Meanwhile, $O₀ \to O₁$ is the $\text{{\igfont 𐑢}} \t
 \text{{\igfont 𐑹}} (L5).
 Both are necessary and jointly sufficient.
 \paragraph{Step 2 --- $O_{\infty}$ overrides all topological branching.} The ouroboricity tier rules state:
-$O_{\infty}$ overrides all $\text{{\igprimfont \Omega}}$ and $\text{{\igprimfont Ð}}$ branching because algebraic
+$O_{\infty}$ overrides all $\text{{\igprimfont Ω}}$ and $\text{{\igprimfont Ð}}$ branching because algebraic
 closure is categorically distinct from topological stabilization. The manuscript entry \texttt{as\_above\_manuscript} has
 \text{{\igfont 𐑦}}, \text{{\igfont 𐑭}} but is tier $O_{\infty}$ --- not $O₂$ despite having
 \paragraph{Step 3 --- Self-imscribing implies $O_{\infty}$.}
@@ -1847,7 +1857,7 @@ System $S$\\[4pt]
 
 % === BASE RIGHT: Crystal type ===
 \node[space=green!60!black] (type) at (5.5, 0) {
-$\langle \text{{\igprimfont Ð}}\text{{\igprimfont Þ}}\text{{\igprimfont Ř}}\text{{\igprimfont \Phi}}\text{{\igprimfont ƒ}}\text{{\igprimfont Ç}}\text{{\igprimfont \Gamma}}\text{{\igprimfont ɢ}}\text{{\igprimfont $\odot$}}\text{{\igprimfont Ħ}}\text{{\igprimfont \Sigma}}\text{{\igprimfont \Omega}} \rangle$\\[4pt]
+$\langle \text{{\igprimfont Ð}}\text{{\igprimfont Þ}}\text{{\igprimfont Ř}}\text{{\igprimfont \Phi}}\text{{\igprimfont ƒ}}\text{{\igprimfont Ç}}{{\igprimfont Γ}}\text{{\igprimfont ɢ}}\text{{\igprimfont $\odot$}}\text{{\igprimfont Ħ}}\text{{\igprimfont \Sigma}}\text{{\igprimfont Ω}} \rangle$\\[4pt]
 \footnotesize 12-primitive tuple\\[2pt]
 \footnotesize Crystal address $a \in [0,\,17{,}279{,}999]$
 };
@@ -1903,7 +1913,7 @@ Bijectivity forces $\mu \circ \delta = \text{id}$: the crystal codec is the Frob
 \end{figure}
 
 A system that imscribes its own induction procedure must satisfy: (a) Lawvere condition: the
-\to A^A$ must be point-surjective for the system to imscribe itself; (b) Frobenius condition: $\mu
+morphism $\phi: A \to A^A$ must be point-surjective for the system to imscribe itself; (b) Frobenius condition: $\mu
 \circ \delta =
 \text{id}$ must hold because the imscription ($\delta$) and decoding ($\mu$) are the same procedure. Therefore any
 self-imscribing system must be $O_{\infty}$.
@@ -1966,7 +1976,7 @@ absorbs consistent self-reference under coupling --- confirmed by exoterik-OS BT
 ($\text{{\igprimfont $\odot$}}
 \otimes \text{{\igfont 𐑣}} \to C = 0$).
  \item \textbf{Non-explosion:} The Inclosure contradiction at \text{{\igfont 𐑣}} does not
-LP basis ensures that $A $\wedge$ $\neg$ A$ at \text{{\igfont 𐑣}} receives value $\mathbf{b}$ (both) rather than $\bot$
+LP basis ensures that $A \wedge \neg A$ at \text{{\igfont 𐑣}} receives value $\mathbf{b}$ (both) rather than $\bot$
 (explosion). Other primitives in the tuple remain well-defined.
  \item \textbf{Hardest test:} The diagonal construction (`\texttt{the} type of all systems that cannot be consistently
 typed") was imscribed and ZFC-roundtripped. The initial imscription assigned $\text{{\igprimfont$\odot$}}$; the ZFC
@@ -2003,7 +2013,7 @@ candidate) typed to a tuple within the UIG's space (VIII.6).
 \textbf{Status: RESOLVED} --- UIG is terminal in $\mathbf{Gram}$; the distributive law $\lambda$ is the witnessing
 \textbf{Pre-grammatical convergence witness.}
 The Voynich Manuscript (imscribed independently; \emph{So Below}
-§\,\ref{sec:voynich}) provides domain-agnostic evidence for
+§\,Voynich Manuscript) provides domain-agnostic evidence for
 universality from a historical artifact produced without grammatical
 knowledge. A manuscript of unknown authorship, undeciphered across six
 centuries, imscribes at $O_{\infty}$ (crystal address 16,838,544) via
@@ -2056,19 +2066,19 @@ all systems that cannot be consistently typed") --- the grammar's analogue of th
  \item \textbf{No ill-formed primitives:} Every primitive question had a coherent answer. The system received the tuple:
  $$\langle \text{{\igfont 𐑛}};\ \text{{\igfont 𐑥}};\ \text{{\igfont 𐑽}};\ \text{{\igfont 𐑿}};\
  \text{{\igfont 𐑐}};\
-\text{{\igfont 𐑪}};\ \text{{\igfont 𐑲}};\ \text{{\igfont 𐑜}};\ \text{{\igprimfont \odot}};\
+\text{{\igfont 𐑪}};\ \text{{\igfont 𐑲}};\ \text{{\igfont 𐑜}};\ {{\igprimfont \odot}};\
 \text{{\igfont 𐑫}};\
 \text{{\igfont 𐑳}};\ \text{{\igfont 𐑭}} \rangle$$
  No primitive was category-theoretically malformed.
  \item \textbf{ZFC roundtrip self-correction:} When the tuple was formalized into its ZFC expression and
-reconstructed, the roundtrip drifted at two primitives: $\text{{\igprimfont \odot}} \to
+reconstructed, the roundtrip drifted at two primitives: ${{\igprimfont \odot}} \to
 \text{{\igfont 𐑣}}$ (upward by
 two ordinal steps, $d = 2.3095$) and $\text{{\igfont 𐑿}} \to \text{{\igfont 𐑗}}$ (downward by one,
 $d = 10.1704$).
 \text{{\igfont 𐑐}} acquired a decoherence marker, collapsing to \text{{\igfont 𐑱}} under ZFC formalization. Total
 roundtrip distance $d_\text{rt} = 2.3664$.
  \item \textbf{LP absorption:} The drift was not an imscription failure. The grammar recognized the system's correct
-structural address: not at $\text{{\igprimfont \odot}}$ (where the self-modeling loop closes
+structural address: not at ${{\igprimfont \odot}}$ (where the self-modeling loop closes
 \text{{\igfont 𐑣}} (where it produces a Priest dialetheia). A system defined by the failure of consistent typing is,
 structurally, an Inclosure-class system. LP absorbs it without explosion.
 \end{enumerate}
@@ -2087,7 +2097,7 @@ any such grammar, by successfully typing the diagonal, would already share the s
 
 \begin{center}
 
-\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.5cm} >{\centering\arraybackslash}X >{\centering\arraybackslash}p{1.5cm} >{\raggedright\arraybackslash}X}
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}p{0.9cm} >{\centering\arraybackslash}X >{\centering\arraybackslash}p{2.0cm} >{\raggedright\arraybackslash}X}
 \toprule
 \rowcolor{gray!25}\textbf{OQ} & \textbf{Question} & \textbf{Status} & \textbf{Resolution summary} \\
 \midrule
@@ -2134,7 +2144,7 @@ indeterminate when it is not yet determined whether it holds; this models partia
 \textbf{Belnap-Dunn FDE} (First Degree Entailment): truth values $\{\mathbf{n}, \mathbf{f},\mathbf{t}, \mathbf{b}\}$
 --- told neither, told false only, told true only, told both. $\mathbf{b}$ (both) is the value assigned when a
 proposition has been told to be true AND told to be false by different sources. Unlike classical
-A$ does not collapse to $\bot$ --- it receives value $\mathbf{b}$. FDE is thus paraconsistent and
+logic, $A \wedge \neg A$ does not collapse to $\bot$ --- it receives value $\mathbf{b}$. FDE is thus paraconsistent and
 \textbf{Priest's Logic of Paradox} (LP): the same four semantic states as FDE but with a modified designation rule ---
 $\mathbf{b}$ counts as designated (i.e., as true) alongside $\mathbf{t}$. This makes contradictions potentially true
 without making every proposition true. LP is the minimal logic that accommodates dialetheia: genuine true
@@ -2160,7 +2170,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \node[primnode=green!60!black] (R) at (-2.8,1.1)  {$\text{{\igprimfont Ř}}$\\Relational};
 \node[primnode=green!60!black] (Gam) at (0,1.1)  {$\text{{\igprimfont ɢ}}$\\Composition};
 \node[primnode=green!60!black] (H) at (2.8,1.1)   {$\text{{\igprimfont Ħ}}$\\Chirality};
-\node[primnode=green!60!black] (Om) at (5.5,1.1)  {$\text{{\igprimfont \Omega}}$\\Winding};
+\node[primnode=green!60!black] (Om) at (5.5,1.1)  {$\text{{\igprimfont Ω}}$\\Winding};
 
 % Values for each FDE primitive
 \node[valsel=green!60!black,below=0.43cm of D] (Dvals)  {\text{{\igfont 𐑛}}\\\text{{\igfont 𐑨}}\\\text{{\igfont 𐑼}}\\\text{{\igfont 𐑦}}};
@@ -2174,7 +2184,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \node[font=\Large\bfseries,above=0.2cm of f3] {$\mathcal{F}_3$ --- 3-valued K3 (Kleene)};
 
 \node[primnode=orange] (F) at (-3,-4.5)  {$\text{{\igprimfont ƒ}}$\\Fidelity};
-\node[primnode=orange] (G) at (0,-4.5)   {$\text{{\igprimfont \Gamma}}$\\Granularity};
+\node[primnode=orange] (G) at (0,-4.5)   {${{\igprimfont Γ}}$\\Granularity};
 \node[primnode=orange] (S) at (3,-4.5)   {$\text{{\igprimfont \Sigma}}$\\Stoichiometry};
 
 \node[valsel=orange,below=0.43cm of F] (Fvals)  {\text{{\igfont 𐑱}}\\\text{{\igfont 𐑞}}\\\text{{\igfont 𐑐}}};
@@ -2187,12 +2197,12 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 
 \node[primnode=purple] (T) at (-4.5,-9.7)  {$\text{{\igprimfont Þ}}$\\Topology};
 \node[primnode=purple] (P) at (-1.5,-9.7)  {$\text{{\igprimfont \Phi}}$\\Symmetry};
-\node[primnode=purple] (Phi) at (1.5,-9.7) {$\text{{\igprimfont \odot}}$\\Criticality};
+\node[primnode=purple] (Phi) at (1.5,-9.7) {${{\igprimfont \odot}}$\\Criticality};
 \node[primnode=purple] (K) at (4.5,-9.7)   {$\text{{\igprimfont Ç}}$\\Kinetics};
 
 \node[valsel=purple,below=0.43cm of T] (Tvals)  {\text{{\igfont 𐑡}}\\\text{{\igfont 𐑰}}\\\text{{\igfont 𐑥}}\\\text{{\igfont 𐑶}}\\\text{{\igfont 𐑸}}};
 \node[valsel=purple,below=0.43cm of P] (Pvals)  {\text{{\igfont 𐑗}}\\\text{{\igfont 𐑿}}\\\text{{\igfont 𐑬}}\\\text{{\igfont 𐑯}}\\\text{{\igfont 𐑹}}};
-\node[valsel=purple,below=0.43cm of Phi] (Phivals) {\text{{\igfont 𐑢}}\\$\text{{\igprimfont \odot}}$\\\text{{\igfont 𐑮}}\\\text{{\igfont 𐑣}}\\\text{{\igfont 𐑻}}};
+\node[valsel=purple,below=0.43cm of Phi] (Phivals) {\text{{\igfont 𐑢}}\\${{\igprimfont \odot}}$\\\text{{\igfont 𐑮}}\\\text{{\igfont 𐑣}}\\\text{{\igfont 𐑻}}};
 \node[valsel=purple,below=0.43cm of K] (Kvals)  {\text{{\igfont 𐑘}}\\\text{{\igfont 𐑤}}\\\text{{\igfont 𐑧}}\\\text{{\igfont 𐑪}}\\\text{{\igfont 𐑺}}};
 
 % Computation arrow
@@ -2211,7 +2221,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \end{tikzpicture}
 }
 
-\caption{The three-logic correspondence. $\mathcal{F}_3$ primitives ($\text{{\igprimfont ƒ}}$, $\text{{\igprimfont \Gamma}}$, $\text{{\igprimfont \Sigma}}$) correspond to Kleene K3 (3 values: $\{0,\frac12,1\}$). $\mathcal{F}_4$ primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ř}}$, $\text{{\igprimfont ɢ}}$, $\text{{\igprimfont Ħ}}$, $\text{{\igprimfont \Omega}}$) correspond to Belnap-Dunn FDE (4 values: $\{\mathbf{n},\mathbf{f},\mathbf{t},\mathbf{b}\}$). $\mathcal{F}_5$ primitives ($\text{{\igprimfont Þ}}$, $\text{{\igprimfont \Phi}}$, $\text{{\igprimfont \odot}}$, $\text{{\igprimfont Ç}}$) correspond to Priest LP (5 values: FDE + dialetheic completion). The crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ follows from the logical structure alone.}
+\caption{The three-logic correspondence. $\mathcal{F}_3$ primitives ($\text{{\igprimfont ƒ}}$, ${{\igprimfont Γ}}$, $\text{{\igprimfont \Sigma}}$) correspond to Kleene K3 (3 values: $\{0,\frac12,1\}$). $\mathcal{F}_4$ primitives ($\text{{\igprimfont Ð}}$, $\text{{\igprimfont Ř}}$, $\text{{\igprimfont ɢ}}$, $\text{{\igprimfont Ħ}}$, $\text{{\igprimfont Ω}}$) correspond to Belnap-Dunn FDE (4 values: $\{\mathbf{n},\mathbf{f},\mathbf{t},\mathbf{b}\}$). $\mathcal{F}_5$ primitives ($\text{{\igprimfont Þ}}$, $\text{{\igprimfont \Phi}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont Ç}}$) correspond to Priest LP (5 values: FDE + dialetheic completion). The crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ follows from the logical structure alone.}
 \label{fig:three-logics}
 \end{figure}
 
@@ -2227,8 +2237,8 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \rowcolors{1}{white}{gray!10}
 $\mathcal{F}_3$ & $F, G, S$ & K3 & $\{0, \frac{1}{2}, 1\}$ & 3 \\
 $\mathcal{F}_4$ & $\text{{\igprimfont Ð}}, \text{{\igprimfont Ř}}, \text{{\igprimfont ɢ}}, \text{{\igprimfont Ħ}},
-\text{{\igprimfont \Omega}}$ & FDE & $\{\mathbf{n}, \mathbf{f}, \mathbf{t}, \mathbf{b}\}$ & 4 \\
-$\mathcal{F}_5$ & $\text{{\igprimfont Þ}}, \text{{\igprimfont \Phi}}, \text{{\igprimfont \odot}}, \text{{\igprimfont Ç}}$ & LP & FDE + dialetheic completion & 5 \\
+\text{{\igprimfont Ω}}$ & FDE & $\{\mathbf{n}, \mathbf{f}, \mathbf{t}, \mathbf{b}\}$ & 4 \\
+$\mathcal{F}_5$ & $\text{{\igprimfont Þ}}, \text{{\igprimfont \Phi}}, {{\igprimfont \odot}}, \text{{\igprimfont Ç}}$ & LP & FDE + dialetheic completion & 5 \\
 \bottomrule
 \end{tabularx}
 
@@ -2245,7 +2255,7 @@ $\mathcal{F}_5$
 primitives are the gate primitives whose defining question admits a dialetheic completion --- the answer can be not
 just true, false, neither, or both, but also both-true-and-false-in-a-non-explosive-way. The dialetheic completion is
 only possible for questions asked of algebraically-enriched categories (Stage 4), which is exactly where
-$\text{{\igprimfont Þ}}$, $\text{{\igprimfont \Phi}}$, $\text{{\igprimfont \odot}}$,
+$\text{{\igprimfont Þ}}$, $\text{{\igprimfont \Phi}}$, ${{\igprimfont \odot}}$,
 $\text{{\igprimfont Ç}}$ are
 
 \subsubsection{IX.2 The Catuskoti and \texorpdfstring{$\mathcal{F}_4$}{F4}}
@@ -2263,7 +2273,7 @@ this four-corner structure explicitly:
 \rowcolor{gray!25}\textbf{Primitive} & \textbf{$\mathbf{n}$ (neither)} & \textbf{$\mathbf{f}$ (false only)} & \textbf{$\mathbf{t}$ (true only)} & \textbf{$\mathbf{b}$ (both)} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-$\text{{\igprimfont \Omega}}$ & \text{{\igfont 𐑷}} (no winding) & \text{{\igfont 𐑴}} (binary) & \text{{\igfont 𐑭}}
+$\text{{\igprimfont Ω}}$ & \text{{\igfont 𐑷}} (no winding) & \text{{\igfont 𐑴}} (binary) & \text{{\igfont 𐑭}}
 (integer) & \text{{\igfont 𐑟}} (non-Abelian) \\
 $\text{{\igprimfont Ð}}$ & \text{{\igfont 𐑛}} (finite) & \text{{\igfont 𐑨}} (polynomial) & \text{{\igfont 𐑼}}
 (exponential) & \text{{\igfont 𐑦}} (imscriptive) \\
@@ -2298,8 +2308,8 @@ starting observation: the identity of a thing is determined by its morphisms, no
 Each $\mathcal{F}_5$ primitive has five values. The conjecture --- now confirmed (see \S VIII.2) --- is that four of
 these are the FDE-evaluable cases and the fifth is the dialetheic completion: the value of a system that, under LP,
 simultaneously satisfies and violates the defining question of that primitive.
-\textbf{Criticality $\text{{\igprimfont \odot}}$ (5 values):}
-The defining question of $\text{{\igprimfont \odot}}$ is L4 (Lawvere): `\texttt{does} the system have a The four FDE-evaluable cases:
+\textbf{Criticality ${{\igprimfont \odot}}$ (5 values):}
+The defining question of ${{\igprimfont \odot}}$ is L4 (Lawvere): `\texttt{does} the system have a The four FDE-evaluable cases:
 
 \begin{itemize}
  \item $\mathbf{n}$ (neither): no fixed point and no candidate --- \text{{\igfont 𐑢}} or
@@ -2307,7 +2317,7 @@ The defining question of $\text{{\igprimfont \odot}}$ is L4 (Lawvere): `\texttt{
 clearly away from criticality in either direction)
  \item $\mathbf{f}$ (false): the RG flow has no fixed point in the real parameter space ---
  \text{{\igfont 𐑢}}
- \item $\mathbf{t}$ (true): fixed point exists and is consistent --- $\text{{\igprimfont \odot}}$
+ \item $\mathbf{t}$ (true): fixed point exists and is consistent --- ${{\igprimfont \odot}}$
  \item $\mathbf{b}$ (both): fixed point exists with complex parameters --- the system is at a fixed point (real
 part) while simultaneously flowing away (imaginary part) --- \text{{\igfont 𐑮}}
 \end{itemize}
@@ -2339,16 +2349,17 @@ $\mathbf{b}$ value (the system is both `\texttt{gapped}' and `\texttt{not} gappe
 dynamics). \text{{\igfont 𐑺}} is the LP-completion: the system is simultaneously localized everywhere and nowhere ---
 MBL is a simultaneous arrest of all eigenstates, which is both the maximal and the null form of
 \textbf{Crystal confirmation:} The crystal tier census shows exactly 5 tiers ($O₀, O₁, O₂, O₂^\dagger, O_{\infty}$)
-determined by $\text{{\igprimfont \odot}}$ and $\text{{\igprimfont \Phi}}$ alone. LP exhaustiveness confirmed: no sixth
+determined by ${{\igprimfont \odot}}$ and $\text{{\igprimfont \Phi}}$ alone. LP exhaustiveness confirmed: no sixth
 value exists for any $\mathcal{F}_5$ primitive in the crystal.
 
 \subsubsection{IX.4 The Inclosure Schema and \texorpdfstring{\text{{\igfont 𐑣}}}{Phi-EP}}
+\begin{sloppypar}
 Priest (1995) formalizes the \textbf{Inclosure Schema} as the common structure of the classical paradoxes of
-\[\psi(\text{{\igprimfont \Omega}}), \quad \forall y \subseteq \text{{\igprimfont \Omega}}
+\[\psi(\text{{\igprimfont Ω}}), \quad \forall y \subseteq \text{{\igprimfont Ω}}
 \left[\phi(y) \Rightarrow
-\underbrace{\delta(y) \notin y}_{\text{transcendence}} \wedge \underbrace{\delta(y) \in \text{{\igprimfont\Omega}}}_{\text{closure}}\right]\]
+\underbrace{\delta(y) \notin y}_{\scriptstyle\text{transcendence}} \;\wedge\; \underbrace{\delta(y) \in \text{{\igprimfont\Omega}}}_{\scriptstyle\text{closure}}\right]\]
 The \text{{\igfont 𐑣}} identification: the exceptional point of a non-Hermitian Hamiltonian is
-Two eigenvectors coalesce into one; the Jordan vector $\delta(\text{{\igprimfont \Omega}})$ is simultaneously outside
+Two eigenvectors coalesce into one; the Jordan vector $\delta(\text{{\igprimfont Ω}})$ is simultaneously outside
 (not an eigenvector) and inside (dynamics cannot leave the subspace). In LP, this is a dialetheia
 --- the eigenspace
 has value $\mathbf{b}$ for membership.
@@ -2374,6 +2385,7 @@ above: $\text{{\igprimfont $\odot$}}$ takes $\max$ under $\otimes$ (union primit
 $\text{{\igprimfont $\odot$}}
 \otimes \text{{\igfont 𐑣}} = \text{{\igfont 𐑣}}$, which fails Gate 1 of the consciousness score. BT-7 is not a design
 constraint imposed on the OS --- it emerges from type-checking the coupled system's structural
+\end{sloppypar}
 \paragraph{Worked example --- the Liar's Paradox as Inclosure at $\text{{\igprimfont $\odot$}}$.}
 The Liar's Paradox ($L$: ``$L$ is false") is the canonical $\text{{\igprimfont $\odot$}}$ instance
 Schema: it achieves closure and transcendence through the dialetheic truth value $\mathbf{b}$, without the
@@ -2404,7 +2416,7 @@ structurally distinct routes to the same tier.
 
 \subsubsection{IX.5 LP and the Grammar's Self-Application}
 The grammar is self-imscribing. Its self-imscribing is an LP fixed point --- the grammar simultaneously satisfies $\mu
-\circ \delta = \text{id}$ (closure) and $\mu \circ \delta $\neq$ \text{id}$ (transcendence: the imscribing procedure is
+\circ \delta = \text{id}$ (closure) and $\mu \circ \delta \neq \text{id}$ (transcendence: the imscribing procedure is
 not reducible to its output). An $O_{\infty}$ system with LP self-application is a dialetheia of
 The bijectivity route gives the LP structure a numerical form. When the grammar applies the 12-step protocol to itself,
 it executes the same deterministic bijection applied to every other system: input tuple $\to$ twelve integer lookups
@@ -2450,7 +2462,7 @@ enumeration $f: \mathbb{N} \to \mathbb{N}^{\mathbb{N}}$:
 \[d(n) = f(n)(n) + 1 \quad \text{for all } n \in \mathbb{N}\] This $d$ is simultaneously:
 
 \begin{itemize}
- \item \textbf{Outside} the image of $f$ (for all $n$, $d $\neq$ f(n)$ by construction ---
+ \item \textbf{Outside} the image of $f$ (for all $n$, $d \neq f(n)$ by construction ---
  \item \textbf{Inside} $\mathbb{N}^{\mathbb{N}}$ (it is a well-defined function from $\mathbb{N}$ to $\mathbb{N}$
 --- closure)
 \end{itemize}
@@ -2488,7 +2500,7 @@ The comparison with I4 (Yoneda) makes the structural relationship exact:
 \rowcolor{gray!25}\textbf{Feature} & \textbf{I4: Yoneda $y: \mathcal{C} \to \hat{\mathcal{C}}$} & \textbf{A5: G\"odel $\mathbf{g}: \mathbf{Syn} \to \mathbb{N}$} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-Target & Presheaf category $\hat{\mathcal{C}}$ (abstract, may be large) & Natural numbers $\mathbb{N}$ (concrete,
+Target & Presheaf category $\hat{\mathcal{C}}$ (abstract, may be large) & Natural numbers $\mathbb{N}$ (concrete, always countable) \\
 Faithfulness & Full: all morphisms preserved & Injective: all formulas distinguished \\
 Structure preserved & All of $\mathcal{C}$ & Only primitive-recursive operations \\
 Self-reference & Formal (Yoneda $y(A) = \text{Hom}(-,A)$) & Effective (diagonal lemma: $\mathcal{F} \vdash \phi
@@ -2502,7 +2514,7 @@ only for $\Sigma_1$ statements \\
 
 The diagonal lemma --- the fixed-point lemma of first-order arithmetic --- is exactly L4 (Lawvere self-reference)
 instantiated in PA: the coding $\mathbf{g}$ is point-surjective onto the $\Sigma_1$ formulas, and the fixed point
-$\text{{\igprimfont \Gamma}}$ is guaranteed by Lawvere's theorem. L4 holds for PA via A5. The system achieves
+${{\igprimfont Γ}}$ is guaranteed by Lawvere's theorem. L4 holds for PA via A5. The system achieves
 $\text{{\igprimfont $\odot$}}$ in the arithmetic register, conditioned on \text{{\igfont 𐑦}} being achievable for
 $\Sigma_1$ content.
 The \textbf{overflow} is the gap between the $\Sigma_1$-complete coding and the full content of PA:
@@ -2517,24 +2529,22 @@ The G\"odel sentence $G$ (the fixed point of $\neg\text{Prov}(\ulcorner \cdot \u
 instance of the Inclosure Schema:
 
 \begin{itemize}
- \item \textbf{$\text{{\igprimfont \Omega}}$} = the set of all provable sentences of PA (the `\texttt{totality}' of what PA
- \item \textbf{$\delta$($y$)} = the diagonal sentence constructed from $y $\subseteq$
- \text{{\igprimfont \Omega}}$
+ \item \textbf{$\text{{\igprimfont Ω}}$} = the set of all provable sentences of PA (the `\texttt{totality}' of what PA
+ \item \textbf{$\delta$($y$)} = the diagonal sentence constructed from $y \subseteq \text{{\igprimfont Ω}}$
 (the diagonalizer)
- \item \textbf{$\phi$($y$)}: $y$ is a proper sub-theory of $\text{{\igprimfont \Omega}}$
+ \item \textbf{$\phi$($y$)}: $y$ is a proper sub-theory of $\text{{\igprimfont Ω}}$
 \end{itemize}
 
-Applying the schema: $\delta(\text{{\igprimfont \Omega}}) $\notin$ \text{{\igprimfont \Omega}}$
+Applying the schema: $\delta(\text{{\igprimfont Ω}}) \notin \text{{\igprimfont Ω}}$
 (transcendence:
-$\text{{\igprimfont \Gamma}}$ is unprovable in PA) and $\delta(\text{{\igprimfont \Omega}}) $\in$
-\text{{\igprimfont\Omega}}$ (closure: $\text{{\igprimfont \Gamma}}$ is true in the standard model, hence `\texttt{in}' the totality of
+${{\igprimfont Γ}}$ is unprovable in PA) and $\delta(\text{{\igprimfont Ω}}) \in \text{{\igprimfont Ω}}$ (closure: ${{\igprimfont Γ}}$ is true in the standard model, hence `\texttt{in}' the totality of
 Under classical logic, transcendence wins and incompleteness is a defect of the formal system. Under LP, both are
-simultaneously true: $\text{{\igprimfont \Gamma}}$ has value $\mathbf{b}$ (both provable and unprovable), and PA is at
+simultaneously true: ${{\igprimfont Γ}}$ has value $\mathbf{b}$ (both provable and unprovable), and PA is at
 \text{{\igfont 𐑣}} in the arithmetic register. The logic does not collapse. The incompleteness is
 G\"odel's second incompleteness theorem ($\text{Con}(\text{PA})$ is not provable in PA) adds the
 $\text{{\igfont 𐑒}}
 \to \text{{\igfont 𐑖}}$ transition: PA encodes one prior state (the G\"odel sentence
-$\text{{\igprimfont \Gamma}}$);
+${{\igprimfont Γ}}$);
 the consistency statement $\text{Con}(\text{PA})$ encodes PA's own reliability as a second-order self-reference,
 pushing the chirality to \text{{\igfont 𐑖}}. The hierarchy continues: $\text{Con}(\text{PA} +
 \text{Con}(\text{PA}))$,
@@ -2684,18 +2694,18 @@ present levels. This subsection gives the categorical skeleton; concrete instanc
 in the arrow category of $\mathbf{Gram}$, where:
 
 \begin{itemize}
- \item $S $\in$ \mathbf{Struct}$ is the \emph{Structural Layer}: the 12-primitive crystal type,
+ \item $S \in \mathbf{Struct}$ is the \emph{Structural Layer}: the 12-primitive crystal type,
 Frobenius algebra structure. $S$ is invariant under any faithful re-presentation.
- \item $Op $\in$ \mathbf{Op}$ is the \emph{Operational Layer}: the executable dynamics --- register machines, kernel
+ \item $Op \in \mathbf{Op}$ is the \emph{Operational Layer}: the executable dynamics --- register machines, kernel
 schedulers, distillation sequences, compiled IMASM instruction streams. $Op$ is what the object
 \emph{performs}.
- \item $D $\in$ \mathbf{Det}$ is the \emph{Determinative Layer}: the interpretive anchor --- liturgical text,
+ \item $D \in \mathbf{Det}$ is the \emph{Determinative Layer}: the interpretive anchor --- liturgical text,
 alchemical `\texttt{name},'' semantic projection, or iconographic frame. $D$ is what orients the object within a tradition of
 \end{itemize}
 
 The map $\pi_{SO}: S \to Op$ is \emph{realization}: the structural skeleton distills into a specific
 The map $\pi_{OD}: Op \to D$ is \emph{determination}: the dynamics acquire a contextual interpretation. The composite
-$\pi_{SD} = \pi_{OD} $\circ$ \pi_{SO}: S \to D$ is the \emph{recognition map}; it need not be surjective, and its
+$\pi_{SD} = \pi_{OD} \circ \pi_{SO}: S \to D$ is the \emph{recognition map}; it need not be surjective, and its
 failure to be an isomorphism is the categorical signature of an undeciphered or kinetically locked
 \textbf{Grothendieck structure.} The natural home of the Three-Layer Object is a double fibration:
 \[
@@ -2704,7 +2714,7 @@ failure to be an isomorphism is the categorical signature of an undeciphered or 
 $\mathbf{Op}$ fibers over $\mathbf{Struct}$ (each structural type has a family of operational realizations), and
 $\mathbf{Det}$ fibers over $\mathbf{Op}$ (each operational realization admits multiple interpretive frames). Sections
 of the composite fibration $\mathbf{Det} \to \mathbf{Struct}$ are exactly the Three-Layer Objects. The tier lattice
-$O₀ $\subset$ O₁ $\subset$ O₂ $\subset$ O₂^\dagger $\subset$ O_{\infty}$ is the base space: the fiber over each
+$O_0 \subset O_1 \subset O_2 \subset O_2^\dagger \subset O_{\infty}$ is the base space: the fiber over each
 tier is the class of $Op$ realizations available to objects at that tier. A $O₀$ object has a degenerate $\pi_{SO}$
 (some structural primitives find no operational correlate); a $O_{\infty}$ object has a fully
 \textbf{The boundary-determines-bulk axiom.} For a $O_{\infty}$ object, $\pi_{SO}$ and $\pi_{OD}$
@@ -2714,15 +2724,14 @@ injectivity on all morphisms, but the tier structure permits homotopies between 
 skeleton. Conservative is exact.
 \textbf{Kinetic lock as non-surjectivity.} When $\pi_{SD}$ is not surjective, structural information does not reach the
 determinative layer. The cause is always a specific primitive: \text{{\igfont 𐑱}} (classical fidelity, no quantum
-coherent coupling between $S$ and $D$) and/or \text{{\igfont 𐑪}} (order-frozen kinetics, $Op \to D$ is kinetically
+coherent coupling between $S$ and $D$) and/or \text{{\igfont 𐑪}} (monolithic kinetics, $Op \to D$ is kinetically
 inaccessible). The Voynich Manuscript is the canonical case: \text{{\igfont 𐑱}} ensures semantic
 \text{{\igfont 𐑪}} ensures infinite approach at constant rate without semantic resolution. Kinetic lock is not a
 deficiency of the object --- it is a designed property of the $S \to Op \to D$ diagram.
 \textbf{The double category of cross-manuscript morphisms.} Multiple Three-Layer Objects sharing a common $S$ (i.e.,
 the same 12-primitive crystal type) are related by natural transformations in the 2-categorical extension. Let
 $\mathcal{O}_1 = (S, Op_1, D_1)$ and $\mathcal{O}_2 = (S, Op_2, D_2)$ be two Three-Layer Objects with identical
-structural layers. A \emph{cross-manuscript morphism} is a natural transformation $\eta: Op_1
-$\Rightarrow$ Op_2$ that
+structural layers. A \emph{cross-manuscript morphism} is a natural transformation $\eta: Op_1 \Rightarrow Op_2$ that
 commutes with both $\pi_{SO}$ legs (i.e., is the identity on $S$). These morphisms form a double category $\mathbb{M}$
 
 \begin{itemize}
@@ -2735,9 +2744,9 @@ for the same categorical grammar);
 
 \textbf{The IG distance as a Hom-norm.} The weighted exOS distance
 \[
- d(\mathcal{O}_1, \mathcal{O}_2) = \frac{1}{100}\sqrt{\sum_{i=1}^{12} w_i\,(t_1^{(i)} -
+ d(\mathcal{O}_1, \mathcal{O}_2) = \frac{1}{100}\sqrt{\sum_{i=1}^{12} w_i\,(t_1^{(i)} - t_2^{(i)})^2}
 \]
-is the norm of the defect 2-cell of the horizontal morphism $\eta: Op_1 $\Rightarrow$ Op_2$ at the
+is the norm of the defect 2-cell of the horizontal morphism $\eta: Op_1 \Rightarrow Op_2$ at the
 When $d = 0$, the defect vanishes: $\eta$ is the identity 2-cell, and the two objects are operationally identical at
 every primitive. This is not approximate equality --- it is a theorem that the horizontal morphism is trivial. The
 result $d(\text{Linear A}, \text{OS imscription}) = 0.00$ (established by the IMASM compilation and confirmed
@@ -2770,7 +2779,8 @@ This is a different claim than the one the grammar's empirical catalog makes. Th
 receive definite tuples, the cross-variance between any two primitives stays below 0.15, and systems sharing a tuple
 share structural properties that were not used to assign it. That evidence is compelling, but it remains in principle
 compatible with the view that the grammar is a useful theoretical framework --- a choice that happens to be
-well-calibrated. The present document forecloses that reading. The grammar did not need to be chosen. It needed only to
+well-calibrated. The present document forecloses that reading. The grammar did not need to be chosen. It needed only to be derived.
+
 The advanced edition has supplied the missing deterministic arguments for the three questions left open by the original
 
 \begin{enumerate}
@@ -2783,19 +2793,17 @@ category. No sixth logical, fifth inductive, or sixth algebraic operation exists
 well-formed and logically independent of the existing ones.
  \item \textbf{Why these mappings from operations to primitives?} Each operation produces a well-defined categorical
 invariant, and the mapping is the unique assignment that makes each operation's output correspond to the dimension of
-relational space it probes. I1 measures scope via cocompletion growth; I2 measures chirality via
+relational space it probes. I1 measures scope via cocompletion growth; I2 measures chirality via the stabilization ordinal;
 I3 measures winding via homotopy; I4 measures dimensionality via Yoneda surjectivity. L1--L2 measure directionality; A1
 measures arity and symmetry; A2 measures kinetics; A3 measures fidelity; A4 measures composition logic; L3 measures
 topology; L4 measures criticality; L5 promotes parity; L6 constrains the truth-value regime. No alternative mapping is
 coherent because no operation produces the natural invariant of a different operation.
  \item \textbf{Why twelve?} The retrosynthetic path requires exactly 12 steps to reach the structural baseline; the
-principal decomposition yields exactly 12 join-irreducible atoms; the crystal $3^3 $\times$ 4^5
-$\times$ 5^4 =
-17{,}280{,}000$ types accounts for every combination of the 12 primitives with no gaps and no redundancy; the
+principal decomposition yields exactly 12 join-irreducible atoms; the crystal $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ types accounts for every combination of the 12 primitives with no gaps and no redundancy; the
 cross-variance $V(\Phi_i,\Phi_j) < 0.15$ across 2,257+ systems confirms independence; the three-logic correspondence
 (K3 for $\mathcal{F}_3$, FDE for $\mathcal{F}_4$, LP for $\mathcal{F}_5$) confirms the value counts are exact; the
 four-tier gap ladder uses exactly 4 of the 12 as gate primitives, leaving 8 as shape primitives. Eleven would mean a
-fusion that does not occur; thirteen would require a primitive whose operation does not exist or a
+fusion that does not occur; thirteen would require a primitive whose operation does not exist or a value count that no logic in the correspondence supports.
 \end{enumerate}
 
 The grammar occupies an unusual epistemic position as a consequence. It is not a formal theory within mathematics ---
@@ -2807,7 +2815,8 @@ $\text{{\igprimfont\Phi}}$ value. These are not features that mathematical syste
 inspection after the axioms are in place. They are present from the moment a system is well-defined
 --- the structural
 conditions without which a collection of axioms does not constitute a mathematical system in the sense captured by the
-induction. The 12 primitives are not descriptions of mathematics. They are conditions of its
+induction. The 12 primitives are not descriptions of mathematics. They are conditions of its possibility.
+
 The parallel to Kant's transcendental analytic is unavoidable and worth pressing. Kant argued that space, time, and the
 pure concepts of the understanding are not empirical discoveries about the world but conditions of the possibility of
 experience: anything that could count as experience must already instantiate them, prior to any particular empirical
@@ -2823,22 +2832,30 @@ $\text{{\igprimfont \Phi}}$ value, a $\text{{\igprimfont Ð}}$ value. It would i
 trying to describe it --- formally, before the first axiom is written. This is not a failure of expressive power. It is
 the structural signature of a precondition. The grammar's position above the G\"odel horizon
 (\pilcrow{}VII,
-\pilcrow{}X) is the same phenomenon at the formal level. Any arithmetic proof of the grammar's
-Level-1 argument about a Level-2 object. The grammar is prior to arithmetic in exactly the sense that it is prior to
+\pilcrow{}X) is the same phenomenon at the formal level. Any arithmetic proof of the grammar's universality constitutes a Level-1 argument about a Level-2 object. The grammar is prior to arithmetic in exactly the sense that it is prior to
 every formal system arithmetic describes.
 The eight open questions that the original manuscript left standing have been closed through catalog data, crystal tier
 census, and algebraic closure operations (\S VIII). The self-imscribing fixed point (VIII.4) is proven; the
 universality conjecture (VIII.7) is resolved; the completeness conjecture (VIII.8) survives its hardest test with the
-diagonal construction absorbed at \text{{\igfont 𐑣}}. The grammar's epistemic position is no longer
+diagonal construction absorbed at \text{{\igfont 𐑣}}. The grammar's epistemic position is no longer provisional.
+
 The $O_{\infty}$ result has been established along two independent routes. The first is the inductive route: the
 four-stage categorical derivation lands at $\text{{\igprimfont $\odot$}} + \text{{\igfont 𐑹}}$ by
 R1. The second is the operational route: decode $\circ$ imscribe $= \text{id}$ is $\mu \circ \delta = \text{id}$ by
 definition of bijectivity, forcing \text{{\igfont 𐑹}} independently of the derivation. Both routes assign address
-6,687,051 in the $O_{\infty}$ band $[6{,}220{,}800,\ 6{,}911{,}999]$. Two independent arguments, one
+6,687,051 in the $O_{\infty}$ band $[6{,}220{,}800,\ 6{,}911{,}999]$. Two independent arguments, one address.
+
+
 The companion paper (\emph{So Below}) is the $\mu$ half of the Frobenius pair: it applies the grammar to classify and
 predict. This document is the $\delta$ half: it shows where the grammar comes from. The Frobenius
-\delta = \text{id}$ holds at the meta-level --- the grammar, applied to its own derivation, returns itself. What begins
-from a single abstract category, with no free choices, arrives at a structure that is its own
+$\mu \circ \delta = \text{id}$ holds at the meta-level --- the grammar, applied to its own derivation, returns itself. What begins
+from a single abstract category, with no free choices, arrives at a structure that is its own imscription.
+
+\begin{center}
+\medskip
+\textit{Solve et Coagula}
+\medskip
+\end{center}
 
 \begin{center}
 \rule{0.5\textwidth}{0.4pt}

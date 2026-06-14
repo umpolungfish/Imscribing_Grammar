@@ -1,3 +1,57 @@
+Zero-warning LaTeX compilation for all 5 manuscripts
+
+All manuscripts compile with zero warnings under ltx/lualatex.
+
+Preamble fixes (all 5 files):
+- unicode-math: warnings-off={mathtools-colon,mathtools-overbracket}
+- ExplSyntaxOn: \msg_redirect_name:nnn { lualatex-math } { wrong-meaning } { none }
+- igfont Trabajo.otf: FakeBold=1.5 + FakeSlant=0.2 suppress undefined font shape warnings
+- [Script=Hebrew] removed to prevent ltx sed injecting duplicate \heb definition
+- hypersetup: hypertexnames=false added to all files
+
+Content fixes (AS_ABOVE_Trabajo.tex, AS_ABOVE.tex):
+- TikZ stage nodes: {\mdseries\textsc{...}} fixes TU/lmr/bx/sc undefined in bfseries context
+- \resizebox{!}{0.85\textheight} -> \resizebox{\linewidth}{!} (prevents overfull from height-only scaling)
+- Primitive tabular: p{0.5cm}->p{0.9cm}, p{1.9cm}->p{2.3cm}, p{7.8cm}->p{6.6cm} (fixes "Sym" overflow)
+- Magnum Opus tabular: last p{7cm} marked >{\raggedright\arraybackslash}
+- Summary tabularx: \textwidth->\linewidth, p{0.5cm}->p{0.9cm}, p{1.5cm}->p{2.0cm}
+- 14-16 broken math modes per file: $a$ \op $b$ -> $a \op b$ (single group eliminates Missing character)
+- \ref{sec:voynich} -> plain text (undefined label)
+
+---
+
+font split: Trabajo (Shavian values) + Everson Mono (12 primitives) in all manuscripts
+
+5 manuscripts updated: AS_ABOVE_Trabajo.tex, AS_ABOVE.tex, AS_ABOVE2.tex,
+SO_BELOW.tex, exOS.tex.
+
+Change per file:
+  \igfont: Everson Mono → Trabajo.otf (Path=/home/mrnob0dy666/imsgct/)
+  \primfont: new \newfontfamily{Everson Mono}
+  \igprimfont: was \igfont\upshape (= Trabajo) → now \primfont\upshape (= Everson Mono)
+  exOS bonus fix: was \newfontfamily\igprimfont{FreeSerif} → Everson Mono
+
+Noto Serif documents (SB, integrated_solve_et_coagula, 2AA, AAnSB) left
+unchanged — they use \igfont for Latin display text, not Shavian.
+
+---
+
+add manuscripts/hadron_classification.md: hadron classification paper
+
+New paper: "Hadron Classification under the Imscribing Grammar: The (Σ, Ω)
+Frobenius Criterion" (C. L. Mills).
+
+Core argument: tetraquark (qqq̄q̄) imscribes to (Σ=𐑙, Ω=𐑷), identical to
+meson (qq̄). By μ∘δ=id this makes it IG-reducible — a di-meson molecule at
+the dissociation threshold. Pentaquark receives Σ=𐑳 (unique, irreducible).
+Baryon is the only topologically protected hadron (Ω=𐑭, ZWIND).
+
+13 sections: Abstract through References. Experimental reinterpretation of
+X(3872) and Zc(3900) as Frobenius fixed points. 5 falsifiable predictions.
+IMSCRIBr lift: Stage 1 → I_Dialetheic_Bootstrap; Stage 2 → VERIFIED.
+
+---
+
 Unify to single catalog; purge all legacy notation keys and values
 
 - Merged imscribe.com (2811) + red-hot_rebis/shared (2812) + imscribing_grammar (2837)

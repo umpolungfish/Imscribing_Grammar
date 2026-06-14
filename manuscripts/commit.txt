@@ -1,0 +1,31 @@
+Documents migrated to ig-docs
+
+All .md and .pdf files from imscribing_grammar (including manuscripts/,
+.cosmology/, theorem_transport/, applications/, scripts/, agents/,
+gematria_output/, ig_outputs/, past_submits/, .stuff/chkchk/) have been
+moved to ~/imsgct/ig-docs/ by migrate_imscribing_grammar.py.
+
+Retained in imscribing_grammar:
+- markdown/iam/IMASM_lifted.md       (active source)
+- markdown/lifts/IMASM_lifted.md     (active source)
+- tex/IG_reference.pdf               (reference compendium)
+- pdfs/                              (compiled PDF outputs from ltx)
+- All .tex source files              (unchanged)
+- All scripts/                       (unchanged)
+- ogx/, .lake/, .venv/               (framework/library dirs, unchanged)
+
+Key documents now in ig-docs/manuscripts/:
+- imscribing_grammar__manuscripts__hadron_structural_classification.md
+- imscribing_grammar__manuscripts__hadron_structural_classification.pdf
+- imscribing_grammar__manuscripts__cover_letter_hadron_fop.md
+- imscribing_grammar__manuscripts__cover_letter_hadron_fop.pdf (if compiled)
+
+This session also produced (pre-migration):
+- hadron_structural_classification.md: DS Round 2+3 revisions complete;
+  FoP submission ready (title page, keywords, math-wrapped, section
+  numbering fixed); PHI_C removed; author Lando Mills / Interdependent
+- cover_letter_hadron_fop.md: FoP cover letter with five suggested referees
+- zenodo_draft.py: section numbering fix (sections unnumbered at top level,
+  subsections independently numbered 1, 2, 3...)
+- Terminology update across 15 files: Pure Superposition, Exact Coherence,
+  Monolithic, Glassy

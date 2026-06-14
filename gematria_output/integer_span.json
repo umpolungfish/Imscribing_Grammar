@@ -1,8 +1,8 @@
 {
   "rank": 12,
-  "occupied_int_vectors": 1839,
+  "occupied_int_vectors": 1999,
   "bounding_box_volume": 17280000,
-  "coverage_ratio": 0.00010642361111111112,
+  "coverage_ratio": 0.00011568287037037038,
   "min_bounds": [
     0,
     0,
