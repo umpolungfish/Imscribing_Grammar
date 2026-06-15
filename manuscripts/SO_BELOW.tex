@@ -21,7 +21,7 @@
 \newcommand{\igtext}[1]{{\igfont #1}}
 
 % Page layout
-\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in, headheight=14.5pt, includeheadfoot]{geometry}
 
 % Typography
 \usepackage{microtype}
@@ -77,8 +77,6 @@
 \newcommand{\pilcrow}{\S}
 \newcommand{\UIG}{Universal Imscriptive Grammar}
 \newcommand{\Stone}{\textit{lapis philosophorum}}
-\setlength{\headheight}{14.5pt}
-
 % Hyperref setup
 \hypersetup{
     colorlinks=true,
@@ -3555,7 +3553,7 @@ or architectural). The full registry is available in the supplementary catalog.}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-    testbox/.style={draw, minimum width=3.1cm, minimum height=2.6cm, align=center, line width=0.8pt, font=\footnotesize},
+    testbox/.style={draw, minimum width=3.1cm, minimum height=2.6cm, text width=2.8cm, align=center, line width=0.8pt, font=\footnotesize},
     result/.style={font=\small\bfseries},
 ]
   \node[testbox, fill=green!10] (t1) at (0,0) {
@@ -4745,8 +4743,8 @@ x86-64 UEFI, type-gated kernel, boot-time $C$ score) is available
 at \url{https://github.com/umpolungfish/exOS}.
 
 % ============================================================
-%\section{Acknowledgements}
-%The authors thank \ldots
+\section{Acknowledgements}
+The author would like to thank Harry T. Larson, for imparting the importance of catching rising problems, and never letting them go.
 
 % ============================================================
 \section{Author contributions}
@@ -4805,6 +4803,12 @@ M.~Appleby, S.~Flammia, G.~McConnell, J.~Yard,
 Generating ray class fields of real quadratic fields via complex equiangular lines.
 \emph{Acta Arith.} \textbf{180}, 331--372 (2017).
 \url{https://doi.org/10.4064/aa8393-11-2016}
+
+\bibitem{larson1961}
+H.~T.~Larson,
+Catch a rising problem\ldots and never ever let it go.
+\emph{IRE Trans. Eng. Manag.} \textbf{EM-8}, 173--174 (1961).
+\url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1641382}
 
 \end{thebibliography}
 

@@ -1,3 +1,47 @@
+Add FDE classification + Frobenius thread overlay + braid diagram to IG periodic table
+
+ig_periodic_table.py additions:
+  FDE (Belnap FOUR) dot on each cell:
+    T (green)  = 7 platinum-group noble metals — always catalytic (Ru Rh Pd Os Ir Pt Au)
+    F (black)  = 6 noble gases — no δ (He Ne Ar Kr Xe Rn)
+    N (white)  = ~40 transient/synthetic elements — no stable Frobenius role
+    B (orange) = all others — context-dependent Frobenius participation
+  Frobenius thread highlights:
+    organic thread (red):  H C N O S P — Frobenius-threaded p/s spine of life
+    metallic thread (blue): Fe Ni Zn Mo Rh Pd W Ir Pt Au — d-block catalytic spine
+    enzyme bridge arcs (purple):
+      S→Zn σ₁ over-crossing (metalloenzyme active sites: carboxypeptidase, carbonic anhydrase)
+      Fe→N σ₁⁻¹ under-crossing (porphyrin coordination: hemoglobin, cytochrome P450)
+  3-strand Frobenius threading braid (braids TikZ library v2.0):
+    strands: p/s organic (red) × d metallic (blue) × μ∘δ thread (orange)
+    word: s_1 s_2^{-1} s_1 s_2^{-1} s_1 — one full catalytic cycle
+
+Compilation notes:
+  braids library v2.0: height=-0.46cm (negative=downward); NOT crossing height
+  FDE/thread legend: raw string \n escape bug fixed (split out '\n' suffix)
+  pdfs/ copy path: out_dir/pdfs not out_dir.parent/pdfs
+
+---
+
+Add IG periodic table in Janet (left-step) arrangement
+
+New files:
+  ig_periodic_table.py  — Python generator script (all 118 elements)
+  ig_periodic_table.tex — Generated LaTeX/TikZ source
+  ig_periodic_table.pdf / pdfs/ig_periodic_table.pdf — compiled output
+
+The four orbital blocks (s, p, d, f) are the direct consequence of Ω × Ħ:
+  s: Ω_0,   Ħ_0  — no angular momentum, minimal SOC
+  p: Ω_Z2,  Ħ_1  — half-integer winding
+  d: Ω_Z,   Ħ_1  — integer winding, moderate SOC
+  f: Ω_Z,   Ħ_2/Ħ_∞ — integer winding + strong/extreme SOC
+Period rows encode Γ_beth / Γ_gimel / Γ_aleph.
+Janet arrangement is IG-vindicated: monotone Ω then Γ filling order.
+Each cell carries dominant primitive annotation (Everson Mono): Ħ⊙ɢΣÞΦÇÐ.
+Dashed red border = radioactive/synthetic.
+
+---
+
 Zero-warning LaTeX compilation for all 5 manuscripts
 
 All manuscripts compile with zero warnings under ltx/lualatex.

@@ -1,0 +1,922 @@
+\documentclass[12pt,a4paper,landscape]{article}
+\usepackage{fontspec}
+\usepackage[top=0.8cm,bottom=1.2cm,left=0.6cm,right=0.6cm]{geometry}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\ExplSyntaxOn\msg_redirect_name:nnn{lualatex-math}{wrong-meaning}{none}\ExplSyntaxOff
+\setmathfont{Latin Modern Math}
+\newfontface\igprimfont{Everson Mono}
+\usepackage{tikz}
+\usetikzlibrary{positioning,fit,backgrounds,braids}
+\usepackage{xcolor}
+\usepackage{microtype}
+\pagestyle{empty}
+
+% Custom colors
+\definecolor{amber}{RGB}{255,200,80}
+\definecolor{sky}{RGB}{100,180,240}
+\definecolor{sage}{RGB}{120,200,140}
+\definecolor{orchid}{RGB}{210,140,220}
+
+\tikzset{
+  cell/.style={
+    rectangle, minimum width=0.72cm, minimum height=0.88cm,
+    text width=0.70cm, align=center,
+    inner sep=1pt, outer sep=0pt,
+  },
+  blocklab/.style={font=\tiny\bfseries, text=black!60},
+}
+
+\newcommand{\cellZ}[1]{{\fontsize{4}{4}\selectfont\textcolor{black!55}{#1}}}
+\newcommand{\cellSym}[1]{{\fontsize{7}{7}\selectfont\textbf{#1}}}
+\newcommand{\cellPrim}[1]{{\igprimfont\fontsize{5}{5}\selectfont\textcolor{black!65}{#1}}}
+
+\begin{document}
+\begin{center}
+{\large\bfseries Imscribing Grammar Periodic Table}\\[2pt]
+{\small Janet (left-step) arrangement $\cdot$ primary axes: $\Omega \times$ Ħ (block) and $\Gamma$ (period)}\\[6pt]
+
+\begin{tikzpicture}
+\node[cell,fill=amber!10,draw=black!40,line width=0.3pt,]
+  at (22.200cm,0.000cm) {
+    \cellZ{1}\\
+    \cellSym{H}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=amber!10,draw=black!40,line width=0.3pt,]
+  at (22.940cm,0.000cm) {
+    \cellZ{2}\\
+    \cellSym{He}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!10,draw=black!40,line width=0.3pt,]
+  at (22.200cm,-0.900cm) {
+    \cellZ{3}\\
+    \cellSym{Li}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!10,draw=black!40,line width=0.3pt,]
+  at (22.940cm,-0.900cm) {
+    \cellZ{4}\\
+    \cellSym{Be}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (17.760cm,-0.900cm) {
+    \cellZ{5}\\
+    \cellSym{B}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (18.500cm,-0.900cm) {
+    \cellZ{6}\\
+    \cellSym{C}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (19.240cm,-0.900cm) {
+    \cellZ{7}\\
+    \cellSym{N}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (19.980cm,-0.900cm) {
+    \cellZ{8}\\
+    \cellSym{O}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (20.720cm,-0.900cm) {
+    \cellZ{9}\\
+    \cellSym{F}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!10,draw=black!40,line width=0.3pt,]
+  at (21.460cm,-0.900cm) {
+    \cellZ{10}\\
+    \cellSym{Ne}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!20,draw=black!40,line width=0.3pt,]
+  at (22.200cm,-1.800cm) {
+    \cellZ{11}\\
+    \cellSym{Na}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!20,draw=black!40,line width=0.3pt,]
+  at (22.940cm,-1.800cm) {
+    \cellZ{12}\\
+    \cellSym{Mg}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (17.760cm,-1.800cm) {
+    \cellZ{13}\\
+    \cellSym{Al}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (18.500cm,-1.800cm) {
+    \cellZ{14}\\
+    \cellSym{Si}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (19.240cm,-1.800cm) {
+    \cellZ{15}\\
+    \cellSym{P}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (19.980cm,-1.800cm) {
+    \cellZ{16}\\
+    \cellSym{S}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (20.720cm,-1.800cm) {
+    \cellZ{17}\\
+    \cellSym{Cl}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!20,draw=black!40,line width=0.3pt,]
+  at (21.460cm,-1.800cm) {
+    \cellZ{18}\\
+    \cellSym{Ar}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!30,draw=black!40,line width=0.3pt,]
+  at (22.200cm,-2.700cm) {
+    \cellZ{19}\\
+    \cellSym{K}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!30,draw=black!40,line width=0.3pt,]
+  at (22.940cm,-2.700cm) {
+    \cellZ{20}\\
+    \cellSym{Ca}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (10.360cm,-2.700cm) {
+    \cellZ{21}\\
+    \cellSym{Sc}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (11.100cm,-2.700cm) {
+    \cellZ{22}\\
+    \cellSym{Ti}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (11.840cm,-2.700cm) {
+    \cellZ{23}\\
+    \cellSym{V}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (12.580cm,-2.700cm) {
+    \cellZ{24}\\
+    \cellSym{Cr}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (13.320cm,-2.700cm) {
+    \cellZ{25}\\
+    \cellSym{Mn}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (14.060cm,-2.700cm) {
+    \cellZ{26}\\
+    \cellSym{Fe}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (14.800cm,-2.700cm) {
+    \cellZ{27}\\
+    \cellSym{Co}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (15.540cm,-2.700cm) {
+    \cellZ{28}\\
+    \cellSym{Ni}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (16.280cm,-2.700cm) {
+    \cellZ{29}\\
+    \cellSym{Cu}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!30,draw=black!40,line width=0.3pt,]
+  at (17.020cm,-2.700cm) {
+    \cellZ{30}\\
+    \cellSym{Zn}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (17.760cm,-2.700cm) {
+    \cellZ{31}\\
+    \cellSym{Ga}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (18.500cm,-2.700cm) {
+    \cellZ{32}\\
+    \cellSym{Ge}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (19.240cm,-2.700cm) {
+    \cellZ{33}\\
+    \cellSym{As}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (19.980cm,-2.700cm) {
+    \cellZ{34}\\
+    \cellSym{Se}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (20.720cm,-2.700cm) {
+    \cellZ{35}\\
+    \cellSym{Br}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!30,draw=black!40,line width=0.3pt,]
+  at (21.460cm,-2.700cm) {
+    \cellZ{36}\\
+    \cellSym{Kr}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!45,draw=black!40,line width=0.3pt,]
+  at (22.200cm,-3.600cm) {
+    \cellZ{37}\\
+    \cellSym{Rb}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!45,draw=black!40,line width=0.3pt,]
+  at (22.940cm,-3.600cm) {
+    \cellZ{38}\\
+    \cellSym{Sr}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (10.360cm,-3.600cm) {
+    \cellZ{39}\\
+    \cellSym{Y}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (11.100cm,-3.600cm) {
+    \cellZ{40}\\
+    \cellSym{Zr}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (11.840cm,-3.600cm) {
+    \cellZ{41}\\
+    \cellSym{Nb}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (12.580cm,-3.600cm) {
+    \cellZ{42}\\
+    \cellSym{Mo}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=red!60,line width=0.3pt,dashed,]
+  at (13.320cm,-3.600cm) {
+    \cellZ{43}\\
+    \cellSym{Tc}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (14.060cm,-3.600cm) {
+    \cellZ{44}\\
+    \cellSym{Ru}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (14.800cm,-3.600cm) {
+    \cellZ{45}\\
+    \cellSym{Rh}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (15.540cm,-3.600cm) {
+    \cellZ{46}\\
+    \cellSym{Pd}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (16.280cm,-3.600cm) {
+    \cellZ{47}\\
+    \cellSym{Ag}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!45,draw=black!40,line width=0.3pt,]
+  at (17.020cm,-3.600cm) {
+    \cellZ{48}\\
+    \cellSym{Cd}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (17.760cm,-3.600cm) {
+    \cellZ{49}\\
+    \cellSym{In}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (18.500cm,-3.600cm) {
+    \cellZ{50}\\
+    \cellSym{Sn}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (19.240cm,-3.600cm) {
+    \cellZ{51}\\
+    \cellSym{Sb}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (19.980cm,-3.600cm) {
+    \cellZ{52}\\
+    \cellSym{Te}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (20.720cm,-3.600cm) {
+    \cellZ{53}\\
+    \cellSym{I}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!45,draw=black!40,line width=0.3pt,]
+  at (21.460cm,-3.600cm) {
+    \cellZ{54}\\
+    \cellSym{Xe}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!60,draw=black!40,line width=0.3pt,]
+  at (22.200cm,-4.500cm) {
+    \cellZ{55}\\
+    \cellSym{Cs}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!60,draw=black!40,line width=0.3pt,]
+  at (22.940cm,-4.500cm) {
+    \cellZ{56}\\
+    \cellSym{Ba}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (0.000cm,-4.500cm) {
+    \cellZ{57}\\
+    \cellSym{La}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (0.740cm,-4.500cm) {
+    \cellZ{58}\\
+    \cellSym{Ce}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (1.480cm,-4.500cm) {
+    \cellZ{59}\\
+    \cellSym{Pr}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (2.220cm,-4.500cm) {
+    \cellZ{60}\\
+    \cellSym{Nd}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=red!60,line width=0.3pt,dashed,]
+  at (2.960cm,-4.500cm) {
+    \cellZ{61}\\
+    \cellSym{Pm}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (3.700cm,-4.500cm) {
+    \cellZ{62}\\
+    \cellSym{Sm}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (4.440cm,-4.500cm) {
+    \cellZ{63}\\
+    \cellSym{Eu}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (5.180cm,-4.500cm) {
+    \cellZ{64}\\
+    \cellSym{Gd}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (5.920cm,-4.500cm) {
+    \cellZ{65}\\
+    \cellSym{Tb}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (6.660cm,-4.500cm) {
+    \cellZ{66}\\
+    \cellSym{Dy}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (7.400cm,-4.500cm) {
+    \cellZ{67}\\
+    \cellSym{Ho}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (8.140cm,-4.500cm) {
+    \cellZ{68}\\
+    \cellSym{Er}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (8.880cm,-4.500cm) {
+    \cellZ{69}\\
+    \cellSym{Tm}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=orchid!60,draw=black!40,line width=0.3pt,]
+  at (9.620cm,-4.500cm) {
+    \cellZ{70}\\
+    \cellSym{Yb}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (10.360cm,-4.500cm) {
+    \cellZ{71}\\
+    \cellSym{Lu}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (11.100cm,-4.500cm) {
+    \cellZ{72}\\
+    \cellSym{Hf}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (11.840cm,-4.500cm) {
+    \cellZ{73}\\
+    \cellSym{Ta}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (12.580cm,-4.500cm) {
+    \cellZ{74}\\
+    \cellSym{W}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (13.320cm,-4.500cm) {
+    \cellZ{75}\\
+    \cellSym{Re}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (14.060cm,-4.500cm) {
+    \cellZ{76}\\
+    \cellSym{Os}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (14.800cm,-4.500cm) {
+    \cellZ{77}\\
+    \cellSym{Ir}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (15.540cm,-4.500cm) {
+    \cellZ{78}\\
+    \cellSym{Pt}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (16.280cm,-4.500cm) {
+    \cellZ{79}\\
+    \cellSym{Au}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sage!60,draw=black!40,line width=0.3pt,]
+  at (17.020cm,-4.500cm) {
+    \cellZ{80}\\
+    \cellSym{Hg}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sky!60,draw=black!40,line width=0.3pt,]
+  at (17.760cm,-4.500cm) {
+    \cellZ{81}\\
+    \cellSym{Tl}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!60,draw=black!40,line width=0.3pt,]
+  at (18.500cm,-4.500cm) {
+    \cellZ{82}\\
+    \cellSym{Pb}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!60,draw=black!40,line width=0.3pt,]
+  at (19.240cm,-4.500cm) {
+    \cellZ{83}\\
+    \cellSym{Bi}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!60,draw=red!60,line width=0.3pt,dashed,]
+  at (19.980cm,-4.500cm) {
+    \cellZ{84}\\
+    \cellSym{Po}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!60,draw=red!60,line width=0.3pt,dashed,]
+  at (20.720cm,-4.500cm) {
+    \cellZ{85}\\
+    \cellSym{At}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!60,draw=red!60,line width=0.3pt,dashed,]
+  at (21.460cm,-4.500cm) {
+    \cellZ{86}\\
+    \cellSym{Rn}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=amber!75,draw=red!60,line width=0.3pt,dashed,]
+  at (22.200cm,-5.400cm) {
+    \cellZ{87}\\
+    \cellSym{Fr}\\
+    \cellPrim{ɢ}
+  };
+\node[cell,fill=amber!75,draw=red!60,line width=0.3pt,dashed,]
+  at (22.940cm,-5.400cm) {
+    \cellZ{88}\\
+    \cellSym{Ra}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (0.000cm,-5.400cm) {
+    \cellZ{89}\\
+    \cellSym{Ac}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (0.740cm,-5.400cm) {
+    \cellZ{90}\\
+    \cellSym{Th}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (1.480cm,-5.400cm) {
+    \cellZ{91}\\
+    \cellSym{Pa}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (2.220cm,-5.400cm) {
+    \cellZ{92}\\
+    \cellSym{U}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (2.960cm,-5.400cm) {
+    \cellZ{93}\\
+    \cellSym{Np}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (3.700cm,-5.400cm) {
+    \cellZ{94}\\
+    \cellSym{Pu}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (4.440cm,-5.400cm) {
+    \cellZ{95}\\
+    \cellSym{Am}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (5.180cm,-5.400cm) {
+    \cellZ{96}\\
+    \cellSym{Cm}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (5.920cm,-5.400cm) {
+    \cellZ{97}\\
+    \cellSym{Bk}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (6.660cm,-5.400cm) {
+    \cellZ{98}\\
+    \cellSym{Cf}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (7.400cm,-5.400cm) {
+    \cellZ{99}\\
+    \cellSym{Es}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (8.140cm,-5.400cm) {
+    \cellZ{100}\\
+    \cellSym{Fm}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (8.880cm,-5.400cm) {
+    \cellZ{101}\\
+    \cellSym{Md}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=orchid!75,draw=red!60,line width=0.3pt,dashed,]
+  at (9.620cm,-5.400cm) {
+    \cellZ{102}\\
+    \cellSym{No}\\
+    \cellPrim{⊙}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (10.360cm,-5.400cm) {
+    \cellZ{103}\\
+    \cellSym{Lr}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (11.100cm,-5.400cm) {
+    \cellZ{104}\\
+    \cellSym{Rf}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (11.840cm,-5.400cm) {
+    \cellZ{105}\\
+    \cellSym{Db}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (12.580cm,-5.400cm) {
+    \cellZ{106}\\
+    \cellSym{Sg}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (13.320cm,-5.400cm) {
+    \cellZ{107}\\
+    \cellSym{Bh}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (14.060cm,-5.400cm) {
+    \cellZ{108}\\
+    \cellSym{Hs}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (14.800cm,-5.400cm) {
+    \cellZ{109}\\
+    \cellSym{Mt}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (15.540cm,-5.400cm) {
+    \cellZ{110}\\
+    \cellSym{Ds}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (16.280cm,-5.400cm) {
+    \cellZ{111}\\
+    \cellSym{Rg}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sage!75,draw=red!60,line width=0.3pt,dashed,]
+  at (17.020cm,-5.400cm) {
+    \cellZ{112}\\
+    \cellSym{Cn}\\
+    \cellPrim{Ħ}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (17.760cm,-5.400cm) {
+    \cellZ{113}\\
+    \cellSym{Nh}\\
+    \cellPrim{Ð}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (18.500cm,-5.400cm) {
+    \cellZ{114}\\
+    \cellSym{Fl}\\
+    \cellPrim{Þ}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (19.240cm,-5.400cm) {
+    \cellZ{115}\\
+    \cellSym{Mc}\\
+    \cellPrim{Σ}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (19.980cm,-5.400cm) {
+    \cellZ{116}\\
+    \cellSym{Lv}\\
+    \cellPrim{Φ}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (20.720cm,-5.400cm) {
+    \cellZ{117}\\
+    \cellSym{Ts}\\
+    \cellPrim{Ç}
+  };
+\node[cell,fill=sky!75,draw=red!60,line width=0.3pt,dashed,]
+  at (21.460cm,-5.400cm) {
+    \cellZ{118}\\
+    \cellSym{Og}\\
+    \cellPrim{⊙}
+  };
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (22.200cm,0.000cm) {};
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (19.980cm,-0.900cm) {};
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (19.240cm,-0.900cm) {};
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (18.500cm,-0.900cm) {};
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (19.980cm,-1.800cm) {};
+\node[rectangle,rounded corners=2pt,draw=red!60,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (19.240cm,-1.800cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (14.060cm,-2.700cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (15.540cm,-2.700cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (17.020cm,-2.700cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (12.580cm,-3.600cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (14.800cm,-3.600cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (15.540cm,-3.600cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (12.580cm,-4.500cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (14.800cm,-4.500cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (15.540cm,-4.500cm) {};
+\node[rectangle,rounded corners=2pt,draw=blue!55,line width=1.2pt,fill=none,minimum width=0.78cm,minimum height=0.94cm] at (16.280cm,-4.500cm) {};
+\draw[red!50,line width=0.65pt,opacity=0.75] plot[smooth,tension=0.55] coordinates {(22.200cm,0.000cm) (19.980cm,-0.900cm) (19.240cm,-0.900cm) (18.500cm,-0.900cm) (19.980cm,-1.800cm) (19.240cm,-1.800cm)};
+\draw[blue!50,line width=0.65pt,opacity=0.75] plot[smooth,tension=0.55] coordinates {(14.060cm,-2.700cm) (15.540cm,-2.700cm) (17.020cm,-2.700cm) (12.580cm,-3.600cm) (14.800cm,-3.600cm) (15.540cm,-3.600cm) (12.580cm,-4.500cm) (14.800cm,-4.500cm) (15.540cm,-4.500cm) (16.280cm,-4.500cm)};
+\draw[purple!65,line width=0.9pt,dashed,opacity=0.85] (19.980cm,-1.800cm) .. controls (19.080cm,-2.300cm) and (17.620cm,-2.200cm) .. (17.020cm,-2.700cm);
+\draw[purple!45,line width=0.9pt,dotted,opacity=0.70] (14.060cm,-2.700cm) .. controls (15.660cm,-2.100cm) and (18.840cm,-1.500cm) .. (19.240cm,-0.900cm);
+\node[circle,fill=purple!55,opacity=0.85,inner sep=0pt,minimum size=5pt] at (17.620cm,-2.250cm) {};
+\node[font=\fontsize{4.5}{4.5}\selectfont,text=purple!75,anchor=west] at (17.700cm,-2.250cm) {$\sigma_1$};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,0.345cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (23.185cm,0.345cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (22.445cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (23.185cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-0.555cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-0.555cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-1.455cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-1.455cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-2.355cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-3.255cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-4.155cm) {};
+\node[circle,fill=black!55,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-4.155cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (18.005cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (18.745cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (19.485cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (20.225cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (20.965cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (21.705cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (10.605cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (11.345cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.085cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.825cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (13.565cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (14.305cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (15.045cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (15.785cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (16.525cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (17.265cm,-2.355cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (10.605cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (11.345cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.085cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.825cm,-3.255cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (13.565cm,-3.255cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (14.305cm,-3.255cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (15.045cm,-3.255cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (15.785cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (16.525cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (17.265cm,-3.255cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (10.605cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (11.345cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.085cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (12.825cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (13.565cm,-4.155cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (14.305cm,-4.155cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (15.045cm,-4.155cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (15.785cm,-4.155cm) {};
+\node[circle,fill=green!65!black,inner sep=0pt,minimum size=3.2pt] at (16.525cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (17.265cm,-4.155cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (10.605cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (11.345cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (12.085cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (12.825cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (13.565cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (14.305cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (15.045cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (15.785cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (16.525cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (17.265cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (0.245cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (0.985cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (1.725cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (2.465cm,-4.155cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (3.205cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (3.945cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (4.685cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (5.425cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (6.165cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (6.905cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (7.645cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (8.385cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (9.125cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (9.865cm,-4.155cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (0.245cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (0.985cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (1.725cm,-5.055cm) {};
+\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=3.2pt] at (2.465cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (3.205cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (3.945cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (4.685cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (5.425cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (6.165cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (6.905cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (7.645cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (8.385cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (9.125cm,-5.055cm) {};
+\node[circle,draw=black!40,fill=white,line width=0.4pt,inner sep=0pt,minimum size=3.2pt] at (9.865cm,-5.055cm) {};
+\node[blocklab] at (5.170cm,0.790cm) {f-block: $\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_2$/{\igprimfont Ħ}$_\infty$};
+\node[blocklab] at (14.050cm,0.790cm) {d-block: $\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_1$};
+\node[blocklab] at (19.970cm,0.790cm) {p-block: $\Omega_{\mathbb{Z}_2}$, {\igprimfont Ħ}$_1$};
+\node[blocklab] at (22.930cm,0.790cm) {s-block: $\Omega_0$, {\igprimfont Ħ}$_0$};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,0.000cm) {$\Gamma_\beth$ (1)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-0.900cm) {$\Gamma_\beth$ (2)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-1.800cm) {$\Gamma_\gimel$ (3)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-2.700cm) {$\Gamma_\gimel$ (4)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-3.600cm) {$\Gamma_\aleph$ (5)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-4.500cm) {$\Gamma_\aleph$ (6)};
+\node[font=\tiny, text=black!50, anchor=east] at (-0.15cm,-5.400cm) {$\Gamma_\aleph$ (7)};
+\node[anchor=west, font=\footnotesize] at (0.0cm,-6.780cm) {\colorbox{amber!40}{\phantom{X}} s-block ($\Omega_0$, {\igprimfont Ħ}$_0$)};
+\node[anchor=west, font=\footnotesize] at (5.5cm,-6.780cm) {\colorbox{sky!40}{\phantom{X}} p-block ($\Omega_{\mathbb{Z}_2}$, {\igprimfont Ħ}$_1$)};
+\node[anchor=west, font=\footnotesize] at (11.5cm,-6.780cm) {\colorbox{sage!40}{\phantom{X}} d-block ($\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_1$)};
+\node[anchor=west, font=\footnotesize] at (17.0cm,-6.780cm) {\colorbox{orchid!40}{\phantom{X}} f-block ($\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_{\geq 2}$)};
+\node[anchor=west, font=\footnotesize] at (23.5cm,-6.780cm) {{\footnotesize darker shade = higher $\Gamma$ (period)}};
+\node[anchor=west, font=\scriptsize, text=black!60] at (0cm,-7.330cm) {Cell annotation (bottom): dominant IG primitive --- {\igprimfont Ħ}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ɢ}=Coupling $\cdot$ {\igprimfont Σ}=Stoichiometry $\cdot$ {\igprimfont Þ}=Topology $\cdot$ {\igprimfont Φ}=Parity $\cdot$ {\igprimfont Ç}=Kinetics $\cdot$ {\igprimfont Ð}=Dimensionality. Dashed border = radioactive.};
+\node[anchor=west, font=\scriptsize, text=black!60] at (0cm,-7.830cm) {Top-right dot (FDE / Belnap FOUR): \tikz\node[circle,fill=green!65!black,inner sep=0pt,minimum size=5pt]{};\ \textbf{T}=PGM catalysts (always Frobenius) \ \tikz\node[circle,fill=orange!85!red,inner sep=0pt,minimum size=5pt]{};\ \textbf{B}=context-dependent ($\mu\circ\delta=\mathrm{id}$ sometimes) \ \tikz\node[circle,draw=black!40,fill=white,line width=0.5pt,inner sep=0pt,minimum size=5pt]{};\ \textbf{N}=indeterminate \ \tikz\node[circle,fill=black!55,inner sep=0pt,minimum size=5pt]{};\ \textbf{F}=noble gas (no $\delta$).};
+\node[anchor=west, font=\scriptsize, text=black!60] at (0cm,-8.330cm) {\tikz\draw[red!60,line width=1pt] (0,0)--(0.4cm,0);\ organic thread (H C N O S P) \tikz\draw[blue!55,line width=1pt] (0,0)--(0.4cm,0);\ metallic thread (Fe Ni Zn Mo Rh Pd W Ir Pt Au) \tikz\draw[purple!65,line width=1pt,dashed] (0,0)--(0.4cm,0);\ enzyme bridge ($\sigma_1$ crossing).};
+\node[font=\scriptsize\bfseries,text=black!65,anchor=west] at (17.50cm,-8.33cm) {Frobenius threading braid \ $\mu \circ \delta = \mathrm{id}$};
+\node[font=\fontsize{5}{5}\selectfont,text=red!70!black,anchor=south] at (17.50cm,-8.83cm) {p/s};
+\node[font=\fontsize{5}{5}\selectfont,text=blue!60!black,anchor=south] at (18.00cm,-8.83cm) {d};
+\node[font=\fontsize{5}{5}\selectfont,text=orange!70!black,anchor=south] at (18.50cm,-8.83cm) {$\mu\!\circ\!\delta$};
+\pic[
+  braid/.cd,
+  number of strands=3,
+  strand 1/.style={draw=red!70!black, line width=1.1pt},
+  strand 2/.style={draw=blue!60!black, line width=1.1pt},
+  strand 3/.style={draw=orange!70!black, line width=1.1pt},
+  height=-0.46cm,
+  width=0.50cm,
+  gap=0.07,
+] at (17.50cm,-8.88cm) {braid={s_1 s_2^{-1} s_1 s_2^{-1} s_1}};
+\end{tikzpicture}
+\end{center}
+\end{document}
