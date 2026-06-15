@@ -1,3 +1,76 @@
+Add interactive 3D HTML periodic table (Three.js)
+
+ig_pt_web.py / ig_pt_web.html (22 KB, self-contained):
+  Three.js r0.155 via CDN importmap; no build step — open directly in browser.
+  Full 3D: icosahedron wireframe + element spheres at actual 3D positions (not
+  projected); drag to rotate, scroll to zoom, right-drag to pan, R to reset.
+  Auto-rotates on load; first mousedown stops it.
+  Thread paths as TubeGeometry (red=organic, blue=metallic, purple=bridge).
+  Thread elements: larger sphere + BackSide glow sphere.
+  Primitive labels: HTML spans projected onto screen each frame via .project(cam).
+  Empty arm primitives (Omega Gamma Fetch Rho) dimmed; occupied arms lit.
+  Hover raycasting: tooltip shows sym, Z, period, block, primitive, FDE class.
+  FDE colours (T/B/F/N) identical to the PDF designs.
+
+---
+
+Add spring/force-directed IG periodic table (Kamada-Kawai)
+
+ig_pt_spring.py / ig_pt_spring.pdf:
+  130 nodes (118 elements + 12 primitive anchors), 283 edges.
+  Edge weights encode IG relationships:
+    element→primitive 4.0, thread sequence 7.0, enzyme bridge 4.0,
+    icosahedron edges 2.5, same-period 0.3, same-block 0.5.
+  Kamada-Kawai layout minimises weighted graph-theoretic stress —
+  position is derived entirely from structure, no manual coordinates.
+  Primitive nodes seeded at icosahedron projections; elements seeded at their
+  primitive vertex; algorithm free to move everything.
+  Output: FDE-coloured element nodes, thread path in red/blue, enzyme bridge
+  in purple, icosahedron skeleton as faint skeleton, primitive glyph labels.
+
+---
+
+Add 3D IG periodic table designs: icosahedral radial, Frobenius helix, walk on icosahedron
+
+New files (all compile clean):
+  ig_pt_3d_utils.py   — shared geometry: icosahedron verts/edges, rotation+projection,
+                         element clustering in 3D, FDE colours, preamble
+  ig_pt_ico.py / ig_pt_ico.pdf     — Design C-3D: 12 primitives at icosahedron vertices,
+    elements at radius=period on each arm, projected isometrically.
+    Empty arms (Ω Ř Γ ƒ) form a visible "cold cap" on back hemisphere.
+  ig_pt_helix.py / ig_pt_helix.pdf — Design B-3D: organic+metallic threads as two helices
+    wound 180° out of phase around a shared axis; enzyme bridges (S→Zn, Fe→N) as
+    true 3D links; all other elements in concentric outer cloud.
+  ig_pt_walk.py / ig_pt_walk.pdf   — Design Combined: Frobenius thread as a walk on the
+    icosahedron — thread elements sit at their primitive's vertex, path visits:
+    Ħ→Φ→Σ→Þ→Φ→Σ (organic) → enzyme bridge → Ħ×8→Ç×2 (metallic).
+    The zigzag between Φ-Σ-Þ (organic) vs. anchoring at Ħ (metallic) is structurally visible.
+
+Projection: rotation (rx=22°, ry=-32°) + orthographic, SCALE=2.0 cm/unit.
+Depth sorting: all nodes drawn back-to-front with opacity fade.
+
+---
+
+Add IG periodic table designs B (Frobenius Spine) and C (12-Primitive Radial)
+
+ig_pt_spine.py / ig_pt_spine.pdf:
+  Design B — Frobenius spine as page backbone.
+  Organic thread (H O N C S P) left lane, metallic thread (Fe Ni Zn Mo Rh Pd W Ir Pt Au) right lane.
+  Enzyme bridge arcs: S→Zn (σ₁, solid purple) and Fe→N (σ₁⁻¹, dashed) mark the crossing points
+  where organic and metallic chemistry lock into enzyme active sites (metalloenzyme / porphyrin/haem).
+  T-state non-thread (Ru, Os) attached to metallic lane by dotted line.
+  Noble gases isolated at far left ("no δ"). All other elements as satellites ordered by prim family and period.
+  FDE dot color fills every node: T=green, B=orange, F=dark, N=faded.
+
+ig_pt_radial.py / ig_pt_radial.pdf:
+  Design C — 12-primitive radial, one arm per primitive, radial distance = period.
+  Empty arms (Ω Ř Γ ƒ) cluster on left half: no element has those primitives as dominant
+  atomic character — this is a structural fact, not a gap in the diagram.
+  Organic thread highlighted red, metallic thread blue.
+  FDE fill color on every node.
+
+---
+
 Add FDE classification + Frobenius thread overlay + braid diagram to IG periodic table
 
 ig_periodic_table.py additions:
