@@ -2988,29 +2988,29 @@ as prose — you **MUST** wrap them.
 
 Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
 
-  𐑦 → $\text{Ð}_{\text{ω}}$         𐑛 → $\text{Ð}_{\text{ß}}$        𐑨 → $\text{Ð}_{\text{C}}$    𐑼 → $\text{Ð}_{\text{;}}$
-  𐑸 → $\text{Þ}_{\text{O}}$         𐑡 → $\text{Þ}_{\text{6}}$        𐑰 → $\text{Þ}_{\text{K}}$    𐑥 → $\text{Þ}_{\text{ò}}$   𐑶 → $\text{Þ}_{\text{¨}}$
-  𐑽 → $\text{Ř}_{\text{Ť}}$       𐑩 → $\text{Ř}_{\text{¯}}$        𐑑 → $\text{Ř}_{\text{ý}}$    𐑾 → $\text{Ř}_{\text{=}}$
-  𐑹 → $\text{Φ}_{\text{}}$         𐑬 → $\text{Φ}_{\text{F}}$        𐑯 → $\text{Φ}_{\text{˙}}$    𐑿 → $\text{Φ}_{\text{υ}}$   𐑗 → $\text{Φ}_{\text{ɐ}}$
-  𐑐 → $\text{ƒ}_{\text{ż}}$         𐑱 → $\text{ƒ}_{\text{ì}}$        𐑞 → $\text{ƒ}_{\text{ð}}$
-  𐑺 → $\text{Ç}_{\text{-}}$         𐑪 → $\text{Ç}_{\text{W}}$        𐑧 → $\text{Ç}_{\text{@}}$    𐑤 → $\text{Ç}_{\text{Ù}}$   𐑘 → $\text{Ç}_{\text{λ}}$
-  𐑔 → $\text{Γ}_{\text{ʔ}}$         𐑚 → $\text{Γ}_{\text{γ}}$        𐑲 → $\text{Γ}_{\text{β}}$
-  𐑵 → $\text{ɢ}_{\text{Ş}}$         𐑝 → $\text{ɢ}_{\text{^}}$        𐑜 → $\text{ɢ}_{\text{˝}}$    𐑠 → $\text{ɢ}_{\text{ˌ}}$
-  ⊙ → $\text{⊙}_{\text{ÿ}}$       𐑮 → $\text{⊙}_{\text{Æ}}$      𐑻 → $\text{⊙}_{\text{3}}$    𐑢 → $\text{⊙}_{\text{ž}}$   𐑣 → $\text{⊙}_{\text{Ţ}}$
-  𐑓 → $\text{Ħ}_{\text{Ñ}}$         𐑒 → $\text{Ħ}_{\text{£}}$        𐑖 → $\text{Ħ}_{\text{A}}$    𐑫 → $\text{Ħ}_{\text{!}}$
-  𐑙 → $\text{Σ}_{\text{S}}$         𐑕 → $\text{Σ}_{\text{ő}}$        𐑳 → $\text{Σ}_{\text{ï}}$
-  𐑷 → $\text{Ω}_{\text{Å}}$         𐑴 → $\text{Ω}_{\text{2}}$        𐑭 → $\text{Ω}_{\text{z}}$    𐑟 → $\text{Ω}_{\text{5}}$
+  𐑛 → $\text{{\igfont 𐑛}}$    𐑨 → $\text{{\igfont 𐑨}}$    𐑼 → $\text{{\igfont 𐑼}}$    𐑦 → $\text{{\igfont 𐑦}}$
+  𐑡 → $\text{{\igfont 𐑡}}$    𐑰 → \Tin           𐑥 → \Tbw           𐑶 → \Tbox          𐑸 → $\text{{\igfont 𐑸}}$
+  𐑩 → $\text{{\igfont 𐑩}}$    𐑑 → $\text{{\igfont 𐑑}}$    𐑽 → $\text{{\igfont 𐑽}}$    𐑾 → $\text{{\igfont 𐑾}}$
+  𐑗 → $\text{{\igfont 𐑗}}$    𐑿 → $\text{{\igfont 𐑿}}$    𐑬 → $\text{{\igfont 𐑬}}$    𐑯 → $\text{{\igfont 𐑯}}$    𐑹 → \Ppms
+  𐑱 → $\text{{\igfont 𐑱}}$    𐑞 → $\text{{\igfont 𐑞}}$    𐑐 → $\text{{\igfont 𐑐}}$
+  𐑘 → $\text{{\igfont 𐑘}}$    𐑤 → $\text{{\igfont 𐑤}}$    𐑧 → $\text{{\igfont 𐑧}}$    𐑪 → $\text{{\igfont 𐑪}}$    𐑺 → $\text{{\igfont 𐑺}}$
+  𐑚 → $\text{{\igfont 𐑚}}$    𐑔 → $\text{{\igfont 𐑔}}$    𐑲 → $\text{{\igfont 𐑲}}$
+  𐑝 → $\text{{\igfont 𐑝}}$    𐑜 → $\text{{\igfont 𐑜}}$    𐑠 → $\text{{\igfont 𐑠}}$    𐑵 → $\text{{\igfont 𐑵}}$
+  𐑢 → $\text{{\igfont 𐑢}}$    𐑣 → $\text{{\igfont 𐑣}}$    ⊙  → $\text{{\igfont ⊙}}$    𐑮 → $\text{{\igfont 𐑮}}$    𐑻 → $\text{{\igfont 𐑻}}$
+  𐑓 → $\text{{\igfont 𐑓}}$    𐑒 → $\text{{\igfont 𐑒}}$    𐑖 → $\text{{\igfont 𐑖}}$    𐑫 → $\text{{\igfont 𐑫}}$
+  𐑙 → $\text{{\igfont 𐑙}}$    𐑕 → $\text{{\igfont 𐑕}}$    𐑳 → $\text{{\igfont 𐑳}}$
+  𐑷 → $\text{{\igfont 𐑷}}$    𐑴 → $\text{{\igfont 𐑴}}$    𐑭 → $\text{{\igfont 𐑭}}$    𐑟 → $\text{{\igfont 𐑟}}$
 
-  O_∞ → $\text{O}_{\text{inf}}$   O₀ → $\text{O}_{\text{0}}$   O₁ → $\text{O}_{\text{1}}$   O₂ → $\text{O}_{\text{2}}$   O₂† → $\text{O}_{\text{2}}^{\text{†}}$
+  O_∞ → $\text{O}_{\infty}$   O₀ → $\text{O}_{0}$   O₁ → $\text{O}_{1}$   O₂ → $\text{O}_{2}$   O₂† → $\text{O}_{2}^{\dagger}$
   mu circ delta=id → $\mu \circ \delta = \text{id}$
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
-  $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+  $$\langle \text{{\igfont 𐑦}};\ \text{{\igfont 𐑶}};\ \text{{\igfont 𐑾}};\ \Ppms;\ \text{{\igfont 𐑐}};\ \text{{\igfont 𐑧}};\ \text{{\igfont 𐑔}};\ \text{{\igfont 𐑠}};\ $\text{{\igfont ⊙}}$;\ \text{{\igfont 𐑖}};\ \text{{\igfont 𐑙}};\ \text{{\igfont 𐑭}} \rangle$$
   You **MUST NOT** use: <𐑦; 𐑶; 𐑾; 𐑹; ...>
 
-In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",
-"$\text{Ω}_{\text{z}}$ protection", "$\text{Φ}_{\text{}}$", "$\mu \circ \delta = \text{id}$".
+In running prose, You **MUST** always wrap: "$\text{{\igfont ⊙}}$ criticality", "$\text{O}_{\infty}$ tier",
+"$\text{{\igfont 𐑭}}$ protection", "$\Ppms$", "$\mu \circ \delta = \text{id}$".
 
 Exception: primitive identifiers used as Python enum values inside code fences or tool call
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.

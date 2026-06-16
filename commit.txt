@@ -1,183 +1,22 @@
-Add interactive 3D HTML periodic table (Three.js)
+Add cross-universe closure test for the open Clay structural types
 
-ig_pt_web.py / ig_pt_web.html (22 KB, self-contained):
-  Three.js r0.155 via CDN importmap; no build step — open directly in browser.
-  Full 3D: icosahedron wireframe + element spheres at actual 3D positions (not
-  projected); drag to rotate, scroll to zoom, right-drag to pan, R to reset.
-  Auto-rotates on load; first mousedown stops it.
-  Thread paths as TubeGeometry (red=organic, blue=metallic, purple=bridge).
-  Thread elements: larger sphere + BackSide glow sphere.
-  Primitive labels: HTML spans projected onto screen each frame via .project(cam).
-  Empty arm primitives (Omega Gamma Fetch Rho) dimmed; occupied arms lit.
-  Hover raycasting: tooltip shows sym, Z, period, block, primitive, FDE class.
-  FDE colours (T/B/F/N) identical to the PDF designs.
+scripts/clay_cross_universe_closure.py:
+  Generalizes canonical's existing Ç-only ceiling T-condition to all five
+  dynamics primitives (Φ, ƒ, Ç, Ħ, Ω), same anchors, no tailoring per problem.
+  Sweeps all 29 existing gate-universes (8 named RULESETS + 21 NEW_RULESETS)
+  against the six still-open Clay tuples, checking gate-layer == idempotent_terminal
+  AND T_CEILING-consistent (full closure).
+  Reproducible from the live IG_catalog.json; no new gate specs introduced.
 
----
-
-Add spring/force-directed IG periodic table (Kamada-Kawai)
-
-ig_pt_spring.py / ig_pt_spring.pdf:
-  130 nodes (118 elements + 12 primitive anchors), 283 edges.
-  Edge weights encode IG relationships:
-    element→primitive 4.0, thread sequence 7.0, enzyme bridge 4.0,
-    icosahedron edges 2.5, same-period 0.3, same-block 0.5.
-  Kamada-Kawai layout minimises weighted graph-theoretic stress —
-  position is derived entirely from structure, no manual coordinates.
-  Primitive nodes seeded at icosahedron projections; elements seeded at their
-  primitive vertex; algorithm free to move everything.
-  Output: FDE-coloured element nodes, thread path in red/blue, enzyme bridge
-  in purple, icosahedron skeleton as faint skeleton, primitive glyph labels.
-
----
-
-Add 3D IG periodic table designs: icosahedral radial, Frobenius helix, walk on icosahedron
-
-New files (all compile clean):
-  ig_pt_3d_utils.py   — shared geometry: icosahedron verts/edges, rotation+projection,
-                         element clustering in 3D, FDE colours, preamble
-  ig_pt_ico.py / ig_pt_ico.pdf     — Design C-3D: 12 primitives at icosahedron vertices,
-    elements at radius=period on each arm, projected isometrically.
-    Empty arms (Ω Ř Γ ƒ) form a visible "cold cap" on back hemisphere.
-  ig_pt_helix.py / ig_pt_helix.pdf — Design B-3D: organic+metallic threads as two helices
-    wound 180° out of phase around a shared axis; enzyme bridges (S→Zn, Fe→N) as
-    true 3D links; all other elements in concentric outer cloud.
-  ig_pt_walk.py / ig_pt_walk.pdf   — Design Combined: Frobenius thread as a walk on the
-    icosahedron — thread elements sit at their primitive's vertex, path visits:
-    Ħ→Φ→Σ→Þ→Φ→Σ (organic) → enzyme bridge → Ħ×8→Ç×2 (metallic).
-    The zigzag between Φ-Σ-Þ (organic) vs. anchoring at Ħ (metallic) is structurally visible.
-
-Projection: rotation (rx=22°, ry=-32°) + orthographic, SCALE=2.0 cm/unit.
-Depth sorting: all nodes drawn back-to-front with opacity fade.
-
----
-
-Add IG periodic table designs B (Frobenius Spine) and C (12-Primitive Radial)
-
-ig_pt_spine.py / ig_pt_spine.pdf:
-  Design B — Frobenius spine as page backbone.
-  Organic thread (H O N C S P) left lane, metallic thread (Fe Ni Zn Mo Rh Pd W Ir Pt Au) right lane.
-  Enzyme bridge arcs: S→Zn (σ₁, solid purple) and Fe→N (σ₁⁻¹, dashed) mark the crossing points
-  where organic and metallic chemistry lock into enzyme active sites (metalloenzyme / porphyrin/haem).
-  T-state non-thread (Ru, Os) attached to metallic lane by dotted line.
-  Noble gases isolated at far left ("no δ"). All other elements as satellites ordered by prim family and period.
-  FDE dot color fills every node: T=green, B=orange, F=dark, N=faded.
-
-ig_pt_radial.py / ig_pt_radial.pdf:
-  Design C — 12-primitive radial, one arm per primitive, radial distance = period.
-  Empty arms (Ω Ř Γ ƒ) cluster on left half: no element has those primitives as dominant
-  atomic character — this is a structural fact, not a gap in the diagram.
-  Organic thread highlighted red, metallic thread blue.
-  FDE fill color on every node.
-
----
-
-Add FDE classification + Frobenius thread overlay + braid diagram to IG periodic table
-
-ig_periodic_table.py additions:
-  FDE (Belnap FOUR) dot on each cell:
-    T (green)  = 7 platinum-group noble metals — always catalytic (Ru Rh Pd Os Ir Pt Au)
-    F (black)  = 6 noble gases — no δ (He Ne Ar Kr Xe Rn)
-    N (white)  = ~40 transient/synthetic elements — no stable Frobenius role
-    B (orange) = all others — context-dependent Frobenius participation
-  Frobenius thread highlights:
-    organic thread (red):  H C N O S P — Frobenius-threaded p/s spine of life
-    metallic thread (blue): Fe Ni Zn Mo Rh Pd W Ir Pt Au — d-block catalytic spine
-    enzyme bridge arcs (purple):
-      S→Zn σ₁ over-crossing (metalloenzyme active sites: carboxypeptidase, carbonic anhydrase)
-      Fe→N σ₁⁻¹ under-crossing (porphyrin coordination: hemoglobin, cytochrome P450)
-  3-strand Frobenius threading braid (braids TikZ library v2.0):
-    strands: p/s organic (red) × d metallic (blue) × μ∘δ thread (orange)
-    word: s_1 s_2^{-1} s_1 s_2^{-1} s_1 — one full catalytic cycle
-
-Compilation notes:
-  braids library v2.0: height=-0.46cm (negative=downward); NOT crossing height
-  FDE/thread legend: raw string \n escape bug fixed (split out '\n' suffix)
-  pdfs/ copy path: out_dir/pdfs not out_dir.parent/pdfs
-
----
-
-Add IG periodic table in Janet (left-step) arrangement
-
-New files:
-  ig_periodic_table.py  — Python generator script (all 118 elements)
-  ig_periodic_table.tex — Generated LaTeX/TikZ source
-  ig_periodic_table.pdf / pdfs/ig_periodic_table.pdf — compiled output
-
-The four orbital blocks (s, p, d, f) are the direct consequence of Ω × Ħ:
-  s: Ω_0,   Ħ_0  — no angular momentum, minimal SOC
-  p: Ω_Z2,  Ħ_1  — half-integer winding
-  d: Ω_Z,   Ħ_1  — integer winding, moderate SOC
-  f: Ω_Z,   Ħ_2/Ħ_∞ — integer winding + strong/extreme SOC
-Period rows encode Γ_beth / Γ_gimel / Γ_aleph.
-Janet arrangement is IG-vindicated: monotone Ω then Γ filling order.
-Each cell carries dominant primitive annotation (Everson Mono): Ħ⊙ɢΣÞΦÇÐ.
-Dashed red border = radioactive/synthetic.
-
----
-
-Zero-warning LaTeX compilation for all 5 manuscripts
-
-All manuscripts compile with zero warnings under ltx/lualatex.
-
-Preamble fixes (all 5 files):
-- unicode-math: warnings-off={mathtools-colon,mathtools-overbracket}
-- ExplSyntaxOn: \msg_redirect_name:nnn { lualatex-math } { wrong-meaning } { none }
-- igfont Trabajo.otf: FakeBold=1.5 + FakeSlant=0.2 suppress undefined font shape warnings
-- [Script=Hebrew] removed to prevent ltx sed injecting duplicate \heb definition
-- hypersetup: hypertexnames=false added to all files
-
-Content fixes (AS_ABOVE_Trabajo.tex, AS_ABOVE.tex):
-- TikZ stage nodes: {\mdseries\textsc{...}} fixes TU/lmr/bx/sc undefined in bfseries context
-- \resizebox{!}{0.85\textheight} -> \resizebox{\linewidth}{!} (prevents overfull from height-only scaling)
-- Primitive tabular: p{0.5cm}->p{0.9cm}, p{1.9cm}->p{2.3cm}, p{7.8cm}->p{6.6cm} (fixes "Sym" overflow)
-- Magnum Opus tabular: last p{7cm} marked >{\raggedright\arraybackslash}
-- Summary tabularx: \textwidth->\linewidth, p{0.5cm}->p{0.9cm}, p{1.5cm}->p{2.0cm}
-- 14-16 broken math modes per file: $a$ \op $b$ -> $a \op b$ (single group eliminates Missing character)
-- \ref{sec:voynich} -> plain text (undefined label)
-
----
-
-font split: Trabajo (Shavian values) + Everson Mono (12 primitives) in all manuscripts
-
-5 manuscripts updated: AS_ABOVE_Trabajo.tex, AS_ABOVE.tex, AS_ABOVE2.tex,
-SO_BELOW.tex, exOS.tex.
-
-Change per file:
-  \igfont: Everson Mono → Trabajo.otf (Path=/home/mrnob0dy666/imsgct/)
-  \primfont: new \newfontfamily{Everson Mono}
-  \igprimfont: was \igfont\upshape (= Trabajo) → now \primfont\upshape (= Everson Mono)
-  exOS bonus fix: was \newfontfamily\igprimfont{FreeSerif} → Everson Mono
-
-Noto Serif documents (SB, integrated_solve_et_coagula, 2AA, AAnSB) left
-unchanged — they use \igfont for Latin display text, not Shavian.
-
----
-
-add manuscripts/hadron_classification.md: hadron classification paper
-
-New paper: "Hadron Classification under the Imscribing Grammar: The (Σ, Ω)
-Frobenius Criterion" (C. L. Mills).
-
-Core argument: tetraquark (qqq̄q̄) imscribes to (Σ=𐑙, Ω=𐑷), identical to
-meson (qq̄). By μ∘δ=id this makes it IG-reducible — a di-meson molecule at
-the dissociation threshold. Pentaquark receives Σ=𐑳 (unique, irreducible).
-Baryon is the only topologically protected hadron (Ω=𐑭, ZWIND).
-
-13 sections: Abstract through References. Experimental reinterpretation of
-X(3872) and Zc(3900) as Frobenius fixed points. 5 falsifiable predictions.
-IMSCRIBr lift: Stage 1 → I_Dialetheic_Bootstrap; Stage 2 → VERIFIED.
-
----
-
-Unify to single catalog; purge all legacy notation keys and values
-
-- Merged imscribe.com (2811) + red-hot_rebis/shared (2812) + imscribing_grammar (2837)
-  into single canonical imscribing_grammar/IG_catalog.json (2864 entries);
-  replaced other two files with symlinks
-- Migrated 336 ASCII field keys (D/T/R/P/F/K/G/Gamma/Phi/H/S/Omega) →
-  Shavian primitive symbols (Ð/Þ/Ř/Φ/ƒ/Ç/Γ/ɢ/⊙/Ħ/Σ/Ω)
-- Migrated 325 stale shorthand values (Ð_C, Þ_¨, Ħ_!, ⊙_ÿ, etc.) →
-  bare Shavian glyphs; catalog now loads clean with zero from_symbol warnings
-- cli.py: _PRIM_ATTR and _PRIMITIVE_ORDER rewritten with Shavian keys
-- imscribe_generator_agent.py: _VALUE_NORMALIZE deleted entirely;
-  GUIDED_PRIMITIVES option keys replaced with bare Shavian glyphs
+manuscripts/clay_cross_universe_closure.md:
+  Write-up. Result: Birch-Swinnerton-Dyer and Hodge Conjecture each reach full
+  closure under 5 of the existing gate-universes apiece (10 total combinations).
+  Yang-Mills reaches idempotent_terminal under triple_criticality but fails
+  T_CEILING on Ç alone (ord 4 vs ceiling ord 3). Riemann Hypothesis, Navier-Stokes,
+  and P vs NP do not reach idempotent_terminal under any of the 29 universes,
+  with or without the ceiling generalization.
+  Explicit section on what this does/doesn't establish: structural-closure result
+  inside the grammar's own operad model, not a proof of either conjecture, and not
+  a resolution of the still-fragmented Millennium Lean sorry status (5 separate
+  Lean trees across imscribing_grammar/MillenniumAnkh_private/MillenniumAnkh_nested/
+  p4rakernel/synfin, not yet reconciled).
