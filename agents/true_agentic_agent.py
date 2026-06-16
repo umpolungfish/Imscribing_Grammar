@@ -52,6 +52,7 @@ import asyncio
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import textwrap
@@ -699,6 +700,61 @@ def _file_read_verify(emit_input: Dict, emit_output: str,
     return ("(read is idempotent — Frobenius trivially closed)", True)
 
 
+_PRIM_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+_TUPLE_RE = re.compile(r"⟨\s*([^⟩]+?)\s*⟩")
+_NAME_RE = re.compile(r"\b([a-z][a-z0-9_]{2,40})\b")
+
+
+def _catalog_tuples() -> Dict[str, Tuple[str, ...]]:
+    """name -> ground-truth 12-tuple, loaded fresh from IG_catalog.json every call.
+    No cache survives a process restart; this is intentionally re-read each time
+    so a catalog edit is picked up without restarting the agent."""
+    from IG_inquiry import CATALOG_PATH
+    entries = json.loads(Path(CATALOG_PATH).read_text(encoding="utf-8"))
+    return {e["name"]: tuple(e.get(k, "") for k in _PRIM_KEYS) for e in entries}
+
+
+def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
+    """Mechanical check: any catalog entry name mentioned in `content`, followed
+    within 400 chars by a Shavian <...> tuple, must match the live catalog's
+    tuple for that name EXACTLY. This is the enforcement the TOOL-ONLY
+    COMPUTATION RULE only ever stated as a prompt instruction -- prompts can be
+    (and have been) violated by hand-imscribing a value instead of calling
+    lookup_catalog/compute_distance. This function makes the violation a hard
+    write failure instead of a hope.
+    Returns (ok, problems) -- problems is empty iff ok.
+    """
+    table = _catalog_tuples()
+    problems: List[str] = []
+    for tm in _TUPLE_RE.finditer(content):
+        tup_text = tm.group(1)
+        glyphs = [g.strip() for g in re.split(r"[;,·]", tup_text) if g.strip()]
+        if len(glyphs) != 12:
+            continue  # not a 12-primitive structural tuple -- not our concern
+        # search backward up to 400 chars for the nearest catalog entry name
+        window_start = max(0, tm.start() - 400)
+        window = content[window_start: tm.start()]
+        candidate_names = [m.group(1) for m in _NAME_RE.finditer(window)]
+        matched_name = None
+        for cand in reversed(candidate_names):  # nearest first
+            if cand in table:
+                matched_name = cand
+                break
+        if matched_name is None:
+            continue  # tuple present but no recognizable catalog name nearby
+        truth = table[matched_name]
+        given = tuple(glyphs)
+        if given != truth:
+            diffs = [
+                f"{_PRIM_KEYS[i]}: wrote {given[i]!r}, catalog has {truth[i]!r}"
+                for i in range(12) if given[i] != truth[i]
+            ]
+            problems.append(
+                f"'{matched_name}' tuple does not match live catalog -- " + "; ".join(diffs)
+            )
+    return (len(problems) == 0, problems)
+
+
 def _file_write_emit(args: Dict[str, Any]) -> str:
     if "path" not in args or "content" not in args:
         missing = [k for k in ("path", "content") if k not in args]
@@ -726,10 +782,14 @@ def _file_write_verify(emit_input: Dict, emit_output: str,
     original = emit_input["content"]
     try:
         readback = Path(path).read_text(encoding="utf-8")
-        if readback == original:
-            digest = hashlib.sha256(readback.encode()).hexdigest()[:16]
-            return (f"read-back matches written content (sha256:{digest})", True)
-        return (f"read-back MISMATCH — {len(readback)} chars != {len(original)} chars", False)
+        if readback != original:
+            return (f"read-back MISMATCH — {len(readback)} chars != {len(original)} chars", False)
+        ok, problems = _verify_imscribed_fidelity(readback)
+        if not ok:
+            return ("HAND-IMSCRIBED VALUE REJECTED — " + " | ".join(problems) +
+                     " — re-fetch via lookup_catalog/compute_distance and rewrite.", False)
+        digest = hashlib.sha256(readback.encode()).hexdigest()[:16]
+        return (f"read-back matches written content AND catalog-verified (sha256:{digest})", True)
     except Exception as e:
         return (f"read-back error: {e}", False)
 
@@ -765,6 +825,14 @@ def _chunked_write_verify(emit_input: Dict, emit_output: str,
     try:
         size = Path(path).stat().st_size
         ok = "error" not in emit_output.lower()
+        if ok:
+            # Check the FULL file as it stands now -- a name/tuple pair can
+            # straddle a chunk boundary, so this can't be checked per-chunk.
+            full = Path(path).read_text(encoding="utf-8")
+            fidelity_ok, problems = _verify_imscribed_fidelity(full)
+            if not fidelity_ok:
+                return ("HAND-IMSCRIBED VALUE REJECTED — " + " | ".join(problems) +
+                         " — re-fetch via lookup_catalog/compute_distance and rewrite.", False)
         return (f"{path}: {size} bytes on disk", ok)
     except Exception as e:
         return (f"verify error: {e}", False)

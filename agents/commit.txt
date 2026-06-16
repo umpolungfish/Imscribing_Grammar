@@ -1,0 +1,19 @@
+Hard fidelity gate added to file_write and chunked_write verify functions.
+
+_verify_imscribed_fidelity() scans any content being written for Shavian
+12-tuples preceded by a catalog entry name within 400 chars. If found,
+the tuple is compared against the live IG_catalog.json ground truth.
+Mismatch = hard verify failure with exact per-primitive diff — write is
+rejected and the agent must re-fetch via lookup_catalog/compute_distance.
+
+This replaces a prompt instruction (which had already been violated by
+hand-imscribing) with a mechanical enforcement. Tested: bad tuple
+correctly caught, correct tuple passes, end-to-end emit/verify confirmed.
+
+Files changed: agents/true_agentic_agent.py
+  - import re added
+  - _PRIM_KEYS, _TUPLE_RE, _NAME_RE module-level constants
+  - _catalog_tuples(): reads live catalog fresh on every call
+  - _verify_imscribed_fidelity(): core checker, returns (ok, problems)
+  - _file_write_verify: wired, returns HAND-IMSCRIBED VALUE REJECTED on fail
+  - _chunked_write_verify: wired, checks full file after all chunks land
