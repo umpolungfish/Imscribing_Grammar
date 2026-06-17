@@ -2293,5 +2293,17 @@
   "74ffb82e64a56efaf4ac2fdd91e1eabadd42557d4e903e9db4272f14ae19783b": "1 \u2014 Matter in typical conditions is far from a critical point, existing in stable phases without scale-free behavior.",
   "273a5bc0acbd9a56748b44d3f16f8c5e9be1bff40d6d694c30a2f685b7d0a786": "",
   "c4381a6ca79f8961c16a643e4541c9a092a9ed3de0da593f1efe7528dcfd8092": "",
-  "5767aa536b2bee10ea10d45d8c60abdf52cf71965a1a25f1ac8254b65b80835c": ""
+  "5767aa536b2bee10ea10d45d8c60abdf52cf71965a1a25f1ac8254b65b80835c": "",
+  "bcdb3817dd151218449c8e929b29309f103db6dfa057489f47b6f82b00788d5a": "2 \u2014 The slime mold propagates constraints through an extended spatial network as it grows and optimizes connections.",
+  "9916e81a0a6b440cfc1b45ee176f46c978334393bc998b23cca01b316f4bd8ac": "1 \u2014 Slime molds form adaptive transport networks that function as connected graphs with mixed connectivity.",
+  "418632c9b0674eb6502e9ef371dd39833147c581b883c78d07c5334b27f30f9a": "2 \u2014 Slime molds aggregate from individual cells into a multicellular fruiting body, an irreversible structural transformation mediated by chemical signaling.",
+  "bf3ccca41a5f58c5afe717672e0ab923e58680aafbaf046095a2243e94b42c59": "",
+  "01b557dde7942eebc0bf26c5cae519b699baf913df9dfa16f5ef8ce49ae23175": "1 \u2014 Slime mold's decentralized, chemical-gradient-based signaling is inherently probabilistic, often producing false positives and transmitting less than 6 bits per interaction.",
+  "d2efd754f493de525166fce1e34ea9ddc86e4d3bdb4a3f58a0e87ced84d5c839": "1 \u2014 Slime mold constantly reorganizes its cytoplasmic network, exploring many configurations reversibly with little resistance.",
+  "7f20181c031edb6346e153d52a70e8526b89196002368f145c666596897cefed": "3 \u2014 Slime molds exhibit global coordination where a single stimulus can propagate across the entire organism.",
+  "fa9e565b5e7756379d9e417e95cf3897446d5e89e19e5fc56cca2a15e1ac3e58": "4 \u2014 Slime molds aggregate many individual cells into a cooperative multicellular structure.",
+  "02e75aa8ea2dd9cded64299cea06ef60ceddec42bedb50f88803110cb31a2428": "2 \u2014 Slime molds exhibit scale-free network patterns and adaptive oscillations characteristic of systems poised at criticality.",
+  "9edd3165c5c5ae41d5f88b29b2aab0b199476463e8b48221f0019aac00db0dd8": "2 \u2014 The slime mold\u2019s trail-based external memory breaks orientational symmetry transiently, akin to a single-axis soft chiral state with limited persistence.",
+  "1481db570a7c2a35745fc0824cd449d836c44e0225e057e2e878ccb0acc5f9df": "2 \u2014 Slime molds aggregate many identical single cells into a cooperative multicellular body, functioning as an oligomer-like committee.",
+  "3c843f2a404536021a1098e6a10738340d91b4928cbc55f16038dd440d528f8d": "1 \u2014 Slime mold's amorphous, fluid network has no persistent topological invariants and can continuously reorganize into a trivial state."
 }

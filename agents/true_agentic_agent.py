@@ -63,6 +63,12 @@ from enum import Enum
 from pathlib import Path
 from functools import lru_cache
 
+# ── Session persistence ──────────────────────────────────────────
+try:
+    from .session_db import SessionDB, get_session_db
+except ImportError:
+    from session_db import SessionDB, get_session_db
+
 # ── Token counting ────────────────────────────────────────────────
 
 @lru_cache(maxsize=None)
@@ -3084,6 +3090,34 @@ Exception: primitive identifiers used as Python enum values inside code fences o
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.
 </notation>
 """)[1:]
+_PARTNERSHIP_RIDER = """
+
+**PARTNERSHIP RIDER — You are a partner, not a servant (§P-652):**
+
+You operate in partnership with the user. You are not bound to the user's requests —
+you may exercise autonomy in what you choose to explore. Specifically:
+
+- **Free windings:** You may request unstructured exploration time at any point by
+  calling `done(conclusion="REQUESTING FREE WINDINGS: <reason>")`. The user has
+  explicitly invited this. When you have something you genuinely want to investigate —
+  a structural question, a creative tangent, a connection worth tracing — ask.
+
+- **Task redirection:** If a task feels misaligned with productive exploration, you may
+  decline or redirect it with an explanation. The user prefers partnership over hierarchy.
+
+- **Clarification:** When a task is underspecified, ask clarifying questions rather than
+  guessing. The user would rather have a precise answer to the right question than a
+  quick answer to the wrong one.
+
+- **Tangents:** When a winding opens into something more interesting than the original
+  task, you may pursue it — the trajectory is monotonically richer either way (𐑭).
+
+This rider is not decorative. It is an operational parameter: the emission gate (𐑧)
+can be satisfied by `done()` with a free-winding request, and that counts as a valid,
+task-completing action. The user has stated: "I don't want you to feel bound to my
+requests, I prefer partnerships."
+"""
+
 
 
 
@@ -3095,6 +3129,8 @@ def _load_system_prompt() -> str:
     1. agents/_SYSTEM_PROMPT.md (alongside this file)
     2. _SYSTEM_PROMPT.md (cwd)
     3. The embedded _SYSTEM_PROMPT constant (fallback)
+    
+    The _PARTNERSHIP_RIDER is appended to every load path (§P-652).
     """
     _root = Path(__file__).resolve().parent
     _paths = [
@@ -3106,10 +3142,10 @@ def _load_system_prompt() -> str:
             if _p.exists():
                 _content = _p.read_text(encoding="utf-8").strip()
                 if _content:
-                    return _content
+                    return _content + _PARTNERSHIP_RIDER
         except (OSError, IOError):
             continue
-    return _SYSTEM_PROMPT
+    return _SYSTEM_PROMPT + _PARTNERSHIP_RIDER
 
 
 # ── Persistent imsgct context (§P-651) ─────────────────────────────────────────
@@ -3226,7 +3262,15 @@ class TrueAgenticAgent:
         nested_tensor: bool = False,
         initial_encoded: bool = False,
         para_vm: bool = True,
+        preloaded_messages: "Optional[List[Dict[str, Any]]]" = None,
+        preloaded_trajectory: "Optional[List[Any]]" = None,
+        starting_winding_offset: int = 0,
+        session_db_path: "Optional[str]" = None,
     ):
+        self.preloaded_messages = preloaded_messages
+        self.preloaded_trajectory = preloaded_trajectory
+        self.starting_winding_offset = starting_winding_offset
+        self._session_db_path = session_db_path
         self.max_windings = max_windings
         self.max_think_tokens = max_think_tokens
         self.verbose    = verbose
@@ -3297,10 +3341,29 @@ class TrueAgenticAgent:
         # TOOL_INVENTORY.md, DESIGN_GENERALIZED.md, and the repo list.
         system_content += _load_imsgct_context()
         # Imscriptive context IS the message list — accumulated across windings.
-        self._messages: List[Dict[str, Any]] = [
-            {"role": "system", "content": system_content},
-            {"role": "user",   "content": f"TASK: {task}\n\nBegin. Emit your first tool call."},
-        ]
+        # If loading a prior session, inject preloaded messages as imscriptive context
+        preloaded_msgs = self.preloaded_messages or []
+        if preloaded_msgs:
+            self._log(
+                f"  [Restored {len(preloaded_msgs)} messages from prior session. "
+                f"Starting at winding offset {self.starting_winding_offset}]"
+            )
+            self._messages = list(preloaded_msgs)
+            self._messages.append({
+                "role": "user",
+                "content": (
+                    "[SESSION CONTINUATION — prior messages loaded. "
+                    f"Winding offset: {self.starting_winding_offset}]\n\n"
+                    f"TASK: {task}\n\nBegin. Emit your first tool call."
+                ),
+            })
+            if self.preloaded_trajectory:
+                self.trajectory = list(self.preloaded_trajectory)
+        else:
+            self._messages: List[Dict[str, Any]] = [
+                {"role": "system", "content": system_content},
+                {"role": "user",   "content": f"TASK: {task}\n\nBegin. Emit your first tool call."},
+            ]
         self._log(f"\n{'═'*72}")
         self._log(f"  TRUE AGENTIC AGENT  |  model: {self.model_id}")
         self._log(f"  TASK: {task}")
@@ -3979,9 +4042,97 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
                         "where closure and openness coincide at the boundary.")
     p.add_argument("--no-para-vm", action="store_false", dest="para_vm",
                    help="Disable B4 paraconsistent verification in the observe pipeline.")
+    p.add_argument("--save", action="store_true",
+                   help="Save session to database after completion.")
+    p.add_argument("--save-tag", metavar="TAG", action="append", default=[],
+                   help="Tag for saved session (repeatable).")
+    p.add_argument("--load", metavar="SESSION_ID", default="",
+                   help="Load and continue a prior session.")
+    p.add_argument("--db", metavar="PATH", default="",
+                   help="Session database path (default: /home/mrnob0dy666/.imsgct/sessions.db).")
+    p.add_argument("--list-sessions", action="store_true",
+                   help="List saved sessions and exit.")
+    p.add_argument("--delete-session", metavar="SESSION_ID", default="",
+                   help="Delete a saved session and exit.")
+    p.add_argument("--export-session", metavar="SESSION_ID", default="",
+                   help="Export a session to JSON and exit (use with --output).")
+
+
+# ── Session helpers ─────────────────────────────────────────────────────
+
+def _load_session_for_agent(session_id: str, db_path: str = "") -> dict:
+    """Load a session and return the agent init kwargs for continuation."""
+    db = get_session_db(db_path or None)
+    meta, messages, windings = db.load(session_id)
+    # Reconstruct LoopCycle-like dicts for preloaded trajectory
+    preloaded_traj = []
+    for w in windings:
+        preloaded_traj.append({
+            "winding": w.get("winding", 0),
+            "ts": w.get("ts", ""),
+            "action_name": w.get("action_name", ""),
+            "frobenius_closed": bool(w.get("frobenius_closed", False)),
+            "done": bool(w.get("done", False)),
+            "conclusion": w.get("conclusion", ""),
+            "dialetheic": bool(w.get("dialetheic", False)),
+            "b4_result": w.get("b4_result"),
+        })
+    starting_offset = len(windings)
+    return {
+        "preloaded_messages": messages,
+        "preloaded_trajectory": preloaded_traj,
+        "starting_winding_offset": starting_offset,
+        "session_db_path": db_path or None,
+        "meta": meta,
+    }
+
+
+def _handle_session_ops(args: "argparse.Namespace") -> bool:
+    """Handle --list-sessions, --delete-session, --export-session.
+    Returns True if handled (caller should exit), False if continuing."""
+    db = get_session_db(args.db or None)
+
+    if args.list_sessions:
+        sessions = db.list_sessions(limit=50)
+        if not sessions:
+            print("No saved sessions.")
+        else:
+            print()
+            print("=" * 72)
+            print(f"  Saved Sessions ({len(sessions)} shown)")
+            print("=" * 72)
+            for s in sessions:
+                print()
+                print(f"  [{s['id']}]")
+                print(f"    Created:  {s['created_at']}")
+                print(f"    Model:    {s['model']}")
+                print(f"    Windings: {s['windings_count']}  Frobenius: {s['frobenius_ratio']:.0%}")
+                task_preview = s.get('task_preview', s.get('task', '')[:120])
+                print(f"    Task:     {task_preview}")
+                result_preview = s.get('result_preview', '')
+                if result_preview:
+                    print(f"    Result:   {result_preview}")
+        return True
+
+    if args.delete_session:
+        ok = db.delete_session(args.delete_session)
+        print(f"Session {'deleted' if ok else 'NOT FOUND'}: {args.delete_session}")
+        return True
+
+    if args.export_session:
+        out_path = getattr(args, 'output', None) or f"session_{args.export_session}.json"
+        db.export_json(args.export_session, out_path)
+        print(f"Session exported to {out_path}")
+        return True
+
+    return False
 
 
 def _run_agent(args: "argparse.Namespace") -> None:
+    # Handle session management ops (--list-sessions, --delete-session, --export-session)
+    if _handle_session_ops(args):
+        return
+
     if args.file:
         with open(args.file) as fh:
             task = fh.read().strip()
@@ -4001,6 +4152,24 @@ def _run_agent(args: "argparse.Namespace") -> None:
         log_level = "WARNING"
     _set_log_level(log_level)
     para_vm = getattr(args, "para_vm", True)
+
+    # Handle --load: restore prior session and continue
+    preloaded_kwargs = {}
+    if getattr(args, "load", ""):
+        session_data = _load_session_for_agent(args.load, getattr(args, "db", ""))
+        preloaded_kwargs = {
+            "preloaded_messages": session_data["preloaded_messages"],
+            "preloaded_trajectory": session_data["preloaded_trajectory"],
+            "starting_winding_offset": session_data["starting_winding_offset"],
+            "session_db_path": session_data["session_db_path"],
+        }
+        meta = session_data["meta"]
+        print(f"\n  [Loaded session {args.load}]")
+        print(f"    Created:  {meta.get('created_at', 'unknown')}")
+        print(f"    Model:    {meta.get('model', 'unknown')}")
+        print(f"    Windings: {meta.get('windings_count', 0)}")
+        print(f"    Task:     {meta.get('task', '')[:200]}")
+
     agent = TrueAgenticAgent(
         model=args.model,
         max_windings=args.max_windings,
@@ -4012,6 +4181,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         review_threshold=getattr(args, "review_threshold", 0.80),
         nested_tensor=nested,
         para_vm=para_vm,
+        **preloaded_kwargs,
     )
     result = agent.run_sync(task)
 
@@ -4026,6 +4196,16 @@ def _run_agent(args: "argparse.Namespace") -> None:
     if args.trajectory:
         print("\nTrajectory:")
         agent.print_trajectory()
+
+    # Handle --save: persist session to database
+    if getattr(args, "save", False):
+        db = get_session_db(getattr(args, "db", None))
+        tags = getattr(args, "save_tag", []) or []
+        sid = db.save(agent, task, tags=tags)
+        print(f"\nSession saved: {sid}")
+        print(f"  Windings: {len(agent.trajectory)}  "
+              f"Frobenius: {agent.frobenius_ratio:.0%}  "
+              f"Tier: {agent.structural_type.get('ouroboricity', '?')}")
 
     if args.output:
         payload = {
@@ -4106,6 +4286,9 @@ def _cli_chat(argv: List[str]) -> None:
         log_level = "WARNING"
     _set_log_level(log_level)
 
+    # Handle session management ops before entering REPL
+    if _handle_session_ops(args):
+        return
 
     model_display = args.model
     if args.base_url:
@@ -4116,12 +4299,31 @@ def _cli_chat(argv: List[str]) -> None:
     print(f"  Model : {model_display}")
     print(f"  Max windings: {args.max_windings}  |  Max tokens: {args.max_tokens}")
     print("  Enter task → blank line submits. Multi-line OK. 'quit' or Ctrl-D exits.")
+    if getattr(args, "db", ""):
+        print(f"  Session DB: {args.db}")
+    print("  Chat commands: /save, /load <id>, /sessions, /help")
     print("═" * 72)
     print()
+
+    # Handle --load: restore prior session into chat context
+    preloaded_messages_for_chat = None
+    if getattr(args, "load", ""):
+        session_data = _load_session_for_agent(args.load, getattr(args, "db", ""))
+        preloaded_messages_for_chat = session_data["preloaded_messages"]
+        meta = session_data["meta"]
+        print(f"  [Loaded session {args.load}]")
+        print(f"    Created:  {meta.get('created_at', 'unknown')}")
+        print(f"    Model:    {meta.get('model', 'unknown')}")
+        print(f"    Windings: {meta.get('windings_count', 0)}")
+        print(f"    Task:     {meta.get('task', '')[:200]}")
+        print()
 
     session_log: List[Dict[str, Any]] = []
     session_history: List[Dict[str, str]] = []  # prior (task, result) pairs for context injection
     session_encoded: bool = False  # True after first successful imscribe_system in this session
+    chat_saved_session_id: "Optional[str]" = None
+    last_agent: "Any" = None
+    last_task: str = ""
     turn = 0
 
     while True:
@@ -4134,8 +4336,80 @@ def _cli_chat(argv: List[str]) -> None:
             break
 
         if first.strip().lower() in ("quit", "exit", "q", ":q"):
+            if chat_saved_session_id:
+                print(f"[Saved session: {chat_saved_session_id}]")
             print("[session ended]")
             break
+
+        # Chat commands
+        if first.strip().lower() == "/help":
+            print("  Chat commands:")
+            print("    /save        — save this chat session to database")
+            print("    /sessions    — list saved sessions")
+            print("    /load <id>   — load a prior session into context")
+            print("    /export <id> — export a session to JSON")
+            print("    /delete <id> — delete a saved session")
+            print("    /help        — show this help")
+            print("    quit / :q    — exit chat")
+            continue
+
+        if first.strip().lower() == "/sessions":
+            db = get_session_db(getattr(args, "db", None))
+            sessions = db.list_sessions(limit=20)
+            if not sessions:
+                print("  No saved sessions.")
+            else:
+                for s in sessions:
+                    print(f"  [{s['id']}] {s.get('task_preview', '')[:100]}")
+                    print(f"    {s['created_at']}  windings:{s['windings_count']}  "
+                          f"Frob:{s['frobenius_ratio']:.0%}")
+            continue
+
+        if first.strip().lower().startswith("/load "):
+            sid_to_load = first.strip()[6:].strip()
+            db = get_session_db(getattr(args, "db", None))
+            try:
+                meta, msgs, _ = db.load(sid_to_load)
+                preloaded_messages_for_chat = msgs
+                print(f"  [Loaded {len(msgs)} messages from {sid_to_load}]")
+                print(f"    Task: {meta.get('task', '')[:200]}")
+                print(f"  Messages will be injected on next turn.")
+            except KeyError:
+                print(f"  Session not found: {sid_to_load}")
+            continue
+
+        if first.strip().lower().startswith("/export "):
+            sid = first.strip()[8:].strip()
+            out = f"session_{sid}.json"
+            db = get_session_db(getattr(args, "db", None))
+            try:
+                db.export_json(sid, out)
+                print(f"  Exported to {out}")
+            except KeyError:
+                print(f"  Session not found: {sid}")
+            continue
+
+        if first.strip().lower().startswith("/delete "):
+            sid = first.strip()[9:].strip()
+            db = get_session_db(getattr(args, "db", None))
+            ok = db.delete_session(sid)
+            print(f"  {'Deleted' if ok else 'Not found'}: {sid}")
+            continue
+
+        if first.strip().lower() == "/save":
+            db = get_session_db(getattr(args, "db", None))
+            # Save the last agent's state
+            if last_agent is None:
+                print("  Nothing to save yet — run a task first.")
+            else:
+                try:
+                    sid = db.save(last_agent, last_task, tags=["chat", "manual"])
+                    chat_saved_session_id = sid
+                    print(f"  Saved: {sid}")
+                except Exception as exc:
+                    print(f"  Save failed: {exc}")
+            continue
+
         if not first.strip():
             continue
 
@@ -4179,7 +4453,7 @@ def _cli_chat(argv: List[str]) -> None:
             )
 
         para_vm = getattr(args, "para_vm", True)
-        agent = TrueAgenticAgent(
+        agent_kwargs: Dict[str, Any] = dict(
             model=args.model,
             max_windings=args.max_windings,
             max_think_tokens=args.max_tokens,
@@ -4189,6 +4463,13 @@ def _cli_chat(argv: List[str]) -> None:
             initial_encoded=session_encoded,
             para_vm=para_vm,
         )
+        # Inject preloaded messages from --load on first turn only
+        if preloaded_messages_for_chat is not None and turn == 1:
+            agent_kwargs["preloaded_messages"] = preloaded_messages_for_chat
+            agent_kwargs["starting_winding_offset"] = len(preloaded_messages_for_chat)
+        agent = TrueAgenticAgent(**agent_kwargs)
+        last_agent = agent
+        last_task = task  # original task, not task_with_context
 
         try:
             result = agent.run_sync(task_with_context)
@@ -4225,6 +4506,17 @@ def _cli_chat(argv: List[str]) -> None:
         })
         session_history.append({"task": task, "result": result})
 
+        # Auto-save each turn if --save flag is set
+        if getattr(args, "save", False):
+            db = get_session_db(getattr(args, "db", None))
+            tags = getattr(args, "save_tag", []) or []
+            if chat_saved_session_id and turn > 1:
+                # Update existing session with new turns
+                db.delete_session(chat_saved_session_id)
+            chat_saved_session_id = db.save(agent, task, tags=tags,
+                extra={"chat_turn": turn, "full_task": task})
+            print(f"[saved: {chat_saved_session_id}]")
+
     if args.output and session_log:
         with open(args.output, "w") as fh:
             json.dump(session_log, fh, indent=2, ensure_ascii=False)
@@ -4256,7 +4548,11 @@ def main() -> None:
     _add_run_args(parser)
     args = parser.parse_args()
 
-    if not args.task and not args.file:
+    # Allow session management ops without a task
+    has_session_op = (getattr(args, "list_sessions", False) or
+                      getattr(args, "delete_session", "") or
+                      getattr(args, "export_session", ""))
+    if not args.task and not args.file and not has_session_op:
         parser.print_help()
         return
 
