@@ -51326,5 +51326,21 @@
     "Ħ": "𐑒",
     "Σ": "𐑳",
     "Ω": "𐑴"
+  },
+  {
+    "name": "belnap_sic_povm_unconditional",
+    "description": "Unconditional SIC-POVM structural proof: B⊗n in the Belnap product lattice (Belnap)^n satisfies all four SIC-POVM axioms (meet-identity, classical equidistance/Born rule, join-absorption, self-adjointness) for all n. Proved unconditionally in BelnapNFiducial.lean. d=2 bridge to conventional quantum ",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
