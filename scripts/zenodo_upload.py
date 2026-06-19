@@ -200,14 +200,119 @@ def find_md_source(pdf: Path) -> Path | None:
     """Return the .md file whose stem matches the PDF, searching IG directories."""
     stem = pdf.stem
     candidates = [
-        pdf.with_suffix('.md'),                        # same directory
+        pdf.with_suffix('.md'),
         pdf.parent / f"{stem}.md",
-        *[d / f"{stem}.md" for d in IG_SEARCH_DIRS],  # known IG dirs
+        *[d / f"{stem}.md" for d in IG_SEARCH_DIRS],
     ]
     for c in candidates:
         if c.exists():
             return c
     return None
+
+
+IG_TEX_DIRS = [
+    Path.home() / "imsgct" / "imscribing_grammar" / "manuscripts",
+    Path.home() / "imscribing_grammar" / "manuscripts",
+]
+
+
+def find_tex_source(pdf: Path) -> Path | None:
+    """Return the .tex file whose stem matches the PDF."""
+    stem = pdf.stem
+    candidates = [
+        pdf.with_suffix('.tex'),
+        pdf.parent / f"{stem}.tex",
+        *[d / f"{stem}.tex" for d in IG_TEX_DIRS],
+    ]
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
+
+
+def _strip_latex(s: str) -> str:
+    """Strip LaTeX commands for plain text."""
+    s = re.sub(r'\\emph\{([^}]+)\}', r'\1', s)
+    s = re.sub(r'\\textbf\{([^}]+)\}', r'\1', s)
+    s = re.sub(r'\\textit\{([^}]+)\}', r'\1', s)
+    s = re.sub(r'\\normalsize\b', '', s)
+    s = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', s)
+    s = re.sub(r'\\[a-zA-Z~@]+\b', ' ', s)
+    s = re.sub(r'\{([^}]*)\}', r'\1', s)
+    s = re.sub(r'\s+', ' ', s)
+    return s.strip()
+
+
+def extract_from_tex(path: Path) -> dict:
+    """Extract title, author, abstract, keywords, and references from a .tex source."""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    info: dict = {}
+
+    # Title
+    m = re.search(r'\\title\{([^}]+)\}', text, re.DOTALL)
+    if m:
+        info["title"] = _strip_latex(m.group(1)).strip()
+
+    # Author — take name before first \\
+    m = re.search(r'\\author\{([^}]+)\}', text, re.DOTALL)
+    if m:
+        name_part = m.group(1).split('\\\\')[0]
+        info["author_str"] = _strip_latex(name_part).strip()
+
+    # Abstract
+    m = re.search(r'\\begin\{abstract\}([\s\S]+?)\\end\{abstract\}', text)
+    if m:
+        raw = m.group(1).strip()
+        # Preserve $...$ math, strip everything else
+        raw = re.sub(r'\\emph\{([^}]+)\}', r'\1', raw)
+        raw = re.sub(r'\\textbf\{([^}]+)\}', r'\1', raw)
+        raw = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', raw)
+        raw = re.sub(r'\\[a-zA-Z~@]+\b', '', raw)
+        raw = re.sub(r'\{([^}]*)\}', r'\1', raw)
+        raw = re.sub(r'\s+', ' ', raw)
+        info["description"] = _format_zenodo_desc(raw.strip())[:2000]
+
+    # Keywords — \noindent\textbf{Keywords:} ... (ends at blank line or next \)
+    m = re.search(
+        r'\\(?:noindent\s*)?\\?textbf\{Keywords?:?\}\s*([\s\S]+?)(?:\n\n|\n\\(?:new|med|vspace|begin|section|sub))',
+        text
+    )
+    if m:
+        raw_kw = _strip_latex(m.group(1).replace('~', ' '))
+        kws = [k.strip().rstrip(';.,') for k in re.split(r'[;,]', raw_kw) if k.strip() and len(k.strip()) > 2]
+        if kws:
+            info["keywords"] = kws
+
+    # References — \bibitem{key} text... (SO_BELOW style)
+    refs: list[str] = []
+    for m in re.finditer(
+        r'\\bibitem\{[^}]+\}\s*([\s\S]+?)(?=\\bibitem\{|\\end\{thebibliography\})',
+        text
+    ):
+        raw = m.group(1).strip()
+        clean = re.sub(r'\\url\{[^}]+\}', '', raw)
+        clean = _strip_latex(clean).replace('~', ' ')
+        clean = re.sub(r'\s+', ' ', clean).strip()
+        if len(clean) > 20:
+            refs.append(clean)
+
+    # References — \item text... inside ## References itemize (AS_ABOVE style)
+    if not refs:
+        ref_section = re.search(
+            r'\\subsection\{[^}]*[Rr]eferences?[^}]*\}[\s\S]+?\\begin\{itemize\}([\s\S]+?)\\end\{itemize\}',
+            text
+        )
+        if ref_section:
+            for m in re.finditer(r'\\item\s+([\s\S]+?)(?=\\item|\Z)', ref_section.group(1)):
+                clean = _strip_latex(m.group(1).strip())
+                if len(clean) > 20:
+                    refs.append(clean)
+
+    if refs:
+        info["references"] = refs
+
+    info["date"] = _git_date(path)
+    return info
 
 
 def _parse_yaml_fm(text: str) -> dict:
@@ -562,21 +667,27 @@ def _git_date(path: Path) -> str:
 
 def auto_extract(files: list[Path]) -> dict:
     """
-    For each file, find its .md source (or use PDF metadata) and merge results.
-    First file wins on conflicts.
+    For each file, find its .tex or .md source (or fall back to PDF metadata).
+    .tex preferred over .md; first file wins on conflicts.
     """
     merged: dict = {}
     for f in files:
-        if f.suffix.lower() in (".md", ".markdown"):
+        if f.suffix.lower() == ".tex":
+            info = extract_from_tex(f)
+        elif f.suffix.lower() in (".md", ".markdown"):
             info = extract_from_md(f)
         else:
-            md = find_md_source(f)
-            if md:
-                print(f"  ✦ Found source: {md}")
-                info = extract_from_md(md)
+            tex = find_tex_source(f)
+            if tex:
+                print(f"  ✦ Found TeX source: {tex}")
+                info = extract_from_tex(tex)
             else:
-                info = extract_from_pdf(f)
-        # Earlier files take priority
+                md = find_md_source(f)
+                if md:
+                    print(f"  ✦ Found source: {md}")
+                    info = extract_from_md(md)
+                else:
+                    info = extract_from_pdf(f)
         for k, v in info.items():
             merged.setdefault(k, v)
     return merged
@@ -1046,6 +1157,13 @@ def cmd_upload(args):
         dep_id     = dep["id"]
         bucket_url = dep["links"]["bucket"]
         print(f"  Found: '{dep.get('metadata', {}).get('title', '(untitled)')}' — state: {dep['state']}")
+        existing_files = dep.get("files", [])
+        if existing_files:
+            print(f"  Removing {len(existing_files)} old file(s) ...")
+            for ef in existing_files:
+                dr = session.delete(f"{base}/deposit/depositions/{dep_id}/files/{ef['id']}")
+                if dr.status_code not in (200, 204):
+                    print(f"  Warning: could not delete {ef.get('filename', ef['id'])}: {dr.status_code}")
     else:
         print(f"\nCreating new deposit on {site} ...")
         dep = api_create(session, base)

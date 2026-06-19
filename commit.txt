@@ -1,1 +1,25 @@
-Add mcp_agent_server.py — MCP stdio wrapper for TrueAgenticAgent (registered as ig-agent at user scope via claude mcp add)
+manuscripts: resolve grammar self-imscription address discrepancy
+
+SO_BELOW claimed address 6,734,591 for the grammar's self-imscription;
+AS_ABOVE_Trabajo claimed 6,687,051 for the same. Investigation showed
+6,734,591 is correct (computationally anchored by CrystalGNN_v11
+convergence and named catalog entry). The 6,687,051 address belongs to
+the 12-step mixed-radix codec (the "Full Induction System"), not the
+grammar as a structural system.
+
+Root cause: AS_ABOVE_Trabajo conflated the codec's crystal address with
+the grammar's own address in sections IX.5 and the conclusion.
+Section X.5 already correctly distinguished the two (calling 6,687,051
+the codec's address and referencing "the grammar's own address" without
+stating it) — that text was merely clarified.
+
+Changes to AS_ABOVE_Trabajo.tex:
+- IX.5 (lines ~2423, 2428, 2430, 2441): replaced 6,687,051 with
+  6,734,591 wherever the grammar's self-application address is claimed
+- X.5 (~line 2667): made grammar address 6,734,591 explicit
+- Conclusion (~line 2846): corrected "Two independent arguments, one
+  address" to distinguish grammar address (6,734,591) from codec
+  address (6,687,051) while preserving the shared O_inf tier claim
+
+SO_BELOW.tex: address was already correct; no changes.
+navigator_commands.py: already correct at 6,734,591; no net change.

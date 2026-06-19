@@ -78,26 +78,13 @@ def load_imscription(name: str) -> Imscription:
 
 
 def compute_ouroboricity(t: dict) -> str:
-    """Compute ouroboricity tier from a tuple dict using encoded Unicode primitive strings."""
-    phi_val = t.get("⊙", "")
-    p_val = t.get("Φ", "")
-    omega_val = t.get("Ω", "")
-    d_val = t.get("Ð", "")
-    
-    # O_∞: Φ_F AND ⊙_ÿ (critical self-modeling)
-    if p_val == "Φ_F" and phi_val == "⊙_ÿ":
-        return "O_∞"
-    
-    # O₂: ⊙_ÿ + non-Frobenius + non-trivial winding + D = Ð_ω
-    if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val != "Ω_Å" and d_val == "Ð_ω":
-        return "O₂"
-    
-    # O₁: ⊙_ÿ + non-Frobenius + trivial winding (Ω_Å)
-    if phi_val == "⊙_ÿ" and p_val != "Φ_F" and omega_val == "Ω_Å":
-        return "O₁"
-    
-    # O₀: else
-    return "O₀"
+    """Compute ouroboricity tier by delegating to canonical_primitives.ouroboricity_tier."""
+    try:
+        from imscrbgrmr.canonical_primitives import CrystalAddress, ouroboricity_tier
+        addr = CrystalAddress.from_dict(t)
+        return ouroboricity_tier(addr)
+    except Exception:
+        return "O₀"
 
 
 def show_entry(args):

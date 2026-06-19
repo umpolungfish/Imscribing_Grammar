@@ -335,6 +335,31 @@ class LatticeResult:
     def is_valid(self) -> bool:
         return len(self.conflicts) == 0
 
+    def to_dict(self) -> dict:
+        def _val(x):
+            if x == CONFLICT:
+                return "CONFLICT"
+            return x.value if hasattr(x, "value") else str(x)
+        return {
+            "operation":        self.operation,
+            "s1_name":          self.s1_name,
+            "s2_name":          self.s2_name,
+            "dimensionality":   _val(self.dimensionality),
+            "topology":         _val(self.topology),
+            "recognition_mode": _val(self.recognition_mode),
+            "polarity":         _val(self.polarity),
+            "grammar":          _val(self.grammar),
+            "fidelity":         _val(self.fidelity),
+            "kinetic_character":_val(self.kinetic_character),
+            "granularity":      _val(self.granularity),
+            "criticality_phase":_val(self.criticality_phase),
+            "protection":       _val(self.protection),
+            "stoichiometry":    _val(self.stoichiometry),
+            "chirality":        _val(self.chirality),
+            "conflicts":        self.conflicts,
+            "notes":            self.notes,
+        }
+
     def to_notation(self) -> str:
         bot = "\u22a5" if self.operation == "meet" else "\u22a4"
         def _v(x):
