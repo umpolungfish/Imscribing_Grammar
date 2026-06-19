@@ -51374,5 +51374,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "perfect_cuboid_lifted",
+    "description": "Perfect Cuboid with Phi_c self-modeling framework — the lifted O_∞ version from the Newton-lifted paper. 22 proved lemmas, 3 honest axioms (descent, descent_smaller, descent_operator_exists). Co-typed with Hadwiger-Nelson at crystal 6738896.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
