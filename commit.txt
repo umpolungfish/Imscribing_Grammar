@@ -1,3 +1,16 @@
+agents/true_agentic_agent.py: add proof_scaffold as native tool (2026-06-19)
+
+_proof_scaffold_emit: imports ScaffoldOb3ect from ~/ob3ect/digital/,
+  dispatches to s.canonical(name) or s.run(ops, name=name).
+_proof_scaffold_verify: checks for noncomputable def presence and absence
+  of sorry slots; reports line count and Frobenius open/closed verdict.
+Registered in _EMIT_FNS, _VERIFY_FNS, and TOOL_SCHEMAS (after ob3ect,
+before spawn_agent). Schema accepts ops (list), canonical (class name),
+and optional name; all fields optional so the agent can call with either
+an opcode list or a canonical class name.
+
+---
+
 manuscripts: resolve grammar self-imscription address discrepancy
 
 SO_BELOW claimed address 6,734,591 for the grammar's self-imscription;

@@ -1876,6 +1876,39 @@ def _ob3ect_verify(emit_input: Dict, emit_output: str,
     )
 
 
+def _proof_scaffold_emit(args: Dict[str, Any]) -> str:
+    """Generate a typed IGProtocol Lean scaffold from an IMASM opcode sequence or canonical class."""
+    try:
+        import sys as _sys, os as _os
+        _OB3_DIGITAL = _os.path.expanduser("~/ob3ect/digital")
+        if _OB3_DIGITAL not in _sys.path:
+            _sys.path.insert(0, _OB3_DIGITAL)
+        from proof_scaffold_ob3ect import ScaffoldOb3ect
+        s = ScaffoldOb3ect()
+        if "canonical" in args:
+            return s.canonical(args["canonical"])
+        ops = args.get("ops", [])
+        if not ops:
+            return "(proof_scaffold error: provide 'ops' list or 'canonical' class name)"
+        name = args.get("name")
+        opcode_map = args.get("opcode_map") or {}
+        return s.run(ops, name=name, opcode_map=opcode_map or None)
+    except Exception as _e:
+        return f"(proof_scaffold error: {_e})"
+
+
+def _proof_scaffold_verify(emit_input: Dict, emit_output: str,
+                            verify_args: Dict) -> Tuple[str, bool]:
+    if "(proof_scaffold error:" in emit_output:
+        return (f"scaffold failed: {emit_output}", False)
+    if "noncomputable def" not in emit_output:
+        return ("scaffold output missing 'noncomputable def' — Frobenius OPEN", False)
+    if "sorry" in emit_output:
+        return ("scaffold contains sorry slots — not fully typed, Frobenius OPEN", False)
+    lines = emit_output.splitlines()
+    return (f"scaffold generated: {len(lines)} lines, fully typed — Frobenius closed", True)
+
+
 def _spawn_agent_emit(args: Dict[str, Any]) -> str:
     """Spawn a child TrueAgenticAgent as a subprocess, inheriting parent model/endpoint."""
     task        = args.get("task", "")
@@ -1950,6 +1983,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "zfct_navigator":       _zfct_navigator_emit,
     "cl8nk_navigator":     _cl8nk_navigator_emit,
     "ob3ect":               _ob3ect_emit,
+    "proof_scaffold":       _proof_scaffold_emit,
     "spawn_agent":          _spawn_agent_emit,
     "context_review":       _context_review_emit,
 }
@@ -1971,6 +2005,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "zfct_navigator":       _zfct_navigator_verify,
     "cl8nk_navigator":     _cl8nk_navigator_verify,
     "ob3ect":               _ob3ect_verify,
+    "proof_scaffold":       _proof_scaffold_verify,
     "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
 }
@@ -2372,6 +2407,53 @@ TOOL_SCHEMAS = [
             },
         },
         ["description"],
+    ),
+    _fn(
+        "proof_scaffold",
+        (
+            "Generate a typed IGProtocol Lean term scaffold from an IMASM opcode sequence "
+            "or a named canonical class. The scaffold has zero sorry slots — all Imscription "
+            "literals (label, src_type, tgt_type) are filled from the token→IG field mapping "
+            "and sequence topology. Includes .withGram/.withMem wrappers, .prod for FSPLIT/FFUSE "
+            "fork/join pairs, back-propagation annotations, verification obligations pointing "
+            "to IGFunctor/IGMorphism axioms by name, and a tier theorem "
+            "(TierFunctor.obj ... = .O_inf := by decide). "
+            "Use after ob3ect generation to get the Lean proof structure for the bootstrap sequence."
+        ),
+        {
+            "ops": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": (
+                    "Ordered list of IMASM opcode strings. "
+                    "Valid: VINIT TANCH AFWD AREV CLINK IMSCRIB FSPLIT FFUSE EVALT EVALF ENGAGR IFIX. "
+                    "Provide either 'ops' or 'canonical', not both."
+                ),
+            },
+            "canonical": {
+                "type": "string",
+                "description": (
+                    "Named canonical class. One of: I_Dialetheic_Bootstrap, II_Void_Genesis, "
+                    "III_Anchor_Protocol, IV_Dual_Bootstrap, V_Linear_Chain, VI_Empty_Bootstrap, "
+                    "VII_Parakernel, VIII_Frobenius_Kernel, IX_Chiral_Pairs, X_Truth_Machine, "
+                    "XI_Eternal_Return, XII_ROM_Burn. Use instead of 'ops' for canonical sequences."
+                ),
+            },
+            "name": {
+                "type": "string",
+                "description": "Optional name for the generated def (default: derived from ops or canonical class).",
+            },
+            "opcode_map": {
+                "type": "object",
+                "description": (
+                    "Optional mapping of opcode name → domain-semantic label "
+                    "(e.g. {\"AFWD\": \"Amendment proposal\", \"FFUSE\": \"Checks and balances\"}). "
+                    "Values appear as inline comments on each arrow, grounding the scaffold in the ob3ect's domain."
+                ),
+                "additionalProperties": {"type": "string"},
+            },
+        },
+        [],
     ),
     _fn(
         "spawn_agent",

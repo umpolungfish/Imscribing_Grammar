@@ -51342,5 +51342,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "belnap_multilattice_sic_povm",
+    "description": "The Belnap multilattice SIC-POVM fiducial: B^⊗n in (Belnap)^n with WH(2)^n action. Unifies Belnap dialetheic fixed point, SIC fiducial, and Majorana paired state as instances of the same Frobenius fixed-point at O_∞. 0 axioms, 0 sorries — all 22 theorems proved in Lean 4.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "conventional_sic_povm_hilbert",
+    "description": "Conventional SIC-POVM in complex Hilbert space ℂ^d: d² equiangular projections with |⟨ψ_j|ψ_k⟩|² = 1/(d+1) for j≠k. WH-covariant under the Heisenberg-Weyl group. Verified numerically for d≤193. Equivalent to Stark conjecture for real quadratic fields.",
+    "Ð": "𐑼",
+    "Þ": "𐑶",
+    "Ř": "𐑽",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑮",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
