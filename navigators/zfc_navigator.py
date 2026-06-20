@@ -1725,7 +1725,7 @@ if __name__ == "__main__":
     rc.add_argument("--hidden",     type=int,   default=256)
     rc.add_argument("--layers",     type=int,   default=4)
 
-    # verify-recovery — backbone-independent structural proof
+    # verify-recovery — backbone-independent witness
     vr = sub.add_parser("verify-recovery")
     vr.add_argument("--model",      type=str,   default="zfc_encoder.pt")
     vr.add_argument("--hidden",     type=int,   default=256)

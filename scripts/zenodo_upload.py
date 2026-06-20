@@ -108,7 +108,7 @@ CONTRIBUTOR_TYPES = {
 
 # All IG publications use the LUNLICENSE (custom public domain dedication).
 # Zenodo has no LUNLICENSE ID; "other-open" is the correct category.
-# LUNLICENSE.md is always bundled as an additional upload file.
+# License text goes into the Zenodo "Additional notes" field (notes key), not as a file.
 DEFAULT_LICENSE = "other-open"
 LUNLICENSE_TEXT = """\
 This is free and unencumbered and released into the public domain.
@@ -259,8 +259,12 @@ def extract_from_tex(path: Path) -> dict:
         name_part = m.group(1).split('\\\\')[0]
         info["author_str"] = _strip_latex(name_part).strip()
 
-    # Abstract
+    # Abstract — \begin{abstract}...\end{abstract} or \subsection*{Abstract} paragraph
     m = re.search(r'\\begin\{abstract\}([\s\S]+?)\\end\{abstract\}', text)
+    if not m:
+        m = re.search(
+            r'\\subsection\*\{Abstract\}\s*\n\n([\s\S]+?)(?=\n\n\\begin\{center\}|\n\\(?:begin|subsection|section)\b)',
+            text)
     if m:
         raw = m.group(1).strip()
         # Preserve $...$ math, strip everything else
@@ -984,7 +988,7 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
             "keywords":           default_kws,
             "version":            "1.0",
             "imprint_publisher":  DEFAULT_PUBLISHER,
-            "notes":              "Released under the LUNLICENSE (custom public domain dedication, see LUNLICENSE.md). Programming languages: Python, Lean 4, HTML/JavaScript, Rust",
+            "notes":              LUNLICENSE_TEXT.strip(),
             "related_identifiers": [{
                 "identifier": "https://github.com/umpolungfish/imscribing_grammar",
                 "scheme":     "url",
@@ -1058,7 +1062,7 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
         meta["grants"] = grants
     meta["imprint_publisher"] = DEFAULT_PUBLISHER
     if "notes" not in meta:
-        meta["notes"] = "Released under the LUNLICENSE (custom public domain dedication, see LUNLICENSE.md). Programming languages: Python, Lean 4, HTML/JavaScript, Rust"
+        meta["notes"] = LUNLICENSE_TEXT.strip()
     if not meta.get("related_identifiers"):
         meta["related_identifiers"] = [{
             "identifier": "https://github.com/umpolungfish/imscribing_grammar",
@@ -1171,22 +1175,10 @@ def cmd_upload(args):
         bucket_url = dep["links"]["bucket"]
         print(f"  Deposit ID: {dep_id}")
 
-    # Upload files + hardcoded LUNLICENSE
-    import tempfile
+    # Upload files
     print(f"\nUploading {len(files)} file(s):")
     for f in files:
         api_upload_file(session, bucket_url, f)
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", prefix="LUNLICENSE",
-                                     delete=False, encoding="utf-8") as tmp:
-        tmp.write(LUNLICENSE_TEXT)
-        tmp_path = Path(tmp.name)
-    try:
-        tmp_path_named = tmp_path.parent / "LUNLICENSE.md"
-        tmp_path.rename(tmp_path_named)
-        api_upload_file(session, bucket_url, tmp_path_named)
-    finally:
-        if tmp_path_named.exists():
-            tmp_path_named.unlink()
 
     # Set metadata
     print("\nSaving metadata ...")

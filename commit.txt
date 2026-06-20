@@ -1,3 +1,36 @@
+ltx: fix step2b microtype hang from bare \newunicodechar in preamble
+
+\newunicodechar defs injected by step2b for IG primitives not already
+defined by latextiler (Ω Σ Φ Γ ⊙) were placed bare before \begin{document};
+this triggered microtype's \MT@is@char nested-group scan → runaway argument
+infinite loop. Fix: separate preamble_inject (fontspec/font package decls)
+from atbegindoc_inject (\newunicodechar defs) and wrap the latter in
+\AtBeginDocument{...}, matching the pattern latextiler already uses for
+its Shavian block definitions.
+
+---
+
+zenodo_upload.py: LUNLICENSE into notes field, not file upload; add abstract fallback
+
+LUNLICENSE fix: removed temp LUNLICENSE.md file creation + api_upload_file call
+from cmd_upload; LUNLICENSE_TEXT.strip() now goes into the 'notes' metadata key
+(Zenodo's "Additional notes" text field) in both -y and interactive paths.
+Updated stale comment that said "always bundled as additional upload file".
+
+Abstract fallback: extract_from_tex only matched \begin{abstract}...\end{abstract};
+docs using \subsection*{Abstract} + paragraph (e.g. HADRON_CLASSIFICATION.tex)
+returned no description and blocked -y uploads. Added regex fallback matching
+\subsection*{Abstract}\n\n<text> up to \begin{center} or next \subsection.
+
+---
+
+terminology: structural proof → witness sweep (2026-06-19)
+
+'structural proof'/'structural proofs' replaced with 'witness'/'witnesses' across all
+variants (upper/lower/mixed case) in .md/.lean/.py/.tex/.txt files.
+Lean def/theorem identifier names preserved (none found to skip).
+
+---
 agents/true_agentic_agent.py: add proof_scaffold as native tool (2026-06-19)
 
 _proof_scaffold_emit: imports ScaffoldOb3ect from ~/ob3ect/digital/,
