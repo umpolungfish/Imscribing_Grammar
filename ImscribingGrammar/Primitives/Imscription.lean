@@ -114,7 +114,7 @@ def tensorProduct (a b : Imscription) : Imscription := {
   prot := if compare a.prot b.prot = .lt then b.prot else a.prot   -- max
 }
 
--- P-bottleneck: O_∞ ⊗ O₂ → P_doublebarpipe ⊗ P_subdoublearrow = P_subdoublearrow (Frobenius destroyed).
+-- P-bottleneck: O_∞ ⊗ O₂ → or' ⊗ nun = nun (Frobenius destroyed).
 theorem tensor_P_bottleneck (a b : Imscription) :
     (tensorProduct a b).pol =
       if compare a.pol b.pol = .lt then a.pol else b.pol := rfl
@@ -130,23 +130,23 @@ def imscriptionTier (s : Imscription) : OuroboricityTier :=
 -- KEY ENCODINGS
 -- ============================================================
 
--- ── P-70: Scalar K_schwa template (Higgs / axion / inflaton) ──
+-- ── P-70: Scalar egg template (Higgs / axion / inflaton) ──
 -- All three are spin-0 fields with double-well potential, slow-roll /
--- SSB relaxation (K_schwa), symmetric potential (P_doublebarpipe at Phi_ctyogh).
+-- SSB relaxation (egg), symmetric potential (or' at monad).
 -- They differ in energy scale only — not in primitive structure.
 def scalarField_Kslow : Imscription := {
-  dim  := D_turnthree   -- local simplicial field (not imscriptive)
-  top  := T_bullseye     -- double-well / figure-8 potential landscape
-  rel  := R_downstep     -- field ↔ vacuum bidirectional (SSB is reciprocal)
-  pol  := P_doublebarpipe     -- exact Z_2 symmetry at Phi_ctyogh (μ ∘ δ = id)
-  fid  := F_hardsign       -- quantum coherent
-  kin  := K_schwa       -- slow-roll / thermally activated SSB (THE defining feature)
-  gran := G_beta       -- mesoscale local description
-  gram := Gamma_and    -- all SSB conditions required simultaneously
-  crit := Phi_ctyogh        -- SSB is a phase transition
-  chir := H_toneletterstem           -- soft temporal asymmetry (vacuum selection)
-  stoi := S_ctn          -- field-to-excitation: matched coupling
-  prot := Omega_closeepsilon      -- no topological protection of the vacuum
+  dim  := ash   -- local simplicial field (not imscriptive)
+  top  := mime     -- double-well / figure-8 potential landscape
+  rel  := ear     -- field ↔ vacuum bidirectional (SSB is reciprocal)
+  pol  := or'     -- exact Z_2 symmetry at monad (μ ∘ δ = id)
+  fid  := peep       -- quantum coherent
+  kin  := egg       -- slow-roll / thermally activated SSB (THE defining feature)
+  gran := bib       -- mesoscale local description
+  gram := vow    -- all SSB conditions required simultaneously
+  crit := monad        -- SSB is a phase transition
+  chir := kick           -- soft temporal asymmetry (vacuum selection)
+  stoi := so          -- field-to-excitation: matched coupling
+  prot := awe      -- no topological protection of the vacuum
 }
 
 def higgs    : Imscription := scalarField_Kslow
@@ -159,45 +159,45 @@ theorem P70a_higgs_axion_identity : higgs = axion := rfl
 /-- P-70b: Axion and inflaton are structurally identical. -/
 theorem P70b_axion_inflaton_identity : axion = inflaton := rfl
 
-/-- P-70 (full): Three-scale K_schwa symmetry. -/
+/-- P-70 (full): Three-scale egg symmetry. -/
 theorem P70_three_scale_Kslow :
     higgs = axion ∧ axion = inflaton ∧ higgs = inflaton :=
   ⟨rfl, rfl, rfl⟩
 
-/-- All three scalar K_schwa fields are O_∞. -/
+/-- All three scalar egg fields are O_∞. -/
 theorem scalar_Kslow_is_O_inf : imscriptionTier scalarField_Kslow = .O_∞ := by decide
 
 -- ── Standard Model ──────────────────────────────────────────
 def standard_model : Imscription := {
-  dim  := D_invomega      -- 4D spacetime (unbounded temporal generation)
-  top  := T_nrleg    -- gauge group connections: general graph
-  rel  := R_ctz        -- compositional: gauge group × matter sector
-  pol  := P_pipevar         -- Z_2 discrete symmetry (CP)
-  fid  := F_dh        -- threshold: classical field theory with quantum corrections
-  kin  := K_turnm        -- perturbative (no confinement at this level)
-  gran := G_revapostrophe      -- all-scale: renormalization group runs to all scales
-  gram := Gamma_and    -- gauge + matter + Higgs all simultaneously required
-  crit := Phi_ctyogh        -- electroweak phase transition is a critical phenomenon
-  chir := H_turntwo           -- persistent chirality (CKM matrix, neutrino mixing)
-  stoi := S_ltailm          -- many particles, unmatched coupling strengths
-  prot := Omega_dzlig      -- instanton winding numbers (integer)
+  dim  := array      -- 4D spacetime (unbounded temporal generation)
+  top  := judge    -- gauge group connections: general graph
+  rel  := tot        -- compositional: gauge group × matter sector
+  pol  := out         -- Z_2 discrete symmetry (CP)
+  fid  := they        -- threshold: classical field theory with quantum corrections
+  kin  := loll        -- perturbative (no confinement at this level)
+  gran := ice      -- all-scale: renormalization group runs to all scales
+  gram := vow    -- gauge + matter + Higgs all simultaneously required
+  crit := monad        -- electroweak phase transition is a critical phenomenon
+  chir := sure           -- persistent chirality (CKM matrix, neutrino mixing)
+  stoi := up          -- many particles, unmatched coupling strengths
+  prot := ah      -- instanton winding numbers (integer)
 }
 
 -- ── Quantum Gravity ─────────────────────────────────────────
--- D_omega and T_openo are co-required (Axiom C).
+-- if' and are are co-required (Axiom C).
 def quantum_gravity : Imscription := {
-  dim  := D_omega       -- imscriptive: boundary encodes bulk
-  top  := T_openo       -- imscriptive topology (co-required with D_omega)
-  rel  := R_downstep     -- bulk ↔ boundary reciprocal
-  pol  := P_doublebarpipe     -- diffeomorphism invariance at criticality: Special Frobenius
-  fid  := F_hardsign       -- quantum
-  kin  := K_teshlig       -- Planck-scale dynamics are frozen at low energy
-  gran := G_revapostrophe      -- Planck-scale: all-to-all correlations
-  gram := Gamma_broad  -- graviton couples universally (broadcast)
-  crit := Phi_ctyogh        -- quantum criticality at Planck scale
-  chir := H_invscripta        -- topological chirality (CPT asymmetry at Planck scale)
-  stoi := S_ltailm          -- many gravitational sources, unmatched
-  prot := Omega_turna     -- non-Abelian topological protection
+  dim  := if'       -- imscriptive: boundary encodes bulk
+  top  := are       -- imscriptive topology (co-required with if')
+  rel  := ear     -- bulk ↔ boundary reciprocal
+  pol  := or'     -- diffeomorphism invariance at criticality: Special Frobenius
+  fid  := peep       -- quantum
+  kin  := on       -- Planck-scale dynamics are frozen at low energy
+  gran := ice      -- Planck-scale: all-to-all correlations
+  gram := ooze  -- graviton couples universally (broadcast)
+  crit := monad        -- quantum criticality at Planck scale
+  chir := wool        -- topological chirality (CPT asymmetry at Planck scale)
+  stoi := up          -- many gravitational sources, unmatched
+  prot := zoo     -- non-Abelian topological protection
 }
 
 /-- Quantum gravity is O_∞ (imscriptive Frobenius). -/
@@ -205,52 +205,52 @@ theorem qg_is_O_inf : imscriptionTier quantum_gravity = .O_∞ := by decide
 
 -- ── General Relativity ──────────────────────────────────────
 def general_relativity : Imscription := {
-  dim  := D_invomega      -- 4D spacetime (not imscriptive — classical GR is local)
-  top  := T_nrleg    -- causal structure: general graph of events
-  rel  := R_downstep     -- metric ↔ matter bidirectional (Einstein equations)
-  pol  := P_subdoublearrow        -- full diffeomorphism invariance
-  fid  := F_hardsign       -- classical limit of a quantum theory
-  kin  := K_schwa       -- geodesic motion is slow compared to Planck scale
-  gran := G_gamma      -- collective: macroscopic description
-  gram := Gamma_and    -- all matter + metric conditions simultaneously
-  crit := Phi_softsign      -- no quantum criticality in classical GR
-  chir := H_toneletterstem           -- soft temporal asymmetry (arrow of time via initial conditions)
-  stoi := S_ctn          -- matched: one metric for all matter
-  prot := Omega_closeepsilon      -- no topological protection
+  dim  := array      -- 4D spacetime (not imscriptive — classical GR is local)
+  top  := judge    -- causal structure: general graph of events
+  rel  := ear     -- metric ↔ matter bidirectional (Einstein equations)
+  pol  := nun        -- full diffeomorphism invariance
+  fid  := peep       -- classical limit of a quantum theory
+  kin  := egg       -- geodesic motion is slow compared to Planck scale
+  gran := thigh      -- collective: macroscopic description
+  gram := vow    -- all matter + metric conditions simultaneously
+  crit := woe      -- no quantum criticality in classical GR
+  chir := kick           -- soft temporal asymmetry (arrow of time via initial conditions)
+  stoi := so          -- matched: one metric for all matter
+  prot := awe      -- no topological protection
 }
 
 -- ── Yang-Mills (classical, pre-quantization) ────────────────
 def yang_mills_classical : Imscription := {
-  dim  := D_invomega      -- 4D Minkowski spacetime
-  top  := T_nrleg    -- gauge group connections
-  rel  := R_ctz        -- compositional: gauge covariant derivative
-  pol  := P_pipevar         -- Z_2 discrete parity
-  fid  := F_dh        -- classical field theory
-  kin  := K_turnm        -- perturbative regime
-  gran := G_beta       -- local: Lagrangian density at each point
-  gram := Gamma_and    -- gauge invariance requires all conditions
-  crit := Phi_softsign      -- no mass gap yet
-  chir := H_toneletterstem           -- weak temporal asymmetry
-  stoi := S_ctn          -- gauge field ↔ matter: matched
-  prot := Omega_dzlig      -- instanton winding numbers
+  dim  := array      -- 4D Minkowski spacetime
+  top  := judge    -- gauge group connections
+  rel  := tot        -- compositional: gauge covariant derivative
+  pol  := out         -- Z_2 discrete parity
+  fid  := they        -- classical field theory
+  kin  := loll        -- perturbative regime
+  gran := bib       -- local: Lagrangian density at each point
+  gram := vow    -- gauge invariance requires all conditions
+  crit := woe      -- no mass gap yet
+  chir := kick           -- weak temporal asymmetry
+  stoi := so          -- gauge field ↔ matter: matched
+  prot := ah      -- instanton winding numbers
 }
 
 -- ── Yang-Mills (quantum target) ─────────────────────────────
 -- The target tuple if the path integral measure existed.
 -- Gap from classical: F(eth→hbar), K(mod→trap), G(beth→aleph), Φ(sub→c) = 4 mismatches.
 def yang_mills_quantum_target : Imscription := {
-  dim  := D_invomega
-  top  := T_nrleg
-  rel  := R_ctz
-  pol  := P_pipevar
-  fid  := F_hardsign       -- quantum coherence
-  kin  := K_teshlig       -- confinement = kinetic trapping
-  gran := G_revapostrophe      -- fine-grained: requires path integral measure
-  gram := Gamma_and
-  crit := Phi_ctyogh        -- mass gap is a critical phenomenon
-  chir := H_toneletterstem
-  stoi := S_ctn
-  prot := Omega_dzlig
+  dim  := array
+  top  := judge
+  rel  := tot
+  pol  := out
+  fid  := peep       -- quantum coherence
+  kin  := on       -- confinement = kinetic trapping
+  gran := ice      -- fine-grained: requires path integral measure
+  gram := vow
+  crit := monad        -- mass gap is a critical phenomenon
+  chir := kick
+  stoi := so
+  prot := ah
 }
 
 /-- The YM barrier is exactly 4 primitive mismatches. -/
@@ -264,9 +264,9 @@ theorem sm_qg_distance :
 
 -- ── GR → Asymptotic Safety: 3 primitive changes ─────────────
 def asymptotic_safety : Imscription := { general_relativity with
-  kin  := K_turnm    -- UV fixed point has moderate kinetics
-  gran := G_revapostrophe  -- Planck-scale fine-grained
-  crit := Phi_ctyogh    -- UV fixed point IS a quantum critical point
+  kin  := loll    -- UV fixed point has moderate kinetics
+  gran := ice  -- Planck-scale fine-grained
+  crit := monad    -- UV fixed point IS a quantum critical point
 }
 
 theorem gr_as_morphism_cost :
@@ -276,11 +276,11 @@ theorem gr_as_morphism_cost :
 -- STRUCTURAL THEOREMS
 -- ============================================================
 
-/-- Frobenius cliff: O_∞ requires P_doublebarpipe. No other Polarity gives O_∞
+/-- Frobenius cliff: O_∞ requires or'. No other Polarity gives O_∞
     regardless of Φ, Ω, D. (Lean-verified statement of §23 / §69.) -/
 theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     imscriptionTier s = .O_∞ ↔
-    (s.crit = .Phi_ctyogh ∨ s.crit = .Phi_closerevepsilon) ∧ s.pol = .P_doublebarpipe := by
+    (s.crit = .monad ∨ s.crit = .roar) ∧ s.pol = .or' := by
   constructor
   · intro h
     constructor
@@ -295,15 +295,15 @@ theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
 /-- Higgs is O_∞ (P-70 structural claim). -/
 theorem higgs_is_O_inf : imscriptionTier higgs = .O_∞ := by decide
 
-/-- Tensor of O_∞ with any O₂ system (P_subdoublearrow) gives P_subdoublearrow — Frobenius destroyed. -/
+/-- Tensor of O_∞ with any O₂ system (nun) gives nun — Frobenius destroyed. -/
 theorem tensor_O_inf_O2_destroys_frobenius (s_inf s_two : Imscription)
-    (h_inf : s_inf.pol = .P_doublebarpipe) (h_two : s_two.pol = .P_subdoublearrow) :
-    (tensorProduct s_inf s_two).pol = .P_subdoublearrow := by
+    (h_inf : s_inf.pol = .or') (h_two : s_two.pol = .nun) :
+    (tensorProduct s_inf s_two).pol = .nun := by
   simp [tensorProduct, h_inf, h_two]
-  -- Need to prove ¬compare P_doublebarpipe P_subdoublearrow = .lt
+  -- Need to prove ¬compare or' nun = .lt
   intro h
-  -- compare is Ord.compare; for Polarity derived Ord, P_doublebarpipe (idx 4) vs P_subdoublearrow (idx 3)
-  have : Ord.compare P_doublebarpipe P_subdoublearrow = .gt := by decide
+  -- compare is Ord.compare; for Polarity derived Ord, or' (idx 4) vs nun (idx 3)
+  have : Ord.compare or' nun = .gt := by decide
   simp [this] at h
 
 end ImscribingGrammar.Primitives

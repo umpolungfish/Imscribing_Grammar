@@ -103,11 +103,11 @@ SAT is NP-complete (Cook 1971 / Levin 1973): SAT ∈ P ↔ P = NP.
 
 **SynthOmnicon structural note:**
 
-  PvsNP has primitive tuple D_∞ · T_nrleg · R_subrightarrow · F_beltl · K_teshlig · Φ_c · Ω_0.
-  The K_teshlig primitive is uniquely prominent: the problem is about *information bottlenecks*
+  PvsNP has primitive tuple D_∞ · judge · ado · age · on · Φ_c · Ω_0.
+  The on primitive is uniquely prominent: the problem is about *information bottlenecks*
   — whether the constraint that verification is polynomial also forces search to be polynomial.
-  K_teshlig = irreducible complexity threshold. The meta-barriers (relativization, natural proofs)
-  are formal proofs that K_teshlig cannot be lowered by standard techniques.
+  on = irreducible complexity threshold. The meta-barriers (relativization, natural proofs)
+  are formal proofs that on cannot be lowered by standard techniques.
 -/
 
 namespace Millennium.PvsNP
@@ -350,7 +350,7 @@ theorem pvsnp_meta_barriers :
     RH, Hodge, NS, YM, BSD, OPN have no proved theorems about WHY they are hard.
     PvsNP has three: BGS, Razborov-Rudich, Aaronson-Wigderson.
 
-    This is the primitive analog of K_teshlig in SynthOmnicon:
+    This is the primitive analog of on in SynthOmnicon:
     the barrier is self-reinforcing — we can prove that standard tools cannot
     remove the constraint. -/
 theorem pvsnp_unique_meta_barrier_structure : True := trivial

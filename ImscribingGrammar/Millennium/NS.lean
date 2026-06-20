@@ -91,11 +91,11 @@ Navier-Stokes equations that remains bounded for all time:
 
 **SynthOmnicon structural note:**
 
-  NS has primitive tuple encoding D_∞ · T_nrleg · F_beltl · Φ_c · Ω_0.
+  NS has primitive tuple encoding D_∞ · judge · age · Φ_c · Ω_0.
   The barrier signature:
   · D_∞: the phase space is infinite-dimensional (function space dynamics).
-  · T_nrleg: causally interconnected at all scales simultaneously.
-  · F_beltl: deterministic (smooth solutions would be classical/local).
+  · judge: causally interconnected at all scales simultaneously.
+  · age: deterministic (smooth solutions would be classical/local).
   · Φ_c transition: the critical scaling s=1/2 IS a phase boundary — the problem
     sits exactly at a Φ_c = 0 criticality point in the Sobolev tower.
   · Ω_0: no topological obstruction (unlike BSD/RH) — regularity is purely analytic.

@@ -50,9 +50,9 @@ theorem tier_crossing_inverse (C : ℝ) :
 -- ============================================================
 
 def granularityLevel : Granularity → ℕ
-  | .G_beta  => 0
-  | .G_gamma => 1
-  | .G_revapostrophe => 2
+  | .bib  => 0
+  | .thigh => 1
+  | .ice => 2
 
 def granularitySeparation (from_g to_g : Granularity) : ℕ :=
   Int.natAbs ((granularityLevel to_g : ℤ) - granularityLevel from_g)
@@ -65,7 +65,7 @@ theorem tierCrossingCost_self (g : Granularity) :
   simp [tierCrossingCost, granularitySeparation]
 
 theorem tierCrossingCost_beth_aleph :
-    tierCrossingCost .G_beta .G_revapostrophe = 2 * Real.log 10 := by
+    tierCrossingCost .bib .ice = 2 * Real.log 10 := by
   simp [tierCrossingCost, granularitySeparation, granularityLevel]
 
 -- ============================================================

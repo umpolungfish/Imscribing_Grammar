@@ -109,12 +109,12 @@ theorem special_is_top (t : FrobeniusType) : t ≤ FrobeniusType.special := by
 -- ─────────────────────────────────────────────────────────────────────────────
 
 /-- Lee-Yang is O_∞ (special Frobenius).
-    P_doublebarpipe acts explicitly — μ ∘ δ = id is the Lee-Yang theorem in Frobenius
+    or' acts explicitly — μ ∘ δ = id is the Lee-Yang theorem in Frobenius
     language (PRIMITIVE_THEOREMS §23.5, Theorem 23.1). -/
 def leeYangFrobeniusType : FrobeniusType := .special
 
 /-- RH: conjectured full Frobenius (Frobenius condition holds) but not special
-    (μ ∘ δ ≠ id, because P_subdoublearrow is an implicit symmetry).
+    (μ ∘ δ ≠ id, because nun is an implicit symmetry).
     This encodes Conjecture 23.1 of PRIMITIVE_THEOREMS as a definition —
     not a sorry, but a precise structural claim. -/
 def rhFrobeniusType : FrobeniusType := .full

@@ -1,3 +1,36 @@
+Primitives: migrate all 49 constructor names to Shavian identifiers (2026-06-20)
+
+Replaced all old phonetic-description identifier names with canonical Shavian
+letter names across 16 active Lean files in ImscribingGrammar/. Zero old names
+remain in any active file (verified by grep). The .archive/ and .stuff/ dirs
+were not touched.
+
+Full mapping (old → new, by primitive):
+  Dimensionality: D_wynn→dead, D_turnthree→ash, D_invomega→array, D_omega→if'
+  Relational:     R_subrightarrow→ado, R_ctz→tot, R_downstep→ear, R_lyoghlig→ian
+  Grammar:        Gamma_and→vow, Gamma_or→gag, Gamma_seq→measure, Gamma_broad→ooze
+  Chirality:      H_closeomega→fee, H_toneletterstem→kick, H_turntwo→sure, H_invscripta→wool
+  Protection:     Omega_closeepsilon→awe, Omega_crtwo→oak, Omega_dzlig→ah, Omega_turna→zoo
+  Topology:       T_nrleg→judge, T_invscr→eat, T_bullseye→mime, T_box→oil, T_openo→are
+  Polarity:       P_aolig→church, P_upsilon→yew, P_pipevar→out, P_subdoublearrow→nun, P_doublebarpipe→or'
+  Criticality:    Phi_softsign→woe, Phi_ctyogh→monad, Phi_closerevepsilon→roar, Phi_revepsilon→err, Phi_upstep→haha
+  KineticChar:    K_frtailgamma→yea, K_turnm→loll, K_schwa→egg, K_teshlig→on, K_lambda→air
+  Fidelity:       F_beltl→age, F_dh→they, F_hardsign→peep
+  Granularity:    G_beta→bib, G_gamma→thigh, G_revapostrophe→ice
+  Stoichiometry:  S_doublebaresh→hung, S_ctn→so, S_ltailm→up
+
+Files updated:
+  ImscribingGrammar/Primitives/Core.lean
+  ImscribingGrammar/Primitives/Imscription.lean
+  ImscribingGrammar/Primitives/CLUPrimitives.lean
+  ImscribingGrammar/Primitives/TierCrossing.lean
+  ImscribingGrammar/PrimitiveMismatch.lean
+  ImscribingGrammar/Millennium/{BSD,Hodge,NS,OPN,PvsNP,FrobeniusStructure,
+    PrimitiveBridge,PrimordialOoze,RH_Formal,Barriers}.lean
+  Manuscript_ZFCt.lean
+
+---
+
 ltx: fix step2b microtype hang from bare \newunicodechar in preamble
 
 \newunicodechar defs injected by step2b for IG primitives not already
