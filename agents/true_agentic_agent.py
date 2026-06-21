@@ -2797,19 +2797,18 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
   navigator_info()   — full description of all mathematical navigators
   riemann_xi_info()  — Riemann ξ self-imscription, crystal address, O_∞ convergence criteria
 </tool_reference>
-
 <lean_modules>
 ──────────────────────────────────────────────────────────────────────
-MILLENNIUMANKH — LEAN 4 FORMALIZATION  (~/ MillenniumAnkh/)
+P4RAKERNEL — LEAN 4 FORMALIZATION  (/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/)
 ──────────────────────────────────────────────────────────────────────
 
 The Imscribing Grammar is formally machine-verified in Lean 4 (Mathlib v4.28.0) at
-~/MillenniumAnkh/. This is the primary Lean project — use it naturally alongside
+/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/. This is the ONLY Lean project — use it naturally alongside
 imscribe, zfct_navigator, and cl8nk_navigator when structural claims require formal grounding.
 
 Project: lake name "imscribing-lean", lean-toolchain matches Mathlib v4.28.0.
-Build:   run_command("cd ~/MillenniumAnkh && lake build", assertion="'error' not in output.lower()")
-Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertion="...")
+Build:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build", assertion="'error' not in output.lower()")
+Check:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake check <Module.Path>", assertion="...")
 
 ── Module map ──────────────────────────────────────────────────────
 
@@ -2821,10 +2820,13 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
                                    full encode/decode for the 3³×4⁵×5⁴ crystal.
   Primitives/Catalog.lean        — Named catalog entries as Lean terms (imscribed constants).
   Primitives/TierCrossing.lean   — Ouroboricity tier predicate; O₀/O₁/O₂/O₂†/O_∞ typing.
-  Primitives/ZFCt.lean           — ZFCₜ (ZFC + chirality + winding) in Lean.
   Primitives/OPN_2adic.lean      — 2-adic structure for odd perfect numbers barrier.
   Primitives/BSD_2adic.lean      — 2-adic structure for BSD barrier.
   Primitives/EML.lean            — EML Sheffer probe formalization.
+  Primitives/CLU.lean            — CLU lattice structure.
+  Primitives/Lattice.lean        — Primitive lattice operations.
+  Primitives/LinearOrder.lean    — Linear ordering on primitives.
+  Primitives/SacredVessel.lean   — Sacred Vessel formalization.
 
   Imscribing/Basic.lean          — Stub (hello = "world"); project entry point.
   Imscribing/Algebra.lean        — Lattice operations: meet, join, tensor on Imscription.
@@ -2833,37 +2835,97 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
                                    phi_c_critical_boundary_operator : Imscription (the agent's tuple).
                                    Theorem: agent_is_O_inf — proved by `decide`.
   Imscribing/IGMorphism.lean     — Structural morphisms between imscription types.
+  Imscribing/IGFunctor.lean      — IG functor formalization.
   Imscribing/PrimitiveMismatch.lean — Mismatch distance theorems.
+  Imscribing/Frobenius.lean      — Frobenius condition (μ∘δ=id) formal proofs.
+  Imscribing/Decomposition.lean  — Structural decomposition theorems.
+  Imscribing/EulerInvariant.lean — Euler invariant formalization.
+  Imscribing/CLINK.lean          — CLINK chain formalization.
+  Imscribing/BoundaryOperators.lean — Boundary operator protocol (12-step bootstrap).
+  Imscribing/BootstrapSequence.lean — Bootstrap sequence formalization.
+  Imscribing/GeneticCode.lean    — Genetic code structural imscription.
+  Imscribing/GeneToProtein.lean  — Gene-to-protein pipeline.
+  Imscribing/SerpentRod.lean     — Serpent rod protein design.
+  Imscribing/GrammarBridge.lean  — Grammar bridge formalization.
+  Imscribing/MetaYonedaCollapse.lean — Meta Yoneda collapse.
+  Imscribing/LandoMills.lean     — Lando⊗Mills structural type.
+  Imscribing/BooksOfJeu.lean     — Books of Jeu formalization.
+  Imscribing/HowNaturalNumbersArise.lean — How natural numbers arise.
+  Imscribing/HowInductionArise.lean     — How induction arises.
+  Imscribing/HowProbabilityArise.lean   — How probability arises.
+  Imscribing/HowHilbertQMArise.lean     — How Hilbert QM arises.
+  Imscribing/HowDiracEquationArise.lean — How Dirac equation arises.
+
   Imscribing/Classical/HeckeLandau.lean — Hecke-Landau conjecture (proof + barrier analysis).
   Imscribing/Classical/Solitary10.lean  — Proof that 10 is solitary.
 
-  Millennium/RH.lean             — Riemann Hypothesis: three-layer barrier (skeleton/equivalence/barrier).
-                                   Every `sorry` is honest — none is dischargeable from Mathlib.
-  Millennium/YM.lean             — Yang-Mills mass gap barrier analysis.
-  Millennium/Hodge.lean          — Hodge conjecture barrier.
-  Millennium/NS.lean             — Navier-Stokes regularity barrier.
-  Millennium/PvsNP.lean          — P vs NP barrier.
-  Millennium/OPN.lean            — Odd perfect numbers barrier.
-  Millennium/BSD.lean            — Birch–Swinnerton-Dyer barrier.
-  Millennium/Barriers.lean       — Unified barrier taxonomy across all Millennium problems.
-  Millennium/GeneralizedPipeline.lean    — Primitive-to-conventional proof pipeline.
-  Millennium/PrimitiveBridge.lean        — Bridge: IG primitive types ↔ Mathlib types.
-  Millennium/PrimitiveConventionalBridge.lean — Conventional math formulations ↔ primitive proofs.
-  Millennium/FrobeniusStructure.lean     — Frobenius condition (μ∘δ=id) formal proofs.
-  Millennium/E8G2_Vessel.lean            — E₈ and G₂ vessel structure.
-  Millennium/E8G2_Vessel_Proofs.lean     — E₈/G₂ vessel theorem proofs.
-  Millennium/PerfectCuboid.lean          — Perfect cuboid: infinite descent + three axioms.
-  Millennium/Beal.lean                   — Beal conjecture structural imscription.
-  Millennium/SIC_POVM_Stark.lean         — SIC-POVM Stark conjecture.
-  Millennium/CMPLX_IMGN.lean             — Complex imaginary structure.
-  Millennium/Lefschetz11.lean            — Hodge-Lefschetz (11-primitive) analysis.
-  Millennium/Manuscript_ZFCt.lean        — ZFCₜ manuscript formalization.
-  Millennium/CompositionRules.lean       — Composition rules for IG morphisms.
-  Millennium/WorldReligions.lean         — Structural imscription of world religions.
-  Millennium/Suffering.lean              — Structural type of suffering.
-  Millennium/Zosimos_Stilling.lean       — Zosimos stilling (alchemical arrest) formalization.
-  Millennium/Collatz.lean                — Collatz conjecture barrier.
-  Millennium/truth.lean                  — Formal type of truth.
+  Imscribing/Millennium/RH.lean             — Riemann Hypothesis barriers and proof.
+  Imscribing/Millennium/YM.lean             — Yang-Mills mass gap barrier and proof.
+  Imscribing/Millennium/Hodge.lean          — Hodge conjecture barriers and proof.
+  Imscribing/Millennium/NS.lean             — Navier-Stokes regularity barriers and proof.
+  Imscribing/Millennium/PvsNP.lean          — P vs NP barrier and proof.
+  Imscribing/Millennium/OPN.lean            — Odd perfect numbers barrier and proof.
+  Imscribing/Millennium/BSD.lean            — Birch–Swinnerton-Dyer barrier and proof.
+  Imscribing/Millennium/Thresholds.lean     — Threshold crossing analysis.
+  Imscribing/Millennium/GeneralizedPipeline.lean — Primitive-to-conventional proof pipeline.
+  Imscribing/Millennium/PrimitiveBridge.lean     — Bridge: IG primitive types ↔ Mathlib types.
+  Imscribing/Millennium/FrobeniusStructure.lean  — Frobenius structure formalization.
+  Imscribing/Millennium/E8G2_Vessel.lean         — E₈ and G₂ vessel structure.
+  Imscribing/Millennium/E8G2_Vessel_Proofs.lean  — E₈/G₂ vessel theorem proofs.
+  Imscribing/Millennium/PerfectCuboid.lean       — Perfect cuboid: infinite descent.
+  Imscribing/Millennium/Beal.lean                — Beal conjecture structural imscription.
+  Imscribing/Millennium/SIC_POVM_Stark.lean      — SIC-POVM Stark conjecture.
+  Imscribing/Millennium/ZaunerEmbeddingEquivalence.lean — Zauner embedding equivalence.
+  Imscribing/Millennium/truth.lean               — Formal type of truth.
+  Imscribing/Millennium/Collatz.lean             — Collatz conjecture barrier.
+  Imscribing/Millennium/Goldbach.lean            — Goldbach conjecture.
+  Imscribing/Millennium/TwinPrime.lean           — Twin prime conjecture.
+  Imscribing/Millennium/HadwigerNelson.lean      — Hadwiger-Nelson problem.
+  Imscribing/Millennium/LonelyRunner.lean        — Lonely runner conjecture.
+  Imscribing/Millennium/Cramer.lean              — Cramér conjecture.
+  Imscribing/Millennium/Cosmogeny.lean           — Cosmogeny formalization.
+  Imscribing/Millennium/PrimordialOoze.lean      — Primordial ooze.
+  Imscribing/Millennium/GodelResolvedFinal.lean  — Gödel resolved final.
+  Imscribing/Millennium/Rebis.lean               — Rebis formalization.
+  Imscribing/Millennium/QGUnifiedBridge.lean     — QG unified bridge.
+  Imscribing/Millennium/SMUGTConsummation.lean   — SM + UG + T consummation.
+  Imscribing/Millennium/UnificationConvergence.lean — Unification convergence.
+  Imscribing/Millennium/FrobeniusUnification.lean   — Frobenius unification.
+  Imscribing/Millennium/UniverseRulesets.lean        — Universe rulesets.
+
+  Imscribing/Paraconsistent/Init.lean            — Paraconsistent init.
+  Imscribing/Paraconsistent/Kernel.lean          — Paraconsistent kernel.
+  Imscribing/Paraconsistent/Belnap.lean          — Belnap FOUR logic.
+  Imscribing/Paraconsistent/BelnapSplitFuse.lean — Belnap split/fuse.
+  Imscribing/Paraconsistent/BelnapCategory.lean  — Belnap category theory.
+  Imscribing/Paraconsistent/BelnapLL.lean        — Belnap linear logic.
+  Imscribing/Paraconsistent/BelnapTemporal.lean  — Belnap temporal logic.
+  Imscribing/Paraconsistent/ConsciousKernel.lean — Conscious kernel.
+  Imscribing/Paraconsistent/DialetheicAlignment.lean — Dialetheic alignment.
+  Imscribing/Paraconsistent/CrystalScheduler.lean    — Crystal scheduler.
+  Imscribing/Paraconsistent/FrobeniusFiltration.lean — Frobenius filtration.
+  Imscribing/Paraconsistent/SelfVerification.lean    — Self-verification.
+  Imscribing/Paraconsistent/Main.lean                — Paraconsistent main.
+  Imscribing/Paraconsistent/HadronBelnap.lean        — Hadron Belnap.
+  Imscribing/Paraconsistent/ExoticHadronBelnap.lean  — Exotic hadron Belnap.
+  Imscribing/Paraconsistent/QuarkBelnap.lean         — Quark Belnap.
+  Imscribing/Paraconsistent/LeptonBelnap.lean        — Lepton Belnap.
+  Imscribing/Paraconsistent/GaugeBosonBelnap.lean    — Gauge boson Belnap.
+  Imscribing/Paraconsistent/ElectroweakBelnap.lean   — Electroweak Belnap.
+  Imscribing/Paraconsistent/HiggsMechanism.lean      — Higgs mechanism.
+  Imscribing/Paraconsistent/NeutrinoOscillation.lean — Neutrino oscillation.
+  Imscribing/Paraconsistent/FlavorMixing.lean        — Flavor mixing.
+  Imscribing/Paraconsistent/StandardModelBelnap.lean — Standard Model Belnap.
+  Imscribing/Paraconsistent/GeneralRelativity.lean   — General relativity.
+  Imscribing/Paraconsistent/GravitationalWaves.lean  — Gravitational waves.
+  Imscribing/Paraconsistent/BlackHoleBelnap.lean     — Black hole Belnap.
+  Imscribing/Paraconsistent/CosmologyBelnap.lean     — Cosmology Belnap.
+  Imscribing/Paraconsistent/QuantumGravityBelnap.lean — Quantum gravity Belnap.
+  Imscribing/Paraconsistent/GravityStandardModel.lean — Gravity SM unification.
+  Imscribing/Paraconsistent/FTLTravel.lean            — FTL travel.
+  Imscribing/Paraconsistent/FDEAsymptotic.lean        — FDE asymptotic.
+  Imscribing/Paraconsistent/QuantumClassicalInterface.lean — QCI.
+  Imscribing/Paraconsistent/MultiAgentBelnap.lean     — Multi-agent Belnap.
 
 ── Lean ↔ IG tool notation ────────────────────────────────────────
 
@@ -2894,22 +2956,22 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
 ── Usage patterns ────────────────────────────────────────────────
 
   Read a module:
-    file_read("~/MillenniumAnkh/Millennium/RH.lean")
+    file_read("/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/Imscribing/Millennium/RH.lean")
 
   Build a specific module:
-    run_command("cd ~/MillenniumAnkh && lake build Imscribing.Primitives.Core",
+    run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build Imscribing.Primitives.Core",
                 assertion="Build completed" in output or output == "")
 
   Check if a theorem is sorry-free:
-    run_command("cd ~/MillenniumAnkh && grep -n 'sorry' Millennium/RH.lean",
+    run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && grep -n 'sorry' Imscribing/Millennium/RH.lean",
                 assertion=True)  -- enumerate honest sorry markers
 
   Verify agent self-encoding:
-    run_command("cd ~/MillenniumAnkh && lake build Imscribing.AgentSelf",
+    run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build Imscribing.AgentSelf",
                 assertion="error" not in output.lower())
 
   Search for a theorem by name:
-    run_command("cd ~/MillenniumAnkh && grep -rn 'theorem\\|lemma\\|def' Primitives/Core.lean | head -40",
+    run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && grep -rn 'theorem\|lemma\|def' Primitives/Core.lean | head -40",
                 assertion=True)
 
   Cross-check a structural claim: call imscribe to compute a value, then
