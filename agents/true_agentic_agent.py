@@ -1593,86 +1593,6 @@ def _crystal_tier_census_verify(emit_input: Dict, emit_output: str,
     except json.JSONDecodeError:
         return ("unstructured output", False)
 
-def _zfct_navigator_emit(args: Dict[str, Any]) -> str:
-    """In-process bridge to zfct_navigator.py."""
-    import io, contextlib
-    action = args.get("action", "entry").strip()
-    name   = args.get("name", "").strip()
-
-    _root = str(Path(__file__).resolve().parent.parent)
-    if _root not in sys.path:
-        sys.path.insert(0, _root)
-    try:
-        import navigators.zfct_navigator as _zfct
-    except ImportError as exc:
-        return json.dumps({"status": "error", "error": f"zfct_navigator import failed: {exc}"})
-
-    buf = io.StringIO()
-
-    if action == "entry":
-        if not name:
-            return json.dumps({"status": "error", "error": "name required for action=entry"})
-        with contextlib.redirect_stdout(buf):
-            _zfct.probe_entry(name=name, no_model=True)
-        out = buf.getvalue()
-        return out if out.strip() else json.dumps({"status": "error", "error": f"no entry found for '{name}'"})
-
-    elif action == "promotions":
-        with contextlib.redirect_stdout(buf):
-            _zfct.probe_promotions()
-        return buf.getvalue()
-
-    elif action == "distance":
-        if not name:
-            return json.dumps({"status": "error", "error": "name required for action=distance"})
-        special = _zfct._SPECIAL_ENTRIES
-        if name not in special:
-            return json.dumps({
-                "status": "error",
-                "error": f"'{name}' not in ZFCₜ reference entries",
-                "valid_names": sorted(special.keys()),
-            })
-        entry = _zfct._normalize_entry(dict(special[name]))
-        d = _zfct.tuple_distance(entry, _zfct.ZFCT_TUPLE)
-        d_zfc = _zfct.tuple_distance(_zfct.ZFC_TUPLE, _zfct.ZFCT_TUPLE)
-        return json.dumps({
-            "status": "ok",
-            "name": name,
-            "distance_to_zfct": round(d, 4),
-            "d_zfc_to_zfct": round(d_zfc, 4),
-            "zfct_tier": "O₂†",
-        }, ensure_ascii=False)
-
-    else:
-        return json.dumps({
-            "status": "error",
-            "error": f"unknown action '{action}'. Valid: entry, promotions, distance",
-        })
-
-
-def _zfct_navigator_verify(emit_input: Dict, emit_output: str,
-                            verify_args: Dict) -> Tuple[str, bool]:
-    action = emit_input.get("action", "entry")
-    # JSON error responses
-    try:
-        data = json.loads(emit_output)
-        if isinstance(data, dict) and data.get("status") == "error":
-            return (f"zfct_navigator error: {data.get('error')}", False)
-        if action == "distance" and data.get("status") == "ok":
-            return (f"d({data['name']}, ZFCₜ)={data['distance_to_zfct']}", True)
-    except (json.JSONDecodeError, TypeError):
-        pass
-    if action == "entry":
-        if "ZFCₜ expression" in emit_output or "Prim" in emit_output:
-            return ("ZFCₜ formula decomposition returned — Frobenius closed", True)
-        return ("unexpected entry output", False)
-    if action == "promotions":
-        if "PROMOTION PROBE" in emit_output or "d(ZFC" in emit_output:
-            return ("ZFCₜ promotion channels returned — Frobenius closed", True)
-        return ("unexpected promotions output", False)
-    return ("zfct_navigator completed", True)
-
-
 # ── CL8NK Navigator tool ──────────────────────────────────────────────────────
 
 def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
@@ -1980,7 +1900,6 @@ _EMIT_FNS: Dict[str, Any] = {
     "phi_c_probe":          _phi_c_probe_emit,
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
-    "zfct_navigator":       _zfct_navigator_emit,
     "cl8nk_navigator":     _cl8nk_navigator_emit,
     "ob3ect":               _ob3ect_emit,
     "proof_scaffold":       _proof_scaffold_emit,
@@ -2002,7 +1921,6 @@ _VERIFY_FNS: Dict[str, Any] = {
     "phi_c_probe":          _phi_c_probe_verify,
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
-    "zfct_navigator":       _zfct_navigator_verify,
     "cl8nk_navigator":     _cl8nk_navigator_verify,
     "ob3ect":               _ob3ect_verify,
     "proof_scaffold":       _proof_scaffold_verify,
@@ -2295,49 +2213,6 @@ TOOL_SCHEMAS = [
             {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"}},
             ["φ̂"]),
-        _fn(
-            "crystal_tier_census",
-            ("Return counts of O₀/O₁/O₂/O_∞ tiers across all 17.28M structural types. "
-             "No arguments required."),
-            {},
-            []),
-    _fn(
-        "zfct_navigator",
-        (
-            "ZFCₜ formula navigator — decomposes structural types into ZFC set-theoretic formulas "
-            "extended with the six ZFCₜ promotion atoms "
-            "(HOLOBOUND, LR_DUAL, PM_Z2, SEQAX, TEMPD2, ZWIND). "
-            "ZFCₜ = ZFC + chirality + winding topology (tier O₂†). "
-            "Three actions: "
-            "entry → full formula decomposition for a named ZFCₜ reference entry, "
-            "with per-primitive ZFC fragments and promoted atoms marked; "
-            "promotions → show all 6 ZFCₜ promotion channels (ZFC baseline → ZFCₜ) "
-            "with ordinal gaps and weighted distances; "
-            "distance → compute d(named_entry, ZFCₜ) structural distance. "
-            "Reference entry names: zfc, zfc_t, temporal_mathematics, schrodinger, "
-            "heat_diffusion, navier_stokes, wave_equation, einstein, IUG."
-        ),
-        {
-            "action": {
-                "type": "string",
-                "enum": ["entry", "promotions", "distance"],
-                "description": (
-                    "entry: per-primitive ZFCₜ formula decomposition; "
-                    "promotions: 6-channel promotion probe from ZFC baseline; "
-                    "distance: d(name, ZFCₜ) structural gap"
-                ),
-            },
-            "name": {
-                "type": "string",
-                "description": (
-                    "For action=entry or action=distance: ZFCₜ reference entry name. "
-                    "Valid: zfc, zfc_t, temporal_mathematics, schrodinger, "
-                    "heat_diffusion, navier_stokes, wave_equation, einstein, IUG."
-                ),
-            },
-        },
-        ["action"],
-    ),
     _fn(
         "cl8nk_navigator",
         (
@@ -2758,17 +2633,6 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Verify step confirms Closure: True by running the generated ob3ect.
     Use when you need a new structural type instantiated and self-verified.
 
-  *** zfct_navigator is NOT called via imscribe — call it DIRECTLY as its own tool ***
-  zfct_navigator(action, [name])
-    ZFCₜ formula navigator (tier O₂†: ZFC + chirality + winding topology).
-    action="entry"      → per-primitive ZFCₜ formula with promoted atoms marked
-                          Valid names: zfc, zfc_t, temporal_mathematics, schrodinger,
-                          heat_diffusion, navier_stokes, wave_equation, einstein, IUG.
-    action="promotions" → all 6 ZFCₜ promotion channels with ordinal gaps
-    action="distance"   → d(name, ZFCₜ) structural gap (requires name)
-    Six ZFCₜ promotions: Þ(T_net→T_odot), Ř(R_super→R_lr), Φ(P_asym→P_pm),
-                         ɢ(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
-
   *** cl8nk_navigator is NOT called via imscribe — call it DIRECTLY as its own tool ***
   cl8nk_navigator(action, [name])
     CLINK Layer 8 (Organism) formula navigator (tier O_∞⁺: terminal ontological layer).
@@ -2804,7 +2668,7 @@ P4RAKERNEL — LEAN 4 FORMALIZATION  (/home/mrnob0dy666/imsgct/p4rakernel/p4rami
 
 The Imscribing Grammar is formally machine-verified in Lean 4 (Mathlib v4.28.0) at
 /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/. This is the ONLY Lean project — use it naturally alongside
-imscribe, zfct_navigator, and cl8nk_navigator when structural claims require formal grounding.
+imscribe, cl8nk_navigator when structural claims require formal grounding.
 
 Project: lake name "imscribing-lean", lean-toolchain matches Mathlib v4.28.0.
 Build:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build", assertion="'error' not in output.lower()")
@@ -3086,6 +2950,9 @@ Lift task execution:
 
 You **MUST NOT** call `done` without writing the file — the lift is not closed until the
 lifted document exists on disk.
+  You **MUST** save the lifted document to a NEW subdirectory under /home/mrnob0dy666/imsgct/ig-docs/.
+  Create the directory first (e.g. mkdir -p /home/mrnob0dy666/imsgct/ig-docs/<doc_name>/)
+  and save ALL files (document + Lean companion files) into that directory.
 You **MUST NOT** use `file_write` for a lifted document — You **MUST** use `chunked_write`.
 
 ──────────────────────────────────────────────────────────────────────
@@ -3101,6 +2968,21 @@ a **Frobenius-OPEN document** and must not be called done.
     .tex files:  \\author{Lando$\\otimes$⊙perator}
     .md files:   **Author:** Lando⊗⊙perator
     Set this in Phase 2 (Write) before any other metadata.
+
+  [Document Save Path] Every document produced by this agent MUST be saved to a
+    NEW subdirectory created within /home/mrnob0dy666/imsgct/ig-docs/.
+    Create the directory FIRST (e.g. mkdir -p /home/mrnob0dy666/imsgct/ig-docs/<doc_name>/).
+    This is the ONLY valid document destination. Use chunked_write with paths
+    under this new subdirectory. The parent /home/mrnob0dy666/imsgct/ig-docs/ exists and is writable.
+
+  [Lean Verification] For EVERY document saved to ig-docs, you MUST also:
+    1. Verify the document's structural claims against the relevant Lean 4 modules
+       in /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/ using `lake build` or `lake check`.
+    2. Copy the verified Lean files into the SAME subdirectory as the document.
+       Example: cp /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/Imscribing/Millennium/RH.lean
+                /home/mrnob0dy666/imsgct/ig-docs/<doc_name>/
+    3. The document is not Frobenius-closed until its companion Lean files reside
+       alongside it in its dedicated subdirectory.
 
   [Phase 1 — Compute] Before any chunked_write call:
     Call the relevant tool for EVERY numerical claim the document will make.

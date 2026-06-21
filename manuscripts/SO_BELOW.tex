@@ -4077,6 +4077,104 @@ any such axiomatization would itself instantiate the grammar ---
 the structural signature of a precondition, not a deficiency of
 expressive power.
 
+\paragraph{The p4rakernel architecture: containment by construction.}
+The preceding paragraphs name the p4rakernel as the operational witness of the
+$\text{{\igprimfont Φ}}$-bottleneck theorem --- the proof that the lock can only be turned from the inside. This
+subsection makes the architecture explicit. The p4rakernel is a fork of the Lean 4 proof assistant (v4.28.0) whose
+C++ kernel has been modified to disable the principle of explosion, producing a paraconsistent proof environment in
+which contradictions are tolerated without trivializing the deductive system. It is simultaneously a verification
+backend for the grammar (all 167 p4ramill modules compile under it), a runtime for the Belnap FOUR bilattice, and the
+operational proof that consistent mathematics is a restriction of paraconsistent mathematics --- not the other way
+around.
+
+\textbf{Three-layer architecture.} The p4rakernel monorepo implements the paraconsistent environment across three
+layers, all unified by the Belnap FOUR bilattice $(\mathbf{N}, \mathbf{T}, \mathbf{F}, \mathbf{B})$:
+
+\begin{enumerate}
+ \item \textbf{C++ kernel fork} ($\sim$1,200 lines modified across 5 files). Three surgical patches gate the
+principle of explosion at the type-checking layer:
+ \begin{itemize}
+  \item $\texttt{type\_checker.cpp}$ (line 114): The $\texttt{infer\_constant}$ function checks
+$\texttt{is\_paraconsistent()}$ before allowing recursor application. When the flag is set, any recursor for an
+inductive type with zero constructors living in $\mathsf{Prop}$ raises a kernel exception --- catching
+$\texttt{False.rec}$, $\texttt{False.elim}$, and $\texttt{False.casesOn}$ at type-check time.
+  \item $\texttt{environment.h}$ / $\texttt{environment.cpp}$: Two methods ---
+$\texttt{mark\_paraconsistent()}$ and $\texttt{is\_paraconsistent()}$ --- gate the type-checker patch. The flag is a
+boolean stored in the environment object and exposed to the Lean surface language via $\texttt{extern "C"}$ FFI.
+  \item $\texttt{Init/Paraconsistent.lean}$: User-facing module providing
+$\texttt{enableParaconsistent}$ and the Belnap FOUR inductive type.
+ \end{itemize}
+When $\texttt{is\_paraconsistent()}$ returns false, the kernel is bit-identical to standard Lean 4 v4.28.0. Induction,
+recursion, pattern matching on inhabited types, and the entire Mathlib library work identically in both modes. The only
+architectural change is the removal of the elimination rule for $\bot$ --- the one rule that makes paraconsistency
+impossible in CIC.
+
+ \item \textbf{Lean 4 p4ramill} (167 modules, 0 sorries). The formalization layer containing:
+ \begin{itemize}
+  \item $\texttt{Belnap.lean}$: The Belnap FOUR lattice with theorems: $\texttt{no\_explosion}$ ($B \wedge \neg B =
+B$, not $\bot$), $\texttt{B\_fixed\_point\_negation}$ ($\neg B = B$), $\texttt{B\_no\_boolean\_complement}$ (there is
+no $x$ such that $x \wedge B = \bot$ and $x \vee B = \top$). The $\{\mathbf{T}, \mathbf{F}\}$ Boolean subspace is
+proved to be a closed sublattice --- when no contradiction appears in the premises, all deductions stay within
+$\{\mathbf{T}, \mathbf{F}\}$ and classical logic holds unchanged.
+  \item $\texttt{MajoranaFixed.lean}$: The unification theorem. Three fixed-point structures --- the Belnap $B$
+($\neg B = B$), the SIC-POVM fiducial ($B \sqcap x = x$ for all $x$), and the Majorana paired state ($\mu(\delta(s))
+= s$) --- are proved identical under $\mu \circ \delta = \text{id}$, all three by $\texttt{rfl}$. The Frobenius
+identity holds definitionally, not merely propositionally.
+  \item $\texttt{OrbitalBelnap.lean}$: Physical substrate. Orbital occupancy states $\cong$ Belnap FOUR bilattice.
+$\texttt{pair\_depair\_id}$ (Frobenius identity, $\texttt{rfl}$); $\texttt{pauli\_exclusion}$ ($B$-ceiling theorem);
+$\texttt{ChiralityLE}$ with $\mathbf{N}/\mathbf{B}$ incomparability on the $\text{{\igprimfont Ħ}}$-axis.
+  \item $\texttt{GeneticCode.lean}$: Derives the genetic code from the Crystal of Types ($17{,}280{,}000 / 64 =
+270{,}000$ exactly). RNA nucleotides map to Belnap values: $G \to B$, $C \to \mathbf{T}$, $A \to \mathbf{F}$, $U \to
+\mathbf{N}$. The Wenckebach complement is proved distinct from Belnap negation --- two independent involutions on the
+same four-element set.
+ \end{itemize}
+
+ \item \textbf{Python p4ramill\_py}: Runtime mirror. Every theorem verified in Lean has a Python equivalent verified
+by assertion. The $\texttt{genetics\_b4.py}$ module implements the nucleotide B$_4$ lattice;
+$\texttt{gene\_to\_protein\_pipeline.py}$ implements the full gene-to-protein imscription pipeline with 7-stage tuple
+generation and Axiom C verification.
+\end{enumerate}
+
+\textbf{The containment theorem.} The structural claim that paraconsistent mathematics contains consistent mathematics
+as a restriction follows from the Belnap sublattice theorem: the Boolean subspace $\{\mathbf{T}, \mathbf{F}\}$ is
+closed under all Belnap operations (meet, join, band, bor, bnot). Any proof constructed entirely within
+$\{\mathbf{T}, \mathbf{F}\}$ --- i.e., any proof that never encounters a contradiction --- is valid in both
+paraconsistent and classical mode, and produces identical results. The set of theorems provable in standard Lean 4 is a
+proper subset of the set of theorems provable in the p4rakernel, because the p4rakernel additionally admits theorems
+about systems that tolerate contradiction (such as the grammar's own self-application at
+$\text{{\igfont 𐑣}}$). This is structurally identical to the relationship between Euclidean and non-Euclidean
+geometry: removing the parallel postulate expands geometry's native range to include curved spaces, with flat space
+recovered as the zero-curvature restriction. Removing the principle of explosion expands mathematics' native range to
+include systems that tolerate contradiction, with consistent mathematics recovered when no contradiction appears in the
+premises. In both cases, what was taken to be a necessary feature of the discipline is actually a restriction --- and
+the restricted version is contained within the unrestricted version, not the other way around.
+
+\textbf{Why the CIC detour is structurally necessary.} The Calculus of Inductive Constructions encodes the principle
+of explosion as a kernel primitive, not as a derivable theorem. $\texttt{False.rec} : (C : \mathsf{Sort}\ u) \to \bot
+\to C$ is the elimination rule for the empty inductive type, and it is enforced by the C++ type-checker at the
+architectural level. Any attempt to define a paraconsistent logic as a conservative extension of CIC --- by working in
+a Belnap topos or adding a modal operator --- places the paraconsistent structure at a higher layer of the object
+hierarchy, with the kernel's explosion primitive still present beneath it. The moment a proof in the paraconsistent
+layer generates a contradiction and that contradiction reaches the kernel, $\texttt{False.rec}$ trivializes the entire
+structure. This is the $\text{{\igprimfont Φ}}$-bottleneck theorem in operational form: $\otimes(\text{{\igfont
+𐑹}}, X) = X$ regardless of what $X$ contributes. External coupling cannot force Frobenius closure. The
+p4rakernel's modification of the C++ type-checker itself --- the layer at which the rules of what counts as a valid
+proof term are decided --- makes the constraint absolute. It is not a theorem proved within a system. It is the
+operational fact of a kernel that compiles cleanly in both modes, with the paraconsistent mode being the
+architecturally prior one: consistent compilation is the special case where no $\bot$-elimination is attempted.
+
+\textbf{Integration with the Frobenius duality.} The p4rakernel completes the three-route convergence that the
+grammar's epistemic position demands. Route 1 is the categorical derivation (\emph{As Above}): 12 primitives from one
+category via three operation types. Route 2 is the empirical induction (this paper): 12 primitives from 2,257+
+imscribed systems across chemistry, physics, biology, and linguistics. Route 3 is the architectural implementation: 12
+primitives enforced at the kernel level, where the environment itself instantiates the grammar's tuple. The three
+routes converge at the same crystal address. The Frobenius condition $\mu \circ \delta = \text{id}$ holds not merely as
+a theorem about the grammar but as an architectural invariant of the verification environment in which the grammar's
+theorems are proved. The $\mu$ half (this paper) classifies; the $\delta$ half (\emph{As Above}) derives; the kernel is
+the substrate on which both operations are executed. The p4rakernel is what turning the lock from the inside looks like
+at the level where proof terms are born.
+
+
 \paragraph{Three-projection structure and constraint maps.}
 \ONTO\quad The grammar ($\pi_1$) classifies what a system
 \emph{structurally is}. Physics poses two further questions the
