@@ -353,33 +353,66 @@ MOLECULE_FG_DB = {
     "pentacyclo": ["cyclic", "alkane"],
     "p-phenylenediamine": ["amine", "aromatic_ring"],
     "3,4-dichloroaniline": ["halide", "amine", "aromatic_ring"],
+    "purine": ["aromatic_ring", "amine", "cyclic"],
+    "adenine": ["amine", "aromatic_ring", "cyclic"],
+    "guanine": ["amide", "amine", "aromatic_ring", "cyclic"],
+    "theophylline": ["amide", "amine", "alkene", "cyclic"],
+    "theobromine": ["amide", "amine", "alkene", "cyclic"],
+    "isoprene": ["alkene"],
+    "limonene": ["alkene", "cyclic"],
+    "pinene": ["alkene", "cyclic"],
+    "penicillin": ["amide", "carboxylic_acid", "cyclic", "thiol"],
+    "morphine": ["phenol", "alcohol", "ether", "amine", "alkene", "cyclic"],
+    "codeine": ["phenol", "ether", "amine", "alkene", "cyclic"],
+    "diazepam": ["amide", "amine", "aromatic_ring", "halide", "cyclic"],
+    "warfarin": ["alcohol", "ketone", "ester", "aromatic_ring"],
+    "cholesterol": ["alcohol", "alkene", "cyclic"],
+    "testosterone": ["alcohol", "ketone", "alkene", "cyclic"],
+    "estradiol": ["phenol", "alcohol", "cyclic"],
+    "cortisol": ["alcohol", "ketone", "alkene", "cyclic"],
 }
 
 def find_fgs(name):
     """Extract functional groups from molecule name.
     
     Priority order:
-    1. Molecule name lookup (MOLECULE_FG_DB)
-    2. Substring token matching (FG_TOKENS)
+    1. Molecule name lookup (MOLECULE_FG_DB) — exact
+    2. Molecule name substring (MOLECULE_FG_DB) — best match
+    3. Word-boundary token matching (FG_TOKENS) — avoids false positives
+       like 'ene' matching 'caffeine' or 'one' matching 'ketone'
     """
+    import re as _re
     name_lower = name.lower().replace("_", " ").replace("-", " ").strip()
     
-    # Step 1: Exact match in molecule name DB
     if name_lower in MOLECULE_FG_DB:
         return sorted(MOLECULE_FG_DB[name_lower])
     
-    # Step 2: Check if name_lower starts with or contains a DB key
-    # Sort by length descending for best match first
     for db_name in sorted(MOLECULE_FG_DB.keys(), key=len, reverse=True):
         if db_name in name_lower:
             return sorted(MOLECULE_FG_DB[db_name])
     
-    # Step 3: Fallback — substring token matching
+    words = _re.split(r'[\s\d,;()\[\]{}]+', name_lower)
     found = set()
+    
     for token in sorted(FG_TOKENS.keys(), key=len, reverse=True):
-        if token in name_lower:
-            found.add(FG_TOKENS[token])
-    return sorted(found)
+        for word in words:
+            if word == token or word.endswith(token):
+                if len(token) >= 4 or word == token or (
+                    len(word) > len(token) and word[-len(token):] == token
+                    and word[-len(token)-1] not in 'aeiou'
+                ):
+                    found.add(FG_TOKENS[token])
+                    break
+            elif word.startswith(token) and len(token) >= 4:
+                found.add(FG_TOKENS[token])
+                break
+    
+    if not found:
+        for token in sorted(FG_TOKENS.keys(), key=len, reverse=True):
+            if len(token) >= 4 and token in name_lower:
+                found.add(FG_TOKENS[token])
+    
+    return sorted(found) if found else []
 def get_fg_type(fg_name):
     return FG.get(fg_name, {})
 
@@ -437,17 +470,26 @@ def evaluate_disconnection(fg1_name, fg2_name, bond_name, molecule_type):
 
 def find_disconnections(fg_names, molecule_type, max_results=10):
     """Find all viable disconnections via grammar-derived rules.
-    For each pair of FGs and each bond type, compute structural delta.
-    Incompatible bonds are filtered out. Lower delta = better.
+    
+    Ranking: bond specificity (amide>ester>carbonyl>...>sigma>H-bond),
+    then structural delta. Incompatible bonds are filtered out.
     """
+    BOND_SPECIFICITY = {
+        "amide_link": 10, "ester_link": 9, "carbonyl": 8,
+        "aromatic": 7, "double_bond": 6, "triple_bond": 5,
+        "co_sigma": 3, "cn_sigma": 3, "ether_link": 2,
+        "sigma_single": 1, "pi_bond": 1, "hydrogen_bond": 0,
+    }
+    
     results = []
     for i, fg1 in enumerate(fg_names):
         for fg2 in fg_names[i:]:
             for bname in BOND_TYPES:
                 ev = evaluate_disconnection(fg1, fg2, bname, molecule_type)
                 if ev and ev["compatible"]:
+                    ev["specificity"] = BOND_SPECIFICITY.get(bname, 0)
                     results.append(ev)
-    results.sort(key=lambda x: x["delta"])
+    results.sort(key=lambda x: (-x.get("specificity", 0), x["delta"]))
     return results[:max_results]
 
 # CAS RESOLVER
@@ -612,15 +654,24 @@ class Ch3mpiler:
         return tree
 
     def forward(self, reagents):
-        """Predict forward reaction: find most compatible bond between reagent FGs."""
+        """Predict forward reaction: find most compatible bond between reagent FGs.
+        
+        Ranking: specificity then delta (more specific bonds preferred).
+        """
+        BOND_SPECIFICITY = {
+            "amide_link": 10, "ester_link": 9, "carbonyl": 8,
+            "aromatic": 7, "double_bond": 6, "triple_bond": 5,
+            "co_sigma": 3, "cn_sigma": 3, "ether_link": 2,
+            "sigma_single": 1, "pi_bond": 1, "hydrogen_bond": 0,
+        }
         all_fgs = set()
         for r in reagents:
             all_fgs.update(find_fgs(r))
         if not all_fgs:
             return {"reagents": reagents, "error": "no FGs identified"}
         
-        # Find best bond between any pair of identified FGs
         best = None
+        best_score = (-1, 999)
         for fg1 in sorted(all_fgs):
             for fg2 in sorted(all_fgs):
                 for bname in BOND_TYPES:
@@ -628,17 +679,18 @@ class Ch3mpiler:
                     bond = BOND_TYPES.get(bname, {})
                     if fg1_t and fg2_t and bond:
                         product = bond_product_type(fg1_t, fg2_t, bond)
-                        # Lower tensor-to-product delta = bond is more structuring
                         tensor = tensor_type(fg1_t, fg2_t)
                         d, _ = tup_dist(product, tensor)
-                        if best is None or d < best["structuring_delta"]:
+                        spec = BOND_SPECIFICITY.get(bname, 0)
+                        score = (spec, -d)
+                        if score > best_score:
+                            best_score = score
                             best = {"fg1": fg1, "fg2": fg2, "bond": bname,
                                     "bond_desc": bond.get("desc",""),
                                     "structuring_delta": round(d, 3),
                                     "product_type": fmt_tup(product)}
         return {"reagents": reagents, "fgs": sorted(all_fgs),
                 "prediction": best} if best else {"reagents": reagents, "fgs": sorted(all_fgs), "error": "no compatible bond"}
-
     def resolve_cas(self, cas_number):
         return self.cas_resolver.resolve(cas_number)
 

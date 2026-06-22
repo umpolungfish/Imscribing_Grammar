@@ -5,5 +5,33 @@
     "formula": "C60H86O19",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "58-08-2": {
+    "cas": "58-08-2",
+    "name": "caffeine",
+    "formula": "C8H10N4O2",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "17699-14-8": {
+    "cas": "17699-14-8",
+    "name": "(1R,5S,6R,7S,10R)-7-isopropyl-4,10-dimethyl-tricyclo[4.4.0.01,5]dec-3-ene",
+    "formula": "C15H24",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "130-95-0": {
+    "cas": "130-95-0",
+    "name": "(R)-(6-methoxy-4-quinolyl)-[(2S,4S,5R)-5-vinylquinuclidin-2-yl]methanol",
+    "formula": "C20H24N2O2",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "13744-15-5": {
+    "cas": "13744-15-5",
+    "name": "(1R,5S,6R,7S,10R)-7-isopropyl-10-methyl-4-methylene-tricyclo[4.4.0.01,5]decane",
+    "formula": "C15H24",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
