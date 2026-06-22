@@ -17,6 +17,9 @@ from .llm_provider_abc import LLMProvider
 
 logger = logging.getLogger(__name__)
 
+# Qwen3 thinking-token toggle; set via auto.py --thinking (default off)
+enable_thinking: bool = False
+
 # Common retry configuration for all providers
 def _is_retryable_http_error(exc: BaseException) -> bool:
     if isinstance(exc, httpx.HTTPStatusError):
@@ -531,12 +534,11 @@ class LocalProvider(LLMProvider):
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
 
-        # enable_thinking=False: no CoT overhead for single-answer guided calls
         text = tok.apply_chat_template(
             messages,
             tokenize=False,
             add_generation_prompt=True,
-            enable_thinking=False,
+            enable_thinking=enable_thinking,
         )
         _dev = mdl.device
 

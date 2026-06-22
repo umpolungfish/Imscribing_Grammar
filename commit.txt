@@ -1,3 +1,19 @@
+true_agentic_agent: add --thinking flag to toggle Qwen3 thinking tokens (2026-06-21)
+
+agents/true_agentic_agent.py:
+  - Module-level `enable_thinking: bool = False` added (alongside nested_tensor pattern)
+  - TrueAgenticAgent.__init__ gains `enable_thinking: bool = False` param;
+    stores as self.enable_thinking and propagates to module global via globals()
+  - Both tok.apply_chat_template(...) call sites now use module-level enable_thinking
+    (lines in _LocalChatCompletions.create and LocalProvider load path)
+  - CLI: --thinking flag (action="store_true", default False); passed as
+    enable_thinking=args.thinking to both single-run and chat-loop instantiations
+
+Usage: add --thinking to any ig-agent invocation to enable <think>...</think> tokens.
+Default remains off.
+
+---
+
 Add 15 food/drink catalog entries; structural diet analysis (2026-06-21)
 
 New entries in IG_catalog.json (3328 total):

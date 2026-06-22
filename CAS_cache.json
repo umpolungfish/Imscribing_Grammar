@@ -33,5 +33,12 @@
     "formula": "C15H24",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "4368-28-9": {
+    "cas": "4368-28-9",
+    "name": "(1R,5R,6R,7R,9S,11S,12S,13S,14S)-3-amino-14-methylol-8,10-dioxa-2,4-diazatetracyclo[7.3.1.17,11.01,6]tetradec-3-ene-5,9,12,13,14-pentol",
+    "formula": "C11H17N3O8",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }

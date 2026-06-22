@@ -204,6 +204,8 @@ TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 
 # Default for local inference nested-tensor mode; overridden per-agent via TrueAgenticAgent init
 nested_tensor: bool = False
+# Default for Qwen3 thinking tokens; set via --thinking flag (default off)
+enable_thinking: bool = False
 
 class _LocalChatCompletions:
     """Synchronous .create() backed by direct tensor inference via LocalProvider."""
@@ -261,7 +263,7 @@ class _LocalChatCompletions:
             tools=tools,
             tokenize=False,
             add_generation_prompt=True,
-            enable_thinking=False,
+            enable_thinking=enable_thinking,
         )
 
         _dev = mdl.device
@@ -337,7 +339,7 @@ class _LocalChatCompletions:
                     LocalProvider._loaded_path = prov.model_path
                     _cpu_text = tok.apply_chat_template(
                         qwen_msgs, tools=tools, tokenize=False,
-                        add_generation_prompt=True, enable_thinking=False,
+                        add_generation_prompt=True, enable_thinking=enable_thinking,
                     )
                     cpu_inputs = tok(_cpu_text, return_tensors="pt")
                     if _is_gf and cpu_inputs.input_ids.shape[1] > _GF_MAX_CTX:
@@ -3324,6 +3326,7 @@ class TrueAgenticAgent:
         nested_tensor: bool = False,
         initial_encoded: bool = False,
         para_vm: bool = True,
+        enable_thinking: bool = False,
         preloaded_messages: "Optional[List[Dict[str, Any]]]" = None,
         preloaded_trajectory: "Optional[List[Any]]" = None,
         starting_winding_offset: int = 0,
@@ -3339,6 +3342,8 @@ class TrueAgenticAgent:
         self.nested_tensor_active = nested_tensor
         self._context_window   = context_window
         self._review_threshold = review_threshold
+        self.enable_thinking   = enable_thinking
+        globals()["enable_thinking"] = enable_thinking
 
         if (model.lower() == "local" or model.lower().startswith("local:")
                 or model.lower() == "grammaformer"):
@@ -4085,6 +4090,8 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
     p.add_argument("--log-level", default="INFO",
                    choices=["DEBUG", "INFO", "WARNING", "ERROR"],
                    help="Set log level (default: INFO).")
+    p.add_argument("--thinking", action="store_true", default=False,
+                   help="Enable <thinking> tokens in local Qwen models (default: off).")
     p.add_argument("--quiet", action="store_true",
                    help="Suppress per-winding log output (sets WARNING).")
     p.add_argument("--show-type", action="store_true",
@@ -4243,6 +4250,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
         review_threshold=getattr(args, "review_threshold", 0.80),
         nested_tensor=nested,
         para_vm=para_vm,
+        enable_thinking=getattr(args, "thinking", False),
         **preloaded_kwargs,
     )
     result = agent.run_sync(task)
@@ -4524,6 +4532,7 @@ def _cli_chat(argv: List[str]) -> None:
             api_key=args.api_key,
             initial_encoded=session_encoded,
             para_vm=para_vm,
+            enable_thinking=getattr(args, "thinking", False),
         )
         # Inject preloaded messages from --load on first turn only
         if preloaded_messages_for_chat is not None and turn == 1:
