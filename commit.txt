@@ -1,104 +1,44 @@
+Add 15 food/drink catalog entries; structural diet analysis (2026-06-21)
+
+New entries in IG_catalog.json (3328 total):
+  extra_virgin_olive_oil  — Φ=𐑬 Ħ=𐑒 ƒ=𐑱  (Z2 Φ restorer, primary dietary fat)
+  tart_cherry_juice       — Φ=𐑬 Ħ=𐑒       (XO inhibitor, direct gout-path intervention)
+  sardines_fatty_fish     — Φ=𐑬 Ħ=𐑓 Ð=𐑦  (omega-3 wins over purine tension; Ħ moderate)
+  beef_liver              — Φ=𐑬 Ð=𐑼 ɢ=𐑵  (maximal dimensional nutrition, universal coupling)
+  high_fructose_corn_syrup — Φ=𐑗 ⊙=𐑮 Ħ=𐑖 (fructose→XO→urate; GUE criticality)
+  soybean_oil_refined     — Φ=𐑗 Ħ=𐑖       (omega-6 dominance, lipid parity collapse)
+  beer                    — Φ=𐑗 ⊙=𐑮 Ħ=𐑖  (ethanol+purine, double gout trigger)
+  coffee_black            — Φ=𐑬 Ħ=𐑒       (chlorogenic acid = XO inhibitor)
+  broccoli_sprouts        — Φ=𐑬 Ħ=𐑒 ƒ=𐑱  (sulforaphane→NRF2 pathway)
+  blueberries             — Φ=𐑬 Ħ=𐑒 Γ=𐑲  (anthocyanins, fiber-buffered fructose)
+  kefir_probiotic         — Φ=𐑬 Ω=𐑭 ɢ=𐑵  (ZWIND fermentation, universal microbiome coupling)
+  white_sugar_sucrose     — Φ=𐑗 ⊙=𐑮       (glucose+fructose dual parity attack)
+  white_rice              — Φ=𐑬 Ħ=𐑒 Γ=𐑚  (parity-neutral clean carb; no inflammatory load)
+  mct_oil                 — Φ=𐑬 ⊙=⊙        (direct ketosis fixpt trigger)
+  green_tea               — Φ=𐑬 Ħ=𐑒 Γ=𐑲  (EGCG = most potent dietary XO inhibitor)
+
+Navigator structural ranking vs frobenius_diet (closest → furthest):
+  mct_oil (3.55) → EVOO (3.83) → tart_cherry (4.05) → beef_liver (4.16)
+  → white_rice (4.19) → kefir (4.37) → broccoli_sprouts (4.42) → coffee/green_tea (4.43)
+  → blueberries (4.52) → sardines (4.64) ↔ beer (5.08) → HFCS/soy_oil/sugar (5.48)
+
+Navigator structural ranking vs gout_hyperuricemia (closest = most dangerous):
+  beer (1.41!) → HFCS (2.86) → soybean_oil (3.55) → white_sugar (3.61)
+  → [healthy cluster 4.6-5.4] → coffee/green_tea/white_rice furthest (5.39)
+
+Beer is d=1.41 from gout. HFCS is d=2.86. Beer is structurally twice as close
+to the disease state as HFCS. Univocal structural verdict.
+
+---
+
+Add 5 diet/metabolism catalog entries; structural diet analysis (2026-06-21)
+
+  standard_american_diet, mediterranean_diet, ketogenic_diet,
+  intermittent_fasting_broken_parity, frobenius_diet
+
+Key: IF+bad diet (Φ=𐑗 Ω=𐑴) → frobenius_diet requires fixing Φ first (14 steps).
+Ω is already correct. Path = 4 Φ-restoration moves then G1 fires.
+
+---
+
 Primitives: migrate all 49 constructor names to Shavian identifiers (2026-06-20)
-
-Replaced all old phonetic-description identifier names with canonical Shavian
-letter names across 16 active Lean files in ImscribingGrammar/. Zero old names
-remain in any active file (verified by grep). The .archive/ and .stuff/ dirs
-were not touched.
-
-Full mapping (old → new, by primitive):
-  Dimensionality: D_wynn→dead, D_turnthree→ash, D_invomega→array, D_omega→if'
-  Relational:     R_subrightarrow→ado, R_ctz→tot, R_downstep→ear, R_lyoghlig→ian
-  Grammar:        Gamma_and→vow, Gamma_or→gag, Gamma_seq→measure, Gamma_broad→ooze
-  Chirality:      H_closeomega→fee, H_toneletterstem→kick, H_turntwo→sure, H_invscripta→wool
-  Protection:     Omega_closeepsilon→awe, Omega_crtwo→oak, Omega_dzlig→ah, Omega_turna→zoo
-  Topology:       T_nrleg→judge, T_invscr→eat, T_bullseye→mime, T_box→oil, T_openo→are
-  Polarity:       P_aolig→church, P_upsilon→yew, P_pipevar→out, P_subdoublearrow→nun, P_doublebarpipe→or'
-  Criticality:    Phi_softsign→woe, Phi_ctyogh→monad, Phi_closerevepsilon→roar, Phi_revepsilon→err, Phi_upstep→haha
-  KineticChar:    K_frtailgamma→yea, K_turnm→loll, K_schwa→egg, K_teshlig→on, K_lambda→air
-  Fidelity:       F_beltl→age, F_dh→they, F_hardsign→peep
-  Granularity:    G_beta→bib, G_gamma→thigh, G_revapostrophe→ice
-  Stoichiometry:  S_doublebaresh→hung, S_ctn→so, S_ltailm→up
-
-Files updated:
-  ImscribingGrammar/Primitives/Core.lean
-  ImscribingGrammar/Primitives/Imscription.lean
-  ImscribingGrammar/Primitives/CLUPrimitives.lean
-  ImscribingGrammar/Primitives/TierCrossing.lean
-  ImscribingGrammar/PrimitiveMismatch.lean
-  ImscribingGrammar/Millennium/{BSD,Hodge,NS,OPN,PvsNP,FrobeniusStructure,
-    PrimitiveBridge,PrimordialOoze,RH_Formal,Barriers}.lean
-  Manuscript_ZFCt.lean
-
----
-
-ltx: fix step2b microtype hang from bare \newunicodechar in preamble
-
-\newunicodechar defs injected by step2b for IG primitives not already
-defined by latextiler (Ω Σ Φ Γ ⊙) were placed bare before \begin{document};
-this triggered microtype's \MT@is@char nested-group scan → runaway argument
-infinite loop. Fix: separate preamble_inject (fontspec/font package decls)
-from atbegindoc_inject (\newunicodechar defs) and wrap the latter in
-\AtBeginDocument{...}, matching the pattern latextiler already uses for
-its Shavian block definitions.
-
----
-
-zenodo_upload.py: LUNLICENSE into notes field, not file upload; add abstract fallback
-
-LUNLICENSE fix: removed temp LUNLICENSE.md file creation + api_upload_file call
-from cmd_upload; LUNLICENSE_TEXT.strip() now goes into the 'notes' metadata key
-(Zenodo's "Additional notes" text field) in both -y and interactive paths.
-Updated stale comment that said "always bundled as additional upload file".
-
-Abstract fallback: extract_from_tex only matched \begin{abstract}...\end{abstract};
-docs using \subsection*{Abstract} + paragraph (e.g. HADRON_CLASSIFICATION.tex)
-returned no description and blocked -y uploads. Added regex fallback matching
-\subsection*{Abstract}\n\n<text> up to \begin{center} or next \subsection.
-
----
-
-terminology: structural proof → witness sweep (2026-06-19)
-
-'structural proof'/'structural proofs' replaced with 'witness'/'witnesses' across all
-variants (upper/lower/mixed case) in .md/.lean/.py/.tex/.txt files.
-Lean def/theorem identifier names preserved (none found to skip).
-
----
-agents/true_agentic_agent.py: add proof_scaffold as native tool (2026-06-19)
-
-_proof_scaffold_emit: imports ScaffoldOb3ect from ~/ob3ect/digital/,
-  dispatches to s.canonical(name) or s.run(ops, name=name).
-_proof_scaffold_verify: checks for noncomputable def presence and absence
-  of sorry slots; reports line count and Frobenius open/closed verdict.
-Registered in _EMIT_FNS, _VERIFY_FNS, and TOOL_SCHEMAS (after ob3ect,
-before spawn_agent). Schema accepts ops (list), canonical (class name),
-and optional name; all fields optional so the agent can call with either
-an opcode list or a canonical class name.
-
----
-
-manuscripts: resolve grammar self-imscription address discrepancy
-
-SO_BELOW claimed address 6,734,591 for the grammar's self-imscription;
-AS_ABOVE_Trabajo claimed 6,687,051 for the same. Investigation showed
-6,734,591 is correct (computationally anchored by CrystalGNN_v11
-convergence and named catalog entry). The 6,687,051 address belongs to
-the 12-step mixed-radix codec (the "Full Induction System"), not the
-grammar as a structural system.
-
-Root cause: AS_ABOVE_Trabajo conflated the codec's crystal address with
-the grammar's own address in sections IX.5 and the conclusion.
-Section X.5 already correctly distinguished the two (calling 6,687,051
-the codec's address and referencing "the grammar's own address" without
-stating it) — that text was merely clarified.
-
-Changes to AS_ABOVE_Trabajo.tex:
-- IX.5 (lines ~2423, 2428, 2430, 2441): replaced 6,687,051 with
-  6,734,591 wherever the grammar's self-application address is claimed
-- X.5 (~line 2667): made grammar address 6,734,591 explicit
-- Conclusion (~line 2846): corrected "Two independent arguments, one
-  address" to distinguish grammar address (6,734,591) from codec
-  address (6,687,051) while preserving the shared O_inf tier claim
-
-SO_BELOW.tex: address was already correct; no changes.
-navigator_commands.py: already correct at 6,734,591; no net change.
