@@ -534,7 +534,7 @@ def compute_join_op(t_sys, t_ref=None):
 def compute_transcendence():
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:
-        return {"status": "error", "message": "ZFC_fe not found in catalog — cannot compute transcendence"}
+        return {"status": "error", "message": "ZFC_fe not found in catalog"}
 
     cl8 = CLINK_L8_REF
     d, conflicts = tuple_distance(zfc_fe, cl8)

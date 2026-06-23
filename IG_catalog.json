@@ -54206,5 +54206,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "lonely_runner_conjecture",
+    "description": "The Lonely Runner Conjecture: For n runners on a circular track of unit length, each running at distinct constant speeds, every runner will eventually be \"lonely\" — separated by at least 1/n from all other runners — at some time. Proven for n≤7; open for n≥8. The conjecture involves Diophantine appr",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑮",
+    "Ħ": "𐑒",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "lonely_runner_theorem",
+    "description": "The Lonely Runner Conjecture: For n runners with distinct constant speeds on a unit-circumference circular track, every runner eventually achieves a gap of at least 1/n from all other runners. Proven for n≤7, open for n≥8. The state space is the n-torus with irrational flows; the core is equidistrib",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
   }
 ]

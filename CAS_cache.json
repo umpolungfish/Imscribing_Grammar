@@ -40,5 +40,12 @@
     "formula": "C11H17N3O8",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "2216-51-5": {
+    "cas": "2216-51-5",
+    "name": "(1R,2S,5R)-2-isopropyl-5-methyl-cyclohexanol",
+    "formula": "C10H20O",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
