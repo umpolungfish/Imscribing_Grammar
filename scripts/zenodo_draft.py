@@ -123,6 +123,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         "",
         f"% Essential packages",
         f"{_B}usepackage{{graphicx}}",
+        f"{_B}setkeys{{Gin}}{{width=0.48{_B}linewidth,height=0.32{_B}textheight,keepaspectratio}}",
         f"{_B}usepackage[table]{{xcolor}}",
         f"{_B}usepackage{{booktabs}}",
         f"{_B}usepackage{{array}}",

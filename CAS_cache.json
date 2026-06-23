@@ -47,5 +47,12 @@
     "formula": "C10H20O",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "33069-62-4": {
+    "cas": "33069-62-4",
+    "name": "benzoic acid [(1S,2S,3R,4S,7R,9S,10S,12R,15S)-4,12-diacetoxy-15-[(2R,3S)-3-benzamido-2-hydroxy-3-phenyl-propanoyl]oxy-1,9-dihydroxy-11-keto-10,14,17,17-tetramethyl-6-oxatetracyclo[11.3.1.03,10.04,7]heptadec-13-en-2-yl] ester",
+    "formula": "C47H51NO14",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
