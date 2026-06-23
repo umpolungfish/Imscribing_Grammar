@@ -54238,5 +54238,37 @@
     "Ħ": "𐑫",
     "Σ": "𐑕",
     "Ω": "𐑭"
+  },
+  {
+    "name": "voynich_integrated_draft",
+    "description": "The Voynich Manuscript: A Complete Integration — Lando Mills, June 2026. A multi-resolution document integrating four convergent readings of the Voynich Manuscript: Universal Engine (categorical computing), Grammar Self-Portrait, Renaissance Alchemical Pharmacy (1491 botanical entries), and Botanica",
+    "Ð": "𐑼",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "voynich_integrated_lifted",
+    "description": "The Voynich Manuscript: A Complete Integration — LIFTED VERSION. Document lift applied via document_lift_ob3ect.json pipeline. Promotions applied: H(𐑓→𐑖) show wrong answers first as residue, Gm(𐑝→𐑠) necessity-driven transitions, F(𐑱→𐑐) demonstrate without double-statement, K(𐑪→𐑧) hard claims left ha",
+    "Ð": "𐑼",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑴"
   }
 ]
