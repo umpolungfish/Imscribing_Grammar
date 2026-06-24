@@ -1,3 +1,32 @@
+ig_pt_web.html: brighten 3D periodic table — 2026-06-24
+
+Lighting:
+  - Fog density: .013 → .007 (elements visible much further out)
+  - AmbientLight: .45 → .72
+  - PointLight (sun): 1.3 → 2.1
+  - Fill light: 0x334499@.7 → 0x5566cc@1.2
+
+Colors:
+  - FC: T #2d8a3e→#3ec45a, B #d4621a→#f07830, F #5a5a5a→#848484, N #c8c8c8→#dedede
+  - FE: T #1a5228→#1e7832, B #7c3410→#b05220, F #2a2a2a→#444444, N #808080→#a0a0a0
+  - Sphere emissiveIntensity: th?.52:.12 → th?.78:.32; shininess th?90:35 → th?110:50
+  - Thread tube emissiveIntensity: .22 → .48; organic 0xcc3333→0xee4444; metallic 0x3355cc→0x4466ee
+  - Bridge: 0x9933aa→0xcc44dd; emissive 0x4a1060→0x6a1a88; emissiveIntensity .4→.7
+  - Glow spheres: organic 0xdd3333→0xff5050; metallic 0x4466dd→0x5588ff; opacity .13→.22; radius .68→.72
+
+Structure:
+  - Icosahedron wireframe: 0x1a2d55@.45 → 0x2e4e8a@.65
+  - Primitive axis lines: non-empty 0x182840@.5 → 0x2e5080@.8; empty 0x0d1520 → 0x1a2838@.4
+
+Labels/UI:
+  - Primitive labels (filled): rgba(120,165,235,.72) → rgba(165,210,255,.95) + stronger glow
+  - Primitive labels (empty): rgba(70,100,150,.27) → rgba(100,140,210,.5)
+  - Header color: #2e4460 → #7aA0c4
+  - Legend text: #6b7d8e → #90aac0; legend border #182030 → #253850
+  - Legend/legend swatches updated to match new FC colors; thread lines brightened
+
+---
+
 true_agentic_agent: add --thinking flag to toggle Qwen3 thinking tokens (2026-06-21)
 
 agents/true_agentic_agent.py:

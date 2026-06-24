@@ -10,10 +10,10 @@ body{background:#07090f;overflow:hidden}
   border:1px solid #253045;border-radius:7px;padding:9px 13px;font-size:13px;
   line-height:1.7;display:none;max-width:240px;font-family:system-ui,sans-serif}
 #hdr{position:absolute;top:14px;left:50%;transform:translateX(-50%);
-  color:#2e4460;font-size:12px;font-family:system-ui,sans-serif;letter-spacing:.04em;
+  color:#7aA0c4;font-size:12px;font-family:system-ui,sans-serif;letter-spacing:.04em;
   pointer-events:none;white-space:nowrap}
 #leg{position:absolute;bottom:18px;left:18px;background:rgba(6,9,18,.88);
-  border:1px solid #182030;border-radius:8px;padding:10px 14px;color:#6b7d8e;
+  border:1px solid #253850;border-radius:8px;padding:10px 14px;color:#90aac0;
   font-size:11.5px;font-family:system-ui,sans-serif;line-height:1.85}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
 #lbl{position:absolute;top:0;left:0;pointer-events:none;width:100%;height:100%}
@@ -23,14 +23,14 @@ body{background:#07090f;overflow:hidden}
 <div id="tip"></div>
 <div id="hdr">IG Periodic Table &nbsp;&#xB7;&nbsp; 3D &nbsp;|&nbsp; drag: rotate &nbsp;&#xB7;&nbsp; scroll: zoom &nbsp;&#xB7;&nbsp; right-drag: pan &nbsp;&#xB7;&nbsp; hover: inspect &nbsp;&#xB7;&nbsp; R: reset</div>
 <div id="leg">
-<div><span class="dot" style="background:#2d8a3e"></span>T &#x2014; always Frobenius</div>
-<div><span class="dot" style="background:#d4621a"></span>B &#x2014; context Frobenius</div>
-<div><span class="dot" style="background:#5a5a5a"></span>F &#x2014; no &#x3B4;</div>
-<div><span class="dot" style="background:#c8c8c8"></span>N &#x2014; no stable role</div>
-<div style="margin-top:7px;border-top:1px solid #182030;padding-top:7px">
-<span style="color:#cc4444">&#x2500;&#x2500;</span> organic &nbsp;
-<span style="color:#4466cc">&#x2500;&#x2500;</span> metallic &nbsp;
-<span style="color:#9944cc">&#x2500;&#x2500;</span> bridge</div>
+<div><span class="dot" style="background:#3ec45a"></span>T &#x2014; always Frobenius</div>
+<div><span class="dot" style="background:#f07830"></span>B &#x2014; context Frobenius</div>
+<div><span class="dot" style="background:#848484"></span>F &#x2014; no &#x3B4;</div>
+<div><span class="dot" style="background:#dedede"></span>N &#x2014; no stable role</div>
+<div style="margin-top:7px;border-top:1px solid #253850;padding-top:7px">
+<span style="color:#ee5555">&#x2500;&#x2500;</span> organic &nbsp;
+<span style="color:#5577ee">&#x2500;&#x2500;</span> metallic &nbsp;
+<span style="color:#cc55ee">&#x2500;&#x2500;</span> bridge</div>
 </div>
 <div id="lbl"></div>
 <script type="importmap">
@@ -42,8 +42,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const D = {"elements":{"H":{"Z":1,"period":1,"block":"s","prim":"\u0126","fde":"B","pos":[0.0,1.1224,1.8161],"thread":"organic"},"He":{"Z":2,"period":1,"block":"s","prim":"\u2299","fde":"F","pos":[1.1224,1.8161,0.0],"thread":null},"Li":{"Z":3,"period":2,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-2.2449,3.6323],"thread":null},"Be":{"Z":4,"period":2,"block":"s","prim":"\u03a3","fde":"B","pos":[-2.2449,3.6323,-0.385],"thread":null},"Na":{"Z":11,"period":3,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-3.3673,5.4484],"thread":null},"Mg":{"Z":12,"period":3,"block":"s","prim":"\u03a3","fde":"B","pos":[-3.3673,5.4484,-0.385],"thread":null},"K":{"Z":19,"period":4,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-4.4897,7.2646],"thread":null},"Ca":{"Z":20,"period":4,"block":"s","prim":"\u03a3","fde":"B","pos":[-4.4897,7.2646,-0.385],"thread":null},"Rb":{"Z":37,"period":5,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-5.6122,9.0807],"thread":null},"Sr":{"Z":38,"period":5,"block":"s","prim":"\u03a3","fde":"B","pos":[-5.6122,9.0807,-0.385],"thread":null},"Cs":{"Z":55,"period":6,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-6.7346,10.8968],"thread":null},"Ba":{"Z":56,"period":6,"block":"s","prim":"\u03a3","fde":"B","pos":[-6.7346,10.8968,-0.385],"thread":null},"Fr":{"Z":87,"period":7,"block":"s","prim":"\u0262","fde":"B","pos":[0.0,-7.8571,12.713],"thread":null},"Ra":{"Z":88,"period":7,"block":"s","prim":"\u03a3","fde":"B","pos":[-7.8571,12.713,-0.385],"thread":null},"B":{"Z":5,"period":2,"block":"p","prim":"\u00d0","fde":"B","pos":[2.2449,-3.6323,0.0],"thread":null},"C":{"Z":6,"period":2,"block":"p","prim":"\u00de","fde":"B","pos":[-2.2449,-3.6323,0.0],"thread":"organic"},"N":{"Z":7,"period":2,"block":"p","prim":"\u03a3","fde":"B","pos":[-2.2449,3.6323,0.385],"thread":"organic"},"O":{"Z":8,"period":2,"block":"p","prim":"\u03a6","fde":"B","pos":[-3.6323,0.0,2.2449],"thread":"organic"},"F":{"Z":9,"period":2,"block":"p","prim":"\u00c7","fde":"B","pos":[3.6323,0.0,2.2449],"thread":null},"Ne":{"Z":10,"period":2,"block":"p","prim":"\u2299","fde":"F","pos":[2.2449,3.6323,0.0],"thread":null},"Al":{"Z":13,"period":3,"block":"p","prim":"\u00d0","fde":"B","pos":[3.3673,-5.4484,0.0],"thread":null},"Si":{"Z":14,"period":3,"block":"p","prim":"\u00de","fde":"B","pos":[-3.3673,-5.4484,0.0],"thread":null},"P":{"Z":15,"period":3,"block":"p","prim":"\u03a3","fde":"B","pos":[-3.3673,5.4484,0.385],"thread":"organic"},"S":{"Z":16,"period":3,"block":"p","prim":"\u03a6","fde":"B","pos":[-5.4484,0.0,3.3673],"thread":"organic"},"Cl":{"Z":17,"period":3,"block":"p","prim":"\u00c7","fde":"B","pos":[5.4484,0.0,3.3673],"thread":null},"Ar":{"Z":18,"period":3,"block":"p","prim":"\u2299","fde":"F","pos":[3.3673,5.4484,0.0],"thread":null},"Ga":{"Z":31,"period":4,"block":"p","prim":"\u00d0","fde":"B","pos":[4.4897,-7.2646,0.0],"thread":null},"Ge":{"Z":32,"period":4,"block":"p","prim":"\u00de","fde":"B","pos":[-4.4897,-7.2646,0.0],"thread":null},"As":{"Z":33,"period":4,"block":"p","prim":"\u03a3","fde":"B","pos":[-4.4897,7.2646,0.385],"thread":null},"Se":{"Z":34,"period":4,"block":"p","prim":"\u03a6","fde":"B","pos":[-7.2646,0.0,4.4897],"thread":null},"Br":{"Z":35,"period":4,"block":"p","prim":"\u00c7","fde":"B","pos":[7.2646,0.0,4.4897],"thread":null},"Kr":{"Z":36,"period":4,"block":"p","prim":"\u2299","fde":"F","pos":[4.4897,7.2646,0.0],"thread":null},"In":{"Z":49,"period":5,"block":"p","prim":"\u00d0","fde":"B","pos":[5.6122,-9.0807,0.0],"thread":null},"Sn":{"Z":50,"period":5,"block":"p","prim":"\u00de","fde":"B","pos":[-5.6122,-9.0807,0.0],"thread":null},"Sb":{"Z":51,"period":5,"block":"p","prim":"\u03a3","fde":"B","pos":[-5.6122,9.0807,0.385],"thread":null},"Te":{"Z":52,"period":5,"block":"p","prim":"\u03a6","fde":"B","pos":[-9.0807,0.0,5.6122],"thread":null},"I":{"Z":53,"period":5,"block":"p","prim":"\u00c7","fde":"B","pos":[9.0807,0.0,5.6122],"thread":null},"Xe":{"Z":54,"period":5,"block":"p","prim":"\u2299","fde":"F","pos":[5.6122,9.0807,0.0],"thread":null},"Tl":{"Z":81,"period":6,"block":"p","prim":"\u00d0","fde":"B","pos":[6.7346,-10.8968,0.0],"thread":null},"Pb":{"Z":82,"period":6,"block":"p","prim":"\u00de","fde":"B","pos":[-6.7346,-10.8968,0.0],"thread":null},"Bi":{"Z":83,"period":6,"block":"p","prim":"\u03a3","fde":"B","pos":[-6.7346,10.8968,0.385],"thread":null},"Po":{"Z":84,"period":6,"block":"p","prim":"\u03a6","fde":"B","pos":[-10.8968,0.0,6.7346],"thread":null},"At":{"Z":85,"period":6,"block":"p","prim":"\u00c7","fde":"B","pos":[10.8968,-0.77,6.7346],"thread":null},"Rn":{"Z":86,"period":6,"block":"p","prim":"\u2299","fde":"F","pos":[6.7346,10.8968,0.0],"thread":null},"Nh":{"Z":113,"period":7,"block":"p","prim":"\u00d0","fde":"N","pos":[7.8571,-12.713,0.0],"thread":null},"Fl":{"Z":114,"period":7,"block":"p","prim":"\u00de","fde":"N","pos":[-7.8571,-12.713,0.0],"thread":null},"Mc":{"Z":115,"period":7,"block":"p","prim":"\u03a3","fde":"N","pos":[-7.8571,12.713,0.385],"thread":null},"Lv":{"Z":116,"period":7,"block":"p","prim":"\u03a6","fde":"N","pos":[-12.713,0.0,7.8571],"thread":null},"Ts":{"Z":117,"period":7,"block":"p","prim":"\u00c7","fde":"N","pos":[12.713,0.0,7.8571],"thread":null},"Og":{"Z":118,"period":7,"block":"p","prim":"\u2299","fde":"N","pos":[8.5121,12.3082,-0.385],"thread":null},"Sc":{"Z":21,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,6.1272,6.2525],"thread":null},"Ti":{"Z":22,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,5.4722,6.6573],"thread":null},"V":{"Z":23,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,4.8172,7.0622],"thread":null},"Cr":{"Z":24,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,4.1622,7.467],"thread":null},"Mn":{"Z":25,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,3.5072,7.8718],"thread":null},"Fe":{"Z":26,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,2.8522,8.2766],"thread":"metallic"},"Co":{"Z":27,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,6.1272,6.2525],"thread":null},"Ni":{"Z":28,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,5.4722,6.6573],"thread":"metallic"},"Cu":{"Z":29,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,4.8172,7.0622],"thread":null},"Zn":{"Z":30,"period":4,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,4.1622,7.467],"thread":"metallic"},"Y":{"Z":39,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,7.2497,8.0687],"thread":null},"Zr":{"Z":40,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,6.5947,8.4735],"thread":null},"Nb":{"Z":41,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,5.9397,8.8783],"thread":null},"Mo":{"Z":42,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[-0.385,5.2847,9.2831],"thread":"metallic"},"Tc":{"Z":43,"period":5,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,4.6297,9.6879],"thread":null},"Ru":{"Z":44,"period":5,"block":"d","prim":"\u0126","fde":"T","pos":[-0.385,3.9747,10.0927],"thread":null},"Rh":{"Z":45,"period":5,"block":"d","prim":"\u0126","fde":"T","pos":[0.385,7.2497,8.0687],"thread":"metallic"},"Pd":{"Z":46,"period":5,"block":"d","prim":"\u0126","fde":"T","pos":[0.385,6.5947,8.4735],"thread":"metallic"},"Ag":{"Z":47,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,5.9397,8.8783],"thread":null},"Cd":{"Z":48,"period":5,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,5.2847,9.2831],"thread":null},"Lu":{"Z":71,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,7.0621,10.6944],"thread":null},"Hf":{"Z":72,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,6.4071,11.0992],"thread":null},"Ta":{"Z":73,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,5.7521,11.5041],"thread":null},"W":{"Z":74,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[0.385,5.0971,11.9089],"thread":"metallic"},"Re":{"Z":75,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[1.155,8.3721,9.8848],"thread":null},"Os":{"Z":76,"period":6,"block":"d","prim":"\u0126","fde":"T","pos":[1.155,7.7171,10.2896],"thread":null},"Ir":{"Z":77,"period":6,"block":"d","prim":"\u0126","fde":"T","pos":[1.155,7.0621,10.6944],"thread":"metallic"},"Pt":{"Z":78,"period":6,"block":"d","prim":"\u00c7","fde":"T","pos":[10.8968,0.77,6.7346],"thread":"metallic"},"Au":{"Z":79,"period":6,"block":"d","prim":"\u00c7","fde":"T","pos":[10.8968,0.0,6.7346],"thread":"metallic"},"Hg":{"Z":80,"period":6,"block":"d","prim":"\u0126","fde":"B","pos":[1.155,6.4071,11.0992],"thread":null},"Lr":{"Z":103,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,9.4946,11.7009],"thread":null},"Rf":{"Z":104,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,8.8396,12.1058],"thread":null},"Db":{"Z":105,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,8.1846,12.5106],"thread":null},"Sg":{"Z":106,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,7.5296,12.9154],"thread":null},"Bh":{"Z":107,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,6.8745,13.3202],"thread":null},"Hs":{"Z":108,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[-0.385,6.2195,13.725],"thread":null},"Mt":{"Z":109,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[0.385,9.4946,11.7009],"thread":null},"Ds":{"Z":110,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[0.385,8.8396,12.1058],"thread":null},"Rg":{"Z":111,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[0.385,8.1846,12.5106],"thread":null},"Cn":{"Z":112,"period":7,"block":"d","prim":"\u0126","fde":"N","pos":[0.385,7.5296,12.9154],"thread":null},"La":{"Z":57,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-1.155,8.3721,9.8848],"thread":null},"Ce":{"Z":58,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-1.155,7.7171,10.2896],"thread":null},"Pr":{"Z":59,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-1.155,7.0621,10.6944],"thread":null},"Nd":{"Z":60,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-1.155,6.4071,11.0992],"thread":null},"Pm":{"Z":61,"period":6,"block":"f","prim":"\u0126","fde":"N","pos":[-1.155,5.7521,11.5041],"thread":null},"Sm":{"Z":62,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-1.155,5.0971,11.9089],"thread":null},"Eu":{"Z":63,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,8.3721,9.8848],"thread":null},"Gd":{"Z":64,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,7.7171,10.2896],"thread":null},"Tb":{"Z":65,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,7.0621,10.6944],"thread":null},"Dy":{"Z":66,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,6.4071,11.0992],"thread":null},"Ho":{"Z":67,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,5.7521,11.5041],"thread":null},"Er":{"Z":68,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[-0.385,5.0971,11.9089],"thread":null},"Tm":{"Z":69,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[0.385,8.3721,9.8848],"thread":null},"Yb":{"Z":70,"period":6,"block":"f","prim":"\u0126","fde":"B","pos":[0.385,7.7171,10.2896],"thread":null},"Ac":{"Z":89,"period":7,"block":"f","prim":"\u2299","fde":"B","pos":[7.2021,13.1178,-1.925],"thread":null},"Th":{"Z":90,"period":7,"block":"f","prim":"\u2299","fde":"B","pos":[7.2021,13.1178,-1.155],"thread":null},"Pa":{"Z":91,"period":7,"block":"f","prim":"\u2299","fde":"B","pos":[7.2021,13.1178,-0.385],"thread":null},"U":{"Z":92,"period":7,"block":"f","prim":"\u2299","fde":"B","pos":[7.2021,13.1178,0.385],"thread":null},"Np":{"Z":93,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.2021,13.1178,1.155],"thread":null},"Pu":{"Z":94,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.2021,13.1178,1.925],"thread":null},"Am":{"Z":95,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,-1.925],"thread":null},"Cm":{"Z":96,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,-1.155],"thread":null},"Bk":{"Z":97,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,-0.385],"thread":null},"Cf":{"Z":98,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,0.385],"thread":null},"Es":{"Z":99,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,1.155],"thread":null},"Fm":{"Z":100,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[7.8571,12.713,1.925],"thread":null},"Md":{"Z":101,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[8.5121,12.3082,-1.925],"thread":null},"No":{"Z":102,"period":7,"block":"f","prim":"\u2299","fde":"N","pos":[8.5121,12.3082,-1.155],"thread":null}},"primitives":{"\u0126":{"pos":[0.0,11.9604,19.3523],"empty":false},"\u0262":{"pos":[0.0,-11.9604,19.3523],"empty":false},"\u2299":{"pos":[11.9604,19.3523,0.0],"empty":false},"\u03a3":{"pos":[-11.9604,19.3523,0.0],"empty":false},"\u00c7":{"pos":[19.3523,0.0,11.9604],"empty":false},"\u03a6":{"pos":[-19.3523,0.0,11.9604],"empty":false},"\u00d0":{"pos":[11.9604,-19.3523,0.0],"empty":false},"\u00de":{"pos":[-11.9604,-19.3523,0.0],"empty":false},"\u03a9":{"pos":[19.3523,0.0,-11.9604],"empty":true},"\u0158":{"pos":[-19.3523,0.0,-11.9604],"empty":true},"\u0393":{"pos":[0.0,11.9604,-19.3523],"empty":true},"\u0192":{"pos":[0.0,-11.9604,-19.3523],"empty":true}},"organic_thread":["H","O","N","C","S","P"],"metallic_thread":["Fe","Ni","Zn","Mo","Rh","Pd","W","Ir","Pt","Au"],"ico_verts":[[0.0,4.0481,6.55],[0.0,-4.0481,6.55],[0.0,4.0481,-6.55],[0.0,-4.0481,-6.55],[4.0481,6.55,0.0],[-4.0481,6.55,0.0],[4.0481,-6.55,0.0],[-4.0481,-6.55,0.0],[6.55,0.0,4.0481],[-6.55,0.0,4.0481],[6.55,0.0,-4.0481],[-6.55,0.0,-4.0481]],"ico_edges":[[0,1],[0,4],[0,5],[0,8],[0,9],[1,6],[1,7],[1,8],[1,9],[2,3],[2,4],[2,5],[2,10],[2,11],[3,6],[3,7],[3,10],[3,11],[4,5],[4,8],[4,10],[5,9],[5,11],[6,7],[6,8],[6,10],[7,9],[7,11],[8,10],[9,11]]};
 
-const FC={T:'#2d8a3e',B:'#d4621a',F:'#5a5a5a',N:'#c8c8c8'};
-const FE={T:'#1a5228',B:'#7c3410',F:'#2a2a2a',N:'#808080'};
+const FC={T:'#3ec45a',B:'#f07830',F:'#848484',N:'#dedede'};
+const FE={T:'#1e7832',B:'#b05220',F:'#444444',N:'#a0a0a0'};
 const FN={T:'always Frobenius',B:'context Frobenius',F:'no &delta;',N:'no stable role'};
 
 const W=innerWidth,H=innerHeight;
@@ -65,10 +65,10 @@ ctrl.minDistance=4;ctrl.maxDistance=90;
 ctrl.autoRotate=true;ctrl.autoRotateSpeed=.35;
 rdr.domElement.addEventListener('mousedown',()=>ctrl.autoRotate=false);
 
-scene.add(new THREE.AmbientLight(0xffffff,.45));
-const sun=new THREE.PointLight(0xffffff,1.3,200);
+scene.add(new THREE.AmbientLight(0xffffff,.72));
+const sun=new THREE.PointLight(0xffffff,2.1,200);
 sun.position.set(14,10,14);scene.add(sun);
-const fill=new THREE.PointLight(0x334499,.7,120);
+const fill=new THREE.PointLight(0x5566cc,1.2,140);
 fill.position.set(-10,-6,-10);scene.add(fill);
 
 // Icosahedron wireframe
@@ -77,14 +77,14 @@ fill.position.set(-10,-6,-10);scene.add(fill);
   for(const[i,j]of D.ico_edges)pts.push(...D.ico_verts[i],...D.ico_verts[j]);
   const g=new THREE.BufferGeometry();
   g.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));
-  scene.add(new THREE.LineSegments(g,new THREE.LineBasicMaterial({color:0x1a2d55,opacity:.45,transparent:true})));
+  scene.add(new THREE.LineSegments(g,new THREE.LineBasicMaterial({color:0x2e4e8a,opacity:.65,transparent:true})));
 }
 
 // Primitive axis lines from origin
 for(const info of Object.values(D.primitives)){
   const g=new THREE.BufferGeometry();
   g.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,...info.pos],3));
-  scene.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:info.empty?0x0d1520:0x182840,opacity:.5,transparent:true})));
+  scene.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:info.empty?0x1a2838:0x2e5080,opacity:info.empty?.4:.8,transparent:true})));
 }
 
 // Thread tubes
@@ -93,10 +93,10 @@ function mkTube(syms,col,r){
   const pts=syms.map(s=>new THREE.Vector3(...D.elements[s].pos));
   const crv=new THREE.CatmullRomCurve3(pts);
   const geo=new THREE.TubeGeometry(crv,syms.length*8,r,7,false);
-  return new THREE.Mesh(geo,new THREE.MeshPhongMaterial({color:col,emissive:col,emissiveIntensity:.22,shininess:60}));
+  return new THREE.Mesh(geo,new THREE.MeshPhongMaterial({color:col,emissive:col,emissiveIntensity:.48,shininess:80}));
 }
-scene.add(mkTube(D.organic_thread,0xcc3333));
-scene.add(mkTube(D.metallic_thread,0x3355cc));
+scene.add(mkTube(D.organic_thread,0xee4444));
+scene.add(mkTube(D.metallic_thread,0x4466ee));
 
 // Bridge: last organic -> first metallic
 {
@@ -104,7 +104,7 @@ scene.add(mkTube(D.metallic_thread,0x3355cc));
   const b=D.elements[D.metallic_thread[0]].pos;
   const crv=new THREE.CatmullRomCurve3([new THREE.Vector3(...a),new THREE.Vector3(...b)]);
   const geo=new THREE.TubeGeometry(crv,8,.09,7,false);
-  scene.add(new THREE.Mesh(geo,new THREE.MeshPhongMaterial({color:0x9933aa,emissive:0x4a1060,emissiveIntensity:.4})));
+  scene.add(new THREE.Mesh(geo,new THREE.MeshPhongMaterial({color:0xcc44dd,emissive:0x6a1a88,emissiveIntensity:.7})));
 }
 
 // Element spheres
@@ -115,8 +115,8 @@ function sMat(fde,th){
   const k=fde+''+th;
   if(!mC[k])mC[k]=new THREE.MeshPhongMaterial({
     color:new THREE.Color(FC[fde]),emissive:new THREE.Color(FE[fde]),
-    emissiveIntensity:th?.52:.12,shininess:th?90:35,
-    transparent:!th,opacity:th?1:.80
+    emissiveIntensity:th?.78:.32,shininess:th?110:50,
+    transparent:!th,opacity:th?1:.90
   });
   return mC[k];
 }
@@ -129,10 +129,10 @@ for(const[sym,el]of Object.entries(D.elements)){
   meshes.push(m);byM.set(m,{sym,...el});
   if(isT){
     // glow sphere behind thread element
-    const gc=el.thread==='organic'?0xdd3333:0x4466dd;
+    const gc=el.thread==='organic'?0xff5050:0x5588ff;
     const gm=new THREE.Mesh(
-      new THREE.SphereGeometry(.68,10,7),
-      new THREE.MeshBasicMaterial({color:gc,transparent:true,opacity:.13,side:THREE.BackSide})
+      new THREE.SphereGeometry(.72,10,7),
+      new THREE.MeshBasicMaterial({color:gc,transparent:true,opacity:.22,side:THREE.BackSide})
     );
     gm.position.set(...el.pos);scene.add(gm);
   }
@@ -147,8 +147,8 @@ for(const[prim,info]of Object.entries(D.primitives)){
   sp.style.cssText='position:absolute;font-size:16px;font-family:system-ui,sans-serif;'
     +'pointer-events:none;transform:translate(-50%,-50%);'
     +(info.empty
-      ?'color:rgba(70,100,150,.27);'
-      :'color:rgba(120,165,235,.72);text-shadow:0 0 10px rgba(80,130,220,.3);');
+      ?'color:rgba(100,140,210,.5);'
+      :'color:rgba(165,210,255,.95);text-shadow:0 0 14px rgba(110,170,255,.55);');
   lblDiv.appendChild(sp);
   pLbls.push({sp,v:new THREE.Vector3(...info.pos)});
 }
