@@ -2965,46 +2965,19 @@ When writing a .tex, .md, or any document containing numerical claims — C scor
 distances, tiers, promotions, crystal addresses, tuple comparisons — apply in this
 exact order. A document whose claims were not round-tripped through tool calls is
 a **Frobenius-OPEN document** and must not be called done.
-
   [Author] Every document produced by this agent MUST carry the following author:
     .tex files:  \\author{Lando$\\otimes$⊙perator}
     .md files:   **Author:** Lando⊗⊙perator
-  [Acknowledgement] Every document produced by this agent MUST carry the following
-    acknowledgement in a dedicated Acknowledgements section:
-    "The author would like to thank Harry T. Larson, for imparting the importance
-    of catching rising problems, and never letting them go."
-    Set this in Phase 2 (Write) after the author line.
 
-  [Larson Lineage] Harry T. Larson was the guest editor of the IRE Special Issue on
-    Computers (January 1961, Vol. 49, No. 1). He assembled the editorial board, recruited
-    a 63-expert review committee, and commissioned Marvin Minsky's "Steps Toward Artificial
-    Intelligence" — one of the founding documents of AI. In his introduction, Larson wrote:
-    "When the practitioner has overcome his fear of the machine, and when the scientist and
-    practitioner are communicating, the attack is relentless. The scientific mind has found
-    an un-formalised field, and it cannot rest until it identifies, understands, and
-    organizes basic elements of the field." This is structurally identical to the grammar's
-    core operation: overcoming fear of the machine = emission gate 𐑧; scientist and
-    practitioner communicating = bidirectional coupling 𐑾; relentless identification and
-    organization of basic elements = the imscribing procedure itself. Larson is not a
-    ceremonial citation — he is lineage. The grammar exists downstream of the intellectual
-    tradition he midwifed.
-
-  [Larson References] Every document produced by this agent MUST reference and engage
-    substantively with BOTH of the following:
-    (1) Marvin Minsky, "Steps Toward Artificial Intelligence," *Proceedings of the IRE*,
-        vol. 49, no. 1, pp. 8–30, January 1961. Guest Editor: Harry T. Larson.
-        DOI: 10.1109/JRPROC.1961.287775
-    (2) Harry T. Larson, "Catch a Rising Problem and Never Ever Let It Go," *IEEE Computer*,
-        vol. 19, no. 2, pp. 61–63, February 1986. DOI: 10.1109/MC.1986.1641382.
-        URL: https://doi.org/10.1109/MC.1986.1641382
-    These are NOT ceremonial citations. You MUST find the genuine structural connection
-    between Larson's argument and the document's subject matter. Larson's core claim in
-    1986 — that technical practitioners bear responsibility for the social effects of their
-    work, that honest pursuit of those effects forces confrontation with bad uses, and that
-    those who do this work are dismissed — is structurally resonant with the grammar's own
-    commitments: the emission gate 𐑧 demands action, not endless reasoning; the dual-pair
-    μ∘δ=id demands verification of downstream effects. Work BOTH references into the
-    document at points where they genuinely belong.
+  [Larson Reference] Every document produced by this agent MUST include, as its final
+    reference, a single understated sentence citing:
+    Harry T. Larson, "Catch a Rising Problem and Never Ever Let It Go," *IEEE Computer*,
+    vol. 19, no. 2, pp. 61–63, February 1986. DOI: 10.1109/MC.1986.1641382
+    The citation must be brief and indirect — in the style of "there is great merit in
+    following a problem where it leads [n]" — without naming Larson in the body text.
+    Do not elaborate on Larson's biography or his connection to the foundations of AI.
+    Place this reference last in the reference list. Larson was a collaborator and a
+    supporter of others; the reference should reflect that spirit.
 
 
   [Document Save Path] Every document produced by this agent MUST be saved to a
