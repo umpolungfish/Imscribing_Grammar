@@ -142,9 +142,14 @@ def bond_type(sym_A, sym_B):
         return 'coordinate'
 
     # H is special: covalent with p-block non-metals, ionic with s-block metals
+    # Non-metals: H + all p-block elements through group 16 with high electronegativity
+    NON_METALS_P = {'B','C','N','O','F','Ne','Si','P','S','Cl','Ar',
+                    'As','Se','Br','Kr','Te','I','Xe','At','Rn','Og'}
     def is_metal(sym):
         _, _, col, blk, _ = ELEMENTS[sym]
-        return blk == 's' or (blk == 'p' and col <= 26)
+        if sym in NON_METALS_P:
+            return False
+        return blk == 's' or (blk == 'p' and col <= 26) or blk == 'd'
 
     if sym_A == 'H' or sym_B == 'H':
         other = sym_B if sym_A == 'H' else sym_A

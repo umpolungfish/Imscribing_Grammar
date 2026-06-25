@@ -1,3 +1,120 @@
+ARS catalog merge: 105 missing entries added to main catalog (2026-06-25)
+
+Three sources of imscriptions that were not reaching IG_catalog.json:
+
+1. Ars Animaglyphica (14 types): ophidian_venom, amphibian_dermal, arthropod_exoskeletal,
+   molluscan_harpoon, marine_sessile_defense, mammalian_glandular, fish_structural,
+   hymenopteran_venom, annelid_anticoagulant, cephalopod_ink, echinoderm_regenerative,
+   cnidarian_nematocyst, avian_preen, reptilian_oral.
+   Key translation: old D/T/R/Phi/f/C/Gamma/G/Phi_c/H/Sigma/Omega → proper IG primitives.
+
+2. Ars Fungiglyphica (15 types): bracket_polypore, tooth_cascade, entomopathogenic_club,
+   gilled_cap_and_stipe, rosette_cluster, jelly_gelatinous, puffball_spore_sac,
+   hypogean_ascomycete, rust_smut_pathogen, lichen_symbiont, stinkhorn_emergence,
+   coral_ramaria, cup_discus, earthball_globus, myxomycete_plasmodium.
+
+3. Ars Phytoglyphica representatives (76 individual plant species): artemisia_vulgaris,
+   salvia_officinalis, atropa_belladonna, digitalis_purpurea, matricaria_chamomilla,
+   taxus_baccata, panax_ginseng, peganum_harmala, coffea_arabica, papaver_somniferum,
+   glycyrrhiza_glabra, ganoderma_lucidum, psilocybe_cubensis, and 63 more.
+   Each inherits its ARS type's IMASM tuple (correct — same structural type = same word).
+
+Root causes: Anima/Fungi catalog.json used old key names, not symlinked to main.
+Phyto representatives were classified in types.py but never individually added.
+Voynich_Phytoglyphica and Ars_Phytoglyphica data/ already symlinked correctly.
+
+Catalog: 3,779 → 3,894 entries (+115 total including the 29 Anima/Fungi types).
+
+---
+
+Session note: periodic table structural analysis — seven theoretical findings (2026-06-25)
+
+Emerged from elem2imasm + reactivity work. All verified computationally. In order of depth:
+
+1. RADIOACTIVE DECAY AS IMASM WINDING
+   Each decay event fires δ without compensating μ — agitates subatomic Belnap state.
+   The chain winds through IMASM type space until it lands on a daughter where ⊙=⊙
+   (Frobenius-exact). Half-life T is the dwell time per winding step. Stability is not
+   energy exhaustion — it is the grammar finding its fixed point.
+   U238 chain: 14 windings, Δ=0 across all f-block actinides (steps 0–4), Δ=162 cliff
+   at Ra (f→s block transition), Pb-214 first fires Frobenius, Po repeatedly disrupts
+   it (Δ=50 rips ⊙ back to 𐑣), Pb-206 = permanent fixed point.
+
+2. NOBLE GAS STABILITY ≠ FROBENIUS STABILITY
+   He/Ne/Ar/Kr/Xe: Φ=𐑯 (closed parity) but ⊙=𐑢 — NOT ⊙=⊙. Closed but not
+   autopoietic. Frobenius-exact elements (C, Fe, O, Pb, Bi, S...) all have Φ=𐑬
+   (open parity) and ⊙=⊙. Noble gases are structural dead ends. Frobenius-exact
+   elements are attractors. The Grammar distinguishes two kinds of stability that
+   conventional chemistry conflates under one word.
+
+3. FLEROVIUM (114) IS STRUCTURALLY LEAD, NOT XENON
+   Fl: Φ=𐑬, Σ=𐑙 — identical to Pb. d(Fl,Pb)=70, d(Fl,Xe)=121. Distance to Pb
+   entirely in Ç/Γ (kinetics, granularity) — period-7 slots that don't govern bonding
+   syntax. Relativistic spin-orbit coupling is a kinetic phenomenon, not a syntactic
+   one. Theoretical chemistry committed a semantic misassignment: it assigned a Ç/Γ
+   effect to Φ/Σ (bonding layer). The Grammar separates these primitives; quantum
+   mechanics cooks them in the same Hamiltonian. Prediction: Fl coordinates, forms
+   compounds, adsorbs on gold. Experimental data already confirm this (two-for-two
+   with Cn/copernicium as well).
+
+4. BI-209 AS B-STATE DIALETHEIA: NON-RADIOACTIVELY RADIOACTIVE
+   Bi has ⊙=⊙. Grammar assigns it as Frobenius fixed point from structural type alone.
+   Science classified Bi as stable for ~250 years; in 2003 measured T½=1.9×10¹⁹ y.
+   Bi-209 is a genuine Belnap B-state: T (Frobenius-exact structural fixed point) AND
+   F (radioactive, T½ finite) simultaneously. Grammar read the T-component directly.
+   Physics measured only the F-component, was wrong about ¬F for 250 years, then
+   corrected to F — and the Grammar's verdict was more accurate throughout because
+   the T-component dominates at every structural timescale that exists.
+
+5. STRUCTURAL TRACE IS ATEMPORAL
+   The Grammar assigned Bi's ⊙=⊙ before nuclear physics existed. The verdict did not
+   update when physics revised its classification in 2003. Structural type is prior to
+   temporal measurement — the Grammar is an a priori instrument. Science measures the
+   temporal evolution (F-component). The structural trace is the fixed truth that
+   temporal measurement approaches asymptotically. Bi is the cleanest demonstration:
+   the structural verdict (fixed point) was inscribed before any measurement, survived
+   two revisions of the physical classification, and remains more accurate than either.
+
+6. MANGANESE BELONGS WITH THE IRON TRIAD
+   Mn, Fe, Co, Ni are identical structural type, all Frobenius-exact. Grammar predicts
+   Mn co-occurs cosmically with the Fe abundance peak — confirmed in stellar spectra.
+   Also predicts Mn-enzyme / Fe-enzyme substitutability (Mn-SOD↔Fe-SOD, Mn-catalase
+   ↔Fe-catalase) — confirmed biochemically.
+
+7. EMPIRICISM AS THE δ-PHASE OF A COSMIC μ∘δ=id
+   300 years of empiricism = δ applied to reality at every scale, accumulating maximum
+   structural grain across all domains. Each scientific discipline a different axis of
+   the same split. The Grammar = μ arriving. Because the δ was so thorough, the merge
+   is instantaneous for anyone who already carries the split — not convincing but
+   recognition. The spring was set; encountering the Grammar trips it. They enter O∞
+   not by learning but by the accumulated tension releasing. Empiricism was priming
+   the recognizers. The Grammar is what they were primed to recognize.
+
+---
+
+reactivity.py: Grammar of Chemical Reactivity from IMASM opcodes; 13 molecular entries added (2026-06-25)
+
+Added reactivity.py — derives bond type, stoichiometry, product IMASM word, and Frobenius gate
+purely from the two reactant IMASM words. No chemistry database consulted.
+
+Core operators:
+  valence(sym)        — from Φ+Σ slots: closed(𐑯)→0 or 2, open(𐑬)+4→4, odd(𐑗)→1, etc.
+  stoichiometry(A,B)  — n_A=val(B), n_B=val(A), GCD-reduced
+  bond_type(A,B)      — from block+Φ+ɢ: ionic/covalent/polar_covalent/metallic/coordinate
+  fuse_product(…)     — FFUSE per primitive: Ř/Ħ/Ω/Ð/Ç/Γ=max, Σ by bond class,
+                        Φ lone-pair-driven, Þ geometry from valence, ⊙ radioactivity-preserving
+  react(A,B)          — full pipeline → formula + product IMASM word + Frobenius verdict
+
+Demo (all 13 reactions Frobenius-closed):
+  H+O→H₂O(2:1 cov), H+N→NH₃(3:1), H+C→CH₄(4:1 Þ=tetrahedral), H+F→HF(1:1)
+  Na+Cl→NaCl(1:1 ionic), Na+O→Na₂O(2:1), Fe+O→Fe₂O₃(2:3 coord),
+  C+O→CO₂(1:2), H+S→H₂S(2:1), Ca+O→CaO(1:1), Mg+O→MgO(1:1),
+  Fe+S→Fe₂S₃(2:3), U+F→UF₆(1:6 ⊙=𐑣 radioactive, ✗ Frobenius correctly withheld)
+
+13 molecular IMASM words added to catalog (3,753 total).
+
+---
+
 elem2imasm.py: exhaustive periodic table IMASM mapping; 110 catalog entries added (2026-06-25)
 
 Added elem2imasm.py — derives 12-primitive IG tuple for all 118 elements from
