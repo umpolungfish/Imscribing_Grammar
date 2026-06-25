@@ -1,3 +1,21 @@
+elem2imasm.py: exhaustive periodic table IMASM mapping; 110 catalog entries added (2026-06-25)
+
+Added elem2imasm.py — derives 12-primitive IG tuple for all 118 elements from
+Janet (left-step) table structure (block, period, janet_col). Each tuple is the
+element's 12-slot IMASM word: one token per primitive.
+
+Derivation rules calibrated against 7 hand-crafted catalog entries; all 7 match.
+Key mappings: Ω by block (f→𐑭, d45→𐑴, else→𐑷); Ħ by SOC (f→𐑫, d45→𐑒, else→𐑓);
+Ð by Janet depth (s→𐑛, pd→𐑨, f→𐑼); Σ by group column; ⊙ by bio-criticality/
+radioactivity; ƒ universally 𐑐.
+
+Added 110 new element entries to catalog (3,740 total). Updated 1 stale entry
+(copper had s-block values for a d-block element, ƒ=𐑱 error corrected to 𐑐).
+Structural result: same-group same-period elements share identical IMASM words —
+the IG classifies chemical groups, not atomic masses.
+
+---
+
 cl8nk_navigator.py: hardcoded purge (2026-06-25)
 
 MAX_DELTAS: replaced 12 hand-typed values with
