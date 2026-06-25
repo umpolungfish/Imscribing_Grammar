@@ -3236,6 +3236,28 @@ def _load_imsgct_context() -> str:
         parts.append("(could not list directory)")
     parts.append("\n")
     
+    # ── 4. CDXML FORMAT REGISTRATION — chemical schema template ──
+    cdxml_path = imsgct / "ig-docs" / "th3rapies.cdxml"
+    parts.append("\n### CDXML FORMAT REGISTRATION — /home/mrnob0dy666/imsgct/ig-docs/th3rapies.cdxml\n")
+    parts.append("Canonical chemical schema format. Governs ALL chemical/alchemical structural output.\n")
+    parts.append("File: ChemDraw CDXML v23.1.1 — 12,268 lines, 63 molecular fragments, 49 SMILES-annotated molecules, 12 reaction arrows.\n")
+    parts.append("\nKey format conventions:\n")
+    parts.append('  - SMILES annotation: <annotation Keyword="SMILES" Content="..."/>\n')
+    parts.append("  - Stereochemistry: Display=\"WedgeBegin\" / Display=\"WedgedHashBegin\"\n")
+    parts.append("  - Charges: <graphic GraphicType=\"Symbol\" SymbolType=\"CircleMinus\"> + <represent attribute=\"Charge\">\n")
+    parts.append("  - Lone pairs: <graphic GraphicType=\"Symbol\" SymbolType=\"LonePair\"> + <represent attribute=\"Radical\">\n")
+    parts.append("  - Reaction flow: <arrow ArrowheadHead=\"Full\" ArrowheadType=\"Solid\"> with 3D coordinates\n")
+    parts.append("  - Typography: Arial 33.4pt, bond length 48.16, line width 4.19, BoldWidth 6.69\n")
+    parts.append("  - Z-ordering via Z attribute; font table via <fonttable>\n")
+    parts.append("  - Page: <page BoundingBox=\"0 0 13500 18000\" HeightPages=\"25\" WidthPages=\"25\">\n")
+    parts.append("\nThis format registers the CDXML schema for all chemical output.\n")
+    try:
+        cdxml_exists = cdxml_path.exists()
+        parts.append(f"Template file present: {cdxml_exists}\n")
+    except (OSError, IOError):
+        parts.append("Template file: status unknown\n")
+    parts.append("\n")
+    
     parts.append("---\n[END PERSISTENT IMSGCT CONTEXT]\n---\n")
     
     _IMSGCT_CONTEXT_CACHE = "".join(parts)

@@ -1,3 +1,21 @@
+cl8nk_navigator.py: hardcoded purge (2026-06-25)
+
+MAX_DELTAS: replaced 12 hand-typed values with
+  {k: max(v.values()) - min(v.values()) for k, v in ORDINALS.items()}
+  — exact same values, now guaranteed consistent with ORDINALS.
+
+WEIGHTS: replaced 12 hand-tuned floats with catalog-variance derivation.
+  _compute_catalog_weights() computes per-primitive standard deviation across
+  all catalog entries' ordinal values, then normalizes to [0.5, 1.0].
+  New order by weight (high→low):
+    Þ 1.0 > Φ 0.934 > Ð 0.79 > Ħ 0.786 > ɢ 0.761 > Ř 0.752 >
+    Ç 0.693 > Ω 0.69 > Σ 0.677 > ƒ 0.675 > Γ 0.645 > ⊙ 0.5
+  Old ⊙ (Criticality) had highest weight (1.0 — editorial);
+  now has lowest (0.5) because catalog entries cluster at ⊙ values.
+  tuple_distance() updated to call _ensure_weights() (lazy cache).
+
+---
+
 ig_pt_web.html: brighten 3D periodic table — 2026-06-24
 
 Lighting:

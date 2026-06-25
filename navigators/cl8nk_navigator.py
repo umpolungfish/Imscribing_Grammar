@@ -228,10 +228,60 @@ def catalog_stats():
 # WEIGHTED DISTANCE (matching imscribe compute_distance algorithm)
 # =============================================================================
 
-WEIGHTS = {"Ð": 0.8, "Þ": 0.9, "Ř": 0.7, "Φ": 0.9, "ƒ": 0.6, "Ç": 0.7,
-           "Γ": 0.6, "ɢ": 0.8, "⊙": 1.0, "Ħ": 0.9, "Σ": 0.5, "Ω": 0.7}
-MAX_DELTAS = {"Ð": 3, "Þ": 4, "Ř": 3, "Φ": 4, "ƒ": 2, "Ç": 3.5,
-              "Γ": 2, "ɢ": 3, "⊙": 2, "Ħ": 3, "Σ": 2, "Ω": 3}
+# MAX_DELTAS: ordinal range per primitive — derived directly from ORDINALS so
+# any change in the ordinal table propagates automatically to the distance metric.
+MAX_DELTAS = {
+    k: max(v.values()) - min(v.values())
+    for k, v in ORDINALS.items()
+}
+
+# WEIGHTS: normalized standard deviation of each primitive's ordinal distribution
+# across the full catalog.  More catalog variance → more structurally discriminating
+# → higher weight.  Computed lazily on first use; normalized to [0.5, 1.0].
+_WEIGHTS_CACHE: dict = {}
+
+
+def _compute_catalog_weights() -> dict:
+    """
+    Derive distance weights from the catalog's primitive variance distribution.
+    A primitive that spreads widely across catalog entries is more discriminating
+    and receives a higher structural weight than one that clusters tightly.
+    """
+    import math
+    load_catalog()
+    if not CATALOG:
+        return {k: 0.75 for k in PRIMITIVE_KEYS}
+
+    from collections import defaultdict
+    vals_by_prim = defaultdict(list)
+    for entry in CATALOG:
+        for prim, ord_map in ORDINALS.items():
+            v = entry.get(prim, "")
+            if v in ord_map:
+                vals_by_prim[prim].append(ord_map[v])
+
+    raw: dict = {}
+    for prim in PRIMITIVE_KEYS:
+        vals = vals_by_prim.get(prim, [])
+        if len(vals) < 2:
+            raw[prim] = 0.5
+            continue
+        n = len(vals)
+        mean = sum(vals) / n
+        raw[prim] = math.sqrt(sum((v - mean) ** 2 for v in vals) / (n - 1))
+
+    lo, hi = min(raw.values()), max(raw.values())
+    span = hi - lo
+    if span == 0.0:
+        return {k: 0.75 for k in raw}
+    return {k: round(0.5 + 0.5 * (v - lo) / span, 4) for k, v in raw.items()}
+
+
+def _ensure_weights() -> dict:
+    global _WEIGHTS_CACHE
+    if not _WEIGHTS_CACHE:
+        _WEIGHTS_CACHE = _compute_catalog_weights()
+    return _WEIGHTS_CACHE
 
 
 def ordinal_distance(prim_key, v1, v2):
@@ -244,13 +294,14 @@ def ordinal_distance(prim_key, v1, v2):
 
 
 def tuple_distance(t1, t2):
+    weights = _ensure_weights()
     total = 0.0
     conflicts = []
     for key in PRIMITIVE_KEYS:
         v1 = t1.get(key, "?")
         v2 = t2.get(key, "?")
         if v1 != v2:
-            w = WEIGHTS.get(key, 0.5)
+            w = weights.get(key, 0.5)
             d = ordinal_distance(key, v1, v2)
             total += w * (d ** 2)
             conflicts.append({"primitive": key, "cl8nk": v2, "system": v1, "delta": round(d, 3)})
