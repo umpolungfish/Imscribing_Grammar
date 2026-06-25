@@ -54,5 +54,33 @@
     "formula": "C47H51NO14",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "2892-51-5": {
+    "cas": "2892-51-5",
+    "name": "3,4-dihydroxycyclobut-3-ene-1,2-quinone",
+    "formula": "C4H2O4",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "500-24-3": {
+    "cas": "500-24-3",
+    "name": "bicyclo[2.2.2]octa-2,5,7-triene",
+    "formula": "C8H8",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "89683-62-5": {
+    "cas": "89683-62-5",
+    "name": "undecacyclo[9.9.0.01,5.02,12.02,18.03,7.06,10.08,12.011,15.013,17.016,20]eicosane",
+    "formula": "C20H20",
+    "source": "pubchem",
+    "type_hint": ""
+  },
+  "1005-51-2": {
+    "cas": "1005-51-2",
+    "name": "tricyclo[3.3.2.02,8]deca-3,6,9-triene",
+    "formula": "C10H10",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
