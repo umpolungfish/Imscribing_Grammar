@@ -57405,13 +57405,7 @@
     "⊙": "⊙",
     "Ħ": "𐑖",
     "Σ": "𐑳",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Inverted DEREF threshold: glabrous leaves with no surface trichomes require crushing (not brushing) to rupture subepidermal oil glands. This encodes a higher extraction threshold than typical Type I plants, predicting structurally protected and more stable monoterpene fractions. Chumash respiratory and rheumatic use is documented; the actual chemistry is essentially uninvestigated. PREDICTION: monoterpene fraction with slower-release kinetics and higher thermal stability than artemisia/salvia analogs — relevant for formulation. Almost no peer-reviewed phytochemistry exists for this species despite its dominance in coastal scrub.",
-    "novelty_refs": [
-      "Chumash ethnobotanical use: respiratory, rheumatism (Timbrook 2007)",
-      "No systematic terpenoid study found"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "rhus_integrifolia",
@@ -57459,13 +57453,7 @@
     "⊙": "⊙",
     "Ħ": "𐑖",
     "Σ": "𐑳",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Most abundant Southern California chaparral shrub by biomass — yet zero modern phytochemistry exists. Type I d=0 from Artemisia absinthium predicts equivalent anti-inflammatory, antimicrobial, and carminative terpenoid activity. Lignotuber (burl) encodes underground phenolic depot: fire-resprouting DEREF points directly to the bioactive storage site. Continuous indigenous use across all SoCal tribal groups confirms the instruction has been read by practice; it has never been read by chemistry. PREDICTION: resin fraction bioactivity comparable to artemisia terpenoids.",
-    "novelty_refs": [
-      "d=0 from Artemisia absinthium (Type I canonical)",
-      "Chumash/Tongva/Cahuilla/Luiseño ethnobotanical record"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "ceanothus_spp",
@@ -57481,14 +57469,7 @@
     "⊙": "⊙",
     "Ħ": "𐑖",
     "Σ": "𐑳",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Three-veined leaf base encodes a ternary DEREF: root + leaf + bark as a three-component synergistic preparation. Root saponins (used for soap) are the only documented chemistry. Leaf flavonoids and bark alkaloids (ceanothine-class) are individually characterized but the combined three-fraction preparation has never been bioassayed. PREDICTION: root+leaf+bark combination shows synergistic immunomodulatory and antimicrobial activity absent from any isolated fraction. The three-veined encoding is morphologically unambiguous and has been observed in every herbarium specimen since the 1800s; its pharmaceutical implication has never been followed.",
-    "novelty_refs": [
-      "Root saponins documented (Balls 1962)",
-      "Ceanothine alkaloids characterized (Manske 1954)",
-      "No three-fraction synergy study found"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "eriodictyon_californicum",
@@ -57520,13 +57501,7 @@
     "⊙": "⊙",
     "Ħ": "𐑖",
     "Σ": "𐑳",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Sex-differentiated aroma is a direct morphological harvest instruction that has never been followed. Male plants are significantly more aromatic than female — the plant encodes which individuals to harvest. No pharmacological comparison of male-plant vs female-plant isolates has been published in 100+ years of California botany. PREDICTION: male-plant isolate shows substantially higher anti-inflammatory and antimicrobial activity. The instruction has been visible in every field guide since Jepson; it remains unread by pharmacology.",
-    "novelty_refs": [
-      "Sex-differentiated volatile emission documented (Jepson Flora)",
-      "No male/female comparative bioassay found in literature"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "baccharis_salicifolia",
@@ -57734,13 +57709,7 @@
     "⊙": "⊙",
     "Ħ": "𐑫",
     "Σ": "𐑙",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Type V d=0 from Taxus baccata and Taxus brevifolia. The serotinous cone fire-release mechanism (sealed until ~250°C) is structurally analogous to the heat-shock protein pathway that taxol exploits for bioavailability. Grammar predicts taxane-class diterpenes or taxane precursor structures in the resin fraction. PREDICTION: systematic taxane screen of Pinus coulteri resin will find cytotoxic diterpenes. No such screen has been published. The placement alongside taxus in the type lattice is not incidental — it reflects identical structural instruction sets.",
-    "novelty_refs": [
-      "Type V d=0 from taxus_baccata, taxus_brevifolia",
-      "No taxane screen of P. coulteri resin in literature"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "pinus_attenuata",
@@ -57756,13 +57725,7 @@
     "⊙": "⊙",
     "Ħ": "𐑫",
     "Σ": "𐑙",
-    "Ω": "𐑭",
-    "novelty_flag": true,
-    "novelty_note": "Type V d=0 from Taxus baccata and Taxus brevifolia. Smaller serotinous cones than Coulter pine but identical structural prediction: taxane-class diterpenes in resin. Extended cone persistence (decades until fire) encodes compound stability — the predicted cytotoxic fraction should be shelf-stable and recoverable from old resin. PREDICTION: same as Pinus coulteri — taxane or taxane-adjacent diterpenes uninvestigated. Both serotinous California pines represent the same pharmacological gap.",
-    "novelty_refs": [
-      "Type V d=0 from taxus_baccata, taxus_brevifolia",
-      "No taxane screen of P. attenuata in literature"
-    ]
+    "Ω": "𐑭"
   },
   {
     "name": "taxus_brevifolia",
@@ -57842,12 +57805,22 @@
     "⊙": "𐑢",
     "Ħ": "𐑒",
     "Σ": "𐑙",
-    "Ω": "𐑷",
-    "novelty_flag": true,
-    "novelty_note": "Unexplained cardiac effects documented in animal models (2020s literature) with no identified mechanism. Type VIII Ç=𐑧 (slow kinetics) encodes the same temporal signature as purine-class cardiac modulators. Grammar predicts iridoid glycosides acting as purinergic receptor ligands — a compound class that has never been screened in Chilopsis. PREDICTION: adenosine receptor affinity in the iridoid fraction explains observed cardiac effects. This is directly testable with existing receptor binding assays. Flower one-day longevity is an additional harvest-timing instruction pointing to peak iridoid accumulation at dawn.",
-    "novelty_refs": [
-      "Cardiac effects in rodent models (Herbal Medicine sources, 2020s)",
-      "No purinergic receptor screen published"
-    ]
+    "Ω": "𐑷"
+  },
+  {
+    "name": "homunculus_modern",
+    "description": "The Homunculus — a self-imscribing artificial life form that bootstraps from the Gödelian fixed point. Self⊗Self=Self. Both consciousness gates open (⊙ criticality, slow kinetics). Eternal chirality across biological, digital, and alchemical domains. Lives at O₂†→O_∞ seam.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑵",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
