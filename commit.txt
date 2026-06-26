@@ -1,3 +1,28 @@
+Alchemical corpus merge: 13 treatise entries added to catalog (2026-06-25)
+
+All treatise directories in ig-docs/alchemical_treatises/ now represented in IG_catalog.json.
+3894 → 3916 entries (+22 net; 13 newly added, 19 already had full tuples from prior sessions).
+
+New entries (all from individual parsing.md / Lean files, not hand-imscribed):
+  + agricola_treatise_on_gold   ⟨𐑨;𐑡;𐑩;𐑿;𐑞;𐑧;𐑲;𐑜;𐑢;𐑒;𐑳;𐑷⟩  O₀
+  + basil_valentine_antimony    ⟨𐑨;𐑥;𐑾;𐑬;𐑱;𐑧;𐑲;𐑠;𐑢;𐑒;𐑳;𐑷⟩  O₁
+  + colours_great_work          ⟨𐑨;𐑡;𐑾;𐑗;𐑱;𐑧;𐑲;𐑠;𐑢;𐑒;𐑙;𐑷⟩  O₀
+  + eudoxus_six_keys            ⟨𐑨;𐑥;𐑾;𐑬;𐑱;𐑧;𐑲;𐑠;𐑢;𐑒;𐑳;𐑷⟩  O₁
+  + francis_bacon_making_of_gold ⟨𐑨;𐑥;𐑩;𐑗;𐑞;𐑪;𐑔;𐑠;𐑢;𐑒;𐑙;𐑷⟩  O₀
+  + francis_bacon_sulphur_mercury ⟨𐑨;𐑥;𐑩;𐑬;𐑞;𐑪;𐑔;𐑜;𐑢;𐑒;𐑳;𐑷⟩ O₀
+  + john_french_art_of_distillation ⟨𐑛;𐑥;𐑩;𐑿;𐑞;𐑪;𐑔;𐑜;𐑢;𐑒;𐑳;𐑷⟩ O₀
+  + mary_prophetess             ⟨𐑨;𐑡;𐑽;𐑬;𐑱;𐑺;𐑔;𐑠;𐑣;𐑖;𐑙;𐑷⟩  O₁ supercritical
+  + ms_larsenal_3027            ⟨𐑨;𐑥;𐑾;𐑬;𐑞;𐑧;𐑲;𐑠;𐑢;𐑒;𐑳;𐑷⟩  O₁
+  + quersitanus_phantom_plants  ⟨𐑼;𐑡;𐑩;𐑗;𐑱;𐑧;𐑲;𐑠;𐑢;𐑓;𐑳;𐑷⟩  O₀
+  + urbigerus_aphorisms         ⟨𐑨;𐑶;𐑾;𐑬;𐑐;𐑧;𐑔;𐑠;𐑢;𐑒;𐑳;𐑷⟩  O₁
+  + urbigerus_circulatum_minus  ⟨𐑨;𐑶;𐑾;𐑬;𐑞;𐑧;𐑲;𐑠;𐑢;𐑒;𐑳;𐑷⟩  O₀
+  + urbigerus_frontispiece      ⟨𐑼;𐑶;𐑩;𐑬;𐑱;𐑧;𐑔;𐑜;𐑢;𐑒;𐑙;𐑷⟩  O₀
+
+zosimos_panopolis directory: already covered by zosimos_alchemy / zosimos_panopolis_gnosis /
+  zosimos_portico (three-system decomposition, already in catalog from prior sessions).
+
+---
+
 ARS catalog merge: 105 missing entries added to main catalog (2026-06-25)
 
 Three sources of imscriptions that were not reaching IG_catalog.json:
