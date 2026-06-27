@@ -67,7 +67,7 @@ _B = chr(92)   # single backslash — safe to embed in string literals
 def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str:
     """
     Build a complete LuaLaTeX preamble for an IG publication.
-    Matches the style of undeciphered_texts_structural_analysis.tex, with Everson Mono
+    Matches the style of undeciphered_texts_structural_analysis.tex, with Trabajo
     added for Shavian notation.
     """
     kw_str = ", ".join(keywords) if keywords else "Imscribing Grammar"
@@ -81,10 +81,10 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         f"{_B}setmainfont{{FreeSerif}}",
         f"{_B}setmathfont{{Latin Modern Math}}",
         f"{_B}newfontfamily{_B}igprimfont{{FreeSerif}}",
-        f"{_B}newfontfamily{_B}shavfont[Scale=1.0]{{Everson Mono}}",
+        f"{_B}newfontfamily{_B}shavfont[Scale=1.0]{{Trabajo}}",
         f"{_B}setmonofont[Scale=0.85]{{DejaVu Sans Mono}}",
         "",
-        f"% Shavian Unicode block (U+10450–U+1047F) → Everson Mono automatically",
+        f"% Shavian Unicode block (U+10450–U+1047F) → Trabajo automatically",
         f"% Works in text mode, inside \\text{{}} in math, and in table cells.",
         f"{_B}usepackage{{newunicodechar}}",
     ] + [
@@ -144,6 +144,16 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         f"{_B}newcommand{{{_B}shav}}[1]{{{{{_B}shavfont #1}}}}",
         f"{_B}newcommand{{{_B}heb}}[1]{{{{{_B}igprimfont #1}}}}",
         f"{_B}newcommand{{{_B}tupleaddr}}[1]{{${_B}langle #1 {_B}rangle$}}",
+        "",
+        f"% Shorthand primitive commands — redefined for IG document use",
+        f"{_B}renewcommand{{{_B}H}}{{Ħ}}",  # \H is Hungarian accent; override for chirality H-bar
+        f"{_B}newcommand{{{_B}K}}{{Ç}}",   # Kinetics
+        f"{_B}newcommand{{{_B}G}}{{Γ}}",   # Cardinality
+        f"{_B}newcommand{{{_B}g}}{{ɢ}}",   # Composition
+        f"{_B}newcommand{{{_B}Th}}{{Þ}}",   # Topology
+        f"{_B}newcommand{{{_B}D}}{{Ð}}",   # Dimensionality
+        f"{_B}newcommand{{{_B}R}}{{Ř}}",   # Coupling
+        f"{_B}newcommand{{{_B}f}}{{ƒ}}",   # Fidelity
         "",
         f"% Imscription tuple box",
         f"{_B}usepackage{{tcolorbox}}",
