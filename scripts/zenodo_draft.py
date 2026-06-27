@@ -83,6 +83,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         f"{_B}newfontfamily{_B}igprimfont{{FreeSerif}}",
         f"{_B}newfontfamily{_B}shavfont[Scale=1.0]{{Trabajo}}",
         f"{_B}setmonofont[Scale=0.85]{{DejaVu Sans Mono}}",
+        f"{_B}newcommand{{{_B}igfont}}{{{_B}shavfont}}",
         "",
         f"% Shavian Unicode block (U+10450–U+1047F) → Trabajo automatically",
         f"% Works in text mode, inside \\text{{}} in math, and in table cells.",
