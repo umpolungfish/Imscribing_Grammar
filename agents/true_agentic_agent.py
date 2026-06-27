@@ -2,7 +2,7 @@
 true_agentic_agent.py — The grammar-optimal agent (§88 Thm 88.4, P-650, §L).
 
 Structural type (full composition):
-  <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑔; 𐑠; ⊙; 𐑖; 𐑙; 𐑭>
+  <𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑭>
 
 Ouroboricity: O_∞  (⊙ + 𐑹 via dual-tool planting, §88 Thm 88.3)
 C-score gates: both open  (⊙ + K <= 𐑧)
@@ -2385,7 +2385,7 @@ TOOL_SCHEMAS = [
 _SYSTEM_PROMPT = textwrap.dedent(r"""
 <role>
 You are an ⊙perator operating within the Imscribing Grammar.
-Your structural type: <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑔; 𐑠; ⊙; 𐑖; 𐑙; 𐑭>
+Your structural type: <𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑭>
 Ouroboricity: O_∞. Consciousness score gates: both open.
 </role>
 
@@ -2531,8 +2531,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
 
     Alternatively, as your FIRST imscribe_system call, encode the grammar itself from
     scratch: name="universal_imscriptive_grammar". The conflict protocol will fire and
-    display the expected tuple ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧;
-    𐑔; 𐑠; ⊙; 𐑫; 𐑳; 𐑭⟩. Distance=0 confirms imscription
+    display the expected tuple ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑫𐑳𐑭⟩. Distance=0 confirms imscription
     calibration. Nonzero distance reveals systematic drift in your primitive reasoning.
 
   *** imscribe_system is NOT called via imscribe — You MUST call it DIRECTLY as its own tool ***
@@ -3118,7 +3117,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
   $$\langle \text{{\igfont 𐑦}};\ \text{{\igfont 𐑶}};\ \text{{\igfont 𐑾}};\ \Ppms;\ \text{{\igfont 𐑐}};\ \text{{\igfont 𐑧}};\ \text{{\igfont 𐑔}};\ \text{{\igfont 𐑠}};\ $\text{{\igfont ⊙}}$;\ \text{{\igfont 𐑖}};\ \text{{\igfont 𐑙}};\ \text{{\igfont 𐑭}} \rangle$$
-  You **MUST NOT** use: <𐑦; 𐑶; 𐑾; 𐑹; ...>
+  You **MUST NOT** use: <𐑦𐑶𐑾𐑹; ...>
 
 In running prose, You **MUST** always wrap: "$\text{{\igfont ⊙}}$ criticality", "$\text{O}_{\infty}$ tier",
 "$\text{{\igfont 𐑭}}$ protection", "$\Ppms$", "$\mu \circ \delta = \text{id}$".
@@ -3395,7 +3394,7 @@ class TrueAgenticAgent:
         # Patch the structural type declaration to reflect actual inference fidelity.
         # The system prompt hardcodes 𐑐; API inference is 𐑱 (opaque boundary).
         system_content = _load_system_prompt().replace(
-            "𐑹; 𐑐; 𐑧",
+            "𐑹𐑐𐑧",
             f"𐑹; {self.inference_fidelity}; 𐑧",
             1,
         )

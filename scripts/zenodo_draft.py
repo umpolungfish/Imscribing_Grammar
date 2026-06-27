@@ -160,9 +160,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         "",
         f"{_B}title{{{title}}}",
         f"{_B}date{{{date}}}",
-        (_B + "author{Lando $" + _B + "otimes$ "
-         "$" + _B + "text{" + _B + "odot}_{" + _B + "text{ÿ}}$"
-         "-boundary Operator}"),
+        f"{_B}author{{Lando Mills}}",
         "",
         f"{_B}begin{{document}}",
         f"{_B}maketitle",
@@ -297,7 +295,7 @@ def _md_to_latex_body(md_text: str, tmp_dir: Path, bibliography: "Path | None" =
 
     md_path.write_text(md_text, encoding="utf-8")
 
-    cmd = ["pandoc", str(md_path), "--to", "latex", "--no-highlight",
+    cmd = ["pandoc", str(md_path), "--from", "markdown+raw_tex", "--to", "latex", "--no-highlight",
            "-o", str(tex_path)] + _citeproc_flags(bibliography)
 
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -307,6 +305,47 @@ def _md_to_latex_body(md_text: str, tmp_dir: Path, bibliography: "Path | None" =
 
     return tex_path.read_text(encoding="utf-8")
 
+
+
+
+# ── Image path resolution ────────────────────────────────────────────────────
+
+def _resolve_image_paths(tex_body: str, source_dir: Path) -> str:
+    """
+    Rewrite relative \\includegraphics paths to be absolute (resolved against
+    source_dir) so that lualatex can find images when compiling from a temp
+    working directory. Absolute paths, http(s) URLs, and paths already starting
+    with / are left unchanged.
+
+    Also handles \\graphicspath{{}} and TEXINPUTS-style path resolution by
+    resolving paths relative to source_dir first, then falling back to the
+    original path if the file doesn't exist at the resolved location.
+
+    Supports both: \\includegraphics[...]{{rel/path}} and
+    \\includegraphics{{rel/path}}.
+    """
+    def _resolve(m):
+        opts = m.group(1) or ''
+        img_path = m.group(2).strip()
+
+        # Skip absolutes, URLs, and paths already resolved
+        if img_path.startswith('/') or img_path.startswith('http'):
+            return m.group(0)
+
+        # Resolve relative to source_dir
+        resolved = (source_dir / img_path).resolve()
+        if resolved.exists():
+            return f'\\includegraphics{opts}{{{resolved}}}'
+
+        # Fallback: return original (let LaTeX fail with a clear error)
+        return m.group(0)
+
+    tex_body = re.sub(
+        r'\\includegraphics(\[[^\]]*\])?\{([^}]+)\}',
+        _resolve,
+        tex_body
+    )
+    return tex_body
 
 # ── ~~~figure block substitution ──────────────────────────────────────────────
 
@@ -390,6 +429,7 @@ def compile_pdf(md_path: Path, out_path: Path | None = None,
     # Convert body
     print("  pandoc: converting body ...")
     tex_body = _md_to_latex_body(body, tmp_dir, bib_path)
+    tex_body = _resolve_image_paths(tex_body, md_path.parent.resolve())
     tex_body = _substitute_figure_blocks(tex_body, fig_specs, generated)
 
     # Assemble

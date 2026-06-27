@@ -366,14 +366,15 @@ class LatticeResult:
             if x == CONFLICT:
                 return bot
             return x.value if hasattr(x, "value") else (str(x) if x else "\u2014")
-        return (
-            f"\u27e8{_v(self.dimensionality)}; {_v(self.topology)}; "
-            f"{_v(self.recognition_mode)}; {_v(self.polarity)}; "
-            f"{_v(self.fidelity)}; {_v(self.kinetic_character)}; "
-            f"{_v(self.granularity)}; {_v(self.grammar)}; "
-            f"{_v(self.criticality_phase)}; {_v(self.protection)}; "
-            f"{_v(self.stoichiometry)}; {_v(self.chirality)}\u27e9"
-        )
+        vals = [
+            _v(self.dimensionality), _v(self.topology),
+            _v(self.recognition_mode), _v(self.polarity),
+            _v(self.fidelity), _v(self.kinetic_character),
+            _v(self.granularity), _v(self.grammar),
+            _v(self.criticality_phase), _v(self.protection),
+            _v(self.stoichiometry), _v(self.chirality),
+        ]
+        return f"\u27e8{''.join(vals)}\u27e9"
 
     # Backward compat
     @property

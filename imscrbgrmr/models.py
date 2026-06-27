@@ -755,40 +755,46 @@ class Criticality(Enum):
       Phi_upstep     = supercritical (unstable)
     Phi_ctyogh is ABSORBING under meet: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
     """
-    Phi_softsign        = "𐑢"   # subcritical (stable, ordered)
-    Phi_ctyogh          = "⊙"   # critical point (absorbing under meet)
-    Phi_closerevepsilon = "𐑮"   # complex criticality (paraconsistent)
-    Phi_revepsilon      = "𐑻"   # exceptional-point criticality
-    Phi_upstep          = "𐑣"   # supercritical (unstable)
-    # Backward-compat aliases
-    SUBCRITICAL  = "𐑢"
-    CRITICAL     = "⊙"
-    SUPERCRITICAL = "𐑣"
+    # canonical Shavian names (SNS_PRIME.md §𝓕₅ Criticality)
+    woe   = "𐑢"   # subcritical (stable, ordered)
+    monad = "⊙"   # critical point (absorbing under meet)
+    roar  = "𐑮"   # complex criticality (paraconsistent)
+    err   = "𐑻"   # exceptional-point criticality
+    haha  = "𐑣"   # supercritical (unstable)
+    egg   = "𐑧"   # maximally indeterminate (synthetic / transactinide)
+    # backward-compat aliases — duplicate values become aliases in Python Enum
+    Phi_softsign        = "𐑢"
+    Phi_ctyogh          = "⊙"
+    Phi_closerevepsilon = "𐑮"
+    Phi_revepsilon      = "𐑻"
+    Phi_upstep          = "𐑣"
+    Phi_ish             = "𐑧"
+    SUBCRITICAL         = "𐑢"
+    CRITICAL            = "⊙"
+    SUPERCRITICAL       = "𐑣"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
         _map = {
             # glyph IDs (canonical)
-            "𐑢":  cls.Phi_softsign,
-            "⊙":  cls.Phi_ctyogh,
-            "𐑮":  cls.Phi_closerevepsilon,
-            "𐑻":  cls.Phi_revepsilon,
-            "𐑣":  cls.Phi_upstep,
-            # Shavian (v0.6.0)
-            "𐑢": cls.Phi_softsign, "⊙": cls.Phi_ctyogh, "𐑮": cls.Phi_closerevepsilon,
-            "𐑻": cls.Phi_revepsilon, "𐑣": cls.Phi_upstep,
+            "𐑢":  cls.woe,
+            "⊙":  cls.monad,
+            "𐑮":  cls.roar,
+            "𐑻":  cls.err,
+            "𐑣":  cls.haha,
+            "𐑧":  cls.egg,
+            # Shavian names
+            "woe": cls.woe, "monad": cls.monad, "roar": cls.roar,
+            "err": cls.err, "haha": cls.haha,   "egg":  cls.egg,
             # phonetic names (backward compat)
             "⊙_softsign":       cls.Phi_softsign,       "Φ_sub":   cls.Phi_softsign,
             "⊙_ctyogh":         cls.Phi_ctyogh,         "Φ_c":     cls.Phi_ctyogh,
             "⊙_closerevepsilon": cls.Phi_closerevepsilon, "Φ_c_ℂ":  cls.Phi_closerevepsilon,
             "⊙_revepsilon":      cls.Phi_revepsilon,      "Φ_EP":    cls.Phi_revepsilon,
             "⊙_upstep":         cls.Phi_upstep,          "Φ_sup":   cls.Phi_upstep,
-            # odot-prefixed variants (old memory file notation)
-            "𐑢":  cls.Phi_softsign,
-            "⊙":  cls.Phi_ctyogh,
-            "𐑮":  cls.Phi_closerevepsilon,
-            "𐑻":  cls.Phi_revepsilon,
-            "𐑣":  cls.Phi_upstep,
+            # odot-prefixed variants (old memory file notation — keep as compat)
+            "⊙_softsign": cls.woe,  "⊙_ctyogh": cls.monad,
+            "⊙_closerevepsilon": cls.roar, "⊙_revepsilon": cls.err, "⊙_upstep": cls.haha,
         }
         try:
             return _map[s]
@@ -924,33 +930,29 @@ class Stoichiometry(Enum):
     Lean canonical 4: S_doublebaresh, one_n, S_ltailm, cat.
     Replaces the old ad-hoc string field.
     """
+    # canonical Shavian names (SNS_PRIME.md §𝓕₃ Stoichiometry)
+    hung = "𐑙"   # 1:1
+    so   = "𐑕"   # 1:n (symmetric many)
+    up   = "𐑳"   # n:m (unmatched many)
+    dead = "𐑛"   # trivalent (boron-group / pnictogen)
+    # backward-compat aliases
     S_doublebaresh = "𐑙"
-    one_n          = "𐑕"   # 1:n collapses to S_ctn (symmetric many)
+    one_n          = "𐑕"
     S_ltailm       = "𐑳"
-    cat            = "𐑳"   # catalytic treated as S_ltailm (alias)
+    cat            = "𐑳"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Stoichiometry":
         _map = {
-            # glyph IDs (canonical)
-            "𐑙":  cls.S_doublebaresh,
-            "𐑕":  cls.one_n,
-            "𐑳":  cls.S_ltailm,
-            # Shavian (v0.6.0)
-            "𐑙": cls.S_doublebaresh, "𐑕": cls.one_n, "𐑳": cls.S_ltailm,
-            # phonetic names (backward compat)
-            "Σ_doublebaresh": cls.S_doublebaresh,
-            "Σ_ctn":          cls.one_n,
-            "Σ_ltailm":       cls.S_ltailm,
-            # legacy canonical names
-            "one_one": cls.S_doublebaresh,
-            "n_n":     cls.one_n,
-            "n_m":     cls.S_ltailm,
-            # notation variants
-            "1:1": cls.S_doublebaresh, "one_n": cls.one_n,
-            "1:n": cls.one_n,
-            "n:m": cls.S_ltailm, "n:n": cls.one_n,
-            "cat": cls.cat,
+            # canonical glyphs
+            "𐑙": cls.hung, "𐑕": cls.so, "𐑳": cls.up, "𐑛": cls.dead,
+            # Shavian names
+            "hung": cls.hung, "so": cls.so, "up": cls.up, "dead": cls.dead,
+            # phonetic/legacy backward compat
+            "Σ_doublebaresh": cls.hung, "Σ_ctn": cls.so, "Σ_ltailm": cls.up,
+            "one_one": cls.hung, "n_n": cls.so, "n_m": cls.up,
+            "1:1": cls.hung, "1:n": cls.so, "n:m": cls.up, "n:n": cls.so,
+            "one_n": cls.so, "cat": cls.up,
         }
         try:
             return _map[s]
@@ -1161,14 +1163,14 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨D; T; R; P; F; K; G; Γ; Φ; Ω; S; H⟩"""
+        """Canonical tuple string: ⟨DTRPFKGΓΦΩSH⟩"""
         return (
-            f"⟨{self.dimensionality.value}; {self.topology.value}; "
-            f"{self.recognition_mode.value}; {self.polarity.value}; "
-            f"{self.fidelity.value}; {self.kinetic_character.value}; "
-            f"{self.granularity.value}; {self.grammar.value}; "
-            f"{self.criticality_phase.value}; {self.protection.value}; "
-            f"{self.stoichiometry.value}; {self.chirality.value}⟩"
+            f"⟨{self.dimensionality.value}{self.topology.value}"
+            f"{self.recognition_mode.value}{self.polarity.value}"
+            f"{self.fidelity.value}{self.kinetic_character.value}"
+            f"{self.granularity.value}{self.grammar.value}"
+            f"{self.criticality_phase.value}{self.protection.value}"
+            f"{self.stoichiometry.value}{self.chirality.value}⟩"
         )
 
     # Translate internal enum values to canonical ORDINALS keys (primitives.py).

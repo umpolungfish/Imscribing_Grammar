@@ -1246,7 +1246,7 @@ def navigator_info() -> None:
         tup = cls.DEFINING_TUPLE
         print(f"\n{name}")
         print(f"  Source: IG_ONTICS §XXXV / §XXXVI / §XL")
-        print(f"  Tuple:  <{'; '.join(f'{v}' for v in tup.values())}>")
+        print(f"  Tuple:  ⟨{''.join(f'{v}' for v in tup.values())}⟩")
         k = tup.get("Ç", "?")
         arch = {
             "𐑧":  "deep GNN stack (FrobeniusLayer + FamilyMixer)",

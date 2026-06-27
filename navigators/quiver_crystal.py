@@ -11,8 +11,7 @@ Architecture:
   • Tier head: tuple embedding → ouroboricity tier logits
 
 Self-encoding bootstrap:
-  Navigator tuple ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧;
-                   𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
+  Navigator tuple ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
   Target address: 6,734,591  (confirmed by exact codec)
 
 Training:

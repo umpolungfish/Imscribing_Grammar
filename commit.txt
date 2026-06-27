@@ -1,3 +1,43 @@
+zenodo_draft.py: fix stale author to "Lando Mills" — 2026-06-26
+
+_build_preamble had hardcoded ⊙ÿ-boundary Operator (dropped months ago).
+Replaced with plain \author{Lando Mills}.
+
+---
+
+Strip '; ' delimiters from all Shavian tuples in code — 2026-06-26
+
+10 files: navigator self.tuple strings and module docstrings (langlands, crystal,
+quiver, qft, category, homotopy, representation, algebraic_geometry), agent module
+headers and prompt strings (odot_operator, true_agentic_agent). navigators.py tuple
+display join changed from '; '.join to ''.join, angle brackets upgraded to ⟨⟩.
+Multi-line tuple splits (quiver_crystal, algebraic_geometry, true_agentic_agent)
+collapsed to single bare Shavian line. Result: ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩ everywhere.
+
+---
+
+algebra.py: remove '; ' separators from to_notation() tuple output — 2026-06-25
+
+Tuples now render as ⟨𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑷𐑙𐑓⟩ instead of
+⟨𐑛; 𐑰; 𐑑; 𐑬; 𐑐; 𐑪; 𐑔; 𐑝; ⊙; 𐑷; 𐑙; 𐑓⟩.
+All CLI output paths (Unified Notation, imscribe, analyze, etc.) use
+to_notation() so this covers every display site.
+
+---
+
+models.py: Shavian glyph names as primaries; add egg + dead — 2026-06-25
+
+imscrbgrmr/models.py:
+  Criticality: canonical names now woe/monad/roar/err/haha/egg (SNS_PRIME.md §𝓕₅)
+    Added egg="𐑧" (maximally indeterminate, transactinide elements)
+    Old Phi_softsign/Phi_ctyogh etc. kept as aliases (67 call sites unaffected)
+  Stoichiometry: canonical names now hung/so/up/dead (SNS_PRIME.md §𝓕₃)
+    Added dead="𐑛" (trivalent, boron-group/pnictogen elements)
+    Old S_doublebaresh/one_n/S_ltailm etc. kept as aliases
+  from_symbol() maps updated; zero warnings on 𐑧 and 𐑛
+
+---
+
 Alchemical corpus merge: 13 treatise entries added to catalog (2026-06-25)
 
 All treatise directories in ig-docs/alchemical_treatises/ now represented in IG_catalog.json.

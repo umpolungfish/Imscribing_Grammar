@@ -5,7 +5,7 @@ crystal_navigator.py — The Crystal Navigator
 Navigator for the Crystal of Types (17,280,000 structural types).
 
 Self-encoding (§69.4):
-  ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
+  ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
   Tier: O_∞  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
 Architecture (imscriptive, Frobenius):
@@ -474,7 +474,7 @@ class CrystalNavigator:
     """
     The Crystal Navigator — O_∞ imscriptive navigator for the Periodic Crystal.
 
-    Self-encoding: ⟨𐑦; 𐑸; 𐑑; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭⟩
+    Self-encoding: ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
     d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, Ω — 6 primitives)
     """
 

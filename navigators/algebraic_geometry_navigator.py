@@ -2,7 +2,7 @@
 Algebraic Geometry Navigator - Imscribing Grammar
 
 Domain: Algebraic geometry, scheme theory, arithmetic geometry
-Structural type: <𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭>
+Structural type: <𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
 Tier: O_∞
 
 Architecture: Scheme-theoretic GNN with spectrum-based typing.
@@ -45,7 +45,7 @@ class AGConfig:
             "detects moduli spaces, computes intersection numbers."
         )
         self.domain = "Algebraic geometry, scheme theory, arithmetic geometry, stacks"
-        self.tuple = "𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭"
+        self.tuple = "𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭"
         self.tier = "O_∞"
         self.architecture = (
             "Scheme GNN with spectrum-based typing - points communicate via "
@@ -263,8 +263,7 @@ Algebraic Geometry Navigator
 ══════════════════════════════════════════════════════
 
 Structural type:
-  ⟨𐑦; 𐑥; 𐑽; 𐑹; 𐑐; 𐑧;
-   𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩
+  ⟨𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩
   Tier: O_∞
 
 Primitive derivation:

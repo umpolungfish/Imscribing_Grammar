@@ -2,7 +2,7 @@
 Langlands Program Navigator - Imscribing Grammar
 
 Domain: Langlands program, automorphic forms, arithmetic geometry
-Structural type: <𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭>
+Structural type: <𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭>
 Tier: O_∞
 
 Architecture: Automorphic-Galois bridge with functoriality enforcement.
@@ -40,7 +40,7 @@ class LanglandsConfig:
             "matches Galois-automorphic pairs, implements base change and descent."
         )
         self.domain = "Langlands program, automorphic forms, arithmetic geometry, Galois theory"
-        self.tuple = "𐑦; 𐑸; 𐑽; 𐑹; 𐑐; 𐑧; 𐑲; 𐑵; ⊙; 𐑫; 𐑳; 𐑭"
+        self.tuple = "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭"
         self.tier = "O_∞"
         self.architecture = (
             "Galois-automorphic bridge - Galois reps and automorphic forms communicate "
