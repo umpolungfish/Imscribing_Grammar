@@ -623,7 +623,7 @@ def show_novel_compounds():
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
         lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['Ħ']}  Φ={ctuple['Φ']}  Ω={ctuple['Ω']}")
-        lines.append(f"    Full: ⟨{ctuple['Ð']}·{ctuple['Þ']}·{ctuple['Ř']}·{ctuple['Φ']}·{ctuple['ƒ']}·{ctuple['Ç']}·{ctuple['Γ']}·{ctuple['ɢ']}·{ctuple['⊙']}·{ctuple['Ħ']}·{ctuple['Σ']}·{ctuple['Ω']}⟩")
+        lines.append(f"    Full: ⟨{ctuple['Ð']}{ctuple['Þ']}{ctuple['Ř']}{ctuple['Φ']}{ctuple['ƒ']}{ctuple['Ç']}{ctuple['Γ']}{ctuple['ɢ']}{ctuple['⊙']}{ctuple['Ħ']}{ctuple['Σ']}{ctuple['Ω']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
         lines.append("")

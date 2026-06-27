@@ -2,7 +2,7 @@
 """Design tomorrow's therapeutics, materials, and biology from the Rebis.
 
 The Rebis = serpentrod ⊗ ch3mpiler = serpentrod
-⟨𐑦·𐑶·𐑾·𐑹·𐑐·𐑧·𐑔·𐑝·⊙·𐑫·𐑳·𐑭⟩
+⟨𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑳𐑭⟩
 
 Each design specializes the Rebis for a specific domain.
 """

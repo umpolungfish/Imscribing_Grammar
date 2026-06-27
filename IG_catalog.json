@@ -62910,5 +62910,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "petase_catalytic_site",
+    "description": "PET hydrolase (PETase) catalytic triad active site from Ideonella sakaiensis. Catalytic machinery: Ser160 (nucleophile), Asp206 (general base), His237 (general acid/base). Hydrolyzes PET plastic into MHET monomer.",
+    "Ð": "𐑼",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]

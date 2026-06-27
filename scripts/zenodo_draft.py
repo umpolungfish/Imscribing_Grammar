@@ -64,13 +64,24 @@ _B = chr(92)   # single backslash — safe to embed in string literals
 
 # ── LaTeX preamble ─────────────────────────────────────────────────────────────
 
-def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str:
+def _build_preamble(title: str, date: str, abstract: str, keywords: list,
+                    source_dir: "Path | None" = None) -> str:
     """
     Build a complete LuaLaTeX preamble for an IG publication.
     Matches the style of undeciphered_texts_structural_analysis.tex, with Trabajo
     added for Shavian notation.
+
+    source_dir: absolute path of the directory containing the .md source.
+    When provided, a \\graphicspath is injected so lualatex finds images/ relative
+    to the source even when compiling from a _build/ subdirectory.
     """
     kw_str = ", ".join(keywords) if keywords else "Imscribing Grammar"
+
+    # graphicspath: source root + source/images/ — resolves all relative image refs
+    gpath_line = ""
+    if source_dir is not None:
+        sd = str(source_dir).rstrip("/")
+        gpath_line = f"{_B}graphicspath{{{{{sd}/}}{{{sd}/images/}}}}"
 
     lines = [
         f"{_B}documentclass[12pt,a4paper]{{article}}",
@@ -124,6 +135,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list) -> str
         "",
         f"% Essential packages",
         f"{_B}usepackage{{graphicx}}",
+        gpath_line,
         f"{_B}setkeys{{Gin}}{{width=0.48{_B}linewidth,height=0.32{_B}textheight,keepaspectratio}}",
         f"{_B}usepackage[table]{{xcolor}}",
         f"{_B}usepackage{{booktabs}}",
@@ -428,8 +440,16 @@ def compile_pdf(md_path: Path, out_path: Path | None = None,
 
     stem    = md_path.stem
     out_dir = md_path.parent
-    tmp_dir = out_dir / f"_{stem}_build"
-    tmp_dir.mkdir(exist_ok=True)
+    tmp_dir = out_dir / "_builds" / stem
+    tmp_dir.mkdir(parents=True, exist_ok=True)
+
+    # Symlink image directories into build dir so relative paths survive lualatex
+    for _img_name in ("images", "img", "figs", "figures"):
+        _src_img = md_path.parent / _img_name
+        _lnk_img = tmp_dir / _img_name
+        if _src_img.is_dir() and not _lnk_img.exists():
+            _lnk_img.symlink_to(_src_img.resolve())
+            print(f"  linked  → {_lnk_img.name}/")
 
     fig_dir   = tmp_dir / "figures"
     generated = _generate_figures(fig_specs, fig_dir)
@@ -444,7 +464,8 @@ def compile_pdf(md_path: Path, out_path: Path | None = None,
     tex_body = _substitute_figure_blocks(tex_body, fig_specs, generated)
 
     # Assemble
-    preamble  = _build_preamble(title, date, abstract, keywords)
+    preamble  = _build_preamble(title, date, abstract, keywords,
+                                source_dir=md_path.parent.resolve())
     postamble = _build_postamble()
     full_tex  = preamble + tex_body + postamble
 

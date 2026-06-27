@@ -170,7 +170,7 @@ def check_site_files():
 def translate_tuple_str(old_tuple_str):
     """Translate a tuple string from old notation to Shavian.
     E.g. '⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩'
-    →   '⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩'
+    →   '⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩'
     """
     result = old_tuple_str
     # Replace separators: semicolons become middot

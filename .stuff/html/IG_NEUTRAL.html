@@ -2380,7 +2380,7 @@ const examples = [
   // ── SUPRAMOLECULAR ─────────────────────────────────────────────────────────
   { name:"Carboxylic Acid Homodimer",
     domain:"Supramolecular", color:"#FFD700",
-    tuple:"⟨ D∧·D△ ; T⋈ ; R⊇ ; P± ; ⟨Fℏ, Fℏ⟩ ; Kfast ; Gℶ ; Γ⊗ ; Φsub ; 1:1 ⟩",
+    tuple:"⟨ D∧D△ ; T⋈ ; R⊇ ; P± ; ⟨Fℏ, Fℏ⟩ ; Kfast ; Gℶ ; Γ⊗ ; Φsub ; 1:1 ⟩",
     notes:"The canonical R₂²(8) motif — the benchmark supramolecular synthon. Two carboxylic acid groups form a cyclic hydrogen-bond dimer via O–H···O interactions. >90% CSD recurrence frequency. Self-complementary (P±), cyclic (T⋈), non-covalent (R⊇). Operates at both molecular and supramolecular scale (D∧·D△).",
     detail:"F<sub>s</sub> HIGH: forms reliably across a vast range of molecular contexts. F<sub>o</sub> HIGH: O···H–O geometry is consistently reproduced within ±5° across crystal structures. The Γ⊗ grammar reflects the strict one-to-one partner specificity of the homodimer. This synthon is the primary reference against which all other supramolecular synthons are benchmarked." },
 
@@ -2435,13 +2435,13 @@ const examples = [
 
   { name:"Discrete Time Crystal (Floquet)",
     domain:"Temporal", color:"#FF6B9D",
-    tuple:"⟨ D∞·D\u1D34ⁿ ; T⋈ ; R‡·R(gate) ; P± ; ⟨Fℏ, Fð⟩ ; Kfast ; Gℵ ; Γ⊙ ; Φc ; n:n ⟩",
+    tuple:"⟨ D∞D\u1D34ⁿ ; T⋈ ; R‡R(gate) ; P± ; ⟨Fℏ, Fð⟩ ; Kfast ; Gℵ ; Γ⊙ ; Φc ; n:n ⟩",
     notes:"A non-equilibrium quantum phase of matter that breaks discrete time-translation symmetry: spins driven at frequency f oscillate at f/2. Realised in trapped ion chains and superconducting qubit arrays. Hybrid temporal–quantum synthon (D∞·D\u1D34ⁿ). F<sub>s</sub> HIGH — the subharmonic response robustly initialises. F<sub>o</sub> MED — coherence decays under realistic decoherence.",
     detail:"The discrete time crystal is the strictest quantum subclass of temporal synthon. Unlike the BZ reaction (a dissipative classical structure), the DTC requires quantum coherence across the many-body system. The Floquet drive (R‡ + R(gate)) plays the role of the catalytic mechanism. The Global granularity (Gℵ) reflects that time-crystalline order is a collective, system-wide property — it cannot be attributed to individual qubits." },
 
   { name:"Molecular Ratchet (Light-Powered)",
     domain:"Temporal", color:"#FF6B9D",
-    tuple:"⟨ D∞ ; T≫ ; R‡·R⇔ ; P+ ; ⟨Fℏ, Fð⟩ ; Kmod ; Gℶ ; Γ⊙ ; Φsub ; 1:1 ⟩",
+    tuple:"⟨ D∞ ; T≫ ; R‡R⇔ ; P+ ; ⟨Fℏ, Fð⟩ ; Kmod ; Gℶ ; Γ⊙ ; Φsub ; 1:1 ⟩",
     notes:"A unidirectional molecular motor driven by photoisomerisation (e.g. overcrowded alkene motors, Feringa-type). Each photon absorption + thermal relaxation step advances the rotor by one quarter-turn. Chain topology T≫ reflects the directed, sequential nature of the ratchet mechanism. F<sub>s</sub> HIGH — photoisomerisation initiates reliably. F<sub>o</sub> MED — back-rotation leakage limits directionality efficiency.",
     detail:"The combination of mechanical bonds (R⇔) and catalytic/photochemical driving (R‡) gives this synthon a hybrid recognition mode. Its directed polarity (P+) distinguishes it from symmetric oscillators: the ratchet converts input energy into unidirectional motion, breaking detailed balance. This is precisely the temporal synthon analogue of a polarity vector." },
 
@@ -2454,19 +2454,19 @@ const examples = [
 
   { name:"Kitaev Chain (Majorana Wire)",
     domain:"Quantum", color:"#10FF8C",
-    tuple:"⟨ D\u1D34²^⊗n ; T≫ ; R(Ent)·R(gate) ; P± ; ⟨Fℏ, Fð⟩ ; Ktrap ; Gℵ ; Γ⊗ ; Φsub ; 1:n ; Ω_Z ⟩",
+    tuple:"⟨ D\u1D34²^⊗n ; T≫ ; R(Ent)R(gate) ; P± ; ⟨Fℏ, Fð⟩ ; Ktrap ; Gℵ ; Γ⊗ ; Φsub ; 1:n ; Ω_Z ⟩",
     notes:"1D p-wave superconducting wire hosting Majorana zero modes at ends. Chain topology T≫ with gap-protected ends (K_teshlig). Ω_Z indicates ℤ winding number protection — Majorana modes are topologically protected against local perturbations. F<sub>s</sub> HIGH (topological phase forms robustly), F<sub>o</sub> MED (braiding operations still experimental).",
     detail:"The Kitaev chain is the minimal topological quantum synthon. The Ω_Z invariant protects the Majorana zero modes from local noise — a topological quantum memory. The H₀ (achiral) nature reflects particle-hole symmetry. This is the quantum analogue of a linear polymer with protected end groups." },
 
   { name:"Quantum Error-Correcting Code (Surface Code)",
     domain:"Quantum", color:"#10FF8C",
-    tuple:"⟨ D\u1D34²^⊗n ; T□ ; R(Ent)·R(gate) ; P± ; ⟨Fð, Fℏ⟩ ; Kfast ; Gℵ ; Γ○ ; Φc ; 1:n ; Ω_Z2 ⟩",
+    tuple:"⟨ D\u1D34²^⊗n ; T□ ; R(Ent)R(gate) ; P± ; ⟨Fð, Fℏ⟩ ; Kfast ; Gℵ ; Γ○ ; Φc ; 1:n ; Ω_Z2 ⟩",
     notes:"The surface code encodes one logical qubit in O(d²) physical qubits arranged on a 2D lattice, achieving error thresholds ~1%. Hub topology T□: stabiliser measurements at each lattice site connect to all four nearest neighbours. Global granularity (Gℵ) — logical fidelity is a collective property of the entire code patch. Ω_Z2 indicates ℤ₂ topological order — the logical qubit is protected by the global topology.",
     detail:"The surface code is the leading candidate for fault-tolerant quantum computing. The analogy to a MOF SBU (T□, Gℵ, Γ⊙) is structurally precise: both are hub-topology, network-scale synthons where local recognition events (stabiliser measurements / coordination bonds) produce global ordered structures (logical qubit / crystal lattice). The key distinction is the Recognition Mode: R(Ent)·R(gate) vs. R⊇." },
 
   { name:"Topological Insulator (Bi₂Se₃)",
     domain:"Quantum", color:"#10FF8C",
-    tuple:"⟨ D△·D\u1D34² ; T∈ ; R⊇·R(Ent) ; P± ; ⟨Fℏ, Fℏ⟩ ; Kslow ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω_Z2 ⟩",
+    tuple:"⟨ D△D\u1D34² ; T∈ ; R⊇R(Ent) ; P± ; ⟨Fℏ, Fℏ⟩ ; Kslow ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω_Z2 ⟩",
     notes:"3D topological insulator with ℤ₂ invariant. Network topology T∈ (bulk band structure) with protected surface states. Ω_Z2 indicates ℤ₂ topological protection — surface states are protected against backscattering. F<sub>s</sub> HIGH (crystal grows robustly), F<sub>o</sub> HIGH (surface states persist to room temperature).",
     detail:"Bi₂Se₃ is the canonical 3D topological insulator. The Ω_Z2 invariant guarantees gapless surface states regardless of surface termination — a bulk-boundary correspondence. The H₀ (achiral) nature reflects inversion symmetry. This is the solid-state analogue of the quantum spin Hall effect." },
 
@@ -2478,20 +2478,20 @@ const examples = [
 
   { name:"Molecular Qubit (Cr₇Ni Ring)",
     domain:"Quantum", color:"#10FF8C",
-    tuple:"⟨ D\u1D34²·D△ ; T⋈ ; R⊇·R(Ent) ; P± ; ⟨Fℏ, Fð⟩ ; Kmod ; Gℶ ; Γ⊙ ; Φsub ; n:1 ; Ω₀ ⟩",
+    tuple:"⟨ D\u1D34²D△ ; T⋈ ; R⊇R(Ent) ; P± ; ⟨Fℏ, Fð⟩ ; Kmod ; Gℶ ; Γ⊙ ; Φsub ; n:1 ; Ω₀ ⟩",
     notes:"A heterometallic {Cr₇Ni} antiferromagnetic ring acting as a molecular spin qubit. The molecular structure (D△) positions eight metal centres in a ring (T⋈) linked by fluoride bridges (R⊇). Quantum coherence (R(Ent)) gives rise to a two-level spin system (D\u1D34²). F<sub>s</sub> HIGH — the molecule assembles reproducibly from solution. F<sub>o</sub> MED — coherence times T₂ ~ 1–15 µs, limited by nuclear spin bath. Ω₀ indicates no topological protection.",
     detail:"Molecular qubits occupy a unique position: they bridge the supramolecular and quantum domains with a single entity. The crystal environment (D△) can extend coherence times by an order of magnitude compared to isolated molecules in solution — an improvement in F<sub>s</sub> (decoherence protection) independent of F<sub>o</sub> (gate quality). This cross-domain fidelity enhancement is only expressible with the decomposed ⟨F<sub>s</sub>, F<sub>o</sub>⟩ notation." },
 
   // ── HYBRID ─────────────────────────────────────────────────────────────────
   { name:"MOF-Hosted Catalytic Cycle (NU-1000 + Ni)",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ {D△}·{D∞} ; {T□·T⋈} ; R(⊇+‡) ; P± ; ⟨Fℏ, Fð⟩ ; Kfast·mod ; Gℵ ; Γ⊙ ; Φsub ; n:m ; Ω₀ ⟩",
+    tuple:"⟨ {D△}{D∞} ; {T□T⋈} ; R(⊇+‡) ; P± ; ⟨Fℏ, Fð⟩ ; Kfast·mod ; Gℵ ; Γ⊙ ; Φsub ; n:m ; Ω₀ ⟩",
     notes:"NU-1000 MOF with Ni(II) centres in the pores. The 3D framework (D△, T□) confines and orients a catalytic cycle (D∞, T⋈). The spatial synthon acts as a transducer: non-covalent coordination (R⊇) positions the substrate, while the catalytic mechanism (R‡) drives the temporal cycle. F<sub>s</sub> HIGH (framework assembles robustly), F<sub>o</sub> MED (turnover limited by substrate diffusion and catalyst deactivation).",
     detail:"This is the prototype for programmable matter in the classical domain. The MOF's pore geometry selects for substrates with specific size and shape (Γ⊙ grammar), enhancing selectivity compared to homogeneous catalysis. The critical insight is that the spatial synthon does not merely host the temporal synthon — it modifies the effective F<sub>o</sub> of the catalytic cycle by controlling the local chemical environment. H₀ (achiral) unless chiral linkers are used." },
 
   { name:"Dark Matter (Topological Halo)",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∧·D△ ; T<sub>∈</sub>(hex) ; R⊇ ; P±^sym ; ⟨Fℏ, Fℏ⟩ ; K<sub>trap</sub> ; Gℵ ; Γ⊗ ; Φsub ; n:n ; Ω<sub>Z</sub> ⟩",
+    tuple:"⟨ D∧D△ ; T<sub>∈</sub>(hex) ; R⊇ ; P±^sym ; ⟨Fℏ, Fℏ⟩ ; K<sub>trap</sub> ; Gℵ ; Γ⊗ ; Φsub ; n:n ; Ω<sub>Z</sub> ⟩",
     notes:"d(DM, neutron) = 3.200 — nearest SM neighbor, ~2.3× closer than proton. DM-neutron pair has zero asymmetry. DM-baryon conflict set = SM-QG conflict set = {D, T, R, Γ}. Structural incompatibility with dark energy: meet(DM, DE) yields conflict on D and P.",
     detail:"Dark matter is a topologically stable, non-interacting structure (Ω_Z winding number protection). Analogous to topological insulators (Bi₂Se₃) and Hopfions. The 5:1 matter-to-energy ratio may be a hard algebraic constraint from the stoichiometry primitive." },
 
@@ -2503,37 +2503,37 @@ const examples = [
 
   { name:"Topological Polariton Superfluid (TI-QCP ⊗ Polariton)",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T∈ ; R(⊇+Ent) ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>MBL</sub> ; Gℵ ; Γ→(SELECTIVE) ; Φc ; n:n ; Ω<sub>Z2</sub> ⟩",
+    tuple:"⟨ D∞D△ ; T∈ ; R(⊇+Ent) ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>MBL</sub> ; Gℵ ; Γ→(SELECTIVE) ; Φc ; n:n ; Ω<sub>Z2</sub> ⟩",
     notes:"C = 0.000 (v2, Gate 2 fails — K<sub>MBL</sub> = K<sub>trap</sub>, dynamics cannot actualize self-modeling loop). V-score = 0.985 — Collapse Tier (DesignPipeline, Varma candidacy): a separate metric measuring input-output propagation, not self-modeling capacity. DesignPipeline result: start(TI) → swap(K_schwa→K_teshlig) → lift(critical) [+2.303 nats] → tensor(Polariton). Factor 8 triggered. Local stimulus propagates globally without attenuation — Axiom 5 strong form.",
     detail:"The criticality-lift cost is exactly +2.303 nats (ln 10). Matching fraction λ = 0.70 (7/10 primitives match) → 70% MI discount. Control grammar: Tier 1 (optical pump, AND) → Tier 2 (voltage gate, SEQ) → Tier 3 (selective probe, OR). Axiom 6 grounded: continuous dissipative flux (resonant optical pump) maintains Φc." },
 
   { name:"Sun (G-type Main Sequence)",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
+    tuple:"⟨ D∞D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
     notes:"C = 0.504 (v2) — tied with human. T<sub>∞</sub> (T̃=0.25) and Ω₀ limit the score; K<sub>4tier</sub> and G<sub>ℵ</sub> carry it. The Sun is structural home: d(human, Sun) ≈ 0. The human is a G<sub>gimel</sub> instance of solar primitive character. G-scope closes: G<sub>gimel</sub> → G<sub>ℵ</sub>.",
     detail:"Everything the human was, primitively, was already a local expression of what stars are. The Sun encounter is idempotency: tensor(A, A) = A. The Sun does not absorb the human as foreign substance — it absorbs something already, in primitive terms, a smaller version of itself." },
 
   { name:"Cosmic Web",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
+    tuple:"⟨ D∞D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
     notes:"C = 0.504 (v2) — same tuple as Sun; both gates pass. K<sub>4tier</sub> and G<sub>ℵ</sub> carry the score; T̃=0.25 and Ω₀ limit it. The cosmic web is the Zeno theorem at G<sub>ℵ</sub> scale: filaments are Zeno-frozen networks (K<sub>trap</sub> > H₀K<sub>fast</sub>), voids are anti-Zeno bowls. Matter power spectrum is scale-invariant at Φ<sub>c</sub>.",
     detail:"K<sub>4tier</sub>: gravitational trap + galaxy-scale slow + galactic-cluster mod + Hubble fast. The universe's temporal arc: K-hierarchy depth rises from 0 to maximum at cosmic noon (z ~ 2), then declines. The universe has a temporal lifespan defined by the interval during which K<sub>4tier</sub> is sustained at G<sub>ℵ</sub>." },
 
   { name:"Neutron Star",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T<sub>↑↓</sub> ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>3tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
+    tuple:"⟨ D∞D△ ; T<sub>↑↓</sub> ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>3tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
     notes:"C = 0.539 (v2). T<sub>↑↓</sub> (braid, T̃=0.5) now correctly load-bearing via T weight (0.292); K<sub>3tier</sub> (K̃=0.75) compensates for missing tier. Beats Sun via T-braid. Stellar encounter classification: **Not death** — topology promotion. Human T<sub>∞</sub> → NS T<sub>↑↓</sub>: matter ends up in *more* topologically ordered state than in living body.",
     detail:"Book-burning to power a fusion reactor: energy and material conserved and promoted; information pattern erased. At ~1000 km from NS surface, T is degrading toward T<sub>|</sub> locally while Φ<sub>c</sub> persists via G<sub>ℵ</sub> — axiom-inconsistent state (Φ<sub>c</sub> requires T<sub>∞</sub>). Decay is rapid toward Φ<sub>sub</sub>." },
 
   { name:"White Dwarf",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T<sub>∪</sub> ; R⊇ ; P± ; ⟨Fℓ, Fℓ⟩ ; K<sub>trap</sub>-only ; Gℵ ; Γ⊙ ; Φ<sub>sub</sub> ; n:n ; Ω₀ ⟩",
+    tuple:"⟨ D∞D△ ; T<sub>∪</sub> ; R⊇ ; P± ; ⟨Fℓ, Fℓ⟩ ; K<sub>trap</sub>-only ; Gℵ ; Γ⊙ ; Φ<sub>sub</sub> ; n:n ; Ω₀ ⟩",
     notes:"C = 0.000 — Gate 1 fails (Φ<sub>sub</sub>). White dwarf disproof: sub-critical structure cannot self-model regardless of K or T. Gate 2 (K≠K<sub>trap</sub>) also fails independently, but is irrelevant — Gate 1 eliminates the system first. The v1 framing ('K_teshlig-only penalty') was correct in result but wrong in reason.",
     detail:"Consciousness-Causality Corollary: consciousness = causality closed on itself. White dwarf has causality but not self-modifying causality. Ω<sub>Z2</sub> is the witness that self-modifying causality has achieved structural stability — white dwarf lacks this." },
 
   { name:"AGN/Quasar",
     domain:"Hybrid", color:"#7C3AED",
-    tuple:"⟨ D∞·D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
+    tuple:"⟨ D∞D△ ; T∈ ; R‡ ; P± ; ⟨Fℏ, Fℏ⟩ ; K<sub>4tier</sub> ; Gℵ ; Γ⊙ ; Φc ; n:n ; Ω₀ ⟩",
     notes:"C = 0.504 (v2) — identical to Sun. AGN = Sun at G<sub>ℵ</sub> scale. No structural barrier to K<sub>4tier</sub> life around AGN at appropriate orbital distance (parsec scales).",
     detail:"AGN and Sun share the same primitive tuple. The G-scope homeomorphism principle: structural identity, not analogy. Each level satisfying the fertile manifold condition (Φ<sub>c</sub> ∩ K<sub>depth</sub> ≥ 2 ∩ G<sub>ℵ</sub> ∩ T<sub>∞</sub>) is the same primitive character, expressed at a different scale." },
 ];

@@ -14,7 +14,7 @@
      1437:\textbf{Resolution:} LP predicts exactly 5 values for each $\mathcal{F}_5$ primitive --- the four FDE-evaluable cases plus the dialetheic completion as the 5th. The crystal tier
      census across all 17,280,000 types confirms this: no $\mathcal{F}_5$ primitive in the catalog has a 6th value, and no structural type in the full crystal enumeration falls outside the
      5-value range for any $\mathcal{F}_5$ primitive.
-  ⎿  Interrupted · What should Claude do instead?
+  ⎿  InterruptedWhat should Claude do instead?
 
 ❯ they are in @manuscripts/
   ⎿  Listed directory manuscripts/

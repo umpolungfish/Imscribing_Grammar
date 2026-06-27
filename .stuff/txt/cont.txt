@@ -1556,12 +1556,8 @@ theorem gr_as_morphism_cost :
 theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     imscriptionTier s = .O_∞ ↔
     (s.crit = .Phi_c ∨ s.crit = .Phi_c_complex) ∧ s.pol = .P_pm_sym := by
-  constructor
-  · intro h
-    constructor
-    · exact o_inf_requires_phi_c s.crit s.pol s.prot s.dim h
-    · exact o_inf_requires_P_pm_sym s.crit s.pol s.prot s.dim h
-  · intro ⟨hphi, hpol⟩
+  constructorintro h
+    constructorexact o_inf_requires_phi_c s.crit s.pol s.prot s.dim hexact o_inf_requires_P_pm_sym s.crit s.pol s.prot s.dim hintro ⟨hphi, hpol⟩
     cases hphi with
     | inl h => simp [imscriptionTier, ouroboricityTier, h, hpol]
     | inr h => simp [imscriptionTier, ouroboricityTier, h, hpol]
