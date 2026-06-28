@@ -1,3 +1,11 @@
+imscribe catalog list: remove '; ' delimiter from tuple display — 2026-06-27
+
+imscrbgrmr/cli.py:263 — `"; ".join(vals)` → `"".join(vals)`; tuples now
+render as ⟨𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑖𐑳⟩ (ligature-bound) not ⟨𐑦; 𐑸; 𐑽; …⟩.
+Affects catalog list table only; annotated conflict-resolution strings unchanged.
+
+────────────────────────────────────────────────────────────────────────────────
+
 zenodo_draft.py: fix image loading in build subdirs — 2026-06-27
 
 Root cause of images not appearing in compiled PDFs when zenodo_draft.py builds

@@ -260,7 +260,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
             name = entry.get("name", "?")
             d_val = entry.get("Ð", "?")
             vals = [entry.get(p, "?") for p in PRIM_ORDER]
-            notation = "⟨" + "; ".join(vals) + "⟩"
+            notation = "⟨" + "".join(vals) + "⟩"
             table.add_row(name, notation, d_val)
 
         console.print(table)
