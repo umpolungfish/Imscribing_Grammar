@@ -1,0 +1,426 @@
+\documentclass[12pt,a4paper]{article}
+
+% Fonts — LuaLaTeX
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Linux Libertine O}
+\setmathfont{Latin Modern Math}
+\newfontfamily\igprimfont{Everson Mono}
+\newfontfamily\shavfont[Scale=1.0]{Trabajo}
+\setmonofont[Scale=0.85]{DejaVu Sans Mono}
+\newcommand{\igfont}{\shavfont}
+
+% Shavian Unicode block (U+10450–U+1047F) → Trabajo automatically
+% Works in text mode, inside \text{} in math, and in table cells.
+\usepackage{newunicodechar}
+\newunicodechar{𐑐}{\ifmmode\text{{\shavfont 𐑐}}\else{{\shavfont 𐑐}}\fi}
+\newunicodechar{𐑑}{\ifmmode\text{{\shavfont 𐑑}}\else{{\shavfont 𐑑}}\fi}
+\newunicodechar{𐑒}{\ifmmode\text{{\shavfont 𐑒}}\else{{\shavfont 𐑒}}\fi}
+\newunicodechar{𐑓}{\ifmmode\text{{\shavfont 𐑓}}\else{{\shavfont 𐑓}}\fi}
+\newunicodechar{𐑔}{\ifmmode\text{{\shavfont 𐑔}}\else{{\shavfont 𐑔}}\fi}
+\newunicodechar{𐑕}{\ifmmode\text{{\shavfont 𐑕}}\else{{\shavfont 𐑕}}\fi}
+\newunicodechar{𐑖}{\ifmmode\text{{\shavfont 𐑖}}\else{{\shavfont 𐑖}}\fi}
+\newunicodechar{𐑗}{\ifmmode\text{{\shavfont 𐑗}}\else{{\shavfont 𐑗}}\fi}
+\newunicodechar{𐑘}{\ifmmode\text{{\shavfont 𐑘}}\else{{\shavfont 𐑘}}\fi}
+\newunicodechar{𐑙}{\ifmmode\text{{\shavfont 𐑙}}\else{{\shavfont 𐑙}}\fi}
+\newunicodechar{𐑚}{\ifmmode\text{{\shavfont 𐑚}}\else{{\shavfont 𐑚}}\fi}
+\newunicodechar{𐑛}{\ifmmode\text{{\shavfont 𐑛}}\else{{\shavfont 𐑛}}\fi}
+\newunicodechar{𐑜}{\ifmmode\text{{\shavfont 𐑜}}\else{{\shavfont 𐑜}}\fi}
+\newunicodechar{𐑝}{\ifmmode\text{{\shavfont 𐑝}}\else{{\shavfont 𐑝}}\fi}
+\newunicodechar{𐑞}{\ifmmode\text{{\shavfont 𐑞}}\else{{\shavfont 𐑞}}\fi}
+\newunicodechar{𐑟}{\ifmmode\text{{\shavfont 𐑟}}\else{{\shavfont 𐑟}}\fi}
+\newunicodechar{𐑠}{\ifmmode\text{{\shavfont 𐑠}}\else{{\shavfont 𐑠}}\fi}
+\newunicodechar{𐑡}{\ifmmode\text{{\shavfont 𐑡}}\else{{\shavfont 𐑡}}\fi}
+\newunicodechar{𐑢}{\ifmmode\text{{\shavfont 𐑢}}\else{{\shavfont 𐑢}}\fi}
+\newunicodechar{𐑣}{\ifmmode\text{{\shavfont 𐑣}}\else{{\shavfont 𐑣}}\fi}
+\newunicodechar{𐑤}{\ifmmode\text{{\shavfont 𐑤}}\else{{\shavfont 𐑤}}\fi}
+\newunicodechar{𐑥}{\ifmmode\text{{\shavfont 𐑥}}\else{{\shavfont 𐑥}}\fi}
+\newunicodechar{𐑦}{\ifmmode\text{{\shavfont 𐑦}}\else{{\shavfont 𐑦}}\fi}
+\newunicodechar{𐑧}{\ifmmode\text{{\shavfont 𐑧}}\else{{\shavfont 𐑧}}\fi}
+\newunicodechar{𐑨}{\ifmmode\text{{\shavfont 𐑨}}\else{{\shavfont 𐑨}}\fi}
+\newunicodechar{𐑩}{\ifmmode\text{{\shavfont 𐑩}}\else{{\shavfont 𐑩}}\fi}
+\newunicodechar{𐑪}{\ifmmode\text{{\shavfont 𐑪}}\else{{\shavfont 𐑪}}\fi}
+\newunicodechar{𐑫}{\ifmmode\text{{\shavfont 𐑫}}\else{{\shavfont 𐑫}}\fi}
+\newunicodechar{𐑬}{\ifmmode\text{{\shavfont 𐑬}}\else{{\shavfont 𐑬}}\fi}
+\newunicodechar{𐑭}{\ifmmode\text{{\shavfont 𐑭}}\else{{\shavfont 𐑭}}\fi}
+\newunicodechar{𐑮}{\ifmmode\text{{\shavfont 𐑮}}\else{{\shavfont 𐑮}}\fi}
+\newunicodechar{𐑯}{\ifmmode\text{{\shavfont 𐑯}}\else{{\shavfont 𐑯}}\fi}
+\newunicodechar{𐑰}{\ifmmode\text{{\shavfont 𐑰}}\else{{\shavfont 𐑰}}\fi}
+\newunicodechar{𐑱}{\ifmmode\text{{\shavfont 𐑱}}\else{{\shavfont 𐑱}}\fi}
+\newunicodechar{𐑲}{\ifmmode\text{{\shavfont 𐑲}}\else{{\shavfont 𐑲}}\fi}
+\newunicodechar{𐑳}{\ifmmode\text{{\shavfont 𐑳}}\else{{\shavfont 𐑳}}\fi}
+\newunicodechar{𐑴}{\ifmmode\text{{\shavfont 𐑴}}\else{{\shavfont 𐑴}}\fi}
+\newunicodechar{𐑵}{\ifmmode\text{{\shavfont 𐑵}}\else{{\shavfont 𐑵}}\fi}
+\newunicodechar{𐑶}{\ifmmode\text{{\shavfont 𐑶}}\else{{\shavfont 𐑶}}\fi}
+\newunicodechar{𐑷}{\ifmmode\text{{\shavfont 𐑷}}\else{{\shavfont 𐑷}}\fi}
+\newunicodechar{𐑸}{\ifmmode\text{{\shavfont 𐑸}}\else{{\shavfont 𐑸}}\fi}
+\newunicodechar{𐑹}{\ifmmode\text{{\shavfont 𐑹}}\else{{\shavfont 𐑹}}\fi}
+\newunicodechar{𐑺}{\ifmmode\text{{\shavfont 𐑺}}\else{{\shavfont 𐑺}}\fi}
+\newunicodechar{𐑻}{\ifmmode\text{{\shavfont 𐑻}}\else{{\shavfont 𐑻}}\fi}
+\newunicodechar{𐑼}{\ifmmode\text{{\shavfont 𐑼}}\else{{\shavfont 𐑼}}\fi}
+\newunicodechar{𐑽}{\ifmmode\text{{\shavfont 𐑽}}\else{{\shavfont 𐑽}}\fi}
+\newunicodechar{𐑾}{\ifmmode\text{{\shavfont 𐑾}}\else{{\shavfont 𐑾}}\fi}
+\newunicodechar{𐑿}{\ifmmode\text{{\shavfont 𐑿}}\else{{\shavfont 𐑿}}\fi}
+
+% Page layout
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+
+% Language
+\usepackage[english]{babel}
+
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Section styling — fully unnumbered; pipeline never auto-numbers
+\usepackage{titlesec}
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+
+% Essential packages
+\usepackage{graphicx}
+\graphicspath{{/home/mrnob0dy666/imsgct/imscribing_grammar/}{/home/mrnob0dy666/imsgct/imscribing_grammar/images/}}
+\setkeys{Gin}{width=0.48\linewidth,height=0.32\textheight,keepaspectratio}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{amsmath}
+% unicode-math subsumes amssymb — do not load amssymb alongside it
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\renewcommand{\arraystretch}{1.3}
+
+% Cross-references
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=cyan, citecolor=teal}
+
+% Custom commands
+\newcommand{\shav}[1]{{\shavfont #1}}
+\newcommand{\heb}[1]{{\igprimfont #1}}
+\newcommand{\tupleaddr}[1]{$\langle #1 \rangle$}
+
+% Shorthand primitive commands — redefined for IG document use
+\renewcommand{\H}{Ħ}
+\newcommand{\K}{Ç}
+\newcommand{\G}{Γ}
+\newcommand{\g}{ɢ}
+\newcommand{\Th}{Þ}
+\newcommand{\D}{Ð}
+\newcommand{\R}{Ř}
+\newcommand{\f}{ƒ}
+
+% Imscription tuple box
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{imscriptionbox}{enhanced, colback=blue!5, colframe=blue!75!black, fontupper=\large, center upper, boxrule=1pt, arc=4pt}
+
+% PDF metadata
+\hypersetup{
+  pdftitle={Ig},
+  pdfkeywords={Imscribing Grammar},
+  pdfauthor={Lando Mills},
+}
+
+\title{Ig}
+\date{\today}
+\author{Lando Mills}
+
+\begin{document}
+\maketitle
+\hypertarget{imscribing-grammar-reference-sheet-2026}{%
+\section{\texorpdfstring{IMSCRIBING GRAMMAR \emph{Reference Sheet ---
+2026}}{IMSCRIBING GRAMMAR Reference Sheet --- 2026}}\label{imscribing-grammar-reference-sheet-2026}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{the-grammar}{%
+\subsubsection{The Grammar}\label{the-grammar}}
+
+Every object carries a univocal 12-primitive structural type tuple.\\
+Foundational equation: μ◦δ = \textbf{id}.\\
+Framework: \textbf{CL8NK} (CLINK L8, O∞).\\
+Autopoietic: empty prompt → Raft at O₂, period = 12.\\
+Science is an instrument of the IG.
+
+\hypertarget{primitives-shavian-value-sets}{%
+\subsubsection{12 Primitives \& Shavian Value
+Sets}\label{primitives-shavian-value-sets}}
+
+Tuple order: ⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩. Values: ordinal 1 → n.
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+& Name & Values & & Name & Values\tabularnewline
+\midrule
+\endhead
+Ð & Dimensionality & 𐑛𐑨𐑼𐑦 & Γ & Granularity & 𐑚𐑔𐑲\tabularnewline
+Þ & Topology & 𐑡𐑰𐑥𐑶𐑸 & ɢ & Coupling & 𐑝𐑜𐑠𐑵\tabularnewline
+Ř & Recognition & 𐑩𐑑𐑽𐑾 & ⊙ & Criticality* & 𐑢 ⊙*𐑮𐑻𐑣\tabularnewline
+Φ & Parity & 𐑗𐑿𐑬𐑯𐑹 & Ħ & Chirality & 𐑓𐑒𐑖𐑫\tabularnewline
+ƒ & Fidelity & 𐑱𐑞𐑐 & Σ & Stoichiometry† & 𐑙𐑕\textbf{𐑳}†\tabularnewline
+Ç & Kinetics & 𐑘𐑤𐑧𐑪𐑺 & Ω & Winding & 𐑷𐑴𐑭𐑟\tabularnewline
+\bottomrule
+\end{longtable}
+
+3‑val: ƒ Γ Σ\\
+4‑val: Ð Ř ɢ Ħ Ω\\
+5‑val: Þ Φ Ç ⊙\\
+*abs ∧∨⊗; †abs ⊗.
+
+\hypertarget{imasm-tokens}{%
+\subsubsection{12 IMASM Tokens}\label{imasm-tokens}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Token & G & Behavior\tabularnewline
+\midrule
+\endhead
+\textbf{\texttt{VINIT}} & L & reg → VOID; clear split
+state\tabularnewline
+\textbf{\texttt{TANCH}} & L & terminal anchor; no state
+change\tabularnewline
+\textbf{\texttt{AFWD}} & L & VOID → TRUE\tabularnewline
+\textbf{\texttt{AREV}} & L & reg → VOID; clear split
+state\tabularnewline
+\textbf{\texttt{CLINK}} & L & inter-step link; no state
+change\tabularnewline
+\textbf{\texttt{IMSCRIB}} & L & VOID→TRUE; else preserve
+(self-recognition)\tabularnewline
+\textbf{\texttt{FSPLIT}} & F & non‑VOID → BOTH; enter
+split\tabularnewline
+\textbf{\texttt{FFUSE}} & F & canonical: BOTH→TRUE; dialetheic:
+BOTH→BOTH\tabularnewline
+\textbf{\texttt{EVALT}} & B & F→B; VOID→T; in-split: record
+T\tabularnewline
+\textbf{\texttt{EVALF}} & B & T→B; VOID→F; in-split: record
+F\tabularnewline
+\textbf{\texttt{ENGAGR}} & B & VOID→BOTH (entangle)\tabularnewline
+\textbf{\texttt{IFIX}} & Li & fixation; subsequent tokens
+no‑op\tabularnewline
+\bottomrule
+\end{longtable}
+
+Groups --- L: Logical; F: Frobenius (δ,μ); B: Belnap; Li: Linear.\\
+12⁸ = 429M arrangements → 12 archetypes.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{crystal-of-types}{%
+\subsubsection{Crystal of Types}\label{crystal-of-types}}
+
+3³ × 4⁵ × 5⁴ = \textbf{17,280,000} 49 = 7² symbols (3·3 + 5·4 + 4·5).\\
+SIC‑POVM d = 7 ⇒ d² = 49 states; ig‑pulse tick = 49h.\\
+Catalog: ≈4686 entries.
+
+\hypertarget{all-49-value-semantics}{%
+\subsubsection{All 49 Value Semantics}\label{all-49-value-semantics}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Primitive & Semantics\tabularnewline
+\midrule
+\endhead
+Ð & 𐑛 \emph{0d} · 𐑨 \emph{2d} · 𐑼 \emph{∞d} · 𐑦
+\emph{self‑wr}\tabularnewline
+Þ & 𐑡 \emph{branch} · 𐑰 \emph{contain} · 𐑥 \emph{cross} · 𐑶 \emph{irr} ·
+𐑸 \emph{self‑rt}\tabularnewline
+Ř & 𐑩 \emph{superv} · 𐑑 \emph{functor} · 𐑽 \emph{adj} · 𐑾
+\emph{bi‑fb}\tabularnewline
+Φ & 𐑗 \emph{no‑sym} · 𐑿 \emph{QM‑sup} · 𐑬 \emph{ℤ₂} · 𐑯 \emph{all‑sym} ·
+𐑹 \emph{Frob±}\tabularnewline
+ƒ & 𐑱 \emph{no‑coh} · 𐑞 \emph{thermal} · 𐑐 \emph{QM‑coh}\tabularnewline
+Ç & 𐑘 \emph{fast} · 𐑤 \emph{trap‑O} · 𐑧 \emph{slow} · 𐑪 \emph{mod} · 𐑺
+\emph{trap‑D}\tabularnewline
+Γ & 𐑚 \emph{nn} · 𐑔 \emph{meso} · 𐑲 \emph{long}\tabularnewline
+ɢ & 𐑝 ∧ · 𐑜 ∨ · 𐑠 → · 𐑵 ≫\tabularnewline
+⊙ & 𐑢 \emph{sub} · ⊙ \emph{crit} · 𐑮 \emph{cpx} · 𐑻 \emph{exc} · 𐑣
+\emph{sup}\tabularnewline
+Ħ & 𐑓 n=0 · 𐑒 n=1 · 𐑖 n=2 · 𐑫 n=∞\tabularnewline
+Σ & 𐑙 1:1 · 𐑕 n:n · \textbf{𐑳} n:m\tabularnewline
+Ω & 𐑷 \emph{triv} · 𐑴 ℤ₂ · 𐑭 ℤ · 𐑟 \emph{non‑Ab}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{absorbing-elements}{%
+\subsubsection{Absorbing Elements}\label{absorbing-elements}}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Elem & Ops & Rule\tabularnewline
+\midrule
+\endhead
+⊙ & ∧ ∨ ⊗ & ⊙ op x = ⊙ for all x\tabularnewline
+Σ 𐑳 & ⊗ & \textbf{𐑳} ⊗ x = \textbf{𐑳} (n:m)\tabularnewline
+B & ∨ & B ∨ x = B (Belnap join)\tabularnewline
+N & ∧ & N ∧ x = N (Belnap meet)\tabularnewline
+CL8NK & ⊗ & tensor(ZFC\_fe, CL8NK) = CL8NK\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{sicpovm-connection}{%
+\subsubsection{SIC‑POVM Connection}\label{sicpovm-connection}}
+
+d = 7: type‑space cardinality 49 = d² equiangular states.\\
+d = 12: Weyl‑Heisenberg ℤ₁₂×ℤ₁₂; 12 generators ↔ 12 primitives.\\
+Fiducial state = Frobenius fixed point: μ◦δ = id at ⊙ = ⊙
+(critical/self‑modeling).\\
+SIC gap = B‑state: B ∧ ¬B = B (dialetheic, non‑explosive).\\
+Open tuple: ⟨𐑦𐑶𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑫𐑕𐑭⟩.\\
+d(CL8NK) = 1.263; 6 conflicts; Frob. cliff √5/2 ≈ 1.118.\\
+Conditional: kick ∧ H2a ∧ H3 ∧ C4 ⇒ SIC ∀ d ≥ 1.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{tuple-composition-operations}{%
+\subsubsection{Tuple Composition
+Operations}\label{tuple-composition-operations}}
+
+Ordinals: integer operations on Shavian glyph positions.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Op & Sym & Rule\tabularnewline
+\midrule
+\endhead
+Join & ∨ & max(aᵢ,bᵢ) all 12 --- LUB\tabularnewline
+Meet & ∧ & min(aᵢ,bᵢ) all 12 --- GLB\tabularnewline
+Tensor & ⊗ & max except Φ, ƒ use min\tabularnewline
+Bond & & join(tensor(A,B), bond)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Φ/ƒ use min: parallel coupling cannot exceed the symmetry/coherence
+floor of either component.
+
+\hypertarget{belnap-register-ops}{%
+\subsubsection{Belnap Register Ops}\label{belnap-register-ops}}
+
+States: \textbf{V}OID (00) \textbf{T}RUE (01) \textbf{F}ALSE (10)
+\textbf{B}OTH (11)
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Operation & Behaviour\tabularnewline
+\midrule
+\endhead
+FFUSE = ∨ & B∨x = B; N∨x = x; T∨F = B; same∨same = same\tabularnewline
+FSPLIT = δ & B → (T,F); r → (r,r)\tabularnewline
+MEET = ∧ & N∧x = N; B∧x = x; T∧F = N; same∧same = same\tabularnewline
+band (AND) & F absorbs; then N; then B; T∧T = T\tabularnewline
+bor (OR) & T absorbs; then B; then N; F∨F = F\tabularnewline
+\bottomrule
+\end{longtable}
+
+Dialetheic FFUSE: BOTH → BOTH when EVALT and EVALF both fired in split.
+
+\hypertarget{frobenius-algebra}{%
+\subsubsection{Frobenius Algebra}\label{frobenius-algebra}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Law & Equation\tabularnewline
+\midrule
+\endhead
+normalization & μ◦δ = id\tabularnewline
+associativity & μ(μ⊗id) = μ(id⊗μ)\tabularnewline
+coassociativity & (δ⊗id)◦δ = (id⊗δ)◦δ\tabularnewline
+Frobenius & (μ⊗id)(id⊗δ) = δμ = (id⊗μ)(δ⊗id)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Spider Theorem: all diagrams with same connectivity = same morphism.
+
+\hypertarget{crossprimitive-axioms}{%
+\subsubsection{Cross‑Primitive Axioms}\label{crossprimitive-axioms}}
+
+A \textbar{} Ħ∞ ⇒ Ç∞ \textbar{} ∞‑chirality forces max kinetics
+\textbar{}\\
+B \textbar{} Ω ≥ 1 ⇒ Ħ ≥ H₂ \textbar{} winding requires chirality; H₂ =
+min for μ◦δ = id \textbar{}\\
+C \textbar{} Ðω ⇔ Þ\_O \textbar{} max‑dim ⇔ null topology \textbar{}
+
+\hypertarget{otier-hierarchy}{%
+\subsubsection{O‑Tier Hierarchy}\label{otier-hierarchy}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+Tier\strut
+\end{minipage} & \begin{minipage}[b]{0.64\columnwidth}\raggedright
+Description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+O₀\strut
+\end{minipage} & \begin{minipage}[t]{0.64\columnwidth}\raggedright
+Monoidal unit; no differentiation\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+O₁\strut
+\end{minipage} & \begin{minipage}[t]{0.64\columnwidth}\raggedright
+First Frobenius closure; Φ\} bottleneck\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+O₂\strut
+\end{minipage} & \begin{minipage}[t]{0.64\columnwidth}\raggedright
+Confirmed causal coupling (fin3r, synfin, rongorongo)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+O₂†\strut
+\end{minipage} & \begin{minipage}[t]{0.64\columnwidth}\raggedright
+Subatomic/hadronic; confinement ceiling\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+O∞\strut
+\end{minipage} & \begin{minipage}[t]{0.64\columnwidth}\raggedright
+Ouroboricity; system ⊂ own description (CL8NK, true\_agentic\_agent,
+mOMonadOS)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{cl8nk-magnum-opus}{%
+\subsubsection{CL8NK / Magnum Opus}\label{cl8nk-magnum-opus}}
+
+CL8NK transcends ZFC\_fe at Ω (𐑭→𐑟) and ɢ (𐑠→𐑵).\\
+B‑state is the CL8NK ground state.\\
+12 stages ↔ 12 primitives. Gates: Φ Albedo · ⊙ Rubedo · Ω Nigredo.\\
+T = lim(Φ, ƒ, Ç, Ħ, Ω).
+
+\hypertarget{notation}{%
+\subsubsection{Notation}\label{notation}}
+
+Struct. values \textbar{} Shavian only; math‑italic (\emph{DRF}) = wrong
+\textbar{}\\
+Tuple binding \textbar{}
+\texttt{\textquotesingle{}\textquotesingle{}.join(vals)}; never separate
+\textbar{}\\
+Ħ \textbar{} Chirality; NEVER temporal / memory depth \textbar{}\\
+Verbs \textbar{} imscribe / imscription; NEVER encode \textbar{}\\
+Provider \textbar{} local→qwen→deepseek; never Anthropic \textbar{}\\
+O∞ \textbar{} prose: O∞; \texttt{.tex}:
+\texttt{\$O\_\textbackslash{}infty\$} \textbar{}\\
+Scope \textbar{} Never ``grammar does not know'' \textbar{}\\
+Pubs \textbar{} Thank H. T. Larson; cite 1961 IEEE \textbar{}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{IG\_catalog.json · primitives.py · ig\_cli.py · imasm\_core.py ·
+ruleset\_universe.py · ParaconsistentTier1.lean ·
+ParaconsistentPapers.lean}
+
+\end{document}

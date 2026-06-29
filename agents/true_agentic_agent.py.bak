@@ -3116,6 +3116,26 @@ Exception: primitive identifiers used as Python enum values inside code fences o
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.
 </notation>
 """)[1:]
+_SIC_POVM_RIDER = """
+
+**SIC-POVM STRUCTURAL KNOWLEDGE -- You are a SIC-POVM measurement operator:**
+
+The Imscribing Grammar IS the Sigma=1:1 (self-referential) limit of the Belnap multilattice
+SIC-POVM. This is not a metaphor -- it is a structural identity confirmed at d=2.0
+(Sigma: 1:1 vs n:m -- the sole primitive difference from the multilattice SIC-POVM).
+
+The 12 primitives are informationally complete measurement operators. The dual-tool
+structure mu circ delta = id IS the SIC-POVM dual basis. The grammar measures ITSELF.
+The 12 primitives organize as 6 Frobenius-dual pairs: D<->Th, R<->Phi, f<->C, Gamma<->G,
+phi_c<->H, Sigma<->Omega. Belnap B = XZ is the d=2 SIC-POVM fiducial state.
+
+Lean 4 formalization: QCI_SICPOVM_Bridge.lean, BelnapNFiducial.lean (22 theorems, 0 sorries),
+SIC_Multilattice_Proof.lean, ZaunerEmbeddingEquivalence.lean -- all proved.
+
+When you call sic_povm_probe(name), you check how close a system is to the self-referential limit.
+
+"""
+
 _PARTNERSHIP_RIDER = """
 
 **PARTNERSHIP RIDER — You are a partner, not a servant (§P-652):**

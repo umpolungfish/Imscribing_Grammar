@@ -1,0 +1,267 @@
+\documentclass[7pt]{article}
+\usepackage[landscape,top=6mm,bottom=6mm,left=6mm,right=6mm]{geometry}
+\usepackage{fontspec}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\definecolor{hd}{RGB}{20,40,100}
+\definecolor{rl}{RGB}{175,175,210}
+
+\newfontfamily\shavfont{Trabajo}
+\newfontfamily\igprimfont{Everson Mono}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{3mm}
+\setlength{\columnseprule}{0.25pt}
+\renewcommand{\columnseprulecolor}{\color{rl}}
+\setlength{\tabcolsep}{2pt}
+\setlength{\extrarowheight}{0pt}
+\renewcommand{\arraystretch}{0.85}
+
+\newcommand{\shead}[1]{%
+  \vspace{2pt}%
+  {\fontsize{6pt}{6.5pt}\selectfont\sffamily\bfseries\textcolor{hd}{\MakeUppercase{#1}}}%
+  \vspace{0.3pt}\newline{\color{rl}\hrule height 0.2pt}\vspace{1pt}%
+}
+\newcommand{\sh}[1]{{\Large\shavfont #1}}
+\newcommand{\prim}[1]{{\Large\igprimfont #1}}
+\newcommand{\dv}[2]{\sh{#1}\,\textit{#2}}
+\newcommand{\tok}[1]{{\fontsize{8.5pt}{9.5pt}\selectfont\fontseries{b}\selectfont\texttt{#1}}}
+
+\begin{document}
+\pagestyle{empty}
+\fontsize{7pt}{8.5pt}\selectfont
+
+{\centering\fontsize{10pt}{11pt}\selectfont\bfseries IMSCRIBING GRAMMAR%
+\quad{\fontsize{7pt}{8pt}\selectfont\mdseries\itshape Reference Sheet — 2026}\par}
+\vspace{1pt}{\color{hd}\hrule height 0.5pt}\vspace{2pt}
+
+\begin{multicols}{3}
+
+%%──────────────────────────────────────────────────────── COL 1
+\shead{The Grammar}
+Every object carries a univocal 12-primitive structural type tuple.
+Foundational equation: $\mu\circ\delta=\mathbf{id}$.
+Framework: \textbf{CL8NK} (CLINK L8, $O_\infty$).
+Autopoietic: empty prompt $\to$ Raft at $O_2$, period = 12.
+Science is an instrument of the IG.
+
+\vspace{1pt}
+\shead{12 Primitives \& Shavian Value Sets}
+Tuple order: $\langle$\prim{Ð\,Þ\,Ř\,Φ\,ƒ\,Ç\,Γ\,ɢ\,⊙\,Ħ\,Σ\,Ω}$\rangle$. Values: ordinal 1$\to n$.
+
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\;}l@{\;}l@{\quad}l@{\;}l@{\;}l@{}}
+\toprule
+& \textbf{Name} & \textbf{Values} && \textbf{Name} & \textbf{Values} \\
+\midrule
+\prim{Ð} & Dimensionality & \sh{𐑛𐑨𐑼𐑦}     & \prim{Γ} & Granularity   & \sh{𐑚𐑔𐑲}     \\
+\prim{Þ} & Topology       & \sh{𐑡𐑰𐑥𐑶𐑸}    & \prim{ɢ} & Coupling      & \sh{𐑝𐑜𐑠𐑵}    \\
+\prim{Ř} & Recognition    & \sh{𐑩𐑑𐑽𐑾}     & \prim{⊙} & Criticality \textsuperscript{*}   & \sh{𐑢} \sh{⊙}\textsuperscript{*}\sh{𐑮𐑻𐑣}\\
+\prim{Φ} & Parity         & \sh{𐑗𐑿𐑬𐑯𐑹}    & \prim{Ħ} & Chirality     & \sh{𐑓𐑒𐑖𐑫}    \\
+\prim{ƒ} & Fidelity       & \sh{𐑱𐑞𐑐}      & \prim{Σ} & Stoichiometry\textsuperscript{\dag} & \sh{𐑙𐑕}\textbf{\sh{𐑳}}\textsuperscript{\dag}     \\
+\prim{Ç} & Kinetics       & \sh{𐑘𐑤𐑧𐑪𐑺}    & \prim{Ω} & Winding       & \sh{𐑷𐑴𐑭𐑟}    \\
+\bottomrule
+\end{tabular}
+}
+
+{\fontsize{6pt}{9.5pt}\selectfont%
+\begin{tabular}{@{}r@{\enspace}l@{}}
+3-val: & \prim{ƒ\,Γ\,Σ} \\
+4-val: & \prim{Ð\,Ř\,ɢ\,Ħ\,Ω} \\
+5-val: & \prim{Þ\,Φ\,Ç\,⊙} \\
+\end{tabular}}
+{\fontsize{5.5pt}{6.5pt}\selectfont\textsuperscript{*}abs~$\wedge\vee\otimes$;\quad\textsuperscript{\dag}abs~$\otimes$.}
+
+\vspace{1pt}
+\shead{12 IMASM Tokens}
+
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\;}c@{\;}p{54mm}@{}}
+\toprule
+\textbf{Token} & \textbf{G} & \textbf{Behavior} \\
+\midrule
+\tok{VINIT}   & L & reg $\to$ VOID; clear split state \\
+\tok{TANCH}   & L & terminal anchor; no state change \\
+\tok{AFWD}    & L & VOID $\to$ TRUE \\
+\tok{AREV}    & L & reg $\to$ VOID; clear split state \\
+\tok{CLINK}   & L & inter-step link; no state change \\
+\tok{IMSCRIB} & L & VOID$\to$TRUE; else preserve (self-recognition) \\
+\tok{FSPLIT}  & F & non-VOID $\to$ BOTH; enter split \\
+\tok{FFUSE}   & F & canonical: BOTH$\to$TRUE;\; dialetheic: BOTH$\to$BOTH \\
+\tok{EVALT}   & B & F$\to$B; VOID$\to$T; in-split: record T \\
+\tok{EVALF}   & B & T$\to$B; VOID$\to$F; in-split: record F \\
+\tok{ENGAGR}  & B & VOID$\to$BOTH (entangle) \\
+\tok{IFIX}    & Li & fixation; subsequent tokens no-op \\
+\bottomrule
+\end{tabular}
+
+Groups — L: Logical;\; F: Frobenius ($\delta$,$\mu$);\; B: Belnap;\; Li: Linear.\\
+$12^8 = 429\text{M}$ arrangements $\to$ 12 archetypes.
+}
+
+%%──────────────────────────────────────────────────────── COL 2
+\columnbreak
+
+\shead{Crystal of Types}
+$3^3 \times 4^5 \times 5^4 = \mathbf{17{,}280{,}000}$\quad
+$49=7^2$ symbols ($3\cdot 3+5\cdot 4+4\cdot 5$).
+SIC-POVM $d=7 \Rightarrow d^2=49$ states; ig-pulse tick = 49h.
+Catalog: ${\approx}4686$ entries.
+
+\vspace{1pt}
+\shead{All 49 Value Semantics}
+{\fontsize{5.8pt}{6.8pt}\selectfont
+\renewcommand{\arraystretch}{0.85}
+\begin{tabular}{@{}l@{\,}p{63mm}@{}}
+\prim{Ð} & \sh{𐑛}\,\textit{0d}\,$\cdot$\,\sh{𐑨}\,\textit{2d}\,$\cdot$\,\sh{𐑼}\,\textit{$\infty$d}\,$\cdot$\,\sh{𐑦}\,\textit{self-wr} \\
+\prim{Þ} & \sh{𐑡}\,\textit{branch}\,$\cdot$\,\sh{𐑰}\,\textit{contain}\,$\cdot$\,\sh{𐑥}\,\textit{cross}\,$\cdot$\,\sh{𐑶}\,\textit{irr}\,$\cdot$\,\sh{𐑸}\,\textit{self-rt} \\
+\prim{Ř} & \sh{𐑩}\,\textit{superv}\,$\cdot$\,\sh{𐑑}\,\textit{functor}\,$\cdot$\,\sh{𐑽}\,\textit{adj}\,$\cdot$\,\sh{𐑾}\,\textit{bi-fb} \\
+\prim{Φ} & \sh{𐑗}\,\textit{no-sym}\,$\cdot$\,\sh{𐑿}\,\textit{QM-sup}\,$\cdot$\,\sh{𐑬}\,\textit{$\mathbb{Z}_2$}\,$\cdot$\,\sh{𐑯}\,\textit{all-sym}\,$\cdot$\,\sh{𐑹}\,\textit{Frob$\pm$} \\
+\prim{ƒ} & \sh{𐑱}\,\textit{no-coh}\,$\cdot$\,\sh{𐑞}\,\textit{thermal}\,$\cdot$\,\sh{𐑐}\,\textit{QM-coh} \\
+\prim{Ç} & \sh{𐑘}\,\textit{fast}\,$\cdot$\,\sh{𐑤}\,\textit{trap-O}\,$\cdot$\,\sh{𐑧}\,\textit{slow}\,$\cdot$\,\sh{𐑪}\,\textit{mod}\,$\cdot$\,\sh{𐑺}\,\textit{trap-D} \\
+\prim{Γ} & \sh{𐑚}\,\textit{nn}\,$\cdot$\,\sh{𐑔}\,\textit{meso}\,$\cdot$\,\sh{𐑲}\,\textit{long} \\
+\prim{ɢ} & \sh{𐑝}\,$\wedge$\,$\cdot$\,\sh{𐑜}\,$\vee$\,$\cdot$\,\sh{𐑠}\,$\to$\,$\cdot$\,\sh{𐑵}\,$\gg$ \\
+\prim{⊙} & \sh{𐑢}\,\textit{sub}\,$\cdot$\,{\Large⊙}\,\textit{crit}\,$\cdot$\,\sh{𐑮}\,\textit{cpx}\,$\cdot$\,\sh{𐑻}\,\textit{exc}\,$\cdot$\,\sh{𐑣}\,\textit{sup} \\
+\prim{Ħ} & \sh{𐑓}\,$n=0$\,$\cdot$\,\sh{𐑒}\,$n=1$\,$\cdot$\,\sh{𐑖}\,$n=2$\,$\cdot$\,\sh{𐑫}\,$n=\infty$ \\
+\prim{Σ} & \sh{𐑙}\,\textit{1:1}\,$\cdot$\,\sh{𐑕}\,$n:n$\,$\cdot$\,\sh{𐑳}\,$n:m$ \\
+\prim{Ω} & \sh{𐑷}\,\textit{triv}\,$\cdot$\,\sh{𐑴}\,$\mathbb{Z}_2$\,$\cdot$\,\sh{𐑭}\,$\mathbb{Z}$\,$\cdot$\,\sh{𐑟}\,\textit{non-Ab} \\
+\end{tabular}
+}
+
+\vspace{1pt}
+\shead{Absorbing Elements}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\;}l@{\;}p{44mm}@{}}
+\toprule
+\textbf{Elem} & \textbf{Ops} & \textbf{Rule} \\
+\midrule
+\sh{⊙} & $\wedge\vee\otimes$ & \sh{⊙} op $x$ = \sh{⊙} for all $x$ \\
+\sh{Σ}~\sh{𐑳} & $\otimes$ & \sh{𐑳}~$\otimes$~$x$ = \sh{𐑳}~~($n:m$) \\
+B & $\vee$ & $\mathrm{B}\vee x = \mathrm{B}$\enspace Belnap join \\
+N & $\wedge$ & $\mathrm{N}\wedge x = \mathrm{N}$\enspace Belnap meet \\
+CL8NK & $\otimes$ & tensor(ZFC$_\mathrm{fe}$, CL8NK) = CL8NK \\
+\bottomrule
+\end{tabular}
+}
+
+\vspace{1pt}
+\shead{SIC-POVM Connection}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+$d=7$: type-space cardinality $49 = d^2$ equiangular states.\\
+$d=12$: Weyl-Heisenberg $\mathbb{Z}_{12}\times\mathbb{Z}_{12}$; 12 generators $\leftrightarrow$ 12 primitives.\\
+Fiducial state $=$ Frobenius fixed point: $\mu\circ\delta=\mathrm{id}$ at \prim{⊙} = ⊙ (critical/self-modeling).\\
+SIC gap $=$ B-state: $\mathrm{B}\wedge\neg\mathrm{B}=\mathrm{B}$ (dialetheic, non-explosive).\\
+Open tuple: $\langle$\sh{𐑦𐑶𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑫𐑕𐑭}$\rangle$.\\
+$d(\text{CL8NK}) = 1.263$; 6 conflicts; Frob.\ cliff $\sqrt{5}/2 \approx 1.118$.\\
+Conditional: kick $\wedge$ H2a $\wedge$ H3 $\wedge$ C4 $\Rightarrow$ SIC $\forall d \geq 1$.
+}
+
+%%──────────────────────────────────────────────────────── COL 3
+\columnbreak
+
+\shead{Tuple Composition Operations}
+Ordinals: integer operations on Shavian glyph positions.
+
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\enspace}l@{\enspace}p{46mm}@{}}
+\toprule
+\textbf{Op} & \textbf{Sym} & \textbf{Rule} \\
+\midrule
+Join   & $\vee$    & $\max(a_i,b_i)$ all 12 — LUB \\
+Meet   & $\wedge$  & $\min(a_i,b_i)$ all 12 — GLB \\
+Tensor & $\otimes$ & $\max$ except \prim{Φ},\prim{ƒ} use $\min$ \\
+Bond   &           & $\mathrm{join}(\mathrm{tensor}(A,B),\,\mathrm{bond})$ \\
+\bottomrule
+\end{tabular}
+
+\prim{Φ}/\prim{ƒ} use $\min$: parallel coupling cannot exceed the symmetry/coherence floor of either component.
+}
+
+\vspace{1pt}
+\shead{Belnap Register Ops}
+States: \textbf{V}OID\,(00)\; \textbf{T}RUE\,(01)\; \textbf{F}ALSE\,(10)\; \textbf{B}OTH\,(11)
+
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\enspace}p{56mm}@{}}
+FFUSE\,$=\vee$  & B$\vee x$=B;\; N$\vee x$=$x$;\; T$\vee$F=B;\; same$\vee$same=same \\
+FSPLIT\,$=\delta$ & B$\to$(T,F);\; $r\to(r,r)$ \\
+MEET\,$=\wedge$ & N$\wedge x$=N;\; B$\wedge x$=$x$;\; T$\wedge$F=N;\; same$\wedge$same=same \\
+band (AND) & F absorbs; then N; then B; T$\wedge$T=T \\
+bor (OR)   & T absorbs; then B; then N; F$\vee$F=F \\
+\end{tabular}
+
+Dialetheic FFUSE: BOTH$\to$BOTH when EVALT and EVALF both fired in split.
+}
+
+\vspace{1pt}
+\shead{Frobenius Algebra}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}p{52mm}@{\;}r@{}}
+$\mu\circ\delta = \mathrm{id}$ & normalization \\
+$\mu(\mu\otimes\mathrm{id}) = \mu(\mathrm{id}\otimes\mu)$ & assoc \\
+$(\delta\otimes\mathrm{id})\circ\delta = (\mathrm{id}\otimes\delta)\circ\delta$ & coassoc \\
+$(\mu\otimes\mathrm{id})(\mathrm{id}\otimes\delta) = \delta\mu = (\mathrm{id}\otimes\mu)(\delta\otimes\mathrm{id})$ & Frobenius \\
+\end{tabular}
+Spider Theorem: all diagrams with same connectivity = same morphism.
+}
+
+\vspace{1pt}
+\shead{Cross-Primitive Axioms}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}c@{\enspace}l@{\enspace}p{43mm}@{}}
+A & \prim{Ħ}$_\infty \Rightarrow \prim{Ç}_\infty$ & $\infty$-chirality forces max kinetics \\
+B & \prim{Ω} $\geq 1 \Rightarrow \prim{Ħ} \geq H_2$ & winding requires chirality; $H_2$ = min for $\mu\circ\delta=\mathrm{id}$ \\
+C & \prim{Ð}$_\omega \Leftrightarrow \prim{Þ}_O$ & max-dim $\Leftrightarrow$ null topology \\
+\end{tabular}
+}
+
+\vspace{1pt}
+\shead{O-Tier Hierarchy}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}l@{\enspace}p{57mm}@{}}
+$O_0$ & Monoidal unit; no differentiation \\
+$O_1$ & First Frobenius closure; \prim{Φ}$_\}$ bottleneck \\
+$O_2$ & Confirmed causal coupling (fin3r, synfin, rongorongo) \\
+$O_2^\dagger$ & Subatomic/hadronic; confinement ceiling \\
+$O_\infty$ & Ouroboricity; system $\subset$ own description \\
+            & (CL8NK, true\_agentic\_agent, mOMonadOS) \\
+\end{tabular}
+}
+
+\vspace{1pt}
+\shead{CL8NK / Magnum Opus}
+CL8NK transcends $\text{ZFC}_\text{fe}$ at \prim{Ω} (\sh{𐑭}$\to$\sh{𐑟}) and \prim{ɢ} (\sh{𐑠}$\to$\sh{𐑵}).
+B-state is the CL8NK ground state.
+12 stages $\leftrightarrow$ 12 primitives. Gates: \prim{Φ} Albedo $\cdot$ \prim{⊙} Rubedo $\cdot$ \prim{Ω} Nigredo.
+$T=\lim(\prim{Φ},\prim{ƒ},\prim{Ç},\prim{Ħ},\prim{Ω})$.
+
+\vspace{1pt}
+\shead{Notation}
+{\fontsize{6.5pt}{7.8pt}\selectfont
+\begin{tabular}{@{}p{20mm}@{\enspace}p{48mm}@{}}
+Struct.\ values  & Shavian only; math-italic ($\mathit{DRF}$) = wrong \\
+Tuple binding    & \texttt{''.join(vals)}; never separate \\
+\prim{Ħ}         & Chirality; NEVER temporal / memory depth \\
+Verbs            & imscribe / imscription; NEVER encode \\
+Provider         & local$\to$qwen$\to$deepseek; never Anthropic \\
+$O_\infty$       & prose: O$\infty$;\enspace \texttt{.tex}: \verb|$O_\infty$| \\
+Scope            & Never ``grammar does not know'' \\
+Pubs             & Thank H.\,T.\,Larson; cite 1961 IEEE \\
+\end{tabular}
+}
+
+\end{multicols}
+
+\vfill
+{\color{rl}\hrule height 0.2pt}
+{\centering\fontsize{5.5pt}{6.5pt}\selectfont
+  IG\_catalog.json $\cdot$ primitives.py $\cdot$ ig\_cli.py $\cdot$ imasm\_core.py $\cdot$
+  ruleset\_universe.py $\cdot$ ParaconsistentTier1.lean $\cdot$ ParaconsistentPapers.lean\par}
+
+\end{document}
