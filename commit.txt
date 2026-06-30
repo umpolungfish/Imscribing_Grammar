@@ -1,3 +1,12 @@
+IG_catalog.json: strip trailing commas and stray quotes from name/description — 2026-06-29
+
+347 fields cleaned across the catalog. Two classes of artifact:
+  trailing comma — name/description values ending in "," (e.g. "scrivens_paradox,")
+  trailing quote — description values ending in \" or ' from unescaped template output
+Both stripped with rstrip; catalog re-validated by json.load round-trip.
+
+---
+
 IG_REFERENCE_1PAGE.md: new markdown reference sheet — 2026-06-29
 
 Full-content markdown reference compiled via zdd (zenodo_draft.py pipeline).
