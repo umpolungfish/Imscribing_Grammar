@@ -442,30 +442,30 @@ def catalog_entry(result):
 
 def print_reaction(result):
     if 'error' in result:
-        print(f'  ERROR: {result["error"]}')
+        error_line(f'  ERROR: {result["error"]}')
         return
     r = result
     prims = PRIMS
-    print(f'\n  {"─"*62}')
-    print(f'  Reaction:    {r["reactant_A"]["sym"]} + {r["reactant_B"]["sym"]} → {r["formula"]}')
-    print(f'  Bond type:   {r["bond_type"]}')
-    print(f'  Stoich:      {r["stoichiometry"][0]}:{r["stoichiometry"][1]}')
-    print(f'  Φ-drive:     {r["phi_drive"]}')
-    print(f'  Frobenius:   {"μ∘δ=id FIRES ✓" if r["frobenius_closed"] else "open — product reactive"}')
-    print(f'  {"─"*62}')
+    info_line(f'\n  {"─"*62}')
+    info_line(f'  Reaction:    {r["reactant_A"]["sym"]} + {r["reactant_B"]["sym"]} → {r["formula"]}')
+    info_line(f'  Bond type:   {r["bond_type"]}')
+    info_line(f'  Stoich:      {r["stoichiometry"][0]}:{r["stoichiometry"][1]}')
+    info_line(f'  Φ-drive:     {r["phi_drive"]}')
+    success_line(f'  Frobenius:   {"μ∘δ=id FIRES ✓" if r["frobenius_closed"] else "open — product reactive"}')
+    info_line(f'  {"─"*62}')
     wA = r['reactant_A']['word']
     wB = r['reactant_B']['word']
     wP = r['product_word']
-    print(f'  {r["reactant_A"]["sym"]:4s} word:  {wA}')
-    print(f'  {r["reactant_B"]["sym"]:4s} word:  {wB}')
-    print(f'  {"─"*30}')
-    print(f'  {r["formula"]:6s} word:  {wP}')
+    info_line(f'  {r["reactant_A"]["sym"]:4s} word:  {wA}')
+    info_line(f'  {r["reactant_B"]["sym"]:4s} word:  {wB}')
+    info_line(f'  {"─"*30}')
+    info_line(f'  {r["formula"]:6s} word:  {wP}')
     print()
     # per-primitive breakdown
     tA = derive_tuple(r['reactant_A']['sym'])
     tB = derive_tuple(r['reactant_B']['sym'])
     tp = r['product_tuple']
-    print(f'  {"prim":5s} {"A":6s} {"B":6s} {"product":8s}  op')
+    info_line(f'  {"prim":5s} {"A":6s} {"B":6s} {"product":8s}  op')
     for p in prims:
         a, b, c = tA[p], tB[p], tp[p]
         ia, ib, ic = get(tA,p), get(tB,p), get(tp,p)
@@ -480,7 +480,7 @@ def print_reaction(result):
             tag = '← bond type'
         elif p == 'Þ':
             tag = '← molecular topology'
-        print(f'  {p:5s} {a}({ia:2}) {b}({ib:2}) → {c}({ic:2})  {tag}')
+        info_line(f'  {p:5s} {a}({ia:2}) {b}({ib:2}) → {c}({ic:2})  {tag}')
     print()
 
 
@@ -536,6 +536,8 @@ def main():
         _add_to_catalog(results)
 
 
+from shared.rich_output import *
+
 def _add_to_catalog(results):
     from pathlib import Path
     import json
@@ -550,12 +552,12 @@ def _add_to_catalog(results):
         entry = catalog_entry(r)
         if entry and entry['name'] not in existing:
             cat.append(entry)
-            print(f'  Catalog: added {entry["name"]}')
+            info_line(f'  Catalog: added {entry["name"]}')
             added += 1
     if added:
         with open(cat_path, 'w') as f:
             json.dump(cat, f, ensure_ascii=False, indent=2)
-        print(f'  {added} molecular entries added to catalog.')
+        info_line(f'  {added} molecular entries added to catalog.')
 
 
 if __name__ == '__main__':

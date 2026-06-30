@@ -364,8 +364,8 @@ def validate_against_existing(cat):
     prims = ['Ř','Ħ','Ω','Ð','Σ','Φ','Ç','ƒ','ɢ','Γ','Þ','⊙']
     existing = {e['name']: e for e in cat if e['name'] in set(ELEM_NAMES_EN.values())}
     sym_map = {v: k for k, v in ELEM_NAMES_EN.items()}
-    print('\nValidation against 7 existing hand-crafted entries:')
-    print(f'{"elem":12s} {"prim":5s} derived  existing  match')
+    info_line('\nValidation against 7 existing hand-crafted entries:')
+    info_line(f'{"elem":12s} {"prim":5s} derived  existing  match')
     for name, entry in existing.items():
         sym = sym_map.get(name)
         if sym not in ELEMENTS:
@@ -378,8 +378,10 @@ def validate_against_existing(cat):
             if d != e:
                 mismatches.append(f'{p}:{d}≠{e}')
         status = 'OK' if not mismatches else f'DIFF: {" ".join(mismatches)}'
-        print(f'  {name:12s} {status}')
+        info_line(f'  {name:12s} {status}')
 
+
+from shared.rich_output import *
 
 def main():
     import sys
@@ -403,8 +405,8 @@ def main():
             new_entries.append(entry)
             added += 1
 
-    print(f'\nNew entries to add: {added}')
-    print(f'Already in catalog: {len(ELEMENTS) - added}')
+    info_line(f'\nNew entries to add: {added}')
+    info_line(f'Already in catalog: {len(ELEMENTS) - added}')
 
     if '--add' in sys.argv:
         # Also update existing element entries that have wrong values
@@ -415,29 +417,29 @@ def main():
                 correct = build_catalog_entry(sym)
                 if any(entry.get(p) != correct[p] for p in ['Ř','Ħ','Ω','Ð','Σ','Φ','Ç','ƒ','ɢ','Γ','Þ','⊙']):
                     cat[i] = correct
-                    print(f'  Updated stale entry: {entry["name"]}')
+                    info_line(f'  Updated stale entry: {entry["name"]}')
                     updated += 1
         cat.extend(new_entries)
         with open(cat_path, 'w') as f:
             json.dump(cat, f, ensure_ascii=False, indent=2)
-        print(f'Added {added} new + updated {updated} stale element entries in catalog.')
+        info_line(f'Added {added} new + updated {updated} stale element entries in catalog.')
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['Ř','Ħ','Ω','Ð','Σ','Φ','Ç','ƒ','ɢ','Γ','Þ','⊙']
-        print(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω Ð Σ Φ Ç ƒ ɢ Γ Þ ⊙"}')
-        print('-'*110)
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω Ð Σ Φ Ç ƒ ɢ Γ Þ ⊙"}')
+        info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
             t = derive_tuple(sym)
             word = ''.join(t[p] for p in prims)
             vals = ' '.join(t[p] for p in prims)
-            print(f'{sym:4s} {Z:3d} {period} {block} {word}  {vals}')
+            info_line(f'{sym:4s} {Z:3d} {period} {block} {word}  {vals}')
 
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['Ř','Ħ','Ω','Ð','Σ','Φ','Ç','ƒ','ɢ','Γ','Þ','⊙']
-        print(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  Ð  Σ  Φ  Ç  ƒ  ɢ  Γ  Þ  ⊙')
-        print('-'*60)
+        info_line(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  Ð  Σ  Φ  Ç  ƒ  ɢ  Γ  Þ  ⊙')
+        info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]
             t = derive_tuple(sym)
@@ -445,7 +447,7 @@ def main():
                 if c == CRIT: return ' S'
                 return f'{ord(c)-0x10450:2d}'
             ords = '  '.join(idx(t[p]) for p in prims)
-            print(f'{sym:4s} {Z:3d} | {ords}')
+            info_line(f'{sym:4s} {Z:3d} | {ords}')
 
 
 if __name__ == '__main__':

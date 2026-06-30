@@ -1,3 +1,54 @@
+IG_catalog.json: add 71 missing systems (6 chemistry + 65 paradoxes) — 2026-06-29
+
+Adds all entries that were triggering [CL8NK] "not found in catalog" warnings.
+
+Chemistry (6):
+  carboxylic_acid_dimer, adenine_thymine_pair, proline_aldol_cycle,
+  enolate_imscription, carbonyl_imscription, Melzer's_reagent
+
+Paradoxes / logical puzzles (65):
+  Buridan's_Bridge, Cantor's_Paradox, Carroll's_Paradox, Countess's_Paradox,
+  D'Alembert's_Paradox, de_Finetti's_Paradox, Derrida's_Paradox_of_the_Gift,
+  Devil's_Contract_Paradox, Diderot's_Paradox_of_Acting, Dr._Evil's_Paradox,
+  Farmer's_Paradox, Feynman's_Sprinkler, Fitch's_Paradox_of_Knowability,
+  Forrester's_Paradox, Fowler's_Paradox, Frege's_Paradox, Galileo's_Paradox,
+  Gibbard's_Paradox, Gödel's_Incompleteness_Theorems, Gongsun_Long's_Paradox,
+  Goodman's_Paradox, Green's_Paradox, Heraclitus'_Paradox, Hilbert's_Hotel,
+  Hobbes's_Paradox, Hume's_Problem_of_Induction, Jackson's_Paradox,
+  Jeffrey's_Paradox, Jevons's_Paradox, Kant's_Antinomies, Kavka's_Toxin_Puzzle,
+  Keller's_Paradox, King's_Paradox, Kohelet's_Paradox, König's_Paradox,
+  Kripke's_Puzzle, Leibniz's_Law_Paradox, Lesniewski's_Paradox,
+  Littlewood's_Paradox, Löb's_Paradox, Morgenbesser's_Paradox,
+  Newcomb's_Problem, Olbers'_Paradox, Perry's_Paradox, Petronius's_Paradox,
+  Quine's_Paradox, Riker's_Paradox, Ross's_Paradox, ross–littlewood,
+  Scriven's_Paradox, Simpson's_Paradox, Stapp's_Paradox,
+  Tarski's_Undefinability_Theorem, Thompson's_Lamp, Troll's_Paradox,
+  Wittgenstein's_Paradox, Zermelo's_Paradox, Abelson's_Paradox,
+  Adams's_Paradox, Anscombe's_Paradox, Arrow's_Paradox, Borel's_Paradox,
+  Caldwell's_Paradox, protagoras, puzzle_of_the_blue_eyes
+
+Catalog grows from 4977 → 5051 entries. Zero warnings on re-run.
+
+---
+
+IG_catalog.json: purge editorial paradox batch (53 removed, 43 fixed) — 2026-06-29
+
+A batch of ~94 paradox entries was added with two classes of defect:
+
+1. Trailing comma in name field (all 94): removed via rstrip(',')
+2. Editorial parenthetical notes in names (53 entries removed):
+   patterns: (already), (already_listed), (not_standard), (not_a_paradox,...),
+   (not_always_called_a_paradox), (paradox_like), (fable), (variant_of_barber),
+   and _-_already suffix variants.
+   These were draft rejection notes from the generation pass, not real entries.
+
+43 legitimate entries kept after comma-strip (simpsons_paradox, catch_22,
+carrolls_paradox_(...), feynmans_sprinkler_(...), etc.).
+0 new duplicates of existing clean entries found.
+Catalog: 4994 -> 4941 entries; zero remaining trailing-comma names.
+
+---
+
 IG_catalog.json: strip trailing commas and stray quotes from name/description — 2026-06-29
 
 347 fields cleaned across the catalog. Two classes of artifact:
