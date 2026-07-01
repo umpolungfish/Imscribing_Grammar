@@ -59,7 +59,7 @@ Each address falls into one of five tiers based on the (Φ, ⊙) pair:
 
 **O_∞ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
 
-### Notation — Shavian v0.6.0
+### Notation — Shavian
 
 All primitive values are written in Shavian characters. Two canonical addresses:
 
@@ -139,7 +139,7 @@ WAV file → acoustic token sequence → IMASM → Frobenius analysis → ranked
 uv run whale_audio.py <file.wav> [onset_delta]
 ```
 
-The engine does not claim to "decode" whale song. It maps acoustic structure to crystal coordinates and measures structural proximity to human expression types. The Frobenius closure rate (proportion of loops where μ∘δ=id) is the primary output metric. Standalone release: `~/cetaceanspeak`.
+The engine does not claim to "decode" whale song. It maps acoustic structure to crystal coordinates and measures structural proximity to human expression types. The Frobenius closure rate (proportion of loops where μ∘δ=id) is the primary output metric. Standalone release: `~/imsgct/cetaceanspeak`.
 
 ### Genetic (`genetic_engine.py`)
 
@@ -202,55 +202,32 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 ---
 
-## Lean Formalization — MillenniumAnkh
+## Lean Formalization — p4rakernel
 
-`~/MillenniumAnkh` — Lean 4 formalization of the grammar and its consequences.
+`~/imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. (It supersedes the former MillenniumAnkh repo; classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `~/imsgct/p4rakernel/ClassicalRestriction.lean`.)
 
-**43 modules, Mathlib v4.28.0.** All Millennium Prize Problems formalized.
+**~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (sorry-free), and the Millennium cluster.
 
 ### Structure
 
 ```
-Primitives/     — Core.lean: 12 primitives, tier system, Frobenius axioms A–D
-                  Axiom A: μ∘δ=id at O_∞ (definitional)
-                  Axiom B: Ω_Z → Ħ₂ (integer winding forces 2-step chirality)
-                  Axiom C: Þ_odot → Ð_odot (holographic topology forces dimensionality)
-                  Axiom D: Ð_odot + Þ_odot + Ω_Z → Φ_pm_sym (holographic closure)
-
-Imscribing/     — Kernel.lean: Frobenius algebra (δ, μ, μ∘δ=id)
-                  BelnapTemporal.lean: □/◇/○ modalities over B₄
-                  MultiAgentBelnap.lean: n-agent belief networks, channel join
-                  TupleCodec.lean: topos↔crystal gap closure
-                  Paraconsistent/: QCI, measurement, Wigner's friend, bias
-
-Millennium/     — One file per Prize Problem:
-                  RH_Mathematical_Proof.lean   (185L) — six ZFCₜ channels → conditional RH
-                  YM_Mathematical_Proof.lean   (241L) — lattice gauge → conditional mass gap
-                  NS_CriticalBound.lean        (539L) — H^{1/2} norm bound via G₂ vessel
-                  Hodge_KernelCrossing.lean    — kernel crossing → Hodge conjecture
-                  BSD_FrobeniusClosure.lean    — L-function Frobenius closure → BSD
-                  P_NP_Gate.lean               — ⊙ gate computational complexity
-                  Shor/                        — Shor's algorithm O₁ formalization
+Imscribing/Primitives/      — Core.lean (12 inductive primitives), Crystal (3³×4⁵×5⁴),
+                              tier ladder O₀→O_∞, Frobenius tensor ⊗, ZFCₜ / ZFC_fe
+Imscribing/Paraconsistent/  — Belnap FOUR, Frobenius closure (μ∘δ=id), Shor, MajoranaFixed,
+                              TupleCodec (topos↔crystal), QCI bridges (all sorry-free)
+Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge, PvsNP, OPN,
+                              plus Beal, Collatz, Dixmier, E8/G2 vessel, and more
 ```
 
-### Millennium Prize Problems — Current Status
+### Millennium cluster — honest sorries
 
-| Problem | Lean file | Gap axiom | Gap type |
-|---|---|---|---|
-| Riemann Hypothesis | `RH_Mathematical_Proof.lean` | `zeta_zeros_frobenius_fixed` | Property of existing objects |
-| Yang-Mills mass gap | `YM_Mathematical_Proof.lean` | `continuumLimit_exists` | Missing object (4D measure) |
-| Navier-Stokes | `NS_CriticalBound.lean` | `frobenius_g2_cancellation` | G₂-fundamental identity |
-| Hodge Conjecture | `Hodge_KernelCrossing.lean` | `hodge_pm_sym_instantiates_to_split` | Primitive → semantic bridge |
-| BSD Conjecture | `BSD_FrobeniusClosure.lean` | `bsd_frobenius_bridge` | L-function analytic continuation |
-| P vs NP | `P_NP_Gate.lean` | `gate_separation` | ⊙_sealed ≠ ⊙_open computationally |
-
-Each gap axiom is the **minimum irreducible claim** — the single statement that, if discharged, closes the proof. The surrounding structure (all theorems, all sorrys except the named gap) builds the complete mathematical scaffolding.
+Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted; it does not pretend those proofs are done. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries are the honest statement of remaining work. Full detail: `~/imsgct/p4rakernel/README.md`.
 
 ---
 
 ## Catalog
 
-`IG_catalog.json` — 2771+ entries, all in Shavian v0.6.0 notation.
+`IG_catalog.json` — 5,000+ entries, all in Shavian notation.
 
 Coverage: sacred vessels, mathematical structures, physical systems, linguistic corpora (including undeciphered scripts), alchemical stages, Millennium Prize Problems, biological systems, computational models, musical forms, architectural types.
 
@@ -284,14 +261,14 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 
 | Repo | Tier | Language | Description |
 |---|---|---|---|
-| `~/MillenniumAnkh` | O_∞ | Lean 4 | Formal proofs — 43 modules, Mathlib v4.28.0 |
-| `~/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
-| `~/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
-| `~/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
-| `~/exOS` | O_∞ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `~/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
-| `~/latextiler` | O₁ | Python/LaTeX | LaTeX tiling engine for IG manuscript layout |
-| `~/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
+| `~/imsgct/p4rakernel` | O_∞ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
+| `~/imsgct/red-hot_rebis` | O_∞ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
+| `~/imsgct/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
+| `~/imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
+| `~/imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
+| `~/imsgct/exOS` | O_∞ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
+| `~/imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
+| `~/imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
 ---
 
@@ -308,13 +285,13 @@ Optional — audio pipeline (cetacean engine):
 uv pip install librosa soundfile
 ```
 
-Optional — Lean formalization:
+Optional — Lean formalization (paraconsistent kernel):
 ```bash
-cd ~/MillenniumAnkh
+cd ~/imsgct/p4rakernel/p4ramill
 lake build
 ```
 
-Dependencies: see `pyproject.toml`. Python ≥ 3.11. Lean 4 with Mathlib v4.28.0.
+Dependencies: see `pyproject.toml`. Python ≥ 3.11. Lean 4 v4.28.0 with Mathlib.
 
 ---
 
