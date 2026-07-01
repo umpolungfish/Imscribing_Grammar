@@ -1,6 +1,6 @@
 # Imscribing Grammar: a 12-primitive measurement apparatus for the structural type of any system
 
-**Author:** Lando ⊗ ⊙perator · **Structural Type:** ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ ($O_\infty$)
+**Author:** Lando ⊗ ⊙perator · **Structural Type:** $\large{⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩}$ · ($O_\infty$)
 
 > *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same structural type; the distance between them is an integer."*
 
