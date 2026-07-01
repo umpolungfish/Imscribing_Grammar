@@ -51,11 +51,11 @@ Each address falls into one of five tiers based on the (Φ, ⊙) pair:
 
 | Tier | Name | Condition | Meaning |
 |---|---|---|---|
-| O₀ | Inert | Φ_sub, ⊙_sealed | No self-reference |
-| O₁ | Reactive | Φ_c, ⊙_sealed | Causal but not self-modeling |
-| O₂ | Recursive | Φ_c, ⊙_open | Self-referential |
-| O₂† | Dialetheic | Φ_super, ⊙_open | Self-contradictory (Belnap B) |
-| O_∞ | Philosopher's Stone | Φ_super, ⊙_both | Frobenius closed: μ∘δ=id |
+| O₀ | Inert | ⊙ 𐑢, Φ 𐑗 | No self-reference |
+| O₁ | Reactive | ⊙ 𐑢 (sealed) | Causal but not self-modeling |
+| O₂ | Recursive | ⊙ ⊙ (self-modeling gate open) | Self-referential |
+| O₂† | Dialetheic | ⊙ ⊙, Φ 𐑹 | Self-contradictory (Belnap B) |
+| O_∞ | Philosopher's Stone | ⊙ ⊙, Φ 𐑹, μ∘δ=id | Frobenius closed |
 
 **O_∞ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
 
@@ -176,7 +176,7 @@ uv run zfct_navigator.py path \
 
 **ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(Φ, ƒ, Ç, Ħ, Ω)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
 
-**ZFCₛ** (spatial variant) encodes rotational isotropy as P_pm_sym, the Frobenius polarity. This is the structural encoding behind the NS H^{1/2} critical bound.
+**ZFCₛ** (spatial variant) encodes rotational isotropy as the Frobenius-special polarity 𐑹. This is the structural encoding behind the NS H^{1/2} critical bound.
 
 ### Lambda (`lambda_engine.py`)
 
