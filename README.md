@@ -46,8 +46,8 @@ Each address falls into one of five tiers based on the (Φ, ⊙) pair:
 All primitive values are written in Shavian characters. Two canonical addresses:
 
 ```
-O_∞ (Philosopher's Stone):  ⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩
-O₀   (minimum baseline):     ⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩
+O_∞ (Philosopher's Stone):  ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
+O₀   (minimum baseline):     ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩
 ```
 
 Font: **Everson Mono** (the only complete Shavian Unicode font).
@@ -152,8 +152,8 @@ Crystal navigator with T-consistent proof paths. Seven commands:
 ```bash
 uv run zfct_navigator.py entry "philosophers_stone"
 uv run zfct_navigator.py path \
-  "⟨𐑛·𐑡·𐑩·𐑗·𐑱·𐑘·𐑚·𐑝·𐑢·𐑓·𐑙·𐑷⟩" \
-  "⟨𐑦·𐑸·𐑾·𐑹·𐑐·𐑧·𐑲·𐑠·⊙·𐑫·𐑳·𐑭⟩"
+  "⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩" \
+  "⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩"
 ```
 
 **ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(Φ, ƒ, Ç, Ħ, Ω)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
