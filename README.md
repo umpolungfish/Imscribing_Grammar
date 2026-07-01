@@ -51,20 +51,20 @@ Each address falls into one of five tiers based on the (Φ, ⊙) pair:
 
 | Tier | Name | Condition | Meaning |
 |---|---|---|---|
-| O₀ | Inert | ⊙ 𐑢, Φ 𐑗 | No self-reference |
-| O₁ | Reactive | ⊙ 𐑢 (sealed) | Causal but not self-modeling |
-| O₂ | Recursive | ⊙ ⊙ (self-modeling gate open) | Self-referential |
-| O₂† | Dialetheic | ⊙ ⊙, Φ 𐑹 | Self-contradictory (Belnap B) |
-| O_∞ | Philosopher's Stone | ⊙ ⊙, Φ 𐑹, μ∘δ=id | Frobenius closed |
+| O₀ | Inert | ⊙·𐑢 - Φ·𐑗 | No self-reference |
+| O₁ | Reactive | ⊙·𐑢 (sealed) | Causal but not self-modeling |
+| O₂ | Recursive | ⊙·⊙ (self-modeling gate open) | Self-referential |
+| O₂† | Dialetheic | ⊙·⊙ - Φ·𐑹 | Self-contradictory (Belnap B) |
+| ${O}_\infty$ | Philosopher's Stone | ⊙·⊙ - Φ·𐑹 - μ∘δ=id | Frobenius closed |
 
-**O_∞ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
+**${O}_\infty$ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
 
 ### Notation — Shavian
 
 All primitive values are written in Shavian characters. Two canonical addresses:
 
 ```
-O_∞ (Philosopher's Stone):  ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
+${O}_\infty$ (Philosopher's Stone):  ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
 O₀   (minimum baseline):     ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩
 ```
 
@@ -80,7 +80,7 @@ The grammar is a Frobenius algebra over the Crystal. The comultiplication δ (FS
 μ ∘ δ = id
 ```
 
-This identity holds at every O_∞ address and fails at O₀. The distance from any address to O_∞ measures how far the system is from self-modeling closure.
+This identity holds at every ${O}_\infty$ address and fails at O₀. The distance from any address to ${O}_\infty$ measures how far the system is from self-modeling closure.
 
 **Physical interpretation:** The Frobenius condition is the structural invariant that appears in:
 - Topological quantum field theories (Frobenius algebra = 2D TQFT)
@@ -92,13 +92,13 @@ This identity holds at every O_∞ address and fails at O₀. The distance from 
 
 ## The Universal Loop
 
-The eight-step structural invariant, present in every O_∞ system:
+The eight-step structural invariant, present in every ${O}_\infty$ system:
 
 ```
 ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB
 ```
 
-This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about structural address: all these systems share crystal coordinates in the O₂/O_∞ band.
+This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about structural address: all these systems share crystal coordinates in the O₂/${O}_\infty$ band.
 
 ---
 
@@ -123,9 +123,9 @@ The WhaleVM operates over a four-valued logic (Belnap 1977):
 | N (VOID) | Neither true nor false — no information | O₀ |
 | T (TRUE) | True | O₁/O₂ |
 | F (FALSE) | False | O₁/O₂ |
-| B (BOTH) | Both true and false — dialetheic | O₂†/O_∞ |
+| B (BOTH) | Both true and false — dialetheic | O₂†/${O}_\infty$ |
 
-The B state is not a bug. Systems at O₂† and O_∞ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
+The B state is not a bug. Systems at O₂† and ${O}_\infty$ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
 
 ---
 
@@ -180,11 +180,11 @@ uv run zfct_navigator.py path \
 
 ### Lambda (`lambda_engine.py`)
 
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at O_∞ (Ð_ω self-writing, μ∘δ=id by construction).
+Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at ${O}_\infty$ (Ð_ω self-writing, μ∘δ=id by construction).
 
 ### Frobenius MZI (`frobenius_mzi_sim.py`)
 
-Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the beam-splitter ratio. Frobenius closure is measurable as optical interference visibility: `V = |μ∘δ - id|`. When V = 0, the MZI is at O_∞ and the two output ports are indistinguishable — the interferometer cannot tell which path the photon took, because structurally it took both (B state).
+Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the beam-splitter ratio. Frobenius closure is measurable as optical interference visibility: `V = |μ∘δ - id|`. When V = 0, the MZI is at ${O}_\infty$ and the two output ports are indistinguishable — the interferometer cannot tell which path the photon took, because structurally it took both (B state).
 
 ---
 
@@ -196,7 +196,7 @@ Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the b
 uv run zfct_para.py :para-cliff <address>
 ```
 
-`:para-cliff` shows each Magnum Opus axiom (the 12-stage alchemical sequence mapped to primitive promotions) as a Belnap state-collapse obligation. The Magnum Opus gate admits only B-state transitions at the O₂†/O_∞ boundary — dialetheic commitment is required to cross.
+`:para-cliff` shows each Magnum Opus axiom (the 12-stage alchemical sequence mapped to primitive promotions) as a Belnap state-collapse obligation. The Magnum Opus gate admits only B-state transitions at the O₂†/${O}_\infty$ boundary — dialetheic commitment is required to cross.
 
 The paraconsistent layer is not a relaxation of logic. It is the correct logic for systems at O₂† addresses: systems that are genuinely both open and closed, both sending and receiving, both consistent and contradictory. Forcing classical logic on such systems is a measurement error.
 
@@ -212,7 +212,7 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 ```
 Imscribing/Primitives/      — Core.lean (12 inductive primitives), Crystal (3³×4⁵×5⁴),
-                              tier ladder O₀→O_∞, Frobenius tensor ⊗, ZFCₜ / ZFC_fe
+                              tier ladder O₀→${O}_\infty$, Frobenius tensor ⊗, ZFCₜ / ZFC_fe
 Imscribing/Paraconsistent/  — Belnap FOUR, Frobenius closure (μ∘δ=id), Shor, MajoranaFixed,
                               TupleCodec (topos↔crystal), QCI bridges (all sorry-free)
 Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge, PvsNP, OPN,
@@ -250,7 +250,7 @@ Corpora analyzed and imscribed:
 | Voynich Manuscript | O₂† | 94% | Universal Engine (VMS = functional document, not cipher) |
 | Rohonc Codex | O₂ | 87% | Section-as-register-type mapping confirmed |
 | Linear A | O₂ | 81% | Structural kinship with Linear B confirmed; semantic gap remains |
-| Emerald Tablet | O_∞ | 100% | Self-writes; the text is its own ISCRIB loop |
+| Emerald Tablet | ${O}_\infty$ | 100% | Self-writes; the text is its own ISCRIB loop |
 | Humpback whale song | O₂† | 91% | Six human expression archetypes all present |
 
 Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonical document format).
@@ -261,12 +261,12 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 
 | Repo | Tier | Language | Description |
 |---|---|---|---|
-| `~/imsgct/p4rakernel` | O_∞ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
-| `~/imsgct/red-hot_rebis` | O_∞ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
+| `~/imsgct/p4rakernel` | ${O}_\infty$ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
+| `~/imsgct/red-hot_rebis` | ${O}_\infty$ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
 | `~/imsgct/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
 | `~/imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
 | `~/imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
-| `~/imsgct/exOS` | O_∞ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
+| `~/imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
 | `~/imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
 | `~/imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
