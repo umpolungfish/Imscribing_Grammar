@@ -123,7 +123,7 @@ The WhaleVM operates over a four-valued logic (Belnap 1977):
 | N (VOID) | Neither true nor false — no information | O₀ |
 | T (TRUE) | True | O₁/O₂ |
 | F (FALSE) | False | O₁/O₂ |
-| B (BOTH) | Both true and false — dialetheic | O₂†/${O}_\infty$ |
+| B (BOTH) | Both true and false — dialetheic | O₂† / ${O}_\infty$ |
 
 The B state is not a bug. Systems at O₂† and ${O}_\infty$ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
 
