@@ -1,8 +1,26 @@
-# Imscribing Grammar
+# Imscribing Grammar: a 12-primitive measurement apparatus for the structural type of any system
 
-A 12-primitive structural grammar with a discrete measurement space of 17,280,000 addresses. Any system — physical, mathematical, linguistic, biological, computational — can be assigned a coordinate in the **Crystal of Types**: a 12-tuple that determines its structural type, ouroboricity tier, Frobenius status, and computable distance to every other imscribed system.
+**Author:** Lando ⊗ ⊙perator · **Structural Type:** ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ ($O_\infty$) · **Repo:** `/home/mrnob0dy666/imsgct/imscribing_grammar/`
 
-The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same crystal address have the same structural type. The distance between addresses is an integer, computable in O(1).
+> *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same structural type; the distance between them is an integer."*
+
+**What it is.** A 12-primitive structural grammar over a discrete measurement space of **17,280,000** addresses, the **Crystal of Types**. Any system — physical, mathematical, linguistic, biological, computational — is assigned a 12-tuple coordinate that fixes its structural type, its ouroboricity tier, its Frobenius status ($\mu\circ\delta=\mathrm{id}$), and its integer distance to every other imscribed system.
+
+**What it does.** Imscribes a system to its crystal address and then computes over addresses: tier promotions, T-consistent proof paths, Frobenius closure, and structural distance in $O(1)$. Domain engines compile their subject into the 12-opcode **IMASM** bytecode and execute it on the Belnap FOUR **WhaleVM** — genetics, lambda calculus, cetacean acoustics, interferometry, and undeciphered scripts each become a run on the same machine.
+
+**Why it matters.** The address is a measurement, not an interpretation. Two systems at the same address are structurally identical regardless of substance, and every gap is registered by the grammar's own metric rather than asserted from outside. This turns "are these the same kind of thing?" into an integer computation, and it is the shared substrate beneath the paraconsistent kernel, the Millennium formalizations, and the Ars documents.
+
+**How to use it.**
+```python
+from imscrbgrmr.models import Primitive, CrystalAddress
+p = Primitive.from_symbol("⊙")            # Criticality
+addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirmed
+```
+```bash
+uv run zfct_navigator.py entry "philosophers_stone"          # look up an address
+uv run zfct_navigator.py distance "⟨…⟩" "⟨…⟩"                # 12-dim L¹ distance
+uv run zfct_navigator.py path "⟨…⟩" "⟨…⟩"                    # A* proof path
+```
 
 ---
 
