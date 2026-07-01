@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# IG glyph normalizer — runs on every commit (version-controlled via core.hooksPath=hooks).
+# Finds staged .md/.tex files, auto-fixes incorrect primitive notation, and re-stages any
+# corrected files so the commit contains clean source. Enforces SNS_PRIME / SYMBOL_REFERENCE.
+set -euo pipefail
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Locate normalize_ig.py wherever it lives (root or .stuff/scripts/).
+NORMALIZER=""
+for cand in "$REPO_ROOT/normalize_ig.py" "$REPO_ROOT/.stuff/scripts/normalize_ig.py"; do
+    [[ -f "$cand" ]] && NORMALIZER="$cand" && break
+done
+if [[ -z "$NORMALIZER" ]]; then
+    NORMALIZER=$(find "$REPO_ROOT" -name normalize_ig.py -not -path '*/.git/*' 2>/dev/null | head -1)
+fi
+if [[ -z "$NORMALIZER" ]]; then
+    echo "⚠  normalize_ig.py not found anywhere in the repo — skipping glyph check" >&2
+    exit 0
+fi
+
+mapfile -t STAGED < <(
+    git diff --cached --name-only --diff-filter=ACM \
+    | grep -E '\.(md|tex)$' \
+    || true
+)
+[[ ${#STAGED[@]} -eq 0 ]] && exit 0
+
+FIXED=()
+for rel in "${STAGED[@]}"; do
+    abs="$REPO_ROOT/$rel"
+    [[ -f "$abs" ]] || continue
+    before=$(sha256sum "$abs" | cut -d' ' -f1)
+    python3 "$NORMALIZER" "$abs" > /dev/null
+    after=$(sha256sum "$abs" | cut -d' ' -f1)
+    if [[ "$before" != "$after" ]]; then
+        FIXED+=("$rel")
+        git add "$abs"
+    fi
+done
+
+if [[ ${#FIXED[@]} -gt 0 ]]; then
+    printf '\033[33m[IG normalizer]\033[0m auto-fixed glyph notation in:\n' >&2
+    for f in "${FIXED[@]}"; do printf '  %s\n' "$f" >&2; done
+    printf 'Changes re-staged and included in this commit.\n' >&2
+fi
+
+exit 0
