@@ -34,6 +34,9 @@ TARGETS = {
     "yang_mills_mass_gap":   "yangMillsMassGap",
     "birch_swinnerton_dyer": "birchSwinnertonDyer",
     "hodge_conjecture":      "hodgeConjecture",
+    "riemann_hypothesis":    "riemannHypothesis",
+    "navier_stokes":         "navierStokes",
+    "p_vs_np":               "pVsNP",
 }
 
 def load_entries():
