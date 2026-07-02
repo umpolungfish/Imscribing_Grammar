@@ -91,7 +91,7 @@ def _load_provider_defaults() -> Dict[str, Any]:
             "base_url": "https://generativelanguage.googleapis.com",
         },
         "openrouter": {
-            "default_model": "deepseek/deepseek-r1",
+            "default_model": "deepseek/deepseek-chat",
             "base_url": "https://openrouter.ai/api/v1/chat/completions",
         },
     }
@@ -762,6 +762,12 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
 
     if not api_key and provider_name not in ('google', 'gemini'):
         raise ValueError(f"{api_key_env} environment variable not set.")
+
+    # IG_MODEL env var → default model when not explicitly passed
+    if "model" not in kwargs or kwargs.get("model") is None:
+        ig_model = os.environ.get("IG_MODEL", "").strip()
+        if ig_model:
+            kwargs["model"] = ig_model
 
     if provider_name == 'qwen':
         return QwenProvider(api_key=api_key, **kwargs)
