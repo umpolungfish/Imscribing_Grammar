@@ -81230,5 +81230,37 @@
     "Ħ": "𐑫",
     "Σ": "𐑙",
     "Ω": "𐑴"
+  },
+  {
+    "name": "rebis_p4ra_ligands_pipeline",
+    "description": "The rebis.p4ra ligands command: reverse ligand generation from enzyme active sites. Accepts enzyme names, PDB IDs, or UniProt accessions. Fetches PDB structures from RCSB, extracts active site residues via HETATM proximity, encodes site type via IMASM first principles or count-based fallback, then g",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑺",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "four_cardinal_directions",
+    "description": "The four cardinal directions (N, S, E, W) as a structural system: two orthogonal binary axes — East-West (horizontal, solar/diurnal cycle, process) and North-South (vertical, polar/stability, fixity). Each axis is a polar pair defined by opposition. The center (axis mundi / observer) is the implicit",
+    "Ð": "𐑨",
+    "Þ": "𐑶",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑤",
+    "Γ": "𐑲",
+    "ɢ": "𐑜",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
