@@ -83102,5 +83102,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "catalog_unlock_test",
+    "description": "Test system to unlock catalog lookup - a minimal O_0 placeholder",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑺",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
