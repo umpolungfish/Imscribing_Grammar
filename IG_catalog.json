@@ -83262,5 +83262,21 @@
     "Ħ": "𐑫",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "sic_d12_existence_proof",
+    "description": "Machine-checked constructive proof that SICPOVM_Exists 12. Built via exact rational algebra K₁₆(s₀,s₁,s₃,s₉,i,c₅,u₁) with 143 frozen native_decide identities, transferred to ℂ¹² along star-ring hom φ at IVT-bracketed real root g₀. 0 sorries. crystal_forces_d12_sic went from axiom to theorem.",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑑",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
