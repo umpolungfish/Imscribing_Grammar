@@ -205,6 +205,14 @@ class HttpProvider(LLMProvider):
         temp = kwargs.get("temperature", 0.7)
         max_tokens = kwargs.get("max_tokens", 4096)
         system = kwargs.get("system")
+        # Clamp temperature to valid range (max 2.0 for most providers including Gemini)
+        MAX_TEMP = 2.0
+        if temp > MAX_TEMP:
+            logger.warning(
+                f"Temperature {temp} exceeds max {MAX_TEMP} for {self.provider_name}/{self.model}. "
+                f"Clamping to {MAX_TEMP}."
+            )
+            temp = MAX_TEMP
 
         cached_response = await self.get_cached_response(prompt, model=self.model, temperature=temp, max_tokens=max_tokens)
         if cached_response:
@@ -277,6 +285,14 @@ class OpenRouterProvider(HttpProvider):
         temp = kwargs.get("temperature", 0.7)
         max_tokens = kwargs.get("max_tokens", 4096)
         system = kwargs.get("system")
+        # Clamp temperature to valid range (max 2.0 for most models on OpenRouter)
+        MAX_TEMP = 2.0
+        if temp > MAX_TEMP:
+            logger.warning(
+                f"Temperature {temp} exceeds max {MAX_TEMP} for openrouter/{self.model}. "
+                f"Clamping to {MAX_TEMP}."
+            )
+            temp = MAX_TEMP
 
         headers = {
             "Content-Type": "application/json",
@@ -309,7 +325,11 @@ class OpenRouterProvider(HttpProvider):
                 content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
                 return content
         except httpx.HTTPStatusError as e:
-            logger.error(f"Error during API call to {self.base_url}: {e}")
+            try:
+                body = e.response.text[:800] if e.response else "no body"
+            except Exception:
+                body = "unreadable"
+            logger.error(f"HTTP {e.response.status_code} from {self.base_url}: {body}")
             raise
 
 
