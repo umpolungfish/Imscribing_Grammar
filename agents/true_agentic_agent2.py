@@ -3455,51 +3455,6 @@ def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
     return {"role": "tool", "tool_call_id": tool_call_id, "content": content}
 
 
-# ── ASCII-safe tool schemas helpers (moved here to fix NameError) ─────────────
-# The API rejects property keys with non-ASCII characters (Shavian glyphs like
-# Ð, Þ, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
-# on definition and keep the Unicode originals for emit-function compatibility.
-
-def _asciify_schema(schema: Dict) -> Dict:
-    """Deep-copy a tool schema, replacing all Unicode property keys with ASCII-safe versions."""
-    import copy as _copy
-    s = _copy.deepcopy(schema)
-    props = s.get("function", {}).get("parameters", {}).get("properties")
-    if props:
-        new_props = {}
-        for k, v in props.items():
-            new_key = _UNICODE_KEY_TO_ASCII.get(k, k)
-            new_props[new_key] = v
-        s["function"]["parameters"]["properties"] = new_props
-        req = s["function"]["parameters"].get("required", [])
-        if req:
-            s["function"]["parameters"]["required"] = [
-                _UNICODE_KEY_TO_ASCII.get(r, r) for r in req
-            ]
-    return s
-
-
-def _asciify_tool_schemas() -> List[Dict]:
-    """Return ASCII-safe copies of every schema in TOOL_SCHEMAS.
-    Call once after TOOL_SCHEMAS is fully populated (including appends)."""
-    return [_asciify_schema(s) for s in TOOL_SCHEMAS]
-
-
-def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
-    """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
-    Emit functions use Unicode keys (φ̂, Ç, Ω, etc.); the model responds with
-    ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
-    Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
-    for k in list(args.keys()):
-        uk = _ASCII_KEY_TO_UNICODE.get(k)
-        if uk is not None and uk not in args:
-            args[uk] = args[k]
-        # Recurse into nested dict values (e.g. imscribe's "args" field)
-        if isinstance(args[k], dict):
-            _remap_ascii_tool_args(args[k])
-    return args
-
-
 # ── Main agent class ──────────────────────────────────────────────────────────
 
 class TrueAgenticAgent:
@@ -5028,6 +4983,48 @@ _EMIT_FNS["para_vm"] = _para_vm_emit
 _VERIFY_FNS["para_vm"] = _para_vm_verify
 
 # ── Add tool schema ─────────────────────────────────────────────────────────
+
+# ── ASCII-safe tool schemas for API calls ───────────────────────────────────
+# The API rejects property keys with non-ASCII characters (Shavian glyphs like
+# Ð, Þ, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
+# on definition and keep the Unicode originals for emit-function compatibility.
+
+def _asciify_schema(schema: Dict) -> Dict:
+    """Deep-copy a tool schema, replacing all Unicode property keys with ASCII-safe versions."""
+    import copy as _copy
+    s = _copy.deepcopy(schema)
+    props = s.get("function", {}).get("parameters", {}).get("properties")
+    if props:
+        new_props = {}
+        for k, v in props.items():
+            new_key = _UNICODE_KEY_TO_ASCII.get(k, k)
+            new_props[new_key] = v
+        s["function"]["parameters"]["properties"] = new_props
+        req = s["function"]["parameters"].get("required", [])
+        if req:
+            s["function"]["parameters"]["required"] = [
+                _UNICODE_KEY_TO_ASCII.get(r, r) for r in req
+            ]
+    return s
+
+def _asciify_tool_schemas() -> List[Dict]:
+    """Return ASCII-safe copies of every schema in TOOL_SCHEMAS.
+    Call once after TOOL_SCHEMAS is fully populated (including appends)."""
+    return [_asciify_schema(s) for s in TOOL_SCHEMAS]
+
+def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
+    """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
+    Emit functions use Unicode keys (φ̂, Ç, Ω, etc.); the model responds with
+    ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
+    Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
+    for k in list(args.keys()):
+        uk = _ASCII_KEY_TO_UNICODE.get(k)
+        if uk is not None and uk not in args:
+            args[uk] = args[k]
+        # Recurse into nested dict values (e.g. imscribe's "args" field)
+        if isinstance(args[k], dict):
+            _remap_ascii_tool_args(args[k])
+    return args
 
 TOOL_SCHEMAS.append({
     "type": "function",
