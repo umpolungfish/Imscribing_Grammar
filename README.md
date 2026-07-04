@@ -139,7 +139,7 @@ WAV file → acoustic token sequence → IMASM → Frobenius analysis → ranked
 uv run whale_audio.py <file.wav> [onset_delta]
 ```
 
-The engine does not claim to "decode" whale song. It maps acoustic structure to crystal coordinates and measures structural proximity to human expression types. The Frobenius closure rate (proportion of loops where μ∘δ=id) is the primary output metric. Standalone release: `~/imsgct/cetaceanspeak`.
+The engine does not claim to "decode" whale song. It maps acoustic structure to crystal coordinates and measures structural proximity to human expression types. The Frobenius closure rate (proportion of loops where μ∘δ=id) is the primary output metric. Standalone release: `imsgct/cetaceanspeak`.
 
 ### Genetic (`genetic_engine.py`)
 
@@ -204,7 +204,7 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 ## Lean Formalization — p4rakernel
 
-`~/imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. (It supersedes the former MillenniumAnkh repo; classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `~/imsgct/p4rakernel/ClassicalRestriction.lean`.)
+`imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. (It supersedes the former MillenniumAnkh repo; classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `imsgct/p4rakernel/ClassicalRestriction.lean`.)
 
 **~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (sorry-free), and the Millennium cluster.
 
@@ -221,7 +221,7 @@ Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge,
 
 ### Millennium cluster — honest sorries
 
-Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted; it does not pretend those proofs are done. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries are the honest statement of remaining work. Full detail: `~/imsgct/p4rakernel/README.md`.
+Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted; it does not pretend those proofs are done. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries are the honest statement of remaining work. Full detail: `imsgct/p4rakernel/README.md`.
 
 ---
 
@@ -261,14 +261,14 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 
 | Repo | Tier | Language | Description |
 |---|---|---|---|
-| `~/imsgct/p4rakernel` | ${O}_\infty$ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
-| `~/imsgct/red-hot_rebis` | ${O}_\infty$ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
-| `~/imsgct/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
-| `~/imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
-| `~/imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
-| `~/imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `~/imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
-| `~/imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
+| `imsgct/p4rakernel` | ${O}_\infty$ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
+| `imsgct/red-hot_rebis` | ${O}_\infty$ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
+| `imsgct/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
+| `imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
+| `imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
+| `imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
+| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
+| `imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
 ---
 
@@ -287,7 +287,7 @@ uv pip install librosa soundfile
 
 Optional — Lean formalization (paraconsistent kernel):
 ```bash
-cd ~/imsgct/p4rakernel/p4ramill
+cd imsgct/p4rakernel/p4ramill
 lake build
 ```
 
