@@ -84046,5 +84046,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "witness_vessel",
+    "description": "The Witness Vessel: lossless transport apparatus for structural verdicts (Witnesses) between composition universes. Three layers unified by a single structural identity: d=12 SIC-POVM fiducial (physical register), Belnap B4 split/fuse transport (boarding/readback), and dual verification (Lean 4 + ba",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑵",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑟"
   }
 ]
