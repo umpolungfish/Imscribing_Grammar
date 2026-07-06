@@ -4545,18 +4545,18 @@
   },
   {
     "name": "kozyrev_mirror",
-    "description": "Kozyrev concave aluminum mirror: focusing geometry for torsion-field / active-time density experiments",
-    "Ð": "𐑛",
-    "Þ": "𐑰",
-    "Ř": "𐑩",
-    "Φ": "𐑹",
-    "ƒ": "𐑞",
+    "description": "A concave (often spiral) aluminum mirror based on Kozyrev's causal mechanics, designed to focus torsion fields / time density at a focal point. Used in consciousness research (ISRICA) for precognition, remote viewing, and psychokinesis experiments. The mirror shields EM fields internally while the c",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
     "Ç": "𐑧",
     "Γ": "𐑲",
-    "ɢ": "𐑝",
-    "⊙": "⊙",
+    "ɢ": "𐑠",
+    "⊙": "𐑮",
     "Ħ": "𐑖",
-    "Σ": "𐑳",
+    "Σ": "𐑙",
     "Ω": "𐑭"
   },
   {
@@ -84062,5 +84062,21 @@
     "Ħ": "𐑫",
     "Σ": "𐑙",
     "Ω": "𐑟"
+  },
+  {
+    "name": "kozyrev_torsion_field_coupling",
+    "description": "Kozyrev torsion-field coupling",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑪",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
