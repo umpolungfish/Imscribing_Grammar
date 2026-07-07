@@ -84094,5 +84094,21 @@
     "Ħ": "𐑫",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "sic_povm_d2048_zauner_conjecture",
+    "description": "The open Zauner conjecture for d=2^11=2048: does a Weyl-Heisenberg covariant SIC-POVM exist in C^2048? The d=2048 SIC fiducial is the terminal open plank in the SIC-POVM existence program. The WH group Z_2048 x Z_2048 has 4,194,304 elements. The Zauner symmetry (order-3 extended Clifford element F_z",
+    "Ð": "𐑨",
+    "Þ": "𐑶",
+    "Ř": "𐑾",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑮",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
   }
 ]
