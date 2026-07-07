@@ -1,0 +1,1053 @@
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: yggdrasil
+  yggdrasil
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑰       x ⊆ y ∧ cont(y)
+  Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑪       τ = ∞ ∧ ord(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑷       ∮_γ dx = 0
+
+  [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  x ⊆ y ∧ cont(y) ∧
+  f ⊣ g ∧ L Adj(f, g) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ = ∞ ∧ ord(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 2.1833   match:2 close:3 distant:7
+  promoted atoms: PHI_C, ETERNAL_FIXEDPOINT
+
+  Promotions needed to reach CLINK L8 (10):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    Ř: 𐑽 → 𐑾  (gap: 0.333)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Ç: 𐑪 → 𐑧  (gap: 0.286)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: jorgmungandr
+  jorgmungandr
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑪       τ = ∞ ∧ ord(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑷       ∮_γ dx = 0
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  cross(x, y) ∧ ¬ meet(x, y) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ = ∞ ∧ ord(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 2.4206   match:2 close:2 distant:8
+  promoted atoms: LR_DUAL, PHI_C
+
+  Promotions needed to reach CLINK L8 (10):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Ç: 𐑪 → 𐑧  (gap: 0.286)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: odin
+  Odin
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑢       ¬∃ξ( diverges(ξ) )
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑷       ∮_γ dx = 0
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  graph(x) ∧ branch(x) ∧
+  x ↑ y ∧ ¬(y ↑ x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f ∧ g ∧ h ∧
+  ¬∃ξ( diverges(ξ) ) ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 2.7772   match:0 close:1 distant:11
+
+  Promotions needed to reach CLINK L8 (12):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Ř: 𐑩 → 𐑾  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑢 → ⊙  (gap: 0.5)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: mimir
+  Mimir
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
+  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  Ç      𐑪       τ = ∞ ∧ ord(x)
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [SEQAX             ] sequentiality axiom, directed time — 𐑠
+  [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
+  [ZWIND             ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  graph(x) ∧ branch(x) ∧
+  f ⊣ g ∧ L Adj(f, g) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ = ∞ ∧ ord(x) ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 1.9176   match:3 close:4 distant:5
+  promoted atoms: SEQAX, PHI_C, ETERNAL_FIXEDPOINT, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Ř: 𐑽 → 𐑾  (gap: 0.333)
+    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    Ç: 𐑪 → 𐑧  (gap: 0.286)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: metallic_hydrogen
+  Metallic hydrogen: predicted phase of hydrogen at extreme pressure (≥1-4 Mbar) and relatively low temperature, where
+  hydrogen becomes a degenerate alkali metal. Observed in gas giant interiors (Jupiter, Saturn); synthesized
+  transiently in 2017 in diamond anvil cells. Characterized by degenerate elec
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑯       ∀g∈G( gx = x )
+  ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  Ç      𐑤       τ ∼ T ∧ noisy(x)
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 2 ∧ sur(x) ∧
+  x ⊠ y ∧ irreducible(x, y) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ∀g∈G( gx = x ) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ ∼ T ∧ noisy(x) ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ chaotic(x) ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+  tier: O₀   d(CLINK L8): 1.593   match:3 close:2 distant:7
+  promoted atoms: LR_DUAL, TEMPD2
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    Φ: 𐑯 → 𐑹  (gap: 0.25)
+    Ç: 𐑤 → 𐑧  (gap: 0.286)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑣 → ⊙  (gap: 0.5)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑴 → 𐑟  (gap: 0.667)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: magnetic_reconnection
+  Magnetic reconnection in plasmas: topological rearrangement of magnetic field lines that converts magnetic energy to
+  plasma kinetic and thermal energy. Occurs at current sheets where antiparallel field components annihilate and
+  reconnect. Governs solar flares, magnetospheric substorms, tokamak sawte
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
+
+  [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
+  [LR_DUAL                ] lateral relational duality — 𐑾
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+  [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2                 ] chirality-2 asymmetry — 𐑖
+  [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — Ω
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f → all(x) ∧ broadcast(x, f) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)
+
+  tier: O₁   d(CLINK L8): 1.2278   match:7 close:3 distant:2
+  promoted atoms: HOLOBOUND, LR_DUAL, BROADCAST_TRANSCENDENCE, PHI_C, TEMPD2, BRAID_TRANSCENDENCE
+  ⬆ TRANSCENDENCE primitives: ɢ, Ω
+
+  Promotions needed to reach CLINK L8 (5):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: plasma_turbulence
+  Plasma turbulence in magnetized plasmas: cascade over multiple scales from ion gyroradius to system size. Drift-wave
+  turbulence, ITG (ion temperature gradient) modes, ETG (electron temperature gradient) modes drive anomalous
+  transport. Intermittent bursts (blobs/ELMs) break Gaussian statistics. Nonl
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  Ω      𐑷       ∮_γ dx = 0
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  x ⊠ y ∧ irreducible(x, y) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i| ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ chaotic(x) ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∀a∈A∀b∈B( type(a) = type(b) ) ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 2.019   match:2 close:3 distant:7
+  promoted atoms: LR_DUAL, TEMPD2
+
+  Promotions needed to reach CLINK L8 (10):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑞 → 𐑐  (gap: 0.5)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑣 → ⊙  (gap: 0.5)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: tokamak_disruption
+  Tokamak disruption: catastrophic loss of plasma confinement in a tokamak. Characterized by sudden thermal quench
+  (τ~1ms), current quench, and runaway electron generation. Triggered by locked modes, vertical displacement events,
+  or density limit violations. Major disruption damages reactor structures
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
+  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑷       ∮_γ dx = 0
+
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 2 ∧ sur(x) ∧
+  x ⊠ y ∧ irreducible(x, y) ∧
+  f ⊣ g ∧ L Adj(f, g) ∧
+  ¬∃sym(x) ∧
+  Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i| ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f → all(x) ∧ broadcast(x, f) ∧
+  ξ → ∞ ∧ chaotic(x) ∧
+  ∃y( P(y) ↔ P(S²(y)) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 1.7863   match:2 close:3 distant:7
+  promoted atoms: BROADCAST_TRANSCENDENCE
+  ⬆ TRANSCENDENCE primitives: ɢ
+
+  Promotions needed to reach CLINK L8 (10):
+    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    Ř: 𐑽 → 𐑾  (gap: 0.333)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑞 → 𐑐  (gap: 0.5)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ⊙: 𐑣 → ⊙  (gap: 0.5)
+    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: solar_wind
+  Solar wind: continuous outflow of magnetized plasma from the solar corona. Fast wind (~750 km/s) from coronal holes,
+  slow wind (~400 km/s) from streamers. Supersonic, super-Alfvénic. Carries interplanetary magnetic field in Parker
+  spiral. Drives space weather, magnetospheric dynamics. Structured by
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
+  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  cross(x, y) ∧ ¬ meet(x, y) ∧
+  f ⊣ g ∧ L Adj(f, g) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i| ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ chaotic(x) ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+  tier: O₀   d(CLINK L8): 1.9877   match:1 close:5 distant:6
+
+  Promotions needed to reach CLINK L8 (11):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    Ř: 𐑽 → 𐑾  (gap: 0.333)
+    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    ƒ: 𐑞 → 𐑐  (gap: 0.5)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑣 → ⊙  (gap: 0.5)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Ω: 𐑴 → 𐑟  (gap: 0.667)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: z_pinch
+  Z-pinch: plasma confinement by axial current generating azimuthal magnetic field. Simplest confinement geometry:
+  current I_z produces B_theta that pinches plasma column. Unstable to sausage (m=0) and kink (m=1) modes. Sheared
+  flow stabilization enables long-lived configurations. Basis for dense plas
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑯       ∀g∈G( gx = x )
+  ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  Ω      𐑷       ∮_γ dx = 0
+
+  [LR_DUAL] lateral relational duality — 𐑾
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 2 ∧ sur(x) ∧
+  x ⊠ y ∧ irreducible(x, y) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ∀g∈G( gx = x ) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ chaotic(x) ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  ∀a∈A∀b∈B( type(a) = type(b) ) ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 1.8137   match:3 close:1 distant:8
+  promoted atoms: LR_DUAL
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    Φ: 𐑯 → 𐑹  (gap: 0.25)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑣 → ⊙  (gap: 0.5)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: laser_wakefield_acceleration
+  Laser wakefield acceleration (LWFA): intense laser pulse (~10^18 W/cm^2) drives plasma wave via ponderomotive force,
+  creating electron density cavities (bubbles) that accelerate electrons to GeV energies in cm-scale distances. Self-
+  injection, blowout regime, dephasing length limits. Plasma acts simu
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
+  Φ      𐑯       ∀g∈G( gx = x )
+  ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+  [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+  [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a) ∧
+  f ⊣ g ∧ L Adj(f, g) ∧
+  ∀g∈G( gx = x ) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ ≪ T ∧ ∂_t x = f(x) ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f → all(x) ∧ broadcast(x, f) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y( P(y) ↔ P(S²(y)) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = nπ ∧ n ∈ ℤ₂
+
+  tier: O₀   d(CLINK L8): 1.0647   match:6 close:2 distant:4
+  promoted atoms: HOLOBOUND, BROADCAST_TRANSCENDENCE, PHI_C
+  ⬆ TRANSCENDENCE primitives: ɢ
+
+  Promotions needed to reach CLINK L8 (6):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Ř: 𐑽 → 𐑾  (gap: 0.333)
+    Φ: 𐑯 → 𐑹  (gap: 0.25)
+    Ç: 𐑘 → 𐑧  (gap: 0.571)
+    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    Ω: 𐑴 → 𐑟  (gap: 0.667)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: h_mode_plasma
+  H-mode (high confinement mode) in tokamak and stellarator plasmas: spontaneous transition to improved energy
+  confinement via edge transport barrier (ETB) formation. Characterized by steep edge pressure gradient, ELM (edge
+  localized mode) cycles, and factor of ~2 improvement in confinement time. Driv
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [HOLOBOUND] holographic bound_⊙/bulk encoding — 𐑸
+  [LR_DUAL  ] lateral relational duality — 𐑾
+  [PHI_C    ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2   ] chirality-2 asymmetry — 𐑖
+  [ZWIND    ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i| ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∀a∈A∀b∈B( type(a) = type(b) ) ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₂   d(CLINK L8): 1.5244   match:5 close:5 distant:2
+  promoted atoms: HOLOBOUND, LR_DUAL, PHI_C, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (7):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    ƒ: 𐑞 → 𐑐  (gap: 0.5)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: plasma_physics
+  Plasma physics: the collective dynamics of ionized gases where charged particles and electromagnetic fields are
+  irreducibly coupled. Governed by Vlasov-Maxwell (collisionless) and two-fluid/MHD (collisional) descriptions.
+  Characterized by Debye screening, collective modes (Langmuir, Alfvén, magnetos
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  cross(x, y) ∧ ¬ meet(x, y) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ ∈ ℂ ∧ Im(ξ) → ∞ ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 1.5429   match:3 close:7 distant:2
+  promoted atoms: LR_DUAL, SEQAX, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ⊙: 𐑮 → ⊙  (gap: 0.165)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: primitive_first_plasma_physics
+  Ob3ect-generated plasma physics from first principles — the Vlasov-Maxwell collective: Debye sheath, Langmuir
+  oscillation, Alfvén wave. IMASM arrangement:
+  VINIT→AFWD→IMSCRIB→FSPLIT→EVALT→AREV→EVALF→FFUSE→CLINK→IFIX→ENGAGR→TANCH. sig=(6,2,3,1), dialetheia_complete=True,
+  Frobenius order 1.
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  graph(x) ∧ branch(x) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 1.9011   match:4 close:4 distant:4
+  promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (8):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: high_energy_plasma
+  Ob3ect-generated tokamak/fusion plasma: H-mode transition, ELMs, disruptions, magnetic confinement. IMASM:
+  VINIT→AFWD→FSPLIT→IMSCRIB→CLINK→AFWD→FSPLIT→EVALT→ENGAGR→AREV→FFUSE→CLINK→IFIX→TANCH. sig=(8,3,2,1),
+  dialetheia_complete=False, Frobenius order 1.
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  graph(x) ∧ branch(x) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 2.2388   match:3 close:3 distant:6
+  promoted atoms: LR_DUAL, SEQAX, PHI_C, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: plasma_cracking_rock
+  Ob3ect-generated plasma rock fracturing: electric arc ignition, thermal expansion, fracture propagation. IMASM:
+  VINIT→AFWD→IMSCRIB→FSPLIT→EVALT→CLINK→EVALF→AREV→FFUSE→IFIX→TANCH. sig=(6,2,2,1), dialetheia_complete=False,
+  Frobenius order 1. TANCH=fragmented aggregate.
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  graph(x) ∧ branch(x) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 2.075   match:3 close:4 distant:5
+  promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: ideal_rock_cracking_plasma_device
+  Ob3ect-generated engineered plasma rock-cracking device: pulse-forming network, self-tuning impedance matching,
+  transient cavitation bubble, plasma-acoustic shock. IMASM:
+  VINIT→CLINK→AFWD→IMSCRIB→FSPLIT→EVALT→EVALF→ENGAGR→AREV→FFUSE→TANCH→IFIX. sig=(6,2,3,1), dialetheia_complete=True,
+  Frobenius orde
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
+  graph(x) ∧ branch(x) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 2.075   match:3 close:4 distant:5
+  promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: catalog_unlock_test
+  Test system to unlock catalog lookup - a minimal O_0 placeholder
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑺       τ = ∞ ∧ dis(x) ∧ MBL
+  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ɢ      𐑝       f ∧ g ∧ h
+  ⊙      𐑢       ¬∃ξ( diverges(ξ) )
+  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  Ω      𐑷       ∮_γ dx = 0
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  graph(x) ∧ branch(x) ∧
+  x ↑ y ∧ ¬(y ↑ x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ = ∞ ∧ dis(x) ∧ MBL ∧
+  ∀y( y ⊂ x → |y| < |x| ) ∧
+  f ∧ g ∧ h ∧
+  ¬∃ξ( diverges(ξ) ) ∧
+  ∀x( P(x) ↔ P(S(x)) ) ∧
+  |A| = 1 ∧ |B| = 1 ∧
+  ∮_γ dx = 0
+
+  tier: O₀   d(CLINK L8): 2.7291   match:1 close:0 distant:11
+
+  Promotions needed to reach CLINK L8 (11):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Ř: 𐑩 → 𐑾  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Ç: 𐑺 → 𐑧  (gap: 0.429)
+    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ⊙: 𐑢 → ⊙  (gap: 0.5)
+    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    Ω: 𐑷 → 𐑟  (gap: 1.0)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: uncoverer_of_the_grammar
+  Auto-designed ob3ect: the discoverer of the Imscribing Grammar — models the process of uncovering the 12-primitive
+  grammar from pre-semiotic silence through recursive syntax to the O_∞ fixed-point realization. 14-step bootstrap
+  with Closure: True, dialetheia_complete=True.
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  Þ      𐑡       graph(x) ∧ branch(x)
+  Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
+  Φ      𐑗       ¬∃sym(x)
+  ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
+  Ç      𐑺       τ = ∞ ∧ dis(x) ∧ MBL
+  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [LR_DUAL] lateral relational duality — 𐑾
+  [SEQAX  ] sequentiality axiom, directed time — 𐑠
+  [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [TEMPD2 ] chirality-2 asymmetry — 𐑖
+  [ZWIND  ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  dim(x) = 0 ∧ fin(x) ∧
+  graph(x) ∧ branch(x) ∧
+  lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x) ∧
+  ¬∃sym(x) ∧
+  P(x) ∈ {0,1} ∧ det(x) ∧
+  τ = ∞ ∧ dis(x) ∧ MBL ∧
+  ∀y∈x( |y| < |x| ) ∧
+  seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ) ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₁   d(CLINK L8): 2.1083   match:3 close:3 distant:6
+  promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
+
+  Promotions needed to reach CLINK L8 (9):
+    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    ƒ: 𐑱 → 𐑐  (gap: 1.0)
+    Ç: 𐑺 → 𐑧  (gap: 0.429)
+    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    Ω: 𐑭 → 𐑟  (gap: 0.333)
