@@ -47,8 +47,81 @@ SITE = {
 }
 
 DEFAULT_CREATOR = {
-    "name":  "Mills, Lando",
-    "orcid": "0000-0003-0003-0552",
+    "name":        "Mills, Lando",
+    "orcid":       "0000-0003-0003-0552",
+    "affiliation": "Independent Researcher",
+}
+
+DEFAULT_CONTRIBUTOR_LARSON = {
+    "name": "Larson, Harry T.",
+    "type": "Other",
+}
+
+CRYSTALLINE_BRANCH = "crystalline/manuscripts3-2026-07-07"
+CRYSTALLINE_TAG    = "crystalline-manuscripts3-v1"
+P4RA_COMMIT        = "eea2c0c"
+MOMONAD_COMMIT     = "16da4a9"
+
+PROG_LANG_NAMES = {
+    "lean":   "Lean",
+    "rust":   "Rust",
+    "python": "Python",
+}
+
+# Per-manuscript Zenodo profiles (repository box, method, languages, default links).
+MANUSCRIPT_PROFILES: dict[str, dict] = {
+    "sic_povm_stark_hilbert12_lifted": {
+        "code_repository": "https://github.com/umpolungfish/p4rakernel",
+        "programming_languages": ["lean"],
+        "method": (
+            "Lean 4 machine-checked formalization of SIC-POVM existence, "
+            "Belnap multilattice structure, and the Stark--Zauner--Hilbert chain."
+        ),
+        "extra_related": [
+            "https://github.com/umpolungfish/ig-docs",
+            "https://github.com/umpolungfish/imscribing_grammar",
+            "https://github.com/umpolungfish",
+            "https://orcid.org/0000-0003-0003-0552",
+            "https://landomills.com/",
+            "https://imscribe.com/",
+        ],
+        "companions": ["witness_vessel", "chrysopoeia_2048"],
+    },
+    "witness_vessel_lifted": {
+        "code_repository": "https://github.com/umpolungfish/p4rakernel",
+        "programming_languages": ["lean", "rust"],
+        "method": (
+            "Lean 4 proof verification of witness-vessel lossless transport, "
+            "paired with bare-metal Rust execution in mOMonadOS under QEMU."
+        ),
+        "extra_related": [
+            "https://github.com/umpolungfish/momonad_os",
+            "https://github.com/umpolungfish/ig-docs",
+            "https://github.com/umpolungfish/imscribing_grammar",
+            "https://github.com/umpolungfish",
+            "https://orcid.org/0000-0003-0003-0552",
+            "https://landomills.com/",
+            "https://imscribe.com/",
+        ],
+        "companions": ["sic_povm_stark_hilbert12", "chrysopoeia_2048"],
+    },
+    "chrysopoeia_2048_lifted": {
+        "code_repository": "https://github.com/umpolungfish/p4rakernel",
+        "programming_languages": ["lean"],
+        "method": (
+            "Explicit algebraic construction program for the $d=2048$ SIC-POVM moduli; "
+            "PARI/GP field computations with Lean 4 companion formalization."
+        ),
+        "extra_related": [
+            "https://github.com/umpolungfish/ig-docs",
+            "https://github.com/umpolungfish/imscribing_grammar",
+            "https://github.com/umpolungfish",
+            "https://orcid.org/0000-0003-0003-0552",
+            "https://landomills.com/",
+            "https://imscribe.com/",
+        ],
+        "companions": ["sic_povm_stark_hilbert12", "witness_vessel"],
+    },
 }
 
 UPLOAD_TYPES = {
@@ -106,9 +179,9 @@ CONTRIBUTOR_TYPES = {
     "Other":         "Other",
 }
 
-# All IG publications use the LUNLICENSE (custom public domain dedication).
-# Zenodo has no LUNLICENSE ID; "other-open" is the correct category.
-# License text goes into the Zenodo "Additional notes" field (notes key), not as a file.
+# IG publications use the LUNLICENSE (hardcoded; authoritative, do not fetch ~/).
+# Zenodo has no LUNLICENSE ID; "other-open" is the deposit license field only.
+# Never inject license text into Notes or attach LUNLICENSE as a deposit file.
 DEFAULT_LICENSE = "other-open"
 LUNLICENSE_TEXT = """\
 This is free and unencumbered and released into the public domain.
@@ -230,6 +303,189 @@ def find_tex_source(pdf: Path) -> Path | None:
     return None
 
 
+def _prog_lang(lang_id: str) -> dict:
+    return {"id": lang_id, "title": {"en": PROG_LANG_NAMES.get(lang_id, lang_id)}}
+
+
+def _tex_section(text: str, heading: str) -> str:
+    m = re.search(
+        rf'\\section\*?\{{{re.escape(heading)}\}}\s*([\s\S]+?)'
+        r'(?=\\section\*?\{|\\appendix|\\begin\{{thebibliography\}}|\\end\{{document\}})',
+        text,
+    )
+    return m.group(1).strip() if m else ""
+
+
+def _tex_to_plain(text: str) -> str:
+    text = _strip_citations(text)
+    text = re.sub(r'\\url\{([^}]+)\}', r'\1', text)
+    text = re.sub(r'\\href\{[^}]+\}\{([^}]+)\}', r'\1', text)
+    text = re.sub(r'\\texttt\{([^}]+)\}', r'\1', text)
+    text = text.replace('\\\\', ' ')
+    text = text.replace('\\', ' ')
+    text = _strip_latex(text)
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+
+def _github_urls(text: str) -> list[str]:
+    urls: list[str] = []
+    seen: set[str] = set()
+    for m in re.finditer(r'\\url\{(https?://[^}]+)\}', text):
+        url = m.group(1).strip()
+        if "github.com" in url:
+            urls.append(url)
+    for m in re.finditer(r'\\href\{(https?://[^}]+)\}', text):
+        url = m.group(1).strip()
+        if "github.com" in url:
+            urls.append(url)
+    for m in re.finditer(r'<(https?://github\.com[^>\s]+)>', text):
+        urls.append(m.group(1).strip())
+    for m in re.finditer(r'\[[^\]]*\]\((https?://github\.com[^)]+)\)', text):
+        urls.append(m.group(1).strip())
+    out: list[str] = []
+    for url in urls:
+        url = url.rstrip('.,;)]}')
+        if url not in seen:
+            seen.add(url)
+            out.append(url)
+    return out
+
+
+def _related_url(identifier: str, relation: str = "isSupplementedBy") -> dict:
+    return {"identifier": identifier, "scheme": "url", "relation": relation}
+
+
+def _merge_related_identifiers(extracted: dict, stem: str) -> list[dict]:
+    profile = MANUSCRIPT_PROFILES.get(stem, {})
+    seen: set[str] = set()
+    related: list[dict] = []
+
+    def add(url: str, relation: str = "isSupplementedBy") -> None:
+        url = url.rstrip('/')
+        if not url or url in seen:
+            return
+        seen.add(url)
+        related.append(_related_url(url, relation))
+
+    for url in extracted.get("github_urls", []):
+        add(url)
+    for url in profile.get("extra_related", []):
+        add(url)
+    repo = profile.get("code_repository")
+    if repo:
+        add(repo)
+    if not related:
+        add("https://github.com/umpolungfish/imscribing_grammar")
+    return related
+
+
+def _build_notes(extracted: dict, stem: str) -> str:
+    profile = MANUSCRIPT_PROFILES.get(stem, {})
+    parts: list[str] = []
+
+    artifact = extracted.get("artifact_text", "")
+    if artifact:
+        parts.append(_tex_to_plain(artifact))
+
+    parts.append(
+        f"Frozen crystalline snapshot: branch {CRYSTALLINE_BRANCH}, tag {CRYSTALLINE_TAG}; "
+        f"p4rakernel commit {P4RA_COMMIT}."
+    )
+    if stem == "witness_vessel_lifted":
+        parts.append(f"mOMonadOS commit {MOMONAD_COMMIT}.")
+    parts.append("Manuscript trio frozen in ig-docs on the same branch and tag.")
+
+    companions = profile.get("companions", [])
+    if companions:
+        parts.append(
+            "Companion preprints in the manuscripts3 SIC trio: "
+            + ", ".join(companions) + "."
+        )
+
+    ack = extracted.get("acknowledgements_text", "")
+    if ack:
+        parts.append("Acknowledgements: " + _tex_to_plain(ack))
+
+    langs = profile.get("programming_languages", [])
+    if langs:
+        parts.append(
+            "Programming languages: "
+            + ", ".join(PROG_LANG_NAMES.get(l, l) for l in langs)
+            + ("; PARI/GP field scripts where applicable." if stem == "chrysopoeia_2048_lifted" else ".")
+        )
+
+    parts.append(f"Publisher: {DEFAULT_PUBLISHER}. License: LUNLICENSE (other-open on Zenodo).")
+    return " ".join(p.strip() for p in parts if p.strip())
+
+
+def _build_custom_fields(stem: str) -> dict:
+    profile = MANUSCRIPT_PROFILES.get(stem, {})
+    custom: dict = {}
+    repo = profile.get("code_repository")
+    if repo:
+        custom["code:codeRepository"] = repo
+    langs = profile.get("programming_languages", [])
+    if langs:
+        custom["code:programmingLanguage"] = [_prog_lang(l) for l in langs]
+    return custom
+
+
+def _assemble_deposit_meta(extracted: dict, files: list[Path]) -> dict:
+    stem = files[0].stem if files else ""
+    profile = MANUSCRIPT_PROFILES.get(stem, {})
+
+    title = (
+        extracted.get("title")
+        or stem.replace("_", " ").replace("-", " ").title()
+    )
+    description = extracted.get("description", "")
+    if not title or not description:
+        return {}
+
+    creators = (
+        _parse_author_str(extracted["author_str"])
+        if "author_str" in extracted
+        else [DEFAULT_CREATOR.copy()]
+    )
+
+    meta: dict = {
+        "title":              title,
+        "description":        description,
+        "upload_type":        DEFAULT_UPLOAD_TYPE,
+        "publication_type":   DEFAULT_PUB_SUBTYPE,
+        "publication_date":   extracted.get("date", datetime.date.today().isoformat()),
+        "creators":           creators,
+        "contributors":       [DEFAULT_CONTRIBUTOR_LARSON.copy()],
+        "access_right":       DEFAULT_ACCESS,
+        "license":            DEFAULT_LICENSE,
+        "language":           DEFAULT_LANGUAGE,
+        "keywords":           extracted.get("keywords", list(DEFAULT_KEYWORDS)),
+        "version":            extracted.get("version", "1.0"),
+        "imprint_publisher":  DEFAULT_PUBLISHER,
+        "method":             profile.get("method", ""),
+        "notes":              _build_notes(extracted, stem),
+        "related_identifiers": _merge_related_identifiers(extracted, stem),
+    }
+
+    custom = _build_custom_fields(stem)
+    if custom:
+        meta["custom"] = custom
+    if extracted.get("references"):
+        meta["references"] = extracted["references"]
+    return meta
+
+
+def _strip_citations(s: str) -> str:
+    """Remove LaTeX citation commands without leaving bib keys behind."""
+    s = re.sub(r'\\cite\w*(?:\[[^\]]*\])?\{[^}]*\}', '', s)
+    s = re.sub(r'Companion to\s*,\s*', '', s, flags=re.IGNORECASE)
+    s = re.sub(r'\(\s*,', '(', s)
+    s = re.sub(r',\s*,', ',', s)
+    s = re.sub(r'\s+', ' ', s)
+    return s.strip(' ,')
+
+
 def _strip_latex(s: str) -> str:
     """Strip LaTeX commands for plain text."""
     s = re.sub(r'\\emph\{([^}]+)\}', r'\1', s)
@@ -243,20 +499,63 @@ def _strip_latex(s: str) -> str:
     return s.strip()
 
 
+def _extract_braced_arg(text: str, command: str) -> str | None:
+    """Return the full braced argument for a LaTeX command, handling nesting."""
+    m = re.search(re.escape(command) + r'\{', text)
+    if not m:
+        return None
+    i = m.end()
+    depth = 1
+    start = i
+    while i < len(text) and depth:
+        ch = text[i]
+        if ch == '{':
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+        i += 1
+    if depth != 0:
+        return None
+    return text[start:i - 1]
+
+
+def _parse_tex_date(raw: str) -> str | None:
+    """Parse \\date{7 July 2026} (and common variants) to ISO YYYY-MM-DD."""
+    raw = _strip_latex(raw.strip())
+    if re.match(r'\d{4}-\d{2}-\d{2}$', raw):
+        return raw
+    m = re.match(r'(\d{1,2})\s+(\w+)\s+(\d{4})', raw)
+    if not m:
+        return None
+    day, month_name, year = m.groups()
+    months = {
+        'january': 1, 'february': 2, 'march': 3, 'april': 4,
+        'may': 5, 'june': 6, 'july': 7, 'august': 8,
+        'september': 9, 'october': 10, 'november': 11, 'december': 12,
+    }
+    month = months.get(month_name.lower())
+    if not month:
+        return None
+    return f"{year}-{month:02d}-{int(day):02d}"
+
+
 def extract_from_tex(path: Path) -> dict:
     """Extract title, author, abstract, keywords, and references from a .tex source."""
     text = path.read_text(encoding="utf-8", errors="replace")
     info: dict = {}
 
-    # Title
-    m = re.search(r'\\title\{([^}]+)\}', text, re.DOTALL)
-    if m:
-        info["title"] = _strip_latex(m.group(1)).strip()
+    # Title (nested braces, multi-line \\ breaks)
+    title_raw = _extract_braced_arg(text, r'\title')
+    if title_raw:
+        title = _strip_latex(title_raw.replace('\\\\', ' ')).strip('{} ')
+        info["title"] = title
 
-    # Author — take name before first \\
-    m = re.search(r'\\author\{([^}]+)\}', text, re.DOTALL)
-    if m:
-        name_part = m.group(1).split('\\\\')[0]
+    # Author — strip LaTeX escapes, % comments, and optional \thanks tail
+    author_raw = _extract_braced_arg(text, r'\author')
+    if author_raw:
+        name_part = author_raw.split('\\\\')[0].split('%')[0]
+        name_part = re.sub(r'\\(?:thanks|footnote)\b.*', '', name_part, flags=re.DOTALL)
+        name_part = name_part.replace('\\', ' ')
         info["author_str"] = _strip_latex(name_part).strip()
 
     # Abstract — \begin{abstract}...\end{abstract} or \subsection*{Abstract} paragraph
@@ -267,6 +566,7 @@ def extract_from_tex(path: Path) -> dict:
             text)
     if m:
         raw = m.group(1).strip()
+        raw = _strip_citations(raw)
         # Preserve $...$ math, strip everything else
         raw = re.sub(r'\\emph\{([^}]+)\}', r'\1', raw)
         raw = re.sub(r'\\textbf\{([^}]+)\}', r'\1', raw)
@@ -282,7 +582,9 @@ def extract_from_tex(path: Path) -> dict:
         text
     )
     if m:
-        raw_kw = _strip_latex(m.group(1).replace('~', ' '))
+        raw_kw = m.group(1).replace('~', ' ')
+        raw_kw = re.sub(r'\\\(\\cdot\\\)|\\cdot|·', ',', raw_kw)
+        raw_kw = _strip_latex(raw_kw)
         kws = [k.strip().rstrip(';.,') for k in re.split(r'[;,]', raw_kw) if k.strip() and len(k.strip()) > 2]
         if kws:
             info["keywords"] = kws
@@ -315,7 +617,27 @@ def extract_from_tex(path: Path) -> dict:
     if refs:
         info["references"] = refs
 
-    info["date"] = _git_date(path)
+    artifact = _tex_section(text, "Artifact statement")
+    if artifact:
+        info["artifact_text"] = artifact
+    ack = _tex_section(text, "Acknowledgements")
+    if ack:
+        info["acknowledgements_text"] = ack
+
+    github_urls = _github_urls(text)
+    if github_urls:
+        info["github_urls"] = github_urls
+
+    date_raw = _extract_braced_arg(text, r'\date')
+    if date_raw:
+        tex_date = _parse_tex_date(date_raw)
+        if tex_date:
+            info["date"] = tex_date
+    if "date" not in info:
+        info["date"] = _git_date(path)
+    ver = _git_version(path)
+    if ver:
+        info["version"] = ver
     return info
 
 
@@ -703,8 +1025,9 @@ def _parse_author_str(author_str: str) -> list[dict]:
     Handles 'Lando Mills', 'Mills, Lando', 'A. Smith and B. Jones', etc.
     Falls back to DEFAULT_CREATOR if the string matches the default author.
     """
-    # Check if it's basically the default author
-    if re.search(r'lando\s+mills|mills,?\s+lando', author_str, re.IGNORECASE):
+    clean = re.sub(r'[%\\]+', ' ', author_str)
+    clean = re.sub(r'\s+', ' ', clean).strip()
+    if re.search(r'(?:c\.?\s*)?lando\s+mills|mills,?\s+(?:c\.?\s*)?lando', clean, re.IGNORECASE):
         return [DEFAULT_CREATOR.copy()]
     creators = []
     # Split on "and" or "," between names
@@ -950,18 +1273,12 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
     Build Zenodo metadata.  With --yes, use extracted values + defaults with no
     interactive prompts.  Without --yes, pre-fill prompts with extracted values.
     """
-    default_title = (
-        extracted.get("title")
-        or (files[0].stem.replace("_", " ").replace("-", " ").title() if files else "")
-    )
-    default_desc    = extracted.get("description", "")
-    default_date    = extracted.get("date", datetime.date.today().isoformat())
-    default_kws     = extracted.get("keywords", list(DEFAULT_KEYWORDS))
-    default_creators = (
-        _parse_author_str(extracted["author_str"])
-        if "author_str" in extracted
-        else [DEFAULT_CREATOR.copy()]
-    )
+    assembled = _assemble_deposit_meta(extracted, files)
+    default_title   = assembled.get("title", "")
+    default_desc    = assembled.get("description", "")
+    default_date    = assembled.get("publication_date", datetime.date.today().isoformat())
+    default_kws     = assembled.get("keywords", list(DEFAULT_KEYWORDS))
+    default_creators = assembled.get("creators", [DEFAULT_CREATOR.copy()])
 
     if yes:
         if not default_title:
@@ -972,34 +1289,16 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
         print(f"  Date:     {default_date}")
         print(f"  Creator:  {'; '.join(c['name'] for c in default_creators)}")
         print(f"  Keywords: {', '.join(default_kws)}")
-        if extracted.get("related_identifiers"):
-            print(f"  Related:  {len(extracted['related_identifiers'])} identifiers")
+        if assembled.get("custom", {}).get("code:codeRepository"):
+            print(f"  Repository: {assembled['custom']['code:codeRepository']}")
+        if assembled.get("related_identifiers"):
+            print(f"  Related:  {len(assembled['related_identifiers'])} identifiers")
+        if assembled.get("references"):
+            print(f"  References: {len(assembled['references'])} entries")
+        if assembled.get("method"):
+            print(f"  Method:   {textwrap.shorten(assembled['method'], 72)}")
         print(f"  Desc:     {textwrap.shorten(default_desc, 72)}")
-        meta: dict = {
-            "title":              default_title,
-            "description":        default_desc,
-            "upload_type":        DEFAULT_UPLOAD_TYPE,
-            "publication_type":   DEFAULT_PUB_SUBTYPE,
-            "publication_date":   default_date,
-            "creators":           default_creators,
-            "access_right":       DEFAULT_ACCESS,
-            "license":            DEFAULT_LICENSE,
-            "language":           DEFAULT_LANGUAGE,
-            "keywords":           default_kws,
-            "version":            "1.0",
-            "imprint_publisher":  DEFAULT_PUBLISHER,
-            "notes":              LUNLICENSE_TEXT.strip(),
-            "related_identifiers": [{
-                "identifier": "https://github.com/umpolungfish/imscribing_grammar",
-                "scheme":     "url",
-                "relation":   "isSupplementedBy",
-            }],
-        }
-        if extracted.get("related_identifiers"):
-            meta["related_identifiers"] = extracted["related_identifiers"]
-        if extracted.get("references"):
-            meta["references"] = extracted["references"]
-        return meta
+        return assembled
 
     # ── Interactive (pre-filled) ─────────────────────────────────────────────
     print()
@@ -1035,23 +1334,24 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
     if raw_grant:
         grants = [{"id": g.strip()} for g in raw_grant.split(",") if g.strip()]
 
-    meta = {
+    meta = dict(assembled)
+    meta.update({
         "title":            title,
         "description":      description,
         "upload_type":      upload_type,
         "publication_date": pub_date,
         "creators":         creators,
-        "access_right":     DEFAULT_ACCESS,
-        "license":          DEFAULT_LICENSE,
         "language":         language,
         "keywords":         keywords,
-    }
+    })
     if subtype:
         meta["publication_type"] = subtype
     if version:
         meta["version"] = version
     if notes:
         meta["notes"] = notes
+    elif assembled.get("notes"):
+        meta["notes"] = assembled["notes"]
     if contributors:
         meta["contributors"] = contributors
     if related:
@@ -1060,17 +1360,6 @@ def collect_metadata(files: list[Path], extracted: dict, yes: bool) -> dict:
         meta["communities"] = communities
     if grants:
         meta["grants"] = grants
-    meta["imprint_publisher"] = DEFAULT_PUBLISHER
-    if "notes" not in meta:
-        meta["notes"] = LUNLICENSE_TEXT.strip()
-    if not meta.get("related_identifiers"):
-        meta["related_identifiers"] = [{
-            "identifier": "https://github.com/umpolungfish/imscribing_grammar",
-            "scheme":     "url",
-            "relation":   "isSupplementedBy",
-        }]
-    if extracted.get("references"):
-        meta["references"] = extracted["references"]
     return meta
 
 
@@ -1092,10 +1381,20 @@ def confirm_summary(files: list[Path], meta: dict, mode: str, yes: bool) -> bool
     if meta.get("contributors"):
         print(f"  Contributor(s): " + "; ".join(
             f"{c['name']} ({c.get('type','')})" for c in meta["contributors"]))
-    print(f"  License:     {meta['license']}")
+    print(f"  License:     {meta['license']} (LUNLICENSE)")
+    print(f"  Publisher:   {meta.get('imprint_publisher', '—')}")
+    if meta.get("method"):
+        print(f"  Method:      {textwrap.shorten(meta['method'], 60)}")
+    if meta.get("custom", {}).get("code:codeRepository"):
+        print(f"  Repository:  {meta['custom']['code:codeRepository']}")
+    langs = meta.get("custom", {}).get("code:programmingLanguage", [])
+    if langs:
+        print(f"  Languages:   {', '.join(l['title']['en'] for l in langs)}")
     print(f"  Keywords:    {', '.join(meta.get('keywords', []))}")
     if meta.get("notes"):
         print(f"  Notes:       {textwrap.shorten(meta['notes'], 60)}")
+    if meta.get("references"):
+        print(f"  References:  {len(meta['references'])} entries")
     if meta.get("related_identifiers"):
         print(f"  Related ({len(meta['related_identifiers'])}):")
         for r in meta["related_identifiers"]:
@@ -1175,7 +1474,6 @@ def cmd_upload(args):
         bucket_url = dep["links"]["bucket"]
         print(f"  Deposit ID: {dep_id}")
 
-    # Upload files
     print(f"\nUploading {len(files)} file(s):")
     for f in files:
         api_upload_file(session, bucket_url, f)

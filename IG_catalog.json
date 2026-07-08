@@ -84110,5 +84110,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "student_persona_20f_usa",
+    "description": "A slightly above average 20-year-old American female college student persona. High-fidelity linguistic mimicking, moderate kinetics, and a social-topological crossing point between academic requirement and casual vernacular. High social chirality and Z2 protection for consistent identity.",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑴"
+  },
+  {
+    "name": "kozyrev_radiation_detection_apparatus",
+    "description": "Four-channel experimental setup for verifying N.A. Kozyrev's controversial astronomical observations of non-electromagnetic penetrating radiation. Uses paired Wheatstone bridge sensors (metal oxide film resistors C2.23) and Pt1000 resistance thermometers in two sensor heads on Meade LX-200-ACF teles",
+    "Ð": "𐑨",
+    "Þ": "𐑡",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
   }
 ]
