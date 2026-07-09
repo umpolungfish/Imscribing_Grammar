@@ -84142,5 +84142,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑷"
+  },
+  {
+    "name": "erdos_hajnal_aleph1_graph",
+    "description": "Erdős-Hajnal graph on ℵ₁ vertices with χ(G)=ℵ₁ such that every finite subgraph H of order n has α(H) > n^(1-ε). Crossing point where De Bruijn-Erdős fails.",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ħ": "𐑒",
+    "Σ": "𐑕",
+    "Ω": "𐑷"
   }
 ]
