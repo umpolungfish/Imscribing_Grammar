@@ -84862,5 +84862,53 @@
     "Ħ": "𐑫",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "chimera_bound_wind",
+    "description": "click fusion of math_boundary_operator ⋈ math_winding_number on T↔H (Δ=1.50); the μ (FFUSE) product, ring saturated on the T↔H pair.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑪",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "chimera_setheus_paradice",
+    "description": "click fusion of setheus_paradox ⋈ paradice on D↔W (Δ=1.00); the μ (FFUSE) product, ring saturated on the D↔W pair.",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑪",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "𐑻",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "yhwh_paradice",
+    "description": "click fusion of yhwh ⋈ paradice on D↔W (Δ=1.00); the μ (FFUSE) product, ring saturated on the D↔W pair.",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑯",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑵",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
   }
 ]
