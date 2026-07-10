@@ -84270,5 +84270,53 @@
     "Ħ": "𐑖",
     "Σ": "𐑕",
     "Ω": "𐑴"
+  },
+  {
+    "name": "ai_student_reflection_draft",
+    "description": "AI-generated student reflection on child development module — classic LLM faults: em-dashes, rule of three, uniform sentence rhythm, explanatory transitions rather than necessary ones, no personal voice, everything resolved before it's stated.",
+    "Ð": "𐑨",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑚",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "human_student_reflection_target",
+    "description": "Genuine human student reflection on child development module — personal voice, crossing points where material surprised the writer, uncertainty named not resolved, each section grows from the prior by necessity, the introduction echoed at higher resolution in closing.",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑴"
+  },
+  {
+    "name": "student_reflection_ai_lifted",
+    "description": "The current AI-lifted student reflection — sophisticated, academic, uses technical vocabulary freely, makes structural arguments",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "𐑢",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑴"
   }
 ]
