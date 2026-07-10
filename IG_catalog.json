@@ -84318,5 +84318,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑙",
     "Ω": "𐑴"
+  },
+  {
+    "name": "tao_te_ching_catalog_gate",
+    "description": "Minimal placeholder to unlock catalog tools for Tao Te Ching analysis session.",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑗",
+    "ƒ": "𐑱",
+    "Ç": "𐑪",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "𐑢",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
   }
 ]
