@@ -320,8 +320,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 "Do NOT write anything else before the number."
             )
 
+            # A reasoning model spends its budget thinking before it emits the number,
+            # so a tight cap returns null content (finish_reason='length'). Give it room;
+            # never cap a design call so short it fails to answer at all.
             raw = await self.call_llm(prompt=prompt, system=system,
-                                      max_tokens=2000, temperature=0.1)
+                                      max_tokens=16000, temperature=0.1)
 
             # Extract leading integer
             m = re.match(r"\s*(\d+)", raw.strip())
