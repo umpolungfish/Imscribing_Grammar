@@ -312,6 +312,11 @@ class OpenRouterProvider(HttpProvider):
             "temperature": temp,
             "max_tokens": max_tokens,
         }
+        # A trivial call (e.g. the guided imscribe pick: reply with a number) does not need a
+        # reasoning model to think — that just burns the budget and stalls. Turn reasoning off
+        # for it via OpenRouter's unified switch; models that always reason ignore it harmlessly.
+        if kwargs.get("reasoning_off"):
+            data["reasoning"] = {"enabled": False}
 
         try:
             async with httpx.AsyncClient(timeout=120.0) as client:

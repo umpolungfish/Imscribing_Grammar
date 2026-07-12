@@ -180,6 +180,7 @@ class BaseAgent(ABC):
         temperature: float = 0.7,
         system: str = "You are a helpful assistant.",
         max_retries: int = 3,
+        reasoning_off: bool = False,
     ) -> str:
         """
         Call LLM with support for both raw string prompts and message lists.
@@ -203,7 +204,8 @@ class BaseAgent(ABC):
                 return await self.provider.query(
                     final_prompt,
                     max_tokens=max_tokens,
-                    temperature=temperature
+                    temperature=temperature,
+                    reasoning_off=reasoning_off,
                 )
             except Exception as exc:
                 err = str(exc)

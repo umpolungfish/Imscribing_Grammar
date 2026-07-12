@@ -1,15 +1,22 @@
-Uncap the guided imscribe pick so a reasoning model can answer
+Stop the imscribe generator stalling on reasoning models
 
-The per-primitive guided pick in generate_guided asked the LLM for ONLY an
-option number plus one sentence, but capped the call at max_tokens=2000. A
-reasoning model spends that budget thinking before it emits anything, so it
-returned null content with finish_reason='length', and after 4 retries the
-imscription failed outright. This intermittently broke `imscribe generate`
-(and every jam TOOL: imscribe that leans on it), which is exactly where a
-design call must never be capped so tight it cannot answer.
+When I run the generator with a reasoning model (deepseek-v4-pro on
+OpenRouter), the guided per-primitive pick would grind for minutes and
+sometimes return null. That pick only needs a number 1..N and one sentence,
+but the model spent its whole budget thinking first: a tight cap returned
+finish_reason='length', and the wide cap I set last time just meant minutes
+of reasoning per primitive, so imscribing one name took forever. This is the
+follow-up that note called for.
 
-Raised the cap to 16000 so the reasoning completes and the number is
-emitted. Verified: a name that previously failed on length (additive_energy)
-now generates and registers in IG_catalog.json. Note it is slow (the pick
-runs once per primitive and the model reasons fully each time); a follow-up
-could disable reasoning for this trivial pick rather than widen the budget.
+I added a reasoning-off switch that flows to the pick. OpenRouterProvider.query
+now sets data["reasoning"] = {"enabled": False} when a reasoning_off kwarg is
+passed, and call_llm threads reasoning_off through to the provider. The guided
+pick in imscribe_generator_agent.py passes reasoning_off=True and keeps the
+wide token cap as a no-regression floor: if a model ignores the switch and
+reasons anyway, it still completes (just slower) instead of failing on length.
+
+All six providers already take **kwargs, so reasoning_off is harmless to any
+of them. Verified live under the exact stall condition
+(IG_PROVIDER=openrouter, IG_MODEL=deepseek/deepseek-v4-pro): imscribing
+"razborov_flag_algebra" now finishes in about 24s with a full 12-primitive
+address at 100% confidence, where it used to grind.

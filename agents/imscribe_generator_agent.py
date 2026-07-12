@@ -320,11 +320,12 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 "Do NOT write anything else before the number."
             )
 
-            # A reasoning model spends its budget thinking before it emits the number,
-            # so a tight cap returns null content (finish_reason='length'). Give it room;
-            # never cap a design call so short it fails to answer at all.
+            # The guided pick only needs a number, so a reasoning model burns its budget
+            # thinking (null content at a tight cap, minutes at a wide one). Turn reasoning
+            # OFF for it. Keep the wide cap as a no-regression floor: if a model ignores the
+            # switch and reasons anyway, it still completes (just slower) instead of failing.
             raw = await self.call_llm(prompt=prompt, system=system,
-                                      max_tokens=16000, temperature=0.1)
+                                      max_tokens=16000, temperature=0.1, reasoning_off=True)
 
             # Extract leading integer
             m = re.match(r"\s*(\d+)", raw.strip())
