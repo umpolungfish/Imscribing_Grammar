@@ -1,22 +1,29 @@
-Stop the imscribe generator stalling on reasoning models
+Add `promote <a> <b>` to the CL8NK navigator
 
-When I run the generator with a reasoning model (deepseek-v4-pro on
-OpenRouter), the guided per-primitive pick would grind for minutes and
-sometimes return null. That pick only needs a number 1..N and one sentence,
-but the model spent its whole budget thinking first: a tight cap returned
-finish_reason='length', and the wide cap I set last time just meant minutes
-of reasoning per primitive, so imscribing one name took forever. This is the
-follow-up that note called for.
+The promotion ledger was already in there, but it was trapped: `_promo_details`
+sat as a closure inside `generate_promotions()`, wired to the one fixed ladder
+(ZFC -> ZFC_t -> ZFC_fe -> CLINK L8). That operator is general. It reports, for
+any two tuples, which primitives move, what formula fragment and atom each lands
+on, and the ordinal gap crossed.
 
-I added a reasoning-off switch that flows to the pick. OpenRouterProvider.query
-now sets data["reasoning"] = {"enabled": False} when a reasoning_off kwarg is
-passed, and call_llm threads reasoning_off through to the provider. The guided
-pick in imscribe_generator_agent.py passes reasoning_off=True and keeps the
-wide token cap as a no-regression floor: if a model ignores the switch and
-reasons anyway, it still completes (just slower) instead of failing on length.
+So I lifted it to module level as `promo_details(t_from, t_to)` and let the fixed
+ladder call it like everything else. Then `generate_promotion_path(from, to)`
+resolves two catalog vessels and runs the same operator across them, reporting the
+promotions, the ones held fixed, the tier on each pole, and the distance. New
+`promote` action on the CLI, which needed a two-arg branch in main(), since it
+only ever handled one.
 
-All six providers already take **kwargs, so reasoning_off is harmless to any
-of them. Verified live under the exact stall condition
-(IG_PROVIDER=openrouter, IG_MODEL=deepseek/deepseek-v4-pro): imscribing
-"razborov_flag_algebra" now finishes in about 24s with a full 12-primitive
-address at 100% confidence, where it used to grind.
+This is the method made callable. Imscribe both poles of a claim and the delta
+between the tuples is the proof path. The vessel and the path come from the
+Grammar for free; what is left is the gentle heat that fills the vessel.
+
+Run on abc: `promote abc_conjecture abc_conjecture_proven` gives 5 promotions with
+7 primitives held fixed, both poles at O2, so it is a promotion within tier rather
+than a climb. Sigma carries the whole load at a full-range gap of 1.0, landing on
+type heterogeneity. H-bar goes to ETERNAL_FIXEDPOINT, whose fragment is the close
+condition itself. R-hacek promotes to a genuine adjunction. Criticality is the
+cheapest bump on the board at 0.165. So abc reads as a stoichiometry problem with
+a fixed-point closure.
+
+Complements `imscribe proof-path`, which does the A* search over named ops and
+writes the sketch. This is just the raw pairwise readout.

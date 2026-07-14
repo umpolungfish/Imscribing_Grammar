@@ -633,6 +633,65 @@ def compute_transcendence():
 # PROMOTION LADDER — with per-primitive formula changes
 # =============================================================================
 
+def promo_details(t_from, t_to):
+    """Per-primitive promotion ledger carrying t_from -> t_to.
+
+    The general operator behind every promotion ladder: report each primitive
+    whose value moves, with its CL8NK formula fragment/atom on both sides and
+    the ordinal gap crossed. Primitives that agree are held fixed and omitted.
+    """
+    result = []
+    for key in PRIMITIVE_KEYS:
+        if t_from.get(key) != t_to.get(key):
+            fmap = CL8NK_FORMULAE.get(key, {})
+            f_info = fmap.get(t_from.get(key, ""), ("?", None, "?"))
+            t_info = fmap.get(t_to.get(key, ""), ("?", None, "?"))
+            result.append({
+                "primitive": key,
+                "from_value": t_from[key],
+                "to_value": t_to[key],
+                "from_fragment": f_info[0],
+                "to_fragment": t_info[0],
+                "from_atom": f_info[1],
+                "to_atom": t_info[1],
+                "ordinal_gap": round(ordinal_distance(key, t_from[key], t_to[key]), 3),
+            })
+    return result
+
+
+def generate_promotion_path(from_name, to_name):
+    """Promotions carrying one catalog vessel to another.
+
+    Imscribe both poles of a claim (e.g. `abc_conjecture` and
+    `abc_conjecture_proven`), then read off the exact promotions that separate
+    them: the vessel and the path come from the Grammar, and this is the path.
+    """
+    load_catalog()
+    a = resolve_system(from_name)
+    if a is None:
+        return {"status": "error", "message": f"System '{from_name}' not found in catalog."}
+    b = resolve_system(to_name)
+    if b is None:
+        return {"status": "error", "message": f"System '{to_name}' not found in catalog."}
+
+    t_from, t_to = a.get("tuple", {}), b.get("tuple", {})
+    details = promo_details(t_from, t_to)
+    d, _ = tuple_distance(t_from, t_to)
+    held = [k for k in PRIMITIVE_KEYS if t_from.get(k) == t_to.get(k)]
+
+    return {
+        "status": "ok",
+        "from": {"name": a.get("name", from_name), "description": a.get("description", ""),
+                 "tuple": t_from, "tier": assess_tier(t_from)},
+        "to": {"name": b.get("name", to_name), "description": b.get("description", ""),
+               "tuple": t_to, "tier": assess_tier(t_to)},
+        "promotions": details,
+        "promotion_count": len(details),
+        "held_fixed": held,
+        "distance": round(d, 4),
+    }
+
+
 def generate_promotions():
     zfc_baseline = {"Ð":"𐑼","Þ":"𐑡","Ř":"𐑩","Φ":"𐑗","ƒ":"𐑱","Ç":"𐑘","Γ":"𐑚","ɢ":"𐑝","⊙":"𐑢","Ħ":"𐑓","Σ":"𐑙","Ω":"𐑷"}
 
@@ -652,28 +711,9 @@ def generate_promotions():
 
     cl8 = CLINK_L8_REF
 
-    def _promo_details(t_from, t_to):
-        result = []
-        for key in PRIMITIVE_KEYS:
-            if t_from.get(key) != t_to.get(key):
-                fmap = CL8NK_FORMULAE.get(key, {})
-                f_info = fmap.get(t_from.get(key, ""), ("?", None, "?"))
-                t_info = fmap.get(t_to.get(key, ""), ("?", None, "?"))
-                result.append({
-                    "primitive": key,
-                    "from_value": t_from[key],
-                    "to_value": t_to[key],
-                    "from_fragment": f_info[0],
-                    "to_fragment": t_info[0],
-                    "from_atom": f_info[1],
-                    "to_atom": t_info[1],
-                    "ordinal_gap": round(ordinal_distance(key, t_from[key], t_to[key]), 3),
-                })
-        return result
-
-    stage1 = _promo_details(zfc_baseline, zfc_t)
-    stage2 = _promo_details(zfc_t, zfc_fe)
-    stage3 = _promo_details(zfc_fe, cl8)
+    stage1 = promo_details(zfc_baseline, zfc_t)
+    stage2 = promo_details(zfc_t, zfc_fe)
+    stage3 = promo_details(zfc_fe, cl8)
 
     d_zfc_zfct = tuple_distance(zfc_baseline, zfc_t)[0]
     d_zfct_zfcfe = tuple_distance(zfc_t, zfc_fe)[0]
@@ -760,6 +800,10 @@ def action_entry(name):
 
 def action_promotions():
     return generate_promotions()
+
+
+def action_promote(from_name, to_name):
+    return generate_promotion_path(from_name, to_name)
 
 
 def action_distance(name):
@@ -958,6 +1002,7 @@ def main():
         print("Actions:")
         print("  entry <name>       — Full CL8NK formula decomposition (PRIMARY)")
         print("  promotions         — Promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8")
+        print("  promote <a> <b>    — Promotions carrying vessel a → vessel b")
         print("  distance <name>    — Distance from CLINK L8")
         print("  transcendence      — The Ω/ɢ transcendence analysis (from catalog)")
         print("  tensor <name>      — CLINK L8 ⊗ name (absorption test)")
@@ -979,10 +1024,12 @@ def main():
 
     action = sys.argv[1]
     arg = sys.argv[2] if len(sys.argv) > 2 else None
+    arg2 = sys.argv[3] if len(sys.argv) > 3 else None
 
     action_map = {
         "entry": action_entry,
         "promotions": action_promotions,
+        "promote": action_promote,
         "distance": action_distance,
         "transcendence": action_transcendence,
         "tensor": action_tensor,
@@ -999,7 +1046,14 @@ def main():
         sys.exit(1)
 
     no_arg_actions = ("promotions", "transcendence", "chain", "systems", "stats")
-    if action in no_arg_actions:
+    if action == "promote":
+        if not arg or not arg2:
+            print("Usage: cl8nk_navigator.py promote <from> <to>")
+            print("  e.g. promote abc_conjecture abc_conjecture_proven")
+            sys.exit(1)
+        result = action_promote(arg, arg2)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+    elif action in no_arg_actions:
         result = action_map[action]()
         print(json.dumps(result, indent=2, ensure_ascii=False))
     elif action == "entry":
