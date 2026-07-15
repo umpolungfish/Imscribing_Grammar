@@ -6,19 +6,19 @@ with open('manuscript_zfct.json') as f:
     data = json.load(f)
 
 mapping = {
-    '𐑦': 'Dimensionality.D_omega', '𐑨': 'Dimensionality.D_turnthree',
-    '𐑸': 'Topology.T_openo', '𐑶': 'Topology.T_bullseye', '𐑰': 'Topology.T_invscr',
+    '𐑦': 'Dimensionality.D_omega', '𐑨': 'Dimensionality.ash',
+    '𐑸': 'Topology.T_openo', '𐑶': 'Topology.mime', '𐑰': 'Topology.T_invscr',
     '𐑾': 'Relational.R_lyoghlig', '𐑽': 'Relational.R_downstep',
-    '𐑿': 'Polarity.P_aolig', '𐑗': 'Polarity.P_aolig', '𐑬': 'Polarity.P_pipevar',
-    '𐑯': 'Polarity.P_subdoublearrow', '𐑹': 'Polarity.P_doublebarpipe',
-    'ƒ^ì': 'Fidelity.F_beltl', 'ƒ^ż': 'Fidelity.F_hardsign',
-    'Ç^Ù': 'KineticChar.K_teshlig', 'Ç^@': 'KineticChar.K_schwa', 'Ç^W': 'KineticChar.K_frtailgamma',
-    '𐑲': 'Granularity.G_revapostrophe',
+    '𐑿': 'Polarity.P_aolig', '𐑗': 'Polarity.P_aolig', '𐑬': 'Polarity.out',
+    '𐑯': 'Polarity.nun', '𐑹': 'Polarity.or_',
+    'ƒ^ì': 'Fidelity.age', 'ƒ^ż': 'Fidelity.peep',
+    'Ç^Ù': 'KineticChar.on', 'Ç^@': 'KineticChar.egg', 'Ç^W': 'KineticChar.yea',
+    '𐑲': 'Granularity.ice',
     'ɢ^∧': 'Grammar.Gamma_seq', 'ɢ^ˌ': 'Grammar.Gamma_seq', 'ɢ^Ş': 'Grammar.Gamma_broad',
-    '⊙': 'Criticality.Phi_ctyogh',
-    '𐑫': 'Chirality.H_invscripta', '𐑒': 'Chirality.H_toneletterstem', '𐑓': 'Chirality.H_closeomega',
-    '𐑙': 'Stoichiometry.S_doublebaresh', '𐑳': 'Stoichiometry.S_ltailm',
-    '𐑭': 'Protection.Omega_dzlig', '𐑷': 'Protection.Omega_closeepsilon',
+    '⊙': 'Criticality.monad',
+    '𐑫': 'Chirality.wool', '𐑒': 'Chirality.kick', '𐑓': 'Chirality.fee',
+    '𐑙': 'Stoichiometry.hung', '𐑳': 'Stoichiometry.up',
+    '𐑭': 'Protection.ah', '𐑷': 'Protection.awe',
 }
 
 def mk_synthon(tup):

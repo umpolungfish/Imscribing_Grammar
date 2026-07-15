@@ -169,31 +169,31 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         description_lower = description.lower()
         
         # Initial imscription generation (same as ImscriptionGeneratorAgent)
-        dimensionality = Dimensionality.MOLECULAR
-        topology = Topology.LINEAR
-        recognition_mode = RecognitionMode.NON_COVALENT
-        polarity = Polarity.SELF_COMPLEMENTARY_PSEUDO
-        fidelity = Fidelity.MEDIUM
-        kinetic_character = KineticCharacter.MODERATE
-        granularity = Granularity.LOCAL
-        interaction_grammar = InteractionGrammar.SELECTIVE_AND
+        dimensionality = Dimensionality.dead
+        topology = Topology.T_linear
+        recognition_mode = RecognitionMode.ado
+        polarity = Polarity.yew
+        fidelity = Fidelity.they
+        kinetic_character = KineticCharacter.loll
+        granularity = Granularity.ice
+        interaction_grammar = InteractionGrammar.vow
         criticality_phase = None
         
         # Apply keyword-based rules
         if any(kw in description_lower for kw in ["dimer", "cyclic", "ring", "r22(8)"]):
-            topology = Topology.CYCLIC_BOWTIE
-            fidelity = Fidelity.HIGH  # Axiom 1: cyclic → high fidelity
+            topology = Topology.mime
+            fidelity = Fidelity.peep  # Axiom 1: cyclic → high fidelity
         
         if any(kw in description_lower for kw in ["crystal", "framework", "mof"]):
-            dimensionality = Dimensionality.SUPRAMOLECULAR
-            granularity = Granularity.GLOBAL
+            dimensionality = Dimensionality.ash
+            granularity = Granularity.thigh
         
         if any(kw in description_lower for kw in ["catalytic", "cycle", "temporal"]):
-            dimensionality = Dimensionality.TEMPORAL
-            recognition_mode = RecognitionMode.DYNAMIC_CATALYTIC
+            dimensionality = Dimensionality.array
+            recognition_mode = RecognitionMode.ear
         
         if any(kw in description_lower for kw in ["rotaxane", "mechanical", "interlocked"]):
-            recognition_mode = RecognitionMode.MECHANICAL
+            recognition_mode = RecognitionMode.ian
         
         imscription_name = name or f"imscription_{_desc_slug(description)}"
         
@@ -559,7 +559,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 grounding_warnings = []
                 failed_primitives = []
 
-                if imscription.dimensionality == Dimensionality.TEMPORAL:
+                if imscription.dimensionality == Dimensionality.array:
                     # Prefer trajectory module validation; fall back to keyword check
                     trajectory_ok = False
                     try:
@@ -589,7 +589,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                         )
 
                 # --- Axiom 7: T_⋈ closing bond check ---
-                if imscription.topology == Topology.CYCLIC_BOWTIE:
+                if imscription.topology == Topology.mime:
                     reasoning_lower = reasoning.lower()
                     closing_indicators = ["hydrogen bond", "h-bond", "hbond", "coordinat", "covalent",
                                            "close", "ring", "loop", "cycl", "r2_2", "r22", "macrocycle",

@@ -26,14 +26,14 @@ def test_axiom4_violation_detection():
     # This should violate Axiom 4
     invalid_imscription = Imscription(
         name="test_invalid_sequential",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,  # D_turnthree - NOT temporal
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,  # NOT catalytic
-        polarity=Polarity.ACCEPTOR,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,  # Sequential!
+        dimensionality=Dimensionality.ash,  # D_turnthree - NOT temporal
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,  # NOT catalytic
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.measure,  # Sequential!
     )
     
     # Validate axiom 4
@@ -52,14 +52,14 @@ def test_axiom4_violation_detection():
     # Now test a VALID sequential imscription (with temporal dimension)
     valid_imscription = Imscription(
         name="test_valid_sequential",
-        dimensionality=Dimensionality.TEMPORAL,  # D_infinity - HAS temporal
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.ACCEPTOR,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
+        dimensionality=Dimensionality.array,  # D_infinity - HAS temporal
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.measure,
     )
     
     axiom4_report_valid = AxiomValidator.validate_axiom4_sequential_grammar(valid_imscription)
@@ -85,14 +85,14 @@ def test_axiom1_violation_detection():
     # This should violate Axiom 1
     invalid_imscription = Imscription(
         name="test_invalid_cyclic_low_fid",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,  # T_bullseye - cyclic
-        recognition_mode=RecognitionMode.NON_COVALENT,  # Valid R
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,  # P_pipevar - self-complementary
-        fidelity=Fidelity.LOW,  # F_beltl - LOW fidelity (VIOLATION!)
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,  # T_bullseye - cyclic
+        recognition_mode=RecognitionMode.ado,  # Valid R
+        polarity=Polarity.or_,  # P_pipevar - self-complementary
+        fidelity=Fidelity.age,  # F_beltl - LOW fidelity (VIOLATION!)
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
     )
     
     # Validate axiom 1
@@ -110,14 +110,14 @@ def test_axiom1_violation_detection():
     # Now test a VALID cyclic imscription (with medium/high fidelity)
     valid_imscription = Imscription(
         name="test_valid_cyclic",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.MEDIUM,  # F_dh - acceptable
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.they,  # F_dh - acceptable
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
     )
     
     axiom1_report_valid = AxiomValidator.validate_axiom1_cyclic_closure(valid_imscription)
@@ -145,14 +145,14 @@ def test_false_positive_prevention():
     
     cavitand_with_wrong_assignment = Imscription(
         name="nitroso_radical_calix[4]resorcinarene_anion_pi_cavitand_imscription",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,  # Purely spatial, NOT temporal
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,  # NOT catalytic
-        polarity=Polarity.ACCEPTOR,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,  # Wrong!
+        dimensionality=Dimensionality.ash,  # Purely spatial, NOT temporal
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,  # NOT catalytic
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.measure,  # Wrong!
     )
     
     axiom4_report = AxiomValidator.validate_axiom4_sequential_grammar(cavitand_with_wrong_assignment)

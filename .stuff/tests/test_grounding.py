@@ -46,14 +46,14 @@ def carboxylic_acid_dimer():
     """Create a grounded carboxylic acid dimer imscription."""
     return Imscription(
         name="carboxylic_acid_dimer",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
         description="R₂²(8) cyclic hydrogen-bonded dimer",
     )
 
@@ -63,14 +63,14 @@ def proline_aldol_cycle():
     """Create a grounded proline aldol cycle imscription."""
     return Imscription(
         name="proline_aldol_cycle",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.MESOSCALE,
-        interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
+        dimensionality=Dimensionality.array,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.bib,
+        interaction_grammar=InteractionGrammar.measure,
         description="Organocatalytic aldol cycle with enamine intermediate",
     )
 
@@ -80,14 +80,14 @@ def quantum_time_crystal_speculative():
     """Create a speculative quantum time crystal imscription (ungrounded)."""
     return Imscription(
         name="quantum_time_crystal_speculative",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
+        dimensionality=Dimensionality.array,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
         description="Speculative quantum time crystal",
     )
 
@@ -198,14 +198,14 @@ class TestStrictMode:
         
         imscription = Imscription(
             name="test",
-            dimensionality=Dimensionality.TEMPORAL,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-            polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.MODERATE,
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+            dimensionality=Dimensionality.array,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ear,
+            polarity=Polarity.or_,
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.loll,
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
         
         justifications = {
@@ -418,27 +418,27 @@ class TestTupleCollisionDetection:
         # System 1: Carboxylic acid dimer (molecular, H-bonding)
         imscription1 = Imscription(
             name="acid_dimer",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.FAST,
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.yea,
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
         
         # System 2: Proline cycle (temporal, catalytic)
         imscription2 = Imscription(
             name="proline_cycle",
-            dimensionality=Dimensionality.TEMPORAL,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=Fidelity.MEDIUM,
-            kinetic_character=KineticCharacter.MODERATE,
-            granularity=Granularity.MESOSCALE,
-            interaction_grammar=InteractionGrammar.SELECTIVE_SEQ,
+            dimensionality=Dimensionality.array,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ear,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.they,
+            kinetic_character=KineticCharacter.loll,
+            granularity=Granularity.bib,
+            interaction_grammar=InteractionGrammar.measure,
         )
         
         # Both use cyclic topology and self-complementary polarity

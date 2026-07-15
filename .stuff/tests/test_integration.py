@@ -34,33 +34,33 @@ def test_imscription_models():
         )
 
         # Test primitive enums
-        assert Dimensionality.MOLECULAR.value == "Ð_wynn"
-        assert Topology.CYCLIC_BOWTIE.value == "Þ_bullseye"
-        assert RecognitionMode.NON_COVALENT.value == "Ř_superset"
-        assert Polarity.SELF_COMPLEMENTARY_PSEUDO.value == "Φ_pm_pseudo"  # Updated
-        assert Fidelity.HIGH.value == "ƒ_hardsign"
-        assert Granularity.GLOBAL.value == "Γ_revapostrophe"
+        assert Dimensionality.dead.value == "Ð_wynn"
+        assert Topology.mime.value == "Þ_bullseye"
+        assert RecognitionMode.ado.value == "Ř_superset"
+        assert Polarity.yew.value == "Φ_pm_pseudo"  # Updated
+        assert Fidelity.peep.value == "ƒ_hardsign"
+        assert Granularity.thigh.value == "Γ_revapostrophe"
         # InteractionGrammar now has composite values
-        assert KineticCharacter.FAST.value == "Ç_frtailgamma"  # NEW
+        assert KineticCharacter.yea.value == "Ç_frtailgamma"  # NEW
         print("  ✓ All primitives accessible")
         
         # Test parsing from symbols
-        assert Dimensionality.from_symbol("D_∧") == Dimensionality.MOLECULAR
-        assert Fidelity.from_symbol("F_ℏ") == Fidelity.HIGH
-        assert KineticCharacter.from_symbol("Ç_frtailgamma") == KineticCharacter.FAST  # NEW
+        assert Dimensionality.from_symbol("D_∧") == Dimensionality.dead
+        assert Fidelity.from_symbol("F_ℏ") == Fidelity.peep
+        assert KineticCharacter.from_symbol("Ç_frtailgamma") == KineticCharacter.yea  # NEW
         print("  ✓ Symbol parsing works")
         
         # Test Imscription creation
         imscription = Imscription(
             name="carboxylic_acid_dimer",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,  # Updated
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.FAST,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,  # Updated
+            dimensionality=Dimensionality.dead,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
+            polarity=Polarity.yew,  # Updated
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.yea,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,  # Updated
             description="Classic R₂²(8) hydrogen-bonded dimer",
         )
 
@@ -74,8 +74,8 @@ def test_imscription_models():
 
         # Test ImscriptionNotation parsing (backward compatible with 7 primitives)
         parsed = parse_notation("⟨D_wynn; T_bullseye; R_superset; P_pipevar; F_hardsign; G_beta; Gamma_otimes⟩")
-        assert parsed.dimensionality == Dimensionality.MOLECULAR
-        assert parsed.fidelity == Fidelity.HIGH
+        assert parsed.dimensionality == Dimensionality.dead
+        assert parsed.fidelity == Fidelity.peep
         print("  ✓ Notation parsing works (backward compatible)")
         
         # Test JSON serialization
@@ -86,13 +86,13 @@ def test_imscription_models():
         print("  ✓ JSON serialization works")
         
         # Test fidelity numeric value
-        assert Fidelity.HIGH.numeric_value >= 0.9
-        assert Fidelity.LOW.numeric_value <= 0.5
+        assert Fidelity.peep.numeric_value >= 0.9
+        assert Fidelity.age.numeric_value <= 0.5
         print("  ✓ Fidelity numeric values correct")
         
         # Test polarity compatibility
-        assert Polarity.ACCEPTOR.is_compatible_with(Polarity.DONOR)
-        assert not Polarity.ACCEPTOR.is_compatible_with(Polarity.ACCEPTOR)
+        assert Polarity.yew.is_compatible_with(Polarity.yew)
+        assert not Polarity.yew.is_compatible_with(Polarity.yew)
         print("  ✓ Polarity compatibility works")
         
         return True
@@ -127,14 +127,14 @@ def test_imscription_catalog():
         # Register imscriptions
         imscription1 = Imscription(
             name="test_dimer",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.FAST,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.yea,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
         catalog.register(imscription1)
 
@@ -143,7 +143,7 @@ def test_imscription_catalog():
         print("  ✓ Registration works")
 
         # Test search
-        results = catalog.search(fidelity=Fidelity.HIGH)
+        results = catalog.search(fidelity=Fidelity.peep)
         assert len(results) >= 1
         print("  ✓ Search by primitive works")
 
@@ -205,26 +205,26 @@ def test_constraint_engine():
         # Create compatible imscriptions
         imscription_a = Imscription(
             name="electrophile",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.LINEAR,
-            recognition_mode=RecognitionMode.COVALENT,
-            polarity=Polarity.ACCEPTOR,
-            fidelity=Fidelity.MEDIUM,
-            kinetic_character=KineticCharacter.MODERATE,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.T_linear,
+            recognition_mode=RecognitionMode.tot,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.they,
+            kinetic_character=KineticCharacter.loll,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
 
         imscription_b = Imscription(
             name="nucleophile",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.LINEAR,
-            recognition_mode=RecognitionMode.COVALENT,
-            polarity=Polarity.DONOR,
-            fidelity=Fidelity.MEDIUM,
-            kinetic_character=KineticCharacter.MODERATE,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.T_linear,
+            recognition_mode=RecognitionMode.tot,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.they,
+            kinetic_character=KineticCharacter.loll,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
 
         # Test compatibility
@@ -236,14 +236,14 @@ def test_constraint_engine():
         # Test incompatible pair (same polarity)
         imscription_c = Imscription(
             name="another_electrophile",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.LINEAR,
-            recognition_mode=RecognitionMode.COVALENT,
-            polarity=Polarity.ACCEPTOR,
-            fidelity=Fidelity.MEDIUM,
-            kinetic_character=KineticCharacter.MODERATE,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.T_linear,
+            recognition_mode=RecognitionMode.tot,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.they,
+            kinetic_character=KineticCharacter.loll,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
 
         report2 = engine.check_pair_compatibility(imscription_a, imscription_c)
@@ -259,7 +259,7 @@ def test_constraint_engine():
         # Test fidelity propagation
         propagator = FidelityPropagator()
         propagated = propagator.propagate([imscription_a, imscription_b])
-        assert propagated in [Fidelity.LOW, Fidelity.MEDIUM, Fidelity.HIGH]
+        assert propagated in [Fidelity.age, Fidelity.they, Fidelity.peep]
         print(f"  ✓ Fidelity propagation: {propagated.value}")
         
         # Test cooperativity
@@ -307,14 +307,14 @@ def test_thermodynamics():
         # Create test imscription (carboxylic acid dimer)
         imscription = Imscription(
             name="acetic_acid_dimer",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.FAST,  # NEW
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.yea,  # NEW
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
 
         # Test η_CP computation (ΔG ≈ -52 kJ/mol for AA dimer)
@@ -407,7 +407,7 @@ def test_domain_agents():
         # Test granularity amplification
         from imscrbgrmr.models import Granularity
         gran_amp = hybrid_agent.compute_granularity_amplification(
-            Granularity.GLOBAL, Granularity.MESOSCALE
+            Granularity.thigh, Granularity.bib
         )
         assert gran_amp["amplification_factor"] >= 1
         print(f"  ✓ Granularity amplification: {gran_amp['amplification_factor']}×")
@@ -444,14 +444,14 @@ def test_framework_integration():
         # Create a imscription
         imscription = Imscription(
             name="test_imscription",
-            dimensionality=Dimensionality.MOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
-            polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=Fidelity.HIGH,
-            kinetic_character=KineticCharacter.FAST,
-            granularity=Granularity.LOCAL,
-            interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+            dimensionality=Dimensionality.dead,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
+            polarity=Polarity.yew,
+            fidelity=Fidelity.peep,
+            kinetic_character=KineticCharacter.yea,
+            granularity=Granularity.ice,
+            interaction_grammar=InteractionGrammar.vow,
         )
 
         # Compute thermodynamics

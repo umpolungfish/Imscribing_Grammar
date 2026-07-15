@@ -501,7 +501,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
                     failed_primitives = ["unspecified — run with --use-llm-grounding for details"]
 
         # Axiom 6: D_∞ requires a named closed cycle or recurring role — domain-agnostic check
-        if imscription.dimensionality == Dimensionality.TEMPORAL:
+        if imscription.dimensionality == Dimensionality.array:
             reasoning_lower = reasoning.lower()
             # Reset indicators: physical or abstract (narrative turn, logical step, mythological cycle)
             reset_indicators = [
@@ -516,7 +516,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 grounding_status = "partial"
 
         # Axiom 7: T_⋈ requires a named closing bond — check independently
-        if imscription.topology == Topology.CYCLIC_BOWTIE:
+        if imscription.topology == Topology.mime:
             reasoning_lower = reasoning.lower()
             closing_indicators = ["hydrogen bond", "h-bond", "hbond", "coordinat", "covalent",
                                    "close", "ring", "loop", "cycl", "r2_2", "r22", "macrocycle",

@@ -81,12 +81,12 @@ print(f"    F_MED  boundary : ΔG ≤ {me_thresh:.3f} kJ/mol  (ratio ≥  3 → 
 
 # CB[7]-adamantane: ΔG ≈ −72 kJ/mol (Kim 2001) → F_HIGH
 r = engine.assign_F_from_delta_g(-72.0)
-check(r.value == Fidelity.HIGH, f"CB[7]/adamantane ΔG=−72 → F_HIGH (ratio={math.exp(72/RT):.0f})", f"Expected HIGH, got {r.value}")
+check(r.value == Fidelity.peep, f"CB[7]/adamantane ΔG=−72 → F_HIGH (ratio={math.exp(72/RT):.0f})", f"Expected HIGH, got {r.value}")
 NOTE(r.evidence)
 
 # Acetic acid dimer: ΔG ≈ −13.5 kJ/mol → F_HIGH
 r = engine.assign_F_from_delta_g(-13.5)
-check(r.value == Fidelity.HIGH, f"AcOH dimer ΔG=−13.5 → F_HIGH (ratio={math.exp(13.5/RT):.1f})", f"Expected HIGH, got {r.value}")
+check(r.value == Fidelity.peep, f"AcOH dimer ΔG=−13.5 → F_HIGH (ratio={math.exp(13.5/RT):.1f})", f"Expected HIGH, got {r.value}")
 NOTE(r.evidence)
 
 # Exactly at the HIGH/MED boundary (−7.30 kJ/mol) — should be boundary case
@@ -96,30 +96,30 @@ NOTE(f"Assigned: {r.value.name}, margin={r.boundary_margin:.3f} kJ/mol")
 
 # Mid-range MEDIUM: ΔG ≈ −5.0 kJ/mol
 r = engine.assign_F_from_delta_g(-5.0)
-check(r.value == Fidelity.MEDIUM, f"ΔG=−5.0 → F_MEDIUM", f"Expected MEDIUM, got {r.value}")
+check(r.value == Fidelity.they, f"ΔG=−5.0 → F_MEDIUM", f"Expected MEDIUM, got {r.value}")
 NOTE(r.evidence)
 
 # F_LOW: ΔG = −1.0 kJ/mol
 r = engine.assign_F_from_delta_g(-1.0)
-check(r.value == Fidelity.LOW, f"ΔG=−1.0 → F_LOW", f"Expected LOW, got {r.value}")
+check(r.value == Fidelity.age, f"ΔG=−1.0 → F_LOW", f"Expected LOW, got {r.value}")
 NOTE(r.evidence)
 
 # Slight positive ΔG — still LOW
 r = engine.assign_F_from_delta_g(+0.5)
-check(r.value == Fidelity.LOW, f"ΔG=+0.5 (unfavorable) → F_LOW", f"Expected LOW, got {r.value}")
+check(r.value == Fidelity.age, f"ΔG=+0.5 (unfavorable) → F_LOW", f"Expected LOW, got {r.value}")
 
 # ── F from ξ_CP ──────────────────────────────────────────────────────────────
 
 sub("1b. Fidelity from ξ_CP (independent method)")
 
 r_xi = engine.assign_F_from_xi_cp(7.8)
-check(r_xi.value == Fidelity.HIGH, f"ξ_CP=7.8 ≤ 8.5 → F_HIGH", f"Expected HIGH, got {r_xi.value}")
+check(r_xi.value == Fidelity.peep, f"ξ_CP=7.8 ≤ 8.5 → F_HIGH", f"Expected HIGH, got {r_xi.value}")
 
 r_xi = engine.assign_F_from_xi_cp(9.5)
-check(r_xi.value == Fidelity.MEDIUM, f"ξ_CP=9.5 ∈ (8.5,11.0] → F_MEDIUM", f"Expected MEDIUM, got {r_xi.value}")
+check(r_xi.value == Fidelity.they, f"ξ_CP=9.5 ∈ (8.5,11.0] → F_MEDIUM", f"Expected MEDIUM, got {r_xi.value}")
 
 r_xi = engine.assign_F_from_xi_cp(12.0)
-check(r_xi.value == Fidelity.LOW, f"ξ_CP=12.0 > 11.0 → F_LOW", f"Expected LOW, got {r_xi.value}")
+check(r_xi.value == Fidelity.age, f"ξ_CP=12.0 > 11.0 → F_LOW", f"Expected LOW, got {r_xi.value}")
 
 # ── Method independence check: ΔG and ξ_CP should agree ─────────────────────
 
@@ -149,24 +149,24 @@ sub("1d. Kinetic character from ΔG‡")
 
 # Imine hydrolysis: ΔG‡ ≈ 45 kJ/mol → K_FAST
 r = engine.assign_K_from_barrier(45.0)
-check(r.value == KineticCharacter.FAST, f"Imine hydrolysis ΔG‡=45 → K_FAST", f"Expected FAST, got {r.value}")
+check(r.value == KineticCharacter.yea, f"Imine hydrolysis ΔG‡=45 → K_FAST", f"Expected FAST, got {r.value}")
 NOTE(r.evidence)
 
 # Racemisation (typical): ΔG‡ ≈ 80 kJ/mol → K_MODERATE
 r = engine.assign_K_from_barrier(80.0)
-check(r.value == KineticCharacter.MODERATE, f"ΔG‡=80 → K_MODERATE", f"Expected MODERATE, got {r.value}")
+check(r.value == KineticCharacter.loll, f"ΔG‡=80 → K_MODERATE", f"Expected MODERATE, got {r.value}")
 
 # C-C bond rotation barrier: ΔG‡ ≈ 120 kJ/mol → K_SLOW
 r = engine.assign_K_from_barrier(120.0)
-check(r.value == KineticCharacter.SLOW, f"ΔG‡=120 → K_SLOW", f"Expected SLOW, got {r.value}")
+check(r.value == KineticCharacter.egg, f"ΔG‡=120 → K_SLOW", f"Expected SLOW, got {r.value}")
 
 # High barrier → K_TRAP
 r = engine.assign_K_from_barrier(160.0)
-check(r.value == KineticCharacter.TRAP, f"ΔG‡=160 → K_TRAP", f"Expected TRAP, got {r.value}")
+check(r.value == KineticCharacter.on, f"ΔG‡=160 → K_TRAP", f"Expected TRAP, got {r.value}")
 
 # Pathway multiplicity override: low barrier but many competing pathways
 r = engine.assign_K_from_barrier(40.0, pathway_multiplicity=4)
-check(r.value == KineticCharacter.TRAP, f"ΔG‡=40 but multiplicity=4 → K_TRAP (pathway override)", f"Expected TRAP, got {r.value}")
+check(r.value == KineticCharacter.on, f"ΔG‡=40 but multiplicity=4 → K_TRAP (pathway override)", f"Expected TRAP, got {r.value}")
 NOTE(r.evidence)
 
 # Boundary case: exactly at 60 kJ/mol threshold
@@ -179,24 +179,24 @@ sub("1e. Granularity assignment")
 
 # Single molecule: 1 component, 0.5 nm
 r_comp = engine.assign_G_from_components(1)
-check(r_comp.value == Granularity.LOCAL, "n=1 → G_LOCAL", f"Got {r_comp.value}")
+check(r_comp.value == Granularity.ice, "n=1 → G_LOCAL", f"Got {r_comp.value}")
 
 r_scale = engine.assign_G_from_scale_nm(0.5)
-check(r_scale.value == Granularity.LOCAL, "scale=0.5 nm → G_LOCAL", f"Got {r_scale.value}")
+check(r_scale.value == Granularity.ice, "scale=0.5 nm → G_LOCAL", f"Got {r_scale.value}")
 
 # DNA origami: ~200 staple strands, ~80 nm
 r_comp = engine.assign_G_from_components(200)
-check(r_comp.value == Granularity.MESOSCALE, "n=200 → G_MESOSCALE", f"Got {r_comp.value}")
+check(r_comp.value == Granularity.bib, "n=200 → G_MESOSCALE", f"Got {r_comp.value}")
 
 r_scale = engine.assign_G_from_scale_nm(80.0)
-check(r_scale.value == Granularity.MESOSCALE, "scale=80 nm → G_MESOSCALE", f"Got {r_scale.value}")
+check(r_scale.value == Granularity.bib, "scale=80 nm → G_MESOSCALE", f"Got {r_scale.value}")
 
 # Polymer network: 10,000 units, micron scale
 r_comp = engine.assign_G_from_components(10000)
-check(r_comp.value == Granularity.GLOBAL, "n=10000 → G_GLOBAL", f"Got {r_comp.value}")
+check(r_comp.value == Granularity.thigh, "n=10000 → G_GLOBAL", f"Got {r_comp.value}")
 
 r_scale = engine.assign_G_from_scale_nm(500.0)
-check(r_scale.value == Granularity.GLOBAL, "scale=500 nm → G_GLOBAL", f"Got {r_scale.value}")
+check(r_scale.value == Granularity.thigh, "scale=500 nm → G_GLOBAL", f"Got {r_scale.value}")
 
 # G method independence: DNA origami (n=200, scale=80 nm → both MESOSCALE)
 sa = engine.assign_all({"n_components": 200, "scale_nm": 80.0})
@@ -213,33 +213,33 @@ from imscrbgrmr.models import Topology, KineticCharacter, Dimensionality, Intera
 
 # Rule 1: K=MBL → Z2
 r = engine.assign_Omega_from_primitives(
-    T=Topology.NETWORK, K=KineticCharacter.MBL, D=Dimensionality.SUPRAMOLECULAR,
-    Gamma=InteractionGrammar.SELECTIVE_AND, G=Granularity.LOCAL)
-check(r.value == TopoIndex.Z2_CLASS, f"K=MBL → Ω=Z2_CLASS (Rule 1)", f"Got {r.value}")
+    T=Topology.judge, K=KineticCharacter.air, D=Dimensionality.ash,
+    Gamma=InteractionGrammar.vow, G=Granularity.ice)
+check(r.value == TopoIndex.oak, f"K=MBL → Ω=Z2_CLASS (Rule 1)", f"Got {r.value}")
 NOTE(r.evidence)
 
 # Rule 2: T=BRAID → NON_ABELIAN
 r = engine.assign_Omega_from_primitives(
-    T=Topology.BRAID, K=KineticCharacter.TRAP, D=Dimensionality.TEMPORAL,
-    Gamma=InteractionGrammar.QUANTUM_AND, G=Granularity.GLOBAL)
-check(r.value == TopoIndex.NON_ABELIAN, f"T=BRAID → Ω=NON_ABELIAN (Rule 2)", f"Got {r.value}")
+    T=Topology.T_braid, K=KineticCharacter.on, D=Dimensionality.array,
+    Gamma=InteractionGrammar.vow, G=Granularity.thigh)
+check(r.value == TopoIndex.zoo, f"T=BRAID → Ω=NON_ABELIAN (Rule 2)", f"Got {r.value}")
 
 # Rule 3: T=NETWORK + G=GLOBAL → CHERN
 r = engine.assign_Omega_from_primitives(
-    T=Topology.NETWORK, K=KineticCharacter.SLOW, D=Dimensionality.SUPRAMOLECULAR,
-    Gamma=InteractionGrammar.SELECTIVE_AND, G=Granularity.GLOBAL)
-check(r.value == TopoIndex.CHERN, f"T=NETWORK + G=GLOBAL → Ω=CHERN (Rule 3)", f"Got {r.value}")
+    T=Topology.judge, K=KineticCharacter.egg, D=Dimensionality.ash,
+    Gamma=InteractionGrammar.vow, G=Granularity.thigh)
+check(r.value == TopoIndex.Omega_C, f"T=NETWORK + G=GLOBAL → Ω=CHERN (Rule 3)", f"Got {r.value}")
 
 # Rule 5: Γ=QUANTUM_AND → NON_ABELIAN
 r = engine.assign_Omega_from_primitives(
-    T=Topology.LINEAR, K=KineticCharacter.MODERATE, D=Dimensionality.MOLECULAR,
-    Gamma=InteractionGrammar.QUANTUM_AND, G=Granularity.LOCAL)
-check(r.value == TopoIndex.NON_ABELIAN, f"Γ=QUANTUM_AND → Ω=NON_ABELIAN (Rule 5)", f"Got {r.value}")
+    T=Topology.T_linear, K=KineticCharacter.loll, D=Dimensionality.dead,
+    Gamma=InteractionGrammar.vow, G=Granularity.ice)
+check(r.value == TopoIndex.zoo, f"Γ=QUANTUM_AND → Ω=NON_ABELIAN (Rule 5)", f"Got {r.value}")
 
 # Default: no rules fire → None
 r = engine.assign_Omega_from_primitives(
-    T=Topology.LINEAR, K=KineticCharacter.MODERATE, D=Dimensionality.MOLECULAR,
-    Gamma=InteractionGrammar.SELECTIVE_AND, G=Granularity.LOCAL)
+    T=Topology.T_linear, K=KineticCharacter.loll, D=Dimensionality.dead,
+    Gamma=InteractionGrammar.vow, G=Granularity.ice)
 check(r.value is None, f"No rules fire → Ω=None (default)", f"Got {r.value}")
 
 NOTE(f"P-22 decision tree confidence: {r.confidence:.2f} (derivational — not heuristic)")

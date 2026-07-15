@@ -277,17 +277,17 @@ class EnsembleDesignAgent(BaseAgent):
                 score += ds * 2.0
             elif goal == "granularity_amplification":
                 from imscrbgrmr.models import Granularity
-                if s.granularity == Granularity.GLOBAL:
+                if s.granularity == Granularity.thigh:
                     score += 1.5
-                elif s.granularity == Granularity.MESOSCALE:
+                elif s.granularity == Granularity.bib:
                     score += 0.8
             elif goal == "fidelity_maximization":
                 from imscrbgrmr.models import Fidelity
-                if s.fidelity == Fidelity.HIGH:
+                if s.fidelity == Fidelity.peep:
                     score += 1.5
             elif goal == "low_xi_cp":
                 from imscrbgrmr.models import Fidelity
-                if s.fidelity == Fidelity.HIGH:
+                if s.fidelity == Fidelity.peep:
                     score += 1.0  # high fidelity → lower ξ_CP typically
 
             scored.append((score, name))

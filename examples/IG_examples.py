@@ -29,12 +29,12 @@ def example_1_basic_imscription():
     # This is the R₂²(8) hydrogen-bonded motif found in thousands of crystal structures
     carboxylic_dimer = Imscription(
         name="carboxylic_acid_dimer",
-        dimensionality=Dimensionality.MOLECULAR,  # D_∧ — point-like molecular reactivity
-        topology=Topology.CYCLIC_BOWTIE,  # T_⋈ — cyclic R₂²(8) motif
-        recognition_mode=RecognitionMode.NON_COVALENT,  # R_⊇ — hydrogen bonding
+        dimensionality=Dimensionality.dead,  # D_∧ — point-like molecular reactivity
+        topology=Topology.mime,  # T_⋈ — cyclic R₂²(8) motif
+        recognition_mode=RecognitionMode.ado,  # R_⊇ — hydrogen bonding
         polarity=Polarity.SELF_COMPLEMENTARY,  # P_± — self-complementary
-        fidelity=Fidelity.HIGH,  # F_ℏ — dominant, geometry-enforcing
-        granularity=Granularity.LOCAL,  # G_ב — local control
+        fidelity=Fidelity.peep,  # F_ℏ — dominant, geometry-enforcing
+        granularity=Granularity.ice,  # G_ב — local control
         interaction_grammar=InteractionGrammar.SPECIFIC,  # Γ_⊗ — one specific partner
         description="Classic R₂²(8) hydrogen-bonded dimer",
         metadata={
@@ -153,7 +153,7 @@ def example_3_catalog_and_search():
     print(f"Total imscriptions: {len(catalog)}")
     
     # Search by fidelity
-    high_f = catalog.search(fidelity=Fidelity.HIGH)
+    high_f = catalog.search(fidelity=Fidelity.peep)
     print(f"\nHigh fidelity (F_hardsign) imscriptions: {len(high_f)}")
     for s in high_f:
         print(f"  - {s.name}: {s.to_notation()}")
@@ -193,12 +193,12 @@ def example_4_cross_domain_analogy():
         from imscrbgrmr import Imscription, Topology, RecognitionMode, Polarity, Fidelity, Granularity, InteractionGrammar
         supra_imscription = Imscription(
             name="carboxylic_acid_dimer",
-            dimensionality=Dimensionality.SUPRAMOLECULAR,
-            topology=Topology.CYCLIC_BOWTIE,
-            recognition_mode=RecognitionMode.NON_COVALENT,
+            dimensionality=Dimensionality.ash,
+            topology=Topology.mime,
+            recognition_mode=RecognitionMode.ado,
             polarity=Polarity.SELF_COMPLEMENTARY,
-            fidelity=Fidelity.HIGH,
-            granularity=Granularity.LOCAL,
+            fidelity=Fidelity.peep,
+            granularity=Granularity.ice,
             interaction_grammar=InteractionGrammar.SPECIFIC,
             description="Self-complementary H-bond dimer",
         )
@@ -243,12 +243,12 @@ def example_5_constraint_compatibility():
     # Create an electrophile imscription
     electrophile = Imscription(
         name="carbonyl_imscription",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.COVALENT,
-        polarity=Polarity.ACCEPTOR,  # P+ — electrophile
-        fidelity=Fidelity.MEDIUM,
-        granularity=Granularity.LOCAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.tot,
+        polarity=Polarity.yew,  # P+ — electrophile
+        fidelity=Fidelity.they,
+        granularity=Granularity.ice,
         interaction_grammar=InteractionGrammar.SELECTIVE,
         description="Electrophilic carbonyl carbon",
     )
@@ -256,12 +256,12 @@ def example_5_constraint_compatibility():
     # Create a nucleophile imscription
     nucleophile = Imscription(
         name="enolate_imscription",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.COVALENT,
-        polarity=Polarity.DONOR,  # P- — nucleophile
-        fidelity=Fidelity.MEDIUM,
-        granularity=Granularity.LOCAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.tot,
+        polarity=Polarity.yew,  # P- — nucleophile
+        fidelity=Fidelity.they,
+        granularity=Granularity.ice,
         interaction_grammar=InteractionGrammar.SELECTIVE,
         description="Nucleophilic enolate",
     )
@@ -283,12 +283,12 @@ def example_5_constraint_compatibility():
     # Check incompatible pair (same polarity)
     another_electrophile = Imscription(
         name="imine_imscription",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.COVALENT,
-        polarity=Polarity.ACCEPTOR,  # Also P+ — incompatible!
-        fidelity=Fidelity.MEDIUM,
-        granularity=Granularity.LOCAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.tot,
+        polarity=Polarity.yew,  # Also P+ — incompatible!
+        fidelity=Fidelity.they,
+        granularity=Granularity.ice,
         interaction_grammar=InteractionGrammar.SELECTIVE,
         description="Electrophilic imine",
     )

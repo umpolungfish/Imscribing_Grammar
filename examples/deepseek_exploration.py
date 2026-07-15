@@ -76,7 +76,7 @@ def make_imscription(
         dimensionality=dim, topology=topo, recognition_mode=rec,
         polarity=pol, fidelity=fid, kinetic_character=kin,
         granularity=gran, interaction_grammar=gram,
-        criticality_phase=phi or CriticalityPhase.SUBCRITICAL,
+        criticality_phase=phi or CriticalityPhase.woe,
         stoichiometry=stoich, description=description,
         metadata={"auto_generated": True, "source": "deepseek_exploration"},
     )
@@ -91,14 +91,14 @@ header("1 · Chelate Effect: G_beta → G_gamma Amplification")
 info("Monodentate: [Zn(py)₂Cl₂] — two independent pyridine ligands")
 zn_mono = make_imscription(
     name="zn_pyridine_monodentate",
-    dim=Dimensionality.MOLECULAR,
-    topo=Topology.CHAIN,
-    rec=RecognitionMode.NON_COVALENT,
-    pol=Polarity.ACCEPTOR,
-    fid=Fidelity.HIGH,
-    kin=KineticCharacter.FAST,
-    gran=Granularity.LOCAL,
-    gram=InteractionGrammar.SPECIFIC_AND,
+    dim=Dimensionality.dead,
+    topo=Topology.T_linear,
+    rec=RecognitionMode.ado,
+    pol=Polarity.yew,
+    fid=Fidelity.peep,
+    kin=KineticCharacter.yea,
+    gran=Granularity.ice,
+    gram=InteractionGrammar.vow,
     stoich="1:2",
     description="Zn(II) coordinated by two monodentate pyridine ligands; two independent contacts",
 )
@@ -106,14 +106,14 @@ zn_mono = make_imscription(
 info("Chelate:     [Zn(bpy)Cl₂] — bidentate 2,2'-bipyridine, hub topology")
 zn_chelate = make_imscription(
     name="zn_bipyridine_chelate",
-    dim=Dimensionality.MOLECULAR,
-    topo=Topology.HUB_NODE,
-    rec=RecognitionMode.NON_COVALENT,
-    pol=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-    fid=Fidelity.HIGH,
-    kin=KineticCharacter.FAST,
-    gran=Granularity.MESOSCALE,
-    gram=InteractionGrammar.SELECTIVE_AND,
+    dim=Dimensionality.dead,
+    topo=Topology.judge,
+    rec=RecognitionMode.ado,
+    pol=Polarity.yew,
+    fid=Fidelity.peep,
+    kin=KineticCharacter.yea,
+    gran=Granularity.bib,
+    gram=InteractionGrammar.vow,
     stoich="1:1",
     description="Zn(II) chelated by 2,2'-bipyridine; single bidentate ligand constrains entire coordination sphere",
 )
@@ -124,10 +124,10 @@ r_chel  = compute_eta_CP(zn_chelate, delta_g=-52.0)
 r_triple = compute_eta_CP(
     global_catalog.get("triple_hbond_array") or make_imscription(
         "triple_hbond_array",
-        Dimensionality.SUPRAMOLECULAR, Topology.CYCLIC_BOWTIE,
-        RecognitionMode.NON_COVALENT, Polarity.SELF_COMPLEMENTARY_SYM,
-        Fidelity.HIGH, KineticCharacter.FAST, Granularity.MESOSCALE,
-        InteractionGrammar.SELECTIVE_AND,
+        Dimensionality.ash, Topology.mime,
+        RecognitionMode.ado, Polarity.or_,
+        Fidelity.peep, KineticCharacter.yea, Granularity.bib,
+        InteractionGrammar.vow,
     ),
     delta_g=-95.0,
 )
@@ -171,14 +171,14 @@ info("  ΔG per H-bond ≈ -18 kJ/mol (gas-phase benchmark)")
 
 water = make_imscription(
     name="bulk_water_hbond_network",
-    dim=Dimensionality.SUPRAMOLECULAR,
-    topo=Topology.NETWORK,
-    rec=RecognitionMode.NON_COVALENT,
-    pol=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-    fid=Fidelity.HIGH,
-    kin=KineticCharacter.FAST,
-    gran=Granularity.GLOBAL,
-    gram=InteractionGrammar.BROAD_OR,
+    dim=Dimensionality.ash,
+    topo=Topology.judge,
+    rec=RecognitionMode.ado,
+    pol=Polarity.yew,
+    fid=Fidelity.peep,
+    kin=KineticCharacter.yea,
+    gran=Granularity.thigh,
+    gram=InteractionGrammar.gag,
     stoich="n:m",
     description=(
         "Bulk liquid water hydrogen bond network. Each water molecule donates 2 H-bonds "
@@ -252,14 +252,14 @@ info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), �
 
 formose = make_imscription(
     name="formose_aldol_autocatalytic_cycle",
-    dim=Dimensionality.TEMPORAL,
-    topo=Topology.CYCLIC_BOWTIE,
-    rec=RecognitionMode.DYNAMIC_CATALYTIC,
-    pol=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-    fid=Fidelity.MEDIUM,
-    kin=KineticCharacter.MODERATE,
-    gran=Granularity.MESOSCALE,
-    gram=InteractionGrammar.SELECTIVE_SEQ,
+    dim=Dimensionality.array,
+    topo=Topology.mime,
+    rec=RecognitionMode.ear,
+    pol=Polarity.yew,
+    fid=Fidelity.they,
+    kin=KineticCharacter.loll,
+    gran=Granularity.bib,
+    gram=InteractionGrammar.measure,
     stoich="1:1",
     description=(
         "Formose reaction autocatalytic cycle: glycolaldehyde acts as autocatalyst for "
@@ -276,13 +276,13 @@ result(f"Formose Varma probe score: {report_formose.score:.3f}  →  {report_for
 
 # Check Factor 7 conditions explicitly
 f7_conditions = {
-    "D_∞ present":   Dimensionality.TEMPORAL in (
+    "D_∞ present":   Dimensionality.array in (
         formose.dimensionality if isinstance(formose.dimensionality, list)
         else [formose.dimensionality]
-    ) or formose.dimensionality == Dimensionality.TEMPORAL,
-    "T_⋈ present":   formose.topology == Topology.CYCLIC_BOWTIE,
-    "Φ_directional": formose.polarity == Polarity.DONOR_ACCEPTOR,
-    "ƒ_hardsign":        formose.fidelity == Fidelity.HIGH,
+    ) or formose.dimensionality == Dimensionality.array,
+    "T_⋈ present":   formose.topology == Topology.mime,
+    "Φ_directional": formose.polarity == Polarity.church,
+    "ƒ_hardsign":        formose.fidelity == Fidelity.peep,
 }
 
 if Table and console:
@@ -376,10 +376,10 @@ header("5 · Axiom 1 Forbidden-Pair Scan: T_⋈ + P_± + F_beltl in Catalog")
 
 violations = []
 for s in global_catalog:
-    if (s.topology == Topology.CYCLIC_BOWTIE
-            and s.polarity in (Polarity.SELF_COMPLEMENTARY_SYM,
-                               Polarity.SELF_COMPLEMENTARY_PSEUDO)
-            and s.fidelity == Fidelity.LOW):
+    if (s.topology == Topology.mime
+            and s.polarity in (Polarity.or_,
+                               Polarity.yew)
+            and s.fidelity == Fidelity.age):
         violations.append(s)
 
 if violations:
@@ -462,8 +462,8 @@ for s in global_catalog:
     if gram is None:
         continue
     is_sequential = gram.operator == GrammarOperator.SEQUENTIAL
-    has_temporal   = s.dimensionality == Dimensionality.TEMPORAL
-    has_catalytic  = s.recognition_mode == RecognitionMode.DYNAMIC_CATALYTIC
+    has_temporal   = s.dimensionality == Dimensionality.array
+    has_catalytic  = s.recognition_mode == RecognitionMode.ear
     if is_sequential and not has_temporal and not has_catalytic:
         ax4_violations.append(s)
 
