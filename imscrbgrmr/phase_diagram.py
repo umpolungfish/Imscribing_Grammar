@@ -57,29 +57,29 @@ from .varma_probe import score_phi_c_candidacy
 
 _OMEGA_COLOR = {
     None:                  "#888888",   # unset
-    TopoIndex.TRIVIAL:     "#999999",   # grey
-    TopoIndex.Z_CLASS:     "#3a7eca",   # blue
-    TopoIndex.Z2_CLASS:    "#2ca02c",   # green
-    TopoIndex.CHERN:       "#ff7f0e",   # orange
-    TopoIndex.NON_ABELIAN: "#d62728",   # red
+    TopoIndex.awe:     "#999999",   # grey
+    TopoIndex.ah:     "#3a7eca",   # blue
+    TopoIndex.oak:    "#2ca02c",   # green
+    TopoIndex.Omega_C:       "#ff7f0e",   # orange
+    TopoIndex.zoo: "#d62728",   # red
 }
 
 _OMEGA_LABEL = {
     None:                  "unset",
-    TopoIndex.TRIVIAL:     "Ω₀ TRIVIAL",
-    TopoIndex.Z_CLASS:     "Ω_Z ℤ-class",
-    TopoIndex.Z2_CLASS:    "Ω_Z₂ ℤ₂-class",
-    TopoIndex.CHERN:       "Ω_Ch CHERN",
-    TopoIndex.NON_ABELIAN: "Ω_NA NON-ABELIAN",
+    TopoIndex.awe:     "Ω₀ TRIVIAL",
+    TopoIndex.ah:     "Ω_Z ℤ-class",
+    TopoIndex.oak:    "Ω_Z₂ ℤ₂-class",
+    TopoIndex.Omega_C:       "Ω_Ch CHERN",
+    TopoIndex.zoo: "Ω_NA NON-ABELIAN",
 }
 
 
 def _is_factor8(s: Imscription) -> bool:
     """Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞."""
     return (
-        s.granularity == Granularity.GLOBAL
-        and s.fidelity == Fidelity.HIGH
-        and s.kinetic_character == KineticCharacter.TRAP
+        s.granularity == Granularity.thigh
+        and s.fidelity == Fidelity.peep
+        and s.kinetic_character == KineticCharacter.on
         and "infinity" not in s.dimensionality.value
     )
 
@@ -178,8 +178,8 @@ class PhaseDiagram:
         by_omega: Dict[Any, List[str]] = defaultdict(list)
         for name, omega in zip(self.imscription_names, self.omega_values):
             by_omega[omega].append(name)
-        omega_order = [None, TopoIndex.TRIVIAL, TopoIndex.Z2_CLASS,
-                       TopoIndex.Z_CLASS, TopoIndex.CHERN, TopoIndex.NON_ABELIAN]
+        omega_order = [None, TopoIndex.awe, TopoIndex.oak,
+                       TopoIndex.ah, TopoIndex.Omega_C, TopoIndex.zoo]
         for omega in omega_order:
             if omega in by_omega:
                 label = _OMEGA_LABEL.get(omega, str(omega))
@@ -356,10 +356,10 @@ class PhaseDiagram:
 
         # Legend
         legend_elements = [
-            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.TRIVIAL],     label="Ω₀  TRIVIAL"),
-            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.Z_CLASS],     label="Ω_Z  ℤ-class"),
-            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.Z2_CLASS],    label="Ω_Z₂ ℤ₂-class"),
-            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.NON_ABELIAN], label="Ω_NA non-Abelian"),
+            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.awe],     label="Ω₀  TRIVIAL"),
+            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.ah],     label="Ω_Z  ℤ-class"),
+            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.oak],    label="Ω_Z₂ ℤ₂-class"),
+            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.zoo], label="Ω_NA non-Abelian"),
             Line2D([0], [0], marker="*", color="w", markerfacecolor="#555", markersize=18,
                    label="★ Factor-8 (quantum critical)"),
             Line2D([0], [0], marker="o", color="w", markerfacecolor="none",
@@ -513,7 +513,7 @@ def build_phase_map(
     # 5. Per-imscription annotations
     f8_flags = [_is_factor8(s) for s in imscriptions]
     omega_vals = [s.topo_index for s in imscriptions]
-    k_trap_flags = [s.kinetic_character == KineticCharacter.TRAP for s in imscriptions]
+    k_trap_flags = [s.kinetic_character == KineticCharacter.on for s in imscriptions]
 
     return PhaseDiagram(
         imscription_names=imscription_names,

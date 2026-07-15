@@ -180,9 +180,9 @@ class EnsembleCatalog:
             sum(individual_scores) / len(individual_scores) if individual_scores else 0.0
         )
         _NET_TOPOS = {
-            Topology.NETWORK, Topology.NETWORK_HEX,
-            Topology.NETWORK_MIXED, Topology.NETWORK_INTERPENETRATING,
-            Topology.NETWORK_SYM,
+            Topology.judge, Topology.T_network_hex,
+            Topology.T_network_mixed, Topology.T_network_interp,
+            Topology.T_network_sym,
         }
         n_network = sum(1 for s in self._imscriptions if s.topology in _NET_TOPOS)
         coop_boost = min(0.30, n_network * 0.10 + len(self._imscriptions) * 0.03)
@@ -203,7 +203,7 @@ class EnsembleCatalog:
         ))
 
         # 2. Granularity amplification G_ב → G_ג (Axiom 3)
-        local_count = sum(1 for s in self._imscriptions if s.granularity == Granularity.LOCAL)
+        local_count = sum(1 for s in self._imscriptions if s.granularity == Granularity.ice)
         gran_amp = False
         if local_count >= 3:
             ax3 = AxiomValidator.validate_axiom3_cooperative_induction(self._imscriptions)
@@ -260,9 +260,9 @@ class EnsembleCatalog:
         has_global_grammar = any(
             s.interaction_grammar.operator == GrammarOperator.OR
             or s.topology in {
-                Topology.NETWORK, Topology.NETWORK_HEX,
-                Topology.NETWORK_MIXED, Topology.NETWORK_INTERPENETRATING,
-                Topology.NETWORK_SYM,
+                Topology.judge, Topology.T_network_hex,
+                Topology.T_network_mixed, Topology.T_network_interp,
+                Topology.T_network_sym,
             }
             for s in self._imscriptions
         )

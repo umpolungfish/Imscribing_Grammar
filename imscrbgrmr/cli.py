@@ -319,13 +319,13 @@ def auto_stoichiometry(dry_run: bool, limit: int):
     from imscrbgrmr.models import Topology, Polarity
 
     SELF_COMP_POLARITY = {
-        Polarity.SELF_COMPLEMENTARY_SYM,
-        Polarity.SELF_COMPLEMENTARY_PSEUDO,
+        Polarity.or_,
+        Polarity.yew,
     }
 
     candidates = [
         s for s in global_catalog._imscriptions.values()
-        if s.topology == Topology.CYCLIC_BOWTIE and not s.stoichiometry
+        if s.topology == Topology.mime and not s.stoichiometry
     ]
     # Alphabetical ordering as proxy for insertion order / usage
     candidates.sort(key=lambda s: s.name)
@@ -367,7 +367,7 @@ def auto_stoichiometry(dry_run: bool, limit: int):
     if flagged_manual:
         pct_missing = len(candidates) / max(1, sum(
             1 for s in global_catalog._imscriptions.values()
-            if s.topology == Topology.CYCLIC_BOWTIE
+            if s.topology == Topology.mime
         )) * 100
         console.print(
             f"[yellow]⚑ {len(flagged_manual)} entries require manual stoichiometry assignment "
@@ -469,7 +469,7 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
     # --topology repair
     # -------------------------------------------------------------------------
     if fix_topology:
-        bowtie_entries = [s for s in all_imscriptions if s.topology == Topology.CYCLIC_BOWTIE]
+        bowtie_entries = [s for s in all_imscriptions if s.topology == Topology.mime]
         if limit:
             bowtie_entries = bowtie_entries[:limit]
 
@@ -486,7 +486,7 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
             if is_cage:
                 topology_fixed.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.CAGE
+                    s.topology = Topology.oil
             else:
                 # Check for bowl topology (T_∪): open concave cavity, single portal
                 is_bowl = (
@@ -496,7 +496,7 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
                 if is_bowl:
                     topology_bowl.append(s.name)
                     if not dry_run:
-                        s.topology = Topology.BOWL
+                        s.topology = Topology.eat
                 else:
                     # Check if the T_⋈ entry has ANY closing indicator (legitimate)
                     from imscrbgrmr.constraints import AXIOM_7_CLOSING_INDICATORS
@@ -543,25 +543,25 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
             NETWORK_HEX_KEYWORDS, NETWORK_MIXED_KEYWORDS,
             NETWORK_INTERPENETRATING_KEYWORDS, NETWORK_SYM_KEYWORDS,
         )
-        net_entries = [s for s in all_imscriptions if s.topology == Topology.NETWORK]
+        net_entries = [s for s in all_imscriptions if s.topology == Topology.judge]
         for s in net_entries:
             combined = (s.name + " " + (s.description or "")).lower()
             if any(kw in combined for kw in NETWORK_SYM_KEYWORDS):
                 topology_net_sym.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.NETWORK_SYM
+                    s.topology = Topology.T_network_sym
             elif any(kw in combined for kw in NETWORK_INTERPENETRATING_KEYWORDS):
                 topology_net_interp.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.NETWORK_INTERPENETRATING
+                    s.topology = Topology.T_network_interp
             elif any(kw in combined for kw in NETWORK_HEX_KEYWORDS):
                 topology_net_hex.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.NETWORK_HEX
+                    s.topology = Topology.T_network_hex
             elif any(kw in combined for kw in NETWORK_MIXED_KEYWORDS):
                 topology_net_mixed.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.NETWORK_MIXED
+                    s.topology = Topology.T_network_mixed
 
         net_upgraded = len(topology_net_hex) + len(topology_net_mixed) + len(topology_net_interp) + len(topology_net_sym)
         if net_upgraded:
@@ -2525,7 +2525,7 @@ def criticality(imscription_name: Optional[str], show_all: bool, min_confidence:
             all_imscriptions = list(global_catalog._imscriptions.values())
             critical_count = sum(
                 1 for s in all_imscriptions
-                if s.criticality_phase == CriticalityPhase.CRITICAL
+                if s.criticality_phase == CriticalityPhase.monad
             )
             
             console.print(Panel.fit(
@@ -2933,7 +2933,7 @@ def audit(
         flag_pass_id = None
 
         # --- Pass 1: D_∞ closed-cycle grounding ---
-        if run_pass1 and imscription.dimensionality == Dimensionality.TEMPORAL:
+        if run_pass1 and imscription.dimensionality == Dimensionality.array:
             from imscrbgrmr.constraints import AxiomValidator
             ax6_result = AxiomValidator.validate_axiom6_temporal_grounding(imscription)
             if ax6_result.violated:
@@ -2959,7 +2959,7 @@ def audit(
                         flag_pass_id = "audit_pass_1"
 
         # --- Pass 2: T_⋈ closing bond grounding ---
-        if run_pass2 and imscription.topology == Topology.CYCLIC_BOWTIE:
+        if run_pass2 and imscription.topology == Topology.mime:
             reasoning = (
                 (imscription.grounding or {}).get("reasoning", "")
                 + " " + (imscription.description or "")
@@ -2985,11 +2985,11 @@ def audit(
                     flag_pass_id = "audit_pass_3"
 
         # --- Pass 4: Stoichiometry unset or inconsistent on cyclic topology ---
-        if run_pass4 and imscription.topology == Topology.CYCLIC_BOWTIE:
+        if run_pass4 and imscription.topology == Topology.mime:
             from imscrbgrmr.models import Polarity
             _SELF_COMP = {
-                Polarity.SELF_COMPLEMENTARY_SYM,
-                Polarity.SELF_COMPLEMENTARY_PSEUDO,
+                Polarity.or_,
+                Polarity.yew,
             }
             s_val = imscription.stoichiometry
 

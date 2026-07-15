@@ -50,43 +50,43 @@ from .models import (
 
 _F_ORD: Dict[Fidelity, int] = {
     Fidelity.F_noise: 0,
-    Fidelity.F_beltl:   1,
-    Fidelity.F_dh:   2,
-    Fidelity.F_hardsign:  3,
+    Fidelity.age:   1,
+    Fidelity.they:   2,
+    Fidelity.peep:  3,
 }
 _F_BY_ORD = {v: k for k, v in _F_ORD.items()}
 
 _K_ORD: Dict[KineticChar, int] = {
-    KineticChar.K_lambda:  0,
-    KineticChar.K_teshlig: 1,
-    KineticChar.K_schwa: 2,
-    KineticChar.K_turnm:  3,
-    KineticChar.K_frtailgamma: 4,
+    KineticChar.air:  0,
+    KineticChar.on: 1,
+    KineticChar.egg: 2,
+    KineticChar.loll:  3,
+    KineticChar.yea: 4,
 }
 _K_BY_ORD = {v: k for k, v in _K_ORD.items()}
 
 # FIXED: G_revapostrophe = finest (0), G_gamma = coarsest (2) — matches ℵ < ℶ < ℷ and Core.lean
 _G_ORD: Dict[Granularity, int] = {
-    Granularity.G_revapostrophe: 0,
-    Granularity.G_beta:  1,
-    Granularity.G_gamma: 2,
+    Granularity.ice: 0,
+    Granularity.bib:  1,
+    Granularity.thigh: 2,
 }
 _G_BY_ORD = {v: k for k, v in _G_ORD.items()}
 
 _PROT_ORD: Dict[Protection, int] = {
-    Protection.Omega_closeepsilon:  0,
-    Protection.Omega_crtwo: 1,
-    Protection.Omega_dzlig:  2,
+    Protection.awe:  0,
+    Protection.oak: 1,
+    Protection.ah:  2,
     Protection.Omega_C:  3,
-    Protection.Omega_turna: 4,
+    Protection.zoo: 4,
 }
 _PROT_BY_ORD = {v: k for k, v in _PROT_ORD.items()}
 
 _CHIR_ORD: Dict[Chirality, int] = {
-    Chirality.H_closeomega:    0,
-    Chirality.H_toneletterstem:    1,
-    Chirality.H_turntwo:    2,
-    Chirality.H_invscripta: 3,
+    Chirality.fee:    0,
+    Chirality.kick:    1,
+    Chirality.sure:    2,
+    Chirality.wool: 3,
 }
 _CHIR_BY_ORD = {v: k for k, v in _CHIR_ORD.items()}
 
@@ -441,10 +441,10 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
         notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (⊙ absorbing)")
         return p2
     # Neither critical — meet takes lower, join takes higher in the linear order
-    phi_ord = {Criticality.Phi_softsign: 0, Criticality.Phi_ctyogh: 1, Criticality.Phi_upstep: 2}
+    phi_ord = {Criticality.woe: 0, Criticality.monad: 1, Criticality.haha: 2}
     result = min if "∩" in op else max
     idx = result(phi_ord[p1], phi_ord[p2])
-    return [Criticality.Phi_softsign, Criticality.Phi_ctyogh, Criticality.Phi_upstep][idx]
+    return [Criticality.woe, Criticality.monad, Criticality.haha][idx]
 def meet(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
     """
     Lattice meet (sqcap): greatest lower bound.
@@ -688,15 +688,15 @@ def _lift_temporal(s: Imscription) -> LiftResult:
     """D_* → D_invomega: inject temporal/iterative dimension."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality == Dimensionality.D_invomega:
+    if s.dimensionality == Dimensionality.array:
         return LiftResult(True, s, notes=["Already D_invomega — no change"])
-    if s.dimensionality == Dimensionality.D_holo:
+    if s.dimensionality == Dimensionality.if_:
         return LiftResult(False, None, notes=["D_omega subsumes D_invomega; lift not applicable"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, dimensionality=Dimensionality.D_invomega,
+        result = replace(s, dimensionality=Dimensionality.array,
                          name=f"{s.name}[+temporal]")
     finally:
         _m._ENFORCE_AXIOMS = old
@@ -707,7 +707,7 @@ def _lift_spatial(s: Imscription) -> LiftResult:
     """D_wynn → D_cube: molecular → supramolecular spatial array."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality not in (Dimensionality.D_wynn, Dimensionality.D_point, Dimensionality.D_line):
+    if s.dimensionality not in (Dimensionality.dead, Dimensionality.D_point, Dimensionality.D_line):
         return LiftResult(False, None,
                           notes=[f"Spatial lift requires D_wynn or lower; got {s.dimensionality.value}"])
     old = _m._ENFORCE_AXIOMS
@@ -726,15 +726,15 @@ def _lift_critical(s: Imscription, strength: float = 1.0) -> LiftResult:
     import imscrbgrmr.models as _m
     from .models import Criticality, Fidelity
     warnings = []
-    if s.fidelity not in (Fidelity.F_hardsign,):
+    if s.fidelity not in (Fidelity.peep,):
         warnings.append(f"F={s.fidelity.value} < F_hardsign — criticality injection is fragile")
-    if s.criticality_phase == Criticality.Phi_ctyogh:
+    if s.criticality_phase == Criticality.monad:
         return LiftResult(True, s, notes=["Already ⊙ — no change"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, criticality_phase=Criticality.Phi_ctyogh,
+        result = replace(s, criticality_phase=Criticality.monad,
                          name=f"{s.name}[+critical]")
     finally:
         _m._ENFORCE_AXIOMS = old
@@ -747,13 +747,13 @@ def _lift_molecular(s: Imscription) -> LiftResult:
     """Forgetful projection → D_wynn (loses spatial/temporal)."""
     import imscrbgrmr.models as _m
     from .models import Dimensionality
-    if s.dimensionality == Dimensionality.D_wynn:
+    if s.dimensionality == Dimensionality.dead:
         return LiftResult(True, s, notes=["Already D_wynn — no change"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
         from dataclasses import replace
-        result = replace(s, dimensionality=Dimensionality.D_wynn,
+        result = replace(s, dimensionality=Dimensionality.dead,
                          name=f"{s.name}[->molecular]")
     finally:
         _m._ENFORCE_AXIOMS = old

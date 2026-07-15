@@ -471,18 +471,18 @@ def _create_placeholder_imscription() -> Imscription:
     """Create a placeholder imscription for validation."""
     return Imscription(
         name="placeholder",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.LOCAL,
-        grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=Criticality.Phi_softsign,
-        protection=Protection.Omega_closeepsilon,
-        stoichiometry=Stoichiometry.S_doublebaresh,
-        chirality=Chirality.H_closeomega,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.ice,
+        grammar=InteractionGrammar.vow,
+        criticality_phase=Criticality.woe,
+        protection=Protection.awe,
+        stoichiometry=Stoichiometry.hung,
+        chirality=Chirality.fee,
     )
 
 

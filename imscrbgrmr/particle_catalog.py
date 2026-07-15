@@ -152,15 +152,15 @@ def _graviton() -> Imscription:
     """
     return Imscription(
         name="graviton",
-        dimensionality=Dimensionality.HOLOGRAPHIC,
-        topology=Topology.NETWORK_SYM,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.if_,
+        topology=Topology.T_network_sym,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         description=(
             "Graviton: hypothetical spin-2 massless carrier of gravity. "
             "K_frtailgamma: massless, propagates at c. T_network_sym: symmetric rank-2 tensor "
@@ -216,15 +216,15 @@ def _photon() -> Imscription:
     """
     return Imscription(
         name="photon",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         description=(
             "Photon: spin-1 massless carrier of electromagnetism. "
             "K_frtailgamma: massless, propagates at c. K_teshlig temporal: locked frequency/polarisation "
@@ -277,15 +277,15 @@ def _gluon() -> Imscription:
     """
     return Imscription(
         name="gluon",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.MESOSCALE,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.bib,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         description=(
             "Gluon: spin-1 massless carrier of the strong force (QCD). "
             "K_frtailgamma: massless. Short-range NOT from K_teshlig mass but from T_nrleg "
@@ -340,15 +340,15 @@ def _w_boson() -> Imscription:
     """
     return Imscription(
         name="w_boson",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         description=(
             "W± boson: charged massive carrier of the weak force. "
             "K_teshlig: massive (80.4 GeV), K_teshlig spatial installed by Higgs coupling. "
@@ -393,15 +393,15 @@ def _z_boson() -> Imscription:
     """
     return Imscription(
         name="z_boson",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         description=(
             "Z⁰ boson: neutral massive carrier of the weak force. "
             "K_teshlig: massive (91.2 GeV), K_teshlig spatial from Higgs. "
@@ -463,15 +463,15 @@ def _higgs() -> Imscription:
     """
     return Imscription(
         name="higgs",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.LOCAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.ice,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         description=(
             "Higgs boson/field: K_teshlig spatial localisation installer. "
             "K_schwa: frozen VEV (246 GeV) below EW phase transition. "

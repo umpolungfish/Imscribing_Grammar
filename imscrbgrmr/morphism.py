@@ -178,7 +178,7 @@ def find_qcp_path(
     """
     phi_c_candidates = [
         s for s in catalog
-        if s.criticality_phase == CriticalityPhase.CRITICAL
+        if s.criticality_phase == CriticalityPhase.monad
         and s.dimensionality == src.dimensionality
         and s.topology == src.topology
         and s.name not in (src.name, dst.name)
@@ -248,9 +248,9 @@ def find_qcp_path(
         # Universality hints
         from .models import Granularity, Fidelity, KineticCharacter
         hints = []
-        has_galeph = qcp_s.granularity == Granularity.GLOBAL
-        has_fhigh  = qcp_s.fidelity == Fidelity.HIGH
-        has_ktrap  = qcp_s.kinetic_character == KineticCharacter.TRAP
+        has_galeph = qcp_s.granularity == Granularity.thigh
+        has_fhigh  = qcp_s.fidelity == Fidelity.peep
+        has_ktrap  = qcp_s.kinetic_character == KineticCharacter.on
         no_temp    = "temporal" not in qcp_s.dimensionality.domains
         if has_galeph and has_fhigh and has_ktrap and no_temp:
             hints.append(
@@ -336,7 +336,7 @@ def find_transition(
         catalog_map = {s.name: s for s in catalog}
         for name in interior:
             s = catalog_map.get(name)
-            if s and s.criticality_phase == CriticalityPhase.CRITICAL:
+            if s and s.criticality_phase == CriticalityPhase.monad:
                 phi_c_names.append(name)
 
     # Costs
@@ -415,9 +415,9 @@ def find_transition(
             s = catalog_map.get(name)
             if s:
                 from .models import Granularity, Fidelity, KineticCharacter
-                has_galeph = s.granularity == Granularity.GLOBAL
-                has_fhigh  = s.fidelity == Fidelity.HIGH
-                has_ktrap  = s.kinetic_character == KineticCharacter.TRAP
+                has_galeph = s.granularity == Granularity.thigh
+                has_fhigh  = s.fidelity == Fidelity.peep
+                has_ktrap  = s.kinetic_character == KineticCharacter.on
                 no_temp    = "temporal" not in s.dimensionality.domains
                 if has_galeph and has_fhigh and has_ktrap and no_temp:
                     hints.append(

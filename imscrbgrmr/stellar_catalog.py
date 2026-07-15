@@ -170,15 +170,15 @@ def _protostar() -> Imscription:
     """
     return Imscription(
         name="protostar_ttauri",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "Protostar / T Tauri star. Pre-main-sequence object still accreting from "
@@ -228,15 +228,15 @@ def _brown_dwarf() -> Imscription:
     """
     return Imscription(
         name="brown_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.MESOSCALE,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.bib,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "Brown dwarf (13-80 M_Jup). Failed star: deuterium burns briefly then "
@@ -287,15 +287,15 @@ def _star_m_dwarf() -> Imscription:
     """
     return Imscription(
         name="star_m_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "M-dwarf (red dwarf, 0.08-0.6 M_☉). Most common stellar class (75%). "
@@ -355,15 +355,15 @@ def _star_k_dwarf() -> Imscription:
     """
     return Imscription(
         name="star_k_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "K-dwarf (orange dwarf, 0.6-0.9 M_☉). 'Superhabitable' class — combines "
@@ -414,15 +414,15 @@ def _star_g_dwarf() -> Imscription:
     """
     return Imscription(
         name="star_g_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "G-dwarf (yellow dwarf, 0.9-1.1 M_☉). The Sun class. Reference stellar "
@@ -472,15 +472,15 @@ def _star_f_dwarf() -> Imscription:
     """
     return Imscription(
         name="star_f_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "F-dwarf (1.1-1.4 M_☉). UV-rich grammar (peak 380-450 nm), 2-8 Gyr lifetime. "
@@ -525,15 +525,15 @@ def _star_a_dwarf() -> Imscription:
     """
     return Imscription(
         name="star_a_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "A-type star (1.4-2.1 M_☉, e.g. Vega, Sirius). Strong UV output, "
@@ -580,15 +580,15 @@ def _star_b_star() -> Imscription:
     """
     return Imscription(
         name="star_b_star",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "B-type star (2-16 M_☉). Extreme UV/X-ray grammar, strong winds, "
@@ -638,15 +638,15 @@ def _star_o_star() -> Imscription:
     """
     return Imscription(
         name="star_o_star",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "O-type star (16-150+ M_☉). Most massive, most luminous, shortest-lived "
@@ -705,15 +705,15 @@ def _star_red_giant() -> Imscription:
     """
     return Imscription(
         name="star_red_giant",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "Red giant (post-MS, 0.8-8 M_☉, 10-100 R_☉). Expanded convective envelope "
@@ -765,15 +765,15 @@ def _star_agb() -> Imscription:
     """
     return Imscription(
         name="star_agb",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK_MIXED,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_network_mixed,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "AGB star. Thermal pulses (100-300 yr He-shell flashes) at K_frtailgamma "
@@ -825,15 +825,15 @@ def _star_wolf_rayet() -> Imscription:
     """
     return Imscription(
         name="star_wolf_rayet",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Wolf-Rayet star. Stripped evolved massive star, H-envelope lost, "
@@ -881,15 +881,15 @@ def _star_red_supergiant() -> Imscription:
     """
     return Imscription(
         name="star_red_supergiant",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK_MIXED,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_network_mixed,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Red Supergiant (8-30 M_☉, 500-1500 R_☉, e.g. Betelgeuse). Giant sparse "
@@ -942,15 +942,15 @@ def _star_blue_supergiant() -> Imscription:
     """
     return Imscription(
         name="star_blue_supergiant",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Blue Supergiant / LBV (10-100 M_☉, e.g. Rigel, Deneb, Eta Carinae). "
@@ -1011,15 +1011,15 @@ def _white_dwarf() -> Imscription:
     """
     return Imscription(
         name="white_dwarf",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK_HEX,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.MESOSCALE,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_network_hex,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.bib,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "White dwarf. Electron degeneracy-supported remnant of 0.8-8 M_☉ stars. "
@@ -1080,15 +1080,15 @@ def _supernova_type_ia() -> Imscription:
     """
     return Imscription(
         name="supernova_type_ia",
-        dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Type Ia supernova. Thermonuclear explosion of WD at Chandrasekhar limit. "
@@ -1140,15 +1140,15 @@ def _supernova_type_ii() -> Imscription:
     """
     return Imscription(
         name="supernova_type_ii",
-        dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Type II / core-collapse supernova (>8 M_☉ progenitor). Core collapse in "
@@ -1208,15 +1208,15 @@ def _gamma_ray_burst() -> Imscription:
     """
     return Imscription(
         name="gamma_ray_burst",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
@@ -1270,15 +1270,15 @@ def _kilonova() -> Imscription:
     """
     return Imscription(
         name="kilonova",
-        dimensionality=Dimensionality.HYBRID_MOL_SUPRA,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="2:1",
         description=(
             "Kilonova / neutron star merger. Multi-messenger event (GW + EM). "
@@ -1346,15 +1346,15 @@ def _neutron_star() -> Imscription:
     """
     return Imscription(
         name="neutron_star",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.BRAID,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_braid,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Neutron star (1.4 M_☉, 12 km). T_braid: superfluid vortex lattice + "
@@ -1415,15 +1415,15 @@ def _pulsar_millisecond() -> Imscription:
     """
     return Imscription(
         name="pulsar_millisecond",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.BRAID,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_braid,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Millisecond pulsar (recycled, P=1-10 ms). Most precise clock in the universe "
@@ -1488,15 +1488,15 @@ def _magnetar() -> Imscription:
     """
     return Imscription(
         name="magnetar",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.BRAID,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_braid,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Magnetar (B ~ 10^15 G = 10^11 T). T_braid at physical limit: B-field "
@@ -1563,15 +1563,15 @@ def _black_hole_stellar() -> Imscription:
     """
     return Imscription(
         name="black_hole_stellar",
-        dimensionality=Dimensionality.HOLOGRAPHIC,
-        topology=Topology.BOWL,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.if_,
+        topology=Topology.eat,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Stellar-mass black hole (3-100 M_☉). D_holographic: no-hair theorem — "
@@ -1645,15 +1645,15 @@ def _quasar_agn() -> Imscription:
     """
     return Imscription(
         name="quasar_agn",
-        dimensionality=Dimensionality.HOLOGRAPHIC,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.if_,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Quasar / AGN (SMBH 10^6-10^10 M_☉ accreting near Eddington). "
@@ -1718,15 +1718,15 @@ def _quark_star() -> Imscription:
     """
     return Imscription(
         name="quark_star",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.BRAID,
-        recognition_mode=RecognitionMode.COVALENT_DYNAMIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_braid,
+        recognition_mode=RecognitionMode.tot,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Quark/Strange star (hypothetical). Strange quark matter (uds) as ground "
@@ -1798,15 +1798,15 @@ def _gravastar() -> Imscription:
     """
     return Imscription(
         name="gravastar",
-        dimensionality=Dimensionality.HOLOGRAPHIC,
-        topology=Topology.BOWL,
-        recognition_mode=RecognitionMode.MECHANICAL,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.if_,
+        topology=Topology.eat,
+        recognition_mode=RecognitionMode.ian,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Gravastar / 'Black Shell' (Mazur & Mottola 2001). Hypothetical BH "
@@ -1875,15 +1875,15 @@ def _dark_star() -> Imscription:
     """
     return Imscription(
         name="dark_star",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
         description=(
             "Dark Star (Spolyar, Freese, Gondolo 2008). First-generation Pop III "

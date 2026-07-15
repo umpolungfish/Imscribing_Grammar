@@ -53,23 +53,23 @@ from .models import (
 # Ordinal tables  (mirrors algebra.py)
 # ---------------------------------------------------------------------------
 
-_F_ORD: Dict[Fidelity, int] = {Fidelity.LOW: 0, Fidelity.MEDIUM: 1, Fidelity.HIGH: 2}
+_F_ORD: Dict[Fidelity, int] = {Fidelity.age: 0, Fidelity.they: 1, Fidelity.peep: 2}
 _F_BY_ORD: Dict[int, Fidelity] = {v: k for k, v in _F_ORD.items()}
 
 _K_ORD: Dict[KineticCharacter, int] = {
-    KineticCharacter.MBL: 0, KineticCharacter.TRAP: 1, KineticCharacter.SLOW: 2,
-    KineticCharacter.MODERATE: 3, KineticCharacter.FAST: 4,
+    KineticCharacter.air: 0, KineticCharacter.on: 1, KineticCharacter.egg: 2,
+    KineticCharacter.loll: 3, KineticCharacter.yea: 4,
 }
 _K_BY_ORD: Dict[int, KineticCharacter] = {v: k for k, v in _K_ORD.items()}
 
 _G_ORD: Dict[Granularity, int] = {
-    Granularity.LOCAL: 0, Granularity.MESOSCALE: 1, Granularity.GLOBAL: 2,
+    Granularity.ice: 0, Granularity.bib: 1, Granularity.thigh: 2,
 }
 _G_BY_ORD: Dict[int, Granularity] = {v: k for k, v in _G_ORD.items()}
 
 _TOPO_ORD: Dict[TopoIndex, int] = {
-    TopoIndex.TRIVIAL: 0, TopoIndex.Z2_CLASS: 1, TopoIndex.Z_CLASS: 2,
-    TopoIndex.CHERN: 3, TopoIndex.NON_ABELIAN: 4,
+    TopoIndex.awe: 0, TopoIndex.oak: 1, TopoIndex.ah: 2,
+    TopoIndex.Omega_C: 3, TopoIndex.zoo: 4,
 }
 
 # Constraint-bottom values: "removing" the constraint for each ordinal primitive
@@ -77,9 +77,9 @@ _TOPO_ORD: Dict[TopoIndex, int] = {
 #   K → FAST  (no kinetic barrier)
 #   G → LOCAL (narrowest scope)
 _PEEL_BOTTOM: Dict[str, object] = {
-    "F": Fidelity.LOW,
-    "K": KineticCharacter.FAST,
-    "G": Granularity.LOCAL,
+    "F": Fidelity.age,
+    "K": KineticCharacter.yea,
+    "G": Granularity.ice,
 }
 
 # For factor: direction to step toward constraint-bottom
@@ -90,14 +90,14 @@ _FACTOR_STEP_DIR: Dict[str, int] = {"F": -1, "K": +1, "G": -1}
 
 # Dimensionality component sets for cofactor D-analysis
 _D_COMPS: Dict[Dimensionality, FrozenSet[str]] = {
-    Dimensionality.MOLECULAR:          frozenset({"M"}),
-    Dimensionality.SUPRAMOLECULAR:     frozenset({"S"}),
-    Dimensionality.TEMPORAL:           frozenset({"T"}),
-    Dimensionality.HYBRID_MOL_SUPRA:   frozenset({"M", "S"}),
-    Dimensionality.HYBRID_MOL_TEMP:    frozenset({"M", "T"}),
-    Dimensionality.HYBRID_SUPRA_TEMP:  frozenset({"S", "T"}),
-    Dimensionality.HYBRID_ALL:         frozenset({"M", "S", "T"}),
-    Dimensionality.HOLOGRAPHIC:        frozenset({"H"}),
+    Dimensionality.dead:          frozenset({"M"}),
+    Dimensionality.ash:     frozenset({"S"}),
+    Dimensionality.array:           frozenset({"T"}),
+    Dimensionality.ash:   frozenset({"M", "S"}),
+    Dimensionality.array:    frozenset({"M", "T"}),
+    Dimensionality.array:  frozenset({"S", "T"}),
+    Dimensionality.ash:         frozenset({"M", "S", "T"}),
+    Dimensionality.if_:        frozenset({"H"}),
 }
 _COMPS_TO_D: Dict[FrozenSet[str], Dimensionality] = {v: k for k, v in _D_COMPS.items()}
 
@@ -128,11 +128,11 @@ def _set(s: Imscription, prim: str, value, suffix: str = "") -> Imscription:
 
 
 def _has_phi_c(s: Imscription) -> bool:
-    return s.criticality_phase is CriticalityPhase.CRITICAL
+    return s.criticality_phase is CriticalityPhase.monad
 
 
 def _has_topo_protection(s: Imscription) -> bool:
-    return s.topo_index is not None and s.topo_index != TopoIndex.TRIVIAL
+    return s.topo_index is not None and s.topo_index != TopoIndex.awe
 
 
 def _ord_val(prim: str, val) -> int:
@@ -285,15 +285,15 @@ def project(imscription: Imscription, primitives: Sequence[str]) -> ProjectResul
         raise ValueError(f"Unknown primitive(s): {bad}. Valid: {ALL_PRIMITIVES}")
 
     bottom_map = {
-        "D": Dimensionality.MOLECULAR,
-        "T": Topology.LINEAR,
-        "R": RecognitionMode.NON_COVALENT,
-        "P": Polarity.SELF_COMPLEMENTARY_SYM,
-        "F": Fidelity.LOW,
-        "K": KineticCharacter.FAST,
-        "G": Granularity.LOCAL,
-        "Gamma": InteractionGrammar.BROAD_OR,
-        "Phi": CriticalityPhase.SUBCRITICAL,
+        "D": Dimensionality.dead,
+        "T": Topology.T_linear,
+        "R": RecognitionMode.ado,
+        "P": Polarity.or_,
+        "F": Fidelity.age,
+        "K": KineticCharacter.yea,
+        "G": Granularity.ice,
+        "Gamma": InteractionGrammar.gag,
+        "Phi": CriticalityPhase.woe,
         "Omega": None,
     }
 
@@ -349,12 +349,12 @@ def primitive_peel(
         new_val = _PEEL_BOTTOM[primitive]
     else:
         bottom_map = {
-            "D": Dimensionality.MOLECULAR,
-            "T": Topology.LINEAR,
-            "R": RecognitionMode.NON_COVALENT,
-            "P": Polarity.SELF_COMPLEMENTARY_SYM,
-            "Gamma": InteractionGrammar.BROAD_OR,
-            "Phi": CriticalityPhase.SUBCRITICAL,
+            "D": Dimensionality.dead,
+            "T": Topology.T_linear,
+            "R": RecognitionMode.ado,
+            "P": Polarity.or_,
+            "Gamma": InteractionGrammar.gag,
+            "Phi": CriticalityPhase.woe,
             "Omega": None,
         }
         new_val = bottom_map[primitive]
@@ -398,9 +398,9 @@ def primitive_peel(
         peel_cost += oc
 
     # Axiom 2: G_LOCAL + Gamma_AND(SPECIFIC) cannot propagate to G_GLOBAL
-    if (peeled.granularity == Granularity.LOCAL
-            and peeled.interaction_grammar == InteractionGrammar.SPECIFIC_AND
-            and imscription.granularity != Granularity.LOCAL):
+    if (peeled.granularity == Granularity.ice
+            and peeled.interaction_grammar == InteractionGrammar.vow
+            and imscription.granularity != Granularity.ice):
         reason = "Axiom 2 violation: peeling G to LOCAL with Γ_∧(SPECIFIC) blocks propagation"
         notes.append(reason)
         if strict:
@@ -611,7 +611,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
         role, cof_g_val, note = "CONFLICT", C.granularity, f"A[G]={A.granularity} exceeds C[G]={C.granularity}"
         conflicts.append("G")
     elif a_g == c_g:
-        role, cof_g_val, note = "EXPLAINED", Granularity.LOCAL, f"A explains G={C.granularity}; B contributes ≥LOCAL"
+        role, cof_g_val, note = "EXPLAINED", Granularity.ice, f"A explains G={C.granularity}; B contributes ≥LOCAL"
     else:
         role, cof_g_val, note = "CONTRIBUTOR", C.granularity, f"B is the G={C.granularity} contributor"
         contributors.append("G")
@@ -627,7 +627,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     else:
         remaining = c_comps - a_comps
         if not remaining:
-            role, cof_d, note = "EXPLAINED", Dimensionality.MOLECULAR, f"A explains D; B needs only D_MOLECULAR"
+            role, cof_d, note = "EXPLAINED", Dimensionality.dead, f"A explains D; B needs only D_MOLECULAR"
         else:
             d_val = _COMPS_TO_D.get(frozenset(remaining), C.dimensionality)
             role, cof_d, note = "CONTRIBUTOR", d_val, f"B contributes D components {remaining}"
@@ -639,21 +639,21 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     a_phi = _has_phi_c(A)
     c_phi = _has_phi_c(C)
     if a_phi and not c_phi:
-        cof_phi = CriticalityPhase.SUBCRITICAL
+        cof_phi = CriticalityPhase.woe
         phi_role = "CONFLICT"
         note = "A has ⊙ but C does not — impossible under tensor (⊙ propagates)"
         conflicts.append("Phi")
     elif a_phi and c_phi:
-        cof_phi = CriticalityPhase.SUBCRITICAL
+        cof_phi = CriticalityPhase.woe
         phi_role = "EXPLAINED"
         note = "A explains ⊙; B need not have it"
     elif not a_phi and c_phi:
-        cof_phi = CriticalityPhase.CRITICAL
+        cof_phi = CriticalityPhase.monad
         phi_role = "CONTRIBUTOR"
         note = "B must carry ⊙ (A doesn't have it)"
         contributors.append("Phi")
     else:
-        cof_phi = CriticalityPhase.SUBCRITICAL
+        cof_phi = CriticalityPhase.woe
         phi_role = "PASSTHROUGH"
         note = "Neither A nor C has ⊙; B also 𐑢"
     cofactor_kwargs[_PRIM_FIELD["Phi"]] = cof_phi
@@ -668,7 +668,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
         note = "A[Ω] stronger than C[Ω] — impossible under tensor (join-dominant)"
         conflicts.append("Omega")
     elif a_ome == c_ome:
-        cof_ome_val = TopoIndex.TRIVIAL if c_ome > 0 else None
+        cof_ome_val = TopoIndex.awe if c_ome > 0 else None
         ome_role = "EXPLAINED"
         note = f"A explains Ω={C.topo_index}; B contributes ≥TRIVIAL"
     else:
@@ -764,7 +764,7 @@ def complement_rel(imscription: Imscription, context: Imscription, target: Imscr
             # Condition 1: for G (join), meet = min. min(x_g, ctx_g) = 0 → x_g = 0 = LOCAL if ctx_g > 0
             # But we want the MAXIMAL x that satisfies this: x_g < ctx_g (strictly less to get min = x_g... no)
             # Actually min(x, ctx) = 0 → x = LOCAL (only if ctx > 0) or anything if ctx = 0
-            x_g_max = _G_ORD[Granularity.LOCAL] if ctx_ord > 0 else syn_ord
+            x_g_max = _G_ORD[Granularity.ice] if ctx_ord > 0 else syn_ord
             # Condition 2: max(x_g, ctx_g) ≥ tgt_g → ctx_g ≥ tgt_g OR x_g ≥ tgt_g
             if ctx_ord >= tgt_ord:
                 pass  # ctx alone satisfies condition 2

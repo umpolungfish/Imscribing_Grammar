@@ -219,7 +219,7 @@ def degeneracy_strength(
     if "temporal" in imscription.dimensionality.domains:
         tuple_bonus += 0.05
     if imscription.recognition_mode in {
-        RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC
+        RecognitionMode.ear, RecognitionMode.tot
     }:
         tuple_bonus += 0.05
     if imscription.criticality_phase is not None and imscription.criticality_phase.value == "⊙_ctyogh":
@@ -346,7 +346,7 @@ def score_phi_c_candidacy(
     score = 0.0
 
     # --- Factor 1: Explicit ⊙ assignment (weight 0.35) ---
-    if imscription.criticality_phase == CriticalityPhase.CRITICAL:
+    if imscription.criticality_phase == CriticalityPhase.monad:
         w1 = 0.35
         factors.append({
             "name": "Explicit ⊙ assignment",
@@ -355,7 +355,7 @@ def score_phi_c_candidacy(
             "note": "imscription.criticality_phase == ⊙",
         })
         score += w1
-    elif imscription.criticality_phase == CriticalityPhase.SUBCRITICAL:
+    elif imscription.criticality_phase == CriticalityPhase.woe:
         w1 = 0.0
         factors.append({
             "name": "Explicit 𐑢 assignment",
@@ -452,8 +452,8 @@ def score_phi_c_candidacy(
         has_temporal = "temporal" in imscription.dimensionality.domains
         has_multi_domain = len(imscription.dimensionality.domains) >= 2
         has_catalytic = imscription.recognition_mode in {
-            RecognitionMode.DYNAMIC_CATALYTIC,
-            RecognitionMode.COVALENT_DYNAMIC,
+            RecognitionMode.ear,
+            RecognitionMode.tot,
         }
         if has_temporal and has_multi_domain and has_catalytic:
             w2 = 0.15
@@ -507,7 +507,7 @@ def score_phi_c_candidacy(
         )
 
     # --- Factor 4: Granularity MESOSCALE (weight 0.10) ---
-    if imscription.granularity == Granularity.MESOSCALE:
+    if imscription.granularity == Granularity.bib:
         w4 = 0.10
         factors.append({
             "name": "G = MESOSCALE (G_ג)",
@@ -526,7 +526,7 @@ def score_phi_c_candidacy(
 
     # --- Factor 5: Dynamic catalytic recognition (weight 0.10) ---
     from .models import RecognitionMode
-    if imscription.recognition_mode in {RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT_DYNAMIC}:
+    if imscription.recognition_mode in {RecognitionMode.ear, RecognitionMode.tot}:
         w5 = 0.10
         factors.append({
             "name": f"R = {imscription.recognition_mode.name}",
@@ -610,9 +610,9 @@ def score_phi_c_candidacy(
     # for ⊙ confirmation.
     from .models import Topology, Polarity, Fidelity
     _has_temporal    = "temporal" in imscription.dimensionality.domains
-    _has_bowtie      = imscription.topology == Topology.CYCLIC_BOWTIE
-    _has_directional = imscription.polarity  == Polarity.DONOR_ACCEPTOR   # P_directional
-    _has_high_f      = imscription.fidelity  == Fidelity.HIGH              # F_hardsign
+    _has_bowtie      = imscription.topology == Topology.mime
+    _has_directional = imscription.polarity  == Polarity.church   # P_directional
+    _has_high_f      = imscription.fidelity  == Fidelity.peep              # F_hardsign
     if _has_temporal and _has_bowtie and _has_directional and _has_high_f:
         w7 = 0.25
         factors.append({
@@ -660,9 +660,9 @@ def score_phi_c_candidacy(
     # quantum dots at charge degeneracy.  Distinct from Varma QXY (temporal) —
     # this is a spatial, ground-state degeneracy universality class.
     w8 = 0.20
-    _has_galeph  = imscription.granularity == Granularity.GLOBAL
-    _has_f_high  = imscription.fidelity == Fidelity.HIGH
-    _has_k_trap  = imscription.kinetic_character == KineticCharacter.TRAP
+    _has_galeph  = imscription.granularity == Granularity.thigh
+    _has_f_high  = imscription.fidelity == Fidelity.peep
+    _has_k_trap  = imscription.kinetic_character == KineticCharacter.on
     _no_temporal = not (hasattr(imscription.dimensionality, "domains") and
                         "temporal" in getattr(imscription.dimensionality, "domains", []))
     # Also accept dimensionality not being TEMPORAL sub-label

@@ -199,11 +199,11 @@ class GrammarAlgebra:
         
         # Default fallback
         if operator == GrammarOperator.AND:
-            return InteractionGrammar.SELECTIVE_AND
+            return InteractionGrammar.vow
         elif operator == GrammarOperator.OR:
-            return InteractionGrammar.SELECTIVE_OR
+            return InteractionGrammar.gag
         else:
-            return InteractionGrammar.SELECTIVE_SEQ
+            return InteractionGrammar.measure
     
     @staticmethod
     def compose_grammars(
@@ -246,7 +246,7 @@ class GrammarAlgebra:
             if ig.operator == result_op and ig.tier == result_tier:
                 return ig
         
-        return InteractionGrammar.SELECTIVE_AND
+        return InteractionGrammar.vow
     
     @staticmethod
     def check_grammar_implication(
@@ -285,15 +285,15 @@ class GDTensor:
     
     # G-D compatibility matrix
     COMPATIBILITY = {
-        (Granularity.LOCAL, Dimensionality.MOLECULAR): 1.0,
-        (Granularity.LOCAL, Dimensionality.SUPRAMOLECULAR): 0.7,
-        (Granularity.LOCAL, Dimensionality.TEMPORAL): 0.5,
-        (Granularity.MESOSCALE, Dimensionality.MOLECULAR): 0.7,
-        (Granularity.MESOSCALE, Dimensionality.SUPRAMOLECULAR): 1.0,
-        (Granularity.MESOSCALE, Dimensionality.TEMPORAL): 0.7,
-        (Granularity.GLOBAL, Dimensionality.MOLECULAR): 0.3,
-        (Granularity.GLOBAL, Dimensionality.SUPRAMOLECULAR): 1.0,
-        (Granularity.GLOBAL, Dimensionality.TEMPORAL): 1.0,
+        (Granularity.ice, Dimensionality.dead): 1.0,
+        (Granularity.ice, Dimensionality.ash): 0.7,
+        (Granularity.ice, Dimensionality.array): 0.5,
+        (Granularity.bib, Dimensionality.dead): 0.7,
+        (Granularity.bib, Dimensionality.ash): 1.0,
+        (Granularity.bib, Dimensionality.array): 0.7,
+        (Granularity.thigh, Dimensionality.dead): 0.3,
+        (Granularity.thigh, Dimensionality.ash): 1.0,
+        (Granularity.thigh, Dimensionality.array): 1.0,
     }
     
     @classmethod
@@ -308,7 +308,7 @@ class GDTensor:
         d = imscription.dimensionality
         
         # Check if at criticality
-        if imscription.criticality_phase == CriticalityPhase.CRITICAL:
+        if imscription.criticality_phase == CriticalityPhase.monad:
             return 0.0
         
         # Get compatibility for each domain
@@ -324,17 +324,17 @@ class GDTensor:
     @classmethod
     def check_degeneracy(cls, imscription: Imscription) -> bool:
         """Check if G and D are degenerate (at criticality)."""
-        return imscription.criticality_phase == CriticalityPhase.CRITICAL
+        return imscription.criticality_phase == CriticalityPhase.monad
     
     @staticmethod
     def _domain_to_dimensionality(domain: str) -> Dimensionality:
         """Convert domain string to Dimensionality enum."""
         mapping = {
-            "molecular": Dimensionality.MOLECULAR,
-            "supramolecular": Dimensionality.SUPRAMOLECULAR,
-            "temporal": Dimensionality.TEMPORAL,
+            "molecular": Dimensionality.dead,
+            "supramolecular": Dimensionality.ash,
+            "temporal": Dimensionality.array,
         }
-        return mapping.get(domain, Dimensionality.MOLECULAR)
+        return mapping.get(domain, Dimensionality.dead)
 
 
 # =============================================================================
@@ -471,10 +471,10 @@ class AxiomTheoremProver:
     ) -> bool:
         """Check if an axiom applies to a imscription."""
         if axiom_name == "axiom1":
-            return (imscription.topology == Topology.CYCLIC_BOWTIE and
+            return (imscription.topology == Topology.mime and
                     imscription.polarity.is_self_complementary)
         elif axiom_name == "axiom2":
-            return (imscription.granularity == Granularity.LOCAL and
+            return (imscription.granularity == Granularity.ice and
                     imscription.interaction_grammar.tier == "SPECIFIC")
         elif axiom_name == "axiom4":
             return (imscription.interaction_grammar.operator == GrammarOperator.SEQUENTIAL)
@@ -521,20 +521,20 @@ class AxiomTheoremProver:
         # Generate combinations that might violate axioms
         for i in range(count):
             # Systematically vary primitives
-            topology = [Topology.CYCLIC_BOWTIE, Topology.CHAIN][i % 2]
-            polarity = [Polarity.SELF_COMPLEMENTARY_SYM, Polarity.DONOR][i % 2]
-            fidelity = [Fidelity.LOW, Fidelity.HIGH][i % 2]
+            topology = [Topology.mime, Topology.T_linear][i % 2]
+            polarity = [Polarity.or_, Polarity.yew][i % 2]
+            fidelity = [Fidelity.age, Fidelity.peep][i % 2]
             
             imscription = Imscription(
                 name=f"test_imscription_{i}",
-                dimensionality=Dimensionality.MOLECULAR,
+                dimensionality=Dimensionality.dead,
                 topology=topology,
-                recognition_mode=RecognitionMode.NON_COVALENT,
+                recognition_mode=RecognitionMode.ado,
                 polarity=polarity,
                 fidelity=fidelity,
-                kinetic_character=KineticCharacter.MODERATE,
-                granularity=Granularity.LOCAL,
-                interaction_grammar=InteractionGrammar.SELECTIVE_AND,
+                kinetic_character=KineticCharacter.loll,
+                granularity=Granularity.ice,
+                interaction_grammar=InteractionGrammar.vow,
             )
             imscriptions.append(imscription)
         

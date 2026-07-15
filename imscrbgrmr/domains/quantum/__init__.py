@@ -141,17 +141,17 @@ def _photon() -> Imscription:
     """
     return Imscription(
         name="photon",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.QUANTUM_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry=None,
-        topo_index=TopoIndex.TRIVIAL,
+        topo_index=TopoIndex.awe,
         description=(
             "Massless spin-1 boson; quantum of the electromagnetic field. "
             "Carries energy E=hν, momentum p=ℏk, and helicity ±1. "
@@ -189,17 +189,17 @@ def _proton() -> Imscription:
     """
     return Imscription(
         name="proton",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.HUB_NODE,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
-        topo_index=TopoIndex.TRIVIAL,
+        topo_index=TopoIndex.awe,
         description=(
             "Bare proton (H⁺); fundamental charge carrier in acid-base chemistry. "
             "Mass ~1.67×10⁻²⁷ kg; charge +e. Quantum tunnelling observed in enzyme "
@@ -234,17 +234,17 @@ def _electron() -> Imscription:
     """
     return Imscription(
         name="electron",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.HUB_NODE,
-        recognition_mode=RecognitionMode.COVALENT,
-        polarity=Polarity.DONOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.tot,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
-        topo_index=TopoIndex.TRIVIAL,
+        topo_index=TopoIndex.awe,
         description=(
             "Bare electron; fundamental charge carrier. Mass 9.11×10⁻³¹ kg; "
             "charge −e; spin-½. Marcus-theory electron transfer governs redox "
@@ -291,17 +291,17 @@ def _spin_singlet() -> Imscription:
     """
     return Imscription(
         name="spin_singlet",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.QUANTUM_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
-        topo_index=TopoIndex.TRIVIAL,
+        topo_index=TopoIndex.awe,
         description=(
             "Maximally entangled two-spin Bell state |Ψ⁻⟩ = (|↑↓⟩−|↓↑⟩)/√2. "
             "FACTOR 8 TRIGGER: G_ℵ + F_ℏ + K_teshlig + ¬D_∞ → quantum criticality "
@@ -341,17 +341,17 @@ def _qubit_logical() -> Imscription:
     """
     return Imscription(
         name="qubit_logical",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.LOW,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.QUANTUM_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.age,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry=None,
-        topo_index=TopoIndex.TRIVIAL,
+        topo_index=TopoIndex.awe,
         description=(
             "Idealized logical qubit — two-level quantum system for gate-based "
             "quantum computation. F_beltl reflects current hardware reality "
@@ -406,17 +406,17 @@ def _kitaev_chain_majorana() -> Imscription:
     """
     return Imscription(
         name="kitaev_chain_majorana",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.QUANTUM_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry="1:1",
-        topo_index=TopoIndex.Z_CLASS,
+        topo_index=TopoIndex.ah,
         description=(
             "Kitaev chain: 1D spinless p-wave superconductor in its topological phase "
             "(|μ| < 2t). Majorana zero modes γ_L, γ_R at chain ends encode a "
@@ -467,17 +467,17 @@ def _fqh_moore_read() -> Imscription:
     """
     return Imscription(
         name="fqh_moore_read",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,
-        topology=Topology.BRAID,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.TRAP,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.QUANTUM_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.T_braid,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.on,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry=None,
-        topo_index=TopoIndex.NON_ABELIAN,
+        topo_index=TopoIndex.zoo,
         description=(
             "FQH ν=5/2 Moore-Read (Pfaffian) state. Non-Abelian Ising anyons: "
             "σ × σ = 1 + ψ, quantum dimension d_σ = √2. GSD = 3 on torus. "
@@ -526,17 +526,17 @@ def _topological_insulator_bi2se3() -> Imscription:
     """
     return Imscription(
         name="topological_insulator_bi2se3",
-        dimensionality=Dimensionality.SUPRAMOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.SUBCRITICAL,
+        dimensionality=Dimensionality.ash,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.woe,
         stoichiometry=None,
-        topo_index=TopoIndex.Z2_CLASS,
+        topo_index=TopoIndex.oak,
         description=(
             "Bi₂Se₃-type 3D strong topological insulator. ℤ₂ invariant ν₀=1, "
             "AZ class AII (time-reversal symmetric). Single Dirac cone per surface, "

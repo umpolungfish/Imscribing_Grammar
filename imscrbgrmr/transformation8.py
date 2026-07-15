@@ -152,18 +152,18 @@ def create_rotaxane_imscription(
     if barrier_height is not None:
         k_char = KineticCharacter.from_barrier(barrier_height)
     else:
-        k_char = KineticCharacter.MODERATE  # Default for rotaxanes
+        k_char = KineticCharacter.loll  # Default for rotaxanes
     
     return Imscription(
         name=name,
-        dimensionality=Dimensionality.SUPRAMOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,  # Macrocycle
-        recognition_mode=RecognitionMode.MECHANICAL,  # R_⇔
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,  # F_ℇ (context-dependent)
+        dimensionality=Dimensionality.ash,
+        topology=Topology.mime,  # Macrocycle
+        recognition_mode=RecognitionMode.ian,  # R_⇔
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,  # F_ℇ (context-dependent)
         kinetic_character=k_char,
-        granularity=Granularity.MESOSCALE,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
+        granularity=Granularity.bib,
+        interaction_grammar=InteractionGrammar.vow,
         criticality_phase=None,  # To be determined by analysis
         description="Mechanical bond rotaxane (DB24C8/dialkylammonium)",
         metadata={

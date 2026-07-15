@@ -1,23 +1,36 @@
-Retire the Phi_c family: gen-1 criticality names to bare Shavian
+Give the enums their Shavian names and delete the old ones entirely
 
-Phi_c is ⊙. The `_c` forms only ever existed under Criticality, so unlike bare
-Phi they carry no ambiguity: today's Φ is Parity and has no `_c` value, so
-nothing here needs a judgement call. Rewrote the family to the values
-`models.from_symbol` returns for them: Phi_c / Φ_c / ⊙_c / Phi_ctyogh → ⊙,
-Phi_c_complex → 𐑮, Phi_sub → 𐑢, Phi_EP → 𐑻, Phi_sup → 𐑣. 7,689 refs, 585 files.
+We do not have to import any old notation, or even reference it. That is the
+goal, and the aliases were the last thing keeping the old names alive: an alias
+IS a reference. So they are gone rather than deprecated.
 
-The whole job is one distinction: Phi_c names a VALUE in prose and data, and it
-also names a CONSTRUCTOR in code. `Criticality.Phi_c` is a live Lean identifier
-(`theorem as_is_QCP : asymptotic_safety.crit = Criticality.Phi_c := rfl`) and
-`Criticality.Phi_ctyogh` is a live Python enum alias. Rewriting those gives
-`Criticality.⊙`, which is not an identifier in either language. So dotted
-occurrences stay and everything else moves. Same string, two roles — the same
-shape as CLINK L8 versus the `=` opcode, where only reading tells them apart.
+Ten of the twelve enums were still named in gen-2 phonetics as their CANONICAL
+names, not just their aliases. D_wynn, K_schwa, Omega_dzlig, T_nrleg,
+Gamma_corner. Only Criticality and Stoichiometry had been carried over to the
+Shavian names, so the migration had stopped a fifth of the way in and the rest
+of the model was still speaking the old dialect natively. Renamed 41 members to
+their Shavian names and dropped 84 alias definitions, then repointed 1,671 call
+sites across the corpus.
 
-models.py keeps its old spellings on purpose. Its from_symbol maps are the
-back-compat table: the keys have to go on spelling `Φ_c` or the translation from
-old symbols stops working. Rewriting the dictionary that performs the migration
-would remove the migration.
+The names were not invented. Core.lean's constructor order defines the ordinals,
+so I paired its constructors against the navigator's ordinal table per axis and
+eleven of twelve matched exactly on count and order: dead/ash/array/if_,
+judge/eat/mime/oil/are, ado/tot/ear/ian, church/yew/out/nun/or_, age/they/peep,
+yea/loll/egg/on/air, bib/thigh/ice, vow/gag/measure/ooze, fee/kick/sure/wool,
+awe/oak/ah/zoo. Criticality and Stoichiometry read straight off the enum, since
+they were already right. The naming is glyph-global, not axis-local: 𐑛 is dead
+wherever it appears, which is what a 49-symbol alphabet means. `if` and `or` are
+Python keywords, so those two are if_ and or_; Lean escapes them as if' and or'
+for the same reason.
 
-Verified after: imscrbgrmr imports, from_symbol('Φ_c') still returns ⊙, both
-navigators still answer (cl8nk promote, cl9nk moat), and no syntax regressions.
+from_symbol keeps only the glyph and the Shavian name. Every back-compat key is
+gone. I checked what actually calls it first: every live call site passes either
+catalog data, which is already Shavian, or nucleotide letters for the genetics
+work. Nothing passed an old form. The table was translating for a caller that no
+longer exists.
+
+Verified: imscrbgrmr imports, both navigators still answer, no stale member
+reference survives anywhere in the corpus, and the suite is unchanged at 45
+passed with the same pre-existing failure and two errors it had before (plus
+ob3ect/test_factory.py, which cannot import list_templates and was already
+broken).

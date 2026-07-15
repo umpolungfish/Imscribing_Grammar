@@ -14,7 +14,7 @@ The two layers are coupled: the molecular imscription is the coupling agent that
 translates molecular grammar into whole-brain network grammar shift. The brain-state
 imscription is what the nervous system BECOMES while the molecular imscription is active.
 
-**The shared observation:** All six compounds induce CriticalityPhase.CRITICAL in the
+**The shared observation:** All six compounds induce CriticalityPhase.monad in the
 target system, via different receptor grammars and with different kinetic profiles.
 They are primitive-convergent: structurally diverse, topologically equivalent in output.
 
@@ -139,15 +139,15 @@ def _lsd_molecular() -> Imscription:
     """
     return Imscription(
         name="lsd_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "LSD (lysergic acid diethylamide) as receptor ligand. Tetracyclic ergoline "
@@ -212,15 +212,15 @@ def _lsd_brain_state() -> Imscription:
     """
     return Imscription(
         name="lsd_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain constraint-propagation state induced by LSD. T_nrleg: "
@@ -279,15 +279,15 @@ def _dmt_molecular() -> Imscription:
     """
     return Imscription(
         name="dmt_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "DMT (N,N-dimethyltryptamine) as receptor ligand. Simple tryptamine with "
@@ -349,15 +349,15 @@ def _dmt_brain_state() -> Imscription:
     """
     return Imscription(
         name="dmt_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by DMT. Primitive-identical to LSD brain-state "
@@ -422,15 +422,15 @@ def _five_meo_dmt_molecular() -> Imscription:
     """
     return Imscription(
         name="five_meo_dmt_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "5-MeO-DMT as receptor ligand. Tryptamine with 5-methoxy substitution. "
@@ -493,15 +493,15 @@ def _five_meo_dmt_brain_state() -> Imscription:
     """
     return Imscription(
         name="five_meo_dmt_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK_SYM,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_SYM,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.T_network_sym,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.or_,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by 5-MeO-DMT. T_network_sym + P_subdoublearrow: "
@@ -568,15 +568,15 @@ def _psilocin_molecular() -> Imscription:
     """
     return Imscription(
         name="psilocin_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Psilocin (4-OH-DMT, active form of psilocybin) as receptor ligand. "
@@ -632,15 +632,15 @@ def _psilocin_brain_state() -> Imscription:
     """
     return Imscription(
         name="psilocin_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.MODERATE,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SELECTIVE_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.loll,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by psilocin. Primitive-identical to LSD brain-state "
@@ -709,15 +709,15 @@ def _mescaline_molecular() -> Imscription:
     """
     return Imscription(
         name="mescaline_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.LINEAR,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.T_linear,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Mescaline (3,4,5-trimethoxyphenethylamine) as receptor ligand. "
@@ -780,15 +780,15 @@ def _mescaline_brain_state() -> Imscription:
     """
     return Imscription(
         name="mescaline_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.MEDIUM,
-        kinetic_character=KineticCharacter.SLOW,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.BROAD_OR,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.they,
+        kinetic_character=KineticCharacter.egg,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.gag,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by mescaline. Γ_BROAD preserved from molecular "
@@ -866,15 +866,15 @@ def _salvinorin_a_molecular() -> Imscription:
     """
     return Imscription(
         name="salvinorin_a_molecular",
-        dimensionality=Dimensionality.MOLECULAR,
-        topology=Topology.CYCLIC_BOWTIE,
-        recognition_mode=RecognitionMode.NON_COVALENT,
-        polarity=Polarity.DONOR_ACCEPTOR,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.dead,
+        topology=Topology.mime,
+        recognition_mode=RecognitionMode.ado,
+        polarity=Polarity.church,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="1:1",
         description=(
             "Salvinorin A (neoclerodane diterpene) as receptor ligand. "
@@ -943,15 +943,15 @@ def _salvinorin_a_brain_state() -> Imscription:
     """
     return Imscription(
         name="salvinorin_a_brain_state",
-        dimensionality=Dimensionality.TEMPORAL,
-        topology=Topology.NETWORK,
-        recognition_mode=RecognitionMode.DYNAMIC_CATALYTIC,
-        polarity=Polarity.SELF_COMPLEMENTARY_PSEUDO,
-        fidelity=Fidelity.HIGH,
-        kinetic_character=KineticCharacter.FAST,
-        granularity=Granularity.GLOBAL,
-        interaction_grammar=InteractionGrammar.SPECIFIC_AND,
-        criticality_phase=CriticalityPhase.CRITICAL,
+        dimensionality=Dimensionality.array,
+        topology=Topology.judge,
+        recognition_mode=RecognitionMode.ear,
+        polarity=Polarity.yew,
+        fidelity=Fidelity.peep,
+        kinetic_character=KineticCharacter.yea,
+        granularity=Granularity.thigh,
+        interaction_grammar=InteractionGrammar.vow,
+        criticality_phase=CriticalityPhase.monad,
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by Salvinorin A (KOR). Γ_SPECIFIC preserved: "

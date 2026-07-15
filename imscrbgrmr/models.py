@@ -52,24 +52,16 @@ class Dimensionality(Enum):
     entries but are not part of the canonical 6-constructor type in Core.lean.
     """
     # ── Canonical F4 members ──────────────────────────────────────────────────
-    D_wynn      = "𐑛"   # ordinal 1: 2D areal / molecular sheet
-    D_turnthree = "𐑨"   # ordinal 2: triangulated / simplicial / stratified
-    D_invomega  = "𐑼"   # ordinal 3: ∞-dimensional / iterative-temporal
-    D_holo      = "𐑦"   # ordinal 4: imscriptive (boundary encodes bulk); canonical value D_omega
+    dead      = "𐑛"   # ordinal 1: 2D areal / molecular sheet
+    ash = "𐑨"   # ordinal 2: triangulated / simplicial / stratified
+    array  = "𐑼"   # ordinal 3: ∞-dimensional / iterative-temporal
+    if_      = "𐑦"   # ordinal 4: imscriptive (boundary encodes bulk); canonical value D_omega
     # ── Lean-only extensions (non-canonical, chemistry/physics domain) ─────
     D_point = "Ð_point"   # 0D, scalar / spin-0 field
     D_line  = "Ð_line"    # 1D, vectorial
     D_cube  = "Ð_cube"    # 3D volumetric (Lean extension; canonical slot = D_turnthree)
 
     # Backward-compat aliases (chemistry-domain names → canonical values)
-    MOLECULAR      = "𐑛"
-    SUPRAMOLECULAR = "𐑨"   # was D_cube; canonical ordinal 2 = D_turnthree
-    TEMPORAL       = "𐑼"
-    HOLOGRAPHIC    = "𐑦"
-    HYBRID_MOL_SUPRA  = "𐑨"
-    HYBRID_MOL_TEMP   = "𐑼"
-    HYBRID_SUPRA_TEMP = "𐑼"
-    HYBRID_ALL        = "𐑨"
 
     @property
     def domains(self) -> frozenset:
@@ -88,32 +80,32 @@ class Dimensionality(Enum):
     def from_symbol(cls, s: str) -> "Dimensionality":
         _map = {
             # glyph IDs (canonical)
-            "𐑛":  cls.D_wynn,
-            "𐑨":  cls.D_turnthree,
-            "𐑼":  cls.D_invomega,
-            "𐑦":  cls.D_holo,
+            "𐑛":  cls.dead,
+            "𐑨":  cls.ash,
+            "𐑼":  cls.array,
+            "𐑦":  cls.if_,
             # phonetic names (backward compat)
-            "Ð_wynn":       cls.D_wynn,
-            "Ð_turnthree":  cls.D_turnthree,
-            "Ð_invomega":   cls.D_invomega,
-            "Ð_omega":      cls.D_holo,
+            "Ð_wynn":       cls.dead,
+            "Ð_turnthree":  cls.ash,
+            "Ð_invomega":   cls.array,
+            "Ð_omega":      cls.if_,
             # legacy canonical names (pre-migration)
-            "Ð_triangle":   cls.D_turnthree,
-            "Ð_wedge":      cls.D_wynn,
-            "Ð_infty":      cls.D_invomega,
-            "Ð_odot":       cls.D_holo,
+            "Ð_triangle":   cls.ash,
+            "Ð_wedge":      cls.dead,
+            "Ð_infty":      cls.array,
+            "Ð_odot":       cls.if_,
             # Lean extensions
             "Ð_point":  cls.D_point,
             "Ð_line":   cls.D_line,
             "Ð_cube":   cls.D_cube,
             # Shavian (v0.6.0)
-            "𐑛": cls.D_wynn,   "𐑨": cls.D_turnthree,
-            "𐑼": cls.D_invomega, "𐑦": cls.D_holo,
+            "𐑛": cls.dead,   "𐑨": cls.ash,
+            "𐑼": cls.array, "𐑦": cls.if_,
             # Unicode aliases
-            "D_∧": cls.D_wynn,  "D_△": cls.D_turnthree,
-            "D_∞": cls.D_invomega, "D_⊙": cls.D_holo,
-            "Ð_infinity": cls.D_invomega,
-            "Ð_holo": cls.D_holo,
+            "D_∧": cls.dead,  "D_△": cls.ash,
+            "D_∞": cls.array, "D_⊙": cls.if_,
+            "Ð_infinity": cls.array,
+            "Ð_holo": cls.if_,
         }
         try:
             return _map[s]
@@ -121,16 +113,16 @@ class Dimensionality(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "wynn": cls.D_wynn,
-            "wedge": cls.D_wynn,
-            "turnthree": cls.D_turnthree,
-            "triangle": cls.D_turnthree,
-            "invomega": cls.D_invomega,
-            "infty": cls.D_invomega,
-            "infinity": cls.D_invomega,
-            "omega": cls.D_holo,
-            "holo": cls.D_holo,
-            "odot": cls.D_holo,
+            "wynn": cls.dead,
+            "wedge": cls.dead,
+            "turnthree": cls.ash,
+            "triangle": cls.ash,
+            "invomega": cls.array,
+            "infty": cls.array,
+            "infinity": cls.array,
+            "omega": cls.if_,
+            "holo": cls.if_,
+            "odot": cls.if_,
             "point": cls.D_point,
             "line": cls.D_line,
             "cube": cls.D_cube,
@@ -141,7 +133,7 @@ class Dimensionality(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Dimensionality: unknown symbol {s!r}, defaulting to D_wynn")
-        return cls.D_wynn
+        return cls.dead
 
 
 # =============================================================================
@@ -157,64 +149,49 @@ class Topology(Enum):
     """
     T_linear   = "Þ_linear"    # open chain
     T_branched = "Þ_branched"  # tree / DAG
-    T_nrleg    = "𐑡"         # general graph
-    T_bullseye = "𐑥"         # cyclic closure / double-well / figure-8
+    judge    = "𐑡"         # general graph
+    mime = "𐑥"         # cyclic closure / double-well / figure-8
     T_torus    = "Þ_torus"     # higher-genus compact (NEW — not in old Python)
-    T_holo     = "𐑸"         # imscriptive: non-local boundary-bulk; canonical: T_openo
+    are     = "𐑸"         # imscriptive: non-local boundary-bulk; canonical: T_openo
     # Chemistry extras
     T_network_hex    = "Þ_network_hex"
     T_network_mixed  = "Þ_network_mixed"
     T_network_interp = "Þ_network_interp"
     T_network_sym    = "Þ_network_sym"
-    T_cage  = "𐑶"
-    T_bowl  = "𐑰"
+    oil  = "𐑶"
+    eat  = "𐑰"
     T_braid = "Þ_braid"
     # Backward-compat aliases
-    LINEAR        = "Þ_linear"
-    CHAIN         = "Þ_linear"
-    BRANCHED      = "Þ_branched"
-    NETWORK       = "𐑡"
-    HUB_NODE      = "𐑡"
-    CYCLIC_BOWTIE = "𐑥"
-    TORUS         = "Þ_torus"
-    CAGE          = "𐑶"
-    BOWL          = "𐑰"
-    BRAID         = "Þ_braid"
-    NETWORK_HEX   = "Þ_network_hex"
-    NETWORK_MIXED = "Þ_network_mixed"
-    NETWORK_INTERP = "Þ_network_interp"
-    NETWORK_SYM            = "Þ_network_sym"
-    NETWORK_INTERPENETRATING = "Þ_network_interp"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Topology":
         _map = {
             # glyph IDs (canonical)
-            "𐑡":  cls.T_nrleg,
-            "𐑥":  cls.T_bullseye,
-            "𐑸":  cls.T_holo,
-            "𐑶":  cls.T_cage,
-            "𐑰":  cls.T_bowl,
+            "𐑡":  cls.judge,
+            "𐑥":  cls.mime,
+            "𐑸":  cls.are,
+            "𐑶":  cls.oil,
+            "𐑰":  cls.eat,
             # phonetic names (backward compat)
             "Þ_linear": cls.T_linear,       "Þ_chains": cls.T_linear,
             "Þ_branched": cls.T_branched,
-            "Þ_nrleg": cls.T_nrleg,
-            "Þ_bullseye": cls.T_bullseye,
+            "Þ_nrleg": cls.judge,
+            "Þ_bullseye": cls.mime,
             "Þ_torus": cls.T_torus,
-            "Þ_holo": cls.T_holo,      "Þ_openo": cls.T_holo,
+            "Þ_holo": cls.are,      "Þ_openo": cls.are,
             "Þ_network_hex": cls.T_network_hex,
             "Þ_network_mixed": cls.T_network_mixed,
             "Þ_network_interp": cls.T_network_interp,
             "Þ_network_sym": cls.T_network_sym,
-            "Þ_cage": cls.T_cage,      "Þ_box": cls.T_cage,  "Þ_commatailz": cls.T_cage,
-            "Þ_bowl": cls.T_bowl,      "Þ_invscr": cls.T_bowl,
-            "Þ_braid": cls.T_braid,    "Þ_square": cls.T_nrleg,
+            "Þ_cage": cls.oil,      "Þ_box": cls.oil,  "Þ_commatailz": cls.oil,
+            "Þ_bowl": cls.eat,      "Þ_invscr": cls.eat,
+            "Þ_braid": cls.T_braid,    "Þ_square": cls.judge,
             # Shavian (v0.6.0)
-            "𐑡": cls.T_nrleg,  "𐑰": cls.T_bowl, "𐑥": cls.T_bullseye,
-            "𐑶": cls.T_cage,   "𐑸": cls.T_holo,
+            "𐑡": cls.judge,  "𐑰": cls.eat, "𐑥": cls.mime,
+            "𐑶": cls.oil,   "𐑸": cls.are,
             # Unicode aliases
-            "T_∈": cls.T_bowl,  "T_⋈": cls.T_bullseye,  "T_⊙": cls.T_holo,
-            "T_⊠": cls.T_cage,
+            "T_∈": cls.eat,  "T_⋈": cls.mime,  "T_⊙": cls.are,
+            "T_⊠": cls.oil,
         }
         try:
             return _map[s]
@@ -226,19 +203,19 @@ class Topology(Enum):
             "chain": cls.T_linear,
             "chains": cls.T_linear,
             "branched": cls.T_branched,
-            "nrleg": cls.T_nrleg,
-            "network": cls.T_nrleg,
-            "square": cls.T_nrleg,
-            "bullseye": cls.T_bullseye,
-            "cyclic_bowtie": cls.T_bullseye,
+            "nrleg": cls.judge,
+            "network": cls.judge,
+            "square": cls.judge,
+            "bullseye": cls.mime,
+            "cyclic_bowtie": cls.mime,
             "torus": cls.T_torus,
-            "holo": cls.T_holo,
-            "openo": cls.T_holo,
-            "cage": cls.T_cage,
-            "box": cls.T_cage,
-            "commatailz": cls.T_cage,
-            "bowl": cls.T_bowl,
-            "invscr": cls.T_bowl,
+            "holo": cls.are,
+            "openo": cls.are,
+            "cage": cls.oil,
+            "box": cls.oil,
+            "commatailz": cls.oil,
+            "bowl": cls.eat,
+            "invscr": cls.eat,
             "braid": cls.T_braid,
             "network_hex": cls.T_network_hex,
             "network_mixed": cls.T_network_mixed,
@@ -265,43 +242,35 @@ class Recognition(Enum):
     Canonical 4 (from grammar): R_subrightarrow, R_ctz, R_downstep, R_lyoghlig.
     Chemistry vocab is preserved as member names but values are canonical.
     """
-    R_superset   = "𐑩"    # non-covalent / soft association
-    R_subset     = "𐑑"    # covalent bond / structural transformation
-    R_catalytic  = "𐑽"    # transition-state stabilisation / adjoint
-    R_allosteric = "𐑽"    # conformational gating (alias of R_downstep)
-    R_mechanical = "𐑾"    # mechanical topology / left-right asymmetric
-    R_exact      = "𐑽"    # exact correspondence (alias of R_downstep)
-    R_covalent_dynamic = "𐑑"  # dynamic covalent (alias of R_ctz)
+    ado   = "𐑩"    # non-covalent / soft association
+    tot     = "𐑑"    # covalent bond / structural transformation
+    ear  = "𐑽"    # transition-state stabilisation / adjoint
+    ian = "𐑾"    # mechanical topology / left-right asymmetric
     # Backward-compat aliases used by constraints.py
-    COVALENT          = "𐑑"
-    NON_COVALENT      = "𐑩"
-    DYNAMIC_CATALYTIC = "𐑽"
-    MECHANICAL        = "𐑾"
-    COVALENT_DYNAMIC  = "𐑑"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Recognition":
         _map = {
             # glyph IDs (canonical)
-            "𐑩":  cls.R_superset,
-            "𐑑":  cls.R_subset,
-            "𐑽":  cls.R_catalytic,
-            "𐑾":  cls.R_mechanical,
+            "𐑩":  cls.ado,
+            "𐑑":  cls.tot,
+            "𐑽":  cls.ear,
+            "𐑾":  cls.ian,
             # phonetic names (backward compat)
-            "Ř_subrightarrow":   cls.R_superset,
-            "Ř_ctz":     cls.R_subset,
-            "Ř_downstep":  cls.R_catalytic,
-            "Ř_lyoghlig":      cls.R_mechanical,
+            "Ř_subrightarrow":   cls.ado,
+            "Ř_ctz":     cls.tot,
+            "Ř_downstep":  cls.ear,
+            "Ř_lyoghlig":      cls.ian,
             # Shavian (v0.6.0)
-            "𐑩": cls.R_superset, "𐑑": cls.R_subset,
-            "𐑽": cls.R_catalytic, "𐑾": cls.R_mechanical,
+            "𐑩": cls.ado, "𐑑": cls.tot,
+            "𐑽": cls.ear, "𐑾": cls.ian,
             # chemistry vocab
             "Ř_exact": cls.R_exact,
-            "Ř_subset": cls.R_subset,         "R_⊆": cls.R_subset,
-            "Ř_superset": cls.R_superset,     "R_⊇": cls.R_superset,
-            "Ř_catalytic": cls.R_catalytic,   "R_‡": cls.R_catalytic,
+            "Ř_subset": cls.tot,         "R_⊆": cls.tot,
+            "Ř_superset": cls.ado,     "R_⊇": cls.ado,
+            "Ř_catalytic": cls.ear,   "R_‡": cls.ear,
             "Ř_allosteric": cls.R_allosteric,
-            "Ř_mechanical": cls.R_mechanical, "R_⇔": cls.R_mechanical,
+            "Ř_mechanical": cls.ian, "R_⇔": cls.ian,
             "Ř_covalent_dynamic": cls.R_covalent_dynamic,
         }
         try:
@@ -311,12 +280,12 @@ class Recognition(Enum):
         # Suffix-based fallback: strip any hallucinated prefix before '_'
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _suffix_map = {
-            "superset": cls.R_superset, "subrightarrow": cls.R_superset,
-            "subset": cls.R_subset, "ctz": cls.R_subset, "covalent": cls.R_subset,
+            "superset": cls.ado, "subrightarrow": cls.ado,
+            "subset": cls.tot, "ctz": cls.tot, "covalent": cls.tot,
             "covalent_dynamic": cls.R_covalent_dynamic,
-            "catalytic": cls.R_catalytic, "downstep": cls.R_catalytic,
+            "catalytic": cls.ear, "downstep": cls.ear,
             "allosteric": cls.R_allosteric, "exact": cls.R_exact,
-            "mechanical": cls.R_mechanical, "lyoghlig": cls.R_mechanical,
+            "mechanical": cls.ian, "lyoghlig": cls.ian,
         }
         if suffix in _suffix_map:
             import warnings
@@ -324,7 +293,7 @@ class Recognition(Enum):
             return _suffix_map[suffix]
         import warnings
         warnings.warn(f"Recognition: completely unknown symbol {s!r}, defaulting to R_superset")
-        return cls.R_superset
+        return cls.ado
 
 
 # =============================================================================
@@ -339,20 +308,12 @@ class Polarity(Enum):
     Chemistry vocab is preserved as member names but values are canonical.
     """
     # ── Canonical F5 members ──────────────────────────────────────────────────
-    P_neutral        = "𐑗"   # ordinal 1: asymmetric, no preferred direction
-    P_plus           = "𐑿"   # ordinal 2: signed direction (electrophilic)
-    P_pipevar        = "𐑬"   # ordinal 3: self-complementary bipolar
-    P_subdoublearrow = "𐑯"   # ordinal 4: symmetric (non-Frobenius)
-    P_doublebarpipe  = "𐑹"   # ordinal 5: Frobenius special (P_pm_sym)
+    church        = "𐑗"   # ordinal 1: asymmetric, no preferred direction
+    yew           = "𐑿"   # ordinal 2: signed direction (electrophilic)
+    out        = "𐑬"   # ordinal 3: self-complementary bipolar
+    nun = "𐑯"   # ordinal 4: symmetric (non-Frobenius)
+    or_  = "𐑹"   # ordinal 5: Frobenius special (P_pm_sym)
     # ── Aliases ───────────────────────────────────────────────────────────────
-    P_minus       = "𐑿"    # nucleophilic → same ordinal as electrophilic
-    P_pm_pseudo   = "𐑿"    # pseudo-symmetric → signed
-    P_directional = "𐑗"    # directed asymmetric pair
-    ACCEPTOR               = "𐑿"
-    DONOR                  = "𐑿"
-    SELF_COMPLEMENTARY_SYM = "𐑹"
-    SELF_COMPLEMENTARY_PSEUDO = "𐑿"
-    DONOR_ACCEPTOR         = "𐑗"
 
     @property
     def is_self_complementary(self) -> bool:
@@ -362,29 +323,29 @@ class Polarity(Enum):
     def from_symbol(cls, s: str) -> "Polarity":
         _map = {
             # glyph IDs (canonical)
-            "𐑗":  cls.P_neutral,
-            "𐑿":  cls.P_plus,
-            "𐑬":  cls.P_pipevar,
-            "𐑯":  cls.P_subdoublearrow,
-            "𐑹":  cls.P_doublebarpipe,
+            "𐑗":  cls.church,
+            "𐑿":  cls.yew,
+            "𐑬":  cls.out,
+            "𐑯":  cls.nun,
+            "𐑹":  cls.or_,
             # phonetic names (backward compat)
-            "Φ_aolig":          cls.P_neutral,
-            "Φ_upsilon":        cls.P_plus,
-            "Φ_pipevar":        cls.P_pipevar,
-            "Φ_subdoublearrow": cls.P_subdoublearrow,
-            "Φ_doublebarpipe":  cls.P_doublebarpipe,
+            "Φ_aolig":          cls.church,
+            "Φ_upsilon":        cls.yew,
+            "Φ_pipevar":        cls.out,
+            "Φ_subdoublearrow": cls.nun,
+            "Φ_doublebarpipe":  cls.or_,
             # Shavian (v0.6.0)
-            "𐑗": cls.P_neutral,  "𐑿": cls.P_plus,    "𐑬": cls.P_pipevar,
-            "𐑯": cls.P_subdoublearrow, "𐑹": cls.P_doublebarpipe,
+            "𐑗": cls.church,  "𐑿": cls.yew,    "𐑬": cls.out,
+            "𐑯": cls.nun, "𐑹": cls.or_,
             # legacy canonical names
-            "Φ_asym":    cls.P_neutral,
-            "Φ_psi":     cls.P_plus,
-            "Φ_pm":      cls.P_pipevar,
-            "Φ_sym":     cls.P_subdoublearrow,
-            "Φ_pm_sym":  cls.P_doublebarpipe,  "P_±^sym": cls.P_doublebarpipe,
+            "Φ_asym":    cls.church,
+            "Φ_psi":     cls.yew,
+            "Φ_pm":      cls.out,
+            "Φ_sym":     cls.nun,
+            "Φ_pm_sym":  cls.or_,  "P_±^sym": cls.or_,
             # chemistry vocab
-            "Φ_neutral":     cls.P_neutral,
-            "Φ_plus":        cls.P_plus,        "P+": cls.P_plus,
+            "Φ_neutral":     cls.church,
+            "Φ_plus":        cls.yew,        "P+": cls.yew,
             "Φ_minus":       cls.P_minus,       "P-": cls.P_minus,
             "Φ_pm_pseudo":   cls.P_pm_pseudo,   "P_±^ψ": cls.P_pm_pseudo,
             "Φ_directional": cls.P_directional,
@@ -395,22 +356,22 @@ class Polarity(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "neutral": cls.P_neutral,
-            "asym": cls.P_neutral,
-            "directional": cls.P_neutral,
-            "aolig": cls.P_neutral,
-            "plus": cls.P_plus,
-            "psi": cls.P_plus,
-            "upsilon": cls.P_plus,
+            "neutral": cls.church,
+            "asym": cls.church,
+            "directional": cls.church,
+            "aolig": cls.church,
+            "plus": cls.yew,
+            "psi": cls.yew,
+            "upsilon": cls.yew,
             "minus": cls.P_minus,
             "pm_pseudo": cls.P_pm_pseudo,
-            "pipevar": cls.P_pipevar,
-            "pm": cls.P_pipevar,
-            "subdoublearrow": cls.P_subdoublearrow,
-            "sym": cls.P_subdoublearrow,
-            "doublebarpipe": cls.P_doublebarpipe,
-            "pm_sym": cls.P_doublebarpipe,
-            "frobenius": cls.P_doublebarpipe,
+            "pipevar": cls.out,
+            "pm": cls.out,
+            "subdoublearrow": cls.nun,
+            "sym": cls.nun,
+            "doublebarpipe": cls.or_,
+            "pm_sym": cls.or_,
+            "frobenius": cls.or_,
         }
         if suffix in _sfx:
             import warnings
@@ -418,7 +379,7 @@ class Polarity(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Polarity: unknown symbol {s!r}, defaulting to P_neutral")
-        return cls.P_neutral
+        return cls.church
 
 
 # =============================================================================
@@ -436,58 +397,42 @@ class Grammar(Enum):
 
     G_dissipative retained from old GrammarOperator for catalogs that used it.
     """
-    Gamma_corner      = "𐑝"   # conjunctive / simultaneous (all partners required)
-    Gamma_spleftarrow = "𐑜"   # disjunctive / any one suffices
-    Gamma_secstress   = "𐑠"   # sequential / ordered
+    vow      = "𐑝"   # conjunctive / simultaneous (all partners required)
+    gag = "𐑜"   # disjunctive / any one suffices
+    measure   = "𐑠"   # sequential / ordered
     G_xor         = "Γ_xor"     # exclusive (NEW — was missing)
     G_impl        = "Γ_impl"    # implicative / conditional (NEW — was missing)
-    G_dissipative = "𐑵"       # irreversible / Lindblad (legacy)
+    ooze = "𐑵"       # irreversible / Lindblad (legacy)
     # Backward-compat aliases: old compound InteractionGrammar values -> canonical operator
-    SPECIFIC_AND         = "𐑝"
-    SELECTIVE_AND        = "𐑝"
-    BROAD_AND            = "𐑝"
-    QUANTUM_AND          = "𐑝"
-    SPECIFIC_OR          = "𐑜"
-    SELECTIVE_OR         = "𐑜"
-    BROAD_OR             = "𐑜"
-    QUANTUM_OR           = "𐑜"
-    SPECIFIC_SEQ         = "𐑠"
-    SELECTIVE_SEQ        = "𐑠"
-    BROAD_SEQ            = "𐑠"
-    QUANTUM_SEQ          = "𐑠"
-    SPECIFIC_DISSIPATIVE  = "𐑵"
-    SELECTIVE_DISSIPATIVE = "𐑵"
-    BROAD_DISSIPATIVE     = "𐑵"
-    QUANTUM_DISSIPATIVE   = "𐑵"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Grammar":
         _map = {
             # glyph IDs (canonical)
-            "𐑝":  cls.Gamma_corner,
-            "𐑜":  cls.Gamma_spleftarrow,
-            "𐑠":  cls.Gamma_secstress,
-            "𐑵":  cls.G_dissipative,
+            "𐑝":  cls.vow,
+            "𐑜":  cls.gag,
+            "𐑠":  cls.measure,
+            "𐑵":  cls.ooze,
             # Shavian (v0.6.0)
-            "𐑝": cls.Gamma_corner, "𐑜": cls.Gamma_spleftarrow,
-            "𐑠": cls.Gamma_secstress, "𐑵": cls.G_dissipative,
+            "𐑝": cls.vow, "𐑜": cls.gag,
+            "𐑠": cls.measure, "𐑵": cls.ooze,
             # phonetic names (backward compat)
-            "ɢ_corner": cls.Gamma_corner,   "ɢ_and": cls.Gamma_corner,
-            "ɢ_otimes": cls.Gamma_corner,   "Γ_⊗": cls.Gamma_corner,
-            "ɢ_odot": cls.Gamma_corner,     "Γ_⊙": cls.Gamma_corner,
-            "ɢ_spleftarrow": cls.Gamma_spleftarrow, "ɢ_or": cls.Gamma_spleftarrow,
-            "ɢ_bigcirc": cls.Gamma_spleftarrow,   "Γ_○": cls.Gamma_spleftarrow,
-            "ɢ_secstress": cls.Gamma_secstress,   "ɢ_seq": cls.Gamma_secstress,
-            "ɢ_dissipative": cls.G_dissipative,   "ɢ_doublevertline": cls.G_dissipative,
+            "ɢ_corner": cls.vow,   "ɢ_and": cls.vow,
+            "ɢ_otimes": cls.vow,   "Γ_⊗": cls.vow,
+            "ɢ_odot": cls.vow,     "Γ_⊙": cls.vow,
+            "ɢ_spleftarrow": cls.gag, "ɢ_or": cls.gag,
+            "ɢ_bigcirc": cls.gag,   "Γ_○": cls.gag,
+            "ɢ_secstress": cls.measure,   "ɢ_seq": cls.measure,
+            "ɢ_dissipative": cls.ooze,   "ɢ_doublevertline": cls.ooze,
             # Unicode aliases
-            "Γ_∧": cls.Gamma_corner,
-            "Γ_∨": cls.Gamma_spleftarrow,
-            "Γ_→": cls.Gamma_secstress,
+            "Γ_∧": cls.vow,
+            "Γ_∨": cls.gag,
+            "Γ_→": cls.measure,
             # G_xor / G_impl kept as phonetic since they have no glyph ID yet
             "Γ_xor": cls.G_xor,
             "Γ_impl": cls.G_impl,
             # legacy full string (backward compat)
-            "Γ_dissipative": cls.G_dissipative,
+            "Γ_dissipative": cls.ooze,
         }
         try:
             return _map[s]
@@ -495,19 +440,19 @@ class Grammar(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "corner": cls.Gamma_corner,
-            "and": cls.Gamma_corner,
-            "otimes": cls.Gamma_corner,
-            "odot": cls.Gamma_corner,
-            "spleftarrow": cls.Gamma_spleftarrow,
-            "or": cls.Gamma_spleftarrow,
-            "bigcirc": cls.Gamma_spleftarrow,
-            "secstress": cls.Gamma_secstress,
-            "seq": cls.Gamma_secstress,
+            "corner": cls.vow,
+            "and": cls.vow,
+            "otimes": cls.vow,
+            "odot": cls.vow,
+            "spleftarrow": cls.gag,
+            "or": cls.gag,
+            "bigcirc": cls.gag,
+            "secstress": cls.measure,
+            "seq": cls.measure,
             "xor": cls.G_xor,
             "impl": cls.G_impl,
-            "dissipative": cls.G_dissipative,
-            "doublevertline": cls.G_dissipative,
+            "dissipative": cls.ooze,
+            "doublevertline": cls.ooze,
         }
         if suffix in _sfx:
             import warnings
@@ -515,17 +460,17 @@ class Grammar(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Grammar: unknown symbol {s!r}, defaulting to Gamma_corner")
-        return cls.Gamma_corner
+        return cls.vow
 
     @property
     def partner_logic(self) -> str:
         return {
-            Grammar.Gamma_corner:      "All partners required simultaneously",
-            Grammar.Gamma_spleftarrow: "Any one partner suffices",
-            Grammar.Gamma_secstress:   "Ordered sequential recognition",
+            Grammar.vow:      "All partners required simultaneously",
+            Grammar.gag: "Any one partner suffices",
+            Grammar.measure:   "Ordered sequential recognition",
             Grammar.G_xor:             "Exactly one partner (exclusive)",
             Grammar.G_impl:            "Partner A implies partner B",
-            Grammar.G_dissipative:     "Irreversible — information erased by environment",
+            Grammar.ooze:     "Irreversible — information erased by environment",
         }[self]
 
 
@@ -544,28 +489,25 @@ class Fidelity(Enum):
       F_hardsign  = quantum / high-fidelity (ℏ)
     """
     F_noise    = "ƒ_noise"  # below threshold, lossy (NEW)
-    F_beltl    = "𐑱"     # classical search fidelity
-    F_dh       = "𐑞"     # HotSwap threshold
-    F_hardsign = "𐑐"     # quantum coherent
+    age    = "𐑱"     # classical search fidelity
+    they       = "𐑞"     # HotSwap threshold
+    peep = "𐑐"     # quantum coherent
     # Backward-compat aliases
-    LOW    = "𐑱"
-    MEDIUM = "𐑞"
-    HIGH   = "𐑐"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Fidelity":
         _map = {
             # glyph IDs (canonical)
-            "𐑱":  cls.F_beltl,
-            "𐑞":  cls.F_dh,
-            "𐑐":  cls.F_hardsign,
+            "𐑱":  cls.age,
+            "𐑞":  cls.they,
+            "𐑐":  cls.peep,
             # Shavian (v0.6.0)
-            "𐑱": cls.F_beltl, "𐑞": cls.F_dh, "𐑐": cls.F_hardsign,
+            "𐑱": cls.age, "𐑞": cls.they, "𐑐": cls.peep,
             # phonetic names (backward compat)
             "ƒ_noise": cls.F_noise,
-            "ƒ_beltl": cls.F_beltl,   "F_ℓ": cls.F_beltl,   "LOW": cls.F_beltl,
-            "ƒ_dh": cls.F_dh,         "F_ℇ": cls.F_dh,       "MEDIUM": cls.F_dh,
-            "ƒ_hardsign": cls.F_hardsign, "F_ℏ": cls.F_hardsign, "HIGH": cls.F_hardsign,
+            "ƒ_beltl": cls.age,   "F_ℓ": cls.age,   "LOW": cls.age,
+            "ƒ_dh": cls.they,         "F_ℇ": cls.they,       "MEDIUM": cls.they,
+            "ƒ_hardsign": cls.peep, "F_ℏ": cls.peep, "HIGH": cls.peep,
         }
         try:
             return _map[s]
@@ -574,12 +516,12 @@ class Fidelity(Enum):
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
             "noise": cls.F_noise,
-            "beltl": cls.F_beltl,
-            "low": cls.F_beltl,
-            "dh": cls.F_dh,
-            "medium": cls.F_dh,
-            "hardsign": cls.F_hardsign,
-            "high": cls.F_hardsign,
+            "beltl": cls.age,
+            "low": cls.age,
+            "dh": cls.they,
+            "medium": cls.they,
+            "hardsign": cls.peep,
+            "high": cls.peep,
         }
         if suffix in _sfx:
             import warnings
@@ -587,7 +529,7 @@ class Fidelity(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Fidelity: unknown symbol {s!r}, defaulting to F_beltl")
-        return cls.F_beltl
+        return cls.age
 
     @property
     def numeric_value(self) -> float:
@@ -609,36 +551,31 @@ class KineticChar(Enum):
       K_teshlig = kinetically trapped / pathway-multiplicity dominated
       K_lambda  = many-body localised (disorder-frozen)
     """
-    K_frtailgamma = "𐑘"
-    K_turnm       = "𐑤"   # was MODERATE
-    K_schwa       = "𐑧"
-    K_teshlig     = "𐑪"
-    K_lambda      = "𐑺"
+    yea = "𐑘"
+    loll       = "𐑤"   # was MODERATE
+    egg       = "𐑧"
+    on     = "𐑪"
+    air      = "𐑺"
     # Backward-compat aliases
-    FAST     = "𐑘"
-    MODERATE = "𐑤"
-    SLOW     = "𐑧"
-    TRAP     = "𐑪"
-    MBL      = "𐑺"
 
     @classmethod
     def from_symbol(cls, s: str) -> "KineticChar":
         _map = {
             # glyph IDs (canonical)
-            "𐑘":  cls.K_frtailgamma,
-            "𐑤":  cls.K_turnm,
-            "𐑧":  cls.K_schwa,
-            "𐑪":  cls.K_teshlig,
-            "𐑺":  cls.K_lambda,
+            "𐑘":  cls.yea,
+            "𐑤":  cls.loll,
+            "𐑧":  cls.egg,
+            "𐑪":  cls.on,
+            "𐑺":  cls.air,
             # Shavian (v0.6.0)
-            "𐑘": cls.K_frtailgamma, "𐑤": cls.K_turnm, "𐑧": cls.K_schwa,
-            "𐑪": cls.K_teshlig, "𐑺": cls.K_lambda,
+            "𐑘": cls.yea, "𐑤": cls.loll, "𐑧": cls.egg,
+            "𐑪": cls.on, "𐑺": cls.air,
             # phonetic names (backward compat)
-            "Ç_frtailgamma": cls.K_frtailgamma, "FAST": cls.K_frtailgamma,
-            "Ç_turnm":  cls.K_turnm,  "MODERATE": cls.K_turnm,
-            "Ç_schwa": cls.K_schwa, "SLOW": cls.K_schwa,
-            "Ç_teshlig": cls.K_teshlig, "TRAP": cls.K_teshlig,
-            "Ç_lambda":  cls.K_lambda,  "MBL": cls.K_lambda,
+            "Ç_frtailgamma": cls.yea, "FAST": cls.yea,
+            "Ç_turnm":  cls.loll,  "MODERATE": cls.loll,
+            "Ç_schwa": cls.egg, "SLOW": cls.egg,
+            "Ç_teshlig": cls.on, "TRAP": cls.on,
+            "Ç_lambda":  cls.air,  "MBL": cls.air,
         }
         try:
             return _map[s]
@@ -646,16 +583,16 @@ class KineticChar(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "frtailgamma": cls.K_frtailgamma,
-            "fast": cls.K_frtailgamma,
-            "turnm": cls.K_turnm,
-            "moderate": cls.K_turnm,
-            "schwa": cls.K_schwa,
-            "slow": cls.K_schwa,
-            "teshlig": cls.K_teshlig,
-            "trap": cls.K_teshlig,
-            "lambda": cls.K_lambda,
-            "mbl": cls.K_lambda,
+            "frtailgamma": cls.yea,
+            "fast": cls.yea,
+            "turnm": cls.loll,
+            "moderate": cls.loll,
+            "schwa": cls.egg,
+            "slow": cls.egg,
+            "teshlig": cls.on,
+            "trap": cls.on,
+            "lambda": cls.air,
+            "mbl": cls.air,
         }
         if suffix in _sfx:
             import warnings
@@ -663,7 +600,7 @@ class KineticChar(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"KineticChar: unknown symbol {s!r}, defaulting to K_schwa")
-        return cls.K_schwa
+        return cls.egg
 
     @property
     def numeric_value(self) -> float:
@@ -687,13 +624,10 @@ class Granularity(Enum):
     This is now corrected to match the mathematical convention and Core.lean.
     Migration: old G_revapostrophe → new G_gamma; old G_gamma → new G_beta; old G_beta → new G_revapostrophe.
     """
-    G_revapostrophe = "𐑲"   # fine-grained, atomic (ℵ) — was incorrectly GLOBAL in old Python
-    G_beta          = "𐑚"   # mesoscale local (ℶ) — was LOCAL
-    G_gamma         = "𐑔"   # coarse, collective (ℷ) — was incorrectly MESOSCALE in old Python
+    ice = "𐑲"   # fine-grained, atomic (ℵ) — was incorrectly GLOBAL in old Python
+    bib          = "𐑚"   # mesoscale local (ℶ) — was LOCAL
+    thigh         = "𐑔"   # coarse, collective (ℷ) — was incorrectly MESOSCALE in old Python
     # Backward-compat key aliases with CORRECTED semantics:
-    LOCAL     = "𐑲"   # fine = aleph (was G_beta — now fixed)
-    MESOSCALE = "𐑚"   # mesoscale = beth (was G_gamma — now fixed)
-    GLOBAL    = "𐑔"   # coarse = gimel (was G_revapostrophe — now fixed)
 
     @property
     def ordinal(self) -> int:
@@ -707,15 +641,15 @@ class Granularity(Enum):
     def from_symbol(cls, s: str) -> "Granularity":
         _map = {
             # glyph IDs (canonical)
-            "𐑲":  cls.G_revapostrophe,
-            "𐑚":  cls.G_beta,
-            "𐑔":  cls.G_gamma,
+            "𐑲":  cls.ice,
+            "𐑚":  cls.bib,
+            "𐑔":  cls.thigh,
             # Shavian (v0.6.0)
-            "𐑚": cls.G_beta, "𐑔": cls.G_gamma, "𐑲": cls.G_revapostrophe,
+            "𐑚": cls.bib, "𐑔": cls.thigh, "𐑲": cls.ice,
             # phonetic names (backward compat)
-            "Γ_revapostrophe": cls.G_revapostrophe, "G_א": cls.G_revapostrophe,
-            "Γ_beta":  cls.G_beta,  "G_ב": cls.G_beta,
-            "Γ_gamma": cls.G_gamma, "G_ג": cls.G_gamma,
+            "Γ_revapostrophe": cls.ice, "G_א": cls.ice,
+            "Γ_beta":  cls.bib,  "G_ב": cls.bib,
+            "Γ_gamma": cls.thigh, "G_ג": cls.thigh,
         }
         try:
             return _map[s]
@@ -723,12 +657,12 @@ class Granularity(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "revapostrophe": cls.G_revapostrophe,
-            "local": cls.G_revapostrophe,
-            "beta": cls.G_beta,
-            "mesoscale": cls.G_beta,
-            "gamma": cls.G_gamma,
-            "global": cls.G_gamma,
+            "revapostrophe": cls.ice,
+            "local": cls.ice,
+            "beta": cls.bib,
+            "mesoscale": cls.bib,
+            "gamma": cls.thigh,
+            "global": cls.thigh,
         }
         if suffix in _sfx:
             import warnings
@@ -736,7 +670,7 @@ class Granularity(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Granularity: unknown symbol {s!r}, defaulting to G_beta")
-        return cls.G_beta
+        return cls.bib
 
 
 # =============================================================================
@@ -763,15 +697,6 @@ class Criticality(Enum):
     haha  = "𐑣"   # supercritical (unstable)
     egg   = "𐑧"   # maximally indeterminate (synthetic / transactinide)
     # backward-compat aliases — duplicate values become aliases in Python Enum
-    Phi_softsign        = "𐑢"
-    Phi_ctyogh          = "⊙"
-    Phi_closerevepsilon = "𐑮"
-    Phi_revepsilon      = "𐑻"
-    Phi_upstep          = "𐑣"
-    Phi_ish             = "𐑧"
-    SUBCRITICAL         = "𐑢"
-    CRITICAL            = "⊙"
-    SUPERCRITICAL       = "𐑣"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
@@ -826,7 +751,7 @@ class Criticality(Enum):
     @property
     def is_degenerate(self) -> bool:
         """True iff this is Phi_ctyogh — the absorbing element under meet and join."""
-        return self == Criticality.Phi_ctyogh
+        return self == Criticality.monad
 
 
 # =============================================================================
@@ -844,35 +769,30 @@ class Protection(Enum):
       Omega_dzlig  = integer winding number (requires H >= H_turntwo by Axiom B)
       Omega_turna = non-Abelian winding (requires D_omega by Axiom D)
     """
-    Omega_closeepsilon = "𐑷"
-    Omega_crtwo        = "𐑴"
-    Omega_dzlig        = "𐑭"
+    awe = "𐑷"
+    oak        = "𐑴"
+    ah        = "𐑭"
     Omega_C            = "Ω_C"
-    Omega_turna        = "𐑟"
+    zoo        = "𐑟"
     # Backward-compat aliases (old TopoIndex names)
-    TRIVIAL     = "𐑷"
-    Z2_CLASS    = "𐑴"
-    Z_CLASS     = "𐑭"
-    CHERN       = "Ω_C"
-    NON_ABELIAN = "𐑟"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Protection":
         _map = {
             # glyph IDs (canonical)
-            "𐑷":  cls.Omega_closeepsilon,
-            "𐑴":  cls.Omega_crtwo,
-            "𐑭":  cls.Omega_dzlig,
+            "𐑷":  cls.awe,
+            "𐑴":  cls.oak,
+            "𐑭":  cls.ah,
             "Ω_C":  cls.Omega_C,
-            "𐑟":  cls.Omega_turna,
+            "𐑟":  cls.zoo,
             # Shavian (v0.6.0)
-            "𐑷": cls.Omega_closeepsilon, "𐑴": cls.Omega_crtwo,
-            "𐑭": cls.Omega_dzlig, "𐑟": cls.Omega_turna,
+            "𐑷": cls.awe, "𐑴": cls.oak,
+            "𐑭": cls.ah, "𐑟": cls.zoo,
             # phonetic names (backward compat)
-            "Ω_closeepsilon":  cls.Omega_closeepsilon, "Ω_0":  cls.Omega_closeepsilon, "TRIVIAL":     cls.Omega_closeepsilon,
-            "Ω_crtwo": cls.Omega_crtwo, "Ω_Z2": cls.Omega_crtwo, "Z2_CLASS":    cls.Omega_crtwo,
-            "Ω_dzlig":  cls.Omega_dzlig,  "Ω_Z":  cls.Omega_dzlig,  "Z_CLASS":     cls.Omega_dzlig,
-            "Ω_turna": cls.Omega_turna, "Ω_NA": cls.Omega_turna, "NON_ABELIAN": cls.Omega_turna,
+            "Ω_closeepsilon":  cls.awe, "Ω_0":  cls.awe, "TRIVIAL":     cls.awe,
+            "Ω_crtwo": cls.oak, "Ω_Z2": cls.oak, "Z2_CLASS":    cls.oak,
+            "Ω_dzlig":  cls.ah,  "Ω_Z":  cls.ah,  "Z_CLASS":     cls.ah,
+            "Ω_turna": cls.zoo, "Ω_NA": cls.zoo, "NON_ABELIAN": cls.zoo,
             "CHERN":       cls.Omega_C,
         }
         try:
@@ -881,19 +801,19 @@ class Protection(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "closeepsilon": cls.Omega_closeepsilon,
-            "trivial": cls.Omega_closeepsilon,
-            "crtwo": cls.Omega_crtwo,
-            "z2": cls.Omega_crtwo,
-            "z2_class": cls.Omega_crtwo,
-            "dzlig": cls.Omega_dzlig,
-            "z": cls.Omega_dzlig,
-            "z_class": cls.Omega_dzlig,
+            "closeepsilon": cls.awe,
+            "trivial": cls.awe,
+            "crtwo": cls.oak,
+            "z2": cls.oak,
+            "z2_class": cls.oak,
+            "dzlig": cls.ah,
+            "z": cls.ah,
+            "z_class": cls.ah,
             "c": cls.Omega_C,
             "chern": cls.Omega_C,
-            "turna": cls.Omega_turna,
-            "na": cls.Omega_turna,
-            "non_abelian": cls.Omega_turna,
+            "turna": cls.zoo,
+            "na": cls.zoo,
+            "non_abelian": cls.zoo,
         }
         if suffix in _sfx:
             import warnings
@@ -901,7 +821,7 @@ class Protection(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Protection: unknown symbol {s!r}, defaulting to Omega_closeepsilon")
-        return cls.Omega_closeepsilon
+        return cls.awe
 
     @property
     def protection_strength(self) -> int:
@@ -911,11 +831,11 @@ class Protection(Enum):
     @property
     def physical_systems(self) -> str:
         return {
-            Protection.Omega_closeepsilon: "Ordinary insulators, classical systems",
-            Protection.Omega_crtwo:        "HgTe/CdTe, Bi2Se3, topological insulators (AII/DIII)",
-            Protection.Omega_dzlig:        "Kitaev chain, SSH model, 1D p-wave superconductors",
+            Protection.awe: "Ordinary insulators, classical systems",
+            Protection.oak:        "HgTe/CdTe, Bi2Se3, topological insulators (AII/DIII)",
+            Protection.ah:        "Kitaev chain, SSH model, 1D p-wave superconductors",
             Protection.Omega_C:            "Integer quantum Hall, Chern insulators (class A)",
-            Protection.Omega_turna:        "nu=5/2 FQH, Kitaev honeycomb B-phase, non-Abelian Majorana",
+            Protection.zoo:        "nu=5/2 FQH, Kitaev honeycomb B-phase, non-Abelian Majorana",
         }[self]
 
 
@@ -936,10 +856,6 @@ class Stoichiometry(Enum):
     up   = "𐑳"   # n:m (unmatched many)
     dead = "𐑛"   # trivalent (boron-group / pnictogen)
     # backward-compat aliases
-    S_doublebaresh = "𐑙"
-    one_n          = "𐑕"
-    S_ltailm       = "𐑳"
-    cat            = "𐑳"
 
     @classmethod
     def from_symbol(cls, s: str) -> "Stoichiometry":
@@ -993,27 +909,27 @@ class Chirality(Enum):
       H_turntwo    = persistent chiral, strong asymmetry (amino acids, DNA)
       H_invscripta = topological chiral (implies K_teshlig by Axiom A)
     """
-    H_closeomega     = "𐑓"
-    H_toneletterstem = "𐑒"
-    H_turntwo        = "𐑖"
-    H_invscripta     = "𐑫"   # was "Hinf" (FIXED)
+    fee     = "𐑓"
+    kick = "𐑒"
+    sure        = "𐑖"
+    wool     = "𐑫"   # was "Hinf" (FIXED)
 
     @classmethod
     def from_symbol(cls, s: str) -> "Chirality":
         _map = {
             # glyph IDs (canonical)
-            "𐑓":  cls.H_closeomega,
-            "𐑒":  cls.H_toneletterstem,
-            "𐑖":  cls.H_turntwo,
-            "𐑫":  cls.H_invscripta,
+            "𐑓":  cls.fee,
+            "𐑒":  cls.kick,
+            "𐑖":  cls.sure,
+            "𐑫":  cls.wool,
             # Shavian (v0.6.0)
-            "𐑓": cls.H_closeomega, "𐑒": cls.H_toneletterstem,
-            "𐑖": cls.H_turntwo, "𐑫": cls.H_invscripta,
+            "𐑓": cls.fee, "𐑒": cls.kick,
+            "𐑖": cls.sure, "𐑫": cls.wool,
             # phonetic names (backward compat)
-            "Ħ_closeomega":     cls.H_closeomega,     "H_0":   cls.H_closeomega,
-            "Ħ_toneletterstem": cls.H_toneletterstem, "H_1":   cls.H_toneletterstem,
-            "Ħ_turntwo":        cls.H_turntwo,        "H_2":   cls.H_turntwo,
-            "Ħ_invscripta":     cls.H_invscripta,     "Hinf":  cls.H_invscripta,  "H_∞": cls.H_invscripta,
+            "Ħ_closeomega":     cls.fee,     "H_0":   cls.fee,
+            "Ħ_toneletterstem": cls.kick, "H_1":   cls.kick,
+            "Ħ_turntwo":        cls.sure,        "H_2":   cls.sure,
+            "Ħ_invscripta":     cls.wool,     "Hinf":  cls.wool,  "H_∞": cls.wool,
         }
         try:
             return _map[s]
@@ -1021,12 +937,12 @@ class Chirality(Enum):
             pass
         suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
         _sfx = {
-            "closeomega": cls.H_closeomega,
-            "achiral": cls.H_closeomega,
-            "toneletterstem": cls.H_toneletterstem,
-            "turntwo": cls.H_turntwo,
-            "invscripta": cls.H_invscripta,
-            "hinf": cls.H_invscripta,
+            "closeomega": cls.fee,
+            "achiral": cls.fee,
+            "toneletterstem": cls.kick,
+            "turntwo": cls.sure,
+            "invscripta": cls.wool,
+            "hinf": cls.wool,
         }
         if suffix in _sfx:
             import warnings
@@ -1034,21 +950,21 @@ class Chirality(Enum):
             return _sfx[suffix]
         import warnings
         warnings.warn(f"Chirality: unknown symbol {s!r}, defaulting to H_closeomega")
-        return cls.H_closeomega
+        return cls.fee
 
     @property
     def memory_depth(self) -> str:
         return {
-            Chirality.H_closeomega:     "0 — no persistent symmetry breaking",
-            Chirality.H_toneletterstem: "1 — single axis, thermally reversible",
-            Chirality.H_turntwo:        "n — n reinforcing axes, structurally encoded",
-            Chirality.H_invscripta:     "∞ — topology-protected, requires bond-breaking to reverse",
+            Chirality.fee:     "0 — no persistent symmetry breaking",
+            Chirality.kick: "1 — single axis, thermally reversible",
+            Chirality.sure:        "n — n reinforcing axes, structurally encoded",
+            Chirality.wool:     "∞ — topology-protected, requires bond-breaking to reverse",
         }[self]
 
     @property
     def implies_k_trap(self) -> bool:
         """Axiom A: H_invscripta implies K_teshlig."""
-        return self == Chirality.H_invscripta
+        return self == Chirality.wool
 
 
 # =============================================================================
@@ -1104,23 +1020,23 @@ class Imscription:
         # here — 495 catalog entries have H_invscripta + non-trap kinetics, suggesting the axiom
         # is domain-specific or structurally over-strict as a universal constraint.
         # Axiom B: prot >= Omega_dzlig → chir >= H_turntwo
-        if _prot_ord(self.protection) >= _prot_ord(Protection.Omega_dzlig) \
-                and _chir_ord(self.chirality) < _chir_ord(Chirality.H_turntwo):
+        if _prot_ord(self.protection) >= _prot_ord(Protection.ah) \
+                and _chir_ord(self.chirality) < _chir_ord(Chirality.sure):
             raise ValueError(
                 f"Axiom B violated in '{name}': protection {self.protection.value} "
                 f"requires chirality >= H_turntwo (got {self.chirality.value})"
             )
         # Axiom C: D_omega ↔ T_openo
-        d_holo = self.dimensionality == Dimensionality.D_holo
-        t_holo = self.topology == Topology.T_holo
+        d_holo = self.dimensionality == Dimensionality.if_
+        t_holo = self.topology == Topology.are
         if d_holo != t_holo:
             raise ValueError(
                 f"Axiom C violated in '{name}': D_omega ↔ T_openo "
                 f"(got dim={self.dimensionality.value}, top={self.topology.value})"
             )
         # Axiom D: Omega_turna → D_omega
-        if self.protection == Protection.Omega_turna \
-                and self.dimensionality != Dimensionality.D_holo:
+        if self.protection == Protection.zoo \
+                and self.dimensionality != Dimensionality.if_:
             raise ValueError(
                 f"Axiom D violated in '{name}': Omega_turna requires D_omega "
                 f"(got dim={self.dimensionality.value})"
@@ -1281,16 +1197,16 @@ def _imscription_init_compat(
     if topo_index is not None and "protection" not in kwargs:
         kwargs["protection"] = topo_index
     if "protection" not in kwargs:
-        kwargs["protection"] = Protection.Omega_closeepsilon
+        kwargs["protection"] = Protection.awe
         using_defaults = True
     if "chirality" not in kwargs:
-        kwargs["chirality"] = Chirality.H_closeomega
+        kwargs["chirality"] = Chirality.fee
         using_defaults = True
     stoi = kwargs.get("stoichiometry")
     if isinstance(stoi, str):
         kwargs["stoichiometry"] = Stoichiometry.from_symbol(stoi)
     elif stoi is None:
-        kwargs["stoichiometry"] = Stoichiometry.S_ltailm
+        kwargs["stoichiometry"] = Stoichiometry.up
     if using_defaults:
         _saved = _ENFORCE_AXIOMS
         _ENFORCE_AXIOMS = False

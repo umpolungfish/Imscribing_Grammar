@@ -787,19 +787,19 @@ def compute_I_from_imscription(
 
     # Infer n_contacts from topology and granularity if not specified
     if n_contacts is None:
-        if imscription.topology == Topology.CYCLIC_BOWTIE:
+        if imscription.topology == Topology.mime:
             n_contacts = 2  # typical cyclic dimer: 2 contacts
-        elif imscription.topology == Topology.HUB_NODE:
+        elif imscription.topology == Topology.judge:
             n_contacts = 4  # hub: 4-fold connectivity
-        elif imscription.topology == Topology.CAGE:
+        elif imscription.topology == Topology.oil:
             n_contacts = 6
         else:
             n_contacts = 1
 
         # Granularity upscaling
-        if imscription.granularity == Granularity.MESOSCALE:
+        if imscription.granularity == Granularity.bib:
             n_contacts = max(n_contacts, 3)
-        elif imscription.granularity == Granularity.GLOBAL:
+        elif imscription.granularity == Granularity.thigh:
             n_contacts = max(n_contacts, 6)
 
     # Heuristic from compute_information_gain() for comparison

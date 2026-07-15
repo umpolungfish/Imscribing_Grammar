@@ -205,8 +205,8 @@ class TemporalImscriptionAgent:
             # 2. Axiom 4: D_∞ or R_‡ required for every sequential step
             has_temporal = "temporal" in b.imscription.dimensionality.domains
             has_catalytic = b.imscription.recognition_mode in {
-                RecognitionMode.DYNAMIC_CATALYTIC,
-                RecognitionMode.COVALENT_DYNAMIC,
+                RecognitionMode.ear,
+                RecognitionMode.tot,
             }
             axiom4_ok = has_temporal or has_catalytic
             if not axiom4_ok:
@@ -216,7 +216,7 @@ class TemporalImscriptionAgent:
                 )
 
             # 3. Kinetic accessibility
-            if b.imscription.kinetic_character == KineticCharacter.TRAP:
+            if b.imscription.kinetic_character == KineticCharacter.on:
                 kinetic_accessible = False
                 issues.append(
                     f"K_teshlig at '{b.step_name}': pathway multiplicity — "
@@ -325,7 +325,7 @@ class TemporalImscriptionAgent:
         # Collect kinetic traps
         kinetic_traps: List[str] = []
         for step in self._steps:
-            if step.imscription.kinetic_character == KineticCharacter.TRAP:
+            if step.imscription.kinetic_character == KineticCharacter.on:
                 kinetic_traps.append(step.step_name)
             elif step.delta_g_ddagger is not None and step.delta_g_ddagger > 100.0:
                 kinetic_traps.append(step.step_name)

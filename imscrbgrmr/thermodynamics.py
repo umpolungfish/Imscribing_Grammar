@@ -179,7 +179,7 @@ def compute_effective_fidelity(
         Effective fidelity (0.0-1.0)
     
     Example:
-        >>> imscription = Imscription(..., fidelity=Fidelity.HIGH, kinetic_character=KineticCharacter.MODERATE)
+        >>> imscription = Imscription(..., fidelity=Fidelity.peep, kinetic_character=KineticCharacter.loll)
         >>> f_eff = compute_effective_fidelity(imscription)
         >>> print(f"F_effective = {f_eff:.3f}")
     """

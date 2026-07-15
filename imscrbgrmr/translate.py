@@ -101,8 +101,8 @@ COHERENCE_LOSS_FETH_TO_FELL: float = -math.log(0.60)    # ≈ 0.511 nats
 CRITICALITY_LIFT_NATS: float = math.log(10)              # ≈ 2.303 nats  (PHI_LIFT_NATS from v0.4)
 
 # F-tier ordering for dominance comparisons
-_F_ORDER = {Fidelity.LOW: 0, Fidelity.MEDIUM: 1, Fidelity.HIGH: 2}
-_F_NAME = {Fidelity.LOW: "ƒ_beltl", Fidelity.MEDIUM: "ƒ_dh", Fidelity.HIGH: "ƒ_hardsign"}
+_F_ORDER = {Fidelity.age: 0, Fidelity.they: 1, Fidelity.peep: 2}
+_F_NAME = {Fidelity.age: "ƒ_beltl", Fidelity.they: "ƒ_dh", Fidelity.peep: "ƒ_hardsign"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -258,16 +258,16 @@ def translate_fidelity(
     deficit = fhbar_deficit(mutual_info_nats)
     new_s = copy.copy(s)
 
-    if fidelity == Fidelity.HIGH:
-        new_s.fidelity = Fidelity.MEDIUM
+    if fidelity == Fidelity.peep:
+        new_s.fidelity = Fidelity.they
         loss = COHERENCE_LOSS_FHBAR_TO_FETH
         msg = (
             f"I={mutual_info_nats:.4f} nat < ln(19)={FHBAR_THRESHOLD_NATS:.4f}  "
             f"deficit={deficit:.4f} nat — F_hardsign→F_dh  "
             f"coherence_loss={loss:.4f} nat"
         )
-    elif fidelity == Fidelity.MEDIUM:
-        new_s.fidelity = Fidelity.LOW
+    elif fidelity == Fidelity.they:
+        new_s.fidelity = Fidelity.age
         loss = COHERENCE_LOSS_FETH_TO_FELL
         msg = (
             f"I={mutual_info_nats:.4f} nat < ln(19)={FHBAR_THRESHOLD_NATS:.4f}  "
@@ -302,7 +302,7 @@ def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     """
     import copy
 
-    if s.criticality_phase != CriticalityPhase.CRITICAL:
+    if s.criticality_phase != CriticalityPhase.monad:
         rec = StepRecord(
             "translate_criticality", s.name, "PASS", 0.0,
             f"Φ={s.criticality_phase} — not ⊙; no translation cost"
@@ -310,7 +310,7 @@ def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
         return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
     new_s = copy.copy(s)
-    new_s.criticality_phase = CriticalityPhase.SUBCRITICAL
+    new_s.criticality_phase = CriticalityPhase.woe
 
     msg = (
         f"⊙ → Phi_softsign  "
@@ -371,7 +371,7 @@ def translate_grammar(s: Imscription) -> ImscriptionM[Imscription]:
     tier = grammar.value[1] if isinstance(grammar.value, tuple) and len(grammar.value) > 1 else "SPECIFIC"
     # Find the OR grammar at the same tier
     fallback_name = f"{tier}_OR"
-    fallback = getattr(InteractionGrammar, fallback_name, InteractionGrammar.BROAD_OR)
+    fallback = getattr(InteractionGrammar, fallback_name, InteractionGrammar.gag)
     new_s.interaction_grammar = fallback
 
     cost = math.log(2)  # 1 bit of interaction information lost

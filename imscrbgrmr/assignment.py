@@ -118,15 +118,15 @@ class ImscriptionAssignment:
         a = self.assignments
         return Imscription(
             name=name,
-            dimensionality=a["D"].value if "D" in a else Dimensionality.MOLECULAR,
-            topology=a["T"].value if "T" in a else Topology.NETWORK,
-            recognition_mode=a["R"].value if "R" in a else RecognitionMode.NON_COVALENT,
-            polarity=a["P"].value if "P" in a else Polarity.SELF_COMPLEMENTARY_SYM,
-            fidelity=a["F"].value if "F" in a else Fidelity.MEDIUM,
-            kinetic_character=a["K"].value if "K" in a else KineticCharacter.MODERATE,
-            granularity=a["G"].value if "G" in a else Granularity.LOCAL,
-            interaction_grammar=a["Gamma"].value if "Gamma" in a else InteractionGrammar.SELECTIVE_AND,
-            criticality_phase=a["Phi"].value if "Phi" in a else CriticalityPhase.SUBCRITICAL,
+            dimensionality=a["D"].value if "D" in a else Dimensionality.dead,
+            topology=a["T"].value if "T" in a else Topology.judge,
+            recognition_mode=a["R"].value if "R" in a else RecognitionMode.ado,
+            polarity=a["P"].value if "P" in a else Polarity.or_,
+            fidelity=a["F"].value if "F" in a else Fidelity.they,
+            kinetic_character=a["K"].value if "K" in a else KineticCharacter.loll,
+            granularity=a["G"].value if "G" in a else Granularity.ice,
+            interaction_grammar=a["Gamma"].value if "Gamma" in a else InteractionGrammar.vow,
+            criticality_phase=a["Phi"].value if "Phi" in a else CriticalityPhase.woe,
             topo_index=a["Omega"].value if "Omega" in a else None,
         )
 
@@ -223,17 +223,17 @@ class PrimitiveAssignmentEngine:
         boltzmann_ratio = math.exp(-delta_g_kj / rt)
 
         if delta_g_kj <= hi_thresh:
-            value = Fidelity.HIGH
+            value = Fidelity.peep
             conf = min(1.0, (hi_thresh - delta_g_kj) / abs(hi_thresh) + 0.7)
             evidence = (f"ΔG = {delta_g_kj:.2f} kJ/mol → Boltzmann ratio "
                         f"{boltzmann_ratio:.1f} ≥ 19 (F_HIGH threshold, P-21)")
         elif delta_g_kj <= me_thresh:
-            value = Fidelity.MEDIUM
+            value = Fidelity.they
             conf = 0.80 - 0.2 * (delta_g_kj - hi_thresh) / (me_thresh - hi_thresh)
             evidence = (f"ΔG = {delta_g_kj:.2f} kJ/mol → Boltzmann ratio "
                         f"{boltzmann_ratio:.1f} ∈ [3, 19] (F_MED range, P-21)")
         else:
-            value = Fidelity.LOW
+            value = Fidelity.age
             conf = min(1.0, 0.7 + (delta_g_kj - me_thresh) / abs(me_thresh))
             evidence = (f"ΔG = {delta_g_kj:.2f} kJ/mol → Boltzmann ratio "
                         f"{boltzmann_ratio:.1f} < 3 (F_LOW threshold, P-21)")
@@ -256,13 +256,13 @@ class PrimitiveAssignmentEngine:
         HI = 8.5
         ME = 11.0
         if xi_cp <= HI:
-            value, conf = Fidelity.HIGH, 0.90 - 0.1 * (xi_cp / HI)
+            value, conf = Fidelity.peep, 0.90 - 0.1 * (xi_cp / HI)
             evidence = f"ξ_CP = {xi_cp:.2f} nats ≤ 8.5 → F_HIGH"
         elif xi_cp <= ME:
-            value, conf = Fidelity.MEDIUM, 0.75
+            value, conf = Fidelity.they, 0.75
             evidence = f"ξ_CP = {xi_cp:.2f} nats ∈ (8.5, 11.0] → F_MEDIUM"
         else:
-            value, conf = Fidelity.LOW, 0.70
+            value, conf = Fidelity.age, 0.70
             evidence = f"ξ_CP = {xi_cp:.2f} nats > 11.0 → F_LOW"
 
         margin = min(abs(xi_cp - HI), abs(xi_cp - ME))
@@ -300,22 +300,22 @@ class PrimitiveAssignmentEngine:
                                 and pathway_multiplicity >= 3)
 
         if trap_by_multiplicity:
-            value = KineticCharacter.TRAP
+            value = KineticCharacter.on
             conf = 0.85
             evidence = (f"Pathway multiplicity = {pathway_multiplicity} ≥ 3 "
                         f"(kinetic trapping regardless of barrier height "
                         f"ΔG‡ = {delta_g_ddagger_kj:.1f} kJ/mol)")
         elif delta_g_ddagger_kj < _K_FAST_THRESHOLD:
-            value, conf = KineticCharacter.FAST, 0.90
+            value, conf = KineticCharacter.yea, 0.90
             evidence = f"ΔG‡ = {delta_g_ddagger_kj:.1f} kJ/mol < 60 → K_FAST"
         elif delta_g_ddagger_kj < _K_MOD_THRESHOLD:
-            value, conf = KineticCharacter.MODERATE, 0.85
+            value, conf = KineticCharacter.loll, 0.85
             evidence = f"ΔG‡ = {delta_g_ddagger_kj:.1f} kJ/mol ∈ [60, 100) → K_MODERATE"
         elif delta_g_ddagger_kj < 150.0:
-            value, conf = KineticCharacter.SLOW, 0.80
+            value, conf = KineticCharacter.egg, 0.80
             evidence = f"ΔG‡ = {delta_g_ddagger_kj:.1f} kJ/mol ∈ [100, 150) → K_SLOW"
         else:
-            value, conf = KineticCharacter.TRAP, 0.80
+            value, conf = KineticCharacter.on, 0.80
             evidence = f"ΔG‡ = {delta_g_ddagger_kj:.1f} kJ/mol ≥ 150 → K_TRAP"
 
         return PrimitiveAssignment(
@@ -342,13 +342,13 @@ class PrimitiveAssignmentEngine:
         is_boundary = margin <= 5
 
         if n_components <= _G_LOCAL_MAX:
-            value, conf = Granularity.LOCAL, 0.85
+            value, conf = Granularity.ice, 0.85
             evidence = f"n_components = {n_components} ≤ 15 → G_LOCAL"
         elif n_components <= _G_MESOSCALE_MAX:
-            value, conf = Granularity.MESOSCALE, 0.80
+            value, conf = Granularity.bib, 0.80
             evidence = f"n_components = {n_components} ∈ (15, 200] → G_MESOSCALE"
         else:
-            value, conf = Granularity.GLOBAL, 0.80
+            value, conf = Granularity.thigh, 0.80
             evidence = f"n_components = {n_components} > 200 → G_GLOBAL"
 
         return PrimitiveAssignment(
@@ -371,13 +371,13 @@ class PrimitiveAssignmentEngine:
         is_boundary = margin < 0.5 * LO
 
         if scale_nm < LO:
-            value, conf = Granularity.LOCAL, 0.85
+            value, conf = Granularity.ice, 0.85
             evidence = f"scale = {scale_nm:.1f} nm < 2 nm → G_LOCAL"
         elif scale_nm < ME:
-            value, conf = Granularity.MESOSCALE, 0.80
+            value, conf = Granularity.bib, 0.80
             evidence = f"scale = {scale_nm:.1f} nm ∈ [2, 100) nm → G_MESOSCALE"
         else:
-            value, conf = Granularity.GLOBAL, 0.80
+            value, conf = Granularity.thigh, 0.80
             evidence = f"scale = {scale_nm:.1f} nm ≥ 100 nm → G_GLOBAL"
 
         return PrimitiveAssignment(
@@ -413,7 +413,7 @@ class PrimitiveAssignmentEngine:
 
         if n_true == 0:
             return PrimitiveAssignment(
-                primitive="D", value=Dimensionality.MOLECULAR, confidence=0.40,
+                primitive="D", value=Dimensionality.dead, confidence=0.40,
                 method="structural_flags", evidence="No structural flags set — defaulting to MOLECULAR",
                 is_boundary=True, boundary_margin=0.0,
             )
@@ -425,16 +425,16 @@ class PrimitiveAssignmentEngine:
             note = ""
 
         if is_holographic:
-            value, conf = Dimensionality.HOLOGRAPHIC, 0.90
+            value, conf = Dimensionality.if_, 0.90
             evidence = "Bulk-boundary duality flag set → D_HOLOGRAPHIC"
         elif is_catalytic_cycle:
-            value, conf = Dimensionality.TEMPORAL, 0.88
+            value, conf = Dimensionality.array, 0.88
             evidence = "Catalytic cycle / temporal pathway flag → D_TEMPORAL"
         elif is_assembly:
-            value, conf = Dimensionality.SUPRAMOLECULAR, 0.88
+            value, conf = Dimensionality.ash, 0.88
             evidence = "Non-covalent assembly flag → D_SUPRAMOLECULAR"
         else:
-            value, conf = Dimensionality.MOLECULAR, 0.90
+            value, conf = Dimensionality.dead, 0.90
             evidence = "Single-molecule flag → D_MOLECULAR"
 
         if note:
@@ -470,29 +470,29 @@ class PrimitiveAssignmentEngine:
           BOWL     : single concave binding cavity
         """
         if has_braid_statistics:
-            value, conf = Topology.BRAID, 0.90
+            value, conf = Topology.T_braid, 0.90
             evidence = "Braid / anyonic exchange statistics → T_BRAID"
         elif has_cage_geometry:
-            value, conf = Topology.CAGE, 0.88
+            value, conf = Topology.oil, 0.88
             evidence = "Enclosed cage geometry → T_CAGE"
         elif is_self_complementary:
-            value, conf = Topology.CYCLIC_BOWTIE, 0.88
+            value, conf = Topology.mime, 0.88
             evidence = "Self-complementary partner → T_CYCLIC_BOWTIE"
         elif has_cycle:
-            value, conf = Topology.CYCLIC_BOWTIE, 0.85
+            value, conf = Topology.mime, 0.85
             evidence = "Closed ring / cycle → T_CYCLIC_BOWTIE"
         elif n_binding_sites == 1 and partner_count <= 2:
             if partner_count >= 1:
-                value, conf = Topology.LINEAR, 0.82
+                value, conf = Topology.T_linear, 0.82
                 evidence = f"1 binding site, {partner_count} partner(s) → T_LINEAR"
             else:
-                value, conf = Topology.LINEAR, 0.75
+                value, conf = Topology.T_linear, 0.75
                 evidence = "Single binding site, no partners specified → T_LINEAR"
         elif n_binding_sites == 1 and partner_count >= 3:
-            value, conf = Topology.HUB_NODE, 0.82
+            value, conf = Topology.judge, 0.82
             evidence = f"1 central site, {partner_count} satellite partners → T_HUB_NODE"
         else:
-            value, conf = Topology.NETWORK, 0.80
+            value, conf = Topology.judge, 0.80
             evidence = f"{n_binding_sites} binding sites → T_NETWORK"
 
         return PrimitiveAssignment(
@@ -525,15 +525,15 @@ class PrimitiveAssignmentEngine:
           MECHANICAL        → SLOW     (threading / dethreading barriers)
         """
         _map = {
-            RecognitionMode.NON_COVALENT:      (KineticCharacter.FAST,     0.58, "R=NON_COVALENT → K_FAST prior (H-bond/vdW off-rates)"),
-            RecognitionMode.COVALENT_DYNAMIC:  (KineticCharacter.MODERATE, 0.58, "R=COVALENT_DYNAMIC → K_MOD prior (reversible covalent)"),
-            RecognitionMode.DYNAMIC_CATALYTIC: (KineticCharacter.MODERATE, 0.55, "R=DYNAMIC_CATALYTIC → K_MOD prior (catalytic turnover)"),
-            RecognitionMode.COVALENT:          (KineticCharacter.SLOW,     0.58, "R=COVALENT → K_SLOW prior (irreversible bond)"),
-            RecognitionMode.MECHANICAL:        (KineticCharacter.SLOW,     0.55, "R=MECHANICAL → K_SLOW prior (threading barrier)"),
+            RecognitionMode.ado:      (KineticCharacter.yea,     0.58, "R=NON_COVALENT → K_FAST prior (H-bond/vdW off-rates)"),
+            RecognitionMode.tot:  (KineticCharacter.loll, 0.58, "R=COVALENT_DYNAMIC → K_MOD prior (reversible covalent)"),
+            RecognitionMode.ear: (KineticCharacter.loll, 0.55, "R=DYNAMIC_CATALYTIC → K_MOD prior (catalytic turnover)"),
+            RecognitionMode.tot:          (KineticCharacter.egg,     0.58, "R=COVALENT → K_SLOW prior (irreversible bond)"),
+            RecognitionMode.ian:        (KineticCharacter.egg,     0.55, "R=MECHANICAL → K_SLOW prior (threading barrier)"),
         }
         value, conf, evidence = _map.get(
             recognition_mode,
-            (KineticCharacter.MODERATE, 0.45, f"R={recognition_mode} — no prior mapping, defaulting to K_MOD"),
+            (KineticCharacter.loll, 0.45, f"R={recognition_mode} — no prior mapping, defaulting to K_MOD"),
         )
         return PrimitiveAssignment(
             primitive="K", value=value, confidence=conf,
@@ -559,20 +559,20 @@ class PrimitiveAssignmentEngine:
           MECHANICAL             : topological / mechanical bond (rotaxane, catenane)
         """
         if is_mechanical:
-            value, conf = RecognitionMode.MECHANICAL, 0.90
+            value, conf = RecognitionMode.ian, 0.90
             evidence = "Mechanical / topological bond → R_MECHANICAL"
         elif is_catalytic:
-            value, conf = RecognitionMode.DYNAMIC_CATALYTIC, 0.90
+            value, conf = RecognitionMode.ear, 0.90
             evidence = "Catalytic cycle with product release → R_DYNAMIC_CATALYTIC"
         elif is_covalent and is_reversible:
-            value, conf = RecognitionMode.COVALENT_DYNAMIC, 0.88
+            value, conf = RecognitionMode.tot, 0.88
             evidence = "Reversible covalent bond → R_COVALENT_DYNAMIC"
         elif not is_covalent:
-            value, conf = RecognitionMode.NON_COVALENT, 0.88
+            value, conf = RecognitionMode.ado, 0.88
             evidence = "Non-covalent interaction → R_NON_COVALENT"
         else:
             # Covalent + irreversible
-            value, conf = RecognitionMode.COVALENT, 0.85
+            value, conf = RecognitionMode.tot, 0.85
             evidence = "Covalent + irreversible bond → R_COVALENT"
 
         return PrimitiveAssignment(
@@ -596,16 +596,16 @@ class PrimitiveAssignmentEngine:
           DONOR_ACCEPTOR            : A + B heterodimer (asymmetric)
         """
         if partners_identical and not has_pseudosymmetry:
-            value, conf = Polarity.SELF_COMPLEMENTARY_SYM, 0.92
+            value, conf = Polarity.or_, 0.92
             evidence = "Partners identical → P_SELF_COMPLEMENTARY_SYM"
         elif partners_identical and has_pseudosymmetry:
-            value, conf = Polarity.SELF_COMPLEMENTARY_PSEUDO, 0.88
+            value, conf = Polarity.yew, 0.88
             evidence = "Partners quasi-identical (pseudosymmetry) → P_SELF_COMPLEMENTARY_PSEUDO"
         elif has_pseudosymmetry:
-            value, conf = Polarity.SELF_COMPLEMENTARY_PSEUDO, 0.80
+            value, conf = Polarity.yew, 0.80
             evidence = "Pseudosymmetry flag set → P_SELF_COMPLEMENTARY_PSEUDO"
         else:
-            value, conf = Polarity.DONOR_ACCEPTOR, 0.88
+            value, conf = Polarity.church, 0.88
             evidence = "Partners non-identical → P_DONOR_ACCEPTOR"
 
         return PrimitiveAssignment(
@@ -632,7 +632,7 @@ class PrimitiveAssignmentEngine:
         """
         if is_quantum:
             return PrimitiveAssignment(
-                primitive="Gamma", value=InteractionGrammar.QUANTUM_AND, confidence=0.88,
+                primitive="Gamma", value=InteractionGrammar.vow, confidence=0.88,
                 method="quantum_flag", evidence="Quantum coherence flag → Gamma_QUANTUM_AND",
                 is_boundary=False, boundary_margin=0.0,
             )
@@ -640,7 +640,7 @@ class PrimitiveAssignmentEngine:
         if n_total_possible_partners == 0:
             return PrimitiveAssignment(
                 primitive="Gamma",
-                value=InteractionGrammar.SELECTIVE_AND,
+                value=InteractionGrammar.vow,
                 confidence=0.50,
                 method="selectivity_ratio",
                 evidence="n_total_possible_partners = 0 — cannot compute selectivity ratio",
@@ -653,11 +653,11 @@ class PrimitiveAssignmentEngine:
         is_boundary = margin < 0.05
 
         if ratio <= THRESHOLD:
-            value, conf = InteractionGrammar.SELECTIVE_AND, 0.85
+            value, conf = InteractionGrammar.vow, 0.85
             evidence = (f"Selectivity ratio = {ratio:.3f} ≤ 0.15 "
                         f"({n_compatible_partners}/{n_total_possible_partners}) → Gamma_SELECTIVE_AND")
         else:
-            value, conf = InteractionGrammar.BROAD_OR, 0.82
+            value, conf = InteractionGrammar.gag, 0.82
             evidence = (f"Selectivity ratio = {ratio:.3f} > 0.15 "
                         f"({n_compatible_partners}/{n_total_possible_partners}) → Gamma_BROAD_OR")
 
@@ -689,20 +689,20 @@ class PrimitiveAssignmentEngine:
           5. Gamma = QUANTUM_AND            → Ω = NON_ABELIAN  (quantum grammar)
           default                           → Ω = None
         """
-        if K == KineticCharacter.MBL:
-            value = TopoIndex.Z2_CLASS
+        if K == KineticCharacter.air:
+            value = TopoIndex.oak
             rule = "Rule 1: K=MBL → Ω=Z2_CLASS"
-        elif T == Topology.BRAID:
-            value = TopoIndex.NON_ABELIAN
+        elif T == Topology.T_braid:
+            value = TopoIndex.zoo
             rule = "Rule 2: T=BRAID → Ω=NON_ABELIAN"
-        elif T == Topology.NETWORK and G == Granularity.GLOBAL:
-            value = TopoIndex.CHERN
+        elif T == Topology.judge and G == Granularity.thigh:
+            value = TopoIndex.Omega_C
             rule = "Rule 3: T=NETWORK ∧ G=GLOBAL → Ω=CHERN"
-        elif D == Dimensionality.TEMPORAL and G == Granularity.GLOBAL:
-            value = TopoIndex.Z2_CLASS
+        elif D == Dimensionality.array and G == Granularity.thigh:
+            value = TopoIndex.oak
             rule = "Rule 4: D=TEMPORAL ∧ G=GLOBAL → Ω=Z2_CLASS"
-        elif Gamma == InteractionGrammar.QUANTUM_AND:
-            value = TopoIndex.NON_ABELIAN
+        elif Gamma == InteractionGrammar.vow:
+            value = TopoIndex.zoo
             rule = "Rule 5: Γ=QUANTUM_AND → Ω=NON_ABELIAN"
         else:
             value = None
@@ -739,7 +739,7 @@ class PrimitiveAssignmentEngine:
         """
         if varma_score is None and not gd_degeneracy_detected:
             return PrimitiveAssignment(
-                primitive="Phi", value=CriticalityPhase.SUBCRITICAL, confidence=0.50,
+                primitive="Phi", value=CriticalityPhase.woe, confidence=0.50,
                 method="heuristic_phi", evidence="No Varma score or G/D degeneracy data — defaulting to SUBCRITICAL",
                 is_boundary=True, boundary_margin=0.0,
             )
@@ -749,17 +749,17 @@ class PrimitiveAssignmentEngine:
         weak_signal = (0.3 < score <= 0.70) or gd_degeneracy_detected
 
         if strong_signal:
-            value = CriticalityPhase.CRITICAL
+            value = CriticalityPhase.monad
             conf = min(0.85, 0.60 + 0.35 * score) if varma_score else 0.75
             evidence = (f"Varma score = {score:.2f} > 0.70 OR G/D degeneracy + scale-free "
                         f"→ ⊙ (CRITICAL)")
         elif weak_signal:
-            value = CriticalityPhase.CRITICAL
+            value = CriticalityPhase.monad
             conf = 0.60
             evidence = (f"Varma score = {score:.2f} ∈ (0.3, 0.7] or G/D degeneracy signal "
                         f"→ ⊙ (marginal — boundary case)")
         else:
-            value = CriticalityPhase.SUBCRITICAL
+            value = CriticalityPhase.woe
             conf = 0.75
             evidence = f"Varma score = {score:.2f} ≤ 0.3, no degeneracy → 𐑢"
 
@@ -1185,15 +1185,15 @@ def _lattice_result_to_imscription(lr, name: str = "join_result") -> Imscription
 
     return Imscription(
         name=name,
-        dimensionality=_safe(lr.dimensionality, Dimensionality.MOLECULAR),
-        topology=_safe(lr.topology, Topology.NETWORK),
-        recognition_mode=_safe(lr.recognition_mode, RecognitionMode.NON_COVALENT),
-        polarity=_safe(lr.polarity, Polarity.SELF_COMPLEMENTARY_SYM),
-        fidelity=_safe(lr.fidelity, Fidelity.LOW),
-        kinetic_character=_safe(lr.kinetic_character, KineticCharacter.MODERATE),
-        granularity=_safe(lr.granularity, Granularity.LOCAL),
-        interaction_grammar=_safe(lr.interaction_grammar, InteractionGrammar.SELECTIVE_AND),
-        criticality_phase=_safe(lr.criticality_phase, CriticalityPhase.SUBCRITICAL),
+        dimensionality=_safe(lr.dimensionality, Dimensionality.dead),
+        topology=_safe(lr.topology, Topology.judge),
+        recognition_mode=_safe(lr.recognition_mode, RecognitionMode.ado),
+        polarity=_safe(lr.polarity, Polarity.or_),
+        fidelity=_safe(lr.fidelity, Fidelity.age),
+        kinetic_character=_safe(lr.kinetic_character, KineticCharacter.loll),
+        granularity=_safe(lr.granularity, Granularity.ice),
+        interaction_grammar=_safe(lr.interaction_grammar, InteractionGrammar.vow),
+        criticality_phase=_safe(lr.criticality_phase, CriticalityPhase.woe),
         topo_index=_safe(lr.topo_index, None),
     )
 

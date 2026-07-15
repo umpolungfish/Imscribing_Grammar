@@ -189,72 +189,72 @@ class CompatibilityMatrix:
     # Recognition mode compatibility
     RECOGNITION_COMPATIBILITY: Dict[Tuple[RecognitionMode, RecognitionMode], CompatibilityResult] = {
         # Same mode always compatible
-        (RecognitionMode.COVALENT, RecognitionMode.COVALENT): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.NON_COVALENT, RecognitionMode.NON_COVALENT): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.DYNAMIC_CATALYTIC): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.MECHANICAL, RecognitionMode.MECHANICAL): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.tot, RecognitionMode.tot): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ado, RecognitionMode.ado): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ear, RecognitionMode.ear): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ian, RecognitionMode.ian): CompatibilityResult.COMPATIBLE,
         
         # Covalent + Non-covalent: conditional (orthogonal chemistry)
-        (RecognitionMode.COVALENT, RecognitionMode.NON_COVALENT): CompatibilityResult.CONDITIONAL,
-        (RecognitionMode.NON_COVALENT, RecognitionMode.COVALENT): CompatibilityResult.CONDITIONAL,
+        (RecognitionMode.tot, RecognitionMode.ado): CompatibilityResult.CONDITIONAL,
+        (RecognitionMode.ado, RecognitionMode.tot): CompatibilityResult.CONDITIONAL,
         
         # Covalent + Dynamic: compatible (dynamic covalent chemistry)
-        (RecognitionMode.COVALENT, RecognitionMode.DYNAMIC_CATALYTIC): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.COVALENT): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.tot, RecognitionMode.ear): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ear, RecognitionMode.tot): CompatibilityResult.COMPATIBLE,
         
         # Non-covalent + Dynamic: compatible (supramolecular catalysis)
-        (RecognitionMode.NON_COVALENT, RecognitionMode.DYNAMIC_CATALYTIC): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.NON_COVALENT): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ado, RecognitionMode.ear): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ear, RecognitionMode.ado): CompatibilityResult.COMPATIBLE,
         
         # Non-covalent + Mechanical: compatible (supramolecular rotaxanes)
-        (RecognitionMode.NON_COVALENT, RecognitionMode.MECHANICAL): CompatibilityResult.COMPATIBLE,
-        (RecognitionMode.MECHANICAL, RecognitionMode.NON_COVALENT): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ado, RecognitionMode.ian): CompatibilityResult.COMPATIBLE,
+        (RecognitionMode.ian, RecognitionMode.ado): CompatibilityResult.COMPATIBLE,
         
         # Dynamic + Mechanical: conditional
-        (RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.MECHANICAL): CompatibilityResult.CONDITIONAL,
-        (RecognitionMode.MECHANICAL, RecognitionMode.DYNAMIC_CATALYTIC): CompatibilityResult.CONDITIONAL,
+        (RecognitionMode.ear, RecognitionMode.ian): CompatibilityResult.CONDITIONAL,
+        (RecognitionMode.ian, RecognitionMode.ear): CompatibilityResult.CONDITIONAL,
         
         # Covalent + Mechanical: incompatible (typically)
-        (RecognitionMode.COVALENT, RecognitionMode.MECHANICAL): CompatibilityResult.INCOMPATIBLE,
-        (RecognitionMode.MECHANICAL, RecognitionMode.COVALENT): CompatibilityResult.INCOMPATIBLE,
+        (RecognitionMode.tot, RecognitionMode.ian): CompatibilityResult.INCOMPATIBLE,
+        (RecognitionMode.ian, RecognitionMode.tot): CompatibilityResult.INCOMPATIBLE,
     }
     
     # Polarity compatibility
     POLARITY_COMPATIBILITY: Dict[Tuple[Polarity, Polarity], CompatibilityResult] = {
         # Self-complementary matches itself (both symmetric and pseudosymmetric)
-        (Polarity.SELF_COMPLEMENTARY_SYM, Polarity.SELF_COMPLEMENTARY_SYM): CompatibilityResult.COMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_PSEUDO, Polarity.SELF_COMPLEMENTARY_PSEUDO): CompatibilityResult.COMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_SYM, Polarity.SELF_COMPLEMENTARY_PSEUDO): CompatibilityResult.COMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_PSEUDO, Polarity.SELF_COMPLEMENTARY_SYM): CompatibilityResult.COMPATIBLE,
+        (Polarity.or_, Polarity.or_): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.COMPATIBLE,
+        (Polarity.or_, Polarity.yew): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.or_): CompatibilityResult.COMPATIBLE,
 
         # Acceptor + Donor: compatible
-        (Polarity.ACCEPTOR, Polarity.DONOR): CompatibilityResult.COMPATIBLE,
-        (Polarity.DONOR, Polarity.ACCEPTOR): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.COMPATIBLE,
 
         # Directional pairs
-        (Polarity.DONOR_ACCEPTOR, Polarity.DONOR_ACCEPTOR): CompatibilityResult.COMPATIBLE,
-        (Polarity.DONOR_ACCEPTOR, Polarity.ACCEPTOR): CompatibilityResult.COMPATIBLE,
-        (Polarity.DONOR_ACCEPTOR, Polarity.DONOR): CompatibilityResult.COMPATIBLE,
-        (Polarity.ACCEPTOR, Polarity.DONOR_ACCEPTOR): CompatibilityResult.COMPATIBLE,
-        (Polarity.DONOR, Polarity.DONOR_ACCEPTOR): CompatibilityResult.COMPATIBLE,
+        (Polarity.church, Polarity.church): CompatibilityResult.COMPATIBLE,
+        (Polarity.church, Polarity.yew): CompatibilityResult.COMPATIBLE,
+        (Polarity.church, Polarity.yew): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.church): CompatibilityResult.COMPATIBLE,
+        (Polarity.yew, Polarity.church): CompatibilityResult.COMPATIBLE,
 
         # Same polarity (non-self-complementary): incompatible
-        (Polarity.ACCEPTOR, Polarity.ACCEPTOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.DONOR, Polarity.DONOR): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
 
         # Self-complementary + others: incompatible
-        (Polarity.SELF_COMPLEMENTARY_SYM, Polarity.ACCEPTOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_SYM, Polarity.DONOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_SYM, Polarity.DONOR_ACCEPTOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_PSEUDO, Polarity.ACCEPTOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_PSEUDO, Polarity.DONOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.SELF_COMPLEMENTARY_PSEUDO, Polarity.DONOR_ACCEPTOR): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.ACCEPTOR, Polarity.SELF_COMPLEMENTARY_SYM): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.DONOR, Polarity.SELF_COMPLEMENTARY_SYM): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.DONOR_ACCEPTOR, Polarity.SELF_COMPLEMENTARY_SYM): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.ACCEPTOR, Polarity.SELF_COMPLEMENTARY_PSEUDO): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.DONOR, Polarity.SELF_COMPLEMENTARY_PSEUDO): CompatibilityResult.INCOMPATIBLE,
-        (Polarity.DONOR_ACCEPTOR, Polarity.SELF_COMPLEMENTARY_PSEUDO): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.or_, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.or_, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.or_, Polarity.church): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.church): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.or_): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.or_): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.church, Polarity.or_): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.yew, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
+        (Polarity.church, Polarity.yew): CompatibilityResult.INCOMPATIBLE,
     }
     
     @classmethod
@@ -296,12 +296,12 @@ class CompatibilityMatrix:
         conditions = []
         
         # Covalent + Non-covalent: need orthogonal reactivity
-        if {mode_a, mode_b} == {RecognitionMode.COVALENT, RecognitionMode.NON_COVALENT}:
+        if {mode_a, mode_b} == {RecognitionMode.tot, RecognitionMode.ado}:
             conditions.append("Orthogonal reactivity required (no cross-reactivity)")
             conditions.append("Sequential assembly recommended")
         
         # Dynamic + Mechanical: need appropriate topology
-        if {mode_a, mode_b} == {RecognitionMode.DYNAMIC_CATALYTIC, RecognitionMode.MECHANICAL}:
+        if {mode_a, mode_b} == {RecognitionMode.ear, RecognitionMode.ian}:
             conditions.append("Mechanical bond must not interfere with catalytic cycle")
             conditions.append("Template-directed synthesis may be required")
         
@@ -501,24 +501,24 @@ class FidelityPropagator:
     
     # Cooperativity factors based on topology
     TOPOLOGY_COOPERATIVITY: Dict[Topology, float] = field(default_factory=lambda: {
-        Topology.CYCLIC_BOWTIE: 1.5,  # Cyclic motifs show cooperativity
-        Topology.CHAIN: 1.0,  # Linear chains: additive
-        Topology.HUB_NODE: 2.0,  # Hub nodes: strong amplification
-        Topology.LINEAR: 1.0,
-        Topology.BRANCHED: 1.3,
-        Topology.NETWORK: 2.5,
-        Topology.NETWORK_HEX: 2.5,           # hexagonal rings: same cooperativity as generic network
-        Topology.NETWORK_MIXED: 2.3,          # mixed ring sizes: slightly damped long-range cooperativity
-        Topology.NETWORK_INTERPENETRATING: 3.0,  # two coupled propagation channels: superlinear
-        Topology.NETWORK_SYM: 2.8,            # centrosymmetric bonding: near-isotropic propagation
-        Topology.CAGE: 1.8,
+        Topology.mime: 1.5,  # Cyclic motifs show cooperativity
+        Topology.T_linear: 1.0,  # Linear chains: additive
+        Topology.judge: 2.0,  # Hub nodes: strong amplification
+        Topology.T_linear: 1.0,
+        Topology.T_branched: 1.3,
+        Topology.judge: 2.5,
+        Topology.T_network_hex: 2.5,           # hexagonal rings: same cooperativity as generic network
+        Topology.T_network_mixed: 2.3,          # mixed ring sizes: slightly damped long-range cooperativity
+        Topology.T_network_interp: 3.0,  # two coupled propagation channels: superlinear
+        Topology.T_network_sym: 2.8,            # centrosymmetric bonding: near-isotropic propagation
+        Topology.oil: 1.8,
     })
     
     # Granularity amplification factors
     GRANULARITY_AMPLIFICATION: Dict[Granularity, float] = field(default_factory=lambda: {
-        Granularity.LOCAL: 1.0,
-        Granularity.MESOSCALE: 1.5,
-        Granularity.GLOBAL: 2.0,
+        Granularity.ice: 1.0,
+        Granularity.bib: 1.5,
+        Granularity.thigh: 2.0,
     })
     
     def propagate(
@@ -537,7 +537,7 @@ class FidelityPropagator:
             Effective fidelity after propagation
         """
         if not imscriptions:
-            return Fidelity.LOW
+            return Fidelity.age
         
         if base_fidelity is None:
             base_fidelity = imscriptions[0].fidelity
@@ -570,11 +570,11 @@ class FidelityPropagator:
         
         # Map back to Fidelity enum
         if amplified_value >= 0.90:
-            return Fidelity.HIGH
+            return Fidelity.peep
         elif amplified_value >= 0.60:
-            return Fidelity.MEDIUM
+            return Fidelity.they
         else:
-            return Fidelity.LOW
+            return Fidelity.age
     
     def compute_cooperativity_factor(
         self,
@@ -659,12 +659,12 @@ class AxiomValidator:
         Prediction: no T_⋈/P_± imscription will be assigned F_beltl.
         Falsified by: cyclic self-complementary motif with xi_CP > 10.5 nats.
         """
-        is_cyclic = imscription.topology == Topology.CYCLIC_BOWTIE
+        is_cyclic = imscription.topology == Topology.mime
         is_self_comp = imscription.polarity.is_self_complementary
         is_valid_recognition = imscription.recognition_mode in {
-            RecognitionMode.NON_COVALENT,
-            RecognitionMode.COVALENT,
-            RecognitionMode.COVALENT_DYNAMIC,
+            RecognitionMode.ado,
+            RecognitionMode.tot,
+            RecognitionMode.tot,
         }
         
         # Check if axiom applies
@@ -678,7 +678,7 @@ class AxiomValidator:
             }
         
         # Check prediction
-        fidelity_violated = imscription.fidelity == Fidelity.LOW
+        fidelity_violated = imscription.fidelity == Fidelity.age
         
         return {
             "axiom": "Axiom 1 (Cyclic Closure)",
@@ -709,10 +709,10 @@ class AxiomValidator:
         Prediction: no single G_ב/Γ_⊗ imscription will be found as the sole
         organizing element of a MOF, polymer, or oscillatory network.
         """
-        is_local = imscription.granularity == Granularity.LOCAL
+        is_local = imscription.granularity == Granularity.ice
         is_specific = (
-            imscription.grammar == Grammar.Gamma_corner and
-            imscription.fidelity == Fidelity.HIGH
+            imscription.grammar == Grammar.vow and
+            imscription.fidelity == Fidelity.peep
         )
         
         axiom_applies = is_local and is_specific
@@ -731,14 +731,14 @@ class AxiomValidator:
             can_propagate = imscription.granularity.can_amplify_to(target_granularity)
         
         # Axiom predicts NO propagation to global
-        prediction_satisfied = not can_propagate or target_granularity != Granularity.GLOBAL
+        prediction_satisfied = not can_propagate or target_granularity != Granularity.thigh
         
         return {
             "axiom": "Axiom 2 (Local Grammar Barrier)",
             "applies": True,
             "local": is_local,
             "specific_grammar": is_specific,
-            "can_propagate_to_global": can_propagate and target_granularity == Granularity.GLOBAL,
+            "can_propagate_to_global": can_propagate and target_granularity == Granularity.thigh,
             "prediction_satisfied": prediction_satisfied,
             "violated": not prediction_satisfied,
         }
@@ -766,7 +766,7 @@ class AxiomValidator:
             }
         
         # Check if all are local (candidate for transition)
-        all_local = all(s.granularity == Granularity.LOCAL for s in imscriptions)
+        all_local = all(s.granularity == Granularity.ice for s in imscriptions)
         
         if induction_ratio is None:
             # Estimate from imscription properties
@@ -780,7 +780,7 @@ class AxiomValidator:
         granularities = set(s.granularity for s in imscriptions)
         
         # Axiom predicts reclassification if superlinear
-        should_reclassify = is_superlinear and Granularity.LOCAL in granularities
+        should_reclassify = is_superlinear and Granularity.ice in granularities
         
         return {
             "axiom": "Axiom 3 (Cooperative Induction)",
@@ -807,7 +807,7 @@ class AxiomValidator:
         Prediction: all documented allosteric systems with ordered binding
         will contain either a conformational change (R_‡-like) or temporal component.
         """
-        is_sequential = imscription.grammar == Grammar.Gamma_secstress
+        is_sequential = imscription.grammar == Grammar.measure
         
         if not is_sequential:
             return {
@@ -816,10 +816,10 @@ class AxiomValidator:
                 "reason": "Not a sequential grammar",
             }
         
-        has_temporal = imscription.dimensionality in (Dimensionality.D_invomega, Dimensionality.TEMPORAL)
+        has_temporal = imscription.dimensionality in (Dimensionality.array, Dimensionality.array)
         has_catalytic = imscription.recognition_mode in {
-            RecognitionMode.DYNAMIC_CATALYTIC,
-            RecognitionMode.COVALENT_DYNAMIC,
+            RecognitionMode.ear,
+            RecognitionMode.tot,
         }
         
         # Axiom requires at least one
@@ -852,7 +852,7 @@ class AxiomValidator:
         Prediction: a critical imscription's behavior at molecular scale fully
         predicts its behavior at supramolecular and temporal scales.
         """
-        is_critical = imscription.criticality_phase == CriticalityPhase.CRITICAL
+        is_critical = imscription.criticality_phase == CriticalityPhase.monad
         
         if not is_critical:
             # Check if approaching criticality
@@ -916,7 +916,7 @@ class AxiomValidator:
         warnings = []
 
         # ── 1. Check whether D_∞ (TEMPORAL) is assigned ──────────────────────
-        has_temporal = Dimensionality.TEMPORAL in (
+        has_temporal = Dimensionality.array in (
             imscription.dimensionality if isinstance(imscription.dimensionality, (list, set, tuple))
             else [imscription.dimensionality]
         )
@@ -1061,8 +1061,8 @@ class AxiomValidator:
         violations = []
         warnings = []
         
-        is_bowtie = imscription.topology == Topology.CYCLIC_BOWTIE
-        is_cage = imscription.topology == Topology.CAGE
+        is_bowtie = imscription.topology == Topology.mime
+        is_cage = imscription.topology == Topology.oil
 
         if not is_bowtie and not is_cage:
             return AxiomResult(axiom=7, satisfied=True, violations=[], warnings=[])
@@ -1274,7 +1274,7 @@ class CoreAxioms:
         name = imscription.name
 
         # Axiom A
-        if imscription.chirality == Chirality.H_invscripta and imscription.kinetic_character != KineticChar.K_teshlig:
+        if imscription.chirality == Chirality.wool and imscription.kinetic_character != KineticChar.on:
             v.append(AxiomViolation(
                 axiom="A",
                 message=(f"H_invscripta requires K_teshlig (got {imscription.kinetic_character.value})"),
@@ -1282,8 +1282,8 @@ class CoreAxioms:
             ))
 
         # Axiom B
-        if _prot_ord(imscription.protection) >= _prot_ord(Protection.Omega_dzlig) \
-                and _chir_ord(imscription.chirality) < _chir_ord(Chirality.H_turntwo):
+        if _prot_ord(imscription.protection) >= _prot_ord(Protection.ah) \
+                and _chir_ord(imscription.chirality) < _chir_ord(Chirality.sure):
             v.append(AxiomViolation(
                 axiom="B",
                 message=(
@@ -1294,8 +1294,8 @@ class CoreAxioms:
             ))
 
         # Axiom C
-        d_holo = imscription.dimensionality == Dimensionality.D_holo
-        t_holo = imscription.topology == Topology.T_holo
+        d_holo = imscription.dimensionality == Dimensionality.if_
+        t_holo = imscription.topology == Topology.are
         if d_holo and not t_holo:
             v.append(AxiomViolation(
                 axiom="C",
@@ -1310,8 +1310,8 @@ class CoreAxioms:
             ))
 
         # Axiom D
-        if imscription.protection == Protection.Omega_turna \
-                and imscription.dimensionality != Dimensionality.D_holo:
+        if imscription.protection == Protection.zoo \
+                and imscription.dimensionality != Dimensionality.if_:
             v.append(AxiomViolation(
                 axiom="D",
                 message=f"Omega_turna requires D_omega (got {imscription.dimensionality.value})",

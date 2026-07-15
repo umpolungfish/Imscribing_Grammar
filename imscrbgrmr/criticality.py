@@ -135,7 +135,7 @@ def analyze_criticality(
     confidence_factors: List[float] = []
     
     # Indicator 1: Explicit criticality phase assignment
-    if imscription.criticality_phase == CriticalityPhase.CRITICAL:
+    if imscription.criticality_phase == CriticalityPhase.monad:
         indicators["explicit_critical"] = True
         confidence_factors.append(0.9)
     else:
@@ -144,7 +144,7 @@ def analyze_criticality(
     
     # Indicator 2: Granularity degeneracy
     # At criticality, G should be ambiguous
-    if imscription.granularity == Granularity.MESOSCALE:
+    if imscription.granularity == Granularity.bib:
         # Mesoscale often indicates proximity to criticality
         indicators["granularity_ambiguous"] = True
         confidence_factors.append(0.6)
@@ -295,7 +295,7 @@ def check_axiom5_criticality(
     Returns:
         Dict with axiom validation results
     """
-    is_critical = imscription.criticality_phase == CriticalityPhase.CRITICAL
+    is_critical = imscription.criticality_phase == CriticalityPhase.monad
     
     if not is_critical:
         return {
