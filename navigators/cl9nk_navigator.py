@@ -1038,6 +1038,35 @@ def _print_entry_table(result):
 # MAIN
 # =============================================================================
 
+def _refuse_stray_arg(action: str, arg, nav: str) -> bool:
+    """A no-arg action given a name is answering a question nobody asked.
+
+    `moat` is a global theorem about the Gaussian Moat and `promotions` is the fixed
+    ZFC→CLINK ladder; neither reads an entry. Silently dropping the argument returned a
+    generic result that never mentioned the name, byte-identical no matter what was passed
+    — which is worse than an error, because it looks like an answer. A live run asked for
+    `moat narrative_field_…`, got the generic theorem back, and the model filled the gap
+    itself: it invented a formatted per-entry "Moat Analysis" with a width lifted from an
+    unrelated promotion rung. A tool that ignores its argument and answers anyway INVITES
+    the confabulation it will then be blamed for.
+    """
+    if arg is None:
+        return False
+    print(json.dumps({
+        "status": "error",
+        "error": f"'{action}' takes no entry — it is a global result, and your argument "
+                 f"{arg!r} was being silently discarded.",
+        "you_probably_want": {
+            "entry <name>":  "the full per-entry decomposition",
+            "distance <name>": "that entry's gap to the reference",
+            "tier <name>":   "that entry's ouroboricity tier",
+            "promote <a> <b>": "the promotions carrying one vessel to another",
+        },
+        "note": f"{nav} {action} is unchanged and still available with no argument.",
+    }, indent=2, ensure_ascii=False))
+    return True
+
+
 def main():
     load_catalog()
 
@@ -1097,6 +1126,8 @@ def main():
 
     no_arg_actions = ("promotions", "transcendence", "chain", "systems", "stats", "moat")
     if action in no_arg_actions:
+        if _refuse_stray_arg(action, arg, "cl9nk_navigator.py"):
+            sys.exit(2)
         result = action_map[action]()
         print(json.dumps(result, indent=2, ensure_ascii=False))
     elif action == "entry":
