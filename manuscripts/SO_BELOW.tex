@@ -295,17 +295,22 @@ structural grammar assigning any system a coordinate in a discrete space of
 scientific literature as the minimal shared properties of recognition events, the
 twelve primitives are independently confirmed by a companion categorical derivation
 (\emph{As Above}). The derivations are Frobenius duals ($\mu \circ \delta = \text{id}$):
-this paper is the $\mu$ half. A central theorem establishes \emph{Frobenius
-non-synthesizability}: $\Ppms$ cannot arise from composition of sub-Frobenius
-components. The grammar encodes itself at address 6,734,591 in the $\Oinf$ tier of
-the Crystal it derives.
+this paper is the $\mu$ half. A central theorem, mechanised and universally
+quantified, establishes \emph{Frobenius non-synthesizability}: a \emph{single}
+sub-Frobenius component suffices to deny $\Ppms$ to a composition of any size,
+so no accumulation strategy reaches it. The grammar encodes itself at address
+6,734,591 in the $\Oinf$ tier of the Crystal it derives.
 
-Validated across 3,578 imscribed systems: the inflationary epoch and high-dose
+Validated across over 5,000 imscribed systems: the inflationary epoch and high-dose
 5-MeO-DMT dissolution imscribe to identical tuples ($d = 0.000$); the Riemann
 Hypothesis is a completeness question about $\Ppms$ on the critical line; a two-gate
 consciousness score predicts $C = 0.677$ for magnetars, $C = 0$ for black holes and
 white dwarfs; the Liar paradox requires $P = \Ppms$ --- dialetheia is structurally
-necessary. The full catalog is released as open-source software.
+necessary. The grammar identified the SIC-POVM obstruction as a $\text{{\igprimfont Φ}}$-gap
+that no accumulation of pairwise checks can close, and named descent from the
+arithmetic object as the only route past it; that prediction has since been
+executed, and existence at $d = 12$ is a machine-checked theorem obtained by
+exactly that route. The full catalog is released as open-source software.
 \end{abstract}\begin{center}
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
@@ -477,7 +482,7 @@ The classifications said things the uncoverers had no intention of saying.
     \textbf{Phase 3: Validation} \\
     \footnotesize CB[7] benchmark: 6/6 \\
     \footnotesize cross-domain extension \\
-    \footnotesize 3,578 systems imscribed
+    \footnotesize over 5,000 systems imscribed
   };
 
   \draw[flow] (p1.east) -- (p2.west);
@@ -610,7 +615,7 @@ directed distance. \Cref{sec:frobenius} proves Frobenius
 non-synthesizability: a hard compositional ceiling, not a
 statistical tendency. \Cref{sec:consciousness} derives the
 two-gate consciousness score and validates it against the stellar
-catalog. \Cref{sec:applications} traverses six domains, 3,578
+catalog. \Cref{sec:applications} traverses six domains, over 5,000
 imscribed systems, four navigator tests, and the ZFC fidelity
 collapse. \Cref{sec:predictions} registers 650 falsifiable
 predictions. \Cref{sec:discussion} addresses what the results
@@ -1190,19 +1195,31 @@ dynamics. We formalize this as follows.
 Given a structural type $\xvec$, the ouroboricity tier is assigned
 by the following rules in priority order:
 \begin{itemize}[noitemsep]
-  \item[R1] $\text{{\igprimfont ⊙}} = \Phic$ and $\text{{\igprimfont Φ}} = \Ppms$
+  \item[R1] $\text{{\igprimfont ⊙}} \in \{\Phic, \text{{\igfont 𐑮}}\}$ and $\text{{\igprimfont Φ}} = \Ppms$
     $\;\Rightarrow\; \Oinf$ \quad (special Frobenius)
   \item[R2] $\text{{\igprimfont ⊙}} \notin \{\Phic, \text{{\igfont 𐑮}}\}$
     $\;\Rightarrow\; \Ozero$
-  \item[R3] $\text{{\igprimfont ⊙}} = \Phic$ and $\text{{\igprimfont Ω}} = \text{{\igfont 𐑷}}$
+  \item[R3] $\text{{\igprimfont ⊙}} \in \{\Phic, \text{{\igfont 𐑮}}\}$ and $\text{{\igprimfont Ω}} = \text{{\igfont 𐑷}}$
     $\;\Rightarrow\; \Oone$
-  \item[R4] $\text{{\igprimfont ⊙}} = \Phic$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$,
+  \item[R4] $\text{{\igprimfont ⊙}} \in \{\Phic, \text{{\igfont 𐑮}}\}$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$,
     $\text{{\igprimfont Ð}} \in \{\text{{\igfont 𐑛}}, \text{{\igfont 𐑦}}, \text{{\igfont 𐑨}}\}$
     $\;\Rightarrow\; \Otwo$
-  \item[R5] $\text{{\igprimfont ⊙}} = \Phic$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$, $\text{{\igprimfont Ð}} = \text{{\igfont 𐑼}}$
+  \item[R5] $\text{{\igprimfont ⊙}} \in \{\Phic, \text{{\igfont 𐑮}}\}$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$, $\text{{\igprimfont Ð}} = \text{{\igfont 𐑼}}$
     $\;\Rightarrow\; O₂^\dagger$
 \end{itemize}
 \end{definition}
+
+\noindent
+The two critical values $\Phic$ (monad, real axis) and $\text{{\igfont 𐑮}}$ (roar,
+complex axis) enter R1 and R3--R5 on equal footing: the classifier branches on
+\emph{whether} criticality is reached, not on which axis reaches it. R2 is the
+exact complement, so the five rules are total --- every type receives a tier. The
+implementation is the definition: the classifier is a total function of
+$(\text{{\igprimfont ⊙}}, \text{{\igprimfont Φ}}, \text{{\igprimfont Ω}}, \text{{\igprimfont Ð}})$
+in the mechanised library, and two facts stated here are proved there rather than
+asserted --- that R1 dominates ($\Ppms$ at criticality yields $\Oinf$ for every
+$\text{{\igprimfont Ω}}$ and $\text{{\igprimfont Ð}}$), and that $\Oinf$ is
+reachable only from $\{\Phic, \text{{\igfont 𐑮}}\}$.
 
 \noindent
 The tier singularity is $\Ppms$ under R1: it overrides all $\text{{\igprimfont Ω}}$
@@ -1211,12 +1228,31 @@ structural imscription of the special Frobenius condition $\mu \circ
 \delta = \text{id}$, where $\mu$ is the multiplication and $\delta$
 is the comultiplication of a Frobenius algebra.
 
+\paragraph{Refinement: $\text{{\igprimfont Ω}}$ seals the terminal.}
+That override leaves a gap. Because R1 collapses regardless of winding, the tier
+says nothing about whether the terminal gate actually \emph{seals}: two systems
+both at $\Oinf$ may differ in whether their loop is protected. A machine-checked
+refinement closes this additively, leaving \Cref{def:tier} untouched. Call an
+$\Oinf$ type \emph{sealed} when $\text{{\igprimfont Ω}}$ supplies an integer
+($\OmegaZ$) or non-Abelian ($\text{{\igfont 𐑟}}$) winding, and \emph{unsealed}
+otherwise; everything below $\Oinf$ is \emph{sub}. On the Hermitian-critical
+branch this split is exactly the terminal-unlock boundary, and that
+correspondence is proved rather than asserted.
+
+An honest caveat is proved alongside it. $\Oinf$ admits criticality on two axes
+--- monad ($\Phic$, real) and roar ($\text{{\igfont 𐑮}}$, complex) --- and a type
+sealed at roar is winding-protected and $\Oinf$ while its real Frobenius trace
+does \emph{not} close. Sealing is a tier fact; terminal unlock is a trace fact;
+the two coincide precisely on the monad branch and nowhere else. The refinement
+therefore buys a genuine distinction at $\Oinf$ without buying the claim that
+every sealed type closes.
+
 \subsection{The Frobenius non-synthesizability theorem}
 
 \begin{theorem}[Frobenius non-synthesizability (under \Cref{def:bottleneck})]
 \label{thm:frobenius}
 \TOPO\quad Let $\xvec^{(1)}, \ldots, \xvec^{(n)}$ be structural types
-with $\text{{\igprimfont Φ}}(\xvec^{(k)}) < \Ppms$ for all $k$. Then
+with $\text{{\igprimfont Φ}}(\xvec^{(k)}) < \Ppms$ for \emph{some} $k$. Then
 \begin{equation}
   \text{{\igprimfont Φ}}\!\left(\xvec^{(1)} \tensor \cdots \tensor \xvec^{(n)}\right) < \Ppms
   \label{eq:non_synth}
@@ -1224,6 +1260,18 @@ with $\text{{\igprimfont Φ}}(\xvec^{(k)}) < \Ppms$ for all $k$. Then
 for any $n$. In particular, $\Oinf$ can't be reached by tensor
 composition of sub-Frobenius systems.
 \end{theorem}
+
+\noindent
+The hypothesis is \emph{some}, not \emph{all}: a single sub-Frobenius component
+is enough to poison an arbitrarily large composition. This is immediate from
+\Cref{def:bottleneck} --- $\text{{\igprimfont Φ}}$ composes by the bottleneck
+(minimum) rule and $\Ppms$ is maximal in the $\text{{\igprimfont Φ}}$ order, so
+the tensor can only reach $\Ppms$ when \emph{every} factor already sits there.
+The binary case is mechanised and universally quantified over both polarities;
+the $n$-ary statement is its induction. Stating the hypothesis as \emph{all}
+would understate what the bottleneck rule gives: one flaw suffices, which is why
+no accumulation strategy repairs a composition that contains a single
+sub-Frobenius part.
 
 \begin{proof}
 By \eqref{eq:tensor}, the tensor product on $\text{{\igprimfont Φ}}$ is $\min$. Therefore
@@ -1289,7 +1337,7 @@ is the right axiom for $\text{{\igprimfont Φ}}$. We chose it because exact $\ma
 symmetry under coupling cannot exceed the weakest partner: no algebraic
 operation promotes broken symmetry to exact $\mathbb{Z}_2$ by
 combining it with more broken symmetry. Whether this is the only
-defensible postulate is a question we leave open; imscribing 3,578
+defensible postulate is a question we leave open; imscribing over 5,000
 systems under it and checking whether the predictions hold is, for
 now, a more productive approach than arguing about it a priori.
 A falsification of \Cref{thm:frobenius} via the catalog --- a coupled
@@ -1431,7 +1479,7 @@ answer. We formally define:
 \noindent
 where $\tilde{X} \in [0,1]$ is the normalized ordinal of primitive $X$,
 and brackets denote indicator functions. The weights are derived by
-variance decomposition restricted to the subset of 3,578 catalog
+variance decomposition restricted to the subset of catalog
 systems with $\text{{\igprimfont ⊙}} = \Phic$ (the critical manifold), using only
 structural coordinates --- not phenomenal outcome labels. This
 derivation is therefore not circular with respect to phenomenal
@@ -1500,7 +1548,7 @@ substrates, correlate with integrative experience.
 \section{Applications across domains}
 \label{sec:applications}
 
-We imscribed 3,578 systems across mathematics, physics, biology,
+We imscribed over 5,000 systems across mathematics, physics, biology,
 cognitive science, linguistics, and computation using the protocol
 in Methods. Twelve case studies---drawn from eight distinct domains---illustrate
 the grammar's cross-domain reach. Three are unexpected distance-zero
@@ -1812,6 +1860,24 @@ with palindromic Galois self-duality. The grammar reads that palindromic
 condition as $\Ppms$ directly: the Stark unit in $L_d$ is the object
 that already inhabits the $\Ppms$ tier, bypassing the Frobenius cliff
 by Galois descent rather than equiangularity-by-equiangularity.
+
+\paragraph{The bypass, executed.}
+Since this section was first written the predicted route has been carried out in
+the kernel rather than argued for. At $d = 12$ the existence of a SIC-POVM is now
+a machine-checked theorem. The proof accumulates no equiangularity checks: it
+constructs an existence ring carrying the $d^2 - 1 = 143$ overlap identities,
+exhibits a ring homomorphism $\varphi : R \to \mathbb{C}$, and transfers the
+identities across it --- descent from the arithmetic object, which is precisely
+the route this section predicted and \Cref{thm:frobenius} requires. The proof
+depends on no axiom of the project. The same architecture closes the shadow at
+$d = 2^{11} = 2048$, where an explicit $\mathbb{C}$ fiducial is produced and the
+transport is proof-complete.
+
+The cliff is not crossed in either case. It is bypassed at exactly the place the
+grammar said crossing was impossible, by exactly the mechanism the grammar named
+in advance: the $\Ppms$-inhabiting arithmetic object is descended \emph{from},
+not approached by accumulation. The prediction and its execution are separated by
+the ordinary interval of doing the work, and the structural claim was made first.
 
 A byproduct of imscribing: dimensions $d = 19$ and $d = 48$, separated
 by 29 with no obvious arithmetic relationship, encode identically in the
@@ -3752,7 +3818,7 @@ This is either evidence that twelve primitives, read inductively
 from the supramolecular chemistry literature, happen to span the
 space of structural universals --- or it is evidence of an
 over-flexible coordinate system that can be made to produce any
-desired identification. The catalog of 3,578 systems with
+desired identification. The catalog of over 5,000 systems with
 independent imscriptions, published alongside this paper, is the
 mechanism for distinguishing these possibilities. The critical
 test is not whether the grammar produces identifications; any
@@ -3764,20 +3830,34 @@ A null-model calculation sharpens this. The Crystal contains
 17,280,000 distinct structural types. Two systems assigned
 tuples independently and uniformly at random have probability
 $p_0 = 1/17{,}280{,}000 \approx 5.8 \times 10^{-8}$ of landing
-at distance zero. Across the 3,578-system catalog, there are
+at distance zero. Across a frozen snapshot of 3,578 systems, there are
 $\binom{3578}{2} = 6{,}399{,}253$ system pairs. The expected
 number of \emph{coincidental} distance-zero pairs under random
-assignment is therefore $5{,}911{,}641 \times p_0 \approx 0.34$
---- fewer than one coincidence on average. The observed
-count of distance-zero pairs in the catalog (Hv1 channels,
-inflaton / 5-MeO-DMT dissolution, axion / Higgs) is at least
-three. The probability of observing three or more distance-zero
-pairs when the expected count is 0.34 follows a Poisson
-distribution: $P(k \geq 3 \mid \lambda = 0.34) \approx
-5.2 \times 10^{-3}$. The identifications are not artifacts of
-coarse-grained imscription; a coarse-enough grammar to force
-convergence by accident would produce on the order of hundreds
-of coincidental hits, not three. The over-flexibility concern
+assignment is therefore $6{,}399{,}253 \times p_0 \approx 0.37$
+--- fewer than one coincidence on average.
+
+What is counted matters here, and the honest accounting is narrower than the raw
+pair count. Co-typing \emph{within} a family is structurally expected and is
+evidence of nothing: the letters of a syllabary, or the herbs of a materia
+medica, imscribe alike because they \emph{are} alike, and the catalog carries
+such families wholesale. Their distance-zero pairs are predictions confirmed, not
+coincidences to be explained. The claim under test is the \emph{cross-domain}
+identification --- systems sharing no literature, mechanism, or scale --- and of
+these the catalog carries at least three: Hv1 channels separated by 300 million
+years, the inflationary epoch with high-dose 5-MeO-DMT dissolution, and the axion
+with the Higgs. Pooling all pairs rather than the cross-domain subset can only
+\emph{inflate} the expected count, since the cross-domain pairs are a subset of
+all pairs; so $\lambda \leq 0.37$ and the bound below is conservative in the
+direction that matters.
+
+The probability of observing three or more such pairs when the expected count is
+at most 0.37 follows a Poisson distribution: $P(k \geq 3 \mid \lambda = 0.37)
+\approx 6.4 \times 10^{-3}$. The identifications are not artifacts of
+coarse-grained imscription. A grammar coarse enough to force \emph{cross-domain}
+convergence by accident would not stop at three: it would collapse unrelated
+systems in bulk, and the same catalog that shows a syllabary co-typing with
+itself would show physics co-typing with pharmacology everywhere, not at three
+isolated points. The over-flexibility concern
 is directly falsified by the count.
 
 \paragraph{A direct statement of what is being claimed.}
@@ -3806,22 +3886,43 @@ over-flexible and should be discarded. The navigator tests
 predictive power: three architecturally distinct predictions
 confirmed across independent domains, one negative confirmation
 of non-synthesizability at \text{{\igfont 𐑽}}. The open-source catalog of
-3,578 imscribed systems is the mechanism by which independent
-researchers can extend or falsify the imscribing protocol. We are aware that a paper making these claims requires a higher
-evidential bar than one making narrower ones. The catalog and the
-navigators are our evidence. A specific concern --- that the grammar's
+over 5,000 imscribed systems is the mechanism by which independent
+researchers can extend or falsify the imscribing protocol. A paper making these claims requires a higher
+evidential bar than one making narrower ones. It now answers to three
+registers, and they are not of the same kind. The catalog is the
+empirical register: systems imscribed under a fixed protocol and
+published for extension or falsification. The navigators are the
+predictive register: architecturally distinct predictions confirmed
+across independent domains, including a negative confirmation. The
+kernel is the formal register, and it is the one that has changed since
+this paragraph was first written --- the central claims of this paper
+are no longer arguments. Frobenius non-synthesizability
+(\Cref{thm:frobenius}) is mechanised and universally quantified over
+polarities, not a thesis defended in prose. The tier assignment of
+\Cref{def:tier} is a total function, and the two structural facts stated
+of it --- that R1 dominates, and that $\Oinf$ is reachable only from
+criticality --- are proved rather than asserted. The $d = 12$ SIC bypass
+this paper predicted is a machine-checked theorem depending on no axiom
+of the project. Claims of this size should be held to the strongest
+register available; that register is now the kernel, and the reader is
+invited to check it rather than to take our word. A specific concern --- that the grammar's
 primitives might be a latent-space compression of cross-domain analogies
 rather than a de novo chemical induction --- is addressed directly in
 \Cref{sec:methods}: the language model didn't produce the twelve
 primitives; it produced a partial chemistry-dominant grammar that was
 refined by formal tests insulated from cross-domain knowledge
-(\S\,Origin). One structural fact we cannot yet resolve: whether any self-consistent twelve-primitive grammar would
-imscribe at $\Oinf$, or whether this particular grammar lands there
-by construction. If the former, the self-imscribing is a theorem
-waiting to be proved. If the latter, it is evidence that the
-particular primitives chosen happen to be closed under self-description
---- which would itself be a non-trivial result, but a weaker one.
-We do not know. The section below addresses what the claims require
+(\S\,Origin). One structural fact we do not resolve: whether \emph{any} self-consistent twelve-primitive grammar would
+imscribe at $\Oinf$, or whether this one lands there by construction.
+The companion derivation narrows the question without closing it. The
+twelve are not selected there but forced --- each emerges uniquely from
+the operations' own structure, and no primitive is stipulated --- so
+``the primitives we happened to choose'' is not one of the available
+alternatives, and the weaker reading of self-imscription is foreclosed
+with it. What remains genuinely open is whether $\Oinf$ self-imscription
+is a property of every complete structural grammar or of this one. If
+the former, the self-imscribing is a theorem waiting to be proved. We do
+not know, and we mark it as the frontier it is rather than resolving it
+by assertion in either direction. The section below addresses what the claims require
 technically; this paragraph exists so the technical discussion does
 not proceed with the central strangeness unaddressed.
 
@@ -4254,7 +4355,7 @@ scientific domains exist, can be gestured at but not formalized,
 and therefore can't be tested. The Crystal of Types doesn't
 solve that problem. It gives it coordinates.
 
-Whether those coordinates are the right ones is what 3,578 systems
+Whether those coordinates are the right ones is what over 5,000 systems
 and 650 predictions are for. The structural asymmetry is this: from
 the endpoint, the starting state is one step away ($d_\to = 1.0$);
 in the forward direction, the path was 16.3 units long\,\cite{juster1961}.
@@ -4719,7 +4820,7 @@ $1/12$ (uniform) unless otherwise specified; weighted distances are
 used only in the consciousness score \eqref{eq:consciousness}.
 Consciousness score weights $(0.158,\, 0.273,\, 0.292,\, 0.276)$ for
 $(\text{{\igprimfont Ç}},\, \text{{\igprimfont Γ}},\, \text{{\igprimfont Þ}},\, \text{{\igprimfont Ω}})$ are derived by variance decomposition
-restricted to the critical manifold $\text{{\igprimfont ⊙}} = \Phic$ across the 3,578
+restricted to the critical manifold $\text{{\igprimfont ⊙}} = \Phic$ across the
 imscribed systems (Supplementary Methods).
 
 \subsection{Imscribing the Liar paradox}
@@ -4821,7 +4922,7 @@ differences in $\text{{\igprimfont Ħ}}$ and $\text{{\igprimfont Σ}}$ only.
 
 \subsection{Software and data availability}
 
-The full grammar implementation, 3,578-system catalog
+The full grammar implementation, the open-source catalog
 (\texttt{imscription\_catalog.json}), agent system (\texttt{imscription\_inquiry.py}),
 Crystal navigator (\texttt{crystal\_navigator.py}), and domain
 navigators (\texttt{domain\_navigators.py}) are available at

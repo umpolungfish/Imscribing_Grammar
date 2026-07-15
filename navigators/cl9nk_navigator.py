@@ -7,7 +7,7 @@ CLINK L9 is the structural resolution of the Gaussian Moat Problem via the Hodge
 It builds upon CLINK L8 (Organism) by adding the Hodge Bridge theorem,
 which guarantees an infinite bounded-step path through the prime lattice.
 
-Canonical tuple: ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑭𐑳𐑫⟩
+Canonical tuple: ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭⟩
 
 The L9 Transcendence over L8:
   - HODGE_BRIDGE: structural axiom that ensures density of bridges across moats
@@ -114,9 +114,15 @@ def load_catalog(force=False):
         "Γ": "𐑔",
         "ɢ": "𐑝",
         "⊙": "⊙",
-        "Ħ": "𐑭",
+        # Ħ (Chirality) owns 𐑫 = wool = inexhaustible chirality → ETERNAL_FIXEDPOINT.
+        # Ω (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
+        # These were transposed: Ħ held 𐑭 and Ω held 𐑫, i.e. each carried a value from
+        # the other's axis. The swap made clink_l9 report distance 1.2289 from its OWN
+        # reference, with the only two "promotions" being Ħ: 𐑫→𐑭 and Ω: 𐑭→𐑫 — a
+        # transposition masquerading as structure. Ordinal authority is Core.lean.
+        "Ħ": "𐑫",
         "Σ": "𐑳",
-        "Ω": "𐑫",
+        "Ω": "𐑭",
     }
 
 
@@ -548,7 +554,7 @@ def generate_formula(t, system_name="custom"):
         "transcendence_primitives": transcendence_primitives,
         "promotions_needed": promotions_needed,
         "promotions_count": len(promotions_needed),
-        "reference": "CLINK L9 (Gaussian Moat Resolution) — ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑭𐑳𐑫⟩ (from design)",
+        "reference": "CLINK L9 (Gaussian Moat Resolution) — ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭⟩ (from design)",
     }
 
 # =============================================================================
@@ -813,7 +819,7 @@ def action_moat():
     return {
         "status": "ok",
         "title": "Gaussian Moat Resolution — CLINK L9 Theorem",
-        "reference": "CLINK L9 canonical tuple: ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑭𐑳𐑫⟩",
+        "reference": "CLINK L9 canonical tuple: ⟨𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭⟩",
         "proof_steps": proof_steps,
         "verdict": "B (Both): finite ring established (T), infinite path frontier (B) pending Hodge density proof.",
         "conditional_on": "Hodge Conjecture (structural axiom in Grammar)",
