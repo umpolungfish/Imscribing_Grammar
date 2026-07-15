@@ -53,9 +53,9 @@ inductive Grammar : Type where
 -- Cross-primitive: wool tends to co-occur with on (frozen dynamics preserve
 -- deep temporal structure), but this is a structural tendency, not a hard axiom.
 inductive Chirality : Type where
-  | fee      -- achiral, no temporal memory
-  | kick      -- soft chiral, weak temporal asymmetry
-  | sure      -- persistent chiral, strong temporal asymmetry
+  | fee      -- achiral: shift-invariant, no handedness to break
+  | kick      -- soft chiral: period-2 under the shift
+  | sure      -- persistent chiral: a descent through rank
   | wool   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 
@@ -229,7 +229,7 @@ axiom Omega_Z_requires_H2 (p : Protection) (h : Chirality) :
   p ≥ Protection.ah → h ≥ Chirality.sure
 
 -- Structural tendency (not hard axiom): wool co-occurs with on.
--- Deep temporal memory is preserved by kinetic freezing.
+-- An inexhaustible tower stands because its store is frozen.
 -- Not an axiom because some wool systems (e.g. proto-languages) have egg.
 -- Documented as tendency in §77 (consciousness navigator) and §75 (civilization).
 

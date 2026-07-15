@@ -1102,9 +1102,9 @@ inductive Grammar : Type where
 -- Cross-primitive: H_inf tends to co-occur with K_trap (frozen dynamics preserve
 -- deep temporal structure), but this is a structural tendency, not a hard axiom.
 inductive Chirality : Type where
-  | H0      -- achiral, no temporal memory
-  | H1      -- soft chiral, weak temporal asymmetry
-  | H2      -- persistent chiral, strong temporal asymmetry
+  | H0      -- achiral: shift-invariant, no handedness to break
+  | H1      -- soft chiral: period-2 under the shift
+  | H2      -- persistent chiral: a descent through rank
   | H_inf   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 

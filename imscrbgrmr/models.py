@@ -904,9 +904,9 @@ class Chirality(Enum):
     time-reversal symmetry of the grammar.
 
     Lean canonical 4 (ordered H_closeomega < H_toneletterstem < H_turntwo < H_invscripta):
-      H_closeomega    = achiral, no temporal memory
-      H_toneletterstem    = soft chiral, weak temporal asymmetry (atropisomers)
-      H_turntwo    = persistent chiral, strong asymmetry (amino acids, DNA)
+      H_closeomega    = achiral: shift-invariant, no handedness to break
+      H_toneletterstem    = soft chiral: period-2 under the shift (atropisomers)
+      H_turntwo    = persistent chiral: a descent through rank (amino acids, DNA)
       H_invscripta = topological chiral (implies K_teshlig by Axiom A)
     """
     fee     = "𐑓"

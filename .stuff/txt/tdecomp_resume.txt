@@ -1359,9 +1359,9 @@ inductive Grammar : Type where
 -- Cross-primitive: Ħ_! tends to co-occur with Ç_Ù (frozen dynamics preserve
 -- deep temporal structure), but this is a structural tendency, not a hard axiom.
 inductive Chirality : Type where
-  | Ħ_Ñ      -- achiral, no temporal memory
-  | Ħ_£      -- soft chiral, weak temporal asymmetry
-  | Ħ_A      -- persistent chiral, strong temporal asymmetry
+  | Ħ_Ñ      -- achiral: shift-invariant, no handedness to break
+  | Ħ_£      -- soft chiral: period-2 under the shift
+  | Ħ_A      -- persistent chiral: a descent through rank
   | Ħ_!   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 

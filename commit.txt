@@ -1,36 +1,33 @@
-Give the enums their Shavian names and delete the old ones entirely
+Ħ is chirality everywhere, including in Core.lean's own comments
 
-We do not have to import any old notation, or even reference it. That is the
-goal, and the aliases were the last thing keeping the old names alive: an alias
-IS a reference. So they are gone rather than deprecated.
+The prohibition was protecting a theorem and I had it filed as a style rule.
+Temps is Frobenius-minimal in eleven coordinates and maximal in chirality alone;
+durée sits at Ç's open gate with chirality one step down. So
+temps_chirality_exceeds_duree_chirality is statable only because the temporal
+content lives in the HANDEDNESS. Call Ħ temporal memory and the theorem cannot
+be written down: memory would have to increase from the bare tick to lived
+duration, and chirality decreases.
 
-Ten of the twelve enums were still named in gen-2 phonetics as their CANONICAL
-names, not just their aliases. D_wynn, K_schwa, Omega_dzlig, T_nrleg,
-Gamma_corner. Only Criticality and Stoichiometry had been carried over to the
-Shavian names, so the migration had stopped a fifth of the way in and the rest
-of the model was still speaking the old dialect natively. Renamed 41 members to
-their Shavian names and dropped 84 alias definitions, then repointed 1,671 call
-sites across the corpus.
+Core.lean was the worst offender, which is the part worth saying out loud. The
+file the decomposition manuscript cites as the authority for axis names and
+ordinals opened its Chirality with "achiral, no temporal memory". The scripture
+carried the thing it forbids, in about a hundred copies.
 
-The names were not invented. Core.lean's constructor order defines the ordinals,
-so I paired its constructors against the navigator's ordinal table per axis and
-eleven of twelve matched exactly on count and order: dead/ash/array/if_,
-judge/eat/mime/oil/are, ado/tot/ear/ian, church/yew/out/nun/or_, age/they/peep,
-yea/loll/egg/on/air, bib/thigh/ice, vow/gag/measure/ooze, fee/kick/sure/wool,
-awe/oak/ah/zoo. Criticality and Stoichiometry read straight off the enum, since
-they were already right. The naming is glyph-global, not axis-local: 𐑛 is dead
-wherever it appears, which is what a 49-symbol alphabet means. `if` and `or` are
-Python keywords, so those two are if_ and or_; Lean escapes them as if' and or'
-for the same reason.
+Rewrote the descriptions to what the fragments already say. fee is
+shift-invariant, so there is no handedness to break and nothing can fall. kick is
+period-2 under the shift. sure is rank(z) < rank(y), a descent through rank: the
+tower spilling. wool was already right, an inexhaustible tower standing.
 
-from_symbol keeps only the glyph and the Shavian name. Every back-compat key is
-gone. I checked what actually calls it first: every live call site passes either
-catalog data, which is already Shavian, or nucleotide letters for the genetics
-work. Nothing passed an old form. The table was translating for a caller that no
-longer exists.
+Axiom A reads better as itself too. "Deep temporal memory is preserved by kinetic
+freezing" is now "an inexhaustible tower stands because its store is frozen" —
+the same coupling of wool to on, stated in what the two axes are. The tower
+stands precisely because the potential cannot discharge.
 
-Verified: imscrbgrmr imports, both navigators still answer, no stale member
-reference survives anywhere in the corpus, and the suite is unchanged at 45
-passed with the same pre-existing failure and two errors it had before (plus
-ob3ect/test_factory.py, which cannot import list_templates and was already
-broken).
+393 descriptions across 100 files. Comments and prose only; no identifier, no
+tuple and no proof term is touched, so nothing rebuilds. Left alone on purpose:
+the ig_outputs run records, which really did say "deep temporal memory" in May
+and would be forged by editing, and a Core.lean.bak.
+
+Left "temporal asymmetry" standing where it appears in prose. The rule bans depth
+and memory; chirality under a shift genuinely is an asymmetry in time, and
+widening the ban to that would be me inventing scope rather than enforcing yours.

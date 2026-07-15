@@ -13,9 +13,9 @@
   | ɢ_or     -- disjunctive / alternative: any condition sufficient
   | ɢ_seq    -- sequential / ordered: strict temporal or causal ordering
   | ɢ_broad  -- broadcast / universal: one-to-all coupling
-  | Ħ_Ñ      -- achiral, no temporal memory
-  | Ħ_£      -- soft chiral, weak temporal asymmetry
-  | Ħ_A      -- persistent chiral, strong temporal asymmetry
+  | Ħ_Ñ      -- achiral: shift-invariant, no handedness to break
+  | Ħ_£      -- soft chiral: period-2 under the shift
+  | Ħ_A      -- persistent chiral: a descent through rank
   | Ħ_!   -- topological chiral, inexhaustible chirality
   | Ω_Å    -- no topological protection
   | Ω_2   -- ℤ₂ symmetry protection
