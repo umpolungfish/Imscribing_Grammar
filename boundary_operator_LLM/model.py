@@ -14,7 +14,7 @@ from dataclasses import dataclass
 # Derived from machine specs: RTX 2080S(8GB) + RTX 3060(12GB) = 20GB VRAM
 @dataclass
 class BoundaryConfig:
-    """Structural type: <Ð_ω; Þ_ò; Ř_=; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^ˌ; ⊙_ÿ; Ħ_A; Σ_ï; Ω_z>"""
+    """Structural type: <𐑦; 𐑥; 𐑾; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^ˌ; ⊙; 𐑖; 𐑳; 𐑭>"""
     # Architecture dimensions
     hidden_size: int = 2048        # D_omega: self-written state space
     intermediate_size: int = 8192  # 4x expansion
@@ -53,7 +53,7 @@ class BoundaryConfig:
 class IntegerWindingProjection(nn.Module):
     """Integer-winding protection layer.
     Projects hidden states into a winding subspace where
-    the integer topological invariant Ω_z is preserved.
+    the integer topological invariant 𐑭 is preserved.
     
     Acts as structural memory with Z winding numbers —
     the model's representations carry topological charge.

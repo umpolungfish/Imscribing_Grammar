@@ -46,10 +46,10 @@ class P(Generic[T]):
       Associativity: bind(bind(m,f), g)  = bind(m, λx. bind(f(x), g))
 
     Crystal character:
-      Ð_ω  — power-set ranges over inaccessible cardinals
-      Þ_K    — objects inject INTO their supersets (containment, not reflection)
-      Ř_ý   — η and μ are natural transformations (forward categorical maps)
-      Φ_F    — μ exists; δ does not → Frobenius μ∘δ=id is undefined alone
+      𐑦  — power-set ranges over inaccessible cardinals
+      𐑰    — objects inject INTO their supersets (containment, not reflection)
+      𐑑   — η and μ are natural transformations (forward categorical maps)
+      𐑬    — μ exists; δ does not → Frobenius μ∘δ=id is undefined alone
     """
 
     def __init__(self, elements: Iterable[T]) -> None:
@@ -153,10 +153,10 @@ class G(Generic[T]):
       Coassociativity:   δ(δ(g))         = G(δ)(δ(g))
 
     Crystal character:
-      Ð_; — Gödel numbering is countably infinite (not imscriptive)
-      Þ_O  — meta-theory encoded within object (reflection principle, REFL a f)
-      Ř_Ť — provability ↔ truth are mutually implicated (counit requires both)
-      Φ_F    — δ exists; μ does not → Frobenius μ∘δ=id is undefined alone
+      𐑼 — Gödel numbering is countably infinite (not imscriptive)
+      𐑸  — meta-theory encoded within object (reflection principle, REFL a f)
+      𐑽 — provability ↔ truth are mutually implicated (counit requires both)
+      𐑬    — δ exists; μ does not → Frobenius μ∘δ=id is undefined alone
 
     Co-type (d=0): octonions ℍ_8.  Non-associativity of ℍ_8 (∄ μ to close μ∘δ=id)
     is the algebraic face of Gödel incompleteness (∄ μ to close the provability loop).
@@ -238,7 +238,7 @@ class G(Generic[T]):
         comultiplication of the octonion-as-comonad.
 
         The Fano plane is the structure that makes ℍ_8 non-associative
-        (the same Φ_F barrier as Gödel incompleteness).
+        (the same 𐑬 barrier as Gödel incompleteness).
         """
         for a, b, c in cls.FANO_LINES:
             if a == i:

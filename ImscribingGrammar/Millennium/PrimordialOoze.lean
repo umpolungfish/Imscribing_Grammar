@@ -5,7 +5,7 @@ PrimordialOoze.lean — The Pre-Temporal Stratum
 The Frobenius fixed point is "more primitive than time." This file proves
 a stronger claim: there exists an absolute structural floor — the primordial
 ooze — at which μ∘δ=id (Frobenius closure) achieves O_∞ with only TWO
-primitives at non-minimum values: Φ = or' (Φ_}) and
+primitives at non-minimum values: Φ = or' (𐑹) and
 φ̂ = monad (φ̂_ÿ).  The remaining 10 primitives can all be at
 their minimum ordinal (index 0).
 
@@ -20,8 +20,8 @@ Key results:
      no spatial extension needed.
   5. All other primitives at minimum: age, yea,
      bib, vow, hung.
-  6. The Frobenius fixed point ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@;
-     Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩ is a "thickening" of the ooze —
+  6. The Frobenius fixed point ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧;
+     𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩ is a "thickening" of the ooze —
      it adds 9 primitives not required for μ∘δ=id.
 
 This is the caves-beneath-the-firmament result: Frobenius closure
@@ -127,9 +127,9 @@ theorem drop_both_collapses : imscriptionTier ooze_drop_both ≠ .O_∞ := by
   rcases hcond with ⟨hcrit, hpol⟩
   simp [ooze_drop_both] at hcrit hpol
 
--- φ̂_ÿ alone (without Φ_}) → O₁ (self-modeling lifts to tier 1)
--- Φ_} alone (without φ̂_ÿ) → O₀ (cannot lift without self-modeling ground)
--- Hierarchy: φ̂_ÿ is the ground, Φ_} is the capstone.
+-- φ̂_ÿ alone (without 𐑹) → O₁ (self-modeling lifts to tier 1)
+-- 𐑹 alone (without φ̂_ÿ) → O₀ (cannot lift without self-modeling ground)
+-- Hierarchy: φ̂_ÿ is the ground, 𐑹 is the capstone.
 
 theorem phi_c_alone_is_O_1 : imscriptionTier ooze_drop_pol = .O₁ := by
   unfold ooze_drop_pol primordialOoze
@@ -168,7 +168,7 @@ theorem tier_depends_only_on_crit_pol_prot_dim (s : Imscription) :
 -- This means Frobenius closure requires ZERO temporal memory.
 --
 -- Canonical T-constitution (temporal_mathematics in ZFCₜ navigator)
--- requires sure (Ħ_A, two-step Markov) for chirality.
+-- requires sure (𐑖, two-step Markov) for chirality.
 -- The ooze is below this threshold — it operates in a pre-temporal regime
 -- where no temporal memory is needed for μ∘δ=id.
 --
@@ -188,7 +188,7 @@ theorem ooze_dimensionality_is_minimal : primordialOoze.dim = .dead := by
 -- §6  Frobenius fixed point as a thickening
 -- ─────────────────────────────────────────────────────────────────────────────
 -- The Frobenius fixed point (MajoranaFixed.lean / FrobeniusUnification.lean):
---   ⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+--   ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩
 --
 -- Compared to the ooze, it "thickens" 9 primitives (3 are identical:
 -- pol = or', gran = bib, crit = monad):
@@ -239,7 +239,7 @@ theorem ooze_to_fixed_mismatches :
 theorem primordial_ooze_complete :
     imscriptionTier primordialOoze = .O_∞ ∧                           -- O_∞
     primordialOoze.crit = .monad ∧                                 -- φ̂_ÿ
-    primordialOoze.pol = .or' ∧                             -- Φ_}
+    primordialOoze.pol = .or' ∧                             -- 𐑹
     primordialOoze.chir = .fee ∧                               -- no memory
     primordialOoze.prot = .awe ∧                         -- no winding
     primordialOoze.dim = .dead ∧                                      -- 0d point

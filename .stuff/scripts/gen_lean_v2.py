@@ -7,28 +7,28 @@ with open('manuscript_zfct.json') as f:
 
 # ── Primitive name mapping (JSON → Lean) ──────────────────────
 M = {
-    'Ð_ω': 'Dimensionality.D_omega', 'Ð_C': 'Dimensionality.D_turnthree',
-    'Ð_;': 'Dimensionality.D_wynn', 'Ð_ß': 'Dimensionality.D_invomega',
-    'Þ_O': 'Topology.T_openo', 'Þ_¨': 'Topology.T_bullseye',
-    'Þ_K': 'Topology.T_invscr', 'Þ_ò': 'Topology.T_box', 'Þ_6': 'Topology.T_nrleg',
-    'Ř_=': 'Relational.R_lyoghlig', 'Ř_Ť': 'Relational.R_downstep',
-    'Ř_¯': 'Relational.R_subrightarrow', 'Ř_ý': 'Relational.R_ctz',
-    'Φ_υ': 'Polarity.P_aolig', 'Φ_ɐ': 'Polarity.P_aolig',
-    'Φ_F': 'Polarity.P_pipevar', 'Φ_˙': 'Polarity.P_subdoublearrow',
-    'Φ_}': 'Polarity.P_doublebarpipe',
+    '𐑦': 'Dimensionality.D_omega', '𐑨': 'Dimensionality.D_turnthree',
+    '𐑼': 'Dimensionality.D_wynn', '𐑛': 'Dimensionality.D_invomega',
+    '𐑸': 'Topology.T_openo', '𐑶': 'Topology.T_bullseye',
+    '𐑰': 'Topology.T_invscr', '𐑥': 'Topology.T_box', '𐑡': 'Topology.T_nrleg',
+    '𐑾': 'Relational.R_lyoghlig', '𐑽': 'Relational.R_downstep',
+    '𐑩': 'Relational.R_subrightarrow', '𐑑': 'Relational.R_ctz',
+    '𐑿': 'Polarity.P_aolig', '𐑗': 'Polarity.P_aolig',
+    '𐑬': 'Polarity.P_pipevar', '𐑯': 'Polarity.P_subdoublearrow',
+    '𐑹': 'Polarity.P_doublebarpipe',
     'ƒ^ì': 'Fidelity.F_beltl', 'ƒ^ð': 'Fidelity.F_dh', 'ƒ^ż': 'Fidelity.F_hardsign',
     'Ç^Ù': 'KineticChar.K_teshlig', 'Ç^@': 'KineticChar.K_schwa',
     'Ç^W': 'KineticChar.K_frtailgamma', 'Ç^-': 'KineticChar.K_turnm', 'Ç^λ': 'KineticChar.K_lambda',
-    'Γ_ʔ': 'Granularity.G_revapostrophe', 'Γ_β': 'Granularity.G_beta', 'Γ_γ': 'Granularity.G_gamma',
+    '𐑲': 'Granularity.G_revapostrophe', '𐑚': 'Granularity.G_beta', '𐑔': 'Granularity.G_gamma',
     'ɢ^∧': 'Grammar.Gamma_seq', 'ɢ^ˌ': 'Grammar.Gamma_seq', 'ɢ^Ş': 'Grammar.Gamma_broad',
     'ɢ^˝': 'Grammar.Gamma_or',
-    '⊙_ÿ': 'Criticality.Phi_ctyogh', '⊙_Æ': 'Criticality.Phi_closerevepsilon',
-    '⊙_3': 'Criticality.Phi_revepsilon', '⊙_ž': 'Criticality.Phi_softsign', '⊙_Ţ': 'Criticality.Phi_upstep',
-    'Ħ_!': 'Chirality.H_invscripta', 'Ħ_£': 'Chirality.H_toneletterstem',
-    'Ħ_Ñ': 'Chirality.H_closeomega', 'Ħ_A': 'Chirality.H_turntwo',
-    'Σ_S': 'Stoichiometry.S_doublebaresh', 'Σ_ő': 'Stoichiometry.S_ctn', 'Σ_ï': 'Stoichiometry.S_ltailm',
-    'Ω_z': 'Protection.Omega_dzlig', 'Ω_Å': 'Protection.Omega_closeepsilon',
-    'Ω_2': 'Protection.Omega_crtwo', 'Ω_5': 'Protection.Omega_turna',
+    '⊙': 'Criticality.Phi_ctyogh', '𐑮': 'Criticality.Phi_closerevepsilon',
+    '𐑻': 'Criticality.Phi_revepsilon', '𐑢': 'Criticality.Phi_softsign', '𐑣': 'Criticality.Phi_upstep',
+    '𐑫': 'Chirality.H_invscripta', '𐑒': 'Chirality.H_toneletterstem',
+    '𐑓': 'Chirality.H_closeomega', '𐑖': 'Chirality.H_turntwo',
+    '𐑙': 'Stoichiometry.S_doublebaresh', '𐑕': 'Stoichiometry.S_ctn', '𐑳': 'Stoichiometry.S_ltailm',
+    '𐑭': 'Protection.Omega_dzlig', '𐑷': 'Protection.Omega_closeepsilon',
+    '𐑴': 'Protection.Omega_crtwo', '𐑟': 'Protection.Omega_turna',
 }
 
 def mk_s(tup):
@@ -48,9 +48,9 @@ def mk_s(tup):
 
 def tier(tup):
     p, o, d = tup['Φ'], tup['Ω'], tup['Ð']
-    if p == 'Φ_}': return '.O_∞'  # P_doublebarpipe → Frobenius
-    if o == 'Ω_z' or o == 'Ω_2' or o == 'Ω_5':  # non-trivial Ω
-        if d == 'Ð_ß': return '.O₂†'  # D_invomega
+    if p == '𐑹': return '.O_∞'  # P_doublebarpipe → Frobenius
+    if o == '𐑭' or o == '𐑴' or o == '𐑟':  # non-trivial Ω
+        if d == '𐑛': return '.O₂†'  # D_invomega
         return '.O₂'  # finite D
     return '.O₁'  # Omega_0
 
@@ -73,19 +73,19 @@ CORPORA = {k: group_corpus(k) for k in ['voynich', 'rohonc', 'linear_a']}
 def mk_name(idx, tup):
     parts = [f"type{idx}"]
     # polarity variant (skip if P_aolig = default)
-    if tup['Φ'] != 'Φ_υ':
-        label = {'Φ_F': 'sym_F', 'Φ_}': 'sym_cl', 'Φ_˙': 'sym_all'}
+    if tup['Φ'] != '𐑿':
+        label = {'𐑬': 'sym_F', '𐑹': 'sym_cl', '𐑯': 'sym_all'}
         parts.append(label.get(tup['Φ'], f"sym_{tup['Φ'][-1]}"))
     # grammar variant
     if tup['ɢ'] == 'ɢ^Ş':
         parts.append("broad")
     # topology variant (skip if default)
-    if tup['Þ'] == 'Þ_K':
+    if tup['Þ'] == '𐑰':
         parts.append("incl")
-    elif tup['Þ'] == 'Þ_¨':
+    elif tup['Þ'] == '𐑶':
         parts.append("cross")
     # memory variant
-    if tup['Ħ'] == 'Ħ_Ñ':
+    if tup['Ħ'] == '𐑓':
         parts.append("memless")
     return '_'.join(parts)
 
@@ -210,7 +210,7 @@ w("")
 w("  /-- Voynich Frobenius-special entries (P_doublebarpipe, μ∘δ=id) -/")
 w("  /-- 6 entries: crossing topology, sequential grammar (e.g. f103r, f103v, f1r) -/")
 w("  def voynich_frob_cross_seq : Synthon :=")
-f1 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_¨' and g['tuple']['ɢ'] == 'ɢ^∧'][0]
+f1 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == '𐑹' and g['tuple']['Þ'] == '𐑶' and g['tuple']['ɢ'] == 'ɢ^∧'][0]
 w(f"    {mk_synthon(f1['tuple'])}")
 w("  theorem voynich_frob_cross_seq_tier : synthonTier voynich_frob_cross_seq = .O_∞ := by")
 w("    native_decide")
@@ -218,7 +218,7 @@ w("")
 
 w("  /-- 3 entries: open topology, sequential grammar (e.g. f75r, f79v, f80v) -/")
 w("  def voynich_frob_open_seq : Synthon :=")
-f2 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['Þ'] == 'Þ_O'][0]
+f2 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == '𐑹' and g['tuple']['Þ'] == '𐑸'][0]
 w(f"    {mk_synthon(f2['tuple'])}")
 w("  theorem voynich_frob_open_seq_tier : synthonTier voynich_frob_open_seq = .O_∞ := by")
 w("    native_decide")
@@ -226,7 +226,7 @@ w("")
 
 w("  /-- 1 entry: crossing topology, broadcast grammar (e.g. f46r) -/")
 w("  def voynich_frob_cross_broad : Synthon :=")
-f3 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == 'Φ_}' and g['tuple']['ɢ'] == 'ɢ^Ş'][0]
+f3 = [g for _, g in CORPORA['voynich'].items() if g['tuple']['Φ'] == '𐑹' and g['tuple']['ɢ'] == 'ɢ^Ş'][0]
 w(f"    {mk_synthon(f3['tuple'])}")
 w("  theorem voynich_frob_cross_broad_tier : synthonTier voynich_frob_cross_broad = .O_∞ := by")
 w("    native_decide")

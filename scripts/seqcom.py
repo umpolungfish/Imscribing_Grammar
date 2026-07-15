@@ -87,7 +87,7 @@ dur = 0.6                     # default duration for each sound (seconds)
 gap = np.zeros(int(0.1 * fs)) # silence between sounds
 
 # =============================================================================
-# 1. ⊙_ÿ  (Phi‑hat with y‑diaeresis)
+# 1. ⊙  (Phi‑hat with y‑diaeresis)
 # =============================================================================
 # Voiceless bilabial fricative shaped by [ʉ] (centralized rounded close vowel)
 noise = bandpass_noise(dur, fs, 200, 1500, order=4)
@@ -96,7 +96,7 @@ fmt = apply_formants(noise, fs, [300, 1100, 2400], [100, 150, 300])
 snd1 = normalize(fmt)
 
 # =============================================================================
-# 2. Φ_ɐ  (Big Phi with turned‑a)
+# 2. 𐑗  (Big Phi with turned‑a)
 # =============================================================================
 noise = bandpass_noise(dur, fs, 200, 1500, order=4)
 # [ɐ] near‑open central vowel: F1~650, F2~1300
@@ -104,7 +104,7 @@ fmt = apply_formants(noise, fs, [650, 1300, 2500], [150, 200, 300])
 snd2 = normalize(fmt)
 
 # =============================================================================
-# 3. Ω_Å  (Omega with Angstrom)
+# 3. 𐑷  (Omega with Angstrom)
 # =============================================================================
 # Deep back rounded vowel [ɒ]: use voiced source
 source = voice_source(dur, fs, f0=110, breathy=0.2)
@@ -113,7 +113,7 @@ fmt = apply_formants(source, fs, [500, 800, 2200], [100, 150, 200])
 snd3 = normalize(fmt)
 
 # =============================================================================
-# 4. Ð_ß  (Eth with Eszett)
+# 4. 𐑛  (Eth with Eszett)
 # =============================================================================
 # simultaneous voiced dental fricative [ð] and sibilant [s]
 # use a mixture: voiced source + noise, then filter with both dental and sibilant formants
@@ -129,7 +129,7 @@ combined = 0.7 * dental + 0.3 * sibilant
 snd4 = normalize(combined)
 
 # =============================================================================
-# 5. Þ_6  (Thorn with subscript 6)
+# 5. 𐑡  (Thorn with subscript 6)
 # =============================================================================
 # voiceless th [θ] + high squeaky tone
 noise = bandpass_noise(dur, fs, 1400, 3000, order=4) * 1.2
@@ -175,7 +175,7 @@ tone = 0.2 * np.sin(2 * np.pi * freq * t)
 snd8 = normalize(noise + tone)
 
 # =============================================================================
-# 9. Γ_β  (Gamma with Beta)
+# 9. 𐑚  (Gamma with Beta)
 # =============================================================================
 # simultaneous voiced velar fricative [ɣ] + voiced bilabial fricative [β]
 source = voice_source(dur, fs, 120, breathy=0.5)
@@ -197,7 +197,7 @@ fmt_creak = apply_formants(creak, fs, [700, 1200, 2500])  # [ɑ]‑like
 snd10 = normalize(np.concatenate([closure, burst, fmt_creak]))
 
 # =============================================================================
-# 11. Ħ_Ñ  (H‑bar with N‑tilde)
+# 11. 𐑓  (H‑bar with N‑tilde)
 # =============================================================================
 # voiceless pharyngeal fricative [ħ] + nasal palatal [ɲ] -> breathy nasalised vowel
 # voice with nasal formant (low) + pharyngeal noise
@@ -209,7 +209,7 @@ noise_ph = bandpass_noise(dur, fs, 600, 1800, order=4) * 0.4
 snd11 = normalize(fmt_nas * 0.7 + noise_ph)
 
 # =============================================================================
-# 12. Σ_S  (Sigma with S)
+# 12. 𐑙  (Sigma with S)
 # =============================================================================
 # geminate long [sː]
 long_s = bandpass_noise(1.2, fs, 4500, 10000, order=4)

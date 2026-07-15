@@ -7,24 +7,24 @@ with open('manuscript_zfct.json') as f:
     data = json.load(f)
 
 mapping = {
-    'Ð_ω': 'Dimensionality.D_omega',
-    'Ð_C': 'Dimensionality.D_turnthree',
-    'Ð_;': 'Dimensionality.D_wynn',
-    'Ð_ß': 'Dimensionality.D_invomega',
-    'Þ_O': 'Topology.T_openo',
-    'Þ_¨': 'Topology.T_bullseye',
-    'Þ_K': 'Topology.T_invscr',
-    'Þ_ò': 'Topology.T_box',
-    'Þ_6': 'Topology.T_nrleg',
-    'Ř_=': 'Relational.R_lyoghlig',
-    'Ř_Ť': 'Relational.R_downstep',
-    'Ř_¯': 'Relational.R_subrightarrow',
-    'Ř_ý': 'Relational.R_ctz',
-    'Φ_υ': 'Polarity.P_aolig',
-    'Φ_ɐ': 'Polarity.P_aolig',
-    'Φ_F': 'Polarity.P_pipevar',
-    'Φ_˙': 'Polarity.P_subdoublearrow',
-    'Φ_}': 'Polarity.P_doublebarpipe',
+    '𐑦': 'Dimensionality.D_omega',
+    '𐑨': 'Dimensionality.D_turnthree',
+    '𐑼': 'Dimensionality.D_wynn',
+    '𐑛': 'Dimensionality.D_invomega',
+    '𐑸': 'Topology.T_openo',
+    '𐑶': 'Topology.T_bullseye',
+    '𐑰': 'Topology.T_invscr',
+    '𐑥': 'Topology.T_box',
+    '𐑡': 'Topology.T_nrleg',
+    '𐑾': 'Relational.R_lyoghlig',
+    '𐑽': 'Relational.R_downstep',
+    '𐑩': 'Relational.R_subrightarrow',
+    '𐑑': 'Relational.R_ctz',
+    '𐑿': 'Polarity.P_aolig',
+    '𐑗': 'Polarity.P_aolig',
+    '𐑬': 'Polarity.P_pipevar',
+    '𐑯': 'Polarity.P_subdoublearrow',
+    '𐑹': 'Polarity.P_doublebarpipe',
     'ƒ^ì': 'Fidelity.F_beltl',
     'ƒ^ð': 'Fidelity.F_dh',
     'ƒ^ż': 'Fidelity.F_hardsign',
@@ -33,29 +33,29 @@ mapping = {
     'Ç^W': 'KineticChar.K_frtailgamma',
     'Ç^-': 'KineticChar.K_turnm',
     'Ç^λ': 'KineticChar.K_lambda',
-    'Γ_ʔ': 'Granularity.G_revapostrophe',
-    'Γ_β': 'Granularity.G_beta',
-    'Γ_γ': 'Granularity.G_gamma',
+    '𐑲': 'Granularity.G_revapostrophe',
+    '𐑚': 'Granularity.G_beta',
+    '𐑔': 'Granularity.G_gamma',
     'ɢ^∧': 'Grammar.Gamma_seq',
     'ɢ^ˌ': 'Grammar.Gamma_seq',
     'ɢ^Ş': 'Grammar.Gamma_broad',
     'ɢ^˝': 'Grammar.Gamma_or',
-    '⊙_ÿ': 'Criticality.Phi_ctyogh',
-    '⊙_Æ': 'Criticality.Phi_closerevepsilon',
-    '⊙_3': 'Criticality.Phi_revepsilon',
-    '⊙_ž': 'Criticality.Phi_softsign',
-    '⊙_Ţ': 'Criticality.Phi_upstep',
-    'Ħ_!': 'Chirality.H_invscripta',
-    'Ħ_£': 'Chirality.H_toneletterstem',
-    'Ħ_Ñ': 'Chirality.H_closeomega',
-    'Ħ_A': 'Chirality.H_turntwo',
-    'Σ_S': 'Stoichiometry.S_doublebaresh',
-    'Σ_ő': 'Stoichiometry.S_ctn',
-    'Σ_ï': 'Stoichiometry.S_ltailm',
-    'Ω_z': 'Protection.Omega_dzlig',
-    'Ω_Å': 'Protection.Omega_closeepsilon',
-    'Ω_2': 'Protection.Omega_crtwo',
-    'Ω_5': 'Protection.Omega_turna',
+    '⊙': 'Criticality.Phi_ctyogh',
+    '𐑮': 'Criticality.Phi_closerevepsilon',
+    '𐑻': 'Criticality.Phi_revepsilon',
+    '𐑢': 'Criticality.Phi_softsign',
+    '𐑣': 'Criticality.Phi_upstep',
+    '𐑫': 'Chirality.H_invscripta',
+    '𐑒': 'Chirality.H_toneletterstem',
+    '𐑓': 'Chirality.H_closeomega',
+    '𐑖': 'Chirality.H_turntwo',
+    '𐑙': 'Stoichiometry.S_doublebaresh',
+    '𐑕': 'Stoichiometry.S_ctn',
+    '𐑳': 'Stoichiometry.S_ltailm',
+    '𐑭': 'Protection.Omega_dzlig',
+    '𐑷': 'Protection.Omega_closeepsilon',
+    '𐑴': 'Protection.Omega_crtwo',
+    '𐑟': 'Protection.Omega_turna',
 }
 
 def mk_synthon(tup):
@@ -76,15 +76,15 @@ def mk_synthon(tup):
 def mk_name(group_idx, tup):
     """Generate a readable Lean name for a tuple group."""
     parts = [f"type{group_idx}"]
-    if tup['Φ'] != 'Φ_υ':
+    if tup['Φ'] != '𐑿':
         parts.append(f"sym_{tup['Φ'][-1]}")
     if tup['ɢ'] == 'ɢ^Ş':
         parts.append("broad")
-    if tup['Þ'] == 'Þ_K':
+    if tup['Þ'] == '𐑰':
         parts.append("incl")
-    if tup['Þ'] == 'Þ_¨':
+    if tup['Þ'] == '𐑶':
         parts.append("cross")
-    if tup['Ħ'] == 'Ħ_Ñ':
+    if tup['Ħ'] == '𐑓':
         parts.append("memless")
     return '_'.join(parts)
 
@@ -213,15 +213,15 @@ L("  theorem linearA_tier : synthonTier linearA_main = .O₂ := by")
 L("    native_decide")
 L("")
 
-# Voynich Frobenius-special entries (Φ_}) — the P_doublebarpipe ones
+# Voynich Frobenius-special entries (𐑹) — the P_doublebarpipe ones
 # Find them
 frob_entries = []
 for _, g in corpus_groups['voynich'].items():
-    if g['tuple']['Φ'] == 'Φ_}':
+    if g['tuple']['Φ'] == '𐑹':
         frob_entries.append(g)
 
 if frob_entries:
-    L("  /-- Voynich Frobenius-special entries (Phi = P_doublebarpipe, Þ = Þ_¨):")
+    L("  /-- Voynich Frobenius-special entries (Phi = P_doublebarpipe, Þ = 𐑶):")
     L(f"      {sum(g['count'] for g in frob_entries)} entries with μ∘δ=id exactly -/")
     for fe in frob_entries:
         tup = fe['tuple']

@@ -39,16 +39,16 @@ TIER_LABEL = {
     "O_∞":     r"$O_\infty$  (Frobenius complete)",
 }
 
-PHI_VALUES   = ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"]
-OMEGA_VALUES = ["Ω_Å", "Ω_2", "Ω_z"]
-P_VALUES     = ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"]
-D_VALUES     = ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"]
+PHI_VALUES   = ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"]
+OMEGA_VALUES = ["𐑷", "𐑴", "𐑭"]
+P_VALUES     = ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"]
+D_VALUES     = ["𐑛", "𐑨", "𐑼", "𐑦"]
 
-CRITICAL   = {"⊙_ÿ", "⊙_Æ", "⊙", "𐑮"}      # Phi_c + Phi_c_complex, old + Shavian
-NONCRIT    = {"⊙_ž", "⊙_Ţ", "⊙_3", "𐑢", "𐑻", "𐑣"}   # Phi_sub/EP/super
-BOUNDED_D  = {"Ð_ß", "Ð_C", "Ð_ω", "𐑛", "𐑨", "𐑦"}   # non-D_odot
-P_PM_SYM   = {"Φ_}", "𐑹"}                  # Frobenius polarity, old + Shavian
-OMEGA_0    = {"Ω_Å", "𐑷", ""}              # no topological protection
+CRITICAL   = {"⊙", "𐑮", "⊙", "𐑮"}      # Phi_c + Phi_c_complex, old + Shavian
+NONCRIT    = {"𐑢", "𐑣", "𐑻", "𐑢", "𐑻", "𐑣"}   # Phi_sub/EP/super
+BOUNDED_D  = {"𐑛", "𐑨", "𐑦", "𐑛", "𐑨", "𐑦"}   # non-D_odot
+P_PM_SYM   = {"𐑹", "𐑹"}                  # Frobenius polarity, old + Shavian
+OMEGA_0    = {"𐑷", "𐑷", ""}              # no topological protection
 
 def get_tier(phi, p, omega, d):
     # R1 (Lean-authoritative): Phi_c + P_pm_sym → O_∞
@@ -74,16 +74,16 @@ def cell_tier_breakdown(phi, omega):
     return counts
 
 PHI_LABEL = {
-    "⊙_ž":       r"$\Phi_\mathrm{sub}$" + "\nordered",
-    "⊙_ÿ":         r"$\⊙_ÿ$" + "\nreal-axis critical",
-    "⊙_Æ": r"$\⊙_ÿ^\mathbb{C}$" + "\ncomplex-axis critical",
-    "⊙_3":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
-    "⊙_Ţ":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
+    "𐑢":       r"$\Phi_\mathrm{sub}$" + "\nordered",
+    "⊙":         r"$\⊙$" + "\nreal-axis critical",
+    "𐑮": r"$\⊙^\mathbb{C}$" + "\ncomplex-axis critical",
+    "𐑻":        r"$\Phi_\mathrm{EP}$" + "\nexceptional point",
+    "𐑣":     r"$\Phi_\mathrm{sup}$" + "\ndisordered",
 }
 OMEGA_LABEL = {
-    "Ω_Å":  r"$\Ω_Å$" + "\nno protection",
-    "Ω_2": r"$\Omega_{Z_2}$" + "\nbinary protection",
-    "Ω_z":  r"$\Omega_\mathbb{Z}$" + "\ninteger winding",
+    "𐑷":  r"$\𐑷$" + "\nno protection",
+    "𐑴": r"$\Omega_{Z_2}$" + "\nbinary protection",
+    "𐑭":  r"$\Omega_\mathbb{Z}$" + "\ninteger winding",
 }
 
 
@@ -287,21 +287,21 @@ plt.close(fig2)
 # ══════════════════════════════════════════════════════════════════════
 # Rows: P values (5)
 # Columns: 6 combinations of (Ω, D-type): (Ω0,any), (ΩZ2,D_bnd), (ΩZ2,D_inf), (ΩZ,D_bnd), (ΩZ,D_inf) — 5 combos
-# + 1 column for "Φ_} collapses all" label
+# + 1 column for "𐑹 collapses all" label
 
 OMEGA_D_COMBOS = [
-    ("Ω_Å",  "Ð_ß",    r"$\Ω_Å$" + "\n(any $D$)"),
-    ("Ω_2", "Ð_ß",    r"$\Omega_{Z_2}$" + "\nbounded $D$"),
-    ("Ω_2", "Ð_;",    r"$\Omega_{Z_2}$" + "\n$D_\infty$"),
-    ("Ω_z",  "Ð_ß",    r"$\Omega_\mathbb{Z}$" + "\nbounded $D$"),
-    ("Ω_z",  "Ð_;",    r"$\Omega_\mathbb{Z}$" + "\n$D_\infty$"),
+    ("𐑷",  "𐑛",    r"$\𐑷$" + "\n(any $D$)"),
+    ("𐑴", "𐑛",    r"$\Omega_{Z_2}$" + "\nbounded $D$"),
+    ("𐑴", "𐑼",    r"$\Omega_{Z_2}$" + "\n$D_\infty$"),
+    ("𐑭",  "𐑛",    r"$\Omega_\mathbb{Z}$" + "\nbounded $D$"),
+    ("𐑭",  "𐑼",    r"$\Omega_\mathbb{Z}$" + "\n$D_\infty$"),
 ]
 P_SHORT = {
-    "Φ_ɐ":    r"$P_\mathrm{asym}$",
-    "Φ_υ":     r"$P_\psi$",
-    "Φ_F":      r"$P_{\pm}$",
-    "Φ_˙":     r"$P_\mathrm{sym}$",
-    "Φ_}":  r"$P_{\pm}^\mathrm{sym}$" + "\n(Frobenius)",
+    "𐑗":    r"$P_\mathrm{asym}$",
+    "𐑿":     r"$P_\psi$",
+    "𐑬":      r"$P_{\pm}$",
+    "𐑯":     r"$P_\mathrm{sym}$",
+    "𐑹":  r"$P_{\pm}^\mathrm{sym}$" + "\n(Frobenius)",
 }
 
 fig3, ax3 = plt.subplots(figsize=(18, 9), facecolor=BG)
@@ -317,7 +317,7 @@ ax3.set_title(r"P-axis Frobenius Collapse: $P_{\pm}^\mathrm{sym}$ overrides all 
 
 for p_i, p in enumerate(P_VALUES):
     for od_j, (omega, d, _) in enumerate(OMEGA_D_COMBOS):
-        t = get_tier("⊙_ÿ", p, omega, d)
+        t = get_tier("⊙", p, omega, d)
         color = TIER_COLOR[t]
         label = t.replace("_dag","†").replace("_inf","∞").replace("O_","O")
 
@@ -332,8 +332,8 @@ for p_i, p in enumerate(P_VALUES):
                  color="black" if t in ("O₁","O_∞") else "white",
                  zorder=4)
 
-# Highlight the Φ_} row with golden border
-p_frobenius = P_VALUES.index("Φ_}")
+# Highlight the 𐑹 row with golden border
+p_frobenius = P_VALUES.index("𐑹")
 ax3.add_patch(plt.Rectangle(
     (-0.5, p_frobenius - 0.5), len(OMEGA_D_COMBOS), 1.0,
     fill=False, edgecolor="#FFD700", linewidth=3, zorder=5
@@ -348,16 +348,16 @@ for od_j, (_, _, label) in enumerate(OMEGA_D_COMBOS):
 for p_i, p in enumerate(P_VALUES):
     ax3.text(-0.55, p_i, P_SHORT[p],
              ha="right", va="center", color="white",
-             fontsize=12, fontweight="bold" if p == "Φ_}" else "normal")
+             fontsize=12, fontweight="bold" if p == "𐑹" else "normal")
 
 ax3.set_xticks([])
 ax3.set_yticks([])
-ax3.invert_yaxis()   # Φ_ɐ at top, Φ_} at bottom... actually keep natural order
+ax3.invert_yaxis()   # 𐑗 at top, 𐑹 at bottom... actually keep natural order
 
 # Annotation
 ax3.text(len(OMEGA_D_COMBOS)/2 - 0.5, -0.9,
-         r"R1: $\⊙_ÿ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
-         r"R3: $\⊙_ÿ + \Ω_Å \rightarrow O₁$    "
+         r"R1: $\⊙ + P_{\pm}^\mathrm{sym} \rightarrow O_\infty$ (overrides R3/R4/R5)    "
+         r"R3: $\⊙ + \𐑷 \rightarrow O₁$    "
          r"R4: bounded $D \rightarrow O₂$    "
          r"R5: $D_\infty \rightarrow O₂^\dagger$",
          ha="center", va="top", color="#AAAACC", fontsize=10)

@@ -207,10 +207,10 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
             kinetic_character=kinetic_character,
             granularity=granularity,
             grammar=interaction_grammar,
-            criticality_phase=criticality_phase or getattr(Criticality, "⊙_ž"),
-            protection=Protection.Ω_Å,
-            stoichiometry=Stoichiometry.Σ_S,
-            chirality=Chirality.Ħ_Ñ,
+            criticality_phase=criticality_phase or getattr(Criticality, "𐑢"),
+            protection=Protection.𐑷,
+            stoichiometry=Stoichiometry.𐑙,
+            chirality=Chirality.𐑓,
             description=description,
             metadata={"auto_generated": True, "method": "rule_based_axiom_guided"}
         )
@@ -356,30 +356,30 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
   T_⋈ requires a named closing bond. NOT for hosts/guests, NOT for cages, NOT for bowls.
 
 **Axiom 8 (R Physics Match):** R **MUST** match the actual interaction physics.
-- **Ř_¯set** (R_⊇) = **NON-COVALENT** — use for H-bonds, hydrogen bonds, halogen bonds, π-stacking,
+- **𐑩set** (R_⊇) = **NON-COVALENT** — use for H-bonds, hydrogen bonds, halogen bonds, π-stacking,
   van der Waals, electrostatics, coordination, host-guest, ionic interactions. **No bond making/breaking.**
   This includes WATER hydrogen bond networks, ammonium/crown-ether complexes, CB[n] host-guest, etc.
 - **R_subset** (R_⊆) = **COVALENT bond formation** — use ONLY for reactions that form or break covalent bonds
   (condensation, Michael addition, imine formation, aldol C-C bond, polymerization). NOT for H-bonds.
-- **Ř_Ť** (R_‡) = **CATALYTIC / DYNAMIC** — transition-state stabilization, autocatalysis, reversible covalent.
+- **𐑽** (R_‡) = **CATALYTIC / DYNAMIC** — transition-state stabilization, autocatalysis, reversible covalent.
 - **R_mechanical** = mechanical bond (rotaxane, catenane thread).
 You **MUST NOT** assign R_subset (covalent) for hydrogen bonding or coordination chemistry.
-You **MUST NOT** assign Ř_Ť merely because a system is "dynamic", "geometric", or "specific".
+You **MUST NOT** assign 𐑽 merely because a system is "dynamic", "geometric", or "specific".
 </axioms>
 
 <instructions>
 Assign each primitive using these valid values:
-- D (Dimensionality): Ð_ß (molecular only), Ð_C (supramolecular only), D_infinity (temporal only),
-  Ð_ß_triangle (molecular+supramolecular hybrid), Ð_C_infinity (supramolecular+temporal hybrid),
-  Ð_ß_infinity (molecular+temporal hybrid), Ð_ß_triangle_infinity (all three scales)
-- T (Topology): Þ_ò (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), Þ_6 (T_∈), Þ_6_hex (T_∈(hex)), Þ_6_mixed (T_∈(mixed)), Þ_6_interp (T_∈(×2)), Þ_6_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
-- R (Recognition): R_subset (COVALENT bond formation only), Ř_¯set (NON-COVALENT: H-bonds/coordination/host-guest), Ř_Ť (catalytic), R_mechanical
-- P (Polarity): P_plus, P_minus, Φ_}}, Φ_F_pseudo, P_directional
+- D (Dimensionality): 𐑛 (molecular only), 𐑨 (supramolecular only), D_infinity (temporal only),
+  𐑛_triangle (molecular+supramolecular hybrid), 𐑨_infinity (supramolecular+temporal hybrid),
+  𐑛_infinity (molecular+temporal hybrid), 𐑛_triangle_infinity (all three scales)
+- T (Topology): 𐑥 (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), 𐑡 (T_∈), 𐑡_hex (T_∈(hex)), 𐑡_mixed (T_∈(mixed)), 𐑡_interp (T_∈(×2)), 𐑡_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
+- R (Recognition): R_subset (COVALENT bond formation only), 𐑩set (NON-COVALENT: H-bonds/coordination/host-guest), 𐑽 (catalytic), R_mechanical
+- P (Polarity): P_plus, P_minus, 𐑹}, 𐑬_pseudo, P_directional
 - F (Fidelity): ƒ^ż, ƒ^ð, ƒ^ì
 - K (Kinetics): Ç^-, Ç^W, Ç^@, Ç^Ù
-- G (Granularity): Γ_β, Γ_γ, Γ_ʔ
+- G (Granularity): 𐑚, 𐑔, 𐑲
 - Γ (Grammar): ɢ^∧(SPECIFIC|SELECTIVE|BROAD), ɢ^˝(...), ɢ^ˌ(...)
-- Φ (Criticality): ⊙_ž, ⊙_ÿ, ⊙_Ţ (default: ⊙_ž)
+- Φ (Criticality): 𐑢, ⊙, 𐑣 (default: 𐑢)
 - S (Stoichiometry): "1:1" for homodimeric/symmetric, "n:m" for asymmetric, null if indeterminate
 
 For **EACH** axiom, explicitly state whether it applies and how it is satisfied.
@@ -466,18 +466,18 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 clean_name = f"imscription_{_desc_slug(description)}"
         return Imscription(
             name=clean_name,
-            dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "Ð_ß")),
+            dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "𐑛")),
             topology=Topology.from_symbol(data.get("topology", "Þ_linear")),
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "Ř_superset")),
             polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
             kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),
-            granularity=Granularity.from_symbol(data.get("granularity", "Γ_β")),
+            granularity=Granularity.from_symbol(data.get("granularity", "𐑚")),
             grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ^∧(SELECTIVE)")),
-            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "⊙_ž"),
-            protection=Protection.from_symbol(data.get("protection") or "Ω_Å"),
+            criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "𐑢"),
+            protection=Protection.from_symbol(data.get("protection") or "𐑷"),
             stoichiometry=Stoichiometry.from_symbol(data.get("stoichiometry") or "n:m"),
-            chirality=Chirality.from_symbol(data.get("chirality") or "Ħ_Ñ"),
+            chirality=Chirality.from_symbol(data.get("chirality") or "𐑓"),
             description=description,
             metadata={"auto_generated": True, "method": "axiom_guided_llm"}
         )
@@ -518,12 +518,12 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 imscription_data, reasoning, confidence = self._parse_llm_response(raw_response)
 
                 # Honor explicit criticality phase in description.
-                # If the description explicitly names ⊙_ÿ, override the LLM's
-                # conservative default of ⊙_ž so the axiom validator can test it.
+                # If the description explicitly names ⊙, override the LLM's
+                # conservative default of 𐑢 so the axiom validator can test it.
                 import re as _re
                 _phi_match = _re.search(r'\bPhi_(c|sub|super)\b', description)
-                if _phi_match and _phi_match.group(0) == "⊙_ÿ":
-                    imscription_data["criticality_phase"] = "⊙_ÿ"
+                if _phi_match and _phi_match.group(0) == "⊙":
+                    imscription_data["criticality_phase"] = "⊙"
 
                 # Create imscription
                 imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)

@@ -391,7 +391,7 @@ Key upgrade levers:
 - F HIGH + T_⋈ → tighter cyclic constraint → lower ξ_CP → approach criticality
 - G_ג (mesoscale) with cooperative induction → Axiom 3 G/D coupling
 - Φ_c explicit assignment via upgrade from Φ_sub
-- Þ_6 topology enables scale-free propagation
+- 𐑡 topology enables scale-free propagation
 </background>
 
 <instructions>

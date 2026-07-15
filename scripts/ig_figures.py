@@ -9,7 +9,7 @@ CLI:
   python3 ig_figures.py belnap [--labels "N:empty,T:spinUp,F:spinDown,B:paired"]
                                 [--highlight B] [--caption "..."] [--out fig.pdf]
 
-  python3 ig_figures.py profile --tuple "Ð_ω Þ_O Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_ï Ω_z"
+  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
                                  [--title "..."] [--out fig.pdf]
 
   python3 ig_figures.py tier [--highlight O_∞] [--out fig.pdf]
@@ -179,7 +179,7 @@ def primitive_profile(
     """
     Horizontal bar chart showing ordinal level of each primitive in a tuple.
 
-    tuple_str: space/semicolon-separated entries like "Ð_ω Þ_O Ř_= ..."
+    tuple_str: space/semicolon-separated entries like "𐑦 𐑸 𐑾 ..."
                Both ^ and _ separators accepted.
     """
     entries = [e.strip().strip("⟨⟩") for e in tuple_str.replace(";", " ").split()]
@@ -622,7 +622,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   python3 ig_figures.py belnap --labels "N:empty,T:spinUp,F:spinDown,B:paired"
-  python3 ig_figures.py profile --tuple "Ð_ω Þ_O Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_ï Ω_z"
+  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
   python3 ig_figures.py tier --highlight O_∞
   python3 ig_figures.py frobenius
 """,

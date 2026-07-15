@@ -22,7 +22,7 @@ Input format (paper.md):
       caption: "OrbitalState ≅ Belnap FOUR"
     - id: profile
       type: primitive_profile
-      tuple: "Ð_ω Þ_O Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_ï Ω_z"
+      tuple: "𐑦 𐑸 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
       title: "Frobenius fixed-point profile"
     - id: tier
       type: tier_chain

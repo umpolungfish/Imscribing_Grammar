@@ -299,14 +299,14 @@ print("All 19 chiral amino acids are exclusively L-configuration.")
 print("Glycine is achiral (no stereocentre).")
 print()
 print("In IG terms:")
-print("  Ħ (primitive 9, chirality) = Ħ_A (left-handed) for all biological AAs")
+print("  Ħ (primitive 9, chirality) = 𐑖 (left-handed) for all biological AAs")
 print("  Ħ is fixed at the bootstrap — not derivable from chemistry alone")
 print("  (D-amino acids are chemically equivalent; life chose one and froze it)")
 print()
 print("This is the clearest single primitive in the genetic system:")
-print("  Ħ_A was selected at origin of life and Frobenius-locked into the code.")
+print("  𐑖 was selected at origin of life and Frobenius-locked into the code.")
 print("  Any D-amino acid insertion would break the ribosomal Frobenius gate.")
-print("  → Ħ_A is an absolute IG invariant of terrestrial biochemistry.")
+print("  → 𐑖 is an absolute IG invariant of terrestrial biochemistry.")
 print()
 
 # ── 8. Bootstrap sequence ordering ───────────────────────────────────────────
@@ -342,8 +342,8 @@ for i, prim in enumerate(ig_order):
 print()
 print("Ordering note:")
 print("  Ħ (chirality, position 9 of 12) comes AFTER ⊙ (criticality).")
-print("  In the RNA world: RNA self-replication (⊙_ÿ self-modeling) precedes")
-print("  the fixation of L-amino acid chirality (Ħ_A) as proteins emerge.")
+print("  In the RNA world: RNA self-replication (⊙ self-modeling) precedes")
+print("  the fixation of L-amino acid chirality (𐑖) as proteins emerge.")
 print("  The bootstrap sequence orders correctly: self-reference before chirality-lock.")
 print()
 
@@ -365,7 +365,7 @@ findings = [
     ("Frobenius condition",
      "8/16 codon boxes satisfy μ∘δ=id exactly; 8/16 satisfy it modulo pyrimidine/purine"),
     ("Chirality Ħ invariant",
-     "L-amino acid homochirality = Ħ_A fixed at bootstrap; Frobenius-locked, non-derivable from chemistry"),
+     "L-amino acid homochirality = 𐑖 fixed at bootstrap; Frobenius-locked, non-derivable from chemistry"),
     ("Bootstrap ordering",
      "⊙ (self-reference/RNA-world) precedes Ħ (chirality-lock) — matches RNA-world before DNA hypothesis"),
     ("Open question",

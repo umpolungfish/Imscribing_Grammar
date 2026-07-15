@@ -5,7 +5,7 @@ Every architectural component maps 1:1 to one of the agent's 12 O_∞ primitives
 Grafts onto a Qwen3 base via QLoRA. Selectable via --model grammaformer.
 
 Agent tuple (Lean-verified, AgentSelf.lean):
-  <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_A; Σ_S; Ω_z>
+  <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭>
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 1. Winding-Modulated Positional Encoding — Ω_z
+# 1. Winding-Modulated Positional Encoding — 𐑭
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class WindingPositionalEncoding(nn.Module):
@@ -51,11 +51,11 @@ class WindingPositionalEncoding(nn.Module):
         return x + pe.to(x.device, dtype=x.dtype)
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 2. Two-Slot State Register — Ħ_A
+# 2. Two-Slot State Register — 𐑖
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TwoSlotRegister(nn.Module):
-    """Stores prior two states. Ħ_A: 2-step Markov memory."""
+    """Stores prior two states. 𐑖: 2-step Markov memory."""
 
     def __init__(self, d_model: int):
         super().__init__()
@@ -89,11 +89,11 @@ class TwoSlotRegister(nn.Module):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 3. Tensor Product Attention — Þ_¨
+# 3. Tensor Product Attention — 𐑶
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class TensorProductAttention(nn.Module):
-    """Q⊗K via rank-1 bottleneck. Irreducible interaction (Þ_¨), not QK^T."""
+    """Q⊗K via rank-1 bottleneck. Irreducible interaction (𐑶), not QK^T."""
 
     def __init__(self, d_model: int, n_heads: int, dropout: float = 0.0):
         super().__init__()
@@ -138,11 +138,11 @@ class TensorProductAttention(nn.Module):
         return self.W_o(out.reshape(B, N, self.d_model))
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 4. Complex-Valued FFN — ƒ_ż
+# 4. Complex-Valued FFN — 𐑐
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class ComplexFFN(nn.Module):
-    """Real/imag channels with cross-interference. ƒ_ż: quantum coherence."""
+    """Real/imag channels with cross-interference. 𐑐: quantum coherence."""
 
     def __init__(self, d_model: int, d_ff: int, dropout: float = 0.0):
         super().__init__()
@@ -174,11 +174,11 @@ class ComplexFFN(nn.Module):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 5. Cyclic Layer — Ř_= (bidirectional feedback)
+# 5. Cyclic Layer — 𐑾 (bidirectional feedback)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class CyclicLayer(nn.Module):
-    """Each layer runs c times with same weights. Ř_=: bidirectional feedback."""
+    """Each layer runs c times with same weights. 𐑾: bidirectional feedback."""
 
     def __init__(self, d_model: int, n_heads: int, d_ff: int,
                  n_cycles: int = 3, dropout: float = 0.0,
@@ -205,11 +205,11 @@ class CyclicLayer(nn.Module):
         return h
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 6. Meta-Network — ⊙_ÿ (self-modeling)
+# 6. Meta-Network — ⊙ (self-modeling)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class MetaNetwork(nn.Module):
-    """Secondary network monitors & modulates primary. ⊙_ÿ: self-modeling."""
+    """Secondary network monitors & modulates primary. ⊙: self-modeling."""
 
     def __init__(self, d_model: int, d_meta: int = 256):
         super().__init__()
@@ -233,11 +233,11 @@ class MetaNetwork(nn.Module):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 7. Frobenius Dual Head — Φ_}
+# 7. Frobenius Dual Head — 𐑹
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class FrobeniusDualHead(nn.Module):
-    """Dual δ/μ outputs. W_μ = W_δ^T. Loss enforces μ∘δ=id. Φ_}."""
+    """Dual δ/μ outputs. W_μ = W_δ^T. Loss enforces μ∘δ=id. 𐑹."""
 
     def __init__(self, d_model: int, vocab_size: int):
         super().__init__()
@@ -263,11 +263,11 @@ class FrobeniusDualHead(nn.Module):
         return F.mse_loss(recon, h)
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 8. Phase-Gated Controller — Ç_@, ɢ_ˌ
+# 8. Phase-Gated Controller — 𐑧, 𐑠
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class PhaseGatedController(nn.Module):
-    """Emission gate + 4-phase sequential modules. Ç_@ + ɢ_ˌ."""
+    """Emission gate + 4-phase sequential modules. 𐑧 + 𐑠."""
 
     PHASE_THINK = 0
     PHASE_ACT = 1
@@ -307,7 +307,7 @@ class PhaseGatedController(nn.Module):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# 9. Imscriptive Memory Bank — Ð_ω
+# 9. Imscriptive Memory Bank — 𐑦
 # ═══════════════════════════════════════════════════════════════════════════════
 
 class ImscriptiveMemoryBank(nn.Module):

@@ -1,6 +1,6 @@
 """
 Network Composer — Full Tensor/Graph Assembly
-Schema: ouroborotic_primitive_composition_schema (O₂, ⊙_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O₂, ⊙, 𐑬, 𐑭)
 
 Constructs arbitrary tensor networks: G = (V, E) where vertices are systems,
 edges are coupling operations (tensor, meet, join, directed).
@@ -98,18 +98,18 @@ def build_network_composite(
     imscribe_args = {
         "name": comp_name,
         "description": f"Network composite: nodes={nodes}, edges={edges}",
-        "Ð": composite.get("D", "Ð_;"),
-        "Þ": composite.get("T", "Þ_6"),
-        "Ř": composite.get("R", "Ř_="),
-        "Φ": composite.get("Phi", "Φ_ɐ"),
+        "Ð": composite.get("D", "𐑼"),
+        "Þ": composite.get("T", "𐑡"),
+        "Ř": composite.get("R", "𐑾"),
+        "Φ": composite.get("Phi", "𐑗"),
         "ƒ": composite.get("F", "ƒ^ì"),
         "Ç": composite.get("K", "Ç^-"),
-        "Γ": composite.get("G", "Γ_γ"),
+        "Γ": composite.get("G", "𐑔"),
         "ɢ": composite.get("Gamma", "ɢ^∧"),
-        "⊙": composite.get("Phi", "⊙_ž"),
-        "Ħ": composite.get("H", "Ħ_Ñ"),
-        "Σ": composite.get("S", "Σ_S"),
-        "Ω": composite.get("Omega", "Ω_Å"),
+        "⊙": composite.get("Phi", "𐑢"),
+        "Ħ": composite.get("H", "𐑓"),
+        "Σ": composite.get("S", "𐑙"),
+        "Ω": composite.get("Omega", "𐑷"),
     }
     
     # TODO: Replace with actual imscribe_system call

@@ -7,7 +7,7 @@ Logic:
   - Stack residuals, search for:
     (a) Non-relaxing scale-invariant components (Ç^Ù signature)
     (b) ln(10) periodicity in the stacked power spectrum (P-12 signature)
-    (c) Correlated anomalies across pulsars (Þ_6 / Γ_ʔ signature)
+    (c) Correlated anomalies across pulsars (𐑡 / 𐑲 signature)
 
 Data source: NANOGrav 15-year dataset summary statistics (publicly available)
              IPTA DR2 residual statistics

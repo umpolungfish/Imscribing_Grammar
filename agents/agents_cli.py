@@ -6,14 +6,14 @@ Usage:
     python agents/agents_cli.py <agent_name> --task <task>
     
 Agents:
-    true_agentic_agent    - Grammar-optimal ⊙_ÿ-critical agent (O_∞)
+    true_agentic_agent    - Grammar-optimal ⊙-critical agent (O_∞)
     research_agent        - Information gathering and synthesis
     analysis_agent        - Data analysis and pattern recognition
     aider_code_agent      - Git-native code operations (requires aider)
     perturbation_agent    - Primitive Jacobian interpretation
     ensemble_agent        - Goal-directed multi-imscription composition
     retrodesign_agent     - Retrosynthetic analysis
-    criticality_agent     - ⊙_ÿ criticality hunting
+    criticality_agent     - ⊙ criticality hunting
     imscription_generator     - Imscription structure generation
     axiom_generator       - Axiom-guided generation
     autonomous_imscription    - Autonomous imscription discovery

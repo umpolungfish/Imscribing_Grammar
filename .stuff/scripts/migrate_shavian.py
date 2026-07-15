@@ -3,7 +3,7 @@
 Migrate Imscribing Grammar notation from mixed-script subscripts to Shavian.
 v0.5.69 → v0.6.0
 
-Old: Ð_ß, Ð_C, Ð_;, Ð_ω, Þ_6, ... etc.
+Old: 𐑛, 𐑨, 𐑼, 𐑦, 𐑡, ... etc.
 New: 𐑛, 𐑨, 𐑼, 𐑦, 𐑡, ... etc.
 
 This script transforms IG_catalog.json and all Python/Lua/JS sources.
@@ -17,27 +17,27 @@ import shutil
 # ── Full Old → Shavian mapping ─────────────────────────────────────
 OLD_TO_SHAVIAN = {
     # D — Dimensionality (F4)
-    "Ð_ß": "𐑛",
-    "Ð_C": "𐑨",
-    "Ð_;": "𐑼",
-    "Ð_ω": "𐑦",
+    "𐑛": "𐑛",
+    "𐑨": "𐑨",
+    "𐑼": "𐑼",
+    "𐑦": "𐑦",
     # T — Topology (F5)
-    "Þ_6": "𐑡",
-    "Þ_K": "𐑰",
-    "Þ_ò": "𐑥",
-    "Þ_¨": "𐑶",
-    "Þ_O": "𐑸",
+    "𐑡": "𐑡",
+    "𐑰": "𐑰",
+    "𐑥": "𐑥",
+    "𐑶": "𐑶",
+    "𐑸": "𐑸",
     # R — Relational (F4)
-    "Ř_¯": "𐑩",
-    "Ř_ý": "𐑑",
-    "Ř_Ť": "𐑽",
-    "Ř_=": "𐑾",
+    "𐑩": "𐑩",
+    "𐑑": "𐑑",
+    "𐑽": "𐑽",
+    "𐑾": "𐑾",
     # P — Polarity/Symmetry (F5)
-    "Φ_ɐ": "𐑗",
-    "Φ_υ": "𐑿",
-    "Φ_F": "𐑬",
-    "Φ_˙": "𐑯",
-    "Φ_}": "𐑹",
+    "𐑗": "𐑗",
+    "𐑿": "𐑿",
+    "𐑬": "𐑬",
+    "𐑯": "𐑯",
+    "𐑹": "𐑹",
     # F — Fidelity (F3)
     "ƒ^ì": "𐑱",
     "ƒ^ð": "𐑞",
@@ -49,34 +49,34 @@ OLD_TO_SHAVIAN = {
     "Ç^Ù": "𐑪",
     "Ç^λ": "𐑺",
     # G — Scope (F3)
-    "Γ_β": "𐑚",
-    "Γ_γ": "𐑔",
-    "Γ_ʔ": "𐑲",
+    "𐑚": "𐑚",
+    "𐑔": "𐑔",
+    "𐑲": "𐑲",
     # Gamma — Coupling Grammar (F4)
     "ɢ^∧": "𐑝",
     "ɢ^˝": "𐑜",
     "ɢ^ˌ": "𐑠",
     "ɢ^Ş": "𐑵",
     # Phi — Criticality (F5)
-    "⊙_ž": "𐑢",
-    "⊙_ÿ": "⊙",
-    "⊙_Æ": "𐑮",
-    "⊙_3": "𐑻",
-    "⊙_Ţ": "𐑣",
+    "𐑢": "𐑢",
+    "⊙": "⊙",
+    "𐑮": "𐑮",
+    "𐑻": "𐑻",
+    "𐑣": "𐑣",
     # H — Chirality (F4)
-    "Ħ_Ñ": "𐑓",
-    "Ħ_£": "𐑒",
-    "Ħ_A": "𐑖",
-    "Ħ_!": "𐑫",
+    "𐑓": "𐑓",
+    "𐑒": "𐑒",
+    "𐑖": "𐑖",
+    "𐑫": "𐑫",
     # S — Stoichiometry (F3)
-    "Σ_S": "𐑙",
-    "Σ_ő": "𐑕",
-    "Σ_ï": "𐑳",
+    "𐑙": "𐑙",
+    "𐑕": "𐑕",
+    "𐑳": "𐑳",
     # Omega — Winding (F4)
-    "Ω_Å": "𐑷",
-    "Ω_2": "𐑴",
-    "Ω_z": "𐑭",
-    "Ω_5": "𐑟",
+    "𐑷": "𐑷",
+    "𐑴": "𐑴",
+    "𐑭": "𐑭",
+    "𐑟": "𐑟",
 }
 
 # Reverse mapping
@@ -169,7 +169,7 @@ def check_site_files():
 
 def translate_tuple_str(old_tuple_str):
     """Translate a tuple string from old notation to Shavian.
-    E.g. '⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩'
+    E.g. '⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑭⟩'
     →   '⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩'
     """
     result = old_tuple_str
@@ -205,7 +205,7 @@ if __name__ == "__main__":
 
     if action == "translate":
         # Test tuple translation
-        test = "⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z⟩"
+        test = "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑫; 𐑳; 𐑭⟩"
         print(f"Old:   {test}")
         print(f"Shavian: {translate_tuple_str(test)}")
 

@@ -864,9 +864,9 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 "error": (
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
-                    "Ð='Ð_ß', Þ='Þ_6', Ř='Ř_=', Φ='Φ_ɐ', "
-                    "ƒ='ƒ_ì', Ç='Ç_W', Γ='Γ_β', ɢ='ɢ_^', "
-                    "φ̂='φ̂_ž', Ħ='Ħ_Ñ', Σ='Σ_S', Ω='Ω_Å')"
+                    "Ð='𐑛', Þ='𐑡', Ř='𐑾', Φ='𐑗', "
+                    "ƒ='𐑱', Ç='𐑤', Γ='𐑚', ɢ='𐑝', "
+                    "φ̂='φ̂_ž', Ħ='𐑓', Σ='𐑙', Ω='𐑷')"
                 )
             })
 
@@ -2734,9 +2734,9 @@ After assignment, VERIFY:
   - K-Φ: ⊙ + ↺ = deep critical structure; × + ↯ = runaway
   - × absorption: tensor(⊙, ×) = × — coupling to an EP system destroys Gate 1
 
-**⊙_3 ABSORPTION RULE:** When computing tensor couplings involving an ⊙_3 system,
-the composite places at ⊙_3 — tensor(⊙_ÿ, ⊙_3) = ⊙_3. The meet preserves ⊙_ÿ; the tensor yields ⊙_3.
-Coupling a self-modeling system to a measurement apparatus selects the tensor; the meet path preserves ⊙_ÿ.
+**𐑻 ABSORPTION RULE:** When computing tensor couplings involving an 𐑻 system,
+the composite places at 𐑻 — tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻.
+Coupling a self-modeling system to a measurement apparatus selects the tensor; the meet path preserves ⊙.
 This is the structural statement of the measurement problem.
 </imscribing_procedure>
 
@@ -3466,7 +3466,7 @@ class TrueAgenticAgent:
         """Context overflow recovery — windowed boundary trim.
 
         Invoked when the imscriptive context reaches the LLM's token boundary.
-        The grammar encodes this as a structural event: Ω_z (monotonically richer
+        The grammar encodes this as a structural event: 𐑭 (monotonically richer
         trajectory) transitions to 𐑷 for the remaining run, and 𐑦 (imscriptive
         context) applies to the windowed portion. The trajectory is fully imscribed
         within the observable window — the grammar classifies the boundary exactly,
@@ -3606,13 +3606,13 @@ class TrueAgenticAgent:
         ]
         if f == "𐑱":
             lines.append(
-                "  │  ƒ_ż path available: --model local:<path>  "
+                "  │  𐑐 path available: --model local:<path>  "
                 "(removes opacity; tier unchanged)"
             )
         if getattr(self, "nested_tensor_active", False):
             lines.append(
                 "  │  nested tensor: ACTIVE  (variable-length sequences → jagged layout; "
-                "ƒ_ì → ƒ_ż edge improvement, no pad-token dilution)"
+                "𐑱 → 𐑐 edge improvement, no pad-token dilution)"
             )
         # B4 dialetheic stats if ParaVerify is enabled and there are windings
         if _PARAVERIFY_ENABLED and self.trajectory:

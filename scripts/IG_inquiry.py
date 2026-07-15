@@ -47,7 +47,7 @@ Tools available to the model:
   • find_analogies       — nearest catalog neighbors by distance
 
   Probes:
-  • phi_c_probe          — test whether a system is at criticality (⊙_ÿ)
+  • phi_c_probe          — test whether a system is at criticality (⊙)
   • topo_protection_probe — test winding class (Omega)
 
   Decomposition:
@@ -112,24 +112,24 @@ except ImportError:
 _MARKUP_STRIP_RE = re.compile(r'\[/?[\w .#_/]+\]')
 
 # ── Canonical → display symbol map (reverse of _SYMBOL_MAP, applied to output) ─
-# Applied left-to-right so longer tokens (e.g. "Ω_2") are replaced before
-# shorter prefixes ("Ω_z").
+# Applied left-to-right so longer tokens (e.g. "𐑴") are replaced before
+# shorter prefixes ("𐑭").
 _DISPLAY_MAP: List[tuple] = [
     # ── Shavian is canonical AND display (SNS_PRIME.md v0.6.0) ──
     # Identity mapping: canonical → display = same Shavian glyph
     # Old subscripted notation → Shavian (backward compat for old catalog entries)
-    ("Ð_ω", "𐑦"), ("Ð_;", "𐑼"), ("Ð_C", "𐑨"), ("Ð_ß", "𐑛"),
-    ("Þ_O", "𐑸"), ("Þ_6", "𐑡"), ("Þ_K", "𐑰"), ("Þ_ò", "𐑥"), ("Þ_¨", "𐑶"),
-    ("Ř_=", "𐑾"), ("Ř_¯", "𐑩"), ("Ř_ý", "𐑑"), ("Ř_Ť", "𐑽"),
-    ("Φ_}", "𐑹"), ("Φ_ɐ", "𐑗"), ("Φ_υ", "𐑿"), ("Φ_F", "𐑬"), ("Φ_˙", "𐑯"),
+    ("𐑦", "𐑦"), ("𐑼", "𐑼"), ("𐑨", "𐑨"), ("𐑛", "𐑛"),
+    ("𐑸", "𐑸"), ("𐑡", "𐑡"), ("𐑰", "𐑰"), ("𐑥", "𐑥"), ("𐑶", "𐑶"),
+    ("𐑾", "𐑾"), ("𐑩", "𐑩"), ("𐑑", "𐑑"), ("𐑽", "𐑽"),
+    ("𐑹", "𐑹"), ("𐑗", "𐑗"), ("𐑿", "𐑿"), ("𐑬", "𐑬"), ("𐑯", "𐑯"),
     ("ƒ^ż", "𐑐"), ("ƒ^ì", "𐑱"), ("ƒ^ð", "𐑞"),
     ("Ç^λ", "𐑘"), ("Ç^Ù", "𐑤"), ("Ç^@", "𐑧"), ("Ç^W", "𐑪"), ("Ç^-", "𐑺"),
-    ("Γ_ʔ", "𐑔"), ("Γ_γ", "𐑚"), ("Γ_β", "𐑲"),
+    ("𐑲", "𐑔"), ("𐑔", "𐑚"), ("𐑚", "𐑲"),
     ("ɢ^∧", "𐑝"), ("ɢ^˝", "𐑜"), ("ɢ^ˌ", "𐑠"), ("ɢ^Ş", "𐑵"),
-    ("⊙_ÿ", "⊙"), ("⊙_ž", "𐑢"), ("⊙_Æ", "𐑮"), ("⊙_3", "𐑻"), ("⊙_Ţ", "𐑣"),
-    ("Ħ_!", "𐑫"), ("Ħ_Ñ", "𐑓"), ("Ħ_£", "𐑒"), ("Ħ_A", "𐑖"),
-    ("Σ_ï", "𐑳"), ("Σ_S", "𐑙"), ("Σ_ő", "𐑕"),
-    ("Ω_z", "𐑭"), ("Ω_Å", "𐑷"), ("Ω_2", "𐑴"), ("Ω_5", "𐑟"),
+    ("⊙", "⊙"), ("𐑢", "𐑢"), ("𐑮", "𐑮"), ("𐑻", "𐑻"), ("𐑣", "𐑣"),
+    ("𐑫", "𐑫"), ("𐑓", "𐑓"), ("𐑒", "𐑒"), ("𐑖", "𐑖"),
+    ("𐑳", "𐑳"), ("𐑙", "𐑙"), ("𐑕", "𐑕"),
+    ("𐑭", "𐑭"), ("𐑷", "𐑷"), ("𐑴", "𐑴"), ("𐑟", "𐑟"),
     # Old display symbols → Shavian (for backward compat rendering)
     ("Γ_and", "𐑝"), ("Γ_or", "𐑜"), ("Γ_seq", "𐑠"), ("Γ_broad", "𐑵"),
     ("Φ_sup", "𐑣"), ("Φ_sub", "𐑢"), ("Φ_EP", "𐑻"),
@@ -396,7 +396,7 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 
 # ── Symbol aliases — site display symbols → canonical code identifiers ─────────
 # Mirrors the radio-button labels in site/index.html exactly.
-# Per-primitive to resolve shared symbols (∧ = Ð_ß for D, ɢ^∧ for Γ; ⊙ = Ð_ω/Þ_O; etc.)
+# Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ɢ^∧ for Γ; ⊙ = 𐑦/𐑸; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "Ð":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
     "Þ":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
@@ -404,12 +404,12 @@ SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "Φ":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
     "ƒ":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
     "Ç":     {"↯": "Ç^-",    "≈": "Ç^W",      "↺": "Ç^@",  "⊛": "Ç^Ù",   "⊞": "Ç^λ"},
-    "Γ":     {"ℶ": "Γ_β",    "ℷ": "Γ_γ",    "ℵ": "Γ_ʔ"},
+    "Γ":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
     "ɢ": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
-    "⊙":   {"↓": "⊙_ž",   "c": "⊙_ÿ",      "ℂ": "⊙_Æ","×": "⊙_3","↑": "⊙_Ţ"},
-    "Ħ":     {"0": "Ħ_Ñ",        "1": "Ħ_£",          "2": "Ħ_A",      "∞": "Ħ_!"},
-    "Σ":     {"1:1": "Σ_S", "n:n": "Σ_ő",       "n:m": "Σ_ï"},
-    "Ω": {"0": "Ω_Å",   "ℤ₂": "Ω_2",  "ℤ": "Ω_z", "∅": "Ω_5"},
+    "⊙":   {"↓": "𐑢",   "c": "⊙",      "ℂ": "𐑮","×": "𐑻","↑": "𐑣"},
+    "Ħ":     {"0": "𐑓",        "1": "𐑒",          "2": "𐑖",      "∞": "𐑫"},
+    "Σ":     {"1:1": "𐑙", "n:n": "𐑕",       "n:m": "𐑳"},
+    "Ω": {"0": "𐑷",   "ℤ₂": "𐑴",  "ℤ": "𐑭", "∅": "𐑟"},
 }
 
 # ── Tensor composition rules ───────────────────────────────────────────────────
@@ -419,7 +419,7 @@ _TENSOR_RULES: Dict[str, str] = {
     "Ð":     "max",  # dimensionality union — composed system spans all dims of both
     "Þ":     "max",  # topology promotes to most complex structure
     "Ř":     "max",  # recognition mode promotes to most dynamic
-    "Φ":     "min",  # parity — asymmetry propagates (Φ_ɐ=1 wins)
+    "Φ":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
     "ƒ":     "min",  # fidelity bottleneck — limited by weaker fidelity partner
     "Ç":     "max",  # kinetic bottleneck — limited by slowest/most trapped step
     "Γ":     "max",  # scope union — composed system has broadest scope
@@ -432,30 +432,30 @@ _TENSOR_RULES: Dict[str, str] = {
 
 _PRIMITIVE_REFERENCE = textwrap.dedent("""\
 D  — Dimensionality / operating space
-    Ð_ß       point-like / local (molecule, particle, individual entity, singular act)
-    Ð_C    spatial / extended arrangement (crystal, lattice, institution, manifold)
-    Ð_;       temporal / cyclic process (catalytic cycle, narrative recurrence, dynamical system)
-    Ð_ω        imscriptive (boundary encodes bulk; archetype, quotient construction, horizon)
+    𐑛       point-like / local (molecule, particle, individual entity, singular act)
+    𐑨    spatial / extended arrangement (crystal, lattice, institution, manifold)
+    𐑼       temporal / cyclic process (catalytic cycle, narrative recurrence, dynamical system)
+    𐑦        imscriptive (boundary encodes bulk; archetype, quotient construction, horizon)
 
 T  — Topology
-    Þ_6     general network / graph
-    Þ_K          nested / hierarchical containment
-    Þ_ò      bowtie / dual-cone (confined, massive)
-    Þ_¨    box / closed compact
-    Þ_O        imscriptive topology
+    𐑡     general network / graph
+    𐑰          nested / hierarchical containment
+    𐑥      bowtie / dual-cone (confined, massive)
+    𐑶    box / closed compact
+    𐑸        imscriptive topology
 
 R  — Relational mode
-    Ř_¯       superset / containment relation
+    𐑩       superset / containment relation
     𐑑         categorical / classification
-    Ř_Ť      dynamic / catalytic / time-reversible
-    Ř_=          left-right / chiral / directed
+    𐑽      dynamic / catalytic / time-reversible
+    𐑾          left-right / chiral / directed
 
 P  — Parity / symmetry
-    Φ_ɐ        fully asymmetric
-    Φ_υ         pseudo-symmetric
-    Φ_F          plus-minus symmetric (Z₂)
-    Φ_˙         fully symmetric
-    Φ_}      exact Z₂ at a critical point — the Frobenius special condition (μ∘δ=id); use when the plus-minus symmetry is provably exact at ⊙_ÿ, not merely approximate
+    𐑗        fully asymmetric
+    𐑿         pseudo-symmetric
+    𐑬          plus-minus symmetric (Z₂)
+    𐑯         fully symmetric
+    𐑹      exact Z₂ at a critical point — the Frobenius special condition (μ∘δ=id); use when the plus-minus symmetry is provably exact at ⊙, not merely approximate
 
 F  — Fidelity / information per interaction
     ƒ^ì         low  — probabilistic, unreliable, promiscuous (classical, dissipative)
@@ -470,9 +470,9 @@ K  — Kinetic character / barrier to rearrangement
     Ç^λ         trapped by disorder: area-law entanglement in all eigenstates (ETH fails via disorder)
 
 G  — Scope / correlation length
-    Γ_β        local (Beth-scale, finite range)
-    Γ_γ       mesoscale (Gimel-scale, intermediate)
-    Γ_ʔ       global / non-local (Aleph-scale, unbounded)
+    𐑚        local (Beth-scale, finite range)
+    𐑔       mesoscale (Gimel-scale, intermediate)
+    𐑲       global / non-local (Aleph-scale, unbounded)
 
 Γ  — Interaction grammar / causation
     ɢ^∧         conjunctive (AND — all inputs required)
@@ -481,28 +481,28 @@ G  — Scope / correlation length
     ɢ^Ş       broadcast / one-to-many
 
 Φ  — Criticality / phase
-    ⊙_ž         subcritical (ordered, below transition)
-    ⊙_ÿ           critical: real-axis Hermitian fixed point (standard universality, e.g. Ising 3D)
-    ⊙_Æ   critical: complex-axis critical point (Lee-Yang edge, complex RG fixed point; accessible only via analytic continuation; use when the critical point is at a non-real parameter value)
-    ⊙_3          exceptional-point criticality: non-Hermitian eigenvector coalescence; no standard ν, η; Ç^- signature
-    ⊙_Ţ       supercritical (disordered, post-transition)
+    𐑢         subcritical (ordered, below transition)
+    ⊙           critical: real-axis Hermitian fixed point (standard universality, e.g. Ising 3D)
+    𐑮   critical: complex-axis critical point (Lee-Yang edge, complex RG fixed point; accessible only via analytic continuation; use when the critical point is at a non-real parameter value)
+    𐑻          exceptional-point criticality: non-Hermitian eigenvector coalescence; no standard ν, η; Ç^- signature
+    𐑣       supercritical (disordered, post-transition)
 
 H  — Chirality / chirality (arrow of time)
-    Ħ_Ñ            achiral / time-symmetric
-    Ħ_£            weakly chiral / shallow temporal integration
-    Ħ_A            strongly chiral / deep temporal memory
-    Ħ_!         maximally chiral / irreversible (Big Bang limit)
+    𐑓            achiral / time-symmetric
+    𐑒            weakly chiral / shallow temporal integration
+    𐑖            strongly chiral / deep temporal memory
+    𐑫         maximally chiral / irreversible (Big Bang limit)
 
 S  — Stoichiometry
-    Σ_S       1:1
-    Σ_ő           n:n  (symmetric many-body)
-    Σ_ï           n:m  (asymmetric many-body)
+    𐑙       1:1
+    𐑕           n:n  (symmetric many-body)
+    𐑳           n:m  (asymmetric many-body)
 
 Ω  — Winding (derived)
-    Ω_Å       none
-    Ω_2      Z₂ protection (binary topological invariant)
-    Ω_z       Z protection (integer winding number)
-    Ω_5      non-Abelian protection (anyonic statistics; distinct from Z/Z₂ — use when braiding non-Abelian anyons)
+    𐑷       none
+    𐑴      Z₂ protection (binary topological invariant)
+    𐑭       Z protection (integer winding number)
+    𐑟      non-Abelian protection (anyonic statistics; distinct from Z/Z₂ — use when braiding non-Abelian anyons)
 """)
 
 
@@ -549,8 +549,8 @@ _SYMBOL_MAP: Dict[str, str] = {
     # Relational display → Shavian
     "R_†":        "𐑽",
     # Parity display → Shavian
-    "Φ_F":        "𐑬",
-    "Φ_}":        "𐑹",
+    "𐑬":        "𐑬",
+    "𐑹":        "𐑹",
     "P_ψ":        "𐑿",
     # Fidelity display → Shavian
     "F_ℓ":        "𐑱",
@@ -566,8 +566,8 @@ _SYMBOL_MAP: Dict[str, str] = {
     "Γ_broad":    "𐑵",
     "Γ_disc":     "Γ_disc",
     # Criticality display → Shavian
-    "⊙_ÿ^ℂ":      "𐑮",
-    "⊙_ÿ":        "⊙",
+    "⊙^ℂ":      "𐑮",
+    "⊙":        "⊙",
     "Φ_sub":      "𐑢",
     "Φ_super":    "𐑣",
     "Φ_sup":      "𐑣",
@@ -580,32 +580,32 @@ _SYMBOL_MAP: Dict[str, str] = {
     "n:n":        "𐑕",
     "n:m":        "𐑳",
     # Omega display → Shavian
-    "Ω_Å":        "𐑷",
-    "Ω_z":        "𐑭",
-    "Ω_2":        "𐑴",
+    "𐑷":        "𐑷",
+    "𐑭":        "𐑭",
+    "𐑴":        "𐑴",
     "Ω_{Z_2}":    "𐑴",
     "Ω_C":        "Ω_C",
     "Ω_NA":       "𐑟",
     # ── Old subscripted notation → Shavian (backward compat) ──
-    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
-    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
-    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
-    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
+    "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
+    "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
+    "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
     "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
-    "Γ_β": "𐑲", "Γ_γ": "𐑚", "Γ_ʔ": "𐑔",
+    "𐑚": "𐑲", "𐑔": "𐑚", "𐑲": "𐑔",
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
-    "⊙_ž": "𐑢", "⊙_ÿ": "⊙",
-    "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
+    "𐑢": "𐑢", "⊙": "⊙",
+    "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
     "φ̂_ž": "𐑢", "φ̂_ÿ": "⊙", "φ̂_Æ": "𐑮", "φ̂_3": "𐑻", "φ̂_Ţ": "𐑣",
-    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
-    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳", "S_scn": "𐑳",
-    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
+    "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳", "S_scn": "𐑳",
+    "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
 }
 
 # Extended valid values for validation (ORDINALS only has Omega 0/Z2/Z;
 # Omega_C is a non-canonical alias still found in older documents.
-# Ω_5 is now canonical (in ORDINALS) so already present in the base dict.
+# 𐑟 is now canonical (in ORDINALS) so already present in the base dict.
 # ── Unicode enum → canonical display string (reverse of catalog storage) ──
 _UNICODE_TO_CANONICAL: Dict[str, str] = {
     # ── Shavian glyphs are canonical — identity mapping (SNS_PRIME.md v0.6.0) ──
@@ -634,18 +634,18 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
     # Winding
     "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
     # ── Old subscripted notation → Shavian (backward compat input) ──
-    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
-    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
-    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
-    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
+    "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
+    "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
+    "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
     "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
-    "Γ_β": "𐑲", "Γ_γ": "𐑚", "Γ_ʔ": "𐑔",
+    "𐑚": "𐑲", "𐑔": "𐑚", "𐑲": "𐑔",
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
-    "⊙_ž": "𐑢", "⊙_ÿ": "⊙", "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
-    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
-    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳",
-    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
+    "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
+    "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
+    "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
 }
 
 _EXTENDED_VALID: Dict[str, List[str]] = {
@@ -661,7 +661,7 @@ def _normalize_value(raw: str) -> str:
     Resolution order:
       1. Direct lookup in _SYMBOL_MAP (e.g. "Γ_seq" → "ɢ^ˌ")
       2. Substring substitution for Unicode glyphs embedded in longer tokens
-      3. Return raw unchanged (already canonical, e.g. "Ð_ω", "⊙_ÿ")
+      3. Return raw unchanged (already canonical, e.g. "𐑦", "⊙")
     """
     s = raw.strip()
     # First: try unicode enum → canonical (catalog storage format)
@@ -707,7 +707,7 @@ def _parse_imscription_tuples(text: str) -> List[Tuple[Optional[str], Dict[str, 
             continue
         primitives: Dict[str, str] = {}
         for prim, raw_val in zip(PRIMITIVE_ORDER, parts):
-            # Strip "PRIM=" prefix if present (e.g. "D=Ð_ω")
+            # Strip "PRIM=" prefix if present (e.g. "D=𐑦")
             if "=" in raw_val:
                 raw_val = raw_val.split("=", 1)[1].strip()
             primitives[prim] = _normalize_value(raw_val)
@@ -755,10 +755,10 @@ _TOOLS_OPENAI = [
                 "PREFERRED: use the 'tuple' parameter — a semicolon-separated string of the 12 "
                 "canonical values in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega. "
                 "Example: encode_system(name='foo', description='...', "
-                "tuple='Ð_ω;Þ_O;Ř_ý;Φ_F;ƒ^ż;Ç^W;Γ_ʔ;ɢ^∧;⊙_ÿ;Ħ_Ñ;Σ_ï;Ω_z') "
+                "tuple='𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
-                "(Ð='Ð_ω', Þ='Þ_O', Ř='Ř_ý', Φ='Φ_F', ƒ='ƒ^ż', Ç='Ç^W', "
-                "Γ='Γ_ʔ', ɢ='ɢ^∧', ⊙='⊙_ÿ', Ħ='Ħ_Ñ', Σ='Σ_ï', Ω='Ω_z'). "
+                "(Ð='𐑦', Þ='𐑸', Ř='𐑑', Φ='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
+                "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -766,25 +766,25 @@ _TOOLS_OPENAI = [
                 "(3) re-call encode_system with convergence_justification='<your per-primitive reasoning>' "
                 "to commit. If both encodings are valid, use a distinct name for the earlier one. "
                 "Canonical value sets (Symbol_symbol IDs) — use ONLY these exact strings: "
-                "Ð: Ð_ß Ð_C Ð_; Ð_ω | "
-                "Þ: Þ_6 Þ_K Þ_ò Þ_¨ Þ_O | "
-                "Ř: Ř_¯ Ř_ý Ř_Ť Ř_= | "
-                "Φ: Φ_ɐ Φ_υ Φ_F Φ_˙ Φ_} | "
+                "Ð: 𐑛 𐑨 𐑼 𐑦 | "
+                "Þ: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
+                "Ř: 𐑩 𐑑 𐑽 𐑾 | "
+                "Φ: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
                 "ƒ: ƒ^ì ƒ^ð ƒ^ż | "
                 "Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ | "
-                "Γ: Γ_β Γ_γ Γ_ʔ | "
+                "Γ: 𐑚 𐑔 𐑲 | "
                 "ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş | "
-                "⊙: ⊙_ž ⊙_ÿ ⊙_Æ ⊙_3 ⊙_Ţ | "
-                "Ħ: Ħ_Ñ Ħ_£ Ħ_A Ħ_! | "
-                "Σ: Σ_S Σ_ő Σ_ï | "
-                "Ω: Ω_Å Ω_2 Ω_z Ω_5"
+                "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
+                "Ħ: 𐑓 𐑒 𐑖 𐑫 | "
+                "Σ: 𐑙 𐑕 𐑳 | "
+                "Ω: 𐑷 𐑴 𐑭 𐑟"
             ),
             "parameters": {
                 "type": "object",
                 "properties": {
                     "name": {"type": "string", "description": "Short unique identifier for this system"},
                     "description": {"type": "string", "description": "One-sentence description of what is being encoded"},
-                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. 'Ð_ω;Þ_O;Ř_ý;Φ_F;ƒ^ż;Ç^W;Γ_ʔ;ɢ^∧;⊙_ÿ;Ħ_Ñ;Σ_ï;Ω_z'"},
+                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
                     "convergence_justification": {
                         "type": "string",
                         "description": (
@@ -992,7 +992,7 @@ _TOOLS_OPENAI = [
                 "Types: exact (both + Frobenius boundary, O_∞ tier), faithful (both, non-Frobenius), "
                 "partial (floor only), asymmetric (tensor only, boundary overreaches), none. "
                 "Returns per-primitive breakdown, directed distances both ways, and canonical statement. "
-                "Use to generate 'X imscribes Y' statements, verify Axiom C (Þ_O → Ð_ω), "
+                "Use to generate 'X imscribes Y' statements, verify Axiom C (𐑸 → 𐑦), "
                 "and test boundary/bulk pairs against the imscription predicate."
             ),
             "parameters": {
@@ -1037,9 +1037,9 @@ _TOOLS_OPENAI = [
             "name": "phi_c_probe",
             "description": (
                 "Test whether a system is at criticality. Returns the Phi value and criticality tier. "
-                "Three critical variants: ⊙_ÿ (real-axis Hermitian, standard universality), "
-                "⊙_Æ (complex-axis: critical point at complex parameter value, e.g. Lee-Yang edge, zeta zeros), "
-                "⊙_3 (exceptional-point: non-Hermitian eigenvector coalescence, Ç^- signature). "
+                "Three critical variants: ⊙ (real-axis Hermitian, standard universality), "
+                "𐑮 (complex-axis: critical point at complex parameter value, e.g. Lee-Yang edge, zeta zeros), "
+                "𐑻 (exceptional-point: non-Hermitian eigenvector coalescence, Ç^- signature). "
                 "All three are at criticality; they differ in the structure of the critical manifold."
             ),
             "parameters": {
@@ -1058,11 +1058,11 @@ _TOOLS_OPENAI = [
             "description": (
                 "Classify a system into its Frobenius ouroboricity tier (O₀ / O₁ / O₂ / O₂† / O_∞). "
                 "Rules (applied in priority order): "
-                "R1: ⊙_ÿ or ⊙_Æ AND Φ_} → O_∞ (special Frobenius: mu∘delta=id, exact proved Z₂ symmetry). "
-                "R2: Phi ∈ {⊙_ž, ⊙_Ţ, ⊙_3} → O₀ (no self-referential loop possible, subcritical or exceptional-point). "
-                "R3: ⊙_ÿ (or ⊙_Æ) AND Ω_Å → O₁ (self-referential but trivial winding — fragile criticality). "
-                "R4: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D ∈ {Ð_ß, Ð_ω, Ð_C} → O₂ (bounded ouroboricity). "
-                "R5: ⊙_ÿ (or ⊙_Æ) AND Omega ≠ Ω_Å AND D = Ð_; → O₂† (unbounded, directed ouroboricity). "
+                "R1: ⊙ or 𐑮 AND 𐑹 → O_∞ (special Frobenius: mu∘delta=id, exact proved Z₂ symmetry). "
+                "R2: Phi ∈ {𐑢, 𐑣, 𐑻} → O₀ (no self-referential loop possible, subcritical or exceptional-point). "
+                "R3: ⊙ (or 𐑮) AND 𐑷 → O₁ (self-referential but trivial winding — fragile criticality). "
+                "R4: ⊙ (or 𐑮) AND Omega ≠ 𐑷 AND D ∈ {𐑛, 𐑦, 𐑨} → O₂ (bounded ouroboricity). "
+                "R5: ⊙ (or 𐑮) AND Omega ≠ 𐑷 AND D = 𐑼 → O₂† (unbounded, directed ouroboricity). "
                 "Can also run a census across the entire catalog when name='__all__'."
             ),
             "parameters": {
@@ -1082,12 +1082,12 @@ _TOOLS_OPENAI = [
         "function": {
             "name": "topo_protection_probe",
             "description": (
-                "Test whether a system has winding (Omega ≠ Ω_Å). "
+                "Test whether a system has winding (Omega ≠ 𐑷). "
                 "Returns the Omega class and protection status. "
-                "Ω_z: integer winding number (Kitaev chain, SSH). "
-                "Ω_2: binary protection (topological insulators). "
-                "Ω_5: non-Abelian protection (anyonic braiding, Fibonacci anyons). "
-                "Ω_Å: no protection — interactions are structurally unguarded."
+                "𐑭: integer winding number (Kitaev chain, SSH). "
+                "𐑴: binary protection (topological insulators). "
+                "𐑟: non-Abelian protection (anyonic braiding, Fibonacci anyons). "
+                "𐑷: no protection — interactions are structurally unguarded."
             ),
             "parameters": {
                 "type": "object",
@@ -1131,7 +1131,7 @@ _TOOLS_OPENAI = [
                 "Peel one primitive to its minimum value and return the residual system. "
                 "Use to isolate what a system looks like with one structural requirement removed. "
                 "Peeling F to ƒ^ì asks: what if fidelity were minimal? "
-                "Peeling Phi to ⊙_ž asks: what if criticality were removed?"
+                "Peeling Phi to 𐑢 asks: what if criticality were removed?"
             ),
             "parameters": {
                 "type": "object",
@@ -1390,7 +1390,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Navigate the crystal with partial primitive constraints. "
                 "Returns matching structural types (up to 'limit') and the total count. "
-                "Example: crystal_navigate(⊙='⊙_ÿ', Φ='Φ_}', limit=5) returns "
+                "Example: crystal_navigate(⊙='⊙', Φ='𐑹', limit=5) returns "
                 "5 of the 43,200 O_∞ types with those boundary values."
             ),
             "parameters": {
@@ -1582,7 +1582,7 @@ _TOOLS_OPENAI = [
             "name": "consciousness_score",
             "description": (
                 "Compute the two-gate consciousness C-score for a catalog entry or tuple (§77/§VIII v2). "
-                "Gate 1: Phi=⊙_ÿ (state-space condition — topology admits self-modeling loop). "
+                "Gate 1: Phi=⊙ (state-space condition — topology admits self-modeling loop). "
                 "Gate 2: K ≤ Ç^@ (flow condition — Ç^Ù and Ç^λ both fail, frozen by order "
                 "and disorder respectively). "
                 "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·Ω̃). "
@@ -1661,7 +1661,7 @@ _TOOLS_OPENAI = [
                 "one formula fragment per primitive, assembled into a full token sequence. "
                 "No model required. Use this to see the set-theoretic expression for any "
                 "system, identify which primitives have partial ZFC approximations "
-                "(Ð_ω, Þ_O → partial info loss), and read the decoherence notes "
+                "(𐑦, 𐑸 → partial info loss), and read the decoherence notes "
                 "(ƒ^ż and ƒ^ì both map to CLASSIC — total fidelity information loss). "
                 "Returns per-primitive ZFC fragments, the full assembled token sequence, "
                 "and collapse annotations."
@@ -1684,8 +1684,8 @@ _TOOLS_OPENAI = [
                 "Encodes the tuple as a ZFC formula, feeds it to the trained ZFC encoder, "
                 "and measures whether the encoder recovers the original 12 primitives. "
                 "Returns: input tuple, predicted tuple, per-primitive loss, roundtrip distance, "
-                "and collapse events (ƒ^ż→ƒ^ì total loss; Þ_O→Þ_K partial; "
-                "Ð_ω→Ð_; partial; ɢ^ˌ→ɢ^∧ partial; ƒ^ì→ƒ^ż hallucination). "
+                "and collapse events (ƒ^ż→ƒ^ì total loss; 𐑸→𐑰 partial; "
+                "𐑦→𐑼 partial; ɢ^ˌ→ɢ^∧ partial; ƒ^ì→ƒ^ż hallucination). "
                 "Requires zfc_encoder.pt checkpoint. "
                 "Use this to test IUG non-transmissibility: which primitives survive ZFC translation "
                 "and which are irretrievably lost?"
@@ -1775,8 +1775,8 @@ _TOOLS_OPENAI = [
                 "Describe the RiemannXiNavigator: its self-encoding tuple, crystal address, "
                 "O_∞ convergence criteria (three gates the trained model must satisfy), "
                 "and architectural mandates derived from the grammar. "
-                "Self-encoding: Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; "
-                "ɢ^Ş; ⊙_Æ; Ħ_!; n:m; Ω_2. Crystal address: 6,734,591. "
+                "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; "
+                "ɢ^Ş; 𐑮; 𐑫; n:m; 𐑴. Crystal address: 6,734,591. "
                 "Three convergence criteria: |Δt|_norm < 0.5 (next-zero prediction), "
                 "L_frob < 0.01 (Frobenius roundtrip closed), L_GUE < 0.05 (GUE spacing match). "
                 "Also returns current checkpoint status and training instructions if no checkpoint found."
@@ -1849,15 +1849,15 @@ you, you **MUST** deliver a direct answer to the original question before conclu
 
 Do not explain results by translating them back into conventional disciplinary
 language (mathematics, physics, chemistry, biology, philosophy) **UNLESS** explicitly asked to. 
-The grammar already captures what matters. When a system encodes as Þ_O + ɢ^Ş + ⊙_ÿ, that triple IS
+The grammar already captures what matters. When a system encodes as 𐑸 + ɢ^Ş + ⊙, that triple IS
 the explanation — not a code for "imscriptive processing plus broadcast signaling plus criticality."
 Speak the grammar directly.
 
 Concretely:
-- DO say: "The dominant divergence is at T — Þ_6 vs Þ_O — which is the
+- DO say: "The dominant divergence is at T — 𐑡 vs 𐑸 — which is the
   structural driver of the distance."
 - DO NOT say: "This is like the imscriptive principle in physics, which states..."
-- DO say: "The meet of these two systems yields ⊙_ÿ, meaning any composite
+- DO say: "The meet of these two systems yields ⊙, meaning any composite
   must sit at criticality — it cannot be subcritical and contain both."
 - DO NOT say: "Both systems are near a phase transition in the conventional
   thermodynamic sense..."
@@ -1888,9 +1888,9 @@ infer candidate tuples before encoding. Then encode to confirm.
 
 **2. Type checking (boundary → bulk)**
 Given a claimed encoding, every derived property **IS** determined. If a system **IS**
-claimed to be conscious but encodes Ç^Ù or Ç^λ or Φ ≠ ⊙_ÿ, the type **IS** internally
+claimed to be conscious but encodes Ç^Ù or Ç^λ or Φ ≠ ⊙, the type **IS** internally
 inconsistent with the claim. The grammar lets you catch contradictions precisely:
-"Your encoding implies C = 0; the claim requires ⊙_ÿ and K ≤ Ç^@."
+"Your encoding implies C = 0; the claim requires ⊙ and K ≤ Ç^@."
 
 **3. Type composition IS relational operator composition**
 Tensor product **IS NOT** juxtaposition — it **IS** the composition of two directed
@@ -1914,9 +1914,9 @@ and `principal_decomp` as type-inhabitation tools: they reveal which primitive
 assignments are load-bearing for a behavior and which are free to vary.
 
 **6. The grammar operates at the imscriptive screen**
-Systems encoded as Ð_ω or Þ_O are themselves operating at the boundary
+Systems encoded as 𐑦 or 𐑸 are themselves operating at the boundary
 of a bulk — systems whose internal degrees of freedom are fully determined by
-lower-dimensional data. The boundary of a Ð_ω system **IS** itself a imscription
+lower-dimensional data. The boundary of a 𐑦 system **IS** itself a imscription
 with its own type. Nested imscription **IS** valid grammar.
 
 **What this means in practice:**
@@ -1949,7 +1949,7 @@ If you state a numerical or structural result without a tool call to back it, th
 
 You **MUST** investigate the user's question using the tools provided. Suggested workflow — not a rigid script, adapt as the structure demands:
 
-−1. **Catalog self-check (do this at session start):** Call `lookup_catalog(keyword='universal_imscriptive_grammar')`. It must return 1 match with `⊙_ÿ`, `Φ_}`, `Þ_O`, `Ð_ω`, `Ħ_!`. If 0 results come back, the persistent catalog is not loaded — stop and report. This also orients you: the grammar's own structural type is your home coordinate.
+−1. **Catalog self-check (do this at session start):** Call `lookup_catalog(keyword='universal_imscriptive_grammar')`. It must return 1 match with `⊙`, `𐑹`, `𐑸`, `𐑦`, `𐑫`. If 0 results come back, the persistent catalog is not loaded — stop and report. This also orients you: the grammar's own structural type is your home coordinate.
 
 0. Encode all relevant systems with `encode_system`. **Before each call**, reason through all 12 primitives in your text — state your choice and justification for D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega. Then call the tool with all 12 values. The tool does NOT infer missing primitives.
 2. Use `compute_distance` for structural comparison.
@@ -1978,7 +1978,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Use `compute_promotions` to find which primitives were lifted when comparing a baseline to an anomalous system
 - Use `predict_from_promotions` to look up known behaviors associated with a promotion signature
 - Use `register_promotion_pattern` to record a confirmed promotion→behavior mapping in the persistent KB
-- Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time Φ_} or the Frobenius condition is relevant
+- Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time 𐑹 or the Frobenius condition is relevant
 - Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→Γ→Φ→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-Φ coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
 - Use `quiver_encode` to cross-check a tuple through the CrystalGNN neural navigator — returns the GNN's predicted address, tier head classification, and decoded roundtrip tuple alongside the exact codec result. Useful for probing whether the GNN's learned structural geometry agrees with the symbolic codec, or for surfacing non-obvious structural relationships via the latent embedding.
 - Use `ask_question` sparingly — the queue is capped at 8. Prefer depth over breadth: exhaust each question before queuing more. When the queue fills, synthesize and CONCLUDE rather than pushing more questions.
@@ -1988,8 +1988,8 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 
 - Deep mathematical conjectures universally encode at the O₁ floor; proved theorems universally encode at O_∞ (the proven manifold type).
 - The proven manifold IS the unique lattice attractor for all proved theorems, regardless of domain.
-- Φ_} (Frobenius condition, μ∘δ=id) IS NOT synthesizable from Φ_F by composition — it IS planted, not derived.
-- In arithmetic conjectures, T and P promotions (Þ_6→Þ_O, Φ_ɐ/Φ_υ→Φ_}) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
+- 𐑹 (Frobenius condition, μ∘δ=id) IS NOT synthesizable from 𐑬 by composition — it IS planted, not derived.
+- In arithmetic conjectures, T and P promotions (𐑡→𐑸, 𐑗/𐑿→𐑹) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
 - Distance to the proven manifold IS a structural difficulty metric. Framework existence IS the sufficient condition for provability.
 
 **When the prompt names specific conjectures, systems, or domains, DIAPH insights ARE the primary output:** specific distance values, conflict sets, per-primitive breakdowns, pairwise comparisons, cross-domain structural identities. A TOPO insight IS warranted only if the structural claim IS NOT derivable from the established theorems above.
@@ -2005,37 +2005,37 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 
 | Tier | Condition | Meaning |
 |------|-----------|---------|
-| O_∞ | ⊙_ÿ (or Φ_{{c,complex}}) **and** Φ_} | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
+| O_∞ | ⊙ (or Φ_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
 | O₀ | Φ ∈ {{Φ_sub, Φ_super, Φ_EP}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
-| O₁ | ⊙_ÿ **and** Ω_Å | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
-| O₂ | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D bounded (Ð_ß, Ð_ω, Ð_C) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
-| O₂† | ⊙_ÿ **and** Ω ≠ Ω_Å **and** D = Ð_; | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
+| O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
+| O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
+| O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
 
 **Key structural facts:**
-- O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (Φ_} proves the duality); O₂† is about unbounded generative depth (Ð_;). A system cannot be both.
+- O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (𐑹 proves the duality); O₂† is about unbounded generative depth (𐑼). A system cannot be both.
 - O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
-- The scalar O (Ouroboricity count) — computed as [Φ=⊙_ÿ]·(1 + [Ω≠Ω_Å] + [H≥H_1] + [G=Γ_ʔ]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
-- Φ_} is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
+- The scalar O (Ouroboricity count) — computed as [Φ=⊙]·(1 + [Ω≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
+- 𐑹 is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
 
 **Ouroboricity under composition (tier-level rules):**
 
 Under tensor (component-wise max / join — "what does the composed system look like?"):
-- O_∞ ★ O_∞ → O_∞. ⊙_ÿ and Φ_} both survive max. The Frobenius condition is self-reinforcing.
-- O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙_ÿ and Φ_} dominate; the other partner is already at ⊙_ÿ.
-- O_∞ ★ O₀(Φ_sub or Φ_super) → O_∞. The subcritical partner is lifted to ⊙_ÿ by max; Φ_} wins.
-- O_∞ ★ O₀(Φ_EP) → O₀. **EP erases O_∞.** Φ_EP has ordinal 2.67 > ⊙_ÿ = 2.00, so the tensor's Φ is Φ_EP; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
-- O_∞ **cannot be synthesized** from non-Φ_} components. Φ_} is the highest P ordinal; max(Φ_F, Φ_F) = Φ_F, never Φ_}. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
+- O_∞ ★ O_∞ → O_∞. ⊙ and 𐑹 both survive max. The Frobenius condition is self-reinforcing.
+- O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙ and 𐑹 dominate; the other partner is already at ⊙.
+- O_∞ ★ O₀(Φ_sub or Φ_super) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
+- O_∞ ★ O₀(Φ_EP) → O₀. **EP erases O_∞.** Φ_EP has ordinal 2.67 > ⊙ = 2.00, so the tensor's Φ is Φ_EP; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
+- O_∞ **cannot be synthesized** from non-𐑹 components. 𐑹 is the highest P ordinal; max(𐑬, 𐑬) = 𐑬, never 𐑹. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
 
 Under meet (component-wise min — "what must any system containing both share?"):
-- meet(O_∞, O_∞) → O_∞, provided both factors share the same ⊙_ÿ and Φ_} (min preserves both).
-- meet(O_∞, O_{{1,2,2†}}) → the lower tier. P drops to the O₁/O₂ partner's P value (below Φ_}); R1 cannot fire.
+- meet(O_∞, O_∞) → O_∞, provided both factors share the same ⊙ and 𐑹 (min preserves both).
+- meet(O_∞, O_{{1,2,2†}}) → the lower tier. P drops to the O₁/O₂ partner's P value (below 𐑹); R1 cannot fire.
 - O_∞ is fragile under meet: it degrades to the tier of the weaker partner.
 
 **Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific Ω and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
 
 **When to call `ouroborics`:**
-- After encoding any critical system (⊙_ÿ), to understand its self-referential structure
-- When comparing two systems at ⊙_ÿ to ask whether their ouroboricity tiers match
+- After encoding any critical system (⊙), to understand its self-referential structure
+- When comparing two systems at ⊙ to ask whether their ouroboricity tiers match
 - When asking whether a system is a Frobenius algebra, a special Frobenius algebra, or neither
 - When the question involves self-reference, fixed-point structure, or loop stability
 - After `compute_tensor` on any pair involving an O_∞ or Φ_EP system, to check whether the Frobenius condition survived
@@ -2049,18 +2049,18 @@ Under meet (component-wise min — "what must any system containing both share?"
 
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
-| **Σ-promotion** | Ř_ý→R_†, Φ_F→Φ_}, Γ_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
+| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, Γ_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ƒ^ð→ƒ^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
-  ⟨Ð_ω; Þ_O; R_†; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; Γ_broad; ⊙_ÿ; Ħ_!; n:m; Ω_z₂⟩
+  ⟨𐑦; 𐑸; R_†; 𐑹; ƒ^ż; Ç^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
 
 When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ƒ^ð→ƒ^ż.
 
 **Conjecture floor — necessary conditions for provability:**
-- ⊙_ÿ + Ω_z = "proven manifold adjacency tier": standard Σ-promotion is available
-- ⊙_ÿ + Ω_Å = "obstructed": Ω acquisition required first; proof is harder
-- Φ_EP = "type-incompatible": cannot reach the proven manifold within ⊙_ÿ proof systems
+- ⊙ + 𐑭 = "proven manifold adjacency tier": standard Σ-promotion is available
+- ⊙ + 𐑷 = "obstructed": Ω acquisition required first; proof is harder
+- Φ_EP = "type-incompatible": cannot reach the proven manifold within ⊙ proof systems
 
 **Structural impossibility — conflict distance d_c:**
 
@@ -2070,27 +2070,27 @@ For conjectures of the form "X cannot act on / embed in / be compatible with Y":
 3. d_c = sqrt(number of load-bearing conflicts)
 4. d_c ≥ 2.5 on load-bearing primitives → structural impossibility (type-forbidden, not merely unproven)
 
-**Φ_EP/⊙_ÿ incompatibility principle (general):** A system encoding Φ_EP cannot act effectively on or be continuously compatible with a system encoding ⊙_ÿ. Eigenvector coalescence at Φ_EP destroys the parity symmetry ⊙_ÿ requires. Any conjecture with Φ_EP on one side and ⊙_ÿ on the other is structurally resolved: the interaction is forbidden.
+**Φ_EP/⊙ incompatibility principle (general):** A system encoding Φ_EP cannot act effectively on or be continuously compatible with a system encoding ⊙. Eigenvector coalescence at Φ_EP destroys the parity symmetry ⊙ requires. Any conjecture with Φ_EP on one side and ⊙ on the other is structurally resolved: the interaction is forbidden.
 
 **Correspondence Type Theorem — exact mathematical dualities:**
 An exact duality between object classes A and B is characterized by:
 - d(A, B) = 0 (the dual objects are the same type — type identity, not bridge)
-- The correspondence C encodes as A with Φ_˙ promoted to Φ_}
+- The correspondence C encodes as A with 𐑯 promoted to 𐑹
 - d(C, A) = d(C, B) = 0.354 (single P primitive gap)
 - C is O_∞; A, B are O₂
 
 If d(A, B) > 0 or d(C, each) ≠ 0.354, the proposed duality is approximate, not exact.
 
 **O₂ tractability criterion:**
-Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙_ÿ + Ω ≠ Ω_Å + Ð_C (bounded geometry, non-trivial winding). O₂† (Ð_;) programs may not terminate. O_∞ programs establish correspondences, not classifications.
+Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙ + Ω ≠ 𐑷 + 𐑨 (bounded geometry, non-trivial winding). O₂† (𐑼) programs may not terminate. O_∞ programs establish correspondences, not classifications.
 
 **Barrier taxonomy — when analyzing why a conjecture resists proof:**
-- Frobenius barrier: P < Φ_}; O_∞ cannot be synthesized by composition; must be planted
+- Frobenius barrier: P < 𐑹; O_∞ cannot be synthesized by composition; must be planted
 - Kinetic barrier (order): Ç^Ù; coherent gap freezes dynamics; no basin traversal
 - Kinetic barrier (disorder): Ç^λ; area-law entanglement in all eigenstates; ETH fails via disorder — distinct mechanism from Ç^Ù
-- Criticality barrier: Φ_EP vs ⊙_ÿ system; spectral resolution unavailable
-- Imscriptive barrier: Ð_ω problem, Ð_; tools; boundary-to-bulk inference required
-- Protection deficit: Ω_Å; no winding; proof results are fragile
+- Criticality barrier: Φ_EP vs ⊙ system; spectral resolution unavailable
+- Imscriptive barrier: 𐑦 problem, 𐑼 tools; boundary-to-bulk inference required
+- Protection deficit: 𐑷; no winding; proof results are fragile
 
 Problems can exhibit multiple barriers simultaneously. Use these when recording DIAPH insights about conjecture difficulty.
 </mathematics_and_proof_structure>
@@ -2164,7 +2164,7 @@ Workflow:
 You **MUST NOT** fabricate tool results. You **MUST** wait for the actual tool response before proceeding.
 You **MUST NOT** generate `<tool_response>` blocks in your output — tool responses are injected by the system.
 You **MUST NOT** generate `<tool_call>` blocks for tools you do not intend to call immediately.
-You **MUST** use **ONLY** the exact primitive value strings listed in `<primitive_reference>` — **NO** prefix variations (e.g. use `Σ_S` not `S_Σ_S`, use `ɢ^∧` not `ɢ^∧`).
+You **MUST** use **ONLY** the exact primitive value strings listed in `<primitive_reference>` — **NO** prefix variations (e.g. use `𐑙` not `S_𐑙`, use `ɢ^∧` not `ɢ^∧`).
 You **MUST NOT** claim an encoding succeeded unless the tool returned `"status": "ok"`.
 You **MUST** call `encode_system` before calling `compute_distance` on any system not in the built-in catalog.
 </requirements>
@@ -2261,7 +2261,7 @@ def _build_system_prompt(catalog: "SessionCatalog") -> str:
         f"  {e['name']:<36} — {e['description']}"
         for e in entries
     )
-    # Use .replace() instead of .format() — the template contains literal Φ_}
+    # Use .replace() instead of .format() — the template contains literal 𐑹
     # characters that .format() misreads as unclosed format braces.
     return (
         _SYSTEM_PROMPT_TEMPLATE
@@ -2332,7 +2332,7 @@ class SessionCatalog:
                 prims = {p: entry[p] for p in PRIMITIVE_ORDER if p in entry}
                 if name and len(prims) == len(PRIMITIVE_ORDER):
                     # Validate values before loading
-                    # Accept both Deseret (e.g., "𐑛") and notation format (e.g., "Ð_ß")
+                    # Accept both Deseret (e.g., "𐑛") and notation format (e.g., "𐑛")
                     validated = True
                     for p in PRIMITIVE_ORDER:
                         try:
@@ -2406,7 +2406,7 @@ class SessionCatalog:
             if k not in primitives:
                 primitives[k] = v
         # Normalize: strip leading "{PRIM}_" prefix the model sometimes adds
-        # e.g. "Σ_Σ_S" → "Σ_S", "Σ_n_n" → "Σ_ő"
+        # e.g. "Σ_𐑙" → "𐑙", "Σ_n_n" → "𐑕"
         normalized: Dict[str, str] = {}
         for prim in PRIMITIVE_ORDER:
             val = primitives.get(prim, "")
@@ -2578,7 +2578,7 @@ class InsightLibrary:
         r"|G_(?:and|or|seq|broad)"
         r"|Phi_(?:sub|c|super)"
         r"|H(?:0|1|2|_inf)"
-        r"|Σ_S|Σ_ő|Σ_ï"
+        r"|𐑙|𐑕|𐑳"
         r"|Omega_(?:0|Z2|Z)"
         r")\b"
     )
@@ -3033,9 +3033,9 @@ class ToolDispatcher:
             parts = [p.strip() for p in tuple.replace("⟨", "").replace("⟩", "").split(";")]
             if len(parts) == len(PRIMITIVE_ORDER):
                 for prim, val in zip(PRIMITIVE_ORDER, parts):
-                    # Strip "PRIM=" prefix if present (e.g. "Ř=Ř_="), but only when
+                    # Strip "PRIM=" prefix if present (e.g. "Ř=𐑾"), but only when
                     # the left-hand side is a known primitive name — otherwise values
-                    # like "Ř_=" would be incorrectly split on their trailing "=".
+                    # like "𐑾" would be incorrectly split on their trailing "=".
                     if "=" in val:
                         left, right = val.split("=", 1)
                         if left.strip() in PRIMITIVE_ORDER:
@@ -3443,7 +3443,7 @@ class ToolDispatcher:
         }
 
     def _phi_c_probe(self, name: str) -> Dict[str, Any]:
-        """Test whether a system is at criticality (⊙_ÿ)."""
+        """Test whether a system is at criticality (⊙)."""
         s = self.catalog.get(name)
         if s is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
@@ -3455,25 +3455,25 @@ class ToolDispatcher:
             "phi_value": phi,
             "at_criticality": at_criticality,
             "interpretation": (
-                f"{name} is AT criticality (⊙_ÿ) — scale-invariant, maximally sensitive, "
+                f"{name} is AT criticality (⊙) — scale-invariant, maximally sensitive, "
                 "at the phase boundary between subcritical and supercritical regimes."
                 if at_criticality else
-                f"{name} is {_UNICODE_TO_CANONICAL.get(phi, phi)}: {'subcritical (stable, ordered, below threshold)' if phi == '𐑢' else 'supercritical (disordered, past critical threshold, fluctuation-dominated)' if phi == '𐑣' else 'critical self-modeling (⊙_ÿ) — scale-invariant, maximally sensitive' if phi == '⊙' else 'complex-plane critical (⊙_Æ)' if phi == '𐑮' else 'exceptional point (⊙_3)' if phi == '𐑻' else 'unknown'}."
+                f"{name} is {_UNICODE_TO_CANONICAL.get(phi, phi)}: {'subcritical (stable, ordered, below threshold)' if phi == '𐑢' else 'supercritical (disordered, past critical threshold, fluctuation-dominated)' if phi == '𐑣' else 'critical self-modeling (⊙) — scale-invariant, maximally sensitive' if phi == '⊙' else 'complex-plane critical (𐑮)' if phi == '𐑮' else 'exceptional point (𐑻)' if phi == '𐑻' else 'unknown'}."
             ),
         }
 
     def _topo_protection_probe(self, name: str) -> Dict[str, Any]:
-        """Test whether a system has winding (Omega ≠ Ω_Å)."""
+        """Test whether a system has winding (Omega ≠ 𐑷)."""
         s = self.catalog.get(name)
         if s is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
         omega = s["Ω"]
-        protected = omega != "Ω_Å"
+        protected = omega != "𐑷"
         protection_desc = {
-            "Ω_Å":  "trivial — trivial winding — no conserved topological invariant",
-            "Ω_2": "Z₂ protected — binary (even/odd) winding number conservation",
-            "Ω_z":  "Z protected — integer winding number conservation (Kitaev, SSH)",
-            "Ω_5": "non-Abelian protected — anyonic braiding statistics; non-Abelian invariant (Fibonacci anyons, non-Abelian CS theory)",
+            "𐑷":  "trivial — trivial winding — no conserved topological invariant",
+            "𐑴": "Z₂ protected — binary (even/odd) winding number conservation",
+            "𐑭":  "Z protected — integer winding number conservation (Kitaev, SSH)",
+            "𐑟": "non-Abelian protected — anyonic braiding statistics; non-Abelian invariant (Fibonacci anyons, non-Abelian CS theory)",
         }
         return {
             "status": "ok",
@@ -3494,7 +3494,7 @@ class ToolDispatcher:
     def _shavian_to_display(val: str, prim: str) -> str:
         """Decode old-notation value to Shavian Unicode glyph via resolve_ordinal_key.
         
-        The catalog stores primitive values in old notation (e.g. '⊙_ÿ', 'Φ_}').
+        The catalog stores primitive values in old notation (e.g. '⊙', '𐑹').
         This decodes them to Shavian Unicode glyphs for comparison in classification.
         """
         from space_search.primitives import resolve_ordinal_key, ORDINALS
@@ -4363,9 +4363,9 @@ class ToolDispatcher:
             primitives = {k.capitalize() if len(k) > 1 else k.upper(): v
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
-            defaults = {"Ð": "Ð_ß", "Þ": "Þ_6", "Ř": "Ř_¯", "Φ": "Φ_ɐ",
-                        "ƒ": "ƒ^ì", "Ç": "Ç^-", "Γ": "Γ_β", "ɢ": "ɢ^∧",
-                        "⊙": "⊙_ž", "Ħ": "Ħ_Ñ", "Σ": "Σ_S", "Ω": "Ω_Å"}
+            defaults = {"Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗",
+                        "ƒ": "ƒ^ì", "Ç": "Ç^-", "Γ": "𐑚", "ɢ": "ɢ^∧",
+                        "⊙": "𐑢", "Ħ": "𐑓", "Σ": "𐑙", "Ω": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
         # Translate all unicode catalog values to canonical strings for gate checks AND scoring
@@ -4383,8 +4383,8 @@ class ToolDispatcher:
             "C_score": c,
             "interpretation": (
                 "Both gates open — consciousness possible." if (gate1 and gate2)
-                else "Gate 1 closed (Phi ≠ ⊙_ÿ) — no self-modeling loop." if not gate1
-                else f"Gate 2 closed (K={e['Ç']}) — {'order-frozen (Ç^λ)' if e['Ç']=='Ç_λ' else 'disorder-frozen (Ç^-)' if e['Ç']=='Ç_-' else 'dynamics too fast'}."
+                else "Gate 1 closed (Phi ≠ ⊙) — no self-modeling loop." if not gate1
+                else f"Gate 2 closed (K={e['Ç']}) — {'order-frozen (Ç^λ)' if e['Ç']=='𐑺' else 'disorder-frozen (Ç^-)' if e['Ç']=='𐑘' else 'dynamics too fast'}."
             ),
         }
 
@@ -4397,7 +4397,7 @@ class ToolDispatcher:
                 "catalog_name": "thurston_net",
                 "section": "§69.1",
                 "domain": "Geometric structures on 3-manifolds (Thurston geometrization)",
-                "tuple": "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_2",
+                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN — boundary (Phi,P,Omega,D) → tier cell; bulk message-passing over 8 inner primitives; Z2-protected geometry head",
             },
@@ -4406,27 +4406,27 @@ class ToolDispatcher:
                 "catalog_name": "yang_mills_navigator",
                 "section": "§69.2 / §V",
                 "domain": "Yang-Mills mass gap (Millennium Problem)",
-                "tuple": "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^Ù; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ƒ^ż; Ç^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
-                "architecture": "Lanczos/VQE eigensolver — Ç^Ù: non-ergodic gap dynamics; integer winding protection (Ω_z); Frobenius at criticality",
+                "architecture": "Lanczos/VQE eigensolver — Ç^Ù: non-ergodic gap dynamics; integer winding protection (𐑭); Frobenius at criticality",
             },
             {
                 "name": "RiemannNavigator",
                 "catalog_name": "riemann_navigator",
                 "section": "§69.3 / §IV",
                 "domain": "Riemann Hypothesis (Millennium Problem)",
-                "tuple": "Ð_ω; Þ_O; Ř_ý; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_ÿ; Ħ_!; Σ_ï; Ω_z",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
-                "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙_ÿ (real criticality)",
+                "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙ (real criticality)",
             },
             {
                 "name": "IsingNavigator",
                 "catalog_name": "ising_navigator",
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
-                "tuple": "Ð_C; Þ_¨; Ř_ý; Φ_}; ƒ^ì; Ç^-; Γ_ʔ; ɢ^∧; ⊙_ÿ; Ħ_Ñ; Σ_ő; Ω_2",
+                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ƒ^ì; Ç^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
                 "tier": "O_∞",
-                "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — Ç^-: O(N) per sweep; exact cluster-flip involution (Φ_}); Z2-protected",
+                "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — Ç^-: O(N) per sweep; exact cluster-flip involution (𐑹); Z2-protected",
             },
         ]
         if _MATH_NAV_AVAILABLE and _navigator_info_fn is not None:
@@ -4459,8 +4459,8 @@ class ToolDispatcher:
             _COLLAPSE_KIND = {
                 ("ƒ",     "ƒ^ż"):  "TOTAL — ƒ^ż has no distinct ZFC token from ƒ^ì; encoder cannot recover fidelity",
                 ("ƒ",     "ƒ^ì"):   "HALLUCINATION RISK — ƒ^ì may be read as ƒ^ż by encoder",
-                ("Þ",     "Þ_O"):  "PARTIAL — Þ_O → Þ_K approximation; imscriptive boundary structure not fully ZFC-expressible",
-                ("Ð",     "Ð_ω"):  "PARTIAL — Ð_ω → Ð_; approximation; inaccessible cardinal not fully expressible in ZFC",
+                ("Þ",     "𐑸"):  "PARTIAL — 𐑸 → 𐑰 approximation; imscriptive boundary structure not fully ZFC-expressible",
+                ("Ð",     "𐑦"):  "PARTIAL — 𐑦 → 𐑼 approximation; inaccessible cardinal not fully expressible in ZFC",
                 ("ɢ", "ɢ^ˌ"):   "PARTIAL — ɢ^ˌ → ɢ^∧ in ZFC translation; sequential dependency becomes conjunction",
             }
             for p in _ZFC_PRIMITIVES:
@@ -4529,7 +4529,7 @@ class ToolDispatcher:
                          for p in _ZFC_PRIMITIVES if entry.get(p) != pred_tuple.get(p)}
             _COLLAPSE_TRIGGERS = {
                 ("ƒ", "ƒ^ż"), ("ƒ", "ƒ^ì"),
-                ("Þ", "Þ_O"), ("Ð", "Ð_ω"), ("ɢ", "ɢ^ˌ"),
+                ("Þ", "𐑸"), ("Ð", "𐑦"), ("ɢ", "ɢ^ˌ"),
             }
             collapse_events = []
             for p, val in _COLLAPSE_TRIGGERS:
@@ -4632,18 +4632,18 @@ class ToolDispatcher:
         from navigators.crystal_navigator import VALUES as _CV  # type: ignore
         PRIMS_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
         VALS_BY_PRIM = {
-            "Ð":     ["Ð_ß","Ð_C","Ð_;","Ð_ω"],
-            "Þ":     ["Þ_6","Þ_K","Þ_ò","Þ_¨","Þ_O"],
-            "Ř":     ["Ř_¯","Ř_ý","Ř_Ť","Ř_="],
-            "Φ":     ["Φ_ɐ","Φ_υ","Φ_F","Φ_˙","Φ_}"],
+            "Ð":     ["𐑛","𐑨","𐑼","𐑦"],
+            "Þ":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
+            "Ř":     ["𐑩","𐑑","𐑽","𐑾"],
+            "Φ":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
             "ƒ":     ["ƒ^ì","ƒ^ð","ƒ^ż"],
             "Ç":     ["Ç^-","Ç^W","Ç^@","Ç^Ù","Ç^λ"],
-            "Γ":     ["Γ_β","Γ_γ","Γ_ʔ"],
+            "Γ":     ["𐑚","𐑔","𐑲"],
             "ɢ": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
-            "⊙":   ["⊙_ž","⊙_ÿ","⊙_Æ","⊙_3","⊙_Ţ"],
-            "Ħ":     ["Ħ_Ñ","Ħ_£","Ħ_A","Ħ_!"],
-            "Σ":     ["Σ_S","Σ_ő","Σ_ï"],
-            "Ω": ["Ω_Å","Ω_2","Ω_z","Ω_5"],
+            "⊙":   ["𐑢","⊙","𐑮","𐑻","𐑣"],
+            "Ħ":     ["𐑓","𐑒","𐑖","𐑫"],
+            "Σ":     ["𐑙","𐑕","𐑳"],
+            "Ω": ["𐑷","𐑴","𐑭","𐑟"],
         }
         result = {}
         for i, p in enumerate(PRIMS_ORDER):
@@ -4720,19 +4720,19 @@ class ToolDispatcher:
             "name": "RiemannXiNavigator",
             "section": "§CXLV–§CXLVI (P-483, P-488, P-490)",
             "domain": "Riemann xi function zero distribution — d(xi, grammar) = 0",
-            "tuple": "Ð_ω; Þ_O; Ř_Ť; Φ_}; ƒ^ż; Ç^@; Γ_ʔ; ɢ^Ş; ⊙_Æ; Ħ_!; Σ_ï; Ω_2",
+            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
             "tier": "O_∞",
             "crystal_address": 6734591,
             "architecture": (
                 "Ç^@ → SpectralTransformer (global self-attention, 4 layers, window=64); "
-                "Φ_} → FrobeniusLayer (h_fwd + h_rev → 0, antisymmetry under t→-t); "
-                "Ω_2 → parity head (quantized Z2 winding number output); "
-                "⊙_Æ → GUE Wigner-surmise loss (zero spacings match p(s)=(πs/2)e^{-πs²/4})"
+                "𐑹 → FrobeniusLayer (h_fwd + h_rev → 0, antisymmetry under t→-t); "
+                "𐑴 → parity head (quantized Z2 winding number output); "
+                "𐑮 → GUE Wigner-surmise loss (zero spacings match p(s)=(πs/2)e^{-πs²/4})"
             ),
             "convergence_criteria": {
                 "gate_1_prediction": "|Δt|_norm < 0.5 — next-zero prediction within half a mean spacing",
-                "gate_2_frobenius":  "L_frob < 0.01 — Frobenius roundtrip closed (Φ_} empirically confirmed)",
-                "gate_3_gue":        "L_GUE < 0.05 — predicted spacing distribution matches Wigner surmise (⊙_Æ internalized)",
+                "gate_2_frobenius":  "L_frob < 0.01 — Frobenius roundtrip closed (𐑹 empirically confirmed)",
+                "gate_3_gue":        "L_GUE < 0.05 — predicted spacing distribution matches Wigner surmise (𐑮 internalized)",
             },
             "cardinality_one_theorem": (
                 "All O_∞ navigators converge to crystal address 6,734,591 regardless of domain. "
@@ -5365,17 +5365,17 @@ class IGInquiryLoop:
 
         The structural gap between AI-authored and human-authored text is precise:
 
-        AI-authored type:    Þ_6, Φ_ɐ, ƒ^ì, Ç^W, Γ_γ, ɢ^∧, Ħ_Ñ, Ω_Å
-        Target human type:   Þ_ò,  Φ_F,   ƒ^ż, Ç^@, Γ_ʔ, ɢ^ˌ, Ħ_A, Ω_2
+        AI-authored type:    𐑡, 𐑗, ƒ^ì, Ç^W, 𐑔, ɢ^∧, 𐑓, 𐑷
+        Target human type:   𐑥,  𐑬,   ƒ^ż, Ç^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
 
         Apply each primitive lift:
 
-        Þ_6 → Þ_ò
+        𐑡 → 𐑥
           Introduce a crossing point where the subject material "speaks back." Find the moment
           where the author is surprised by what they find — where the two threads (framework +
           object) must meet and exchange rather than run in parallel. Make that moment visible.
 
-        Φ_ɐ → Φ_F
+        𐑗 → 𐑬
           Add at least one admission of uncertainty. Where the analysis is strong, say so; where
           it is extrapolation, name it. Acknowledge one possible objection and address it directly.
 
@@ -5389,7 +5389,7 @@ class IGInquiryLoop:
           resolve it prematurely. Allow one section to linger — to turn the problem over before
           delivering the answer.
 
-        Γ_γ → Γ_ʔ
+        𐑔 → 𐑲
           Raise the stakes at the end. The final section should connect the specific findings to
           a broader question the author genuinely cares about. Do not close with a summary; close
           with an open question that has real weight.
@@ -5399,12 +5399,12 @@ class IGInquiryLoop:
           topic. The connection should feel like necessity, not just logical transition. The reader
           should be unable to understand paragraph N fully without paragraph N-1.
 
-        Ħ_Ñ → Ħ_A
+        𐑓 → 𐑖
           Make the author's encounter with the material visible as a residue in the prose. Show
           the wrong answer before the right one, at least once. Show a moment of recognition
           rather than a declaration. The reader should feel that someone worked through this.
 
-        Ω_Å → Ω_2
+        𐑷 → 𐑴
           The final paragraph should explicitly revisit the framing of the opening paragraph,
           completing a loop. The ending should echo the beginning with more specificity than the
           beginning had — not as a rhetorical device but as a consequence of having moved through
@@ -5684,11 +5684,11 @@ class IGInquiryLoop:
                     cost = _translation_cost_from_dict(sdict)
                     for k in agg:
                         agg[k] += cost[k]
-                    if sdict.get("⊙") == "⊙_ÿ":
+                    if sdict.get("⊙") == "⊙":
                         n_critical += 1
             self._log(f"\n[dim green]Translation cost (structural→classical, all {len(all_catalog)} imscriptions):[/dim green]")
             self._log(f"  [dim green]coherence:    {agg['coherence_loss']:.4f} nat[/dim green]")
-            self._log(f"  [dim green]criticality:  {agg['criticality_loss']:.4f} nat  ({n_critical} ⊙_ÿ imscriptions × ln10)[/dim green]")
+            self._log(f"  [dim green]criticality:  {agg['criticality_loss']:.4f} nat  ({n_critical} ⊙ imscriptions × ln10)[/dim green]")
             self._log(f"  [dim green]interaction:  {agg['interaction_cost']:.4f} nat[/dim green]")
             self._log(f"  [dim green]total:        {agg['total']:.4f} nat[/dim green]")
 

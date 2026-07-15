@@ -1,6 +1,6 @@
 """
 Composer Core — Core algebraic operations for ouroborotic primitive composition
-Schema: ouroborotic_primitive_composition_schema (O₂, ⊙_ÿ, Φ_F, Ω_z)
+Schema: ouroborotic_primitive_composition_schema (O₂, ⊙, 𐑬, 𐑭)
 
 Provides: tensor, meet, join, distance wrappers using imscrbgrmr.algebra
 """

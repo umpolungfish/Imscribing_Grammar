@@ -7,18 +7,18 @@ protein(s) after processing, using the Imscribing Grammar's 12-primitive
 amino acid mapping.
 
 Structural mapping (12 promoted AAs → primitives):
-    Met (M) → Ð_ω  — Scope/dimensionality
-    Trp (W) → Þ_O  — Topology
-    Cys (C) → Ř_=  — Reversibility (disulfide bonds)
-    Tyr (Y) → Φ_υ  — Parity (phosphorylation switch)
-    Phe (F) → ƒ_ż  — Force (hydrophobic ceiling)
-    Ile (I) → Ç_@  — Kinetics (β-branching)
-    His (H) → Γ_ʔ  — Grammar (pH-gated catalysis)
-    Asn (N) → ɢ_ˌ  — Interaction (N-glycosylation)
-    Gln (Q) → ⊙_ÿ  — Criticality (metabolic regulation)
-    Asp (D) → Ħ_A  — Chirality (substrate selectivity)
-    Lys (K) → Σ_S  — Entropy (variability/acetylation)
-    Glu (E) → Ω_z  — Winding/closure (C-terminal marker)
+    Met (M) → 𐑦  — Scope/dimensionality
+    Trp (W) → 𐑸  — Topology
+    Cys (C) → 𐑾  — Reversibility (disulfide bonds)
+    Tyr (Y) → 𐑿  — Parity (phosphorylation switch)
+    Phe (F) → 𐑐  — Force (hydrophobic ceiling)
+    Ile (I) → 𐑧  — Kinetics (β-branching)
+    His (H) → 𐑲  — Grammar (pH-gated catalysis)
+    Asn (N) → 𐑠  — Interaction (N-glycosylation)
+    Gln (Q) → ⊙  — Criticality (metabolic regulation)
+    Asp (D) → 𐑖  — Chirality (substrate selectivity)
+    Lys (K) → 𐑙  — Entropy (variability/acetylation)
+    Glu (E) → 𐑭  — Winding/closure (C-terminal marker)
 
 Version: 3.0 — Multi-step processing, amidation, disulfide prediction
 """
@@ -31,18 +31,18 @@ from collections import Counter
 # ─── AA → Primitive Mapping ───────────────────────────────────────────────
 
 PRIMITIVE_MAP = {
-    'M': ('Ð_ω', 'Dimensionality', 'Start codon / scope'),
-    'W': ('Þ_O', 'Topology', 'Indole ring — topological constraint'),
-    'C': ('Ř_=', 'Reversibility', 'Disulfide bond — reversible crosslink'),
-    'Y': ('Φ_υ', 'Parity', 'Phosphorylation switch'),
-    'F': ('ƒ_ż', 'Force', 'Hydrophobic ceiling'),
-    'I': ('Ç_@', 'Kinetics', 'β-branching — slow folding'),
-    'H': ('Γ_ʔ', 'Grammar', 'pH-gated catalysis'),
-    'N': ('ɢ_ˌ', 'Interaction', 'N-glycosylation site'),
-    'Q': ('⊙_ÿ', 'Criticality', 'Metabolic regulation gate'),
-    'D': ('Ħ_A', 'Chirality', 'Substrate selectivity'),
-    'K': ('Σ_S', 'Entropy', 'Variable / acetylation site'),
-    'E': ('Ω_z', 'Winding', 'Closure / C-terminal marker'),
+    'M': ('𐑦', 'Dimensionality', 'Start codon / scope'),
+    'W': ('𐑸', 'Topology', 'Indole ring — topological constraint'),
+    'C': ('𐑾', 'Reversibility', 'Disulfide bond — reversible crosslink'),
+    'Y': ('𐑿', 'Parity', 'Phosphorylation switch'),
+    'F': ('𐑐', 'Force', 'Hydrophobic ceiling'),
+    'I': ('𐑧', 'Kinetics', 'β-branching — slow folding'),
+    'H': ('𐑲', 'Grammar', 'pH-gated catalysis'),
+    'N': ('𐑠', 'Interaction', 'N-glycosylation site'),
+    'Q': ('⊙', 'Criticality', 'Metabolic regulation gate'),
+    'D': ('𐑖', 'Chirality', 'Substrate selectivity'),
+    'K': ('𐑙', 'Entropy', 'Variable / acetylation site'),
+    'E': ('𐑭', 'Winding', 'Closure / C-terminal marker'),
 }
 
 # Remaining 8 AAs have zero primitive activation
@@ -52,25 +52,25 @@ ZERO_PRIMITIVE_AAS = {'A', 'G', 'P', 'S', 'T', 'V', 'L', 'R'}
 
 AA_DATA = {
     'A': ('Ala', 'Alanine', None, 'methyl — minimal hydrophobic'),
-    'C': ('Cys', 'Cysteine', ('Ř_=', 'Reversibility', 'Disulfide bond — reversible crosslink'), 'thiol — redox-sensitive'),
-    'D': ('Asp', 'Aspartate', ('Ħ_A', 'Chirality', 'Substrate selectivity'), 'carboxyl — negative charge'),
-    'E': ('Glu', 'Glutamate', ('Ω_z', 'Winding', 'Closure / C-terminal marker'), 'carboxyl — longer arm'),
-    'F': ('Phe', 'Phenylalanine', ('ƒ_ż', 'Force', 'Hydrophobic ceiling'), 'benzyl — strong hydrophobic'),
+    'C': ('Cys', 'Cysteine', ('𐑾', 'Reversibility', 'Disulfide bond — reversible crosslink'), 'thiol — redox-sensitive'),
+    'D': ('Asp', 'Aspartate', ('𐑖', 'Chirality', 'Substrate selectivity'), 'carboxyl — negative charge'),
+    'E': ('Glu', 'Glutamate', ('𐑭', 'Winding', 'Closure / C-terminal marker'), 'carboxyl — longer arm'),
+    'F': ('Phe', 'Phenylalanine', ('𐑐', 'Force', 'Hydrophobic ceiling'), 'benzyl — strong hydrophobic'),
     'G': ('Gly', 'Glycine', None, 'minimal — backbone flexibility'),
-    'H': ('His', 'Histidine', ('Γ_ʔ', 'Grammar', 'pH-gated catalysis'), 'imidazole — pH sensor'),
-    'I': ('Ile', 'Isoleucine', ('Ç_@', 'Kinetics', 'β-branching — slow folding'), 'β-branched — sterics'),
-    'K': ('Lys', 'Lysine', ('Σ_S', 'Entropy', 'Variable / acetylation site'), 'amine — positive charge'),
+    'H': ('His', 'Histidine', ('𐑲', 'Grammar', 'pH-gated catalysis'), 'imidazole — pH sensor'),
+    'I': ('Ile', 'Isoleucine', ('𐑧', 'Kinetics', 'β-branching — slow folding'), 'β-branched — sterics'),
+    'K': ('Lys', 'Lysine', ('𐑙', 'Entropy', 'Variable / acetylation site'), 'amine — positive charge'),
     'L': ('Leu', 'Leucine', None, 'hydrophobic — structural'),
-    'M': ('Met', 'Methionine', ('Ð_ω', 'Dimensionality', 'Start codon / scope'), 'thioether — start'),
-    'N': ('Asn', 'Asparagine', ('ɢ_ˌ', 'Interaction', 'N-glycosylation site'), 'amide — glycosylation'),
+    'M': ('Met', 'Methionine', ('𐑦', 'Dimensionality', 'Start codon / scope'), 'thioether — start'),
+    'N': ('Asn', 'Asparagine', ('𐑠', 'Interaction', 'N-glycosylation site'), 'amide — glycosylation'),
     'P': ('Pro', 'Proline', None, 'puckered — backbone break'),
-    'Q': ('Gln', 'Glutamine', ('⊙_ÿ', 'Criticality', 'Metabolic regulation gate'), 'amide — longer arm'),
+    'Q': ('Gln', 'Glutamine', ('⊙', 'Criticality', 'Metabolic regulation gate'), 'amide — longer arm'),
     'R': ('Arg', 'Arginine', None, 'guanidino — positive charge'),
     'S': ('Ser', 'Serine', None, 'hydroxyl — phosphorylation'),
     'T': ('Thr', 'Threonine', None, 'β-hydroxyl — O-glycosylation'),
     'V': ('Val', 'Valine', None, 'β-branched — hydrophobic'),
-    'W': ('Trp', 'Tryptophan', ('Þ_O', 'Topology', 'Indole ring — topological constraint'), 'indole — large aromatic'),
-    'Y': ('Tyr', 'Tyrosine', ('Φ_υ', 'Parity', 'Phosphorylation switch'), 'phenol — phosphorylation'),
+    'W': ('Trp', 'Tryptophan', ('𐑸', 'Topology', 'Indole ring — topological constraint'), 'indole — large aromatic'),
+    'Y': ('Tyr', 'Tyrosine', ('𐑿', 'Parity', 'Phosphorylation switch'), 'phenol — phosphorylation'),
 }
 
 PRIMITIVE_NAMES = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']

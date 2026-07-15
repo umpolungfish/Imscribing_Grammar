@@ -46,7 +46,7 @@ WEIGHTS = {
 }
 
 PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
-# Subscript-to-Deseret mapping for catalog values in notation format (e.g., "Ð_ß" -> Deseret key)
+# Subscript-to-Deseret mapping for catalog values in notation format (e.g., "𐑛" -> Deseret key)
 # The catalog stores values as Primitive_subscript/^superscript, but ORDINALS
 # uses Deseret alphabet characters (U+1045x-U+1047x).
 SUBSCRIPT_TO_DESERET = {

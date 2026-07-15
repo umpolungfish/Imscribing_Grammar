@@ -307,8 +307,8 @@ def step_protein_classify():
     
     print()
     print("  ── MB-NC Protein Classification ──")
-    print("  WWFF domain classification: Force (ƒ_ż) — hydrophobic ceiling")
-    print("  NanoLuc classification:     Criticality (⊙_ÿ) — metabolic gate")
+    print("  WWFF domain classification: Force (𐑐) — hydrophobic ceiling")
+    print("  NanoLuc classification:     Criticality (⊙) — metabolic gate")
     print("  Composite:                  D=𐑨, T=𐑡, K=𐑧 (slow kinetics)")
     print()
     print("  Each amino acid maps to one of 12 IG primitives.")

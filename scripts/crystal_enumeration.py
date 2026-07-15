@@ -11,13 +11,13 @@ ouroboricity tier (which is determined entirely by Φ, P, Ω, D), and generates 
 PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
-  R1: Φ ∈ {⊙_ÿ, ⊙_Æ} AND P = Φ_}  →  O_∞
+  R1: Φ ∈ {⊙, 𐑮} AND P = 𐑹  →  O_∞
   R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O₀
-  R3: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω = Ω_Å       →  O₁
-  R4: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
-      AND D ∈ {Ð_ß, Ð_C, Ð_ω}      →  O₂
-  R5: Φ ∈ {⊙_ÿ, ⊙_Æ} AND Ω ≠ Ω_Å
-      AND D = Ð_;                             →  O₂†
+  R3: Φ ∈ {⊙, 𐑮} AND Ω = 𐑷       →  O₁
+  R4: Φ ∈ {⊙, 𐑮} AND Ω ≠ 𐑷
+      AND D ∈ {𐑛, 𐑨, 𐑦}      →  O₂
+  R5: Φ ∈ {⊙, 𐑮} AND Ω ≠ 𐑷
+      AND D = 𐑼                             →  O₂†
 """
 
 import json
@@ -29,37 +29,37 @@ ROOT = Path(__file__).parent
 
 # ── Canonical primitive value sets (from space_search/primitives.py) ───────────
 VALUES = {
-    "Ð":     ["Ð_ß", "Ð_C", "Ð_;", "Ð_ω"],
-    "Þ":     ["Þ_6", "Þ_K", "Þ_ò", "Þ_¨", "Þ_O"],
-    "Ř":     ["Ř_¯", "Ř_ý", "Ř_Ť", "Ř_="],
-    "Φ":     ["Φ_ɐ", "Φ_υ", "Φ_F", "Φ_˙", "Φ_}"],
+    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
     "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
     "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù"],
-    "Γ":     ["Γ_β", "Γ_γ", "Γ_ʔ"],
+    "Γ":     ["𐑚", "𐑔", "𐑲"],
     "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
-    "⊙":   ["⊙_ž", "⊙_ÿ", "⊙_Æ", "⊙_3", "⊙_Ţ"],
-    "Ħ":     ["Ħ_Ñ", "Ħ_£", "Ħ_A", "Ħ_!"],
-    "Σ":     ["Σ_S", "Σ_ő", "Σ_ï"],
-    "Ω": ["Ω_Å", "Ω_2", "Ω_z"],
+    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "Σ":     ["𐑙", "𐑕", "𐑳"],
+    "Ω": ["𐑷", "𐑴", "𐑭"],
 }
 
 PRIMS = list(VALUES.keys())
 
-CRITICAL = {"⊙_ÿ", "⊙_Æ"}
-NONCRITICAL = {"⊙_ž", "⊙_Ţ", "⊙_3"}
-BOUNDED_D = {"Ð_ß", "Ð_C", "Ð_ω"}
+CRITICAL = {"⊙", "𐑮"}
+NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
+BOUNDED_D = {"𐑛", "𐑨", "𐑦"}
 
 def tier(phi, p, omega, d):
-    if phi in CRITICAL and p == "Φ_}":
+    if phi in CRITICAL and p == "𐑹":
         return "O_∞"
     if phi in NONCRITICAL:
         return "O₀"
-    # phi is critical, p != Φ_}
-    if omega == "Ω_Å":
+    # phi is critical, p != 𐑹
+    if omega == "𐑷":
         return "O₁"
     if d in BOUNDED_D:
         return "O₂"
-    return "O₂†"   # Ð_;
+    return "O₂†"   # 𐑼
 
 
 # ── Total combinatorial space ──────────────────────────────────────────────────
@@ -106,16 +106,16 @@ print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×Γ�
 # Block  = ouroboricity tier
 
 print("\n\nPERIODIC TABLE STRUCTURE  (Period=Φ × Group=Ω, counting (Φ,P,Ω,D) tier cells)\n")
-header = f"{'Φ':18s}  {'Ω_Å':>10}  {'Ω_2':>10}  {'Ω_z':>10}  {'Dominant tier'}"
+header = f"{'Φ':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
 print(header)
 print("─" * len(header))
 
 PERIOD_LABEL = {
-    "⊙_ž":       "Φ_sub   (ordered)",
-    "⊙_ÿ":         "⊙_ÿ     (critical)",
-    "⊙_Æ": "⊙_ÿ^C   (complex-crit)",
-    "⊙_3":        "Φ_EP    (exc. point)",
-    "⊙_Ţ":     "⊙_Ţ (disordered)",
+    "𐑢":       "Φ_sub   (ordered)",
+    "⊙":         "⊙     (critical)",
+    "𐑮": "⊙^C   (complex-crit)",
+    "𐑻":        "Φ_EP    (exc. point)",
+    "𐑣":     "𐑣 (disordered)",
 }
 
 for phi in VALUES["⊙"]:
@@ -134,25 +134,25 @@ for phi in VALUES["⊙"]:
     def cell_total(omega):
         return sum(row[omega].values()) * free_count
     print(f"{PERIOD_LABEL[phi]:22s}  "
-          f"{cell_total('Ω_Å'):>10,}  "
-          f"{cell_total('Ω_2'):>10,}  "
-          f"{cell_total('Ω_z'):>10,}  "
+          f"{cell_total('𐑷'):>10,}  "
+          f"{cell_total('𐑴'):>10,}  "
+          f"{cell_total('𐑭'):>10,}  "
           f"{dominant}")
 
 
 # ── Sub-table: P axis within each critical period ─────────────────────────────
-print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙_ÿ and ⊙_Æ)\n")
-print(f"{'P value':12s}  {'Ω_Å → tier':16s}  {'Ω≠0, D_bnd → tier':22s}  {'Ω≠0, D_∞ → tier':20s}")
+print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙ and 𐑮)\n")
+print(f"{'P value':12s}  {'𐑷 → tier':16s}  {'Ω≠0, D_bnd → tier':22s}  {'Ω≠0, D_∞ → tier':20s}")
 print("─" * 75)
 
 for p in VALUES["Φ"]:
-    t_o1    = tier("⊙_ÿ", p, "Ω_Å",  "Ð_ß")
-    t_o2    = tier("⊙_ÿ", p, "Ω_2", "Ð_ß")
-    t_o2d   = tier("⊙_ÿ", p, "Ω_2", "Ð_;")
+    t_o1    = tier("⊙", p, "𐑷",  "𐑛")
+    t_o2    = tier("⊙", p, "𐑴", "𐑛")
+    t_o2d   = tier("⊙", p, "𐑴", "𐑼")
     print(f"{p:12s}  {t_o1:16s}  {t_o2:22s}  {t_o2d}")
 
 print()
-print("  → Φ_} collapses all three Ω columns to O_∞ (R1 overrides R3/R4/R5)")
+print("  → 𐑹 collapses all three Ω columns to O_∞ (R1 overrides R3/R4/R5)")
 print("  → All other P values respect the Ω/D branching (R3/R4/R5)")
 
 
@@ -162,10 +162,10 @@ with open(ROOT / "IG_catalog.json") as f:
 
 catalog_by_tier = defaultdict(list)
 for entry in catalog:
-    phi   = entry.get("⊙", "⊙_ž")
-    p     = entry.get("Φ", "Φ_ɐ")
-    omega = entry.get("Ω", "Ω_Å")
-    d     = entry.get("Ð", "Ð_ß")
+    phi   = entry.get("⊙", "𐑢")
+    p     = entry.get("Φ", "𐑗")
+    omega = entry.get("Ω", "𐑷")
+    d     = entry.get("Ð", "𐑛")
     t     = tier(phi, p, omega, d)
     catalog_by_tier[t].append(entry["name"])
 

@@ -2,7 +2,7 @@
 Imscribing Grammar Models — Canonical 12-primitive type system.
 
 Unified with the Lean 4 formalization in Imscribing Grammar/Primitives/Core.lean and
-Imscription.lean. Enum VALUES are glyph IDs (e.g. Ð_ß, Þ_6, Ħ_Ñ); field names on
+Imscription.lean. Enum VALUES are glyph IDs (e.g. 𐑛, 𐑡, 𐑓); field names on
 Imscription use the long Python-readable form with short-name properties (dim, top,
 recog, pol, gram, fid, kin, gran, crit, prot, stoi, chir) mirroring Lean.
 

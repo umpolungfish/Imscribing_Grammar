@@ -1,29 +1,23 @@
-Add `promote <a> <b>` to the CL8NK navigator
+Retire the gen-2 glyph-pair notation for bare Shavian
 
-The promotion ledger was already in there, but it was trapped: `_promo_details`
-sat as a closure inside `generate_promotions()`, wired to the one fixed ladder
-(ZFC -> ZFC_t -> ZFC_fe -> CLINK L8). That operator is general. It reports, for
-any two tuples, which primitives move, what formula fragment and atom each lands
-on, and the ordinal gap crossed.
+The primitives stand on their own now, so the old `⊙_ÿ` / `Ð_ω` / `Φ_}` forms are
+residue. Rewrote all 49 of them to their Shavian values across source: 19,645
+tokens, 670 files.
 
-So I lifted it to module level as `promo_details(t_from, t_to)` and let the fixed
-ladder call it like everything else. Then `generate_promotion_path(from, to)`
-resolves two catalog vessels and runs the same operator across them, reporting the
-promotions, the ones held fixed, the tier on each pole, and the distance. New
-`promote` action on the CLI, which needed a two-arg branch in main(), since it
-only ever handled one.
+The map was not typed. I enumerated the gen-2 tokens that actually appear in the
+corpus, paired each marker to its phonetic name, and resolved every value through
+`models.from_symbol` — so the values come from code that runs, not from a table.
+Reality arbitrated one conflict: the SOUNDS document gives `Ř_Ð`, `Γ_\`, `Σ_M`,
+but the corpus has `Ř_=`, `Γ_ʔ`, `Σ_ï` in the tens of thousands and the doc's
+variants nowhere at all. The doc is mangled; the files are the record.
 
-This is the method made callable. Imscribe both poles of a claim and the delta
-between the tuples is the proof path. The vessel and the path come from the
-Grammar for free; what is left is the gentle heat that fills the vessel.
+Left alone deliberately: `ig_outputs/` and the other run artifacts, ~455k tokens
+of it. Those runs really did emit gen-2 in May. Rewriting them would forge the
+record of what they produced, which is not tidying. The two naming documents keep
+their old-notation columns for the same reason.
 
-Run on abc: `promote abc_conjecture abc_conjecture_proven` gives 5 promotions with
-7 primitives held fixed, both poles at O2, so it is a promotion within tier rather
-than a climb. Sigma carries the whole load at a full-range gap of 1.0, landing on
-type heterogeneity. H-bar goes to ETERNAL_FIXEDPOINT, whose fragment is the close
-condition itself. R-hacek promotes to a genuine adjunction. Criticality is the
-cheapest bump on the board at 0.165. So abc reads as a stoichiometry problem with
-a fixed-point closure.
-
-Complements `imscribe proof-path`, which does the A* search over named ops and
-writes the sketch. This is just the raw pairwise readout.
+Bare `Phi` is untouched. Gen-1 `Phi` is today's ⊙, but today's `Φ` is Parity —
+those are genuinely different structures that happen to share letters, and no
+register makes them one, so every site needs reading. Contrast ⊙ appearing as
+both primitive and value, which is not a collision at all: `⊙ ≠ ⊙` is operator ≠
+operation, and it states `μ∘δ ≠ id` exactly.

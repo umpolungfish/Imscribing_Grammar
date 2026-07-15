@@ -61,19 +61,19 @@ PROGRAMS_DIR = HERE / "manuscript_programs"
 
 CORPUS_BASE = {
     'voynich': {
-        'Ð':'Ð_ω','Þ':'Þ_O','Ř':'Ř_=','Φ':'Φ_}',
-        'ƒ':'ƒ^ì','Ç':'Ç^Ù','Γ':'Γ_ʔ','ɢ':'ɢ^Ş',
-        '⊙':'⊙_ÿ','Ħ':'Ħ_!','Σ':'Σ_S','Ω':'Ω_z',
+        'Ð':'𐑦','Þ':'𐑸','Ř':'𐑾','Φ':'𐑹',
+        'ƒ':'ƒ^ì','Ç':'Ç^Ù','Γ':'𐑲','ɢ':'ɢ^Ş',
+        '⊙':'⊙','Ħ':'𐑫','Σ':'𐑙','Ω':'𐑭',
     },
     'rohonc': {
-        'Ð':'Ð_C','Þ':'Þ_¨','Ř':'Ř_Ť','Φ':'Φ_}',
-        'ƒ':'ƒ^ì','Ç':'Ç^@','Γ':'Γ_ʔ','ɢ':'ɢ^ˌ',
-        '⊙':'⊙_ÿ','Ħ':'Ħ_A','Σ':'Σ_ï','Ω':'Ω_z',
+        'Ð':'𐑨','Þ':'𐑶','Ř':'𐑽','Φ':'𐑹',
+        'ƒ':'ƒ^ì','Ç':'Ç^@','Γ':'𐑲','ɢ':'ɢ^ˌ',
+        '⊙':'⊙','Ħ':'𐑖','Σ':'𐑳','Ω':'𐑭',
     },
     'linear_a': {
-        'Ð':'Ð_C','Þ':'Þ_¨','Ř':'Ř_Ť','Φ':'Φ_}',
-        'ƒ':'ƒ^ż','Ç':'Ç^W','Γ':'Γ_ʔ','ɢ':'ɢ^ˌ',
-        '⊙':'⊙_ÿ','Ħ':'Ħ_A','Σ':'Σ_ï','Ω':'Ω_z',
+        'Ð':'𐑨','Þ':'𐑶','Ř':'𐑽','Φ':'𐑹',
+        'ƒ':'ƒ^ż','Ç':'Ç^W','Γ':'𐑲','ɢ':'ɢ^ˌ',
+        '⊙':'⊙','Ħ':'𐑖','Σ':'𐑳','Ω':'𐑭',
     },
 }
 
@@ -412,10 +412,10 @@ def _print_near(ref: str, n: int = 5):
 
 
 def _print_find(spec: str):
-    """Find elements where primitive=value, e.g. Þ=Þ_¨"""
+    """Find elements where primitive=value, e.g. Þ=𐑶"""
     _ensure_db()
     if '=' not in spec:
-        _warn("Usage: :find <primitive>=<value>   e.g.  :find Þ=Þ_¨")
+        _warn("Usage: :find <primitive>=<value>   e.g.  :find Þ=𐑶")
         return
     prim, val = spec.split('=', 1)
     prim, val = prim.strip(), val.strip()
@@ -555,7 +555,7 @@ HELP_TEXT = """
   [cyan]:corpus voynich[/cyan]        corpus-level imscription + primitive variation
   [cyan]:ig_bridge[/cyan]             full 3×3 cross-corpus distance matrix
   [cyan]:section rohonc[/cyan]        section topology breakdown
-  [cyan]:find Þ=Þ_¨[/cyan]           find elements with a specific primitive value
+  [cyan]:find Þ=𐑶[/cyan]           find elements with a specific primitive value
 
 [bold]LISTING[/bold]
   [cyan]:list voynich[/cyan]          list all folio IDs
@@ -680,7 +680,7 @@ def _dispatch(line: str) -> bool:
     # find
     if cmd == ':find':
         if len(parts) < 2:
-            _warn(":find <prim>=<val>   e.g. :find Þ=Þ_¨")
+            _warn(":find <prim>=<val>   e.g. :find Þ=𐑶")
             return True
         _print_find(parts[1])
         return True

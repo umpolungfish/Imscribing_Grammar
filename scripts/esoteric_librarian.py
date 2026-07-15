@@ -41,7 +41,7 @@ _FIELDS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', '�
 def _get_crit(entry):
     """Read criticality from entry, accepting ⊙ or ⊙ key. Normalize to ⊙_* form."""
     raw = entry.get(CRIT_LEGACY, entry.get(CRIT_MODERN, ''))
-    # If we got ⊙_ÿ, normalize to ⊙_ÿ for internal consistency
+    # If we got ⊙, normalize to ⊙ for internal consistency
     if raw.startswith(CRIT_MODERN + '_'):
         raw = CRIT_LEGACY + raw[len(CRIT_MODERN):]
     return unicodedata.normalize('NFC', raw)
@@ -133,7 +133,7 @@ _FIELD_LABELS = {
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
 
 def _friendly(glyph_id):
-    """⊙_ÿ → Phi_c (the most readable old name if available)."""
+    """⊙ → Phi_c (the most readable old name if available)."""
     # Try both ⊙_ and ⊙_ forms for lookup
     lookup = glyph_id.replace(CRIT_LEGACY + '_', CRIT_MODERN + '_')
     return _OLD_NAMES.get(lookup, glyph_id)
@@ -249,18 +249,18 @@ def cmd_validate(args):
     errors = []
     warnings = []
     valid_vals = {
-        'Ð': {'Ð_ß', 'Ð_C', 'Ð_;', 'Ð_ω'},
-        'Þ': {'Þ_6', 'Þ_K', 'Þ_ò', 'Þ_¨', 'Þ_O'},
-        'Ř': {'Ř_¯', 'Ř_ý', 'Ř_Ť', 'Ř_='},
-        'Φ': {'Φ_ɐ', 'Φ_υ', 'Φ_F', 'Φ_˙', 'Φ_}'},
+        'Ð': {'𐑛', '𐑨', '𐑼', '𐑦'},
+        'Þ': {'𐑡', '𐑰', '𐑥', '𐑶', '𐑸'},
+        'Ř': {'𐑩', '𐑑', '𐑽', '𐑾'},
+        'Φ': {'𐑗', '𐑿', '𐑬', '𐑯', '𐑹'},
         'ƒ': {'ƒ^ì', 'ƒ^ð', 'ƒ^ż'},
         'Ç': {'Ç^-', 'Ç^W', 'Ç^@', 'Ç^Ù', 'Ç^λ'},
-        'Γ': {'Γ_β', 'Γ_γ', 'Γ_ʔ'},
+        'Γ': {'𐑚', '𐑔', '𐑲'},
         'ɢ': {'ɢ^∧', 'ɢ^˝', 'ɢ^ˌ', 'ɢ^Ş'},
-        CRIT_LEGACY: {'⊙_ž', '⊙_ÿ', '⊙_Æ', '⊙_3', '⊙_Ţ'},
-        'Ħ': {'Ħ_Ñ', 'Ħ_£', 'Ħ_A', 'Ħ_!'},
-        'Σ': {'Σ_S', 'Σ_ő', 'Σ_ï'},
-        'Ω': {'Ω_Å', 'Ω_2', 'Ω_z', 'Ω_5'},
+        CRIT_LEGACY: {'𐑢', '⊙', '𐑮', '𐑻', '𐑣'},
+        'Ħ': {'𐑓', '𐑒', '𐑖', '𐑫'},
+        'Σ': {'𐑙', '𐑕', '𐑳'},
+        'Ω': {'𐑷', '𐑴', '𐑭', '𐑟'},
     }
     valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O₀', 'O₁', 'O₂', 'O₂†', 'O_∞', ''}
 
@@ -475,18 +475,18 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
 # Available glyph IDs — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
-#   Ð: Ð_ß Ð_C Ð_; Ð_ω
-#   Þ: Þ_6 Þ_K Þ_ò Þ_¨ Þ_O
-#   Ř: Ř_¯ Ř_ý Ř_Ť Ř_=
-#   Φ: Φ_ɐ Φ_υ Φ_F Φ_˙ Φ_}}
+#   Ð: 𐑛 𐑨 𐑼 𐑦
+#   Þ: 𐑡 𐑰 𐑥 𐑶 𐑸
+#   Ř: 𐑩 𐑑 𐑽 𐑾
+#   Φ: 𐑗 𐑿 𐑬 𐑯 𐑹}
 #   ƒ: ƒ^ì ƒ^ð ƒ^ż
 #   Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ
-#   Γ: Γ_β Γ_γ Γ_ʔ
+#   Γ: 𐑚 𐑔 𐑲
 #   ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş
-#   ⊙: ⊙_ž ⊙_ÿ ⊙_Æ ⊙_3 ⊙_Ţ
-#   Ħ: Ħ_Ñ Ħ_£ Ħ_A Ħ_!
-#   Σ: Σ_S Σ_ő Σ_ï
-#   Ω: Ω_Å Ω_2 Ω_z Ω_5
+#   ⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣
+#   Ħ: 𐑓 𐑒 𐑖 𐑫
+#   Σ: 𐑙 𐑕 𐑳
+#   Ω: 𐑷 𐑴 𐑭 𐑟
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -507,7 +507,7 @@ chapters = [
     entry(1, "Section title",
         "One-line description",
         "Verbatim source text.",
-        "Ð_ω","Þ_O","Ř_Ť","Φ_}}","ƒ^ì","Ç^@","Γ_ʔ","ɢ^∧","⊙_3","Ħ_!","Σ_S","Ω_z",
+        "𐑦","𐑸","𐑽","𐑹}","ƒ^ì","Ç^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
 ]

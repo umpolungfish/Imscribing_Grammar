@@ -331,7 +331,7 @@ def _star_k_dwarf() -> Imscription:
     """
     K-dwarf (Orange Dwarf): often called 'superhabitable' class.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_2⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 𐑴⟩
 
     The K-dwarf is intermediate between the Sun (G) and M-dwarfs.
     It combines the best properties of both:
@@ -344,13 +344,13 @@ def _star_k_dwarf() -> Imscription:
 
     F_HIGH: K-dwarfs show excellent helioseismic structural fidelity.
     Γ_SELECTIVE: more organized grammar than M-dwarfs; less UV than G-dwarfs.
-    Ω_2: organized cycle + moderate flare protection = two topological mechanisms.
+    𐑴: organized cycle + moderate flare protection = two topological mechanisms.
 
     The framework prediction: K-dwarfs are the optimal stellar grammar templaters
     for life. Long K_schwa memory, moderate K_frtailgamma events (evolutionary pressure
     without sterilization), and organized Γ that maps to existing Earth biochemistry
     with minimal modification. The astrobiological consensus ('K-dwarfs are best
-    for life') has a structural reason: Ω_2 > Ω_1 (M-dwarf) while maintaining
+    for life') has a structural reason: 𐑴 > Ω_1 (M-dwarf) while maintaining
     sufficient K_frtailgamma for evolutionary pressure.
     """
     return Imscription(
@@ -369,7 +369,7 @@ def _star_k_dwarf() -> Imscription:
             "K-dwarf (orange dwarf, 0.6-0.9 M_☉). 'Superhabitable' class — combines "
             "lower flare activity than M-dwarfs with longer lifetime than G-dwarfs "
             "(17-70 Gyr). Organized magnetic cycle (K_turnm), Γ_SELECTIVE, F_HIGH. "
-            "Framework: optimal stellar grammar templater — Ω_2 with K_frtailgamma evolutionary "
+            "Framework: optimal stellar grammar templater — 𐑴 with K_frtailgamma evolutionary "
             "pressure preserved. The structural reason for the astrobiological consensus."
         ),
         metadata={
@@ -385,7 +385,7 @@ def _star_k_dwarf() -> Imscription:
             "superhabitable_note": (
                 "Lineweaver (2001) and subsequent work identifies K-dwarfs as statistically "
                 "most likely to host complex life. Framework gives the structural reason: "
-                "Ω_2 (two topological protection mechanisms) + K_turnm (moderate kinetics, "
+                "𐑴 (two topological protection mechanisms) + K_turnm (moderate kinetics, "
                 "no superflare disruption) + Γ_SELECTIVE (organized grammar injection) "
                 "+ long lifetime (K_schwa organizational memory can fully develop)."
             ),
@@ -455,7 +455,7 @@ def _star_f_dwarf() -> Imscription:
     """
     F-dwarf (Yellow-White star, e.g. Procyon, Canopus).
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_2⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 𐑴⟩
 
     F-dwarfs are slightly hotter and more massive than the Sun (1.1-1.4 M_☉).
     They are UV-richer (spectral peak 380-450 nm) and shorter-lived (2-8 Gyr).
@@ -463,7 +463,7 @@ def _star_f_dwarf() -> Imscription:
     F_HIGH: extreme luminosity per unit mass; precision nuclear burning.
     K_turnm: moderate activity — more active than G-dwarfs but less chaotic than M.
     Γ_SELECTIVE: organized magnetic cycle, good UV output.
-    Ω_2: two protection mechanisms; shorter cycle than G-dwarfs reduces Ω_3 to Ω_2.
+    𐑴: two protection mechanisms; shorter cycle than G-dwarfs reduces Ω_3 to 𐑴.
 
     Astrobiology note: F-dwarfs have higher UV flux in their habitable zones —
     more mutagenic pressure, potentially faster evolutionary rates but also higher
@@ -860,7 +860,7 @@ def _star_red_supergiant() -> Imscription:
     """
     Red Supergiant (RSG, e.g. Betelgeuse, VY Canis Majoris).
 
-    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_c; Ω_2⟩
+    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_c; 𐑴⟩
 
     RSGs are the largest stars by radius (500-1500 R_☉). Their enormous convective
     envelopes drive large-amplitude pulsations (K_schwa, periods 200-2000 days)
@@ -875,7 +875,7 @@ def _star_red_supergiant() -> Imscription:
     (2019-2020) showed a cascade from surface mass ejection to global opacity
     change — a Φ_c event signature.
 
-    Ω_2: the convective-radiative boundary (transition zone between giant convection
+    𐑴: the convective-radiative boundary (transition zone between giant convection
     cells and radiative interior) + the α_Lyrae oscillation period locking = two
     topological protection mechanisms.
     """
@@ -895,7 +895,7 @@ def _star_red_supergiant() -> Imscription:
             "Red Supergiant (8-30 M_☉, 500-1500 R_☉, e.g. Betelgeuse). Giant sparse "
             "convective cells (~10 cells vs 10^6 solar granules) → T_network_mixed. "
             "K_schwa: pulsation periods 200-2000 days. Φ_c: complex multi-mode pulsations, "
-            "Betelgeuse Great Dimming as cascade event. Ω_2: convective boundary + "
+            "Betelgeuse Great Dimming as cascade event. 𐑴: convective boundary + "
             "period locking."
         ),
         metadata={

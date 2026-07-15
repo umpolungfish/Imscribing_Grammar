@@ -290,13 +290,13 @@ def page2() -> str:
 
     # Millennium table
     mpp = [
-        ("Riemann Hypothesis",   "RH",    "6,738,803", "Ħ_!",  "Zero on critical line ∧ off critical line"),
-        ("Yang--Mills",          "YM",    "6,738,803", "Ħ_!",  "Mass gap exists ∧ does not exist"),
-        ("Hodge Conjecture",     "Hodge", "6,738,803", "Ħ_!",  "Hodge cycle algebraic ∧ non-algebraic"),
-        ("Navier--Stokes",       "NS",    "6,738,803", "Ħ_!",  "Smooth solution ∧ finite-time blowup"),
-        ("P vs NP",              "PNP",   "6,738,803", "Ħ_!",  "P = NP ∧ P $\\neq$ NP"),
-        ("Birch--Swinnerton-Dyer","BSD",  "6,738,800", "Ħ_A",  "Rank analytic ∧ arithmetic (BSD $\\neq$ others)"),
-        ("Odd Perfect Number",   "OPN",   "6,738,803", "Ħ_!",  "Perfect ∧ non-perfect (mod $\\Omega$ topology)"),
+        ("Riemann Hypothesis",   "RH",    "6,738,803", "𐑫",  "Zero on critical line ∧ off critical line"),
+        ("Yang--Mills",          "YM",    "6,738,803", "𐑫",  "Mass gap exists ∧ does not exist"),
+        ("Hodge Conjecture",     "Hodge", "6,738,803", "𐑫",  "Hodge cycle algebraic ∧ non-algebraic"),
+        ("Navier--Stokes",       "NS",    "6,738,803", "𐑫",  "Smooth solution ∧ finite-time blowup"),
+        ("P vs NP",              "PNP",   "6,738,803", "𐑫",  "P = NP ∧ P $\\neq$ NP"),
+        ("Birch--Swinnerton-Dyer","BSD",  "6,738,800", "𐑖",  "Rank analytic ∧ arithmetic (BSD $\\neq$ others)"),
+        ("Odd Perfect Number",   "OPN",   "6,738,803", "𐑫",  "Perfect ∧ non-perfect (mod $\\Omega$ topology)"),
     ]
 
     mpp_rows = []

@@ -28,24 +28,24 @@ PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ",
 
 ORDINALS = {
     "Ð": {
-        "Ð_ß": 1.5,  "Ð_C": 2.0,  "Ð_;": 3.0,  "Ð_ω": 4.0,
+        "𐑛": 1.5,  "𐑨": 2.0,  "𐑼": 3.0,  "𐑦": 4.0,
         "𐑛": 1.5, "𐑨": 2.0, "𐑼": 3.0, "𐑦": 4.0,
         # extended (key-imscription Lean encodings)
         "Ð_point": 0.5, "Ð_line": 1.0, "Ð_cube": 2.5,
     },
     "Þ": {
-        "Þ_6": 1.5,  "Þ_K": 2.0,  "Þ_ò": 3.0,  "Þ_¨": 3.5,  "Þ_O": 5.0,
+        "𐑡": 1.5,  "𐑰": 2.0,  "𐑥": 3.0,  "𐑶": 3.5,  "𐑸": 5.0,
         "𐑡": 1.5, "𐑰": 2.0, "𐑥": 3.0, "𐑶": 3.5, "𐑸": 5.0,
         "Þ_linear": 0.5, "Þ_branched": 1.0, "Þ_box": 3.5, "Þ_torus": 4.0,
     },
     "Ř": {
-        "Ř_¯": 1.0,  "Ř_ý": 2.0,  "Ř_=": 2.5,  "Ř_Ť": 3.0,
+        "𐑩": 1.0,  "𐑑": 2.0,  "𐑾": 2.5,  "𐑽": 3.0,
         "𐑩": 1.0, "𐑑": 2.0, "𐑾": 2.5, "𐑽": 3.0,
         "Ř_exact": 0.5, "Ř_subset": 0.8, "Ř_superset": 1.0,
         "Ř_catalytic": 2.1, "Ř_allosteric": 3.5,
     },
     "Φ": {
-        "Φ_ɐ": 1.0,  "Φ_υ": 2.0,  "Φ_F": 2.5,  "Φ_}": 3.0,  "Φ_˙": 3.5,
+        "𐑗": 1.0,  "𐑿": 2.0,  "𐑬": 2.5,  "𐑹": 3.0,  "𐑯": 3.5,
         "𐑗": 1.0, "𐑿": 2.0, "𐑬": 2.5, "𐑹": 3.0, "𐑯": 3.5,
         "Φ_neutral": 0.5, "Φ_plus": 0.8, "Φ_minus": 0.9,
     },
@@ -59,7 +59,7 @@ ORDINALS = {
         "𐑘": 1.0, "𐑤": 2.0, "𐑧": 3.0, "𐑪": 4.0, "𐑺": 4.5,
     },
     "Γ": {
-        "Γ_β": 1.0,  "Γ_γ": 2.0,  "Γ_ʔ": 3.0,
+        "𐑚": 1.0,  "𐑔": 2.0,  "𐑲": 3.0,
         "𐑚": 1.0, "𐑔": 2.0, "𐑲": 3.0,
     },
     "ɢ": {
@@ -68,43 +68,43 @@ ORDINALS = {
         "Γ_xor": 2.5, "Γ_impl": 3.5, "Γ_disc": 4.5,
     },
     "⊙": {
-        "⊙_ž": 1.0,  "⊙_ÿ": 2.0,  "⊙_Æ": 2.33,  "⊙_3": 2.67,  "⊙_Ţ": 3.0,
+        "𐑢": 1.0,  "⊙": 2.0,  "𐑮": 2.33,  "𐑻": 2.67,  "𐑣": 3.0,
         "𐑢": 1.0, "⊙": 2.0, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3.0,
     },
     "Ħ": {
-        "Ħ_Ñ": 1.0,  "Ħ_£": 2.0,  "Ħ_A": 3.0,  "Ħ_!": 4.0,
+        "𐑓": 1.0,  "𐑒": 2.0,  "𐑖": 3.0,  "𐑫": 4.0,
         "𐑓": 1.0, "𐑒": 2.0, "𐑖": 3.0, "𐑫": 4.0,
     },
     "Σ": {
-        "Σ_S": 1.0,  "Σ_ő": 2.0,  "Σ_ï": 3.0,
+        "𐑙": 1.0,  "𐑕": 2.0,  "𐑳": 3.0,
         "𐑙": 1.0, "𐑕": 2.0, "𐑳": 3.0,
         "one_n": 1.5, "cat": 4.0,
     },
     "Ω": {
-        "Ω_Å": 0.0,  "Ω_2": 1.0,  "Ω_z": 2.0,  "Ω_5": 4.0,
+        "𐑷": 0.0,  "𐑴": 1.0,  "𐑭": 2.0,  "𐑟": 4.0,
         "𐑷": 0.0, "𐑴": 1.0, "𐑭": 2.0, "𐑟": 4.0,
         "Ω_C": 3.0,
     },
 }
 
 PHI_COLOR = {
-    "⊙_ž": "#4472C4",
-    "⊙_ÿ": "#FFD700",
-    "⊙_Æ": "#FF8C00",
-    "⊙_3": "#DC143C",
-    "⊙_Ţ": "#9370DB",
+    "𐑢": "#4472C4",
+    "⊙": "#FFD700",
+    "𐑮": "#FF8C00",
+    "𐑻": "#DC143C",
+    "𐑣": "#9370DB",
 }
 PHI_LABEL = {
-    "⊙_ž": "⊙_ž  (sub-critical)",
-    "⊙_ÿ": "⊙_ÿ  (real-axis critical)",
-    "⊙_Æ": "⊙_Æ  (complex-plane critical)",
-    "⊙_3": "⊙_3  (exceptional point)",
-    "⊙_Ţ": "⊙_Ţ  (supercritical/runaway)",
+    "𐑢": "𐑢  (sub-critical)",
+    "⊙": "⊙  (real-axis critical)",
+    "𐑮": "𐑮  (complex-plane critical)",
+    "𐑻": "𐑻  (exceptional point)",
+    "𐑣": "𐑣  (supercritical/runaway)",
 }
 
 
 def fmt(glyph_id: str) -> str:
-    """'⊙_ÿ' → '⊙<sub>ÿ</sub>'"""
+    """'⊙' → '⊙<sub>ÿ</sub>'"""
     if "_" in glyph_id:
         glyph, sub = glyph_id.split("_", 1)
         return f"{glyph}<sub>{sub}</sub>"
@@ -113,17 +113,17 @@ def fmt(glyph_id: str) -> str:
 # ── Key theorem / lemma nodes (Lean encodings — §PrimitiveBridge) ─────────────
 # Keys use canonical glyph field names; values use canonical glyph IDs.
 KEY_imscriptions: dict[str, dict] = {
-    "YM classical":          {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
-    "YM quantum\n(target)":  {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_F","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_z"},
-    "RH (ζ zeros)":          {"Ð":"Ð_line","Þ":"Þ_6","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_Æ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
-    "Lee-Yang\n(proved)":    {"Ð":"Ð_line","Þ":"Þ_ò","Ř":"Ř_exact","Φ":"Φ_υ","ƒ":"ƒ^ì","Ç":"Ç^W","Γ":"Γ_γ","ɢ":"ɢ^∧","⊙":"⊙_Æ","Ħ":"Ħ_£","Σ":"Σ_ï","Ω":"Ω_Å"},
-    "NS smooth\nsoln":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_Ñ","Σ":"Σ_ï","Ω":"Ω_Å"},
-    "OPN\nconstraint":       {"Ð":"Ð_point","Þ":"Þ_linear","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ì","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_Ñ","Σ":"one_n","Ω":"Ω_Å"},
-    "Higgs/axion\n/inflaton": {"Ð":"Ð_point","Þ":"Þ_ò","Ř":"Ř_catalytic","Φ":"Φ_}","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_β","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
-    "Standard\nModel":       {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_allosteric","Φ":"Φ_F","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_A","Σ":"Σ_ï","Ω":"Ω_z"},
-    "Quantum\nGravity":      {"Ð":"Ð_ω","Þ":"Þ_O","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"Γ_ʔ","ɢ":"Γ_impl","⊙":"⊙_ÿ","Ħ":"Ħ_!","Σ":"Σ_ï","Ω":"Ω_5"},
-    "General\nRelativity":   {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"Γ_γ","ɢ":"ɢ^∧","⊙":"⊙_ž","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
-    "Asymptotic\nSafety":    {"Ð":"Ð_cube","Þ":"Þ_6","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^W","Γ":"Γ_ʔ","ɢ":"ɢ^∧","⊙":"⊙_ÿ","Ħ":"Ħ_£","Σ":"one_n","Ω":"Ω_Å"},
+    "YM classical":          {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_exact","Φ":"𐑬","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"𐑚","ɢ":"ɢ^∧","⊙":"𐑢","Ħ":"𐑒","Σ":"one_n","Ω":"𐑭"},
+    "YM quantum\n(target)":  {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_exact","Φ":"𐑬","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"𐑲","ɢ":"ɢ^∧","⊙":"⊙","Ħ":"𐑒","Σ":"one_n","Ω":"𐑭"},
+    "RH (ζ zeros)":          {"Ð":"Ð_line","Þ":"𐑡","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"𐑲","ɢ":"ɢ^∧","⊙":"𐑮","Ħ":"𐑓","Σ":"one_n","Ω":"𐑷"},
+    "Lee-Yang\n(proved)":    {"Ð":"Ð_line","Þ":"𐑥","Ř":"Ř_exact","Φ":"𐑿","ƒ":"ƒ^ì","Ç":"Ç^W","Γ":"𐑔","ɢ":"ɢ^∧","⊙":"𐑮","Ħ":"𐑒","Σ":"𐑳","Ω":"𐑷"},
+    "NS smooth\nsoln":       {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"𐑚","ɢ":"ɢ^∧","⊙":"𐑢","Ħ":"𐑓","Σ":"𐑳","Ω":"𐑷"},
+    "OPN\nconstraint":       {"Ð":"Ð_point","Þ":"Þ_linear","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ì","Ç":"Ç^Ù","Γ":"𐑲","ɢ":"ɢ^∧","⊙":"⊙","Ħ":"𐑓","Σ":"one_n","Ω":"𐑷"},
+    "Higgs/axion\n/inflaton": {"Ð":"Ð_point","Þ":"𐑥","Ř":"Ř_catalytic","Φ":"𐑹","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"𐑚","ɢ":"ɢ^∧","⊙":"⊙","Ħ":"𐑒","Σ":"one_n","Ω":"𐑷"},
+    "Standard\nModel":       {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_allosteric","Φ":"𐑬","ƒ":"ƒ^ð","Ç":"Ç^W","Γ":"𐑲","ɢ":"ɢ^∧","⊙":"⊙","Ħ":"𐑖","Σ":"𐑳","Ω":"𐑭"},
+    "Quantum\nGravity":      {"Ð":"𐑦","Þ":"𐑸","Ř":"Ř_exact","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^Ù","Γ":"𐑲","ɢ":"Γ_impl","⊙":"⊙","Ħ":"𐑫","Σ":"𐑳","Ω":"𐑟"},
+    "General\nRelativity":   {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^@","Γ":"𐑔","ɢ":"ɢ^∧","⊙":"𐑢","Ħ":"𐑒","Σ":"one_n","Ω":"𐑷"},
+    "Asymptotic\nSafety":    {"Ð":"Ð_cube","Þ":"𐑡","Ř":"Ř_catalytic","Φ":"Φ_neutral","ƒ":"ƒ^ż","Ç":"Ç^W","Γ":"𐑲","ɢ":"ɢ^∧","⊙":"⊙","Ħ":"𐑒","Σ":"one_n","Ω":"𐑷"},
 }
 MILLENNIUM = {
     "YM classical", "YM quantum\n(target)", "RH (ζ zeros)",
@@ -161,24 +161,24 @@ def to_vector(entry: dict) -> np.ndarray:
 def ouroboricity(entry: dict) -> float:
     phi = entry.get("⊙", "")
     # Phi_c (Shavian: ⊙) or Phi_c_complex (Shavian: 𐑮); old notation backward-compat
-    is_phi_c         = phi in ("⊙", "⊙_ÿ")
-    is_phi_c_complex = phi in ("𐑮", "⊙_Æ")
+    is_phi_c         = phi in ("⊙", "⊙")
+    is_phi_c_complex = phi in ("𐑮", "𐑮")
     if not (is_phi_c or is_phi_c_complex):
         return 0.0
     # R1 (Lean-authoritative): P_pm_sym at Phi_c → O_∞
     pol = entry.get("Φ", "")
-    if is_phi_c and pol in ("𐑹", "Φ_}"):
+    if is_phi_c and pol in ("𐑹", "𐑹"):
         return float("inf")
     # O₁..O_4 scoring
     score = 1.0
     omega = entry.get("Ω", "")
-    if omega not in ("𐑷", "Ω_Å", ""):          # Omega > 0
+    if omega not in ("𐑷", "𐑷", ""):          # Omega > 0
         score += 1
     h = entry.get("Ħ", "")
-    if h in ("𐑫", "𐑖", "𐑒", "Ħ_!", "Ħ_£", "Ħ_A"):   # H >= H1
+    if h in ("𐑫", "𐑖", "𐑒", "𐑫", "𐑒", "𐑖"):   # H >= H1
         score += 1
     gran = entry.get("Γ", "")
-    if gran in ("𐑲", "Γ_ʔ"):                   # G_aleph (global scope)
+    if gran in ("𐑲", "𐑲"):                   # G_aleph (global scope)
         score += 1
     return score
 
@@ -281,7 +281,7 @@ edge_trace = go.Scatter3d(
 traces: list = [edge_trace]
 
 for phi_val, phi_color in PHI_COLOR.items():
-    idx = [i for i, e in enumerate(catalog) if e.get("⊙", "⊙_ž") == phi_val]
+    idx = [i for i, e in enumerate(catalog) if e.get("⊙", "𐑢") == phi_val]
     if not idx:
         continue
     sel_ou = [ou_scores[i] for i in idx]
@@ -415,11 +415,11 @@ _POST_SCRIPT = r"""
 (function() {
     var NS = 'http://www.w3.org/2000/svg';
     var SUBS = [
-        ["⊙_ž  (sub-critical)",          "⊙", "ž", "  (sub-critical)"],
-        ["⊙_ÿ  (real-axis critical)",    "⊙", "ÿ", "  (real-axis critical)"],
-        ["⊙_Æ  (complex-plane critical)","⊙", "Æ", "  (complex-plane critical)"],
-        ["⊙_3  (exceptional point)",     "⊙", "3", "  (exceptional point)"],
-        ["⊙_Ţ  (supercritical/runaway)", "⊙", "Ţ", "  (supercritical/runaway)"]
+        ["𐑢  (sub-critical)",          "⊙", "ž", "  (sub-critical)"],
+        ["⊙  (real-axis critical)",    "⊙", "ÿ", "  (real-axis critical)"],
+        ["𐑮  (complex-plane critical)","⊙", "Æ", "  (complex-plane critical)"],
+        ["𐑻  (exceptional point)",     "⊙", "3", "  (exceptional point)"],
+        ["𐑣  (supercritical/runaway)", "⊙", "Ţ", "  (supercritical/runaway)"]
     ];
     function patch() {
         document.querySelectorAll('.legendtext').forEach(function(el) {

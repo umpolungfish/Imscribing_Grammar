@@ -40,31 +40,31 @@ class Lemma:
 # for their own domain. The key insight: each lemma in an O_∞ proof is
 # licensed by exactly one primary primitive; section assignment follows.
 LEMMA_TITLE_MAP = {
-    "frobenius": "Φ_}",
-    "self-referent": "Þ_O",
-    "inverse": "Þ_O",
-    "bidirectional": "Ř_=",
-    "coupling": "Ř_=",
-    "winding": "Ω_z",
-    "phase boundar": "⊙_ÿ",
-    "confinement": "⊙_ÿ",
-    "drift": "⊙_ÿ",
-    "boundedness": "⊙_ÿ",
+    "frobenius": "𐑹",
+    "self-referent": "𐑸",
+    "inverse": "𐑸",
+    "bidirectional": "𐑾",
+    "coupling": "𐑾",
+    "winding": "𐑭",
+    "phase boundar": "⊙",
+    "confinement": "⊙",
+    "drift": "⊙",
+    "boundedness": "⊙",
 }
 
 # ── Primary primitive -> conventional section ──────────────────────────────
 PRIMITIVE_SECTIONS = {
-    "Φ_}": "Parity Encoding and Injectivity",
-    "Þ_O": "The Inverse Tree",
-    "Ř_=": "Bidirectional Coupling",
-    "Ω_z": "Terminal Cycle and Exotic Cycle Exclusion",
-    "⊙_ÿ": "Logarithmic Drift and Absence of Divergent Trajectories",
+    "𐑹": "Parity Encoding and Injectivity",
+    "𐑸": "The Inverse Tree",
+    "𐑾": "Bidirectional Coupling",
+    "𐑭": "Terminal Cycle and Exotic Cycle Exclusion",
+    "⊙": "Logarithmic Drift and Absence of Divergent Trajectories",
     "Ç^@": "Equidistribution (supporting)",
 }
 
 # ── Lemma body templates per primitive ─────────────────────────────────────
 LEMMA_TEMPLATES = {
-    "Φ_}": {
+    "𐑹": {
         "proposition": (
             "**Proposition (Encoding Injectivity).** Distinct initial values "
             "whose parity sequences coincide merge within a finite number of "
@@ -76,7 +76,7 @@ LEMMA_TEMPLATES = {
             "parity patterns. $\\square$\n"
         ),
     },
-    "Þ_O": {
+    "𐑸": {
         "proposition": (
             "**Proposition (Inverse Tree Characterization).** Define the "
             "inverse relation $R(m) = \\{2m\\} \\cup \\{(m-1)/3 : m \\equiv 1 "
@@ -91,7 +91,7 @@ LEMMA_TEMPLATES = {
             "and all sufficiently large $d$.\n"
         ),
     },
-    "Ř_=": {
+    "𐑾": {
         "lemma": (
             "**Lemma (Bidirectional Exhaustion).** Define forward "
             "stopping-time sets $S_c = \\{n : T^c(n)=1,\\ T^k(n)\\neq 1 "
@@ -102,7 +102,7 @@ LEMMA_TEMPLATES = {
             "= \\mathbb{Z}^+$.\n"
         ),
     },
-    "⊙_ÿ": {
+    "⊙": {
         "lemma": (
             "**Lemma (Negative Drift).** Define $L(n) = \\ln n$. The expected "
             "change per step is $\\mathbb{E}[\\Delta L] = \\tfrac{1}{2}\\ln"
@@ -117,7 +117,7 @@ LEMMA_TEMPLATES = {
             "= \\min\\{k : T^k(n) < n\\} \\leq C \\ln n$. (Terras, 1976)\n"
         ),
     },
-    "Ω_z": {
+    "𐑭": {
         "lemma": (
             "**Lemma (Cycle Uniqueness).** The only positive integer cycle of "
             "$T$ is $1 \\to 4 \\to 2 \\to 1$.\n\n"
@@ -149,7 +149,7 @@ def parse_primitive_proof(text: str) -> List[Lemma]:
         content = m.group(3).strip()[:400]
 
         # Determine primary primitive from title keywords
-        primary = "⊙_ÿ"  # default fallback
+        primary = "⊙"  # default fallback
         for keyword, prim in LEMMA_TITLE_MAP.items():
             if keyword.lower() in title.lower():
                 primary = prim
@@ -220,7 +220,7 @@ def generate_conventional_proof(
         "$$\\sigma(n) = (\\sigma_0, \\sigma_1, \\ldots), "
         "\\quad \\sigma_k = T^k(n) \\bmod 2.$$\n"
     )
-    out.append(LEMMA_TEMPLATES["Φ_}"]["proposition"])
+    out.append(LEMMA_TEMPLATES["𐑹"]["proposition"])
     out.append(
         "**Corollary (Sufficiency).** The parity encoding of a trajectory "
         "uniquely determines its fate up to merged equivalence classes.\n"
@@ -228,8 +228,8 @@ def generate_conventional_proof(
 
     # ── Section 3: Inverse Tree ──────────────────────────────────────────────
     out.append("\\section{The Inverse Tree}\n")
-    out.append(LEMMA_TEMPLATES["Þ_O"]["proposition"])
-    out.append(LEMMA_TEMPLATES["Þ_O"]["lemma"])
+    out.append(LEMMA_TEMPLATES["𐑸"]["proposition"])
+    out.append(LEMMA_TEMPLATES["𐑸"]["lemma"])
     out.append(
         "*Proof sketch.* Each application of $R$ doubles every element. "
         "Additionally, elements $\\equiv 4 \\pmod{6}$ generate secondary "
@@ -238,18 +238,18 @@ def generate_conventional_proof(
 
     # ── Section 4: Bidirectional Coupling ────────────────────────────────────
     out.append("\\section{Bidirectional Coupling}\n")
-    out.append(LEMMA_TEMPLATES["Ř_="]["lemma"])
+    out.append(LEMMA_TEMPLATES["𐑾"]["lemma"])
 
     # ── Section 5: Boundedness ───────────────────────────────────────────────
     out.append(
         "\\section{Logarithmic Drift and Absence of Divergent Trajectories}\n"
     )
-    out.append(LEMMA_TEMPLATES["⊙_ÿ"]["lemma"])
-    out.append(LEMMA_TEMPLATES["⊙_ÿ"]["supporting"])
+    out.append(LEMMA_TEMPLATES["⊙"]["lemma"])
+    out.append(LEMMA_TEMPLATES["⊙"]["supporting"])
 
     # ── Section 6: Cycle Exclusion ───────────────────────────────────────────
     out.append("\\section{Terminal Cycle and Exotic Cycle Exclusion}\n")
-    out.append(LEMMA_TEMPLATES["Ω_z"]["lemma"])
+    out.append(LEMMA_TEMPLATES["𐑭"]["lemma"])
     out.append(
         "Steiner (1977) proved no \"steep\" cycles exist; Simons & de Weger "
         "(2005) extended to no cycles with up to 69 odd elements.\n"
@@ -287,11 +287,11 @@ def generate_conventional_proof(
 # ── Reverse Analysis: Conventional → Primitive ──────────────────────────────
 
 PRIMITIVE_KEYWORDS = {
-    "Φ_}": ["injecti", "encoding", "parity sequence", "bijection", "uniquely determines"],
-    "Þ_O": ["inverse", "tree", "self-referent", "R(m)", "preimage"],
-    "Ř_=": ["bidirectional", "coupling", "iff", "exhaust", "mutual"],
-    "Ω_z": ["cycle", "winding", "Diophantine", "exotic", "uniqueness"],
-    "⊙_ÿ": ["drift", "diverg", "Lyapu", "bounded", "escape"],
+    "𐑹": ["injecti", "encoding", "parity sequence", "bijection", "uniquely determines"],
+    "𐑸": ["inverse", "tree", "self-referent", "R(m)", "preimage"],
+    "𐑾": ["bidirectional", "coupling", "iff", "exhaust", "mutual"],
+    "𐑭": ["cycle", "winding", "Diophantine", "exotic", "uniqueness"],
+    "⊙": ["drift", "diverg", "Lyapu", "bounded", "escape"],
     "Ç^@": ["Terras", "almost all", "stopping time", "equidistrib"],
 }
 

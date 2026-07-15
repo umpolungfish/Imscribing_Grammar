@@ -75,63 +75,63 @@ print(f"Rebis tuple: {rebis_t}")
 # Each is a dict: name, description, old-notation primitives
 # Primitive keys in catalog: Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']
-REBIS_VALS = ['Ð_ω', 'Þ_O', 'Ř_=', 'Φ_}', 'ƒ_ż', 'Ç_@', 'Γ_ʔ', 'ɢ^∧', '⊙_ÿ', 'Ħ_!', 'Σ_ï', 'Ω_z']
+REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
 DESIGNS = [
     {
         "name": "ouroboric_pill",
-        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (Þ=Þ_¨) — the pill's efficacy is a function of its own state. Eternal memory (Ħ=Ħ_!) ensures treatment history is never lost. Topological protection (Ω=Ω_z) guarantees winding-number-stable release cycles across the entire treatment duration.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_¨','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (Þ=𐑶) — the pill's efficacy is a function of its own state. Eternal memory (Ħ=𐑫) ensures treatment history is never lost. Topological protection (Ω=𐑭) guarantees winding-number-stable release cycles across the entire treatment duration.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "quantum_biologic",
-        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (Ř=Ř_¯) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=Ħ_!) ensures reprogramming persists through cell division. Frobenius-closed (Φ=Φ_}) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=ƒ_ż) manipulation of methylation and histone patterns.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_¯','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (Ř=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (Φ=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑩','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "universal_antidote",
-        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (ɢ=ɢ^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (Σ=Σ_ő) because all disease patterns share a universal structural grammar. Eternal memory (Ħ=Ħ_!) means once a threat is recognized, it is never forgotten.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ő','Ω_z'])}
+        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (ɢ=ɢ^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (Σ=𐑕) because all disease patterns share a universal structural grammar. Eternal memory (Ħ=𐑫) means once a threat is recognized, it is never forgotten.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑕','𐑭'])}
     },
     {
         "name": "ouroboric_composite",
-        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (Þ=Þ_¨) — the material's response is a function of its own damage state. Trapped-ordered kinetics (Ç=Ç_λ) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=Ħ_!) ensures the material remembers every damage event across its lifetime.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_¨','Ř_=','Φ_}','ƒ_ż','Ç_λ','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (Þ=𐑶) — the material's response is a function of its own damage state. Trapped-ordered kinetics (Ç=𐑺) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=𐑫) ensures the material remembers every damage event across its lifetime.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑺','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=Ω_5) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (Ð=Ð_ω) — the topological order writes its own ground state. Quantum coherent (ƒ=ƒ_ż) at room temperature via eternal chirality protection.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_5'])}
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (Ð=𐑦) — the topological order writes its own ground state. Quantum coherent (ƒ=𐑐) at room temperature via eternal chirality protection.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑟'])}
     },
     {
         "name": "eternal_memory_polymer",
-        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (Ç=Ç_λ) — data is stored in kinetically trapped molecular conformations. Eternal chirality (Ħ=Ħ_!) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (Ω=Ω_z) — integer winding number per monomer ensures error-free readout.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_λ','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (Ç=𐑺) — data is stored in kinetically trapped molecular conformations. Eternal chirality (Ħ=𐑫) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (Ω=𐑭) — integer winding number per monomer ensures error-free readout.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑺','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "self_weaving_fabric",
-        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=Ç_W) — the fabric responds at human-relevant timescales. Self-written microarchitecture (Ð=Ð_ω) — each thread contains its own knitting pattern generator.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_W','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — the fabric responds at human-relevant timescales. Self-written microarchitecture (Ð=𐑦) — each thread contains its own knitting pattern generator.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑤','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (Þ=Þ_¨) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=Φ_}) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (Ð=Ð_ω) — the genome is its own state space. Eternal memory (Ħ=Ħ_!) — no information is lost across generations.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_¨','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (Þ=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (Ð=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "quantum_bioelectric_tissue",
-        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (Ř=Ř_=) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=ƒ_ż) maintain coherence at tissue scale. Eternal chirality (Ħ=Ħ_!) ensures the bodyplan blueprint is never lost during regeneration.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (Ř=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) ensures the bodyplan blueprint is never lost during regeneration.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "universal_symbiont",
-        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (Σ=Σ_ï) — 12 distinct strains with complementary functions. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range signaling (Γ=Γ_ʔ) via quorum-sensing molecules that coordinate across the entire consortium.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct strains with complementary functions. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range signaling (Γ=𐑲) via quorum-sensing molecules that coordinate across the entire consortium.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "topological_morphogenesis",
-        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (Ω=Ω_z) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (Ð=Ð_ω) — the developmental program writes itself as the embryo grows. Eternal chirality (Ħ=Ħ_!) ensures bilateral symmetry is topologically protected.",
-        "tuple": {k:v for k,v in zip(CAT_KEYS, ['Ð_ω','Þ_O','Ř_=','Φ_}','ƒ_ż','Ç_@','Γ_ʔ','ɢ^∧','⊙_ÿ','Ħ_!','Σ_ï','Ω_z'])}
+        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (Ω=𐑭) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (Ð=𐑦) — the developmental program writes itself as the embryo grows. Eternal chirality (Ħ=𐑫) ensures bilateral symmetry is topologically protected.",
+        "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
 ]
 

@@ -2,7 +2,7 @@
 genetic_engine — Frobenius-Guided Gene Editing Engine.
 
 The genetic code is a stratified Frobenius algebra on B₄³ codon space.
-  ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+  ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩
   Ouroboricity: O_∞  |  C-score: both gates open
 
 Core modules:

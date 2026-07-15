@@ -337,7 +337,7 @@ def cmd_tensor(args, catalog):
     vb = _to_ords(tup_b)
     
     # Tensor: max on union primitives (D,T,R,G,Gm,H,S,W), min on P,F
-    # Special: Ph=⊙ absorbs Ph=× (⊙_3 × anything = ×)
+    # Special: Ph=⊙ absorbs Ph=× (𐑻 × anything = ×)
     result = {}
     for i, p in enumerate(PNAMES):
         if p in ("P", "F"):

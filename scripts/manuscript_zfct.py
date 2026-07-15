@@ -52,19 +52,19 @@ from navigators.zfct_navigator import (
 
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
-        'Ð': 'Ð_ω', 'Þ': 'Þ_O', 'Ř': 'Ř_=',  'Φ': 'Φ_}',
-        'ƒ': 'ƒ^ì', 'Ç': 'Ç^Ù', 'Γ': 'Γ_ʔ',  'ɢ': 'ɢ^Ş',
-        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_!', 'Σ': 'Σ_S',  'Ω': 'Ω_z',
+        'Ð': '𐑦', 'Þ': '𐑸', 'Ř': '𐑾',  'Φ': '𐑹',
+        'ƒ': 'ƒ^ì', 'Ç': 'Ç^Ù', 'Γ': '𐑲',  'ɢ': 'ɢ^Ş',
+        '⊙': '⊙', 'Ħ': '𐑫', 'Σ': '𐑙',  'Ω': '𐑭',
     },
     'rohonc': {
-        'Ð': 'Ð_C', 'Þ': 'Þ_¨', 'Ř': 'Ř_Ť', 'Φ': 'Φ_}',
-        'ƒ': 'ƒ^ì', 'Ç': 'Ç^@', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ^ˌ',
-        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
+        'Ð': '𐑨', 'Þ': '𐑶', 'Ř': '𐑽', 'Φ': '𐑹',
+        'ƒ': 'ƒ^ì', 'Ç': 'Ç^@', 'Γ': '𐑲', 'ɢ': 'ɢ^ˌ',
+        '⊙': '⊙', 'Ħ': '𐑖', 'Σ': '𐑳', 'Ω': '𐑭',
     },
     'linear_a': {
-        'Ð': 'Ð_C', 'Þ': 'Þ_¨', 'Ř': 'Ř_Ť', 'Φ': 'Φ_}',
-        'ƒ': 'ƒ^ż', 'Ç': 'Ç^W', 'Γ': 'Γ_ʔ', 'ɢ': 'ɢ^ˌ',
-        '⊙': '⊙_ÿ', 'Ħ': 'Ħ_A', 'Σ': 'Σ_ï', 'Ω': 'Ω_z',
+        'Ð': '𐑨', 'Þ': '𐑶', 'Ř': '𐑽', 'Φ': '𐑹',
+        'ƒ': 'ƒ^ż', 'Ç': 'Ç^W', 'Γ': '𐑲', 'ɢ': 'ɢ^ˌ',
+        '⊙': '⊙', 'Ħ': '𐑖', 'Σ': '𐑳', 'Ω': '𐑭',
     },
 }
 
@@ -97,11 +97,11 @@ def _derive_Þ(counts: Counter, corpus: str) -> str:
     frob_balanced = abs(counts['FSPLIT'] - counts['FFUSE']) / (counts['FSPLIT'] + counts['FFUSE'] + 1) < 0.10
 
     if engagr > 0.18:
-        return 'Þ_K'                    # nested containment topology
+        return '𐑰'                    # nested containment topology
     if (fsplit + ffuse) > 0.30 and frob_balanced:
-        return 'Þ_¨'                    # Frobenius-balanced box
+        return '𐑶'                    # Frobenius-balanced box
     if ifix > 0.22:
-        return 'Þ_6'                    # linear tape dominance
+        return '𐑡'                    # linear tape dominance
     return CORPUS_BASE[corpus]['Þ']     # corpus default
 
 
@@ -110,15 +110,15 @@ def _derive_Φ(counts: Counter, corpus: str) -> str:
     fuse  = counts['FFUSE']
     total_frob = split + fuse
     if total_frob == 0:
-        return 'Φ_ɐ'                   # no Frobenius structure
+        return '𐑗'                   # no Frobenius structure
     ratio = abs(split - fuse) / total_frob
     if ratio < 0.05:
-        return 'Φ_}'                   # Frobenius-special (balanced split/fuse)
+        return '𐑹'                   # Frobenius-special (balanced split/fuse)
     if ratio < 0.20:
-        return 'Φ_˙'                   # symmetric
+        return '𐑯'                   # symmetric
     if ratio < 0.50:
-        return 'Φ_F'                   # ℤ₂ parity (partially symmetric)
-    return 'Φ_υ'                       # slight asymmetry
+        return '𐑬'                   # ℤ₂ parity (partially symmetric)
+    return '𐑿'                       # slight asymmetry
 
 
 def _derive_ɢ(counts: Counter, corpus: str) -> str:
@@ -138,12 +138,12 @@ def _derive_ɢ(counts: Counter, corpus: str) -> str:
 
 def _derive_Ħ(n_instructions: int, corpus: str) -> str:
     if n_instructions < 30:
-        return 'Ħ_Ñ'
+        return '𐑓'
     if n_instructions < 60:
-        return 'Ħ_£'
+        return '𐑒'
     if n_instructions < 120:
-        return 'Ħ_A'
-    return 'Ħ_!'
+        return '𐑖'
+    return '𐑫'
 
 
 def derive_tuple(instructions: list[str], corpus: str) -> dict:

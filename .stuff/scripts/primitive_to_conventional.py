@@ -31,27 +31,27 @@ class Lemma:
 # ── Primitive-to-Object Mapping ─────────────────────────────────────────────
 
 PRIMITIVE_MAP = {
-    "Φ_}": {
+    "𐑹": {
         "object": "Injectivity of encoding map",
         "section": "Parity Encoding and Injectivity",
         "template": "injectivity",
     },
-    "Þ_O": {
+    "𐑸": {
         "object": "Inverse tree / dual construction",
         "section": "The Inverse Tree",
         "template": "inverse_structure",
     },
-    "Ř_=": {
+    "𐑾": {
         "object": "Forward-inverse bijection",
         "section": "Bidirectional Coupling",
         "template": "coupling",
     },
-    "Ω_z": {
+    "𐑭": {
         "object": "Topological invariant (winding number)",
         "section": "Terminal Cycle and Exotic Cycle Exclusion",
         "template": "cycle_exclusion",
     },
-    "⊙_ÿ": {
+    "⊙": {
         "object": "Lyapunov function / logarithmic drift",
         "section": "Logarithmic Drift and Absence of Divergent Trajectories",
         "template": "boundedness",
@@ -61,12 +61,12 @@ PRIMITIVE_MAP = {
         "section": "Rigorous Boundedness Argument (supporting)",
         "template": "equidistribution",
     },
-    "Ħ_A": {
+    "𐑖": {
         "object": "Memory depth in trajectory analysis",
         "section": "Trajectory Characterization (supporting)",
         "template": "memory",
     },
-    "Ð_C": {
+    "𐑨": {
         "object": "Two-dimensional state surface",
         "section": "Preliminaries",
         "template": "preliminaries",
@@ -111,7 +111,7 @@ TEMPLATES = {
         "for which T^k(n) < n approaches 1 as N \\to \\infty."
     ),
     "memory": (
-        "The Markov order H = 2 (captured by Ħ_A) means the trajectory's next step "
+        "The Markov order H = 2 (captured by 𐑖) means the trajectory's next step "
         "depends on the previous two states, sufficient to detect cycle entry."
     ),
     "preliminaries": (
@@ -162,7 +162,7 @@ def parse_primitive_proof(text: str) -> List[Lemma]:
                     found_prims.append(prim_key)
                     continue
                 # Try matching common LaTeX representations
-                # ⊙_ÿ might appear as $\hat{\varphi}_{\ddot{y}}$
+                # ⊙ might appear as $\hat{\varphi}_{\ddot{y}}$
                 # We just do raw text search for the unicode chars
                 raw_chars = prim_key
                 if any(c in content for c in ['⊙', 'Φ_', 'Þ_', 'Ř_', 'Ω_', 'Ç_', 'Ħ_', 'Ð_']):
@@ -396,15 +396,15 @@ def generate_conventional_proof(
 # ── Reverse Analysis: Conventional → Primitive ──────────────────────────────
 
 PRIMITIVE_KEYWORDS = {
-    "Φ_}": ["injective", "injectivity", "bijection", "one-to-one",
+    "𐑹": ["injective", "injectivity", "bijection", "one-to-one",
             "composition identity", "encoding uniquely determines"],
-    "Þ_O": ["inverse", "tree", "self-referential", "dual",
+    "𐑸": ["inverse", "tree", "self-referential", "dual",
             "backwards", "preimage"],
-    "Ř_=": ["iff", "equivalence", "coupling", "forward and inverse",
+    "𐑾": ["iff", "equivalence", "coupling", "forward and inverse",
             "mutual", "bidirectional"],
-    "Ω_z": ["winding", "topological", "invariant", "cycle uniqueness",
+    "𐑭": ["winding", "topological", "invariant", "cycle uniqueness",
             "homotopy", "degree"],
-    "⊙_ÿ": ["lyapunov", "drift", "boundedness", "convergence",
+    "⊙": ["lyapunov", "drift", "boundedness", "convergence",
             "critical", "divergence", "escape"],
     "Ç^@": ["equidistribution", "mixing", "ergodic", "measure",
             "almost all", "probability"],

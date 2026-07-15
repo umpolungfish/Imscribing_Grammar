@@ -73,15 +73,15 @@ for i, l in enumerate(lines):
             replacements = {
                 '"φ̂_ÿ"': '"⊙"',
                 '"φ̂_Æ"': '"𐑮"',
-                '"Φ_}"': '"𐑹"',
+                '"𐑹"': '"𐑹"',
                 '"φ̂_ž"': '"𐑢"',
                 '"φ̂_Ţ"': '"𐑣"',
                 '"φ̂_3"': '"𐑻"',
-                '"Ω_Å"': '"𐑷"',
-                '"Ð_ß"': '"𐑛"',
-                '"Ð_ω"': '"𐑦"',
-                '"Ð_C"': '"𐑨"',
-                '"Ð_;"': '"𐑼"',
+                '"𐑷"': '"𐑷"',
+                '"𐑛"': '"𐑛"',
+                '"𐑦"': '"𐑦"',
+                '"𐑨"': '"𐑨"',
+                '"𐑼"': '"𐑼"',
             }
             # Find end of function (next def at same indentation, or _FROBENIUS_DESCRIPTIONS)
             func_end = body_start
@@ -111,7 +111,7 @@ for i, l in enumerate(lines):
     if '_FROBENIUS_DESCRIPTIONS = {' in l:
         for j in range(i, min(i+15, len(lines))):
             old = lines[j]
-            n = old.replace('(Ð_;)', '(𐑼)')
+            n = old.replace('(𐑼)', '(𐑼)')
             if n != old:
                 lines[j] = n
                 changes += 1

@@ -131,7 +131,7 @@ Spider Theorem: all diagrams with same connectivity = same morphism.
 
 | A | Ħ∞ ⇒ Ç∞ | ∞‑chirality forces max kinetics |
 | B | Ω ≥ 1 ⇒ Ħ ≥ H₂ | winding requires chirality; H₂ = min for μ◦δ = id |
-| C | Ðω ⇔ Þ_O | max‑dim ⇔ null topology |
+| C | Ðω ⇔ 𐑸 | max‑dim ⇔ null topology |
 
 ### O‑Tier Hierarchy
 

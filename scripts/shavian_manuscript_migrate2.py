@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Second-pass Shavian migration: fix wrong Þ_K→𐑶 substitutions, add missing patterns, update SO_BELOW macros."""
+"""Second-pass Shavian migration: fix wrong 𐑰→𐑶 substitutions, add missing patterns, update SO_BELOW macros."""
 import sys
 
 AS_ABOVE = '/home/mrnob0dy666/imscribing_grammar/manuscripts/AS_ABOVE.tex'
@@ -7,7 +7,7 @@ SO_BELOW = '/home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex'
 
 # ============================================================
 # TARGETED FIXES — AS_ABOVE only
-# Þ_K (T_bowl) was wrongly mapped to 𐑶 (T_cage); correct is 𐑰.
+# 𐑰 (T_bowl) was wrongly mapped to 𐑶 (T_cage); correct is 𐑰.
 # Use enough context to uniquely identify each wrong occurrence.
 # ============================================================
 AS_ABOVE_TARGETED = [
@@ -26,7 +26,7 @@ AS_ABOVE_TARGETED = [
         '_{6}$\\\\${\igfont 𐑶}$\\\\$\\text{{\\igprimfont Þ}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
         '_{6}$\\\\${\igfont 𐑰}$\\\\$\\text{{\\igprimfont Þ}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
     ),
-    # L1366: "simultaneously injective" (𐑶 here is Þ_K = T_bowl, not T_cage)
+    # L1366: "simultaneously injective" (𐑶 here is 𐑰 = T_bowl, not T_cage)
     (
         'simultaneously injective (${\igfont 𐑶}$)',
         'simultaneously injective (${\igfont 𐑰}$)',
@@ -81,7 +81,7 @@ SO_BELOW_MACROS = [
         r'\newcommand{\Phic}{\mathord{\text{{\igprimfont ⊙}}}_{\text{{\igfont ÿ}}}}',
         r'\newcommand{\Phic}{\mathord{\text{{\igprimfont ⊙}}}}',
     ),
-    # \Ppm: P_pipevar (Φ_F) → 𐑬
+    # \Ppm: P_pipevar (𐑬) → 𐑬
     (
         r'\newcommand{\Ppm}{{\text{{\igprimfont Φ}}_{F}}}',
         r'\newcommand{\Ppm}{{\igfont 𐑬}}',

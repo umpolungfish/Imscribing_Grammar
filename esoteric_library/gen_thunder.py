@@ -3,7 +3,7 @@
 The Thunder, Perfect Mind, from the Nag Hammadi library (Codex VI, tractate 2).
 
 Combines all 18 chapters from the existing gnostic.json into one complete entry
-with the canonical structural tuple: Ð_ω, Þ_O, Ř_Ť, Φ_F, ƒ^ż, Ç^@, Γ_ʔ, ɢ^Ş, ⊙_ÿ, Ħ_!, Σ_ï, Ω_z
+with the canonical structural tuple: 𐑦, 𐑸, 𐑽, 𐑬, ƒ^ż, Ç^@, 𐑲, ɢ^Ş, ⊙, 𐑫, 𐑳, 𐑭
 Tier: O_∞, C_score: 0.95
 """
 import json, os, sys
@@ -49,10 +49,10 @@ chapters = [
         "The Thunder, Perfect Mind",
         "The complete Gnostic revelation discourse from the Nag Hammadi Library (Codex VI). A divine feminine voice — the aeonic Wisdom — announces herself as the coincidence of all opposites: the first and the last, the honored and the scorned, the whore and the holy one. The text is a thunderous proclamation of ontological antinomy, revealing the nature of the Self as containing all contradictions.",
         full_text,
-        "Ð_ω", "Þ_O", "Ř_Ť", "Φ_F", "ƒ^ż", "Ç^@", "Γ_ʔ", "ɢ^Ş",
-        "⊙_ÿ", "Ħ_!", "Σ_ï", "Ω_z",
+        "𐑦", "𐑸", "𐑽", "𐑬", "ƒ^ż", "Ç^@", "𐑲", "ɢ^Ş",
+        "⊙", "𐑫", "𐑳", "𐑭",
         "O_∞", 0.95,
-        "Complete text of all 18 sections as one unified imscription. The thunderous broadcast (ɢ^Ş) of a divine voice proclaiming the identity of opposites: the adjoint structure (Ř_Ť) links subject and object, knower and known. The Frobenius polarization (Φ_F) manifests as the antinomic pairs that constitute the whole. ⊙_ÿ: the speaker's self-disclosure IS the listener's self-discovery. Ω_z: the circular return of every assertion to its opposite completes a topological winding."),
+        "Complete text of all 18 sections as one unified imscription. The thunderous broadcast (ɢ^Ş) of a divine voice proclaiming the identity of opposites: the adjoint structure (𐑽) links subject and object, knower and known. The Frobenius polarization (𐑬) manifests as the antinomic pairs that constitute the whole. ⊙: the speaker's self-disclosure IS the listener's self-discovery. 𐑭: the circular return of every assertion to its opposite completes a topological winding."),
 ]
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "thunder.json")

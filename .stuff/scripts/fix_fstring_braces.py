@@ -1,5 +1,5 @@
 """
-Fix Φ_} → Φ_}} inside f-string literal text after migration.
+Fix 𐑹 → 𐑹} inside f-string literal text after migration.
 Uses Python 3.12 FSTRING_START/MIDDLE/END tokens to identify f-string spans.
 """
 
@@ -17,7 +17,7 @@ def line_col_to_offset(lines: list[str], line: int, col: int) -> int:
 
 
 def fix_phi_in_fstrings(source: str) -> str:
-    """Replace Φ_} with Φ_}} only inside f-string literal (MIDDLE) spans."""
+    """Replace 𐑹 with 𐑹} only inside f-string literal (MIDDLE) spans."""
     lines = source.splitlines(keepends=True)
 
     try:
@@ -45,8 +45,8 @@ def fix_phi_in_fstrings(source: str) -> str:
     result = list(source)
     for start, end in reversed(middle_spans):
         seg = ''.join(result[start:end])
-        # Replace Φ_} that isn't already Φ_}}
-        fixed = seg.replace('Φ_}}', '\x00PLACEHOLDER\x00').replace('Φ_}', 'Φ_}}').replace('\x00PLACEHOLDER\x00', 'Φ_}}')
+        # Replace 𐑹 that isn't already 𐑹}
+        fixed = seg.replace('𐑹}', '\x00PLACEHOLDER\x00').replace('𐑹', '𐑹}').replace('\x00PLACEHOLDER\x00', '𐑹}')
         result[start:end] = list(fixed)
 
     return ''.join(result)
@@ -64,7 +64,7 @@ for sub in ['agents', 'space_search']:
 changed = 0
 for p in sorted(files):
     text = p.read_text(encoding='utf-8')
-    if 'Φ_}' not in text:
+    if '𐑹' not in text:
         continue
     try:
         ast.parse(text)

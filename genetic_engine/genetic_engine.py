@@ -9,10 +9,10 @@ DS categorical identification (2026-06-03):
                        up to ℤ₂ wobble on promoted layer (8 split boxes, 29 codons)
 
   Crystal address (genetic_code):
-    ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩
+    ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩
     Ouroboricity: O_∞ (Frobenius algebra on self-referential codon space)
     C-score: Gate 1 (φ̂_ÿ) PASS — genetic code self-repairs (DNA repair machinery)
-            Gate 2 (Ç_@) PASS — evolution is slow enough for self-modeling
+            Gate 2 (𐑧) PASS — evolution is slow enough for self-modeling
 
 Key structural facts:
   - The 16 codon boxes split 8/8 into exact and split strata
@@ -2152,7 +2152,7 @@ if __name__ == "__main__":
     print("=" * 64)
     print("GENETIC ENGINE  ·  Frobenius-Guided Gene Editing via IG Grammar")
     print("Editing = local modification of the Frobenius algebra on codon space")
-    print("Structural type: ⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩")
+    print("Structural type: ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩")
     print("=" * 64)
 
     # Run verification suite
@@ -2173,11 +2173,11 @@ if __name__ == "__main__":
     _hr("Structural Summary (Imscribing Grammar)")
 
     rows = [
-        ("genetic_code",    "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
+        ("genetic_code",    "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", ">0.0", "stratified Frobenius algebra"),
-        ("whale_vocalization", "⟨Ð_ω; Þ_ò; Ř_=; Φ_υ; ƒ_ð; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩",
+        ("whale_vocalization", "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", ">0.0", "self-modeling communication"),
-        ("grammar_itself",    "⟨Ð_ω; Þ_O; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z⟩",
+        ("grammar_itself",    "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑙; 𐑭⟩",
          "O_∞", "1.0", "self-imscribed"),
     ]
     print(f"  {'System':<22} {'Tuple':<56} {'Tier':<7} {'C':>5}  {'Note'}")

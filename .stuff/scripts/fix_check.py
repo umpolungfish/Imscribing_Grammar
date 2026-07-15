@@ -6,19 +6,19 @@ with open('manuscript_zfct.json') as f:
     data = json.load(f)
 
 mapping = {
-    'Ð_ω': 'Dimensionality.D_omega', 'Ð_C': 'Dimensionality.D_turnthree',
-    'Þ_O': 'Topology.T_openo', 'Þ_¨': 'Topology.T_bullseye', 'Þ_K': 'Topology.T_invscr',
-    'Ř_=': 'Relational.R_lyoghlig', 'Ř_Ť': 'Relational.R_downstep',
-    'Φ_υ': 'Polarity.P_aolig', 'Φ_ɐ': 'Polarity.P_aolig', 'Φ_F': 'Polarity.P_pipevar',
-    'Φ_˙': 'Polarity.P_subdoublearrow', 'Φ_}': 'Polarity.P_doublebarpipe',
+    '𐑦': 'Dimensionality.D_omega', '𐑨': 'Dimensionality.D_turnthree',
+    '𐑸': 'Topology.T_openo', '𐑶': 'Topology.T_bullseye', '𐑰': 'Topology.T_invscr',
+    '𐑾': 'Relational.R_lyoghlig', '𐑽': 'Relational.R_downstep',
+    '𐑿': 'Polarity.P_aolig', '𐑗': 'Polarity.P_aolig', '𐑬': 'Polarity.P_pipevar',
+    '𐑯': 'Polarity.P_subdoublearrow', '𐑹': 'Polarity.P_doublebarpipe',
     'ƒ^ì': 'Fidelity.F_beltl', 'ƒ^ż': 'Fidelity.F_hardsign',
     'Ç^Ù': 'KineticChar.K_teshlig', 'Ç^@': 'KineticChar.K_schwa', 'Ç^W': 'KineticChar.K_frtailgamma',
-    'Γ_ʔ': 'Granularity.G_revapostrophe',
+    '𐑲': 'Granularity.G_revapostrophe',
     'ɢ^∧': 'Grammar.Gamma_seq', 'ɢ^ˌ': 'Grammar.Gamma_seq', 'ɢ^Ş': 'Grammar.Gamma_broad',
-    '⊙_ÿ': 'Criticality.Phi_ctyogh',
-    'Ħ_!': 'Chirality.H_invscripta', 'Ħ_£': 'Chirality.H_toneletterstem', 'Ħ_Ñ': 'Chirality.H_closeomega',
-    'Σ_S': 'Stoichiometry.S_doublebaresh', 'Σ_ï': 'Stoichiometry.S_ltailm',
-    'Ω_z': 'Protection.Omega_dzlig', 'Ω_Å': 'Protection.Omega_closeepsilon',
+    '⊙': 'Criticality.Phi_ctyogh',
+    '𐑫': 'Chirality.H_invscripta', '𐑒': 'Chirality.H_toneletterstem', '𐑓': 'Chirality.H_closeomega',
+    '𐑙': 'Stoichiometry.S_doublebaresh', '𐑳': 'Stoichiometry.S_ltailm',
+    '𐑭': 'Protection.Omega_dzlig', '𐑷': 'Protection.Omega_closeepsilon',
 }
 
 def mk_synthon(tup):
@@ -37,22 +37,22 @@ def mk_synthon(tup):
 
 def tier_for(tup):
     p = tup['Φ']
-    if p == 'Φ_}': return '.O_∞'
+    if p == '𐑹': return '.O_∞'
     d = tup['Ð']
     o = tup['Ω']
-    if o == 'Ω_z' and d != 'Ð_ß': return '.O₂'
+    if o == '𐑭' and d != '𐑛': return '.O₂'
     return '.O₁'
 
 # Fix the CorpusComparison section at the bottom.
 # Need to identify the correct P_doublebarpipe tuples for voynich_frobenius variants.
 # They differ by (top, gram):
-#   (Þ_¨, ɢ^∧) — 6 entries: crossing topology, sequential grammar
-#   (Þ_¨, ɢ^Ş) — 1 entry: crossing topology, broadcast grammar
-#   (Þ_O, ɢ^∧) — 3 entries: open topology, sequential grammar
+#   (𐑶, ɢ^∧) — 6 entries: crossing topology, sequential grammar
+#   (𐑶, ɢ^Ş) — 1 entry: crossing topology, broadcast grammar
+#   (𐑸, ɢ^∧) — 3 entries: open topology, sequential grammar
 
 frob_tuples = []
 for _, g in data['voynich'].items():
-    if g['tuple']['Φ'] == 'Φ_}':
+    if g['tuple']['Φ'] == '𐑹':
         frob_tuples.append(g['tuple'])
 
 # deduplicate

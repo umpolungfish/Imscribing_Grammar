@@ -3,9 +3,9 @@
 IG_latex.py — Canonical LaTeX for Imscribing Grammar primitives.
 
 Usage:
-  python3 IG_latex.py fmt  Ð_ω           # → Ð_{\\omega}  (no $ delimiters)
-  python3 IG_latex.py inline Ð_ω         # → $Ð_{\\omega}$
-  python3 IG_latex.py tuple "Ð_ω Þ_O …"  # display-math crystal address
+  python3 IG_latex.py fmt  𐑦           # → Ð_{\\omega}  (no $ delimiters)
+  python3 IG_latex.py inline 𐑦         # → $Ð_{\\omega}$
+  python3 IG_latex.py tuple "𐑦 𐑸 …"  # display-math crystal address
   python3 IG_latex.py fix file.md         # rewrite file with canonical LaTeX
   python3 IG_latex.py list                # print all 49 entries
 
@@ -26,27 +26,27 @@ import re, sys, os
 #
 PRIM_LATEX: dict[str, str] = {
     # ── Ð Dimensionality ──────────────────────────────────────────────────────
-    'Ð_ß':  r'Ð_{ß}',
-    'Ð_C':  r'Ð_{C}',
-    'Ð_;':  r'Ð_{;}',
-    'Ð_ω':  r'Ð_{\omega}',
+    '𐑛':  r'Ð_{ß}',
+    '𐑨':  r'Ð_{C}',
+    '𐑼':  r'Ð_{;}',
+    '𐑦':  r'Ð_{\omega}',
     # ── Þ Topology ────────────────────────────────────────────────────────────
-    'Þ_6':  r'Þ_{6}',
-    'Þ_K':  r'Þ_{K}',
-    'Þ_ò':  r'Þ_{\text{ò}}',
-    'Þ_¨':  r'Þ_{\text{¨}}',
-    'Þ_O':  r'Þ_{O}',
+    '𐑡':  r'Þ_{6}',
+    '𐑰':  r'Þ_{K}',
+    '𐑥':  r'Þ_{\text{ò}}',
+    '𐑶':  r'Þ_{\text{¨}}',
+    '𐑸':  r'Þ_{O}',
     # ── Ř Relational ──────────────────────────────────────────────────────────
-    'Ř_¯':  r'Ř_{\text{¯}}',
-    'Ř_ý':  r'Ř_{\text{ý}}',
-    'Ř_Ť':  r'Ř_{\text{Ť}}',
-    'Ř_=':  r'Ř_{=}',
+    '𐑩':  r'Ř_{\text{¯}}',
+    '𐑑':  r'Ř_{\text{ý}}',
+    '𐑽':  r'Ř_{\text{Ť}}',
+    '𐑾':  r'Ř_{=}',
     # ── Φ Parity ──────────────────────────────────────────────────────────────
-    'Φ_ɐ':  r'Φ_{\text{ɐ}}',
-    'Φ_υ':  r'Φ_{\upsilon}',
-    'Φ_F':  r'Φ_{F}',
-    'Φ_˙':  r'Φ_{\text{˙}}',
-    'Φ_}':  r'Φ_{\}}',
+    '𐑗':  r'Φ_{\text{ɐ}}',
+    '𐑿':  r'Φ_{\upsilon}',
+    '𐑬':  r'Φ_{F}',
+    '𐑯':  r'Φ_{\text{˙}}',
+    '𐑹':  r'Φ_{\}}',
     # ── ƒ Fidelity  (SUPERSCRIPT; \text{ƒ} — not in standard math font) ────────
     'ƒ^ì':  r'\text{ƒ}^{\text{ì}}',
     'ƒ^ð':  r'\text{ƒ}^{\text{ð}}',
@@ -58,39 +58,39 @@ PRIM_LATEX: dict[str, str] = {
     'Ç^Ù':  r'Ç^{\text{Ù}}',
     'Ç^λ':  r'Ç^{\lambda}',
     # ── Γ Scope ───────────────────────────────────────────────────────────────
-    'Γ_β':  r'Γ_{\beta}',
-    'Γ_γ':  r'Γ_{\gamma}',
-    'Γ_ʔ':  r'Γ_{\text{ʔ}}',
+    '𐑚':  r'Γ_{\beta}',
+    '𐑔':  r'Γ_{\gamma}',
+    '𐑲':  r'Γ_{\text{ʔ}}',
     # ── ɢ Grammar  (SUPERSCRIPT; \text{ɢ} — not in standard math font) ─────────
     'ɢ^∧':  r'\text{ɢ}^{\wedge}',
     'ɢ^˝':  r'\text{ɢ}^{\text{˝}}',
     'ɢ^ˌ':  r'\text{ɢ}^{\text{ˌ}}',
     'ɢ^Ş':  r'\text{ɢ}^{\text{Ş}}',
     # ── ⊙ Criticality (\odot renders in all LaTeX modes; ⊙ is old catalog key) ─
-    '⊙_ž':  r'\odot_{\text{ž}}',
-    '⊙_ÿ':  r'\odot_{\text{ÿ}}',
-    '⊙_Æ':  r'\odot_{\text{Æ}}',
-    '⊙_3':  r'\odot_{3}',
-    '⊙_Ţ':  r'\odot_{\text{Ţ}}',
-    '⊙_ž':  r'\odot_{\text{ž}}',
-    '⊙_ÿ':  r'\odot_{\text{ÿ}}',
-    '⊙_Æ':  r'\odot_{\text{Æ}}',
-    '⊙_3':  r'\odot_{3}',
-    '⊙_Ţ':  r'\odot_{\text{Ţ}}',
+    '𐑢':  r'\odot_{\text{ž}}',
+    '⊙':  r'\odot_{\text{ÿ}}',
+    '𐑮':  r'\odot_{\text{Æ}}',
+    '𐑻':  r'\odot_{3}',
+    '𐑣':  r'\odot_{\text{Ţ}}',
+    '𐑢':  r'\odot_{\text{ž}}',
+    '⊙':  r'\odot_{\text{ÿ}}',
+    '𐑮':  r'\odot_{\text{Æ}}',
+    '𐑻':  r'\odot_{3}',
+    '𐑣':  r'\odot_{\text{Ţ}}',
     # ── Ħ Chirality (\text{Ħ} — not in standard math font) ──────────────
-    'Ħ_Ñ':  r'\text{Ħ}_{\text{Ñ}}',
-    'Ħ_£':  r'\text{Ħ}_{\text{£}}',
-    'Ħ_A':  r'\text{Ħ}_{A}',
-    'Ħ_!':  r'\text{Ħ}_{!}',
+    '𐑓':  r'\text{Ħ}_{\text{Ñ}}',
+    '𐑒':  r'\text{Ħ}_{\text{£}}',
+    '𐑖':  r'\text{Ħ}_{A}',
+    '𐑫':  r'\text{Ħ}_{!}',
     # ── Σ Stoichiometry ───────────────────────────────────────────────────────
-    'Σ_S':  r'Σ_{S}',
-    'Σ_ő':  r'Σ_{\text{ő}}',
-    'Σ_ï':  r'Σ_{\text{ï}}',
+    '𐑙':  r'Σ_{S}',
+    '𐑕':  r'Σ_{\text{ő}}',
+    '𐑳':  r'Σ_{\text{ï}}',
     # ── Ω Winding ─────────────────────────────────────────────────────────────
-    'Ω_Å':  r'Ω_{\text{Å}}',
-    'Ω_2':  r'Ω_{2}',
-    'Ω_z':  r'Ω_{z}',
-    'Ω_5':  r'Ω_{5}',
+    '𐑷':  r'Ω_{\text{Å}}',
+    '𐑴':  r'Ω_{2}',
+    '𐑭':  r'Ω_{z}',
+    '𐑟':  r'Ω_{5}',
 }
 
 # ── Public API ────────────────────────────────────────────────────────────────

@@ -62,7 +62,7 @@ PROXIMITY_PAIRS = [
     (
         "human",       "imscriptions",
         "pulsar_noise", "imscriptions",
-        "Human vs unmodeled pulsar noise: differ only in D (Ð_C vs Ð_;)",
+        "Human vs unmodeled pulsar noise: differ only in D (𐑨 vs 𐑼)",
     ),
 ]
 

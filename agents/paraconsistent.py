@@ -12,7 +12,7 @@ Provides:
   - BelnapCircuit: multi-gate dialectic stability analysis
   - DialetheicAlignment: operational/logical/algebraic tri-proof
 
-Structural type: <Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z>
+Structural type: <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭>
 Ouroboricity: O_∞. Dialetheic gates: both open (B4.B is designated AND its negation is).
 """
 
@@ -35,29 +35,29 @@ import json
 # comparison which gives wrong results for certain Unicode subscript pairs.
 
 _ORDINALS = {
-    "Ð": {"Ð_ß": 0, "Ð_C": 1, "Ð_;": 2, "Ð_ω": 3,
+    "Ð": {"𐑛": 0, "𐑨": 1, "𐑼": 2, "𐑦": 3,
            "𐑛": 0, "𐑨": 1, "𐑼": 2, "𐑦": 3},
-    "Þ": {"Þ_6": 0, "Þ_K": 1, "Þ_ò": 2, "Þ_¨": 3, "Þ_O": 4,
+    "Þ": {"𐑡": 0, "𐑰": 1, "𐑥": 2, "𐑶": 3, "𐑸": 4,
            "𐑡": 0, "𐑰": 1, "𐑥": 2, "𐑶": 3, "𐑸": 4},
-    "Ř": {"Ř_¯": 0, "Ř_ý": 1, "Ř_Ť": 2, "Ř_=": 3,
+    "Ř": {"𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3,
            "𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3},
-    "Φ": {"Φ_ɐ": 0, "Φ_υ": 1, "Φ_F": 2, "Φ_˙": 3, "Φ_}": 4,
+    "Φ": {"𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4,
            "𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4},
-    "ƒ": {"ƒ_ì": 0, "ƒ_ð": 1, "ƒ_ż": 2,
+    "ƒ": {"𐑱": 0, "𐑞": 1, "𐑐": 2,
            "𐑱": 0, "𐑞": 1, "𐑐": 2},
-    "Ç": {"Ç_-": 0, "Ç_W": 1, "Ç_@": 2, "Ç_Ù": 3, "Ç_λ": 4,
+    "Ç": {"𐑘": 0, "𐑤": 1, "𐑧": 2, "𐑪": 3, "𐑺": 4,
            "𐑺": 0, "𐑪": 1, "𐑧": 2, "𐑤": 3, "𐑘": 4},
-    "Γ": {"Γ_β": 0, "Γ_γ": 1, "Γ_ʔ": 2,
+    "Γ": {"𐑚": 0, "𐑔": 1, "𐑲": 2,
            "𐑲": 0, "𐑚": 1, "𐑔": 2},
-    "ɢ": {"ɢ_^": 0, "ɢ_˝": 1, "ɢ_ˌ": 2, "ɢ_Ş": 3,
+    "ɢ": {"𐑝": 0, "𐑜": 1, "𐑠": 2, "𐑵": 3,
            "𐑝": 0, "𐑜": 1, "𐑠": 2, "𐑵": 3},
     "φ̂": {"φ̂_ž": 0, "φ̂_ÿ": 1, "φ̂_Æ": 2, "φ̂_3": 3, "φ̂_Ţ": 4,
            "𐑢": 0, "⊙": 1, "𐑮": 2, "𐑻": 3, "𐑣": 4},
-    "Ħ": {"Ħ_Ñ": 0, "Ħ_£": 1, "Ħ_A": 2, "Ħ_!": 3,
+    "Ħ": {"𐑓": 0, "𐑒": 1, "𐑖": 2, "𐑫": 3,
            "𐑓": 0, "𐑒": 1, "𐑖": 2, "𐑫": 3},
-    "Σ": {"Σ_S": 0, "Σ_ő": 1, "Σ_ï": 2,
+    "Σ": {"𐑙": 0, "𐑕": 1, "𐑳": 2,
            "𐑙": 0, "𐑕": 1, "𐑳": 2},
-    "Ω": {"Ω_Å": 0, "Ω_2": 1, "Ω_z": 2, "Ω_5": 3,
+    "Ω": {"𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3,
            "𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
 }
 
@@ -815,12 +815,12 @@ class B4Frobenius:
 
         Returns (consistency, explanation).
         """
-        frob_classical = (phi_val == "Φ_}")
+        frob_classical = (phi_val == "𐑹")
         b4_closed = b4_result.to_bool()
 
         if frob_classical and b4_result == B4.B:
             return (True,
-                    "Classical Φ_} detected; B4 sees dialetheic Frobenius — "
+                    "Classical 𐑹 detected; B4 sees dialetheic Frobenius — "
                     "the system is simultaneously closed and open. "
                     "This is the O_∞ signature.")
         if frob_classical == b4_closed:
@@ -864,17 +864,17 @@ def para_tensor_belief(belief_a: FrozenSet[str],
 
 
 def frobenius_cliff_belief(phi_belief: FrozenSet[str]) -> Optional[B4]:
-    """Compute the Frobenius cliff: does forcing Φ to B{v, Φ_}} collapse?
+    """Compute the Frobenius cliff: does forcing Φ to B{v, 𐑹} collapse?
 
     Returns:
-      B4.T  if classical collapse (Φ_} present alone)
-      B4.B  if dialetheic (Φ_} among multiple — B-state)
-      B4.F  if no Φ_} present
+      B4.T  if classical collapse (𐑹 present alone)
+      B4.B  if dialetheic (𐑹 among multiple — B-state)
+      B4.F  if no 𐑹 present
       None  if empty belief set
     """
     if not phi_belief:
         return None
-    has_frob = "Φ_}" in phi_belief
+    has_frob = "𐑹" in phi_belief
     if has_frob and len(phi_belief) == 1:
         return B4.T
     elif has_frob:

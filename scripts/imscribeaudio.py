@@ -9,7 +9,7 @@ Modes:
   imscribeaudio.py <base> <sub>
       Single symbol, e.g.:  imscribeaudio.py ō ž
 
-  imscribeaudio.py --tuple "Ð_ß Þ_6 Ř_¯ Φ_F ƒ^ì Ç^- Γ_ʔ ɢ^∧ ⊙_ž Ħ_Ñ Σ_S Ω_Å"
+  imscribeaudio.py --tuple "𐑛 𐑡 𐑩 𐑬 ƒ^ì Ç^- 𐑲 ɢ^∧ 𐑢 𐑓 𐑙 𐑷"
       12-primitive Imscription tuple -> WAV with each primitive in sequence
       Accepts space- or comma-separated glyph IDs (canonical or old Lean names).
 

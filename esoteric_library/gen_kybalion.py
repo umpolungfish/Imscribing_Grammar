@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'
 D, T, R, P, F, K, G, Gm, C, H, S, Om = (
-    'Ð_ω','Þ_O','Ř_=','Φ_}','ƒ^ż','Ç^@','Γ_ʔ','ɢ^ˌ','⊙_ÿ','Ħ_!','Σ_ï','Ω_z')
+    '𐑦','𐑸','𐑾','𐑹','ƒ^ż','Ç^@','𐑲','ɢ^ˌ','⊙','𐑫','𐑳','𐑭')
 TIER, CSCORE = 'O_∞', 0.95
 
 def entry(num, title, desc, text, notes=""):

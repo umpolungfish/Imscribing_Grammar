@@ -9,7 +9,7 @@ Architecture:
   - axiom_guided_generator.py     → Axiom-validated imscription generation
   - retrodesign_agent.py          → Retrosynthetic decomposition analysis
   - perturbation_design_agent.py  → Primitive Jacobian interpretation
-  - criticality_hunting_agent.py  → Automated ⊙_ÿ hunting
+  - criticality_hunting_agent.py  → Automated ⊙ hunting
   - ensemble_design_agent.py      → Goal-directed multi-imscription composition
 """
 import sys as _sys

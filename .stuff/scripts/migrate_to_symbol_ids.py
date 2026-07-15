@@ -20,27 +20,27 @@ DRY_RUN = "--dry-run" in sys.argv
 # prefixes to prevent partial matches (e.g. Ω_dzlig before Ω_dz if both existed).
 RENAME: list[tuple[str, str]] = [
     # D — Dimensionality
-    ("Ð_wynn",               "Ð_ß"),
-    ("Ð_turnthree",          "Ð_C"),
-    ("Ð_invomega",           "Ð_;"),
-    ("Ð_omega",              "Ð_ω"),
+    ("Ð_wynn",               "𐑛"),
+    ("Ð_turnthree",          "𐑨"),
+    ("Ð_invomega",           "𐑼"),
+    ("Ð_omega",              "𐑦"),
     # T — Topology
-    ("Þ_nrleg",              "Þ_6"),
-    ("Þ_invscr",             "Þ_K"),
-    ("Þ_bullseye",           "Þ_ò"),
-    ("Þ_commatailz",         "Þ_¨"),
-    ("Þ_openo",              "Þ_O"),
+    ("Þ_nrleg",              "𐑡"),
+    ("Þ_invscr",             "𐑰"),
+    ("Þ_bullseye",           "𐑥"),
+    ("Þ_commatailz",         "𐑶"),
+    ("Þ_openo",              "𐑸"),
     # R — Relational mode
-    ("Ř_subrightarrow",      "Ř_¯"),
-    ("Ř_ctz",                "Ř_ý"),
-    ("Ř_downstep",           "Ř_Ť"),
-    ("Ř_lyoghlig",           "Ř_="),
+    ("Ř_subrightarrow",      "𐑩"),
+    ("Ř_ctz",                "𐑑"),
+    ("Ř_downstep",           "𐑽"),
+    ("Ř_lyoghlig",           "𐑾"),
     # P — Parity/Symmetry (pm_sym before pm to avoid partial match)
-    ("Φ_doublebarpipe",      "Φ_}"),
-    ("Φ_aolig",              "Φ_ɐ"),
-    ("Φ_upsilon",            "Φ_υ"),
-    ("Φ_pipevar",            "Φ_F"),
-    ("Φ_subdoublearrow",     "Φ_˙"),
+    ("Φ_doublebarpipe",      "𐑹"),
+    ("Φ_aolig",              "𐑗"),
+    ("Φ_upsilon",            "𐑿"),
+    ("Φ_pipevar",            "𐑬"),
+    ("Φ_subdoublearrow",     "𐑯"),
     # F — Fidelity
     ("ƒ_beltl",              "ƒ^ì"),
     ("ƒ_dh",                 "ƒ^ð"),
@@ -53,36 +53,36 @@ RENAME: list[tuple[str, str]] = [
     ("Ç_teshlig",            "Ç^Ù"),
     ("Ç_lambda",             "Ç^λ"),
     # G — Scope/Granularity
-    ("Γ_beta",               "Γ_β"),
-    ("Γ_gamma",              "Γ_γ"),
-    ("Γ_revapostrophe",      "Γ_ʔ"),
+    ("Γ_beta",               "𐑚"),
+    ("Γ_gamma",              "𐑔"),
+    ("Γ_revapostrophe",      "𐑲"),
     # Gamma — Interaction grammar
     ("ɢ_corner",             "ɢ^∧"),
     ("ɢ_spleftarrow",        "ɢ^˝"),
     ("ɢ_secstress",          "ɢ^ˌ"),
     ("ɢ_doublevertline",     "ɢ^Ş"),
     # Phi — Criticality (c_complex before c to avoid partial match)
-    ("⊙_closerevepsilon",   "⊙_Æ"),
-    ("⊙_softsign",          "⊙_ž"),
-    ("⊙_ctyogh",            "⊙_ÿ"),
-    ("⊙_ctc",               "⊙_ÿ"),   # old gen_final.py name, same target
-    ("⊙_revepsilon",        "⊙_3"),
-    ("⊙_upstep",            "⊙_Ţ"),
+    ("⊙_closerevepsilon",   "𐑮"),
+    ("⊙_softsign",          "𐑢"),
+    ("⊙_ctyogh",            "⊙"),
+    ("⊙_ctc",               "⊙"),   # old gen_final.py name, same target
+    ("⊙_revepsilon",        "𐑻"),
+    ("⊙_upstep",            "𐑣"),
     # H — Chirality
-    ("Ħ_closeomega",         "Ħ_Ñ"),
-    ("Ħ_toneletterstem",     "Ħ_£"),
-    ("Ħ_turntwo",            "Ħ_A"),
-    ("Ħ_invscripta",         "Ħ_!"),
+    ("Ħ_closeomega",         "𐑓"),
+    ("Ħ_toneletterstem",     "𐑒"),
+    ("Ħ_turntwo",            "𐑖"),
+    ("Ħ_invscripta",         "𐑫"),
     # S — Stoichiometry
-    ("Σ_doublebaresh",       "Σ_S"),
-    ("Σ_ctn",                "Σ_ő"),
-    ("Σ_ltailm",             "Σ_ï"),
-    ("Σ_scn",                "Σ_ï"),   # old gen_final.py name, same target
+    ("Σ_doublebaresh",       "𐑙"),
+    ("Σ_ctn",                "𐑕"),
+    ("Σ_ltailm",             "𐑳"),
+    ("Σ_scn",                "𐑳"),   # old gen_final.py name, same target
     # Omega — Topological invariant
-    ("Ω_closeepsilon",       "Ω_Å"),
-    ("Ω_crtwo",              "Ω_2"),
-    ("Ω_dzlig",              "Ω_z"),
-    ("Ω_turna",              "Ω_5"),
+    ("Ω_closeepsilon",       "𐑷"),
+    ("Ω_crtwo",              "𐑴"),
+    ("Ω_dzlig",              "𐑭"),
+    ("Ω_turna",              "𐑟"),
 ]
 
 RENAME_DICT = dict(RENAME)

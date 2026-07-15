@@ -105,8 +105,8 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
 
     Scoring:
       +1  F_compliant: pmra_error < 0.1 and pmdec_error < 0.1 mas/yr
-      +2  Þ_6: spatially correlated proper motions (|r| > 0.3 with ≥5 neighbors)
-      +3  ⊙_ÿritical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
+      +2  𐑡: spatially correlated proper motions (|r| > 0.3 with ≥5 neighbors)
+      +3  ⊙ritical: astrometric_excess_noise_sig > 2 (scale-invariant excess)
       +4  Omega_candidate: RUWE > 1.4 + excess noise > 0.2 mas + high-DM region
       +1  D_temporal: ipd_gof_harmonic_amplitude > 0.1 (proxy for long-term drift signal)
 
@@ -137,7 +137,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
         # Low z-score = source moves WITH neighbors = network topology
         if z_ra < 1.0 and z_dec < 1.0:
             score += 2
-            flags.append("Þ_6")
+            flags.append("𐑡")
 
     # PHI-CRITICALITY FILTER: structured excess noise (scale invariance proxy)
     excess_noise = row.get("astrometric_excess_noise", 0) or 0

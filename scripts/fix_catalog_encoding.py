@@ -6,10 +6,10 @@ fix_catalog_encoding.py — normalize all three encoding errors in IG_catalog.js
                 → rename to canonical glyph keys (Ð,Þ,Ř,Φ,ƒ,Ç,ɢ,Γ,⊙,Ħ,Σ,Ω)
                   Values are already Shavian; only keys need renaming.
 
-  Category 2 — Tuple notation  (tuple: 'Ð_;;Þ_O;Ř_=;...')
+  Category 2 — Tuple notation  (tuple: '𐑼;𐑸;𐑾;...')
                 → parse into flat dict using OLD_TO_SHAVIAN, then drop 'tuple' key.
 
-  Category 3 — Symbol_symbol values (Φ_ɐ, Ω_z, ⊙_ÿ, ...)
+  Category 3 — Symbol_symbol values (𐑗, 𐑭, ⊙, ...)
                 → translate each value via OLD_TO_SHAVIAN.
 
   Category 4 — UNDEFINED tuple  (tuple: 'UNDEFINED;...')
@@ -28,18 +28,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # ── Symbol_symbol → Shavian map (from migrate_models_shavian.py) ────────────
 OLD_TO_SHAVIAN = {
-    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
-    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
-    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
-    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
+    "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
+    "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
+    "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
     "Ç^-": "𐑘", "Ç^W": "𐑤", "Ç^@": "𐑧", "Ç^Ù": "𐑪", "Ç^λ": "𐑺",
-    "Γ_β": "𐑚", "Γ_γ": "𐑔", "Γ_ʔ": "𐑲",
+    "𐑚": "𐑚", "𐑔": "𐑔", "𐑲": "𐑲",
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
-    "⊙_ž": "𐑢", "⊙_ÿ": "⊙", "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
-    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
-    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳",
-    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
+    "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
+    "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
+    "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
 }
 
 # Also accept _ separator for primitives that use ^ in OLD_TO_SHAVIAN
@@ -79,14 +79,14 @@ def _translate_value(prim_canonical: str, raw_val: str) -> str:
     Returns raw_val unchanged if already canonical or unknown.
 
     Handles two sub-cases:
-      A. raw_val is the full Symbol_symbol form (e.g. 'Ç_@') — direct lookup
+      A. raw_val is the full Symbol_symbol form (e.g. '𐑧') — direct lookup
       B. raw_val is just the suffix part (e.g. '@') — prim prefix prepended
     """
     from imscrbgrmr.canonical_primitives import ORDINALS
     # Already Shavian
     if raw_val in ORDINALS.get(prim_canonical, {}):
         return raw_val
-    # Case A: raw_val is the full token (e.g. "Ç_@", "Ω_z")
+    # Case A: raw_val is the full token (e.g. "𐑧", "𐑭")
     if raw_val in _UNIFIED:
         return _UNIFIED[raw_val]
     # Case B: raw_val is the suffix — construct with prim prefix
@@ -131,7 +131,7 @@ def fix_symbol_symbol_values(entry: dict) -> tuple[dict, list]:
 
 
 def parse_tuple(entry: dict) -> tuple[dict, list, bool]:
-    """Parse tuple: 'Ð_;;Þ_O;...' into flat primitive dict.
+    """Parse tuple: '𐑼;𐑸;...' into flat primitive dict.
     Returns (fixed_entry, changes, skipped_undefined)."""
     e = deepcopy(entry)
     raw = e.get("tuple", "")

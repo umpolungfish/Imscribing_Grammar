@@ -116,7 +116,7 @@ CLINK   ISCRIB  FSPLIT  FFUSE
 EVALT   EVALF   ENGAGR  IFIX
 ```
 
-FSPLIT and FFUSE are the δ and μ maps of the Frobenius algebra. ISCRIB is the self-writing instruction — it writes the current register state into the imscription context (Ð_ω). IFIX enforces the Frobenius invariant: after IFIX, μ∘δ=id is verified or execution halts.
+FSPLIT and FFUSE are the δ and μ maps of the Frobenius algebra. ISCRIB is the self-writing instruction — it writes the current register state into the imscription context (𐑦). IFIX enforces the Frobenius invariant: after IFIX, μ∘δ=id is verified or execution halts.
 
 ### Belnap FOUR Logic
 
@@ -184,7 +184,7 @@ uv run zfct_navigator.py path \
 
 ### Lambda (`lambda_engine.py`)
 
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at ${O}_\infty$ (Ð_ω self-writing, μ∘δ=id by construction).
+Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
 
 ### Frobenius MZI (`frobenius_mzi_sim.py`)
 

@@ -102,7 +102,7 @@ def normalize_md(text: str) -> str:
 # Complete \texttt{Prim\_subtype} → $math_form$ table
 # Order matters: more specific patterns first
 TEXTTT_FIXES = [
-    # Parity/symmetry (Φ) — most specific first (pandoc mangles Φ_υ → Ph$i_{\upsilon}$)
+    # Parity/symmetry (Φ) — most specific first (pandoc mangles 𐑿 → Ph$i_{\upsilon}$)
     (r'\texttt{Ph$i_{\upsilon}$}',   r'$\Phi_{\upsilon}$'),
     (r'\texttt{Φ\_\}}',              r'$\Phi_{\}}$'),
     (r'\texttt{Φ\_ɐ}',              r'$\Phi_{\text{ɐ}}$'),

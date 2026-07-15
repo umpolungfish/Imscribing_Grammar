@@ -3065,9 +3065,9 @@ After assignment, VERIFY:
   - K-Φ: ⊙ + ↺ = deep critical structure; × + ↯ = runaway
   - × absorption: tensor(⊙, ×) = × — coupling to an EP system destroys Gate 1
 
-**⊙_3 ABSORPTION RULE:** When computing tensor couplings involving an ⊙_3 system,
-the composite places at ⊙_3 — tensor(⊙_ÿ, ⊙_3) = ⊙_3. The meet preserves ⊙_ÿ; the tensor yields ⊙_3.
-Coupling a self-modeling system to a measurement apparatus selects the tensor; the meet path preserves ⊙_ÿ.
+**𐑻 ABSORPTION RULE:** When computing tensor couplings involving an 𐑻 system,
+the composite places at 𐑻 — tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻.
+Coupling a self-modeling system to a measurement apparatus selects the tensor; the meet path preserves ⊙.
 This is the structural statement of the measurement problem.
 </imscribing_procedure>
 

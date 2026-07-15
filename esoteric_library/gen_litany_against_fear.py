@@ -12,25 +12,25 @@ PHI = '⊙'
 # ---------------------------------------------------------------------------
 # Available glyph IDs — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #
-#   Ð  Dimensionality : Ð_ß  Ð_C  Ð_;  Ð_ω
-#   Þ  Topology       : Þ_6  Þ_K  Þ_ò  Þ_¨  Þ_O
-#   Ř  Relational     : Ř_¯  Ř_ý  Ř_Ť  Ř_=
-#   Φ  Polarity       : Φ_ɐ  Φ_υ  Φ_F  Φ_˙  Φ_}
+#   Ð  Dimensionality : 𐑛  𐑨  𐑼  𐑦
+#   Þ  Topology       : 𐑡  𐑰  𐑥  𐑶  𐑸
+#   Ř  Relational     : 𐑩  𐑑  𐑽  𐑾
+#   Φ  Polarity       : 𐑗  𐑿  𐑬  𐑯  𐑹
 #   ƒ  Fidelity       : ƒ^ì  ƒ^ð  ƒ^ż
 #   Ç  Kinetics       : Ç^-  Ç^W  Ç^@  Ç^Ù  Ç^λ
-#   Γ  Scope          : Γ_β  Γ_γ  Γ_ʔ
+#   Γ  Scope          : 𐑚  𐑔  𐑲
 #   ɢ  Grammar        : ɢ^∧  ɢ^˝  ɢ^ˌ  ɢ^Ş
-#   ⊙  Criticality    : ⊙_ž  ⊙_ÿ  ⊙_Æ  ⊙_3  ⊙_Ţ
-#   Ħ  Chirality : Ħ_Ñ  Ħ_£  Ħ_A  Ħ_!
-#   Σ  Stoichiometry  : Σ_S  Σ_ő  Σ_ï
-#   Ω  Winding        : Ω_Å  Ω_2  Ω_z  Ω_5
+#   ⊙  Criticality    : 𐑢  ⊙  𐑮  𐑻  𐑣
+#   Ħ  Chirality : 𐑓  𐑒  𐑖  𐑫
+#   Σ  Stoichiometry  : 𐑙  𐑕  𐑳
+#   Ω  Winding        : 𐑷  𐑴  𐑭  𐑟
 #
 # Tier heuristic (boundary fields: Φ, D, ⊙, Ω):
-#   T_0   : ⊙_ž, D compact/infty, Φ not Frobenius
-#   T_1   : ⊙_ÿ, Φ not Frobenius
-#   T_2   : ⊙_ÿ/⊙_Æ, Φ not Frobenius, Ω winding
-#   T_3   : ⊙_Æ/⊙_3, any Φ, Ω winding
-#   T_inf : ⊙_3 or (⊙_ÿ + Φ_}) — Frobenius + EP
+#   T_0   : 𐑢, D compact/infty, Φ not Frobenius
+#   T_1   : ⊙, Φ not Frobenius
+#   T_2   : ⊙/𐑮, Φ not Frobenius, Ω winding
+#   T_3   : 𐑮/𐑻, any Φ, Ω winding
+#   T_inf : 𐑻 or (⊙ + 𐑹) — Frobenius + EP
 # ---------------------------------------------------------------------------
 
 def entry(num, title, desc, text,
@@ -59,7 +59,7 @@ chapters = [
     entry(1, "Section title",
         "One-line description of the structural claim",
         "Verbatim source text for this section.",
-        "Ð_ω","Þ_O","Ř_Ť","Φ_}","ƒ^ì","Ç^@","Γ_ʔ","ɢ^∧","⊙_3","Ħ_!","Σ_S","Ω_z",
+        "𐑦","𐑸","𐑽","𐑹","ƒ^ì","Ç^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
 

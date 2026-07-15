@@ -11,7 +11,7 @@ Requires: numpy, scipy, matplotlib, pillow, ffmpeg (in PATH)
 Usage:
   python imscribevideo.py --name riemann_hypothesis
   python imscribevideo.py --name psilocybin_peak -o audio/psilocybin_peak.mp4
-  python imscribevideo.py --tuple "Ð_ω Þ_¨ Ř_= Φ_} ƒ^ż Ç^@ Γ_ʔ ɢ^ˌ ⊙_ÿ Ħ_A Σ_S Ω_z"
+  python imscribevideo.py --tuple "𐑦 𐑶 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑙 𐑭"
   python imscribevideo.py --all-catalog          # batch: every catalog entry
 """
 
@@ -69,18 +69,18 @@ FIELD_LABELS = ['Dim','Top','Rel','Par','Fid','Kin','Scp','Grm','Crit','Tmp','St
 
 # human-readable sub-names from memory table
 HUMAN = {
-    'Ð_ß':'wynn',       'Ð_C':'turnthree',  'Ð_;':'invomega',    'Ð_ω':'omega',
-    'Þ_6':'nrleg',      'Þ_K':'invscr',     'Þ_ò':'bullseye',    'Þ_¨':'commatailz',  'Þ_O':'openo',
-    'Ř_¯':'subrightarrow','Ř_ý':'ctz',      'Ř_Ť':'downstep',    'Ř_=':'lyoghlig',
-    'Φ_ɐ':'aolig',      'Φ_υ':'upsilon',    'Φ_F':'pipevar',     'Φ_˙':'subdoublearrow','Φ_}':'doublebarpipe',
+    '𐑛':'wynn',       '𐑨':'turnthree',  '𐑼':'invomega',    '𐑦':'omega',
+    '𐑡':'nrleg',      '𐑰':'invscr',     '𐑥':'bullseye',    '𐑶':'commatailz',  '𐑸':'openo',
+    '𐑩':'subrightarrow','𐑑':'ctz',      '𐑽':'downstep',    '𐑾':'lyoghlig',
+    '𐑗':'aolig',      '𐑿':'upsilon',    '𐑬':'pipevar',     '𐑯':'subdoublearrow','𐑹':'doublebarpipe',
     'ƒ^ì':'beltl',      'ƒ^ð':'dh',         'ƒ^ż':'hardsign',
     'Ç^-':'frtailgamma','Ç^W':'turnm',      'Ç^@':'schwa',       'Ç^Ù':'teshlig',     'Ç^λ':'lambda',
-    'Γ_β':'beta',       'Γ_γ':'gamma',      'Γ_ʔ':'revapostrophe',
+    '𐑚':'beta',       '𐑔':'gamma',      '𐑲':'revapostrophe',
     'ɢ^∧':'corner',     'ɢ^˝':'spleftarrow','ɢ^ˌ':'secstress',   'ɢ^Ş':'doublevertline',
-    '⊙_ž':'softsign',   '⊙_ÿ':'ctyogh',    '⊙_Æ':'closerevepsilon','⊙_3':'revepsilon','⊙_Ţ':'upstep',
-    'Ħ_Ñ':'closeomega', 'Ħ_£':'toneletterstem','Ħ_A':'turntwo',  'Ħ_!':'invscripta',
-    'Σ_S':'doublebaresh','Σ_ő':'ctn',       'Σ_ï':'ltailm',
-    'Ω_Å':'closeepsilon','Ω_2':'crtwo',     'Ω_z':'dzlig',       'Ω_5':'turna',
+    '𐑢':'softsign',   '⊙':'ctyogh',    '𐑮':'closerevepsilon','𐑻':'revepsilon','𐑣':'upstep',
+    '𐑓':'closeomega', '𐑒':'toneletterstem','𐑖':'turntwo',  '𐑫':'invscripta',
+    '𐑙':'doublebaresh','𐑕':'ctn',       '𐑳':'ltailm',
+    '𐑷':'closeepsilon','𐑴':'crtwo',     '𐑭':'dzlig',       '𐑟':'turna',
 }
 
 _CATALOG_PATH = os.path.join(_HERE, 'IG_catalog.json')

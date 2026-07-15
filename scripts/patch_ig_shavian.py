@@ -72,15 +72,15 @@ for i, l in enumerate(lines):
             # Update comparison strings: display → Shavian
             line = line.replace('"φ̂_ÿ"', '"⊙"')
             line = line.replace('"φ̂_Æ"', '"𐑮"')
-            line = line.replace('"Φ_}"', '"𐑹"')
+            line = line.replace('"𐑹"', '"𐑹"')
             line = line.replace('"φ̂_ž"', '"𐑢"')
             line = line.replace('"φ̂_Ţ"', '"𐑣"')
             line = line.replace('"φ̂_3"', '"𐑻"')
-            line = line.replace('"Ω_Å"', '"𐑷"')
-            line = line.replace('"Ð_ß"', '"𐑛"')
-            line = line.replace('"Ð_ω"', '"𐑦"')
-            line = line.replace('"Ð_C"', '"𐑨"')
-            line = line.replace('"Ð_;"', '"𐑼"')
+            line = line.replace('"𐑷"', '"𐑷"')
+            line = line.replace('"𐑛"', '"𐑛"')
+            line = line.replace('"𐑦"', '"𐑦"')
+            line = line.replace('"𐑨"', '"𐑨"')
+            line = line.replace('"𐑼"', '"𐑼"')
             # Update docstring text
             line = line.replace('display notation', 'Shavian glyphs')
             line = line.replace('human-readable display', 'Shavian Unicode')
@@ -94,7 +94,7 @@ for i, l in enumerate(lines):
             if '_FROBENIUS_DESCRIPTIONS' in lines[j]:
                 for k in range(j, min(j+20, len(lines))):
                     old = lines[k]
-                    n = old.replace('(Ð_;)', '(𐑼)')
+                    n = old.replace('(𐑼)', '(𐑼)')
                     if n != old:
                         lines[k] = n
                         changes += 1

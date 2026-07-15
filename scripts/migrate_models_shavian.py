@@ -11,23 +11,23 @@ import sys
 from pathlib import Path
 
 OLD_TO_SHAVIAN = {
-    "Ð_ß": "𐑛", "Ð_C": "𐑨", "Ð_;": "𐑼", "Ð_ω": "𐑦",
-    "Þ_6": "𐑡", "Þ_K": "𐑰", "Þ_ò": "𐑥", "Þ_¨": "𐑶", "Þ_O": "𐑸",
-    "Ř_¯": "𐑩", "Ř_ý": "𐑑", "Ř_Ť": "𐑽", "Ř_=": "𐑾",
-    "Φ_ɐ": "𐑗", "Φ_υ": "𐑿", "Φ_F": "𐑬", "Φ_˙": "𐑯", "Φ_}": "𐑹",
+    "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
+    "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
+    "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
+    "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
     "Ç^-": "𐑘", "Ç^W": "𐑤", "Ç^@": "𐑧", "Ç^Ù": "𐑪", "Ç^λ": "𐑺",
-    "Γ_β": "𐑚", "Γ_γ": "𐑔", "Γ_ʔ": "𐑲",
+    "𐑚": "𐑚", "𐑔": "𐑔", "𐑲": "𐑲",
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
-    "⊙_ž": "𐑢", "⊙_ÿ": "⊙", "⊙_Æ": "𐑮", "⊙_3": "𐑻", "⊙_Ţ": "𐑣",
-    "Ħ_Ñ": "𐑓", "Ħ_£": "𐑒", "Ħ_A": "𐑖", "Ħ_!": "𐑫",
-    "Σ_S": "𐑙", "Σ_ő": "𐑕", "Σ_ï": "𐑳",
-    "Ω_Å": "𐑷", "Ω_2": "𐑴", "Ω_z": "𐑭", "Ω_5": "𐑟",
+    "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
+    "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
+    "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
 }
 
 # Build a regex that matches any old symbol inside a Python string literal "..."
 # We do a simple quoted-string replacement: "OLD" → "NEW"
-# Sorted longest-first to avoid partial matches (e.g. "Ω_5" before "Ω_")
+# Sorted longest-first to avoid partial matches (e.g. "𐑟" before "Ω_")
 _SORTED = sorted(OLD_TO_SHAVIAN.keys(), key=len, reverse=True)
 
 def replace_quoted(text: str) -> str:
@@ -35,7 +35,7 @@ def replace_quoted(text: str) -> str:
     for old in _SORTED:
         new = OLD_TO_SHAVIAN[old]
         # Match the symbol when it appears as the complete content of a double-quoted string
-        # e.g.  = "Ð_ß"   or   "Ð_ß":   or   "Ð_ß",   etc.
+        # e.g.  = "𐑛"   or   "𐑛":   or   "𐑛",   etc.
         text = text.replace(f'"{old}"', f'"{new}"')
     return text
 
