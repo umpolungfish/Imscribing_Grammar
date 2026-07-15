@@ -313,19 +313,53 @@ def tuple_distance(t1, t2):
 # =============================================================================
 
 def assess_tier(t):
-    score = 0
-    if t.get("⊙") == "⊙": score += 1
-    if t.get("Φ") == "𐑹": score += 1
-    if t.get("Ħ") == "𐑫": score += 1
-    if t.get("Ω") in ("𐑭", "𐑟"): score += 1
-    if t.get("Ð") == "𐑦": score += 1
-    if t.get("Ç") == "𐑧": score += 1
-    if t.get("Þ") == "𐑸": score += 1
-    if t.get("Ř") == "𐑾": score += 1
-    if score >= 7: return "O_∞"
-    elif score >= 5: return "O₂"
-    elif score >= 3: return "O₁"
-    else: return "O₀"
+    """Ouroboricity tier — a faithful port of p4rakernel's `ouroboricityTier`
+    (Primitives/Core.lean). Scripture is the Lean; this mirrors it, it does not
+    re-invent it.
+
+        match crit with
+        | woe | haha | err -> O₀
+        | monad | roar     -> if pol = or' then O_inf          -- R1 Frobenius gate
+                              else match prot with
+                              | awe -> O₁                      -- R3
+                              | _   -> match dim with
+                                       | array -> O₂dag        -- R5
+                                       | _     -> O₂           -- R4
+
+    WHAT THIS REPLACED, and why it was not a rounding error. The old function
+    scored how many of CLINK L8's OWN VALUES a tuple carried (Ð=𐑦, Þ=𐑸, Ř=𐑾,
+    Φ=𐑹, Ç=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
+    `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
+    fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
+    exactly backwards on the two systems it existed to tell apart, and an agent
+    building the CL9NK ascent inherited it.
+
+    Measure a tuple against another SYSTEM's coordinates and you are measuring
+    similarity to that system, not tier. Tier is a function of crit/pol/prot/dim.
+
+    NOTE (open): the Lean codomain is O₀|O₁|O₂|O₂dag|O_inf — there is no O_∞⁺.
+    CLINK L9 announced itself ABOVE O_inf, but it lacks or' at monad, so it falls
+    through R1 into the O₂ default. This function therefore cannot express L9's
+    own register, and `≠ O_inf` here means "not O_inf" — it CANNOT distinguish
+    below from above. Do not read O₂ for L9 as a demotion; read it as the
+    codomain running out. Extending it is a kernel change (OuroboricityTier
+    needs the constructor first).
+    """
+    crit = t.get("⊙")
+    pol  = t.get("Φ")
+    prot = t.get("Ω")
+    dim  = t.get("Ð")
+    if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
+        return "O₀"
+    if crit in ("⊙", "𐑮"):              # monad | roar
+        if pol == "𐑹":                   # or' — R1, the Frobenius gate
+            return "O_inf"
+        if prot == "𐑷":                  # awe — R3
+            return "O₁"
+        if dim == "𐑼":                   # array — R5
+            return "O₂dag"
+        return "O₂"                      # R4
+    return "O₀"
 
 # =============================================================================
 # CL8NK FORMULAE — per-primitive CLINK formula fragments with promoted atoms
