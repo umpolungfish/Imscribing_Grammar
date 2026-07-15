@@ -851,11 +851,52 @@ def action_promotions():
     return generate_promotions()
 
 
+def _unreadable_tuple(name, t, nav):
+    """A tuple whose values did not resolve is not a coordinate — refuse to measure it.
+
+    Six catalog entries (the Navier-Stokes family and zfc_t_system) still carry their tuple in
+    a retired notation, so it parses to twelve EMPTY strings. `entry` was honest about this and
+    printed `unknown()` twelve times. `distance`/`tier`/`tensor`/`meet`/`join` were not: they
+    measured the empty tuple against the reference and returned status "ok" with a precise
+    number — 3.0173, BYTE-IDENTICAL for every unreadable entry, because it is the distance from
+    NOTHING to the reference, not a property of the entry at all.
+
+    A tool that cannot read its input and answers anyway is worse than one that errors, because
+    the answer looks like a measurement. Same fault as a no-arg action silently discarding its
+    argument: the model fills the gap with what it was handed, then gets blamed for the
+    confabulation the tool invited.
+    """
+    if not isinstance(t, dict) or not t:
+        missing = []
+    else:
+        missing = [p for p, v in t.items() if not v]
+    if not missing:
+        return None
+    return {
+        "status": "error",
+        "error": (
+            f"'{name}' has an unreadable tuple: {len(missing)} of {len(t)} primitives did not "
+            f"resolve ({' '.join(missing)}). Its catalog tuple is written in a retired notation, "
+            f"so it parsed to empty. This entry has no coordinate to measure."
+        ),
+        "why_you_got_an_error_and_not_a_number": (
+            "Measuring an empty tuple against the reference returns the distance from NOTHING. "
+            "That value is a constant — identical for every unreadable entry — so it would have "
+            "told you nothing about this one while looking exactly like a measurement."
+        ),
+        "fix": f"Re-imscribe it so it has a live coordinate: TOOL: imscribe {name} <description>",
+        "navigator": nav,
+    }
+
+
 def action_distance(name):
     sys_info = resolve_system(name)
     if sys_info is None:
         return {"status": "error", "message": f"System '{name}' not found in catalog."}
     t = sys_info.get("tuple", {})
+    _bad = _unreadable_tuple(sys_info.get("name", name), t, "cl9nk")
+    if _bad:
+        return _bad
     d, conflicts = tuple_distance(t, CLINK_L9_REF)
     tier = assess_tier(t)
     return {"status": "ok", "name": sys_info.get("name", name), "distance_to_cl9nk": d,
@@ -870,6 +911,9 @@ def action_tensor(name):
     sys_info = resolve_system(name)
     if sys_info is None:
         return {"status": "error", "message": f"System '{name}' not found in catalog."}
+    _bad = _unreadable_tuple(sys_info.get("name", name), sys_info.get("tuple", {}), "cl9nk")
+    if _bad:
+        return _bad
     result = compute_tensor_op(sys_info.get("tuple", {}))
     result["status"] = "ok"
     result["name"] = sys_info.get("name", name)
@@ -880,6 +924,9 @@ def action_meet(name):
     sys_info = resolve_system(name)
     if sys_info is None:
         return {"status": "error", "message": f"System '{name}' not found in catalog."}
+    _bad = _unreadable_tuple(sys_info.get("name", name), sys_info.get("tuple", {}), "cl9nk")
+    if _bad:
+        return _bad
     result = compute_meet_op(sys_info.get("tuple", {}))
     result["status"] = "ok"
     result["name"] = sys_info.get("name", name)
@@ -890,6 +937,9 @@ def action_join(name):
     sys_info = resolve_system(name)
     if sys_info is None:
         return {"status": "error", "message": f"System '{name}' not found in catalog."}
+    _bad = _unreadable_tuple(sys_info.get("name", name), sys_info.get("tuple", {}), "cl9nk")
+    if _bad:
+        return _bad
     result = compute_join_op(sys_info.get("tuple", {}))
     result["status"] = "ok"
     result["name"] = sys_info.get("name", name)
@@ -901,6 +951,9 @@ def action_tier(name):
     if sys_info is None:
         return {"status": "error", "message": f"System '{name}' not found in catalog."}
     t = sys_info.get("tuple", {})
+    _bad = _unreadable_tuple(sys_info.get("name", name), t, "cl9nk")
+    if _bad:
+        return _bad
     tier = assess_tier(t)
     d, _ = tuple_distance(t, CLINK_L9_REF)
     return {"status": "ok", "name": sys_info.get("name", name), "tier": tier, "distance_from_cl9nk": d}
