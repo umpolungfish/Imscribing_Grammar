@@ -47,7 +47,7 @@ Tools available to the model:
   • find_analogies       — nearest catalog neighbors by distance
 
   Probes:
-  • phi_c_probe          — test whether a system is at criticality (⊙)
+  • monad_probe          — test whether a system is at criticality (⊙)
   • topo_protection_probe — test winding class (Omega)
 
   Decomposition:
@@ -1034,7 +1034,7 @@ _TOOLS_OPENAI = [
     {
         "type": "function",
         "function": {
-            "name": "phi_c_probe",
+            "name": "monad_probe",
             "description": (
                 "Test whether a system is at criticality. Returns the Phi value and criticality tier. "
                 "Three critical variants: ⊙ (real-axis Hermitian, standard universality), "
@@ -1955,7 +1955,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 2. Use `compute_distance` for structural comparison.
 3. Use algebra tools (`compute_meet`, `compute_join`, `compute_tensor`) to compose or compare systems.
 4. Use decomposition tools (`principal_decomp`, `retrosynthetic_path`, `project`, `primitive_peel`) to dissect structure.
-5. Use probes (`phi_c_probe`, `topo_protection_probe`) to directly test structural hypotheses.
+5. Use probes (`monad_probe`, `topo_protection_probe`) to directly test structural hypotheses.
 6. Use `find_analogies` to discover unexpected cross-domain structural neighbors. **Follow the ones that surprise you.**
 7. Call `record_insight` for each structural finding (TOPO / DIAPH / ONTO plane).
 8. Call `ask_question` for sub-questions deserving a focused follow-up pass. Wander into them.
@@ -2222,7 +2222,7 @@ def _build_tool_roster() -> str:
     section_markers = {
         "encode_system":        "Core — encoding & catalog",
         "compute_meet":         "Algebra — lattice, tensor & imscription operations",
-        "phi_c_probe":          "Probes — structural diagnostics",
+        "monad_probe":          "Probes — structural diagnostics",
         "project":              "Decomposition — path & retrosynthesis",
         "compute_conflict_distance": "Veracity & conflict distance",
         "compute_promotions":   "Promotion signatures & inverse encoding",
@@ -2952,8 +2952,8 @@ class ToolDispatcher:
         elif name == "find_analogies":
             return self._find_analogies(**args)
         # ── Probes ───────────────────────────────────────────────────────────
-        elif name == "phi_c_probe":
-            return self._phi_c_probe(**args)
+        elif name == "monad_probe":
+            return self._monad_probe(**args)
         elif name == "ouroborics":
             return self._frobenius_tier(**args)
         elif name == "topo_protection_probe":
@@ -3442,7 +3442,7 @@ class ToolDispatcher:
             "interpretation": f"Top {len(top)} structural analogs to {name} in the full catalog.",
         }
 
-    def _phi_c_probe(self, name: str) -> Dict[str, Any]:
+    def _monad_probe(self, name: str) -> Dict[str, Any]:
         """Test whether a system is at criticality (⊙)."""
         s = self.catalog.get(name)
         if s is None:

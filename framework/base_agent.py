@@ -15,6 +15,34 @@ from .tools import ToolExecutor
 
 logger = logging.getLogger(__name__)
 
+# ── provider self-heal ────────────────────────────────────────────────────────
+# A 402/401/403 is FATAL for one provider and harmless for the others, so it must
+# not be retried and must not kill the call. Treating it as transient is what made
+# `imscribe` grind: four exponential backoffs against a payment failure that will
+# never clear, then a hard raise, so every mint died and the agent looped asking
+# for a reagent that could not be created. ask_native already self-heals this way
+# on the Rust side; the generator it shells out to never got the fix.
+_FATAL_PROVIDER_CODES = ("402", "401", "403", "payment required", "insufficient", "quota")
+
+# Preference order among providers that actually have a key on this host.
+_PROVIDER_FALLBACK = [
+    ("openrouter", "OPENROUTER_API_KEY"),
+    ("deepseek",   "DEEPSEEK_API_KEY"),
+]
+
+
+def _is_fatal_provider_error(err: str) -> bool:
+    e = err.lower()
+    return any(c in e for c in _FATAL_PROVIDER_CODES)
+
+
+def _funded_providers(exclude: set) -> list:
+    """Providers with a key present, minus the ones already known broke."""
+    import os
+    return [n for n, k in _PROVIDER_FALLBACK if n not in exclude and os.environ.get(k)]
+
+
+
 class AgentStatus(Enum):
     IDLE = "idle"
     RUNNING = "running"
@@ -241,6 +269,44 @@ class BaseAgent(ABC):
                     )
                     await asyncio.sleep(delay)
                     continue
+
+                # A fatal provider error is not transient: no amount of backoff buys
+                # credit. Demote to the next FUNDED provider and carry on, unless the
+                # caller pinned one explicitly.
+                if _is_fatal_provider_error(err):
+                    self._dead_providers = getattr(self, "_dead_providers", set())
+                    cur = self.config.get("provider", "")
+                    self._dead_providers.add(cur)
+                    if self.config.get("_provider_pinned"):
+                        raise RuntimeError(
+                            f"[{self.name}] provider '{cur}' returned a fatal error and was "
+                            f"pinned, so it was not demoted: {err}"
+                        ) from exc
+                    nxt = _funded_providers(self._dead_providers)
+                    if nxt:
+                        # The MODEL must travel with the provider. A slug is
+                        # provider-scoped: carrying openrouter's
+                        # `deepseek/deepseek-v4-pro` over to google turns a 402 into a
+                        # 404, which is a demotion that fixes nothing. Take the new
+                        # provider's own default.
+                        from .enhanced_llm_provider import _get_default_model
+                        self.config["provider"] = nxt[0]
+                        self.config["model"] = _get_default_model(nxt[0])
+                        # base_url/api_key are the OLD provider's. Left in place they
+                        # are sticky and the rebuilt provider keeps posting to the dead
+                        # endpoint, turning a 402 into a 401 against the same host.
+                        self.config.pop("base_url", None)
+                        self.config.pop("api_key", None)
+                        logger.warning(
+                            f"[{self.name}] provider '{cur}' fatal ({err.strip()[:60]}) — "
+                            f"demoting to '{nxt[0]}' model '{self.config['model']}'"
+                        )
+                        self.provider = self._setup_llm_provider()
+                        continue
+                    raise RuntimeError(
+                        f"[{self.name}] every funded provider returned a fatal error; "
+                        f"last was '{cur}': {err}"
+                    ) from exc
 
                 # Other transient errors
                 if attempt < max_retries:

@@ -168,7 +168,7 @@ traceback
 675:    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
 677:    "find_analogies":         {"name": "<catalog_entry_name>"},
 681:    "consciousness_score":    {"name": "<catalog_entry_name>"},
-682:    "phi_c_probe":            {"name": "<catalog_entry_name>"},
+682:    "monad_probe":            {"name": "<catalog_entry_name>"},
 683:    "topo_protection_probe":  {"name": "<catalog_entry_name>"},
 684:    "primitive_peel":         {"name": "<catalog_entry_name>", "primitive": "<D|T|R|P|F|K|G|Gamma|Phi|H|S|Omega>"},
 685:    "principal_decomp":       {"name": "<catalog_entry_name>"},
@@ -484,7 +484,7 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
 1226:        return _syncon_tool_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
 1227:    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 1233:    return _syncon_tool_emit({"tool_name": "ouroborics", "args": {"name": name}})
-1251:    return _syncon_tool_emit({"tool_name": "phi_c_probe", "args": {"name": name}})
+1251:    return _syncon_tool_emit({"tool_name": "monad_probe", "args": {"name": name}})
 1271:        return _syncon_tool_emit({"tool_name": "consciousness_score", "args": {"name": name}})
 
   VERIFY: [closed] assertion 'True' PASSED
@@ -517,7 +517,7 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
     "rewrite_tool":         _rewrite_tool_emit,
     "done":                 _done_emit,
     "ouroborics":           _ouroborics_emit,
-    "phi_c_probe":          _phi_c_probe_emit,
+    "monad_probe":          _monad_probe_emit,
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
     "spawn_agent":          _spawn_agent_emit,
@@ -534,7 +534,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "rewrite_tool":         _rewrite_tool_verify,
     "done":                 _done_verify,
     "ouroborics":           _ouroborics_verify,
-    "phi_c_probe":          _phi_c_probe_verify,
+    "monad_probe":          _monad_probe_verify,
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
     "spawn_agent":          _spawn_agent_verify,
@@ -648,7 +648,7 @@ TOOL_SCHEMAS = [
 1226:        return _syncon_tool_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
 1227:    return _syncon_tool_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
 1233:    return _syncon_tool_emit({"tool_name": "ouroborics", "args": {"name": name}})
-1251:    return _syncon_tool_emit({"tool_name": "phi_c_probe", "args": {"name": name}})
+1251:    return _syncon_tool_emit({"tool_name": "monad_probe", "args": {"name": name}})
 1271:        return _syncon_tool_emit({"tool_name": "consciousness_score", "args": {"name": name}})
 1273:        return _syncon_tool_emit({
 1293:    return _syncon_tool_emit({"tool_name": "crystal_tier_census", "args": {}})
@@ -1010,8 +1010,8 @@ ImportError: cannot import name 'ImscriptionInquiry' from 'IΓ_inquiry' (/home/m
         elif name == "find_analogies":
             return self._find_analogies(**args)
         # ── Probes ───────────────────────────────────────────────────────────
-        elif name == "phi_c_probe":
-            return self._phi_c_probe(**args)
+        elif name == "monad_probe":
+            return self._monad_probe(**args)
         elif name == "ouroborics":
             return self._frobenius_tier(**args)
         elif name == "topo_protection_probe":

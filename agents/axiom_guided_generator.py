@@ -19,6 +19,40 @@ from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, field
 
 
+def _valid_values() -> str:
+    """The valid value list for the generation prompt, read off the canonical enums.
+
+    This block used to be a hand-maintained list and it rotted into rubble: three
+    notation generations side by side (`Ð_ß` beside `D_infinity` beside `T_chains`),
+    values that no longer exist (`Ð_ß_triangle` and the other hybrids were aliases,
+    now deleted), and tokens chewed in half by successive migrations — `Ř_¯set` is
+    `R_superset` with its head eaten, and it was already broken before the Shavian
+    pass ever ran. One of those wrecks (`Φ_}}` losing its brace) was a SyntaxError
+    that killed the import, so every `imscribe` failed and the agent could not mint
+    anything: it reached for a reagent, the generator was dead, the next verb said
+    "not found", and it looped there forever.
+
+    A list of enum members maintained by hand will always drift from the enum. So
+    this reads the members instead. There is nothing left to migrate.
+    """
+    import sys, os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+    from imscrbgrmr.models import (Dimensionality, Topology, Recognition, Polarity,
+                                   Fidelity, KineticChar, Granularity, Grammar,
+                                   Criticality, Chirality, Stoichiometry, Protection)
+    AXES = [("D (Dimensionality)", Dimensionality), ("T (Topology)", Topology),
+            ("R (Recognition)", Recognition),       ("P (Polarity)", Polarity),
+            ("F (Fidelity)", Fidelity),             ("K (Kinetics)", KineticChar),
+            ("G (Granularity)", Granularity),       ("\u0262 (Grammar)", Grammar),
+            ("\u2299 (Criticality)", Criticality),  ("H (Chirality)", Chirality),
+            ("S (Stoichiometry)", Stoichiometry),   ("\u03a9 (Protection)", Protection)]
+    lines = []
+    for label, cls in AXES:
+        vals = ", ".join(f"{m.value} ({m.name})" for m in cls)
+        lines.append(f"- {label}: {vals}")
+    return "\n".join(lines)
+
+
 def _desc_slug(desc: str, maxlen: int = 60) -> str:
     """Slugify a description, truncating at a word boundary (no mid-word cuts)."""
     slug = desc.replace('-', ' ').replace('/', ' ').replace(' ', '_')
@@ -368,18 +402,9 @@ You **MUST NOT** assign 𐑽 merely because a system is "dynamic", "geometric", 
 </axioms>
 
 <instructions>
-Assign each primitive using these valid values:
-- D (Dimensionality): 𐑛 (molecular only), 𐑨 (supramolecular only), D_infinity (temporal only),
-  𐑛_triangle (molecular+supramolecular hybrid), 𐑨_infinity (supramolecular+temporal hybrid),
-  𐑛_infinity (molecular+temporal hybrid), 𐑛_triangle_infinity (all three scales)
-- T (Topology): 𐑥 (T_⋈), T_chains (T_≫), T_square (T_□), T_linear (T_|), T_branched (T_⊥), 𐑡 (T_∈), 𐑡_hex (T_∈(hex)), 𐑡_mixed (T_∈(mixed)), 𐑡_interp (T_∈(×2)), 𐑡_sym (T_∈(sym)), T_cage (T_□□), T_bowl (T_∪)
-- R (Recognition): R_subset (COVALENT bond formation only), 𐑩set (NON-COVALENT: H-bonds/coordination/host-guest), 𐑽 (catalytic), R_mechanical
-- P (Polarity): P_plus, P_minus, 𐑹}, 𐑬_pseudo, P_directional
-- F (Fidelity): ƒ^ż, ƒ^ð, ƒ^ì
-- K (Kinetics): Ç^-, Ç^W, Ç^@, Ç^Ù
-- G (Granularity): 𐑚, 𐑔, 𐑲
-- Γ (Grammar): ɢ^∧(SPECIFIC|SELECTIVE|BROAD), ɢ^˝(...), ɢ^ˌ(...)
-- Φ (Criticality): 𐑢, ⊙, 𐑣 (default: 𐑢)
+Assign each primitive using these valid values (generated from the canonical
+enums; each is a bare Shavian glyph):
+{_valid_values()}
 - S (Stoichiometry): "1:1" for homodimeric/symmetric, "n:m" for asymmetric, null if indeterminate
 
 For **EACH** axiom, explicitly state whether it applies and how it is satisfied.

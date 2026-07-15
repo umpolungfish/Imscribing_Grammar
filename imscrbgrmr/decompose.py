@@ -1040,7 +1040,7 @@ def retrosynthetic_path(
 # Convenience: ⊙ probe for kernel()
 # ---------------------------------------------------------------------------
 
-def phi_c_probe(s: Imscription) -> bool:
+def monad_probe(s: Imscription) -> bool:
     """Standard probe: True if the imscription has ⊙ (criticality = CRITICAL)."""
     return _has_phi_c(s)
 

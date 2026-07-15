@@ -87,7 +87,7 @@ def _load_provider_defaults() -> Dict[str, Any]:
             "base_url": "https://api.mistral.ai",
         },
         "google": {
-            "default_model": "gemini-2.0-flash-exp",
+            "default_model": "gemini-flash-latest",  # -latest: an exp/dated slug retires and 404s
             "base_url": "https://generativelanguage.googleapis.com",
         },
         "openrouter": {
@@ -234,7 +234,9 @@ class HttpProvider(LLMProvider):
             "temperature": temp,
             "max_tokens": max_tokens,
         }
-
+        # NOTE: no reasoning switch here. `reasoning`/`reasoning_effort` is OpenRouter's
+        # unified field and DeepSeek's own API 400s on it, so it is NOT vendor-neutral and
+        # cannot live in the shared payload. OpenRouterProvider sends it; see there.
         try:
             async with httpx.AsyncClient(timeout=60.0) as client:
                 response = await client.post(self.base_url, headers=headers, json=data)

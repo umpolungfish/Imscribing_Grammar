@@ -89,7 +89,7 @@ providers:
       - general
       - quick-tasks
   google:
-    default_model: gemini-2.0-flash-exp
+    default_model: gemini-flash-latest  # -latest: an exp/dated slug retires and 404s
     base_url: https://generativelanguage.googleapis.com
     max_tokens_default: 4000
     temperature_default: 0.7

@@ -79,61 +79,42 @@ class Dimensionality(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Dimensionality":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "dead": cls.dead,
+            "ash": cls.ash,
+            "array": cls.array,
+            "if_": cls.if_,
+            "D_point": cls.D_point,
+            "D_line": cls.D_line,
+            "D_cube": cls.D_cube,
             # glyph IDs (canonical)
-            "𐑛":  cls.dead,
-            "𐑨":  cls.ash,
-            "𐑼":  cls.array,
-            "𐑦":  cls.if_,
+            "𐑛": cls.dead,
+            "𐑨": cls.ash,
+            "𐑼": cls.array,
+            "𐑦": cls.if_,
             # phonetic names (backward compat)
-            "Ð_wynn":       cls.dead,
-            "Ð_turnthree":  cls.ash,
-            "Ð_invomega":   cls.array,
-            "Ð_omega":      cls.if_,
             # legacy canonical names (pre-migration)
-            "Ð_triangle":   cls.ash,
-            "Ð_wedge":      cls.dead,
-            "Ð_infty":      cls.array,
-            "Ð_odot":       cls.if_,
             # Lean extensions
-            "Ð_point":  cls.D_point,
-            "Ð_line":   cls.D_line,
-            "Ð_cube":   cls.D_cube,
+            "Ð_point": cls.D_point,
+            "Ð_line": cls.D_line,
+            "Ð_cube": cls.D_cube,
             # Shavian (v0.6.0)
-            "𐑛": cls.dead,   "𐑨": cls.ash,
+            "𐑛": cls.dead, "𐑨": cls.ash,
             "𐑼": cls.array, "𐑦": cls.if_,
-            # Unicode aliases
-            "D_∧": cls.dead,  "D_△": cls.ash,
-            "D_∞": cls.array, "D_⊙": cls.if_,
-            "Ð_infinity": cls.array,
-            "Ð_holo": cls.if_,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "wynn": cls.dead,
-            "wedge": cls.dead,
-            "turnthree": cls.ash,
-            "triangle": cls.ash,
-            "invomega": cls.array,
-            "infty": cls.array,
-            "infinity": cls.array,
-            "omega": cls.if_,
-            "holo": cls.if_,
-            "odot": cls.if_,
-            "point": cls.D_point,
-            "line": cls.D_line,
-            "cube": cls.D_cube,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Dimensionality: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Dimensionality: unknown symbol {s!r}, defaulting to D_wynn")
-        return cls.dead
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -166,69 +147,52 @@ class Topology(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Topology":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "T_linear": cls.T_linear,
+            "T_branched": cls.T_branched,
+            "judge": cls.judge,
+            "mime": cls.mime,
+            "T_torus": cls.T_torus,
+            "are": cls.are,
+            "T_network_hex": cls.T_network_hex,
+            "T_network_mixed": cls.T_network_mixed,
+            "T_network_interp": cls.T_network_interp,
+            "T_network_sym": cls.T_network_sym,
+            "oil": cls.oil,
+            "eat": cls.eat,
+            "T_braid": cls.T_braid,
             # glyph IDs (canonical)
-            "𐑡":  cls.judge,
-            "𐑥":  cls.mime,
-            "𐑸":  cls.are,
-            "𐑶":  cls.oil,
-            "𐑰":  cls.eat,
+            "𐑡": cls.judge,
+            "𐑥": cls.mime,
+            "𐑸": cls.are,
+            "𐑶": cls.oil,
+            "𐑰": cls.eat,
             # phonetic names (backward compat)
-            "Þ_linear": cls.T_linear,       "Þ_chains": cls.T_linear,
+            "Þ_linear": cls.T_linear,
             "Þ_branched": cls.T_branched,
-            "Þ_nrleg": cls.judge,
-            "Þ_bullseye": cls.mime,
             "Þ_torus": cls.T_torus,
-            "Þ_holo": cls.are,      "Þ_openo": cls.are,
             "Þ_network_hex": cls.T_network_hex,
             "Þ_network_mixed": cls.T_network_mixed,
             "Þ_network_interp": cls.T_network_interp,
             "Þ_network_sym": cls.T_network_sym,
-            "Þ_cage": cls.oil,      "Þ_box": cls.oil,  "Þ_commatailz": cls.oil,
-            "Þ_bowl": cls.eat,      "Þ_invscr": cls.eat,
-            "Þ_braid": cls.T_braid,    "Þ_square": cls.judge,
+            "Þ_braid": cls.T_braid,
             # Shavian (v0.6.0)
-            "𐑡": cls.judge,  "𐑰": cls.eat, "𐑥": cls.mime,
-            "𐑶": cls.oil,   "𐑸": cls.are,
-            # Unicode aliases
-            "T_∈": cls.eat,  "T_⋈": cls.mime,  "T_⊙": cls.are,
-            "T_⊠": cls.oil,
+            "𐑡": cls.judge, "𐑰": cls.eat, "𐑥": cls.mime,
+            "𐑶": cls.oil, "𐑸": cls.are,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "linear": cls.T_linear,
-            "chain": cls.T_linear,
-            "chains": cls.T_linear,
-            "branched": cls.T_branched,
-            "nrleg": cls.judge,
-            "network": cls.judge,
-            "square": cls.judge,
-            "bullseye": cls.mime,
-            "cyclic_bowtie": cls.mime,
-            "torus": cls.T_torus,
-            "holo": cls.are,
-            "openo": cls.are,
-            "cage": cls.oil,
-            "box": cls.oil,
-            "commatailz": cls.oil,
-            "bowl": cls.eat,
-            "invscr": cls.eat,
-            "braid": cls.T_braid,
-            "network_hex": cls.T_network_hex,
-            "network_mixed": cls.T_network_mixed,
-            "network_interp": cls.T_network_interp,
-            "network_sym": cls.T_network_sym,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Topology: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Topology: unknown symbol {s!r}, defaulting to T_linear")
-        return cls.T_linear
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -251,49 +215,32 @@ class Recognition(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Recognition":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "ado": cls.ado,
+            "tot": cls.tot,
+            "ear": cls.ear,
+            "ian": cls.ian,
             # glyph IDs (canonical)
-            "𐑩":  cls.ado,
-            "𐑑":  cls.tot,
-            "𐑽":  cls.ear,
-            "𐑾":  cls.ian,
+            "𐑩": cls.ado,
+            "𐑑": cls.tot,
+            "𐑽": cls.ear,
+            "𐑾": cls.ian,
             # phonetic names (backward compat)
-            "Ř_subrightarrow":   cls.ado,
-            "Ř_ctz":     cls.tot,
-            "Ř_downstep":  cls.ear,
-            "Ř_lyoghlig":      cls.ian,
             # Shavian (v0.6.0)
             "𐑩": cls.ado, "𐑑": cls.tot,
             "𐑽": cls.ear, "𐑾": cls.ian,
             # chemistry vocab
-            "Ř_exact": cls.R_exact,
-            "Ř_subset": cls.tot,         "R_⊆": cls.tot,
-            "Ř_superset": cls.ado,     "R_⊇": cls.ado,
-            "Ř_catalytic": cls.ear,   "R_‡": cls.ear,
-            "Ř_allosteric": cls.R_allosteric,
-            "Ř_mechanical": cls.ian, "R_⇔": cls.ian,
-            "Ř_covalent_dynamic": cls.R_covalent_dynamic,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        # Suffix-based fallback: strip any hallucinated prefix before '_'
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _suffix_map = {
-            "superset": cls.ado, "subrightarrow": cls.ado,
-            "subset": cls.tot, "ctz": cls.tot, "covalent": cls.tot,
-            "covalent_dynamic": cls.R_covalent_dynamic,
-            "catalytic": cls.ear, "downstep": cls.ear,
-            "allosteric": cls.R_allosteric, "exact": cls.R_exact,
-            "mechanical": cls.ian, "lyoghlig": cls.ian,
-        }
-        if suffix in _suffix_map:
-            import warnings
-            warnings.warn(f"Recognition: normalised unknown symbol {s!r} via suffix {suffix!r}")
-            return _suffix_map[suffix]
-        import warnings
-        warnings.warn(f"Recognition: completely unknown symbol {s!r}, defaulting to R_superset")
-        return cls.ado
+            # No fallback: only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -322,64 +269,38 @@ class Polarity(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Polarity":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "church": cls.church,
+            "yew": cls.yew,
+            "out": cls.out,
+            "nun": cls.nun,
+            "or_": cls.or_,
             # glyph IDs (canonical)
-            "𐑗":  cls.church,
-            "𐑿":  cls.yew,
-            "𐑬":  cls.out,
-            "𐑯":  cls.nun,
-            "𐑹":  cls.or_,
+            "𐑗": cls.church,
+            "𐑿": cls.yew,
+            "𐑬": cls.out,
+            "𐑯": cls.nun,
+            "𐑹": cls.or_,
             # phonetic names (backward compat)
-            "Φ_aolig":          cls.church,
-            "Φ_upsilon":        cls.yew,
-            "Φ_pipevar":        cls.out,
-            "Φ_subdoublearrow": cls.nun,
-            "Φ_doublebarpipe":  cls.or_,
             # Shavian (v0.6.0)
-            "𐑗": cls.church,  "𐑿": cls.yew,    "𐑬": cls.out,
+            "𐑗": cls.church, "𐑿": cls.yew, "𐑬": cls.out,
             "𐑯": cls.nun, "𐑹": cls.or_,
             # legacy canonical names
-            "Φ_asym":    cls.church,
-            "Φ_psi":     cls.yew,
-            "Φ_pm":      cls.out,
-            "Φ_sym":     cls.nun,
-            "Φ_pm_sym":  cls.or_,  "P_±^sym": cls.or_,
             # chemistry vocab
-            "Φ_neutral":     cls.church,
-            "Φ_plus":        cls.yew,        "P+": cls.yew,
-            "Φ_minus":       cls.P_minus,       "P-": cls.P_minus,
-            "Φ_pm_pseudo":   cls.P_pm_pseudo,   "P_±^ψ": cls.P_pm_pseudo,
-            "Φ_directional": cls.P_directional,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "neutral": cls.church,
-            "asym": cls.church,
-            "directional": cls.church,
-            "aolig": cls.church,
-            "plus": cls.yew,
-            "psi": cls.yew,
-            "upsilon": cls.yew,
-            "minus": cls.P_minus,
-            "pm_pseudo": cls.P_pm_pseudo,
-            "pipevar": cls.out,
-            "pm": cls.out,
-            "subdoublearrow": cls.nun,
-            "sym": cls.nun,
-            "doublebarpipe": cls.or_,
-            "pm_sym": cls.or_,
-            "frobenius": cls.or_,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Polarity: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Polarity: unknown symbol {s!r}, defaulting to P_neutral")
-        return cls.church
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -408,59 +329,41 @@ class Grammar(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Grammar":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "vow": cls.vow,
+            "gag": cls.gag,
+            "measure": cls.measure,
+            "G_xor": cls.G_xor,
+            "G_impl": cls.G_impl,
+            "ooze": cls.ooze,
             # glyph IDs (canonical)
-            "𐑝":  cls.vow,
-            "𐑜":  cls.gag,
-            "𐑠":  cls.measure,
-            "𐑵":  cls.ooze,
+            "𐑝": cls.vow,
+            "𐑜": cls.gag,
+            "𐑠": cls.measure,
+            "𐑵": cls.ooze,
             # Shavian (v0.6.0)
             "𐑝": cls.vow, "𐑜": cls.gag,
             "𐑠": cls.measure, "𐑵": cls.ooze,
             # phonetic names (backward compat)
-            "ɢ_corner": cls.vow,   "ɢ_and": cls.vow,
-            "ɢ_otimes": cls.vow,   "Γ_⊗": cls.vow,
-            "ɢ_odot": cls.vow,     "Γ_⊙": cls.vow,
-            "ɢ_spleftarrow": cls.gag, "ɢ_or": cls.gag,
-            "ɢ_bigcirc": cls.gag,   "Γ_○": cls.gag,
-            "ɢ_secstress": cls.measure,   "ɢ_seq": cls.measure,
-            "ɢ_dissipative": cls.ooze,   "ɢ_doublevertline": cls.ooze,
             # Unicode aliases
-            "Γ_∧": cls.vow,
-            "Γ_∨": cls.gag,
-            "Γ_→": cls.measure,
             # G_xor / G_impl kept as phonetic since they have no glyph ID yet
             "Γ_xor": cls.G_xor,
             "Γ_impl": cls.G_impl,
             # legacy full string (backward compat)
-            "Γ_dissipative": cls.ooze,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "corner": cls.vow,
-            "and": cls.vow,
-            "otimes": cls.vow,
-            "odot": cls.vow,
-            "spleftarrow": cls.gag,
-            "or": cls.gag,
-            "bigcirc": cls.gag,
-            "secstress": cls.measure,
-            "seq": cls.measure,
-            "xor": cls.G_xor,
-            "impl": cls.G_impl,
-            "dissipative": cls.ooze,
-            "doublevertline": cls.ooze,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Grammar: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Grammar: unknown symbol {s!r}, defaulting to Gamma_corner")
-        return cls.vow
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def partner_logic(self) -> str:
@@ -497,39 +400,33 @@ class Fidelity(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Fidelity":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "F_noise": cls.F_noise,
+            "age": cls.age,
+            "they": cls.they,
+            "peep": cls.peep,
             # glyph IDs (canonical)
-            "𐑱":  cls.age,
-            "𐑞":  cls.they,
-            "𐑐":  cls.peep,
+            "𐑱": cls.age,
+            "𐑞": cls.they,
+            "𐑐": cls.peep,
             # Shavian (v0.6.0)
             "𐑱": cls.age, "𐑞": cls.they, "𐑐": cls.peep,
             # phonetic names (backward compat)
             "ƒ_noise": cls.F_noise,
-            "ƒ_beltl": cls.age,   "F_ℓ": cls.age,   "LOW": cls.age,
-            "ƒ_dh": cls.they,         "F_ℇ": cls.they,       "MEDIUM": cls.they,
-            "ƒ_hardsign": cls.peep, "F_ℏ": cls.peep, "HIGH": cls.peep,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "noise": cls.F_noise,
-            "beltl": cls.age,
-            "low": cls.age,
-            "dh": cls.they,
-            "medium": cls.they,
-            "hardsign": cls.peep,
-            "high": cls.peep,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Fidelity: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Fidelity: unknown symbol {s!r}, defaulting to F_beltl")
-        return cls.age
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def numeric_value(self) -> float:
@@ -561,46 +458,35 @@ class KineticChar(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "KineticChar":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "yea": cls.yea,
+            "loll": cls.loll,
+            "egg": cls.egg,
+            "on": cls.on,
+            "air": cls.air,
             # glyph IDs (canonical)
-            "𐑘":  cls.yea,
-            "𐑤":  cls.loll,
-            "𐑧":  cls.egg,
-            "𐑪":  cls.on,
-            "𐑺":  cls.air,
+            "𐑘": cls.yea,
+            "𐑤": cls.loll,
+            "𐑧": cls.egg,
+            "𐑪": cls.on,
+            "𐑺": cls.air,
             # Shavian (v0.6.0)
             "𐑘": cls.yea, "𐑤": cls.loll, "𐑧": cls.egg,
             "𐑪": cls.on, "𐑺": cls.air,
-            # phonetic names (backward compat)
-            "Ç_frtailgamma": cls.yea, "FAST": cls.yea,
-            "Ç_turnm":  cls.loll,  "MODERATE": cls.loll,
-            "Ç_schwa": cls.egg, "SLOW": cls.egg,
-            "Ç_teshlig": cls.on, "TRAP": cls.on,
-            "Ç_lambda":  cls.air,  "MBL": cls.air,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "frtailgamma": cls.yea,
-            "fast": cls.yea,
-            "turnm": cls.loll,
-            "moderate": cls.loll,
-            "schwa": cls.egg,
-            "slow": cls.egg,
-            "teshlig": cls.on,
-            "trap": cls.on,
-            "lambda": cls.air,
-            "mbl": cls.air,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"KineticChar: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"KineticChar: unknown symbol {s!r}, defaulting to K_schwa")
-        return cls.egg
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def numeric_value(self) -> float:
@@ -640,37 +526,30 @@ class Granularity(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Granularity":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "ice": cls.ice,
+            "bib": cls.bib,
+            "thigh": cls.thigh,
             # glyph IDs (canonical)
-            "𐑲":  cls.ice,
-            "𐑚":  cls.bib,
-            "𐑔":  cls.thigh,
+            "𐑲": cls.ice,
+            "𐑚": cls.bib,
+            "𐑔": cls.thigh,
             # Shavian (v0.6.0)
             "𐑚": cls.bib, "𐑔": cls.thigh, "𐑲": cls.ice,
-            # phonetic names (backward compat)
-            "Γ_revapostrophe": cls.ice, "G_א": cls.ice,
-            "Γ_beta":  cls.bib,  "G_ב": cls.bib,
-            "Γ_gamma": cls.thigh, "G_ג": cls.thigh,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "revapostrophe": cls.ice,
-            "local": cls.ice,
-            "beta": cls.bib,
-            "mesoscale": cls.bib,
-            "gamma": cls.thigh,
-            "global": cls.thigh,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Granularity: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Granularity: unknown symbol {s!r}, defaulting to G_beta")
-        return cls.bib
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -701,52 +580,38 @@ class Criticality(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Criticality":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "woe": cls.woe,
+            "monad": cls.monad,
+            "roar": cls.roar,
+            "err": cls.err,
+            "haha": cls.haha,
+            "egg": cls.egg,
             # glyph IDs (canonical)
-            "𐑢":  cls.woe,
-            "⊙":  cls.monad,
-            "𐑮":  cls.roar,
-            "𐑻":  cls.err,
-            "𐑣":  cls.haha,
-            "𐑧":  cls.egg,
+            "𐑢": cls.woe,
+            "⊙": cls.monad,
+            "𐑮": cls.roar,
+            "𐑻": cls.err,
+            "𐑣": cls.haha,
+            "𐑧": cls.egg,
             # Shavian names
             "woe": cls.woe, "monad": cls.monad, "roar": cls.roar,
-            "err": cls.err, "haha": cls.haha,   "egg":  cls.egg,
+            "err": cls.err, "haha": cls.haha, "egg": cls.egg,
             # phonetic names (backward compat)
-            "⊙_softsign":       cls.Phi_softsign,       "Φ_sub":   cls.Phi_softsign,
-            "⊙_ctyogh":         cls.Phi_ctyogh,         "Φ_c":     cls.Phi_ctyogh,
-            "⊙_closerevepsilon": cls.Phi_closerevepsilon, "Φ_c_ℂ":  cls.Phi_closerevepsilon,
-            "⊙_revepsilon":      cls.Phi_revepsilon,      "Φ_EP":    cls.Phi_revepsilon,
-            "⊙_upstep":         cls.Phi_upstep,          "Φ_sup":   cls.Phi_upstep,
-            # odot-prefixed variants (old memory file notation — keep as compat)
-            "⊙_softsign": cls.woe,  "⊙_ctyogh": cls.monad,
-            "⊙_closerevepsilon": cls.roar, "⊙_revepsilon": cls.err, "⊙_upstep": cls.haha,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "softsign": cls.Phi_softsign,
-            "sub": cls.Phi_softsign,
-            "subcritical": cls.Phi_softsign,
-            "ctyogh": cls.Phi_ctyogh,
-            "critical": cls.Phi_ctyogh,
-            "c": cls.Phi_ctyogh,
-            "closerevepsilon": cls.Phi_closerevepsilon,
-            "revepsilon": cls.Phi_revepsilon,
-            "ep": cls.Phi_revepsilon,
-            "upstep": cls.Phi_upstep,
-            "sup": cls.Phi_upstep,
-            "supercritical": cls.Phi_upstep,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Criticality: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Criticality: unknown symbol {s!r}, defaulting to Phi_softsign")
-        return cls.Phi_softsign
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def is_degenerate(self) -> bool:
@@ -779,49 +644,35 @@ class Protection(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Protection":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "awe": cls.awe,
+            "oak": cls.oak,
+            "ah": cls.ah,
+            "Omega_C": cls.Omega_C,
+            "zoo": cls.zoo,
             # glyph IDs (canonical)
-            "𐑷":  cls.awe,
-            "𐑴":  cls.oak,
-            "𐑭":  cls.ah,
-            "Ω_C":  cls.Omega_C,
-            "𐑟":  cls.zoo,
+            "𐑷": cls.awe,
+            "𐑴": cls.oak,
+            "𐑭": cls.ah,
+            "Ω_C": cls.Omega_C,
+            "𐑟": cls.zoo,
             # Shavian (v0.6.0)
             "𐑷": cls.awe, "𐑴": cls.oak,
             "𐑭": cls.ah, "𐑟": cls.zoo,
-            # phonetic names (backward compat)
-            "Ω_closeepsilon":  cls.awe, "Ω_0":  cls.awe, "TRIVIAL":     cls.awe,
-            "Ω_crtwo": cls.oak, "Ω_Z2": cls.oak, "Z2_CLASS":    cls.oak,
-            "Ω_dzlig":  cls.ah,  "Ω_Z":  cls.ah,  "Z_CLASS":     cls.ah,
-            "Ω_turna": cls.zoo, "Ω_NA": cls.zoo, "NON_ABELIAN": cls.zoo,
-            "CHERN":       cls.Omega_C,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "closeepsilon": cls.awe,
-            "trivial": cls.awe,
-            "crtwo": cls.oak,
-            "z2": cls.oak,
-            "z2_class": cls.oak,
-            "dzlig": cls.ah,
-            "z": cls.ah,
-            "z_class": cls.ah,
-            "c": cls.Omega_C,
-            "chern": cls.Omega_C,
-            "turna": cls.zoo,
-            "na": cls.zoo,
-            "non_abelian": cls.zoo,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Protection: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Protection: unknown symbol {s!r}, defaulting to Omega_closeepsilon")
-        return cls.awe
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def protection_strength(self) -> int:
@@ -860,37 +711,30 @@ class Stoichiometry(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Stoichiometry":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "hung": cls.hung,
+            "so": cls.so,
+            "up": cls.up,
+            "dead": cls.dead,
             # canonical glyphs
             "𐑙": cls.hung, "𐑕": cls.so, "𐑳": cls.up, "𐑛": cls.dead,
             # Shavian names
             "hung": cls.hung, "so": cls.so, "up": cls.up, "dead": cls.dead,
             # phonetic/legacy backward compat
-            "Σ_doublebaresh": cls.hung, "Σ_ctn": cls.so, "Σ_ltailm": cls.up,
-            "one_one": cls.hung, "n_n": cls.so, "n_m": cls.up,
-            "1:1": cls.hung, "1:n": cls.so, "n:m": cls.up, "n:n": cls.so,
-            "one_n": cls.so, "cat": cls.up,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "doublebaresh": cls.S_doublebaresh,
-            "one_one": cls.S_doublebaresh,
-            "ctn": cls.one_n,
-            "one_n": cls.one_n,
-            "ltailm": cls.S_ltailm,
-            "n_m": cls.S_ltailm,
-            "cat": cls.cat,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Stoichiometry: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Stoichiometry: unknown symbol {s!r}, defaulting to S_doublebaresh")
-        return cls.S_doublebaresh
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
 
 # =============================================================================
@@ -917,40 +761,33 @@ class Chirality(Enum):
     @classmethod
     def from_symbol(cls, s: str) -> "Chirality":
         _map = {
+            # canonical: the glyph, and the Shavian name. Nothing else resolves —
+            # an old form MUST NOT import, so it is simply absent.
+            "fee": cls.fee,
+            "kick": cls.kick,
+            "sure": cls.sure,
+            "wool": cls.wool,
             # glyph IDs (canonical)
-            "𐑓":  cls.fee,
-            "𐑒":  cls.kick,
-            "𐑖":  cls.sure,
-            "𐑫":  cls.wool,
+            "𐑓": cls.fee,
+            "𐑒": cls.kick,
+            "𐑖": cls.sure,
+            "𐑫": cls.wool,
             # Shavian (v0.6.0)
             "𐑓": cls.fee, "𐑒": cls.kick,
             "𐑖": cls.sure, "𐑫": cls.wool,
-            # phonetic names (backward compat)
-            "Ħ_closeomega":     cls.fee,     "H_0":   cls.fee,
-            "Ħ_toneletterstem": cls.kick, "H_1":   cls.kick,
-            "Ħ_turntwo":        cls.sure,        "H_2":   cls.sure,
-            "Ħ_invscripta":     cls.wool,     "Hinf":  cls.wool,  "H_∞": cls.wool,
         }
         try:
             return _map[s]
         except KeyError:
-            pass
-        suffix = s.split("_", 1)[-1].lower() if "_" in s else s.lower()
-        _sfx = {
-            "closeomega": cls.fee,
-            "achiral": cls.fee,
-            "toneletterstem": cls.kick,
-            "turntwo": cls.sure,
-            "invscripta": cls.wool,
-            "hinf": cls.wool,
-        }
-        if suffix in _sfx:
-            import warnings
-            warnings.warn(f"Chirality: normalised {s!r} via suffix {suffix!r}")
-            return _sfx[suffix]
-        import warnings
-        warnings.warn(f"Chirality: unknown symbol {s!r}, defaulting to H_closeomega")
-        return cls.fee
+            # No fallback. A silent default is how old notation kept "working"
+            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # returned the subcritical value instead — the opposite end of the axis,
+            # with no error. Only the glyph or the Shavian name resolves.
+            raise ValueError(
+                f"{cls.__name__}: unknown symbol {s!r}. Valid: a glyph "
+                f"({', '.join(m.value for m in cls)}) or a Shavian name "
+                f"({', '.join(m.name for m in cls)}). Old notation does not resolve."
+            ) from None
 
     @property
     def memory_depth(self) -> str:

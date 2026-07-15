@@ -829,7 +829,7 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "compute_meet":           {"name_a": "<system1>", "name_b": "<system2>"},
     "compute_join":           {"name_a": "<system1>", "name_b": "<system2>"},
     "consciousness_score":    {"name": "<catalog_entry_name>"},
-    "phi_c_probe":            {"name": "<catalog_entry_name>"},
+    "monad_probe":            {"name": "<catalog_entry_name>"},
     "topo_protection_probe":  {"name": "<catalog_entry_name>"},
     "primitive_peel":         {"name": "<catalog_entry_name>", "primitive": "<𐑛|𐑡|𐑩|𐑗|𐑱|𐑘|𐑚|𐑝|𐑢|𐑓|𐑙|𐑷>"},
     "principal_decomp":       {"name": "<catalog_entry_name>"},
@@ -1424,18 +1424,18 @@ def _ouroborics_verify(emit_input: Dict, emit_output: str,
     except json.JSONDecodeError:
         return ("unstructured output", False)
 
-def _phi_c_probe_emit(args: Dict[str, Any]) -> str:
+def _monad_probe_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
     if not name:
         return json.dumps({"status": "error", "error": "name required"})
-    return _imscribe_emit({"tool_name": "phi_c_probe", "args": {"name": name}})
+    return _imscribe_emit({"tool_name": "monad_probe", "args": {"name": name}})
 
-def _phi_c_probe_verify(emit_input: Dict, emit_output: str,
+def _monad_probe_verify(emit_input: Dict, emit_output: str,
                         verify_args: Dict) -> Tuple[str, bool]:
     try:
         data = json.loads(emit_output)
         if data.get("status") == "error":
-            return (f"phi_c_probe error: {data.get('error', 'unknown')}", False)
+            return (f"monad_probe error: {data.get('error', 'unknown')}", False)
         # Expected fields: phi_value, at_criticality
         if "phi_value" in data or "at_criticality" in data:
             return (f"phi_value={data.get('phi_value', 'unknown')}, at_criticality={data.get('at_criticality', 'unknown')}", True)
@@ -1839,7 +1839,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "rewrite_tool":         _rewrite_tool_emit,
     "done":                 _done_emit,
     "ouroborics":           _ouroborics_emit,
-    "phi_c_probe":          _phi_c_probe_emit,
+    "monad_probe":          _monad_probe_emit,
     "consciousness_score":  _consciousness_score_emit,
     "crystal_tier_census":  _crystal_tier_census_emit,
     "zfct_navigator":       _zfct_navigator_emit,
@@ -1860,7 +1860,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "rewrite_tool":         _rewrite_tool_verify,
     "done":                 _done_verify,
     "ouroborics":           _ouroborics_verify,
-    "phi_c_probe":          _phi_c_probe_verify,
+    "monad_probe":          _monad_probe_verify,
     "consciousness_score":  _consciousness_score_verify,
     "crystal_tier_census":  _crystal_tier_census_verify,
     "zfct_navigator":       _zfct_navigator_verify,
@@ -2044,7 +2044,7 @@ TOOL_SCHEMAS = [
             "compute_meet → {\"name_a\": \"x\", \"name_b\": \"y\"}; "
             "compute_join → {\"name_a\": \"x\", \"name_b\": \"y\"}; "
             "consciousness_score → {\"name\": \"catalog_name\"}; "
-            "phi_c_probe → {\"name\": \"catalog_name\"}; "
+            "monad_probe → {\"name\": \"catalog_name\"}; "
             "crystal_tier_gap_ladder → {}; "
             "emergence_frontier → {}; "
             "list_catalog → {}."
@@ -2052,7 +2052,7 @@ TOOL_SCHEMAS = [
         {
             "tool_name": {
                 "type": "string",
-                "description": "Tool name: lookup_catalog, ouroborics, compute_distance, find_analogies, compute_tensor, compute_meet, compute_join, consciousness_score, phi_c_probe, crystal_tier_gap_ladder, emergence_frontier, list_catalog, primitive_peel, principal_decomp, retrosynthetic_path, compute_conflict_distance, compute_promotions, crystal_encode, crystal_decode, crystal_nearest, domain_info, zfc_formula, aleph_encode. NOTE: imscribe_system is NOT in this list — use the dedicated imscribe_system tool directly.",
+                "description": "Tool name: lookup_catalog, ouroborics, compute_distance, find_analogies, compute_tensor, compute_meet, compute_join, consciousness_score, monad_probe, crystal_tier_gap_ladder, emergence_frontier, list_catalog, primitive_peel, principal_decomp, retrosynthetic_path, compute_conflict_distance, compute_promotions, crystal_encode, crystal_decode, crystal_nearest, domain_info, zfc_formula, aleph_encode. NOTE: imscribe_system is NOT in this list — use the dedicated imscribe_system tool directly.",
             },
             "args": {
                 "type": "object",
@@ -2481,7 +2481,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
 
 [Probes — structural diagnostics]
 
-  phi_c_probe(name)           — checks ⊙ criticality consistency; returns pass/fail + diagnostic
+  monad_probe(name)           — checks ⊙ criticality consistency; returns pass/fail + diagnostic
   topo_protection_probe(name) — checks Omega != 𐑷 consistency with D and T
   consciousness_score(name)   — or consciousness_score(D=..., T=..., ...) for inline tuple
                                 Returns C-score (0–1) with gate evaluation (Gate 1: ⊙, Gate 2: K <= 𐑧)
