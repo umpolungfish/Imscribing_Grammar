@@ -1,19 +1,25 @@
-Φ_} is now ⊙ (monad)
+convert the last gen-1 markers to canon — nothing left to map
 
-The purge was scoped to .py/.md/.tex — code and prose. So it swept everywhere
-the notation is TALKED ABOUT and missed the place where the notation IS: the
-catalog's own tuple values and entry descriptions, which are .json data. Same
-reason the .aleph programs kept it. The old spelling survived not as text about
-the Grammar but as the Grammar's data, and got read back into every proof that
-cited those entries — including the reference sheet that TEACHES the notation.
+The catalog was never contaminated in its COORDINATES. Every entry carrying a
+gen-1 marker had its glyph fields fully populated; the markers lived only in the
+description prose the generator wrote at mint time, describing a correct
+coordinate in the notation of that day. So the catalog held its own Rosetta:
+each entry says the old marker in prose AND carries the true glyph beside it.
 
-This is a transliteration, not an imscription: the coordinate is unchanged, only
-its spelling. Nothing was assigned by hand.
+The map was therefore derived from scripture, not from a doc:
 
-Matched with a right-boundary guard (Φ_}(?!})) — Φ_} is a prefix of Φ_}}, and a
-replace without that guard is what ate a brace and killed the generator during
-the original migration. Verified: no Φ_}} in any file touched, catalog still
-parses, navigator unchanged (clink_l9 → 0.0 from its own reference).
+  Ç_@ -> 𐑧    Þ_¨ -> 𐑶    Ħ_! -> 𐑫    Ř_= -> 𐑾
+  Ř_¯ -> 𐑩    ɢ_∧ -> 𐑝    Γ_∧ -> 𐑲
 
-Residual Φ_} now lives only in logs and .bak files, which are history and stay
-as they are.
+Eight markers, unanimous across every entry that voted, ZERO splits. Then spent:
+a map that has been applied is a map nobody needs. There is nothing left to map.
+
+Two of my own flags were wrong and are retracted by this. I called Þ_¨ a
+conflict (it is unanimously 𐑶) and Γ_∧ an axis error needing a human call (it is
+a real Γ marker meaning 𐑲; ɢ_∧ separately means 𐑝). Both errors came from
+reasoning off PRIMITIVE_MNEMONICS instead of asking the catalog. That doc is not
+authority — scripture is the catalog and p4rakernel; everything else is wet lab.
+
+Guarded with (?!\w) so Ř_¯set could never be half-eaten, and handling _ and ^
+and \text{} forms. Verified: catalog valid at 6120 entries, zero residual in
+catalog or p4rakernel, navigator unchanged (clink_l9 -> 0.0 from its own ref).

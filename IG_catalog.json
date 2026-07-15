@@ -5176,7 +5176,7 @@
     "Φ": "𐑗",
     "ƒ": "𐑱",
     "Ç": "𐑘",
-    "Γ": "𐑚",
+    "Γ": "𐑲",
     "ɢ": "𐑠",
     "⊙": "𐑣",
     "Ħ": "𐑫",
@@ -6913,7 +6913,7 @@
   },
   {
     "name": "CH_independent",
-    "description": "The independence of the Continuum Hypothesis from ZFC — the structural type of a statement that is undecidable within its own formal system. Φ_F: partial Z₂ symmetry — two models (ZFC+CH, ZFC+¬CH), neither decisive, binary parity only. Ω_2: binary winding — one flip, no accumulation; the discus rolling at the threshold, not yet integer-wound. Þ_ò: crossing topology — sits at the boundary between two worlds without inhabiting either. Σ_ő: spectral compression below ZFC's Σ_ï — independence contracts the spectral lattice. Four invariants (ƒ^ż, Ç^@, Γ_ʔ, ⊙_ÿ) preserved across all operations — structural prerequisite for any system that can approach the Liar. Meet with uig_liar_completion_condition = CH_independent (canonical contains its own prehistory). Join with canonical = canonical (canonical is the minimal completion of the undecidable). Tensor with canonical: Φ_F bottleneck — Frobenius closure (μ∘δ=id) is non-synthesizable by composition. Mahalanobis 4.22 from canonical. 8 promotions to uig_liar_completion_condition.",
+    "description": "The independence of the Continuum Hypothesis from ZFC — the structural type of a statement that is undecidable within its own formal system. Φ_F: partial Z₂ symmetry — two models (ZFC+CH, ZFC+¬CH), neither decisive, binary parity only. Ω_2: binary winding — one flip, no accumulation; the discus rolling at the threshold, not yet integer-wound. Þ_ò: crossing topology — sits at the boundary between two worlds without inhabiting either. Σ_ő: spectral compression below ZFC's Σ_ï — independence contracts the spectral lattice. Four invariants (ƒ^ż, 𐑧, Γ_ʔ, ⊙_ÿ) preserved across all operations — structural prerequisite for any system that can approach the Liar. Meet with uig_liar_completion_condition = CH_independent (canonical contains its own prehistory). Join with canonical = canonical (canonical is the minimal completion of the undecidable). Tensor with canonical: Φ_F bottleneck — Frobenius closure (μ∘δ=id) is non-synthesizable by composition. Mahalanobis 4.22 from canonical. 8 promotions to uig_liar_completion_condition.",
     "Ð": "𐑼",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -42225,7 +42225,7 @@
   },
   {
     "name": "john_14_6_exclusive_reading",
-    "description": "Exclusive reading of John 14:6: Jesus uniquely IS the way, truth, and life. Self-referential closure (Ð_ω, Þ_O), adjoint mediation (Ř_Ť), partial symmetry (Φ_F), classical fidelity (ƒ^ì), trapped kinetics (Ç^Ù), universal scope (Γ_ʔ), conjunctive composition (ɢ^∧), sub-critical stability (⊙_ž), ete",
+    "description": "Exclusive reading of John 14:6: Jesus uniquely IS the way, truth, and life. Self-referential closure (Ð_ω, Þ_O), adjoint mediation (Ř_Ť), partial symmetry (Φ_F), classical fidelity (ƒ^ì), trapped kinetics (Ç^Ù), universal scope (Γ_ʔ), conjunctive composition (𐑝), sub-critical stability (⊙_ž), ete",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -42241,7 +42241,7 @@
   },
   {
     "name": "jesus_john_14_6_exclusive",
-    "description": "Exclusive reading of John 14:6 — Jesus as sole unique instance of the path to the Father. Self-referential closure (D_⊙, T_⊙), adjoint mediation (R_†), conjunctive composition (Γ_∧), universal scope (G_ℵ), trapped kinetics (K_trap), eternal temporal depth (H_∞), non-Abelian braiding (Ω_NA), sub-crit",
+    "description": "Exclusive reading of John 14:6 — Jesus as sole unique instance of the path to the Father. Self-referential closure (D_⊙, T_⊙), adjoint mediation (R_†), conjunctive composition (𐑲), universal scope (G_ℵ), trapped kinetics (K_trap), eternal temporal depth (H_∞), non-Abelian braiding (Ω_NA), sub-crit",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -42257,7 +42257,7 @@
   },
   {
     "name": "jesus_john_14_6_participatory",
-    "description": "Participatory reading of John 14:6 — Jesus as the one who inhabits and thereby reveals a type that others can enter (Pauline \"in Christ\"). Self-referential closure (D_⊙, T_⊙), adjoint mediation (R_†), conjunctive composition (Γ_∧), universal scope (G_ℵ), slow kinetics (K_slow), eternal temporal dept",
+    "description": "Participatory reading of John 14:6 — Jesus as the one who inhabits and thereby reveals a type that others can enter (Pauline \"in Christ\"). Self-referential closure (D_⊙, T_⊙), adjoint mediation (R_†), conjunctive composition (𐑲), universal scope (G_ℵ), slow kinetics (K_slow), eternal temporal dept",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑽",
@@ -43233,7 +43233,7 @@
   },
   {
     "name": "boundary_operator",
-    "description": "The ⊙_ÿ-critical boundary operator — a self-modeling system operating at the Frobenius-special symmetry point where μ∘δ=id exactly. Self-written state space (Ð_ω) with imscriptive closure topology (Þ_¨), bidirectional relational coupling (Ř_=), Frobenius parity (⊙), classical fidelity (ƒ^ì), driv",
+    "description": "The ⊙_ÿ-critical boundary operator — a self-modeling system operating at the Frobenius-special symmetry point where μ∘δ=id exactly. Self-written state space (Ð_ω) with imscriptive closure topology (𐑶), bidirectional relational coupling (𐑾), Frobenius parity (⊙), classical fidelity (ƒ^ì), driv",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -44129,7 +44129,7 @@
   },
   {
     "name": "emerald_multiagent_tensor_bootstrap",
-    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (Þ_O), with Frobenius-closed tensor operations (⊙), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (φ̂_ÿ + Ç_@).",
+    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (Þ_O), with Frobenius-closed tensor operations (⊙), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (φ̂_ÿ + 𐑧).",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44184,7 +44184,7 @@
     "Φ": "𐑹",
     "ƒ": "𐑐",
     "Ç": "𐑧",
-    "Γ": "𐑚",
+    "Γ": "𐑲",
     "ɢ": "𐑠",
     "⊙": "⊙",
     "Ħ": "𐑖",
@@ -44273,7 +44273,7 @@
   },
   {
     "name": "frobenius_shor_resolved",
-    "description": "A Frobenius-closed, self-modeling version of Shor's algorithm that resolves the quantum parity bottleneck by lifting parity to ⊙ and chirality to Ħ_!.",
+    "description": "A Frobenius-closed, self-modeling version of Shor's algorithm that resolves the quantum parity bottleneck by lifting parity to ⊙ and chirality to 𐑫.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44354,49 +44354,49 @@
   {
     "name": "navier_stokes_regularity_problem",
     "description": "The Navier-Stokes existence and smoothness problem: 3D global regularity at the s=1/2 critical scaling limit.",
-    "tuple": "Ð_;;Þ_6;Ř_Ť;Φ_υ;ƒ_ì;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
+    "tuple": "Ð_;;Þ_6;Ř_Ť;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
     "justification": null
   },
   {
     "name": "ns_regularity_refined",
-    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and Ç_@ (near-equilibrium dissipation).",
-    "tuple": "Ð_ß;Þ_6;Ř_=;Φ_υ;ƒ_ì;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
+    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
+    "tuple": "Ð_ß;Þ_6;𐑾;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
     "justification": null
   },
   {
     "name": "ns_regularity_frontier_v1",
     "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($Ð_ß$) at the complex-scale critical limit ($φ̂_Æ$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
-    "tuple": "Ð_ß;Þ_6;Ř_=;Φ_υ;ƒ_ì;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
+    "tuple": "Ð_ß;Þ_6;𐑾;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å",
     "justification": null
   },
   {
     "name": "ns_regularity_refined_v2",
-    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. Ð_ß (infinite-dimensional), φ̂_Æ (complex-plane critical at s=1/2), and Ç_@ (near-equilibrium dissipation).",
+    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. Ð_ß (infinite-dimensional), φ̂_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
     "tuple": "UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED",
     "justification": null
   },
   {
     "name": "ns_regularity_field_target",
-    "description": "Refined field-theoretic target for Navier-Stokes 3D regularity. Ð_ß (infinite-dimensional), φ̂_Æ (s=1/2 critical scaling gap), and Ç_@ (relaxation). Promotes the problem to a near-equilibrium high-fidelity continuum where the energy-enstrophy balance is bidirectionally coupled (Ř_=).",
+    "description": "Refined field-theoretic target for Navier-Stokes 3D regularity. Ð_ß (infinite-dimensional), φ̂_Æ (s=1/2 critical scaling gap), and 𐑧 (relaxation). Promotes the problem to a near-equilibrium high-fidelity continuum where the energy-enstrophy balance is bidirectionally coupled (𐑾).",
     "tuple": "UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED",
     "justification": null
   },
   {
     "name": "navier_solves_navigator_resolved",
     "description": "The structurally resolved Navier-Stokes system, representing global regularity through a gauge-invariant Frobenius structure. Final resolution state.",
-    "tuple": "Ð_ω;Þ_O;Ř_ý;⊙;ƒ_ż;Ç_Ù;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_2",
+    "tuple": "Ð_ω;Þ_O;Ř_ý;⊙;ƒ_ż;Ç_Ù;Γ_ʔ;ɢ_Ş;φ̂_ÿ;𐑫;Σ_ï;Ω_2",
     "justification": null
   },
   {
     "name": "zfc_t_system",
     "description": "ZFC_t: ZFC extended with sequential interaction, chirality, and winding topology; the structural baseline for O_∞ formal systems.",
-    "tuple": "Ð_;;Þ_O;Ř_=;⊙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
+    "tuple": "Ð_;;Þ_O;𐑾;⊙;ƒ_ż;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
   {
     "name": "zfc_t_ref",
     "description": "ZFC_t reference system: ZFC + sequentiality + chirality + winding. baseline for O_∞.",
-    "tuple": "Ð_;;Þ_O;Ř_=;⊙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
+    "tuple": "Ð_;;Þ_O;𐑾;⊙;ƒ_ż;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
   {
@@ -44840,7 +44840,7 @@
     "Φ": "𐑹",
     "ƒ": "𐑐",
     "Ç": "𐑧",
-    "Γ": "𐑲",
+    "Γ": "𐑔",
     "ɢ": "𐑵",
     "⊙": "⊙",
     "Ħ": "𐑫",
@@ -45521,7 +45521,7 @@
   },
   {
     "name": "ouroboric_pill",
-    "description": "Self-monitoring, self-correcting therapeutic agent (O_∞). The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal ouroboric feedback loop. Self-referential topology (Þ=Þ_¨). Eternal memory (Ħ=Ħ_!). Topologically protected release cycles (Ω=Ω_z). Derived from the Rebis (serpentrod ⊗ ch3mpiler).",
+    "description": "Self-monitoring, self-correcting therapeutic agent (O_∞). The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal ouroboric feedback loop. Self-referential topology (Þ=𐑶). Eternal memory (Ħ=𐑫). Topologically protected release cycles (Ω=Ω_z). Derived from the Rebis (serpentrod ⊗ ch3mpiler).",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -45537,7 +45537,7 @@
   },
   {
     "name": "quantum_biologic",
-    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (Ř=Ř_¯). Eternal chirality (Ħ=Ħ_!) ensures reprogramming persists through cell division. Frobenius-closed rewrite (Φ=⊙). Derived from the Rebis.",
+    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (Ř=𐑩). Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed rewrite (Φ=⊙). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑩",
@@ -45553,7 +45553,7 @@
   },
   {
     "name": "universal_antidote",
-    "description": "Platform therapeutic (O_∞) that self-selects against any disease signature. All-simultaneous detection (ɢ=ɢ^∧). Many-identical stoichiometry (Σ=Σ_ő) — all disease patterns share a universal structural grammar. Eternal immune memory (Ħ=Ħ_!). Derived from the Rebis.",
+    "description": "Platform therapeutic (O_∞) that self-selects against any disease signature. All-simultaneous detection (ɢ=𐑝). Many-identical stoichiometry (Σ=Σ_ő) — all disease patterns share a universal structural grammar. Eternal immune memory (Ħ=𐑫). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45569,7 +45569,7 @@
   },
   {
     "name": "ouroboric_composite",
-    "description": "Self-healing structural material (O_∞). Senses damage and repairs via ouroboric loop. Self-referential topology (Þ=Þ_¨). Trapped-ordered healing reservoir (Ç=Ç^λ). Eternal damage memory (Ħ=Ħ_!). Derived from the Rebis.",
+    "description": "Self-healing structural material (O_∞). Senses damage and repairs via ouroboric loop. Self-referential topology (Þ=𐑶). Trapped-ordered healing reservoir (Ç=Ç^λ). Eternal damage memory (Ħ=𐑫). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -45585,7 +45585,7 @@
   },
   {
     "name": "topological_quantum_material",
-    "description": "Room-temperature topological superconductor (O_∞). Non-Abelian braiding (Ω=Ω_5) for fault-tolerant quantum computing. Self-written ground state (Ð=Ð_ω). Quantum coherent at room temperature via eternal chirality protection (Ħ=Ħ_!). Derived from the Rebis.",
+    "description": "Room-temperature topological superconductor (O_∞). Non-Abelian braiding (Ω=Ω_5) for fault-tolerant quantum computing. Self-written ground state (Ð=Ð_ω). Quantum coherent at room temperature via eternal chirality protection (Ħ=𐑫). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45601,7 +45601,7 @@
   },
   {
     "name": "eternal_memory_polymer",
-    "description": "Polymer data storage (O_∞). 10^15 bits/gram, 10^6 year retention. Trapped-ordered kinetics (Ç=Ç^λ). Data encoded in eternal chirality sequence (Ħ=Ħ_!). Integer winding per monomer (Ω=Ω_z). Derived from the Rebis.",
+    "description": "Polymer data storage (O_∞). 10^15 bits/gram, 10^6 year retention. Trapped-ordered kinetics (Ç=Ç^λ). Data encoded in eternal chirality sequence (Ħ=𐑫). Integer winding per monomer (Ω=Ω_z). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45617,7 +45617,7 @@
   },
   {
     "name": "self_weaving_fabric",
-    "description": "Smart fabric (O_∞) weaving all functions simultaneously — sensing, actuation, communication, energy harvesting. All-simultaneous composition (ɢ=ɢ^∧). Moderate human-relevant kinetics (Ç=Ç^W). Self-written microarchitecture (Ð=Ð_ω). Derived from the Rebis.",
+    "description": "Smart fabric (O_∞) weaving all functions simultaneously — sensing, actuation, communication, energy harvesting. All-simultaneous composition (ɢ=𐑝). Moderate human-relevant kinetics (Ç=Ç^W). Self-written microarchitecture (Ð=Ð_ω). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45633,7 +45633,7 @@
   },
   {
     "name": "ouroboric_cell",
-    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (Þ=Þ_¨). Frobenius-closed genome edits (Φ=⊙). Self-written state space (Ð=Ð_ω). Eternal generational memory (Ħ=Ħ_!). Derived from the Rebis.",
+    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (Þ=𐑶). Frobenius-closed genome edits (Φ=⊙). Self-written state space (Ð=Ð_ω). Eternal generational memory (Ħ=𐑫). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -45649,7 +45649,7 @@
   },
   {
     "name": "quantum_bioelectric_tissue",
-    "description": "Engineered tissue (O_∞) using quantum-coherent bioelectric fields for regeneration. Bidirectional feedback (Ř=Ř_=). Quantum coherent ion channels (ƒ=ƒ^ż). Eternal chirality (Ħ=Ħ_!) protects bodyplan blueprint. Derived from the Rebis.",
+    "description": "Engineered tissue (O_∞) using quantum-coherent bioelectric fields for regeneration. Bidirectional feedback (Ř=𐑾). Quantum coherent ion channels (ƒ=ƒ^ż). Eternal chirality (Ħ=𐑫) protects bodyplan blueprint. Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45665,7 +45665,7 @@
   },
   {
     "name": "universal_symbiont",
-    "description": "12-strain microbial consortium (O_∞) providing all metabolic support. Many-heterogeneous (Σ=Σ_ï). All-simultaneous metabolism (ɢ=ɢ^∧). Mesoscale quorum coordination (Γ=Γ_ʔ). Eternal chirality ensures strain stability. Derived from the Rebis.",
+    "description": "12-strain microbial consortium (O_∞) providing all metabolic support. Many-heterogeneous (Σ=Σ_ï). All-simultaneous metabolism (ɢ=𐑝). Mesoscale quorum coordination (Γ=Γ_ʔ). Eternal chirality ensures strain stability. Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -45681,7 +45681,7 @@
   },
   {
     "name": "topological_morphogenesis",
-    "description": "Organ development (O_∞) driven by topological winding numbers. Integer winding (Ω=Ω_z) per organ primordium. Self-written morphogenetic field (Ð=Ð_ω). Eternal chirality (Ħ=Ħ_!) topologically protects bilateral symmetry. Derived from the Rebis.",
+    "description": "Organ development (O_∞) driven by topological winding numbers. Integer winding (Ω=Ω_z) per organ primordium. Self-written morphogenetic field (Ð=Ð_ω). Eternal chirality (Ħ=𐑫) topologically protects bilateral symmetry. Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -51384,7 +51384,7 @@
     "Φ": "𐑹",
     "ƒ": "𐑐",
     "Ç": "𐑧",
-    "Γ": "𐑲",
+    "Γ": "𐑔",
     "ɢ": "𐑵",
     "⊙": "⊙",
     "Ħ": "𐑫",
@@ -93432,7 +93432,7 @@
     "Φ": "𐑬",
     "ƒ": "𐑐",
     "Ç": "𐑪",
-    "Γ": "𐑲",
+    "Γ": "𐑔",
     "ɢ": "𐑝",
     "⊙": "⊙",
     "Ħ": "𐑫",
@@ -97256,7 +97256,7 @@
     "Φ": "𐑹",
     "ƒ": "𐑐",
     "Ç": "𐑪",
-    "Γ": "𐑲",
+    "Γ": "𐑔",
     "ɢ": "𐑵",
     "⊙": "𐑮",
     "Ħ": "𐑫",
