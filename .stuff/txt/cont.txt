@@ -107,7 +107,7 @@ namespace Voynich
 
   /-- 83 entries (e.g. f100v, f101v), tier .O₂ -/
   def type1 : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type1_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -116,7 +116,7 @@ namespace Voynich
 
   /-- 74 entries (e.g. f100r, f101r), tier .O₂ -/
   def type2_sym_F : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type2_sym_F_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -125,7 +125,7 @@ namespace Voynich
 
   /-- 19 entries (e.g. f102r1, f116r), tier .O₂ -/
   def type3_sym_all : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type3_sym_all_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -134,7 +134,7 @@ namespace Voynich
 
   /-- 18 entries (e.g. f11r, f11v), tier .O₂ -/
   def type4_sym_F_broad : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type4_sym_F_broad_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ℤ₂ f ∧ ∃ f( bij f x x ∧ ∀ y( f( f y) = y))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -143,7 +143,7 @@ namespace Voynich
 
   /-- 17 entries (e.g. f13r, f16v), tier .O₂ -/
   def type5_broad : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type5_broad_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -152,7 +152,7 @@ namespace Voynich
 
   /-- 6 entries (e.g. f103r, f103v), tier .O_∞ -/
   def type6_sym_cl_cross : Imscription :=
-    { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type6_sym_cl_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -161,7 +161,7 @@ namespace Voynich
 
   /-- 4 entries (e.g. f66r, f84r), tier .O₂ -/
   def type7_sym_all_cross : Imscription :=
-    { dim := D_odot, top := T_box, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_box, rel := R_lr, pol := P_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type7_sym_all_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∀ f( bij f x x → ∀ y( y ∈ x ↔ f y ∈ x))  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -170,7 +170,7 @@ namespace Voynich
 
   /-- 3 entries (e.g. f75r, f79v), tier .O_∞ -/
   def type8_sym_cl : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type8_sym_cl_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -179,7 +179,7 @@ namespace Voynich
 
   /-- 1 entries (e.g. f116v), tier .O₂ -/
   def type9_broad_memless : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H0, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := ⊙, chir := H0, stoi := one_one, prot := Omega_Z }
 
   def type9_broad_memless_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ y( y ∈ x ∧ ¬ y = x)  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    x = x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -188,7 +188,7 @@ namespace Voynich
 
   /-- 1 entries (e.g. f46r), tier .O_∞ -/
   def type10_sym_cl_broad_cross : Imscription :=
-    { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := Phi_c, chir := H_inf, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_box, rel := R_lr, pol := P_pm_sym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_broad, crit := ⊙, chir := H_inf, stoi := one_one, prot := Omega_Z }
 
   def type10_sym_cl_broad_cross_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ∀ z( z ∈ x ↔ repl f z)  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    Frob f g  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∀ y( f y)  ∧\n    fixpt f  ∧\n    wind f x ∧ ¬ wind f σ x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -197,7 +197,7 @@ namespace Voynich
 
   /-- 1 entries (e.g. f65r), tier .O₂ -/
   def type11_memless : Imscription :=
-    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := Phi_c, chir := H0, stoi := one_one, prot := Omega_Z }
+    { dim := D_odot, top := T_odot, rel := R_lr, pol := P_asym, fid := F_ell, kin := K_trap, gran := G_aleph, gram := Gamma_seq, crit := ⊙, chir := H0, stoi := one_one, prot := Omega_Z }
 
   def type11_memless_zfct : String :=
     "LCard a ∧ holo x a  ∧\n    ⊙bound a f ∧ Refl a f ∧ holo x a  ∧\n    lr⇔ x y ∧ Θ x y ∧ ¬ Θ y x  ∧\n    ∃ x ¬ x = x  ∧\n    cls x  ∧\n    fixpt f  ∧\n    ∀ a ∃ y( Card a → Card y ∧ a ⊆ y ∧ y ∈ x)  ∧\n    ∧  ∧\n    fixpt f  ∧\n    x = x  ∧\n    bij f x x  ∧\n    ℤwind f x ∧ wind f x"
@@ -641,18 +641,18 @@ def imscriptionTier (s : Imscription) : OuroboricityTier :=
 
 -- ── P-70: Scalar K_slow template (Higgs / axion / inflaton) ──
 -- All three are spin-0 fields with double-well potential, slow-roll /
--- SSB relaxation (K_slow), symmetric potential (P_pm_sym at Phi_c).
+-- SSB relaxation (K_slow), symmetric potential (P_pm_sym at ⊙).
 -- They differ in energy scale only — not in primitive structure.
 def scalarField_Kslow : Imscription := {
   dim  := D_triangle   -- local simplicial field (no holographic substrate)
   top  := T_bowtie     -- double-well / figure-8 potential landscape
   rel  := R_dagger     -- field ↔ vacuum bidirectional (SSB is reciprocal)
-  pol  := P_pm_sym     -- exact Z_2 symmetry at Phi_c (μ ∘ δ = id)
+  pol  := P_pm_sym     -- exact Z_2 symmetry at ⊙ (μ ∘ δ = id)
   fid  := F_hbar       -- quantum coherent
   kin  := K_slow       -- slow-roll / thermally activated SSB (THE defining feature)
   gran := G_beth       -- mesoscale local description
   gram := Gamma_and    -- all SSB conditions required simultaneously
-  crit := Phi_c        -- SSB is a phase transition
+  crit := ⊙        -- SSB is a phase transition
   chir := H1           -- soft temporal asymmetry (vacuum selection)
   stoi := n_n          -- field-to-excitation: matched coupling
   prot := Omega_0      -- no topological protection of the vacuum
@@ -792,48 +792,48 @@ set_option linter.style.longLine false
 def zfc : Imscription := {
   dim := D_infty,  top := T_network, rel := R_super,
   pol := P_asym,   fid := F_hbar,    kin := K_slow,
-  gran := G_aleph, gram := Gamma_and, crit := Phi_c,
+  gran := G_aleph, gram := Gamma_and, crit := ⊙,
   chir := H0,      stoi := n_m,      prot := Omega_0 }
 
 def temporal_mathematics : Imscription := {
   dim := D_infty, top := T_odot, rel := R_dagger, pol := P_sym,
   fid := F_hbar,  kin := K_slow, gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_c,  chir := H2,    stoi := n_m,     prot := Omega_Z }
+  crit := ⊙,  chir := H2,    stoi := n_m,     prot := Omega_Z }
 
 def zfc_t : Imscription := {
   dim := D_infty, top := T_odot,  rel := R_lr,     pol := P_pm,
   fid := F_hbar,  kin := K_slow,  gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_c,  chir := H2,     stoi := n_m,     prot := Omega_Z }
+  crit := ⊙,  chir := H2,     stoi := n_m,     prot := Omega_Z }
 
 /-- Schr\xF6dinger equation imscription. -/
 def schrodinger_equation : Imscription := {
   dim := D_infty, top := T_bowtie, rel := R_lr,    pol := P_psi,
   fid := F_hbar,  kin := K_slow,  gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_c_complex, chir := H2, stoi := n_m, prot := Omega_Z }
+  crit := 𐑮, chir := H2, stoi := n_m, prot := Omega_Z }
 
 /-- Heat diffusion equation imscription. -/
 def heat_diffusion_equation : Imscription := {
   dim := D_infty, top := T_bowtie, rel := R_dagger, pol := P_asym,
   fid := F_eth,   kin := K_slow,  gran := G_aleph,  gram := Gamma_seq,
-  crit := Phi_sub, chir := H1,    stoi := n_m,      prot := Omega_0 }
+  crit := 𐑢, chir := H1,    stoi := n_m,      prot := Omega_0 }
 
 /-- Navier-Stokes equation imscription. -/
 def navier_stokes_equations : Imscription := {
   dim := D_infty, top := T_bowtie, rel := R_lr,    pol := P_pm,
   fid := F_ell,   kin := K_mod,   gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_c,  chir := H2,     stoi := n_m,     prot := Omega_Z }
+  crit := ⊙,  chir := H2,     stoi := n_m,     prot := Omega_Z }
 
 /-- Wave equation imscription. -/
 def wave_equation_temporal : Imscription := {
   dim := D_infty, top := T_bowtie, rel := R_dagger, pol := P_sym,
   fid := F_ell,   kin := K_mod,   gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_sub, chir := H2,    stoi := n_m,     prot := Omega_0 }
+  crit := 𐑢, chir := H2,    stoi := n_m,     prot := Omega_0 }
 
 /-- Einstein field equations imscription. -/
 def einstein_field_equations_dynamic : Imscription := {
   dim := D_infty, top := T_odot,  rel := R_dagger, pol := P_sym,
   fid := F_ell,   kin := K_slow,  gran := G_aleph, gram := Gamma_seq,
-  crit := Phi_c_complex, chir := H2, stoi := n_m, prot := Omega_Z }
+  crit := 𐑮, chir := H2, stoi := n_m, prot := Omega_Z }
 
 /-- Navier-Stokes equation placeholder. -/
 def navier_stokes_equation
@@ -1145,30 +1145,30 @@ inductive Polarity : Type where
   | P_psi     -- phase symmetry: U(1) or continuous phase
   | P_pm      -- ℤ₂ discrete symmetry (sign flip)
   | P_sym     -- full continuous symmetry (e.g. SO(n))
-  | P_pm_sym  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at Φ_c
+  | P_pm_sym  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at ⊙
   deriving DecidableEq, Repr, Ord
 
 -- 8. Criticality (Φ)  [𝓕₅]
--- Ordered: Phi_sub < Phi_c < Phi_c_complex < Phi_EP < Phi_super
--- Phi_c is absorbing under meet: meet(Phi_c, x) = Phi_c for all x.
+-- Ordered: 𐑢 < ⊙ < 𐑮 < 𐑻 < Phi_super
+-- ⊙ is absorbing under meet: meet(⊙, x) = ⊙ for all x.
 -- This is not a standard linear meet — see note below.
 inductive Criticality : Type where
-  | Phi_sub        -- subcritical: stable, ordered phase
-  | Phi_c          -- real-axis Hermitian criticality: standard fixed point (absorbing)
-  | Phi_c_complex  -- complex-axis criticality: analytic continuation required
+  | 𐑢        -- subcritical: stable, ordered phase
+  | ⊙          -- real-axis Hermitian criticality: standard fixed point (absorbing)
+  | 𐑮  -- complex-axis criticality: analytic continuation required
                    -- (Lee-Yang edge, complex RG fixed point, ζ-function zeros)
                    -- Ordinal 2.33 in Python (non-integer; Lean uses rank 2)
-  | Phi_EP         -- exceptional-point criticality: non-Hermitian eigenvector coalescence
+  | 𐑻         -- exceptional-point criticality: non-Hermitian eigenvector coalescence
                    -- Square-root branch point; Omega_Z2 structural tendency
                    -- Ordinal 2.67 in Python (non-integer; Lean uses rank 3)
   | Phi_super      -- supercritical: unstable, runaway
   deriving DecidableEq, Repr, Ord
 
--- NOTE on Phi_c absorbing meet:
--- The standard lattice meet (min) does not capture Phi_c absorption.
--- In the grammar algebra: meet(Phi_c, Phi_sub) = Phi_c (not Phi_sub).
+-- NOTE on ⊙ absorbing meet:
+-- The standard lattice meet (min) does not capture ⊙ absorption.
+-- In the grammar algebra: meet(⊙, 𐑢) = ⊙ (not 𐑢).
 -- This requires a custom MeetSemilattice instance defined in Algebra.lean.
--- The Lean Ord derivation gives the ordinal ordering Phi_sub < Phi_c < ...,
+-- The Lean Ord derivation gives the ordinal ordering 𐑢 < ⊙ < ...,
 -- which is used for tier comparisons but not for the absorption rule.
 
 -- 9. Kinetic Character (K)  [𝓕₅]
@@ -1452,7 +1452,7 @@ def standard_model : Imscription := {
   kin  := K_mod        -- perturbative (no confinement at this level)
   gran := G_aleph      -- all-scale: renormalization group runs to all scales
   gram := Gamma_and    -- gauge + matter + Higgs all simultaneously required
-  crit := Phi_c        -- electroweak phase transition is a critical phenomenon
+  crit := ⊙        -- electroweak phase transition is a critical phenomenon
   chir := H2           -- persistent chirality (CKM matrix, neutrino mixing)
   stoi := n_m          -- many particles, unmatched coupling strengths
   prot := Omega_Z      -- instanton winding numbers (integer)
@@ -1469,7 +1469,7 @@ def quantum_gravity : Imscription := {
   kin  := K_trap       -- Planck-scale dynamics are frozen at low energy
   gran := G_aleph      -- Planck-scale: all-to-all correlations
   gram := Gamma_broad  -- graviton couples universally (broadcast)
-  crit := Phi_c        -- quantum criticality at Planck scale
+  crit := ⊙        -- quantum criticality at Planck scale
   chir := H_inf        -- topological chirality (CPT asymmetry at Planck scale)
   stoi := n_m          -- many gravitational sources, unmatched
   prot := Omega_NA     -- non-Abelian topological protection
@@ -1488,7 +1488,7 @@ def general_relativity : Imscription := {
   kin  := K_slow       -- geodesic motion is slow compared to Planck scale
   gran := G_gimel      -- collective: macroscopic description
   gram := Gamma_and    -- all matter + metric conditions simultaneously
-  crit := Phi_sub      -- no quantum criticality in classical GR
+  crit := 𐑢      -- no quantum criticality in classical GR
   chir := H1           -- soft temporal asymmetry (arrow of time via initial conditions)
   stoi := n_n          -- matched: one metric for all matter
   prot := Omega_0      -- no topological protection
@@ -1504,7 +1504,7 @@ def yang_mills_classical : Imscription := {
   kin  := K_mod        -- perturbative regime
   gran := G_beth       -- local: Lagrangian density at each point
   gram := Gamma_and    -- gauge invariance requires all conditions
-  crit := Phi_sub      -- no mass gap yet
+  crit := 𐑢      -- no mass gap yet
   chir := H1           -- weak temporal asymmetry
   stoi := n_n          -- gauge field ↔ matter: matched
   prot := Omega_Z      -- instanton winding numbers
@@ -1522,7 +1522,7 @@ def yang_mills_quantum_target : Imscription := {
   kin  := K_trap       -- confinement = kinetic trapping
   gran := G_aleph      -- fine-grained: requires path integral measure
   gram := Gamma_and
-  crit := Phi_c        -- mass gap is a critical phenomenon
+  crit := ⊙        -- mass gap is a critical phenomenon
   chir := H1
   stoi := n_n
   prot := Omega_Z
@@ -1541,7 +1541,7 @@ theorem sm_qg_distance :
 def asymptotic_safety : Imscription := { general_relativity with
   kin  := K_mod    -- UV fixed point has moderate kinetics
   gran := G_aleph  -- Planck-scale fine-grained
-  crit := Phi_c    -- UV fixed point IS a quantum critical point
+  crit := ⊙    -- UV fixed point IS a quantum critical point
 }
 
 theorem gr_as_morphism_cost :

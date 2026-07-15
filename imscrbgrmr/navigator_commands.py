@@ -68,7 +68,7 @@ def nav_group():
     \b
     Examples:
       imscribe nav crystal describe
-      imscribe nav crystal nearest Phi=Phi_ctyogh P=P_doublebarpipe -n 5
+      imscribe nav crystal nearest Phi=⊙ P=P_doublebarpipe -n 5
       imscribe nav domain info --domain consciousness
       imscribe nav domain verify --domain language
       imscribe nav riemann describe
@@ -188,7 +188,7 @@ def crystal_encode(kvs, full: bool):
 
     \b
     Examples:
-      imscribe nav crystal encode Phi=Phi_ctyogh P=P_doublebarpipe
+      imscribe nav crystal encode Phi=⊙ P=P_doublebarpipe
       imscribe nav crystal encode Phi=Phi_softsign P=P_aolig Omega=Omega_closeepsilon D=D_wynn
     """
     from navigators.crystal_navigator import CrystalNavigator, NAVIGATOR_TUPLE, PRIMS
@@ -269,8 +269,8 @@ def crystal_nearest(kvs, n: int, same_tier: bool):
 
     \b
     Examples:
-      imscribe nav crystal nearest Phi=Phi_ctyogh P=P_doublebarpipe -n 5
-      imscribe nav crystal nearest D=D_invomega Phi=Phi_ctyogh --same-tier
+      imscribe nav crystal nearest Phi=⊙ P=P_doublebarpipe -n 5
+      imscribe nav crystal nearest D=D_invomega Phi=⊙ --same-tier
     """
     from navigators.crystal_navigator import NAVIGATOR_TUPLE
 
@@ -304,7 +304,7 @@ def crystal_count(kvs):
 
     \b
     Examples:
-      imscribe nav crystal count Phi=Phi_ctyogh P=P_doublebarpipe
+      imscribe nav crystal count Phi=⊙ P=P_doublebarpipe
       imscribe nav crystal count Omega=Omega_dzlig
     """
     nav = _load_crystal()
@@ -317,7 +317,7 @@ def crystal_count(kvs):
 
 
 @crystal_group.command("query")
-@click.option("--phi",   default=None, help="Φ boundary value (e.g. Phi_ctyogh)")
+@click.option("--phi",   default=None, help="Φ boundary value (e.g. ⊙)")
 @click.option("--p",     default=None, help="P boundary value (e.g. P_doublebarpipe)")
 @click.option("--omega", default=None, help="Ω boundary value (e.g. Omega_dzlig)")
 @click.option("--d",     default=None, help="D boundary value (e.g. D_omega)")
@@ -332,7 +332,7 @@ def crystal_query(phi, p, omega, d, tier):
 
     \b
     Examples:
-      imscribe nav crystal query --phi Phi_ctyogh --p P_doublebarpipe
+      imscribe nav crystal query --phi ⊙ --p P_doublebarpipe
       imscribe nav crystal query --tier O_∞
       imscribe nav crystal query --omega Omega_dzlig --d D_omega
     """
@@ -510,7 +510,7 @@ def riemann_group():
       K_schwa      → SpectralTransformer (global self-attention)
       P_doublebarpipe    → FrobeniusLayer (ξ(s)=ξ(1-s) as identity axiom)
       Omega_crtwo    → parity-protected output head (Z_2 winding)
-      Phi_ctyogh^C     → GUE Wigner-surmise loss (Montgomery conjecture)
+      ⊙^C     → GUE Wigner-surmise loss (Montgomery conjecture)
     """
 
 
@@ -527,7 +527,7 @@ def riemann_describe():
         "  K_schwa      → SpectralTransformer (global self-attention, no cyclic state)\n"
         "  P_doublebarpipe    → FrobeniusLayer (ξ(s)=ξ(1-s) as identity axiom, not constraint)\n"
         "  Omega_crtwo    → parity-protected output (zero-count parity = Z_2 winding)\n"
-        "  Phi_ctyogh^C     → GUE Wigner-surmise loss p(s)=(πs/2)·exp(-πs²/4)\n\n"
+        "  ⊙^C     → GUE Wigner-surmise loss p(s)=(πs/2)·exp(-πs²/4)\n\n"
         "[bold]O_∞ convergence criteria (P-488):[/bold]\n"
         "  |Δt|_norm < 0.5   — next-zero prediction within half mean spacing\n"
         "  L_frob    < 0.01  — Frobenius roundtrip closed (P_doublebarpipe confirmed)\n"
@@ -608,7 +608,7 @@ def zfc_describe():
         "  P_doublebarpipe    → Frobenius roundtrip loss native from epoch 1\n"
         "  R_downstep    → output restructures its own co-domain (ZFC formula space)\n"
         "  G_revapostrophe     → maximize context window (256 tokens)\n"
-        "  Phi_ctyogh^C     → encoder trained at distinguishability boundary\n\n"
+        "  ⊙^C     → encoder trained at distinguishability boundary\n\n"
         "[bold]Collapse channels (IUG_NON_TRANSMISSIBILITY §3):[/bold]\n"
         + channels_str,
         title="ZFC Transmissibility Navigator", expand=False,
@@ -710,7 +710,7 @@ def zfc_stats(catalog: str):
 
 _ADSCFT_GRAMMAR = (
     "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_invscripta  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_broad  ⊙  H_invscripta  n:m  Omega_dzlig"
 )
 
 
@@ -721,13 +721,13 @@ def adscft_group():
     \b
     Structural type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_broad Phi_ctyogh H_invscripta n:m Omega_dzlig
+      G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     \b
     Key structural facts:
       D_omega / T_openo  → imscriptive: boundary encodes bulk (O_∞ tier)
       P_doublebarpipe         → Frobenius: conformal symmetry is explosion-free
-      Phi_ctyogh            → CFT lives precisely at the critical fixed point
+      ⊙            → CFT lives precisely at the critical fixed point
       Omega_dzlig          → topological winding protection (integer charge)
       H_invscripta            → conformal group includes unlimited time translation
 
@@ -746,7 +746,7 @@ def adscft_describe():
     console.print(Panel(
         "[bold cyan]AdS/CFT Imscriptive Duality Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_ADSCFT_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O_∞  (P_doublebarpipe + Phi_ctyogh → R1)\n\n"
+        "[bold]Tier:[/bold]  O_∞  (P_doublebarpipe + ⊙ → R1)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_omega / T_openo  → imscriptive embedding: boundary encodes bulk\n"
         "  P_doublebarpipe         → FrobeniusLayer: conformal symmetry as identity axiom\n"
@@ -796,7 +796,7 @@ def adscft_bulk_boundary(bulk_type: str, cft_type: str):
 
 _MIRROR_GRAMMAR = (
     "D_invomega  T_bullseye  R_downstep  P_upsilon  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_invscripta  n:m  Omega_crtwo"
+    "G_revapostrophe  Gamma_broad  ⊙  H_invscripta  n:m  Omega_crtwo"
 )
 
 
@@ -807,7 +807,7 @@ def mirror_group():
     \b
     Structural type:
       D_invomega T_bullseye R_downstep P_upsilon F_hardsign K_schwa
-      G_revapostrophe Gamma_broad Phi_ctyogh H_invscripta n:m Omega_crtwo
+      G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_crtwo
 
     \b
     Key structural facts:
@@ -815,7 +815,7 @@ def mirror_group():
       T_bullseye  → A-model ↔ B-model crossing: symplectic meets complex
       P_upsilon     → quantum phase symmetry (complex structure deformation)
       Omega_crtwo  → mirror involution: swaps h^{1,1} ↔ h^{2,1}
-      Phi_ctyogh     → Gepner point sits at the critical self-modeling boundary
+      ⊙     → Gepner point sits at the critical self-modeling boundary
 
     \b
     Examples:
@@ -832,14 +832,14 @@ def mirror_describe():
     console.print(Panel(
         "[bold cyan]Mirror Symmetry Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_MIRROR_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O₂  (Phi_ctyogh + Omega_crtwo + D_invomega → R5)\n\n"
+        "[bold]Tier:[/bold]  O₂  (⊙ + Omega_crtwo + D_invomega → R5)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_invomega    → infinite-dimensional: full moduli space of CY manifolds\n"
         "  T_bullseye   → dual-lobe crossing: A-model ↔ B-model (symplectic ↔ complex)\n"
         "  P_upsilon      → quantum coherence: complex structure deformation\n"
         "  R_downstep   → adjoint: mirror map is bidirectional\n"
         "  Omega_crtwo   → Z_2 winding: mirror involution swaps Hodge numbers\n"
-        "  Phi_ctyogh      → Gepner point: rational CFT at the CY critical locus\n\n"
+        "  ⊙      → Gepner point: rational CFT at the CY critical locus\n\n"
         "[bold]Key methods:[/bold]\n"
         "  find_mirror_pair              locate mirror CY in catalog\n"
         "  compute_gromov_witten_invariants  GW counts via A-model\n"
@@ -880,7 +880,7 @@ def mirror_pair(cy_manifold: str):
 
 _TQFT_GRAMMAR = (
     "D_turnthree  T_bullseye  R_downstep  P_upsilon  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_broad  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -891,7 +891,7 @@ def tqft_group():
     \b
     Structural type:
       D_turnthree T_bullseye R_downstep P_upsilon F_hardsign K_schwa
-      G_revapostrophe Gamma_broad Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_broad ⊙ H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
@@ -916,7 +916,7 @@ def tqft_describe():
     console.print(Panel(
         "[bold cyan]TQFT Navigator[/bold cyan]\n\n"
         f"[bold]Tuple:[/bold]  {_TQFT_GRAMMAR}\n\n"
-        "[bold]Tier:[/bold]  O₂  (Phi_ctyogh + Omega_dzlig + D_turnthree → R4)\n\n"
+        "[bold]Tier:[/bold]  O₂  (⊙ + Omega_dzlig + D_turnthree → R4)\n\n"
         "[bold]Architecture mandates:[/bold]\n"
         "  D_turnthree  → triangulated: state space via simplicial decomposition\n"
         "  T_bullseye    → surgery crossing: manifold ↔ knot complement\n"
@@ -967,7 +967,7 @@ def tqft_knot(knot_name: str, gauge_group: str, level: int):
 
 _CATEGORY_GRAMMAR = (
     "D_omega  T_openo  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -978,7 +978,7 @@ def category_theory_group():
     
     Structural type:
       D_omega T_openo R_ctz P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
     Key structural facts:
@@ -986,7 +986,7 @@ def category_theory_group():
       R_ctz            → categorical relations (functoriality, natural transformations)
       P_doublebarpipe         → Frobenius interface with categorical uncertainty
       G_revapostrophe          → maximal scope: arbitrary categories
-      Phi_ctyogh            → self-modeling: category of categories
+      ⊙            → self-modeling: category of categories
       Omega_dzlig          → integer winding: looping through categorical levels
 
     
@@ -1012,7 +1012,7 @@ def category_theory_describe():
         "  P_doublebarpipe         → Frobenius interface: structural uncertainty in categorical statements\n"
         "  G_revapostrophe          → maximal scope: any category C, Set^C, Cat, ...\n"
         "  Gamma_seq        → sequential composition: f∘g in hom-sets\n"
-        "  Phi_ctyogh            → self-modeling: Cat as category of categories\n"
+        "  ⊙            → self-modeling: Cat as category of categories\n"
         "  Omega_dzlig          → integer winding: iterating through n-categories\n\n"
         "[bold]Key methods:[/bold]\n"
         "  find_adjunction            detect adjoint pairs F ⊣ G\n"
@@ -1090,7 +1090,7 @@ def category_theory_colimit(category: str, diagram_type: str, shape: str):
 
 _HTT_GRAMMAR = (
     "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_invscripta  n:m  Omega_crtwo"
+    "G_revapostrophe  Gamma_seq  ⊙  H_invscripta  n:m  Omega_crtwo"
 )
 
 
@@ -1101,7 +1101,7 @@ def htt_group():
     
     Structural type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_invscripta n:m Omega_crtwo
+      G_revapostrophe Gamma_seq ⊙ H_invscripta n:m Omega_crtwo
 
     
     Key structural facts:
@@ -1177,7 +1177,7 @@ def htt_univalence_check(type_name: str):
 
 _AG_GRAMMAR = (
     "D_omega  T_bullseye  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -1188,14 +1188,14 @@ def algebraic_geometry_group():
     
     Structural type:
       D_omega T_bullseye R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
     Key structural facts:
       D_omega            → imscriptive: all schemes encoded
       T_bullseye          → local rings ↔ global sections ↔ Spec
       R_downstep          → adjoint: pushforward ↔ pullback
-      Phi_ctyogh             → self-modeling: scheme ↔ category of sheaves
+      ⊙             → self-modeling: scheme ↔ category of sheaves
       Omega_dzlig           → integer winding: cohomological dimension
 
     
@@ -1223,7 +1223,7 @@ def algebraic_geometry_describe():
         "  K_schwa            → slow traversal through cohomology spectral sequences\n"
         "  G_revapostrophe           → arbitrary dimension and base schemes\n"
         "  Gamma_seq         → sequential composition of morphisms\n"
-        "  Phi_ctyogh             → self-modeling: scheme ≅ category of sheaves\n"
+        "  ⊙             → self-modeling: scheme ≅ category of sheaves\n"
         "  H_turntwo                → two-step: cohomology of cohomology, spectral sequences\n"
         "  Omega_dzlig           → integer winding: cohomological dimension\n\n"
         "[bold]Key methods:[/bold]\n"
@@ -1284,7 +1284,7 @@ def algebraic_geometry_dimension(scheme: str):
 
 _QFT_GRAMMAR = (
     "D_omega  T_commatailz  R_subrightarrow  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  S_ltailm  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  S_ltailm  Omega_dzlig"
 )
 
 
@@ -1295,14 +1295,14 @@ def quantum_field_theory_group():
     
     Structural type:
       D_omega T_commatailz R_subrightarrow P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo S_ltailm Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo S_ltailm Omega_dzlig
 
     
     Key structural facts:
       D_omega            → imscriptive: all QFTs encoded
       T_commatailz        → box topology: theory⊗symmetry⊗spacetime
       R_subrightarrow           → supervenience: operators supervene on couplings
-      Phi_ctyogh             → self-modeling: fixed points, conformal manifolds
+      ⊙             → self-modeling: fixed points, conformal manifolds
       H_turntwo                → counterterm → renormalized → physical
 
     
@@ -1330,7 +1330,7 @@ def quantum_field_theory_describe():
         "  K_schwa            → slow RG flow (logarithmic scale separation)\n"
         "  G_revapostrophe           → arbitrary spacetime dimensions, matter content\n"
         "  Gamma_seq         → sequential RG flow: μ → μ'\n"
-        "  Phi_ctyogh             → self-modeling: fixed points, conformal manifolds\n"
+        "  ⊙             → self-modeling: fixed points, conformal manifolds\n"
         "  H_turntwo                → two-step: counterterm → renormalized → physical\n"
         "  Omega_dzlig           → integer winding: index, instanton number, Chern-Simons level\n\n"
         "[bold]Key methods:[/bold]\n"
@@ -1376,7 +1376,7 @@ def quantum_field_theory_beta_function(qft_name: str):
 
 _LANGLANDS_GRAMMAR = (
     "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_invscripta  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_broad  ⊙  H_invscripta  n:m  Omega_dzlig"
 )
 
 
@@ -1387,14 +1387,14 @@ def langlands_program_group():
     
     Structural type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_broad Phi_ctyogh H_invscripta n:m Omega_dzlig
+      G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     
     Key structural facts:
       D_omega / T_openo → imscriptive: Galois reps ↔ automorphic forms
       R_downstep        → adjoint functoriality: base change, lift, descent
       Gamma_broad     → broad correspondence: global-to-global
-      Phi_ctyogh           → self-modeling: Langlands duality
+      ⊙           → self-modeling: Langlands duality
       H_invscripta           → eternal: infinite descent, infinite extensions
 
     
@@ -1421,7 +1421,7 @@ def langlands_program_describe():
         "  K_schwa          → slow exploration through moduli of automorphic reps\n"
         "  G_revapostrophe         → arbitrary number fields, reductive groups\n"
         "  Gamma_broad     → broad correspondence: not sequential, global-to-global\n"
-        "  Phi_ctyogh           → self-modeling: Langlands duality as self-duality of L-group\n"
+        "  ⊙           → self-modeling: Langlands duality as self-duality of L-group\n"
         "  H_invscripta           → eternal: infinite descent, infinite extensions\n"
         "  Omega_dzlig         → integer winding: motivic weight, conductor, L-function order\n\n"
         "[bold]Key methods:[/bold]\n"
@@ -1470,7 +1470,7 @@ def langlands_l_function(automorphic_rep: str, s_value: str):
 
 _REPTHEORY_GRAMMAR = (
     "D_omega  T_commatailz  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -1481,13 +1481,13 @@ def representation_theory_group():
     
     Structural type:
       D_omega T_commatailz R_ctz P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
     Key structural facts:
       D_omega / T_commatailz → imscriptive: all groups, algebras, representations
       R_ctz                 → categorical: induction↔restriction, tensor product
-      Phi_ctyogh                 → self-modeling: group algebra = representation category
+      ⊙                 → self-modeling: group algebra = representation category
       H_turntwo                    → two-step: tensor with dual, Clebsch-Gordan
       Omega_dzlig               → integer winding: dimension, weight lattice index
 
@@ -1515,7 +1515,7 @@ def representation_theory_describe():
         "  K_schwa              → slow traversal through moduli of representations\n"
         "  G_revapostrophe             → arbitrary groups: finite, Lie, algebraic, quantum\n"
         "  Gamma_seq           → sequential: weight lattice, tensor decomposition\n"
-        "  Phi_ctyogh               → self-modeling: group algebra = representation category\n"
+        "  ⊙               → self-modeling: group algebra = representation category\n"
         "  H_turntwo                  → two-step: representation ⊗ its dual, Clebsch-Gordan\n"
         "  Omega_dzlig             → integer winding: dimension, weight lattice index\n\n"
         "[bold]Key methods:[/bold]\n"

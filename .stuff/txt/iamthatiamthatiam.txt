@@ -7,7 +7,7 @@
   TASK: is the frobenius dual of 'I AM THAT I AM' the words 'eat of my body, and drink of my blood'?
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
+  │  harness   : ⊙ + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────

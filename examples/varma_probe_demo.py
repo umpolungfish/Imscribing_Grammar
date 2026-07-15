@@ -2,7 +2,7 @@
 varma_probe_demo.py — Demonstrate the Varma QXY criticality probe.
 
 Shows:
-1. Single-entry Φ_c candidacy scoring
+1. Single-entry ⊙ candidacy scoring
 2. Quantitative degeneracy strength (logarithmic vs power-law)
 3. Dynamic exponent z_eff computation from frequency series
 4. Reference correlation data for Varma XY and 2D H-bond percolation
@@ -103,7 +103,7 @@ def demo_degeneracy_strength(imscription_name: str = "imscription_Varma_quantum_
         print("  Tiers: 0.0–0.3=none | 0.3–0.6=logarithmic | 0.6–0.85=power-law | 0.85–1.0=collapse")
 
         rep = score_phi_c_candidacy(imscription, data)
-        print(f"  Φ_c candidacy: {rep._candidacy_label()} (score={rep.score:.3f})")
+        print(f"  ⊙ candidacy: {rep._candidacy_label()} (score={rep.score:.3f})")
         print(f"  Axiom 5: {rep.axiom5_note[:80]}...")
     except Exception as e:
         print(f"  (Catalog unavailable: {e})")

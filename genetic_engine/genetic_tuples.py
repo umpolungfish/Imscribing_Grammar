@@ -87,10 +87,10 @@ IG_CHARS: Dict[str, str] = {
     "Gamma_broad":  "𐑵",     # 𐑠 — broadcast / universal
     
     # ── Criticality (φ̂/⊙) — 5 values ──
-    "Phi_sub":      "𐑢",     # φ̂_ž — subcritical / stable
-    "Phi_c":        "⊙",     # φ̂_ÿ — critical (self-modeling gate open)
-    "Phi_c_complex":"𐑮",     # φ̂_Æ — complex-plane critical
-    "Phi_EP":       "𐑻",     # φ̂_3 — exceptional point
+    "𐑢":      "𐑢",     # φ̂_ž — subcritical / stable
+    "⊙":        "⊙",     # φ̂_ÿ — critical (self-modeling gate open)
+    "𐑮":"𐑮",     # φ̂_Æ — complex-plane critical
+    "𐑻":       "𐑻",     # φ̂_3 — exceptional point
     "Phi_super":    "𐑣",     # φ̂_Ţ — supercritical / runaway
     
     # ── Chirality (Ħ) — 4 values ──
@@ -361,7 +361,7 @@ def generate_dna_gene_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "K": IG_CHARS["K_slow"],
         "G": IG_CHARS[g_val],
         "Gamma": IG_CHARS["Gamma_seq"],
-        "Phi": IG_CHARS["Phi_sub"],
+        "Phi": IG_CHARS["𐑢"],
         "H": IG_CHARS["H_2"],
         "S": IG_CHARS["S_n_m"],
         "O": IG_CHARS["O₀"],
@@ -387,7 +387,7 @@ def generate_pre_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "K": IG_CHARS["K_mod"],
         "G": IG_CHARS[g_val],
         "Gamma": IG_CHARS["Gamma_or"],
-        "Phi": IG_CHARS["Phi_sub"],
+        "Phi": IG_CHARS["𐑢"],
         "H": IG_CHARS["H_1"],
         "S": IG_CHARS["S_n_m"],
         "O": IG_CHARS["O₀"],
@@ -405,7 +405,7 @@ def generate_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
         "K": IG_CHARS["K_mod"],
         "G": IG_CHARS["G_aleph"],
         "Gamma": IG_CHARS["Gamma_seq"],
-        "Phi": IG_CHARS["Phi_sub"],
+        "Phi": IG_CHARS["𐑢"],
         "H": IG_CHARS["H_1"],
         "S": IG_CHARS["S_n_m"],
         "O": IG_CHARS["O₀"],
@@ -438,11 +438,11 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
     
     # Criticality (φ̂): His at loops → self-structuring; Pro absorbs
     if phi_gate and not pro_abs and not geo_sup:
-        phi_val = "Phi_c"
+        phi_val = "⊙"
     elif phi_gate and pro_abs:
-        phi_val = "Phi_EP"
+        phi_val = "𐑻"
     else:
-        phi_val = "Phi_sub"
+        phi_val = "𐑢"
     
     # Parity (Φ): mixed SS → asymmetry
     if mixed_ss:
@@ -496,11 +496,11 @@ def generate_tertiary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str
         k_val = "K_fast"
     
     if phi_gate and not pro_abs and not geo_sup:
-        phi_val = "Phi_c"
+        phi_val = "⊙"
     elif phi_gate and pro_abs:
-        phi_val = "Phi_EP"
+        phi_val = "𐑻"
     else:
-        phi_val = "Phi_sub"
+        phi_val = "𐑢"
     
     if mixed_ss and unique_aas > 10:
         p_val = "P_asym"
@@ -570,11 +570,11 @@ def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, s
     
     # Criticality (φ̂)
     if phi_gate and not pro_abs and not geo_sup:
-        phi_val = "Phi_c"
+        phi_val = "⊙"
     elif phi_gate and pro_abs:
-        phi_val = "Phi_EP"
+        phi_val = "𐑻"
     else:
-        phi_val = "Phi_sub"
+        phi_val = "𐑢"
     
     # Scope (Γ)
     if n_subunits >= 4 and unique_aas > 8:

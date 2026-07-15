@@ -101,7 +101,7 @@ CATEGORIES = [
         "commands": [
             ("criticality",       "G/D degeneracy + criticality analysis",
              [("Imscription", "name")]),
-            ("criticality-probe", "Φ_c candidacy + Axiom 5 probe",
+            ("criticality-probe", "⊙ candidacy + Axiom 5 probe",
              [("Imscription", "name")]),
             ("perturb sweep",      "Primitive Jacobian / sensitivity sweep",
              [("Imscription", "name"), ("ΔG kJ/mol (e.g. -10.0)", "float")]),

@@ -80,7 +80,7 @@ ELEMENTS = {
 PRIM_LABEL = {
     # H: dialetheic coupling — bonds as both donor and acceptor
     'H':  'Ħ',
-    # He: doubly-magic nucleus, Φ_sub — the archetypal subcritical
+    # He: doubly-magic nucleus, 𐑢 — the archetypal subcritical
     'He': '⊙',
     # Alkali metals: pure ionic donors, ɢ_or coupling
     'Li': 'ɢ', 'Na': 'ɢ', 'K':  'ɢ',

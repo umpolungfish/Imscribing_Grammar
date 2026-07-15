@@ -20,7 +20,7 @@ ROOT = Path(__file__).parent
 # ---------------------------------------------------------------------------
 # The canonical 49-pair rename mapping.
 # IMPORTANT: pairs where one old name is a prefix of another are sorted so
-# the longer name comes first (P_pm_sym before P_pm; Phi_c_complex before Phi_c).
+# the longer name comes first (P_pm_sym before P_pm; 𐑮 before ⊙).
 # ---------------------------------------------------------------------------
 
 RENAME: list[tuple[str, str]] = [
@@ -75,9 +75,9 @@ RENAME: list[tuple[str, str]] = [
     ("Γ_seq",           "ɢ_secstress"),
     ("Γ_broad",         "ɢ_doublevertline"),
 
-    # Phi — Criticality  (F5) — Phi_c_complex before Phi_c
+    # Phi — Criticality  (F5) — 𐑮 before ⊙
     ("⊙_c_complex",   "⊙_closerevepsilon"),
-    ("⊙_c",           "⊙_ctyogh"),
+    ("⊙",           "⊙_ctyogh"),
     ("⊙_sub",         "⊙_softsign"),
     ("⊙_EP",          "⊙_revepsilon"),
     ("⊙_super",       "⊙_upstep"),
@@ -217,9 +217,9 @@ LATEX_PATTERNS: list[tuple[str, str]] = [
     (r'P_\{\\pm\}\^\{\\mathrm\{sym\}\}',            r'P_{\\text{doublebarpipe}}'),
     (r'P_\\pm\^\\text\{sym\}',                      r'P_{\\text{doublebarpipe}}'),
 
-    # ── Phi — complex Phi_c_complex forms (must come before Phi_c) ──────────
-    (r'\\Phi_c\^\{\\mathbb\{C\}\}',                 r'\\Phi_{\\text{closerevepsilon}}'),
-    (r'\\Phi_c\^\\mathbb\{C\}',                     r'\\Phi_{\\text{closerevepsilon}}'),
+    # ── Phi — complex 𐑮 forms (must come before ⊙) ──────────
+    (r'\\⊙\^\{\\mathbb\{C\}\}',                 r'\\Phi_{\\text{closerevepsilon}}'),
+    (r'\\⊙\^\\mathbb\{C\}',                     r'\\Phi_{\\text{closerevepsilon}}'),
     (r'\\Phi_\{c\^\{\\mathbb\{C\}\}\}',             r'\\Phi_{\\text{closerevepsilon}}'),
     (r'\\Phi_\{\\text\{c_complex\}\}',              r'\\Phi_{\\text{closerevepsilon}}'),
 
@@ -235,7 +235,7 @@ LATEX_PATTERNS: list[tuple[str, str]] = [
     (r'\\Omega_0\b',                                r'\\Omega_{\\text{closeepsilon}}'),
 
     # ── Phi — simple subscript forms ─────────────────────────────────────────
-    (r'\\Phi_c\b(?!_)',                             r'\\Phi_{\\text{ctyogh}}'),
+    (r'\\⊙\b(?!_)',                             r'\\Phi_{\\text{ctyogh}}'),
     (r'\\Phi_\{c\}',                                r'\\Phi_{\\text{ctyogh}}'),
     (r'\\Phi_\{\\text\{sub\}\}',                    r'\\Phi_{\\text{softsign}}'),
     (r'\\Phi_\\text\{sub\}',                        r'\\Phi_{\\text{softsign}}'),

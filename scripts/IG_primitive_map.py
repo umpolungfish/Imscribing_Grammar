@@ -9,7 +9,7 @@ Two-panel figure:
 
 Color encodes Phi (criticality tier):
   Phi_softsign         →  steel blue
-  Phi_ctyogh           →  gold
+  ⊙           →  gold
   Phi_closerevepsilon   →  darkorange
   Phi_revepsilon          →  crimson
   Phi_upstep       →  mediumpurple
@@ -157,15 +157,15 @@ PHI_COLOR = {
 }
 PHI_LABEL = {
     "𐑢":       r"$\Phi_\mathrm{sub}$",
-    "⊙":         r"$\Phi_ctyogh$  (real-axis)",
-    "𐑮": r"$\Phi_ctyogh^\mathbb{C}$  (complex-axis)",
+    "⊙":         r"$\⊙$  (real-axis)",
+    "𐑮": r"$\⊙^\mathbb{C}$  (complex-axis)",
     "𐑻":        r"$\Phi_\mathrm{EP}$  (exceptional point)",
     "𐑣":     r"$\Phi_\mathrm{sup}$",
 }
 
 # ── Ouroboricity formula ──────────────────────────────────────────────────────
 def ouroboricity(entry: dict) -> float:
-    """O(x) = [Phi=Phi_ctyogh* ] * (1 + [Omega≠Omega_closeepsilon] + [H≥H_toneletterstem] + [G=G_revapostrophe])
+    """O(x) = [Phi=⊙* ] * (1 + [Omega≠Omega_closeepsilon] + [H≥H_toneletterstem] + [G=G_revapostrophe])
     Returns inf when H=H_invscripta and Phi is critical."""
     phi = entry.get("Phi", "")
     is_critical = phi in ("⊙", "𐑮", "𐑻")

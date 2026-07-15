@@ -1,15 +1,15 @@
 """
-Criticality Hunting Agent — Automated search for near-Φ_c systems.
+Criticality Hunting Agent — Automated search for near-⊙ systems.
 
 Combines Varma probe degeneracy scoring with perturbation pathfinding to:
-1. Scan the entire catalog and score each imscription's Φ_c candidacy
+1. Scan the entire catalog and score each imscription's ⊙ candidacy
 2. Identify near-critical systems (score 0.40–0.70 — "approaching" range)
-3. Run PerturbationEngine.find_path_to_target() toward a Φ_c ξ_CP threshold
+3. Run PerturbationEngine.find_path_to_target() toward a ⊙ ξ_CP threshold
 4. Use an LLM to evaluate which proposed modifications are chemically realistic
 5. Optionally generate new LLM-proposed upgraded imscription candidates
 
 The agent focuses on "near-critical" systems rather than already-critical ones,
-since those represent the highest-value targets for Φ_c assignment.
+since those represent the highest-value targets for ⊙ assignment.
 
 Usage::
 
@@ -46,7 +46,7 @@ from imscrbgrmr.provider_config import build_agent_config
 
 @dataclass
 class CriticalityCandidate:
-    """A single near-Φ_c candidate with upgrade path."""
+    """A single near-⊙ candidate with upgrade path."""
     imscription_name: str
     current_score: float          # degeneracy_strength score
     current_tier: str             # "none" / "logarithmic" / "power-law" / "collapse"
@@ -73,7 +73,7 @@ class CriticalityCandidate:
 class CriticalityHuntReport:
     """Full report from a criticality hunting run."""
     candidates: List[CriticalityCandidate]   # sorted by score descending
-    already_critical: List[str]              # imscription names already at Φ_c
+    already_critical: List[str]              # imscription names already at ⊙
     scan_stats: Dict[str, Any]
     llm_summary: str
     metadata: Dict[str, Any] = field(default_factory=dict)
@@ -93,7 +93,7 @@ class CriticalityHuntReport:
 
 class CriticalityHuntingAgent(BaseAgent):
     """
-    Hunts for near-Φ_c imscriptions in the catalog and proposes upgrade paths.
+    Hunts for near-⊙ imscriptions in the catalog and proposes upgrade paths.
 
     Combines Varma probe degeneracy scoring (imscrbgrmr.varma_probe) with
     PerturbationEngine pathfinding and LLM chemical evaluation.
@@ -115,7 +115,7 @@ class CriticalityHuntingAgent(BaseAgent):
             agent_id="criticality_hunting",
             name="Criticality Hunting Agent",
             description=(
-                "Scans the catalog for near-Φ_c systems and generates targeted "
+                "Scans the catalog for near-⊙ systems and generates targeted "
                 "upgrade paths using Varma probe scoring and perturbation pathfinding."
             ),
             capabilities=[
@@ -127,7 +127,7 @@ class CriticalityHuntingAgent(BaseAgent):
             config=config,
             persona=(
                 "Expert in quantum criticality and self-organised chemical systems. "
-                "You identify imscriptions approaching the critical point (Φ_c) and design "
+                "You identify imscriptions approaching the critical point (⊙) and design "
                 "targeted chemical modifications to push them into the critical regime. "
                 "Your proposals are grounded in the Varma QXY universality class and "
                 "scale-free degeneracy theory."
@@ -202,7 +202,7 @@ class CriticalityHuntingAgent(BaseAgent):
         include_already_critical: bool = False,
     ) -> CriticalityHuntReport:
         """
-        Hunt for near-Φ_c candidates in the global catalog.
+        Hunt for near-⊙ candidates in the global catalog.
 
         Args:
             delta_g: ΔG used for ξ_CP baseline computation (kJ/mol).
@@ -210,7 +210,7 @@ class CriticalityHuntingAgent(BaseAgent):
                          Lower values correspond to more efficient, critical-like systems.
             top_n: Maximum number of candidates to analyse in depth.
             optimize_primitives: Primitives to vary in pathfinding (default: ["ƒ","Γ","Þ","Φ"]).
-            include_already_critical: If True, include Φ_c entries in output.
+            include_already_critical: If True, include ⊙ entries in output.
 
         Returns:
             CriticalityHuntReport.
@@ -256,7 +256,7 @@ class CriticalityHuntingAgent(BaseAgent):
 
         Returns:
             approaching: [(score, tier, name)] for near-critical imscriptions, sorted descending
-            already_critical: names already at Φ_c (score ≥ 0.70)
+            already_critical: names already at ⊙ (score ≥ 0.70)
             stats: scan statistics dict
         """
         approaching: List[Tuple[float, str, str]] = []
@@ -375,7 +375,7 @@ class CriticalityHuntingAgent(BaseAgent):
                 f"Upgrade path: {path_summary}"
             )
         return f"""<task>
-Evaluate the chemical feasibility of pushing near-critical imscriptions to Φ_c.
+Evaluate the chemical feasibility of pushing near-critical imscriptions to ⊙.
 </task>
 
 <candidates>
@@ -383,24 +383,24 @@ Evaluate the chemical feasibility of pushing near-critical imscriptions to Φ_c.
 </candidates>
 
 <background>
-Φ_c (criticality) requires G/D degeneracy: the system must exhibit scale-free
+⊙ (criticality) requires G/D degeneracy: the system must exhibit scale-free
 behavior where spatial correlation length is logarithmically determined by
 temporal correlation length (Varma QXY universality class).
 
 Key upgrade levers:
 - F HIGH + T_⋈ → tighter cyclic constraint → lower ξ_CP → approach criticality
 - G_ג (mesoscale) with cooperative induction → Axiom 3 G/D coupling
-- Φ_c explicit assignment via upgrade from Φ_sub
+- ⊙ explicit assignment via upgrade from 𐑢
 - 𐑡 topology enables scale-free propagation
 </background>
 
 <instructions>
 For each candidate, provide:
 1. Chemical feasibility of the proposed upgrade path (HIGH/MEDIUM/LOW)
-2. One concrete synthetic strategy to push the system toward Φ_c
+2. One concrete synthetic strategy to push the system toward ⊙
 3. Any flags (axiom conflicts, unrealistic modifications)
 
-Write a 3-sentence summary of the most promising Φ_c upgrade opportunities.
+Write a 3-sentence summary of the most promising ⊙ upgrade opportunities.
 </instructions>
 
 <output_format>
@@ -423,7 +423,7 @@ Return ONLY this JSON:
             "You are an expert in criticality and scale-free behaviour across Imscriptive systems. "
             "You evaluate whether proposed primitive-tier upgrades are physically realistic "
             "within their domain and propose specific modifications to push systems toward "
-            "the Varma QXY critical point (Φ_c) in the Unified Imscriptiveon framework. "
+            "the Varma QXY critical point (⊙) in the Unified Imscriptiveon framework. "
             "For primary-tier systems this means concrete chemical modifications; "
             "for extended-tier systems this means domain-appropriate structural or parameter changes."
         )
@@ -463,7 +463,7 @@ Return ONLY this JSON:
             return {
                 "status": "success",
                 "findings": (
-                    f"Criticality hunt: {len(report.candidates)} near-Φ_c candidates found.\n"
+                    f"Criticality hunt: {len(report.candidates)} near-⊙ candidates found.\n"
                     f"{report.llm_summary}"
                 ),
                 "artifacts": self.artifacts,

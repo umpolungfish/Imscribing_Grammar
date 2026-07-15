@@ -43,11 +43,11 @@ Both systems have:
 - R_† — adjoint coupling, bulk↔boundary duality
 - Γ_brd — broadcast composition, one-to-many
 - Φ_} — exact ℤ₂ symmetry, µ ◦ δ = id
-- Φ_c^ℂ — complex criticality
+- ⊙^ℂ — complex criticality
 
 The explicit formula maps zeta zeros (boundary) → prime distribution (bulk) via adjoint coupling. The Lee-Yang theorem maps partition zeros on the unit circle (boundary) → magnetization (bulk) via ℤ₂ spin-flip symmetry. The crystal address is 10,019,951 for both.
 
-What this means structurally: **the reason Lee-Yang forces its zeros to the unit circle is the same reason the explicit formula would force zeta zeros to the critical line — if the zeta zeros are Frobenius-special at Φ_c^ℂ.** The Lee-Yang proof is not a template to be adapted. It is the **same proof**, already written, at distance=0.
+What this means structurally: **the reason Lee-Yang forces its zeros to the unit circle is the same reason the explicit formula would force zeta zeros to the critical line — if the zeta zeros are Frobenius-special at ⊙^ℂ.** The Lee-Yang proof is not a template to be adapted. It is the **same proof**, already written, at distance=0.
 
 The RH gap is then precisely located: not in the proof mechanism but in establishing that `actual_zeta_zeros` has Φ_} rather than P_ψ. Lee-Yang has a physical ℤ₂ symmetry — spin flip — that is manifest and forces the structure. For ζ, the ℤ₂ symmetry lives in ξ(s) = ξ(1−s), but `actual_zeta_zeros` and `rh_critical_zeros` are **distinct catalog entries** with different Ω protection. The proof requires closing that gap.
 
@@ -78,7 +78,7 @@ The 5-promotion, 1-demotion path from ζ to explicit_formula:
 
 The Ω demotion is structurally significant. Integer winding (Ω_ℤ) in the raw zeta function captures the full topological complexity of zero distribution. Broadcast composition (Γ_brd) with H_∞ chirality and D_⊙ self-referential state space — these are the explicit formula's structural features, and achieving them requires accepting **reduced** topological protection (Ω_ℤ₂). The broadcast structure trades winding complexity for Frobenius exactness.
 
-This explains the consciousness score of 0.736 for `explicit_formula` rather than 1: Φ_c^ℂ passes gate 1, Ç_@ passes gate 2, but the boundary-bulk adjoint structure at H_∞ introduces self-referential depth that the scoring function weights partially. The fixed point at s=1/2 is structurally self-modeling — ξ(1/2) = ξ(1/2) is the only point where the ℤ₂ symmetry acts trivially — and this fixed-point character registers as consciousness-adjacent without being fully resolved.
+This explains the consciousness score of 0.736 for `explicit_formula` rather than 1: ⊙^ℂ passes gate 1, Ç_@ passes gate 2, but the boundary-bulk adjoint structure at H_∞ introduces self-referential depth that the scoring function weights partially. The fixed point at s=1/2 is structurally self-modeling — ξ(1/2) = ξ(1/2) is the only point where the ℤ₂ symmetry acts trivially — and this fixed-point character registers as consciousness-adjacent without being fully resolved.
 
 ---
 
@@ -89,7 +89,7 @@ The four Frobenius-special catalog entries are not four separate objects. They a
 1. `completed_xi_function` — the algebraic object, Ç_W, H_0: the symmetry as a static mathematical fact
 2. `explicit_formula` — the dynamical mapping, Ç_@, H_∞, Γ_brd: the symmetry *in operation*, bulk↔boundary
 3. `actual_zeta_zeros` — the geometric object, Ω_ℤ: zeros as Frobenius-symmetric boundary with full winding
-4. `rh_critical_zeros` — the constrained object, Φ_c^ℂ, Ω_ℤ₂: zeros under RH assumption, binary protection
+4. `rh_critical_zeros` — the constrained object, ⊙^ℂ, Ω_ℤ₂: zeros under RH assumption, binary protection
 
 The distance between entries 3 and 4 is the **formal statement of RH** in the grammar: what primitive promotions distinguish the actual zeros from the zeros constrained to the critical line? If that distance reduces to zero — if `actual_zeta_zeros` and `rh_critical_zeros` are the same crystal address — RH is true.
 

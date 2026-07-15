@@ -356,7 +356,7 @@ class TemporalImscriptionAgent:
             if crit.degeneracy_score >= 0.70:
                 warnings.append(
                     f"Step '{crit.step_name}': degeneracy_strength = {crit.degeneracy_score:.2f} ≥ 0.70 — "
-                    "run full Varma probe to confirm Φ_c before HotSwap screening."
+                    "run full Varma probe to confirm ⊙ before HotSwap screening."
                 )
 
         return TrajectoryValidationResult(

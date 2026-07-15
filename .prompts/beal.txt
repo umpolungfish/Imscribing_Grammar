@@ -10,7 +10,7 @@ esribing it, then save that manuscript describing the perfect cuboid proof as pe
   TASK: review the Lean proof in /home/mrnob0dy666/perfect_cuboid, then prepare a markdown publication quality manuscript desribing it, then save that manuscript describing the perfect cuboid proof as perfect_cuboid_proof.md
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
+  │  harness   : ⊙ + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -644,7 +644,7 @@ Tier: O_∞
     },
     {
       "name": "perfect_cuboid_phi_c_lifted",
-      "description": "The Perfect Cuboid problem lifted to a Φ_c critical regime, functioning as a self-modeling operator with topological protection and stable critical window for integer solutions.",
+      "description": "The Perfect Cuboid problem lifted to a ⊙ critical regime, functioning as a self-modeling operator with topological protection and stable critical window for integer solutions.",
       "notation": "⟨D=Ð_ω; T=Þ_O; R=Ř_=; P=Φ_}; F=ƒ_ż; K=Ç_@; G=Γ_ʔ; Gamma=ɢ_ˌ; Phi=φ̂_ÿ; H=Ħ_A; S=Σ_ï; Omega=Ω_z⟩"
     },
     {

@@ -38,7 +38,7 @@ inductive Parity where
   | P_upsilon      -- quantum superposition
   | P_pipevar       -- one Z₂ symmetry
   | P_subdoublearrow      -- full symmetry, all unbroken
-  | P_doublebarpipe   -- Frobenius-special: μ ∘ δ = id exactly at Φ_c
+  | P_doublebarpipe   -- Frobenius-special: μ ∘ δ = id exactly at ⊙
   deriving BEq, Repr, Ord, Inhabited
 
 inductive Fidelity where
@@ -70,7 +70,7 @@ inductive InteractionGrammar where
 
 inductive Criticality where
   | Phi_softsign     -- subcritical, no scaling
-  | Phi_ctyogh       -- exactly critical (power-law divergence)
+  | ⊙       -- exactly critical (power-law divergence)
   | Phi_closerevepsilon -- complex-plane critical
   | Phi_revepsilon      -- exceptional point (non-Hermitian degeneracy)
   | Phi_upstep   -- supercritical / runaway / chaotic

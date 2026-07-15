@@ -12,7 +12,7 @@ PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
   R1: Φ ∈ {⊙, 𐑮} AND P = 𐑹  →  O_∞
-  R2: Φ ∈ {Φ_sub, Φ_super, Φ_EP}               →  O₀
+  R2: Φ ∈ {𐑢, Φ_super, 𐑻}               →  O₀
   R3: Φ ∈ {⊙, 𐑮} AND Ω = 𐑷       →  O₁
   R4: Φ ∈ {⊙, 𐑮} AND Ω ≠ 𐑷
       AND D ∈ {𐑛, 𐑨, 𐑦}      →  O₂
@@ -111,10 +111,10 @@ print(header)
 print("─" * len(header))
 
 PERIOD_LABEL = {
-    "𐑢":       "Φ_sub   (ordered)",
+    "𐑢":       "𐑢   (ordered)",
     "⊙":         "⊙     (critical)",
     "𐑮": "⊙^C   (complex-crit)",
-    "𐑻":        "Φ_EP    (exc. point)",
+    "𐑻":        "𐑻    (exc. point)",
     "𐑣":     "𐑣 (disordered)",
 }
 

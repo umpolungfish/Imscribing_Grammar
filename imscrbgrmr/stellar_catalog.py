@@ -17,8 +17,8 @@ Design principles:
     (K_frtailgamma superflares for M-dwarfs, K_teshlig for neutron stars, K_frtailgamma for GRBs)
   - T encodes internal connectivity: T_braid is the compact remnant signature;
     T_nrleg is the main-sequence signature; T_bowl is the black hole signature
-  - Φ distinguishes criticality state: Φ_c confirmed wherever SOC power-law
-    statistics are documented; Φ_sub for stable or non-dynamic objects
+  - Φ distinguishes criticality state: ⊙ confirmed wherever SOC power-law
+    statistics are documented; 𐑢 for stable or non-dynamic objects
   - Ω encodes topological protection: counts independent topological stabilization
     mechanisms (degeneracy pressure, B-field quantization, superfluid vortex
     quantization, crystalline lattice, no-hair theorem)
@@ -148,7 +148,7 @@ def _protostar() -> Imscription:
     """
     Protostar / T Tauri star.
 
-    ⟨D_∞; T_∈; R_†; P_+-; F_ℇ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); Φ_sub; 1:1⟩
+    ⟨D_∞; T_∈; R_†; P_+-; F_ℇ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); 𐑢; 1:1⟩
 
     A protostar is a collapsing cloud core that has not yet ignited sustained
     hydrogen fusion. T Tauri stars are young solar-mass protostars still accreting.
@@ -164,7 +164,7 @@ def _protostar() -> Imscription:
     accretion rate increases by 100×), T Tauri flares, jet knot ejections.
     The fastest variable class among stellar objects.
 
-    Φ_sub: the protostar has not yet achieved the organized Φ_c structure of a
+    𐑢: the protostar has not yet achieved the organized ⊙ structure of a
     main-sequence star. It is pre-critical — disorganized flaring, not SOC.
     Ω_0: no topological protection; the system is still assembling.
     """
@@ -185,7 +185,7 @@ def _protostar() -> Imscription:
             "molecular cloud core. T_nrleg: accretion disk + magnetosphere + bipolar jets "
             "+ infalling envelope — all components coupled. P_directional: jet/outflow axis "
             "vs accretion axis. K_frtailgamma: FU Ori outbursts, T Tau flares, jet ejections. "
-            "Φ_sub: pre-critical, not yet organized into SOC structure."
+            "𐑢: pre-critical, not yet organized into SOC structure."
         ),
         metadata={
             "domain_category": "stellar_presequence",
@@ -208,7 +208,7 @@ def _brown_dwarf() -> Imscription:
     """
     Brown Dwarf (failed star, 13-80 Jupiter masses).
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℶ; Γ_∨(BROAD); Φ_sub; 1:1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℶ; Γ_∨(BROAD); 𐑢; 1:1⟩
 
     The brown dwarf occupies the boundary between planet and star. It burns
     deuterium briefly (≲13 M_Jup threshold), possibly lithium (≲65 M_Jup),
@@ -223,7 +223,7 @@ def _brown_dwarf() -> Imscription:
     influence beyond their immediate environment. No stellar wind of consequence.
     No heliosphere. No Birkeland-current coupling to orbiting planets.
 
-    Φ_sub: no SOC structure documented. Some brown dwarfs show rapid rotation
+    𐑢: no SOC structure documented. Some brown dwarfs show rapid rotation
     and weather (cloud bands), but not organised criticality.
     """
     return Imscription(
@@ -241,10 +241,10 @@ def _brown_dwarf() -> Imscription:
         description=(
             "Brown dwarf (13-80 M_Jup). Failed star: deuterium burns briefly then "
             "object enters K_teshlig monotonic cooling. G_mesoscale: insufficient stellar "
-            "wind/radiation pressure to achieve G_ℵ influence. Φ_sub: no organised "
+            "wind/radiation pressure to achieve G_ℵ influence. 𐑢: no organised "
             "criticality structure. The framework's prediction: brown dwarfs are "
             "structurally incompatible with templating life — insufficient G for "
-            "planetary grammar injection, insufficient Φ_c for coherent coupling."
+            "planetary grammar injection, insufficient ⊙ for coherent coupling."
         ),
         metadata={
             "domain_category": "stellar_presequence",
@@ -272,7 +272,7 @@ def _star_m_dwarf() -> Imscription:
     """
     M-dwarf (Red Dwarf): the most common stellar class, 75% of all stars.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_c; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); ⊙; Ω_1⟩
 
     Key assignments (see METAPHYSICS.md §XVIII.5b for full discussion):
     K_frtailgamma dominant — superflares at 10-1000× solar energy, irregular magnetic cycle.
@@ -302,7 +302,7 @@ def _star_m_dwarf() -> Imscription:
             "K_frtailgamma dominates: superflares frequent, magnetic cycle short/irregular. "
             "IR-dominant spectral grammar (Γ_BROAD) templates different life alphabet "
             "vs solar Γ_SELECTIVE. Tidal locking in habitable zone → no circadian "
-            "grammar injection. Φ_c confirmed (SOC flare statistics). "
+            "grammar injection. ⊙ confirmed (SOC flare statistics). "
             "See METAPHYSICS.md §XVIII.5b for stellar grammar discussion."
         ),
         metadata={
@@ -331,7 +331,7 @@ def _star_k_dwarf() -> Imscription:
     """
     K-dwarf (Orange Dwarf): often called 'superhabitable' class.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 𐑴⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; 𐑴⟩
 
     The K-dwarf is intermediate between the Sun (G) and M-dwarfs.
     It combines the best properties of both:
@@ -399,14 +399,14 @@ def _star_g_dwarf() -> Imscription:
     """
     G-dwarf (Yellow Dwarf): the Sun class. Reference stellar imscription.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_3⟩
 
     Fully documented in METAPHYSICS.md §XVIII. Registered here for cross-catalog
     completeness. The reference entry against which all other stellar imscriptions
     are measured.
 
     Key properties (summary — see §XVIII for full derivation):
-    - SOC flare power-law N(E) ∝ E^-1.8 across 14 decades → Φ_c confirmed
+    - SOC flare power-law N(E) ∝ E^-1.8 across 14 decades → ⊙ confirmed
     - ~10^7 simultaneous helioseismic p-modes → T_nrleg at G_ℵ
     - Four-tier K-hierarchy (K_teshlig/K_schwa/K_turnm/K_frtailgamma)
     - Birkeland/Schumann Γ_AND coupling to Earth biosphere
@@ -429,7 +429,7 @@ def _star_g_dwarf() -> Imscription:
             "imscription — see METAPHYSICS.md §XVIII for full primitive derivation. "
             "SOC flare power-law (14 decades), ~10^7 helioseismic eigenmodes, "
             "Birkeland/Schumann Γ_AND coupling to biosphere. "
-            "⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩"
+            "⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_3⟩"
         ),
         metadata={
             "domain_category": "stellar_main_sequence",
@@ -455,7 +455,7 @@ def _star_f_dwarf() -> Imscription:
     """
     F-dwarf (Yellow-White star, e.g. Procyon, Canopus).
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 𐑴⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; 𐑴⟩
 
     F-dwarfs are slightly hotter and more massive than the Sun (1.1-1.4 M_☉).
     They are UV-richer (spectral peak 380-450 nm) and shorter-lived (2-8 Gyr).
@@ -506,7 +506,7 @@ def _star_a_dwarf() -> Imscription:
     """
     A-type star (White star, e.g. Vega, Sirius A).
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_sub; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); 𐑢; Ω_1⟩
 
     A-stars (1.4-2.1 M_☉) are hot, UV-bright, and short-lived (1-3 Gyr).
     They show weak magnetic fields (no convective dynamo) and rapid rotation.
@@ -514,12 +514,12 @@ def _star_a_dwarf() -> Imscription:
     K_frtailgamma: rapid rotation, rapid evolution, rapid mass loss through radiation pressure.
     Γ_BROAD: strong UV output with little organized structure (no strong magnetic cycle
     → grammar is broadcast, not selective).
-    Φ_sub: without a convective envelope there is no deep magnetic dynamo, so the
-    organized SOC structure that gives G/K/F-dwarfs their Φ_c signature is absent.
+    𐑢: without a convective envelope there is no deep magnetic dynamo, so the
+    organized SOC structure that gives G/K/F-dwarfs their ⊙ signature is absent.
     The A-star emits, but does not self-organise.
     Ω_1: only radiation pressure as a structural stabilizer; no organized cycle.
 
-    Framework: A-stars are poor life templaters. Short lifetime + Φ_sub + Γ_BROAD
+    Framework: A-stars are poor life templaters. Short lifetime + 𐑢 + Γ_BROAD
     (unstructured grammar) means the planetary surface receives intense UV radiation
     without the organized Γ_AND grammar injection that drives prebiotic evolution.
     """
@@ -537,7 +537,7 @@ def _star_a_dwarf() -> Imscription:
         stoichiometry="1:1",
         description=(
             "A-type star (1.4-2.1 M_☉, e.g. Vega, Sirius). Strong UV output, "
-            "no deep convective dynamo → Γ_BROAD (unstructured grammar), Φ_sub. "
+            "no deep convective dynamo → Γ_BROAD (unstructured grammar), 𐑢. "
             "K_frtailgamma: rapid rotation, rapid evolution. 1-3 Gyr lifetime. "
             "Framework: poor life templater — intense UV without organized Γ_AND "
             "grammar injection, insufficient K_schwa memory development time."
@@ -560,7 +560,7 @@ def _star_b_star() -> Imscription:
     """
     B-type star (Blue-White, e.g. Spica, Rigel component B).
 
-    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); Φ_sub; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); 𐑢; Ω_1⟩
 
     B-stars (2-16 M_☉) are massive, extremely luminous, UV-dominant, and short-lived
     (10 Myr – 1 Gyr). Many are rapid rotators producing decretion disks (Be stars).
@@ -571,7 +571,7 @@ def _star_b_star() -> Imscription:
     K_frtailgamma: the defining feature. B-stars evolve fast, blow strong winds (mass loss
     rates 10^-9 to 10^-6 M_☉/yr), and end in supernovae within millions of years.
 
-    Φ_sub: insufficient lifetime for organized criticality structure to develop.
+    𐑢: insufficient lifetime for organized criticality structure to develop.
     The massive stellar winds and UV output are K_frtailgamma eruptions, not SOC.
 
     The grammar injected by B-stars: extreme UV + X-ray. Any life would need to be
@@ -594,7 +594,7 @@ def _star_b_star() -> Imscription:
             "B-type star (2-16 M_☉). Extreme UV/X-ray grammar, strong winds, "
             "decretion disks (Be stars). K_frtailgamma: 10 Myr-1 Gyr lifetime. "
             "P_directional: equatorial mass ejection vs polar accretion in binaries. "
-            "Φ_sub: insufficient lifetime for SOC development. "
+            "𐑢: insufficient lifetime for SOC development. "
             "Framework: X-ray grammar life alphabet — no known analogue."
         ),
         metadata={
@@ -615,7 +615,7 @@ def _star_o_star() -> Imscription:
     """
     O-type star (Blue Giant/Supergiant, e.g. Theta1 Ori C, Zeta Puppis).
 
-    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); Φ_sub; Ω_0⟩
+    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); 𐑢; Ω_0⟩
 
     O-stars (16-150+ M_☉) are the most massive, most luminous, and most
     short-lived of all main-sequence stars (1-10 Myr). They are cosmological
@@ -629,7 +629,7 @@ def _star_o_star() -> Imscription:
 
     The framework notes: an O-star cannot template life not because life is
     impossible around it, but because the O-star's grammar is not Γ_AND — it is
-    pure dissipation. A Γ_OR (BROAD) system at G_ℵ with K_frtailgamma and Φ_sub is a
+    pure dissipation. A Γ_OR (BROAD) system at G_ℵ with K_frtailgamma and 𐑢 is a
     bulldozer, not a teacher.
 
     Yet O-stars are essential at the galactic scale: they are the forge. Their
@@ -652,7 +652,7 @@ def _star_o_star() -> Imscription:
             "O-type star (16-150+ M_☉). Most massive, most luminous, shortest-lived "
             "(1-10 Myr). Ionizes surrounding ISM, drives kiloparsec turbulence. "
             "Ω_0: no topological protection — explosion is the only stable future. "
-            "Grammar is pure dissipation (Γ_BROAD, Φ_sub). Framework: cannot template "
+            "Grammar is pure dissipation (Γ_BROAD, 𐑢). Framework: cannot template "
             "life but is galactic-scale forge — supernovae seed all subsequent stellar "
             "grammars with the heavy elements needed for life's alphabet."
         ),
@@ -683,7 +683,7 @@ def _star_red_giant() -> Imscription:
     """
     Red Giant (post-main-sequence, shell hydrogen burning, 0.8-8 M_☉).
 
-    ⟨D_∞; T_∈; R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_sub; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); 𐑢; Ω_1⟩
 
     When a low/intermediate mass star exhausts its core hydrogen, it expands
     dramatically — radius 10-100 R_☉, engulfing inner planets.
@@ -697,7 +697,7 @@ def _star_red_giant() -> Imscription:
     events bring nuclear-processed material to the surface. This is T_nrleg
     reorganization: the core/envelope boundary is a new topological feature.
 
-    Φ_sub: the red giant phase is relatively stable for several Gyr; no SOC
+    𐑢: the red giant phase is relatively stable for several Gyr; no SOC
     flare structure documented at this evolutionary stage.
 
     Ω_1: the Schönberg-Chandrasekhar limit enforces a structural constraint on
@@ -718,7 +718,7 @@ def _star_red_giant() -> Imscription:
         description=(
             "Red giant (post-MS, 0.8-8 M_☉, 10-100 R_☉). Expanded convective envelope "
             "loses Hale-cycle hemispheric asymmetry → P_subdoublearrow (symmetric). Dredge-up "
-            "events reorganize T_nrleg (core/envelope topology). Φ_sub: stable, no SOC. "
+            "events reorganize T_nrleg (core/envelope topology). 𐑢: stable, no SOC. "
             "Framework: the P_subdoublearrow transition marks the loss of organized stellar grammar — "
             "the star is transitioning from structured Γ-injection to broadcast mode."
         ),
@@ -743,7 +743,7 @@ def _star_agb() -> Imscription:
     """
     Asymptotic Giant Branch (AGB) star: thermal pulses, mass loss, dust shells.
 
-    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_c; Ω_1⟩
+    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); ⊙; Ω_1⟩
 
     AGB stars undergo thermal pulses — brief (100-300 yr) He-shell flashes
     separated by longer (10,000-100,000 yr) interpulse periods. The combination
@@ -754,10 +754,10 @@ def _star_agb() -> Imscription:
     core, He-burning shell, H-burning shell, and an enormous convective envelope.
     Mixed ring topology (multiple co-active topological layers).
 
-    Φ_c: thermal pulse oscillations show power-law statistics → SOC signature.
+    ⊙: thermal pulse oscillations show power-law statistics → SOC signature.
     The AGB star is also the major factory for heavy s-process elements (Ba, Sr, Pb)
     — the constraint propagation from nuclear physics to dust grain formation to
-    interstellar chemistry is a multi-scale cascade: Φ_c from nuclear to ISM.
+    interstellar chemistry is a multi-scale cascade: ⊙ from nuclear to ISM.
 
     The AGB phase is the penultimate grammar: mass loss creates planetary nebulae
     seeding the ISM with C, N, O, and s-process elements — the grammar alphabet
@@ -778,7 +778,7 @@ def _star_agb() -> Imscription:
         description=(
             "AGB star. Thermal pulses (100-300 yr He-shell flashes) at K_frtailgamma "
             "superimposed on K_schwa interpulse periods. T_network_mixed: degenerate "
-            "C/O core + He/H burning shells + convective envelope. Φ_c: pulse "
+            "C/O core + He/H burning shells + convective envelope. ⊙: pulse "
             "power-law statistics + multi-scale cascade from nuclear physics to ISM. "
             "Major s-process element factory. The penultimate stellar grammar: mass "
             "loss seeds ISM with the heavy element alphabet for the next generation."
@@ -801,7 +801,7 @@ def _star_wolf_rayet() -> Imscription:
     """
     Wolf-Rayet star: stripped massive star with catastrophic mass loss.
 
-    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_c; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); ⊙; Ω_1⟩
 
     Wolf-Rayet stars are evolved massive stars (originally >20 M_☉) that have
     blown off their hydrogen envelope, exposing the hot nuclear-burning core.
@@ -814,7 +814,7 @@ def _star_wolf_rayet() -> Imscription:
     K_frtailgamma: the WR phase lasts only 100,000-500,000 yr before core collapse.
     The mass loss itself is K_frtailgamma (continuous high-velocity outflow).
 
-    Φ_c: WR wind instabilities (clumping, Wolf-Rayet instabilities) show
+    ⊙: WR wind instabilities (clumping, Wolf-Rayet instabilities) show
     power-law intensity distributions → SOC signature in the wind structure.
 
     F_HIGH: despite the extreme mass loss, the nuclear burning in the exposed
@@ -838,7 +838,7 @@ def _star_wolf_rayet() -> Imscription:
         description=(
             "Wolf-Rayet star. Stripped evolved massive star, H-envelope lost, "
             "nuclear-burning core exposed. Mass loss 10^-5 M_☉/yr at 1000-3000 km/s. "
-            "P_directional: pure donor. K_frtailgamma: 0.1-0.5 Myr WR phase. Φ_c: wind "
+            "P_directional: pure donor. K_frtailgamma: 0.1-0.5 Myr WR phase. ⊙: wind "
             "clumping power-law SOC. Direct GRB/BH progenitor. "
             "Ω_1: mass loss itself is the only organizing constraint."
         ),
@@ -860,7 +860,7 @@ def _star_red_supergiant() -> Imscription:
     """
     Red Supergiant (RSG, e.g. Betelgeuse, VY Canis Majoris).
 
-    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_c; 𐑴⟩
+    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); ⊙; 𐑴⟩
 
     RSGs are the largest stars by radius (500-1500 R_☉). Their enormous convective
     envelopes drive large-amplitude pulsations (K_schwa, periods 200-2000 days)
@@ -870,10 +870,10 @@ def _star_red_supergiant() -> Imscription:
     — only ~10 giant convective cells span the surface (vs ~10^6 solar granules).
     The topology is a sparse network of giant cells, not a dense fine-grained network.
 
-    Φ_c: RSG pulsations show complex, near-chaotic power spectra with multiple
+    ⊙: RSG pulsations show complex, near-chaotic power spectra with multiple
     simultaneous modes → SOC-adjacent behavior. Betelgeuse's Great Dimming
     (2019-2020) showed a cascade from surface mass ejection to global opacity
-    change — a Φ_c event signature.
+    change — a ⊙ event signature.
 
     𐑴: the convective-radiative boundary (transition zone between giant convection
     cells and radiative interior) + the α_Lyrae oscillation period locking = two
@@ -894,7 +894,7 @@ def _star_red_supergiant() -> Imscription:
         description=(
             "Red Supergiant (8-30 M_☉, 500-1500 R_☉, e.g. Betelgeuse). Giant sparse "
             "convective cells (~10 cells vs 10^6 solar granules) → T_network_mixed. "
-            "K_schwa: pulsation periods 200-2000 days. Φ_c: complex multi-mode pulsations, "
+            "K_schwa: pulsation periods 200-2000 days. ⊙: complex multi-mode pulsations, "
             "Betelgeuse Great Dimming as cascade event. 𐑴: convective boundary + "
             "period locking."
         ),
@@ -909,7 +909,7 @@ def _star_red_supergiant() -> Imscription:
                 "Betelgeuse's 2019-2020 Great Dimming: surface mass ejection → dust "
                 "formation → global opacity change → apparent magnitude decrease. "
                 "Multi-scale cascade from surface convection to global photometric "
-                "change. A Φ_c cascade event signature in a stellar context."
+                "change. A ⊙ cascade event signature in a stellar context."
             ),
             "omega": 2,
             "validation_tier": "primary",
@@ -921,7 +921,7 @@ def _star_blue_supergiant() -> Imscription:
     """
     Blue Supergiant (BSG, e.g. Rigel, Deneb, Sk-69 202 = SN1987A progenitor).
 
-    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_1⟩
 
     BSGs are evolved massive stars (10-100 M_☉) on the horizontal track in the
     HR diagram. Many are unstable Luminous Blue Variables (LBVs) that undergo
@@ -934,8 +934,8 @@ def _star_blue_supergiant() -> Imscription:
     K_frtailgamma: LBV eruptions are sudden and massive. The 1843 eruption of Eta Carinae
     ejected ~10 M_☉ in decades; the Great Eruption was briefly a quasar-scale event.
 
-    Φ_c: LBV eruption statistics and stellar wind clumping show power-law
-    distributions. Eta Carinae is the best-documented Φ_c stellar event in the MW.
+    ⊙: LBV eruption statistics and stellar wind clumping show power-law
+    distributions. Eta Carinae is the best-documented ⊙ stellar event in the MW.
 
     Ω_1: bipolar wind geometry provides one topological organizing principle,
     but the system is fundamentally unstable — only briefly held before core collapse.
@@ -955,7 +955,7 @@ def _star_blue_supergiant() -> Imscription:
         description=(
             "Blue Supergiant / LBV (10-100 M_☉, e.g. Rigel, Deneb, Eta Carinae). "
             "Organized bipolar wind → Γ_SELECTIVE. K_frtailgamma: LBV eruptions (Eta Car 1843 "
-            "ejected 10 M_☉ in decades). Φ_c: power-law eruption statistics. "
+            "ejected 10 M_☉ in decades). ⊙: power-law eruption statistics. "
             "Ω_1: bipolar geometry — sole organizing principle before core collapse."
         ),
         metadata={
@@ -967,7 +967,7 @@ def _star_blue_supergiant() -> Imscription:
                 "Luminous Blue Variables (LBVs) are the most extreme non-terminal "
                 "stellar outbursts known. Eta Carinae's 1843 Great Eruption: "
                 "10 M_☉ ejected, peak luminosity ~1e8 L_☉ — briefly comparable to "
-                "some quasars. Power-law eruption statistics → Φ_c."
+                "some quasars. Power-law eruption statistics → ⊙."
             ),
             "omega": 1,
             "validation_tier": "primary",
@@ -983,7 +983,7 @@ def _white_dwarf() -> Imscription:
     """
     White Dwarf: the crystallized endpoint of low/intermediate mass stars.
 
-    ⟨D_∞; T_∈(hex); R_mechanical; P_±^sym; F_ℏ; K_teshlig; G_ℶ; Γ_∧(SELECTIVE); Φ_sub; Ω_3⟩
+    ⟨D_∞; T_∈(hex); R_mechanical; P_±^sym; F_ℏ; K_teshlig; G_ℶ; Γ_∧(SELECTIVE); 𐑢; Ω_3⟩
 
     White dwarfs are the endpoints of 97% of all stars. They are supported by
     electron degeneracy pressure — a quantum mechanical K_teshlig.
@@ -1027,7 +1027,7 @@ def _white_dwarf() -> Imscription:
             "R_mechanical: Pauli exclusion principle as recognition mode. "
             "K_teshlig: monotonic cooling, no reset. G_mesoscale: isolated, no grammar injection. "
             "Ω_3: degeneracy + Chandrasekhar limit + crystalline lattice. "
-            "Φ_sub → explosive Φ_c if Chandrasekhar limit exceeded (Type Ia SN)."
+            "𐑢 → explosive ⊙ if Chandrasekhar limit exceeded (Type Ia SN)."
         ),
         metadata={
             "domain_category": "stellar_endpoint",
@@ -1055,7 +1055,7 @@ def _supernova_type_ia() -> Imscription:
     """
     Type Ia Supernova: thermonuclear explosion of a white dwarf at Chandrasekhar limit.
 
-    ⟨{D_∧, D_△}; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_c; n:m⟩
+    ⟨{D_∧, D_△}; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); ⊙; n:m⟩
 
     Type Ia SNe are thermonuclear explosions — no core collapse, no neutron star,
     complete disruption of the white dwarf. They are the universe's standard candles
@@ -1072,8 +1072,8 @@ def _supernova_type_ia() -> Imscription:
     extremely precise underlying process. The Chandrasekhar limit is a topological
     constraint that sets the explosion energy precisely.
 
-    Φ_c: the transition from stable WD → runaway thermonuclear explosion IS the
-    Φ_c event. The instability threshold (Chandrasekhar limit) is a topological
+    ⊙: the transition from stable WD → runaway thermonuclear explosion IS the
+    ⊙ event. The instability threshold (Chandrasekhar limit) is a topological
     critical point — above it, no stable configuration exists.
 
     Ω_0: the progenitor WD's Ω_3 collapses to zero.
@@ -1094,7 +1094,7 @@ def _supernova_type_ia() -> Imscription:
             "Type Ia supernova. Thermonuclear explosion of WD at Chandrasekhar limit. "
             "D_hybrid: nuclear ignition front (D_∧) → cosmological light curve (D_△). "
             "F_HIGH: ~3% peak luminosity scatter → standard candle (dark energy discovery). "
-            "Φ_c: Chandrasekhar limit IS the topological critical point. Ω_0: progenitor "
+            "⊙: Chandrasekhar limit IS the topological critical point. Ω_0: progenitor "
             "Ω_3 collapses. Seeds ISM with Fe, Si, Ca, Ni — the rocky planet alphabet."
         ),
         metadata={
@@ -1114,7 +1114,7 @@ def _supernova_type_ii() -> Imscription:
     """
     Type II (Core Collapse) Supernova: gravitational collapse of a massive star core.
 
-    ⟨{D_∧, D_△}; T_∈; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); Φ_c; n:m⟩
+    ⟨{D_∧, D_△}; T_∈; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(BROAD); ⊙; n:m⟩
 
     Core collapse supernovae occur when a massive star (>8 M_☉) exhausts its
     nuclear fuel. The iron core collapses to nuclear density in ~0.1 seconds,
@@ -1130,7 +1130,7 @@ def _supernova_type_ii() -> Imscription:
     K_frtailgamma: core collapse takes 0.1 sec; shock breakout through the surface
     takes minutes to hours.
 
-    Φ_c: the core collapse itself is the primordial Φ_c event — a transition from
+    ⊙: the core collapse itself is the primordial ⊙ event — a transition from
     a stellar-scale ordered object to nuclear-density matter, accompanied by a
     neutrino burst that carries G_ℵ-scale information about the collapse.
 
@@ -1153,7 +1153,7 @@ def _supernova_type_ii() -> Imscription:
         description=(
             "Type II / core-collapse supernova (>8 M_☉ progenitor). Core collapse in "
             "0.1 sec releasing 3×10^46 J (99% neutrinos). R_mechanical: gravity/bounce "
-            "shock mechanism. Φ_c: nuclear density transition IS the critical point — "
+            "shock mechanism. ⊙: nuclear density transition IS the critical point — "
             "the most efficient entropy-generation event known. Seeds ISM with O, Ne, "
             "Mg, Si, Ca and r-process elements. Leaves neutron star or black hole."
         ),
@@ -1181,7 +1181,7 @@ def _gamma_ray_burst() -> Imscription:
     """
     Gamma-Ray Burst (GRB): the most energetic explosions since the Big Bang.
 
-    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; 1:1⟩
 
     GRBs come in two classes:
     - Long GRBs (>2 sec): death of rapidly rotating massive stars (collapsar model)
@@ -1200,7 +1200,7 @@ def _gamma_ray_burst() -> Imscription:
     is a beaming artifact; the true energy budget is lower but the directional
     coupling is extreme.
 
-    Φ_c: GRBs are the Φ_c events of the universe — the transition from a massive
+    ⊙: GRBs are the ⊙ events of the universe — the transition from a massive
     star or binary NS system to a black hole, releasing the accumulated constraint
     structure in a single directed burst.
 
@@ -1222,7 +1222,7 @@ def _gamma_ray_burst() -> Imscription:
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
             "T_linear: relativistic jet (opening angle 1-10°, Γ_L 100-1000) — the "
             "defining structural primitive. F_HIGH: extreme collimation precision. "
-            "Γ_SELECTIVE: directed beam, not broadcast. Φ_c: the ultimate stellar "
+            "Γ_SELECTIVE: directed beam, not broadcast. ⊙: the ultimate stellar "
             "critical transition — accumulated constraint structure released in single "
             "directed burst. Visible across the entire observable universe."
         ),
@@ -1246,7 +1246,7 @@ def _kilonova() -> Imscription:
     """
     Kilonova / Neutron Star Merger: r-process forge and gravitational wave source.
 
-    ⟨{D_∧, D_△}; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 2:1⟩
+    ⟨{D_∧, D_△}; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); ⊙; 2:1⟩
 
     Kilonovae result from the merger of two neutron stars (or NS + BH).
     GW170817 was the first multi-messenger observation (gravitational waves + EM).
@@ -1315,7 +1315,7 @@ def _neutron_star() -> Imscription:
     """
     Neutron Star (canonical, non-pulsing or slow pulsar).
 
-    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩
+    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_3⟩
 
     Neutron stars are the most precisely structured objects in the universe.
     A 1.4 M_☉ sphere of 12 km radius contains matter at nuclear density
@@ -1336,7 +1336,7 @@ def _neutron_star() -> Imscription:
     trapped — there is no dissipation mechanism on short timescales (only slow magnetic
     braking over Myr-Gyr). The K_teshlig is more absolute than any molecular K_teshlig.
 
-    Φ_c: pulsar glitches (sudden spin-up events) follow a power-law distribution
+    ⊙: pulsar glitches (sudden spin-up events) follow a power-law distribution
     over 5+ decades of energy → SOC. The superfluid vortex unpinning events
     (the likely glitch mechanism) are an archetypal SOC system.
 
@@ -1360,7 +1360,7 @@ def _neutron_star() -> Imscription:
             "Neutron star (1.4 M_☉, 12 km). T_braid: superfluid vortex lattice + "
             "superconducting flux tubes + braided B-field through crystalline crust — "
             "three co-active topological structures. K_teshlig: spins for Gyr. "
-            "Φ_c: pulsar glitch power-law SOC (superfluid vortex unpinning). "
+            "⊙: pulsar glitch power-law SOC (superfluid vortex unpinning). "
             "Ω_3: highest Ω of any observationally confirmed object."
         ),
         metadata={
@@ -1386,7 +1386,7 @@ def _pulsar_millisecond() -> Imscription:
     """
     Millisecond Pulsar (MSP, 'recycled' pulsar): the most precise clock in the universe.
 
-    ⟨D_∞; T_↗↙; R_†; P_+-; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SPECIFIC); Φ_c; Ω_4⟩
+    ⟨D_∞; T_↗↙; R_†; P_+-; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SPECIFIC); ⊙; Ω_4⟩
 
     MSPs are old neutron stars that have been spun up to millisecond periods by
     accretion from a binary companion ('recycled'). Spin periods: 1-10 ms.
@@ -1460,7 +1460,7 @@ def _magnetar() -> Imscription:
     """
     Magnetar: neutron star with B ~ 10^11 T (10^15 Gauss), ~1000× stronger than normal NS.
 
-    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩
+    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_3⟩
 
     Magnetars are the most magnetically intense objects in the universe.
     The B-field stores ~10^46 J of magnetic energy — comparable to the rotational
@@ -1479,7 +1479,7 @@ def _magnetar() -> Imscription:
     in 0.2 sec) are the most energetic K_frtailgamma events after GRBs.
     The 2004 SGR 1806-20 flare was briefly brighter than a full moon at 50 kpc.
 
-    Φ_c: magnetar flare energy statistics follow a power-law over >5 decades
+    ⊙: magnetar flare energy statistics follow a power-law over >5 decades
     → the most directly observed SOC system in astrophysics after solar flares.
 
     Ω_3: same three mechanisms as canonical NS, but the extreme B-field adds a
@@ -1502,7 +1502,7 @@ def _magnetar() -> Imscription:
             "Magnetar (B ~ 10^15 G = 10^11 T). T_braid at physical limit: B-field "
             "stresses crystalline crust to fracture → starquakes → giant gamma flares. "
             "K_frtailgamma: giant flares release 10^46-10^47 J in 0.2 sec (most energetic K_frtailgamma "
-            "after GRBs). Φ_c: flare power-law SOC over >5 decades. "
+            "after GRBs). ⊙: flare power-law SOC over >5 decades. "
             "The universe's T_braid object taken to the breaking point."
         ),
         metadata={
@@ -1530,7 +1530,7 @@ def _black_hole_stellar() -> Imscription:
     """
     Stellar-Mass Black Hole (3-100 M_☉, remnant of core collapse or merger).
 
-    ⟨D_holo; T_∪; R_mechanical; P_+; F_ℏ; K_teshlig; G_ℵ; Γ_∨(BROAD); Φ_c; Ω_∞⟩
+    ⟨D_holo; T_∪; R_mechanical; P_+; F_ℏ; K_teshlig; G_ℵ; Γ_∨(BROAD); ⊙; Ω_∞⟩
 
     The black hole is the ultimate limit of the framework.
 
@@ -1550,7 +1550,7 @@ def _black_hole_stellar() -> Imscription:
     Γ_BROAD: gravity couples to everything — mass, energy, pressure, shear stress.
     The BH's recognition grammar is maximally inclusive.
 
-    Φ_c: the event horizon IS the Φ_c boundary. At the Schwarzschild radius,
+    ⊙: the event horizon IS the ⊙ boundary. At the Schwarzschild radius,
     G and D degenerate — scale and dimensionality cannot be independently defined.
     The singularity is the ultimate G/D degeneracy condition.
 
@@ -1577,7 +1577,7 @@ def _black_hole_stellar() -> Imscription:
             "Stellar-mass black hole (3-100 M_☉). D_holographic: no-hair theorem — "
             "all bulk information encoded on the horizon. T_bowl: event horizon as "
             "one-way surface (accepts, never emits classically). P_acceptor: pure "
-            "acceptor. Γ_BROAD: gravity couples to everything. Φ_c: event horizon IS "
+            "acceptor. Γ_BROAD: gravity couples to everything. ⊙: event horizon IS "
             "the G/D degeneracy boundary. Ω_∞: no-hair theorem — strongest topological "
             "protection in the observational universe."
         ),
@@ -1598,8 +1598,8 @@ def _black_hole_stellar() -> Imscription:
             "gd_degeneracy_note": (
                 "The singularity is the ultimate G/D degeneracy condition: G_ℵ and D_∧ "
                 "cannot be independently assigned at r=0. This is the same primitive "
-                "condition as Φ_c, but taken to the absolute limit. "
-                "In the framework: Φ_c is a soft G/D degeneracy (recoverable); "
+                "condition as ⊙, but taken to the absolute limit. "
+                "In the framework: ⊙ is a soft G/D degeneracy (recoverable); "
                 "the singularity is hard G/D degeneracy (not recoverable under "
                 "classical GR)."
             ),
@@ -1613,7 +1613,7 @@ def _quasar_agn() -> Imscription:
     """
     Quasar / Active Galactic Nucleus (AGN): supermassive BH actively accreting.
 
-    ⟨D_holo; T_∈; R_†; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_c; n:m⟩
+    ⟨D_holo; T_∈; R_†; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∧(BROAD); ⊙; n:m⟩
 
     A quasar is a supermassive black hole (10^6-10^10 M_☉) actively accreting
     at rates near the Eddington limit, producing luminosities of 10^38-10^41 W —
@@ -1635,7 +1635,7 @@ def _quasar_agn() -> Imscription:
 
     K_schwa: AGN duty cycles are ~10^7-10^8 yr (slow), punctuated by K_frtailgamma
     jet flares and variability. The variability statistics show red-noise
-    power spectra (1/f^β) → SOC → Φ_c.
+    power spectra (1/f^β) → SOC → ⊙.
 
     The framework prediction: AGN quenching of star formation (feedback) is
     G_ℵ grammar suppression. The AGN's Γ_BROAD grammar injection into the
@@ -1659,7 +1659,7 @@ def _quasar_agn() -> Imscription:
             "Quasar / AGN (SMBH 10^6-10^10 M_☉ accreting near Eddington). "
             "D_holographic + T_nrleg: the full AGN (disk + jets + BLR + NLR + torus). "
             "R_†: jets as dynamic catalytic G_ℵ outflow. K_schwa duty cycle, K_frtailgamma "
-            "flare variability. Φ_c: 1/f power spectrum. AGN feedback = Γ_BROAD "
+            "flare variability. ⊙: 1/f power spectrum. AGN feedback = Γ_BROAD "
             "grammar suppression of galaxy-scale star formation. "
             "Galaxy evolution = stellar grammar regulated by AGN grammar."
         ),
@@ -1686,7 +1686,7 @@ def _quark_star() -> Imscription:
     """
     Quark Star / Strange Star (hypothetical): matter deconfined to quark level.
 
-    ⟨D_∞; T_↗↙; R_covalent_dynamic; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_4⟩
+    ⟨D_∞; T_↗↙; R_covalent_dynamic; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_4⟩
 
     If the Bodmer-Witten hypothesis is correct, strange quark matter (ud + s quarks
     in equal proportions) is the true ground state of matter — more stable than
@@ -1762,7 +1762,7 @@ def _gravastar() -> Imscription:
     """
     Gravastar (Gravitational Vacuum Condensate Star): the 'Black Shell'.
 
-    ⟨D_holo; T_∪; R_mechanical; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); Φ_c; Ω_3⟩
+    ⟨D_holo; T_∪; R_mechanical; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; Γ_∧(SELECTIVE); ⊙; Ω_3⟩
 
     The gravastar (Mazur & Mottola 2001) is a hypothetical alternative to the
     black hole. Instead of a singularity, the interior is a de Sitter space
@@ -1787,8 +1787,8 @@ def _gravastar() -> Imscription:
     (repulsive, negative pressure) and its Schwarzschild exterior (attractive,
     positive mass) — a genuine self-complementary interface.
 
-    Φ_c: the shell is a phase boundary between two quantum vacuum states.
-    Phase boundaries are the canonical Φ_c condition — the topological transition
+    ⊙: the shell is a phase boundary between two quantum vacuum states.
+    Phase boundaries are the canonical ⊙ condition — the topological transition
     at the shell is the maximum criticality condition in the framework.
 
     Ω_3: (1) Schwarzschild geometry stability, (2) de Sitter interior topology,
@@ -1813,7 +1813,7 @@ def _gravastar() -> Imscription:
             "alternative: de Sitter interior + thin shell at Schwarzschild radius + "
             "exterior Schwarzschild geometry. The shell IS the object (D_holo). "
             "P_±^ψ: shell couples to both geometries simultaneously. "
-            "Φ_c: shell is a quantum vacuum phase boundary — maximum criticality. "
+            "⊙: shell is a quantum vacuum phase boundary — maximum criticality. "
             "Externally identical to BH. No singularity, no information loss."
         ),
         metadata={
@@ -1827,7 +1827,7 @@ def _gravastar() -> Imscription:
                 "External gravitational field: identical to BH. "
                 "Interior: de Sitter (repulsive, no singularity) vs BH (singularity). "
                 "Information fate: preserved on shell vs uncertain for BH. "
-                "Framework: gravastar has Φ_c at shell boundary; BH has Φ_c at horizon. "
+                "Framework: gravastar has ⊙ at shell boundary; BH has ⊙ at horizon. "
                 "The distinction is the topology of the interior: T_bowl (BH) vs "
                 "T_bowl + de Sitter interior (gravastar) — same exterior, different bulk."
             ),
@@ -1842,7 +1842,7 @@ def _dark_star() -> Imscription:
     Dark Star (Spolyar, Freese, Gondolo 2008): first generation stars powered by
     dark matter annihilation rather than nuclear fusion.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); Φ_sub; Ω_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∧(BROAD); 𐑢; Ω_1⟩
 
     Dark stars are proposed first-generation (Pop III) protostars in which
     WIMP (weakly interacting massive particle) dark matter annihilation provides
@@ -1864,7 +1864,7 @@ def _dark_star() -> Imscription:
     and 10 AU in radius (Freese et al. 2010). At this scale, they would be the
     largest 'stars' in history.
 
-    Φ_sub: without SOC-organizing nuclear burning processes, no organized
+    𐑢: without SOC-organizing nuclear burning processes, no organized
     criticality structure is expected. The dark star is powered by a smoother,
     less structured energy source.
 
@@ -1890,7 +1890,7 @@ def _dark_star() -> Imscription:
             "protostar powered by WIMP dark matter annihilation (not nuclear fusion). "
             "R_†: DM annihilation as catalytic energy source. K_schwa: sustained by "
             "captured DM supply. Up to 10^6 M_☉, 10 AU radius. G_ℵ. "
-            "Φ_sub: no organized criticality without nuclear burning structure. "
+            "𐑢: no organized criticality without nuclear burning structure. "
             "JWST: possible candidate detections. Status: hypothetical."
         ),
         metadata={
@@ -1907,7 +1907,7 @@ def _dark_star() -> Imscription:
                 "luminosities and compact sizes are consistent with 10^6 M_☉ dark stars."
             ),
             "life_templating_note": (
-                "Dark stars cannot template life: Φ_sub (no organized criticality), "
+                "Dark stars cannot template life: 𐑢 (no organized criticality), "
                 "DM annihilation grammar (Γ_BROAD, not Γ_SELECTIVE), no heavy element "
                 "nucleosynthesis (no nuclear burning → no C, N, O → no life alphabet). "
                 "They are pre-grammar objects — they may collapse to SMBHs that "

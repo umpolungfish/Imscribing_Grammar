@@ -30,7 +30,7 @@
   | Φ_υ     -- phase symmetry: U(1) or continuous phase
   | Φ_F      -- ℤ₂ discrete symmetry (sign flip)
   | Φ_˙     -- full continuous symmetry (e.g. SO(n))
-  | Φ_}  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at Φ_c
+  | Φ_}  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at ⊙
   | φ̂_ž        -- subcritical: stable, ordered phase
   | φ̂_ÿ          -- real-axis Hermitian criticality: standard fixed point (absorbing)
   | φ̂_Æ  -- complex-axis criticality: analytic continuation required
@@ -54,7 +54,7 @@
   | O₁    -- critical, no topological protection
   | O₂    -- critical, Ω-protected, D ≠ Ð_;
   | O₂† -- critical, Ω-protected, D = Ð_;
-  | O_∞  -- Special Frobenius (Φ_} at Φ_c)
+  | O_∞  -- Special Frobenius (Φ_} at ⊙)
   | .φ̂_ž | .φ̂_Ţ | .φ̂_3 => .O₀
   | .φ̂_ÿ | .φ̂_Æ =>
     | .Ω_Å => .O₁                                -- R3

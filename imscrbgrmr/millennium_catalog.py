@@ -17,7 +17,7 @@ character of that propagation, not the content of the statement.
 Key encoding choices:
 
   Φ (Criticality):
-    Phi_ctyogh   = the problem sits ON the criticality boundary — the answer is not
+    ⊙   = the problem sits ON the criticality boundary — the answer is not
               accessible via standard proof-system morphisms from Phi_softsign.
     Phi_softsign = the problem HAS been solved within standard formalism (Poincaré).
 
@@ -69,7 +69,7 @@ PREDICTIONS
 ─────────────────────────────────────────────────────────────────────────────
   P-MILL-01: If BSD is solved before Hodge or RH, the proof method will share
              characteristics with Yang–Mills (same primitive cluster: D_cube, T,
-             F_hardsign, K_schwa, G_revapostrophe, Phi_ctyogh, Omega_dzlig, H_turntwo).  Any progress on YM
+             F_hardsign, K_schwa, G_revapostrophe, ⊙, Omega_dzlig, H_turntwo).  Any progress on YM
              spectral gap is evidence for BSD susceptibility via same formalism.
 
   P-MILL-02: P vs NP and RH require genuinely new proof primitives (d=10 from
@@ -80,7 +80,7 @@ PREDICTIONS
 
   P-MILL-03: Navier–Stokes blowup (if it occurs) corresponds to a Phi_softsign → Phi_upstep
              phase transition in the solution's constraint-propagation regime.
-             A proof of global smoothness requires a mechanism keeping Phi_ctyogh → Phi_softsign
+             A proof of global smoothness requires a mechanism keeping ⊙ → Phi_softsign
              throughout — analogous to Perelman's surgery preventing Phi_upstep in 3D.
 
   P-MILL-04: The Poincaré ↔ Yang–Mills distance (d=4) predicts that the Yang–Mills
@@ -173,7 +173,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 1. RIEMANN HYPOTHESIS
-        # ⟨D_holo; T_holo; R_exact; P_pipevar; Gamma_corner; F_hardsign; K_schwa; G_gamma; Phi_ctyogh; Omega_dzlig; 1:1; H_turntwo⟩
+        # ⟨D_holo; T_holo; R_exact; P_pipevar; Gamma_corner; F_hardsign; K_schwa; G_gamma; ⊙; Omega_dzlig; 1:1; H_turntwo⟩
         #
         # Statement: All non-trivial zeros of ζ(s) lie on Re(s) = 1/2.
         #
@@ -196,8 +196,8 @@ def register_millennium_imscriptions() -> None:
         #   no fast deterministic algorithm to locate them is known.
         # G_gamma: Coarse/cosmological scale — the zeta function operates universally
         #   over all primes; the hypothesis is a global statement.
-        # Phi_ctyogh: THE critical line.  RH is literally a statement about a critical
-        #   point; the problem is maximally degenerate under meet (Phi_ctyogh absorbing).
+        # ⊙: THE critical line.  RH is literally a statement about a critical
+        #   point; the problem is maximally degenerate under meet (⊙ absorbing).
         # Omega_dzlig: Zeros are counted with integer multiplicity; all known zeros are
         #   simple (multiplicity 1); the winding number argument for zero-counting
         #   uses the integer class.  Axiom B: Omega_dzlig → H ≥ H_turntwo ✓.
@@ -227,7 +227,7 @@ def register_millennium_imscriptions() -> None:
                 "zeros are the boundary encoding of the prime bulk (explicit formula). "
                 "R_exact: the claim demands exact placement — no ε-tolerance. "
                 "P_pipevar: functional equation ζ(s)↔ζ(1-s) is the canonical bipolar "
-                "symmetry about the critical line.  Phi_ctyogh: the problem IS the critical "
+                "symmetry about the critical line.  ⊙: the problem IS the critical "
                 "line — maximally degenerate under the meet operation.  Omega_dzlig: "
                 "zeros have integer multiplicity; all known zeros are simple. "
                 "d=10 from standard_proof_system — requires both a new holographic "
@@ -239,7 +239,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 2. P vs NP
-        # ⟨D_invomega; T_nrleg; R_subset; P_pipevar; G_impl; F_dh; K_teshlig; G_gamma; Phi_ctyogh; Omega_closeepsilon; n:m; H_closeomega⟩
+        # ⟨D_invomega; T_nrleg; R_subset; P_pipevar; G_impl; F_dh; K_teshlig; G_gamma; ⊙; Omega_closeepsilon; n:m; H_closeomega⟩
         #
         # Statement: Does P = NP?  Is every problem whose solution can be
         #   efficiently verified also efficiently solvable?
@@ -265,7 +265,7 @@ def register_millennium_imscriptions() -> None:
         #   algorithm is known; exhaustive search is exponential.
         # G_gamma: Universal coarse scale — applies to ALL computable problems,
         #   the most global possible computational statement.
-        # Phi_ctyogh: The P/NP boundary is the computational criticality point —
+        # ⊙: The P/NP boundary is the computational criticality point —
         #   the phase transition between tractable and intractable.
         # Omega_closeepsilon: No topological protection.  If P≠NP, the barrier is
         #   combinatorial/arithmetic, not topological — a counterexample
@@ -309,7 +309,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 3. HODGE CONJECTURE
-        # ⟨D_holo; T_holo; R_superset; P_doublebarpipe; Gamma_corner; F_hardsign; K_schwa; G_revapostrophe; Phi_ctyogh; Omega_dzlig; n:m; H_turntwo⟩
+        # ⟨D_holo; T_holo; R_superset; P_doublebarpipe; Gamma_corner; F_hardsign; K_schwa; G_revapostrophe; ⊙; Omega_dzlig; n:m; H_turntwo⟩
         #
         # Statement: On a smooth complex projective algebraic variety, every
         #   rational cohomology class of type (p,p) is a rational linear
@@ -333,7 +333,7 @@ def register_millennium_imscriptions() -> None:
         #   class is extremely hard; no general algorithm is known.
         # G_revapostrophe: Fine-grained — the conjecture is about individual cohomology
         #   classes at the atomic level, not global properties of the variety.
-        # Phi_ctyogh: The Hodge conjecture sits at the criticality boundary between
+        # ⊙: The Hodge conjecture sits at the criticality boundary between
         #   analytic geometry (Hodge theory) and algebraic geometry (cycles);
         #   it asks whether these two phases coincide at the critical point.
         # Omega_dzlig: The integral lattice H^{2p}(X, Z) ∩ H^{p,p}(X) is where the
@@ -374,7 +374,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 4. YANG–MILLS EXISTENCE AND MASS GAP
-        # ⟨D_cube; T_nrleg; R_catalytic; P_doublebarpipe; Gamma_corner; F_hardsign; K_schwa; G_revapostrophe; Phi_ctyogh; Omega_dzlig; n:m; H_turntwo⟩
+        # ⟨D_cube; T_nrleg; R_catalytic; P_doublebarpipe; Gamma_corner; F_hardsign; K_schwa; G_revapostrophe; ⊙; Omega_dzlig; n:m; H_turntwo⟩
         #
         # Statement: A quantum Yang–Mills gauge theory in R^4 exists (in the
         #   sense of constructive QFT) and has a strictly positive mass gap Δ > 0.
@@ -396,9 +396,9 @@ def register_millennium_imscriptions() -> None:
         #   to perturbation theory.
         # G_revapostrophe: The mass gap Δ is a fine-grained spectral property — it is the
         #   energy of the lowest non-vacuum excitation, a single-particle invariant.
-        # Phi_ctyogh: Confinement/deconfinement is a phase transition; the mass gap
+        # ⊙: Confinement/deconfinement is a phase transition; the mass gap
         #   IS the critical phenomenon separating confined (Phi_softsign) from
-        #   deconfined (Phi_upstep) phases.  The existence problem sits at Phi_ctyogh.
+        #   deconfined (Phi_upstep) phases.  The existence problem sits at ⊙.
         # Omega_dzlig: Instanton number (topological charge) is a Z-valued winding
         #   number; θ-vacuum structure and axial anomaly are Z-topological.
         # n:m: N^2-1 gluons for SU(N); multiple color charges interact.
@@ -439,7 +439,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 5. NAVIER–STOKES EXISTENCE AND SMOOTHNESS
-        # ⟨D_cube; T_nrleg; R_catalytic; P_pipevar; Gamma_secstress; F_dh; K_teshlig; G_gamma; Phi_ctyogh; Omega_closeepsilon; n:m; H_closeomega⟩
+        # ⟨D_cube; T_nrleg; R_catalytic; P_pipevar; Gamma_secstress; F_dh; K_teshlig; G_gamma; ⊙; Omega_closeepsilon; n:m; H_closeomega⟩
         #
         # Statement: In R^3, for smooth initial data, do smooth solutions to the
         #   incompressible Navier–Stokes equations exist for all time?  Or does
@@ -461,7 +461,7 @@ def register_millennium_imscriptions() -> None:
         # K_teshlig: Turbulent flows can develop potential singularities at small
         #   scales — the solution may become kinetically trapped at high wavenumbers.
         # G_gamma: The question is global/coarse — existence for all t ∈ [0,∞).
-        # Phi_ctyogh: We do not know which phase the system is in.  The problem sits
+        # ⊙: We do not know which phase the system is in.  The problem sits
         #   AT the criticality boundary: solutions are either globally regular
         #   (Phi_softsign) or blow up (Phi_upstep).  The problem IS the phase determination.
         # Omega_closeepsilon: No topological protection.  If blowup occurs, it is an analytic
@@ -496,7 +496,7 @@ def register_millennium_imscriptions() -> None:
                 "question.  Omega_closeepsilon: no topological protection — blowup is "
                 "structurally permissible.  d=8 from standard_proof_system. "
                 "P-MILL-03: proof of smoothness requires mechanism keeping "
-                "Phi_ctyogh → Phi_softsign throughout, analogous to Perelman surgery."
+                "⊙ → Phi_softsign throughout, analogous to Perelman surgery."
             ),
             metadata={"domain": "mathematics", "registered_by": "millennium_catalog",
                       "clay_problem": True, "solved": False},
@@ -504,7 +504,7 @@ def register_millennium_imscriptions() -> None:
 
         # ─────────────────────────────────────────────────────────────────────
         # 6. BIRCH AND SWINNERTON-DYER CONJECTURE
-        # ⟨D_cube; T_torus; R_superset; P_pipevar; G_impl; F_hardsign; K_schwa; G_revapostrophe; Phi_ctyogh; Omega_dzlig; 1:1; H_turntwo⟩
+        # ⟨D_cube; T_torus; R_superset; P_pipevar; G_impl; F_hardsign; K_schwa; G_revapostrophe; ⊙; Omega_dzlig; 1:1; H_turntwo⟩
         #
         # Statement: For an elliptic curve E/Q, rank(E(Q)) = ord_{s=1} L(E, s).
         #
@@ -528,7 +528,7 @@ def register_millennium_imscriptions() -> None:
         #   no general polynomial-time algorithm is known.
         # G_revapostrophe: The rank and L-value are fine-grained invariants of each
         #   individual elliptic curve (atomic level).
-        # Phi_ctyogh: L(E,1) = 0 is the critical point — the central value of the
+        # ⊙: L(E,1) = 0 is the critical point — the central value of the
         #   L-function at the symmetry center s=1.  The conjecture is about
         #   what happens at criticality.
         # Omega_dzlig: rank(E(Q)) ∈ Z; the Shafarevich–Tate group has Z/nZ structure;
@@ -558,12 +558,12 @@ def register_millennium_imscriptions() -> None:
                 "T_torus: elliptic curves ARE complex tori (genus-1; E ≅ C/Λ) — "
                 "the most direct topological encoding in the catalog.  G_impl: "
                 "implicative grammar (rank > 0 ⟺ L vanishes at s=1) — a "
-                "conditional linking two independent invariants.  Phi_ctyogh: L(E,1)=0 "
+                "conditional linking two independent invariants.  ⊙: L(E,1)=0 "
                 "IS the critical point — the central value of the L-function. "
                 "Omega_dzlig: rank ∈ Z; Sha group has Z/nZ structure.  d=9 from "
                 "standard_proof_system.  d=5 from yang_mills_mass_gap — closest "
                 "pair among unsolved problems; both share D_cube, F_hardsign, K_schwa, "
-                "G_revapostrophe, Phi_ctyogh, Omega_dzlig, H_turntwo.  P-MILL-01: spectral/topological "
+                "G_revapostrophe, ⊙, Omega_dzlig, H_turntwo.  P-MILL-01: spectral/topological "
                 "methods bridging YM mass gap may apply here."
             ),
             metadata={"domain": "mathematics", "registered_by": "millennium_catalog",

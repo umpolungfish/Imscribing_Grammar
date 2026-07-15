@@ -299,7 +299,7 @@ theorem hodge_sorry_requires_algebraic_cycle_rep :
     Both are OpenProblems, but in different structural positions.
 
     In SynthOmnicon primitive terms:
-    · RH: Φ_c constraint failure — no Φ_c-certified position off critical line.
+    · RH: ⊙ constraint failure — no ⊙-certified position off critical line.
     · Hodge: R-lift failure — R-degenerate class does not force algebraic representative. -/
 theorem hodge_vs_rh_structural_distinction : True := trivial
 

@@ -384,8 +384,8 @@ const PRIMS = [
    labels:['AND (∧) cooperative','OR (∨) selective','SEQUENTIAL (→)'],
    base:[-0.3,0.1,0.5]},
   {id:'Φ', name:'Criticality', weight:0.06, cls:'emergent',
-   opts:['Phi_softsign','Phi_ctyogh','Phi_upstep'],
-   labels:['Subcritical (sub)','Critical (Φ_c)','Supercritical (super)'],
+   opts:['Phi_softsign','⊙','Phi_upstep'],
+   labels:['Subcritical (sub)','Critical (⊙)','Supercritical (super)'],
    base:[0,0.8,1.5]},
   {id:'S', name:'Stoichiometry', weight:0.08, cls:'tunable',
    opts:['S_11','S_21','S_nm'],
@@ -401,7 +401,7 @@ const PRESETS = [
   {name:'UiO-66 MOF',
    vals:{D:'D_supra',T:'T_node',R:'R_noncov',P:'P_dir',F:'F_high',K:'K_turnm',G:'G_global',Γ:'Gamma_corner',Φ:'Phi_softsign',S:'S_nm'}},
   {name:'DB24C8 rotaxane',
-   vals:{D:'D_supra',T:'T_cyclic',R:'R_mech',P:'P_subdoublearrow',F:'F_high',K:'K_schwa',G:'G_local',Γ:'Gamma_secstress',Φ:'Phi_ctyogh',S:'S_11'}},
+   vals:{D:'D_supra',T:'T_cyclic',R:'R_mech',P:'P_subdoublearrow',F:'F_high',K:'K_schwa',G:'G_local',Γ:'Gamma_secstress',Φ:'⊙',S:'S_11'}},
 ];
 
 const CLS = {
@@ -489,7 +489,7 @@ function getViolations() {
     w.push('Axiom 6: D_inf requires SEQUENTIAL grammar and a named reset mechanism');
   if(state.T==='T_cyclic' && state.R==='R_cov' && state.K==='K_schwa')
     w.push('Axiom 7: T_cyclic + R_cov + K_schwa → closing bond likely irreversible; verify reset');
-  if(state.Φ==='Phi_ctyogh' && state.G==='G_local')
+  if(state.Φ==='⊙' && state.G==='G_local')
     w.push('Axiom 5: Φ<sub>c</sub> inconsistent with G_local — run Varma degeneracy probe');
   return w;
 }
@@ -502,7 +502,7 @@ function getBadges() {
   else b.push({t:'F LOW', bc:'rgba(248,113,113,.12)', tc:'#f87171', bc2:'rgba(248,113,113,.3)'});
   if(state.K==='K_teshlig')  b.push({t:'KINETIC TRAP', bc:'rgba(248,113,113,.1)',  tc:'#f87171', bc2:'rgba(248,113,113,.25)'});
   if(state.K==='K_frtailgamma')  b.push({t:'DIFFUSION-LIM',bc:'rgba(99,150,220,.1)',   tc:'#93c5fd', bc2:'rgba(99,150,220,.25)'});
-  if(state.Φ==='Phi_ctyogh')   b.push({t:'Φc CANDIDATE', bc:'rgba(167,139,250,.1)', tc:'#a78bfa', bc2:'rgba(167,139,250,.25)'});
+  if(state.Φ==='⊙')   b.push({t:'Φc CANDIDATE', bc:'rgba(167,139,250,.1)', tc:'#a78bfa', bc2:'rgba(167,139,250,.25)'});
   if(state.D==='D_hyb')   b.push({t:'HYBRID D',     bc:'rgba(245,158,11,.1)',   tc:'#f59e0b', bc2:'rgba(245,158,11,.25)'});
   if(state.G==='G_global') b.push({t:'NETWORK G_ℵ', bc:'rgba(134,239,172,.1)', tc:'#86efac', bc2:'rgba(134,239,172,.25)'});
   if(state.T==='T_cyclic' && state.F!=='F_low')

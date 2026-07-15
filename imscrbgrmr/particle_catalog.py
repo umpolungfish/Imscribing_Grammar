@@ -20,8 +20,8 @@ Design principles:
   - T_network_sym distinguishes spin-2 (graviton) from spin-1 (photon: T_linear)
   - T_nrleg for gluon encodes colour flux tube confinement (topology, not mass)
   - T_bullseye for Higgs encodes the cyclic EW symmetry-breaking self-coupling loop
-  - Φ_c for graviton: GR's non-linear self-coupling (gravitons source curvature)
-  - Φ_c for gluon: QCD asymptotic freedom + non-perturbative self-organisation
+  - ⊙ for graviton: GR's non-linear self-coupling (gravitons source curvature)
+  - ⊙ for gluon: QCD asymptotic freedom + non-perturbative self-organisation
   - G_revapostrophe (graviton, photon): cosmological reach
   - G_gamma (gluon): confined to hadronic scale (~1 fm)
   - G_beta (W, Z, Higgs): single-particle coupling
@@ -30,7 +30,7 @@ See METAPHYSICS.md §XXVII for full structural derivations and §XXVI for
 the photon encoding that anchors this catalog.
 
 Recorded 2026-03-21. Qwen validation document: graviton (D_holo, T_braid,
-K_frtailgamma, Φ_c, Ω_Z) and Higgs (D_wynn, T_bullseye, K_schwa, G_local, Φ_c, Ω_0)
+K_frtailgamma, ⊙, Ω_Z) and Higgs (D_wynn, T_bullseye, K_schwa, G_local, ⊙, Ω_0)
 incorporated and reconciled with framework primitives. Note: Qwen's T_braid
 for the graviton was replaced by T_network_sym — T_braid encodes anyonic
 exchange statistics (fractional QHE, Kitaev), not spin-2 metric perturbation
@@ -118,7 +118,7 @@ def _graviton() -> Imscription:
     """
     Graviton — hypothetical spin-2 massless carrier of gravity.
 
-    ⟨D_holo; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); Φ_c⟩
+    ⟨D_holo; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); ⊙⟩
 
     Structural derivation (METAPHYSICS.md §XXVII.3):
 
@@ -137,7 +137,7 @@ def _graviton() -> Imscription:
     G_revapostrophe: universal coupling — graviton couples to all K_teshlig spatial
     (all mass-energy) at all scales. No selectivity restriction.
 
-    Phi_ctyogh: GR is self-referential. Gravitons carry energy-momentum, which is
+    ⊙: GR is self-referential. Gravitons carry energy-momentum, which is
     itself a source of spacetime curvature. This non-linear self-coupling
     (absent in EM) is the structural origin of the non-linearity of Einstein's
     field equations and the challenge of perturbative quantum gravity.
@@ -145,7 +145,7 @@ def _graviton() -> Imscription:
     Note on Qwen validation: Qwen proposed T_braid for the graviton. T_braid
     encodes anyonic/braided exchange statistics (fractional QHE, non-abelian
     anyons). The graviton's spin-2 symmetry is better captured by T_network_sym.
-    Qwen's D_holo and Phi_ctyogh are confirmed.
+    Qwen's D_holo and ⊙ are confirmed.
 
     Prediction: P-59 (c propagation, no dispersion), P-60 (tensorial polarisation
     only — no scalar/vector modes).
@@ -166,7 +166,7 @@ def _graviton() -> Imscription:
             "K_frtailgamma: massless, propagates at c. T_network_sym: symmetric rank-2 tensor "
             "coupling (spin-2), all orientations. D_holo: GR holographic structure. "
             "G_revapostrophe: universal coupling to all K_teshlig spatial (all mass-energy). "
-            "Phi_ctyogh: GR non-linear self-coupling (gravitons source curvature). "
+            "⊙: GR non-linear self-coupling (gravitons source curvature). "
             "Distinguishes from photon (T_linear, spin-1) by T_network_sym topology."
         ),
         metadata={
@@ -195,7 +195,7 @@ def _photon() -> Imscription:
     """
     Photon — spin-1 massless carrier of electromagnetism.
 
-    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(SELECTIVE); Φ_sub⟩
+    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §XXVI):
 
@@ -212,7 +212,7 @@ def _photon() -> Imscription:
     Encoded here as G_revapostrophe for reach, with SELECTIVE Gamma for charged-only.
 
     Phi_softsign: the photon is not self-referential — EM is linear (photons do not
-    couple to other photons in QED at tree level). Contrast with graviton Phi_ctyogh.
+    couple to other photons in QED at tree level). Contrast with graviton ⊙.
     """
     return Imscription(
         name="photon",
@@ -252,7 +252,7 @@ def _gluon() -> Imscription:
     """
     Gluon — spin-1 massless carrier of the strong force (QCD).
 
-    ⟨D_△; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ג; Γ_∨(BROAD); Φ_c⟩
+    ⟨D_△; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ג; Γ_∨(BROAD); ⊙⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.3, XXVII.8):
 
@@ -269,7 +269,7 @@ def _gluon() -> Imscription:
     G_gamma (mesoscale): confined to hadronic scale (~1 fm). Contrast with
     graviton and photon (G_revapostrophe = cosmological reach).
 
-    Phi_ctyogh: QCD exhibits asymptotic freedom (coupling → 0 at high energy) and
+    ⊙: QCD exhibits asymptotic freedom (coupling → 0 at high energy) and
     confinement (coupling → ∞ at low energy). The transition between these regimes
     involves genuine self-organisation and non-perturbative structure. The
     SU(3) gauge group's non-abelian structure (8 gluons carrying colour) makes
@@ -291,7 +291,7 @@ def _gluon() -> Imscription:
             "K_frtailgamma: massless. Short-range NOT from K_teshlig mass but from T_nrleg "
             "confinement — colour flux tubes confine quarks topologically. "
             "G_gamma: confined to hadronic scale. T_nrleg: 8 gluons form colour flux "
-            "tube networks. Phi_ctyogh: QCD asymptotic freedom + non-perturbative confinement; "
+            "tube networks. ⊙: QCD asymptotic freedom + non-perturbative confinement; "
             "non-abelian SU(3) makes QCD self-referential."
         ),
         metadata={
@@ -318,7 +318,7 @@ def _w_boson() -> Imscription:
     """
     W± boson — charged massive carrier of the weak force.
 
-    ⟨D_∧; T_|; R_†; P_+-; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); Φ_sub⟩
+    ⟨D_∧; T_|; R_†; P_+-; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 
@@ -336,7 +336,7 @@ def _w_boson() -> Imscription:
     at the single-vertex level.
 
     Phi_softsign: the massive W is in its post-symmetry-breaking (frozen) phase.
-    The EW phase transition (Phi_ctyogh) has already completed.
+    The EW phase transition (⊙) has already completed.
     """
     return Imscription(
         name="w_boson",
@@ -376,7 +376,7 @@ def _z_boson() -> Imscription:
     """
     Z⁰ boson — neutral massive carrier of the weak force.
 
-    ⟨D_∧; T_|; R_†; P_±^sym; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); Φ_sub⟩
+    ⟨D_∧; T_|; R_†; P_±^sym; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 
@@ -429,7 +429,7 @@ def _higgs() -> Imscription:
     """
     Higgs boson / Higgs field — K_teshlig spatial localisation installer.
 
-    ⟨D_∧; T_⋈; R_†; P_±^sym; F_ℏ; K_schwa; G_ב; Γ_∧(SELECTIVE); Φ_sub⟩
+    ⟨D_∧; T_⋈; R_†; P_±^sym; F_ℏ; K_schwa; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 
@@ -453,12 +453,12 @@ def _higgs() -> Imscription:
     SELECTIVE: couples to W, Z, and all massive fermions; not to massless carriers.
 
     Phi_softsign: the low-temperature broken phase is below criticality. The EW phase
-    transition itself (T ~ 100 GeV, where EW symmetry breaks) is the Phi_ctyogh event.
+    transition itself (T ~ 100 GeV, where EW symmetry breaks) is the ⊙ event.
     Below it, the Higgs VEV is frozen (Phi_softsign = post-critical frozen state).
 
-    Note: Qwen proposed Phi_ctyogh for the Higgs. This is correct at the EW transition
+    Note: Qwen proposed ⊙ for the Higgs. This is correct at the EW transition
     but the ground-state Higgs is Phi_softsign (frozen condensate). The distinction
-    matters: the Higgs *creates* a Phi_ctyogh event (symmetry breaking) but *lives* in
+    matters: the Higgs *creates* a ⊙ event (symmetry breaking) but *lives* in
     Phi_softsign (the broken phase).
     """
     return Imscription(
@@ -478,7 +478,7 @@ def _higgs() -> Imscription:
             "T_bullseye: cyclic self-coupling — EW symmetry breaking self-consistent loop. "
             "D_wynn + G_beta: particle-level local coupling. "
             "SELECTIVE: couples to W, Z, massive fermions; NOT to photon or gluon. "
-            "Phi_softsign: broken-phase frozen condensate (Phi_ctyogh was the EW transition)."
+            "Phi_softsign: broken-phase frozen condensate (⊙ was the EW transition)."
         ),
         metadata={
             "domain_category": "particle_scalar_field",
@@ -495,7 +495,7 @@ def _higgs() -> Imscription:
                 "t_bowtie": "confirmed",
                 "k_slow": "confirmed",
                 "g_local_as_G_beth": "confirmed",
-                "phi_c_clarified": "Phi_ctyogh at EW transition; Phi_softsign in broken phase",
+                "phi_c_clarified": "⊙ at EW transition; Phi_softsign in broken phase",
             },
             "validation_tier": "primary",
         },

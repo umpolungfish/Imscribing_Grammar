@@ -730,8 +730,8 @@ class PrimitiveAssignmentEngine:
         (from criticality_probe) is the best available proxy.
 
         Rules:
-          Φ_c (CRITICAL)   : varma_score > 0.5  OR  gd_degeneracy_detected + scale_free
-          Φ_sub (SUBCRIT.) : otherwise
+          ⊙ (CRITICAL)   : varma_score > 0.5  OR  gd_degeneracy_detected + scale_free
+          𐑢 (SUBCRIT.) : otherwise
 
         Note: This assignment is HEURISTIC (not yet fully algorithmic).  The
         assignment project flag 'is_boundary' is set to True for all Phi
@@ -752,16 +752,16 @@ class PrimitiveAssignmentEngine:
             value = CriticalityPhase.CRITICAL
             conf = min(0.85, 0.60 + 0.35 * score) if varma_score else 0.75
             evidence = (f"Varma score = {score:.2f} > 0.70 OR G/D degeneracy + scale-free "
-                        f"→ Φ_c (CRITICAL)")
+                        f"→ ⊙ (CRITICAL)")
         elif weak_signal:
             value = CriticalityPhase.CRITICAL
             conf = 0.60
             evidence = (f"Varma score = {score:.2f} ∈ (0.3, 0.7] or G/D degeneracy signal "
-                        f"→ Φ_c (marginal — boundary case)")
+                        f"→ ⊙ (marginal — boundary case)")
         else:
             value = CriticalityPhase.SUBCRITICAL
             conf = 0.75
-            evidence = f"Varma score = {score:.2f} ≤ 0.3, no degeneracy → Φ_sub"
+            evidence = f"Varma score = {score:.2f} ≤ 0.3, no degeneracy → 𐑢"
 
         return PrimitiveAssignment(
             primitive="Phi", value=value, confidence=round(conf, 3),

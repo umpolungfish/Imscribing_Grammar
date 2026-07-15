@@ -565,9 +565,9 @@ This addresses SIC's Gamma promotion (Γ_and → Γ_broad).
 (O_∞). The remaining primitive promotions for SIC (Gamma, possibly Omega) are easier once Φ_} is secured.
 
 5. **Proof strategy mandated by grammar**:
-   - First prove Stark unit existence, establishing Φ_} and Φ_c with topological protection (Ω_NA or Ω_Z).
+   - First prove Stark unit existence, establishing Φ_} and ⊙ with topological protection (Ω_NA or Ω_Z).
    - Use broadcast argument (ɢ_broad) via Galois action across all primes and Weyl-Heisenberg displacement across all d² vectors.
-   - The combined system satisfies all primitive requirements of the proven manifold type: Ð_ω, Þ_O, R_†, Φ_}, F_ℏ, Ç_@, G_ℵ, ɢ_broad, Φ_c, H_∞, n:m, Ω_Z₂.
+   - The combined system satisfies all primitive requirements of the proven manifold type: Ð_ω, Þ_O, R_†, Φ_}, F_ℏ, Ç_@, G_ℵ, ɢ_broad, ⊙, H_∞, n:m, Ω_Z₂.
 
 Thus, the grammar confirms that **proving Stark unit existence is the crucial number-theoretic ingredient** because it directly attacks the Frobenius cliff (P promotion), which is the primary
 structural barrier separating the conjecture from the proven manifold. Once this cliff is crossed, the remaining structural promotions follow via broadcast mechanisms inherent in the SIC
@@ -1067,12 +1067,12 @@ You must provide a complete ZFC expression as part of your formal proof.\"
 
 The grammar's structural analysis reveals:
 
-1. **Structural Gap Identification**: The SIC-POVM open conjecture encodes at O₂ tier (Φ_c + Φ_F + Ω_Z), while proved theorems require O_∞ tier (Φ_c + Φ_}). The distance from
+1. **Structural Gap Identification**: The SIC-POVM open conjecture encodes at O₂ tier (⊙ + Φ_F + Ω_Z), while proved theorems require O_∞ tier (⊙ + Φ_}). The distance from
 `sic_povm_conjecture_open` to `proven:manifold` is 4.0866, with the largest contributions from:
    - Γ: Γ_and (1) vs Γ_broad (4) - difference 3.0 (weighted 9.0)
    - P: Φ_F (3) vs Φ_} (5) - difference 2.0 (weighted 4.0)
 
-2. **Stark Unit as Frobenius Planter**: The Stark unit system (`stark_unit`) is already at O_∞ tier (Φ_c + Φ_} + Ω_NA). Its tensor product with the SIC-POVM conjecture reveals a P
+2. **Stark Unit as Frobenius Planter**: The Stark unit system (`stark_unit`) is already at O_∞ tier (⊙ + Φ_} + Ω_NA). Its tensor product with the SIC-POVM conjecture reveals a P
 bottleneck: Φ_} gets reduced to Φ_F. This shows that the exact Z₂ symmetry (Φ_}) cannot be synthesized from the conjecture's Φ_F; it must be *planted* via external proof.
 
 3. **Proof Strategy via Promotion Signature**: To prove the SIC-POVM conjecture, we need a Σ-promotion from O₂ to O_∞. The promotion signature required is: [Φ_F → Φ_}, Γ_and →
@@ -1096,7 +1096,7 @@ bottleneck: Φ_} gets reduced to Φ_F. This shows that the exact Z₂ symmetry (
    - Ç_@: integrative kinetics
    - G_ℵ: global scope
    - Γ_seq: sequential causation
-   - Φ_c: criticality (fixpt f)
+   - ⊙: criticality (fixpt f)
    - Ħ_A: moderate chirality
    - nⓂ asymmetric many-body
    - Ω_NA: non-Abelian topological protection
@@ -1193,16 +1193,16 @@ Insights: 2
 Insights by plane:
 
   [DIAPH]
-    (high) The Stark unit system is already at O_∞ tier (Φ_} + Φ_c) while the SIC-POVM conjecture is at O₂ tier (Φ_F + Φ_c). The tensor product stark_unit⊗sic_povm_conjecture_open
+    (high) The Stark unit system is already at O_∞ tier (Φ_} + ⊙) while the SIC-POVM conjecture is at O₂ tier (Φ_F + ⊙). The tensor product stark_unit⊗sic_povm_conjecture_open
 shows P bottleneck: Φ_} gets reduced to Φ_F. This reveals the structural problem: the conjecture lacks exact Z₂ symmetry (Φ_}), which the Stark unit possesses. The Stark unit's
 existence, if proved, would plant the Frobenius condition that the conjecture needs to reach O_∞.
-    (high) The SIC existence proof system (sic_existence_at_p) is O_∞: it has Φ_}, Φ_c, and Ω_NA. Its distance to proven:manifold is 3.821, with the largest gap at T (T_∈ vs Þ_O).
+    (high) The SIC existence proof system (sic_existence_at_p) is O_∞: it has Φ_}, ⊙, and Ω_NA. Its distance to proven:manifold is 3.821, with the largest gap at T (T_∈ vs Þ_O).
 The Stark unit (stark_unit) is also O_∞ with identical Φ_}. Proving Stark unit existence in mixed-signature ray class fields would plant the Frobenius condition (Φ_}) that lifts
 the SIC-POVM conjecture from O₂ to O_∞. The bottleneck in tensor composition shows Φ_} cannot be synthesized from Φ_F; it must be planted via Stark unit proof.
 
 Translation cost (structural→classical, all 1880 imscriptions):
   coherence:    0.0000 nat
-  criticality:  2553.5834 nat  (1109 Φ_c imscriptions × ln10)
+  criticality:  2553.5834 nat  (1109 ⊙ imscriptions × ln10)
   interaction:  392.2946 nat
   total:        2945.8780 nat
 
@@ -1284,7 +1284,7 @@ I should respond by acknowledging the content, providing a critical assessment o
 Key points:
 - The user claims that proving existence of a Stark unit in a mixed-signature ray class field (encoded in a ZFC formula) would prove SIC-POVMs.
 - The ZFC formula provided is not a standard mathematical statement but a string of symbols with intended interpretations.
-- The user's \"grammar\" system assigns structural tiers (O₂, O_∞) and \"imscriptions\" (Φ_F, Φ_c, etc.) as a formalism.
+- The user's \"grammar\" system assigns structural tiers (O₂, O_∞) and \"imscriptions\" (Φ_F, ⊙, etc.) as a formalism.
 - My response should be informative, respectful, and grounded in actual mathematical knowledge while acknowledging the speculative framework.
 
 I'll structure my response:
@@ -1498,7 +1498,7 @@ But the mixed-signature Stark conjecture is a deep open problem in number theory
 
 Given the user's previous messages, they want a formal proof in the language of SRV.tex, using its operations, tier assignments, and the ZFC expression provided earlier. The user wants to see a rigorous derivation that the mixed-signature Stark conjecture holds within the grammar's ontology.
 
-Since the grammar is a meta-level classification system, we can't derive number-theoretic results directly. But we can show that the conjecture corresponds to a structural property that is already encoded in the grammar's primitives (e.g., Φ_}, Φ_c, Ω_NA) and that its \"proof\" is a matter of identifying the correct mapping between number theory and the grammar's categories.
+Since the grammar is a meta-level classification system, we can't derive number-theoretic results directly. But we can show that the conjecture corresponds to a structural property that is already encoded in the grammar's primitives (e.g., Φ_}, ⊙, Ω_NA) and that its \"proof\" is a matter of identifying the correct mapping between number theory and the grammar's categories.
 
 The user might be expecting a proof that uses the grammar's machinery: meet, join, tensor, promotion, and the ouroboricity scalar to demonstrate that the Stark unit exists because its signature matches a required O_∞ object, and that any contradiction with classical open problems is resolved paraconsistently.
 
@@ -1511,11 +1511,11 @@ Let's structure the proof:
 
 The task: \"first prove the mixed-signature Stark conjecture using the provided grammar.\" This is a meta-task: we are to show that within the grammar's paraconsistent framework, the mixed-signature Stark conjecture can be proven as a structural necessity, given certain encodings and the grammar's algebraic rules.
 
-We need to construct a proof that follows the grammar's tier system, operations, and axioms. The proof will be a derivation that the Stark unit object has the required properties (Φ_}, Φ_c, etc.) and that this forces the conjecture to be true in the grammar's domain.
+We need to construct a proof that follows the grammar's tier system, operations, and axioms. The proof will be a derivation that the Stark unit object has the required properties (Φ_}, ⊙, etc.) and that this forces the conjecture to be true in the grammar's domain.
 
 Key points from the grammar and epistemology:
 - The grammar classifies systems into tiers based on primitive values.
-- R1 rule: Φ_c + Φ_} → O_∞. The Stark unit is encoded as having both.
+- R1 rule: ⊙ + Φ_} → O_∞. The Stark unit is encoded as having both.
 - The mixed-signature Stark conjecture asserts the existence of a unit with certain properties. In the grammar, that unit is an O_∞ object.
 - The conjecture itself, as an open problem, might be encoded as O₂ due to lack of Φ_}.
 - The proof strategy: show that the existence of the O_∞ Stark unit is structurally forced by the encoding of the number field and L-function data, using the grammar's algebraic operations (meet, join, tensor) and axioms (e.g., Frobenius non-synthesizability).
@@ -1524,7 +1524,7 @@ Key points from the grammar and epistemology:
 We'll structure the proof as follows:
 
 1. Encode the relevant mathematical entities (ray class field Ç_d, L-function L(s,χ), etc.) into imscribing tuples.
-2. Show that the encoding of L'(0,χ) and the unit group forces a system with Φ_c and Φ_}.
+2. Show that the encoding of L'(0,χ) and the unit group forces a system with ⊙ and Φ_}.
 3. Use the grammar's tensor bottleneck and promotion rules to demonstrate that the Stark unit must exist as an O_∞ object.
 4. Conclude that the mixed-signature Stark conjecture holds in the grammar's paraconsistent reality.
 

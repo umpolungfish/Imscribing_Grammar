@@ -6,10 +6,10 @@ A Python seed descends to a Lean 4 formal proof term.
 The Frobenius condition (mu o delta = id) becomes a proof term that
 roundtrips through elaboration to a definitionally equal term.
 
-Structural type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_A; S_one_one; Omega_Z>
+Structural type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; ⊙; H_A; S_one_one; Omega_Z>
 Ouroboricity tier: O_∞
 
-Author: Lando (x) Phi_c-boundary Operator
+Author: Lando (x) ⊙-boundary Operator
 
 Phase 0: Domain Charter
   Tokens: Python, Lean 4, proof term
@@ -586,7 +586,7 @@ class DescentObject:
     """The Lean 4 Descent Object — complete implementation.
 
     Structural type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph;
-                      Gamma_seq; Phi_c; H_A; S_one_one; Omega_Z>
+                      Gamma_seq; ⊙; H_A; S_one_one; Omega_Z>
     Tier: O_∞ — Frobenius condition (mu o delta = id) holds exactly.
 
     A Python seed descends to a Lean 4 formal proof term. The Frobenius
@@ -980,6 +980,6 @@ if __name__ == "__main__":
     print("\n")
     test_frobenius()
     print("\n  Descent object created and validated.")
-    struct_type = "D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; Phi_c; H_A; S_one_one; Omega_Z"
+    struct_type = "D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; ⊙; H_A; S_one_one; Omega_Z"
     print(f"  Structural type: <{struct_type}>")
     print(f"  Ouroboricity tier: O_∞")

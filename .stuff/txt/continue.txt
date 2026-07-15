@@ -384,7 +384,7 @@
 ● Now I have a complete picture. The issue is:
   - ASCII letters like D, T, R, F, K, H, G, P, S in math mode render as LaTeX italic — wrong glyphs
   - \Gamma_sub should be ɢ (interaction grammar), not Γ (scope)
-  - \Phi_sub should be ⊙ (criticality), not Φ (parity)
+  - \𐑢 should be ⊙ (criticality), not Φ (parity)
   - Macro definitions in SO_BELOW.tex also use the wrong letters
 
   Writing the replacement script now.

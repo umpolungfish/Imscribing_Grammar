@@ -45,7 +45,7 @@ SH = {
     # Composition
     "Gm_seq": "𐑠", "Gm_broad": "𐑵", "Gm_and": "𐑝", "Gm_or": "𐑜",
     # Criticality
-    "Phi_c": "⊙", "Phi_c_complex": "𐑮", "Phi_sub": "𐑢", "Phi_ep": "𐑻", "Phi_super": "𐑣",
+    "⊙": "⊙", "𐑮": "𐑮", "𐑢": "𐑢", "Phi_ep": "𐑻", "Phi_super": "𐑣",
     # Chirality
     "H_inf": "𐑫", "H_2": "𐑖", "H_1": "𐑒", "H_0": "𐑓",
     # Stoichiometry
@@ -60,67 +60,67 @@ COMPOUNDS: Dict[str, Dict[str, str]] = {
     "5_meo_dmt": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_frob"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_inf"], "Σ": SH["S_het"], "Ω": SH["W_Z"],
     },
     "dmt": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_frob"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_inf"], "Σ": SH["S_het"], "Ω": SH["W_Z"],
     },
     "ayahuasca": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_psi"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_inf"], "Σ": SH["S_het"], "Ω": SH["W_Z"],
     },
     "lsd": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_frob"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_2"], "Σ": SH["S_het"], "Ω": SH["W_Z"],
     },
     "ibogaine": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_pm"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_inf"], "Σ": SH["S_het"], "Ω": SH["W_Z"],
     },
     "psilocybin": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
         "Φ": SH["P_frob"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_broad"], "⊙": SH["⊙"],
         "Ħ": SH["H_2"], "Σ": SH["S_het"], "Ω": SH["W_Z2"],
     },
     "mescaline": {
         "Ð": SH["D_inf"], "Þ": SH["T_net"], "Ř": SH["R_lr"],
         "Φ": SH["P_pm"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_seq"], "⊙": SH["Phi_c"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_seq"], "⊙": SH["⊙"],
         "Ħ": SH["H_1"], "Σ": SH["S_many"], "Ω": SH["W_Z2"],
     },
     "salvinorin_a": {
         "Ð": SH["D_odot"], "Þ": SH["T_net"], "Ř": SH["R_lr"],
         "Φ": SH["P_psi"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_aleph"], "ɢ": SH["Gm_seq"], "⊙": SH["Phi_c_complex"],
+        "Γ": SH["G_aleph"], "ɢ": SH["Gm_seq"], "⊙": SH["𐑮"],
         "Ħ": SH["H_0"], "Σ": SH["S_many"], "Ω": SH["W_0"],
     },
     "ketamine": {
         "Ð": SH["D_inf"], "Þ": SH["T_net"], "Ř": SH["R_lr"],
         "Φ": SH["P_psi"], "ƒ": SH["F_hbar"], "Ç": SH["K_slow"],
-        "Γ": SH["G_gimel"], "ɢ": SH["Gm_or"], "⊙": SH["Phi_sub"],
+        "Γ": SH["G_gimel"], "ɢ": SH["Gm_or"], "⊙": SH["𐑢"],
         "Ħ": SH["H_1"], "Σ": SH["S_one"], "Ω": SH["W_Z2"],
     },
     "mdma": {
         "Ð": SH["D_tri"], "Þ": SH["T_net"], "Ř": SH["R_lr"],
         "Φ": SH["P_psi"], "ƒ": SH["F_hbar"], "Ç": SH["K_fast"],
-        "Γ": SH["G_beth"], "ɢ": SH["Gm_seq"], "⊙": SH["Phi_c_complex"],
+        "Γ": SH["G_beth"], "ɢ": SH["Gm_seq"], "⊙": SH["𐑮"],
         "Ħ": SH["H_1"], "Σ": SH["S_het"], "Ω": SH["W_0"],
     },
     "cannabis": {
         "Ð": SH["D_tri"], "Þ": SH["T_net"], "Ř": SH["R_lr"],
         "Φ": SH["P_asym"], "ƒ": SH["F_ell"], "Ç": SH["K_trap_o"],
-        "Γ": SH["G_gimel"], "ɢ": SH["Gm_or"], "⊙": SH["Phi_sub"],
+        "Γ": SH["G_gimel"], "ɢ": SH["Gm_or"], "⊙": SH["𐑢"],
         "Ħ": SH["H_0"], "Σ": SH["S_many"], "Ω": SH["W_0"],
     },
 }

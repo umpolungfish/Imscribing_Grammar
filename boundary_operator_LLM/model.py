@@ -1,6 +1,6 @@
 """
 Boundary Operator LLM — Structurally Optimized for Dual-GPU WSL2
-ð = Phi_c critical, Þ = Crossing topology, Ω = Z winding protection
+ð = ⊙ critical, Þ = Crossing topology, Ω = Z winding protection
 """
 import torch
 import torch.nn as nn

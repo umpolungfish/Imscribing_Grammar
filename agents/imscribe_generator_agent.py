@@ -802,7 +802,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [1] D  → degrees of freedom: point → 𐑛; finite surface → 𐑨; infinite-dim field → 𐑼; self-written state-space → 𐑦
   [2] T  → connectivity shape: graph → 𐑡; containment/nested → 𐑰; crossing point → 𐑥; irreducible product → 𐑶; self-encoding topology → 𐑸
   [3] R  → coupling direction: supervenience / soft association → 𐑩; functorial morphisms / bond formation → 𐑑; adjoint pair (one-way) → 𐑽; bidirectional mutual determination → 𐑾
-  [4] P  → symmetry: none → 𐑗; quantum superposition → 𐑿; one Z₂ symmetry → 𐑬; all symmetries → 𐑯; μ∘δ=id exactly at Φ_c (Frobenius-special) → 𐑹
+  [4] P  → symmetry: none → 𐑗; quantum superposition → 𐑿; one Z₂ symmetry → 𐑬; all symmetries → 𐑯; μ∘δ=id exactly at ⊙ (Frobenius-special) → 𐑹
   [5] F  → physical regime: classical → ƒ^ì; thermal/noisy → ƒ^ð; quantum coherence essential → ƒ^ż
   [6] K  → relaxation: driven (τ≪T_obs) → Ç^-; visible dynamics (τ∼T_obs) → Ç^W; frozen (τ≫T_obs) → Ç^@; trapped ordered → Ç^Ù; trapped disordered → Ç^λ
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲

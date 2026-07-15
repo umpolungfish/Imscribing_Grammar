@@ -11,7 +11,7 @@ Run:
 Sections:
   1. Chelate effect — G_beta → G_gamma amplification, ξ_CP vs H-bond cooperativity
   2. Water criticality — Varma probe with empirical ξ_r / ξ_τ data
-  3. Formose reaction — Factor 7 check, why it is NOT a Φ_c candidate
+  3. Formose reaction — Factor 7 check, why it is NOT a ⊙ candidate
   4. Cross-domain efficiency table — all known entries side by side
   5. Axiom 1 forbidden-pair scan — T_⋈ + P_± + F_beltl in the live catalog
   6. Mechanical bond I_angle estimate — DB24C8 steric cliff information content
@@ -166,7 +166,7 @@ else:
 header("2 · Water's Hydrogen Bond Network: Varma Probe")
 
 info("Encoding bulk liquid water as a supramolecular network imscription:")
-info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, Γ_∨(BROAD), Φ_sub, n:m")
+info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, Γ_∨(BROAD), 𐑢, n:m")
 info("  ΔG per H-bond ≈ -18 kJ/mol (gas-phase benchmark)")
 
 water = make_imscription(
@@ -237,18 +237,18 @@ if report.scaling_prediction:
         else:
             warn(f"Outside ±20% tolerance — water may follow standard QCP rather than Varma QXY")
 
-bold("Prediction: water is a Φ_c CANDIDATE — poised near the G–D criticality locus.")
+bold("Prediction: water is a ⊙ CANDIDATE — poised near the G–D criticality locus.")
 bold("Testable: supercooled water or high pressure should show diverging ξ_r matching Varma QXY exponents.")
 
 
 # =============================================================================
-# Section 3 — Formose Reaction: Why NOT a Φ_c Candidate
+# Section 3 — Formose Reaction: Why NOT a ⊙ Candidate
 # =============================================================================
 
 header("3 · Formose Reaction: Factor 7 Check")
 
 info("Encoding the formose aldol autocatalytic cycle:")
-info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), Φ_sub, 1:1")
+info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), 𐑢, 1:1")
 
 formose = make_imscription(
     name="formose_aldol_autocatalytic_cycle",
@@ -307,7 +307,7 @@ else:
 
 f7_fires = all(f7_conditions.values())
 if f7_fires:
-    warn("Factor 7 FIRES — formose is a Φ_c candidate (unexpected!)")
+    warn("Factor 7 FIRES — formose is a ⊙ candidate (unexpected!)")
 else:
     missing = [k for k, v in f7_conditions.items() if not v]
     result(f"Factor 7 does NOT fire. Missing: {', '.join(missing)}")
@@ -411,7 +411,7 @@ header("6 · Mechanical Bond Information Content (DB24C8 Steric Cliff)")
 
 info("DB24C8 pseudorotaxane: steric cliff → angular window σ_steric → I_angle")
 info("Framework encoding:")
-info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_turnm, G_ב, Γ_∧(SPECIFIC), Φ_sub, 1:1")
+info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_turnm, G_ב, Γ_∧(SPECIFIC), 𐑢, 1:1")
 
 # I_angle uses the solid-angle (3D cone) formula:
 #   I = log₂( 2 / (1 - cos(σ)) )
@@ -508,7 +508,7 @@ header("Summary of DeepSeek Predictions vs Framework Results")
 
 summary = [
     ("Chelate ≈ triple H-bond efficiency",  "ξ_CP within same F tier",                     "✓ Confirmed"),
-    ("Water is Φ_c candidate",              "Varma probe > 0.40 (approaching)",             "✓ Approaching"),
+    ("Water is ⊙ candidate",              "Varma probe > 0.40 (approaching)",             "✓ Approaching"),
     ("Formose Factor 7 does not fire",       "F=F_dh blocks classical bifurcation gate",   "✓ Confirmed"),
     ("Temporal ≈ spatial efficiency",        "Both in F_dh tier (not orders of magnitude)", "✓ Confirmed"),
     ("Mechanical bonds > H-bonds in I_bits", f"DB24C8 {I_db:.1f} bits vs H-bond {I_hbond:.1f} bits (solid-angle formula)", "✓ Confirmed"),

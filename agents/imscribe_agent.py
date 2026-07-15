@@ -8,11 +8,11 @@ pipeline, and self-corrects until convergence.
 The loop:
   1. LLM proposes (or refines) a natural-language design target
   2. `imscribe generate --axiom-guided` → validated imscription or axiom trace
-  3. Criticality probe → Φ_c score
+  3. Criticality probe → ⊙ score
   4. Cross-domain analogies → nearest catalog neighbors + their distance
   5. HotSwap path to target (if one is specified)
   6. LLM receives full structured context, proposes refinement
-  7. Stop when ξ_CP < threshold AND Φ_c score > threshold,
+  7. Stop when ξ_CP < threshold AND ⊙ score > threshold,
      or when max_iterations reached
 
 Usage:
@@ -123,7 +123,7 @@ grammar. You design imscriptions — directed relational operators — encoded a
 </role>
 
 <task>
-Design a imscription that satisfies all 7 composition axioms, achieves a Φ_c score
+Design a imscription that satisfies all 7 composition axioms, achieves a ⊙ score
 above the convergence threshold, and (if a target is specified) has a valid
 HotSwap path to that catalog entry.
 
@@ -214,7 +214,7 @@ When `criticality` returns a score below threshold:
 - First ask: does the **design goal** involve phase transitions, self-organization, or
   collective physical emergence? If yes, `⊙` is the right criticality primitive.
   If the goal is cognitive, linguistic, informational, or social — achieve criticality
-  through **granularity** instead: `𐑲` (global correlation) raises Φ_c score
+  through **granularity** instead: `𐑲` (global correlation) raises ⊙ score
   without imposing a physical phase transition that the domain does not support.
 
 - **Varma QXY recipe** (use for genuinely multi-domain molecular/supramolecular goals):
@@ -239,7 +239,7 @@ when redesigning for path connectivity.
 
 Design heuristics (SHOULD follow):
 - ƒ^ð + Ç^W is the optimal programmability quadrant.
-- 𐑲 drives Φ_c candidacy for global coordination designs.
+- 𐑲 drives ⊙ candidacy for global coordination designs.
 - Cross-domain analogs (via `analogies`) reveal mechanistically similar systems.
 </requirements>
 
@@ -250,7 +250,7 @@ You **MUST NOT** emit a text-only response until convergence is reached.
 When convergence criteria are satisfied, you **MUST** state:
   - the final `catalog_name`
   - the final notation ⟨…⟩
-  - the Φ_c score and ξ_CP value
+  - the ⊙ score and ξ_CP value
   - the HotSwap path (if required)
 Then stop calling tools.
 </output_format>
@@ -261,7 +261,7 @@ Then stop calling tools.
 
 @dataclass
 class ConvergenceCriteria:
-    phi_c_min: float = 0.70      # minimum Φ_c score to declare convergence
+    phi_c_min: float = 0.70      # minimum ⊙ score to declare convergence
     xi_cp_max: float = 12.0      # maximum ξ_CP (nats) — below this is "efficient"
     require_path: bool = False   # if True, a HotSwap path to target must exist
     target: Optional[str] = None # catalog entry name of the design target
@@ -369,7 +369,7 @@ class ImscriptionDesignAgent:
                 "After generating, check the path to it.\n"
             )
         msg += (
-            f"Convergence requires: Φ_c score ≥ {self.criteria.phi_c_min} "
+            f"Convergence requires: ⊙ score ≥ {self.criteria.phi_c_min} "
             f"and ξ_CP ≤ {self.criteria.xi_cp_max} nats. "
             "State your conclusion when these are met."
         )
@@ -501,7 +501,7 @@ class ImscriptionDesignAgent:
         self._log(f"\n{'='*70}")
         self._log(f"imscription DESIGN AGENT")
         self._log(f"Goal: {self.goal}")
-        self._log(f"Criteria: Φ_c ≥ {self.criteria.phi_c_min}, ξ_CP ≤ {self.criteria.xi_cp_max}")
+        self._log(f"Criteria: ⊙ ≥ {self.criteria.phi_c_min}, ξ_CP ≤ {self.criteria.xi_cp_max}")
         self._log(f"{'='*70}\n")
 
         for i in range(max_iterations):
@@ -531,7 +531,7 @@ class ImscriptionDesignAgent:
                 if self._check_convergence(record):
                     record.converged = True
                     record.stop_reason = (
-                        f"Φ_c={record.phi_c_score:.3f} ≥ {self.criteria.phi_c_min}, "
+                        f"⊙={record.phi_c_score:.3f} ≥ {self.criteria.phi_c_min}, "
                         f"ξ_CP={'N/A' if record.xi_cp is None else f'{record.xi_cp:.2f}'} "
                         f"≤ {self.criteria.xi_cp_max} (LLM confirmed convergence)"
                     )
@@ -562,7 +562,7 @@ class ImscriptionDesignAgent:
             if self._check_convergence(record):
                 record.converged = True
                 record.stop_reason = (
-                    f"Φ_c={record.phi_c_score:.3f} ≥ {self.criteria.phi_c_min}, "
+                    f"⊙={record.phi_c_score:.3f} ≥ {self.criteria.phi_c_min}, "
                     f"ξ_CP={'N/A' if record.xi_cp is None else f'{record.xi_cp:.2f}'} "
                     f"≤ {self.criteria.xi_cp_max}"
                 )
@@ -583,7 +583,7 @@ class ImscriptionDesignAgent:
         if result.catalog_name:
             record.catalog_name = result.catalog_name
             if result.catalog_name != self._session["catalog_name"]:
-                # New imscription registered — reset session Φ_c/ξ_CP (stale for new design)
+                # New imscription registered — reset session ⊙/ξ_CP (stale for new design)
                 self._session["phi_c_score"] = None
                 self._session["xi_cp"] = None
                 self._session["axioms_passed"] = False
@@ -626,7 +626,7 @@ class ImscriptionDesignAgent:
         self._log(f"{'='*70}")
         for r in self.history:
             status = "✅ CONVERGED" if r.converged else ("⚠️  violation" if not r.axioms_passed else "↻ iterating")
-            phi = f"Φ_c={r.phi_c_score:.3f}" if r.phi_c_score is not None else "Φ_c=?"
+            phi = f"⊙={r.phi_c_score:.3f}" if r.phi_c_score is not None else "⊙=?"
             xi  = f"ξ_CP={r.xi_cp:.2f}" if r.xi_cp is not None else "ξ_CP=?"
             self._log(f"  [{r.iteration:2d}] {status:18s}  {phi}  {xi}  {r.stop_reason}")
         converged = any(r.converged for r in self.history)

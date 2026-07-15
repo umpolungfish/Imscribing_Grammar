@@ -133,7 +133,7 @@ _FIELD_LABELS = {
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
 
 def _friendly(glyph_id):
-    """⊙ → Phi_c (the most readable old name if available)."""
+    """⊙ → ⊙ (the most readable old name if available)."""
     # Try both ⊙_ and ⊙_ forms for lookup
     lookup = glyph_id.replace(CRIT_LEGACY + '_', CRIT_MODERN + '_')
     return _OLD_NAMES.get(lookup, glyph_id)

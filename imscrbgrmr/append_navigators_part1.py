@@ -18,7 +18,7 @@ CODE_TO_APPEND = '''
 
 _CATEGORY_GRAMMAR = (
     "D_omega  T_openo  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -29,7 +29,7 @@ def category_theory_group():
     \b
     Structural type:
       D_omega T_openo R_ctz P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
@@ -37,7 +37,7 @@ def category_theory_group():
       R_ctz            → categorical relations (functoriality, natural transformations)
       P_doublebarpipe         → Frobenius interface with categorical uncertainty
       G_revapostrophe          → maximal scope: arbitrary categories
-      Phi_ctyogh            → self-modeling: category of categories
+      ⊙            → self-modeling: category of categories
       Omega_dzlig          → integer winding: looping through categorical levels
 
     \b
@@ -63,7 +63,7 @@ def category_theory_describe():
         "  P_doublebarpipe         → Frobenius interface: structural uncertainty in categorical statements\\n"
         "  G_revapostrophe          → maximal scope: any category C, Set^C, Cat, ...\\n"
         "  Gamma_seq        → sequential composition: f∘g in hom-sets\\n"
-        "  Phi_ctyogh            → self-modeling: Cat as category of categories\\n"
+        "  ⊙            → self-modeling: Cat as category of categories\\n"
         "  Omega_dzlig          → integer winding: iterating through n-categories\\n\\n"
         "[bold]Key methods:[/bold]\\n"
         "  find_adjunction            detect adjoint pairs F ⊣ G\\n"
@@ -141,7 +141,7 @@ def category_theory_colimit(category: str, diagram_type: str, shape: str):
 
 _HTT_GRAMMAR = (
     "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_invscripta  n:m  Omega_crtwo"
+    "G_revapostrophe  Gamma_seq  ⊙  H_invscripta  n:m  Omega_crtwo"
 )
 
 
@@ -152,7 +152,7 @@ def htt_group():
     \b
     Structural type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_invscripta n:m Omega_crtwo
+      G_revapostrophe Gamma_seq ⊙ H_invscripta n:m Omega_crtwo
 
     \b
     Key structural facts:

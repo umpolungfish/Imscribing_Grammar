@@ -343,22 +343,22 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     elif base == '⊙':
         f0 = 523.25   # C5
 
-        if sub == 'ž':              # Phi_sub — subcritical: exponential damping
+        if sub == 'ž':              # 𐑢 — subcritical: exponential damping
             sig = sine(f0, t) * np.exp(-6 * t / dur)
 
-        elif sub == 'ÿ':            # Phi_c — critical: barely sustains, slight beating
+        elif sub == 'ÿ':            # ⊙ — critical: barely sustains, slight beating
             f_beat = f0 + 1.2
             env = np.exp(-0.25 * t / dur)   # very slow decay
             sig = (0.55 * sine(f0, t) + 0.45 * sine(f_beat, t)) * env
 
-        elif sub == 'Æ':            # Phi_c_complex — complex critical: multi-frequency beating
+        elif sub == 'Æ':            # 𐑮 — complex critical: multi-frequency beating
             f2 = f0 * 1.5   # fifth
             beat = 3.5
             sig = (0.45 * sine(f0, t) +
                    0.35 * sine(f0 + beat, t) +
                    0.20 * sine(f2, t)) * np.exp(-0.4 * t / dur)
 
-        elif sub == '3':            # Phi_EP — exceptional point: two modes coalesce
+        elif sub == '3':            # 𐑻 — exceptional point: two modes coalesce
             f_split = f0 * 1.03
             merge = np.linspace(1.0, 0.0, n)   # gap closes
             sig = (0.5 * sine(f0, t) * (0.5 + 0.5 * merge) +
@@ -538,8 +538,8 @@ OLD_ID_MAP = {
     'G_beth': '𐑚',     'G_gimel': '𐑔',        'G_aleph': '𐑲',
     'G_and': 'ɢ^∧',      'Gamma_and': 'ɢ^∧',      'G_or': 'ɢ^˝',      'Gamma_or': 'ɢ^˝',
     'G_seq': 'ɢ^ˌ',      'Gamma_seq': 'ɢ^ˌ',      'G_broad': 'ɢ^Ş',   'Gamma_broad': 'ɢ^Ş',
-    'Phi_sub': '𐑢',    'Phi_c': '⊙',          'Phi_c_complex': '𐑮',
-    'Phi_EP': '𐑻',     'Phi_super': '𐑣',
+    '𐑢': '𐑢',    '⊙': '⊙',          '𐑮': '𐑮',
+    '𐑻': '𐑻',     'Phi_super': '𐑣',
     'H0': '𐑓',         'H_0': '𐑓',            'H1': '𐑒',        'H_1': '𐑒',
     'H2': '𐑖',         'H_2': '𐑖',            'H_inf': '𐑫',
     'one_one': '𐑙',    'S_1_1': '𐑙',

@@ -997,7 +997,7 @@ class PredictiveRuleGenerator:
             Or(P("G", "Γ_gamma"), P("G", "Γ_revapostrophe")),
         ))
 
-        # ── Φ_c indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─
+        # ── ⊙ indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
             And(P("T", "Þ_bullseye"), P("K", "Ç_teshlig")),

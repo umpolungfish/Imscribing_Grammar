@@ -4,7 +4,7 @@ Imscription Morphisms — Phase Transitions as Kleisli Arrows
 Encodes phase transitions as morphisms in the Kleisli category over the
 HotSwap monad.  A transition A → B is:
 
-  • 2nd order  — direct path through Φ_c intermediates exists (continuous,
+  • 2nd order  — direct path through ⊙ intermediates exists (continuous,
                  order parameter vanishes at the critical point)
   • 1st order  — no HotSwap path (D/T or F conflict), transition requires
                  an external driver; represented as a *virtual* morphism
@@ -40,7 +40,7 @@ from .algebra import find_path, tuple_distance, PathResult
 # ─────────────────────────────────────────────────────────────────────────────
 
 class TransitionOrder(str, Enum):
-    SECOND   = "2nd_order"   # continuous; path through Φ_c intermediates
+    SECOND   = "2nd_order"   # continuous; path through ⊙ intermediates
     FIRST    = "1st_order"   # discontinuous; no HotSwap path (T/D conflict)
     UNKNOWN  = "unknown"     # insufficient catalog coverage to determine
 
@@ -52,9 +52,9 @@ class QuantumCriticalPoint:
 
     A QCP is *not* a property of either endpoint imscription — it is a property
     of the morphism between them.  Specifically: the transition is 2nd-order
-    AND the forward path passes through at least one Φ_c intermediate.
+    AND the forward path passes through at least one ⊙ intermediate.
 
-    The Φ_c intermediate is the QCP imscription — the system is tuned *through*
+    The ⊙ intermediate is the QCP imscription — the system is tuned *through*
     it, not to it.  This is the representational gap closed by the morphism
     infrastructure: Factor 8 in the Varma probe fires on an endpoint that
     *looks like* a QCP; the morphism QCP fires on the actual transition.
@@ -62,7 +62,7 @@ class QuantumCriticalPoint:
     Attributes
     ----------
     transition_src, transition_dst : endpoint names
-    qcp_imscription_names : names of the Φ_c imscriptions on the path (the QCPs)
+    qcp_imscription_names : names of the ⊙ imscriptions on the path (the QCPs)
     path_cost : total Δξ_CP to traverse the QCP from src to dst
     universality_hints : list of primitive-derived universality class hints
     """
@@ -84,7 +84,7 @@ class TransitionMorphism:
     order       : SECOND | FIRST | UNKNOWN
     forward_path : BFS PathResult for A→B (may be not found)
     reverse_path : BFS PathResult for B→A (may be not found)
-    phi_c_intermediates : names of Φ_c imscriptions on the forward path (if any)
+    phi_c_intermediates : names of ⊙ imscriptions on the forward path (if any)
     forward_cost  : total Δξ_CP on forward path  (math.inf if no path)
     reverse_cost  : total Δξ_CP on reverse path  (math.inf if no path)
     asymmetry     : |fwd − rev| / max(fwd, 1e-9)  ∈ [0, 1]
@@ -113,7 +113,7 @@ class TransitionMorphism:
 
     @property
     def is_quantum_critical(self) -> bool:
-        """True when the morphism passes through a Φ_c intermediate.
+        """True when the morphism passes through a ⊙ intermediate.
 
         A quantum critical point is a property of the *transition*, not of
         either endpoint.  The endpoint Varma probe (Factor 8) is a heuristic;
@@ -132,7 +132,7 @@ class TransitionMorphism:
         rev = f"{self.reverse_cost:.2f}" if math.isfinite(self.reverse_cost) else "∞"
         asym = f"{self.asymmetry:.2f}"
         phi_str = (
-            f"  Φ_c intermediates: {', '.join(self.phi_c_intermediates)}"
+            f"  ⊙ intermediates: {', '.join(self.phi_c_intermediates)}"
             if self.phi_c_intermediates else ""
         )
         rev_str = "reversible" if self.is_reversible else "irreversible"
@@ -165,16 +165,16 @@ def find_qcp_path(
 ) -> Optional["TransitionMorphism"]:
     """
     Search specifically for a path from src to dst that passes through a
-    Φ_c intermediate — the morphism-level quantum critical point.
+    ⊙ intermediate — the morphism-level quantum critical point.
 
     Unlike `find_transition()`, which takes the cheapest BFS path (which may
-    bypass a Φ_c intermediate), this function enumerates all Φ_c imscriptions
+    bypass a ⊙ intermediate), this function enumerates all ⊙ imscriptions
     in the D/T cluster and checks for two-segment paths:
         src → Φ_c_intermediate → dst
 
     If any such path exists, returns a TransitionMorphism with
     is_quantum_critical = True and quantum_critical_point populated.
-    Returns None if no Φ_c-mediated path exists.
+    Returns None if no ⊙-mediated path exists.
     """
     phi_c_candidates = [
         s for s in catalog
@@ -258,7 +258,7 @@ def find_qcp_path(
                 "TFI/heavy-fermion quantum criticality class"
             )
         else:
-            hints.append(f"{qcp_s.name}: Φ_c intermediate (universality class unresolved)")
+            hints.append(f"{qcp_s.name}: ⊙ intermediate (universality class unresolved)")
 
         qcp_obj = QuantumCriticalPoint(
             transition_src=src.name,
@@ -283,7 +283,7 @@ def find_qcp_path(
                 f"QCP-mediated path: {src.name} → {qcp_s.name} → {dst.name}",
                 f"Segment 1: Δξ={seg1.total_delta:.3f} nat  "
                 f"Segment 2: Δξ={seg2.total_delta:.3f} nat",
-                f"Φ_c intermediate confirms 2nd-order quantum critical transition.",
+                f"⊙ intermediate confirms 2nd-order quantum critical transition.",
             ],
         )
 
@@ -307,15 +307,15 @@ def find_transition(
     ---------
     1. Run BFS forward  (src → dst) and backward (dst → src).
     2. Classify order:
-       - SECOND if forward path exists AND at least one intermediate is Φ_c
-       - SECOND (degenerate) if forward path exists but no Φ_c intermediate
+       - SECOND if forward path exists AND at least one intermediate is ⊙
+       - SECOND (degenerate) if forward path exists but no ⊙ intermediate
          (near-critical pair — flag in notes)
        - FIRST  if no forward path (structural conflict blocks HotSwap)
        - UNKNOWN if catalog is empty / both imscriptions absent
     3. Compute costs and asymmetry.
     """
     # --- QCP-first search ---
-    # Before the generic BFS, check if there is a Φ_c-mediated path.
+    # Before the generic BFS, check if there is a ⊙-mediated path.
     # BFS may route around a QCP intermediate when costs are equal; this
     # ensures QCPs are never missed due to tie-breaking order.
     qcp_morph = find_qcp_path(src, dst, catalog, max_hops=max_hops,
@@ -328,7 +328,7 @@ def find_transition(
     rev = find_path(dst, src, list(catalog),
                     max_hops=max_hops, xi_tolerance=xi_tolerance)
 
-    # Extract Φ_c intermediates from forward path (exclude endpoints)
+    # Extract ⊙ intermediates from forward path (exclude endpoints)
     phi_c_names: List[str] = []
     if fwd.found and len(fwd.path) > 2:
         # path is a list of imscription names
@@ -356,13 +356,13 @@ def find_transition(
         if phi_c_names:
             order = TransitionOrder.SECOND
             notes.append(
-                f"Φ_c intermediate(s) confirm continuous critical point: "
+                f"⊙ intermediate(s) confirm continuous critical point: "
                 f"{', '.join(phi_c_names)}"
             )
         else:
             order = TransitionOrder.SECOND
             notes.append(
-                "Forward path exists but no Φ_c intermediates found — "
+                "Forward path exists but no ⊙ intermediates found — "
                 "transition may be weakly 2nd-order or sub-critical crossover; "
                 "verify Varma score of intermediates"
             )
@@ -405,7 +405,7 @@ def find_transition(
     notes.append(f"Symmetric tuple distance d(src,dst) = {d_sym:.2f}")
 
     # Quantum critical point detection
-    # A QCP is a morphism-level property: 2nd order AND path through Φ_c intermediate.
+    # A QCP is a morphism-level property: 2nd order AND path through ⊙ intermediate.
     # This is the closure of Factor 8: the QCP is the transition, not either endpoint.
     qcp: Optional[QuantumCriticalPoint] = None
     if order == TransitionOrder.SECOND and phi_c_names:
@@ -427,7 +427,7 @@ def find_transition(
                 elif has_galeph:
                     hints.append(f"{name}: G_revapostrophe → non-local QCP")
                 else:
-                    hints.append(f"{name}: Φ_c intermediate (universality class unresolved)")
+                    hints.append(f"{name}: ⊙ intermediate (universality class unresolved)")
         qcp = QuantumCriticalPoint(
             transition_src=src.name,
             transition_dst=dst.name,

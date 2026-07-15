@@ -3,7 +3,7 @@ Phase 3 (revised): Multi-Frequency FRB / Magnetar Emission Catalog P-12 Test.
 
 Rationale
 ---------
-P-12 predicts that any Φ_c-maintaining system pays a structural criticality tax
+P-12 predicts that any ⊙-maintaining system pays a structural criticality tax
 of +ln(10) ≈ 2.303 nat per constraint tier. This should appear as a preferred
 emission frequency *ratio* in transient events near DM-accumulation nodes (P-74).
 

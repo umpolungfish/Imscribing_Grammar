@@ -1,23 +1,23 @@
-Retire the gen-2 glyph-pair notation for bare Shavian
+Retire the Phi_c family: gen-1 criticality names to bare Shavian
 
-The primitives stand on their own now, so the old `⊙_ÿ` / `Ð_ω` / `Φ_}` forms are
-residue. Rewrote all 49 of them to their Shavian values across source: 19,645
-tokens, 670 files.
+Phi_c is ⊙. The `_c` forms only ever existed under Criticality, so unlike bare
+Phi they carry no ambiguity: today's Φ is Parity and has no `_c` value, so
+nothing here needs a judgement call. Rewrote the family to the values
+`models.from_symbol` returns for them: Phi_c / Φ_c / ⊙_c / Phi_ctyogh → ⊙,
+Phi_c_complex → 𐑮, Phi_sub → 𐑢, Phi_EP → 𐑻, Phi_sup → 𐑣. 7,689 refs, 585 files.
 
-The map was not typed. I enumerated the gen-2 tokens that actually appear in the
-corpus, paired each marker to its phonetic name, and resolved every value through
-`models.from_symbol` — so the values come from code that runs, not from a table.
-Reality arbitrated one conflict: the SOUNDS document gives `Ř_Ð`, `Γ_\`, `Σ_M`,
-but the corpus has `Ř_=`, `Γ_ʔ`, `Σ_ï` in the tens of thousands and the doc's
-variants nowhere at all. The doc is mangled; the files are the record.
+The whole job is one distinction: Phi_c names a VALUE in prose and data, and it
+also names a CONSTRUCTOR in code. `Criticality.Phi_c` is a live Lean identifier
+(`theorem as_is_QCP : asymptotic_safety.crit = Criticality.Phi_c := rfl`) and
+`Criticality.Phi_ctyogh` is a live Python enum alias. Rewriting those gives
+`Criticality.⊙`, which is not an identifier in either language. So dotted
+occurrences stay and everything else moves. Same string, two roles — the same
+shape as CLINK L8 versus the `=` opcode, where only reading tells them apart.
 
-Left alone deliberately: `ig_outputs/` and the other run artifacts, ~455k tokens
-of it. Those runs really did emit gen-2 in May. Rewriting them would forge the
-record of what they produced, which is not tidying. The two naming documents keep
-their old-notation columns for the same reason.
+models.py keeps its old spellings on purpose. Its from_symbol maps are the
+back-compat table: the keys have to go on spelling `Φ_c` or the translation from
+old symbols stops working. Rewriting the dictionary that performs the migration
+would remove the migration.
 
-Bare `Phi` is untouched. Gen-1 `Phi` is today's ⊙, but today's `Φ` is Parity —
-those are genuinely different structures that happen to share letters, and no
-register makes them one, so every site needs reading. Contrast ⊙ appearing as
-both primitive and value, which is not a collision at all: `⊙ ≠ ⊙` is operator ≠
-operation, and it states `μ∘δ ≠ id` exactly.
+Verified after: imscrbgrmr imports, from_symbol('Φ_c') still returns ⊙, both
+navigators still answer (cl8nk promote, cl9nk moat), and no syntax regressions.

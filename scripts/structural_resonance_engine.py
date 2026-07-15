@@ -35,7 +35,7 @@ ORDINAL = {
     "K": {"K_fast":1,"K_mod":2,"K_slow":3,"K_trap":4,"K_MBL":5},
     "G": {"G_beth":1,"G_gimel":2,"G_aleph":3},
     "Gamma": {"Gamma_and":1,"Gamma_or":2,"Gamma_seq":3,"Gamma_broad":4},
-    "Phi": {"Phi_sub":1,"Phi_c":2,"Phi_c_complex":2,"Phi_EP":3,"Phi_super":4},
+    "Phi": {"𐑢":1,"⊙":2,"𐑮":2,"𐑻":3,"Phi_super":4},
     "H": {"H0":1,"H1":2,"H2":3,"H_inf":4},
     "S": {"S_1:1":1,"S_n:n":2,"S_n:m":3},
     "Omega": {"Omega_0":1,"Omega_Z2":2,"Omega_Z":3,"Omega_NA":4},
@@ -44,7 +44,7 @@ ORDINAL = {
 OINF_POLE = {
     "D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym",
     "F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq",
-    "Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"
+    "Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"
 }
 
 CANONICAL = {
@@ -56,7 +56,7 @@ CANONICAL = {
     "K": {"𐑘":"K_fast","𐑤":"K_mod","𐑧":"K_slow","𐑪":"K_trap","𐑺":"K_MBL"},
     "G": {"𐑚":"G_beth","𐑔":"G_gimel","𐑲":"G_aleph"},
     "Gamma": {"𐑝":"Gamma_and","𐑜":"Gamma_or","𐑠":"Gamma_seq","𐑵":"Gamma_broad"},
-    "Phi": {"𐑢":"Phi_sub","⊙":"Phi_c","𐑮":"Phi_c_complex","𐑻":"Phi_EP","𐑣":"Phi_super"},
+    "Phi": {"𐑢":"𐑢","⊙":"⊙","𐑮":"𐑮","𐑻":"𐑻","𐑣":"Phi_super"},
     "H": {"𐑓":"H0","𐑒":"H1","𐑖":"H2","𐑫":"H_inf"},
     "S": {"𐑙":"S_1:1","𐑕":"S_n:n","𐑳":"S_n:m"},
     "Omega": {"𐑷":"Omega_0","𐑴":"Omega_Z2","𐑭":"Omega_Z","𐑟":"Omega_NA"},
@@ -89,11 +89,11 @@ def compute_tensor(ta: Dict, tb: Dict) -> Dict:
     return result
 
 def tier(t: Dict) -> str:
-    if t["Phi"] == "Phi_c" and t["Omega"] == "Omega_Z" and t["D"] == "D_odot":
+    if t["Phi"] == "⊙" and t["Omega"] == "Omega_Z" and t["D"] == "D_odot":
         return "O_∞"
-    elif t["Phi"] == "Phi_c" and t["Omega"] in ("Omega_Z", "Omega_Z2"):
+    elif t["Phi"] == "⊙" and t["Omega"] in ("Omega_Z", "Omega_Z2"):
         return "O₂"
-    elif t["Phi"] in ("Phi_c", "Phi_c_complex") or t["Omega"] == "Omega_Z":
+    elif t["Phi"] in ("⊙", "𐑮") or t["Omega"] == "Omega_Z":
         return "O₁"
     return "O₀"
 
@@ -126,15 +126,15 @@ def rosetta(name_a, ta, name_b, tb):
 
 # Known systems from the survey
 SYS = {
-    "BH":        {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
-    "whale":     {"D":"D_odot","T":"T_bow","R":"R_lr","P":"P_psi","F":"F_eth","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H2","S":"S_n:m","Omega":"Omega_Z"},
-    "aleph":     {"D":"D_wedge","T":"T_box","R":"R_super","P":"P_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_and","Phi":"Phi_c","H":"H_inf","S":"S_1:1","Omega":"Omega_Z"},
-    "liar":      {"D":"D_triangle","T":"T_bow","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H2","S":"S_1:1","Omega":"Omega_Z"},
-    "exos":      {"D":"D_odot","T":"T_bow","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c_complex","H":"H2","S":"S_n:m","Omega":"Omega_Z"},
-    "whaleph":   {"D":"D_odot","T":"T_box","R":"R_lr","P":"P_psi","F":"F_eth","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
-    "gita":      {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
-    "luca":      {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
-    "godel":     {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"Phi_c","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
+    "BH":        {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
+    "whale":     {"D":"D_odot","T":"T_bow","R":"R_lr","P":"P_psi","F":"F_eth","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H2","S":"S_n:m","Omega":"Omega_Z"},
+    "aleph":     {"D":"D_wedge","T":"T_box","R":"R_super","P":"P_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_and","Phi":"⊙","H":"H_inf","S":"S_1:1","Omega":"Omega_Z"},
+    "liar":      {"D":"D_triangle","T":"T_bow","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H2","S":"S_1:1","Omega":"Omega_Z"},
+    "exos":      {"D":"D_odot","T":"T_bow","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"𐑮","H":"H2","S":"S_n:m","Omega":"Omega_Z"},
+    "whaleph":   {"D":"D_odot","T":"T_box","R":"R_lr","P":"P_psi","F":"F_eth","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
+    "gita":      {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
+    "luca":      {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
+    "godel":     {"D":"D_odot","T":"T_odot","R":"R_lr","P":"P_pm_sym","F":"F_hbar","K":"K_slow","G":"G_aleph","Gamma":"Gamma_seq","Phi":"⊙","H":"H_inf","S":"S_n:m","Omega":"Omega_Z"},
 }
 
 if __name__ == "__main__":

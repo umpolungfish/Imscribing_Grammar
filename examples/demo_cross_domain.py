@@ -127,17 +127,17 @@ def main():
         except Exception as e:
             print(f"  ERROR: {e}")
 
-        # 4. Varma probe (Φ_c candidacy)
+        # 4. Varma probe (⊙ candidacy)
         print(f"\n  {SUB}")
-        print("  4. VARMA PROBE (Φ_c candidacy)")
+        print("  4. VARMA PROBE (⊙ candidacy)")
         print(f"  {SUB}")
         try:
             score, tier = degeneracy_strength(s)
             print(f"  Degeneracy score : {score:.4f}")
             print(f"  Tier             : {tier}")
-            print(f"  Φ_c candidate    : {'YES' if score >= 0.70 else 'approaching' if score >= 0.35 else 'no'}")
+            print(f"  ⊙ candidate    : {'YES' if score >= 0.70 else 'approaching' if score >= 0.35 else 'no'}")
             if name == "autonomous_drone_swarm":
-                print(f"  Note: Φ_c assigned in tuple; Vicsek transition is empirical evidence.")
+                print(f"  Note: ⊙ assigned in tuple; Vicsek transition is empirical evidence.")
         except Exception as e:
             print(f"  ERROR: {e}")
 

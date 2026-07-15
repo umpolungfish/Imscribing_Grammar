@@ -913,13 +913,13 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         if tool_name == "imscribe_system" and isinstance(result, dict) and result.get("status") in ("ok", "updated"):
             _gate_state["encoded"] = True
 
-        # Φ_EP absorption check: under tensor, 𐑻 destroys ⊙ (𐑻 ordinal > ⊙).
+        # 𐑻 absorption check: under tensor, 𐑻 destroys ⊙ (𐑻 ordinal > ⊙).
         # meet(⊙, 𐑻) = ⊙ but tensor(⊙, 𐑻) = 𐑻 — Gate 1 is destroyed.
         if tool_name == "compute_tensor" and isinstance(result, dict):
             tensor_phi = result.get("φ̂") or (result.get("result", {}) or {}).get("φ̂")
             if tensor_phi == "𐑻":
                 result["_absorption_warning"] = (
-                    "Φ_EP absorption: composite has 𐑻 — Gate 1 (⊙ criticality) destroyed. "
+                    "𐑻 absorption: composite has 𐑻 — Gate 1 (⊙ criticality) destroyed. "
                     "O_∞ cannot be sustained in this coupling. "
                     "meet(⊙, 𐑻)=⊙ but tensor(⊙, 𐑻)=𐑻. "
                     "This is the structural statement of the measurement problem."

@@ -208,7 +208,7 @@ NEW_RULESETS = [
     Ruleset(
         name="absorption_democracy",
         description="No absorptions. Every primitive fights on its own terms. "
-                    "No Φ_ctyogh dominance; no Σ n:m monopoly. Meet, join, and tensor "
+                    "No ⊙ dominance; no Σ n:m monopoly. Meet, join, and tensor "
                     "are pure lattice operations — the ordinary-weighted sum of "
                     "every primitive. In this universe, nothing is special. "
                     "Systems that rely on absorption for structural closure are plain.",
@@ -218,7 +218,7 @@ NEW_RULESETS = [
     # ── 23: absorption_monarchy ───────────────────────────────
     Ruleset(
         name="absorption_monarchy",
-        description="Φ_ctyogh (⊙ criticality) absorbs EVERYTHING. Under meet, join, "
+        description="⊙ (⊙ criticality) absorbs EVERYTHING. Under meet, join, "
                     "AND tensor, any system touching self-modeling criticality is "
                     "completely dominated by it. In this universe, self-modeling is "
                     "totalitarian — you cannot couple to a self-modeling system without "
@@ -254,7 +254,7 @@ NEW_RULESETS = [
     Ruleset(
         name="absorption_tensor_only",
         description="Absorption applies ONLY under tensor, not meet or join. "
-                    "Φ_ctyogh and Σ n:m absorb under tensor as in the canonical "
+                    "⊙ and Σ n:m absorb under tensor as in the canonical "
                     "universe, but meet and join are pure lattice operations. "
                     "In this universe, coupling (tensor) is destructive to self-modeling, "
                     "but comparison (meet/join) preserves structure. You can compare "

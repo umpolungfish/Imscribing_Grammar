@@ -7,7 +7,7 @@ then runs the full algebra on them.
 Question: can the grammar understand its own rules?
 Expected findings:
   - Axioms 1 & 7 cluster (both enforce T_bullseye + cyclic grounding)
-  - Axiom 5 (Criticality) and Axiom 3 (Cooperative Induction) carry Phi_ctyogh
+  - Axiom 5 (Criticality) and Axiom 3 (Cooperative Induction) carry ⊙
   - The meet of all 7 axioms extracts the framework's "primitive core"
   - Tensor products reveal emergent structure the axioms don't individually show
   - Degeneracy (path multiplicity between axiom pairs) quantifies how many
@@ -30,9 +30,9 @@ We encode:
 Axiom map:
   A1 Cyclic Closure:       T_bullseye+P_pipevar → F_hardsign     (molecular, hard rule)
   A2 Local Grammar Barrier: G_beta+Γ_spec → no global  (molecular, hard barrier)
-  A3 Cooperative Induction: superlinear → G_gamma       (supramolecular, PHASE TRANSITION → Phi_ctyogh)
+  A3 Cooperative Induction: superlinear → G_gamma       (supramolecular, PHASE TRANSITION → ⊙)
   A4 Sequential Grammar:   Γ_seq → D_∞ or R_downstep     (temporal, hard grounding)
-  A5 Criticality:          Phi_ctyogh → G/D degeneracy       (all scales, critical, global)
+  A5 Criticality:          ⊙ → G/D degeneracy       (all scales, critical, global)
   A6 Temporal Grounding:   D_∞ → physical reset cycle   (temporal, hard grounding, K_teshlig)
   A7 Cyclic Topo Grounding: T_bullseye → named closing bond (molecular, hard, R_covalent_dynamic)
 """
@@ -65,7 +65,7 @@ AXIOM_NOTATIONS = {
         "immediate recognition pair. Hard barrier at molecular scale.",
     ),
     "axiom_3_cooperative_induction": (
-        "⟨D_turnthree; T_nrleg; R_superset; P_pm_pseudo; F_dh; K_schwa; G_gamma; Gamma_and(SELECTIVE); Phi_ctyogh⟩",
+        "⟨D_turnthree; T_nrleg; R_superset; P_pm_pseudo; F_dh; K_schwa; G_gamma; Gamma_and(SELECTIVE); ⊙⟩",
         "Cooperative induction superlinearity signals G_beta→G_gamma phase transition. "
         "Supramolecular scale, selective — only fires when induction ratio is superlinear. "
         "This axiom IS a criticality statement: the transition is a phase boundary.",
@@ -76,8 +76,8 @@ AXIOM_NOTATIONS = {
         "Hard grounding rule — sequential logic without a physical time arrow is disallowed.",
     ),
     "axiom_5_criticality": (
-        "⟨D_all; T_nrleg; R_downstep; P_pm_pseudo; F_dh; K_turnm; G_revapostrophe; Gamma_and(SELECTIVE); Phi_ctyogh⟩",
-        "Criticality contracts the primitive basis: at Phi_ctyogh, G/D become degenerate (scale-free). "
+        "⟨D_all; T_nrleg; R_downstep; P_pm_pseudo; F_dh; K_turnm; G_revapostrophe; Gamma_and(SELECTIVE); ⊙⟩",
+        "Criticality contracts the primitive basis: at ⊙, G/D become degenerate (scale-free). "
         "Applies at all scales, global scope. The framework's most powerful compression rule.",
     ),
     "axiom_6_temporal_grounding": (
@@ -210,7 +210,7 @@ print()
 print("=" * 70)
 print("§ 5  CRITICALITY PROBE  (Varma score + ξ_CP per axiom)")
 print("=" * 70)
-print(f"  {'Axiom':<38} {'Φ_c score':>10}  {'label':<22}  {'ξ_CP':>8}")
+print(f"  {'Axiom':<38} {'⊙ score':>10}  {'label':<22}  {'ξ_CP':>8}")
 print(f"  {'-'*38} {'-'*10}  {'-'*22}  {'-'*8}")
 
 # Varma QXY reference values (log-scaling: xi_r ≈ ln(xi_tau))
@@ -255,19 +255,19 @@ for na, nb, label in tensor_pairs:
         print(f"  {label}  ✗ tensor failed: {e}")
     print()
 
-# ── 8. Three new metrics: degeneracy, ξ_CP, Φ_c as fundamental descriptors ───
+# ── 8. Three new metrics: degeneracy, ξ_CP, ⊙ as fundamental descriptors ───
 
 print()
 print("=" * 70)
 print("§ 7  MORE FUNDAMENTAL DESCRIPTORS?")
-print("     Testing: Degeneracy (path multiplicity) · ξ_CP · Φ_c ordering")
+print("     Testing: Degeneracy (path multiplicity) · ξ_CP · ⊙ ordering")
 print("=" * 70)
 
 print("""
 Hypothesis: the three metrics form a CAUSAL HIERARCHY, not three
 independent consciousness correlates:
 
-   Φ_c  →  enables maximum path multiplicity (degeneracy)
+   ⊙  →  enables maximum path multiplicity (degeneracy)
          →  because at criticality G/D are degenerate (Axiom 5),
             meaning every region of imscription space is reachable from
             every other — the HotSwap graph becomes fully connected.
@@ -281,15 +281,15 @@ independent consciousness correlates:
                 but it's derivable from first principles here.
 """)
 
-# Empirical test: do Phi_ctyogh imscriptions have more HotSwap paths to each other?
+# Empirical test: do ⊙ imscriptions have more HotSwap paths to each other?
 phi_c_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "⊙_ctyogh"]
 phi_sub_axioms = [n for n in names if axiom_imscriptions[n].criticality_phase.value == "⊙_softsign"]
 
-print(f"  Axioms with Phi_ctyogh: {[short[n] for n in phi_c_axioms]}")
+print(f"  Axioms with ⊙: {[short[n] for n in phi_c_axioms]}")
 print(f"  Axioms with Phi_softsign: {[short[n] for n in phi_sub_axioms]}")
 print()
 
-# Count paths: Phi_ctyogh ↔ Phi_ctyogh vs Phi_softsign ↔ Phi_softsign
+# Count paths: ⊙ ↔ ⊙ vs Phi_softsign ↔ Phi_softsign
 cc_paths, ss_paths = 0, 0
 cc_found, ss_found = 0, 0
 for i, na in enumerate(phi_c_axioms):
@@ -306,14 +306,14 @@ for i, na in enumerate(phi_sub_axioms):
         if r.found:
             ss_found += 1
 
-print(f"  Phi_ctyogh ↔ Phi_ctyogh paths:   {cc_found}/{cc_paths} connected")
+print(f"  ⊙ ↔ ⊙ paths:   {cc_found}/{cc_paths} connected")
 print(f"  Phi_softsign ↔ Phi_softsign paths: {ss_found}/{ss_paths} connected")
 if cc_paths and ss_paths:
     cc_rate = cc_found / cc_paths
     ss_rate = ss_found / ss_paths if ss_paths else 0
-    print(f"  Connectivity ratio Phi_ctyogh/Phi_softsign: {cc_rate:.2f}/{ss_rate:.2f}")
+    print(f"  Connectivity ratio ⊙/Phi_softsign: {cc_rate:.2f}/{ss_rate:.2f}")
     if cc_rate > ss_rate:
-        print("  → CONFIRMED: Phi_ctyogh axioms are more mutually reachable (higher degeneracy)")
+        print("  → CONFIRMED: ⊙ axioms are more mutually reachable (higher degeneracy)")
     elif cc_rate == ss_rate:
         print("  → NEUTRAL: equal connectivity — more catalog entries needed to distinguish")
     else:
@@ -334,12 +334,12 @@ print(f"  Unanimous primitives ({len(unanimous)}/9): {list(unanimous.keys())}")
 print(f"  Conflicted (⊥) primitives ({len(conflicted)}/9): {conflicted}")
 if phi_val == "⊙_ctyogh":
     print("  ✅ REFLEXIVE CLOSURE: framework's axiom floor is critical.")
-    print("     Grammar applied to itself recovers Phi_ctyogh as its ground state.")
+    print("     Grammar applied to itself recovers ⊙ as its ground state.")
 elif phi_val == "⊙_softsign":
     print("  ⚠  Floor is Phi_softsign — criticality is not the axiom floor but an overlay.")
-    print("     Phi_ctyogh lives at Axiom 3 and 5 level, not at the ground primitive level.")
+    print("     ⊙ lives at Axiom 3 and 5 level, not at the ground primitive level.")
     print("     Interpretation: criticality is EMERGENT from the axiom set, not assumed.")
-    print("     → Correct result for an anti-primitive framework: Phi_ctyogh is derived, not assumed.")
+    print("     → Correct result for an anti-primitive framework: ⊙ is derived, not assumed.")
 else:
     print(f"  Φ floor = {phi_val}")
 

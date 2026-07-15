@@ -212,9 +212,9 @@ def analyze_criticality(
     # Generate per-imscription recommendation incorporating actual evidence
     _evidence_parts = []
     if indicators.get("explicit_critical"):
-        _evidence_parts.append("Φ_c explicitly assigned")
+        _evidence_parts.append("⊙ explicitly assigned")
     else:
-        _evidence_parts.append("no explicit Φ_c assignment")
+        _evidence_parts.append("no explicit ⊙ assignment")
     if indicators.get("granularity_ambiguous"):
         _evidence_parts.append(f"G=MESOSCALE (consistent with G/D ambiguity)")
     else:

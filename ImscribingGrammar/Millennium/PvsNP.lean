@@ -103,7 +103,7 @@ SAT is NP-complete (Cook 1971 / Levin 1973): SAT ∈ P ↔ P = NP.
 
 **SynthOmnicon structural note:**
 
-  PvsNP has primitive tuple D_∞ · judge · ado · age · on · Φ_c · Ω_0.
+  PvsNP has primitive tuple D_∞ · judge · ado · age · on · ⊙ · Ω_0.
   The on primitive is uniquely prominent: the problem is about *information bottlenecks*
   — whether the constraint that verification is polynomial also forces search to be polynomial.
   on = irreducible complexity threshold. The meta-barriers (relativization, natural proofs)

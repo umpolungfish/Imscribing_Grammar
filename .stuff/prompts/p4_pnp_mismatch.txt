@@ -14,7 +14,7 @@ primitiveMismatches is defined in ~/MillenniumAnkh/Primitives/Imscription.lean a
 P_class and NP_class are fully concrete Imscription.mk applications (lines 26-35 of
 PvsNP_Structural.lean). The 6 mismatches are: top (T_network vs T_odot), rel (R_super vs
 R_lr), kin (K_fast vs K_trap), gran (G_beth vs G_aleph), gram (Gamma_and vs Gamma_seq),
-crit (Phi_sub vs Phi_c). The 6 matches are: dim, pol, fid, chir, stoi, prot.
+crit (𐑢 vs ⊙). The 6 matches are: dim, pol, fid, chir, stoi, prot.
 
 The analogous theorem zfc_t_distance_to_ym_lifted in YM_ZFCt_Bridge.lean already proves:
   primitiveMismatches zfc_t zfc_t = 0 := by decide

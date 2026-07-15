@@ -10,7 +10,7 @@ CODE_TO_APPEND_2 = '''
 
 _AG_GRAMMAR = (
     "D_omega  T_bullseye  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -21,14 +21,14 @@ def algebraic_geometry_group():
     \b
     Structural type:
       D_omega T_bullseye R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
       D_omega            → imscriptive: all schemes encoded
       T_bullseye          → local rings ↔ global sections ↔ Spec
       R_downstep          → adjoint: pushforward ↔ pullback
-      Phi_ctyogh             → self-modeling: scheme ↔ category of sheaves
+      ⊙             → self-modeling: scheme ↔ category of sheaves
       Omega_dzlig           → integer winding: cohomological dimension
 
     \b
@@ -56,7 +56,7 @@ def algebraic_geometry_describe():
         "  K_schwa            → slow traversal through cohomology spectral sequences\\n"
         "  G_revapostrophe           → arbitrary dimension and base schemes\\n"
         "  Gamma_seq         → sequential composition of morphisms\\n"
-        "  Phi_ctyogh             → self-modeling: scheme ≅ category of sheaves\\n"
+        "  ⊙             → self-modeling: scheme ≅ category of sheaves\\n"
         "  H_turntwo                → two-step: cohomology of cohomology, spectral sequences\\n"
         "  Omega_dzlig           → integer winding: cohomological dimension\\n\\n"
         "[bold]Key methods:[/bold]\\n"
@@ -117,7 +117,7 @@ def algebraic_geometry_dimension(scheme: str):
 
 _QFT_GRAMMAR = (
     "D_omega  T_commatailz  R_subrightarrow  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  S_ltailm  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  S_ltailm  Omega_dzlig"
 )
 
 
@@ -128,14 +128,14 @@ def quantum_field_theory_group():
     \b
     Structural type:
       D_omega T_commatailz R_subrightarrow P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo S_ltailm Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo S_ltailm Omega_dzlig
 
     \b
     Key structural facts:
       D_omega            → imscriptive: all QFTs encoded
       T_commatailz        → box topology: theory⊗symmetry⊗spacetime
       R_subrightarrow           → supervenience: operators supervene on couplings
-      Phi_ctyogh             → self-modeling: fixed points, conformal manifolds
+      ⊙             → self-modeling: fixed points, conformal manifolds
       H_turntwo                → counterterm → renormalized → physical
 
     \b
@@ -163,7 +163,7 @@ def quantum_field_theory_describe():
         "  K_schwa            → slow RG flow (logarithmic scale separation)\\n"
         "  G_revapostrophe           → arbitrary spacetime dimensions, matter content\\n"
         "  Gamma_seq         → sequential RG flow: μ → μ'\\n"
-        "  Phi_ctyogh             → self-modeling: fixed points, conformal manifolds\\n"
+        "  ⊙             → self-modeling: fixed points, conformal manifolds\\n"
         "  H_turntwo                → two-step: counterterm → renormalized → physical\\n"
         "  Omega_dzlig           → integer winding: index, instanton number, Chern-Simons level\\n\\n"
         "[bold]Key methods:[/bold]\\n"

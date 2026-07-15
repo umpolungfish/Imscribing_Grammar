@@ -8,7 +8,7 @@ each with dual-layer encoding:
          (receptor binding topology, fidelity, kinetics, grammar)
 
   (ii) Brain-state imscription — the induced CNS constraint-propagation state
-         (whole-brain network primitives, Φ_c conditions, K-hierarchy disruption)
+         (whole-brain network primitives, ⊙ conditions, K-hierarchy disruption)
 
 The two layers are coupled: the molecular imscription is the coupling agent that
 translates molecular grammar into whole-brain network grammar shift. The brain-state
@@ -25,7 +25,7 @@ They are primitive-convergent: structurally diverse, topologically equivalent in
 
 **Receptor grammar divergence:**
   Serotonergic (5-HT2A dominant): LSD, DMT, 5-MeO-DMT, Psilocin, Mescaline
-  κ-Opioid (KOR): Salvinorin A — completely orthogonal grammar, same Φ_c destination
+  κ-Opioid (KOR): Salvinorin A — completely orthogonal grammar, same ⊙ destination
 
 Recorded 2026-03-20. Source: live conversation during development.
 """
@@ -120,7 +120,7 @@ def _lsd_molecular() -> Imscription:
     LSD as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_+-; F_ℏ; K_schwa; G_ℵ; Γ_∨(BROAD); ⊙; 1:1⟩
 
     Key assignments:
         T_nrleg — tetracyclic ergoline scaffold makes 4+ simultaneous contacts
@@ -134,7 +134,7 @@ def _lsd_molecular() -> Imscription:
             connectivity increase measured at effective doses.
         Γ_BROAD — promiscuous binding across 5-HT subtypes (2A, 1A, 6, 7), D2, D3,
             α2-adrenergic, H_toneletterstem; more off-target than any other psychedelic.
-        Φ_c — fMRI Lempel-Ziv complexity and BOLD entropy increase confirmed;
+        ⊙ — fMRI Lempel-Ziv complexity and BOLD entropy increase confirmed;
             neural criticality measures (avalanche size distribution power-law) positive.
     """
     return Imscription(
@@ -153,7 +153,7 @@ def _lsd_molecular() -> Imscription:
             "LSD (lysergic acid diethylamide) as receptor ligand. Tetracyclic ergoline "
             "scaffold with β-arrestin-biased 5-HT2A agonism. Extreme potency (25-75 μg), "
             "8-12 hr duration (K_schwa), broad receptor promiscuity (Γ_BROAD), confirmed "
-            "neural criticality induction (Φ_c). The reference entry for the serotonergic "
+            "neural criticality induction (⊙). The reference entry for the serotonergic "
             "K_schwa psychedelic class."
         ),
         metadata={
@@ -192,7 +192,7 @@ def _lsd_brain_state() -> Imscription:
     encodes the whole-brain constraint-propagation structure during peak LSD state.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_schwa; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_schwa; G_ℵ; Γ_∧(SELECTIVE); ⊙; n:m⟩
 
     Key assignments:
         D_temporal — the altered state has a temporal structure: onset, plateau,
@@ -206,7 +206,7 @@ def _lsd_brain_state() -> Imscription:
         K_schwa — the brain-state duration mirrors molecular K.
         Γ_AND(SELECTIVE) — frequency-specific coupling enhancement; gamma oscillations
             (40 Hz) are selectively amplified; the grammar is not broadband.
-        Ω_1 — the Φ_c state is sustained by the molecular K_teshlig but is not
+        Ω_1 — the ⊙ state is sustained by the molecular K_teshlig but is not
             intrinsically topologically protected; it will collapse when the molecule
             is cleared. (This is what §XIX T_braid engineering aims to make permanent.)
     """
@@ -225,7 +225,7 @@ def _lsd_brain_state() -> Imscription:
         description=(
             "Whole-brain constraint-propagation state induced by LSD. T_nrleg: "
             "default mode, executive, and sensory networks globally coupled. "
-            "K_schwa: state persists 8-12 hr (mirrors molecular K). Φ_c: confirmed "
+            "K_schwa: state persists 8-12 hr (mirrors molecular K). ⊙: confirmed "
             "by fMRI LZc/entropy increases. Γ_SELECTIVE: frequency-specific gamma "
             "enhancement, not broadband noise. Ω_1: sustained by molecular K_teshlig, "
             "not intrinsically topologically protected."
@@ -257,7 +257,7 @@ def _dmt_molecular() -> Imscription:
     DMT as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; 1:1⟩
 
     Key assignments:
         T_nrleg — bicyclic indole (benzene fused with pyrrole) core acts as a
@@ -293,7 +293,7 @@ def _dmt_molecular() -> Imscription:
             "DMT (N,N-dimethyltryptamine) as receptor ligand. Simple tryptamine with "
             "bicyclic indole core. Endogenous mammalian compound. K_frtailgamma: 5-15 min "
             "duration (smoked). Selective 5-HT2A + sigma-1 binding. Most rapid "
-            "G_local → G_ℵ transition of any psychedelic. Φ_c induction confirmed. "
+            "G_local → G_ℵ transition of any psychedelic. ⊙ induction confirmed. "
             "The endogenous reference for the serotonergic K_frtailgamma psychedelic class."
         ),
         metadata={
@@ -338,13 +338,13 @@ def _dmt_brain_state() -> Imscription:
     The CNS network state induced by DMT.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; n:m⟩
 
     The DMT brain-state is structurally identical in primitive terms to the LSD
-    brain-state, with one critical difference: K_frtailgamma. The same Φ_c destination
+    brain-state, with one critical difference: K_frtailgamma. The same ⊙ destination
     is reached in minutes rather than hours, and the window closes as fast.
-    This makes DMT the probe of choice for the Φ_c induction threshold question:
-    what is the minimum time required to achieve the G_ℵ / T_nrleg / Φ_c state?
+    This makes DMT the probe of choice for the ⊙ induction threshold question:
+    what is the minimum time required to achieve the G_ℵ / T_nrleg / ⊙ state?
     Empirically: approximately 3-5 minutes post-inhalation.
     """
     return Imscription(
@@ -361,8 +361,8 @@ def _dmt_brain_state() -> Imscription:
         stoichiometry="n:m",
         description=(
             "Whole-brain state induced by DMT. Primitive-identical to LSD brain-state "
-            "except K_frtailgamma (5-15 min total window vs 8-12 hr). Most rapid known Φ_c "
-            "induction. Demonstrates that the G_ℵ/T_nrleg/Φ_c state is achievable "
+            "except K_frtailgamma (5-15 min total window vs 8-12 hr). Most rapid known ⊙ "
+            "induction. Demonstrates that the G_ℵ/T_nrleg/⊙ state is achievable "
             "in <5 min — the minimum induction time constraint. EEG shows broadband "
             "power increase with selective gamma-band coherence amplification."
         ),
@@ -400,7 +400,7 @@ def _five_meo_dmt_molecular() -> Imscription:
     5-MeO-DMT as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; 1:1⟩
 
     Key assignments:
         **THE GRAMMAR SHIFT:** The 5-methoxy group (OMe at position 5 of the indole)
@@ -415,7 +415,7 @@ def _five_meo_dmt_molecular() -> Imscription:
         more content). 5-MeO-DMT produces "white-out" dissolution, absence of
         content, ego loss without replacement imagery (inhibitory grammar → less
         content, more structure-less space). The framework predicts: Γ_SELECTIVE
-        but shifted to an inhibitory partner grammar → same Φ_c destination via
+        but shifted to an inhibitory partner grammar → same ⊙ destination via
         a suppressive rather than excitatory path.
 
         Both are endogenous (5-MeO-DMT found in mammalian CSF and glands).
@@ -437,7 +437,7 @@ def _five_meo_dmt_molecular() -> Imscription:
             "The OMe group shifts receptor grammar from 5-HT2A (excitatory, DMT) "
             "toward 5-HT1A (inhibitory). Same K_frtailgamma profile as DMT but phenomenologically "
             "distinct: inhibitory Γ → dissolution/'white-out' vs DMT's excitatory "
-            "Γ → structured visual/narrative content. Endogenous. Φ_c via suppression "
+            "Γ → structured visual/narrative content. Endogenous. ⊙ via suppression "
             "rather than excitation — same destination, different grammar path."
         ),
         metadata={
@@ -461,7 +461,7 @@ def _five_meo_dmt_molecular() -> Imscription:
             "phenomenology_framework_mapping": (
                 "DMT: excitatory Γ → visual content, narrative, complex imagery. "
                 "5-MeO-DMT: inhibitory Γ → content dissolution, 'white-out', pure space. "
-                "Both reach Φ_c. The path to criticality diverges at the Γ operator."
+                "Both reach ⊙. The path to criticality diverges at the Γ operator."
             ),
             "nitrogen_present": True,
             "brain_state_imscription": "five_meo_dmt_brain_state",
@@ -475,7 +475,7 @@ def _five_meo_dmt_brain_state() -> Imscription:
     The CNS network state induced by 5-MeO-DMT.
 
     Formal tuple:
-        ⟨D_∞; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SELECTIVE); ⊙; n:m⟩
 
     **The key difference from DMT brain-state:** P_SELF_COMPLEMENTARY_SYM rather
     than PSEUDO. The "white-out" phenomenology corresponds to the system reaching
@@ -488,7 +488,7 @@ def _five_meo_dmt_brain_state() -> Imscription:
     suppression is total rather than partial.
 
     This is the closest known pharmacological approximation to the G/D degeneracy
-    condition (Φ_c at its limit) — the state where G_ℵ and D_∞ cannot be
+    condition (⊙ at its limit) — the state where G_ℵ and D_∞ cannot be
     independently assigned because scale and time structure have both collapsed.
     """
     return Imscription(
@@ -506,7 +506,7 @@ def _five_meo_dmt_brain_state() -> Imscription:
         description=(
             "Whole-brain state induced by 5-MeO-DMT. T_network_sym + P_subdoublearrow: "
             "directional asymmetry collapses ('white-out', content dissolution). "
-            "Inhibitory 5-HT1A dominant grammar → suppressive path to Φ_c. "
+            "Inhibitory 5-HT1A dominant grammar → suppressive path to ⊙. "
             "G/D degeneracy condition most fully approached of any known compound — "
             "the closest pharmacological approximation to scale-and-time collapse. "
             "Same K_frtailgamma profile as DMT brain-state."
@@ -547,7 +547,7 @@ def _psilocin_molecular() -> Imscription:
     Psilocin (active form of psilocybin) as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; 1:1⟩
+        ⟨D_∧; T_∈; R_nc; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; 1:1⟩
 
     Key assignments:
         F_MEDIUM (F_dh) — active at mg doses (10-40 mg psilocybin); significantly
@@ -582,7 +582,7 @@ def _psilocin_molecular() -> Imscription:
             "Psilocin (4-OH-DMT, active form of psilocybin) as receptor ligand. "
             "Most selective tryptamine for 5-HT2A. F_MEDIUM: active at mg doses. "
             "K_turnm: 4-6 hr duration, shaped by prodrug dephosphorylation kinetics. "
-            "Φ_c induction confirmed (fMRI, MEG); considered the most 'integrative' "
+            "⊙ induction confirmed (fMRI, MEG); considered the most 'integrative' "
             "psychedelic — sustained window without extremity of DMT or length of LSD."
         ),
         metadata={
@@ -621,9 +621,9 @@ def _psilocin_brain_state() -> Imscription:
     The CNS network state induced by psilocin/psilocybin.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; Γ_∧(SELECTIVE); ⊙; n:m⟩
 
-    F_MEDIUM at the brain-state level: the Φ_c state achieved by psilocin is
+    F_MEDIUM at the brain-state level: the ⊙ state achieved by psilocin is
     less extreme than LSD or DMT. fMRI studies show robust criticality measures
     but lower LZc increases than LSD at equivalent subjective intensity ratings.
     The 4-6 hr K_turnm window is the therapeutic sweet spot — long enough for
@@ -661,7 +661,7 @@ def _psilocin_brain_state() -> Imscription:
             "therapeutic_window_note": (
                 "K_turnm window aligns with memory reconsolidation timescale (~4 hr). "
                 "This is the framework basis for the clinical efficacy of psilocybin: "
-                "the Φ_c state coincides with a kinetically accessible window for "
+                "the ⊙ state coincides with a kinetically accessible window for "
                 "re-encoding long-term memory traces (K_schwa memory = K_teshlig → K_schwa "
                 "requires prior K_turnm unlocking). The drug opens the window; the therapy "
                 "determines what is written into it."
@@ -684,7 +684,7 @@ def _mescaline_molecular() -> Imscription:
     Mescaline as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_|; R_nc; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; 1:1⟩
+        ⟨D_∧; T_|; R_nc; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); ⊙; 1:1⟩
 
     Key assignments:
         T_LINEAR — phenethylamine scaffold: a phenyl ring with a flexible ethylamine
@@ -705,7 +705,7 @@ def _mescaline_molecular() -> Imscription:
         SCAFFOLD NOTE — mescaline is a phenethylamine, not a tryptamine. It shares
             5-HT2A affinity with the tryptamines but via a completely different
             molecular grammar. This is a Γ-convergent result: different scaffolds,
-            different molecular topologies, same Φ_c destination at the brain level.
+            different molecular topologies, same ⊙ destination at the brain level.
     """
     return Imscription(
         name="mescaline_molecular",
@@ -725,7 +725,7 @@ def _mescaline_molecular() -> Imscription:
             "F_MEDIUM: active at 200-500 mg (100-1000x less potent than LSD). "
             "K_schwa: 8-12 hr (methoxy groups protect against MAO deamination). "
             "Γ_BROAD: 5-HT2A + catecholamine/TAAR receptors. "
-            "Scaffold-diverse but Φ_c-convergent with tryptamines — different "
+            "Scaffold-diverse but ⊙-convergent with tryptamines — different "
             "molecular grammar, same brain-state destination."
         ),
         metadata={
@@ -739,8 +739,8 @@ def _mescaline_molecular() -> Imscription:
             "duration_hr": "8-12",
             "endogenous": False,
             "scaffold_convergence_note": (
-                "Mescaline demonstrates scaffold-independent convergence on Φ_c: "
-                "phenethylamine T_linear → same Φ_c as tryptamine T_nrleg. "
+                "Mescaline demonstrates scaffold-independent convergence on ⊙: "
+                "phenethylamine T_linear → same ⊙ as tryptamine T_nrleg. "
                 "The molecular topology differs fundamentally but the receptor-level "
                 "Γ overlap (5-HT2A) is sufficient to drive the same brain-state. "
                 "This is the framework's prediction for grammar-convergent systems: "
@@ -752,7 +752,7 @@ def _mescaline_molecular() -> Imscription:
                 "and San Pedro cactus. Oldest documented psychedelic use (~5700 BP). "
                 "The framework notes: the ancient grammar (ritual context, solar "
                 "symbolism, communal setting) provides the Γ structure within which "
-                "the molecular Γ operates. The compound opens the Φ_c window; "
+                "the molecular Γ operates. The compound opens the ⊙ window; "
                 "the cultural grammar determines what is encoded."
             ),
             "nitrogen_present": True,
@@ -767,15 +767,15 @@ def _mescaline_brain_state() -> Imscription:
     The CNS network state induced by mescaline.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; Γ_∨(BROAD); ⊙; n:m⟩
 
     Γ_BROAD is preserved into the brain-state: mescaline's broader receptor grammar
-    produces a qualitatively different Φ_c state compared to the tryptamines.
+    produces a qualitatively different ⊙ state compared to the tryptamines.
     The subjective phenomenology reflects this — mescaline is described as more
     visually rich, more 'earthy', more textured with complex geometry and colour,
     less dissociative than DMT or 5-MeO-DMT. In framework terms: Γ_BROAD → more
     constraint-propagation channels active simultaneously → richer content but
-    less extreme depth. The geometry of Φ_c is the same; the dimensionality of
+    less extreme depth. The geometry of ⊙ is the same; the dimensionality of
     the content within it is higher.
     """
     return Imscription(
@@ -795,7 +795,7 @@ def _mescaline_brain_state() -> Imscription:
             "level — broader receptor grammar → more simultaneous constraint-propagation "
             "channels → richer visual/sensory content, less dissociation than tryptamines. "
             "K_schwa: 8-12 hr. F_MEDIUM: less extreme depth than LSD. "
-            "Framework interpretation: broader Γ = wider content-space within Φ_c "
+            "Framework interpretation: broader Γ = wider content-space within ⊙ "
             "rather than deeper access to the G/D degeneracy condition."
         ),
         metadata={
@@ -809,7 +809,7 @@ def _mescaline_brain_state() -> Imscription:
             "gamma_broad_interpretation": (
                 "Γ_BROAD at the brain-state level means more receptor subtypes "
                 "simultaneously engaged, driving more concurrent constraint-propagation "
-                "pathways. This produces a 'wider' rather than 'deeper' Φ_c state — "
+                "pathways. This produces a 'wider' rather than 'deeper' ⊙ state — "
                 "more sensory channels open, but each individual channel less pushed "
                 "toward G/D degeneracy."
             ),
@@ -831,7 +831,7 @@ def _salvinorin_a_molecular() -> Imscription:
     Salvinorin A as a molecular receptor-binding imscription.
 
     Formal tuple:
-        ⟨D_∧; T_⋈; R_nc; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; 1:1⟩
+        ⟨D_∧; T_⋈; R_nc; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); ⊙; 1:1⟩
 
     **THE OUTLIER.** Salvinorin A is structurally and mechanistically orthogonal
     to every other psychedelic in this catalog:
@@ -860,9 +860,9 @@ def _salvinorin_a_molecular() -> Imscription:
        psychoactive compounds. Essentially no off-target binding at psychedelic doses.
        This is the most grammar-specific psychedelic.
 
-    The framework interpretation: Salvinorin A proves that Φ_c is accessible via
+    The framework interpretation: Salvinorin A proves that ⊙ is accessible via
     orthogonal receptor grammar. The KOR path to criticality is as valid as the
-    5-HT2A path. There is no single grammar that owns the Φ_c state.
+    5-HT2A path. There is no single grammar that owns the ⊙ state.
     """
     return Imscription(
         name="salvinorin_a_molecular",
@@ -883,7 +883,7 @@ def _salvinorin_a_molecular() -> Imscription:
             "T_cyclic_bowtie: bicyclic two-directional ester binding geometry. "
             "F_HIGH: Ki(KOR) ≈ 1.9 nM, extremely potent. "
             "K_frtailgamma: 3-8 min (smoked). Γ_SPECIFIC: essentially no off-target binding. "
-            "Proves Φ_c is grammar-independent — accessible via KOR pathway."
+            "Proves ⊙ is grammar-independent — accessible via KOR pathway."
         ),
         metadata={
             "domain_category": "psychedelic_molecular",
@@ -902,13 +902,13 @@ def _salvinorin_a_molecular() -> Imscription:
                 "binding (the 'pharmacophore nitrogen') is absent. KOR binding is "
                 "achieved through ester oxygen contacts — a completely different "
                 "recognition chemistry. "
-                "Framework: same Φ_c destination, completely different Γ path. "
-                "This is the strongest evidence that Φ_c is a topological attractor "
+                "Framework: same ⊙ destination, completely different Γ path. "
+                "This is the strongest evidence that ⊙ is a topological attractor "
                 "accessible from multiple grammar starting points."
             ),
             "kor_grammar_note": (
                 "KOR activation: inhibits dopamine release (vs 5-HT2A which increases "
-                "cortical glutamate). The Φ_c path via KOR is inhibitory/dopaminergic "
+                "cortical glutamate). The ⊙ path via KOR is inhibitory/dopaminergic "
                 "suppression rather than excitatory/glutamatergic amplification. "
                 "Different grammar operator, same critical topology."
             ),
@@ -916,7 +916,7 @@ def _salvinorin_a_molecular() -> Imscription:
                 "Active compound in Salvia divinorum, used by Mazatec shamans (Oaxaca). "
                 "Traditional use: divinatory states, regarded as qualitatively different "
                 "from peyote/mushroom experiences. Framework confirms: orthogonal Γ "
-                "produces orthogonal content character, despite same Φ_c topology."
+                "produces orthogonal content character, despite same ⊙ topology."
             ),
             "brain_state_imscription": "salvinorin_a_brain_state",
             "validation_tier": "primary",
@@ -929,9 +929,9 @@ def _salvinorin_a_brain_state() -> Imscription:
     The CNS network state induced by Salvinorin A.
 
     Formal tuple:
-        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); Φ_c; n:m⟩
+        ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; Γ_∧(SPECIFIC); ⊙; n:m⟩
 
-    The KOR-mediated brain state converges on the same T_nrleg / G_ℵ / Φ_c
+    The KOR-mediated brain state converges on the same T_nrleg / G_ℵ / ⊙
     primitive signature as the serotonergic states, but with Γ_SPECIFIC preserved
     into the brain-state. The phenomenology reflects this: the Salvinorin A state
     is qualitatively unlike serotonergic psychedelics — less visual geometry,
@@ -958,8 +958,8 @@ def _salvinorin_a_brain_state() -> Imscription:
             "single high-precision constraint-propagation channel (vs serotonergic "
             "multi-channel). Phenomenology: reality distortion, dimensional folding, "
             "'being pulled through' rather than 'expanding within'. K_frtailgamma: 3-8 min. "
-            "Same T_nrleg/G_ℵ/Φ_c as serotonergic states — grammar-convergent. "
-            "Demonstrates Φ_c is a topological attractor accessible from orthogonal grammar."
+            "Same T_nrleg/G_ℵ/⊙ as serotonergic states — grammar-convergent. "
+            "Demonstrates ⊙ is a topological attractor accessible from orthogonal grammar."
         ),
         metadata={
             "domain_category": "psychedelic_brain_state",
@@ -974,7 +974,7 @@ def _salvinorin_a_brain_state() -> Imscription:
                 "Γ_SPECIFIC at the brain-state level: KOR drives a single "
                 "high-precision dopamine-suppression pathway rather than the "
                 "simultaneous multi-receptor activation of serotonergic states. "
-                "This produces a 'narrower' but extremely deep Φ_c state — "
+                "This produces a 'narrower' but extremely deep ⊙ state — "
                 "one channel, maximal amplitude. Compare: mescaline (Γ_BROAD → "
                 "wide/shallow), LSD (Γ_BROAD → wide/deep), DMT (Γ_SELECTIVE → "
                 "moderate/very deep), salvinorin A (Γ_SPECIFIC → narrow/extremely deep)."

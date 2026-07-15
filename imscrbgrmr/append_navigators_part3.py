@@ -10,7 +10,7 @@ CODE_TO_APPEND_3 = '''
 
 _LANGLANDS_GRAMMAR = (
     "D_omega  T_openo  R_downstep  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_broad  Phi_ctyogh  H_invscripta  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_broad  ⊙  H_invscripta  n:m  Omega_dzlig"
 )
 
 
@@ -21,14 +21,14 @@ def langlands_program_group():
     \b
     Structural type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_broad Phi_ctyogh H_invscripta n:m Omega_dzlig
+      G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     \b
     Key structural facts:
       D_omega / T_openo → imscriptive: Galois reps ↔ automorphic forms
       R_downstep        → adjoint functoriality: base change, lift, descent
       Gamma_broad     → broad correspondence: global-to-global
-      Phi_ctyogh           → self-modeling: Langlands duality
+      ⊙           → self-modeling: Langlands duality
       H_invscripta           → eternal: infinite descent, infinite extensions
 
     \b
@@ -55,7 +55,7 @@ def langlands_program_describe():
         "  K_schwa          → slow exploration through moduli of automorphic reps\\n"
         "  G_revapostrophe         → arbitrary number fields, reductive groups\\n"
         "  Gamma_broad     → broad correspondence: not sequential, global-to-global\\n"
-        "  Phi_ctyogh           → self-modeling: Langlands duality as self-duality of L-group\\n"
+        "  ⊙           → self-modeling: Langlands duality as self-duality of L-group\\n"
         "  H_invscripta           → eternal: infinite descent, infinite extensions\\n"
         "  Omega_dzlig         → integer winding: motivic weight, conductor, L-function order\\n\\n"
         "[bold]Key methods:[/bold]\\n"
@@ -102,7 +102,7 @@ def langlands_l_function(automorphic_rep: str, s_value: float):
 
 _REPTHEORY_GRAMMAR = (
     "D_omega  T_commatailz  R_ctz  P_doublebarpipe  F_hardsign  K_schwa  "
-    "G_revapostrophe  Gamma_seq  Phi_ctyogh  H_turntwo  n:m  Omega_dzlig"
+    "G_revapostrophe  Gamma_seq  ⊙  H_turntwo  n:m  Omega_dzlig"
 )
 
 
@@ -113,13 +113,13 @@ def representation_theory_group():
     \b
     Structural type:
       D_omega T_commatailz R_ctz P_doublebarpipe F_hardsign K_schwa
-      G_revapostrophe Gamma_seq Phi_ctyogh H_turntwo n:m Omega_dzlig
+      G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
     Key structural facts:
       D_omega / T_commatailz → imscriptive: all groups, algebras, representations
       R_ctz                 → categorical: induction↔restriction, tensor product
-      Phi_ctyogh                 → self-modeling: group algebra = representation category
+      ⊙                 → self-modeling: group algebra = representation category
       H_turntwo                    → two-step: tensor with dual, Clebsch-Gordan
       Omega_dzlig               → integer winding: dimension, weight lattice index
 
@@ -147,7 +147,7 @@ def representation_theory_describe():
         "  K_schwa              → slow traversal through moduli of representations\\n"
         "  G_revapostrophe             → arbitrary groups: finite, Lie, algebraic, quantum\\n"
         "  Gamma_seq           → sequential: weight lattice, tensor decomposition\\n"
-        "  Phi_ctyogh               → self-modeling: group algebra = representation category\\n"
+        "  ⊙               → self-modeling: group algebra = representation category\\n"
         "  H_turntwo                  → two-step: representation ⊗ its dual, Clebsch-Gordan\\n"
         "  Omega_dzlig             → integer winding: dimension, weight lattice index\\n\\n"
         "[bold]Key methods:[/bold]\\n"

@@ -11,12 +11,12 @@ Phases encoded:
   Ice VII        — Symmetric phase: body-centred cubic, P_SC_SYM, >2 GPa
   Ice X          — Proton-symmetric: covalent O-H-O bonds, >60 GPa; closest
                    inorganic material to biological R_downstep via pressure alone
-  Ice XVIII      — Superionic: oxygen lattice + fluid protons; Φ_c (ionic SOC)
+  Ice XVIII      — Superionic: oxygen lattice + fluid protons; ⊙ (ionic SOC)
   Ice XXI        — Metastable tetragonal, room-temperature K_teshlig, >2 GPa;
                    discovered 2025 European XFEL; Dominant Triple carrier
   Ice QCP        — Quantum critical point superionic phase (T_network_sym);
                    theoretical maximum for K_teshlig system toward dissolution state
-  Liquid Water Ocean — Reference oceanic ocean: T_nrleg, Φ_sub, K_turnm baseline
+  Liquid Water Ocean — Reference oceanic ocean: T_nrleg, 𐑢, K_turnm baseline
 
 Key tensor results (IG.md §XXVI):
   ΔI ceiling from any K_teshlig ice to 5-MeO: 1.891 nats (D_supra/K_teshlig mismatches)
@@ -28,7 +28,7 @@ Design principles:
     dynamics; only superionic/QCP phases escape to K_turnm
   - T encodes proton network: cage (XXI), network_sym (QCP), network_mixed (XVIII),
     network_interpenetrating (VI/VII), network (X/liquid)
-  - Φ distinguishes ionic criticality: Φ_c only for phases with documented
+  - Φ distinguishes ionic criticality: ⊙ only for phases with documented
     SOC statistics or quantum critical fluctuations (XVIII, QCP)
   - R_COVALENT_DYNAMIC (Ice X, XVIII, QCP) marks the extreme-pressure
     proton-symmetrisation equivalent to R_downstep in biological systems
@@ -180,7 +180,7 @@ def _ice_x() -> Imscription:
     This is the closest inorganic material to biological R_downstep.
 
     Still K_teshlig (proton position is locked at the midpoint — symmetry does not
-    mean mobility). Still Φ_sub (no SOC statistics documented). P_SC_SYM.
+    mean mobility). Still 𐑢 (no SOC statistics documented). P_SC_SYM.
     """
     return Imscription(
         name="ice_x",
@@ -203,7 +203,7 @@ def _ice_x() -> Imscription:
                 "achieved by pressure alone, not protein engineering."
             ),
             "k_note": "K_teshlig: proton position locked at midpoint (not mobile)",
-            "phi_note": "Φ_sub: no documented SOC statistics",
+            "phi_note": "𐑢: no documented SOC statistics",
             "biological_analogue": "R_downstep in enzyme active sites",
             "catalog_version": "0.4.13",
         },
@@ -221,7 +221,7 @@ def _ice_xviii_superionic() -> Imscription:
     psychedelic catalog. K_turnm captures the intermediate: active proton transport
     at geological/planetary timescales.
 
-    Φ_c: SOC-like fluctuations in the proton fluid documented in laser-driven
+    ⊙: SOC-like fluctuations in the proton fluid documented in laser-driven
     shock experiments (Millot et al. 2018, Nature Physics).
 
     T_network_mixed: the O-lattice is NETWORK_INTERPENETRATING but the proton
@@ -248,7 +248,7 @@ def _ice_xviii_superionic() -> Imscription:
                 "than pharmacological K_frtailgamma. Planetary/geological timescale."
             ),
             "topology_note": "T_network_mixed: O-lattice interp + fluid H topology = mixed",
-            "phi_note": "Φ_c: SOC-like proton fluid dynamics (Millot et al. 2018, NatPhys)",
+            "phi_note": "⊙: SOC-like proton fluid dynamics (Millot et al. 2018, NatPhys)",
             "relevance": "Planetary interior analogue; Neptune/Uranus mantle candidate",
             "catalog_version": "0.4.13",
         },
@@ -326,7 +326,7 @@ def _ice_superionic_qcp() -> Imscription:
     symmetry — same topology as 5-MeO dissolution state. This T-match is what
     produces the maximum ΔI within the ice ladder (ΔI = 2.837 to 5-MeO).
 
-    Φ_c: quantum critical fluctuations are SOC-class by definition.
+    ⊙: quantum critical fluctuations are SOC-class by definition.
     """
     return Imscription(
         name="ice_superionic_qcp",
@@ -347,7 +347,7 @@ def _ice_superionic_qcp() -> Imscription:
             "status": "theoretical / extrapolated from Ice XVIII trajectory",
             "topology_note": "T_network_sym: scale-free QCP fluctuations, full rotational symmetry",
             "k_note": "K_turnm: same proton-fluid dynamics as Ice XVIII at critical boundary",
-            "phi_note": "Φ_c: quantum critical fluctuations are SOC-class by definition",
+            "phi_note": "⊙: quantum critical fluctuations are SOC-class by definition",
             "delta_i_to_5meo": 2.837,
             "delta_i_note": (
                 "Maximum achievable from any material K_teshlig system. "
@@ -366,7 +366,7 @@ def _liquid_water_ocean() -> Imscription:
 
     Bulk liquid water as a imscription: T_nrleg (hydrogen bond network, dynamic
     restructuring on ps timescale); K_turnm (proton hopping and H-bond reorganisation
-    at moderate rates); Φ_sub (no SOC statistics documented for bulk water).
+    at moderate rates); 𐑢 (no SOC statistics documented for bulk water).
     P_SC_PSEUDO: water molecules are self-complementary (donor/acceptor in every
     H-bond) but the liquid pseudo-symmetry is not ideal (angular disorder).
 
@@ -391,7 +391,7 @@ def _liquid_water_ocean() -> Imscription:
             "temperature_K": "275–300",
             "topology_note": "T_nrleg: H-bond network, ps-scale restructuring",
             "k_note": "K_turnm: proton hopping + H-bond reorganisation at moderate rates",
-            "phi_note": "Φ_sub: no SOC statistics for bulk water",
+            "phi_note": "𐑢: no SOC statistics for bulk water",
             "role": "Base reference state; ladder bottom before pressure-induced K_teshlig transition",
             "catalog_version": "0.4.13",
         },

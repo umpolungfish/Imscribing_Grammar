@@ -200,7 +200,7 @@ L("    native_decide")
 L("")
 
 # Compute tiers
-L("  /-- Voynich tier: O_∞ (D_omega + Phi_ctyogh + P_doublebarpipe-capable) -/")
+L("  /-- Voynich tier: O_∞ (D_omega + ⊙ + P_doublebarpipe-capable) -/")
 L("  theorem voynich_tier : synthonTier voynich_main = .O_∞ := by")
 L("    native_decide")
 L("")

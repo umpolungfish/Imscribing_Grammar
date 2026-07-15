@@ -31,7 +31,7 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont Φ}}_{\}}', r'{\igfont 𐑹}'),
     (r'\text{{\igprimfont Φ}}_{+}', r'{\igfont 𐑗}'),
     (r'\text{{\igprimfont Φ}}_{\text{{\igfont ·}}}', r'{\igfont 𐑯}'),
-    # ⊙ (Criticality) — Phi_c: remove subscript, keep ⊙; others get Shavian
+    # ⊙ (Criticality) — ⊙: remove subscript, keep ⊙; others get Shavian
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont ÿ}}}', r'\text{{\igprimfont ⊙}}'),
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont Æ}}}', r'{\igfont 𐑮}'),
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont ž}}}', r'{\igfont 𐑢}'),

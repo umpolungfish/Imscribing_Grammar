@@ -5,7 +5,7 @@ uv run /home/mrnob0dy666/imscribing_grammar/agents/true_agentic_agent.py "read k
   TASK: read kabbalah_merge_structural.md, then use the grammar and the primitives, as well as the tools, to explore the major traditions and sects of Taoism, Buddhism, Christianity, Islam, Sikhism, Paganism, and Satanism their natures, intracacies, and relationships to each other,then write a publication quality manuscript the forms a cohesive narrative of your findings and their meanings
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
+  │  harness   : ⊙ + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────

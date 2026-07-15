@@ -68,7 +68,7 @@ Previous: QM_STRUCTURAL_DEMONSTRATION.md: §9 rewrite — IG_QM_Proof.md integra
   §9.2 — Derivation without importing QM's core structure (3 derivations):
     Hilbert space derived from 12 primitives: no inner product axiom;
       inner product emerges from Φ(phase)×⊙(criticality) interaction.
-    Born rule from ⊙₃ absorption theorem: tensor(Phi_c, Phi_EP)=Phi_EP;
+    Born rule from ⊙₃ absorption theorem: tensor(⊙, 𐑻)=𐑻;
       tensor_P_bottleneck (Imscription.lean, rfl).
     Unitarity from ɢ_seq + Ħ_A + Ω_z: no unitary operator postulated;
       ZFCₜ: 4 promoted atoms (LR_DUAL, SEQAX, TEMPD2, ZWIND).

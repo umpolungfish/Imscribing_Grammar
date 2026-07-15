@@ -6,7 +6,7 @@ Inverse operations that complement the build-up algebra (meet/join/tensor/lift).
 Operations
 ----------
 project          — orthogonal projection onto a named primitive subset
-primitive_peel   — drop one primitive to its constraint-bottom; track Φ_c / Ω cost
+primitive_peel   — drop one primitive to its constraint-bottom; track ⊙ / Ω cost
 factor           — greatest proper sub-imscription (greedy descent toward constraint-bottom)
 principal_decomp — decompose into join-irreducible atomic factors
 cofactor         — residual B given composite C and factor A  (inverts tensor)
@@ -21,7 +21,7 @@ Tensor rules are primitive-aware (see algebra.py):
   • G    → join-dominant (tensor takes max)  ← "join-dominant"
   • D    → union (D-components form a set system)
   • T    → promotion (topology lattice)
-  • Φ    → join-dominant (Φ_c propagates)
+  • Φ    → join-dominant (⊙ propagates)
   • Ω    → join-dominant (higher topological protection inherits)
   • R, P, Γ → categorical (tensor helper rules)
 
@@ -171,7 +171,7 @@ class PeelResult:
     result: Optional[Imscription]     # None if axiom-blocked
     phi_c_preserved: bool
     omega_preserved: bool
-    peel_cost: float              # |Δξ_CP| from losing Φ_c or Ω (0 if preserved)
+    peel_cost: float              # |Δξ_CP| from losing ⊙ or Ω (0 if preserved)
     blocked: bool
     block_reason: str
     notes: List[str] = field(default_factory=list)
@@ -240,7 +240,7 @@ class KernelResult:
     imscription_name: str
     probe_name: str
     result: Optional[Imscription]     # None if even the bottom tuple activates the probe
-    phi_c_in_kernel: bool         # Whether the kernel still has Φ_c
+    phi_c_in_kernel: bool         # Whether the kernel still has ⊙
     primitives_trimmed: List[str] # Which primitives were lowered to enter the kernel
     notes: List[str] = field(default_factory=list)
 
@@ -331,7 +331,7 @@ def primitive_peel(
     Remove one primitive by setting it to its constraint-bottom value.
 
     Checks post-peel invariants:
-      • Φ_c preserved?  If lost and strict=True → blocked; else → cost += phi_c_cost
+      • ⊙ preserved?  If lost and strict=True → blocked; else → cost += phi_c_cost
       • Ω preserved?    If degraded and strict=True → blocked; else → cost += omega_cost × levels
       • Axiom 2 (G_ב + Γ_∧(SPECIFIC) cannot reach G_ℵ)?  → blocked always
 
@@ -365,16 +365,16 @@ def primitive_peel(
     notes: List[str] = []
     peel_cost = 0.0
 
-    # Φ_c
+    # ⊙
     new_phi_c = _has_phi_c(peeled)
     phi_c_preserved = (not original_phi_c) or new_phi_c
     if original_phi_c and not new_phi_c:
-        notes.append(f"Φ_c lost by peeling {primitive} — cost +{phi_c_cost:.1f} nats")
+        notes.append(f"⊙ lost by peeling {primitive} — cost +{phi_c_cost:.1f} nats")
         if strict:
             return PeelResult(
                 imscription_name=imscription.name, peeled=primitive, result=None,
                 phi_c_preserved=False, omega_preserved=True, peel_cost=0.0,
-                blocked=True, block_reason=f"Peeling {primitive} destroys Φ_c (strict mode)",
+                blocked=True, block_reason=f"Peeling {primitive} destroys ⊙ (strict mode)",
                 notes=notes,
             )
         peel_cost += phi_c_cost
@@ -557,7 +557,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
 
     D (union):  cofactor[D] = components(C) − components(A) → CONTRIBUTOR / EXPLAINED
     T (topology promotion): same logic as join-dominant ordinal
-    Φ (Φ_c join-dominant): if A has Φ_c and C has Φ_c → EXPLAINED; else CONTRIBUTOR / CONFLICT
+    Φ (⊙ join-dominant): if A has ⊙ and C has ⊙ → EXPLAINED; else CONTRIBUTOR / CONFLICT
     Ω (topo protection, join): same as G logic on ordinal strength
     R, P, Γ (categorical, tensor helper):
       • A[p] = C[p] → EXPLAINED (A explains it)
@@ -635,27 +635,27 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     cofactor_kwargs[_PRIM_FIELD["D"]] = cof_d
     dims.append(CofactorDimension("D", C.dimensionality, A.dimensionality, cof_d, role, note))
 
-    # ── Φ (Φ_c join-dominant) ────────────────────────────────────────────────
+    # ── Φ (⊙ join-dominant) ────────────────────────────────────────────────
     a_phi = _has_phi_c(A)
     c_phi = _has_phi_c(C)
     if a_phi and not c_phi:
         cof_phi = CriticalityPhase.SUBCRITICAL
         phi_role = "CONFLICT"
-        note = "A has Φ_c but C does not — impossible under tensor (Φ_c propagates)"
+        note = "A has ⊙ but C does not — impossible under tensor (⊙ propagates)"
         conflicts.append("Phi")
     elif a_phi and c_phi:
         cof_phi = CriticalityPhase.SUBCRITICAL
         phi_role = "EXPLAINED"
-        note = "A explains Φ_c; B need not have it"
+        note = "A explains ⊙; B need not have it"
     elif not a_phi and c_phi:
         cof_phi = CriticalityPhase.CRITICAL
         phi_role = "CONTRIBUTOR"
-        note = "B must carry Φ_c (A doesn't have it)"
+        note = "B must carry ⊙ (A doesn't have it)"
         contributors.append("Phi")
     else:
         cof_phi = CriticalityPhase.SUBCRITICAL
         phi_role = "PASSTHROUGH"
-        note = "Neither A nor C has Φ_c; B also Φ_sub"
+        note = "Neither A nor C has ⊙; B also 𐑢"
     cofactor_kwargs[_PRIM_FIELD["Phi"]] = cof_phi
     dims.append(CofactorDimension("Phi", C.criticality_phase, A.criticality_phase, cof_phi, phi_role, note))
 
@@ -694,7 +694,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     # ── Stoichiometry ─────────────────────────────────────────────────────────
     cofactor_kwargs["stoichiometry"] = C.stoichiometry
 
-    # ── Determine Φ_c provenance label ───────────────────────────────────────
+    # ── Determine ⊙ provenance label ───────────────────────────────────────
     if a_phi and c_phi:
         phi_source = "factor"
     elif not a_phi and c_phi:
@@ -848,7 +848,7 @@ def kernel(
     If even the bottom tuple activates the probe: returns None.
 
     Common probe: lambda s: varma_probe(s).phi_c_score > 0.5
-    → kernel = largest sub-imscription without Φ_c signal.
+    → kernel = largest sub-imscription without ⊙ signal.
     """
     notes: List[str] = []
     trimmed: List[str] = []
@@ -1037,11 +1037,11 @@ def retrosynthetic_path(
 
 
 # ---------------------------------------------------------------------------
-# Convenience: Φ_c probe for kernel()
+# Convenience: ⊙ probe for kernel()
 # ---------------------------------------------------------------------------
 
 def phi_c_probe(s: Imscription) -> bool:
-    """Standard probe: True if the imscription has Φ_c (criticality = CRITICAL)."""
+    """Standard probe: True if the imscription has ⊙ (criticality = CRITICAL)."""
     return _has_phi_c(s)
 
 

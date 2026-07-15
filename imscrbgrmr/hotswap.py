@@ -15,7 +15,7 @@ All enforcement criteria from the protocol spec are implemented:
 - |Δξ_CP| < 1.0 nat tolerance (+0.5 nat K-multiplicity penalty)
 - K accessible (FAST or MODERATE only)
 - Grounding status full or override before swap
-- Φ_c Varma probe requirement when degeneracy_strength ≥ 0.70
+- ⊙ Varma probe requirement when degeneracy_strength ≥ 0.70
 - Full axiom validation (Axioms 1, 4, 6, 7 are critical checks)
 
 See IG_HOTSWAP.md for specification.
@@ -197,7 +197,7 @@ class HotSwapEngine:
                                   introduces near the operative TS.  If > 2,
                                   the +0.5 nat K-multiplicity penalty applies.
             varma_score:          Pre-computed degeneracy_strength score.
-                                  If None and Φ_c check is needed, the engine
+                                  If None and ⊙ check is needed, the engine
                                   will attempt to compute it.
 
         Returns:
@@ -254,7 +254,7 @@ class HotSwapEngine:
                     f"(Δξ = {delta_xi:.3f} + penalty = {k_penalty:.1f})."
                 )
 
-        # Step 5 — Varma / Φ_c check
+        # Step 5 — Varma / ⊙ check
         varma_required = False
         if varma_score is None:
             varma_score = self._try_varma_score(candidate)
@@ -263,7 +263,7 @@ class HotSwapEngine:
             warnings.append(
                 f"Candidate degeneracy_strength = {varma_score:.3f} ≥ "
                 f"{VARMA_PHI_C_THRESHOLD} — Varma QXY probe required before swap. "
-                "Confirmed Φ_c is swap-tolerant per Axiom 5; unconfirmed Φ_c is not."
+                "Confirmed ⊙ is swap-tolerant per Axiom 5; unconfirmed ⊙ is not."
             )
 
         # Step 6 — kinetic accessibility warning

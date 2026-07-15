@@ -81,11 +81,11 @@ Tate-Shafarevich group Ш(E/ℚ), Tamagawa numbers c_v, and torsion:
 
 **SynthOmnicon structural note:**
 
-  BSD has primitive tuple if' · mime · they · Γ_and · Φ_c · Ω_Z.
+  BSD has primitive tuple if' · mime · they · Γ_and · ⊙ · Ω_Z.
   · if': the modularity theorem makes E/ℚ ↔ modular form a holographic duality.
     Boundary-to-bulk: the L-function on the analytic side corresponds to the rank on the algebraic side.
   · mime: the functional equation of L(E,s) (symmetry s ↔ 2-s) is a bowtie structure.
-  · Φ_c: the rank is a charge-carrier — it counts the "free" part of E(ℚ).
+  · ⊙: the rank is a charge-carrier — it counts the "free" part of E(ℚ).
   · Ω_Z: the Tate-Shafarevich group is the topological obstruction; |Ш| is the winding number.
   · they: BSD is a statement about the interplay of algebraic and analytic structure
     (unlike RH which is purely analytic).

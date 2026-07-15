@@ -103,7 +103,7 @@ def demo1_certification() -> None:
         "A certification protocol is a .syn script that acts as a typed gate. "
         "Each assert is a proof obligation. The pipeline only completes if every "
         "obligation is discharged in order: Axiom 6 grounding, reset class, "
-        "Φ_c candidacy threshold, high-confidence threshold. "
+        "⊙ candidacy threshold, high-confidence threshold. "
         "If any fails, the certification is denied and the step trace explains why."
     )
     run_script(
@@ -111,7 +111,7 @@ def demo1_certification() -> None:
         label="01_certify_soai.syn",
         description=(
             "Four sequential proof obligations on the Soai pyrimidyl autocatalytic "
-            "cycle. Axiom 6 grounding, continuous reset type, Φ_c > 0.50, Φ_c > 0.80."
+            "cycle. Axiom 6 grounding, continuous reset type, ⊙ > 0.50, ⊙ > 0.80."
         ),
     )
 
@@ -125,7 +125,7 @@ def demo2_type_gate() -> None:
         "The proline aldol cycle is a legitimate D_∞ system — fully grounded, "
         "Axiom 6 satisfied — but it has a DISCRETE reset, not a continuous one. "
         "The certification protocol for continuous-dissipative systems correctly "
-        "blocks it at step 2 without running the Φ_c probe at all. "
+        "blocks it at step 2 without running the ⊙ probe at all. "
         "This is not an error: it is a type-level distinction. Proline belongs "
         "in a different protocol (discrete-reset certification)."
     )

@@ -1919,8 +1919,8 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
                                 title="Agent Result"))
             stats = result.scan_stats
             console.print(f"  Scanned          : {stats.get('scanned', '?')} entries")
-            console.print(f"  Already Φ_c      : {len(result.already_critical)}")
-            console.print(f"  Near-Φ_c (approaching): {len(result.candidates)}")
+            console.print(f"  Already ⊙      : {len(result.already_critical)}")
+            console.print(f"  Near-⊙ (approaching): {len(result.candidates)}")
             for cand in result.candidates[:5]:
                 console.print(f"  {cand.name:<35} score={cand.degeneracy_score:.3f}  [{cand.tier}]")
 
@@ -2192,7 +2192,7 @@ def list_agents():
         {
             "name": "CriticalityHuntingAgent",
             "group": "Protocol",
-            "description": "Catalog-wide Φ_c candidacy scan with perturbation pathfinding",
+            "description": "Catalog-wide ⊙ candidacy scan with perturbation pathfinding",
             "capabilities": [
                 "degeneracy_strength_scan",
                 "near_phi_c_identification",
@@ -2414,11 +2414,11 @@ def discover(provider, model, cycles, duration, confidence, focus, output):
     help="Minimum confidence threshold for candidates (default: 0.5)",
 )
 def criticality(imscription_name: Optional[str], show_all: bool, min_confidence: float):
-    """Detect imscriptions at the critical point Φ_c (Lawvere self-reference condition).
+    """Detect imscriptions at the critical point ⊙ (Lawvere self-reference condition).
 
     A imscription is critical when its internal hom space A^A admits a point-surjective
     map φ: A → A^A (Stage 4, L3). This is a necessary condition for self-modeling.
-    Use --all to scan the catalog for Φ_c candidates.
+    Use --all to scan the catalog for ⊙ candidates.
     """
     try:
         from imscrbgrmr.criticality import analyze_criticality
@@ -2563,7 +2563,7 @@ def criticality(imscription_name: Optional[str], show_all: bool, min_confidence:
 def validate(imscription_name: str, output: Optional[str]):
     """Validate a imscription's tuple against primitive constraint rules.
 
-    Reports: notation, Φ_c status, any active predictive rules, and
+    Reports: notation, ⊙ status, any active predictive rules, and
     optional JSON output. Full axiom validation against the current
     4-stage induction system (L1–L6 / A1–A4 / I1–I5) is pending.
     """
@@ -2584,8 +2584,8 @@ def validate(imscription_name: str, output: Optional[str]):
             border_style="cyan",
         ))
 
-        # Φ_c status
-        phi_label = "Φ_c (critical)" if report['is_critical'] else "sub/supercritical"
+        # ⊙ status
+        phi_label = "⊙ (critical)" if report['is_critical'] else "sub/supercritical"
         phi_color = "green" if report['is_critical'] else "yellow"
         console.print(f"\n[bold]Criticality:[/bold] [{phi_color}]{phi_label}[/{phi_color}]")
 
@@ -2631,7 +2631,7 @@ def validate(imscription_name: str, output: Optional[str]):
     "--critical-only",
     is_flag=True,
     default=False,
-    help="Only return matches with Φ_c score > 0.5 (Phase 4.1).",
+    help="Only return matches with ⊙ score > 0.5 (Phase 4.1).",
 )
 @click.option(
     "--stoichiometry-aware",
@@ -2653,7 +2653,7 @@ def isomorphs(
     domain — physical, mathematical, mythological, linguistic, or social.
 
     Use --exclude-flagged to suppress catalog entries marked as contaminated by audit.
-    Use --critical-only to filter to Φ_c candidates only (score > 0.5).
+    Use --critical-only to filter to ⊙ candidates only (score > 0.5).
     Use --stoichiometry-aware to enforce strict S weight in similarity scoring.
     """
     try:
@@ -2689,7 +2689,7 @@ def isomorphs(
                     f"from candidate pool)[/dim]"
                 )
 
-        # --critical-only: pre-filter candidates to Φ_c prospects
+        # --critical-only: pre-filter candidates to ⊙ prospects
         if critical_only:
             pre_count = len(candidates)
             filtered = []
@@ -2700,7 +2700,7 @@ def isomorphs(
             candidates = filtered
             console.print(
                 f"[dim](--critical-only: {len(candidates)} of {pre_count} candidates "
-                f"have Φ_c score > 0.5)[/dim]"
+                f"have ⊙ score > 0.5)[/dim]"
             )
 
         results = detector.find_analogies(imscription, candidates, min_similarity)
@@ -3229,11 +3229,11 @@ def reconstruct(history_dir: str, dry_run: bool, limit: int):
 @click.option("--output", "-o", type=click.Path(), default=None,
               help="Save full report to JSON file.")
 @click.option("--batch", is_flag=True, default=False,
-              help="Run on all catalog entries with Φ_c or flagged T⋈/D_∞. Produces ranked report.")
+              help="Run on all catalog entries with ⊙ or flagged T⋈/D_∞. Produces ranked report.")
 @click.option("--degeneracy-type", "show_degeneracy_type", is_flag=True, default=False,
-              help='Print the Φ_c scaling classification: "logarithmic", "power-law", "collapse", or "none".')
+              help='Print the ⊙ scaling classification: "logarithmic", "power-law", "collapse", or "none".')
 @click.option("--export-candidates", "export_candidates", type=click.Path(), default=None,
-              help="Write top-20 Φ_c prospects (score > 0.7) as JSON to this path.")
+              help="Write top-20 ⊙ prospects (score > 0.7) as JSON to this path.")
 def criticality_probe(
     entry_name: Optional[str],
     xi_r: Optional[float],
@@ -3244,19 +3244,19 @@ def criticality_probe(
     export_candidates: Optional[str],
 ):
     """
-    Probe a catalog entry for Φ_c candidacy using Varma QXY scaling.
+    Probe a catalog entry for ⊙ candidacy using Varma QXY scaling.
 
     Performs four checks:
 
     \b
-    1. Φ_c likelihood score (0–1) from primitive pattern analysis
+    1. ⊙ likelihood score (0–1) from primitive pattern analysis
     2. Varma QXY scaling: does ξ_r ≈ ln ξ_τ? (requires --xi-r / --xi-tau)
     3. Recursive tuple potential: can this tuple propagate self-similarly?
     4. Scaling classification: logarithmic / power-law / collapse / none
 
     \b
     Use --batch to scan all relevant catalog entries and produce a ranked report.
-    Use --export-candidates FILE to save top-20 Φ_c prospects as JSON.
+    Use --export-candidates FILE to save top-20 ⊙ prospects as JSON.
 
     \b
     Examples:
@@ -3271,14 +3271,14 @@ def criticality_probe(
     from imscrbgrmr.criticality import analyze_criticality
 
     # -----------------------------------------------------------------------
-    # BATCH mode — scan all catalog entries with Φ_c or flagged T⋈/D_∞
+    # BATCH mode — scan all catalog entries with ⊙ or flagged T⋈/D_∞
     # -----------------------------------------------------------------------
     if batch:
         candidates = list(global_catalog._imscriptions.values())
         batch_targets = candidates
         console.print(Panel.fit(
             f"[bold]Criticality Probe — Batch Mode[/bold]\n"
-            f"Scanning {len(batch_targets)} entries (Φ_c / T⋈+D_∞)",
+            f"Scanning {len(batch_targets)} entries (⊙ / T⋈+D_∞)",
             border_style="cyan",
         ))
 
@@ -3300,10 +3300,10 @@ def criticality_probe(
         # Sort by score descending
         batch_results.sort(key=lambda x: -x["phi_c_score"])
 
-        table = Table(title="Φ_c Batch Report — Ranked by Candidacy Score")
+        table = Table(title="⊙ Batch Report — Ranked by Candidacy Score")
         table.add_column("Rank", style="dim")
         table.add_column("Imscription", style="cyan", max_width=50)
-        table.add_column("Φ_c Score", justify="right")
+        table.add_column("⊙ Score", justify="right")
         table.add_column("Candidacy")
         table.add_column("Degeneracy", justify="center")
         table.add_column("Universality")
@@ -3327,7 +3327,7 @@ def criticality_probe(
             top20 = [r for r in batch_results if r["phi_c_score"] > 0.7][:20]
             with open(export_candidates, "w") as f:
                 json.dump(top20, f, indent=2)
-            console.print(f"[green]✓ Top-{len(top20)} Φ_c candidates (score > 0.7) saved to {export_candidates}[/green]")
+            console.print(f"[green]✓ Top-{len(top20)} ⊙ candidates (score > 0.7) saved to {export_candidates}[/green]")
 
         if output:
             with open(output, "w") as f:
@@ -3388,7 +3388,7 @@ def criticality_probe(
     else:
         console.print("   [dim]No ξ_r/ξ_τ data — provide --xi-r and --xi-tau for scaling check.[/dim]")
 
-    console.print(f"   Φ_c scaling type: {varma_report.gd_degeneracy_type}")
+    console.print(f"   ⊙ scaling type: {varma_report.gd_degeneracy_type}")
     console.print(f"   Universality class:  {varma_report.universality_class or 'undetermined'}")
 
     # --- Check 3: Recursive tuple potential ---
@@ -3397,14 +3397,14 @@ def criticality_probe(
     is_imscriptive_d = imscription.dimensionality is not None and imscription.dimensionality.value == "Ð_omega"
 
     # Recursive potential: tuple can describe behavior at multiple scales without change
-    # → requires Φ_c (self-modeling loop) OR D_⊙ (imscriptive, boundary encodes bulk)
+    # → requires ⊙ (self-modeling loop) OR D_⊙ (imscriptive, boundary encodes bulk)
     recursive_signals = []
     if is_imscriptive_d:
         recursive_signals.append(f"Imscriptive D (D_⊙)")
     if has_phi_c:
-        recursive_signals.append("Φ_c explicitly set")
+        recursive_signals.append("⊙ explicitly set")
     if varma_report.gd_degenerate:
-        recursive_signals.append(f"Φ_c scaling pattern ({varma_report.gd_degeneracy_type})")
+        recursive_signals.append(f"⊙ scaling pattern ({varma_report.gd_degeneracy_type})")
 
     if recursive_signals:
         console.print(f"   [green]✓ Recursive potential signals:[/green]")
@@ -3416,8 +3416,8 @@ def criticality_probe(
     else:
         console.print("   [dim]No recursive potential signals. Tuple is scale-local.[/dim]")
 
-    # --- Check 4: Φ_c likelihood score ---
-    console.print(f"\n[bold]4. Φ_c Candidacy Score:[/bold]")
+    # --- Check 4: ⊙ likelihood score ---
+    console.print(f"\n[bold]4. ⊙ Candidacy Score:[/bold]")
     score = varma_report.score
     score_color = "green" if score >= 0.70 else ("yellow" if score >= 0.40 else "red")
     console.print(f"   Score: [{score_color}]{score:.3f}[/{score_color}] → {varma_report._candidacy_label()}")
@@ -3987,7 +3987,7 @@ def trajectory_validate(steps: str, reset: Optional[str], format: str):
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def trajectory_criticality(steps: str, varma_probe: bool, format: str):
     """
-    Compute G/D degeneracy score per step to determine Φ_c candidacy.
+    Compute G/D degeneracy score per step to determine ⊙ candidacy.
 
     \b
     Example:
@@ -4014,7 +4014,7 @@ def trajectory_criticality(steps: str, varma_probe: bool, format: str):
         table.add_column("Step", style="cyan")
         table.add_column("Degeneracy Score", style="magenta")
         table.add_column("Tier", style="yellow")
-        table.add_column("Φ_c Candidate", style="green")
+        table.add_column("⊙ Candidate", style="green")
         for r in crit_results:
             phi_c = "[green]YES[/green]" if r.is_phi_c_candidate else "no"
             table.add_row(r.step_name, f"{r.degeneracy_score:.3f}", r.tier, phi_c)
@@ -4261,7 +4261,7 @@ def hotswap(
 
     Enforces all criteria from IG_HOTSWAP.md:
     D/T/S exact match, F_new ≥ F_old, |Δξ_CP| < 1.0 nat, K accessible,
-    grounding status full/override, and Varma probe when Φ_c is suspected.
+    grounding status full/override, and Varma probe when ⊙ is suspected.
 
     \b
     Examples:
@@ -4685,7 +4685,7 @@ def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
       F  →  min (bottleneck fidelity)
       K  →  min (kinetic trap propagates)
       G  →  max (coarsest scale dominates)
-      Φ  →  Φ_c propagates (criticality is join-dominant)
+      Φ  →  ⊙ propagates (criticality is join-dominant)
       ξ  →  ξ₁ + ξ₂ − λ·I(s₁;s₂)   (λ tunable; I from primitive overlap)
     """
     from .algebra import tensor as _tensor
@@ -4774,7 +4774,7 @@ def lift(imscription_name: str, target: str, strength: float, format: str):
     Targets:
       temporal  — D_∧/D_△ → D_∞  (static recognition → catalytic cycle)
       spatial   — D_∧     → D_△  (molecular → supramolecular spatial array)
-      critical  — Φ_sub   → Φ_c  (inject criticality; requires F ≥ F_ℏ)
+      critical  — 𐑢   → ⊙  (inject criticality; requires F ≥ F_ℏ)
       molecular — any     → D_∧  (forgetful projection, loses spatial/temporal)
 
     The lift is structural only.  The resulting imscription requires Axiom grounding
@@ -5294,7 +5294,7 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
     if result.notation:
         console.print(f"[cyan]Notation:[/cyan] {result.notation}")
     if result.phi_c_score is not None:
-        console.print(f"[cyan]Φ_c score:[/cyan] {result.phi_c_score:.3f}  ({result.phi_c_label})")
+        console.print(f"[cyan]⊙ score:[/cyan] {result.phi_c_score:.3f}  ({result.phi_c_label})")
     if result.distance is not None:
         console.print(f"[cyan]Distance:[/cyan] {result.distance:.3f}")
     if result.path:
@@ -5323,7 +5323,7 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
 @click.argument("goal")
 @click.option("--target",          "-t",  default=None,  help="Catalog entry to path toward (optional).")
 @click.option("--phi-c-min",              default=0.65,  type=float, show_default=True,
-              help="Minimum Φ_c score for convergence.")
+              help="Minimum ⊙ score for convergence.")
 @click.option("--xi-cp-max",              default=14.0,  type=float, show_default=True,
               help="Maximum ξ_CP (nats) for convergence.")
 @click.option("--max-iterations", "-i",  default=8,     type=int,   show_default=True,
@@ -5341,11 +5341,11 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
     Autonomous relational design agent — LLM-in-the-loop structural optimization.
 
     Proposes 12-primitive encodings for any system type, validates them against
-    the axiom set, probes Φ_c candidacy and ξ_CP efficiency, finds cross-domain
+    the axiom set, probes ⊙ candidacy and ξ_CP efficiency, finds cross-domain
     analogs, and self-corrects until the convergence criteria are met.
 
     \\b
-    Convergence: Φ_c score ≥ --phi-c-min AND ξ_CP ≤ --xi-cp-max.
+    Convergence: ⊙ score ≥ --phi-c-min AND ξ_CP ≤ --xi-cp-max.
     With --target, a HotSwap path to that catalog entry is also required.
 
     \\b
@@ -5376,7 +5376,7 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
     console.print(Panel(
         f"[bold cyan]Imscription Design Agent[/bold cyan]\n"
         f"Goal: {goal}\n"
-        f"Criteria: Φ_c ≥ {phi_c_min}  ·  ξ_CP ≤ {xi_cp_max} nats"
+        f"Criteria: ⊙ ≥ {phi_c_min}  ·  ξ_CP ≤ {xi_cp_max} nats"
         + (f"  ·  path→{target}" if target else ""),
         border_style="cyan",
     ))
@@ -5397,7 +5397,7 @@ def design_cmd(goal, target, phi_c_min, xi_cp_max, max_iterations, provider, mod
     table = Table(title="Design History", show_header=True, header_style="bold magenta")
     table.add_column("iter", style="dim", width=4)
     table.add_column("axioms", width=6)
-    table.add_column("Φ_c", width=6)
+    table.add_column("⊙", width=6)
     table.add_column("ξ_CP", width=7)
     table.add_column("status")
 
@@ -5507,7 +5507,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
 
     \b
     Encodes the transition as a Kleisli arrow in the HotSwap monad:
-      • 2nd order — direct HotSwap path through Φ_c intermediates
+      • 2nd order — direct HotSwap path through ⊙ intermediates
       • 1st order — no path (D/T or F structural conflict)
 
     Reports forward/reverse costs and irreversibility asymmetry.
@@ -5559,7 +5559,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
                   f"({'reversible' if morph.is_reversible else 'irreversible'})")
 
     if morph.phi_c_intermediates:
-        console.print(f"  Φ_c intermediates: "
+        console.print(f"  ⊙ intermediates: "
                       f"[magenta]{', '.join(morph.phi_c_intermediates)}[/magenta]")
 
     if morph.is_quantum_critical:
@@ -5569,7 +5569,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
         for h in qcp.universality_hints:
             console.print(f"     {h}")
 
-    # Morphism-level Φ_c score
+    # Morphism-level ⊙ score
     from imscrbgrmr.varma_probe import score_transition_phi_c
     phi_report = score_transition_phi_c(morph)
     phi_label = phi_report._candidacy_label()
@@ -5579,7 +5579,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
         else "red"
     )
     console.print(
-        f"\n  [bold]Morphism Φ_c score:[/bold]  "
+        f"\n  [bold]Morphism ⊙ score:[/bold]  "
         f"[{phi_colour}]{phi_report.score:.3f}/1.000  —  {phi_label}[/{phi_colour}]"
     )
     if phi_report.universality_class:
@@ -5587,7 +5587,7 @@ def transition_cmd(src_name: str, dst_name: str, max_hops: int, xi_tolerance: fl
     if phi_report.gd_degeneracy_type == "morphism_qcp":
         console.print(
             "  [dim](Exact morphism-level predicate — "
-            "path-through-Φ_c is more reliable than Factor 8 endpoint heuristic)[/dim]"
+            "path-through-⊙ is more reliable than Factor 8 endpoint heuristic)[/dim]"
         )
     if phi_report.flags:
         for f in phi_report.flags:
@@ -5664,13 +5664,13 @@ def project(imscription: str, primitives: tuple, format: str):
 @click.argument("imscription")
 @click.argument("primitive")
 @click.option("--strict", is_flag=True, default=False,
-              help="Block peel if it would destroy Phi_ctyogh (phase protection).")
+              help="Block peel if it would destroy ⊙ (phase protection).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def peel(imscription: str, primitive: str, strict: bool, format: str):
     """Descend one tier on a single primitive (peel one layer off).
 
     Returns the resulting imscription and any peel cost (in nats).
-    Use --strict to block the peel if it would destroy a critical phase (Phi_ctyogh).
+    Use --strict to block the peel if it would destroy a critical phase (⊙).
 
     \b
     Example:
@@ -5916,7 +5916,7 @@ def _frobenius_classify(s) -> str:
     p     = s.polarity.value
     omega = s.protection.value
     d     = s.dimensionality.value
-    # Phi_closerevepsilon has identical tier distribution to Phi_ctyogh (real vs complex is inner-crystal only)
+    # Phi_closerevepsilon has identical tier distribution to ⊙ (real vs complex is inner-crystal only)
     at_c  = phi in ("⊙_ctyogh", "⊙_closerevepsilon")
     # R1: exact proved Z₂ symmetry at criticality → special Frobenius
     if at_c and p == "Φ_doublebarpipe":
@@ -5955,11 +5955,11 @@ def frobenius_tier_cmd(imscription: str, format: str):
 
     \b
     Rules (applied in priority order):
-      R1: Phi_ctyogh + P_doublebarpipe            → O_∞  (special Frobenius, exact Z₂ symmetry)
+      R1: ⊙ + P_doublebarpipe            → O_∞  (special Frobenius, exact Z₂ symmetry)
       R2: Phi_softsign or Phi_upstep          → O₀   (no self-referential loop)
-      R3: Phi_ctyogh + Omega_closeepsilon             → O₁   (critical, unprotected)
-      R4: Phi_ctyogh + Omega≠0 + D_bounded → O₂   (critical, protected, bounded)
-      R5: Phi_ctyogh + Omega≠0 + D_invomega   → O₂†  (critical, protected, unbounded)
+      R3: ⊙ + Omega_closeepsilon             → O₁   (critical, unprotected)
+      R4: ⊙ + Omega≠0 + D_bounded → O₂   (critical, protected, bounded)
+      R5: ⊙ + Omega≠0 + D_invomega   → O₂†  (critical, protected, unbounded)
 
     \b
     Examples:

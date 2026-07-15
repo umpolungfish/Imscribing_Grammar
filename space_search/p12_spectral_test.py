@@ -6,7 +6,7 @@ Searches for the ln(10) ≈ 2.303 frequency ratio in:
   - Pulsar glitch data (ATNF glitch catalog)
   - Magnetar burst data
 
-Rationale (P-12): Any system maintaining Φ_c pays the structural criticality tax
+Rationale (P-12): Any system maintaining ⊙ pays the structural criticality tax
 of +2.303 nat = ln(10). This appears as a spectral fingerprint in the energy/frequency
 ratios of transient events near DM-accumulation nodes (P-74).
 

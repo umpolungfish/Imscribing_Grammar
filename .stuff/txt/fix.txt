@@ -676,7 +676,7 @@ warning: Imscribing/Millennium/WorldReligions.lean:266:104: This line exceeds th
 Note: This linter can be disabled with `set_option linter.style.longLine false`
 warning: Imscribing/Millennium/WorldReligions.lean:266:37: '/-- Sufi fana-baqa (annihilation-in-God / subsistence-through-God).
     Tuple: <D_odot; T_odot; R_dagger; P_pm_sym; F_hbar; K_slow; G_aleph;
-            Gamma_broad; Phi_c; H_inf; n:n; Omega_Z2>
+            Gamma_broad; ⊙; H_inf; n:n; Omega_Z2>
     Near-identity with Buddhism: d = 1.0, differing only on R (R_dagger vs R_lr). -/
 def Sufi_fana_baqa : RelTuple where
   D := .odot; T := .odot; R := .dagger; P := .pm_sym; F := .hbar

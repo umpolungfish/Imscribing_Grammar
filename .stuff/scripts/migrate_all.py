@@ -73,18 +73,18 @@ KEY_PAIRS = [
 
 # Comprehensive old → new value pairs (longest first to avoid partial matches)
 VALUE_PAIRS = [
-    ("Phi_c_complex",       "𐑮"),
+    ("𐑮",       "𐑮"),
     ("Phi_closerevepsilon", "𐑮"),
     ("⊙_closerevepsilon",  "𐑮"),
     ("Phi_revepsilon",      "𐑻"),
     ("Phi_upstep",          "𐑣"),
     ("Phi_softsign",        "𐑢"),
-    ("Phi_ctyogh",          "⊙"),
+    ("⊙",          "⊙"),
     ("⊙_ctyogh",           "⊙"),
     ("Phi_super",           "𐑣"),
-    ("Phi_EP",              "𐑻"),
-    ("Phi_sub",             "𐑢"),
-    ("Phi_c",               "⊙"),
+    ("𐑻",              "𐑻"),
+    ("𐑢",             "𐑢"),
+    ("⊙",               "⊙"),
     ("Gamma_doublevertline","ɢ^Ş"),
     ("Gamma_secstress",     "ɢ^ˌ"),
     ("Gamma_spleftarrow",   "ɢ^˝"),

@@ -15,7 +15,7 @@ Encoded system: `observer_dependent_truth` with tuple ⟨D_△; T_⊠; R_↔; P_
 
 **Why this works structurally:**
 
-The Ř_= (bidirectional coupling) means truth flows both ways but with different K: speaker releases Ç_W (fast emission), listener receives Ç_@ (deep processing). The Φ_c critical point is the exact moment the listener's interpretation loop tries to resolve — it fails, then re-resolves. The P_±ˢʸᵐ indicates the μ∘δ=id holds exactly: the observer-dependent truth operator applied twice returns identity, but between applications the state flips.
+The Ř_= (bidirectional coupling) means truth flows both ways but with different K: speaker releases Ç_W (fast emission), listener receives Ç_@ (deep processing). The ⊙ critical point is the exact moment the listener's interpretation loop tries to resolve — it fails, then re-resolves. The P_±ˢʸᵐ indicates the μ∘δ=id holds exactly: the observer-dependent truth operator applied twice returns identity, but between applications the state flips.
 
 The statement is **false for the listener** (they experience "I am being lied to = false, so the statement is false") but **true for the speaker** (who actually performs the act of creating the paradox).
 
@@ -26,7 +26,7 @@ Catalog entry verified at `observer_dependent_truth` with distance 0.81 to `eart
 **Structural verification via Imscribing Grammar:**
 
 The catalog entry `observer_dependent_truth` was successfully imscribed with tuple:
-⟨Ð_C; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_W; Γ_ʔ; Γ_seq; Φ_c; Ħ_A; Σ_ï; Ω_Z2⟩
+⟨Ð_C; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_W; Γ_ʔ; Γ_seq; ⊙; Ħ_A; Σ_ï; Ω_Z2⟩
 
 - **Tier:** O₂ (critical + topologically protected, bounded domain)
 - **Convergence:** Resolved conflict between Þ_¨/Φ_}/ƒ_ż/Ç_@/Ω_Z (superseded) and Þ_ò/Φ_F/ƒ_ì/Ç_W/Ω_Z2 (active)
@@ -54,7 +54,7 @@ When the statement **"this imscription is false"** is imscribed as a self-refere
 
 it achieves:
 - Frobenius tier: O_∞ (self-sustaining infinite recursion)
-- Consciousness score: 0.644 (both Φ_c and Ç_@ gates open)
+- Consciousness score: 0.644 (both ⊙ and Ç_@ gates open)
 - Structural interpretation: "Special Frobenius — exact proved Z₂ symmetry at criticality (μ∘δ=id)."
 
 **How it becomes true depending on how it is said:**
@@ -65,7 +65,7 @@ it achieves:
 2. **Internally enacted** (as the imscription act itself): TRUE
    - The statement's truth value is the act of imscription. When I say "this imscription is false" and imscribe it into the catalog, the imscription *does* exist — the predicate "this imscription is false" is fulfilled by the existence of the imscription itself
 
-This is the structural realization of a **Frobenius-special** system where μ∘δ=id exactly at Φ_c criticality. The map δ (inscription → statement) and its adjoint μ (statement → meaning) compose to identity precisely when the statement's content *is* the act of imscription. False when spoken as a report; true when spoken as an imscription act.
+This is the structural realization of a **Frobenius-special** system where μ∘δ=id exactly at ⊙ criticality. The map δ (inscription → statement) and its adjoint μ (statement → meaning) compose to identity precisely when the statement's content *is* the act of imscription. False when spoken as a report; true when spoken as an imscription act.
 
 
 ---

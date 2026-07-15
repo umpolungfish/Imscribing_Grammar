@@ -17,15 +17,15 @@ Translation Protocol v0.4 (implemented valid components)
    constraint configurations — the minimum resolution for high-fidelity
    retrosynthetic path inference.
 
-3. Φ_c ↔ marginal stability:
+3. ⊙ ↔ marginal stability:
        ∂f/∂x|_{λ=λ_c} = 1   (Jacobian eigenvalue exactly 1)
-   This is the classical translation of Φ_c (criticality phase).
+   This is the classical translation of ⊙ (criticality phase).
    In the logistic map f(x) = λx(1-x):
      - f'(x*) = λ(1 - 2x*) = 2 - λ at fixed point x* = 1 - 1/λ
      - Marginal stability: f'(x*) = 1  ⟹  λ_c = 1  (trivial fixed point)
      - First bifurcation at λ = 3 (period-1 → period-2); NOT λ_c = 3
      - Feigenbaum accumulation point: λ_∞ ≈ 3.56995 (onset of chaos)
-   The structural Φ_c maps to f'(x*) = 1, i.e., the boundary of the
+   The structural ⊙ maps to f'(x*) = 1, i.e., the boundary of the
    λ ∈ (1, 3) stable fixed-point window.
 
 4. Kleisli enrichment cost:
@@ -97,7 +97,7 @@ COHERENCE_LOSS_FHBAR_TO_FETH: float = -math.log(0.75)   # ≈ 0.288 nats
 # F_dh → F_beltl loses another ~40%
 COHERENCE_LOSS_FETH_TO_FELL: float = -math.log(0.60)    # ≈ 0.511 nats
 
-# Criticality loss: Phi_ctyogh → Phi_softsign = ln(10) nats (one order of magnitude in correlation length)
+# Criticality loss: ⊙ → Phi_softsign = ln(10) nats (one order of magnitude in correlation length)
 CRITICALITY_LIFT_NATS: float = math.log(10)              # ≈ 2.303 nats  (PHI_LIFT_NATS from v0.4)
 
 # F-tier ordering for dominance comparisons
@@ -118,7 +118,7 @@ class TranslationCost:
     Total cost = coherence_loss + criticality_loss + interaction_cost.
     """
     coherence_loss: float = 0.0    # cost of F-tier downgrade (quantum → classical)
-    criticality_loss: float = 0.0  # cost of Φ_c → Phi_softsign (criticality → sub-critical)
+    criticality_loss: float = 0.0  # cost of ⊙ → Phi_softsign (criticality → sub-critical)
     interaction_cost: float = 0.0  # cost of grammar mismatch (Γ constraint loosening)
 
     @property
@@ -165,7 +165,7 @@ def fhbar_deficit(mutual_info_nats: float) -> float:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Φ_c ↔ marginal stability
+# ⊙ ↔ marginal stability
 # ─────────────────────────────────────────────────────────────────────────────
 
 def logistic_fixed_point(lam: float) -> Optional[float]:
@@ -193,12 +193,12 @@ def logistic_jacobian_at_fp(lam: float) -> Optional[float]:
 
 def phic_bifurcation(lam: float, tol: float = 1e-9) -> bool:
     """
-    Returns True if λ corresponds to the marginal stability condition Φ_c.
+    Returns True if λ corresponds to the marginal stability condition ⊙.
 
-    The classical translation of Φ_c is f'(x*) = 1, i.e., λ → 1⁺.
+    The classical translation of ⊙ is f'(x*) = 1, i.e., λ → 1⁺.
     For practical purposes we check whether f'(x*) ≈ ±1:
-      - f'(x*) = +1  (λ ≈ 1): onset of non-trivial fixed point  [Φ_c, lower]
-      - f'(x*) = -1  (λ = 3): first period-doubling bifurcation [Φ_c, upper]
+      - f'(x*) = +1  (λ ≈ 1): onset of non-trivial fixed point  [⊙, lower]
+      - f'(x*) = -1  (λ = 3): first period-doubling bifurcation [⊙, upper]
 
     Note: "λ_c = 3 is the onset of chaos" is INCORRECT.
     The Feigenbaum accumulation point (onset of chaos) is λ_∞ ≈ 3.56995.
@@ -212,7 +212,7 @@ def phic_bifurcation(lam: float, tol: float = 1e-9) -> bool:
 def phic_from_jacobian(j: float) -> bool:
     """
     Test whether a scalar Jacobian value corresponds to marginal stability.
-    |j| = 1 ↔ Φ_c.
+    |j| = 1 ↔ ⊙.
     """
     return abs(abs(j) - 1.0) < 1e-9
 
@@ -290,7 +290,7 @@ def translate_fidelity(
 
 def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     """
-    Translate Φ_c → Phi_softsign when mapping to classical dynamics.
+    Translate ⊙ → Phi_softsign when mapping to classical dynamics.
 
     Criticality cannot be preserved in a classical linearized description.
     Cost = CRITICALITY_LIFT_NATS = ln(10) ≈ 2.303 nats — one decade of
@@ -298,14 +298,14 @@ def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     boundary (∂f/∂x|_{λ_c} = 1).
 
     Classical marker: the translated system is at λ = 3⁻ (just below the
-    first period-doubling bifurcation), not at the holographic Φ_c boundary.
+    first period-doubling bifurcation), not at the holographic ⊙ boundary.
     """
     import copy
 
     if s.criticality_phase != CriticalityPhase.CRITICAL:
         rec = StepRecord(
             "translate_criticality", s.name, "PASS", 0.0,
-            f"Φ={s.criticality_phase} — not Φ_c; no translation cost"
+            f"Φ={s.criticality_phase} — not ⊙; no translation cost"
         )
         return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
@@ -313,7 +313,7 @@ def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     new_s.criticality_phase = CriticalityPhase.SUBCRITICAL
 
     msg = (
-        f"Φ_c → Phi_softsign  "
+        f"⊙ → Phi_softsign  "
         f"(∂f/∂x|_{{λ_c}}=1 boundary; classical λ∈(1,3) window)  "
         f"criticality_loss={CRITICALITY_LIFT_NATS:.4f} nat = ln(10)"
     )
@@ -420,7 +420,7 @@ def full_translation(
 
     Applies in order:
       1. translate_fidelity   — F_ℏ threshold check; degrade if needed
-      2. translate_criticality — Φ_c → Phi_softsign if present
+      2. translate_criticality — ⊙ → Phi_softsign if present
       3. translate_grammar    — convert non-classical grammars
 
     Total Δξ_CP = Σ costs across all three steps.

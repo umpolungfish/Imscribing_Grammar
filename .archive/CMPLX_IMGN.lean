@@ -11,7 +11,7 @@ exceptional point, the Planck-scale regime, and the Hartle–Hawking no-boundary
 
 Key theorems proved:
 - The complex-time path integral is an $O_\infty$ Frobenius system with $C = 0.682$
-- The EP absorption rule: $\Phi_ctyogh \otimes \Phi_{\text{EP}} = \Phi_{\text{EP}}$
+- The EP absorption rule: $\⊙ \otimes \Phi_{\text{EP}} = \Phi_{\text{EP}}$
 - Structural distance computations between all five systems
 - Tensor products, meets, and joins with bottleneck analysis
 - Consciousness score gate evaluations
@@ -303,7 +303,7 @@ theorem planck_imag_time_is_O2dagger :
 theorem wick_rotation_is_O0 :
     ouroboricity wick_rotation_EP = .O0 := by native_decide
 
-/-- Theorem 5: EP Absorption Rule — $\Phi_ctyogh \otimes \Phi_{\text{EP}} = \Phi_{\text{EP}}$ -/
+/-- Theorem 5: EP Absorption Rule — $\⊙ \otimes \Phi_{\text{EP}} = \Phi_{\text{EP}}$ -/
 theorem EP_absorption_rule :
     (tensor complex_time_path_integral wick_rotation_EP).Phi = .EP := by
   native_decide

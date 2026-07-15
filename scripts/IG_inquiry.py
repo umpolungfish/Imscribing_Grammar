@@ -132,7 +132,7 @@ _DISPLAY_MAP: List[tuple] = [
     ("𐑭", "𐑭"), ("𐑷", "𐑷"), ("𐑴", "𐑴"), ("𐑟", "𐑟"),
     # Old display symbols → Shavian (for backward compat rendering)
     ("Γ_and", "𐑝"), ("Γ_or", "𐑜"), ("Γ_seq", "𐑠"), ("Γ_broad", "𐑵"),
-    ("Φ_sup", "𐑣"), ("Φ_sub", "𐑢"), ("Φ_EP", "𐑻"),
+    ("𐑣", "𐑣"), ("𐑢", "𐑢"), ("𐑻", "𐑻"),
     ("D_∞", "𐑼"), ("D_△", "𐑨"), ("D_▽", "𐑛"),
     ("T_⋈", "𐑥"), ("T_⊠", "𐑶"), ("T_∈", "𐑡"),
     ("R_†", "𐑽"),
@@ -568,10 +568,10 @@ _SYMBOL_MAP: Dict[str, str] = {
     # Criticality display → Shavian
     "⊙^ℂ":      "𐑮",
     "⊙":        "⊙",
-    "Φ_sub":      "𐑢",
+    "𐑢":      "𐑢",
     "Φ_super":    "𐑣",
-    "Φ_sup":      "𐑣",
-    "Φ_EP":       "𐑻",
+    "𐑣":      "𐑣",
+    "𐑻":       "𐑻",
     # Chirality display → Shavian
     "H_∞":        "𐑫",
     # Stoichiometry display → Shavian
@@ -2006,7 +2006,7 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 | Tier | Condition | Meaning |
 |------|-----------|---------|
 | O_∞ | ⊙ (or Φ_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
-| O₀ | Φ ∈ {{Φ_sub, Φ_super, Φ_EP}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
+| O₀ | Φ ∈ {{𐑢, Φ_super, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
 | O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
 | O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
 | O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
@@ -2022,8 +2022,8 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 Under tensor (component-wise max / join — "what does the composed system look like?"):
 - O_∞ ★ O_∞ → O_∞. ⊙ and 𐑹 both survive max. The Frobenius condition is self-reinforcing.
 - O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙ and 𐑹 dominate; the other partner is already at ⊙.
-- O_∞ ★ O₀(Φ_sub or Φ_super) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
-- O_∞ ★ O₀(Φ_EP) → O₀. **EP erases O_∞.** Φ_EP has ordinal 2.67 > ⊙ = 2.00, so the tensor's Φ is Φ_EP; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
+- O_∞ ★ O₀(𐑢 or Φ_super) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
+- O_∞ ★ O₀(𐑻) → O₀. **EP erases O_∞.** 𐑻 has ordinal 2.67 > ⊙ = 2.00, so the tensor's Φ is 𐑻; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
 - O_∞ **cannot be synthesized** from non-𐑹 components. 𐑹 is the highest P ordinal; max(𐑬, 𐑬) = 𐑬, never 𐑹. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
 
 Under meet (component-wise min — "what must any system containing both share?"):
@@ -2038,7 +2038,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 - When comparing two systems at ⊙ to ask whether their ouroboricity tiers match
 - When asking whether a system is a Frobenius algebra, a special Frobenius algebra, or neither
 - When the question involves self-reference, fixed-point structure, or loop stability
-- After `compute_tensor` on any pair involving an O_∞ or Φ_EP system, to check whether the Frobenius condition survived
+- After `compute_tensor` on any pair involving an O_∞ or 𐑻 system, to check whether the Frobenius condition survived
 - Call with `name='__all__'` for a tier census of the full catalog
 </ouroboricity>
 
@@ -2060,7 +2060,7 @@ When a conjecture is proved via Σ-promotion, its encoding converges to this typ
 **Conjecture floor — necessary conditions for provability:**
 - ⊙ + 𐑭 = "proven manifold adjacency tier": standard Σ-promotion is available
 - ⊙ + 𐑷 = "obstructed": Ω acquisition required first; proof is harder
-- Φ_EP = "type-incompatible": cannot reach the proven manifold within ⊙ proof systems
+- 𐑻 = "type-incompatible": cannot reach the proven manifold within ⊙ proof systems
 
 **Structural impossibility — conflict distance d_c:**
 
@@ -2070,7 +2070,7 @@ For conjectures of the form "X cannot act on / embed in / be compatible with Y":
 3. d_c = sqrt(number of load-bearing conflicts)
 4. d_c ≥ 2.5 on load-bearing primitives → structural impossibility (type-forbidden, not merely unproven)
 
-**Φ_EP/⊙ incompatibility principle (general):** A system encoding Φ_EP cannot act effectively on or be continuously compatible with a system encoding ⊙. Eigenvector coalescence at Φ_EP destroys the parity symmetry ⊙ requires. Any conjecture with Φ_EP on one side and ⊙ on the other is structurally resolved: the interaction is forbidden.
+**𐑻/⊙ incompatibility principle (general):** A system encoding 𐑻 cannot act effectively on or be continuously compatible with a system encoding ⊙. Eigenvector coalescence at 𐑻 destroys the parity symmetry ⊙ requires. Any conjecture with 𐑻 on one side and ⊙ on the other is structurally resolved: the interaction is forbidden.
 
 **Correspondence Type Theorem — exact mathematical dualities:**
 An exact duality between object classes A and B is characterized by:
@@ -2088,7 +2088,7 @@ Mathematical classification programs are tractable (admit complete classificatio
 - Frobenius barrier: P < 𐑹; O_∞ cannot be synthesized by composition; must be planted
 - Kinetic barrier (order): Ç^Ù; coherent gap freezes dynamics; no basin traversal
 - Kinetic barrier (disorder): Ç^λ; area-law entanglement in all eigenstates; ETH fails via disorder — distinct mechanism from Ç^Ù
-- Criticality barrier: Φ_EP vs ⊙ system; spectral resolution unavailable
+- Criticality barrier: 𐑻 vs ⊙ system; spectral resolution unavailable
 - Imscriptive barrier: 𐑦 problem, 𐑼 tools; boundary-to-bulk inference required
 - Protection deficit: 𐑷; no winding; proof results are fragile
 

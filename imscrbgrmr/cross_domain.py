@@ -83,7 +83,7 @@ def _tide_pool() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð, F_ð⟩ ; K_schwa ; G_ℶ ;
-          Γ∨(BROAD) ; Φ_sub ; n:m ⟩
+          Γ∨(BROAD) ; 𐑢 ; n:m ⟩
 
     Phase 1 encoding (current enum limits):
         D  → HYBRID_SUPRA_TEMP  (supramolecular spatial structure + open dissipative dynamics)
@@ -152,7 +152,7 @@ def _tide_pool() -> Imscription:
                 "molecular": "proline_aldol_cycle (closed catalytic cycle, periodic reset)",
                 "supramolecular": "MOF framework (spatial organisation, mesoscale granularity)",
             },
-            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_schwa ; G_ℶ ; Γ∨(BROAD) ; Φ_sub ; n:m ⟩",
+            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_schwa ; G_ℶ ; Γ∨(BROAD) ; 𐑢 ; n:m ⟩",
         },
     )
 
@@ -163,7 +163,7 @@ def _global_supply_chain() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð, F_ℏ⟩ ; K_turnm ; G_ℵ ;
-          Γ∧(SELECTIVE) ; Φ_sub ; 1:* ⟩
+          Γ∧(SELECTIVE) ; 𐑢 ; 1:* ⟩
 
     Phase 1 encoding:
         D  → TEMPORAL           (open dissipative; D∞(open) flagged in metadata)
@@ -174,7 +174,7 @@ def _global_supply_chain() -> Imscription:
         K  → MODERATE           (ships ~20 kn; infrastructure rebuild months-to-years)
         G  → GLOBAL             (G_ℵ: planetary graph, every node addressable)
         Γ  → SELECTIVE_AND      (all required inputs must arrive simultaneously for production)
-        Φ  → SUBCRITICAL        (bullwhip oscillations exist but no confirmed Φ_c transition)
+        Φ  → SUBCRITICAL        (bullwhip oscillations exist but no confirmed ⊙ transition)
         S  → "1:*"              (one planetary system, unbounded node count; stoichiometry_network flagged)
 
     Axiom grounding:
@@ -240,7 +240,7 @@ def _global_supply_chain() -> Imscription:
                 "temporal": "proline_aldol_cycle (catalytic flow with continuous throughput)",
                 "supramolecular": "MOF framework (G_ℵ global network, selective AND grammar)",
             },
-            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_turnm ; G_ℵ ; Γ∧(SELECTIVE) ; Φ_sub ; 1:* ⟩",
+            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_turnm ; G_ℵ ; Γ∧(SELECTIVE) ; 𐑢 ; 1:* ⟩",
         },
     )
 
@@ -251,7 +251,7 @@ def _autonomous_drone_swarm() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ, F_ð⟩ ; K_frtailgamma ; G_ℵ ;
-          Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; Φ_c ; n:m ⟩
+          Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; ⊙ ; n:m ⟩
 
     Phase 1 encoding:
         D  → SUPRAMOLECULAR     (D△ discrete spatial assembly; ^⊗n tensor flagged in metadata)
@@ -262,12 +262,12 @@ def _autonomous_drone_swarm() -> Imscription:
         K  → FAST               (millisecond control loops, GHz processors)
         G  → GLOBAL             (G_ℵ unlimited swarm scalability)
         Γ  → SELECTIVE_SEQ      (formation agreement AND then sequential command execution)
-        Φ  → CRITICAL           (Φ_c — flocking is documented scale-free phase transition)
+        Φ  → CRITICAL           (⊙ — flocking is documented scale-free phase transition)
         S  → "n:m"              (flexible drone-to-task ratio)
 
     Axiom grounding:
         Axiom 4 — Γ_→ (SEQ) satisfied: R‡ (non-equilibrium motion) present
-        Axiom 5 — Φ_c assigned: flocking correlation length ξ_r ~ N^(ν) (scale-free)
+        Axiom 5 — ⊙ assigned: flocking correlation length ξ_r ~ N^(ν) (scale-free)
     """
     return Imscription(
         name="autonomous_drone_swarm",
@@ -284,7 +284,7 @@ def _autonomous_drone_swarm() -> Imscription:
         description=(
             "Autonomous UAV swarm: N-agent robotic system with consensus-protocol "
             "recognition, non-equilibrium physical dynamics, and emergent flocking "
-            "phase transition (Φ_c). Digital communication is F_ℏ (bit-exact); "
+            "phase transition (⊙). Digital communication is F_ℏ (bit-exact); "
             "environmental coupling introduces F_ð noise. Sequential grammar: "
             "formation consensus precedes ordered manoeuvre execution."
         ),
@@ -304,7 +304,7 @@ def _autonomous_drone_swarm() -> Imscription:
                 "satisfying_primitive": "R‡ (DYNAMIC_CATALYTIC) — non-equilibrium physical motion",
             },
             "axiom5_grounding": {
-                "criticality_evidence": "Vicsek model flocking transition; ξ_r ~ N^0.5 at Φ_c",
+                "criticality_evidence": "Vicsek model flocking transition; ξ_r ~ N^0.5 at ⊙",
                 "universality_class": "Active matter / Vicsek universality",
                 "gd_degeneracy": "At flocking transition, local (G_ב) and global (G_ℵ) become degenerate",
             },
@@ -323,20 +323,20 @@ def _autonomous_drone_swarm() -> Imscription:
                 "expected": "Power-law divergence of ξ_r at η_c (critical noise)",
                 "reference": "Vicsek et al. (1995) PRL 75:1226",
             },
-            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_frtailgamma ; G_ℵ ; Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; Φ_c ; n:m ⟩",
+            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_frtailgamma ; G_ℵ ; Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; ⊙ ; n:m ⟩",
         },
     )
 
 
 def _db24c8_pseudorotaxane() -> Imscription:
     """
-    DB24C8/dialkylammonium pseudorotaxane — Transformation #8 Φ_c probe system.
+    DB24C8/dialkylammonium pseudorotaxane — Transformation #8 ⊙ probe system.
 
     Formal tuple:
-        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_turnm ; G_ב ; Γ_∧(SPECIFIC) ; Φ_sub→Φ_c ; 1:1 ⟩
+        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_turnm ; G_ב ; Γ_∧(SPECIFIC) ; 𐑢→⊙ ; 1:1 ⟩
 
     This is the primary-tier molecular system used as the Transformation #8
-    literature-grounded partial Φ_c anchor.
+    literature-grounded partial ⊙ anchor.
 
     Grounding source: Groppi et al. Angew. Chem. Int. Ed. 2020, 59, 14825–14834.
     DOI: 10.1002/anie.202003064
@@ -360,7 +360,7 @@ def _db24c8_pseudorotaxane() -> Imscription:
         name="db24c8_dialkylammonium_pseudorotaxane",
         description=(
             "DB24C8 / dialkylammonium pseudorotaxane: steric-cliff dethreading system. "
-            "Transformation #8 literature-grounded partial Φ_c anchor. "
+            "Transformation #8 literature-grounded partial ⊙ anchor. "
             "Guest 6⁺ (good axle): ΔG‡ = 19.8 kcal mol⁻¹ (K_turnm). "
             "Guest 8⁺ (bad axle): ΔG‡ > 100 kcal mol⁻¹ (K_teshlig). "
             "All-or-nothing steric cliff on sub-Å methyl repositioning. "
@@ -459,7 +459,7 @@ def _db24c8_pseudorotaxane() -> Imscription:
                 "DLPNO-CCSD(T)/CBS single-point refinement at TS geometry",
                 "Run varma_probe.degeneracy_strength() on MD trajectory near TS",
                 "If degeneracy_strength ≥ 0.70 confirmed computationally: upgrade grounding_status to 'full'",
-                "First empirically grounded Φ_c HotSwap candidate upon confirmation",
+                "First empirically grounded ⊙ HotSwap candidate upon confirmation",
             ],
             "cross_domain_analog": {
                 "ecological": "tide_pool_ecological (open dissipative cycle with reset; R‡ analog to R_⇔ kinetic gating)",

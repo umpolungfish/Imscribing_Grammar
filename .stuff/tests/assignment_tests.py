@@ -364,9 +364,9 @@ else:
 
 sub("3b. Allosteric domain: principal_decomp round-trip")
 
-# allosteric_domain has Phi_ctyogh — the join of atoms should preserve Phi=CRITICAL
+# allosteric_domain has ⊙ — the join of atoms should preserve Phi=CRITICAL
 allosteric_atom_measurements = [
-    {"xi_cp": 9.5, "varma_score": 0.75},   # Phi_ctyogh-carrying atom
+    {"xi_cp": 9.5, "varma_score": 0.75},   # ⊙-carrying atom
     {"xi_cp": 11.5},                          # lower-F atom
 ]
 
@@ -379,8 +379,8 @@ else:
     f_result   = next((r for r in results if r.primitive == "F"), None)
     if phi_result:
         check(phi_result.consistent,
-              "Phi_ctyogh is join-dominant: CRITICAL survives atom round-trip",
-              f"Phi_ctyogh NOT preserved: {phi_result.note}")
+              "⊙ is join-dominant: CRITICAL survives atom round-trip",
+              f"⊙ NOT preserved: {phi_result.note}")
     if f_result:
         check(f_result.consistent,
               "F reconstructed correctly from atom join",

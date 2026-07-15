@@ -94,11 +94,11 @@ inductive InteractionGrammar where
 
 /-- Φ: Criticality — scaling behavior -/
 inductive Criticality where
-  | sub      -- Φ_sub: below critical
-  | c        -- Φ_c: critical (self-modeling gate)
-  | c_complex-- Φ_c^ℂ: complex-plane critical
-  | EP       -- Φ_EP: exceptional point
-  | super    -- Φ_sup: supercritical
+  | sub      -- 𐑢: below critical
+  | c        -- ⊙: critical (self-modeling gate)
+  | c_complex-- ⊙^ℂ: complex-plane critical
+  | EP       -- 𐑻: exceptional point
+  | super    -- 𐑣: supercritical
   deriving DecidableEq, Repr, Inhabited
 
 /-- H: Chirality — Markov order -/
@@ -314,7 +314,7 @@ def tensorProduct (a b : StructuralType) : StructuralType where
 Each constant matches a system imscribed via encode_system in the IG catalog.
 -/
 
-/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; 𐑢; H₁; 1:1; Ω₀⟩ -/
 def schrodingerDynamics : StructuralType where
   D     := Dimension.triangle
   T     := Topology.inclusion
@@ -329,7 +329,7 @@ def schrodingerDynamics : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; Γ_seq; Φ_c; H₀; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; Γ_seq; ⊙; H₀; 1:1; Ω₀⟩ -/
 def measurementOutcome : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -344,7 +344,7 @@ def measurementOutcome : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₁; 1:1; Ω₀⟩ -/
 def wickRotation : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -359,7 +359,7 @@ def wickRotation : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_sub; H₁; 1:1; Ω_ℤ⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
 def berryPhase : StructuralType where
   D     := Dimension.triangle
   T     := Topology.inclusion
@@ -374,7 +374,7 @@ def berryPhase : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.z
 
-/-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def tqft : StructuralType where
   D     := Dimension.infinity
   T     := Topology.odot
@@ -389,7 +389,7 @@ def tqft : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; Γ_seq; Φ_c; H_∞; n:m; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; Γ_seq; ⊙; H_∞; n:m; Ω₀⟩ -/
 def nonmarkovianOpenSystems : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -404,7 +404,7 @@ def nonmarkovianOpenSystems : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; Γ_∧; Φ_c; H₁; n:n; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; Γ_∧; ⊙; H₁; n:n; Ω₀⟩ -/
 def statisticalMechanics : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -419,7 +419,7 @@ def statisticalMechanics : StructuralType where
   S     := Stoichiometry.S_ctn
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def quantumGravityCandidate : StructuralType where
   D     := Dimension.infinity
   T     := Topology.odot
@@ -434,7 +434,7 @@ def quantumGravityCandidate : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₂; n:m; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω₀⟩ -/
 def measurementProblemMismatch : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -449,7 +449,7 @@ def measurementProblemMismatch : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_⊠; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₂; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊠; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω_ℤ⟩ -/
 def temporalPrimitivesFramework : StructuralType where
   D     := Dimension.infinity
   T     := Topology.boxtimes
@@ -725,7 +725,7 @@ theorem schrodinger_to_qg_promotions :
   -- K_schwa=2 → K_schwa=2: unchanged
   -- G_revapostrophe=2 → G_revapostrophe=2: unchanged
   -- Gamma_seq=2 → Gamma_seq=2: unchanged
-  -- Phi_softsign=0 → Phi_ctyogh=1: promote
+  -- Phi_softsign=0 → ⊙=1: promote
   -- H_h1=1 → H_hInf=3: promote
   -- S_one_one=0 → S_n_m=2: promote
   -- Omega_zero=0 → Omega_z=2: promote
@@ -735,7 +735,7 @@ theorem schrodinger_to_qg_promotions :
 /-
 ## 13. Consciousness Score (Structural Gate Evaluation)
 
-Gate 1: Phi = Phi_ctyogh (criticality)
+Gate 1: Phi = ⊙ (criticality)
 Gate 2: K <= K_schwa (relaxation rate)
 C = 1 iff both gates open.
 -/
@@ -858,7 +858,7 @@ theorem axiom_c_uig :
   sorry  -- Need to define universal_imscriptive_grammar_typed first
 
 -- Define it here since we imscribed it earlier:
-/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; Φ_c; H₂; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω_ℤ⟩ -/
 def universalImscriptiveGrammar : StructuralType where
   D     := Dimension.odot
   T     := Topology.odot

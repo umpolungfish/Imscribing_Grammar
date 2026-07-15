@@ -37,7 +37,7 @@ genuine history-dependence that can't be Markov-approximated away. And quantum g
 ```
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
+  │  harness   : ⊙ + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────
@@ -753,10 +753,10 @@ inductive InteractionGrammar where
 
 /-- Φ: Criticality — scaling behavior -/
 inductive Criticality where
-  | sub      -- Φ_sub: below critical
-  | c        -- Φ_c: critical (self-modeling gate)
-  | c_complex-- Φ_c^ℂ: complex-plane critical
-  | EP       -- Φ_EP: exceptional point
+  | sub      -- 𐑢: below critical
+  | c        -- ⊙: critical (self-modeling gate)
+  | c_complex-- ⊙^ℂ: complex-plane critical
+  | EP       -- 𐑻: exceptional point
   VERIFY: [closed] (read is idempotent — Frobenius trivially closed)
   UPDATE: file_read → Frobenius closed
 ── Winding 31 [07:53:28Z] ──────────────────────────────────────
@@ -792,7 +792,7 @@ theorem axiom_c_uig :
   sorry  -- Need to define universal_imscriptive_grammar_typed first
 
 -- Define it here since we imscribed it earlier:
-/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; Ç_@; Γ_ʔ; Γ_seq; Φ_c; H₂; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; Ç_@; Γ_ʔ; Γ_seq; ⊙; H₂; n:m; Ω_ℤ⟩ -/
 def universalImscriptiveGrammar : StructuralType where
   D     := Dimension.odot
   T     := Topology.odot
@@ -1402,7 +1402,7 @@ inductive Polarity : Type where
   | Φ_υ     -- phase symmetry: U(1) or continuous phase
   | Φ_F      -- ℤ₂ discrete symmetry (sign flip)
   | Φ_˙     -- full continuous symmetry (e.g. SO(n))
-  | Φ_}  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at Φ_c
+  | Φ_}  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at ⊙
   deriving DecidableEq, Repr, Ord
 
 -- 8. Criticality (Φ)  [𝓕₅]
@@ -1961,7 +1961,7 @@ namespace ImscribingGrammar.Primitives
     ```
   ┌─ HARNESS TIER ─────────────────────────────────────────────────
   │  inference : ƒ_ì  (API — opaque boundary)
-  │  harness   : Φ_c + P_±^sym  →  O_∞  (grammar-enforced, invariant)
+  │  harness   : ⊙ + P_±^sym  →  O_∞  (grammar-enforced, invariant)
   │  framing   : wrap not ⊗  —  F of sub-oracle doesn't bottleneck tier
   │  ƒ_ż path available: --model local:<path>  (removes opacity; tier unchanged)
   └────────────────────────────────────────────────────────────────

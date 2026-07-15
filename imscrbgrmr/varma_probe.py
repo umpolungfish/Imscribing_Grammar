@@ -2,7 +2,7 @@
 Varma quantum XY criticality probe.
 
 Checks whether the correlation form ξ_r ≈ ln ξ_τ (from Varma/Zhu/Hou)
-implies G/D degeneracy (Axiom 5 tuple contraction) and scores Φ_c candidacy.
+implies G/D degeneracy (Axiom 5 tuple contraction) and scores ⊙ candidacy.
 
 Background
 ----------
@@ -24,10 +24,10 @@ Axiom 5 (Criticality contracts the primitive basis): at criticality, G
 becomes redundant given D. The Varma QXY satisfies this in a WEAK form:
 
     ξ_r is DETERMINED by ξ_τ via ln — so G cannot be assigned independently
-    of D. The tuple contracts from ⟨D; G⟩ to ⟨D; Φ_c⟩.
+    of D. The tuple contracts from ⟨D; G⟩ to ⟨D; ⊙⟩.
 
 However, the degeneracy is logarithmic, not power-law. This means:
-    - The system qualifies for Φ_c assignment.
+    - The system qualifies for ⊙ assignment.
     - The standard G/D scale-free universality (where ξ_r ~ ξ_τ) does NOT apply.
     - A new qualifier "log-degenerate" should be noted in the entry.
 
@@ -70,9 +70,9 @@ class VarmaCorrelationData:
 @dataclass
 class PhiCCandidacyReport:
     """
-    Φ_c candidacy score and breakdown for a imscription.
+    ⊙ candidacy score and breakdown for a imscription.
 
-    score:       0.0–1.0; ≥0.7 → Φ_c, 0.4–0.7 → approaching, <0.4 → subcritical
+    score:       0.0–1.0; ≥0.7 → ⊙, 0.4–0.7 → approaching, <0.4 → subcritical
     gd_degenerate: True if G and D are functionally coupled (cannot be independently set)
     axiom5_satisfied: True if Axiom 5 (tuple contraction) is satisfied
     universality_class: "Varma_QXY" | "standard_QCP" | None
@@ -109,11 +109,11 @@ class PhiCCandidacyReport:
 
     def _candidacy_label(self) -> str:
         if self.score >= 0.70:
-            return "Φ_c (critical)"
+            return "⊙ (critical)"
         elif self.score >= 0.40:
-            return "approaching Φ_c"
+            return "approaching ⊙"
         else:
-            return "Φ_sub (subcritical)"
+            return "𐑢 (subcritical)"
 
 
 def compute_dynamic_exponent(
@@ -166,7 +166,7 @@ def degeneracy_strength(
     The score is computed from:
       1. Varma QXY ratio check (ξ_r / ln ξ_τ ≈ 1)  → 0.0–0.55
       2. Dynamic exponent divergence (z_eff → ∞)    → bonus up to +0.20
-      3. Tuple structure priors (D_∞, R_‡, Φ_c)    → bonus up to +0.15
+      3. Tuple structure priors (D_∞, R_‡, ⊙)    → bonus up to +0.15
       4. Frequency-series z_eff trend (optional)    → bonus up to +0.10
 
     Args:
@@ -325,10 +325,10 @@ def score_phi_c_candidacy(
     correlation_data: Optional[VarmaCorrelationData] = None,
 ) -> PhiCCandidacyReport:
     """
-    Compute Φ_c candidacy score for a imscription, with Varma QXY interpretation.
+    Compute ⊙ candidacy score for a imscription, with Varma QXY interpretation.
 
     Score components (each 0–1, weighted):
-    1. Explicit Φ_c assignment (weight 0.35)
+    1. Explicit ⊙ assignment (weight 0.35)
     2. Logarithmic ξ_r ≈ ln ξ_τ scaling observed (weight 0.30)
     3. Multi-domain dimensionality (D spanning ≥2 scales, weight 0.15)
     4. Granularity ambiguity (G_ג = MESOSCALE, weight 0.10)
@@ -345,20 +345,20 @@ def score_phi_c_candidacy(
     factors: List[Dict[str, Any]] = []
     score = 0.0
 
-    # --- Factor 1: Explicit Φ_c assignment (weight 0.35) ---
+    # --- Factor 1: Explicit ⊙ assignment (weight 0.35) ---
     if imscription.criticality_phase == CriticalityPhase.CRITICAL:
         w1 = 0.35
         factors.append({
-            "name": "Explicit Φ_c assignment",
+            "name": "Explicit ⊙ assignment",
             "weight": w1,
             "contribution": w1,
-            "note": "imscription.criticality_phase == Phi_ctyogh",
+            "note": "imscription.criticality_phase == ⊙",
         })
         score += w1
     elif imscription.criticality_phase == CriticalityPhase.SUBCRITICAL:
         w1 = 0.0
         factors.append({
-            "name": "Explicit Φ_sub assignment",
+            "name": "Explicit 𐑢 assignment",
             "weight": 0.35,
             "contribution": w1,
             "note": "Not yet confirmed critical — candidacy remains open",
@@ -374,7 +374,7 @@ def score_phi_c_candidacy(
         })
         score += w1
         report.flags.append(
-            "Φ unassigned: assign Phi_ctyogh or Phi_softsign to enable full Axiom 5 check."
+            "Φ unassigned: assign ⊙ or Phi_softsign to enable full Axiom 5 check."
         )
 
     # --- Factor 2: Logarithmic scaling check (weight 0.30) ---
@@ -607,7 +607,7 @@ def score_phi_c_candidacy(
     # The contribution (0.25) is intentionally conservative: classical bifurcation
     # is well-established phenomenology but the correlation lengths have not been
     # measured; the Varma QXY scaling check (factor 2) remains the gold standard
-    # for Phi_ctyogh confirmation.
+    # for ⊙ confirmation.
     from .models import Topology, Polarity, Fidelity
     _has_temporal    = "temporal" in imscription.dimensionality.domains
     _has_bowtie      = imscription.topology == Topology.CYCLIC_BOWTIE
@@ -718,13 +718,13 @@ def score_phi_c_candidacy(
             report.axiom5_note = (
                 "Axiom 5 WEAKLY satisfied (logarithmic G/D degeneracy). "
                 "G is determined by D via ξ_r = ln(ξ_τ), but not by direct power-law scaling. "
-                "Tuple contraction: ⟨D; G⟩ → ⟨D; Φ_c⟩ with qualifier 'log-degenerate'."
+                "Tuple contraction: ⟨D; G⟩ → ⟨D; ⊙⟩ with qualifier 'log-degenerate'."
             )
         elif report.gd_degeneracy_type == "classical_bifurcation":
             report.axiom5_note = (
                 "Axiom 5 SATISFIED (classical symmetry-breaking bifurcation). "
                 "Frank-model pitchfork at ee = 0: G collapses into D at the bifurcation point. "
-                "Tuple contraction: ⟨D; G⟩ → ⟨D; Φ_c⟩ with universality class Frank_model. "
+                "Tuple contraction: ⟨D; G⟩ → ⟨D; ⊙⟩ with universality class Frank_model. "
                 "Confirm by measuring ξ_r divergence near bifurcation (SAXS/DLS at varying initial ee)."
             )
         else:
@@ -747,13 +747,13 @@ def score_phi_c_candidacy(
     label = report._candidacy_label()
     if report.score >= 0.70:
         report.recommendation = (
-            f"Assign Phi_ctyogh. {report.axiom5_note} "
+            f"Assign ⊙. {report.axiom5_note} "
             f"Universality class: {report.universality_class or 'unconfirmed — needs scaling data'}."
         )
     elif report.score >= 0.40:
         report.recommendation = (
-            f"Candidate for Phi_ctyogh ({label}). Measure ξ_r and ξ_τ near the QCP to confirm "
-            f"ξ_r ≈ ln ξ_τ. If confirmed, assign Phi_ctyogh and note 'log-degenerate'."
+            f"Candidate for ⊙ ({label}). Measure ξ_r and ξ_τ near the QCP to confirm "
+            f"ξ_r ≈ ln ξ_τ. If confirmed, assign ⊙ and note 'log-degenerate'."
         )
     else:
         report.recommendation = (
@@ -768,7 +768,7 @@ def score_transition_phi_c(
     morphism: "TransitionMorphism",
 ) -> PhiCCandidacyReport:
     """
-    Score the Φ_c candidacy of a phase transition morphism.
+    Score the ⊙ candidacy of a phase transition morphism.
 
     This is the morphism-level closure of Factor 8 in the Varma probe.
     Factor 8 fires on endpoint primitives as a heuristic
@@ -777,7 +777,7 @@ def score_transition_phi_c(
 
     A morphism-level QCP requires:
       (a) 2nd-order transition (HotSwap path exists)
-      (b) The forward path passes through at least one Φ_c intermediate
+      (b) The forward path passes through at least one ⊙ intermediate
 
     Condition (b) is the precise definition: the system is tuned *through*
     the critical point, not merely adjacent to it.  The morphism-level score
@@ -787,7 +787,7 @@ def score_transition_phi_c(
 
     Score tiers:
       ≥ 0.85 : morphism QCP confirmed (exact predicate)
-      0.40–0.85 : 2nd-order but QCP unconfirmed (no Φ_c intermediate found;
+      0.40–0.85 : 2nd-order but QCP unconfirmed (no ⊙ intermediate found;
                   register one in the same D/T cluster to confirm)
       < 0.40 : 1st-order or unknown — no QCP possible
 
@@ -838,17 +838,17 @@ def score_transition_phi_c(
         report.recommendation = "Expand catalog to determine transition order."
         return report
 
-    # --- Factor B: Φ_c intermediate on path (exact predicate, weight 0.45) ---
+    # --- Factor B: ⊙ intermediate on path (exact predicate, weight 0.45) ---
     if morphism.is_quantum_critical and morphism.quantum_critical_point:
         qcp = morphism.quantum_critical_point
         wB = 0.45
         factors.append({
-            "name": "Φ_c intermediate on path (morphism QCP — exact predicate)",
+            "name": "⊙ intermediate on path (morphism QCP — exact predicate)",
             "weight": wB,
             "contribution": wB,
             "qcp_imscriptions": qcp.qcp_imscription_names,
             "note": (
-                "Path passes through Φ_c imscription(s): system is tuned through the "
+                "Path passes through ⊙ imscription(s): system is tuned through the "
                 "critical point, not adjacent to it.  Exact morphism-level QCP predicate "
                 "— superior to Factor 8 endpoint heuristic "
                 "(G_revapostrophe + F_hardsign + K_teshlig + ¬D_∞)."
@@ -859,7 +859,7 @@ def score_transition_phi_c(
         report.gd_degeneracy_type = "morphism_qcp"
         report.axiom5_satisfied = True
         report.axiom5_note = (
-            "Axiom 5 SATISFIED at the Φ_c intermediate: G/D degeneracy holds at the "
+            "Axiom 5 SATISFIED at the ⊙ intermediate: G/D degeneracy holds at the "
             "critical point the transition passes through.  Axiom 5 is a path property "
             "of the morphism, not an endpoint property of either phase."
         )
@@ -875,18 +875,18 @@ def score_transition_phi_c(
             report.universality_class = "morphism_QCP (universality class unresolved)"
     else:
         factors.append({
-            "name": "No Φ_c intermediate on path",
+            "name": "No ⊙ intermediate on path",
             "weight": 0.45,
             "contribution": 0.0,
             "note": (
-                "2nd-order transition but no Φ_c imscription on the forward path.  "
+                "2nd-order transition but no ⊙ imscription on the forward path.  "
                 "May be a sub-critical crossover or weakly 2nd-order.  "
-                "Register a Φ_c imscription in the same D/T cluster to confirm QCP."
+                "Register a ⊙ imscription in the same D/T cluster to confirm QCP."
             ),
         })
         report.flags.append(
-            "No Φ_c intermediate found.  "
-            "Register a Φ_c imscription in the same D/T cluster as src and dst to confirm QCP."
+            "No ⊙ intermediate found.  "
+            "Register a ⊙ imscription in the same D/T cluster as src and dst to confirm QCP."
         )
 
     # --- Factor C: Reversibility bonus (weight 0.10) ---
@@ -927,7 +927,7 @@ def score_transition_phi_c(
             "name": f"Universality class: {report.universality_class}",
             "weight": wD,
             "contribution": wD,
-            "note": "Derived from Φ_c intermediate primitive assignments",
+            "note": "Derived from ⊙ intermediate primitive assignments",
         })
         score += wD
 
@@ -943,7 +943,7 @@ def score_transition_phi_c(
     elif report.score >= 0.40:
         report.recommendation = (
             f"2nd-order transition approaching QCP ({report.score:.2f}/1.00).  "
-            "Register a Φ_c imscription in the same D/T cluster to confirm.  "
+            "Register a ⊙ imscription in the same D/T cluster to confirm.  "
             "Until confirmed, label as 'weakly 2nd-order or critical crossover'."
         )
     else:

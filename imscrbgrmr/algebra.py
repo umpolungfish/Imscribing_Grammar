@@ -13,7 +13,7 @@ Lattice operations: meet(a, b), join(a, b) -> LatticeResult
   Ordered primitives (F, K, G, Omega, H): take min/max over ordinal.
   Categorical primitives (D, T, R, P, Gamma, Phi, S): require exact match
   or emit CONFLICT.
-  Special: Phi_ctyogh is absorbing under both meet and join.
+  Special: ⊙ is absorbing under both meet and join.
 
 Ordinal conventions match Lean Core.lean and the corrected models.py:
   F: F_noise(0) < F_beltl(1) < F_dh(2) < F_hardsign(3)
@@ -424,7 +424,7 @@ def _absorb_check(
 
 def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
                 absorption=None) -> Criticality:
-    """Criticality absorption (generalized). Phi_ctyogh is absorbing under meet and join."""
+    """Criticality absorption (generalized). ⊙ is absorbing under meet and join."""
     # Check configurable absorption first
     if absorption is not None:
         absorbed = _absorb_check(absorption, "⊙", p1, p2, notes, op,
@@ -435,10 +435,10 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
     if p1 == p2:
         return p1
     if p1.is_degenerate:
-        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p1.value} (Φ_c absorbing)")
+        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p1.value} (⊙ absorbing)")
         return p1
     if p2.is_degenerate:
-        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (Φ_c absorbing)")
+        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (⊙ absorbing)")
         return p2
     # Neither critical — meet takes lower, join takes higher in the linear order
     phi_ord = {Criticality.Phi_softsign: 0, Criticality.Phi_ctyogh: 1, Criticality.Phi_upstep: 2}
@@ -451,7 +451,7 @@ def meet(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
 
     Ordered primitives (F, K, G, Omega, H): take minimum (more conservative).
     Categorical (D, T, R, P, Gamma, S): exact match required; mismatch -> CONFLICT.
-    Phi_ctyogh is absorbing: meet(Phi_ctyogh, x) = Phi_ctyogh for all x.
+    ⊙ is absorbing: meet(⊙, x) = ⊙ for all x.
     absorption: optional iterable of (prim, val, ops) tuples for configurable absorption.
     """
     conflicts: List[str] = []
@@ -495,7 +495,7 @@ def join(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
 
     Ordered primitives: take maximum (more permissive / demanding).
     Categorical: exact match or CONFLICT.
-    Phi_ctyogh is absorbing: join(Phi_ctyogh, x) = Phi_ctyogh for all x.
+    ⊙ is absorbing: join(⊙, x) = ⊙ for all x.
     absorption: optional iterable of (prim, val, ops) tuples for configurable absorption.
     """
     conflicts: List[str] = []
@@ -629,7 +629,7 @@ def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None, absorpt
 
     Uses join for ordered primitives (F, K, G, Omega, H — take the more demanding)
     and requires exact match for categorical primitives (conflict raises ValueError).
-    Phi_ctyogh absorbs in both operands.
+    ⊙ absorbs in both operands.
     absorption: optional iterable of (prim, val, ops) tuples for configurable absorption
                 (e.g., Σ n:m absorbs under tensor).
     """
@@ -722,14 +722,14 @@ def _lift_spatial(s: Imscription) -> LiftResult:
 
 
 def _lift_critical(s: Imscription, strength: float = 1.0) -> LiftResult:
-    """Φ_sub → Φ_c: inject criticality. Requires F ≥ F_hardsign."""
+    """𐑢 → ⊙: inject criticality. Requires F ≥ F_hardsign."""
     import imscrbgrmr.models as _m
     from .models import Criticality, Fidelity
     warnings = []
     if s.fidelity not in (Fidelity.F_hardsign,):
         warnings.append(f"F={s.fidelity.value} < F_hardsign — criticality injection is fragile")
     if s.criticality_phase == Criticality.Phi_ctyogh:
-        return LiftResult(True, s, notes=["Already Phi_ctyogh — no change"])
+        return LiftResult(True, s, notes=["Already ⊙ — no change"])
     old = _m._ENFORCE_AXIOMS
     _m._ENFORCE_AXIOMS = False
     try:
@@ -739,7 +739,7 @@ def _lift_critical(s: Imscription, strength: float = 1.0) -> LiftResult:
     finally:
         _m._ENFORCE_AXIOMS = old
     return LiftResult(True, result,
-                      notes=[f"Φ {s.criticality_phase.value} → Phi_ctyogh (strength={strength:.2f})"],
+                      notes=[f"Φ {s.criticality_phase.value} → ⊙ (strength={strength:.2f})"],
                       warnings=warnings)
 
 

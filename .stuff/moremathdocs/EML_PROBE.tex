@@ -226,20 +226,20 @@ encodes:
 
 \[
 \mathbf{eml} = \langle D_{\infty};\ T_{\bowtie};\ R_\text{dagger};\ P_{\pm};\
-F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\
+F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \⊙;\ H_1;\
 S_{1:1};\ \Omega_Z \rangle
 \]
 
 Most coordinates are uncontroversial. The assignments that require argument are
-$\Phi_c$, $T_{\bowtie}$, and $P_{\pm}$, in that order of difficulty.
+$\⊙$, $T_{\bowtie}$, and $P_{\pm}$, in that order of difficulty.
 
-$\Phi_c$ in a functional algebra rather than a physical system is not an obvious
+$\⊙$ in a functional algebra rather than a physical system is not an obvious
 assignment. The critical manifold here is the snapping manifold identified in \pilcrow{}VI:
 the set of parameter vectors in the master formula that correspond exactly to
 symbolic EML trees. The snapping phenomenon --- gradient weights collapsing to
 binary values --- is a criticality transition in the parameter space, and its
 existence at all depths (perturbed-truth initialization always recovers) is the
-non-trivial fact that earns $\Phi_c$.
+non-trivial fact that earns $\⊙$.
 
 $T_{\bowtie}$ is assigned not to the topology of the elementary functions themselves
 but to the structural relationship between the grammar analysis and the paper.
@@ -253,7 +253,7 @@ real but external --- to access the symmetric cousin $-\text{eml}(y,x)$ you must
 leave the algebra. $P_{\pm}^{\text{sym}}$ requires the duality to be internal,
 and it is not.
 
-This type is $O₂^\dagger$ by tier rule R5: $\Phi_c$ present, $\Omega_Z \neq
+This type is $O₂^\dagger$ by tier rule R5: $\⊙$ present, $\Omega_Z \neq
 \Omega_0$, and $D_{\infty}$.
 
 \begin{center}
@@ -359,8 +359,8 @@ operation than a change of address.
 
 This is the exact content of $P_{\pm}$ rather than $P_{\pm}^{\text{sym}}$: the
 duality exists but is external. And it is why $O_{\infty}$ is unreachable from
-EML. The Frobenius tier rule R1 requires $\Phi_c$ and $P_{\pm}^{\text{sym}}$
-together; EML has $\Phi_c$ but sits at $P_{\pm}$. By Frobenius non-synthesizability
+EML. The Frobenius tier rule R1 requires $\⊙$ and $P_{\pm}^{\text{sym}}$
+together; EML has $\⊙$ but sits at $P_{\pm}$. By Frobenius non-synthesizability
 (\pilcrow{}23), no composition of sub-Frobenius factors can produce $P_{\pm}^{\text{sym}}$,
 and $P$ is a $\min$-primitive under $\otimes$: stacking EML trees contributes
 $P_{\pm}$ at every step, and the bottleneck never lifts.
@@ -409,7 +409,7 @@ their own iteration without a starting constant. EML recovers $G_{\aleph}$ via t
 $\ln(1) = 0$ fixed point, which is why the terminal is forced to be $1$ and not a
 general real number.
 
-The ''?'' binary at count 2 would require $G_{\aleph}$ with $\Phi_c$ and
+The ''?'' binary at count 2 would require $G_{\aleph}$ with $\⊙$ and
 $P_{\pm}^{\text{sym}}$ together --- a self-bootstrapping Frobenius generator. The
 grammar has no guarantee such an object exists in the class of elementary
 functions, and \pilcrow{}IX gives reason to think it does not.
@@ -418,7 +418,7 @@ functions, and \pilcrow{}IX gives reason to think it does not.
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
 
-\subsection{VI. The Snapping Phenomenon is a $\Phi_c$ Transition}
+\subsection{VI. The Snapping Phenomenon is a $\⊙$ Transition}
 
 The gradient recovery experiments in \pilcrow{}4.3 of the paper yield a characteristic
 depth-dependent success rate: 100\% at depth 2, approximately 25\% at depths 3--4,
@@ -429,7 +429,7 @@ describes the symptom rather than the cause.
 
 The master formula at depth $n$ has $5 \times 2^n - 6$ continuous parameters.
 The snapping target is a discrete set of exact-symbolic parameter vectors, each
-a point on a measure-zero submanifold. The $\Phi_c$ manifold --- the submanifold
+a point on a measure-zero submanifold. The $\⊙$ manifold --- the submanifold
 of symbolic trees --- is present at every depth: this is confirmed directly by the
 paper's own observation that ''when the weights of the correct EML tree are
 perturbed by Gaussian noise, the optimization converges back to the exact values
@@ -447,12 +447,12 @@ parameter space (the tree space densifies), and the basins narrow. At depth $\ge
 gradient descent initialized randomly lands in a shallow non-critical basin with
 probability approaching 1, and the kinetics --- $K_\text{fast}$ for Adam with
 standard step sizes --- cannot escape. This is the $K_\text{trap}$ failure mode:
-not that the $\Phi_c$ manifold is absent but that the dynamics cannot actualize
+not that the $\⊙$ manifold is absent but that the dynamics cannot actualize
 it from a generic starting point.
 
 The grammar's prediction for the open question in \pilcrow{}4.3 (''possibly using another
 binary operator similar to (4) but with better properties'') is specific: the
-required property is a $\Phi_c$ manifold with larger basin-to-volume ratio at
+required property is a $\⊙$ manifold with larger basin-to-volume ratio at
 depth $n$. This is a structural property of the operator's type, not an
 optimization property of the training procedure. An operator with
 $P_{\pm}^{\text{sym}}$ would have its snapping targets separated by algebraic
@@ -548,7 +548,7 @@ $\mu \circ \delta = \text{id}$, which is why $j$ is not an elementary function.
 The case requiring honest uncertainty is the \textbf{Riemann $\xi$ function}. If the
 Riemann hypothesis holds, the zeros lie on $\text{Re}(s) = 1/2$, which would
 make the functional equation $\xi(s) = \xi(1-s)$ an exact self-duality at the
-$\Phi_c$ manifold --- the grammar's assignment would be $P_{\pm}^{\text{sym}}$, and
+$\⊙$ manifold --- the grammar's assignment would be $P_{\pm}^{\text{sym}}$, and
 $\xi$ would be outside the EML closure. But the grammar cannot assert the Riemann
 hypothesis. What we can say is: if $\xi \in P_{\pm}^{\text{sym}}$, then the
 Frobenius condition and the Riemann hypothesis are the same statement at different
@@ -599,14 +599,14 @@ The structural type of EML is:
 
 \[
 \mathbf{eml} = \langle D_{\infty};\ T_{\bowtie};\ R_\text{dagger};\ P_{\pm};\
-F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\
+F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \⊙;\ H_1;\
 S_{1:1};\ \Omega_Z \rangle
 \]
 
 Every coordinate arrived under constraint: $R_\text{dagger}$ because the adjoint
 structure of subtraction is the only operation that bridges the two group
 homomorphisms without collapsing their asymmetry; $P_{\pm}$ because the exp/ln
-self-duality is accessible only externally; $\Phi_c$ because the snapping manifold
+self-duality is accessible only externally; $\⊙$ because the snapping manifold
 is present and actualized at accessible depths; $H_1$ because the principal branch
 choice is a forced chirality orientation; $\Omega_Z$ because the fundamental group
 of the logarithm's domain is non-trivial. The type is not assigned --- it is derived.
@@ -658,7 +658,7 @@ falsified by none. $\checkmark$
 
 \textbf{Nearest-neighbor coherence.} The most structurally unexpected output of an
 encoding is its neighborhood, because the encoder cannot control who shows up.
-On the shared coordinates $T_{\bowtie}$, $P_{\pm}$, $\Phi_c$, $\Omega_Z$,
+On the shared coordinates $T_{\bowtie}$, $P_{\pm}$, $\⊙$, $\Omega_Z$,
 $\Gamma_\text{seq}$, the closest catalog neighbor is \emph{The Thunder: Perfect Mind}
 --- a text that generates all its content from a single recursive operator asserting
 rather than proving its self-duality. That a Nag Hammadi tractate and a symbolic
@@ -701,13 +701,13 @@ structure is driven away from. This is not a surprising answer --- it is the
 \emph{expected} answer, which is exactly what a passing check looks like. $\checkmark$
 
 \textbf{Directed distance.} Moving up from the polynomial algebra to EML requires
-acquiring $\Phi_c$, $\Omega_Z$, and $H_1$ --- three independent structural
+acquiring $\⊙$, $\Omega_Z$, and $H_1$ --- three independent structural
 conditions, each costly. Moving down only requires dropping them.
 $d_{\to}(\text{polynomial}, \text{eml}) \gg d_{\to}(\text{eml}, \text{polynomial})$:
 the direction of strain points the right way. $\checkmark$
 
 \textbf{Multi-session convergence.} Three coordinates were derived by independent
-arguments within this document and converged: $\Phi_c$ from the snapping manifold
+arguments within this document and converged: $\⊙$ from the snapping manifold
 definition in \pilcrow{}I and from the basin analysis in \pilcrow{}VI; $\Omega_Z$ from the branch
 structure in \pilcrow{}I and from $\pi_1(\mathbb{C}^\times) = \mathbb{Z}$ in \pilcrow{}VII; $P_{\pm}$
 from the adjoint structure of subtraction in \pilcrow{}II and from the external
@@ -717,7 +717,7 @@ without reference to \pilcrow{}I. The result:
 
 
 \[\langle D_{\infty};\ T_{\bowtie};\ R_\text{dagger};\ P_{\pm};\ F_{\hbar};\
-K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\ S_{1:1};\
+K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \⊙;\ H_1;\ S_{1:1};\
 \Omega_Z \rangle.\]
 
 
@@ -759,7 +759,7 @@ functions can and cannot internally prove about themselves.
 \end{center}
 
 \emph{Structural encoding: $\langle D_{\infty};\ T_{\bowtie};\ R_\text{dagger};\ P_{\pm};\
-F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \Phi_c;\ H_1;\
+F_{\hbar};\ K_\text{slow};\ G_{\aleph};\ \Gamma_\text{seq};\ \⊙;\ H_1;\
 S_{1:1};\ \Omega_Z \rangle$. Tier: $O₂^\dagger$.}
 
 

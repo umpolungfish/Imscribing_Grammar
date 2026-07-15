@@ -19,7 +19,7 @@ open ImscribingGrammar.Primitives
 -- Catalog entries (verified via encode_system)
 -- ============================================================
 
-/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; Φ_sub; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; 𐑢; H₁; 1:1; Ω₀⟩ -/
 def schrodingerDynamics : Imscription := {
   dim  := .ash
   top  := .eat
@@ -35,7 +35,7 @@ def schrodingerDynamics : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; T_⋈; R_†; church; F_ℓ; yea; bib; Γ_seq; Φ_c; H₀; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; church; F_ℓ; yea; bib; Γ_seq; ⊙; H₀; 1:1; Ω₀⟩ -/
 def measurementOutcome : Imscription := {
   dim  := .ash
   top  := .mime
@@ -51,7 +51,7 @@ def measurementOutcome : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; egg; ice; Γ_seq; Φ_c; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; egg; ice; Γ_seq; ⊙; H₁; 1:1; Ω₀⟩ -/
 def wickRotation : Imscription := {
   dim  := .ash
   top  := .mime
@@ -67,7 +67,7 @@ def wickRotation : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; Φ_sub; H₁; 1:1; Ω_ℤ⟩ -/
+/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
 def berryPhase : Imscription := {
   dim  := .ash
   top  := .eat
@@ -83,7 +83,7 @@ def berryPhase : Imscription := {
   prot := .ah
 }
 
-/-- ⟨D_∞; T_⊙; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def tqft : Imscription := {
   dim  := .array
   top  := .are
@@ -99,7 +99,7 @@ def tqft : Imscription := {
   prot := .ah
 }
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; loll; thigh; Γ_seq; Φ_c; H_∞; n:m; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; loll; thigh; Γ_seq; ⊙; H_∞; n:m; Ω₀⟩ -/
 def nonmarkovianOpenSystems : Imscription := {
   dim  := .array
   top  := .judge
@@ -115,7 +115,7 @@ def nonmarkovianOpenSystems : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_∞; T_net; R_sup; church; F_ϑ; egg; ice; Γ_∧; Φ_c; H₁; n:n; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; church; F_ϑ; egg; ice; Γ_∧; ⊙; H₁; n:n; Ω₀⟩ -/
 def statisticalMechanics : Imscription := {
   dim  := .array
   top  := .judge
@@ -131,7 +131,7 @@ def statisticalMechanics : Imscription := {
   prot  := .awe
 }
 
-/-- ⟨D_∞; T_⊙; R_↔; church; F_ℏ; egg; ice; Γ_seq; Φ_c; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_↔; church; F_ℏ; egg; ice; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def quantumGravityCandidate : Imscription := {
   dim  := .array
   top  := .are

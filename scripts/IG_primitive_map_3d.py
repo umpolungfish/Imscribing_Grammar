@@ -160,12 +160,12 @@ def to_vector(entry: dict) -> np.ndarray:
 
 def ouroboricity(entry: dict) -> float:
     phi = entry.get("⊙", "")
-    # Phi_c (Shavian: ⊙) or Phi_c_complex (Shavian: 𐑮); old notation backward-compat
+    # ⊙ (Shavian: ⊙) or 𐑮 (Shavian: 𐑮); old notation backward-compat
     is_phi_c         = phi in ("⊙", "⊙")
     is_phi_c_complex = phi in ("𐑮", "𐑮")
     if not (is_phi_c or is_phi_c_complex):
         return 0.0
-    # R1 (Lean-authoritative): P_pm_sym at Phi_c → O_∞
+    # R1 (Lean-authoritative): P_pm_sym at ⊙ → O_∞
     pol = entry.get("Φ", "")
     if is_phi_c and pol in ("𐑹", "𐑹"):
         return float("inf")

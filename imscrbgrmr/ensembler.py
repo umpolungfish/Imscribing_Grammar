@@ -2,7 +2,7 @@
 IG_ENSEMBLER — Multi-Imscription Composition Verification
 
 Verifies compatibility of multi-imscription systems. Checks for emergent axiom
-violations, computes system-level ξ_CP, and identifies emergent Φ_c candidacy.
+violations, computes system-level ξ_CP, and identifies emergent ⊙ candidacy.
 
 Key principle: ξ_CP(Ψ_ensemble) ≠ Σ ξ_CP(S_i).
 Interface overhead and cooperative gain must be accounted for separately.
@@ -285,11 +285,11 @@ class EnsembleCatalog:
         if max_score >= 0.70:
             props["Axiom 5 (Criticality)"] = (
                 f"Ensemble degeneracy_strength = {max_score:.2f} ≥ 0.70. "
-                "Assign Φ_c to ensemble tuple. Run Varma probe to confirm."
+                "Assign ⊙ to ensemble tuple. Run Varma probe to confirm."
             )
         else:
             props["Axiom 5 (Criticality)"] = (
-                f"Ensemble degeneracy_strength = {max_score:.2f} < 0.70. Retain Φ_sub."
+                f"Ensemble degeneracy_strength = {max_score:.2f} < 0.70. Retain 𐑢."
             )
 
         return props

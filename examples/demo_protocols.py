@@ -197,7 +197,7 @@ def demo_trajectory() -> None:
 
     subsection("Criticality per step")
     for sc in result.criticality_per_step:
-        marker = "★ Φ_c candidate" if sc.is_phi_c_candidate else ""
+        marker = "★ ⊙ candidate" if sc.is_phi_c_candidate else ""
         print(
             f"  {sc.step_name:<24}  score={sc.degeneracy_score:.3f}  "
             f"tier={sc.tier:<12}  {marker}"
