@@ -1071,8 +1071,14 @@ def main():
     }
 
     if action not in action_map:
-        print(f"Unknown action: {action}")
-        sys.exit(1)
+        # A bare catalog name is an omitted keyword, not a missing entry. Reporting it as
+        # unknown sent a live run off to imscribe a reagent already on the shelf.
+        if resolve_system(action) is not None:
+            print(f"(reading `{action}` as `entry {action}` — action keyword omitted)")
+            action, arg = "entry", action
+        else:
+            print(f"Unknown action: {action}")
+            sys.exit(1)
 
     no_arg_actions = ("promotions", "transcendence", "chain", "systems", "stats")
     if action == "promote":

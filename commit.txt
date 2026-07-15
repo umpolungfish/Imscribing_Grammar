@@ -1,19 +1,11 @@
-A no-arg action given a name was answering a question nobody asked
+navigators: read a bare catalog name as `entry <name>`
 
-`cl9nk moat narrative_field_at_you_forgot_your_floaties` returned the generic
-Gaussian Moat theorem, byte-identical to the bare call, because `moat` sits in
-no_arg_actions and the argument was silently discarded. Same for promotions,
-transcendence, chain, systems and stats, on both navigators: eight ways to ask
-about an entry and get a global result that never mentions it.
+The agent kept typing `cl9nk perfect_cuboid_proof` instead of
+`cl9nk entry perfect_cuboid_proof`. The navigator called that an
+unknown action, and the harness then advised imscribing the entry —
+which already existed. So a dropped keyword read as a missing reagent
+and sent the run off to mint one.
 
-This is not a cosmetic wart, it invites the confabulation it then gets blamed for.
-A live run asked for a moat analysis of a specific entry, got back a theorem about
-something else, and the model filled the gap itself — it authored a formatted
-per-entry "Moat Analysis" with a moat width of 0.4367, a number lifted from the
-ZFC_fe rung of an unrelated promotions ladder and relabelled. A tool that ignores
-its argument and answers anyway is worse than one that errors, because what comes
-back is plausible and is not an answer to the question asked.
-
-Now they refuse the stray argument and say what you probably wanted: `entry
-<name>` for the per-entry decomposition, `distance <name>` for its gap to the
-reference, `tier <name>`, or `promote <a> <b>`. The bare calls are unchanged.
+Now a bare first token that resolves to a catalog entry is read as
+`entry <name>`, and the reading is announced rather than applied
+silently. A token that is neither an action nor an entry still refuses.
