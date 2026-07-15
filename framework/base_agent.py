@@ -236,9 +236,26 @@ class BaseAgent(ABC):
                     reasoning_off=reasoning_off,
                 )
             except Exception as exc:
+                # str() on an httpx.HTTPStatusError is the status line and a link to the MDN
+                # page for that status. The provider's ACTUAL complaint — which model, which
+                # field, what it objected to — is in the response body, and dropping it meant
+                # a 400 was retried four times and reported four times without once saying
+                # what was wrong. A rejection whose reason is discarded is unreadable, and an
+                # unreadable rejection gets blamed on whatever is nearest.
                 err = str(exc)
+                body = ""
+                resp = getattr(exc, "response", None)
+                if resp is not None:
+                    try:
+                        body = (resp.text or "").strip()
+                    except Exception:
+                        body = ""
+                if body:
+                    err = f"{err} | provider said: {body[:800]}"
                 last_error = err
                 code = getattr(exc, "status_code", None)
+                if code is None and resp is not None:
+                    code = getattr(resp, "status_code", None)
 
                 # 429 rate limit
                 if code == 429 and attempt < max_retries:

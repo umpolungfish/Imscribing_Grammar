@@ -1,11 +1,15 @@
-navigators: read a bare catalog name as `entry <name>`
+base_agent: say what the provider actually objected to
 
-The agent kept typing `cl9nk perfect_cuboid_proof` instead of
-`cl9nk entry perfect_cuboid_proof`. The navigator called that an
-unknown action, and the harness then advised imscribing the entry —
-which already existed. So a dropped keyword read as a missing reagent
-and sent the run off to mint one.
+str() on an httpx.HTTPStatusError is the status line plus a link to the MDN
+page for that status. The provider's real complaint -- which model, which
+field, what it rejected -- is in the response body, and we dropped it. So a
+400 was retried four times and reported four times without once saying what
+was wrong, and imscribe failed in a live run with nothing to read but the
+word "400". An unreadable rejection gets blamed on whatever is nearest.
 
-Now a bare first token that resolves to a catalog entry is read as
-`entry <name>`, and the reading is announced rather than applied
-silently. A token that is neither an action nor an entry still refuses.
+The body now travels with the error.
+
+Also: `getattr(exc, "status_code", None)` is always None for an
+httpx.HTTPStatusError -- the code is on exc.response.status_code. So `code`
+never bound, and the 429 rate-limit branch could not fire for any httpx
+error. Read it off the response when the attribute is absent.
