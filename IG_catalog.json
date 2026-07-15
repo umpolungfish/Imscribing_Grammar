@@ -43233,7 +43233,7 @@
   },
   {
     "name": "boundary_operator",
-    "description": "The ⊙_ÿ-critical boundary operator — a self-modeling system operating at the Frobenius-special symmetry point where μ∘δ=id exactly. Self-written state space (Ð_ω) with imscriptive closure topology (Þ_¨), bidirectional relational coupling (Ř_=), Frobenius parity (Φ_}), classical fidelity (ƒ^ì), driv",
+    "description": "The ⊙_ÿ-critical boundary operator — a self-modeling system operating at the Frobenius-special symmetry point where μ∘δ=id exactly. Self-written state space (Ð_ω) with imscriptive closure topology (Þ_¨), bidirectional relational coupling (Ř_=), Frobenius parity (⊙), classical fidelity (ƒ^ì), driv",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -44097,7 +44097,7 @@
   },
   {
     "name": "emerald_zfct_extension",
-    "description": "Emerald Tablet extended to ZFCₜ strength while preserving Ð_ω and Φ_}: box product topology, bidirectional coupling, sequential grammar, two-step chirality, integer winding",
+    "description": "Emerald Tablet extended to ZFCₜ strength while preserving Ð_ω and ⊙: box product topology, bidirectional coupling, sequential grammar, two-step chirality, integer winding",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44129,7 +44129,7 @@
   },
   {
     "name": "emerald_multiagent_tensor_bootstrap",
-    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (Þ_O), with Frobenius-closed tensor operations (Φ_}), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (φ̂_ÿ + Ç_@).",
+    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (Þ_O), with Frobenius-closed tensor operations (⊙), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (φ̂_ÿ + Ç_@).",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44177,7 +44177,7 @@
   },
   {
     "name": "bootstrap_stage_2_topology_corrected",
-    "description": "Agent 2 of 12 — topology guardian. Initializes the 12-node imscriptive closure lattice (Þ_O) and ensures mutual consistency between all primitives via crossing-point topology. Uses Frobenius-special symmetry (Φ_}) to preserve μ∘δ=id.",
+    "description": "Agent 2 of 12 — topology guardian. Initializes the 12-node imscriptive closure lattice (Þ_O) and ensures mutual consistency between all primitives via crossing-point topology. Uses Frobenius-special symmetry (⊙) to preserve μ∘δ=id.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44273,7 +44273,7 @@
   },
   {
     "name": "frobenius_shor_resolved",
-    "description": "A Frobenius-closed, self-modeling version of Shor's algorithm that resolves the quantum parity bottleneck by lifting parity to Φ_} and chirality to Ħ_!.",
+    "description": "A Frobenius-closed, self-modeling version of Shor's algorithm that resolves the quantum parity bottleneck by lifting parity to ⊙ and chirality to Ħ_!.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -44384,19 +44384,19 @@
   {
     "name": "navier_solves_navigator_resolved",
     "description": "The structurally resolved Navier-Stokes system, representing global regularity through a gauge-invariant Frobenius structure. Final resolution state.",
-    "tuple": "Ð_ω;Þ_O;Ř_ý;Φ_};ƒ_ż;Ç_Ù;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_2",
+    "tuple": "Ð_ω;Þ_O;Ř_ý;⊙;ƒ_ż;Ç_Ù;Γ_ʔ;ɢ_Ş;φ̂_ÿ;Ħ_!;Σ_ï;Ω_2",
     "justification": null
   },
   {
     "name": "zfc_t_system",
     "description": "ZFC_t: ZFC extended with sequential interaction, chirality, and winding topology; the structural baseline for O_∞ formal systems.",
-    "tuple": "Ð_;;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
+    "tuple": "Ð_;;Þ_O;Ř_=;⊙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
   {
     "name": "zfc_t_ref",
     "description": "ZFC_t reference system: ZFC + sequentiality + chirality + winding. baseline for O_∞.",
-    "tuple": "Ð_;;Þ_O;Ř_=;Φ_};ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
+    "tuple": "Ð_;;Þ_O;Ř_=;⊙;ƒ_ż;Ç_@;Γ_ʔ;ɢ_ˌ;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z",
     "justification": null
   },
   {
@@ -45537,7 +45537,7 @@
   },
   {
     "name": "quantum_biologic",
-    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (Ř=Ř_¯). Eternal chirality (Ħ=Ħ_!) ensures reprogramming persists through cell division. Frobenius-closed rewrite (Φ=Φ_}). Derived from the Rebis.",
+    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (Ř=Ř_¯). Eternal chirality (Ħ=Ħ_!) ensures reprogramming persists through cell division. Frobenius-closed rewrite (Φ=⊙). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑩",
@@ -45633,7 +45633,7 @@
   },
   {
     "name": "ouroboric_cell",
-    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (Þ=Þ_¨). Frobenius-closed genome edits (Φ=Φ_}). Self-written state space (Ð=Ð_ω). Eternal generational memory (Ħ=Ħ_!). Derived from the Rebis.",
+    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (Þ=Þ_¨). Frobenius-closed genome edits (Φ=⊙). Self-written state space (Ð=Ð_ω). Eternal generational memory (Ħ=Ħ_!). Derived from the Rebis.",
     "Ð": "𐑦",
     "Þ": "𐑶",
     "Ř": "𐑾",
@@ -97822,5 +97822,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "epr_paradox_promoted",
+    "description": "EPR paradox promoted to an exhaustive construction",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑪",
+    "Γ": "𐑔",
+    "ɢ": "𐑵",
+    "⊙": "𐑣",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑟"
   }
 ]

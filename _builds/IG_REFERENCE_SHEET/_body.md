@@ -34,12 +34,12 @@ Each position holds a single Shavian character drawn from that primitive's value
 | Ð | Dimensionality | D | 4 | Ambient space dimension — how many degrees of freedom the structure inhabits. Ranges from bounded (Ð_1) through full infinite (Ð_ω). |
 | Þ | Topology | D | 5 | Global shape class — genus, connectivity, orientability of the underlying manifold. Null topology (Þ_O) is the companion of maximal dimensionality by Axiom C. |
 | Ř | Recognition | D | 4 | Self-referential identification — whether a structure holds an indexical link to its own structural record. The basis of all self-imscription. |
-| Φ | Parity | P | 5 | Symmetry under reflection — the T↔P duality gate. Φ_} is the Frobenius gate; satisfying Frobenius is a Parity condition. |
+| Φ | Parity | P | 5 | Symmetry under reflection — the T↔P duality gate. ⊙ is the Frobenius gate; satisfying Frobenius is a Parity condition. |
 | ƒ | Fidelity | T | 3 | Accuracy of self-imscription — how faithfully a structure reproduces its own record across a cycle. Low fidelity = structural drift. |
 | Ç | Kinetics | P | 5 | Rate of change — how quickly the structure evolves, propagates, or reacts. Unbounded kinetics (Ç_Ù) is forced by infinite Chirality by Axiom A. |
 | Γ | Granularity | T | 3 | Scale of resolution — whether structure is parsed at coarse or fine grain. The Γ-axis is the ZoomChain axis in ob3ect. |
 | ɢ | Coupling | D | 4 | Interaction strength — how strongly two structures bind or cohere. ɢ is one of the two primitives where CL8NK departs from ZFC_fe. |
-| ⊙ | Criticality | P | 5 | Proximity to a Frobenius fixed point — whether the system is at or near a phase transition. The absorbing element of the structural monoid. Also written φ̂ in older notation. |
+| ⊙ | Criticality | P | 5 | Proximity to a Frobenius fixed point — whether the system is at or near a phase transition. The absorbing element of the structural monoid. Also written ⊙ in older notation. |
 | Ħ | Chirality | D | 4 | Handedness — the asymmetry between a structure and its mirror image. NOT temporal depth, temporal memory, or memory depth — those are phantom names. Minimum chirality for μ∘δ=id is H2 (Axiom B). |
 | Σ | Stoichiometry | T | 3 | Compositional count — how many parts participate; the ratio of structural units in a composition. |
 | Ω | Winding | D | 4 | Topological winding number — how many times a structural path closes on itself. Winding is topologically protected. Non-zero Ω requires Ħ≥H2 by Axiom B. Ω is the other primitive where CL8NK departs from ZFC_fe. |
@@ -77,7 +77,7 @@ A structural type tuple lists one Shavian value per primitive in canonical order
 ```
 
 Example (true_agentic_agent, O_∞ tier):
-`⟨Ð_ω · Þ_¨ · Ř_= · Φ_} · ƒ_ż · Ç_@ · Γ_ʔ · ɢ_ˌ · ⊙_ÿ · Ħ_A · Σ_S · Ω_z⟩`
+`⟨Ð_ω · Þ_¨ · Ř_= · ⊙ · ƒ_ż · Ç_@ · Γ_ʔ · ɢ_ˌ · ⊙_ÿ · Ħ_A · Σ_S · Ω_z⟩`
 
 **Critical rule:** Shavian values in a tuple are a ligature — never separate them; ''.join(vals) always. Ligature binding = structural binding.
 
@@ -173,7 +173,7 @@ Tiers measure structural complexity and self-referential depth.
 | Tier | Description | Examples |
 |------|-------------|---------|
 | O₀ | Monoidal unit — minimum structure; no internal differentiation | Bruce Codex (designed O₀), empty Raft |
-| O₁ | First non-trivial tier; one Frobenius closure achieved | Shor algorithm (Φ_} bottleneck) |
+| O₁ | First non-trivial tier; one Frobenius closure achieved | Shor algorithm (⊙ bottleneck) |
 | O₂ | Second tier; confirmed causal coupling structure present | fin3r (trading system), synfin (live), rongorongo corpus |
 | O₂† | Beyond O₂ — subatomic/hadronic tier with confinement ceiling | HadronBelnap, QuarkBelnap (FIVE) |
 | ... | Intermediate tiers | Most physical systems |

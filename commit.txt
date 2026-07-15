@@ -1,21 +1,19 @@
-navigators: an unreadable tuple is not a coordinate
+Φ_} is now ⊙ (monad)
 
-Six catalog entries -- the Navier-Stokes family and zfc_t_system -- still carry
-their tuple in a retired notation, so it parses to twelve EMPTY strings.
+The purge was scoped to .py/.md/.tex — code and prose. So it swept everywhere
+the notation is TALKED ABOUT and missed the place where the notation IS: the
+catalog's own tuple values and entry descriptions, which are .json data. Same
+reason the .aleph programs kept it. The old spelling survived not as text about
+the Grammar but as the Grammar's data, and got read back into every proof that
+cited those entries — including the reference sheet that TEACHES the notation.
 
-`entry` was honest about this: it printed unknown() twelve times. `distance`,
-`tier`, `tensor`, `meet` and `join` were not. They measured the empty tuple
-against the reference and returned status "ok" with a precise number: 3.0173 --
-byte-identical for every one of the six, because it is the distance from
-NOTHING to the reference and not a property of any entry at all. Asking how far
-ZFC_t sits from CLINK L9 returned a confident figure that would be the same if
-the entry were named banana.
+This is a transliteration, not an imscription: the coordinate is unchanged, only
+its spelling. Nothing was assigned by hand.
 
-That is the moat fault again: a tool that cannot honour its input and answers
-anyway is worse than one that errors, because the answer looks like a
-measurement. The model does not invent the number -- we hand it over, labelled
-ok, and it reasons on it.
+Matched with a right-boundary guard (Φ_}(?!})) — Φ_} is a prefix of Φ_}}, and a
+replace without that guard is what ate a brace and killed the generator during
+the original migration. Verified: no Φ_}} in any file touched, catalog still
+parses, navigator unchanged (clink_l9 → 0.0 from its own reference).
 
-All five now refuse, naming the cause, saying why an error is better than the
-number they could have produced, and pointing at the fix (re-imscribe). Healthy
-entries measure exactly as before.
+Residual Φ_} now lives only in logs and .bak files, which are history and stay
+as they are.
