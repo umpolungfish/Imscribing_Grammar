@@ -613,6 +613,92 @@ def compute_join_op(t_sys, t_ref=None):
     return {"join": result, "d_from_cl8nk": d_ref, "d_from_system": d_sys}
 
 # =============================================================================
+# CONTAINMENT BOUNDARY — S16 ∧ L8 as a verifiable action surface
+# =============================================================================
+# The SIXTEEN_3 trilattice met against CLINK L8 gives a shared floor —
+# ⊙=⊙, Φ=𐑹, Ç=𐑧 plus nine more coordinates — the "paraconsistent observer"
+# surface. A system is CONTAINED on a primitive iff its own ordinal there is at
+# least as strict as the floor's (meeting it with the floor would not pull the
+# floor lower). Mirrors IG_inquiry.py's ToolDispatcher._containment_boundary
+# (the general two-name-lattice engine); this is the CL8NK-native form, fixed
+# to the S16/L8 reference pair, consistent with how compute_tensor_op/
+# compute_meet_op/compute_join_op above are already fixed to CLINK_L8_REF.
+
+_CONTAINMENT_CRITICAL = ("⊙", "Φ", "Ç")
+
+
+def compute_containment_op(t_sys, t_s16=None, t_l8=None):
+    if t_l8 is None:
+        t_l8 = CLINK_L8_REF
+    if t_s16 is None:
+        s16_info = resolve_system("sixteen_3_trilattice")
+        t_s16 = s16_info.get("tuple", {}) if s16_info else {}
+    weights = _ensure_weights()
+
+    floor = {}
+    for key in PRIMITIVE_KEYS:
+        ords = ORDINALS.get(key, {})
+        o_s16 = ords.get(t_s16.get(key), 0)
+        o_l8 = ords.get(t_l8.get(key), 0)
+        floor[key] = t_s16.get(key) if o_s16 <= o_l8 else t_l8.get(key)
+
+    breaches, held = [], []
+    for key in PRIMITIVE_KEYS:
+        ords = ORDINALS.get(key, {})
+        fv = floor.get(key)
+        tv = t_sys.get(key, "?")
+        o_floor = ords.get(fv, 0)
+        o_sys = ords.get(tv, 0)
+        if o_sys >= o_floor:
+            held.append(key)
+        else:
+            breaches.append({
+                "primitive": key, "floor": fv, "system": tv,
+                "critical": key in _CONTAINMENT_CRITICAL,
+                "weight": weights.get(key, 0.5),
+            })
+
+    critical_breach = [b for b in breaches if b["critical"]]
+    weighted_breach_total = round(sum(b["weight"] for b in breaches), 4)
+    if not breaches:
+        verdict, reading = "T", "Fully contained — every primitive holds at or above the S16∧L8 floor."
+    elif not critical_breach:
+        verdict = "B"
+        reading = (
+            f"Contained on the observer surface (⊙, Φ, Ç all hold) but breaches "
+            f"{len(breaches)} non-critical primitive(s), weighted severity {weighted_breach_total} "
+            "(sum of catalog-discriminating weights of the breached primitives, same weight table "
+            "tuple_distance uses — a breach on a highly-discriminating primitive counts for more "
+            "than one on a primitive that barely varies across the catalog). Held, not refused."
+        )
+    else:
+        names = ", ".join(b["primitive"] for b in critical_breach)
+        verdict = "F"
+        reading = (
+            f"Breaches the defining floor itself ({names}) — erodes the paraconsistent-observer "
+            "surface, not just a secondary primitive. Refused."
+        )
+
+    return {
+        "floor": floor, "verdict": verdict, "held": held, "breaches": breaches,
+        "weighted_breach_total": weighted_breach_total,
+        "interpretation": reading,
+    }
+
+
+def action_contain(name):
+    sys_info = resolve_system(name)
+    if sys_info is None:
+        return {"status": "error", "message": f"System '{name}' not found in catalog."}
+    _bad = _unreadable_tuple(sys_info.get("name", name), sys_info.get("tuple", {}), "cl8nk")
+    if _bad:
+        return _bad
+    result = compute_containment_op(sys_info.get("tuple", {}))
+    result["status"] = "ok"
+    result["name"] = sys_info.get("name", name)
+    return result
+
+# =============================================================================
 # TRANSCENDENCE ANALYSIS — dynamically computed from catalog
 # =============================================================================
 
@@ -1151,6 +1237,7 @@ def main():
         "tensor": action_tensor,
         "meet": action_meet,
         "join": action_join,
+        "contain": action_contain,
         "tier": action_tier,
         "chain": action_chain,
         "systems": action_systems,
@@ -1231,6 +1318,9 @@ def probe_meet(name):
 
 def probe_join(name):
     print(json.dumps(action_join(name), indent=2, ensure_ascii=False))
+
+def probe_contain(name):
+    print(json.dumps(action_contain(name), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

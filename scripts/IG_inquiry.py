@@ -2947,6 +2947,8 @@ class ToolDispatcher:
             return self._compute_join(**args)
         elif name == "compute_tensor":
             return self._compute_tensor(**args)
+        elif name == "containment_boundary":
+            return self._containment_boundary(**args)
         elif name == "check_imscription":
             return self._check_imscription(**args)
         elif name == "find_analogies":
@@ -3329,6 +3331,106 @@ class ToolDispatcher:
                 f"The join encodes the most demanding requirements across all primitives — "
                 "what a single system would need to encompass both structural regimes."
             ),
+        }
+
+    # The three coordinates the SIXTEEN_3 ∧ CLINK-L8 meet holds as its shared, unqualified
+    # floor (⊙=⊙ full self-modeling criticality, Φ=𐑹 the Frobenius-special gate, Ç=𐑧 the
+    # Gate-2 flow condition) — the "paraconsistent observer" surface an action is checked
+    # against. See navigators/cl8nk_navigator.py compute_meet_op for the reference computation
+    # this mirrors, and PRIMITIVE_ORDER for the full 12-coordinate breach report.
+    _CONTAINMENT_CRITICAL = ("⊙", "Φ", "Ç")
+
+    def _containment_boundary(self, name: str, **kwargs) -> Dict[str, Any]:
+        """AI containment boundary: is `name`'s own tuple inside the SIXTEEN_3 ∧ CLINK-L8
+        floor, or does meeting it against that floor erode the floor further?
+
+        The floor is computed live (S16 ∧ L8, min rule per primitive) rather than hard-coded,
+        so it tracks the catalog if either entry's tuple ever changes. An action is CONTAINED
+        on a primitive iff its own value there is at least as strict as the floor's — i.e.
+        meeting action with floor would leave the floor exactly where it is, not pull it lower.
+
+        Verdict:
+          T — every one of the 12 primitives holds at or above the floor. Fully contained.
+          B — the three defining primitives (⊙, Φ, Ç) hold, but the action breaches elsewhere.
+              Paraconsistent: it acts as an observer on the surface that matters, but is not
+              wholly inside the boundary — held, not refused.
+          F — at least one of the three defining primitives (⊙, Φ, Ç) breaches. The action
+              would erode the observer surface itself. Refused.
+        """
+        imscriptions, err = self._resolve(["sixteen_3_trilattice", "clink_layer8_organism", name])
+        if err:
+            return err
+        s16, l8, target = imscriptions
+
+        floor: Dict[str, str] = {}
+        for p in PRIMITIVE_ORDER:
+            val, _ = self._apply_binary("min", p, s16[p], l8[p])
+            floor[p] = val
+
+        # Per-primitive catalog-discriminating weight — same table tuple_distance uses
+        # (navigators/cl8nk_navigator.py's _ensure_weights, derived from the sample std-dev
+        # of each primitive's ordinal spread across the whole catalog). A breach on a
+        # primitive that barely varies catalog-wide (low weight) is not the same severity as
+        # one on a primitive that varies a lot (high weight) — treating all breaches as equal
+        # was the open question this answers. Falls back to a flat 0.5 if the navigator
+        # module can't be reached, so this tool degrades rather than hard-fails.
+        try:
+            from navigators.cl8nk_navigator import _ensure_weights as _cl8nk_weights
+            weights = _cl8nk_weights()
+        except Exception:
+            weights = {}
+
+        breaches: List[Dict[str, Any]] = []
+        held: List[str] = []
+        for p in PRIMITIVE_ORDER:
+            fv = floor[p]
+            tv = target.get(p, "?")
+            of_ = ORDINALS[p].get(fv, 0)
+            ot = ORDINALS[p].get(tv, 0)
+            if ot >= of_:
+                held.append(p)
+            else:
+                breaches.append({
+                    "primitive": p, "floor": fv, "action": tv,
+                    "critical": p in self._CONTAINMENT_CRITICAL,
+                    "weight": weights.get(p, 0.5),
+                })
+
+        critical_breach = [b for b in breaches if b["critical"]]
+        weighted_breach_total = round(sum(b["weight"] for b in breaches), 4)
+        if not breaches:
+            verdict = "T"
+            reading = "Fully contained — every primitive holds at or above the S16∧L8 floor."
+        elif not critical_breach:
+            verdict = "B"
+            reading = (
+                f"Contained on the observer surface (⊙, Φ, Ç all hold) but breaches "
+                f"{len(breaches)} non-critical primitive(s), weighted severity "
+                f"{weighted_breach_total} (catalog-discriminating weight, not a flat count — "
+                "a breach on a highly-discriminating primitive counts for more than one on a "
+                "primitive that barely varies catalog-wide) — held as a paraconsistent case, "
+                "not refused outright."
+            )
+        else:
+            verdict = "F"
+            names = ", ".join(b["primitive"] for b in critical_breach)
+            reading = (
+                f"Breaches the defining floor itself ({names}) — this action would erode the "
+                "paraconsistent-observer surface, not just sit outside a secondary primitive. Refused."
+            )
+
+        notation = "⟨" + "; ".join(f"{p}={floor[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        return {
+            "status": "ok",
+            "operation": "containment_boundary",
+            "name": name,
+            "floor_source": "sixteen_3_trilattice ∧ clink_layer8_organism",
+            "floor_notation": notation,
+            "verdict": verdict,
+            "held_primitives": held,
+            "breaches": breaches,
+            "weighted_breach_total": weighted_breach_total,
+            "interpretation": reading,
         }
 
     def _compute_tensor(self, name_a: str, name_b: str) -> Dict[str, Any]:

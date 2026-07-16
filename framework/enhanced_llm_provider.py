@@ -336,6 +336,32 @@ class OpenRouterProvider(HttpProvider):
                 body = e.response.text[:800] if e.response else "no body"
             except Exception:
                 body = "unreadable"
+            # The comment above assumed "models that always reason ignore [reasoning:off]
+            # harmlessly" — false for endpoints that make reasoning mandatory: they 400
+            # instead of ignoring the switch. That's not a transient failure the @llm_retry
+            # wrapper should burn attempts re-sending identically; it's a fixed request-shape
+            # mismatch, so drop the switch once and resend rather than failing the call.
+            if (
+                e.response is not None
+                and e.response.status_code == 400
+                and "reasoning" in data
+                and "reasoning is mandatory" in body.lower()
+            ):
+                logger.warning(
+                    f"openrouter/{self.model} makes reasoning mandatory — retrying "
+                    "without the reasoning:off switch instead of failing the call."
+                )
+                data.pop("reasoning", None)
+                async with httpx.AsyncClient(timeout=120.0) as client:
+                    response = await client.post(self.base_url, headers=headers, json=data)
+                    response.raise_for_status()
+                    full_response = response.json()
+                    content = full_response["choices"][0]["message"]["content"]
+                    if content is None:
+                        finish_reason = full_response["choices"][0].get("finish_reason", "unknown")
+                        raise ValueError(f"API returned null content (finish_reason={finish_reason!r})")
+                    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+                    return content
             logger.error(f"HTTP {e.response.status_code} from {self.base_url}: {body}")
             raise
 
