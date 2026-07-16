@@ -433,29 +433,57 @@ class ImscriptionGeneratorAgent(BaseAgent):
         # Build the analysis prompt
         prompt = self._build_generation_prompt(description, name)
 
-        try:
-            # Call LLM for imscription generation
-            raw_response = await self.call_llm(
-                prompt=prompt,
-                max_tokens=self.config.get("max_tokens", 4000),
-                temperature=0.3,  # Lower temperature for more deterministic output
-                system=self._get_system_prompt()
-            )
-
-            # Parse the response
-            imscription_data, reasoning, confidence, alternatives = self._parse_llm_response(raw_response)
-
-            # Create the imscription — pass explicit name so goal-derived slug wins
-            imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)
-
-        except Exception as e:
+        # One corrective retry on a bad primitive VALUE (e.g. the model puts a
+        # criticality_phase value like ⊙ into the recognition_mode slot). This
+        # is not a silent fallback — it's the same real-error-back-to-the-model
+        # pattern used elsewhere (numeric-value rejection, MoDoT's PROD prod).
+        # A genuinely wrong second attempt still raises; nothing is guessed.
+        last_error: Optional[ValueError] = None
+        _MAX_CORRECTION_ATTEMPTS = 4
+        for correction_attempt in range(_MAX_CORRECTION_ATTEMPTS):
+            call_prompt = prompt
+            if last_error is not None:
+                call_prompt = (
+                    f"{prompt}\n\n"
+                    f"YOUR PREVIOUS RESPONSE WAS REJECTED BY THE PARSER:\n{last_error}\n"
+                    f"Re-read the value_registry table for the field named in that error and "
+                    f"emit ONLY a value from ITS row — do not reuse a value that belongs to a "
+                    f"different field. Respond with the full corrected JSON object again."
+                )
             try:
-                from rich.console import Console
-                Console().print(f"[red]LLM API failed ({type(e).__name__}): {e}[/red]")
-                Console().print("[red]No fallback — rule-based generation produces unreliable encodings. Fix the API key or provider.[/red]")
-            except:
-                pass
-            raise
+                raw_response = await self.call_llm(
+                    prompt=call_prompt,
+                    max_tokens=self.config.get("max_tokens", 4000),
+                    temperature=0.3,  # Lower temperature for more deterministic output
+                    system=self._get_system_prompt()
+                )
+                imscription_data, reasoning, confidence, alternatives = self._parse_llm_response(raw_response)
+                imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)
+                break
+            except ValueError as e:
+                last_error = e
+                if correction_attempt < _MAX_CORRECTION_ATTEMPTS - 1:
+                    try:
+                        from rich.console import Console
+                        Console().print(f"[yellow]attempt {correction_attempt + 1}/{_MAX_CORRECTION_ATTEMPTS} rejected ({e}) — retrying with the parser's error[/yellow]")
+                    except Exception:
+                        pass
+                    continue
+                try:
+                    from rich.console import Console
+                    Console().print(f"[red]LLM API failed after {_MAX_CORRECTION_ATTEMPTS} attempts ({type(e).__name__}): {e}[/red]")
+                    Console().print("[red]No fallback — rule-based generation produces unreliable encodings. Fix the API key or provider.[/red]")
+                except Exception:
+                    pass
+                raise
+            except Exception as e:
+                try:
+                    from rich.console import Console
+                    Console().print(f"[red]LLM API failed ({type(e).__name__}): {e}[/red]")
+                    Console().print("[red]No fallback — rule-based generation produces unreliable encodings. Fix the API key or provider.[/red]")
+                except Exception:
+                    pass
+                raise
 
         # Compute thermodynamic metrics if delta_g provided
         thermo_metrics = None
@@ -858,24 +886,24 @@ This is a non-trivial, non-default encoding reached by structural reasoning, not
 </domain_guide>
 
 <value_registry>
-**MANDATORY OUTPUT VALUE TABLE — copy these strings VERBATIM into your JSON. Do NOT invent variants, substitute characters, or use the glyph shorthand from the primitives section. The parser accepts ONLY these strings (plus stoichiometry ratios).**
+**MANDATORY OUTPUT VALUE TABLE — copy these strings VERBATIM into your JSON. Do NOT invent variants or substitute characters. Every valid value below is a single Shavian glyph or a single plain-English word — nothing else resolves. The parser accepts ONLY the canonical value shown in each row (plus stoichiometry ratios).**
 
-| Field               | Valid output strings (pick exactly one) |
+| Field               | Valid output strings (pick exactly one — glyph or name, not both) |
 |---------------------|-----------------------------------------|
-| dimensionality      | `Ð_wynn`  `Ð_turnthree`  `Ð_invomega`  `Ð_holo` |
-| topology            | `Þ_branched`  `Þ_bullseye`  `Þ_bowl`  `Þ_holo`  `Þ_cage` |
-| recognition_mode    | `Ř_superset`  `Ř_subset`  `Ř_catalytic`  `Ř_mechanical` |
-| polarity            | `Φ_neutral`  `Φ_plus`  `Φ_pipevar`  `Φ_subdoublearrow`  `Φ_doublebarpipe` |
-| fidelity            | `ƒ_hardsign`  `ƒ_dh`  `ƒ_noise` |
-| kinetic_character   | `Ç_frtailgamma`  `Ç_turnm`  `Ç_schwa`  `Ç_teshlig`  `Ç_lambda` |
-| granularity         | `Γ_beta`  `Γ_gamma`  `Γ_revapostrophe` |
-| interaction_grammar | `ɢ_corner`  `ɢ_spleftarrow`  `ɢ_secstress`  `G_dissipative` |
-| criticality_phase   | `⊙_softsign`  `⊙_ctyogh`  `⊙_closerevepsilon`  `⊙_revepsilon`  `⊙_upstep` |
-| chirality           | `Ħ_closeomega`  `Ħ_toneletterstem`  `Ħ_turntwo`  `Ħ_invscripta` |
+| dimensionality      | `𐑛` dead · `𐑨` ash · `𐑼` array · `𐑦` if_ |
+| topology            | `𐑡` judge · `𐑰` eat · `𐑥` mime · `𐑶` oil · `𐑸` are |
+| recognition_mode    | `𐑩` ado · `𐑑` tot · `𐑽` ear · `𐑾` ian |
+| polarity            | `𐑗` church · `𐑿` yew · `𐑬` out · `𐑯` nun · `𐑹` or_ |
+| fidelity            | `𐑱` age · `𐑞` they · `𐑐` peep |
+| kinetic_character   | `𐑘` yea · `𐑤` loll · `𐑧` egg · `𐑪` on · `𐑺` air |
+| granularity         | `𐑚` bib · `𐑔` thigh · `𐑲` ice |
+| interaction_grammar | `𐑝` vow · `𐑜` gag · `𐑠` measure · `𐑵` ooze |
+| criticality_phase   | `𐑢` woe · `⊙` monad · `𐑮` roar · `𐑻` err · `𐑣` haha |
+| chirality           | `𐑓` fee · `𐑒` kick · `𐑖` sure · `𐑫` wool |
 | stoichiometry       | `1:1`  `n:n`  `n:m` |
-| protection          | `Ω_closeepsilon`  `Ω_crtwo`  `Ω_dzlig`  `Ω_turna` |
+| protection          | `𐑷` awe · `𐑴` oak · `𐑭` ah · `𐑟` zoo |
 
-Mapping to the conceptual labels in `<primitives>`: D_wynn=𐑛(point); D_turnthree=𐑨(spatial); D_invomega=𐑼(cyclic/temporal); D_holo=𐑦(imscriptive). T_branched=𐑡(network/graph); T_bullseye=𐑰(containment); T_bowl=𐑥(cyclic closure); T_holo=𐑶(enclosed); T_cage=𐑸(imscriptive). R_superset=𐑩(soft); R_subset=𐑑(bond); R_catalytic=𐑽(adjoint); R_mechanical=𐑾(mechanical). P_neutral=𐑗; P_plus=𐑿; P_pipevar=𐑬; P_subdoublearrow=𐑯; P_doublebarpipe=𐑹. F_hardsign=ƒ^ż(high); F_dh=ƒ^ð(medium); F_noise=ƒ^ì(low). K_frtailgamma=Ç^-(low barrier); K_turnm=Ç^W(moderate); K_schwa=Ç^@(frozen); K_teshlig=Ç^Ù(metastable); K_lambda=Ç^λ(MBL). G_beta=𐑚(local); G_gamma=𐑔(meso); G_revapostrophe=𐑲(global). Coupling: ɢ_corner=ɢ^∧(conjunctive); ɢ_spleftarrow=ɢ^˝(disjunctive); ɢ_secstress=ɢ^ˌ(sequential); G_dissipative=ɢ^Ş(broad). Crit: ⊙_softsign=𐑢(sub); ⊙_ctyogh=⊙(critical); ⊙_closerevepsilon=𐑮(complex); ⊙_revepsilon=𐑻(EP); ⊙_upstep=𐑣(super). H: Ħ_closeomega=𐑓(achiral); Ħ_toneletterstem=𐑒(soft); Ħ_turntwo=𐑖(persistent); Ħ_invscripta=𐑫(topo). Ω: Ω_closeepsilon=𐑷(none); Ω_crtwo=𐑴(Z2); Ω_dzlig=𐑭(winding); Ω_turna=𐑟(non-Abelian).
+These are the SAME 12 primitives and values described conceptually in `<primitives>` and `<domain_guide>` above — use the plain glyph or name shown there directly, nothing needs translating. Every valid value in this table is either a single Shavian glyph (one character, e.g. `𐑛`) or a single lowercase English word (e.g. `dead`) — never both together, never with an underscore, never with any suffix attached.
 </value_registry>
 
 <output_format>
@@ -885,25 +913,25 @@ Respond with a single JSON object with this EXACT structure. The outer key MUST 
 ```json
 {
   "imscription": {
-    "dimensionality": "Ð_wynn",
-    "topology": "Þ_bowl",
-    "recognition_mode": "Ř_superset",
-    "polarity": "Φ_pipevar",
-    "fidelity": "ƒ_hardsign",
-    "kinetic_character": "Ç_turnm",
-    "granularity": "Γ_beta",
-    "interaction_grammar": "ɢ_corner",
-    "criticality_phase": "⊙_softsign",
-    "chirality": "Ħ_closeomega",
+    "dimensionality": "𐑛",
+    "topology": "𐑥",
+    "recognition_mode": "𐑩",
+    "polarity": "𐑬",
+    "fidelity": "𐑱",
+    "kinetic_character": "𐑤",
+    "granularity": "𐑚",
+    "interaction_grammar": "𐑝",
+    "criticality_phase": "𐑢",
+    "chirality": "𐑓",
     "stoichiometry": "1:1",
-    "protection": "Ω_closeepsilon"
+    "protection": "𐑷"
   },
   "confidence": 0.85,
-  "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'Ð_wynn: operates at single-locus scale. Þ_bowl: cyclic interface...'",
-  "alternatives": [{"dimensionality": "Ð_wynn", "topology": "Þ_bullseye", "recognition_mode": "Ř_superset", "polarity": "Φ_pipevar", "fidelity": "ƒ_dh", "kinetic_character": "Ç_frtailgamma", "granularity": "Γ_beta", "interaction_grammar": "ɢ_spleftarrow", "criticality_phase": "⊙_softsign", "chirality": "Ħ_closeomega", "stoichiometry": "n:m", "protection": "Ω_closeepsilon"}]
+  "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'dead: operates at single-locus scale. mime: cyclic interface...'",
+  "alternatives": [{"dimensionality": "𐑛", "topology": "𐑰", "recognition_mode": "𐑩", "polarity": "𐑬", "fidelity": "𐑞", "kinetic_character": "𐑘", "granularity": "𐑚", "interaction_grammar": "𐑜", "criticality_phase": "𐑢", "chirality": "𐑓", "stoichiometry": "n:m", "protection": "𐑷"}]
 }
 ```
-Use only values from the value_registry table. The `reasoning` field MUST reference the same primitive values that appear in the `imscription` block — if you wrote `Ð_holo` in reasoning but `Ð_wynn` in the JSON, that is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "Ð_wynn: single-locus molecular complex"), total reasoning under 200 words.
+Use only values from the value_registry table. The `reasoning` field MUST reference the same primitive values that appear in the `imscription` block — writing a different glyph/name in reasoning than in the JSON for the same primitive is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "dead: single-locus molecular complex"), total reasoning under 200 words.
 </output_format>
 """
 
