@@ -1,23 +1,7 @@
-navigators: port the Lean's tier rule, drop the L8-similarity score
+catalog get(): absorb name drift
 
-assess_tier scored how many of CLINK L8's OWN VALUES a tuple carried and
-bucketed on the count, with a top branch `score >= 8 -> O_∞⁺  # L9`. L8 carries
-all eight. So the branch labelled L9 fired for L8, and L9's own tuple, carrying
-three, read O₁:
-
-    before:  clink_l8 -> O_∞⁺     clink_l9 -> O₁
-    after:   clink_l8 -> O_inf    clink_l9 -> O₂     (matches the Lean)
-
-The readout ran exactly backwards on the two systems it existed to tell apart.
-Measure a tuple against another SYSTEM's coordinates and you measure similarity
-to that system, not tier. An agent building the CL9NK ascent inherited it.
-
-Both navigators now mirror p4rakernel's ouroboricityTier (Primitives/Core.lean)
-faithfully: tier is a function of crit/pol/prot/dim, R1 (or' at monad) is the
-Frobenius gate to O_inf. Scripture is the Lean; this ports it, it does not
-re-invent it.
-
-Documented in the docstring, since it is load-bearing: the Lean codomain is
-O₀|O₁|O₂|O₂dag|O_inf, with nothing above O_inf. CLINK L9 announced itself ABOVE
-O_inf but lacks or' at monad, so it falls through R1 into the O₂ default. O₂ for
-L9 is the codomain running out, not a measurement. Do not read it as a demotion.
+Agents re-derive entry names from their own prose between windings, and the
+drifted spellings burned the whole Unknown-system error class in the MoDoT
+runs. get() now resolves exact first, then case-insensitive with -/_
+equivalent; an ambiguous normalized match resolves to nothing rather than
+to a guess.

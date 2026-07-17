@@ -2525,7 +2525,20 @@ class SessionCatalog:
         return result
 
     def get(self, name: str) -> Optional[Dict[str, str]]:
-        return self._entries.get(name)
+        # Exact match first, then normalized (case-insensitive, -/_ equivalent).
+        # Agents re-derive names from their own prose between windings, and the drifted
+        # spelling burned the whole Unknown-system error class. An AMBIGUOUS normalized
+        # match resolves to nothing rather than to a guess: two entries whose names
+        # differ only in case are two entries.
+        hit = self._entries.get(name)
+        if hit is not None:
+            return hit
+        norm = lambda s: s.replace("-", "_").lower()
+        want = norm(name)
+        matches = [k for k in self._entries if norm(k) == want]
+        if len(matches) == 1:
+            return self._entries[matches[0]]
+        return None
 
     def search(self, keyword: str) -> List[Dict[str, Any]]:
         kw = keyword.lower()
