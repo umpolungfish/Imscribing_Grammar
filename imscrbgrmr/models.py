@@ -916,14 +916,20 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨DTRPFKGΓΦΩSH⟩"""
+        """Canonical tuple string: ⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
+
+        Ħ (chirality) is slot 10 and Ω (protection) is slot 12. Emitting protection at
+        10 and chirality at 12 transposes them: the VALUES stay correct but land in each
+        other's slots, so every consumer that reads by position sees an Ω-value where Ħ
+        belongs and vice versa — and neither is a member of the slot's own value set.
+        """
         return (
             f"⟨{self.dimensionality.value}{self.topology.value}"
             f"{self.recognition_mode.value}{self.polarity.value}"
             f"{self.fidelity.value}{self.kinetic_character.value}"
             f"{self.granularity.value}{self.grammar.value}"
-            f"{self.criticality_phase.value}{self.protection.value}"
-            f"{self.stoichiometry.value}{self.chirality.value}⟩"
+            f"{self.criticality_phase.value}{self.chirality.value}"
+            f"{self.stoichiometry.value}{self.protection.value}⟩"
         )
 
     # Translate internal enum values to canonical ORDINALS keys (primitives.py).

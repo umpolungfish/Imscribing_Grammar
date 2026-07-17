@@ -23,7 +23,7 @@
 <div id="info">
   <h1>SIXTEEN₃ Trilattice</h1>
   <p>P({T,F,t,f}) as a crystalline lattice.<br>
-  z = |x| (information) · x = ≤_t · y = ≤_c</p>
+  y = |x| (information) · x = ≤_t (truth) · z = ≤_c (constructivity)</p>
   <p>32 covering bonds of B₄ colored by the base value added:</p>
   <p><span class="sw" style="background:#1B4F72"></span>+T
      <span class="sw" style="background:#943126"></span>+F
@@ -36,7 +36,7 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 const BASE = ["T","F","t","f"];
-const CSCALE = 0.7; // slightly more spread than original 0.55
+const CSCALE = 0.9; // Spacing for constructivity depth axis
 
 function powerset(a) {
   let r = [[]];
@@ -45,14 +45,16 @@ function powerset(a) {
 }
 const ALL = powerset(BASE);
 
+// Corrected: X = Truth, Y = Information (height), Z = Constructivity (depth)
 function coords(s) {
   let tx=0, ty=0;
   if (s.has("T")) { tx+=1; ty+=1; }
   if (s.has("t")) { tx+=1; ty-=1; }
   if (s.has("F")) { tx-=1; ty+=1; }
   if (s.has("f")) { tx-=1; ty-=1; }
-  return new THREE.Vector3(tx * 1.15, ty * CSCALE, s.size * 1.1);
+  return new THREE.Vector3(tx * 1.35, s.size * 1.1, ty * CSCALE);
 }
+
 function name(s) {
   if (s.size===0) return "N";
   if (s.size===4) return "A";
@@ -84,30 +86,30 @@ renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 document.body.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; controls.dampingFactor=0.06;
-controls.target.set(0,0,2.2); controls.minDistance=3.5; controls.maxDistance=18;
+controls.target.set(0,2.2,0); controls.minDistance=3.5; controls.maxDistance=18;
 
 scene.add(new THREE.AmbientLight(0x303050, 0.55));
 const k = new THREE.DirectionalLight(0xffffff, 0.9); k.position.set(4,9,5); scene.add(k);
 const f = new THREE.DirectionalLight(0x7799ff, 0.3); f.position.set(-5,1,-3); scene.add(f);
 
-// Soft floor
+// Soft horizontal floor plane (y = -0.1)
 const floor = new THREE.Mesh(
   new THREE.CircleGeometry(6, 48),
   new THREE.MeshStandardMaterial({color:0x0e0e18, transparent:true, opacity:0.6, metalness:0.1, roughness:0.9})
 );
-floor.rotation.x = -Math.PI/2; floor.position.y = -0.15; scene.add(floor);
+floor.rotation.x = -Math.PI/2; floor.position.y = -0.1; scene.add(floor);
 
 // Vertices + drop stems + labels
 ALL.forEach(s => {
   const p = pts.get(s);
   const lvl = s.size;
 
-  // stem
-  const stem = new THREE.BufferGeometry().setFromPoints([p, new THREE.Vector3(p.x, p.y, 0)]);
+  // Stem dropping vertically straight to the floor (y = -0.1)
+  const stem = new THREE.BufferGeometry().setFromPoints([p, new THREE.Vector3(p.x, -0.1, p.z)]);
   const stemL = new THREE.Line(stem, new THREE.LineDashedMaterial({color:0x33334a, dashSize:0.1, gapSize:0.07, transparent:true, opacity:0.4}));
   stemL.computeLineDistances(); scene.add(stemL);
 
-  // ball
+  // Ball node
   const r = (lvl===0||lvl===4) ? 0.17 : 0.135;
   const ball = new THREE.Mesh(
     new THREE.SphereGeometry(r, 22, 22),
@@ -115,7 +117,7 @@ ALL.forEach(s => {
   );
   ball.position.copy(p); scene.add(ball);
 
-  // label
+  // Text Label
   const c = document.createElement('canvas'); c.width=160; c.height=52;
   const ctx = c.getContext('2d');
   ctx.fillStyle='rgba(0,0,0,0.62)'; ctx.beginPath(); ctx.roundRect(0,0,160,52,7); ctx.fill();
@@ -123,7 +125,7 @@ ALL.forEach(s => {
   ctx.fillText(name(s), 80, 26);
   const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
   sp.scale.set(0.62, 0.20, 1);
-  sp.position.set(p.x, p.y, p.z + 0.36);
+  sp.position.set(p.x, p.y + 0.36, p.z);
   scene.add(sp);
 });
 
@@ -136,7 +138,7 @@ edges.forEach(({x,y,b}) => {
   })));
 });
 
-// Axis sprites
+// Corrected Axis Sprites aligned to standard Three.js orientation
 function alab(t, pos) {
   const c = document.createElement('canvas'); c.width=280; c.height=48;
   const ctx = c.getContext('2d');
@@ -145,9 +147,9 @@ function alab(t, pos) {
   const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true}));
   sp.scale.set(1.5, 0.26, 1); sp.position.copy(pos); scene.add(sp);
 }
-alab("≤_t  (truth)", new THREE.Vector3(3.3, 0, 0.1));
-alab("≤_c  (constructivity)", new THREE.Vector3(0, 2.1, 0.1));
-alab("≤_i  |x|  (information)", new THREE.Vector3(0, 0, 5.1));
+alab("≤_t  (truth) [X-axis]", new THREE.Vector3(3.3, 0, 0));
+alab("≤_i  |x|  (information) [Y-axis]", new THREE.Vector3(0, 5.1, 0));
+alab("≤_c  (constructivity) [Z-axis]", new THREE.Vector3(0, 0, 3.3));
 
 addEventListener('resize', () => {
   camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();

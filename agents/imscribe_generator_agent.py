@@ -86,6 +86,51 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
     return result
 
 
+
+# ── Structural validation: canonical slot membership + cross-primitive axioms ─────────
+# The axioms were, until now, stated only in the PROMPT — told to the model, enforced by
+# nothing. A tuple violating Axiom C sailed through with grounding_status "full" (seen
+# live: Ð=𐑦 with Þ=𐑥, plus Ħ/Ω values transposed by the old to_notation slot order).
+# This is the code the prose always claimed to be.
+#
+# Value sets mirror the ordinal scripture (Core.lean ctor order / gen_clay; same table
+# crystal_data.py carries). A value outside its slot's set is not a point in the Crystal.
+_CANON_VALUES = {
+    "dimensionality":   {"𐑛", "𐑨", "𐑼", "𐑦"},
+    "topology":         {"𐑡", "𐑰", "𐑥", "𐑶", "𐑸"},
+    "recognition_mode": {"𐑩", "𐑑", "𐑽", "𐑾"},
+    "polarity":         {"𐑗", "𐑿", "𐑬", "𐑯", "𐑹"},
+    "fidelity":         {"𐑱", "𐑞", "𐑐"},
+    "kinetic_character":{"𐑘", "𐑤", "𐑧", "𐑪", "𐑺"},
+    "granularity":      {"𐑚", "𐑔", "𐑲"},
+    "grammar":          {"𐑝", "𐑜", "𐑠", "𐑵"},
+    "criticality_phase":{"𐑢", "⊙", "𐑮", "𐑻", "𐑣"},
+    "chirality":        {"𐑓", "𐑒", "𐑖", "𐑫"},
+    "stoichiometry":    {"𐑙", "𐑕", "𐑳"},
+    "protection":       {"𐑷", "𐑴", "𐑭", "𐑟"},
+}
+
+
+def validate_structural(imscription: "Imscription") -> List[str]:
+    """Slot membership + Axioms A–D. Returns [] iff the tuple is a point in the Crystal."""
+    v = {slot: getattr(imscription, slot).value for slot in _CANON_VALUES}
+    errs = [
+        f"{slot}={val} not in its value set {sorted(_CANON_VALUES[slot])}"
+        for slot, val in v.items() if val not in _CANON_VALUES[slot]
+    ]
+    if errs:
+        return errs  # axioms are meaningless over out-of-set values
+    if v["chirality"] == "𐑫" and v["kinetic_character"] != "𐑪":
+        errs.append(f"Axiom A: Ħ=𐑫 requires Ç=𐑪 (got Ç={v['kinetic_character']})")
+    if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
+        errs.append(f"Axiom B: Ω={v['protection']} requires Ħ ∈ {{𐑖,𐑫}} (got Ħ={v['chirality']})")
+    if (v["dimensionality"] == "𐑦") != (v["topology"] == "𐑸"):
+        errs.append(f"Axiom C: Ð=𐑦 and Þ=𐑸 must co-occur (got Ð={v['dimensionality']}, Þ={v['topology']})")
+    if v["protection"] == "𐑟" and v["dimensionality"] != "𐑦":
+        errs.append(f"Axiom D: Ω=𐑟 requires Ð=𐑦 (got Ð={v['dimensionality']})")
+    return errs
+
+
 @dataclass
 class ImscriptionGenerationResult:
     """Result of AI-powered imscription generation."""
@@ -379,7 +424,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
         if delta_g is not None:
             imscription.delta_g = delta_g
 
-        if auto_register and imscription.name not in global_catalog:
+        # The guided path IS the gate — its verdict must be structural, not implicit.
+        # Clean membership + axioms → "full"; any violation → "failed", never registered.
+        structural_errors = validate_structural(imscription)
+
+        if auto_register and not structural_errors and imscription.name not in global_catalog:
             global_catalog.register(imscription)
 
         return ImscriptionGenerationResult(
@@ -387,6 +436,8 @@ class ImscriptionGeneratorAgent(BaseAgent):
             reasoning=reasoning,
             confidence=1.0,
             alternatives=[],
+            grounding_status="failed" if structural_errors else "full",
+            failed_primitives=structural_errors,
         )
 
     async def generate_from_description(
@@ -512,6 +563,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 thermo_metrics = {"delta_g": delta_g, "error": "Could not compute metrics"}
 
         # --- Grounding gate ---
+        # Structural validation FIRST: an out-of-set value or an axiom violation is a
+        # malformed tuple, and no amount of per-primitive reasoning grounds a point that
+        # is not in the Crystal. Overrides everything downstream to "failed".
+        structural_errors = validate_structural(imscription)
+
         # Determine grounding status and failed primitives from grounding_result
         grounding_status = "unverified"
         failed_primitives = []
@@ -562,6 +618,13 @@ class ImscriptionGeneratorAgent(BaseAgent):
         strict = require_grounding  # strict_grounding mirrors require_grounding for now
         override = kwargs.get("override_grounding", False) if hasattr(self, "_kwargs") else False
         override_reason = kwargs.get("override_reason", None) if hasattr(self, "_kwargs") else None
+
+        # Structural failure is not overridable and not subject to `strict`: an axiom
+        # violation or out-of-set value is a malformed tuple, full stop. The LLM-grounding
+        # verdict above is a judgment about reasoning; this is a fact about membership.
+        if structural_errors:
+            grounding_status = "failed"
+            failed_primitives = structural_errors + failed_primitives
 
         if strict and failed_primitives and not override:
             raise GroundingBlockedError(failed_primitives)
@@ -766,18 +829,18 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑹`: Special Frobenius — exact Z2 symmetry at criticality; assign ONLY when μ∘δ=id is provably exact.
 
 **F — Fidelity** (information transmitted per interaction; how reliably/precisely does it fire?):
-- `ƒ^ż`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
-- `ƒ^ð`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
-- `ƒ^ì`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
-**F ≠ "strength." A weak but specific interaction is ƒ^ż. A strong but promiscuous one is ƒ^ì.**
+- `𐑐`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
+- `𐑞`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
+- `𐑱`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
+**F ≠ "strength." A weak but specific interaction is 𐑐. A strong but promiscuous one is 𐑱.**
 
 **K — Kinetic character** (barrier to rearrangement / resistance to change):
-- `Ç^-`: Low barrier — explores configuration space freely; reversible on relevant timescales.
-- `Ç^W`: Moderate barrier — accessible under perturbation.
-- `Ç^@`: High barrier — kinetically frozen; requires external driving to rearrange.
-- `Ç^Ù`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
-- `Ç^λ`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**𐑫 implies Ç^Ù (topology-protected chirality cannot be undone without global restructuring).**
+- `𐑘`: Low barrier — explores configuration space freely; reversible on relevant timescales.
+- `𐑤`: Moderate barrier — accessible under perturbation.
+- `𐑧`: High barrier — kinetically frozen; requires external driving to rearrange.
+- `𐑪`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
+- `𐑺`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
+**𐑫 implies Ç=𐑪 (topology-protected chirality cannot be undone without global restructuring).**
 
 **G — Granularity** (correlation length: how far does one interaction propagate?):
 - `𐑚`: Local — single bond/event, no neighbours influenced.
@@ -785,10 +848,10 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑲`: Global — propagates across the entire system; divergent correlation length; scale-free.
 
 **Γ — Interaction grammar** (partner selection logic):
-- `ɢ^∧`: Conjunctive — all required partners must be present simultaneously.
-- `ɢ^˝`: Disjunctive — any partner from a set suffices.
-- `ɢ^ˌ`: Sequential — ordered steps; partners engaged in sequence.
-- `ɢ^Ş`: Broad conjunctive — many required partners (>10), cooperative assembly.
+- `𐑝`: Conjunctive — all required partners must be present simultaneously.
+- `𐑜`: Disjunctive — any partner from a set suffices.
+- `𐑠`: Sequential — ordered steps; partners engaged in sequence.
+- `𐑵`: Broad conjunctive — many required partners (>10), cooperative assembly.
 
 **Φ — Criticality** (proximity to a critical point/threshold):
 - `𐑢`: Subcritical — normal regime, no scale-free behavior.
@@ -801,12 +864,12 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑓`: Achiral — mirror image accessible; no persistent symmetry breaking.
 - `𐑒`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
 - `𐑖`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç^Ù.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
+- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç=𐑪.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
 
 **S — Stoichiometry** (participation ratio):
-- `1:1`: Equal symmetric pairing.
-- `n:n`: Higher-order symmetric (oligomers, committees).
-- `n:m`: Asymmetric — different counts on each side.
+- `𐑙`: Equal symmetric pairing (1:1).
+- `𐑕`: Higher-order symmetric, n:n (oligomers, committees).
+- `𐑳`: Asymmetric, n:m — different counts on each side.
 
 **Ω — Topological protection** (can the role be continuously deformed away?):
 - `𐑷`: No protection — trivial; the role CAN be continuously deformed to a trivial state. Default for most systems without explicit topological structure.
@@ -816,7 +879,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 **For abstract/narrative systems: Ω encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
 
 **MANDATORY AXIOMS — violating these causes a parse error:**
-- **Axiom A**: `𐑫` REQUIRES `Ç^Ù`. If you assign 𐑫, you MUST also assign Ç^Ù. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS Ç^Ù. A fast-exchanging (Ç^-) system cannot be topologically chiral.
+- **Axiom A**: `𐑫` REQUIRES `Ç=𐑪`. If you assign 𐑫, you MUST also assign Ç=𐑪. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS 𐑪. A fast-exchanging (𐑘) system cannot be topologically chiral.
 - **Axiom B**: `𐑴` or `𐑭` REQUIRES `𐑖` or `𐑫` (chirality >= 𐑖).
 - **Axiom C**: `𐑦` REQUIRES `𐑸` (and vice versa). They always co-occur.
 - **Axiom D**: `𐑟` REQUIRES `𐑦`.
@@ -831,18 +894,18 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [2] T  → connectivity shape: graph → 𐑡; containment/nested → 𐑰; crossing point → 𐑥; irreducible product → 𐑶; self-encoding topology → 𐑸
   [3] R  → coupling direction: supervenience / soft association → 𐑩; functorial morphisms / bond formation → 𐑑; adjoint pair (one-way) → 𐑽; bidirectional mutual determination → 𐑾
   [4] P  → symmetry: none → 𐑗; quantum superposition → 𐑿; one Z₂ symmetry → 𐑬; all symmetries → 𐑯; μ∘δ=id exactly at ⊙ (Frobenius-special) → 𐑹
-  [5] F  → physical regime: classical → ƒ^ì; thermal/noisy → ƒ^ð; quantum coherence essential → ƒ^ż
-  [6] K  → relaxation: driven (τ≪T_obs) → Ç^-; visible dynamics (τ∼T_obs) → Ç^W; frozen (τ≫T_obs) → Ç^@; trapped ordered → Ç^Ù; trapped disordered → Ç^λ
+  [5] F  → physical regime: classical → 𐑱; thermal/noisy → 𐑞; quantum coherence essential → 𐑐
+  [6] K  → relaxation: driven (τ≪T_obs) → 𐑘; visible dynamics (τ∼T_obs) → 𐑤; frozen (τ≫T_obs) → 𐑧; trapped ordered → 𐑪; trapped disordered → 𐑺
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
-  [8] Γ  → composition logic: all-simultaneous → ɢ^∧; any-sufficient → ɢ^˝; ordered steps → ɢ^ˌ; one-to-all broadcast → ɢ^Ş
+  [8] Γ  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
   [9] Φ  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
-  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires Ç^Ù)
-  [11] S → component types: one type/one instance → 1:1; many identical → n:n; multiple distinct types → n:m
+  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires Ç=𐑪)
+  [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
   [12] Ω → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
 - D-Ω: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
-- K-Φ: ⊙ + Ç^@ = critical deep structure (gravity, language, meditation); 𐑻 + Ç^- = runaway decay
+- K-Φ: ⊙ + Ç=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + Ç=𐑘 = runaway decay
 - 𐑹 requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
 - Tier verification: ⊙ + 𐑹 → O_∞; ⊙ + 𐑷 → O₁; ⊙ + Omega≠0 + D∈{𐑛,𐑨,𐑦} → O₂; ⊙ + Omega≠0 + 𐑼 → O₂†
 </decision_procedure>
@@ -856,8 +919,8 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 - D: Does it operate at a single locus (𐑛), organize spatial structure (𐑨), recur cyclically (𐑼), or imscriptively encode the system it inhabits (𐑦)?
 - T: What is the topology of its influence network?
 - R: How does it "recognize" or affect its participants? By soft association? By transformation? By catalysis? By mechanical entrapment?
-- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is ƒ^ż. A luck-spirit that sometimes helps is ƒ^ì.
-- K: How resistant is its role to change? Can it be "talked out of" its function (Ç^-)? Or is its role frozen by the structure of the narrative (Ç^@/Ç^Ù)?
+- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is 𐑐. A luck-spirit that sometimes helps is 𐑱.
+- K: How resistant is its role to change? Can it be "talked out of" its function (𐑘)? Or is its role frozen by the structure of the narrative (𐑧/𐑪)?
 - G: Does it affect only its immediate contact, a local region, or the entire system?
 - Φ: Does it operate at a threshold — a point of maximum sensitivity between two states?
 - H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
@@ -873,20 +936,20 @@ In its structural role within Jewish cosmology, Samael is:
 - 𐑡 is an alternative if 𐑦 is not assigned (see alternative below)
 - 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)
 - 𐑿: the negating/adversarial pole of the cosmic polarity (signed direction)
-- ƒ^ż: death is geometry-enforcing — when it fires, it fires with certainty on its target
-- Ç^Ù: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
+- ƒ=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
+- Ç=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
 - 𐑲: correlation length is global — his influence is correlated across all mortal systems
-- ɢ^˝: any mortal is a valid partner (disjunctive)
+- ɢ=𐑜: any mortal is a valid partner (disjunctive)
 - ⊙: he IS the critical threshold between life and non-life
 - 𐑫: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
-- n:m: one principle → many mortals
+- Σ=𐑳: one principle → many mortals
 - 𐑭: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
-→ ⟨𐑦; 𐑸; 𐑽; 𐑿; ƒ^ż; Ç^Ù; 𐑲; ɢ^˝; ⊙; 𐑫; n:m; 𐑭⟩
+→ ⟨𐑦𐑸𐑽𐑿𐑐𐑪𐑲𐑜⊙𐑫𐑳𐑭⟩
 This is a non-trivial, non-default encoding reached by structural reasoning, not template matching.
 </domain_guide>
 
 <value_registry>
-**MANDATORY OUTPUT VALUE TABLE — copy these strings VERBATIM into your JSON. Do NOT invent variants or substitute characters. Every valid value below is a single Shavian glyph or a single plain-English word — nothing else resolves. The parser accepts ONLY the canonical value shown in each row (plus stoichiometry ratios).**
+**MANDATORY OUTPUT VALUE TABLE — copy these strings VERBATIM into your JSON. Do NOT invent variants or substitute characters. Every valid value below is a single Shavian glyph or a single plain-English word — nothing else resolves. The parser accepts ONLY the canonical value shown in each row .**
 
 | Field               | Valid output strings (pick exactly one — glyph or name, not both) |
 |---------------------|-----------------------------------------|
@@ -900,7 +963,7 @@ This is a non-trivial, non-default encoding reached by structural reasoning, not
 | interaction_grammar | `𐑝` vow · `𐑜` gag · `𐑠` measure · `𐑵` ooze |
 | criticality_phase   | `𐑢` woe · `⊙` monad · `𐑮` roar · `𐑻` err · `𐑣` haha |
 | chirality           | `𐑓` fee · `𐑒` kick · `𐑖` sure · `𐑫` wool |
-| stoichiometry       | `1:1`  `n:n`  `n:m` |
+| stoichiometry       | `𐑙` one-to-one · `𐑕` n-to-n · `𐑳` n-to-m |
 | protection          | `𐑷` awe · `𐑴` oak · `𐑭` ah · `𐑟` zoo |
 
 These are the SAME 12 primitives and values described conceptually in `<primitives>` and `<domain_guide>` above — use the plain glyph or name shown there directly, nothing needs translating. Every valid value in this table is either a single Shavian glyph (one character, e.g. `𐑛`) or a single lowercase English word (e.g. `dead`) — never both together, never with an underscore, never with any suffix attached.
@@ -923,12 +986,12 @@ Respond with a single JSON object with this EXACT structure. The outer key MUST 
     "interaction_grammar": "𐑝",
     "criticality_phase": "𐑢",
     "chirality": "𐑓",
-    "stoichiometry": "1:1",
+    "stoichiometry": "𐑙",
     "protection": "𐑷"
   },
   "confidence": 0.85,
   "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'dead: operates at single-locus scale. mime: cyclic interface...'",
-  "alternatives": [{"dimensionality": "𐑛", "topology": "𐑰", "recognition_mode": "𐑩", "polarity": "𐑬", "fidelity": "𐑞", "kinetic_character": "𐑘", "granularity": "𐑚", "interaction_grammar": "𐑜", "criticality_phase": "𐑢", "chirality": "𐑓", "stoichiometry": "n:m", "protection": "𐑷"}]
+  "alternatives": [{"dimensionality": "𐑛", "topology": "𐑰", "recognition_mode": "𐑩", "polarity": "𐑬", "fidelity": "𐑞", "kinetic_character": "𐑘", "granularity": "𐑚", "interaction_grammar": "𐑜", "criticality_phase": "𐑢", "chirality": "𐑓", "stoichiometry": "𐑳", "protection": "𐑷"}]
 }
 ```
 Use only values from the value_registry table. The `reasoning` field MUST reference the same primitive values that appear in the `imscription` block — writing a different glyph/name in reasoning than in the JSON for the same primitive is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "dead: single-locus molecular complex"), total reasoning under 200 words.

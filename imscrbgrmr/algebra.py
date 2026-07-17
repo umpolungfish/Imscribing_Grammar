@@ -371,8 +371,8 @@ class LatticeResult:
             _v(self.recognition_mode), _v(self.polarity),
             _v(self.fidelity), _v(self.kinetic_character),
             _v(self.granularity), _v(self.grammar),
-            _v(self.criticality_phase), _v(self.protection),
-            _v(self.stoichiometry), _v(self.chirality),
+            _v(self.criticality_phase), _v(self.chirality),
+            _v(self.stoichiometry), _v(self.protection),
         ]
         return f"\u27e8{''.join(vals)}\u27e9"
 
