@@ -27,6 +27,8 @@
   <p><span class="sw" style="background:#B03A2E"></span>O<sub>inf_dag</sub> sphere (R2) &nbsp; <span class="sw" style="background:#E8B93A"></span>EVALI ⊞ (the I arm)</p>
   <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><strong>R1 torus</strong> ⊢⊙&lt;◇&gt;●=¬⊣ &rarr; <strong>T</strong> (closes)<br><strong>R2</strong> ⊙☊+×⊞☋ &rarr; T (tri-ancestral), register N&rarr;<strong>A</strong>; <em>closed walk: false</em></p>
   <p style="opacity:0.75">R1 is the 12-opcode grammar; R2 is SIXTEEN_3 (14 opcodes, 1→3 fork). Both share IMSCRIB ⊙ at the pinch.</p>
+  <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><span class="sw" style="background:#58D68D"></span><strong>Carved ring A</strong> on the 3 strands: edges 2,1,1 (one doubled). ind = n₊−n₋ = <strong>−1</strong> by rational congruence (Lean, green). Spectrum {1+√3, −2, 1−√3}; kernel of A+2I = (1,−1,0), the <em>swap of the doubled pair</em>; Perron (1, 1, √3−1) carries the gap as its own coordinate. Root system A₂.</p>
+  <p><strong>Refuted:</strong> A is <em>not</em> the reduction of the 16-register tour. Π L Πᵀ on the canonical tour = 16I + 8(E₁₃+E₃₁): all-positive, ind 0, no √3. The t-strand decoupling is owned by the unique both-negations class — both weaker symmetry hypotheses have measured counterexamples. Ring and tour share the pinch, not a matrix.</p>
   <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px">SIXTEEN_3 = P({T,F,t,f}) = (Z/2)<sup>4</sup> — the d=12 ray class group at conductor (12)∞₁∞₂, measured. <strong>{T,F}</strong> = the two finite generators; <strong>{t,f}</strong> = the archimedean places <strong>∞₁, ∞₂</strong>.</p>
   <p><strong>+ ×</strong> are covers (+1 level each) &rarr; halt at <strong>TF</strong> = (Z/2)<sup>2</sup> = the totally-real sub-tower, a <em>proper</em> subfield.<br><strong>⊞</strong> sets t <em>and</em> f — a <strong>2-level jump</strong> = ramify at both ∞ places &rarr; <strong>A</strong> = (Z/2)<sup>4</sup> = the full moduli field.</p>
 </div>
@@ -143,6 +145,42 @@ phases.forEach((ph, w) => {
   scene.add(new THREE.Mesh(tube, new THREE.MeshStandardMaterial({
     color: 0x1B4F72, transparent:true, opacity:opac[w], metalness:0.25, roughness:0.35
   })));
+});
+
+// The carved ring A = [[0,2,1],[2,0,1],[1,1,0]] drawn ON the three strands. Each strand
+// crosses the outer equator (v=0) exactly once, at u = -phase; those three points are the
+// ring's vertices. Strands 0,1 are the doubled pair (identical rows of A): their edge is
+// drawn twice. ind(A) = -1 by rational congruence A ~ diag(4,-1,-1) — no spectral theory.
+// The kernel of A+2I is (1,-1,0): the mode that EXCHANGES the doubled pair, marked +/-/0.
+// This triangle is NOT the tour's reduction — Π L Πᵀ on the canonical tour is
+// 16I + 8(E13+E31), ind 0 — the ring and the tour share only the pinch.
+const RINGCOL = 0x58D68D;
+const ringV = phases.map(ph => tp(-ph, 0));
+const ringMat = new THREE.MeshStandardMaterial({color:RINGCOL, metalness:0.3, roughness:0.35});
+function ringEdge(a, b, offset) {
+  const pa = a.clone(), pb = b.clone();
+  if (offset) { pa.z += offset; pb.z += offset; }
+  const c = new THREE.CatmullRomCurve3([pa, pa.clone().lerp(pb,0.5), pb]);
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 20, 0.028, 8, false), ringMat));
+}
+ringEdge(ringV[0], ringV[1],  0.055);   // the doubled edge, weight 2:
+ringEdge(ringV[0], ringV[1], -0.055);   // drawn as two parallel tubes
+ringEdge(ringV[0], ringV[2], 0);
+ringEdge(ringV[1], ringV[2], 0);
+const KMODE = ['+1', '−1', '0'];   // kernel of A+2I: (1,-1,0), the doubled-pair swap
+ringV.forEach((p, i) => {
+  const m = new THREE.Mesh(new THREE.SphereGeometry(0.11, 16, 16),
+    new THREE.MeshStandardMaterial({color: i<2 ? RINGCOL : 0x2E86C1, metalness:0.3, roughness:0.3}));
+  m.position.copy(p); scene.add(m);
+  const c = document.createElement('canvas'); c.width=140; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='rgba(10,40,22,0.75)'; ctx.beginPath(); ctx.roundRect(0,0,140,52,7); ctx.fill();
+  ctx.font='bold 22px system-ui'; ctx.fillStyle='#baf5cf';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(KMODE[i],70,26);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.45,0.17,1);
+  sp.position.copy(p).add(new THREE.Vector3(0, 0, -0.42));
+  scene.add(sp);
 });
 
 // Arc-length parametrisation of the (1,1) horn strand.
@@ -325,6 +363,7 @@ function lab(txt, pos, col) {
 }
 lab("O∞ terminal closure (R1)\n16 registers · 3 strands concurrent at ⊙", new THREE.Vector3(-3.5, 3.2, 1.2), "#aaccff");
 lab("O_inf_dag lateral OPENING (R2)\n⊞ = ramify at ∞₁∞₂ · TF→A · walk does not close", new THREE.Vector3(2.5, -3.2, 0), "#ffaaaa");
+lab("Carved ring A · ind = −1 · kernel (1,−1,0)\nNOT the tour's shadow: Π L Πᵀ = 16I+8(E₁₃+E₃₁), ind 0", new THREE.Vector3(0, 0, -2.6), "#8ff0b4");
 
 addEventListener('resize', () => {
   camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
