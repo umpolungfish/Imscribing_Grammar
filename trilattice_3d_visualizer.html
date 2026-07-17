@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIXTEEN₃ Crystalline Trilattice</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { overflow:hidden; background:#07070e; font-family:system-ui,sans-serif; color:#e0e0e0; }
+  #info {
+    position:absolute; top:12px; left:12px;
+    background:rgba(8,8,18,0.92); padding:12px 16px; border-radius:10px;
+    border:1px solid #2a2a40; max-width:350px; font-size:12.5px; line-height:1.45; z-index:10;
+  }
+  #info h1 { font-size:14px; color:#fff; margin-bottom:5px; }
+  #info p { margin:3px 0; opacity:0.9; }
+  .sw { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  #hint { position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    background:rgba(8,8,18,0.85); padding:6px 14px; border-radius:16px; font-size:12px; border:1px solid #2a2a40; z-index:10; }
+</style>
+</head>
+<body>
+<div id="info">
+  <h1>SIXTEEN₃ Trilattice</h1>
+  <p>P({T,F,t,f}) as a crystalline lattice.<br>
+  z = |x| (information) · x = ≤_t · y = ≤_c</p>
+  <p>32 covering bonds of B₄ colored by the base value added:</p>
+  <p><span class="sw" style="background:#1B4F72"></span>+T
+     <span class="sw" style="background:#943126"></span>+F
+     <span class="sw" style="background:#5DADE2"></span>+t
+     <span class="sw" style="background:#EC7063"></span>+f</p>
+</div>
+<div id="hint">Drag · Scroll · Right-drag</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const BASE = ["T","F","t","f"];
+const CSCALE = 0.7; // slightly more spread than original 0.55
+
+function powerset(a) {
+  let r = [[]];
+  for (const x of a) { const n=r.length; for(let i=0;i<n;i++) r.push([...r[i],x]); }
+  return r.map(s => new Set(s));
+}
+const ALL = powerset(BASE);
+
+function coords(s) {
+  let tx=0, ty=0;
+  if (s.has("T")) { tx+=1; ty+=1; }
+  if (s.has("t")) { tx+=1; ty-=1; }
+  if (s.has("F")) { tx-=1; ty+=1; }
+  if (s.has("f")) { tx-=1; ty-=1; }
+  return new THREE.Vector3(tx * 1.15, ty * CSCALE, s.size * 1.1);
+}
+function name(s) {
+  if (s.size===0) return "N";
+  if (s.size===4) return "A";
+  return [...s].sort().join("");
+}
+
+const LCOL = {0:0x7F8C8D, 1:0x2E86C1, 2:0x8E44AD, 3:0xD68910, 4:0x27AE60};
+const BCOL = {"T":0x1B4F72, "F":0x943126, "t":0x5DADE2, "f":0xEC7063};
+
+const pts = new Map();
+ALL.forEach(s => pts.set(s, coords(s)));
+
+const edges = [];
+for (const x of ALL) for (const y of ALL) {
+  if (y.size === x.size+1) {
+    let ok = true, added = null;
+    for (const v of x) if (!y.has(v)) ok=false;
+    if (ok) { for (const v of y) if (!x.has(v)) added=v; if(added) edges.push({x,y,b:added}); }
+  }
+}
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x07070e);
+const camera = new THREE.PerspectiveCamera(38, innerWidth/innerHeight, 0.1, 60);
+camera.position.set(7.5, 5.8, 8.2);
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+document.body.appendChild(renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor=0.06;
+controls.target.set(0,0,2.2); controls.minDistance=3.5; controls.maxDistance=18;
+
+scene.add(new THREE.AmbientLight(0x303050, 0.55));
+const k = new THREE.DirectionalLight(0xffffff, 0.9); k.position.set(4,9,5); scene.add(k);
+const f = new THREE.DirectionalLight(0x7799ff, 0.3); f.position.set(-5,1,-3); scene.add(f);
+
+// Soft floor
+const floor = new THREE.Mesh(
+  new THREE.CircleGeometry(6, 48),
+  new THREE.MeshStandardMaterial({color:0x0e0e18, transparent:true, opacity:0.6, metalness:0.1, roughness:0.9})
+);
+floor.rotation.x = -Math.PI/2; floor.position.y = -0.15; scene.add(floor);
+
+// Vertices + drop stems + labels
+ALL.forEach(s => {
+  const p = pts.get(s);
+  const lvl = s.size;
+
+  // stem
+  const stem = new THREE.BufferGeometry().setFromPoints([p, new THREE.Vector3(p.x, p.y, 0)]);
+  const stemL = new THREE.Line(stem, new THREE.LineDashedMaterial({color:0x33334a, dashSize:0.1, gapSize:0.07, transparent:true, opacity:0.4}));
+  stemL.computeLineDistances(); scene.add(stemL);
+
+  // ball
+  const r = (lvl===0||lvl===4) ? 0.17 : 0.135;
+  const ball = new THREE.Mesh(
+    new THREE.SphereGeometry(r, 22, 22),
+    new THREE.MeshStandardMaterial({color:LCOL[lvl], metalness:0.28, roughness:0.32})
+  );
+  ball.position.copy(p); scene.add(ball);
+
+  // label
+  const c = document.createElement('canvas'); c.width=160; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='rgba(0,0,0,0.62)'; ctx.beginPath(); ctx.roundRect(0,0,160,52,7); ctx.fill();
+  ctx.font='bold 23px system-ui'; ctx.fillStyle='#fff'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(name(s), 80, 26);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.62, 0.20, 1);
+  sp.position.set(p.x, p.y, p.z + 0.36);
+  scene.add(sp);
+});
+
+// Bonds
+edges.forEach(({x,y,b}) => {
+  const p0 = pts.get(x), p1 = pts.get(y);
+  const tube = new THREE.TubeGeometry(new THREE.LineCurve3(p0,p1), 1, 0.032, 7, false);
+  scene.add(new THREE.Mesh(tube, new THREE.MeshStandardMaterial({
+    color:BCOL[b], metalness:0.22, roughness:0.38
+  })));
+});
+
+// Axis sprites
+function alab(t, pos) {
+  const c = document.createElement('canvas'); c.width=280; c.height=48;
+  const ctx = c.getContext('2d');
+  ctx.font='20px system-ui'; ctx.fillStyle='#99aacc'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(t, 140, 24);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true}));
+  sp.scale.set(1.5, 0.26, 1); sp.position.copy(pos); scene.add(sp);
+}
+alab("≤_t  (truth)", new THREE.Vector3(3.3, 0, 0.1));
+alab("≤_c  (constructivity)", new THREE.Vector3(0, 2.1, 0.1));
+alab("≤_i  |x|  (information)", new THREE.Vector3(0, 0, 5.1));
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+(function anim(){ requestAnimationFrame(anim); controls.update(); renderer.render(scene,camera); })();
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hopfionic Loop Bundle — Horn Torus</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { overflow: hidden; background: #07070e; font-family: system-ui, sans-serif; color: #e0e0e0; }
+  #info {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(8,8,18,0.92); padding: 12px 16px; border-radius: 10px;
+    border: 1px solid #2a2a40; max-width: 340px; font-size: 12.5px; line-height: 1.45; z-index: 10;
+  }
+  #info h1 { font-size: 14px; color: #fff; margin-bottom: 6px; }
+  #info p { margin: 3px 0; opacity: 0.9; }
+  .sw { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  #hint { position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    background:rgba(8,8,18,0.85); padding:6px 14px; border-radius:16px; font-size:12px; border:1px solid #2a2a40; z-index:10; }
+</style>
+</head>
+<body>
+<div id="info">
+  <h1>Horn Torus Loop Bundle</h1>
+  <p>Horn torus, R = r, pinching at the origin. Both programs share <strong>IMSCRIB ⊙</strong> at (0,0,0) — the identity is one, so the inner equator must collapse to a point.</p><p><strong>16</strong> poloidal rings = the SIXTEEN_3 registers; all meet at ⊙. <strong>3</strong> strands = a free orbit under the 120° A₂ Coxeter element; each tours all 16 rings once. They are <em>concurrent</em> at the pinch, not linked.</p>
+  <p><span class="sw" style="background:#1B4F72"></span>Work ops &nbsp; <span class="sw" style="background:#7f8c8d"></span>No-work ops</p>
+  <p><span class="sw" style="background:#B03A2E"></span>O<sub>inf_dag</sub> sphere (R2) &nbsp; <span class="sw" style="background:#E8B93A"></span>EVALI ⊞ (the I arm)</p>
+  <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><strong>R1 torus</strong> ⊢⊙&lt;◇&gt;●=¬⊣ &rarr; <strong>T</strong> (closes)<br><strong>R2</strong> ⊙☊+×⊞☋ &rarr; T (tri-ancestral), register N&rarr;<strong>A</strong>; <em>closed walk: false</em></p>
+  <p style="opacity:0.75">R1 is the 12-opcode grammar; R2 is SIXTEEN_3 (14 opcodes, 1→3 fork). Both share IMSCRIB ⊙ at the pinch.</p>
+  <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px">SIXTEEN_3 = P({T,F,t,f}) = (Z/2)<sup>4</sup> — the d=12 ray class group at conductor (12)∞₁∞₂, measured. <strong>{T,F}</strong> = the two finite generators; <strong>{t,f}</strong> = the archimedean places <strong>∞₁, ∞₂</strong>.</p>
+  <p><strong>+ ×</strong> are covers (+1 level each) &rarr; halt at <strong>TF</strong> = (Z/2)<sup>2</sup> = the totally-real sub-tower, a <em>proper</em> subfield.<br><strong>⊞</strong> sets t <em>and</em> f — a <strong>2-level jump</strong> = ramify at both ∞ places &rarr; <strong>A</strong> = (Z/2)<sup>4</sup> = the full moduli field.</p>
+</div>
+<div id="hint">Drag · Scroll · Right-drag</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const R = 2.0; // For a horn torus, major radius R equals minor radius r
+const BOOT = ["IMSCRIB","AREV","FSPLIT","AFWD","FFUSE","CLINK","IFIX","TANCH","VINIT"];
+// R2 is a SIXTEEN_3 object, not a 12-opcode one: FSPLIT3 ☊ is 1→3, and the third arm
+// (EVALI ⊞, the information layer) is what carries the register TF → A. A two-way fork
+// halts at TF — classical "both" — which is exactly where the 12-opcode grammar can only
+// hold (ENGAGR, B). Word: ⊙☊+×⊞☋ → verdict T, final register A (full information).
+const DAG  = ["IMSCRIB","FSPLIT3","EVALT","EVALF","EVALI","FFUSE3"];
+const WORK = new Set(["AREV","AFWD","CLINK","IFIX","EVALT","EVALF","EVALI","TNEG","INEG"]);
+
+// Standard parametric formula for a Horn Torus
+function tp(u, v) {
+  return new THREE.Vector3(
+    (R + R * Math.cos(v)) * Math.cos(u),
+    (R + R * Math.cos(v)) * Math.sin(u),
+    R * Math.sin(v)
+  );
+}
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x07070e);
+const camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.1, 80);
+camera.position.set(6.5, 4.0, 5.5);
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+document.body.appendChild(renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.06;
+controls.target.set(0,0,0); controls.minDistance=3; controls.maxDistance=20;
+
+scene.add(new THREE.AmbientLight(0x303050, 0.6));
+const L1 = new THREE.DirectionalLight(0xffffff, 0.9); L1.position.set(5,8,6); scene.add(L1);
+const L2 = new THREE.DirectionalLight(0x6688ff, 0.3); L2.position.set(-5,2,-3); scene.add(L2);
+
+// Generate Horn Torus mesh
+const torusGeo = new THREE.BufferGeometry();
+const radialSegments = 48;
+const tubularSegments = 100;
+const vertices = [];
+const indices = [];
+const uvs = [];
+
+for (let j = 0; j <= radialSegments; j++) {
+  const v = (j / radialSegments) * Math.PI * 2;
+  for (let i = 0; i <= tubularSegments; i++) {
+    const u = (i / tubularSegments) * Math.PI * 2;
+    const p = tp(u, v);
+    vertices.push(p.x, p.y, p.z);
+    uvs.push(i / tubularSegments, j / radialSegments);
+  }
+}
+
+for (let j = 0; j < radialSegments; j++) {
+  for (let i = 0; i < tubularSegments; i++) {
+    const a = j * (tubularSegments + 1) + i;
+    const b = j * (tubularSegments + 1) + i + 1;
+    const c = (j + 1) * (tubularSegments + 1) + i;
+    const d = (j + 1) * (tubularSegments + 1) + i + 1;
+    indices.push(a, c, b);
+    indices.push(b, c, d);
+  }
+}
+
+torusGeo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+torusGeo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+torusGeo.setIndex(indices);
+torusGeo.computeVertexNormals();
+
+const torus = new THREE.Mesh(
+  torusGeo,
+  new THREE.MeshStandardMaterial({color:0x8888aa, transparent:true, opacity:0.12, metalness:0.1, roughness:0.8, side:THREE.DoubleSide})
+);
+scene.add(torus);
+
+// The 16 poloidal rings — the 16 registers of SIXTEEN_3 = P({T,F,t,f}), not a rendering
+// count. Every one of them passes through v=π, which on a horn torus IS the pinch: the 16
+// registers all meet at ⊙. Each (1,1) strand crosses each ring exactly once, so a strand is
+// one complete circuit of the register space.
+const wireMat = new THREE.LineBasicMaterial({color:0x444466, transparent:true, opacity:0.2});
+for (let i=0; i<16; i++) {
+  const a = i/16 * Math.PI*2;
+  const pts = [];
+  for (let j=0; j<=64; j++) {
+    const v = j/64 * Math.PI*2;
+    pts.push(tp(a, v));
+  }
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), wireMat));
+}
+
+// The 3 strands: a free orbit of length 3 under the 120° rotation — the Coxeter number of
+// A₂, the root system the ring embeds in. Also the 3 orderings of SIXTEEN_3 (≤ᵢ, ≤ₜ, ≤_c).
+// On a horn torus a (1,1) curve winds once poloidally, so it crosses v=π once and therefore
+// passes through the pinch. All three are CONCURRENT at ⊙ — they are not linked; closing the
+// hole destroys the linking. Three arms from one point is ☊ FSPLIT3.
+const phases = [0, 2*Math.PI/3, 4*Math.PI/3];
+const opac = [1.0, 0.7, 0.45];
+const rads = [0.05, 0.038, 0.028];
+phases.forEach((ph, w) => {
+  const pts = [];
+  for (let i=0; i<=360; i++) {
+    const s = i/360 * Math.PI*2;
+    pts.push(tp(s, s + ph));
+  }
+  const curve = new THREE.CatmullRomCurve3(pts, true);
+  const tube = new THREE.TubeGeometry(curve, 360, rads[w], 10, true);
+  scene.add(new THREE.Mesh(tube, new THREE.MeshStandardMaterial({
+    color: 0x1B4F72, transparent:true, opacity:opac[w], metalness:0.25, roughness:0.35
+  })));
+});
+
+// Arc-length parametrisation of the (1,1) horn strand.
+// The tube radius R(1+cos v) vanishes at the pinch, so equal steps in the PARAMETER u
+// collapse toward each other there: spacing runs 1.368 at the pinch vs 2.986 at the outer
+// equator, a 2.2x spread, bunching the tokens exactly where the geometry is tightest.
+// Resample so the steps are equal along the CURVE instead.
+const ARC = (() => {
+  const N = 20000, sv = [0], Lv = [0];
+  let prev = tp(0, 0), acc = 0;
+  for (let i = 1; i <= N; i++) {
+    const t = (i / N) * Math.PI * 2, q = tp(t, t);
+    acc += q.distanceTo(prev); prev = q;
+    sv.push(t); Lv.push(acc);
+  }
+  return { sv, Lv, total: acc };
+})();
+function sAtArc(target) {
+  let L = ((target % ARC.total) + ARC.total) % ARC.total;
+  let lo = 0, hi = ARC.Lv.length - 1;
+  while (lo < hi - 1) { const m = (lo + hi) >> 1; if (ARC.Lv[m] < L) lo = m; else hi = m; }
+  const d = ARC.Lv[hi] - ARC.Lv[lo];
+  const f = d > 1e-12 ? (L - ARC.Lv[lo]) / d : 0;
+  return ARC.sv[lo] + f * (ARC.sv[hi] - ARC.sv[lo]);
+}
+// IMSCRIB anchors at the pinch (s = pi -> (0,0,0)); every other token steps one equal
+// arc-length interval from there, so the closed walk reads ... IFIX -> TANCH -> VINIT -> IMSCRIB.
+const L_PINCH = (() => { let lo = 0; while (ARC.sv[lo] < Math.PI) lo++; return ARC.Lv[lo]; })();
+const STEP = ARC.total / BOOT.length;
+
+BOOT.forEach((tok, i) => {
+  const u = sAtArc(L_PINCH + i * STEP);
+  const p = tp(u, u);
+  const col = WORK.has(tok) ? 0x1B4F72 : 0x7f8c8d;
+  const m = new THREE.Mesh(
+    new THREE.SphereGeometry(0.12, 18, 18),
+    new THREE.MeshStandardMaterial({color:col, metalness:0.3, roughness:0.3})
+  );
+  m.position.copy(p); scene.add(m);
+
+  // Label
+  const c = document.createElement('canvas'); c.width=220; c.height=56;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = 'rgba(0,0,0,0.65)'; ctx.beginPath();
+  ctx.roundRect(0,0,220,56,8); ctx.fill();
+  ctx.font = 'bold 24px system-ui'; ctx.fillStyle = '#fff';
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(tok, 110, 28);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.75, 0.19, 1);
+  
+  // Position labels slightly off-center (or directly above if at the pinch origin)
+  const off = p.length() < 0.1 ? new THREE.Vector3(0, 0.45, 0.3) : p.clone().normalize().multiplyScalar(0.45);
+  sp.position.copy(p).add(off);
+  scene.add(sp);
+});
+
+// Setup lateral sphere tangent to the pinch origin (0,0,0)
+const lr = 1.0;
+const sc = new THREE.Vector3(lr, 0, 0); // Positioned so its left boundary hits (0,0,0)
+
+const dagS = new THREE.Mesh(
+  new THREE.SphereGeometry(lr, 48, 32),
+  new THREE.MeshStandardMaterial({
+    color: 0xB03A2E, transparent: true, opacity: 0.35,
+    metalness: 0.15, roughness: 0.45, side: THREE.DoubleSide,
+    depthWrite: false
+  })
+);
+dagS.position.copy(sc); scene.add(dagS);
+
+// Compute sphere ∩ horn torus intersection curve
+const interPts = [];
+const Nphi = 90, Nth = 180;
+for (let i = 0; i < Nphi; i++) {
+  const phi = (i / Nphi) * Math.PI;
+  for (let j = 0; j < Nth; j++) {
+    const th = (j / Nth) * Math.PI * 2;
+    const dir = new THREE.Vector3(
+      Math.sin(phi) * Math.cos(th),
+      Math.sin(phi) * Math.sin(th),
+      Math.cos(phi)
+    );
+    const p = sc.clone().add(dir.multiplyScalar(lr));
+    const rho = Math.sqrt(p.x*p.x + p.y*p.y);
+    const distToTorus = Math.abs((rho - R)*(rho - R) + p.z*p.z - R*R);
+    if (distToTorus < 0.04) {
+      interPts.push(p);
+    }
+  }
+}
+if (interPts.length > 10) {
+  const interGeo = new THREE.BufferGeometry().setFromPoints(interPts);
+  const interMat = new THREE.PointsMaterial({
+    color: 0xff6644, size: 0.06, transparent: true, opacity: 0.9,
+    depthTest: true, sizeAttenuation: true
+  });
+  scene.add(new THREE.Points(interGeo, interMat));
+}
+
+// R2's word is a THETA, not a circle: ⊙ → ☊ → {+, ×, ⊞} → ☋ has V=6 E=7, β=2 — two
+// poles joined by THREE parallel arcs. A single great circle with markers on it is β=1,
+// the wrong object. The three arcs are meridians running pole to pole; ☊ sits at the
+// pinch (the fork, where the three arms fan — the same place the torus's three strands
+// are concurrent), ☋ at the far pole.
+//
+// The walk is OPEN. imasm16_3 reports `Closed walk: false` for every form of the word:
+// the register runs N (∅) → A ({T,F,t,f}) and does not return. R2 is the lateral OPENING.
+// The surface below carries the theta; it does not assert that the program closes. The
+// verdict T on this word is TRI-ANCESTRAL — the arms reconnect at ☋ — which is not the
+// path returning to its start.
+const NPOLE = new THREE.Vector3(2*lr, 0, 0);   // ☋ FFUSE3
+const SPOLE = new THREE.Vector3(0, 0, 0);      // ☊ FSPLIT3 — at the pinch, with ⊙
+function meridian(alpha, n=80) {
+  const pts = [];
+  for (let i=0; i<=n; i++) {
+    const t = (i/n)*Math.PI;
+    pts.push(new THREE.Vector3(
+      lr - lr*Math.cos(t),
+      lr*Math.sin(t)*Math.cos(alpha),
+      lr*Math.sin(t)*Math.sin(alpha)));
+  }
+  return pts;
+}
+const ALPHAS = [0, 2*Math.PI/3, 4*Math.PI/3];
+ALPHAS.forEach(al => {
+  const c = new THREE.CatmullRomCurve3(meridian(al));
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 90, 0.022, 8, false),
+    new THREE.MeshStandardMaterial({color:0xB03A2E, metalness:0.3, roughness:0.3})));
+});
+
+// The three arms are the ray class generators, measured (PARI/GP, d=12 calibration):
+//     conductor (12)      -> (Z/2)^2     the FINITE part
+//     conductor (12)∞₁    -> (Z/2)^3     + one archimedean generator
+//     conductor (12)∞₁∞₂  -> (Z/2)^4     + the second
+// SIXTEEN_3 = P({T,F,t,f}) = (Z/2)^4 is the SAME group. So:
+//     {T, F} are the two finite generators   -> EVALT +, EVALF ×
+//     {t, f} are ∞₁ and ∞₂                    -> EVALI ⊞ sets BOTH at once
+// which is why EVALI is a 2-LEVEL jump and not a cover: it ramifies at both archimedean
+// places in one move. TF (level 2) = (Z/2)^2 = the totally-real sub-tower, degree 8 at
+// d=12 — a PROPER subfield. A (level 4) = (Z/2)^4 = the full ray class field, degree 16
+// = the moduli field. A two-armed fork owns only the finite generators, so it halts at
+// TF and cannot reach A. The ratio is 2^2 at both dimensions: 16/4 at d=12, 2^27/2^25
+// at d=2048 — the archimedean contribution is always exactly {t,f}.
+// markers: ☊ at the pinch, ☋ at the far pole, and one eval token per meridian at its
+// equator — the three arms, one each, which is what 1→3 means.
+const R2 = [
+  {tok:'FSPLIT3', p: SPOLE.clone()},
+  {tok:'FFUSE3',  p: NPOLE.clone()},
+  {tok:'EVALT',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[0]), lr*Math.sin(ALPHAS[0]))},
+  {tok:'EVALF',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[1]), lr*Math.sin(ALPHAS[1]))},
+  {tok:'EVALI',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[2]), lr*Math.sin(ALPHAS[2]))},
+];
+R2.forEach(({tok,p}) => {
+  const dcol = (tok === 'EVALI') ? 0xE8B93A : 0xB03A2E;
+  const m = new THREE.Mesh(new THREE.SphereGeometry(tok === 'EVALI' ? 0.12 : 0.1, 16, 16),
+    new THREE.MeshStandardMaterial({color:dcol, metalness:0.3, roughness:0.3}));
+  m.position.copy(p); scene.add(m);
+  const c = document.createElement('canvas'); c.width=210; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = (tok==='EVALI') ? 'rgba(70,52,8,0.8)' : 'rgba(60,15,12,0.75)';
+  ctx.beginPath(); ctx.roundRect(0,0,210,52,7); ctx.fill();
+  ctx.font='bold 21px system-ui'; ctx.fillStyle = (tok==='EVALI') ? '#ffe9a0' : '#ffcccc';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(tok,105,26);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.68,0.17,1);
+  sp.position.copy(p).add(new THREE.Vector3(0, 0.30, 0.30));
+  scene.add(sp);
+});
+
+// Region labels
+function lab(txt, pos, col) {
+  const c = document.createElement('canvas'); c.width=480; c.height=100;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='rgba(0,0,0,0.6)'; ctx.beginPath(); ctx.roundRect(0,0,480,100,9); ctx.fill();
+  ctx.font='bold 22px system-ui'; ctx.fillStyle=col; ctx.textAlign='center';
+  txt.split('\n').forEach((ln,i) => ctx.fillText(ln, 240, 32 + i*32));
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(1.8,0.38,1); sp.position.copy(pos); scene.add(sp);
+}
+lab("O∞ terminal closure (R1)\n16 registers · 3 strands concurrent at ⊙", new THREE.Vector3(-3.5, 3.2, 1.2), "#aaccff");
+lab("O_inf_dag lateral OPENING (R2)\n⊞ = ramify at ∞₁∞₂ · TF→A · walk does not close", new THREE.Vector3(2.5, -3.2, 0), "#ffaaaa");
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+(function anim(){ requestAnimationFrame(anim); controls.update(); renderer.render(scene,camera); })();
+</script>
+</body>
+</html>
