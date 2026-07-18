@@ -238,6 +238,52 @@ BOOT.forEach((tok, i) => {
   scene.add(sp);
 });
 
+// ── Bootstrap dataflow edges (scripture: mOMonadOS kernel tick) ──────────────
+// The (1,1) strand already carries the sequential control flow; these are the
+// structural / data edges the linear walk does not show. IMSCRIB ⊙ sits at the
+// pinch (origin). Per the kernel: CLINK is register-only (R1∧R2→R3), so the edge
+// into IFIX carries the empty value; IFIX writes memory[R0], which persists
+// across the wrap into the next IMSCRIB snapshot (backpopulate); IFIX closes to
+// IMSCRIB by μ∘δ; the CLINK→IMSCRIB chord is the atemporal identity/unit arrow.
+(() => {
+  const bootPos = BOOT.map((_, i) => { const u = sAtArc(L_PINCH + i * STEP); return tp(u, u); });
+  const at = t => bootPos[BOOT.indexOf(t)];
+  const PINCH = new THREE.Vector3(0, 0, 0);          // IMSCRIB ⊙
+  const pCLINK = at("CLINK"), pIFIX = at("IFIX");
+
+  function dashedEdge(pts, color, opacity) {
+    const geo = new THREE.BufferGeometry().setFromPoints(new THREE.CatmullRomCurve3(pts).getPoints(64));
+    const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color, dashSize: 0.1, gapSize: 0.08, transparent: true, opacity }));
+    line.computeLineDistances(); scene.add(line); return line;
+  }
+  function solidTube(pts, color, rad) {
+    const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 48, rad, 8, false);
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, emissive: 0x443100, metalness: 0.4, roughness: 0.4 })));
+  }
+  function edgeLabel(p, text, color) {
+    const c = document.createElement('canvas'); c.width = 200; c.height = 44;
+    const x = c.getContext('2d');
+    x.font = 'bold 22px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(text, 100, 22);
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthTest: false }));
+    sp.scale.set(0.6, 0.13, 1); sp.position.copy(p); scene.add(sp);
+  }
+
+  const bow = (a, b, amt) => a.clone().lerp(b, 0.5).multiplyScalar(1 + amt);
+
+  // CLINK → IFIX : the EMPTY edge (register-only CLINK; IFIX pops the empty value). Faint grey, dashed.
+  dashedEdge([pCLINK, bow(pCLINK, pIFIX, 0.18), pIFIX], 0x777777, 0.45);
+  edgeLabel(bow(pCLINK, pIFIX, 0.30), 'empty', '#999999');
+  // IFIX → IMSCRIB(⊙) : fix+close, the μ∘δ closure. Solid gold tube.
+  solidTube([pIFIX, pIFIX.clone().lerp(PINCH, 0.5), PINCH], 0xd4af37, 0.028);
+  edgeLabel(pIFIX.clone().lerp(PINCH, 0.45), 'fix+close', '#d4af37');
+  // IFIX → IMSCRIB(⊙) : backpopulate (memory[R0] persists across the wrap). Amber, dashed, bowed.
+  dashedEdge([pIFIX, pIFIX.clone().lerp(PINCH, 0.5).add(new THREE.Vector3(0, 0.5, 0.2)), PINCH], 0xc0851a, 0.85);
+  edgeLabel(pIFIX.clone().lerp(PINCH, 0.55).add(new THREE.Vector3(0, 0.55, 0.25)), 'backpopulate', '#c0851a');
+  // CLINK → IMSCRIB(⊙) : atemporal identity / unit chord. Violet, dashed.
+  dashedEdge([pCLINK, pCLINK.clone().lerp(PINCH, 0.5).add(new THREE.Vector3(0, -0.35, 0.15)), PINCH], 0x9070c0, 0.55);
+})();
+
 // Setup lateral sphere tangent to the pinch origin (0,0,0)
 const lr = 1.0;
 const sc = new THREE.Vector3(lr, 0, 0); // Positioned so its left boundary hits (0,0,0)
