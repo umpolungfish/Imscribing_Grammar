@@ -232,22 +232,45 @@ BOOT.forEach((tok, i) => {
   const sCLINK = sTok(BOOT.indexOf("CLINK"));
   const sIFIX  = sTok(BOOT.indexOf("IFIX"));
 
-  function ringArc(u, v0, v1, n = 64) {
+  // Lifted off the torus surface (taper (1+cos v)/2 → 0 at ⊙) so edges read as
+  // wires, not as more register rings.
+  function ringArc(u, v0, v1, n = 64, lift = 0.09) {
     const pts = [];
-    for (let i = 0; i <= n; i++) pts.push(tp(u, v0 + (v1 - v0) * i / n));
+    const cx = R * Math.cos(u), cy = R * Math.sin(u);
+    for (let i = 0; i <= n; i++) {
+      const v = v0 + (v1 - v0) * i / n;
+      const p = tp(u, v);
+      const nx = p.x - cx, ny = p.y - cy, nz = p.z;
+      const nl = Math.hypot(nx, ny, nz) || 1;
+      const amt = lift * (1 + Math.cos(v)) / 2;
+      p.x += amt * nx / nl; p.y += amt * ny / nl; p.z += amt * nz / nl;
+      pts.push(p);
+    }
     return pts;
   }
   const nearArc = s => ringArc(s, s, Math.PI);
   const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI);
 
-  function dashedEdge(pts, color, opacity) {
-    const geo = new THREE.BufferGeometry().setFromPoints(pts);
-    const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color, dashSize: 0.1, gapSize: 0.08, transparent: true, opacity }));
-    line.computeLineDistances(); scene.add(line); return line;
+  // Dashed TUBE segments — 1px dashed lines vanish at this scale.
+  function dashedEdge(pts, color, opacity, rad = 0.018) {
+    const mat = new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.4, transparent: true, opacity });
+    for (let i = 0; i + 2 < pts.length; i += 4) {
+      const seg = [pts[i], pts[i + 1], pts[i + 2]];
+      scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(seg), 4, rad, 6, false), mat));
+    }
   }
   function solidTube(pts, color, rad) {
     const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 64, rad, 8, false);
-    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, metalness: 0.4, roughness: 0.2 })));
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.5, metalness: 0.4, roughness: 0.2 })));
+  }
+  function arrowHead(pts, color, size = 0.11) {
+    const tip = pts[pts.length - 1], prev = pts[pts.length - 4] || pts[0];
+    const dir = tip.clone().sub(prev).normalize();
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(size * 0.45, size, 10),
+      new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.6 }));
+    cone.position.copy(tip.clone().sub(dir.clone().multiplyScalar(size * 0.6)));
+    cone.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+    scene.add(cone);
   }
   function edgeLabel(p, text, color) {
     const c = document.createElement('canvas'); c.width = 240; c.height = 44;
@@ -262,15 +285,20 @@ BOOT.forEach((tok, i) => {
   // CLINK ⇄ ⊙ (yellow = the weighted meet channel in this palette)
   const cNear = nearArc(sCLINK), cFar = farArc(sCLINK);
   solidTube(cNear, 0xffff00, 0.042);
+  arrowHead(cNear, 0xffff00, 0.16);
   edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'weighted meet', '#ffff00');
-  dashedEdge(cFar, 0xffffff, 0.6);
-  edgeLabel(mid(cFar).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#ffffff');
+  const idArc = cFar.slice().reverse();
+  dashedEdge(idArc, 0xffffff, 0.9);
+  arrowHead(idArc, 0xffffff);
+  edgeLabel(mid(idArc).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#ffffff');
 
   // IFIX ⇄ ⊙
   const fNear = nearArc(sIFIX), fFar = farArc(sIFIX);
   solidTube(fNear, 0xffff00, 0.028);
+  arrowHead(fNear, 0xffff00);
   edgeLabel(mid(fNear).add(new THREE.Vector3(0, 0, 0.28)), 'fix+close', '#ffff00');
-  dashedEdge(fFar, 0x00ff00, 0.85);
+  dashedEdge(fFar, 0x00ff00, 0.95);
+  arrowHead(fFar, 0x00ff00);
   edgeLabel(mid(fFar).add(new THREE.Vector3(0, 0, -0.28)), 'backpopulate', '#00ff00');
 
   // Strand 0 as 9 explicit token→token edges.
@@ -287,7 +315,7 @@ BOOT.forEach((tok, i) => {
     const pts = sectionPts(i);
     const from = BOOT[i], to = BOOT[(i + 1) % BOOT.length];
     if (i === iCLINK) {
-      dashedEdge(pts, 0xffffff, 0.8);
+      dashedEdge(pts, 0xffffff, 0.85, 0.035);
       edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), 'CLINK→IFIX  empty (N)', '#ffffff');
     } else {
       scene.add(new THREE.Mesh(
@@ -296,6 +324,26 @@ BOOT.forEach((tok, i) => {
       edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), from + '→' + to, '#ff6666');
     }
   }
+
+  // ── Lane splitting: the δ/μ dyad made visible ──────────────────────────────
+  // δ charge-separates at FSPLIT (fork into work lane + conjugate lane); μ fuses
+  // the pair at FFUSE (μ∘δ = id). Lane separation tapers to zero at both ends.
+  const iFSPLIT = BOOT.indexOf("FSPLIT");
+  const LANE_N = 96, LANE_AMP = 0.5;
+  const conjPts = [];
+  for (let k = 0; k <= LANE_N; k++) {
+    const f = k / LANE_N;
+    const s = sAtArc(L_PINCH + (iFSPLIT + 2 * f) * STEP);
+    const p = tp(s, s);
+    p.z += LANE_AMP * Math.sin(Math.PI * f);
+    conjPts.push(p);
+  }
+  scene.add(new THREE.Mesh(
+    new THREE.TubeGeometry(new THREE.CatmullRomCurve3(conjPts), LANE_N, rads[0] * 0.8, 8, false),
+    new THREE.MeshStandardMaterial({ color: 0xffff00, transparent: true, opacity: 0.9, metalness: 0.3, roughness: 0.2 })));
+  edgeLabel(conjPts[Math.floor(LANE_N / 2)].clone().add(new THREE.Vector3(0, 0, 0.28)), 'conjugate lane', '#ffff88');
+  edgeLabel(conjPts[6].clone().add(new THREE.Vector3(0, 0, 0.32)), 'δ split', '#ffff88');
+  edgeLabel(conjPts[LANE_N - 6].clone().add(new THREE.Vector3(0, 0, 0.32)), 'μ fuse', '#ffff88');
 })();
 
 // Setup lateral sphere tangent to the pinch origin (0,0,0) -> Red Translucent

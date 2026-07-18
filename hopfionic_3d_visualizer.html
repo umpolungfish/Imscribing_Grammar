@@ -259,10 +259,22 @@ BOOT.forEach((tok, i) => {
   const sCLINK = sTok(BOOT.indexOf("CLINK"));
   const sIFIX  = sTok(BOOT.indexOf("IFIX"));
 
-  // Arc of the poloidal register ring at toroidal angle u, from v0 to v1 (v=π ≡ ⊙).
-  function ringArc(u, v0, v1, n = 64) {
+  // Arc of the poloidal register ring at toroidal angle u, from v0 to v1 (v=π ≡ ⊙),
+  // lifted OFF the torus surface along the outward surface normal so the edge reads
+  // as a wire, not as one more register ring. The lift tapers as (1+cos v)/2, which
+  // is 0 exactly at v=π: every edge still converges exactly at ⊙.
+  function ringArc(u, v0, v1, n = 64, lift = 0.09) {
     const pts = [];
-    for (let i = 0; i <= n; i++) pts.push(tp(u, v0 + (v1 - v0) * i / n));
+    const cx = R * Math.cos(u), cy = R * Math.sin(u);   // poloidal ring centre
+    for (let i = 0; i <= n; i++) {
+      const v = v0 + (v1 - v0) * i / n;
+      const p = tp(u, v);
+      const nx = p.x - cx, ny = p.y - cy, nz = p.z;      // outward surface normal
+      const nl = Math.hypot(nx, ny, nz) || 1;
+      const amt = lift * (1 + Math.cos(v)) / 2;
+      p.x += amt * nx / nl; p.y += amt * ny / nl; p.z += amt * nz / nl;
+      pts.push(p);
+    }
     return pts;
   }
   // A token at strand parameter s sits at tp(s,s): its register ring is u=s, its ring
@@ -270,14 +282,28 @@ BOOT.forEach((tok, i) => {
   const nearArc = s => ringArc(s, s, Math.PI);
   const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI);
 
-  function dashedEdge(pts, color, opacity) {
-    const geo = new THREE.BufferGeometry().setFromPoints(pts);
-    const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color, dashSize: 0.1, gapSize: 0.08, transparent: true, opacity }));
-    line.computeLineDistances(); scene.add(line); return line;
+  // Dashed TUBE (chains of short tube segments) — 1px dashed lines vanish at this
+  // scale; a back-edge must be as physically present as a forward edge.
+  function dashedEdge(pts, color, opacity, rad = 0.018) {
+    const mat = new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.35, transparent: true, opacity });
+    for (let i = 0; i + 2 < pts.length; i += 4) {
+      const seg = [pts[i], pts[i + 1], pts[i + 2]];
+      scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(seg), 4, rad, 6, false), mat));
+    }
   }
   function solidTube(pts, color, rad) {
     const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 64, rad, 8, false);
-    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, emissive: 0x443100, metalness: 0.4, roughness: 0.4 })));
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.45, metalness: 0.4, roughness: 0.4 })));
+  }
+  // Direction cone at the arrival end of an edge.
+  function arrowHead(pts, color, size = 0.11) {
+    const tip = pts[pts.length - 1], prev = pts[pts.length - 4] || pts[0];
+    const dir = tip.clone().sub(prev).normalize();
+    const cone = new THREE.Mesh(new THREE.ConeGeometry(size * 0.45, size, 10),
+      new THREE.MeshStandardMaterial({ color, emissive: color, emissiveIntensity: 0.5 }));
+    cone.position.copy(tip.clone().sub(dir.clone().multiplyScalar(size * 0.6)));
+    cone.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+    scene.add(cone);
   }
   function edgeLabel(p, text, color) {
     const c = document.createElement('canvas'); c.width = 240; c.height = 44;
@@ -292,15 +318,20 @@ BOOT.forEach((tok, i) => {
   // CLINK ⇄ ⊙ : both edges on CLINK's own register ring.
   const cNear = nearArc(sCLINK), cFar = farArc(sCLINK);
   solidTube(cNear, 0xd4af37, 0.042);                       // WEIGHTED meet → ⊙ (thick)
+  arrowHead(cNear, 0xd4af37, 0.16);
   edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'weighted meet', '#d4af37');
-  dashedEdge(cFar, 0x9070c0, 0.6);                         // ⊙ → CLINK identity/unit
-  edgeLabel(mid(cFar).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#b39ddb');
+  const idArc = cFar.slice().reverse();                    // ⊙ → CLINK identity/unit
+  dashedEdge(idArc, 0x9070c0, 0.9);
+  arrowHead(idArc, 0x9070c0);
+  edgeLabel(mid(idArc).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#b39ddb');
 
   // IFIX ⇄ ⊙ : both edges on IFIX's own register ring.
   const fNear = nearArc(sIFIX), fFar = farArc(sIFIX);
   solidTube(fNear, 0xd4af37, 0.028);                       // fix+close, μ∘δ closure
+  arrowHead(fNear, 0xd4af37);
   edgeLabel(mid(fNear).add(new THREE.Vector3(0, 0, 0.28)), 'fix+close', '#d4af37');
-  dashedEdge(fFar, 0xc0851a, 0.85);                        // backpopulate (memory[R0])
+  dashedEdge(fFar, 0xc0851a, 0.95);                        // backpopulate (memory[R0])
+  arrowHead(fFar, 0xc0851a);
   edgeLabel(mid(fFar).add(new THREE.Vector3(0, 0, -0.28)), 'backpopulate', '#c0851a');
 
   // Strand 0 (the BOOT strand), deferred from the phases loop: ALL edges shown.
@@ -321,7 +352,7 @@ BOOT.forEach((tok, i) => {
     const from = BOOT[i], to = BOOT[(i + 1) % BOOT.length];
     if (i === iCLINK) {
       // CLINK → IFIX : the EMPTY edge — the entire section is dotted.
-      dashedEdge(pts, 0x8899aa, 0.8);
+      dashedEdge(pts, 0x8899aa, 0.85, 0.035);
       edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), 'CLINK→IFIX  empty (N)', '#99aabb');
     } else {
       scene.add(new THREE.Mesh(
@@ -330,6 +361,29 @@ BOOT.forEach((tok, i) => {
       edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), from + '→' + to, '#7fa7c9');
     }
   }
+
+  // ── Lane splitting: the δ/μ dyad made visible ──────────────────────────────
+  // Branches originate only from FSPLIT and closures occur only via FFUSE (kernel
+  // grammar). δ charge-separates: at FSPLIT the flow forks into TWO lanes — the
+  // work lane (the strand itself, carrying AFWD) and the CONJUGATE lane, which
+  // arcs away and rejoins at FFUSE, where μ fuses the pair (μ∘δ = id). The lane
+  // separation tapers to zero at both ends: split at δ, fuse at μ.
+  const iFSPLIT = BOOT.indexOf("FSPLIT");
+  const LANE_N = 96, LANE_AMP = 0.5;
+  const conjPts = [];
+  for (let k = 0; k <= LANE_N; k++) {
+    const f = k / LANE_N;                              // 0 at FSPLIT, 1 at FFUSE
+    const s = sAtArc(L_PINCH + (iFSPLIT + 2 * f) * STEP);
+    const p = tp(s, s);
+    p.z += LANE_AMP * Math.sin(Math.PI * f);           // taper: 0 → max → 0
+    conjPts.push(p);
+  }
+  scene.add(new THREE.Mesh(
+    new THREE.TubeGeometry(new THREE.CatmullRomCurve3(conjPts), LANE_N, rads[0] * 0.8, 8, false),
+    new THREE.MeshStandardMaterial({ color: 0x7d5fb2, transparent: true, opacity: 0.9, metalness: 0.25, roughness: 0.35 })));
+  edgeLabel(conjPts[Math.floor(LANE_N / 2)].clone().add(new THREE.Vector3(0, 0, 0.28)), 'conjugate lane', '#b39ddb');
+  edgeLabel(conjPts[6].clone().add(new THREE.Vector3(0, 0, 0.32)), 'δ split', '#b39ddb');
+  edgeLabel(conjPts[LANE_N - 6].clone().add(new THREE.Vector3(0, 0, 0.32)), 'μ fuse', '#b39ddb');
 })();
 
 // Setup lateral sphere tangent to the pinch origin (0,0,0)
