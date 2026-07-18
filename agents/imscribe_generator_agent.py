@@ -414,12 +414,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
             )
             imscription_data["protection"] = "𐑷"
             reasoning_parts.append("[Axiom B auto-correction] protection downgraded to 𐑷")
-        # Axiom A: 𐑫 (topological chirality) requires 𐑪 (metastable kinetics)
-        chir2 = imscription_data.get("chirality", "")
-        kine  = imscription_data.get("kinetic_character", "")
-        if chir2 == "𐑫" and kine != "𐑪":
-            imscription_data["kinetic_character"] = "𐑪"
-            reasoning_parts.append("[Axiom A auto-correction] kinetic_character set to 𐑪")
+        # 𐑫 (topological chirality) co-occurring with 𐑪 (metastable kinetics) is a
+        # STRUCTURAL TENDENCY, not an axiom — Core.lean states this explicitly: "Not an
+        # axiom because some wool systems (e.g. proto-languages) have egg." The former
+        # auto-correction here rewrote the Grammar's verdict to satisfy a constraint the
+        # kernel does not impose. The Grammar's assignment stands as spoken.
 
         imscription = self._create_imscription_from_data(imscription_data, description, explicit_name=name)
 
