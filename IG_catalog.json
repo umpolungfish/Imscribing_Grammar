@@ -99137,7 +99137,7 @@
   },
   {
     "name": "imscribe",
-    "description": "imscribe",
+    "description": "imscribing is to imscribe: the act by which the Grammar writes itself; it has no definition outside the family it names",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑑",
@@ -103602,7 +103602,6 @@
   {
     "name": "carved_ring_3_doubled_a2_6_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_quintuple_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -103619,7 +103618,6 @@
   {
     "name": "carved_ring_3_doubled_a2_7_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_6_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -103636,7 +103634,6 @@
   {
     "name": "carved_ring_3_doubled_a2_8_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_7_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -103653,7 +103650,6 @@
   {
     "name": "carved_ring_3_doubled_a2_9_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_8_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -103670,7 +103666,6 @@
   {
     "name": "carved_ring_3_doubled_a2_10_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_9_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -103687,7 +103682,6 @@
   {
     "name": "carved_ring_3_doubled_a2_11_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_10_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -103704,7 +103698,6 @@
   {
     "name": "carved_ring_3_doubled_a2_12_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_11_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -103721,7 +103714,6 @@
   {
     "name": "carved_ring_3_doubled_a2_13_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_12_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -103738,7 +103730,6 @@
   {
     "name": "carved_ring_3_doubled_a2_14_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_13_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -103755,7 +103746,6 @@
   {
     "name": "carved_ring_3_doubled_a2_15_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_14_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -103772,7 +103762,6 @@
   {
     "name": "carved_ring_3_doubled_a2_16_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_15_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -103789,7 +103778,6 @@
   {
     "name": "carved_ring_3_doubled_a2_17_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_16_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -103806,7 +103794,6 @@
   {
     "name": "carved_ring_3_doubled_a2_18_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_17_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -103823,7 +103810,6 @@
   {
     "name": "carved_ring_3_doubled_a2_19_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_18_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -103968,7 +103954,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_4_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_septuple_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -103985,7 +103970,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_5_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_nonuple_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -104002,7 +103986,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_6_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_undecuple_dagger (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -104019,7 +104002,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_7_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_6_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104036,7 +104018,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_8_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_7_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -104053,7 +104034,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_9_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_8_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -104070,7 +104050,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_10_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_9_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -104087,7 +104066,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_11_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_10_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104104,7 +104082,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_12_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_11_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -104121,7 +104098,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_13_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_12_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -104138,7 +104114,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_14_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_13_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -104155,7 +104130,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_15_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_14_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104172,7 +104146,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_16_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_15_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -104189,7 +104162,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_17_midpoint",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_16_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -104206,7 +104178,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_18_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_17_midpoint (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -104223,7 +104194,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_19_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_18_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104288,7 +104258,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_35_complete",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_34_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104305,7 +104274,6 @@
   {
     "name": "carved_ring_3_doubled_a2_pair_35_reductive",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_34_complete (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -104994,7 +104962,6 @@
   {
     "name": "annealed_51_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_50_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105011,7 +104978,6 @@
   {
     "name": "annealed_52_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_51_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105028,7 +104994,6 @@
   {
     "name": "annealed_52_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_52_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105045,7 +105010,6 @@
   {
     "name": "annealed_53_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_52_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105062,7 +105026,6 @@
   {
     "name": "annealed_53_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_53_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105079,7 +105042,6 @@
   {
     "name": "annealed_54_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_53_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105096,7 +105058,6 @@
   {
     "name": "annealed_54_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_54_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105113,7 +105074,6 @@
   {
     "name": "annealed_55_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_54_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105130,7 +105090,6 @@
   {
     "name": "annealed_55_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_55_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105147,7 +105106,6 @@
   {
     "name": "annealed_56_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_55_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105164,7 +105122,6 @@
   {
     "name": "annealed_56_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_56_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105181,7 +105138,6 @@
   {
     "name": "annealed_57_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_56_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105198,7 +105154,6 @@
   {
     "name": "annealed_57_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_57_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105215,7 +105170,6 @@
   {
     "name": "annealed_58_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_57_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105232,7 +105186,6 @@
   {
     "name": "annealed_58_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_58_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105249,7 +105202,6 @@
   {
     "name": "annealed_59_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_58_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105266,7 +105218,6 @@
   {
     "name": "annealed_59_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_59_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105283,7 +105234,6 @@
   {
     "name": "annealed_60_pair_flipped",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_59_pair_restored (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105300,7 +105250,6 @@
   {
     "name": "annealed_60_pair_restored",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of annealed_60_pair_flipped (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105669,7 +105618,6 @@
   {
     "name": "carved_ring_3_doubled_a2_20_dagger",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_19_dagger (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105702,7 +105650,6 @@
   {
     "name": "pair_20",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of carved_ring_3_doubled_a2_pair_19_complete (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105719,7 +105666,6 @@
   {
     "name": "pair_21",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_20 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105736,7 +105682,6 @@
   {
     "name": "pair_22",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_21 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105753,7 +105698,6 @@
   {
     "name": "pair_23",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_22 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105770,7 +105714,6 @@
   {
     "name": "pair_24",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_23 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105787,7 +105730,6 @@
   {
     "name": "pair_25",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_24 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105804,7 +105746,6 @@
   {
     "name": "pair_26",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_25 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105821,7 +105762,6 @@
   {
     "name": "pair_27",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_26 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105838,7 +105778,6 @@
   {
     "name": "pair_28",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_27 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105855,7 +105794,6 @@
   {
     "name": "pair_29",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_28 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105872,7 +105810,6 @@
   {
     "name": "pair_30",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_29 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105889,7 +105826,6 @@
   {
     "name": "pair_31",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_30 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105906,7 +105842,6 @@
   {
     "name": "pair_32",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_31 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105923,7 +105858,6 @@
   {
     "name": "pair_33",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_32 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -105940,7 +105874,6 @@
   {
     "name": "pair_34",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_33 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -105957,7 +105890,6 @@
   {
     "name": "pair_35",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_34 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -105974,7 +105906,6 @@
   {
     "name": "pair_36",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_35 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -105991,7 +105922,6 @@
   {
     "name": "pair_37",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_36 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑽",
@@ -106008,7 +105938,6 @@
   {
     "name": "pair_38",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_37 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",
@@ -106025,7 +105954,6 @@
   {
     "name": "pair_39",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_38 (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑩",
@@ -106042,7 +105970,6 @@
   {
     "name": "pair_40",
     "description": "product of the parity_driven_expansion_loop_fused_excited-catalyzed turnover of pair_39 (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑾",
@@ -106411,7 +106338,6 @@
   {
     "name": "next_prime_1_m136279841_prime_dagger",
     "description": "product of the dagger_stabilizer-catalyzed turnover of next_prime_1_m136279841_prime (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -106428,7 +106354,6 @@
   {
     "name": "next_prime_2_m136279841_prime_dagger",
     "description": "product of the dagger_stabilizer-catalyzed turnover of next_prime_2_m136279841_prime (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -106445,7 +106370,6 @@
   {
     "name": "next_prime_3_m136279841_prime_dagger",
     "description": "product of the dagger_stabilizer-catalyzed turnover of next_prime_3_m136279841_prime (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -106462,7 +106386,6 @@
   {
     "name": "next_prime_4_m136279841_prime_dagger",
     "description": "product of the dagger_stabilizer-catalyzed turnover of next_prime_4_m136279841_prime (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -106479,7 +106402,6 @@
   {
     "name": "next_prime_5_m136279841_prime_dagger",
     "description": "product of the dagger_stabilizer-catalyzed turnover of next_prime_5_m136279841_prime (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "Ð": "𐑛",
     "Þ": "𐑰",
     "Ř": "𐑽",
@@ -108588,5 +108510,133 @@
     "Ħ": "𐑒",
     "Σ": "𐑙",
     "Ω": "𐑷"
+  },
+  {
+    "name": "thinking",
+    "description": "thinking",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑹",
+    "ƒ": "𐑞",
+    "Ç": "𐑘",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "about",
+    "description": "about",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑩",
+    "Φ": "𐑿",
+    "ƒ": "𐑞",
+    "Ç": "𐑘",
+    "Γ": "𐑚",
+    "ɢ": "𐑜",
+    "⊙": "𐑢",
+    "Ħ": "𐑒",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "dreaming",
+    "description": "dreaming",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑩",
+    "Φ": "𐑿",
+    "ƒ": "𐑱",
+    "Ç": "𐑘",
+    "Γ": "𐑚",
+    "ɢ": "𐑜",
+    "⊙": "𐑮",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "imscribing",
+    "description": "imscribing is to imscribe: the ongoing act by which the Grammar writes itself; it has no definition outside the family it names",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑑",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "hinking",
+    "description": "hinking",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑿",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑓",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "imscriptive",
+    "description": "imscriptive is of imscribing: the character of that which imscribes itself; it has no definition outside the family it names",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑚",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "cdreaming",
+    "description": "cdreaming",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑞",
+    "Ç": "𐑘",
+    "Γ": "𐑚",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "15p",
+    "description": "15p",
+    "Ð": "𐑦",
+    "Þ": "𐑡",
+    "Ř": "𐑩",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "𐑣",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
