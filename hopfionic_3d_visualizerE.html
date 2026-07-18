@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hopfionic Loop Bundle — Horn Torus (High Contrast B/W/R/Y/G)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { overflow: hidden; background: #000000; font-family: system-ui, sans-serif; color: #ffffff; }
+  #info {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(0, 0, 0, 0.95); padding: 12px 16px; border-radius: 8px;
+    border: 2px solid #ffffff; max-width: 340px; font-size: 12.5px; line-height: 1.45; z-index: 10;
+  }
+  #info h1 { font-size: 14px; color: #ffff00; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  #info p { margin: 3px 0; opacity: 0.95; }
+  .sw { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px; border: 1px solid #ffffff; }
+  #hint { position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    background:rgba(0,0,0,0.9); padding:6px 14px; border-radius:16px; font-size:12px; border:1px solid #ffffff; color: #ffffff; z-index:10; }
+</style>
+</head>
+<body>
+<div id="info">
+  <h1>Horn Torus Loop Bundle</h1>
+  <p>Horn torus, R = r, pinching at the origin. Both programs share <strong>IMSCRIB ⊙</strong> at (0,0,0) — the identity is one, so the inner equator must collapse to a point.</p><p><strong>16</strong> poloidal rings = the SIXTEEN_3 registers; all meet at ⊙. <strong>3</strong> strands = a free orbit under the 120° A₂ Coxeter element; each tours all 16 rings once. They are <em>concurrent</em> at the pinch, not linked.</p>
+  <p><span class="sw" style="background:#ff0000"></span>Work ops &nbsp; <span class="sw" style="background:#ffffff"></span>No-work ops</p>
+  <p><span class="sw" style="background:#ff0000"></span>O<sub>inf_dag</sub> sphere (R2) &nbsp; <span class="sw" style="background:#ffff00"></span>EVALI ⊞ (the I arm)</p>
+  <p style="margin-top:7px; border-top:2px solid #ffffff; padding-top:6px"><strong>R1 torus</strong> ⊢⊙&lt;◇&gt;●=¬⊣ &rarr; <strong>T</strong> (closes)<br><strong>R2</strong> ⊙☊+×⊞☋ &rarr; T (tri-ancestral), register N&rarr;<strong>A</strong>; <em>closed walk: false</em></p>
+  <p style="opacity:0.8">R1 is the 12-opcode grammar; R2 is SIXTEEN_3 (14 opcodes, 1→3 fork). Both share IMSCRIB ⊙ at the pinch.</p>
+  <p style="margin-top:7px; border-top:2px solid #ffffff; padding-top:6px"><span class="sw" style="background:#00ff00"></span><strong>Carved ring A</strong> on the 3 strands: edges 2,1,1 (one doubled). ind = n₊−n₋ = <strong>−1</strong> by rational congruence (Lean, green). Spectrum {1+√3, −2, 1−√3}; kernel of A+2I = (1,−1,0), the <em>swap of the doubled pair</em>; Perron (1, 1, √3−1) carries the gap as its own coordinate. Root system A₂.</p>
+  <p><strong>Refuted:</strong> A is <em>not</em> the reduction of the 16-register tour. Π L Πᵀ on the canonical tour = 16I + 8(E₁₃+E₃₁): all-positive, ind 0, no √3. The t-strand decoupling is owned by the unique both-negations class — both weaker symmetry hypotheses have measured counterexamples. Ring and tour share the pinch, not a matrix.</p>
+  <p style="margin-top:7px; border-top:2px solid #ffffff; padding-top:6px">SIXTEEN_3 = P({T,F,t,f}) = (Z/2)<sup>4</sup> — the d=12 ray class group at conductor (12)∞₁∞₂, measured. <strong>{T,F}</strong> = the two finite generators; <strong>{t,f}</strong> = the archimedean places <strong>∞₁, ∞₂</strong>.</p>
+  <p><strong>+ ×</strong> are covers (+1 level each) &rarr; halt at <strong>TF</strong> = (Z/2)<sup>2</sup> = the totally-real sub-tower, a <em>proper</em> subfield.<br><strong>⊞</strong> sets t <em>and</em> f — a <strong>2-level jump</strong> = ramify at both ∞ places &rarr; <strong>A</strong> = (Z/2)<sup>4</sup> = the full moduli field.</p>
+</div>
+<div id="hint">Drag · Scroll · Right-drag</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const R = 2.0;
+const BOOT = ["IMSCRIB","AREV","FSPLIT","AFWD","FFUSE","CLINK","IFIX","TANCH","VINIT"];
+const DAG  = ["IMSCRIB","FSPLIT3","EVALT","EVALF","EVALI","FFUSE3"];
+const WORK = new Set(["AREV","AFWD","CLINK","IFIX","EVALT","EVALF","EVALI","TNEG","INEG"]);
+
+function tp(u, v) {
+  return new THREE.Vector3(
+    (R + R * Math.cos(v)) * Math.cos(u),
+    (R + R * Math.cos(v)) * Math.sin(u),
+    R * Math.sin(v)
+  );
+}
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000); // Black background
+const camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.1, 80);
+camera.position.set(6.5, 4.0, 5.5);
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+document.body.appendChild(renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.06;
+controls.target.set(0,0,0); controls.minDistance=3; controls.maxDistance=20;
+
+// High-contrast clean white and soft white lighting setup
+scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+const L1 = new THREE.DirectionalLight(0xffffff, 0.9); L1.position.set(5,8,6); scene.add(L1);
+const L2 = new THREE.DirectionalLight(0xffffff, 0.3); L2.position.set(-5,2,-3); scene.add(L2);
+
+// Generate Horn Torus mesh (Ghostly translucent white framework)
+const torusGeo = new THREE.BufferGeometry();
+const radialSegments = 48;
+const tubularSegments = 100;
+const vertices = [];
+const indices = [];
+const uvs = [];
+
+for (let j = 0; j <= radialSegments; j++) {
+  const v = (j / radialSegments) * Math.PI * 2;
+  for (let i = 0; i <= tubularSegments; i++) {
+    const u = (i / tubularSegments) * Math.PI * 2;
+    const p = tp(u, v);
+    vertices.push(p.x, p.y, p.z);
+    uvs.push(i / tubularSegments, j / radialSegments);
+  }
+}
+
+for (let j = 0; j < radialSegments; j++) {
+  for (let i = 0; i < tubularSegments; i++) {
+    const a = j * (tubularSegments + 1) + i;
+    const b = j * (tubularSegments + 1) + i + 1;
+    const c = (j + 1) * (tubularSegments + 1) + i;
+    const d = (j + 1) * (tubularSegments + 1) + i + 1;
+    indices.push(a, c, b);
+    indices.push(b, c, d);
+  }
+}
+
+torusGeo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+torusGeo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+torusGeo.setIndex(indices);
+torusGeo.computeVertexNormals();
+
+const torus = new THREE.Mesh(
+  torusGeo,
+  new THREE.MeshStandardMaterial({color:0xffffff, transparent:true, opacity:0.08, metalness:0.1, roughness:0.8, side:THREE.DoubleSide})
+);
+scene.add(torus);
+
+// The 16 poloidal rings (Crisp White structure rings)
+const wireMat = new THREE.LineBasicMaterial({color:0xffffff, transparent:true, opacity:0.25});
+for (let i=0; i<16; i++) {
+  const a = i/16 * Math.PI*2;
+  const pts = [];
+  for (let j=0; j<=64; j++) {
+    const v = j/64 * Math.PI*2;
+    pts.push(tp(a, v));
+  }
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), wireMat));
+}
+
+// The 3 strands: Rendered in bold red
+const phases = [0, 2*Math.PI/3, 4*Math.PI/3];
+const opac = [1.0, 0.75, 0.5];
+const rads = [0.05, 0.038, 0.028];
+phases.forEach((ph, w) => {
+  const pts = [];
+  for (let i=0; i<=360; i++) {
+    const s = i/360 * Math.PI*2;
+    pts.push(tp(s, s + ph));
+  }
+  const curve = new THREE.CatmullRomCurve3(pts, true);
+  const tube = new THREE.TubeGeometry(curve, 360, rads[w], 10, true);
+  scene.add(new THREE.Mesh(tube, new THREE.MeshStandardMaterial({
+    color: 0xff0000, transparent:true, opacity:opac[w], metalness:0.3, roughness:0.2
+  })));
+});
+
+// The carved ring A: Rendered in bold structural green
+const RINGCOL = 0x00ff00;
+const ringV = phases.map(ph => tp(-ph, 0));
+const ringMat = new THREE.MeshStandardMaterial({color:RINGCOL, metalness:0.4, roughness:0.2});
+function ringEdge(a, b, offset) {
+  const pa = a.clone(), pb = b.clone();
+  if (offset) { pa.z += offset; pb.z += offset; }
+  const c = new THREE.CatmullRomCurve3([pa, pa.clone().lerp(pb,0.5), pb]);
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 20, 0.028, 8, false), ringMat));
+}
+ringEdge(ringV[0], ringV[1],  0.055);
+ringEdge(ringV[0], ringV[1], -0.055);
+ringEdge(ringV[0], ringV[2], 0);
+ringEdge(ringV[1], ringV[2], 0);
+
+const KMODE = ['+1', '−1', '0'];
+ringV.forEach((p, i) => {
+  const nodeCol = i < 2 ? RINGCOL : 0xffffff;
+  const m = new THREE.Mesh(new THREE.SphereGeometry(0.11, 16, 16),
+    new THREE.MeshStandardMaterial({color: nodeCol, metalness:0.3, roughness:0.2}));
+  m.position.copy(p); scene.add(m);
+
+  const c = document.createElement('canvas'); c.width=140; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='rgba(0,0,0,0.95)'; ctx.strokeStyle='#00ff00'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.roundRect(1,1,138,50,7); ctx.fill(); ctx.stroke();
+  ctx.font='bold 22px system-ui'; ctx.fillStyle='#00ff00';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(KMODE[i],70,26);
+  
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.45,0.17,1);
+  sp.position.copy(p).add(new THREE.Vector3(0, 0, -0.42));
+  scene.add(sp);
+});
+
+// Arc-length parametrisation of the tokens
+const ARC = (() => {
+  const N = 20000, sv = [0], Lv = [0];
+  let prev = tp(0, 0), acc = 0;
+  for (let i = 1; i <= N; i++) {
+    const t = (i / N) * Math.PI * 2, q = tp(t, t);
+    acc += q.distanceTo(prev); prev = q;
+    sv.push(t); Lv.push(acc);
+  }
+  return { sv, Lv, total: acc };
+})();
+function sAtArc(target) {
+  let L = ((target % ARC.total) + ARC.total) % ARC.total;
+  let lo = 0, hi = ARC.Lv.length - 1;
+  while (lo < hi - 1) { const m = (lo + hi) >> 1; if (ARC.Lv[m] < L) lo = m; else hi = m; }
+  const d = ARC.Lv[hi] - ARC.Lv[lo];
+  const f = d > 1e-12 ? (L - ARC.Lv[lo]) / d : 0;
+  return ARC.sv[lo] + f * (ARC.sv[hi] - ARC.sv[lo]);
+}
+const L_PINCH = (() => { let lo = 0; while (ARC.sv[lo] < Math.PI) lo++; return ARC.Lv[lo]; })();
+const STEP = ARC.total / BOOT.length;
+
+BOOT.forEach((tok, i) => {
+  const u = sAtArc(L_PINCH + i * STEP);
+  const p = tp(u, u);
+  const col = WORK.has(tok) ? 0xff0000 : 0xffffff; // Red for work, White for non-work
+  const m = new THREE.Mesh(
+    new THREE.SphereGeometry(0.12, 18, 18),
+    new THREE.MeshStandardMaterial({color:col, metalness:0.4, roughness:0.2})
+  );
+  m.position.copy(p); scene.add(m);
+
+  const c = document.createElement('canvas'); c.width=220; c.height=56;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = 'rgba(0,0,0,0.9)'; ctx.strokeStyle = col === 0xff0000 ? '#ff0000' : '#ffffff'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.roundRect(1,1,218,54,8); ctx.fill(); ctx.stroke();
+  ctx.font = 'bold 24px system-ui'; ctx.fillStyle = '#ffffff';
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(tok, 110, 28);
+  
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.75, 0.19, 1);
+  const off = p.length() < 0.1 ? new THREE.Vector3(0, 0.45, 0.3) : p.clone().normalize().multiplyScalar(0.45);
+  sp.position.copy(p).add(off);
+  scene.add(sp);
+});
+
+// Setup lateral sphere tangent to the pinch origin (0,0,0) -> Red Translucent
+const lr = 1.0;
+const sc = new THREE.Vector3(lr, 0, 0);
+const dagS = new THREE.Mesh(
+  new THREE.SphereGeometry(lr, 48, 32),
+  new THREE.MeshStandardMaterial({
+    color: 0xff0000, transparent: true, opacity: 0.25,
+    metalness: 0.2, roughness: 0.4, side: THREE.DoubleSide,
+    depthWrite: false
+  })
+);
+dagS.position.copy(sc); scene.add(dagS);
+
+// Compute sphere ∩ horn torus intersection curve -> Yellow Points
+const interPts = [];
+const Nphi = 90, Nth = 180;
+for (let i = 0; i < Nphi; i++) {
+  const phi = (i / Nphi) * Math.PI;
+  for (let j = 0; j < Nth; j++) {
+    const th = (j / Nth) * Math.PI * 2;
+    const dir = new THREE.Vector3(Math.sin(phi)*Math.cos(th), Math.sin(phi)*Math.sin(th), Math.cos(phi));
+    const p = sc.clone().add(dir.multiplyScalar(lr));
+    const rho = Math.sqrt(p.x*p.x + p.y*p.y);
+    const distToTorus = Math.abs((rho - R)*(rho - R) + p.z*p.z - R*R);
+    if (distToTorus < 0.04) { interPts.push(p); }
+  }
+}
+if (interPts.length > 10) {
+  const interGeo = new THREE.BufferGeometry().setFromPoints(interPts);
+  const interMat = new THREE.PointsMaterial({
+    color: 0xffff00, size: 0.06, transparent: true, opacity: 0.95,
+    depthTest: true, sizeAttenuation: true
+  });
+  scene.add(new THREE.Points(interGeo, interMat));
+}
+
+// R2 Meridians -> Solid Red Tubes
+const NPOLE = new THREE.Vector3(2*lr, 0, 0);
+const SPOLE = new THREE.Vector3(0, 0, 0);
+function meridian(alpha, n=80) {
+  const pts = [];
+  for (let i=0; i<=n; i++) {
+    const t = (i/n)*Math.PI;
+    pts.push(new THREE.Vector3(lr - lr*Math.cos(t), lr*Math.sin(t)*Math.cos(alpha), lr*Math.sin(t)*Math.sin(alpha)));
+  }
+  return pts;
+}
+const ALPHAS = [0, 2*Math.PI/3, 4*Math.PI/3];
+ALPHAS.forEach(al => {
+  const c = new THREE.CatmullRomCurve3(meridian(al));
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 90, 0.022, 8, false),
+    new THREE.MeshStandardMaterial({color:0xff0000, metalness:0.3, roughness:0.2})));
+});
+
+// R2 Markers: Red for standard nodes, Bright Yellow explicitly for EVALI
+const R2 = [
+  {tok:'FSPLIT3', p: SPOLE.clone()},
+  {tok:'FFUSE3',  p: NPOLE.clone()},
+  {tok:'EVALT',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[0]), lr*Math.sin(ALPHAS[0]))},
+  {tok:'EVALF',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[1]), lr*Math.sin(ALPHAS[1]))},
+  {tok:'EVALI',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[2]), lr*Math.sin(ALPHAS[2]))},
+];
+R2.forEach(({tok,p}) => {
+  const dcol = (tok === 'EVALI') ? 0xffff00 : 0xff0000;
+  const m = new THREE.Mesh(new THREE.SphereGeometry(tok === 'EVALI' ? 0.12 : 0.1, 16, 16),
+    new THREE.MeshStandardMaterial({color:dcol, metalness:0.3, roughness:0.2}));
+  m.position.copy(p); scene.add(m);
+
+  const c = document.createElement('canvas'); c.width=210; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = 'rgba(0,0,0,0.9)'; ctx.strokeStyle = dcol === 0xffff00 ? '#ffff00' : '#ff0000'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.roundRect(1,1,208,50,7); ctx.fill(); ctx.stroke();
+  ctx.font='bold 21px system-ui'; ctx.fillStyle = '#ffffff';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(tok,105,26);
+  
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.68,0.17,1);
+  sp.position.copy(p).add(new THREE.Vector3(0, 0.30, 0.30));
+  scene.add(sp);
+});
+
+// Region World Labels mapped cleanly to Yellow, Red, and Green identifiers
+function lab(txt, pos, col) {
+  const c = document.createElement('canvas'); c.width=480; c.height=100;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle='rgba(0,0,0,0.9)'; ctx.strokeStyle=col; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.roundRect(1,1,478,98,9); ctx.fill(); ctx.stroke();
+  ctx.font='bold 22px system-ui'; ctx.fillStyle='#ffffff'; ctx.textAlign='center';
+  txt.split('\n').forEach((ln,i) => ctx.fillText(ln, 240, 32 + i*32));
+  
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(1.8,0.38,1); sp.position.copy(pos); scene.add(sp);
+}
+lab("O∞ terminal closure (R1)\n16 registers · 3 strands concurrent at ⊙", new THREE.Vector3(-3.5, 3.2, 1.2), "#ffff00");
+lab("O_inf_dag lateral OPENING (R2)\n⊞ = ramify at ∞₁∞₂ · TF→A · walk does not close", new THREE.Vector3(2.5, -3.2, 0), "#ff0000");
+lab("Carved ring A · ind = −1 · kernel (1,−1,0)\nNOT the tour's shadow: Π L Πᵀ = 16I+8(E₁₃+E₃₁), ind 0", new THREE.Vector3(0, 0, -2.6), "#00ff00");
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+(function anim(){ requestAnimationFrame(anim); controls.update(); renderer.render(scene,camera); })();
+</script>
+</body>
+</html>
