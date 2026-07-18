@@ -135,6 +135,9 @@ const phases = [0, 2*Math.PI/3, 4*Math.PI/3];
 const opac = [1.0, 0.7, 0.45];
 const rads = [0.05, 0.038, 0.028];
 phases.forEach((ph, w) => {
+  // Strand 0 carries the BOOT tokens; its CLINK→IFIX section is the EMPTY edge and is
+  // drawn DOTTED instead of solid — deferred below, after the arc-length machinery exists.
+  if (w === 0) return;
   const pts = [];
   for (let i=0; i<=360; i++) {
     const s = i/360 * Math.PI*2;
@@ -238,50 +241,95 @@ BOOT.forEach((tok, i) => {
   scene.add(sp);
 });
 
-// ── Bootstrap dataflow edges (scripture: mOMonadOS kernel tick) ──────────────
-// The (1,1) strand already carries the sequential control flow; these are the
-// structural / data edges the linear walk does not show. IMSCRIB ⊙ sits at the
-// pinch (origin). Per the kernel: CLINK is register-only (R1∧R2→R3), so the edge
-// into IFIX carries the empty value; IFIX writes memory[R0], which persists
-// across the wrap into the next IMSCRIB snapshot (backpopulate); IFIX closes to
-// IMSCRIB by μ∘δ; the CLINK→IMSCRIB chord is the atemporal identity/unit arrow.
+// ── Bootstrap dataflow edges (scripture: mOMonadOS kernel tick), LATTICE-ROUTED ──────
+// The structural edges do not fly free chords: they route through the SIXTEEN_3 lattice.
+// Every register's poloidal ring passes through v=π, which IS the pinch — so each token's
+// path to ⊙ is an arc of ITS OWN register ring, and each ring offers exactly TWO arcs to
+// the pinch: the near arc (forward edge) and the far arc (back edge). Per the kernel:
+//   CLINK → ⊙  : the WEIGHTED edge — the R1∧R2→R3 meet lands in the ⊙ snapshot
+//                (thick solid gold, near arc of CLINK's ring).
+//   ⊙ → CLINK  : atemporal identity/unit arrow (violet dashed, far arc of the same ring).
+//   IFIX  → ⊙  : fix+close, the μ∘δ closure (solid gold, near arc of IFIX's ring).
+//   IFIX  → ⊙  : backpopulate — memory[R0] persists across the wrap into the next
+//                IMSCRIB snapshot (amber dashed, far arc of IFIX's ring).
+//   CLINK → IFIX : the EMPTY edge — the ENTIRE strand section is dotted (drawn below,
+//                when strand 0 is assembled around it).
 (() => {
-  const bootPos = BOOT.map((_, i) => { const u = sAtArc(L_PINCH + i * STEP); return tp(u, u); });
-  const at = t => bootPos[BOOT.indexOf(t)];
-  const PINCH = new THREE.Vector3(0, 0, 0);          // IMSCRIB ⊙
-  const pCLINK = at("CLINK"), pIFIX = at("IFIX");
+  const sTok = i => sAtArc(L_PINCH + i * STEP);           // strand parameter of BOOT[i]
+  const sCLINK = sTok(BOOT.indexOf("CLINK"));
+  const sIFIX  = sTok(BOOT.indexOf("IFIX"));
+
+  // Arc of the poloidal register ring at toroidal angle u, from v0 to v1 (v=π ≡ ⊙).
+  function ringArc(u, v0, v1, n = 64) {
+    const pts = [];
+    for (let i = 0; i <= n; i++) pts.push(tp(u, v0 + (v1 - v0) * i / n));
+    return pts;
+  }
+  // A token at strand parameter s sits at tp(s,s): its register ring is u=s, its ring
+  // position v=s. Near arc: v s→π. Far arc: v s→π±2π (the other way round the ring).
+  const nearArc = s => ringArc(s, s, Math.PI);
+  const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI);
 
   function dashedEdge(pts, color, opacity) {
-    const geo = new THREE.BufferGeometry().setFromPoints(new THREE.CatmullRomCurve3(pts).getPoints(64));
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
     const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color, dashSize: 0.1, gapSize: 0.08, transparent: true, opacity }));
     line.computeLineDistances(); scene.add(line); return line;
   }
   function solidTube(pts, color, rad) {
-    const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 48, rad, 8, false);
+    const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 64, rad, 8, false);
     scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, emissive: 0x443100, metalness: 0.4, roughness: 0.4 })));
   }
   function edgeLabel(p, text, color) {
-    const c = document.createElement('canvas'); c.width = 200; c.height = 44;
+    const c = document.createElement('canvas'); c.width = 240; c.height = 44;
     const x = c.getContext('2d');
     x.font = 'bold 22px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.textBaseline = 'middle';
-    x.fillText(text, 100, 22);
+    x.fillText(text, 120, 22);
     const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthTest: false }));
-    sp.scale.set(0.6, 0.13, 1); sp.position.copy(p); scene.add(sp);
+    sp.scale.set(0.72, 0.13, 1); sp.position.copy(p); scene.add(sp);
   }
+  const mid = pts => pts[Math.floor(pts.length / 2)].clone();
 
-  const bow = (a, b, amt) => a.clone().lerp(b, 0.5).multiplyScalar(1 + amt);
+  // CLINK ⇄ ⊙ : both edges on CLINK's own register ring.
+  const cNear = nearArc(sCLINK), cFar = farArc(sCLINK);
+  solidTube(cNear, 0xd4af37, 0.042);                       // WEIGHTED meet → ⊙ (thick)
+  edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'weighted meet', '#d4af37');
+  dashedEdge(cFar, 0x9070c0, 0.6);                         // ⊙ → CLINK identity/unit
+  edgeLabel(mid(cFar).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#b39ddb');
 
-  // CLINK → IFIX : the EMPTY edge (register-only CLINK; IFIX pops the empty value). Faint grey, dashed.
-  dashedEdge([pCLINK, bow(pCLINK, pIFIX, 0.18), pIFIX], 0x777777, 0.45);
-  edgeLabel(bow(pCLINK, pIFIX, 0.30), 'empty', '#999999');
-  // IFIX → IMSCRIB(⊙) : fix+close, the μ∘δ closure. Solid gold tube.
-  solidTube([pIFIX, pIFIX.clone().lerp(PINCH, 0.5), PINCH], 0xd4af37, 0.028);
-  edgeLabel(pIFIX.clone().lerp(PINCH, 0.45), 'fix+close', '#d4af37');
-  // IFIX → IMSCRIB(⊙) : backpopulate (memory[R0] persists across the wrap). Amber, dashed, bowed.
-  dashedEdge([pIFIX, pIFIX.clone().lerp(PINCH, 0.5).add(new THREE.Vector3(0, 0.5, 0.2)), PINCH], 0xc0851a, 0.85);
-  edgeLabel(pIFIX.clone().lerp(PINCH, 0.55).add(new THREE.Vector3(0, 0.55, 0.25)), 'backpopulate', '#c0851a');
-  // CLINK → IMSCRIB(⊙) : atemporal identity / unit chord. Violet, dashed.
-  dashedEdge([pCLINK, pCLINK.clone().lerp(PINCH, 0.5).add(new THREE.Vector3(0, -0.35, 0.15)), PINCH], 0x9070c0, 0.55);
+  // IFIX ⇄ ⊙ : both edges on IFIX's own register ring.
+  const fNear = nearArc(sIFIX), fFar = farArc(sIFIX);
+  solidTube(fNear, 0xd4af37, 0.028);                       // fix+close, μ∘δ closure
+  edgeLabel(mid(fNear).add(new THREE.Vector3(0, 0, 0.28)), 'fix+close', '#d4af37');
+  dashedEdge(fFar, 0xc0851a, 0.85);                        // backpopulate (memory[R0])
+  edgeLabel(mid(fFar).add(new THREE.Vector3(0, 0, -0.28)), 'backpopulate', '#c0851a');
+
+  // Strand 0 (the BOOT strand), deferred from the phases loop: ALL edges shown.
+  // The strand's sequential control flow is drawn as 9 EXPLICIT token→token edges,
+  // each its own tube with its own label — not one anonymous closed tube. The
+  // CLINK→IFIX edge is the empty edge and renders DOTTED; every other edge is solid.
+  function sectionPts(i, n = 48) {
+    const pts = [];
+    for (let k = 0; k <= n; k++) {
+      const s = sAtArc(L_PINCH + (i + k / n) * STEP);
+      pts.push(tp(s, s));
+    }
+    return pts;
+  }
+  const iCLINK = BOOT.indexOf("CLINK");
+  for (let i = 0; i < BOOT.length; i++) {
+    const pts = sectionPts(i);
+    const from = BOOT[i], to = BOOT[(i + 1) % BOOT.length];
+    if (i === iCLINK) {
+      // CLINK → IFIX : the EMPTY edge — the entire section is dotted.
+      dashedEdge(pts, 0x8899aa, 0.8);
+      edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), 'CLINK→IFIX  empty (N)', '#99aabb');
+    } else {
+      scene.add(new THREE.Mesh(
+        new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 48, rads[0], 10, false),
+        new THREE.MeshStandardMaterial({ color: 0x1B4F72, transparent: true, opacity: opac[0], metalness: 0.25, roughness: 0.35 })));
+      edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), from + '→' + to, '#7fa7c9');
+    }
+  }
 })();
 
 // Setup lateral sphere tangent to the pinch origin (0,0,0)
