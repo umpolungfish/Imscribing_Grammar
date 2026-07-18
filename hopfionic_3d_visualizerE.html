@@ -124,6 +124,9 @@ const phases = [0, 2*Math.PI/3, 4*Math.PI/3];
 const opac = [1.0, 0.75, 0.5];
 const rads = [0.05, 0.038, 0.028];
 phases.forEach((ph, w) => {
+  // Strand 0 carries the BOOT tokens; it is drawn below as 9 explicit token→token
+  // edges (CLINK→IFIX dotted), after the arc-length machinery exists.
+  if (w === 0) return;
   const pts = [];
   for (let i=0; i<=360; i++) {
     const s = i/360 * Math.PI*2;
@@ -217,6 +220,83 @@ BOOT.forEach((tok, i) => {
   sp.position.copy(p).add(off);
   scene.add(sp);
 });
+
+// ── Bootstrap dataflow edges, LATTICE-ROUTED (high-contrast palette) ──────────
+// Every register's poloidal ring passes through v=π = the pinch ⊙, so each token's
+// path to ⊙ is an arc of ITS OWN register ring; each ring gives two arcs (near =
+// forward edge, far = back edge). Weighted CLINK→⊙ meet, ⊙→CLINK identity, IFIX→⊙
+// fix+close, IFIX→⊙ backpopulate; the strand is 9 explicit token→token edges with
+// CLINK→IFIX (the empty edge) dotted.
+(() => {
+  const sTok = i => sAtArc(L_PINCH + i * STEP);
+  const sCLINK = sTok(BOOT.indexOf("CLINK"));
+  const sIFIX  = sTok(BOOT.indexOf("IFIX"));
+
+  function ringArc(u, v0, v1, n = 64) {
+    const pts = [];
+    for (let i = 0; i <= n; i++) pts.push(tp(u, v0 + (v1 - v0) * i / n));
+    return pts;
+  }
+  const nearArc = s => ringArc(s, s, Math.PI);
+  const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI);
+
+  function dashedEdge(pts, color, opacity) {
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
+    const line = new THREE.Line(geo, new THREE.LineDashedMaterial({ color, dashSize: 0.1, gapSize: 0.08, transparent: true, opacity }));
+    line.computeLineDistances(); scene.add(line); return line;
+  }
+  function solidTube(pts, color, rad) {
+    const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 64, rad, 8, false);
+    scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, metalness: 0.4, roughness: 0.2 })));
+  }
+  function edgeLabel(p, text, color) {
+    const c = document.createElement('canvas'); c.width = 240; c.height = 44;
+    const x = c.getContext('2d');
+    x.font = 'bold 22px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(text, 120, 22);
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthTest: false }));
+    sp.scale.set(0.72, 0.13, 1); sp.position.copy(p); scene.add(sp);
+  }
+  const mid = pts => pts[Math.floor(pts.length / 2)].clone();
+
+  // CLINK ⇄ ⊙ (yellow = the weighted meet channel in this palette)
+  const cNear = nearArc(sCLINK), cFar = farArc(sCLINK);
+  solidTube(cNear, 0xffff00, 0.042);
+  edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'weighted meet', '#ffff00');
+  dashedEdge(cFar, 0xffffff, 0.6);
+  edgeLabel(mid(cFar).add(new THREE.Vector3(0, 0, -0.28)), 'id', '#ffffff');
+
+  // IFIX ⇄ ⊙
+  const fNear = nearArc(sIFIX), fFar = farArc(sIFIX);
+  solidTube(fNear, 0xffff00, 0.028);
+  edgeLabel(mid(fNear).add(new THREE.Vector3(0, 0, 0.28)), 'fix+close', '#ffff00');
+  dashedEdge(fFar, 0x00ff00, 0.85);
+  edgeLabel(mid(fFar).add(new THREE.Vector3(0, 0, -0.28)), 'backpopulate', '#00ff00');
+
+  // Strand 0 as 9 explicit token→token edges.
+  function sectionPts(i, n = 48) {
+    const pts = [];
+    for (let k = 0; k <= n; k++) {
+      const s = sAtArc(L_PINCH + (i + k / n) * STEP);
+      pts.push(tp(s, s));
+    }
+    return pts;
+  }
+  const iCLINK = BOOT.indexOf("CLINK");
+  for (let i = 0; i < BOOT.length; i++) {
+    const pts = sectionPts(i);
+    const from = BOOT[i], to = BOOT[(i + 1) % BOOT.length];
+    if (i === iCLINK) {
+      dashedEdge(pts, 0xffffff, 0.8);
+      edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), 'CLINK→IFIX  empty (N)', '#ffffff');
+    } else {
+      scene.add(new THREE.Mesh(
+        new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 48, rads[0], 10, false),
+        new THREE.MeshStandardMaterial({ color: 0xff0000, transparent: true, opacity: opac[0], metalness: 0.3, roughness: 0.2 })));
+      edgeLabel(mid(pts).add(new THREE.Vector3(0, 0, 0.3)), from + '→' + to, '#ff6666');
+    }
+  }
+})();
 
 // Setup lateral sphere tangent to the pinch origin (0,0,0) -> Red Translucent
 const lr = 1.0;
