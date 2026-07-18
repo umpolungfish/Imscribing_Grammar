@@ -1,14 +1,5 @@
-trilattice crystal visualizer: correct the semantics
+trilattice crystal: high-contrast palette
 
-The E-file kept the good idea (the mod-3 sublattice of Z^3, whose planes are
-stacked A2 triangular layers, as a periodic extension of the SIXTEEN_3
-orderings) and fixes what was wrong: the three axes now carry the three
-orderings symmetrically with the base-value palette from the trilattice map
-(T/F on x, t/f on z, A/N as the information poles on y); face membership is
-computed from all faces with no precedence, so rim nodes are genuine joins
-instead of one branch painting the FALSE rim green; the one-sided z=+3
-float-equality carving is gone (a chiral marking goes in deliberately or not
-at all); bonds are exactly the two shells sqrt2 (in-plane A2 weave) and
-sqrt3 (inter-layer struts), verified; labels are one exemplar per register
-class plus the origin, not one per node; dark theme matched to the other
-visualizers.
+Pure black scene, saturated pole colors: T bright green, F bright red,
+t cyan, f magenta, A yellow, N gray; white interior medium, dim green A2
+weave with white inter-layer struts. Semantics untouched.
