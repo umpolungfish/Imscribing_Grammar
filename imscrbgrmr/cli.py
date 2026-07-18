@@ -789,26 +789,28 @@ def _agent_resolve_conflict(
     prim_list    = ", ".join(differing)
 
     task = f"""\
-CONFLICT RESOLUTION — encode '{name}' in IG_catalog.json
+CONFLICT RESOLUTION — imscribe '{name}' in IG_catalog.json
 
 Existing encoding: {existing_str}
 Proposed encoding: {proposed_str}
 Differing primitives: [{prim_list}]
 
+Both tuples are proposals. Neither carries precedence: age is not evidence and recency
+is not evidence. The Grammar speaks one structural verdict — for each differing
+primitive there is one structurally correct value; find it.
+
 Your task:
 1. Call lookup_catalog(keyword='{name}') to read the existing entry and its description.
-   The description records the reasoning and source that backed the existing encoding.
-   Treat a rich existing description as evidence that the existing tuple is research-backed.
 2. For each differing primitive ({prim_list}), reason from first principles — which value
-   is structurally correct and why? Cite the grammar definitions explicitly.
-   The burden of proof is on the PROPOSED value: default to the existing unless you can
-   cite a specific structural failure in it.
-3. Call encode_system with ALL 12 primitives and a convergence_justification covering
-   every differing primitive. Preserve the existing description exactly — do NOT replace
-   it with the generic description below. The tool will not commit without convergence_justification.
+   is structurally correct and why? Cite the grammar definitions explicitly. Judge every
+   axis on structural grounds alone. If the evidence genuinely cannot decide an axis,
+   say so in the justification and keep the value whose stated reasoning is stronger.
+3. Call imscribe_system with ALL 12 primitives and a convergence_justification covering
+   every differing primitive. Write the description that records the reasoning behind
+   the tuple you commit. The tool will not commit without convergence_justification.
 4. Call done() with a one-paragraph summary of the resolution.
 
-Preserve this description verbatim in the encode_system call:
+Existing description, for reference:
 "{existing_description or description}"
 """
 

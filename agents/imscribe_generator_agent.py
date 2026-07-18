@@ -264,13 +264,13 @@ class ImscriptionGeneratorAgent(BaseAgent):
          "options": [("𐑼","Point-like — local, operates on a single unit"),
                      ("𐑨","Spatial — constraint propagates through an extended 3D arrangement"),
                      ("𐑛","Temporal/iterative — recurs through a closed cycle with a reset step"),
-                     ("𐑦","Imscriptive — boundary encodes bulk (requires 𐑸 topology)")]},
+                     ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (requires 𐑸 topology)")]},
         {"short": "Þ",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
          "options": [("𐑡","Generic network — connected graph, hub-spoke, mixed connectivity"),
                      ("𐑰","Containment / branched tree — partners enter a container or nested hierarchy"),
                      ("𐑥","Cyclic closure — cyclic interface, figure-8, double-well"),
                      ("𐑶","Fully enclosed — partner cannot exit without distorting the container"),
-                     ("𐑸","Imscriptive — boundary encodes bulk (requires 𐑦 dimensionality)")]},
+                     ("𐑸","Scale-collapse — connectivity in which the boundary carries the full bulk content losslessly (requires 𐑦 dimensionality)")]},
         {"short": "Ř",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
          "options": [("𐑩","Soft association — non-covalent, reversible, analogical similarity"),
                      ("𐑑","Bond formation / structural transformation — irreversible or semi-reversible"),
@@ -338,7 +338,9 @@ class ImscriptionGeneratorAgent(BaseAgent):
             "You are assigning a single structural primitive in the Imscribing Grammar "
             "(a 12-coordinate universal structural type system). "
             "You will receive the input description and one primitive to assign. "
-            "Pick the best-fit option from the numbered list based on the input's structural role. "
+            "Pick the best-fit option from the numbered list based on the input's structural role "
+            "and behavior. Resemblance between the input's wording and an option's name or the "
+            "grammar's own vocabulary is not evidence; judge the ROLE only. "
             "Reply with ONLY the option number, followed by a dash and one sentence of reasoning. "
             "Do not include any other text."
         )
@@ -806,14 +808,14 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑛`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
 - `𐑨`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
 - `𐑼`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `𐑦`: Imscriptive — boundary encodes bulk; a lower-dimensional surface carries the full structural information of a higher-dimensional interior. **Axiom C: 𐑦 REQUIRES 𐑸 (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation encodes the whole.*
+- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full structural content of a higher-dimensional interior, losslessly. **Axiom C: 𐑦 REQUIRES 𐑸 (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
 
 **T — Topology** (connectivity pattern of influence):
 - `𐑡`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
 - `𐑰`: Containment / branched tree — partners enter a container or are addressed in a directed hierarchy. *Chem: open cavity, host-guest, linear chain. Math: tree, DAG, ZFC cumulative hierarchy.*
 - `𐑥`: Cyclic closure — two (or more) partners form a cyclic interface; figure-8 or double-well. *Chem: catalytic cycle, macrocycle, torus. Math: loop space.*
 - `𐑶`: Fully enclosed / type-hierarchical — partner cannot exit without distorting the container; bounded closed topology. *Chem: cage complex, cryptand. Math: classical proof assistant.*
-- `𐑸`: Imscriptive — boundary encodes bulk; non-local boundary-bulk coupling. **Axiom C: 𐑸 REQUIRES 𐑦.** *Physics: AdS/CFT, black hole. Math: quotient/IUT.*
+- `𐑸`: Scale-collapse — non-local boundary-bulk coupling; the boundary carries the full bulk content losslessly. **Axiom C: 𐑸 REQUIRES 𐑦.** *Physics: AdS/CFT, black hole. Math: quotient/IUT.* Assign for structural ROLE only, never by resemblance between the input's wording and this option's name.
 
 **R — Recognition mode** (mechanism of interaction/transformation):
 - `𐑩`: Soft association — non-covalent, reversible binding (van der Waals, H-bond, electrostatic, narrative resonance, analogical similarity).
