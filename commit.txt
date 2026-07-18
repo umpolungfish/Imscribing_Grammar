@@ -1,7 +1,14 @@
-catalog get(): absorb name drift
+trilattice crystal visualizer: correct the semantics
 
-Agents re-derive entry names from their own prose between windings, and the
-drifted spellings burned the whole Unknown-system error class in the MoDoT
-runs. get() now resolves exact first, then case-insensitive with -/_
-equivalent; an ambiguous normalized match resolves to nothing rather than
-to a guess.
+The E-file kept the good idea (the mod-3 sublattice of Z^3, whose planes are
+stacked A2 triangular layers, as a periodic extension of the SIXTEEN_3
+orderings) and fixes what was wrong: the three axes now carry the three
+orderings symmetrically with the base-value palette from the trilattice map
+(T/F on x, t/f on z, A/N as the information poles on y); face membership is
+computed from all faces with no precedence, so rim nodes are genuine joins
+instead of one branch painting the FALSE rim green; the one-sided z=+3
+float-equality carving is gone (a chiral marking goes in deliberately or not
+at all); bonds are exactly the two shells sqrt2 (in-plane A2 weave) and
+sqrt3 (inter-layer struts), verified; labels are one exemplar per register
+class plus the origin, not one per node; dark theme matched to the other
+visualizers.

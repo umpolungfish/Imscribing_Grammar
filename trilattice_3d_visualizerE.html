@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tri-Lattice Crystal — Stacked A₂ Extension</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { overflow: hidden; background: #07070e; font-family: system-ui, sans-serif; color: #e0e0e0; }
+  #info {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(8,8,18,0.92); padding: 12px 16px; border-radius: 10px;
+    border: 1px solid #2a2a40; max-width: 360px; font-size: 12.5px; line-height: 1.45; z-index: 10;
+  }
+  #info h1 { font-size: 14px; color: #fff; margin-bottom: 6px; }
+  #info p { margin: 3px 0; opacity: 0.92; }
+  .sw { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  #hint { position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    background:rgba(8,8,18,0.85); padding:6px 14px; border-radius:16px; font-size:12px; border:1px solid #2a2a40; z-index:10; }
+</style>
+</head>
+<body>
+<div id="info">
+  <h1>Tri-Lattice Crystal — the SIXTEEN₃ orderings extended periodically</h1>
+  <p>The sublattice of ℤ³ with x+y+z ≡ 0 (mod 3). Every plane x+y+z = 3k is a
+  triangular <strong>A₂ layer</strong> — the root system of the carved ring — and the
+  ⟨111⟩ struts stack the layers.</p>
+  <p>Axes are the three SIXTEEN₃ orderings: <strong>x = ≤ₜ</strong> (truth),
+  <strong>y = |·|</strong> (information), <strong>z = ≤_c</strong> (constructivity).
+  A boundary face is an ordering at its extreme; face membership is the register.</p>
+  <p><span class="sw" style="background:#1B4F72"></span>T (+x) &nbsp;
+     <span class="sw" style="background:#943126"></span>F (−x) &nbsp;
+     <span class="sw" style="background:#5DADE2"></span>t (+z) &nbsp;
+     <span class="sw" style="background:#EC7063"></span>f (−z)</p>
+  <p><span class="sw" style="background:#E8B93A"></span>A (+y, full information) &nbsp;
+     <span class="sw" style="background:#7f8c8d"></span>N (−y, void)</p>
+  <p>Edge and corner nodes blend their faces' colors: a corner is a join of three
+  extremes. Interior nodes are the IMSCRIB medium; <strong>⊙</strong> sits at the
+  origin, the one point every ordering balances.</p>
+</div>
+<div id="hint">Drag · Scroll · Right-drag</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x07070e);
+
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
+camera.position.set(7, 7, 7);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.85);
+dirLight.position.set(5, 10, 7);
+scene.add(dirLight);
+
+function createLabelSprite(text, colorHex) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 150; canvas.height = 44;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'rgba(8, 8, 18, 0.88)';
+  ctx.strokeStyle = colorHex; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.roundRect(1, 1, 148, 42, 6); ctx.fill(); ctx.stroke();
+  ctx.font = 'bold 20px monospace';
+  ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, 75, 22);
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(canvas), transparent: true, depthTest: false }));
+  sprite.scale.set(0.56, 0.165, 1);
+  return sprite;
+}
+
+// The three orderings at their extremes. Face membership is computed from ALL
+// faces a node lies on — no precedence, so a rim node is a genuine join (the
+// old version painted the F-face's whole rim as TRUE because one branch fired
+// first). Colors are the SIXTEEN₃ base-value palette from the trilattice map.
+const size = 3, spacing = 1.2;
+const FACE = [
+  { test: (x,y,z) => x ===  size, name: 'T', color: 0x1B4F72 },
+  { test: (x,y,z) => x === -size, name: 'F', color: 0x943126 },
+  { test: (x,y,z) => z ===  size, name: 't', color: 0x5DADE2 },
+  { test: (x,y,z) => z === -size, name: 'f', color: 0xEC7063 },
+  { test: (x,y,z) => y ===  size, name: 'A', color: 0xE8B93A },
+  { test: (x,y,z) => y === -size, name: 'N', color: 0x7f8c8d },
+];
+const INTERIOR = 0xb8b8c8;
+
+function blend(colors) {
+  let r = 0, g = 0, b = 0;
+  for (const c of colors) { r += (c>>16)&255; g += (c>>8)&255; b += c&255; }
+  const n = colors.length;
+  return ((r/n)<<16) | (((g/n)|0)<<8) | ((b/n)|0);
+}
+
+const nodeGeo = new THREE.SphereGeometry(0.09, 16, 16);
+const nodes = [];
+const labeled = new Set();   // one label per register class, at its first exemplar
+
+for (let x = -size; x <= size; x++)
+for (let y = -size; y <= size; y++)
+for (let z = -size; z <= size; z++) {
+  if (((x + y + z) % 3 + 3) % 3 !== 0) continue;
+  const pos = new THREE.Vector3(x*spacing, y*spacing, z*spacing);
+  const faces = FACE.filter(f => f.test(x,y,z));
+  const isOrigin = (x===0 && y===0 && z===0);
+  const color = isOrigin ? 0xffffff
+              : faces.length ? blend(faces.map(f => f.color))
+              : INTERIOR;
+  const mesh = new THREE.Mesh(nodeGeo, new THREE.MeshStandardMaterial({
+    color, metalness: 0.25, roughness: 0.35,
+    transparent: !isOrigin && faces.length === 0, opacity: faces.length ? 1.0 : 0.35 }));
+  if (isOrigin) mesh.scale.setScalar(1.8);
+  mesh.position.copy(pos);
+  scene.add(mesh);
+  nodes.push({ pos, x, y, z });
+
+  // Label the origin and ONE exemplar per register class (face set), not every node.
+  const cls = isOrigin ? '⊙' : faces.map(f => f.name).join('');
+  if (cls && !labeled.has(cls)) {
+    labeled.add(cls);
+    const label = isOrigin ? '⊙ IMSCRIB' : cls;
+    const lcolor = isOrigin ? '#ffffff'
+      : '#' + blend(faces.map(f => f.color)).toString(16).padStart(6, '0');
+    const sprite = createLabelSprite(label, lcolor);
+    sprite.position.copy(pos).add(new THREE.Vector3(0, 0.26, 0));
+    scene.add(sprite);
+  }
+}
+
+// Rails. In-plane bonds (distance √2·spacing) weave each x+y+z=3k plane into an
+// A₂ triangular layer; ⟨111⟩ struts (distance √3·spacing) couple the layers.
+// The cutoff sits between √3 and the next shell (√5), so exactly those two bond
+// types exist. Symmetric everywhere — the old one-sided z===+3 float-equality
+// "carving" painted one FALSE face and not its mirror; a chiral marking must be
+// put in deliberately or not at all.
+const inPlaneMat = new THREE.LineBasicMaterial({ color: 0x444466, transparent: true, opacity: 0.35 });
+const strutMat   = new THREE.LineBasicMaterial({ color: 0x8a8ab0, transparent: true, opacity: 0.5 });
+const inPlane = spacing * Math.SQRT2, strut = spacing * Math.sqrt(3), cutoff = spacing * 1.9;
+for (let i = 0; i < nodes.length; i++)
+for (let j = i + 1; j < nodes.length; j++) {
+  const d = nodes[i].pos.distanceTo(nodes[j].pos);
+  if (d > 0.1 && d < cutoff) {
+    const geo = new THREE.BufferGeometry().setFromPoints([nodes[i].pos, nodes[j].pos]);
+    scene.add(new THREE.Line(geo, Math.abs(d - inPlane) < 0.01 ? inPlaneMat : strutMat));
+  }
+}
+
+const shellGeo = new THREE.BoxGeometry(size*spacing*2 + 0.4, size*spacing*2 + 0.4, size*spacing*2 + 0.4);
+scene.add(new THREE.Mesh(shellGeo,
+  new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.08 })));
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+(function anim(){
+  requestAnimationFrame(anim);
+  controls.update();
+  renderer.render(scene, camera);
+})();
+</script>
+</body>
+</html>
