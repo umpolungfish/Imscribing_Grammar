@@ -1,5 +1,1 @@
-trilattice crystal: high-contrast palette
-
-Pure black scene, saturated pole colors: T bright green, F bright red,
-t cyan, f magenta, A yellow, N gray; white interior medium, dim green A2
-weave with white inter-layer struts. Semantics untouched.
+hopfion+E: lane splitting (δ conjugate lane FSPLIT→FFUSE, μ fuse) and edge legibility — lift ring-routed edges off the surface, dashed tubes instead of hairlines, arrowheads, emissive
