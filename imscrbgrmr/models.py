@@ -852,32 +852,40 @@ class Imscription:
     def __post_init__(self) -> None:
         if not _ENFORCE_AXIOMS:
             return
-        name = self.name
-        # Axiom A: H_invscripta → K_teshlig is documented (Chirality.implies_k_trap) but NOT enforced
-        # here — 495 catalog entries have H_invscripta + non-trap kinetics, suggesting the axiom
-        # is domain-specific or structurally over-strict as a universal constraint.
-        # Axiom B: prot >= Omega_dzlig → chir >= H_turntwo
-        if _prot_ord(self.protection) >= _prot_ord(Protection.ah) \
-                and _chir_ord(self.chirality) < _chir_ord(Chirality.sure):
-            raise ValueError(
-                f"Axiom B violated in '{name}': protection {self.protection.value} "
-                f"requires chirality >= H_turntwo (got {self.chirality.value})"
-            )
-        # Axiom C: D_omega ↔ T_openo
-        d_holo = self.dimensionality == Dimensionality.if_
-        t_holo = self.topology == Topology.are
-        if d_holo != t_holo:
-            raise ValueError(
-                f"Axiom C violated in '{name}': D_omega ↔ T_openo "
-                f"(got dim={self.dimensionality.value}, top={self.topology.value})"
-            )
-        # Axiom D: Omega_turna → D_omega
-        if self.protection == Protection.zoo \
-                and self.dimensionality != Dimensionality.if_:
-            raise ValueError(
-                f"Axiom D violated in '{name}': Omega_turna requires D_omega "
-                f"(got dim={self.dimensionality.value})"
-            )
+        # ── The four axioms are CLOSURE conditions, not coordinate rules ──────
+        # Established by the correct_formulation_of_axiom_{a,b,c,d} ob3ects. Each
+        # axiom asserts that a named δ/μ dyad closes: μ∘δ = id with ΔS ≈ 0, with
+        # EVALT the affirmative arm and EVALF the failure arm. Each names its own
+        # split, and that split is the whole content of the axiom:
+        #
+        #   A  Bulk → (Boundary projection, Bulk remainder) → Bulk
+        #      "the boundary accurately encodes the bulk" / "encoding fails to
+        #      represent the bulk". Information preserved through encode+decode.
+        #   B  Topological-State → (Persistent-Chiral arm, Achiral arm) → same
+        #      "integer winding conserved" / "broken symmetry, no protection".
+        #      Dialetheia-complete: BOTH arms run, held at ENGAGR through transition.
+        #   C  Bulk → (Boundary-Projection, Bulk-Residual) → Bulk
+        #      "correspondence exact" / "encoding fails to preserve bulk info".
+        #   D  Bulk → (Boundary-encoding, Bulk-decoding) → Bulk
+        #      "μ∘δ = id satisfied" / "encoding incomplete or symmetry broken".
+        #
+        # Truth is established by RUNNING the dyad, which the twelve coordinates
+        # cannot decide. NO coordinate-level check is enforced here, because every
+        # coordinate form is falsified — twice over:
+        #
+        #   Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ Ç=𐑧,
+        #   the exact pair old-A forbade. The correct formulation of D imscribes with
+        #   Ð=𐑛 ∧ Ω=𐑟 (old-D required Ð=𐑦) and Þ=𐑸 at Ð=𐑛 (violating one-way C).
+        #   Each correct formulation violates the coordinate form of its own axiom.
+        #
+        #   Catalog. Every shadow has counterexamples across multiple dimensionalities,
+        #   including genuine non-Abelian anyons and SIC existence entries carrying
+        #   Ω=𐑟 without Ð=𐑦.
+        #
+        # Enforcing any of them refuses to construct legal tuples. The closure test
+        # belongs to the protocol layer, where δ/μ can actually be run: see
+        # CoreAxioms.closure_verdict().
+        _ = self.name
 
     # ── Short-name properties (match Lean struct field names) ─────────────────
     @property

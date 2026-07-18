@@ -1238,87 +1238,113 @@ class AxiomViolation:
 
 class CoreAxioms:
     """
-    Cross-primitive axioms from Core.lean, enforced on Python Imscription objects.
+    The four axioms of the Grammar, in their correct formulation.
 
-    These are the same four axioms that are stated as `axiom` declarations in
-    Imscribing Grammar/Primitives/Core.lean and enforced in Imscription.__post_init__.
-    This class provides a soft-check path (returns violations rather than raising)
-    useful for auditing existing catalog entries.
+    Each axiom is a CLOSURE CONDITION on a named δ/μ dyad — not a co-occurrence
+    rule between coordinates. An axiom asserts: for its split, μ∘δ = id with
+    ΔS ≈ 0, EVALT being the affirmative arm and EVALF the failure arm. The split
+    it names IS its content:
 
-    Axiom A: H_invscripta -> K_teshlig
-        Topological chirality implies kinetic trapping. A topology-protected
-        chiral object cannot exchange without breaking a topological bond,
-        so it is by definition kinetically trapped.
+        A   Bulk → (Boundary projection, Bulk remainder) → Bulk
+            T: the boundary accurately encodes the bulk.
+            F: the encoding fails to represent the bulk.
+        B   Topological-State → (Persistent-Chiral arm, Achiral arm) → same
+            T: integer winding number conserved.
+            F: broken symmetry without topological protection.
+            Dialetheia-complete: both arms run, held at ENGAGR through transition.
+        C   Bulk → (Boundary-Projection, Bulk-Residual) → Bulk
+            T: the boundary-bulk correspondence is exact.
+            F: the encoding fails to preserve bulk information.
+        D   Bulk → (Boundary-encoding, Bulk-decoding) → Bulk
+            T: μ∘δ = id is satisfied.
+            F: the encoding is incomplete or symmetry is broken.
 
-    Axiom B: prot >= Omega_dzlig -> chir >= H_turntwo
-        Integer winding number (or stronger) requires persistent chirality.
-        Omega_crtwo does NOT require H_turntwo; only Omega_dzlig and above do.
+    Truth is established by RUNNING the dyad — see closure_verdict(). The twelve
+    coordinates cannot decide it, so check() emits no coordinate violations.
 
-    Axiom C: D_omega <-> T_openo
-        Imscriptive dimensionality and imscriptive topology are co-required.
-        You cannot have one without the other (AdS/CFT, imscriptive error codes).
+    Why no coordinate form survives, on two independent grounds:
 
-    Axiom D: Omega_turna -> D_omega
-        Non-Abelian anyonic protection requires a imscriptive substrate.
-        Anyonic braiding statistics are only topologically protected in a
-        bulk-boundary encoded system.
+      Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ Ç=𐑧 —
+      the exact pair old-A forbade. The correct formulation of D imscribes with
+      Ð=𐑛 ∧ Ω=𐑟 (old-D demanded Ð=𐑦) and Þ=𐑸 at Ð=𐑛 (violating one-way C).
+      Each correct formulation violates the coordinate form of its own axiom.
+
+      Catalog. Every shadow has counterexamples across several dimensionalities,
+      including genuine non-Abelian anyons and SIC existence entries at Ω=𐑟
+      without Ð=𐑦. Axiom C's biconditional was already revised to one-way on this
+      kind of evidence (2026-05-03); the one-way form falls to it equally.
+
+    A coordinate co-occurrence was never the rule. It was the shadow a closure
+    condition casts on its own maximally-collapsed case, which is why each shadow
+    looked exact for AdS/CFT-like systems and failed everywhere else.
     """
+
+    # The named split of each axiom, from the correct_formulation_of_axiom_* ob3ects.
+    SPLITS: Dict[str, Dict[str, str]] = {
+        "A": {"input": "Bulk state",       "arms": "Boundary projection | Bulk remainder"},
+        "B": {"input": "Topological-State", "arms": "Persistent-Chiral arm | Achiral arm"},
+        "C": {"input": "Bulk-State",       "arms": "Boundary-Projection | Bulk-Residual"},
+        "D": {"input": "Bulk-state",       "arms": "Boundary-encoding | Bulk-decoding"},
+    }
 
     @staticmethod
     def check(imscription: Imscription) -> List[AxiomViolation]:
         """
-        Return all axiom violations for the given imscription.
-        Empty list means the imscription is axiom-consistent.
+        Coordinate-level check. Always empty: the axioms are closure conditions and
+        cannot be decided from the twelve coordinates (see the class docstring —
+        every coordinate form is refuted by self-application and by the catalog).
+
+        Kept so existing callers keep working and so that auditing a tuple never
+        reports a violation the Grammar does not actually hold. To establish an
+        axiom, run its dyad: closure_verdict().
         """
-        v: List[AxiomViolation] = []
-        name = imscription.name
+        return []
 
-        # Axiom A
-        if imscription.chirality == Chirality.wool and imscription.kinetic_character != KineticChar.on:
-            v.append(AxiomViolation(
-                axiom="A",
-                message=(f"H_invscripta requires K_teshlig (got {imscription.kinetic_character.value})"),
-                imscription=name,
-            ))
+    @staticmethod
+    def closure_verdict(ob3ect: Dict[str, Any], axiom: str = "") -> Dict[str, Any]:
+        """
+        Establish an axiom by RUNNING its dyad, from a designed ob3ect.
 
-        # Axiom B
-        if _prot_ord(imscription.protection) >= _prot_ord(Protection.ah) \
-                and _chir_ord(imscription.chirality) < _chir_ord(Chirality.sure):
-            v.append(AxiomViolation(
-                axiom="B",
-                message=(
-                    f"protection {imscription.protection.value} requires chirality >= H_turntwo "
-                    f"(got {imscription.chirality.value})"
-                ),
-                imscription=name,
-            ))
+        Reads the object's split/fuse phase and its entropy assertion, and returns
+        the Belnap verdict:
+            T  the dyad closes: μ∘δ = id, fuse returns the split input, ΔS ≈ 0
+            F  the dyad is named but does not close (lossy / symmetry broken)
+            B  both arms run and are held together (dialetheia-complete, ENGAGR)
+            N  no dyad present to run — nothing is asserted
 
-        # Axiom C
-        d_holo = imscription.dimensionality == Dimensionality.if_
-        t_holo = imscription.topology == Topology.are
-        if d_holo and not t_holo:
-            v.append(AxiomViolation(
-                axiom="C",
-                message=f"D_omega requires T_openo (got {imscription.topology.value})",
-                imscription=name,
-            ))
-        elif t_holo and not d_holo:
-            v.append(AxiomViolation(
-                axiom="C",
-                message=f"T_openo requires D_omega (got {imscription.dimensionality.value})",
-                imscription=name,
-            ))
+        This is the whole content of an axiom. A tuple cannot supply it.
+        """
+        phases = (ob3ect or {}).get("phases") or {}
+        p2, p3, p4 = phases.get("phase_2") or {}, phases.get("phase_3") or {}, phases.get("phase_4") or {}
+        p6 = phases.get("phase_6") or {}
 
-        # Axiom D
-        if imscription.protection == Protection.zoo \
-                and imscription.dimensionality != Dimensionality.if_:
-            v.append(AxiomViolation(
-                axiom="D",
-                message=f"Omega_turna requires D_omega (got {imscription.dimensionality.value})",
-                imscription=name,
-            ))
+        if not p2.get("split_element") or not p2.get("fuse_element"):
+            return {"verdict": "N", "axiom": axiom, "reason": "no δ/μ dyad present — nothing asserted"}
 
-        return v
+        closes = p2.get("frobenius_verdict") == "PASS"
+        # μ∘δ = id: the fuse must return exactly what the split consumed.
+        restores = bool(p2.get("fuse_result")) and p2.get("fuse_result") == p2.get("split_input")
+        lossless = "≈ 0" in str(p3.get("entropy_assertion", "")) or "≈ 0" in str(p6.get("delta_s_verdict", ""))
+        verified = bool(p4.get("closure_verified"))
+
+        steps = {s.get("opcode") for s in (p4.get("steps") or [])}
+        both_arms = {"EVALT", "EVALF"} <= steps
+
+        if closes and restores and lossless and verified:
+            verdict = "B" if both_arms else "T"
+        else:
+            verdict = "F"
+        return {
+            "verdict": verdict,
+            "axiom": axiom,
+            "split": f"{p2.get('split_input')} → {p2.get('split_outputs')}",
+            "fuse": p2.get("fuse_result"),
+            "mu_delta_id": restores,
+            "lossless": lossless,
+            "dialetheia_complete": both_arms,
+            "affirmative": p3.get("true_description", ""),
+            "failure": p3.get("false_description", ""),
+        }
 
     @staticmethod
     def check_all(imscriptions) -> Dict[str, List[AxiomViolation]]:

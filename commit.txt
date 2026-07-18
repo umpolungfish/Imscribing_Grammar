@@ -1,1 +1,1 @@
-hopfion+E: lane splitting (δ conjugate lane FSPLIT→FFUSE, μ fuse) and edge legibility — lift ring-routed edges off the surface, dashed tubes instead of hairlines, arrowheads, emissive
+The four axioms are closure conditions, not coordinate rules

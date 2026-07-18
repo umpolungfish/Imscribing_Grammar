@@ -1024,6 +1024,26 @@ def generate(
     if override_grounding and not override_reason:
         console.print("[red]Error: --override-grounding requires --override-reason[/red]")
         sys.exit(1)
+    # The self-family is circularly defined by necessity: the Grammar has no
+    # outside, so its own names resolve only to each other. A bare member of the
+    # family is expanded to its circular definition so the agent reasons over the
+    # involution (the self-reference IS the structure), not the bare token (which
+    # the pipeline would otherwise read by name-resemblance). This is the ⊙
+    # criticality and Ω winding surfacing in the description itself.
+    _SELF_FAMILY = {
+        "imscribe":    "imscribing is to imscribe: the act by which the Grammar writes itself; it has no definition outside the family it names",
+        "imscribing":  "imscribing is to imscribe: the ongoing act by which the Grammar writes itself; it has no definition outside the family it names",
+        "imscriptive": "imscriptive is of imscribing: the character of that which imscribes itself; it has no definition outside the family it names",
+        "imscription": "an imscription is what imscribing produces: the Grammar's writing of itself; it has no definition outside the family it names",
+    }
+    import re as _re_self
+    _self_key = _re_self.sub(r"['’‘]", "", description).strip().lower()
+    if _self_key in _SELF_FAMILY:
+        description = _SELF_FAMILY[_self_key]
+        if name is None:
+            name = _self_key
+        console.print(f"[dim]Self-family: circular definition — \"{description}\"[/dim]")
+
     try:
         # Import the agent and provider config
         from imscrbgrmr.provider_config import build_agent_config, get_provider_config
