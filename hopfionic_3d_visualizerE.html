@@ -151,7 +151,7 @@ ringV.forEach((p, i) => {
   scene.add(sp);
 });
 
-// Tokens
+// Tokens with labels
 const ARC = (() => {
   const N = 20000, sv = [0], Lv = [0];
   let prev = tp(0, 0), acc = 0;
@@ -195,7 +195,7 @@ BOOT.forEach((tok, i) => {
   scene.add(sp);
 });
 
-// Simplified dataflow
+// Dataflow edges — yellow leave CLINK & IFIX and arrive at IMSCRIB (⊙) from opposite directions
 (() => {
   const sTok = i => sAtArc(L_PINCH + i * STEP);
   const sCLINK = sTok(BOOT.indexOf("CLINK"));
@@ -215,8 +215,8 @@ BOOT.forEach((tok, i) => {
     }
     return pts;
   }
-  const nearArc = s => ringArc(s, s, Math.PI);
-  const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI);
+  const nearArc = s => ringArc(s, s, Math.PI);          // one direction to pinch
+  const farArc  = s => ringArc(s, s, s > Math.PI ? 3 * Math.PI : -Math.PI); // opposite direction
 
   function solidTube(pts, color, rad) {
     const g = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 64, rad, 8, false);
@@ -248,22 +248,43 @@ BOOT.forEach((tok, i) => {
   }
   const mid = pts => pts[Math.floor(pts.length / 2)].clone();
 
-  const cNear = nearArc(sCLINK), cFar = farArc(sCLINK);
+  // Yellow from CLINK → IMSCRIB (near direction)
+  const cNear = nearArc(sCLINK);
   solidTube(cNear, 0xffff00, 0.042);
   arrowHead(cNear, 0xffff00);
-  edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'weighted meet', '#ffff00');
-  dashedEdge(cFar.slice().reverse(), 0xffffff, 0.9);
-  arrowHead(cFar.slice().reverse(), 0xffffff);
+  edgeLabel(mid(cNear).add(new THREE.Vector3(0, 0, 0.28)), 'CLINK → ⊙', '#ffff00');
 
-  const fNear = nearArc(sIFIX), fFar = farArc(sIFIX);
-  solidTube(fNear, 0xffff00, 0.028);
-  arrowHead(fNear, 0xffff00);
-  edgeLabel(mid(fNear).add(new THREE.Vector3(0, 0, 0.28)), 'fix+close', '#ffff00');
-  dashedEdge(fFar, 0x00ff00, 0.95);
-  arrowHead(fFar, 0x00ff00);
+  // Yellow from IFIX → IMSCRIB (opposite / far direction)
+  const fFar = farArc(sIFIX);
+  solidTube(fFar, 0xffff00, 0.042);
+  arrowHead(fFar, 0xffff00);
+  edgeLabel(mid(fFar).add(new THREE.Vector3(0, 0, -0.28)), 'IFIX → ⊙', '#ffff00');
+
+  // Dotted return / identity arcs (white)
+  dashedEdge(farArc(sCLINK).slice().reverse(), 0xffffff, 0.85);
+  dashedEdge(nearArc(sIFIX).slice().reverse(), 0xffffff, 0.85);
+
+  // CLINK ↔ IFIX connection is dotted
+  function sectionPts(i, n = 48) {
+    const pts = [];
+    for (let k = 0; k <= n; k++) {
+      const s = sAtArc(L_PINCH + (i + k / n) * STEP);
+      pts.push(tp(s, s));
+    }
+    return pts;
+  }
+  const iCLINK = BOOT.indexOf("CLINK");
+  const ptsCI = sectionPts(iCLINK);
+  dashedEdge(ptsCI, 0xffffff, 0.9, 0.032);
+  edgeLabel(mid(ptsCI).add(new THREE.Vector3(0, 0, 0.32)), 'CLINK ↔ IFIX (dotted)', '#ffffff');
 })();
 
-// R2 sphere & meridians (blue)
+// R2 sphere & meridians (blue). The translucent shell is the imscription sphere,
+// centred at the ORIGIN (⊙): the evaluator plane x=lr is TANGENT to it at the
+// single point (lr,0,0) — the §1.10 tangency lemma. Do NOT move it to sc=(lr,0,0):
+// that would make the evaluator plane secant (cut the equator) and destroy the
+// tangency. (sc is the tangent point / body centre, used by the markers, not the
+// shell centre.)
 const lr = 1.0;
 const sc = new THREE.Vector3(lr, 0, 0);
 scene.add(new THREE.Mesh(new THREE.SphereGeometry(lr, 48, 32),
@@ -282,6 +303,33 @@ ALPHAS.forEach(al => {
   const c = new THREE.CatmullRomCurve3(meridian(al));
   scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, 90, 0.022, 8, false),
     new THREE.MeshStandardMaterial({color:0x0066ff, metalness:0.3, roughness:0.2})));
+});
+
+// R2 Markers with labels (EVALF, EVALI etc.)
+const R2 = [
+  {tok:'FSPLIT3', p: new THREE.Vector3(0, 0, 0)},
+  {tok:'FFUSE3',  p: new THREE.Vector3(2*lr, 0, 0)},
+  {tok:'EVALT',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[0]), lr*Math.sin(ALPHAS[0]))},
+  {tok:'EVALF',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[1]), lr*Math.sin(ALPHAS[1]))},
+  {tok:'EVALI',   p: new THREE.Vector3(lr, lr*Math.cos(ALPHAS[2]), lr*Math.sin(ALPHAS[2]))},
+];
+R2.forEach(({tok,p}) => {
+  const dcol = (tok === 'EVALI') ? 0xffff00 : 0x0066ff;
+  const m = new THREE.Mesh(new THREE.SphereGeometry(tok === 'EVALI' ? 0.12 : 0.1, 16, 16),
+    new THREE.MeshStandardMaterial({color:dcol, metalness:0.3, roughness:0.2}));
+  m.position.copy(p); scene.add(m);
+
+  const c = document.createElement('canvas'); c.width=210; c.height=52;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = 'rgba(0,0,0,0.9)'; ctx.strokeStyle = dcol === 0xffff00 ? '#ffff00' : '#0066ff'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.roundRect(1,1,208,50,7); ctx.fill(); ctx.stroke();
+  ctx.font='bold 21px system-ui'; ctx.fillStyle = '#ffffff';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(tok,105,26);
+  
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c), transparent:true, depthTest:false}));
+  sp.scale.set(0.68,0.17,1);
+  sp.position.copy(p).add(new THREE.Vector3(0, 0.30, 0.30));
+  scene.add(sp);
 });
 
 addEventListener('resize', () => {
