@@ -116894,5 +116894,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑴"
+  },
+  {
+    "name": "imscription_omega_collapsed",
+    "description": "containment floor noun form with Omega forced to 𐑭 to collapse conflict ⟨Ð=𐑦; Þ=𐑰; Ř=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "imscription_omega_theta_collapsed",
+    "description": "noun containment floor with Omega=𐑭 and Theta=𐑰 pinned ⟨Ð=𐑦; Þ=𐑰; Ř=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "Ð": "𐑦",
+    "Þ": "𐑰",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
