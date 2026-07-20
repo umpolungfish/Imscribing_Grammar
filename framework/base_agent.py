@@ -25,9 +25,18 @@ logger = logging.getLogger(__name__)
 _FATAL_PROVIDER_CODES = ("402", "401", "403", "payment required", "insufficient", "quota")
 
 # Preference order among providers that actually have a key on this host.
+# Every provider here is implemented in enhanced_llm_provider; the list is the
+# demotion order among those that actually have a key on this host. Leaving a
+# funded, implemented provider out of it means a run dies at "every funded
+# provider returned a fatal error" while a working account sits unused, which is
+# exactly what happened when openrouter and deepseek both ran dry.
 _PROVIDER_FALLBACK = [
     ("openrouter", "OPENROUTER_API_KEY"),
     ("deepseek",   "DEEPSEEK_API_KEY"),
+    ("qwen",       "QWEN_API_KEY"),
+    # Keyed "google": that is the name the provider defaults table uses, and a
+    # miss there silently hands back a foreign default model.
+    ("google",     "GEMINI_API_KEY"),
 ]
 
 

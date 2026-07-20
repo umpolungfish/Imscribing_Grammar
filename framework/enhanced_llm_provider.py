@@ -103,7 +103,17 @@ def _get_default_model(provider: str) -> str:
     """Get default model for a provider from config."""
     defaults = _load_provider_defaults()
     provider_config = defaults.get(provider, {})
-    return provider_config.get("default_model", "claude-sonnet-4-5-20250929")
+    model = provider_config.get("default_model")
+    if model:
+        return model
+    # No silent cross-provider default. A model slug is provider-scoped, so
+    # handing back some other vendor's slug turns a missing entry into a 404
+    # against a healthy endpoint and hides the real fault, which is that this
+    # provider has no default configured.
+    raise ValueError(
+        f"provider '{provider}' has no default_model configured; add one to the "
+        f"provider defaults rather than inheriting another provider's slug"
+    )
 
 class AnthropicProvider(LLMProvider):
     """LLM Provider for Anthropic's Claude models (Async)."""
