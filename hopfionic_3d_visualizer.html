@@ -25,7 +25,7 @@
   <p>Horn torus, R = r, pinching at the origin. Both programs share <strong>IMSCRIB ⊙</strong> at (0,0,0) — the identity is one, so the inner equator must collapse to a point.</p><p><strong>16</strong> poloidal rings = the SIXTEEN_3 registers; all meet at ⊙. <strong>3</strong> strands = a free orbit under the 120° A₂ Coxeter element; each tours all 16 rings once. They are <em>concurrent</em> at the pinch, not linked.</p>
   <p><span class="sw" style="background:#1B4F72"></span>Work ops &nbsp; <span class="sw" style="background:#7f8c8d"></span>No-work ops</p>
   <p><span class="sw" style="background:#B03A2E"></span>O<sub>inf_dag</sub> sphere (R2) &nbsp; <span class="sw" style="background:#E8B93A"></span>EVALI ⊞ (the I arm)</p>
-  <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><strong>R1 torus</strong> ⊢⊙&lt;◇&gt;●=¬⊣ &rarr; <strong>T</strong> (closes)<br><strong>R2</strong> ⊙☊+×⊞☋ &rarr; T (tri-ancestral), register N&rarr;<strong>A</strong>; <em>closed walk: false</em></p>
+  <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><strong>R1 torus</strong> ⊢⊙&lt;◇&gt;●=¬⊣ &rarr; <strong>T</strong> (closes)<br><strong>R2</strong> ⊙∈+×⊞∋ &rarr; T (tri-ancestral), register N&rarr;<strong>A</strong>; <em>closed walk: false</em></p>
   <p style="opacity:0.75">R1 is the 12-opcode grammar; R2 is SIXTEEN_3 (14 opcodes, 1→3 fork). Both share IMSCRIB ⊙ at the pinch.</p>
   <p style="margin-top:7px; border-top:1px solid #2a2a40; padding-top:6px"><span class="sw" style="background:#58D68D"></span><strong>Carved ring A</strong> on the 3 strands: edges 2,1,1 (one doubled). ind = n₊−n₋ = <strong>−1</strong> by rational congruence (Lean, green). Spectrum {1+√3, −2, 1−√3}; kernel of A+2I = (1,−1,0), the <em>swap of the doubled pair</em>; Perron (1, 1, √3−1) carries the gap as its own coordinate. Root system A₂.</p>
   <p><strong>Refuted:</strong> A is <em>not</em> the reduction of the 16-register tour. Π L Πᵀ on the canonical tour = 16I + 8(E₁₃+E₃₁): all-positive, ind 0, no √3. The t-strand decoupling is owned by the unique both-negations class — both weaker symmetry hypotheses have measured counterexamples. Ring and tour share the pinch, not a matrix.</p>
@@ -39,10 +39,10 @@
 <script>
 const R = 2.0; // For a horn torus, major radius R equals minor radius r
 const BOOT = ["IMSCRIB","AREV","FSPLIT","AFWD","FFUSE","CLINK","IFIX","TANCH","VINIT"];
-// R2 is a SIXTEEN_3 object, not a 12-opcode one: FSPLIT3 ☊ is 1→3, and the third arm
+// R2 is a SIXTEEN_3 object, not a 12-opcode one: FSPLIT3 ∈ is 1→3, and the third arm
 // (EVALI ⊞, the information layer) is what carries the register TF → A. A two-way fork
 // halts at TF — classical "both" — which is exactly where the 12-opcode grammar can only
-// hold (ENGAGR, B). Word: ⊙☊+×⊞☋ → verdict T, final register A (full information).
+// hold (ENGAGR, B). Word: ⊙∈+×⊞∋ → verdict T, final register A (full information).
 const DAG  = ["IMSCRIB","FSPLIT3","EVALT","EVALF","EVALI","FFUSE3"];
 const WORK = new Set(["AREV","AFWD","CLINK","IFIX","EVALT","EVALF","EVALI","TNEG","INEG"]);
 
@@ -130,7 +130,7 @@ for (let i=0; i<16; i++) {
 // A₂, the root system the ring embeds in. Also the 3 orderings of SIXTEEN_3 (≤ᵢ, ≤ₜ, ≤_c).
 // On a horn torus a (1,1) curve winds once poloidally, so it crosses v=π once and therefore
 // passes through the pinch. All three are CONCURRENT at ⊙ — they are not linked; closing the
-// hole destroys the linking. Three arms from one point is ☊ FSPLIT3.
+// hole destroys the linking. Three arms from one point is ∈ FSPLIT3.
 const phases = [0, 2*Math.PI/3, 4*Math.PI/3];
 const opac = [1.0, 0.7, 0.45];
 const rads = [0.05, 0.038, 0.028];
@@ -429,19 +429,19 @@ if (interPts.length > 10) {
   scene.add(new THREE.Points(interGeo, interMat));
 }
 
-// R2's word is a THETA, not a circle: ⊙ → ☊ → {+, ×, ⊞} → ☋ has V=6 E=7, β=2 — two
+// R2's word is a THETA, not a circle: ⊙ → ∈ → {+, ×, ⊞} → ∋ has V=6 E=7, β=2 — two
 // poles joined by THREE parallel arcs. A single great circle with markers on it is β=1,
-// the wrong object. The three arcs are meridians running pole to pole; ☊ sits at the
+// the wrong object. The three arcs are meridians running pole to pole; ∈ sits at the
 // pinch (the fork, where the three arms fan — the same place the torus's three strands
-// are concurrent), ☋ at the far pole.
+// are concurrent), ∋ at the far pole.
 //
 // The walk is OPEN. imasm16_3 reports `Closed walk: false` for every form of the word:
 // the register runs N (∅) → A ({T,F,t,f}) and does not return. R2 is the lateral OPENING.
 // The surface below carries the theta; it does not assert that the program closes. The
-// verdict T on this word is TRI-ANCESTRAL — the arms reconnect at ☋ — which is not the
+// verdict T on this word is TRI-ANCESTRAL — the arms reconnect at ∋ — which is not the
 // path returning to its start.
-const NPOLE = new THREE.Vector3(2*lr, 0, 0);   // ☋ FFUSE3
-const SPOLE = new THREE.Vector3(0, 0, 0);      // ☊ FSPLIT3 — at the pinch, with ⊙
+const NPOLE = new THREE.Vector3(2*lr, 0, 0);   // ∋ FFUSE3
+const SPOLE = new THREE.Vector3(0, 0, 0);      // ∈ FSPLIT3 — at the pinch, with ⊙
 function meridian(alpha, n=80) {
   const pts = [];
   for (let i=0; i<=n; i++) {
@@ -473,7 +473,7 @@ ALPHAS.forEach(al => {
 // = the moduli field. A two-armed fork owns only the finite generators, so it halts at
 // TF and cannot reach A. The ratio is 2^2 at both dimensions: 16/4 at d=12, 2^27/2^25
 // at d=2048 — the archimedean contribution is always exactly {t,f}.
-// markers: ☊ at the pinch, ☋ at the far pole, and one eval token per meridian at its
+// markers: ∈ at the pinch, ∋ at the far pole, and one eval token per meridian at its
 // equator — the three arms, one each, which is what 1→3 means.
 const R2 = [
   {tok:'FSPLIT3', p: SPOLE.clone()},

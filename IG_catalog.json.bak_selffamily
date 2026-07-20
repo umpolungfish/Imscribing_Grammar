@@ -106721,7 +106721,7 @@
   },
   {
     "name": "heterotactic_interrupter",
-    "description": "⊢⊙=>☊+>¬×<¬☋⊞=⊙¬⊣",
+    "description": "⊢⊙=>∈+>¬×<¬∋⊞=⊙¬⊣",
     "Ð": "𐑛",
     "Þ": "𐑥",
     "Ř": "𐑽",
