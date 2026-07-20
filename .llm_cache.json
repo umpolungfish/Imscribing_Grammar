@@ -11431,5 +11431,17 @@
   "e63b3400139b06ac8722fe6bfe6fbcd9d84e0455d7c564713ad59f1e04087874": "3 \u2014 The system is in a complex critical regime with complex eigenvalues.",
   "e38ff5571a66d0a1877350617b974ae091074e83e92247f0e551e4a8b9cd9ded": "3 \u2014 The system maintains persistent chiral symmetry with multiple axes, implying a deep memory depth.",
   "6ffc1422291d59d08c6500c84b6f87f5dda3bd662b9aef074ad3a7c2efaca334": "2 \u2014 The participation ratio is higher-order symmetric \u2014 oligomers, committees.",
-  "86beb78a0a860362830e5b9906cacb0c6319577316827ddd80316bfad11566f8": "3 \u2014 Integer-winding-protected \u2014 stable against perturbations preserving winding invariant"
+  "86beb78a0a860362830e5b9906cacb0c6319577316827ddd80316bfad11566f8": "3 \u2014 Integer-winding-protected \u2014 stable against perturbations preserving winding invariant",
+  "53c906c7ab6b3c31980b59b17e554d47bd55a2d3f4062d2cc082ed6f7b0c5e46": "2 \u2014 The system organizes spatially across an extended lattice.",
+  "7b9b0d6d727a086ee01a832576ca60291eb374061a99ab13fd77877b6577581d": "3 \u2014 The connectivity pattern of influence is cyclic closure, characterized by a figure-8 or double-well structure.",
+  "80b7f67abdcaf644c04c183c566e9dcc96a8c772177bf3c5b4ea62eaacea15d2": "1 \u2014 The system organizes spatially across an extended lattice.",
+  "3a56b9f455daebb569a7476a59e5ea742a3d0f2e54526b8a822f263399d0fd56": "3 \u2014 The system has self-complementary properties, indicating both donor and acceptor roles are present simultaneously.",
+  "b3ec1f258ef013aa6a1c1db9413702760ded8e9ce4c4c97bfba8121ec25a2c2c": "2 \u2014 The system organizes spatially across an extended lattice.",
+  "39783a8357664970b40d14a59ec0bc07d03ba3ca74a735d52e15889969a2fab3": "3 \u2014 The system is kinetically frozen and requires external driving to rearrange.",
+  "c1b6d26deac99d069ee2dc85f623d16fa25bd8ae5060f0810bcf48fef36707ed": "2 \u2014 The system organizes spatially across an extended lattice.",
+  "afd57dd7febd325b3bc9985f8a11676cc7ea0301d842723f5795ff4c03e156ca": "1 \u2014 The system organizes spatially across an extended lattice.",
+  "36164c2650ec632fb38258753ddf2b6024a41099abe8269c825fe5c435f40c04": "2 \u2014 The system is at the critical point, exhibiting scale-free correlations and maximal sensitivity.",
+  "3ed12be3d8d343fffdb0eaccb8318fe74e8c6ed0cba146d405f46b118b5bbddf": "3 \u2014 The system organizes spatially across an extended lattice.",
+  "affdaad6a3beb2e9d4ca901010d059582c7bed0dae3e0b51bf246c76c2ee266a": "2 \u2014 The participation ratio indicates higher-order symmetric pairing in the system.",
+  "6f7bb28ff2ae52760ae8f79044eced1759f7bae369b800ac610769156cd06b16": "3 \u2014 The system organizes spatially across an extended lattice."
 }
