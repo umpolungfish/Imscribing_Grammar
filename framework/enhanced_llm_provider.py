@@ -377,25 +377,38 @@ class OpenRouterProvider(HttpProvider):
 
 
 class LocalProvider(LLMProvider):
-    """Direct tensor inference — no API key.
+    """Local inference served by the Rust kernel — no API key, no second model.
 
-    Loads a merged Qwen3 model once (class-level singleton) and keeps it
-    in GPU memory for the lifetime of the process.  Suitable for guided
-    generation where 12 sequential calls would otherwise each hit a remote
-    API with a thinking-token overhead.
+    The kernel lives in Rust. Its local inference is candle running IN-PROCESS
+    inside `ask_native` (ask_native/src/local.rs). To route the local model the
+    SAME way MoDoT does, ob3ect does not load its own copy in Python/transformers
+    — it shells out to the `ask` binary in raw mode:
 
-    Model path resolution order:
-      1. `model_path` constructor arg
-      2. LOCAL_MODEL_PATH env var
-      3. Default INFERRED merged-model path
+        ask --provider local --raw --system <sys> --ask <prompt>
+
+    so every `--provider local` completion is produced by the identical candle
+    engine the organism uses. One brain, owned by the kernel; Python only calls
+    it. (The former in-process transformers path is retained below, renamed and
+    unused, in case a pure-Python fallback is ever wanted.)
+
+    Binary resolution:
+      1. MODOT_ASK_BIN env var
+      2. ~/imsgct/MoDoT/ask   (the wrapper that builds/execs the native binary)
+
+    The model the kernel loads is selected on the Rust side via
+    MODOT_LOCAL_MODEL_DIR (default ~/models/Qwen3-1.7B, ask_native/src/local.rs);
+    ob3ect does not second-guess it, which is exactly what "routed the same"
+    means. NOTE: the native binary must be built WITH the local provider —
+    `cargo build --release --features local,cuda` (a plain build strips it).
     """
 
-    DEFAULT_MODEL_PATH = (
-        "/home/mrnob0dy666/imscribingP/INFERRED/output"
-        "/Imscriptiveon_qlora/merged2/merged_model"
-    )
+    # Retained only as the identity string for the response cache key and for the
+    # renamed pure-Python fallback below. The kernel resolves the real model dir.
+    DEFAULT_MODEL_PATH = "~/models/Qwen3-1.7B"
 
-    # Class-level singleton state
+    DEFAULT_ASK_BIN = "~/imsgct/MoDoT/ask"
+
+    # Class-level singleton state (used only by the renamed transformers fallback)
     _model = None
     _tokenizer = None
     _loaded_path: Optional[str] = None
@@ -403,7 +416,15 @@ class LocalProvider(LLMProvider):
 
     def __init__(self, model_path: Optional[str] = None, use_nested_tensor: bool = False):
         super().__init__()
-        raw = model_path or os.getenv("LOCAL_MODEL_PATH") or self.DEFAULT_MODEL_PATH
+        self.ask_bin = str(
+            Path(os.getenv("MODOT_ASK_BIN") or self.DEFAULT_ASK_BIN).expanduser()
+        )
+        raw = (
+            model_path
+            or os.getenv("LOCAL_MODEL_PATH")
+            or os.getenv("MODOT_LOCAL_MODEL_DIR")
+            or self.DEFAULT_MODEL_PATH
+        )
         self.model_path = str(Path(raw).expanduser())
         self.use_nested_tensor = use_nested_tensor
 
@@ -586,6 +607,58 @@ class LocalProvider(LLMProvider):
         temperature: float,
         max_new_tokens: int,
     ) -> str:
+        """Route local inference through the Rust kernel (candle in-process)."""
+        return self._kernel_generate(prompt, system, temperature, max_new_tokens)
+
+    def _kernel_generate(
+        self,
+        prompt: str,
+        system: Optional[str],
+        temperature: float,
+        max_new_tokens: int,
+    ) -> str:
+        import subprocess
+
+        if not Path(self.ask_bin).exists():
+            raise RuntimeError(
+                f"ask binary not found: {self.ask_bin}. Set MODOT_ASK_BIN, and build "
+                f"it with `cargo build --release --features local,cuda` (a plain "
+                f"build strips the local provider)."
+            )
+        cmd = [
+            self.ask_bin,
+            "--provider", "local",
+            "--raw",
+            "--temperature", str(temperature),
+            "--max-tokens", str(int(max_new_tokens)),
+        ]
+        if system:
+            cmd += ["--system", system]
+        cmd += ["--ask", prompt]
+        # enable_thinking mirrors MoDoT's --think toggle; keep it explicit so the
+        # kernel's reasoning state matches ob3ect's, not the binary's own default.
+        env = dict(os.environ)
+        env["MODOT_THINK"] = "1" if enable_thinking else "0"
+        proc = subprocess.run(cmd, capture_output=True, text=True, env=env)
+        if proc.returncode != 0:
+            raise RuntimeError(
+                f"kernel ask (local/raw) failed [{proc.returncode}]: "
+                f"{proc.stderr.strip() or proc.stdout.strip()}"
+            )
+        response = proc.stdout.strip()
+        response = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+        return response
+
+    def _transformers_generate(
+        self,
+        prompt: str,
+        system: Optional[str],
+        temperature: float,
+        max_new_tokens: int,
+    ) -> str:
+        # Retained, unused: the former pure-Python in-process path. Kept so a
+        # non-kernel fallback exists, but `_sync_generate` no longer calls it —
+        # local inference is owned by the Rust kernel (see _kernel_generate).
         import torch
 
         self._ensure_loaded()
