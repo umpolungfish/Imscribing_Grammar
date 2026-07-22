@@ -122238,5 +122238,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "horn_torus",
+    "description": "The horn torus: a torus where tube radius equals ring radius (R=r), creating a self-intersection at the origin. This is the self-dual critical point in the family of tori — the geometric locus where universal constants are stored and emitted. The two circles S¹×S¹ have identical radius, making the g",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
   }
 ]
