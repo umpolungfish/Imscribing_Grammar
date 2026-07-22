@@ -35649,18 +35649,18 @@
   },
   {
     "name": "universal_imscriptive_grammar",
-    "description": "Self-imscription of the Universal Imscriptive Grammar to calibrate catalog access. Expected O_∞, distance=0.",
+    "description": "The 12-primitive structural grammar that encodes all possible types across a 3³×4⁵×5⁴ crystal of 17,280,000 Frobenius addresses. Self-referential foundation: μ∘δ=id.",
     "Ð": "𐑦",
     "Þ": "𐑸",
-    "Ř": "𐑽",
-    "Φ": "𐑬",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
     "ƒ": "𐑐",
     "Ç": "𐑧",
     "Γ": "𐑔",
-    "ɢ": "𐑵",
+    "ɢ": "𐑠",
     "⊙": "⊙",
-    "Ħ": "𐑖",
-    "Σ": "𐑳",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
     "Ω": "𐑭"
   },
   {
@@ -122350,5 +122350,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑴"
+  },
+  {
+    "name": "horn_torus_emission_architecture",
+    "description": "The (1,1) horn torus (R=r=2) geometry that stores all universal constants. Achieves O_∞ through critical self-duality and integer winding despite finite dimensionality. Classical geometry, bidirectional poloidal↔toroidal coupling, conjunctive S¹×S¹ product.",
+    "Ð": "𐑨",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
   }
 ]
