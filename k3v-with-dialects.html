@@ -916,6 +916,8 @@ class="geo-box">
                     <option value="93648.047476">π¹⁰</option>
                 </select>
             </label>
+            <span id="gear-readout" title="At the 4:1 gear ratio: evaluator turns once per program loop, cosmos once per 4 loops. Optimal ≈ evaluator at ~45°/s (one turn in ~8s)." style="color:#9AA7B4;font-size:11px;margin-left:8px;white-space:nowrap;"></span>
+            <button type="button" id="btn-optimal" title="Set the walk speed to the optimal viewing tempo for the current program (evaluator ~one turn / 8s, from the 4:1 gear)." style="margin-left:6px;">◆ optimal</button>
         </div>
     </div>
         <div id="color-scheme-picker" style="position:absolute;bottom:52px;right:12px;z-index:13;background:rgba(0,0,0,0.9);padding:6px 10px;border-radius:8px;border:1px solid #fff;font-size:11px;display:flex;flex-direction:column;gap:5px;">
@@ -3331,6 +3333,7 @@ const exec = {
 
 }
         function updateExecHud() {
+            if (typeof updateGearReadout === 'function') updateGearReadout();
             if (N === 0 || !TOKENS[exec.ip]) {
                 const el0 = document.getElementById('ip-line');
                 const meta0 = document.getElementById('ip-meta');
@@ -3762,8 +3765,43 @@ const exec = {
             }
         }
         if (btnPlay) btnPlay.addEventListener('click', () => setPlaying(!exec.playing));
+        // ─── Optimal viewing speed from the 4:1 gear ───
+        // The rotation is kernel-driven: one program loop (N tokens at exec.speed tokens/s) is one
+        // evaluator revolution (the bead's toroidal sweep), and the cosmos turns once per 4 loops.
+        //   T_eval = N/speed   T_cosmos = 4N/speed
+        // Optimal viewing keeps the evaluator (the teethed fast gear) followable at ~45°/s, i.e. one
+        // turn in ~8s → speed ≈ N/8; the comfortable band is ~30–60°/s → speed ∈ [N/12, N/6].
+        function nearestPreset(target) {
+            const sel = document.getElementById('speed'); if (!sel) return null;
+            let best = null, bd = Infinity;
+            Array.from(sel.options).forEach(o => {
+                const d = Math.abs(Math.log(parseFloat(o.value)) - Math.log(target));
+                if (d < bd) { bd = d; best = o; }
+            });
+            return best;
+        }
+        function updateGearReadout() {
+            const el = document.getElementById('gear-readout'); if (!el) return;
+            if (!N || N <= 0) { el.textContent = ''; return; }
+            const sp = exec.speed || 1;
+            const Teval = N / sp, Tcos = 4 * N / sp;
+            const inBand = sp >= N / 12 && sp <= N / 6;
+            const opt = nearestPreset(N / 8);
+            el.innerHTML = `4:1 · eval ${Teval.toFixed(1)}s/rev · ⊙ ${Tcos.toFixed(0)}s/rev · ` +
+                (inBand ? `<span style="color:#009E73">✓ optimal</span>`
+                        : `<span style="color:#E69F00">try ${opt ? opt.textContent : ''}</span>`);
+        }
         if (speedSel) speedSel.addEventListener('change', () => {
             exec.speed = parseFloat(speedSel.value) || 1;
+            updateGearReadout();
+        });
+        // Snap to the optimal viewing tempo for the current program: nearest constant preset to N/8
+        // (evaluator ~one turn / 8s). Keeps the speed one of the aesthetic constants.
+        const btnOptimal = document.getElementById('btn-optimal');
+        if (btnOptimal) btnOptimal.addEventListener('click', () => {
+            if (!N || N <= 0) return;
+            const opt = nearestPreset(N / 8);
+            if (opt) { speedSel.value = opt.value; exec.speed = parseFloat(opt.value) || 1; updateGearReadout(); }
         });
         if (btnReset) btnReset.addEventListener('click', () => {
             exec.ip = 0;

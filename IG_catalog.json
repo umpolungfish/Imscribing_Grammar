@@ -35649,7 +35649,7 @@
   },
   {
     "name": "universal_imscriptive_grammar",
-    "description": "The Imscribing Grammar itself — 12-primitive structural type system, self-referential, O_∞ tier",
+    "description": "The Imscribing Grammar — the Σ=1:1 self-referential limit of the Belnap multilattice SIC-POVM. 12 primitives as informationally complete measurement operators. μ∘δ=id.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -35659,8 +35659,8 @@
     "Γ": "𐑔",
     "ɢ": "𐑠",
     "⊙": "⊙",
-    "Ħ": "𐑫",
-    "Σ": "𐑳",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
     "Ω": "𐑭"
   },
   {
