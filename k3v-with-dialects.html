@@ -1098,10 +1098,10 @@ class="geo-box">
             "AREV":    { "glyph": "<", "work": true  },
             "CLINK":   { "glyph": "=", "work": true  },
             "IMSCRIB": { "glyph": "⊙", "work": false },
-            "FSPLIT":  { "glyph": "◇", "work": false },
+            "FSPLIT":  { "glyph": "∈", "work": false },
             "EVALT":   { "glyph": "+", "work": true  },
             "EVALF":   { "glyph": "×", "work": true  },
-            "FFUSE":   { "glyph": "●", "work": false },
+            "FFUSE":   { "glyph": "∋", "work": false },
             "ENGAGR":  { "glyph": "⊞", "work": true  },
             "IFIX":    { "glyph": "¬", "work": true  }
         };
@@ -1568,6 +1568,7 @@ const PROGRAMS = {
         const GLYPH_TO_TOKEN = Object.fromEntries(
             Object.entries(TOKEN_META).map(([name, m]) => [m.glyph, name])
         );
+        GLYPH_TO_TOKEN['◇'] = 'FSPLIT'; GLYPH_TO_TOKEN['●'] = 'FFUSE';
         // The live catalog registry: name -> glyph string, one entry per catalog object,
         // embedded directly (from ~/ob3ect/digital/*/*_ob3ect.json, ~908 entries, verified
         // every glyph is in the 12-token base alphabet above). Short (avg 14 tokens), so cheap to ship inline
@@ -2984,6 +2985,7 @@ const PROGRAMS = {
             const TOKEN_GLYPH = {};
             Object.entries(TOKEN_META).forEach(([name, m]) => { TOKEN_GLYPH[name] = m.glyph; });
             const GLYPH_SET = new Set(Object.values(TOKEN_GLYPH));
+            GLYPH_SET.add('◇'); GLYPH_SET.add('●');
             const TOKEN_NAMES = new Set(Object.keys(TOKEN_META));
 
             function parseImasmWord(text) {
