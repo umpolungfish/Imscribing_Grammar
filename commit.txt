@@ -1,3 +1,3 @@
-The fidelity check picks the most specific name, not the closest word.
+The guard abstains rather than guessing which entry a tuple belongs to.
 
-It took the nearest catalog name before a tuple, and the catalog holds nearly three hundred names of four characters or fewer, so an ordinary word in the surrounding prose was matched as an entry and a correct tuple was refused against that entry's values. The longest name in the window wins now, with nearest breaking ties.
+Any string can be an entry, so a name cannot be dismissed for being short, and the nearest name cannot be trusted because ordinary prose is full of them. One name in the window is used, several resolve to the one abutting the tuple, and none abutting leaves it unchecked. A guard that guesses is worse than one that says nothing.

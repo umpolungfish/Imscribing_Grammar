@@ -826,20 +826,30 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
             window = content[line_start: tm.start()]
         else:
             window = content[max(0, tm.start() - 400): tm.start()]
-        candidate_names = [m.group(1) for m in _NAME_RE.finditer(window)]
-        # Prefer the LONGEST catalog name in the window, not the nearest. The
-        # catalog contains 298 names of four characters or fewer — including
-        # "the", "0", "1", "2048" — so nearest-match reliably picked an English
-        # word out of the surrounding prose and rejected a correct tuple against
-        # that entry's tuple. Length is the practical proxy for specificity;
-        # ties fall back to nearest.
-        hits = [c for c in candidate_names if c in table]
+        # Attribute a tuple to a name only when that attribution is unambiguous.
+        # Any string can be a catalog entry — "the", "0", "2048" are all
+        # legitimate — so a name cannot be dismissed for being short, and
+        # nearest-match cannot be trusted either: ordinary prose before a tuple
+        # contains such words, and this check once rejected a correct tuple
+        # against the entry named "the".
+        #
+        # Rule: one catalog name in the window, use it. Several, use the one
+        # that ABUTS the tuple, separated only by punctuation or a short binding
+        # word. None abutting, leave the tuple unchecked — a guard that guesses
+        # is worse than one that abstains.
+        hits = [(m.group(1), m.end()) for m in _NAME_RE.finditer(window)
+                if m.group(1) in table]
         matched_name = None
-        if hits:
-            best = max(len(c) for c in hits)
-            for cand in reversed(hits):          # nearest among the longest
-                if len(cand) == best:
-                    matched_name = cand
+        if len(set(n for n, _ in hits)) == 1:
+            matched_name = hits[0][0]
+        elif hits:
+            _bind = re.compile(
+                r"[\s:=,\-\u2013\u2014]*"
+                r"(?:is|has|tuple|notation|entry|the|with)?"
+                r"[\s:=,\-\u2013\u2014]*$", re.I)
+            for name, end in reversed(hits):
+                if _bind.fullmatch(window[end:]):
+                    matched_name = name
                     break
         if matched_name is None:
             continue  # tuple present but no recognizable catalog name nearby
