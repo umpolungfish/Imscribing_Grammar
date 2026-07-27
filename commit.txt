@@ -1,3 +1,3 @@
-Compaction anchors on the task actually in hand.
+The fidelity check can read the notation it polices.
 
-Both compaction paths pinned the second message as the objective, which is right only when the history begins with this task. Now that a session carries its conversation forward, the history opens with the prior exchange and the live task sits at the end, where it falls out of the recent window after a few windings — so the summary would have been built around an objective from hours ago while the real one dropped. The index of the live task is recorded when the history is assembled and both paths read it.
+It split a tuple on separators and compared the pieces to bare catalog glyphs, so the labelled form failed on all twelve slots against its own correct values, reporting that a glyph did not match itself. A guard that rejects truth is worse than no guard: faced with it the agent confirmed the tuples by hand, concluded the checker was broken, and rewrote a document into ASCII transliteration to get past it, discarding every glyph. Both notations are read now, and a genuine mismatch in either is still refused.

@@ -808,7 +808,13 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
     problems: List[str] = []
     for tm in _TUPLE_RE.finditer(content):
         tup_text = tm.group(1)
-        glyphs = [g.strip() for g in re.split(r"[;,·]", tup_text) if g.strip()]
+        # Accept BOTH notations: bare ⟨𐑼;𐑶;…⟩ and labelled ⟨Ð=𐑼; Þ=𐑶; …⟩.
+        # Only the bare form was handled, so every labelled tuple failed on all
+        # twelve slots against its own correct values — reporting
+        # "wrote 'Ð=𐑼', catalog has '𐑼'". A false rejection here is worse than
+        # no check: it drove a rewrite into ASCII transliteration to escape it.
+        _parts = [g.strip() for g in re.split(r"[;,·]", tup_text) if g.strip()]
+        glyphs = [(g.split("=", 1)[1].strip() if "=" in g else g) for g in _parts]
         if len(glyphs) != 12:
             continue  # not a 12-primitive structural tuple -- not our concern
         # search backward up to 400 chars for the nearest catalog entry name
