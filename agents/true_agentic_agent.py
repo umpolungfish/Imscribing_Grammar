@@ -2988,6 +2988,7 @@ class TrueAgenticAgent:
                     f"TASK: {task}\n\nBegin. Emit your first tool call."
                 ),
             })
+            self._task_msg_index = len(self._messages) - 1
             if self.preloaded_trajectory:
                 self.trajectory = list(self.preloaded_trajectory)
         else:
@@ -2995,6 +2996,7 @@ class TrueAgenticAgent:
                 {"role": "system", "content": system_content},
                 {"role": "user",   "content": f"TASK: {task}\n\nBegin. Emit your first tool call."},
             ]
+            self._task_msg_index = 1
         self._log(f"\n{'═'*72}")
         self._log(f"  TRUE AGENTIC AGENT  |  model: {self.model_id}")
         self._log(f"  TASK: {task}")
@@ -3438,7 +3440,12 @@ class TrueAgenticAgent:
                 max_content_chars (catches large file_read outputs).
         """
         system = self._messages[0]
-        task   = self._messages[1]
+        # The current task, not _messages[1]. In a continued session the history
+        # opens with the PRIOR conversation, so _messages[1] is an old task while
+        # the live one sits at the end and drops out of `recent` after a few
+        # windings — compaction would pin the wrong objective and lose the real one.
+        _ti = getattr(self, "_task_msg_index", 1)
+        task = self._messages[_ti] if 0 <= _ti < len(self._messages) else self._messages[1]
 
         self._omega_z_violation_count += 1
 
@@ -3507,7 +3514,10 @@ class TrueAgenticAgent:
     def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
         """Replace old messages with the model's distilled summary, keeping recent context."""
         system = self._messages[0]
-        task   = self._messages[1]
+        # Anchor on the CURRENT task. In a continued session the history opens
+        # with the prior conversation, so _messages[1] is a stale task.
+        _ti = getattr(self, "_task_msg_index", 1)
+        task = self._messages[_ti] if 0 <= _ti < len(self._messages) else self._messages[1]
         recent = (
             self._messages[-keep_recent:]
             if len(self._messages) > keep_recent + 2
