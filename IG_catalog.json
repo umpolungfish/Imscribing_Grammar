@@ -125326,5 +125326,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "∮_γ_a_=_2πn_∧_n_∈_ℤ_∧_wind(γ)_≠_0",
+    "description": "∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "holonomy_winding_fundamental_law",
+    "description": "The fundamental law of physics: ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0. The holonomy integral of a gauge connection over a closed loop yields a quantized integer winding number. This is the structural expression of the grammar's Σ=1:1 self-measurement — the 12-primitive SIC-POVM frame encircles itself an",
+    "Ð": "𐑼",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
   }
 ]
