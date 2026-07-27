@@ -125406,5 +125406,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "fibonacci_anyon_qc",
+    "description": "Fibonacci Anyon Quantum Computing (SU(2)_3 fidelity). Maps the fusion algebra of Fibonacci anyons to a quantum computer monad T: C -> C. Supports braided gate synthesis.",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑑",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑺",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑙",
+    "Ω": "𐑟"
   }
 ]
