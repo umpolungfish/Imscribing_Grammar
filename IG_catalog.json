@@ -125358,5 +125358,53 @@
     "Ħ": "𐑫",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "prime_class_test",
+    "description": "Prime class hierarchy test",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "prime_class_hierarchy_pratt",
+    "description": "Prime class hierarchy: Pratt certificate monad. Class r prime p means every prime factor of p+1 is in class ≤ r-1 with equality for at least one.",
+    "Ð": "𐑼",
+    "Þ": "𐑡",
+    "Ř": "𐑑",
+    "Φ": "𐑗",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "pratt_certificate_monad_for_prime_class_hierarch_5a0b078f",
+    "description": "Ob3ect-generated Pratt certificate monad for prime class hierarchy. Grounded from catalog entry prime_class_hierarchy_pratt via auto.py with poolside/laguna-s-2.1. VINIT→FSPLIT→EVALT→AFWD→VINIT→FSPLIT→EVALT→AFWD→EVALT→EVALT→AREV→CLINK→IMSCRIB→FFUSE→IFIX→TANCH. Tier O₂†. Period 16, self_ref=False, fr",
+    "Ð": "𐑦",
+    "Þ": "𐑰",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑜",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
