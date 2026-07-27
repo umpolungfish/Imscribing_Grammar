@@ -520,6 +520,11 @@ def render_inline(domain: str) -> str:
         f"`{ref}`. Read it before using a tool whose invocation you are unsure of.\n"
         f"Order of operations — orient, read the catalog, derive, compute, let "
         f"verification fail you: `file_read` `{HERE / 'PROCEDURE.md'}`.")
+    if domain == "math":
+        out.append(
+            f"BEFORE using any MoDoT verb: `file_read` "
+            f"`{HERE / 'MODOT_WALKTHROUGH.md'}`. It says which question each verb "
+            f"answers; the flag list alone is not enough to choose correctly.")
     return "\n".join(out).rstrip() + "\n"
 
 

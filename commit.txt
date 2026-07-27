@@ -1,3 +1,3 @@
-A procedure, drawn from where the agents actually went wrong.
+A walkthrough for the MoDoT verbs, with imasm as a language.
 
-Eight steps in order: orient against the state and the canonical document before deriving, read the catalog rather than inventing an entry to unblock yourself, never compose a tuple by eye, compute every number in the winding that uses it, treat a rejected write as information rather than routing around it, report a blocked state honestly, use the update the loop hands back, and finish through done. The prompt gains one line pointing at it.
+Each chemistry verb is given by the question it answers, in both vocabularies, since the flag list alone does not let an agent choose. The second engine was written up as a graph checker, which undersells it badly: it is an alphabet you write programs in, type-check, carry to the kernel as a proof obligation, define new tools inside, unfold types through, and walk promotion paths along, with a wordbook that turns any catalog entry into a program.

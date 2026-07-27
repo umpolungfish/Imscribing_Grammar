@@ -28,3 +28,4 @@ never assert arithmetic from memory.
 
 Full syntax, every flag and subcommand: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/TOOLS_math.md`. Read it before using a tool whose invocation you are unsure of.
 Order of operations — orient, read the catalog, derive, compute, let verification fail you: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/PROCEDURE.md`.
+BEFORE using any MoDoT verb: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/MODOT_WALKTHROUGH.md`. It says which question each verb answers; the flag list alone is not enough to choose correctly.
