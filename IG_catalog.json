@@ -123025,17 +123025,17 @@
   },
   {
     "name": "lattice_induced_polyklaxon_frobenius_maxifolds",
-    "description": "Lattice-Induced Polyklaxon Frobenius Maxifolds",
+    "description": "Lattice Induced Polyklaxon Frobenius Maxifolds — a holographic mapping where boundary constraints fully define internal bulk state via lattice induction across a polyklaxon (multi-alert) topology. Z2 symmetry bifurcation at an exceptional point (⊙=err) with frobenioid parity (Φ=out) and eternal chir",
     "Ð": "𐑦",
     "Þ": "𐑸",
-    "Ř": "𐑽",
+    "Ř": "𐑑",
     "Φ": "𐑬",
     "ƒ": "𐑐",
     "Ç": "𐑧",
     "Γ": "𐑔",
     "ɢ": "𐑵",
     "⊙": "𐑻",
-    "Ħ": "𐑖",
+    "Ħ": "𐑫",
     "Σ": "𐑕",
     "Ω": "𐑭"
   },
@@ -125502,5 +125502,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑙",
     "Ω": "𐑭"
+  },
+  {
+    "name": "intermediate_theta_link",
+    "description": "intermediate theta link",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑞",
+    "Ç": "𐑤",
+    "Γ": "𐑚",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
   }
 ]
