@@ -2195,7 +2195,7 @@ TOOL_SCHEMAS = [
                     "Leave empty if no contract to verify."
                 ),
             },
-            "timeout":   {"type": "integer", "description": "Timeout in seconds (default 30)"},
+            "timeout":   {"type": "integer", "description": "Timeout in seconds (default 30). Raise it for anything that walks the filesystem or builds; a find over imsgct needs well over 10s, and a timeout returns no output at all rather than partial results."},
         },
         ["command"],
     ),
@@ -2766,6 +2766,25 @@ def _load_imsgct_context() -> str:
         parts.append("\n")
     except (OSError,IOError):
         parts.append("(could not list directory)\n")
+    # Key paths. Without these an agent guesses, and a guessed path costs a
+    # winding to fail plus another to search for — long enough that agents give
+    # up on the catalog and invent content instead of consulting it.
+    parts.append("\n### KEY PATHS\n")
+    parts.append(
+        "- Canonical catalog: /home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json\n"
+        "  Do NOT read this file directly, it is large. Reach it through the\n"
+        "  imscribe tools: lookup_catalog, list_catalog, crystal_navigate,\n"
+        "  crystal_nearest, find_analogies. Copies in other repos are synced from\n"
+        "  this one and are not authoritative.\n"
+        "- Lean 4 kernel: /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/  (lake build Imscribing)\n"
+        "- Documents and manuscripts: /home/mrnob0dy666/imsgct/ig-docs/\n"
+        "- ob3ect pipeline: /home/mrnob0dy666/imsgct/imscribing_grammar/ob3ect/auto.py\n"
+        "- MoDoT dispatcher: /home/mrnob0dy666/imsgct/MoDoT/ask\n")
+    parts.append(
+        "\n### BEFORE DERIVING\n"
+        "If a project directory holds a STATE.md, read it first. It records what is\n"
+        "already settled and which document is authoritative, so settled questions\n"
+        "are not answered again from scratch.\n")
     parts.append("---\n[END IMSGCT CONTEXT]\n---\n")
     _IMSGCT_CONTEXT_CACHE="".join(parts)
     return _IMSGCT_CONTEXT_CACHE
