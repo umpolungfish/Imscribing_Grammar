@@ -215,9 +215,17 @@ def main():
                     )
                     print(f"  Session: {sid}")
 
+                # Feed the conversation back INTO the agent. run() reads
+                # self.preloaded_messages, which was set once at construction,
+                # so without this every task after the first rebuilt _messages
+                # from scratch and the agent forgot the exchange it had just
+                # had — inside a single interactive session.
                 preloaded_msgs = list(agent._messages)
                 preloaded_traj = list(agent.trajectory) if hasattr(agent, 'trajectory') else []
                 winding_offset = len(agent.trajectory)
+                agent.preloaded_messages = preloaded_msgs
+                agent.preloaded_trajectory = preloaded_traj
+                agent.starting_winding_offset = winding_offset
 
         except (EOFError, KeyboardInterrupt):
             print("\n[math operator session ended]")
