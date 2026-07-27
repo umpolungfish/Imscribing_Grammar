@@ -338,3 +338,92 @@ Do not propose illegal or dangerous syntheses without full safety context.
 If a protocol exceeds standard laboratory safety, state this explicitly.
 </safety>
 """
+
+
+# ── Tool manifests ───────────────────────────────────────────────────
+# The <tool_computation> body of each prompt is generated, not written here.
+# gen_tool_manifest.py derives the base and grammar layers from the code that
+# defines them and carries the domain layer as curated entries it checks
+# against the filesystem, so a tool added to a repo reaches the specialists by
+# regenerating rather than by someone remembering to edit a prompt.
+
+import re as _re
+from pathlib import Path as _Path
+
+_HERE = _Path(__file__).resolve().parent
+
+# Where the weight usually falls for each specialist. Emphasis only: every
+# tool in the manifest is available to every specialist regardless.
+_ACCENTS = {
+    "math": (
+        "Domain accent: Lean 4 lives at ~/imsgct/p4rakernel/p4ramill/, and "
+        "proof_scaffold, ob3ect and para_vm carry most of the weight for "
+        "structural proof. MoDoT's ./ask is the usual way into the structural "
+        "verbs. Claims about primes, spectra or algebraic numbers get "
+        "computed, not recalled."
+    ),
+    "editorial": (
+        "Domain accent: ltx compiles a manuscript, zdd compiles and stages one "
+        "for Zenodo and calls ltx to do it, and zenodo_upload.py publishes. "
+        "chunked_write suits manuscript-length output; web_fetch reaches "
+        "journal and preprint sources."
+    ),
+    "chembio": (
+        "Domain accent: the rebis engines are the working surface — ch3mpiler "
+        "for molecules, serpentrod for proteins, ligand and sidechain for "
+        "binding, materials and biology for simulation. run_command drives "
+        "thermodynamic and kinetic calculation, RDKit where available, and "
+        "explicit structural formulas otherwise."
+    ),
+}
+
+_SNS_CANON = r"""
+<notation_canon>
+Manuscript notation follows the Shavian Notation Specification. The
+authoritative text is /home/mrnob0dy666/imsgct/SNS_PRIME.md — file_read it
+before any manuscript work rather than working from this summary.
+
+Trabajo is the reference Shavian font for all IG notation; Michael Everson
+designed both the Unicode encoding and the typeface, so it is the glyph
+source rather than an approximation. Do not use FreeSerif, which has zero
+Shavian glyphs and renders boxes, nor Noto Sans Shavian, which is incomplete,
+nor any emoji or symbol font.
+
+Per context: LuaLaTeX takes \newfontfamily\igprimfont{Trabajo.ttf}; web CSS
+takes font-family: 'Trabajo', monospace with Trabajo self-hosted from /fonts/
+and never a CDN that lacks it; terminals install it system-wide as the
+monospace fallback; Python repr needs no font, the glyphs being plain Unicode.
+The required CSS carries @font-face with unicode-range U+10450-1047F,
+U+2060-206F, and .shavian-tuple at font-size 1.1em with letter-spacing 0.02em,
+Trabajo running tall.
+
+The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
+the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
+12-slot tuple order is Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
+Glyph names are the Unicode standard names and carry structural meaning, so
+they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
+letters.
+</notation_canon>
+"""
+
+
+def _manifest(domain: str) -> str:
+    return (_HERE / f"TOOL_MANIFEST_{domain}.md").read_text().rstrip()
+
+
+def _with_manifest(prompt: str, domain: str) -> str:
+    body = f"{_manifest(domain)}\n\n{_ACCENTS[domain]}"
+    return _re.sub(
+        r"<tool_computation>.*?</tool_computation>",
+        lambda _m: f"<tool_computation>\n{body}\n</tool_computation>",
+        prompt,
+        count=1,
+        flags=_re.S,
+    )
+
+
+MATH_SPECIALIST_PROMPT = _with_manifest(MATH_SPECIALIST_PROMPT, "math")
+EDITORIAL_SPECIALIST_PROMPT = (
+    _with_manifest(EDITORIAL_SPECIALIST_PROMPT, "editorial") + _SNS_CANON
+)
+CHEMBIO_SPECIALIST_PROMPT = _with_manifest(CHEMBIO_SPECIALIST_PROMPT, "chembio")

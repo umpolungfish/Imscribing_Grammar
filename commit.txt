@@ -1,3 +1,3 @@
-Every specialist sees the whole tool set, not a primary subset.
+The specialists name every tool they can call, generated from the repos.
 
-Each tool_computation block opened with a short whitelist, which read as permission for those tools and quietly demoted the rest; ten of the twenty-one were named by no specialist at all. All three now carry the same full inventory grouped by what the tools do, with a domain accent that adds weight without subtracting anything.
+The prompts named 21 schema entries and collapsed the 44 grammar tools imscribe dispatches into a phrase, and named nothing from the repos each specialist exists to drive. gen_tool_manifest.py derives the base and grammar layers from the code that defines them and carries the domain layer as curated entries checked against the filesystem, so a missing path is reported rather than shipped as a tool that is not there. Editorial additionally carries the notation canon and is pointed at SNS_PRIME for the authoritative text.
