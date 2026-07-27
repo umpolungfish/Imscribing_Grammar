@@ -1,3 +1,3 @@
-Anything at all is a word in the opcode alphabet.
+The manifest stops naming individual files that may not be there.
 
-The walkthrough said catalog entries become programs, which stops short of the point: imscribe anything and its twelve slots are types, each type unfolds into its own sequence, and the composition is the thing as a program. A molecule, a theorem, a document, an argument, a stretch of reasoning. Once it is a word it can be checked, proven, walked from, or spliced into something larger.
+It listed two scripts by name, one of which had been deleted, so the prompt kept asserting a file into existence and an agent went and rebuilt it. The entry points that are stable stay; the loose scripts are found by listing the directory instead.

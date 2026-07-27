@@ -211,8 +211,8 @@ Imscribing.Paraconsistent.Belnap."""),
 BealProof (`lake exe bealproof`), solitary_10 (`lake exe solitary10_proof`),
 MilleniumAnkh_private, MillenniumParaconsistent, e8_aether_g2_vessel,
 hecke-landau, hodge_lefschetz, odd-perfect-numbers, perfect_cuboid.
-Python, no flags: fibonacci_anyon_algebra.py, imscription_calculus.py, and
-nice_problems/{burnside,connes,erdos_straus,goldbach,threebody}/main.py"""),
+Python, no flags: nice_problems/{burnside,connes,erdos_straus,goldbach,threebody}/main.py
+and whatever else is present — list the directory rather than trusting this line."""),
 
     (IMSGCT / "Ars_Fysika", "Ars_Fysika", """\
 No code. Documents plus two browser tools, imasm_composer.html and
