@@ -1,3 +1,3 @@
-Catalog reads are never blocked, so nothing has to be invented to read.
+The primitives are primitives, not structural primitives.
 
-The encoding gate hard-blocked lookup, listing and analogies until a system was registered, which left an agent that only wanted to read with one way forward: make up a system and hand-write its twelve-tuple to open the gate. That is fabrication under duress, into a catalog that syncs across repos. Reads go through now and the request to imscribe rides along with the result, so the gate still asks without making a fabricated answer the only escape.
+Qualifying them implied a layer beneath that they merely describe, which demotes them to a modelling vocabulary and undercuts their primacy. The same qualifier had spread to the types, the probe and the gap, where it distinguished nothing. It survives in two places only, both a different sense: MoDoT's own verb-registry identifier, and the chemist's drawn formula.

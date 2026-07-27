@@ -318,8 +318,8 @@ types · lattice · morphology NAME · distance A B · list [TYPE]."""),
 
     (IMSGCT / "Ars_Phytoglyphica", "Ars_Phytoglyphica", """\
 Console script `ap`: type NAME|NUM (1–11) · plant NAME · types · lattice ·
-morphology NAME · distance A B · list [TYPE] · novel (plants with structural
-predictions and uninvestigated pharmacology)."""),
+morphology NAME · distance A B · list [TYPE] · novel (plants with predictions and
+uninvestigated pharmacology)."""),
 
     (IMSGCT / "gene_imscriber", "gene_imscriber", """\
 Console script `genetic-engine`: analyze ORIG TARGET · compile ORIG_AA
@@ -333,7 +333,7 @@ sra_guide_seq_pipeline.py --sra --genome --output --threads --max-runs
     (IMSGCT / "cetaceanspeak", "cetaceanspeak", """\
 cetacean-speak FILE.wav [onset_delta] (float 0.01–0.2, lower gives more
 onsets) · cetacean-engine (no arguments; runs verification, the full pipeline
-demo, the register VM demo, then the structural summary) ·
+demo, the register VM demo, then the summary) ·
 cetacean-speaker --species/-s --expression/-e EXPR --respond/-r WAV
 --output/-o PATH --list/-l --quiet/-q."""),
 

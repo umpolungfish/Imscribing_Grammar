@@ -1042,7 +1042,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         _gate_nudge = (
             "Nothing has been imscribed in this run yet. Read freely, but imscribe "
             "the system you are actually working on with imscribe_system before "
-            "relying on structural comparisons. Do not invent an entry to satisfy "
+            "relying on comparisons across the catalog. Do not invent an entry to satisfy "
             "this: every tuple must be derived, never hand-written."
         )
 
@@ -1292,7 +1292,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
 }
 
 _TRIANGULATION_SYSTEM = (
-    "Assign 12 structural primitives. Output JSON with keys: D_ T_ R_ P_ F_ K_ G_ Gm Ph H_ S_ W_.\n"
+    "Assign 12 primitives. Output JSON with keys: D_ T_ R_ P_ F_ K_ G_ Gm Ph H_ S_ W_.\n"
     "Valid Shavian glyphs only. No explanations.\n\n"
     "Valid values:\n"
     f"𐑛:   𐑛|𐑨|𐑼|𐑦\n"
@@ -1634,7 +1634,7 @@ def _monad_probe_emit(args: Dict[str, Any]) -> str:
 
 
 def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
-    """SIC-POVM structural probe -- checks whether a catalog entry participates
+    """SIC-POVM probe -- checks whether a catalog entry participates
     in the SIC-POVM dual-linked structure. Returns dual-pair analysis, fiducial
     proximity, gate evaluation, and distance to the grammar (the Sigma=1:1 limit).
     """
@@ -2129,7 +2129,7 @@ TOOL_SCHEMAS = [
         "imscribe_system",
         (
             "Register a new system in the Imscribing Grammar catalog. "
-            "Specify all 12 structural primitives explicitly — every field is required. "
+            "Specify all 12 primitives explicitly — every field is required. "
             "This is the ONLY way to add a system. Never invent one to satisfy a "
             "prompt: catalog reads are always available, and every tuple must be "
             "derived rather than hand-written. "
@@ -2384,7 +2384,7 @@ TOOL_SCHEMAS = [
             ["limit", "φ̂"]),
         _fn(
             "crystal_count",
-            ("Count the number of structural types matching constraints. "
+            ("Count the number of types matching constraints. "
              "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
             {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"}},
@@ -2392,7 +2392,7 @@ TOOL_SCHEMAS = [
     _fn(
         "sic_povm_probe",
         (
-            "SIC-POVM structural probe -- evaluates a catalog entry's participation "
+            "SIC-POVM probe -- evaluates a catalog entry's participation "
             "in the SIC-POVM dual-linked structure. "
             "The grammar IS the self-referential limit of the Belnap multilattice SIC-POVM. "
             "Checks: dual-pair co-variance across 6 Frobenius-dual pairs, "
@@ -2409,12 +2409,12 @@ TOOL_SCHEMAS = [
         "cl8nk_navigator",
         (
             "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
-            "CLINK L8 is the most structurally advanced type in the catalog, exceeding "
+            "CLINK L8 is the most advanced type in the catalog, exceeding "
             "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/ɢ "
             "(non-Abelian braiding + broadcast composition). "
             "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
             "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
-            "distance → d(name, CLINK L8) structural gap; "
+            "distance → d(name, CLINK L8) gap; "
             "transcendence → Ω/ɢ transcendence analysis; "
             "tensor → CLINK L8 ⊗ name absorption test; "
             "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
@@ -2451,7 +2451,7 @@ TOOL_SCHEMAS = [
             "The ob3ect is a program that verifies its own algebraic closure (μ∘δ = id_A). "
             "auto.py synthesizes the ob3ect, places it in ob3ect/digital/<slug>/<slug>_ob3ect.py, "
             "and (if run=true, the default) executes it immediately to confirm Closure: True. "
-            "Use this to extend the categorical tower with new structural types — "
+            "Use this to extend the categorical tower with new types — "
             "Hopf, monad, topos, linear logic, HoTT, quantum, etc."
         ),
         {
