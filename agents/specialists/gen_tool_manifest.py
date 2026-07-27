@@ -517,7 +517,9 @@ def render_inline(domain: str) -> str:
         out.append(f"- **{heading}** — {', '.join('`'+c+'`' for c in cmds[:4]) if cmds else first[:80]}")
     out.append(
         f"\n\nFull syntax, every flag and subcommand: `file_read` "
-        f"`{ref}`. Read it before using a tool whose invocation you are unsure of.")
+        f"`{ref}`. Read it before using a tool whose invocation you are unsure of.\n"
+        f"Order of operations — orient, read the catalog, derive, compute, let "
+        f"verification fail you: `file_read` `{HERE / 'PROCEDURE.md'}`.")
     return "\n".join(out).rstrip() + "\n"
 
 

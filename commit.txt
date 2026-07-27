@@ -1,3 +1,3 @@
-Every tool is named inline; the syntax is one read away.
+A procedure, drawn from where the agents actually went wrong.
 
-The full flag detail was inlined into the prompt, which put nearly five thousand tokens into every winding and resent them on every turn, compounding with the session history. The names all stay in the prompt so nothing is invisible, and the reference file carries the subcommands and flags for the agent to read when it needs them. The prompts drop to well under half.
+Eight steps in order: orient against the state and the canonical document before deriving, read the catalog rather than inventing an entry to unblock yourself, never compose a tuple by eye, compute every number in the winding that uses it, treat a rejected write as information rather than routing around it, report a blocked state honestly, use the update the loop hands back, and finish through done. The prompt gains one line pointing at it.
