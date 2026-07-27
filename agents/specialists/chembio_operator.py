@@ -26,7 +26,7 @@ _PARENT = Path(__file__).resolve().parent.parent
 if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
-from true_agentic_agent import TrueAgenticAgent, _load_imsgct_context
+from true_agentic_agent import TrueAgenticAgent, _load_system_prompt, _PARTNERSHIP_RIDER
 from specialists import CHEMBIO_SPECIALIST_PROMPT
 from session_db import get_session_db
 

@@ -88,6 +88,27 @@ def probe_spawn():
     assert hasattr(a, "run")
     return "TrueAgenticAgent constructs"
 
+
+def probe_specialists():
+    """Construct each specialist for real.
+
+    --help exits before __init__ runs, so a missing import in the constructor
+    passes every --help check and dies the moment anyone launches the operator.
+    That is exactly how a NameError on _PARTNERSHIP_RIDER shipped in two of the
+    three launchers.
+    """
+    import importlib
+    sys.path.insert(0, str(HERE))
+    out = []
+    for mod, cls in (("math_operator", "MathOperator"),
+                     ("editorial_operator", "EditorialOperator"),
+                     ("chembio_operator", "ChemBioOperator")):
+        m = importlib.import_module(mod)
+        a = getattr(m, cls)(model="probe:none", max_windings=0, verbose=False)
+        assert "PARTNERSHIP RIDER" in a._custom_system_prompt, f"{cls}: rider missing"
+        out.append(cls)
+    return ", ".join(out) + " construct"
+
 def probe_web_fetch():
     import httpx  # noqa: F401
     assert "_web_fetch_emit" in taa.__dict__
@@ -102,6 +123,7 @@ def probe_imscribe_system():
 
 run("ob3ect",           probe_ob3ect)
 run("spawn_agent",      probe_spawn)
+run("specialists",      probe_specialists)
 run("web_fetch",        probe_web_fetch)
 run("imscribe_system",  probe_imscribe_system)
 

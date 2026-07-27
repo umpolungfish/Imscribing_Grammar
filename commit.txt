@@ -1,3 +1,3 @@
-The guard abstains rather than guessing which entry a tuple belongs to.
+Two launchers died on a name they never imported.
 
-Any string can be an entry, so a name cannot be dismissed for being short, and the nearest name cannot be trusted because ordinary prose is full of them. One name in the window is used, several resolve to the one abutting the tuple, and none abutting leaves it unchecked. A guard that guesses is worse than one that says nothing.
+The rider was added to the constructor of all three but the import line was only widened in one, so editorial and chembio raised on the first line of their own init. Help exits before the constructor runs, which is why every check passed while launching failed. The deep check now builds each specialist for real and asserts the rider reaches it.
