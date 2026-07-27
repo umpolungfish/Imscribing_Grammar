@@ -817,9 +817,15 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
         glyphs = [(g.split("=", 1)[1].strip() if "=" in g else g) for g in _parts]
         if len(glyphs) != 12:
             continue  # not a 12-primitive structural tuple -- not our concern
-        # search backward up to 400 chars for the nearest catalog entry name
-        window_start = max(0, tm.start() - 400)
-        window = content[window_start: tm.start()]
+        # Search backward for the nearest catalog entry name. In a markdown
+        # table the search must not leave the tuple's own row: a tuple on a row
+        # labelled "CLINK L8" was being attributed to the catalog name in the
+        # row above and rejected against the wrong truth.
+        line_start = content.rfind("\n", 0, tm.start()) + 1
+        if content[line_start:line_start + 1] == "|":
+            window = content[line_start: tm.start()]
+        else:
+            window = content[max(0, tm.start() - 400): tm.start()]
         candidate_names = [m.group(1) for m in _NAME_RE.finditer(window)]
         matched_name = None
         for cand in reversed(candidate_names):  # nearest first
@@ -2759,12 +2765,14 @@ def _load_system_prompt() -> str:
 #   2. /home/mrnob0dy666/imsgct/DESIGN_GENERALIZED.md
 #   3. The list of repos in /home/mrnob0dy666/imsgct/
 
-_IMSGCT_CONTEXT_CACHE: Optional[str] = None
 
 def _load_imsgct_context() -> str:
     """Load compact context from /home/mrnob0dy666/imsgct/. Cached. Repo list only."""
-    global _IMSGCT_CONTEXT_CACHE
-    if _IMSGCT_CONTEXT_CACHE is not None: return _IMSGCT_CONTEXT_CACHE
+    # Not cached. It was built once and held for the life of the process, so a
+    # repo deleted mid-session stayed in the system prompt and the agent went on
+    # believing it was there. Keying the cache on the parent's mtime does not
+    # work either: this filesystem does not bump it when a subdirectory is
+    # removed. One listing costs about a millisecond, once per run.
     imsgct=Path("/home/mrnob0dy666/imsgct")
     parts:List[str]=[]
     parts.append("\n---\n## PERSISTENT IMSGCT CONTEXT\n---\n")
@@ -2795,8 +2803,7 @@ def _load_imsgct_context() -> str:
         "already settled and which document is authoritative, so settled questions\n"
         "are not answered again from scratch.\n")
     parts.append("---\n[END IMSGCT CONTEXT]\n---\n")
-    _IMSGCT_CONTEXT_CACHE="".join(parts)
-    return _IMSGCT_CONTEXT_CACHE
+    return "".join(parts)
 def _assistant_msg(
     reasoning: str,
     tool_call_id: str,
