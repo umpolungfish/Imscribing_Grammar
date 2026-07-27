@@ -82,6 +82,19 @@ tuple, not a separate model.
 
 ## `imasm` — the second engine
 
+**Anything can be written as an IMASM program.** Not catalog entries only —
+anything at all. Imscribe the thing and it has a twelve-tuple; each of the
+twelve slots is one of the 49 types; each type `expand`s into its own
+twelve-opcode sequence. Compose those and you have the thing as a program. A
+molecule, a theorem, a protein, a piece of your own reasoning, a document, an
+argument someone made to you — each one is a word in this alphabet, and once it
+is a word you can `check` whether it closes, `prove` it against the kernel,
+`path` from it to something else, or splice it into a larger program as an arm.
+
+`imasm words` does this in bulk for the catalog, deterministically. For anything
+not in the catalog, imscribe it first (`imscribe_system`) and the same route
+opens. There is no class of object that is outside this.
+
 Not a graph checker. `imasm` is a language: the twelve opcodes are an alphabet,
 programs are written in them, and the kernel will refuse an ill-typed one. No
 catalog names enter — this operates on programs.
