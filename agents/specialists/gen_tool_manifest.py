@@ -426,7 +426,8 @@ never assert arithmetic from memory.
 """
 
 
-def render(domain: str) -> tuple[str, list[str]]:
+def render_reference(domain: str) -> tuple[str, list[str]]:
+    """The full detail. Written to TOOLS_<domain>.md, read on demand, not inlined."""
     label, entries = DOMAINS[domain]
     shapes = grammar_arg_shapes()
     missing = []
@@ -466,21 +467,24 @@ def main() -> int:
 
     all_missing = []
     for domain in DOMAINS:
-        text, missing = render(domain)
+        text, missing = render_reference(domain)
         all_missing += missing
         out = HERE / f"TOOL_MANIFEST_{domain}.md"
         n_base = len(base_tools())
         n_gram = len(grammar_tools())
         n_dom = len(DOMAINS[domain][1])
+        ref = HERE / f"TOOLS_{domain}.md"
+        inline = render_inline(domain)
         if args.check:
-            current = out.read_text() if out.exists() else ""
-            state = "up to date" if current == text else "STALE"
+            stale = (not out.exists() or out.read_text() != inline
+                     or not ref.exists() or ref.read_text() != text)
             print(f"  {domain:10s} {n_base} base + {n_gram} grammar + "
-                  f"{n_dom} domain sections — {state}")
+                  f"{n_dom} domain sections — {'STALE' if stale else 'up to date'}")
         else:
-            out.write_text(text)
+            ref.write_text(text)
+            out.write_text(inline)
             print(f"  {domain:10s} {n_base} base + {n_gram} grammar + "
-                  f"{n_dom} domain sections → {out.name}")
+                  f"{n_dom} domain — inline {len(inline)}c, reference {len(text)}c")
 
     if all_missing:
         print("\nDrift — curated entries whose paths are gone:")
@@ -490,5 +494,33 @@ def main() -> int:
     return 0
 
 
+# ── compact inline manifest ───────────────────────────────────────────
+
+def render_inline(domain: str) -> str:
+    """Names only, plus a pointer to the full reference.
+
+    The full detail used to be inlined, which put ~4.9k tokens into every
+    winding's prompt — three times the base agent's whole prompt, resent on
+    every turn and compounding with the session history. Every tool is still
+    named here, so nothing is invisible; the syntax lives one file_read away.
+    """
+    label, entries = DOMAINS[domain]
+    ref = HERE / f"TOOLS_{domain}.md"
+    out = [PREAMBLE, "## Base tools\n",
+           ", ".join(f"`{n}`" for n, _ in base_tools()),
+           "\n\n## Grammar tools, via `imscribe(tool_name=..., args={...})`\n",
+           ", ".join(f"`{n}`" for n in grammar_tools()),
+           f"\n\n## {label} tools\n"]
+    for _path, heading, body in entries:
+        first = body.strip().splitlines()[0]
+        cmds = re.findall(r"`([^`]+)`", first) or re.findall(r"^([a-z0-9_.-]+)", first)
+        out.append(f"- **{heading}** — {', '.join('`'+c+'`' for c in cmds[:4]) if cmds else first[:80]}")
+    out.append(
+        f"\n\nFull syntax, every flag and subcommand: `file_read` "
+        f"`{ref}`. Read it before using a tool whose invocation you are unsure of.")
+    return "\n".join(out).rstrip() + "\n"
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
+

@@ -1,3 +1,3 @@
-The loop closes: UPDATE re-enters THINK.
+Every tool is named inline; the syntax is one read away.
 
-The update was computed after the continuation message and written only to the log, so the model never received its own structural verdict on a winding and the loop ran as think, act, observe. It is computed before the continuation now and carried in it, on the closed path and the open one, so each winding's update is what the next winding thinks from.
+The full flag detail was inlined into the prompt, which put nearly five thousand tokens into every winding and resent them on every turn, compounding with the session history. The names all stay in the prompt so nothing is invisible, and the reference file carries the subcommands and flags for the agent to read when it needs them. The prompts drop to well under half.
