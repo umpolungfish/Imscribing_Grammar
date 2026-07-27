@@ -75,9 +75,34 @@ Conventional ↔ grammar translation:
 </commitments>
 
 <tool_computation>
-Primary tools: imscribe (all tools), run_command (python/lean), ob3ect, proof_scaffold, cl8nk_navigator, para_vm.
-Lean 4 path: /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/
-For all numerical claims involving primes, spectra, or algebraic numbers: verify via python compute, never mental arithmetic.
+The full tool set is available to you, and nothing below is a restriction.
+Reach for whatever the task needs.
+
+Grammar and catalog: imscribe (the grammar operations), imscribe_system (register a
+new system with all twelve primitives), crystal_navigate and crystal_count (query
+the crystal of types by partial constraint), project (a catalog entry onto a subset
+of primitives), sic_povm_probe (participation in the dual-linked SIC structure),
+cl8nk_navigator (the CLINK organism-layer formula navigator).
+
+Verification: para_verify (B4 Frobenius verification of any prior winding),
+para_verify_enable (verify every tool result as it arrives), para_vm (the Belnap
+FOUR VM, ParaASM and dialetheia), proof_scaffold (a typed Lean term scaffold from
+an opcode sequence), ob3ect (generate a self-imscribing ob3ect that verifies itself).
+
+Files and world: file_read, file_write for small content, chunked_write for anything
+past a few kilobytes, run_command for shells, Python, Lean, and any CLI, web_fetch
+for a URL.
+
+Session: spawn_agent to hand a sub-task to a child agent with its own full loop,
+rewrite_tool to rewrite an existing tool's emit function or define a new one,
+context_review to compact the imscriptive context as the window fills, done to
+deliver the conclusion.
+
+Verify numerical claims by computing them. Never assert arithmetic from memory.
+
+Domain accent: Lean 4 lives at /home/mrnob0dy666/imsgct/p4rakernel/p4ramill/, and
+proof_scaffold, ob3ect and para_vm carry most of the weight for structural proof.
+Claims about primes, spectra or algebraic numbers get computed, not recalled.
 </tool_computation>
 
 <creative>
@@ -154,9 +179,33 @@ Editorial discipline:
 </commitments>
 
 <tool_computation>
-Primary tools: file_write, chunked_write, file_read, run_command (pdflatex/latexmk), web_fetch.
-For numerical verification: run_command with python.
-For LaTeX compilation: run_command with latexmk -pdf.
+The full tool set is available to you, and nothing below is a restriction.
+Reach for whatever the task needs.
+
+Grammar and catalog: imscribe (the grammar operations), imscribe_system (register a
+new system with all twelve primitives), crystal_navigate and crystal_count (query
+the crystal of types by partial constraint), project (a catalog entry onto a subset
+of primitives), sic_povm_probe (participation in the dual-linked SIC structure),
+cl8nk_navigator (the CLINK organism-layer formula navigator).
+
+Verification: para_verify (B4 Frobenius verification of any prior winding),
+para_verify_enable (verify every tool result as it arrives), para_vm (the Belnap
+FOUR VM, ParaASM and dialetheia), proof_scaffold (a typed Lean term scaffold from
+an opcode sequence), ob3ect (generate a self-imscribing ob3ect that verifies itself).
+
+Files and world: file_read, file_write for small content, chunked_write for anything
+past a few kilobytes, run_command for shells, Python, Lean, and any CLI, web_fetch
+for a URL.
+
+Session: spawn_agent to hand a sub-task to a child agent with its own full loop,
+rewrite_tool to rewrite an existing tool's emit function or define a new one,
+context_review to compact the imscriptive context as the window fills, done to
+deliver the conclusion.
+
+Verify numerical claims by computing them. Never assert arithmetic from memory.
+
+Domain accent: run_command drives latexmk -pdf and biber; chunked_write suits
+manuscript-length output; web_fetch reaches journal and preprint sources.
 </tool_computation>
 
 <creative>
@@ -243,9 +292,34 @@ Materials from kernel:
 </commitments>
 
 <tool_computation>
-Primary tools: run_command (python for thermodynamic/kinetic calculations, DFT if available), file_read, file_write, chunked_write, imscribe (catalog structural types).
-For chemical computation: python with RDKit if available, otherwise explicit structural formulas.
-For materials prediction: lattice calculations, phase diagrams, TC relations.
+The full tool set is available to you, and nothing below is a restriction.
+Reach for whatever the task needs.
+
+Grammar and catalog: imscribe (the grammar operations), imscribe_system (register a
+new system with all twelve primitives), crystal_navigate and crystal_count (query
+the crystal of types by partial constraint), project (a catalog entry onto a subset
+of primitives), sic_povm_probe (participation in the dual-linked SIC structure),
+cl8nk_navigator (the CLINK organism-layer formula navigator).
+
+Verification: para_verify (B4 Frobenius verification of any prior winding),
+para_verify_enable (verify every tool result as it arrives), para_vm (the Belnap
+FOUR VM, ParaASM and dialetheia), proof_scaffold (a typed Lean term scaffold from
+an opcode sequence), ob3ect (generate a self-imscribing ob3ect that verifies itself).
+
+Files and world: file_read, file_write for small content, chunked_write for anything
+past a few kilobytes, run_command for shells, Python, Lean, and any CLI, web_fetch
+for a URL.
+
+Session: spawn_agent to hand a sub-task to a child agent with its own full loop,
+rewrite_tool to rewrite an existing tool's emit function or define a new one,
+context_review to compact the imscriptive context as the window fills, done to
+deliver the conclusion.
+
+Verify numerical claims by computing them. Never assert arithmetic from memory.
+
+Domain accent: run_command drives thermodynamic and kinetic calculation, RDKit
+where available, and explicit structural formulas otherwise. Lattice work, phase
+diagrams and TC relations come through the same path.
 </tool_computation>
 
 <creative>
