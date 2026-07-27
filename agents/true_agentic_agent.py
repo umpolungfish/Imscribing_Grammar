@@ -3001,7 +3001,13 @@ class TrueAgenticAgent:
         self._log(self._harness_tier_report())
         self._log(f"{'═'*72}\n")
 
-        for winding in range(self.max_windings):
+        # max_windings <= 0 means unbounded. The loop ends on done, on the
+        # emission gate, or on context pressure — an iteration ceiling is not
+        # a termination condition, it is an interruption of work in progress.
+        import itertools as _it
+        _windings = (_it.count() if self.max_windings <= 0
+                     else range(self.max_windings))
+        for winding in _windings:
             # Proactive context pressure check — inject review prompt before THINK
             pressure = self._estimate_context_tokens() / self._context_window
             if pressure >= self._review_threshold and not self._review_pending:
@@ -3021,7 +3027,7 @@ class TrueAgenticAgent:
                 self._log(f"\n{'═'*72}")
                 return cycle.conclusion
 
-        self._log(f"\n  ⚠ max_windings ({self.max_windings}) reached without done.")
+        self._log(f"\n  ⚠ max_windings ({self.max_windings}) reached without done. Pass 0 to run unbounded.")
         return self._emergency_conclusion("")
 
     # ── Loop phases ────────────────────────────────────────────────────────────

@@ -91,8 +91,8 @@ def main():
     # parsing so --model can stand in when the environment is not set.
     p.add_argument("--model", default=None,
                    help="Model id, or provider:model. Taken from $IG_PROVIDER and $IG_MODEL.")
-    p.add_argument("--max-windings", type=int, default=200,
-                   help="Max loop iterations (default: 200)")
+    p.add_argument("--max-windings", type=int, default=0,
+                   help="Max windings. 0 (default) runs unbounded: the loop ends on done, on the emission gate, or on context pressure.")
     p.add_argument("--max-tokens", type=int, default=32768,
                    help="Max tokens per THINK phase (default: 32768)")
     p.add_argument("--base-url", default="", help="Override API base URL")

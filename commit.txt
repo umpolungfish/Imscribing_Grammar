@@ -1,3 +1,3 @@
-A winding without a tool call says what is wrong, then ends the run.
+Work is not interrupted by an iteration count.
 
-The emission gate fired the same empty echo every time a model returned no tool call, which hands back nothing to act on, so a model that had stopped emitting kept not emitting and the run burned every remaining winding on that no-op. The forced command now states the problem and names the way out, and after three consecutive such windings the run closes itself through done rather than spinning to the ceiling. A real tool call clears the count.
+The engine allowed ten thousand windings while the specialist launchers overrode that with two hundred, so they ran at a fiftieth of the engine. The ceiling's only real job was catching the loop the emission gate now ends by itself, and a count is not a termination condition: the loop ends on done, on the gate, or on context pressure. Zero is the default and runs unbounded; a positive value still caps for anyone who wants one.
