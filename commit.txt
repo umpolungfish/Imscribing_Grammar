@@ -1,1 +1,3 @@
-The four axioms are closure conditions, not coordinate rules
+The specialists carry the partnership rider and one copy of the repo context.
+
+The prompt swap replaced the base loader wholesale, which dropped the rider the loader appends on every path, and the specialists added the imsgct context that run() already appends, so it went in twice. Both now land once and correctly.
