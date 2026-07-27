@@ -1,3 +1,3 @@
-The specialists name every tool they can call, generated from the repos.
+The specialists take -i, and the model comes from the environment.
 
-The prompts named 21 schema entries and collapsed the 44 grammar tools imscribe dispatches into a phrase, and named nothing from the repos each specialist exists to drive. gen_tool_manifest.py derives the base and grammar layers from the code that defines them and carries the domain layer as curated entries checked against the filesystem, so a missing path is reported rather than shipped as a tool that is not there. Editorial additionally carries the notation canon and is pointed at SNS_PRIME for the authoritative text.
+The launchers had no -i at all, so the interactive aliases died on an unrecognized argument the moment they pointed here. They also carried a hardcoded grok fallback, which meant anything running without the environment loaded silently used a model nobody had chosen and billed for it; the model now comes from IG_PROVIDER and IG_MODEL, resolved after parsing so --model can still stand in, and it says so plainly when neither is set.

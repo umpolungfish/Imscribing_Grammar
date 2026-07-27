@@ -82,11 +82,12 @@ def main():
     )
     p.add_argument("task", nargs="?", default=None,
                    help="Task description. If omitted, enters interactive mode.")
-    _ig_model = os.environ.get("IG_MODEL", "grok-4")
-    _ig_provider = os.environ.get("IG_PROVIDER", "")
-    if _ig_provider and ":" not in _ig_model:
-        _ig_model = f"{_ig_provider}:{_ig_model}"
-    p.add_argument("--model", default=_ig_model)
+    p.add_argument("--interactive", "-i", action="store_true",
+                   help="Interactive mode. The mathopi/editopi/chemopi aliases pass this.")
+    # Wired to the environment, with no baked-in model. Resolved after
+    # parsing so --model can stand in when the environment is not set.
+    p.add_argument("--model", default=None,
+                   help="Model id, or provider:model. Taken from $IG_PROVIDER and $IG_MODEL.")
     p.add_argument("--max-windings", type=int, default=200)
     p.add_argument("--max-tokens", type=int, default=32768)
     p.add_argument("--base-url", default="")
@@ -103,6 +104,16 @@ def main():
     p.add_argument("--no-save", action="store_true",
                    help="Disable auto-save after run.")
     args = p.parse_args()
+
+    if not args.model:
+        _m = os.environ.get("IG_MODEL", "")
+        _pv = os.environ.get("IG_PROVIDER", "")
+        if not _m:
+            raise SystemExit(
+                "IG_MODEL is not set. Set IG_PROVIDER and IG_MODEL, or pass --model.\n"
+                "  export IG_PROVIDER=openrouter\n"
+                "  export IG_MODEL=<model-id>")
+        args.model = f"{_pv}:{_m}" if _pv and ":" not in _m else _m
 
     # ── Session listing ──
     if args.list_sessions:
@@ -145,7 +156,7 @@ def main():
         except KeyError:
             print(f"[Session not found: {args.session_id}. Starting fresh.]")
             restored_sid = ""    # ── Interactive mode ──
-    if not args.task:
+    if args.interactive or not args.task:
         print("═" * 72)
         print("  CHEMBIO ⊙PERATOR — Interactive Mode (session-persistent)")
         print(f"  Model: {args.model}  |  Max windings: {args.max_windings}")
