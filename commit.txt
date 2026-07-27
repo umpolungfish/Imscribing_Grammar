@@ -1,3 +1,3 @@
-Three implemented tools are wired in, and a non-tool stops being advertised.
+The base tools are run, not merely resolved.
 
-frobenius_tier, revise_insight and search_insights were written and never added to the dispatch chain, so no agent could reach them; frobenius_tier also censuses the whole catalog when asked for every entry. The manifest generator meanwhile scraped the whole file for dispatch cases and caught a catalog-entry sentinel, shipping it to the specialists as a callable tool that never existed. It reads the dispatch chain alone now, and a reachability check invokes every tool rather than trusting that a listed tool runs.
+The shallow check confirmed an emit function existed, which is exactly what ob3ect passed while dying on every call. This one executes thirteen tools for real and exercises the other four up to but not through the expensive call, which is the segment the ob3ect failure lived in: the module imports, the mandatory gate resolves, the agent class constructs.
